@@ -5,12 +5,12 @@ usage in non-archimedean (categorical / pre-τ / fibre-level) sections.
 Per user 2026-06-01: "more general statements (even if char p) should be
 in paper, and then specialize when needed for archimedean."
 
-Per prop:li2q-phiq-bar-symmetrization + AGENTS.md fibre/observable
+Per `li2q-phiq-bar-symmetrization` + AGENTS.md fibre/observable
 distinction (PR #1616): the |...| modulus is an ARCHIMEDEAN operation
 (takes a signed real to a positive real, breaking bar-asymmetry). It
 should NOT appear in categorical / pre-τ definitions.
 
-AUDIT SCOPE: all .md files under content/quantum-observable-universe/
+AUDIT SCOPE: all .md files under folio/quantum-observable-universe/
 that contain absolute-value notation (\\|...\\|, \\lvert...\\rvert, or
 literal |...|) AROUND tr_M, tr, χ, or other categorical objects.
 
@@ -28,6 +28,11 @@ NOTE: this is an AUDIT, not a refactor. The refactor (removing |...|
 from non-archimedean sections, replacing with signed tr_M + adding
 archimedean-specialization clauses) is a substantial paper-wide
 edit out of scope for one session.
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 
@@ -123,7 +128,7 @@ def main() -> int:
         "docs/audits/2026-06-01-paper-modulus-nonarchimedean-audit.md"
     )
 
-    content_root = REPO_ROOT / "content" / "quantum-observable-universe"
+    content_root = REPO_ROOT / "folio" / "quantum-observable-universe"
     all_sites = []
     for md_path in content_root.rglob("*.md"):
         sites = scan_file(md_path)

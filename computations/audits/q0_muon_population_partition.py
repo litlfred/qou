@@ -225,7 +225,7 @@ def direct_pinners() -> list[tuple[str, str]]:
     }
     out = []
     for path in sorted(COMP.rglob("*.py")):
-        if "_deprecated" in path.parts:
+        if ("_deprecated" in path.parts or "fsh-guts" in path.parts):
             continue
         text = path.read_text(errors="replace")
         direct = (

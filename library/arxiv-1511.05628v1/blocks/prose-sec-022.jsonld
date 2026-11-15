@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1511.05628v1/blocks/prose-sec-022",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1511.05628v1/blocks/prose-sec-022",
   "kind": "prose",
   "title": "Data",
   "pageStart": 22,
   "pageEnd": 22,
   "text": "../sections/sec-022-6-data.md",
-  "derivedFrom": "library/arxiv-1511.05628v1/manifest",
-  "sourceDocument": "library/arxiv-1511.05628v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1511.05628v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1511.05628v1",
   "provenance": "ingested"
 }

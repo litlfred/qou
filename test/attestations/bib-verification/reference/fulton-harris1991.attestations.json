@@ -1,0 +1,30 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "fulton-harris1991",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 118,
+      "entry": {
+        "id": "fulton-harris1991",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T17:55:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 5,
+        "fix_commit": "(this commit)",
+        "note": "Fulton & Harris, 'Representation Theory: A First Course' (Springer GTM 129, 1991). New bib entry split from fulton1997 (which stays as 'Young Tableaux' LMS Student Texts 35). 5 .lean Ref lines in baryon-product-from-alt.lean re-keyed from fulton1997 \u2192 fulton-harris1991 (all reference Repn Theory \u00a72 / \u00a72.1 Frobenius character).",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1007/978-1-4612-0979-9"
+        }
+      }
+    }
+  ]
+}

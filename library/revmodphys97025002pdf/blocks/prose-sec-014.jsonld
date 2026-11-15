@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/revmodphys97025002pdf/blocks/prose-sec-014",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/revmodphys97025002pdf/blocks/prose-sec-014",
   "kind": "prose",
   "title": "Newtonian constant of gravitation",
   "pageStart": 5,
   "pageEnd": 5,
   "text": "../sections/sec-014-11-newtonian-constant-of-gravitation.md",
-  "derivedFrom": "library/revmodphys97025002pdf/manifest",
-  "sourceDocument": "library/revmodphys97025002pdf/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/revmodphys97025002pdf",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/revmodphys97025002pdf",
   "provenance": "ingested"
 }

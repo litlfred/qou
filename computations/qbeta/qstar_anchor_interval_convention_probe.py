@@ -3,7 +3,7 @@
 """qstar_anchor_interval_convention_probe — is the q* landmark's position
 between the anchors a fact, or a convention?
 
-`content/quantum-observable-universe/mass-theory/rem-qstar-decay-sector-q0.md`
+`folio/quantum-observable-universe/mass-theory/rem-qstar-decay-sector-q0.md`
 states of the S-channel-zero landmark:
 
     "It lies ~80.3% of the way from the proton anchor toward the muon anchor."

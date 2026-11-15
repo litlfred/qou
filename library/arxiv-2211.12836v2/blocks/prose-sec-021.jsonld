@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2211.12836v2/blocks/prose-sec-021",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2211.12836v2/blocks/prose-sec-021",
   "kind": "prose",
   "title": "A.3. Quantum cohomology ring of the Grassmannian",
   "pageStart": 62,
   "pageEnd": 64,
   "text": "../sections/sec-021-a3-quantum-cohomology-ring-of-the-grassmannian.md",
-  "derivedFrom": "library/arxiv-2211.12836v2/manifest",
-  "sourceDocument": "library/arxiv-2211.12836v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2211.12836v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2211.12836v2",
   "provenance": "ingested"
 }

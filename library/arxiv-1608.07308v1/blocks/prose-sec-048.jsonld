@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1608.07308v1/blocks/prose-sec-048",
+  "kind": "prose",
+  "title": "Examples",
+  "pageStart": 64,
+  "pageEnd": 66,
+  "text": "../sections/sec-048-86-examples.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1608.07308v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1608.07308v1",
+  "provenance": "ingested"
+}

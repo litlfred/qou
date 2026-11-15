@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1409.0435v2/blocks/prose-sec-009",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1409.0435v2/blocks/prose-sec-009",
   "kind": "prose",
-  "title": "(if W = 0),",
-  "pageStart": 24,
-  "pageEnd": 24,
-  "text": "../sections/sec-009-2-if-w-0.md",
-  "derivedFrom": "library/arxiv-1409.0435v2/manifest",
-  "sourceDocument": "library/arxiv-1409.0435v2/manifest",
+  "title": "Acknowledgements",
+  "pageStart": 26,
+  "pageEnd": 28,
+  "text": "../sections/sec-009-acknowledgements.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1409.0435v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1409.0435v2",
   "provenance": "ingested"
 }

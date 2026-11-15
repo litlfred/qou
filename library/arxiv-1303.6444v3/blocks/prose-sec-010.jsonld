@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1303.6444v3/blocks/prose-sec-010",
+  "kind": "prose",
+  "title": "Comparison of the Separate Bound: Proposition 2.4",
+  "pageStart": 12,
+  "pageEnd": 13,
+  "text": "../sections/sec-010-7-comparison-of-the-separate-bound-proposition-2.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1303.6444v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1303.6444v3",
+  "provenance": "ingested"
+}

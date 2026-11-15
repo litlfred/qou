@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1705.10485v2/sections/sec-016",
   "@type": [
     "doco:Section"
   ],
-  "title": "Valentin Féray, Pierre-Loïc Méliot, and Ashkan Nikeghbali",
-  "pageStart": 14,
-  "pageEnd": 14,
+  "title": "Dependency graphs",
+  "pageStart": 31,
+  "pageEnd": 35,
   "contains": [
     "library/arxiv-1705.10485v2/blocks/prose-sec-016"
   ],
-  "derivedFrom": "library/arxiv-1705.10485v2/manifest",
-  "sourceDocument": "library/arxiv-1705.10485v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1705.10485v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1705.10485v2",
   "provenance": "ingested"
 }

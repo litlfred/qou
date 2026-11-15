@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-markov-stabilisation-needs-a-fresh-generator",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:markov-stabilisation-needs-a-fresh-generator",
+  "kind": "proposition",
+  "title": "Markov stabilisation at the interface requires a generator the word does not already use",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-content-keyed-interface-refuted"
+  ],
+  "tags": [
+    "interface-scalar",
+    "markov-trace",
+    "convention-d",
+    "deuteron"
+  ],
+  "leanRef": "qou:QOU.QBeta.InterfaceScalar.markov_stabilisation_fails_on_repeat",
+  "text": "markov-stabilisation-needs-a-fresh-generator.md",
+  "provenance": "authored"
+}

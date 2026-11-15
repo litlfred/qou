@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0410111v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "createdbydvipdf (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0410111v2",
+  "provenance": "ingested",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0410111&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-0410111v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/math/0410111v2",
+    "content_type": "application/gzip",
+    "sha256": "1996e9c0c6a482edff69c31d48508a7962de76b2f78a71266f63cabf596b89f6",
+    "bytes": 16725,
+    "fetched": "2026-10-10T15:28:31+00:00",
+    "files": [
+      {
+        "path": "source/files/may10.tex",
+        "role": "tex",
+        "sha256": "b755c0c82804a18a291cd6f33b012b0a8f598ecc667ee9b62662ce7bfaad3d13",
+        "bytes": 37091
+      },
+      {
+        "path": "source/files/mor.sty",
+        "role": "sty",
+        "sha256": "2826e614a6465deeab409201cc78338056bf3b6ec53c48c72b86a37cf44e2dea",
+        "bytes": 15483
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

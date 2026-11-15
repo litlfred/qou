@@ -36,7 +36,7 @@ from mpmath import mp, mpf, fabs, acos
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import fmt, set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from codata_constants import (  # noqa: E402
     AME_B_DEUTERON_MEV_VALIDATION,
@@ -129,11 +129,28 @@ def main():
     set_compute_dps()
     wb = WitnessBuilder("binding-rotation-phase-lead", engine="mpmath")
 
+    # NO `float()` ON THESE FOUR. They arrive from `codata_constants` as mpf and
+    # the only consumer immediately lifts them back (`mpf(str(AME[iso]))`, the
+    # `rho` dict below), so the cast was a round trip through binary64 for no
+    # gain — and AGENTS.md permits `float(x)` only inside an f-string.
+    #
+    # It happened to LOSE NOTHING here, and the reason is worth keeping because
+    # it is easy to get backwards in both directions:
+    #   * `mpf(str(float(v)))` round-trips EXACTLY for these four — measured
+    #     rel_err 0.0 on all of D/T/3He/4He — because Python's `str` prints the
+    #     shortest decimal that reparses to the same double, and all four have
+    #     well under 17 significant digits (2.2245662 … 28.2956624).
+    #   * `mpf(float(v))` would NOT. That lifts the binary64 itself and differs
+    #     at ~1e-17; it is the defect fixed in `atom_vhyp_bar_trace_test.py`.
+    # So the cast was harmless only because a `str()` sat downstream of it.
+    # Removing it stops the safety depending on that coincidence, and clears two
+    # `mpf_mixed_arithmetic_audit` candidates at their root rather than by
+    # widening the detector's carve-out (see the commit message).
     AME = {
-        "D": float(AME_B_DEUTERON_MEV_VALIDATION),
-        "T": float(AME_B_TRITIUM_MEV_VALIDATION),
-        "3He": float(AME_B_HE3_MEV_VALIDATION),
-        "4He": float(AME_B_HE4_MEV_VALIDATION),
+        "D": AME_B_DEUTERON_MEV_VALIDATION,
+        "T": AME_B_TRITIUM_MEV_VALIDATION,
+        "3He": AME_B_HE3_MEV_VALIDATION,
+        "4He": AME_B_HE4_MEV_VALIDATION,
     }
     # y_λ sources (same as delta_lambda_binding_full_evaluation)
     y_H6 = load_y("rho-k-h3a-lp-dual.witness.json", ["per_lambda"])
@@ -174,34 +191,46 @@ def main():
         aggs["S4_markov_signed"][name] = fabs(s4)
 
     results = {}
+    spread_mpf = {}          # agg -> mpf spread, kept for ORDERING only
     for agg, vals in aggs.items():
         rho = {iso: (mpf(str(AME[iso])) / vals[iso]) if vals[iso] != 0
                else None for iso in AME}
-        rs = [float(rho[i]) for i in AME if rho[i] is not None and rho[i] > 0]
+        # NO float() HERE. `rho[i]` is an mpf; `float(rho[i])` truncated every
+        # spread below to binary64 before the ratio was even taken, and the
+        # result was then written to the witness as a raw float64. Carry the
+        # mpf end to end and serialize with `_precision.fmt`; `float()` stays
+        # only inside the f-strings below, which is display.
+        rs = [rho[i] for i in AME if rho[i] is not None and rho[i] > 0]
         spread = (max(rs) / min(rs) - 1) * 100 if rs and min(rs) > 0 else None
         # A=3 pair sub-spread (T, ³He)
-        a3 = [float(rho[i]) for i in ["T", "3He"]
+        a3 = [rho[i] for i in ["T", "3He"]
               if rho[i] is not None and rho[i] > 0]
         a3spread = (max(a3) / min(a3) - 1) * 100 if len(a3) == 2 else None
+        spread_mpf[agg] = spread
         results[agg] = {
             "rho_needed": {i: (mp.nstr(rho[i], 6) if rho[i] is not None
                                else None) for i in AME},
-            "spread_pct": spread,
-            "A3_pair_spread_pct": a3spread,
+            "spread_pct": fmt(spread) if spread is not None else None,
+            "A3_pair_spread_pct": fmt(a3spread) if a3spread is not None
+            else None,
         }
         print(f"\n{agg}:")
         print("  ρ_needed: " + "  ".join(
             f"{i}={float(rho[i]):.3f}" if rho[i] is not None else f"{i}=NA"
             for i in ["D", "T", "3He", "4He"]))
-        print(f"  full spread = {spread:.0f}%   "
-              f"A=3 pair (T,³He) spread = {a3spread:.0f}%"
+        print(f"  full spread = {float(spread):.0f}%   "
+              f"A=3 pair (T,³He) spread = {float(a3spread):.0f}%"
               if spread is not None and a3spread is not None else "")
 
-    # tightest aggregation by full spread
-    best = min((a for a in results if results[a]["spread_pct"] is not None),
-               key=lambda a: results[a]["spread_pct"])
+    # tightest aggregation by full spread. ORDER ON `spread_mpf`, NOT on
+    # `results[a]["spread_pct"]` -- the latter is now a serialized string, and
+    # `min` over strings is lexicographic: "17254.05..." sorts BEFORE
+    # "417.02...", so the string key would name the WORST aggregation as the
+    # tightest. The numeric ordering is what this line means.
+    best = min((a for a in spread_mpf if spread_mpf[a] is not None),
+               key=lambda a: spread_mpf[a])
     print(f"\nTightest full-spread aggregation: {best} "
-          f"({results[best]['spread_pct']:.0f}%).")
+          f"({float(spread_mpf[best]):.0f}%).")
     print("⁴He (doubly-magic) is the persistent outlier — its 2-proton")
     print("Coulomb (sinh channel, crossing-energy-decomposition) is not yet")
     print("removed; the A=3 mirror pair (T,³He) is the clean test.")
@@ -211,6 +240,7 @@ def main():
     print("\n[d=0 cosh/strong channel]  −h (sinh) inter-nucleon term removed:")
     y_by_n = {6: y_H6, 9: y_H9}
     d0 = {}
+    d0_exact = {}            # iso -> (rho_d0_strong, rho_full) as mpf
     for iso, _f, Z, N in [("D", None, 1, 1), ("T", None, 1, 2),
                           ("3He", None, 2, 1)]:
         rho = strong_channel_rho(Z, N, y_by_n[3 * (Z + N)],
@@ -219,18 +249,23 @@ def main():
                     if aggs["S3_markov"][iso] != 0 else None)
         d0[iso] = {"rho_full": (mp.nstr(full_rho, 6) if full_rho else None),
                    "rho_d0_strong": (mp.nstr(rho, 6) if rho else None)}
+        d0_exact[iso] = (rho, full_rho)
         print(f"  {iso:4s}: full={float(full_rho):.3f}  "
               f"d0(strong)={float(rho):.3f}" if (rho and full_rho)
               else f"  {iso}: NA")
-    d0v = [float(mpf(d0[i]["rho_d0_strong"])) for i in ["D", "T", "3He"]
-           if d0[i]["rho_d0_strong"]]
-    fullv = [float(mpf(d0[i]["rho_full"])) for i in ["D", "T", "3He"]
-             if d0[i]["rho_full"]]
+    # Read the mpf from `d0_exact`, NOT back out of `d0`. The `d0` values are
+    # `mp.nstr(x, 6)` display strings, so the old `float(mpf(d0[i][...]))`
+    # discarded everything past the 6th significant digit and THEN dropped to
+    # binary64 -- two truncations, on a quantity whose whole point is the
+    # difference between two close spreads. Both spreads below move slightly
+    # as a result; that movement is the fix, not a regression.
+    d0v = [d0_exact[i][0] for i in ["D", "T", "3He"] if d0_exact[i][0]]
+    fullv = [d0_exact[i][1] for i in ["D", "T", "3He"] if d0_exact[i][1]]
     d0_spread = (max(d0v) / min(d0v) - 1) * 100 if len(d0v) == 3 else None
     full_spread = (max(fullv) / min(fullv) - 1) * 100 if len(fullv) == 3 else None
     if d0_spread is not None:
-        print(f"  D/T/³He spread: full={full_spread:.0f}%  →  "
-              f"d0(strong)={d0_spread:.0f}%  "
+        print(f"  D/T/³He spread: full={float(full_spread):.0f}%  →  "
+              f"d0(strong)={float(d0_spread):.0f}%  "
               f"(removing sinh pulls D up toward the A=3 scale)")
 
     wb.set_description(
@@ -247,8 +282,10 @@ def main():
                                  results[best]["A3_pair_spread_pct"]})
     wb.add_data("d0_strong_channel", {
         "per_atom": d0,
-        "DTHe3_spread_full_pct": full_spread,
-        "DTHe3_spread_d0_pct": d0_spread,
+        "DTHe3_spread_full_pct": (fmt(full_spread) if full_spread is not None
+                                  else None),
+        "DTHe3_spread_d0_pct": (fmt(d0_spread) if d0_spread is not None
+                                else None),
         "note": "Removing the antisymmetric −h (sinh) inter-nucleon term "
                 "(d=0, symmetric cosh/strong channel) tightens the D/T/³He "
                 "spread and pulls D up toward the A=3 scale — the sinh term "

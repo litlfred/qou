@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-genus-from-hecke-completeness",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:genus-from-hecke-completeness",
+  "kind": "proof",
+  "title": "Proof of genus from Hecke completeness",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-genus-from-hecke-completeness"
+  ],
+  "text": "genus-from-hecke-completeness-proof.md",
+  "provenance": "authored"
+}

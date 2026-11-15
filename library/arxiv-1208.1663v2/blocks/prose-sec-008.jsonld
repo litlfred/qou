@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1208.1663v2/blocks/prose-sec-008",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1208.1663v2/blocks/prose-sec-008",
   "kind": "prose",
   "title": "The rank of V+: part (b) of Theorem 3.2",
   "pageStart": 11,
   "pageEnd": 12,
   "text": "../sections/sec-008-43-the-rank-of-v-part-b-of-theorem-32.md",
-  "derivedFrom": "library/arxiv-1208.1663v2/manifest",
-  "sourceDocument": "library/arxiv-1208.1663v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1208.1663v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1208.1663v2",
   "provenance": "ingested"
 }

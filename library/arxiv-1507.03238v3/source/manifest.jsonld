@@ -1,0 +1,160 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1507.03238v3/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1507.03238v3 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1507.03238v3",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1507.03238&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1507.03238v3",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1507.03238v3",
+    "content_type": "application/gzip",
+    "sha256": "1e6510f0774c7e40cf92ce1633bf7096db994fb3da0e946bd3d10cc5d0dbd607",
+    "bytes": 80854,
+    "fetched": "2026-10-10T15:10:14+00:00",
+    "files": [
+      {
+        "path": "source/files/ZeroPtolemy.bbl",
+        "role": "bbl",
+        "sha256": "a2e770d87fc4d350b548fff878e5a4176144cc736317243d277ec94fa36f212c",
+        "bytes": 2798
+      },
+      {
+        "path": "source/files/ZeroPtolemy.tex",
+        "role": "tex",
+        "sha256": "78927c3a5f3fa8be01e64b7b2ef2ccab394acd6481d320210c089b9cf5c901bc",
+        "bytes": 115668
+      },
+      {
+        "path": "source/files/figures_gen/CoboundaryAction.tex",
+        "role": "tex",
+        "sha256": "5e78d307710c832aaac5903f51e04fab362b3c1927c964a96dc91b383d37dafb",
+        "bytes": 599
+      },
+      {
+        "path": "source/files/figures_gen/DecToPtolemy.tex",
+        "role": "tex",
+        "sha256": "f667d0e987f5388f9a8246ff2b3698babd3f156f39b9e4d418bf3d73717a1523",
+        "bytes": 4319
+      },
+      {
+        "path": "source/files/figures_gen/DiagonalAction.tex",
+        "role": "tex",
+        "sha256": "3baf4fe0145b8f41c78375c75d151062443fcddfac20f8a97981aaa735eb6608",
+        "bytes": 3971
+      },
+      {
+        "path": "source/files/figures_gen/EPCocycle.tex",
+        "role": "tex",
+        "sha256": "35429d91087bd109c3817dc9627cce57abaf8b8c12f816ccce445198a6b3674c",
+        "bytes": 2360
+      },
+      {
+        "path": "source/files/figures_gen/EdgeNbh.tex",
+        "role": "tex",
+        "sha256": "af506e34699d42de889eccd66e939b191d1798d6a2db0902736d13a6732ab3cb",
+        "bytes": 4286
+      },
+      {
+        "path": "source/files/figures_gen/EdgeRelationTop.tex",
+        "role": "tex",
+        "sha256": "14659ac82ebc6672495313bae5e9be9bdde714e7716148a8f3bffb9866a2ff00",
+        "bytes": 1566
+      },
+      {
+        "path": "source/files/figures_gen/FattenedEdgeNbh.tex",
+        "role": "tex",
+        "sha256": "2e5f1afdfe62b3e9ea618640547d273c560222f29045278b05d44626f12f715b",
+        "bytes": 3203
+      },
+      {
+        "path": "source/files/figures_gen/FattenedEdgeRelationTop.tex",
+        "role": "tex",
+        "sha256": "86d6b4e5b2149c918f80d1c24b030153d6c8bc89506b7a566c69bccd33d4eab4",
+        "bytes": 2264
+      },
+      {
+        "path": "source/files/figures_gen/FundRectIdentifications.tex",
+        "role": "tex",
+        "sha256": "af6c415f367bbbbe44e3df14c9062569ec47e3b84a2ee2707897c2f50cd63e13",
+        "bytes": 6012
+      },
+      {
+        "path": "source/files/figures_gen/ModerateDescendant.tex",
+        "role": "tex",
+        "sha256": "4059dda7e760ec7a65baddc59ab6b444e30bfb60d11850873a069d6e5761bc1f",
+        "bytes": 2102
+      },
+      {
+        "path": "source/files/figures_gen/NaturalCocycleDefn.tex",
+        "role": "tex",
+        "sha256": "e6a9a49a1e5253952fe7d49655a6fb3094deaf9b871e60503d209e06ce165766",
+        "bytes": 4163
+      },
+      {
+        "path": "source/files/figures_gen/RemoveCylinder.tex",
+        "role": "tex",
+        "sha256": "6c633047a0bae0e0f5bdabc18700103cbc3a652956642aa01377aa158e6c0d54",
+        "bytes": 3209
+      },
+      {
+        "path": "source/files/figures_gen/RemoveCylinderTop.tex",
+        "role": "tex",
+        "sha256": "713ed0d0c7a86515787ab02335d0feebbba97120b9a396c5a3b8b00f912a034c",
+        "bytes": 1746
+      },
+      {
+        "path": "source/files/figures_gen/Test.tex",
+        "role": "tex",
+        "sha256": "1649900ae501791cabc968091028c9997d32cb8e7b07d5727afde82ab06fb9fb",
+        "bytes": 2073
+      },
+      {
+        "path": "source/files/figures_gen/TriangleMove.tex",
+        "role": "tex",
+        "sha256": "d28bb384f18693be62d220970bc185fdf3d231be43d31322e5c0e77f81914db0",
+        "bytes": 171
+      },
+      {
+        "path": "source/files/figures_gen/WildDescendant.tex",
+        "role": "tex",
+        "sha256": "3b949bf666dc96fbcb471fb32a965d863326f202872cd1137021dfb45098038d",
+        "bytes": 2083
+      },
+      {
+        "path": "source/files/figures_gen/m009Cusp.tex",
+        "role": "tex",
+        "sha256": "f8070ff94c1082f639aa0ddb583726d70ab61f8adef80088a410183beb6b9b26",
+        "bytes": 14149
+      },
+      {
+        "path": "source/files/figures_gen/m009Trig.tex",
+        "role": "tex",
+        "sha256": "3a70816f7682a9271ffab85a2a225fca7399f5cdba1cfb33ad4021ab3e89ec63",
+        "bytes": 5137
+      },
+      {
+        "path": "source/files/figures_gen/m045Trig.tex",
+        "role": "tex",
+        "sha256": "b674a26e45c3d7294ca489855d07cc0d44f67ff3b428b4e9030949cdcf29472b",
+        "bytes": 5549
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

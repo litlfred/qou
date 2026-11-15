@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2104.04941v2/blocks/prose-sec-020",
+  "kind": "prose",
+  "title": "From coordinates to representations",
+  "pageStart": 21,
+  "pageEnd": 23,
+  "text": "../sections/sec-020-43-from-coordinates-to-representations.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2104.04941v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2104.04941v2",
+  "provenance": "ingested"
+}

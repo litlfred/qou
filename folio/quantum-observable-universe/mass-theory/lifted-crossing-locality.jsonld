@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-lifted-crossing-locality",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:lifted-crossing-locality",
+  "kind": "conjecture",
+  "title": "Locality of lifted-crossing contributions in the mass expansion",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-crossing-graded-mass-expansion"
+  ],
+  "cites": [
+    "references/kohno1987"
+  ],
+  "tags": [
+    "tier:E",
+    "locality",
+    "crossing-expansion",
+    "quantum-dilogarithm",
+    "factorization",
+    "kz-connection",
+    "flatness"
+  ],
+  "leanRef": "qou:QOU.ParticleInteractions.LiftedCrossingLocality",
+  "text": "lifted-crossing-locality.md",
+  "leanSource": "lifted-crossing-locality.lean",
+  "provenance": "authored"
+}

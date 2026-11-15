@@ -1,0 +1,50 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "dubois-violette2016",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 251,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1604.01247v2/1604.01247v2.pdf"
+        },
+        "id": "dubois-violette2016",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "JOIN CONFIRMED from front matter (arXiv identifier and subject match the registered entry). Single citation site: folio/quantum-observable-universe/appendix-standard-model/sm-colour-stabilizer-action.md:7, which cites it (with baez2002) for the statement that 'the colour algebra is constructed here ... but no construction makes it *act* on the states'. LOAD-BEARING AND ACCURATE: \u00a72.1-2.2 build the colour SU(3) from unimodularity with the octonions written as the complex 4-dimensional C + C^3, and pp.4-5 identify SU(3) as the group of C-linear transformations preserving the Hilbertian structures on A = C + E with E of complex dimension 3. That is exactly the 'constructed here' half of the block's claim, and the block is careful to state that what the source does NOT supply is the action on the framework's own three-strand Hecke state space \u2014 the honest scope. Background that earns its place rather than an imported theorem, hence supporting rather than core.",
+          "keyResults": [
+            {
+              "locator": "\u00a72 (unimodularity and the quark-lepton symmetry)",
+              "statement": "SU(3) arises as the group of C-linear transformations preserving the structures on A = C + E with E of complex dimension 3; the octonions as C + C^3 realise the quark-lepton symmetry, and triality in the 27-dimensional exceptional Jordan algebra corresponds to three generations.",
+              "useForFolio": "The literature construction of the colour algebra that conj:sm-colour-stabilizer-action takes as given while isolating the missing ingredient (the action on the three-strand state space).",
+              "targets": [
+                "conj:sm-colour-stabilizer-action"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "The single citation site attributes to the source only what it does (constructs the colour algebra) and explicitly disclaims what it does not (the action on framework states). Correctly scoped; nothing to change.",
+              "target": "conj:sm-colour-stabilizer-action"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "5a402405aadf"
+        }
+      }
+    }
+  ]
+}

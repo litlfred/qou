@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-core-levi-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:core-levi-interpretation",
+  "kind": "remark",
+  "title": "The millennium problem as contact non-degeneracy at vortex collision",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-core-levi-form",
+    "papers/quantum-observable-universe/blocks/prop-root-of-unity-truncation"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-core-levi-form",
+  "tags": [
+    "millennium-problem",
+    "contact",
+    "integrability",
+    "interpretation"
+  ],
+  "text": "core-levi-interpretation.md",
+  "provenance": "authored"
+}

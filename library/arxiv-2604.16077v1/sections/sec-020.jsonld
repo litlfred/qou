@@ -1,17 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-2604.16077v1/sections/sec-020",
   "@type": [
     "doco:Section"
   ],
-  "title": "The spaces Ghyp,N (T,b ) and NXhyp(M ). (See [7, Section 4].) Let T be a geometric",
-  "pageStart": 15,
-  "pageEnd": 16,
+  "title": "Asymptotics of the quantum integral",
+  "pageStart": 47,
+  "pageEnd": 66,
   "contains": [
-    "library/arxiv-2604.16077v1/blocks/prose-sec-020",
-    "library/arxiv-2604.16077v1/blocks/thm-sec-020-01"
+    "library/arxiv-2604.16077v1/blocks/prose-sec-020"
   ],
-  "derivedFrom": "library/arxiv-2604.16077v1/manifest",
-  "sourceDocument": "library/arxiv-2604.16077v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2604.16077v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2604.16077v1",
   "provenance": "ingested"
 }

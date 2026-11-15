@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-classical-riemann-hypothesis",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:classical-riemann-hypothesis",
+  "kind": "conjecture",
+  "title": "The Riemann hypothesis",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-classical-riemann-zeta"
+  ],
+  "tags": [
+    "tier:famous",
+    "riemann-hypothesis",
+    "millennium-problem",
+    "critical-line",
+    "zeta-zeros"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.ClassicalRiemannHypothesis",
+  "text": "classical-riemann-hypothesis.md",
+  "provenance": "authored"
+}

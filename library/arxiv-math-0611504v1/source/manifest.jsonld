@@ -1,0 +1,81 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0611504v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0611504v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0611504v1",
+  "provenance": "ingested",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0611504&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-0611504v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/math/0611504v1",
+    "content_type": "application/gzip",
+    "sha256": "a33b88f66ef12f492948d2fdebfffcce8931af2b93f8f1112d53f231ddcfc98a",
+    "bytes": 95762,
+    "fetched": "2026-10-10T15:30:07+00:00",
+    "files": [
+      {
+        "path": "source/files/5QHG.tex",
+        "role": "tex",
+        "sha256": "217e40bc25508031e43bcae3962ed3b171609e389fd58e5b210d804eb5b923a9",
+        "bytes": 3970
+      },
+      {
+        "path": "source/files/5QHGB.tex",
+        "role": "tex",
+        "sha256": "890ba9f8e278c8365a9859906c6578a703a2db4519eac303392ce725445a838e",
+        "bytes": 10403
+      },
+      {
+        "path": "source/files/5QHGBIB.tex",
+        "role": "tex",
+        "sha256": "dad0beefdbfecd9e1ab6a9da63867fc38215adaff51a870d40b83420bb59240b",
+        "bytes": 5818
+      },
+      {
+        "path": "source/files/5QHGI.tex",
+        "role": "tex",
+        "sha256": "4faecf88030bf623512fcc3dc4ba124b7ae2cfa896aae70ec0bec4674e1e6f10",
+        "bytes": 46701
+      },
+      {
+        "path": "source/files/5QHGP.tex",
+        "role": "tex",
+        "sha256": "cf57f8058d4e23c6143bec8ca4723580cbceedd87988ba965106fb8269f977e2",
+        "bytes": 35761
+      },
+      {
+        "path": "source/files/5QHGPF.tex",
+        "role": "tex",
+        "sha256": "c33f64ebad98ce7f5ce7622c6ab1692190b2bb998c89501744290854a138447b",
+        "bytes": 48286
+      },
+      {
+        "path": "source/files/5QHGT.tex",
+        "role": "tex",
+        "sha256": "80f34d8c3dc6913d1986466213bc822e69c69c6c42660d53f754f8a34abf1d34",
+        "bytes": 29690
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

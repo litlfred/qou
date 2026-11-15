@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1303.0720v2/blocks/prose-sec-032",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1303.0720v2/blocks/prose-sec-032",
   "kind": "prose",
-  "title": "The local asymptotics for the weighted bianalytic Bergman kernel: the corrective al-",
-  "pageStart": 28,
-  "pageEnd": 29,
-  "text": "../sections/sec-032-78-the-local-asymptotics-for-the-weighted-bianal.md",
-  "derivedFrom": "library/arxiv-1303.0720v2/manifest",
-  "sourceDocument": "library/arxiv-1303.0720v2/manifest",
+  "title": "A priori diagonal estimates of weighted Bergman kernels",
+  "pageStart": 31,
+  "pageEnd": 31,
+  "text": "../sections/sec-032-8-a-priori-diagonal-estimates-of-weighted-bergma.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1303.0720v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1303.0720v2",
   "provenance": "ingested"
 }

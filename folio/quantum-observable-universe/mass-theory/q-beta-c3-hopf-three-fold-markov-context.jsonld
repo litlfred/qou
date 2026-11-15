@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-beta-c3-hopf-three-fold-markov-context",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-beta-c3-hopf-three-fold-markov-context",
+  "kind": "remark",
+  "title": "Per-step categorical chain, empirical confirmation, and near-match tier for c_3 = -2",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-beta-c3-hopf-three-fold-markov"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-q-beta-c3-hopf-three-fold-markov",
+  "tags": [
+    "q-beta",
+    "c3",
+    "hopf-link",
+    "markov-closure",
+    "jones"
+  ],
+  "text": "q-beta-c3-hopf-three-fold-markov-context.md",
+  "provenance": "authored"
+}

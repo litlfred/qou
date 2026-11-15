@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/noniterativeroth2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "A PROOF OF ROTH’S THEOREM ON ARITHMETIC PROGRESSIONS",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/noniterativeroth2",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "noniterativeroth2",
   "contains": [
     "library/noniterativeroth2/sections/sec-000",
     "library/noniterativeroth2/sections/sec-001",
@@ -15,8 +20,10 @@
     "library/noniterativeroth2/sections/sec-006"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "noniterativeroth2",
+    "title_source": "slug",
     "source_file": "noniterativeroth2.pdf",
     "source_sha256": "83bbcdf45da069e5275d2e268fb5915d0adc361a35c167dac98bb919a2fbe4d6",
     "pages": 5,

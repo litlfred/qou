@@ -1,0 +1,121 @@
+{
+  "bean": "qou-hok7",
+  "calibration": [
+    {
+      "energy": "0.0",
+      "k": 6,
+      "n": 21,
+      "stair_value": "10.6919354325"
+    },
+    {
+      "energy": "0.0",
+      "k": 8,
+      "n": 36,
+      "stair_value": "17.6320895308"
+    },
+    {
+      "energy": "0.0",
+      "k": 10,
+      "n": 55,
+      "stair_value": "24.7438604602"
+    },
+    {
+      "energy": "0.0",
+      "k": 12,
+      "n": 78,
+      "stair_value": "31.910464662"
+    }
+  ],
+  "checks": [
+    {
+      "check": "R1_the_staircase_sits_at_zero_energy_at_triangular_n",
+      "detail": "at n = T_k the staircase has H = H_min exactly, so E = 0 and its value is R alone \u2014 verified at k = 6, 8, 10, 12 (max |E| < 1e-25). This is the calibration the search is measured against: any configuration it finds must beat this to be worth reporting.",
+      "pass": true
+    },
+    {
+      "check": "R2_local_search_over_beta_sets_at_fixed_n",
+      "detail": "the search maximises the EXACT R - E over l-row beta-sets, so every value is attained by a real partition and is a lower bound on M_n. It beat the staircase at 5 of the 5 triangular n tested. Ratios to sqrt(n): 2.96232, 3.69141, 4.07442, 4.44996, 4.66672.",
+      "pass": true
+    },
+    {
+      "check": "R3_the_excess_over_the_staircase_is_small_and_roughly_FLAT",
+      "detail": "the search beats the staircase at every triangular n tested, so the maximiser is NOT the staircase \u2014 but it beats it by only 0.804-2.63% (1.00804, 1.02166, 1.02627, 1.02603, 1.02071), and that excess is FLAT across n = 36..630 rather than growing.\n\n        **That locates the coefficient near the LOWER end of the bracket.** If the excess persists at its late-n mean 1.02434, the limit is about 5.21996 \u2014 against the staircase's 5.09595 and the row-tangent bound's lower band edge 8.72769. So the ~1.7x width of the bracket is mostly SLACK IN THE BOUND, not headroom in the truth.\n\n        A projection from five points, not a limit. The ratios to sqrt(n) are themselves still climbing (2.96232, 3.69141, 4.07442, 4.44996, 4.66672), exactly as #7065 measured for the staircase alone (4.466 at n = 435 against its proved 5.0959) \u2014 so a finite-n ratio below 5.0959 is expected and is NOT evidence against the limit. What is measured here is the RATIO of two such sequences, in which that common slow convergence largely cancels; that is why the excess is readable at n where the ratios are not.",
+      "pass": true
+    },
+    {
+      "check": "R4_verdict_what_is_narrowed_and_what_is_not",
+      "detail": "**The bracket is [5.09595, 8.80147] and this probe does not close it \u2014 but it says which END the truth is near.** The maximiser is NOT the staircase: the best configuration sits l - k = 1, 2, 2, 3, 3 rows above it, so the coefficient is strictly above A*sqrt2 in the limit unless that excess vanishes. Yet it beats the staircase by only ~2.43%, FLAT in n, projecting a coefficient near 5.21996. Against the row-tangent bound's 8.72769 that says the ~1.7x width of the bracket is mostly SLACK IN THE BOUND, not headroom in M_n \u2014 so the next gain is in tightening the bound, not in searching harder for shapes.\n\n        **The asymmetry is load-bearing and is why no upper claim is made here.** Every value found is attained by a real partition, so it can only RAISE the lower end; a failure to find better is not evidence the maximum is lower, only that the search missed. Closing the bracket from above needs the row-tangent bound tightened, not more search.\n\n        Discipline: proton pin verified by value (1.10997858275); no Markov parameter in this cone, so convention C/D does not arise; exact integers for n and H.",
+      "pass": true
+    }
+  ],
+  "checks_passed": 4,
+  "checks_total": 4,
+  "computedAt": "2026-10-13T15:52:32.980201+00:00",
+  "dps": 40,
+  "probe": "rev_coefficient_lower_bound_probe",
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561",
+  "q0_anchor": "physical_proton",
+  "row_tangent_band": [
+    "8.7276856682428095186",
+    "8.8014656991346307554"
+  ],
+  "search_rows": [
+    {
+      "best_ell": 9,
+      "best_found": "17.7739206137",
+      "ell_minus_k": 1,
+      "excess_over_staircase": "1.0080439",
+      "k": 8,
+      "n": 36,
+      "over_sqrt_n": "2.9623201",
+      "r": 0,
+      "stair_value": "17.63208953"
+    },
+    {
+      "best_ell": 14,
+      "best_found": "32.6016394128",
+      "ell_minus_k": 2,
+      "excess_over_staircase": "1.0216598",
+      "k": 12,
+      "n": 78,
+      "over_sqrt_n": "3.6914088",
+      "r": 0,
+      "stair_value": "31.91046466"
+    },
+    {
+      "best_ell": 18,
+      "best_found": "47.5154869111",
+      "ell_minus_k": 2,
+      "excess_over_staircase": "1.0262735",
+      "k": 16,
+      "n": 136,
+      "over_sqrt_n": "4.0744194",
+      "r": 0,
+      "stair_value": "46.29904927"
+    },
+    {
+      "best_ell": 27,
+      "best_found": "77.0755262661",
+      "ell_minus_k": 3,
+      "excess_over_staircase": "1.0260253",
+      "k": 24,
+      "n": 300,
+      "over_sqrt_n": "4.4499576",
+      "r": 0,
+      "stair_value": "75.1204956"
+    },
+    {
+      "best_ell": 38,
+      "best_found": "117.133813338",
+      "ell_minus_k": 3,
+      "excess_over_staircase": "1.0207077",
+      "k": 35,
+      "n": 630,
+      "over_sqrt_n": "4.6667228",
+      "r": 0,
+      "stair_value": "114.7574476"
+    }
+  ],
+  "staircase_limit_A_sqrt2": "5.0959456500661407443"
+}

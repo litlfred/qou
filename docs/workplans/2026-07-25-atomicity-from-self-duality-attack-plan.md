@@ -52,7 +52,7 @@ conditional is honest, and T3 discharges it for real.
 
 ## Cross-references
 
-- Order-side (done): [`AtomicityRankOneOrderSeparation.lean`](../../content/quantum-observable-universe/lean/QOU/ParticleInteractions/AtomicityRankOneOrderSeparation.lean), [`2026-07-25-atomicity-rankone-order-separation.md`](../audits/2026-07-25-atomicity-rankone-order-separation.md)
-- Axioms: [`fundamental-object.lean`](../../content/quantum-observable-universe/quantum-universes/fundamental-object.lean) (volume form), [`tannaka-dual.md`](../../content/quantum-observable-universe/quantum-universes/tannaka-dual.md)
+- Order-side (done): [`AtomicityRankOneOrderSeparation.lean`](../../folio/quantum-observable-universe/lean/QOU/ParticleInteractions/AtomicityRankOneOrderSeparation.lean), [`2026-07-25-atomicity-rankone-order-separation.md`](../audits/2026-07-25-atomicity-rankone-order-separation.md)
+- Axioms: [`fundamental-object.lean`](../../folio/quantum-observable-universe/quantum-universes/fundamental-object.lean) (volume form), [`tannaka-dual.md`](../../folio/quantum-observable-universe/quantum-universes/tannaka-dual.md)
 - Sibling route: #4266 (`qou-ngwo`)
 - Mathlib: `Mathlib.LinearAlgebra.SymplecticGroup` (`symplecticGroup`, `mem_iff`, `symplectic_det`)

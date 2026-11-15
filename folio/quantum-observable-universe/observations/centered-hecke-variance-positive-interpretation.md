@@ -1,0 +1,1 @@
+**Significance for the q-CLT.** The second free cumulant $\kappa_2^{(q)} = \mathrm{Var}(\sigma_i)$ prevents q-Gaussian degeneration. This guarantees a non-degenerate q-CLT limit for every real $q > 0$, where the convention-D Markov trace is a positive state.

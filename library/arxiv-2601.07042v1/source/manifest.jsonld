@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2601.07042v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "A Tannakian description of the local Kaletha gerbe (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2601.07042v1",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2601.07042&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2601.07042v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2601.07042v1",
+    "content_type": "application/gzip",
+    "sha256": "9a25349f92e1091067928c09d6f66d9d9e252f9241a6fc1f472327b242ec8144",
+    "bytes": 34593,
+    "fetched": "2026-10-10T15:22:12+00:00",
+    "files": [
+      {
+        "path": "source/files/localKal-7.tex",
+        "role": "tex",
+        "sha256": "feea95857b09226bb8b366b25a514ad443ac2be5c1cb0f7020062b533d4e91e3",
+        "bytes": 116711
+      },
+      {
+        "path": "source/files/localKal.bib",
+        "role": "bib",
+        "sha256": "2da370c73c2229b08e4bad8d7b8c653c5c98fc2cf20808b25d5bb113a00bb5c3",
+        "bytes": 7341
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

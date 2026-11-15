@@ -1,0 +1,383 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1211.1525v2",
+ "source": {
+  "file": "1211.1525v2.pdf",
+  "sha256": "51ff1c8f90c025a406a8ec584bf032174c5b5eb6656eab4373950c86dd06f2e1",
+  "bytes": 436313,
+  "pages": 31,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T16:28:27Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1211.1525",
+   "version": "2",
+   "primary_class": "math-ph",
+   "stamp_date": "23 Apr 2013"
+  },
+  "doi": null,
+  "title": "PARTIAL TRANSPOSE OF RANDOM QUANTUM STATES: EXACT FORMULAS AND MEANDERS",
+  "authors_raw": "MOTOHISA FUKUDA AND PIOTR \u015aNIADY",
+  "title_lines": [
+   "PARTIAL TRANSPOSE OF RANDOM QUANTUM STATES:",
+   "EXACT FORMULAS AND MEANDERS"
+  ],
+  "abstract": "We investigate the asymptotic behavior of the empirical eigenvalues distribution of the partial transpose of a random quantum state. The limiting distribution was previously investigated via Wishart random matrices indirectly (by approximating the matrix of trace 1 by the Wishart matrix of random trace) and shown to be the semicircular distribution or the free difference of two free Poisson distributions, de- pending on how dimensions of the concerned spaces grow. Our use of Wishart matrices gives exact combinatorial formulas for the moments of the partial transpose of the random state. We \ufb01nd three natural asymp- totic regimes in terms of geodesics on the permutation groups. Two of them correspond to the above two cases; the third one turns out to be a new matrix model for the meander polynomials. Moreover, we prove the convergence to the semicircular distribution together with its extreme eigenvalues under weaker assumptions, and show large deviation bound for the latter.",
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.12",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20181103191453Z"
+  },
+  "title_raw": "PARTIAL TRANSPOSE OF RANDOM QUANTUM STATES: EXACT FORMULAS AND MEANDERS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "PARTIAL TRANSPOSE OF RANDOM QUANTUM STATES: EXACT FORMULAS AND MEANDERS 1. I NTRODUCTION In this paper, we investigate asymptotic behavior of the empirical eigenvalues distribution of the partial transpose of the random quantum state (positive semide\ufb01nite Hermitian matrix of trace one). This problem",
+   "outline": "1. Introduction",
+   "text": "PARTIAL TRANSPOSE OF RANDOM QUANTUM STATES: EXACT FORMULAS AND MEANDERS",
+   "corroborated_by": [],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Free probability, noncrossing partitions and permutations",
+   "page": 3,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Meanders",
+   "page": 7,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Our model",
+   "page": 8,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Moments of",
+   "page": 8,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 1,
+   "title": "The case when dimensions of environment and both system parts are large",
+   "page": 10,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Limiting eigenvalues",
+   "page": 11,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Behavior of extreme eigenvalues",
+   "page": 12,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 1,
+   "title": "The case when the environment space is fixed and its connection to Meanders",
+   "page": 17,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Our model",
+   "page": 17,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Random pure states",
+   "page": 18,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Meander polynomials with our model",
+   "page": 19,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 1,
+   "title": "The case when one of the system parts is fixed",
+   "page": 21,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Concluding remark",
+   "page": 23,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Appendix A. Lemmas for Section ??",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix B. Measure concentration",
+   "page": 29,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 29,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 30,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1104,
+   "n_words": 170
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 4310,
+   "n_words": 703
+  },
+  {
+   "id": "sec-001-2-preliminaries",
+   "number": "2",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-002-21-free-probability-noncrossing-partitions-and-p",
+   "number": "2.1",
+   "title": "Free probability, noncrossing partitions and permutations",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 7,
+   "n_chars": 6576,
+   "n_words": 1304
+  },
+  {
+   "id": "sec-003-22-meanders",
+   "number": "2.2",
+   "title": "Meanders",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1183,
+   "n_words": 209
+  },
+  {
+   "id": "sec-004-23-our-model",
+   "number": "2.3",
+   "title": "Our model",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 888,
+   "n_words": 161
+  },
+  {
+   "id": "sec-005-24-moments-of",
+   "number": "2.4",
+   "title": "Moments of",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 2872,
+   "n_words": 584
+  },
+  {
+   "id": "sec-006-3-the-case-when-dimensions-of-environment-and-bo",
+   "number": "3",
+   "title": "The case when dimensions of environment and both system parts are large",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 824,
+   "n_words": 144
+  },
+  {
+   "id": "sec-007-31-limiting-eigenvalues",
+   "number": "3.1",
+   "title": "Limiting eigenvalues",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 2482,
+   "n_words": 483
+  },
+  {
+   "id": "sec-008-32-behavior-of-extreme-eigenvalues",
+   "number": "3.2",
+   "title": "Behavior of extreme eigenvalues",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 17,
+   "n_chars": 7459,
+   "n_words": 1531
+  },
+  {
+   "id": "sec-009-4-the-case-when-the-environment-space-is-fixed-a",
+   "number": "4",
+   "title": "The case when the environment space is fixed and its connection to Meanders",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 22,
+   "n_words": 3
+  },
+  {
+   "id": "sec-010-41-our-model",
+   "number": "4.1",
+   "title": "Our model",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 1625,
+   "n_words": 319
+  },
+  {
+   "id": "sec-011-42-random-pure-states",
+   "number": "4.2",
+   "title": "Random pure states",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 2899,
+   "n_words": 536
+  },
+  {
+   "id": "sec-012-43-meander-polynomials-with-our-model",
+   "number": "4.3",
+   "title": "Meander polynomials with our model",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 21,
+   "n_chars": 2579,
+   "n_words": 477
+  },
+  {
+   "id": "sec-013-5-the-case-when-one-of-the-system-parts-is-fixed",
+   "number": "5",
+   "title": "The case when one of the system parts is fixed",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 23,
+   "n_chars": 2006,
+   "n_words": 382
+  },
+  {
+   "id": "sec-014-6-concluding-remark",
+   "number": "6",
+   "title": "Concluding remark",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 29,
+   "n_chars": 8898,
+   "n_words": 1870
+  },
+  {
+   "id": "sec-015-appendix-b-measure-concentration",
+   "number": null,
+   "title": "Appendix B. Measure concentration",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 29,
+   "n_chars": 1233,
+   "n_words": 241
+  },
+  {
+   "id": "sec-016-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 30,
+   "n_chars": 524,
+   "n_words": 82
+  },
+  {
+   "id": "sec-017-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 3225,
+   "n_words": 408
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 19,
+  "toc_inferred_entries": 0,
+  "sections": 19,
+  "chars_total": 50709
+ }
+}

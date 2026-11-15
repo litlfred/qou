@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/2018sorus020/blocks/prose-sec-016",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/2018sorus020/blocks/prose-sec-016",
   "kind": "prose",
-  "title": "The tautological representation",
-  "pageStart": 25,
-  "pageEnd": 25,
-  "text": "../sections/sec-016-117-the-tautological-representation.md",
-  "derivedFrom": "library/2018sorus020/manifest",
-  "sourceDocument": "library/2018sorus020/manifest",
+  "title": "Group acting on a tree and splitting",
+  "pageStart": 34,
+  "pageEnd": 36,
+  "text": "../sections/sec-016-135-group-acting-on-a-tree-and-splitting.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/2018sorus020",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/2018sorus020",
   "provenance": "ingested"
 }

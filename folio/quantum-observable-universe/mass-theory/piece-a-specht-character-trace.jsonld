@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/lem-piece-a-specht-character-trace",
+  "@type": [
+    "folio-assistant-core:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:piece-a-specht-character-trace",
+  "kind": "lemma",
+  "title": "Trace of the central element $C_2 = \\sum_i L_i^2$ on $S^\\mu$ and on the regular representation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-jucys-murphy-central-elements-qou"
+  ],
+  "cites": [
+    "references/macdonald1995",
+    "references/jucys1974",
+    "references/murphy1992"
+  ],
+  "tags": [
+    "piece-a",
+    "jucys-murphy",
+    "central-element",
+    "specht-module",
+    "regular-representation",
+    "artin-wedderburn",
+    "cell-content"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.PieceA.trace_centralC2_specht_module",
+  "text": "piece-a-specht-character-trace.md",
+  "provenance": "authored"
+}

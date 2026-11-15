@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-feynman-eigenbasis",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:feynman-eigenbasis",
+  "kind": "remark",
+  "title": "Feynman path integrals, eigenbases, and finiteness",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-knot-eigenbasis-complete",
+    "papers/quantum-observable-universe/blocks/rem-skein-mass-relation",
+    "papers/quantum-observable-universe/blocks/rem-r-matrix-braiding"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-braid-action-tensor",
+  "tags": [
+    "path-integral",
+    "feynman",
+    "categorical-trace",
+    "mass"
+  ],
+  "text": "feynman-eigenbasis.md",
+  "provenance": "authored"
+}

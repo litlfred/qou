@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1801.05145v1/blocks/prose-sec-019",
+  "kind": "prose",
+  "title": "Quantum minors and T-systems",
+  "pageStart": 66,
+  "pageEnd": 70,
+  "text": "../sections/sec-019-9-quantum-minors-and-t-systems.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1801.05145v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1801.05145v1",
+  "provenance": "ingested"
+}

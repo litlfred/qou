@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/fulltext/blocks/prose-sec-010",
+  "kind": "prose",
+  "title": "References",
+  "pageStart": 61,
+  "pageEnd": 63,
+  "text": "../sections/sec-010-references.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/fulltext",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/fulltext",
+  "provenance": "ingested"
+}

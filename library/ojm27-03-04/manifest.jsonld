@@ -1,21 +1,27 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ojm27-03-04/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Hyperbolic 3-manifolds with totally geodesic boundary",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ojm27-03-04",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "ojm27-03-04",
   "contains": [
+    "library/ojm27-03-04/sections/sec-front-matter",
     "library/ojm27-03-04/sections/sec-000",
     "library/ojm27-03-04/sections/sec-001",
     "library/ojm27-03-04/sections/sec-002",
-    "library/ojm27-03-04/sections/sec-003",
-    "library/ojm27-03-04/sections/sec-004",
-    "library/ojm27-03-04/sections/sec-005"
+    "library/ojm27-03-04/sections/sec-003"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "ojm27-03-04",
+    "title_source": "slug",
     "source_file": "ojm27_03_04.pdf",
     "source_sha256": "b357cc8378dae3fdb81346201aac1ad1895fea5de9d204b9e885950eae2e2c96",
     "pages": 17,

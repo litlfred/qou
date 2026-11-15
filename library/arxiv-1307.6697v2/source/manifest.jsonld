@@ -1,0 +1,64 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1307.6697v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1307.6697v2 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1307.6697v2",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1307.6697&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1307.6697v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1307.6697v2",
+    "content_type": "application/gzip",
+    "sha256": "219f306fb6892b241d38934ca39dc94672926309a82d10a762f666607a6a934b",
+    "bytes": 145732,
+    "fetched": "2026-10-10T15:08:33+00:00",
+    "files": [
+      {
+        "path": "source/files/calculs0-I.tex",
+        "role": "tex",
+        "sha256": "9d143cacd0f35f8ed67fb8900ed71b20f40a19244a5b11949e356e3e427f9511",
+        "bytes": 39588
+      },
+      {
+        "path": "source/files/calculs0-II.tex",
+        "role": "tex",
+        "sha256": "a9e496f9f0e3cc3a5dbed431b21aa69eed7631a4d5064b5568b62f94890228f8",
+        "bytes": 24036
+      },
+      {
+        "path": "source/files/calculs0-III.tex",
+        "role": "tex",
+        "sha256": "12f0b1f774c15e20eedfcfb52d65550d55e97a883847b068fc62b2b094a6abb6",
+        "bytes": 49264
+      },
+      {
+        "path": "source/files/calculs0.bbl",
+        "role": "bbl",
+        "sha256": "231f1a8282257b62bdbd4d11e34be2a88e50f3a087ddf532e65a1b846b0c9ee6",
+        "bytes": 4090
+      },
+      {
+        "path": "source/files/calculs0.tex",
+        "role": "tex",
+        "sha256": "08d7fe2e0eb3a67caf71a7b758f1b5d4b3b80cf645fa0416dbb2158279dc3a8c",
+        "bytes": 10431
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

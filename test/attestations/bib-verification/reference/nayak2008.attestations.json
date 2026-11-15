@@ -1,0 +1,49 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "nayak2008",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 48,
+      "entry": {
+        "id": "nayak2008",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T15:57:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 2,
+        "fix_commit": null,
+        "note": "PDF verified: 'Non-Abelian Anyons and Topological Quantum Computation' by Nayak, Simon, Stern, Freedman, Das Sarma, arXiv:0707.1889. Anyons review \u2014 matches references.ts.",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/nayak2008.pdf"
+        },
+        "local_pdf": "uploads/nayak2008.pdf",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Join CORRECT (arXiv:0707.1889v2, the Rev. Mod. Phys. non-Abelian-anyons review, matching the registered entry's authors and DOI). Not in the working tree on this branch; recovered from intake commit 8a138ba2f3, sha matches. Cited at folio/quantum-observable-universe/nuclear-interactions/root-of-unity-mtc-truncation.ts:14 and hecke-anyonic-substrate.ts:15, with matching \\cite{kitaev2006, nayak2008} in both .md files, plus Lean References mentions at lean/QOU/IwahoriHecke/Tw.lean:70, BraidKnot/RootOfUnityMTCTruncation.lean:42 and BraidKnot/HeckeAnyonicSubstrate.lean:49. The citations are accurate but definitional: both blocks cite it for 'the simple objects of MTC_k are non-abelian anyons' and 'every particle in the substrate is an anyon', which is exactly what this review is a standard source for. No result of the review is consumed - not the nu = 5/2 Moore-Read identification, not the Fibonacci-anyon universality, not the braiding-gate constructions. Supporting rather than core: it establishes vocabulary, and both host blocks are conjectures whose actual load is carried by bakalovkirillov2001, khovanovlauda2009 and kashiwara1991.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Background citation, correctly placed and correctly scoped. Nothing to add or move.",
+              "target": "conj:hecke-anyonic-substrate"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "9e912c51f931"
+        }
+      }
+    }
+  ]
+}

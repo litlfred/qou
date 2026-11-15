@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-9310070v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Quantum dilogarithm",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9310070v1",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-hep-th-9310070v1",
   "contains": [
     "library/arxiv-hep-th-9310070v1/sections/sec-000",
     "library/arxiv-hep-th-9310070v1/sections/sec-001",
@@ -13,8 +18,17 @@
     "library/arxiv-hep-th-9310070v1/sections/sec-004"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:hep-th/9310070&metadataPrefix=arXiv), submitted 1993-10-13, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-hep-th-9310070v1",
+    "title_source": "slug",
     "source_file": "9310070v1.pdf",
     "source_sha256": "b979ebf2f47a465388a723997e70cc863ce0a1ecc5f8a049d195b24014ff08b6",
     "pages": 9,

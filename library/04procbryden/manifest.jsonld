@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/04procbryden/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Some computations of Ohtsuki series",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/04procbryden",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "cofor.dvi",
   "contains": [
     "library/04procbryden/sections/sec-000",
     "library/04procbryden/sections/sec-001",
@@ -23,8 +28,11 @@
     "library/04procbryden/sections/sec-014"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "04procbryden",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "04procbryden.pdf",
     "source_sha256": "8baffbc6542c34a52724236a5986f58cc30248251dd7d4257f88533feea456c0",
     "pages": 18,

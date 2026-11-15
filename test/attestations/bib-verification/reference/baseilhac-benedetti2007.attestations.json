@@ -1,0 +1,130 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "baseilhac-benedetti2007",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 185,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-math-0611504v1/0611504v1.pdf"
+        },
+        "id": "baseilhac-benedetti2007",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "The systematic construction (QHFT, indexed by odd N, built on matrix dilogarithms) behind the Kashaev-type invariants the folio uses informally in def:quantum-bloch-group and rem:quantum-bloch-group-framework-connection, and it supplies the surgery formulas and cusped-manifold invariants that those blocks describe in prose. It is background/technique: no QOU quantity is computed from it, and 'matrix dilogarithm' appears nowhere in the corpus (0 hits), so nothing here is currently load-bearing. Registering it would give the quantum-Bloch-group cluster a proper framework citation instead of only Kashaev/Faddeev primary sources.",
+          "keyResults": [
+            {
+              "locator": "Section 2.1 'Building blocks' + section 5.2 'Amplitudes'",
+              "statement": "For each odd N >= 1, a QHFT assigns to a marked bordism (Y, L_F, rho) with an arbitrary PSL(2,C)-character a tensor built from matrix dilogarithms, holomorphic in the boundary parameters.",
+              "useForFolio": "The functorial, character-parametrized home for the folio's 'traced volumes V-hat_i(q) satisfy the pentagon identity, so their product lives in the quantum Bloch group' argument. Cite as the framework reference where def:quantum-bloch-group introduces the state-sum/Kashaev invariant.",
+              "targets": [
+                "def:quantum-bloch-group",
+                "rem:quantum-bloch-group-framework-connection"
+              ]
+            },
+            {
+              "locator": "Section 6.2 'Invariants of cusped manifolds and surgery formulas'",
+              "statement": "Surgery formulas for the QHFT partition functions, and their relation to the quantum hyperbolic invariants of cusped 3-manifolds.",
+              "useForFolio": "The multi-cusp / surgery bookkeeping the folio's one-loop work reimplements by hand (computations/one_loop_torsion.py explicitly DERIVES the multi-cusp case because Dimofte-Garoufalidis left it out). Worth reading against that derivation as an independent structural check -- NOT as a substitute for it, since the QHG partition function is not the DG 1-loop determinant.",
+              "targets": [
+                "computations/one_loop_torsion.py"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "No ref() entry; supplies the framework citation the quantum-Bloch-group cluster lacks.",
+              "target": "folio/schema/references.ts (added as baseilhac-benedetti2007, the AGT published version; library/arxiv-math-0611504v1 is the same work)",
+              "bean": "qou-uoeb"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "def:quantum-bloch-group describes the state-sum/Kashaev construction in prose with primary-source citations only; this is the framework it sits in.",
+              "target": "def:quantum-bloch-group",
+              "bean": "qou-jsm0"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T16:12:29.859Z",
+          "source_sha": "a33d2771c873"
+        },
+        "note": "Bib key backfilled from duplicate copy of agt-v7-n2-p13-s, which carries this key. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    },
+    {
+      "position": 370,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/agt-v7-n2-p13-s/agt-v7-n2-p13-s.pdf"
+        },
+        "id": "baseilhac-benedetti2007",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Constructs quantum hyperbolic field theories indexed by odd N: (2+1)-dimensional theories assigning to a marked bordism with a framed tangle and a PSL(2,C)-character a tensor built out of matrix dilogarithms, holomorphic in the boundary parameters, with surgery formulas for the partition functions. At N = 1 the tensors are scalars and coincide with the Cheeger-Chern-Simons invariants of PSL(2,C)-characters on closed or cusped hyperbolic manifolds. This is the foundational construction underlying library/4geo-dedi-rev/4GEO-DEDI-REV.pdf in the same slice. Supporting: the folio has no reference at all for quantum hyperbolic geometry despite working the odd-root-of-unity state-sum face, and the N = 1 to Cheeger-Chern-Simons reduction is the literature statement nearest to the corpus's complex-volume observable -- but no corpus derivation consumes a QHFT theorem, and the corpus computes no bordism partition functions.",
+          "keyResults": [
+            {
+              "locator": "Abstract + Sect. 1 (the N = 1 case)",
+              "statement": "At N = 1 the QHFT tensors are scalar-valued and coincide with the Cheeger-Chern-Simons invariants of PSL(2,C)-characters on closed manifolds and cusped hyperbolic manifolds.",
+              "useForFolio": "Places the corpus's fraktur-V = Vol + i CS observable in a family whose N > 1 members are the root-of-unity state sums the folio's Faddeev face uses, i.e. an explicit statement that the classical complex volume is the N = 1 member of the quantum tower. Relevant to conj:borromean-bloch-group-element, whose regulator claim is a Cheeger-Chern-Simons-class statement.",
+              "targets": [
+                "conj:borromean-bloch-group-element"
+              ]
+            },
+            {
+              "locator": "Sect. 1 (surgery formulas)",
+              "statement": "Surgery formulas for the QHFT partition functions, and their relation to the quantum hyperbolic invariants of cusped hyperbolic 3-manifolds.",
+              "useForFolio": "The cut-and-paste behaviour the corpus would need if it ever computed its complex-volume observable by decomposition rather than as a single Markov trace; currently the folio has no cut-and-paste story for fraktur-V.",
+              "targets": [
+                "conj:binding-qbeta-complex-volume"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "No ref() entry, and no quantum-hyperbolic-geometry reference of any kind exists in the corpus.",
+              "target": "conj:borromean-bloch-group-element",
+              "bean": "qou-ps5c"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "Record that the corpus's complex-volume observable has a published quantum tower above it whose N = 1 member is the Cheeger-Chern-Simons invariant. Kept as new-remark rather than cite-in-block on conj:binding-qbeta-complex-volume because the corpus's fraktur-V is defined as a Markov-trace expression and is only conjecturally the geometric complex volume; asserting the tower relation as established would smuggle in that conjecture.",
+              "target": "conj:binding-qbeta-complex-volume",
+              "bean": "qou-u62r"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "affd571adbaa"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-dim-master-pentagon",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:dim-master-pentagon",
+  "kind": "conjecture",
+  "title": "Ding–Iohara–Miki master Pentagon as unified ancestor of Macdonald + $q$-dilog Pentagons",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-macdonald-hook-telescope",
+    "papers/quantum-observable-universe/blocks/conj-pachner-pentagon-borromean",
+    "papers/quantum-observable-universe/blocks/conj-borromean-bloch-group-element"
+  ],
+  "cites": [
+    "references/ding-iohara1997",
+    "references/miki2007",
+    "references/feigin-hashizume2009"
+  ],
+  "tags": [
+    "tier:S",
+    "dim-algebra",
+    "master-pentagon",
+    "duality-d17",
+    "macdonald",
+    "q-dilogarithm",
+    "research-grade",
+    "axiom-class",
+    "open-problem"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.DimMasterPentagon",
+  "text": "dim-master-pentagon.md",
+  "leanSource": "dim-master-pentagon.lean",
+  "provenance": "authored"
+}

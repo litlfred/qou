@@ -51,7 +51,7 @@ import re
 import sys
 
 REPO = pathlib.Path(__file__).resolve().parent.parent
-SCAN_ROOT = REPO / "content"
+SCAN_ROOT = REPO / "folio"
 
 # --- shapes -----------------------------------------------------------------
 # Whitespace-tolerant. `\s*` everywhere because Lean formatting varies.

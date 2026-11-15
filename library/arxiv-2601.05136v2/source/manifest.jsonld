@@ -1,0 +1,58 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2601.05136v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "State integrals for the quantized SL_2(ℂ) Chern-Simons invariant (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2601.05136v2",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2601.05136&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2601.05136v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2601.05136v2",
+    "content_type": "application/gzip",
+    "sha256": "c5ff3c791ed45d7ed2815b95c33cc1dabb912bd5ba10c55d59ea1bd0b59ff2be",
+    "bytes": 33327,
+    "fetched": "2026-10-10T15:22:08+00:00",
+    "files": [
+      {
+        "path": "source/files/macros-integrals.tex",
+        "role": "tex",
+        "sha256": "bae4da3d97ddcf1fe3e320d04932af557763a1be764e23335a45ed7b7d2702ee",
+        "bytes": 5555
+      },
+      {
+        "path": "source/files/paper-integrals.bbl",
+        "role": "bbl",
+        "sha256": "f1de56cfb20cd5d29612ddcf6ef07bb962acd63603c552bf5d0c7074df740ba2",
+        "bytes": 63740
+      },
+      {
+        "path": "source/files/paper-integrals.tex",
+        "role": "tex",
+        "sha256": "fde441f5bd50c207cce9be48fd1c9430fd9589fb3e08e5067cc73961f3ed2829",
+        "bytes": 67073
+      },
+      {
+        "path": "source/files/sl2art.cls",
+        "role": "cls",
+        "sha256": "95d8331e97cbc025f56b6913e0e7c618c80e2c748610bb3b6d6f3f71f0ec323f",
+        "bytes": 6623
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

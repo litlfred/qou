@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0806.3105v3/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0806.3105v3/blocks/prose-sec-003",
   "kind": "prose",
   "title": "The Intepretation of SUq(2) Preons",
   "pageStart": 12,
   "pageEnd": 13,
   "text": "../sections/sec-003-the-intepretation-of-suq2-preons.md",
-  "derivedFrom": "library/arxiv-0806.3105v3/manifest",
-  "sourceDocument": "library/arxiv-0806.3105v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0806.3105v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0806.3105v3",
   "provenance": "ingested"
 }

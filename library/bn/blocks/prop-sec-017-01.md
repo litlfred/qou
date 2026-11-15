@@ -1,1 +1,0 @@
-If Γ is connected, then ρq is irreducible for all q ⁄= −1.

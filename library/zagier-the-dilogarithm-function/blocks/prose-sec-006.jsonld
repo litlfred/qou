@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/zagier-the-dilogarithm-function/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/zagier-the-dilogarithm-function/blocks/prose-sec-006",
   "kind": "prose",
-  "title": "This paper is a revised version of a lecture which was given in Bonn on the",
-  "pageStart": 3,
-  "pageEnd": 4,
-  "text": "../sections/sec-006-1-this-paper-is-a-revised-version-of-a-lecture-w.md",
-  "derivedFrom": "library/zagier-the-dilogarithm-function/manifest",
-  "sourceDocument": "library/zagier-the-dilogarithm-function/manifest",
+  "title": "Further aspects of the dilogarithm",
+  "pageStart": 20,
+  "pageEnd": 20,
+  "text": "../sections/sec-006-ii-further-aspects-of-the-dilogarithm.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/zagier-the-dilogarithm-function",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/zagier-the-dilogarithm-function",
   "provenance": "ingested"
 }

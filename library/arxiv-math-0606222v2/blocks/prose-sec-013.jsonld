@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0606222v2/blocks/prose-sec-013",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0606222v2/blocks/prose-sec-013",
   "kind": "prose",
   "title": "Multivariable big q-Jacobi polynomials",
   "pageStart": 27,
   "pageEnd": 29,
   "text": "../sections/sec-013-63-multivariable-big-q-jacobi-polynomials.md",
-  "derivedFrom": "library/arxiv-math-0606222v2/manifest",
-  "sourceDocument": "library/arxiv-math-0606222v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0606222v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0606222v2",
   "provenance": "ingested"
 }

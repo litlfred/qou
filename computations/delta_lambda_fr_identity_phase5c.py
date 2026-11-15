@@ -33,9 +33,14 @@ Compares both:
 The difference between (a) and (b) is the interface-knot contribution
 Δ_I^K from PR #801.
 
-  Ref: [manuscript] conj:delta-lambda-categorical-closure
+  Ref: [manuscript] `delta-lambda-categorical-closure`
   Ref: docs/audits/2026-05-19-delta-lambda-phase5-alpha-derivation-progress.md
   Ref: PR #801 (interface-knot Δ_I^K binding)
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 
@@ -63,11 +68,32 @@ _UPSTREAM_RECORDS: list = []
 # the label problem this sweep exists to remove.
 from q_parameter import Q_50_DIGIT_STR as Q0_STR
 from q_mpmath import set_q, qint
-from _precision import set_compute_dps  # noqa: E402
-set_q(Q0_STR)
+from _precision import set_compute_dps, fmt  # noqa: E402
 
+# ORDER IS LOAD-BEARING: `set_q` builds an `mpf` at the CURRENT `mp.dps`,
+# and mpmath's import-time default is 15.  Calling it before
+# `set_compute_dps()` — as this file did until 2026-09-07 — gave
+# `q_mpmath.Q` only 17 correct digits of the 50-digit anchor (measured:
+# 3.02e-17 absolute, 2.72e-17 relative, i.e. exactly the f64 floor), so
+# `qint(3)` and everything derived from it, `alpha_predicted` included,
+# were f64-limited while `Q0` two lines down was full precision.  Two
+# different q's in one producer, differing at the 17th digit.
 set_compute_dps()
+set_q(Q0_STR)
 Q0 = mp.mpf(str(Q0_STR))
+
+
+def _serialise(obj):
+    """Render mpf leaves with `_precision.fmt`; leave everything else alone."""
+    from _precision import fmt
+    if isinstance(obj, dict):
+        return {k: _serialise(v) for k, v in obj.items()
+                if not k.startswith("_")}
+    if isinstance(obj, list):
+        return [_serialise(v) for v in obj]
+    if isinstance(obj, mp.mpf):
+        return fmt(obj)
+    return obj
 
 # Per-(Z, N) atoms to test
 ATOMS = [
@@ -133,7 +159,16 @@ def compute_tr_M_decomposition(Z: int, N: int, include_inter: bool,
     # call instead of N per-shape FFI crossings (ffi-roundtrip-audit
     # F-A: `chi_lambdas_braid` is rayon-parallel on the Rust side).
     from hecke_characters import chi_lambdas_braid
-    chi_values = chi_lambdas_braid(parts, word_marshalled, q_value=float(Q0))
+    # MPFR, not f64.  This passed `q_value=float(Q0)` until 2026-09-07,
+    # which threw the 50-digit anchor away at the PyO3 boundary and made
+    # every χ_λ — and therefore every number this producer records —
+    # f64-limited; the `mp.mpf(str(chi))` lift below then re-inflated 17
+    # good digits, which is the laundering AGENTS.md forbids.  The exact
+    # route exists (`chi_lambdas_braid_mpfr`, rayon-parallel like the f64
+    # one) and takes the anchor as a STRING so nothing is rounded on the
+    # way in.
+    chi_values = chi_lambdas_braid(parts, word_marshalled,
+                                   q_value=Q0_STR, precision="mpfr_50dps")
     rows = []
     total = mp.mpf(0)
     for lam, chi in zip(parts, chi_values):
@@ -148,20 +183,21 @@ def compute_tr_M_decomposition(Z: int, N: int, include_inter: bool,
         total += c_lam
         rows.append({
             "lambda": list(lam),
-            "y": float(y),
-            "chi": chi,
-            "y_chi": float(c_lam),
-            "abs_y_chi": float(abs(c_lam)),
+            "y": y,
+            "chi": mp.mpf(str(chi)),
+            "y_chi": c_lam,
+            "abs_y_chi": abs(c_lam),
         })
 
-    # Dominant block (largest |y · χ|)
+    # Dominant block (largest |y · χ|) — sorted on the mpf, not on a
+    # float64 shadow of it.
     rows.sort(key=lambda r: -r["abs_y_chi"])
     dominant = rows[0]
     return {
         "Z": Z, "N": N, "n": n, "word_length": len(word_marshalled),
         "include_inter": include_inter,
-        "total_tr_M": float(total),
-        "abs_total_tr_M": float(abs(total)),
+        "total_tr_M": total,
+        "abs_total_tr_M": abs(total),
         "dominant_lambda": dominant["lambda"],
         "dominant_y_chi": dominant["y_chi"],
         "dominant_abs_y_chi": dominant["abs_y_chi"],
@@ -216,16 +252,17 @@ def main() -> int:
             try:
                 result = compute_tr_M_decomposition(Z, N, include_inter, y_at_q0)
                 dt = time.time() - t0
-                print(f"    Took {dt:.2f}s; τ_M = {result['total_tr_M']:+.6f}, "
-                      f"|τ_M| = {result['abs_total_tr_M']:.6f}, "
+                print(f"    Took {dt:.2f}s; "
+                      f"τ_M = {float(result['total_tr_M']):+.6f}, "
+                      f"|τ_M| = {float(result['abs_total_tr_M']):.6f}, "
                       f"dominant λ = {result['dominant_lambda']}")
                 dest[name] = result
             except Exception as e:
                 print(f"    ERR: {type(e).__name__}: {e}")
                 dest[name] = {"error": str(e)}
 
-    builder.add_data("results_full", results_full)
-    builder.add_data("results_constit", results_constit)
+    builder.add_data("results_full", _serialise(results_full))
+    builder.add_data("results_constit", _serialise(results_constit))
 
     # ── FR identity test ──────────────────────────────────────────
     print("\n=== FR-identity test: per-Z step factor ===")
@@ -240,13 +277,13 @@ def main() -> int:
             continue
         for label, results in [("FULL", results_full), ("CONSTIT", results_constit)]:
             try:
-                trM_z1 = mp.mpf(str(results[Z1_name]["total_tr_M"]))
-                trM_z2 = mp.mpf(str(results[Z2_name]["total_tr_M"]))
+                trM_z1 = results[Z1_name]["total_tr_M"]
+                trM_z2 = results[Z2_name]["total_tr_M"]
                 ratio = trM_z2 / trM_z1 if trM_z1 != 0 else mp.mpf("inf")
 
                 # Use |τ_M| ratio (FR identity is for magnitudes)
-                abs_trM_z1 = mp.mpf(str(results[Z1_name]["abs_total_tr_M"]))
-                abs_trM_z2 = mp.mpf(str(results[Z2_name]["abs_total_tr_M"]))
+                abs_trM_z1 = results[Z1_name]["abs_total_tr_M"]
+                abs_trM_z2 = results[Z2_name]["abs_total_tr_M"]
                 abs_ratio = abs_trM_z2 / abs_trM_z1 if abs_trM_z1 != 0 else mp.mpf("inf")
 
                 rel_err_signed = (ratio - alpha_pred) / alpha_pred if alpha_pred != 0 else mp.mpf("inf")
@@ -255,13 +292,13 @@ def main() -> int:
                 fr_tests.append({
                     "transition": f"{Z2_name}/{Z1_name} (N={N_val})",
                     "scope": label,
-                    "tr_M_Z1": float(trM_z1),
-                    "tr_M_Z2": float(trM_z2),
-                    "ratio_signed": float(ratio),
-                    "abs_ratio": float(abs_ratio),
-                    "alpha_pred": float(alpha_pred),
-                    "rel_err_signed": float(rel_err_signed),
-                    "rel_err_abs": float(rel_err_abs),
+                    "tr_M_Z1": trM_z1,
+                    "tr_M_Z2": trM_z2,
+                    "ratio_signed": ratio,
+                    "abs_ratio": abs_ratio,
+                    "alpha_pred": alpha_pred,
+                    "rel_err_signed": rel_err_signed,
+                    "rel_err_abs": rel_err_abs,
                 })
                 print(f"  {label:<8} {Z2_name}/{Z1_name} at N={N_val}: "
                       f"τ ratio = {float(ratio):+.5f}, |τ| ratio = {float(abs_ratio):.5f}, "
@@ -270,7 +307,7 @@ def main() -> int:
             except Exception as e:
                 print(f"  {label} {Z2_name}/{Z1_name}: ERR {e}")
 
-    builder.add_data("fr_identity_tests", fr_tests)
+    builder.add_data("fr_identity_tests", _serialise(fr_tests))
 
     # Cross-check: dominant-block ratio (the |Δ_λ*| analogue)
     print("\n=== Dominant-block ratio test (|Δ_λ*|-style) ===")
@@ -278,21 +315,21 @@ def main() -> int:
     for N_val, (Z1_name, Z2_name) in [(1, ("D", "3He")), (2, ("T", "4He"))]:
         if "error" in results_full.get(Z1_name, {}) or "error" in results_full.get(Z2_name, {}):
             continue
-        abs1 = mp.mpf(str(results_full[Z1_name]["dominant_abs_y_chi"]))
-        abs2 = mp.mpf(str(results_full[Z2_name]["dominant_abs_y_chi"]))
+        abs1 = results_full[Z1_name]["dominant_abs_y_chi"]
+        abs2 = results_full[Z2_name]["dominant_abs_y_chi"]
         ratio = abs2 / abs1 if abs1 != 0 else mp.mpf("inf")
         dominant_tests.append({
             "transition": f"{Z2_name}/{Z1_name} (N={N_val})",
-            "dom_abs_y_chi_Z1": float(abs1),
-            "dom_abs_y_chi_Z2": float(abs2),
-            "dom_ratio": float(ratio),
-            "alpha_pred": float(alpha_pred),
-            "rel_err": float((ratio - alpha_pred) / alpha_pred),
+            "dom_abs_y_chi_Z1": abs1,
+            "dom_abs_y_chi_Z2": abs2,
+            "dom_ratio": ratio,
+            "alpha_pred": alpha_pred,
+            "rel_err": (ratio - alpha_pred) / alpha_pred,
         })
         print(f"  {Z2_name}/{Z1_name} at N={N_val}: "
               f"dominant |y·χ| ratio = {float(ratio):.4f}, vs α_pred = {float(alpha_pred):.4f}; "
               f"rel.err: {float((ratio - alpha_pred)/alpha_pred)*100:+.2f}%")
-    builder.add_data("dominant_block_tests", dominant_tests)
+    builder.add_data("dominant_block_tests", _serialise(dominant_tests))
 
     # ── Primary assertion: z-identity (the proposition's actual claim) ──
     # τ_M(β_K^FULL) / τ_M(β_K^CONSTIT) should equal z exactly per the
@@ -323,8 +360,8 @@ def main() -> int:
         if "error" in results_full.get(atom_name, {}) or "error" in results_constit.get(atom_name, {}):
             continue
         try:
-            tm_full = mp.mpf(str(results_full[atom_name]["total_tr_M"]))
-            tm_constit = mp.mpf(str(results_constit[atom_name]["total_tr_M"]))
+            tm_full = results_full[atom_name]["total_tr_M"]
+            tm_constit = results_constit[atom_name]["total_tr_M"]
             if tm_constit == 0:
                 continue
             ratio = tm_full / tm_constit
@@ -337,40 +374,47 @@ def main() -> int:
                 "atom": atom_name, "A": A,
                 "interfaces_positive": census["pos"],
                 "interfaces_negative": census["neg"],
-                "tau_M_full": float(tm_full), "tau_M_constit": float(tm_constit),
-                "empirical_ratio": float(ratio),
-                "predicted": float(expected),
+                "tau_M_full": tm_full, "tau_M_constit": tm_constit,
+                "empirical_ratio": ratio,
+                "predicted": expected,
                 "predicted_formula": f"z^{census['pos']} · (z-h)^{census['neg']}",
-                "rel_err": float(rel_err),
+                "rel_err": rel_err,
             })
         except Exception as e:
             print(f"  z-ratio test {atom_name}: ERR {e}")
-    builder.add_data("z_ratio_tests", z_ratio_tests)
+    builder.add_data("z_ratio_tests", _serialise(z_ratio_tests))
 
     print("\n=== Markov-axiom interface identity (proposition's content) ===")
     print(f"  Predicted: τ_M(β_K^FULL) / τ_M(β_K^CONSTIT) = z^(# pos) · (z-h)^(# neg)")
     print(f"  per Markov axiom + Hecke skein σ⁻¹ = σ - h·1")
     for t in z_ratio_tests:
         print(f"    {t['atom']} (A={t['A']}, {t['interfaces_positive']} pos + {t['interfaces_negative']} neg): "
-              f"empirical = {t['empirical_ratio']:.8f}, "
-              f"predicted {t['predicted_formula']} = {t['predicted']:.8f}, "
-              f"rel.err = {t['rel_err']:.2e}")
+              f"empirical = {float(t['empirical_ratio']):.8f}, "
+              f"predicted {t['predicted_formula']} = {float(t['predicted']):.8f}, "
+              f"rel.err = {mp.nstr(t['rel_err'], 3)}")
 
     if z_ratio_tests:
         z_max_rel_err = max(t["rel_err"] for t in z_ratio_tests)
         builder.add_assertion(
             "markov_interface_identity_max_rel_err",
-            computed=float(z_max_rel_err),
-            expected=0.0,
-            tolerance=1e-6,  # numerical precision floor of pyhecke_native f64
+            computed=fmt(z_max_rel_err),
+            expected="0",
+            # Unchanged at 1e-6.  It was chosen as "the numerical precision
+            # floor of pyhecke_native f64"; the χ_λ now come from the MPFR
+            # kernel at 50 dps, so the floor has moved down by ~34 orders and
+            # the same bound is a strictly stronger claim than it was.  Not
+            # tightened here — a tolerance is a judgement about what the
+            # proposition asserts, not about what this run happened to reach.
+            tolerance="1e-6",
             unit="rel_err",
             source=(
                 "τ_M(β_K^FULL) / τ_M(β_K^CONSTIT) = z^(# pos σ) · (z-h)^(# neg σ⁻¹) "
                 "per Markov axiom + Hecke skein σ⁻¹ = σ − h·1 "
                 "(prop:interface-knot-markov-z). Verified across "
                 f"{len(z_ratio_tests)} atoms (D, T, ³He, ⁴He); max rel.err. "
-                f"{float(z_max_rel_err) * 1e8:.2f}×10⁻⁸ (well below the "
-                f"f64 numerical floor)."
+                f"{mp.nstr(z_max_rel_err, 4)}, computed with MPFR-50dps "
+                "characters (the f64 kernel this assertion formerly used "
+                "floored the residual at ~1e-15)."
             ),
         )
 
@@ -380,9 +424,9 @@ def main() -> int:
                               if t["scope"] == "FULL")
         builder.add_assertion(
             "fr_identity_max_rel_err_exploratory",
-            computed=float(max_rel_err_abs),
-            expected=0.0,
-            tolerance=10.0,  # very loose — this is exploratory
+            computed=fmt(max_rel_err_abs),
+            expected="0",
+            tolerance="10.0",  # very loose — this is exploratory
             unit="rel_err",
             source=(
                 "EXPLORATORY: FR identity τ_M(β_{Z=2}) / τ_M(β_{Z=1}) "
@@ -402,7 +446,7 @@ def main() -> int:
 
         "framework_doc":
 
-            "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+            "folio/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
 
         "note": "Certifies T_w uniqueness at the abstract empty-constraint SDP level (PR #1537 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md.",
 

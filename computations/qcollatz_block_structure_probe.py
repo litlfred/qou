@@ -2,7 +2,7 @@
 """Block structure of q-Collatz orbits on D_inf, and which heights descend.
 
 Companion to the Lean reduction
-content/quantum-observable-universe/lean/QOU/AppendixSurreals/collatz_block_descent.lean
+folio/quantum-observable-universe/lean/QOU/AppendixSurreals/collatz_block_descent.lean
 (`reaches_cycle_of_block_descent_domainStable`), which weakens the convergence
 requirement from per-STEP descent to per-BLOCK descent. This probe measures what
 the blocks actually look like, and tests candidate N-valued heights against the

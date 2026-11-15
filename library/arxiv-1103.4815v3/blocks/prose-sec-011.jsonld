@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1103.4815v3/blocks/prose-sec-011",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1103.4815v3/blocks/prose-sec-011",
   "kind": "prose",
   "title": "Properties of Principal 2-Bundles",
   "pageStart": 36,
   "pageEnd": 38,
   "text": "../sections/sec-011-62-properties-of-principal-2-bundles.md",
-  "derivedFrom": "library/arxiv-1103.4815v3/manifest",
-  "sourceDocument": "library/arxiv-1103.4815v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1103.4815v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1103.4815v3",
   "provenance": "ingested"
 }

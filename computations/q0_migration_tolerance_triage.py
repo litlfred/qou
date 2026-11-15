@@ -243,7 +243,7 @@ def main() -> int:
     no_assertions = 0
 
     for p in sorted(pathlib.Path(args.root).rglob("*.witness.json")):
-        if "_deprecated" in p.parts:
+        if ("_deprecated" in p.parts or "fsh-guts" in p.parts):
             continue
         r = triage(p)
         if r is None:

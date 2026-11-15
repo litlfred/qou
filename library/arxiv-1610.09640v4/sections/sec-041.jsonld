@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/sections/sec-041",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "From DG Functors to Triangulated Functors",
+  "pageStart": 109,
+  "pageEnd": 110,
+  "contains": [
+    "library/arxiv-1610.09640v4/blocks/prose-sec-041",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-041-01",
+    "library/arxiv-1610.09640v4/blocks/cor-sec-041-02",
+    "library/arxiv-1610.09640v4/blocks/remark-sec-041-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.09640v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.09640v4",
+  "provenance": "ingested"
+}

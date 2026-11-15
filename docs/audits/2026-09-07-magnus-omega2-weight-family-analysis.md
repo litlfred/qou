@@ -16,6 +16,61 @@ choice, and what to do.
 
 ---
 
+> # 🛑 SETTLED — OWNER RULING 2026-09-13: **ADOPT WENZL**
+>
+> This document was written as a decision analysis. **The decision has been
+> made.** The Magnus Ω₂ pairing is
+> $P = \sum_\lambda y_\lambda^{\text{Wenzl}}\,\operatorname{tr}(\rho_\lambda \Omega_{2,\lambda})$.
+> The quantum Plancherel measure is **not** the pairing. Everything below is
+> retained as the reasoning that led there, not as an open question.
+>
+> **What the ruling rests on** is not the argument this document leads with
+> (consistency with production, cross-A comparability). It rests on a
+> derivation that post-dates this document: bean `qou-gba1`. A nucleus is a
+> *link*; a braid word only presents it; and the Markov trace is
+> *characterised* by $\operatorname{tr}(1)=1$, cyclicity, and
+> $\operatorname{tr}_{n+1}(x\sigma_{n-1}) = z\operatorname{tr}_n(x)$. Wenzl
+> realises all three at $z = q^3/(q^2+1)$; Plancherel satisfies neither the
+> first nor the third, **having no $z$ at all** — the ratio it would need moves
+> from $-10.867$ to $+0.179$ between two stabilisations of the same word. The
+> pairing inherits an exact parameter-free stabilisation law under Wenzl,
+> confirmed to a relative **4.4e-141** and falsified at $z=q$ and $z=1$.
+>
+> **The sign never enters that argument**, which is what makes it usable rather
+> than fitting.
+>
+> ## The consequence, which travels with the ruling
+>
+> | atom | $P$ (Wenzl, **adopted**) | $P$ (Plancherel, rejected) |
+> |---|---:|---:|
+> | deuteron | −6.921 | −15.095 |
+> | triton | **−13.931** | +2.470 |
+> | ⁴He | **−20.466** | +34.126 |
+>
+> ```
+> adopted    −, −, −    NO sign change anywhere in A = 2, 3, 4
+> rejected   −, +, +    one sign change, deuteron → triton
+> ```
+>
+> **Under the adopted measure the programme's target A-dependent sign change is
+> NOT exhibited in A = 2, 3, 4.** Cite that wherever the Magnus sign result is
+> cited. The measure was chosen on principle and the phenomenon did not survive
+> it; reporting the ruling without its consequence would be exactly the fitting
+> the ruling exists to avoid.
+>
+> **What survives untouched:** sign-indefiniteness at A=2 — the property that
+> cleared the non-negativity wall $\|F_q\|^2$ could not — holds under *both*
+> weight families and *both* intra-nucleon words, because it is a statement
+> about a commutator's trace pairing. `qou-dp32` is unaffected.
+>
+> Options: A `qou-q2q7` **adopted**; B `qou-94yt` and D `qou-ia4w` **refused**;
+> C `qou-smvw` **subsumed** (both arms are emitted, `headline_pairing` names the
+> adopted one); E `qou-gba1` is the ruling's basis, with its remaining item —
+> identify the functional whose stationarity gives the binding correction —
+> still open but no longer blocking.
+
+---
+
 ## 1. What each object is
 
 **Wenzl $y_\lambda$ — the Markov trace.** The unique trace on $H_n(q)$ with
@@ -74,7 +129,59 @@ Note the largest Wenzl weight, $(6,)$ at 0.45, contributes **nothing**: on a
 Wenzl the entire H₆ signal is carried by three 2-row shapes — (5,1), (4,2),
 (3,3).
 
-### 2.3 The sign is robust at A=2 and **not** at A=3
+### 2.3 The sign is robust at A=2 and **not** at A=3 or A=4
+
+> **🛑 SETTLED 2026-09-12 (PR #7197) — ⁴He is no longer "undetermined", and the
+> answer completes the pattern rather than breaking it.** This section's table
+> and the two open-items that depend on it ("⁴He cannot be judged until its
+> witness is regenerated", §4's "⁴He … is needed before even that is settled")
+> were written while the ⁴He source was 2026-09-04, i.e. pre-ruling. It was
+> regenerated on the canonical word on **2026-09-11** — 77/77 partitions, 8.0 h
+> — and the robustness probe re-run with all three sources post-ruling, so
+> nothing is excluded from the gate for the first time. The corrected row:
+>
+> | atom | source | partitions | Wenzl-nonzero | $P$ Plancherel | $P$ Wenzl | agree? |
+> |---|---|---:|---:|---:|---:|:---:|
+> | ⁴He | **canonical** | 77 | 7 | **+34.126** | **−20.466** | **no** |
+>
+> Full precision: Plancherel `+34.126027285357652927`, Wenzl
+> `−20.466481428076021593`; trace split +33/−42/0×2.
+>
+> **So read the sign columns of the table below, not its rows:**
+>
+> ```
+> Plancherel   −, +, +    one sign change, between deuteron and triton
+> Wenzl        −, −, −    no sign change anywhere in A = 2, 3, 4
+> ```
+>
+> Two consequences, and the second is the one that matters most for this doc.
+>
+> **(1) §4's honest reading gets stronger, not weaker.** It said the sign change
+> is "not *yet* exhibited" at A=3 pending ⁴He. ⁴He has landed and does not
+> rescue it: Wenzl is negative there too. The statement is now **not exhibited
+> at any of A=2,3,4** — and the "yet" should be dropped.
+>
+> **(2) The claim that the choice is NOT URGENT is now FALSE.** §4 and the bean
+> both recorded *"Safe either way: no published conclusion moves, because the
+> sign is robust."* That was load-bearing for deferring the decision, and the
+> measurement has removed it. At A=3 **and** A=4 the weight family determines
+> whether the programme's target phenomenon is present at all. The option
+> ranking (A recommended, C as guard) is unchanged in substance; its urgency is
+> not.
+>
+> **What has NOT changed: Plancherel is not thereby preferred.** It gives the
+> wanted sign at A=3 and again at A=4. Under AGENTS.md §"NO FITTING" that is
+> *selection against the target* — no continuous parameter is tuned and it is
+> still a fit — so being the convenient answer twice is grounds for more
+> suspicion, not less. Decision 1 (which measure is the right pairing for a
+> Magnus Ω₂ question, which is **not** a Markov trace) remains open; bean
+> `qou-za3q`.
+>
+> The −57.803 / −100.827 figures in the table below are the **pre-ruling**
+> values and are kept as the record of what this analysis had available. Do not
+> quote them as current, and note §3's "⁴He magnitude nearly doubles" is
+> computed from them.
+
 
 > **Corrected 2026-09-07, later the same day.** The first version of this
 > section claimed the sign was robust on all three atoms. It was not: two of the

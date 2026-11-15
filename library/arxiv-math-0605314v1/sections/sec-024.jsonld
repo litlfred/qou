@@ -1,19 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-0605314v1/sections/sec-024",
   "@type": [
     "doco:Section"
   ],
-  "title": "Braided Hopf algebra structure for ˜U ev",
-  "pageStart": 13,
-  "pageEnd": 14,
+  "title": "Specializations at roots of unity",
+  "pageStart": 36,
+  "pageEnd": 37,
   "contains": [
-    "library/arxiv-math-0605314v1/blocks/prose-sec-024",
-    "library/arxiv-math-0605314v1/blocks/thm-sec-024-01",
-    "library/arxiv-math-0605314v1/blocks/thm-sec-024-02",
-    "library/arxiv-math-0605314v1/blocks/prop-sec-024-03"
+    "library/arxiv-math-0605314v1/blocks/prose-sec-024"
   ],
-  "derivedFrom": "library/arxiv-math-0605314v1/manifest",
-  "sourceDocument": "library/arxiv-math-0605314v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0605314v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0605314v1",
   "provenance": "ingested"
 }

@@ -1,0 +1,94 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1608.03227v4/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1608.03227v4 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1608.03227v4",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1608.03227&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1608.03227v4",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1608.03227v4",
+    "content_type": "application/gzip",
+    "sha256": "fe222d50f64efcecbb10baa03920ec7b6322374c454556453a8c52d998234556",
+    "bytes": 111591,
+    "fetched": "2026-10-10T15:11:09+00:00",
+    "files": [
+      {
+        "path": "source/files/MF_final_Arxiv.tex",
+        "role": "tex",
+        "sha256": "37f7d0bdee6713cce0a44188a8b976d6aac839c4b265b8abdca41d42797840b9",
+        "bytes": 112800
+      },
+      {
+        "path": "source/files/basdef.tex",
+        "role": "tex",
+        "sha256": "2fec40cd81acd5304477bfb22938987dbd15236aefe38c3f6f05f5c54fdc9429",
+        "bytes": 18962
+      },
+      {
+        "path": "source/files/gendef.tex",
+        "role": "tex",
+        "sha256": "30f900a160f6246017ba096b8411b1640bf7ee25701fa8e3f889aea112722aeb",
+        "bytes": 3943
+      },
+      {
+        "path": "source/files/letdef.tex",
+        "role": "tex",
+        "sha256": "a134fcaa4b0ab29262a10ec0f183a6c36de24fbcf93a5a05897e073b618b67e4",
+        "bytes": 2334
+      },
+      {
+        "path": "source/files/part2_gl.tex",
+        "role": "tex",
+        "sha256": "965c772a862887f0b1be0e6f937dd1fda3bb466b89f8ecf1f26f160b060b277a",
+        "bytes": 51735
+      },
+      {
+        "path": "source/files/part3_gl.tex",
+        "role": "tex",
+        "sha256": "5f60a5afbcb8b786ee05c69fcc6abd93157911c796a820d6ffbd4272586f7ac9",
+        "bytes": 64601
+      },
+      {
+        "path": "source/files/part4_gl.tex",
+        "role": "tex",
+        "sha256": "d5de8f02acaf2b602b25637682f0a59a5c298a894740d9807d80d94b31893d69",
+        "bytes": 33761
+      },
+      {
+        "path": "source/files/part5_gl.tex",
+        "role": "tex",
+        "sha256": "3bae14e52fe92aa94a88dd93301fb5b45aea88ee56be48e02d752fbeb58bef46",
+        "bytes": 48572
+      },
+      {
+        "path": "source/files/part6_gl.tex",
+        "role": "tex",
+        "sha256": "bcbe7637dc459a21efedcc2bf89e6d35b023577bf92301d92bf89fb0d162c218",
+        "bytes": 61160
+      },
+      {
+        "path": "source/files/semlocdef.tex",
+        "role": "tex",
+        "sha256": "939b92858b7bc378732c15c75871c59d33b79b9e892ebc79be4e3664712c2cbb",
+        "bytes": 5876
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

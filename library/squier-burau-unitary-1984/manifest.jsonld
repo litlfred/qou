@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/squier-burau-unitary-1984/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "The Burau representation is unitary",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/squier-burau-unitary-1984",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "squier-burau-unitary-1984",
   "contains": [
     "library/squier-burau-unitary-1984/sections/sec-000",
     "library/squier-burau-unitary-1984/sections/sec-001",
@@ -13,8 +18,10 @@
     "library/squier-burau-unitary-1984/sections/sec-004"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "squier-burau-unitary-1984",
+    "title_source": "slug",
     "source_file": "squier-burau-unitary-1984.pdf",
     "source_sha256": "5087ee3cb48679d1b4a879274d17d3eae09d0dcc90e4cfd5af18c6152a873796",
     "pages": 4,

@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-confinement-sdp",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:confinement-sdp",
+  "kind": "proof",
+  "title": "Proof of confinement sdp",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-confinement-sdp"
+  ],
+  "text": "confinement-sdp-proof.md",
+  "provenance": "authored"
+}

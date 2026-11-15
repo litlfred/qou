@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0710.4310v2/sections/sec-035",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Appendix: Technical Lemmas",
+  "pageStart": 43,
+  "pageEnd": 46,
+  "contains": [
+    "library/arxiv-0710.4310v2/blocks/prose-sec-035"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0710.4310v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0710.4310v2",
+  "provenance": "ingested"
+}

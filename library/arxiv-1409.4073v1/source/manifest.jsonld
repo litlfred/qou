@@ -1,0 +1,64 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1409.4073v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1409.4073v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1409.4073v1",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1409.4073&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1409.4073v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1409.4073v1",
+    "content_type": "application/gzip",
+    "sha256": "11cc0bfcd5b9d4fee4669c5610567ab952f1008e8f5f5d3a19c987334d71e300",
+    "bytes": 59318,
+    "fetched": "2026-10-10T15:09:41+00:00",
+    "files": [
+      {
+        "path": "source/files/extarrow.sty",
+        "role": "sty",
+        "sha256": "d71c49f855b747e5297d2b52015fbbf31e321ede48d2cf70791d5663438c72b9",
+        "bytes": 1597
+      },
+      {
+        "path": "source/files/monoidality.general.bbl",
+        "role": "bbl",
+        "sha256": "258aa86deefd4617151bd5867f4b60ec245a1a09e3ca72ec67157c3655b01c49",
+        "bytes": 3006
+      },
+      {
+        "path": "source/files/monoidality.general.tex",
+        "role": "tex",
+        "sha256": "feea60fb4ac10633f961005026583cc3f2e1d974d74babfef0615132761c5b1c",
+        "bytes": 221775
+      },
+      {
+        "path": "source/files/packages_and_functions.for_preamble.tex",
+        "role": "tex",
+        "sha256": "ec0a964959f4695f70a065d73247db89bc21df63114013274d500e7e40cc47e2",
+        "bytes": 6394
+      },
+      {
+        "path": "source/files/packages_and_functions.tex",
+        "role": "tex",
+        "sha256": "b1fcb91274d32dde0311e9d8d20aa991afceb5160cbe2d073589723e81e3ba11",
+        "bytes": 9422
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

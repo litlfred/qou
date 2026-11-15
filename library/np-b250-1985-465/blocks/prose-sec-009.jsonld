@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/np-b250-1985-465/blocks/prose-sec-009",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/np-b250-1985-465/blocks/prose-sec-009",
   "kind": "prose",
   "title": "Vacuum expectation values",
   "pageStart": 24,
   "pageEnd": 25,
   "text": "../sections/sec-009-9-vacuum-expectation-values.md",
-  "derivedFrom": "library/np-b250-1985-465/manifest",
-  "sourceDocument": "library/np-b250-1985-465/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/np-b250-1985-465",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/np-b250-1985-465",
   "provenance": "ingested"
 }

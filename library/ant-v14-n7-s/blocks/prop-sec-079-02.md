@@ -1,1 +1,1 @@
-Modulo la description de AK fournie par le corollaire 3.8, le morphisme (3-9) envoie
+Soit R un objet de DA´et(k; 3) muni d’une structure de 0W-module. Alors, la composition

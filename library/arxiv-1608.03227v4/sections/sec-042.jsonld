@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1608.03227v4/sections/sec-042",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Reduced convolution with rank 1 matrix factorizations",
+  "pageStart": 46,
+  "pageEnd": 47,
+  "contains": [
+    "library/arxiv-1608.03227v4/blocks/prose-sec-042",
+    "library/arxiv-1608.03227v4/blocks/remark-sec-042-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1608.03227v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1608.03227v4",
+  "provenance": "ingested"
+}

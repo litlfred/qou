@@ -249,27 +249,17 @@ def _y_lambda_at_convention_C_HISTORICAL(
     rapidly.  Set to `os.cpu_count()` (or a smaller value to leave
     cores free) for maximum throughput on the numerical-q path.
 
-    SIDE EFFECT — the FIRST call raises global `mp.dps` to 50
-    ---------------------------------------------------------
-    Measured: a caller holding `mp.dps = 40` gets 50 back after its first
-    `y_lambda_at(...)`.  Subsequent calls leave it alone, so this is a
-    once-per-process effect, not a per-call one.
-
-    The cause is a LAZY IMPORT, not this function's arithmetic: the first
-    call pulls `y_lambda_su_n`, whose module scope runs `set_compute_dps(50)`
-    (`y_lambda_su_n.py:269`).  That call is DELIBERATE AND CORRECT — it must
-    precede the `mpf()` registry literals below it or `REG_ZC` / `REG_ZD` are
-    parsed at mpmath's default 15 dps, rounded to 53 bits, and are already
-    wrong when built; `module_const_precision_audit --strict` flags exactly
-    those two.  Do not "fix" it by removing it.
-
-    It is documented here because the consequence is invisible at the call
-    site: a producer that sets `mp.dps = 40`, calls this, and then records
-    `"compute_dps": mp.dps` writes a witness saying 50 while the file says 40.
-    The values are not wrong — the later arithmetic really does run at 50 —
-    but the declared precision is not the computed precision.  If you need a
-    guaranteed working precision, set it AFTER your first call, or wrap the
-    region in `mp.workdps(...)`.
+    NO SIDE EFFECT on global `mp.dps` (since 2026-10-13)
+    ---------------------------------------------------
+    Until 2026-10-13 the FIRST call ASSIGNED global `mp.dps = 50`, through
+    the lazy import of `y_lambda_su_n`, whose module scope ran
+    `set_compute_dps(50)` so its registry `mpf()` literals were not parsed at
+    15 dps.  That silently LOWERED every caller running at 60/70 (measured:
+    importing this module leaves 70; the first call left 50 for the rest of
+    the process) and raised one running at 40.  `y_lambda_su_n` now builds
+    those literals inside a local `mp.workdps(COMPUTE_DPS)`, so calling this
+    leaves the caller's precision exactly as it was.  The returned weights
+    are computed at the caller's ambient `mp.dps`.
     """
     shapes = [tuple(s) for s in m.partitions_of(n)]
     if q_val is None:

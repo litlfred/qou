@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/afst-2007-6-16-3-665-0/blocks/prose-sec-009",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/afst-2007-6-16-3-665-0/blocks/prose-sec-009",
   "kind": "prose",
-  "title": "Vector bundles andq-diﬀerence modules",
-  "pageStart": 13,
-  "pageEnd": 20,
-  "text": "../sections/sec-009-2-vector-bundles-andq-diﬀerence-modules.md",
-  "derivedFrom": "library/afst-2007-6-16-3-665-0/manifest",
-  "sourceDocument": "library/afst-2007-6-16-3-665-0/manifest",
+  "title": "Global diﬀerence modules",
+  "pageStart": 25,
+  "pageEnd": 30,
+  "text": "../sections/sec-009-4-global-diﬀerence-modules.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/afst-2007-6-16-3-665-0",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/afst-2007-6-16-3-665-0",
   "provenance": "ingested"
 }

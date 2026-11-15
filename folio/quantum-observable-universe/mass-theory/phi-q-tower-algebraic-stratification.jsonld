@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-phi-q-tower-algebraic-stratification",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:phi-q-tower-algebraic-stratification",
+  "kind": "proposition",
+  "title": "Algebraic stratification of the Φ$_q$ tower in $H_n(R, q)$ (no 3-manifold language)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-phi-q-piece"
+  ],
+  "cites": [
+    "references/bokut1978",
+    "references/shirshov1962",
+    "references/jones1987"
+  ],
+  "tags": [
+    "phi-q",
+    "stratification",
+    "hecke-algebra",
+    "gs-filtration",
+    "descent-tower",
+    "no-3-manifold",
+    "narrative-anchor"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.phi_q_tower_algebraic_stratification",
+  "text": "phi-q-tower-algebraic-stratification.md",
+  "provenance": "authored"
+}

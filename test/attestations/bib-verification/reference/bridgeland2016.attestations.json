@@ -1,0 +1,70 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "bridgeland2016",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 253,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1611.03697v5/1611.03697v5.pdf"
+        },
+        "id": "bridgeland2016",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "conj:stokes-dt-bps-bridge asserts S(K) = Omega_DT(K) = dim H_BPS(T[K]) and names Kontsevich-Soibelman for the DT side, but the folio has no reference that DEFINES the object Omega_DT as Stokes data. This paper does exactly that: it isolates 'BPS structure' (Z, Gamma, Omega) as the special case of a KS stability structure that carries DT output, attaches a Riemann-Hilbert problem whose discontinuities along active rays are the BPS automorphisms S(l) (i.e. Stokes factors), and solves it explicitly in the uncoupled case. That is the mathematical content of the folio's asserted identification 'Stokes constant = DT invariant', supplied as a definition-and-theorem rather than a slogan. It supplies no number the folio consumes \u2014 A_omega(4_1) = 3 comes from the certified Garoufalidis-Gu-Marino datum \u2014 so it is supporting, not core. Corpus-grep: no ref() entry; references.ts has the Kontsevich-Soibelman entry but nothing of Bridgeland's.",
+          "keyResults": [
+            {
+              "locator": "Defn 2.1-2.3 + \u00a72.5 eq. (8), \u00a72.7",
+              "statement": "A BPS structure (Z, Gamma, Omega) has active rays with DT(l) = -sum_{Z(gamma) in l} DT(gamma)\u00b7x^gamma and an associated BPS automorphism S(l) in Aut(T); 'integral' BPS structures are those with all Omega(gamma) in Z.",
+              "useForFolio": "The precise mathematical definition of the Omega_DT that conj:stokes-dt-bps-bridge equates with the Stokes constant, including the integrality that the folio's A_omega route relies on when it reads the Stokes matrix entry as a count.",
+              "targets": [
+                "conj:stokes-dt-bps-bridge"
+              ]
+            },
+            {
+              "locator": "Thm 3.2 + Thm 3.4",
+              "statement": "For an uncoupled finite BPS structure the associated Riemann-Hilbert problem has a unique solution, written explicitly as products of gamma functions; the resulting tau-function is given explicitly by the Barnes G-function.",
+              "useForFolio": "A worked case where DT data determines Stokes data uniquely \u2014 the strongest available precedent for the direction the folio's bridge conjecture asserts. Cite as the mathematical status of the bridge in the solvable case; the folio's knot BPS structures are not shown to be uncoupled, so this is context, not a discharge.",
+              "targets": [
+                "conj:stokes-dt-bps-bridge"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Orphan; the bridge conjecture's DT side has no defining reference.",
+              "target": "folio/schema/references.ts (new id, e.g. bridgeland2019rh)",
+              "bean": "qou-31gz"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "conj:stokes-dt-bps-bridge names Omega_DT without a source that defines it as Stokes/RH data; Defn 2.1-2.3 supplies that, and Thm 3.2 supplies the solvable-case precedent.",
+              "target": "conj:stokes-dt-bps-bridge",
+              "bean": "qou-ypge"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T00:00:00Z",
+          "source_sha": "3d7e5a14a079"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

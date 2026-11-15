@@ -1,0 +1,85 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "donagi1997",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 342,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-alg-geom-9705010v1/9705010v1.pdf"
+        },
+        "id": "donagi1997",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "The standard mathematical account of Seiberg-Witten theory as an algebraically integrable system: the SW differential as a meromorphic 1-form whose periods are the special coordinates, the system realised as the Jacobian fibration of a family of spectral curves of meromorphic Higgs bundles, and the linearity of the period map derived from a complex analogue of the Duistermaat-Heckman theorem. The corpus asserts an abelianisation of exactly this shape and it is currently its weakest link: prop:mi-sw-abelianisation claims the nonabelian multiplicative integral restricted to an exceptional divisor abelianises to the n-th prolonged SW period, its authorNotes record that the Lean was a self-assuming projection and is now a class with NO instance, and it sits upstream of the keystone conj:qdifference-kernel-prolongation-symbol. Its siblings prop:sw-period-residue-sum and prop:jet-sw-tau-decomposition cite only seiberg1994 (a physics paper) for lambda_SW. Spectral-curve abelianisation is the mathematics that statement is reaching for, and it is uncited. Corpus-grep over docs/audits/, content/, computations/, docs/coordination/: no Higgs-bundle or spectral-curve treatment exists anywhere in the tree, so this is a genuine absence rather than a duplicate.",
+          "keyResults": [
+            {
+              "locator": "Sect. 2 (Seiberg-Witten Differentials)",
+              "statement": "A Seiberg-Witten differential is a meromorphic 1-form lambda on the family, characterised by the property that its periods furnish the special local coordinates on the base.",
+              "useForFolio": "Gives lambda_SW a mathematical definition, which prop:sw-period-residue-sum and prop:mi-sw-abelianisation use as a primitive with only seiberg1994 behind it.",
+              "targets": [
+                "prop:sw-period-residue-sum",
+                "prop:mi-sw-abelianisation"
+              ]
+            },
+            {
+              "locator": "Sect. 2 (Linearity: complexified Duistermaat-Heckman)",
+              "statement": "Linearity of the period map follows from the existence of the SW differential, via a complex analogue of the Duistermaat-Heckman theorem (proved in the paper as an apparently new result).",
+              "useForFolio": "The corpus's jet/prolongation grading treats the period family as decomposing linearly across vertical degrees (prop:jet-sw-tau-decomposition); this is the classical statement of why period maps of such systems are linear, and is the place to check whether the corpus's decomposition inherits it or assumes it.",
+              "targets": [
+                "prop:jet-sw-tau-decomposition"
+              ]
+            },
+            {
+              "locator": "Sect. 3 (Meromorphic Higgs bundles / The spectral curves)",
+              "statement": "The integrable system is the Jacobian fibration of a family of spectral curves of meromorphic Higgs bundles, with the SW differential induced from the tautological action 1-form.",
+              "useForFolio": "This is the classical abelianisation mechanism -- nonabelian Higgs field to a line bundle on the spectral cover -- i.e. the content an instance of the corpus's MISWAbelianisation class would have to exhibit. Explicitly NOT proposed as aid-proof: the corpus's object is a Yekutieli SURFACE-ordered multiplicative integral over an exceptional divisor with a jet filtration, and none of the spectral-curve hypotheses (a curve, a meromorphic Higgs bundle on it, a spectral cover) has been established there.",
+              "targets": [
+                "prop:mi-sw-abelianisation"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "The folio asserts an SW abelianisation, uses lambda_SW as a primitive, and cites only a physics paper; the mathematical account it is invoking has no ref() entry.",
+              "target": "prop:mi-sw-abelianisation",
+              "bean": "qou-de9n"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "prop:sw-period-residue-sum treats lambda_SW as a given meromorphic 1-form with poles at branch points; the definition and the period-coordinate property come from here.",
+              "target": "prop:sw-period-residue-sum",
+              "bean": "qou-u1fy"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "State what classical SW abelianisation actually is (spectral curve + Jacobian fibration) next to prop:mi-sw-abelianisation's open class, and list what would have to be checked to transport it: whether the exceptional-divisor restriction produces a spectral cover, and whether a surface-ordered MI reduces to a path-ordered one there. This is the honest alternative to claiming the gap is closed.",
+              "target": "prop:mi-sw-abelianisation",
+              "bean": "qou-o35z"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "30ab8d0cc2d8"
+        },
+        "note": "Source IS held: library/arxiv-alg-geom-9705010v1. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
+        "verified_at": "2026-09-03T04:19:53Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

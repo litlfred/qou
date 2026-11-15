@@ -8,18 +8,27 @@ pages: 26-26
 source_pdf: friedvidu1.pdf
 source_sha256: cfeaf61f759a6af8
 doc_brief: "A SURVEY OF TWISTED ALEXANDER POLYNOMIALS — We give a short introduction to the theory of twisted Alexand er polynomials of a 3–manifold associated to a representation of its fundam ental group."
+text_source: latex
+latex_prose_ratio: 0.961
+latex_coverage_ratio: 1.0
 ---
-For two prime knots K1 and K2 one deﬁnes K1 ≥ K2 if there exists a surjective group
-homomorphism ϕ :π1(K1) →π1(K2). The relation “ ≥ ” deﬁnes a partial order on the set
-of prime knots (cf. [KS05a]). Its study is often related to a w ell–known conjecture of J.
-Simon, that posits that for a given K1, the set of knots K2 s.t. K1 ≥K2 is ﬁnite.
-Kitano, Suzuki and Wada [KSW05] prove the following theorem which generalizes a result
-of Murasugi [Mu03].
-Theorem 8.1. Let K1 and K2 be two knots in S3 and let ϕ : π1(K1) → π1(K2) an
-epimorphism. Let γ : π1(K2) → GL(k,R ) a representation with R a Noetherian UFD.
-Then
-τ (K1,γ ◦ϕ)
-τ (K2,γ )
-is an element in R[t±1].
-This theorem plays a crucial role in determining the partial order on the set of knots with
-up to eleven crossings. We refer to [KS05a], [KS05b], [KS08] and [HKMS09] for details.
+\label{section:po}
+
+Given a knot $K$ we write $\pi_1(S^3\sm \nu K)\mathrel{\mathop:}=\pi_1(S^3\setminus K)$.
+ For two prime
+knots $K_1$ and $K_2$ one defines $K_1 \geq K_2$ if there exists a surjective group homomorphism
+$\varphi:\pi_1(K_1)\to \pi_1(K_2)$.
+The relation $``\geq"$ defines a partial order on the set of prime knots (cf. \cite{KS05a}). Its study is often related to a well--known conjecture of J. Simon, that posits that for a given $K_1$, the set of knots $K_2$ s.t. $K_1 \geq K_2$ is finite.
+
+Kitano, Suzuki and Wada \cite{KSW05} prove the following theorem
+which generalizes a result of Murasugi \cite{Mu03}.
+
+\begin{theorem}\label{thm:epi}
+Let $K_1$ and $K_2$ be two knots in $S^3$ and let $\varphi:\pi_1(K_1)\to \pi_1(K_2)$ an epimorphism.
+Let $\gamma:\pi_1(K_2)\to \mbox{GL}(k,R)$ a representation with $R$ a Noetherian UFD. Then
+\[ \frac{\tau(K_1,\gamma\circ \varphi)}{\tau(K_2,\gamma )} \]
+is an element in $R[t^{\pm 1}]$.
+\end{theorem}
+
+This theorem plays a crucial role in determining the partial order on the set of knots with up to eleven crossings.
+We refer to \cite{KS05a}, \cite{KS05b}, \cite{KS08} and \cite{HKMS09} for details.

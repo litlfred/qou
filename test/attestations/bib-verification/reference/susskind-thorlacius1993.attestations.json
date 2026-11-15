@@ -1,0 +1,97 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "susskind-thorlacius1993",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 328,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-hep-th-9308100v1/9308100v1.pdf"
+        },
+        "id": "susskind-thorlacius1993",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Analyses several gedanken experiments testing black hole complementarity and concludes it cannot be ruled out on known physical principles: experiments designed by an outside observer to disprove a quantum-mechanical stretched horizon require Planck-scale knowledge, and an observer who falls in after sampling the Hawking radiation cannot find the duplicate information inside before hitting the singularity. rem:information-paradox-incompleteness adopts precisely the complementarity-adjacent position \u2014 'sections exist behind the horizon but no finite braid computation from outside produces them' \u2014 and defends it with a Goedel analogy while citing only hawking1975, goedel1931, bekenstein1973, thooft2016 and harlow-ooguri2021. The operational no-duplication argument here is the standard physical support for that position and is missing from the block. Supporting rather than core: it is context for an interpretive block, and no corpus derivation depends on it. Note this file is byte-identical (md5 74615d20...) to library/arxiv-hep-th-9308100v1/9308100v1.pdf, so the same document sits in the upload directory twice.",
+          "keyResults": [
+            {
+              "locator": "Abstract; the infalling-observer gedanken experiment",
+              "statement": "An observer who samples the Hawking radiation and then crosses the horizon cannot discover the duplicated information inside the black hole before reaching the singularity, so no single observer detects a violation of quantum xeroxing.",
+              "useForFolio": "The operational argument for 'information preserved but inaccessible', the position rem:information-paradox-incompleteness adopts by assertion; citing it converts an unsupported stance into a sourced one.",
+              "targets": [
+                "rem:information-paradox-incompleteness"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Relevant, no ref() entry.",
+              "target": "rem:information-paradox-incompleteness",
+              "bean": "qou-kgs0"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "rem:information-paradox-incompleteness selects one of three positions on the paradox with no citation for the choice; the no-duplication gedanken argument is the standard support.",
+              "target": "rem:information-paradox-incompleteness",
+              "bean": "qou-udpt"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "032c25faa757"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    },
+    {
+      "position": 329,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-hep-th-9308100v1/9308100v1.pdf"
+        },
+        "id": "susskind-thorlacius1993",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "not-relevant",
+          "rationale": "Susskind-Thorlacius 1993 gedanken-experiment paper arguing that black hole complementarity cannot be ruled out by known physics: experiments designed to disprove a quantum-mechanical stretched horizon need Planck-scale input, infalling observers cannot see duplicated information before the singularity, and baryon-number-violation probes give effects well outside the stretched horizon. The corpus's black-hole content (rem-level blocks in information-theory: information-paradox-incompleteness, incompleteness-horizon, hawking-radiation, plus the fluid-dynamics acoustic-horizon blocks) reframes the paradox as arithmetic incompleteness -- the horizon as a syntax boundary in Gamma(S, A_0), Bekenstein-Hawking entropy counting degree-1 witnesses -- and cites hawking1975, bekenstein1973, goedel1931. 'Complementarity' does not appear anywhere in the corpus. No result of this paper is consumed. This independently reproduces the verdict already recorded in bean e7yw (2026-07-06), which read this exact file and logged it 'off-topic'. Scope-(a): this document, as read, supplies nothing usable here.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Confirms the existing bean e7yw verdict; the corpus's horizon blocks argue from Goedel incompleteness, not from complementarity, and consume nothing from this paper.",
+              "target": "folio/quantum-observable-universe/information-theory/information-paradox-incompleteness.md"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "032c25faa757"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

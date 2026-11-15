@@ -112,7 +112,7 @@ follow by trace-linearity from that SINGLE Markov move plus the Hecke skein
 sigma^{-1}=sigma-h.  The averaged (bar-invariant p-n) factor's division-free
 form tr(alpha (sigma+sigma^{-1}))=(2z-h) tr(alpha) is Lean-proved sorry-free as
 `QOU.BraidKnot.interface_knot_markov_z_bar_symmetric`
-(content/quantum-observable-universe/mass-theory/interface-knot-markov-z.lean),
+(folio/quantum-observable-universe/mass-theory/interface-knot-markov-z.lean),
 and `interface_factor()` below is cross-checked against the derived z, z-h,
 z-h/2 by
 `computations/probes/interface_factor_categorical_derivation_probe.py`.

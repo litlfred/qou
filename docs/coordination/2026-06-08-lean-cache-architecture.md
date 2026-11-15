@@ -29,7 +29,7 @@ git fetch --depth=1 origin "lake-cache/qou-$SLUG" \
 #    self-contained (Mathlib-only) file; a file importing other QOU.* modules
 #    also needs the workspace + paper oleans (appended on the 2nd line):
 LP=$(find "$ROOT/.lake/packages" -maxdepth 5 -type d -path '*/.lake/build/lib/lean' | tr '\n' ':')
-LP="$LP$ROOT/.lake/build/lib/lean:$ROOT/content/quantum-observable-universe/lean/.lake/build/lib/lean"
+LP="$LP$ROOT/.lake/build/lib/lean:$ROOT/folio/quantum-observable-universe/lean/.lake/build/lib/lean"
 env LEAN_PATH="$LP" ELAN_NO_OVERRIDE_NOTICE=1 lean path/to/File.lean      # EXIT 0 = checks
 # axiom audit: append `#print axioms <Decl>` to a temp copy and run the same way.
 ```

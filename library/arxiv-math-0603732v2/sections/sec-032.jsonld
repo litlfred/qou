@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0603732v2/sections/sec-032",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Poincaré duality for Hopf algebras",
+  "pageStart": 19,
+  "pageEnd": 21,
+  "contains": [
+    "library/arxiv-math-0603732v2/blocks/prose-sec-032"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0603732v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0603732v2",
+  "provenance": "ingested"
+}

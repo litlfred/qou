@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0501112v3/blocks/prose-sec-014",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0501112v3/blocks/prose-sec-014",
   "kind": "prose",
-  "title": "We",
-  "pageStart": 6,
-  "pageEnd": 6,
-  "text": "../sections/sec-014-2-we.md",
-  "derivedFrom": "library/arxiv-math-0501112v3/manifest",
-  "sourceDocument": "library/arxiv-math-0501112v3/manifest",
+  "title": "Transition measure of a Young diagram",
+  "pageStart": 8,
+  "pageEnd": 9,
+  "text": "../sections/sec-014-28-transition-measure-of-a-young-diagram.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0501112v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0501112v3",
   "provenance": "ingested"
 }

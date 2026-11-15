@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/stateintegralsqseries/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/stateintegralsqseries/blocks/prose-sec-006",
   "kind": "prose",
   "title": "Proof of Theorem 1.1",
   "pageStart": 10,
   "pageEnd": 10,
   "text": "../sections/sec-006-24-proof-of-theorem-11.md",
-  "derivedFrom": "library/stateintegralsqseries/manifest",
-  "sourceDocument": "library/stateintegralsqseries/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/stateintegralsqseries",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/stateintegralsqseries",
   "provenance": "ingested"
 }

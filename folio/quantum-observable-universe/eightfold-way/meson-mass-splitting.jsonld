@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-meson-mass-splitting",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:meson-mass-splitting",
+  "kind": "remark",
+  "title": "Meson mass splitting from q-deformed dynamics",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-a2-from-three-strands",
+    "papers/quantum-observable-universe/blocks/rem-q-deformation-weight-lattice",
+    "papers/quantum-observable-universe/blocks/prop-meson-octet-decomposition"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-meson-octet-decomposition",
+  "leanRef": "qou:QOU.Eightfold.GellMannOkuboIdentity.gmo_cannot_discriminate",
+  "text": "meson-mass-splitting.md",
+  "provenance": "authored"
+}

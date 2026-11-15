@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-024",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-024",
   "kind": "prose",
-  "title": "(j−k+1) −β 1",
-  "pageStart": 7,
-  "pageEnd": 7,
-  "text": "../sections/sec-024-2-jk1-β-1.md",
-  "derivedFrom": "library/arxiv-hep-th-0006156v1/manifest",
-  "sourceDocument": "library/arxiv-hep-th-0006156v1/manifest",
+  "title": "Appendix: the non-compact quantum dilogarithm",
+  "pageStart": 14,
+  "pageEnd": 15,
+  "text": "../sections/sec-024-6-appendix-the-non-compact-quantum-dilogarithm.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-0006156v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-0006156v1",
   "provenance": "ingested"
 }

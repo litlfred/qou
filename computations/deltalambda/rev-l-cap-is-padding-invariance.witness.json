@@ -1,0 +1,628 @@
+{
+  "schema": "qou-witness/v1",
+  "computedAt": "2026-10-13T15:11:45.872897+00:00",
+  "computation": "rev_l_cap_is_padding_invariance_probe",
+  "bean": "qou-hok7",
+  "anchor": "physical_proton",
+  "q0Anchor": "proton",
+  "scriptFile": "rev_l_cap_is_padding_invariance_probe.py",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "description": "Withdraws PR #7294's 'l-cap censoring' caveat. Above the maximiser's row count l*, the beta-frame padding L is invisible to the objective -- proved in Lean as QOU.BraidKnot.HookSum.betaSide_eq_hookSum (sorry-free), measured here at 1e-49 residual at mp.dps = 50. The three 'censored' excesses do not move under a 4x wider l-scan. Corrects a committed artifact: the best_l column of rev-excess-scaling-exponent.witness.json is plateau rounding noise, not a row count; the true threshold l* is k+2 at all three points.",
+  "lean": {
+    "theorem": "QOU.BraidKnot.HookSum.betaSide_eq_hookSum",
+    "file": "folio/quantum-observable-universe/lean/QOU/BraidKnot/HookSumBetaCoordinates.lean",
+    "companion": "QOU.BraidKnot.HookSum.betaSide_padding_invariant",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "sorry_free": true
+  },
+  "constants": {
+    "A": "3.6033777257198572643133",
+    "C": "6.17140572007913512022318",
+    "A_sqrt2": "5.09594565006614074432446",
+    "ln_q0": "0.104340720319519512315906",
+    "eps_terms": 4000,
+    "mp_dps": 50
+  },
+  "padding_invariance_P2": {
+    "lambda": [
+      7,
+      5,
+      4,
+      3,
+      2,
+      1,
+      1
+    ],
+    "n": 23,
+    "rows": 7,
+    "worst_beta_side_residual": "1.1546344e-48",
+    "derived_accumulation_bound": "3.81315e-47",
+    "residual_vs_precision": [
+      {
+        "dps": 30,
+        "worst_residual": "8.20415e-29",
+        "ratio_to_previous": null
+      },
+      {
+        "dps": 50,
+        "worst_residual": "1.15463e-48",
+        "ratio_to_previous": "7.10541e+19"
+      },
+      {
+        "dps": 70,
+        "worst_residual": "8.98323e-69",
+        "ratio_to_previous": "1.28532e+20"
+      },
+      {
+        "dps": 90,
+        "worst_residual": "2.70982e-88",
+        "ratio_to_previous": "3.31507e+19"
+      }
+    ],
+    "table": [
+      {
+        "L": 7,
+        "H": 105,
+        "beta_side": "18.1578632048965420290623778045",
+        "residual": "0.0"
+      },
+      {
+        "L": 8,
+        "H": 105,
+        "beta_side": "18.1578632048965420290623778045",
+        "residual": "0.0"
+      },
+      {
+        "L": 9,
+        "H": 105,
+        "beta_side": "18.1578632048965420290623778045",
+        "residual": "-4.27642e-50"
+      },
+      {
+        "L": 10,
+        "H": 105,
+        "beta_side": "18.1578632048965420290623778045",
+        "residual": "-2.9935e-49"
+      },
+      {
+        "L": 11,
+        "H": 105,
+        "beta_side": "18.1578632048965420290623778045",
+        "residual": "-1.28293e-49"
+      },
+      {
+        "L": 12,
+        "H": 105,
+        "beta_side": "18.1578632048965420290623778045",
+        "residual": "0.0"
+      },
+      {
+        "L": 13,
+        "H": 105,
+        "beta_side": "18.1578632048965420290623778045",
+        "residual": "2.9935e-49"
+      },
+      {
+        "L": 14,
+        "H": 105,
+        "beta_side": "18.1578632048965420290623778045",
+        "residual": "2.9935e-49"
+      },
+      {
+        "L": 15,
+        "H": 105,
+        "beta_side": "18.1578632048965420290623778045",
+        "residual": "1.28293e-49"
+      },
+      {
+        "L": 16,
+        "H": 105,
+        "beta_side": "18.1578632048965420290623778045",
+        "residual": "-1.28293e-49"
+      },
+      {
+        "L": 17,
+        "H": 105,
+        "beta_side": "18.1578632048965420290623778045",
+        "residual": "-5.55935e-49"
+      },
+      {
+        "L": 18,
+        "H": 105,
+        "beta_side": "18.1578632048965420290623778045",
+        "residual": "-6.41464e-49"
+      },
+      {
+        "L": 19,
+        "H": 105,
+        "beta_side": "18.1578632048965420290623778045",
+        "residual": "-8.1252e-49"
+      },
+      {
+        "L": 20,
+        "H": 105,
+        "beta_side": "18.1578632048965420290623778045",
+        "residual": "-1.15463e-48"
+      }
+    ]
+  },
+  "l_scan_P3": [
+    {
+      "n": 78,
+      "k": 12,
+      "l_star": 14,
+      "l_star_minus_k": 2,
+      "plateau_size": 19,
+      "plateau_distinct_partitions": 1,
+      "plateau_distinct_hook_multisets": 1,
+      "maximising_partitions": [
+        [
+          14,
+          12,
+          10,
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          3,
+          2,
+          2,
+          1,
+          1
+        ]
+      ],
+      "maximiser_rows": 14,
+      "V_curve": [
+        {
+          "l": 12,
+          "V_minus_best": "-0.44650824"
+        },
+        {
+          "l": 13,
+          "V_minus_best": "-0.091626212"
+        },
+        {
+          "l": 14,
+          "V_minus_best": "0.0"
+        },
+        {
+          "l": 15,
+          "V_minus_best": "-4.2764235e-49"
+        },
+        {
+          "l": 16,
+          "V_minus_best": "-4.2764235e-49"
+        },
+        {
+          "l": 17,
+          "V_minus_best": "-8.5528471e-49"
+        },
+        {
+          "l": 18,
+          "V_minus_best": "-6.8422777e-49"
+        },
+        {
+          "l": 19,
+          "V_minus_best": "-8.5528471e-49"
+        },
+        {
+          "l": 20,
+          "V_minus_best": "-1.2829271e-48"
+        },
+        {
+          "l": 21,
+          "V_minus_best": "-1.453984e-48"
+        },
+        {
+          "l": 22,
+          "V_minus_best": "-1.5395125e-48"
+        },
+        {
+          "l": 23,
+          "V_minus_best": "-1.8816264e-48"
+        },
+        {
+          "l": 24,
+          "V_minus_best": "-1.8816264e-48"
+        },
+        {
+          "l": 25,
+          "V_minus_best": "-2.3947972e-48"
+        },
+        {
+          "l": 26,
+          "V_minus_best": "-1.1973986e-48"
+        },
+        {
+          "l": 27,
+          "V_minus_best": "-1.7105694e-49"
+        },
+        {
+          "l": 28,
+          "V_minus_best": "1.3684555e-48"
+        },
+        {
+          "l": 29,
+          "V_minus_best": "2.2237402e-48"
+        },
+        {
+          "l": 30,
+          "V_minus_best": "3.7632527e-48"
+        },
+        {
+          "l": 31,
+          "V_minus_best": "5.3027652e-48"
+        },
+        {
+          "l": 32,
+          "V_minus_best": "6.6712207e-48"
+        }
+      ]
+    },
+    {
+      "n": 136,
+      "k": 16,
+      "l_star": 18,
+      "l_star_minus_k": 2,
+      "plateau_size": 19,
+      "plateau_distinct_partitions": 1,
+      "plateau_distinct_hook_multisets": 1,
+      "maximising_partitions": [
+        [
+          18,
+          16,
+          14,
+          13,
+          12,
+          10,
+          9,
+          8,
+          7,
+          6,
+          5,
+          5,
+          4,
+          3,
+          2,
+          2,
+          1,
+          1
+        ]
+      ],
+      "maximiser_rows": 18,
+      "V_curve": [
+        {
+          "l": 16,
+          "V_minus_best": "-0.7249389"
+        },
+        {
+          "l": 17,
+          "V_minus_best": "-0.25149547"
+        },
+        {
+          "l": 18,
+          "V_minus_best": "0.0"
+        },
+        {
+          "l": 19,
+          "V_minus_best": "-2.5658541e-49"
+        },
+        {
+          "l": 20,
+          "V_minus_best": "-3.4211388e-49"
+        },
+        {
+          "l": 21,
+          "V_minus_best": "-1.0263416e-48"
+        },
+        {
+          "l": 22,
+          "V_minus_best": "-9.4081318e-49"
+        },
+        {
+          "l": 23,
+          "V_minus_best": "-1.1118701e-48"
+        },
+        {
+          "l": 24,
+          "V_minus_best": "-1.2829271e-48"
+        },
+        {
+          "l": 25,
+          "V_minus_best": "-9.4081318e-49"
+        },
+        {
+          "l": 26,
+          "V_minus_best": "7.6975624e-49"
+        },
+        {
+          "l": 27,
+          "V_minus_best": "2.1382118e-48"
+        },
+        {
+          "l": 28,
+          "V_minus_best": "3.6777242e-48"
+        },
+        {
+          "l": 29,
+          "V_minus_best": "5.2172367e-48"
+        },
+        {
+          "l": 30,
+          "V_minus_best": "6.5856922e-48"
+        },
+        {
+          "l": 31,
+          "V_minus_best": "7.440977e-48"
+        },
+        {
+          "l": 32,
+          "V_minus_best": "9.1515464e-48"
+        },
+        {
+          "l": 33,
+          "V_minus_best": "1.0348945e-47"
+        },
+        {
+          "l": 34,
+          "V_minus_best": "1.1546344e-47"
+        },
+        {
+          "l": 35,
+          "V_minus_best": "1.2401628e-47"
+        },
+        {
+          "l": 36,
+          "V_minus_best": "1.2743742e-47"
+        }
+      ]
+    },
+    {
+      "n": 210,
+      "k": 20,
+      "l_star": 22,
+      "l_star_minus_k": 2,
+      "plateau_size": 19,
+      "plateau_distinct_partitions": 2,
+      "plateau_distinct_hook_multisets": 1,
+      "maximising_partitions": [
+        [
+          22,
+          20,
+          18,
+          17,
+          16,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8,
+          7,
+          6,
+          6,
+          5,
+          4,
+          3,
+          3,
+          2,
+          2,
+          1,
+          1
+        ],
+        [
+          23,
+          21,
+          19,
+          17,
+          16,
+          15,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8,
+          7,
+          6,
+          5,
+          5,
+          4,
+          3,
+          2,
+          2,
+          1,
+          1
+        ]
+      ],
+      "maximiser_rows": 22,
+      "V_curve": [
+        {
+          "l": 20,
+          "V_minus_best": "-0.87430145"
+        },
+        {
+          "l": 21,
+          "V_minus_best": "-0.26842999"
+        },
+        {
+          "l": 22,
+          "V_minus_best": "0.0"
+        },
+        {
+          "l": 23,
+          "V_minus_best": "-3.4211388e-49"
+        },
+        {
+          "l": 24,
+          "V_minus_best": "5.1317082e-49"
+        },
+        {
+          "l": 25,
+          "V_minus_best": "1.8816264e-48"
+        },
+        {
+          "l": 26,
+          "V_minus_best": "3.2500819e-48"
+        },
+        {
+          "l": 27,
+          "V_minus_best": "3.0790249e-48"
+        },
+        {
+          "l": 28,
+          "V_minus_best": "3.9343097e-48"
+        },
+        {
+          "l": 29,
+          "V_minus_best": "5.3027652e-48"
+        },
+        {
+          "l": 30,
+          "V_minus_best": "7.0133346e-48"
+        },
+        {
+          "l": 31,
+          "V_minus_best": "7.8686193e-48"
+        },
+        {
+          "l": 32,
+          "V_minus_best": "1.009236e-47"
+        },
+        {
+          "l": 33,
+          "V_minus_best": "1.0947644e-47"
+        },
+        {
+          "l": 34,
+          "V_minus_best": "1.23161e-47"
+        },
+        {
+          "l": 35,
+          "V_minus_best": "1.3513498e-47"
+        },
+        {
+          "l": 36,
+          "V_minus_best": "1.4368783e-47"
+        },
+        {
+          "l": 37,
+          "V_minus_best": "1.5053011e-47"
+        },
+        {
+          "l": 38,
+          "V_minus_best": "1.5737239e-47"
+        },
+        {
+          "l": 39,
+          "V_minus_best": "1.676358e-47"
+        },
+        {
+          "l": 40,
+          "V_minus_best": "1.7105694e-47"
+        }
+      ]
+    }
+  ],
+  "correction_P4": [
+    {
+      "n": 78,
+      "excess_7294": "0.69117475080428095935",
+      "excess_uncapped": "0.691174750804280959345677",
+      "difference": "-4.3232448e-21",
+      "best_l_recorded_7294": 17,
+      "true_l_star": 14
+    },
+    {
+      "n": 136,
+      "excess_7294": "1.2164376444788834204",
+      "excess_uncapped": "1.2164376444788834203993",
+      "difference": "-7.0225351e-22",
+      "best_l_recorded_7294": 21,
+      "true_l_star": 18
+    },
+    {
+      "n": 210,
+      "excess_7294": "1.5714829809111992003",
+      "excess_uncapped": "1.57148298091119920033617",
+      "difference": "3.6173035e-20",
+      "best_l_recorded_7294": 25,
+      "true_l_star": 22
+    }
+  ],
+  "checks": [
+    {
+      "name": "P0a the adjacent gap-2 collision is rejected (and the naive test would NOT have been)",
+      "ok": true,
+      "detail": "on beta = (9,7,5,3,1) the move (i=1, j=0) gives (8,8,...), a duplicate; _valid rejects it"
+    },
+    {
+      "name": "P0b delta_V equals the full recompute on every valid move",
+      "ok": true,
+      "detail": "worst |delta_V - (V_after - V_before)| = 4.437e-49 over 164 valid moves on 3 configurations"
+    },
+    {
+      "name": "P1 the independent reimplementation reproduces #7294's excesses",
+      "ok": true,
+      "detail": "3/3 agree to 1e-12 \u2014 separate file, separate constants table, dps 50 against dps 30, same answers"
+    },
+    {
+      "name": "P1b the three rows #7294's caveat names are exactly the rows at its cap",
+      "ok": true,
+      "detail": "at-cap rows = [78, 136, 210]; the other 8 chose best_l - k in [2, 3]"
+    },
+    {
+      "name": "P2a the hook sum H is EXACTLY padding-invariant (it is cell-indexed; no arithmetic at all)",
+      "ok": true,
+      "detail": "H = 105 at all 14 paddings L = 7..20, as an integer \u2014 identity (II) computes it from beta but the quantity is a sum over cells"
+    },
+    {
+      "name": "P2b the beta-side residual is inside the DERIVED accumulation bound",
+      "ok": true,
+      "detail": "worst residual 1.155e-48 against the bound 3.813e-47 (= (L + L(L-1)/2) terms x |value| x 10^-50), a margin of 33.02x \u2014 the bound comes from counting the summation's operations, not from the observation"
+    },
+    {
+      "name": "P2c the residual TRACKS the precision \u2014 so it is arithmetic, and the exact value is 0",
+      "ok": true,
+      "detail": "worst residual falls 8.204e-29 (dps 30) -> 2.71e-88 (dps 90), each 20-dps step dividing it by ~1e20 (last step 3.315e+19x) \u2014 a genuine L-dependence would sit still.  The exact statement is the Lean theorem betaSide_eq_hookSum, whose right-hand side has no L in it at all"
+    },
+    {
+      "name": "P3a V(l) is FLAT above a threshold \u2014 the scan had nothing to find there",
+      "ok": true,
+      "detail": "n=78: 19 of 21 values on the plateau; n=136: 19 of 21 values on the plateau; n=210: 19 of 21 values on the plateau"
+    },
+    {
+      "name": "P3b the plateau's partitions all share ONE hook multiset \u2014 which the theorem makes an EXACT degeneracy, not a numerical tie",
+      "ok": true,
+      "detail": "n=78: 1 distinct partition(s) over 19 paddings, 1 distinct hook multiset(s), 14 rows; n=136: 1 distinct partition(s) over 19 paddings, 1 distinct hook multiset(s), 18 rows; n=210: 2 distinct partition(s) over 19 paddings, 1 distinct hook multiset(s), 22 rows \u2014 betaSide_eq_hookSum makes the beta-side `Sum_c eps(h(c))`, and `H = Sum_c h(c)`, so the objective is a function of the hook multiset alone and two partitions sharing it are degenerate exactly"
+    },
+    {
+      "name": "P3c the real threshold l* is k+2 at all three \u2014 nowhere near the k+5 cap",
+      "ok": true,
+      "detail": "n=78: l* = k+2 (l = k and k+1 genuinely lose; everything from k+2 up is the same number); n=136: l* = k+2 (l = k and k+1 genuinely lose; everything from k+2 up is the same number); n=210: l* = k+2 (l = k and k+1 genuinely lose; everything from k+2 up is the same number)"
+    },
+    {
+      "name": "P4a the three 'censored' excesses do not move \u2014 they were never censored",
+      "ok": true,
+      "detail": "all three agree with #7294 to 1e-12 under an l-scan 4x wider than its window; the caveat predicted they would rise, and the theorem says they cannot"
+    },
+    {
+      "name": "P4b #7294's best_l column is noise and must not be quoted as a row count",
+      "ok": true,
+      "detail": "n=78: recorded 17, true l* = 14; n=136: recorded 21, true l* = 18; n=210: recorded 25, true l* = 22 \u2014 on a plateau the strict `v > best` comparison is decided by the last digit of a different climb path, so the column records rounding"
+    },
+    {
+      "name": "P4c the coefficient identification A*sqrt2 stands, untouched",
+      "ok": true,
+      "detail": "A*sqrt2 = 5.09594565007; no excess in #7294's table changes, so neither the exponent slopes nor the excess/sqrt(n) turnover move at all"
+    }
+  ],
+  "verdict": "The l-cap caveat is withdrawn: l above l* is padding, the objective is provably blind to it, and the three 'censored' values do not move. The best_l column of the parent witness is noise; l* = k+2 at all three points. Separately: the maximiser need not be a unique partition -- at n = 210 a 23-row and a 22-row shape tie EXACTLY, sharing a hook multiset, which betaSide_eq_hookSum makes a structural degeneracy rather than a numerical near-tie; so a gap profile read off one representative describes a hook-equivalence class, not a unique optimum. The A*sqrt2 identification is untouched. Values remain lower bounds on M_n -- the local search is still a heuristic."
+}

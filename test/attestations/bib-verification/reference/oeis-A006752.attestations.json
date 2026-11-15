@@ -1,0 +1,48 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "oeis-A006752",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 14,
+      "entry": {
+        "id": "oeis-A006752",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T16:00:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 1,
+        "note": "QOU literal `catalan_G := 0.91596559417721901505` matches OEIS A006752 b-file digits 0-19 exactly (reconstruct: 0.9159655941772190150547... \u2192 first 20 digits 0.91596559417721901505). 1 .lean Ref site cited correctly.",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/oeis-A006752.txt"
+        },
+        "local_pdf": "uploads/oeis-A006752.txt",
+        "relevance": {
+          "verdict": "undetermined",
+          "rationale": "FILE ABSENT: the ledger row points at this path but the file does not exist anywhere in the working tree (verified by find over the whole repo; uploads/ holds 294 files and this is not one of them). The prior 2026-05-19 verification row therefore cannot be re-checked, and I could not confirm the seeded join against the document's own front matter. The verdict is undetermined on that ground alone. The corpus-side citation audit below did not need the document and is reported in full. CITATION AUDIT: two Lean sites, observations/building-block-knots.lean:66 (a joint -- Ref: with the SnapPy census key) and QOU/Interactions/WedderburnMassFormula.lean:301. The cited claim is a numerical value - WedderburnMassFormula.lean:80 defines catalan_G := 0.91596559417721901505460351493238411077414937428167 and derives alpha_bind := m_e * 8 * catalan_G, with vol_B3 = 8 * catalan_G (the ideal-octahedron / Borromean volume). The prior ledger note recorded a 20-digit match against the source's b-file. I could not re-verify: the .txt is gone and no arbitrary-precision library is available in this sandbox (mpmath import fails), so I decline to certify a 50-digit literal from memory - that is precisely the kind of numerical claim that must be machine-checked rather than asserted.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "compute-check",
+              "rationale": "The 50-digit catalan_G literal in WedderburnMassFormula.lean feeds alpha_bind and vol_B3 = 8 G. Its only source is a missing .txt. Re-verify the digits against a computed Catalan constant at >= 60 dps in a producer with a witness, so the literal stops depending on a file that is no longer in the tree.",
+              "target": "qou:QOU.Interactions.WedderburnMassFormula.catalan_G",
+              "bean": "qou-zsw6"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z"
+        }
+      }
+    }
+  ]
+}

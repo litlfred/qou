@@ -13,7 +13,7 @@ Q0F = ("q_0_50dps", "q0", "q_0", "q0_50dps")
 
 tracked = subprocess.run(["git","ls-files","computations","tools"],
                          cwd=ROOT, capture_output=True, text=True).stdout.split()
-wits = [f for f in tracked if f.endswith(".witness.json") and "_deprecated" not in f]
+wits = [f for f in tracked if f.endswith(".witness.json") and ("_deprecated" not in f and "fsh-guts" not in f)]
 pys  = [f for f in tracked if f.endswith(".py")]
 
 # stem -> paths, preferring NON-deprecated (the trap that bit terms_2_3 earlier)
@@ -21,7 +21,7 @@ by_stem = collections.defaultdict(list)
 for f in pys:
     by_stem[pathlib.Path(f).stem].append(f)
 for k in by_stem:
-    by_stem[k].sort(key=lambda p: ("_deprecated" in p, len(p)))
+    by_stem[k].sort(key=lambda p: (("_deprecated" in p or "fsh-guts" in p), len(p)))
 
 def has_q0_value(o, depth=0):
     if depth > 8: return False

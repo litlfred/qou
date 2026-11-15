@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-categorical-fourier-transform-properties",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:categorical-fourier-transform-properties",
+  "kind": "remark",
+  "title": "Realisations of the categorical Fourier transform: Peter--Weyl, Wick rotation, and base rings",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-fourier",
+    "papers/quantum-observable-universe/blocks/def-categorical-laplace",
+    "papers/quantum-observable-universe/blocks/prop-tannaka-krein-reconstruction",
+    "papers/quantum-observable-universe/blocks/rem-laplace-fourier-wick-rotation"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-categorical-fourier",
+  "tags": [
+    "hopf-algebra",
+    "grouplike",
+    "monoidal-functor",
+    "fourier",
+    "peter-weyl",
+    "tannakian"
+  ],
+  "text": "categorical-fourier-transform-properties.md",
+  "provenance": "authored"
+}

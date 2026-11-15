@@ -289,9 +289,11 @@ def main() -> int:
     index = _build_producer_index([HERE, HERE.parent / "tools"])
 
     stale, no_computed_at, unresolved, self_stale_skipped = [], 0, 0, 0
+    no_producer_field = 0        # neither scriptFile nor producer
+    recovered_via_producer = 0   # scriptFile absent, producer used
 
     for wp in witnesses:
-        if "_deprecated" in wp.parts:
+        if ("_deprecated" in wp.parts or "fsh-guts" in wp.parts):
             continue
         try:
             w = json.loads(wp.read_text())
@@ -300,9 +302,28 @@ def main() -> int:
         if not isinstance(w, dict):
             continue
 
+        # `producer` IS A FALLBACK FOR `scriptFile`, AND THE SKIP IS COUNTED.
+        #
+        # This read `w.get("scriptFile")` alone and `continue`d when it was
+        # absent — silently, into no bucket, so the summary's four counts did
+        # not add up to `witnesses scanned` and nothing said why. Measured on
+        # 2026-09-14: **399 witnesses carry no `scriptFile`**, and **42 of them
+        # carry `producer`**, which `save_witness` writes and which names the
+        # same file. Among those 42 are the six `chi-<atom>-h<n>-at-q0-50dps`
+        # caches that bean `qou-92u9` exists for — the audit that would have
+        # flagged them could not see them.
+        #
+        # `producer` is sometimes a path (`computations/foo.py`) where the
+        # index is keyed by basename, hence the `.name`.
         script_file, computed_at = w.get("scriptFile"), w.get("computedAt")
         if not script_file:
-            continue
+            producer = w.get("producer")
+            if producer:
+                script_file = Path(str(producer)).name
+                recovered_via_producer += 1
+            else:
+                no_producer_field += 1
+                continue
         if not computed_at:
             no_computed_at += 1
             continue
@@ -360,6 +381,10 @@ def main() -> int:
     print(f"  witnesses scanned            : {len(witnesses):,}")
     print(f"  SELF-stale (already caught)  : {self_stale_skipped:,}  (excluded below)")
     print(f"  producer unresolved          : {unresolved:,}")
+    print(f"  no scriptFile, used producer : {recovered_via_producer:,}"
+          f"  <- were silently dropped before 2026-09-14")
+    print(f"  no producer field at all     : {no_producer_field:,}"
+          f"  <- still invisible; nothing names their producer")
     print(f"  no usable computedAt         : {no_computed_at:,}")
     prov_only = [r for r in stale if r["provenance_only"]]
     substantive = [r for r in stale if not r["provenance_only"]]

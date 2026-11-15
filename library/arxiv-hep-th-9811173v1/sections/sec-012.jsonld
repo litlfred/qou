@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-hep-th-9811173v1/sections/sec-012",
   "@type": [
     "doco:Section"
   ],
-  "title": "Dirichlet character",
-  "pageStart": 9,
-  "pageEnd": 10,
+  "title": "Dedekind zeta value from an 18-crossing Feynman knot",
+  "pageStart": 25,
+  "pageEnd": 26,
   "contains": [
     "library/arxiv-hep-th-9811173v1/blocks/prose-sec-012"
   ],
-  "derivedFrom": "library/arxiv-hep-th-9811173v1/manifest",
-  "sourceDocument": "library/arxiv-hep-th-9811173v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9811173v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9811173v1",
   "provenance": "ingested"
 }

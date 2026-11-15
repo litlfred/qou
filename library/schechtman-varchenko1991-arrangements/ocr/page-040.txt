@@ -1,0 +1,37 @@
+178 V.V. Schechtman and A.N. Varchenko
+This Lemma proves 6.6 for p=O, n=1 and any a. The case of general p, n
+follows from the commutativity of squares
+C.(n, M)a s→C.(n, M)
+(6.11.8)
+C.(n, M)* →C.(n, M)
+which in turn follows from 6.11.7 (cf. 6.9 and 6.10).
+The proof of 6.6 is complete.
+6.12 Remark. In view of 6.6, the determinant formula 3.7 applied to arrange-
+ments n;N appears to be a variant of the Shapovalov determinant formula
+[Sh].
+6.13 In conditions of 6.6, put g=g/ker S; it is the Kac-Moody Lie algebra
+associated with the matrix A defined in 6.3. Put n=n/ker Scg; L(A;)
+= M(4)/ker S - these are irreducible g-modules; L- Li @...  Ln. As in $3,
+denote by  the image S()&:.
+Corollary. The maps : induce isomorphisms of complexes
+C.(n, L)a-→ FN-(Cn;n)2a
+for any Ae Nr.
+In the rest of this section we'll introduce a structure of a Lie bialgebra
+on b[DJ and a structure of a b-comodule on M = M(4i)@ ... @ M(4n). Com-
+plexes N -'(6n;n) are identified with homogeneous parts of the standard com-
+plex C.(n*, M*).
+6.14 Cobracket. 6.14.1 Lemma-definition. There exists a unique map v: b -→ b ^ b
+such that
+(i) v(h) =O; v(f)-fi^h; for all heh; i= 1, ..., r;
+(ii) v([x, y])=xv(y)-yv(x) for all x, yeb, where the action of b on b^b is
+the adjoint one: a(b^c)=[a, b] ^c+a^[b, c] (i.e. v is a 1-cocycle of b with
+values in b ^ b).
+Proof. Left to the reader (cf. [D, Example 3.2]).
+Let us define the map μ: Nr -→h by the formula μ(ki, ..., k,)= Z k; hi.
+i=1
+Note that v([h, x])=h.v(x) for heh, xeb. Hence the cobracket v preserves
+the weight decomposition (with respect to the h-action).
+6.14.2 Lemma. For every xEna
+(i) v(x)= -μ(a) ^x+v(x)_ where v(x)- En^ncb^b.
+(ii) For every i
+v(Efi, x])-  fi.v(x)-- -(hi, μ(2)fi^x= fi.v(x)- +fi^ [hi, x].

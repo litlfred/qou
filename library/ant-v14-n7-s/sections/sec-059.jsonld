@@ -1,18 +1,23 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/ant-v14-n7-s/sections/sec-059",
   "@type": [
     "doco:Section"
   ],
-  "title": "3C. Interpretation in terms of cyclotomic multiple harmonic sums viewed as functions of the upper bound of their domain of summation",
-  "pageStart": 71,
-  "pageEnd": 73,
+  "title": "2A3. Fixed point equation for the harmonic Frobenius",
+  "pageStart": 62,
+  "pageEnd": 62,
   "contains": [
     "library/ant-v14-n7-s/blocks/prose-sec-059",
-    "library/ant-v14-n7-s/blocks/prop-sec-059-01",
-    "library/ant-v14-n7-s/blocks/ex-sec-059-02"
+    "library/ant-v14-n7-s/blocks/remark-sec-059-01",
+    "library/ant-v14-n7-s/blocks/example-sec-059-02"
   ],
-  "derivedFrom": "library/ant-v14-n7-s/manifest",
-  "sourceDocument": "library/ant-v14-n7-s/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s",
   "provenance": "ingested"
 }

@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-vertex-algebra-relations-table3-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:vertex-algebra-relations-table3-data",
+  "kind": "table",
+  "title": "Data table 3 from prop:vertex-algebra-relations",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-vertex-algebra-relations"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "vertex-algebra-relations-table3-data.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-categorical-coordinate-ring",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:categorical-coordinate-ring",
+  "kind": "proposition",
+  "title": "The categorical-coordinate ring $R[i, q^{\\pm 1}]$ of chart-transition data on $\\mathbb{P}_q(V)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-affine-chart-origin-of-i-and-q"
+  ],
+  "tags": [
+    "categorical-coordinate",
+    "chart-transition",
+    "projective-line",
+    "imaginary-unit",
+    "substrate-parameter",
+    "ring-extension",
+    "universal-property"
+  ],
+  "leanRef": "qou:QOU.QuantumObservableUniverse.CategoricalCoordinateRing",
+  "text": "categorical-coordinate-ring.md",
+  "leanSource": "categorical-coordinate-ring.lean",
+  "provenance": "authored"
+}

@@ -1,18 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1704.02352v2/sections/sec-014",
   "@type": [
     "doco:Section"
   ],
-  "title": "Free cumulants Rk",
-  "pageStart": 23,
-  "pageEnd": 29,
+  "title": "Approximate factorization of characters",
+  "pageStart": 14,
+  "pageEnd": 14,
   "contains": [
-    "library/arxiv-1704.02352v2/blocks/prose-sec-014",
-    "library/arxiv-1704.02352v2/blocks/cor-sec-014-01",
-    "library/arxiv-1704.02352v2/blocks/rem-sec-014-02"
+    "library/arxiv-1704.02352v2/blocks/prose-sec-014"
   ],
-  "derivedFrom": "library/arxiv-1704.02352v2/manifest",
-  "sourceDocument": "library/arxiv-1704.02352v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1704.02352v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1704.02352v2",
   "provenance": "ingested"
 }

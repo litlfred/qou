@@ -1,0 +1,52 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2111.04763v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Resurgence of Chern-Simons theory at the trivial flat connection (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2111.04763v2",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2111.04763&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2111.04763v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2111.04763v2",
+    "content_type": "application/gzip",
+    "sha256": "7cfec7e99a3f6839ad08727991c4226ed51b9c3911b217682f42f2c3c33120d9",
+    "bytes": 453982,
+    "fetched": "2026-10-10T15:16:54+00:00",
+    "files": [
+      {
+        "path": "source/files/GGMW21.bbl",
+        "role": "bbl",
+        "sha256": "6d6373f3a0e5c6ba454df1ea741721b363c6f7252ab21c2ffdee8eaf8a0b8db5",
+        "bytes": 11064
+      },
+      {
+        "path": "source/files/GGMW21.tex",
+        "role": "tex",
+        "sha256": "661bfa5552d945ec1b3bc054c6b365cd5e5ce39a989cbbb5ea8296866e8e1ce5",
+        "bytes": 182031
+      },
+      {
+        "path": "source/files/biblio.bib",
+        "role": "bib",
+        "sha256": "16c6d0c32fc813a9a7d7dd2b9a67062ee3a2d54a5653154cc7f163b3fb28f1e7",
+        "bytes": 69904
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

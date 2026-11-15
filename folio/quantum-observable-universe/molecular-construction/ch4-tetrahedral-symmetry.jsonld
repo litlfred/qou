@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-ch4-tetrahedral-symmetry",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:ch4-tetrahedral-symmetry",
+  "kind": "remark",
+  "title": "Tetrahedral geometry as $S_4$ symmetry of the LP dual",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-ch4-molecular-braid"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-ch4-lp-dual-binding",
+  "tags": [
+    "CH4",
+    "tetrahedral",
+    "VSEPR",
+    "symmetry",
+    "geometry"
+  ],
+  "text": "ch4-tetrahedral-symmetry.md",
+  "provenance": "authored"
+}

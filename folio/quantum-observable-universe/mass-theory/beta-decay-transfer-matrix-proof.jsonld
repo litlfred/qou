@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-beta-decay-transfer-matrix",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:beta-decay-transfer-matrix",
+  "kind": "proof",
+  "title": "Proof of beta decay transfer matrix",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-beta-decay-transfer-matrix"
+  ],
+  "text": "beta-decay-transfer-matrix-proof.md",
+  "provenance": "authored"
+}

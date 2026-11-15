@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-eightfold-open-problems",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:eightfold-open-problems",
+  "kind": "remark",
+  "title": "Open problems",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-a2-from-three-strands",
+    "papers/quantum-observable-universe/blocks/prop-color-su3-from-g2",
+    "papers/quantum-observable-universe/blocks/prop-schur-weyl-eightfold",
+    "papers/quantum-observable-universe/blocks/rem-flavor-charge-assignments"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-schur-weyl-eightfold",
+  "text": "eightfold-open-problems.md",
+  "provenance": "authored"
+}

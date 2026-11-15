@@ -1,0 +1,52 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2007.10190v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2007.10190v2 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2007.10190v2",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2007.10190&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2007.10190v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2007.10190v2",
+    "content_type": "application/gzip",
+    "sha256": "5c57fdcd3f352f47464682ffb07324ceed4a1de906f9f1cce46d808957359afc",
+    "bytes": 329514,
+    "fetched": "2026-10-10T15:15:20+00:00",
+    "files": [
+      {
+        "path": "source/files/GGM_knots_20v2.bbl",
+        "role": "bbl",
+        "sha256": "bc0587574154b7b73895f080e92a85fd827c6a571878290cde6e58cb957d8739",
+        "bytes": 8161
+      },
+      {
+        "path": "source/files/GGM_knots_20v2.tex",
+        "role": "tex",
+        "sha256": "89e4519e68e77be63cb673facd42d237571b6b7a4c7cc66224e2ab2808e77571",
+        "bytes": 80701
+      },
+      {
+        "path": "source/files/biblio.bib",
+        "role": "bib",
+        "sha256": "4d61bfed2958e49ae0a99617da45f6048b9b9d573f4add10500e92198bd49017",
+        "bytes": 30986
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

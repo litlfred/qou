@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/phys-rep09/blocks/prose-sec-064",
+  "kind": "prose",
+  "title": "Optics",
+  "pageStart": 82,
+  "pageEnd": 83,
+  "text": "../sections/sec-064-optics.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/phys-rep09",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/phys-rep09",
+  "provenance": "ingested"
+}

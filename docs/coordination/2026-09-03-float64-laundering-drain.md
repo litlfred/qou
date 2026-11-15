@@ -98,3 +98,85 @@ blanket-post).
 records that 1027 of 1929 witness-writing producers reach it through
 `pyhecke.atom`. Bean `qou-bfdb` — needs scoping, with finding 5 above as
 the design caution.
+
+
+---
+
+## Continuation: the raw-float64 ratchet + float64-cap drain (PR #7318, 2026-09-14)
+
+Same audit family, adjacent tier. Recorded here rather than in a new ledger
+because the findings below bear directly on this ledger's own acceptance
+criterion.
+
+### Scope map — every sibling is `(none, independent, none)`
+
+Measured by diff, not by title, across the nine open sibling PRs plus this
+ledger's own branch. "ratchet surface" = `raw-float64-baseline` /
+`float64-padding-baseline` / either audit witness / `precision-gates.sh`.
+
+| branch | ratchet surface | `computations/` files | file overlap with #7318 |
+|---|---:|---:|---|
+| genus-completeness-observable-target | 0 | 6 | none |
+| hjf4-demote-and-pole-vertex | 0 | 0 | none |
+| dead-prop-fields-and-name-collision | 0 | 0 | none |
+| cds1-ladder-bounded-by-cos | 0 | 6 | none |
+| rev-run-and-edge-closed-form | 0 | 6 | none |
+| gifted-feynman-fhjzwv | 0 | 2 | none |
+| reading3-budget-unconstrained | 0 | 4 | none |
+| d2-convention-d-ck-rederivation | 0 | 4 | none |
+| magic-numbers-bring-duplicate | 0 | 0 | none |
+| cheat-sheet-derivation-gaps-0ykco4 | 0 | 21 | `casimir_macdonald_probe.py` + witness — **already on `main`** |
+
+Per the skill's rule (`(none, independent, none)` needs no comment), **no
+intent comments were posted on any sibling**. The one overlap is additive and
+already landed: that branch drained macdonald's *serializer* and left the
+*cap*, which #7318 fixes — `git diff origin/main <branch> -- <that file>` is
+empty.
+
+**The one cross-PR dependency worth checking was measured and is clean.** Five
+siblings add **10 new witnesses**; a dirty one would land as ratchet `NEW` on
+#7318 and force an attribution. All 10 carry **0** raw floats.
+
+**§2-bis does not bind #7318.** The appendix
+`content/quantum-observable-universe/appendix-mass-binding-algorithms/` (89
+files) references **none** of the 24 producers it touches — verified against a
+positive control (`binding_canonical.py`, `canonical_mass.py`,
+`lp_dual_solver.py` *are* referenced there). The changes alter no algorithm,
+script path or witness path.
+
+### This ledger's acceptance criterion is SOUND — I nearly filed against it
+
+Seeing `LAUNDERED — none.` with three live `mp.mpf(str(Q))` sites in the
+casimir family, I took it for a detector blind spot and was one step from
+filing it against bean `qou-tj98` (`completed`) and this ledger.
+
+**The audit is correct.** Those three imported `from q_parameter import Q_MP
+as Q`, so the local `Q` was already the mpf and there was no f64 to launder;
+`f64_into_mpmath_audit.py` tracks the import `asname` and reporting nothing is
+the right answer. `"Q"` *is* in its `F64_NAMES` and its self-test at line 621
+asserts the `mp.mpf(str(...))` form, so neither the attributed call nor the
+name was the issue — the binding was. **The audit reads bindings; grep reads
+spellings.** Taxonomy row 46.
+
+### Independent confirmation of this ledger's class-(a) figure
+
+This ledger records class (a) as carrying **6.8395e-18**. Re-measured
+independently today from `Q_MP` rather than from a sweep: `mpf(str(Q))` sits
+**6.839e-18** from the true pin, against **2.725e-17** for `mpf(Q)` — the
+two spellings are **4x apart** and are not interchangeable defects.
+
+### Findings this drain adds
+
+- **A clean raw-float64 count is evidence about the RECORDED value, not about
+  the computation.** `casimir-macdonald-probe` read 0 on the ratchet while its
+  producer computed from a double; the fix moved 183 of 405 fields. Taxonomy
+  row 47.
+- **Rank off disk, never off the baseline.** Macdonald's baseline says 196 and
+  its live count was 0 — baselines never move down by design, and I mis-ranked
+  the family's largest target off one.
+- **The two ratchets are not redundant.** A `float()` → `fmt()` change drains
+  the raw ratchet *by construction*; whether that is a drain or a relabelling
+  depends on how the value entered. On `casimir_epsilon_vacuum` the padding
+  ratchet caught 9 NEW hits and exposed a producer running at `mp.dps = 15`.
+- **`never_raises_dps_audit.py` cannot see a file that never NAMES mpmath**
+  (its mpf arrives by import) — 5 live files, bean `qou-0p2h`.

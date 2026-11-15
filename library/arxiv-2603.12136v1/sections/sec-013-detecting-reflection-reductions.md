@@ -8,128 +8,40 @@ pages: 34-37
 source_pdf: 2603.12136v1.pdf
 source_sha256: e9c50616344b24e0
 doc_brief: "Folding Mixed-Integer Linear Programs and Reflection Symmetries — For mixed-integer linear programming and linear programming it is well known that symmetries can have a negative impact on the"
+text_source: latex
+latex_prose_ratio: 0.977
+latex_coverage_ratio: 0.908
 ---
-In order to detect reflection reductions, it suffices to compute symmetric equitable
-partitions of the split reformulation form by Theorem 19. Thus, we can directly reuse
-the algorithm formulated in [11], which relies on the fast color refinement algorithm
-by Paige and Tarjan [35]. Since the split reformulation consists of four copies of the
-constraint matrix, we can detect symmetric equitable partitions, and thus reflection
-reductions, in identical asymptotic worst-case time and space complexity as in [11].
-34
-Theorem 25For a linear programF(A,b,ℓ,u,c)withA∈R V×W , letmbe the total
-bitlength of the entries of
-
-
-ℓ⊺ 0
-u⊺ 0
-c⊺ 0
-A b
-
- and letn=|V|+|W|. Forδwith total bitlength
-O(m), a reflection reduction(P,Q,γ,λ,δ,V U,WU)ofF(A,b,ℓ,u,c)can be determined in
-O((n+m) logn)time andO(n+m)space.
-ProofWe assume that the constraint matrix is given in a sparse format such as the CSR
-and/or CSC format. First,F(A,b−Aδ,ℓ−δ,u−δ,c)can be computed inO(n+m)time
-and space and has bitlengthO(m), where we use thatδhas bitlength of orderO(m). Then,
-the split reformulationFS(A,b−Aδ,ℓ−δ,u−δ,c)can also be computed inO(n+m)time
-and space and has bitlength of orderO(m). The initial symmetric equitable partition can be
-determined in andO(n+m)time andO(n+m)space by using standard hashing techniques.
-Then, computing the coarsest symmetric equitable partition of the split reformulation takes
-O((n+m) logn)time andO(n+m)space [11, Theorem 3.1]. Using the symmetric equitable
-partition, we can directly derive a reflection reduction inO(n+m)time and space. Summing
-up all steps, we obtain a worst-case time complexity ofO((n+m) logn)time and a worst-case
-space complexity ofO(n+m).□
-In Theorem 25, we assumed that the offsetδhas bitlength that is of the same
-order asF(A,b,ℓ,u,c). This is a reasonable choice, as bothδC andδS have encoding
-lengths bounded by the encoding length ofℓanduby their definition.
-Although the running time is asymptotically equivalent to the ‘ordinary’ equitable
-partition algorithm presented in [11], computing equitable partitions of the split
-reformulation, which has 4 times as many nonzero entries, may still be undesirable
-in practice. To reduce the running time by a constant factor one can exploit the
-structure of symmetric equitable partitions. We formulate a refinement algorithm
-that computesγandλthat runs on the original matrix but models the refinement
-algorithm that computes a symmetric partition on the split reformulation. This
-closely follows the argumentation presented in Lemma 12 and Lemma 13. The core
-idea to achieve this constant-factor improvement is to refine unipolar part pairs at
-the same time, as is also done in the proof of Lemma 13. The implemented algo-
-rithm is very similar to that in [11], who use the algorithm in [42] which provides a
-thorough description of the fast color refinement algorithm. Since the algorithm we
-present does not have a better asymptotic running time, we outline the main changes
-and adaptations compared to the description in [11] here without proof.
-For the data structures, we add arrays to trackλ,γand the type (unipolar or
-bipolar) of each part, which takesO(n)space. The signsλw andγ w are used during
-the computation of the column and row sums for equitability. Then,λandγare
-determined whenever a bipolar partPis turned into a unipolar one or at initialization.
-Initially, we compute the affine transformation given byδ C. Then, we com-
-pute an initial symmetric bound-respecting partition of the split reformulation as in
-Lemma 12, which can be achieved in linear time by using hashing techniques. For a
-rowv∈V, we initialize it to be bipolar ifbv = 0holds. Otherwise, the row is marked
-35
-as unipolar and grouped with other rows based on the absolute values|bv|of the
-right-hand side.
-For a variablew∈W, we initialize them it to be bipolar ifcw = 0and−ℓ w =u w
-hold. Otherwise, we let them be unipolar, and compute signsλw that so that variables
-whose objective and bounds can be mapped to each other by negation are put into
-the same initial part.
-For the subsequent refinement of the constraint matrix we change the behavior
-slightly based on the type of each part. The changes are similar to those described in
-the proof of Lemma 13. When refined, unipolar parts retain their type, but bipolar
-parts may be refined into smaller parts that may be either unipolar or bipolar. When
-a bipolar part is refined into a unipolar part, the signsλorγare determined from its
-elements based on the column or row sums. In our refinement algorithm, we partition
-the columns (rows) of a bipolar part based on the absolute value of the sums, rather
-than the sums directly as in the refinement algorithm in [11]. Then, we set the signs
-λw so that the column sums are all positive when multiplied byλw. Finally, one
-improvement that is directly suggested by Corollary 10 is that ifPis a bipolar type,
-that then cMP,Q is an equitable block for anyQ∈Q. Thus, we do not need to add
-bipolar parts to the search stack, since checking them for refinements is pointless.
-There are two cases where one needs to be careful with the adapation of the color
-refinement algorithm to the reduced matrix size. First, if a bipolar part contains row
-or columns sums with identical but nonzero values, then it must be converted to a
-unipolar part and added to the search stack. Second, we note that one has to be careful
-with the ‘leave largest refined part out’-rule that is used in most color refinement
-algorithms and is key to the fast running time of color refinement [36]. This rule
-pushes all but the largest part obtained by a refinement of a part to the stack of parts
-for which refinements need to be checked. Since we are modeling the refinement of
-symmetric partitions of the split reformulation, we cannot leave out a unipolar part
-in the algorithm that runs on the original matrix since it represents two parts in the
-split reformulation, and leaving out both parts would break correctness. Luckily, this
-does not lead to a slower running time, since the running time is still guaranteed
-by Theorem 25 as we maintain the invariant that our partition models a symmetric
-partition of the split reformulation.
-Choosingγ,λandδ
-One detail that is important for a practical implementation is the choice ofδ. Ifδhas
-many nonzero entries and the matrixAhas large values, then the productAδthat
-appears in the right-hand side of the reflection reduced model can become very large
-and lead to numerical issues.
-Recall that theγandλvectors that were generated by the symmetric equitable
-partition were not unique, and could be optionally negated for each partP∈PU and
-Q∈Q U. In order to minimize the number of complemented rows, we chooseγso that
-for eachP∈P U at least|P|
-2 rowsv∈Phave valueγ v = 1. Similarly, we minimize
-the number of complemented variables by pickingλsuch that for eachQ∈Q U at
-least |Q|
-2 variablesw∈Qhave valueλ w = 1.
-36
-As a starting point for ourδvector we considerδ S as defined in Corollary 21.
-However, this vector may still not be very sparse due to theℓw andu w values. By
-Theorem 20, we may modifyδS toδ :=δS +(Λν,O)for anyQ U-equitable vectorν. In
-our implementation, we chooseνso thatδbecomes sparse. For every partQ∈QU, we
-compute how often the valueλwδS
-w appears for allw∈Qand setν Q to be the negative
-of the most frequently appearing value. This way, most variablesw∈Qsatisfy
-δw =δS
-w +λwνw =δS
-w +λw(−λwδS
-w) =δS
-w−δS
-w = 0.
-Thus, the resultingδvector is typically quite sparse. Furthermore, we remark that for
-a unipolar variablew∈Wwith integral bounds,δ S
-w is also integral. One important
-consequence is that if all variables in some partQ∈QU have integral bounds, then
-δQ is also integral. Although we cannot modifyδS
-w for variableswin bipolar parts,
-these values do not lead to numerical issues as fixing the corresponding values does
-not affect the right-hand sides since the corresponding parts have zero sums due to
-bipolarity.
+[]{#sec_lp_algorithm label="sec_lp_algorithm"} In order to detect reflection reductions, it suffices to compute symmetric equitable partitions of the split reformulation form by [\[thm_refl_reduction\]](#thm_refl_reduction){reference-type="ref" reference="thm_refl_reduction"}. Thus, we can directly reuse the algorithm formulated in [@Grohe2014], which relies on the fast color refinement algorithm by Paige and Tarjan [@Paige1987]. Since the split reformulation consists of four copies of the constraint matrix, we can detect symmetric equitable partitions, and thus reflection reductions, in identical asymptotic worst-case time and space complexity as in [@Grohe2014].
+
+::: theorem
+[]{#thm_running_time_extended label="thm_running_time_extended"} For a linear program $F(A,b,\ell,u,c)$ with $A\in \R^{V\times W}$, let $m$ be the total bitlength of the entries of $\begin{bmatrix}
+    \transpose{\ell} & 0 \\
+    \transpose{u} & 0 \\
+    \transpose{c} & 0\\
+    A & b
+\end{bmatrix}$ and let $n = |V| + |W|$. For $\delta$ with total bitlength $\orderO(m)$, a reflection reduction $(\MP,\MQ,\gamma,\lambda,\delta,V_U,W_U)$ of $F(A,b,\ell,u,c)$ can be determined in $\orderO((n+m)\log n)$ time and $\orderO(n+m)$ space.
+:::
+
+::: proof
+*Proof.* We assume that the constraint matrix is given in a sparse format such as the CSR and/or CSC format. First, $F(A,b- A \delta,\ell- \delta,u-\delta,c)$ can be computed in $\orderO(n+m)$ time and space and has bitlength $\orderO(m)$, where we use that $\delta$ has bitlength of order $\orderO(m)$. Then, the split reformulation $F_S(A,b- A \delta,\ell- \delta,u-\delta,c)$ can also be computed in $\orderO(n+m)$ time and space and has bitlength of order $\orderO(m)$. The initial symmetric equitable partition can be determined in and $\orderO(n+m)$ time and $\orderO(n+m)$ space by using standard hashing techniques. Then, computing the coarsest symmetric equitable partition of the split reformulation takes $\orderO((n+m)\log n)$ time and $\orderO(n+m)$ space [@Grohe2014 Theorem 3.1]. Using the symmetric equitable partition, we can directly derive a reflection reduction in $\orderO(n+m)$ time and space. Summing up all steps, we obtain a worst-case time complexity of $\orderO((n+m)\log n)$ time and a worst-case space complexity of $\orderO(n+m)$. ◻
+:::
+
+In [\[thm_running_time_extended\]](#thm_running_time_extended){reference-type="ref" reference="thm_running_time_extended"}, we assumed that the offset $\delta$ has bitlength that is of the same order as $F(A,b,\ell,u,c)$. This is a reasonable choice, as both $\delta^{\mathcal{C}}$ and $\delta^\mathcal{S}$ have encoding lengths bounded by the encoding length of $\ell$ and $u$ by their definition.\
+Although the running time is asymptotically equivalent to the 'ordinary' equitable partition algorithm presented in [@Grohe2014], computing equitable partitions of the split reformulation, which has 4 times as many nonzero entries, may still be undesirable in practice. To reduce the running time by a constant factor one can exploit the structure of symmetric equitable partitions. We formulate a refinement algorithm that computes $\gamma$ and $\lambda$ that runs on the original matrix but models the refinement algorithm that computes a symmetric partition on the split reformulation. This closely follows the argumentation presented in [\[thm_initial_partition_symmetric\]](#thm_initial_partition_symmetric){reference-type="ref" reference="thm_initial_partition_symmetric"} and [\[thm_refinement_symmetric\]](#thm_refinement_symmetric){reference-type="ref" reference="thm_refinement_symmetric"}. The core idea to achieve this constant-factor improvement is to refine unipolar part pairs at the same time, as is also done in the proof of [\[thm_refinement_symmetric\]](#thm_refinement_symmetric){reference-type="ref" reference="thm_refinement_symmetric"}. The implemented algorithm is very similar to that in [@Grohe2014], who use the algorithm in [@Berkholz2017] which provides a thorough description of the fast color refinement algorithm. Since the algorithm we present does not have a better asymptotic running time, we outline the main changes and adaptations compared to the description in [@Grohe2014] here without proof.\
+For the data structures, we add arrays to track $\lambda$, $\gamma$ and the type (unipolar or bipolar) of each part, which takes $\orderO(n)$ space. The signs $\lambda_w$ and $\gamma_w$ are used during the computation of the column and row sums for equitability. Then, $\lambda$ and $\gamma$ are determined whenever a bipolar part $P$ is turned into a unipolar one or at initialization.
+
+Initially, we compute the affine transformation given by $\delta^\mathcal{C}$. Then, we compute an initial symmetric bound-respecting partition of the split reformulation as in [\[thm_initial_partition_symmetric\]](#thm_initial_partition_symmetric){reference-type="ref" reference="thm_initial_partition_symmetric"}, which can be achieved in linear time by using hashing techniques. For a row $v\in V$, we initialize it to be bipolar if $b_v = 0$ holds. Otherwise, the row is marked as unipolar and grouped with other rows based on the absolute values $|b_v|$ of the right-hand side.
+
+For a variable $w\in W$, we initialize them it to be bipolar if $c_w = 0$ and $-\ell_w = u_w$ hold. Otherwise, we let them be unipolar, and compute signs $\lambda_w$ that so that variables whose objective and bounds can be mapped to each other by negation are put into the same initial part.
+
+For the subsequent refinement of the constraint matrix we change the behavior slightly based on the type of each part. The changes are similar to those described in the proof of [\[thm_refinement_symmetric\]](#thm_refinement_symmetric){reference-type="ref" reference="thm_refinement_symmetric"}. When refined, unipolar parts retain their type, but bipolar parts may be refined into smaller parts that may be either unipolar or bipolar. When a bipolar part is refined into a unipolar part, the signs $\lambda$ or $\gamma$ are determined from its elements based on the column or row sums. In our refinement algorithm, we partition the columns (rows) of a bipolar part based on the absolute value of the sums, rather than the sums directly as in the refinement algorithm in [@Grohe2014]. Then, we set the signs $\lambda_w$ so that the column sums are all positive when multiplied by $\lambda_w$. Finally, one improvement that is directly suggested by [\[thm_bipolar_symmetric_equitable_sum\]](#thm_bipolar_symmetric_equitable_sum){reference-type="ref" reference="thm_bipolar_symmetric_equitable_sum"} is that if $P$ is a bipolar type, that then $\widehat{M}_{P,Q}$ is an equitable block for any $Q\in \MQ$. Thus, we do not need to add bipolar parts to the search stack, since checking them for refinements is pointless.\
+There are two cases where one needs to be careful with the adapation of the color refinement algorithm to the reduced matrix size. First, if a bipolar part contains row or columns sums with identical but nonzero values, then it must be converted to a unipolar part and added to the search stack. Second, we note that one has to be careful with the 'leave largest refined part out'-rule that is used in most color refinement algorithms and is key to the fast running time of color refinement [@Hopcroft1971]. This rule pushes all but the largest part obtained by a refinement of a part to the stack of parts for which refinements need to be checked. Since we are modeling the refinement of symmetric partitions of the split reformulation, we cannot leave out a unipolar part in the algorithm that runs on the original matrix since it represents two parts in the split reformulation, and leaving out both parts would break correctness. Luckily, this does not lead to a slower running time, since the running time is still guaranteed by [\[thm_running_time_extended\]](#thm_running_time_extended){reference-type="ref" reference="thm_running_time_extended"} as we maintain the invariant that our partition models a symmetric partition of the split reformulation.
+
+#### Choosing $\gamma$, $\lambda$ and $\delta$
+
+One detail that is important for a practical implementation is the choice of $\delta$. If $\delta$ has many nonzero entries and the matrix $A$ has large values, then the product $A \delta$ that appears in the right-hand side of the reflection reduced model can become very large and lead to numerical issues.
+
+Recall that the $\gamma$ and $\lambda$ vectors that were generated by the symmetric equitable partition were not unique, and could be optionally negated for each part $P\in \MP_U$ and $Q\in \MQ_U$. In order to minimize the number of complemented rows, we choose $\gamma$ so that for each $P\in \MP_U$ at least $\frac{|P|}2$ rows $v\in P$ have value $\gamma_{v} = 1$. Similarly, we minimize the number of complemented variables by picking $\lambda$ such that for each $Q\in \MQ_U$ at least $\frac{|Q|}{2}$ variables $w\in Q$ have value $\lambda_w = 1$.
+
+As a starting point for our $\delta$ vector we consider $\delta^{\mathcal{S}}$ as defined in [\[thm_delta_equivalent_complemented\]](#thm_delta_equivalent_complemented){reference-type="ref" reference="thm_delta_equivalent_complemented"}. However, this vector may still not be very sparse due to the $\ell_w$ and $u_w$ values. By [\[thm_delta_equivalent\]](#thm_delta_equivalent){reference-type="ref" reference="thm_delta_equivalent"}, we may modify $\delta^\mathcal{S}$ to $\delta \coloneqq \delta^\mathcal{S} + (\Lambda \nu,\zerovec)$ for any $\MQ_U$-equitable vector $\nu$. In our implementation, we choose $\nu$ so that $\delta$ becomes sparse. For every part $Q\in \MQ_U$, we compute how often the value $\lambda_w \delta^\mathcal{S}_w$ appears for all $w\in Q$ and set $\nu_Q$ to be the negative of the most frequently appearing value. This way, most variables $w\in Q$ satisfy $$\delta_w = \delta^\mathcal{S}_w + \lambda_w \nu_w = \delta^\mathcal{S}_w + \lambda_w (- \lambda_w \delta^\mathcal{S}_w) = \delta^\mathcal{S}_w -  \delta^\mathcal{S}_w = 0.$$ Thus, the resulting $\delta$ vector is typically quite sparse. Furthermore, we remark that for a unipolar variable $w\in W$ with integral bounds, $\delta^\mathcal{S}_w$ is also integral. One important consequence is that if all variables in some part $Q\in \MQ_U$ have integral bounds, then $\delta_Q$ is also integral. Although we cannot modify $\delta^\mathcal{S}_w$ for variables $w$ in bipolar parts, these values do not lead to numerical issues as fixing the corresponding values does not affect the right-hand sides since the corresponding parts have zero sums due to bipolarity.

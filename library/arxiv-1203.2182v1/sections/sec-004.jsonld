@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1203.2182v1/sections/sec-004",
   "@type": [
     "doco:Section"
   ],
-  "title": "Faculty of Physics, University of Warsaw, ul. Ho˙ za 69, 00-6 81 Warsaw, Poland",
-  "pageStart": 1,
-  "pageEnd": 1,
+  "title": "Examples coming from knots",
+  "pageStart": 8,
+  "pageEnd": 19,
   "contains": [
     "library/arxiv-1203.2182v1/blocks/prose-sec-004"
   ],
-  "derivedFrom": "library/arxiv-1203.2182v1/manifest",
-  "sourceDocument": "library/arxiv-1203.2182v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1203.2182v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1203.2182v1",
   "provenance": "ingested"
 }

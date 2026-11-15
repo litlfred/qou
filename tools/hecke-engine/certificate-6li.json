@@ -1,17 +1,38 @@
 {
-  "elapsed_seconds": 4.731449236,
+  "elapsed_seconds": 4.726483987,
   "engine": {
     "name": "hecke-crt",
     "version": "0.10.1"
   },
-  "f_pauli_f64": 1.0135038604306232,
+  "f_pauli_f64": 1.0135038516096748,
+  "generation": {
+    "argv": [
+      "hecke-crt",
+      "3",
+      "3"
+    ],
+    "binary": "hecke-crt",
+    "commit": "33d54fd71b",
+    "engine_version": "0.8.0",
+    "q0": 1.1099785827513808,
+    "q0_pin": "proton",
+    "reproduce": "cargo run --release --bin hecke-crt -- 3 3"
+  },
   "isotope": {
     "a": 6,
     "n": 3,
+    "name": "6Li",
     "symbol": "li",
-    "z": 3,
-    "name": "6Li"
+    "z": 3
   },
-  "net_f64": -0.0141554145068703,
-  "tr_alt_f64": -0.014346567248708695
+  "net_f64": -0.014155410209331894,
+  "tr_alt_f64": -0.01434656276827279,
+  "tr_markov_d": {
+    "computed": true,
+    "value": "0.0350172879400989883607387343278706990041534476819434683800471",
+    "method": "two-row seminormal characters up the Hecke tower (computations/probes/markov_trace_two_row_tower_probe.py); agrees with the v9 method to 60 digits on the 12 nuclei both compute",
+    "z": "q^3/(q^2+1)",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "normalisation": "divided by 2^pn_count, like the *_f64 fields"
+  }
 }

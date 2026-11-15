@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-connes-distance-not-reeb-step-count",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:connes-distance-not-reeb-step-count",
+  "kind": "remark",
+  "title": "$d_{\\mathrm{Connes}}$ is a minimal Reeb step count only in the $q \\to \\infty$ limit",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-reeb-coefficient-is-hbar-q",
+    "papers/quantum-observable-universe/blocks/prop-reeb-operations-per-planck"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-reeb-coefficient-is-hbar-q",
+  "tags": [
+    "connes-distance",
+    "reeb-flow",
+    "limit",
+    "dirac-operator"
+  ],
+  "leanRef": "qou:QOU.QBeta.GramSignature.dirac_coefficients_convex",
+  "text": "connes-distance-not-reeb-step-count.md",
+  "provenance": "authored"
+}

@@ -1,28 +1,30 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/1172-4/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Notes on Construction of the Knot Invariant from Quantum Dilogarithm Function",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/1172-4",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "1172-4",
   "contains": [
+    "library/1172-4/sections/sec-front-matter",
     "library/1172-4/sections/sec-000",
     "library/1172-4/sections/sec-001",
     "library/1172-4/sections/sec-002",
     "library/1172-4/sections/sec-003",
     "library/1172-4/sections/sec-004",
     "library/1172-4/sections/sec-005",
-    "library/1172-4/sections/sec-006",
-    "library/1172-4/sections/sec-007",
-    "library/1172-4/sections/sec-008",
-    "library/1172-4/sections/sec-009",
-    "library/1172-4/sections/sec-010",
-    "library/1172-4/sections/sec-011",
-    "library/1172-4/sections/sec-012"
+    "library/1172-4/sections/sec-006"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "1172-4",
+    "title_source": "slug",
     "source_file": "1172-4.pdf",
     "source_sha256": "ffc47732ce0138e9fa08c0fd2598331679a94590b150f5a4f120b8c26f4f56ee",
     "pages": 26,

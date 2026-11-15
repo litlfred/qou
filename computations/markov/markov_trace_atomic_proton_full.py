@@ -174,8 +174,17 @@ def main() -> int:
     print(f"    denominator = {den}")
 
     # Categorical mass anchor
-    mp_me = 938.272 / 0.51099895  # noqa: P31 — audit ratio display; live values via codata_constants/experimental_constants registry
-    rho_p = mp.mpf(str(mp_me)) / val_at_q0
+    # WAS: `mp_me = 938.272 / 0.51099895`, a float64 division of two
+    # TRUNCATED literals, then `mp.mpf(str(mp_me))` and `fmt(rho_p)` at 60
+    # digits. Three defects in one line: `938.272` is short of the registry's
+    # 938.27208943 and `0.51099895` short of 0.51099895069, so the ratio was
+    # 1836.1525009 against the registry's 1836.1526734 — WRONG AT THE 7th
+    # SIGNIFICANT DIGIT (94 ppb) — and the serializer then published ~45
+    # manufactured digits on top of a float64 value. Read the registry and
+    # carry mpf.
+    from codata_constants import M_E_MEV, M_P_MEV_VALIDATION
+    mp_me = mp.mpf(M_P_MEV_VALIDATION) / mp.mpf(M_E_MEV)
+    rho_p = mp_me / val_at_q0
     print(f"\n  Categorical mass dimensional bridge:")
     print(f"    m_p / m_e (CODATA) = {mp_me:.6f}")
     print(f"    ρ_p^CODATA = (m_p/m_e) / |tr_M(σ_1^7σ_2^4)| = "
@@ -187,7 +196,7 @@ def main() -> int:
     #
     # 1.6334 is a hardcoded CONVENTION-C decimal. There is no `char_fast`
     # function anywhere in the live tree to call — the only implementations
-    # are in `computations/_deprecated/` — so this was never a cross-check
+    # are in `fsh-guts/deprecated/computations/` — so this was never a cross-check
     # against code, only against a transcribed number from a retired path.
     # Convention C was excised 2026-08-09 (owner ruling R1, 2026-08-15 makes
     # D canonical), and under D this word gives 1.8843…, which is what the

@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-selection-rule-anchors-c1-c3",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:selection-rule-anchors-c1-c3",
+  "kind": "proposition",
+  "title": "Per-component selection rule $\\frac{1}{c+1}\\sum_{\\lambda\\vdash c+1} \\dim_q V_\\lambda$ at c=1, c=3",
+  "tags": [
+    "selection-rule",
+    "linking-weight",
+    "wedderburn",
+    "gelfand",
+    "family-a",
+    "lean"
+  ],
+  "leanRef": "qou:QOU.Mass.selection_rule_c3_anchor_derived",
+  "text": "selection-rule-anchors-c1-c3.md",
+  "leanSource": "selection-rule-anchors-c1-c3.lean",
+  "provenance": "authored"
+}

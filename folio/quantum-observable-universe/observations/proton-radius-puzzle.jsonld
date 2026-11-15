@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-proton-radius-puzzle",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:proton-radius-puzzle",
+  "kind": "remark",
+  "title": "The Proton Radius Puzzle",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quantum-planck-constant"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-quantum-planck-constant",
+  "tags": [
+    "proton-radius",
+    "generation",
+    "observation"
+  ],
+  "text": "proton-radius-puzzle.md",
+  "provenance": "authored"
+}

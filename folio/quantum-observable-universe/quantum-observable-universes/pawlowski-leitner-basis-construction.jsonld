@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-pawlowski-leitner-basis-construction",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:pawlowski-leitner-basis-construction",
+  "kind": "remark",
+  "title": "PBW derivation of the Pawlowski--Leitner basis",
+  "uses": [
+    "papers/unital-groebner-bases/blocks/cor-pbw"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-pawlowski-leitner-basis",
+  "tags": [
+    "basis",
+    "intertwiner",
+    "pbw",
+    "groebner-shirshov"
+  ],
+  "text": "pawlowski-leitner-basis-construction.md",
+  "provenance": "authored"
+}

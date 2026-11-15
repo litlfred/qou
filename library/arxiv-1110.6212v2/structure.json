@@ -6,7 +6,11 @@
   "sha256": "1923b6a0bfdc810f27d6c2ecf533c3b52ad94c321e9e7004fe962c82ad34c52b",
   "bytes": 376888,
   "pages": 34,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -293,6 +297,90 @@
   "likely_scanned": false,
   "toc_entries": 23,
   "sections": 9,
-  "chars_total": 76761
+  "chars_total": 76761,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 24,
+   "overlaid": 8,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-11-root-systems-and-weyl-groups",
+     "title": "Root systems and Weyl groups",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-12-parameter-systems",
+     "title": "Parameter systems",
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-21-principal-series-representations",
+     "title": "Principal series representations",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-22-a-combinatorial-construction-of-irreducible-c",
+     "title": "A combinatorial construction of irreducible calibrated HL-modules",
+     "prose_ratio": 0.868,
+     "coverage_ratio": 0.923,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-23-examples",
+     "title": "Examples",
+     "prose_ratio": 0.921,
+     "coverage_ratio": 0.894,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-24-characters",
+     "title": "Characters",
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.937,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-3-the-plancherel-theorem",
+     "title": "The Plancherel Theorem",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-31-the-rank-1-algebras",
+     "title": "The rank 1 algebras",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.997,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-a-constants-and-c-functions",
+     "title": "A Constants and c-functions",
+     "prose_ratio": 0.833,
+     "coverage_ratio": 0.043,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

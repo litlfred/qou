@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-hadron-half-life-novelty",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:hadron-half-life-novelty",
+  "kind": "remark",
+  "title": "Mathematical novelty of the categorical half-life re-derivation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-hadron-half-life"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-hadron-half-life",
+  "text": "hadron-half-life-novelty.md",
+  "provenance": "authored"
+}

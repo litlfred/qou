@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-shell-threading-energy",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:shell-threading-energy",
+  "kind": "remark",
+  "title": "Shell energy from the Skein smoothing at the beta-decay vertex",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-molecular-hopf-ring",
+    "papers/quantum-observable-universe/blocks/ex-half-life-shell-worked"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-molecular-hopf-ring",
+  "tags": [
+    "shell-correction",
+    "threading-link",
+    "skein-resolution",
+    "beta-decay",
+    "half-life",
+    "lambda-shell",
+    "molecular-hopf-ring"
+  ],
+  "leanRef": "qou:QOU.ShellThreadingEnergy.ShellThreadingEnergy",
+  "text": "shell-threading-conjecture.md",
+  "leanSource": "shell-threading-conjecture.lean",
+  "provenance": "authored"
+}

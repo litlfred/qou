@@ -5,9 +5,9 @@
  *
  * WHY THIS FILE EXISTS
  *
- * `folio-assistant/content/pipeline/validate-references.ts` is the only checker
+ * `folio-assistant/cat-harness-tools/pipeline/validate-references.ts` is the only checker
  * that cross-checks Lean `-- Ref: [key]` comments and `\cite{}` against
- * `content/schema/references.ts`. Run directly it does not merely report
+ * `folio/schema/references.ts`. Run directly it does not merely report
  * nothing — it THROWS, on its own first statement:
  *
  *   error: Reference registry not configured. The downstream repo must call
@@ -51,12 +51,12 @@
  * folio-assistant fix (bean `qou-cite`), not a corpus one.
  */
 
-import { configureReferenceRegistry } from "../folio-assistant/content/pipeline/references-registry-di";
+import { configureReferenceRegistry } from "../folio-assistant/cat-harness-tools/pipeline/references-registry-di";
 
-const bib = await import("../content/schema/references");
+const bib = await import("../folio/schema/references");
 
 if (!bib.references?.length) {
-  console.error("  ✗ content/schema/references.ts parsed but holds no entries");
+  console.error("  ✗ folio/schema/references.ts parsed but holds no entries");
   process.exit(1);
 }
 
@@ -68,5 +68,15 @@ configureReferenceRegistry({
 
 console.log(`Reference registry configured: ${bib.references.length} entries\n`);
 
+// Default the paper (C9 story B1, issue #7528). Without `--paper` the checker
+// throws on a 5-paper folio, so the wrapper used to exit 1 before checking
+// anything. Measured 2026-10-05: running it with each of the five papers gives
+// IDENTICAL findings (11 errors / 177 warnings / 444 info), because the
+// citation cross-check walks the whole folio. So a default changes nothing
+// about what is checked, and an explicit `--paper` still wins.
+if (!process.argv.includes("--paper")) {
+  process.argv.push("--paper", "quantum-observable-universe");
+}
+
 // Dynamic, and after configuration — see the note above.
-await import("../folio-assistant/content/pipeline/validate-references");
+await import("../folio-assistant/cat-harness-tools/pipeline/validate-references");

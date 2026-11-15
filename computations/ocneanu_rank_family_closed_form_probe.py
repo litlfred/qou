@@ -2,7 +2,7 @@
 """Exact closed form for the rank-N Ocneanu/Wenzl Markov parameter.
 
 Evidence for the one cited step of
-`content/quantum-observable-universe/lean/QOU/Eightfold/OcneanuRankFamily.lean`:
+`folio/quantum-observable-universe/lean/QOU/Eightfold/OcneanuRankFamily.lean`:
 that the Lean `markovParam N q` IS the Markov parameter of the SU(N) trace.
 Mathlib has no hook-content or principal-specialisation API, so that identity
 cannot be stated there; it is established here instead, symbolically and

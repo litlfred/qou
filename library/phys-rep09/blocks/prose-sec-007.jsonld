@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/phys-rep09/blocks/prose-sec-007",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/phys-rep09/blocks/prose-sec-007",
   "kind": "prose",
-  "title": "References",
-  "pageStart": 85,
-  "pageEnd": 88,
-  "text": "../sections/sec-007-references.md",
-  "derivedFrom": "library/phys-rep09/manifest",
-  "sourceDocument": "library/phys-rep09/manifest",
+  "title": "Magnus expansion and time-dependent perturbation theory",
+  "pageStart": 12,
+  "pageEnd": 14,
+  "text": "../sections/sec-007-magnus-expansion-and-time-dependent-perturbation.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/phys-rep09",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/phys-rep09",
   "provenance": "ingested"
 }

@@ -11,12 +11,17 @@
 import { resolve } from "path";
 import { realpathSync } from "fs";
 import { execFileSync } from "child_process";
-import { configureValueRegistry } from "../folio-assistant/content/pipeline/value-registry-di";
-import { configureReferenceRegistry } from "../folio-assistant/content/pipeline/references-registry-di";
-import { WITNESSED_VALUES, lookupValue, verifiedNames } from "../content/values/registry";
-import { configureLeanPackages } from "../folio-assistant/schemas/lean-packages";
+import { configureValueRegistry } from "../folio-assistant/cat-harness-tools/pipeline/value-registry-di";
+import { configureReferenceRegistry } from "../folio-assistant/cat-harness-tools/pipeline/references-registry-di";
+import { WITNESSED_VALUES, lookupValue, verifiedNames } from "../folio/values/registry";
+import { configureChapterProfiles } from "../folio-assistant/cat-harness-tools/pipeline/chapter-profile-registry-di";
+import {
+  CHAPTER_EXPECTED_REGIMES, CATEGORICAL_CHAPTERS, ARCHIMEDEAN_CHAPTERS,
+  TERMS_NEEDING_DEFINITIONS, LEAN_MODULE_CHAPTERS,
+} from "../folio/values/chapter-profiles";
+import { configureLeanPackages } from "../folio-assistant/folio-assistant-sci/pipeline/lean-formal-ref";
 import { LEAN_PACKAGES } from "../schemas/lean-packages";
-import { validateObjects } from "../folio-assistant/content/pipeline/validate";
+import { validateObjects } from "../folio-assistant/cat-harness-tools/pipeline/validate";
 
 // Inject the domain-specific registries into the generic platform.
 configureValueRegistry({
@@ -25,11 +30,21 @@ configureValueRegistry({
   verifiedNames,
 });
 configureLeanPackages(LEAN_PACKAGES);
+// qou's chapter profiles (bean folio-assistant-saqd). The platform's checker
+// module registers its own copy when it loads; this call runs after that
+// import, and the last call wins.
+configureChapterProfiles({
+  chapterExpectedRegimes: CHAPTER_EXPECTED_REGIMES,
+  categoricalChapters: CATEGORICAL_CHAPTERS,
+  archimedeanChapters: ARCHIMEDEAN_CHAPTERS,
+  termsNeedingDefinitions: TERMS_NEEDING_DEFINITIONS,
+  leanModuleChapters: LEAN_MODULE_CHAPTERS,
+});
 
 const args = process.argv.slice(2);
 const strict = args.includes("--strict");
 const positional = args.filter(a => !a.startsWith("--"));
-const dir = resolve(positional[0] || "content/quantum-observable-universe");
+const dir = resolve(positional[0] || "folio/quantum-observable-universe");
 
 /**
  * Resolve the platform (`folio-assistant`) commit actually being used.
@@ -67,7 +82,7 @@ console.log(`  platform (folio-assistant): ${platformVersion()}\n`);
  * The bibliography has to PARSE before anything else is worth reporting.
  *
  * `validateObjects` checks content blocks and never imports
- * `content/schema/references.ts`, so a syntactically broken bibliography —
+ * `folio/schema/references.ts`, so a syntactically broken bibliography —
  * every `\cite{}` in the paper unresolvable, `references.bib`
  * un-regenerable — was reported as "✓ Valid". Measured by breaking it on
  * purpose: `bun` refused the file with `Expected ";"` while this script
@@ -78,10 +93,10 @@ console.log(`  platform (folio-assistant): ${platformVersion()}\n`);
  * would also pass a bare import.
  */
 try {
-  const bib = await import("../content/schema/references");
+  const bib = await import("../folio/schema/references");
   const n = bib.references?.length ?? 0;
   if (n === 0) {
-    console.error("  ✗ content/schema/references.ts parsed but holds no entries");
+    console.error("  ✗ folio/schema/references.ts parsed but holds no entries");
     process.exit(1);
   }
   // Hand the loaded bibliography to the platform's registry — UNDER --strict ONLY.
@@ -134,7 +149,7 @@ try {
   console.log(`  bibliography: ${n} entries, parses`
     + (strict ? "; registry configured (cites-resolve ON)" : "") + "\n");
 } catch (err) {
-  console.error("  ✗ content/schema/references.ts DOES NOT PARSE — every citation "
+  console.error("  ✗ folio/schema/references.ts DOES NOT PARSE — every citation "
     + "in the paper is unresolvable until this is fixed:");
   console.error(`    ${err instanceof Error ? err.message : String(err)}`);
   process.exit(1);

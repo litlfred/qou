@@ -1,5 +1,6 @@
 {
   "computation": "qbeta-full-range-bond-sum",
+  "q0Anchor": "proton",
   "assertions": [
     {
       "name": "closed_form_pair_counts_match_brute_force",
@@ -128,8 +129,8 @@
     "layout_gap_pct_full_range": "-0.030373236"
   },
   "provenance": {
-    "headSha": "d9a5f6886412d37a51e1426d74f13ec4dd2569cc",
+    "headSha": "eacf7ca73101030f04c9f788e9f705839bef23c3",
     "producer": "computations/qbeta/qbeta_full_range_bond_sum_probe.py",
-    "elapsed_s": 14.53
+    "elapsed_s": 17.484
   }
 }

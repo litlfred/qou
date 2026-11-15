@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/thm-q-bkm",
+  "@type": [
+    "folio-assistant-core:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:q-bkm",
+  "kind": "theorem",
+  "title": "$q$-deformed Beale--Kato--Majda criterion",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-ns-nonlinear-uniqueness"
+  ],
+  "tags": [
+    "BKM",
+    "blowup-criterion",
+    "vorticity",
+    "regularity"
+  ],
+  "leanRef": "qou:QOU.FluidDynamics.q_bkm_criterion",
+  "text": "q-bkm-criterion.md",
+  "provenance": "authored"
+}

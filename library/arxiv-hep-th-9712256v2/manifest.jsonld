@@ -1,0 +1,45 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9712256v2",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "On structure constants and fusion rules in the SL(2,C)/SU(2) WZNW model",
+  "contains": [
+    "library/arxiv-hep-th-9712256v2/sections/sec-front-matter",
+    "library/arxiv-hep-th-9712256v2/sections/sec-000",
+    "library/arxiv-hep-th-9712256v2/sections/sec-001",
+    "library/arxiv-hep-th-9712256v2/sections/sec-002",
+    "library/arxiv-hep-th-9712256v2/sections/sec-003",
+    "library/arxiv-hep-th-9712256v2/sections/sec-004",
+    "library/arxiv-hep-th-9712256v2/sections/sec-005",
+    "library/arxiv-hep-th-9712256v2/sections/sec-006",
+    "library/arxiv-hep-th-9712256v2/sections/sec-007"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "meta": {
+    "doc_id": "arxiv-hep-th-9712256v2",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "9712256v2.pdf",
+    "source_sha256": "9939add0a5823a432fdcd0c6a36e033780365304e4a628d052cbb52e7ade2cfc",
+    "pages": 25,
+    "arxiv": {
+      "id": "hep-th/9712256",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "27 Jun 1998"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

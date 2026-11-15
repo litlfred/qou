@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1012.5432v4/blocks/prose-sec-009",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1012.5432v4/blocks/prose-sec-009",
   "kind": "prose",
   "title": "S3",
   "pageStart": 25,
   "pageEnd": 29,
   "text": "../sections/sec-009-2-s3.md",
-  "derivedFrom": "library/arxiv-1012.5432v4/manifest",
-  "sourceDocument": "library/arxiv-1012.5432v4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1012.5432v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1012.5432v4",
   "provenance": "ingested"
 }

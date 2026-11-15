@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-categorical-q-connection-unique",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:categorical-q-connection-unique",
+  "kind": "proposition",
+  "title": "Uniqueness of the categorical $q$-connection",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-categorical-q-connection-exists",
+    "papers/quantum-observable-universe/blocks/prop-categorical-connection-unique"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-categorical-q-connection-unique"
+  ],
+  "tags": [
+    "uniqueness",
+    "q-connection"
+  ],
+  "leanRef": "qou:QOU.CategoricalQConnection.unique",
+  "text": "categorical-q-connection-unique.md",
+  "leanSource": "categorical-q-connection-unique.lean",
+  "provenance": "authored"
+}

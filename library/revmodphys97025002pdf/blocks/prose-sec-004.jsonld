@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/revmodphys97025002pdf/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/revmodphys97025002pdf/blocks/prose-sec-004",
   "kind": "prose",
   "title": "B. Overview of the 2022 adjustment",
   "pageStart": 1,
   "pageEnd": 3,
   "text": "../sections/sec-004-b-overview-of-the-2022-adjustment.md",
-  "derivedFrom": "library/revmodphys97025002pdf/manifest",
-  "sourceDocument": "library/revmodphys97025002pdf/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/revmodphys97025002pdf",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/revmodphys97025002pdf",
   "provenance": "ingested"
 }

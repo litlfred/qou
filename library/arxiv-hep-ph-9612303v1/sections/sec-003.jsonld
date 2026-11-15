@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-hep-ph-9612303v1/sections/sec-003",
   "@type": [
     "doco:Section"
   ],
-  "title": "Conclusions and outlook",
-  "pageStart": 8,
+  "title": "References",
+  "pageStart": 9,
   "pageEnd": 9,
   "contains": [
     "library/arxiv-hep-ph-9612303v1/blocks/prose-sec-003"
   ],
-  "derivedFrom": "library/arxiv-hep-ph-9612303v1/manifest",
-  "sourceDocument": "library/arxiv-hep-ph-9612303v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-9612303v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-9612303v1",
   "provenance": "ingested"
 }

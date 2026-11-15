@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-categorical-chain-convergence-mechanisms",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:categorical-chain-convergence-mechanisms",
+  "kind": "proposition",
+  "title": "Convergence of $\\mathfrak{Q}_\\beta^{\\text{cat}}$'s infinite product: per-knot c(K) brane-tower bound + inter-knot linking-number locality (Habiro-ring interpretation)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-beta-categorical-precision-ladder"
+  ],
+  "cites": [
+    "references/habiro2002",
+    "references/jones1985"
+  ],
+  "tags": [
+    "habiro-ring",
+    "pre-archimedean",
+    "convergence",
+    "linking-number",
+    "locality",
+    "asymptotic-freedom",
+    "1ppb-roadmap"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.categorical_chain_convergence_mechanisms",
+  "text": "categorical-chain-convergence-mechanisms.md",
+  "leanSource": "categorical-chain-convergence-mechanisms.lean",
+  "provenance": "authored"
+}

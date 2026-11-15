@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/invariant-eigendistributions-2/sections/sec-016",
   "@type": [
     "doco:Section"
   ],
-  "title": "Theorem. The character contour C(M) of a (g,K )-moduleM and the characteristic variety",
-  "pageStart": 11,
-  "pageEnd": 13,
+  "title": "REFERENCES",
+  "pageStart": 31,
+  "pageEnd": 33,
   "contains": [
     "library/invariant-eigendistributions-2/blocks/prose-sec-016"
   ],
-  "derivedFrom": "library/invariant-eigendistributions-2/manifest",
-  "sourceDocument": "library/invariant-eigendistributions-2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/invariant-eigendistributions-2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/invariant-eigendistributions-2",
   "provenance": "ingested"
 }

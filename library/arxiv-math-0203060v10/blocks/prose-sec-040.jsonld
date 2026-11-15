@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0203060v10/blocks/prose-sec-040",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0203060v10/blocks/prose-sec-040",
   "kind": "prose",
   "title": "Some applications of lifting",
   "pageStart": 47,
   "pageEnd": 47,
   "text": "../sections/sec-040-94-some-applications-of-lifting.md",
-  "derivedFrom": "library/arxiv-math-0203060v10/manifest",
-  "sourceDocument": "library/arxiv-math-0203060v10/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203060v10",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203060v10",
   "provenance": "ingested"
 }

@@ -1,7 +1,7 @@
 {
   "engine": "python-stdlib",
   "engineVersion": "3",
-  "computedAt": "2026-08-10T18:47:41.626944+00:00",
+  "computedAt": "2026-10-13T14:08:22.914531+00:00",
   "computation": "kappa-shell8-excess-convention",
   "scriptFile": "probe_kappa_shell8_excess_convention.py",
   "contentBlock": "conj:magic-shell-coupling-kappa",
@@ -155,7 +155,10 @@
     }
   ],
   "allPassed": true,
+  "scriptHash": "b3108eff45b2",
+  "scriptCommitSha": "e5c191cfd9bd407b0071a5916d67b670b49fad58",
+  "commitSha": "a8ee650ec4608e9e05bc32f7bdfe7c559041fe29",
+  "durationMs": 0,
   "q0Anchor": "proton",
-  "q0Value": "1.10997858275138080759166909561076887987449912187357763605672",
-  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -84,7 +84,9 @@ jobs:
           echo "$EOF" >> "$GITHUB_OUTPUT"
           EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
           echo "orphan-branch<<$EOF" >> "$GITHUB_OUTPUT"
-          echo "lake-cache/${{ matrix.package }}-$slug" >> "$GITHUB_OUTPUT"
+          # The family is declared in qou.json (storage.branchPrefix); write to it.
+          source scripts/lib/lake-cache-family.sh
+          lake_cache_write_branch "${{ matrix.package }}-$slug" >> "$GITHUB_OUTPUT"
           echo "$EOF" >> "$GITHUB_OUTPUT"
 
       - name: Build the package (populates .lake/)
@@ -118,7 +120,7 @@ jobs:
           # lake-cache/qou-v4-24-0 (7268 oleans, all dependencies). That
           # guard is the point of routing through the script.
           SVC=""
-          for c in scripts/lake-cache.sh folio-assistant/scripts/lake-cache.sh; do
+          for c in scripts/lake-cache.sh folio-assistant/cat-harness-tools/scripts/lake-cache.sh; do
             [ -f "$c" ] && { SVC="$c"; break; }
           done
           [ -z "$SVC" ] && { echo "::error::lake-cache.sh not found"; exit 1; }
@@ -130,7 +132,7 @@ jobs:
             --push
 
   cleanup:
-    name: Prune orphan-branch family (keep 2 per package)
+    name: Report prune candidates (keep 2 per package) - never deletes
     needs: [setup, refresh]
     if: always() && github.event_name == 'push'
     runs-on: ubuntu-latest
@@ -139,13 +141,25 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: List + prune lake-cache/* branches
+      - name: List lake-cache/* prune candidates (no deletion)
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PACKAGES: ${{ needs.setup.outputs.packages }}
         run: |
-          # Per package, keep the 2 most-recent cache branches (current
-          # + previous toolchain). Delete older ones. The package list
+          # REPORT-ONLY (owner-approved 2026-10-04, bean qou-aq9i). This job
+          # used to `git push origin --delete` every lake-cache/<pkg>-*
+          # branch past the newest two by date. Measured 2026-10-04, that
+          # deletes 7 of the 9 live qou-* branches, including the canonical
+          # qou-v4-24-0 and the add-on olean branches
+          # (qou-v4-24-0-mathlib-gap-modules, qou-v4-24-0-h4-wedderburn-cone),
+          # because add-ons share the family prefix and the newest-two rule
+          # cannot tell them apart. Cache branches are restored by name
+          # (AGENTS.md, the lean skills), so deleting one silently breaks
+          # every later restore. Per deletion-requires-confirmation the job
+          # lists candidates in the job summary; a person deletes.
+          #
+          # Per package, the 2 most-recent cache branches (current
+          # + previous toolchain) are kept; older ones are listed. The package list
           # comes from .github/lake-packages.json (via the setup job),
           # so nothing is hardcoded here.
           #
@@ -157,12 +171,17 @@ jobs:
           # whole workflow. Per PR #1097 review (Copilot).
 
           # Tolerate the fetch's failure on empty pattern.
-          git fetch origin --quiet 'refs/heads/lake-cache/*:refs/remotes/origin/lake-cache/*' 2>/dev/null \
-            || echo "(no lake-cache/* refs to fetch — first run or no remote branches yet)"
+          # Both names the family has: the declared one and the legacy
+          # `lake-cache/` (kept, never deleted — AGENTS.md rule 9).
+          source scripts/lib/lake-cache-family.sh
+          for p in "$LAKE_CACHE_PREFIX" $LAKE_CACHE_LEGACY_PREFIXES; do
+            git fetch origin --quiet "refs/heads/${p}*:refs/remotes/origin/${p}*" 2>/dev/null \
+              || echo "(no ${p}* refs to fetch — first run or no remote branches yet)"
+          done
 
           mapfile -t pkgs < <(echo "$PACKAGES" | jq -r '.[]')
           for pkg in "${pkgs[@]}"; do
-            branches=$(git branch -r --list "origin/lake-cache/$pkg-*" \
+            branches=$(git branch -r --list "origin/${LAKE_CACHE_PREFIX}$pkg-*" "origin/lake-cache/$pkg-*" \
                        --sort=-committerdate 2>/dev/null | sed 's|.*origin/||' | head -50)
             if [ -z "$branches" ]; then
               echo "No lake-cache/$pkg-* branches yet — skipping prune for $pkg"
@@ -170,17 +189,22 @@ jobs:
             fi
             echo "Branches for $pkg:"
             echo "$branches" | sed 's/^/  /'
-            to_delete=$(echo "$branches" | tail -n +3)
-            for b in $to_delete; do
-              echo "Pruning old cache: $b"
-              git push origin --delete "$b" 2>/dev/null \
-                || echo "  (already deleted or push failed)"
-            done
+            candidates=$(echo "$branches" | tail -n +3)
+            if [ -n "$candidates" ]; then
+              {
+                echo "### lake-cache/$pkg-*: prune candidates (NOT deleted)"
+                echo "$candidates" | sed 's/^/- /'
+                echo
+                echo "Add-on branches share this prefix. Check each one before deleting it by hand."
+              } >> "$GITHUB_STEP_SUMMARY"
+              echo "Prune candidates for $pkg (not deleted):"
+              echo "$candidates" | sed 's/^/  /'
+            fi
           done
 
           # Hard cap (paranoia for the case where per-package keep-2 still
           # leaves stale entries from a removed package).
-          total=$(git branch -r --list 'origin/lake-cache/*' 2>/dev/null | wc -l)
+          total=$(git branch -r --list "origin/${LAKE_CACHE_PREFIX}*" 'origin/lake-cache/*' 2>/dev/null | wc -l)
           if [ "$total" -gt 20 ]; then
             echo "::warning::lake-cache/* branch count = $total (> 20 cap). Manual cleanup recommended."
           fi

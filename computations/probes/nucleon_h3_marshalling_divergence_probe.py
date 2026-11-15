@@ -92,10 +92,15 @@ importers and a 46-module `closed_form_tau_M` cone including
 binding path. Re-pointing it moves every closed-form nucleon and atom trace in
 the corpus, which is an owner decision, not an agent's.
 
-Ref: prop:constit-factor-tau-M-proton-identity
+Ref: `constit-factor-tau-M-proton-identity`
 Ref: closed_form_tau_M.py (compute_tau_M_nucleon_H3)
 Ref: canonical_braid_marshalling.py (marshal_to_chi_lambda_braid)
 Ref: chi_monotone_transfer.py (chi_all_lambda, the d-preserving path)
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 
@@ -285,10 +290,17 @@ def main() -> int:
     #
     # The live check is now that the fix HOLDS. 2.157 is kept below as the
     # historical symptom, which is what it always was.
+    # RESIDUAL against 0, not value against target: the verdict path
+    # (qou_substrate/witness.py) compares float(computed) to float(expected),
+    # so a value-vs-value form here could not resolve anything below the
+    # float64 floor and the tolerance below it was unreachable by ~10^14.
+    # A residual near zero IS representable as a float64 all the way down, so
+    # the same tolerance is a real bound on it.
+    # Gate: computations/audits/tolerance_below_arithmetic_floor_audit.py.
     w.add_assertion(
         name="qu2w_fix_holds_marshalled_equals_d_preserving",
-        computed=str(he4_ratio),
-        expected="1.0",
+        computed=mp.nstr(abs(he4_ratio - 1), 20),
+        expected="0",
         tolerance="1e-30",
         source=("(tau_p*tau_n)^2 ratio between the two paths. Before the "
                 "qou-qu2w fix this was 2.157, matching the independently "

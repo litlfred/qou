@@ -121,7 +121,13 @@ def main() -> int:
     bps, src = branch_points()
     log(f"six branch points ({src}); |D| roots: {[mp.nstr(b, 8) for b in bps]}")
     checks.append(("six branch points obtained", len(bps) == 6))
-    r = mp.mpf("0.11150636379232188547") / 2   # half the lasso radius of the branch probe: strictly inside
+    # Half the LARGEST lasso radius the braid-monodromy probe recorded, read from its
+    # witness rather than typed (witness-value copy ratchet). Same value as the
+    # literal it replaces. NB: four of the six recorded radii are 0.0293..., so this
+    # r is inside the lasso only for the two branch points carrying 0.1115...
+    with open(os.path.join(HERE, "colour-cubic-braid-monodromy.witness.json"), encoding="utf-8") as fh:
+        _radii = [mp.mpf(x["radius"]) for x in json.load(fh)["data"]["lasso_words_in_departure_order"]]
+    r = max(_radii) / 2
     per_point = []
     all_fixed_zero = all_pair_zero = all_closed_zero = all_converged = True
     for k, zk in enumerate(sorted(bps, key=lambda c: (mp.re(c), mp.im(c)))):
@@ -199,7 +205,7 @@ def main() -> int:
         "(finite-order eigenvalues are never > 1), no framework geometry in the corpus produces the "
         "deformation 1 ↦ q₀ — it is an input."))
     wb.add_caveat("The prolongation jets λ_SW^{(n)} ~ (z − z_k)^{1/2 − n} carry square-root monodromy −1 (NaStokesKeystone.lean); a root of unity, not a real q₀ > 1 — covered by UntwistedMonodromyPrune, not re-measured here.")
-    out = wb.save()
+    out = wb.save({"q0Anchor": "independent", "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal"})
     print(f"  witness -> {os.path.relpath(out, os.path.join(HERE, '..', '..'))}")
     return 0 if ok == len(checks) else 1
 

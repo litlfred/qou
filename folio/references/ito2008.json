@@ -1,0 +1,30 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "ito2008",
+  "library": {
+    "docId": "arxiv-0805.1447v2",
+    "dir": "library/arxiv-0805.1447v2",
+    "pdf": "library/arxiv-0805.1447v2/0805.1447v2.pdf",
+    "stage": "candidates",
+    "pages": 21,
+    "sections": 8,
+    "arxiv": "0805.1447v2"
+  },
+  "type": "article",
+  "title": "Braid ordering and the geometry of closed braid",
+  "author": [
+    {
+      "family": "Ito",
+      "given": "Tetsuya"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2008
+      ]
+    ]
+  },
+  "URL": "https://arxiv.org/abs/0805.1447",
+  "note": "PDF library/arxiv-0805.1447v2/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record. Theorem 2 is the reason this is registered: for a braid beta in B_n whose closure is a knot and whose Dehornoy floor is at least 3, beta is periodic iff its closure is a torus knot, reducible iff satellite, and pseudo-Anosov iff HYPERBOLIC. That converts the question 'is this closed braid word hyperbolic?' — which the canonical-knot-id work has to answer per braid word — into a Nielsen-Thurston classification of the word itself. The Dehornoy-floor hypothesis is the catch: short words have small floor and the theorem simply does not apply to them."
+}

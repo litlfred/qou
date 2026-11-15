@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1009.4034v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1009.4034v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1009.4034v1",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1009.4034&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1009.4034v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1009.4034v1",
+    "content_type": "application/gzip",
+    "sha256": "250f4b5070b23df569c711012fe3d10e5600d966af717af1532f54baf22822e9",
+    "bytes": 215461,
+    "fetched": "2026-10-10T15:03:31+00:00",
+    "files": [
+      {
+        "path": "source/files/kerovschurweyl.bbl",
+        "role": "bbl",
+        "sha256": "96be390551ea2124f2a9dcdee1e6644cea2ccd40e588a80bb53520200cdcb35d",
+        "bytes": 4750
+      },
+      {
+        "path": "source/files/kerovschurweyl.tex",
+        "role": "tex",
+        "sha256": "63eebe05f1483b4d2cf587a8eb5ee3a2265de6501502480c1d81fe9c58d55d27",
+        "bytes": 78463
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

@@ -1,0 +1,27 @@
+{
+ "url": "https://arxiv.org/e-print/2211.13362v2",
+ "content_type": "application/gzip",
+ "sha256": "e136517f3394bf0417f59a9b70fbdfcaeccb28b2a3e3c4a2b44c35adea364650",
+ "bytes": 7985198,
+ "fetched": "2026-10-10T15:18:28+00:00",
+ "files": [
+  {
+   "path": "files/manuscript-final-prsa.bbl",
+   "role": "bbl",
+   "sha256": "c67a54e14bd7b57a0ca61bb893e226badd190be94a47b4accc347924858538ff",
+   "bytes": 122362
+  },
+  {
+   "path": "files/manuscript-final-prsa.tex",
+   "role": "tex",
+   "sha256": "d2ac8b600c721909d3d562bf90646e1f65405bfba71bc8e54fc2b10c5c64db4b",
+   "bytes": 34322
+  },
+  {
+   "path": "files/ref.bib",
+   "role": "bib",
+   "sha256": "d4809d39937b8400b271f7d79ddf1ce7bc38fac1042b44e879e2e416dbae619c",
+   "bytes": 40318
+  }
+ ]
+}

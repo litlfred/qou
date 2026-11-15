@@ -1,0 +1,27 @@
+{
+ "url": "https://arxiv.org/e-print/1105.0091v1",
+ "content_type": "application/gzip",
+ "sha256": "bfefa393daac0fc63f28a24202abf798ee018c8503df5ca2b4b555952820ba21",
+ "bytes": 164345,
+ "fetched": "2026-10-10T15:04:43+00:00",
+ "files": [
+  {
+   "path": "files/cltinfinity.bbl",
+   "role": "bbl",
+   "sha256": "b8ed336ef8582b0b42f4e43ba31ba73856faa42ded7e6dc3af44802baea9ffca",
+   "bytes": 11683
+  },
+  {
+   "path": "files/cltinfinity.tex",
+   "role": "tex",
+   "sha256": "8a1288cff04a0d4e1e0323c1a5b46ec02bf75c4d21a41bdaa5cb744b1009d9a7",
+   "bytes": 179124
+  },
+  {
+   "path": "files/svjour3.cls",
+   "role": "cls",
+   "sha256": "7334bcfda97ba34d06e28dc546a7bd7801711a1ba7732f03481dafbe0d04f892",
+   "bytes": 47679
+  }
+ ]
+}

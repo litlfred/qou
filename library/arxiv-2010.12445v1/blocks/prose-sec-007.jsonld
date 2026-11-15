@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2010.12445v1/blocks/prose-sec-007",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2010.12445v1/blocks/prose-sec-007",
   "kind": "prose",
   "title": "The stack of fiber functors",
   "pageStart": 18,
   "pageEnd": 20,
   "text": "../sections/sec-007-5-the-stack-of-fiber-functors.md",
-  "derivedFrom": "library/arxiv-2010.12445v1/manifest",
-  "sourceDocument": "library/arxiv-2010.12445v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2010.12445v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2010.12445v1",
   "provenance": "ingested"
 }

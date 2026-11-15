@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1103.2082v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "MODIFIED TRACES ON DELIGNE’S CATEGORY Rep(St)",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1103.2082v1",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1103.2082v1",
   "contains": [
     "library/arxiv-1103.2082v1/sections/sec-000",
     "library/arxiv-1103.2082v1/sections/sec-001",
@@ -28,8 +33,17 @@
     "library/arxiv-1103.2082v1/sections/sec-019"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1103.2082&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-1103.2082v1",
+    "title_source": "slug",
     "source_file": "1103.2082v1.pdf",
     "source_sha256": "0ac5371486b38eacaac17f08516448531d3d7ec6c40e8e235428e781cde5eeac",
     "pages": 17,

@@ -194,9 +194,9 @@ This converts the "is the formula refuted?" question into "have we found a $T_w(
 
 ## Refs
 
-- Canonical chain: [`prop:atom-knot-mass-derivation`](../content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md) §"Architecture"
-- Multi-term form: [`thm:knot-mass-formula-unified`](../content/quantum-observable-universe/braids-and-knots/knot-mass-formula-unified.md)
-- Wenzl bridge: [`prop:y-lambda-closed-form-wenzl-bridge`](../content/quantum-observable-universe/braids-and-knots/y-lambda-closed-form-wenzl-bridge.md)
-- Wenzl recipe: [`prop:y-lambda-recipe-from-partition`](../content/quantum-observable-universe/braids-and-knots/y-lambda-recipe-from-partition.md)
-- Confinement SDP: [`prop:confinement-sdp`](../content/quantum-observable-universe/braids-and-knots/confinement-sdp.md)
+- Canonical chain: [`prop:atom-knot-mass-derivation`](../folio/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md) §"Architecture"
+- Multi-term form: [`thm:knot-mass-formula-unified`](../folio/quantum-observable-universe/braids-and-knots/knot-mass-formula-unified.md)
+- Wenzl bridge: [`prop:y-lambda-closed-form-wenzl-bridge`](../folio/quantum-observable-universe/braids-and-knots/y-lambda-closed-form-wenzl-bridge.md)
+- Wenzl recipe: [`prop:y-lambda-recipe-from-partition`](../folio/quantum-observable-universe/braids-and-knots/y-lambda-recipe-from-partition.md)
+- Confinement SDP: [`prop:confinement-sdp`](../folio/quantum-observable-universe/braids-and-knots/confinement-sdp.md)
 - Parallel branch's PSD-cone audit + R5-minimal: `claude/continue-pr-442-DJRWm` Rust `joint-tower-sdp` binary

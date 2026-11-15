@@ -8,47 +8,34 @@ pages: 87-88
 source_pdf: 1108.5365v2.pdf
 source_sha256: 000961ede2234231
 doc_brief: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL+_q(2,R) — We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual"
+text_source: latex
+latex_prose_ratio: 0.987
+latex_coverage_ratio: 0.988
 ---
-It is known that the representation space Pλ,t is actually a nontrivial representation
-for the modular double Uq(gl(2, R))⊗U~q(gl(2, R)). In this section we describe its
-action using the same multiplicative unitary Wm.
-The modular double counterpart U~q(gl(2, R)) is deﬁned in the same way with
-q replaced by ~q throughout. In particular we can deﬁne the pairing between
-~E, ~F, ~K,~K0 with ~A,~B, ˆ~A, ˆ~B as before. Recall that ~A = A1/b2
-and similarly for
-the other quantum plane variables. Hence by the b←→b−1 duality of Wm, we can
-pair it with U~q(gl(2, R)), and obtain:
-Proposition 8.16. The left regular action of U~q(gl(2, R)) on L2(GL+
-q (2, R)) is
-given by replacing b with b−1, i.e.
-~K0 = e
-πb −1
-2 s2,
-~K = e−πb−1s1,
-~E = i
-~q−~q−1 (~q1/2eπb−1(s1−λ) +~q−1/2e−πb−1(s1−λ))e−2πb−1ps1,
-~F = i
-~q−~q−1 (~q−1/2eπb−1(s1+λ) +~q1/2e−πb−1(s1+λ))e2πb−1ps1.
-We note that ~E and ~F are positive operators only when 1
-2n+1 <b 2< 1
-2n for n∈ N,
-and they are not necessarily essentially self-adjoint on th e natural domain W [36].
-To obtain essential self-adjointness, we have to apply Prop osition 4.1 and deﬁne the
-operators on the respective transformed domain gb·W .
-Ignoring the factors, we note from Theorem 8.11 that the summan d of E and
-F areq-commuting, hence we immediately obtain using Corollary 3.14 (see also [2,
-Cor 1]).
-87
-Proposition 8.17. As positive self-adjoint operators we have
-K 1/b2
-0 = ~K0,
-K 1/b2
-= ~K,
-2 sin(πb−2)~E = (2 sin( πb2)E)1/b2
-,
-2 sin(πb−2)~F = (2 sin( πb2)F )1/b2
-.
-Similar analysis works as well for the right regular representation, h ence Theo-
-rem 8.15 is actually an equivalence as a representation of the modular double
-Uq~q(gl(2, R))L⊗Uq~q(gl(2, R))R,
-where Uq~q(gl(2, R)) := Uq(gl(2, R))⊗U~q(gl(2, R)) denotes the modular double.
+\label{sec:regular:MD}
+It is known that the representation space $\cP_{\l,t}$ is actually a nontrivial representation for the modular double $U_q(\gl(2,\R))\ox U_{\til[q]}(\gl(2,\R))$. In this section we describe its action using the same multiplicative unitary $\bW_m$.
+
+The modular double counterpart $U_{\til[q]}(\gl(2,\R))$ is defined in the same way with $q$ replaced by $\til[q]$ throughout.  In particular we can define the pairing between $\til[E],\til[F],\til[K],\til[K_0]$ with $\til[A],\til[B],\hat{\til[A]},\hat{\til[B]}$ as before. Recall that $\til[A]=A^{1/b^2}$ and similarly for the other quantum plane variables. Hence by the $b\longleftrightarrow b\inv$ duality of $\bW_m$, we can pair it with $U_{\til[q]}(\gl(2,\R))$, and obtain:
+
+\begin{Prop} The left regular action of $U_{\til[q]}(\gl(2,\R))$ on $L^2(GL_q^+(2,\R))$ is given by replacing $b$ with $b\inv$, i.e.
+\begin{eqnarray*}
+\til[K_0] &=& e^{\frac{\pi b\inv}{2}s_2},\\
+\til[K]&=& e^{-\pi b\inv s_1},\\
+\til[E]&=&\frac{i}{\til[q]-\til[q]\inv}(\til[q]^{1/2}e^{\pi b\inv (s_1-\l)}+\til[q]^{-1/2}e^{-\pi b\inv(s_1-\l)})e^{-2\pi b\inv p_{s_1}},\\
+\til[F]&=&\frac{i}{\til[q]-\til[q]\inv}(\til[q]^{-1/2}e^{\pi b\inv (s_1+\l)}+\til[q]^{1/2}e^{-\pi b\inv(s_1+\l)})e^{2\pi b\inv p_{s_1}}.\\
+\end{eqnarray*}
+We note that $\til[E]$ and $\til[F]$ are positive operators only when $\frac{1}{2n+1}<b^2<\frac{1}{2n}$ for $n\in \N$, and they are not necessarily essentially self-adjoint on the natural domain $\cW$ \cite{Ru}. To obtain essential self-adjointness, we have to apply Proposition \ref{x+p} and define the operators on the respective transformed domain $g_b\cdot \cW$.
+\end{Prop}
+Ignoring the factors, we note from Theorem \ref{ThmLeft} that the summand of $E$ and $F$ are $q$-commuting, hence we immediately obtain using Corollary \ref{u+v} (see also \cite[Cor 1]{BT}).
+\begin{Prop}
+As positive self-adjoint operators we have
+\begin{eqnarray*}
+K_0^{1/b^2}&=&\til[K_0],\\
+K^{1/b^2}&=&\til[K],\\
+2\sin(\pi b^{-2})\til[E] &=& (2\sin(\pi b^{2})E)^{1/b^2},\\
+2\sin(\pi b^{-2})\til[F] &=& (2\sin(\pi b^{2})F)^{1/b^2}.
+\end{eqnarray*}
+\end{Prop}
+
+Similar analysis works as well for the right regular representation, hence Theorem \ref{main} is actually an equivalence as a representation of the modular double $$U_{q\til[q]}(\gl(2,\R))_L\ox U_{q\til[q]}(\gl(2,\R))_R,$$ 
+where $U_{q\til[q]}(\gl(2,\R)):=U_q(\gl(2,\R))\ox U_{\til[q]}(\gl(2,\R))$ denotes the modular double.

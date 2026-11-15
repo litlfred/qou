@@ -1,54 +1,97 @@
 ---
 doc_id: arxiv-hep-th-0001202v2
-doc_title: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees"
+doc_title: "arXiv:hep-th/0001202v2 29 Jan 2000"
 section_id: sec-006-52-saturation
 section_title: "Saturation"
 section_number: 5.2
-pages: 9-9
+pages: 9-13
 source_pdf: 0001202v2.pdf
 source_sha256: b2e3e22ea3d51c0b
-doc_brief: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees — The renormalization of quantum ﬁeld theory twists the antipode of a non- cocommutative Hopf algebra"
+toc_source: inferred
+text_source: latex
+latex_prose_ratio: 0.996
+latex_coverage_ratio: 0.979
 ---
-We now seek to prove that Hk(x) = [ H1(x)]k in the case that H = HR is the Hopf algebra
-of undecorated rooted trees.
-First we prove that deg p(XjXk) = deg p(Xj) + degp(Xk).
-Proof: Suppose that Xj ∈ H j and Xk ∈ H k. Then
-Uj+k−1(XjXk) = P ⊗(j+k)(∆ j+k−1(Xj)∆ j+k−1(Xk)) ⁄= 0 (26)
-contains 1-primitives in all its slots, giving Uj+k(XjXk) = 0, by coassociativity. ✷
-It is instructive to see how this works out for the product ZX , when Z is 1-primitive
-and X is k-primitive. Then
-∆ k(Z) =
-k+1∑
-j=1
-e ⊗ . . . ⊗ Z|j− th place ⊗ . . . e (27)
-consists of all k + 1 terms with a single Z and k empty trees. As X is k-primitive,
-∆ k(X) =
-k+1∑
-j=1
-∑
-ij
-X (1)
-ij ⊗ . . . ⊗ e|j− th place ⊗ . . . X(k+1)
-ij + . . . (28)
-with the ﬁnal ellipsis denoting omission of terms that contain more tha n one e. The latter
-make no contribution to
-Uk(ZX ) =
-k+1∑
-j=1
-∑
-ij
-X (1)
-ij ⊗ . . . ⊗ X (j−1)
-ij ⊗ Z|j− th place ⊗ X (j+1)
-ij ⊗ . . . ⊗ X (k+1)
-ij (29)
-where Z replaces a single e. By construction (29) has all its entries, namely Z or X (r)
-ij , in
-H1. Hence Uk+1(ZX ) = 0 and deg p(ZX ) = k + 1.
-Iterating this result one immediately concludes that deg p(X1 . . . Xk) = k, for 1-
-primitive elements X1, . . . , Xk. This does not, of itself, allow us to conclude that Hk(x) =
-[H1(x)]k, since the products are commutative. Thus there are fewer k-fold products of
-1-primitives than there are k-primitives.
-To appreciate what is needed in the next step, we pause to consider HCM. Its 1-
-primitives are δ1 and ~δ2 = δ2 − 1
-2δ2
+We now seek to prove that $H_{k}(x)=[H_1(x)]^k$ in the case that ${\cal H}={\cal H}_R$ is the Hopf algebra of undecorated rooted trees.
+
+First we prove that ${\rm deg}_p(X_j X_k)={\rm deg}_p(X_j)
++{\rm deg}_p(X_k)$.
+
+**Proof**: Suppose that $X_j\in{\cal H}_j$ and $X_k\in{\cal H}_k$. Then $$U_{j+k-1}(X_j X_k)=P^{\otimes(j+k)}
+(\Delta^{j+k-1}(X_j)\Delta^{j+k-1}(X_k))\not=0
+\label{jk}$$ contains 1-primitives in all its slots, giving $U_{j+k}(X_j X_k)=0$, by coassociativity. $\Box$
+
+It is instructive to see how this works out for the product $Z X$, when $Z$ is 1-primitive and $X$ is $k$-primitive. Then $$\Delta^k(Z)=\sum_{j=1}^{k+1}e\otimes\ldots\otimes
+Z_{\mid_{j-\mbox{\tiny th place}}}
+\otimes\ldots e
+\label{DZ}$$ consists of all $k+1$ terms with a single $Z$ and $k$ empty trees. As $X$ is $k$-primitive, $$\Delta^{k}(X)=\sum_{j=1}^{k+1}\sum_{i_j}
+X_{i_j}^{(1)}\otimes\ldots\otimes e_{\mid_{j-\mbox{\tiny th place}}}
+\otimes\ldots X_{i_j}^{(k+1)}+\ldots
+\label{DX}$$ with the final ellipsis denoting omission of terms that contain more than one $e$. The latter make no contribution to $$U_k(Z X)
+=\sum_{j=1}^{k+1}\sum_{i_j} X_{i_j}^{(1)}\otimes\ldots\otimes
+X_{i_j}^{(j-1)}\otimes Z_{\mid_{j-\mbox{\tiny th place}}}\otimes
+X_{i_j}^{(j+1)}\otimes\ldots\otimes X_{i_j}^{(k+1)}
+\label{UZX}$$ where $Z$ replaces a single $e$. By construction ([\[UZX\]](#UZX){reference-type="ref" reference="UZX"}) has all its entries, namely $Z$ or $X_{i_j}^{(r)}$, in ${\cal H}_1$. Hence $U_{k+1}(Z X)=0$ and ${\rm deg}_p(Z X)=k+1$.
+
+Iterating this result one immediately concludes that ${\rm deg}_p(X_1\ldots X_k)=k$, for 1-primitive elements $X_1,\ldots,X_k$. This does not, of itself, allow us to conclude that $H_{k}(x)=[H_1(x)]^k$, since the products are commutative. Thus there are fewer $k$-fold products of 1-primitives than there are $k$-primitives.
+
+To appreciate what is needed in the next step, we pause to consider ${\cal H}_{\rm CM}$. Its 1-primitives are $\delta_1$ and $\widetilde\delta_2=\delta_2-\frac{1}{2}\delta_1^2$. From these we can form the 2-primitive products $\delta_1^2$, $\delta_1\widetilde\delta_2$, and $\widetilde\delta_2^2$. Table 2 shows that there is a further inequivalent 2-primitive, at weight $n=3$. Direct computation shows that it may be taken as $\widetilde\delta_3=\delta_3-\frac{1}{2}\delta_1^3$. Then we may form 6 inequivalent 3-primitive products, namely $\delta_1^3$, $\delta_1^2\widetilde\delta_2$, $\delta_1\widetilde\delta_3$, $\delta_1\widetilde\delta_2^2$, $\widetilde\delta_2\widetilde\delta_3$ and $\widetilde\delta_2^3$. Table 2 shows that there is only one more 3-primitive, at weight $n=4$. It may be taken as $\widetilde\delta_4=\delta_4-\frac34\delta_1^4$. The absence of a further inequivalent 3-primitive at weight $n=5$ means that $\widetilde{H}_3(x)<\widetilde{H}_1(x)\widetilde{H}_2(x)$. This exercise reveals the filtration of the bigrading of Table 2: the generator is $$\sum_{n,k}\widetilde{H}_{n,k}x^n y^k={1\over1-x y}
+\prod_{k>0}{1\over1-x^{k+1}y^k}
+\label{ficm}$$ corresponding to products of $l_1$ and $$\widetilde\delta_{k+1}=N^k(l_1)-\frac{k!}{2^k}l_1^{k+1}
+\label{sub}$$ with $k$-primitivity achieved by a subtraction at weight $n=k+1>1$. At $y=1$, the filtration ([\[ficm\]](#ficm){reference-type="ref" reference="ficm"}) agrees with the ladder filtration $$\sum_{n,k}\overline{H}_{n,k}x^n y^k=\prod_{k>0}{1\over1-x^k y}
+\label{filad}$$ generated by products of the 1-primitives ([\[pl\]](#pl){reference-type="ref" reference="pl"}).
+
+Now consider the highly nontrivial filtration of the bigrading of rooted trees. Let $P_{n,k}$ be the number of weight-$n$ elements of ${\cal H}_k$ that cannot be expressed as products of elements of $\{{\cal H}_j\mid j<k\}$. Then $$H(x,y):=\sum_{n,k}H_{n,k} x^n y^k=\prod_{n,k}{1\over(1-x^n y^k)^{P_{n,k}}}
+\label{filter}$$ with $P_{n,k}$ telling us how many linearly independent combinations of weight-$n$ trees may be made $k$-primitive, but not $(k-1)$-primitive, by suitable subtractions of products of trees of lesser weight. Setting $y=1$, taking logs, and using the unique property ([\[Rx\]](#Rx){reference-type="ref" reference="Rx"}) of the enumeration of rooted trees, we obtain $$\sum_n r_n \log(1-x^n)=\log x-\log R(x)
+=\sum_{n,k} P_{n,k} \log(1-x^n)
+\label{assume}$$ and hence $r_n=\sum_k P_{n,k}$.
+
+Table 4 gives the filtration implied by $H_k(x)=[H_1(x)]^k$. The column generators are $$P_k(x):=\sum_n P_{n,k}x^n
+=\sum_{j|k}{\mu(j)\over k}\left(1-\prod_n(1-x^{nj})^{r_n}\right)^{k/j}
+\label{mu}$$ where the Möbius function $\mu(j)$ vanishes if $j$ is divisible by a square and is equal to $(-1)^p$ when $j$ is the product of $p$ distinct primes.
+
+To proceed, we use the Hochschild property of $B_+$, namely $$\Delta\circ B_+=B_+\otimes e+({\rm id}\otimes B_+)\circ\Delta
+\label{BP}$$ which follows from the action of the coproduct ([\[D\]](#D){reference-type="ref" reference="D"}) on the trees produced by $B_+$, using $B_-\circ B_+={\rm id}$. Taking care to note that $$C:=B_+\circ B_-\not=B_-\circ B_+={\rm id}
+\label{C}$$ we obtain $$\Delta\circ B_-=({\rm id}\otimes B_-)\circ\Delta\circ C
+\label{BM}$$ by composition of ([\[BP\]](#BP){reference-type="ref" reference="BP"}) with ${\rm id}\otimes B_-$ on the left and $B_-$ on the right. It follows from ([\[BP\]](#BP){reference-type="ref" reference="BP"}) that if $X$ is $k$-primitive, then $B_+(X)$ has primitivity no greater than $k+1$.
+
+**Proof**: Suppose that $X\in{\cal H}_k$. Then repeated application of ([\[BP\]](#BP){reference-type="ref" reference="BP"}) gives $$U_{k+1}\circ B_+(X)
+=(P^{\otimes(k+1)}\otimes B_+)\circ\Delta^{k+1}(X)=0
+\label{UBP}$$ since every term in $\Delta^{k+1}(X)$ contains at least two $e$'s, of which at most one is promoted to $l_1$ by $B_+$. $\Box$
+
+The presence of $C$ in ([\[BM\]](#BM){reference-type="ref" reference="BM"}) frustrates a parallel attempt to show that $B_-$ decreases primitivity. Rather, we found that the kernel of $B_-$ is an object of great interest. The action of $B_-$ on a nonempty tree $t$ is simple: it removes the root to produce, in general, a forest of rooted trees, each of whose roots was originally connected to the root of $t$ by a single edge. Since $B_-$ obeys the Leibniz rule $$B_-(X_1 X_2)=X_1 B_-(X_2)+X_2 B_-(X_1),\quad B_-(e)=0,
+\label{Lz}$$ its action on forests is less trivial. The action of $B_-$ on a tree, $t$, is undone by $B_+$, giving $C(t):=B_+(B_-(t))=t$. On a forest of more than one tree, $C$ does not degenerate to the identity map. It is this that makes the Hopf algebra of rooted trees such an amazingly rich structure. Another important feature is that the kernels of $B_-$ and $C$ coincide, since $C:=B_+\circ B_-$ and $B_-=B_-\circ C$. Moreover, $C$ is idempotent, since $$(C-{\rm id})\circ C=
+B_+\circ(B_-\circ B_+-{\rm id})\circ B_-=0.
+\label{idem}$$ Hence there are two special types of object: trees, for which $C$ acts like the identity, and those linear combinations of forests that lie in the kernel of $C$. We shall show that the latter are the key to the filtration $P_{n,k}$ of Table 4. The first step is to prove that $C(X)=0$ for every $X\in{\cal H}_1$ with weight $n>1$.
+
+**Proof**: The coproduct of tree $t$ has the form $$\Delta(t)=t\otimes e+B_-(t)\otimes l_1+\ldots
+\label{l1t}$$ where the ellipsis denotes terms with weight $n>1$ on the right. Now consider a forest $F=\prod_j t_j$. The Leibniz rule ([\[Lz\]](#Lz){reference-type="ref" reference="Lz"}) gives $$\Delta(F)=\prod_j \Delta(t_j)=F\otimes e+B_-(F)\otimes l_1+\ldots
+\label{l1F}$$ and hence $\Delta(X)$ contains $B_-(X)\otimes l_1$, for all $X\in{\cal H}_R$. Now suppose that $X\in{\cal H}_1$ has no weight-1 term. Then $\Delta(X)=X\otimes e+e\otimes X$ requires that $B_-(X)=0$ and hence that $X$ is in the kernel of $C$. $\Box$
+
+To get acquainted with the problem in hand, consider a pair of 1-primitives, $X_1$ and $X_2$. Their product is 2-primitive, giving $$U_1(X_1 X_2)=X_1\otimes X_2+X_2\otimes X_1\,.
+\label{U1s}$$ For every such pair, we require another 2-primitive construct, say $W(X_1,X_2)$, giving $$U_1\circ W(X_1,X_2)=X_1\otimes X_2-X_2\otimes X_1\,.
+\label{U1a}$$ This does not uniquely define $W(X_1,X_2)$, since we may add to any solution of ([\[U1a\]](#U1a){reference-type="ref" reference="U1a"}) any combination of 1-primitives. The operative question is whether a solution exists, for each pair of distinct 1-primitives. This question does not arise in the ladder subalgebra, which is cocommutative. It is easily answered in the Connes-Moscovici subalgebra, where the asymmetry of $$U_1(\widetilde\delta_3)=3\delta_1\otimes\widetilde\delta_2+
+\widetilde\delta_2\otimes\delta_1
+\label{CMasy}$$ makes it simple to solve the single case of ([\[U1a\]](#U1a){reference-type="ref" reference="U1a"}) by $$W(\delta_1,\widetilde\delta_2)=\widetilde\delta_3
+-2\widetilde\delta_2\delta_1
+=B_+(l_1^2)+l_3-2l_2l_1+\dfrac12l_1^3.
+\label{CMsol}$$ More generally, the $k$-primitive nonproduct term $\widetilde\delta_{k+1}$ accounts for the leading diagonal $P_{k+1,k}=1$ of Table 4.
+
+In the full Hopf algebra, we must show the existence of $P_{n,2}$ asymmetric pairings enumerated by $$P_2(x):=\sum_n P_{n,2} x^n
+=\dfrac12[H_1(x)]^2-\dfrac12H_1(x^2)
+=x^3+x^4+3x^5+5x^6+13x^7+28x^8+\ldots
+\label{P2}$$ Part of what is required is clearly provided by $$W(l_1,X)=l_1 X-2B_+(X)
+\label{WX1}$$ since ([\[BP\]](#BP){reference-type="ref" reference="BP"}) shows that $$U_1\circ W(l_1,X)=l_1\otimes X+X\otimes l_1
+-2(P\circ B_+)(X\otimes e+e\otimes X)=l_1\otimes X-X\otimes l_1
+\label{U1X}$$ has the desired antisymmetry. By this means we easily construct the elements of ${\cal H}_2$ with weight $n<5$ from products of 1-primitives and the action of $B_+$ on 1-primitives.
+
+At weights $n\ge5$ we need a further construction. There are $P_{5,2}=3$ weight-5 nonproduct 2-primitives, but only $H_{4,1}=2$ weight-4 1-primitives on which to act with $B_+$. We lack, thus far, a way of constructing $W(p_2,p_3)$, where $p_2=l_2-\frac12l_1^2$ and $p_3=l_3-l_2l_1+\frac13l_1^3$ are the 1-primitives at weights $n=2,3$, common to the cocommutative subalgebra ${\cal H}_{\rm ladder}$. At weight $n=6$, we lack $W(p_2,p_4)$ and $W(p_2,p^\prime_4)$, where $$\begin{aligned}
+p_4&=&l_4-l_3l_1-\dfrac12l_2^2+l_2l_1^2-\dfrac14l_1^4,\label{p4}\\
+p^\prime_4&=&B_+\left(2l_2l_1-B_+(l_1^2)-l_1^3\right)
++l_1B_+(l_1^2)-l_2^2,\label{q4}
+\end{aligned}$$ are the weight-4 ladder and nonladder 1-primitives enumerated by $H_{4,1}=2$. It is simple to check that they are annihilated by the Leibniz action of $B_-$, using $B_-\circ B_+={\rm id}$ and $B_-(l_n)=l_{n-1}$ with $l_0:=e$ evaluating to unity.
+
+At this juncture, it is instructive to compare Tables 3 and 4, which reveal that $$\begin{aligned}
+P_{n,2}&\le&2H_{n-1,1}\,\label{keq2}\\
+P_{n,k}&\le&H_{n-1,k-1}\,,\quad k>2\label{kgt2}.
+\end{aligned}$$ In the Appendix, we show that these inequalities persist at large $n$, thanks to the fact that the Otter constant $c:=\lim_{n\to\infty} r_{n+1}/r_n=2.955765\ldots$ is slightly less than 3. Thus it is conceivable that for $k>2$ the action of $B_+$ might generate $P_k(x)$ from $xH_{k-1}(x)$, but it is quite impossible for it to do this job at $k=2$. It appears from ([\[keq2\]](#keq2){reference-type="ref" reference="keq2"}) that we need a second operator that increases $n$ and $k$ by unity.

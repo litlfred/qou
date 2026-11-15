@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-038",
+  "kind": "prose",
+  "title": "Anderson Localization",
+  "pageStart": 51,
+  "pageEnd": 52,
+  "text": "../sections/sec-038-73-anderson-localization.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-0003017v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-0003017v2",
+  "provenance": "ingested"
+}

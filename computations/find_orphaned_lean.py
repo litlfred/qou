@@ -2,7 +2,7 @@
 import os
 
 repo_root = '/home/litlfred/space_cats/qou'
-content_root = os.path.join(repo_root, 'content/quantum-observable-universe')
+content_root = os.path.join(repo_root, 'folio/quantum-observable-universe')
 lean_root = os.path.join(content_root, 'lean')
 
 orphaned = []

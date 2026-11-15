@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1303.5278v1/blocks/prose-sec-020",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1303.5278v1/blocks/prose-sec-020",
   "kind": "prose",
   "title": "Appendix A. The 2–3 move",
   "pageStart": 51,
   "pageEnd": 57,
   "text": "../sections/sec-020-appendix-a-the-23-move.md",
-  "derivedFrom": "library/arxiv-1303.5278v1/manifest",
-  "sourceDocument": "library/arxiv-1303.5278v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1303.5278v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1303.5278v1",
   "provenance": "ingested"
 }

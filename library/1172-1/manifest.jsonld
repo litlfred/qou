@@ -1,17 +1,24 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/1172-1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "On a computation method for the colored Jones polynomial of doubled knots",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/1172-1",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "1172-1",
   "contains": [
     "library/1172-1/sections/sec-000",
     "library/1172-1/sections/sec-001"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "1172-1",
+    "title_source": "slug",
     "source_file": "1172-1.pdf",
     "source_sha256": "f067a1bfa4c60df06b0e5ae0b6e79b8cb59517295ad82d25f1f376ef88d133a9",
     "pages": 7,

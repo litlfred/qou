@@ -1,0 +1,126 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-ph-0605041v2",
+ "source": {
+  "file": "0605041v2.pdf",
+  "sha256": "12cccb408b6810f1808f8ccde3f418f37020a2edd4b4bc5b86217d5ceccb0b3a",
+  "bytes": 239573,
+  "pages": 16,
+  "text_source": "embedded",
+  "extractor": "pypdf",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math-ph/0605041",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "16 Oct 2006"
+  },
+  "doi": null,
+  "title": "Cluster expansion for abstract polymer models. New bounds from an old approach",
+  "authors_raw": "Roberto Fern\u00e1ndez1 and Aldo Procacci 1,2",
+  "title_lines": [
+   "Cluster expansion for abstract polymer models",
+   "New bounds from an old approach"
+  ],
+  "abstract": "polymer models. New bounds from an old approach Roberto Fern\u00b4 andez1 and Aldo Procacci 1,2 1Labo. de Maths Raphael SALEM, UMR 6085 CNRS-Univ. de Rouen, A venue de l\u2019Universit\u00b4 e, BP.12, 76801 Saint Etienne du Rouvray, France 2 Dep. Matem\u00b4 atica-ICEx, Universidade Federal de Minas Gera is, CP 702, Belo Horizonte MG 30.161-970, Brazil email: 1Roberto.Fernandez@univ-rouen.fr; 2aldo@mat.ufmg.br We revisit the classical approach to cluster expansions, based on t ree graphs, and estab- lish a new convergence condition that improves those by Koteck\u00b4 y-Preiss and Dobrushin, as we show in some examples. The two ingredients of our approach ar e: (i) a careful consideration of the Penrose identity for truncated functions, a nd (ii) the use of iterated transformations to bound tree-graph expansions.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20180902122341-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 15,
+   "n_chars": 38669,
+   "n_words": 7727
+  },
+  {
+   "id": "sec-000-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 1236,
+   "n_words": 207
+  },
+  {
+   "id": "sec-001-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 3008,
+   "n_words": 467
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 2,
+  "sections": 3,
+  "chars_total": 42913,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 1,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
+ }
+}

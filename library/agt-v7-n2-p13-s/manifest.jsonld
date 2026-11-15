@@ -1,8 +1,13 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/agt-v7-n2-p13-s/manifest",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/agt-v7-n2-p13-s",
   "@type": [
-    "folio:SourceDocument"
+    "cat-harness:SourceDocument"
   ],
   "title": "Quantum hyperbolic geometry",
   "contains": [
@@ -27,8 +32,11 @@
     "library/agt-v7-n2-p13-s/sections/sec-018"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "agt-v7-n2-p13-s",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "agt-v7-n2-p13-s.pdf",
     "source_sha256": "affd571adbaac3fcbabcbfd349ad8731638f75bd9f5c29e4f49d8162d191512f",
     "pages": 73,

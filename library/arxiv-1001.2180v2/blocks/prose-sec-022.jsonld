@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1001.2180v2/blocks/prose-sec-022",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1001.2180v2/blocks/prose-sec-022",
   "kind": "prose",
   "title": "Schur-Weyl representations",
   "pageStart": 23,
   "pageEnd": 23,
   "text": "../sections/sec-022-6-schur-weyl-representations.md",
-  "derivedFrom": "library/arxiv-1001.2180v2/manifest",
-  "sourceDocument": "library/arxiv-1001.2180v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1001.2180v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1001.2180v2",
   "provenance": "ingested"
 }

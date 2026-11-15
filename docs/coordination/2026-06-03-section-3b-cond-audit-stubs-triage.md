@@ -1,7 +1,7 @@
 # §3b-cond audit-visibility stubs — triage (2026-06-03)
 
 > Triage doc for the 9 `True := trivial` theorem stubs in
-> `content/quantum-observable-universe/lean/QOU/` that follow the
+> `folio/quantum-observable-universe/lean/QOU/` that follow the
 > standardised "§3b-cond conditional-class hypothesis (audit-visibility stub)"
 > pattern. **Verdict: these are intentional documentation markers,
 > not bugs to fix.** Recorded as a coord artifact (per user
@@ -42,15 +42,15 @@ syntactic pattern before scoping a follow-up. The categories are:
 
 | file | line | class (local) | classifier |
 |------|------|---------------|------------|
-| [`QOU/Molecular/h2_lp_dual_binding.lean`](../../content/quantum-observable-universe/lean/QOU/Molecular/h2_lp_dual_binding.lean) | 66 | `QIntegerMassFormula` | LP-dual binding |
-| [`QOU/Molecular/ch4_lp_dual_binding.lean`](../../content/quantum-observable-universe/lean/QOU/Molecular/ch4_lp_dual_binding.lean) | 91 | `QIntegerMassFormula` | LP-dual binding |
-| [`QOU/Molecular/co2_lp_dual_binding.lean`](../../content/quantum-observable-universe/lean/QOU/Molecular/co2_lp_dual_binding.lean) | 89 | `QIntegerMassFormula` | LP-dual binding |
-| [`QOU/Molecular/co_lp_dual_binding.lean`](../../content/quantum-observable-universe/lean/QOU/Molecular/co_lp_dual_binding.lean) | 93 | `QIntegerMassFormula` | LP-dual binding |
-| [`QOU/Molecular/benzene_threading_emergence.lean`](../../content/quantum-observable-universe/lean/QOU/Molecular/benzene_threading_emergence.lean) | 75 | `QIntegerMassFormula` | threading emergence |
-| [`QOU/ParticleInteractions/neutron_qvalue_symbolic.lean`](../../content/quantum-observable-universe/lean/QOU/ParticleInteractions/neutron_qvalue_symbolic.lean) | 79 | `BorromeanQuark` | β-decay Q-value |
-| [`QOU/BraidKnot/HoefsmitV21CosSymmetrization.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/HoefsmitV21CosSymmetrization.lean) | 302 | `BorromeanQuark` | Hoefsmit V_(2,1) symmetrisation |
-| [`QOU/BraidsAndKnots/S4S3HalfSymmetricProjection.lean`](../../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/S4S3HalfSymmetricProjection.lean) | 129 | `BorromeanCommonScale` | S_4 / S_3 half-symmetric projection |
-| [`QOU/BraidKnot/BarSymmetricBarAntiSymmetricIdentities.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/BarSymmetricBarAntiSymmetricIdentities.lean) | 220 | `BorromeanQuark` | `Q_borromean_eq_zero` placeholder |
+| [`QOU/Molecular/h2_lp_dual_binding.lean`](../../folio/quantum-observable-universe/lean/QOU/Molecular/h2_lp_dual_binding.lean) | 66 | `QIntegerMassFormula` | LP-dual binding |
+| [`QOU/Molecular/ch4_lp_dual_binding.lean`](../../folio/quantum-observable-universe/lean/QOU/Molecular/ch4_lp_dual_binding.lean) | 91 | `QIntegerMassFormula` | LP-dual binding |
+| [`QOU/Molecular/co2_lp_dual_binding.lean`](../../folio/quantum-observable-universe/lean/QOU/Molecular/co2_lp_dual_binding.lean) | 89 | `QIntegerMassFormula` | LP-dual binding |
+| [`QOU/Molecular/co_lp_dual_binding.lean`](../../folio/quantum-observable-universe/lean/QOU/Molecular/co_lp_dual_binding.lean) | 93 | `QIntegerMassFormula` | LP-dual binding |
+| [`QOU/Molecular/benzene_threading_emergence.lean`](../../folio/quantum-observable-universe/lean/QOU/Molecular/benzene_threading_emergence.lean) | 75 | `QIntegerMassFormula` | threading emergence |
+| [`QOU/ParticleInteractions/neutron_qvalue_symbolic.lean`](../../folio/quantum-observable-universe/lean/QOU/ParticleInteractions/neutron_qvalue_symbolic.lean) | 79 | `BorromeanQuark` | β-decay Q-value |
+| [`QOU/BraidKnot/HoefsmitV21CosSymmetrization.lean`](../../folio/quantum-observable-universe/lean/QOU/BraidKnot/HoefsmitV21CosSymmetrization.lean) | 302 | `BorromeanQuark` | Hoefsmit V_(2,1) symmetrisation |
+| [`QOU/BraidsAndKnots/S4S3HalfSymmetricProjection.lean`](../../folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/S4S3HalfSymmetricProjection.lean) | 129 | `BorromeanCommonScale` | S_4 / S_3 half-symmetric projection |
+| [`QOU/BraidKnot/BarSymmetricBarAntiSymmetricIdentities.lean`](../../folio/quantum-observable-universe/lean/QOU/BraidKnot/BarSymmetricBarAntiSymmetricIdentities.lean) | 220 | `BorromeanQuark` | `Q_borromean_eq_zero` placeholder |
 
 All 9 follow the uniform pattern:
 
@@ -74,11 +74,11 @@ research content.
 
 | file | line | context |
 |------|------|---------|
-| [`QOU/BraidKnot/PhiQTowerAlgebraicStratification.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/PhiQTowerAlgebraicStratification.lean) | 23 | docstring "upgrades the previous `: True := trivial` placeholder" |
-| [`QOU/BraidKnot/GradedMarkovTraceFromGSFiltration.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/GradedMarkovTraceFromGSFiltration.lean) | 12 | docstring "replaces previous `: True := trivial` placeholder" |
-| [`QOU/BraidsAndKnots/BorromeanMarkovTrace.lean`](../../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/BorromeanMarkovTrace.lean) | 204 | docstring "closes the `Q_borromean_eq_zero : True := trivial` placeholder" |
-| [`QOU/HeckeAlgebra/Formal.lean`](../../content/quantum-observable-universe/lean/QOU/HeckeAlgebra/Formal.lean) | 201 | docstring describing past `: True := trivial` body |
-| [`QOU/BraidKnot/IwahoriHeckeAPI.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/IwahoriHeckeAPI.lean) | 334 | `example : True := trivial` (illustrative example, not a stub) |
+| [`QOU/BraidKnot/PhiQTowerAlgebraicStratification.lean`](../../folio/quantum-observable-universe/lean/QOU/BraidKnot/PhiQTowerAlgebraicStratification.lean) | 23 | docstring "upgrades the previous `: True := trivial` placeholder" |
+| [`QOU/BraidKnot/GradedMarkovTraceFromGSFiltration.lean`](../../folio/quantum-observable-universe/lean/QOU/BraidKnot/GradedMarkovTraceFromGSFiltration.lean) | 12 | docstring "replaces previous `: True := trivial` placeholder" |
+| [`QOU/BraidsAndKnots/BorromeanMarkovTrace.lean`](../../folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/BorromeanMarkovTrace.lean) | 204 | docstring "closes the `Q_borromean_eq_zero : True := trivial` placeholder" |
+| [`QOU/HeckeAlgebra/Formal.lean`](../../folio/quantum-observable-universe/lean/QOU/HeckeAlgebra/Formal.lean) | 201 | docstring describing past `: True := trivial` body |
+| [`QOU/BraidKnot/IwahoriHeckeAPI.lean`](../../folio/quantum-observable-universe/lean/QOU/BraidKnot/IwahoriHeckeAPI.lean) | 334 | `example : True := trivial` (illustrative example, not a stub) |
 
 These are not actionable — they're either documentation describing past
 states or an illustrative example.
@@ -93,7 +93,7 @@ should become real conditional theorems:
 
 The file already contains a real symbolic derivation of
 `Q_β^{pred} = m_e · |q_0² − 2q_0 − 1| · (q_0 + 1) / (2 q_0³) ≈ 0.7836 MeV`
-([`recomputed-low-isotope-mass-table.md`](../../content/quantum-observable-universe/mass-endomorphism/recomputed-low-isotope-mass-table.md)).
+([`recomputed-low-isotope-mass-table.md`](../../folio/quantum-observable-universe/mass-endomorphism/recomputed-low-isotope-mass-table.md)).
 A strengthened version could read:
 
 ```lean
@@ -133,11 +133,11 @@ PR [#1736](https://github.com/litlfred/qou/pull/1736) merged 5 new §3b-cond con
 
 | class | file | identity field shape |
 |---|---|---|
-| `SubstrateEWDerivations` | [`QOU/BraidKnot/SubstrateEWHypotheses.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/SubstrateEWHypotheses.lean) | `claim_g_eq_pi_h : gauge_coupling_g = Real.pi * h_substrate_value` + 2 more |
-| `HeckeMassTraceContext` | [`QOU/Braiding/hecke_mass_trace.lean`](../../content/quantum-observable-universe/lean/QOU/Braiding/hecke_mass_trace.lean) | `claim_cat_mass_eq_norm_trace : cat_mass = norm (markovInst.trace Phi_mass)` + 1 more |
-| `CategoricalHiggsIdempotent` | [`QOU/QuantumObservableUniverses/CategoricalHiggsIdempotent.lean`](../../content/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/CategoricalHiggsIdempotent.lean) | qDim closed-form fields ([`0cf311f7`](https://github.com/litlfred/qou/commit/0cf311f7), [`8454f01f`](https://github.com/litlfred/qou/commit/8454f01f)) |
-| `GActionOnSubstrate` | [`QOU/QuantumObservableUniverses/GActionOnSubstrate.lean`](../../content/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/GActionOnSubstrate.lean) | encoded axioms ([`b71592d9`](https://github.com/litlfred/qou/commit/b71592d9), [`f81044ff`](https://github.com/litlfred/qou/commit/f81044ff)) |
-| `StaircaseEWResidual` | [`QOU/StaircaseCornerHook/StaircaseEWResidual.lean`](../../content/quantum-observable-universe/lean/QOU/StaircaseCornerHook/StaircaseEWResidual.lean) | bundled empirical hypotheses ([`32e93fd3`](https://github.com/litlfred/qou/commit/32e93fd3)) |
+| `SubstrateEWDerivations` | [`QOU/BraidKnot/SubstrateEWHypotheses.lean`](../../folio/quantum-observable-universe/lean/QOU/BraidKnot/SubstrateEWHypotheses.lean) | `claim_g_eq_pi_h : gauge_coupling_g = Real.pi * h_substrate_value` + 2 more |
+| `HeckeMassTraceContext` | [`QOU/Braiding/hecke_mass_trace.lean`](../../folio/quantum-observable-universe/lean/QOU/Braiding/hecke_mass_trace.lean) | `claim_cat_mass_eq_norm_trace : cat_mass = norm (markovInst.trace Phi_mass)` + 1 more |
+| `CategoricalHiggsIdempotent` | [`QOU/QuantumObservableUniverses/CategoricalHiggsIdempotent.lean`](../../folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/CategoricalHiggsIdempotent.lean) | qDim closed-form fields ([`0cf311f7`](https://github.com/litlfred/qou/commit/0cf311f7), [`8454f01f`](https://github.com/litlfred/qou/commit/8454f01f)) |
+| `GActionOnSubstrate` | [`QOU/QuantumObservableUniverses/GActionOnSubstrate.lean`](../../folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/GActionOnSubstrate.lean) | encoded axioms ([`b71592d9`](https://github.com/litlfred/qou/commit/b71592d9), [`f81044ff`](https://github.com/litlfred/qou/commit/f81044ff)) |
+| `StaircaseEWResidual` | [`QOU/StaircaseCornerHook/StaircaseEWResidual.lean`](../../folio/quantum-observable-universe/lean/QOU/StaircaseCornerHook/StaircaseEWResidual.lean) | bundled empirical hypotheses ([`32e93fd3`](https://github.com/litlfred/qou/commit/32e93fd3)) |
 
 These are **not** part of the audit-visibility-stub category (no `: True` field) — they are examples of **already-strengthened §3b-cond classes**. The strengthening pattern is uniform: each conjectural-condition field is an extensional identity (LHS = RHS, both real expressions), no naked `sorry`, no `True := trivial`, hypothesis-only (no global instance).
 

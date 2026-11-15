@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-physics-0203048v1/sections/sec-003",
   "@type": [
     "doco:Section"
   ],
   "title": "Interpretation of the invariant",
   "pageStart": 6,
-  "pageEnd": 7,
+  "pageEnd": 11,
   "contains": [
     "library/arxiv-physics-0203048v1/blocks/prose-sec-003"
   ],
-  "derivedFrom": "library/arxiv-physics-0203048v1/manifest",
-  "sourceDocument": "library/arxiv-physics-0203048v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-physics-0203048v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-physics-0203048v1",
   "provenance": "ingested"
 }

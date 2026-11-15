@@ -6,7 +6,7 @@ q → 1/q (equivalently t → 1/t with t = q^(1/2)).
 CONTEXT (post-PR #1609 Li_2^q × spectral refutation). The c_3 saga
 keeps producing near-matches because the candidates don't respect
 the natural bar-involution structure of the Hecke algebra. Per
-prop:li2q-phiq-bar-symmetrization: binding quantities (Q_β, Δ_λ)
+`li2q-phiq-bar-symmetrization`: binding quantities (Q_β, Δ_λ)
 should be bar-symmetric; mass quantities (m_p absolute) carry
 the bar-asymmetric dimensional scale.
 
@@ -27,6 +27,11 @@ not just match numerically at one anchor.
 
 OUTPUT: witness with the decomposition, plus markdown audit doc
 flagging the next-session direction.
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 

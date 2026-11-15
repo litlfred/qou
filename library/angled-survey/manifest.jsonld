@@ -1,46 +1,30 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/angled-survey/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "From angled triangulations to hyperbolic structures",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/angled-survey",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "angled-survey",
   "contains": [
+    "library/angled-survey/sections/sec-front-matter",
     "library/angled-survey/sections/sec-000",
     "library/angled-survey/sections/sec-001",
     "library/angled-survey/sections/sec-002",
     "library/angled-survey/sections/sec-003",
     "library/angled-survey/sections/sec-004",
     "library/angled-survey/sections/sec-005",
-    "library/angled-survey/sections/sec-006",
-    "library/angled-survey/sections/sec-007",
-    "library/angled-survey/sections/sec-008",
-    "library/angled-survey/sections/sec-009",
-    "library/angled-survey/sections/sec-010",
-    "library/angled-survey/sections/sec-011",
-    "library/angled-survey/sections/sec-012",
-    "library/angled-survey/sections/sec-013",
-    "library/angled-survey/sections/sec-014",
-    "library/angled-survey/sections/sec-015",
-    "library/angled-survey/sections/sec-016",
-    "library/angled-survey/sections/sec-017",
-    "library/angled-survey/sections/sec-018",
-    "library/angled-survey/sections/sec-019",
-    "library/angled-survey/sections/sec-020",
-    "library/angled-survey/sections/sec-021",
-    "library/angled-survey/sections/sec-022",
-    "library/angled-survey/sections/sec-023",
-    "library/angled-survey/sections/sec-024",
-    "library/angled-survey/sections/sec-025",
-    "library/angled-survey/sections/sec-026",
-    "library/angled-survey/sections/sec-027",
-    "library/angled-survey/sections/sec-028",
-    "library/angled-survey/sections/sec-029",
-    "library/angled-survey/sections/sec-030"
+    "library/angled-survey/sections/sec-006"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "angled-survey",
+    "title_source": "slug",
     "source_file": "angled-survey.pdf",
     "source_sha256": "8b49e682a39848bc7a807c17ae55ec3c0fb0e45c95a1f347f80047f6ec80914d",
     "pages": 24,

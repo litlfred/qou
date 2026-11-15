@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/acsv231201/blocks/prose-sec-026",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/acsv231201/blocks/prose-sec-026",
   "kind": "prose",
   "title": "Polynomial amoebas",
   "pageStart": 159,
   "pageEnd": 165,
   "text": "../sections/sec-026-polynomial-amoebas.md",
-  "derivedFrom": "library/acsv231201/manifest",
-  "sourceDocument": "library/acsv231201/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/acsv231201",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/acsv231201",
   "provenance": "ingested"
 }

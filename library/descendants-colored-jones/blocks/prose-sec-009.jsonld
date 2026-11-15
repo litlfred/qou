@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/descendants-colored-jones/blocks/prose-sec-009",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/descendants-colored-jones/blocks/prose-sec-009",
   "kind": "prose",
   "title": "An example",
   "pageStart": 23,
   "pageEnd": 24,
   "text": "../sections/sec-009-an-example.md",
-  "derivedFrom": "library/descendants-colored-jones/manifest",
-  "sourceDocument": "library/descendants-colored-jones/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/descendants-colored-jones",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/descendants-colored-jones",
   "provenance": "ingested"
 }

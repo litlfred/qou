@@ -1,0 +1,55 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/0406242v4",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "0406242v4",
+  "contains": [
+    "library/0406242v4/sections/sec-000",
+    "library/0406242v4/sections/sec-001",
+    "library/0406242v4/sections/sec-002",
+    "library/0406242v4/sections/sec-003",
+    "library/0406242v4/sections/sec-004",
+    "library/0406242v4/sections/sec-005",
+    "library/0406242v4/sections/sec-006",
+    "library/0406242v4/sections/sec-007",
+    "library/0406242v4/sections/sec-008",
+    "library/0406242v4/sections/sec-009",
+    "library/0406242v4/sections/sec-010",
+    "library/0406242v4/sections/sec-011",
+    "library/0406242v4/sections/sec-012",
+    "library/0406242v4/sections/sec-013",
+    "library/0406242v4/sections/sec-014",
+    "library/0406242v4/sections/sec-015",
+    "library/0406242v4/sections/sec-016",
+    "library/0406242v4/sections/sec-017",
+    "library/0406242v4/sections/sec-018",
+    "library/0406242v4/sections/sec-019",
+    "library/0406242v4/sections/sec-020",
+    "library/0406242v4/sections/sec-021",
+    "library/0406242v4/sections/sec-022",
+    "library/0406242v4/sections/sec-023",
+    "library/0406242v4/sections/sec-024",
+    "library/0406242v4/sections/sec-025"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "meta": {
+    "doc_id": "0406242v4",
+    "title_source": "slug",
+    "source_file": "0406242v4.pdf",
+    "source_sha256": "27e48b483007b8240a4163dfc37f9dee64b8c07c7392e35329503d80bd25b2b6",
+    "pages": 46,
+    "arxiv": null,
+    "doi": "10.2140/gt.2006.10.1239",
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

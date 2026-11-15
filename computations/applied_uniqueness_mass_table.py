@@ -33,7 +33,7 @@ Phase 1 of the 1 ppb workplan
 predictions** by consuming the canonical `tr_M(β_K, q_0)` values pinned
 in `markov-trace-assembly-*.derivation.json` and applying the
 `categoricalMass` formula proved in
-[`QOU.BraidKnot.MassFormulaCategorical`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/MassFormulaCategorical.lean):
+[`QOU.BraidKnot.MassFormulaCategorical`](../../folio/quantum-observable-universe/lean/QOU/BraidKnot/MassFormulaCategorical.lean):
 
     M(K) = ρ(K) · m_e · |tr_M(T_w(K))|        (cat units)
     M(K)_MeV = M(K)_cat · M_E_MEV_CODATA       (Lean theorem)
@@ -88,10 +88,31 @@ ASSEMBLY_DIR = Path(__file__).parent
 # `chi-tritium-h9.witness.json` is partial (2/30 partitions); ³He has
 # no chi cache yet.  Phase 1.2/1.3 of the workplan wires those in once
 # the caches complete.
-from derivation_chain import TR_M_AT_Q0  # canonical Wenzl-bridge values
+# MIGRATED 2026-09-13 (bean qou-4383). This read `derivation_chain.TR_M_AT_Q0`,
+# whose entries were hardcoded floats in the GROUPED intra-nucleon frame —
+# correct when written, superseded by the 2026-09-05 ordering ruling
+# (`qou-hu1f`). It now reads the witness through `canonical_trm_reference`,
+# which selects by recorded q0 AND refuses a witness in the wrong or an
+# undeclared ordering (bean `qou-y4gi`).
+#
+# THIS FILE WAS MIXING FRAMES, which is worse than being uniformly stale. Below,
+# `sources[atom]["target_value"]` is read from
+# `markov-trace-assembly-{atom}.derivation.json` — regenerated canonical earlier
+# today — while `tr_M` came from the grouped registry. The two disagreed by a
+# factor of ~2 inside one witness, and nothing said so.
+#
+# NOT TAKEN: `canonical_trm_reference` also serves tritium and helium-3, which
+# the note above says are "not yet in TR_M_AT_Q0 upstream". Adding them would
+# clear two PENDING_ATOMS entries, but that EXTENDS what this table covers
+# rather than correcting the frame it covers them in, and the two want separate
+# review. Left pending, deliberately.
+from canonical_trm_reference import tr_m_nucleon  # noqa: E402
 
-# Local map: full atom name → 1-letter key used in TR_M_AT_Q0.
+# Local map: full atom name → the key this module uses downstream.
 _ATOM_KEY = {"proton": "p", "neutron": "n", "deuteron": "D"}
+TR_M_AT_Q0 = {"p": tr_m_nucleon("proton"),
+              "n": tr_m_nucleon("neutron"),
+              "D": tr_m_nucleon("deuteron")}
 
 PENDING_ATOMS = {
     "tritium": {
@@ -215,13 +236,39 @@ def main() -> int:
                 "path": str(path.relative_to(ASSEMBLY_DIR.parent.parent)),
                 "target": d.get("target", ""),
                 "target_value": d.get("target_value", str(canonical_val)),
-                "canonical_source": "derivation_chain.TR_M_AT_Q0",
+                "canonical_source": "canonical_trm_reference.tr_m_nucleon",
             }
             tr_M[atom] = mp.mpf(str(d.get("target_value", canonical_val)))
+            # FRAME-CONSISTENCY CHECK (bean qou-4383, 2026-09-13).
+            #
+            # The authority for `tr_M` here is the assembly CHAIN file, not the
+            # reference — `canonical_val` is only the fallback for a missing
+            # chain. So migrating this module to `canonical_trm_reference` did
+            # not, on its own, make its numbers canonical: it made the
+            # DISAGREEMENT visible, which is the useful half.
+            #
+            # Measured on the first run after the migration: neutron and
+            # deuteron chains agree with the reference (they were regenerated
+            # canonical earlier today), while the PROTON chain does not — it is
+            # an ORPHAN whose only producers live in `_deprecated/`, so nothing
+            # live can regenerate it and it still carries the grouped-era
+            # 1.14575969245730087 against the canonical 0.62932840220292192.
+            #
+            # Recorded per atom rather than raised. A mixed-frame table is a
+            # real finding about this cluster's state, and hiding it behind an
+            # exception would lose the other two atoms' correct values with it.
+            _rel = (abs(tr_M[atom] - canonical_val) / abs(canonical_val)
+                    if canonical_val else mp.mpf("inf"))
+            sources[atom]["reference_value"] = str(canonical_val)
+            sources[atom]["agrees_with_reference"] = bool(_rel < mp.mpf("1e-12"))
+            sources[atom]["rel_vs_reference"] = str(_rel)
+            if _rel >= mp.mpf("1e-12"):
+                print(f"  ⚠ FRAME MISMATCH {atom}: chain {tr_M[atom]} vs "
+                      f"reference {canonical_val} (rel {mp.nstr(_rel, 6)})")
         else:
             sources[atom] = {
                 "path": None,
-                "canonical_source": "derivation_chain.TR_M_AT_Q0",
+                "canonical_source": "canonical_trm_reference.tr_m_nucleon",
             }
             tr_M[atom] = canonical_val
 
@@ -362,6 +409,28 @@ def main() -> int:
         for r in rows
     )
     w.add_assertion("all_predictions_nonneg", computed=nonneg, expected=True)
+
+    # FRAME CONSISTENCY (bean qou-4383, 2026-09-13). Every assembly chain this
+    # table reads must be in the same intra-nucleon frame as the reference.
+    #
+    # THIS IS RED ON ARRIVAL, DELIBERATELY, AND IT NAMES A REAL DEFECT rather
+    # than a hypothesis: `markov-trace-assembly-proton.derivation.json` is an
+    # ORPHAN, still carrying the grouped-era 1.14575969245730087 against the
+    # canonical 0.62932840220292192 — an 82% disagreement inside a table whose
+    # other two atoms are canonical. Its only builder is in `_deprecated/` and
+    # cannot simply be un-deprecated: that builder assumes a 6-crossing
+    # all-positive-sigma word and produces yet a third value, ~2.12258 (the
+    # fifth claimant in `trm_proton_five_values_census`). Regenerating it needs
+    # a live builder written against the canonical 11-letter element.
+    #
+    # Expected 0, not the measured 1. A mixed-frame mass table is not an
+    # established result to lock; it is something to fix, and a gate that
+    # tolerates it teaches the next reader that it is fine.
+    _mismatched = sorted(a for a, v in sources.items()
+                         if v.get("agrees_with_reference") is False)
+    w.add_data("frame_mismatched_atoms", _mismatched)
+    w.add_assertion("all_chains_in_the_canonical_intra_ordering_frame",
+                    computed=len(_mismatched), expected=0)
 
     w.save()
     return 0

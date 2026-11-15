@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/thm-embeddability-closure",
+  "@type": [
+    "folio-assistant-core:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:embeddability-closure",
+  "kind": "theorem",
+  "title": "Embeddability closure under knot-particle generation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-torus-knot-generators"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-embeddability-closure"
+  ],
+  "tags": [
+    "embeddability",
+    "genus",
+    "torus-knot",
+    "generation",
+    "descent",
+    "localized-knot",
+    "spectral-filter"
+  ],
+  "leanRef": "qou:QOU.Torsion.embeddability_closure",
+  "text": "embeddability-closure.md",
+  "leanSource": "embeddability-closure.lean",
+  "provenance": "authored"
+}

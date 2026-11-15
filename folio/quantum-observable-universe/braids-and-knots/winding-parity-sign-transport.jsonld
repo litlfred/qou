@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-winding-parity-sign-transport",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:winding-parity-sign-transport",
+  "kind": "remark",
+  "title": "Winding parity as a sign mechanism: what the golden order would buy, and why it is not yet a derivation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-winding-lattice-norm-form",
+    "papers/quantum-observable-universe/blocks/prop-cusp-shape-bar-parity",
+    "papers/quantum-observable-universe/blocks/fundamental-knots-operator-basis"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-winding-lattice-norm-form",
+  "tags": [
+    "winding-parity",
+    "brings-surface",
+    "golden-ratio",
+    "bar-parity",
+    "conjectural-transport",
+    "anti-fit"
+  ],
+  "text": "winding-parity-sign-transport.md",
+  "provenance": "authored"
+}

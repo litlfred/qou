@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1908.07065v3/sections/sec-003",
   "@type": [
     "doco:Section"
   ],
   "title": "Review of the TBA equations of Gaiotto–Moore–Neitzke",
   "pageStart": 9,
-  "pageEnd": 11,
+  "pageEnd": 10,
   "contains": [
     "library/arxiv-1908.07065v3/blocks/prose-sec-003"
   ],
-  "derivedFrom": "library/arxiv-1908.07065v3/manifest",
-  "sourceDocument": "library/arxiv-1908.07065v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1908.07065v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1908.07065v3",
   "provenance": "ingested"
 }

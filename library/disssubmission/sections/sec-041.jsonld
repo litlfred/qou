@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/disssubmission/sections/sec-041",
   "@type": [
     "doco:Section"
   ],
-  "title": "The thick subcategory of negligible objects 49",
-  "pageStart": 57,
-  "pageEnd": 59,
+  "title": "A formula for the generic rank",
+  "pageStart": 145,
+  "pageEnd": 147,
   "contains": [
     "library/disssubmission/blocks/prose-sec-041"
   ],
-  "derivedFrom": "library/disssubmission/manifest",
-  "sourceDocument": "library/disssubmission/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/disssubmission",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/disssubmission",
   "provenance": "ingested"
 }

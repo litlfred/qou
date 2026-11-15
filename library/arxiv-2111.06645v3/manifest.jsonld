@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2111.06645v3/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Knots, Perturbative Series and Quantum Modularity",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2111.06645v3",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2111.06645v3",
   "contains": [
     "library/arxiv-2111.06645v3/sections/sec-000",
     "library/arxiv-2111.06645v3/sections/sec-001",
@@ -47,8 +52,17 @@
     "library/arxiv-2111.06645v3/sections/sec-038"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://creativecommons.org/licenses/by-sa/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by-sa/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2111.06645&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-2111.06645v3",
+    "title_source": "slug",
     "source_file": "2111.06645v3.pdf",
     "source_sha256": "2a4826bd1c2f0823c99f8e3cccfd835c5044d70d30eb20b36fea38dcb8dd83de",
     "pages": 87,

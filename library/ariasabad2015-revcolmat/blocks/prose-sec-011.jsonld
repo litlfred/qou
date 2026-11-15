@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/ariasabad2015-revcolmat/blocks/prose-sec-011",
+  "kind": "prose",
+  "title": "The Lawrence-Krammer-Bigelow Representation",
+  "pageStart": 15,
+  "pageEnd": 18,
+  "text": "../sections/sec-011-34-the-lawrence-krammer-bigelow-representation.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ariasabad2015-revcolmat",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ariasabad2015-revcolmat",
+  "provenance": "ingested"
+}

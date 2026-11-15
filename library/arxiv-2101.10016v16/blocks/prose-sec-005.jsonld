@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2101.10016v16/blocks/prose-sec-005",
+  "kind": "prose",
+  "title": "Weak quasi-Hopf algebras",
+  "pageStart": 36,
+  "pageEnd": 43,
+  "text": "../sections/sec-005-6-weak-quasi-hopf-algebras.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2101.10016v16",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2101.10016v16",
+  "provenance": "ingested"
+}

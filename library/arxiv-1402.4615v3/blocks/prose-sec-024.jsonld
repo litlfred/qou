@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1402.4615v3/blocks/prose-sec-024",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1402.4615v3/blocks/prose-sec-024",
   "kind": "prose",
   "title": "Error term",
   "pageStart": 45,
   "pageEnd": 50,
   "text": "../sections/sec-024-74-error-term.md",
-  "derivedFrom": "library/arxiv-1402.4615v3/manifest",
-  "sourceDocument": "library/arxiv-1402.4615v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1402.4615v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1402.4615v3",
   "provenance": "ingested"
 }

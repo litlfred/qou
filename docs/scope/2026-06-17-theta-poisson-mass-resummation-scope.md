@@ -12,7 +12,7 @@
 
 The Jacobi triple product makes a theta function `θ(z|τ) = Σ_{n∈ℤ} z^n q^{n²}`
 Poisson-self-dual: its modular $S$-transform $\tau\mapsto-1/\tau$
-(= D14, [`conj:modular-s-transform-q-q-tilde`](../../content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.md))
+(= D14, [`conj:modular-s-transform-q-q-tilde`](../../folio/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.md))
 exchanges the small-$|q|$ regime and the root-of-unity regime. The Kashaev
 Volume Conjecture lives on the root-of-unity side. So the *deep* hope is:
 
@@ -84,6 +84,6 @@ The refutation is structural, not a tuning accident:
 ## Cross-references
 
 - Parent audit (bar-side + nome trap): [`2026-06-17-d14-theta-bar-side-and-nome-conflation.md`](../audits/2026-06-17-d14-theta-bar-side-and-nome-conflation.md)
-- D14 conjecture: [`conj:modular-s-transform-q-q-tilde`](../../content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.md)
+- D14 conjecture: [`conj:modular-s-transform-q-q-tilde`](../../folio/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.md)
 - Partition-function tower fact: [`docs/audits/2026-06-01-qbeta-habiro-a8-partition-function-match.md`](../audits/2026-06-01-qbeta-habiro-a8-partition-function-match.md)
 - Volume Conjecture: `conj:kashaev-volume-conjecture`

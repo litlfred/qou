@@ -43,7 +43,7 @@ import subprocess
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SKIP_DIRS = {"_deprecated", "__pycache__", "data"}
+SKIP_DIRS = {"_deprecated", "fsh-guts", "__pycache__", "data"}
 
 #: every spelling that puts something on sys.path. Deliberately broad --
 #: a false NEGATIVE here costs a wasted subprocess, a false POSITIVE

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1907.03683v4/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1907.03683v4/blocks/prose-sec-001",
   "kind": "prose",
-  "title": "Random partitions as point processes. The aim of this article is to study defor-",
+  "title": "Random partitions as point processes",
   "pageStart": 1,
-  "pageEnd": 2,
-  "text": "../sections/sec-001-11-random-partitions-as-point-processes-the-aim.md",
-  "derivedFrom": "library/arxiv-1907.03683v4/manifest",
-  "sourceDocument": "library/arxiv-1907.03683v4/manifest",
+  "pageEnd": 4,
+  "text": "../sections/sec-001-11-random-partitions-as-point-processes.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1907.03683v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1907.03683v4",
   "provenance": "ingested"
 }

@@ -533,7 +533,7 @@ def main() -> int:
     scan = (REPO_ROOT.rglob("*.witness.json") if args.tree
             else (Path(p) for p in sorted(glob.glob(str(HERE / "*.witness.json")))))
     for wf in sorted(scan):
-        if args.tree and any(part in (".git", ".claude", "_deprecated",
+        if args.tree and any(part in (".git", ".claude", "_deprecated", "fsh-guts",
                                       "node_modules") for part in Path(wf).parts):
             continue
         name = Path(wf).name

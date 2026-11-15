@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/ant-v14-n7-s-p03/sections/sec-001",
   "@type": [
     "doco:Section"
   ],
-  "title": "Motifs algébriques et motifs rigides 1754",
-  "pageStart": 1,
-  "pageEnd": 1,
+  "title": "Motifs algébriques et motifs rigides",
+  "pageStart": 8,
+  "pageEnd": 29,
   "contains": [
     "library/ant-v14-n7-s-p03/blocks/prose-sec-001"
   ],
-  "derivedFrom": "library/ant-v14-n7-s-p03/manifest",
-  "sourceDocument": "library/ant-v14-n7-s-p03/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s-p03",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s-p03",
   "provenance": "ingested"
 }

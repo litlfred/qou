@@ -1,0 +1,52 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2603.12136v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Folding Mixed-Integer Linear Programs and Reflection Symmetries (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2603.12136v1",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2603.12136&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2603.12136v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2603.12136v1",
+    "content_type": "application/gzip",
+    "sha256": "8bf3d1f47c7893363a2d3f3821eba1dc518d14af96bbad26792bccad49719605",
+    "bytes": 119160,
+    "fetched": "2026-10-10T15:22:29+00:00",
+    "files": [
+      {
+        "path": "source/files/exactorbitalshrinking.bib",
+        "role": "bib",
+        "sha256": "16824fa8d1332eb17f31f2d787f21447ed7af30a16ab28b31dfe1fb028c23008",
+        "bytes": 74661
+      },
+      {
+        "path": "source/files/exactorbitalshrinking.tex",
+        "role": "tex",
+        "sha256": "ca35c8fb8b23124d2d6249fc2b817914cfacc2509ffc2afb9ae5f70f4dbe0f01",
+        "bytes": 262563
+      },
+      {
+        "path": "source/files/sn-jnl.cls",
+        "role": "cls",
+        "sha256": "c32f1f7c099451b94b4b98b029470c54863e292cfb9ec65243f506a92c026017",
+        "bytes": 55865
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

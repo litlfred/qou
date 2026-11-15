@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/unital-groebner-bases/blocks/prop-s-polynomial-decomposition",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:s-polynomial-decomposition",
+  "kind": "proposition",
+  "title": "$S$-polynomial decomposition of cancelling sums",
+  "uses": [
+    "papers/unital-groebner-bases/blocks/def-admissible-system",
+    "papers/unital-groebner-bases/blocks/def-groebner-basis"
+  ],
+  "proofs": [
+    "papers/unital-groebner-bases/blocks/prf-s-polynomial-decomposition"
+  ],
+  "tags": [
+    "groebner-basis",
+    "s-polynomial"
+  ],
+  "leanRef": "ugb:UGB.UnitalGroebner.s_polynomial_decomposition",
+  "text": "s-polynomial-decomposition.md",
+  "leanSource": "s-polynomial-decomposition.lean",
+  "provenance": "authored"
+}

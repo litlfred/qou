@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1706.06168v3/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "A Representation Theoretic Explanation of the Borcea-Brändén Characterization",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1706.06168v3",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1706.06168v3",
   "contains": [
+    "library/arxiv-1706.06168v3/sections/sec-front-matter",
     "library/arxiv-1706.06168v3/sections/sec-000",
     "library/arxiv-1706.06168v3/sections/sec-001",
     "library/arxiv-1706.06168v3/sections/sec-002",
@@ -28,11 +34,23 @@
     "library/arxiv-1706.06168v3/sections/sec-019",
     "library/arxiv-1706.06168v3/sections/sec-020",
     "library/arxiv-1706.06168v3/sections/sec-021",
-    "library/arxiv-1706.06168v3/sections/sec-022"
+    "library/arxiv-1706.06168v3/sections/sec-022",
+    "library/arxiv-1706.06168v3/sections/sec-023",
+    "library/arxiv-1706.06168v3/sections/sec-024",
+    "library/arxiv-1706.06168v3/sections/sec-025"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1706.06168&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-1706.06168v3",
+    "title_source": "slug",
     "source_file": "1706.06168v3.pdf",
     "source_sha256": "ab3383a95f369922474b5933c553f5c52983fcab78e7121093fbb17f019d130b",
     "pages": 36,
@@ -43,8 +61,8 @@
       "stamp_date": "6 Aug 2021"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

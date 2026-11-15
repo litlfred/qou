@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ki52/blocks/prose-sec-008",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ki52/blocks/prose-sec-008",
   "kind": "prose",
-  "title": "Proof of Theorem 1.1",
-  "pageStart": 28,
-  "pageEnd": 28,
-  "text": "../sections/sec-008-5-proof-of-theorem-11.md",
-  "derivedFrom": "library/ki52/manifest",
-  "sourceDocument": "library/ki52/manifest",
+  "title": "Verifying the assumption of the Poisson summation formula",
+  "pageStart": 39,
+  "pageEnd": 48,
+  "text": "../sections/sec-008-54-verifying-the-assumption-of-the-poisson-summa.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ki52",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ki52",
   "provenance": "ingested"
 }

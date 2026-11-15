@@ -8,184 +8,56 @@ pages: 11-12
 source_pdf: 2412.02281v1.pdf
 source_sha256: ac4127cf4994b2ba
 doc_brief: "Explicit evaluation of the q-Stokes matrices for certain confluent hypergeometric q-difference equations — We prove a connection formula for the basic hypergeomtric fu nction nϕn−1 (a1,...,a n−1"
+text_source: latex
+latex_prose_ratio: 0.947
+latex_coverage_ratio: 0.921
 ---
-We ﬁrst introduce a diagonalized system under the condition s:
-λ (n−1)
-i ⁄=λ (n−1)
-j , for 1 ≤i ⁄=j ≤n − 1, (30)
-λ (n−1)
-i ⁄=λ (n−2)
-j , for 1 ≤i ≤n − 1, 1 ≤j ≤n − 2. (31)
-Under the conditions (30) and (31), let us take the ( n − 1) × (n − 1) matrix Pn−1 given by
-(Pn−1)ij :=
-(−1)i+j∆ 1,...,n −2
-1,..., ˆi,...,n −1
-Ä
-A −λ (n−1)
-j · Idn
-ä
-√ ∏ n−1
-l=1,l ⁄=j
-Ä
-λ (n−1)
-l −λ (n−1)
-j
-ä ∏ n−2
-l=1
-Ä
-λ (n−2)
-l −λ (n−1)
-j
-ä.
-Here ∆ 1,...,n −2
-1,..., ˆi,...,n −1
-Ä
-A −λ (n−1)
-j · Idn
-ä
-is the minor of the matrix A −λ (n−1)
-j · Idn, formed by the ﬁrst n − 2 rows
-and the ﬁrst n − 1 columns, with the i-th column omitted. Then the inverse matrix of Pn−1 is given explicitly
-as follows and we can use Pn−1 to diagonalize the upper left submatrix A(n−1) of A.
-11
-Proposition 3.4 (see e.g., [15]) . If A satisﬁes (30) and (31), then Pn−1 is invertible and the inverse matrix
-P −1
-n−1 is given by
-Ä
-P −1
-n−1
-ä
-ij
-=
-(−1)i+j ∆ 1,..., ˆj,...,n −1
-1,...,n −2
-Ä
-A −λ (n−1)
-i · Idn
-ä
-√ ∏ n−1
-l=1,l ⁄=i
-Ä
-λ (n−1)
-l −λ (n−1)
-i
-ä ∏ n−2
-l=1
-Ä
-λ (n−2)
-l −λ (n−1)
-i
-ä, for 1 ≤i,j ≤n − 1.
-Moreover, we have
-P −1
-n−1A(n−1)Pn−1 = diag
-Ä
-λ (n−1)
-1 ,...,λ (n−1)
-n−1
-ä
-,
-and we introduce
-An−1 := diag
-Ä
-P −1
-n−1, 1
-ä
-·A · diag (Pn−1, 1) =
-à
-λ (n−1)
-1 0 a(n−1)
-1
-. . . .
-.
-.
-0 λ (n−1)
-n−1 a(n−1)
-n−1
-b(n−1)
-1 · · · b(n−1)
-n−1 ann
-í
-.
-Herea(n−1)
-i and b(n−1)
-i are
-a(n−1)
-i =
-n−1∑
-v=1
-Ä
-P −1
-n−1
-ä
-iv
-·avn =
-(−1)i+n−1∆ 1,...,n −1
-1,...,n −2,n
-Ä
-A −λ (n−1)
-i · Idn
-ä
-√ ∏ n−1
-l=1,l ⁄=i
-Ä
-λ (n−1)
-l −λ (n−1)
-i
-ä ∏ n−2
-l=1
-Ä
-λ (n−2)
-l −λ (n−1)
-i
-ä,
-b(n−1)
-i =
-n−1∑
-v=1
-anv · (Pn−1)vi =
-(−1)i+n−1∆ 1,...,n −2,n
-1,...,n −1
-Ä
-A −λ (n−1)
-i · Idn
-ä
-√ ∏ n−1
-l=1,l ⁄=i
-Ä
-λ (n−1)
-l −λ (n−1)
-i
-ä ∏ n−2
-l=1
-Ä
-λ (n−2)
-l −λ (n−1)
-i
-ä,
-and we have
-a(n−1)
-i b(n−1)
-i = −
-∏ n
-l=1
-Ä
-λ (n)
-l −λ (n−1)
-i
-ä
-∏ n−1
-l=1,l ⁄=i
-Ä
-λ (n−1)
-l −λ (n−1)
-i
-ä. (32)
-Now let us use the conjugation of the n ×n matrix diag (Pn−1, 1) to diagonalize the upper left part of the
-equation (2) and obtain the equation
-DqFq (z) =
-Å
-Enn + An−1
-z
-ã
-Fq (z). (33)
+\label{sec:diag}
+ We first introduce a diagonalized system under   the   conditions:
+\begin{align}\label{ineq1}
+\lambda^{\left(n-1\right)}_i & \ne \lambda^{\left(n-1\right)}_j, \text{ for } \ 1\leq i\neq j \leq n-1,\\ \label{ineq2}
+\lambda^{\left(n-1\right)}_i & \ne \lambda^{\left(n-2\right)}_j, \text{ for } \ 1\leq i \leq n-1, \  1\leq j \leq n-2 .
+\end{align}
+
+ Under the conditions \eqref{ineq1} and \eqref{ineq2},    let us take the $\left(n-1\right)\times \left(n-1\right)$ matrix $P_{n-1}$ given by
+\begin{equation*}
+    (P_{n-1})_{ij}:=\frac{(-1)^{i+j}\Delta^{1,...,n-2}_{1,...,\hat{i},...,n-1}\left(A-\lambda^{\left(n-1\right)}_j\cdot \mathrm{Id}_n\right)}{\sqrt{ \prod_{l=1,l\ne j}^{n-1}\left(\lambda^{\left(n-1\right)}_l-\lambda^{\left(n-1\right)}_j\right)\prod_{l=1}^{n-2}\left(\lambda^{\left(n-2\right)}_l-\lambda^{\left(n-1\right)}_j\right)} }.
+\end{equation*}
+Here $\Delta_{1,...,\hat{i},..., n-1}^{1,...,n-2}\left(A-\lambda^{\left(n-1\right)}_j\cdot \mathrm{Id}_n\right)$  is  the  minor of the matrix $A-\lambda^{\left(n-1\right)}_j\cdot \mathrm{Id}_n$, formed by the first $n-2$ rows and the first $n-1$ columns, with the   $i$-th column  omitted.  Then the inverse matrix of $P_{n-1}$ is given explicitly as follows and we can use $P_{n-1}$ to diagonalize the upper left  submatrix  $A^{(n-1)}$ of $A$.
+\begin{prop}[see e.g., \cite{lin2024explicit}]\label{An-1Pn-1}
+     If $A$ satisfies \eqref{ineq1} and \eqref{ineq2}, then $P_{n-1}$ is invertible and the inverse matrix $P_{n-1}^{-1}$ is given by
+    \begin{equation*}
+        \left(P_{n-1}^{-1}\right)_{i j}=\frac{(-1)^{i+j}\Delta^{1,...,\hat{j},...,n-1}_{1,...,n-2}   \left(A-\lambda^{\left(n-1\right)}_i\cdot \mathrm{Id}_n\right)}{\sqrt{ \prod_{l=1,l\ne i}^{n-1}\left(\lambda^{\left(n-1\right)}_l-\lambda^{\left(n-1\right)}_i\right)\prod_{l=1}^{n-2}\left(\lambda^{\left(n-2\right)}_l-\lambda^{\left(n-1\right)}_i\right)} },  \  \text{for}  \  1\leq i,j \leq    n-1     .
+    \end{equation*}
+    Moreover, we have
+    \begin{equation*}
+       P_{n-1}^{-1} A^{\left(n-1\right)} {P}_{n-1}= \mathrm{diag}\left(\lambda^{\left(n-1\right)}_1,\ldots,\lambda^{\left(n-1\right)}_{n-1}\right), 
+    \end{equation*}
+    and we introduce
+    \begin{eqnarray*}
+        A_{n-1}:=\operatorname{diag}\left({P}_{n-1}^{-1},1\right)\cdot A \cdot \operatorname{diag}\left({P}_{n-1},1\right) = \left(\begin{array}{cccc}
+\lambda^{\left(n-1\right)}_1 & & 0 & a^{\left(n-1\right)}_1 \\
+ & \ddots & & \vdots \\
+0 & & \lambda^{\left(n-1\right)}_{n-1} & a^{\left(n-1\right)}_{n-1} \\
+b^{\left(n-1\right)}_1 & \cdots & b^{\left(n-1\right)}_{n-1} & a_{n n} 
+\end{array} \right).
+    \end{eqnarray*}
+Here   $a^{\left(n-1\right)}_i$ and $b^{\left(n-1\right)}_i$  are
+\begin{align*}
+
+    a^{\left(n-1\right)}_i&= \sum_{v=1}^{n-1}\left({P}_{n-1}^{-1}\right)_{i v} \cdot a_{v n}=\frac{(-1)^{i+n-1}\Delta^{1,...,n-1}_{1,...,n-2,n}\left(A-\lambda^{\left(n-1\right)}_i\cdot \mathrm{Id}_n\right)}{\sqrt{\prod_{l=1,l\ne i}^{n-1}\left(\lambda^{\left(n-1\right)}_l-\lambda^{\left(n-1\right)}_i\right)\prod_{l=1}^{n-2}\left(\lambda^{\left(n-2\right)}_l-\lambda^{\left(n-1\right)}_i\right)}},\\ 
+    
+    b^{\left(n-1\right)}_i&= \sum_{v=1}^{n-1} a_{n v}\cdot \left({P}_{n-1}\right)_{v i}=\frac{(-1)^{i+n-1}\Delta_{1,...,n-1}^{1,..., n-2,n}\left(A-\lambda_i^{\left(n-1\right)}\cdot \mathrm{Id}_n\right)}{\sqrt{\prod_{l=1,l\ne i}^{n-1}\left(\lambda^{\left(n-1\right)}_l-\lambda^{\left(n-1\right)}_i\right)\prod_{l=1}^{n-2}\left(\lambda^{\left(n-2\right)}_l-\lambda^{\left(n-1\right)}_i\right)}},
+\end{align*}
+and  we  have
+\begin{equation}\label{eq:aibi}
+ a^{\left(n-1\right)}_i   b^{\left(n-1\right)}_i =-\frac{\prod_{l=1}^{n}\left(\lambda^{\left(n\right)}_l-\lambda^{\left(n-1\right)}_i\right)}{\prod_{l=1,l\neq i}^{n-1}\left(\lambda^{\left(n-1\right)}_l-\lambda^{\left(n-1\right)}_i\right)}.
+\end{equation}
+\end{prop}
+
+
+
+Now let us use the conjugation of the $n\times n$ matrix $\operatorname{diag}\left({P}_{n-1},1\right)$ to diagonalize the upper left part of the equation \eqref{qdes}  and   obtain the equation 
+\begin{equation}
+    D_q F_q\left(z\right)=\left( E_{n n}+\frac{A_{n-1}}{z}\right) F_q\left(z\right).\label{diagqdes}
+\end{equation}

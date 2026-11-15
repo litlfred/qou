@@ -1,0 +1,48 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "shishikura1998",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 113,
+      "entry": {
+        "id": "shishikura1998",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T16:14:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 0,
+        "fix_commit": null,
+        "note": "PDF verified: Shishikura, \"The Hausdorff dimension of the boundary of the Mandelbrot set and Julia sets,\" Ann. Math. 147 (1998), arXiv:math/9201282. Verified.",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/shishikura1998.pdf"
+        },
+        "local_pdf": "uploads/shishikura1998.pdf",
+        "relevance": {
+          "verdict": "undetermined",
+          "rationale": "BROKEN SOURCE JOIN: the named file does not exist, so identity is unconfirmed. Citation status is thin: the id appears only in one .ts cites array (information-theory/hausdorff-dimension-classical-comparison.ts:20) and in zero .md prose, zero .lean, zero computations. So even taking the registered entry at face value, this reference is not load-bearing anywhere \u2014 the block that lists it never invokes it in its narrative. Whether the Mandelbrot/Julia Hausdorff-dimension result is what rem:hausdorff-dimension-classical-comparison actually needs cannot be settled without both the source and a claim that names it.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Non-load-bearing cites-array-only entry with a missing source file. Either the block's prose should invoke it at a named claim or the cites entry should be dropped; deciding needs the source.",
+              "target": "rem:hausdorff-dimension-classical-comparison"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z"
+        }
+      }
+    }
+  ]
+}

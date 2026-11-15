@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-silver-ratio-beta-decay-null-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:silver-ratio-beta-decay-null-interpretation",
+  "kind": "remark",
+  "title": "Silver-ratio bar-symmetry, SU(2)_L connection, and the $c_5$ outlier",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-silver-ratio-beta-decay-null",
+    "papers/quantum-observable-universe/blocks/def-bar-involution"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-silver-ratio-beta-decay-null",
+  "cites": [
+    "references/wenzl1988",
+    "references/hoefsmit1974"
+  ],
+  "tags": [
+    "silver-ratio",
+    "beta-decay-null",
+    "pell-lucas",
+    "bar-involution",
+    "c-k-closed-forms",
+    "su2-weak"
+  ],
+  "text": "silver-ratio-beta-decay-null-interpretation.md",
+  "provenance": "authored"
+}

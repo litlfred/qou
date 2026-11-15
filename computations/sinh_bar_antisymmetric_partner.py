@@ -16,7 +16,7 @@ PR #1125 + #1129 established:
             = cosh((2m+1) η_0) / (2 cosh η_0)               at substrate η_0 = log q_0
 
 This is the bar-SYMMETRIC even-h projection of tr_M(σ_1^{2m}).  Per
-[`bar-involution.md`](../../content/quantum-observable-universe/braids-and-knots/bar-involution.md),
+[`bar-involution.md`](../../folio/quantum-observable-universe/braids-and-knots/bar-involution.md),
 the canonical P_avg projection KEEPS this (cosh, cos_q, Li_2^q)
 and DISCARDS the bar-anti-symmetric companion (sinh, sin_q, Φ_q).
 
@@ -40,7 +40,7 @@ and DISCARDS the bar-anti-symmetric companion (sinh, sin_q, Φ_q).
        P_m(h) - Q_m(h) = q^{-(2m+1)} / [2]_q                  (other bar-piece)
 
 5. Documents the EM/Coulomb-channel role of Q (per
-   [`crossing-energy-interpretation.md`](../../content/quantum-observable-universe/observations/crossing-energy-interpretation.md):
+   [`crossing-energy-interpretation.md`](../../folio/quantum-observable-universe/observations/crossing-energy-interpretation.md):
    sinh(ln q) is the Coulomb / electromagnetic component vs the
    cosh strong-binding component).
 

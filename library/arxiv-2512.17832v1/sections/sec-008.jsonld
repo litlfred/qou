@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2512.17832v1/sections/sec-008",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Author Contributions",
+  "pageStart": 5,
+  "pageEnd": 7,
+  "contains": [
+    "library/arxiv-2512.17832v1/blocks/prose-sec-008"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2512.17832v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2512.17832v1",
+  "provenance": "ingested"
+}

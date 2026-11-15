@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-0306165v1/blocks/prose-sec-027",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-th-0306165v1/blocks/prose-sec-027",
   "kind": "prose",
-  "title": "A Generalization of the V olume Conjecture",
-  "pageStart": 37,
-  "pageEnd": 37,
-  "text": "../sections/sec-027-5-a-generalization-of-the-v-olume-conjecture.md",
-  "derivedFrom": "library/arxiv-hep-th-0306165v1/manifest",
-  "sourceDocument": "library/arxiv-hep-th-0306165v1/manifest",
+  "title": "The BTZ Black Hole",
+  "pageStart": 53,
+  "pageEnd": 59,
+  "text": "../sections/sec-027-a-the-btz-black-hole.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-0306165v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-0306165v1",
   "provenance": "ingested"
 }

@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/afst-2007-6-16-3-665-0/sections/sec-007",
   "@type": [
     "doco:Section"
   ],
-  "title": "It follows thatM has a unique ﬁnite dimensionalC-linear subspaceW,",
-  "pageStart": 10,
-  "pageEnd": 11,
+  "title": "Vector bundles and q-diﬀerence modules",
+  "pageStart": 13,
+  "pageEnd": 21,
   "contains": [
     "library/afst-2007-6-16-3-665-0/blocks/prose-sec-007"
   ],
-  "derivedFrom": "library/afst-2007-6-16-3-665-0/manifest",
-  "sourceDocument": "library/afst-2007-6-16-3-665-0/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/afst-2007-6-16-3-665-0",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/afst-2007-6-16-3-665-0",
   "provenance": "ingested"
 }

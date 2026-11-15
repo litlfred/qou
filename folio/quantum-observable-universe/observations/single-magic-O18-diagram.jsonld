@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-single-magic-O18-diagram",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:single-magic-O18-diagram",
+  "kind": "example",
+  "title": "Single-magic illustration: $^{18}\\mathrm{O}$ at $Z = 8$, $N = 10$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-diagrammatic-double-magic-lr-fusion"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-diagrammatic-double-magic-lr-fusion",
+  "tags": [
+    "magic-numbers",
+    "single-magic",
+    "oxygen-18",
+    "self-conjugate-partitions",
+    "kappa-leakage",
+    "diagram"
+  ],
+  "text": "single-magic-O18-diagram.md",
+  "provenance": "authored"
+}

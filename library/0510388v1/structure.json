@@ -5,207 +5,2713 @@
   "file": "0510388v1.pdf",
   "sha256": "c83c0f6a2eaa74f322292f0da9046fd07d7c1fcd07c30f7b4faf39ecfb66ff12",
   "bytes": 928831,
-  "pages": 108
+  "pages": 108,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:17Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE",
+  "title": "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE Dennis DeTurck and Herman Gluck",
   "authors_raw": "Dennis DeTurck and Herman Gluck",
-  "abstract": null,
-  "docinfo": {
-   "Producer": "Acrobat Distiller 4.05 for Windows",
-   "Creator": "Microsoft Word 9.0",
-   "Author": "GLUCK",
-   "Title": "Writhe - Gauss Integral                                                                                           August 16, 2",
-   "CreationDate": "D:20051017205442"
-  },
-  "title_prev": "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC3-SPACE",
   "title_lines": [
    "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL",
    "on the 3-SPHERE and in HYPERBOLIC 3-SPACE"
-  ]
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Title": "Writhe - Gauss Integral                                                                                           August 16, 2",
+   "Author": "GLUCK",
+   "Producer": "Acrobat Distiller 4.05 for Windows",
+   "Creator": "Microsoft Word 9.0",
+   "CreationDate": "D:20051017205442"
+  },
+  "title_raw": "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Writhe - Gauss Integral August 16, 2",
+   "heading": "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE Dennis DeTurck and Herman Gluck",
+   "text": "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
    "level": 1,
-   "title": "Magnetic fields in R",
+   "title": "ORGANIZATION",
+   "page": 2,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.55,
+   "evidence": [
+    "style",
+    "numbered-style"
+   ],
+   "page_label": "2"
+  },
+  {
+   "level": 1,
+   "title": "STATEMENTS OF RESULTS",
+   "page": 3,
+   "source": "inferred",
+   "number": "A",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "3"
+  },
+  {
+   "level": 1,
+   "title": "Linking integrals in R3 , S3 and H3 .",
+   "page": 3,
+   "source": "inferred",
+   "number": "1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "3"
+  },
+  {
+   "level": 1,
+   "title": "The route to Gauss's linking integral.",
+   "page": 7,
+   "source": "inferred",
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "7"
+  },
+  {
+   "level": 1,
+   "title": "Magnetic fields in R3 , S3 and H3 .",
    "page": 8,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "8"
   },
   {
    "level": 1,
-   "title": "Vector-valued Green’s operators in R",
+   "title": "Left-invariant vector fields on S3 .",
+   "page": 12,
+   "source": "inferred",
+   "number": "4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "12"
+  },
+  {
+   "level": 1,
+   "title": "Scalar-valued Green's operators in R3 , S3 and H3 .",
+   "page": 15,
+   "source": "inferred",
+   "number": "5",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "15"
+  },
+  {
+   "level": 1,
+   "title": "Vector-valued Green's operators in R3 , S3 and H3 .",
    "page": 17,
    "source": "inferred",
-   "number": "6"
+   "number": "6",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "17"
   },
   {
    "level": 1,
-   "title": "IN LEFT-TRANSLATION FORMAT",
+   "title": "Classical electrodynamics and Maxwell's equations on S3 and H3 .",
+   "page": 21,
+   "source": "inferred",
+   "number": "7",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "21"
+  },
+  {
+   "level": 1,
+   "title": "PROOFS ON S3 IN LEFT-TRANSLATION FORMAT",
    "page": 22,
    "source": "inferred",
-   "number": "3"
+   "number": "B",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "22"
   },
   {
    "level": 1,
-   "title": "PROOFS ON S",
+   "title": "Proof scheme for Theorem 3, formula (1).",
+   "page": 22,
+   "source": "inferred",
+   "number": "8",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "22"
+  },
+  {
+   "level": 1,
+   "title": "The calculus of vector convolutions in R3 .",
+   "page": 24,
+   "source": "inferred",
+   "number": "9",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "24"
+  },
+  {
+   "level": 1,
+   "title": "The calculus of vector convolutions in S3 .",
+   "page": 27,
+   "source": "inferred",
+   "number": "10",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "27"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem 3, formula (1).",
+   "page": 30,
+   "source": "inferred",
+   "number": "11",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "30"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem 2, formula (1).",
+   "page": 32,
+   "source": "inferred",
+   "number": "12",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "32"
+  },
+  {
+   "level": 1,
+   "title": "PROOFS ON S3 IN PARALLEL TRANSPORT FORMAT",
    "page": 34,
    "source": "inferred",
-   "number": "C"
+   "number": "C",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "34"
   },
   {
    "level": 1,
-   "title": "IN PARALLEL TRANSPORT FORMAT",
+   "title": "Parallel transport in S3 .",
    "page": 34,
    "source": "inferred",
-   "number": "3"
+   "number": "13",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "34"
   },
   {
    "level": 1,
-   "title": "Geodesics in S",
+   "title": "Geodesics in S3 .",
    "page": 36,
    "source": "inferred",
-   "number": "14"
+   "number": "14",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "36"
   },
   {
    "level": 1,
-   "title": "The vector triple product in R",
+   "title": "The vector triple product in R4 .",
    "page": 38,
    "source": "inferred",
-   "number": "15"
+   "number": "15",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "38"
   },
   {
    "level": 1,
-   "title": "Explicit formula for parallel transport in S",
+   "title": "Explicit formula for parallel transport in S3 .",
    "page": 39,
    "source": "inferred",
-   "number": "16"
+   "number": "16",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "39"
   },
   {
    "level": 1,
-   "title": "The method of moving frames in S",
+   "title": "The method of moving frames in S3 .",
    "page": 40,
    "source": "inferred",
-   "number": "17"
+   "number": "17",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "40"
   },
   {
    "level": 1,
-   "title": "References",
+   "title": "Curls and divergences.",
+   "page": 43,
+   "source": "inferred",
+   "number": "18",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "43"
+  },
+  {
+   "level": 1,
+   "title": "Statement of the Key Lemma.",
+   "page": 46,
+   "source": "inferred",
+   "number": "19",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "46"
+  },
+  {
+   "level": 1,
+   "title": "The first term on the LHS of the Key Lemma.",
+   "page": 47,
+   "source": "inferred",
+   "number": "20",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "47"
+  },
+  {
+   "level": 1,
+   "title": "The second term on the LHS of the Key Lemma.",
+   "page": 50,
+   "source": "inferred",
+   "number": "21",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "50"
+  },
+  {
+   "level": 1,
+   "title": "The RHS of the Key Lemma.",
+   "page": 52,
+   "source": "inferred",
+   "number": "22",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "52"
+  },
+  {
+   "level": 1,
+   "title": "Maxwell's equation on S3 .",
+   "page": 53,
+   "source": "inferred",
+   "number": "23",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "53"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem 2, formula (2) .",
+   "page": 55,
+   "source": "inferred",
+   "number": "24",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "55"
+  },
+  {
+   "level": 1,
+   "title": "The Green's operator on S3 in parallel transport format.",
+   "page": 57,
+   "source": "inferred",
+   "number": "25",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "57"
+  },
+  {
+   "level": 1,
+   "title": "Plan of the proof.",
+   "page": 58,
+   "source": "inferred",
+   "number": "26",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "58"
+  },
+  {
+   "level": 1,
+   "title": "Some formulas that we will use.",
+   "page": 59,
+   "source": "inferred",
+   "number": "27",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "59"
+  },
+  {
+   "level": 1,
+   "title": "The curl of A(V, \u03d5)(y) .",
+   "page": 60,
+   "source": "inferred",
+   "number": "28",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "60"
+  },
+  {
+   "level": 1,
+   "title": "The divergence of A(V, \u03d52) .",
+   "page": 63,
+   "source": "inferred",
+   "number": "29",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "63"
+  },
+  {
+   "level": 1,
+   "title": "Step 2 - Finding and using the kernel function \u03d53 .",
+   "page": 65,
+   "source": "inferred",
+   "number": "30",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "65"
+  },
+  {
+   "level": 1,
+   "title": "Finding an explicit formula for \u03a8 .",
+   "page": 69,
+   "source": "inferred",
+   "number": "31",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "69"
+  },
+  {
+   "level": 1,
+   "title": "Explicit formula for \u03d53 .",
+   "page": 71,
+   "source": "inferred",
+   "number": "32",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "71"
+  },
+  {
+   "level": 1,
+   "title": "PROOFS IN H3 IN PARALLEL TRANSPORT FORMAT",
+   "page": 72,
+   "source": "inferred",
+   "number": "D",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "72"
+  },
+  {
+   "level": 1,
+   "title": "The hyperboloid model of hyperbolic 3-space.",
+   "page": 72,
+   "source": "inferred",
+   "number": "33",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "72"
+  },
+  {
+   "level": 1,
+   "title": "Isometries of H3 .",
+   "page": 74,
+   "source": "inferred",
+   "number": "34",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "74"
+  },
+  {
+   "level": 1,
+   "title": "Geodesics in H3 .",
+   "page": 75,
+   "source": "inferred",
+   "number": "35",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "75"
+  },
+  {
+   "level": 1,
+   "title": "The vector triple product in R1,3 .",
+   "page": 76,
+   "source": "inferred",
+   "number": "36",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "76"
+  },
+  {
+   "level": 1,
+   "title": "Explicit formula for parallel transport in H3 .",
+   "page": 77,
+   "source": "inferred",
+   "number": "37",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "77"
+  },
+  {
+   "level": 1,
+   "title": "The method of moving frames in H3 .",
+   "page": 78,
+   "source": "inferred",
+   "number": "38",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "78"
+  },
+  {
+   "level": 1,
+   "title": "Curls and divergences.",
+   "page": 80,
+   "source": "inferred",
+   "number": "39",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "80"
+  },
+  {
+   "level": 1,
+   "title": "Statement of the Key Lemma.",
+   "page": 82,
+   "source": "inferred",
+   "number": "40",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "82"
+  },
+  {
+   "level": 1,
+   "title": "The first term on the LHS of the Key Lemma.",
+   "page": 83,
+   "source": "inferred",
+   "number": "41",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "83"
+  },
+  {
+   "level": 1,
+   "title": "The second term on the LHS of the Key Lemma.",
+   "page": 85,
+   "source": "inferred",
+   "number": "42",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "85"
+  },
+  {
+   "level": 1,
+   "title": "The RHS of the Key Lemma.",
+   "page": 86,
+   "source": "inferred",
+   "number": "43",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "86"
+  },
+  {
+   "level": 1,
+   "title": "Maxwell's equation in H3 .",
+   "page": 87,
+   "source": "inferred",
+   "number": "44",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "87"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem 2, formula (3) .",
+   "page": 88,
+   "source": "inferred",
+   "number": "45",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "88"
+  },
+  {
+   "level": 1,
+   "title": "The Green's operator on H3 in parallel transport format.",
+   "page": 89,
+   "source": "inferred",
+   "number": "46",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "89"
+  },
+  {
+   "level": 1,
+   "title": "Plan of the proof.",
+   "page": 90,
+   "source": "inferred",
+   "number": "47",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "90"
+  },
+  {
+   "level": 1,
+   "title": "Some formulas that we will use.",
+   "page": 91,
+   "source": "inferred",
+   "number": "48",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "91"
+  },
+  {
+   "level": 1,
+   "title": "The curl of A(V, \u03d5)(y) .",
+   "page": 92,
+   "source": "inferred",
+   "number": "49",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "92"
+  },
+  {
+   "level": 1,
+   "title": "The divergence of A(V, \u03d52) .",
+   "page": 94,
+   "source": "inferred",
+   "number": "50",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "94"
+  },
+  {
+   "level": 1,
+   "title": "Step 2 - Finding and using the kernel function \u03d53 .",
+   "page": 95,
+   "source": "inferred",
+   "number": "51",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "95"
+  },
+  {
+   "level": 1,
+   "title": "Non-uniqueness of the Green's operator in H3 .",
+   "page": 98,
+   "source": "inferred",
+   "number": "52",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "98"
+  },
+  {
+   "level": 1,
+   "title": "ELECTRODYNAMICS AND THE",
+   "page": 100,
+   "source": "inferred",
+   "number": "E",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "100"
+  },
+  {
+   "level": 1,
+   "title": "GAUSS LINKING INTEGRAL ON S3 AND H3",
+   "page": 100,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.55,
+   "evidence": [
+    "style",
+    "numbered-style"
+   ],
+   "page_label": "100"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem 4.",
+   "page": 100,
+   "source": "inferred",
+   "number": "53",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "100"
+  },
+  {
+   "level": 1,
+   "title": "Proof scheme for Theorem 1.",
+   "page": 101,
+   "source": "inferred",
+   "number": "54",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "101"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem 1, formula (1).",
+   "page": 104,
+   "source": "inferred",
+   "number": "55",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "104"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem 1, formulas (2) and (3) .",
+   "page": 106,
+   "source": "inferred",
+   "number": "56",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "106"
+  },
+  {
+   "level": 2,
+   "title": "REFERENCES",
    "page": 107,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.55,
+   "evidence": [
+    "style",
+    "stock-name"
+   ],
+   "page_label": "107"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "58",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "59",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "60",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "61",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "62",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "63",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "64",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "65",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "66",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": "67",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 68,
+   "label": "68",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 69,
+   "label": "69",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 70,
+   "label": "70",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 71,
+   "label": "71",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 72,
+   "label": "72",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 73,
+   "label": "73",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 74,
+   "label": "74",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 75,
+   "label": "75",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 76,
+   "label": "76",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 77,
+   "label": "77",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 78,
+   "label": "78",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 79,
+   "label": "79",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 80,
+   "label": "80",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 81,
+   "label": "81",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 82,
+   "label": "82",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 83,
+   "label": "83",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 84,
+   "label": "84",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 85,
+   "label": "85",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 86,
+   "label": "86",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 87,
+   "label": "87",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 88,
+   "label": "88",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 89,
+   "label": "89",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 90,
+   "label": "90",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 91,
+   "label": "91",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 92,
+   "label": "92",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 93,
+   "label": "93",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 94,
+   "label": "94",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 95,
+   "label": "95",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 96,
+   "label": "96",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 97,
+   "label": "97",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 98,
+   "label": "98",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 99,
+   "label": "99",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 100,
+   "label": "100",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 101,
+   "label": "101",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 102,
+   "label": "102",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 103,
+   "label": "103",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 104,
+   "label": "104",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 105,
+   "label": "105",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 106,
+   "label": "106",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 107,
+   "label": "107",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 108,
+   "label": "108",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-3-magnetic-fields-in-r",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1749,
+   "n_words": 205,
+   "label_start": "1",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-000-organization",
+   "number": null,
+   "title": "ORGANIZATION",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 1195,
+   "n_words": 204,
+   "label_start": "2",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-001-a-statements-of-results",
+   "number": "A",
+   "title": "STATEMENTS OF RESULTS",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-002-1-linking-integrals-in-r3-s3-and-h3",
+   "number": "1",
+   "title": "Linking integrals in R3 , S3 and H3 .",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 7,
+   "n_chars": 4973,
+   "n_words": 836,
+   "label_start": "3",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-003-2-the-route-to-gausss-linking-integral",
+   "number": "2",
+   "title": "The route to Gauss's linking integral.",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2202,
+   "n_words": 344,
+   "label_start": "7",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-004-3-magnetic-fields-in-r3-s3-and-h3",
    "number": "3",
-   "title": "Magnetic fields in R",
+   "title": "Magnetic fields in R3 , S3 and H3 .",
    "level": 1,
    "page_start": 8,
-   "page_end": 17,
-   "n_chars": 13385,
-   "n_words": 2378
+   "page_end": 12,
+   "n_chars": 5725,
+   "n_words": 1003,
+   "label_start": "8",
+   "label_end": "12"
   },
   {
-   "id": "sec-001-6-vector-valued-greens-operators-in-r",
+   "id": "sec-005-4-left-invariant-vector-fields-on-s3",
+   "number": "4",
+   "title": "Left-invariant vector fields on S3 .",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 15,
+   "n_chars": 5164,
+   "n_words": 959,
+   "label_start": "12",
+   "label_end": "15"
+  },
+  {
+   "id": "sec-006-5-scalar-valued-greens-operators-in-r3-s3-and-h3",
+   "number": "5",
+   "title": "Scalar-valued Green's operators in R3 , S3 and H3 .",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 17,
+   "n_chars": 2177,
+   "n_words": 339,
+   "label_start": "15",
+   "label_end": "17"
+  },
+  {
+   "id": "sec-007-6-vector-valued-greens-operators-in-r3-s3-and-h3",
    "number": "6",
-   "title": "Vector-valued Green’s operators in R",
+   "title": "Vector-valued Green's operators in R3 , S3 and H3 .",
    "level": 1,
    "page_start": 17,
-   "page_end": 22,
-   "n_chars": 6910,
-   "n_words": 1143
+   "page_end": 21,
+   "n_chars": 4871,
+   "n_words": 806,
+   "label_start": "17",
+   "label_end": "21"
   },
   {
-   "id": "sec-002-3-in-left-translation-format",
-   "number": "3",
-   "title": "IN LEFT-TRANSLATION FORMAT",
+   "id": "sec-008-7-classical-electrodynamics-and-maxwells-equatio",
+   "number": "7",
+   "title": "Classical electrodynamics and Maxwell's equations on S3 and H3 .",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 1483,
+   "n_words": 267,
+   "label_start": "21",
+   "label_end": "22"
+  },
+  {
+   "id": "sec-009-b-proofs-on-s3-in-left-translation-format",
+   "number": "B",
+   "title": "PROOFS ON S3 IN LEFT-TRANSLATION FORMAT",
    "level": 1,
    "page_start": 22,
-   "page_end": 34,
-   "n_chars": 14261,
-   "n_words": 2520
+   "page_end": 22,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "22",
+   "label_end": "22"
   },
   {
-   "id": "sec-003-c-proofs-on-s",
+   "id": "sec-010-8-proof-scheme-for-theorem-3-formula-1",
+   "number": "8",
+   "title": "Proof scheme for Theorem 3, formula (1).",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 24,
+   "n_chars": 2049,
+   "n_words": 373,
+   "label_start": "22",
+   "label_end": "24"
+  },
+  {
+   "id": "sec-011-9-the-calculus-of-vector-convolutions-in-r3",
+   "number": "9",
+   "title": "The calculus of vector convolutions in R3 .",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 27,
+   "n_chars": 3659,
+   "n_words": 634,
+   "label_start": "24",
+   "label_end": "27"
+  },
+  {
+   "id": "sec-012-10-the-calculus-of-vector-convolutions-in-s3",
+   "number": "10",
+   "title": "The calculus of vector convolutions in S3 .",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 30,
+   "n_chars": 3993,
+   "n_words": 721,
+   "label_start": "27",
+   "label_end": "30"
+  },
+  {
+   "id": "sec-013-11-proof-of-theorem-3-formula-1",
+   "number": "11",
+   "title": "Proof of Theorem 3, formula (1).",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 32,
+   "n_chars": 2292,
+   "n_words": 362,
+   "label_start": "30",
+   "label_end": "32"
+  },
+  {
+   "id": "sec-014-12-proof-of-theorem-2-formula-1",
+   "number": "12",
+   "title": "Proof of Theorem 2, formula (1).",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 34,
+   "n_chars": 1865,
+   "n_words": 301,
+   "label_start": "32",
+   "label_end": "34"
+  },
+  {
+   "id": "sec-015-c-proofs-on-s3-in-parallel-transport-format",
    "number": "C",
-   "title": "PROOFS ON S",
+   "title": "PROOFS ON S3 IN PARALLEL TRANSPORT FORMAT",
    "level": 1,
    "page_start": 34,
    "page_end": 34,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "34",
+   "label_end": "34"
   },
   {
-   "id": "sec-004-3-in-parallel-transport-format",
-   "number": "3",
-   "title": "IN PARALLEL TRANSPORT FORMAT",
+   "id": "sec-016-13-parallel-transport-in-s3",
+   "number": "13",
+   "title": "Parallel transport in S3 .",
    "level": 1,
    "page_start": 34,
    "page_end": 36,
-   "n_chars": 2211,
-   "n_words": 371
+   "n_chars": 2173,
+   "n_words": 361,
+   "label_start": "34",
+   "label_end": "36"
   },
   {
-   "id": "sec-005-14-geodesics-in-s",
+   "id": "sec-017-14-geodesics-in-s3",
    "number": "14",
-   "title": "Geodesics in S",
+   "title": "Geodesics in S3 .",
    "level": 1,
    "page_start": 36,
    "page_end": 38,
-   "n_chars": 2416,
-   "n_words": 502
+   "n_chars": 2381,
+   "n_words": 490,
+   "label_start": "36",
+   "label_end": "38"
   },
   {
-   "id": "sec-006-15-the-vector-triple-product-in-r",
+   "id": "sec-018-15-the-vector-triple-product-in-r4",
    "number": "15",
-   "title": "The vector triple product in R",
+   "title": "The vector triple product in R4 .",
    "level": 1,
    "page_start": 38,
    "page_end": 39,
-   "n_chars": 1664,
-   "n_words": 203
+   "n_chars": 1659,
+   "n_words": 198,
+   "label_start": "38",
+   "label_end": "39"
   },
   {
-   "id": "sec-007-16-explicit-formula-for-parallel-transport-in-s",
+   "id": "sec-019-16-explicit-formula-for-parallel-transport-in-s3",
    "number": "16",
-   "title": "Explicit formula for parallel transport in S",
+   "title": "Explicit formula for parallel transport in S3 .",
    "level": 1,
    "page_start": 39,
    "page_end": 40,
-   "n_chars": 1401,
-   "n_words": 219
+   "n_chars": 1397,
+   "n_words": 215,
+   "label_start": "39",
+   "label_end": "40"
   },
   {
-   "id": "sec-008-17-the-method-of-moving-frames-in-s",
+   "id": "sec-020-17-the-method-of-moving-frames-in-s3",
    "number": "17",
-   "title": "The method of moving frames in S",
+   "title": "The method of moving frames in S3 .",
    "level": 1,
    "page_start": 40,
-   "page_end": 107,
-   "n_chars": 83587,
-   "n_words": 15127
+   "page_end": 43,
+   "n_chars": 2656,
+   "n_words": 533,
+   "label_start": "40",
+   "label_end": "43"
   },
   {
-   "id": "sec-009-references",
-   "number": null,
-   "title": "References",
+   "id": "sec-021-18-curls-and-divergences",
+   "number": "18",
+   "title": "Curls and divergences.",
    "level": 1,
+   "page_start": 43,
+   "page_end": 46,
+   "n_chars": 4504,
+   "n_words": 843,
+   "label_start": "43",
+   "label_end": "46"
+  },
+  {
+   "id": "sec-022-19-statement-of-the-key-lemma",
+   "number": "19",
+   "title": "Statement of the Key Lemma.",
+   "level": 1,
+   "page_start": 46,
+   "page_end": 47,
+   "n_chars": 1954,
+   "n_words": 354,
+   "label_start": "46",
+   "label_end": "47"
+  },
+  {
+   "id": "sec-023-20-the-first-term-on-the-lhs-of-the-key-lemma",
+   "number": "20",
+   "title": "The first term on the LHS of the Key Lemma.",
+   "level": 1,
+   "page_start": 47,
+   "page_end": 50,
+   "n_chars": 2893,
+   "n_words": 595,
+   "label_start": "47",
+   "label_end": "50"
+  },
+  {
+   "id": "sec-024-21-the-second-term-on-the-lhs-of-the-key-lemma",
+   "number": "21",
+   "title": "The second term on the LHS of the Key Lemma.",
+   "level": 1,
+   "page_start": 50,
+   "page_end": 52,
+   "n_chars": 2157,
+   "n_words": 384,
+   "label_start": "50",
+   "label_end": "52"
+  },
+  {
+   "id": "sec-025-22-the-rhs-of-the-key-lemma",
+   "number": "22",
+   "title": "The RHS of the Key Lemma.",
+   "level": 1,
+   "page_start": 52,
+   "page_end": 53,
+   "n_chars": 1224,
+   "n_words": 241,
+   "label_start": "52",
+   "label_end": "53"
+  },
+  {
+   "id": "sec-026-23-maxwells-equation-on-s3",
+   "number": "23",
+   "title": "Maxwell's equation on S3 .",
+   "level": 1,
+   "page_start": 53,
+   "page_end": 55,
+   "n_chars": 1819,
+   "n_words": 338,
+   "label_start": "53",
+   "label_end": "55"
+  },
+  {
+   "id": "sec-027-24-proof-of-theorem-2-formula-2",
+   "number": "24",
+   "title": "Proof of Theorem 2, formula (2) .",
+   "level": 1,
+   "page_start": 55,
+   "page_end": 57,
+   "n_chars": 1730,
+   "n_words": 297,
+   "label_start": "55",
+   "label_end": "57"
+  },
+  {
+   "id": "sec-028-25-the-greens-operator-on-s3-in-parallel-transpo",
+   "number": "25",
+   "title": "The Green's operator on S3 in parallel transport format.",
+   "level": 1,
+   "page_start": 57,
+   "page_end": 58,
+   "n_chars": 872,
+   "n_words": 156,
+   "label_start": "57",
+   "label_end": "58"
+  },
+  {
+   "id": "sec-029-26-plan-of-the-proof",
+   "number": "26",
+   "title": "Plan of the proof.",
+   "level": 1,
+   "page_start": 58,
+   "page_end": 59,
+   "n_chars": 1336,
+   "n_words": 231,
+   "label_start": "58",
+   "label_end": "59"
+  },
+  {
+   "id": "sec-030-27-some-formulas-that-we-will-use",
+   "number": "27",
+   "title": "Some formulas that we will use.",
+   "level": 1,
+   "page_start": 59,
+   "page_end": 60,
+   "n_chars": 1820,
+   "n_words": 302,
+   "label_start": "59",
+   "label_end": "60"
+  },
+  {
+   "id": "sec-031-28-the-curl-of-av-\u03d5y",
+   "number": "28",
+   "title": "The curl of A(V, \u03d5)(y) .",
+   "level": 1,
+   "page_start": 60,
+   "page_end": 63,
+   "n_chars": 3052,
+   "n_words": 438,
+   "label_start": "60",
+   "label_end": "63"
+  },
+  {
+   "id": "sec-032-29-the-divergence-of-av-\u03d52",
+   "number": "29",
+   "title": "The divergence of A(V, \u03d52) .",
+   "level": 1,
+   "page_start": 63,
+   "page_end": 65,
+   "n_chars": 3086,
+   "n_words": 316,
+   "label_start": "63",
+   "label_end": "65"
+  },
+  {
+   "id": "sec-033-30-step-2---finding-and-using-the-kernel-functio",
+   "number": "30",
+   "title": "Step 2 - Finding and using the kernel function \u03d53 .",
+   "level": 1,
+   "page_start": 65,
+   "page_end": 69,
+   "n_chars": 3173,
+   "n_words": 560,
+   "label_start": "65",
+   "label_end": "69"
+  },
+  {
+   "id": "sec-034-31-finding-an-explicit-formula-for-\u03c8",
+   "number": "31",
+   "title": "Finding an explicit formula for \u03a8 .",
+   "level": 1,
+   "page_start": 69,
+   "page_end": 71,
+   "n_chars": 2083,
+   "n_words": 451,
+   "label_start": "69",
+   "label_end": "71"
+  },
+  {
+   "id": "sec-035-32-explicit-formula-for-\u03d53",
+   "number": "32",
+   "title": "Explicit formula for \u03d53 .",
+   "level": 1,
+   "page_start": 71,
+   "page_end": 72,
+   "n_chars": 582,
+   "n_words": 116,
+   "label_start": "71",
+   "label_end": "72"
+  },
+  {
+   "id": "sec-036-d-proofs-in-h3-in-parallel-transport-format",
+   "number": "D",
+   "title": "PROOFS IN H3 IN PARALLEL TRANSPORT FORMAT",
+   "level": 1,
+   "page_start": 72,
+   "page_end": 72,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "72",
+   "label_end": "72"
+  },
+  {
+   "id": "sec-037-33-the-hyperboloid-model-of-hyperbolic-3-space",
+   "number": "33",
+   "title": "The hyperboloid model of hyperbolic 3-space.",
+   "level": 1,
+   "page_start": 72,
+   "page_end": 74,
+   "n_chars": 2429,
+   "n_words": 452,
+   "label_start": "72",
+   "label_end": "74"
+  },
+  {
+   "id": "sec-038-34-isometries-of-h3",
+   "number": "34",
+   "title": "Isometries of H3 .",
+   "level": 1,
+   "page_start": 74,
+   "page_end": 75,
+   "n_chars": 1400,
+   "n_words": 211,
+   "label_start": "74",
+   "label_end": "75"
+  },
+  {
+   "id": "sec-039-35-geodesics-in-h3",
+   "number": "35",
+   "title": "Geodesics in H3 .",
+   "level": 1,
+   "page_start": 75,
+   "page_end": 76,
+   "n_chars": 2018,
+   "n_words": 444,
+   "label_start": "75",
+   "label_end": "76"
+  },
+  {
+   "id": "sec-040-36-the-vector-triple-product-in-r13",
+   "number": "36",
+   "title": "The vector triple product in R1,3 .",
+   "level": 1,
+   "page_start": 76,
+   "page_end": 77,
+   "n_chars": 1448,
+   "n_words": 161,
+   "label_start": "76",
+   "label_end": "77"
+  },
+  {
+   "id": "sec-041-37-explicit-formula-for-parallel-transport-in-h3",
+   "number": "37",
+   "title": "Explicit formula for parallel transport in H3 .",
+   "level": 1,
+   "page_start": 77,
+   "page_end": 78,
+   "n_chars": 1486,
+   "n_words": 239,
+   "label_start": "77",
+   "label_end": "78"
+  },
+  {
+   "id": "sec-042-38-the-method-of-moving-frames-in-h3",
+   "number": "38",
+   "title": "The method of moving frames in H3 .",
+   "level": 1,
+   "page_start": 78,
+   "page_end": 80,
+   "n_chars": 2456,
+   "n_words": 527,
+   "label_start": "78",
+   "label_end": "80"
+  },
+  {
+   "id": "sec-043-39-curls-and-divergences",
+   "number": "39",
+   "title": "Curls and divergences.",
+   "level": 1,
+   "page_start": 80,
+   "page_end": 82,
+   "n_chars": 2724,
+   "n_words": 489,
+   "label_start": "80",
+   "label_end": "82"
+  },
+  {
+   "id": "sec-044-40-statement-of-the-key-lemma",
+   "number": "40",
+   "title": "Statement of the Key Lemma.",
+   "level": 1,
+   "page_start": 82,
+   "page_end": 83,
+   "n_chars": 1000,
+   "n_words": 170,
+   "label_start": "82",
+   "label_end": "83"
+  },
+  {
+   "id": "sec-045-41-the-first-term-on-the-lhs-of-the-key-lemma",
+   "number": "41",
+   "title": "The first term on the LHS of the Key Lemma.",
+   "level": 1,
+   "page_start": 83,
+   "page_end": 85,
+   "n_chars": 2366,
+   "n_words": 498,
+   "label_start": "83",
+   "label_end": "85"
+  },
+  {
+   "id": "sec-046-42-the-second-term-on-the-lhs-of-the-key-lemma",
+   "number": "42",
+   "title": "The second term on the LHS of the Key Lemma.",
+   "level": 1,
+   "page_start": 85,
+   "page_end": 86,
+   "n_chars": 1353,
+   "n_words": 224,
+   "label_start": "85",
+   "label_end": "86"
+  },
+  {
+   "id": "sec-047-43-the-rhs-of-the-key-lemma",
+   "number": "43",
+   "title": "The RHS of the Key Lemma.",
+   "level": 1,
+   "page_start": 86,
+   "page_end": 87,
+   "n_chars": 763,
+   "n_words": 148,
+   "label_start": "86",
+   "label_end": "87"
+  },
+  {
+   "id": "sec-048-44-maxwells-equation-in-h3",
+   "number": "44",
+   "title": "Maxwell's equation in H3 .",
+   "level": 1,
+   "page_start": 87,
+   "page_end": 88,
+   "n_chars": 1488,
+   "n_words": 268,
+   "label_start": "87",
+   "label_end": "88"
+  },
+  {
+   "id": "sec-049-45-proof-of-theorem-2-formula-3",
+   "number": "45",
+   "title": "Proof of Theorem 2, formula (3) .",
+   "level": 1,
+   "page_start": 88,
+   "page_end": 89,
+   "n_chars": 574,
+   "n_words": 101,
+   "label_start": "88",
+   "label_end": "89"
+  },
+  {
+   "id": "sec-050-46-the-greens-operator-on-h3-in-parallel-transpo",
+   "number": "46",
+   "title": "The Green's operator on H3 in parallel transport format.",
+   "level": 1,
+   "page_start": 89,
+   "page_end": 90,
+   "n_chars": 733,
+   "n_words": 129,
+   "label_start": "89",
+   "label_end": "90"
+  },
+  {
+   "id": "sec-051-47-plan-of-the-proof",
+   "number": "47",
+   "title": "Plan of the proof.",
+   "level": 1,
+   "page_start": 90,
+   "page_end": 91,
+   "n_chars": 1172,
+   "n_words": 199,
+   "label_start": "90",
+   "label_end": "91"
+  },
+  {
+   "id": "sec-052-48-some-formulas-that-we-will-use",
+   "number": "48",
+   "title": "Some formulas that we will use.",
+   "level": 1,
+   "page_start": 91,
+   "page_end": 92,
+   "n_chars": 1442,
+   "n_words": 226,
+   "label_start": "91",
+   "label_end": "92"
+  },
+  {
+   "id": "sec-053-49-the-curl-of-av-\u03d5y",
+   "number": "49",
+   "title": "The curl of A(V, \u03d5)(y) .",
+   "level": 1,
+   "page_start": 92,
+   "page_end": 94,
+   "n_chars": 2861,
+   "n_words": 406,
+   "label_start": "92",
+   "label_end": "94"
+  },
+  {
+   "id": "sec-054-50-the-divergence-of-av-\u03d52",
+   "number": "50",
+   "title": "The divergence of A(V, \u03d52) .",
+   "level": 1,
+   "page_start": 94,
+   "page_end": 95,
+   "n_chars": 1279,
+   "n_words": 231,
+   "label_start": "94",
+   "label_end": "95"
+  },
+  {
+   "id": "sec-055-51-step-2---finding-and-using-the-kernel-functio",
+   "number": "51",
+   "title": "Step 2 - Finding and using the kernel function \u03d53 .",
+   "level": 1,
+   "page_start": 95,
+   "page_end": 98,
+   "n_chars": 3057,
+   "n_words": 528,
+   "label_start": "95",
+   "label_end": "98"
+  },
+  {
+   "id": "sec-056-52-non-uniqueness-of-the-greens-operator-in-h3",
+   "number": "52",
+   "title": "Non-uniqueness of the Green's operator in H3 .",
+   "level": 1,
+   "page_start": 98,
+   "page_end": 100,
+   "n_chars": 2403,
+   "n_words": 408,
+   "label_start": "98",
+   "label_end": "100"
+  },
+  {
+   "id": "sec-057-e-electrodynamics-and-the",
+   "number": "E",
+   "title": "ELECTRODYNAMICS AND THE",
+   "level": 1,
+   "page_start": 100,
+   "page_end": 100,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "100",
+   "label_end": "100"
+  },
+  {
+   "id": "sec-058-gauss-linking-integral-on-s3-and-h3",
+   "number": null,
+   "title": "GAUSS LINKING INTEGRAL ON S3 AND H3",
+   "level": 1,
+   "page_start": 100,
+   "page_end": 100,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "100",
+   "label_end": "100"
+  },
+  {
+   "id": "sec-059-53-proof-of-theorem-4",
+   "number": "53",
+   "title": "Proof of Theorem 4.",
+   "level": 1,
+   "page_start": 100,
+   "page_end": 101,
+   "n_chars": 921,
+   "n_words": 168,
+   "label_start": "100",
+   "label_end": "101"
+  },
+  {
+   "id": "sec-060-54-proof-scheme-for-theorem-1",
+   "number": "54",
+   "title": "Proof scheme for Theorem 1.",
+   "level": 1,
+   "page_start": 101,
+   "page_end": 104,
+   "n_chars": 5414,
+   "n_words": 958,
+   "label_start": "101",
+   "label_end": "104"
+  },
+  {
+   "id": "sec-061-55-proof-of-theorem-1-formula-1",
+   "number": "55",
+   "title": "Proof of Theorem 1, formula (1).",
+   "level": 1,
+   "page_start": 104,
+   "page_end": 106,
+   "n_chars": 3331,
+   "n_words": 515,
+   "label_start": "104",
+   "label_end": "106"
+  },
+  {
+   "id": "sec-062-56-proof-of-theorem-1-formulas-2-and-3",
+   "number": "56",
+   "title": "Proof of Theorem 1, formulas (2) and (3) .",
+   "level": 1,
+   "page_start": 106,
+   "page_end": 107,
+   "n_chars": 1632,
+   "n_words": 292,
+   "label_start": "106",
+   "label_end": "107"
+  },
+  {
+   "id": "sec-063-references",
+   "number": null,
+   "title": "REFERENCES",
+   "level": 2,
    "page_start": 107,
    "page_end": 108,
-   "n_chars": 3076,
-   "n_words": 396
+   "n_chars": 3089,
+   "n_words": 396,
+   "label_start": "107",
+   "label_end": "108"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 10,
-  "sections": 10,
-  "chars_total": 128911
+  "toc_entries": 64,
+  "toc_inferred_entries": 64,
+  "toc_inferred_mean_confidence": 0.741,
+  "toc_inferred_empty_share": 0.094,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 65,
+  "chars_total": 134787
  }
 }

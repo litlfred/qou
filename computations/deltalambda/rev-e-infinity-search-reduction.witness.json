@@ -1,0 +1,857 @@
+{
+  "schema": "https://litlfred.github.io/qou/schemas/witness/v1",
+  "computedAt": "2026-10-13T16:06:17.045550+00:00",
+  "computation": {
+    "script": "computations/deltalambda/rev_e_infinity_search_reduction_probe.py"
+  },
+  "bean": "qou-hok7",
+  "anchor": "physical_proton",
+  "q0Anchor": "proton",
+  "scriptFile": "rev_e_infinity_search_reduction_probe.py",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "description": "The e_inf three-piece maximisation is COERCIVE -- eps convex decreasing linearises every pair term for both signs, the pair sum telescopes to top-minus-bottom, and the quadratic cost dominates, giving a uniform bound B_rig on every valid block with no cap on its length or entries.  So only finitely many (s_t, s_b) can win, as a matter of the inequality rather than of any table.  Separately and NEGATIVELY: the marginal of Xblock is NOT monotone -- it re-crosses ln q0/2 upward at s = 11 -- so the greedy / first-crossing exchange argument that would close the search is refuted.  Within the measured cut the enumeration carries no effective cap and the join is maximised at (8, 8), reproducing #7335's searched e_inf; that closure is CONDITIONAL on two named gaps, Xbot <= Xblock and B being the true supremum.",
+  "constants": {
+    "ln_q0_half": "0.0521703601597597561579531399865",
+    "mp_dps": 60,
+    "scale_digits": 40,
+    "eps_depth": 612,
+    "T_depth": 309,
+    "S_1": "6.66246903314631884630005513984",
+    "G_1": "1.7293231880132282725241222999",
+    "G_half": "1.08314550703034554883112559026",
+    "N_star": "107.762074679460348871595973296",
+    "B_rigorous": "10.5551320927234643539984101558",
+    "Ghat_1": "0.777072792472441674676783274014",
+    "B_sharp": "3.92139923021415319458052718373"
+  },
+  "coercivity_S3": {
+    "per_term": "eps(2d) - eps(2d+D) <= g(d) D  for every sign of D,  g(d) = |eps'(2d)|",
+    "assembled_cauchy_schwarz": "Xblock(u) <= S_1 - G_1 + G_half sqrt(N) - (ln q0/2) N,  N = sum v^2",
+    "assembled_per_row": "Xblock(u) <= sum_i [ u_i Ghat(i+1) - (ln q0/2) u_i^2 ],  Ghat(m) = sum_{d>=m} |eps'(2d)|",
+    "uniform_cauchy_schwarz": "B_rig = S_1 - G_1 + G_half^2 / (2 ln q0)",
+    "uniform_per_row": "B_sharp = sum_m Ghat(m)^2 / (2 ln q0)",
+    "B_rigorous": "10.5551320927234643539984101558",
+    "B_sharp": "3.92139923021415319458052718373",
+    "unconditional_ell_cut": 90,
+    "unconditional_ell_cut_cauchy_schwarz": 345,
+    "measured_B": "2.1598023761182859616035303726",
+    "measured_B_at_s": 14,
+    "measured_ell_cut": 23,
+    "crudeness_factor": "4.88708236"
+  },
+  "greedy_refuted_S4": {
+    "ln_q0_half": "0.0521703601597597561579531399865",
+    "first_below": 9,
+    "re_crossings": [
+      {
+        "s": 11,
+        "marginal": "0.079832401621564835189"
+      }
+    ],
+    "marginals": [
+      {
+        "s": 2,
+        "marginal": "0.28459854630664577621",
+        "Xblock": "0.86655173275052257318428034",
+        "profile": [
+          2
+        ]
+      },
+      {
+        "s": 3,
+        "marginal": "0.38602407385790360329",
+        "Xblock": "1.2525758066084261764722037",
+        "profile": [
+          2,
+          1
+        ]
+      },
+      {
+        "s": 4,
+        "marginal": "0.17428667969236694275",
+        "Xblock": "1.4268624863007931192215694",
+        "profile": [
+          2,
+          1,
+          1
+        ]
+      },
+      {
+        "s": 5,
+        "marginal": "0.14896148177305544627",
+        "Xblock": "1.5758239680738485654934907",
+        "profile": [
+          3,
+          1,
+          1
+        ]
+      },
+      {
+        "s": 6,
+        "marginal": "0.20289469632582557333",
+        "Xblock": "1.778718664399674138825925",
+        "profile": [
+          3,
+          2,
+          1
+        ]
+      },
+      {
+        "s": 7,
+        "marginal": "0.13150751696598233492",
+        "Xblock": "1.9102261813656564737491431",
+        "profile": [
+          3,
+          2,
+          1,
+          1
+        ]
+      },
+      {
+        "s": 8,
+        "marginal": "0.055218189712093522382",
+        "Xblock": "1.9654443710777499961308923",
+        "profile": [
+          3,
+          2,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "s": 9,
+        "marginal": "0.028540630794933719023",
+        "Xblock": "1.9939850018726837151543869",
+        "profile": [
+          3,
+          2,
+          2,
+          1,
+          1
+        ]
+      },
+      {
+        "s": 10,
+        "marginal": "0.03537524398542989534",
+        "Xblock": "2.0293602458581136104947349",
+        "profile": [
+          4,
+          2,
+          2,
+          1,
+          1
+        ]
+      },
+      {
+        "s": 11,
+        "marginal": "0.079832401621564835189",
+        "Xblock": "2.1091926474796784456835681",
+        "profile": [
+          4,
+          3,
+          2,
+          1,
+          1
+        ]
+      },
+      {
+        "s": 12,
+        "marginal": "0.041922784626335003884",
+        "Xblock": "2.1511154321060134495672299",
+        "profile": [
+          4,
+          3,
+          2,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "s": 13,
+        "marginal": "0.0055777357074530714274",
+        "Xblock": "2.1566931678134665209946716",
+        "profile": [
+          4,
+          3,
+          2,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "s": 14,
+        "marginal": "0.0031092083048194406089",
+        "Xblock": "2.1598023761182859616035304",
+        "profile": [
+          4,
+          3,
+          2,
+          2,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "s": 15,
+        "marginal": "-0.0063279542834319568162",
+        "Xblock": "2.1534744218348540047873675",
+        "profile": [
+          4,
+          3,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "s": 16,
+        "marginal": "-0.023285264829316291862",
+        "Xblock": "2.1301891570055377129254251",
+        "profile": [
+          4,
+          3,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "s": 17,
+        "marginal": "-0.033653426218496512791",
+        "Xblock": "2.0965357307870412001344804",
+        "profile": [
+          4,
+          3,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "s": 18,
+        "marginal": "-0.040179444620663324388",
+        "Xblock": "2.0563562861663778757468132",
+        "profile": [
+          4,
+          3,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "s": 19,
+        "marginal": "-0.044357314767970396999",
+        "Xblock": "2.0119989713984074787475653",
+        "profile": [
+          4,
+          3,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "s": 20,
+        "marginal": "-0.052944848775324718909",
+        "Xblock": "1.9590541226230827598383608",
+        "profile": [
+          4,
+          3,
+          2,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "s": 21,
+        "marginal": "-0.077115528547984285865",
+        "Xblock": "1.8819385940750984739728907",
+        "profile": [
+          4,
+          3,
+          3,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "s": 22,
+        "marginal": "-0.053534006644022093656",
+        "Xblock": "1.8284045874310763803169002",
+        "profile": [
+          5,
+          4,
+          3,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "s": 23,
+        "marginal": "-0.041011846387751071522",
+        "Xblock": "1.7873927410433253087948583",
+        "profile": [
+          5,
+          4,
+          3,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "s": 24,
+        "marginal": "-0.068331370304386911619",
+        "Xblock": "1.7190613707389383971754765",
+        "profile": [
+          5,
+          4,
+          3,
+          2,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "s": 25,
+        "marginal": "-0.1080085020801724795",
+        "Xblock": "1.6110528686587659176713448",
+        "profile": [
+          5,
+          4,
+          3,
+          2,
+          2,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "s": 26,
+        "marginal": "-0.10324131473046400117",
+        "Xblock": "1.5078115539283019165003592",
+        "profile": [
+          5,
+          4,
+          3,
+          3,
+          2,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "s": 27,
+        "marginal": "-0.12537187626541296867",
+        "Xblock": "1.3824396776628889478294046",
+        "profile": [
+          5,
+          4,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "s": 28,
+        "marginal": "-0.15168357349047918618",
+        "Xblock": "1.230756104172409761653103",
+        "profile": [
+          5,
+          4,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "s": 29,
+        "marginal": "-0.17124775203415869975",
+        "Xblock": "1.0595083521382510619006556",
+        "profile": [
+          5,
+          4,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "s": 30,
+        "marginal": "-0.17394179092157427559",
+        "Xblock": "0.88556656121667678630705803",
+        "profile": [
+          5,
+          4,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2,
+          1,
+          1
+        ]
+      },
+      {
+        "s": 31,
+        "marginal": "-0.18117355674712179691",
+        "Xblock": "0.70439300446955498939240543",
+        "profile": [
+          6,
+          5,
+          4,
+          3,
+          3,
+          2,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "s": 32,
+        "marginal": "-0.13766711232693080673",
+        "Xblock": "0.56672589214262418266014648",
+        "profile": [
+          6,
+          5,
+          4,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "s": 33,
+        "marginal": "-0.17095938603424853076",
+        "Xblock": "0.39576650610837565189802229",
+        "profile": [
+          6,
+          5,
+          4,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2,
+          1,
+          1
+        ]
+      },
+      {
+        "s": 34,
+        "marginal": "-0.18621121807568644808",
+        "Xblock": "0.20955528803268920381616719",
+        "profile": [
+          6,
+          5,
+          4,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          1,
+          1
+        ]
+      },
+      {
+        "s": 35,
+        "marginal": "-0.21259129207499874097",
+        "Xblock": "-0.0030360040423095371548292479",
+        "profile": [
+          6,
+          5,
+          4,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2,
+          1
+        ]
+      },
+      {
+        "s": 36,
+        "marginal": "-0.22518887706860356805",
+        "Xblock": "-0.2282248811109131052090357",
+        "profile": [
+          6,
+          5,
+          4,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          1
+        ]
+      },
+      {
+        "s": 37,
+        "marginal": "-0.21027894213790874502",
+        "Xblock": "-0.43850382324882185022416666",
+        "profile": [
+          6,
+          5,
+          4,
+          4,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          1
+        ]
+      },
+      {
+        "s": 38,
+        "marginal": "-0.25069501039156727843",
+        "Xblock": "-0.6891988336403891286519778",
+        "profile": [
+          6,
+          5,
+          4,
+          4,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          1
+        ]
+      },
+      {
+        "s": 39,
+        "marginal": "-0.28909813743856218076",
+        "Xblock": "-0.97829697107895130940880263",
+        "profile": [
+          6,
+          5,
+          4,
+          4,
+          4,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          1
+        ]
+      },
+      {
+        "s": 40,
+        "marginal": "-0.28273922175182837127",
+        "Xblock": "-1.2610361928307796806806497",
+        "profile": [
+          6,
+          5,
+          4,
+          4,
+          4,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          1
+        ]
+      }
+    ]
+  },
+  "join_S6": {
+    "argmax_s_t": 8,
+    "argmax_s_b": 8,
+    "top_profile": [
+      3,
+      2,
+      1,
+      1,
+      1
+    ],
+    "bot_profile_as_top": [
+      3,
+      2,
+      1,
+      1,
+      1
+    ],
+    "value": "2.43929645512078402706542884314",
+    "searched_7335": "2.43929645512078402706542884314",
+    "difference": "-2.4024712145216819537e-30",
+    "blocks_enumerated": 696616
+  },
+  "evaluator_crosscheck_S8": {
+    "worst_difference": "2.05605e-40",
+    "floor": "2.0e-38",
+    "rows": [
+      {
+        "profile": [
+          1
+        ],
+        "table": "0.58195318644387679697717515",
+        "direct": "0.58195318644387679697717515",
+        "difference": "1.55402e-41"
+      },
+      {
+        "profile": [
+          2
+        ],
+        "table": "0.86655173275052257318428034",
+        "direct": "0.86655173275052257318428034",
+        "difference": "-1.88291e-41"
+      },
+      {
+        "profile": [
+          3,
+          1,
+          1
+        ],
+        "table": "1.5758239680738485654934907",
+        "direct": "1.5758239680738485654934907",
+        "difference": "2.15089e-41"
+      },
+      {
+        "profile": [
+          3,
+          2,
+          1,
+          1,
+          1
+        ],
+        "table": "1.9654443710777499961308923",
+        "direct": "1.9654443710777499961308923",
+        "difference": "1.08912e-40"
+      },
+      {
+        "profile": [
+          4,
+          3,
+          2,
+          1,
+          1
+        ],
+        "table": "2.1091926474796784456835681",
+        "direct": "2.1091926474796784456835681",
+        "difference": "7.39142e-41"
+      },
+      {
+        "profile": [
+          4,
+          3,
+          2,
+          2,
+          1,
+          1,
+          1
+        ],
+        "table": "2.1598023761182859616035304",
+        "direct": "2.1598023761182859616035304",
+        "difference": "5.28156e-41"
+      },
+      {
+        "profile": [
+          4,
+          3,
+          2,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "table": "1.9590541226230827598383608",
+        "direct": "1.9590541226230827598383608",
+        "difference": "-2.05605e-40"
+      },
+      {
+        "profile": [
+          4,
+          3,
+          2,
+          2,
+          1,
+          1,
+          1
+        ],
+        "table": "2.1598023761182859616035304",
+        "direct": "2.1598023761182859616035304",
+        "difference": "5.28156e-41"
+      }
+    ]
+  },
+  "open_gaps": {
+    "G1": "Xbot(s) <= Xblock(s) for every s.  #7335's E7 measured the two tables equal for s <= 12 and the top higher by 0.01982 at s = 13; unmeasured beyond.",
+    "G2": "sup_s Xblock(s) equals the measured maximum at s = 14.  Measured over s <= 26 with caps lifted and non-binding; bounded rigorously only by B_rig, which is too crude to substitute.",
+    "headline": "Neither is the arc's headline open problem, which remains the upper bound on M_n."
+  },
+  "checks": [
+    {
+      "name": "S1 the linearising inequality holds on both sides of D = 0",
+      "ok": true,
+      "detail": "minimum slack 0.0 over 2130 pairs, attained at D = 0 where the two sides are equal by construction.  Both signs matter and they are different arguments: for D > 0 it is `int_a^(a+D)|eps'| <= D|eps'(a)|`, for D < 0 it is `-int_(a+D)^a |eps'| <= -|D||eps'(a)|`, and both hold because `|eps'|` is decreasing.  Dropping the D < 0 case \u2014 keeping only `D^+` \u2014 is what makes the bound diverge: the negative pair terms are exactly what stops a long alternating profile from collecting g(1) per step at linear cost"
+    },
+    {
+      "name": "S2 both coercivity bounds hold, and the per-row one is far tighter",
+      "ok": true,
+      "detail": "0 violations of either bound over 40 per-sum maximisers drawn from 8346945 enumerated blocks.  Tightest slack 5.38217 for the Cauchy-Schwarz route against 0.142949 for the per-row one \u2014 a factor 37.651, which locates the loss: it is the Cauchy-Schwarz step `top_d <= sqrt(d N)`, applied once per distance, that counts the same top rows over and over.  Summing by ROW instead never introduces it.  Both are checked at the maximiser of each sum, which is where a bound is tightest"
+    },
+    {
+      "name": "S3 the maximisation is coercive: only finitely many (s_t, s_b) can win",
+      "ok": true,
+      "detail": "B_sharp = 3.9213992302141531946 bounds EVERY valid block, with no cap on its length or its entries and no fitted constant anywhere in the chain.  Since Xrun falls linearly at -ln q0/2 per unit, that forces s_t + s_b <= 90.  This is the part that needs no measurement: the search space is finite as a matter of the inequality, not of the table.  The per-row route beats the Cauchy-Schwarz one by 2.6917x (10.555132 -> 3.9213992, cut 345 -> 90) and it is the more legible of the two: row i counted from the free top edge only sees distances >= i+1 on its way to the bulk, so `Ghat(i+1)` is the most it can gain per unit.  It is STILL NOT ENUMERABLE \u2014 90 is far past any feasible search, and 1.816x the measured maximum \u2014 so this settles finiteness and not the value"
+    },
+    {
+      "name": "S4 the marginal is NOT monotone \u2014 the greedy / first-crossing argument is refuted",
+      "ok": true,
+      "detail": "the marginal first drops below ln q0/2 = 0.0521703601598 at s = 9, then comes back ABOVE it at s = 11 (largest re-crossing 0.0798324, at s = 11) before falling for good.  So Xblock is not discretely concave, and a rule that stops at the first crossing stops at s = 9 and misses everything above it \u2014 including s = 14, where Xblock peaks.  This is a REFUTATION of the natural argument, scope (a): it says the greedy route does not close the search, not that no argument does"
+    },
+    {
+      "name": "S5 the block does not sit at its own maximum \u2014 the run's cost moves it",
+      "ok": true,
+      "detail": "Xblock peaks at s = 14 with 2.1598023761182859616, but the three-piece join puts the top block at s = 8 with 1.9654443710777499961 \u2014 0.19435801 below its own best.  It buys that back on the run: s_t = 8 rather than 14 shortens ell by 12 and Xrun by -0.62635367.  So neither edge's shape can be read off its own table \u2014 which is the reason the search is over pairs and not over each piece separately"
+    },
+    {
+      "name": "S6 the upper-bound join is maximised at (8, 8) and equals #7335's e_inf",
+      "ok": true,
+      "detail": "over every (s_t, s_b) surviving the cut, with Xbot replaced by Xblock, the maximum is 2.4392964551207840270654288 at (8, 8) \u2014 #7335's value to -2.402e-30.  Substituting Xblock for Xbot can only RAISE the join if Xbot <= Xblock (gap G1, measured equal for s <= 12 and top-higher at s = 13), so under G1 this is an upper bound that is ATTAINED at the incumbent \u2014 which closes the (s_t, s_b) search, conditional on G1 and on B being the true supremum (gap G2).  It does not close it unconditionally, and the conditionality is the whole of what is left here"
+    },
+    {
+      "name": "S7 no cap is binding anywhere the answer depends on",
+      "ok": true,
+      "detail": "two independent enumerations agree at every s <= 23: one at TMAX = UMAX = SMAX = 23, where the caps CANNOT bind (entries >= 1 and sum <= 23 force length <= 23 and every entry <= 23), and one widened to 24/12.  The widened run's argmax profiles reach length 18 and entry 4, both inside their caps.  #7335's published caps were 8/6 and this is the check it could not make, since its enumeration was over profiles rather than incremental"
+    },
+    {
+      "name": "S8 the scaled-integer tables agree with a direct mpmath evaluation",
+      "ok": true,
+      "detail": "8 profiles including the argmax [3, 2, 1, 1, 1] and the peak [4, 3, 2, 2, 1, 1, 1]; worst difference 2.056e-40 against a floor of 2.0e-38 \u2014 the 1e-40 integer scale times the number of rounded table entries a profile of this size touches.  The enumeration is fast because it looks values up and adds integers; this confirms the lookup tables were built right, which the enumeration cannot check on its own since it uses them for everything"
+    }
+  ],
+  "verdict": "The search space is provably finite and the greedy route into it is refuted.  Within the measured cut the enumeration is genuinely uncapped and lands on (8, 8) at #7335's e_inf.  What is left is two named inequalities, G1 and G2, neither of which is the arc's headline open problem."
+}

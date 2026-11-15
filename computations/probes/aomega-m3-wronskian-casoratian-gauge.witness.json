@@ -1,0 +1,121 @@
+{
+  "name": "aomega-m3-wronskian-casoratian-gauge",
+  "description": "The Casoratian identity applied to the descendant operators of 4_1, 5_2 and the (-2,3,7) pretzel: the Wronskian determinant ratio from the end coefficients, the palindrome gauge that trivialises it, and GGM (276) recovered exactly for 5_2.",
+  "computation": "aomega-m3-wronskian-casoratian-gauge",
+  "engine": "python+sympy",
+  "scriptFile": "aomega_m3_wronskian_casoratian_gauge_probe.py",
+  "computedAt": "2026-09-14T17:51:33.704460+00:00",
+  "durationMs": 0,
+  "auditOnly": true,
+  "parameters": {
+    "orientation": "SnapPy's (#7152 Part 11)",
+    "casoratian_rule": "det W_{m+1}/det W_m = (-1)^r a_0/a_r  [GGM Thm 16(c), GK13 Lem 4.7]"
+  },
+  "data": {
+    "knots": {
+      "4_1": {
+        "degree": 2,
+        "casoratian_ratio": "Q**2/XR**2",
+        "palindrome_gauge": "Q/XR",
+        "gauged_coeffs": [
+          "1",
+          "XR + 1/XR",
+          "1"
+        ],
+        "N_coeffs": [
+          "1",
+          "(XR**2 + 1)/Q",
+          "XR**2/Q**2"
+        ]
+      },
+      "5_2": {
+        "degree": 3,
+        "casoratian_ratio": "-Q**3",
+        "palindrome_gauge": "Q",
+        "gauged_coeffs": [
+          "1",
+          "XR**2 + 1 + XR**(-2)",
+          "XR**2 + 1 + XR**(-2)",
+          "1"
+        ],
+        "N_coeffs": [
+          "1",
+          "(XR**4 + XR**2 + 1)/(Q*XR**2)",
+          "(XR**4 + XR**2 + 1)/(Q**2*XR**2)",
+          "Q**(-3)"
+        ]
+      },
+      "pretzel": {
+        "degree": 6,
+        "casoratian_ratio": "Q**8",
+        "palindrome_gauge": null,
+        "gauged_coeffs": null,
+        "N_coeffs": [
+          "1",
+          "(XR**2 + 1)/(Q*XR)",
+          "-1/Q**4",
+          "(-Q**2*XR**2 - Q**2 - XR**2 - 1)/(Q**5*XR)",
+          "-1/Q**4",
+          "(XR**2 + 1)/(Q**7*XR)",
+          "Q**(-8)"
+        ],
+        "end_pair_roots": [
+          "Q**(4/3)"
+        ],
+        "why_not_palindromic": "END-pair roots exist but at least one INTERIOR pair fails at every one of them",
+        "failing_pairs_at_first_root": [
+          1,
+          2,
+          4,
+          5
+        ]
+      }
+    },
+    "ggm135_ratio": "XR**6",
+    "ggm276_match": true,
+    "pretzel_gauge_in_half_ring": false,
+    "pretzel_why_not_palindromic": "END-pair roots exist but at least one INTERIOR pair fails at every one of them"
+  },
+  "verdict": "DERIVED: the per-knot GL(r) normalisation is NOT a free choice — GGM's Theorem 16(c) names the mechanism, the Casoratian identity det W_{m+1}/det W_m = (-1)^r a_0/a_r, which depends on the operator's END coefficients alone. Calibrated on GGM's own printed 4_1 operator (135), the rule returns their printed (136) ratio x^3 (G1). Applied to the operators #7333 derived: 4_1 ratio Q**2/XR**2, 5_2 -Q**3, pretzel Q**8. Each operator has a distinguished PALINDROME gauge, the one making the ratio (-1)^r; for 5_2 it is lambda = Q, and in it our N(X) is GGM's printed (276) coefficients (1, s, s, 1) exactly (G2) — which is why their 5_2 Wronskian is m-independent. The pretzel's gauge is lambda = None, i.e. q^(None); whether that lies in the q^(1/2) ring the level-2 grading lives in: False (T1). When no gauge exists the reason is stated rather than left as a bare absence: END-pair roots exist but at least one INTERIOR pair fails at every one of them, failing index pairs [1, 2, 4, 5].",
+  "assertions": [
+    {
+      "name": "G1-the Casoratian rule (-1)^r a_0/a_r applied to GGM's OWN printed 4_1 operator (135) returns their printed Wronskian ratio x^3 of (136) — the rule is calibrated against a published answer before being applied to our operators",
+      "passed": true,
+      "ratio": "XR**6",
+      "ggm_printed": "x**3"
+    },
+    {
+      "name": "G2-our derived 5_2 N(X), in its palindrome gauge, is GGM's printed (276) coefficients (1, s, s, 1) EXACTLY — so the gauge is not a free knob, it is the one GGM already use",
+      "passed": true,
+      "gauge": "Q",
+      "gauged": [
+        "1",
+        "XR**2 + 1 + XR**(-2)",
+        "XR**2 + 1 + XR**(-2)",
+        "1"
+      ]
+    },
+    {
+      "name": "G3-5_2 admits a palindrome gauge at all, which is what makes GGM's Wronskian m-INDEPENDENT (their sec-015: det W_{m+1} = det W_m) — the ratio is (-1)^r there",
+      "passed": true,
+      "ratio": "-Q**3"
+    },
+    {
+      "name": "G4-the positive-lambda restriction costs nothing at even rank: j and r-j share parity, so lambda^j and lambda^{r-j} have the same sign for EVERY real lambda and a negative gauge imposes the identical conditions — the T1 negative is not an artifact of the search range",
+      "passed": true,
+      "r": 6
+    },
+    {
+      "name": "T1-the pretzel's degree-6 N(X) admits a palindrome gauge lying in the q^{1/2} ring that the level-2 structure lives in (#7333: sigma is odd exactly when q is half-integral)",
+      "passed": false,
+      "gauge": null,
+      "q_exponent": null,
+      "casoratian_ratio": "Q**8"
+    }
+  ],
+  "scriptHash": "bdf6a4e81d44",
+  "scriptCommitSha": "unknown",
+  "commitSha": "04bc2945fbc7a278754ff78355ff48476636e8c0",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
+}

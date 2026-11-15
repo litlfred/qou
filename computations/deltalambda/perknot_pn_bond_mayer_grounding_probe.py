@@ -5,8 +5,18 @@
 The LEAD (perknot_pn_bond_resolved_extensivity_probe.py): the parameter-free
 inverse-product per-bond weight w(a,b) = 1/(tr_M(a)*tr_M(b)) on the p!=n-distinct
 Markov traces reproduces the T/3He extensivity-multiplier split
-mu_ext(T)/mu_ext(3He) = 4.444/3.292 = 1.3501 to -1.38%, a split every
+mu_ext(T)/mu_ext(3He) to a few percent (-1.38% against the stale targets
+4.444/3.292; -2.61% against the live 6.706/4.905, 2026-10-13), a split every
 symmetric/equal-weight bond model gives as exactly 1.000.
+
+**2026-11-15: that "few percent" was an artefact of RETIRED traces.** Both
+figures above used typed convention-C nucleon traces (bean qou-am5t). On the
+canonical traces (borromean word, convention D, proton pin; read below from
+atomic-tr-m-mpfr-50dps-proton.witness.json) the split is
+(tr_p/tr_n)^2 = 1.7544 against the target 1.3671: **+28.3 %, and the 5 % gate
+FAILS.** Scope-(a) negative: this construction alone, on canonical traces,
+does not reproduce the T/3He split. The structural reduction (point 1) and
+the sign (point 3) are unaffected; only the magnitude claim falls.
 
 This probe answers the open "why inverse?" question three ways, honestly:
 
@@ -37,9 +47,10 @@ HONEST BOUNDS (keeps this a scope-(a) grounded LEAD, not a closure):
   grounds the p!=n isospin discriminator but is ORTHOGONAL to the extensivity
   magnitude closure (it does not reproduce the full non-monotone mu_ext; 4He
   is not the maximum).
-- true exponent is 2.097, not exactly 2 (the -1.38%).  NOTE 2.097 ~ 2.093
-  (the measured 4He super-pairwise excess) — flagged as a COINCIDENCE NOT to
-  fit, per the Ursell-doc anti-numerology guardrail (Rule-14 hidden DOF).
+- true exponent is not 2: 1.112 on the canonical traces (it read 2.184 on
+  the retired convention-C traces at the live mu targets, and 2.097 against
+  the stale targets). Never fit it (Ursell-doc anti-numerology guardrail,
+  Rule-14 hidden DOF).
 
 EXPLORATORY; production_wired: false; no fit, no BW, scope-(a).
 """
@@ -62,13 +73,54 @@ from codata_constants import AME_B_TRITIUM_MEV_VALIDATION
 
 set_compute_dps()
 
-# chi-cache per-knot Markov traces (current-main-verified, averaged-crossings)
-TR_P = mp.mpf("1.065306238075878215688040411687927620546686279347")
-TR_N = mp.mpf("0.92323330514983772546573530276491123416377319107628")
+# Per-knot nucleon Markov traces, READ from their owning witness
+# (atomic-tr-m-mpfr-50dps-proton.witness.json): borromean word
+# (owner ruling qou-hu1f, 2026-09-05), convention D (ruling 2026-08-15 R1),
+# proton pin (2026-08-07 directive / R2). Ownership established in PR #7795.
+#
+# Until 2026-11-15 these were typed literals 1.0653062380758782... /
+# 0.92323330514983772..., commented "current-main-verified". They were not:
+# they match the CONVENTION-C nucleon traces recorded in bean qou-am5t
+# (1.06530622861316 / 0.92323329718615) to ~9e-9 relative. On those retired
+# traces the 5 % gate below PASSED (-2.61 %); on the canonical ones it FAILS
+# (+28.3 %). The gate is deliberately NOT widened (anti-fit directive).
+_TR_SRC = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                       "atomic-tr-m-mpfr-50dps-proton.witness.json")
+with open(_TR_SRC) as _f:
+    _TRW = json.load(_f, parse_float=str)
+if (_TRW.get("q0Anchor") != "proton"
+        or _TRW.get("intra_ordering_frame") != "borromean"):
+    raise SystemExit(f"refusing: {_TR_SRC} is not the borromean/proton witness "
+                     f"(q0Anchor={_TRW.get('q0Anchor')!r}, "
+                     f"intra_ordering_frame={_TRW.get('intra_ordering_frame')!r})")
+_TR = {r["atom"]: r["tr_M_at_q0_50dps"] for r in _TRW["results"]}
+TR_P = mp.mpf(_TR["proton"])
+TR_N = mp.mpf(_TR["neutron"])
+TR_SOURCE = {
+    "witness": os.path.basename(_TR_SRC),
+    "field": "results[atom].tr_M_at_q0_50dps",
+    "word": "borromean", "convention": "D", "q0Anchor": "proton",
+    "q0Value": _TRW.get("q0Value"),
+    "superseded_typed_literals_convention_C": {
+        "p": "1.065306238075878215688040411687927620546686279347",
+        "n": "0.92323330514983772546573530276491123416377319107628",
+        "split_pred_on_them": "1.3315", "rel_err_pct_on_them": "-2.61",
+    },
+}
 
-# mu_ext targets (deltalambda-extensivity-gap-synthesis.witness.json)
-MU_T = mp.mpf("4.444146924325849")
-MU_3HE = mp.mpf("3.2918285794896933")
+# mu_ext targets, READ from their owning witness
+# (deltalambda-extensivity-gap-synthesis.witness.json,
+# `extensivity_multipliers_target`). Until 2026-10-13 these were typed
+# literals 4.444146924325849 / 3.2918285794896933, stale against that witness
+# (which carries 6.706071811638838 / 4.905446773035623). Parsed with
+# parse_float=str so the witness's decimal text reaches mp.mpf verbatim and
+# never passes through a Python float.
+_MU_SRC = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                       "deltalambda-extensivity-gap-synthesis.witness.json")
+with open(_MU_SRC) as _f:
+    _MU = json.load(_f, parse_float=str)["extensivity_multipliers_target"]
+MU_T = mp.mpf(_MU["T"])
+MU_3HE = mp.mpf(_MU["3He"])
 
 # AME binding energies (MeV) — direction cross-check only
 B_T_AME = AME_B_TRITIUM_MEV_VALIDATION
@@ -121,7 +173,7 @@ def main():
         },
         {
             "name": "split_matches_target_under_5pct",
-            "detail": f"|rel err| = {mp.nstr(abs(relerr), 4)}% < 5% (pred {mp.nstr(ratio,6)} vs {mp.nstr(target,6)})",
+            "detail": f"|rel err| = {mp.nstr(abs(relerr), 4)}% (gate: < 5%; pred {mp.nstr(ratio,6)} vs {mp.nstr(target,6)})",
             "passed": bool(abs(relerr) < 5),
         },
         {
@@ -151,6 +203,7 @@ def main():
             "discipline": "EXPLORATORY",
             "production_wired": False,
             "tr_M": {"p": mp.nstr(TR_P, 40), "n": mp.nstr(TR_N, 40)},
+            "tr_M_source": TR_SOURCE,
             "split_pred": mp.nstr(ratio, 40),
             "structural_reduction": "(tr_p/tr_n)^2",
             "structural_reduction_exact": bool(reduction_exact),
@@ -176,16 +229,22 @@ def main():
                 "non-monotone mu_ext; 4He not max)."
             ),
             "anti_numerology_flag": (
-                "true exponent 2.097 ~ 2.093 (4He super-pairwise excess). "
-                "COINCIDENCE, NOT fit (Ursell-doc guardrail, Rule-14 hidden DOF)."
+                f"true exponent {mp.nstr(true_exp, 4)} (model exactly 2). On the "
+                "retired convention-C traces it read 2.184 (live targets) and "
+                "2.097 (stale targets). Never fit it "
+                "(Ursell-doc guardrail, Rule-14 hidden DOF)."
             ),
             "verdict": (
-                "GROUNDED (partial): the inverse-product weight is the Mayer "
-                "b2 normalization, the T/3He split reduces exactly to "
-                "(tr_p/tr_n)^2 with correct Coulomb sign and -1.38% magnitude. "
-                "It is a categorically-grounded p!=n isospin discriminator, "
-                "ORTHOGONAL to the open connected-b4 extensivity magnitude gap. "
-                "Scope-(a); no wiring."
+                "STRUCTURE GROUNDED, MAGNITUDE "
+                + ("REPRODUCED" if abs(relerr) < 5 else "NOT REPRODUCED")
+                + ": the inverse-product weight is the Mayer b2 "
+                "normalization and the T/3He split reduces exactly to "
+                "(tr_p/tr_n)^2 with correct Coulomb sign; on the canonical "
+                "traces (borromean, D, proton) its magnitude misses the target "
+                f"by {mp.nstr(relerr, 4)}%. The earlier -2.61% held only on "
+                "retired convention-C traces. Scope-(a) negative for the "
+                "magnitude; ORTHOGONAL to the open connected-b4 extensivity "
+                "gap. No wiring; gate not widened."
             ),
         },
     }

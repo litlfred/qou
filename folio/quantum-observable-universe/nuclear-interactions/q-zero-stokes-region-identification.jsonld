@@ -1,0 +1,44 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-q-zero-stokes-region-identification",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:q-zero-stokes-region-identification",
+  "kind": "conjecture",
+  "title": "Substrate $q_0$ identification via Stokes region of the generating function (over $\\mathbb{Z}[q, q^{-1}]$)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-phi-q-aj-machinery-identification",
+    "papers/quantum-observable-universe/blocks/rem-dilog-saddle-regime"
+  ],
+  "cites": [
+    "references/mostow1968",
+    "references/prasad1973",
+    "references/reid1990",
+    "references/garoufalidis2004",
+    "references/faddeev1995",
+    "references/kashaev1997",
+    "references/murakami-murakami2001",
+    "references/champanerkar2003"
+  ],
+  "tags": [
+    "tier:S",
+    "q-zero-identification",
+    "stokes-region",
+    "generating-function",
+    "z-q-q-inverse-universal",
+    "minimal-archimedean",
+    "100-percent-proved-track",
+    "conditional-class-3b-cond"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.QZeroStokesRegionIdentification.QZeroStokesIdentification",
+  "text": "q-zero-stokes-region-identification.md",
+  "leanSource": "q-zero-stokes-region-identification.lean",
+  "provenance": "authored"
+}

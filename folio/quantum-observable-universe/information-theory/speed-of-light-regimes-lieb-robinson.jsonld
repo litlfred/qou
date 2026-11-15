@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-speed-of-light-regimes-lieb-robinson",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:speed-of-light-regimes-lieb-robinson",
+  "kind": "remark",
+  "title": "Regime behaviour and Lieb--Robinson decay for $c_q$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-information-speed-of-light",
+    "papers/quantum-observable-universe/blocks/def-information-bandwidth",
+    "papers/quantum-observable-universe/blocks/ex-q-connection",
+    "papers/quantum-observable-universe/blocks/rem-light-cone-affine"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-information-speed-of-light",
+  "tags": [
+    "speed-of-light",
+    "information-theory",
+    "lieb-robinson",
+    "causal-structure",
+    "q-connection"
+  ],
+  "text": "speed-of-light-regimes-lieb-robinson.md",
+  "provenance": "authored"
+}

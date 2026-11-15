@@ -8,481 +8,141 @@ pages: 13-19
 source_pdf: 1404.2541v1.pdf
 source_sha256: edb7c9b2b1561ac3
 doc_brief: "The Stokes phenomenon for the Ramanujan’s q-difference equation and its higher order extension — We show connection formulae of local solutions of the Ramanu - jan equation between the origin and the"
+text_source: latex
+latex_prose_ratio: 0.604
+latex_coverage_ratio: 0.987
 ---
-In this section, we show a connection formula of the divergent serie s 2ϕ 0.
-This series appears in the second solution of the Ramanujan equatio n (12).
-At ﬁrst, we deﬁne two types of the q-Borel-Laplace transformations.
-Deﬁnition. We assume that f (x) is a formal power series f (x) =∑
-n≥0anxn,
-a0 = 1.
-13
-1. The q-Borel transformation of the ﬁrst kind is
-(
-B+
-qf
-)
-(ξ) :=
-∑
-n≥0
-anq
-n(n− 1)
-2 ξn (=:ϕ (ξ)).
-2. The q-Laplace transformation of the ﬁrst kind is
-(
-L+
-q,λ ϕ
-)
-(x) := 1
-1 −q
-∫ λ ∞
-0
-ϕ (ξ)
-θq
-(ξ
-x
-) dqξ
-ξ =
-∑
-n∈Z
-ϕ (λq n)
-θq
-(λq n
-x
-) ,
-here, this transformation is given by Jackson’s q-integral [2].
-We also deﬁne the q-Borel-Laplace transformations of the second kind as
-follows:
-1. The q-Borel transformation of the second kind is
-(B−
-qf )(ξ) :=
-∑
-n≥0
-anq− n(n− 1)
-2 ξn (=:g(ξ)).
-2. The q-Laplace transformation of the second kind is
-(
-L−
-qg
-)
-(x) := 1
-2πi
-∫
-|ξ|=r
-g(ξ)θq
-(x
-ξ
-) dξ
-ξ ,
-where r >0 is enough small number.
-We remark that the q-Borel transformation B+
-q is formal inverse of the
-q-Laplace transformation L+
-q,λ as follows;
-Lemma 6.1. For any entire function f (x), we have
-L+
-q,λ ◦ B+
-qf =f.
-Theq-Borel transformation B−
-q also can be considered as a formal inverse
-of the q-Laplace transformation.
-Lemma 6.2. We assume that the function f can be q-Borel transformed to
-the analytic function g(ξ) aroundξ = 0. Then, we have
-L−
-q ◦ B−
-qf =f.
-14
-Proof. We can prove this lemma calculating residues of the q-Laplace trans-
-formation around the origin.
-The q-Borel transformation B−
-q has following operational relation.
-Lemma 6.3. For any l,m ∈ Z≥0,
-B−
-q (tmσ l
-q) = q− m(m− 1)
-2 τmσ l−m
-q B−
-q.
-In the following subsection, we apply these resummation methods to deal
-with the connection problem.
-7 The connection formula of the series 2ϕ 0(0, 0; −;q, ·)
+In this section, we show a connection formula of the divergent series ${}_2\varphi_0$. This series appears in the second solution of the Ramanujan equation [\[ram\]](#ram){reference-type="eqref" reference="ram"}. At first, we define two types of the $q$-Borel-Laplace transformations.
+
+**Definition.** *We assume that $f(x)$ is a formal power series $f(x)=\sum_{n\ge 0}a_nx^n$, $a_0=1$.*
+
+1.  The $q$-Borel transformation of the first kind is $$\left(\mathcal{B}_q^+f\right)(\xi ):=\sum_{n\ge 0}a_nq^{\frac{n(n-1)}{2}}\xi^n\left(=:\varphi (\xi )\right).$$
+
+2.  The $q$-Laplace transformation of the first kind is $$\left(\mathcal{L}_{q, \lambda}^+\varphi\right)(x):=
+    \frac{1}{1-q}\int_0^{\lambda\infty}\frac{\varphi (\xi )}{\theta_q\left(\frac{\xi}{x}\right)}\frac{d_q\xi}{\xi}=\sum_{n\in\mathbb{Z}}\frac{\varphi (\lambda q^n)}{\theta_q\left(\frac{\lambda q^n}{x}\right)},$$ here, this transformation is given by Jackson's $q$-integral [@GR].
+
+We also define the $q$-Borel-Laplace transformations of the second kind as follows:
+
+1.  The $q$-Borel transformation of the second kind is $$(\mathcal{B}_q^-f)(\xi ):=\sum_{n\ge 0}a_nq^{-\frac{n(n-1)}{2}}\xi^n\left(=:g(\xi )\right).$$
+
+2.  The $q$-Laplace transformation of the second kind is $$\left(\mathcal{L}_q^-g\right)(x):=\frac{1}{2\pi i}\int_{|\xi |=r}g(\xi )\theta_q\left(\frac{x}{\xi }\right)\frac{d\xi}{\xi},$$ where $r>0$ is enough small number.
+
+We remark that the $q$-Borel transformation $\mathcal{B}_q^+$ is formal inverse of the $q$-Laplace transformation $\mathcal{L}_{q,\lambda }^+$ as follows;
+
+::: lmm
+For any entire function $f(x)$, we have $$\mathcal{L}_{q, \lambda}^+\circ\mathcal{B}_q^+f=f.$$
+:::
+
+The $q$-Borel transformation $\mathcal{B}_q^-$ also can be considered as a formal inverse of the $q$-Laplace transformation.
+
+::: lmm
+We assume that the function $f$ can be $q$-Borel transformed to the analytic function $g(\xi )$ around $\xi =0$. Then, we have $$\mathcal{L}^-_q\circ\mathcal{B}^-_qf=f.$$
+:::
+
+::: proof
+*Proof.* We can prove this lemma calculating residues of the $q$-Laplace transformation around the origin. ◻
+:::
+
+The $q$-Borel transformation $\mathcal{B}_q^-$ has following operational relation.
+
+::: lmm
+[]{#orqb label="orqb"} For any $l,m\in\mathbb{Z}_{\ge 0}$, $$\mathcal{B}_q^-(t^m\sigma_q^l)=q^{-\frac{m(m-1)}{2}}\tau^m\sigma_q^{l-m}\mathcal{B}_q^-.$$
+:::
+
+In the following subsection, we apply these resummation methods to deal with the connection problem.
+
+# The connection formula of the series ${}_2\varphi_0(0,0;-;q,\cdot )$
+
 The aim of this section is to give a proof for the following theorem;
-Theorem 7.1. For any x ∈ C∗ \ [−λ;q],
-θq(x)2f0
-(
-0, 0; −;q, −x
-q
-)
-= (q;q)∞
-θq(x)θq2
-(
-− λ 2
-qx
-)
-θq
-(
-− λ
-q
-)
-θq
-(λ
-x
-) 1ϕ 1
-(
-0;q;q2, q2
-x
-)
-+ (q;q)∞
-1 −q
-θq(x)θq2
-(
-− λ 2
-x
-)
-θq
-(
-− λ
-q
-)
-θq
-(λ
-x
-)
-λ
-x
-1ϕ 1
-(
-0;q3;q2, q3
-x
-)
-.
-We give the proof of theorem 7.1.
-Proof. We apply theq-Borel transformation B+
-q to the divergent seriesv(x) =
-2ϕ 0(0, 0; −;q, −x/q ). We obtain
-(
-B+
-qv
-)
-(ξ) = 1ϕ 0
-(
-0; −;q, ξ
-q
-)
-=:ϕ (ξ).
-From lemma 3.2,
-ϕ (ξ) = (q;q)∞
-θq
-(
-− ξ
-q
-) 0ϕ 1
-(
-−;q;q2, q5
-ξ2
-)
-− (q;q)∞
-θq
-(
-− ξ
-q
-) q2
-(1 −q)ξ
-0ϕ 1
-(
-−;q3;q2, q7
-ξ2
-)
-where |ξ/q |< 1.
-15
-We apply the q-Laplace transformation L+
-q,λ to ϕ (ξ):
-(
-L+
-q,λ ϕ
-)
-(x) =
-∑
-n∈Z
-ϕ (λq n)
-θq
-(λq n
-x
-) =
-∑
-n∈Z
-1ϕ 0
-(
-0; −;q, λq n
-q
-)
-θq
-(λq n
-x
-)
-= (q;q)∞
-θq
-(
-− λ
-q
-)
-θq
-(λ
-x
-)
-∑
-n−m∈Z
-(q2)
-(n− m)(n− m− 1)
-2
-(
-−λ 2
-qx
-) n−m
-×
-∑
-m≥0
-(−1)m(q2)
-m(m− 1)
-2
-(q;q2;q2)m
-(q2
-x
-) m
-− (q;q)∞
-θq
-(
-− λ
-q
-)
-θq
-(λ
-x
-)
-q2
-(1 −q)λ
-∑
-n−m∈Z
-(q2)
-(n− m)(n− m− 1)
-2
-(
-− λ 2
-q2x
-) n−m
-×
-∑
-m≥0
-(−1)m(q2)
-m(m− 1)
-2
-(q3,q 2;q2)m
-(q3
-x
-) m
-.
-Therefore,
-2f0
-(
-0, 0; −;q, −x
-q
-)
-= L+
-q,λ ◦ B+
-q 2ϕ 0
-(
-0, 0; −;q, −x
-q
-)
-= (q;q)∞
-θq2
-(
-− λ 2
-qx
-)
-θq
-(
-− λ
-q
-)
-θq
-(λ
-x
-) 1ϕ 1
-(
-0;q;q2, q2
-x
-)
-+ (q;q)∞
-1 −q
-θq2
-(
-− λ 2
-x
-)
-θq
-(
-− λ
-q
-)
-θq
-(λ
-x
-) 1ϕ 1
-(
-0;q3;q2, q3
-x
-)
-.
-We obtain the conclusion.
-Remark. By theorem 7.1, we have
-˜u2(x,λ ) = ˜C21v1(x) + ˜C22v2(x),
-where
-˜C21(x) = (q;q)∞θq2(−qx/λ 2)θq2(x)
-θq(−q/λ )θq(x/λ )θq(x)
-and
-˜C22(x) = (q;q)∞θq2(−x/λ 2)θq2(x/q )
-θq(−1/λ )θq(x/λ )θq(x/q ) .
-This is a half of our connection formula.
-16
-8 The q-Airy equation around the inﬁnity and
-the connection formula
-We consider the behavior of the equation (13) around the inﬁnity. W e set
-x = 1/t and z(t) = u(1/t ). Then z(t) satisﬁes
-(
-−σ 2
-q + 1
-q2tσq + 1
-)
-z(t) = 0.
-We set E(t) = 1/θ (−q2t) and f (t) = ∑
-n≥0antn, a 0 = 1. We assume that
-z(t) can be described as
-z(t) = E(t)f (t) = 1
-θ(−q2t)
-(∑
-n≥0
-antn
-)
-.
-The function E(t) has the following property;
-Lemma 8.1. For any t ∈ C∗,
-σqE(t) = −q2tE(t), σ 2
-q E(t) = q5t2E(t).
-From this lemma, f (t) satisﬁes the following equation
-(
-−q5t2σ 2
-q −σq + 1
-)
-f (t) = 0. (14)
-Since (14) is the same as (10) for K = −q5, we obtain
-f (t) = 0ϕ 1(−; 0;q2,q 5t2) = A q2(−q3t2).
-We show a connection formula for f (t). In order to obtain a connection
-formula, we need the q-Borel transformation and the q-Laplace transfor-
-mation following Zhang [17]. Applying the q-Borel transformation to the
-equation (10) and using lemma 6.3, we obtain the ﬁrst order q-diﬀerence
-equation
-g(qτ) = (1 + q2τ)(1 −q2τ)g(τ).
-Since g(0) = 1, g(τ) is given by an inﬁnite product
-g(τ) = 1
-(−q2τ;q)∞(q2τ;q)∞
-17
-which has single poles at
-{
-τ;τ = ±q−2−k, ∀k ∈ Z≥0
-}
-.
-By Cauchy’s residue theorem, the q-Laplace transform of g(τ) is
-f (t) = 1
-2πi
-∫
-|τ|=r
-g(τ)θ
-(t
-τ
-) dτ
-τ
-= −
-∑
-k≥0
-Res
-{
-g(τ)θ
-(t
-τ
-) 1
-τ ;τ = −q−2−k
-}
-−
-∑
-k≥0
-Res
-{
-g(τ)θ
-(t
-τ
-) 1
-τ ;τ =q−2−k
-}
-where 0 <r<r 0 := 1/ |q2|. We can culculate the residue from lemma 8.2.
-Lemma 8.2. For any k ∈ N, λ ∈ C∗, we have:
-1. Res
-{ 1
-(τ/λ ;q)∞
-1
-τ :τ =λq −k
-}
-= (−1)k+1q
-k(k+1)
-2
-(q;q)k(q;q)∞
-,
-2. 1
-(λq −k;q)∞
-= (−λ)−kq
-k(k+1)
-2
-(λ;q)∞ (q/λ ;q)k
-, λ ⁄∈qZ.
-Summing up all of residues, we obtain
-f (t) = θ(q2t)
-(q, −1;q)∞
-1ϕ 1
-(
-0, −q;q, 1
-t
-)
-+ θ(−q2t)
-(q, −1;q)∞
-1ϕ 1
-(
-0, −q;q, −1
-t
-)
-.
-We obtain a connection formula for z(t) = E(t)f (t). Finally, we acquire
-the following connection formula between the Ramanujan function a nd the
-q-Airy function.
-Theorem 8.3. For any x ∈ C∗,
-Aq2
-(
-−q3
-x2
-)
-= 1
-(q, −1;q)∞
-{
-θ
-(x
-q
-)
-Aiq(−x) +θ
-(
-−x
-q
-)
-Aiq(x)
-}
-.
-Here, both A q(x) and Ai q(x) are deﬁned by convergent series on whole of
-the complex plain. The connection formula above is valid for any x ∈ C∗.
-18
+
+::: thm
+[]{#divergentramanujan label="divergentramanujan"}For any $x\in\mathbb{C}^*\setminus [-\lambda ;q],$ $$\begin{aligned}
+\theta_q(x){}_2f_0&\left(0,0;-;q,-\frac{x}{q}\right)=(q;q)_\infty\frac{\theta_q(x) \theta_{q^2}\left(-\frac{\lambda^2}{qx}\right)}{\theta_q\left(-\frac{\lambda}{q}\right)\theta_q\left(\frac{\lambda}{x}\right)}
+{}_1\varphi_1\left(0;q;q^2,\frac{q^2}{x}\right)\\
+&+\frac{(q;q)_\infty}{1-q}\frac{\theta_q(x) \theta_{q^2}\left(-\frac{\lambda^2}{x}\right)}{\theta_q\left(-\frac{\lambda}{q}\right)\theta_q\left(\frac{\lambda}{x}\right)}\frac{\lambda}{x}
+{}_1\varphi_1\left(0;q^3;q^2,\frac{q^3}{x}\right).
+\end{aligned}$$
+:::
+
+We give the proof of theorem [\[divergentramanujan\]](#divergentramanujan){reference-type="ref" reference="divergentramanujan"}.
+
+::: proof
+*Proof.* We apply the $q$-Borel transformation $\mathcal{B}_q^+$ to the divergent series $v(x)={}_2\varphi_0(0,0;-;q,-x/q)$. We obtain $$\left(\mathcal{B}_q^+v\right)(\xi )={}_1\varphi_0\left(0;-;q,\frac{\xi}{q}\right)=:\varphi (\xi ).$$ From lemma [\[alt\]](#alt){reference-type="ref" reference="alt"}, $$\varphi (\xi )=\frac{(q;q)_\infty}{\theta_q\left(-\frac{\xi}{q}\right)}
+{}_0\varphi_1\left(-;q;q^2,\frac{q^5}{\xi^2}\right)-\frac{(q;q)_\infty}{\theta_q\left(-\frac{\xi}{q}\right)}
+\frac{q^2}{(1-q)\xi}{}_0\varphi_1\left(-;q^3;q^2,\frac{q^7}{\xi^2}\right)$$ where $|\xi /q|<1$.
+
+We apply the $q$-Laplace transformation $\mathcal{L}_{q, \lambda}^+$ to $\varphi (\xi )$: $$\begin{aligned}
+&\left(\mathcal{L}_{q,  \lambda}^+\varphi\right)(x)=\sum_{n\in\mathbb{Z}}\frac{\varphi (\lambda q^n)}{\theta_q\left(\frac{\lambda q^n}{x}\right)}
+=\sum_{n\in\mathbb{Z}}\frac{{}_1\varphi_0\left(0;-;q,\frac{\lambda q^n}{q}\right)}{\theta_q\left(\frac{\lambda q^n}{x}\right)}\\
+
+
+
+
+
+
+
+
+
+&=\frac{(q;q)_\infty}{\theta_q\left(-\frac{\lambda}{q}\right)\theta_q\left(\frac{\lambda}{x}\right)}\sum_{n-m\in\mathbb{Z}}(q^2)^{\frac{(n-m)(n-m-1)}{2}}\left(-\frac{\lambda^2}{qx}\right)^{n-m}\\
+&\qquad\qquad\qquad\qquad \times \sum_{m\ge 0}\frac{(-1)^m(q^2)^{\frac{m(m-1)}{2}}}{(q;q^2;q^2)_m}\left(\frac{q^2}{x}\right)^m\\
+&-\frac{(q;q)_\infty}{\theta_q\left(-\frac{\lambda}{q}\right)\theta_q\left(\frac{\lambda}{x}\right)}\frac{q^2}{(1-q)\lambda}\sum_{n-m\in\mathbb{Z}}(q^2)^{\frac{(n-m)(n-m-1)}{2}}\left(-\frac{\lambda^2}{q^2x}\right)^{n-m}\\
+&\qquad\qquad\qquad\qquad \times
+\sum_{m\ge 0}\frac{(-1)^m(q^2)^{\frac{m(m-1)}{2}}}{(q^3,q^2;q^2)_m}\left(\frac{q^3}{x}\right)^m.
+\end{aligned}$$ Therefore, $$\begin{aligned}
+&{}_2f_0\left(0,0;-;q,-\frac{x}{q}\right)
+=\mathcal{L}_{q, \lambda}^+\circ\mathcal{B}_q^+{}_2\varphi_0\left(0,0;-;q,-\frac{x}{q}\right)\\
+&=(q;q)_\infty\frac{\theta_{q^2}\left(-\frac{\lambda^2}{qx}\right)}{\theta_q\left(-\frac{\lambda}{q}\right)\theta_q\left(\frac{\lambda}{x}\right)}{}_1\varphi_1\left(0;q;q^2,\frac{q^2}{x}\right)
++\frac{(q;q)_\infty}{1-q}\frac{\theta_{q^2}\left(-\frac{\lambda^2}{x}\right)}{\theta_q\left(-\frac{\lambda}{q}\right)\theta_q\left(\frac{\lambda}{x}\right)}
+{}_1\varphi_1\left(0;q^3;q^2,\frac{q^3}{x}\right).
+\end{aligned}$$ We obtain the conclusion. ◻
+:::
+
+::: rem
+By theorem [\[divergentramanujan\]](#divergentramanujan){reference-type="ref" reference="divergentramanujan"}, we have $$\tilde{u}_2(x,\lambda )=\tilde{C}_{21}v_1(x)+\tilde{C}_{22}v_2(x),$$ where $$\tilde{C}_{21}(x)=\frac{(q;q)_\infty\theta_{q^2}(-qx/\lambda^2)\theta_{q^2}(x)}{\theta_q(-q/\lambda )\theta_q(x/\lambda )\theta_q(x)}$$ and $$\tilde{C}_{22}(x)=\frac{(q;q)_\infty\theta_{q^2}(-x/\lambda^2)\theta_{q^2}(x/q)}{\theta_q(-1/\lambda )\theta_q(x/\lambda )\theta_q(x/q)}.$$ This is a half of our connection formula.
+:::
+
+# The $q$-Airy equation around the infinity and the connection formula
+
+We consider the behavior of the equation [\[qai\]](#qai){reference-type="eqref" reference="qai"} around the infinity. We set $x=1/t$ and $z(t)=u(1/t)$. Then $z(t)$ satisfies $$\left(-\sigma_q^2+\frac{1}{q^2t}\sigma_q+1\right)z(t)=0.$$ We set $\mathcal{E}(t)=1/\theta (-q^2t)$ and $f(t)=\sum_{n\ge 0}a_nt^n,\quad a_0=1$. We assume that $z(t)$ can be described as $$z(t)=\mathcal{E}(t)f(t)=\frac{1}{\theta (-q^2t)}\left(\sum_{n\ge 0}a_nt^n\right).$$
+
+The function $\mathcal{E}(t)$ has the following property;
+
+::: lmm
+For any $t\in\mathbb{C}^*$, $$\sigma_q\mathcal{E}(t)=-q^2t\mathcal{E}(t),
+\qquad \sigma_q^2\mathcal{E}(t)=q^5t^2\mathcal{E}(t).$$
+:::
+
+From this lemma, $f(t)$ satisfies the following equation $$\label{qaeq}
+\left(-q^5t^2\sigma_q^2-\sigma_q+1\right)f(t)=0.$$ Since [\[qaeq\]](#qaeq){reference-type="eqref" reference="qaeq"} is the same as [\[kram\]](#kram){reference-type="eqref" reference="kram"} for $K=-q^5$, we obtain $$f(t)={}_0\varphi_1(-;0;q^2,q^5t^2)=\operatorname{A}_{q^2}(-q^3t^2).$$
+
+We show a connection formula for $f(t)$. In order to obtain a connection formula, we need the $q$-Borel transformation and the $q$-Laplace transformation following Zhang [@Z1].
+
+Applying the $q$-Borel transformation to the equation [\[kram\]](#kram){reference-type="eqref" reference="kram"} and using lemma [\[orqb\]](#orqb){reference-type="ref" reference="orqb"}, we obtain the first order $q$-difference equation $$g(q\tau )=(1+q^2\tau )(1-q^2\tau )g(\tau ).$$ Since $g(0)=1$, $g(\tau )$ is given by an infinite product $$g(\tau )=\frac{1}{(-q^2\tau ;q)_\infty(q^2\tau ;q)_\infty}$$ which has single poles at $$\left\{\tau ;\tau =\pm q^{-2-k},\quad \forall k\in\mathbb{Z}_{\ge 0}\right\}.$$ By Cauchy's residue theorem, the $q$-Laplace transform of $g(\tau )$ is $$\begin{aligned}
+f(t)=&\frac{1}{2\pi i}\int_{|\tau |=r}g(\tau )\theta\left(\frac{t}{\tau}\right)\frac{d\tau}{\tau }\\
+=&-\sum_{k\ge 0}\operatorname{Res}\left\{g(\tau )\theta\left(\frac{t}{\tau}\right)\frac{1}{\tau };\tau =-q^{-2-k}\right\}\\
+&-\sum_{k\ge 0}\operatorname{Res}\left\{g(\tau )\theta\left(\frac{t}{\tau}\right)\frac{1}{\tau };\tau =q^{-2-k}\right\}
+\end{aligned}$$ where $0<r<r_0:=1/|q^2|$. We can culculate the residue from lemma [\[lems\]](#lems){reference-type="ref" reference="lems"}.
+
+::: lmm
+[]{#lems label="lems"}For any $k\in\mathbb{N}$, $\lambda\in\mathbb{C}^*$, we have:
+
+1.  $\operatorname{Res}\left\{\dfrac{1}{\left(\tau /\lambda ;q\right)_\infty}\dfrac{1}{\tau}:\tau =\lambda q^{-k}\right\}
+    =\dfrac{(-1)^{k+1}q^{\frac{k(k+1)}{2}}}{(q;q)_k (q;q)_\infty}$,
+
+2.  $\dfrac{1}{(\lambda q^{-k};q)_\infty}=\dfrac{(-\lambda )^{-k}q^{\frac{k(k+1)}{2}}}{(\lambda ;q)_\infty \left(q/\lambda ;q\right)_k},\quad \lambda \not \in q^{\mathbb{Z}}$.
+:::
+
+Summing up all of residues, we obtain $$\begin{aligned}
+f(t)&=\frac{\theta (q^2t)}{(q,-1;q)_\infty} {_1\varphi_1}\left(0,-q;q,\frac{1}{t}\right)
++\frac{\theta (-q^2 t)}{(q,-1;q)_\infty} {_1\varphi_1}\left(0,-q;q,-\frac{1}{t}\right).
+\end{aligned}$$
+
+We obtain a connection formula for $z(t)=\mathcal{E}(t)f(t)$. Finally, we acquire the following connection formula between the Ramanujan function and the $q$-Airy function.
+
+::: thm
+For any $x\in\mathbb{C}^*$, $$\operatorname{A}_{q^2}\left(-\frac{q^3}{x^2}\right)
+=\frac{1}{(q,-1;q)_\infty}
+\left\{\theta \left(\frac{x}{q}\right)\operatorname{Ai}_q(-x)+\theta\left(-\frac{x}{q}\right)\operatorname{Ai}_q(x)\right\}.$$
+:::
+
+Here, both $\operatorname{A}_q(x)$ and $\operatorname{Ai}_q(x)$ are defined by convergent series on whole of the complex plain. The connection formula above is valid for any $x\in\mathbb{C}^*$.

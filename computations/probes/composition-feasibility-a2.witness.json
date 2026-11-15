@@ -1,0 +1,459 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-16T06:10:08.866152+00:00",
+  "commitSha": "b7f304f42ac6a9d506bcbc5b7d92ea5fa1fec7ab",
+  "assertions": [
+    {
+      "name": "evaluator_reproduces_committed_H3_proton_and_neutron_characters_to_1e-40",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "chi-{proton,neutron}-h3-at-q0-50dps; 11-letter production block, alternating core"
+    },
+    {
+      "name": "evaluator_reproduces_committed_H6_deuteron_free_characters_to_1e-40",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "atom-chi-rust-d free (include_inter=False), 11 blocks"
+    },
+    {
+      "name": "evaluator_reproduces_committed_H6_deuteron_bound_characters_to_1e-40",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "atom-chi-rust-d atom, bond letter (1, d_pn, gen 2)"
+    },
+    {
+      "name": "affine_family_at_e_pn_reproduces_committed_bound_chi_51_to_1e-40",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "χ_(5,1)(W_free L_e) = (1−e)χ(W_free σ) + eχ(W_free σ⁻¹) at e = e_pn vs atom-chi-rust-d"
+    },
+    {
+      "name": "production_pn_letter_is_infeasible_under_reading3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "corroborates qou-7dal: χ_(5,1)(atom) < 0"
+    },
+    {
+      "name": "unit_letter_free_product_is_feasible",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean feasible_unit_iff"
+    },
+    {
+      "name": "bond_law_tr_ratio_eq_z_minus_eh_along_family_to_1e-40",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean trace_interfaceLetter; 22 grid points"
+    },
+    {
+      "name": "grid_feasibility_agrees_with_closed_form_interval",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "22 grid points vs [lo, hi]"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "composition-feasibility-a2",
+  "scriptFile": "composition_feasibility_a2_probe.py",
+  "scriptHash": "19d40d4fe028",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/composition_feasibility_a2_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/composition_feasibility_a2_probe.py"
+  },
+  "q0Anchor": "proton",
+  "q0_anchor_reason": "q0 read from the committed y-lambda-at-q0 witness string; evaluator validated against committed Rust/MPFR characters",
+  "description": "PROBE (bean qou-8r6b): the composition feasibility program at A = 2 on the alphabet (1−e)σ₂ + eσ₂⁻¹, solved in closed form (affine in e). Evaluator validated to 1e-40 against committed H_3 and H_6 canonical characters. Reports the feasible e-interval under reading 3, the production points' status, the bond law tr ratio = z_D − e h along the family, and the power letters. No objective; nothing selected; nothing wired.",
+  "weight_family": "markov_y_lambda_convention_D",
+  "evaluator": "self-contained mpmath Hoefsmit seminormal (mirrors _exact_trace_engine.py), 60 dps",
+  "committed_inputs": {
+    "atom_chi_rust_d": {
+      "computedAt": "2026-09-07T11:36:23.937707+00:00",
+      "commitSha": "6e9557d5cebd"
+    },
+    "chi_h3": "chi-{proton,neutron}-h3-at-q0-50dps",
+    "y": "y-lambda-at-q0 (n=6)"
+  },
+  "validation_worst_abs_dev": {
+    "H3": "5.4152e-50",
+    "H6_free": "1.1226e-49",
+    "H6_atom": "1.3567e-49"
+  },
+  "z_D": "0.61268803714646525159582986394589924802630839154509",
+  "h": "0.20906029879563931543084621312967494385975749526306",
+  "d_pn": "-0.10445824776972628901783406629000564412800000062852",
+  "e_pn": "0.49965607229824322599786222268147336234444363099702",
+  "positive_weight_blocks": [
+    "(6,)",
+    "(5, 1)",
+    "(4, 2)",
+    "(3, 3)"
+  ],
+  "block_constraints": {
+    "(6,)": {
+      "chi_free_sigma": "1.72191695498621609547739360612",
+      "chi_free_sigma_inv": "1.39760036122061631387014370234",
+      "constraint": "e ≤ 5.30937049811"
+    },
+    "(5, 1)": {
+      "chi_free_sigma": "-0.606842843262428808493617880303",
+      "chi_free_sigma_inv": "-0.757831040305915214768955527399",
+      "constraint": "e ≤ -4.01914093383"
+    },
+    "(4, 2)": {
+      "chi_free_sigma": "0.41542466469815886380225456783",
+      "chi_free_sigma_inv": "0.242617163807812514717863401148",
+      "constraint": "e ≤ 2.40397356919"
+    },
+    "(3, 3)": {
+      "chi_free_sigma": "0.886894054833854237320179645521",
+      "chi_free_sigma_inv": "0.540758157221394512903876222155",
+      "constraint": "e ≤ 2.56227123783"
+    }
+  },
+  "feasible_interval_e": {
+    "lo": "-inf",
+    "hi": "-4.01914093382842907228910661973",
+    "nonempty": true
+  },
+  "production_points_feasible": {
+    "sigma (pp-type, e=0)": false,
+    "production pn (e=e_pn)": false,
+    "sigma_inv (nn-type, e=1)": false
+  },
+  "family_rows": [
+    {
+      "e": "0.0",
+      "tr_ratio": "0.612688037146465251595829863946",
+      "z_minus_eh": "0.612688037146465251595829863946",
+      "neg_log_ratio": "0.48989938425513485141",
+      "reading3_feasible": false,
+      "violating_blocks": [
+        "(5, 1)"
+      ]
+    },
+    {
+      "e": "0.05",
+      "tr_ratio": "0.602235022206683285824287553289",
+      "z_minus_eh": "0.602235022206683285824287553289",
+      "neg_log_ratio": "0.507107507523796606",
+      "reading3_feasible": false,
+      "violating_blocks": [
+        "(5, 1)"
+      ]
+    },
+    {
+      "e": "0.1",
+      "tr_ratio": "0.591782007266901320052745242633",
+      "z_minus_eh": "0.591782007266901320052745242633",
+      "neg_log_ratio": "0.52461694287987429489",
+      "reading3_feasible": false,
+      "violating_blocks": [
+        "(5, 1)"
+      ]
+    },
+    {
+      "e": "0.15",
+      "tr_ratio": "0.581328992327119354281202931976",
+      "z_minus_eh": "0.581328992327119354281202931976",
+      "neg_log_ratio": "0.54243843053640537759",
+      "reading3_feasible": false,
+      "violating_blocks": [
+        "(5, 1)"
+      ]
+    },
+    {
+      "e": "0.2",
+      "tr_ratio": "0.57087597738733738850966062132",
+      "z_minus_eh": "0.57087597738733738850966062132",
+      "neg_log_ratio": "0.56058329539201547992",
+      "reading3_feasible": false,
+      "violating_blocks": [
+        "(5, 1)"
+      ]
+    },
+    {
+      "e": "0.25",
+      "tr_ratio": "0.560422962447555422738118310663",
+      "z_minus_eh": "0.560422962447555422738118310663",
+      "neg_log_ratio": "0.57906349025603752351",
+      "reading3_feasible": false,
+      "violating_blocks": [
+        "(5, 1)"
+      ]
+    },
+    {
+      "e": "0.3",
+      "tr_ratio": "0.549969947507773456966576000007",
+      "z_minus_eh": "0.549969947507773456966576000007",
+      "neg_log_ratio": "0.59789164314344588256",
+      "reading3_feasible": false,
+      "violating_blocks": [
+        "(5, 1)"
+      ]
+    },
+    {
+      "e": "0.35",
+      "tr_ratio": "0.539516932567991491195033689351",
+      "z_minus_eh": "0.539516932567991491195033689351",
+      "neg_log_ratio": "0.61708110910827194552",
+      "reading3_feasible": false,
+      "violating_blocks": [
+        "(5, 1)"
+      ]
+    },
+    {
+      "e": "0.4",
+      "tr_ratio": "0.529063917628209525423491378694",
+      "z_minus_eh": "0.529063917628209525423491378694",
+      "neg_log_ratio": "0.63664602714836670228",
+      "reading3_feasible": false,
+      "violating_blocks": [
+        "(5, 1)"
+      ]
+    },
+    {
+      "e": "0.45",
+      "tr_ratio": "0.518610902688427559651949068038",
+      "z_minus_eh": "0.518610902688427559651949068038",
+      "neg_log_ratio": "0.65660138278882667061",
+      "reading3_feasible": false,
+      "violating_blocks": [
+        "(5, 1)"
+      ]
+    },
+    {
+      "e": "0.499656072298243226",
+      "tr_ratio": "0.508229789376738962577995797656",
+      "z_minus_eh": "0.508229789376738962577995797656",
+      "neg_log_ratio": "0.67682159238634338966",
+      "reading3_feasible": false,
+      "violating_blocks": [
+        "(5, 1)"
+      ]
+    },
+    {
+      "e": "0.5",
+      "tr_ratio": "0.508157887748645593880406757381",
+      "z_minus_eh": "0.508157887748645593880406757381",
+      "neg_log_ratio": "0.67696307703798078263",
+      "reading3_feasible": false,
+      "violating_blocks": [
+        "(5, 1)"
+      ]
+    },
+    {
+      "e": "0.55",
+      "tr_ratio": "0.497704872808863628108864446725",
+      "z_minus_eh": "0.497704872808863628108864446725",
+      "neg_log_ratio": "0.69774800251081764541",
+      "reading3_feasible": false,
+      "violating_blocks": [
+        "(5, 1)"
+      ]
+    },
+    {
+      "e": "0.6",
+      "tr_ratio": "0.487251857869081662337322136068",
+      "z_minus_eh": "0.487251857869081662337322136068",
+      "neg_log_ratio": "0.71897412763286671029",
+      "reading3_feasible": false,
+      "violating_blocks": [
+        "(5, 1)"
+      ]
+    },
+    {
+      "e": "0.65",
+      "tr_ratio": "0.476798842929299696565779825412",
+      "z_minus_eh": "0.476798842929299696565779825412",
+      "neg_log_ratio": "0.74066058997618216099",
+      "reading3_feasible": false,
+      "violating_blocks": [
+        "(5, 1)"
+      ]
+    },
+    {
+      "e": "0.7",
+      "tr_ratio": "0.466345827989517730794237514755",
+      "z_minus_eh": "0.466345827989517730794237514755",
+      "neg_log_ratio": "0.76282779994230620118",
+      "reading3_feasible": false,
+      "violating_blocks": [
+        "(5, 1)"
+      ]
+    },
+    {
+      "e": "0.75",
+      "tr_ratio": "0.455892813049735765022695204099",
+      "z_minus_eh": "0.455892813049735765022695204099",
+      "neg_log_ratio": "0.78549755619992820325",
+      "reading3_feasible": false,
+      "violating_blocks": [
+        "(5, 1)"
+      ]
+    },
+    {
+      "e": "0.8",
+      "tr_ratio": "0.445439798109953799251152893442",
+      "z_minus_eh": "0.445439798109953799251152893442",
+      "neg_log_ratio": "0.80869317451359191141",
+      "reading3_feasible": false,
+      "violating_blocks": [
+        "(5, 1)"
+      ]
+    },
+    {
+      "e": "0.85",
+      "tr_ratio": "0.434986783170171833479610582786",
+      "z_minus_eh": "0.434986783170171833479610582786",
+      "neg_log_ratio": "0.83243963187188771648",
+      "reading3_feasible": false,
+      "violating_blocks": [
+        "(5, 1)"
+      ]
+    },
+    {
+      "e": "0.9",
+      "tr_ratio": "0.424533768230389867708068272129",
+      "z_minus_eh": "0.424533768230389867708068272129",
+      "neg_log_ratio": "0.85676372814861645059",
+      "reading3_feasible": false,
+      "violating_blocks": [
+        "(5, 1)"
+      ]
+    },
+    {
+      "e": "0.95",
+      "tr_ratio": "0.414080753290607901936525961473",
+      "z_minus_eh": "0.414080753290607901936525961473",
+      "neg_log_ratio": "0.88169426792031405288",
+      "reading3_feasible": false,
+      "violating_blocks": [
+        "(5, 1)"
+      ]
+    },
+    {
+      "e": "1.0",
+      "tr_ratio": "0.403627738350825936164983650816",
+      "z_minus_eh": "0.403627738350825936164983650816",
+      "neg_log_ratio": "0.90726226553321290067",
+      "reading3_feasible": false,
+      "violating_blocks": [
+        "(5, 1)"
+      ]
+    }
+  ],
+  "bond_law_worst_abs_dev": "1.6705e-50",
+  "power_letters": {
+    "-3": {
+      "tr_ratio": "0.212208477657058042276378497998",
+      "reading3_feasible": false,
+      "violating_blocks": [
+        "(5, 1)"
+      ],
+      "chi_two_row": {
+        "(6,)": "1.1343675802876528475",
+        "(5, 1)": "-0.94194115882943002827",
+        "(4, 2)": "0.080413539272419466161",
+        "(3, 3)": "0.21825674839411536879"
+      }
+    },
+    "-2": {
+      "tr_ratio": "0.915617464418168203808867680678",
+      "reading3_feasible": true,
+      "violating_blocks": [],
+      "chi_two_row": {
+        "(6,)": "1.2591237190868020884",
+        "(5, 1)": "0.8806555791995982486",
+        "(4, 2)": "0.77587005026693462811",
+        "(3, 3)": "1.5426238778245065832"
+      }
+    },
+    "-1": {
+      "tr_ratio": "0.403627738350825936164983650816",
+      "reading3_feasible": false,
+      "violating_blocks": [
+        "(5, 1)"
+      ],
+      "chi_two_row": {
+        "(6,)": "1.3976003612206163139",
+        "(5, 1)": "-0.75783104030591521477",
+        "(4, 2)": "0.24261716380781251472",
+        "(3, 3)": "0.5407581572213945129"
+      }
+    },
+    "0": {
+      "tr_ratio": "1.0",
+      "reading3_feasible": true,
+      "violating_blocks": [],
+      "chi_two_row": {
+        "(6,)": "1.5513064682004775733",
+        "(5, 1)": "0.72222319547663343251",
+        "(4, 2)": "0.82659166702554648129",
+        "(3, 3)": "1.6556749397493906221"
+      }
+    },
+    "1": {
+      "tr_ratio": "0.612688037146465251595829863946",
+      "reading3_feasible": false,
+      "violating_blocks": [
+        "(5, 1)"
+      ],
+      "chi_two_row": {
+        "(6,)": "1.7219169549862160955",
+        "(5, 1)": "-0.60684284326242880849",
+        "(4, 2)": "0.4154246646981588638",
+        "(3, 3)": "0.88689405483385423732"
+      }
+    },
+    "2": {
+      "tr_ratio": "1.128088744114353785593151655",
+      "reading3_feasible": true,
+      "violating_blocks": [],
+      "chi_two_row": {
+        "(6,)": "1.9112909413111733234",
+        "(5, 1)": "0.59535644934219474922",
+        "(4, 2)": "0.91344047155442184924",
+        "(3, 3)": "1.8410892758530323081"
+      }
+    },
+    "3": {
+      "tr_ratio": "0.848526607059009556201749746812",
+      "reading3_feasible": false,
+      "violating_blocks": [
+        "(5, 1)"
+      ],
+      "chi_two_row": {
+        "(6,)": "2.1214920102621287173",
+        "(5, 1)": "-0.48237744607303867246",
+        "(4, 2)": "0.6063888026133559703",
+        "(3, 3)": "1.2717927289531363869"
+      }
+    }
+  },
+  "tr_M_free": "0.29901501718464007670216042677098383227494947439701"
+}

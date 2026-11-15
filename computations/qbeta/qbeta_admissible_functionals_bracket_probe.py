@@ -5,7 +5,7 @@ functionals survive convention D, they BRACKET the Q-value, and the one that
 matches it is the one that does not survive.
 
 # Ref: computations/qbeta/qbeta_which_algebra_the_decay_channel_lives_in_probe.py
-# Ref: content/quantum-observable-universe/observations/algebraic-gns-embedding-proof.md
+# Ref: folio/quantum-observable-universe/observations/algebraic-gns-embedding-proof.md
 # Ref: .beans/qou-99qc--...md   (which functional is epsilon meant to be)
 
 WHY THIS IS FORCED RATHER THAN SEARCHED. The corpus places the convention-D

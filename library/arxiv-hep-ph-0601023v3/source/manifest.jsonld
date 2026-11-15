@@ -1,0 +1,57 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-hep-ph-0601023v3/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-hep-ph-0601023v3 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-0601023v3",
+  "provenance": "ingested",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:hep-ph/0601023&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-hep-ph-0601023v3",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/hep-ph/0601023v3",
+    "content_type": "application/gzip",
+    "sha256": "90cab810977f6b74765b9f85425dd148abf47df1b7a1adbcbb10db688c122299",
+    "bytes": 784898,
+    "fetched": "2026-10-10T15:24:12+00:00",
+    "files": [
+      {
+        "path": "source/files/PR-April-10.tex",
+        "role": "tex",
+        "sha256": "d44446aaa7c276c4a905d8db6e56112087b1d2f26ef93735e9adbfb7419fdb45",
+        "bytes": 498260
+      },
+      {
+        "path": "source/files/axodraw.sty",
+        "role": "sty",
+        "sha256": "417441708254e027f73d08fb5bbd624f50bcbaabd0287461fa8a6ef1ff77328f",
+        "bytes": 42401
+      },
+      {
+        "path": "source/files/bibl_sort.tex",
+        "role": "tex",
+        "sha256": "3a79e74195e49d167c656c58b4609ad7affbfcaae5e46800312b2ad1baaf1208",
+        "bytes": 131531
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

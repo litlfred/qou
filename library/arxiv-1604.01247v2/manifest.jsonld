@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1604.01247v2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Exceptional quantum geometry and particle physics",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1604.01247v2",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1604.01247v2",
   "contains": [
     "library/arxiv-1604.01247v2/sections/sec-000",
     "library/arxiv-1604.01247v2/sections/sec-001",
@@ -21,8 +26,17 @@
     "library/arxiv-1604.01247v2/sections/sec-012"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1604.01247&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-1604.01247v2",
+    "title_source": "slug",
     "source_file": "1604.01247v2.pdf",
     "source_sha256": "5a402405aadf5d54e235ff25aad1c10e6aecfa04b6cc7be348b5b8c8bfa5c3b9",
     "pages": 37,

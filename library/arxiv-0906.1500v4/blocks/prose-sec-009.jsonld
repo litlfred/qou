@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0906.1500v4/blocks/prose-sec-009",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0906.1500v4/blocks/prose-sec-009",
   "kind": "prose",
-  "title": "T echnical assumptions. In this subsection, we give some suﬃcient conditions on",
+  "title": "Technical assumptions",
   "pageStart": 7,
-  "pageEnd": 7,
-  "text": "../sections/sec-009-31-t-echnical-assumptions-in-this-subsection-we.md",
-  "derivedFrom": "library/arxiv-0906.1500v4/manifest",
-  "sourceDocument": "library/arxiv-0906.1500v4/manifest",
+  "pageEnd": 9,
+  "text": "../sections/sec-009-31-technical-assumptions.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0906.1500v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0906.1500v4",
   "provenance": "ingested"
 }

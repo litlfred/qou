@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/blocks/prose-sec-008",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/blocks/prose-sec-008",
   "kind": "prose",
-  "title": "Points of ﬁnite order on E and Euclidean orbifolds",
-  "pageStart": 8,
-  "pageEnd": 9,
-  "text": "../sections/sec-008-43-points-of-ﬁnite-order-on-e-and-euclidean-orbi.md",
-  "derivedFrom": "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/manifest",
-  "sourceDocument": "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/manifest",
+  "title": "Appendix",
+  "pageStart": 10,
+  "pageEnd": 12,
+  "text": "../sections/sec-008-appendix.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh",
   "provenance": "ingested"
 }

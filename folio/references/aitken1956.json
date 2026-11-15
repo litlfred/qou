@@ -1,0 +1,20 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "aitken1956",
+  "type": "book",
+  "title": "Determinants and Matrices",
+  "author": [
+    {
+      "family": "Aitken",
+      "given": "A. C."
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        1956
+      ]
+    ]
+  },
+  "note": "Author, title and the cited section are written verbatim at the citing site: `-- Ref: [aitken1956] Aitken, Determinants and Matrices, §II (Cauchy-Binet)` (MathlibExt/CauchyBinet.lean:392, backing the rectangular Cauchy-Binet expansion absent from Mathlib). Year 1956 from the key. UNVERIFIED: publisher, edition, place — the citing site names none and no publisher record was reachable (egress closed, 2026-08-23), so they are omitted rather than guessed. Registered by the dangling-citation drain, bean qou-ghy5."
+}

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-9905032v2/blocks/prose-sec-018",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-9905032v2/blocks/prose-sec-018",
   "kind": "prose",
-  "title": "A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI",
-  "pageStart": 16,
-  "pageEnd": 16,
-  "text": "../sections/sec-018-16-a-borodin-a-okounkov-and-g-olshanski.md",
-  "derivedFrom": "library/arxiv-math-9905032v2/manifest",
-  "sourceDocument": "library/arxiv-math-9905032v2/manifest",
+  "title": "Complementation principle",
+  "pageStart": 39,
+  "pageEnd": 40,
+  "text": "../sections/sec-018-a3-complementation-principle.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9905032v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9905032v2",
   "provenance": "ingested"
 }

@@ -8,11 +8,8 @@ pages: 3-3
 source_pdf: 2601.07042v1.pdf
 source_sha256: c2f3e302624e7abb
 doc_brief: "A TANNAKIAN DESCRIPTION OF THE LOCAL KALETHA GERBE — We construct, for ap-adic fieldF, an explicit semisimple Tannakian categoryRigIsoc F whose category of fiber functors recovers Kaletha’s Galois"
+text_source: latex
+latex_prose_ratio: 0.652
+latex_coverage_ratio: 0.739
 ---
-sations. This work was started while both authors were supported by NSF grant DMS-1840234 at the
-University of Michigan. The first named author is partially supported by NSF grant DMS-2502131.
-CONTENTS
-1. Introduction 1
-1.1. Motivation and overview 1
-1.2. Preliminary notation 3
-1.3. Acknowledgments 3
+The authors thank Tasho Kaletha and David Schwein for many helpful conversations. This work was started while both authors were supported by NSF grant DMS-1840234 at the University of Michigan. The first named author is partially supported by NSF grant DMS-2502131.

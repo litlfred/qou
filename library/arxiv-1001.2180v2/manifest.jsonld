@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1001.2180v2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "ASYMPTOTICS OF q-PLANCHEREL MEASURES",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1001.2180v2",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1001.2180v2",
   "contains": [
     "library/arxiv-1001.2180v2/sections/sec-000",
     "library/arxiv-1001.2180v2/sections/sec-001",
@@ -35,8 +40,17 @@
     "library/arxiv-1001.2180v2/sections/sec-026"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1001.2180&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-1001.2180v2",
+    "title_source": "slug",
     "source_file": "1001.2180v2.pdf",
     "source_sha256": "f4225d7b024940aa3f6c183ce1aefeac7b1675c5272732c6c1827a4cd813d52f",
     "pages": 27,

@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-0203273v3/sections/sec-027",
   "@type": [
     "doco:Section"
   ],
-  "title": "Proposition. a) Le radical est le plus grand id ´eal rad(A) tel que",
-  "pageStart": 14,
-  "pageEnd": 14,
+  "title": "Application to proreductive envelopes",
+  "pageStart": 138,
+  "pageEnd": 146,
   "contains": [
     "library/arxiv-math-0203273v3/blocks/prose-sec-027"
   ],
-  "derivedFrom": "library/arxiv-math-0203273v3/manifest",
-  "sourceDocument": "library/arxiv-math-0203273v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203273v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203273v3",
   "provenance": "ingested"
 }

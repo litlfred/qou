@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0707.3799v3/blocks/prose-sec-019",
+  "kind": "prose",
+  "title": "Generic splitting of the canonical filtration on equivariant cohomology for G = PGL(2)",
+  "pageStart": 21,
+  "pageEnd": 32,
+  "text": "../sections/sec-019-52-generic-splitting-of-the-canonical-filtration.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0707.3799v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0707.3799v3",
+  "provenance": "ingested"
+}

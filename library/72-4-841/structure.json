@@ -7,86 +7,292 @@
   "bytes": 884242,
   "pages": 12,
   "text_source": "embedded",
-  "extractor": "pymupdf"
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:17Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "Progress of Theoretical Physics, Vol. 72, No.4, October 1984 Euclidean Quantum Gravity on a Flat Lattice Kei-ichi KONDO",
-  "authors_raw": "Department of Physics, Nagoya University, Nagoya 464",
+  "title": "Progress of Theoretical Physics, Vol. 72, No.4, October 1984 Euclidean Quantum Gravity on a Flat Lattice",
+  "authors_raw": "Kei-ichi KONDO",
   "title_lines": [
    "Progress of Theoretical Physics, Vol. 72, No.4, October 1984",
-   "Euclidean Quantum Gravity on a Flat Lattice",
-   "Kei-ichi KONDO"
+   "Euclidean Quantum Gravity on a Flat Lattice"
   ],
   "abstract": null,
   "docinfo": {
    "Producer": "Adobe Acrobat 9.0 Paper Capture Plug-in; modified using iTextSharp.LGPLv2.Core 3.7.4.0",
    "Creator": "Acrobat 5.0 Scan Plug-in for Windows",
    "CreationDate": "D:20021031171100+09'00'"
+  },
+  "title_raw": "Progress of Theoretical Physics, Vol. 72, No.4, October 1984 Euclidean Quantum Gravity on a Flat Lattice",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "Euclidean Quantum Gravity on a Flat Lattice Kei-ichi KONDO Department of Physics, Nagoya University, Nagoya 464 \u00a7 1. Introduction The unification of Einstein's general relativity with quantum field theory is a difficult problem, which physicists have so far failed to solve. This is because Einstein",
+   "text": "Progress of Theoretical Physics, Vol. 72, No.4, October 1984 Euclidean Quantum Gravity on a Flat Lattice",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "EJ",
-   "page": 5,
+   "title": "\u00a7 3. Reflection positivity",
+   "page": 6,
    "source": "inferred",
-   "number": "6"
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "846"
   },
   {
    "level": 1,
+   "title": "'\"ffi",
+   "page": 6,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "846"
+  },
+  {
+   "level": 2,
+   "title": "i/ep7",
+   "page": 6,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "846"
+  },
+  {
+   "level": 3,
    "title": "Appendix",
    "page": 12,
    "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 12,
-   "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.7,
+   "evidence": [
+    "style",
+    "stock-name"
+   ],
+   "page_label": "852"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The plaquette P=(n; /f.v) and the reflected plaquette gPwith respect to the plane 7C",
+   "page": 6,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "846"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "841",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "842",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "843",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "844",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "845",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "846",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "847",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "848",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "849",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "850",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "851",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "852",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-6-ej",
-   "number": "6",
-   "title": "EJ",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
    "level": 1,
-   "page_start": 5,
-   "page_end": 12,
-   "n_chars": 17730,
-   "n_words": 2854
+   "page_start": 1,
+   "page_end": 6,
+   "n_chars": 12269,
+   "n_words": 1920,
+   "label_start": "841",
+   "label_end": "846"
   },
   {
-   "id": "sec-001-appendix",
+   "id": "sec-000-3-reflection-positivity",
+   "number": null,
+   "title": "\u00a7 3. Reflection positivity",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 1068,
+   "n_words": 217,
+   "label_start": "846",
+   "label_end": "846"
+  },
+  {
+   "id": "sec-001-ffi",
+   "number": null,
+   "title": "'\"ffi",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 13,
+   "n_words": 5,
+   "label_start": "846",
+   "label_end": "846"
+  },
+  {
+   "id": "sec-002-iep7",
+   "number": null,
+   "title": "i/ep7",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 12,
+   "n_chars": 14419,
+   "n_words": 2277,
+   "label_start": "846",
+   "label_end": "852"
+  },
+  {
+   "id": "sec-003-appendix",
    "number": null,
    "title": "Appendix",
-   "level": 1,
+   "level": 3,
    "page_start": 12,
    "page_end": 12,
-   "n_chars": 360,
-   "n_words": 50
-  },
-  {
-   "id": "sec-002-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 12,
-   "page_end": 12,
-   "n_chars": 1438,
-   "n_words": 246
+   "n_chars": 1812,
+   "n_words": 297,
+   "label_start": "852",
+   "label_end": "852"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 3,
-  "sections": 3,
-  "chars_total": 19528
+  "toc_entries": 4,
+  "toc_inferred_entries": 4,
+  "toc_inferred_mean_confidence": 0.625,
+  "toc_inferred_empty_share": 0.25,
+  "toc_inferred_method": "font",
+  "figure_entries": 1,
+  "figure_sequence_gaps": [
+   "figure 1"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 5,
+  "chars_total": 29581
  }
 }

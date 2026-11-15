@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-07T11:25:59.529865+00:00",
-  "commitSha": "c33a59d6b5088c9c78434e48bbd0adfb056766e8",
+  "computedAt": "2026-09-14T20:06:50.110654+00:00",
+  "commitSha": "912168106c538a97f163f37a03b194c375c827e1",
   "assertions": [
     {
       "name": "schwinger_brings_alpha_within_3sigma",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 7,
   "computation": "alpha-em-schwinger-ladder",
   "scriptFile": "alpha_em_schwinger_ladder_probe.py",
-  "scriptHash": "8caaf907ad89",
-  "scriptCommitSha": "1a3f96e72efd999f3eb3b745301c5e7b0ad7b40e",
+  "scriptHash": "14c2caa213c4",
+  "scriptCommitSha": "0f1ac562fd0293aa610df2d363ae3c7d7b8fdfda",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -49,7 +49,7 @@
     ],
     "reproduce": "python3 -u computations/alpha_em_schwinger_ladder_probe.py"
   },
-  "description": "The alpha_EM ladder at the proton pin, scored against the CODATA reference READ FROM THE REGISTRY (qou_substrate.codata, CODATA 2022) rather than a hardcoded edition: form A (quadratic, no Schwinger) resid +0.9937 ppb (6.48 sigma) -> form B (+derived Schwinger (1-h^2 alpha), RT phase 3) resid -0.3652 ppb (2.38 sigma). The 2018->2022 edition shift is 0.6787 ppb, 2.2x the form-B residual, and FLIPS its sign (+0.3134 -> -0.3652); magnitude and sigma count barely move. Against the L2 100x target (0.0015325 ppb) form B still misses by 238.3x -- the 2.38 sigma is the 1x comparison, not the L2 one, and the two must not be conflated. Remaining 2-loop c2 ~ -9.4e-4 (uncomputed, NOT Ohtsuki kappa1=0.554; the sign is the edition flip). Closest any not-yet-met observable sits to its L2 target: 238x vs 970x (m_mu) and 152-177x (Q_beta trio). Schwinger factor derived (not fitted); q0 = documented proton pin; scope-(a).",
+  "description": "The alpha_EM ladder at the proton pin, scored against the CODATA reference READ FROM THE REGISTRY (qou_substrate.codata, CODATA 2022) rather than a hardcoded edition: form A (quadratic, no Schwinger) resid +0.9937 ppb (6.48 sigma) -> form B (+derived Schwinger (1-h^2 alpha), RT phase 3) resid -0.3652 ppb (2.38 sigma). The 2018->2022 edition shift is 0.6787 ppb, 2.2x the form-B residual, and FLIPS its sign (+0.3134 -> -0.3652); magnitude and sigma count barely move. Against the L2 100x target (0.0015325 ppb) form B still misses by 238.3x -- the 2.38 sigma is the 1x comparison, not the L2 one, and the two must not be conflated. Remaining 2-loop c2 ~ -9.4e-4 (uncomputed, NOT Ohtsuki kappa1=0.554; the sign is the edition flip). Closest any not-yet-met observable sits to its L2 target: 238x vs 970x (m_mu) and 152-177x (Q_beta trio). Schwinger factor NOT FITTED (measured: the c hitting CODATA exactly is 0.7312340272, 1-sigma window [0.61846303, 0.84400502], so the published c=1 is OUTSIDE it at 2.383 sigma) but NOT DERIVED either -- the exact vertex-moment check (2026-07-14 audit) gives +0.1281 vs the claimed -0.0437, wrong order and sign; honest tier is structurally-motivated / empirically-anchored. q0 = documented proton pin; scope-(a).",
   "contentBlock": "prop:em-coupling-bring-zero-mode",
   "data": {
     "ladder_proton": {

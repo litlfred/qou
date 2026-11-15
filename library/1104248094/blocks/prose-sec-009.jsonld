@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/1104248094/blocks/prose-sec-009",
+  "kind": "prose",
+  "title": "A Spectral Sequence",
+  "pageStart": 13,
+  "pageEnd": 20,
+  "text": "../sections/sec-009-4-a-spectral-sequence.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/1104248094",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/1104248094",
+  "provenance": "ingested"
+}

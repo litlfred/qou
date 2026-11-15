@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/lem-feynman-trace-collapse",
+  "@type": [
+    "folio-assistant-core:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:feynman-trace-collapse",
+  "kind": "lemma",
+  "title": "Path integral collapses to a finite sum on the eigenbasis",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-feynman-eigenbasis-decomposition"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-feynman-trace-collapse"
+  ],
+  "tags": [
+    "feynman",
+    "path-integral",
+    "trace-collapse",
+    "semisimplicity"
+  ],
+  "leanRef": "qou:QOU.FeynmanPathIntegrals.trace_collapse",
+  "text": "feynman-trace-collapse.md",
+  "provenance": "authored"
+}

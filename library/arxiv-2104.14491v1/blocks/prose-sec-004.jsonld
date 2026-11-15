@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2104.14491v1/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2104.14491v1/blocks/prose-sec-004",
   "kind": "prose",
   "title": "How to get the satellite class from a knot diagram",
   "pageStart": 5,
   "pageEnd": 6,
   "text": "../sections/sec-004-23-how-to-get-the-satellite-class-from-a-knot-di.md",
-  "derivedFrom": "library/arxiv-2104.14491v1/manifest",
-  "sourceDocument": "library/arxiv-2104.14491v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2104.14491v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2104.14491v1",
   "provenance": "ingested"
 }

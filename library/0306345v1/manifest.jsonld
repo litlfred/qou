@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/0306345v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Skein-theoretical derivation of some formulas of Habiro Gregor Masbaum",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/0306345v1",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "agt-3-17.dvi",
   "contains": [
+    "library/0306345v1/sections/sec-front-matter",
     "library/0306345v1/sections/sec-000",
     "library/0306345v1/sections/sec-001",
     "library/0306345v1/sections/sec-002",
@@ -15,8 +21,11 @@
     "library/0306345v1/sections/sec-006"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "0306345v1",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "0306345v1.pdf",
     "source_sha256": "936aa08026b2683b8889419e9f7364d18ed2f194804d6d99710a26b62bbd9503",
     "pages": 20,

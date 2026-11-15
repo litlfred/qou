@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-madelung-acoustic-metric",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:madelung-acoustic-metric",
+  "kind": "remark",
+  "title": "Acoustic metric and analogue gravity from the brane fluid",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-madelung-fluid",
+    "papers/quantum-observable-universe/blocks/rem-gr-substrate-geometry"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-madelung-fluid",
+  "tags": [
+    "acoustic-metric",
+    "analogue-gravity",
+    "fluid-dynamics"
+  ],
+  "text": "madelung-acoustic-metric.md",
+  "provenance": "authored"
+}

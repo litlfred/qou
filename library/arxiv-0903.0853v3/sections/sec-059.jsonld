@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-0903.0853v3/sections/sec-059",
   "@type": [
     "doco:Section"
   ],
-  "title": "A prototypal example and the q-Borel transformation. — To",
-  "pageStart": 28,
-  "pageEnd": 29,
+  "title": "The generating series for the class numbers",
+  "pageStart": 134,
+  "pageEnd": 134,
   "contains": [
     "library/arxiv-0903.0853v3/blocks/prose-sec-059"
   ],
-  "derivedFrom": "library/arxiv-0903.0853v3/manifest",
-  "sourceDocument": "library/arxiv-0903.0853v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0903.0853v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0903.0853v3",
   "provenance": "ingested"
 }

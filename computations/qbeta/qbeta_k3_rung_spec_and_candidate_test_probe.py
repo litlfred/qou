@@ -8,7 +8,7 @@ source is `Q_N2`, the ladder truncated at k=2.
 
 FIRST, A CIRCULARITY I ALMOST REPORTED AS A DISCOVERY. Computing |c_3| * u^3
 gives 1278.58 ppb against a dashboard error of 1278.58 ppb -- ratio 0.999999.
-That is NOT evidence. `c_3 = -2.0693425728` is tier `cal-anchored`: it is
+That is NOT evidence. `c_3 = -2.069342577` is tier `cal-anchored`: it is
 extracted by inverting Q_beta against experiment, so the extractor DEFINES it as
 the quantity that absorbs the residual. The agreement is a tautology and is
 recorded here only so the next reader does not mistake it for a result.
@@ -19,7 +19,7 @@ WHAT IS NOT CIRCULAR, and is the point of this probe:
      target/u^3. With u = 0.00851723455016, u^3 = 617.86817 ppb and the 7.797 ppb
      target, that is
 
-         c_3 = -2.0693425728  +/-  0.01262        (0.61 % relative)
+         c_3 = -2.069342577  +/-  0.01262         (0.61 % relative)
 
      This is a REQUIREMENT, not a measurement: it says how accurate a derivation
      has to be before it changes the L2 verdict. Any candidate can now be tested
@@ -74,9 +74,9 @@ for p in (HERE.parent, HERE.parent / "substrate"):
 import mpmath as mp
 
 from q_parameter import Q_50_DIGIT_STR
+from qbeta_utils import c3_proton_extracted
 
 TARGET_PPB = mp.mpf("7.797")
-C3_EXTRACTED = mp.mpf("-2.0693425728")
 ERR_TODAY_PPB = mp.mpf("1278.58")
 K_FREEDOM_PPB = mp.mpf("59694.18")     # qou-cds1 entry 12
 
@@ -90,6 +90,9 @@ def check(name: str, ok: bool, detail: str) -> None:
 
 def main() -> int:
     mp.mp.dps = 60
+    # c_3 RECOMPUTED by the canonical extraction (qbeta_ck_cache's), not typed:
+    # the literal this file carried until 2026-10-13 is reproduced by no producer.
+    C3_EXTRACTED = c3_proton_extracted()
     q = mp.mpf(Q_50_DIGIT_STR)
     u = (q - 1) ** 2 * mp.sqrt(q**4 + q**2 + 1) / (q**4 + q**2)
     u3 = u**3 * mp.mpf(10) ** 9
@@ -140,7 +143,7 @@ def main() -> int:
     n = sum(1 for _, ok, _ in _results if ok)
     print("\n" + "=" * 72)
     print(f"  {n}/{len(_results)} assertions passed")
-    print("  A derived c_3 must hit -2.0693425728 +/- 0.01262 (0.61 %) to close L2")
+    print(f"  A derived c_3 must hit {mp.nstr(C3_EXTRACTED, 11)} +/- {mp.nstr(tol, 4)} ({mp.nstr(tol/abs(C3_EXTRACTED)*100, 2)} %) to close L2")
     print("  for Q_beta -- and with it m_n and Delta_pn. The standing Hopf candidate")
     print("  c_3 = -2 misses that by 5.495x and would leave Q_beta at 5.495x target.")
     print("  Convention-C frame at the proton pin; the numbers move under D, the")

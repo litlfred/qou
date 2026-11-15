@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-markov-chain-fluctuations",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:markov-chain-fluctuations",
+  "kind": "remark",
+  "title": "Error bounds for the Markov chain: outer $q$-Plancherel, inner Perron--Frobenius",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-markov-lambda-knot-operations",
+    "papers/quantum-observable-universe/blocks/conj-jet-convergence-classical-limit",
+    "papers/quantum-observable-universe/blocks/prop-hecke-convergence-bound",
+    "papers/quantum-observable-universe/blocks/prop-q-gaussian-obstruction-at-q0"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-markov-lambda-knot-operations",
+  "cites": [
+    "references/feray-meliot2012",
+    "references/diaconis-ram2000"
+  ],
+  "tags": [
+    "markov-chain",
+    "error-bound",
+    "q-plancherel",
+    "feray-meliot",
+    "perron-frobenius",
+    "q-gaussian",
+    "caveat"
+  ],
+  "text": "markov-chain-fluctuations.md",
+  "provenance": "authored"
+}

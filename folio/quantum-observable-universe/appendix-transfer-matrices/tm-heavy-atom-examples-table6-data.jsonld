@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-tm-heavy-atom-examples-table6-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:tm-heavy-atom-examples-table6-data",
+  "kind": "table",
+  "title": "Data table 6 from tm-heavy-atom-examples",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/tm-heavy-atom-examples"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "tm-heavy-atom-examples-table6-data.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,192 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T15:16:29.197744+00:00",
+  "commitSha": "266c147ee39666e932727287228d9e48d3b84a5c",
+  "assertions": [
+    {
+      "name": "y_1cubed_vanishes_under_convention_D",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "y_(3) + 2 y_(2,1) = 1 to 0.0, and the three block dimensions are 1, 2, 1 -- so y_(1^3) = 0 EXACTLY. This is the two-row truncation that defines convention D (D => vanish is threeRow_eq_zero_of_jones_ocneanu; the converse is markovWeights_eq_jones_of_threeRow_eq_zero + hfaith), not a numerical accident of the pin. It is why reading 3 cannot see the alternating block at all"
+    },
+    {
+      "name": "chi21_of_the_identity_is_the_block_dimension",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "chi_(2,1)(1) = 2.0, block dimension 2 -- the subtraction extraction is calibrated before any verdict is read off it"
+    },
+    {
+      "name": "the_3_block_can_never_bind_on_this_alphabet",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "every corpus letter has chi_(3) > 0 (0.900918283956 at worst), and chi_(3) is multiplicative, so chi_(3)(w) > 0 for EVERY word. The whole content of reading 3 on this alphabet is chi_(2,1) >= 0 -- reproduced here independently of the sibling probe that first reported it"
+    },
+    {
+      "name": "reading3_does_not_constrain_the_crossing_budget",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "every dressing count k = 0..3 has admissible configurations for BOTH nucleons, so reading 3 selects no gluon count. The parity constraint of #7336 (gluon dressing must be ODD) has no force under the live reading -- it is a reading-1 statement"
+    },
+    {
+      "name": "reading3_admits_ODD_length_words_in_quantity",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "length 9 (4/8) and length 11 (149/288) are both admissible for the proton -- directly contradicting the consequence I drew from the parity theorem, which excluded every odd length. The THEOREM is fine; it is about the block reading 3 ignores"
+    },
+    {
+      "name": "reading3_leaves_exactly_one_survivor_in_the_quark_family",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "survivors = [(2, 'sigma')], chi_(2,1) = 0.0574586606222. The sibling probe reports the family as entirely rejected; it checks all(is_psd(M)) over EVERY block, which is reading 1. Under the live reading the family is not empty -- so qou-99qc's 'what replaces the element' item has a candidate the reading-1 measurement hid"
+    },
+    {
+      "name": "both_census_assignments_stay_excluded_under_reading3",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "p (0, 'sigma') chi_(2,1) = -0.280593350903, n (2, 'inv') chi_(2,1) = -0.371956324741 -- both negative, and y_(2,1) = 0.24729789 > 0, so the (2,1) failure BINDS. The element rejection stands on (2,1) alone; nothing downstream of it moves and the L2 rows stay un-re-scored"
+    },
+    {
+      "name": "reading1_would_annihilate_every_corpus_nucleon_model",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "all 3 nucleon constructions in the tree are ODD, so under reading 1 -- where the parity theorem does apply -- every one of them is excluded on LENGTH, whatever its dressing. A survivor would need an even-length model or a letter with shift d >= 4.309370498, against the alphabet's max of 0. That is a fact about reading 1's viability for this corpus, and it is the parity work's real contribution"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 2385,
+  "computation": "qbeta-reading3-does-not-constrain-the-budget",
+  "scriptFile": "qbeta_reading3_does_not_constrain_the_budget_probe.py",
+  "scriptHash": "d832bf18c2b8",
+  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_reading3_does_not_constrain_the_budget_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_reading3_does_not_constrain_the_budget_probe.py"
+  },
+  "description": "CORRECTS my own merged work (#7319/#7325/#7336). The crossing-budget length-parity exclusion is a READING-1 theorem; the owner selected reading 3 (Frobenius positivity on blocks with y_lambda > 0) on 2026-09-12, and the 2026-09-13 (B) answer moved the LETTER scope, not the reading. Under convention D y_(1^3) = 0, so reading 3 does not constrain the alternating block where the parity theorem lives. Measured: reading 3 admits every dressing count k = 0..3 for both nucleons, including the odd lengths 9 and 11 -- the budget is not decided by this criterion. Two further corrections: the one-letter quark family is NOT empty under reading 3 (1 of 6 survives, (slot 2, sigma), chi_(2,1) = +0.0574586606), and the element rejection that does stand rests on (2,1) ALONE, not on (1,1,1). The parity theorem survives as a statement about the parked reading 1, where it is annihilating: all three corpus nucleon models are odd.",
+  "data": {
+    "readings": {
+      "1": "literal Matrix.PosSemidef on every Wedderburn block -- PARKED",
+      "2": "symmetric-part PSD -- PARKED",
+      "3": "Frobenius positivity, chi_lambda(w) >= 0 on every block with y_lambda > 0 -- SELECTED by the owner 2026-09-12",
+      "owner_verbatim": "try PSD condfinement 3 for now, but keep 1 2 for later",
+      "scope_ruling_2026_09_13": "(B) whole element -- this moved the LETTER scope of reading 3; it did NOT change the reading, and AGENTS.md said it did"
+    },
+    "budget_sweep_reading3": {
+      "k0": {
+        "length": 9,
+        "parity": "odd",
+        "p_admissible": 4,
+        "p_total": 8,
+        "n_admissible": 4,
+        "n_total": 8
+      },
+      "k1": {
+        "length": 10,
+        "parity": "even",
+        "p_admissible": 18,
+        "p_total": 48,
+        "n_admissible": 18,
+        "n_total": 48
+      },
+      "k2": {
+        "length": 11,
+        "parity": "odd",
+        "p_admissible": 149,
+        "p_total": 288,
+        "n_admissible": 145,
+        "n_total": 288
+      },
+      "k3": {
+        "length": 12,
+        "parity": "even",
+        "p_admissible": 594,
+        "p_total": 1728,
+        "n_admissible": 594,
+        "n_total": 1728
+      }
+    },
+    "quark_family_reading3": {
+      "slot0_sigma": {
+        "chi3": "1.3824944633925928759",
+        "chi21": "-0.28059335090347205473",
+        "admissible": false
+      },
+      "slot0_inv": {
+        "chi3": "1.1221068216024720738",
+        "chi21": "-0.033904313215645050805",
+        "admissible": false
+      },
+      "slot1_sigma": {
+        "chi3": "1.3824944633925928759",
+        "chi21": "-0.28059335090347205473",
+        "admissible": false
+      },
+      "slot1_inv": {
+        "chi3": "1.1221068216024720738",
+        "chi21": "-0.033904313215645050805",
+        "admissible": false
+      },
+      "slot2_sigma": {
+        "chi3": "1.3824944633925928759",
+        "chi21": "0.057458660622224425885",
+        "admissible": true
+      },
+      "slot2_inv": {
+        "chi3": "1.1221068216024720738",
+        "chi21": "-0.37195632474134153142",
+        "admissible": false
+      }
+    },
+    "corrects": {
+      "AGENTS.md": "the 2026-09-13 ruling paragraph named reading 1 ('every Wedderburn projection ... Matrix.PosSemidef') for a fork that was about reading 3's scope; and it called (1,1,1) the exclusion already on record with (2,1) additional, which is backwards",
+      "qbeta_altchar_sign_is_length_parity_probe": "its exclusion is reading-1 scoped",
+      "qbeta_crossing_budget_gluon_parity_probe": "the ODD-dressing constraint is reading-1 scoped and has no force under reading 3",
+      "qbeta_bar_parity_forces_a_unique_quark_letter_probe": "its psd_feasible() is reading 1; under reading 3 one of the six configurations survives"
+    },
+    "scope": {
+      "class": "(a) scope-limited",
+      "unconditional": [
+        "y_(1^3) = 0 under convention D",
+        "reading 3 admits every k = 0..3 for both nucleons",
+        "both census assignments fail chi_(2,1) >= 0",
+        "all three corpus nucleon models have odd length"
+      ],
+      "not_claimed": [
+        "that reading 3 is correct and reading 1 wrong -- parked owner call",
+        "that the budget is unconstrained by anything -- the gamma-gamma construction half still forces the 6-letter core",
+        "that the (slot 2, sigma) survivor should be adopted"
+      ]
+    },
+    "q0_pin": "proton",
+    "q0_value": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

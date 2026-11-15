@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/kmj-48-2-255/sections/sec-001",
   "@type": [
     "doco:Section"
   ],
-  "title": "(σp′ + 1)mp′ −",
+  "title": "Proof of Theorem 1",
   "pageStart": 3,
-  "pageEnd": 3,
+  "pageEnd": 19,
   "contains": [
     "library/kmj-48-2-255/blocks/prose-sec-001"
   ],
-  "derivedFrom": "library/kmj-48-2-255/manifest",
-  "sourceDocument": "library/kmj-48-2-255/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/kmj-48-2-255",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/kmj-48-2-255",
   "provenance": "ingested"
 }

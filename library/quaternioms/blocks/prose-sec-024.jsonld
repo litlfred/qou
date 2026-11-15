@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/quaternioms/blocks/prose-sec-024",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/quaternioms/blocks/prose-sec-024",
   "kind": "prose",
   "title": "Quantum Simulation with Algebraic Symmetries (SU(2) and G2)",
   "pageStart": 22,
   "pageEnd": 25,
   "text": "../sections/sec-024-quantum-simulation-with-algebraic-symmetries-su2.md",
-  "derivedFrom": "library/quaternioms/manifest",
-  "sourceDocument": "library/quaternioms/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/quaternioms",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/quaternioms",
   "provenance": "ingested"
 }

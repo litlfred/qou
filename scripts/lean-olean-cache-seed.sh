@@ -48,6 +48,7 @@
 # tree. (Flagged by the sibling agent on PR #4705, who wired that producer up.)
 set -euo pipefail
 ROOT="$(git -C "$(dirname "$0")/.." rev-parse --show-toplevel)"
+REPO_ROOT="$ROOT" source "$ROOT/scripts/lib/lake-cache-family.sh"
 cd "$ROOT"
 BUILT_FILE="${BUILT_FILE:-/tmp/parbuild_built.txt}"
 SLUG="$(cut -d: -f2 lean-toolchain | tr -d '\r' | tr . -)"      # v4.24.0 -> v4-24-0
@@ -55,7 +56,7 @@ SLUG="$(cut -d: -f2 lean-toolchain | tr -d '\r' | tr . -)"      # v4.24.0 -> v4-
 # WORKSPACE ROOT (`cd $ROOT`; `.lake/packages/...`). Per the authoritative
 # roster .github/lake-packages.json, the workspace root is the **mathlib**
 # package (`"package": "mathlib", "lake-root": "."`); `qou`'s lake-root is
-# content/quantum-observable-universe/lean. QOU.* oleans are built into THAT
+# folio/quantum-observable-universe/lean. QOU.* oleans are built into THAT
 # tree — root `.lake/build/lib` holds zero of them (verified: 0 at root vs 942
 # under the paper lean root).
 #
@@ -64,7 +65,7 @@ SLUG="$(cut -d: -f2 lean-toolchain | tr -d '\r' | tr . -)"      # v4.24.0 -> v4-
 # ("7268 oleans, every one a dependency, zero QOU.*"). Default to the branch
 # that matches what is actually collected; override with CACHE_BRANCH= when
 # seeding a paper package from its own lake root (with SEED_PAPER=1).
-BR="${CACHE_BRANCH:-lake-cache/mathlib-$SLUG}"
+BR="${CACHE_BRANCH:-$(lake_cache_write_branch "mathlib-$SLUG")}"
 WORK="$(mktemp -d)"
 LIST="$WORK/files.txt"
 TGZ="$WORK/lake-oleans.tgz"
@@ -254,7 +255,7 @@ for pkg in batteries aesop Qq plausible importGraph LeanSearchClient proofwidget
     | sed 's#^\./##' >> "$LIST" || true
 done
 if [ "${SEED_PAPER:-0}" = "1" ]; then
-  for paperbuild in content/*/lean/.lake/build; do
+  for paperbuild in folio/*/lean/.lake/build; do
     [ -d "$paperbuild" ] || continue
     find "$paperbuild" \( -name '*.olean' -o -name '*.ilean' -o -name '*.trace' \
                        -o -name '*.c' -o -name '*.setup.json' \) -type f 2>/dev/null \
@@ -282,7 +283,7 @@ if [ "$own_n" = "0" ]; then
   echo "This script collects from the WORKSPACE ROOT, which per" >&2
   echo ".github/lake-packages.json is the 'mathlib' package. Seeding a" >&2
   echo "'$own_pkg'-named branch from here reproduces bean 5d7z. To seed a paper" >&2
-  echo "package, run with SEED_PAPER=1 and CACHE_BRANCH=lake-cache/$own_pkg-$SLUG" >&2
+  echo "package, run with SEED_PAPER=1 and CACHE_BRANCH=$(lake_cache_write_branch "$own_pkg-$SLUG")" >&2
   echo "from a tree where that paper's lib was actually built." >&2
   exit 1
 fi

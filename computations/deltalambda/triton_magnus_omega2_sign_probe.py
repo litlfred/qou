@@ -4,7 +4,9 @@ from A=2 to A=3?  (Thread-A takeover follow-on; extends deuteron_magnus_omega2_s
 
 THE QUESTION. The A=2 probe (deuteron_magnus_omega2_sign_probe.py, bean qou-dp32,
 merged audit docs/audits/2026-08-29-deuteron-magnus-omega2-clears-non-negativity-wall.md)
-established that the linear Magnus pairing P = Σ_λ y_λ tr_M(ρ·Ω₂) at A=2 is:
+established that the linear Magnus pairing P = Σ_λ w(λ) tr_M(ρ·Ω₂) at A=2 is
+(read there under the quantum Plancherel w = d_q(λ)²/[n]_q!, which that doc
+called y_λ; see the pairing line below for why the name is now reserved):
 control tr_M(Ω₂)=0 exactly, per-partition SIGN-INDEFINITE (2 pos / 7 neg), y-weighted
 total NET NEGATIVE (P = -12882.86). That cleared the non-negativity wall the quadrature
 ‖F_q‖² could not — a VIABLE sign-carrier for the deuteron's negative-at-A=2 missing term.
@@ -25,10 +27,17 @@ THE OBJECT (identical construction to A=2, 0-fit, canonical, derived).
   2nd Magnus      Ω₂  = ½ Σ_{i<j} [A_{g_i}, A_{g_j}]   over the ordered crossings
   triton word     β_T = atom_braid_word_3A(1,2)  — SOURCE OF TRUTH (35 crossings, σ₀..σ₇)
   density         ρ   = ρ(β_T) = ∏ σ_{g_i}      (bare word; central dressing drops from Ω₂)
-  pairing         P   = Σ_λ y_λ tr(ρ_λ Ω₂_λ),  y_λ = d_q(λ)²/[n]_q!,  λ ⊢ 9
+  pairing         P   = Σ_λ w(λ) tr(ρ_λ Ω₂_λ),  λ ⊢ 9, on BOTH weight families
+                        (qou-za3q — they are not interchangeable):
+                          Plancherel  w = d_q(λ)²/[n]_q!  → `P_total`       (legacy)
+                          Wenzl       w = y_λ  (bridge)   → `P_total_wenzl` ← HEADLINE
+                        `y_λ` names the WENZL weight only. AT A=3 THE TWO ARMS
+                        DISAGREE IN SIGN (Plancherel +2.470, Wenzl -13.931), so
+                        every statement below about "the" sign must say which.
 
-WHAT A RESULT MEANS.
-  • control tr_M(Ω₂) = 0 (must hold, as at A=2 — Markov trace of a commutator).
+WHAT A RESULT MEANS — read it PER ARM, because the two arms answer differently.
+  • control tr_M(Ω₂) = 0 (must hold, as at A=2 — the Markov trace of a commutator
+    vanishes blockwise, so this control is weight-INdependent).
   • P(A=3) > 0  ⇒  SIGN FLIP relative to A=2's net-negative: the Magnus carrier
     reverses between A=2 and A=3, matching the "reduces binding at A=2, adds at A≥3"
     signature the merged doc names. This is the datum that was missing.
@@ -36,6 +45,14 @@ WHAT A RESULT MEANS.
     of the Magnus carrier does NOT hold; the A-dependence is more complex (or the
     sign convention is not monotone in A).
   • P(A=3) ≈ 0  ⇒  the pairing decouples at A=3.
+
+  AS MEASURED, the two arms land on opposite branches of that fork: Plancherel
+  gives +2.470 (flip) and the headline Wenzl gives −13.931 (no flip, A=2 was
+  −6.921). So "does the Magnus pairing flip sign at A=3?" has no answer until
+  bean qou-za3q decision 1 fixes the measure. The verdict string below states
+  the branch AND the arm, and the witness carries `sign_flip_vs_A2` (Plancherel,
+  legacy name) beside `sign_flip_vs_A2_wenzl` (headline) — a consumer reading
+  only the first is reading the arm that is not the declared headline.
 
 HONESTY (STRICT). This decides the A=3 SIGN and its relation to the A=2 sign — a
 dimensionless structural datum, scope-(a). It does NOT reproduce any MeV (the Δ_λ
@@ -66,6 +83,7 @@ from _precision import fmt, set_compute_dps  # noqa: E402
 # alongside the Plancherel measure this probe aggregates with. See
 # docs/audits/2026-09-07-magnus-omega2-weight-family-analysis.md.
 from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
+from magnus_weight_family_note import weight_family_note  # noqa: E402
 
 # NO-FLOAT64 (owner directive 2026-08-18: probes are not exempt). Same precision
 # posture as the A=2 probe: the germ is a finite-difference q-derivative, so raise
@@ -131,9 +149,22 @@ def wedderburn_weight(shape, q):
 
     The name is fixed here; whether the Plancherel measure is the RIGHT pairing
     for a Magnus Ω₂ sign question is a separate matter and is not settled by
-    this rename. What IS settled (see `sign_robust_to_weight_family` in the
-    witness) is that the probe's headline conclusion — the sign of P_total —
-    does not depend on the choice.
+    this rename — it is bean qou-za3q decision 1, still OPEN.
+
+    This paragraph used to end "what IS settled is that the probe's headline
+    conclusion — the sign of P_total — does not depend on the choice." That
+    is FALSE and is now measured to be false. It came from the first run of
+    `magnus_omega2_weight_family_robustness_probe.py`, whose triton source
+    predated the 2026-09-05 ordering ruling (bean qou-hu1f); regenerating on
+    the canonical borromean word flipped triton's Plancherel P_total from
+    -108.147 to +2.470. The two families now run
+
+        Plancherel  -, +, +   over A = 2, 3, 4   (sign change at A: 2 -> 3)
+        Wenzl       -, -, -                      (no sign change anywhere)
+
+    so the choice decides whether the programme's target A-dependent sign
+    change is exhibited at all. That is a reason to settle decision 1, NOT a
+    reason to prefer whichever family yields the wanted sign.
     """
     n = sum(shape)
     rows = list(shape)
@@ -187,10 +218,17 @@ def main() -> None:
     # A=2 baseline (committed witness), for the sign-flip comparison
     a2_path = os.path.join(os.path.dirname(__file__), "deuteron-magnus-omega2-sign.witness.json")
     a2_sign = None
+    a2_wenzl_sign = None
     try:
         with open(a2_path) as fh:
             a2 = json.load(fh)["results"]
         a2_sign = int(a2["P_total_sign"])
+        # BOTH arms of the A=2 baseline (bean qou-q2q7). The flip verdict below
+        # used to be computed from the Plancherel arm alone and reported as
+        # "SIGN FLIP CONFIRMED" full stop, which is the whole finding stated on
+        # the arm that is NOT the declared headline: on the Wenzl arm there is
+        # no flip at A=3 at all. Reading both makes the verdict say which.
+        a2_wenzl_sign = int(a2["P_total_wenzl_sign"])
     except Exception:
         pass
 
@@ -241,7 +279,21 @@ def main() -> None:
     # stale block. That is the qou-5ovu lesson: a gate that answers "is this
     # entry PRESENT?" when the question is "is this entry CURRENT?" is how two
     # witnesses sat at a superseded convention for three weeks.
-    _stamp = hashlib.sha256(f"{Q0}|9".encode()).hexdigest()[:12]
+    # ...AND ON THE PRODUCER SOURCE (qou-z3q9, 2026-09-08). The stamp above
+    # keyed on q and the strand count ONLY, so a cache entry stayed "current"
+    # across a CODE change -- exactly the PRESENT-vs-CURRENT failure the
+    # paragraph above names, one axis over. Measured: while verifying the
+    # far-commutativity port, a PATCHED run over an existing cache printed
+    # `resumed 14/30 partitions` and served rows computed by the UNPATCHED
+    # code, which would have made the "is the output identical?" check
+    # circular -- 14 of 30 rows were literally the old code's output.
+    #
+    # Hashing the whole file means a comment-only edit also busts the cache.
+    # That is deliberate: the alternative (hash just the Omega2/germ block) is
+    # narrower but silently wrong the moment a helper outside the block moves,
+    # and this producer's cache is worth ~30 min, not ~30 h.
+    _src_sha = hashlib.sha256(pathlib.Path(__file__).read_bytes()).hexdigest()
+    _stamp = hashlib.sha256(f"{Q0}|9|{_src_sha}".encode()).hexdigest()[:12]
     _prog = pathlib.Path(os.path.dirname(__file__)) / ".triton_magnus_omega2_progress.jsonl"
     _done: dict[tuple, dict] = {}
     _dropped = 0
@@ -259,7 +311,8 @@ def main() -> None:
             _done[tuple(_r["row"]["lambda"])] = _r["row"]
         if _dropped:
             print(f"  dropped {_dropped} cached partitions computed at a "
-                  f"different q", flush=True)
+                  f"different q OR by a different version of this producer",
+                  flush=True)
         if _done:
             print(f"  resumed {len(_done)}/{len(PARTITIONS_9)} partitions from "
                   f"{_prog.name}", flush=True)
@@ -315,6 +368,7 @@ def main() -> None:
     _EXACT = mp.mpf(10) ** -30
     ctrl_ok = abs(P_ctrl) < _EXACT
     P_sign = 0 if abs(P_total) < _EXACT else (1 if P_total > 0 else -1)
+    P_wenzl_sign = 0 if abs(P_wenzl) < _EXACT else (1 if P_wenzl > 0 else -1)
     npos = sum(1 for r in rows if mp.mpf(r["tr_rho_Omega2"]) > _EXACT)
     nneg = sum(1 for r in rows if mp.mpf(r["tr_rho_Omega2"]) < -_EXACT)
     sign_indefinite = npos > 0 and nneg > 0
@@ -322,6 +376,37 @@ def main() -> None:
     flip = None
     if a2_sign is not None and P_sign != 0 and a2_sign != 0:
         flip = (P_sign != a2_sign)
+
+    # THE SAME QUESTION ON THE HEADLINE ARM (bean qou-q2q7). `flip` above is a
+    # Plancherel-arm fact; `flip_wenzl` is the same comparison under the
+    # production Markov weight, which is what `headline_pairing` declares. They
+    # differ — and the difference IS the result, so the verdict must carry
+    # both. Computed, never asserted: if a future run makes them agree, the
+    # prose changes with the numbers instead of going stale.
+    flip_wenzl = None
+    if a2_wenzl_sign is not None and P_wenzl_sign != 0 and a2_wenzl_sign != 0:
+        flip_wenzl = (P_wenzl_sign != a2_wenzl_sign)
+
+    def _both_arms() -> str:
+        if flip_wenzl is None:
+            return (" The headline Wenzl/Markov arm could not be compared (the A=2 "
+                    "baseline witness carries no P_total_wenzl_sign), so this verdict "
+                    "speaks only for the Plancherel arm.")
+        if flip_wenzl == flip:
+            return (f" The headline Wenzl/Markov arm AGREES: it also "
+                    f"{'flips' if flip_wenzl else 'does not flip'} between A=2 and A=3, "
+                    f"so the verdict does not depend on the open choice of pairing "
+                    f"measure (bean qou-za3q decision 1).")
+        return (f" ⚠ THE HEADLINE ARM DISAGREES. Under the production Wenzl/Markov "
+                f"weight — the one `headline_pairing` declares, and the one every "
+                f"other tr_M in the corpus uses — P(A=3) is "
+                f"{'positive' if P_wenzl_sign > 0 else 'negative'} and P(A=2) was "
+                f"{'positive' if a2_wenzl_sign > 0 else 'negative'}, i.e. "
+                f"{'a flip' if flip_wenzl else 'NO flip'}. So this verdict is a "
+                f"statement about the Plancherel arm ONLY. Reporting it as the "
+                f"result, when the measure that yields it was not chosen on "
+                f"principle, would be selection against the target (AGENTS.md). "
+                f"Which measure is correct is bean qou-za3q decision 1, still OPEN.")
 
     if not ctrl_ok:
         verdict = ("INVALID — control tr_M(Ω₂) did not vanish at A=3; germ or trace broken. "
@@ -331,22 +416,27 @@ def main() -> None:
                    "no A=3 sign to compare.")
     elif flip is True:
         verdict = (
-            f"SIGN FLIP CONFIRMED — P(A=3) is {'POSITIVE' if P_sign>0 else 'NEGATIVE'} while "
-            f"P(A=2) was {'NEGATIVE' if a2_sign<0 else 'POSITIVE'}. The y-weighted 2nd-order "
-            f"Magnus pairing REVERSES sign between the deuteron (A=2) and the triton (A=3), "
-            f"the signature the merged Magnus-wall audit named for a correction that reduces "
-            f"binding at A=2 and adds it at A≥3. Control tr_M(Ω₂)=0 holds; per-partition "
+            f"SIGN FLIP ON THE PLANCHEREL ARM — P(A=3) is "
+            f"{'POSITIVE' if P_sign>0 else 'NEGATIVE'} while "
+            f"P(A=2) was {'NEGATIVE' if a2_sign<0 else 'POSITIVE'}. The 2nd-order "
+            f"Magnus pairing weighted by the quantum Plancherel measure "
+            f"d_q(λ)²/[n]_q! REVERSES sign between the deuteron (A=2) and the triton "
+            f"(A=3), the signature the merged Magnus-wall audit named for a correction "
+            f"that reduces binding at A=2 and adds it at A≥3." + _both_arms() +
+            f" Control tr_M(Ω₂)=0 holds (weight-independently); per-partition "
             f"sign-indefinite ({npos}+/{nneg}-). HONEST LIMITS: dimensionless SIGN datum only "
             f"(scope-a); NOT a MeV (open Δ_λ gate), NOT a physical binding-sign assertion "
-            f"(that is qou-v7ro/#6077, cited not re-derived). The flip is a fact about the "
-            f"object across A; mapping it to 'binding' still needs the sign convention.")
+            f"(that is qou-v7ro/#6077, cited not re-derived). Mapping any of it to "
+            f"'binding' still needs the sign convention.")
     elif flip is False:
         verdict = (
-            f"NO FLIP — P(A=3) has the SAME sign as P(A=2) (both "
+            f"NO FLIP ON THE PLANCHEREL ARM — P(A=3) has the SAME sign as P(A=2) (both "
             f"{'negative' if P_sign<0 else 'positive'}). The simple 'negative at A=2 → "
             f"positive at A≥3' reading of the Magnus carrier does NOT hold at the triton: "
-            f"the A-dependence of the pairing sign is not a single flip at A=3. This does not "
-            f"retire the carrier (the A=2 sign stands, control=0, sign-indefinite {npos}+/{nneg}-), "
+            f"the A-dependence of the pairing sign is not a single flip at A=3." +
+            _both_arms() +
+            f" This does not retire the carrier (the A=2 sign stands, control=0, "
+            f"sign-indefinite {npos}+/{nneg}-), "
             f"but it constrains any story that assumed monotone sign reversal. scope-(a).")
     else:
         verdict = (f"A=3 sign measured (P {'>' if P_sign>0 else '<'} 0) but the A=2 baseline "
@@ -368,7 +458,10 @@ def main() -> None:
             "germ": "A_g = q·(∂_q σ_g)·σ_g⁻¹ (central finite diff; validated vs differentiated Hecke)",
             "Omega2": "½ Σ_{i<j} [A_{g_i},A_{g_j}] over the ordered crossings",
             "density": "ρ(β_T) = ∏ σ_{g_i} (bare word; central dressing drops from Ω₂)",
-            "pairing": "P = Σ_λ y_λ tr(ρ_λ Ω₂_λ), y_λ = d_q(λ)²/[n]_q!, λ ⊢ 9",
+            "pairing": ("P = Σ_λ w(λ) tr(ρ_λ Ω₂_λ), λ ⊢ 9, on both weight "
+                        "families: w = d_q(λ)²/[n]_q! (quantum Plancherel) → "
+                        "P_total; w = y_λ (Wenzl bridge, production Markov "
+                        "weight) → P_total_wenzl, the headline arm"),
         },
         "results": {
             "per_partition": rows,
@@ -378,14 +471,7 @@ def main() -> None:
             # from this witness, so renaming the field would break them; an
             # explicit declaration removes the ambiguity without that.
             "weight_family": "quantum_plancherel_dq2_over_n_factorial",
-            "weight_family_note": (
-                "NOT the Wenzl y_lambda used by the production Markov trace. "
-                "AGENTS.md forbids conflating y_lambda / w_lambda / w~_lambda, "
-                "which are distinct at q != 1. Re-weighting this witness's own "
-                "per-partition tr(rho.Omega2) with the Wenzl bridge weight "
-                "leaves the sign of P_total unchanged — measured in "
-                "magnus_omega2_weight_family_robustness_probe.py."
-            ),
+            "weight_family_note": weight_family_note(P_sign, P_wenzl_sign),
             # HEADLINE (Option A, bean qou-q2q7): the production Wenzl/Markov
             # weight. `P_total` above keeps its existing name and Plancherel
             # meaning deliberately — `he4_magnus_mpfr_probe.py` and the sparse
@@ -414,6 +500,15 @@ def main() -> None:
             "sign_indefinite_across_partitions": bool(sign_indefinite),
             "A2_P_total_sign": a2_sign,
             "sign_flip_vs_A2": flip,
+            # The same comparison on the arm `headline_pairing` declares. A
+            # consumer reading only `sign_flip_vs_A2` is reading the Plancherel
+            # arm — which is the legacy field name, kept because siblings read
+            # it, so the headline answer needs its own key rather than a
+            # silent re-meaning of that one.
+            "A2_P_total_wenzl_sign": a2_wenzl_sign,
+            "sign_flip_vs_A2_wenzl": flip_wenzl,
+            "sign_flip_arms_agree": (None if (flip is None or flip_wenzl is None)
+                                     else bool(flip == flip_wenzl)),
         },
         "verdict": verdict,
         "scope": (
@@ -441,8 +536,12 @@ def main() -> None:
     print(f"\nq0={mp.nstr(Q0,17)}  triton word: {mult}  ({len(gens)} crossings, 9 strands, H_9)")
     print(f"P_control (ρ=I, must be 0) = {mp.nstr(P_ctrl, 6)}  -> vanishes: {ctrl_ok}")
     print(f"P_total(A=3) = {mp.nstr(P_total, 8)}   sign = {P_sign:+d}   "
-          f"(per-partition {npos}+ / {nneg}-)")
-    print(f"A=2 sign was {a2_sign:+d}   ->   sign_flip = {flip}")
+          f"(per-partition {npos}+ / {nneg}-)   [Plancherel arm]")
+    print(f"P_total_wenzl(A=3) = {mp.nstr(P_wenzl, 8)}   sign = {P_wenzl_sign:+d}"
+          f"   [HEADLINE, production Markov weight]")
+    print(f"A=2 sign was {a2_sign:+d} (Plancherel) / "
+          f"{a2_wenzl_sign if a2_wenzl_sign is None else format(a2_wenzl_sign, '+d')} (Wenzl)"
+          f"   ->   sign_flip = {flip} (Plancherel) / {flip_wenzl} (Wenzl)")
     print(f"\n[verdict] {verdict}")
     print(f"wrote {out}")
     assert ctrl_ok, "control tr_M(Ω₂) must vanish by cyclicity"

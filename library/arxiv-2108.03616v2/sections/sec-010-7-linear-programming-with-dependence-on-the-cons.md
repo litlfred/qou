@@ -8,34 +8,21 @@ pages: 24-25
 source_pdf: 2108.03616v2.pdf
 source_sha256: 63696ad045602440
 doc_brief: "Circuit imbalance measures and linear programming ∗ — We study properties and applications of various circuit imbalance mea sures associated with linear spaces."
+text_source: latex
+latex_prose_ratio: 0.929
+latex_coverage_ratio: 0.976
 ---
-trix only
-Recent years have seen tremendous progress in the developme nt of more eﬃcient LP algo-
-rithms using interior point methods, see e.g. [ CLS19, LS19, vdBLN+20, vdBLL+21] and refer-
-ences therein. These algorithms are weakly polynomial, i.e., their running time depends on the
-encoding length of the input ( A,b,c ) of LP(A,b,c ).
-A fundamental open problem is the existence of a strongly polynomial LP algorithm; this was
-listed by Smale as one of the key open problems in mathematics for the 21st century [ Sma98].
-The number of arithmetic operations of such an algorithm wou ld be polynomial in the number
-n of variables and m of constraints, but independent of the input length.
-Towards this end, there is a line of work on developing algori thms with running time depend-
-ing only on the constraint matrix A, while removing the dependence on b and c. This direction
-was pioneered by Tardos’s 1985 paper [ Tar86], giving an algorithm for LP(A,b,c ) with integral
-A that has runtime poly( m,n, log ∆ A).
-A breakthrough work by Vavasis and Ye [ VY96] introduced a Layered Least Squares Interior-
-Point Method that solves LP(A,b,c ) withinO(n3.5 log( ¯χA +n)) iterations, each requiring to solve
-a linear system. Recall from Theorem 4.2 that log( ¯χA +n) = Θ(log( κA +n)); also recall from
-Proposition 3.2 that κA≤ ∆ A.
-Recently, [ DHNV20] improved the Vavasis–Ye bound to O(n2.5 log(n) log( ¯χ∗
-A +n)) linear
-system solves, where ¯χ∗
-A is the optimized version of ¯ χA, analogous to κ∗
-A deﬁned in Section 5.
-The key insight of this work is using the circuit imbalance me asureκA as a proxy to ¯χA. These
-results are discussed in Section 7.2.
-Section 7.1 exhibits another recent paper [ DNV20] that extends Tardos’s black-box frame-
-work to solve LP in runtime poly( m,n, log(¯κA +n)), based on the proximity results in Section 6.
-We note that using an initial rescaling as in Theorem 5.1, we can obtain poly( m,n, log(¯κ∗
-A +n))
-runtimes from these algorithms.
-24
+\label{sec:only-A}
+
+Recent years have seen tremendous progress in the development of more efficient 
+LP algorithms using interior point methods, see e.g. \cite{CLS19,LS19,Brand2020,Brand2021} and references therein. These algorithms are \emph{weakly} polynomial, i.e., their running time depends on the encoding length of the input $(A,b,c)$ of \ref{LP_primal_dual}.
+
+A fundamental open problem is the existence of a \emph{strongly} polynomial LP algorithm; this was listed by Smale as one of the key open problems  in mathematics for the 21st century \cite{Smale98}. The number of arithmetic operations of such an algorithm would be polynomial in the number $n$ of variables  and $m$ of constraints, but independent of the input length.
+
+Towards this end, there is a line of work on developing algorithms with running time depending only on the constraint matrix $A$, while removing the  dependence on $b$ and $c$. This direction was pioneered by Tardos's 1985 paper \cite{Tardos86}, giving an algorithm for \ref{LP_primal_dual} with integral $A$ that has runtime $\poly(m,n,\log \Delta_A)$.
+
+A breakthrough work by  Vavasis and Ye \cite{Vavasis1996} introduced a \emph{Layered Least Squares Interior-Point Method} that solves \ref{LP_primal_dual} within $O(n^{3.5} \log (\bar \chi_A+n))$ iterations, each requiring to solve a linear system. Recall from Theorem~\ref{theorem:kappa_chi_bar_approx} that $\log (\bar \chi_A+n)=\Theta(\log(\kappa_A+n))$; also recall from  Proposition~\ref{prop:kappa-delta}  that $\kappa_A\le\Delta_A$.
+
+Recently, \cite{DHNV20} improved the Vavasis--Ye bound to  $O(n^{2.5} \log(n) \log (\bar \chi_A^*+n))$ linear system solves, where $\bar \chi_A^*$ is the optimized version of $\bar\chi_A$, analogous to $\kappa^*_A$ defined in Section~\ref{subsec:def_chi_bar_star}. The key insight of this work is using  the circuit imbalance measure $\kappa_A$ as a proxy to $\bar\chi_A$. These results are discussed in Section~\ref{sec:LLS}.
+
+Section~\ref{sec:black-box} exhibits another recent paper \cite{DadushNV20} that extends Tardos's black-box framework  to solve LP in runtime $\poly(m,n,\log (\bar \Le_A+n))$, based on the proximity results in Section~\ref{sec:hoffman}. We note that using an initial rescaling as in Theorem~\ref{thm:bar-chi-star}, we can obtain $\poly(m,n,\log (\bar \Le^*_A+n))$ runtimes from these algorithms.

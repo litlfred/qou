@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/s40879-023-00706-0/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Bring's curve: old and new",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s40879-023-00706-0",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Bring’s curve: old and new",
   "contains": [
     "library/s40879-023-00706-0/sections/sec-000",
     "library/s40879-023-00706-0/sections/sec-001",
@@ -30,8 +35,11 @@
     "library/s40879-023-00706-0/sections/sec-021"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "s40879-023-00706-0",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "s40879-023-00706-0.pdf",
     "source_sha256": "4c5af312d2e5d6a75f1a67146f769bd8b1d959132ed411b7f8be07df6416037e",
     "pages": 46,

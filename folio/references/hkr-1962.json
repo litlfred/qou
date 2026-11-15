@@ -1,0 +1,33 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "hkr-1962",
+  "type": "article-journal",
+  "title": "Differential forms on regular affine algebras",
+  "author": [
+    {
+      "family": "Hochschild",
+      "given": "Gerhard"
+    },
+    {
+      "family": "Kostant",
+      "given": "Bertram"
+    },
+    {
+      "family": "Rosenberg",
+      "given": "Alex"
+    }
+  ],
+  "container-title": "Transactions of the American Mathematical Society",
+  "volume": "102",
+  "page": "383-408",
+  "issued": {
+    "date-parts": [
+      [
+        1962
+      ]
+    ]
+  },
+  "DOI": "10.1090/S0002-9947-1962-0142598-8",
+  "URL": "https://doi.org/10.1090/S0002-9947-1962-0142598-8",
+  "note": "The Hochschild–Kostant–Rosenberg theorem: for a smooth (regular) commutative algebra over a field of characteristic 0, Hochschild homology is the module of differential forms, HH_n(A) = Omega^n_A. Cited by rem:hkr-theorem as a THEOREM about the commutative fibre; the q != 1 identification is not this theorem (see conj:wigner-axiom and docs/audits/2026-09-15-chi-as-a-component-of-the-chern-character.md). Not ingested."
+}

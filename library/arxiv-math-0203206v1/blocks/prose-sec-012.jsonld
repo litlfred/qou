@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0203206v1/blocks/prose-sec-012",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0203206v1/blocks/prose-sec-012",
   "kind": "prose",
-  "title": "(ε ⊗ι)(∆(a)(1 ⊗b)) = ab,",
-  "pageStart": 7,
-  "pageEnd": 7,
-  "text": "../sections/sec-012-1-ε-ιa1-b-ab.md",
-  "derivedFrom": "library/arxiv-math-0203206v1/manifest",
-  "sourceDocument": "library/arxiv-math-0203206v1/manifest",
+  "title": "Conjugates and Antipodes: Discrete Quantum Groups",
+  "pageStart": 32,
+  "pageEnd": 37,
+  "text": "../sections/sec-012-53-conjugates-and-antipodes-discrete-quantum-gro.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203206v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203206v1",
   "provenance": "ingested"
 }

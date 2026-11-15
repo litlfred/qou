@@ -8,743 +8,376 @@ pages: 9-16
 source_pdf: 1907.00949v2.pdf
 source_sha256: 865defaa34bf42be
 doc_brief: "OPTIMIZATION ON FLAG MANIFOLDS — A ﬂag is a sequence of nested subspaces."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.98
 ---
-We will discuss three representations of the ﬂag manifold as matrix homogeneous spaces , i.e.,
-where a ﬂag is represented as an equivalence class of matrices:
-Flag(n1,...,n d;n)∼= O(n)/
-(
-O(n1)× O(n2−n1)×···× O(nd−nd−1)× O(n−nd)
-)
-, (8)
-Flag(n1,...,n d;n)∼= SO(n)/ S
-(
-O(n1)× O(n2−n1)×···× O(nd−nd−1)× O(n−nd)
-)
-, (9)
-Flag(n1,...,n d;n)∼= V(nd,n )/
-(
-O(n1)× O(n2−n1)×···× O(nd−nd−1)
-)
-. (10)
-The characterization (8) is standard [27, 11] and generalizes the well-known characterization of the
-Grassmannian as Gr(k,n )∼= O(n)/
-(
-O(k)× O(n−k)
-)
-whereas the characterization (10) generalizes
-another well-known characterization of the Grassmannian as Gr( k,n )∼= V(k,n )/ O(k).
-Nevertheless, we will soon see that it is desirable to describe Flag(n1,...,n d;n) as a homogeneous
-spaceG/H whereG is a connected Lie group — note that O(n) is not connected whereas V(nd,n )
-is not a group, so (8) and (10) do not meet this criterion. With this in mind, we state and prove
-(9) formally.
-Proposition 4.1. Let 0 < n1 < ··· < nd < n be d positive integers. The ﬂag manifold
-Flag(n1,...,n d;n) is diﬀeomorphic to the homogeneous space
-SO(n)/ S
-(
-O(n1)× O(n2−n1)×···× O(nd−nd−1)× O(n−nd)
-)
-where S
-(
-O(n1)× O(n2−n1)×···× O(nd−nd−1)× O(n−nd)
-)
-is the subgroup of unit-determinant
-block diagonal matrices with orthogonal blocks, i.e.,
-
-
-Q1 0 ... 0
-0 Q2 ... 0
-... ... ... ...
-0 0 ... Q d+1
-
-∈ O(n), Q i∈ O(ni−ni−1), i = 1,...,d + 1,
-d+1∏
-i=1
-det(Qi) = 1.
-Proof. We start with the characterization (8), i.e., in this proof we assume ‘=’ in place of ‘ ∼=’ in
-(8). We claim that the required diﬀeomorphism τ is given as in the commutative diagram below:
-SO(n) O(n)
-SO(n)/ S
-(
-O(n1)× O(n2−n1)×···× O(n−nd)
-)
-Flag(n1,...,n d;n)
-j
-π′ π
-τ
-Herej is the inclusion of SO(n) in O(n),π andπ′ the respective quotient maps, and τ the induced
-map. Since
-SO(n)∩
-(
-O(n1)× O(n2−n1)×···× O(n−nd)
-)
-= S
-(
-O(n1)× O(n2−n1)×···× O(n−nd)
-)
-,
-10 K. YE, K. S.-W. WONG, AND L.-H. LIM
-τ is injective. To show that it is surjective, let {Vi}d
-i=1∈ Flag(n1,...,n d;n) be a ﬂag represented
-by some A∈ O(n), i.e., π(A) ={Vi}d
-i=1. If det(A) = 1, then we already have τ(π1(A)) ={Vi}d
-i=1
-by commutativity of the diagram. If det( A) =−1, take any A1∈ O(n1) with det(A1) =−1, set
-B =A
-
-
-A1 0 ··· 0
-0 In2−n1 ··· 0
-... ... ... ...
-0 0 ··· In−nd
-
-∈ SO(n),
-and observe that τ(π1(B)) =π(B) =π(A). □
-4.1. Orthogonal coordinates for the ﬂag manifold. An immediate consequence of Propo-
-sition 4.1 is that the ﬂag manifold is connected. The characterization (9) says that a point on
-Flag(n1,...,n d;n) may be represented by the equivalence class of matrices
-JQK =
-
-
-Q
-
-
-Q1 0 ... 0
-0 Q2 ... 0
-... ... ... ...
-0 0 ... Q d+1
-
- :Qi∈ O(ni−ni−1), i= 1,...,d + 1,
-d+1∏
-i=1
-detQi = 1
-
-
- (11)
-for someQ∈ SO(n). We will call such a representation orthogonal coordinates for the ﬂag manifold.
-The Lie algebra of S
-(
-O(n1)× O(n2−n1)×···× O(n−nd)
-)
-is simply so(n1)× so(n2−n1)×
-···× so(n−nd), which we will regard as a Lie subalgebra of block diagonal matrices,
-h =
-
-
-
-
-
-A1 0 ... 0
-0 A2 ... 0
-... ... ... ...
-0 0 ... A d+1
-
-∈ so(n) : A1∈ so(n1),A 2∈ so(n2−n1),...
-...,A d+1∈ so(n−nd)
-
-
-. (12)
-Let m be the natural complement of h in so(n),
-m =
-
-
-
-
-
-0 B1,2 ... B 1,d+1
-−BT
-1,2 0 ... B 2,d+1
-... ... ... ...
-−BT
-1,d+1−BT
-2,d+1 ... 0
-
-∈ so(n) : Bij∈ R(ni−ni−1)×(nj−nj−1),
-1≤i<j ≤d + 1
-
-
-
-. (13)
-In particular, we have the direct sum decomposition so(n) = h⊕ m as vector spaces.
-The groups O(n) and O(n1)× O(n2−n1)×···× O(n−nd) have the same Lie algebras as SO(n)
-and S
-(
-O(n1)×O(n2−n1)×···× O(n−nd)
-)
-, namely, so(n) and so(n1)×so(n2−n1)×···× so(n−nd)
-respectively. The tangent space of a homogeneous space G/H at any point is a translation of the
-tangent space at the identity element JHK∈G/H, which depends only on the Lie algebras g and
-h of G and H respectively:
-TJHKG/H≃ g/h,
-a fact that we will use in the proof of Proposition 4.3. As such we do not need to distinguish the
-two homogeneous space structures (8) and (9) when we discuss geometric quantities associated with
-tangent spaces, e.g., geodesic, gradient, Hessian, parallel transport. In the sequel we will make free
-use of this ﬂexibility in switching between (8) and (9).
-Proposition 4.2. Let h and m be as in (12) and (13) andH = O(n1)×O(n2−n1)×···× O(n−nd).
-Then the subspace m is AdH-invariant, i.e., Ad(a)(X)∈ m for every a∈H and X∈ m.
-Proof. We need to show that Ad(a)(X)∈ m whenevera∈H andX∈ m. For notational simplicity,
-we assume d = 2. Let
-a =
-[
-A1 0 0
-0 A2 0
-0 0 A3
-]
-and X =
-[ 0 B1,2 B1,3
-−BT
-1,2 0 B2,3
-−BT
-1,3−BT
-2,3 0
-]
-,
-OPTIMIZATION ON FLAG MANIFOLDS 11
-where Ai ∈ O(ni−ni−1), i = 1, 2, 3, and Bij ∈ R(ni−ni−1)×(nj−nj−1), 1 ≤ i < j≤ 3. Then
-Ad(a)(X) =aXa−1 =aXa T since a is an orthogonal matrix; and we have
-aXa T =
-[
-A1 0 0
-0 A2 0
-0 0 A3
-][ 0 B1,2 B1,3
-−BT
-1,2 0 B2,3
-−BT
-1,3−BT
-2,3 0
-][
-AT
-1 0 0
-0 AT
-2 0
-0 0 AT
-3
-]
-=
-[ 0 A1B1,2AT
-2 A1B1,3AT
-3
-−A2BT
-1,2AT
-1 0 A2B2,3AT
-3
-−A3BT
-1,3AT
-1−A3BT
-2,3AT
-2 0
-]
-∈ m
-as required. □
-We now have all the ingredients necessary for deriving closed-form analytic expressions for the
-tangent space, metric, geodesic, geodesic distance, and parallel transport on a ﬂag manifold in
-orthogonal coordinates. We begin with the representation of a tangent space as a vector space of
-matrices.
-Proposition 4.3 (Tangent space I). Let JQK∈ Flag(n1,...,n d;n) = O(n)/
-(
-O(n1)× O(n2−n1)×
-···× O(nd−nd−1)× O(n−nd)
-)
-be represented by Q∈ O(n). Its tangent space at JQK is given by
-TJQK Flag(n1,...,n d;n) ={QB∈ Rn×n :B∈ m}
-=
-
-
-
-Q
-
-
-0 B1,2 ... B 1,d+1
-−BT
-1,2 0 ... B 2,d+1
-... ... ... ...
-−BT
-1,d+1−BT
-2,d+1 ... 0
-
-∈ Rn×n : Bi,j∈ R(ni−ni−1)×(nj−nj−1),
-1≤i<j ≤d + 1
-
-
-
-.
-In particular, the dimension of a ﬂag manifold is given by
-dim Flag(n1,...,n d;n) =
-∑
-1≤i<j≤d+1
-(ni−ni−1)(nj−nj−1).
-Proof. Let M = Flag(n1,...,n d;n). For Q = I, the identity matrix, this follow from TJIKM ≃
-g/h≃ m. For Q arbitrary, the left translationLQ :M→M is a diﬀeomorphism, which means that
-(dLQ)JIK : TJIKM→ TJQKM is an isomorphism. The result then follows from ( dLQ)JIK(X) = QX
-for all X∈TJIKM. □
-There are several ways to equip Flag( n1,...,n d;n) with a Riemannian metric but there is a
-distinguished choice that is given by a negative multiple of the Killing form of so(n), although we
-will not need to introduce this concept.
-Proposition 4.4 (Riemannian metric I). The metric g on Flag(n1,...,n d;n) deﬁned by
-gJQK(X,Y ) = 1
-2 tr(X TY ) (14)
-for all X,Y ∈TJQK Flag(n1,...,n d;n) is an SO(n)-invariant metric. If we write
-X =Q
-
-
-0 B1,2 ... B 1,d+1
-−BT
-1,2 0 ... B 2,d+1
-... ... ... ...
-−BT
-1,d+1−BT
-2,d+1 ... 0
-
-, Y =Q
-
-
-0 C1,2 ... C 1,d+1
-−CT
-1,2 0 ... C 2,d+1
-... ... ... ...
-−CT
-1,d+1−CT
-2,d+1 ... 0
-
-∈ Rn×n,
-whereBij,Cij∈ R(ni−ni−1)×(nj−nj−1), 1≤i<j ≤d, then g may be expressed as
-gJQK(X,Y ) =
-∑
-1≤i<j≤d+1
-tr(BT
-ijCij). (15)
-Proof. We will ﬁrst need to establish an Ad SO(n)-invariant inner product on so(n). It is a standard
-fact [31] that bi-invariant metrics on a Lie group G are in one-to-one correspondence with Ad G-
-invariant inner products on its Lie algebra g. In our case, G = SO(n), g = so(n), and Ad SO(n) :
-SO(n)→ GL(so(n)). Since SO(n) is compact, by Proposition 2.4 it has a bi-invariant metric, which
-corresponds to an Ad SO(n)-invariant inner product on so(n).
-12 K. YE, K. S.-W. WONG, AND L.-H. LIM
-Whenn⁄= 2, 4, so(n) is a simple Lie algebra and so the AdSO(n)-invariant inner product is unique
-up to a scalar multiple. When n = 2, SO(2) is one-dimensional and thus abelian, so the bi-invariant
-metric on SO(2) is unique up to a scalar. When n = 4, SO(4) ≃ SO(3)× SO(3) as Lie groups,
-so it has a two-dimensional family of bi-invariant metrics. For all values of n, we may take our
-AdSO(n)-invariant inner product (the choice is unique for all n⁄= 4) as
-⟨X,Y⟩ := 1
-2 tr(X TY ) (16)
-for all X,Y ∈ so(n).
-LetG = SO(n) andH = S
-(
-O(n1)×O(n2−n1)×···× O(n−nd)
-)
-. We will use the characterization
-of a ﬂag manifold in (9), i.e., Flag( n1,...,n d;n) = G/H. Since m is a subspace of so(n), the
-restriction of⟨·,·⟩ in (16) to m, denoted by⟨·,·⟩m, is an inner product on m. It is easy to verify that
-⟨·,·⟩m is AdH-invariant. Taken together with Propositions 2.3, 2.4, and 4.2, we have that ⟨·,·⟩m
-uniquely determines a G-invariant metricg on G/H, as required. □
-Unsurprisingly the metric g in Proposition 4.4 coincides with the canonical metric on Grass-
-mannian (d = 1) introduced in [16]. It also follows from Theorem 2.5 that, with this metric g,
-Flag(n1,...,n d;n) is not merely a Riemannian manifold but also a geodesic orbit space. In fact,
-g is the only choice of a metric that makes Flag( n1,...,n d;n) into a geodesic orbit space [3].
-We will next derive explicit analytic expressions for geodesic (Propositions 4.5 and 4.7), arclength
-(Corollary 4.6), geodesic distance (Proposition 4.8), and parallel transport (Proposition 4.9).
-Proposition 4.5 (Geodesic I). Let JQK∈ Flag(n1,...,n d;n) = O(n)/
-(
-O(n1)×···× O(n−nd)
-)
-and g be the metric in (15). Every geodesic on Flag(n1,...,n d;n) passing through JQK takes the
-form
-JQ(t)K =
-
-
-Q exp(tB)
-
-
-Q1 0 ... 0
-0 Q2 ... 0
-... ... ... ...
-0 0 ... Q d+1
-
-∈ O(n) :Qi∈ O(ni−ni−1), i= 1,...,d + 1
-
-
-,
-for some direction
-B =
-
-
-0 B1,2 ... B 1,d+1
-−BT
-1,2 0 ... B 2,d+1
-... ... ... ...
-−BT
-1,d+1−BT
-2,d+1 ... 0
-
-∈ Rn×n, Bij∈ R(ni−ni−1)×(nj−nj−1),
-1≤i<j ≤d + 1. (17)
-Proof. Since Flag(n1,...,n d;n) with the metric g in Proposition 4.4 is a geodesic orbit space, the
-result follows immediately from Theorem 2.6. □
-Corollary 4.6 (Arclength I). The arclength of a geodesic γ(t) = JQ(t)K passing through Q in the
-directionB is given by
-‖γ(t)‖ =t
-[∑
-1≤i<j≤d+1
-tr(BT
-ijBij)
-]1/2
-=t
-√
-tr(BTB)
-2 ,
-whereB is as in (17).
-Proof. This follows from the deﬁnition of arclength
-‖γ(t)‖ :=
-∫ t
-0
-√
-gJQK(γ′(x),γ′(x))dx
-and the expressions for g in (14) and (15). □
-OPTIMIZATION ON FLAG MANIFOLDS 13
-Proposition 4.7 (Geodesic II). Letγ be a geodesic in Flag(n1,...,n d;n) = O(n)/
-(
-O(n1)×···×
-O(n−nd)
-)
-with γ(0) = JQK for some Q∈ O(n) and γ′(0) = H∈ TJQK Flag(n1,...,n d;n). Let
-QTH =VDV T with V ∈ O(n) and
-D = diag
-([
-0 −λ1
-λ1 0
-]
-,...,
-[
-0 −λr
-λr 0
-]
-, 0n−2r
-)
-∈ so(n), (18)
-where 2r = rank(QTH) and λ1,...,λ r are positive real numbers. Then γ(t) = JUΣ(t)V TK where
-U =QV ∈ O(n) and
-Σ(t) = diag
-([
-costλ1 − sintλ1
-sintλ1 costλ1
-]
-,...,
-[
-costλr − sintλr
-sintλr costλr
-]
-,In−2r
-)
-∈ O(n). (19)
-Proof. By Proposition 4.5, the geodesic γ takes the form γ(t) = JQ exp(tB)K for some B∈ so(n)
-and Q∈ O(n) representing γ(0). Hence we have H = γ′(0) = QB and QTH = B. Since B is a
-skew-symmetric and thus a normal matrix, by the spectral theorem [5, Theorem 7.25], B =VDV T
-for some V ∈ O(n) and D of the form in (18), with 2r = rank(B) = rank(QTH) and λ1,...,λ r are
-positive reals as they are singular values of B. Therefore,
-Q exp(tB) =UΣ(t)V T,
-where U =QV and Σ(t) is as in (19). □
-Proposition 4.8 (Geodesic distance). The geodesic distance with respect to the metric g between
-JP K, JQK∈ Flag(n1,...,n d;n) = O(n)/
-(
-O(n1)×···× O(n−nd)
-)
-is
-d(JP K, JQK) =
-√∑r
-i=1
-λ2
-i, (20)
-whereλ1,...,λ r are positive real numbers such that P TQ =V ΣV T with V ∈ O(n) and
-Σ = diag
-([
-cosλ1 − sinλ1
-sinλ1 cosλ1
-]
-,...,
-[
-cosλr − sinλr
-sinλr cosλr
-]
-, 0n−2r
-)
-.
-Proof. By Proposition 3.2(iii), we may regard Flag(n1,...,n d;n) as a closed, and therefore compact,
-submanifold of Gr(n1,n )×···× Gr(nd,n ). By Theorem 2.7, there is a distance minimizing geodesic
-JP exp(tB)K connecting JP K and JQK. By Corollary 4.6, we get (20) with λ1,λ 1,...,λ r,λr the
-nonzero singular values of B. Lastly, by Proposition 4.7, we get the decomposition P TQ =V ΣV T
-for some V ∈ O(n). □
-Let m be as in (13). For B∈ m, we deﬁne a map
-ϕB : m→ m, X ↦→ 1
-2[B,X ]m := 1
-2 projm([B,X ]), (21)
-where proj m : so(n)→ m is the projection from so(n) = h⊕ m to m. For example, if d = 2 and
-B =
-
-
-0 B12 B13
-−BT
-12 0 B23
-−BT
-13 −BT
-23 0
-
-∈ m, X =
-
-
-0 X12 X13
-−X T
-12 0 X23
-−X T
-13 −X T
-23 0
-
-∈ m,
-where Bij,Xij∈ R(ni−ni−1)×(nj−nj−1), 1≤i<j ≤ 3, then
-ϕB(X) =
-
-
-0 −B12X T
-23 +X12BT
-23 B11X23−X11B23
-X23BT
-12−B23X T
-12 0 −B11X T
-12 +X11BT
-12
-−X T
-23BT
-11 +BT
-23X T
-11 X12BT
-11−B12X T
-11 0
-
-∈ m.
-Proposition 4.9 (Parallel transport I) . Let B,X ∈ TJIK Flag(n1,...,n d;n) ∼= m and JQK ∈
-Flag(n1,...,n d;n). The parallel transport of QX ∈ TJQK Flag(n1,...,n d;n) along the geodesic
-JQ exp(tB)K is
-X(t) =Q exp(tB)e−ϕtB(X), (22)
-14 K. YE, K. S.-W. WONG, AND L.-H. LIM
-wheree−ϕB : m→ m, for ϕB as in (21), is deﬁned by
-e−ϕB =
-∞∑
-k=0
-(−1)k
-k! ϕk
-B. (23)
-Proof. This follows from applying [36, Lemma 3.1] to Flag( n1,...,n d;n). □
-For the d = 1 case, i.e., Flag( k;n) = Gr(k,n ), it is straightforward to verify that [ B,X ]m = 0
-for all B,X ∈ m. So the expression for parallel transport in (22) reduces to X(t) = Q exp(tB)X,
-which is the well-known expression for parallel transport on the Grassmannian [16].
-4.2. Stiefel coordinates for the ﬂag manifold. We next discuss the characterization of a ﬂag
-manifold as a quotient of the Stiefel manifold (10) and discuss its consequences. This characteri-
-zation will give our coordinates of choice for use in our optimization algorithms (see Section 6).
-Proposition 4.10. Let 0 < n1 < ··· < nd < n be d positive integers. The ﬂag manifold
-Flag(n1,...,n d;n) is diﬀeomorphic to the homogeneous space
-V(nd,n )/
-(
-O(n1)× O(n2−n1)×···× O(nd−nd−1)
-)
-(24)
-where V(nd,n ) is the Stiefel manifold of orthonormal nd-frames in n.
-Proof. This follows from the standard characterization of V(nd,n ) is a homogeneous space ofO(n),
-V(nd,n )∼= O(n)/ O(n−nd), together with (8). □
-For the rest of this article, we will regard the Stiefel manifold V( k,n ) as the set of all n×k
-matrices whose column vectors are orthonormal. With this identiﬁcation, Proposition 4.10 allows
-us to represent a ﬂag {Vi}d
-i=1∈ Flag(n1,...,n d;n) by a matrix Y = [y1,...,y nd]∈ Rn×nd with
-orthonormal y1,...,y nd∈ Rn and where the ﬁrst ni of them span the subspace Vi, i = 1,...,d .
-This representation is not unique but if Y′∈ Rn×nd is another such matrix, then
-Y′ =Y
-
-
-Q1 0 ... 0
-0 Q2 ... 0
-... ... ... ...
-0 0 ... Q d
-
-, Q i∈ O(ni−ni−1), i = 1,...,d. (25)
-Hence{Vi}d
-i=1∈ Flag(n1,...,n d;n) may be represented by the equivalence class of matrices
-JY K =
-
-
-Y
-
-
-Q1 0 ... 0
-0 Q2 ... 0
-... ... ... ...
-0 0 ... Q d
-
-∈ Rn×nd : Y ∈ V(nd,n ), span{y1,...,y ni} = Vi,
-Qi∈ O(ni−ni−1), i= 1,...,d
-
-
-. (26)
-We will call such a representation Stiefel coordinates for the ﬂag manifold.
-In the following, for any k<n , we write
-In,k :=
-[
-Ik
-0
-]
-∈ Rn×k,
-i.e., the n×k matrix comprising the ﬁrst k columns of the n×n identity matrix In. Thus for any
-A = [a1,...,a n]∈ Rn×n, AIn,k = [a1,...,a k]∈ Rn×k gives us the ﬁrst k columns of A.
-For a ﬂag{Vi}d
-i=1, it is easy to convert between its orthogonal coordinates, i.e., JQK in (11) with
-Q∈ O(n), and its Stiefel coordinates, i.e., JY K in (26) withY ∈ V(nd,n ). Given Q∈ O(n), one just
-takes its ﬁrstnd columns to getY =QIn,nd; note thatQIn,ni is automatically an orthonormal basis
-for the subspace Vi,i = 1,...,d . Given Y ∈ V(nd,n ), take any orthonormal basisY⊥∈ V(n−nd,n )
-of the orthogonal complement of im(Y ) to get Q = [Y,Y ⊥]∈ O(n).
-We now derive expressions for tangent space, metric, arclength, geodesic, and parallel transport
-in Stiefel coordinates.
-OPTIMIZATION ON FLAG MANIFOLDS 15
-Proposition 4.11 (Tangent space II). Let JY K∈ Flag(n1,...,n d;n) = V(nd,n )/
-(
-O(n1)× O(n2−
-n1)×···× O(nd−nd−1)
-)
-be represented by Y ∈ V(nd,n ). Its tangent space at JY K is given by
-TJY K Flag(n1,...,n d;n) ={[Y,Y ⊥]BIn,nd∈ Rn×nd :B∈ m},
-whereY⊥∈ V(n−nd,n ) is such that [Y,Y ⊥]∈ O(n) and m is as in (13).
-Proof. The calculation is straightforward and details can be found in [29]. Essentially it follows
-from diﬀerentiating a curveτ(t) in Flag(n1,...,n d;n) withτ(0) = JY K and noting that the tangent
-vectorτ′(0) is perpendicular to h in (12), whose orthogonal complement is precisely m. □
-The description of TJY K Flag(n1,...,n d;n) in Proposition 4.11 is a parametric one (like the de-
-scription of the unit circle as{(cosθ, sinθ) :θ∈ [0, 2π)}). We may also derive an implicit description
-of TJY K Flag(n1,...,n d;n) (like the description of the unit circle as {(x,y ) :x2 +y2 = 1}).
-Corollary 4.12 (Tangent space III). Let JY K∈ Flag(n1,...,n d;n) = V(nd,n )/
-(
-O(n1)× O(n2−
-n1)×···× O(nd−nd−1)
-)
-be represented by Y ∈ V(nd,n ). Let Y be partition as
-Y = [Y1,...,Y d], Y i∈ V(ni−ni−1,n ), i = 1,...,d.
-Then its tangent space at JY K is given by
-TJY K Flag(n1,...,n d;n) ={[X1,...,X d]∈ Rn×nd :Xi∈ Rn×(ni−ni−1),
-Y T
-i Xj +X T
-iYj = 0, YT
-i Xi = 0, 1≤i,j ≤d}. (27)
-Equivalently, the matrix [X1,...,X d] can be expressed as
-[X1,...,X d] = [Y1,...,Y d,Y ⊥]
-
-
-0 B1,2 ... B 1,d
-−BT
-1,2 0 ... B 2,d
-... ...
-... ...
-−BT
-1,d −BT
-2,d ... 0
-−BT
-1,d+1−BT
-2,d+1 ... −BT
-d,d+1
-
-,
-whereY⊥∈ V(n−nd,n ) is such that [Y,Y ⊥]∈ O(n) and Bij∈ R(ni−ni−1)×(nj−nj−1), 1≤i<j ≤
-d + 1.
-Proof. Since [Y1,...,Y d]∈ V(nd,n ) and Yi∈ V(ni−ni−1,n ), the Yi’s are characterized by
-Y T
-i Yi =Ini−ni−1, Y T
-i Yj = 0, i ⁄=j = 1,...,d. (28)
-Diﬀerentiating (28) gives us the ﬁrst relation in (27). On the other hand, by Proposition 4.11 we
-notice that a tangent vector in TJY K Flag(n1,...,n d;n) is written as [Y,Y ⊥]BIn,nd for some B∈ m,
-from which we may easily verify the second relation in (27). □
-Comparing Propositions 4.3 and 4.11, for a tangent vector QB ∈ TJQK Flag(n1,...,n d;n) in
-orthogonal coordinates Q∈ O(n), its corresponding tangent vector in Stiefel coordinates Y =
-QIn,nd∈ V(nd,n ) is simply given byQBIn,nd∈TJY K Flag(n1,...,n d;n). Conversely, [Y,Y ⊥]BIn,nd∈
-TJY K Flag(n1,...,n d;n) in Stiefel coordinates corresponds to QB∈ TJQK Flag(n1,...,n d;n) in or-
-thogonal coordinates where Q = [Y,Y ⊥]. Note that from the matrix BIn,nd, i.e., just the ﬁrst nd
-columns of B∈ m, the full matrix B can be easily and uniquely recovered by its skew symmetry.
-The straightforward translation between orthogonal and Stiefel coordinate representations of
-points and tangent vectors on a ﬂag manifold allows us to immediately deduce analogues of Propo-
-sitions 4.4, 4.5, 4.9, and Corollary 4.6.
-Proposition 4.13 (Riemannian metric II) . The metric g at a point JY K∈ Flag(n1,...,n d;n) =
-V(nd,n )/
-(
-O(n1)× O(n2−n1)×···× O(nd−nd−1)
-)
-is given by
-gJY K(W,Z ) =
-∑
-1≤i<j≤d+1
-tr(BT
-ijCij), (29)
-16 K. YE, K. S.-W. WONG, AND L.-H. LIM
-whereW,Z∈TJY K Flag(n1,...,n d;n) are
-W = [Y,Y ⊥]
-
-
-0 B1,2 ... B 1,d
-−BT
-1,2 0 ... B 2,d
-... ... ... ...
-−BT
-1,d −BT
-2,d ··· 0
-−BT
-1,d+1−BT
-2,d+1 ... −BT
-d,d+1
-
-, Z = [Y,Y ⊥]
-
-
-0 C1,2 ... C 1,d
-−CT
-1,2 0 ... C 2,d
-... ... ... ...
-−CT
-1,d −CT
-2,d ··· 0
-−CT
-1,d+1−CT
-2,d+1 ... −CT
-d,d+1
-
-∈ Rn×nd.
-Proposition 4.14 (Arclength II, Geodesics III). Let JY K∈ Flag(n1,...,n d;n) = V(nd,n )/
-(
-O(n1)×
-O(n2−n1)×···× O(nd−nd−1)
-)
-andg be the metric in (29). Every geodesic γ on Flag(n1,...,n d;n)
-passing through JY K takes the form
-γ(t) = JY (t)K =
-
-
-
-[Y,Y ⊥] exp(tB)
-
-
-Q1 0 ... 0
-0 Q2 ... 0
-... ... ... ...
-0 0 ... Q d
-0 0 ... 0
-
-∈ V(nd,n ) : Qi∈ O(ni−ni−1),
-i = 1,...,d
-
-
-
-,
-where [Y,Y ⊥]∈ O(n) and B∈ m. In particular, the arclength of γ(t) is
-‖γ(t)‖ =t
-[∑
-1≤i<j≤d+1
-tr(BT
-ijBij)
-]1/2
-.
-Proposition 4.15 (Parallel transport II). Let JY K∈ Flag(n1,...,n d;n) and
-[Y,Y ⊥]BIn,nd, [Y,Y ⊥]XIn,nd∈TJY K Flag(n1,...,n d;n).
-The parallel transport of [Y,Y ⊥]XIn,nd along the geodesic J[Y,Y ⊥] exp(tB)In,ndK is given by
-X(t) = [Y,Y ⊥] exp(tB)e−ϕtB(X)In,nd, (30)
-with e−ϕtB deﬁned as in (21) and (23).
-While is also straightforward to obtain analogues of Proposition 4.7 and 4.8 in Stiefel coordinates,
-we omit them as the expressions are more involved and we will not need them in the sequel.
+[]{#sec:homo label="sec:homo"}
+
+We will discuss three representations of the flag manifold as *matrix homogeneous spaces*, i.e., where a flag is represented as an equivalence class of matrices: $$\begin{aligned}
+\mathop{\mathrm{Flag}}(n_1,\dots,n_d;n) &\cong \mathop{\mathrm{O}}(n) / \bigl(\mathop{\mathrm{O}}(n_1) \times \mathop{\mathrm{O}}(n_2 - n_1) \times \dots \times \mathop{\mathrm{O}}(n_d - n_{d-1}) \times \mathop{\mathrm{O}}(n-n_d) \bigr), \label{eq:homo1}\\
+\mathop{\mathrm{Flag}}(n_1,\dots,n_d;n) &\cong \mathop{\mathrm{SO}}(n) / \mathop{\mathrm{S}}\bigl(\mathop{\mathrm{O}}(n_1) \times \mathop{\mathrm{O}}(n_2 - n_1) \times \dots \times \mathop{\mathrm{O}}(n_d - n_{d-1}) \times \mathop{\mathrm{O}}(n-n_d) \bigr),\label{eq:homo2}\\
+\mathop{\mathrm{Flag}}(n_1,\dots,n_d;n) &\cong  \mathop{\mathrm{V}}(n_d,n) / \bigl(\mathop{\mathrm{O}}(n_1) \times \mathop{\mathrm{O}}(n_2-n_1) \times \dots \times \mathop{\mathrm{O}}(n_d- n_{d-1})\bigr).\label{eq:homo3}
+\end{aligned}$$ The characterization [\[eq:homo1\]](#eq:homo1){reference-type="eqref" reference="eq:homo1"} is standard [@Monk1959; @Borel1991] and generalizes the well-known characterization of the Grassmannian as $\mathop{\mathrm{Gr}}(k,n) \cong \mathop{\mathrm{O}}(n)/\bigl(\mathop{\mathrm{O}}(k) \times \mathop{\mathrm{O}}(n-k)\bigr)$ whereas the characterization [\[eq:homo3\]](#eq:homo3){reference-type="eqref" reference="eq:homo3"} generalizes another well-known characterization of the Grassmannian as $\mathop{\mathrm{Gr}}(k,n) \cong \mathop{\mathrm{V}}(k,n)/\mathop{\mathrm{O}}(k)$.
+
+Nevertheless, we will soon see that it is desirable to describe $\mathop{\mathrm{Flag}}(n_1,\dots,n_d;n)$ as a homogeneous space $G/H$ where $G$ is a connected Lie group --- note that $\mathop{\mathrm{O}}(n)$ is not connected whereas $\mathop{\mathrm{V}}(n_d,n)$ is not a group, so [\[eq:homo1\]](#eq:homo1){reference-type="eqref" reference="eq:homo1"} and [\[eq:homo3\]](#eq:homo3){reference-type="eqref" reference="eq:homo3"} do not meet this criterion. With this in mind, we state and prove [\[eq:homo2\]](#eq:homo2){reference-type="eqref" reference="eq:homo2"} formally.
+
+::: proposition
+[]{#prop:equivalent definition of flag manifold label="prop:equivalent definition of flag manifold"} Let $0 < n_1< \dots < n_d < n$ be $d$ positive integers. The flag manifold $\mathop{\mathrm{Flag}}(n_1,\dots, n_d;n)$ is diffeomorphic to the homogeneous space $$\mathop{\mathrm{SO}}(n) / \mathop{\mathrm{S}}\bigl(\mathop{\mathrm{O}}(n_1) \times \mathop{\mathrm{O}}(n_2 - n_1) \times \dots \times \mathop{\mathrm{O}}(n_d - n_{d-1}) \times \mathop{\mathrm{O}}(n-n_d) \bigr)$$ where $\mathop{\mathrm{S}}\bigl(\mathop{\mathrm{O}}(n_1) \times \mathop{\mathrm{O}}(n_2 - n_1) \times \dots \times \mathop{\mathrm{O}}(n_d - n_{d-1}) \times \mathop{\mathrm{O}}(n-n_d) \bigr)$ is the subgroup of unit-determinant block diagonal matrices with orthogonal blocks, i.e., $$\begin{bsmallmatrix}
+Q_1 & 0 & \dots & 0 \\
+0 & Q_2 & \dots & 0\\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \dots & Q_{d+1}
+\end{bsmallmatrix} \in \mathop{\mathrm{O}}(n), \quad Q_i\in \mathop{\mathrm{O}}(n_i-n_{i-1}), \quad i=1,\dots, d+1, \quad \prod_{i=1}^{d+1} \det (Q_i) = 1.$$
+:::
+
+::: proof
+*Proof.* We start with the characterization [\[eq:homo1\]](#eq:homo1){reference-type="eqref" reference="eq:homo1"}, i.e., in this proof we assume '$=$' in place of '$\cong$' in [\[eq:homo1\]](#eq:homo1){reference-type="eqref" reference="eq:homo1"}. We claim that the required diffeomorphism $\tau$ is given as in the commutative diagram below: $$\begin{tikzcd}
+\mathop{\mathrm{SO}}(n) \arrow{r}{j} \arrow[swap]{d}{\pi'} & \mathop{\mathrm{O}}(n) \arrow{d}{\pi} \\
+\mathop{\mathrm{SO}}(n) / \mathop{\mathrm{S}}\bigl(\mathop{\mathrm{O}}(n_1) \times \mathop{\mathrm{O}}(n_2 - n_1) \times \dots \times \mathop{\mathrm{O}}(n-n_d) \bigr) \arrow{r}{\tau} & \mathop{\mathrm{Flag}}(n_1,\dots, n_d;n) 
+\end{tikzcd}$$ Here $j$ is the inclusion of $\mathop{\mathrm{SO}}(n)$ in $\mathop{\mathrm{O}}(n)$, $\pi$ and $\pi'$ the respective quotient maps, and $\tau$ the induced map. Since $$\mathop{\mathrm{SO}}(n)  \cap  \bigl(\mathop{\mathrm{O}}(n_1) \times \mathop{\mathrm{O}}(n_2 - n_1) \times \dots  \times \mathop{\mathrm{O}}(n-n_d) \bigr)=  \mathop{\mathrm{S}}\bigl(\mathop{\mathrm{O}}(n_1) \times \mathop{\mathrm{O}}(n_2 - n_1) \times \dots \times \mathop{\mathrm{O}}(n - n_{d}) \bigr),$$ $\tau$ is injective. To show that it is surjective, let $\{\mathbb{V}_i\}_{i=1}^d \in \mathop{\mathrm{Flag}}(n_1,\dots, n_d;n)$ be a flag represented by some $A\in \mathop{\mathrm{O}}(n)$, i.e., $\pi(A) = \{\mathbb{V}_i\}_{i=1}^d$. If $\det(A) = 1$, then we already have $\tau (\pi_1(A)) = \{\mathbb{V}_i\}_{i=1}^d$ by commutativity of the diagram. If $\det(A) = -1$, take any $A_1\in \mathop{\mathrm{O}}(n_1)$ with $\det(A_1)=-1$, set $$B = A \begin{bsmallmatrix}
+A_1 & 0 &\cdots & 0 \\
+0 & I_{n_2 - n_1} & \cdots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \cdots & I_{n - n_d}
+\end{bsmallmatrix} \in \mathop{\mathrm{SO}}(n),$$ and observe that $\tau (\pi_1(B)) = \pi (B) = \pi (A)$. ◻
+:::
+
+## Orthogonal coordinates for the flag manifold {#sec:ortho}
+
+An immediate consequence of Proposition [\[prop:equivalent definition of flag manifold\]](#prop:equivalent definition of flag manifold){reference-type="ref" reference="prop:equivalent definition of flag manifold"} is that the flag manifold is connected. The characterization [\[eq:homo2\]](#eq:homo2){reference-type="eqref" reference="eq:homo2"} says that a point on $\mathop{\mathrm{Flag}}(n_1,\dots,n_d;n)$ may be represented by the equivalence class of matrices $$\begin{aligned}
+\label{eq:equivalence class}
+\llbracket Q \rrbracket= \left\lbrace Q\begin{bsmallmatrix}
+Q_1 & 0 & \dots & 0 \\
+0 & Q_2 & \dots & 0\\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \dots & Q_{d+1}
+\end{bsmallmatrix}: Q_i \in \mathop{\mathrm{O}}(n_i-n_{i-1}),\; i=1,\dots,d+1, \;\prod_{i=1}^{d+1} \det Q_i = 1 \right\rbrace
+\end{aligned}$$ for some $Q \in \mathop{\mathrm{SO}}(n)$. We will call such a representation *orthogonal coordinates* for the flag manifold.
+
+The Lie algebra of $\mathop{\mathrm{S}}\bigl(\mathop{\mathrm{O}}(n_1) \times \mathop{\mathrm{O}}(n_2 - n_1) \times \dots \times \mathop{\mathrm{O}}(n-n_d) \bigr)$ is simply $\mathfrak{so}(n_1) \times \mathfrak{so}(n_2-n_1)\times \dots \times \mathfrak{so}(n-n_d)$, which we will regard as a Lie subalgebra of block diagonal matrices, $$\begin{aligned}
+\mathfrak{h} &= \left\lbrace
+\begin{bsmallmatrix}
+A_1 & 0 & \dots & 0\\
+0 & A_2 & \dots & 0\\
+\vdots & \vdots & \ddots & \vdots\\
+0 & 0 & \dots & A_{d+1} 
+\end{bsmallmatrix} \in \mathfrak{so}(n) :\begin{multlined} A_1 \in \mathfrak{so}(n_1), A_2 \in \mathfrak{so}(n_2-n_1), \dots \\ \dots,  A_{d+1} \in \mathfrak{so}(n-n_d) \end{multlined}  \right\rbrace. \label{eq:h}
+\intertext{Let $\mathfrak{m}$ be the natural complement of $\mathfrak{h}$ in $\mathfrak{so}(n)$,}
+\mathfrak{m} &= \left\lbrace
+\begin{bsmallmatrix}
+0 & B_{1,2}  &\dots & B_{1,d+1} \\
+-B_{1,2}^{\scriptscriptstyle\mathsf{T}}& 0   &\dots & B_{2,d+1} \\
+\vdots & \vdots & \ddots & \vdots\\
+-B_{1,d+1}^{\scriptscriptstyle\mathsf{T}}& -B_{2,d+1}^{\scriptscriptstyle\mathsf{T}}& \dots & 0
+\end{bsmallmatrix} \in \mathfrak{so}(n) : \begin{multlined} B_{ij}\in \mathbb{R}^{(n_i-n_{i-1}) \times (n_j-n_{j-1})}, \\ 1\le i < j \le d+1 \end{multlined}\right\rbrace.\label{eq:m}
+\end{aligned}$$ In particular, we have the direct sum decomposition $\mathfrak{so}(n) = \mathfrak{h}  \oplus \mathfrak{m}$ as vector spaces.
+
+The groups $\mathop{\mathrm{O}}(n)$ and $\mathop{\mathrm{O}}(n_1) \times \mathop{\mathrm{O}}(n_2-n_1)\times \cdots \times \mathop{\mathrm{O}}(n - n_d)$ have the same Lie algebras as $\mathop{\mathrm{SO}}(n)$ and $\mathop{\mathrm{S}}\bigl(\mathop{\mathrm{O}}(n_1) \times \mathop{\mathrm{O}}(n_2-n_1)\times  \cdots \times  \mathop{\mathrm{O}}(n - n_d)\bigr)$, namely, $\mathfrak{so}(n)$ and $\mathfrak{so}(n_1) \times \mathfrak{so}(n_2-n_1)\times \dots \times \mathfrak{so}(n-n_d)$ respectively. The tangent space of a homogeneous space $G/H$ at any point is a translation of the tangent space at the identity element $\llbracket H \rrbracket\in G/H$, which depends only on the Lie algebras $\mathfrak{g}$ and $\mathfrak{h}$ of $G$ and $H$ respectively: $$T_{\llbracket H \rrbracket} G/H  \simeq \mathfrak{g}/\mathfrak{h},$$ a fact that we will use in the proof of Proposition [\[prop:tangent1\]](#prop:tangent1){reference-type="ref" reference="prop:tangent1"}. As such we do not need to distinguish the two homogeneous space structures [\[eq:homo1\]](#eq:homo1){reference-type="eqref" reference="eq:homo1"} and [\[eq:homo2\]](#eq:homo2){reference-type="eqref" reference="eq:homo2"} when we discuss geometric quantities associated with tangent spaces, e.g., geodesic, gradient, Hessian, parallel transport. In the sequel we will make free use of this flexibility in switching between [\[eq:homo1\]](#eq:homo1){reference-type="eqref" reference="eq:homo1"} and [\[eq:homo2\]](#eq:homo2){reference-type="eqref" reference="eq:homo2"}.
+
+::: proposition
+[]{#prop:reductive complement label="prop:reductive complement"} Let $\mathfrak{h}$ and $\mathfrak{m}$ be as in [\[eq:h\]](#eq:h){reference-type="eqref" reference="eq:h"} and [\[eq:m\]](#eq:m){reference-type="eqref" reference="eq:m"} and $H =\mathop{\mathrm{O}}(n_1)\times \mathop{\mathrm{O}}(n_2-n_1)\times \dots \times \mathop{\mathrm{O}}(n-n_d)$. Then the subspace $\mathfrak{m}$ is $\mathop{\mathrm{Ad}}_H$-invariant, i.e., $\mathop{\mathrm{Ad}}(a)(X) \in \mathfrak{m}$ for every $a \in H$ and $X\in \mathfrak{m}$.
+:::
+
+::: proof
+*Proof.* We need to show that $\mathop{\mathrm{Ad}}(a)(X) \in \mathfrak{m}$ whenever $a\in H$ and $X\in \mathfrak{m}$. For notational simplicity, we assume $d = 2$. Let $$a = \begin{bsmallmatrix}
+A_1 & 0 & 0 \\[0.75ex]
+0 & A_2 & 0 \\[0.75ex]
+0 & 0 & A_3
+\end{bsmallmatrix}\qquad\text{and}\qquad
+X = \begin{bsmallmatrix}
+0 & B_{1,2} & B_{1,3} \\
+-B_{1,2}^{\scriptscriptstyle\mathsf{T}}& 0 & B_{2,3} \\
+-B_{1,3}^{\scriptscriptstyle\mathsf{T}}& -B_{2,3}^{\scriptscriptstyle\mathsf{T}}& 0
+\end{bsmallmatrix},$$ where $A_i \in \mathop{\mathrm{O}}(n_i-n_{i-1})$, $i =1,2,3$, and $B_{ij} \in \mathbb{R}^{(n_i-n_{i-1}) \times (n_j-n_{j-1})}$, $1\le i < j \le 3$. Then $\mathop{\mathrm{Ad}}(a)(X) =a X a^{-1} = a X a^{\scriptscriptstyle\mathsf{T}}$ since $a$ is an orthogonal matrix; and we have $$a X a^{\scriptscriptstyle\mathsf{T}}= \begin{bsmallmatrix}
+A_1 & 0 & 0 \\[0.75ex]
+0 & A_2 & 0 \\[0.75ex]
+0 & 0 & A_3
+\end{bsmallmatrix}  \begin{bsmallmatrix}
+0 & B_{1,2} & B_{1,3} \\
+-B_{1,2}^{\scriptscriptstyle\mathsf{T}}& 0 & B_{2,3} \\
+-B_{1,3}^{\scriptscriptstyle\mathsf{T}}& -B_{2,3}^{\scriptscriptstyle\mathsf{T}}& 0
+\end{bsmallmatrix} \begin{bsmallmatrix}
+A_1^{\scriptscriptstyle\mathsf{T}}& 0 & 0 \\
+0 & A_2^{\scriptscriptstyle\mathsf{T}}& 0 \\
+0 & 0 & A_3^{\scriptscriptstyle\mathsf{T}}
+\end{bsmallmatrix} 
+ = \begin{bsmallmatrix}
+0 & A_1 B_{1,2} A_2^{\scriptscriptstyle\mathsf{T}}& A_1B_{1,3}A_3^{\scriptscriptstyle\mathsf{T}}\\
+-A_2 B_{1,2}^{\scriptscriptstyle\mathsf{T}}A_1^{\scriptscriptstyle\mathsf{T}}& 0 & A_2B_{2,3}A_3^{\scriptscriptstyle\mathsf{T}}\\
+-A_3B_{1,3}^{\scriptscriptstyle\mathsf{T}}A_1^{\scriptscriptstyle\mathsf{T}}& -A_3B_{2,3}^{\scriptscriptstyle\mathsf{T}}A_2^{\scriptscriptstyle\mathsf{T}}& 0
+\end{bsmallmatrix} \in \mathfrak{m}$$ as required. ◻
+:::
+
+We now have all the ingredients necessary for deriving closed-form analytic expressions for the tangent space, metric, geodesic, geodesic distance, and parallel transport on a flag manifold in orthogonal coordinates. We begin with the representation of a tangent space as a vector space of matrices.
+
+::: proposition
+[]{#prop:tangent1 label="prop:tangent1"} Let $\llbracket Q \rrbracket\in \mathop{\mathrm{Flag}}(n_1,\dots, n_d;n) = \mathop{\mathrm{O}}(n) / \bigl(\mathop{\mathrm{O}}(n_1) \times \mathop{\mathrm{O}}(n_2 - n_1) \times \dots \times \mathop{\mathrm{O}}(n_d - n_{d-1}) \times \mathop{\mathrm{O}}(n-n_d) \bigr)$ be represented by $Q\in \mathop{\mathrm{O}}(n)$. Its tangent space at $\llbracket Q \rrbracket$ is given by $$\begin{gathered}
+T_{\llbracket Q \rrbracket}  \mathop{\mathrm{Flag}}(n_1,\dots, n_d;n)  = \lbrace QB \in \mathbb{R}^{n \times n} : B \in \mathfrak{m}\rbrace \\
+=\left\lbrace Q\begin{bsmallmatrix}
+0 & B_{1,2}  &\dots & B_{1,d+1} \\
+-B_{1,2}^{\scriptscriptstyle\mathsf{T}}& 0   &\dots & B_{2,d+1} \\
+\vdots & \vdots & \ddots & \vdots\\
+-B_{1,d+1}^{\scriptscriptstyle\mathsf{T}}& -B_{2,d+1}^{\scriptscriptstyle\mathsf{T}}& \dots & 0
+\end{bsmallmatrix} \in \mathbb{R}^{n \times n} :\begin{multlined} B_{i,j}\in \mathbb{R}^{(n_i-n_{i-1}) \times (n_j-n_{j-1})}, \\ 1\le i < j \le d + 1 \end{multlined} \right\rbrace.
+\end{gathered}$$ In particular, the dimension of a flag manifold is given by $$\dim \mathop{\mathrm{Flag}}(n_1,\dots, n_d;n) = \sum_{1 \le i < j \le d+1} (n_i-n_{i-1}) (n_j - n_{j-1}).$$
+:::
+
+::: proof
+*Proof.* Let $M = \mathop{\mathrm{Flag}}(n_1,\dots, n_d;n)$. For $Q = I$, the identity matrix, this follow from $T_{\llbracket I \rrbracket} M \simeq \mathfrak{g}/\mathfrak{h} \simeq \mathfrak{m}$. For $Q$ arbitrary, the left translation $L_Q: M \to M$ is a diffeomorphism, which means that $(d {L_Q})_{\llbracket I \rrbracket} : T_{\llbracket I \rrbracket} M \to T_{\llbracket Q \rrbracket} M$ is an isomorphism. The result then follows from $(d {L_Q})_{\llbracket I \rrbracket} (X) = QX$ for all $X \in T_{\llbracket I \rrbracket} M$. ◻
+:::
+
+There are several ways to equip $\mathop{\mathrm{Flag}}(n_1,\dots, n_d;n)$ with a Riemannian metric but there is a distinguished choice that is given by a negative multiple of the *Killing form* of $\mathfrak{so}(n)$, although we will not need to introduce this concept.
+
+::: proposition
+[]{#prop:metric label="prop:metric"} The metric $g$ on $\mathop{\mathrm{Flag}}(n_1,\dots, n_d;n)$ defined by $$\label{eq:metric1}
+g_{\llbracket Q \rrbracket} (X,Y) = \frac{1}{2} \mathop{\mathrm{tr}}(X^{\scriptscriptstyle\mathsf{T}}Y)$$ for all $X,Y\in T_{\llbracket Q \rrbracket} \mathop{\mathrm{Flag}}(n_1,\dots, n_d;n)$ is an $\mathop{\mathrm{SO}}(n)$-invariant metric. If we write $$X = Q\begin{bsmallmatrix}
+0 & B_{1,2}  &\dots & B_{1,d+1} \\
+-B_{1,2}^{\scriptscriptstyle\mathsf{T}}& 0   &\dots & B_{2,d+1} \\
+\vdots & \vdots & \ddots & \vdots\\
+-B_{1,d+1}^{\scriptscriptstyle\mathsf{T}}& -B_{2,d+1}^{\scriptscriptstyle\mathsf{T}}& \dots & 0
+\end{bsmallmatrix}, \quad 
+Y = Q\begin{bsmallmatrix}
+0 & C_{1,2}  &\dots & C_{1,d+1} \\
+-C_{1,2}^{\scriptscriptstyle\mathsf{T}}& 0   &\dots & C_{2,d+1} \\
+\vdots & \vdots & \ddots & \vdots\\
+-C_{1,d+1}^{\scriptscriptstyle\mathsf{T}}& -C_{2,d+1}^{\scriptscriptstyle\mathsf{T}}& \dots & 0
+\end{bsmallmatrix}  \in \mathbb{R}^{n \times n},$$ where $B_{ij}, C_{ij}\in \mathbb{R}^{(n_i-n_{i-1}) \times (n_j-n_{j-1})}$, $1\le i < j \le d$, then $g$ may be expressed as $$\label{eq:metric2}
+g_{\llbracket Q \rrbracket}  (X, Y) = \sum_{1\le i < j \le d+1} \mathop{\mathrm{tr}}(B_{ij}^{\scriptscriptstyle\mathsf{T}}C_{ij}).$$
+:::
+
+::: proof
+*Proof.* We will first need to establish an $\mathop{\mathrm{Ad}}_{\mathop{\mathrm{SO}}(n)}$-invariant inner product on $\mathfrak{so}(n)$. It is a standard fact [@{O'Neil1983}] that bi-invariant metrics on a Lie group $G$ are in one-to-one correspondence with $\mathop{\mathrm{Ad}}_G$-invariant inner products on its Lie algebra $\mathfrak{g}$. In our case, $G = \mathop{\mathrm{SO}}(n)$, $\mathfrak{g} =\mathfrak{so}(n)$, and $\mathop{\mathrm{Ad}}_{\mathop{\mathrm{SO}}(n)} : \mathop{\mathrm{SO}}(n) \to \mathop{\mathrm{GL}}(\mathfrak{so}(n))$. Since $\mathop{\mathrm{SO}}(n)$ is compact, by Proposition [\[prop:nhs\]](#prop:nhs){reference-type="ref" reference="prop:nhs"} it has a bi-invariant metric, which corresponds to an $\mathop{\mathrm{Ad}}_{\mathop{\mathrm{SO}}(n)}$-invariant inner product on $\mathfrak{so}(n)$.
+
+When $n \ne 2,4$, $\mathfrak{so}(n)$ is a simple Lie algebra and so the $\mathop{\mathrm{Ad}}_{\mathop{\mathrm{SO}}(n)}$-invariant inner product is unique up to a scalar multiple. When $n  = 2$, $\mathop{\mathrm{SO}}(2)$ is one-dimensional and thus abelian, so the bi-invariant metric on $\mathop{\mathrm{SO}}(2)$ is unique up to a scalar. When $n  = 4$, $\mathop{\mathrm{SO}}(4) \simeq \mathop{\mathrm{SO}}(3) \times \mathop{\mathrm{SO}}(3)$ as Lie groups, so it has a two-dimensional family of bi-invariant metrics. For all values of $n$, we may take our $\mathop{\mathrm{Ad}}_{\mathop{\mathrm{SO}}(n)}$-invariant inner product (the choice is unique for all $n \ne 4$) as $$\label{eq:ip1}
+\langle X,Y\rangle \coloneqq \frac{1}{2} \mathop{\mathrm{tr}}(X^{\scriptscriptstyle\mathsf{T}}Y)$$ for all $X,Y\in \mathfrak{so}(n)$.
+
+Let $G =\mathop{\mathrm{SO}}(n)$ and $H = \mathop{\mathrm{S}}\bigl(\mathop{\mathrm{O}}(n_1) \times \mathop{\mathrm{O}}(n_2 - n_1) \times \dots \times \mathop{\mathrm{O}}(n-n_d) \bigr)$. We will use the characterization of a flag manifold in [\[eq:homo2\]](#eq:homo2){reference-type="eqref" reference="eq:homo2"}, i.e., $\mathop{\mathrm{Flag}}(n_1,\dots, n_d;n) = G/ H$. Since $\mathfrak{m}$ is a subspace of $\mathfrak{so}(n)$, the restriction of $\langle\cdot,\cdot\rangle$ in [\[eq:ip1\]](#eq:ip1){reference-type="eqref" reference="eq:ip1"} to $\mathfrak{m}$, denoted by $\langle \cdot,\cdot\rangle_{\mathfrak{m}}$, is an inner product on $\mathfrak{m}$. It is easy to verify that $\langle \cdot,\cdot\rangle_{\mathfrak{m}}$ is $\mathop{\mathrm{Ad}}_H$-invariant. Taken together with Propositions [\[prop:metric inner product correspondence\]](#prop:metric inner product correspondence){reference-type="ref" reference="prop:metric inner product correspondence"}, [\[prop:nhs\]](#prop:nhs){reference-type="ref" reference="prop:nhs"}, and [\[prop:reductive complement\]](#prop:reductive complement){reference-type="ref" reference="prop:reductive complement"}, we have that $\langle\cdot,\cdot\rangle_{\mathfrak{m}}$ uniquely determines a $G$-invariant metric $g$ on $G/H$, as required. ◻
+:::
+
+Unsurprisingly the metric $g$ in Proposition [\[prop:metric\]](#prop:metric){reference-type="ref" reference="prop:metric"} coincides with the canonical metric on Grassmannian ($d= 1$) introduced in [@EAS]. It also follows from Theorem [\[thm:GO\]](#thm:GO){reference-type="ref" reference="thm:GO"} that, with this metric $g$, $\mathop{\mathrm{Flag}}(n_1,\dots, n_d;n)$ is not merely a Riemannian manifold but also a geodesic orbit space. In fact, $g$ is the only choice of a metric that makes $\mathop{\mathrm{Flag}}(n_1,\dots,n_d;n)$ into a geodesic orbit space [@AA2007]. We will next derive explicit analytic expressions for geodesic (Propositions [\[prop:geodesics1\]](#prop:geodesics1){reference-type="ref" reference="prop:geodesics1"} and [\[prop:geodesics2\]](#prop:geodesics2){reference-type="ref" reference="prop:geodesics2"}), arclength (Corollary [\[cor:arc-length\]](#cor:arc-length){reference-type="ref" reference="cor:arc-length"}), geodesic distance (Proposition [\[prop:geodist\]](#prop:geodist){reference-type="ref" reference="prop:geodist"}), and parallel transport (Proposition [\[prop:pt\]](#prop:pt){reference-type="ref" reference="prop:pt"}).
+
+::: proposition
+[]{#prop:geodesics1 label="prop:geodesics1"} Let $\llbracket Q \rrbracket\in \mathop{\mathrm{Flag}}(n_1,\dots, n_d;n) = \mathop{\mathrm{O}}(n)/\bigl(\mathop{\mathrm{O}}(n_1)\times \dots \times \mathop{\mathrm{O}}(n-n_d)\bigr)$ and $g$ be the metric in [\[eq:metric2\]](#eq:metric2){reference-type="eqref" reference="eq:metric2"}. Every geodesic on $\mathop{\mathrm{Flag}}(n_1,\dots, n_d;n)$ passing through $\llbracket Q \rrbracket$ takes the form $$\llbracket Q(t) \rrbracket= \left\lbrace Q\exp (tB) \begin{bsmallmatrix}
+Q_1 & 0 & \dots & 0\\
+0 & Q_2 & \dots & 0\\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \dots & Q_{d+1}
+\end{bsmallmatrix}  \in \mathop{\mathrm{O}}(n): Q_i \in \mathop{\mathrm{O}}(n_i- n_{i-1}),\; i=1,\dots, d+1
+\right\rbrace,$$
+
+for some direction $$\label{eq:exp map direction}
+B = \begin{bsmallmatrix}
+0 & B_{1,2}  &\dots & B_{1,d+1} \\
+-B_{1,2}^{\scriptscriptstyle\mathsf{T}}& 0   &\dots & B_{2,d+1} \\
+\vdots & \vdots & \ddots & \vdots\\
+-B_{1,d+1}^{\scriptscriptstyle\mathsf{T}}& -B_{2,d+1}^{\scriptscriptstyle\mathsf{T}}& \dots & 0
+\end{bsmallmatrix} \in \mathbb{R}^{n \times n}, \quad \begin{multlined} B_{ij}\in \mathbb{R}^{(n_i-n_{i-1}) \times (n_j-n_{j-1})}, \\ 1\le i < j \le d+1\end{multlined}.$$
+:::
+
+::: proof
+*Proof.* Since $\mathop{\mathrm{Flag}}(n_1,\dots, n_d;n)$ with the metric $g$ in Proposition [\[prop:metric\]](#prop:metric){reference-type="ref" reference="prop:metric"} is a geodesic orbit space, the result follows immediately from Theorem [\[thm:1-parameter subgp\]](#thm:1-parameter subgp){reference-type="ref" reference="thm:1-parameter subgp"}. ◻
+:::
+
+::: corollary
+[]{#cor:arc-length label="cor:arc-length"} The arclength of a geodesic $\gamma(t) = \llbracket Q(t) \rrbracket$ passing through $Q$ in the direction $B$ is given by $$\lVert\gamma(t)  \rVert  = t \Bigl[  \sum\nolimits_{1\le i<j \le d+1} \mathop{\mathrm{tr}}(B_{ij}^{\scriptscriptstyle\mathsf{T}}B_{ij}) \Bigr]^{1/2} 
+ = t \sqrt{\frac{\mathop{\mathrm{tr}}(B^{\scriptscriptstyle\mathsf{T}}B)}{2}},$$ where $B$ is as in [\[eq:exp map direction\]](#eq:exp map direction){reference-type="eqref" reference="eq:exp map direction"}.
+:::
+
+::: proof
+*Proof.* This follows from the definition of arclength $$\lVert\gamma(t)  \rVert \coloneqq  \int_{0}^t \sqrt{g_{\llbracket Q \rrbracket} (\gamma'(x), \gamma'(x)) } \; dx$$ and the expressions for $g$ in [\[eq:metric1\]](#eq:metric1){reference-type="eqref" reference="eq:metric1"} and [\[eq:metric2\]](#eq:metric2){reference-type="eqref" reference="eq:metric2"}. ◻
+:::
+
+::: proposition
+[]{#prop:geodesics2 label="prop:geodesics2"} Let $\gamma$ be a geodesic in $\mathop{\mathrm{Flag}}(n_1,\dots, n_d;n) = \mathop{\mathrm{O}}(n)/\bigl(\mathop{\mathrm{O}}(n_1)\times \dots \times \mathop{\mathrm{O}}(n-n_d)\bigr)$ with $\gamma(0) = \llbracket Q \rrbracket$ for some $Q\in \mathop{\mathrm{O}}(n)$ and $\gamma'(0) = H \in T_{\llbracket Q \rrbracket}  \mathop{\mathrm{Flag}}(n_1,\dots, n_d;n)$. Let $Q^{\scriptscriptstyle\mathsf{T}}H =  V D V^{\scriptscriptstyle\mathsf{T}}$ with $V\in \mathop{\mathrm{O}}(n)$ and $$\begin{aligned}
+\label{eq:geodesic variable D}
+D = \operatorname{diag} \biggl( \begin{bmatrix}
+0 & -\lambda_1 \\
+\lambda_1 & 0 
+\end{bmatrix}, \dots, \begin{bmatrix}
+0 & -\lambda_r \\
+\lambda_r & 0 
+\end{bmatrix}, 0_{n-2r}
+\biggr)\in \mathfrak{so}(n),
+\end{aligned}$$ where $2r = \mathop{\mathrm{rank}}(Q^{\scriptscriptstyle\mathsf{T}}H )$ and $\lambda_1,\dots,\lambda_r$ are positive real numbers. Then $\gamma(t)  = \llbracket U \Sigma(t) V^{\scriptscriptstyle\mathsf{T}}\rrbracket$ where $U = QV\in \mathop{\mathrm{O}}(n)$ and $$\begin{aligned}
+ \label{eq:geodesic variable sigma}
+\Sigma(t) = \operatorname{diag} \biggl(
+\begin{bmatrix}
+\cos t\lambda_1 & -\sin t\lambda_1 \\
+\sin t\lambda_1 & \cos t\lambda_1 
+\end{bmatrix}, 
+\dots, 
+\begin{bmatrix}
+\cos t\lambda_r & -\sin t\lambda_r \\
+\sin t\lambda_r & \cos t\lambda_r 
+\end{bmatrix}, 
+I_{n - 2r}
+\biggr) \in \mathop{\mathrm{O}}(n).
+\end{aligned}$$
+:::
+
+::: proof
+*Proof.* By Proposition [\[prop:geodesics1\]](#prop:geodesics1){reference-type="ref" reference="prop:geodesics1"}, the geodesic $\gamma$ takes the form $\gamma(t) = \llbracket Q \exp(tB) \rrbracket$ for some $B\in \mathfrak{so}(n)$ and $Q \in \mathop{\mathrm{O}}(n)$ representing $\gamma(0)$. Hence we have $H = \gamma'(0) = QB$ and $Q^{\scriptscriptstyle\mathsf{T}}H = B$. Since $B$ is a skew-symmetric and thus a normal matrix, by the spectral theorem [@Sheldon1997 Theorem 7.25], $B = V D V^{\scriptscriptstyle\mathsf{T}}$ for some $V\in \mathop{\mathrm{O}}(n)$ and $D$ of the form in [\[eq:geodesic variable D\]](#eq:geodesic variable D){reference-type="eqref" reference="eq:geodesic variable D"}, with $2r = \mathop{\mathrm{rank}}(B) =  \mathop{\mathrm{rank}}(Q^{\scriptscriptstyle\mathsf{T}}H)$ and $\lambda_1,\dots,\lambda_r$ are positive reals as they are singular values of $B$. Therefore, $$Q \exp(tB) = U \Sigma(t) V^{\scriptscriptstyle\mathsf{T}},$$ where $U = QV$ and $\Sigma(t)$ is as in [\[eq:geodesic variable sigma\]](#eq:geodesic variable sigma){reference-type="eqref" reference="eq:geodesic variable sigma"}. ◻
+:::
+
+::: proposition
+[]{#prop:geodist label="prop:geodist"} The geodesic distance with respect to the metric $g$ between $\llbracket P \rrbracket, \llbracket Q \rrbracket\in  \mathop{\mathrm{Flag}}(n_1,\dots, n_d;n) = \mathop{\mathrm{O}}(n)/\bigl(\mathop{\mathrm{O}}(n_1)\times \dots \times \mathop{\mathrm{O}}(n-n_d)\bigr)$ is $$\label{eq:geodist}
+d(\llbracket P \rrbracket,\llbracket Q \rrbracket) = \sqrt{\sum\nolimits_{i=1}^r \lambda_i^2},$$ where $\lambda_1,\dots, \lambda_r$ are positive real numbers such that $P^{\scriptscriptstyle\mathsf{T}}Q = V \Sigma V^{\scriptscriptstyle\mathsf{T}}$ with $V \in \mathop{\mathrm{O}}(n)$ and $$\Sigma = \operatorname{diag} \biggl(
+\begin{bmatrix}
+\cos \lambda_1 & -\sin \lambda_1 \\
+\sin \lambda_1 & \cos \lambda_1 
+\end{bmatrix}, 
+\dots, 
+\begin{bmatrix}
+\cos \lambda_r & -\sin \lambda_r \\
+\sin \lambda_r & \cos \lambda_r 
+\end{bmatrix}, 
+0_{n-2r}
+\biggr).$$
+:::
+
+::: proof
+*Proof.* By Proposition [\[prop:geometric structure\]](#prop:geometric structure){reference-type="ref" reference="prop:geometric structure"}[\[it:cls1\]](#it:cls1){reference-type="eqref" reference="it:cls1"}, we may regard $\mathop{\mathrm{Flag}}(n_1,\dots, n_d;n)$ as a closed, and therefore compact, submanifold of $\mathop{\mathrm{Gr}}(n_1,n)\times \dots \times \mathop{\mathrm{Gr}}(n_d,n)$. By Theorem [\[thm:Hopf\--Rinow\]](#thm:Hopf--Rinow){reference-type="ref" reference="thm:Hopf--Rinow"}, there is a distance minimizing geodesic $\llbracket P\exp(tB) \rrbracket$ connecting $\llbracket P \rrbracket$ and $\llbracket Q \rrbracket$. By Corollary [\[cor:arc-length\]](#cor:arc-length){reference-type="ref" reference="cor:arc-length"}, we get [\[eq:geodist\]](#eq:geodist){reference-type="eqref" reference="eq:geodist"} with $\lambda_1,\lambda_1,\dots,\lambda_r,\lambda_r$ the nonzero singular values of $B$. Lastly, by Proposition [\[prop:geodesics2\]](#prop:geodesics2){reference-type="ref" reference="prop:geodesics2"}, we get the decomposition $P^{\scriptscriptstyle\mathsf{T}}Q = V \Sigma V^{\scriptscriptstyle\mathsf{T}}$ for some $V\in \mathop{\mathrm{O}}(n)$. ◻
+:::
+
+Let $\mathfrak{m}$ be as in [\[eq:m\]](#eq:m){reference-type="eqref" reference="eq:m"}. For $B \in \mathfrak{m}$, we define a map $$\label{eq:phi}
+\varphi_{B}: \mathfrak{m} \to \mathfrak{m}, \quad X \mapsto \frac{1}{2}[B,X]_{\mathfrak{m}} \coloneqq  \frac{1}{2} \operatorname{proj}_{\mathfrak{m}} ([B,X]),$$ where $\operatorname{proj}_{\mathfrak{m}}:\mathfrak{so}(n) \to \mathfrak{m}$ is the projection from $\mathfrak{so}(n) = \mathfrak{h} \oplus \mathfrak{m}$ to $\mathfrak{m}$. For example, if $d = 2$ and $$B = \begin{bmatrix}
+0 & B_{12} & B_{13} \\
+-B_{12}^{\scriptscriptstyle\mathsf{T}}& 0 & B_{23} \\
+-B_{13}^{\scriptscriptstyle\mathsf{T}}& -B_{23}^{\scriptscriptstyle\mathsf{T}}& 0
+\end{bmatrix}\in\mathfrak{m},
+\quad X = \begin{bmatrix}
+0 & X_{12} & X_{13} \\
+-X_{12}^{\scriptscriptstyle\mathsf{T}}& 0 & X_{23} \\
+-X_{13}^{\scriptscriptstyle\mathsf{T}}& -X_{23}^{\scriptscriptstyle\mathsf{T}}& 0
+\end{bmatrix}\in \mathfrak{m},$$ where $B_{ij},X_{ij}\in \mathbb{R}^{(n_i-n_{i-1}) \times (n_j-n_{j-1})}, 1\le i < j \le 3$, then $$\varphi_B(X) =  \begin{bmatrix}
+0 & -B_{12} X_{23}^{\scriptscriptstyle\mathsf{T}}+  X_{12} B_{23}^{\scriptscriptstyle\mathsf{T}}& B_{11}X_{23} - X_{11}B_{23} \\
+X_{23}B_{12}^{\scriptscriptstyle\mathsf{T}}-  B_{23} X_{12}^{\scriptscriptstyle\mathsf{T}}& 0 & -B_{11}X_{12}^{\scriptscriptstyle\mathsf{T}}+ X_{11}B_{12}^{\scriptscriptstyle\mathsf{T}}\\
+-X_{23}^{\scriptscriptstyle\mathsf{T}}B_{11}^{\scriptscriptstyle\mathsf{T}}+ B_{23}^{\scriptscriptstyle\mathsf{T}}
+X_{11}^{\scriptscriptstyle\mathsf{T}}& X_{12} B_{11}^{\scriptscriptstyle\mathsf{T}}- B_{12} X_{11}^{\scriptscriptstyle\mathsf{T}}& 0
+\end{bmatrix}\in \mathfrak{m}.$$
+
+::: proposition
+[]{#prop:pt label="prop:pt"} Let $B,X \in T_{\llbracket I \rrbracket} \mathop{\mathrm{Flag}}(n_1,\dots, n_d; n) \cong  \mathfrak{m}$ and $\llbracket Q \rrbracket\in \mathop{\mathrm{Flag}}(n_1,\dots, n_d; n)$. The parallel transport of $QX\in T_{\llbracket Q \rrbracket}  \mathop{\mathrm{Flag}}(n_1,\dots, n_d; n)$ along the geodesic $\llbracket Q\exp(tB) \rrbracket$ is $$\label{eq:pt}
+X(t) = Q \exp(tB)  e^{-\varphi_{tB}} ( X ),$$ where $e^{-\varphi_B}  : \mathfrak{m} \to \mathfrak{m}$, for $\varphi_B$ as in [\[eq:phi\]](#eq:phi){reference-type="eqref" reference="eq:phi"}, is defined by $$\label{eq:expphi}
+e^{-\varphi_B} = \sum_{k=0}^\infty \frac{(-1)^k}{k!} \varphi_B^k.$$
+:::
+
+::: proof
+*Proof.* This follows from applying [@Tojo1996 Lemma 3.1] to $\mathop{\mathrm{Flag}}(n_1,\dots, n_d; n)$. ◻
+:::
+
+For the $d= 1$ case, i.e., $\mathop{\mathrm{Flag}}(k;n) = \mathop{\mathrm{Gr}}(k,n)$, it is straightforward to verify that $[B,X]_\mathfrak{m} = 0$ for all $B,X\in \mathfrak{m}$. So the expression for parallel transport in [\[eq:pt\]](#eq:pt){reference-type="eqref" reference="eq:pt"} reduces to $X(t) = Q \exp(tB) X$, which is the well-known expression for parallel transport on the Grassmannian [@EAS].
+
+## Stiefel coordinates for the flag manifold {#sec:stief}
+
+We next discuss the characterization of a flag manifold as a quotient of the Stiefel manifold [\[eq:homo3\]](#eq:homo3){reference-type="eqref" reference="eq:homo3"} and discuss its consequences. This characterization will give our coordinates of choice for use in our optimization algorithms (see Section [\[sec:gH\]](#sec:gH){reference-type="ref" reference="sec:gH"}).
+
+::: proposition
+[]{#prop:Stiefel label="prop:Stiefel"} Let $0 < n_1< \dots < n_d < n$ be $d$ positive integers. The flag manifold $\mathop{\mathrm{Flag}}(n_1,\dots, n_d;n)$ is diffeomorphic to the homogeneous space $$\label{prop:Stiefel:eqn1}
+\mathop{\mathrm{V}}(n_d,n) / \bigl(\mathop{\mathrm{O}}(n_1) \times \mathop{\mathrm{O}}(n_2-n_1) \times \dots \times \mathop{\mathrm{O}}(n_d- n_{d-1})\bigr)$$ where $\mathop{\mathrm{V}}(n_d,n)$ is the Stiefel manifold of orthonormal $n_d$-frames in $n$.
+:::
+
+::: proof
+*Proof.* This follows from the standard characterization of $\mathop{\mathrm{V}}(n_d,n)$ is a homogeneous space of $O(n)$, $\mathop{\mathrm{V}}(n_d,n) \cong  \mathop{\mathrm{O}}(n)/\mathop{\mathrm{O}}(n-n_d)$, together with [\[eq:homo1\]](#eq:homo1){reference-type="eqref" reference="eq:homo1"}. ◻
+:::
+
+For the rest of this article, we will regard the Stiefel manifold $\mathop{\mathrm{V}}(k,n)$ as the set of all $n\times k$ matrices whose column vectors are orthonormal. With this identification, Proposition [\[prop:Stiefel\]](#prop:Stiefel){reference-type="ref" reference="prop:Stiefel"} allows us to represent a flag $\{ \mathbb{V}_i\}_{i=1}^d \in \mathop{\mathrm{Flag}}(n_1,\dots, n_d;n)$ by a matrix $Y =[y_1,\dots,y_{n_d}] \in \mathbb{R}^{n\times n_d}$ with orthonormal $y_1,\dots,y_{n_d} \in \mathbb{R}^n$ and where the first $n_i$ of them span the subspace $\mathbb{V}_i$, $i=1,\dots, d$. This representation is not unique but if $Y'\in \mathbb{R}^{n\times n_d}$ is another such matrix, then $$\label{eq:rep}
+Y' = Y \begin{bsmallmatrix}
+Q_1 & 0 & \dots & 0\\
+0 & Q_2 &\dots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 &\dots & Q_{d}
+\end{bsmallmatrix},
+\quad Q_i \in \mathop{\mathrm{O}}(n_i - n_{i-1}), \quad i =1,\dots, d.$$ Hence $\{ \mathbb{V}_i\}_{i=1}^d \in \mathop{\mathrm{Flag}}(n_1,\dots,n_d;n)$ may be represented by the equivalence class of matrices $$\label{eq:equiv2}
+\llbracket Y \rrbracket= \left\lbrace
+Y \begin{bsmallmatrix}
+Q_1 & 0 & \dots & 0\\
+0 & Q_2 &\dots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 &\dots & Q_d
+\end{bsmallmatrix} \in \mathbb{R}^{n \times n_d}:
+\begin{multlined}
+Y\in \mathop{\mathrm{V}}(n_d,n), \;
+\mathop{\mathrm{span}}\{y_1,\dots,y_{n_i}\} =  \mathbb{V}_i, \\
+Q_i \in \mathop{\mathrm{O}}(n_i - n_{i-1}), \; i =1,\dots, d
+\end{multlined}
+\right\rbrace.$$ We will call such a representation *Stiefel coordinates* for the flag manifold.
+
+In the following, for any $k < n$, we write $$I_{n,k} \coloneqq \begin{bmatrix}
+I_{k} \\
+0 
+\end{bmatrix} \in \mathbb{R}^{n\times k},$$ i.e., the $n \times k$ matrix comprising the first $k$ columns of the $n \times n$ identity matrix $I_n$. Thus for any $A =[a_1,\dots, a_n] \in \mathbb{R}^{n \times n}$, $AI_{n,k} = [a_1,\dots,a_k] \in  \mathbb{R}^{n \times k}$ gives us the first $k$ columns of $A$.
+
+For a flag $\{ \mathbb{V}_i\}_{i=1}^d$, it is easy to convert between its orthogonal coordinates, i.e., $\llbracket Q \rrbracket$ in [\[eq:equivalence class\]](#eq:equivalence class){reference-type="eqref" reference="eq:equivalence class"} with $Q\in \mathop{\mathrm{O}}(n)$, and its Stiefel coordinates, i.e., $\llbracket Y \rrbracket$ in [\[eq:equiv2\]](#eq:equiv2){reference-type="eqref" reference="eq:equiv2"} with $Y \in \mathop{\mathrm{V}}(n_d,n)$. Given $Q \in \mathop{\mathrm{O}}(n)$, one just takes its first $n_d$ columns to get $Y = QI_{n,n_d}$; note that $QI_{n,n_i}$ is automatically an orthonormal basis for the subspace $\mathbb{V}_i$, $i=1,\dots, d$. Given $Y \in \mathop{\mathrm{V}}(n_d,n)$, take any orthonormal basis $Y^\perp \in \mathop{\mathrm{V}}(n-n_d, n)$ of the orthogonal complement of $\mathop{\mathrm{im}}(Y)$ to get $Q = [Y, Y^\perp]\in \mathop{\mathrm{O}}(n)$.
+
+We now derive expressions for tangent space, metric, arclength, geodesic, and parallel transport in Stiefel coordinates.
+
+::: proposition
+[]{#prop:tangent2a label="prop:tangent2a"} Let $\llbracket Y \rrbracket\in \mathop{\mathrm{Flag}}(n_1,\dots, n_d;n) = \mathop{\mathrm{V}}(n_d,n) / \bigl(\mathop{\mathrm{O}}(n_1) \times \mathop{\mathrm{O}}(n_2-n_1) \times \dots \times \mathop{\mathrm{O}}(n_d- n_{d-1})\bigr)$ be represented by $Y\in \mathop{\mathrm{V}}(n_d, n)$. Its tangent space at $\llbracket Y \rrbracket$ is given by $$T_{\llbracket Y \rrbracket}\mathop{\mathrm{Flag}}(n_1,\dots,n_d;n) = \lbrace  [Y,Y^{\perp}] B I_{n,n_d} \in \mathbb{R}^{n \times n_d}: B\in \mathfrak{m}\rbrace,$$ where $Y^{\perp} \in \mathop{\mathrm{V}}(n-n_d,n)$ is such that $[Y,Y^{\perp}] \in \mathop{\mathrm{O}}(n)$ and $\mathfrak{m}$ is as in [\[eq:m\]](#eq:m){reference-type="eqref" reference="eq:m"}.
+:::
+
+::: proof
+*Proof.* The calculation is straightforward and details can be found in [@NSP2006]. Essentially it follows from differentiating a curve $\tau(t)$ in $\mathop{\mathrm{Flag}}(n_1,\dots,n_d;n)$ with $\tau(0) = \llbracket Y \rrbracket$ and noting that the tangent vector $\tau'(0)$ is perpendicular to $\mathfrak{h}$ in [\[eq:h\]](#eq:h){reference-type="eqref" reference="eq:h"}, whose orthogonal complement is precisely $\mathfrak{m}$. ◻
+:::
+
+The description of $T_{\llbracket Y \rrbracket}\mathop{\mathrm{Flag}}(n_1,\dots,n_d;n)$ in Proposition [\[prop:tangent2a\]](#prop:tangent2a){reference-type="ref" reference="prop:tangent2a"} is a parametric one (like the description of the unit circle as $\{(\cos \theta, \sin \theta) : \theta \in [0,2\pi)\}$). We may also derive an implicit description of $T_{\llbracket Y \rrbracket}\mathop{\mathrm{Flag}}(n_1,\dots,n_d;n)$ (like the description of the unit circle as $\{(x,y) : x^2 + y^2 = 1\}$).
+
+::: corollary
+[]{#prop:tangent2b label="prop:tangent2b"} Let $\llbracket Y \rrbracket\in \mathop{\mathrm{Flag}}(n_1,\dots, n_d;n) = \mathop{\mathrm{V}}(n_d,n) / \bigl(\mathop{\mathrm{O}}(n_1) \times \mathop{\mathrm{O}}(n_2-n_1) \times \dots \times \mathop{\mathrm{O}}(n_d- n_{d-1})\bigr)$ be represented by $Y\in \mathop{\mathrm{V}}(n_d, n)$. Let $Y$ be partition as $$Y = [Y_1,\dots, Y_d], \quad Y_i \in \mathop{\mathrm{V}}(n_i - n_{i-1},n), \quad i=1,\dots, d.$$ Then its tangent space at $\llbracket Y \rrbracket$ is given by $$\begin{gathered}
+\label{eq:tangent space}
+T_{\llbracket Y \rrbracket}\mathop{\mathrm{Flag}}(n_1,\dots,n_d;n) = \lbrace  [X_1,\dots,X_d]\in \mathbb{R}^{n\times n_d} : X_i\in \mathbb{R}^{n \times (n_i - n_{i-1})}, \\
+Y_i^{\scriptscriptstyle\mathsf{T}}X_j + X_i^{\scriptscriptstyle\mathsf{T}}Y_j = 0,\; Y_i^{\scriptscriptstyle\mathsf{T}}X_i = 0,\; 1\le i, j \le d  \rbrace.
+\end{gathered}$$ Equivalently, the matrix $[X_1,\dots, X_d]$ can be expressed as $$[X_1,\dots, X_d] = [Y_1,\dots,Y_d,Y^\perp] \begin{bsmallmatrix}
+0 & B_{1,2} & \dots & B_{1,d} \\
+-B_{1,2}^{\scriptscriptstyle\mathsf{T}}& 0 & \dots & B_{2,d} \\
+\vdots & \dots & \ddots & \vdots \\
+-B_{1,d}^{\scriptscriptstyle\mathsf{T}}& -B_{2,d}^{\scriptscriptstyle\mathsf{T}}& \dots & 0  \\
+-B_{1,d+1}^{\scriptscriptstyle\mathsf{T}}& -B_{2,d+1}^{\scriptscriptstyle\mathsf{T}}& \dots & -B_{d,d+1}^{\scriptscriptstyle\mathsf{T}}
+\end{bsmallmatrix},$$ where $Y^{\perp} \in \mathop{\mathrm{V}}(n-n_d,n)$ is such that $[Y,Y^{\perp}] \in \mathop{\mathrm{O}}(n)$ and $B_{ij}\in \mathbb{R}^{(n_i-n_{i-1})\times (n_j-n_{j-1})}$, $1\le i<j\le d+1$.
+:::
+
+::: proof
+*Proof.* Since $[Y_1,\dots, Y_d] \in \mathop{\mathrm{V}}(n_d,n)$ and $Y_i \in \mathop{\mathrm{V}}(n_i - n_{i-1},n)$, the $Y_i$'s are characterized by $$\label{eq:tangent space2}
+Y_i^{\scriptscriptstyle\mathsf{T}}Y_i = I_{n_i - n_{i-1}},\quad Y_i^{\scriptscriptstyle\mathsf{T}}Y_j = 0,\quad i\ne  j =1,\dots, d.$$ Differentiating [\[eq:tangent space2\]](#eq:tangent space2){reference-type="eqref" reference="eq:tangent space2"} gives us the first relation in [\[eq:tangent space\]](#eq:tangent space){reference-type="eqref" reference="eq:tangent space"}. On the other hand, by Proposition [\[prop:tangent2a\]](#prop:tangent2a){reference-type="ref" reference="prop:tangent2a"} we notice that a tangent vector in $T_{\llbracket Y \rrbracket}\mathop{\mathrm{Flag}}(n_1,\dots,n_d;n)$ is written as $[Y,Y^\perp] B I_{n,n_d}$ for some $B\in \mathfrak{m}$, from which we may easily verify the second relation in [\[eq:tangent space\]](#eq:tangent space){reference-type="eqref" reference="eq:tangent space"}. ◻
+:::
+
+Comparing Propositions [\[prop:tangent1\]](#prop:tangent1){reference-type="ref" reference="prop:tangent1"} and [\[prop:tangent2a\]](#prop:tangent2a){reference-type="ref" reference="prop:tangent2a"}, for a tangent vector $QB \in T_{\llbracket Q \rrbracket} \mathop{\mathrm{Flag}}(n_1,\dots,n_d;n)$ in orthogonal coordinates $Q \in \mathop{\mathrm{O}}(n)$, its corresponding tangent vector in Stiefel coordinates $Y = Q I_{n,n_d} \in \mathop{\mathrm{V}}(n_d,n)$ is simply given by $QB I_{n,n_d} \in T_{\llbracket Y \rrbracket} \mathop{\mathrm{Flag}}(n_1,\dots,n_d;n)$. Conversely, $[Y,Y^{\perp}] B I_{n,n_d} \in T_{\llbracket Y \rrbracket} \mathop{\mathrm{Flag}}(n_1,\dots,n_d;n)$ in Stiefel coordinates corresponds to $QB \in T_{\llbracket Q \rrbracket} \mathop{\mathrm{Flag}}(n_1,\dots,n_d;n)$ in orthogonal coordinates where $Q = [Y,Y^{\perp}]$. Note that from the matrix $B I_{n,n_d}$, i.e., just the first $n_d$ columns of $B \in \mathfrak{m}$, the full matrix $B$ can be easily and uniquely recovered by its skew symmetry.
+
+The straightforward translation between orthogonal and Stiefel coordinate representations of points and tangent vectors on a flag manifold allows us to immediately deduce analogues of Propositions [\[prop:metric\]](#prop:metric){reference-type="ref" reference="prop:metric"}, [\[prop:geodesics1\]](#prop:geodesics1){reference-type="ref" reference="prop:geodesics1"}, [\[prop:pt\]](#prop:pt){reference-type="ref" reference="prop:pt"}, and Corollary [\[cor:arc-length\]](#cor:arc-length){reference-type="ref" reference="cor:arc-length"}.
+
+::: proposition
+[]{#prop:metric2 label="prop:metric2"} The metric $g$ at a point $\llbracket Y \rrbracket\in \mathop{\mathrm{Flag}}(n_1,\dots,n_d;n) = \mathop{\mathrm{V}}(n_d,n) / \bigl(\mathop{\mathrm{O}}(n_1) \times \mathop{\mathrm{O}}(n_2-n_1) \times \dots \times \mathop{\mathrm{O}}(n_d- n_{d-1})\bigr)$ is given by $$\label{eq:g2}
+g_{\llbracket Y \rrbracket}(W,Z) = \sum_{1\le i < j \le d+1} \mathop{\mathrm{tr}}(B_{ij}^{\scriptscriptstyle\mathsf{T}}C_{ij}),$$ where $W,Z\in T_{\llbracket Y \rrbracket} \mathop{\mathrm{Flag}}(n_1,\dots,n_d;n)$ are $$W = [Y,Y^\perp] \begin{bsmallmatrix}
+0 & B_{1,2}  &\dots  &B_{1,d} \\
+-B_{1,2}^{\scriptscriptstyle\mathsf{T}}& 0   &\dots& B_{2,d} \\
+\vdots & \vdots & \ddots  &\vdots\\
+-B_{1,d}^{\scriptscriptstyle\mathsf{T}}& -B_{2,d}^{\scriptscriptstyle\mathsf{T}}& \cdots  & 0\\
+-B_{1,d+1}^{\scriptscriptstyle\mathsf{T}}& -B_{2,d+1}^{\scriptscriptstyle\mathsf{T}}&  \dots & -B_{d,d+1}^{\scriptscriptstyle\mathsf{T}}
+\end{bsmallmatrix},\quad  Z = [Y,Y^\perp]\begin{bsmallmatrix}
+0 & C_{1,2}  &\dots  &C_{1,d} \\
+-C_{1,2}^{\scriptscriptstyle\mathsf{T}}& 0   &\dots& C_{2,d} \\
+\vdots & \vdots & \ddots  &\vdots\\
+-C_{1,d}^{\scriptscriptstyle\mathsf{T}}& -C_{2,d}^{\scriptscriptstyle\mathsf{T}}& \cdots  & 0\\
+-C_{1,d+1}^{\scriptscriptstyle\mathsf{T}}& -C_{2,d+1}^{\scriptscriptstyle\mathsf{T}}&  \dots & -C_{d,d+1}^{\scriptscriptstyle\mathsf{T}}
+\end{bsmallmatrix} \in \mathbb{R}^{n \times n_d}.$$
+:::
+
+::: proposition
+[]{#prop:geodesic3a label="prop:geodesic3a"} Let $\llbracket Y \rrbracket\in \mathop{\mathrm{Flag}}(n_1,\dots,n_d;n)  = \mathop{\mathrm{V}}(n_d,n) / \bigl(\mathop{\mathrm{O}}(n_1) \times \mathop{\mathrm{O}}(n_2-n_1) \times \dots \times \mathop{\mathrm{O}}(n_d- n_{d-1})\bigr)$ and $g$ be the metric in [\[eq:g2\]](#eq:g2){reference-type="eqref" reference="eq:g2"}. Every geodesic $\gamma$ on $\mathop{\mathrm{Flag}}(n_1,\dots, n_d;n)$ passing through $\llbracket Y \rrbracket$ takes the form $$\gamma(t) = \llbracket Y(t) \rrbracket= \left\lbrace
+[Y,Y^\perp] \exp (tB) \begin{bsmallmatrix}
+Q_1 & 0 & \dots & 0\\
+0 & Q_2 &\dots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 &\dots & Q_d\\
+0 & 0 & \dots & 0
+\end{bsmallmatrix} \in  \mathop{\mathrm{V}}(n_d,n) : \begin{multlined} Q_i\in \mathop{\mathrm{O}}(n_i - n_{i-1}),\\ i=1,\dots, d \end{multlined}
+\right\rbrace,$$ where $[Y,Y^\perp]\in \mathop{\mathrm{O}}(n)$ and $B\in \mathfrak{m}$. In particular, the arclength of $\gamma(t)$ is $$\lVert \gamma(t) \rVert =  t \Bigl[  \sum\nolimits_{1\le i<j \le d+1} \mathop{\mathrm{tr}}(B_{ij}^{\scriptscriptstyle\mathsf{T}}B_{ij}) \Bigr]^{1/2}.$$
+:::
+
+::: proposition
+[]{#prop:pt2 label="prop:pt2"} Let $\llbracket Y \rrbracket\in \mathop{\mathrm{Flag}}(n_1,\dots,n_d;n)$ and $$[Y,Y^{\perp}] B I_{n,n_d}, \; [Y,Y^{\perp}] X I_{n,n_d} \in T_{\llbracket Y \rrbracket} \mathop{\mathrm{Flag}}(n_1,\dots,n_d;n).$$ The parallel transport of $[Y,Y^{\perp}] X I_{n,n_d}$ along the geodesic $\llbracket[Y,Y^\perp] \exp (tB)I_{n,n_d}  \rrbracket$ is given by $$\label{eq:pt2}
+X(t) = [Y,Y^\perp]  \exp(tB)  e^{-\varphi_{tB}} ( X ) I_{n,n_d},$$ with $e^{-\varphi_{tB}}$ defined as in [\[eq:phi\]](#eq:phi){reference-type="eqref" reference="eq:phi"} and [\[eq:expphi\]](#eq:expphi){reference-type="eqref" reference="eq:expphi"}.
+:::
+
+While is also straightforward to obtain analogues of Proposition [\[prop:geodesics2\]](#prop:geodesics2){reference-type="ref" reference="prop:geodesics2"} and [\[prop:geodist\]](#prop:geodist){reference-type="ref" reference="prop:geodist"} in Stiefel coordinates, we omit them as the expressions are more involved and we will not need them in the sequel.

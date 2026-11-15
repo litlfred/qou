@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/04010141/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Cellular algebras and diagram algebras in representation theory",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/04010141",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "04010141",
   "contains": [
     "library/04010141/sections/sec-000",
     "library/04010141/sections/sec-001",
@@ -16,8 +21,10 @@
     "library/04010141/sections/sec-007"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "04010141",
+    "title_source": "slug",
     "source_file": "04010141.pdf",
     "source_sha256": "b86b204b05453a5de8045cefb81512db5af7e7de103a00e2193dfe942e10eaba",
     "pages": 33,

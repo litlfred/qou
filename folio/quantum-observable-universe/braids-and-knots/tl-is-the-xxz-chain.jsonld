@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-tl-is-the-xxz-chain",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:tl-is-the-xxz-chain",
+  "kind": "remark",
+  "title": "The production trace computes in the algebra of a one-dimensional spin chain",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-substrate-massive-regime",
+    "papers/quantum-observable-universe/blocks/def-two-row-stratum"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-substrate-massive-regime",
+  "cites": [
+    "references/jones1985",
+    "references/jimbo1986"
+  ],
+  "tags": [
+    "temperley-lieb",
+    "spatially-one-dimensional",
+    "spin-chain",
+    "convention-d",
+    "bethe-string"
+  ],
+  "text": "tl-is-the-xxz-chain.md",
+  "provenance": "authored"
+}

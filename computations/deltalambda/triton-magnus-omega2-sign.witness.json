@@ -1,7 +1,8 @@
 {
+ "diagnostic_frame": "TWO-ROW (Temperley-Lieb) DIAGNOSTIC. Owner ruling 2026-10-12 (qou-uir6, options ii+iii): the convention-D values in this witness (P_total_wenzl, z = q^3/(q^2+1)) are evaluated OUTSIDE the faithful window 0 <= z <= h, where every three-row weight vanishes, so they see only the two-row quotient. They are kept unchanged as a two-row diagnostic. THE result is the faithful-window scan, computations/deltalambda/magnus-omega2-markov-window-scan.witness.json. Annotation added by hand, label only, no number changed; the producer does not emit this key yet.",
  "computation": "triton-magnus-omega2-sign",
  "scriptFile": "triton_magnus_omega2_sign_probe.py",
- "computedAt": "2026-09-08T06:39:45.507366+00:00",
+ "computedAt": "2026-09-13T08:52:27.061961+00:00",
  "engine": "mpmath mpf at 140 dps (H\u2089 Hoefsmit seminormal; finite-diff germ; 0 free params)",
  "free_parameters": 0,
  "inputs": {
@@ -62,7 +63,7 @@
   "germ": "A_g = q\u00b7(\u2202_q \u03c3_g)\u00b7\u03c3_g\u207b\u00b9 (central finite diff; validated vs differentiated Hecke)",
   "Omega2": "\u00bd \u03a3_{i<j} [A_{g_i},A_{g_j}] over the ordered crossings",
   "density": "\u03c1(\u03b2_T) = \u220f \u03c3_{g_i} (bare word; central dressing drops from \u03a9\u2082)",
-  "pairing": "P = \u03a3_\u03bb y_\u03bb tr(\u03c1_\u03bb \u03a9\u2082_\u03bb), y_\u03bb = d_q(\u03bb)\u00b2/[n]_q!, \u03bb \u22a2 9"
+  "pairing": "P = \u03a3_\u03bb w(\u03bb) tr(\u03c1_\u03bb \u03a9\u2082_\u03bb), \u03bb \u22a2 9, on both weight families: w = d_q(\u03bb)\u00b2/[n]_q! (quantum Plancherel) \u2192 P_total; w = y_\u03bb (Wenzl bridge, production Markov weight) \u2192 P_total_wenzl, the headline arm"
  },
  "results": {
   "per_partition": [
@@ -436,12 +437,12 @@
    }
   ],
   "weight_family": "quantum_plancherel_dq2_over_n_factorial",
-  "weight_family_note": "NOT the Wenzl y_lambda used by the production Markov trace. AGENTS.md forbids conflating y_lambda / w_lambda / w~_lambda, which are distinct at q != 1. Re-weighting this witness's own per-partition tr(rho.Omega2) with the Wenzl bridge weight leaves the sign of P_total unchanged \u2014 measured in magnus_omega2_weight_family_robustness_probe.py.",
+  "weight_family_note": "The `y_lambda` column of `per_partition` holds the quantum Plancherel measure d_q(lambda)^2/[n]_q!, NOT the Wenzl y_lambda used by the production Markov trace. AGENTS.md forbids conflating y_lambda / w_lambda / w~_lambda, which are distinct at q != 1, and these two are not a rescaling of one another: the Wenzl weight carries the level r = 2 row cap (bean qou-fq0f) that zeroes every shape with >= 3 rows, and is a normalised Markov trace with tr(1) = 1 at every n, whereas Plancherel's tr(1) drifts from 11.1 to 6751.5 over n = 6 to 12. Both arms are computed here from the SAME per-partition tr(rho.Omega2): P_total (Plancherel) and P_total_wenzl (headline). On this atom they DISAGREE in sign. Across A = 2, 3, 4 the Plancherel arm runs -, +, + (one sign change, between deuteron and triton) and the Wenzl arm runs -, -, - (no sign change anywhere). The A-dependent sign change the programme targets is therefore exhibited by the Plancherel arm and NOT by the production Wenzl/Markov weight. Choosing the measure BECAUSE it yields the wanted sign would be fitting (AGENTS.md: selection against the target), so the honest reading is that under the production weight the sign change is not exhibited in A = 2, 3, 4. Which measure is the correct pairing for a Magnus Omega2 question is bean qou-za3q decision 1, still OPEN. Measured in magnus_omega2_weight_family_robustness_probe.py; analysed in docs/audits/2026-09-07-magnus-omega2-weight-family-analysis.md.",
   "headline_pairing": "P_total_wenzl",
-  "P_total_wenzl": "-13.9305624538075731404180552517117496835131199151501772774679",
+  "P_total_wenzl": "-13.9305624538075731404180552517117496835131199151501772774678",
   "P_total_wenzl_sign": -1,
   "P_total_wenzl_note": "Sum over lambda of y_lambda^Wenzl * tr(rho.Omega2), the production Markov weight (row cap at level r=2 zeroes every shape with >=3 rows). tr(1)=1 at every n, so values ARE comparable across A -- which the Plancherel arm is not (tr(1) = 11.1 / 184.2 / 6751.5 at n = 6 / 9 / 12). See docs/audits/2026-09-07-magnus-omega2-weight-family-analysis.md.",
-  "P_total": "2.47019270829893338491487511880018646850639746844847340088050",
+  "P_total": "2.47019270829893338491487511880018646850639746844847340088051",
   "P_total_sign": 1,
   "P_control_rho_identity": "0.0",
   "control_tr_M_Omega2_vanishes": true,
@@ -449,15 +450,18 @@
   "n_partitions_negative": 14,
   "sign_indefinite_across_partitions": true,
   "A2_P_total_sign": -1,
-  "sign_flip_vs_A2": true
+  "sign_flip_vs_A2": true,
+  "A2_P_total_wenzl_sign": -1,
+  "sign_flip_vs_A2_wenzl": false,
+  "sign_flip_arms_agree": false
  },
- "verdict": "SIGN FLIP CONFIRMED \u2014 P(A=3) is POSITIVE while P(A=2) was NEGATIVE. The y-weighted 2nd-order Magnus pairing REVERSES sign between the deuteron (A=2) and the triton (A=3), the signature the merged Magnus-wall audit named for a correction that reduces binding at A=2 and adds it at A\u22653. Control tr_M(\u03a9\u2082)=0 holds; per-partition sign-indefinite (14+/14-). HONEST LIMITS: dimensionless SIGN datum only (scope-a); NOT a MeV (open \u0394_\u03bb gate), NOT a physical binding-sign assertion (that is qou-v7ro/#6077, cited not re-derived). The flip is a fact about the object across A; mapping it to 'binding' still needs the sign convention.",
+ "verdict": "SIGN FLIP ON THE PLANCHEREL ARM \u2014 P(A=3) is POSITIVE while P(A=2) was NEGATIVE. The 2nd-order Magnus pairing weighted by the quantum Plancherel measure d_q(\u03bb)\u00b2/[n]_q! REVERSES sign between the deuteron (A=2) and the triton (A=3), the signature the merged Magnus-wall audit named for a correction that reduces binding at A=2 and adds it at A\u22653. \u26a0 THE HEADLINE ARM DISAGREES. Under the production Wenzl/Markov weight \u2014 the one `headline_pairing` declares, and the one every other tr_M in the corpus uses \u2014 P(A=3) is negative and P(A=2) was negative, i.e. NO flip. So this verdict is a statement about the Plancherel arm ONLY. Reporting it as the result, when the measure that yields it was not chosen on principle, would be selection against the target (AGENTS.md). Which measure is correct is bean qou-za3q decision 1, still OPEN. Control tr_M(\u03a9\u2082)=0 holds (weight-independently); per-partition sign-indefinite (14+/14-). HONEST LIMITS: dimensionless SIGN datum only (scope-a); NOT a MeV (open \u0394_\u03bb gate), NOT a physical binding-sign assertion (that is qou-v7ro/#6077, cited not re-derived). Mapping any of it to 'binding' still needs the sign convention.",
  "scope": "scope-(a): decides the A=3 SIGN of tr_M(\u03c1\u00b7\u03a9\u2082) and its relation to the A=2 sign. Dimensionless structural datum. Does NOT reproduce any MeV (open \u0394_\u03bb gate \u2014 a number would be a fit). Does NOT assert a physical binding-sign convention (qou-v7ro / PR #6077, cited not re-derived). No fit; nothing inverted; nothing wired.",
  "wired": false,
  "notes": "Thread-A takeover follow-on: the A\u22653 half the merged deuteron-magnus-omega2 audit (2026-08-29) left untested. Same construction as deuteron_magnus_omega2_sign_probe.py (qou-dp32) on the triton (H\u2089). Cites qou-v7ro/#6077 for the sign convention; does not re-derive it.",
- "scriptHash": "985a14b56711",
- "scriptCommitSha": "7e6afb070b8798f5f44fcf318ed4ae663d0e2248",
- "commitSha": "aeec20567813b4ca17917581905b39bdb9a8d9a5",
+ "scriptHash": "f9b6382ce03c",
+ "scriptCommitSha": "dee94bf5bf5e040928bd8a6dfb328e0dbb4e3cbd",
+ "commitSha": "6c7f0b046752c4037cd545a5262d74066c7cb028",
  "durationMs": 0,
  "q0Anchor": "proton",
  "q0Value": "1.1099785827513808075916690956107688798744991218736"

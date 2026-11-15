@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-diophantine-valley",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:diophantine-valley",
+  "kind": "remark",
+  "title": "The valley of stability as a Diophantine approximation problem",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-integer-stability"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-integer-stability",
+  "tags": [
+    "diophantine",
+    "valley-of-stability",
+    "number-theory",
+    "weyl",
+    "equidistribution"
+  ],
+  "text": "diophantine-valley.md",
+  "provenance": "authored"
+}

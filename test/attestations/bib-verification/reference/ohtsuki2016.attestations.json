@@ -1,0 +1,82 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "ohtsuki2016",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 387,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/ki52/ki52.pdf"
+        },
+        "id": "ohtsuki2016",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "*** WRONG JOIN ***. The seeded id points at a two-author 1994 quantum-dilogarithm entry. The document is a SINGLE-author paper on the asymptotic expansion of the Kashaev invariant of the 5_2 knot - a different author, a different decade and a different result. id set to null: references.ts registers a different, two-author paper by the same first author on two-bridge Kashaev asymptotics and twisted Reidemeister torsion (ohtsuki-takata2015), but nothing matching this single-author 5_2-specific document, and no identifier in the corpus resolves to it. Judged on merits this is a CORE-relevance document, not background. The corpus's Q_beta / resurgence chapter is built almost entirely on the 5_2 knot - QOU/QBeta/FiveTwoDTSpectrumSplit.lean, StokesQZeroDTCount.lean, BarOddQOneCentringNonselective.lean, IotaOddSaddleOffsetAmphichiral.lean and GZWeightGeneral.lean all read 5_2 data out of a SINGLE source (garoufalidis-gu-marino2021) - and this document supplies the independent asymptotic side: the asymptotic expansion of the 5_2 Kashaev invariant, with the hyperbolic volume and Chern-Simons invariant as the leading term, plus a method for the full Poincare asymptotics to all orders. That makes it a genuine external cross-check rather than a duplicate.",
+          "keyResults": [
+            {
+              "locator": "Abstract / main presentation",
+              "statement": "Presentation of the asymptotic expansion of the Kashaev invariant of the 5_2 knot, with leading term the hyperbolic volume and Chern-Simons invariant, plus a method computing the full Poincare asymptotics to all orders.",
+              "useForFolio": "An independent all-orders 5_2 asymptotic series to cross-check the corpus's 5_2 Stokes/DT-spectrum readings, which currently rest on a single source (garoufalidis-gu-marino2021).",
+              "targets": [
+                "qou:QOU.QBeta.FiveTwoDTSpectrumSplit",
+                "qou:QOU.QBeta.Stokes3LargeOrderAmplitude"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "The corpus's 5_2 programme depends on one source for its 5_2 numbers; this in-repo paper is the independent asymptotic source and has no ref() entry. Register it from the title page (note [ohtsuki-takata2015] is a DIFFERENT, already-registered paper sharing this document's first author - do not reuse that key).",
+              "target": "folio/schema/references.ts",
+              "bean": "qou-tn6j"
+            },
+            {
+              "action": "compute-check",
+              "rationale": "Once registered, the all-orders 5_2 Poincare asymptotics give a parameter-free comparison against the large-order amplitude the corpus extracts from the GGM Stokes constants - a genuine external check rather than an internal consistency test.",
+              "target": "qou:QOU.QBeta.Stokes3LargeOrderAmplitude",
+              "bean": "qou-o4k6"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "35ad4ee5a00d"
+        },
+        "note": "Bib key backfilled from duplicate copy of 104171-qt-83, which carries this key. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    },
+    {
+      "position": 440,
+      "entry": {
+        "id": "ohtsuki2016",
+        "status": "unreviewed",
+        "verified_at": "2026-09-03T04:19:53Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        },
+        "fixes_applied": 0,
+        "fix_commit": "(this commit)",
+        "note": "Source IS held: library/104171-qt-83. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
+        "source": {
+          "kind": "upload",
+          "file": "library/104171-qt-83/10.4171-qt-83.pdf"
+        }
+      }
+    }
+  ]
+}

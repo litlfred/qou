@@ -1,0 +1,113 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "hakimoglu-brown2025",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 310,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2506.10206v2/2506.10206v2.pdf"
+        },
+        "id": "hakimoglu-brown2025",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Entry exists (references.ts, id hakimoglu-brown2025) and the citation is load-bearing, not decorative: prop:habiro-tail-archimedean-action cites it for the Q(sqrt 5) dilogarithm relations that reduce the 4_1 real-q Habiro tail action to A_0 = pi^2/5, QOU/QBeta/HabiroTailAction.lean names it in its reference block, and QOU/MassTheory/RogersDilogInflection.lean carries it as a Lean '-- Ref:' backing (Rogers L-function, eq. 4). The ledger row for this upload is nonetheless still id: null / status unreviewed, so the join needs setting. One honest caution rather than a defect claim: the identities actually consumed -- Euler reflection, duplication, Landen, and the golden-ratio value Li_2(phi^{-2}) = pi^2/15 - ln^2 phi -- are classical (Landen; Lewin's Polylogarithms; Zagier's dilogarithm survey), and this preprint supplies new analytic (beta-integral) proofs of them rather than the values themselves. A Lean '-- Ref:' resting on a single unrefereed preprint for a classical evaluation is a fragile citation even when the preprint is correct; the low-cost fix is to add a canonical source alongside it. I have not found any error in the paper -- the note in references.ts records that the Rogers L-function (eq 4), Euler reflection (6) and Landen (7) were checked against the corpus derivation on 2026-07-18.",
+          "keyResults": [
+            {
+              "locator": "eq. (4) (Rogers L-function), eq. (6) (Euler reflection), eq. (7) (Landen), and the Q(sqrt 5) ladder section",
+              "statement": "Beta-integral analytic proofs of two-term Li_2 relations and ladder identities with arguments in Q(sqrt 2), Q(sqrt 3), Q(sqrt 5), Q(sqrt -7), together with single-term dilogarithm evaluations.",
+              "useForFolio": "Backs the reduction of A_0 = -4 int_0^{ln phi} ln(2 sinh s) ds to Li_2(phi^{-2}) = pi^2/15 - ln^2 phi in prop:habiro-tail-archimedean-action, and the '-- Ref:' in RogersDilogInflection.lean.",
+              "targets": [
+                "prop:habiro-tail-archimedean-action",
+                "qou:QOU.QBeta.HabiroTailAction",
+                "qou:QOU.MassTheory.RogersDilogInflection"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "Add a canonical secondary source (Lewin, Polylogarithms and Associated Functions, 1981; or Zagier, The dilogarithm function, 2007) alongside hakimoglu-brown2025 at prop:habiro-tail-archimedean-action, so the classical golden-ratio Li_2 evaluation and the Lean '-- Ref:' do not rest on a single unrefereed preprint. Not a claim of error in the preprint.",
+              "target": "prop:habiro-tail-archimedean-action",
+              "bean": "qou-26ew"
+            },
+            {
+              "action": "compute-check",
+              "rationale": "Re-affirm Li_2(phi^{-2}) = pi^2/15 - ln^2 phi and the resulting A_0 = pi^2/5 numerically against the existing witness, so the identity is anchored in-repo independently of which paper is cited for its proof.",
+              "target": "computations/probes/qbeta_fourone_habiro_tail_action_probe.py",
+              "bean": "qou-z9hf"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T16:12:29.859Z",
+          "source_sha": "d0631a9abd9b"
+        }
+      }
+    },
+    {
+      "position": 311,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2506.10206v2/2506.10206v2.pdf"
+        },
+        "id": "hakimoglu-brown2025",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "JOIN CONFIRMED from front matter (arXiv identifier, MSC codes and subject match the registered entry). This PDF is byte-identical (sha256 prefix d0631a9abd9b) to library/arxiv-2506.10206v2/2506.10206v2.pdf, which the registered entry's note names \u2014 a duplicate upload of one document under two filenames. MISCITED CLAIM, two parts. (1) folio/quantum-observable-universe/lean/QOU/QBeta/HabiroTailAction.lean:124-127 describes the three classical dilogarithm functional equations (Euler reflection, duplication, Landen) as 'analytically proved in' this source. The document does NOT prove them: it states them as known background in \u00a71 as its equations (5), (6) and (7), introduced as fundamental functional equations 'that are to arise in our work', and then USES them to derive its new results. The attribution inverts the dependency. (2) The registered entry's note credits the source with supplying the analytic backing for the golden-ratio value Li2(phi^-2) = pi^2/15 - ln^2 phi, on which the 4_1 real-q Habiro-tail action A_0 = pi^2/5 rests. I searched the full text: the expression pi^2/15 does not occur anywhere, and the document's actual golden-ratio result (its Example 4, from Theorem 3) is pi^2/100 = Re Li2(r_0) with r_0 a root of r^4 - 3r^3 + 4r^2 - 2r + 1 = 0. The Li2(phi^-2) evaluation is a classical Landen/Euler result, not a result of this document. So the reference is credited with the specific evaluation a downstream action value depends on and does not contain it. The reference is still legitimately supporting (it is a genuine source of dilogarithm ladder machinery over several quadratic fields), and one site is accurate: QOU/MassTheory/RogersDilogInflection.lean:38 cites it for the Rogers L-function at its eq. (4), which is indeed there.",
+          "keyResults": [
+            {
+              "locator": "eq. (4), \u00a71",
+              "statement": "Definition of the Rogers L-function and its five-term (Abel) functional equation.",
+              "useForFolio": "The definition the Rogers-dilogarithm inflection module cites; this locator is correct as cited.",
+              "targets": [
+                "QOU.MassTheory.RogersDilogInflection"
+              ]
+            },
+            {
+              "locator": "Thm 3 / Example 4, \u00a76",
+              "statement": "pi^2/100 = Re Li2(r_0) with r_0 a root of r^4 - 3r^3 + 4r^2 - 2r + 1 = 0, expressible via the golden ratio, proving a previously conjectured identity.",
+              "useForFolio": "This is the document's actual golden-ratio content and is NOT the Li2(phi^-2) = pi^2/15 - ln^2 phi evaluation the corpus attributes to it.",
+              "targets": [
+                "prop:habiro-tail-archimedean-action"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "new-remark",
+              "rationale": "Correct HabiroTailAction.lean:124-127: equations (5), (6) and (7) are quoted there as known, not proved, so 'analytically proved in' should read 'cited as standard in', with the classical source named for the three equations.",
+              "target": "prop:habiro-tail-archimedean-action",
+              "bean": "qou-qh3w"
+            },
+            {
+              "action": "compute-check",
+              "rationale": "The registered entry credits this source with Li2(phi^-2) = pi^2/15 - ln^2 phi, which its full text does not contain (its golden-ratio result is pi^2/100 = Re Li2(r_0)). Since A_0 = pi^2/5 for 4_1 is derived from that evaluation, re-source the evaluation and re-check the derivation against the corrected source before relying on it further.",
+              "target": "prop:habiro-tail-archimedean-action",
+              "bean": "qou-hrq0"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "d0631a9abd9b"
+        }
+      }
+    }
+  ]
+}

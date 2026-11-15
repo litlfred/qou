@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1108.5365v2/blocks/prose-sec-022",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1108.5365v2/blocks/prose-sec-022",
   "kind": "prose",
   "title": "The multiplicative unitary",
   "pageStart": 61,
   "pageEnd": 66,
   "text": "../sections/sec-022-73-the-multiplicative-unitary.md",
-  "derivedFrom": "library/arxiv-1108.5365v2/manifest",
-  "sourceDocument": "library/arxiv-1108.5365v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1108.5365v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1108.5365v2",
   "provenance": "ingested"
 }

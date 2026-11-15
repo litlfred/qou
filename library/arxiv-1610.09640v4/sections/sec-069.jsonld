@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/sections/sec-069",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Boundedness Conditions Revisited",
+  "pageStart": 221,
+  "pageEnd": 223,
+  "contains": [
+    "library/arxiv-1610.09640v4/blocks/prose-sec-069",
+    "library/arxiv-1610.09640v4/blocks/remark-sec-069-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.09640v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.09640v4",
+  "provenance": "ingested"
+}

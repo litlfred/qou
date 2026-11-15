@@ -1,0 +1,78 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "kattan2024",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 304,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2402.08782v1/2402.08782v1.pdf"
+        },
+        "id": "kattan2024",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Kattan-Singerman, 'Hecke-Farey coordinates for Bring's surface'. The corpus devotes a whole chapter to Bring's surface but describes it only algebraically -- the S_5-symmetric power-sum locus in P^4 (rem:brings-curve, def:brings-surface) and, at rem:brings-realisations, one sentence saying it is a compact Riemann surface of genus 4. There is no hyperbolic uniformization anywhere: greps for 'regular map', 'fundamental polygon', '{5,4}', 'Fuchsian' and 'tessellation' return nothing in the Bring chapter. This paper supplies exactly that missing face, and supplies it with proofs -- it gives the first proved side-pairing table for the 20-sided polygon, which the corpus's other Bring sources (RR92, BN12) stated without proof. It has already been deep-read once by the corpus (facts extracted in 2026-07-18-uploaded-papers-binding-mass-gap-ideas.md, where its Thm 3.2 and Ex 5.1 drive the still-open idea A7), yet it has no ref() entry. Note the corpus has correctly recorded that this H_4 is the Hecke GROUP C_2 * C_4, not the 4-strand Iwahori-Hecke algebra H_4(q) -- that distinction should survive into the reference note.",
+          "keyResults": [
+            {
+              "locator": "Thm. 3.2",
+              "statement": "Bring's surface is the compactification of H / H_4(5) for the Hecke group H_4 = C_2 * C_4 over Z[sqrt 2], of index 120, carrying the regular map of type {5,4} with 30 vertices, 60 edges and 24 faces, together with the 20-sided polygon and its side pairings.",
+              "useForFolio": "Gives def:brings-surface and rem:brings-realisations the hyperbolic/uniformization description they lack, and supplies an independent Euler count 30 - 60 + 24 = -6 for the chi = -6 ledger that ex:chi-minus-six-derivation currently derives only from the Frobenius-Hopf six-branch-point argument.",
+              "targets": [
+                "def:brings-surface",
+                "rem:brings-realisations",
+                "ex:chi-minus-six-derivation"
+              ]
+            },
+            {
+              "locator": "Ex. 5.1",
+              "statement": "The Farey map reduced mod 5, M_3(5), is the icosahedron (and M_4(3) is the cube).",
+              "useForFolio": "The level-5 reduction parallel (icosahedron = M_3(5), Bring = M_4(5)) is the structural leg of the still-open idea A7 supporting the corpus's icosahedral 1/sqrt 5 bridge on the Delta_lambda magnitude scalar.",
+              "targets": [
+                "def:brings-surface"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Deep-read and fact-extracted into an audit doc in July, driving an open idea, with no bibliography entry.",
+              "target": "def:brings-surface",
+              "bean": "qou-q452"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "rem:brings-realisations asserts the genus-4 Riemann-surface realization in one unsourced sentence; Thm 3.2 is the citable uniformization, with the {5,4} regular map and the 20-gon.",
+              "target": "rem:brings-realisations",
+              "bean": "qou-dbhk"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "The {5,4} map's V - E + F = 30 - 60 + 24 = -6 is an independent arithmetic confirmation of the chi = -6 ledger that the chi-chain derives categorically; worth a remark, and worth stating explicitly that it is a consistency cross-check, not a second derivation of the branch-point count.",
+              "target": "ex:chi-minus-six-derivation",
+              "bean": "qou-1vau"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "30311f0bd815"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

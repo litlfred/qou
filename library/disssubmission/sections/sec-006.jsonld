@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/disssubmission/sections/sec-006",
   "@type": [
     "doco:Section"
   ],
-  "title": "A relative generic vanishing theorem 11",
-  "pageStart": 19,
-  "pageEnd": 20,
+  "title": "Negligible perverse sheaves",
+  "pageStart": 23,
+  "pageEnd": 25,
   "contains": [
     "library/disssubmission/blocks/prose-sec-006"
   ],
-  "derivedFrom": "library/disssubmission/manifest",
-  "sourceDocument": "library/disssubmission/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/disssubmission",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/disssubmission",
   "provenance": "ingested"
 }

@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2604.05244v1/sections/sec-015",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Why Floquet edges are richer than standard RMT edges",
+  "pageStart": 16,
+  "pageEnd": 18,
+  "contains": [
+    "library/arxiv-2604.05244v1/blocks/prose-sec-015"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2604.05244v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2604.05244v1",
+  "provenance": "ingested"
+}

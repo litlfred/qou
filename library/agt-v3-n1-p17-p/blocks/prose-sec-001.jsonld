@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/agt-v3-n1-p17-p/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/agt-v3-n1-p17-p/blocks/prose-sec-001",
   "kind": "prose",
-  "title": "Reshetikhin-Turaev invariants at roots of unity,",
-  "pageStart": 1,
-  "pageEnd": 2,
-  "text": "../sections/sec-001-2-reshetikhin-turaev-invariants-at-roots-of-unit.md",
-  "derivedFrom": "library/agt-v3-n1-p17-p/manifest",
-  "sourceDocument": "library/agt-v3-n1-p17-p/manifest",
+  "title": "Habiro’s formula for ω",
+  "pageStart": 2,
+  "pageEnd": 5,
+  "text": "../sections/sec-001-1-habiros-formula-for-ω.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/agt-v3-n1-p17-p",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/agt-v3-n1-p17-p",
   "provenance": "ingested"
 }

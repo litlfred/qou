@@ -1,13 +1,13 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-25T01:18:15.015608+00:00",
-  "commitSha": "105774c17e58621f1ddc5181478533454bc1281e",
+  "computedAt": "2026-09-13T08:17:10.926135+00:00",
+  "commitSha": "b243a2e6c739e1f4f53cbacfa2c5fe73c1456d55",
   "assertions": [
     {
       "name": "best_miss_below_1ppb_means_derivable",
-      "computed": 4749802.8188808905,
-      "expected": 0.0,
+      "computed": "4749802.81888089933",
+      "expected": "0",
       "passed": false,
       "tolerance": "1.3",
       "unit": "ppb",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "m-pi-hecke-prediction-probe",
   "scriptFile": "m_pi_hecke_prediction_probe.py",
-  "scriptHash": "df3e2fc10846",
-  "scriptCommitSha": "d986e024fd2946cba678be3a93622edf77e5b65f",
+  "scriptHash": "d9983bcdf16c",
+  "scriptCommitSha": "3f473f35d37f883d131e621c153197b5fa270832",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,7 +34,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -46,7 +46,7 @@
   "auditOnly": "Audit-only probe — no content block consumes this output. Question: is m_π± derivable from (m_e, q_0)?",
   "parameters": {
     "q0": "1.109978582751380807591669",
-    "m_e_MeV": "0.510998950690000009",
+    "m_e_MeV": "0.51099895069",
     "m_mu_MeV": "105.6583755",
     "m_pi_pdg_MeV": "139.57039",
     "m_pi_pdg_err_MeV": "0.00018",
@@ -68,188 +68,188 @@
       }
     },
     "E0_candidates_MeV": {
-      "E0_A_me_over_q_qminus1": "4.18598136329447597",
-      "E0_B_me_over_h_sq": "11.6916787762489935",
-      "E0_C_me_FBor": "2.28372520446523722",
-      "E0_D_me_qfact_qminus1": "0.343970069957107642"
+      "E0_A_me_over_q_qminus1": "4.1859813632944759",
+      "E0_B_me_over_h_sq": "11.6916787762489932",
+      "E0_C_me_FBor": "2.28372520446523718",
+      "E0_D_me_qfact_qminus1": "0.343970069957107636"
     },
     "top_20_candidates": [
       {
         "rank": 1,
         "formula": "(i, k=-3)  √(m_e·m_μ) · |tr_M(𝓜_+)|^-3",
-        "pred_MeV": "138.907458168145695",
-        "miss_ppm": 4749.80281888089,
-        "miss_ppb": 4749802.8188808905,
+        "pred_MeV": "138.907458168145694",
+        "miss_ppm": "4749.80281888089933",
+        "miss_ppb": "4749802.81888089933",
         "within_pdg_err": false
       },
       {
         "rank": 2,
         "formula": "(g, N=+5)  m_μ · (|tr_M(𝓜_+)| + 5·h)",
         "pred_MeV": "150.107599362797403",
-        "miss_ppm": 75497.45589159279,
-        "miss_ppb": 75497455.89159279,
+        "miss_ppm": "75497.4558915927903",
+        "miss_ppb": "75497455.8915927903",
         "within_pdg_err": false
       },
       {
         "rank": 3,
         "formula": "(g, N=+4)  m_μ · (|tr_M(𝓜_+)| + 4·h)",
         "pred_MeV": "128.018627810505547",
-        "miss_ppm": 82766.56810584576,
-        "miss_ppb": 82766568.10584575,
+        "miss_ppm": "82766.5681058457534",
+        "miss_ppb": "82766568.1058457534",
         "within_pdg_err": false
       },
       {
         "rank": 4,
         "formula": "(l)  m_μ · (2 − net(𝓜_+))",
         "pred_MeV": "110.276302492810512",
-        "miss_ppm": 209887.55213186328,
-        "miss_ppb": 209887552.1318633,
+        "miss_ppm": "209887.552131863268",
+        "miss_ppb": "209887552.131863268",
         "within_pdg_err": false
       },
       {
         "rank": 5,
         "formula": "(g, N=+6)  m_μ · (|tr_M(𝓜_+)| + 6·h)",
         "pred_MeV": "172.19657091508926",
-        "miss_ppm": 233761.47988903133,
-        "miss_ppb": 233761479.88903132,
+        "miss_ppm": "233761.479889031334",
+        "miss_ppb": "233761479.889031334",
         "within_pdg_err": false
       },
       {
         "rank": 6,
         "formula": "(g, N=+3)  m_μ · (|tr_M(𝓜_+)| + 3·h)",
         "pred_MeV": "105.92965625821369",
-        "miss_ppm": 241030.5921032843,
-        "miss_ppb": 241030592.1032843,
+        "miss_ppm": "241030.592103284297",
+        "miss_ppb": "241030592.103284297",
         "within_pdg_err": false
       },
       {
         "rank": 7,
         "formula": "(c, N=-30)  2·m_μ·|tr_M(𝓜_+)| − -30·m_e",
-        "pred_MeV": "94.6554517233762417",
-        "miss_ppm": 321808.50305443554,
-        "miss_ppb": 321808503.05443555,
+        "pred_MeV": "94.6554517233762414",
+        "miss_ppm": "321808.503054435533",
+        "miss_ppb": "321808503.054435533",
         "within_pdg_err": false
       },
       {
         "rank": 8,
         "formula": "(c, N=-29)  2·m_μ·|tr_M(𝓜_+)| − -29·m_e",
-        "pred_MeV": "94.1444527726862417",
-        "miss_ppm": 325469.73055899434,
-        "miss_ppb": 325469730.55899435,
+        "pred_MeV": "94.1444527726862414",
+        "miss_ppm": "325469.730558994344",
+        "miss_ppb": "325469730.558994344",
         "within_pdg_err": false
       },
       {
         "rank": 9,
         "formula": "(c, N=-28)  2·m_μ·|tr_M(𝓜_+)| − -28·m_e",
-        "pred_MeV": "93.6334538219962417",
-        "miss_ppm": 329130.95806355315,
-        "miss_ppb": 329130958.06355315,
+        "pred_MeV": "93.6334538219962414",
+        "miss_ppm": "329130.958063553155",
+        "miss_ppb": "329130958.063553155",
         "within_pdg_err": false
       },
       {
         "rank": 10,
         "formula": "(c, N=-27)  2·m_μ·|tr_M(𝓜_+)| − -27·m_e",
-        "pred_MeV": "93.1224548713062416",
-        "miss_ppm": 332792.18556811195,
-        "miss_ppb": 332792185.56811196,
+        "pred_MeV": "93.1224548713062414",
+        "miss_ppm": "332792.185568111966",
+        "miss_ppb": "332792185.568111966",
         "within_pdg_err": false
       },
       {
         "rank": 11,
         "formula": "(c, N=-26)  2·m_μ·|tr_M(𝓜_+)| − -26·m_e",
-        "pred_MeV": "92.6114559206162416",
-        "miss_ppm": 336453.41307267075,
-        "miss_ppb": 336453413.07267076,
+        "pred_MeV": "92.6114559206162414",
+        "miss_ppm": "336453.413072670776",
+        "miss_ppb": "336453413.072670776",
         "within_pdg_err": false
       },
       {
         "rank": 12,
         "formula": "(c, N=-25)  2·m_μ·|tr_M(𝓜_+)| − -25·m_e",
-        "pred_MeV": "92.1004569699262416",
-        "miss_ppm": 340114.6405772296,
-        "miss_ppb": 340114640.5772296,
+        "pred_MeV": "92.1004569699262414",
+        "miss_ppm": "340114.640577229587",
+        "miss_ppb": "340114640.577229587",
         "within_pdg_err": false
       },
       {
         "rank": 13,
         "formula": "(c, N=-24)  2·m_μ·|tr_M(𝓜_+)| − -24·m_e",
-        "pred_MeV": "91.5894580192362416",
-        "miss_ppm": 343775.8680817884,
-        "miss_ppb": 343775868.0817884,
+        "pred_MeV": "91.5894580192362414",
+        "miss_ppm": "343775.868081788398",
+        "miss_ppb": "343775868.081788398",
         "within_pdg_err": false
       },
       {
         "rank": 14,
         "formula": "(c, N=-23)  2·m_μ·|tr_M(𝓜_+)| − -23·m_e",
-        "pred_MeV": "91.0784590685462416",
-        "miss_ppm": 347437.0955863472,
-        "miss_ppb": 347437095.5863472,
+        "pred_MeV": "91.0784590685462414",
+        "miss_ppm": "347437.095586347209",
+        "miss_ppb": "347437095.586347209",
         "within_pdg_err": false
       },
       {
         "rank": 15,
         "formula": "(c, N=-22)  2·m_μ·|tr_M(𝓜_+)| − -22·m_e",
-        "pred_MeV": "90.5674601178562416",
-        "miss_ppm": 351098.323090906,
-        "miss_ppb": 351098323.090906,
+        "pred_MeV": "90.5674601178562414",
+        "miss_ppm": "351098.323090906019",
+        "miss_ppb": "351098323.090906019",
         "within_pdg_err": false
       },
       {
         "rank": 16,
         "formula": "(c, N=-21)  2·m_μ·|tr_M(𝓜_+)| − -21·m_e",
-        "pred_MeV": "90.0564611671662416",
-        "miss_ppm": 354759.5505954648,
-        "miss_ppb": 354759550.5954648,
+        "pred_MeV": "90.0564611671662414",
+        "miss_ppm": "354759.55059546483",
+        "miss_ppb": "354759550.59546483",
         "within_pdg_err": false
       },
       {
         "rank": 17,
         "formula": "(c, N=-20)  2·m_μ·|tr_M(𝓜_+)| − -20·m_e",
-        "pred_MeV": "89.5454622164762416",
-        "miss_ppm": 358420.7781000236,
-        "miss_ppb": 358420778.1000236,
+        "pred_MeV": "89.5454622164762414",
+        "miss_ppm": "358420.778100023641",
+        "miss_ppb": "358420778.100023641",
         "within_pdg_err": false
       },
       {
         "rank": 18,
         "formula": "(c, N=-19)  2·m_μ·|tr_M(𝓜_+)| − -19·m_e",
-        "pred_MeV": "89.0344632657862416",
-        "miss_ppm": 362082.00560458243,
-        "miss_ppb": 362082005.6045824,
+        "pred_MeV": "89.0344632657862414",
+        "miss_ppm": "362082.005604582452",
+        "miss_ppb": "362082005.604582452",
         "within_pdg_err": false
       },
       {
         "rank": 19,
         "formula": "(c, N=-18)  2·m_μ·|tr_M(𝓜_+)| − -18·m_e",
-        "pred_MeV": "88.5234643150962416",
-        "miss_ppm": 365743.23310914123,
-        "miss_ppb": 365743233.10914123,
+        "pred_MeV": "88.5234643150962414",
+        "miss_ppm": "365743.233109141263",
+        "miss_ppb": "365743233.109141263",
         "within_pdg_err": false
       },
       {
         "rank": 20,
         "formula": "(c, N=-17)  2·m_μ·|tr_M(𝓜_+)| − -17·m_e",
-        "pred_MeV": "88.0124653644062416",
-        "miss_ppm": 369404.4606137001,
-        "miss_ppb": 369404460.6137001,
+        "pred_MeV": "88.0124653644062414",
+        "miss_ppm": "369404.460613700073",
+        "miss_ppb": "369404460.613700073",
         "within_pdg_err": false
       }
     ],
     "best_match": {
       "formula": "(i, k=-3)  √(m_e·m_μ) · |tr_M(𝓜_+)|^-3",
-      "pred_MeV": "138.9074581681456947279818",
+      "pred_MeV": "138.9074581681456935167124",
       "pdg_MeV": "139.57039",
-      "miss_ppm": 4749.80281888089,
-      "miss_ppb": 4749802.8188808905,
-      "pdg_exp_precision_ppb": 1289.6718279572049,
+      "miss_ppm": "4749.80281888089933",
+      "miss_ppb": "4749802.81888089933",
+      "pdg_exp_precision_ppb": "1289.67182795720496",
       "matches_within_pdg_error": false
     },
     "verdict": {
       "summary": "PARTIAL — best candidate within 4750 ppm. Order of magnitude correct but no exact formula found.",
       "cal3_status": "m_π is a MODERATE CAL-3 candidate",
       "n_candidates_tried": 208,
-      "best_miss_ppm": 4749.80281888089,
-      "best_miss_ppb": 4749802.8188808905
+      "best_miss_ppm": "4749.80281888089933",
+      "best_miss_ppb": "4749802.81888089933"
     }
   },
   "caveats": [

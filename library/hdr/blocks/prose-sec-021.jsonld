@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/hdr/blocks/prose-sec-021",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/hdr/blocks/prose-sec-021",
   "kind": "prose",
   "title": "Families of characters for Hecke algebras from rational Cherednik algebras",
   "pageStart": 45,
   "pageEnd": 48,
   "text": "../sections/sec-021-families-of-characters-for-hecke-algebras-from-r.md",
-  "derivedFrom": "library/hdr/manifest",
-  "sourceDocument": "library/hdr/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/hdr",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/hdr",
   "provenance": "ingested"
 }

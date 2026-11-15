@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/phys-rep09/sections/sec-012",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "An improved radius of convergence",
+  "pageStart": 18,
+  "pageEnd": 19,
+  "contains": [
+    "library/phys-rep09/blocks/prose-sec-012"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/phys-rep09",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/phys-rep09",
+  "provenance": "ingested"
+}

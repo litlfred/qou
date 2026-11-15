@@ -34,6 +34,32 @@ The last two are why `--write` reports BLOCK on 12 files: rewriting three
 fields while a fourth stays at 1.10998 leaves one certificate straddling two
 anchors, with nothing recording the split. That is worse than not touching it.
 
+**`tr_markov_f64` is not a Markov trace, in any convention (measured
+2026-10-11, bean qou-m7py).** `v9.rs` weights each word by ``z^len(w)``
+with ``z = 1/(t + t⁻¹)``, ``t = √q`` (convention C, excised 2026-08-15). The
+Markov trace is not multiplicative in word length: ``tr(σ₀σ₁σ₀) = h·z² + z``,
+not ``z³`` (the same defect `gram.rs` fixed in `TR_M[5]`). The exact `jets`
+reproduce the committed value under that z^len rule to ~12 digits, which
+identifies the formula; it does not make the value a trace. A convention-D
+trace needs the per-word element, which the certificates do not store.
+**Deleted 2026-10-11 (owner ruling, litlfred/qou#7685):** v9 no longer
+writes `tr_markov_f64` / `tr_markov_cleared` / `tr_markov_denom_power`; it
+writes `tr_markov_d`, the exact Ocneanu trace at ``z = q³/(q²+1)``, computed
+in v9 from the full crossing product. The old values and code are on branch
+`cat/cat-harness/fsh-guts` under
+`fsh-guts/deprecated/tools/hecke-engine/v9-tr-markov-zlen/`.
+
+**And 34 of the 35 v9 certificates were built with a pre-fix crossing.**
+Their exact polynomials carry odd powers of ``t``; at every commit they are
+stamped with (`62d305e` and seven others, all 2026-04-05) the n-n crossing was ``t⁴σ + t − t³``, which is not
+proportional to ``σ⁻¹ = σ − (t² − t⁻²)`` under v9's own relation
+``σ² = (t² − t⁻²)σ + 1``. Only 40Ar (`1b1b1d5`) uses the fixed crossing.
+So the 22 fields re-anchored on 2026-10-10 are faithful evaluations of a
+mis-built element. Only `fsh-guts` deprecated scripts read these files.
+All 35 were regenerated with the current v9 on 2026-10-11 (#7686), so the
+v9 certificates now carry proton-pin `*_f64` fields straight from the
+generator and this script has nothing to re-anchor in them.
+
 That matters because the obvious alternative — re-running the generator — is
 actively destructive here: the 51 committed certificates come from four
 different binaries, and re-running the wrong one replaces exact symbolic data
@@ -247,6 +273,9 @@ def took_mpfr_path(doc) -> bool:
     return not (finite and abs(n) > 1e-300)
 
 
+SIGNOFF = ""
+
+
 def process(path: pathlib.Path, write: bool) -> str:
     doc = json.loads(path.read_text())
     have = [k for k in POLY_TO_F64 if isinstance(doc.get(k), dict) and doc[k].get("terms")]
@@ -371,6 +400,7 @@ def process(path: pathlib.Path, write: bool) -> str:
                 f"polynomials at the proton pin, at {work_dps} dps chosen from "
                 f"{cancel:.0f} digits of cancellation; exact terms untouched."
             ),
+            "owner_signoff": SIGNOFF,
             "generated_by": prior,
         }
         path.write_text(json.dumps(doc, indent=2) + "\n")
@@ -387,6 +417,8 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--write", action="store_true",
                     help="apply (default: dry run)")
+    ap.add_argument("--signoff", default="",
+                    help="required with --write: where the owner approved it")
     ap.add_argument("--dir", default=str(pathlib.Path(__file__).resolve().parent.parent))
     args = ap.parse_args()
 
@@ -395,40 +427,28 @@ def main() -> int:
         print("no certificates found", file=sys.stderr)
         return 1
 
-    if args.write:
+    if args.write and not args.signoff:
         print(
-            "--write is DISABLED.\n"
-            "\n"
-            "The four defects that previously blocked it are FIXED -- precision\n"
-            "is now chosen per file from the measured cancellation, out-of-f64\n"
-            "values are reported instead of serialized as Infinity, the one\n"
-            "MPFR-path certificate is detected and left alone, and the dead\n"
-            "--max-rel guard is gone rather than repaired.\n"
-            "\n"
-            "What remains is not a defect, it is a decision that is not the\n"
-            "script's to make: this REWRITES COMMITTED, PUBLISHED certificate\n"
-            "data. Per AGENTS.md that is an owner call, and one this arc has\n"
-            "already got wrong once -- an earlier regeneration attempt in this\n"
-            "session destroyed exact symbolic terms in two files before it was\n"
-            "reverted.\n"
-            "\n"
-            "The dry run below is the deliverable: it reports, per certificate,\n"
-            "what would change and how far the committed value can be trusted.\n"
-            "Re-enable this only with explicit sign-off, and read the BLOCK\n"
-            "lines first -- those files carry an f64 field with no exact source,\n"
-            "so writing them would leave one file straddling two anchors.\n",
+            "--write rewrites committed certificate data, which is an owner\n"
+            "call. Pass --signoff '<where the owner approved it>' so the record\n"
+            "of that approval lands in each rewritten file's generation block.\n"
+            "BLOCK, KEEP and SKIP files are never written either way.\n",
             file=sys.stderr,
         )
         return 2
+    if args.write:
+        global SIGNOFF
+        SIGNOFF = args.signoff
 
-    rows = [process(p, False) for p in paths]
+    rows = [process(p, args.write) for p in paths]
     for r in rows:
         print(" ", r)
 
     def n(prefix):
         return sum(1 for r in rows if r.startswith(prefix))
 
-    print(f"\n  re-anchorable : {n('would')}")
+    print(f"\n  re-anchorable : {n('would') + n('WROTE')}"
+          f"{'  (written)' if args.write else ''}")
     print(f"  blocked       : {n('BLOCK')}  (an f64 field has no exact source; "
           f"a partial write would straddle two anchors)")
     print(f"  keep as-is    : {n('KEEP')}   (v9 used MPFR; committed value is "

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2509.04267v3/blocks/prose-sec-008",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2509.04267v3/blocks/prose-sec-008",
   "kind": "prose",
-  "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
-  "pageStart": 16,
-  "pageEnd": 18,
-  "text": "../sections/sec-008-16-masahico-saito-and-emanuele-zappala.md",
-  "derivedFrom": "library/arxiv-2509.04267v3/manifest",
-  "sourceDocument": "library/arxiv-2509.04267v3/manifest",
+  "title": "Invariants from deformations of the transposition",
+  "pageStart": 12,
+  "pageEnd": 15,
+  "text": "../sections/sec-008-51-invariants-from-deformations-of-the-transposi.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2509.04267v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2509.04267v3",
   "provenance": "ingested"
 }

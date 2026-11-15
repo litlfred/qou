@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0603732v2/blocks/prose-sec-038",
+  "kind": "prose",
+  "title": "Quantised function algebras",
+  "pageStart": 24,
+  "pageEnd": 24,
+  "text": "../sections/sec-038-65-quantised-function-algebras.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0603732v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0603732v2",
+  "provenance": "ingested"
+}

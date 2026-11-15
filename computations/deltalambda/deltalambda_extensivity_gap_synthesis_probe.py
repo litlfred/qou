@@ -35,10 +35,32 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 from codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION
 
 set_compute_dps()
+
+
+def _ser(o):
+    """Recursively replace mpf with its full-precision decimal string.
+
+    `json.dump` cannot encode an mpf, and `open(out, 'w')` below truncates
+    the witness before it can raise -- so this producer did not fail to
+    update its witness, it DESTROYED it on every run. The two AME_B_*
+    imports above are mpf (`70ae502091a`), which is how it got here.
+    Bean `qou-lz8f`.
+    """
+    # `mp` here is mpmath's CONTEXT object (from mpmath import mp, mpf, fabs),
+    # not the module, so the type to test is the directly-imported `mpf`.
+    if isinstance(o, mpf):
+        return fmt(o)
+    if isinstance(o, dict):
+        return {k: _ser(v) for k, v in o.items()}
+    if isinstance(o, list):
+        return [_ser(v) for v in o]
+    return o
+
+
 HERE = Path(__file__).resolve().parent
 COMP = HERE.parent      # computations/
 
@@ -189,7 +211,7 @@ def main():
     wit.setdefault("scriptFile", _os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
         wit, script_path=__file__, engine=None, q0_anchor=False)
-    json.dump(wit, open(out, 'w'), indent=1)
+    json.dump(_ser(wit), open(out, 'w'), indent=1)
     print("\nwitness ->", out.name, "  allPassed:", wit["allPassed"])
     return 0 if wit["allPassed"] else 1
 

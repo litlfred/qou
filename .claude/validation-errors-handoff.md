@@ -17,15 +17,15 @@ Expected 'definition' | 'theorem' | ... | 'diagram'
 ```
 
 **Root cause**: `chapter` is not in the Zod discriminated union in
-`content/schema/types.ts`. The `chapter()` builder exists but the
+`folio-assistant/cat-harness/schemas/types.ts`. The `chapter()` builder exists but the
 schema's block-level discriminator doesn't include it.
 
 **Fix**: Either add `'chapter'` to the block kind discriminator, or
 restructure chapter manifests to use a separate schema (they're not
 really "blocks" — they're containers).
 
-**Files**: `content/schema/types.ts` (discriminator union),
-`content/schema/constraints.ts` (Zod schemas)
+**Files**: `folio-assistant/cat-harness/schemas/types.ts` (discriminator union),
+`folio-assistant/cat-harness/schemas/constraints.ts` (Zod schemas)
 
 #### 2. Unresolved cross-chapter references (~80 errors)
 
@@ -79,7 +79,7 @@ Definitions that require `.lean` files but don't have them:
 | `def:categorical-q-torsion-leaf` | ch1 |
 
 **Fix**: Create `.lean` stub files for each. Some already have
-partial formalizations in `content/quantum-observable-universe/lean/QOU/Torsion.lean` that
+partial formalizations in `folio/quantum-observable-universe/lean/QOU/Torsion.lean` that
 could be copied/adapted.
 
 #### 4. Missing Lean declarations (39 warnings)
@@ -96,7 +96,7 @@ These are warnings, not errors. Lower priority.
 
 ### Files to Read First
 
-- `content/schema/types.ts` — block kind discriminator
-- `content/schema/constraints.ts` — Zod validation schemas
+- `folio-assistant/cat-harness/schemas/types.ts` — block kind discriminator
+- `folio-assistant/cat-harness/schemas/constraints.ts` — Zod validation schemas
 - `content/pipeline/validate.ts` — validation pipeline
-- `content/quantum-observable-universe/lean/QOU/Torsion.lean` — existing torsion formalizations
+- `folio/quantum-observable-universe/lean/QOU/Torsion.lean` — existing torsion formalizations

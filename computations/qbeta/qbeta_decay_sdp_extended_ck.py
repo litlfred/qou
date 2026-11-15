@@ -151,7 +151,29 @@ def evaluate_at_silver_ratio(_c_k_val_at_q0: mpf, k: int) -> Fraction | None:
     return None
 
 
+# REFUSES BY DESIGN (2026-10-10 follow-up, beans qou-54g5 / qou-xyk3, #7573).
+# This extractor divides R(q0) by CONVENTION-C rungs, and its only input,
+# q-beta-operator-valued-N3.witness.json, is produced with z_D substituted
+# into the C-frame ladder -- the move that producer's own header says
+# AGENTS.md forbids. Read that way it yields c_2 = -9.2962 (C gives -1.0150)
+# and c_3 = -974, and its comparison column was printed from literals. One
+# scalar R also fixes at most one rung (qou-8ofm / qou-frch). So there is no
+# valid input in either convention until the ladder is re-derived under D
+# (qou-cds1). The committed witness is left untouched for its consumers.
+REFUSAL = (
+    "REFUSED: no valid input. The N3 witness is a z_D-substituted "
+    "convention-C ladder, which this C-frame extractor cannot read "
+    "(beans qou-54g5 / qou-xyk3; re-derivation is qou-cds1). "
+    "Witness not rewritten."
+)
+
+
 def main() -> None:
+    print(REFUSAL)
+    sys.exit(2)
+
+
+def _main_convention_c_historical() -> None:
     # Load 50dps inputs. Schema: `{..., "data": {Q_N2, Q_AME, ...}}`.
     # The pinning witness has a different top-level layout
     # (`derived_50_digit.q`) — do NOT assume a uniform schema across

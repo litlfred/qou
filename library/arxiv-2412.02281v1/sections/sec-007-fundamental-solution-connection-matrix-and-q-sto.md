@@ -8,98 +8,54 @@ pages: 10-11
 source_pdf: 2412.02281v1.pdf
 source_sha256: ac4127cf4994b2ba
 doc_brief: "Explicit evaluation of the q-Stokes matrices for certain confluent hypergeometric q-difference equations — We prove a connection formula for the basic hypergeomtric fu nction nϕn−1 (a1,...,a n−1"
+text_source: latex
+latex_prose_ratio: 0.825
+latex_coverage_ratio: 0.915
 ---
-The fundamental solution of (1) is studied in [5] (especiall y when u is invertible). If u is not invertible, there
-is a slightly diﬀerent formal fundamental solution (see e.g ., [6]). Particularly, the system (2) has a formal
-fundamental solution around inﬁnity as follows
-ˆFq(z;Enn,A ) = ˆHq(z;Enn,A )zδ (n−1)
-q (A)eq
-Å
-Ennq−δ (n−1)
-q (A)z
-ã
-,
-10
-where ˆHq(z;Enn,A ) = Idn + ∑ ∞
-m=1H (∞)
-m z−m and
-δ(n−1)
-q (A)ij =
-
-
-
-logq(1 − (1 −q)A(n−1))ij, if 1 ≤i,j ≤n − 1,∑ n
-l=1µl − ∑ n−1
-l=1 νl, if i =j =n,
-0, otherwise,
-(29)
-with A(n−1) being the upper left ( n − 1) × (n − 1) submatrix of A = (aij) and
-eq
-(
-Ennq−δ (n−1)
-q (A)z
-)
-= diag
-(
-0,..., 0,e q
-(
-q−δ (n−1)
-q (A)nnz
-))
-.
-Proposition 3.1 (see e.g., [2]) . The entries in the last column of ˆFq(z;Enn,A ) are convergent, while the other
-entries of ˆFq(z;Enn,A ) are in general divergent.
-But still, the entries of (the ﬁrst n − 1 columns of) the formal fundamental solution ˆFq(z;Enn,A ) (or
-equivalently ˆHq(z;Enn,A )) of the equation (2) are [ λ ;q]-summable for any λ ∈ C∗\ ∪1≤j≤n−1 [−(1 −q)/q ν j ;q]
-(see [1, 6]). That is,
-Proposition 3.2 ([1, 6]) . For any λ ∈ C∗\ ∪ 1≤j≤n−1 [−(1 −q)/q ν j ;q], there is a fundamental solution
-F (∞)
-q (z,λ ;Enn,A ) of the equation (2) obtained from the q-Borel resummation as follows
-F (∞)
-q (z,λ ;Enn,A ) := H (∞)
-q (z,λ ;Enn,A )zδ (n−1)
-q (A)eq
-Å
-Ennq−δ (n−1)
-q (A)z
-ã
-,
-with the n ×n matrix H (∞)
-q (z,λ ;Enn,A ) given by
-H (∞)
-q (z,λ ;Enn,A )ij := L[λ ;q]
-q;1 ◦ ˆBq;1( ˆHq(z;Enn,A )ij), for i,j = 1,...,n.
-Moreover, there is a convergent fundamental solution aroun d the origin of the form (see [5])
-F (0)
-q (z;Enn,A ) = H (0)
-q (z;Enn,A )zlogq(1−(1−q)An ), with H (0)
-q (z;Enn,A ) = H (0)
-0 +
-∞∑
-m=1
-H (0)
-m zm,
-where An :=
-Ä
-λ (n)
-1 ,...,λ (n)
-n
-ä
-, logq(1 − (1 −q)An) = diag(µ 1,...,µ n), and H (0)
-0 satisﬁes A =H (0)
-0 An
-Ä
-H (0)
-0
-ä−1
-.
-Deﬁnition 3.3. For any λ ∈ C∗\ ∪1≤j≤n−1 [−(1 −q)/q ν j ;q], the connection matrix Uq(z,λ ;Enn,A ) of (2) is
-deﬁned by
-F (∞)
-q (z,λ ;Enn,A )Uq(z,λ ;Enn,A ) = F (0)
-q (z;Enn,A ).
-For another µ ∈ C∗ satisfying µ /∈ [λ ;q] and µ /∈ [−(1 −q)/q ν j ;q], 1 ≤ j ≤ n − 1, the q-Stokes matrix
-Sq(z,λ,µ ;Enn,A ) of (2) is deﬁned by
-F (∞)
-q (z,µ ;Enn,A ) = F (∞)
-q (z,λ ;Enn,A )Sq(z,λ,µ ;Enn,A ).
+\label{sec:sol zero inf}
+ The fundamental solution of \eqref{u+A/z} is studied in \cite{birkhoff1913generalized} (especially when $u$ is invertible).  If $u$ is not invertible, there is     a slightly different formal  fundamental solution   (see e.g.,  \cite{dreyfus2015confluence}). Particularly,  the system \eqref{qdes} has a  formal fundamental solution around infinity as follows
+ \begin{equation*}
+    \hat{F}_q(z;E_{n n},A)=\hat{H}_q(z;E_{nn},A)  z^{\delta^{(n-1)}_{q}(A)}   e_q\left( E_{n n} q^{ -\delta_{q}^{(n-1)}(A) } z \right),
+\end{equation*}
+where $\hat{H}_q(z;E_{nn},A)=\mathrm{Id}_n+\sum_{m=1}^{\infty} H^{(\infty)}_{m}  z^{-m}$ and 
+\begin{equation}\label{deltan-1}
+    \delta^{(n-1)}_{q}\left(A\right)_{ij}=\left\{
+          \begin{array}{lr}
+             \log_q(1-(1-q)A^{(n-1)})_{i j},   & \text{if} \ \ 1\le i, j\le n-1,  \\
+     \sum_{l=1}^{n} \mu_l-\sum_{l=1}^{n-1}\nu_l        , & \text{if} \ \ i=j=n,\\
+           0, & \text{otherwise},
+             \end{array}
+\right.
+\end{equation}
+with  $A^{\left(n-1\right)}$ being  the upper left $(n-1)\times (n-1)$ submatrix of $A=\left(a_{i j}\right)$    and \[e_q\big( E_{n n} q^{ -\delta_{q}^{(n-1)}(A) } z \big)=\mathrm{diag}\Big(0,...,0,e_q\Big(q^{-\delta^{(n-1)}_{q}\left(A\right)_{n n}}z  \Big)\Big).\]  
+\begin{prop}[see e.g.,  \cite{adams1928linear}]\label{convergent column}
+    The entries in the last column of $\hat{F}_q(z;E_{n n},A)$  are convergent, while the  other entries of $\hat{F}_q(z;E_{n n},A)$  are   in general divergent.
+\end{prop}
+ But still, the entries of (the first $n-1$ columns of) the formal fundamental solution $\hat{F}_q(z;E_{nn},A)$ (or equivalently $\hat{H}_q(z;E_{n n},A)$) of the equation \eqref{qdes} are $[\lambda;q]$-summable for any $\lambda\in \mathbb{C}^{*}\backslash \cup_{1\leq j \leq n-1}[-{(1-q)}/{q^{\nu_j}};q]$ (see \cite{adachi2019q, dreyfus2015confluence}). That is,
+\begin{prop}[\cite{adachi2019q, dreyfus2015confluence}]
+For any $\lambda\in \mathbb{C}^{*}\backslash \cup_{1\leq j \leq n-1} [-{(1-q)}/{q^{\nu_j}};q]$,    there is a  fundamental solution $F_q^{(\infty)}(z,\lambda;E_{nn},A)$ of the equation \eqref{qdes} obtained from  the  $q$-Borel resummation as follows
+  \begin{equation*}
+      F_q^{(\infty)}(z,\lambda;E_{nn},A):={H}^{(\infty)}_q(z,\lambda;E_{n n},A)z^{\delta^{(n-1)}_{q}(A)}   e_q\left( E_{n n} q^{ -\delta_{q}^{(n-1)}(A) } z \right), 
+  \end{equation*}
+  with the $n\times n$ matrix ${H}^{(\infty)}_q(z,\lambda;E_{n n},A)$ given by
+  \begin{equation*}
+   {H}^{(\infty)}_q(z,\lambda;E_{n n},A)_{ij}:=   \mathcal{L}_{q ; 1}^{[\lambda;q]} \circ \hat{\mathcal{B}}_{q ; 1} (\hat{H}_q(z;E_{n n},A)_{ij}),\  \text{for} \ i,j=1,...,n.
+  \end{equation*}
+\end{prop}
+Moreover, there is a convergent  fundamental solution around the origin of the form (see \cite{birkhoff1913generalized})
+\begin{equation*}
+    F_q^{(0)}(z;E_{n n},A)={H}^{(0)}_q(z;E_{nn},A)z^{\log_q(1-(1-q) A_n ) }, \  \text{with} \  {H}^{(0)}_q(z;E_{nn},A)= H^{(0)}_{0}+\sum_{m=1}^{\infty}H^{(0)}_{m}z^m  ,
+\end{equation*}
+where  $A_n:=\left(\lambda^{(n)}_1,...,\lambda^{(n)}_n  \right)$,   $\log_q(1-(1-q) A_n )=\operatorname{diag}(\mu_1,...,\mu_{n})$, and $H_0^{(0)}$  satisfies $A=H^{(0)}_0 A_n \left(H_0^{(0)}\right)^{-1}$. 
+
+\begin{defn}\label{UqSq}
+For any $\lambda\in \mathbb{C}^{*}\backslash \cup_{1\leq j \leq n-1} [-{(1-q)}/{q^{\nu_j}};q]$,       
+the connection matrix $U_q(z,\lambda;E_{nn},A)$ of \eqref{qdes}   is  defined   by
+\begin{equation*}
+   F_q^{(\infty)}(z,\lambda;E_{nn},A) U_q(z,\lambda;E_{nn},A)=F_q^{(0)}(z;E_{nn},A).
+\end{equation*}
+For another $\mu \in \mathbb{C}^{*}$    satisfying    $\mu\notin   [\lambda;q]  $  and     $\mu\notin [-{(1-q)}/{q^{\nu_j}};q]$,  $1\leq j \leq n-1$,       the  $q$-Stokes matrix   $S_q(z,\lambda,\mu;E_{nn},A)$ of \eqref{qdes}  is defined   by
+\begin{equation*}
+    F_q^{(\infty)}(z,\mu;E_{nn},A)=F_q^{(\infty)}(z,\lambda;E_{nn},A) S_q(z,\lambda,\mu;E_{nn},A).
+\end{equation*}
+\end{defn}

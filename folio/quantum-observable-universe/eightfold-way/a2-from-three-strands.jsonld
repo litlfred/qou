@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-a2-from-three-strands",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:a2-from-three-strands",
+  "kind": "proposition",
+  "title": "The $A_2$ root system from the Hecke algebra $H_3(q)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-braid-group",
+    "papers/quantum-observable-universe/blocks/rem-hecke-algebra-from-braiding"
+  ],
+  "leanRef": "qou:QOU.Eightfold.WeylInvarianceQDeformation.cartanMatrix_A2",
+  "text": "a2-from-three-strands.md",
+  "provenance": "authored"
+}

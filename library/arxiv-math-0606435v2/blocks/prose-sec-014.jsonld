@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0606435v2/blocks/prose-sec-014",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0606435v2/blocks/prose-sec-014",
   "kind": "prose",
-  "title": "Xu’s form and Seifert surfaces",
-  "pageStart": 11,
-  "pageEnd": 11,
-  "text": "../sections/sec-014-3-xus-form-and-seifert-surfaces.md",
-  "derivedFrom": "library/arxiv-math-0606435v2/manifest",
-  "sourceDocument": "library/arxiv-math-0606435v2/manifest",
+  "title": "Positive braid links",
+  "pageStart": 26,
+  "pageEnd": 26,
+  "text": "../sections/sec-014-51-positive-braid-links.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0606435v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0606435v2",
   "provenance": "ingested"
 }

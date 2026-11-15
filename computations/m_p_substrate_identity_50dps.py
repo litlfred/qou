@@ -456,7 +456,7 @@ def main():
         "tritium": "qou:QOU.BraidKnot.tritium_uniqueness_closed",
         "helium3": "qou:QOU.BraidKnot.helium3_uniqueness_closed",
         "framework_doc":
-            "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+            "folio/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
         "note": (
             "These theorems certify T_w uniqueness at the abstract "
             "empty-constraint SDP level. The real per-nucleus SDP "

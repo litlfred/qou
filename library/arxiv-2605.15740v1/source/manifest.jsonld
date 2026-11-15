@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2605.15740v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Bailey pairs, Eichler integrals and unified Witten-Reshetikhin-Turaev invariants (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2605.15740v1",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2605.15740&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2605.15740v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2605.15740v1",
+    "content_type": "application/gzip",
+    "sha256": "5bf5da550efbe1b51bbfe7a975091d177d5078f4fbe9039ad8cecfbcc7c9ec3d",
+    "bytes": 19061,
+    "fetched": "2026-10-10T15:22:46+00:00",
+    "files": [
+      {
+        "path": "source/files/los12.tex",
+        "role": "tex",
+        "sha256": "41828257d2fa353a1b802e93b288794dfa36519387b31dd871f3728e5ab6936b",
+        "bytes": 80143
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

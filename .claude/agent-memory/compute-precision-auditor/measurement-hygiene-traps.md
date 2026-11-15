@@ -380,6 +380,13 @@ without a revision attached cannot be checked by the next reader.
 **Cost when it is not caught:** the wrong figure had already reached three
 durable artifacts. Two were editable; the commit message was not.
 
+**A second way to land in this trap, added 2026-09-05:** `git stash`. It
+*looks* like it pins a revision — "put my changes aside and measure what was
+there before" — and it does not: it reverts only the WORKING TREE, so any
+change you have already committed on the branch stays in the measurement. See
+"`git stash` is not a baseline" below; same rule, different mechanism, and the
+stash form is more dangerous because it reads as revision-shaped.
+
 ## TRAP — a producer's ARGUMENT LIST is part of what its committed witness records
 
 Hit **twice in one session** (2026-09-03/04), on two unrelated producers, in
@@ -601,3 +608,147 @@ switched `_Y_LAMBDA_DEFAULT` 33 s earlier — but the *size* is not the μ–p p
 (11.5 ppb, three orders too small); both y_λ tables had been regenerated that
 day, moving weight mass onto the ≤2-row partitions ((3,3) ×1.071 → (6,) ×1.948,
 ≥3-row → ~1e-72). **`scriptHash`-keyed staleness structurally cannot see this.**
+
+---
+
+# Session 2026-09-05 — the seminormal-builder precision arc (bean `qou-sv7h`, PRs #6794 / #6807)
+
+Seven traps, every one of them mine, each caught by a measurement rather than
+by review.  The rebase that landed this section put the tr_M provenance arc
+above it, so the header is explicit: these seven belong to `qou-sv7h`, not to
+the arc immediately preceding them.
+
+## TRAP — the AMBIENT `mp.dps` is 15, so exact inputs become a float64 computation
+
+`_precision.py` deliberately does not set `mp.dps` as an import side effect, so
+a bare `import hecke_core_legacy` leaves the ambient precision at mpmath's
+default **15 dps = 53 bits = exactly float64's significand**. mpmath rounds
+every operation to the ambient precision. So a producer can carry genuinely
+exact `mpf` inputs and still be a float64 computation, with nothing in the
+source to grep for: no `float(`, no `math.`, no literal.
+
+Measured on one seminormal entry (qou-sv7h, PR #6807), after #6794 had made the
+builder exact:
+
+    builder entry, significand bits        167
+    v*v at ambient dps 15                   53
+    v*v inside workdps(COMPUTE_DPS=70)     234
+    relative difference per operation   2.5722e-17
+
+and compounded through the accumulator the published result moved 8.3e-15 /
+4.1e-15 / 2.9e-15 at k = 5 / 6 / 7.
+
+**Check `mp.dps` at the point of arithmetic, not at the point of construction.**
+A `workdps` wrapper on the builder does not extend to its consumer; each entry
+point needs its own.
+
+## TRAP — the type fix and the context fix are each USELESS alone, and the type fix measures as ZERO
+
+Same arc, and it is the part that would have ended the investigation early.
+Switching `atom_character_raw`'s `math.log` to `mp.log` **first**, before
+wrapping it in `workdps`, moved **0.00e+00 on four partitions** — because at
+dps 15 `mp.log` and `math.log` agree to the bit. The obvious reading is "no
+effect, revert it".
+
+The correct reading is that the *other half* was missing: `mp.log` at ambient
+precision is float64, and `workdps` around a `math.log` narrows anyway. Only
+both together move anything.
+
+**So a zero from half of a two-part precision fix is not evidence the half is
+useless.** Land both, then measure. The same applies to `mpf` seeds vs the
+arithmetic that consumes them.
+
+## TRAP — measuring float64 loss AT float64 precision reads 0.0 by construction
+
+I instrumented `_trace_dim` to report `abs(raw - mpf(float(raw))) / abs(raw)`
+inside `mp.workdps(COMPUTE_DPS)` and got **max 0.0 over 129 traces** — an
+apparently clean bill. The `raw` values had already been rounded to 53 bits by
+the ambient-dps trap above, so `float(raw)` was lossless and the measurement
+could not see what it was measuring. Opening the context *after* the value
+exists does not restore the bits.
+
+`mp.nstr(raw, 30)` on such a value prints 30 digits and looks like content —
+that is the exact binary value's decimal expansion, not precision.
+
+**Compare two RUNS, not a value against its own cast.** The honest instrument
+is the whole producer at ambient dps against the whole producer inside
+`workdps`, diffed.
+
+## TRAP — `git stash` is not a baseline
+
+**This is an instance of "a 'before' count taken from the tree your own branch
+is mutating is not a before count" above**, which already states the general
+rule: a before-figure must come from a REVISION, not a path. It is recorded
+separately because the mechanism is different and worse — a path-based
+enumeration at least *looks* like what it is, whereas `git stash` reads as
+though it restores a prior state.
+
+To A/B a change against `origin/main` I ran the harness, `git stash`ed, ran it
+again, and reported the second as "main". `git stash` does not undo an
+already-made **commit** — the first fix was committed by then, so the "main"
+column was the post-fix tree and six of seven rows read `0.00e+00`. It looks
+exactly like a clean no-op result.
+
+**Use `git worktree add --detach /tmp/wt origin/main`** and run the harness
+there, with the harness's repo root parameterised. Cheap, and it cannot lie
+about which tree it ran in.
+
+## TRAP — `x.context.prec` is the CONTEXT's precision, not the value's
+
+`mpf.context.prec` reports the *current global* `mp.prec`, so it reads 53 for
+every value while `mp.dps` is 15, including values carrying 167 bits. It looks
+like a per-value attribute and is not.
+
+The value's own significand length is `x._mpf_[3]` — the tuple is
+`(sign, man, exp, bc)`. **`[2]` is the exponent**, and reading it as the
+mantissa gave me "8 significand bits" for a value that has 167.
+
+The cheap, tuple-free discriminator: `x == mpf(float(x))` is False iff the
+value carries more than float64 can hold.
+
+**And that discriminator is safe where the subtraction two sections up is
+not.** mpmath compares `mpf` values *exactly*, independent of the ambient
+precision — verified with `mp.dps = 15` and a 70-dps `mpf(1)/mpf(3)`
+(236 bits): the equality returns False, while `abs(x - mpf(float(x)))`
+computed at the same ambient dps rounds to 0. Control: `mpf(0.5)`, exactly
+representable, returns True. So use the equality to *detect* excess precision
+at any working precision; only ever use a subtraction to *quantify* it, and
+then only inside a `workdps` opened before the values were built.
+
+## TRAP — "object dtype has no BLAS" does NOT imply the numpy path is slower
+
+Bean `qou-sv7h` finding 5 concluded that `_matmul_dim`'s `dim >= 8` numpy
+branch was a 31 % pessimization and should be deleted, on the (correct) premise
+that object-dtype arrays get no BLAS. Measured on the real inputs, the branch
+is **~2.1x FASTER** at every dense partition with 8 <= dim <= 28 (ratios
+0.47–0.50), and deleting it would roughly double the dense-path cost.
+
+The premise is true and the inference is wrong: numpy's object path still runs
+the k-loop in **C** rather than in the interpreter, and that alone beats a
+triple-nested Python loop even with per-element `mpf` dispatch. "No BLAS" is
+the difference between 1e-6 s and 1e-2 s at dim 16 — but the comparison that
+matters is against the *alternative*, not against float64.
+
+I tested the one mechanism that would have reconciled both figures — that the
+old measurement was taken at ambient dps 15 — and it does not: 0.46x at dps 15,
+0.48x at dps 70. The cause of the discrepancy is **undetermined**; the bean
+records no harness.
+
+## TRAP — measure CALL COUNTS before optimising a function
+
+Same bean, step 2: export a Rust `dense_dense_mul_mpfr` and route `_matmul_dim`
+through it, ">=24x, this is what makes higher isotopes reachable". Instrumented
+with `pyhecke_native` present:
+
+    unified_iterative_correction(1,1,k=7), kernel ON      0 calls
+    unified_iterative_correction(1,1,k=7), kernel OFF  1025 calls
+    atom_character_raw (4,2) dim 9,        kernel ON      0 calls
+    _contrib_single_partition,             kernel ON     25 calls
+
+Two of the three consumers short-circuit to a Rust path and never reach the
+function at all. Worse, the 1025-call configuration is *by definition* the one
+where `pyhecke_native` is absent — and the function to be exported lives in
+that same extension, so the export cannot help the only path that calls it.
+
+**A speedup factor is about the function; the payoff is about the call count.**
+Ten lines of `sys.settrace`-free spy wrapper settles it before any porting.

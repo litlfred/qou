@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1603.06017v2/blocks/prose-sec-032",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1603.06017v2/blocks/prose-sec-032",
   "kind": "prose",
   "title": "Working with Input/Output",
   "pageStart": 32,
   "pageEnd": 34,
   "text": "../sections/sec-032-8-working-with-inputoutput.md",
-  "derivedFrom": "library/arxiv-1603.06017v2/manifest",
-  "sourceDocument": "library/arxiv-1603.06017v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1603.06017v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1603.06017v2",
   "provenance": "ingested"
 }

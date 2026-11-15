@@ -1,0 +1,35 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "meissner2004",
+  "library": {
+    "docId": "arxiv-gr-qc-0407052v1",
+    "dir": "library/arxiv-gr-qc-0407052v1",
+    "pdf": "library/arxiv-gr-qc-0407052v1/0407052v1.pdf",
+    "stage": "candidates",
+    "pages": 10,
+    "sections": 2,
+    "arxiv": "gr-qc/0407052v1"
+  },
+  "type": "article-journal",
+  "title": "Black hole entropy in loop quantum gravity",
+  "author": [
+    {
+      "family": "Meissner",
+      "given": "Krzysztof A."
+    }
+  ],
+  "container-title": "Classical and Quantum Gravity",
+  "volume": "21",
+  "issue": "22",
+  "page": "5245-5251",
+  "issued": {
+    "date-parts": [
+      [
+        2004
+      ]
+    ]
+  },
+  "DOI": "10.1088/0264-9381/21/22/015",
+  "URL": "https://arxiv.org/abs/gr-qc/0407052",
+  "note": "arXiv:gr-qc/0407052. The Immirzi-fixing criticality equation. Added 2026-06-08 from library/arxiv-gr-qc-0407052v1/0407052v1.pdf; used by docs/audits/2026-06-08-spin-network-count-q-dimension-partition-function.md. HUMAN-REVIEW: unreviewed (DOI/page best-effort)."
+}

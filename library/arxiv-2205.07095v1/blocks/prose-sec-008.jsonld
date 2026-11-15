@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2205.07095v1/blocks/prose-sec-008",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2205.07095v1/blocks/prose-sec-008",
   "kind": "prose",
   "title": "Graphic interpretation of solutions.",
   "pageStart": 10,
   "pageEnd": 13,
   "text": "../sections/sec-008-42-graphic-interpretation-of-solutions.md",
-  "derivedFrom": "library/arxiv-2205.07095v1/manifest",
-  "sourceDocument": "library/arxiv-2205.07095v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2205.07095v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2205.07095v1",
   "provenance": "ingested"
 }

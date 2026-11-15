@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-gr-qc-0407051v2/sections/sec-002",
   "@type": [
     "doco:Section"
   ],
-  "title": "INTRODUCTION AND RESUL TS",
-  "pageStart": 2,
-  "pageEnd": 4,
+  "title": "The combinatoric formulation of the problem",
+  "pageStart": 7,
+  "pageEnd": 9,
   "contains": [
     "library/arxiv-gr-qc-0407051v2/blocks/prose-sec-002"
   ],
-  "derivedFrom": "library/arxiv-gr-qc-0407051v2/manifest",
-  "sourceDocument": "library/arxiv-gr-qc-0407051v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-gr-qc-0407051v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-gr-qc-0407051v2",
   "provenance": "ingested"
 }

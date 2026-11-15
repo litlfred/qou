@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/helicity03mmj/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/helicity03mmj/blocks/prose-sec-006",
   "kind": "prose",
   "title": "Short paths systems.",
   "pageStart": 10,
   "pageEnd": 12,
   "text": "../sections/sec-006-34-short-paths-systems.md",
-  "derivedFrom": "library/helicity03mmj/manifest",
-  "sourceDocument": "library/helicity03mmj/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/helicity03mmj",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/helicity03mmj",
   "provenance": "ingested"
 }

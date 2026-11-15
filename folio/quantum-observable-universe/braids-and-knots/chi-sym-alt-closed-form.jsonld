@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-chi-sym-alt-closed-form",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:chi-sym-alt-closed-form",
+  "kind": "proposition",
+  "title": "Closed form for $\\chi_{\\mathrm{sym}}(\\beta)\\,\\chi_{\\mathrm{alt}}(\\beta)$ on the atomic word, with the colour-weighted interface carried exactly",
+  "cites": [
+    "references/jones1987",
+    "references/kassel1995"
+  ],
+  "tags": [
+    "hecke-character",
+    "wedderburn",
+    "atomic-braid-word",
+    "colour-weighting",
+    "closed-form",
+    "categorical-derivation"
+  ],
+  "leanRef": "qou:QOU.ChiSymAlt.chiPairProductC_eq",
+  "text": "chi-sym-alt-closed-form.md",
+  "leanSource": "chi-sym-alt-closed-form.lean",
+  "provenance": "authored"
+}

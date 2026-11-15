@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0501112v3/blocks/prose-sec-019",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0501112v3/blocks/prose-sec-019",
   "kind": "prose",
-  "title": "PIOTR ´SNIADY",
-  "pageStart": 8,
-  "pageEnd": 8,
-  "text": "../sections/sec-019-8-piotr-sniady.md",
-  "derivedFrom": "library/arxiv-math-0501112v3/manifest",
-  "sourceDocument": "library/arxiv-math-0501112v3/manifest",
+  "title": "Toy example",
+  "pageStart": 18,
+  "pageEnd": 18,
+  "text": "../sections/sec-019-41-toy-example.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0501112v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0501112v3",
   "provenance": "ingested"
 }

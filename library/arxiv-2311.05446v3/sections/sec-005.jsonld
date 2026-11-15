@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2311.05446v3/sections/sec-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Some notation and conventions:",
+  "pageStart": 8,
+  "pageEnd": 8,
+  "contains": [
+    "library/arxiv-2311.05446v3/blocks/prose-sec-005"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2311.05446v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2311.05446v3",
+  "provenance": "ingested"
+}

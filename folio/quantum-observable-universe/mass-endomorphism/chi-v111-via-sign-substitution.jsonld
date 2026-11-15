@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-chi-v111-via-sign-substitution",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:chi-v111-via-sign-substitution",
+  "kind": "remark",
+  "title": "V_(1,1,1) per-irrep character difference derivation via sign-rep substitution $\\sigma_i \\mapsto -q^{-1}$; closed form $-(q^2+1)^2(q^2-1)/(4q^5)$ proved via scalar arithmetic (conjugate-partition symmetry to V_(3))",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-chi-per-irrep-cyclotomic-closed-forms"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-chi-per-irrep-cyclotomic-closed-forms",
+  "cites": [
+    "references/kassel1995",
+    "references/hoefsmit1974",
+    "references/jones1985"
+  ],
+  "tags": [
+    "lean-infrastructure",
+    "v111-antisymmetric",
+    "sign-rep",
+    "conjugate-partition",
+    "scalar-derivation"
+  ],
+  "text": "chi-v111-via-sign-substitution.md",
+  "leanSource": "chi-v111-via-sign-substitution.lean",
+  "provenance": "authored"
+}

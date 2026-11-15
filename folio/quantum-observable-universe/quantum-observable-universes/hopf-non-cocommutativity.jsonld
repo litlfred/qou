@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-hopf-non-cocommutativity",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:hopf-non-cocommutativity",
+  "kind": "remark",
+  "title": "Non-cocommutativity of the Hopf structure",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-two-observer-parallelogram"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-quantum-observable-universe",
+  "tags": [
+    "hopf",
+    "non-commutativity",
+    "uncertainty"
+  ],
+  "text": "hopf-non-cocommutativity.md",
+  "provenance": "authored"
+}

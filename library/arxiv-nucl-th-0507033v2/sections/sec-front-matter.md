@@ -1,0 +1,21 @@
+---
+doc_id: arxiv-nucl-th-0507033v2
+doc_title: "Cluster Formation and The Virial Equation of State of Low-Density Nuclear Matter"
+section_id: sec-front-matter
+section_title: "Front matter"
+section_number: null
+pages: 1-1
+source_pdf: 0507033v2.pdf
+source_sha256: 57509b3ce5f9f8cc
+toc_source: inferred
+---
+arXiv:nucl-th/0507033v2  2 Jun 2006
+Cluster Formation and The Virial Equation of State of Low-Density Nuclear Matter
+C.J. Horowitz∗and A. Schwenk†
+Nuclear Theory Center and Department of Physics, Indiana University, Bloomington, IN 47408
+We present the virial equation of state of low-density nuclear matter composed of neutrons, pro-
+tons and alpha particles. The virial equation of state is model-independent, and therefore sets a
+benchmark for all nuclear equations of state at low densities. We calculate the second virial coef-
+ﬁcients for nucleon-nucleon, nucleon-alpha and alpha-alpha interactions directly from the relevant
+binding energies and scattering phase shifts. The virial approach systematically takes into account
+contributions from bound nuclei and the resonant continuum, and consequently provides a frame-

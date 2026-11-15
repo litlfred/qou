@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-topological-mass-eigenspace-decomp",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:topological-mass-eigenspace-decomp",
+  "kind": "proof",
+  "title": "Proof of the eigenspace decomposition of the mass integrand",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-topological-mass-eigenspace-decomp"
+  ],
+  "cites": [
+    "references/yekutieli2015"
+  ],
+  "text": "topological-mass-eigenspace-decomp-proof.md",
+  "provenance": "authored"
+}

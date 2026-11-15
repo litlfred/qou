@@ -8,34 +8,27 @@ pages: 2-3
 source_pdf: 1907.00949v2.pdf
 source_sha256: 865defaa34bf42be
 doc_brief: "OPTIMIZATION ON FLAG MANIFOLDS — A ﬂag is a sequence of nested subspaces."
+text_source: latex
+latex_prose_ratio: 0.98
+latex_coverage_ratio: 0.972
 ---
-multigrid, spectral and pseudospectral methods, wavelets, iterative matrix computations, etc, in
-several ways.
-Example 1.1 (Reﬁning mesh). In multigrid, algebraic multigrid, ﬁnite element methods, we often
-consider a sequence of increasingly ﬁner grids or meshes G1⊆ G2⊆ G3⊆··· on the domain of
-interest Ω. The vector space of real-valued functions
-Vk :={f :Gk→ R}
-gives us a ﬂag V1⊆ V2⊆ V3⊆··· of ﬁnite-dimensional vector spaces where dim Vk = #Gk.
-The aforementioned numerical methods are essentially diﬀerent ways of extracting approximate
-solutions of increasing accuracy from the ﬂag.
-Example 1.2 (Increasing order). In spectral and pseudospectral methods, we consider a class of
-functions of increasing complexity determined by an order d, e.g., polynomial or trigonometric
-polynomial functions of degree d, on the domain of interest Ω. The vector space
-Vd :={f : Ω→ R : deg(f)≤d}
-gives us a ﬂag V1⊆ V2⊆ V3⊆··· as d is increased. Again, these methods operate by extracting
-approximate solutions of increasing accuracy from the ﬂag.
-Example 1.3 (Cyclic subspaces). GivenA∈ Rn×n and b∈ Rn, the subspace
-Kk(A,b ) := span{b,Ab,...,A k−1b}
-is called the kth Krylov subspace. The gist behind Krylov subspace methods in numerical linear
-algebra, whether for computing solutions to linear systems, least squares problems, eigenvalue prob-
-lems, matrix functions, etc, are all based on ﬁnding a sequence of increasingly better approximations
-from the ﬂag K0(A,b )⊆K1(A,b )⊆···⊆ Kk(A,b ).
-Example 1.4 (Multiresolution). A standard way to construct wavelets is to deﬁne amultiresolution
-analysis, i.e., a sequence of subspaces Vk+1⊆ Vk deﬁned by
-f(t)∈ Vk ⇔ f(t/2)∈ Vk+1.
-The convention in wavelet literature has the indexing in reverse order but this is a minor matter
-— a nested of sequence of subspaces is a ﬂag regardless of how the subspaces in the sequence are
-labeled. So a multiresolution analysis is also a ﬂag.
-This is not an exhaustive list, ﬂags also arise in numerical analysis in other ways, e.g., analysis
-of eigenvalue methods [4, 21].
-OPTIMIZATION ON FLAG MANIFOLDS 3
+In numerical analysis, flags naturally arise in finite elements, multigrid, spectral and pseudospectral methods, wavelets, iterative matrix computations, etc, in several ways.
+
+::: example
+In multigrid, algebraic multigrid, finite element methods, we often consider a sequence of increasingly finer *grids* or *meshes* $G_1 \subseteq G_2
+\subseteq G_3 \subseteq \cdots$ on the domain of interest $\Omega$. The vector space of real-valued functions $$\mathbb{V}_k \coloneqq \{ f : G_k \to \mathbb{R} \}$$ gives us a flag $\mathbb{V}_1 \subseteq \mathbb{V}_2 \subseteq  \mathbb{V}_3 \subseteq \cdots$ of finite-dimensional vector spaces where $\dim \mathbb{V}_k = \# G_k$. The aforementioned numerical methods are essentially different ways of extracting approximate solutions of increasing accuracy from the flag.
+:::
+
+::: example
+In spectral and pseudospectral methods, we consider a class of functions of increasing complexity determined by an *order* $d$, e.g., polynomial or trigonometric polynomial functions of degree $d$, on the domain of interest $\Omega$. The vector space $$\mathbb{V}_d \coloneqq \{ f : \Omega \to \mathbb{R} : \mathop{\mathrm{deg}}(f) \le d \}$$ gives us a flag $\mathbb{V}_1 \subseteq \mathbb{V}_2 \subseteq  \mathbb{V}_3 \subseteq \cdots$ as $d$ is increased. Again, these methods operate by extracting approximate solutions of increasing accuracy from the flag.
+:::
+
+::: example
+Given $A \in \mathbb{R}^{n \times n}$ and $b \in \mathbb{R}^n$, the subspace $$K_{k}(A,b) \coloneqq \operatorname{span}\{b,Ab,\dots,A^{k-1} b\}$$ is called the $k$th *Krylov subspace*. The gist behind Krylov subspace methods in numerical linear algebra, whether for computing solutions to linear systems, least squares problems, eigenvalue problems, matrix functions, etc, are all based on finding a sequence of increasingly better approximations from the flag $K_0(A,b) \subseteq K_1(A,b) \subseteq \dots \subseteq K_k(A,b)$.
+:::
+
+::: example
+A standard way to construct wavelets is to define a *multiresolution analysis*, i.e., a sequence of subspaces $\mathbb{V}_{k+1} \subseteq \mathbb{V}_k$ defined by $$f(t) \in \mathbb{V}_k \quad \Leftrightarrow \quad f(t/2) \in \mathbb{V}_{k+1}.$$ The convention in wavelet literature has the indexing in reverse order but this is a minor matter --- a nested of sequence of subspaces is a flag regardless of how the subspaces in the sequence are labeled. So a multiresolution analysis is also a flag.
+:::
+
+This is not an exhaustive list, flags also arise in numerical analysis in other ways, e.g., analysis of eigenvalue methods [@GM1986; @JH2002].

@@ -1,0 +1,176 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T14:58:55.652323+00:00",
+  "commitSha": "1b224ff8c658abb37e80d5188de49b0f4884a964",
+  "assertions": [
+    {
+      "name": "S_REEB_PLANCK (s_*) is mpf",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_float64_excision_probe"
+    },
+    {
+      "name": "q_laplacian_eigenvalue (mu) is mpf",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_float64_excision_probe"
+    },
+    {
+      "name": "q_resolvent_weight (rho) is mpf",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_float64_excision_probe"
+    },
+    {
+      "name": "partition_character_sigma1 is mpf",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_float64_excision_probe"
+    },
+    {
+      "name": "partition_spectral_log_rate is mpf",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_float64_excision_probe"
+    },
+    {
+      "name": "every derived _PARTITION_TABLE column is mpf on every weighted block",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_float64_excision_probe"
+    },
+    {
+      "name": "no math.log / math.exp / math.sqrt / float() / q_int in the cone",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_float64_excision_probe"
+    },
+    {
+      "name": "s_* differs from its float64 twin at the float64 floor",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_float64_excision_probe"
+    },
+    {
+      "name": "rho_lambda is stable at 70 -> 90 far past the float64 floor",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_float64_excision_probe"
+    },
+    {
+      "name": "the q input carries ~50 digits, so 1e-50 (not 1e-70) is the honest ceiling on anything built from it",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_float64_excision_probe"
+    },
+    {
+      "name": "the residual is bounded (regression guard)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_float64_excision_probe"
+    },
+    {
+      "name": "the residual is LARGER than what this excision removes -- so the cone is not clean and the audit must not say it is",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_float64_excision_probe"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 25,
+  "computation": "uic-float64-excision",
+  "scriptFile": "uic_float64_excision_probe.py",
+  "scriptHash": "b3ea92cf0a51",
+  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/uic_float64_excision_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/uic_float64_excision_probe.py"
+  },
+  "description": "Owner directive 2026-09-12 'excise float64'. mu_lambda (q-Laplacian eigenvalue) and s_* (Reeb-Planck spectral parameter) and their whole downstream cone in hecke_core_legacy now carry mpmath.mpf. Checks: type on 5 scalars + 5 table columns over 31 weighted blocks; AST over 8 function bodies for math.log/exp/sqrt/float()/q_int; s_* moves 1.99757e-16 off its float64 twin; rho_lambda stable at dps 70 -> 90. RESIDUAL, recorded not fixed: q_hook_product / q_factorial / wedderburn_weight are mpf-typed and float64-VALUED through q_int, leaving ~1e-15 -- larger than the ~2.5e-16 this removes. Bean qou-oiz3; follows PR #7237 / bean qou-t6be.",
+  "auditOnly": "docs/audits/2026-09-12-uic-float64-excision.md",
+  "data": {
+    "precision": {
+      "compute_dps": 70,
+      "q0_source": "q_parameter.Q_MP (Q_50_DIGIT_STR, 50 digits)",
+      "q0_ceiling_note": "_Q_MP carries 50 significant digits, BELOW OUTPUT_DPS = 60. A value serialized at 60 digits from it has ~8 padded digits. Recorded as a residual, not fixed here.",
+      "s_star_float64": "0.09908171604425853",
+      "s_star_mpf": "0.0990817160442585078391771175189060639852583733894449264766881",
+      "s_star_relative_gap": "0.000000000000000199756839521121439364067083997435319403279952097276770532568"
+    },
+    "surface": {
+      "functions_ast_checked": [
+        "q_laplacian_eigenvalue",
+        "q_resolvent_weight",
+        "partition_character_sigma1",
+        "partition_spectral_log_rate",
+        "_partition_table_exact",
+        "conjugate_pair_cross_term",
+        "unified_iterative_correction_jet",
+        "atom_markov_trace",
+        "atom_frobenius_norm_sq"
+      ],
+      "float64_calls_found": {},
+      "weighted_blocks": 31
+    },
+    "residual_float64": {
+      "cause": "q_int is float64; q_hook_product/q_factorial/wedderburn_weight accumulate mp.mpf(1) * q_int(k) over it",
+      "worst_relative_removed_by_this_pr": "0.000000000000000249469757410044337867896993393277271241247580976107967025204",
+      "worst_relative_remaining": "0.00000000000000102124242880688466852043453098073854279953405628877207322255",
+      "worst_remaining_partition": "(2, 2)",
+      "root_fix_blast_radius": "124 python files, 243 witnesses -- owner call"
+    },
+    "dps_stability": {
+      "dps_low": 70,
+      "dps_high": 90,
+      "worst_rho_relative_move": "1.95837560957871671393456340652292607293692737822997000952426e-71",
+      "worst_partition": "(6, 1)",
+      "note": "this measures the ARITHMETIC reproducing itself, not the input -- both runs read the same _Q_MP",
+      "q_input_ceiling_vs_q_at_90": "9.91024613034411458937377375651172925896969853136973433512190e-52"
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

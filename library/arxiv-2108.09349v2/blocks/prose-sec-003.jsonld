@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2108.09349v2/blocks/prose-sec-003",
+  "kind": "prose",
+  "title": "Ideal triangulations",
+  "pageStart": 2,
+  "pageEnd": 3,
+  "text": "../sections/sec-003-2-ideal-triangulations.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2108.09349v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2108.09349v2",
+  "provenance": "ingested"
+}

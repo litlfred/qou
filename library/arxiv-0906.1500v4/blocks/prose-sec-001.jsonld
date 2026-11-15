@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0906.1500v4/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0906.1500v4/blocks/prose-sec-001",
   "kind": "prose",
-  "title": "Jeﬀrey and J. Weitsman [JW93] and J. Park [Par97]. Furthermore , J. Porti [Por97]",
-  "pageStart": 1,
+  "title": "Organization",
+  "pageStart": 3,
   "pageEnd": 3,
-  "text": "../sections/sec-001-l-jeﬀrey-and-j-weitsman-jw93-and-j-park-par97-fu.md",
-  "derivedFrom": "library/arxiv-0906.1500v4/manifest",
-  "sourceDocument": "library/arxiv-0906.1500v4/manifest",
+  "text": "../sections/sec-001-organization.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0906.1500v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0906.1500v4",
   "provenance": "ingested"
 }

@@ -1,0 +1,41 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-grothendieck-group-of-a-qou",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:grothendieck-group-of-a-qou",
+  "kind": "definition",
+  "title": "The Grothendieck group of a quantum universe",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quantum-universe",
+    "papers/quantum-observable-universe/blocks/rem-simple-objects-V",
+    "papers/quantum-observable-universe/blocks/def-rigid-monoidal-category"
+  ],
+  "foreshadows": [
+    "papers/quantum-observable-universe/blocks/def-chern-character",
+    "papers/quantum-observable-universe/blocks/ex-su2-characters-and-quantum-dimension"
+  ],
+  "cites": [
+    "references/bghl-2017",
+    "references/kassel1995"
+  ],
+  "tags": [
+    "grothendieck-group",
+    "k-theory",
+    "wedderburn",
+    "quantum-dimension"
+  ],
+  "defines": [
+    "grothendieck-group"
+  ],
+  "leanRef": "qou:QOU.GrothendieckChern.K0",
+  "text": "grothendieck-group-of-a-qou.md",
+  "provenance": "authored"
+}

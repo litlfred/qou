@@ -1,0 +1,1553 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2207.07246v2",
+ "source": {
+  "file": "2207.07246v2.pdf",
+  "sha256": "91e70e5fe39e07a55eb3fbf1eebcbbc4e2e354224ed9eb6adf9272de24c970ec",
+  "bytes": 3914136,
+  "pages": 165,
+  "text_source": "embedded",
+  "extractor": "pypdf",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2207.07246",
+   "version": "2",
+   "primary_class": "nucl-th",
+   "stamp_date": "18 Jul 2022"
+  },
+  "doi": null,
+  "title": "Path Integral Quantum Monte Carlo Method for Light Nuclei",
+  "authors_raw": "Rong Chen",
+  "title_lines": [
+   "Path Integral Quantum Monte Carlo Method for Light Nuclei"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Author": "Rong Chen",
+   "CreationDate": "D:20220719005701Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "pdfTeX-1.40.21",
+   "Title": "Path Integral Quantum Monte Carlo Method for Light Nuclei"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "ABSTRACT",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "DEDICATION",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "ACKNOWLEDGEMENTS",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "LIST OF TABLES",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "LIST OF FIGURES",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "CHAPTER",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "INTRODUCTION",
+   "page": 11,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 3,
+   "title": "Background",
+   "page": 11,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 4,
+   "title": "Evolution of the Nucleon-Nucleon Interaction",
+   "page": 11,
+   "source": "outline",
+   "number": "1.1.1"
+  },
+  {
+   "level": 5,
+   "title": "Meson exchange theory",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 5,
+   "title": "Chiral effective field theory",
+   "page": 14,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Methods of Solving the Many-Body Problem",
+   "page": 15,
+   "source": "outline",
+   "number": "1.1.2"
+  },
+  {
+   "level": 5,
+   "title": "Phenomenological approaches",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 5,
+   "title": "First principle approaches",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Motivation",
+   "page": 20,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 3,
+   "title": "Outline",
+   "page": 23,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 2,
+   "title": "PATH INTEGRAL QUANTUM MONTE CARLO",
+   "page": 24,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 3,
+   "title": "Theoretical Framework",
+   "page": 24,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 3,
+   "title": "Hamiltonian",
+   "page": 29,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 3,
+   "title": "Model Space",
+   "page": 33,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 3,
+   "title": "Wave Function",
+   "page": 35,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 3,
+   "title": "Propagator",
+   "page": 42,
+   "source": "outline",
+   "number": "2.5"
+  },
+  {
+   "level": 3,
+   "title": "Time Step Error Structure",
+   "page": 45,
+   "source": "outline",
+   "number": "2.6"
+  },
+  {
+   "level": 3,
+   "title": "Computational Details",
+   "page": 47,
+   "source": "outline",
+   "number": "2.7"
+  },
+  {
+   "level": 4,
+   "title": "Recast",
+   "page": 47,
+   "source": "outline",
+   "number": "2.7.1"
+  },
+  {
+   "level": 4,
+   "title": "Path Diagrams",
+   "page": 50,
+   "source": "outline",
+   "number": "2.7.2"
+  },
+  {
+   "level": 4,
+   "title": "Calculating the Path",
+   "page": 53,
+   "source": "outline",
+   "number": "2.7.3"
+  },
+  {
+   "level": 4,
+   "title": "Calculating the Samples",
+   "page": 57,
+   "source": "outline",
+   "number": "2.7.4"
+  },
+  {
+   "level": 3,
+   "title": "Sign Problem",
+   "page": 59,
+   "source": "outline",
+   "number": "2.8"
+  },
+  {
+   "level": 2,
+   "title": "MONTE CARLO ALGORITHMS",
+   "page": 61,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 3,
+   "title": "Metropolis Algorithm",
+   "page": 61,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 3,
+   "title": "Methods of Sampling",
+   "page": 64,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 4,
+   "title": "Single-Bead Sampling",
+   "page": 66,
+   "source": "outline",
+   "number": "3.2.1"
+  },
+  {
+   "level": 4,
+   "title": "Multi-level Sampling",
+   "page": 69,
+   "source": "outline",
+   "number": "3.2.2"
+  },
+  {
+   "level": 4,
+   "title": "Regular Sampling",
+   "page": 77,
+   "source": "outline",
+   "number": "3.2.3"
+  },
+  {
+   "level": 4,
+   "title": "Directional Importance Sampling",
+   "page": 80,
+   "source": "outline",
+   "number": "3.2.4"
+  },
+  {
+   "level": 3,
+   "title": "Path Updating Strategy",
+   "page": 87,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 3,
+   "title": "Sampling Strategies",
+   "page": 88,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "GROUND STATE CALCULATIONS OF LIGHT NUCLEI",
+   "page": 90,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 3,
+   "title": "Ground State Energies",
+   "page": 90,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 4,
+   "title": "Preparations",
+   "page": 90,
+   "source": "outline",
+   "number": "4.1.1"
+  },
+  {
+   "level": 4,
+   "title": "Calculations",
+   "page": 91,
+   "source": "outline",
+   "number": "4.1.2"
+  },
+  {
+   "level": 4,
+   "title": "Verifications",
+   "page": 98,
+   "source": "outline",
+   "number": "4.1.3"
+  },
+  {
+   "level": 3,
+   "title": "Radii",
+   "page": 103,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 3,
+   "title": "Density Distributions",
+   "page": 105,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 3,
+   "title": "Euclidean Response Functions",
+   "page": 110,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 3,
+   "title": "Parallel Scalability of the Code",
+   "page": 116,
+   "source": "outline",
+   "number": "4.5"
+  },
+  {
+   "level": 2,
+   "title": "CONCLUSION",
+   "page": 118,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 3,
+   "title": "Summary",
+   "page": 118,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 3,
+   "title": "Outlook",
+   "page": 119,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 1,
+   "title": "REFERENCES",
+   "page": 121,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "APPENDIX",
+   "page": 130,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A VARIATIONAL MONTE CARLO BRIEF",
+   "page": 130,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "B DIFFUSION MONTE CARLO BRIEF",
+   "page": 132,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "B.1  Time-Dependent Green's Function",
+   "page": 133,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "B.2 Diffusion Monte Carlo",
+   "page": 134,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Theoretical foundation",
+   "page": 135,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Interpretation",
+   "page": 136,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "B.3  Diffusion Monte Carlo with Importance Sampling",
+   "page": 137,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Theoretical foundation",
+   "page": 137,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Time step error estimating",
+   "page": 139,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Approximated pure estimator p",
+   "page": 140,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "B.4  Diffusion Monte Carlo Algorithm",
+   "page": 141,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "C AUXILIARY FIELD DIFFUSION MONTE CARLO BRIEF",
+   "page": 143,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "C.1 Formalism",
+   "page": 144,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "C.2 Hubbard-Stratonovich Transformation",
+   "page": 145,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "C.3 AFDMC and the Standard DMC with Importance Sampling",
+   "page": 147,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "C.4 Quadratic Form of the AV6' Interaction",
+   "page": 148,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "C.5 Trial Wave Function",
+   "page": 149,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "D AV6' LINEARIZING TRICK",
+   "page": 150,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "E ADDITIONAL CALCULATIONS OF THE RESPONSE FUNCTIONS",
+   "page": 153,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "E.1 Angle Averaged Euclidean Response Functions",
+   "page": 154,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "E.2 Euclidean Response Functions in Different Coordinates",
+   "page": 163,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "BIOGRAPHICAL SKETCH",
+   "page": 165,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 408,
+   "n_words": 61
+  },
+  {
+   "id": "sec-000-abstract",
+   "number": null,
+   "title": "ABSTRACT",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 8,
+   "n_chars": 10389,
+   "n_words": 3212
+  },
+  {
+   "id": "sec-001-list-of-tables",
+   "number": null,
+   "title": "LIST OF TABLES",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 857,
+   "n_words": 283
+  },
+  {
+   "id": "sec-002-list-of-figures",
+   "number": null,
+   "title": "LIST OF FIGURES",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 3887,
+   "n_words": 1133
+  },
+  {
+   "id": "sec-003-chapter",
+   "number": null,
+   "title": "CHAPTER",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-004-1-introduction",
+   "number": "1",
+   "title": "INTRODUCTION",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-005-11-background",
+   "number": "1.1",
+   "title": "Background",
+   "level": 3,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 684,
+   "n_words": 112
+  },
+  {
+   "id": "sec-006-111-evolution-of-the-nucleon-nucleon-interaction",
+   "number": "1.1.1",
+   "title": "Evolution of the Nucleon-Nucleon Interaction",
+   "level": 4,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 2335,
+   "n_words": 369
+  },
+  {
+   "id": "sec-007-meson-exchange-theory",
+   "number": null,
+   "title": "Meson exchange theory",
+   "level": 5,
+   "page_start": 12,
+   "page_end": 15,
+   "n_chars": 5383,
+   "n_words": 906
+  },
+  {
+   "id": "sec-008-112-methods-of-solving-the-many-body-problem",
+   "number": "1.1.2",
+   "title": "Methods of Solving the Many-Body Problem",
+   "level": 4,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-009-phenomenological-approaches",
+   "number": null,
+   "title": "Phenomenological approaches",
+   "level": 5,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 2220,
+   "n_words": 345
+  },
+  {
+   "id": "sec-010-first-principle-approaches",
+   "number": null,
+   "title": "First principle approaches",
+   "level": 5,
+   "page_start": 16,
+   "page_end": 20,
+   "n_chars": 7502,
+   "n_words": 1228
+  },
+  {
+   "id": "sec-011-12-motivation",
+   "number": "1.2",
+   "title": "Motivation",
+   "level": 3,
+   "page_start": 20,
+   "page_end": 23,
+   "n_chars": 5083,
+   "n_words": 846
+  },
+  {
+   "id": "sec-012-13-outline",
+   "number": "1.3",
+   "title": "Outline",
+   "level": 3,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 1934,
+   "n_words": 318
+  },
+  {
+   "id": "sec-013-2-path-integral-quantum-monte-carlo",
+   "number": "2",
+   "title": "PATH INTEGRAL QUANTUM MONTE CARLO",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-014-21-theoretical-framework",
+   "number": "2.1",
+   "title": "Theoretical Framework",
+   "level": 3,
+   "page_start": 24,
+   "page_end": 29,
+   "n_chars": 8286,
+   "n_words": 1353
+  },
+  {
+   "id": "sec-015-22-hamiltonian",
+   "number": "2.2",
+   "title": "Hamiltonian",
+   "level": 3,
+   "page_start": 29,
+   "page_end": 33,
+   "n_chars": 7732,
+   "n_words": 1112
+  },
+  {
+   "id": "sec-016-23-model-space",
+   "number": "2.3",
+   "title": "Model Space",
+   "level": 3,
+   "page_start": 33,
+   "page_end": 35,
+   "n_chars": 2944,
+   "n_words": 553
+  },
+  {
+   "id": "sec-017-24-wave-function",
+   "number": "2.4",
+   "title": "Wave Function",
+   "level": 3,
+   "page_start": 35,
+   "page_end": 42,
+   "n_chars": 10492,
+   "n_words": 1871
+  },
+  {
+   "id": "sec-018-25-propagator",
+   "number": "2.5",
+   "title": "Propagator",
+   "level": 3,
+   "page_start": 42,
+   "page_end": 45,
+   "n_chars": 3714,
+   "n_words": 696
+  },
+  {
+   "id": "sec-019-26-time-step-error-structure",
+   "number": "2.6",
+   "title": "Time Step Error Structure",
+   "level": 3,
+   "page_start": 45,
+   "page_end": 47,
+   "n_chars": 3981,
+   "n_words": 694
+  },
+  {
+   "id": "sec-020-27-computational-details",
+   "number": "2.7",
+   "title": "Computational Details",
+   "level": 3,
+   "page_start": 47,
+   "page_end": 47,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-021-271-recast",
+   "number": "2.7.1",
+   "title": "Recast",
+   "level": 4,
+   "page_start": 47,
+   "page_end": 50,
+   "n_chars": 3286,
+   "n_words": 555
+  },
+  {
+   "id": "sec-022-272-path-diagrams",
+   "number": "2.7.2",
+   "title": "Path Diagrams",
+   "level": 4,
+   "page_start": 50,
+   "page_end": 53,
+   "n_chars": 4578,
+   "n_words": 835
+  },
+  {
+   "id": "sec-023-273-calculating-the-path",
+   "number": "2.7.3",
+   "title": "Calculating the Path",
+   "level": 4,
+   "page_start": 53,
+   "page_end": 57,
+   "n_chars": 6495,
+   "n_words": 1343
+  },
+  {
+   "id": "sec-024-274-calculating-the-samples",
+   "number": "2.7.4",
+   "title": "Calculating the Samples",
+   "level": 4,
+   "page_start": 57,
+   "page_end": 59,
+   "n_chars": 2109,
+   "n_words": 411
+  },
+  {
+   "id": "sec-025-28-sign-problem",
+   "number": "2.8",
+   "title": "Sign Problem",
+   "level": 3,
+   "page_start": 59,
+   "page_end": 61,
+   "n_chars": 2752,
+   "n_words": 461
+  },
+  {
+   "id": "sec-026-3-monte-carlo-algorithms",
+   "number": "3",
+   "title": "MONTE CARLO ALGORITHMS",
+   "level": 2,
+   "page_start": 61,
+   "page_end": 61,
+   "n_chars": 248,
+   "n_words": 40
+  },
+  {
+   "id": "sec-027-31-metropolis-algorithm",
+   "number": "3.1",
+   "title": "Metropolis Algorithm",
+   "level": 3,
+   "page_start": 61,
+   "page_end": 64,
+   "n_chars": 4259,
+   "n_words": 750
+  },
+  {
+   "id": "sec-028-32-methods-of-sampling",
+   "number": "3.2",
+   "title": "Methods of Sampling",
+   "level": 3,
+   "page_start": 64,
+   "page_end": 66,
+   "n_chars": 3193,
+   "n_words": 565
+  },
+  {
+   "id": "sec-029-321-single-bead-sampling",
+   "number": "3.2.1",
+   "title": "Single-Bead Sampling",
+   "level": 4,
+   "page_start": 66,
+   "page_end": 69,
+   "n_chars": 4048,
+   "n_words": 823
+  },
+  {
+   "id": "sec-030-322-multi-level-sampling",
+   "number": "3.2.2",
+   "title": "Multi-level Sampling",
+   "level": 4,
+   "page_start": 69,
+   "page_end": 77,
+   "n_chars": 12636,
+   "n_words": 2536
+  },
+  {
+   "id": "sec-031-323-regular-sampling",
+   "number": "3.2.3",
+   "title": "Regular Sampling",
+   "level": 4,
+   "page_start": 77,
+   "page_end": 80,
+   "n_chars": 3616,
+   "n_words": 665
+  },
+  {
+   "id": "sec-032-324-directional-importance-sampling",
+   "number": "3.2.4",
+   "title": "Directional Importance Sampling",
+   "level": 4,
+   "page_start": 80,
+   "page_end": 87,
+   "n_chars": 11109,
+   "n_words": 2234
+  },
+  {
+   "id": "sec-033-33-path-updating-strategy",
+   "number": "3.3",
+   "title": "Path Updating Strategy",
+   "level": 3,
+   "page_start": 87,
+   "page_end": 88,
+   "n_chars": 2152,
+   "n_words": 425
+  },
+  {
+   "id": "sec-034-34-sampling-strategies",
+   "number": "3.4",
+   "title": "Sampling Strategies",
+   "level": 3,
+   "page_start": 88,
+   "page_end": 90,
+   "n_chars": 3324,
+   "n_words": 599
+  },
+  {
+   "id": "sec-035-4-ground-state-calculations-of-light-nuclei",
+   "number": "4",
+   "title": "GROUND STATE CALCULATIONS OF LIGHT NUCLEI",
+   "level": 2,
+   "page_start": 90,
+   "page_end": 90,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-036-41-ground-state-energies",
+   "number": "4.1",
+   "title": "Ground State Energies",
+   "level": 3,
+   "page_start": 90,
+   "page_end": 90,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-037-411-preparations",
+   "number": "4.1.1",
+   "title": "Preparations",
+   "level": 4,
+   "page_start": 90,
+   "page_end": 103,
+   "n_chars": 24515,
+   "n_words": 3835
+  },
+  {
+   "id": "sec-038-42-radii",
+   "number": "4.2",
+   "title": "Radii",
+   "level": 3,
+   "page_start": 103,
+   "page_end": 105,
+   "n_chars": 2710,
+   "n_words": 515
+  },
+  {
+   "id": "sec-039-43-density-distributions",
+   "number": "4.3",
+   "title": "Density Distributions",
+   "level": 3,
+   "page_start": 105,
+   "page_end": 110,
+   "n_chars": 9777,
+   "n_words": 1306
+  },
+  {
+   "id": "sec-040-44-euclidean-response-functions",
+   "number": "4.4",
+   "title": "Euclidean Response Functions",
+   "level": 3,
+   "page_start": 110,
+   "page_end": 116,
+   "n_chars": 8941,
+   "n_words": 1325
+  },
+  {
+   "id": "sec-041-45-parallel-scalability-of-the-code",
+   "number": "4.5",
+   "title": "Parallel Scalability of the Code",
+   "level": 3,
+   "page_start": 116,
+   "page_end": 118,
+   "n_chars": 3375,
+   "n_words": 544
+  },
+  {
+   "id": "sec-042-5-conclusion",
+   "number": "5",
+   "title": "CONCLUSION",
+   "level": 2,
+   "page_start": 118,
+   "page_end": 118,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-043-51-summary",
+   "number": "5.1",
+   "title": "Summary",
+   "level": 3,
+   "page_start": 118,
+   "page_end": 119,
+   "n_chars": 1861,
+   "n_words": 309
+  },
+  {
+   "id": "sec-044-52-outlook",
+   "number": "5.2",
+   "title": "Outlook",
+   "level": 3,
+   "page_start": 119,
+   "page_end": 121,
+   "n_chars": 3523,
+   "n_words": 586
+  },
+  {
+   "id": "sec-045-references",
+   "number": null,
+   "title": "REFERENCES",
+   "level": 1,
+   "page_start": 121,
+   "page_end": 130,
+   "n_chars": 22127,
+   "n_words": 2690
+  },
+  {
+   "id": "sec-046-appendix",
+   "number": null,
+   "title": "APPENDIX",
+   "level": 1,
+   "page_start": 130,
+   "page_end": 135,
+   "n_chars": 4945,
+   "n_words": 874
+  },
+  {
+   "id": "sec-047-theoretical-foundation",
+   "number": null,
+   "title": "Theoretical foundation",
+   "level": 4,
+   "page_start": 135,
+   "page_end": 136,
+   "n_chars": 2742,
+   "n_words": 495
+  },
+  {
+   "id": "sec-048-interpretation",
+   "number": null,
+   "title": "Interpretation",
+   "level": 4,
+   "page_start": 136,
+   "page_end": 137,
+   "n_chars": 2277,
+   "n_words": 392
+  },
+  {
+   "id": "sec-049-theoretical-foundation",
+   "number": null,
+   "title": "Theoretical foundation",
+   "level": 4,
+   "page_start": 137,
+   "page_end": 139,
+   "n_chars": 3311,
+   "n_words": 563
+  },
+  {
+   "id": "sec-050-time-step-error-estimating",
+   "number": null,
+   "title": "Time step error estimating",
+   "level": 4,
+   "page_start": 139,
+   "page_end": 144,
+   "n_chars": 6925,
+   "n_words": 1223
+  },
+  {
+   "id": "sec-051-c1-formalism",
+   "number": null,
+   "title": "C.1 Formalism",
+   "level": 3,
+   "page_start": 144,
+   "page_end": 145,
+   "n_chars": 2280,
+   "n_words": 406
+  },
+  {
+   "id": "sec-052-c2-hubbard-stratonovich-transformation",
+   "number": null,
+   "title": "C.2 Hubbard-Stratonovich Transformation",
+   "level": 3,
+   "page_start": 145,
+   "page_end": 147,
+   "n_chars": 1538,
+   "n_words": 293
+  },
+  {
+   "id": "sec-053-c3-afdmc-and-the-standard-dmc-with-importance-sa",
+   "number": null,
+   "title": "C.3 AFDMC and the Standard DMC with Importance Sampling",
+   "level": 3,
+   "page_start": 147,
+   "page_end": 149,
+   "n_chars": 1979,
+   "n_words": 408
+  },
+  {
+   "id": "sec-054-c5-trial-wave-function",
+   "number": null,
+   "title": "C.5 Trial Wave Function",
+   "level": 3,
+   "page_start": 149,
+   "page_end": 154,
+   "n_chars": 5237,
+   "n_words": 1013
+  },
+  {
+   "id": "sec-055-e1-angle-averaged-euclidean-response-functions",
+   "number": null,
+   "title": "E.1 Angle Averaged Euclidean Response Functions",
+   "level": 3,
+   "page_start": 154,
+   "page_end": 165,
+   "n_chars": 12069,
+   "n_words": 2574
+  },
+  {
+   "id": "sec-056-biographical-sketch",
+   "number": null,
+   "title": "BIOGRAPHICAL SKETCH",
+   "level": 1,
+   "page_start": 165,
+   "page_end": 165,
+   "n_chars": 2175,
+   "n_words": 346
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 74,
+  "sections": 58,
+  "chars_total": 263943,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "dis.tex",
+   "tex_sections": 39,
+   "overlaid": 33,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-abstract",
+     "title": "ABSTRACT",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-list-of-tables",
+     "title": "LIST OF TABLES",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-list-of-figures",
+     "title": "LIST OF FIGURES",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-chapter",
+     "title": "CHAPTER",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-1-introduction",
+     "title": "INTRODUCTION",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-11-background",
+     "title": "Background",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-111-evolution-of-the-nucleon-nucleon-interaction",
+     "title": "Evolution of the Nucleon-Nucleon Interaction",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-meson-exchange-theory",
+     "title": "Meson exchange theory",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.965,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-112-methods-of-solving-the-many-body-problem",
+     "title": "Methods of Solving the Many-Body Problem",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-009-phenomenological-approaches",
+     "title": "Phenomenological approaches",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.928,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-first-principle-approaches",
+     "title": "First principle approaches",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-12-motivation",
+     "title": "Motivation",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-13-outline",
+     "title": "Outline",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-2-path-integral-quantum-monte-carlo",
+     "title": "PATH INTEGRAL QUANTUM MONTE CARLO",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-21-theoretical-framework",
+     "title": "Theoretical Framework",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-22-hamiltonian",
+     "title": "Hamiltonian",
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.952,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-23-model-space",
+     "title": "Model Space",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-24-wave-function",
+     "title": "Wave Function",
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-018-25-propagator",
+     "title": "Propagator",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-019-26-time-step-error-structure",
+     "title": "Time Step Error Structure",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-020-27-computational-details",
+     "title": "Computational Details",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-021-271-recast",
+     "title": "Recast",
+     "prose_ratio": 0.873,
+     "coverage_ratio": 0.88,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-022-272-path-diagrams",
+     "title": "Path Diagrams",
+     "prose_ratio": 0.897,
+     "coverage_ratio": 0.922,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-023-273-calculating-the-path",
+     "title": "Calculating the Path",
+     "prose_ratio": 0.875,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-024-274-calculating-the-samples",
+     "title": "Calculating the Samples",
+     "prose_ratio": 0.928,
+     "coverage_ratio": 0.917,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-025-28-sign-problem",
+     "title": "Sign Problem",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-026-3-monte-carlo-algorithms",
+     "title": "MONTE CARLO ALGORITHMS",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-31-metropolis-algorithm",
+     "title": "Metropolis Algorithm",
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-028-32-methods-of-sampling",
+     "title": "Methods of Sampling",
+     "prose_ratio": 0.92,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-029-321-single-bead-sampling",
+     "title": "Single-Bead Sampling",
+     "prose_ratio": 0.885,
+     "coverage_ratio": 0.883,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-030-322-multi-level-sampling",
+     "title": "Multi-level Sampling",
+     "prose_ratio": 0.913,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-031-323-regular-sampling",
+     "title": "Regular Sampling",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-032-324-directional-importance-sampling",
+     "title": "Directional Importance Sampling",
+     "prose_ratio": 0.912,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-033-33-path-updating-strategy",
+     "title": "Path Updating Strategy",
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-034-34-sampling-strategies",
+     "title": "Sampling Strategies",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-035-4-ground-state-calculations-of-light-nuclei",
+     "title": "GROUND STATE CALCULATIONS OF LIGHT NUCLEI",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-036-41-ground-state-energies",
+     "title": "Ground State Energies",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-037-411-preparations",
+     "title": "Preparations",
+     "prose_ratio": 0.896,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-038-42-radii",
+     "title": "Radii",
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-039-43-density-distributions",
+     "title": "Density Distributions",
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-040-44-euclidean-response-functions",
+     "title": "Euclidean Response Functions",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-041-45-parallel-scalability-of-the-code",
+     "title": "Parallel Scalability of the Code",
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.94,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-042-5-conclusion",
+     "title": "CONCLUSION",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-043-51-summary",
+     "title": "Summary",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-044-52-outlook",
+     "title": "Outlook",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-045-references",
+     "title": "REFERENCES",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-046-appendix",
+     "title": "APPENDIX",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-047-theoretical-foundation",
+     "title": "Theoretical foundation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-048-interpretation",
+     "title": "Interpretation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-049-theoretical-foundation",
+     "title": "Theoretical foundation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-050-time-step-error-estimating",
+     "title": "Time step error estimating",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-051-c1-formalism",
+     "title": "C.1 Formalism",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-052-c2-hubbard-stratonovich-transformation",
+     "title": "C.2 Hubbard-Stratonovich Transformation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-053-c3-afdmc-and-the-standard-dmc-with-importance-sa",
+     "title": "C.3 AFDMC and the Standard DMC with Importance Sampling",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-054-c5-trial-wave-function",
+     "title": "C.5 Trial Wave Function",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-055-e1-angle-averaged-euclidean-response-functions",
+     "title": "E.1 Angle Averaged Euclidean Response Functions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-056-biographical-sketch",
+     "title": "BIOGRAPHICAL SKETCH",
+     "result": "no matching \\section"
+    }
+   ]
+  }
+ }
+}

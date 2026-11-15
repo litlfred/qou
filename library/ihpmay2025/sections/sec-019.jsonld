@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/ihpmay2025/sections/sec-019",
   "@type": [
     "doco:Section"
   ],
-  "title": "Simplicial hyperbolic surfaces",
-  "pageStart": 27,
-  "pageEnd": 28,
+  "title": "The first explicit examples",
+  "pageStart": 26,
+  "pageEnd": 27,
   "contains": [
     "library/ihpmay2025/blocks/prose-sec-019"
   ],
-  "derivedFrom": "library/ihpmay2025/manifest",
-  "sourceDocument": "library/ihpmay2025/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ihpmay2025",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ihpmay2025",
   "provenance": "ingested"
 }

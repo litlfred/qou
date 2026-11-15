@@ -8,344 +8,191 @@ pages: 8-12
 source_pdf: 2109.00379v1.pdf
 source_sha256: f0c9bd89312a761c
 doc_brief: "TWISTED NEUMANN–ZAGIER MATRICES — The Neumann–Zagier matrices of an ideal triangulation are integer matrices with symplectic properties whose entries encode the number of tetrahedra that wind around"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.961
 ---
-In this section we give proofs of the properties of the twisted NZ matrices, namely the
-relation to the NZ matrices of cyclic covers (Theorem 1.1), the symplectic properties (The-
-orem 1.2), and the behavior under 2–3 Pachner moves (Theorem 1.4).
-TWISTED NEUMANN–ZAGIER MATRICES 9
-Proof. (of Theorem 1.1) It is clear that T (n) hasnN tetrahedra, asT hasN tetrahedra ∆j,
-j = 1,...,N . Fixing a lift ~∆j of each ∆j to the inﬁnite cyclic cover, we choose lifts of the
-tetrahedra ofT (n) byµk·~∆j for k = 0,...,n − 1. Similarly, we choose lifts of the edges of
-T (n). Then it is clear from the construction of the n-fold cyclic cover that
-G(n)□
-k =
-
-
-G□
-nk G□
-nk+1 ··· G□
-nk+n−1
-G□
-nk−1 G□
-nk ··· G□
-nk+n−2
-... ... ... ...
-G□
-nk−n+1 G□
-nk−n+2 ··· G□
-nk
-
- (28)
-for all k∈ Z , which implies
-G(n)□ =
-
-
-∑
-r≡0 G□
-r
-∑
-r≡1 G□
-r ··· ∑
-r≡n−1 G□
-r∑
-r≡n−1 G□
-r
-∑
-r≡0 G□
-r ··· ∑
-r≡n−2 G□
-r
-... ... ... ...∑
-r≡1 G□
-r
-∑
-r≡2 G□
-r ··· ∑
-r≡0 G□
-r
-
- (29)
-where≡ means the equality of integers in modulon. This completes the proof of Theorem 1.1.
-□
-Proof. (of Theorem 1.2) Following Neumann [Neu92], we consider the Z [t±1]-module V gen-
-erated by variables Zj,Z′
-j,Z′′
-j subject to linear relations Zj +Z′
-j +Z′′
-j = 0 for 1 ≤ j≤ N.
-We deﬁne a symplectic form on V as
-⟨Zi,Z′′
-j⟩ =⟨Z′
-i,Zj⟩ =⟨Z′′
-i,Z′
-j⟩ =δij (30)
-and
-⟨cZj,Z′′
-j⟩ =⟨Zj, ¯cZ′′
-j⟩ =c, c ∈ Z [t±1]
-where δij is the Kronecker delta and ¯ : Z [t±1]→ Z [t±1] is the involution induced from the
-inversion t↦→ t−1. Note that ⟨Z′′
-i,Zj⟩ =⟨Z′′
-i,−Z′
-j−Z′′
-j⟩ =−δij and similarly,⟨Zi,Z′
-j⟩ =
-⟨Z′
-i,Z′′
-j⟩ =−δij.
-We associate an element Ei∈V to each edge ei ofT as
-Ei =
-N∑
-j=1
-G(t)ijZj + G′(t)ijZ′
-j + G′′(t)ijZ′′
-j. (31)
-In what follows, we use the same argument given in the proof of [Cho06, Thm.3.6] to show
-that
-⟨Ea,Eb⟩ = 0 for all 1 ≤a,b≤N. (32)
-Considering the linear expansion of ⟨Ea,Eb⟩ using the equation (31), we have a non-trivial
-term when the edges ea andeb appear in some ∆j with diﬀerent shape parameters. Without
-loss of generality, suppose thatea andeb have parametersZj andZ′′
-j , respectively. It is clear
-that ~∆j containsµα·~ea andµβ·~eb for someα andβ∈ Z . Equivalently,µ−α·~∆j andµ−β·~∆j
-are attached to ~ea and~eb, respectively. We thus get a non-trivial term
-⟨t−αZj,t−βZ′′
-j⟩ =tβ−α (33)
-10 STA VROS GAROUF ALIDIS AND SEOKBEOM YOON
-in the linear expansion from the triple ( ~∆j,µα·~ea,µβ·~eb). On the other hand, considering
-the face-pairing of the face of ∆ j containing ea and eb, there is another tetrahedron ∆ i
-(possibly i = j), which also contains both ea and eb. It follows that ~∆i contains µα+γ·~ea
-and µβ+γ·~eb for some γ ∈ Z . From this triple ( ~∆i,µα+γ·~ea,µβ+γ·~eb), we get another
-non-trivial term−t(β+γ)−(α+γ) =−tβ−α which we can pair with the term (33) to cancel out.
-Note that we have the minus sign here, since the face-pairing is orientation-reversing: the
-shape parameters of ea and eb for ∆i are either (Zi,Z′
-i), (Z′
-i,Z′′
-i ), or (Z′′
-i,Zi). In this way,
-every non-trivial term that appears in the expansion of⟨Ea,Eb⟩ is paired to cancel out. This
-proves the equation (32). We then directly obtain the desired equation (17), since we have
-⟨Ea,Eb⟩ =
-N∑
-j=1
-⟨
-G(t)ajZj + G′(t)ajZ′
-j + G′′(t)ajZ′′
-j, G(t)bjZj + G′(t)bjZ′
-j + G′′(t)bjZ′′
-j
-⟩
-=
-N∑
-j=1
-G(t)aj(G′′(1/t)bj− G′(1/t)bj) + G′(t)aj(G(1/t)bj− G′′(1/t)bj) + G′′(t)aj(G′(1/t)bj− G(1/t)bj)
-=
-N∑
-j=1
-(G(t)aj− G′(t)aj)(G′′(1/t)bj− G′(1/t)bj)− (G′′(t)aj− G′(t)aj)(G(1/t)bj− G′(1/t)bj)
-=
-N∑
-j=1
-A(t)ajB(1/t)bj− B(t)ajA(1/t)bj.
-□
-Proof. (of Theorem 1.4) Recall that a 2–3 Pachner move on T is determined by two tetra-
-hedra ∆α and ∆β with a common face in T . Dividing the bipyramid ∆ α∪ ∆β into three
-tetrahedra ∆a, ∆b, and ∆c as in Figure 2, we obtain a new ideal triangulation T with one
-additional edge e0. We choose lifts of the ﬁve tetrahedra ∆ α, ∆β, ∆a, ∆b, ∆c and the edge
-e0 (to the inﬁnite cyclic cover) such that ~∆α∪~∆β and ~∆a∪~∆b∪~∆c are the same bipyramid
-containing~e0. Note that the (twisted) gluing equation of e0 is
-logz′
-a + logz′
-b + logz′
-c = 2π
-√
-−1. (34)
-↔↔
-zαz′
-α
-z′′
-α
-zβ
-z′
-βz′′
-β
-z′
-c
-zc z′′
-c
-z′
-b
-zb
-z′′
-b
-z′
-a
-z′′
-a za
-z′
-a
-Figure 2. 2-3 Pachner move.
-TWISTED NEUMANN–ZAGIER MATRICES 11
-There are nine edges on the bipyramid whose gluing equations are aﬀected by the Pachner
-move: three at the triangle of the base pyramid and six others on the bipyramid but not on
-its base. The six edges give
-logzα = logzb + logz′′
-c logz′
-α = logz′′
-a + logzc logz′′
-α = logza + logz′′
-b
-logzβ = logz′′
-b + logzc logz′
-β = logz′′
-a + logzb logz′′
-β = logza + logz′′
-c, (35)
-and the three edges give
-logzα + logzβ = logz′
-a logz′
-α + logz′′
-β = logz′
-b logz′′
-α + logz′
-β = logz′
-c. (36)
-The relations (36) are obtained from the relations (35) up to the gluing equation (34) of e0
-and the relation log z + logz′ + logz′′ =π√−1. For instance,
-logzα + logzβ = logzb + logz′′
-c + logz′′
-b + logzc
-= 2π
-√
-−1− logz′
-b− logz′
-c
-= logz′
-a.
-Therefore, we can obtain the twisted gluing equation matrices G
-□
-(t) forT from the twisted
-gluing equation matrices for T by substituting logz□
-α and logz□
-β in terms of the right hand
-side of equation (35) and the substitution is correct up to the gluing equation of e0 and the
-relation logz + logz′ + logz′′ = π√−1. In matrix form, this implies that for some lower
-triangular matrix Q =
-(
-1 0
-∗ IN
-)
-and an integer matrix C, we have
-(
-G(t)a G(t)b G(t)c
-)
-= Q
-(
-0 0 0
-G′′(t)α + G′′(t)β G(t)α + G′(t)β G′(t)α + G(t)β
-)
-+ C,
-(
-G
-′
-(t)a G
-′
-(t)b G
-′
-(t)c
-)
-= Q
-(
-1 1 1
-0 0 0
-)
-+ C,
-(
-G
-′′
-(t)a G
-′′
-(t)b G
-′′
-(t)c
-)
-= Q
-(
-0 0 0
-G′(t)α + G′(t)β G′′(t)α + G(t)β G(t)α + G′′(t)β
-)
-+ C.
-(37)
-HereIN is the identity matrix of sizeN andXj is thej-th column of a matrixX. Multiplying
-P =
-(
-1 0
-G′(t)α + G′(t)β IN
-)
-Q−1 on both sides of Equation (37), we obtain
-P
-(
-G(t)a G(t)b G(t)c
-)
-=
-(
-0 0 0
-G′′(t)α + G′′(t)β G(t)α + G′(t)β G′(t)α + G(t)β
-)
-+ P C,
-P
-(
-G
-′
-(t)a G
-′
-(t)b G
-′
-(t)c
-)
-=
-(
-1 1 1
-G′(t)α + G′(t)β G′(t)α + G′(t)β G′(t)α + G′(t)β
-)
-+ P C,
-P
-(
-G
-′′
-(t)a G
-′′
-(t)b G
-′′
-(t)c
-)
-=
-(
-0 0 0
-G′(t)α + G′(t)β G′′(t)α + G(t)β G(t)α + G′′(t)β
-)
-+ P C .
-(38)
-12 STA VROS GAROUF ALIDIS AND SEOKBEOM YOON
-It follows that
-P
-(
-A(t)a A(t)b A(t)c
-)
-=
-(
-−1 −1 −1
-B(t)α + B(t)β A(t)α A(t)β
-)
-,
-P
-(
-B(t)a B(t)b B(t)c
-)
-=
-(
-−1 −1 −1
-0 A (t)β + B(t)α A(t)α + B(t)β
-)
-,
-where P is a lower triangular matrix with 1’s on the diagonal. □
+[]{#sec.part1 label="sec.part1"}
+
+In this section we give proofs of the properties of the twisted NZ matrices, namely the relation to the NZ matrices of cyclic covers (Theorem [\[thm.NZcyclic\]](#thm.NZcyclic){reference-type="ref" reference="thm.NZcyclic"}), the symplectic properties (Theorem [\[thm.sympl\]](#thm.sympl){reference-type="ref" reference="thm.sympl"}), and the behavior under 2--3 Pachner moves (Theorem [\[thm.NZpachner\]](#thm.NZpachner){reference-type="ref" reference="thm.NZpachner"}).
+
+::: proof
+*Proof.* (of Theorem [\[thm.NZcyclic\]](#thm.NZcyclic){reference-type="ref" reference="thm.NZcyclic"}) It is clear that $\mathcal T^{(n)}$ has $nN$ tetrahedra, as $\mathcal T$ has $N$ tetrahedra $\Delta_j$, $j=1,\ldots,N$. Fixing a lift $\widetilde\Delta_j$ of each $\Delta_j$ to the infinite cyclic cover, we choose lifts of the tetrahedra of $\mathcal T^{(n)}$ by $\mu^k \cdot \widetilde\Delta_j$ for $k=0, \ldots, n-1$. Similarly, we choose lifts of the edges of $\mathcal T^{(n)}$. Then
+
+it is clear from the construction of the $n$-fold cyclic cover that $$\label{Gnkt}
+\mathbf{G}^{(n)\square}_k = 
+\begin{pmatrix*}[l]
+  \mathbf{G}^\square_{nk} &  \mathbf{G}^\square_{nk+1}& \cdots
+  &  \mathbf{G}^\square_{nk+n-1}\\
+  \mathbf{G}^\square_{nk-1} &  \mathbf{G}^\square_{nk}  & \cdots
+  &  \mathbf{G}^\square_{nk+n-2}\\
+\quad \vdots & \quad \vdots & \ddots & \quad \vdots \\
+\mathbf{G}^\square_{nk-n+1} &  \mathbf{G}^\square_{nk-n+2}  & \cdots
+&  \mathbf{G}^\square_{nk}
+\end{pmatrix*}$$ for all $k \in \mathbbm Z$, which implies $$\label{Gnt}
+\mathbf{G}^{(n)\square} = 
+\begin{pmatrix*}[c]
+  \sum_{r \equiv 0} \mathbf{G}^\square_r & \sum_{r \equiv 1} \mathbf{G}^\square_r
+  & \cdots & \sum_{r \equiv n-1} \mathbf{G}^\square_r\\
+  \sum_{r \equiv n-1} \mathbf{G}^\square_r & \sum_{r \equiv 0} \mathbf{G}^\square_r
+  & \cdots & \sum_{r \equiv n-2} \mathbf{G}^\square_r\\
+  \vdots & \vdots & \ddots & \vdots \\
+  \sum_{r \equiv 1} \mathbf{G}^\square_r & \sum_{r \equiv 2} \mathbf{G}^\square_r
+  & \cdots & \sum_{r \equiv 0} \mathbf{G}^\square_r
+\end{pmatrix*}$$ where $\equiv$ means the equality of integers in modulo $n$. This completes the proof of Theorem [\[thm.NZcyclic\]](#thm.NZcyclic){reference-type="ref" reference="thm.NZcyclic"}. ◻
+:::
+
+::: proof
+*Proof.* (of Theorem [\[thm.sympl\]](#thm.sympl){reference-type="ref" reference="thm.sympl"}) Following Neumann [@Neumann04], we consider the $\mathbbm Z[t^{\pm1}]$-module $V$ generated by variables $Z_j,Z'_j,Z''_j$ subject to linear relations $Z_j+Z'_j+Z''_j=0$ for $1 \leq j \leq N$. We define a symplectic form on $V$ as $$\label{eqn.inner}
+\langle Z_i, Z''_j \rangle = \langle Z'_i, Z_j \rangle = \langle Z''_i, Z'_j \rangle
+= \delta_{ij}$$ and $$\langle c Z_ j, Z''_j \rangle= \langle Z_ j,  \bar{c} Z''_j \rangle = c, \quad
+c \in \mathbbm Z[t^{\pm1}]$$ where $\delta_{ij}$ is the Kronecker delta and $\bar{\ } : \mathbbm Z[t^{\pm1}]\rightarrow\mathbbm Z[t^{\pm1}]$ is the involution induced from the inversion $t \mapsto t^{-1}$. Note that $\langle Z''_i, Z_j \rangle = \langle Z''_i, -Z'_j - Z''_j\rangle = -\delta_{ij}$ and similarly, $\langle Z_i,Z'_j\rangle = \langle Z'_i,Z''_j \rangle = - \delta_{ij}$.
+
+We associate an element $E_i \in V$ to each edge $e_i$ of $\mathcal T$ as $$\label{eqn.ei}
+E_i =  \sum_{j=1}^N  \mathbf{G}(t)_{ij}Z_j+ \mathbf{G}'(t)_{ij}Z'_j
++\mathbf{G}''(t)_{ij}Z''_j  .$$ In what follows, we use the same argument given in the proof of [@choi06 Thm.3.6] to show that $$\label{inner}
+\langle E_a, E_b \rangle=0  \quad \textrm{for all } 1 \leq a,b \leq N  .$$ Considering the linear expansion of $\langle E_a,E_b \rangle$ using the equation [\[eqn.ei\]](#eqn.ei){reference-type="eqref" reference="eqn.ei"}, we have a non-trivial term when the edges $e_a$ and $e_b$ appear in some $\Delta_j$ with different shape parameters. Without loss of generality, suppose that $e_a$ and $e_b$ have parameters $Z_j$ and $Z''_j$, respectively. It is clear that $\widetilde{\Delta}_j$ contains $\mu^\alpha \cdot \widetilde{e}_a$ and $\mu^\beta \cdot \widetilde{e}_b$ for some $\alpha$ and $\beta \in \mathbbm Z$. Equivalently, $\mu^{-\alpha} \cdot \widetilde{\Delta}_j$ and $\mu^{-\beta} \cdot \widetilde{\Delta}_j$ are attached to $\widetilde{e}_a$ and $\widetilde{e}_b$, respectively. We thus get a non-trivial term $$\label{eqn.contr}
+\langle t^{-\alpha} Z_j, t^{-\beta} Z''_j \rangle= t^{\beta-\alpha}$$ in the linear expansion from the triple $(\widetilde{\Delta}_j,
+\mu^\alpha \cdot \widetilde{e}_a, \mu^\beta \cdot \widetilde{e}_b)$. On the other hand, considering the face-pairing of the face of $\Delta_j$ containing $e_a$ and $e_b$, there is another tetrahedron $\Delta_{i}$ (possibly $i=j$), which also contains both $e_a$ and $e_b$. It follows that $\widetilde{\Delta}_i$ contains $\mu^{\alpha+\gamma} \cdot \widetilde{e}_a$ and $\mu^{\beta+\gamma} \cdot \widetilde{e}_b$ for some $\gamma \in \mathbbm Z$. From this triple $(\widetilde{\Delta}_i,
+\mu^{\alpha+\gamma} \cdot \widetilde{e}_a, \mu^{\beta+\gamma} \cdot \widetilde{e}_b)$, we get another non-trivial term $-t^{(\beta+\gamma)-(\alpha+\gamma)}=-t^{\beta-\alpha}$ which we can pair with the term [\[eqn.contr\]](#eqn.contr){reference-type="eqref" reference="eqn.contr"} to cancel out. Note that we have the minus sign here, since the face-pairing is orientation-reversing: the shape parameters of $e_a$ and $e_b$ for $\Delta_i$ are either $(Z_i,Z'_i)$, $(Z'_i,Z''_i)$, or $(Z''_i,Z_i)$. In this way, every non-trivial term that appears in the expansion of $\langle E_a,E_b\rangle$ is paired to cancel out. This proves the equation [\[inner\]](#inner){reference-type="eqref" reference="inner"}. We then directly obtain the desired equation [\[eqn.abba\]](#eqn.abba){reference-type="eqref" reference="eqn.abba"}, since we have $$\begin{aligned}
+& \langle E_a, E_b \rangle  =
+\sum_{j=1}^N \left\langle \mathbf{G}(t)_{aj} Z_j+\mathbf{G}'(t)_{aj}
+Z'_j+\mathbf{G}''(t)_{aj} Z''_j,
+\mathbf{G}(t)_{bj} Z_j+\mathbf{G}'(t)_{bj} Z'_j+\mathbf{G}''(t)_{bj} Z''_j\right
+\rangle
+\\
+&=\sum_{j=1}^N \mathbf{G}(t)_{aj} (\mathbf{G}''(1/t)_{bj}
+-\mathbf{G}'(1/t)_{bj})+\mathbf{G}'(t)_{aj} (\mathbf{G}(1/t)_{bj}
+-\mathbf{G''}(1/t)_{bj})
++\mathbf{G}''(t)_{aj} (\mathbf{G}'(1/t)_{bj}-\mathbf{G}(1/t)_{bj})
+\\
+&=\sum_{j=1}^N (\mathbf{G}(t)_{aj}-\mathbf{G}'(t)_{aj})
+(\mathbf{G}''(1/t)_{bj}-\mathbf{G}'(1/t)_{bj})-
+(\mathbf{G}''(t)_{aj}-\mathbf{G}'(t)_{aj})
+(\mathbf{G}(1/t)_{bj}-\mathbf{G}'(1/t)_{bj})
+\\
+&= \sum_{j=1}^N \mathbf{A}(t)_{aj} \mathbf{B}(1/t)_{bj}
+- \mathbf{B}(t)_{aj} \mathbf{A}(1/t)_{bj}  .
+\end{aligned}$$ ◻
+:::
+
+::: proof
+*Proof.* (of Theorem [\[thm.NZpachner\]](#thm.NZpachner){reference-type="ref" reference="thm.NZpachner"}) Recall that a 2--3 Pachner move on $\mathcal T$ is determined by two tetrahedra $\Delta_\alpha$ and $\Delta_\beta$ with a common face in $\mathcal T$. Dividing the bipyramid $\Delta_\alpha \cup \Delta_\beta$ into three tetrahedra $\Delta_a, \Delta_b,$ and $\Delta_c$ as in Figure [1](#fig.pachner){reference-type="ref" reference="fig.pachner"}, we obtain a new ideal triangulation $\overline{\mathcal T}$ with one additional edge $e_0$. We choose lifts of the five tetrahedra $\Delta_\alpha$, $\Delta_\beta$, $\Delta_a$, $\Delta_b$, $\Delta_c$ and the edge $e_0$ (to the infinite cyclic cover) such that $\widetilde\Delta_\alpha \cup \widetilde\Delta_\beta$ and $\widetilde\Delta_a \cup \widetilde\Delta_b \cup \widetilde\Delta_c$ are the same bipyramid containing $\widetilde e_0$. Note that the (twisted) gluing equation of $e_0$ is $$\label{eqn.g0}
+\log z'_a + \log z'_b + \log z'_c = 2 \pi \sqrt{-1}.$$
+
+<figure id="fig.pachner">
+
+<figcaption>2-3 Pachner move.</figcaption>
+</figure>
+
+There are nine edges on the bipyramid whose gluing equations are affected by the Pachner move: three at the triangle of the base pyramid and six others on the bipyramid but not on its base. The six edges give $$\label{eqn.relation}
+\begin{aligned}
+\log z_\alpha & =\log z_b + \log z_c'' &
+\log z_\alpha' &=\log z_a''+\log z_c   &
+\log z_\alpha'' & =\log z_a+\log z_b''
+\\
+\log z_\beta & =\log z_b''+\log z_c &
+\log z_\beta' & = \log z_a'' +\log z_b &
+\log z_\beta''&= \log z_a+ \log z_c'',
+\end{aligned}$$ and the three edges give $$\label{eqn.relation2}
+\begin{aligned}
+  \log z_\alpha + \log z_\beta & =\log z'_a &
+  \log z'_\alpha + \log z''_\beta & =\log z'_b &
+  \log z''_\alpha + \log z'_\beta=\log z'_c.
+\end{aligned}$$ The relations [\[eqn.relation2\]](#eqn.relation2){reference-type="eqref" reference="eqn.relation2"} are obtained from the relations [\[eqn.relation\]](#eqn.relation){reference-type="eqref" reference="eqn.relation"} up to the gluing equation [\[eqn.g0\]](#eqn.g0){reference-type="eqref" reference="eqn.g0"} of $e_0$ and the relation $\log z + \log z' + \log z''= \pi \sqrt{-1}$. For instance, $$\begin{aligned}
+    \log z_\alpha + \log z_\beta &= \log z_b + \log z''_c + \log z''_b +\log z_c \\
+    & = 2 \pi \sqrt{-1} - \log z'_b - \log z'_c \\
+    &= \log z'_a  .
+\end{aligned}$$ Therefore, we can obtain the twisted gluing equation matrices $\overline{\mathbf{G}}^\square(t)$ for $\overline{\mathcal T}$ from the twisted gluing equation matrices for $\overline{\mathcal T}$ by substituting $\log z_\alpha^\square$ and $\log z_\beta^\square$ in terms of the right hand side of equation [\[eqn.relation\]](#eqn.relation){reference-type="eqref" reference="eqn.relation"} and the substitution is correct up to the gluing equation of $e_0$ and the relation $\log z + \log z' + \log z''= \pi \sqrt{-1}$. In matrix form, this implies that for some lower triangular matrix $Q=\begin{pmatrix} 1 & 0 \\ * & I_N \end{pmatrix}$ and an integer matrix $C$, we have $$\label{pre5G}  
+\begin{aligned}
+\begin{pmatrix}
+\overline{\mathbf{G}}(t)_{a} &
+\overline{\mathbf{G}}(t)_{b} & 
+\overline{\mathbf{G}}(t)_{c}
+\end{pmatrix}
+&= Q\begin{pmatrix}
+0& 0 & 0\\
+\mathbf{G}''(t)_{\alpha} + \mathbf{G}''(t)_{\beta} &  
+\mathbf{G}(t)_{ \alpha} + \mathbf{G}'(t)_{\beta}& 
+\mathbf{G}'(t)_{\alpha} + \mathbf{G}(t)_{\beta} 
+\end{pmatrix} + C, \\
+\begin{pmatrix}
+\overline{\mathbf{G}}'(t)_{a} &
+\overline{\mathbf{G}}'(t)_{b} & 
+\overline{\mathbf{G}}'(t)_{c} 
+\end{pmatrix}
+&= Q\begin{pmatrix}
+1& 1 & 1\\
+\mathbf{0} &  \mathbf{0}& \mathbf{0}
+\end{pmatrix} + C, \\
+\begin{pmatrix}
+\overline{\mathbf{G}}''(t)_{a} &
+\overline{\mathbf{G}}''(t)_{b} & 
+\overline{\mathbf{G}}''(t)_{c} 
+\end{pmatrix}
+&= Q \begin{pmatrix}
+0& 0 & 0\\
+\mathbf{G}'(t)_{\alpha} + \mathbf{G}'(t)_{ \beta} &  
+\mathbf{G}''(t)_{ \alpha} + \mathbf{G}(t)_{ \beta}& 
+\mathbf{G}(t)_{\alpha} + \mathbf{G}''(t)_{\beta} 
+\end{pmatrix} + C  .
+\end{aligned}$$ Here $I_N$ is the identity matrix of size $N$ and $X_{j}$ is the $j$-th column of a matrix $X$. Multiplying $P=\begin{pmatrix} 1 & 0 \\
+\mathbf{G}'(t)_{\alpha} + \mathbf{G}'(t)_{\beta} & I_N \end{pmatrix} Q^{-1}$ on both sides of Equation [\[pre5G\]](#pre5G){reference-type="eqref" reference="pre5G"}, we obtain $$\label{5G}  
+\begin{aligned}
+P\begin{pmatrix}
+\overline{\mathbf{G}}(t)_{a} &
+\overline{\mathbf{G}}(t)_{b} & 
+\overline{\mathbf{G}}(t)_{c}
+\end{pmatrix}
+&= \begin{pmatrix}
+0& 0 & 0\\
+\mathbf{G}''(t)_{\alpha} + \mathbf{G}''(t)_{\beta} &  
+\mathbf{G}(t)_{ \alpha} + \mathbf{G}'(t)_{\beta}& 
+\mathbf{G}'(t)_{\alpha} + \mathbf{G}(t)_{\beta} 
+\end{pmatrix} + PC, \\
+P  \begin{pmatrix}
+\overline{\mathbf{G}}'(t)_{a} &
+\overline{\mathbf{G}}'(t)_{b} & 
+\overline{\mathbf{G}}'(t)_{c} 
+\end{pmatrix}&=\begin{pmatrix}
+1& 1 & 1\\
+\mathbf{G}'(t)_{ \alpha} + \mathbf{G}'(t)_{\beta} &  
+\mathbf{G}'(t)_{ \alpha} + \mathbf{G}'(t)_{\beta} & 
+\mathbf{G}'(t)_{ \alpha} + \mathbf{G}'(t)_{\beta}
+\end{pmatrix}+ PC, \\
+P \begin{pmatrix}
+\overline{\mathbf{G}}''(t)_{a} &
+\overline{\mathbf{G}}''(t)_{b} & 
+\overline{\mathbf{G}}''(t)_{c} 
+\end{pmatrix}
+&= \begin{pmatrix}
+0& 0 & 0\\
+\mathbf{G}'(t)_{\alpha} + \mathbf{G}'(t)_{\beta} &  
+\mathbf{G}''(t)_{\alpha} + \mathbf{G}(t)_{\beta}& 
+\mathbf{G}(t)_{\alpha} + \mathbf{G}''(t)_{\beta} 
+\end{pmatrix} + PC \, .
+\end{aligned}$$ It follows that $$\begin{aligned}
+P\begin{pmatrix}
+\overline{\mathbf{A}}(t)_{a} &
+\overline{\mathbf{A}}(t)_{b} & 
+\overline{\mathbf{A}}(t)_{c}
+\end{pmatrix}
+&= \begin{pmatrix}
+-1& -1 & -1\\
+\mathbf{B}(t)_{ \alpha} + \mathbf{B}(t)_{\beta} &  
+\mathbf{A}(t)_{ \alpha} & 
+\mathbf{A}(t)_{\beta} 
+\end{pmatrix}, \\
+P \begin{pmatrix}
+\overline{\mathbf{B}}(t)_{a} &
+\overline{\mathbf{B}}(t)_{b} & 
+\overline{\mathbf{B}}(t)_{c} 
+\end{pmatrix}
+&= \begin{pmatrix}
+-1& -1 & -1\\
+\mathbf{0} &  
+\mathbf{A}(t)_{ \beta}+ \mathbf{B}(t)_{ \alpha} & 
+\mathbf{A}(t)_{ \alpha} + \mathbf{B}(t)_{\beta} 
+\end{pmatrix},
+\end{aligned}$$ where $P$ is a lower triangular matrix with 1's on the diagonal. ◻
+:::

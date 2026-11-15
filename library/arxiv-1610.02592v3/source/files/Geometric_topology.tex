@@ -1,0 +1,361 @@
+\documentclass [11pt]{amsbook} 
+
+\usepackage{amssymb} \usepackage{amsfonts} \usepackage{amsmath}
+\usepackage{amsthm} \usepackage{epsfig} 
+\usepackage{mathrsfs} 
+\usepackage{color}
+\usepackage{amscd}
+\usepackage[all]{xy}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+%\usepackage{pinlabel}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc} 	% needed by \transp
+\usepackage[T1]{fontenc}		%   " 		"
+\usepackage{mathtools}		%   "		"
+
+%\usepackage[T1]{fontenc} 	%prova
+\usepackage{cmbright}	%prova
+
+
+\newcommand*{\transp}[2][-3mu]{\ensuremath{\mskip1mu\prescript{\smash{\mathrm t\mkern#1}}{}{\mathstrut#2}}}%
+
+\newcommand{\mettifig}[1]{\epsfig{file=figs/EPSfigs/#1}}
+
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{teo}[lemma]{Theorem}
+\newtheorem{prop}[lemma]{Proposition}
+\newtheorem{cor}[lemma]{Corollary} 
+\newtheorem{conj}[lemma]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{defn}[lemma]{Definition}
+\newtheorem{fact}[lemma]{Fact}
+\newtheorem{quest}[lemma]{Question}
+\newtheorem{probl}[lemma]{Problem}
+\newtheorem{example}[lemma]{Example}
+\newtheorem{ex}[lemma]{Exercise} 
+
+\theoremstyle{remark}
+\newtheorem{oss}[lemma]{Remark} 
+\newtheorem{rem}[lemma]{Remark} 
+\newtheorem{warning}[lemma]{Warning} 
+
+\numberwithin{section}{chapter}  %To get Section 2.7 instead of 7
+\numberwithin{subsection}{section}  %To get Subsection 2.4.1 instead of 4.1
+
+\numberwithin{figure}{chapter}
+\numberwithin{table}{chapter}
+
+\newcommand{\matK}{\ensuremath {\mathbb{K}}}
+\newcommand{\matN}{\ensuremath {\mathbb{N}}}
+\newcommand{\matR} {\ensuremath {\mathbb{R}}}
+\newcommand{\matQ} {\ensuremath {\mathbb{Q}}}
+\newcommand{\matZ} {\ensuremath {\mathbb{Z}}}
+\newcommand{\matC} {\ensuremath {\mathbb{C}}}
+\newcommand{\matP} {\ensuremath {\mathbb{P}}}
+\newcommand{\matH} {\ensuremath {\mathbb{H}}}
+\newcommand{\matS} {\ensuremath {\mathbb{S}}}
+\newcommand{\matE} {\ensuremath {\mathbb{E}}}
+\newcommand{\matF} {\ensuremath {\mathbb{F}}}
+\newcommand{\matRP} {\ensuremath {\mathbb{RP}}}
+\newcommand{\matCP} {\ensuremath {\mathbb{CP}}}
+\newcommand{\matX}{\ensuremath {\mathbb{X}}}
+
+\newcommand{\calX} {\ensuremath {\mathcal{X}}}
+\newcommand{\calR} {\ensuremath {\mathcal{R}}}
+\newcommand{\calN} {\ensuremath {\mathcal{N}}}
+\newcommand{\calK} {\ensuremath {\mathcal{K}}}
+\newcommand{\calI} {\ensuremath {\mathscr{I}}}
+\newcommand{\calL} {\ensuremath {\mathcal{L}}}
+\newcommand{\calS} {\ensuremath {\mathscr{S}}}
+\newcommand{\calM} {\ensuremath {\mathscr{M}}}
+\newcommand{\calC} {\ensuremath {\mathscr{C}}}
+\newcommand{\calA} {\ensuremath {\mathcal{A}}}
+\newcommand{\calB} {\ensuremath {\mathcal{B}}}
+\newcommand{\calD} {\ensuremath {\mathcal{D}}}
+\newcommand{\calF} {\ensuremath {\mathscr{F}}}
+\newcommand{\calP} {\ensuremath {\mathscr{P}}}
+\newcommand{\calT} {\ensuremath {\mathcal{T}}}
+\newcommand{\calY}{\ensuremath {\mathcal{Y}}}
+\newcommand{\calH}{\ensuremath {\mathcal{H}}}
+\newcommand{\calO}{\ensuremath {\mathcal{O}}}
+\newcommand{\calG}{\ensuremath {\mathscr{G}}}
+\newcommand{\calML}{\calM\calL}
+\newcommand{\PML}{\matP\calM\calL}
+\newcommand{\frakg}{\ensuremath {\mathfrak{g}}}
+\newcommand{\frakh}{\ensuremath {\mathfrak{h}}}
+\newcommand{\frako}{\ensuremath {\mathfrak{o}}}
+\newcommand{\frakgl}{\ensuremath {\mathfrak{gl}}}
+\newcommand{\fraksl}{\ensuremath {\mathfrak{sl}}}
+\newcommand{\frakon}{\ensuremath {\mathfrak{o}}}
+\newcommand{\frakso}{\ensuremath {\mathfrak{so}}}
+\newcommand{\frakt}{\ensuremath {\mathfrak{t}}}
+\newcommand{\frakp}{\ensuremath {\mathfrak{p}}}
+\newcommand{\frakz}{\ensuremath {\mathfrak{z}}}
+
+\newcommand{\nota} [1] {\caption{\footnotesize{#1}}}
+\newcommand{\matr} [4] {\big({\tiny\begin{array}{@{}c@{\ }c@{}} #1 & #2 \\ #3 & #4 \\ \end{array}} \big)}
+\newcommand{\matradegua} [4] {\left({\tiny\begin{array}{@{}c@{\ }c@{}} #1 & #2 \\ #3 & #4 \\ \end{array}} \right)}
+\newcommand{\vect} [2] {\left(\begin{array}{c} #1 \\ #2 \\ \end{array} \right)}
+\newcommand{\interior}[1]{{\rm int}(#1)}
+\newfont{\Got}{eufm10 scaled 1200}
+\newcommand{\permu}{{\hbox{\Got S}}}
+\newcommand{\gotf}{{\hbox{\Got f}}}
+\newcommand{\gotg}{{\hbox{\Got g}}}
+%\newcommand{\lk}{{\rm lk}}
+\newcommand{\GL}{{\rm GL}}
+\newcommand{\SL}{{\rm SL}}
+\newcommand{\SO}{{\rm SO}}
+\newcommand{\SU}{{\rm SU}}
+\newcommand{\On}{{\rm O}}
+\newcommand{\Un}{{\rm U}}
+\newcommand{\Spin}{{\rm Spin}}
+\newcommand{\Conv}{{\rm Conv}}
+\newcommand{\Fix}{{\rm Fix}}
+\newcommand{\Span}{{\rm Span}}
+\newcommand{\codim}{{\rm codim}}
+\newcommand{\lk}{{\rm lk}}
+\newcommand{\st}{{\rm st}}
+\newcommand{\ad}{{\rm ad}}
+\newcommand{\img}{{\rm Im\,}}
+\newcommand{\Img}{{\rm Im\,}}
+\newcommand{\Ker}{{\rm Ker\,}}
+\newcommand{\id}{{\rm id}}
+\newcommand{\rk}{{\rm rk}}
+\newcommand{\PSLC}{\ensuremath{\matP{\rm SL}_2(\matC)}}
+\newcommand{\PGLC}{\ensuremath{\matP{\rm GL}_2(\matC)}}
+\newcommand{\GLC}{\ensuremath{{\rm GL}_2(\matC)}}
+\newcommand{\GLZ}{\ensuremath{{\rm GL}_2(\matZ)}}
+\newcommand{\SLC}{\ensuremath{{\rm SL}_2(\matC)}}
+\newcommand{\SLR}{\ensuremath{{\rm SL}_2(\matR)}}
+\newcommand{\SLZ}{\ensuremath{{\rm SL}_2(\matZ)}}
+\newcommand{\PSLR}{\ensuremath{\matP{\rm SL}_2(\matR)}}
+\newcommand{\PGLR}{\ensuremath{\matP{\rm GL}_2(\matR)}}
+\newcommand{\PSLZ}{\ensuremath{\matP{\rm SL}_2(\matZ)}}
+\newcommand{\PGLZ}{\ensuremath{\matP{\rm GL}_2(\matZ)}}
+\newcommand{\FN}{{\rm FN}}
+\newcommand{\tr}{{\rm tr}}
+\newcommand{\ML}{\ensuremath{\calM\calL}}
+\newcommand{\Conf}{{\rm Conf}}
+\newcommand{\sh}{{\rm sh}}
+\newcommand{\Rot}{{\rm Rot}}
+\newcommand{\Def}{{\rm Def}}
+\newcommand{\Stab}{{\rm Stab}}
+
+%\newcommand{\appunto}[1]{\marginpar{\tiny #1}}
+%font\titsc=cmcsc10 scaled 1200
+\newcommand{\grafopen}{\{\!\!\{}
+\newcommand{\grafclose}{\}\!\!\}}
+\newcommand{\figfatta}[1]{\includegraphics{figs/EPSfigs/#1}}
+\newcommand{\figfile}[1]{\vspace{1cm}{\Large #1}\vspace{1cm}}
+\newcommand{\basis}{\mathfrak{b}}
+\newcommand{\Tsolid}{\hbox{\textit{\textbf{T}}}}            
+\newcommand{\Dsolid}{\hbox{\textit{\textbf{D}}}}            
+\newcommand{\dimo}[1]{\vspace{2pt}\noindent\textit{Proof of \ref{#1}}.\ }
+\newcommand{\finedimo}{{\hfill\hbox{$\square$}\vspace{2pt}}}
+\newcommand{\cref}{c^{\rm ref}}
+\newcommand{\isom}{\cong}
+\newcommand{\Isom}{\cong}
+\newcommand{\Hom}{{\rm Hom}}
+\newcommand{\Vol}{{\rm Vol}}
+\newcommand{\Area}{{\rm Area}}
+\newcommand{\Iso}{{\rm Isom}}
+\newcommand{\iso}{{\rm Isom}}
+\newcommand{\Isomet}{{\rm Isom}}
+\newcommand{\Aut}{{\rm Aut}}
+\newcommand{\Int}{{\rm Int}}
+\newcommand{\Out}{{\rm Out}}
+\newcommand{\Omeo}{{\rm Homeo}}
+\newcommand{\Diffeo}{{\rm Diffeo}}
+\newcommand{\inj}{{\rm inj}}
+\newcommand{\Teich}{{\rm Teich}}
+\newcommand{\MCG}{{\rm MCG}}
+%\newcommand{\MCG}{\ensuremath{\mathcal {MCG}}}
+\newcommand{\Biol}{{\rm Biol}}
+\newcommand{\Nil}{{\rm Nil}}
+\newcommand{\Sol}{{\rm Sol}}
+\newcommand{\St}{{\rm St}}
+
+\renewcommand{\emptyset}{\varnothing}
+
+\newcommand{\timtil}{
+\begin{picture}(16,8)
+\put(4,0){$\times$}
+\put(5,5){$\scriptstyle\sim$}
+\end{picture}
+}
+
+\newcommand{\timforsetil}{
+\begin{picture}(16,8)
+\put(4,0){$\times$}
+\put(2,5){${\scriptscriptstyle(}{\scriptstyle\sim}{\scriptscriptstyle)}$}
+\end{picture}
+}
+
+% flag per avere la versione in BW (scala di grigi). Commentare quello che non si vuole.
+\newtoggle{BW}
+%\toggletrue{BW}
+\togglefalse{BW}
+
+% flag to get the printed version
+\newtoggle{printed}
+\toggletrue{printed}
+%\togglefalse{printed}
+
+% Con due argomenti per ottenere l'opzione resize
+\DeclareGraphicsRule{.pdftex}{pdf}{.pdftex}{}
+\newcommand{\infig}[2]{\resizebox{#1}{!}{\input{#2.pdftex_t}}}
+
+%\setcounter{tocdepth}{3}  De-commentare per avere anche le sotto-sezioni nel TOC
+
+\makeatletter
+
+% Indenta l'indice
+\def\l@subsection{\@tocline{2}{0pt}{2.5pc}{5pc}{}}
+%\renewcommand{\@dotsep}{4.5} 
+
+\makeatother
+
+\makeindex
+
+\begin{document}
+
+\frontmatter
+
+\author{Bruno Martelli \\ \vspace{2 cm} \iftoggle{printed}{\vspace{10 cm}}{\includegraphics[width = 7 cm]{riflessi.jpg} \vspace{3 cm}}}
+%\iftoggle{printed}{}{\address{Dipartimento di Matematica, Largo Pontecorvo 5, 56127 Pisa, Italy}}
+%\iftoggle{printed}{}{\email{martelli at dm dot unipi dot it}}
+\title{\iftoggle{printed}{\vspace{3 cm}}{} An Introduction to Geometric Topology}
+%\iftoggle{printed}{}{\dedicatory{\vspace{.5 cm} version: October 8, 2016}}
+
+\maketitle
+
+\begin{center}
+Bruno Martelli \\
+University of Pisa, Italy \\
+
+\vspace{1 cm}
+{\tt http://people.dm.unipi.it/martelli/}
+
+\vspace{5 cm}
+
+Version 2.0 of April 2022 \\
+
+\vspace{1 cm}
+
+\end{center}
+
+\newpage
+\thispagestyle{empty}
+    \null\vspace{\stretch {1}}
+        \begin{flushright}
+                \emph{To Ada, Sara, and Ylenia.}
+        \end{flushright}
+\vspace{\stretch{2}}\null
+
+%\setcounter{page}{2}
+\tableofcontents
+%\makeatletter \renewcommand{\@dotsep}{10000} \makeatother 
+
+\mainmatter
+
+\chapter*{Introduction}
+The aim of this book is to introduce the reader to an area of mathematics called \emph{geometric topology}. The text should be suitable to a master or PhD student in mathematics interested in geometry, and more generally to any curious mathematician with a standard background in topology and analysis.
+
+We interpret here the term ``geometric topology'' in a quite restrictive sense: for us, this topic is the study of topological manifolds via the assignment of a preferred ``geometric structure,'' that is some Riemannian metric of a particular nice kind. It is one of the most important discoveries in modern geometry that such preferred metrics exist on every compact manifold of dimension two and three, and this is exactly what this book is about. 
+
+In other words, this book is an introduction to surfaces and three-manifolds, and to their \emph{geometrisation}, due to Poincar\'e and Koebe in 1907 in dimension two and to Thurston and Perelmann in 2002 in dimension three. Therefore this is also a textbook on \emph{low-dimensional topology}, except that we completely neglect four-manifolds, that form a relevant part of this area but which do not (yet?) fit in any geometrisation perspective.
+
+There are already many good textbooks on surfaces, so our main new contribution is probably to furnish a complete introduction to Thurston's geometrisation of three-manifolds, that includes both the topological side of the story (the decomposition of three-manifolds along spheres and tori, the classification of Seifert manifolds) and the geometric side (hyperbolic geometry, Thurston's Dehn filling Theorem, Mostow rigidity, the eight geometries). 
+
+This book is essentially self-contained: in the first chapter we recall all the relevant background material in differential topology and geometry, and from the second chapter on we never mention a theorem without furnishing a proof -- with only one important but unavoidable exception: Perelman's solution of the geometrisation conjecture, stated in Chapter \ref{eight:chapter}. 
+
+\subsection*{Outline}
+Here is a brief outline of the material contained in each chapter.
+The book is divided into three parts. In the first, we introduce hyperbolic geometry and its relatives, the elliptic and flat geometries. Hyperbolic geometry is by far the richest, the most beautiful, and also the most important geometry in dimensions two and three: its relevance is witnessed by the folk sentence that a ``generic'' manifold of dimension two or three has a hyperbolic structure, that is a Riemannian structure locally isometric to the hyperbolic plane or space.
+
+Chapter \ref{preliminaries:chapter} includes all the preliminaries that we will need: in particular, we quickly review various general notions of differential topology and geometry that can be found in many excellent books.  
+
+Chapter \ref{space:chapter} introduces the reader to the hyperbolic space $\matH^n$: as opposite to the sphere $S^n$ and to the euclidean space $\matR^n$, the hyperbolic space may be represented in at least four different ways, none of which is prevalent: each representation is called a \emph{model}. We introduce the models, and then study the isometries, the compactification of $\matH^n$, and its subspaces. 
+
+Chapter \ref{manifold:chapter} deals with hyperbolic manifolds. Maybe unexpectedly, these objects are related to a number of different beautiful mathematical concepts like discrete subgroups of Lie groups, polyhedra, and tessellations. We also present some generalisations like manifolds with geodesic boundary, cone manifolds, and orbifolds.
+
+Chapter \ref{thick-thin:chapter} introduces the \emph{thick-thin decomposition}, a general structural theorem on hyperbolic manifolds that allows us to understand in particular the topology of the complete hyperbolic manifolds that have finite volume but are not compact. It also contains various information on flat and elliptic manifolds, including Bieberbach's Theorem.
+
+Chapter \ref{infinity:chapter} introduces a variety of notions and results on hyperbolic manifolds that are connected with the points at infinity of $\matH^n$. 
+
+The second part of the book deals with surfaces. We classify and geometrise every surface of finite type in Chapter \ref{surfaces:chapter}, where we also study simple closed curves in surfaces and define the \emph{mapping class group}.
+
+Chapter \ref{Teichmuller:chapter} presents the \emph{Teichm\"uller space} of a genus-$g$ surface, as the space of its hyperbolic structures. We use the Fenchel--Nielsen coordinates to show that this space is in fact homeomorphic to $\matR^{6g-6}$.
+
+Chapter \ref{automorphisms:chapter} introduces Thurston's beautiful theory of diffeomorphisms of surfaces. We introduce Thurston's compactification of the Teichm\"uller space, and the consequent classification of the elements of the mapping class group into three classes. We define and study some intriguing objects called \emph{geodesic currents} and \emph{laminations}.
+
+The last (and longest) part of the book is devoted to three-manifolds.  In Chapter \ref{Three:topology:chapter} we introduce the first topological facts, including the prime decomposition, incompressible surfaces, and Haken manifolds.
+
+Chapter \ref{Seifert:chapter} is entirely devoted to Seifert manifolds, a class of three-manifolds that contains many interesting examples. We classify these manifolds completely.
+
+In Chapter \ref{construction:chapter} we present various techniques that topologists use every day to construct three-manifolds: Heegaard splittings, knots and links, Dehn surgery, and surface bundles. We end by stating and proving the canonical torus decomposition.
+
+In Chapter \ref{eight:chapter} we finally move from topology to geometry: there are eight relevant geometries in dimension three, and we introduce them with some detail. We show in particular that the Seifert manifolds occupy precisely six of them.
+
+In Chapter \ref{Mostow:chapter} it is due time to start investigating the most interesting of the three-dimensional geometries, the hyperbolic one: we prove that in dimension three every manifold has at most one hyperbolic structure, and this important fact is known as \emph{Mostow's rigidity Theorem}.
+
+In Chapter \ref{three:chapter} we construct many examples of hyperbolic three-manifolds, by introducing ideal triangulations and \emph{Thurston's equations}.
+
+Chapter \ref{Hyperbolic:Dehn:chapter} contains a complete proof of Thurston's \emph{hyperbolic Dehn filling theorem} and a discussion on the volumes of hyperbolic three-manifolds.
+
+As we mentioned above, this book is almost entirely self-contained and the bibliography is minimised to the strict necessary: each chapter ends with a short section containing the pertaining references, that consist essentially in the sources that we have consulted for that chapter. Many of the topics presented here have their origin in Thurston's notes and papers and are of course already covered by other books, that we have widely used, so our bibliography consists mainly of secondary sources.
+
+\subsection*{Acknowledgements}
+This book has been written in the years 2011-16, as a slowly growing textbook that has accompanied the author and his students during the master courses in Pisa on hyperbolic geometry, surfaces, and three-manifolds. The author has largely profited of many discussions with his students and colleagues, and in particular he would like to warmly thank Giovanni Alberti, Vinicius Ambrosi, Ludovico Battista, Riccardo Benedetti, Andrea Bianchi, Francesco Bonsante, Alessio Carrega, Jacopo Guoyi Chen, Gemma Di Petrillo, Xiaoming Du, Leonardo Ferrari, Irene Filoscia, Stefano Francaviglia, Roberto Frigerio, John Hubbard, Wolfgang Keller, Patrick Lin, Filippo Mazzoli, Alice Merz, Gabriele Mondello, Andrea Monti, Matteo Novaga, Carlo Petronio, Nicola Picenni, Stefano Riolo, Federico Salmoiraghi, Leone Slavich, Chaitanya Tappu, Giacomo Tendas, Dylan Thurston, and Gabriele Viaggi for their help.
+
+\subsection*{Copyright notices}
+The text is released under the  \emph{Creative Commons}-BY-NC-SA license. 
+You are allowed to distribute, modify, adapt, and use of this work for non-commercial purposes, as long as you correctly attribute its authorship and keep using the same license. 
+ 
+The pictures used here are all in the public domain (both those created by the author and those downloaded from Wikipedia, which were already in the public domain), except the following ones that are released with a CC-BY-SA license and can be downloaded from Wikipedia: 
+\begin{itemize}
+\item Figure \ref{Connected_sum:fig} created by Oleg Alexandrov,
+\item Figure \ref{Torus-triang:fig} (triangulated torus) created by Ag2gaeh,
+\item Figure \ref{square_tiling:fig} (tessellation of hyperbolic plane), Figure \ref{Horocycle_normals:fig} (horosphere), Figure \ref{pseudosphere:fig} (pseudosphere), and Figure \ref{triangular2:fig} (tessellations of hyperbolic plane) created by Claudio Rocchini,
+\item Figure \ref{icosaedro:fig}-right (dodecahedron) created by DTR,
+\item Figure \ref{honeycomb_dodecahedron_534:fig} and \ref{honeycomb_dodecahedron_536:fig} (dodecahedral tessellations) created by Roice3,
+\item Figure \ref{Voronoi:fig} (Voronoi tessellation) created by Mysid and Cyp,
+\item Figure \ref{modular_group:fig} (fundamental domain of the modular group) and Figure \ref{Seifert_surface:fig} (Seifert surface for the trefoil knot) created by Kilom691,
+\item Figure \ref{Klein_bottle:fig} created by Tttrung,
+\item Figure \ref{lamination:fig} created by Adam Majewski,
+\item Figure \ref{Hopf:fig} (The Hopf fibration) created by Niles Johnson,
+\item Figure \ref{sum_of_knots:fig} (Knot sum) originally created by Maksim and tPbrocks13,
+\item Figure \ref{satellites:fig} (Satellite knots) originally created by RyBu.
+\end{itemize}
+The painting in the front page is a courtesy of Mariette Michelle Egreteau. The Figures
+\ref{horoballs:fig}, \ref{convex-hull:fig}, \ref{hyperboloid:fig} and \ref{3ps:fig} were made by Jacopo Guoyi Chen.
+
+\part{Hyperbolic geometry}
+\include{Preliminaries}
+\include{Space}
+\include{Manifold}
+\include{Thick-thin}
+\include{Infinity}
+
+\part{Surfaces}
+\include{Surfaces}
+\include{Teichmuller}
+\include{Automorphisms}
+
+\part{Three-manifolds}
+\include{Three_topology}
+\include{Seifert}
+\include{Construction}
+\include{Eight}
+\include{Mostow}
+\include{Three}
+\include{Hyperbolic_Dehn}
+
+\include{Biblio}
+
+\printindex
+
+\end{document}

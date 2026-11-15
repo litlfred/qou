@@ -100,7 +100,7 @@ What's needed:
 
 ## Info-theory + knot convolution on Bring at Planck length
 
-Context (from `content/quantum-observable-universe/information-theory/`):
+Context (from `folio/quantum-observable-universe/information-theory/`):
 - Knot convolution is the operator that combines two knot configurations
 - At Planck length, the discretization becomes the actual physical tessellation
 - The Yekutieli k → ∞ limit IS this Planck-scale tessellation

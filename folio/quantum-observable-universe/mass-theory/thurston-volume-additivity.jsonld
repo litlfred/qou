@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-thurston-volume-additivity",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:thurston-volume-additivity",
+  "kind": "proposition",
+  "title": "Thurston additivity of hyperbolic volume over ideal tetrahedra",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-wedderburn-mass-formula"
+  ],
+  "cites": [
+    "references/thurston1978"
+  ],
+  "tags": [
+    "thurston",
+    "hyperbolic-volume",
+    "ideal-tetrahedron",
+    "bloch-wigner",
+    "dilogarithm",
+    "crossing"
+  ],
+  "leanRef": "qou:QOU.ParticleInteractions.thurstonVolumeAdditivity",
+  "text": "thurston-volume-additivity.md",
+  "leanSource": "thurston-volume-additivity.lean",
+  "provenance": "authored"
+}

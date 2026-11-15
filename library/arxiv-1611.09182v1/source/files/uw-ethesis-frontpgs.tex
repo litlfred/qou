@@ -1,0 +1,208 @@
+% T I T L E   P A G E
+% -------------------
+% Last updated May 24, 2011, by Stephen Carr, IST-Client Services
+% The title page is counted as page `i' but we need to suppress the
+% page number.  We also don't want any headers or footers.
+\pagestyle{empty}
+\pagenumbering{roman}
+
+
+
+
+% The contents of the title page are specified in the "titlepage"
+% environment.
+\begin{titlepage}
+        \begin{center}
+        \vspace*{1.0cm}
+
+
+
+
+        \Huge
+        {\bf  Standard model physics from an algebra? }
+
+        \vspace*{1.0cm}
+
+        \normalsize
+        by \\
+
+        \vspace*{1.0cm}
+
+        \Large
+        C. Furey \\
+
+        \vspace*{3.0cm}
+
+        \normalsize
+        A thesis \\
+        presented to the University of Waterloo \\ 
+        in fulfillment of the \\
+        thesis requirement for the degree of \\
+        Doctor of Philosophy \\
+        in \\
+        Physics \\
+
+        \vspace*{2.0cm}
+
+        Waterloo, Ontario, Canada, 2015 \\
+
+        \vspace*{1.0cm}
+
+        \copyright\ C. Furey 2015 \\
+        \end{center}
+\end{titlepage}
+
+% The rest of the front pages should contain no headers and be numbered using Roman numerals starting with `ii'
+\pagestyle{plain}
+\setcounter{page}{2}
+
+\cleardoublepage % Ends the current page and causes all figures and tables that have so far appeared in the input to be printed.
+% In a two-sided printing style, it also makes the next page a right-hand (odd-numbered) page, producing a blank page if necessary.
+ 
+
+
+% D E C L A R A T I O N   P A G E
+% -------------------------------
+  % The following is the sample Delaration Page as provided by the GSO
+  % December 13th, 2006.  It is designed for an electronic thesis.
+
+%\section{Author's declaration}
+%  \begin{center}\textbf{Author's Declaration}\end{center}
+
+  
+  
+%  \noindent
+%I hereby declare that I am the sole author of this thesis.  I understand that my thesis may be made electronically available to the public.
+
+\cleardoublepage
+%\newpage
+
+% A B S T R A C T
+% ---------------
+
+%\begin{center}\textbf{Abstract}\end{center}
+\section{Abstract}
+
+This thesis constitutes a first attempt to derive aspects of standard  model particle physics from little more than an algebra.  Here, we argue that physical concepts such as particles, causality, and irreversible time may result from the algebra acting on itself.
+
+We then focus on a special case by considering the algebra $\RCHO$, the tensor product of the only four normed division algebras over the real numbers.  Using nothing more than $\RCHO$ acting on itself, we set out to find standard model particle representations:  a task which occupies the remainder of this text.
+
+
+From the $\CH$ portion of the algebra, we find generalized ideals, and show that they describe concisely all of the Lorentz representations of the standard model.
+
+From just the $\CO$ portion of the algebra, we find minimal left ideals, and show that they mirror the behaviour of a generation of  quarks and leptons under $su(3)_c$ and $u(1)_{em}$.  These unbroken symmetries, $su(3)_c$ and $u(1)_{em}$, appear \it uniquely \rm in this model as particular symmetries of  the algebra's ladder operators.  Electric charge, here, is seen to be simply a number operator for the system.
+
+We then combine the $\CH$ and $\CO$ portions of $\RCHO$, and focus on a leptonic subspace, so as to demonstrate a rudimentary electroweak model.  Here, the underlying ladder operators are found to have a symmetry generated \it uniquely \rm by $su(2)_L$ and $u(1)_Y$.  Furthermore, we find that this model yields a straightforward explanation as to why $SU(2)_L$ acts only on left-handed states.
+
+We then make progress towards a three-generation model.  The action of $\CO$ on itself can be seen to generate a 64-complex-dimensional algebra, wherein we are able to identify two sets of generators for $SU(3)_c$.  We  apply these generators to the rest of the space, and find that it breaks down into the $SU(3)_c$ representations of exactly three generations of quarks and leptons.  Furthermore, we show that these three-generation results can be extended, so as to include all 48 fermionic $U(1)_{em}$ charges.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ \cleardoublepage
+%\newpage
+
+% A C K N O W L E D G E M E N T S
+% -------------------------------
+
+%\begin{center}\textbf{Acknowledgements}\end{center}
+
+\section{Acknowledgements}
+
+This research was supported by NSERC, the University of Waterloo, the Templeton Foundation, and by the Perimeter Institute for Theoretical Physics.  Research at Perimeter Institute is supported by the Government of Canada through Industry Canada and by the Province of Ontario through the Ministry of Research and Innovation.
+
+A special thanks to my committee members:  L. Boyle, F. Cachazo, F. Girelli, A. Kempf, R. Mann, and P. Ramond.   I am especially grateful to L. Boyle,   A. Kempf, and R. Mann for giving me a hand when I needed one, and feel very fortunate to have had A. Kempf as a supervisor during these final stages of my degree.  He has been an outstanding mentor.
+
+My time in Waterloo has been both wonderful and trying, and I will be forever indebted to those who were there with me through the days that were difficult.    Alex, Carey, Calida, Deb, Steve, Luke, Sheri, Hilary, Gaetano, George, Vito, Steph, Josh, and of course, Mike, Dianna, Shona, and Kelly:  please know how much I value your friendship.
+
+
+
+\cleardoublepage
+%\newpage
+
+% D E D I C A T I O N
+% -------------------
+
+\begin{center}\textbf{ }\end{center}
+
+\vspace{5cm}
+
+And I want to know the same thing.  We all want to know, how's it going to end?
+
+- \it Brennan and Waits \rm
+\cleardoublepage
+%\newpage
+
+% T A B L E   O F   C O N T E N T S
+% ---------------------------------
+\renewcommand\contentsname{Table of Contents}
+\tableofcontents
+\cleardoublepage
+\phantomsection
+%\newpage
+
+
+
+
+% L I S T   O F   T A B L E S
+% ---------------------------
+
+
+
+%%\addcontentsline{toc}{chapter}{List of Tables}
+%%\listoftables
+%%\cleardoublepage
+%%\phantomsection		% allows hyperref to link to the correct page
+
+
+
+
+%\newpage
+
+% L I S T   O F   F I G U R E S
+% -----------------------------
+
+
+
+
+%%\addcontentsline{toc}{chapter}{List of Figures}
+%%\listoffigures
+%%\cleardoublepage
+%%\phantomsection		% allows hyperref to link to the correct page
+
+
+
+
+%\newpage
+
+% L I S T   O F   S Y M B O L S
+% -----------------------------
+% To include a Nomenclature section
+% \addcontentsline{toc}{chapter}{\textbf{Nomenclature}}
+% \renewcommand{\nomname}{Nomenclature}
+% \printglossary
+% \cleardoublepage
+% \phantomsection % allows hyperref to link to the correct page
+% \newpage
+
+% Change page numbering back to Arabic numerals
+\pagenumbering{arabic}
+

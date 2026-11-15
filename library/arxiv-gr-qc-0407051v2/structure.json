@@ -5,7 +5,13 @@
   "file": "0407051v2.pdf",
   "sha256": "2de07e909b17c5a5117b4021c0a42d2ed3deeedad318a446c233de63d2cbf9f3",
   "bytes": 168282,
-  "pages": 14
+  "pages": 14,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:23Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -15,199 +21,376 @@
    "stamp_date": "23 Aug 2004"
   },
   "doi": null,
-  "title": "Black hole entropy from Quantum Geometry",
-  "authors_raw": "Marcin Domagala 1 and Jerzy Lewandowski 1,2,3",
-  "abstract": "Quantum Geometry (the modern Loop Quantum Gravity using gra phs and spin-networks instead of the loops) provides microscopic d egrees of freedom that account for the black-hole entropy. However, the proce dure for state counting used in the literature contains an error and the num ber of the rel- evant horizon states is underestimated. In our paper a corre ct method of counting is presented. Our results lead to a revision of the l iterature of the subject. It turns out that the contribution of spins greater then 1/2 to the entropy is not negligible. Hence, the value of the Barbero-I mmirzi parameter involved in the spectra of all the geometric and physical ope rators in this theory is diﬀerent than previously derived. Also, the conje ctured relation be- tween Quantum Geometry and the black hole quasi-normal mode s should be understood again. Pacs 04.60Pp, 04.60.Ds, 04.60.Nc, 03.65.Sq 1",
-  "docinfo": {
-   "Producer": "GPL Ghostscript 10.01.2",
-   "CreationDate": "D:20241126162647-05'00'",
-   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
-   "Title": "arXiv:gr-qc/0407051v2  23 Aug 2004"
-  },
+  "title": "arXiv:gr-qc/0407051v2 23 Aug 2004",
+  "authors_raw": "Marcin Domagala1 and Jerzy Lewandowski1,2,3",
   "title_lines": [
    "Black hole entropy from Quantum Geometry"
-  ]
+  ],
+  "abstract": "Quantum Geometry (the modern Loop Quantum Gravity using graphs and spin-networks instead of the loops) provides microscopic degrees of freedom that account for the black-hole entropy. However, the procedure for state counting used in the literature contains an error and the number of the rel- evant horizon states is underestimated. In our paper a correct method of counting is presented. Our results lead to a revision of the literature of the subject. It turns out that the contribution of spins greater then 1/2 to the entropy is not negligible. Hence, the value of the Barbero-Immirzi parameter involved in the spectra of all the geometric and physical operators in this theory is di\ufb00erent than previously derived. Also, the conjectured relation be- tween Quantum Geometry and the black hole quasi-normal modes should be understood again. Pacs 04.60Pp, 04.60.Ds, 04.60.Nc, 03.65.Sq 1",
+  "docinfo": {
+   "Title": "arXiv:gr-qc/0407051v2  23 Aug 2004",
+   "Producer": "GPL Ghostscript 10.01.2",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "CreationDate": "D:20241126162647-05'00'"
+  },
+  "title_raw": "Black hole entropy from Quantum Geometry",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:gr-qc/0407051v2 23 Aug 2004",
+   "heading": "Black hole entropy from Quantum Geometry Abstract",
+   "text": "Black hole entropy from Quantum Geometry",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
    "level": 1,
-   "title": "Physics Department, 104 Davey, Penn State, University Pa rk, PA 16802, USA",
-   "page": 1,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Abstract",
-   "page": 1,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "INTRODUCTION AND RESUL TS",
+   "title": "Introduction and results",
    "page": 2,
    "source": "inferred",
-   "number": "I"
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "2"
   },
   {
    "level": 1,
-   "title": "THE HORIZON QUANTUM ST A TES",
+   "title": "The horizon quantum states",
    "page": 4,
    "source": "inferred",
-   "number": "II"
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "4"
   },
   {
    "level": 1,
-   "title": "N, m i ∈ {−j1, ..., ji} (7)",
-   "page": 4,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "THE COMBINA TORIC FORMULA TION OF THE PROBLEM",
+   "title": "The combinatoric formulation of the problem",
    "page": 7,
    "source": "inferred",
-   "number": "III"
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "7"
   },
   {
    "level": 1,
-   "title": "THE ENTROPY CALCULA TIONS",
+   "title": "The entropy calculations",
    "page": 9,
    "source": "inferred",
-   "number": "IV"
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "9"
   },
   {
    "level": 1,
-   "title": "Z,",
-   "page": 9,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "THE SPIN PROBABILITY DISTRIBUTION",
+   "title": "The spin probability distribution",
    "page": 12,
    "source": "inferred",
-   "number": "V"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 14,
-   "source": "inferred",
-   "number": null
+   "number": "5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "12"
   }
  ],
  "toc_source": "inferred",
- "sections": [
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
   {
-   "id": "sec-000-2-physics-department-104-davey-penn-state-univer",
-   "number": "2",
-   "title": "Physics Department, 104 Davey, Penn State, University Pa rk, PA 16802, USA",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 95,
-   "n_words": 14
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "id": "sec-001-abstract",
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
    "number": null,
-   "title": "Abstract",
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 898,
-   "n_words": 149
+   "n_chars": 1283,
+   "n_words": 191,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
-   "id": "sec-002-i-introduction-and-resul-ts",
-   "number": "I",
-   "title": "INTRODUCTION AND RESUL TS",
+   "id": "sec-000-1-introduction-and-results",
+   "number": "1",
+   "title": "Introduction and results",
    "level": 1,
    "page_start": 2,
    "page_end": 4,
-   "n_chars": 5524,
-   "n_words": 979
+   "n_chars": 5477,
+   "n_words": 932,
+   "label_start": "2",
+   "label_end": "4"
   },
   {
-   "id": "sec-003-ii-the-horizon-quantum-st-a-tes",
-   "number": "II",
-   "title": "THE HORIZON QUANTUM ST A TES",
-   "level": 1,
-   "page_start": 4,
-   "page_end": 4,
-   "n_chars": 2369,
-   "n_words": 419
-  },
-  {
-   "id": "sec-004-2-n-m-i-j1-ji-7",
+   "id": "sec-001-2-the-horizon-quantum-states",
    "number": "2",
-   "title": "N, m i ∈ {−j1, ..., ji} (7)",
+   "title": "The horizon quantum states",
    "level": 1,
    "page_start": 4,
    "page_end": 7,
-   "n_chars": 7052,
-   "n_words": 1352
+   "n_chars": 9350,
+   "n_words": 1678,
+   "label_start": "4",
+   "label_end": "7"
   },
   {
-   "id": "sec-005-iii-the-combina-toric-formula-tion-of-the-proble",
-   "number": "III",
-   "title": "THE COMBINA TORIC FORMULA TION OF THE PROBLEM",
+   "id": "sec-002-3-the-combinatoric-formulation-of-the-problem",
+   "number": "3",
+   "title": "The combinatoric formulation of the problem",
    "level": 1,
    "page_start": 7,
    "page_end": 9,
-   "n_chars": 2400,
-   "n_words": 500
+   "n_chars": 2616,
+   "n_words": 519,
+   "label_start": "7",
+   "label_end": "9"
   },
   {
-   "id": "sec-006-2-z",
-   "number": "2",
-   "title": "Z,",
-   "level": 1,
-   "page_start": 9,
-   "page_end": 9,
-   "n_chars": 178,
-   "n_words": 38
-  },
-  {
-   "id": "sec-007-iv-the-entropy-calcula-tions",
-   "number": "IV",
-   "title": "THE ENTROPY CALCULA TIONS",
+   "id": "sec-003-4-the-entropy-calculations",
+   "number": "4",
+   "title": "The entropy calculations",
    "level": 1,
    "page_start": 9,
    "page_end": 12,
-   "n_chars": 5313,
-   "n_words": 1187
+   "n_chars": 5187,
+   "n_words": 1063,
+   "label_start": "9",
+   "label_end": "12"
   },
   {
-   "id": "sec-008-v-the-spin-probability-distribution",
-   "number": "V",
-   "title": "THE SPIN PROBABILITY DISTRIBUTION",
+   "id": "sec-004-5-the-spin-probability-distribution",
+   "number": "5",
+   "title": "The spin probability distribution",
    "level": 1,
    "page_start": 12,
    "page_end": 14,
-   "n_chars": 2220,
-   "n_words": 437
-  },
-  {
-   "id": "sec-009-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 14,
-   "page_end": 14,
-   "n_chars": 2135,
-   "n_words": 349
+   "n_chars": 4327,
+   "n_words": 747,
+   "label_start": "12",
+   "label_end": "14"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 10,
-  "sections": 10,
-  "chars_total": 28184
+  "toc_entries": 5,
+  "toc_inferred_entries": 5,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "latex",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 6,
+  "chars_total": 28240,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 5,
+   "overlaid": 5,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction-and-results",
+     "title": "Introduction and results",
+     "prose_ratio": 0.95,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-the-horizon-quantum-states",
+     "title": "The horizon quantum states",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-3-the-combinatoric-formulation-of-the-problem",
+     "title": "The combinatoric formulation of the problem",
+     "prose_ratio": 0.964,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-4-the-entropy-calculations",
+     "title": "The entropy calculations",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-5-the-spin-probability-distribution",
+     "title": "The spin probability distribution",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.596,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
  }
 }

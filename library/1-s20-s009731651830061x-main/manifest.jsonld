@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/1-s20-s009731651830061x-main/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Constant term formulas for refined enumerations of Gog and Magog trapezoids",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/1-s20-s009731651830061x-main",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "1-s20-s009731651830061x-main",
   "contains": [
     "library/1-s20-s009731651830061x-main/sections/sec-000",
     "library/1-s20-s009731651830061x-main/sections/sec-001",
@@ -29,8 +34,10 @@
     "library/1-s20-s009731651830061x-main/sections/sec-020"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "1-s20-s009731651830061x-main",
+    "title_source": "slug",
     "source_file": "1-s2.0-S009731651830061X-main.pdf",
     "source_sha256": "8d591fe7f1673c5225706070b0b17ade3e51bde21198a6bc1e297def580eb216",
     "pages": 45,

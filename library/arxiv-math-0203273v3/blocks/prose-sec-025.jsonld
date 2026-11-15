@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0203273v3/blocks/prose-sec-025",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0203273v3/blocks/prose-sec-025",
   "kind": "prose",
-  "title": "Remarque. Un autre radical a ´ et´ e introduit dans la th` ese de Gabriel [16]",
-  "pageStart": 14,
-  "pageEnd": 14,
-  "text": "../sections/sec-025-142-remarque-un-autre-radical-a-et-e-introduit-d.md",
-  "derivedFrom": "library/arxiv-math-0203273v3/manifest",
-  "sourceDocument": "library/arxiv-math-0203273v3/manifest",
+  "title": "Finite dimensionality of reductive envelopes, by Peter O'Sullivan",
+  "pageStart": 127,
+  "pageEnd": 128,
+  "text": "../sections/sec-025-c-finite-dimensionality-of-reductive-envelopes-b.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203273v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203273v3",
   "provenance": "ingested"
 }

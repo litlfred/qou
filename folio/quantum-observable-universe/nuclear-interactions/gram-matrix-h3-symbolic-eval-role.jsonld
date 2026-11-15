@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-gram-matrix-h3-symbolic-eval-role",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:gram-matrix-h3-symbolic-eval-role",
+  "kind": "remark",
+  "title": "Numerical evaluation and role of the symbolic $H_3(q)$ Gram matrix",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-gram-matrix-h3-symbolic"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-gram-matrix-h3-symbolic",
+  "tags": [
+    "gram-matrix",
+    "hoefsmit",
+    "h3",
+    "symbolic",
+    "frobenius"
+  ],
+  "text": "gram-matrix-h3-symbolic-eval-role.md",
+  "provenance": "authored"
+}

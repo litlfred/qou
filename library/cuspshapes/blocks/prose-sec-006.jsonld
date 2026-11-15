@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/cuspshapes/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/cuspshapes/blocks/prose-sec-006",
   "kind": "prose",
   "title": "Exceptional fillings",
   "pageStart": 12,
   "pageEnd": 14,
   "text": "../sections/sec-006-6-exceptional-fillings.md",
-  "derivedFrom": "library/cuspshapes/manifest",
-  "sourceDocument": "library/cuspshapes/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/cuspshapes",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/cuspshapes",
   "provenance": "ingested"
 }

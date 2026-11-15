@@ -75,6 +75,10 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent))
 import molien_feray_meliot_bridge_probe as MB  # noqa: E402
 import plancherel_deformation_uniqueness_probe as PU  # noqa: E402
 
+# Module-scope constants below are built at import time; mpmath's default is
+# 15 dps, so raise it first (import-time dps ratchet).
+set_compute_dps()
+
 N_RANGE = tuple(range(2, 10))          # the probe's own check-1 range
 Q_NEAR_ONE = mp.mpf("1") + mp.mpf("1e-25")
 

@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/cuspshapes/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "CUSP SHAPE AND TUNNEL NUMBER",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/cuspshapes",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "cuspshapes",
   "contains": [
     "library/cuspshapes/sections/sec-000",
     "library/cuspshapes/sections/sec-001",
@@ -16,8 +21,10 @@
     "library/cuspshapes/sections/sec-007"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "cuspshapes",
+    "title_source": "slug",
     "source_file": "CuspShapes.pdf",
     "source_sha256": "01db19e63193e6aeecec8bb99b44dbef010785c6c67c2f5d82b79662eb49e211",
     "pages": 15,

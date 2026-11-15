@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0812.2426v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-0812.2426v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0812.2426v1",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0812.2426&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-0812.2426v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/0812.2426v1",
+    "content_type": "application/gzip",
+    "sha256": "463efd82afd967c75d81258c56caa4352683f2a8c7af33828e18631522d2e93f",
+    "bytes": 47289,
+    "fetched": "2026-10-10T15:01:39+00:00",
+    "files": [
+      {
+        "path": "source/files/brug-vir.tex",
+        "role": "tex",
+        "sha256": "1e29297e86a2395cc2a90a81273e1bcedf68903fd417341f995c04fe663bad81",
+        "bytes": 77209
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/topologicalinvariance3dindex/blocks/prose-sec-008",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/topologicalinvariance3dindex/blocks/prose-sec-008",
   "kind": "prose",
   "title": "Angle structure equations",
   "pageStart": 17,
   "pageEnd": 18,
   "text": "../sections/sec-008-43-angle-structure-equations.md",
-  "derivedFrom": "library/topologicalinvariance3dindex/manifest",
-  "sourceDocument": "library/topologicalinvariance3dindex/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/topologicalinvariance3dindex",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/topologicalinvariance3dindex",
   "provenance": "ingested"
 }

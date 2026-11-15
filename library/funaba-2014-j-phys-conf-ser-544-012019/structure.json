@@ -1,0 +1,222 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "funaba-2014-j-phys-conf-ser-544-012019",
+ "source": {
+  "file": "Funaba_2014_J._Phys.__Conf._Ser._544_012019.pdf",
+  "sha256": "c95b283a122d67e4eacd7738754dacb964bf62fbfb6c7df1f0c58c77d7d3cd75",
+  "bytes": 1168000,
+  "pages": 13,
+  "text_source": "embedded",
+  "extractor": "pypdf",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": "10.1088/1742-6596/544/1/012019",
+  "title": "Conference Series",
+  "authors_raw": "OPEN ACCESS",
+  "title_lines": [
+   "Conference Series"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "CreationDate": "D:20140915095617+01'00'",
+   "Creator": "TeX",
+   "Producer": "pdfTeX-1.40.14; modified using iText\u00ae 5.5.13.5 \u00a92000-2026 iText Group NV (IOP Publishing Ltd; licensed version)"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction and main result",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Computation of the energy of a torus",
+   "page": 4,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Using symmetry, we have only to compute integrals over the following four regions",
+   "page": 5,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "I11\u2212 \u03c0 cos\u03b1",
+   "page": 8,
+   "source": "inferred",
+   "number": "16"
+  },
+  {
+   "level": 1,
+   "title": "I12\u2212 \u03c0 sin\u03b1",
+   "page": 8,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "I13 + \u03c0(R + cos\u03b1)",
+   "page": 8,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "I14\u2212 \u03c0 cos\u03b1",
+   "page": 8,
+   "source": "inferred",
+   "number": "16"
+  },
+  {
+   "level": 1,
+   "title": "I15\u2212 \u03c0 sin\u03b1",
+   "page": 8,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Application as another motivation",
+   "page": 12,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 13,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 978,
+   "n_words": 163
+  },
+  {
+   "id": "sec-000-1-introduction-and-main-result",
+   "number": "1",
+   "title": "Introduction and main result",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 5942,
+   "n_words": 1101
+  },
+  {
+   "id": "sec-001-2-computation-of-the-energy-of-a-torus",
+   "number": "2",
+   "title": "Computation of the energy of a torus",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2260,
+   "n_words": 511
+  },
+  {
+   "id": "sec-002-1-using-symmetry-we-have-only-to-compute-integra",
+   "number": "1",
+   "title": "Using symmetry, we have only to compute integrals over the following four regions",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 8,
+   "n_chars": 3937,
+   "n_words": 937
+  },
+  {
+   "id": "sec-003-16-i11-\u03c0-cos\u03b1",
+   "number": "16",
+   "title": "I11\u2212 \u03c0 cos\u03b1",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-004-8-i12-\u03c0-sin\u03b1",
+   "number": "8",
+   "title": "I12\u2212 \u03c0 sin\u03b1",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-005-8-i13-\u03c0r-cos\u03b1",
+   "number": "8",
+   "title": "I13 + \u03c0(R + cos\u03b1)",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-006-16-i14-\u03c0-cos\u03b1",
+   "number": "16",
+   "title": "I14\u2212 \u03c0 cos\u03b1",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-007-8-i15-\u03c0-sin\u03b1",
+   "number": "8",
+   "title": "I15\u2212 \u03c0 sin\u03b1",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 12,
+   "n_chars": 5024,
+   "n_words": 1272
+  },
+  {
+   "id": "sec-008-3-application-as-another-motivation",
+   "number": "3",
+   "title": "Application as another motivation",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 1976,
+   "n_words": 365
+  },
+  {
+   "id": "sec-009-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 1398,
+   "n_words": 225
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 10,
+  "sections": 11,
+  "chars_total": 21515
+ }
+}

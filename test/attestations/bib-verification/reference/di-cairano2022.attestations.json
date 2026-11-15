@@ -1,0 +1,46 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "di-cairano2022",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 415,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/di-cairano-2022-j-phys-commun-6-015002/Di_Cairano_2022_J._Phys._Commun._6_015002.pdf"
+        },
+        "id": "di-cairano2022",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "Classical non-equilibrium statistical mechanics: it recasts Zwanzig's derivation of a NONLINEAR generalized Langevin equation from the heat-bath Hamiltonian H(X,Y) = H_s(X) + (1/2)[Y - a(X)]^T K [Y - a(X)] (eq. 3), argues Zwanzig's kernel and noise definitions (eqs. 7-8) make the friction function ill-defined \u2014 a tautological fluctuation-dissipation relation and an unbounded kernel in the continuum limit \u2014 and supplies readjusted definitions plus a renormalization separating the equilibrium map's coupling-coefficient dependence from its system-variable dependence. Citation status checked three ways: no ref() entry (greps over folio/schema/references.ts on the author surname, the DOI suffix, the ISSN and 'zwanzig' all return empty), no \\cite site in content/**/*.md, no '-- Ref:' in content/**/*.lean; the sole corpus occurrence of the string 'cairano' is this document's own row in folio/bib-qa-verifications.json. Corpus-side grep is empty for 'langevin', 'zwanzig', 'memory kernel', 'fluctuation-dissipation', 'heat bath', 'colored noise', 'master equation', 'stochastic differential' across content/ and docs/. The adjacency is thematic and two removes deep: sec:brane-fluid asserts that the q-Laplacian's algebraically quantised eigenvalues [k]_q make 'the viscous dissipation rate algebraically quantised', and the stochastic-mechanics chapter intro claims the Markov trace acts as a transition kernel recovering Brownian motion at q -> 1 \u2014 both are dissipative/stochastic claims that a Zwanzig-Mori projection would be the classical template for deriving. But (i) the corpus reaches its classical limit by a completely different route, def:classical-limit-functor's monoidal functor with hbar_q = 1 - q^{-1} -> 0, with no bath, no projection operator and no memory kernel anywhere; and (ii) the template itself is Zwanzig's original paper, not this one, which is a technical correction to Zwanzig's kernel/noise bookkeeping. So there is no result here the folio can consume, and no named block that wants one. Scope-(a) negative: this document, as read, supplies nothing usable here; it is not a claim that Zwanzig-Mori coarse-graining is excluded as a route to brane-fluid dissipation.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Orphan with no citation site and no consumable statement; the corpus has zero GLE/memory-kernel/FDT content for it to attach to, so add-reference would be inflation. Revisit only if the folio starts an actual derivation of sec:brane-fluid's 'algebraically quantised viscous dissipation' from a substrate Hamiltonian by projection-operator coarse-graining \u2014 and then the primary source is Zwanzig, with this paper as the correction to his kernel/noise definitions.",
+              "target": "sec:brane-fluid"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-09T00:10:43.091Z",
+          "source_sha": "f75313b507f9"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

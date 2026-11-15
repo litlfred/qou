@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-qvalue-derivation-chain",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:qvalue-derivation-chain",
+  "kind": "remark",
+  "title": "Q-value derivation chain: from $q$ to $\\beta$-decay predictions",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-stable-nucleus"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-beta-decay-transfer-matrix",
+  "tags": [
+    "q-value",
+    "beta-decay",
+    "transfer-matrix",
+    "derivation-chain",
+    "zero-parameters"
+  ],
+  "text": "qvalue-derivation-chain.md",
+  "provenance": "authored"
+}

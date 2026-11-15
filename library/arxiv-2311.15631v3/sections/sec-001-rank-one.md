@@ -8,18 +8,20 @@ pages: 5-6
 source_pdf: 2311.15631v3.pdf
 source_sha256: a3cc6d51cd04fc07
 doc_brief: "Classification of connected étale algebras in pre-modular fusion categories up to rank three Ken KIKUCHI — We classify connected ´ etale algebras A’s in pre-modular fusion categories B with rank(B) ≤"
+text_source: latex
+latex_prose_ratio: 0.875
+latex_coverage_ratio: 0.8
 ---
-A rank one pre-MFC has only one simple object 1. There are two pre- MFCs depending on
-the sign of categorical dimension D(B) = ±1. Since 1 ≤ FPdim(BA) ≤ FPdim(B) = 1, the
-only possibility is
-FPdim(BA) = 1 .
-Accordingly, the algebra has
-FPdimB(A) = FPdim(B)
-FPdim(BA) = 1.
-Since the only simple object is 1 ∈ B , we get the unique algebra object
-A ∼= 1. (2.1)
-5
-It is trivially connected ´ etale. The algebra is also Lagrangian.
-Connected ´ etale algebraA BA rank(BA) Lagrangian?
-1 B 1 Yes .
-T able 2: Connected ´ etale algebra in rank one pre-MFC B ≃ VectC
+A rank one pre-MFC has only one simple object $1$. There are two pre-MFCs depending on the sign of categorical dimension $D(\mathcal B)=\pm1$. Since $1\le\text{FPdim}(\mathcal B_A)\le\text{FPdim}(\mathcal B)=1$, the only possibility is $$\text{FPdim}(\mathcal B_A)=1.$$ Accordingly, the algebra has $$\text{FPdim}_{\mathcal B}(A)=\frac{\text{FPdim}(\mathcal B)}{\text{FPdim}(\mathcal B_A)}=1.$$ Since the only simple object is $1\in\mathcal B$, we get the unique algebra object $$A\cong1.\label{rank1alg}$$ It is trivially connected étale. The algebra is also Lagrangian.
+
+::: center
+::: {#rank1results}
+   Connected étale algebra $A$   $\mathcal B_A$   $\text{rank}(\mathcal B_A)$   Lagrangian?
+  ----------------------------- ---------------- ----------------------------- -------------
+                1                 $\mathcal B$                 1                    Yes
+
+  : Connected étale algebra in rank one pre-MFC $\mathcal B\simeq\text{Vect}_{\mathbb C}$
+:::
+
+.
+:::

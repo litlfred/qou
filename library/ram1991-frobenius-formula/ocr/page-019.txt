@@ -1,0 +1,33 @@
+A Frobenius formula for the characters of the Hecke algebras 479
+Then, by Theorem 4.13(f) and the Frobenius formula.
+Z (1 -q=1)(-q=1)5-mZcva(1-mm)Kvμ. [
+m= 1
+6 A combinatorial rule for computing the irreducible characters
+of the Hecke algebras
+In this section we rewrite the formula
+Z (- 1)5-mgm-1(q-1)Zcav(1-mm)Kvμ (6.1)
+m= 1
+from Theorem 5.5 to derive a combinatorial rule for computing the irreducible
+characters of the Hecke algebra. For the remainder of this section we will assume
+that all symmetric functions are in the variables xi, X2, : : :, Xn, so that we may
+Write Sa for Sa(xi, . . ., Xn).
+For any two partitions a, μ f define
+CauvSv :
+where, as in (4.7), Cauv denotes the Kronecker coefficient. Extend this definition
+linearly to all symmetric functions.
+(6.2) Lemma.
+Z CvapKvu = (hu @ S,)lsi
+Proof.
+ZcvapKvu = E(s, @ sp)ls, Kvμ
+?sp
+= (hu@ Sp)Is, : 
+Evaluation of the product hu @s, is facilitated by the following theorem of
+Garsia and Remmel [G-R].
+(6.3) Theorem.
+huβs=Z II Sp(i/p(--1)
+(p) i=1
+where the sum is over all sequences of partitions (p) = ( = p(0) 三 p(1) . . . 
+n = l(t-)d - (od1 ao yons (d = (no
+Applying Theorem 6.3 when p = (1 f -mm) gives
+hy @ S(1-mm) =ZS(14t-mm1) II hm.eut-m= 
+(u) i=2

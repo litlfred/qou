@@ -65,7 +65,7 @@ hand back a muon-built vector).
 
 Ref: docs/audits/2026-08-08-mass-fibre-dimension-forces-convention-d.md
 Ref: docs/audits/2026-08-08-borromean-trace-convention-forcing.md
-Ref: content/quantum-observable-universe/mass-theory/two-row-stratum.md
+Ref: folio/quantum-observable-universe/mass-theory/two-row-stratum.md
 Ref: QOU.BraidsAndKnots.FibreDimensionForcesTL (Lean: z*[N]_q = q^N)
 """
 from __future__ import annotations

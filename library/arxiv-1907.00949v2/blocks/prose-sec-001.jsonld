@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1907.00949v2/blocks/prose-sec-001",
+  "kind": "prose",
+  "title": "Flags in numerical analysis",
+  "pageStart": 2,
+  "pageEnd": 3,
+  "text": "../sections/sec-001-11-flags-in-numerical-analysis.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1907.00949v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1907.00949v2",
+  "provenance": "ingested"
+}

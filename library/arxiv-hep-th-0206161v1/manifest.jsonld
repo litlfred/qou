@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-0206161v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-0206161v1",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-hep-th-0206161v1",
   "contains": [
+    "library/arxiv-hep-th-0206161v1/sections/sec-front-matter",
     "library/arxiv-hep-th-0206161v1/sections/sec-000",
     "library/arxiv-hep-th-0206161v1/sections/sec-001",
     "library/arxiv-hep-th-0206161v1/sections/sec-002",
@@ -26,16 +32,20 @@
     "library/arxiv-hep-th-0206161v1/sections/sec-017",
     "library/arxiv-hep-th-0206161v1/sections/sec-018",
     "library/arxiv-hep-th-0206161v1/sections/sec-019",
-    "library/arxiv-hep-th-0206161v1/sections/sec-020",
-    "library/arxiv-hep-th-0206161v1/sections/sec-021",
-    "library/arxiv-hep-th-0206161v1/sections/sec-022",
-    "library/arxiv-hep-th-0206161v1/sections/sec-023",
-    "library/arxiv-hep-th-0206161v1/sections/sec-024",
-    "library/arxiv-hep-th-0206161v1/sections/sec-025"
+    "library/arxiv-hep-th-0206161v1/sections/sec-020"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:hep-th/0206161&metadataPrefix=arXiv), submitted 2002-06-18, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-hep-th-0206161v1",
+    "title_source": "slug",
     "source_file": "0206161v1.pdf",
     "source_sha256": "9530c40215baa02defa98405a7655179d0ceac797ffaf78521b3b6513d554b6d",
     "pages": 31,

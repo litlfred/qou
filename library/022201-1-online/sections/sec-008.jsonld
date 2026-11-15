@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/022201-1-online/sections/sec-008",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "PROOF OF LEMMA 2",
+  "pageStart": 5,
+  "pageEnd": 6,
+  "contains": [
+    "library/022201-1-online/blocks/prose-sec-008"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/022201-1-online",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/022201-1-online",
+  "provenance": "ingested"
+}

@@ -1,0 +1,55 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0110009v3",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0110009v3",
+  "contains": [
+    "library/arxiv-math-0110009v3/sections/sec-front-matter",
+    "library/arxiv-math-0110009v3/sections/sec-000",
+    "library/arxiv-math-0110009v3/sections/sec-001",
+    "library/arxiv-math-0110009v3/sections/sec-002",
+    "library/arxiv-math-0110009v3/sections/sec-003",
+    "library/arxiv-math-0110009v3/sections/sec-004",
+    "library/arxiv-math-0110009v3/sections/sec-005",
+    "library/arxiv-math-0110009v3/sections/sec-006",
+    "library/arxiv-math-0110009v3/sections/sec-007",
+    "library/arxiv-math-0110009v3/sections/sec-008",
+    "library/arxiv-math-0110009v3/sections/sec-009",
+    "library/arxiv-math-0110009v3/sections/sec-010",
+    "library/arxiv-math-0110009v3/sections/sec-011",
+    "library/arxiv-math-0110009v3/sections/sec-012"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0110009&metadataPrefix=arXiv), submitted 2003-09-03, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-0110009v3",
+    "title_source": "slug",
+    "source_file": "0110009v3.pdf",
+    "source_sha256": "bb0c97f2de33b0dd50a29fa379001d358e59c6ef303ff28aad3c2c5c703b79ce",
+    "pages": 26,
+    "arxiv": {
+      "id": "math/0110009",
+      "version": "3",
+      "primary_class": null,
+      "stamp_date": "3 Sep 2003"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

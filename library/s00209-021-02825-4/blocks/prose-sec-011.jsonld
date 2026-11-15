@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/s00209-021-02825-4/blocks/prose-sec-011",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/s00209-021-02825-4/blocks/prose-sec-011",
   "kind": "prose",
   "title": "The symbol of an operator",
   "pageStart": 10,
   "pageEnd": 12,
   "text": "../sections/sec-011-33-the-symbol-of-an-operator.md",
-  "derivedFrom": "library/s00209-021-02825-4/manifest",
-  "sourceDocument": "library/s00209-021-02825-4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s00209-021-02825-4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s00209-021-02825-4",
   "provenance": "ingested"
 }

@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/chinta-2025-j-phys-a-math-theor-58-035203/sections/sec-000",
   "@type": [
     "doco:Section"
   ],
-  "title": "Department of Mathematics The City College of New York Convent Avenue at",
-  "pageStart": 2,
-  "pageEnd": 2,
+  "title": "The discrete analogue of the Gaussian",
+  "pageStart": 1,
+  "pageEnd": 3,
   "contains": [
     "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/prose-sec-000"
   ],
-  "derivedFrom": "library/chinta-2025-j-phys-a-math-theor-58-035203/manifest",
-  "sourceDocument": "library/chinta-2025-j-phys-a-math-theor-58-035203/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/chinta-2025-j-phys-a-math-theor-58-035203",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/chinta-2025-j-phys-a-math-theor-58-035203",
   "provenance": "ingested"
 }

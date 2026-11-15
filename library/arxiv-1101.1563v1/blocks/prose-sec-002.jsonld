@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1101.1563v1/blocks/prose-sec-002",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1101.1563v1/blocks/prose-sec-002",
   "kind": "prose",
-  "title": "Composition-Diamond lemma for categories",
-  "pageStart": 8,
-  "pageEnd": 20,
-  "text": "../sections/sec-002-4-composition-diamond-lemma-for-categories.md",
-  "derivedFrom": "library/arxiv-1101.1563v1/manifest",
-  "sourceDocument": "library/arxiv-1101.1563v1/manifest",
+  "title": "Free categories and free category partial algebras",
+  "pageStart": 7,
+  "pageEnd": 8,
+  "text": "../sections/sec-002-3-free-categories-and-free-category-partial-alge.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1101.1563v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1101.1563v1",
   "provenance": "ingested"
 }

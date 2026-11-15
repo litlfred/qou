@@ -6,7 +6,12 @@
   "sha256": "cd6eca5ccb81ff90b6fa939571e87119d442d754e67f12c8a0e1b5326431b8d2",
   "bytes": 176639,
   "pages": 7,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:24Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -16,19 +21,29 @@
    "stamp_date": "10 Oct 2000"
   },
   "doi": null,
-  "title": "From random polynomials to symplectic geometry Steve Zelditch",
-  "authors_raw": null,
+  "title": "arXiv:math-ph/0010012v1 10 Oct 2000",
+  "authors_raw": "Steve Zelditch",
   "title_lines": [
-   "From random polynomials to symplectic geometry",
-   "Steve Zelditch"
+   "From random polynomials to symplectic geometry"
   ],
   "abstract": "We review some recent results on random polynomials and their generalizations in complex and symplectic geometry. The main theme is the universality of statistics of zeros and critical points of (generalized) polynomials of degree N on length scales of order D \u221a N (complex case), resp. D N (real case).",
   "docinfo": {
    "Title": "arXiv:math-ph/0010012v1  10 Oct 2000",
-   "Author": "",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
    "CreationDate": "D:20210619172340-04'00'"
+  },
+  "title_raw": "From random polynomials to symplectic geometry",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:math-ph/0010012v1 10 Oct 2000",
+   "heading": "From random polynomials to symplectic geometry Steve Zelditch",
+   "text": "From random polynomials to symplectic geometry",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -37,74 +52,304 @@
    "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Mathematical Tools",
    "page": 2,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "2"
   },
   {
-   "level": 1,
-   "title": "(|u|2+|v|2){1 +",
-   "page": 3,
+   "level": 2,
+   "title": "Vector spaces of large dimension",
+   "page": 2,
    "source": "inferred",
-   "number": "2"
+   "number": "2.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "2"
   },
   {
-   "level": 1,
-   "title": "J m\u22122",
-   "page": 3,
+   "level": 3,
+   "title": "Spherical harmonics and real eigenfunctions",
+   "page": 2,
    "source": "inferred",
-   "number": "2"
+   "number": "2.1.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "2"
   },
   {
-   "level": 1,
-   "title": "(|u \u2212v|) + \u00b7 \u00b7 \u00b7 ,",
+   "level": 3,
+   "title": "Holomorphic sections of positive line bundles",
+   "page": 2,
+   "source": "inferred",
+   "number": "2.1.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "2"
+  },
+  {
+   "level": 3,
+   "title": "Almost holomorphic sections",
    "page": 3,
    "source": "inferred",
-   "number": "2"
+   "number": "2.1.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "3"
+  },
+  {
+   "level": 2,
+   "title": "Gaussian measures and spherical measures",
+   "page": 3,
+   "source": "inferred",
+   "number": "2.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "3"
+  },
+  {
+   "level": 2,
+   "title": "Sequences of random polynomials",
+   "page": 3,
+   "source": "inferred",
+   "number": "2.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "3"
+  },
+  {
+   "level": 2,
+   "title": "Szeg\"o kernels",
+   "page": 3,
+   "source": "inferred",
+   "number": "2.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "Distribution of zeros and critical points",
    "page": 4,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "4"
   },
   {
-   "level": 1,
-   "title": "(zp, 0; zp\u2032, 0) ,",
-   "page": 6,
+   "level": 2,
+   "title": "Statement of results",
+   "page": 4,
    "source": "inferred",
-   "number": "1"
+   "number": "3.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "4"
   },
   {
-   "level": 1,
-   "title": "(zp, 0; zp\u2032, 0)",
+   "level": 2,
+   "title": "Almost sure distribution of zeros",
+   "page": 4,
+   "source": "inferred",
+   "number": "3.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "4"
+  },
+  {
+   "level": 2,
+   "title": "Universality and scaling of correlations",
+   "page": 5,
+   "source": "inferred",
+   "number": "3.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "5"
+  },
+  {
+   "level": 3,
+   "title": "Step One: Relating correlations and joint probability distributions",
+   "page": 5,
+   "source": "inferred",
+   "number": "3.3.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "5"
+  },
+  {
+   "level": 3,
+   "title": "Step two: scaling asymptotics of the JPD",
+   "page": 5,
+   "source": "inferred",
+   "number": "3.3.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "5"
+  },
+  {
+   "level": 2,
+   "title": "Hole probabilities",
    "page": 6,
    "source": "inferred",
-   "number": "1"
+   "number": "3.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "6"
   },
   {
    "level": 1,
    "title": "Quantum ergodicity and random waves",
    "page": 6,
    "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 7,
-   "source": "inferred",
-   "number": null
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "6"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 412,
+   "n_words": 63,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -113,7 +358,9 @@
    "page_start": 1,
    "page_end": 2,
    "n_chars": 4020,
-   "n_words": 631
+   "n_words": 631,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
    "id": "sec-001-2-mathematical-tools",
@@ -121,86 +368,341 @@
    "title": "Mathematical Tools",
    "level": 1,
    "page_start": 2,
-   "page_end": 3,
-   "n_chars": 6302,
-   "n_words": 1118
+   "page_end": 2,
+   "n_chars": 172,
+   "n_words": 30,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
-   "id": "sec-002-2-u2v21",
-   "number": "2",
-   "title": "(|u|2+|v|2){1 +",
-   "level": 1,
+   "id": "sec-002-21-vector-spaces-of-large-dimension",
+   "number": "2.1",
+   "title": "Vector spaces of large dimension",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 427,
+   "n_words": 80,
+   "label_start": "2",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-003-211-spherical-harmonics-and-real-eigenfunctions",
+   "number": "2.1.1",
+   "title": "Spherical harmonics and real eigenfunctions",
+   "level": 3,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 877,
+   "n_words": 153,
+   "label_start": "2",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-004-212-holomorphic-sections-of-positive-line-bundle",
+   "number": "2.1.2",
+   "title": "Holomorphic sections of positive line bundles",
+   "level": 3,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 1805,
+   "n_words": 329,
+   "label_start": "2",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-005-213-almost-holomorphic-sections",
+   "number": "2.1.3",
+   "title": "Almost holomorphic sections",
+   "level": 3,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 217,
-   "n_words": 53
+   "n_chars": 404,
+   "n_words": 64,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
-   "id": "sec-003-2-j-m2",
-   "number": "2",
-   "title": "J m\u22122",
-   "level": 1,
+   "id": "sec-006-22-gaussian-measures-and-spherical-measures",
+   "number": "2.2",
+   "title": "Gaussian measures and spherical measures",
+   "level": 2,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 1076,
+   "n_words": 196,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
-   "id": "sec-004-2-u-v",
-   "number": "2",
-   "title": "(|u \u2212v|) + \u00b7 \u00b7 \u00b7 ,",
-   "level": 1,
+   "id": "sec-007-23-sequences-of-random-polynomials",
+   "number": "2.3",
+   "title": "Sequences of random polynomials",
+   "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 715,
-   "n_words": 109
+   "n_chars": 1927,
+   "n_words": 355,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
-   "id": "sec-005-3-distribution-of-zeros-and-critical-points",
+   "id": "sec-008-3-distribution-of-zeros-and-critical-points",
    "number": "3",
    "title": "Distribution of zeros and critical points",
    "level": 1,
    "page_start": 4,
-   "page_end": 5,
-   "n_chars": 6057,
-   "n_words": 1094
+   "page_end": 4,
+   "n_chars": 1663,
+   "n_words": 322,
+   "label_start": "4",
+   "label_end": "4"
   },
   {
-   "id": "sec-006-1-zp-0-zp-0",
-   "number": "1",
-   "title": "(zp, 0; zp\u2032, 0) ,",
-   "level": 1,
+   "id": "sec-009-31-statement-of-results",
+   "number": "3.1",
+   "title": "Statement of results",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 910,
+   "n_words": 161,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-010-32-almost-sure-distribution-of-zeros",
+   "number": "3.2",
+   "title": "Almost sure distribution of zeros",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 376,
+   "n_words": 66,
+   "label_start": "4",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-011-33-universality-and-scaling-of-correlations",
+   "number": "3.3",
+   "title": "Universality and scaling of correlations",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1462,
+   "n_words": 254,
+   "label_start": "5",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-012-331-step-one-relating-correlations-and-joint-pro",
+   "number": "3.3.1",
+   "title": "Step One: Relating correlations and joint probability distributions",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 936,
+   "n_words": 171,
+   "label_start": "5",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-013-332-step-two-scaling-asymptotics-of-the-jpd",
+   "number": "3.3.2",
+   "title": "Step two: scaling asymptotics of the JPD",
+   "level": 3,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 2171,
-   "n_words": 418
+   "n_chars": 1623,
+   "n_words": 341,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
-   "id": "sec-007-4-quantum-ergodicity-and-random-waves",
+   "id": "sec-014-34-hole-probabilities",
+   "number": "3.4",
+   "title": "Hole probabilities",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 661,
+   "n_words": 112,
+   "label_start": "6",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-015-4-quantum-ergodicity-and-random-waves",
    "number": "4",
    "title": "Quantum ergodicity and random waves",
    "level": 1,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 2719,
-   "n_words": 436
-  },
-  {
-   "id": "sec-008-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 7,
-   "page_end": 7,
-   "n_chars": 4108,
-   "n_words": 623
+   "n_chars": 6839,
+   "n_words": 1060,
+   "label_start": "6",
+   "label_end": "7"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 10,
-  "sections": 9,
-  "chars_total": 26309
+  "toc_entries": 17,
+  "toc_inferred_entries": 17,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "latex",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 17,
+  "chars_total": 25590,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 17,
+   "overlaid": 15,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-mathematical-tools",
+     "title": "Mathematical Tools",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.944,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-21-vector-spaces-of-large-dimension",
+     "title": "Vector spaces of large dimension",
+     "prose_ratio": 0.852,
+     "coverage_ratio": 0.885,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-211-spherical-harmonics-and-real-eigenfunctions",
+     "title": "Spherical harmonics and real eigenfunctions",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-212-holomorphic-sections-of-positive-line-bundle",
+     "title": "Holomorphic sections of positive line bundles",
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.956,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-213-almost-holomorphic-sections",
+     "title": "Almost holomorphic sections",
+     "prose_ratio": 0.897,
+     "coverage_ratio": 0.946,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-22-gaussian-measures-and-spherical-measures",
+     "title": "Gaussian measures and spherical measures",
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-23-sequences-of-random-polynomials",
+     "title": "Sequences of random polynomials",
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.965,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-3-distribution-of-zeros-and-critical-points",
+     "title": "Distribution of zeros and critical points",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-31-statement-of-results",
+     "title": "Statement of results",
+     "prose_ratio": 0.887,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-32-almost-sure-distribution-of-zeros",
+     "title": "Almost sure distribution of zeros",
+     "prose_ratio": 0.778,
+     "coverage_ratio": 0.815,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-33-universality-and-scaling-of-correlations",
+     "title": "Universality and scaling of correlations",
+     "prose_ratio": 0.945,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-331-step-one-relating-correlations-and-joint-pro",
+     "title": "Step One: Relating correlations and joint probability distributions",
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-332-step-two-scaling-asymptotics-of-the-jpd",
+     "title": "Step two: scaling asymptotics of the JPD",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-34-hole-probabilities",
+     "title": "Hole probabilities",
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-4-quantum-ergodicity-and-random-waves",
+     "title": "Quantum ergodicity and random waves",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.451,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

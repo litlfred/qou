@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/akemann-2022-j-phys-a-math-theor-55-194002/sections/sec-016",
   "@type": [
     "doco:Section"
   ],
-  "title": "Left: comparison between hard edge level spacings for increasing",
-  "pageStart": 27,
-  "pageEnd": 27,
+  "title": "ORCID iDs",
+  "pageStart": 34,
+  "pageEnd": 34,
   "contains": [
     "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prose-sec-016"
   ],
-  "derivedFrom": "library/akemann-2022-j-phys-a-math-theor-55-194002/manifest",
-  "sourceDocument": "library/akemann-2022-j-phys-a-math-theor-55-194002/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/akemann-2022-j-phys-a-math-theor-55-194002",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/akemann-2022-j-phys-a-math-theor-55-194002",
   "provenance": "ingested"
 }

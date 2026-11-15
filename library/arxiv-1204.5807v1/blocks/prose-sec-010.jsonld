@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1204.5807v1/blocks/prose-sec-010",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1204.5807v1/blocks/prose-sec-010",
   "kind": "prose",
-  "title": "Spherical Hopf algebras. The notion of spherical Hopf algebra was",
-  "pageStart": 5,
-  "pageEnd": 6,
-  "text": "../sections/sec-010-21-spherical-hopf-algebras-the-notion-of-spheric.md",
-  "derivedFrom": "library/arxiv-1204.5807v1/manifest",
-  "sourceDocument": "library/arxiv-1204.5807v1/manifest",
+  "title": "Pointed or copointed pivotal Hopf algebras",
+  "pageStart": 11,
+  "pageEnd": 11,
+  "text": "../sections/sec-010-25-pointed-or-copointed-pivotal-hopf-algebras.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1204.5807v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1204.5807v1",
   "provenance": "ingested"
 }

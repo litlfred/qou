@@ -1,0 +1,33 @@
+{
+ "url": "https://arxiv.org/e-print/0903.0853v3",
+ "content_type": "application/gzip",
+ "sha256": "52829ac3e88820d18a4aee5626a1648e6e8f319190b8f6598e5e34036b11182e",
+ "bytes": 143078,
+ "fetched": "2026-10-10T15:01:50+00:00",
+ "files": [
+  {
+   "path": "files/smfbook.cls",
+   "role": "cls",
+   "sha256": "82101ce8a7d9e719f7045e75d21ce8f57f0c7ccfd82a9a3645a03490bd3e1ea1",
+   "bytes": 49669
+  },
+  {
+   "path": "files/smfcal.bbl",
+   "role": "bbl",
+   "sha256": "26b548dad3715dedccebae3508e2fad9f7c61f7e131f2d579a81777ff66e9a7d",
+   "bytes": 14721
+  },
+  {
+   "path": "files/smfcal.tex",
+   "role": "tex",
+   "sha256": "f7f1e8d37af001c10300c025f0ca9873ed9bdc632f46c106ceddd546453623e4",
+   "bytes": 417692
+  },
+  {
+   "path": "files/smfthm.sty",
+   "role": "sty",
+   "sha256": "31033b64a6cfd34d94037a053b154d80b8adb28bd48e478df6fbbc08df1c1dcc",
+   "bytes": 3076
+  }
+ ]
+}

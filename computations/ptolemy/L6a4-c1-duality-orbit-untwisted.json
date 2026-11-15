@@ -1,0 +1,186 @@
+{
+ "probe": "ptolemy_duality_orbit_untwisted",
+ "manifold": "L6a4",
+ "obstruction_class": 1,
+ "prediction": "sigma_b at ALL FOUR points with lambda == 1; id/tau/sigma_a fail at all four; intertwiner at x_g is g(A) up to a K-scalar",
+ "points": {
+  "id": {
+   "relator_gate": true,
+   "sl3": true,
+   "sigmas": {
+    "id": {
+     "nullspace_dim": 0,
+     "found": false
+    },
+    "tau": {
+     "nullspace_dim": 0,
+     "found": false
+    },
+    "sigma_a": {
+     "nullspace_dim": 0,
+     "found": false
+    },
+    "sigma_b": {
+     "nullspace_dim": 4,
+     "found": true,
+     "A": [
+      [
+       "0",
+       "0",
+       "-6959/23274 + -256/113642578125*T^3"
+      ],
+      [
+       "0",
+       "-16315/23274 + 256/113642578125*T^3",
+       "0"
+      ],
+      [
+       "1",
+       "0",
+       "0"
+      ]
+     ]
+    }
+   }
+  },
+  "tau": {
+   "relator_gate": true,
+   "sl3": true,
+   "sigmas": {
+    "id": {
+     "nullspace_dim": 0,
+     "found": false
+    },
+    "tau": {
+     "nullspace_dim": 0,
+     "found": false
+    },
+    "sigma_a": {
+     "nullspace_dim": 0,
+     "found": false
+    },
+    "sigma_b": {
+     "nullspace_dim": 4,
+     "found": true,
+     "A": [
+      [
+       "0",
+       "0",
+       "9298/11637 + 256/113642578125*T^3"
+      ],
+      [
+       "0",
+       "-20935/11637 + -256/113642578125*T^3",
+       "0"
+      ],
+      [
+       "1",
+       "0",
+       "0"
+      ]
+     ]
+    }
+   }
+  },
+  "sigma_a": {
+   "relator_gate": true,
+   "sl3": true,
+   "sigmas": {
+    "id": {
+     "nullspace_dim": 0,
+     "found": false
+    },
+    "tau": {
+     "nullspace_dim": 0,
+     "found": false
+    },
+    "sigma_a": {
+     "nullspace_dim": 0,
+     "found": false
+    },
+    "sigma_b": {
+     "nullspace_dim": 4,
+     "found": true,
+     "A": [
+      [
+       "0",
+       "0",
+       "-6959/23274 + -256/113642578125*T^3"
+      ],
+      [
+       "0",
+       "-16315/23274 + 256/113642578125*T^3",
+       "0"
+      ],
+      [
+       "1",
+       "0",
+       "0"
+      ]
+     ]
+    }
+   }
+  },
+  "sigma_b": {
+   "relator_gate": true,
+   "sl3": true,
+   "sigmas": {
+    "id": {
+     "nullspace_dim": 0,
+     "found": false
+    },
+    "tau": {
+     "nullspace_dim": 0,
+     "found": false
+    },
+    "sigma_a": {
+     "nullspace_dim": 0,
+     "found": false
+    },
+    "sigma_b": {
+     "nullspace_dim": 4,
+     "found": true,
+     "A": [
+      [
+       "0",
+       "0",
+       "9298/11637 + 256/113642578125*T^3"
+      ],
+      [
+       "0",
+       "-20935/11637 + -256/113642578125*T^3",
+       "0"
+      ],
+      [
+       "1",
+       "0",
+       "0"
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "uniform_sigma_b": true,
+ "works_per_point": {
+  "id": [
+   "sigma_b"
+  ],
+  "tau": [
+   "sigma_b"
+  ],
+  "sigma_a": [
+   "sigma_b"
+  ],
+  "sigma_b": [
+   "sigma_b"
+  ]
+ },
+ "intertwiner_is_transported": {
+  "id": true,
+  "tau": true,
+  "sigma_a": true,
+  "sigma_b": true
+ },
+ "verdict": "SURVIVES THE ORBIT: the untwisted GL(3,K) duality holds at EVERY point of the L6a4 class-1 variety, with the SAME sigma_b, and the intertwiner at each point is the Galois transport g(A) of the base one. Since the orbit IS the whole variety (degree 4, four distinct reduced points), this upgrades the representation-level statement from one point to the whole class -- the representation-level twin of the variety-level 'exists sigma, for all x'. It is the predicted consequence of Gal(K/Q) being ABELIAN, which is exactly the hypothesis GaloisOrbitTransport.lean cannot drop."
+}

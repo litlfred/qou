@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1808.05026v1/sections/sec-003",
   "@type": [
     "doco:Section"
   ],
-  "title": "References",
-  "pageStart": 9,
-  "pageEnd": 9,
+  "title": "Gröbner-Shirshov bases for the Temperley-Lieb algebras of type Bn",
+  "pageStart": 4,
+  "pageEnd": 6,
   "contains": [
     "library/arxiv-1808.05026v1/blocks/prose-sec-003"
   ],
-  "derivedFrom": "library/arxiv-1808.05026v1/manifest",
-  "sourceDocument": "library/arxiv-1808.05026v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1808.05026v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1808.05026v1",
   "provenance": "ingested"
 }

@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/lem-topological-mass-eigenspace-decomp",
+  "@type": [
+    "folio-assistant-core:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:topological-mass-eigenspace-decomp",
+  "kind": "lemma",
+  "title": "Eigenspace decomposition of the mass integrand (descent involution)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-mass-identity",
+    "papers/quantum-observable-universe/blocks/prop-descent-eigenspaces"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-topological-mass-eigenspace-decomp"
+  ],
+  "cites": [
+    "references/yekutieli2015"
+  ],
+  "tags": [
+    "descent-involution",
+    "killing-form",
+    "multiplicative-integral",
+    "mass"
+  ],
+  "leanRef": "qou:QOU.LiftingDescent.tm_eigenspace_decomp",
+  "text": "topological-mass-eigenspace-decomp.md",
+  "leanSource": "topological-mass-eigenspace-decomp.lean",
+  "provenance": "authored"
+}

@@ -1,7 +1,7 @@
 """
 Shared utility: symmetric q-dilogarithm Li_2^q at MPFR precision.
 
-**Context (per prop:li2q-phiq-bar-symmetrization).** Li_2^q is the
+**Context (per `li2q-phiq-bar-symmetrization`).** Li_2^q is the
 **pre-τ / R-side / categorical** form of the q-dilogarithm —
 bar-invariant under q ↔ q^{-1}, lives in the Habiro ring
 $\\widehat{\\mathbb{Z}[q]}[\\![z]\\!]$, purely algebraic. It is
@@ -48,6 +48,11 @@ Convergence: Li_2^q(z) converges absolutely for |z| < 1; the
 factor z^n / (n · [n]_q) decays super-exponentially because
 [n]_q ~ q^{n-1}/(q − q^{-1}) grows exponentially.  We truncate
 when the next-term magnitude falls below `eps`.
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 
@@ -824,7 +829,7 @@ def borromean_markov_trace_h2(q: mpf, q_inv: mpf | None = None) -> mpf:
     two objects do not agree — not a claim that either object is wrong.
 
     Refs:
-      - `content/quantum-observable-universe/lean/QOU/BraidsAndKnots/BorromeanMarkovTrace.lean`
+      - `folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/BorromeanMarkovTrace.lean`
       - `docs/audits/2026-06-01-vol-density-compute-vs-paper-audit.md` §1
       - `docs/audits/2026-06-01-vol-density-derivation-trace.md` (FITTED row)
       - `computations/audits/per_knot_density_compute_vs_paper_audit.py`

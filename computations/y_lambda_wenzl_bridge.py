@@ -116,14 +116,46 @@ def schur_principal(partition, X, Q):
     return prod
 
 
-def y_lambda_wenzl_bridge_numeric(partition, q_val, dps: int = 50):
+def y_lambda_wenzl_bridge_numeric(partition, q_val, dps: int = 50) -> mp.mpf:
     """y_λ via Wenzl-bridge at numerical q, arbitrary dps.
+
+    The `-> mp.mpf` return annotation feeds a gate, not just a reader.
+    `mpf_mixed_arithmetic_audit.py` builds a registry of corpus functions from
+    their `-> mpf` / `-> float` annotations (its own rule: "a corpus function
+    annotated `-> mpf`"), so an unannotated function makes every consumer's
+    `y[λ]` read as unknown-typed. Verified at runtime before annotating:
+    `f((2,1), q_at(), 50)` returns `mpf`, 0.2472978867480345984062206483797638…
+
+    It does NOT clear the false positive at
+    `probes/nucleon_h3_marshalling_divergence_probe.py:242` — measured, the
+    registry grew 792 -> 793 and the candidate count stayed at 7 with the taint
+    still attributed to `mp.fsum(` on L232. That flag contradicts the audit's
+    OWN spec, which classifies `mp.*(...)` as MPF; the mechanism is not
+    established here. Do not re-try this annotation as the fix for it.
 
     The Wenzl normalization Σ_µ d_µ · s_{µ,r}(Q) is cached per
     (n, q_val_str, dps) so callers iterating over all partitions of
     n at a fixed q_val (e.g. `markov_trace_numerical`) avoid the
     O(p(n)²) recomputation; this drops `markov_trace_numerical(D, q_0)`
     from O(11²)=121 schur_principal calls to O(11)=11 calls.
+
+    ⚠ SIDE EFFECT — THIS SETS GLOBAL mpmath PRECISION AND DOES NOT RESTORE IT.
+    The implementation assigns `mp.mp.dps = dps`, so calling this with a
+    literal `dps=50` from a context working at higher precision silently
+    lowers the working precision for everything that follows. **Pass
+    `dps=mp.mp.dps` unless you specifically want the change**, or wrap the
+    call in `with mp.workdps(...)`.
+
+    Not hypothetical: `magnus_omega2_markov_stabilisation_probe.py` was first
+    written with `dps=50` while working at 140, which destroyed its
+    EPS = 1e-50 finite-difference germ. It failed loudly only because that
+    probe validates the differentiated-Hecke identity per generator — a caller
+    without such a check would have got quietly wrong digits. Of the 15
+    call sites passing a literal 50, exactly one works above 50
+    (`y_lambda_at_q0_cache.py`) and it already guards with `mp.workdps(60)`,
+    so there is no live victim; making the function restore precision is bean
+    `qou-p4fr`. Removed here would be a behaviour change for 200+ callers,
+    which is why this is a warning and not a fix.
     """
     return _y_lambda_wenzl_bridge_numeric_impl(
         tuple(partition), str(q_val), int(dps)

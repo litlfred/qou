@@ -1,0 +1,473 @@
+\chapter{The sphere at infinity} \label{infinity:chapter}
+We have discovered that every complete hyperbolic manifold is a quotient $M=\matH^n/_\Gamma$ for some discrete group $\Gamma < \Iso(\matH^n)$ acting freely, and we now raise the following question: how does $\Gamma$ act on the boundary $\partial \matH^n$ at infinity? Does the action of $\Gamma$ on $\partial \matH^n$ furnish some information on the geometry of $M$?
+
+We show in this chapter that $\partial \matH^n$ subdivides naturally into two $\Gamma$-invariant subsets: an open set $\Omega(\Gamma)$ called the \emph{domain of discontinuity} where the action of $\Gamma$ is properly discontinuous (like in $\matH^n$) and a complementary closed set $\Lambda(\Gamma)$ called the \emph{limit set} where the action of $\Gamma$ is more chaotic.
+
+We then use the limit set to define a canonical decomposition of cusped hyperbolic manifolds into ideal polyhedra, called the \emph{Epstein--Penner decomposition}.
+
+We also devote some time to prove Theorem \ref{estensione:teo}, which states that every smooth homotopy equivalence $M\to N$ between two closed hyperbolic manifolds lifts to a map $\matH^n \to \matH^n$ that extends nicely to the compactifications $\overline{\matH^n}\to\overline{\matH^n}$. This fact will have important applications in the study of hyperbolic manifolds in the subsequent chapters.
+
+\section{Limit set}
+How does a discrete group $\Gamma $ of isometries of $\matH^n$ act on the boundary at infinity $\partial \matH^n$? We now prove that $\partial \matH^n$ divides canonically into two $\Gamma$-invariant subsets: an open zone $\Omega(\Gamma)$ where $\Gamma$ acts properly discontinuously, and a closed one $\Lambda(\Gamma)$ where it does not. These regions are called respectively the \emph{domain of discontinuity} and the \emph{limit set} of $\Gamma$. 
+
+\subsection{The limit set}
+Throughout this section, we let $\Gamma$ be a non-trivial discrete group of isometries of $\matH^n$. Fix a point $x\in\matH^n$. We now that the orbit $\Gamma(x)$ is a discrete subset of $\matH^n$. The \emph{limit set} $\Lambda (\Gamma)\subset \partial \matH^n$ of $\Gamma$ is the set of all the accumulation points of the orbit $\Gamma(x)$ in $\overline{\matH^n}$.\index{limit set}\index{$\Lambda(\Gamma)$}
+
+\begin{ex}
+The limit set does not depend on $x$.
+\end{ex}
+
+The limit set is clearly a closed $\Gamma$-invariant subset of $\partial \matH^n$. If $\Gamma' < \Gamma$ we obviously get $\Lambda(\Gamma')\subset \Lambda(\Gamma)$.
+
+\begin{ex} \label{index:lambda:ex}
+If $\Gamma'$ has finite index in $\Gamma$ then $\Lambda(\Gamma') = \Lambda(\Gamma)$.
+\end{ex}
+
+Recall that $\Gamma$ is elementary if it fixes a finite set of points in $\overline{\matH^n}$.
+
+\begin{example} If $\Gamma$ is elementary and acts freely, that is $M = \matH^n/_\Gamma$ is wither a cusp or a tube (see Proposition \ref{elementary:prop}), then $\Lambda(\Gamma) = \Fix(\Gamma)$ consists of one or two points. 
+\end{example}
+
+We now characterise the elementary subgroups of $\Iso(\matH^n)$. Recall that $\Gamma$ is \emph{virtually P} if it has a finite-index subgroup that is P (where P is some property).\index{group!elementary group}
+
+\begin{prop} \label{elementary:4:prop}
+The following are equivalent:
+\begin{enumerate}
+\item $\Gamma$ is elementary,
+\item $\Gamma$ fixes either a point $x\in\matH^n$, or a line, or a point $x\in\partial\matH^n$ and all the horospheres centred at $x$,
+\item $\Gamma$ is virtually abelian,
+\item $\Lambda(\Gamma)$ consists of 0, 1, or 2 points.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+(1) $\Rightarrow$ (2). We expand on the proof of Proposition \ref{elementary:prop} by taking elliptic elements into account.
+
+By hypothesis $\Gamma$ fixes a finite set of points in $\overline{\matH^n}$. If some of them lie in $\matH^n$, then $\Gamma$ fixes their barycenter and we are done. If $\Gamma$ fixes more than two points in $\partial \matH^n$, a barycenter is also defined: their convex hull is an ideal polyhedron of dimension at least 2, we can truncate (via horospheres) all the vertices by the same small volume and take the barycenter of the vertices of the resulting compact combinatorial polyhedron. So we are done also in this case. If $\Gamma$ fixes two points, it fixes a line.
+
+We are left with the case where $\Gamma$ fixes a point $x\in \partial \matH^n$, and no other finite set of points. The proof of Lemma \ref{fissi:lemma} extends as is when $\varphi_2$ is elliptic, and shows that if $\Gamma$ contains a hyperbolic element $\varphi_1$ then every other non-trivial element of $\Gamma$ is either hyperbolic or elliptic and fixes the same axis of $\varphi_1$, but this is excluded: so $\Gamma$ contains only parabolics and elliptics, and these must fix all the horospheres centred at $x$, as required.
+
+(2) $\Rightarrow$ (3). The group $\Gamma$ is virtually isomorphic to a discrete subgroup of $\Iso(\matR^m)$ for some $m$ and we apply Theorem \ref{discrete:virtual:abelian:teo}.
+
+(3) $\Rightarrow$ (4). By Exercise \ref{index:lambda:ex} we may suppose that $\Gamma$ is abelian. By adapting the proof of Lemma \ref{commute:lemma} to elliptics we see (exercise) that $\Gamma$ satisfies (2) and hence we get (4).
+
+(4) $\Rightarrow (1)$. If $\Lambda(\Gamma)$ is empty then $\Gamma$ is finite and fixes a point by Proposition \ref{finite:fixed:prop}.
+If it consists of one or two points, these are preserved by $\Gamma$.
+\end{proof}
+
+\subsection{Minimality}
+Let $\Gamma$ be a non elementary non-trivial discrete group of isometries of $\matH^n$.
+We are interested in the action of $\Gamma$ on $\Lambda(\Gamma)$. We want to prove that the action is \emph{minimal}, that is $\Lambda(\Gamma)$ has no invariant non-empty proper closed subset.
+
+Recall from Section \ref{polyhedra:subsection} that every closed subset $S\subset \overline{\matH^n}$ has a well-defined convex hull $C(S)\subset \overline{\matH^n}$. The convex hull $C(S)$ is closed and is the intersection of all the closed half-spaces containing $S$. We have $C(S) \cap \partial \matH^n = S \cap \partial \matH^n$.
+
+\begin{prop}
+If $\Gamma$ is not elementary, its action on $\Lambda(\Gamma)$ is minimal.
+\end{prop}
+\begin{proof}
+Let $S\subset \Lambda(\Gamma)$ be a non-empty closed $\Gamma$-invariant subset. Since $S$ is $\Gamma$-invariant, its convex hull $C(S)$ also is. Since $\Gamma$ is not elementary, $S$ contains at least two points and hence the intersection $C(S)\cap \matH^n$ is not empty. If $x\in C(S)\cap \matH^n$, its $\Gamma$-orbit is confined in $C(S)$ and hence also its accumulation points are: therefore $\Lambda(\Gamma)\subset C(S)\cap \partial \matH^n = S$ and hence $\Lambda(\Gamma) = S$.
+\end{proof}
+
+\begin{cor} \label{normal:limit:cor}
+If $\Gamma$ is not elementary and $\Gamma' \triangleleft \Gamma$ is an infinite normal subgroup, then $\Lambda(\Gamma') = \Lambda (\Gamma)$.
+\end{cor}
+\begin{proof}
+For every $\gamma \in \Gamma$ we have $\gamma^{-1}\Gamma' \gamma = \Gamma'$, so $\gamma$ sends the orbit $\Gamma'(x)$ to the orbit $\Gamma'(\gamma(x))$ and hence preserves $\Lambda(\Gamma')$. Therefore $\Lambda(\Gamma')$ is $\Gamma$-invariant.
+
+The limit set $\Lambda(\Gamma')$ is not empty because $\Gamma'$ is infinite: the minimality of $\Lambda(\Gamma)$ implies that $\Lambda(\Gamma') = \Lambda(\Gamma)$.
+\end{proof}
+
+\subsection{The convex core}
+If $C\subset \overline{\matH^n}$ is a closed convex set, we define the \emph{nearest point retraction}\index{nearest point retraction} 
+$$r\colon \overline{\matH^n} \to C$$ 
+as the map that sends $x$ to the point $r(x)\in C$ that is closer to $x$. If $x\in\partial \matH^n$, we interpret $r(x)$ as the first point of $C$ that is contained in some horosphere centred at $x$. We have $r(x)=x$ if and only if $x\in C$. The map $r$ is continuous. Using the geodesic from $x$ to $r(x)$ we can construct a natural deformation retraction of $\overline{\matH^n}$ onto the closed convex set $C$.
+
+Let $\Gamma < \Iso(\matH^n)$ be a non elementary non-trivial discrete group. The convex hull of $\Lambda(\Gamma)$ is $\Gamma$-invariant, so it makes sense to define the following.\index{convex core} 
+
+\begin{defn} The \emph{convex core} of the orbifold $O=\matH^n/_\Gamma$ is the quotient $C(\Lambda(\Gamma))/_\Gamma \subset O$ of the convex hull $C(\Lambda(\Gamma))$ of the limit set $\Lambda(\Gamma)$.
+\end{defn}
+
+We are of course mostly interested in the case where $\Gamma$ acts freely and hence $M=\matH^n/_\Gamma$ is a manifold.
+The deformation retraction defined above is $\Gamma$-invariant, therefore every complete hyperbolic manifold $M$ deformation retracts onto its convex core. In particular, $M$ is homotopically equivalent to its convex core.
+
+\subsection{The domain of discontinuity}
+Let $\Gamma < \Iso(\matH^n)$ be a non elementary non-trivial discrete group. The \emph{domain of discontinuity} of $\Gamma$ is the open set\index{domain of discontinuity}\index{$\Omega(\Gamma)$}
+$$\Omega(\Gamma) = \partial\matH^n \setminus \Lambda(\Gamma).$$
+The following proposition explains the terminology.
+\begin{prop}
+The action of $\Gamma$ on $\matH^n \cup \Omega(\Gamma)$ is properly discontinuous.
+\end{prop}
+\begin{proof}
+The nearest point retraction $r$ sends $\matH^n \cup \Omega(\Gamma)$ to $C(\Lambda(\Gamma)) \setminus \Lambda(\Gamma)$ and commutes with $\Gamma$. The action of $\Gamma$ on the latter set is properly discontinuous (since it is contained in $\matH^n$), so the action on the former also is.
+\end{proof}
+
+\begin{prop}
+If $\Vol(\matH^n/_\Gamma)<+ \infty $ then $\Lambda(\Gamma) = \partial \matH^n$.
+\end{prop}
+\begin{proof}
+If $\Omega(\Gamma)\neq \emptyset$, pick $x\in \Omega(\Gamma)$. The point $x$ has a neighbourhood system consisting of half-spaces. Since $\Gamma$ acts properly discontinuously on $\matH^n \cup \Omega(\Gamma)$, there is some half-space $H$ which intersects only finitely many $\Gamma$-translates, contradicting the finite volume hypothesis.
+\end{proof}
+
+In this book we are mostly interested in finite-volume complete hyperbolic manifolds or orbifolds $\matH^n/_\Gamma$, and for these the limit set is just the whole boundary, regardless of $\Gamma$. This apparently disappointing piece of information has some interesting algebraic consequences. 
+
+\begin{cor} \label{normal:abelian:cor}
+If $\Vol(\matH^n/_\Gamma) <+\infty$ then
+$\Gamma$ does not contain any non-trivial virtually abelian normal subgroup.
+\end{cor}
+\begin{proof}
+Let $H\triangleleft \Gamma$ be virtually abelian. If $H$ is infinite, then $\Lambda(H) = \Lambda (\Gamma)=\partial \matH^n$ by Corollary \ref{normal:limit:cor}, contradicting Proposition \ref{elementary:4:prop}. If $H$ is finite, then $\Fix(H)$ is a non-empty proper subspace of $\matH^n$ and $\Gamma$ acts on $\Fix(H)$ because $H$ is normal. If $\Fix(H)$ is a point then $\Gamma$ is elementary, otherwise we get $\Lambda(\Gamma) \subset \partial \Fix(H)$, a contradiction in both cases.
+\end{proof}
+
+\begin{cor}
+The fundamental group of a finite-volume complete hyperbolic manifold is never solvable.
+\end{cor}
+\begin{proof}
+Solvable groups have non-trivial normal abelian subgroups, as proved in Proposition \ref{solvable:normal:prop}.
+\end{proof}
+
+\subsection{Schottky groups}
+In all the examples encountered up to now the limit set $\Lambda(\Gamma)$ consists of either few points or the whole of $\partial \matH^n$. There are many cases where $\Lambda(\Gamma)$ is a more interesting (and often beautiful) set. The simplest examples are probably the following.
+
+Choose a number $k\geqslant 2$ and $2k$ half-spaces $H_1,\ldots,H_{2k} \subset \matH^n$ with disjoint closures in $\overline{\matH^n}$. 
+The closed complement $C = \matH^n \setminus \interior{H_1 \cup \ldots \cup H_{2k}}$ is a convex subset bounded by $2k$ disjoint hyperplanes. If we pair isometrically these hyperplanes we get a complete (exercise) hyperbolic manifold $M$, which is hence $M=\matH^n/_\Gamma$ for some $\Gamma$. The hyperbolic manifold $M$ has infinite volume and is the interior of a compact manifold that decomposes into one 0-handle and $k$ 1-handles. The group $\Gamma$ is free with $k$ generators.\index{group!Schottky group}
+
+\begin{ex} If $n=2$, the limit set $\Lambda(\Gamma)\subset \partial \matH^2 = S^1$ is a Cantor set.
+\end{ex}
+
+\subsection{Parabolic and hyperbolic points}
+Let $\Gamma < \Iso(\matH^n)$ be a non elementary non-trivial discrete group. A \emph{parabolic point} $x\in \partial \matH^n$ for $\Gamma$ is a point that is fixed by some parabolic element $\gamma \in \Gamma$. Similarly, a \emph{hyperbolic point} is a point that is fixed by some hyperbolic element.\index{parabolic point}\index{hyperbolic point}
+
+\begin{prop}
+The set of all parabolic (hyperbolic) points is either empty or a dense subset of $\Lambda(\Gamma)$.
+\end{prop}
+\begin{proof}
+They clearly form a $\Gamma$-invariant subset, so its closure also is. We conclude because $\Lambda(\Gamma)$ is minimal.
+\end{proof}
+
+\begin{cor} \label{parabolic:hyperbolic:dense:cor}
+If $\Vol(\matH^n/_\Gamma)<+\infty $, the set of all parabolic (hyperbolic) points is either empty or dense in $\partial \matH^n$.
+\end{cor}
+
+\subsection{Horoballs in the hyperboloid model}
+In the conformal models, horoballs are just Euclidean balls tangent to the boundary at infinity. In the hyperboloid model $I^n$ there is a more algebraic description. We denote by
+$$L = \{x\in \matR^{n+1}\ \big|\ \langle x,x \rangle = 0, \ x_{n+1}>0\}$$ 
+the positive light cone and recall from Section \ref{projective:compactification:subsection} that the boundary at infinity $\partial I^n$ may be interpreted as the set of rays in $L$. More than that, every vector $x\in L$ determines a horoball $O$ centred at $[x]\in\partial I^n$, via the equation
+$$O = \big\{y\in I^n \ |\ -1 \leqslant \langle x,y \rangle < 0\big\}.$$
+The horoball gets smaller as $x$ goes to infinity.
+\begin{ex}
+This is really a horoball centred at $[x]$.
+\end{ex}
+\begin{proof}[Hint]
+Prove that the boundary horosphere $\langle x,y \rangle =-1$ is orthogonal to all the lines pointing to $x$. 
+\end{proof} 
+
+There is also a simple (and maybe surprising) geometric relation between the vector $x$ and the corresponding horoball in the Poincar\'e disc model $D^n$. Represent $D^n$ inside the hyperplane $x_{n+1} = 0$, and let $\pi \colon I^n \to D^n$ the isometry obtained by projecting towards $P=(0,\ldots,0,-1)$, considered in Section \ref{Poincare:subsection}. By projecting towards $P$ we also get a homeomorphism $\pi\colon L \to D^n$.
+
+\begin{ex} \label{Euclidean-centre:ex}
+The Euclidean centre of the horoball $\pi(O)$ is $\pi(x)$.
+\end{ex}
+
+\subsection{The Epstein--Penner decomposition} \label{EP:subsection}
+We now show that every cusped finite-volume hyperbolic manifold decomposes canonically into some ideal polyhedra. This decomposition is known as the \emph{canonical} or \emph{Epstein--Penner decomposition}.\index{Epstein--Penner decomposition}
+
+Let $M = \matH^n/_\Gamma$ be a non-compact finite-volume complete hyperbolic manifold. The manifold $M$ is diffeomorphic to the interior of a compact $N$ with $c\geqslant 1$ boundary components. We fix $c$ disjoint truncated cusps $H_1, \ldots, H_c \subset M$. Their lifts in $\matH^n$ are $c$ disjoint $\Gamma$-orbits $B_1^i, \ldots, B_c^i$ of disjoint horoballs.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 12 cm] {\iftoggle{BW}{horoballs-BW}{horoballs}} 
+\nota{By glueing two identical ideal triangles along their sides we get a thrice-punctured sphere $S$, and we choose three disjoint truncated cusps in it having the same area (left). In the universal cover, the two ideal triangles of $S$ lift to the Farey tessellation already shown in Figure \ref{tiling_Farey:fig}, and each of the three truncated cusps lifts to infinitely many disjoint horoballs (right). The Euclidean centre of the horoballs is shown here, in relation to Exercise \ref{Euclidean-centre:ex}.}
+\label{horoballs:fig}
+\end{center}
+\end{figure}
+
+
+\begin{example}
+Consider the thrice-punctured sphere $S$ obtained by gluing two identical copies of an ideal triangle along their sides. This is a complete finite-volume hyperbolic surface with three cusps. We may fix three disjoint truncated cusps of the same area, as sketched in Figure \ref{horoballs:fig}-(left). These lift to three families of disjoint horoballs as in Figure \ref{horoballs:fig}-(right).
+\end{example}
+
+We use the hyperboloid model $I^n$ and interpret a horoball as a point in the positive light cone $L$ as explained in the previous section. The $\Gamma$-orbits $B_1^i, \ldots, B_c^i$ of horoballs form a discrete subset in $L$. If we modify the initial truncated cusp $H_j$, all the points $B_j^i\in L$ are rescaled by the same constant.
+
+We make a crucial observation: the points $B_j^i$ are discrete in $L$, but the rays that contain them form a countable dense subset of $L$, because they correspond to the parabolic points of $\Gamma$, that are dense by Corollary \ref{parabolic:hyperbolic:dense:cor}.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 13 cm] {\iftoggle{BW}{convex-hull-BW}{convex-hull}} 
+\nota{A portion of the convex hull $C$ for the thrice-punctured sphere of Figure \ref{horoballs:fig}. As suggested by Exercise \ref{Euclidean-centre:ex} we determine the horoballs in $L$ by projecting the Euclidean centers of their representations in the disc model. The black half-line above each horoball in $L$ is contained in $C$, see Proposition \ref{Bji:prop}.}
+\label{convex-hull:fig}
+\end{center}
+\end{figure}
+
+We now define $C\subset \matR^{n+1}$ as the convex hull of the points $B_j^i$ in $\matR^{n+1}$. We note that $C$ is $\Gamma$-invariant. An example is shown in Figure \ref{convex-hull:fig}.
+The convex hull will define a decomposition of $M$ into ideal polyhedra. 
+
+The convex hull $C$ is contained in the convex hull of $L$, that consists of all the positive timelike and lightlike vectors. The following proposition says that $C$ intersects $L$ into countably many half-lines based at the points $B_j^i$.
+
+\begin{prop} \label{Bji:prop}
+The set $C\cap L$ is the set of points $\alpha B_j^i$ for some $\alpha \geqslant 1$.
+\end{prop}
+\begin{proof}
+Pick a point $x\in L$ not of this type: the segment $0x$ does not intersect $\{B_j^i\}$. Since $\{B_j^i\}\subset L$ is discrete, we can perturb the hyperplane $H$ tangent in $x$ to $L$ so that it intersects $L$ into a small ellipsoid around $0x$, and so that $\{B_j^i\}$ lies on the opposite side of $H$ of $x$. Therefore $x \not \in C$.
+
+Conversely, pick a point $x = \alpha B_{j_0}^{i_0}$. The rays containing the points $B_j^i$ form a dense set in $L$, so we can find a sequence of $B_j^i\neq B_{j_0}^{i_0}$ such that $[B_j^i]$ converges to $[B_{j_0}^{i_0}]$. Since $\{B^i_j\}$ is discrete, the points $B_j^i$ go to infinity in the sequence and hence the segment with endpoints $B_j^i$ and $B_{j_0}^{i_0}$ approaches $x$ in the limit. Therefore $x\in C$.
+\end{proof}
+
+\begin{prop}
+Every timelike ray intersects $\partial C$ exactly once.
+\end{prop}
+\begin{proof}
+Every timelike ray $r$ enters in the interior of a polyhedron spanned by some $B_j^i$, so it intersects $C$ and hence $\partial C$. Consider a point $x \in \partial C \cap r$. Every supporting hyperplane for $x$ must be spacelike because the rays containing the $B_j^i$ are dense. Therefore $C \cap r$ is a half-line and $x$ is its endpoint.
+\end{proof}
+
+In particular $\partial C = (\partial_{\rm l}C) \sqcup (\partial_{\rm t}C)$ consists of the lightlike vectors $\partial_{\rm l} C = C\cap L$ and some timelike vectors $\partial_{\rm t} C$. The previous proposition furnishes a natural 1-1 correspondence $\partial_{\rm t} C \longleftrightarrow I^n$ with the hyperboloid model by projecting along timelike lines.
+
+\begin{prop}
+The timelike boundary $\partial_{\rm t} C$ is tessellated by countably many Euclidean $n$-dimensional polyhedra with vertices in $\{B_j^i\}$.
+\end{prop}
+\begin{proof}
+Consider a point $x\in\partial_{\rm t} C$ and a supporting hyperplane $H$. As already mentioned, the hyperplane $H$ is spacelike and the intersection $H\cap \partial_{\rm t} C$ is some $k$-dimensional polyhedron, convex hull of finitely many points in $\{B_j^i\}$. If $k<n$ we can rotate $H$ until it meets one more point $B_j^i$ and after finitely many rotations we get a $n$-dimensional polyhedron.
+
+We have proved that $\partial_{\rm t} C$ is paved by $n$-dimensional polyhedra with vertices in $\{B_j^i\}$ and intersecting in common faces. The polyhedra are locally finite because $\{B_j^i\}$ is discrete, hence they form a tessellation.
+\end{proof}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 13 cm] {\iftoggle{BW}{hyperboloid-BW}{hyperboloid}} 
+\nota{The $\Gamma$-invariant decomposition of the hyperbolic plane into ideal polygons obtained by projecting the Euclidean polygons of Figure \ref{convex-hull:fig} from $\partial C$ to $I^2$. This is in fact the Farey tessellation of Figure \ref{horoballs:fig}.}
+\label{hyperboloid:fig}
+\end{center}
+\end{figure}
+
+The tessellation of $\partial_{\rm t}C$ is $\Gamma$-invariant and projects to a $\Gamma$-invariant tessellation of the hyperbolic space $I^n$ into ideal polyhedra, which projects in turn to a tessellation of $M$ into finitely many ideal polyhedra, called the \emph{canonical} or \emph{Epstein-Penner decomposition}. An example is shown in Figure \ref{hyperboloid:fig}. We have discovered the following.
+
+\begin{teo} \label{EP:teo}
+Every finite-volume non-compact complete hyperbolic manifold can be tessellated into finitely many ideal polyhedra.
+\end{teo}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 6 cm] {\iftoggle{BW}{TBD}{3ps-1}} 
+\includegraphics[width = 6 cm] {\iftoggle{BW}{TBD}{3ps-2}} 
+\nota{Different choices of truncated cusps may lead to distinct decompositions into ideal polyhedra.}
+\label{3ps:fig}
+\end{center}
+\end{figure}
+
+The canonical tessellation depends only on the chosen initial truncated cusps $H_1,\ldots, H_c$. Different choices may give different canonical tessellations, an example is sketched in Figure \ref{3ps:fig}. We can parametrize these choices by recording the volumes $V_1,\ldots, V_c$>0 of the truncated cusps (or the areas of $\partial H_i$, that are $V_i/(n-1)$ by Proposition \ref{truncated:volume:prop}).
+
+\begin{prop}
+If we multiply all volumes $V_1,\ldots, V_c$ by the same constant $\lambda>0$ we get the same canonical tessellation.
+\end{prop}
+\begin{proof}
+The set $B_j^i$ changes by a global rescaling, and hence also the tessellation does. Its projection on $I^n$ is unaffected.
+\end{proof}
+
+A way to get a truly canonical decomposition of $M$, which depends on no choice, consists of taking $V_1=\ldots = V_c>0$. Note that when $c=1$ any choice leads to the same canonical decomposition.
+
+\section{Extensions of homotopies}
+This section is entirely devoted to the proof of the following theorem. Recall that every map $f\colon M\to N$ between connected manifolds lifts to a (non-unique) map $\tilde f\colon \tilde M \to \tilde N$ between their universal covers.
+\begin{teo} \label{estensione:teo}
+Let $f\colon M \to N$ be a smooth homotopy equivalence between closed hyperbolic $n$-manifolds. Every lift $\tilde f\colon \matH^n \to \matH^n$ extends to a continuous map $\tilde f\colon \overline{\matH^n} \to \overline{\matH^n}$ whose restriction $\tilde f|_{\partial \matH^n}\colon \partial \matH^n \to \partial \matH^n$ is a homeomorphism.
+\end{teo}
+
+Every smooth homotopy equivalence extends to a homeomorphism of the boundaries of the universal coverings. This theorem will have important consequences in the Chapters \ref{automorphisms:chapter} and \ref{Mostow:chapter}.
+To prove it, we need to define a weaker notion of isometry.
+
+\subsection{Quasi-isometries}
+
+We introduce the following.\index{quasi-isometry}
+
+\begin{defn} A map $F\colon X \to Y$ between metric spaces is a \emph{quasi-isometry} if there are two constants $C_1>0$, $C_2\geqslant 0$ such that
+$$\frac 1 {C_1} d(x_1,x_2) - C_2 \leqslant d(F(x_1), F(x_2)) \leqslant C_1d(x_1,x_2) + C_2$$
+for all $x_1,x_2 \in X$ and $d(F(X),y)\leqslant C_2$ for all $y\in Y$.
+\end{defn}
+A quasi-isometry is an isometry up to some error: note that $F$ might neither be continuous nor injective. Two metric spaces are \emph{quasi-isometric} if there is a quasi-isometry $F\colon X \to Y$ (which implies the existence of a quasi-isometry $G\colon Y\to X$, exercise) and quasi-isometry is an equivalence relation between metric spaces. Intuitively, looking at a space up to quasi-isometries is like watching it from some distance. Compact metric spaces are obviously quasi-isometric to a point. 
+
+This notion is an important ingredient in \emph{geometric group theory}: one may for instance give every finitely-presented group $G$ a canonical metric (through its \emph{Cayley graph}), uniquely determined up to quasi-isometries.\index{geometric group theory}\index{Cayley graph} 
+
+\subsection{Pseudo-isometries}
+Let $f\colon M \to N$ be a homotopic equivalence between closed hyperbolic $n$-manifolds. Every continuous function is homotopic to a smooth one, hence we suppose that $f$ is smooth. The map lifts to a map $\tilde f\colon \matH^n \to \matH^n$. We will prove that $\tilde f$ is a quasi-isometry. Actually, the map $\tilde f$ is also continuous and (as we soon see) Lipschitz: it will be useful for us to retain this information on $\tilde f$ to simplify some arguments, so we introduce a different (more restrictive but less natural) version of a quasi-isometry.\index{pseudo-isometry}
+
+\begin{defn} A map $F\colon X \to Y$ between metric spaces is a \emph{pseudo-isometry} if there are two positive constants $C_1, C_2>0$ such that
+$$\frac 1 {C_1} d(x_1,x_2) - C_2 \leqslant d(F(x_1), F(x_2)) \leqslant C_1d(x_1,x_2)$$
+for all $x_1,x_2 \in X$.
+\end{defn}
+In particular a pseudo-isometry is $C_1$-Lipschitz and hence continuous. Let $f\colon M \to N$ be a smooth map between Riemannian $n$-manifolds; the \emph{maximum dilatation} of $f$ at a point $x\in M$ is the maximum ratio $\frac{\|df_x(v)\|}{\|v\|}$ where $v$ varies among all the unitary vectors in $T_x$. The maximum dilatation of $f$ is the supremum of all maximum dilatations as $x \in M$ varies.\index{maximum dilatation} 
+
+\begin{ex}
+If $f\colon M\to N$ has maximum dilatation $C$ the map $f$ is $C$-Lipschitz.
+\end{ex}
+
+\begin{prop} \label{pseudo-isometria:prop}
+Let $f\colon M\to N$ be a smooth homotopy equivalence of closed hyperbolic $n$-manifolds. The lift $\tilde f\colon \matH^n \to \matH^n$ is a pseudo-isometry.
+\end{prop}
+\begin{proof}
+Since $M$ is compact, the map $f$ has some finite maximum dilatation $C$. Since $\tilde f$ is locally like $f$, it also has maximum dilatation $C$ and is hence $C$-Lipschitz. The same holds for the homotopic inverse $g\colon N\to M$. Therefore there is a $C_1>0$ such that
+\begin{align*}
+d\big(\tilde f(x_1), \tilde f(x_2)\big) & \leqslant C_1 \cdot d(x_1,x_2) \quad \forall x_1,x_2 \in \matH^n, \\
+d\big(\tilde g(y_1), \tilde g(y_2)\big) & \leqslant C_1 \cdot d(y_1,y_2) \quad \forall y_1,y_2 \in \matH^n.
+\end{align*}
+We have $M = \matH^n/_\Gamma$.
+Being a composition of lifts, the map $\tilde g \circ \tilde f$ commutes with $\Gamma$ and has maximum displacement bounded by some $K>0$ equal to the maximum displacement of the points in a (compact) Dirichlet domain. Hence
+$$d(x_1,x_2) - 2K \leqslant d\big( \tilde g (\tilde f(x_1)), \tilde g (\tilde f(x_2)) \big) \leqslant C_1 \cdot d\big(\tilde f(x_1), \tilde f(x_2)\big) $$
+for all $x_1,x_2 \in \matH^n$. Therefore $\tilde f$ is a pseudo-isometry with $C_2 = 2K/C_1$.
+\end{proof}
+
+\subsection{Boundary extension of a pseudo-isometry}
+We now prove that not only pseudo-isometries $\matH^n \to \matH^n$ extend at infinity, but their extensions at $\partial \matH^n$ eliminate the ``errors'' and behave nicely.
+\begin{teo} Every pseudo-isometry $F\colon \matH^n \to \matH^n$ extends to a continuous map $F\colon \overline{\matH^n} \to \overline{\matH^n}$ that injects $\partial\matH^n$ into itself.
+\end{teo}
+We separate the proof in some lemmas.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 12 cm] {\iftoggle{BW}{cosh-BW}{cosh}} 
+\nota{We use the half-space model. The hyperbolic cosine of the distance between $x$ and $\pi(x)$ is the inverse of the cosine of $\theta$ (left). To determine the maximum dilatation we decompose the tangent space $T_x$ orthogonally as $U\oplus V$ (right).}
+\label{cosh:fig}
+\end{center}
+\end{figure}
+
+\begin{lemma} \label{cosh:cos:lemma}
+Consider the picture in Figure \ref{cosh:fig}. We have
+$$\cosh d(x,\pi(x)) = \frac 1{\cos \theta}.$$
+\end{lemma}
+\begin{proof} We can work with the half-plane model $H^2\subset \matC$ and up to translations and dilations suppose that $\pi(x)=i$. The geodesic $r$ is parametrized as $ie^t$. The M\"obius transformation $z \mapsto \frac{z+1}{-z+1}$ sends $r$ to $\gamma$ and fixes $i$, hence $\gamma(t) = \frac{ie^{t}+1}{-ie^{t}+1}.$
+Set $s=d(x, \pi(x))$. We get $ x = \frac{ie^{s}+1}{-ie^{s}+1}$ and
+$$\cos\theta = \Im x = \Im \frac{(ie^s+1)^2}{e^{2s}+1} = \frac{2e^s}{e^{2s}+1} = \frac 2{e^s+e^{-s}} = \frac 1 {\cosh s}.$$
+The proof is complete.
+\end{proof}
+
+\begin{lemma} \label{dilatation:lemma}
+Let $r\subset \matH^n$ be a line and $\pi\colon \matH^n \to r$ be the orthogonal projection to $r$. The maximum dilatation of $\pi$ at $x\in\matH^n$ is
+$$d =\frac 1 {\cosh s}$$
+where $s=d(x,r)$.
+\end{lemma}
+\begin{proof}
+We use the half-space model with $r$ and $x$ as in Figure \ref{cosh:fig}-(left): we know that $\cosh s = \frac 1 {\cos \theta}$. We have $T_x=U\oplus V$ as in Figure \ref{cosh:fig}-(right) with $V= \ker d\pi_x$. A generator $u$ of $U$ is just rotated by $d\pi_x$ with respect to the Euclidean metric; with respect to the hyperbolic metric  we have
+$$\frac{\|d\pi_x(u)\|}{\|u\|} = \frac {x_n}{\pi(x)_n} = \cos\theta = \frac 1{\cosh s}.$$
+The proof is complete.
+\end{proof}
+
+We write $\overline{pq}$ for the segment with endpoints $p$ and $q$ and we denote by $N_r(A)$ the $r$-neighbourhood of $A$. 
+
+\begin{lemma}
+Let $F\colon\matH^n\to\matH^n$ be a pseudo-isometry. There is a $R>0$ such that
+$$F(\overline{pq}) \subset N_R\big(\overline{F(p)F(q)}\big)$$ 
+for all distinct points $p,q\in\matH^n$. 
+\end{lemma}
+\begin{proof}
+Let $C_1, C_2$ be the pseudo-isometry constants of $F$. Fix a sufficiently big $R$ so that $\cosh R > 2C_1^2$. Let $l$ be the line containing $F(p)$ and $F(q)$.  We show that $F(\overline{pq})$ can exit from $N_R(l)$ only for a limited amount of time. Let $\overline {rs} \subset \overline {pq}$ be a maximal segment where $F(\overline{rs})$ is disjoint from the interior of $N_R(l)$, as the \iftoggle{BW}{dark grey}{blue} arc in Figure \ref{Mostow:fig}-(left). We have
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 12 cm] {\iftoggle{BW}{Mostow0-BW}{Mostow0}} 
+\nota{We use the \iftoggle{BW}{grey}{red} paths to estimate the distance between $F(r)$ and $F(s)$. On the left: since $F$ is $C_1$-Lipschitz, the \iftoggle{BW}{dark grey}{blue} path has length at most $C_1 d(r,s)$. Its projection onto $l$ has dilatation at most $1/{\cosh R}$ by Lemma \ref{dilatation:lemma}, hence the \iftoggle{BW}{grey}{red} path in $l$ has length at most $C_1d(r,s)/\cosh R$. Therefore $d(F(r), F(s)) \leqslant C_1 \frac {d(r,s)}{\cosh R} + 2R$. On the right we get $d(F(r), F(s)) \leqslant 2R$.}
+\label{Mostow:fig}
+\end{center}
+\end{figure}
+
+\begin{equation*}
+\frac 1{C_1} d(r,s) - C_2 \leqslant d(F(r), F(s)) \leqslant C_1d(r,s). 
+\end{equation*}
+We can improve the right inequality as shown in Figure \ref{Mostow:fig}-(left) and write
+$$\frac{1}{C_1}d(r,s) - C_2 \leqslant d(F(r), F(s)) \leqslant C_1\frac{d(r,s)}{\cosh R} + 2R.$$
+Therefore
+$$\left( \frac 1{C_1} - \frac{C_1}{\cosh R}\right)d(r,s) \leqslant 2R + C_2.$$
+Since $\cosh R > 2C_1^2$ we deduce that $d(r,s) < M$ for some constant $M$ that depends only on $C_1$ and $C_2$. 
+
+We have proved that $F(\overline {pq})$ may exit from $N_R(l)$ only on subsegments of $\overline{pq}$ with length $<M$. Since $F$ is $C_1$-Lipchitz the curve $F(\overline{pq})$ lies entirely in $N_{R+C_1M}(l)$, and we replace $R$ with $R+C_1M$.
+
+It remains to prove that $F(\overline{pq})$ lies entirely (up to taking a bigger $R$) in the bounded set $N_R(\overline{F(p)F(q)})$: the proof is analogous and easier, since Figure \ref{Mostow:fig}-(right) shows that $d(F(r), F(s))\leqslant 2R$. 
+\end{proof}
+
+In the previous and following lemmas, the constant $R$ depends only on the pseudo-isometry constants $C_1$ and $C_2$.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 10 cm] {\iftoggle{BW}{Mostow2-BW}{Mostow2}} 
+\nota{For every $0<u<t$, the point $F(l(u))$ is contained in the (\iftoggle{BW}{light grey}{yellow}) $R$-neighbourhood of $\overline{F(p) F(l(t))}$. If $u$ is big, the \iftoggle{BW}{}{blue }segment $\overline{F(p)F(l(u))}$ is long, while the \iftoggle{BW}{grey}{red} one is bounded by $R$: hence the angle $\alpha_{tu}$ between $v_t$ and $v_u$ is small. Therefore $v_t$ is a Cauchy sequence.}
+\label{Mostow2:fig}
+\end{center}
+\end{figure}
+
+\begin{lemma} \label{half:lemma}
+Let $F\colon \matH^n \to \matH^n$ be a pseudo-isometry. There is a $R>0$ such that for all $p\in\matH^n$ and every half-line $l$ starting from $p$ there is a unique half-line $l'$ starting from $F(p)$ such that
+$$F(l) \subset N_R(l').$$
+\end{lemma}
+\begin{proof}
+We parametrize $l$ as a geodesic $l\colon [0,+\infty) \to \matH^n$ with unit speed. We have $l(0)=p$. Since $F$ is a pseudo-isometry we get 
+$$\lim_{t\to\infty} d\big(F(p), F(l(t))\big) = \infty.$$
+Let $v_t\in T_{F(p)}$ be the unitary tangent vector pointing towards $F(l(t))$:
+Figure \ref{Mostow2:fig} shows that $\{v_t\}_{t\in\matN}$ is a Cauchy sequence, hence it converges to a unitary vector $v\in T_{F(p)}$. Let $l'$ be the half-line starting from $F(p)$ with direction $v$. It is easy to check that $F(l)\subset N_R(l')$ and $l'$ is the unique half-line from $p$ with this property. 
+\end{proof}
+The previous lemma gives a recipe to transform every half-line $l$ into a half-line $l'$ that approximates $F(l)$. Since $\partial \matH^n$ is an equivalence relation of half-lines, we define the extension $F\colon\partial\matH^n \to \partial \matH^n$ by sending $l$ to $l'$.
+
+\begin{lemma}
+The boundary extension $F\colon \partial \matH^n \to \partial\matH^n$ is well-defined and injective.
+\end{lemma}
+\begin{proof}
+Let $l_1, l_2$ be two half-lines at bounded distance $d(l_1(t), l_2(t))<M$ for all $t$. If $d(l_1'(t), l_2'(t)) \to \infty$ we get $d\big(F(l_1(t)), F(l_2(t))\big) \to +\infty$, a contradiction since $F$ is Lipschitz. Therefore $l_1',l_2'$ are at bounded distance and $F$ is well-defined.
+
+Injectivity is proved analogously: if $l_1$ and $l_2$ are divergent then $l_1'$ and $l_2'$ also are because $F$ is a pseudo-isometry.
+\end{proof}
+
+It remains to prove that the extension $F\colon \overline{\matH^n} \to \overline{\matH^n}$ is continuous. We start by extending Lemma \ref{half:lemma} from half-lines to lines.
+
+\begin{lemma}
+Let $F\colon \matH^n \to \matH^n$ be a pseudo-isometry. There is a $R>0$ such that for every line $l$ there is a unique line $l'$ with $F(l) \subset N_R(l')$.
+\end{lemma}
+\begin{proof}
+Parametrize $l$ as $l\colon (-\infty,+\infty) \to \matH^n$ with unit speed. By cutting $l$ into two half-lines we know that $F(l(t))$ is a curve that tends to two distinct points $x_\pm\in\partial\matH^n$ as $t\to\pm\infty$. Let $l'$ be the line with endpoints $x_\pm$. For any $t>0$ we have
+$$F\big(l([-t,t])\big) \subset N_R\left(\overline{F(l(-t))F(l(t))}\right)$$
+and by sending $t\to +\infty$ we deduce that $F(l)\subset N_R(l')$.
+\end{proof}
+
+The next lemma says that a pseudo-isometry does not distort much lines and orthogonal hyperplanes. We will need it to prove continuity.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 12 cm] {\iftoggle{BW}{Mostow3-BW}{Mostow3}} 
+\nota{Let $l$ and $H$ be a line and an orthogonal hyperplane. The orthogonal projection of $H$ onto $l$ is obviously a point $l\cap H$; the pseudo-isometry $F$ mildly distorts this picture: the image $F(H)$ projects to a bounded segment in $l'$.}
+\label{Mostow3:fig}
+\end{center}
+\end{figure}
+
+\begin{lemma}
+Let $F\colon\matH^n \to \matH^n$ be a pseudo-isometry. There is a $R>0$ such that for any line $l$ and hyperplane $H$ orthogonal to $l$, the image $F(H)$ projects orthogonally to $l'$ onto a bounded segment length smaller than $R$.
+\end{lemma}
+\begin{proof}
+See Figure \ref{Mostow3:fig}. Consider a generic line $s\subset H$ passing through $p=l\cap H$. By the previous lemmas $F(s)\subset N_R(s')$ with $s'\neq l'$, and the orthogonal projection on $l'$ sends any other line $s'$ onto a segment, bounded by the images of the endpoints of $s'$. 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 12 cm] {\iftoggle{BW}{Mostow4-BW}{Mostow4}} 
+\nota{The lines $s_1$ and $s_2$ have a distance $d$ from $p$ which depends on nothing (in fact, $\cosh d = \sqrt 2$). The lines $l'$, $s_1'$, and $s_2'$ approximate up to an error $R$ the images of $l$, $s_1$, and $s_2$ along $F$. The projection $q$ of $F(p)$ on $l'$ is hence $R$-close to $F(p)$, which is in turn $(C_1d)$-close to the lines $s_i'$. Therefore $q$ is $(C_1d+2R)$-close to both $s_1'$ and $s_2'$. This easily implies that $f$ is $(C_1d+2R)$-close to $q$.
+}
+\label{Mostow4:fig}
+\end{center}
+\end{figure}
+
+Consider as in Figure \ref{Mostow4:fig} the line $s$, with one endpoint $s^\infty$ and the corresponding endpoint $F(s^\infty)$ of $s'$. The figure shows that the projection $f$ of $F(s^\infty)$ to $l'$ is at bounded distance from a point $q$ which does not depend on $s$.
+\end{proof}
+
+Finally, we prove that the extended $F$ is continuous.
+
+\begin{lemma}
+The extension $F\colon \overline{\matH^n} \to \overline{\matH^n}$ is continuous.
+\end{lemma}
+\begin{proof}
+Consider $x\in \partial \matH^n$ and its image $F(x) \in \partial \matH^n$. Let $l$ be a half-line pointing to $x$: hence $l'$ points to $F(x)$. The half-spaces orthogonal to $l'$ determine a neighbourhood system for $F(x)$: consider one such half-space $S$.
+
+Let $R>0$ be as in the previous lemmas. The image $F(l)$ is $R$-close to $l'$, hence for sufficiently big $t$ the point $F(l(t))$ and its projection into $l'$ lie in $S$ at distance $>R$ from $\partial S$. By the previous lemma the image $F(H(t))$ of the  hyperplane $H(t)$ orthogonal to $l$ in $l(t)$ is also contained in $S$. Hence the entire half-space bounded by one such $H(t)$ goes inside $S$ through $F$.
+This shows that $F$ is continuous at every point $x\in\partial \matH^n$.
+\end{proof}
+
+With some effort, we have proved that every pseudo-isometry of $\matH^n$ extends continuously to the boundary. Theorem \ref{estensione:teo} now follows easily.
+
+\begin{proof}[Proof of Theorem \ref{estensione:teo}]
+We know that $\tilde f$ is a pseudo-isometry and hence extends to a map $\tilde f \colon \overline {\matH^n} \to \overline{\matH^n}$ that sends injectively $\partial \matH^n$ to itself. It remains to prove that $\tilde f|_{\partial \matH^n}$ is a homeomorphism.
+
+Pick a smooth homotopic inverse $g$ for $f$. The homotopy $\id_M \sim g \circ f$ lifts to a homotopy $\id_{\matH^n}\sim\tilde g\circ \tilde f$ for some lift $\tilde g$. Since $M$ is compact, the latter homotopy moves every point at uniformly bounded distance and hence $\tilde g\circ \tilde f$ extends continuously to the identity on $\partial \matH^n$, and the same holds for $\tilde f\circ \tilde g$. Therefore $\tilde g|_{\partial \matH^n}$ is the inverse of $\tilde f|_{\partial \matH^n}$ and they are both homeomorphisms.
+\end{proof}
+
+\subsection{References}
+As in the previous chapters, we have mostly consulted Benedetti -- Petronio \cite{BP}, Ratcliffe \cite{R}, and Thurston's notes \cite{Th}. The Epstein -- Penner decomposition is taken from their 1988 paper \cite{EP}. 
+

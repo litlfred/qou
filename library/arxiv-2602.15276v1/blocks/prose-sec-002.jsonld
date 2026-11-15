@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2602.15276v1/blocks/prose-sec-002",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2602.15276v1/blocks/prose-sec-002",
   "kind": "prose",
-  "title": "Radial reduction",
-  "pageStart": 7,
-  "pageEnd": 9,
-  "text": "../sections/sec-002-radial-reduction.md",
-  "derivedFrom": "library/arxiv-2602.15276v1/manifest",
-  "sourceDocument": "library/arxiv-2602.15276v1/manifest",
+  "title": "The Lagrangian and Euler-Lagrange equations",
+  "pageStart": 4,
+  "pageEnd": 7,
+  "text": "../sections/sec-002-the-lagrangian-and-euler-lagrange-equations.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2602.15276v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2602.15276v1",
   "provenance": "ingested"
 }

@@ -73,6 +73,27 @@ def _save_partial(out_path: Path, payload: dict) -> None:
     tmp.replace(out_path)
 
 
+
+def _env_anchor() -> "str | None":
+    """`QOU_Q0_ANCHOR`, normalised to the substrate's anchor vocabulary.
+
+    The chi-cache filenames carry a `-{anchor}` suffix, and producer and
+    consumer used to build it from the RAW env string. The substrate treats
+    `ideal`, `muon` and `canonical` as one anchor (`resolve_q0_anchor`), and the
+    corpus documents the muon run as `QOU_Q0_ANCHOR=ideal`, so that run wrote
+    and looked for `-ideal` files while the committed muon caches are `-muon`.
+    The consumer then fell back to the PROTON numeric cache for T/3He/4He (a
+    straddle: proton chi with muon y) and to the GROUPED-word symbolic caches
+    for p/n/D (2026-10-13, deuteron tr_M adjudication). Unrecognised values
+    pass through unchanged; unset returns None.
+    """
+    raw = os.environ.get("QOU_Q0_ANCHOR")
+    if not raw:
+        return None
+    from qou_substrate.witness import resolve_q0_anchor
+    a = resolve_q0_anchor(__file__, env={"QOU_Q0_ANCHOR": raw})[0]
+    return a if a in ("muon", "proton") else raw
+
 def build_chi_cache_at_q0(
     atom_name: str, Z: int, N: int, q_str: str, *, dps: int = 50,
     incremental: bool = True, fresh: bool = False,
@@ -234,7 +255,7 @@ def build_chi_cache_at_q0(
     # (2022-CODATA ...56427390... vs frozen canonical ...5573347...), so it
     # cannot be relied on to distinguish muon from proton. QOU_Q0_ANCHOR is the
     # intent signal (default proton).
-    _anchor = os.environ.get("QOU_Q0_ANCHOR") or anchor_of_q0(q_str)
+    _anchor = _env_anchor() or anchor_of_q0(q_str)
     if _anchor is None:
         _tag = hashlib.sha256(str(q_str).strip().encode()).hexdigest()[:8]
         out_path = HERE / f"chi-{atom_name}-h{n}-at-q{_tag}-50dps.witness.json"
@@ -492,7 +513,7 @@ def save_witness(record: dict) -> Path:
     # Pin-specific filename (qou-wgaw / qou-3zby): proton keeps the legacy
     # un-suffixed name; other anchors (muon) get a `-{anchor}` suffix. Env-first
     # (anchor_of_q0 returns None for the muon Q_50_DIGIT_STR).
-    _anchor = os.environ.get("QOU_Q0_ANCHOR") or anchor_of_q0(
+    _anchor = _env_anchor() or anchor_of_q0(
         record.get("q_0_50dps", Q_50_DIGIT_STR))
     _sfx = "" if _anchor in (None, "proton") else f"-{_anchor}"
     out = HERE / f"chi-{atom_name}-h{n}-at-q0-50dps{_sfx}.witness.json"
@@ -530,6 +551,11 @@ def save_witness(record: dict) -> Path:
         "n_partitions": record["n_partitions"],
         "compute_time_sec": record["compute_time_sec"],
         "tr_M_at_q0": record["tr_M_at_q0"],
+        # The `y_lambda` column below is the Markov/Wenzl weight at this q₀
+        # (`load_y_lambda_for_q0`, convention D) — NOT the quantum Plancherel
+        # measure. Declared so a reader need not infer it (y_lambda conflation
+        # audit, check D).
+        "weight_family": "markov_y_lambda_convention_D",
         "by_partition": record["by_partition"],
     }
     # Stamp provenance rather than hand-rolling it. `WitnessBuilder` was

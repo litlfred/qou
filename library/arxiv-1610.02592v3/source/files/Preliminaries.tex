@@ -1,0 +1,1295 @@
+\chapter{Preliminaries} \label{richiami:chapter} \label{preliminaries:chapter}
+We expect the reader to be familiar with the mathematics usually taught to undergraduates, like multivariable differential calculus, group theory, topological spaces, and fundamental groups. 
+
+Some knowledge on differentiable and Riemannian manifolds would also help, at least on an intuitive way: in any case, this chapter introduces from scratch everything we need from differential topology and geometry. We also include some important information on groups (like Lie groups and group actions), and a few basic notions of measure theory and algebraic topology, with a very quick overview of homology theory. Finally, we use these tools to introduce cell complexes, handle decompositions, and triangulations: these are the main practical instruments that we have to build manifolds concretely.
+
+Most results stated here are given without a proof: details can be found in various excellent books, some of which will be cited below.
+
+\section{Differential topology} \label{differential:topology:section}
+We introduce manifolds, bundles, embeddings, tubular neighbourhoods, isotopies, and connected sums. Throughout this book, we will always work in the smooth category. 
+The material contained in this section is carefully explained in \emph{Differentiable manifolds} of Kosinksi \cite{K}.
+
+\subsection{Differentiable manifolds}
+A \emph{topological manifold} of dimension $n$ is a paracompact Hausdorff topological space $M$ locally homeomorphic to $\matR^n$. In other words, there is a covering $\{U_i\}$ of $M$ consisting of open sets $U_i$ homeomorphic to open sets $V_i$ in $\matR^n$.
+\index{manifold}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 9 cm] {\iftoggle{BW}{test-BW}{test}}
+\nota{The \emph{Alexander horned sphere} is a subset of $\matR^3$ homeomorphic to the 2-sphere $S^2$. It divides $\matR^3$ into two connected components, none of which is homeomorphic to an open ball. It was constructed by Alexander as a counterexample to a natural three-dimensional generalisation of Jordan's curve theorem. The natural generalisation would be the following: does every 2-sphere in $\matR^3$ bound a ball? If the 2-sphere is only topological, the answer is negative
+as this counterexample shows. If the sphere is a differentiable submanifold, the answer is however positive as proved by Alexander himself.}
+\label{Alexander:fig}
+\end{center}
+\end{figure}
+
+Topological manifolds are difficult to investigate, their definition is too general and allows to directly define and prove only few things. Even the notion of dimension is non-trivial: to prove that an open set of $\matR^k$ is not homeomorphic to an open set of $\matR^h$ for different $k$ and $h$ we need to use non-trivial constructions like homology. It is also difficult to treat topological subspaces: for instance, the \emph{Alexander horned sphere} shown in Figure \ref{Alexander:fig} is a subspace of $\matR^3$ topologically homeomorphic to a 2-sphere. It is a complicated object that has many points that are not ``smooth'' and that cannot be ``smoothened'' in any reasonable way.
+
+We need to define some ``smoother'' objects, and for that purpose we can luckily invoke the powerful multivariable infinitesimal calculus. Let $U\subset \matR^n$ be an open set: a map $f\colon U\to \matR^k$ is  \emph{smooth} if it is $C^\infty$, \emph{i.e.}~it has partial derivatives of any order.
+
+\begin{defn} Let $M$ be a topological manifold.
+A \emph{chart} is a fixed homeomorphism $\varphi_i\colon U_i \to V_i$ between an open set $U_i$ of $M$ and an open set $V_i$ of $\matR^n$. An \emph{atlas} is a set of charts $\big\{(U_i, \varphi_i)\big\}$ where the open sets $U_i$ cover $M$. 
+
+If $U_i\cap U_j\neq\varnothing$ there is a \emph{transition map} $\varphi_{ji} = \varphi_j\circ \varphi_i^{-1}$ that sends homeomorphically the open set $\varphi_i({U_i\cap U_j})$ onto the open set $\varphi_j({U_i\cap U_j})$. Since these two open sets are in $\matR^n$, it makes sense to require $\varphi_{ij}$ to be smooth. The atlas is \emph{differentiable} if all transition maps are smooth. 
+\end{defn}
+
+\index{manifold!differentiable manifold}
+\begin{defn}
+A \emph{differentiable manifold} is a topological manifold that is equipped with a differentiable atlas.
+\end{defn}
+
+We will often use the word \emph{manifold} to indicate a differentiable manifold.
+The integer $n$ is the \emph{dimension} of the manifold. We have defined the objects, so we now turn to their morphisms. 
+
+\begin{defn}
+A map $f\colon M \to M'$ between differentiable manifolds is \emph{smooth} if it is smooth when read locally through charts. This means that for every $p \in M$ there are two charts $(U_i, \varphi_i)$ of $M$ and $(U_j', \varphi_j')$ of $N$ with $p\in U_i$ and $f(p)\in U_j'$ such that the composition
+$\varphi_j'\circ f \circ \varphi_i^{-1}$ is smooth wherever it is defined. 
+\end{defn}
+
+A \emph{diffeomorphism} is a smooth map $f\colon M \to M'$ that admits a smooth inverse $g\colon M'\to M$. A \emph{curve} in $M$ is a smooth map $\gamma \colon I \to M$ defined on some open interval $I$ of the real line, which may be bounded or unbounded. 
+\index{diffeomorphism}
+
+\begin{defn} A differentiable manifold is \emph{oriented} if it is equipped with an atlas where all transition functions are orientation-preserving (that is, the determinant of their differential at any point is positive).
+\end{defn}
+
+A manifold which can be oriented is called \emph{orientable}.
+\index{manifold!oriented manifold}
+
+\subsection{Tangent space} \label{tangente:subsection}
+Let $M$ be a differentiable manifold of dimension $n$. We may define for every point $p\in M$ a $n$-dimensional vector space $T_pM$ called the \emph{tangent space}. 
+
+The space $T_pM$ may be defined briefly as the set of all curves $\gamma\colon (-a,a) \to M$ such that $\gamma(0) = p$ and $a>0$ is arbitrary, considered up to some equivalence relation. The relation is the following: we identify two curves that, read on some chart $(U_i,\varphi_i)$, have the same tangent vector at $\varphi_i(p)$. The definition does not depend on the chart chosen.
+\index{tangent space}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 6 cm] {\iftoggle{BW}{Tangentialvektor_new-BW}{Tangentialvektor_new}}
+\nota{The tangent space in $x$ may be defined as the set of all curves $\gamma$ with $\gamma(0)=x$ seen up to an equivalent relation that identifies two curves having (in some chart) the same tangent vector at $x$. This condition is chart-independent.}
+\label{Tangentialvektor:fig}
+\end{center}
+\end{figure}
+
+A chart identifies $T_pM$ with the usual tangent space $\matR^n$ at $\varphi_i(p)$ in the open set $V_i = \varphi_i(U_i)$. Two distinct charts $\varphi_i$ and $\varphi_j$ provide different identifications with $\matR^n$, which differ by a linear isomorphism: the differential $d\varphi_{ji}$ of the transition map $\varphi_{ij}$. The structure of $T_pM$ as a vector space is then well-defined, while its identification with $\matR^n$ is not.
+
+Every smooth map $f\colon M \to N$ between differentiable manifolds induces at each point $p\in M$ a linear map $df_p\colon T_pM \to T_{f(p)} N$ between tangent spaces in the following simple way: the curve $\gamma$ is sent to the curve $f\circ\gamma$.
+
+\begin{defn} A smooth map $f\colon M \to N$ is a \emph{local diffeomorphism} at a point $p \in M$ if there are two open sets $U\subset M$ and $V\subset N$ containing respectively $p$ and $f(p)$ such that $f|_U\colon U \to V$ is a diffeomorphism.\index{diffeomorphism!local diffeomorphism}
+\end{defn}
+
+The inverse function theorem in $\matR^n$ implies easily the following fact, that demonstrates the importance of tangent spaces.
+
+\begin{teo}
+Let $f\colon M \to N$ be a smooth map between manifolds of the same dimension. The map is a local diffeomorphism at $p\in M$ if and only if the differential $df_p\colon T_pM \to T_{f(p)}N$ is invertible.
+\end{teo}
+
+In this theorem a condition satisfied at a single point (differential invertible at $p$) implies a local property (local diffeomorphism). Later on, we will see that in Riemannian geometry a condition satisfied at a single point may also imply a global property.
+
+If $\gamma\colon I \to M$ is a curve, its \emph{velocity} $\gamma'(t)$ in $t\in I$ is the tangent vector $\gamma'(t) = d\gamma_t(1)$. Here ``1'' means the vector 1 in the tangent space $T_tI = \matR$. We note that the velocity is a vector and not a number: the modulus of a tangent vector is not defined in a differentiable manifold (because the tangent space is just a real vector space, without a norm).
+
+\subsection{Differentiable submanifolds}
+Let $N$ be a differentiable manifold of dimension $n$. 
+\begin{defn}
+A subset $M\subset N$ is a \emph{differentiable submanifold} of dimension $m\leqslant n$ if every $p\in M$ has an open neighbourhood $U\subset N$ diffeomorphic to an open set $V\subset \matR^n$ via a map $\varphi\colon U \to V$ that sends $U\cap M$ onto $V\cap L$, where $L$ is a linear subspace of dimension $m$.
+\end{defn}
+\index{submanifold!differentiable submanifold}
+
+The pairs $\{(U\cap M, \varphi|_{U\cap M})\}$ form an atlas for $M$, which inherits a structure of $m$-dimensional differentiable manifold. At every point $p\in M$ the tangent space $T_p M$ is a linear subspace of $T_p N$. 
+
+\subsection{Fibre bundles}
+We introduce an important type of smooth maps. 
+\begin{defn}
+A \emph{smooth fibre bundle} is a smooth map
+$$\pi\colon E \longrightarrow B$$
+such that every fibre $\pi^{-1}(p)$ is diffeomorphic to a fixed manifold $F$ and $\pi$ looks locally like a projection. This means that $B$ is covered by open sets $U_i$ equipped with diffeomorphisms $\psi_i \colon U_i\times F \to \pi^{-1}(U_i) $ such that $\pi\circ\psi_i$ is the projection on the first factor.
+\end{defn}
+\index{fibre bundle}
+
+The manifolds $E$ and $B$ are called the \emph{total} and \emph{base manifold}, respectively. The manifold $F$ is the \emph{fibre} of the bundle. A \emph{section} of the bundle is a smooth map $s\colon B\to E$ such that $\pi\circ s = \id_B$. Two fibre bundles $\pi\colon E \to B$ and $\pi'\colon E' \to B$ are \emph{isomorphic} if there is a diffeomorphism $\psi\colon E \to E'$ such that $\pi = \pi'\circ\psi$.
+
+\subsection{Vector bundles}
+A \emph{smooth vector bundle} is a smooth fibre bundle where every fibre $\pi^{-1}(p)$ has the structure of a $n$-dimensional real vector space which varies smoothly with $p$. Formally, we require that $F=\matR^n$ and $\psi_i (p,\cdot)\colon F \to \pi^{-1}(p) $ be an isomorphism of vector spaces for every $\psi_i$ as above.
+\index{vector bundle}
+
+The \emph{zero-section} of a smooth vector bundle is the section $s\colon B \to E$ that sends $p$ to $s(p)=0$, the zero in the vector space $\pi^{-1}(p)$. The image $s(B)$ of the zero-section is typically identified with $B$ via $s$.
+
+Two vector bundles are \emph{isomorphic} if there is a diffeomorphism $\psi$ as above, which restricts to an isomorphism of vector spaces on each fibre.
+As every manifold here is differentiable, likewise every bundle will be smooth and we will hence often omit this word.
+
+\subsection{Tangent and normal bundle}
+Let $M$ be a differentiable manifold of dimension $n$. The union of all tangent spaces 
+$$TM = \bigcup_{p\in M} T_pM$$ 
+is naturally a differentiable manifold of double dimension $2n$, called the \emph{tangent bundle}. The tangent bundle $TM$ is naturally a vector bundle over $M$, the fibre over $p\in M$ being the tangent space $T_pM$. 
+
+\index{normal space}
+Let $M\subset N$ be a smooth submanifold of $N$. The \emph{normal space} at a point $p\in M$ is the quotient vector space $\nu_pM = T_pN/_{T_pM}$. The \emph{normal bundle} $\nu M$ is the union
+$$\nu M = \bigcup_{p\in M} \nu_p M$$ 
+and is also naturally a smooth vector bundle over $M$. The normal bundle is not  canonically contained in $TN$ like the tangent bundle, but (even more usefully) it may be embedded directly in $N$, as we will soon see.
+
+\subsection{Vector fields}
+A \emph{vector field} $X$ on a smooth manifold $M$ is a section of its tangent bundle. A point $p$ and a vector $v\in T_pM$ determine an \emph{integral curve} $\alpha\colon I\to M$ starting from $v$, that is a smooth curve with $\alpha(0) = p, \alpha'(0) = v$, and $\alpha'(t) = X(\alpha(t))$ for all $t\in I$. The curve $\alpha$ is unique if we require the interval $I$ to be maximal. It depends smoothly on $p$ and $v$.
+\index{vector field}
+
+\subsection{Immersions and embeddings}
+A smooth map $f\colon M \to N$ between manifolds is an \emph{immersion} if its differential is everywhere injective: note that this does not imply that $f$ is injective. 
+The map is an \emph{embedding} if it is a diffeomorphism onto its image: this means that $f$ is injective, its image is a submanifold, and $f\colon M \to f(M)$ is a diffeomorphism. 
+\index{immersion}
+\index{embedding}
+
+\begin{teo} If $M$ is compact, every injective immersion $f\colon M \to N$ is an embedding.
+\end{teo}
+
+\subsection{Isotopy and ambient isotopy} \label{isotopy:subsection}
+Let $X$ and $Y$ be topological spaces. We recall that a \emph{homotopy} between two continuous maps $\varphi, \psi\colon X \to Y$ is a continuous map $F\colon X\times [0,1]\to Y$  such that $F_0 = \varphi$ and $F_1 = \psi$, where $F_t = F(\cdot, t)$. 
+
+\index{isotopy}
+Let $M$ and $N$ be differentiable manifolds. A \emph{smooth isotopy} between two embeddings $\varphi, \psi\colon M \to N$ is a smooth homotopy $F$ between them, such that every map $F_t$ is an embedding. Again, we will shortly use the word \emph{isotopy} to mean a smooth isotopy. We note that many authors do not require an isotopy to be smooth, but we do.
+
+Being isotopic is an equivalence relation for smooth maps $M\to N$: two isotopies $F_t$ and $G_u$ can be glued if $F_1 = G_0$, and since we want a smooth map we priorly modify $F$ and $G$ so that they are constant near $t=1$ and $u=0$. This can be done easily by reparametrising $t$ and $u$.
+
+An \emph{ambient isotopy} on $N$ is an isotopy between $\id_N$ and some other diffeomorphism $\varphi\colon N \to N$, such that every level is a diffeomorphism. Two embeddings $\varphi, \psi\colon M \to N$
+are \emph{ambiently isotopic} if there is an ambient isotopy $F$ of $N$ such that $\psi = F_1\circ \varphi$. 
+
+\begin{teo} 
+If $M$ is compact, two embeddings $\varphi, \psi\colon M \to N$ are isotopic if and only if they are ambiently isotopic.
+\end{teo}
+
+\subsection{Tubular neighbourhood}
+Let $M\subset N$ be a differentiable submanifold. A \emph{tubular neighbourhood} of $M$ is an open subset $U\subset N$ with a diffeomorphism $\nu M \to U$ sending identically the zero-section onto $M$. 
+\index{tubular neighbourhood}
+
+\begin{teo} Let $M\subset N$ be a closed differentiable submanifold. A tubular neighbourhood for $M$ exists and is unique up to an isotopy fixing $M$ and up to pre-composing with a bundle isomorphism of $\nu M$.
+\end{teo}
+
+If we are only interested in the open set $U$ and not its parametrisation, we can of course disregard the bundle isomorphisms of $\nu M$.
+
+Vector bundles are hence useful (among other things) to understand neighbourhoods of submanifolds. Since we will be interested essentially in manifolds of dimension at most 3, two simple cases will be important.
+
+\begin{prop} \label{unique:line:bundle:prop}
+A connected compact manifold $M$ has a unique line bundle $E\to M$ up to isomorphism with orientable total space $E$.
+\end{prop}
+
+The orientable line bundle on $M$ is a product $M\times \matR$ precisely when $M$ is also orientable. If $M$ is not orientable, the unique orientable line bundle is indicated by $M \timtil \matR$.
+
+\begin{prop} \label{S1:bundle:prop}
+For every $n$, there are exactly two vector bundles of dimension $n$ over $S^1$ up to isomorphism, one of which is orientable.
+\end{prop}
+
+Again, the orientable vector bundle is $S^1 \times \matR^n $ and the non-orientable one is denoted by $S^1 \timtil \matR^n$. These simple facts allow us to fully understand the possible neighbourhoods of curves in surfaces, and of curves and surfaces inside orientable 3-manifolds. 
+
+\subsection{Manifolds with boundary}
+Let a \emph{differentiable manifold $M$ with boundary} be a topological space with charts on a fixed half-space of $\matR^n$ instead of $\matR^n$, forming a smooth atlas. (By definition, maps from subsets of $\matR^n$ are smooth if they locally admit extensions to smooth functions defined on open domains.) 
+\index{manifold!manifold with boundary}
+
+The points corresponding to the boundary of the half-space form a subset of $M$ denoted by $\partial M$ and called \emph{boundary}. The boundary of a $n$-manifold is naturally a $(n-1)$-dimensional manifold without boundary. The \emph{interior} of $M$ is $M\setminus \partial M$.
+
+We can define the tangent space $T_pM$ at a point $p\in \partial M$ as the set of all curves in $M$ starting from or arriving to $p$, with the same equivalence relation as above. The space $T_pM$ is a vector space that contains the hyperplane $T_p \partial M$. Most of the notions introduced for manifolds extend in an appropriate way to manifolds with boundary. A \emph{submanifold} of a manifold with boundary $M$ is the image of an embedding $N \hookrightarrow M$, where $N$ is another manifold with boundary.
+
+\index{disc}
+The most important manifold with boundary is certainly the \emph{disc} 
+$$D^n = \big\{x\ \big|\ \|x\|\leqslant 1\big\}\subset \matR^n.$$ 
+More generally, a \emph{disc} in a $n$-manifold $N$ is a submanifold $D\subset N$ with boundary diffeomorphic to $D^n$. Since a disc is in fact a (closed) tubular neighbourhood of any point in its interior, the uniqueness of tubular neighbourhoods implies the following.
+
+\begin{teo}[Cerf -- Palais] \label{dischi:teo}
+Let $N$ be connected and oriented. Two orientation-preserving embeddings $f,g\colon D^n \to \interior {N}$ are ambiently isotopic.
+\end{teo}
+
+A \emph{boundary component} $N$ of $M$ is a connected component of $\partial M$. A \emph{collar} for $N$ is an open neighbourhood diffeomorphic to $N\times [0,1)$. As for tubular neighbourhoods, every compact boundary component has a collar, unique up to isotopy.
+\index{collar}
+
+A \emph{closed manifold} is a compact manifold without boundary.
+\index{manifold!closed manifold}
+
+\subsection{Cut and paste} \label{cut:subsection}
+If $M\subset N$ is a closed and orientable $(n-1)$-submanifold in the interior of an orientable $n$-manifold $N$, it has a tubular neighbourhood diffeomorphic to $M \times \matR$. The operation of \emph{cutting} $N$ along $M$ consists of the removal of the portion $M\times (-1,1)$. The resulting manifold $N'$ has two new boundary components $M\times \{-1\}$ and $M\times \{1\}$, both diffeomorphic to $M$. By the uniqueness of the tubular neighbourhood, the manifold $N'$ depends (up to diffeomorphisms) only on the isotopy class of $M\subset N$.
+
+\index{cut and paste}
+Let $M$ and $N$ be connected. The submanifold $M$ is \emph{separating} if its complement consists of two connected components. The cut manifold has two or one components depending on whether $M$ is separating or not.
+
+Conversely, let $M$ and $N$ be $n$-manifolds with boundary, and let $\varphi \colon \partial M \to \partial N$ be a diffeomorphism. It is possible to \emph{glue} $M$ and $N$ along $\varphi$ and obtain a new $n$-manifold as follows.
+
+A na\"\i ve approach would consist in taking the topological space $M\sqcup N$ and identify $p$ with $\varphi (p)$ for all $p\in \partial M$. The resulting quotient space is indeed a topological manifold, but the construction of a smooth atlas is not immediate. A quicker method consists of taking two collars $\partial M\times [0,1)$ and $\partial N\times [0,1)$ of the boundaries and then consider the topological space
+$$(M\setminus \partial M) \sqcup (N\setminus \partial N).$$
+Now we identify the points $(p,t)$ and $(\varphi (p), 1-t)$ of the open collars, for all $p\in \partial M$ and all $t\in (0,1)$. Having now identified two \emph{open} subsets of $M\setminus \partial M$ and $N\setminus \partial N$, a differentiable atlas for the new manifold is immediately derived from the atlases of $M$ and $N$.
+
+\begin{prop} \label{depend:diffeo:prop}
+The resulting smooth manifold depends (up to diffeomorphism) only on the isotopy class of $\varphi$.
+\end{prop}
+
+\subsection{Connected sum} \label{sum:subsection}
+We introduce an important cut-and-paste operation. The \emph{connected sum} of two connected oriented $n$-manifolds $M$ and $M'$ is a new $n$-manifold obtained by choosing two $n$-discs $D\subset \interior{M}$ and $D'\subset \interior{M'}$ and an orientation-reversing diffeomorphism $\varphi\colon D \to D'$. The new manifold is constructed in two steps: we first remove the interiors of $D$ and $D'$ from $M\sqcup M'$, thus creating two new boundary components $\partial D$ and $\partial D'$, and then glue these boundary components along $\varphi|_{\partial D}$. See Figure \ref{Connected_sum:fig}.\index{connected sum}
+
+We denote the resulting manifold by $M\# M'$. Since $\varphi$ is orientation-reversing, the manifold $M\# M'$ is oriented coherently with $M$ and $M'$. Theorem \ref{dischi:teo} implies the following.
+
+\begin{figure}
+%\labellist
+%\small\hair 2pt
+%\pinlabel $M$ at 20 87
+%\pinlabel $M'$ at 230 90
+%\pinlabel $M\#M'$ at 130 3
+%\endlabellist
+\centering
+\includegraphics[width = 7 cm] {Connected_sum}
+\nota{A connected sum of closed surfaces.}
+\label{Connected_sum:fig}
+\end{figure}
+
+\begin{prop}
+The oriented smooth manifold $M\# M'$ depends (up to diffeomorphism) only on $M$ and $M'$. The connected sum operation $\#$ is commutative, associative, and $S^n$ serves as the identity element.
+\end{prop}
+
+We can invert a connected sum as follows. Suppose a $n$-manifold $M$ contains a separating $(n-1)$-sphere $N\subset \interior{M}$. We fix a diffeomorphism $\varphi\colon N \to \partial D^n$. By cutting $M$ along $N$ we get two new boundary components diffeomorphic to $N$ and we glue two discs to them via the map $\varphi$. We get two manifolds $N_1, N_2$ such that $M=N_1\# N_2$.
+
+\subsection{Transversality}
+Let $f\colon M \to N$ be a smooth map between manifolds and $X\subset N$ be a submanifold. We say that $f$ is \emph{transverse} to $X$ if for any $p\in f^{-1}X$ the following condition holds:
+$$\img (d f_p) + T_{f(p)}X = T_{f(p)}N.$$
+The maps transverse to a fixed $X$ are generic, that is they form an open dense subset in the space of all smooth maps from $X$ to $Y$, with respect to an appropriate topology. In particular the following holds.
+\begin{teo}
+Let $f\colon M \to N$ be a continuous map and $d$ a distance on $N$ compatible with the topology of $N$. For every $\varepsilon >0$ there is a smooth map $g$ transverse to $X$, homotopic to $f$, with $d(f(p), g(p))<\varepsilon$ for all $p\in M$.
+\end{teo}
+\index{transverse map}
+
+\section{Riemannian geometry}
+
+We briefly introduce Riemannian manifolds and their geometric properties: distance, geodesics, volume, exponential map, injectivity radius, completeness, curvature, and isometries. These notions are carefully explained in do Carmo's \emph{Riemannian Geometry} \cite{Do}.
+
+\subsection{Metric tensor}
+A differentiable manifold lacks many natural geometric notions, such as distance between points, angle between vectors, path lengths, geodesics, volumes, etc. It is a quite remarkable fact that the introduction of a single additional mathematical entity suffices to recover all these geometric notions: this miraculous object is the metric tensor.
+
+A \emph{metric tensor} for a differentiable manifold $M$ is the datum of a scalar product on each tangent space $T_p$ of $M$, which varies smoothly on $p$. More specifically, on a chart the scalar product may be expressed as a matrix, and we require that its coefficients vary smoothly on $p$.
+\index{metric tensor}
+
+\begin{defn}
+A \emph{Riemannian manifold} is a differentiable manifold with a metric tensor that is positive definite at every point.
+\end{defn}
+\index{manifold!Riemannian manifold}
+
+A Riemannian manifold is usually denoted as a pair $(M,g)$, where $M$ is the manifold and $g$ is the metric tensor. 
+
+\begin{example}
+The \emph{Euclidean space} is the manifold $\matR^n$ equipped with the Euclidean metric tensor $g(x,y) = \sum_{i=1}^n x_iy_i$ at every tangent space $T_p = \matR^n$.
+\end{example}
+
+\begin{example}
+Every differential submanifold $N$ in a Riemannian manifold $M$ is also Riemannian: it suffices to restrict at every $p\in N$ the metric tensor on $T_pM$ to the linear subspace $T_pN$.
+
+In particular, the \emph{sphere} 
+$$S^n = \big\{x\in \matR^{n+1}\ \big| \ \|x\| = 1 \big\}$$
+is a submanifold of $\matR^{n+1}$ and is hence Riemannian.
+\end{example}
+\index{sphere}
+
+The metric tensor $g$ defines in particular a norm for every tangent vector, and an angle between tangent vectors with the same basepoint. The velocity $\gamma'(t)$ of a curve $\gamma \colon I \to M$ at time $t\in I$ now has a norm $\|\gamma'(t)\|\geqslant 0$ called \emph{speed}, and two curves that meet at a point with non-zero velocities form a well-defined angle. The \emph{length} of $\gamma$ may be defined as
+$$L(\gamma) = \int_I \|\gamma'(t)\| dt$$
+and can be finite or infinite. A \emph{reparametrisation} of $\gamma$ is the curve $\eta \colon J \to M$ obtained as $\eta = \gamma\circ\varphi$ where $\varphi\colon J\to I$ is a diffeomorphism of intervals. The length is invariant under reparametrisations, that is $L(\gamma) = L(\eta)$.
+
+\subsection{Distance and geodesics}
+Let $(M,g)$ be a connected Riemannian manifold. The curves in $M$ now have a length and hence may be used to define a distance on $M$. 
+
+\begin{defn}
+The \emph{distance} $d(p,q)$ between two points $p, q\in M$ is 
+$$d(p,q) = \inf_\gamma L(\gamma)$$
+where $\gamma$ varies among all curves $\gamma\colon [0,1] \to M$ with $\gamma(0)=p$ and $\gamma(1)=q$. 
+\end{defn}
+The manifold $M$ equipped with the distance $d$ is a metric space (compatible with the initial topology of $M$).
+
+\begin{defn}
+A \emph{geodesic} is a curve $\gamma\colon I \to M$ having constant speed $k$ that realises locally the distance. This means that every $t \in I$ has a closed neighbourhood $[t_0,t_1]\subset I$ such that $d(\gamma(t_0), \gamma(t_1)) = L(\gamma|_{[t_0,t_1]}) = k(t_1-t_0)$.
+\end{defn}
+\index{geodesic}
+
+Note that with this definition the constant curve $\gamma(t) = p_0$ is a geodesic with constant speed $k=0$. Such a geodesic is called \emph{trivial}. A curve that realises the distance locally may not realise it globally. 
+
+\begin{example}
+The non-trivial geodesics in Euclidean space $\matR^n$ are affine lines run at constant speed. 
+The non-trivial geodesics in the sphere $S^n$ are portions of great circles, run at constant speed. 
+\end{example}
+
+A geodesic $\gamma:I \to M$ is \emph{maximal} if it cannot be extended to a geodesic on a strictly larger interval $J \supset I$. Maximal geodesics are determined by some first-order conditions: 
+
+\begin{teo}  \label{geod:teo}
+Let $p\in M$ be a point and $v\in T_pM$ a tangent vector. There exists a unique maximal geodesic $\gamma\colon I \to M$ with $\gamma(0) = p$ and $\gamma'(0) = v$. The interval $I$ is open and contains $0$.
+\end{teo}
+
+\subsection{Volume}
+If the differentiable manifold $M$ is oriented, the metric tensor also induces a \emph{volume form}.
+\index{volume form}
+
+The best method to define volumes on a $n$-manifold $M$ is to construct an appropriate \emph{$n$-form}. A $n$-form $\omega$ is an alternating multilinear form
+$$\omega_p: \underbrace{T_p \times \ldots \times T_p}_n \longrightarrow \matR$$
+at each point $p\in M$, which varies smoothly with $p$. The alternating condition means that if we swap two vectors the result changes by a sign. 
+The $n$-forms are designed to be integrated: it makes sense to write 
+$$\int_D \omega$$
+on any open set $D$. A \emph{volume form} on an oriented manifold $M$ is a $n$-form $\omega$ such that $\omega_p(v_1,\ldots, v_n)> 0$ for every positive basis $v_1,\ldots, v_n$ of $T_p$ and every $p\in M$. 
+
+The metric tensor defines a volume form as follows: it suffices to set $\omega_p(e_1,\ldots, e_n)=1$ on every positive orthonormal basis $e_1,\ldots, e_n$. With this definition every open set $D$ of $M$ has a well-defined \emph{volume} 
+$$\Vol(D) = \int_D \omega$$
+which is a positive number or infinity. If $D$ has compact closure the volume is necessarily finite; in particular, a compact Riemannian manifold $M$ has finite volume $\Vol (M)$.
+\index{volume}
+
+On a chart, the volume form can be calculated from the metric tensor $g$ via the following formula: 
+$$\omega = \sqrt{\det g} \cdot dx_1\cdots dx_n.$$
+
+\subsection{Completeness}
+A Riemannian manifold $(M,g)$ is a metric space, and as such it may be complete or not. For instance,
+a compact Riemannian manifold is always complete; on the other hand, by removing a point from a Riemannian manifold we always get a non-complete space. Non-compact manifolds like $\matR^n$ typically admit both complete and non-complete Riemannian structures. 
+The completeness of a Riemannian manifold may be expressed in various ways:
+
+\index{Hopf -- Rinow theorem}
+\begin{teo}[Hopf -- Rinow] \label{HR:teo}
+Let $(M,g)$ be a connected Riemannian manifold. The following are equivalent: 
+\begin{enumerate}
+\item $M$ is complete,
+\item a subset of $M$ is compact if and only if it is closed and bounded,
+\item every geodesic can be extended on the whole $\matR$.
+\end{enumerate}
+If $M$ is complete, any two points $p,q \in M$ are joined by a \emph{minimising} geodesic $\gamma$, \emph{i.e.}~a curve such that $L(\gamma) = d(p,q)$.
+\end{teo}
+%Note that (3) holds if and only if the exponential map is defined on the whole tangent space $T_pM$ for all $p\in M$.
+
+
+\subsection{Exponential map} \label{esponenziale:subsection}
+Let $M$ be a complete Riemannian manifold. The fact that geodesics are determined by first-order conditions allows us to introduce the following.
+
+\index{exponential map}
+\begin{defn}
+Let $p \in M$ be a point. The \emph{exponential map}
+$$\exp_p\colon T_pM \longrightarrow M$$
+is defined as follows.
+A vector $v\in T_pM$ determines a maximal geodesic $\gamma_v\colon \matR \to M$ with $\gamma_v(0) = p$ and $\gamma_v'(0) = v$. We set $\exp_p(v) = \gamma_v(1)$.
+\end{defn}
+
+\begin{teo} \label{exp:teo}
+The differential of the exponential map $\exp_p$ at the origin is the identity and hence $\exp_p$ is a local diffeomorphism at the origin.
+\end{teo}
+
+Via the exponential map, a small neighborhood of the origin in  $T_pM$ can be used as a chart near $p$: we recover here the intuitive idea that the tangent space approximates the manifold near $p$.
+
+When $M$ is not complete, the exponential map is only defined in some open star-shaped neighbourhood $V_p \subset T_pM$ of the origin, and Theorem \ref{exp:teo} holds also in this case.
+
+\subsection{Injectivity radius}
+Let $M$ be a complete Riemannian manifold. We introduce the following.
+
+\begin{defn} 
+The \emph{injectivity radius} $\inj_pM>0$ of $M$ at a point $p\in M$ is the supremum of all $r>0$ such that $\exp_p|_{B_0(r)}$ is a diffeomorphism onto its image.
+\end{defn}
+\index{injectivity radius}
+
+Here $B_0(r)$ is the open ball with centre $0$ and radius $r$ in the tangent space $T_pM$. The injectivity radius is always positive by Theorem \ref{exp:teo}. For every $r< \inj_pM$ the exponential map transforms the ball of radius $r$ in $T_p(M)$ into the metric ball of radius $r$ in $M$. That is, the following equality holds: 
+$$\exp_p(B_0(r)) = B_p(r)$$
+and the metric ball $B_p(r)$ is indeed diffeomorphic to an open ball in $\matR^n$. When $r\geq \inj_p M$ this may not be true: for instance if $M$ is compact there is a $R>0$ such that $B_p(R) = M$.
+
+The injectivity radius $\inj_p(M)$ varies continuously with respect to $p\in M$; 
+the injectivity radius $\inj (M)$ of $M$ is defined as
+$$\inj (M) = \inf_{p\in M} \inj_p M.$$
+
+\begin{prop} \label{iniettivita:prop}
+A compact Riemannian manifold has positive injectivity radius.
+\end{prop}
+\begin{proof}
+The injectivity radius $\inj_p M$ is positive and varies continuously with $p$, hence it has a positive minimum on the compact $M$.
+\end{proof}
+
+Finally we note the following. A \emph{loop} is a curve $\gamma\colon [a,b] \to M$ with $\gamma(a) = \gamma(b)$.
+
+\begin{prop}
+Let $M$ be a complete Riemannian manifold. Every loop $\gamma$ in $M$ shorter than $2\cdot \inj (M)$ is homotopically trivial.
+\end{prop}
+\begin{proof}
+Set $p=\gamma(a) = \gamma (b)$. Since $\gamma$ is shorter than $2\cdot\inj (M)$, it cannot escape the ball $B_p(r)$ for some $r<\inj (M)\leqslant \inj_p M$. This ball is diffeomorphic to a ball in $\matR^n$, hence in particular it is contractible, so $\gamma$ is homotopically trivial.
+\end{proof}
+
+A proof of the continuity of $\inj_p(M)$ can be found in \cite{Lee}.
+
+\subsection{Curvature} \label{curvatura:subsection}
+The \emph{curvature} of a Riemannian manifold $(M,g)$ is some mathematical entity that measures how distorted $g$ is when compared to the familiar Euclidean structure on $\matR^n$. The curvature is encoded by various kinds of mathematical objects, and some of them may be frustratingly complicated when $n=\dim M \geqslant 3$. Luckily, most of the Riemannian manifolds that we will encounter in this book have ``constant curvature'' and therefore these objects will simplify dramatically. We briefly recall them here.
+\index{curvature}
+
+\index{Levi-Civita connection}
+\index{Christoffel symbol}
+The metric tensor $g$ induces the \emph{Levi-Civita connection} $\nabla$, which can be used to differentiate any vector field with respect to a tangent vector at any point of $M$. We concentrate on an open chart and hence suppose that $M=U$ is an open set of $\matR^n$; let $e_1, \ldots, e_n$ be the coordinate vector fields on $U$ and $\nabla_i$ be the Levi-Civita differentiation with respect to $e_i$. We have
+$$\nabla_i e_j = \Gamma^k_{ij} e_k$$
+for some smooth functions $\Gamma^k_{ij} \colon U \to \matR$ called the \emph{Chistoffel symbols}. Here we use the Einstein notation: repeated indices should be added from $1$ to $n$. The Christoffel symbols are determined by $g$ via the formula:
+$$\Gamma_{ij}^k = \frac{1}{2}g^{k\ell} \left(\frac{\partial g_{\ell i}}{\partial x^j} + \frac{\partial g_{\ell j}}{\partial x^i} - \frac{\partial g_{ij}}{\partial x^\ell} \right).$$
+Here $g^{k\ell}$ is just the inverse matrix of $g = g_{k\ell}$.
+Christoffel symbols are very useful but depend heavily on the chosen chart; a more intrinsic object is the \emph{Riemann tensor} that may be defined (quite obscurely) as
+\index{Riemann tensor}
+$$R^i{}_{jk\ell} = \partial_k\Gamma^i_{\ell j}
+    - \partial_\ell\Gamma^i_{k j}
+    + \Gamma^i_{k m}\Gamma^m_{\ell j}
+    - \Gamma^i_{\ell m}\Gamma^m_{k j}.$$ 
+By contracting two indices we get the \emph{Ricci tensor} \index{Ricci tensor}
+$$R_{ij} = {R^k}_{ik j} =
+\partial_{k}{\Gamma^k_{ji}} - \partial_{j}\Gamma^k_{k i}
++ \Gamma^k_{km} \Gamma^m_{ji}
+- \Gamma^k_{jm}\Gamma^m_{k i}.
+$$ 
+The Ricci tensor is symmetric, and by further contracting we get the \emph{scalar curvature}
+$$R = g^{ij}R_{ij}.$$
+\index{scalar curvature}
+
+\subsection{Scalar curvature} \label{gauss:subsection}
+What kind of geometric information is contained in the tensors introduced above? The scalar curvature $R$ is the simplest curvature detector, and it measures the local discrepancy between volumes in $M$ and in $\matR^n$. Let $B_p(\varepsilon)\subset M$ be the $\varepsilon$-ball in $M$ centred at $p$ and $B_0(\varepsilon)\subset \matR^n$ be the $\varepsilon$-ball in the Euclidean $\matR^n$. We have
+$$\Vol\big(B_p(\varepsilon)\big) = \Vol\big(B_0(\varepsilon)\big) \cdot \left( 1- \frac R{6(n+2)}\varepsilon^2 \right) + {\rm O}(\varepsilon^4).$$
+We note in particular that $R$ is positive (negative) if $B_p(\varepsilon)$ has smaller (bigger) volume than the usual Euclidean volume.
+
+If $M$ has dimension 2, that is it is a surface, the Riemann and Ricci tensors simplify dramatically and are fully determined by the scalar curvature $R$, which is in turn equal to twice the \emph{gaussian curvature} $K$: if $M$ is contained in $\matR^3$ the gaussian curvature is defined as the product of its two principal curvatures, but when $M$ is abstract principal curvatures make no sense. On surfaces, the formula above reads as
+$$\Area(B_p(\varepsilon)) = \pi\varepsilon^2 - \frac{\pi \varepsilon^4}{12}K + {\rm O}(\varepsilon^4).$$
+\index{gaussian curvature}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 6 cm] {\iftoggle{BW}{Gaussian_curvature-BW}{640px-Gaussian_curvature}}
+\nota{Three surfaces in space (hyperboloid with one sheet, cylinder, sphere) whose gaussian curvature is respectively negative, null, and positive at each point. The curvature on the sphere is constant, while the curvature on the hyperboloid varies: a complete surface in $\matR^3$ cannot have constant negative curvature.}
+\label{Gaussian:fig}
+\end{center}
+\end{figure}
+
+\subsection{Sectional curvature}
+If $(M,g)$ has dimension $n\geqslant 3$ the scalar curvature is a weak curvature detector when compared to the Ricci and Riemann tensors. Moreover, there is yet another curvature detector which encodes the same amount of information of the full Riemann tensor, but in a more geometric way: this is the \emph{sectional curvature} and is defined as follows. 
+\index{sectional curvature}
+
+\begin{defn}
+Let $(M,g)$ be a Riemannian manifold. Let $p \in M$ be a point and $W \subset T_pM$ be a 2-dimensional vector subspace. By Theorem \ref{exp:teo} there exists an open set $U_p \subset T_pM$ containing the origin where $\exp_p$ is a diffeomorphism onto its image. In particular $S = \exp_p(U_p \cap W)$ is a small smooth surface in $M$ passing through $p$, with tangent plane $W$. As a submanifold of $M$, the surface $S$ has a Riemannian structure induced by $g$.
+
+The \emph{sectional curvature} of $(M,g)$ along $W$ is defined as the gaussian curvature of $S$ in $p$.
+\end{defn}
+
+We can use the sectional curvature to unveil the geometric nature of the Ricci tensor:
+the Ricci tensor $R_{ij}$ in $p$ measures the average sectional curvature along axes, that is for every unit vector $v\in T_p(M)$ the number $R_{ij} v^iv^j$ is $(n-1)$ times the average sectional curvature of the planes $W\subset T_p(M)$ containing $v$.
+
+The Riemann tensor is determined by the sectional curvatures and vice-versa. In dimension $n=3$ the Ricci tensor fully determines the sectional curvatures and hence also the Riemann tensor. This is not true in dimension $n\geqslant 4$.
+
+\subsection{Constant sectional curvature}
+A Riemannian manifold $(M,g)$ has \emph{constant sectional curvature} $K$ if the sectional curvature of every 2-dimensional vector space $W\subset T_pM$ at every point $p\in M$ is always $K$.
+
+\begin{oss}
+On a Riemannian manifold $(M,g)$ one may \emph{rescale} the metric by some factor $\lambda >0$ substituting $g$ with the tensor $\lambda g$. At every point the scalar product is rescaled by $\lambda$. Consequently, lengths of curves are rescaled by $\sqrt \lambda$ and volumes are rescaled by $\lambda^{\frac n2}$. The sectional curvature is rescaled by $1/\lambda$. 
+\end{oss}
+
+By rescaling the metric we may transform every Riemannian manifold with constant sectional curvature $K$ into one with constant sectional curvature $-1$, $0$, or $1$.
+
+\begin{example}
+Euclidean space $\matR^n$ has constant curvature zero. A sphere of radius $R$ has constant curvature $1/R^2$.
+\end{example}
+
+\subsection{Isometries}
+Every honest category has its morphisms. Riemannian manifolds are so rigid, that in fact one typically introduces only isomorphisms: these are called \emph{isometries}.
+\index{isometry}
+
+\begin{defn}
+A diffeomorphism $f\colon M\to N$ between two Riemannian manifolds $(M,g)$ and $(N,h)$ is an \emph{isometry} if it preserves the scalar product. That is, the equality
+$$\langle v,w \rangle = \langle df_p(v), df_p(w) \rangle$$
+holds for all $p\in M$ and every pair of vectors $v,w \in T_pM$. The symbols $\langle,\rangle$ indicate the scalar products in $T_pM$ and $T_{f(p)}N$.
+\end{defn}
+
+As we said, isometries are extremely rigid. These are determined by their first-order behaviour at any single point.
+
+\begin{teo} \label{isom:teo}
+Let $f,g\colon M \to N$ be two isometries between two connected Riemannian manifolds. If there is a point $p\in M$ such that $f(p) = g(p)$ and $df_p = dg_p$, then $f  =g$ everywhere.
+\end{teo}
+\begin{proof}
+Let us show that the subset $S\subset M$ of the points $p$ such that $f(p) = g(p)$ and $df_p = dg_p$ is open and closed.
+
+The locus where two functions coincide is typically closed, and this holds also here (to prove it, take a chart). We prove that it is open: pick $p\in S$. 
+By Theorem \ref{exp:teo} there is an open neighbourhood $U_p \subset T_pM$ of the origin where the exponential map is a diffeomorphism onto its image. We show that the open set $\exp_p(U_p)$ is entirely contained in $S$.
+
+A point $q\in\exp_p(U_p)$ is the image $q=\exp(v)$ of a vector $v\in U_p$ and hence $q=\gamma(1)$ for the geodesic $\gamma$ determined by the data $\gamma(0)=p, \gamma'(0)=v$. The maps $f$ and $g$ are isometries and hence send geodesics to geodesics: here $f\circ \gamma$ and $g\circ\gamma$ are geodesics starting from $f(p)=g(p)$ with the same initial velocities and thus they coincide. This implies that $f(q)=g(q)$. Since $f$ and $g$ coincide on the open set $\exp_p(U_p)$, also their differentials do.
+\end{proof}
+
+
+\subsection{Local isometries}
+A \emph{local isometry} $f\colon M \to N$ between Riemannian manifolds is a map where every $p\in M$ has an open neighbourhood $U$ such that $f|_U$ is an isometry onto its image. Theorem \ref{isom:teo} applies with the same proof to local isometries.
+\index{isometry!local isometry}
+
+The following proposition relates nicely the notions of local isometry, topological covering, and completeness.
+
+\begin{prop} \label{local:isometry:prop}
+Let $f\colon M \to N$ be a local isometry.
+\begin{enumerate}
+\item If $M$ is complete, the map $f$ is a covering.
+\item If $f$ is a covering, then $M$ is complete $\Longleftrightarrow$ $N$ is complete.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Since $f$ is a local isometry, every geodesic in $M$ projects to a geodesic in $N$. If $f$ is also a covering, the converse holds: every geodesic in $N$ lifts to a geodesic in $M$ (at any starting point). 
+
+If $f$ is a covering we can thus project and lift geodesics via $f$: therefore every geodesic in $M$ can be extended to $\matR$ if and only if every geodesic in $N$ can; this proves (2) using the Hopf -- Rinow Theorem \ref{HR:teo}.
+
+We prove (1) by showing that the ball $B=B(p,\inj_pN)$ is well-covered for all $p\in N$. Since $M$ is complete, every geodesic in $N$ can be lifted to a geodesic in $M$ (at any starting point).  For every $\tilde p \in f^{-1}(p)$ the map $f$ sends the geodesics exiting from $\tilde p$ to geodesics exiting from $p$ and hence sends isometrically $B(\tilde p, \inj_p N)$ onto $B$. On the other hand, given a point $q\in f^{-1}(B)$, the geodesic in $B$ connecting $f(q)$ to $p$ lifts to a geodesic connecting $q$ to some point $\tilde p \in f^{-1}(p)$. Therefore 
+$$f^{-1}\big(B(p,\inj_p N)\big) = \bigsqcup_{\tilde p \in f^{-1}(p)} B(\tilde p, \inj_p N)$$
+and $f$ is a covering.
+\end{proof}
+
+\begin{prop} \label{volume:covering:prop}
+Let $f\colon M \to N$ be a local isometry and a degree-$d$ covering. We have
+$$\Vol(M) = d \cdot \Vol (N).$$
+\end{prop}
+\begin{proof}[Sketch of the proof]
+We may find a disjoint union of well-covered open sets in $N$ whose complement has zero measure. Every such open set lifts to $d$ copies of it in $M$, and the zero-measure set lifts to a zero-measure set.
+\end{proof}
+
+The formula makes sense also when some of the quantities $\Vol(M)$, $\Vol(N)$, and $d$ are infinite.
+
+\subsection{Totally geodesic submanifolds}
+A differentiable submanifold $M$ in a Riemannian manifold $N$ is \emph{totally geodesic} if 
+every geodesic in $M$ with the induced metric is also a geodesic in $N$. 
+\index{submanifold!totally geodesic submanifold}
+
+When $\dim M=1$ this notion is equivalent to that of an unparametrized embedded geodesic; if $\dim M\geqslant 2$ then $M$ is a quite peculiar object: generic Riemannian manifolds do not contain totally geodesic surfaces at all. An equivalent condition is that, for every $p\in M$ and every $v \in T_p(M)$, the unique geodesic in $N$ passing through $p$ with velocity $v$ stays in $M$ for some interval $(-\varepsilon, \varepsilon)$.
+
+\subsection{Riemannian manifolds with boundary}
+Many geometric notions in Riemannian geometry extend easily to manifolds $M$ with boundary. The boundary $\partial M$ of a Riemannian manifold $M$ is naturally a Riemannian manifold without boundary. 
+\index{submanifold!Riemannian submanifold}
+A particularly nice (and exceptional) case is when $\partial M$ is totally geodesic. 
+
+\section{Measure theory} \label{measure:theory:section}
+We will use some basic measure theory only in Chapter \ref{automorfismi:chapter}.
+
+\subsection{Borel measure}
+A \emph{Borel set} in a topological space $X$ is any subset obtained from open sets through the operations of countable union, countable intersection, and relative complement. Let $\calF$ denote the set of all Borel sets.
+A \emph{Borel measure} on $X$ is a function $\mu\colon \calF \to [0,+\infty]$ which is additive on any countable collection of disjoint sets. 
+\index{Borel set}
+\index{Borel measure}
+
+The measure is \emph{locally finite} if every point has a neighbourhood of finite measure and is \emph{trivial} if $\mu(S)=0$ for all $S\in\calF$. 
+
+\begin{ex} If $\mu$ is a locally finite Borel measure then $\mu(X)<+\infty$ for any compact Borel set $K\subset X$.
+\end{ex}
+
+\begin{example}
+Let $D\subset X$ be a discrete set. The \emph{Dirac measure} $\delta_D$ concentrated in $D$ is the measure
+$$\delta_D(S) = \#(S\cap D).$$
+Since $D$ is discrete, the measure $\delta_D$ is locally finite.
+\end{example}
+
+The \emph{support} of a measure is the set of all points $x\in X$ such that $\mu(U)>0$ for any open set $U$ containing $x$. The support is a closed subset of $X$. The measure is \emph{fully supported} if its support is $X$. The support of $\delta_D$ is of course $D$. A point $x\in X$ is an \emph{atom} for $\mu$ if $\mu(\{x\})>0$.
+
+\subsection{Construction by local data}
+A measure can be defined using local data in the following way.
+
+\begin{prop} \label{ricoprimento:prop}
+Let $\{U_i\}_{i\in I}$ be a countable, locally finite open covering of $X$ and for any $i\in I$ let $\mu_i$ be a locally finite Borel measure on $U_i$. If $\mu_i|_{U_i\cap U_j} = \mu_j|_{U_i\cap U_j}$ for all $i,j\in I$ there is a unique locally finite Borel measure  $\mu$ on $X$ whose restriction to $U_i$ is $\mu_i$ for all $i$.
+\end{prop}
+\begin{proof}
+For every finite subset $J\subset I$ we define 
+$$X_J = \big(\cap_{j\in J} U_j\big) \setminus \big(\cup_{i\in I\setminus J} U_i\big).$$ 
+The sets $X_J$ form a countable partition of $X$ into Borel sets and every $X_J$ is equipped with a measure $\mu_J = \mu_j|_{X_j}$ for any $j\in J$. Define $\mu$ by setting
+$$\mu(S)= \sum_{j\in J} \mu(S\cap X_j)$$
+on any Borel $S\subset X$. 
+\end{proof}
+
+When $X$ is a reasonable space some hypothesis may be dropped.
+
+\begin{prop} \label{ricoprimento2:prop}
+If $X$ is paracompact and separable, Proposition \ref{ricoprimento:prop} holds for any open covering $\{U_i\}_{i\in I}$.
+\end{prop}
+\begin{proof}
+By paracompactness and separability the open covering $\{U_i\}$ has a refinement that is locally finite and countable: apply Proposition \ref{ricoprimento:prop} to the refinement to get a measure $\mu$. To prove that indeed $\mu|_{U_i} = \mu_i$ apply Proposition \ref{ricoprimento:prop} again to the covering of $U_i$ given by the refinement.
+\end{proof}
+
+\subsection{Topology on the measures space} \label{topology:measure:subsection}
+In what follows we suppose for simplicity that $X$ is a finite-dimensional topological manifold, although everything is valid in a much wider generality. We indicate by $\calM(X)$ the space of all locally finite Borel measures on $X$ and by $C_c(X)$ the space of all continuous functions $X\to \matR$ with compact support: the space $C_c(X)$ is not a Banach space, but it is a topological vector space.
+
+Recall that the \emph{topological dual} of a topological vector space $V$ is the vector space $V^*$ formed by all continuous linear functionals $V\to \matR$.
+A measure $\mu\in\calM(X)$ acts like a continuous functional on $C_c(X)$ as follows
+$$\mu\colon f \longmapsto \int_\mu f$$
+and hence defines an element of $C_c^*(X)$. A functional in $C_c^*(X)$ is \emph{positive} if it assumes non-negative values on non-negative functions. 
+
+\begin{teo}[Riesz representation] The space $\calM(X)$ may be identified in this way to the subset in $C_c(X)^*$ of all positive functionals. 
+\end{teo}
+
+The space $\calM(X)$ in $C_c(X)^*$ is closed with respect to sum and product with a positive scalar.
+We now use the embedding of $\calM(X)$ into $C_c(X)^*$ to define a natural topology on $\calM(X)$.
+
+\begin{defn}
+Let $V$ be a real topological vector space. Every vector $v\in V$ defines a functional in $V^*$ as $f\mapsto f(v)$. The \emph{weak-* topology} on $V^*$ is the weakest topology among those where these functionals are continuous.
+\end{defn}
+
+We give $C_c(X)^*$, and hence $\calM(X)$, the weak-* topology. 
+
+\subsection{Sequences of measures} \label{mu:sequence:subsection}
+By definition, a sequence of measures  $\mu_i$ converges to $\mu$ if and only if $\int_{\mu_i} f \to \int_\mu f$ for any $f\in C_c(X)$. This type of weak convergence is usually denoted with the symbol
+$\mu_i \rightharpoonup \mu$.
+ 
+\begin{ex} 
+Let $x_i$ be a sequence of points in $X$ that tend to $x\in X$: we get $\delta_{x_i} \rightharpoonup \delta_x$. 
+\end{ex}
+
+It is important to note that $\mu_i \rightharpoonup \mu$ does \emph{not} imply $\mu_i(U) \to \mu(U)$ for any open (or closed) set $U$: consider for instance a sequence $\mu_i = \delta_{x_i}$ with $x_i$ exiting from (or entering into) the set $U$. We can get this convergence on compact sets if we can control their topological boundary.
+
+\begin{prop} \label{delta:zero:prop}
+Let $K\subset X$ be a Borel compact subset. If $\mu_i \rightharpoonup \mu$ and $\mu(\partial K)=0$ then $\mu_i(K) \to \mu(K)$.
+\end{prop}
+
+On Banach spaces, the unitary ball is compact in the weak-* topology. Here $\calM(X)$ is not a Banach space, but we have an analogous compactness theorem.
+
+\begin{teo} \label{compact:measure:teo}
+A sequence of measures $\mu_i$ such that $\mu_i(K)$ is bounded on every Borel compact set $K\subset X$ converges on a subsequence.
+\end{teo}
+
+\section{Groups}
+We recall some basic definitions and properties of groups. 
+
+\subsection{Presentations}
+Recall that a \emph{finite presentation} of a group $G$ is a description of $G$ as
+$$\langle g_1,\ldots, g_k\ |\ r_1,\ldots, r_s \rangle$$
+where $g_1,\ldots, g_k\in G$ are the \emph{generators} and $r_1,\ldots, r_s$ are words in $g_i^{\pm 1}$ called \emph{relations}, such that 
+$$G \Isom F(g_i)/_{N(r_j)}$$
+where $F(g_i)$ is the free group generated by the $g_i$'s and $N(r_j)\triangleleft F(g_i)$ is the \emph{normal closure} of the $r_j$'s, the smallest normal subgroup containing them. 
+\index{finite presentation}
+
+Not every group $G$ has a finite presentation: a necessary (but not sufficient) condition is that $G$ must be finitely generated. 
+
+\subsection{Commutators}
+Let $G$ be a group. The \emph{commutator} of two elements $h,k \in G$ is the element \index{commutator}
+$$[h,k] = hkh^{-1}k^{-1}.$$
+The commutator $[h,k]$ is trivial if and only if $h$ and $k$ commute.
+Commutators do not form a subgroup in general, but we can use them to generate one. 
+
+More generally, let $H, K<G$ be two subgroups. We define $[H, K]$ as the subgroup of $G$ generated by all commutators $[h,k]$
+where $h$ and $k$ vary in $H$ and $K$, respectively. Every element in $[H, K]$ is a product of commutators $[h,k]$ and of their inverses $[h,k]^{-1}=[k,h]$, and we have $[H, K] = [K, H]$.
+
+\begin{prop} If $H$ and $K$ are normal subgroups of $G$ then $[H,K] < H\cap K$ and $[H,K]$ is a normal subgroup of $G$.
+\end{prop}
+\begin{proof}
+If $H$ and $K$ are normal we get $[h,k] = hkh^{-1}k^{-1} \in H\cap K$. Moreover, for every $g\in G$ we have 
+$$g^{-1}\cdot[h_1,k_1]^{\pm 1} \cdots [h_i, k_i]^{\pm 1} \cdot g = [g^{-1}h_1g,g^{-1}k_1g]^{\pm 1} \cdots
+[g^{-1}h_ig, g^{-1}k_i g]^{\pm 1}$$
+hence $[H,K]$ is normal in $G$ if $H$ and $K$ are.
+\end{proof}
+
+The group $[G,G]$ is the \emph{commutator subgroup} of $G$. It is trivial if and only if $G$ is abelian.
+\index{commutator!commutator subgroup}
+
+\subsection{Series}
+We can use commutators iteratively to create some characteristic subgroups of $G$. There are two natural ways to do this, and they produce two nested sequences of subgroups.
+
+The \emph{lower central series} of $G$ is the sequence of normal subgroups
+\index{lower central series}
+$$ G = G_0 > G_1 > \ldots > G_n > \ldots $$
+defined iteratively by setting
+$$G_{n+1} = [G_n, G].$$ The \emph{derived series} is the sequence of normal subgroups
+\index{derived series}
+$$G = G^{(0)} \triangleright G^{(1)} \triangleright \ldots \triangleright G^{(n)} \triangleright \ldots $$
+defined by setting
+$$G^{(n+1)} = [G^{(n)}, G^{(n)}].$$
+We clearly have $G^{(n)} < G_{n}$ for all $n$. 
+\index{group!nilpotent group} \index{group!solvable group}
+\begin{defn} A group $G$ is \emph{nilpotent} if $G_n$ is trivial for some $n$. It is \emph{solvable} if $G^{(n)}$ is trivial for some $n$.
+\end{defn}
+The following implications are obvious:
+\begin{center}
+$G$ abelian $\Longrightarrow$ $G$ nilpotent $\Longrightarrow$ $G$ solvable.
+\end{center}
+The converses are false, as we will see.
+
+\begin{prop} \label{subgroup:prop}
+Subgroups and quotients of abelian (nilpotent, solvable) groups are also abelian (nilpotent, solvable).
+\end{prop}
+\begin{proof}
+If $H<G$ then $H_n<G_n$ and $H^{(n)} < G^{(n)}$. If $H=G/_N$, then $H_n = G_n/_N$ and $H^{(n)} = G^{(n)}/_N$. Both equalities are proved by induction on $n$.
+\end{proof}
+
+\subsection{Nilpotent groups} \label{nilpotent:subsection}
+Every abelian group $G$ is obviously nilpotent since $G_1$ is trivial. 
+
+\index{group!Heisenberg group}
+\begin{ex} \label{Heisenberg:ex}
+Let the \emph{Heisenberg group} $\Nil$ consist of all matrices 
+$$\begin{pmatrix} 1 & x & z \\ 0 & 1 & y \\ 0 & 0 & 1 \end{pmatrix}$$
+where $x, y,$ and $z$ vary in $\matR$, with the multiplication operation. Prove that the Heisenberg group is non-abelian and nilpotent. Indeed the matrices with $x=y=0$ form an abelian subgroup $\matR < \Nil$ and we have
+$$[\Nil, \Nil] = \matR, \qquad [\matR, \Nil] = \{e\}.$$
+\end{ex}
+
+We will use at some point the following criterion.
+
+\begin{prop} \label{criterion:nilpotent:prop}
+Let $G$ be a group generated by some set $S$ and $n>0$ a number. Suppose that
+$$[a_1, \ldots [a_{n-1}, [a_n, b]] \cdots ]$$
+is trivial for all $a_1,\ldots,a_n,b \in S$. Then $G_n=\{e\}$ and thus $G$ is nilpotent.
+\end{prop}
+\begin{proof}
+We claim that $G_n$ is generated by some elements of type
+$$[a_1, \ldots [a_{m-1}, [a_m, b]] \cdots ]$$
+with $m\geqslant n$ and $a_1,\ldots,a_m,b\in S$: this clearly implies the proposition.
+The claim is proved by induction on $n$ using the formula
+$$[a,bc] = [a,b]\cdot [b,[a,c]]\cdot [a,c]$$
+which holds in every group.
+\end{proof}
+
+We note the following. 
+\begin{prop} \label{center:prop}
+A nilpotent non-trivial group has non-trivial centre.
+\end{prop}
+\begin{proof}
+Let $G_n$ be the last non-trivial group in the lower central series. Since $G_{n+1} = [G_n,G]$ is trivial, the centre of $G$ contains $G_n$.
+\end{proof}
+
+\subsection{Solvable groups}
+Solvable groups form a strictly larger class than nilpotent groups.
+\begin{ex}
+The permutation group $S_3$ is solvable but not nilpotent.
+\end{ex}
+\begin{ex}
+The group ${\rm Aff}(\matR)=\{x\mapsto ax+b\ |\ a\in\matR^*, b\in\matR\}$ of affine transformations is solvable but not nilpotent. Indeed $[{\rm Aff}(\matR), {\rm Aff}(\matR)] = \matR$ consists of all translations and
+$$[\matR, {\rm Aff}(\matR)] = \matR, \qquad [\matR, \matR] = \{e\}.$$
+\end{ex}
+
+\begin{ex} The permutation group $S_n$ is not solvable for $n\geqslant 5$.
+\end{ex}
+The latter fact is related to the existence of polynomials of degree $n\geqslant 5$ that are not solvable by radicals. 
+
+Solvable groups are farther from being abelian than nilpotent groups: for instance, they may have trivial centre (like $S_3$). However, they still share some  nice properties with the abelian world:
+
+\begin{prop} \label{solvable:normal:prop}
+A solvable group contains a non-trivial normal abelian subgroup.
+\end{prop}
+\begin{proof}
+Let $G^{(n)}$ be the last non-trivial group in the derived series. It is normal in $G$ and abelian, since $[G^{(n)}, G^{(n)}]$ is trivial.
+\end{proof}
+
+\subsection{Lie groups}
+A \emph{Lie group} is a smooth manifold $G$ which is also a group, such that the operations \index{group!Lie group}
+\begin{align*}
+G\times G & \to G, \quad (a,b) \mapsto ab \\
+G & \to G, \quad a \mapsto a^{-1}
+\end{align*}
+are smooth. 
+
+\begin{example}
+The basic examples are $\GL(n,\matR)$ and $\GL(n,\matC)$ consisting of invertible real and complex $n\times n$ matrices, with the multiplication operation. These contain many interesting Lie subgroups:
+\begin{itemize}
+\item $\SL(n,\matR)$ and $\SL(n,\matC)$, the matrices with determinant 1;
+\item $\On(n)$ and $\Un(n)$, the orthogonal and unitary matrices;
+\item $\SO(n) = \SL(n,\matR) \cap \On(n)$ and $\SU(n) = \SL(n,\matC)\cap \Un(n)$.
+\end{itemize}
+\end{example}
+
+The Lie groups $\On(n)$ and U$(n)$ are compact.
+\begin{ex}
+The following Lie groups are isomorphic:
+$$S^1 \isom \Un(1) \isom \SO(2). $$
+\end{ex}
+Here are some ways to construct more examples:
+\begin{itemize}
+\item the product of two Lie groups is a Lie group,
+\item a closed subgroup of a Lie group is a Lie group,
+\item the universal cover of a Lie group is a Lie group.
+\end{itemize}
+
+A Lie group $G$ is often not connected, and we denote by $G^\circ$ the connected component of $G$ containing the identity. The subset $G^\circ$ is a normal Lie subgroup of $G$. For instance $\On(n)$ has two components and $\On(n)^\circ = \SO(n)$. 
+
+Another important example is the Lie group
+$$\On(m,n) = \big\{A \in \GL(m+n,\matR) \ \big| \ \transp A I_{m,n} A = I_{m,n} \big\}$$
+defined for any pair $m,n \geqslant 0$ of integers, where $I_{m,n}$ is the diagonal matrix
+$$I_{m,n} = \begin{pmatrix} I_m & 0 \\ 0 & -I_n \end{pmatrix}.$$
+The Lie group $\On(m,n)$ has two connected components if either $m$ or $n$ is zero (in that case we recover the orthogonal group) and has four connected components otherwise.
+
+\begin{oss}
+Not all the Lie groups are subgroups of $\GL(n,\matC)$: for instance, the universal cover of $\SL(2,\matR)$ is not.
+\end{oss}
+
+A \emph{homomorphism} $\varphi \colon G \to H$ of Lie groups is a smooth group homomorphism. The kernel of $\varphi$ is a closed subgroup and hence a Lie subgroup of $G$. An isomorphism of Lie groups is a group isomorphism that is also a diffeomorphism. 
+
+\subsection{Vector fields, metrics, and differential forms}
+A Lie group $G$ acts on itself in two ways: by left and right multiplication. Both actions are smooth, free, and transitive.
+
+A geometric object on $G$ is \emph{left-invariant} if it is invariant by left multiplication. Right-invariance is defined analogously. In general, it is easy to find objects that are either left- or right-invariant, but not necessarily both. 
+
+There is a natural 1-1 correspondence between:
+\begin{itemize}
+\item vectors in $T_eG$ and left-invariant vector fields on $G$, 
+\item scalar products on $T_eG$ and left-invariant Riemannian metrics on $G$,
+\item $n$-forms on $T_eG$ and left-invariant $n$-forms on $G$,
+\item orientations on $T_eG$ and left-invariant orientations on $G$.
+\end{itemize}
+
+This holds because left-multiplication by an element $g\in G$ is a diffeomorphism that transports everything from $T_eG$ to $T_gG$. The same holds for right-invariant objects.
+
+Every basis of $T_eG$ extends in this way to $n$ independent left-invariant vector fields: this shows that $G$ is \emph{parallelizable}, \emph{i.e.}~the tangent bundle of $G$ is trivial.
+
+\subsection{Simple Lie groups} \label{simple:Lie:subsection}
+A \emph{simple Lie group} $G$ is a connected, non-abelian Lie group $G$ that does not contain any non-trivial connected normal subgroup (the trivial cases being of course $\{e\}$ and $G$ itself).
+
+The classification of simple Lie groups is due to E.~Cartan. The following theorem furnishes many examples.
+
+\begin{teo}
+The groups $\On(m,n)^\circ$ are all simple when $m+n\geqslant 3$, except the cases $(m,n) = (4,0), (2,2), (0,4)$.
+\end{teo}
+
+\subsection{Haar measures} \label{Haar:subsection}
+Let $G$ be a Lie group. As we just said, non-vanishing left-invariant $n$-forms $\omega$ on $G$ are in 1-1 correspondence with non-trivial $n$-forms on $T_eG$, and since the latter are all proportional, the form $\omega$ is unique up to multiplication by a non-zero scalar.
+
+The form $\omega$ defines a left-invariant orientation (a basis $v_1,\ldots, v_n$ is positive when $\omega(v_1,\ldots, v_n)>0$); it is a volume form and hence defines a left-invariant locally finite Borel measure on $G$, called the \emph{Haar measure} of $G$. Summing up, the Haar measure depends only on $G$ up to rescaling.
+
+Since left- and right-multiplications commute, right-multiplication by an element $g\in G$ transforms $\omega$ into another non-vanishing left-invariant form which must be equal to $\lambda(g) \omega$ for some positive real number $\lambda(g)$. This defines a Lie group homomorphism $\lambda \colon G \to \matR_{>0}$ to the multiplicative group of positive real numbers, called the \emph{modular function}.
+
+The Lie group $G$ is \emph{unimodular} if the left-invariant Haar measures are also right-invariant, that is if the modular function $\lambda$ is trivial. 
+Recall that a group $G$ is \emph{simple} if its normal subgroups are $\{e\}$ and $G$.
+\index{group!Lie group!unimodular Lie group}
+
+\begin{prop} \label{compact:unimodular:prop}
+Compact, abelian, or simple Lie groups are unimodular.
+\end{prop}
+\begin{proof}
+If $G$ is compact, the image of $\lambda$ is compact in $\matR_{>0}$ and hence trivial. If $G$ is abelian, left- and right-multiplications coincide. If $G$ is simple, the connected normal Lie subgroup $(\ker \lambda)^\circ$ must be $G$. 
+\end{proof}
+
+\begin{cor} \label{O:unimodular:cor}
+The group $\On(m,n)$ is unimodular if $(m,n)$ is distinct from $(4,0), (2,2), (0,4)$.
+\end{cor}
+\begin{proof}
+The identity component $\On(m,n)^\circ$ is simple and hence unimodular. The modular function $\lambda\colon \On(m,n) \to \matR$ is trivial on the finite-index subgroup $\On(m,n)^\circ$ and is hence trivial.
+\end{proof}
+
+\begin{oss}
+When $(m,n) = (4,0), (2,2), (0,4)$ the group $\On(m,n)$ is \emph{semisimple}, which means that it looks roughly like a product of simple groups, and is in fact unimodular also in this case. We will not need to introduce this concept rigorously here. 
+
+The solvable Lie group ${\rm Aff}(\matR)$ is not unimodular.
+\end{oss}
+
+\subsection{Discrete subgroups}
+Let $G$ be a Lie group. A closed subgroup $H< G$ is \emph{discrete} if it forms a discrete topological subset, that is if every point in $H$ is isolated.
+
+\begin{ex} \label{isolated:ex}
+A subgroup $H<G$ is discrete if and only if $e\in G$ is an isolated point in $G$.
+\end{ex}
+
+\subsection{The Selberg Lemma}
+The group $\GL(n,\matC)$ is the prototypical Lie group, since it contains many Lie groups. A couple of purely algebraic facts about this group will have some important geometric consequences in this book. The first is the Selberg Lemma. Recall that a group \emph{has no torsion} if every non-trivial element in it has infinite order.
+
+\begin{lemma}[Selberg's Lemma] \label{Selberg:lemma}
+ Let $G$ be a finitely generated subgroup of $\GL(n,\matC)$. There is a finite-index normal subgroup $H\triangleleft G$ without torsion.
+\end{lemma}
+\index{Selberg lemma}
+
+The second fact is quite related. A group $G$ is \emph{residually finite} if one of the following equivalent conditions holds:
+\begin{itemize}
+\item for every non-trivial element $g\in G$ there is a finite group $F$ and a surjective homomorphism $\varphi\colon G \to F$ with $\varphi(g) \neq e$;
+\item for every non-trivial element $g \in G$ there is a finite-index normal subgroup $H \triangleleft G$ which does not contain $g$;
+\item the intersection of all finite-index normal subgroups in $G$ is trivial. 
+\end{itemize}
+\index{group!residually finite group}
+
+\begin{lemma} \label{RF:lemma}
+Every finitely generated subgroup of $\GL(n,\matC)$ is residually finite.
+\end{lemma}
+
+The proof of these two lemmas is not particularly hard (see for instance \cite[Chapter 7.6]{R}) but it employs some purely algebraic techniques that are distant from the scope of this book. Their geometric consequences, as we will see, are quite remarkable.
+
+\subsection{Lie algebras}
+A \emph{Lie algebra} $\frakg$ is a real vector space equipped with an alternate bilinear product \index{Lie algebra}
+$$[,] \colon \frakg \times \frakg \to \frakg$$ 
+called \emph{Lie bracket} that satisfies the Jacobi identity
+$$[x,[y,z]]+[y,[z,x]] + [z,[x,y]]=0$$
+for all $x,y,z \in \frakg$. 
+
+The tangent space $T_eG$ at $e\in G$ of a Lie group $G$ has a natural Lie algebra structure and is denoted by $\frakg$. It is equipped with a natural \emph{exponential map} $\exp\colon \frakg \to G$ that sends $0$ to $e$ and is a local diffeomorphism at $0$.
+
+The differential $d\varphi_e\colon \frakg \to \frakh$ of a Lie group homomorphism $\varphi \colon G\to H$ is a Lie algebra homomorphism and is denoted by $\varphi_*$. The diagram
+$$
+\xymatrix{ 
+\frakg \ar[r]^{\varphi_*} \ar[d]_\exp & \frakh \ar[d]^\exp \\
+G\ar[r]_\varphi & H
+}
+$$
+commutes. The basic example is the following: the Lie algebra $\frakgl(n,\matC)$ of $\GL(n,\matC)$ is the vector space $M(n,\matC)$ of all $n\times n$ matrices; here the map $\exp$ is the usual matrix exponential and $[A,B] = AB-BA$ is the usual commutator bracket. 
+The Lie algebras of $\GL(n,\matR)$, $\SL(n,\matR)$, $\On(n)$, $\SO(n)$ are: 
+\begin{align*}
+\frakgl(n,\matR) & = M(n,\matR), \\
+\fraksl(n,\matR) & = \{A\in M(n,\matR)\ |\ \tr A = 0 \}, \\
+\frakon(n) & = \{A \in M(n, \matR) \ |\ A + \transp A = 0 \}, \\
+\frakso(n) & = \{A \in M(n, \matR) \ |\ A + \transp A = 0,\ \tr A = 0 \}.
+\end{align*}
+
+\begin{prop}  \label{Lie:covering:prop}
+Let $G$ and $H$ be connected. A Lie group homomorphism $\varphi\colon G \to H$ is a topological covering if and only if $\varphi_*$ is an isomorphism.
+\end{prop}
+
+
+\section{Group actions}
+Groups acting of spaces are so important in geometry, that they are sometimes used as a definition of  ``geometry'' itself.
+
+\subsection{Definitions}
+The \emph{action} of a group $G$ on a topological space $X$ is a homomorphism 
+$$G\to \Omeo (X)$$ 
+where $\Omeo(X)$ is the group of all self-homeomorphisms of $X$. The quotient set $X/_G$ is the set of all orbits in $X$ and we give it the usual quotient topology. We denote by $g(x)$ the image of $x\in X$ along the homeomorphism determined by $g\in G$. The action is:
+\begin{itemize}
+\item \emph{free} if $g(x) \neq x$ for all non-trivial $g\in G$ and all $x\in X$;
+\item \emph{properly discontinuous} if any two points $x,y \in X$ have neighbourhoods $U_x$ and $U_y$ such that the set
+$$\big\{g \in G\ \big|\ g(U_x) \cap U_y \neq \emptyset \big\}$$
+is finite.
+\end{itemize}
+The relevance of these definitions is due to the following.
+\begin{prop} \label{equivalent:prop}
+Let $G$ act on a Hausdorff connected space $X$. The following are equivalent:
+\begin{enumerate}
+\item $G$ acts freely and properly discontinuously;
+\item the quotient $X/_G$ is Hausdorff and the map $X \to X/_G$ is a covering.
+\end{enumerate}
+\end{prop}
+
+A covering of type $X \to X/_G$ is called \emph{regular}. A covering $X \to Y$ is regular if and only if the image of $\pi_1(X)$ in $\pi_1(Y)$ is normal, and in that case $G$ is the quotient of the two groups. In particular every universal cover is regular.
+Summing up:
+
+\begin{cor} \label{XG:cor}
+Every path-connected locally contractible Hausdorff topological space $X$ is the quotient $\tilde X/_G$ of its universal cover by the action of some group $G$ acting freely and properly discontinuously.
+\end{cor}
+
+The group $G$ is isomorphic to $\pi_1(X)$.
+
+\begin{ex} \label{proper:ex}
+Let a discrete group $G$ act on a locally compact space $X$. The following are equivalent:
+\begin{itemize}
+\item the action is properly discontinuous; 
+\item for every compact $K\subset X$, the set $\big\{g\ |\ g(K) \cap K \neq \emptyset\big\}$ is finite; \item the map 
+$ G \times X \to X \times X$ that sends $(g,x)$ to $(g(x), x)$ is proper.
+\end{itemize}
+\end{ex}
+
+\subsection{Isometry group}
+We now want to consider the case where a group $G$ acts by isometries on a Riemannian manifold $M$. In this case we have a homomorphism
+$$G \to \Iso(M)$$
+with values in the \emph{isometry group} $\Iso(M)$ of $M$, \emph{i.e.}~the group of all isometries $f \colon M \to M$. The group $\Iso(M)$ is much smaller than $\Omeo (M)$. \index{isometry!isometry group} \index{Myers -- Steenrod theorem}
+
+\begin{teo}[Myers -- Steenrod] \label{MS:teo}
+The group $\Iso (M)$ has a natural Lie group structure compatible with the compact-open topology. The map $F\colon \Iso(M) \times M \to M \times M$ that sends
+$(\varphi, p)$ to $(\varphi(p), p)$ is proper.
+\end{teo}
+\begin{cor} If $M$ is compact then $\Iso(M)$ is compact.
+\end{cor}
+
+\begin{prop} \label{stabilizer:compact:prop}
+The stabilizer of any point $x\in M$ is a compact Lie subgroup of $\Iso(M)$.
+\end{prop}
+\begin{proof}
+The stabilizer of $x$ is closed and hence is a Lie subgroup of $\Iso(M)$. The isometries that fix $x$ are determined by their orthogonal action on $T_xM$ and therefore form a compact Lie subgroup of $O(n)$. 
+\end{proof}
+
+The hard part of the Myers -- Steenrod Theorem is to endow $\Iso(M)$ with a Lie group structure. In fact, in all the concrete cases that we will encounter, the Lie group structure of $\Iso(M)$ will be evident from the context, so we will not need the full strength of Theorem \ref{MS:teo}. The rest of the theorem is not difficult to prove and we can leave it as an exercise.
+
+\begin{ex} Prove that $F$ is proper.
+\end{ex}
+
+We denote by $\Iso^+(M)$ the subgroup of $\Iso(M)$ consisting of all the orientation-preserving isometries. It has index one or two in $\Iso(M)$.
+
+\subsection{Discrete groups}
+Let $M$ be a Riemannian manifold. The group $\Iso(M)$ is a Lie group, so it makes sense to consider discrete subgroups.
+
+\begin{prop} \label{iff:discrete:prop}
+A group $\Gamma<\Iso(M)$ acts properly discontinuously on $M$ if and only if it is discrete.
+\end{prop}
+\begin{proof}
+If $\Gamma$ is discrete, Theorem \ref{MS:teo} and Exercise \ref{proper:ex} imply that it acts properly discontinuously. Conversely, if $\Gamma$ acts properly discontinuously then $e\in \Gamma$ is easily seen to be isolated, and we apply Exercise \ref{isolated:ex}.
+\end{proof}
+
+If $\Gamma < \Iso(M)$ is discrete and acts freely, the quotient map $M \to M/_\Gamma$ is a covering. Moreover, the Riemannian structure projects from $M$ to $M/_\Gamma$.
+
+\begin{prop} \label{quotient:prop}
+Let $\Gamma <\Iso(M)$ act freely and properly discontinuously on $M$. There is a unique Riemannian structure on the manifold $M/_\Gamma$ such that the covering $\pi\colon M \to M/_\Gamma$ is a local isometry.
+\end{prop}
+\begin{proof}
+Let $U\subset M/_\Gamma$ be a well-covered set: we have $\pi^{-1}(U) = \sqcup_{i\in I} U_i$ and $\pi|_{U_i}\colon U_i \to U$ is a homeomorphism. Pick an $i\in I$ and assign to $U$ the smooth and Riemannian structure of $U_i$ transported along $\pi$. The resulting structure on $U$ does not depend on $i$ since the open sets $U_i$ are related by isometries in $\Gamma$. We get a Riemannian structure on $M/_\Gamma$, determined by the fact that $\pi$ is a local isometry.
+\end{proof}
+
+\subsection{Measures} \label{measure:descends:subsection}
+The case where a group $G$ acts by preserving some measure instead of a Riemannian metric is also very interesting, although quite different. This situation will occur only in Chapter \ref{automorfismi:chapter}.
+
+Let a group $G$ act on a manifold $M$. A Borel measure $\mu$ on $M$ is \emph{$G$-invariant} if $\mu(S) = \mu(g(S))$ for every Borel set $S\subset M$. 
+
+If $G$ acts on $M$ freely and properly discontinuously, then $M \to M/_G$ is a covering and every $G$-invariant measure $\mu$ on $M$ descends to a natural measure on the quotient $M/_G$ which we still indicate by $\mu$. The measure on $M/_G$ is defined as follows: for every well-covered open set $U\subset M/_G$ we have $\pi^{-1}(U) = \sqcup_{i\in I}U_i$ and we assign to $U$ the measure of $U_i$ for any $i\in I$. This assignment extends to a unique Borel measure on $M/_G$ by Proposition \ref{ricoprimento2:prop}.
+
+Note that the measure on $M/_G$ is \emph{not} the push-forward of $\mu$, namely it is not true that $\mu(U) = \mu(\pi^{-1}(U))$.
+
+\section{Homology}
+The singular homology theory needed in this book is not very deep: all the homology groups of the manifolds that we consider are boringly determined by their fundamental group. The theory is quickly reviewed in this section, a standard introduction is Hatcher's \emph{Algebraic Topology} \cite{HAT}.
+
+\subsection{Definition}
+Let $X$ be a topological space and $R$ be a ring. The cases $R = \matZ$, $\matR$, or $\matZ/_{2\matZ}$ are typically the most interesting ones.
+
+A \emph{singular $k$-simplex} is a continuous map $\alpha\colon \Delta_k \to X$ from the standard  $k$-dimensional simplex $\Delta_k$ into $X$. A \emph{$k$-chain} is an abstract linear combination
+$$\lambda_1\alpha_1+\ldots +\lambda_h\alpha_h$$
+of singular $k$-simplexes $\alpha_1,\ldots,\alpha_h$ with coefficients $\lambda_1,\ldots,\lambda_h \in R$. The set $C_k(X,R)$ of all $k$-chains is a $R$-module. There is a linear boundary map $\partial_k\colon C_k(X,R) \to C_{k-1}(X,R)$ such that $\partial_{k-1}\circ \partial_k=0$. The \emph{cycles} and \emph{boundaries} are the elements of the submodules  
+$$Z_k(X,R) = \ker \partial_k, \quad  B_k(X,R) = \img \partial_{k+1}.$$
+The $k$-th \emph{homology group} is the quotient
+$$H_k(X,R) = Z_k(X,R)/_{B_k(X,R)}.$$
+We sometimes omit $R$ and write $H_k(X)$ instead of $H_k(X,R)$. \index{homology group}
+
+By taking the dual spaces $C^k(X, R) = \Hom(C_k(X,R), R)$ we define analogously the \emph{cohomology group} $H^k(X,R)$. (Co-)homology groups are also defined for pairs $(X,Y)$ with $Y\subset X$. When $X=U\cup V$ and $U,V$ are open we get the exact \emph{Mayer -- Vietoris sequence}:
+\index{Mayer -- Vietoris sequence}
+$$\ldots \longrightarrow H_{n+1}(X) \longrightarrow H_n(U\cap V) \longrightarrow H_n(U) \oplus H_n(V) \longrightarrow H_n(X) \longrightarrow\ldots$$
+(Co-)homology groups are \emph{functorial} in the sense that continuous maps induce natural homomorphisms of groups. Homotopic maps induce the same homomorphisms.
+
+If $X$ is path-connected, then $H_0(X,R)=R$ and there is a canonical homomorphism $$\pi_1(X) \longrightarrow H_1(X,\matZ).$$
+The homomorphism is surjective and its kernel is generated by the commutators of $\pi_1(X)$: in other words $H_1(X,\matZ)$ is the \emph{abelianization} of $\pi_1(X)$. Concerning cohomology, we have
+$$H^1(X,\matZ) = \Hom\big(H_1(X,\matZ),\matZ\big)  = \Hom(\pi_1(X), \matZ).$$
+The relation between $H^i(X,\matZ)$ and $H_i(X,\matZ)$ for $i>1$ is not so immediate.
+
+\subsection{Dualities}
+Let $M$ be a compact oriented connected $n$-manifold with (possibly empty) boundary. The abelian group $H_k(M,\matZ)$ is finitely generated and hence decomposes as  \index{Betti number}
+$$H_k(M,\matZ) \isom F_k \oplus T_k$$ 
+where $F_k = \matZ^{b_k}$ is free and $T_k$ is finite. The \emph{torsion} subgroup $T_k$ consists of all finite-order elements in $H_k(M,\matZ)$. The rank $b_k$ of $F_k$ is the $k$-th \emph{Betti number} of $M$. In cohomology things change only a little:
+$$H^k(M,\matZ) \isom F_k \oplus T_{k-1}.$$
+All these groups vanish when $k>n$. Even when the torsion vanishes, there is no canonical isomorphism between $H_k(M)$ and $H^k(M)$. On the other hand,
+the \emph{Lefschetz duality} provides a canonical identification  \index{Lefschetz duality}
+$$H^k(M) = H_{n-k}(M,\partial M)$$
+for any ring $R$. When $\partial M=\emptyset$ this is the \emph{Poincar\'e duality} $H^k(M) = H_{n-k}(M)$. In particular we get  \index{Poincar\'e duality}
+$$H_n(M, \partial M,\matZ) = H^0(M,\matZ) \isom \matZ$$ 
+and the choice of an orientation for $M$ is equivalent to a choice of a generator $[M] \in H_n(M,\partial M,\matZ)$ called the \emph{fundamental class} of $M$. \index{fundamental class}
+
+An important exact sequence for $M$ is the following:
+$$\ldots \longrightarrow H_n(M) \longrightarrow H_n(M,\partial M) \longrightarrow H_{n-1}(\partial M) \longrightarrow H_{n-1}(M) \longrightarrow \ldots$$
+
+\subsection{Intersection form} \label{intersection:subsection}
+Let $G$ and $H$ be finitely generated abelian groups, seen as $\matZ$-modules. A bilinear form
+$$\omega\colon G\times H \longrightarrow \matZ$$
+is \emph{non-degenerate} if for every infinite-order element $g\in G$ there is a  $h\in H$ such that $\omega(g,h)\neq 0$. If $G=H$, we say that $\omega$ is \emph{symmetric} (resp.~\emph{skew-symmetric}) if $\omega(g_1,g_2)$ equals $\omega(g_2,g_1)$ (resp.~$-\omega(g_2,g_1)$) for all $g_1,g_2\in G$. A skew-symmetric non-degenerate form is called \emph{symplectic}.  \index{symplectic form}
+
+Let $M$ be a compact oriented connected $n$-manifold with (possibly empty) boundary. The Lefschetz duality furnishes a non-degenerate bilinear form
+$$\omega\colon H_k(M,\matZ) \times H_{n-k}(M,\partial M, \matZ) \longrightarrow \matZ$$
+called the \emph{intersection form}. It has the following geometric interpretation.
+\index{intersection form in homology}
+
+An oriented closed $k$-submanifold $S\subset M$ defines a class $[S] \in H_k(M)$ as the image of its fundamental class via the map $i_*\colon H_k(S) \to H_k(M)$ induced by the inclusion. If $S$ has boundary and is properly embedded (that is, $\partial S = \partial M \cap S)$, it defines a class $[S] \in H_k(M,\partial M)$.
+
+Suppose two oriented submanifolds $S$ and $S'$ have complementary dimensions $k$ and $n-k$ and intersect transversely: every intersection point $x$ is isolated and has a sign $\pm 1$, defined by comparing the orientations of $T_x S \oplus T_xS'$ and $T_x M$. The \emph{algebraic intersection} $S\cdot S'$ of $S$ and $S'$ is the sum of these signs.  \index{algebraic intersection}
+
+\begin{teo} \label{pairing:teo}
+Let $S, S'$ be transverse and represent two classes $[S]\in H_k(M)$ and $[S']\in H_{n-k}(M,\partial M)$. We have
+$$\omega ([S], [S']) = S\cdot S'.$$
+\end{teo}
+
+\begin{cor} The intersection number of two transverse oriented submanifolds of complementary dimension depends only on their homology classes.
+\end{cor}
+
+When $M$ is closed and has even dimension $2n$, the central form
+$$\omega\colon H_n(M,\matZ) \times H_n(M, \matZ) \longrightarrow \matZ$$
+is symmetric or skew-symmetric, depending on whether $n$ is even or odd. 
+
+Everything we said about fundamental classes, Lefschetz duality, and intersection forms holds for non-orientable manifolds as well, provided that we pick $R = \matZ/_{2\matZ}$ and consider bilinear forms and intersections in $\matZ/_{2\matZ}$.
+
+\section{Cells and handle decompositions} 
+Many nice topological spaces can be constructed iteratively starting from finitely many points and then attaching some discs of increasing dimension called \emph{cells}. When the topological space is a differentiable manifold one typically thickens the cells to \emph{handles}. 
+
+Cells and handles are beautifully introduced by Hatcher \cite{HAT} and Kosinksi \cite{K}, respectively.
+
+\subsection{Cell complexes}
+A \emph{finite cell complex} of dimension $n$ (briefly, a $n$-complex) is a topological space obtained iteratively in the following manner:
+\begin{itemize}
+\item a $0$-complex $X^0$ is a finite set of points, 
+\item a $n$-complex $X^n$ is obtained from a $(n-1)$-complex $X^{n-1}$ by attaching finitely many \emph{$n$-cells}, that is copies of $D^n$ glued along continuous maps $\varphi\colon \partial D^n \to X^{n-1}$.
+\end{itemize}
+The closed subset $X^k\subset X^n$ is the \emph{$k$-skeleton} of $X^n$, for all $k<n$.  \index{cell complex}
+
+\begin{prop}
+Let $X$ be a $n$-complex. The inclusion map $X^k \hookrightarrow X$ induces an isomorphism $\pi_{j}(X^k) \to \pi_j(X)$ for all $j<k$.
+\end{prop}
+\begin{proof}
+By transversality, maps $S^j\to X$ and homotopies between them can be homotoped away from cells of dimension $\geqslant j+2$. 
+\end{proof}
+
+In particular, the space $X$ is connected if and only if $X^1$ is, and its fundamental group is captured by $X^2$.
+
+\begin{teo} Every differentiable compact $n$-manifold may be realised topologically as a finite $n$-complex.
+\end{teo}
+
+A presentation for the fundamental group of a cell complex $X$ can be constructed as follows.
+If $x_0\in X^0$, we fix a maximal tree $T\subset X^1$ containing $x_0$ and equip the $k$ arcs in $X^1\setminus T$ with some arbitrary orientations. These arcs determine some generators $g_1,\ldots, g_k\in\pi_1(X,x_0)$. The boundary of a $2$-cell makes a circular path in $X^1$: every time it crosses an arc $g_i$ in some direction (entering from one side and exiting from the other) we write the corresponding letter $g_i^{\pm 1}$ and get a word. The $s$ two-cells produce $s$ word relations. We have constructed a presentation for $\pi_1(X)$.
+
+\subsection{Euler characteristic}
+The \emph{Euler characteristic} of a $n$-complex $X$ is the integer  \index{Euler characteristic}
+$$\chi (X) = \sum_{i=0}^n (-1)^i C_i$$
+where $C_i$ is the number of $i$-cells in $X$. It is also equal to 
+$$\chi(X) = \sum_{i=0}^n (-1)^i b_i(X)$$
+where $b_i(X)$ is the $i$-th Betti number of $X$. Therefore $\chi(X)$ is a number which depends only on the topology of $X$, that can be easily calculated from any cell decomposition of $X$.
+
+\begin{prop} If $\tilde X \to X$ is a degree-$d$ covering of finite complexes then $\chi(\tilde X) = d\cdot \chi(X)$.
+\end{prop}
+\begin{proof}
+A $k$-cell in $X$ is simply-connected and hence lifts to $d$ distinct $k$-cells in $\tilde X$. A cell decomposition of $X$ thus induces one of $\tilde X$ where the numbers $C_i$ are all multiplied by $d$.
+\end{proof}
+
+It is much harder to control homology under coverings. The Euler characteristic of a closed manifold measures the obstruction of constructing a nowhere-vanishing vector field.
+
+\begin{teo} A closed differentiable manifold $M$ has a nowhere-vanishing vector field if and only if $\chi(M)=0$.
+\end{teo}
+
+\subsection{Aspherical cell-complexes}
+A finite cell complex is locally contractible and hence has a universal cover $\tilde X$. If $\tilde X$ is contractible the complex  $X$ is called \emph{aspherical}. \index{cell complex!aspherical cell complex}
+
+\begin{example}
+If a closed manifold $M$ is covered by $\matR^n$, it is aspherical. 
+\end{example}
+
+By a theorem of Whitehead, a finite cell complex $X$ is aspherical if and only if all its higher homotopy groups $\pi_i(X)$ with $i\geqslant 2$ vanish.
+
+The following theorem says that maps to aspherical spaces are determined (up to homotopy) by homomorphisms between fundamental groups.
+
+\begin{teo} \label{complessi:omotopia:teo}
+Let $(X,x_0), (Y,y_0)$ be pointed connected finite cellular complexes. If $Y$ is aspherical, every homomorphism $\pi_1(X,x_0) \to \pi_1(Y,y_0)$ is induced by a continuous map $(X,x_0)\to (Y,y_0)$, unique up to homotopy.
+\end{teo}
+\begin{proof}
+We construct a continuous map $f\colon X^k \to Y^k$ iteratively on the $k$-skeleta, starting from $k=1$. 
+
+Let $T$ be a maximal tree in $X^1$. The oriented 1-cells $g_1,\ldots, g_k$ in $X^1\setminus T$ define generators in $\pi_1(X,x_0)$. We define $f\colon X^1 \to Y^1$ by sending $T$ to $y_0$ and each $g_i$ to any loop in $Y$ representing the image of $g_i$ along the given homomorphism $\pi_1(X,x_0) \to \pi_1(Y,y_0)$.
+
+The map $f$ sends the boundary of each 2-cell to a homotopically trivial loop in $Y$ and hence extends to a map $f\colon X^2 \to Y^2$. Since $Y$ is aspherical, the higher homotopy groups $\pi_i(Y)$ with $i\geqslant 2$ vanish and hence $f$ extends to a map $f\colon X^k \to Y^k$ iteratively for all $k\geqslant 3$.
+
+We prove that $f$ is unique up to homotopy. Let $f'$ be a map that realises the given homomorphism on fundamental groups. We can construct a homotopy between $f$ and $f'$ iteratively on $X^k$ as follows. 
+
+For $k=1$, we can suppose that both $f$ and $f'$ send $T$ to $y_0$. By hypothesis they send the generators $g_i$ to homotopic loops, hence we can homotope $f'$ to $f$ on $X^1$. For $k\geqslant 2$, the maps $f$ and $f'$ on each $k$-cell are homotopic because they glue to a map $S^k \to Y$, which is null-homotopic because $\pi_k(Y)$ is trivial.
+\end{proof}
+
+\begin{cor} \label{aspherical:cor}
+Let $X$ and $Y$ be connected finite aspherical complexes. Every isomorphism $\pi_1(X) \to \pi_1(Y)$ is realised by a homotopic equivalence $X \to Y$, unique up to homotopy.
+\end{cor}
+
+In particular the homotopy type of an aspherical manifold is fully determined by its fundamental group.
+
+\begin{cor}
+Two aspherical closed manifolds of distinct dimension have non-isomorphic fundamental groups.
+\end{cor}
+\begin{proof}
+Two closed manifolds of different dimension cannot be homotopically equivalent because they have non-isomorphic homology groups.
+\end{proof}
+
+We cite for completeness this result, although we will never use it. \index{Cartan--Hadamard theorem}
+
+\begin{teo}[Cartan--Hadamard] A complete Riemannian manifold $M$ with sectional curvature everywhere $\leqslant 0$ has a universal covering diffeomorphic to $\matR^n$ and is hence aspherical.
+\end{teo}
+\begin{proof}[Sketch of the proof]
+Pick a point $x\in M$. Since $M$ is complete, the exponential map $\exp_x\colon T_xM \to M$ is defined on $T_xM$. The fact that the sectional curvatures are $\leqslant 0$ imply that $(d\exp_x)_y$ is invertible for any $y\in T_x$ and $\exp_x$ is a covering.
+\end{proof}
+
+At a single point in this book we will need the following theorem.
+\begin{teo} \label{no:torsion:aspherical:teo}
+The fundamental group of an aspherical manifold $M$ has no torsion.
+\end{teo}
+\begin{proof}[Sketch of the proof]
+Up to passing to a cover, it suffices to consider the case $\pi_1(M) \isom \matZ/_{n\matZ}$ for some $n\geqslant 2$. This case is excluded because the cohomology of $M$ is isomorphic to the (suitably defined) cohomology of $\matZ/_{n\matZ}$, which has however infinite dimension.
+\end{proof}
+
+\subsection{Gluing portion of boundaries}
+Every compact differentiable $n$-manifold $M$ can be obtained topologically as a finite complex. The finite complex structure is however not designed to describe the smooth structure of $M$, and for that purpose it is better to replace $k$-cells with some thickened objects called \emph{$k$-handles}. These handles are $n$-discs glued iteratively along portions of their boundaries. Before describing them, we briefly explain how smooth manifolds can be glued along portions of their boundaries.
+
+Let $M$ and $N$ be two $n$-manifolds with boundary and $X\subset \partial M$, $Y\subset \partial N$ be two compact $(n-1)$-submanifolds with boundary. A diffeomorphism $\varphi\colon X\to Y$ defines a topological space
+$$M \cup_{\varphi} N$$
+that may be promoted to a differentiable manifold: it suffices to use a collar as in Section \ref{cut:subsection}, see Figure \ref{boundary_glue:fig}.
+The glued manifold depends (up to diffeomorphism) only on the isotopy class of $\varphi$.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 12.5 cm] {\iftoggle{BW}{boundary_glue-BW}{boundary_glue}}
+\nota{To glue two smooth manifolds along portions of their boundaries (left) we pick a collar for these portions (centre), then we remove $X,Y$ and identify the interiors of the collars (right).}
+\label{boundary_glue:fig}
+\end{center}
+\end{figure}
+
+
+\subsection{Handles} \label{handles:subsection}
+Let $M$ be a (possibly empty or disconnected) $n$-manifold with boundary and $0\leqslant k \leqslant n$. A \emph{$k$-handle} is a manifold $D^k\times D^{n-k}$ attached to $M$ along some diffeomorphism $\varphi\colon \partial D^k \times D^{n-k}\to Y\subset \partial M$, hence producing a new manifold $M'$. 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 12 cm] {\iftoggle{BW}{handles-BW}{handles}}
+\nota{Two 0-handles\iftoggle{BW}{}{ (yellow)}, two 1-handles\iftoggle{BW}{}{ (orange)}, and one 2-handle\iftoggle{BW}{}{ (red)} in dimension 2 (left). Two 0-handles\iftoggle{BW}{}{ (yellow)} and one 1-handle\iftoggle{BW}{}{ (orange)} in dimension 3 (right).}
+\label{handles:fig}
+\end{center}
+\end{figure}
+
+For instance, a $0$-handle is a $D^0 \times D^n = D^n$ attached to nothing, since $\partial D^0 = \varnothing$. This means that attaching a 0-handle to $M$ consists of adding a disjoint disc $D^n$ to it. For instance, by attaching a 0-handle to the empty set we create a disc $D^n$ out of nothing. 
+
+A $1$-handle is a $D^1\times D^{n-1}$ attached along $\partial D^1 \times D^{n-1} = S^0 \times D^{n-1}$, that is two copies of $D^{n-1}$. Some examples in dimension $n=2,3$ are shown in Figure \ref{handles:fig}. A $2$-handle is a $D^2\times D^{n-2}$ attached along $\partial D^2 \times D^{n-2} = S^1\times D^{n-2}$. When $n=2$ this is a disc attached along its boundary, see Figure \ref{handles:fig}-(left).
+
+\subsection{Handle decompositions}
+A sequence of handle attachments \index{handle decomposition}
+$$\emptyset \rightsquigarrow M_1 \rightsquigarrow \ldots \rightsquigarrow M_k = M$$
+starting from the empty set and producing a compact manifold $M$ with (possibly empty) boundary is called a \emph{handle decomposition} for $M$. Using Morse theory one proves the following.
+
+\begin{teo} Every compact manifold (possibly with boundary) can be obtained from a handle decomposition.
+\end{teo}
+
+\begin{example}
+The disc $D^n$ has an obvious handle decomposition consisting of a single $0$-handle. It also has more complicate handle decompositions, as Figure \ref{handles:fig} shows.
+\end{example}
+
+By transversality, handles may always be reordered so that the lower index handles are attached first, and handles of the same index are attached simultaneously. So we can think of a decomposition as the appearing of some 0-handles, then the simultaneous attaching of some 1-handles, then of some 2-handles, and so on. 
+
+A handle decomposition of a closed manifold may be turned upside down, by reversing all arrows and interpreting every $k$-handle as a $(n-k)$-handle. 
+
+\begin{prop} \label{0:handle:prop}
+Every compact connected manifold $M$ has a handle decomposition with one $0$-handle and at most one $n$-handle.
+\end{prop}
+
+If $M$ has a handle decomposition with $n_i$ handles of index $i$ then
+$$\chi(M) = \sum_{i=0}^n (-1)^i n_i.$$
+
+\subsection{Triangulations} \label{triangulations:subsection}
+Instead of decomposing a manifold into handles, one may decide to decompose it into simplexes as in Figure \ref{Torus-triang:fig}. One such decomposition is called a triangulation: we now give a formal definition.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 7 cm] {Torus-triang.png}
+\nota{A triangulated torus.}
+\label{Torus-triang:fig}
+\end{center}
+\end{figure}
+
+An (abstract and finite) \emph{simplicial complex} is a finite set $S$ of \emph{vertices} together with a set $X$ of subsets of $S$, called \emph{faces}, which contains all singletons and such that every subset of a face is also a face. A face of cardinality $k+1$ has \emph{dimension} $k$. \index{simplicial complex}
+
+A simplicial complex $X$ has a topological realisation $|X|$, in which every face $F\in X$ of dimension $k$ transforms into a $k$-simplex with vertices in $F$ (we get a cell complex). The complex $X$ is \emph{purely $n$-dimensional} if every face is contained in a face of dimension $n$. This implies that $|X|$ is the union of its $n$-simplexes.
+
+Let now $M$ be a differentiable $n$-manifold. A \emph{smooth $k$-simplex} in $M$ is a subset $\Delta \subset M$ diffeomorphic to a $k$-simplex in $\matR^n$ (we mean that there is a diffeomorphism between open neighbourhoods of $\Delta$ and of the simplex sending the first to the second). A \emph{smooth triangulation} of $M$ is a pure $n$-dimensional simplicial complex $X$ together with a homeomorphism between $|X|$ and $M$ that transforms every $k$-simplex in $X$ into a smooth $k$-simplex in $M$. \index{triangulation}
+
+\begin{teo} Every compact manifold with (possibly empty) boundary has a smooth triangulation.
+\end{teo}
+
+Handle decompositions are often more flexible and efficient than triangulations, but triangulations have a more combinatorial nature and can for instance be handled by a computer. Both constructions are widely used.
+
+On a simplicial complex $X$, the \emph{star} of a vertex $v$ is the set of all simplexes containing $v$ plus all their sub-simplexes; the \emph{link} of $v$ is the subset of the star consisting of the simplexes that do not contain $v$. Topologically, the star of $v$ is a closed neighbourhood of $v$ homeomorphic to a cone on its link.
+\index{star of a vertex} \index{link of a vertex}
+
+\subsection{Hypersurfaces and cohomology}
+The techniques introduced in this chapter furnish another characterisation of the first cohomology group of a manifold. Let $[X,Y]$ denote the homotopy classes of continuous maps $X \to Y$.
+
+\begin{prop}
+Let $X$ be a cell complex. There is a canonical identification
+$$H^1(X;\matZ) = [X,S^1].$$
+\end{prop}
+\begin{proof}
+We know that $H^1(X;\matZ) = \Hom(\pi_1(X),\matZ)$.
+The circle $S^1$ is aspherical with $\pi_1(S^1)=\matZ$, so by Theorem \ref{complessi:omotopia:teo} every homomorphism $\pi_1(X) \to \pi_1(S^1)$ is realised by a map $X\to S^1$, unique up to homotopy.
+\end{proof}
+
+We have noted that an oriented $k$-submanifold $S\subset M$ determines a class $[S]\in H_k(M,\matZ)$. It is natural to ask whether every homology class may be represented by an oriented submanifold: this is false in general, but it is true in codimension one.
+
+\begin{prop} \label{homology:prop}
+Let $M$ be a compact oriented $n$-manifold with (possibly empty) boundary. Every class in $H_{n-1}(M,\partial M;\matZ)$ is represented by an oriented properly embedded hypersurface $S\subset M$.
+\end{prop}
+\begin{proof}
+We have
+$$H_{n-1}(M,\partial M;\matZ) = H^1(M;\matZ) = \Hom (\pi_1(M), \matZ) = [M, S^1].$$
+Every map $M\to S^1$ is homotopic to a smooth map, hence each class $\alpha \in H^1(M,\matZ)$ is represented by a smooth map $f\colon M\to S^1$. By Sard's lemma there is a regular value $x\in S^1$, whose counter-image $S = f^{-1}(x)$ is a hypersurface, transversely oriented by $f$ and hence oriented (since $M$ is).
+
+To prove that $[S] = \alpha$ we verify that $[S]$ and $\alpha$ act on $\pi_1(M)$ in the same way. Pick a loop $\gamma \in \pi_1(M)$ transverse to $S$. The number $\alpha(\gamma)$ is the degree of $f\circ\gamma$, that is the number of times $f\circ \gamma$ crosses $x$ counted with signs, which equals the number of times $\gamma$ crosses $S$ counted with signs.
+\end{proof}
+
+\begin{prop}
+An oriented connected properly embedded hypersurface $S\subset M$ is separating if and only if $[S]\in H_{n-1}(M,\partial M; \matZ)$ is trivial.
+\end{prop}
+\begin{proof}
+The surface $S$ is separating if and only if $S \cdot \alpha = 0$ for every loop $\alpha$ transverse to $S$ (exercise). Since $\omega([S], [\alpha]) = S \cdot \alpha$ and $\omega$ is non-degenerate (see Section \ref{intersection:subsection}), this holds precisely when $[S]=0$.
+\end{proof}
+
+\subsection{Topological discs}
+Finally, we mention a purely topological theorem that will be used only at one point in this book, in Chapter \ref{automorfismi:chapter}.
+
+\begin{teo} \label{topological:disc:teo}
+Let $M$ be a compact topological manifold, whose interior and boundary are homeomorphic respectively to $B^n$ and $S^{n-1}$. Then $M$ is homeomorphic to $D^n$.
+\end{teo}
+\begin{proof}
+We use two important theorems on topological manifolds, whose proofs can be found in the first chapter of the book \emph{Topological embeddings} of Rushing \cite{Ru}.
+
+As in every compact topological manifold, the boundary $\partial M$ has a topological collar by a theorem of Brown (see Theorem 1.7.4 in that book). The interior boundary sphere of the collar is contained in $\interior M \cong B^n$ and hence bounds a closed disc by the Generalised Sch\"onflies Theorem (see Theorem 1.8.2 there). The manifold $M$ is obtained by collaring a closed disc and is hence a closed disc.
+\end{proof}
+
+

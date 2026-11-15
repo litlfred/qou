@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/thurston/blocks/prose-sec-012",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/thurston/blocks/prose-sec-012",
   "kind": "prose",
   "title": "THE PROJECTIVE MODEL. 2.8a",
   "pageStart": 24,
   "pageEnd": 24,
   "text": "../sections/sec-012-24-the-projective-model-28a.md",
-  "derivedFrom": "library/thurston/manifest",
-  "sourceDocument": "library/thurston/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/thurston",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/thurston",
   "provenance": "ingested"
 }

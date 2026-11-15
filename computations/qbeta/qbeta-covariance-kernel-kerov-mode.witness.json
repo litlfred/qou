@@ -1,5 +1,7 @@
 {
   "computation": "qbeta-covariance-kernel-kerov-mode",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal",
   "assertions": [
     {
       "name": "parseval_exact_over_full_class_basis",
@@ -154,8 +156,8 @@
     }
   },
   "provenance": {
-    "headSha": "f22d662f99a527ed0c9dfea4e790cde465d5b623",
+    "headSha": "eb645d81e7fe1646342513e676f6498caab4a229",
     "producer": "computations/qbeta/qbeta_covariance_kernel_kerov_mode_probe.py",
-    "elapsed_s": "2.076"
+    "elapsed_s": "3.084"
   }
 }

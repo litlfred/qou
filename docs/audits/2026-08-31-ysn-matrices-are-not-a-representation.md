@@ -1,5 +1,20 @@
 # The binding path's seminormal matrices are not a representation of H_n(q)
 
+> ## Note, 2026-09-12 — the `uic(1,1)` values here are the GATED return
+>
+> Every `unified_iterative_correction` figure in this document
+> (`−0.08955968305895067` at `k_exact = 4`, `−9.147736231020852` at the default)
+> is the **gated** return. The Pass-2 sign gate was **dropped** on 2026-09-12
+> (bean `qou-21oc`, PR #7253); the ungated values are `−0.412212192245027` and
+> `−17.6908290020795`.
+>
+> **This document's conclusions are untouched.** Every comparison here is a
+> *ratio or a difference between two runs of the same code path*, and both sides
+> move identically under the gate drop — the `IDENTICAL` fixed-vs-main check, the
+> `6.2e-16` agreement, and the `+180 %` column all hold verbatim. Only the
+> absolute values are superseded, and they are kept as the record of what was
+> measured on 2026-08-31.
+
 **Measured 2026-08-31** on `origin/main`, `pyhecke_native 0.9.0`. Found while
 executing the performance fixes of
 [`2026-08-30-binding-compute-scaling-bottleneck.md`](2026-08-30-binding-compute-scaling-bottleneck.md)

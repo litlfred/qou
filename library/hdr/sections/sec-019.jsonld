@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/hdr/sections/sec-019",
   "@type": [
     "doco:Section"
@@ -9,18 +14,18 @@
   "pageEnd": 44,
   "contains": [
     "library/hdr/blocks/prose-sec-019",
-    "library/hdr/blocks/rem-sec-019-01",
+    "library/hdr/blocks/remark-sec-019-01",
     "library/hdr/blocks/prop-sec-019-02",
     "library/hdr/blocks/prop-sec-019-03",
-    "library/hdr/blocks/rem-sec-019-04",
+    "library/hdr/blocks/remark-sec-019-04",
     "library/hdr/blocks/prop-sec-019-05",
-    "library/hdr/blocks/ex-sec-019-06",
+    "library/hdr/blocks/example-sec-019-06",
     "library/hdr/blocks/prop-sec-019-07",
     "library/hdr/blocks/prop-sec-019-08",
     "library/hdr/blocks/cor-sec-019-09",
-    "library/hdr/blocks/rem-sec-019-10"
+    "library/hdr/blocks/remark-sec-019-10"
   ],
-  "derivedFrom": "library/hdr/manifest",
-  "sourceDocument": "library/hdr/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/hdr",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/hdr",
   "provenance": "ingested"
 }

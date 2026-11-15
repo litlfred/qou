@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1307.6697v2/blocks/prose-sec-006",
+  "kind": "prose",
+  "title": "An example: the figure-eight knot",
+  "pageStart": 16,
+  "pageEnd": 20,
+  "text": "../sections/sec-006-7-an-example-the-figure-eight-knot.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1307.6697v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1307.6697v2",
+  "provenance": "ingested"
+}

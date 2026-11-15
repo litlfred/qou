@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-laplacian-consumers",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-laplacian-consumers",
+  "kind": "remark",
+  "title": "Consumers of the $q$-Laplacian spectral tower; fibre vs observable level",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-laplacian-spectral-tower"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-q-laplacian-spectral-tower",
+  "tags": [
+    "q-laplacian",
+    "spectral-tower",
+    "root-of-unity",
+    "verlinde",
+    "fibre-level",
+    "unifying"
+  ],
+  "text": "q-laplacian-consumers.md",
+  "provenance": "authored"
+}

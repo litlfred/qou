@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/18/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/18/blocks/prose-sec-003",
   "kind": "prose",
-  "title": "In section 4 we study the deformation space of conformal simplices. In",
-  "pageStart": 1,
-  "pageEnd": 1,
-  "text": "../sections/sec-003-3-in-section-4-we-study-the-deformation-space-of.md",
-  "derivedFrom": "library/18/manifest",
-  "sourceDocument": "library/18/manifest",
+  "title": "Hyperbolic conformal simplices",
+  "pageStart": 5,
+  "pageEnd": 5,
+  "text": "../sections/sec-003-3-hyperbolic-conformal-simplices.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/18",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/18",
   "provenance": "ingested"
 }

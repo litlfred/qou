@@ -217,6 +217,35 @@ builds the orphan by hand. An orphan is not merely unverified — it is a latent
 build failure for every future consumer. Coordinated on #4777; this PR registers
 one of them.
 
+> **🛑 CORRECTION 2026-09-14 — the two paragraphs above are wrong, and the
+> second is wrong in a way that misdirects.** Kept as written because this is a
+> dated record; do not act on either.
+>
+> **"761 of 1598 `QOU` modules never built by `lake build`" is false.**
+> `content/quantum-observable-universe/lean/lakefile.toml` declares
+> `globs = ["QOU", "QOU.+"]`, and `QOU.+` is `Glob.andSubmodules` — the library
+> target is the **whole tree**, so an unimported module IS compiled by
+> `lake build QOU`. That landed on **2026-08-08** (bean `qou-rc7b`), the same
+> day as this audit, which is presumably how they crossed;
+> `.github/workflows/lean-orphan-gate.yml` has carried the correction since
+> 2026-08-15 (bean `qou-kljb`). Full withdrawal:
+> [`2026-09-04-owner-gated-bean-queue.md` §WITHDRAWN](2026-09-04-owner-gated-bean-queue.md).
+>
+> **"Transitively contagious" does not follow, and is the more damaging half.**
+> It reasons *from* the false premise: if an orphan is never built, a registered
+> importer inherits a latent failure. Under the globs the orphan is built, so
+> there is no latent failure to inherit and no hand-build to wait for. Measured
+> 2026-09-13 with `scripts/lean-library-sweep.py --all`: **2830 of 2836 library
+> modules judged, 0 RED** — the contagion this paragraph predicts has zero
+> instances in the corpus.
+>
+> **What IS true, and is the salvageable finding:** `QHookDimensionBalanced` was
+> genuinely absent from the `lake-cache` olean tree, and that is a *cache*
+> property, not a build-reachability one. An absent olean means the module is
+> unbuilt **in this container**, which is real and is what made the build attempt
+> fail. Bean `qou-8jjo` records the general form and why its headline count
+> cannot be driven to zero.
+
 ## Not done here
 
 The rename/reconcile sweep. Nine definitions across nine files, each with

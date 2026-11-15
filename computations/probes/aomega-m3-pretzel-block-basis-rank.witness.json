@@ -1,0 +1,120 @@
+{
+  "name": "aomega-m3-pretzel-block-basis-rank",
+  "description": "The u -> 0 rank of the pretzel's six residue families is 4, not 6: the three colliding families share one limit, so they cannot be a holomorphic-block basis and no pairing of them is the index.",
+  "computation": "aomega-m3-pretzel-block-basis-rank",
+  "engine": "python+sympy",
+  "scriptFile": "aomega_m3_pretzel_block_basis_rank_probe.py",
+  "computedAt": "2026-09-13T19:19:05.316292+00:00",
+  "durationMs": 0,
+  "auditOnly": true,
+  "auditDoc": "docs/audits/2026-09-06-two-bridge-layering-from-farey-word.md",
+  "parameters": {
+    "QORDER": 6,
+    "orientation": "SnapPy's (Part 11)",
+    "families": "Part 12b's validated six (2 unit + 4 parity classes)"
+  },
+  "data": {
+    "limits": {
+      "F1": {
+        "0": "1",
+        "1": "-2",
+        "3": "3",
+        "4": "1",
+        "6": "-5"
+      },
+      "F2": {
+        "0": "1",
+        "1": "-2",
+        "3": "3",
+        "4": "1",
+        "6": "-5"
+      },
+      "F3(0,0)": {
+        "0": "1",
+        "1": "-2",
+        "3": "3",
+        "4": "1",
+        "6": "-5"
+      },
+      "F3(0,1)": {
+        "0": "1",
+        "1": "2",
+        "2": "4",
+        "3": "7",
+        "4": "13",
+        "5": "20",
+        "6": "35"
+      },
+      "F3(1,0)": {
+        "3/4": "-1",
+        "7/4": "-1",
+        "9/4": "2",
+        "11/4": "-1",
+        "13/4": "4",
+        "15/4": "-3",
+        "17/4": "6",
+        "19/4": "-7",
+        "21/4": "8",
+        "23/4": "-13"
+      },
+      "F3(1,1)": {
+        "3/4": "-1",
+        "7/4": "-1",
+        "9/4": "-2",
+        "11/4": "-1",
+        "13/4": "-4",
+        "15/4": "-3",
+        "17/4": "-6",
+        "19/4": "-7",
+        "21/4": "-8",
+        "23/4": "-13"
+      }
+    },
+    "rank_at_u_to_0": 4,
+    "bilinear_q0_at_X_1": "7/8",
+    "index_q0_at_zeta_1": "1",
+    "gz_block_rank": 6
+  },
+  "verdict": "MEASURED, structural: the six residue families have u -> 0 rank 4, not 6. The two unit factors and the even-even parity class — exactly the three whose poles collide into GZ's triple pole — share one limit (1 - 2q + 3q^3 + ...), while GZ's own six blocks are independent (rank 6). So no pairing of the residue families, diagonal or otherwise, can be the sigma_1 sigma_1 index: they are not a block basis. The q^0 failure survives the limit (7/8 against the index's 1), which rules out a zeta-identification artefact. What the index needs at the collision is the eps-EXPANSION of the colliding triple (value, first and second derivatives = GZ's H_0, H_1, H_2); the meridian deformation separates the poles WITHOUT separating the limits, so u is not a regularisation of that expansion. Scope (a) for 'the residue families as a block basis', with the invariant exhibited (a rank drop 6 -> 4). Parts 12b/14 are unaffected: they factorise the INTEGRAL, which is a different object, related to the index only through GGM (19) — which pairs blocks.",
+  "assertions": [
+    {
+      "name": "G1-the two unit factors and the even-even parity class share ONE u -> 0 limit (the three whose poles collide into GZ's triple pole)",
+      "passed": true,
+      "limit": {
+        "0": "1",
+        "1": "-2",
+        "3": "3",
+        "4": "1",
+        "6": "-5"
+      }
+    },
+    {
+      "name": "G2-the other three limits are pairwise distinct, and distinct from the collided one",
+      "passed": true
+    },
+    {
+      "name": "G3-the u -> 0 rank of the six families is 4, not 6 — they cannot be a basis of the six-dimensional block space GZ's weight decomposition (1 + 4 + 1) requires",
+      "passed": true,
+      "rank": 4,
+      "of": 6
+    },
+    {
+      "name": "G4-the Part 12b bilinear's q^0 tends to 7/8 as u -> 0, against the index's 1 — the failure survives the limit, so it is not an artefact of the zeta identification",
+      "passed": true,
+      "bilinear_q0": "(2*X**2 + 3*X + 2)/(2*(X + 1)**2)",
+      "at_X_1": "7/8",
+      "index_q0": "1"
+    },
+    {
+      "name": "G5-GZ's six q-side blocks H_0..H_5 ARE independent (rank 6) once enough orders are carried, so the shortfall is in our basis, not the target",
+      "passed": true,
+      "gz_rank": 6,
+      "columns": 13
+    }
+  ],
+  "scriptHash": "ae2aaff0a983",
+  "scriptCommitSha": "unknown",
+  "commitSha": "caecee0a2f4260840ab8828d746766d4b5b059d3",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
+}

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/s10955-022-02992-6/blocks/prose-sec-011",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/s10955-022-02992-6/blocks/prose-sec-011",
   "kind": "prose",
   "title": "Recurrence Relations for Subset Polymers: Proof of Theorem 2.7",
   "pageStart": 22,
   "pageEnd": 25,
   "text": "../sections/sec-011-34-recurrence-relations-for-subset-polymers-proo.md",
-  "derivedFrom": "library/s10955-022-02992-6/manifest",
-  "sourceDocument": "library/s10955-022-02992-6/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s10955-022-02992-6",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s10955-022-02992-6",
   "provenance": "ingested"
 }

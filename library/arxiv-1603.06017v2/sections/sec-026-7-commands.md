@@ -8,125 +8,93 @@ pages: 20-22
 source_pdf: 1603.06017v2.pdf
 source_sha256: 3ff091e40573a5dd
 doc_brief: "Automatic Theorem Proving in Walnut Hamoon Mousavi — 34 sections: Introduction; Basics; Words and Automata"
+text_source: latex
+latex_prose_ratio: 0.973
+latex_coverage_ratio: 0.597
 ---
-encourage you to use a Java IDE, like Eclipse, because in my opinion, entering commands in the console of a good IDE is
-more convenient than doing the same in the terminal. You are only going to run Walnut inside the IDE and use the IDE’s
-console (not the source code editor) to enter Walnut commands. Here is the instructions on how to run Walnut inside Eclipse
-for Java:
-1. Go to this link and download Eclipse for Java for your speciﬁc platform.
-2. Downloaded ﬁle is probably compressed. To start Eclipse, ﬁrst uncompress the ﬁle, then click on the ﬁle named
-Eclipse.
-3. When you run Eclipse, it asks for a workspace address. Feel free to enter the path to your desired directory.
-Now we need to import Walnut into Eclipse as a Java project:
-4. When in Eclipse, go to “File > Import ... ”. In the dialog that opens up choose “General > Existing Project into Workspace”.
-5. In the dialog that opens up, click browse, ﬁnd Walnut (that you downloaded and uncompressed in the Installation
-section) and press open. Then click ﬁnish.
-6. Close the Welcome page in your Eclipse window.
-7. On the "Project Explorer" (probably) on the left of your screen, you can see only one project (the one that you just
-imported). Click on it. Then click on “src”. Then double click on “prover.java”.
-8. You will see a green circle with a white triangle inside it. Click on it. This causes Walnut to run.
-9. You can enter your Walnut commands in the console window in your Eclipse. If you are not able to ﬁnd the console
-window, go to “Window > Show View > Other > General > Console” to open it.
-7
-Commands
-Every command ends in either a colon, double colon, or a semicolon. If you want to see the reports on the intermediate
-steps of a computation use colon or double colon, otherwise use semicolon. For example, if we type:
-eval
-test "a = b +1" :
-20
+\label{sec:commands}
+Every command ends in either a colon, double colon, or a semicolon. If you want to see the reports on the intermediate steps of a computation use colon or double colon, otherwise use semicolon. For example, if we type:
+\begin{lstlisting}[style=cmd]
+eval test "(*\textcolor{blue}{$a=b+1$}*)":
+\end{lstlisting}
 we get an output similar to the following written in the console:
-a = b +1:2
-states −1ms
-total computation time : 2ms
-which explains that the automaton for predicate a = b +1 has 2 states and it took 2 milliseconds to compute it. We use blue
-to denote predicates. Here we use grey to indicate the output produced by Walnut in the console. We use red to indicate
-errors in the console.
-Walnut prints to console only the major steps of a computation when a single colon is used to end a command. Use two
-colons if you want to see all the steps behind the scene (cross product 4.1, quantiﬁcation 4.2, minimizations, converting
-NFAs to DFAs (determinizations), etc.):
-eval
-test "a = b +1" : :
+\begin{lstlisting}[style=out]
+(*\textcolor{out}{$a=b+1$}*):2 states - 1ms
+total computation time: 2ms
+\end{lstlisting}
+which explains that the automaton for predicate $a=b+1$ has 2 states
+and it took 2 milliseconds to compute it. We use {\color{blue}blue} to
+denote predicates. Here we use {\color{out} grey} to indicate the
+output produced by Walnut in the console. We use {\color{red} red} to
+indicate errors in the console.
+
+Walnut prints to console only the major steps of a computation when a single colon is used to end a command. Use two colons if you want to see all the steps behind the scene (cross product \ref{sec:cross product}, quantification \ref{sec:quantification}, minimizations, converting NFAs to DFAs (determinizations), etc.):
+
+\begin{lstlisting}[style=cmd]
+eval test "(*\textcolor{blue}{$a=b+1$}*)"::
+\end{lstlisting}
 then we get an output similar to the following written in the console:
-computing b +1
-computed a +1
-computing a = (b +1)
-computing &:1
-states −2 states
-computing cross product :1
-states −2 states
-computed cross product :2
-states −1ms
-minimizing :2
-states
-determinizing :2
-states
-determinized :2
-states −0ms
-minimized:2
-states −0ms
-computed &:2
-states −1ms
-quantifying :2
-states
-minimizing :2
-states
-determinizing :2
-states
-determinized :2
-states −0ms
-minimized:2
-states −0ms
-quantified :2
-states −0ms
-fixing leading zeros :2
-states
-determinizing :2
-states
-determinized :2
-states −1ms
-minimizing :2
-states
-determinizing :2
-states
-determinized :2
-states −0ms
-minimized:2
-states −0ms
-fixed leading zeros :2
-states −1ms
-computed a = (b +1)
-a = (b +1):2
-states −2ms
-total computation time : 34ms
-Whitespace is ignored. You can, for example, span one single command into multiple lines to improve readability. So, for
-example, you can write the following interchangeably:
-eval
-test "a = b +1" ;
-eval
-test
-"a = b +1" ;
-eval
-test "a
-= b +1" ;
-eval
-test
-"a = b +1"
+\begin{lstlisting}[style=out]
+computing (*\textcolor{out}{$b+1$}*)
+computed (*\textcolor{out}{$a+1$}*)
+computing (*\textcolor{out}{$a=(b+1)$}*)
+	computing (*\textcolor{out}{$\&$}*):1 states - 2 states
+	computing cross product:1 states - 2 states
+	computed cross product:2 states - 1ms
+		minimizing:2 states
+			determinizing:2 states
+			determinized:2 states - 0ms
+		minimized:2 states - 0ms
+	computed (*\textcolor{out}{$\&$}*):2 states - 1ms
+	quantifying:2 states
+		minimizing:2 states
+			determinizing:2 states
+			determinized:2 states - 0ms
+		minimized:2 states - 0ms
+	quantified:2 states - 0ms
+	fixing leading zeros:2 states
+		determinizing:2 states
+		determinized:2 states - 1ms
+		minimizing:2 states
+			determinizing:2 states
+			determinized:2 states - 0ms
+		minimized:2 states - 0ms
+	fixed leading zeros:2 states - 1ms
+computed (*\textcolor{out}{$a=(b+1)$}*)
+(*\textcolor{out}{$a=(b+1)$}*):2 states - 2ms
+total computation time: 34ms
+\end{lstlisting}
+
+Whitespace is ignored. You can, for example, span one single command into multiple lines to improve readability. So, for example, you can write the following interchangeably:
+\begin{lstlisting}[style=cmd]
+eval test "(*\textcolor{blue}{$a=b+1$}*)";
+eval test
+"(*\textcolor{blue}{$a=b+1$}*)";
+eval test "(*\textcolor{blue}{$a$}*)
+(*\textcolor{blue}{$=b+1$}*)";
+eval test
+"(*\textcolor{blue}{$a=b+1$}*)"
 ;
-In case we forget to separate the name test and predicate a = b +1 of the eval command, Walnut catches it by returning
-an error:
-21
-eval
-test "a = b +1" :
-invalid use of eval /def command
-:
-eval
-test "a = b +1" :
+\end{lstlisting}
+
+In case we forget to separate the name test and predicate $a=b+1$ of the eval command, Walnut catches it by returning an error:
+\begin{lstlisting}[style=cmd]
+eval test"(*\textcolor{blue}{$a=b+1$}*)":
+\end{lstlisting}
+\vspace*{-\baselineskip}
+\begin{lstlisting}[style=err]
+invalid use of eval/def command
+	: eval test"(*$a=b+1$*)":
+\end{lstlisting}
+
+
 Here is the full list of commands in Walnut and we will go over them one by one in detail:
-• exit
-• eval <name> <predicate>
-• def <name> <predicate>
-• macro <name> <template>
-• reg <name> <number system> <regular expression>
-• reg <name> <alphabet> <regular expression>
-• load <ﬁle name>
-7.1
+\begin{itemize}
+\item exit
+\item eval <name> <predicate> 
+\item def <name> <predicate>
+\item macro <name> <template>
+\item reg <name> <number system> <regular expression>
+\item reg <name> <alphabet> <regular expression>
+\item load <file name>
+\end{itemize}

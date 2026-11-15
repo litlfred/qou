@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0203273v3/blocks/prose-sec-007",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0203273v3/blocks/prose-sec-007",
   "kind": "prose",
-  "title": "Remarque. La terminologie varie suivant les auteurs. Ainsi, Saavedra [53,",
-  "pageStart": 8,
-  "pageEnd": 8,
-  "text": "../sections/sec-007-111-remarque-la-terminologie-varie-suivant-les-a.md",
-  "derivedFrom": "library/arxiv-math-0203273v3/manifest",
-  "sourceDocument": "library/arxiv-math-0203273v3/manifest",
+  "title": "Cohomologie de Hochschild-Mitchell",
+  "pageStart": 58,
+  "pageEnd": 59,
+  "text": "../sections/sec-007-11-cohomologie-de-hochschild-mitchell.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203273v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203273v3",
   "provenance": "ingested"
 }

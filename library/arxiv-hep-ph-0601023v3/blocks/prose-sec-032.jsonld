@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-ph-0601023v3/blocks/prose-sec-032",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-ph-0601023v3/blocks/prose-sec-032",
   "kind": "prose",
-  "title": "Proton decay in ﬂipped SU (5)",
-  "pageStart": 68,
-  "pageEnd": 71,
-  "text": "../sections/sec-032-55-proton-decay-in-ﬂipped-su-5.md",
-  "derivedFrom": "library/arxiv-hep-ph-0601023v3/manifest",
-  "sourceDocument": "library/arxiv-hep-ph-0601023v3/manifest",
+  "title": "Details of the analysis on testing GUTs",
+  "pageStart": 184,
+  "pageEnd": 189,
+  "text": "../sections/sec-032-17-details-of-the-analysis-on-testing-guts.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-0601023v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-0601023v3",
   "provenance": "ingested"
 }

@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-algebraic-gns-embedding-cfs-consequence",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:algebraic-gns-embedding-cfs-consequence",
+  "kind": "remark",
+  "title": "Consequence for the $\\mu_{\\mathrm{arch}}$ programme: the operator-algebra carrier is in hand; only the CFS identification is conjectural",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-cfs-comparison-summary"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-algebraic-gns-embedding",
+  "tags": [
+    "causal-fermion-systems",
+    "gns",
+    "operator-algebra",
+    "pre-archimedean",
+    "established-not-conjectural"
+  ],
+  "text": "algebraic-gns-embedding-cfs-consequence.md",
+  "provenance": "authored"
+}

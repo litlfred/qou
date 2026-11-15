@@ -5,27 +5,41 @@
   "file": "0110001v3.pdf",
   "sha256": "f30f603ac1c555e0aba08f07e4d55e1a23e8b6d08ce93e89f4963849d6f19050",
   "bytes": 148334,
-  "pages": 12
+  "pages": 12,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:17Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "A geometric interpretation of Milnor's triple linking numbers",
-  "authors_raw": "Algebraic & Geometric Topology",
-  "abstract": "Milnor’s triple linking numbers of a link in the 3-sphere are interpreted geometrically in terms of the pattern of intersections of the Seifert surfaces of the components of the link. This generalizes th e well known formula as an algebraic count of triple points when the pairwise linking numbers vanish.",
-  "docinfo": {
-   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20180803212400-04'00'",
-   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
-   "Title": "agt-3-18.dvi"
-  },
+  "title": "A geometric interpretation of Milnor\u2019s triple linking numbers Introduction",
+  "authors_raw": "Blake Mellor",
   "title_lines": [
    "A geometric interpretation of",
-   "Milnor’s triple linking numbers",
-   "Blake Mellor",
-   "Paul Melvin"
+   "Milnor\u2019s triple linking numbers"
   ],
-  "title_prev": "A geometric interpretation of Milnor’s triple linking numbers Blake Mellor Paul Melvin"
+  "abstract": "Milnor\u2019s triple linking numbers of a link in the 3-sphere are interpreted geometrically in terms of the pattern of intersections of the Seifert surfaces of the components of the link. This generalizes the well known formula as an algebraic count of triple points when the pairwise linking numbers vanish.",
+  "docinfo": {
+   "Title": "agt-3-18.dvi",
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "CreationDate": "D:20180803212400-04'00'"
+  },
+  "title_raw": "A geometric interpretation of Milnor\u2019s triple linking numbers",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "agt-3-18.dvi",
+   "heading": "A geometric interpretation of Milnor\u2019s triple linking numbers Introduction",
+   "text": "A geometric interpretation of Milnor\u2019s triple linking numbers",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -33,78 +47,278 @@
    "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "The formula for ¯µ ijk",
-   "page": 3,
-   "source": "inferred",
-   "number": "2"
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Proof of the theorem",
    "page": 6,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 12,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.8,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": null
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Intersections of Seifert surfaces",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Computation of mijk",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Disentangled surfaces",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "First \ufb01nger move",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Second \ufb01nger move",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Third \ufb01nger move",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 621,
+   "n_words": 92,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 3,
-   "n_chars": 4595,
-   "n_words": 930
-  },
-  {
-   "id": "sec-001-2-the-formula-for-µ-ijk",
-   "number": "2",
-   "title": "The formula for ¯µ ijk",
-   "level": 1,
-   "page_start": 3,
    "page_end": 6,
-   "n_chars": 4998,
-   "n_words": 998
+   "n_chars": 9434,
+   "n_words": 1775,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-3-proof-of-the-theorem",
+   "id": "sec-001-3-proof-of-the-theorem",
    "number": "3",
    "title": "Proof of the theorem",
    "level": 1,
    "page_start": 6,
    "page_end": 12,
-   "n_chars": 10803,
-   "n_words": 2058
+   "n_chars": 10689,
+   "n_words": 1944,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-references",
+   "id": "sec-002-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 12,
    "page_end": 12,
-   "n_chars": 855,
-   "n_words": 139
+   "n_chars": 845,
+   "n_words": 129,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 4,
+  "toc_entries": 3,
+  "toc_inferred_entries": 3,
+  "toc_inferred_mean_confidence": 0.9,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 6,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
   "sections": 4,
-  "chars_total": 21251
+  "chars_total": 21589
  }
 }

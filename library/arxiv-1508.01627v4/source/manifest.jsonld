@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1508.01627v4/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1508.01627v4 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1508.01627v4",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1508.01627&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1508.01627v4",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1508.01627v4",
+    "content_type": "application/gzip",
+    "sha256": "ef2c117ed0ef5d732c0d0e0088638acc59e2e34033bc59d8554ed6b5bb474cd3",
+    "bytes": 28484,
+    "fetched": "2026-10-10T15:10:21+00:00",
+    "files": [
+      {
+        "path": "source/files/MurNak.tex",
+        "role": "tex",
+        "sha256": "c9ff4e9a7ddd5b423e37fdde2f7bec9a6596632159db77e2f1bc24e201858740",
+        "bytes": 84525
+      },
+      {
+        "path": "source/files/MurNak2.tex",
+        "role": "tex",
+        "sha256": "69bae1f334f4f6e5fca7b096884fd578a06150e9f4d241ebc9cfe6f3067c066d",
+        "bytes": 7857
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

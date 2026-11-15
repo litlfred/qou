@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ant-v14-n7-s-p08/blocks/prose-sec-007",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ant-v14-n7-s-p08/blocks/prose-sec-007",
   "kind": "prose",
-  "title": "Conclusion of the Burgess argument",
-  "pageStart": 31,
-  "pageEnd": 31,
-  "text": "../sections/sec-007-7-conclusion-of-the-burgess-argument.md",
-  "derivedFrom": "library/ant-v14-n7-s-p08/manifest",
-  "sourceDocument": "library/ant-v14-n7-s-p08/manifest",
+  "title": "Appendix",
+  "pageStart": 36,
+  "pageEnd": 39,
+  "text": "../sections/sec-007-appendix.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s-p08",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s-p08",
   "provenance": "ingested"
 }

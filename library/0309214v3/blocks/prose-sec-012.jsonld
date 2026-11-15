@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/0309214v3/blocks/prose-sec-012",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/0309214v3/blocks/prose-sec-012",
   "kind": "prose",
   "title": "Recursion relations for the colored Jones function of the figure 8 knot",
   "pageStart": 22,
   "pageEnd": 24,
   "text": "../sections/sec-012-62-recursion-relations-for-the-colored-jones-fun.md",
-  "derivedFrom": "library/0309214v3/manifest",
-  "sourceDocument": "library/0309214v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/0309214v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/0309214v3",
   "provenance": "ingested"
 }

@@ -1,0 +1,159 @@
+We now show that the length of the shortest nontrivial simple closed
+curve on the cusp torus is bounded throughout the cone deformation,
+provided the tube radius about the singular locus stays large.  Recall
+here that we are calling this shortest curve the meridian of the
+torus.  The following lemma is the last piece needed to complete the
+proof of Theorem \ref{thm:main-norm-height}.
+
+\begin{lemma}
+Suppose $M$ is a hyperbolic cone manifold with one cusp, and with
+singular locus $\Sigma$.  Suppose the tube radius $R$ about the
+singular locus is at least $\log(2/\sqrt{3})$.  Then there exists a
+horoball neighborhood $U$ of the cusp such that the meridian of
+$\partial U$ has length at least $1-e^{-2R}$.
+  \label{lemma:meridian-bound}
+\end{lemma}
+
+\begin{proof}
+Let $X = M-\Sigma$.  $X$ admits an incomplete hyperbolic metric.
+Expand the tube $V = \cup V_i$ about the
+singular locus $\Sigma$ until the tube hits itself.  Each $V_i$ has
+the same tube radius $R$.  Next expand the horoball $U$ about
+the cusp until it either becomes tangent to itself or to $V$.
+
+We obtain a region $\Omega$ by continuing to expand $U$ as follows.
+First, choose a particular lift $U_a$ of $U$ in the universal cover.
+Because $U$ is embedded in $\HH^3$ by the developing map on the
+universal cover $\widetilde{X}$ of $X$, we can assume the developing
+map is one to one on $U_a$ and takes $\partial U_a$ to the plane $z=1$
+in $\HH^3$.
+
+Take $\Omega= U_a \cup S$, where $S$ is the set consisting of all
+points $x$ in $\tild{X}$ such that the distance $\mbox{dist}(x,
+\partial U_a) < \mbox{dist}(x, \partial U_b)$ for $U_b$ any other lift
+of $U$, and also such that the distance $\mbox{dist}(\phi(x), \partial
+U) < \mbox{dist}(\partial U,\Sigma)$, where $\phi$ is the covering
+projection. Note that $\Omega$ is embedded in $\HH^3$ by the
+developing map.  That is, the developing map is one to one on
+$\Omega$.
+
+Let $p$ be a point on $\partial U$ closest to $\Sigma$, and let $p_0$
+and $p_1$ be lifts of $p$ on $\partial U_a$ such that the projection
+of the path from $p_0$ to $p_1$ is shortest on $\partial U$.  Let
+$a_0$ be the point in the universal cover on a lift of $\Sigma$ such
+that the path from $p_0$ to $a_0$ has length equal to the minimum
+distance from $p_0$ to $\Sigma$.  Similarly, let $a_1$ be the point on
+a lift of $\Sigma$ such that the path from $p_1$ to $a_1$ has length
+equal to the minimum distance from $p_1$ to $\Sigma$.  Note the
+interiors of the paths between $p_0$ and $a_0$ and between $p_1$ and
+$a_1$ are contained in $\Omega$. 
+
+\begin{figure}
+  \begin{center}
+  \input{figures/area_quad.pstex_t}
+  \end{center}
+  \caption{The top edge of the quadrilateral maps to the shortest path
+  on $\partial U$ under the covering projection. }
+  \label{fig:area-quad}
+\end{figure}
+
+Then note the interior of the geodesic $\beta$ from $a_0$ to $a_1$ is
+also in $\Omega$, along with all the points in the quadrilateral with
+sides given by $\beta$ and the paths from $p_0$ to $p_1$, from $p_0$
+to $a_0$, and from $p_1$ to $a_1$.  This is because, first, all points
+$x$ in this quadrilateral (except the endpoints of $\beta$) have
+$\mbox{dist}(\phi(x), \partial U) < \mbox{dist}(\partial U, \Sigma)$.
+Also, if any $x$ were closer to some other lift $U_b$ of $U$, then
+there would be points in the quadrilateral equidistant to two
+different lifts of $U$.  All points equidistant to two different lifts
+of $U$ lie on some totally geodesic planes of $\HH^3$.  Hence some
+geodesic must intersect $\beta$ but not the paths from $p_0$ to $a_0$,
+$p_1$ to $a_1$, or the path on the horosphere $\partial U_a$ from
+$p_0$ to $p_1$.  This is impossible.
+
+Now let $H$ be the length of the paths from $p_0$ to $a_0$ and from
+$p_1$ to $a_1$.  Let $L$ be the length of $\beta$.  We know that
+$H\geq R$ and $L\geq 2R$ since the distance between any two components
+of the lift of $\Sigma$ is greater than or equal to $2R$.  We let $d$
+be the length of the path on the horosphere $\partial U_a$ between
+$p_0$ and $p_1$.  Since $\Omega$ is embedded by the developing map, we
+can assume the quadrilateral is of the form shown in Figure
+\ref{fig:area-quad}.
+
+Then solving for $d$ in terms of $H$ and $L$, $d= 2e^{-H}\sinh(L/2)$.
+
+Case 1:  $H=R$.  Then $d \geq 2e^{-R}\sinh(R) = 1-e^{-2R}$.
+
+Case 2: $H>R$ Then $U$ must be tangent to itself, say at a point $q$,
+and not necessarily tangent to the tube about $\Sigma$.  Then the
+image of $\Omega$ under the developing map must contain some portion
+of the region above the geodesic surface equidistant from a horizontal
+plane (the lift of $\partial U_a$) and some other horosphere.
+
+This geodesic surface is some portion of the (Euclidean) hemisphere
+with radius $1$, tangent to the lift of $\partial U_a$ at a lift $q_0$
+of $q$.  See Figure \ref{fig:d-long}.  The image of $\Omega$ under the
+developing map contains a neighborhood of points on this hemisphere
+about $q_0$.  If it were to contain all the points on the hemisphere
+between the dotted lines in Figure \ref{fig:d-long} (that is, points
+whose projection to $\CC$ have Euclidean distance at most $1/2$ from
+the projection of $q_0$ to $\CC$), then $d\geq 1$.
+
+Let $x$ be one of these points.  That is, the projection of $x$ to
+$\CC$ has Euclidean distance at most $1/2$ from the projection of
+$q_0$ to $\CC$.  Note $x$ will lie in $\Omega$ provided
+$\mbox{dist}(\phi(x), \partial U) < \mbox{dist}(\partial U, \Sigma) =
+H$, or provided $H$ is large enough.  But now, $\mbox{dist}(\phi(x),
+\partial U) = \log( 1/\mbox{height}(x))$, where $\mbox{height}(x)$
+denotes the $z$--coordinate of $x$ in $\HH^3$.  Thus this distance is
+at most $\log(2/\sqrt{3})$.
+
+\begin{figure}
+\input{figures/d-long.pstex_t}	
+\caption{}
+\label{fig:d-long}
+\end{figure}
+
+Since $H>R$, we can ensure $d\geq 1$ by restricting to $R\geq
+\log(2/\sqrt{3})$.
+\end{proof}
+
+When we plug the result of Lemma \ref{lemma:meridian-bound} into
+Theorem \ref{thm:norm-height-mer}, along with the bound on $\sum b_j$
+of the previous section, we may complete the proof of Theorem
+\ref{thm:main-norm-height}.
+
+\medskip
+
+\noindent\textbf{Theorem \ref{thm:main-norm-height}.} \emph{
+  Let $M=X_\tau$ be a hyperbolic 3--manifold with a cusp, and let
+  $X=X_0$ be a hyperbolic 3--manifold which can be joined to $M$ by a
+  smooth family of hyperbolic cone manifolds $X_t$ with tube radius at
+  least $R_1 \geq 0.56$, and with $n$ components of the singular
+  locus. Let $U_t$ be a horoball neighborhood about
+  the cusp.  Let $h(M)$ denote the normalized height of the cusp torus
+  $\partial U_\tau$.  Let $h(X)$ denote the normalized height of
+  $\partial U_0$.  Then the
+%% Aug 6, 2007: parameterization:
+	hyperbolic cone deformation can be parameterized such that the
+%%
+	change in normalized height is bounded in
+  terms of $R_1$ alone:
+$$-(2\pi)^2\frac{\sqrt{n\,C(R_1)}}{(1-e^{-2R_1})\sqrt{2}} \leq
+ h(M) - h(X) \leq
+(2\pi)^2\frac{\sqrt{n\,C(R_1)}}{(1-e^{-2R_1})\sqrt{2}}.$$
+}
+
+\begin{proof}
+  Theorem \ref{thm:norm-height-mer}, combined with Theorem
+  \ref{thm:bound-bdry-time} and Lemma \ref{lemma:meridian-bound}
+  imply that
+$$
+  -\frac{\sqrt{n\,C(R_1)}}{(1-e^{-2R_1})\sqrt{2}} \leq \dot{h} \leq
+\frac{\sqrt{n\,C(R_1)}}{(1-e^{-2R_1})\sqrt{2}}
+$$
+and that the total time of the deformation is $t=(2\pi)^2$.  We
+integrate the above inequality over the deformation.  The bounds on
+the left and right are independent of $t$.  Thus we obtain the
+conclusion of the theorem.
+\end{proof}

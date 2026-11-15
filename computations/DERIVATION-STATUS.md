@@ -44,8 +44,8 @@ for each crossing.
 |---|------|-------------|---------|-----------|--------|
 | 1 | Volume | 2[2][7]m_e | +A | [2,1] h⁰ | DERIVED |
 | 2 | Surface | 2[4]²m_e | -A^{2/3} | [2,1] h² boundary | DERIVED |
-| 3 | Coulomb | h[6]m_e | -Z(Z-1)/A^{1/3} | [2,1] pp excess | DERIVED |
-| 4 | Asymmetry | 3[2][7]m_e | -(N-Z)²/(4A) | [2,1] h¹ Casimir | DERIVED |
+| 3 | Coulomb | h[6]m_e | -Z(Z-1)/A^{1/3} | [2,1] pp excess (label only) | STATED — no derivation in the corpus; bean qou-nxvg |
+| 4 | Asymmetry | 3[2][7]m_e | -(N-Z)²/(4A) | [2,1] h¹ Casimir (label only) | STATED — no derivation in the corpus; bean qou-nxvg |
 | 5 | Pairing | [3][7]m_e | ±1/√A | [3]+[1,1,1] descent | DERIVED |
 | 6 | Exchange | [3]/[2]m_e | -Z^{4/3}/A^{1/3} | [2,1] h³ boundary | DERIVED |
 | 7 | Shell | [2]²[3]m_e | +f_magic/A^{2/3} | [3,1] branching | DERIVED |
@@ -205,7 +205,7 @@ different levels interact non-trivially.
 
 The framework has **categorically exactly three** external
 calibration inputs (per
-[`def:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md)):
+[`def:three-calibration-discipline`](../../folio/quantum-observable-universe/observations/three-calibration-discipline.md)):
 
 | ID | Calibration | (Co)homology | Role |
 |----|-------------|--------------|------|
@@ -232,7 +232,7 @@ as the $H^2$ calibration — not an additional fit.
    Needs k≥7 exact corrections.
 3. **Magic numbers**: {2,8,20,28,50,82,126} from Bring's surface
    — algebraic claim now stated as
-   [`conj:magic-numbers-bring`](../../content/quantum-observable-universe/algebraic-substrate/magic-numbers-bring.md)
+   [`conj:magic-numbers-bring`](../../folio/quantum-observable-universe/algebraic-substrate/magic-numbers-bring.md)
    (P1.4 path-(b)): the seven values are conjectured to be the
    ranks of distinguished $S_5 \times \langle\hat\tau\rangle$-stable
    period sub-lattices on Bring's surface. Path-(a) proof
@@ -252,14 +252,14 @@ as the $H^2$ calibration — not an additional fit.
    > $\delta_{CS} = \hbar_q^4[5]_q$. **That form is structurally ruled out
    > by the corpus itself**, and the entry mis-attributed it besides:
    >
-   > - [`archimedean-functor-uniqueness-context`](../content/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness-context.md)
+   > - [`archimedean-functor-uniqueness-context`](../folio/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness-context.md)
    >   calls it *"a legacy PSLQ-empirical conjecture, since superseded by
    >   `prop:em-coupling-bring-zero-mode`"*, requiring *"arbitrary integer
    >   ratios … that would have to come from a non-pentagon source"*, and
    >   *"ruled out **structurally** in addition to the existing PSLQ
    >   ruling."*
    > - The live table in
-   >   [`electroweak-higgs-torus-link-triplet-table1-data`](../content/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet-table1-data.md)
+   >   [`electroweak-higgs-torus-link-triplet-table1-data`](../folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet-table1-data.md)
    >   carries the same form marked **`open: N_v = ?`**.
    > - `prop:alpha-em-categorical-trace`, the label cited as its source,
    >   contains **no such formula**. That proposition is an *identity* —
@@ -268,7 +268,7 @@ as the $H^2$ calibration — not an additional fit.
    >   from CODATA. Its "match to $10^{-12}$" is the identity closing, not
    >   a prediction of the measured $\alpha$.
    > - Every *"✅ resolved"* corroboration lives under
-   >   `docs/audits/_deprecated/`.
+   >   `fsh-guts/deprecated/docs/audits/`.
    > - The quoted 6.7 ppb is muon-pinned **and** measured against CODATA-
    >   **2018** (`137.035999084`; 2022 is `137.035999177`).
    >

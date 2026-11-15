@@ -108,6 +108,25 @@ PIN_REL_MUON = mp.mpf("22e-9")       # 22 ppb
 C3_EMP_PROTON = mp.mpf("-2.06934257711516783787971951725")  # root-of-unity probe
 C3_EMP_MUON_HOPF = mp.mpf("-2.0097")                         # hopf-profile probe (SUPERSEDED; spread only)
 C3_EMP_CACHE = mp.mpf("-2.02018812814143945582016855395")    # ck-cache, extracted AT Q0_CANONICAL
+# 🛑 CONVENTION-C VALUE. `ladder_chain` below is convention D (z = q^3/(q^2+1),
+# line ~119), so this constant and that function are in DIFFERENT FRAMES and the
+# self-check comparing them is RED by construction, by ~972.362 -- which is the
+# C->D extraction shift, not a numerical defect. Corroboration: the D-frame muon
+# c_3 is -974.3821470795362 in
+# computations/qbeta/qbeta-c3-ladder-trace-convention-sensitivity.witness.json
+# (`result.c3.D_muon`), matching this producer's own c3_reproduced_canonical on
+# every printed digit.
+#
+# Do NOT "reconcile" this against anchor_slope_dc3_dq: c3 is computed from q
+# alone in ladder_chain and the slope is an independent OUTPUT field, so there is
+# no reconciliation to perform (bean qou-v6wz records that diagnosis; it is
+# withdrawn, see the bean).
+#
+# Do NOT widen the tolerance or re-baseline -- AGENTS.md forbids it explicitly.
+# Going green requires the convention-D c_k ladder, i.e. bean qou-cds1, which is
+# blocked on the N=1 eigenphase alpha (qou-pdix). Until then the RED is the gate
+# working: it reports that the C-frame cached c_3 is not reproducible under the
+# canonical convention.
 
 MARGIN_DIGITS = 3.0  # confidence margin beyond the raw entropy floor
 
@@ -372,9 +391,26 @@ def main():
                 # below keeps its `0.0`: the helper returns None for an
                 # integral-valued float and the ratchet excuses it by design.
                 "tolerance": "1e-08",
+                # This `source` named THREE axes of sameness -- chain, Q_codata,
+                # q0 -- and the mismatch that makes the assertion fail is on a
+                # FOURTH it did not mention: the Markov convention. So the
+                # failure read as a defect in the extraction chain when it is a
+                # frame difference between two artifacts (bean `qou-580o`).
                 "source": ("same chain + same Q_codata + same q0 as "
                            "qbeta-ck-cache.witness.json (cache prints Q_codata "
-                           "rounded to 0.78233341)"),
+                           "rounded to 0.78233341) -- but NOT the same Markov "
+                           "convention, which is why this assertion fails. This "
+                           "probe computes at z_D = q**3/(q**2+1) (convention D, "
+                           "canonical per owner ruling R1 2026-08-15; see the z "
+                           "binding above), while qbeta-ck-cache.witness.json "
+                           "declares markov_convention='C' and its c_3 is "
+                           "reachable only via --historical-convention-C. The "
+                           "two numbers are one formula under two different z, "
+                           "not two evaluations of one quantity. Re-deriving the "
+                           "ladder under D is bean `qou-cds1`; this assertion is "
+                           "left FAILING on purpose -- it is the frame "
+                           "disagreement reporting itself, and silencing it "
+                           "would ratify one frame."),
             },
             {
                 "name": "stage1_entropy_verdict_is_blocked",
@@ -430,6 +466,24 @@ def main():
         from qou_substrate.witness import WitnessBuilder as _WB
         import os as _os  # noqa: E402 -- provenance stamp
         out.setdefault("scriptFile", _os.path.basename(__file__))
+        # Convention stamp. This witness records `c3_reproduced_canonical`
+        # around -974.38, which registry §9g identifies as the convention-D
+        # muon c_3 -- a number that is MEANINGLESS without its frame, and whose
+        # whole history here is an undisclosed C->D flip that rode inside a
+        # Lambda/Cl_2 naming commit and was not regenerated (bean `qou-580o`).
+        # It carried no convention stamp at all until now, which is the
+        # `qou-ng7j` coverage gap biting on the one artifact where the frame is
+        # the entire content. Bare token + separate reason, matching the
+        # `q0Anchor` / `q0AnchorReason` shape this module already uses.
+        out["markov_convention"] = "D"
+        out["markov_convention_reason"] = (
+            "z = q**3/(q**2 + 1) at the binding above; convention D, canonical "
+            "per owner ruling R1 (2026-08-15). NOT a proposed c_3: qou-cds1 "
+            "records -974.38 as a sensitivity measurement and says explicitly "
+            "'do not wire it anywhere'. The failing assertion "
+            "extraction_chain_reproduces_cache_c3 is the frame disagreement "
+            "with the C-framed qbeta-ck-cache.witness.json, not a chain defect."
+        )
         _WB.stamp_staleness_metadata(
             out, script_path=__file__, engine=None,
             q0_anchor="ambiguous",

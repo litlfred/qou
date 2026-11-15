@@ -8,260 +8,428 @@ pages: 12-16
 source_pdf: 1412.4229v4.pdf
 source_sha256: 248d6a1e28a76a94
 doc_brief: "THE SQUARING OPERATION FOR COMMUTATIVE DG RINGS AMNON YEKUTIELI — Let A → B be a homomorphism of commutative rings."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-Let A be a DG ring. We already mentioned thatM(A) = DGModA is a DG
-category, equipped with a translation automorphismT. The homotopy category of
-DGModA is ˜K(DGModA), where by deﬁnition
-(2.1) Hom˜K(DGModA)(M,N ) := H0(
-HomA(M,N )
-{
-.
-This is a triangulated category. The derived category˜D(DGModA) is gotten from
-˜K(DGModA) by inverting the quasi-isomorphisms. The localization functor (iden-
-tity on objects) is
-(2.2) Q : DGModA→˜D(DGModA).
-If A is a ring, i.e. A = A0, with module category ModA, then DGModA =
-C(ModA), ˜K(DGModA) = K(ModA) and ˜D(DGModA) = D(ModA). Here are
-THE SQUARING OPERATION 13
-some references for the derived category of DG modules: [BL, Section 10], [Ke1,
-Section 2], and [SP, Section 09KV]. Another reference is our course notes [Ye4],
-but there (in Sections 4 and 9) the DG categoryC(M), associated to an abelian
-category M, should be replaced by the DG categoryDGModA.
-Deﬁnition 2.3.We shall use the following abbreviations for the triangulated cat-
-egories related to a DG ringA: K(A) := ˜K(DGModA) and D(A) := ˜D(DGModA).
-Let us recall a few facts about resolutions of DGA-modules. A DG moduleN is
-called acyclic ifH(N) = 0. A DGA-moduleP (resp.I) is calledK-projective(resp.
-K-injective) if for any acyclic DGA-module N, the DG Z-module HomA(P,N )
-(resp. HomA(N,I )) is also acyclic. The DG moduleP is calledK-ﬂatif for every
-acyclic DGAop-module N, the Z-module N⊗AP is acyclic. As in the “classical”
-situation, K-projective implies K-ﬂat. These deﬁnitions were introduced in [Sp]. In
-[Ke1, Section 3] it is shown that “K-projective” is the same as “having property
-(P)”, and “K-injective” is the same as “having property (I)”. EveryM ∈M(A)
-admits K-projective resolutionsP →M and K-injective resolutionsM→I. See
-also [BL], [BN], [AFH] and [SP, Chapter 09JD]. (Semi-free DG modules will be
-discussed in Section 3.)
-Recall that a diagram
+\label{sec:resolutions-modules}
+
+Let $A$ be a DG ring. 
+We already mentioned that $\cat{M}(A) = \cat{DGMod} A$ is a DG category, 
+equipped with a translation automorphism $\opn{T}$. The homotopy category of 
+$\cat{DGMod} A$ is 
+$\til{\cat{K}}(\cat{DGMod} A)$, where by definition 
+\begin{equation} \label{eqn:1016}
+\opn{Hom}_{\til{\cat{K}}(\cat{DGMod} A)}(M, N) := 
+\mrm{H}^0 \bigl( \opn{Hom}_A(M, N) \bigr) .
+\end{equation}
+This is a triangulated category. 
+The derived category $\til{\cat{D}}(\cat{DGMod} A)$ is  gotten
+from $\til{\cat{K}}(\cat{DGMod} A)$ by inverting the 
+quasi-isomorphisms. The localization functor (identity on objects) is
+\begin{equation} \label{eqn:450}
+\opn{Q} : \cat{DGMod} A \to \til{\cat{D}}(\cat{DGMod} A) . 
+\end{equation}
+If $A$ is a ring, i.e.\ $A = A^0$, with module category $\cat{Mod} A$, 
+then $\cat{DGMod} A = \cat{C}(\cat{Mod} A)$,
+$\til{\cat{K}}(\cat{DGMod} A) = \cat{K}(\cat{Mod} A)$
+and $\til{\cat{D}}(\cat{DGMod} A) = \cat{D}(\cat{Mod} A)$.
+Here are some references for the derived category of DG modules: 
+\cite[Section 10]{BL}, 
+\cite[Section 2]{Ke1}, and 
+\cite[\href{http://stacks.math.columbia.edu/tag/09KV}{Section 09KV}]{SP}.
+Another reference is our course 
+notes \cite{Ye4}, but there (in Sections 4 and 9) the DG category 
+$\cat{C}(\cat{M})$, associated to an abelian category $\cat{M}$, should be 
+replaced by the DG category $\cat{DGMod} A$. 
+
+\begin{dfn}   \label{dfn:875}   
+We shall use the following abbreviations for the triangulated categories 
+related 
+to a DG ring $A$: 
+$\cat{K}(A) := \til{\cat{K}}(\cat{DGMod} A)$ and 
+$\cat{D}(A) := \til{\cat{D}}(\cat{DGMod} A)$. 
+\end{dfn}
+
+Let us recall a few facts about resolutions of DG $A$-modules. 
+A DG module $N$ is called acyclic if $\opn{H}(N) = 0$. A DG $A$-module 
+$P$ (resp.\ $I$) is called {\em K-projective} (resp.\ {\em K-injective})
+if for any acyclic DG $A$-module $N$, the DG $\Z$-module 
+$\opn{Hom}_{A}(P, N)$ (resp.\ $\opn{Hom}_{A}(N, I)$) is also acyclic. 
+The DG module $P$ is called {\em K-flat} if for every acyclic 
+DG $A^{\mrm{op}}$-module $N$, the $\Z$-module  $N \ot_A P$ is acyclic. 
+As in the ``classical'' situation, K-projective implies K-flat. 
+These definitions were introduced in \cite{Sp}. 
+In \cite[Section 3]{Ke1} it is shown that ``K-projective'' is the same as 
+``having property (P)'', and ``K-injective'' is the same as ``having property 
+(I)''. Every $M \in \cat{M}(A)$ admits K-projective resolutions $P \to M$ and 
+K-injective resolutions $M \to I$. 
+See also \cite{BL}, \cite{BN}, \cite{AFH} and
+\cite[\href{http://stacks.math.columbia.edu/tag/09JD}{Chapter 09JD}]{SP}.
+(Semi-free DG modules will be discussed in Section \ref{sec:resolutions-rings}.)
+
+Recall that a diagram  
+\[ \UseTips \xymatrix @C=12ex @R=6ex {
 M
-φ0
-$$
-φ1
-::N
-in M(A) is called commutative up to homotopyif the homomorphismsφ0 and φ1
-are homotopic. Or in other words, if the corresponding diagram inK(A) is com-
-mutative.
-The next proposition is essentially a standard fact. We state it here because it
-will play a key role, especially in Section 5.
-Proposition 2.4. Let P,I ∈M(A). Assume either P is K-projective orI is K-
-injective.
-(1) The additive homomorphism
-Q : HomM(A)(P,I )→HomD(A)(P,I )
-is surjective, and its kernel is the groupB0(HomA(P,I )) of null-homotopic
-homomorphisms.
-(2) Let ψ: P →I be a morphism in D(A). There exists a homomorphism
-φ:P→I in M(A), unique up to homotopy, such thatQ(φ) =ψ.
-(3) Let φ0,φ1 : P→I be homomorphisms in M(A). The homomorphisms φ0
-and φ1 are homotopic iﬀQ(φ0) = Q(φ1) in D(A).
-In other words, item (2) says that given a morphismψin D(A), as in the ﬁrst
-diagram below, there exists a homomorphism φin M(A) making that diagram
-commutative; and suchφis unique up to homotopy. Item (3) says that the second
-diagram below, in M(A), is commutative up to homotopy, iﬀ the third diagram
-below, in D(A), is commutative.
+\ar @/^1.5em/ [r]^{ \phi_0 }
+\ar @/_1.5em/ [r]_{ \phi_1 }
+&
+N
+} \]
+in $\cat{M}(A)$ is called {\em commutative up to homotopy} if the homomorphisms 
+$\phi_0$ and $\phi_1$ are homotopic. Or in other words, if the corresponding 
+diagram in  $\cat{K}(A)$ is commutative. 
+
+The next proposition is essentially a standard fact. We state it here because 
+it will play a key role, especially in Section \ref{sec:pairs-DG-modules}.  
+
+\begin{prop} \label{prop:460} 
+Let $P, I \in \cat{M}(A)$. Assume either $P$ is K-projective or $I$ is 
+K-injective. 
+\begin{enumerate}
+\item The additive homomorphism 
+\[ \opn{Q} : \opn{Hom}_{\cat{M}(A)}(P, I) \to 
+\opn{Hom}_{\cat{D}(A)}(P, I) \]
+is surjective, and its kernel is the group 
+$\opn{B}^0(\opn{Hom}_A(P, I))$ of null-homotopic homomorphisms.
+
+\item Let $\psi : P \to I$ be a morphism in $\cat{D}(A)$. There exists a 
+homomorphism $\phi : P \to I$ in $\cat{M}(A)$, unique up to homotopy, such that 
+$\opn{Q}(\phi) = \psi$. 
+
+\item Let $\phi_0, \phi_1 : P \to I$ be homomorphisms in $\cat{M}(A)$. The 
+homomorphisms $\phi_0$ and $\phi_1$ are homotopic iff 
+$\opn{Q}(\phi_0) = \opn{Q}(\phi_1)$ in $\cat{D}(A)$. 
+\end{enumerate}
+\end{prop}
+
+In other words, item (2) says that given a morphism $\psi$ in $\cat{D}(A)$, 
+as in the first diagram below, there exists a homomorphism $\phi$ in 
+$\cat{M}(A)$ making that diagram commutative; and such $\phi$ is unique up to 
+homotopy. Item (3) says that the second diagram below, in $\cat{M}(A)$, is 
+commutative up to homotopy, iff the third diagram below, in $\cat{D}(A)$, is 
+commutative. 
+\[ \UseTips \xymatrix @C=12ex @R=6ex {
 P
-ψ
-##
-Q(φ)
-;;I P
-φ0
-!!
-φ1
-==I P
-Q(φ0)
-!!
-Q(φ1)
-==I
-14 AMNON YEKUTIELI
-Proof. (1) According to [Sp, Propositions 1.4 and 1.5], the additive homomorphism
-HomK(A)(P,I ) = H0(HomA(P,I ))→HomD(A)(P,I )
-is bijective. Note that in [Sp]Ais a ring; but the deﬁnitions and proofs pass without
-change to the case of a DG ring.
-(2, 3) These are immediate from (1). □
-A DG ring homomorphismu : A→B induces the forgetful (or restriction of
-scalars) functor Foru : M(B)→M(A), which is exact, and hence gives rise to a
-triangulated functor Foru : D(B)→D(A). We usually do not mention the functor
-Foru explicitly, unless it is important for the discussion at hand.
-Ifu :A→B is a quasi-isomorphism thenForu : D(B)→D(A) is an equivalence,
-with quasi-inverseM↦→B⊗L
-AM. For anyM0∈D(Aop) andM1,M 2∈D(A) there
-are bi-functorial isomorphismsM0⊗L
-AM1∼= M0⊗L
-B M1 and RHomA(M1,M 2)∼=
-RHomB(M1,M 2) in D(Z); cf. [YZ2, Proposition 1.4].
-Here is a result that will be used a lot in our paper. The restriction functors are
-suppressed in it. The easy proof is left to the reader.
-Proposition 2.5.LetA0
-u1
-−→A1
-u2
-−→A2 andB0
-v1
-−→B1
-v2
-−→B2 be homomorphisms
-in DGR. Fork = 0, 1, 2 let Mk∈M(Bk⊗ZAk) and Nk∈M(Bk); and fork = 1, 2
-let ζk :Mk−1→Mk and θk :Nk→Nk−1 be homomorphisms inM(Bk−1⊗ZAk−1)
-and M(Bk−1) respectively.
-(1) The abelian groupHomB0(M0,N 0) is a DGAop
-0 -module, with action
-(φ·a)(m) :=φ(a·m)
-for φ∈HomB0(M0,N 0), a∈A0 and m∈M0.
-(2) The function
-Homv1(ζ1,θ1) : HomB1(M1,N 1)→HomB0(M0,N 0),
-with formula
-Homv1(ζ1,θ1)(φ) :=θ1◦φ◦ζ1
-for φ∈HomB1(M1,N 1), is a homomorphism inM(Aop
-0 ).
-(3) There is equality
-Homv1(ζ1,θ1)◦Homv2(ζ2,θ2) = Homv2◦v1(ζ2◦ζ1,θ1◦θ2).
-(4) Say ζ′
-1 : M0 →M1 and θ′
-1 : N1 →N0 are also homomorphisms in
-M(B0⊗ZA0) and M(B0) respectively, and there are homotopiesζ1⇒ζ′
-1 and
-θ1⇒θ′
-1 in M(B0⊗ZA0) and M(B0) respectively. Then there is a homotopy
-Homv1(ζ1,θ1)⇒Homv1(ζ′
-1,θ′
-1)
-in M(Aop
-0 ).
-Item (2) of the proposition is illustrated here:
-M0
-ζ1 //
-Homv1(ζ1,θ1)(φ)
-
-M1
-φ
-
-N0 N1
-θ1oo
-Proposition 2.6. Letv :A′→A be a quasi-isomorphism between DG rings. Let
-Q,I ∈M(A), P ∈M(Aop), Q′,I′∈M(A′) and P′∈M(A′op). Let φ: P′→P
-be a quasi-isomorphism inM(A′op), and letψ: Q′→Q and χ: I→I′be quasi-
-isomorphisms in M(A′).
-THE SQUARING OPERATION 15
-(1) If ((P is K-ﬂat overAop orQ is K-ﬂat overA) and (P′is K-ﬂat overA′op
-or Q′is K-ﬂat overA′)) then
-φ⊗vψ:P′⊗A′Q′→P⊗AQ
-is a quasi-isomorphism.
-(2) If ((Q is K-projective orI is K-injective overA) and (Q′is K-projective
-or I′is K-injective overA′)) then
-Homv(ψ,χ) : HomA(Q,I )→HomA′(Q′,I′)
-is a quasi-isomorphism.
-Proof. This is implicit in the proof of [YZ2, Proposition 1.4]. Here is a detailed
-proof.
-(1) By the symmetry of the situation we can assume that eitherP′andP are K-ﬂat
-(over the respective DG rings), or thatQ′andP are K-ﬂat. We begin by reducing
-the second case to the ﬁrst case. Choose a K-ﬂat resolutionµ: ˜P′→P′. Then
-˜P′⊗A′Q′→P′⊗A′Q′is a quasi-isomorphism, and it suﬃces to prove that
-(φ◦µ)⊗vψ: ˜P′⊗A′Q′→P⊗AQ
-is a quasi-isomorphism, which is the ﬁrst case.
-Now we assume thatP′andP are K-ﬂat. Consider the homomorphismφ·idA :
-P′⊗A′A→P, (φ·idA)(p′⊗a) :=φ(p′)·a. We claim this is a quasi-isomorphism.
-Toseewhy, letuslookattheﬁrstcommutativediagrambelow. Thehomomorphism
-idP′⊗v is a quasi-isomorphism sincev is a quasi-isomorphism andP′is K-ﬂat;
-the homomorphism idP′·idA′is an isomorphism; andφis a quasi-isomorphism;
-therefore φ·idA is a quasi-isomorphism.
-P′⊗A′A′idP′·idA′
-//
-idP′⊗v
-
-P′
-φ
-
-P′⊗A′A
-φ·idA //P
-P′⊗A′Q′φ⊗vψ //
-idP′⊗ψ
-
-P⊗AQ
-P′⊗A′Q λ //P′⊗A′A⊗AQ
-(φ·idA)⊗idQ
-OO
-Next look at the second commutative diagram above. The homomorphismλ,
-deﬁned byλ(p′⊗q) :=p′⊗1⊗q, is an isomorphism. The homomorphismidP′⊗ψ
-is a quasi-isomorphism because ψis a quasi-isomorphism and P′is K-ﬂat; and
-(φ·idA)⊗idQ is a quasi-isomorphism becauseφ·idA a quasi-isomorphism between
-K-ﬂat DGAop-modules. Thereforeφ⊗vψis a quasi-isomorphism.
-(2) Choose K-projective resolutionsα: ˜Q→Q and α′: ˜Q′→Q′, and K-injective
-resolutions β: I →˜I and β′: I′→˜I′, in M(A) and M(A′) respectively. By
-Proposition 2.4, we can liftψandχto quasi-isomorphisms ˜ψand ˜χ, such that the
-diagrams
-˜Q′
-α′
-
-˜ψ // ˜Q
-α
-
-Q′ψ //Q
-˜I
-˜χ // ˜I′
+\ar @/^1.5em/ [r]^{ \psi }
+\ar@{-->} @/_1.5em/ [r]_{ \opn{Q}(\phi) }
+&
 I
-β
-OO
-χ //I′
-β′
-OO
-in M(A′) are commutative up to homotopy. We get a diagram
-(2.7) HomA(Q,I )
-Homv(ψ,χ) //
-Homid(α,β)
-
-HomA′(Q′,I′)
-Homid(α′,β′)
-
-HomA( ˜Q, ˜I)
-Homv( ˜ψ,˜χ) // HomA′( ˜Q′, ˜I′)
-16 AMNON YEKUTIELI
-in M(Z) that is commutative up to homotopy. Now let us examine the commutative
-diagram
-HomA(Q,I )
-Homid(α,idI) //
-Homid(idQ,β)
-
-Homid(α,β)
-((
-HomA( ˜Q,I )
-Homid(id ˜Q,β)
-
-HomA(Q, ˜I)
-Homid(α,id ˜I) // HomA( ˜Q, ˜I)
-in M(Z). The homomorphisms Homid(α,id˜I) and Homid(id ˜Q,β) are both quasi-
-isomorphisms. Atleastoneofthehomomorphisms Homid(idQ,β)and Homid(α,idI)
-is a quasi-isomorphism. It follows that the diagonal homomorphismHomid(α,β)
-is a quasi-isomorphism. A similar argument shows thatHomid(α′,β′) is a quasi-
-isomorphism. Going back to diagram (2.7), we see that it is enough to prove that
-Homv( ˜ψ,˜χ) is a quasi-isomorphism.
-Let λ: ˜I→HomA′(A, ˜I′) be the homomorphismλ(i)(a) := ˜χ(a·i) in M(A). It
-ﬁts into a commutative diagram
-˜I λ //
-˜χ
-
-HomA′(A, ˜I′)
-Homid(v,id)
-
-˜I′ HomA′(A′, ˜I′)canoo
-in M(A′), where can is the canonical isomorphism. Because ˜χand v are quasi-
-isomorphisms, and ˜I′is K-injective, we see thatλis a quasi-isomorphism.
-Finally, consider the commutative diagram
-HomA( ˜Q, ˜I)
-Homv( ˜ψ,˜χ) //
-Homid(id,λ)
-
-HomA′( ˜Q′, ˜I′)
-HomA( ˜Q, HomA′(A, ˜I′))
-adj // HomA′( ˜Q, ˜I′)
-Homid( ˜ψ,id)
-OO
-in M(Z), where adj is the adjunction isomorphism. Since λand ˜ψare quasi-
-isomorphisms, ˜Q is K-projective, and ˜I′is K-injective, it follows thatHomv( ˜ψ,˜χ)
-is a quasi-isomorphism. □
+}
+\qquad \qquad 
+\UseTips \xymatrix @C=10ex @R=6ex {
+P
+\ar @/^1.5em/ [r]^{ \phi_0 }
+\ar @/_1.5em/ [r]_{ \phi_1 }
+&
+I
+}
+\qquad 
+\UseTips \xymatrix @C=10ex @R=6ex {
+P
+\ar @/^1.5em/ [r]^{ \opn{Q}(\phi_0) }
+\ar @/_1.5em/ [r]_{ \opn{Q}(\phi_1) }
+&
+I
+} \]
+
+\begin{proof}
+(1) According to \cite[Propositions 1.4 and 1.5]{Sp}, the additive homomorphism 
+\[ \opn{Hom}_{\cat{K}(A)}(P, I) = \opn{H}^0(\opn{Hom}_A(P, I)) \to 
+\opn{Hom}_{\cat{D}(A)}(P, I) \]
+is bijective. Note that in \cite{Sp} $A$ is a ring; but the definitions and 
+proofs pass without change to the case of a DG ring.
+
+\medskip \noindent 
+(2, 3) These are immediate from (1). 
+\end{proof}
+
+A DG ring homomorphism $u : A \to B$ induces the forgetful (or restriction of 
+scalars) functor 
+$\opn{For}_{u} : \cat{M}(B) \to \cat{M}(A)$, 
+which is exact, and hence gives rise to a triangulated functor
+$\opn{For}_{u} : \cat{D} (B) \to \cat{D} (A)$. 
+We usually do not mention the functor $\opn{For}_{u}$ explicitly, unless it is 
+important for the discussion at hand. 
+
+If $u : A \to B$ is a quasi-isomorphism then 
+$\opn{For}_{u} : \cat{D} (B) \to \cat{D} (A)$ is an equivalence, with 
+quasi-inverse  $M \mapsto B \ot^{\mrm{L}}_A M$.
+For any $M_0 \in \cat{D}(A^{\mrm{op}})$ and $M_1, M_2 \in \cat{D} (A)$
+there are bi-functorial isomorphisms 
+$M_0 \ot^{\mrm{L}}_A M_1 \cong M_0 \ot^{\mrm{L}}_B M_1$ and 
+$\opn{RHom}_A(M_1, M_2) \cong \opn{RHom}_B(M_1, M_2)$
+in $\cat{D}(\Z)$; cf.\ \cite[Proposition 1.4]{YZ2}.
+
+Here is a result that will be used a lot in our paper. The restriction 
+functors are suppressed in it. The easy proof is left to the reader. 
+
+\begin{prop} \label{prop:461} 
+Let $A_0 \xar{u_1} A_1 \xar{u_2} A_2$ and 
+$B_0 \xar{v_1} B_1 \xar{v_2} B_2$ 
+be homomorphisms in $\cat{DGR}$.
+For $k = 0, 1, 2$ let $M_k \in \cat{M}(B_k \ot_{\Z} A_k)$ and
+$N_k \in \cat{M}(B_k)$; and for $k = 1, 2$ let 
+$\ze_k : M_{k - 1} \to M_k$ and $\th_k : N_k \to N_{k - 1}$ 
+be homomorphisms in $\cat{M}(B_{k - 1} \ot_{\Z} A_{k - 1})$ and 
+$\cat{M}(B_{k - 1})$ respectively.
+\begin{enumerate}
+\item The abelian group $\opn{Hom}_{B_0}(M_0, N_0)$ is a DG 
+$A_0^{\mrm{op}}$-module,  with action 
+\[ (\phi \cd a)(m) :=  \phi(a \cd m) \]
+for $\phi \in \opn{Hom}_{B_0}(M_0, N_0)$, $a \in A_0$  
+and $m \in M_0$.
+
+\item The function 
+\[ \opn{Hom}_{v_1}(\ze_1, \th_1) : \opn{Hom}_{B_1}(M_1, N_1) \to
+\opn{Hom}_{B_0}(M_0, N_0) , \]
+with formula 
+\[ \opn{Hom}_{v_1}(\ze_1, \th_1)(\phi) := \th_1 \circ \phi \circ \ze_1 \]
+for $\phi \in \opn{Hom}_{B_1}(M_1, N_1)$,
+is a homomorphism in $\cat{M}(A_0^{\mrm{op}})$.
+
+\item There is equality 
+\[ \opn{Hom}_{v_1}(\ze_1, \th_1) \circ \opn{Hom}_{v_2}(\ze_2, \th_2) =
+\opn{Hom}_{v_2 \circ v_1}(\ze_2 \circ \ze_1, \th_1 \circ \th_2) . \]
+
+\item Say 
+$\ze'_1 : M_{0} \to M_1$ and $\th'_1 : N_1 \to N_{0}$ are also homomorphisms in 
+\lb $\cat{M}(B_0 \ot_{\Z} A_0)$ and $\cat{M}(B_{0})$ respectively, and there 
+are homotopies 
+$\ze_1 \twoto \ze'_1$ and $\th_1 \twoto \th'_1$ in
+$\cat{M}(B_0 \ot_{\Z} A_0)$ and $\cat{M}(B_{0})$ respectively.
+Then there is a homotopy 
+\[ \opn{Hom}_{v_1}(\ze_1, \th_1) \twoto \opn{Hom}_{v_1}(\ze'_1, \th'_1) \]
+in $\cat{M}(A_0^{\mrm{op}})$.
+\end{enumerate}
+\end{prop}
+
+Item (2) of the proposition is illustrated here:
+
+\[ \UseTips \xymatrix @C=10ex @R=6ex {
+M_0
+\ar[r]^{\ze_1}
+\ar[d]_{\opn{Hom}_{v_1}(\ze_1, \th_1)(\phi)}
+&
+M_1
+\ar[d]^{\phi}
+\\
+N_0
+&
+N_1
+\ar[l]_{\th_1}
+} \]
+
+\begin{prop} \label{prop:462}
+Let $v : A' \to A$ be a quasi-isomorphism between DG rings.
+Let $Q, I \in \cat{M}(A)$, $P \in \cat{M}(A^{\mrm{op}})$, 
+$Q', I' \in \cat{M}(A')$ and $P' \in \cat{M}(A'^{\, \mrm{op}})$.
+Let $\phi : P' \to P$ be a quasi-isomorphism in  
+$\cat{M}(A'^{\, \mrm{op}})$, and let 
+$\psi : Q' \to Q$ and $\chi : I \to I'$ be quasi-isomorphisms in  $\cat{M}(A')$.
+\begin{enumerate}
+\item If \tup{((}$P$ is K-flat over $A^{\mrm{op}}$ or $Q$ is K-flat over 
+$A$\tup{)} and
+\tup{(}$P'$ is K-flat over $A'^{\mrm{\, op}}$ or $Q'$ is K-flat over 
+$A'$\tup{))} then 
+\[ \phi \ot_v \psi : P' \ot_{A'} Q' \to P \ot_A Q \] 
+is a quasi-isomorphism.
+
+\item If \tup{((}$Q$ is K-projective or $I$ is K-injective over $A$\tup{)} 
+and
+\tup{(}$Q'$ is K-projective or $I'$ is K-injective over $A'$\tup{))} then
+\[ \opn{Hom}_v(\psi, \chi) : \opn{Hom}_A(Q, I) \to \opn{Hom}_{A'}(Q', I') \]
+is a quasi-isomorphism.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+This is implicit in the proof of \cite[Proposition 1.4]{YZ2}. Here is a 
+detailed proof. 
+
+\medskip \noindent 
+(1) By the symmetry of the situation we can assume that either $P'$ and $P$ 
+are K-flat (over the respective DG rings), or that $Q'$ and $P$ are
+K-flat. We begin by reducing the second case to the first case. Choose a K-flat 
+resolution $\mu : \til{P}' \to P'$. Then 
+$\til{P}' \ot_{A'} Q' \to P' \ot_{A'} Q'$ is a quasi-isomorphism, and it 
+suffices to prove that 
+\[ (\phi \circ \mu) \ot_v \psi : \til{P}' \ot_{A'} Q' \to P \ot_A Q \]
+is a quasi-isomorphism, which is the first case.
+
+Now we assume that  $P'$ and $P$ are K-flat. Consider the homomorphism 
+$\phi \cd \opn{id}_A : P' \ot_{A'} A \to P$, 
+$(\phi \cd \opn{id}_A)(p' \ot a)  := \phi(p') \cd a$. 
+We claim this is a quasi-isomorphism. To see why, let us look at the first 
+commutative diagram below. The homomorphism $\opn{id}_{P'} \ot v$ is a 
+quasi-isomorphism since $v$ is a quasi-isomorphism and $P'$ is K-flat; 
+the homomorphism $\opn{id}_{P'} \cd \opn{id}_{A'}$ is an isomorphism; and 
+$\phi$ is a quasi-isomorphism; therefore $\phi \cd \opn{id}_A$ 
+is a quasi-isomorphism.
+\[ \UseTips \xymatrix @C=10ex @R=6ex {
+P' \ot_{A'} A' 
+\ar[r]^(0.6){ \opn{id}_{P'} \cd \opn{id}_{A'} }
+\ar[d]_{ \opn{id}_{P'} \ot v }
+&
+P'
+\ar[d]^{\phi}
+\\
+P' \ot_{A'} A
+\ar[r]^(0.6){\phi \cd \opn{id}_{A}  }
+&
+P 
+} 
+\qquad 
+\UseTips \xymatrix @C=8ex @R=6ex {
+P' \ot_{A'} Q'
+\ar[r]^{ \phi \ot_v \psi }
+\ar[d]_{ \opn{id}_{P'} \ot \psi }
+&
+P \ot_A Q 
+\\
+P' \ot_{A'} Q
+\ar[r]^(0.45){ \lambda }
+&
+P' \ot_{A'} A \ot_A Q 
+\ar[u]_{ (\phi \cd \opn{id}_{A}) \ot \opn{id}_{Q} }
+} \]
+
+Next look at the second commutative diagram above.
+The homomorphism  $\lambda$, defined by
+$\lambda(p' \ot q) := p' \ot 1 \ot q$, is an isomorphism.
+The homomorphism $\opn{id}_{P'} \ot \psi$ is a quasi-isomorphism because 
+$\psi$ is a  quasi-isomorphism and $P'$ is K-flat; 
+and $(\phi \cd \opn{id}_{A}) \ot \opn{id}_{Q}$ is a quasi-isomorphism because 
+$\phi \cd \opn{id}_{A}$ a quasi-isomorphism between K-flat DG 
+$A^{\mrm{op}}$-modules. Therefore $\phi \ot_v \psi$ is a quasi-isomorphism.
+
+\medskip \noindent 
+(2) Choose K-projective resolutions 
+$\al: \til{Q} \to Q$ and $\al' : \til{Q}' \to Q'$,
+and K-injective resolutions 
+$\be : I \to \til{I}$ and $\be' : I' \to \til{I}'$,
+in $\cat{M}(A)$ and $\cat{M}(A')$ respectively. 
+By Proposition \ref{prop:460}, we can lift $\psi$ and $\chi$ 
+to quasi-isomorphisms $\til{\psi}$ and $\til{\chi}$, such that the diagrams 
+\[ \UseTips \xymatrix @C=6ex @R=6ex {
+\til{Q}'
+\ar[d]_{\al'}
+\ar[r]^{\til{\psi}}
+&
+\til{Q}
+\ar[d]^{\al}
+\\
+Q'
+\ar[r]^{\psi}
+&
+Q
+} 
+\qquad \qquad 
+\UseTips \xymatrix @C=8ex @R=6ex {
+\til{I}
+\ar[r]^{\til{\chi}}
+&
+\til{I}'
+\\
+I
+\ar[u]^{\be}
+\ar[r]^{\chi}
+&
+I'
+\ar[u]_{\be'}
+} \]
+in $\cat{M}(A')$ are commutative up to homotopy. We get a diagram 
+\begin{equation} \label{eqn:970}
+\UseTips \xymatrix @C=14ex @R=6ex {
+\opn{Hom}_A(Q, I)
+\ar[r]^{\opn{Hom}_v(\psi, \chi)}
+\ar[d]_{ \opn{Hom}_{\mrm{id}}(\al, \be) }
+&
+\opn{Hom}_{A'}(Q', I')
+\ar[d]^ {\opn{Hom}_{\mrm{id}}(\al', \be') }
+\\
+\opn{Hom}_A(\til{Q}, \til{I})
+\ar[r]^{\opn{Hom}_v(\til{\psi}, \til{\chi})}
+&
+\opn{Hom}_{A'}(\til{Q}', \til{I}')
+} 
+\end{equation}
+in $\cat{M}(\Z)$ that is commutative up to homotopy. 
+Now let us examine the commutative diagram 
+\[ \UseTips \xymatrix @C=14ex @R=8ex {
+\opn{Hom}_A(Q, I)
+\ar[r]^{ \opn{Hom}_{\mrm{id}}(\al, \mrm{id}_I) }
+\ar[d]_{ \opn{Hom}_{\mrm{id}}(\mrm{id}_Q, \be) }
+\ar[dr]^{ \ \opn{Hom}_{\mrm{id}}(\al, \be) }
+&
+\opn{Hom}_{A}(\til{Q}, I)
+\ar[d]^{ \opn{Hom}_{\mrm{id}}(\mrm{id}_{\til{Q}}, \be) }
+\\
+\opn{Hom}_A(Q, \til{I})
+\ar[r]^{ \opn{Hom}_{\mrm{id}}(\al, \mrm{id}_{\til{I}}) }
+&
+\opn{Hom}_A(\til{Q}, \til{I})
+} 
+\]
+in $\cat{M}(\Z)$.
+The homomorphisms 
+$\opn{Hom}_{\mrm{id}}(\al, \mrm{id}_{\til{I}})$ 
+and 
+$\opn{Hom}_{\mrm{id}}(\mrm{id}_{\til{Q}}, \be)$
+are both quasi-isomorphisms. At least one of the homomorphisms
+$\opn{Hom}_{\mrm{id}}(\mrm{id}_Q, \be)$
+and 
+$\opn{Hom}_{\mrm{id}}(\al, \mrm{id}_I)$
+is a quasi-isomorphism. It follows that the diagonal homomorphism 
+$\opn{Hom}_{\mrm{id}}(\al, \be)$ is a quasi-isomorphism. 
+A similar argument shows that 
+$\opn{Hom}_{\mrm{id}}(\al', \be')$ is a quasi-isomorphism. Going back to 
+diagram (\ref{eqn:970}), we see that it is enough to prove that 
+$\opn{Hom}_v(\til{\psi}, \til{\chi})$
+is a quasi-isomorphism.
+
+Let 
+$\la : \til{I} \to \opn{Hom}_{A'}(A, \til{I}')$
+be the homomorphism 
+$\la(i)(a) := \til{\chi}(a \cd i)$
+in $\cat{M}(A)$.
+It fits into a commutative diagram 
+\[ \UseTips \xymatrix @C=6ex @R=6ex {
+\til{I}
+\ar[r]^(0.3){\la}
+\ar[d]_{\til{\chi}}
+& 
+\opn{Hom}_{A'}(A, \til{I}')
+\ar[d]^{ \opn{Hom}_{\mrm{id}}(v, \mrm{id}) }
+\\
+\til{I}'
+& 
+\opn{Hom}_{A'}(A', \til{I}')
+\ar[l]_(0.7){ \opn{can} }
+} 
+\]
+in $\cat{M}(A')$, where $\opn{can}$ is the canonical isomorphism. 
+Because $\til{\chi}$ and $v$ are quasi-isomorphisms, and $\til{I}'$ is 
+K-injective, we see that $\la$ is a quasi-isomorphism. 
+
+Finally, consider the commutative diagram 
+\[ \UseTips \xymatrix @C=8ex @R=6ex {
+\opn{Hom}_A(\til{Q}, \til{I})
+\ar[r]^{ \opn{Hom}_v(\til{\psi}, \til{\chi}) }
+\ar[d]_{ \opn{Hom}_{\mrm{id}}(\mrm{id}, \la) }
+&
+\opn{Hom}_{A'}(\til{Q}', \til{I}')
+\\
+\opn{Hom}_A(\til{Q}, \opn{Hom}_{A'}(A, \til{I}'))
+\ar[r]^(0.6){ \opn{adj} }
+&
+\opn{Hom}_{A'}(\til{Q}, \til{I}')
+\ar[u]_{ \opn{Hom}_{\mrm{id}}(\til{\psi}, \mrm{id}) }
+} 
+\]
+in $\cat{M}(\Z)$, where $\opn{adj}$ is the adjunction isomorphism. 
+Since $\la$ and $\til{\psi}$ are quasi-isomorphisms, $\til{Q}$ is K-projective, 
+and  $\til{I}'$ is K-injective, it follows that 
+$\opn{Hom}_v(\til{\psi}, \til{\chi})$
+is a quasi-isomorphism.
+\end{proof}

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1810.11563v1/blocks/prose-sec-025",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1810.11563v1/blocks/prose-sec-025",
   "kind": "prose",
   "title": "Complexity and Firewalls",
   "pageStart": 55,
   "pageEnd": 59,
   "text": "../sections/sec-025-16-complexity-and-firewalls.md",
-  "derivedFrom": "library/arxiv-1810.11563v1/manifest",
-  "sourceDocument": "library/arxiv-1810.11563v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1810.11563v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1810.11563v1",
   "provenance": "ingested"
 }

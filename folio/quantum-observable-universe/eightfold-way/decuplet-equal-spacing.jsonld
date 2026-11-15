@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-decuplet-equal-spacing",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:decuplet-equal-spacing",
+  "kind": "remark",
+  "title": "The decuplet equal-spacing rule has no discriminating power",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-borromean-decuplet",
+    "papers/quantum-observable-universe/blocks/rem-meson-mass-splitting"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-borromean-decuplet",
+  "cites": [
+    "references/gellmann1962"
+  ],
+  "leanRef": "qou:QOU.Eightfold.DecupletEqualSpacing.equal_spacing_cannot_discriminate",
+  "text": "decuplet-equal-spacing.md",
+  "provenance": "authored"
+}

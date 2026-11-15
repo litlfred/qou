@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-hyperbolic-knot-positive-volume-via-reeb",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:hyperbolic-knot-positive-volume-via-reeb",
+  "kind": "remark",
+  "title": "Garside / Borromean trajectories have positive hyperbolic volume via Reeb",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-reeb-bundle-complement-equals-volume",
+    "papers/quantum-observable-universe/blocks/rem-garside-as-compound-flow"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-reeb-bundle-complement-equals-volume",
+  "tags": [
+    "hyperbolic-volume",
+    "borromean-rings",
+    "jsj-decomposition",
+    "garside-element",
+    "reeb-flow",
+    "figure-eight"
+  ],
+  "text": "hyperbolic-knot-positive-volume-via-reeb.md",
+  "provenance": "authored"
+}

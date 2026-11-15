@@ -8,52 +8,13 @@ pages: 5-6
 source_pdf: 1010.5321v3.pdf
 source_sha256: c6bb20926b1f291f
 doc_brief: "Formulas on hyperbolic volume — This paper collects some important formulas on hyperbolic volume."
+text_source: latex
+latex_prose_ratio: 0.938
+latex_coverage_ratio: 0.846
 ---
-x
-x
-x
-n
-n-1
-n-1
-1
-r
-r x
-x
-1
-n
-n-1
-P
-P
-,
-O
-Figure 4: Spherical coordinates
-From the hyperbolic orthogonal coordinates x1,x 2, · · ·,x n we can get the spherical coordi-
-nates of a point P . Let the distance of P =Pn from the origin is rn and denote by φi the angle
-between the ith coordinate axis and the segment OPi+1 for i =n − 1,n − 2, · · · 1. ( Here Pn−1
-is the orthogonal projection of P into the coordinate subspace of the axes x1,x n−2,x n, and so
-on...) We have
-sinhxn−1
-k = sinh rn
-k cosφn−1
-by the hyperbolic theorem of Sin. For general i, we get that
-coshxn−1
-k · · ·coshxn−i+1
-k sinhxn−i
-k = sinh rn
-k sinφn−1 · · ·sinφn−i+1 cosφn−i,
-and by the Pythagorean theorem we can get a last equation:
-coshxn−1
-k · · ·coshx2
-k sinhx1
-k = sinh rn
-k sinφn−1 · · ·sinφ 2 cosφ 1.
-Straightforward computation shows that:
-v(D) = kn−1
-∫
-D
-(
-sinhrn
-k
-)n−1
-sinn−2φn−1 · · · sinφ 2dφ 1 · · · dφn−1drn.
-5
+![Spherical coordinates](vol4.eps)
+
+From the hyperbolic orthogonal coordinates $x_1,x_2,\cdots, x_n$ we can get the spherical coordinates of a point $P$. Let the distance of $P=P_n$ from the origin is $r_n$ and denote by $\phi_i$ the angle between the $i^{th}$ coordinate axis and the segment $OP_{i+1}$ for $i=n-1,n-2,\cdots 1$. ( Here $P_{n-1}$ is the orthogonal projection of $P$ into the coordinate subspace of the axes $x_1, x_{n-2},x_n$, and so on\...) We have $$\sinh \frac{ x_{n-1}}{k}=\sinh \frac{ r_n}{k} \cos\phi_{n-1}$$ by the hyperbolic theorem of Sin. For general $i$, we get that $$\cosh \frac{ x_{n-1}}{k}\cdots \cosh \frac{x_{n-i+1}}{k}\sinh \frac {x_{n-i}}{k}=\sinh \frac{ r_n }{k}\sin\phi_{n-1}\cdots \sin\phi_{n-i+1}\cos\phi_{n-i},$$ and by the Pythagorean theorem we can get a last equation: $$\cosh \frac{ x_{n-1}}{k}\cdots \cosh \frac{x_{2}}{k}\sinh \frac{  x_{1}}{k}=\sinh \frac{ r_n }{k}\sin\phi_{n-1}\cdots \sin\phi_{2}\cos\phi_{1}.$$ Straightforward computation shows that:
+
+$$v(D)=k^{n-1}\int\limits_{D} \left(\sinh\frac{r_n}{k}\right)^{n-1}\sin^{n-2}\phi_{n-1}\cdots \sin\phi_{2}
+\mathrm{d}\phi_1\cdots \mathrm{d}\phi_{n-1}\mathrm{d}r_n.$$

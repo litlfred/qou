@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2605.09605v2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Cocycle Actions on Hidden Quantum Markov Models:",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2605.09605v2",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Cocycle Actions on Hidden Quantum Markov Models: Symmetry Protection and Topological Order",
   "contains": [
     "library/arxiv-2605.09605v2/sections/sec-000",
     "library/arxiv-2605.09605v2/sections/sec-001",
@@ -12,8 +17,18 @@
     "library/arxiv-2605.09605v2/sections/sec-003"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2605.09605&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-2605.09605v2",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "2605.09605v2.pdf",
     "source_sha256": "24496fb444a2b5587e28d86f6190c592c54d705939aab80dcc6c415ccacf9f38",
     "pages": 17,

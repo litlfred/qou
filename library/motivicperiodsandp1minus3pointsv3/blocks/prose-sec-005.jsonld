@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/motivicperiodsandp1minus3pointsv3/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/motivicperiodsandp1minus3pointsv3/blocks/prose-sec-005",
   "kind": "prose",
-  "title": "(X,",
-  "pageStart": 2,
-  "pageEnd": 3,
-  "text": "../sections/sec-005-1-x.md",
-  "derivedFrom": "library/motivicperiodsandp1minus3pointsv3/manifest",
-  "sourceDocument": "library/motivicperiodsandp1minus3pointsv3/manifest",
+  "title": "Multiple modular values",
+  "pageStart": 19,
+  "pageEnd": 22,
+  "text": "../sections/sec-005-6-multiple-modular-values.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/motivicperiodsandp1minus3pointsv3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/motivicperiodsandp1minus3pointsv3",
   "provenance": "ingested"
 }

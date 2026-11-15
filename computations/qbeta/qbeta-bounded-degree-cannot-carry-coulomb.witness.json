@@ -1,5 +1,7 @@
 {
   "computation": "qbeta-bounded-degree-cannot-carry-coulomb",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal",
   "assertions": [
     {
       "name": "even_close_packing_leaves_most_proton_pairs_unrepresented",
@@ -179,8 +181,8 @@
     "pb208_coulomb_over_binding": "0.4774703182"
   },
   "provenance": {
-    "headSha": "4aae73f207da23d17a8e249823ad830099998308",
+    "headSha": "eb645d81e7fe1646342513e676f6498caab4a229",
     "producer": "computations/qbeta/qbeta_bounded_degree_cannot_carry_coulomb_probe.py",
-    "elapsed_s": 0.185
+    "elapsed_s": 0.202
   }
 }

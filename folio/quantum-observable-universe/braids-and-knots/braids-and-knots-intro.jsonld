@@ -1,0 +1,20 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/sec-path-integrals-intro",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "sec:path-integrals-intro",
+  "kind": "prose",
+  "text": "braids-and-knots-intro.md",
+  "meta": {
+    "position": "opening"
+  },
+  "provenance": "authored"
+}

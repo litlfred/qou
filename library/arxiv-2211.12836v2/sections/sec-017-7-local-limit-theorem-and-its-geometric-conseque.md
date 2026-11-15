@@ -8,526 +8,68 @@ pages: 56-60
 source_pdf: 2211.12836v2.pdf
 source_sha256: 4ffbb8b21f8b175d
 doc_brief: "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY DYSON BROWNIAN MOTION — We study a class of commuting Markov kernels whose simplest element describes the movement ofk particles on a discrete"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.987
 ---
-In this section, we prove a local limit theorem for the h-probability measure (∗m)∗δI and
-deduce Corollary 2.7, which gives asymptotics of structure coeﬃcients in the ring QH(Gk,n). For
-simplicity, we assume that Var (m) = 0 to avoid any lattice issue.
-Theorem 7.1. LetM >0 and suppose that m = (µr)1≤r≤m is a sequence ofh-probability measures
-on Bk,n such that Var 2(m) = 0 and⟨ˆm⟩3≤MK (m) and let I∈Bk,n. Then,
-((∗m)∗δI) [I′] =δ|I′|=⟨I⟩+m⟨m⟩)[n]n
-[
-KSU (k)
-t0γ (ξn(I),ξn(I′)) +o
-( 1√n
-)]
-,
-where
-t0 = 2πm
-n2 , γ = k
-2(k2− 1)K(m),
-and o(·) only depends on γ ,M, t0 and k.
-Proof. Recall that Φn[δI](J) = SI(ξn(J))
-SI(ξn(I0) by (19). Then, by Proposition 3.10, Lemma 4.5 and Lemma
-4.4, for I′∈Bk,n
-((∗m)∗δI) [I′] =
-∑
-J∈Bk,n
-Φ[δI](J)
-m∏
-j=1
-Φ[µj](J)˜uJ
-I′
-=
-∑
-J∈Bk,n
-m∏
-j=1
-Φ[µj](J)SI(ξn(J))
-SI(ξn(I0))
-|V (ξn(J))|2SI′(ξn(J))
-|V (ξn(I0))|2SI′(ξn(I0))
-=
-∑
-J∈Bk,n
-m∏
-j=1
-Φ[µj](J)SJ(ξn(I))SJ(ξn(I′)).
-Set t0 = (2π)2m
-n2 and γ = kK(m)
-2(k2−1). Then, applying Proposition 5.3 with Var 2(m) = 0 gives
-((∗m)∗δI) [I′] =
-∑
-J∈Bk,n
-SJ(ξn(I′))SJ(ξn(I))e
-2im⟨m⟩⟨J⟩
-kn B(J)
-with
-B(J)≤ exp
-(
-−t0
-γK( ˜J)
-k + t0M
-n O
-([
-kK( ˜J)K(m)
-]3/2))
-QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY DYSON BROWNIAN MOTION 57
-and, when‖ ˜J‖∞≤c n
-m1/3M 1/3K(m)1/2 :=θ1n1/3 (with θ2 depending on t0,γ,k and M)
-B(J) = exp
-(
-−t0
-γK( ˜J)
-k + t0M
-n O
-([
-kK( ˜J)K(m)
-]3/2))
-.
-Noting that K( ˜J)≤‖ ˜J‖2
-∞ =‖ ˆJ‖2
-∞, there is θ2> 0 depending on k,γ and M so that
-−t0
-γK( ˜J)
-k + t0M
-n O
-([
-kK( ˜J)K(m)
-]3/2)
-≤− t0
-2
-γK( ˜J)
-k + t0M
-n O
-([
-kK( ˜J)K(m)
-]3/2)
-when sup( ˆJi− ˆJi+1[n])≤ θ2n. By Lemma 5.5, for sup( ˆJi− ˆJi+1[n])≥ θ2n, there exists δ,η > 0
-depending on t0,k,γ and M such that
-(61) B(J)≤ exp
-(
-−n2
-(
-δ + η
-n3
-))
-.
-Let us split ((∗m)∗δI) [I′] as
-((∗m)∗δI) [I′] =
-∑
-J∈Bk,n
-sup( ˆJi− ˆJi+1[n])>θ1n1/3
-SJ(ξn(I))SJ(ξn(I′))e2iπm⟨m⟩·⟨λJ⟩
-kn B(J)
-+
-∑
-J∈Bk,n
-sup( ˆJi− ˆJi+1[n])<θ1n1/3
-SJ(ξn(I))SJ(ξn(I′))e2iπm⟨m⟩·⟨λJ⟩
-kn B(J) :=S1 +S2,
-and, using (25), split KSU (k)
-γt0
-(
-ξn(I′),R−m⟨m⟩
-kn
-(ξn (I))
-)
-as
-KSU (k)
-γt0
-(
-ξn(I′),R−m⟨m⟩
-kn
-(ξn (I))
-)
-=
-∑
-J∈Bk
-Jk=0
-exp(−κ0,γ(J)t0)SJ(ξn(I′))SJ
-(
-R−m⟨m⟩
-kn
-(ξn (I))
-)
-=
-∑
-J∈Bk
-Jk=0
-sup(Ji−Ji+1[n])<θ1n1/3
-e
-2iπm⟨m⟩)⟨J⟩
-kn −κ0,γ(J)t0SJ(ξn(I′))SJ(ξn(I))
-+
-∑
-J∈Bk
-Jk=0
-sup(Ji−Ji+1[n])≥θ1n1/3
-e−κ0,γ(J)t0SJ(ξn(I′))SJ
-(
-R−m⟨m⟩
-kn
-(ξn (I))
-)
-:=S′
-1 +S′
-2.
-Then, we have
-⏐⏐⏐((∗m)∗δI) [I′]−nδ⟨I′⟩=⟨I⟩+m⟨m⟩)⟩[n]KSU (k),γ
-t0,δI
-(ξn(I′))
-⏐⏐⏐≤
-⏐⏐S1−δ⟨I′⟩=⟨I⟩+m⟨m⟩)[n]S′
-1
-⏐⏐ +
-⏐⏐S2| +|S′
-2
-⏐⏐.
-58 J. GUILHOT, C. LECOUVEY, AND P. TARRAGO
-First, by Lemma 5.4, (61) and the rough bound SJ(ξn(J′))≤dJ≤nk(k−1)/2 for J,J′∈Bk,n,
-|S2|≤
-∑
-J∈Bk,n
-θ1n1/3<sup( ˆJi− ˆJi+1[n])<θ2n
-d2
-J exp
-(
-−t0γ
-2kK( ˜J)
-)
-+
-∑
-J∈Bk,n
-sup( ˆJi− ˆJi+1[n])≥θ2n
-d2
-J exp
-(
-−n2
-(
-δ + η
-n3
-))
-≤#Bk,nnk(k−1)
-[
-exp
-(
-−t0γθ2
-1
-k2 n2/3
-)
-+ exp
-(
-−n2
-(
-δ + η
-n3
-))]
-≤nk2
-exp
-(
-−Cn1/3
-)
-=o (1)
-with o (1) only depending on γ,k,t 0 and M. Likewise, by the absolute convergence of the Fourier
-expansion of the heat kernel on SU (k) for t≥t0, see [21],
-⏐⏐S′
-2
-⏐⏐ =o(1).
-Next, using that SJ(ξn(I)) = S ˆJ(ξn(I))e
-2iπJk⟨I⟩
-n and summing on Jk when sup( ˆJi− ˆJi+1[n]) <
-θ1n1/3 and for n large enough (so that ˆJ +l1k⁄= ˆJ +l′1k when 0≤l⁄=l′≤n− 1) yields
-S1 =
-∑
-J∈Bk,n
-Jk=0
-sup(Ji−Ji+1[n])<θ1n1/3
-B(J)S ˆJ(ξn(I))S ˆJ(ξn(I′))
-(n−1∑
-l=0
-e
-2iπ(m⟨m⟩)/k(⟨J⟩+kl)+(⟨I⟩−⟨I′⟩)l
-n
-)
-=nδm⟨m⟩)+⟨I⟩=⟨I′⟩[n]
-∑
-J∈Bk,n
-Jk=0
-sup(Ji−Ji+1[n])<θ1n1/3
-B(J)e
-2iπm⟨m⟩)⟨J⟩
-kn SJ(ξn(I))SJ(ξn(I′)).
-with
-B(J) = exp
-(
-−t0
-γK( ˜J)
-k + t0M
-n O
-([
-kK( ˜J)K(m)
-]3/2))
-.
-Hence, using that t0M
-n O
-([
-kK( ˜J)K(m)
-]3/2)
-=O(1) when sup(Ji−Ji+1[n])<θ 1n1/3,
-⏐⏐S1−δ⟨I′⟩=⟨I⟩+m⟨m⟩[n]S′
-1
-⏐⏐
-≤n
-∑
-J∈Bk,n
-Jk=0
-sup(Ji−Ji+1[n])<θ1n1/3
-⏐⏐⏐SJ
-(
-R−m⟨m⟩
-kn
-(ξn (I))
-)
-SJ(ξn(I′))
-⏐⏐⏐ exp
-(
-−t0
-γK( ˜J)
-2k
-)
-exp
-(
-−t0
-γK( ˜J)
-k
-)⏐⏐⏐⏐exp
-(t0M
-n O
-([
-k2γK( ˜J)
-]3/2))
-− 1
-⏐⏐⏐⏐
-≤
-∑
-J∈Bk,n
-Jk=−(k−1)/2
-sup(Ji−Ji+1[n])<n1/6
-d2
-J exp
-(
-−t0
-γK( ˜J)
-2k
-)
-O(1)≤KSU (k)
-γt0/2 (0, 0)O(1) =O (1),
-QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY DYSON BROWNIAN MOTION 59
-with O(1) depending on M,t 0,γ and k. Finally,
-⏐⏐⏐((∗m)∗δI) [I′]−nδ⟨I′⟩=⟨I⟩+m⟨m⟩[n]KSU (k)
-γt0
-(
-ξn(I′),R−m⟨m⟩
-kn
-(ξn (I))
-)⏐⏐⏐ =O(1),
-with O(·) depending on k,γ,M and t0. □
-We can now turn to the proof of Corollary 2.7.
-Proof of Corollary 2.7. Recall that in the case where ∑m+1
-i=0 di≤ dimHold(Gk,n) = k(n−k) +dn
-and for generic manifolds M0,...,M m+1, we have by (63)
-#Md,a0,...,am+1
-M0,...,Mm+1 =
-⟨( m∏
-i=0
-[Mi]
-)
-[qd], [Mm+1]
-⟩
-H∗(Gk,n)
-,
-where⟨·,·⟩ denotes the Poincar´ e duality inH∗(Gk,n) and for x∈QH(Gk,n) = C[q]⊗H∗(Gk,n), we
-write x =∑
-d≥0x[qd]⊗qd. By the multiplication rule (62), for d′≥ 0 we have (∏m
-i=0[Mi]) [qd′
-]∈
-Hd′n+k(n−k)−∑m
-i=0di and thus, for d′ ⁄= d′′, (∏m
-i=0[Mi]) [qd′
-] and (∏m
-i=0[Mi]) [qd′′
-] are in diﬀerent
-dimension components of H∗(Gk,n). Hence, we deduce that
-#Md,a0,...,am+1
-M0,...,Mm+1 =
-∑
-I∈Bk,n,⟨I⟩=dm+1
-am+1
-I
-⟨( m∏
-i=0
-[Mi]
-)
-[qd],σλI
-⟩
-H∗(Gk,n)
-=
-∑
-I∈Bk,n,⟨I⟩=dm+1
-am+1
-I
-⟨( m∏
-i=0
-[Mi]
-)
-,σλI
-⟩
-H∗(Gk,n)
-,
-where x is the image of x in QH(Gk,n)/⟨q = 1⟩ and we recall that the am+1
-I ’s are the coeﬃcients
-appearing in the decomposition [ Mm+1] = ∑
-I∈Bk,n,⟨I⟩=dm+1am+1
-I σλI. Then, recalling that the
-Poincar´ e duality satisﬁes⟨σλ,σµ⟩H∗(Gk,n) =δλ,µc (see for example the introduction of [5]), we have
-#Md,a0,...,am+1
-M0,...,Mm+1 =
-∑
-I∈Bk,n,⟨I⟩=dm+1
-am+1
-I cIc∏m
-i=0[Mi],
-wherecI∏m
-i=0[Mi],I ∈Bk,n are the coeﬃcients of∏m
-i=0[Mi] on the basis{σλI,I ∈Bk,n} and we recall
-that Ic = (n− 1−Ik−j+1)1≤j≤k. By Proposition 4.2, the linear map from QH(Gk,n)/⟨q = 1⟩ to
-B(L2(Bk,n)) mappingσλ toT (sλ) is an algebra isomorphism fromQH(Gk,n)/⟨q = 1⟩ to the algebra
-A⊂B (L2(Bk,n)) for which Bk,n is positively multiplicative, and T (sλ) is the unique element of A
-sending I0 to Iλ. Hence, by Proposition 3.6 and (7) we have
-cI∏m
-i=0[Mi] =hr
-I
-(
-(Mh)−1([M0])∗···∗ (Mh)−1([Mm])
-)
-(I),
-60 J. GUILHOT, C. LECOUVEY, AND P. TARRAGO
-where (Mh)−1([Mi]) = ∑
-I∈Bk,n
-1
-hr
-I
-ai
-IeI and hr
-I = V (ξn(I0)2
-nk SI(ξn(I0)) by Lemma 4.5. Now, since
-hl
-I =SI(ξn(I0)) by the same lemma,
-Φn
-[
-(Mh)−1([Mi])
-]
-(I0) =
-⟨
-1, (Mh)−1([Mi])
-⟩
-h
-=
-⟨
-1, 1
-hr
-
- ∑
-I∈Bk,n
-ai
-IeI
-
-
-⟩
-h
-=
-⟨
-hl,
-
- ∑
-I∈Bk,n
-ai
-IeI
-
-
-⟩
-=
-∑
-I∈Bk,n
-ai
-ISI(ξn(I0)) =qDim(Mi),
-and we deduce that 1
-qDim(Mi)(Mh)−1(Mi) is a h-probability measure on Bk,n. Then, recalling that
-δI = 1
-µh(I)eI = 1
-hl(I)hr(I)eI, we have
-(Mh)−1(M0) =
-∑
-I∈Bk,n,⟨I⟩=d0
-aISI(ξn(I0))δI,
-so that ﬁnally
-cI′∏m
-i=1[Mi] = V (ξn(I0))2SI′(ξn(I0))∏m
-i=0qDim(Mi)
-nk
-∑
-I∈Bk,n,⟨I⟩=d0
-aISI(ξn(I0)) (δI∗ (∗m)) (I′),
-with m = (µi)1≤i≤m where µi = 1
-qDim(Mi)(Mh)−1(Mi). Hence, applying Theorem 2.6 with the
-notation of Corollary 2.7, we deduce that
-cI′∏m
-i=0[Mi] =V (ξn(I0))2QI′(ξn(I0))∏m
-i=1qDim(Mi)
-nk−1
-∑
-I∈Bk,n,⟨I⟩=d0
-aIsI(ξn(I0))
-(
-KSU (k)
-(2π)2m
-n2 γ
-(
-R−m⟨m⟩
-kn
-(ξn(I)),ξn(I′)
-)
-+O
-( 1
-n
-))
-,
-with O(·) only depending on m
-n2,k and‖ ˜m‖i, i = 2, 3. Then, writing pi
-I = aISI(ξn(I0))
-qDim(Mi) for 0≤i≤
-m + 1, so that ∑
-I∈Bk,npi
-I = 1, we get
-#Md,a0,...,am+1
-M0,...,Mm+1 = V (ξn(I0))2∏m+1
-i=0 qDim(Mi)
-nk−1
-
- ∑
-I,I′∈Bk,n
-pM0
-I pMm+1
-I′ KSU (k)
-γt0 (xn
-I,xn
-I′) +O
-( 1
-n
-)
-,
-with xn
-I =R−m⟨m⟩
-kn
-(ξn(I)) and yn
-I′ =ξn((I′)c). □
+[]{#sec:LLT label="sec:LLT"} In this section, we prove a local limit theorem for the $h$-probability measure $(\ast \mathbf{m})*\delta_I$ and deduce Corollary [\[cor:cohomology\]](#cor:cohomology){reference-type="ref" reference="cor:cohomology"}, which gives asymptotics of structure coefficients in the ring $QH(G_{k,n})$. For simplicity, we assume that $Var(\mathbf{m})=0$ to avoid any lattice issue.
+
+::: theorem
+Let $M>0$ and suppose that $\mathbf{m}=(\mu_r)_{1\leq r\leq m}$ is a sequence of $h$-probability measures on $B_{k,n}$ such that $Var_{2}(\mathbf{m})=0$ and $\langle\widehat{\mathbf{m}}\rangle_3\leq MK(\mathbf{m})$ and let $I\in B_{k,n}$. Then, $$\left(\left(\ast \mathbf{m}\right)\ast \delta_I\right)[I']=\delta_{\vert I'\vert=\langle I\rangle+m\langle\mathbf{m}\rangle)[n]}n\left[K_{t_0\gamma}^{SU(k)}(\xi_n(I),\xi_{n}(I'))+o\left(\frac{1}{\sqrt{n}}\right)\right],$$ where $$t_0=\frac{2\pi m}{n^2},\quad \gamma=\frac{k}{2(k^2-1)}K(\mathbf{m}),$$ and $o(\cdot)$ only depends on $\gamma$ ,$M$, $t_0$ and $k$.
+:::
+
+::: proof
+*Proof.* Recall that $\Phi_n[\delta_I](J)=\frac{S_{I}(\xi_{n}(J))}{S_{I}(\xi_{n}(I_0)}$ by [\[eq:Fourier_probability\]](#eq:Fourier_probability){reference-type="eqref" reference="eq:Fourier_probability"}. Then, by Proposition [\[prop:Verlinde_formula_general\]](#prop:Verlinde_formula_general){reference-type="ref" reference="prop:Verlinde_formula_general"}, Lemma [\[lem:Perron-Frobenius\]](#lem:Perron-Frobenius){reference-type="ref" reference="lem:Perron-Frobenius"} and Lemma [\[lem:formula_inversion_Schur\]](#lem:formula_inversion_Schur){reference-type="ref" reference="lem:formula_inversion_Schur"}, for $I'\in B_{k,n}$ $$\begin{aligned}
+\left(\left(\ast \mathbf{m}\right)\ast \delta_I\right)[I']=&\sum_{J\in B_{k,n}}\Phi[\delta_I](J)\prod_{j=1}^m\Phi[\mu_j](J)\tilde{u}^J_{I'}\\
+=&\sum_{J\in B_{k,n}}\prod_{j=1}^m\Phi[\mu_j](J)\frac{S_{I}(\xi_{n}(J))}{S_{I}(\xi_{n}(I_0))}\frac{\left\vert V(\xi_{n}(J))\right\vert^2\overline{S_{I'}(\xi_{n}(J))}}{\left\vert V(\xi_{n}(I_0))\right\vert^2S_{I'}(\xi_{n}(I_0))}\\
+=&\sum_{J\in B_{k,n}}\prod_{j=1}^m\Phi[\mu_j](J)S_{J}(\xi_{n}(I))\overline{S_{J}(\xi_{n}(I')}).
+\end{aligned}$$ Set $t_0=\frac{(2\pi)^2m}{n^2}$ and $\gamma=\frac{kK(\mathbf{m})}{2(k^2-1)}$. Then, applying Proposition [\[prop:convergence_fourier\]](#prop:convergence_fourier){reference-type="ref" reference="prop:convergence_fourier"} with $Var_2(\mathbf{m})=0$ gives $$\begin{aligned}
+\left(\left(\ast \mathbf{m}\right)\ast \delta_I\right)[I']=&\sum_{J\in B_{k,n}}\overline{S_{J}(\xi_{n}(I'))}S_{J}(\xi_{n}(I))e^{\frac{2i m\langle\mathbf{m}\rangle\langle J\rangle}{kn}}B(J)
+\end{aligned}$$ with $$B(J)\leq\exp\left(-t_0\frac{\gamma K(\tilde{J})}{k}+\frac{t_0M}{n}O\left(\left[kK(\tilde{J})K(\mathbf{m})\right]^{3/2}\right)\right)$$ and, when $\Vert \tilde{J}\Vert_{\infty}\leq c\frac{n}{m^{1/3}M^{1/3}K(\mathbf{m})^{1/2}}:=\theta_1 n^{1/3}$ (with $\theta_2$ depending on $t_0,\gamma,k$ and $M$) $$B(J)=\exp\left(-t_0\frac{\gamma K(\tilde{J})}{k}+\frac{t_0M}{n}O\left(\left[kK(\tilde{J})K(\mathbf{m})\right]^{3/2}\right)\right).$$
+
+Noting that $K(\tilde{J})\leq\Vert \tilde{J}\Vert_{\infty}^2=\Vert \hat{J}\Vert_{\infty}^2$, there is $\theta_2>0$ depending on $k,\gamma$ and $M$ so that $$-t_0\frac{\gamma K(\tilde{J})}{k}+\frac{t_0M}{n}O\left(\left[kK(\tilde{J})K(\mathbf{m})\right]^{3/2}\right)\leq -\frac{t_0}{2}\frac{\gamma K(\tilde{J})}{k}+\frac{t_0M}{n}O\left(\left[kK(\tilde{J})K(\mathbf{m})\right]^{3/2}\right)$$ when $\sup(\hat{J}_{i}-\hat{J}_{i+1} [n])\leq \theta_2n$. By Lemma [\[lem:bound_Fourier_large\]](#lem:bound_Fourier_large){reference-type="ref" reference="lem:bound_Fourier_large"}, for $\sup(\hat{J}_{i}-\hat{J}_{i+1} [n])\geq \theta_2n$, there exists $\delta,\eta>0$ depending on $t_0,k,\gamma$ and $M$ such that $$\label{eq:bound_Fourier_large_J}
+B(J)\leq   \exp\left(-n^2\left(\delta+ \frac{\eta}{n^3}\right)\right).$$ Let us split $\left(\left(\ast \mathbf{m}\right)\ast \delta_I\right)[I']$ as $$\begin{aligned}
+\left(\left(\ast \mathbf{m}\right)\ast \delta_I\right)[I']=&\sum_{\substack{J\in B_{k,n}\\ \sup(\hat{J}_{i}-\hat{J}_{i+1} [n])> \theta_1 n^{1/3}}}S_{J}(\xi_{n}(I))\overline{S_{J}(\xi_{n}(I'))}e^{2i \pi \frac{m\langle\mathbf{m}\rangle\cdot\langle \lambda_J\rangle}{kn}}B(J)\\
++&\sum_{\substack{J\in B_{k,n}\\ \sup(\hat{J}_{i}-\hat{J}_{i+1} [n])< \theta_1 n^{1/3}}}S_{J}(\xi_{n}(I))\overline{S_{J}(\xi_{n}(I'))}e^{2i \pi \frac{m\langle\mathbf{m}\rangle\cdot\langle \lambda_J\rangle}{kn}}B(J):=S_1+S_2,
+\end{aligned}$$ and, using [\[eq:series_representation_Brownian_suk\]](#eq:series_representation_Brownian_suk){reference-type="eqref" reference="eq:series_representation_Brownian_suk"}, split $K^{SU(k)}_{\gamma t_0}\left(\xi_n(I'),R_{-\frac{m\langle\mathbf{m}\rangle}{kn}}\left(\xi_{n}\left(I\right)\right)\right)$ as $$\begin{aligned}
+K^{SU(k)}_{\gamma t_0}&\left(\xi_n(I'),R_{-\frac{m\langle\mathbf{m}\rangle}{kn}}\left(\xi_{n}\left(I\right)\right)\right)\\
+=&\sum_{\substack{J\in  B_{k}\\J_k=0}}\exp(-\kappa_{0,\gamma}(J)t_0)\overline{S_{J}(\xi_{n}(I'))}S_{J}\left(R_{-\frac{m\langle\mathbf{m}\rangle}{kn}}\left(\xi_{n}\left(I\right)\right)\right)\\
+=&\sum_{\substack{J\in  B_{k}\\J_k=0\\ \sup(J_{i}-J_{i+1} [n])<\theta_1 n^{1/3}}}e^{\frac{2i \pi m\langle\mathbf{m}\rangle)\langle J\rangle}{kn}-\kappa_{0,\gamma}(J)t_0}\overline{S_{J}(\xi_{n}(I'))}S_{J}(\xi_{n}(I))\\
+&\hspace{3cm}+\sum_{\substack{J\in  B_{k}\\J_k=0\\ \sup(J_{i}-J_{i+1} [n])\geq \theta_1n^{1/3}}}e^{-\kappa_{0,\gamma}(J)t_0}\overline{S_{J}(\xi_{n}(I'))}S_{J}\left(R_{-\frac{m\langle\mathbf{m}\rangle}{kn}}\left(\xi_{n}\left(I\right)\right)\right)\\
+:=&S'_1+S'_2.
+\end{aligned}$$ Then, we have $$\begin{aligned}
+\left\vert \left(\left(\ast \mathbf{m}\right)\ast \delta_I\right)[I']- n\delta_{\langle I'\rangle=\langle I\rangle+m\langle\mathbf{m}\rangle)\rangle[n]}K^{SU(k),\gamma}_{t_0,\delta_I}(\xi_{n}(I'))\right\vert\leq \left\vert S_1-\delta_{\langle I'\rangle=\langle I\rangle+m\langle\mathbf{m}\rangle)[n]}S_1'\right\vert+\left\vert S_2\vert+\vert S_2'\right\vert.
+\end{aligned}$$ First, by Lemma [\[lem:bound_K_norm_inf\]](#lem:bound_K_norm_inf){reference-type="ref" reference="lem:bound_K_norm_inf"}, [\[eq:bound_Fourier_large_J\]](#eq:bound_Fourier_large_J){reference-type="eqref" reference="eq:bound_Fourier_large_J"} and the rough bound $S_{J}(\xi_{n}(J'))\leq d_J\leq n^{k(k-1)/2}$ for $J,J'\in B_{k,n}$, $$\begin{aligned}
+\left\vert S_2\right\vert\leq& \sum_{\substack{J\in B_{k,n}\\ \theta_1 n^{1/3}<\sup(\hat{J}_{i}-\hat{J}_{i+1} [n])< \theta_2n}}d_{J}^2\exp\left(-\frac{t_0\gamma}{2k}K(\tilde{J})\right)\\
+&\hspace{4cm}+ \sum_{\substack{J\in B_{k,n}\\ \sup(\hat{J}_{i}-\hat{J}_{i+1} [n])\geq \theta_2n}}d_{J}^2\exp\left(-n^2\left(\delta+ \frac{\eta}{n^3}\right)\right)\\
+\leq &\#B_{k,n}n^{k(k-1)}\left[\exp\left(-\frac{t_0\gamma \theta_1^2}{k^2}n^{2/3}\right)+\exp\left(-n^2\left(\delta+ \frac{\eta}{n^3}\right)\right)\right]\\
+\leq & n^{k^2}\exp\left(-Cn^{1/3}\right)=o\left(1\right)
+\end{aligned}$$ with $o\left(1\right)$ only depending on $\gamma, k, t_0$ and $M$. Likewise, by the absolute convergence of the Fourier expansion of the heat kernel on $SU(k)$ for $t\geq t_0$, see [@Far], $$\left\vert S'_2\right\vert=o(1).$$
+
+Next, using that $S_{J}(\xi_{n}(I))=S_{\hat{J}}(\xi_{n}(I))e^{\frac{2i\pi J_k\langle I\rangle}{n}}$ and summing on $J_k$ when $\sup(\hat{J}_{i}-\hat{J}_{i+1} [n])<\theta_1 n^{1/3}$ and for $n$ large enough (so that $\hat{J}+l\mathbf{1}_k\not=\hat{J}+l'\mathbf{1}_k$ when $0\leq l\not=l'\leq n-1$) yields $$\begin{aligned}
+S_1=&\sum_{\substack{J\in B_{k,n}\\J_k=0\\ \sup(J_{i}-J_{i+1} [n])< \theta_1n^{1/3}}}B(J)S_{\hat{J}}(\xi_{n}(I))\overline{S_{\hat{J}}(\xi_{n}(I'))}\left(\sum_{l=0}^{n-1}e^{\frac{2i \pi (m\langle\mathbf{m}\rangle)/k(\langle J\rangle+kl)+(\langle I\rangle-\langle I'\rangle)l}{n}}\right)\\ 
+=&n\delta_{m\langle\mathbf{m}\rangle)+\langle I\rangle=\langle I'\rangle[n]}\sum_{\substack{J\in B_{k,n}\\J_k=0\\ \sup(J_{i}-J_{i+1} [n])< \theta_1 n^{1/3}}}B(J)e^{\frac{2i \pi m\langle\mathbf{m}\rangle)\langle J\rangle}{kn}}S_{J}(\xi_{n}(I))\overline{S_{J}(\xi_{n}(I'))}.
+\end{aligned}$$ with $$B(J)=\exp\left(-t_0\frac{\gamma K(\tilde{J})}{k}+\frac{t_0M}{n}O\left(\left[kK(\tilde{J})K(\mathbf{m})\right]^{3/2}\right)\right).$$ Hence, using that $\frac{t_0M}{n}O\left(\left[kK(\tilde{J})K(\mathbf{m})\right]^{3/2}\right)=O(1)$ when $\sup(J_{i}-J_{i+1} [n])< \theta_1 n^{1/3}$, $$\begin{aligned}
+&\left\vert S_1-\delta_{\langle I'\rangle=\langle I\rangle+m\langle \mathbf{m}\rangle[n]}S_1'\right\vert\\
+\leq& n \sum_{\substack{J\in B_{k,n}\\J_k=0\\ \sup(J_{i}-J_{i+1} [n])< \theta_1n^{1/3}}}\left\vert S_{J}\left(R_{-\frac{m\langle\mathbf{m}\rangle}{kn}}\left(\xi_{n}\left(I\right)\right)\right)\overline{S_{J}(\xi_{n}(I'))}\right\vert \exp\left(-t_0\frac{\gamma K(\tilde{J})}{2k}\right)\\
+&\hspace{3cm}\exp\left(-t_0\frac{\gamma K(\tilde{J})}{k}\right)\left\vert \exp\left(\frac{t_0M}{n}O\left(\left[k^2\gamma K(\tilde{J})\right]^{3/2}\right)\right)-1\right\vert\\
+\leq &\sum_{\substack{J\in B_{k,n}\\J_k=-(k-1)/2\\ \sup(J_{i}-J_{i+1} [n])< n^{1/6}}}d_J^2\exp\left(-t_0\frac{\gamma K(\tilde{J})}{2k}\right)O(1)\leq K^{SU(k)}_{\gamma t_0/2}(0,0)O(1)= O\left(1\right),
+\end{aligned}$$ with $O(1)$ depending on $M,t_0,\gamma$ and $k$. Finally, $$\left\vert \left(\left(\ast \mathbf{m}\right)\ast \delta_I\right)[I']- n\delta_{\langle I'\rangle=\langle I\rangle+m\langle\mathbf{m}\rangle[n]}K^{SU(k)}_{\gamma t_0}\left(\xi_{n}(I'),R_{-\frac{m\langle\mathbf{m}\rangle}{kn}}\left(\xi_{n}\left(I\right)\right)\right)\right\vert=O(1),$$ with $O(\cdot)$ depending on $k, \gamma, M$ and $t_0$. ◻
+:::
+
+We can now turn to the proof of Corollary [\[cor:cohomology\]](#cor:cohomology){reference-type="ref" reference="cor:cohomology"}.
+
+::: proof
+*Proof of Corollary [\[cor:cohomology\]](#cor:cohomology){reference-type="ref" reference="cor:cohomology"}.* Recall that in the case where $\sum_{i=0}^{m+1} d_i\leq \dim Hol_d(G_{k,n})=k(n-k)+dn$ and for generic manifolds $M_0,\ldots, M_{m+1}$, we have by [\[eq:qring_combinatorics\]](#eq:qring_combinatorics){reference-type="eqref" reference="eq:qring_combinatorics"} $$\#\mathcal{M}^{d,a_0,\ldots,a_{m+1}}_{M_0,\ldots,M_{m+1}}=\left\langle \left(\prod_{i=0}^{m} [M_i]\right)[q^d],[M_{m+1}]\right\rangle_{H^*(G_{k,n})},$$ where $\langle \cdot,\cdot\rangle$ denotes the Poincaré duality in $H^*(G_{k,n})$ and for $x\in QH(G_{k,n})=\mathbb{C}[q]\otimes H^*(G_{k,n})$, we write $x=\sum_{d\geq 0} x[q^d]\otimes q^d$. By the multiplication rule [\[eq:multiplication_quantum\]](#eq:multiplication_quantum){reference-type="eqref" reference="eq:multiplication_quantum"}, for $d'\geq 0$ we have $\left(\prod_{i=0}^{m} [M_i]\right)[q^{d'}]\in H^{d'n+k(n-k)-\sum_{i=0}^md_i}$ and thus, for $d'\not=d''$, $\left(\prod_{i=0}^{m} [M_i]\right)[q^{d'}]$ and $\left(\prod_{i=0}^{m} [M_i]\right)[q^{d''}]$ are in different dimension components of $H^*(G_{k,n})$. Hence, we deduce that $$\begin{aligned}
+\#\mathcal{M}^{d,a_0,\ldots,a_{m+1}}_{M_0,\ldots,M_{m+1}}=&\sum_{I\in B_{k,n},\langle I\rangle=d_{m+1}}a_{I}^{m+1}\left\langle \left(\prod_{i=0}^{m} [M_i]\right)[q^d],\sigma_{\lambda_I}\right\rangle_{H^*(G_{k,n})}\\
+=&\sum_{I\in B_{k,n},\langle I\rangle=d_{m+1}}a_{I}^{m+1}\left\langle \overline{\left(\prod_{i=0}^{m} [M_i]\right)},\sigma_{\lambda_I}\right\rangle_{H^*(G_{k,n})},
+\end{aligned}$$ where $\overline{x}$ is the image of $x$ in $QH(G_{k,n})/\langle q=1\rangle$ and we recall that the $a_{I}^{m+1}$'s are the coefficients appearing in the decomposition $[M_{m+1}]=\sum_{I\in B_{k,n},\langle I\rangle=d_{m+1}}a_{I}^{m+1}\sigma_{\lambda_{I}}$. Then, recalling that the Poincaré duality satisfies $\langle \sigma_{\lambda},\sigma_{\mu}\rangle_{H^*(G_{k,n})}=\delta_{\lambda,\mu^c}$ (see for example the introduction of [@B]), we have $$\#\mathcal{M}^{d,a_0,\ldots,a_{m+1}}_{M_0,\ldots,M_{m+1}}=\sum_{I\in B_{k,n},\langle I\rangle=d_{m+1}}a_{I}^{m+1}\overline{c}_{\prod_{i=0}^{m} [M_i]}^{I^c},$$ where $\overline{c}_{\prod_{i=0}^{m} [M_i]}^{I}, I\in B_{k,n}$ are the coefficients of $\overline{\prod_{i=0}^{m} [M_i]}$ on the basis $\{\sigma_{\lambda_I}, I\in B_{k,n}\}$ and we recall that $I^c=(n-1-I_{k-j+1})_{1\leq j\leq k}$. By Proposition [\[prop:equiv_graph_qh\]](#prop:equiv_graph_qh){reference-type="ref" reference="prop:equiv_graph_qh"}, the linear map from $QH(G_{k,n})/\langle q=1\rangle$ to $\mathcal{B}(L^2(B_{k,n}))$ mapping $\sigma_{\lambda}$ to $T(s_{\lambda})$ is an algebra isomorphism from $QH(G_{k,n})/\langle q=1\rangle$ to the algebra $\mathcal{A}\subset \mathcal{B}(L^2(B_{k,n}))$ for which $B_{k,n}$ is positively multiplicative, and $T(s_{\lambda})$ is the unique element of $\mathcal{A}$ sending $I_0$ to $I_{\lambda}$. Hence, by Proposition [\[prop:structure_conv\]](#prop:structure_conv){reference-type="ref" reference="prop:structure_conv"} and [\[eq:isomor_L2h_CA\]](#eq:isomor_L2h_CA){reference-type="eqref" reference="eq:isomor_L2h_CA"} we have $$\overline{c}_{\prod_{i=0}^{m} [M_i]}^{I}=h^r_{I}\left( (M^h)^{-1}([M_0])*\dots *(M^h)^{-1}([M_{m}])\right)(I),$$ where $(M^h)^{-1}([M_i])=\sum_{I\in B_{k,n}}\frac{1}{h^r_I}a_{I}^ie_I$ and $h^r_I=\frac{V(\xi_{n}(I_0)^2}{n^k}S_{I}(\xi_{n}(I_0))$ by Lemma [\[lem:Perron-Frobenius\]](#lem:Perron-Frobenius){reference-type="ref" reference="lem:Perron-Frobenius"}. Now, since $h^l_I=S_{I}(\xi_{n}(I_0))$ by the same lemma, $$\begin{aligned}
+\Phi_{n}\left[(M^h)^{-1}([M_i])\right](I_0)=\left\langle \mathbf{1},(M^h)^{-1}([M_i])\right\rangle_h=&\left\langle \mathbf{1},\frac{1}{h^r}\left(\sum_{I\in B_{k,n}}a^i_Ie_I\right)\right\rangle_h\\
+=&\left\langle h^l,\left(\sum_{I\in B_{k,n}}a^i_Ie_I\right)\right\rangle\\
+=&\sum_{I\in B_{k,n}}a^i_IS_{I}(\xi_{n}(I_0))=qDim(M_i),
+\end{aligned}$$ and we deduce that $\frac{1}{qDim(M_i)}(M^h)^{-1}(M_i)$ is a $h$-probability measure on $B_{k,n}$. Then, recalling that $\delta_I=\frac{1}{\mu^h(I)}e_I=\frac{1}{h_l(I)h_r(I)}e_I$, we have $$(M^h)^{-1}(M_0)=\sum_{I\in B_k,n, \langle I\rangle=d_0}a_IS_{I}(\xi_{n}(I_0))\delta_I,$$ so that finally $$\overline{c}_{\prod_{i=1}^{m} [M_i]}^{I'}=\frac{V(\xi_{n}(I_0))^2S_{I'}(\xi_{n}(I_0))\prod_{i=0}^m qDim(M_i)}{n^k}\sum_{I\in B_k,n, \langle I\rangle=d_0}a_{I}S_{I}(\xi_{n}(I_0))\left(\delta_I*(*\mathbf{m})\right)(I'),$$ with $\mathbf{m}=(\mu_i)_{1\leq i\leq m}$ where $\mu_i=\frac{1}{qDim(M_i)}(M^h)^{-1}(M_i)$. Hence, applying Theorem [\[thm:local-limit\]](#thm:local-limit){reference-type="ref" reference="thm:local-limit"} with the notation of Corollary [\[cor:cohomology\]](#cor:cohomology){reference-type="ref" reference="cor:cohomology"}, we deduce that $$\begin{aligned}
+\overline{c}_{\prod_{i=0}^{m} [M_i]}^{I'}=&\frac{V(\xi_{n}(I_0))^2Q_{I'}(\xi_{n}(I_0))\prod_{i=1}^m qDim(M_i)}{n^{k-1}}\\&\hspace{1cm}\sum_{I\in B_k,n, \langle I\rangle=d_0}a_{I}s_{I}(\xi_{n}(I_0))\left(K_{\frac{(2\pi)^2m}{n^2}\gamma}^{SU(k)}\left(R_{-\frac{m\langle \mathbf{m}\rangle}{kn}}\left(\xi_{n}(I)\right),\xi_{n}(I')\right)+O\left(\frac{1}{n}\right)\right),
+\end{aligned}$$ with $O(\cdot)$ only depending on $\frac{m}{n^2},k$ and $\Vert \tilde{m}\Vert_{i}$, $i=2,3$. Then, writing $p^i_I=\frac{a_IS_I(\xi_{n}(I_0))}{qDim(M_i)}$ for $0\leq i\leq m+1$, so that $\sum_{I\in B_{k,n}}p_I^i=1$, we get $$\begin{aligned}
+\#\mathcal{M}^{d,a_0,\ldots,a_{m+1}}_{M_0,\ldots,M_{m+1}}=\frac{V(\xi_{n}(I_0))^2\prod_{i=0}^{m+1}qDim(M_i)}{n^{k-1}}\left(\sum_{I,I'\in B_{k,n}}p_I^{M_0}p_{I'}^{M_{m+1}}K_{\gamma t_0}^{SU(k)}\left(x^n_I,x^n_{I'}\right)+O\left(\frac{1}{n}\right)\right),
+\end{aligned}$$ with $x_{I}^n=R_{-\frac{m\langle \mathbf{m}\rangle}{kn}}\left(\xi_{n}(I)\right)$ and $y_{I'}^n=\xi_{n}((I')^c)$. ◻
+:::

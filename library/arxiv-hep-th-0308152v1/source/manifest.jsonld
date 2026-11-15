@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-hep-th-0308152v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-hep-th-0308152v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-0308152v1",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:hep-th/0308152&metadataPrefix=arXiv), submitted 2003-08-22, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-hep-th-0308152v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/hep-th/0308152v1",
+    "content_type": "application/gzip",
+    "sha256": "00fb62cb806964a95bcea4116ada40dff072a6db30f802e350c13e97f9abcde5",
+    "bytes": 25424,
+    "fetched": "2026-10-10T15:25:05+00:00",
+    "files": [
+      {
+        "path": "source/files/virknot.tex",
+        "role": "tex",
+        "sha256": "4651a5f73fde90afd6c6eea3a17a186545d2b2168d43cb8de26d540210ca472c",
+        "bytes": 32186
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

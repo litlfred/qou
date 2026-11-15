@@ -1,14 +1,13 @@
 ---
 doc_id: gt-v10-n3-p07-p
-doc_title: "Stabilization in the braid groups II: Transversal simplicity of knots JOAN S B IRMAN WILLIAM W M ENASCO The main result of this paper is a negative answer to the question: are all "
+doc_title: "Stabilization in the braid groups II:Transversal simplicity of knots"
 section_id: sec-001-2-the-mtws-and-transversal-isotopies
 section_title: "The MTWS and transversal isotopies"
 section_number: 2
 pages: 4-4
 source_pdf: gt-v10-n3-p07-p.pdf
 source_sha256: 1f226aac77351a69
-doc_brief: "Stabilization in the braid groups II: Transversal simplicity of knots — 9 sections: Introduction and description of re; The MTWS and transversal isotopies; Block-strand diagrams, templates a"
-duplicate_of: "0310280v4"
+toc_source: inferred
 ---
 The goal of this section is to prove Theorem 2, a special and limited version of Theorem
 1, the main result in [6]. Theorem 1 is valid in the topological setting, whereas Theorem

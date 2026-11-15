@@ -1,17 +1,22 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/ant-v14-n7-s/sections/sec-083",
   "@type": [
     "doco:Section"
   ],
-  "title": "4B. Le cas de la nouvelle réalisation de type Betti",
-  "pageStart": 121,
-  "pageEnd": 122,
+  "title": "2E. Constructions principales",
+  "pageStart": 104,
+  "pageEnd": 109,
   "contains": [
     "library/ant-v14-n7-s/blocks/prose-sec-083",
     "library/ant-v14-n7-s/blocks/prop-sec-083-01"
   ],
-  "derivedFrom": "library/ant-v14-n7-s/manifest",
-  "sourceDocument": "library/ant-v14-n7-s/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s",
   "provenance": "ingested"
 }

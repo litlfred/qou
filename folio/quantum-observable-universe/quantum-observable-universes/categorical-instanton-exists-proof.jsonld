@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-categorical-instanton-exists",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:categorical-instanton-exists",
+  "kind": "proof",
+  "title": "Proof of existence of categorical instantons",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-categorical-instanton-exists"
+  ],
+  "text": "categorical-instanton-exists-proof.md",
+  "provenance": "authored"
+}

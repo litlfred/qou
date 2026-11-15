@@ -87,7 +87,7 @@ over the 84 feasible integer solutions satisfying C4.
 > No other producer computes the figure either: `rem:ilp-solution-count-unwrap`
 > and `prop:stable-atom-decidable` declare no `computation:`, and the only
 > ILP-counting code in the corpus,
-> `computations/_deprecated/confinement_adaptive.py::ilp_solution_count_nucleon_level`,
+> `fsh-guts/deprecated/computations/confinement_adaptive.py::ilp_solution_count_nucleon_level`,
 > is a magic-number heuristic returning at most 3 whose own docstring calls
 > it *"a categorical proxy"* for the real enumeration. It is orphaned.
 >

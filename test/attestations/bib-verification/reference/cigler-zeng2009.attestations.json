@@ -1,0 +1,41 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "cigler-zeng2009",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 199,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-0905.0228v4/0905.0228v4.pdf"
+        },
+        "id": "cigler-zeng2009",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "Join CORRECT (arXiv:0905.0228v4, Cigler-Zeng, 'A curious q-analogue of Hermite polynomials', matching the registered entry). BIB ORPHAN: full-tree grep returns zero citation sites; the single hit outside references.ts is docs/audits/2026-07-20-qlift-literature-check.md:118, which lists it among literature checked, not cited. The paper introduces a third family of q-Hermite polynomials H_n(x,s|q) (distinct from the continuous and discrete q-Hermite families), relates them to q-Fibonacci and q-Lucas polynomials, and generalises the Touchard-Riordan formula. A grep of content/ for 'q-Hermite', 'Touchard' and 'q-Fibonacci' returns nothing, so no block currently consumes any of this. Scope-(a): this document, as read, has no target in the present corpus; that is not a claim that q-Hermite/Touchard-Riordan methods are excluded from the framework - the audit that logged it was itself a q-lift literature check, so it was considered and set aside.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Registered from a literature sweep, uncited, and with no consuming block. Leave it; re-triage if a q-Hermite or Touchard-Riordan identity enters the kernel work.",
+              "target": "folio/schema/references.ts"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "1744545d0f21"
+        }
+      }
+    }
+  ]
+}

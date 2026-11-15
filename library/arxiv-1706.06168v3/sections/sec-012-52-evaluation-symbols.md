@@ -7,49 +7,42 @@ section_number: 5.2
 pages: 16-17
 source_pdf: 1706.06168v3.pdf
 source_sha256: ab3383a95f369922
-doc_brief: "A Representation Theoretic Explanation of the Borcea-Brändén Characterization — In 2009, Borcea and Br¨ and´ en characterized all linear oper ators on multivariate polynomials which preserve the"
+toc_source: outline
+text_source: latex
+latex_prose_ratio: 0.95
+latex_coverage_ratio: 0.98
+doc_brief: "A Representation Theoretic Explanation of the Borcea-Brändén Characterization — In 2009, Borcea and Br¨and´en characterized all linear operators on multivariate polynomials which preserve the"
 ---
-One way to interpret the stability properties of a given polynomial is v ia the stability-preservation properties
-of a particular type of linear operator: the evaluation map. That is, the map which evaluates a polynomial
-p(x,y ) at ( a,b ) ⁄= (0, 0) preserves strong {(a : b)}-stability, where {(a : b)} is a subset of CP1 consisting of
-16
-a single point. Further, given λ ∈ Nm
-0 and (a,b ) = (a1,b 1,...,a m,b m) ∈ C2m (with (aj,b j) ⁄= 0 for all j),
-we can deﬁne the corresponding evaluation map as an element of Hom (V (λ),V (0)) since V (0) ∼= C. This
-allows us to obtain symbols for evaluation maps, and these play an impo rtant role in our linear operator
-characterization.
-Deﬁnition 5.9. Fixλ ∈ Nm
-0 and (a,b ) = (a1,b 1,...,a m,b m) ∈ C2m such that (aj,b j) ⁄= (0, 0) for all j ∈ [m].
-Let ev (a,b) : V (λ) → V (0) ∼= C be the evaluation operator which maps p to p(a,b ) = p(a1,b 1,...,a m,b m).
-We call Symb(ev (a,b)) ∈V (λ) the evaluation symbol with root (a,b ). Further:
-Symb(ev(a,b)) =
-m∏
-j=1
-(bjxj −ajyj)λj =: (bx −ay)λ
-The main signiﬁcance of this notion comes from the following result, wh ich is essentially just a restatement
-of the symbol lemma (Lemma 3.7) for evaluation symbols.
-Lemma 5.10 (Evaluation Symbol Lemma) . Fix λ ∈ Nm
-0 , p ∈V (λ), and (a,b ) = (a1,b 1,...,a m,b m) ∈ C2m
-such that (aj,b j) ⁄= (0, 0) for all j ∈ [m]. Considering (bx −ay)λ, the evaluation symbol with root (a,b ), we
-have:
-Dλ((bx −ay)λ ⊗p) = (λ!)2p(a,b ) ⊗ 1 = (λ!)2p(a,b )
-In what follows, we will extend Grace’s theorem in a number of ways, m ainly relying on the previous
-lemma and the symbol lemma itself. As we will see, the representation theoretic mentality combined with
-repeated use of the symbol lemma will yield many of the results of this paper with surprising simplicity.
-We now obtain an interesting corollary of Grace’s theorem, making us e of the notion of a disjoint Grace
-pair. This particular formulation of the theorem will serve as a model for our linear operator characterization
-in §6.2.
-Corollary 5.11. Fix λ ∈ Nm
-0 , q ∈V (λ), and any disjoint Grace pair (C1 × · · · ×Cm,B 1 × · · · ×Bm). Then
-the following are equivalent.
-(i) Dλ(p ⊗q) ⁄= 0 for all (C1 × · · · ×Cm)-stable p ∈V (λ).
-(ii) Dλ(p ⊗q) ⁄= 0 for all (C1 × · · · ×Cm)-stable evaluation symbols p ∈V (λ).
-(iii) q is (B1 × · · · ×Bm)-stable.
-Proof. (i) ⇒ (ii) Immediate.
-(ii) ⇒ (iii) Fix any ( a,b ) = (a1,b 1,...,a m,b m) ∈ C2m such that (ak :bk) ∈Bk for all k ∈ [m]. Since Bk
-and Ck are disjoint, we have that ( ak : bk) ⁄∈Ck for all k, and therefore Symb(ev (a,b)) = (bx −ay)λ is an
-evaluation symbol which is ( C1 × · · · ×Cm)-stable. The evaluation symbol lemma given above then implies:
-0 ⁄=Dλ(Symb(ev(a:b)) ⊗q) = (λ!)2q(a,b ) ⊗ 1 = (λ!)2q(a,b )
-That is,q(a,b ) ⁄= 0 for any (a,b ) ∈ C2m such that (a :b) ∈B1 ×· · ·×Bm, and this implies q is (B1 ×· · ·×Bm)-
-stable.
-(iii) ⇒ (i) This follows immediately from the deﬁnition of Grace pair (Deﬁnition 5.2).
+One way to interpret the stability properties of a given polynomial is via the stability-preservation properties of a particular type of linear operator: the evaluation map. That is, the map which evaluates a polynomial $p(x,y)$ at $(a,b) \neq (0,0)$ preserves strong $\{(a:b)\}$-stability, where $\{(a:b)\}$ is a subset of $\mathbb{CP}^1$ consisting of a single point. Further, given $\lambda \in \mathbb{N}_0^m$ and $(a,b) = (a_1,b_1,\ldots,a_m,b_m) \in \mathbb{C}^{2m}$ (with $(a_j,b_j) \neq 0$ for all $j$), we can define the corresponding evaluation map as an element of $\mathop{\mathrm{Hom}}(V(\lambda),V(0))$ since $V(0) \cong \mathbb{C}$. This allows us to obtain symbols for evaluation maps, and these play an important role in our linear operator characterization.
+
+::: definition
+[]{#ev_def label="ev_def"} Fix $\lambda \in \mathbb{N}_0^m$ and $(a,b) = (a_1,b_1,\ldots,a_m,b_m) \in \mathbb{C}^{2m}$ such that $(a_j,b_j) \neq (0,0)$ for all $j \in [m]$. Let $\mathop{\mathrm{ev}}_{(a,b)}: V(\lambda) \rightarrow V(0) \cong \mathbb{C}$ be the evaluation operator which maps $p$ to $p(a,b) = p(a_1,b_1,\ldots,a_m,b_m)$. We call $\mathop{\mathrm{Symb}}(\mathop{\mathrm{ev}}_{(a,b)}) \in V(\lambda)$ the *evaluation symbol with root $(a,b)$*. Further: $$\mathop{\mathrm{Symb}}(\mathop{\mathrm{ev}}_{(a,b)}) = \prod_{j=1}^m (b_jx_j - a_jy_j)^{\lambda_j} =: (bx - ay)^\lambda$$
+:::
+
+The main significance of this notion comes from the following result, which is essentially just a restatement of the symbol lemma (Lemma [\[symb_lemma\]](#symb_lemma){reference-type="ref" reference="symb_lemma"}) for evaluation symbols.
+
+::: lemma
+[]{#ev_lemma label="ev_lemma"} Fix $\lambda \in \mathbb{N}_0^m$, $p \in V(\lambda)$, and $(a,b) = (a_1,b_1,\ldots,a_m,b_m) \in \mathbb{C}^{2m}$ such that $(a_j,b_j) \neq (0,0)$ for all $j \in [m]$. Considering $(bx-ay)^\lambda$, the evaluation symbol with root $(a,b)$, we have: $$D^\lambda((bx-ay)^\lambda \otimes p) = (\lambda!)^2 p(a,b) \otimes 1 = (\lambda!)^2 p(a,b)$$
+:::
+
+In what follows, we will extend Grace's theorem in a number of ways, mainly relying on the previous lemma and the symbol lemma itself. As we will see, the representation theoretic mentality combined with repeated use of the symbol lemma will yield many of the results of this paper with surprising simplicity.
+
+We now obtain an interesting corollary of Grace's theorem, making use of the notion of a disjoint Grace pair. This particular formulation of the theorem will serve as a model for our linear operator characterization in §[\[str_Cstab_subsect\]](#str_Cstab_subsect){reference-type="ref" reference="str_Cstab_subsect"}.
+
+::: corollary
+[]{#ev_graces label="ev_graces"} Fix $\lambda \in \mathbb{N}_0^m$, $q \in V(\lambda)$, and any disjoint Grace pair $(C_1 \times \cdots \times C_m, B_1 \times \cdots \times B_m)$. Then the following are equivalent.
+
+1.  $D^\lambda(p \otimes q) \neq 0$ for all $(C_1 \times \cdots \times C_m)$-stable $p \in V(\lambda)$.
+
+2.  $D^\lambda(p \otimes q) \neq 0$ for all $(C_1 \times \cdots \times C_m)$-stable evaluation symbols $p \in V(\lambda)$.
+
+3.  $q$ is $(B_1 \times \cdots \times B_m)$-stable.
+:::
+
+::: proof
+*Proof.* $(i) \Rightarrow (ii)$ Immediate.
+
+$(ii) \Rightarrow (iii)$ Fix any $(a,b) = (a_1,b_1,\ldots,a_m,b_m) \in \mathbb{C}^{2m}$ such that $(a_k:b_k) \in B_k$ for all $k \in [m]$. Since $B_k$ and $C_k$ are disjoint, we have that $(a_k:b_k) \not\in C_k$ for all $k$, and therefore $\mathop{\mathrm{Symb}}(\mathop{\mathrm{ev}}_{(a,b)}) = (bx-ay)^\lambda$ is an evaluation symbol which is $(C_1 \times \cdots \times C_m)$-stable. The evaluation symbol lemma given above then implies: $$0 \neq D^\lambda(\mathop{\mathrm{Symb}}(\mathop{\mathrm{ev}}_{(a:b)}) \otimes q) = (\lambda!)^2 q(a,b) \otimes 1 = (\lambda!)^2 q(a,b)$$ That is, $q(a,b) \neq 0$ for any $(a,b) \in \mathbb{C}^{2m}$ such that $(a:b) \in B_1 \times \cdots \times B_m$, and this implies $q$ is $(B_1 \times \cdots \times B_m)$-stable.
+
+$(iii) \Rightarrow (i)$ This follows immediately from the definition of Grace pair (Definition [\[grace_pair_def\]](#grace_pair_def){reference-type="ref" reference="grace_pair_def"}). ◻
+:::

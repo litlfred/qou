@@ -3,9 +3,31 @@
 **Date:** 2026-09-05 · **Bean:** `qou-sv7h` · **Scope:** (a) ·
 Follow-on to [`2026-09-05-uic-sign-forced-by-gate.md`](2026-09-05-uic-sign-forced-by-gate.md)
 
-The companion audit measures **that** the Pass-2 gate forces `B < 0`. This one
-asks whether the gate's *justification* holds, and connects two things the
-corpus has kept apart for eleven days.
+> ## ✅ ACTED ON, 2026-09-12 — the gate is gone
+>
+> **Bean `qou-21oc`; PR #7253.** This document's conclusion was enacted: the
+> owner ruled to drop the Pass-2 sign gate, and
+> `unified_iterative_correction` now returns the **ungated** sum. PR #7251
+> additionally *hunted the primal LP* and refuted CS-on-it sorry-free
+> (`QOU.MassTheory.UICGateNotFromComplementarySlackness`, four mismatches +
+> a scope-(b) invariant), so this audit's "disproved duality" reading is now
+> backed by machine-checked Lean rather than by inference from the content
+> block alone.
+>
+> **Two things this document could not have known.** First, the `y_0` finding
+> below is *stronger* than stated: `y_0* = 0` holds for the **NF-basis**
+> instance (the cost vector IS a Gram row), but PR #7251 measured the
+> **block-indexed** instance at `y_0* = 0.0346905` (²H) / `0.0129979` (⁴He) —
+> so "the dual is identically zero" is basis-dependent, and the version of it
+> that applies here is the NF one. Second, and correcting the companion audit
+> rather than this one: **removing the gate does not fix the sign.** Every
+> ungated total is negative and larger in magnitude. The drop buys honesty,
+> not accuracy.
+
+The companion audit measures **that** the Pass-2 gate forces `B < 0` — a claim
+**retracted 2026-09-12**; read it as "biases", see the banner at the top of that
+file. This one asks whether the gate's *justification* holds, and connects two
+things the corpus has kept apart for eleven days.
 
 ## What the corpus already proves
 

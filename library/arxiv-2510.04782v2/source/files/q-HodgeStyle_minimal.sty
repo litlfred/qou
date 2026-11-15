@@ -1,0 +1,686 @@
+%%%% **************************** STANDARD PACKAGES **************************** %%%%
+%%%% *************************************************************************** %%%%
+
+%%%% general stuff %%%%
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+
+%%%% typography %%%%
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{csquotes}
+\usepackage[all,defaultlines]{nowidow}
+\usepackage{footmisc}%[symbol,perpage]
+%\setkomafont{sectioning}{\rmfamily\scshape\bfseries}
+\addtokomafont{sectioning}{\boldmath}
+\addtokomafont{section}{\centering}
+\addtokomafont{subsection}{\centering}
+\addtokomafont{sectionentry}{\boldmath}
+
+%%%% tables %%%%
+\usepackage{tabularx}
+\usepackage{booktabs}
+
+%%%% math %%%%
+\usepackage{amsmath,amsfonts,amssymb,mathtools}
+\usepackage{bm}
+\usepackage[bbgreekl]{mathbbol}
+\usepackage{bbm}
+\DeclareSymbolFontAlphabet{\mathbb}{AMSb} %to ensure that \mathbb doesn't change
+\DeclareSymbolFontAlphabet{\mathbbl}{bbold}
+\usepackage{old-arrows}
+\usepackage{stmaryrd}
+\SetSymbolFont{stmry}{bold}{U}{stmry}{m}{n}%otherwise we get a strange warning
+\usepackage{stackengine}
+\stackMath
+
+%%%% diagrams %%%%
+\usepackage{tikz-cd}
+\usepackage{tikzpagenodes}
+\usetikzlibrary{arrows,calc,decorations.markings,decorations.pathmorphing,patterns,patterns.meta}
+
+%%%% miscellaneous %%%%
+\usepackage{blindtext}
+%\usepackage{xparse}
+\usepackage{xpatch}
+\usepackage{xstring}
+
+%%%% *************************************************************************** %%%%
+%%%% *************************************************************************** %%%%
+
+
+%%%% **************************** PATCHING LMODERN ***************************** %%%%
+%%%% *************************************************************************** %%%%
+
+% For some reason, \usepackage{lmodern} breaks downscaling of large math operators. For instance, $\scriptstyle\sum$ or $\scriptscriptstyle\prod$ produce the same result as $\textstyle\sum$ or $\textstyle\prod$. This is fixed by setting the large operator font to Computer Modern.
+
+\DeclareMathVersion{cm}
+\SetSymbolFont{operators}{cm}{OT1}{cmr}{m}{n}
+\mathversion{cm}
+
+
+%%%% *********************** SETTING UP THE BIBLIOGRAPHY *********************** %%%%
+%%%% *************************************************************************** %%%%
+
+%%%% biblatex %%%%
+\usepackage[url=false,backend=biber,style=ieee-alphabetic,dashed=true,giveninits=false,maxnames=3]{biblatex}
+
+%%%% long dash replaces repeated names %%%%
+\renewcommand*\bibnamedash{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+
+
+%%%% make sure brackets are always typeset upright %%%%
+\renewcommand{\bibleftbracket}{\textup{[}}
+\renewcommand{\bibrightbracket}{\textup{]}}
+\renewbibmacro{in:}{}
+
+
+%%%% extensive format declarations (have to be made :( )) %%%%
+\DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished]{title}{\emph{#1}\isdot}
+\DeclareFieldFormat{journaltitle}{#1\nopunct}
+\DeclareFieldFormat*[incollection,book]{booktitle}{#1\isdot}
+\DeclareFieldFormat*[incollection,book]{series}{#1\isdot}
+\DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished]{volume}{vol.\ #1\isdot}
+
+
+%%%% clever hyperreferences command %%%%
+
+% The \chref command puts a hyperlink to the exact location of a theorem in an online version of the article.
+% Usage: \chref[name of the counter]{number}[alternate text]
+% E.g. \chref{1.1}          will link to Definition/Theorem/Lemma 1.1,
+%      \chref[section]{1.1} will link to section 1.1,
+%      \chref{2.1}[II.1]    will link to DefinitionTheorem/Lemma 2.1, but display II.1
+
+\newcommand{\tempeprinttype}{}
+
+% url is automatically extracted (in this order):
+% 1. from the "url" field in the .bib file;
+% 2. if the "url" field is empty, from the arXiv number;
+% 3. if no arXiv number is provided, the default url will be "Error" 
+\newcommand\CurrentCitationURL{%
+	\iffieldundef{url}%
+	{\iffieldundef{eprint}%
+		{}%
+		{%
+			\ifnum\pdfstrcmp{\thefield{eprinttype}}{arXiv}=0%
+			https://arxiv.org/pdf/\thefield{eprint}.pdf%
+			\else%
+			Error%
+			\fi%
+		}%
+	}%
+	{\thefield{url}}%
+}
+
+% Since arXiv-Links may or may not in .pdf, we must check which one's the case.
+\newcommand{\PDForNot}{}
+
+% The name of the counter is automatically extracted (in this order):
+% 1. from the first optional argument of \chref;
+% 2. if no optional argument is provided, from the "file" field in the .bib file;
+% 3. if the "file" field is empty, "theorem" will be used as a  default counter name
+\NewDocumentCommand\chref{O{} m O{#2} }{\IfSubStr*{\CurrentCitationURL}{pdf}{\edef\PDForNot{1}}{\edef\PDForNot{0}}\href{\CurrentCitationURL\ifnum\PDForNot=1\#\fi\ifstrempty{#1}{\iffieldundef{file}{theorem}{\thefield{file}}}{#1}\ifnum\PDForNot=1.\fi#2}{#3}}
+
+%  Automatic hyperlink to a specific page
+\NewDocumentCommand\chpageref{O{#2} m}{\href{\CurrentCitationURL\#page=#2}{#1}}
+
+%%%% *************************************************************************** %%%%
+%%%% *************************************************************************** %%%%
+
+
+%%%% **************************** SETTING UP LISTS ***************************** %%%%
+%%%% *************************************************************************** %%%%
+\setlength{\parindent}{1.5em}
+
+%%%% enumitem %%%%
+\usepackage{enumitem}
+
+%%%% custom lists %%%%
+% alphabetical lists
+\newlist{alphanumerate}{enumerate}{10}
+\setlist[alphanumerate]{leftmargin=2.25em, itemindent=0ex, labelwidth=2em,labelsep=!,align=left, itemsep=0.5\topsep, topsep=0.5\topsep, label={$(\alph*)$}, ref={$\alph*$}, listparindent=\parindent, parsep=0pt, before={\let\item\customitem}}
+
+%%%% *************************************************************************** %%%%
+%%%% *************************************************************************** %%%%
+
+
+%%%% ************************ SETTING UP PAGE HEADINGS ************************* %%%%
+%%%% *************************************************************************** %%%%
+
+%%%% scrlayer-scrpage %%%%
+\usepackage[autooneside=false,automark]{scrlayer-scrpage}
+
+%%%% page headings %%%%
+% Even pages: "§1. Section 1"
+% Odd pages:  "§1.1. Subsection 1.1"
+% But of course, "References" should be typeset without a "§". That's what the macros \SectionPrefix and \SubsectionPrefix control.
+\pagestyle{plain}
+\chead{}
+\pagestyle{scrheadings}
+
+\newcommand{\SectionPrefix}{}
+\newcommand{\SubsectionPrefix}{}
+\addtokomafont{section}{\SectionPrefix}
+\addtokomafont{subsection}{\SubsectionPrefix}
+\renewcommand*{\sectionmarkformat}{\textup{\SectionPrefix\thesection\autodot}\enskip}
+\renewcommand*{\subsectionmarkformat}{\textup{\SubsectionPrefix\thesubsection\autodot}\enskip}
+
+\chead{\ifodd\number\value{page}%
+	\textsc{\emph{\rightmark}}
+	\else%
+	\textsc{\emph{\leftmark}}
+	\fi%
+}
+
+%%%% *************************************************************************** %%%%
+%%%% *************************************************************************** %%%%
+
+
+%%%% ********************* THEOREMS AND CROSS-REFERENCING ********************** %%%%
+%%%% *************************************************************************** %%%%
+
+%%%% equations %%%%
+\usepackage{chngcntr}
+%\renewcommand{\theequation}{\thesmallerdummy}
+
+%%%% relevant packages %%%%
+\usepackage{amsthm}
+\usepackage[colorlinks=true,linkcolor=red!70!black,citecolor=cyan!25!blue,urlcolor=red!70!black,unicode,bookmarksnumbered]{hyperref}
+\usepackage[capitalize,compress]{cleveref}
+
+%%%% shortcuts for direct hyperlinks to certain sources %%%%
+\newcommand{\stackstag}[1]{Tag~\href{https://stacks.math.columbia.edu/tag/#1}{\textup{#1}}}
+\newcommand{\HTTthm}[1]{\href{http://people.math.harvard.edu/~lurie/papers/HTT.pdf\#theorem.#1}{#1}}
+\newcommand{\HAthm}[1]{\href{http://people.math.harvard.edu/~lurie/papers/HA.pdf\#theorem.#1}{#1}}
+\newcommand{\SAGthm}[1]{\href{https://www.math.ias.edu/~lurie/papers/SAG-rootfile.pdf\#theorem.#1}{#1}}
+
+%%%% theorem styles %%%%
+\newtheoremstyle{cthm}
+{\topsep}   % ABOVESPACE
+{\topsep}   % BELOWSPACE
+{\itshape}  % BODYFONT
+{0pt}       % INDENT (empty value is the same as 0pt)
+{\bfseries} % HEADFONT
+{.\enskip---}         % HEADPUNCT
+{5pt plus 1pt minus 1pt} % HEADSPACE
+{\thmnumber{#2. }\thmname{#1}\thmnote{ \textmd{(#3)}}}          % CUSTOM-HEAD-SPEC
+
+\newtheoremstyle{cdef}
+{\topsep}   % ABOVESPACE
+{\topsep}   % BELOWSPACE
+{\normalfont}  % BODYFONT
+{0pt}       % INDENT (empty value is the same as 0pt)
+{\bfseries} % HEADFONT
+{.\enskip---\enskip}         % HEADPUNCT
+{0pt}%{5pt plus 1pt minus 1pt} % HEADSPACE
+{\thmnumber{#2. }\thmname{#1}\thmnote{ \textmd{(#3)}}}          % CUSTOM-HEAD-SPEC
+
+\newcounter{theorem}[section]
+\renewcommand{\thetheorem}{\arabic{section}.\arabic{theorem}}
+%\renewcommand{\thesection}{\S\arabic{section}}
+%\renewcommand{\thesubsection}{\S\arabic{subsection}}
+
+%%%% theorem types %%%%
+\theoremstyle{cthm}
+\newtheorem{thm}[theorem]{Theorem}
+\newtheorem{lem}[theorem]{Lemma}
+\newtheorem{cor}[theorem]{Corollary}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{conj}[theorem]{Conjecture}
+
+\theoremstyle{cdef}
+\newtheorem{defi}[theorem]{Definition}
+\newtheorem{rem}[theorem]{Remark}
+\newtheorem{exm}[theorem]{Example}
+\newtheorem{cntx}[theorem]{Counterexample}
+\newtheorem{nota}[theorem]{Notation}
+\newtheorem{warn}[theorem]{Warning}
+\newtheorem{con}[theorem]{Construction}
+
+%%%% cross-reference styles %%%%
+\counterwithin*{equation}{theorem}
+\renewcommand{\theequation}{\thetheorem.\arabic{equation}}
+
+\crefdefaultlabelformat{\textup{#2#1#3}}
+\crefformat{theorem}{\textup{#2#1#3}}
+\newcommand{\creflastconjunction}{, and\nobreakspace}
+\crefformat{equation}{\textup{(#2#1#3)}}
+\crefformat{footnote}{\textup{#2#1#3}}
+\crefname{page}{page}{pages}
+\crefname{thm}{Theorem}{Theorems}
+\crefname{prop}{Proposition}{Propositions}
+\crefname{lem}{Lemma}{Lemmas}
+\crefname{cor}{Corollary}{Corollaries}
+\crefname{defi}{Definition}{Definitions}
+\crefname{rem}{Remark}{Remarks}
+\crefname{con}{Construction}{Constructions}
+\crefname{exm}{Example}{Examples}
+\crefformat{alphanumeratei}{\textup{(#2#1#3)}}
+
+\crefformat{section}{\S\textup{#2#1#3}}
+\crefformat{subsection}{\S\textup{#2#1#3}}
+\crefformat{appendix}{\S\textup{#2#1#3}}
+\crefrangeformat{section}{\S\S#3#1#4--#5#2#6}
+\crefrangeformat{subsection}{\S\S#3#1#4--#5#2#6}
+
+%%%% *************************************************************************** %%%%
+%%%% *************************************************************************** %%%%
+
+
+%%%% ***************************** STYLE CHOICES ******************************* %%%%
+%%%% *************************************************************************** %%%%
+
+%%%% footnotes %%%%
+\counterwithin*{footnote}{section}
+\renewcommand{\thefootnote}{\textup{(\thesection.\arabic{footnote})}}
+
+%%%% fixing \item to include correct referencing of manually set labels %%%%
+\let\realItem\item  % save the original item command
+\makeatletter
+\newcommand{\customitem}[1][]{%
+	\ifstrempty{#1}%
+	{\realItem}%
+	{\phantomsection\protected@edef\cref@currentlabel{[alphanumeratei][1][]{$#1$}}\realItem[$(#1)$]}%
+}
+\makeatother
+
+%%%% well-behaved numbered paragraphs %%%%
+\newtheoremstyle{cnumpar}
+{\topsep}   % ABOVESPACE
+{\topsep}   % BELOWSPACE
+{\normalfont}  % BODYFONT
+{0pt}       % INDENT (empty value is the same as 0pt)
+{\bfseries\boldmath} % HEADFONT
+{\enskip---\enskip}         % HEADPUNCT
+{0pt} % HEADSPACE
+{\thmnumber{#2.\ifstrempty{#3}{}{ }}\thmname{#3}}          % CUSTOM-HEAD-SPEC
+
+\theoremstyle{cnumpar}
+\newtheorem*{unnumpar}{unnumpar}
+\newtheorem{numpar}[theorem]{numpar}
+\crefformat{numpar}{\textup{#2#1#3}}
+
+%%%% fixing the spacing aroung \left( and right) %%%%
+\let\originalleft\left
+\let\originalright\right
+\renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
+\renewcommand{\right}{\aftergroup\egroup\originalright}
+
+%%%% make all pages the same height %%%%
+\flushbottom
+
+%%%% upright parentheses even in \itshape environments %%%%
+\newcommand{\embrace}[1]{\textup{(}#1\textup{)}}
+
+%%%% *************************************************************************** %%%%
+%%%% *************************************************************************** %%%%
+
+
+%%%% ******************************* SHORTCUTS ********************************* %%%%
+%%%% *************************************************************************** %%%%
+
+%%%% miscellaneous %%%%
+\newcommand{\localise}[1]{{\textstyle\frac{1}{#1}}}
+%\mathchardef\mhyph="2D
+\DeclareMathSymbol{\mhyph}{\mathord}{AMSa}{"39}
+
+%%%% many alphabets %%%%
+\renewcommand{\epsilon}{\varepsilon}
+
+% \mathrm, may change
+\newcommand{\A}{\mathrm{A}}                 % A as in A_inf
+\newcommand{\B}{\mathrm{B}}                 % classifying spaces
+\newcommand{\C}{\operatorname{C}}           % singular chain complex
+\newcommand{\D}{\mathrm{D}}                 % derived category
+\newcommand{\E}{\mathrm{E}}                 % Morava E-theory
+\newcommand{\e}{\mathrm{e}}                 % connective Morava E-theory/Euler's constant
+\newcommand{\F}{\operatorname{F}}           % mapping object in sSet
+\renewcommand{\H}{\mathrm{H}}               % (co)homology
+\newcommand{\h}{h}                 % homotopy orbits/fixed points
+\newcommand{\K}{\operatorname{K}}           % K-theory
+\renewcommand{\L}{\mathrm{L}}               % cotangent complex/left-derived functor
+\newcommand{\N}{\operatorname{N}}           % nerve
+\newcommand{\R}{\mathrm{R}}                 % right-derived functor
+\renewcommand{\t}{t}               % Tate construction
+\newcommand{\W}{\mathrm{W}}                 % p-typical Witt
+
+% \mathcal 
+\newcommand{\Aa}{\mathcal{A}}
+\newcommand{\Bb}{\mathcal{B}}
+\newcommand{\Cc}{\mathcal{C}}
+\newcommand{\Dd}{\mathcal{D}}
+\newcommand{\Ee}{\mathcal{E}}
+\newcommand{\Ff}{\mathcal{F}}
+\newcommand{\Gg}{\mathcal{G}}
+\newcommand{\Hh}{\mathcal{H}}
+\newcommand{\Ii}{\mathcal{I}}
+\newcommand{\Jj}{\mathcal{J}}
+\newcommand{\Kk}{\mathcal{K}}
+\newcommand{\Ll}{\mathcal{L}}
+\newcommand{\Mm}{\mathcal{M}}
+\newcommand{\Nn}{\mathcal{N}}
+\newcommand{\Oo}{\mathcal{O}}
+\newcommand{\Pp}{\mathcal{P}}
+\newcommand{\Qq}{\mathcal{Q}}
+\newcommand{\Rr}{\mathcal{R}}
+\newcommand{\Ss}{\mathcal{S}}
+\newcommand{\Tt}{\mathcal{T}}
+\newcommand{\Uu}{\mathcal{U}}
+\newcommand{\Vv}{\mathcal{V}}
+\newcommand{\Ww}{\mathcal{W}}
+\newcommand{\Xx}{\mathcal{X}}
+\newcommand{\Yy}{\mathcal{Y}}
+\newcommand{\Zz}{\mathcal{Z}}
+
+% mathbb
+\newcommand{\IA}{\mathbb{A}}
+\newcommand{\IB}{\mathbb{B}}
+\newcommand{\IC}{\mathbb{C}}
+\newcommand{\ID}{\mathbb{D}}
+\newcommand{\IE}{\mathbb{E}}
+\newcommand{\IF}{\mathbb{F}}
+\newcommand{\IG}{\mathbb{G}}
+\newcommand{\IH}{\mathbb{H}}
+\newcommand{\II}{\mathbb{I}}
+\renewcommand{\IJ}{\mathbb{J}}
+\newcommand{\IK}{\mathbb{K}}
+\newcommand{\IL}{\mathbb{L}}
+\newcommand{\IM}{\mathbb{M}}
+\newcommand{\IN}{\mathbb{N}}
+\newcommand{\IO}{\mathbb{O}}
+\newcommand{\IP}{\mathbb{P}}
+\newcommand{\IQ}{\mathbb{Q}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IS}{\mathbb{S}}
+\newcommand{\IT}{\mathbb{T}}
+\newcommand{\IU}{\mathbb{U}}
+\newcommand{\IV}{\mathbb{V}}
+\newcommand{\IW}{\mathbb{W}}
+\newcommand{\IX}{\mathbb{X}}
+\newcommand{\IY}{\mathbb{Y}}
+\newcommand{\IZ}{\mathbb{Z}}
+\newcommand{\IDelta}{\boldsymbol{\Delta}}
+
+
+\let\gge\gg
+\let\lle\ll
+
+
+% mathbb tensor unit
+\newcommand{\IUnit}{\mathbbm{1}}
+
+%%%% math operators %%%%
+
+% categories are typeset in mathrm
+\newcommand{\cat}[1]{\mathrm{#1}}
+
+%% (infinity-)category theory
+\newcommand{\An}{\cat{Ani}}                % category of animae
+\newcommand{\an}{\mathrm{ani}}             % superscript for animation
+\DeclareMathOperator{\Alg}{Alg}            % associative algebras
+\DeclareMathOperator{\Ar}{Ar}              % arrow category
+\DeclareMathOperator{\BiMod}{BiMod}        % bimodules
+\DeclareMathOperator{\CAlg}{CAlg}          % commutative algebras
+\newcommand{\CRing}{\cat{CRing}}           % commutative rings
+\newcommand{\Cat}{\cat{Cat}}               % category of categories
+\DeclareMathOperator{\coeq}{coeq}          % coequaliser
+\DeclareMathOperator{\cofib}{cofib}        % cofibre
+\DeclareMathOperator{\const}{const}        % constant functor functor
+\DeclareMathOperator{\core}{core}          % maximal subanima
+\DeclareMathOperator{\DAlg}{DAlg}          % derived commutative rings
+\DeclareMathOperator{\DG}{DG}              % differential-graded shit
+\DeclareMathOperator{\eq}{eq}              % equaliser
+\DeclareMathOperator{\ev}{ev}              % evaluation map/functor
+\DeclareMathOperator{\fib}{fib}            % fibre
+\DeclareMathOperator{\Def}{Def}            % deformation category
+\DeclareMathOperator{\Fil}{Fil}            % filtered category
+\DeclareMathOperator{\fil}{fil}            % filtration
+\DeclareMathOperator{\Fun}{Fun}            % functor category
+\DeclareMathOperator{\Gr}{Gr}              % graded category
+\DeclareMathOperator{\gr}{gr}              % associated graded
+\DeclareMathOperator{\Hom}{Hom}            % Hom
+\DeclareMathOperator{\Hhom}{\underline{Hom}} % internal Hom
+\renewcommand{\hom}{\operatorname{hom}}    % spectra-enriched hom
+\DeclareMathOperator{\hhom}{\underline{hom}} % spectra-enriched internal Hom
+\DeclareMathOperator{\id}{id}              % identity
+\DeclareMathOperator{\Ind}{Ind}            % ind-category
+\DeclareMathOperator{\Lan}{Lan}            % left Kan extension
+\DeclareMathOperator{\LMod}{LMod}          % left modules
+\newcommand{\loc}{\mathrm{loc}}            % localising
+\DeclareMathOperator{\Map}{Map}            % mapping anima (I usually use Hom)
+\DeclareMathOperator{\map}{map}            % mapping spectrum (I usually use hom)
+\DeclareMathOperator{\Mod}{Mod}            % modules
+\newcommand{\Mot}{\cat{Mot}}               % motives
+\DeclareMathOperator{\Nat}{Nat}            % natural transformations
+\DeclareMathOperator{\Nuc}{Nuc}            % nuclear category
+\newcommand{\op}{\mathrm{op}}              % opposite category
+\renewcommand{\Pr}{\cat{Pr}}               % category of presentable infinity-categories
+\DeclareMathOperator{\pr}{pr}              % projection to factor
+\DeclareMathOperator{\Pro}{Pro}            % pro-category 
+\DeclareMathOperator{\PSh}{PSh}            % presheaf category 
+\DeclareMathOperator{\Ran}{Ran}            % right Kan extension
+\DeclareMathOperator{\RMod}{RMod}          % right modules
+\DeclareMathOperator{\res}{res}            % restriction map/functor
+\DeclareMathOperator{\Sh}{Sh}              % sheaf category
+\DeclareMathOperator{\Sing}{Sing}          % singular simplicial set functor
+\newcommand{\Sp}{\cat{Sp}}                 % category of spectra
+\DeclareMathOperator{\TwAr}{TwAr}          % twisted arrow category
+
+% limits and colimits
+\DeclareMathOperator*{\colimit}{colim}      % colimit
+\DeclareMathOperator*{\limit}{lim}          % limit
+
+% formal limits/colimit in pro-/ind-categories
+\newcommand{\IndProQuotationMarkPlaceholder}{\mathchoice%
+	{}%
+	{\vphantom{+}\hphantom{\textstyle\textup{''}}}%
+	{\vphantom{+}\hphantom{\scriptstyle\textup{''}}}%
+	{\vphantom{+}\hphantom{\scriptscriptstyle\textup{''}}}%
+}
+\newcommand{\IndProQuotationMark}{\mathchoice%
+	{''}%
+	{\rlap{\textup{''}}}%
+	{\rlap{\textup{''}}}%
+	{\rlap{\textup{''}}}%
+}
+\DeclareMathOperator*{\PreIndColim}{``colim\IndProQuotationMark}
+\newcommand{\indcolim}{\PreIndColim^{\IndProQuotationMarkPlaceholder}}
+\DeclareMathOperator*{\PreProLim}{``lim\IndProQuotationMark}
+\newcommand{\prolim}{\PreProLim^{\IndProQuotationMarkPlaceholder}}
+
+\newlength{\LengthOfQuotationMark}
+\settowidth{\LengthOfQuotationMark}{''}
+
+% derived categories
+\DeclareMathOperator{\Ch}{Ch}                 % chain complexes
+\DeclareMathOperator{\cone}{cone}             % cone
+\DeclareMathOperator{\Kos}{Kos}               % Koszul complex
+\newcommand{\Perf}{\cat{Perf}}                % perfect complexes
+\DeclareMathOperator{\RHom}{RHom}             % derived Hom
+\DeclareMathOperator{\RHhom}{R\underline{Hom}}% derived internal Hom
+\DeclareMathOperator{\Tot}{Tot}               % total complex
+
+% group theory
+\DeclareMathOperator{\Aut}{Aut}            % automorphism group
+\DeclareMathOperator{\End}{End}            % endomorphism monoid
+\DeclareMathOperator{\Gal}{Gal}            % Galois group
+\DeclareMathOperator{\GL}{GL}              % general linear group
+\DeclareMathOperator{\SL}{SL}              % special linear group
+
+% linear algebra
+\DeclareMathOperator{\cha}{char}           % characteristic
+\renewcommand{\det}{\operatorname{det}}    % determinant
+\DeclareMathOperator{\Tr}{Tr}              % trace
+
+% commutative algebra
+\DeclareMathOperator{\coker}{coker}        % cokernel
+\DeclareMathOperator{\depth}{depth}        % depth of module
+\DeclareMathOperator{\Der}{Der}            % space of derivations
+\DeclareMathOperator{\Ext}{Ext}			   % Ext
+\DeclareMathOperator{\Eext}{\underline{Ext}} % internal Ext
+\DeclareMathOperator{\Frac}{Frac}          % field of fractions
+\DeclareMathOperator{\im}{im}              % image
+\DeclareMathOperator{\length}{length}      % length of module
+\DeclareMathOperator{\Nil}{Nil}            % nilradical
+\DeclareMathOperator{\rk}{rk}              % rank of module
+\DeclareMathOperator{\supp}{supp}          % support
+\DeclareMathOperator{\Sym}{Sym}            % symmetric powers
+\DeclareMathOperator{\Tor}{Tor}            % Tor
+\newcommand{\tors}{\mathrm{tors}}          % torsion
+
+\newcommand{\sh}{\mathrm{sh}}              % sheafification/strict henselisation
+\newcommand{\sep}{\mathrm{sep}}            % separable closure
+\newcommand{\ab}{\mathrm{ab}}              % abelianisation
+
+% algebraic geometry
+\DeclareMathOperator{\AnSpec}{AnSpec}      % analytic spectrum
+\DeclareMathOperator{\Bun}{Bun}            % stack of bundles
+\DeclareMathOperator{\codim}{codim}        % codimension
+\newcommand{\Cech}{\check{\mathrm{C}}\vphantom{C}} % Cech complex
+\DeclareMathOperator{\Cl}{Cl}              % class group
+\DeclareMathOperator{\Div}{Div}            % divisor group
+\renewcommand{\div}{\operatorname{div}}    % principal divisor map
+\DeclareMathOperator{\Pic}{Pic}            % Picard group
+\DeclareMathOperator{\Spa}{Spa}            % adic spectrum
+\DeclareMathOperator{\Spec}{Spec}          % Zariski spectrum
+\DeclareMathOperator{\Spf}{Spf}            % formal spectrum
+
+\newcommand{\crys}{\mathrm{crys}}          % crystalline
+\newcommand{\cont}{\mathrm{cont}}          % continuous
+\newcommand{\dR}{\mathrm{dR}}              % de Rham
+\newcommand{\et}{\mathrm{\acute{e}t}}      % étale
+\newcommand{\fppf}{\mathrm{fppf}}          % fppf
+\newcommand{\fpqc}{\mathrm{fpqc}}          % fpqc
+\renewcommand{\inf}{\mathrm{inf}}          % infinitesimaö
+\newcommand{\red}{\mathrm{red}}            % reduction
+\newcommand{\Zar}{\mathrm{Zar}}            % Zariski
+
+% arithmetic geometry
+\newcommand{\cycl}{\mathrm{cycle}}         % cyclotomic extension
+\DeclareMathOperator{\Frob}{Frob}          % Frobenius
+\DeclareMathOperator{\gh}{gh}              % ghost map
+\DeclareMathOperator{\ord}{ord}            % order of vanishing
+\newcommand{\Prism}{{\mathbbl{\Delta}}}    % prismatic cohomology
+\newcommand{\perf}{\mathrm{perf}}          % perfection
+\newcommand{\perfd}{\mathrm{perfd}}        % perfectoidisation
+
+% homotopy theory
+\newcommand{\KU}{\mathrm{KU}}              % periodic complex K-theory
+\newcommand{\ku}{\mathrm{ku}}              % connective complex K-theory
+\newcommand{\MU}{\mathrm{MU}}              % complex bordism
+\newcommand{\MUP}{\mathrm{MUP}}            % periodic complex bordism
+\DeclareMathOperator{\TC}{TC}              % topological cyclic homology
+\newcommand{\TCref}{\TC^{-,\mathrm{ref}}}  % refined TC^-
+\DeclareMathOperator{\THH}{THH}            % topological Hochschild homology
+\newcommand{\THHref}{\THH^{\mathrm{ref}}}  % refined THH
+\DeclareMathOperator{\TP}{TP}              % topological periodic homology
+\DeclareMathOperator{\TR}{TR}              % topological restriction homology
+\DeclareMathOperator{\HH}{\mathrm{HH}}     % Hochschild homology
+\DeclareMathOperator{\HC}{\mathrm{HC}}     % (negative) cyclic homology
+\DeclareMathOperator{\HP}{\mathrm{HP}}     % periodic homology
+
+% q-de Rham things
+\newcommand{\q}{\operatorname{\mathnormal{q}}\!\hspace{-0.1ex}\mhyph\hspace{-0.1ex}}
+
+\newcommand{\qOmega}{\q\Omega}                % q-de Rham
+\newcommand{\hatOmega}{\widehat{\Omega}\vphantom{\Omega}}      % Hodge-completed de Rham
+\newcommand{\qhatOmega}{\q\hatOmega}          % q-Hodge-completed q-de Rham
+\newcommand{\deRham}{\mathrm{dR}}             % derived de Rham
+\newcommand{\qdeRham}{\q\deRham}              % derived q-de Rham
+\newcommand{\hatdeRham}{\widehat{\deRham}\vphantom{\deRham}}    % Hodge-completed derived de Rham
+\newcommand{\qhatdeRham}{\q\hatdeRham\vphantom{\deRham}}        % q-Hodge-completed derived q-de Rham
+\newcommand{\Hodge}{\mathrm{Hdg}}             % Hodge
+\newcommand{\qHodge}{\q\Hodge}                % q-Hodge
+\newcommand{\Hhodge}[1][]{\Hh_{#1}\mathrm{dg}}% Habiro-Hodge
+\newcommand{\qHhodge}{\q\Hhodge}
+\newcommand{\qHatge}{\q\widehat{\Hodge}}      % completed q-Hodge
+
+\newcommand{\qIW}{\q\IW}                      % q-Witt
+
+\newcommand{\qpower}{\llbracket q-1\rrbracket}          % shortcut for [[q-1]]
+\newcommand{\qLaurent}{(\!(q-1)\!)}                     % shortcut for ((q-1))
+\newcommand{\qcrys}{{q\mhyph\mathrm{crys}}}             % q-crystalline
+\newcommand{\tpower}{\llbracket t\rrbracket}            % shortcut for [[t]]
+
+
+% condensed
+\DeclareMathOperator{\Cond}{\mathrm{Cond}}              % condensed category
+\newcommand{\Null}{\mathrm{Null}}                       % null sequence
+\newcommand{\solid}{{\mathchoice{\scalebox{0.72}{$\blacksquare$}}{\scalebox{0.72}{$\blacksquare$}}{\scalebox{0.72}{$\scriptstyle\blacksquare$}}{\scalebox{0.72}{$\scriptscriptstyle\blacksquare$}}}}%{{\scriptscriptstyle\blacksquare}}
+
+% "d"-operator with automatic correct spacing
+\renewcommand*\d{\mathop{}\!\mathrm{d}}       % d as in "dx"
+
+% several kinds of derived or completed tensor products
+\newcommand{\cotimes}{\mathbin{\widehat{\otimes}}}
+\newcommand{\lotimes}{\otimes^\L}
+\newcommand{\soltimes}{\otimes^\solid}
+\newcommand{\lsoltimes}{\otimes^{\L\solid}}
+\newcommand{\clotimes}{\mathbin{\smash{\widehat{\otimes}}\vphantom{\otimes}}^\L}
+
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+
+
+%%%% fancy arrows %%%%
+
+% long arrow with left and right heads
+\DeclareRobustCommand\longtwoheadrightarrow
+{\relbar\joinrel\twoheadrightarrow}
+\DeclareRobustCommand\longtwoheadleftarrow
+{\twoheadleftarrow\joinrel\relbar}
+
+% somewhat ugly double arrow
+\newcommand{\doublemorphism}{%
+	\mathrel{\stackon[-0.47em]{\stackunder[-0.47em]{\phantom{-}}{\smash{\longrightarrow}\vphantom{-}}}{\smash{\longrightarrow}\vphantom{-}}}%
+}
+
+% short double arrow
+\newcommand{\shortdoublemorphism}{%
+	\mathrel{\stackon[-0.47em]{\stackunder[-0.47em]{\phantom{-}}{\smash{\rightarrow}\vphantom{-}}}{\smash{\rightarrow}\vphantom{-}}}%
+}
+
+% double left-and-right arrow
+\newcommand{\doublelrmorphism}{%
+	\mathrel{\vphantom{\raisebox{0.112em}{$\longrightarrow$}\raisebox{0.303em}{\scalebox{1}[-1]{$\longrightarrow$}}}\smash{\stackon[-0.47em]{\stackunder[-0.47em]{\phantom{-}}{\smash{\longleftarrow}\vphantom{-}}}{\longrightarrow}}}%
+}
+
+
+% short double left-and-right arrow
+\newcommand{\shortdoublelrmorphism}{%
+	\mathrel{\stackon[-0.47em]{\stackunder[-0.47em]{\phantom{-}}{\smash{\leftarrow}\vphantom{-}}}{\smash{\rightarrow}\vphantom{-}}}%
+}
+
+%\colon in opposite direction, e.g. for adjunctions, and a spacing fix for \colon
+\newcommand*\noloc{\mathopen{\reflectbox{$\colon$}}}
+\let\oldcolon\colon
+\renewcommand{\colon}{\mathopen{\oldcolon}}
+
+
+%%%% tikz-cd convenience %%%%
+
+%pushout and pullback symbols
+\newcommand{\pullbacksign}{\tikz[line width=rule_thickness, line join=round, line cap=round, baseline=(pb.base), inner sep=0ex]{\node (pb) at (0,0) {\phantom{\textup{.}}};\draw (pb.base) ++ (-0.07ex,0.051ex) -- ++(1.509ex,0) -- ++(0,1.509ex);\node at (0,1.35ex) {\textup{.}};}}
+\newcommand{\pushoutsign}{\tikz[line width=rule_thickness, line join=round, line cap=round, baseline=(po.base), inner sep=0ex]{\node (po) at (0,0) {\phantom{\textup{.}}};\draw (po.base) ++ (0,0.051ex) -- ++(0,1.509ex) -- ++(1.509ex,0);\node at (1.439ex,0) {\textup{.}};}}
+
+\tikzcdset{
+	arrow style=tikz, 
+	diagrams={>=to, line cap=round, line join=round, line width=rule_thickness}, arrows={line width=rule_thickness},
+	cells={font=\everymath\expandafter{\the\everymath\displaystyle}},
+	pullback/.style = {dash, phantom, "\textstyle\pullbacksign", start anchor=center, end anchor=center},
+	pushout/.style = {dash, phantom, "\textstyle\pushoutsign", start anchor=center, end anchor=center},
+	commutes/.style = {dash, phantom, "\scriptscriptstyle/\!/\!/", start anchor=center, end anchor=center},
+	eqtop/.style={dash, shift right=0.1em},
+	eqbot/.style={dash, shift left=0.1em},
+}
+\newcommand{\eqar}[1][]{\ar[#1,eqtop]\ar[#1,eqbot]}
+\newcommand{\doublear}[2][]{\ar[#2,#1,white,double, double equal sign distance,-{implies[black]}]\eqar[#2,shorten >=0.22em]}
+
+
+%%%% modifiers %%%%
+\newcommand{\ov}[1]{\smash{\overline{#1}}\vphantom{#1}}
+\newcommand{\overtilde}[1]{\smash{\widetilde{#1}}\vphantom{#1}{\kern-0.14em}}
+\newcommand{\overhat}[1]{\smash{\widehat{#1}}\vphantom{#1}}
+\newcommand{\complete}{\wedge}
+
+

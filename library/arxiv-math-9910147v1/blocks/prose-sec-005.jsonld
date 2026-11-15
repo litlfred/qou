@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-9910147v1/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-9910147v1/blocks/prose-sec-005",
   "kind": "prose",
-  "title": "Z×] − π",
-  "pageStart": 2,
-  "pageEnd": 3,
-  "text": "../sections/sec-005-2-z-π.md",
-  "derivedFrom": "library/arxiv-math-9910147v1/manifest",
-  "sourceDocument": "library/arxiv-math-9910147v1/manifest",
+  "title": "Connection with Askey-Wilson Polynomials.",
+  "pageStart": 25,
+  "pageEnd": 26,
+  "text": "../sections/sec-005-53-connection-with-askey-wilson-polynomials.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9910147v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9910147v1",
   "provenance": "ingested"
 }

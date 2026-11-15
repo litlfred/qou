@@ -1,19 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/ant-v14-n7-s/sections/sec-118",
   "@type": [
     "doco:Section"
   ],
-  "title": "Application to nonvanishing of L-functions",
-  "pageStart": 238,
-  "pageEnd": 242,
+  "title": "Acknowledgements",
+  "pageStart": 225,
+  "pageEnd": 226,
   "contains": [
-    "library/ant-v14-n7-s/blocks/prose-sec-118",
-    "library/ant-v14-n7-s/blocks/lem-sec-118-01",
-    "library/ant-v14-n7-s/blocks/thm-sec-118-02",
-    "library/ant-v14-n7-s/blocks/cor-sec-118-03"
+    "library/ant-v14-n7-s/blocks/prose-sec-118"
   ],
-  "derivedFrom": "library/ant-v14-n7-s/manifest",
-  "sourceDocument": "library/ant-v14-n7-s/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s",
   "provenance": "ingested"
 }

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0410233v4/blocks/prose-sec-008",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0410233v4/blocks/prose-sec-008",
   "kind": "prose",
-  "title": "Boundary terms",
-  "pageStart": 9,
-  "pageEnd": 10,
-  "text": "../sections/sec-008-22-boundary-terms.md",
-  "derivedFrom": "library/arxiv-math-0410233v4/manifest",
-  "sourceDocument": "library/arxiv-math-0410233v4/manifest",
+  "title": "Infinitesimal deformations",
+  "pageStart": 7,
+  "pageEnd": 9,
+  "text": "../sections/sec-008-21-infinitesimal-deformations.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0410233v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0410233v4",
   "provenance": "ingested"
 }

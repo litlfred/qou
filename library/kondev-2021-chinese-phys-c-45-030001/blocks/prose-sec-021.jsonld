@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-021",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-021",
   "kind": "prose",
-  "title": "References",
-  "pageStart": 15,
-  "pageEnd": 15,
-  "text": "../sections/sec-021-references.md",
-  "derivedFrom": "library/kondev-2021-chinese-phys-c-45-030001/manifest",
-  "sourceDocument": "library/kondev-2021-chinese-phys-c-45-030001/manifest",
+  "title": "FGK205 EJ",
+  "pageStart": 97,
+  "pageEnd": 123,
+  "text": "../sections/sec-021-17-fgk205-ej.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/kondev-2021-chinese-phys-c-45-030001",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/kondev-2021-chinese-phys-c-45-030001",
   "provenance": "ingested"
 }

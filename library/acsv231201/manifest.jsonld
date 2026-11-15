@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/acsv231201/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Analytic Combinatorics in Several Variables",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/acsv231201",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "acsv231201",
   "contains": [
     "library/acsv231201/sections/sec-000",
     "library/acsv231201/sections/sec-001",
@@ -93,8 +98,10 @@
     "library/acsv231201/sections/sec-084"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "acsv231201",
+    "title_source": "slug",
     "source_file": "ACSV231201.pdf",
     "source_sha256": "1a664d0bf666041e9a4c25622a585a2f83e96edd7051993fbb021ed223de1837",
     "pages": 589,

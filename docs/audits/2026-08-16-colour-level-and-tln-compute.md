@@ -292,7 +292,7 @@ imports. *False-positive warning for future greps:* ~~the literal
 > check, inverting the 2026-08-07 proton-by-default directive.
 >
 > **Extent, measured, not inflated: zero live producers.** Five files carry the
-> literal — three under `computations/_deprecated/`, and the other two are this
+> literal — three under `fsh-guts/deprecated/computations/`, and the other two are this
 > doc and bean `qou-d7h1`, i.e. the two sites carrying the misidentification
 > itself. The correct proton value `0.4493048090…` appears in 21 files. So this
 > is a documentation correction, **not** a drain, and nothing computed is

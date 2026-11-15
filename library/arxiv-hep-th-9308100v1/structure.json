@@ -5,7 +5,12 @@
   "file": "9308100v1.pdf",
   "sha256": "032c25faa757b650c462af1f847f2bdfbe4c5a4b066c1770dc108f30aafbbb7b",
   "bytes": 194121,
-  "pages": 22
+  "pages": 22,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:23Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -15,135 +20,479 @@
    "stamp_date": "20 Aug 1993"
   },
   "doi": null,
-  "title": "Gedanken Experiments Involving Black Holes",
-  "authors_raw": "Stanford University, Stanford, CA 94305-4060",
-  "abstract": "Analysis of several gedanken experiments indicates that bl ack hole complementarity cannot be ruled out on the basis of known physical principles . Experiments designed by outside observers to disprove the existence of a quantum-mechanical stretched horizon require knowledge of Planck-scale eﬀects for their analysis. Obser vers who fall through the event horizon after sampling the Hawking radiation cannot discov er duplicate information inside the black hole before hitting the singularity. Experiments by outside observers to detect baryon number violation will yield signiﬁcant eﬀects well o utside the stretched horizon. PACS categories: 04.60.+n, 12.25.+e, 97.60.Lf ⋆ susskind@dormouse.stanford.edu † larus@dormouse.stanford.edu 1",
-  "docinfo": {
-   "Producer": "GPL Ghostscript 10.01.2",
-   "CreationDate": "D:20241126154114-05'00'",
-   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
-   "Title": "arXiv:hep-th/9308100v1  20 Aug 1993"
-  },
+  "title": "arXiv:hep-th/9308100v1 20 Aug 1993",
+  "authors_raw": "Leonard Susskind",
   "title_lines": [
    "August 1993",
-   "Gedanken Experiments Involving Black Holes",
-   "Leonard Susskind",
-   "and L árus Thorlacius",
-   "Department of Physics"
+   "Gedanken Experiments Involving Black Holes"
   ],
-  "title_prev": "Department of Physics"
+  "abstract": "Analysis of several gedanken experiments indicates that black hole complementarity cannot be ruled out on the basis of known physical principles. Experiments designed by outside observers to disprove the existence of a quantum-mechanical stretched horizon require knowledge of Planck-scale e\ufb00ects for their analysis. Observers who fall through the event horizon after sampling the Hawking radiation cannot discover duplicate information inside the black hole before hitting the singularity. Experiments by outside observers to detect baryon number violation will yield signi\ufb01cant e\ufb00ects well outside the stretched horizon. PACS categories: 04.60.+n, 12.25.+e, 97.60.Lf \u22c6susskind@dormouse.stanford.edu \u2020 larus@dormouse.stanford.edu 1",
+  "docinfo": {
+   "Title": "arXiv:hep-th/9308100v1  20 Aug 1993",
+   "Producer": "GPL Ghostscript 10.01.2",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "CreationDate": "D:20241126154114-05'00'"
+  },
+  "title_raw": "August 1993 Gedanken Experiments Involving Black Holes",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:hep-th/9308100v1 20 Aug 1993",
+   "heading": "Gedanken Experiments Involving Black Holes ABSTRACT",
+   "text": "August 1993 Gedanken Experiments Involving Black Holes",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
    "level": 1,
-   "title": "Abstract",
+   "title": "ABSTRACT",
    "page": 1,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.55,
+   "evidence": [
+    "style",
+    "stock-name"
+   ],
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Introduction",
    "page": 2,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 0.85,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Experiments in Rindler Space",
    "page": 4,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "Experiments Outside Black Holes",
    "page": 10,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "10"
   },
   {
    "level": 1,
    "title": "Experiments Performed Inside Black Holes",
    "page": 13,
    "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "13"
   },
   {
    "level": 1,
    "title": "Information Retention Time",
    "page": 17,
    "source": "inferred",
-   "number": "5"
+   "number": "5",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "17"
   },
   {
    "level": 1,
    "title": "Experiments Involving Time Reversal",
    "page": 19,
    "source": "inferred",
-   "number": "6"
+   "number": "6",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "19"
   },
   {
    "level": 1,
    "title": "Summary",
    "page": 20,
    "source": "inferred",
-   "number": "7"
+   "number": "7",
+   "confidence": 0.85,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "20"
   },
   {
    "level": 1,
-   "title": "References",
+   "title": "REFERENCES",
    "page": 22,
    "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "L. Susskind, L. Thorlacius, and J. Uglum, The Stretched Horizon and Black Hole",
-   "page": 22,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "J. Preskill, private communication at the ITP, UC Santa Ba rbara Conference on",
-   "page": 22,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "L. Susskind, String Theory and the Principle of Black Hole Complementari ty, Stanford",
-   "page": 22,
-   "source": "inferred",
-   "number": "5"
-  },
-  {
-   "level": 1,
-   "title": "K. S. Thorne, R. H. Price, and D. A. MacDonald, Black Holes: The Membrane",
-   "page": 22,
-   "source": "inferred",
-   "number": "8"
-  },
-  {
-   "level": 1,
-   "title": "D. N. Page, Expected Entropy of a Subsystem, University of Alberta report, THY-22-",
-   "page": 22,
-   "source": "inferred",
-   "number": "11"
+   "number": null,
+   "confidence": 0.55,
+   "evidence": [
+    "style",
+    "stock-name"
+   ],
+   "page_label": "22"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Rindler space as a wedge of Minkowski space: surfaces of constant Rindler time are straight lines through the origin while surfaces of \ufb01xed Rindler position are hyperbolas. There is a future (past) event horizon at z\u2212t=0 (z+t=0)",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "To approach the stretched horizon and return, an observer must undergo Planck scale acceleration",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Location of horizons in a collapse geometry. The dashed line represents the global event horizon",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "12"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "A gedanken experiment involving correlations on both sides of the event horizon",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "14"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "A gedanken experiment in which an observer O measures information in Hawking radiation before falling into the black hole. A spin a has previously crossed the horizon and is measured by apparatus A. A message is sent from A to O before O hits the singularity",
+   "page": 15,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "15"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 229,
+   "n_words": 27,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-abstract",
    "number": null,
-   "title": "Abstract",
+   "title": "ABSTRACT",
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 738,
-   "n_words": 100
+   "n_chars": 732,
+   "n_words": 94,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
    "id": "sec-001-1-introduction",
@@ -152,8 +501,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 4,
-   "n_chars": 5944,
-   "n_words": 993
+   "n_chars": 5895,
+   "n_words": 944,
+   "label_start": "2",
+   "label_end": "4"
   },
   {
    "id": "sec-002-2-experiments-in-rindler-space",
@@ -162,8 +513,10 @@
    "level": 1,
    "page_start": 4,
    "page_end": 10,
-   "n_chars": 9965,
-   "n_words": 1777
+   "n_chars": 9878,
+   "n_words": 1690,
+   "label_start": "4",
+   "label_end": "10"
   },
   {
    "id": "sec-003-3-experiments-outside-black-holes",
@@ -172,8 +525,10 @@
    "level": 1,
    "page_start": 10,
    "page_end": 13,
-   "n_chars": 6138,
-   "n_words": 1096
+   "n_chars": 6082,
+   "n_words": 1040,
+   "label_start": "10",
+   "label_end": "13"
   },
   {
    "id": "sec-004-4-experiments-performed-inside-black-holes",
@@ -182,8 +537,10 @@
    "level": 1,
    "page_start": 13,
    "page_end": 16,
-   "n_chars": 5438,
-   "n_words": 968
+   "n_chars": 5411,
+   "n_words": 941,
+   "label_start": "13",
+   "label_end": "16"
   },
   {
    "id": "sec-005-5-information-retention-time",
@@ -192,8 +549,10 @@
    "level": 1,
    "page_start": 16,
    "page_end": 19,
-   "n_chars": 5216,
-   "n_words": 995
+   "n_chars": 5154,
+   "n_words": 933,
+   "label_start": "16",
+   "label_end": "19"
   },
   {
    "id": "sec-006-6-experiments-involving-time-reversal",
@@ -202,8 +561,10 @@
    "level": 1,
    "page_start": 19,
    "page_end": 20,
-   "n_chars": 4160,
-   "n_words": 694
+   "n_chars": 4125,
+   "n_words": 659,
+   "label_start": "19",
+   "label_end": "20"
   },
   {
    "id": "sec-007-7-summary",
@@ -212,75 +573,39 @@
    "level": 1,
    "page_start": 20,
    "page_end": 22,
-   "n_chars": 2926,
-   "n_words": 484
+   "n_chars": 2900,
+   "n_words": 458,
+   "label_start": "20",
+   "label_end": "22"
   },
   {
    "id": "sec-008-references",
    "number": null,
-   "title": "References",
+   "title": "REFERENCES",
    "level": 1,
    "page_start": 22,
    "page_end": 22,
-   "n_chars": 80,
-   "n_words": 15
-  },
-  {
-   "id": "sec-009-2-l-susskind-l-thorlacius-and-j-uglum-the-stretc",
-   "number": "2",
-   "title": "L. Susskind, L. Thorlacius, and J. Uglum, The Stretched Horizon and Black Hole",
-   "level": 1,
-   "page_start": 22,
-   "page_end": 22,
-   "n_chars": 114,
-   "n_words": 15
-  },
-  {
-   "id": "sec-010-3-j-preskill-private-communication-at-the-itp-uc",
-   "number": "3",
-   "title": "J. Preskill, private communication at the ITP, UC Santa Ba rbara Conference on",
-   "level": 1,
-   "page_start": 22,
-   "page_end": 22,
-   "n_chars": 154,
-   "n_words": 25
-  },
-  {
-   "id": "sec-011-5-l-susskind-string-theory-and-the-principle-of",
-   "number": "5",
-   "title": "L. Susskind, String Theory and the Principle of Black Hole Complementari ty, Stanford",
-   "level": 1,
-   "page_start": 22,
-   "page_end": 22,
-   "n_chars": 210,
-   "n_words": 36
-  },
-  {
-   "id": "sec-012-8-k-s-thorne-r-h-price-and-d-a-macdonald-black-h",
-   "number": "8",
-   "title": "K. S. Thorne, R. H. Price, and D. A. MacDonald, Black Holes: The Membrane",
-   "level": 1,
-   "page_start": 22,
-   "page_end": 22,
-   "n_chars": 177,
-   "n_words": 28
-  },
-  {
-   "id": "sec-013-11-d-n-page-expected-entropy-of-a-subsystem-univ",
-   "number": "11",
-   "title": "D. N. Page, Expected Entropy of a Subsystem, University of Alberta report, THY-22-",
-   "level": 1,
-   "page_start": 22,
-   "page_end": 22,
-   "n_chars": 31,
-   "n_words": 5
+   "n_chars": 1183,
+   "n_words": 190,
+   "label_start": "22",
+   "label_end": "22"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 14,
-  "sections": 14,
-  "chars_total": 41291
+  "toc_entries": 9,
+  "toc_inferred_entries": 9,
+  "toc_inferred_mean_confidence": 0.728,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 7,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 10,
+  "chars_total": 41589
  }
 }

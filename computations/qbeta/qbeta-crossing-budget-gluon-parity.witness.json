@@ -1,0 +1,191 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T15:13:24.820541+00:00",
+  "commitSha": "266c147ee39666e932727287228d9e48d3b84a5c",
+  "assertions": [
+    {
+      "name": "the_obstruction_is_located_in_the_quark_block",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "core 6 is EVEN and the quark block 3 is ODD for both nucleons, so the core contributes nothing to the parity and the whole question reduces to the gluon dressing. This is what makes the result a budget statement rather than a claim about one word"
+    },
+    {
+      "name": "nine_and_eleven_have_the_same_parity_so_neither_helps",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "build_nucleon_nf emits 9 (B_3 IS the gluon structure, per its own docstring) and the live nucleon_word_letters emits 11. They differ by 2, so they share a parity and BOTH are odd. Whichever the corpus picks, the alternating block excludes it. Lean: both_corpus_budgets_are_odd"
+    },
+    {
+      "name": "every_corpus_proposed_gluon_count_is_even_hence_excluded",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "the corpus proposes [2, 4] gluon crossings; both are EVEN, so both leave the total ODD and both are excluded in the alternating block. This is a measured consequence of the parity theorem, not an independent finding"
+    },
+    {
+      "name": "odd_dressings_are_ALL_admissible_and_even_ones_ALL_excluded",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "swept every dressing over the 3-letter alphabet at each length k = 0..5 (364 in total). At every ODD k all are admissible; at every EVEN k all are excluded; no length is mixed. So the constraint is a PARITY and not a count -- k = 1, 3 and 5 all satisfy it, and parity alone does NOT select 3"
+    },
+    {
+      "name": "the_smallest_count_satisfying_BOTH_is_three_but_parity_does_not_pick_it",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "qbeta_adjunction_ilp_probe measured by INTEGER FEASIBILITY that the minimum gluon dressing is 3; parity independently requires it to be ODD. 3 is the smallest count meeting both, and 2 meets neither. 🛑 The two arguments are recorded as CONVERGING, not combined: that probe says its own predicate is 'my reading' and not established as the corpus's, and choosing 3 because two arguments intersect there would be selection against the target"
+    },
+    {
+      "name": "both_corpus_nucleons_as_built_are_excluded",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "both are 11 letters and both have negative alternating character, so under scope (B) neither is admissible -- and by section 4 that is not repairable by changing WHICH letters are used, only by changing HOW MANY"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 100,
+  "computation": "qbeta-crossing-budget-gluon-parity",
+  "scriptFile": "qbeta_crossing_budget_gluon_parity_probe.py",
+  "scriptHash": "ba1f03e77a9e",
+  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_crossing_budget_gluon_parity_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_crossing_budget_gluon_parity_probe.py"
+  },
+  "description": "The crossing budget must be EVEN under scope (B), because the alternating block is 1-dimensional and the character's sign is (-1)^length. The B_3 core is 6 letters (even) and the quark block 3 (odd), so admissibility turns on exactly one thing: the GLUON DRESSING must have ODD length. Proved first in Lean (gluon_dressing_must_be_odd, sorry-free). Consequences measured here: every gluon count the corpus proposes (2 and the retracted 4) is EVEN and therefore excluded; and the 9-vs-11 budget debate cannot bear on this at all, because 9 and 11 differ by 2 and so share a parity. Converges independently with qbeta_adjunction_ilp_probe's measured minimum of three gluon crossings. NOT claimed: that parity selects 3 -- any odd dressing satisfies it, and this probe checks that.",
+  "data": {
+    "decomposition": {
+      "core": {
+        "letters": 6,
+        "parity": "even",
+        "what": "B_3 = (sigma_0 sigma_1^-1)^3, the Borromean gluon field"
+      },
+      "quark": {
+        "letters": 3,
+        "parity": "odd",
+        "what": "the flavour crossings; THIS is where the obstruction lives"
+      },
+      "gluon": {
+        "letters": 2,
+        "parity": "even",
+        "what": "the dressing whose parity decides admissibility"
+      }
+    },
+    "budgets": {
+      "build_nucleon_nf": {
+        "crossings": 9,
+        "parity": "odd",
+        "note": "its docstring: 'B_3 IS the gluon structure'"
+      },
+      "nucleon_word_letters_live": {
+        "crossings": 11,
+        "parity": "odd"
+      },
+      "difference": 2,
+      "verdict": "same parity, so the 9-vs-11 argument cannot bear on this"
+    },
+    "corpus_proposed_gluon_counts": {
+      "2": {
+        "total_crossings": 11,
+        "total_parity": "odd",
+        "altChar": "-0.73922357077647486082",
+        "admissible": false,
+        "source": "stable-atom-properties.md -- 'the unique integer solution sigma_0 -> sigma_0 (2 gluon crossings) that restores stability'"
+      },
+      "4": {
+        "total_crossings": 13,
+        "total_parity": "odd",
+        "altChar": "-0.59999358653638749344",
+        "admissible": false,
+        "source": "categorical-neutron-properties.md (earlier, recorded there as wrong on its own terms) and gluon-stabiliser-ledger.md (struck through)"
+      }
+    },
+    "parity_sweep": {
+      "0": {
+        "dressings_tested": 1,
+        "all_admissible": false,
+        "all_excluded": true
+      },
+      "1": {
+        "dressings_tested": 3,
+        "all_admissible": true,
+        "all_excluded": false
+      },
+      "2": {
+        "dressings_tested": 9,
+        "all_admissible": false,
+        "all_excluded": true
+      },
+      "3": {
+        "dressings_tested": 27,
+        "all_admissible": true,
+        "all_excluded": false
+      },
+      "4": {
+        "dressings_tested": 81,
+        "all_admissible": false,
+        "all_excluded": true
+      },
+      "5": {
+        "dressings_tested": 243,
+        "all_admissible": true,
+        "all_excluded": false
+      }
+    },
+    "independent_convergence": {
+      "ilp_minimum": 3,
+      "ilp_source": "qbeta_adjunction_ilp_probe -- integer feasibility over {sigma_0, sigma_1, L_+, L_-}",
+      "ilp_own_caveat": "'the predicate is my reading of (G x)_gamma ... one confirmed prediction does not make it the corpus's predicate' -- so it is scope-(a), not settled",
+      "parity_requirement": "odd",
+      "relationship": "INDEPENDENT arguments that agree on excluding 2. NOT combined to select 3 -- parity admits 1, 3, 5 alike"
+    },
+    "corpus_nucleons_as_built": {
+      "p": {
+        "length": 11,
+        "altChar": "-0.7392235707764748608168264",
+        "admissible": false
+      },
+      "n": {
+        "length": 11,
+        "altChar": "-0.9107622145530743664886669",
+        "admissible": false
+      }
+    },
+    "scope": {
+      "class": "(b) structural",
+      "invariant": "the sign of the alternating character, = (-1)^length",
+      "conditional_on": [
+        "scope (B) whole element (owner ruling 2026-09-13)",
+        "the corpus alphabet, shifts in {0, -1/2, -1}"
+      ],
+      "what_is_NOT_claimed": "that parity selects 3, or any particular count. It excludes 2 and 4 and admits every odd count"
+    },
+    "q0_pin": "proton",
+    "q0_value": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

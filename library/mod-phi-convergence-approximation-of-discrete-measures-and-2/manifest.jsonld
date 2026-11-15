@@ -1,17 +1,25 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "ANNALES DE L’INSTITUT FOURIER Université Grenoble Alpes Les Annales de l’institut Fourier sont membres du Centre Mersenne pour l’édition scientifique ouverte www.centre-mersenne.org",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/mod-phi-convergence-approximation-of-discrete-measures-and-2",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Mod-$\\phi $ convergence: Approximation of discrete measures and harmonic analysis on the torus",
   "contains": [
     "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-000",
     "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-001"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "mod-phi-convergence-approximation-of-discrete-measures-and-2",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "mod-phi-convergence-approximation-of-discrete-measures-and-20yc5c6q3n.pdf",
     "source_sha256": "c563cc999000e75d982dc2cef2d16fd41d36c9e7d1066ccd946c16d88bc92a3e",
     "pages": 84,

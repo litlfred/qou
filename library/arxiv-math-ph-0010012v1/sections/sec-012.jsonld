@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-ph-0010012v1/sections/sec-012",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Step One: Relating correlations and joint probability distributions",
+  "pageStart": 5,
+  "pageEnd": 5,
+  "contains": [
+    "library/arxiv-math-ph-0010012v1/blocks/prose-sec-012"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-ph-0010012v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-ph-0010012v1",
+  "provenance": "ingested"
+}

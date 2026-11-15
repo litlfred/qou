@@ -7,98 +7,551 @@
   "bytes": 884245,
   "pages": 22,
   "text_source": "embedded",
-  "extractor": "pypdf"
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:25Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "Inventiones math. 45, 35- 56 (1978) mathematicae \u000e9 by Springer-Verlag 197 A Calculus for Framed Links in S 3",
+  "title": "mathematicae",
   "authors_raw": "Robion Kirby*",
   "title_lines": [
    "Inventiones math. 45, 35- 56 (1978)",
-   "mathematicae \u000e9 by Springer-Verlag 197",
+   "mathematicae",
+   "\u000e9 by Springer-Verlag 197",
    "A Calculus for Framed Links in S 3"
   ],
   "abstract": null,
   "docinfo": {
-   "Creator": "009147003.TIF",
-   "CreationDate": "Tue Feb 22 21:24:10 2005",
    "Title": "A calculus for framed links in <Emphasis Type=\"Italic\">S </Emphasis> <Superscript>3 </Superscript>",
-   "Author": "",
-   "Producer": "PageGenie PDFGenerator"
+   "Producer": "PageGenie PDFGenerator",
+   "Creator": "009147003.TIF",
+   "CreationDate": "Tue Feb 22 21:24:10 2005"
+  },
+  "title_raw": "Inventiones math. 45, 35- 56 (1978) mathematicae \u000e9 by Springer-Verlag 197 A Calculus for Framed Links in S 3",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "A calculus for framed links in <Emphasis Type=\"Italic\">S </Emphasis> <Superscript>3 </Superscript>",
+   "heading": "mathematicae",
+   "text": "Inventiones math. 45, 35- 56 (1978) mathematicae \u000e9 by Springer-Verlag 197 A Calculus for Framed Links in S 3",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
  },
- "toc": [
+ "toc": [],
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "29% of the 7 sections it would cut hold under 50 characters (more than 25%) \u2014 headings without bodies, not chapters",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (29% of the 7 sections it would cut hold under 50 characters (more than 25%) \u2014 headings without bodies, not chapters): one section per page.",
+ "figures": [
   {
-   "level": 1,
-   "title": "A and 1 B, we can change the left end of A to",
-   "page": 15,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "B prove half this equivalence and here is Fenn and Rourke's argument for the",
-   "page": 20,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 21,
-   "source": "inferred",
-   "number": null
+   "kind": "figure",
+   "number": "3.11",
+   "title": "I-III",
+   "page": 8,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "42"
   }
  ],
- "toc_source": "inferred",
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "50",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-front-matter",
+   "id": "page-001",
    "number": null,
-   "title": "Front matter",
+   "title": "Page 1",
    "level": 1,
    "page_start": 1,
-   "page_end": 15,
-   "n_chars": 23185,
-   "n_words": 4576
+   "page_end": 1,
+   "n_chars": 2380,
+   "n_words": 447,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-000-1-a-and-1-b-we-can-change-the-left-end-of-a-to",
-   "number": "1",
-   "title": "A and 1 B, we can change the left end of A to",
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 2373,
+   "n_words": 434,
+   "label_start": "36",
+   "label_end": "36"
+  },
+  {
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 2946,
+   "n_words": 609,
+   "label_start": "37",
+   "label_end": "37"
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1557,
+   "n_words": 325,
+   "label_start": "38",
+   "label_end": "38"
+  },
+  {
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1055,
+   "n_words": 225,
+   "label_start": "39",
+   "label_end": "39"
+  },
+  {
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 1177,
+   "n_words": 211,
+   "label_start": "40",
+   "label_end": "40"
+  },
+  {
+   "id": "page-007",
+   "number": null,
+   "title": "Page 7",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 776,
+   "n_words": 149,
+   "label_start": "41",
+   "label_end": "41"
+  },
+  {
+   "id": "page-008",
+   "number": null,
+   "title": "Page 8",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 400,
+   "n_words": 81,
+   "label_start": "42",
+   "label_end": "42"
+  },
+  {
+   "id": "page-009",
+   "number": null,
+   "title": "Page 9",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 1338,
+   "n_words": 247,
+   "label_start": "43",
+   "label_end": "43"
+  },
+  {
+   "id": "page-010",
+   "number": null,
+   "title": "Page 10",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 1011,
+   "n_words": 195,
+   "label_start": "44",
+   "label_end": "44"
+  },
+  {
+   "id": "page-011",
+   "number": null,
+   "title": "Page 11",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 3568,
+   "n_words": 715,
+   "label_start": "45",
+   "label_end": "45"
+  },
+  {
+   "id": "page-012",
+   "number": null,
+   "title": "Page 12",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 1076,
+   "n_words": 214,
+   "label_start": "46",
+   "label_end": "46"
+  },
+  {
+   "id": "page-013",
+   "number": null,
+   "title": "Page 13",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 546,
+   "n_words": 101,
+   "label_start": "47",
+   "label_end": "47"
+  },
+  {
+   "id": "page-014",
+   "number": null,
+   "title": "Page 14",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 1370,
+   "n_words": 295,
+   "label_start": "48",
+   "label_end": "48"
+  },
+  {
+   "id": "page-015",
+   "number": null,
+   "title": "Page 15",
    "level": 1,
    "page_start": 15,
-   "page_end": 20,
-   "n_chars": 7885,
-   "n_words": 1509
+   "page_end": 15,
+   "n_chars": 1761,
+   "n_words": 350,
+   "label_start": "49",
+   "label_end": "49"
   },
   {
-   "id": "sec-001-1-b-prove-half-this-equivalence-and-here-is-fenn",
-   "number": "1",
-   "title": "B prove half this equivalence and here is Fenn and Rourke's argument for the",
+   "id": "page-016",
+   "number": null,
+   "title": "Page 16",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 264,
+   "n_words": 52,
+   "label_start": "50",
+   "label_end": "50"
+  },
+  {
+   "id": "page-017",
+   "number": null,
+   "title": "Page 17",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 270,
+   "n_words": 63,
+   "label_start": "51",
+   "label_end": "51"
+  },
+  {
+   "id": "page-018",
+   "number": null,
+   "title": "Page 18",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 3421,
+   "n_words": 651,
+   "label_start": "52",
+   "label_end": "52"
+  },
+  {
+   "id": "page-019",
+   "number": null,
+   "title": "Page 19",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 2494,
+   "n_words": 474,
+   "label_start": "53",
+   "label_end": "53"
+  },
+  {
+   "id": "page-020",
+   "number": null,
+   "title": "Page 20",
    "level": 1,
    "page_start": 20,
-   "page_end": 21,
-   "n_chars": 1296,
-   "n_words": 241
+   "page_end": 20,
+   "n_chars": 2364,
+   "n_words": 444,
+   "label_start": "54",
+   "label_end": "54"
   },
   {
-   "id": "sec-002-references",
+   "id": "page-021",
    "number": null,
-   "title": "References",
+   "title": "Page 21",
    "level": 1,
    "page_start": 21,
+   "page_end": 21,
+   "n_chars": 1760,
+   "n_words": 266,
+   "label_start": "55",
+   "label_end": "55"
+  },
+  {
+   "id": "page-022",
+   "number": null,
+   "title": "Page 22",
+   "level": 1,
+   "page_start": 22,
    "page_end": 22,
-   "n_chars": 2056,
-   "n_words": 288
+   "n_chars": 772,
+   "n_words": 109,
+   "label_start": "56",
+   "label_end": "56"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 3,
-  "sections": 4,
-  "chars_total": 34422
+  "toc_entries": 0,
+  "toc_inferred_entries": 7,
+  "toc_inferred_mean_confidence": 0.614,
+  "toc_inferred_empty_share": 0.286,
+  "toc_inferred_method": "font",
+  "figure_entries": 1,
+  "figure_sequence_gaps": [
+   "figure 3.1",
+   "figure 3.2",
+   "figure 3.3",
+   "figure 3.4",
+   "figure 3.5",
+   "figure 3.6",
+   "figure 3.7",
+   "figure 3.8",
+   "figure 3.9",
+   "figure 3.10"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 22,
+  "chars_total": 34679
  }
 }

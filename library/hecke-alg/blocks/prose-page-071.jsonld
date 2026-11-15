@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/hecke-alg/blocks/prose-page-071",
+  "kind": "prose",
+  "title": "Page 71",
+  "pageStart": 71,
+  "pageEnd": 71,
+  "text": "../sections/page-071.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/hecke-alg",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/hecke-alg",
+  "provenance": "ingested"
+}

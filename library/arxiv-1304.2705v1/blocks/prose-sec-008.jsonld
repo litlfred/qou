@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1304.2705v1/blocks/prose-sec-008",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1304.2705v1/blocks/prose-sec-008",
   "kind": "prose",
   "title": "Proof of Lemma 1.5",
   "pageStart": 13,
   "pageEnd": 14,
   "text": "../sections/sec-008-27-proof-of-lemma-15.md",
-  "derivedFrom": "library/arxiv-1304.2705v1/manifest",
-  "sourceDocument": "library/arxiv-1304.2705v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1304.2705v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1304.2705v1",
   "provenance": "ingested"
 }

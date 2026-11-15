@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-ns-nonlinear-uniqueness-novelty",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-ns-nonlinear-uniqueness-novelty",
+  "kind": "remark",
+  "title": "Mathematical novelty of the $q$-deformed uniqueness estimates",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-ns-nonlinear-uniqueness"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-q-ns-nonlinear-uniqueness",
+  "text": "p1-nonlinear-uniqueness-novelty.md",
+  "provenance": "authored"
+}

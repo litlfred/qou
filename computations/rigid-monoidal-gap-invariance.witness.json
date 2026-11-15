@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T02:01:40.670838+00:00",
-  "commitSha": "389c49b89251dc5d5206dbd482bd9b0ab6581d5b",
+  "engineVersion": "python 3.11.17",
+  "computedAt": "2026-10-10T08:14:35.247787+00:00",
+  "commitSha": "56109c8579a2cf9ae1b5875e745352030b869267",
   "assertions": [
     {
       "name": "markov_trace_convention_invariant_symbolic",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 411,
+  "durationMs": 382,
   "computation": "rigid-monoidal-gap-invariance",
   "scriptFile": "rigid_monoidal_gap_invariance_check.py",
-  "scriptHash": "db5ce7fe4cdf",
-  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
+  "scriptHash": "026996c85ffd",
+  "scriptCommitSha": "6ff3254a0f7d56d7961ba93607680644b8d7b07b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,13 +42,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.17",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "2986fe4aa825b156"
+  },
+  "invocation": {
+    "argv": [
+      "computations/rigid_monoidal_gap_invariance_check.py"
+    ],
+    "reproduce": "python3 -u computations/rigid_monoidal_gap_invariance_check.py"
   },
   "description": "Convention-invariance of the categorical Markov trace (prop:rigid-monoidal-structural-gap-invariance): tr_M of canonical H_3 braid words evaluated through two structurally independent FULLY SYMBOLIC routes — NF-algebra right-multiplication table vs Markov-axiom derivation (M1 cyclicity + M2 peel + M3 + Hecke quadratic) — must agree symbolically (sympy simplify == 0) and at substrate q_0 to 1e-40 (50 dps). No float64 anywhere. Includes the corrected tr_M(s0 s1 s0) = h z^2 + z with h = q - q^{-1} per AGENTS.md §7a (the deprecated lp-duality-check.py's z^3 claim used an invalid Markov-move chain and is superseded).",
   "contentBlock": "prop:rigid-monoidal-structural-gap-invariance",
@@ -83,7 +90,7 @@
         "abs_diff_at_q0": "0.0"
       }
     },
-    "hecke_convention": "s^2 = (q - q^{-1}) s + 1 per AGENTS.md §7a; z = 1/(sqrt(q) + 1/sqrt(q))",
+    "hecke_convention": "s^2 = (q - q^{-1}) s + 1 per AGENTS.md §7a; z = q**3 / (q**2 + 1) (convention D)",
     "tolerance_at_q0": "1e-40 (both routes symbolic, 50 dps)",
     "superseded_producer": "lp-duality-check.py (z^3 claim via invalid Markov-move chain; see pyhecke fix be773569, 2026-05-19 catalog)",
     "z3_superseded_value": "0.229994898034101453459148252105"

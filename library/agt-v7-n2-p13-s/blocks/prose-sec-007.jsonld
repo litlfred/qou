@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/agt-v7-n2-p13-s/blocks/prose-sec-007",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/agt-v7-n2-p13-s/blocks/prose-sec-007",
   "kind": "prose",
   "title": "Cross-ratio parameters",
   "pageStart": 30,
   "pageEnd": 37,
   "text": "../sections/sec-007-33-cross-ratio-parameters.md",
-  "derivedFrom": "library/agt-v7-n2-p13-s/manifest",
-  "sourceDocument": "library/agt-v7-n2-p13-s/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/agt-v7-n2-p13-s",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/agt-v7-n2-p13-s",
   "provenance": "ingested"
 }

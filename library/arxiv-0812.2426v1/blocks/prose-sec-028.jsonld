@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0812.2426v1/blocks/prose-sec-028",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0812.2426v1/blocks/prose-sec-028",
   "kind": "prose",
-  "title": "Hopf monads. A Hopf monad is a bimonad on an autonomous category",
-  "pageStart": 13,
-  "pageEnd": 13,
-  "text": "../sections/sec-028-36-hopf-monads-a-hopf-monad-is-a-bimonad-on-an-a.md",
-  "derivedFrom": "library/arxiv-0812.2426v1/manifest",
-  "sourceDocument": "library/arxiv-0812.2426v1/manifest",
+  "title": "On the center of a fusion category",
+  "pageStart": 16,
+  "pageEnd": 17,
+  "text": "../sections/sec-028-51-on-the-center-of-a-fusion-category.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0812.2426v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0812.2426v1",
   "provenance": "ingested"
 }

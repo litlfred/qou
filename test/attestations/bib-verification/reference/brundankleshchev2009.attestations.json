@@ -1,0 +1,30 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "brundankleshchev2009",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 54,
+      "entry": {
+        "id": "brundankleshchev2009",
+        "status": "partial",
+        "verified_at": "2026-05-19T15:51:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 5,
+        "fix_commit": "(this commit)",
+        "note": "Brundan & Kleshchev, Blocks of cyclotomic Hecke / KLR (Invent. Math. 178, 2009, arXiv:0808.2032). 5 bare-URL Refs upgraded with title+publisher form. No local PDF.",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1007/s00222-009-0204-8"
+        }
+      }
+    }
+  ]
+}

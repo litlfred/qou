@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-0906.1500v4/sections/sec-006",
   "@type": [
     "doco:Section"
   ],
-  "title": "The Multiplicativity Lemma for torsions. In this section, we brieﬂy review",
-  "pageStart": 5,
+  "title": "Torsion of a CW-complex",
+  "pageStart": 4,
   "pageEnd": 5,
   "contains": [
     "library/arxiv-0906.1500v4/blocks/prose-sec-006"
   ],
-  "derivedFrom": "library/arxiv-0906.1500v4/manifest",
-  "sourceDocument": "library/arxiv-0906.1500v4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0906.1500v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0906.1500v4",
   "provenance": "ingested"
 }

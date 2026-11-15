@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1811.05376v4/blocks/prose-sec-009",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1811.05376v4/blocks/prose-sec-009",
   "kind": "prose",
   "title": "The decomposition of the GPPV invariant",
   "pageStart": 27,
   "pageEnd": 31,
   "text": "../sections/sec-009-411-the-decomposition-of-the-gppv-invariant.md",
-  "derivedFrom": "library/arxiv-1811.05376v4/manifest",
-  "sourceDocument": "library/arxiv-1811.05376v4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1811.05376v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1811.05376v4",
   "provenance": "ingested"
 }

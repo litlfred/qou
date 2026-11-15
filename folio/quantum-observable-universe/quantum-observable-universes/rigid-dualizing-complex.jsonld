@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-rigid-dualizing-complex",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:rigid-dualizing-complex",
+  "kind": "definition",
+  "title": "Rigid dualizing complex",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-frobenius-hopf-substrate"
+  ],
+  "cites": [
+    "references/yekutieli2015",
+    "references/yekutieli2010"
+  ],
+  "tags": [
+    "dualizing-complex",
+    "derived-category",
+    "yekutieli",
+    "self-duality"
+  ],
+  "leanRef": "qou:QOU.AlgebraicSubstrate.RigidDualizingComplex",
+  "text": "rigid-dualizing-complex.md",
+  "leanSource": "rigid-dualizing-complex.lean",
+  "provenance": "authored"
+}

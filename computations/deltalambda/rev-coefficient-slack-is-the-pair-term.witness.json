@@ -1,0 +1,173 @@
+{
+  "schema": "qou-witness/v1",
+  "computedAt": "2026-10-13T14:11:07.184236+00:00",
+  "computation": "rev_coefficient_slack_is_the_pair_term_probe.py",
+  "bean": "qou-hok7",
+  "anchor": "physical_proton",
+  "q0Anchor": "proton",
+  "scriptFile": "rev_coefficient_slack_is_the_pair_term_probe.py",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "description": "The Theta(sqrt n) coefficient bracket [A*sqrt2, C*sqrt2] has ratio exactly C/A = 1.712, and C - A = E_2 is the staircase's pair term \u2014 the term the row-tangent bound discards when it uses R <= (l-1)C. Relocates the open problem from shape-search to a pair-term lower bound.",
+  "constants": {
+    "C": "6.17140572007913512022318497673",
+    "A": "3.60337772571985726431330301574",
+    "E_2": "2.56802799435927785590988196099",
+    "C_over_A": "1.71267243953622858764656558354",
+    "A_sqrt2_staircase_floor": "5.09594565006614074432446001423",
+    "C_sqrt2_band_edge": "8.72768566824280951855807452071",
+    "ln_q0": "0.104340720319519512315906279973"
+  },
+  "staircase_limits": {
+    "one_body_per_row": "6.1714057200791351202",
+    "pair_per_row": "2.5680279943592778559",
+    "R_per_row": "3.6033777257198572643",
+    "richardson_from_k": [
+      800,
+      1600
+    ]
+  },
+  "hmin_at_triangular": [
+    {
+      "k": 1,
+      "n": 1,
+      "H_staircase": 1,
+      "H_min": 1,
+      "P_k": 1,
+      "equal": true
+    },
+    {
+      "k": 2,
+      "n": 3,
+      "H_staircase": 5,
+      "H_min": 5,
+      "P_k": 5,
+      "equal": true
+    },
+    {
+      "k": 3,
+      "n": 6,
+      "H_staircase": 14,
+      "H_min": 14,
+      "P_k": 14,
+      "equal": true
+    },
+    {
+      "k": 5,
+      "n": 15,
+      "H_staircase": 55,
+      "H_min": 55,
+      "P_k": 55,
+      "equal": true
+    },
+    {
+      "k": 8,
+      "n": 36,
+      "H_staircase": 204,
+      "H_min": 204,
+      "P_k": 204,
+      "equal": true
+    },
+    {
+      "k": 13,
+      "n": 91,
+      "H_staircase": 819,
+      "H_min": 819,
+      "P_k": 819,
+      "equal": true
+    },
+    {
+      "k": 21,
+      "n": 231,
+      "H_staircase": 3311,
+      "H_min": 3311,
+      "P_k": 3311,
+      "equal": true
+    },
+    {
+      "k": 34,
+      "n": 595,
+      "H_staircase": 13685,
+      "H_min": 13685,
+      "P_k": 13685,
+      "equal": true
+    },
+    {
+      "k": 55,
+      "n": 1540,
+      "H_staircase": 56980,
+      "H_min": 56980,
+      "P_k": 56980,
+      "equal": true
+    }
+  ],
+  "search_excess_reread": [
+    {
+      "n": 36,
+      "abs_excess": "0.141831",
+      "excess_over_sqrt_n": "0.0236385"
+    },
+    {
+      "n": 78,
+      "abs_excess": "0.691179",
+      "excess_over_sqrt_n": "0.0782606108183"
+    },
+    {
+      "n": 136,
+      "abs_excess": "1.216437",
+      "excess_over_sqrt_n": "0.104308612207"
+    },
+    {
+      "n": 300,
+      "abs_excess": "1.955026",
+      "excess_over_sqrt_n": "0.112873478737"
+    },
+    {
+      "n": 630,
+      "abs_excess": "2.37641",
+      "excess_over_sqrt_n": "0.0946784406503"
+    }
+  ],
+  "checks": [
+    {
+      "name": "R1 C = A + E_2 to the precision the arithmetic can deliver",
+      "ok": true,
+      "detail": "residual 0.0 against a derived rounding bound 3.6e-75; the series tail has underflowed to exactly 0, so truncation is not the binding error"
+    },
+    {
+      "name": "R2 ratio = C/A = 1 + E_2/A",
+      "ok": true,
+      "detail": "1.71267244 \u2014 the whole 1.71x bracket is the single term E_2 = 2.568027994 per row"
+    },
+    {
+      "name": "R2 band edges match the recorded 5.0959 / 8.7277",
+      "ok": true,
+      "detail": "A*sqrt2 5.0959457 vs 5.0959; C*sqrt2 8.7276857 vs 8.7277"
+    },
+    {
+      "name": "R3 one-body/k -> C",
+      "ok": true,
+      "detail": "6.17140572 vs 6.17140572, rel 7.926e-80"
+    },
+    {
+      "name": "R3 pair/k -> E_2 (the term the bound discards)",
+      "ok": true,
+      "detail": "2.568027994 vs 2.568027994, rel 5.911e-80"
+    },
+    {
+      "name": "R3 R/k -> A = C - E_2",
+      "ok": true,
+      "detail": "3.603377726 vs 3.603377726, rel 9.479e-80"
+    },
+    {
+      "name": "R4 staircase attains H_min at every triangular n tested",
+      "ok": true,
+      "detail": "9 values of k, exact integer arithmetic \u2014 so E(delta_k) = 0 and the staircase's value is its R, with no energy paid"
+    },
+    {
+      "name": "R5 the excess column turns over at the largest n \u2014 which is NOT evidence of a limit",
+      "ok": true,
+      "detail": "excess/sqrt n rises to n=300 then falls at n=630. The search is a HEURISTIC local search whose quality degrades with n (its own #7279 header says a failure to find a better shape does not lower the upper bound), so a turnover at the LARGEST n is more likely search degradation than a mathematical fact. Do not read the excess as converging to ~1.02, and do not read it as vanishing either \u2014 5 points, all at triangular n, cannot separate a multiplicative excess from an additive O(sqrt n) one"
+    }
+  ],
+  "verdict": "The bracket's 1.71x width is the single term E_2 per row, discarded by the bound's R <= (l-1)C step. Open problem relocated to a pair-term lower bound under the energy trade-off. NOT established: that the true coefficient is A*sqrt2."
+}

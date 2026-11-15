@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/1-s20-0040938391900102-main/sections/page-007",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Page 7",
+  "pageStart": 7,
+  "pageEnd": 7,
+  "contains": [
+    "library/1-s20-0040938391900102-main/blocks/prose-page-007"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/1-s20-0040938391900102-main",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/1-s20-0040938391900102-main",
+  "provenance": "ingested"
+}

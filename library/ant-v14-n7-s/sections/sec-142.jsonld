@@ -1,16 +1,22 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/ant-v14-n7-s/sections/sec-142",
   "@type": [
     "doco:Section"
   ],
-  "title": "Conclusion of the Burgess argument",
-  "pageStart": 275,
-  "pageEnd": 276,
+  "title": "3D. Permutations of variables",
+  "pageStart": 258,
+  "pageEnd": 259,
   "contains": [
-    "library/ant-v14-n7-s/blocks/prose-sec-142"
+    "library/ant-v14-n7-s/blocks/prose-sec-142",
+    "library/ant-v14-n7-s/blocks/lem-sec-142-01"
   ],
-  "derivedFrom": "library/ant-v14-n7-s/manifest",
-  "sourceDocument": "library/ant-v14-n7-s/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s",
   "provenance": "ingested"
 }

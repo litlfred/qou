@@ -8,61 +8,33 @@ pages: 7-9
 source_pdf: 1104.0755v2.pdf
 source_sha256: d2fbbea44598e8f4
 doc_brief: "A connection formula between the Ramanujan function and the q-Airy function — We show a connection formula between two diﬀerent q-Airy func- tions."
+text_source: latex
+latex_prose_ratio: 0.911
+latex_coverage_ratio: 0.952
 ---
-We deﬁne a shearing transformation of a second order linear q-diﬀerence
-equation.
-Deﬁnition 4 For a q-diﬀerence equation
-a(x)u(q2x) +b(x)u(qx) +c(x)u(x) = 0, (6)
-we deﬁne the shearing transformation as follows
-t2 :=x, v (t) := u(t2), p := √
-q.
-7
-The shearing transform of the equation (6) is given by
-a(t2)v(p2t) +b(t2)v(pt) +c(t2)v(t) = 0.
-By the shearing transformation, the equation
-(
-K ·xσ 2
-q −σq + 1
-)
-u(x) = 0
-is transformed to (
-K ·t2σ 2
-p −σp + 1
-)
-v(t) = 0, (7)
-where K is a ﬁxed constant in C∗.
-3.4 The q-Airy equation around the inﬁnity
-We consider the behavior of the equation (5) around the inﬁnity. We set
-x = 1/t and z(t) = u(1/t ). Then z(t) satisﬁes
-(
-−σ 2
-q + 1
-q2tσq + 1
-)
-z(t) = 0.
-We set E(t) = 1/θ (−q2t) and f (t) = ∑
-n≥0antn, a 0 = 1. We assume that
-z(t) can be described as
-z(t) = E(t)f (t) = 1
-θ(−q2t)
-(∑
-n≥0
-antn
-)
-.
-The function E(t) has the following property;
-Lemma 4 For any t ∈ C∗,
-σqE(t) = −q2tE(t), σ 2
-q E(t) = q5t2E(t).
-From this lemma, f (t) satisﬁes the following equation
-(
-−q5t2σ 2
-q −σq + 1
-)
-f (t) = 0. (8)
-Since (8) is the same as (7) for K = −q5, we obtain
-f (t) = 0ϕ 1(−; 0;q2,q 5t2) = A q2(−q3t2).
-8
-4 The q-Borel transformation, the q-Laplace
-transformation and the connection formula
-In this section, we show a connection formula for f (t). In order to obtain a
+We define a shearing transformation of a second order linear $q$-difference equation.
+
+::: defi
+For a $q$-difference equation $$\label{sh}
+a(x)u(q^2x)+b(x)u(qx)+c(x)u(x)=0,$$ we define the shearing transformation as follows $$t^2:=x,\quad v(t):=u(t^2),\quad p:=\sqrt{q}.$$
+:::
+
+The shearing transform of the equation ([\[sh\]](#sh){reference-type="ref" reference="sh"}) is given by $$a(t^2)v(p^2t)+b(t^2)v(pt)+c(t^2)v(t)=0.$$ By the shearing transformation, the equation $$\left(K\cdot x\sigma_q^2-\sigma_q+1\right)u(x)=0$$ is transformed to $$\left(K\cdot t^2\sigma_p^2-\sigma_p+1\right)v(t)=0,\label{kram}$$ where $K$ is a fixed constant in $\mathbb{C}^*$.
+
+## The $q$-Airy equation around the infinity
+
+We consider the behavior of the equation ([\[qai\]](#qai){reference-type="ref" reference="qai"}) around the infinity. We set $x=1/t$ and $z(t)=u(1/t)$. Then $z(t)$ satisfies $$\left(-\sigma_q^2+\frac{1}{q^2t}\sigma_q+1\right)z(t)=0.$$ We set $\mathcal{E}(t)=1/\theta (-q^2t)$ and $f(t)=\sum_{n\ge 0}a_nt^n,\quad a_0=1$. We assume that $z(t)$ can be described as $$z(t)=\mathcal{E}(t)f(t)=\frac{1}{\theta (-q^2t)}\left(\sum_{n\ge 0}a_nt^n\right).$$
+
+The function $\mathcal{E}(t)$ has the following property;
+
+::: lem
+For any $t\in\mathbb{C}^*$, $$\sigma_q\mathcal{E}(t)=-q^2t\mathcal{E}(t),
+\qquad \sigma_q^2\mathcal{E}(t)=q^5t^2\mathcal{E}(t).$$
+:::
+
+From this lemma, $f(t)$ satisfies the following equation $$\label{qaeq}
+\left(-q^5t^2\sigma_q^2-\sigma_q+1\right)f(t)=0.$$ Since ([\[qaeq\]](#qaeq){reference-type="ref" reference="qaeq"}) is the same as ([\[kram\]](#kram){reference-type="ref" reference="kram"}) for $K=-q^5$, we obtain $$f(t)={}_0\varphi_1(-;0;q^2,q^5t^2)=\operatorname{A}_{q^2}(-q^3t^2).$$
+
+# The $q$-Borel transformation, the $q$-Laplace transformation and the connection formula
+
+In this section, we show a connection formula for $f(t)$. In order to obtain a connection formula, we need the $q$-Borel transformation and the $q$-Laplace transformation following Zhang [@Z1].

@@ -1,0 +1,772 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0707.2052v1",
+ "source": {
+  "file": "0707.2052v1.pdf",
+  "sha256": "0a1d1cca848706bef76372a2fed96571fae1dd49b6e75e41ec98d86115ff5ed9",
+  "bytes": 428764,
+  "pages": 39,
+  "text_source": "embedded",
+  "extractor": "pypdf",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0707.2052",
+   "version": "1",
+   "primary_class": "math.AG",
+   "stamp_date": "13 Jul 2007"
+  },
+  "doi": null,
+  "title": "The Mukai pairing, I: a categorical approach",
+  "authors_raw": "Andrei C\u02d8 ald\u02d8 araru\u2217 and Simon Willerton \u2020",
+  "title_lines": [
+   "The Mukai pairing, I: a categorical approach"
+  ],
+  "abstract": "We study the Hochschild homology of smooth spaces, emphasiz ing the importance of a pairing which generalizes Mukai\u2019s pairi ng on the cohomology of K3 surfaces. We show that integral transforms between derived categories of spaces induce, functorially, linear maps on homol- ogy. Adjoint functors induce adjoint linear maps with respe ct to the Mukai pairing. We de\ufb01ne a Chern character with values in Hoch schild homology, and we discuss analogues of the Hirzebruch-Riema nn-Roch theorem and the Cardy Condition from physics. This is done in the context of a 2-category which has spaces as its objects and in tegral kernels as its 1-morphisms.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.05",
+   "CreationDate": "D:20130215031722-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The 2-category of kernels",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A reminder on 2-categories.",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The 2-category Var.",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Serre functors",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The Serre functor on D(X).",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Serre kernels and the Serre functor for D(XY).",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Adjoint kernels",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Adjunctions in 2-categories.",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Left and right adjoints of kernels.",
+   "page": 14,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Partial traces.",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Adjunction as a 2-functor.",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Induced maps on homology",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Hochschild cohomology.",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Hochschild homology.",
+   "page": 18,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Push-forward and pull-back.",
+   "page": 18,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The Mukai pairing and adjoint kernels",
+   "page": 20,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The Chern character",
+   "page": 21,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Definition of the Chern character.",
+   "page": 22,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The Chern character as a map on K-theory.",
+   "page": 22,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The Chern character and inner products.",
+   "page": 24,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Example.",
+   "page": 25,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Open-closed TQFTs and the Cardy Condition",
+   "page": 25,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Open-closed 2d TQFTs.",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Open-closed 2d TQFTs with D-branes.",
+   "page": 27,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The open-closed 2d TQFT from a Calabi-Yau manifold.",
+   "page": 28,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The Baggy Cardy Condition.",
+   "page": 29,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Duality and partial trace",
+   "page": 31,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Polite duality.",
+   "page": 31,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Reflexively polite kernels.",
+   "page": 35,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 38,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 798,
+   "n_words": 128
+  },
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 6,
+   "n_chars": 13311,
+   "n_words": 2312
+  },
+  {
+   "id": "sec-001-the-2-category-of-kernels",
+   "number": null,
+   "title": "The 2-category of kernels",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 459,
+   "n_words": 80
+  },
+  {
+   "id": "sec-002-a-reminder-on-2-categories",
+   "number": null,
+   "title": "A reminder on 2-categories.",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 10,
+   "n_chars": 7308,
+   "n_words": 1494
+  },
+  {
+   "id": "sec-003-serre-functors",
+   "number": null,
+   "title": "Serre functors",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 173,
+   "n_words": 30
+  },
+  {
+   "id": "sec-004-the-serre-functor-on-dx",
+   "number": null,
+   "title": "The Serre functor on D(X).",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 2573,
+   "n_words": 555
+  },
+  {
+   "id": "sec-005-adjoint-kernels",
+   "number": null,
+   "title": "Adjoint kernels",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 791,
+   "n_words": 140
+  },
+  {
+   "id": "sec-006-adjunctions-in-2-categories",
+   "number": null,
+   "title": "Adjunctions in 2-categories.",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 4010,
+   "n_words": 810
+  },
+  {
+   "id": "sec-007-left-and-right-adjoints-of-kernels",
+   "number": null,
+   "title": "Left and right adjoints of kernels.",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 2198,
+   "n_words": 467
+  },
+  {
+   "id": "sec-008-partial-traces",
+   "number": null,
+   "title": "Partial traces.",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 745,
+   "n_words": 182
+  },
+  {
+   "id": "sec-009-adjunction-as-a-2-functor",
+   "number": null,
+   "title": "Adjunction as a 2-functor.",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 1483,
+   "n_words": 332
+  },
+  {
+   "id": "sec-010-induced-maps-on-homology",
+   "number": null,
+   "title": "Induced maps on homology",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 244,
+   "n_words": 51
+  },
+  {
+   "id": "sec-011-hochschild-cohomology",
+   "number": null,
+   "title": "Hochschild cohomology.",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 411,
+   "n_words": 84
+  },
+  {
+   "id": "sec-012-hochschild-homology",
+   "number": null,
+   "title": "Hochschild homology.",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 897,
+   "n_words": 177
+  },
+  {
+   "id": "sec-013-push-forward-and-pull-back",
+   "number": null,
+   "title": "Push-forward and pull-back.",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 2275,
+   "n_words": 510
+  },
+  {
+   "id": "sec-014-the-mukai-pairing-and-adjoint-kernels",
+   "number": null,
+   "title": "The Mukai pairing and adjoint kernels",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 1818,
+   "n_words": 395
+  },
+  {
+   "id": "sec-015-the-chern-character",
+   "number": null,
+   "title": "The Chern character",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 1290,
+   "n_words": 263
+  },
+  {
+   "id": "sec-016-the-chern-character-as-a-map-on-k-theory",
+   "number": null,
+   "title": "The Chern character as a map on K-theory.",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 24,
+   "n_chars": 2722,
+   "n_words": 627
+  },
+  {
+   "id": "sec-017-the-chern-character-and-inner-products",
+   "number": null,
+   "title": "The Chern character and inner products.",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 1637,
+   "n_words": 347
+  },
+  {
+   "id": "sec-018-example",
+   "number": null,
+   "title": "Example.",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 521,
+   "n_words": 89
+  },
+  {
+   "id": "sec-019-open-closed-tqfts-and-the-cardy-condition",
+   "number": null,
+   "title": "Open-closed TQFTs and the Cardy Condition",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 351,
+   "n_words": 56
+  },
+  {
+   "id": "sec-020-open-closed-2d-tqfts",
+   "number": null,
+   "title": "Open-closed 2d TQFTs.",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 3366,
+   "n_words": 604
+  },
+  {
+   "id": "sec-021-open-closed-2d-tqfts-with-d-branes",
+   "number": null,
+   "title": "Open-closed 2d TQFTs with D-branes.",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 2429,
+   "n_words": 440
+  },
+  {
+   "id": "sec-022-the-open-closed-2d-tqft-from-a-calabi-yau-manifo",
+   "number": null,
+   "title": "The open-closed 2d TQFT from a Calabi-Yau manifold.",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 29,
+   "n_chars": 2530,
+   "n_words": 498
+  },
+  {
+   "id": "sec-023-the-baggy-cardy-condition",
+   "number": null,
+   "title": "The Baggy Cardy Condition.",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 31,
+   "n_chars": 3150,
+   "n_words": 675
+  },
+  {
+   "id": "sec-024-duality-and-partial-trace",
+   "number": null,
+   "title": "Duality and partial trace",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 441,
+   "n_words": 93
+  },
+  {
+   "id": "sec-025-polite-duality",
+   "number": null,
+   "title": "Polite duality.",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 38,
+   "n_chars": 9705,
+   "n_words": 2023
+  },
+  {
+   "id": "sec-026-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 39,
+   "n_chars": 3121,
+   "n_words": 465
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 31,
+  "sections": 28,
+  "chars_total": 70757,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "main.tex",
+   "tex_sections": 36,
+   "overlaid": 24,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-the-2-category-of-kernels",
+     "title": "The 2-category of kernels",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-a-reminder-on-2-categories",
+     "title": "A reminder on 2-categories.",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-serre-functors",
+     "title": "Serre functors",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-the-serre-functor-on-dx",
+     "title": "The Serre functor on D(X).",
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-adjoint-kernels",
+     "title": "Adjoint kernels",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-adjunctions-in-2-categories",
+     "title": "Adjunctions in 2-categories.",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-left-and-right-adjoints-of-kernels",
+     "title": "Left and right adjoints of kernels.",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-partial-traces",
+     "title": "Partial traces.",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-adjunction-as-a-2-functor",
+     "title": "Adjunction as a 2-functor.",
+     "prose_ratio": 0.956,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-induced-maps-on-homology",
+     "title": "Induced maps on homology",
+     "prose_ratio": 0.95,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-hochschild-cohomology",
+     "title": "Hochschild cohomology.",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-hochschild-homology",
+     "title": "Hochschild homology.",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-push-forward-and-pull-back",
+     "title": "Push-forward and pull-back.",
+     "prose_ratio": 0.946,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-the-mukai-pairing-and-adjoint-kernels",
+     "title": "The Mukai pairing and adjoint kernels",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.867,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-the-chern-character",
+     "title": "The Chern character",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-the-chern-character-as-a-map-on-k-theory",
+     "title": "The Chern character as a map on K-theory.",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-the-chern-character-and-inner-products",
+     "title": "The Chern character and inner products.",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-018-example",
+     "title": "Example.",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-019-open-closed-tqfts-and-the-cardy-condition",
+     "title": "Open-closed TQFTs and the Cardy Condition",
+     "prose_ratio": 0.933,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-020-open-closed-2d-tqfts",
+     "title": "Open-closed 2d TQFTs.",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-021-open-closed-2d-tqfts-with-d-branes",
+     "title": "Open-closed 2d TQFTs with D-branes.",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-022-the-open-closed-2d-tqft-from-a-calabi-yau-manifo",
+     "title": "The open-closed 2d TQFT from a Calabi-Yau manifold.",
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-023-the-baggy-cardy-condition",
+     "title": "The Baggy Cardy Condition.",
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-024-duality-and-partial-trace",
+     "title": "Duality and partial trace",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-polite-duality",
+     "title": "Polite duality.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
+ }
+}

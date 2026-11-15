@@ -1,0 +1,25 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "reid1991",
+  "type": "article-journal",
+  "title": "[title not verified — see note] Bull. London Math. Soc. 23(4):383",
+  "author": [
+    {
+      "family": "Reid",
+      "given": "Alan W."
+    }
+  ],
+  "container-title": "Bulletin of the London Mathematical Society",
+  "volume": "23",
+  "issue": "4",
+  "page": "383",
+  "issued": {
+    "date-parts": [
+      [
+        1991
+      ]
+    ]
+  },
+  "DOI": "10.1112/blms/23.4.383",
+  "note": "The DOI is the one the citing Lean files give (Archimedean/VolumeTranscendental.lean, HyperbolicVolumeTranscendence.lean). The TITLE is a placeholder: doi.org and Crossref were unreachable from the session that added this entry, and the title was not guessed. Resolve the DOI and replace the title before validating. Added 2026-10-05 so a Lean `-- Ref:` key resolves (C9, issue #7528; owner ruling). Metadata written by an agent from standard bibliographic knowledge and NOT checked against the source in this session; review status stays unreviewed until a human validates it."
+}

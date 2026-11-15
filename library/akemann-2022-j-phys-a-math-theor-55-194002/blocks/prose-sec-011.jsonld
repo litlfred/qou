@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prose-sec-011",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prose-sec-011",
   "kind": "prose",
-  "title": "Partition function of shifted masses",
-  "pageStart": 16,
-  "pageEnd": 20,
-  "text": "../sections/sec-011-42-partition-function-of-shifted-masses.md",
-  "derivedFrom": "library/akemann-2022-j-phys-a-math-theor-55-194002/manifest",
-  "sourceDocument": "library/akemann-2022-j-phys-a-math-theor-55-194002/manifest",
+  "title": "Comparison to data from lattice QCD",
+  "pageStart": 30,
+  "pageEnd": 32,
+  "text": "../sections/sec-011-6-comparison-to-data-from-lattice-qcd.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/akemann-2022-j-phys-a-math-theor-55-194002",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/akemann-2022-j-phys-a-math-theor-55-194002",
   "provenance": "ingested"
 }

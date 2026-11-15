@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-stability-ranges",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-stability-ranges",
+  "kind": "remark",
+  "title": "Stability of $n_{\\mathrm{pred}}$ under local variations in $q$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-integer-stability"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-integer-stability",
+  "tags": [
+    "stability",
+    "substrate-parameter",
+    "robustness",
+    "light-nuclei"
+  ],
+  "text": "q-stability-ranges.md",
+  "provenance": "authored"
+}

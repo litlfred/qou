@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-knot-indexed-convolution-grid",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:knot-indexed-convolution-grid",
+  "kind": "proposition",
+  "title": "Placement of paper's existing knot-indexed convolutions in the bi-filtration grid",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-joint-galois-braid-action",
+    "papers/quantum-observable-universe/blocks/prop-vol-through-tau"
+  ],
+  "tags": [
+    "bi-filtration",
+    "knot-indexed-convolution",
+    "placement-table",
+    "categorical-linking",
+    "EW-interface-knot",
+    "graded-mikusinski"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.KnotIndexedConvolutionGrid.grid_placement",
+  "text": "knot-indexed-convolution-grid.md",
+  "leanSource": "knot-indexed-convolution-grid.lean",
+  "provenance": "authored"
+}

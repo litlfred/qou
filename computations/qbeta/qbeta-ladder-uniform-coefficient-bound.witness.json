@@ -1,0 +1,194 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T17:35:08.194837+00:00",
+  "commitSha": "b5f5f6bd8f92f88c6532d78513db772b50af553c",
+  "assertions": [
+    {
+      "name": "1. G = u^2/(1-u) matches the truncated geometric sum at both pins",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "2. u < 1 at both pins so the Weierstrass hypothesis is reachable",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "3. F derived from the sibling pct table matches its stated factor",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "4. every ruled cell needs a uniform coefficient bound above 2000",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "5. the live ladder is short by a factor above 1000",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "6. the exclusion survives the worst coefficient ever held",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "7. even C = 100 leaves the cap far below the live requirement",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "8. the Lean hypothesis S < 1 holds, so the theorem is not vacuous",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "9. the two independent Lean routes bracket the requirement",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "qbeta-ladder-uniform-coefficient-bound",
+  "scriptFile": "qbeta_ladder_uniform_coefficient_bound_probe.py",
+  "scriptHash": "100e85867f8a",
+  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_ladder_uniform_coefficient_bound_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_ladder_uniform_coefficient_bound_probe.py"
+  },
+  "description": "The Q_beta ladder cannot reach the required correction factor on any ruled base, for rungs of EITHER SIGN -- the existing exclusion (LadderFactorBound.ladder_lt_of_rungs) assumes every c_k < 0 and is voided by a single positive coefficient, which the open qou-cds1 re-derivation could produce. The sign-blind replacement input is uniform boundedness: the smallest |c_k| bound that could reach the LIVE SCORED cell is C_min = 2279.45, against a corpus whose largest live coefficient is 2.0693 (factor 1101.5) and whose largest ever-recorded one, the superseded c_5 = +12.8676, still leaves a factor of 177.1. Lean twin: QOU.QBeta.LadderUniformBound, sorry-free.",
+  "data": {
+    "geometric_totals": {
+      "proton": {
+        "q": "1.10997858275138080759166909561",
+        "u": "0.00851723455015614218925557360331",
+        "G": "0.0000731664602858326226586190145449",
+        "G_partial_k_to_400": "0.0000731664602858326226586190145449"
+      },
+      "muon": {
+        "q": "1.10997859564273904668179512938",
+        "u": "0.00851723635242482310735822116751",
+        "G": "0.0000731664913832557489760180153379",
+        "G_partial_k_to_400": "0.0000731664913832557489760180153379"
+      }
+    },
+    "required_factor_and_C_min_per_cell": {
+      "nuc11_interleaved_tower_E0_LIVE": {
+        "F": "1.20016322219821895777825784307",
+        "S_required": "0.16678",
+        "C_min": "2279.45973262142307254039879763",
+        "C_min_exp_route": "2493.73231026898322847847319434"
+      },
+      "zD_delta_S_tower_E0": {
+        "F": "1.74197819043305577814165766645",
+        "S_required": "0.42594",
+        "C_min": "5821.51983758705446407157611141",
+        "C_min_exp_route": "7585.73472517920297949033389968"
+      },
+      "zD_delta_S_order_zero_E0": {
+        "F": "1.75923156765124993402881621308",
+        "S_required": "0.43157",
+        "C_min": "5898.46766283383832243830140959",
+        "C_min_exp_route": "7720.43778273073332059271822591"
+      },
+      "bar_odd_survivor": {
+        "F": "2.21361372440509131156613171002",
+        "S_required": "0.54825",
+        "C_min": "7493.1874230105240407739155822",
+        "C_min_exp_route": "10860.5274384671082413064559663"
+      },
+      "augmentation_z_eq_q_NOT_RULED": {
+        "F": "0.889125989152662932337512225482",
+        "C_min": "n/a - F <= 1, the cap already exceeds it"
+      },
+      "retired_z_eq_1": {
+        "F": "0.998302885095337925526604771888",
+        "C_min": "n/a - F <= 1, the cap already exceeds it"
+      }
+    },
+    "corpus_coefficients": {
+      "live": {
+        "c_2 (structural)": "-1.0",
+        "c_3 (proton extraction)": "-2.06934257711516783787971951725",
+        "c_5 (current, -(b^2+1/2))": "-1.2527"
+      },
+      "superseded_worst_case": {
+        "c_5 (SUPERSEDED, 3c_3^2+b)": "12.8676"
+      },
+      "largest_live_abs": "2.06934257711516783787971951725",
+      "C_min_over_largest_live": "1101.53812028512730344554751768",
+      "C_min_over_largest_ever_held": "177.147232787887645912244614196"
+    },
+    "ladder_cap_at_generous_C": {
+      "1": {
+        "S": "0.0000731664602858326226586190145449",
+        "ladder_cap": "1.00007317181400845631470873362"
+      },
+      "3": {
+        "S": "0.000219499380857497867975857043635",
+        "ladder_cap": "1.00021954757141349189674523399"
+      },
+      "12.8676": {
+        "S": "0.000941476744373979855322046031558",
+        "ladder_cap": "1.00094236395812529103180344114"
+      },
+      "100": {
+        "S": "0.00731664602858326226586190145449",
+        "ladder_cap": "1.00737057390890221103974507895"
+      }
+    },
+    "lean_twin": {
+      "module": "QOU.QBeta.LadderUniformBound",
+      "theorems": [
+        "sum_abs_nonneg",
+        "prod_one_add_pos",
+        "prod_one_add_mul_le_one",
+        "sum_abs_le_of_scaled",
+        "ladder_lt_of_sum_bound",
+        "sum_bound_of_ladder_ge"
+      ],
+      "status": "sorry-free; lean-direct exit 0 with -DautoImplicit=false -s 65536; axioms [propext, Classical.choice, Quot.sound]",
+      "what_it_supersedes": "NOTHING -- LadderFactorBound stays valid and is TIGHTER where its sign hypothesis holds. This removes the hypothesis, it does not replace the file."
+    },
+    "scope": {
+      "proved": "the IMPLICATION: bounded coefficients => ladder below the requirement, either sign",
+      "measured": "C_min, G, and the corpus's coefficient magnitudes",
+      "NOT_established": [
+        "that a re-derived convention-D ladder's coefficients are bounded by any particular C -- qou-cds1 has not run",
+        "any candidate for the missing factor",
+        "anything about the cosh route, re-opened on the ruled base"
+      ]
+    }
+  }
+}

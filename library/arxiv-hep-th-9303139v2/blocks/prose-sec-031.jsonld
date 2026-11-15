@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-031",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-031",
   "kind": "prose",
   "title": "Double-scaling limit of 1-matrix model",
   "pageStart": 3,
   "pageEnd": 3,
   "text": "../sections/sec-031-53-double-scaling-limit-of-1-matrix-model.md",
-  "derivedFrom": "library/arxiv-hep-th-9303139v2/manifest",
-  "sourceDocument": "library/arxiv-hep-th-9303139v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9303139v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9303139v2",
   "provenance": "ingested"
 }

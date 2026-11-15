@@ -1,0 +1,100 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2103.07383v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "On the Analyticity of Critical Points of the Generalized Integral Menger Curvature in the Hilbert Case (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2103.07383v1",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2103.07383&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2103.07383v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2103.07383v1",
+    "content_type": "application/gzip",
+    "sha256": "9eb304eeebc9518affcc4c1ee20bfbe5372ab62b221b4bf919b24e4b214f3a41",
+    "bytes": 32648,
+    "fetched": "2026-10-10T15:16:06+00:00",
+    "files": [
+      {
+        "path": "source/files/Analyticity-Menger.bbl",
+        "role": "bbl",
+        "sha256": "7c8686770e21764713a6faddc3d0c71b9cb4cbd218054ecf58ea43ea99ddd5cd",
+        "bytes": 10867
+      },
+      {
+        "path": "source/files/Analyticity-Menger.tex",
+        "role": "tex",
+        "sha256": "0c8bac42a789e00f38d09dadce621ed10c524c8f6a0cf6b79f2e330da8c3c413",
+        "bytes": 2661
+      },
+      {
+        "path": "source/files/Parts/Acknowledgement.tex",
+        "role": "tex",
+        "sha256": "9ad51bf30d3b637cccd9c467f18fe68ab6a7f56a9018dba90f66060d525e8812",
+        "bytes": 1018
+      },
+      {
+        "path": "source/files/Parts/Consequences.tex",
+        "role": "tex",
+        "sha256": "ba375f2ab9da87f4397f01ea22c0bf811551bd6ed1fe027af725ba57aa3eac85",
+        "bytes": 8932
+      },
+      {
+        "path": "source/files/Parts/EstimateMainTerm.tex",
+        "role": "tex",
+        "sha256": "e4e301cde5a1145cb4083e58bce2319177c432b0ca5fba4d60225ff193188b0c",
+        "bytes": 5909
+      },
+      {
+        "path": "source/files/Parts/L2MainTerm.tex",
+        "role": "tex",
+        "sha256": "0a3ddf11c2ac11634f479751aaf4c95291425d661b672ba72847b61d40bb4ff5",
+        "bytes": 5067
+      },
+      {
+        "path": "source/files/Parts/L2Remainder.tex",
+        "role": "tex",
+        "sha256": "5caaf34baa708701c2f8a212ebc01f09f231bcb759018b55a99dc0d8a296f4b9",
+        "bytes": 26899
+      },
+      {
+        "path": "source/files/Parts/MainProof.tex",
+        "role": "tex",
+        "sha256": "00271a0799a45a3cc6955239a021b511881987c3e4d3e2c413cb6861c062502e",
+        "bytes": 15900
+      },
+      {
+        "path": "source/files/Parts/appendix.tex",
+        "role": "tex",
+        "sha256": "3a26eb2908c379358a659ba7275ebd2c27032bf1b21a415e21052cb5c56c9384",
+        "bytes": 9336
+      },
+      {
+        "path": "source/files/Parts/header.tex",
+        "role": "tex",
+        "sha256": "c8ebfd9e9d8b607ae4fe221f406297c4b9a2a3be68e67031128dcc43cd539515",
+        "bytes": 4647
+      },
+      {
+        "path": "source/files/Parts/introduction.tex",
+        "role": "tex",
+        "sha256": "1f2f17f8cfb178a25e6abf48f92118183c8cd46a594fe2508f702914d16f16ef",
+        "bytes": 17323
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

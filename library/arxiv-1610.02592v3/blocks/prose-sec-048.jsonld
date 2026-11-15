@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.02592v3/blocks/prose-sec-048",
+  "kind": "prose",
+  "title": "JSJ decomposition",
+  "pageStart": 372,
+  "pageEnd": 377,
+  "text": "../sections/sec-048-115-jsj-decomposition.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.02592v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.02592v3",
+  "provenance": "ingested"
+}

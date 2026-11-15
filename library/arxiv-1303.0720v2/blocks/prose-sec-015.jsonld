@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1303.0720v2/blocks/prose-sec-015",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1303.0720v2/blocks/prose-sec-015",
   "kind": "prose",
-  "title": "The weighted polyanalytic Bergman space and kernel for power weights. As before, Ω",
-  "pageStart": 10,
-  "pageEnd": 10,
-  "text": "../sections/sec-015-51-the-weighted-polyanalytic-bergman-space-and-k.md",
-  "derivedFrom": "library/arxiv-1303.0720v2/manifest",
-  "sourceDocument": "library/arxiv-1303.0720v2/manifest",
+  "title": "The connection with random normal matrix theory",
+  "pageStart": 11,
+  "pageEnd": 11,
+  "text": "../sections/sec-015-53-the-connection-with-random-normal-matrix-theo.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1303.0720v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1303.0720v2",
   "provenance": "ingested"
 }

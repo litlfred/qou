@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/topologicalinvariance3dindex/blocks/prose-sec-019",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/topologicalinvariance3dindex/blocks/prose-sec-019",
   "kind": "prose",
   "title": "The index of the 72 knot complement",
   "pageStart": 49,
   "pageEnd": 51,
   "text": "../sections/sec-019-77-the-index-of-the-72-knot-complement.md",
-  "derivedFrom": "library/topologicalinvariance3dindex/manifest",
-  "sourceDocument": "library/topologicalinvariance3dindex/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/topologicalinvariance3dindex",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/topologicalinvariance3dindex",
   "provenance": "ingested"
 }

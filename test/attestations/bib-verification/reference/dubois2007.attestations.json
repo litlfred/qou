@@ -1,0 +1,96 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "dubois2007",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 186,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-0706.2213v3/0706.2213v3.pdf"
+        },
+        "id": "dubois2007",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "computations/one_loop_torsion.py opens by documenting a LIVE disagreement between three in-repo implementations of the adjoint torsion of 4_1: sqrt(3) (declared non-invariant), sqrt(3)/2 (declared correct, = Dimofte-Garoufalidis' own worked example), and 3 (labelled 'Porti convention'). This paper computes the SL2(C) non-abelian (adjoint) Reidemeister torsion of every twist knot at the holonomy, in closed form, with published tables -- an independent external value for exactly the object the corpus is arguing about, including the whole twist-knot family rather than just 4_1. It also expresses the torsion as a rational function of the CUSP SHAPE via u = 4/(c-2), which ties the corpus's cusp-shape work (prop:cusp-shape-bar-parity) to its torsion work through an explicit substitution. This is the highest-leverage of the knot-theory papers in this slice.",
+          "keyResults": [
+            {
+              "locator": "Appendix A.2, Tables 1-2 (m = 1 rows)",
+              "statement": "The non-abelian Reidemeister torsion at the holonomy is 3 for J(2,2) (the trefoil) and -3 for J(2,-2) (the figure-eight), each up to the sign tau_0.",
+              "useForFolio": "An external published value to run against computations/one_loop_torsion.py's three-way disagreement. NOTE the normalisation carefully: DHY compute T^K_lambda, the torsion with respect to the LONGITUDE, while the corpus's '3' is labelled T_mu (meridian, Porti convention) -- so this is a cross-check to run, not an automatic adjudication. Whether the mu- and lambda-normalised values coincide for 4_1 is exactly the question the check answers.",
+              "targets": [
+                "computations/one_loop_torsion.py",
+                "computations/probes/torsion_nu_sdp_probe.py",
+                "computations/whitehead_c_sigma_torsion.py"
+              ]
+            },
+            {
+              "locator": "Thm 19 (section 5.3)",
+              "statement": "Closed formula for T^{J(2,+-2m)}_lambda(rho_u) as an explicit rational expression in u, m and xi_+- (roots of the Cayley-Hamilton recursion for the commutator w = [y, x^{-1}]).",
+              "useForFolio": "Extends the torsion check off the single 4_1 datum to a whole one-parameter family, which is what the corpus's one_loop_torsion.py needs to distinguish a normalisation constant from a genuine invariant -- a constant factor discrepancy shows up identically across the family, a formula error does not.",
+              "targets": [
+                "computations/one_loop_torsion.py"
+              ]
+            },
+            {
+              "locator": "Eq. (10) and Remark 15 / Tables 1-2 column 3",
+              "statement": "For a hyperbolic two-bridge knot, the cusp shape is c = n - 2*w_{1,2}*w_{2,2}; and via u = 4/(c-2) the torsion at the holonomy is a rational function of the cusp shape c.",
+              "useForFolio": "A published cusp-shape convention (Fact 4: mu -> [[1,1],[0,1]], lambda -> [[-1,c],[0,-1]]) that the corpus should check prop:cusp-shape-bar-parity against -- that block calls omega = e^{i*pi/3} 'the cusp shape of 4_1', which is the regular ideal tetrahedron shape parameter, whereas DHY's c is the cusp-torus modulus. These are different objects and the corpus uses the same phrase for both; worth resolving before either is cited outward.",
+              "targets": [
+                "prop:cusp-shape-bar-parity",
+                "computations/qbeta/qbeta_cusp_shape_drift_robustness_probe.py"
+              ]
+            },
+            {
+              "locator": "Remark 23 (section 5.4)",
+              "statement": "As m -> infinity the cusp shapes of J(2,+-2m) converge to 2 + 2i, the cusp shape of the Whitehead link, and |T^{J(2,-2m)}_lambda(rho_0)| grows like C*m^3.",
+              "useForFolio": "The twist-knot -> Whitehead link limit, with an explicit torsion growth rate. The corpus computes Whitehead-link torsion (computations/whitehead_c_sigma_torsion.py, |tau(L5a1)|) and calibrates it on 4_1; this gives the limiting relation between the two along the twist family, an independent consistency check on that calibration.",
+              "targets": [
+                "computations/whitehead_c_sigma_torsion.py",
+                "computations/whitehead_c_sigma_fig8_calib.py"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "No ref() entry, and the folio's adjoint-torsion cluster (garoufalidis-yoon-2024, pandey-wong-2023, dimofte-garoufalidis) has no source for explicit torsion VALUES -- only for the 1-loop = torsion theorem. This supplies the values.",
+              "target": "folio/schema/references.ts (new id, e.g. dubois-huynh-yamaguchi2008)",
+              "bean": "qou-ngnx"
+            },
+            {
+              "action": "compute-check",
+              "rationale": "Three in-repo implementations disagree on |tau(4_1)| and the disagreement is documented but not externally adjudicated; DHY Tables 1-2 plus Thm 19 give an independent family of values to check against, once the mu-vs-lambda normalisation is pinned.",
+              "target": "computations/one_loop_torsion.py (and the two implementations its docstring names)",
+              "bean": "qou-ohl6"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "prop:cusp-shape-bar-parity calls e^{i*pi/3} 'the cusp shape of 4_1'; DHY Fact 4 defines the cusp shape as the longitude translation c in the parabolic normalisation, a different quantity. Proposing new-remark, NOT aid-proof: the Lean lemma cusp_barParity_split is a correct statement about a primitive sixth root of unity regardless, so nothing is broken -- what needs checking is only the NAME, and I have not verified which object the downstream uses intend.",
+              "target": "prop:cusp-shape-bar-parity",
+              "bean": "qou-j28s"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T16:12:29.859Z",
+          "source_sha": "75dd29acc9e3"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

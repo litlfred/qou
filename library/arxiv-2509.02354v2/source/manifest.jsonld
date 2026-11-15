@@ -1,0 +1,58 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2509.02354v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "The holonomy braiding for $\\mathcal{U}_\\xi(\\mathfrak{sl}_2)$ in terms of geometric quantum dilogarithms (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2509.02354v2",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2509.02354&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2509.02354v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2509.02354v2",
+    "content_type": "application/gzip",
+    "sha256": "c907628fb19409804e5623f77411a796ee1d4c3f3f12339732fd829bd6c4d554",
+    "bytes": 56185,
+    "fetched": "2026-10-10T15:21:39+00:00",
+    "files": [
+      {
+        "path": "source/files/macros.tex",
+        "role": "tex",
+        "sha256": "c3f883b782dfb67763909431f06cedd84926096eecb129228aa690355a03f856",
+        "bytes": 3688
+      },
+      {
+        "path": "source/files/new-paper.bbl",
+        "role": "bbl",
+        "sha256": "32f544475a049d43c23a480112b64023659d047c46e4a918e1870c97b04e6960",
+        "bytes": 54175
+      },
+      {
+        "path": "source/files/new-paper.tex",
+        "role": "tex",
+        "sha256": "6ceeb94de0e207500a90ebbe8ba0a3baf6490fc77c4e745d3e1e26d66a9505ea",
+        "bytes": 131479
+      },
+      {
+        "path": "source/files/sl2ams.cls",
+        "role": "cls",
+        "sha256": "8d5ead51ba2063ff8195566155c50021f52afaf033f430874609298c77c25cbc",
+        "bytes": 2833
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

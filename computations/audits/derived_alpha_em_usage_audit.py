@@ -105,7 +105,7 @@ def _strip_comment(line: str) -> str:
 def live_py_files() -> list[Path]:
     """Every live .py under computations/, skipping deprecated trees."""
     return [p for p in sorted(ROOT.rglob("*.py"))
-            if "_deprecated" not in p.parts and "__pycache__" not in p.parts]
+            if ("_deprecated" not in p.parts and "fsh-guts" not in p.parts) and "__pycache__" not in p.parts]
 
 
 def classify(line: str, path: str = "") -> str:

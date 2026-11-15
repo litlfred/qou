@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-0903.2472v1/sections/sec-001",
   "@type": [
     "doco:Section"
   ],
-  "title": "Department of Physics and Department of Mathematics,",
-  "pageStart": 1,
-  "pageEnd": 1,
+  "title": "Analytic continuation",
+  "pageStart": 18,
+  "pageEnd": 23,
   "contains": [
     "library/arxiv-0903.2472v1/blocks/prose-sec-001"
   ],
-  "derivedFrom": "library/arxiv-0903.2472v1/manifest",
-  "sourceDocument": "library/arxiv-0903.2472v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0903.2472v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0903.2472v1",
   "provenance": "ingested"
 }

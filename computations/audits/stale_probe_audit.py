@@ -63,7 +63,7 @@ sys.path.insert(0, str(HERE.parent))
 from witness_base import WitnessBuilder  # noqa: E402
 
 REPO_ROOT = HERE.parent.parent
-CONTENT_ROOT = REPO_ROOT / "content"
+CONTENT_ROOT = REPO_ROOT / "folio"
 
 STALE_DAYS_THRESHOLD = 7
 
@@ -182,7 +182,7 @@ def main() -> int:
     all_rows: list[dict[str, Any]] = []
     # Scan the whole compute tree's witnesses (reorg scan-root fix).
     for w in sorted((HERE.parent).rglob("*.witness.json")):
-        if "_deprecated" in w.parts:
+        if ("_deprecated" in w.parts or "fsh-guts" in w.parts):
             continue
         if w.name == "stale-probe-audit.witness.json":
             continue

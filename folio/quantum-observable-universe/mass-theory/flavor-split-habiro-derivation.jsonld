@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-flavor-split-habiro-derivation",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:flavor-split-habiro-derivation",
+  "kind": "conjecture",
+  "title": "Habiro element for the flavor split $\\mathfrak{m}_{\\mathfrak{n}} - \\mathfrak{m}_{\\mathfrak{p}}$ via the $H_4$ alternating channel",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-neutron-proton-splitting",
+    "papers/quantum-observable-universe/blocks/prop-alpha-em-habiro-bar-involution"
+  ],
+  "tags": [
+    "flavor-split",
+    "delta-pn",
+    "habiro-element",
+    "hopf-antipode",
+    "h4-alternating-channel",
+    "wenzl-weight",
+    "near-match",
+    "open-conjecture"
+  ],
+  "leanRef": "qou:QOU.FlavorSplit.topological_flavor_split",
+  "text": "flavor-split-habiro-derivation.md",
+  "leanSource": "flavor-split-habiro-derivation.lean",
+  "provenance": "authored"
+}

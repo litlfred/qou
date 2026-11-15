@@ -33,19 +33,54 @@ and `nf` is the NORMAL-FORM vector of the braid word in `H_3(q)` — the braid's
 own operator content, reduced through the Gröbner-Shirshov tables
 (`pyhecke.gram.hm`). Since `G` is invertible (rank 6), `G x = nf` fixes
 `x* = G⁻¹ nf` uniquely, and `nf`'s DIRECTION varies per knot, not merely its
-scale.
+scale. Homogeneity is therefore broken and the offset direction becomes
 
     ⛔ THAT PREMISE IS FALSE UNDER CONVENTION D (2026-08-19, bean qou-cds2).
     `G` has rank 5 of 6 under D — the radical is the q-antisymmetriser — so
     `x*` is not unique, and it exists at all only if `nf` is orthogonal to the
-    radical. It is not: BOTH anchors carry a radical component of ~47 % of
-    their NF norm (0.47268915 for each, identically). So `G x = nf` is
-    UNSATISFIABLE for both and this probe's question is ill-posed under D, not
-    merely harder to solve.
+    radical. It is not: both anchors project onto the unit radical direction
+    with length `|⟨rad, nf⟩| / ‖rad‖ = 0.47268915119281285398`, IDENTICALLY.
+
+    That identity is not a coincidence and `0.47268915…` is not a percentage
+    of anything — it is exactly `1/‖rad‖` (‖rad‖ = 2.1155552173696784523),
+    because `⟨rad, nf⟩ = 1` EXACTLY for both anchors. Both are powers of
+    `σ₁σ₂⁻¹`, so both have writhe 0, and the pairing is the sign-rep value
+    `(−1/q)^writhe = (−1/q)^0 = 1` — the cited theorem, not a measurement.
+
+    The radical's share OF THE NF NORM is the quantity that differs, because
+    the two anchors have different `‖nf‖`:
+
+        muon   4₁  ‖nf‖ = 1.02352829120072182   frac = 0.461823239529892831
+        proton 𝔹₃  ‖nf‖ = 1.00017434057642058   frac = 0.472606756658436762
+
+    i.e. `frac = 1/(‖rad‖·‖nf‖)`, 0.4618 vs 0.4726 — NOT identical, and not
+    47 % for the muon. (Corrected 2026-10-12: this paragraph read "a radical
+    component of ~47 % of their NF norm (0.47268915 for each, identically)",
+    which attached the right number and the right "identically" to the wrong
+    denominator, and so read as a numerical coincidence between the anchors
+    rather than as a consequence of `signRepValue`. Re-measured at 70 dps.)
+
+    So `G x = nf` is UNSATISFIABLE for both and this probe's question is
+    ill-posed under D, not merely harder to solve.
 
     This probe ran on convention C, because `pyhecke.gram`'s mpmath path was
     still on C until 2026-08-19 while the float64 path had been D since
     08-15. Its committed witness is therefore C-frame.
+
+    ⛔ AND IT CANNOT BE REFRESHED — read the witness with that in hand.
+    The guard below `return 2`s before `WitnessBuilder` is ever constructed,
+    so no run of this file can rewrite the artifact. What is on disk is the
+    2026-08-16 pre-guard record (`scriptHash d4bdd964d1d8`; the live file
+    hashes differently), and it reports the failure as
+
+        G1_solve_consistent  passed: false
+        "G x* = nf to < 1e-40 for both anchors"
+
+    i.e. as a PRECISION-GATE miss — the superseded diagnosis, and the one
+    that invites exactly the quotient repair the sign-rep theorem rules out.
+    The witness also carries no convention stamp, so this docstring is the
+    only thing saying it is C-frame. Do not read `passed: false` there as
+    "the solve was close"; the solve has no solution. Bean `qou-egqr`.
 
     It now REFUSES TO RUN rather than re-solving on the quotient and reporting
     an offset angle: `mp.lu_solve` does not raise on the singular D Gram (it
@@ -56,7 +91,8 @@ scale.
 
     Measurement + the quotient API that a re-derivation would use:
     `computations/qbeta/gram_mp_path_convention_d_migration_probe.py`
-    (witness `gram-mp-path-convention-d-migration.witness.json`). Homogeneity is therefore broken and the offset direction becomes
+    (witness `gram-mp-path-convention-d-migration.witness.json`).
+
 knot-dependent — giving a MAGNITUDE *and* an ANGLE per knot, two numbers, which
 is what the falsifiability bar requires.
 

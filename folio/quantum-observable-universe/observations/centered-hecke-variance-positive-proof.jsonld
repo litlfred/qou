@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-centered-hecke-variance-positive",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:centered-hecke-variance-positive",
+  "kind": "proof",
+  "title": "Proof: centred Hecke variance is strictly positive",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-centered-hecke-variance-positive"
+  ],
+  "text": "centered-hecke-variance-positive-proof.md",
+  "provenance": "authored"
+}

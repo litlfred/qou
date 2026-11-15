@@ -14,7 +14,7 @@
  *      package name to the paper directory and default library name.
  *   3. Update `defaultTargets` in the root `lakefile.toml`.
  *
- * @module folio-assistant/schemas/lean-packages
+ * @module folio-assistant/cat-harness/schemas/lean-packages
  */
 
 export interface LeanPackage {
@@ -32,19 +32,19 @@ export const LEAN_PACKAGES: readonly LeanPackage[] = [
   {
     name: "qou",
     paperDir: "quantum-observable-universe",
-    lakeRoot: "content/quantum-observable-universe/lean",
+    lakeRoot: "folio/quantum-observable-universe/lean",
     lib: "QOU",
   },
   {
     name: "ugb",
     paperDir: "unital-groebner-bases",
-    lakeRoot: "content/unital-groebner-bases/lean",
+    lakeRoot: "folio/unital-groebner-bases/lean",
     lib: "UGB",
   },
   {
     name: "fred2005",
     paperDir: "fred2005-formal-groups",
-    lakeRoot: "content/fred2005-formal-groups/lean",
+    lakeRoot: "folio/fred2005-formal-groups/lean",
     lib: "Fred2005",
   },
 ] as const;

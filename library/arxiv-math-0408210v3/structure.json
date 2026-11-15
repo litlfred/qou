@@ -1,0 +1,523 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0408210v3",
+ "source": {
+  "file": "0408210v3.pdf",
+  "sha256": "16d5ccb83a86954f958e4277a6a5c5f65b3db17b30d21da2f71a77b979c8e318",
+  "bytes": 191026,
+  "pages": 17,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:24Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0408210",
+   "version": "3",
+   "primary_class": null,
+   "stamp_date": "7 May 2005"
+  },
+  "doi": null,
+  "title": "arXiv:math/0408210v3 [math.QA] 7 May 2005",
+  "authors_raw": "PoNing Chen and Vasiliy Dolgushev1",
+  "title_lines": [
+   "A SIMPLE ALGEBRAIC PROOF OF",
+   "THE ALGEBRAIC INDEX THEOREM"
+  ],
+  "abstract": "In math.QA/0311303 B. Feigin, G. Felder, and B. Shoikhet proposed an explicit formula for the trace density map from the quantum algebra of functions on an arbitrary symplectic manifold M to the top degree cohomology of M. They also evaluated this map on the trivial element of K-theory of the algebra of quantum functions. In our paper we evaluate the map on an arbitrary element of K-theory, and show that the result is expressed in terms of the \u02c6A-genus of M, the Deligne-Fedosov class of the quantum algebra, and the Chern character of the principal symbol of the element. For a smooth (real) symplectic manifold (without a boundary), this result implies the Fedosov-Nest-Tsygan algebraic index theorem.",
+  "docinfo": {
+   "Title": "arXiv:math/0408210v3  [math.QA]  7 May 2005",
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "CreationDate": "D:20181105182640-05'00'"
+  },
+  "title_raw": "A SIMPLE ALGEBRAIC PROOF OF THE ALGEBRAIC INDEX THEOREM",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:math/0408210v3 [math.QA] 7 May 2005",
+   "heading": "A SIMPLE ALGEBRAIC PROOF OF THE ALGEBRAIC INDEX THEOREM. Introduction",
+   "text": "A SIMPLE ALGEBRAIC PROOF OF THE ALGEBRAIC INDEX THEOREM",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "1"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 3,
+   "source": "inferred",
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "3"
+  },
+  {
+   "level": 2,
+   "title": "The Feigin-Felder-Shoikhet cocycles",
+   "page": 3,
+   "source": "inferred",
+   "number": "2.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "3"
+  },
+  {
+   "level": 2,
+   "title": "The Chern-Weil homomorphism",
+   "page": 5,
+   "source": "inferred",
+   "number": "2.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "5"
+  },
+  {
+   "level": 2,
+   "title": "Fedosov deformation quantization with twisted coefficients.",
+   "page": 6,
+   "source": "inferred",
+   "number": "2.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "6"
+  },
+  {
+   "level": 2,
+   "title": "The Feigin-Felder-Shoikhet trace density map.",
+   "page": 11,
+   "source": "inferred",
+   "number": "2.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "11"
+  },
+  {
+   "level": 1,
+   "title": "The local version of the algebraic index theorem",
+   "page": 12,
+   "source": "inferred",
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "12"
+  },
+  {
+   "level": 1,
+   "title": "Concluding remarks.",
+   "page": 15,
+   "source": "inferred",
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "15"
+  }
+ ],
+ "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1019,
+   "n_words": 155,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 6089,
+   "n_words": 1013,
+   "label_start": "1",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-001-2-preliminaries",
+   "number": "2",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 244,
+   "n_words": 39,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-002-21-the-feigin-felder-shoikhet-cocycles",
+   "number": "2.1",
+   "title": "The Feigin-Felder-Shoikhet cocycles",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 3450,
+   "n_words": 669,
+   "label_start": "3",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-003-22-the-chern-weil-homomorphism",
+   "number": "2.2",
+   "title": "The Chern-Weil homomorphism",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 2021,
+   "n_words": 397,
+   "label_start": "5",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-004-23-fedosov-deformation-quantization-with-twisted",
+   "number": "2.3",
+   "title": "Fedosov deformation quantization with twisted coefficients.",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 11,
+   "n_chars": 9482,
+   "n_words": 1888,
+   "label_start": "6",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-005-24-the-feigin-felder-shoikhet-trace-density-map",
+   "number": "2.4",
+   "title": "The Feigin-Felder-Shoikhet trace density map.",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 2761,
+   "n_words": 515,
+   "label_start": "11",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-006-3-the-local-version-of-the-algebraic-index-theor",
+   "number": "3",
+   "title": "The local version of the algebraic index theorem",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 15,
+   "n_chars": 7361,
+   "n_words": 1405,
+   "label_start": "12",
+   "label_end": "15"
+  },
+  {
+   "id": "sec-007-4-concluding-remarks",
+   "number": "4",
+   "title": "Concluding remarks.",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 17,
+   "n_chars": 4870,
+   "n_words": 766,
+   "label_start": "15",
+   "label_end": "17"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 8,
+  "toc_inferred_entries": 8,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "latex",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 9,
+  "chars_total": 37297,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 8,
+   "overlaid": 8,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-preliminaries",
+     "title": "Preliminaries",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-21-the-feigin-felder-shoikhet-cocycles",
+     "title": "The Feigin-Felder-Shoikhet cocycles",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-22-the-chern-weil-homomorphism",
+     "title": "The Chern-Weil homomorphism",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-23-fedosov-deformation-quantization-with-twisted",
+     "title": "Fedosov deformation quantization with twisted coefficients.",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-24-the-feigin-felder-shoikhet-trace-density-map",
+     "title": "The Feigin-Felder-Shoikhet trace density map.",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-3-the-local-version-of-the-algebraic-index-theor",
+     "title": "The local version of the algebraic index theorem",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-4-concluding-remarks",
+     "title": "Concluding remarks.",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.618,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
+ }
+}

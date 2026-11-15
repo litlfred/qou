@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-octonion-algebra",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:octonion-algebra",
+  "kind": "definition",
+  "title": "The octonion algebra $\\mathbb{O}$",
+  "cites": [
+    "references/baez2002",
+    "references/albuquerque-majid1999"
+  ],
+  "tags": [
+    "octonion",
+    "division-algebra",
+    "G2",
+    "color",
+    "eightfold"
+  ],
+  "defines": [
+    "octonion-algebra"
+  ],
+  "leanRef": "qou:QOU.MathlibExt.OctonionDerivations.octMul",
+  "text": "octonion-algebra.md",
+  "provenance": "authored"
+}

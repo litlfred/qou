@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import os
 
-root_dir = '/home/litlfred/space_cats/qou/content/quantum-observable-universe'
+root_dir = '/home/litlfred/space_cats/qou/folio/quantum-observable-universe'
 for dirpath, _, filenames in os.walk(root_dir):
     for f in filenames:
         path = os.path.join(dirpath, f)

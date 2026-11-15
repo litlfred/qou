@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/chinta-2025-j-phys-a-math-theor-58-035203/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Mathematical and Theoretical PAPER • OPEN ACCESS The discrete analogue of the Gaussian To cite this article: Gautam Chinta et al 2025 J. Phys. A: Math. Theor. 58 035203",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/chinta-2025-j-phys-a-math-theor-58-035203",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "The discrete analogue of the Gaussian",
   "contains": [
+    "library/chinta-2025-j-phys-a-math-theor-58-035203/sections/sec-front-matter",
     "library/chinta-2025-j-phys-a-math-theor-58-035203/sections/sec-000",
     "library/chinta-2025-j-phys-a-math-theor-58-035203/sections/sec-001",
     "library/chinta-2025-j-phys-a-math-theor-58-035203/sections/sec-002",
@@ -16,17 +22,14 @@
     "library/chinta-2025-j-phys-a-math-theor-58-035203/sections/sec-007",
     "library/chinta-2025-j-phys-a-math-theor-58-035203/sections/sec-008",
     "library/chinta-2025-j-phys-a-math-theor-58-035203/sections/sec-009",
-    "library/chinta-2025-j-phys-a-math-theor-58-035203/sections/sec-010",
-    "library/chinta-2025-j-phys-a-math-theor-58-035203/sections/sec-011",
-    "library/chinta-2025-j-phys-a-math-theor-58-035203/sections/sec-012",
-    "library/chinta-2025-j-phys-a-math-theor-58-035203/sections/sec-013",
-    "library/chinta-2025-j-phys-a-math-theor-58-035203/sections/sec-014",
-    "library/chinta-2025-j-phys-a-math-theor-58-035203/sections/sec-015",
-    "library/chinta-2025-j-phys-a-math-theor-58-035203/sections/sec-016"
+    "library/chinta-2025-j-phys-a-math-theor-58-035203/sections/sec-010"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "chinta-2025-j-phys-a-math-theor-58-035203",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "Chinta_2025_J._Phys._A__Math._Theor._58_035203.pdf",
     "source_sha256": "baba83ca76c773d4d3734983720d36dbcb6610d9019256b0d218b6f10da2a492",
     "pages": 23,

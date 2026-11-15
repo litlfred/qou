@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9805116v3/blocks/prose-sec-008",
+  "kind": "prose",
+  "title": "Haar integrals",
+  "pageStart": 29,
+  "pageEnd": 33,
+  "text": "../sections/sec-008-110-haar-integrals.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9805116v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9805116v3",
+  "provenance": "ingested"
+}

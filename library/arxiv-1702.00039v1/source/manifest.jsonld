@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1702.00039v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1702.00039v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1702.00039v1",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1702.00039&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1702.00039v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1702.00039v1",
+    "content_type": "application/gzip",
+    "sha256": "3650ed041a9c7c3a897ea80f136363161e87f8e04952878a00c7e62c9ed51217",
+    "bytes": 5330863,
+    "fetched": "2026-10-10T15:11:53+00:00",
+    "files": [
+      {
+        "path": "source/files/Gentle.tex",
+        "role": "tex",
+        "sha256": "35b4c3d81c6ccb0033c446b60e9ee92fcefaf513dc946bf22187519ed942ecb0",
+        "bytes": 97538
+      },
+      {
+        "path": "source/files/wart.cls",
+        "role": "cls",
+        "sha256": "2c413ae248cb2043e3e13369a30f9ce718638e1292fa31622d2c383da1d117a3",
+        "bytes": 16519
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

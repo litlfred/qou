@@ -1,17 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-2607.29018v1/sections/sec-004",
   "@type": [
     "doco:Section"
   ],
-  "title": "Preliminaries",
-  "pageStart": 7,
-  "pageEnd": 8,
+  "title": "Normal Cayley graphs on symmetric groups with strictly second largest eigenvalue at most 1",
+  "pageStart": 12,
+  "pageEnd": 23,
   "contains": [
-    "library/arxiv-2607.29018v1/blocks/prose-sec-004",
-    "library/arxiv-2607.29018v1/blocks/lem-sec-004-01"
+    "library/arxiv-2607.29018v1/blocks/prose-sec-004"
   ],
-  "derivedFrom": "library/arxiv-2607.29018v1/manifest",
-  "sourceDocument": "library/arxiv-2607.29018v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2607.29018v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2607.29018v1",
   "provenance": "ingested"
 }

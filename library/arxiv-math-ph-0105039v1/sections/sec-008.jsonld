@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-ph-0105039v1/sections/sec-008",
   "@type": [
     "doco:Section"
   ],
-  "title": "(a−d)2− 1",
-  "pageStart": 9,
-  "pageEnd": 9,
+  "title": "Gluing Around Ridgeline of Octahedron",
+  "pageStart": 20,
+  "pageEnd": 24,
   "contains": [
     "library/arxiv-math-ph-0105039v1/blocks/prose-sec-008"
   ],
-  "derivedFrom": "library/arxiv-math-ph-0105039v1/manifest",
-  "sourceDocument": "library/arxiv-math-ph-0105039v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-ph-0105039v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-ph-0105039v1",
   "provenance": "ingested"
 }

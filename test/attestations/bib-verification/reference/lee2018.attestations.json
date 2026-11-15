@@ -1,0 +1,52 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "lee2018",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 427,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1809.08419v1/1809.08419v1.pdf"
+        },
+        "id": "lee2018",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "Groebner-Shirshov bases and standard-monomial bases for the GROUP ALGEBRAS C[W] of the NON-crystallographic Coxeter groups of type H: H2 = I2(5) (Prop 3.1, 10 monomials), H3 the full icosahedral group (Thm 3.3, 10 x 12 = 120 = |H3|), and H4 (Thm 4.17, 10 x 12 x 120 = 14400 = |H4|), certified by counting standard monomials against |W| or by closure under composition. The folio's Groebner-Shirshov thread is large and real, but every instance is TYPE A and q-DEFORMED: H_n(q) with sigma_i^2 -> (q - q^-1) sigma_i + 1, whose normal forms index S_n. Type H appears nowhere in content/: '600-cell', '120-cell', 'noncrystallographic', 'non-crystallographic', 'Coxeter group of type H' all return zero hits outside references.ts. The tempting bridges do not survive checking. |H3| = 120 coincides with |S5| = |Aut(Bring's curve)| and with 2 x |A5|, but H3 = A5 x C2 has a centre and S5 does not, so the icosahedral A5 that conj:klein-bring-icosahedral-bridge and the Lean theorem icosahedral_235_realizable work with is not this group; and a monomial enumeration of C[H3] does not bear on a (2,3,5)-relation realizability proof, so aid-proof would fail its hypothesis check and is not proposed. The quasicrystal framing touches rem:fivefold-crystallographic-obstruction thematically, but this document proves nothing about the crystallographic restriction -- it only cites others for it. Scope-(a) negative: as read, it supplies nothing the folio consumes; that is not a claim that Groebner-Shirshov methods for Coxeter groups are irrelevant here, since the type-A member of that literature is load-bearing. What the reading did surface, and what makes it worth the row, is the dangling refid [bokut2001] cited at QOU/Archimedean/MassGapGm.lean:46 with no entry in references.ts; that entry was created in the same commit as this row from three agreeing bibliographies in this batch, including this document's. WRITER CORRECTION to the triage that produced this row: it described that refid as the justification of a live axiom hecke_is_gs_basis in HeckeGS.lean. No such axiom exists on this branch -- it was deleted as false and is machine-refuted at n = 4 by NotAGSBasis.hecke_not_gs_basis_four. The scope question the triage raised (does the Bokut-Shiao theorem cover H_n(q) or only C[W]?) is real and is now carried by beans qou-bq5e and qou-qspu.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "rem:fivefold-crystallographic-obstruction states the crystallographic restriction (rotational order k in {1,2,3,4,6} for n = 2,3) and ties 5-fold symmetry to aperiodicity, citing only shechtman1984 -- an experimental discovery paper, not a source for the algebraic mechanism. This document's reference list names two candidates (Patera & Twarock, J. Phys. A 35 (2002) 1551-1574; Chen-Moody-Patera, Fields Inst. Monogr. 10 (1998) 135-178), neither in references.ts. SECOND-ORDER AND UNVERIFIED: the proposal comes from seeing the works cited, not from reading them. Read Patera-Twarock before adding, and drop the action if it does not support the block's claim.",
+              "target": "rem:fivefold-crystallographic-obstruction",
+              "bean": "qou-b4fe"
+            },
+            {
+              "action": "no-action",
+              "rationale": "No ref() entry should be created for this document itself: GS bases for type H2/H3/H4 group algebras at q = 1 have no consumer in a folio whose Coxeter/Hecke machinery is entirely type A and q-deformed. Recording the read so the row is not re-triaged.",
+              "target": "folio/schema/references.ts"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-09T19:30:00Z",
+          "source_sha": "7ebca632544a"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

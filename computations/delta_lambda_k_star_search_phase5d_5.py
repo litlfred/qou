@@ -2,7 +2,7 @@
 delta_lambda_k_star_search_phase5d_5.py — Phase 5d.5 probe.
 
 Search for the depth-stratified Frobenius-reciprocity candidate knots
-K_1^*, K_2^* (per [`depth-stratified-frobenius-reciprocity.md`](content/quantum-observable-universe/braids-and-knots/depth-stratified-frobenius-reciprocity.md))
+K_1^*, K_2^* (per [`depth-stratified-frobenius-reciprocity.md`](folio/quantum-observable-universe/braids-and-knots/depth-stratified-frobenius-reciprocity.md))
 that close the 1.82× variance residual at low curvature-rank.
 
 At curvature-rank k = 3, the named candidate is K_3^* = 6_1 (chirality

@@ -7,7 +7,7 @@ NO fit, NO tuning, NO wiring.
 # Ref: docs/audits/2026-07-13-carrier-saturation-crossover-mechanism.md
 # Ref: docs/audits/2026-07-13-li6-h18-amplification-discriminator.md
 # Ref: docs/audits/2026-07-13-theta-lambda-magnitude-derive-or-refute.md
-# Ref: content/quantum-observable-universe/mass-theory/wedderburn-trace-identity.md
+# Ref: folio/quantum-observable-universe/mass-theory/wedderburn-trace-identity.md
 
 THE QUESTION (as posed by the discriminator audit R3-b): the θ_λ carrier
     S(A) = Σ_λ y_λ · dim_λ · |Δθ_λ|          (so  m_e·S  in MeV)
@@ -442,7 +442,7 @@ def main() -> int:
                         ".witness.json (cached canonical; NOT recomputed)",
         "li5_li6_free": "chi_free_via_lr (LR parabolic path; validated vs "
                         "the ⁴He MPFR free witness in-run)",
-        "normalization_prop": "content/quantum-observable-universe/"
+        "normalization_prop": "folio/quantum-observable-universe/"
                               "mass-theory/wedderburn-trace-identity.md "
                               "(prop:wedderburn-trace-identity)",
         "B_AME_role": "numerators of reported diagnostic quotients only",
@@ -549,7 +549,7 @@ def main() -> int:
                "still grouped.")
     wb.add_assertion(
         "li6_amplification_reproduced",
-        computed=fmt(res["6Li"]["A_req"]), expected="82.85481",
+        computed=fmt(res["6Li"]["A_req"]), expected="164.35298",
         tolerance="0.05",
         source="convention-D value, DERIVED INDEPENDENTLY by "
                "carrier_table_convention_d_rederivation.py, whose ⁶Li free χ "
@@ -563,10 +563,10 @@ def main() -> int:
                "frobenius.witness.json). The prior "
                "79.86 was the convention-C value (2026-07-13 audit), correct "
                "in its own frame"
-               ". RE-PINNED 2026-09-07 (beans qou-8jfh / qou-hu1f): the 2026-09-05 owner ruling changed atom_braid_word_3A's intra-nucleon ordering to alternating and the caches were regenerated, so the nucleon chi this descends from moved. BOTH routes moved together and still agree -- this is a RE-DERIVED value, not a constant bent to fit a computation. Superseded: 107.88563 (grouped word)")
+               ". RE-PINNED 2026-09-07 (beans qou-8jfh / qou-hu1f): the 2026-09-05 owner ruling changed atom_braid_word_3A's intra-nucleon ordering to alternating and the caches were regenerated, so the nucleon chi this descends from moved. BOTH routes moved together and still agree -- this is a RE-DERIVED value, not a constant bent to fit a computation. Superseded: 107.88563 (grouped word). RE-PINNED 2026-09-12 (beans qou-nmuz / qou-37kk; PRs #7160 / #7172): commit 07d6584d94e regenerated the 5Li and 6Li matrix-m ATOM chi caches onto the BORROMEAN canonical word -- the last five of six such caches still on the superseded grouped word. The 2026-09-07 4He re-pin note above had already flagged this as outstanding ('this pin does not depend on the 5Li/6Li caches, which are still grouped'), so until now the computed side read grouped-word caches while the expectation descended from them -- the same false-green the 4He pin was corrected for. BOTH routes moved together and still agree (3.1e-49 absolute on A_req, all 385 blocks), so this is a RE-DERIVED value, not a constant bent to fit a computation. Superseded: 82.85481 (5Li/6Li atom caches on the grouped word)")
     wb.add_assertion(
         "anchor_kappa5Li_reproduced",
-        computed=fmt(res["5Li"]["A_req"]), expected="64.10282",
+        computed=fmt(res["5Li"]["A_req"]), expected="143.39659",
         tolerance="0.05",
         source="convention-D value, DERIVED INDEPENDENTLY by "
                "carrier_table_convention_d_rederivation.py, whose ⁵Li free χ "
@@ -575,7 +575,7 @@ def main() -> int:
                "Frobenius path for speed while its numbers still rested on a "
                "single route. The two routes now agree to 1.5e-69 on all 176 "
                "⁵Li blocks (chi-free-via-frobenius.witness.json)"
-               ". RE-PINNED 2026-09-07 (beans qou-8jfh / qou-hu1f): the 2026-09-05 owner ruling changed atom_braid_word_3A's intra-nucleon ordering to alternating and the caches were regenerated, so the nucleon chi this descends from moved. BOTH routes moved together and still agree -- this is a RE-DERIVED value, not a constant bent to fit a computation. Superseded: 102.51379 (grouped word)")
+               ". RE-PINNED 2026-09-07 (beans qou-8jfh / qou-hu1f): the 2026-09-05 owner ruling changed atom_braid_word_3A's intra-nucleon ordering to alternating and the caches were regenerated, so the nucleon chi this descends from moved. BOTH routes moved together and still agree -- this is a RE-DERIVED value, not a constant bent to fit a computation. Superseded: 102.51379 (grouped word). RE-PINNED 2026-09-12 (beans qou-nmuz / qou-37kk; PRs #7160 / #7172): commit 07d6584d94e regenerated the 5Li and 6Li matrix-m ATOM chi caches onto the BORROMEAN canonical word -- the last five of six such caches still on the superseded grouped word. The 2026-09-07 4He re-pin note above had already flagged this as outstanding ('this pin does not depend on the 5Li/6Li caches, which are still grouped'), so until now the computed side read grouped-word caches while the expectation descended from them -- the same false-green the 4He pin was corrected for. BOTH routes moved together and still agree (6.8e-50 absolute on A_req, all 176 blocks), so this is a RE-DERIVED value, not a constant bent to fit a computation. Superseded: 64.10282 (5Li/6Li atom caches on the grouped word)")
     wb.add_assertion(
         "li6_all_385_partitions_present",
         computed=str(res["6Li"]["n_blocks"]), expected="385", tolerance="0",
@@ -588,7 +588,7 @@ def main() -> int:
                "(documented sign-only-vs-averaged convention gap)")
     wb.add_assertion(
         "carrier_band_ratio_pinned",
-        computed=fmt(flat_ratio), expected="1.50250", tolerance="0.05",
+        computed=fmt(flat_ratio), expected="4.83238", tolerance="0.05",
         source="REGRESSION PIN on max/min of m_e·S over A=2..6. This was "
                "`carrier_flat_band_all_A`, asserting 1.0 ± 0.30 — a "
                "FLATNESS claim the cited theory does not support. "
@@ -604,7 +604,29 @@ def main() -> int:
                "above this one has NO derivation behind it. "
                "Re-scoped to pin the measured band rather than assert an "
                "unproved property — the number is unchanged and still "
-               "reported")
+               "reported"
+               ". RE-PINNED 2026-09-12 (beans qou-nmuz / qou-37kk; PRs "
+               "#7160 / #7172) from 1.50250 to 4.83238, for the SAME "
+               "cause as the two Li anchors above: 07d6584d94e "
+               "regenerated the 5Li/6Li matrix-m atom chi caches onto "
+               "the borromean word. This ratio is max/min of m_e·S over "
+               "A=2..6, and both moving entries are exactly those two "
+               "Li rows -- 6Li is now the max (0.19466630) and 4He "
+               "remains the min (0.04028374), so the band widened rather "
+               "than shifted. NOT NAMED in the owner option, which said "
+               "'two Li assertions'; re-pinned anyway because leaving it "
+               "red would leave a FALSE RED attributable to a correction "
+               "already accepted upstream. Corroboration here is weaker "
+               "than for the two anchors and the difference is worth "
+               "stating: the independent Frobenius-route table "
+               "(carrier_table_convention_d_rederivation) gives 4.8323789015 "
+               "against this script's 4.8323789014, agreeing to 1.6e-11 "
+               "RELATIVE, not to the 1e-49 the two anchors reach. The gap "
+               "is carried entirely by 4He, the MINIMUM: its A_req differs "
+               "between the two routes by 1.09e-8 absolute (1.55e-11 rel), "
+               "a pre-existing LR-vs-Frobenius difference at 4He that this "
+               "change neither introduces nor repairs. Tolerance 0.05 is "
+               "seven orders looser, so the pin is unaffected")
     wb.add_assertion(
         "carrier_below_rotation_ceiling",
         computed=fmt(max(res[a]["mean_w"] for a in ATOMS)),

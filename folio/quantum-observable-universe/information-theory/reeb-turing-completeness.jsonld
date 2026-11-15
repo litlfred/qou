@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-reeb-turing-completeness",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:reeb-turing-completeness",
+  "kind": "remark",
+  "title": "Universal computation in 3D contact geometry: Cardona–Miranda–Peralta-Salas–Presas",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-reeb-turing-completeness-classical",
+    "papers/quantum-observable-universe/blocks/def-categorical-reeb-derivation",
+    "papers/quantum-observable-universe/blocks/def-computational-horizon",
+    "papers/quantum-observable-universe/blocks/def-observable-mtc",
+    "papers/quantum-observable-universe/blocks/prop-toffoli-transfer-matrix",
+    "papers/quantum-observable-universe/blocks/rem-skein-turing-machine"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-quantum-computational-universality",
+  "cites": [
+    "references/cardona2021",
+    "references/cardona2023",
+    "references/tao2019"
+  ],
+  "tags": [
+    "reeb-flow",
+    "turing-completeness",
+    "contact-geometry",
+    "universal-computation",
+    "information-theory",
+    "miranda"
+  ],
+  "text": "reeb-turing-completeness.md",
+  "provenance": "authored"
+}

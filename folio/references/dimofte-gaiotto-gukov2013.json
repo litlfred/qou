@@ -1,0 +1,43 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "dimofte-gaiotto-gukov2013",
+  "library": {
+    "docId": "arxiv-1112.5179v1",
+    "dir": "library/arxiv-1112.5179v1",
+    "pdf": "library/arxiv-1112.5179v1/1112.5179v1.pdf",
+    "stage": "candidates",
+    "pages": 79,
+    "sections": 23,
+    "arxiv": "1112.5179v1"
+  },
+  "type": "article-journal",
+  "title": "3-Manifolds and 3d Indices",
+  "author": [
+    {
+      "family": "Dimofte",
+      "given": "Tudor"
+    },
+    {
+      "family": "Gaiotto",
+      "given": "Davide"
+    },
+    {
+      "family": "Gukov",
+      "given": "Sergei"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2013
+      ]
+    ]
+  },
+  "container-title": "Advances in Theoretical and Mathematical Physics",
+  "volume": "17",
+  "issue": "5",
+  "page": "975-1076",
+  "DOI": "10.4310/ATMP.2013.v17.n5.a3",
+  "URL": "https://arxiv.org/abs/1112.5179",
+  "note": "arXiv:1112.5179, Adv. Theor. Math. Phys. 17 (2013) 975-1076. Added 2026-07-17 from library/arxiv-1112.5179v1/1112.5179v1.pdf. The DGG 3d-index: the tetrahedron index $I_\\Delta(m,e)$ and the flux-sum gluing rule (§4.3) that assembles the total index of an ideal triangulation as a sum over internal edge-flux integers subject to the gluing equations — the derivation source for the integer Stokes / Donaldson–Thomas data behind the 1ppq $A_\\omega$ target (G3 route, PR #3805/#3826), including the figure-eight m004 example."
+}

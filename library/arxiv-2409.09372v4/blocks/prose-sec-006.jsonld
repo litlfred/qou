@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2409.09372v4/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2409.09372v4/blocks/prose-sec-006",
   "kind": "prose",
   "title": "Declaration",
   "pageStart": 16,
   "pageEnd": 16,
   "text": "../sections/sec-006-declaration.md",
-  "derivedFrom": "library/arxiv-2409.09372v4/manifest",
-  "sourceDocument": "library/arxiv-2409.09372v4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2409.09372v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2409.09372v4",
   "provenance": "ingested"
 }

@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/symmetry-04-00039-v3/sections/sec-033",
   "@type": [
     "doco:Section"
   ],
-  "title": "AB* AC*",
-  "pageStart": 72,
-  "pageEnd": 73,
+  "title": "Available Antiquirks",
+  "pageStart": 62,
+  "pageEnd": 63,
   "contains": [
     "library/symmetry-04-00039-v3/blocks/prose-sec-033"
   ],
-  "derivedFrom": "library/symmetry-04-00039-v3/manifest",
-  "sourceDocument": "library/symmetry-04-00039-v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/symmetry-04-00039-v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/symmetry-04-00039-v3",
   "provenance": "ingested"
 }

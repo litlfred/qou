@@ -6,7 +6,12 @@
   "sha256": "65fcd77b7b0a208e272563e93a17b681ab2075b426d28ff6d771b4e976182913",
   "bytes": 208839,
   "pages": 22,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:24Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -16,301 +21,493 @@
    "stamp_date": "17 Nov 2006"
   },
   "doi": null,
-  "title": "THE q-ANALOGUE OF THE WILD FUNDAMENTAL GROUP",
+  "title": "arXiv:math/0611521v1 [math.QA] 17 Nov 2006",
   "authors_raw": "J.-P. Ramis\u2217, J. Sauloy \u2020",
   "title_lines": [
    "THE q-ANALOGUE OF THE WILD FUNDAMENTAL GROUP"
   ],
-  "abstract": "We describe an explicit construction of galoisian Stokes op erators for irregular linear q-difference equations. These operators are parameterized by the points of an elliptic curve minus a \ufb01nite set of singularities. Taking residues at these singularities, one gets q-analogues of alien derivations which freely generate the Lie algebra of the Stokes subgroup of the Galois group.",
+  "abstract": "We describe an explicit construction of galoisian Stokes operators for irregular linear q-difference equations. These operators are parameterized by the points of an elliptic curve minus a \ufb01nite set of singularities. Taking residues at these singularities, one gets q-analogues of alien derivations which freely generate the Lie algebra of the Stokes subgroup of the Galois group.",
   "docinfo": {
+   "Title": "arXiv:math/0611521v1  [math.QA]  17 Nov 2006",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20211020150937-04'00'",
    "Creator": "dvips(k) 5.95a Copyright 2005 Radical Eye Software",
-   "Title": "arXiv:math/0611521v1  [math.QA]  17 Nov 2006"
+   "CreationDate": "D:20211020150937-04'00'"
+  },
+  "title_raw": "THE q-ANALOGUE OF THE WILD FUNDAMENTAL GROUP",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:math/0611521v1 [math.QA] 17 Nov 2006",
+   "heading": "T HE q - ANALOGUE OF THE WILD FUNDAMENTAL GROUP",
+   "text": "THE q-ANALOGUE OF THE WILD FUNDAMENTAL GROUP",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "Abstract",
-   "page": 1,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
    "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "(D\u2217,d) of \u03c01(D\u2217,d): a D-module \u201cis\u201d a representation \u03c1\u2297",
-   "page": 2,
+   "title": "Prerequisites (mostly from , , and )",
+   "page": 1,
    "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(D\u2217,d). The \u201csmall fundamental group\u201d is the topological group \u03c01(D\u2217,d),",
-   "page": 2,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(D\u2217,d). The small group is Zariski-dense in the",
-   "page": 2,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "Prerequisites (mostly from [26], [27], [21] and [28])",
-   "page": 8,
-   "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 0.5,
+   "evidence": [
+    "latex"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "General facts",
    "page": 8,
    "source": "inferred",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Filtration by the slopes",
    "page": 10,
    "source": "inferred",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Stokes operators",
    "page": 12,
    "source": "inferred",
-   "number": "2.3"
-  },
-  {
-   "level": 1,
-   "title": "Is",
-   "page": 13,
-   "source": "inferred",
-   "number": "0"
+   "number": "2.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Stokes operators and alien derivations",
    "page": 14,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Stokes operators are galois",
    "page": 14,
    "source": "inferred",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Alien derivations and q-Borel transform",
+   "title": "Alien derivations and $q$-Borel transform",
    "page": 16,
    "source": "inferred",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Conclusion",
    "page": 19,
    "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "Acknowledgements",
-   "page": 20,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 20,
-   "source": "inferred",
-   "number": null
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-abstract",
+   "id": "sec-front-matter",
    "number": null,
-   "title": "Abstract",
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 381,
-   "n_words": 57
+   "n_chars": 511,
+   "n_words": 76,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 2,
-   "n_chars": 5598,
-   "n_words": 916
-  },
-  {
-   "id": "sec-002-1-dd-of-\u03c01dd-a-d-module-is-a-representation-\u03c1",
-   "number": "1",
-   "title": "(D\u2217,d) of \u03c01(D\u2217,d): a D-module \u201cis\u201d a representation \u03c1\u2297",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 41,
-   "n_words": 8
-  },
-  {
-   "id": "sec-003-1-dd-the-small-fundamental-group-is-the-topologi",
-   "number": "1",
-   "title": "(D\u2217,d). The \u201csmall fundamental group\u201d is the topological group \u03c01(D\u2217,d),",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 57,
-   "n_words": 9
-  },
-  {
-   "id": "sec-004-1-dd-the-small-group-is-zariski-dense-in-the",
-   "number": "1",
-   "title": "(D\u2217,d). The small group is Zariski-dense in the",
-   "level": 1,
-   "page_start": 2,
    "page_end": 8,
-   "n_chars": 24898,
-   "n_words": 4447
+   "n_chars": 30696,
+   "n_words": 5271,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-005-2-prerequisites-mostly-from-26-27-21-and-28",
-   "number": "2",
-   "title": "Prerequisites (mostly from [26], [27], [21] and [28])",
-   "level": 1,
-   "page_start": 8,
-   "page_end": 8,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-006-21-general-facts",
+   "id": "sec-001-21-general-facts",
    "number": "2.1",
    "title": "General facts",
    "level": 2,
    "page_start": 8,
    "page_end": 10,
-   "n_chars": 3983,
-   "n_words": 764
+   "n_chars": 3947,
+   "n_words": 725,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-007-22-filtration-by-the-slopes",
+   "id": "sec-002-22-filtration-by-the-slopes",
    "number": "2.2",
    "title": "Filtration by the slopes",
    "level": 2,
    "page_start": 10,
    "page_end": 12,
-   "n_chars": 4922,
-   "n_words": 1112
+   "n_chars": 5707,
+   "n_words": 1130,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-008-0-is",
-   "number": "0",
-   "title": "Is",
-   "level": 1,
-   "page_start": 12,
-   "page_end": 12,
-   "n_chars": 891,
-   "n_words": 169
-  },
-  {
-   "id": "sec-009-23-stokes-operators",
+   "id": "sec-003-23-stokes-operators",
    "number": "2.3",
    "title": "Stokes operators",
    "level": 2,
    "page_start": 12,
    "page_end": 14,
-   "n_chars": 4438,
-   "n_words": 908
+   "n_chars": 4385,
+   "n_words": 854,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-010-3-stokes-operators-and-alien-derivations",
+   "id": "sec-004-3-stokes-operators-and-alien-derivations",
    "number": "3",
    "title": "Stokes operators and alien derivations",
    "level": 1,
    "page_start": 14,
    "page_end": 14,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 3,
+   "n_words": 1,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-011-31-stokes-operators-are-galois",
+   "id": "sec-005-31-stokes-operators-are-galois",
    "number": "3.1",
    "title": "Stokes operators are galois",
    "level": 2,
    "page_start": 14,
-   "page_end": 16,
-   "n_chars": 5335,
-   "n_words": 1010
-  },
-  {
-   "id": "sec-012-32-alien-derivations-and-q-borel-transform",
-   "number": "3.2",
-   "title": "Alien derivations and q-Borel transform",
-   "level": 2,
-   "page_start": 16,
    "page_end": 19,
-   "n_chars": 8136,
-   "n_words": 1608
+   "n_chars": 13403,
+   "n_words": 2510,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-013-4-conclusion",
+   "id": "sec-006-4-conclusion",
    "number": "4",
    "title": "Conclusion",
    "level": 1,
    "page_start": 19,
-   "page_end": 20,
-   "n_chars": 3190,
-   "n_words": 522
-  },
-  {
-   "id": "sec-014-acknowledgements",
-   "number": null,
-   "title": "Acknowledgements",
-   "level": 1,
-   "page_start": 20,
-   "page_end": 20,
-   "n_chars": 107,
-   "n_words": 20
-  },
-  {
-   "id": "sec-015-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 20,
    "page_end": 22,
-   "n_chars": 5077,
-   "n_words": 767
+   "n_chars": 8357,
+   "n_words": 1264,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 16,
-  "sections": 16,
-  "chars_total": 67054
+  "toc_entries": 9,
+  "toc_inferred_entries": 9,
+  "toc_inferred_mean_confidence": 0.944,
+  "toc_inferred_empty_share": 0.143,
+  "toc_inferred_method": "latex",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 8,
+  "chars_total": 67009,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 9,
+   "overlaid": 6,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-21-general-facts",
+     "title": "General facts",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-22-filtration-by-the-slopes",
+     "title": "Filtration by the slopes",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-23-stokes-operators",
+     "title": "Stokes operators",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.946,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-3-stokes-operators-and-alien-derivations",
+     "title": "Stokes operators and alien derivations",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-31-stokes-operators-are-galois",
+     "title": "Stokes operators are galois",
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-4-conclusion",
+     "title": "Conclusion",
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.508,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
  }
 }

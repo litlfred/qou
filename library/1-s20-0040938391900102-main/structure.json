@@ -1,0 +1,201 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "1-s20-0040938391900102-main",
+ "source": {
+  "file": "1-s2.0-0040938391900102-main.pdf",
+  "sha256": "8b4169e83aeeff396d9ec40a8ebcf7bb36bd29e8f5405e7fe636e2e6b8be675f",
+  "bytes": 395468,
+  "pages": 7,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:17Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "ENERGY",
+  "authors_raw": "OF A KNOT",
+  "title_lines": [
+   "ENERGY"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Title": "PII: 0040-9383(91)90010-2",
+   "Producer": "Acrobat 3.0 Import Plug-in",
+   "Creator": "Acrobat 3.0 Capture Plug-in",
+   "CreationDate": "D:20010928213242"
+  },
+  "title_raw": "ENERGY",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "metadata": "PII: 0040-9383(91)90010-2",
+   "heading": "ENERGY OF A KNOT I/(Y) -/WI -\u2018dy. XCI",
+   "text": "ENERGY",
+   "corroborated_by": [],
+   "browser_print": false
+  }
+ },
+ "toc": [],
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "10 inferred entries, 60% of them starting on page(s) 3, 4 of 7 \u2014 a list found ON a page, not the document's structure",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (10 inferred entries, 60% of them starting on page(s) 3, 4 of 7 \u2014 a list found ON a page, not the document's structure): one section per page.",
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
+ "sections": [
+  {
+   "id": "page-001",
+   "number": null,
+   "title": "Page 1",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 2320,
+   "n_words": 410,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 2065,
+   "n_words": 436,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1826,
+   "n_words": 397,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1823,
+   "n_words": 403,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1770,
+   "n_words": 361,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 2289,
+   "n_words": 448,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-007",
+   "number": null,
+   "title": "Page 7",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 739,
+   "n_words": 117,
+   "label_start": null,
+   "label_end": null
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 0,
+  "toc_inferred_entries": 10,
+  "toc_inferred_mean_confidence": 0.6,
+  "toc_inferred_empty_share": 0.111,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 7,
+  "chars_total": 12832
+ }
+}

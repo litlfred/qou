@@ -347,9 +347,9 @@ multi-week work is constructing [Z_2] explicitly.
 
 - Canonical chain: `docs/canonical-derivation-cheat-sheet.md`
 - Substrate side: `prop:em-coupling-projection` in
-  `content/quantum-observable-universe/predicted-spectra/em-coupling-projection.md`
+  `folio/quantum-observable-universe/predicted-spectra/em-coupling-projection.md`
 - Archimedean side: `prop:em-coupling-bring-zero-mode` in
-  `content/quantum-observable-universe/predicted-spectra/em-coupling-bring-zero-mode.md`
+  `folio/quantum-observable-universe/predicted-spectra/em-coupling-bring-zero-mode.md`
 - RT 2-loop derivation plan: `docs/coordination/2026-05-30-alpha-em-4pi-rt-2loop-derivation-plan.md`
 - Thread ledger: `docs/coordination/2026-05-30-alpha-em-4pi-thread.md`
 - Closure declaration: PR #1503

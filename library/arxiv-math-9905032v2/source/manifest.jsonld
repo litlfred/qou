@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9905032v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-9905032v2 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9905032v2",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/9905032&metadataPrefix=arXiv), submitted 1999-09-11, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-9905032v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/math/9905032v2",
+    "content_type": "application/gzip",
+    "sha256": "d0afc2c11ef1ee53441c3d9d3fab95744ab00bdfdc5bd7cd9ae59e22389e291a",
+    "bytes": 62613,
+    "fetched": "2026-10-10T15:30:57+00:00",
+    "files": [
+      {
+        "path": "source/files/boo.tex",
+        "role": "tex",
+        "sha256": "0bbf3a0d563e8f14c56ab4e87f69be122be7efbbf08fdb5c58645e35f6a28a78",
+        "bytes": 100207
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/gt-v10-n3-p07-p/blocks/prose-sec-009",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/gt-v10-n3-p07-p/blocks/prose-sec-009",
   "kind": "prose",
-  "title": "The failure of transversal simplicity for certain closed 3–braids",
-  "pageStart": 24,
-  "pageEnd": 26,
-  "text": "../sections/sec-009-31-the-failure-of-transversal-simplicity-for-cer.md",
-  "derivedFrom": "library/gt-v10-n3-p07-p/manifest",
-  "sourceDocument": "library/gt-v10-n3-p07-p/manifest",
+  "title": "References",
+  "pageStart": 27,
+  "pageEnd": 28,
+  "text": "../sections/sec-009-references.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/gt-v10-n3-p07-p",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/gt-v10-n3-p07-p",
   "provenance": "ingested"
 }

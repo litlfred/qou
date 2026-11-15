@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-hep-lat-0003021v3/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-hep-lat-0003021v3 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-lat-0003021v3",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:hep-lat/0003021&metadataPrefix=arXiv), submitted 2000-05-19, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-hep-lat-0003021v3",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/hep-lat/0003021v3",
+    "content_type": "application/gzip",
+    "sha256": "4048765586bb3b6eeb5c6ce5e4d0be68a3c9fe3b6e9a0b24962a952d5e754565",
+    "bytes": 110610,
+    "fetched": "2026-10-10T15:23:50+00:00",
+    "files": [
+      {
+        "path": "source/files/finiteTemp.tex",
+        "role": "tex",
+        "sha256": "07315f85f69fbf36cddc150d5cdb7ecacb238c5249764704bfa9e8da65b68a5f",
+        "bytes": 54181
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

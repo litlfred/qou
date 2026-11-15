@@ -1,0 +1,52 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1604.02688v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1604.02688v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1604.02688v1",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1604.02688&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1604.02688v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1604.02688v1",
+    "content_type": "application/gzip",
+    "sha256": "b535ae45045adaa01198d3f079bd0b01a85390026ed42d201ff33050a2d094a9",
+    "bytes": 5975327,
+    "fetched": "2026-10-10T15:10:59+00:00",
+    "files": [
+      {
+        "path": "source/files/paper_april4.bbl",
+        "role": "bbl",
+        "sha256": "c0d850ce40c67436a6de2406a5785a1df5268cb06ab0f18b30efbd4a3a6596ba",
+        "bytes": 7588
+      },
+      {
+        "path": "source/files/paper_april4.tex",
+        "role": "tex",
+        "sha256": "56145b938d04637febbfb66510461a92abe3124c81e18c7dee9b37a5cb2406fe",
+        "bytes": 167916
+      },
+      {
+        "path": "source/files/pinlabel.sty",
+        "role": "sty",
+        "sha256": "54d9626ac02637d0f1f3b8f23545a6133ed44abce9c1ca9b3a0f061470bdfb08",
+        "bytes": 38723
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

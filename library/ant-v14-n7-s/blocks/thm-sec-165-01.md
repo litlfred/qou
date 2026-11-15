@@ -1,1 +1,1 @@
-Letφ(x)∈ K[x] be a polynomial of degree d≥ 2 deﬁned over K such that⟨φ, xd⟩> 0,
+]. While the action of G on characters is not natural enough in global-local contexts, Navarro

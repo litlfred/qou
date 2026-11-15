@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2603.12136v1/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Extending DRCR to reflection symmetries",
+  "pageStart": 10,
+  "pageEnd": 13,
+  "contains": [
+    "library/arxiv-2603.12136v1/blocks/prose-sec-006"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2603.12136v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2603.12136v1",
+  "provenance": "ingested"
+}

@@ -1,0 +1,112 @@
+{
+ "schema": "witness/v1",
+ "computedAt": "2026-10-13T11:40:15.570091+00:00",
+ "engine": "mpmath",
+ "scriptFile": "gamma_gamma_aggregator_convexity_probe.py",
+ "commitSha": "e43d2617f2eb8c43ce6147ff3b80b6fd25343bed",
+ "q0Anchor": "proton",
+ "q0AnchorReason": "seeded from Q_50_DIGIT_STR; convention D (z = q^3/(q^2+1))",
+ "description": "Measures whether the gamma-gamma-selected bond gives a NON-AFFINE binding aggregator at A = 3, by comparing the two-bond trace ratio against the product of the two single-bond ratios. delta = 0 is exactly the bond product (affine log-assembly, b_3 = 0); delta's sign decides which side of qou-82mc's convexity dichotomy the assembly sits on. The template sigma_2 bond is a control for which the bond product is a theorem.",
+ "dps": 60,
+ "q0": "1.1099785827513808075916690956107688798744991218736",
+ "z_D": "0.612688037146465251595829863946",
+ "live_blocks": [
+  "(9,)",
+  "(8, 1)",
+  "(7, 2)",
+  "(6, 3)",
+  "(5, 4)"
+ ],
+ "dropped_blocks_max_abs_y": "0.0",
+ "rows": {
+  "ppn|template_s2": {
+   "tr_free": "0.188178642999488779263479037146",
+   "mu_both": "0.375386630862388383999372303379",
+   "mu_0": "0.612688037146465251595829863946",
+   "mu_1": "0.612688037146465251595829863946",
+   "delta": "-7.77876909732642713393008006723e-62"
+  },
+  "ppn|G3": {
+   "tr_free": "0.188178642999488779263479037146",
+   "mu_both": "1.00166959044130683121811099599",
+   "mu_0": "1.00105775254515984363438899056",
+   "mu_1": "1.00061119140688077961351843904",
+   "delta": "-1.55575381946528542678601601345e-61"
+  },
+  "pnn|template_s2": {
+   "tr_free": "0.142072056797304797470498604255",
+   "mu_both": "0.375386630862388383999372303379",
+   "mu_0": "0.612688037146465251595829863946",
+   "mu_1": "0.612688037146465251595829863946",
+   "delta": "-1.16681536459896407008951201008e-61"
+  },
+  "pnn|G3": {
+   "tr_free": "0.142072056797304797470498604255",
+   "mu_both": "1.00122275636869740413373437879",
+   "mu_0": "1.00061119140688077961351843904",
+   "mu_1": "1.00061119140688077961351843904",
+   "delta": "1.55575381946528542678601601345e-61"
+  },
+  "ppp|template_s2": {
+   "tr_free": "0.249248180672505204964967239154",
+   "mu_both": "0.375386630862388383999372303379",
+   "mu_0": "0.612688037146465251595829863946",
+   "mu_1": "0.612688037146465251595829863946",
+   "delta": "-7.77876909732642713393008006723e-62"
+  },
+  "ppp|G3": {
+   "tr_free": "0.249248180672505204964967239154",
+   "mu_both": "1.00211662393076647939582516068",
+   "mu_0": "1.00105775254515984363438899056",
+   "mu_1": "1.00105775254515984363438899056",
+   "delta": "0.0"
+  },
+  "nnn|template_s2": {
+   "tr_free": "0.107262274830366562933655048746",
+   "mu_both": "0.375386630862388383999372303379",
+   "mu_0": "0.612688037146465251595829863946",
+   "mu_1": "0.612688037146465251595829863946",
+   "delta": "-1.55575381946528542678601601345e-61"
+  },
+  "nnn|G3": {
+   "tr_free": "0.107262274830366562933655048746",
+   "mu_both": "1.00122275636869740413373437879",
+   "mu_0": "1.00061119140688077961351843904",
+   "mu_1": "1.00061119140688077961351843904",
+   "delta": "0.0"
+  }
+ },
+ "controls": {
+  "template_worst_abs_delta": "1.55575381947e-61",
+  "template_mu_both_vs_zD_squared": "2.3336307292e-61"
+ },
+ "gamma_gamma_non_affine": false,
+ "verdict": "AFFINE",
+ "assertions": [
+  {
+   "name": "CONTROL: the template bond's delta vanishes -- the bond product is a theorem for it, so a non-zero control would indict this harness",
+   "passed": true
+  },
+  {
+   "name": "CONTROL: mu_both(template) = z_D^2 exactly, the two-bond product",
+   "passed": true
+  },
+  {
+   "name": "the dropped blocks carry y = 0 exactly, so restricting to the at-most-two-row partitions is exact",
+   "passed": true
+  },
+  {
+   "name": "THE RESULT: the gamma-gamma assembly is EXACTLY AFFINE -- the bond product holds for G^3 to the 60-dps floor, so the log-assembly is additive in bond count and qou-82mc's b_3 is 0, not positive",
+   "passed": true
+  },
+  {
+   "name": "and it holds DESPITE G^3 violating ProductionChainBondProduct's strand-window hypothesis (sigma_3 is inside block 1), so those hypotheses are SUFFICIENT but not NECESSARY",
+   "passed": true
+  },
+  {
+   "name": "the per-content delta signs are round-off, not structure: every |delta| sits at the same 1e-61 floor as the template CONTROL, so their signs carry no information and MIXED is noise",
+   "passed": true
+  }
+ ],
+ "allPassed": true
+}

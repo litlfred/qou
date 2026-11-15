@@ -1,0 +1,260 @@
+{
+  "engine": "sympy+snappy",
+  "engineVersion": "sympy 1.14.0, snappy 3.3.2",
+  "computedAt": "2026-09-11T15:20:43.600107+00:00",
+  "commitSha": "c488bf68dfdf4cd5e213dfad755202a95189d741",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 5090,
+  "computation": "ptolemy-duality-sigma-coboundary-test",
+  "scriptFile": "ptolemy_duality_sigma_coboundary_test.py",
+  "scriptHash": "425540b9baa9",
+  "scriptCommitSha": "c488bf68dfdf4cd5e213dfad755202a95189d741",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/ptolemy/ptolemy_duality_sigma_coboundary_test.py"
+    ],
+    "reproduce": "python3 -u computations/ptolemy/ptolemy_duality_sigma_coboundary_test.py"
+  },
+  "description": "#7092: is sigma(x)/D(x) a gauge coboundary on the exact L6a4 class-1 Ptolemy point?  Decided by the Z-kernel of the gauge exponent lattice, exactly in K = Q[T]/(f).  Three ansaetze: B = GGZ decoration torus (the gauge of the variety), A = per-cusp scalars as the issue is written, A' = A with the vertex coordinates included.  Scope: point-level fact about this point; not an identity of maps; says nothing yet about the representation-level induction (qou-qjhc).",
+  "manifold": "L6a4",
+  "obstruction_class": 1,
+  "triangulation_isosig": "ivLAPQccddfghghhoooaaaooo",
+  "snappy_version": "3.3.2",
+  "field": {
+    "generator": "t",
+    "min_poly": "64*t**4 - 95000*t**3 + 101015625*t**2 - 59375000000*t + 25000000000000",
+    "degree": 4,
+    "irreducible_over_Q": true
+  },
+  "point_source": "L6a4-c1-ptolemy-in-K.json",
+  "coordinates_total_nonvertex": 128,
+  "coordinates_canonical": 26,
+  "coordinates_eliminated_by_snappy": [
+    "c_0012_0",
+    "c_0012_1",
+    "c_0102_1",
+    "c_0111_0",
+    "c_1002_0",
+    "c_2001_0"
+  ],
+  "elimination_gauge_same_for_negated_class": true,
+  "elimination_gauge_differs_only_by_u_power": true,
+  "sigma": {
+    "sigma_a": "-64*T**3/101015625 - T + 760000/1293",
+    "sigma_b": "-T**3/625000 + 19*T**2/8000 - 1293*T/512 + 11875/8"
+  },
+  "galois_group": "Z/2 x Z/2 (sigma_a^2 = sigma_b^2 = 1; tau = sigma_a sigma_b fixes Q(zeta_3))",
+  "duality_formula_guard_trials": 25,
+  "D_of_x_is_P_minus_c_point": {
+    "identification_failures_at_u1": 0,
+    "identification_failures_at_u2": 16
+  },
+  "results": {
+    "sigma_a": {
+      "B_torus": {
+        "ansatz": "B: GGZ decoration torus (2 params / cusp)",
+        "gauge_parameters": [
+          "diagonal_entry_0_on_cusp_0",
+          "diagonal_entry_1_on_cusp_0",
+          "diagonal_entry_0_on_cusp_1",
+          "diagonal_entry_1_on_cusp_1",
+          "diagonal_entry_0_on_cusp_2",
+          "diagonal_entry_1_on_cusp_2"
+        ],
+        "rows": 128,
+        "rank": 6,
+        "kernel_rank": 122,
+        "row_lattice_index_in_Zk": 3,
+        "kernel_relations_failing": 91,
+        "verdict": "NOT a coboundary",
+        "obstructing_relation": [
+          [
+            "c_0120_0",
+            -1
+          ],
+          [
+            "c_0210_0",
+            1
+          ]
+        ],
+        "obstructing_product": "-128*T**3/113642578125 - 53507/46548",
+        "obstructing_product_is_cube_root_of_unity": false,
+        "all_failing_products_roots_of_unity_order_dividing_6": false
+      },
+      "A_scalar": {
+        "ansatz": "A: scalars lambda_v^{t_i} (issue #7092 as written)",
+        "gauge_parameters": [
+          "lambda_on_cusp_0",
+          "lambda_on_cusp_1",
+          "lambda_on_cusp_2"
+        ],
+        "rows": 128,
+        "rank": 3,
+        "kernel_rank": 125,
+        "row_lattice_index_in_Zk": 3,
+        "kernel_relations_failing": 113,
+        "verdict": "NOT a coboundary",
+        "obstructing_relation": [
+          [
+            "c_0021_0",
+            -1
+          ],
+          [
+            "c_0111_0",
+            1
+          ]
+        ],
+        "obstructing_product": "512*T**3/568212890625 + 8374/11637",
+        "obstructing_product_is_cube_root_of_unity": false,
+        "all_failing_products_roots_of_unity_order_dividing_6": false
+      },
+      "A_scalar_with_vertex_coords": {
+        "ansatz": "A': scalars, vertex coordinates c_3000 = 1 included (forces lambda_v^3 = 1)",
+        "gauge_parameters": [
+          "lambda_on_cusp_0",
+          "lambda_on_cusp_1",
+          "lambda_on_cusp_2"
+        ],
+        "rows": 160,
+        "rank": 3,
+        "kernel_rank": 157,
+        "row_lattice_index_in_Zk": 3,
+        "kernel_relations_failing": 140,
+        "verdict": "NOT a coboundary",
+        "obstructing_relation": [
+          [
+            "c_0021_0",
+            -1
+          ],
+          [
+            "c_0111_0",
+            1
+          ]
+        ],
+        "obstructing_product": "512*T**3/568212890625 + 8374/11637",
+        "obstructing_product_is_cube_root_of_unity": false,
+        "all_failing_products_roots_of_unity_order_dividing_6": false
+      }
+    },
+    "sigma_b": {
+      "B_torus": {
+        "ansatz": "B: GGZ decoration torus (2 params / cusp)",
+        "gauge_parameters": [
+          "diagonal_entry_0_on_cusp_0",
+          "diagonal_entry_1_on_cusp_0",
+          "diagonal_entry_0_on_cusp_1",
+          "diagonal_entry_1_on_cusp_1",
+          "diagonal_entry_0_on_cusp_2",
+          "diagonal_entry_1_on_cusp_2"
+        ],
+        "rows": 128,
+        "rank": 6,
+        "kernel_rank": 122,
+        "row_lattice_index_in_Zk": 3,
+        "kernel_relations_failing": 0,
+        "coboundary_on_row_lattice": true,
+        "pgl3_gauge_element_on_L_basis": {
+          "r(3*e0)": "256*T**3/189404296875 + 308/3879",
+          "r(-1*e0+1*e1)": "16315/23274 - 256*T**3/113642578125",
+          "r(-1*e0+1*e2)": "1",
+          "r(-1*e0+1*e3)": "16315/23274 - 256*T**3/113642578125",
+          "r(-1*e0+1*e4)": "-256*T**3/113642578125 - 6959/23274",
+          "r(-1*e0+1*e5)": "16315/23274 - 256*T**3/113642578125"
+        },
+        "equations_verified": 128,
+        "w_eq_r_of_3e0": "256*T**3/189404296875 + 308/3879",
+        "verdict": "coboundary of the PGL(3) decoration torus over K (r in Hom(L,K^x), all 128 equations verified); the SL(3) lift needs the cube root of r(3 e_0), which is not in K",
+        "w_is_cube_in_K": false
+      },
+      "A_scalar": {
+        "ansatz": "A: scalars lambda_v^{t_i} (issue #7092 as written)",
+        "gauge_parameters": [
+          "lambda_on_cusp_0",
+          "lambda_on_cusp_1",
+          "lambda_on_cusp_2"
+        ],
+        "rows": 128,
+        "rank": 3,
+        "kernel_rank": 125,
+        "row_lattice_index_in_Zk": 3,
+        "kernel_relations_failing": 97,
+        "verdict": "NOT a coboundary",
+        "obstructing_relation": [
+          [
+            "c_0021_0",
+            -1
+          ],
+          [
+            "c_0111_0",
+            1
+          ]
+        ],
+        "obstructing_product": "512*T**3/568212890625 + 8374/11637",
+        "obstructing_product_is_cube_root_of_unity": false,
+        "all_failing_products_roots_of_unity_order_dividing_6": false
+      },
+      "A_scalar_with_vertex_coords": {
+        "ansatz": "A': scalars, vertex coordinates c_3000 = 1 included (forces lambda_v^3 = 1)",
+        "gauge_parameters": [
+          "lambda_on_cusp_0",
+          "lambda_on_cusp_1",
+          "lambda_on_cusp_2"
+        ],
+        "rows": 160,
+        "rank": 3,
+        "kernel_rank": 157,
+        "row_lattice_index_in_Zk": 3,
+        "kernel_relations_failing": 122,
+        "verdict": "NOT a coboundary",
+        "obstructing_relation": [
+          [
+            "c_0021_0",
+            -1
+          ],
+          [
+            "c_0111_0",
+            1
+          ]
+        ],
+        "obstructing_product": "512*T**3/568212890625 + 8374/11637",
+        "obstructing_product_is_cube_root_of_unity": false,
+        "all_failing_products_roots_of_unity_order_dividing_6": false
+      }
+    }
+  },
+  "verdicts": {
+    "sigma_a": {
+      "B_torus": "NOT a coboundary",
+      "A_scalar": "NOT a coboundary",
+      "A_scalar_with_vertex_coords": "NOT a coboundary"
+    },
+    "sigma_b": {
+      "B_torus": "coboundary of the PGL(3) decoration torus over K (r in Hom(L,K^x), all 128 equations verified); the SL(3) lift needs the cube root of r(3 e_0), which is not in K",
+      "A_scalar": "NOT a coboundary",
+      "A_scalar_with_vertex_coords": "NOT a coboundary"
+    }
+  },
+  "guards": {
+    "pure_gauge_kernel_products_all_one": true,
+    "verdict_gauge_invariant": true
+  },
+  "exact_arithmetic": "K = Q[T]/(f), sympy Poly over QQ; no floats, no tolerances",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Pure algebra over K = Q[T]/(f), the class-1 Ptolemy field: no substrate q0 is read, computed or compared anywhere in this probe."
+}

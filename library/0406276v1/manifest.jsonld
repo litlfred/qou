@@ -1,16 +1,40 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/0406276v1/manifest",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/0406276v1",
   "@type": [
-    "folio:SourceDocument"
+    "cat-harness:SourceDocument"
   ],
   "title": "The GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE",
   "contains": [
-    "library/0406276v1/sections/sec-000"
+    "library/0406276v1/sections/sec-front-matter",
+    "library/0406276v1/sections/sec-000",
+    "library/0406276v1/sections/sec-001",
+    "library/0406276v1/sections/sec-002",
+    "library/0406276v1/sections/sec-003",
+    "library/0406276v1/sections/sec-004",
+    "library/0406276v1/sections/sec-005",
+    "library/0406276v1/sections/sec-006",
+    "library/0406276v1/sections/sec-007",
+    "library/0406276v1/sections/sec-008",
+    "library/0406276v1/sections/sec-009",
+    "library/0406276v1/sections/sec-010",
+    "library/0406276v1/sections/sec-011",
+    "library/0406276v1/sections/sec-012",
+    "library/0406276v1/sections/sec-013",
+    "library/0406276v1/sections/sec-014"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "0406276v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0406276v1.pdf",
     "source_sha256": "8fdf4b5950e8b5f5ef32355780c77e8ef297dae078fa8d2bd6742e5550472741",
     "pages": 40,

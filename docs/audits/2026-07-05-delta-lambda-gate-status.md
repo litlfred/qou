@@ -286,6 +286,47 @@ witness `su4-connected-1111-magnitude.witness.json` (mpmath, 50 dps).
 
 ### The numbers (q₀ ≈ 1.10998, canonical muon-q₀ literal)
 
+> **🛑 CURRENCY — this table is CONVENTION-C-FRAME at the MUON pin, and a
+> correction already exists (bean `qou-34oo`).** The header declares the pin and
+> not the convention, and both axes are now off-canon: ruling R1 (2026-08-15)
+> made `z_D = q³/(q²+1)` canonical and R2 the proton pin, and the committed
+> witness was regenerated under both on 2026-08-23. **Read
+> [`2026-08-29-he4-magnitude-shortfall-location.md` §1](2026-08-29-he4-magnitude-shortfall-location.md)
+> before quoting anything below.** Better still, re-run
+> `computations/probes/he4_body_order_shortfall_location_probe.py`, which
+> computes both frames side by side — it reproduces this table's C row to five
+> digits, which is how the table was established to be C-frame rather than
+> merely old.
+>
+> **The figures do not all move, and the split is the point:**
+>
+> | quantity | C (this table) | D (canonical) | |
+> |---|---:|---:|---|
+> | `\|b₄ᶜ\|` | `1.9614` | `1.17395` | −40 % |
+> | `Σg` | `3.6310` | `2.95077` | −19 % |
+> | delivered | `×1.54019` | `×1.39785` | −9 % |
+> | **needed** | `2.09252` | `2.09746` | **+0.24 % — frame-robust** |
+> | del/need | `0.7360` | `0.6664` | 26.4 % short → **33.4 % short** |
+>
+> So the **`×2.093` target survives the convention change** — it is AME-derived
+> — and §"What it would require to advance" below, which hands on *"supply the
+> measured 2.093× at A=4 and 0 at A=6"*, is **not** invalidated by the frame.
+> What is C-frame is the *delivered* column and the "~26 % short" verdict,
+> which is **33.4 %** under D.
+>
+> **And the probe's own verdict relocates the question.** In both `f_pn`
+> typings, canonical D is *farther* from the target than the excised C, and the
+> connected 3-body cumulant `b₃` has the **wrong sign** under both (`−2.74` D,
+> `−3.22` C, against AME `+1.43`). So *"does the bond convention close the
+> gap"* is answered **no**, and the shortfall sits in the body-order content
+> rather than in `z`. Scope-(a): that constrains the multiplicative assembly
+> and the equal-weight assumption; it does **not** exclude the `[1⁴]`
+> ingredient.
+>
+> The C-frame numbers below are **correct for C** and are kept exactly as
+> recorded, per the convention-D excision policy — scope them, do not "fix"
+> them.
+
 | atom | A | C(4,A) | \|b_A^c\| | Σg (2-body) | \|b_A^c\|/Σg | gated \|b_A^c\| | super× needed |
 |---|---|---|---|---|---|---|---|
 | D    | 2 | 6 | 0.6051 | 0.6051 | 1.000 | — | 1.000 |
@@ -378,6 +419,33 @@ canonical `atom_braid_word_3A`. This is the categorical supermultiplet operator 
 10 partitions of 12 (all mult 1), dim-check `Σ m_λ f^λ = 15400 = 12!/(6⁴·4!)`.
 
 ### The numbers (q₀ ≈ 1.10998, canonical muon-q₀ literal)
+
+> **🛑 CURRENCY — convention-C-frame at the muon pin, and the D-frame status of
+> this section is UNMEASURED rather than merely shifted (bean `qou-34oo`).**
+> Everything here is `y_λ`-weighted, and `y_λ` is *where `z` enters* — so unlike
+> PROBE 2 above, the exposure is structural, not a few-percent shift.
+>
+> Under convention D the Ocneanu weight vanishes identically for **every** shape
+> with a third row — `QOU.SchurWeyl.ocneanuWeight_conventionD_eq_zero_of_three_rows`,
+> sorry-free, general `n`, on the single hypothesis `q² + 1 ≠ 0`. Of the **77**
+> partitions of 12, exactly **7** have at most two rows — `(12)`, `(11,1)`,
+> `(10,2)`, `(9,3)`, `(8,4)`, `(7,5)`, `(6,6)`. So under D the `H_12` Markov
+> trace is supported on **7 of 77** Wedderburn blocks and **70 carry weight
+> exactly zero**, and the full `tr_M(β_⁴He) = 0.0553584` below is a sum over all
+> 77 with C-frame weights.
+>
+> **What is NOT established here:** whether any of the **10** partitions of the
+> `e_4[h_3]` sub-sum that forms `T_[1⁴]` is among those 7. If none is, `T_[1⁴]`
+> is **exactly zero** under D and this section's headline is void rather than
+> revised; if some are, it is reduced. Two attempts to compute the plethysm
+> `e_4[h_3]` here **failed their own calibration** (fractional Schur
+> multiplicities; dimension check `1955987` against this section's stated
+> `15400`), so no row-count claim is made — the question is open, not answered
+> either way. The producer `computations/probes/su4_1111_markov_trace_probe.py`
+> is one of the two genuinely broken producers on `main` (an `mpf` reaching a
+> `scipy.sparse` matrix), so settling it needs that fixed first.
+>
+> The C-frame numbers below are correct for C and are kept as recorded.
 
 **Validation (load-bearing).** The direct `H_12` trace
 `Σ_{λ⊢12} y_λ χ_λ(β_⁴He) = 0.0553584` reproduces the closed-form

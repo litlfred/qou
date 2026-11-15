@@ -1,0 +1,52 @@
+\begin{picture}(0,0)%
+\epsfig{file=ps/pic2.ps}%
+\end{picture}%
+\setlength{\unitlength}{0.00041700in}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined
+% extract first six characters in \fmtname
+\def\x#1#2#3#4#5#6#7\relax{\def\x{#1#2#3#4#5#6}}%
+\expandafter\x\fmtname xxxxxx\relax \def\y{splain}%
+\ifx\x\y   % LaTeX or SliTeX?
+\gdef\SetFigFont#1#2#3{%
+  \ifnum #1<17\tiny\else \ifnum #1<20\small\else
+  \ifnum #1<24\normalsize\else \ifnum #1<29\large\else
+  \ifnum #1<34\Large\else \ifnum #1<41\LARGE\else
+     \huge\fi\fi\fi\fi\fi\fi
+  \csname #3\endcsname}%
+\else
+\gdef\SetFigFont#1#2#3{\begingroup
+  \count@#1\relax \ifnum 25<\count@\count@25\fi
+  \def\x{\endgroup\@setsize\SetFigFont{#2pt}}%
+  \expandafter\x
+    \csname \romannumeral\the\count@ pt\expandafter\endcsname
+    \csname @\romannumeral\the\count@ pt\endcsname
+  \csname #3\endcsname}%
+\fi
+\fi\endgroup
+\begin{picture}(8670,7316)(1126,-7810)
+\put(1126,-1975){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$T=$}}}
+\put(6046,-2005){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$S=$}}}
+\put(1951,-5365){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$T\circ_2S$}}}
+\put(2731,-2231){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$*$}}}
+\put(4021,-2741){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$*$}}}
+\put(7936,-806){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$*$}}}
+\put(3376,-746){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$*$}}}
+\put(5971,-7121){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$*$}}}
+\put(5341,-3986){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$*$}}}
+\put(4666,-5066){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$D_1$}}}
+\put(3121,-1166){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$*$}}}
+\put(4996,-6671){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$*$}}}
+\put(4771,-7136){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$D_5$}}}
+\put(4381,-6326){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$D_4$}}}
+\put(4186,-5996){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$*$}}}
+\put(5911,-6701){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$D_3$}}}
+\put(4921,-4586){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$*$}}}
+\put(8326,-2081){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$*$}}}
+\put(7846,-1256){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$*$}}}
+\put(8041,-1616){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$D_4$}}}
+\put(8311,-2516){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$D_5$}}}
+\put(3901,-2291){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$D_3$}}}
+\put(2791,-1601){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$D_1$}}}
+\put(2926,-2486){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$D_2$}}}
+\end{picture}

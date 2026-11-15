@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-markov-gram-bilinear-vs-star",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:markov-gram-bilinear-vs-star",
+  "kind": "remark",
+  "title": "Two pairings, two signatures: $\\mathrm{tr}_M(b_ib_j)$ versus $\\mathrm{tr}_M(b_ib_j^{*})$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-markov-gram-star-positive"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-markov-gram-star-positive",
+  "tags": [
+    "star-pairing",
+    "signature",
+    "retraction",
+    "gram-matrix",
+    "trace-convention"
+  ],
+  "leanRef": "qou:QOU.QBeta.GramSignature.traceform_M2",
+  "text": "markov-gram-bilinear-vs-star.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/cor-finite-connes-forces-trivial-kernel",
+  "@type": [
+    "folio-assistant-core:Corollary",
+    "doco:Section"
+  ],
+  "label": "cor:finite-connes-forces-trivial-kernel",
+  "kind": "corollary",
+  "title": "Finite Connes distance forces a trivial kernel --- hence the quotient by the radical",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-gram-degeneracy-blocks-connes"
+  ],
+  "tags": [
+    "connes-distance",
+    "radical-quotient",
+    "temperley-lieb"
+  ],
+  "leanRef": "qou:QOU.QBeta.GramSignature.finite_distance_forces_trivial_kernel",
+  "text": "finite-connes-forces-trivial-kernel.md",
+  "provenance": "authored"
+}

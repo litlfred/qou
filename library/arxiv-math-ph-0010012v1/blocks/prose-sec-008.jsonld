@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-ph-0010012v1/blocks/prose-sec-008",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-ph-0010012v1/blocks/prose-sec-008",
   "kind": "prose",
-  "title": "References",
-  "pageStart": 7,
-  "pageEnd": 7,
-  "text": "../sections/sec-008-references.md",
-  "derivedFrom": "library/arxiv-math-ph-0010012v1/manifest",
-  "sourceDocument": "library/arxiv-math-ph-0010012v1/manifest",
+  "title": "Distribution of zeros and critical points",
+  "pageStart": 4,
+  "pageEnd": 4,
+  "text": "../sections/sec-008-3-distribution-of-zeros-and-critical-points.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-ph-0010012v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-ph-0010012v1",
   "provenance": "ingested"
 }

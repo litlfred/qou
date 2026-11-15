@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0808.1923v3/sections/sec-016",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Markings and Fundamental Bigons",
+  "pageStart": 46,
+  "pageEnd": 49,
+  "contains": [
+    "library/arxiv-0808.1923v3/blocks/prose-sec-016",
+    "library/arxiv-0808.1923v3/blocks/lem-sec-016-01",
+    "library/arxiv-0808.1923v3/blocks/lem-sec-016-02",
+    "library/arxiv-0808.1923v3/blocks/lem-sec-016-03",
+    "library/arxiv-0808.1923v3/blocks/lem-sec-016-04"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0808.1923v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0808.1923v3",
+  "provenance": "ingested"
+}

@@ -8,128 +8,66 @@ pages: 4-6
 source_pdf: 1012.1039v2.pdf
 source_sha256: acb2575050db419d
 doc_brief: "SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS — Let M be a hyperbolic n–manifold whose cusps have torus cross- sections."
+text_source: latex
+latex_prose_ratio: 0.971
+latex_coverage_ratio: 0.969
 ---
-for some Y ⊂X. The Gromov norm of ω is the smallest l1–norm of a real singular
-chain representing ω,
-‖ω‖ = inf
-{ k∑
-i=1
-|αi|
-⏐
-⏐
-⏐
-⏐
-⏐
-[k∑
-i=1
-αiσi
-]
-=ω
-}
-.
-(Since this inﬁmum may be zero, the “Gromov norm” is only a seminorm in general.)
-This quantity only depends on ω and the homotopy type of the pair ( X,Y ). In the
-SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS 5
-absolute case, we can use it to deﬁne the Gromov norm of any ω ∈H∗(G), where
-G is a discrete group, by choosing X to be a K(G, 1).
-Ifω is an integral cycle and η is the canonical map from integral to real homology,
-then we set ‖ω‖ = ‖η(ω)‖.
-The Gromov norm of a cycle can be computed via the pairing between b ounded
-cohomology and l1 homology: If ω ∈ Hk(X) and H k
-b (X; R) is the k–dimensional
-bounded cohomology of X, then
-(3) ‖ω‖ = sup
-({ 1
-‖φ‖∞
-⏐
-⏐
-⏐
-⏐φ ∈H k
-b (X; R), ⟨φ,ω ⟩ = 1
-}
-∪ {0}
-)
-.
-See [BP92, Proposition F.2.2] for a proof.
-For M a closed orientable n–manifold, Gromov deﬁned the simplicial volume
-‖M ‖ to be the Gromov norm of the fundamental class in Hn(M ; R). For a man-
-ifold with boundary, it is natural to deﬁne ‖M,∂M ‖ to be the Gromov norm of
-the fundamental class in Hn(M,∂M ; R). It is clear from the deﬁnition that this
-volume only depends on the homotopy type of ( M,∂M ). For closed hyperbolic
-manifolds the simplicial volume is proportional to the volume. More gen erally, if
-M is compact, and the interior of M admits a complete ﬁnite volume hyperbolic
-metric of volume Vol, then
-‖M,∂M ‖ = 1
-vn
-Vol,
-where vn is the volume of a hyperbolic regular ideal simplex of dimension n. (See
-[BP92, C.4] for the closed case; we show how to extend to the ﬁnite v olume case in
-Appendix A.)
-In [Yam97], Yamaguchi extended the notion of simplicial volume to orie ntable
-pseudomanifolds, deﬁned as follows.
-Deﬁnition 2.1. [Yam97, Deﬁnition 2.1] A locally compact, Hausdorﬀ, locally ho-
-mologically n–connected space X is called an orientedn–pseudomanifold if it con-
-tains a closed subset S (the singular set ) so that:
-(i) X /integerdivideS is an orientable n–manifold,
-(ii) dim(S) ≤n − 1, and
-(iii) dim(S ∩
-X /integerdivideS) ≤n − 2.
-Remark 2.2. In this deﬁnition, we allow the possibility that S is not “really”
-singular. For example, X could be a manifold and S a codimension 2 submanifold.
-This is important in applying Proposition 2.3 to 2 π–ﬁllings which happen to be
-manifolds, as in Corollary 2.5 below.
-In [Yam97, Proposition 2.2], Yamaguchi shows that an oriented n–pseudomani-
-foldX has a fundamental class [ X] in Hn(X) = Hn(π1(X)) so that the orientation
-cocycleβ ∈H n(X) is dual to this class. For such a pseudomanifold X, the simplicial
-volume of X is deﬁned to be the Gromov norm of [ X], and written ‖X‖.
-IfX is compact with CAT( −1) universal cover, then X is aspherical and π1(X)
-is (word) hyperbolic [Gro87]. In this case the orientation cocycle is co homologous
-to a bounded cocycle by the main theorem of [Min02], and so ‖X‖ > 0 by the
-duality equation (3).
-IfX is compact and the universal cover is CAT(0) with isolated ﬂats, the nX is
-again aspherical, but π1(X) is only relatively hyperbolic, relative to fundamental
-groups of images of ﬂats in X [HK05b]. In this case, we will need the following
-corollary of a theorem of Mineyev–Yaman:
-6 K. FUJIW ARA AND J. F. MANNING
-Proposition 2.3. LetM be a closed orientable aspherical n–dimensional pseudo-
-manifold with singular set V ⊂ M which is a disjoint union of aspherical compo-
-nents V = ∪m
-i=1Vi. Suppose that π1(M ) is hyperbolic relative to the collection of
-subgroups {π1(Vi) |i ∈ {1,...,n }}. Then ‖M ‖> 0.
-Proof. The inclusion of pairs ( M, ∅) → (M,V ) gives a natural map
-H n(M,V ; R) →H n(M ; R).
-Since dim(V ∩
-M /integerdivideV ) ≤ n − 2, the Mayer–Vietoris exact sequence shows this
-map to be an isomorphism (cf. [Yam97, Proposition 2.2]). The main resu lt of
-Mineyev–Yaman [MY] implies that the map
-H n
-b (π1(M ), {π1(Vi)}m
-i=1; R) →H n(π1(M ), {π1(Vi)}m
-i=1; R)
-is surjective, since π1(M ) is hyperbolic relative to the fundamental groups of the
-components of V . Since M and the components of V are aspherical, this is the
-same as saying that the map
-(4) H n
-b (M,V ; R) →H n(M,V ; R) = H n(M ; R)
-is surjective. It follows that the orientation cocycle of M is cohomologous to a
-bounded cocycle α. (The cocycle moreover can be chosen to vanish on chains in V ,
-but we don’t use this.) Equation (3) gives ‖M ‖ ≥ 1
-‖α‖ ∞
-> 0. □
-Applying Theorem 1.4, we immediately obtain the lower bound of Theore m 1.5.
-Corollary 2.4. If M (T1,...,T m) is a 2π–ﬁlling as in Theorem 1.5, then
-‖M (T1,...,T m)‖> 0.
-The special case of nonpositively curved manifolds obtained by 2π–ﬁlling of ≥ 4–
-dimensional hyperbolic manifolds has been studied before us by Schr oeder, Ander-
-son and others [Sch89, And06]. Ivanˇ si´ c describes in [Iva04] a pa rticular cusped
-hyperbolic manifold which is the complement of ﬁve linked 2–tori in the 4 –sphere.
-Ratcliﬀe and Tschantz point out in [RT05] that appropriately chosen 2π–ﬁllings of
-this hyperbolic manifold are homology 4–spheres. In [Bel06, Question 7.2], Bele-
-gradek asked if such ﬁllings have positive simplicial volume. As a special case of
-2.4 above, we give an aﬃrmative answer.
-Corollary 2.5. Every manifold obtained by 2π–ﬁlling of an orientable hyperbolic
-n–manifold with torus cusps has positive simplicial volume. In particular, the as-
-pherical homology 4–spheres constructed by Ratcliﬀe and Tschantz have positiv e
-simplicial volume.
-Theorem 1.5 gives further information (an upper bound) on the simp licial vol-
-ume.
+[]{#ss:norms label="ss:norms"} Let $X$ be any space, and let $\omega \in H_*(X;\mathbb{R})$ or $\omega \in
+H_*(X,Y;\mathbb{R})$ for some $Y\subset X$. The *Gromov norm of $\omega$* is the smallest $l^1$--norm of a real singular chain representing $\omega$, $$\|\omega\| = \inf\left\{\sum_{i=1}^k
+|\alpha_i|\ \right|\ \left. \left[\sum_{i=1}^k\alpha_i\sigma_i \right]
+ = \omega \right\}.$$ (Since this infimum may be zero, the "Gromov norm" is only a seminorm in general.) This quantity only depends on $\omega$ and the homotopy type of the pair $(X,Y)$. In the absolute case, we can use it to define the Gromov norm of any $\omega\in H_*(G)$, where $G$ is a discrete group, by choosing $X$ to be a $K(G,1)$.
+
+If $\omega$ is an integral cycle and $\eta$ is the canonical map from integral to real homology, then we set $\|\omega\| = \|\eta(\omega)\|$.
+
+The Gromov norm of a cycle can be computed via the pairing between bounded cohomology and $l^1$ homology: If $\omega\in H_k(X)$ and $H_b^k(X;\mathbb{R})$ is the $k$--dimensional bounded cohomology of $X$, then $$\label{duality}
+ \|\omega\| = \sup\left(\left.\left\{\frac{1}{\|\phi\|_\infty}\ \right| \phi\in
+H_b^k(X;\mathbb{R}),\langle \phi,\omega\rangle = 1\right\}\cup\{0\}\right).$$ See [@BP92 Proposition F.2.2] for a proof.
+
+For $M$ a closed orientable $n$--manifold, Gromov defined the *simplicial volume* $\|M\|$ to be the Gromov norm of the fundamental class in $H_n(M;\mathbb{R})$. For a manifold with boundary, it is natural to define $\|M,\partial M\|$ to be the Gromov norm of the fundamental class in $H_n(M,\partial M;\mathbb{R})$. It is clear from the definition that this volume only depends on the homotopy type of $(M,\partial M)$. For closed hyperbolic manifolds the simplicial volume is proportional to the volume. More generally, if $M$ is compact, and the interior of $M$ admits a complete finite volume hyperbolic metric of volume $\mathrm{Vol}$, then $$\|M,\partial M\| = \frac{1}{v_n} \mathrm{Vol},$$ where $v_n$ is the volume of a hyperbolic regular ideal simplex of dimension $n$. (See [@BP92 C.4] for the closed case; we show how to extend to the finite volume case in Appendix [\[s:prop\]](#s:prop){reference-type="ref" reference="s:prop"}.)
+
+In [@Ya97], Yamaguchi extended the notion of simplicial volume to orientable pseudomanifolds, defined as follows.
+
+::: definition
+[@Ya97 Definition 2.1][]{#d:pseudomanifold label="d:pseudomanifold"} A locally compact, Hausdorff, locally homologically $n$--connected space $X$ is called an *oriented $n$--pseudomanifold* if it contains a closed subset $S$ (the *singular set*) so that:
+
+1.  $X\smallsetminus S$ is an orientable $n$--manifold,
+
+2.  $\dim(S)\leq n-1$, and
+
+3.  $\dim(S\cap\overline{X\smallsetminus S}) \leq n-2$.
+:::
+
+::: remark
+In this definition, we allow the possibility that $S$ is not "really" singular. For example, $X$ could be a manifold and $S$ a codimension $2$ submanifold. This is important in applying Proposition [\[p:nonzero\]](#p:nonzero){reference-type="ref" reference="p:nonzero"} to $2\pi$--fillings which happen to be manifolds, as in Corollary [\[c:specialcase\]](#c:specialcase){reference-type="ref" reference="c:specialcase"} below.
+:::
+
+In [@Ya97 Proposition 2.2], Yamaguchi shows that an oriented $n$--pseudomanifold $X$ has a fundamental class $[X]$ in $H_n(X) = H_n(\pi_1(X))$ so that the orientation cocycle $\beta \in H^n(X)$ is dual to this class. For such a pseudomanifold $X$, the *simplicial volume* of $X$ is defined to be the Gromov norm of $[X]$, and written $\|X\|$.
+
+If $X$ is compact with CAT$(-1)$ universal cover, then $X$ is aspherical and $\pi_1(X)$ is (word) hyperbolic [@gromov:hg]. In this case the orientation cocycle is cohomologous to a bounded cocycle by the main theorem of [@min:bcchg], and so $\|X\|>0$ by the duality equation [\[duality\]](#duality){reference-type="eqref" reference="duality"}.
+
+If $X$ is compact and the universal cover is CAT$(0)$ with isolated flats, then $X$ is again aspherical, but $\pi_1(X)$ is only relatively hyperbolic, relative to fundamental groups of images of flats in $X$ [@HK]. In this case, we will need the following corollary of a theorem of Mineyev--Yaman:
+
+::: proposition
+[]{#p:nonzero label="p:nonzero"} Let $M$ be a closed orientable aspherical $n$--dimensional pseudomanifold with singular set $V\subset M$ which is a disjoint union of aspherical components $V
+  = \cup_{i=1}^mV_i$. Suppose that $\pi_1(M)$ is hyperbolic relative to the collection of subgroups $\left\{\pi_1(V_i)\mid i\in \{1,\ldots,n\}\right\}$. Then $\|M\|>0$.
+:::
+
+::: proof
+*Proof.* The inclusion of pairs $(M,\emptyset)\to (M,V)$ gives a natural map $$H^n(M,V;\mathbb{R})\to H^n(M;\mathbb{R}).$$ Since $\dim(V\cap \overline{M\smallsetminus V})\leq n-2$, the Mayer--Vietoris exact sequence shows this map to be an isomorphism (cf. [@Ya97 Proposition 2.2]). The main result of Mineyev--Yaman [@MY] implies that the map $$H_b^n(\pi_1(M),\{\pi_1(V_i)\}_{i=1}^m;\mathbb{R}) \to
+    H^n(\pi_1(M),\{\pi_1(V_i)\}_{i=1}^m;\mathbb{R})$$ is surjective, since $\pi_1(M)$ is hyperbolic relative to the fundamental groups of the components of $V$. Since $M$ and the components of $V$ are aspherical, this is the same as saying that the map $$\label{allbounded}
+    H^n_b(M,V;\mathbb{R}) \to H^n(M,V;\mathbb{R}) = H^n(M;\mathbb{R})$$ is surjective. It follows that the orientation cocycle of $M$ is cohomologous to a bounded cocycle $\alpha$. (The cocycle moreover can be chosen to vanish on chains in $V$, but we don't use this.) Equation [\[duality\]](#duality){reference-type="eqref" reference="duality"} gives $\|M\| \geq \frac{1}{\| \alpha\|_\infty} > 0 .$ ◻
+:::
+
+Applying Theorem [\[t:filling\]](#t:filling){reference-type="ref" reference="t:filling"}, we immediately obtain the lower bound of Theorem [\[t:volumedecreases\]](#t:volumedecreases){reference-type="ref" reference="t:volumedecreases"}.
+
+::: corollary
+[]{#c:lowerbound label="c:lowerbound"} If $M(T_1,\ldots,T_m)$ is a $2\pi$--filling as in Theorem [\[t:volumedecreases\]](#t:volumedecreases){reference-type="ref" reference="t:volumedecreases"}, then $$\|M(T_1,\ldots,T_m)\|>0.$$
+:::
+
+The special case of nonpositively curved *manifolds* obtained by $2\pi$--filling of $\geq 4$--dimensional hyperbolic manifolds has been studied before us by Schroeder, Anderson and others [@Sc; @An]. Ivanšić describes in [@Iv] a particular cusped hyperbolic manifold which is the complement of five linked $2$--tori in the $4$--sphere. Ratcliffe and Tschantz point out in [@RT05] that appropriately chosen $2\pi$--fillings of this hyperbolic manifold are homology $4$--spheres. In [@Be06 Question 7.2], Belegradek asked if such fillings have positive simplicial volume. As a special case of [\[c:lowerbound\]](#c:lowerbound){reference-type="ref" reference="c:lowerbound"} above, we give an affirmative answer.
+
+::: corollary
+[]{#c:specialcase label="c:specialcase"} Every manifold obtained by $2\pi$--filling of an orientable hyperbolic $n$--manifold with torus cusps has positive simplicial volume. In particular, the aspherical homology $4$--spheres constructed by Ratcliffe and Tschantz have positive simplicial volume.
+:::
+
+Theorem [\[t:volumedecreases\]](#t:volumedecreases){reference-type="ref" reference="t:volumedecreases"} gives further information (an upper bound) on the simplicial volume.

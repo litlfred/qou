@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1608.03227v4/blocks/prose-sec-008",
+  "kind": "prose",
+  "title": "Matrix factorizations: three lemmas",
+  "pageStart": 8,
+  "pageEnd": 11,
+  "text": "../sections/sec-008-22-matrix-factorizations-three-lemmas.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1608.03227v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1608.03227v4",
+  "provenance": "ingested"
+}

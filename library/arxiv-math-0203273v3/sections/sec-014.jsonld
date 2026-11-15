@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-0203273v3/sections/sec-014",
   "@type": [
     "doco:Section"
   ],
-  "title": "Exemple. SiX est un ensemble d’objets deA, stable par biproduit, la famille",
-  "pageStart": 9,
-  "pageEnd": 10,
+  "title": "Une relation de cocycle, I",
+  "pageStart": 71,
+  "pageEnd": 73,
   "contains": [
     "library/arxiv-math-0203273v3/blocks/prose-sec-014"
   ],
-  "derivedFrom": "library/arxiv-math-0203273v3/manifest",
-  "sourceDocument": "library/arxiv-math-0203273v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203273v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203273v3",
   "provenance": "ingested"
 }

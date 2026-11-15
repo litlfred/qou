@@ -1,25 +1,29 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ant-v14-n7-s-p04/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Elliptic curves over totally real cubic fields are modular",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s-p04",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "ant-v14-n7-s-p04",
   "contains": [
+    "library/ant-v14-n7-s-p04/sections/sec-front-matter",
     "library/ant-v14-n7-s-p04/sections/sec-000",
     "library/ant-v14-n7-s-p04/sections/sec-001",
     "library/ant-v14-n7-s-p04/sections/sec-002",
     "library/ant-v14-n7-s-p04/sections/sec-003",
     "library/ant-v14-n7-s-p04/sections/sec-004",
-    "library/ant-v14-n7-s-p04/sections/sec-005",
-    "library/ant-v14-n7-s-p04/sections/sec-006",
-    "library/ant-v14-n7-s-p04/sections/sec-007",
-    "library/ant-v14-n7-s-p04/sections/sec-008",
-    "library/ant-v14-n7-s-p04/sections/sec-009"
+    "library/ant-v14-n7-s-p04/sections/sec-005"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "ant-v14-n7-s-p04",
+    "title_source": "slug",
     "source_file": "ant-v14-n7-s-p04.pdf",
     "source_sha256": "6abd838a4c933311f3ffd0d14c21b1ba88152e7572278b09d33671b0ae949a9d",
     "pages": 10,

@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-adelic-reeb-restricted-product",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:adelic-reeb-restricted-product",
+  "kind": "proposition",
+  "title": "Restricted-product structure of the Reeb $\\omega$-order: additivity over places and local--global squeeze",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-reeb-epsilon"
+  ],
+  "cites": [
+    "references/tate1967",
+    "references/conway1976"
+  ],
+  "tags": [
+    "adeles",
+    "tate-thesis",
+    "restricted-product",
+    "surreal",
+    "omega-order",
+    "valuation",
+    "local-global",
+    "squeeze"
+  ],
+  "leanRef": "qou:QOU.AlgebraicSubstrate.adelic_reeb_order_additive",
+  "text": "adelic-reeb-restricted-product.md",
+  "leanSource": "adelic-reeb-restricted-product.lean",
+  "provenance": "authored"
+}

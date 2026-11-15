@@ -32,7 +32,7 @@ step.
 
 ## The gate — bar-parity bookkeeping
 
-**Setup.** The categorical ladder ([`prop:q-beta-categorical-precision-ladder`](../../content/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder.md)):
+**Setup.** The categorical ladder ([`prop:q-beta-categorical-precision-ladder`](../../folio/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder.md)):
 
 $$Q_\beta = Q_{\text{base}}\cdot\prod_{k\ge 2}\bigl(1 + c_k\,u^k\bigr),\qquad u = b\,\hbar_q^2 .$$
 

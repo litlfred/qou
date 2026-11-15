@@ -1,17 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-0104104v3/sections/sec-003",
   "@type": [
     "doco:Section"
   ],
-  "title": "Quaternionic matrices and ﬂags",
-  "pageStart": 2,
-  "pageEnd": 4,
+  "title": "Dressing action",
+  "pageStart": 10,
+  "pageEnd": 11,
   "contains": [
-    "library/arxiv-math-0104104v3/blocks/prose-sec-003",
-    "library/arxiv-math-0104104v3/blocks/ex-sec-003-01"
+    "library/arxiv-math-0104104v3/blocks/prose-sec-003"
   ],
-  "derivedFrom": "library/arxiv-math-0104104v3/manifest",
-  "sourceDocument": "library/arxiv-math-0104104v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0104104v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0104104v3",
   "provenance": "ingested"
 }

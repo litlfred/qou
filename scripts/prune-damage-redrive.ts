@@ -28,7 +28,7 @@
  */
 import { readFileSync } from "fs";
 import { resolve } from "path";
-import { buildContentGraph } from "../folio-assistant/content/pipeline/content-graph";
+import { buildContentGraph } from "../folio-assistant/cat-harness-tools/pipeline/content-graph";
 
 const REPO = resolve(import.meta.dir, "..");
 const AUDIT = resolve(REPO, "docs/audits/2026-08-10-transitive-prune-overreach.md");
@@ -51,7 +51,7 @@ function parseAuditEdges(): Array<[string, string]> {
 }
 
 const claimed = parseAuditEdges();
-const g = buildContentGraph(resolve(REPO, "content"), REPO);
+const g = buildContentGraph(resolve(REPO, "folio"), REPO);
 
 /** Is `to` reachable from `from` through EDITORIAL edges alone? */
 function reaches(from: string, to: string): boolean {

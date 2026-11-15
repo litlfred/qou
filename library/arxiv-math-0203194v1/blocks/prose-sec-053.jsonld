@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0203194v1/blocks/prose-sec-053",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0203194v1/blocks/prose-sec-053",
   "kind": "prose",
-  "title": "It follows from Proposition 2.2.1 that if Ω /Γ is a Schottky partial",
-  "pageStart": 27,
-  "pageEnd": 27,
-  "text": "../sections/sec-053-222-it-follows-from-proposition-221-that-if-ω-γ.md",
-  "derivedFrom": "library/arxiv-math-0203194v1/manifest",
-  "sourceDocument": "library/arxiv-math-0203194v1/manifest",
+  "title": "Rigid analytic spaces.",
+  "pageStart": 213,
+  "pageEnd": 216,
+  "text": "../sections/sec-053-b-rigid-analytic-spaces.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203194v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203194v1",
   "provenance": "ingested"
 }

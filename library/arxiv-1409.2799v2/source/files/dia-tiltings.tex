@@ -1,0 +1,165 @@
+\documentclass[12pt]{amsart}
+
+
+\input{./defs.tex}
+
+\hypersetup{
+  colorlinks = false,
+  urlcolor = blue,
+  pdfauthor = {Henning Haahr Andersen and Daniel Tubbenhauer},
+  pdfkeywords = {},
+  pdftitle = {Diagram categories for \texorpdfstring{$\Uq$}{Uq}-tilting modules at roots of unity},
+  pdfsubject = {},
+  pdfpagemode = UseNone,
+  bookmarksopen = true,
+  bookmarksopenlevel = 3,
+  pdfdisplaydoctitle = true,
+  linktocpage=true,
+}
+
+\setcounter{equation}{0}
+%\numberwithin{equation}{subsection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%    HEAD:     Title
+
+\title[Diagram categories for $\Uq$-tilting modules at roots of unity]{Diagram categories for $\Uq$-tilting modules at roots of unity}
+\author{Henning Haahr Andersen}
+\address{H.H.A.: Centre for Quantum Geometry of Moduli Spaces, Aarhus University, Ny Munkegade 118, building 1530, room 327, 8000 Aarhus C, Denmark}
+\email{mathha@qgm.au.dk}
+
+
+\author{Daniel Tubbenhauer}
+\address{D.T.: Centre for Quantum Geometry of Moduli Spaces, Aarhus University, Ny Munkegade 118, building 1530, room 316, 8000 Aarhus C, Denmark}
+\email{dtubben@qgm.au.dk}
+
+
+
+\thanks{The authors were partially supported by the center of excellence grant ``Centre for Quantum Geometry of Moduli Spaces (QGM)'' from the ``Danish National Research Foundation (DNRF)''}
+\vbadness=10001
+%\renewcommand\thesubsection{\arabic{subsection}}
+\begin{document}
+\begin{abstract}
+We give a diagrammatic presentation of the category 
+of $\Uq(\mathfrak{sl}_2)$-tilting modules $\T$ 
+for $q$ being a root of unity and 
+introduce a grading on $\T$. This grading is 
+a ``root of unity phenomenon'' and might lead 
+to new insights about link and 
+$3$-manifold invariants deduced from $\T$.
+We also give a diagrammatic 
+category for the (graded) projective 
+endofunctors on $\T$, indicate how 
+our results could generalize 
+and collect some ``well-known'' 
+facts to give a reasonably self-contained exposition.
+\end{abstract}
+\maketitle
+
+
+\vspace*{-.5cm}
+
+\tableofcontents
+
+\vspace*{-.5cm}
+
+%
+\section{Introduction}\label{sec-intro}
+%
+\input{res/intro.tex}
+%
+\noindent \textbf{Acknowledgements:} We thank 
+Christian Blanchet, Ben Elias, Gregor Masbaum, Catharina Stroppel, Pedro Vaz and 
+Geordie Williamson for many helpful discussions. 
+Special thanks to Geordie Williamson for pointing 
+out a connection of the tilting category to an 
+anti-spherical quotient of Elias' dihedral cathedral. We are also 
+grateful to the anonymous referees for many careful comments and corrections.
+D.T. thanks the Danish summer for, 
+positively formulated, not distracting him from typing this paper.
+%
+\section{The tilting category \texorpdfstring{$\T$}{T}}\label{sec-tilting}
+%
+\input{res/tilcats.tex}
+%
+\section{The Khovanov-Seidel quiver algebra and gradings}\label{sec-quiver}
+%
+\input{res/quiver.tex}
+%
+\section{Diagrams for the graded tilting category \texorpdfstring{$\Tgr$}{Tgr}}\label{sec-dia}
+%
+\input{res/diaalg.tex}
+%
+
+\bibliographystyle{plainurl}
+\bibliography{dia-tiltings}
+%\begin{thebibliography}{}
+%\bibitem{an1} H.H.~Andersen, Tensor products of quantized tilting modules, Comm. Math. Phys. 149-1 (1992), 149-159.%checked
+%\bibitem{an2} H.H.~Andersen, The strong linkage principle for quantum groups at roots of 1, J. Algebra 260-1 (2003), 2-15.%checked
+%\bibitem{ajs} H.H.~Andersen, J.C.~Jantzen and W.~Soergel, {\em Representations of quantum groups at a pth root of unity and of semisimple groups in characteristic p: independence of p}, Ast\'{e}risque 220 (1994), 321 pages.%checked
+%\bibitem{ak} H.H.~Andersen and M.~Kaneda, Rigidity of tilting modules, Mosc. Math. J. 11-1 (2011), 1-39, online available arXiv:0909.2935.%checked
+%\bibitem{apw} H.H.~Andersen, P.~Polo and K.~Wen, Representations of quantum algebras, Invent. Math. 104-1 (1991), 1-59.%checked
+%\bibitem{ass} I.~Assem, D.~Simson and A.~Skowronski, {\em Elements of the Representation Theory of Associative Algebras. Vol. 1. Techniques of representation theory}, London Mathematical Society Student Texts 65, Cambridge University Press (2006).%checked
+%\bibitem{bgs} A.~Beilinson, V.~Ginzburg and W.~Soergel, Koszul duality patterns in representation theory, J. Amer. Math. Soc. 9-2 (1996), 473-527.%checked
+%\bibitem{bfk} J.N.~Bernstein, I.~Frenkel and M.~Khovanov, A categorification of the Temperley-Lieb algebra and Schur quotients of U(sl(2)) via projective and Zuckerman functors, Selecta Math. (N.S.) 5-2 (1999) 199-241, online available arXiv:math/0002087.%checked
+%\bibitem{bg} J.N.~Bernstein and S.I.~Gel'fand, Tensor products of finite- and
+%infinite-dimensional representations of semisimple Lie algebras, Compositio Math. 41-4 (1980), 245-285.%checked
+%\bibitem{bra} T.~Braden, Perverse sheaves on Grassmannians, Canad. J. Math. 54-3 (2002), 493-532, online available arXiv:math/9907152.%checked
+%\bibitem{bs1} J.~Brundan and C.~Stroppel, Highest weight categories arising from Khovanov's diagram algebra I: cellularity, Mosc. Math. J. 11-4 (2011), 685-722, online available arXiv:0806.1532.%checked
+%\bibitem{bs2} J.~Brundan and C.~Stroppel, Highest weight categories arising from Khovanov's diagram algebra II: Koszulity, Transform. Groups 15-1 (2010), 1-45, online available arXiv:0806.3472.%checked
+%\bibitem{bs3} J.~Brundan and C.~Stroppel, Highest weight categories arising from Khovanov's diagram algebra III: category $\mathcal O$, Represent. Theory 15 (2011), 170-243, online available arXiv:0812.1090.%checked
+%\bibitem{bs4} J.~Brundan and C.~Stroppel, Highest weight categories arising from Khovanov's diagram algebra IV: the general linear supergroup, J. Eur. Math. Soc. 14-2 (2012), 373-419, online available arXiv:0907.2543.%checked
+%\bibitem{bs5} J.~Brundan and C.~Stroppel, Gradings on walled Brauer algebras and Khovanov's arc algebra, Adv. Math. 231-2 (2012), 709-773, online available arXiv:1107.0999.%checked
+%\bibitem{chkh} Y.~Chen and M.~Khovanov, An invariant of tangle cobordisms via subquotients of arc rings, Fund. Math. 225 (2014), 23-44, online available arXiv:math/0610054.%checked
+%\bibitem{el1} B.~Elias, The two-color Soergel calculus, online available arXiv:1308.6611.%checked
+%\bibitem{ek1} B.~Elias and M.~Khovanov, Diagrammatics for Soergel categories, Int. J. Math. Math. Sci. Vol. 2010 (2010), Article ID 978635, 58 pages, online available arXiv:0902.4700.%checked
+%\bibitem{el2} B.~Elias and N.~Libedinsky, Soergel bimodules for universal Coxeter groups, online available arXiv:1401.2467.%checked
+%\bibitem{ew1} B.~Elias and G.~Williamson, Diagrammatics for Coxeter groups and their braid groups, online available arXiv:1405.4928.%checked
+%\bibitem{ew2} B.~Elias and G.~Williamson, The Hodge theory of Soergel bimodules, Ann. of Math. (2) 180-3 (2014), 1089-1136, online available arXiv:1212.0791.%chekced
+%\bibitem{ew3} B.~Elias and G.~Williamson, Soergel calculus, online available arXiv:1309.0865.%checked
+%\bibitem{don} S.~Donkin, On tilting modules for algebraic groups, Math. Z. 212-1 (1993), 39-60.%checked
+%\bibitem{hum} J.E.~Humphreys, {\em Representations of semisimple Lie algebras in the BGG category $\mathcal O$}, Graduate Studies in Mathematics 94, American Mathematical Society (2008).%checked
+%\bibitem{ja} J.C.~Jantzen, {\em Lectures on quantum groups}, Graduate Studies in Mathematics 6, American Mathematical Society (1996).%checked
+%\bibitem{jarag} J.C.~Jantzen, {\em Representations of Algebraic Groups}, Mathematical Surveys and Monographs 107, Second edition, American Mathematical Society (2003).%checked
+%\bibitem{js} A.~Joyal and R.~Street, The geometry of tensor calculus. I, Adv. Math. 88-1 (1991), 55-112.%checked
+%\bibitem{kt} M.~Kashiwara and T.~Tanisaki, Kazhdan-Lusztig conjecture for affine Lie algebras with negative level, Duke Math. J. 77-1 (1996), 21-62.%checked
+%\bibitem{kalu} D.~Kazhdan and G.~Lusztig, Tensor structures arising from affine Lie algebras I-IV, J. Amer. Math. Soc. 6-4 (1994), 905-947, 949-1011 and J. Amer. Math. Soc. 7-2 (1994), 335-381, 383-453.%checked
+%\bibitem{kh1} M.~Khovanov, A categorification of the Jones polynomial, Duke Math. J. 101-3 (2000), 359-426, online available arXiv:math/9908171.%checked
+%\bibitem{kh4} M.~Khovanov, A functor-valued invariant of tangles, Algebr. Geom. Topol. 2 (2002), 665-741, online available arXiv:math/0103190.%checked
+%\bibitem{kh5} M.~Khovanov, Categorifications from planar diagrammatics, Jpn. J. Math. 5-2 (2010), 153-181, online available arXiv:1008.5084.%checked
+%\bibitem{kl5} M.~Khovanov and A.D.~Lauda, A categorification of quantum $\mathfrak{sl}_n$, Quantum Topol. 2-1 (2010), 1-92, online available arXiv:0807.3250.%checked
+%\bibitem{klms} M.~Khovanov, A.D.~Lauda, M.~Mackaay and M.~Sto\v{s}i\'c, {\em Extended Graphical Calculus for Categorified Quantum} $\mathfrak{sl}_2$, Mem. Amer. Math. Soc. Vol. 219-1029 (2012), 87 pages, online available arXiv:1006.2866.%checked
+%\bibitem{kr1} M.~Khovanov and L.~Rozansky, Matrix factorizations and link homology I, Fund. Math. 199-1 (2008), 1-91, online available arXiv:math/0401268.%checked
+%\bibitem{ks1} M.~Khovanov and P.~Seidel, Quivers, Floer cohomology, and braid group actions, J. Amer. Math. Soc. 15-1 (2002), 203-271, online available arXiv:math/0006056.%checked
+%\bibitem{lau1} A.D.~Lauda, An introduction to diagrammatic algebra and categorified quantum sl(2), Bull. Inst. Math. Acad. Sin. (N.S.) 7-2 (2012), 165-270, online available arXiv:1106.2128.%checked
+%\bibitem{lqr1} A.D.~Lauda, H.~Queffelec and D.E.V.~Rose, Khovanov homology is a skew Howe 2-representation of categorified quantum sl(m), to appear in Algebr. Geom. Topol., online available arXiv:1212.6076.%checked
+%\bibitem{lib} N.~Libedinsky, Presentation of right-angled Soergel categories by generators and relations, J. Pure Appl. Algebra 214-12 (2010), 2265-2278, online available arXiv:0810.2395.%checked
+%\bibitem{lu} G.~Lusztig, {\em Introduction to Quantum Groups}, Reprint of the 1994 edition, Modern Birkh\"auser Classics, Birkh\"auser/Springer (2010).%checked
+%\bibitem{lu1} G.~Lusztig, Modular representations and quantum groups, Classical groups and related topics (Beijing, 1987), 59-77,
+%Contemp. Math., 82 (1989).%?
+%\bibitem{lu2} G.~Lusztig, Quantum groups at roots of 1, Geom. Dedicata 35-1-3 (1990), 89-113.%checked
+%\bibitem{lu3} G.~Lusztig, Some problems in the representation theory of finite Chevalley groups, Proc. Sympos. Pure Math. 37 (1980), 313-317.%checked
+%\bibitem{mack1} M.~Mackaay, The sl(N)-web algebras and dual canonical bases, J. Algebra 409 (2014), 54-100, online available arXiv:1308.0566.%checked
+%\bibitem{mpt} M.~Mackaay, W.~Pan and D.~Tubbenhauer, The $\mathfrak{sl}_3$-web algebra, Math. Z. 277-1-2 (2014), 401-479, online available arXiv:1206.2118.%checked
+%\bibitem{mos} V.~Mazorchuk, S.~Ovsienko and C.~Stroppel, Quadratic duals, Koszul dual functors, and applications, Trans. Amer. Math. Soc. 361-3 (2009), 1129-1172, online available arXiv:math/0603475.%checked
+%\bibitem{mueg} M.~M\"uger, From Subfactors to Categories and Topology I. Frobenius algebras in and Morita equivalence of tensor categories, J. Pure Appl. Alg. 180-1-2 (2003), 81-157, online available arXiv:math/0111204.%checked
+%\bibitem{par} J.~Paradowski, Filtration of modules over the quantum algebra, Proc. Sympos. Pure Math. 56, part 2 (1994), 93-108.%checked
+%\bibitem{qr1} H.~Queffelec and D.E.V.~Rose, The sln foam 2-category: A combinatorial formulation of Khovanov-Rozansky homology via categorical skew-Howe duality, online available arXiv:1405.5920.%checked
+%\bibitem{ringel} C.M.~Ringel, The category of modules with good filtrations over a quasi-hereditary algebra has almost split sequences, Math. Z. 208-2 (1991), 209-223.%checked
+%\bibitem{rou} R.~Rouquier, 2-Kac-Moody algebras, online available arXiv:0812.5023.%checked
+%\bibitem{saw} S.F.~Sawin, Quantum Groups at Roots of Unity and Modularity, J. Knot Theory Ramifications 15-10 (2006), 1245-1277, online available arXiv:math/0308281.%checked
+%\bibitem{soe4} W.~Soergel, Charakterformeln f\"ur Kipp-Moduln \"uber Kac-Moody-Algebren, Represent. Theory 1 (1997), 115-132 (German), Represent. Theory 2 (1998), 432-448 (English).%checked
+%\bibitem{soe1} W.~Soergel, Kategorie O, perverse Garben und Moduln \"uber den Koinvarianten zur Weylgruppe, J. Amer. Math. Soc. 3-2 (1990), 421-445 (German).%checked
+%\bibitem{soe3} W.~Soergel, Kazhdan-Lusztig-Polynome und eine Kombinatorik f\"ur Kipp-Moduln, Represent. Theory 1 (1997), 37-68 (German), Represent. Theory 1 (1997), 83-114 (English).%checked
+%\bibitem{soe2} W.~Soergel, The combinatorics of Harish-Chandra bimodules, J. Reine Angew. Math. 429,
+%(1992) 49-74.%checked
+%\bibitem{st2} C.~Stroppel, Category $\mathcal O$: Gradings and translation functors, J. Algebra 268-1 (2003), 301-326.%checked
+%\bibitem{st3} C.~Stroppel, Categorification of the Temperley-Lieb category, tangles and cobordisms via projective functors, Duke Math. J. 126-3 (2005), 547-596.%checked
+%\bibitem{st1} C.~Stroppel, TQFT with corners and tilting functors in the Kac-Moody case, online available arXiv:math/0605103.%checked
+%\bibitem{tub3} D.~Tubbenhauer, $\mathfrak{sl}_3$-web bases, intermediate crystal bases and categorification,  J. Algebraic Combin. 40-4 (2014), 1001-1076, online available arXiv:1310.2779.%checked
+%\bibitem{tub4} D.~Tubbenhauer, $\mathfrak{sl}_n$-webs, categorification and Khovanov-Rozansky homologies, online available arXiv:1404.5752.%checked
+%\bibitem{tur} V.~Turaev, {\em Quantum invariants of knots and $3$-manifolds}, second revised edition, de Gruyter Studies in Mathematics 18, Walter de Gruyter \& Co. (2010).%checked
+%\end{thebibliography}
+\end{document}

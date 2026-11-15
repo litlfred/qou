@@ -3,7 +3,7 @@
 Temperley-Lieb KERNEL: every TESTABLE case has l(rho_k) >= 3, hence no states at
 N = 2.
 
-`content/quantum-observable-universe/mass-theory/staircase-ew-residual.md`
+`folio/quantum-observable-universe/mass-theory/staircase-ew-residual.md`
 conjectures, for the staircase partition rho_k = (k, k-1, ..., 1) and the
 canonical electroweak braid word, an eigenvalue ratio q^{1/(2k-1)}. Its
 "Empirical content" section is three bullets:

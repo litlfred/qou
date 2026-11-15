@@ -1,31 +1,35 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0104104v3/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Geometry of Four-vector Fields on Quaternionic Flag Manifolds",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0104104v3",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0104104v3",
   "contains": [
+    "library/arxiv-math-0104104v3/sections/sec-front-matter",
     "library/arxiv-math-0104104v3/sections/sec-000",
     "library/arxiv-math-0104104v3/sections/sec-001",
     "library/arxiv-math-0104104v3/sections/sec-002",
     "library/arxiv-math-0104104v3/sections/sec-003",
-    "library/arxiv-math-0104104v3/sections/sec-004",
-    "library/arxiv-math-0104104v3/sections/sec-005",
-    "library/arxiv-math-0104104v3/sections/sec-006",
-    "library/arxiv-math-0104104v3/sections/sec-007",
-    "library/arxiv-math-0104104v3/sections/sec-008",
-    "library/arxiv-math-0104104v3/sections/sec-009",
-    "library/arxiv-math-0104104v3/sections/sec-010",
-    "library/arxiv-math-0104104v3/sections/sec-011",
-    "library/arxiv-math-0104104v3/sections/sec-012",
-    "library/arxiv-math-0104104v3/sections/sec-013",
-    "library/arxiv-math-0104104v3/sections/sec-014",
-    "library/arxiv-math-0104104v3/sections/sec-015"
+    "library/arxiv-math-0104104v3/sections/sec-004"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0104104&metadataPrefix=arXiv), submitted 2002-03-29, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-math-0104104v3",
+    "title_source": "slug",
     "source_file": "0104104v3.pdf",
     "source_sha256": "e2154399f783aa9beacf7ce1fb96a17c579387895a4d0d3f61a4331c846acaab",
     "pages": 13,

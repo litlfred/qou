@@ -7,7 +7,7 @@ Extension of `rho_k_h3a_frobenius_pairing.py` (Option G, deuteron @ n=6)
 to the nucleon braids @ n=3.  For proton β_p and neutron β_n, walks the
 **gg-pair-production trajectory** crossing-by-crossing (each weighted
 operator c·σ_i + d·I in the canonical word from
-`hecke_core._PROTON_G0/G1` / `_NEUTRON_G0/G1` is one gg-pair event in
+`pyhecke.atom.nucleon_word_letters` is one gg-pair event in
 the symmetric-crystal interpretation; see
 `two-photon-pair-production.md` and
 `symmetric-crystal-pair-production.md`).
@@ -67,8 +67,11 @@ closed-form Δ_λ^G.
 REFERENCES
 ==========
 
-  - `hecke_core._PROTON_G0/G1` / `_NEUTRON_G0/G1` — the canonical
-    gg-pair-production operator chains for the two nucleons.
+  - `pyhecke.atom.nucleon_word_letters` — the canonical gg-pair-production
+    operator WORD for each nucleon, in the borromean intra ordering. NOT
+    `hecke_core._PROTON_G0/G1`, which are those letters bucketed by generator
+    and cannot express the interleaving; this script read them until
+    2026-09-14 (bean `qou-t29k`).
   - `prop:operator-selection-lp` / `lp_dual_solver.py` — canonical
     LP + SDP infrastructure (AGENTS.md mandate for any operator-
     selection compute).
@@ -96,7 +99,6 @@ if str(HERE) not in sys.path:
 from witness_base import WitnessBuilder  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
-from hecke_core import _PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1  # noqa: E402
 from hoefsmit_mpmath import (BlockCacheMP,  # noqa: E402
                              chi_lambda_of_word_sparse_mp,
                              seminormal_matrices_mp)
@@ -116,19 +118,48 @@ from murnaghan_nakayama import hook_lengths, d_lambda, dim_q_lambda  # noqa: E40
 # ── Build nucleon braid words (gg-pair-production cascade) ───────────
 def nucleon_word(nucleon: str):
     """Return the canonical (c, d, gen_idx) sequence for one nucleon
-    on n = 3 strands.  No interface (single nucleon, m_pn = 0)."""
+    on n = 3 strands.  No interface (single nucleon, m_pn = 0).
+
+    IT SAID "canonical" AND WAS NOT, until 2026-09-14 (bean `qou-t29k`). It
+    emitted all of `_PROTON_G0` then all of `_PROTON_G1` — the letters bucketed
+    BY GENERATOR, which is `pyhecke.atom.nucleon_word_letters`'
+    `intra_order="grouped"`. The canonical borromean interleaving has been the
+    default since the 2026-09-05 ruling (`qou-hu1f`), and the two are different
+    elements of H_3.
+
+    **The ordering is this script's subject, not a detail of it.** Every prefix
+    `beta^(i)` is one gg-pair EVENT in the symmetric-crystal reading, so the
+    trajectory IS the sequence of letters. The grouped bucketing has no
+    physical reading — it is an artefact of how the constants are stored. The
+    borromean word does: the `(sigma_0 sigma_1^-1)^3` confinement core, then
+    the three quark-pair crossings, then the two gluon self-couplings. A
+    per-event walk should walk the events in the order the model puts them in.
+
+    Measured before switching, both orderings, via `main()`:
+
+        grouped    option_g_closure_p 2.673e-51   n 1.336e-51   LP gaps 0.0
+        borromean  option_g_closure_p 0.0         n 6.682e-51   LP gaps 0.0
+
+    So Option G's binding equation closes to exact zero at 50 dps either way,
+    and the LP strong-duality gaps vanish either way: **no assertion in this
+    file discriminates between the frames.** The per-step trajectory does
+    change, necessarily and by design — that is the object, and nothing asserts
+    on it, which is why this site could not have been caught by re-running.
+
+    Checked before switching: the two documents that interpret the trajectory,
+    `two-photon-pair-production.md` and `symmetric-crystal-pair-production.md`,
+    state the crystal/pairing conjecture in algebraic terms and quote no
+    per-step sequence, so neither is invalidated.
+    """
     if nucleon == "p":
-        intra_g0, intra_g1 = _PROTON_G0, _PROTON_G1
+        quarks = ["u", "u", "d"]
     elif nucleon == "n":
-        intra_g0, intra_g1 = _NEUTRON_G0, _NEUTRON_G1
+        quarks = ["u", "d", "d"]
     else:
         raise ValueError(f"unknown nucleon: {nucleon}")
-    word = []
-    for c, d in intra_g0:
-        word.append((mp.mpf(c), mp.mpf(d), 0))
-    for c, d in intra_g1:
-        word.append((mp.mpf(c), mp.mpf(d), 1))
-    return word
+    from pyhecke.atom import nucleon_word_letters
+    return [(mp.mpf(c), mp.mpf(d), off)
+            for c, d, off in nucleon_word_letters(quarks)]
 
 
 # ── Per-prefix Markov-trace decomposition (gg trajectory tracking) ───

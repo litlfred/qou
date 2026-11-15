@@ -1,16 +1,16 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:05:25.557352+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-11-15T07:53:35.969993+00:00",
+  "commitSha": "0b88920e3516ad7d6c2744ca4f7c49cad9a81029",
   "assertions": [
     {
       "name": "t3he_split_reproduced_under_5pct_right_direction",
-      "computed": "1",
+      "computed": "0",
       "expected": "1",
-      "passed": true,
+      "passed": false,
       "tolerance": 0,
-      "source": "best genuine per-bond weight (product:inv) gives T/³He=1.3315 vs target 1.3500 (-1.38%); symmetric controls give 1.000. A parameter-free p≠n-resolved weight DOES supply the degeneracy-break sign+magnitude."
+      "source": "best genuine per-bond weight (sum:inv) gives T/³He=1.2067 vs target 1.3671 (-11.73%); symmetric controls give 1.000."
     },
     {
       "name": "full_muext_ordering_and_4He_max_reproduced",
@@ -18,15 +18,15 @@
       "expected": "1",
       "passed": false,
       "tolerance": 0,
-      "source": "whether the full non-monotone μ_ext ordering (3He<T<D<4He, ⁴He max) is reproduced. FAILS: the split is captured but k(A) global extensivity / ⁴He-max is not — so this is a qualified LEAD (split only), not a closure of k(A). Scope-(a)."
+      "source": "whether the full non-monotone μ_ext ordering (3He<T<D<4He, ⁴He max) is reproduced. Not a closure of k(A) either way. Scope-(a)."
     }
   ],
   "allPassed": false,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "perknot-pn-bond-resolved-extensivity",
   "scriptFile": "perknot_pn_bond_resolved_extensivity_probe.py",
-  "scriptHash": "51a8150ba650",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "3b6e6c559fcf",
+  "scriptCommitSha": "d9573481fce67572354918f91b289cf0995ab922",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,14 +34,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -49,23 +49,23 @@
     ],
     "reproduce": "python3 -u computations/deltalambda/perknot_pn_bond_resolved_extensivity_probe.py"
   },
-  "description": "EXPLORATORY scope-(a): screens parameter-free per-knot p≠n-resolved bond weights w(a,b)=fixed fn of tr_M(p)/tr_M(n) against the open extensivity multiplier μ_ext=B_AME/B_base (D 5.853 / T 4.444 / ³He 3.292 / ⁴He 9.313). The decisive test is the T/³He degeneracy-break (ratio 1.350) that any symmetric/equal-weight model gives as 1.000. The inverse-product weight 1/(tr_a·tr_b) under the product aggregate reproduces the split to ~1.4% (right direction) — supplying the sign+magnitude of the T≠³He break the p≠n resolution uniquely provides — but does NOT reproduce the full non-monotone μ_ext (⁴He not the max). Qualified LEAD, not closure; entropy caveat (1 hit / ~8 combos). No fit, no wiring.",
+  "description": "EXPLORATORY scope-(a): screens parameter-free per-knot p≠n-resolved bond weights w(a,b)=fixed fn of tr_M(p)/tr_M(n) against the open extensivity multiplier μ_ext=B_AME/B_base, both read from their owning witnesses (traces: borromean, convention D, proton pin). The decisive test is the T/³He degeneracy-break that any symmetric/equal-weight model gives as 1.000. Until 2026-11-15 this probe ran on retired convention-C traces and stale targets, where the inverse-product weight reproduced the split to -1.38%; see `verdict` for the result on canonical inputs. Entropy caveat (~8 combos screened). No fit, no wiring.",
   "auditOnly": "docs/audits/2026-07-17-perknot-pn-bond-resolved-extensivity.md",
   "data": {
     "discipline": "EXPLORATORY",
     "production_wired": false,
     "scope": "(a)",
     "tr_M": {
-      "p": 1.0653062,
-      "n": 0.9232333
+      "p": "0.629328402202921918165345746778485927600219400634359762811677",
+      "n": "0.475133517155682212506090232675005799558407634708751231268857"
     },
     "targets": {
-      "D": 5.852902577599116,
-      "T": 4.444146924325849,
-      "3He": 3.2918285794896933,
-      "4He": 9.313340597451814
+      "D": "6.06774663225479750000000000000000000000000000000000000000000",
+      "T": "6.70607181163883800000000000000000000000000000000000000000000",
+      "3He": "4.90544677303562300000000000000000000000000000000000000000000",
+      "4He": "290.006727759514040000000000000000000000000000000000000000000"
     },
-    "t_3he_ratio_target": 1.3500541771876804,
+    "t_3he_ratio_target": "1.36706647160069776402447336136902696455941163107621799476534",
     "bonds": {
       "D": [
         "pn"
@@ -92,164 +92,164 @@
     "candidates": {
       "product:prod": {
         "mu_pred": {
-          "D": 5.852902577599116,
-          "T": 4.906594093591095,
-          "3He": 6.532901643044144,
-          "4He": 5.38642815203506
+          "D": "6.06774663225479750000000000000000000000000000000000000000000",
+          "T": "0.409592290411722025117469074967095613669205699506403526250837",
+          "3He": "0.718579962196639579962851355148387710149545177920334355737427",
+          "4He": "0.0145041552028050679580351649789727713834204555748852323058598"
         },
-        "t_3he_ratio": 0.7510589262912526,
-        "t_3he_relerr_pct": -44.36823803206212,
+        "t_3he_ratio": "0.570002382420506454451447838237362464966374879315086310954321",
+        "t_3he_relerr_pct": "-58.3047061527965923898470660206643164774894732419020920072534",
         "ordering_full_match": false,
         "is_control": false
       },
       "product:sum": {
         "mu_pred": {
-          "D": 5.852902577599116,
-          "T": 21.4905224542419,
-          "3He": 24.797618122898204,
-          "4He": 181.0588961396754
+          "D": "6.06774663225479750000000000000000000000000000000000000000000",
+          "T": "6.36830489289008774196335495099387950186120017396207792061852",
+          "3He": "8.43500826246780644567421630552935415755522837379606835625466",
+          "4He": "9.77760905773604997441221202083060083167633960105830593912437"
         },
-        "t_3he_ratio": 0.8666365595168788,
-        "t_3he_relerr_pct": -35.80727542933252,
+        "t_3he_ratio": "0.754985021321950767118461507721221815744271686015012557942949",
+        "t_3he_relerr_pct": "-44.7733495769273743762638234016566903999685369913015121076651",
         "ordering_full_match": false,
         "is_control": false
       },
       "product:gmean": {
         "mu_pred": {
-          "D": 5.852902577599116,
-          "T": 5.358900747132001,
-          "3He": 6.183561826793242,
-          "4He": 5.614823168640171
+          "D": "6.06774663225479750000000000000000000000000000000000000000000",
+          "T": "1.57648413907126109812318415674998940371344691995372067879934",
+          "3He": "2.08809988880427832634135475861665274484041400545236713325185",
+          "4He": "0.296660646000647262360821015324695466576903620537628447892456"
         },
-        "t_3he_ratio": 0.8666365595168788,
-        "t_3he_relerr_pct": -35.80727542933252,
+        "t_3he_ratio": "0.754985021321950767118461507721221815744271686015012557942949",
+        "t_3he_relerr_pct": "-44.7733495769273743762638234016566903999685369913015121076651",
         "ordering_full_match": false,
         "is_control": false
       },
       "product:inv": {
         "mu_pred": {
-          "D": 5.852902577599116,
-          "T": 6.9817205029475655,
-          "3He": 5.2436835046094235,
-          "4He": 6.359774532576631
+          "D": "6.06774663225479750000000000000000000000000000000000000000000",
+          "T": "89.8882866086919003581069752830748239522625102490385152593165",
+          "3He": "51.2365375186516898067642181926310839717936407415123858461560",
+          "4He": "2538.41390128802629402813346951109996640028049469123445529344"
         },
-        "t_3he_ratio": 1.3314534519122547,
-        "t_3he_relerr_pct": -1.3777762100016784,
+        "t_3he_ratio": "1.75437863216205377475800438476030226340252632900091851374546",
+        "t_3he_relerr_pct": "28.3316260479896274591231682009372124428527351919317029255292",
         "ordering_full_match": false,
         "is_control": false
       },
       "product:equal_weight(count)": {
         "mu_pred": {
-          "D": 5.852902577599116,
-          "T": 5.852902577599116,
-          "3He": 5.852902577599116,
-          "4He": 5.852902577599116
+          "D": "6.06774663225479750000000000000000000000000000000000000000000",
+          "T": "6.06774663225479750000000000000000000000000000000000000000000",
+          "3He": "6.06774663225479750000000000000000000000000000000000000000000",
+          "4He": "6.06774663225479750000000000000000000000000000000000000000000"
         },
-        "t_3he_ratio": 1.0,
-        "t_3he_relerr_pct": -25.928898491828228,
+        "t_3he_ratio": "1.00000000000000000000000000000000000000000000000000000000000",
+        "t_3he_relerr_pct": "-26.8506674127483889735779992656117082109717878697972691573425",
         "ordering_full_match": false,
         "is_control": true
       },
       "product:meaningless(|Δtr|+.5)": {
         "mu_pred": {
-          "D": 5.852902577599116,
-          "T": 1.8789950657082697,
-          "3He": 1.8789950657082697,
-          "4He": 0.387315006475433
+          "D": "6.06774663225479750000000000000000000000000000000000000000000",
+          "T": "1.98474440529185155306672152211576710162970678789890853162392",
+          "3He": "1.98474440529185155306672152211576710162970678789890853162392",
+          "4He": "0.424706471960079662834448930102043320030521857872808392709708"
         },
-        "t_3he_ratio": 1.0,
-        "t_3he_relerr_pct": -25.928898491828228,
+        "t_3he_ratio": "1.00000000000000000000000000000000000000000000000000000000000",
+        "t_3he_relerr_pct": "-26.8506674127483889735779992656117082109717878697972691573425",
         "ordering_full_match": false,
         "is_control": true
       },
       "sum:prod": {
         "mu_pred": {
-          "D": 5.852902577599116,
-          "T": 16.778144508236203,
-          "3He": 18.459388896071008,
-          "4He": 35.237533404307214
+          "D": "6.06774663225479750000000000000000000000000000000000000000000",
+          "T": "16.7165510850386782508231409090819518634208271117076550148134",
+          "3He": "20.1724032175446873019946293543760286102396213413884806294291",
+          "4He": "36.8889543025833655528177702634579804736604484530961356442425"
         },
-        "t_3he_ratio": 0.908921991009537,
-        "t_3he_relerr_pct": -32.67514694092299,
+        "t_3he_ratio": "0.828684163446607776064945969073080182556828602280896349508051",
+        "t_3he_relerr_pct": "-39.3823065182557134987403911917825466120452810546021280128460",
         "ordering_full_match": false,
         "is_control": false
       },
       "sum:sum": {
         "mu_pred": {
-          "D": 5.852902577599116,
-          "T": 17.14054211797452,
-          "3He": 17.976873347620177,
-          "4He": 35.117415465594696
+          "D": "6.06774663225479750000000000000000000000000000000000000000000",
+          "T": "17.3561165346482538273271931866417179537824362904358236681829",
+          "3He": "19.0503632588805311726728068133582820462175637095641763318171",
+          "4He": "36.4064797935287850000000000000000000000000000000000000000000"
         },
-        "t_3he_ratio": 0.953477380995379,
-        "t_3he_relerr_pct": -29.37488012654551,
+        "t_3he_ratio": "0.911064859960479438003439131492383256495701531186321361412326",
+        "t_3he_relerr_pct": "-33.3562135501930759489599111298265942636983021782680054364226",
         "ordering_full_match": false,
         "is_control": false
       },
       "sum:gmean": {
         "mu_pred": {
-          "D": 5.852902577599116,
-          "T": 17.154466281920406,
-          "3He": 17.99294024878305,
-          "4He": 35.147406530703456
+          "D": "6.06774663225479750000000000000000000000000000000000000000000",
+          "T": "17.4077506712263656368187729017853127591836720488095272786641",
+          "3He": "19.1187542005812053816079979594770018158332159462010106582292",
+          "4He": "36.5265048718075710184267708612623145750168879950105379368932"
         },
-        "t_3he_ratio": 0.9533998359762601,
-        "t_3he_relerr_pct": -29.38062397152812,
+        "t_3he_ratio": "0.910506536597304773014925827189640886586962690924206473446040",
+        "t_3he_relerr_pct": "-33.3970545315771723866914591218864859766123837194963281821568",
         "ordering_full_match": false,
         "is_control": false
       },
       "sum:inv": {
         "mu_pred": {
-          "D": 5.852902577599116,
-          "T": 18.459388896071008,
-          "3He": 16.778144508236203,
-          "4He": 35.237533404307214
+          "D": "6.06774663225479750000000000000000000000000000000000000000000",
+          "T": "20.1724032175446873019946293543760286102396213413884806294291",
+          "3He": "16.7165510850386782508231409090819518634208271117076550148134",
+          "4He": "36.8889543025833655528177702634579804736604484530961356442425"
         },
-        "t_3he_ratio": 1.1002044288633648,
-        "t_3he_relerr_pct": -18.506646069921565,
+        "t_3he_ratio": "1.20673236452458177648808624890618103991614233268980752007529",
+        "t_3he_relerr_pct": "-11.7283329235908203257390041685779347538563155044973308815571",
         "ordering_full_match": false,
         "is_control": false
       },
       "sum:equal_weight(count)": {
         "mu_pred": {
-          "D": 5.852902577599116,
-          "T": 17.558707732797348,
-          "3He": 17.558707732797348,
-          "4He": 35.117415465594696
+          "D": "6.06774663225479750000000000000000000000000000000000000000000",
+          "T": "18.2032398967643925000000000000000000000000000000000000000000",
+          "3He": "18.2032398967643925000000000000000000000000000000000000000000",
+          "4He": "36.4064797935287850000000000000000000000000000000000000000000"
         },
-        "t_3he_ratio": 1.0,
-        "t_3he_relerr_pct": -25.928898491828228,
+        "t_3he_ratio": "1.00000000000000000000000000000000000000000000000000000000000",
+        "t_3he_relerr_pct": "-26.8506674127483889735779992656117082109717878697972691573425",
         "ordering_full_match": false,
         "is_control": true
       },
       "sum:meaningless(|Δtr|+.5)": {
         "mu_pred": {
-          "D": 5.852902577599116,
-          "T": 16.263622949407516,
-          "3He": 16.263622949407516,
-          "4He": 32.52724589881503
+          "D": "6.06774663225479750000000000000000000000000000000000000000000",
+          "T": "16.7730613431843791952152286788098882088720451502623402906488",
+          "3He": "16.7730613431843791952152286788098882088720451502623402906488",
+          "4He": "33.5461226863687583904304573576197764177440903005246805812976"
         },
-        "t_3he_ratio": 1.0,
-        "t_3he_relerr_pct": -25.928898491828228,
+        "t_3he_ratio": "1.00000000000000000000000000000000000000000000000000000000000",
+        "t_3he_relerr_pct": "-26.8506674127483889735779992656117082109717878697972691573425",
         "ordering_full_match": false,
         "is_control": true
       }
     },
-    "best_genuine_combo": "product:inv",
+    "best_genuine_combo": "sum:inv",
     "t_3he_ratio_pred_vs_target": {
-      "pred": 1.3314534519122547,
-      "target": 1.3500541771876804,
-      "relerr_pct": -1.3777762100016784,
+      "pred": "1.20673236452458177648808624890618103991614233268980752007529",
+      "target": "1.36706647160069776402447336136902696455941163107621799476534",
+      "relerr_pct": "-11.7283329235908203257390041685779347538563155044973308815571",
       "right_direction": true,
-      "split_under_5pct": true
+      "split_under_5pct": false
     },
     "per_isotope": {
-      "D": 5.852902577599116,
-      "T": 6.9817205029475655,
-      "3He": 5.2436835046094235,
-      "4He": 6.359774532576631
+      "D": "6.06774663225479750000000000000000000000000000000000000000000",
+      "T": "20.1724032175446873019946293543760286102396213413884806294291",
+      "3He": "16.7165510850386782508231409090819518634208271117076550148134",
+      "4He": "36.8889543025833655528177702634579804736604484530961356442425"
     },
-    "verdict": "LEAD (qualified): the inverse-product per-bond weight w(a,b)=1/(tr_a·tr_b) under the product aggregate reproduces the T/³He degeneracy-break to -1.38% (pred 1.3315 vs 1.3500) — the split a symmetric/equal-weight model structurally CANNOT make (controls give exactly 1.000). This is the genuine non-duplicative contribution: the p≠n resolution supplies the sign+magnitude of the T≠³He degeneracy-break. BUT it does NOT supply k(A): the full non-monotone μ_ext ordering fails (⁴He is not reproduced as the maximum; magnitudes off by tens of %). One <5% hit among ~8 screened combos + a binary direction choice ⇒ a LEAD to verify, NOT a closure (entropy caveat). Scope-(a).",
-    "allPassed": true
+    "verdict": "PRUNE (scope-(a) negative): on the canonical traces (borromean, D, proton) no screened parameter-free per-knot bond weight splits T/³He to <5% in the right direction (best sum:inv: -11.73%). The p≠n-resolved bond model, as screened here, does not supply the split or k(A). The earlier qualified LEAD (inverse-product, -1.38%) held only on retired convention-C traces and stale μ targets.",
+    "allPassed": false
   }
 }

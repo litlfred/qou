@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-pauli-factor-wedderburn",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:pauli-factor-wedderburn",
+  "kind": "proof",
+  "title": "Proof of pauli factor wedderburn",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-pauli-factor-wedderburn"
+  ],
+  "text": "pauli-factor-wedderburn-proof.md",
+  "provenance": "authored"
+}

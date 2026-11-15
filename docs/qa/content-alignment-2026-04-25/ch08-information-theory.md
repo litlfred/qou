@@ -1,7 +1,7 @@
 # Chapter 8 — Information-Theoretic Perspectives — QA Report
 
 **Review Date:** 2026-04-25
-**Chapter Directory:** `content/quantum-observable-universe/information-theory/`
+**Chapter Directory:** `folio/quantum-observable-universe/information-theory/`
 **Coverage:** 74 .md, 30 .lean, ~74 .ts
 
 ## Inventory

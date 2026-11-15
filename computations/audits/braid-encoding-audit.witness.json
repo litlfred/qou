@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-07T10:16:43.105664+00:00",
-  "commitSha": "fe677b04f4de6070aa0d109ccae1bc4d5d9bdc8d",
+  "computedAt": "2026-09-19T06:05:36.205893+00:00",
+  "commitSha": "665c91e403afeebcd6771573d0030f1bbfbf6af1",
   "assertions": [
     {
       "name": "axiomatic content block tracks the phase-1.6 closed form",
@@ -14,11 +14,11 @@
     },
     {
       "name": "the two independent tr_M(p,q0) derivations agree",
-      "computed": "0.391950403120118374031270257948565341308020587204415601736087",
+      "computed": "0.666018202783994853755606235366717998115560668937341747423224",
       "expected": "0.0",
       "passed": false,
       "tolerance": "1e-3",
-      "source": "markov_trace_assembly_chain=1.14575969245730086968908159577411930594372806194352738498820 (Wenzl-bridge, its own target_tolerance=1e-9) vs phase_1_6_closed_form=1.88431946725497502509029472310815626347249744177191389544517 (option-b full chain). EXPECTED TO FAIL -- see bean qou-soj6"
+      "source": "markov_trace_assembly_chain=0.629328402202921918165345746778485927600219400634359762811677 (Wenzl-bridge, its own target_tolerance=1e-9) vs phase_1_6_closed_form=1.88431946725497502509029472310815626347249744177191389544517 (option-b full chain). EXPECTED TO FAIL -- see bean qou-soj6"
     },
     {
       "name": "the retired Strategy-3 mass table has not returned",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 13,
+  "durationMs": 9,
   "computation": "braid-encoding-audit",
   "scriptFile": "braid_encoding_audit.py",
-  "scriptHash": "2ce6b1d07dce",
-  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
+  "scriptHash": "965fa2534e52",
+  "scriptCommitSha": "4cbb6d128ea4eb5ccf1e0dbc47a1fc2dbbb00bdd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -49,7 +49,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e87a23f8d6fd6732"
+    "pyhecke_native_build": "825fe60e51bf0442"
   },
   "invocation": {
     "argv": [
@@ -1204,7 +1204,7 @@
         "strategy_3_tr_M": null,
         "strategy_3_tr_M_missing": true,
         "phase_1_6_closed_form": "1.88431946725497502509029472310815626347249744177191389544517",
-        "markov_trace_assembly_chain": "1.14575969245730086968908159577411930594372806194352738498820",
+        "markov_trace_assembly_chain": "0.629328402202921918165345746778485927600219400634359762811677",
         "axiomatic_content_block": "1.88432"
       },
       "neutron": {

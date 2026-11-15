@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1502.06472v1/blocks/prose-sec-014",
+  "kind": "prose",
+  "title": "Embedding of algebras",
+  "pageStart": 8,
+  "pageEnd": 13,
+  "text": "../sections/sec-014-7-embedding-of-algebras.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1502.06472v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1502.06472v1",
+  "provenance": "ingested"
+}

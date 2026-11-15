@@ -117,4 +117,4 @@ be available` in this sandbox. Only exact combinatorial invariants are used.
 - [`b3_brunnian_selection_scope.py`](../../computations/probes/b3_brunnian_selection_scope.py) — this branch's scoping probe.
 - `docs/audits/2026-06-17-b3-dense-sdp-lever-closed.md` — the operator-space refutation that motivates moving to link space.
 - `docs/audits/2026-06-17-delta-lambda-two-remaining-directions-closed.md` (#2433) — verdict (1) naming this direction.
-- `content/quantum-observable-universe/particle-interactions/confinement-operator-selection.md` — the current net-target + tiebreak selection to be reframed.
+- `folio/quantum-observable-universe/particle-interactions/confinement-operator-selection.md` — the current net-target + tiebreak selection to be reframed.

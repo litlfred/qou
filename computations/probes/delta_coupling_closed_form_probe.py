@@ -5,7 +5,7 @@
 """P3.A — Closed-form `f` candidate probe for Δ_coupling at magic shells.
 
 Per docs/audits/2026-05-11-1ppb-gap-narrowing-plan.md §Path A and
-content/quantum-observable-universe/braids-and-knots/conj-magic-shell-stabilization.md:160,
+folio/quantum-observable-universe/braids-and-knots/conj-magic-shell-stabilization.md:160,
 the cross-coupling residual at the doubly-magic ⁴He shell is
 
     Δ_coupling(2, 2) = Δ_cat(⁴He) − 2 · Δ_cat(³He) ≈ +13.20 MeV
@@ -63,7 +63,8 @@ not which one to tune.
 
 Output: delta-coupling-closed-form-probe.witness.json
 Reference blocks:
-  - conj:magic-shell-stabilization
+  - `magic-shell-stabilization` -- RETIRED, removed in 3af08b4a9a; record in
+  docs/audits/2026-10-11-retired-label-records.md §B
   - prop:beta-decay-energy-scale
   - thm:knot-mass-formula-unified
 """
@@ -240,6 +241,27 @@ def t_values():
     ]
 
 
+def _serialise(obj):
+    """Render an `mpf`-bearing structure for the witness.
+
+    One place where a number becomes text, and it becomes text via
+    `_precision.fmt`.  The rows keep their `mpf`s until here so the
+    small-rational cut above runs on the live values rather than on a
+    float64 cast of them.
+    """
+    if isinstance(obj, dict):
+        return {k: _serialise(v) for k, v in obj.items()}
+    if isinstance(obj, list):
+        return [_serialise(v) for v in obj]
+    if isinstance(obj, mp.mpf):
+        if mp.isnan(obj):
+            return "nan"
+        if mp.isinf(obj):
+            return "inf" if obj > 0 else "-inf"
+        return fmt(obj)
+    return obj
+
+
 def main() -> int:
     print("=" * 78)
     print("P3.A — closed-form f candidate probe for Δ_coupling (multi-anchor)")
@@ -289,15 +311,21 @@ def main() -> int:
                     row = {
                         "anchor": anchor_name,
                         "anchor_formula": formula,
-                        "anchor_MeV": float(anchor_val),
+                        # `mpf`, not `float(...)`.  These were cast here,
+                        # and `factor_to_match_Delta` is READ BACK BELOW to
+                        # decide the 5 % small-rational cut — so the cast
+                        # was not a record, it was the input to the verdict.
+                        # `_serialise` renders the whole structure once, at
+                        # `add_data`.
+                        "anchor_MeV": anchor_val,
                         "candidate": cand_name,
                         "candidate_human": label_human,
                         "t_name": t_name,
-                        "t_value": float(t_val),
-                        "f_at_t": float(fval),
-                        "E0_times_f_MeV": float(pred_MeV),
-                        "factor_to_match_Delta": float(factor),
-                        "factor_no_E0_prefactor": float(factor_no_E0),
+                        "t_value": t_val,
+                        "f_at_t": fval,
+                        "E0_times_f_MeV": pred_MeV,
+                        "factor_to_match_Delta": factor,
+                        "factor_no_E0_prefactor": factor_no_E0,
                     }
                     rows.append(row)
                     print(f"  {cand_name:<22} @ t={t_name:<12} "
@@ -308,11 +336,11 @@ def main() -> int:
                     row = {
                         "anchor": anchor_name,
                         "anchor_formula": formula,
-                        "anchor_MeV": float(anchor_val),
+                        "anchor_MeV": anchor_val,
                         "candidate": cand_name,
                         "candidate_human": label_human,
                         "t_name": t_name,
-                        "t_value": float(t_val),
+                        "t_value": t_val,
                         "error": f"{type(exc).__name__}: {exc}",
                     }
                     rows.append(row)
@@ -331,14 +359,20 @@ def main() -> int:
     promising = []
     for r in rows:
         f = r.get("factor_to_match_Delta")
-        if f is None or not mp.isfinite(mp.mpf(f)):
+        # `f` is the live `mpf` now.  It used to be the `float()` cast made
+        # at the row write, re-lifted here as `mp.mpf(<float>)` — the banned
+        # laundering form, and it was the input to the 5 % cut below, so this
+        # probe's whole output (which candidates are "promising", and hence
+        # which are cross-anchor consistent) was decided on an f64 shadow of
+        # an mpmath computation.
+        if f is None or not mp.isfinite(f):
             continue
         for s in SIMPLE:
-            gap = abs(mp.mpf(f) - s) / s
+            gap = abs(f - s) / s
             if gap < mp.mpf("0.05"):  # within 5%
-                promising.append((r, float(s), float(gap)))
+                promising.append((r, s, gap))
                 print(f"  ✓ {r['anchor']:<22} {r['candidate']} @ {r['t_name']}: "
-                      f"factor ≈ {f:+.4f}, near {float(s):.4f} "
+                      f"factor ≈ {float(f):+.4f}, near {float(s):.4f} "
                       f"(gap {float(gap)*100:.2f}%)")
 
     # Cross-anchor consistency: which (candidate, t) pairs land near a
@@ -395,12 +429,13 @@ def main() -> int:
                           {a: str(v) for (a, v) in delta_cat.items()})
     builder.add_parameter("upstream_witness",
                           "magic-shell-empirical-instantiation.witness.json")
-    builder.add_data("rows", rows)
-    builder.add_data("promising_matches", [
+    builder.add_data("rows", _serialise(rows))
+    builder.add_data("promising_matches", _serialise([
         {"row": r, "near_value": near, "fractional_gap": gap}
         for (r, near, gap) in promising
-    ])
-    builder.add_data("cross_anchor_consistent_leads", cross_consistent)
+    ]))
+    builder.add_data("cross_anchor_consistent_leads",
+                     _serialise(cross_consistent))
     out = builder.save()
     print(f"\n  → wrote {out}")
     return 0

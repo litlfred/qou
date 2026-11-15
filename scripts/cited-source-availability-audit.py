@@ -11,7 +11,8 @@ Three populations, joined:
 
   cited     `cites[]` on authored blocks (read from the generated `.jsonld`
             graph) plus `-- Ref: [key]` lines in `.lean` files.
-  declared  `content/bib-qa-verifications.json`, the source ledger: each entry
+  declared  the source ledger (test/attestations/bib-verification/, read by
+            scripts/lib/bib_ledger.py): each entry
             says `source.kind` is an `upload` (with a `file` path) or
             `external` (with a URL).
   held      what `library/` actually contains.
@@ -78,9 +79,10 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-LEDGER = REPO / "content" / "bib-qa-verifications.json"
+sys.path.insert(0, str(Path(__file__).resolve().parent / "lib"))
+import bib_ledger  # noqa: E402  -- the source ledger's reader (attestation store, legacy fallback)
 LIBRARY = REPO / "library"
-CONTENT = REPO / "content"
+CONTENT = REPO / "folio"
 
 # Keys that are the folio talking about itself, not a source it could hold.
 SELF_KEYS = {"manuscript", "leitner2026"}
@@ -130,9 +132,9 @@ def load_ledger() -> tuple[dict, list]:
     can cite it. Keying the whole file on `e["id"]` collapses all of those onto
     one `None`, which is how they stayed invisible.
     """
-    if not LEDGER.exists():
-        return {}, []
-    entries = json.loads(LEDGER.read_text()).get("entries", [])
+    led, note = bib_ledger.read_source_ledger(str(REPO))
+    print(note, file=sys.stderr)
+    entries = led.get("entries", [])
     keyed = {e["id"]: e for e in entries if isinstance(e.get("id"), str)}
     unkeyed = [e for e in entries if not isinstance(e.get("id"), str)]
     # A repeated id is not automatically a defect. The ledger has one row per
@@ -196,7 +198,7 @@ def load_refs() -> dict:
     Optional: without it the recovery pass is skipped and said to be skipped,
     rather than a clean run being reported as evidence of no recoveries.
     """
-    script = REPO / "content" / "schema" / "references.ts"
+    script = REPO / "folio" / "schema" / "references.ts"
     if not script.exists():
         return {}
     prog = (
@@ -295,7 +297,7 @@ def main() -> int:
 
     if not cited:
         print("No citations found. If content/**/*.jsonld is absent, run\n"
-              "  bun run folio-assistant/content/pipeline/gen-block-jsonld.ts\n"
+              "  bun run folio-assistant/cat-harness-tools/pipeline/gen-block-jsonld.ts\n"
               "first — an ungenerated graph reads as a corpus that cites nothing.")
         return 0
 

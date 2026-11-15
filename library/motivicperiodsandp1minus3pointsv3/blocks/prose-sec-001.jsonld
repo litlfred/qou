@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/motivicperiodsandp1minus3pointsv3/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/motivicperiodsandp1minus3pointsv3/blocks/prose-sec-001",
   "kind": "prose",
-  "title": "Introduction",
-  "pageStart": 1,
-  "pageEnd": 1,
-  "text": "../sections/sec-001-1-introduction.md",
-  "derivedFrom": "library/motivicperiodsandp1minus3pointsv3/manifest",
-  "sourceDocument": "library/motivicperiodsandp1minus3pointsv3/manifest",
+  "title": "The main theorem and consequences",
+  "pageStart": 14,
+  "pageEnd": 15,
+  "text": "../sections/sec-001-3-the-main-theorem-and-consequences.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/motivicperiodsandp1minus3pointsv3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/motivicperiodsandp1minus3pointsv3",
   "provenance": "ingested"
 }

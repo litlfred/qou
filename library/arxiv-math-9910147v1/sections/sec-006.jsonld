@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-9910147v1/sections/sec-006",
   "@type": [
     "doco:Section"
   ],
-  "title": "Deﬁnition and properties of various continuations of 6j",
-  "pageStart": 3,
-  "pageEnd": 3,
+  "title": "Conclusion",
+  "pageStart": 26,
+  "pageEnd": 26,
   "contains": [
     "library/arxiv-math-9910147v1/blocks/prose-sec-006"
   ],
-  "derivedFrom": "library/arxiv-math-9910147v1/manifest",
-  "sourceDocument": "library/arxiv-math-9910147v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9910147v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9910147v1",
   "provenance": "ingested"
 }

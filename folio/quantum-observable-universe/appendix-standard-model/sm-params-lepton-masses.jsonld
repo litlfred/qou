@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prose-sm-params-lepton-masses",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "prose:sm-params-lepton-masses",
+  "kind": "prose",
+  "title": "Charged-lepton masses (3)",
+  "tags": [
+    "appendix",
+    "standard-model",
+    "parameters",
+    "leptons"
+  ],
+  "text": "sm-params-lepton-masses.md",
+  "provenance": "authored"
+}

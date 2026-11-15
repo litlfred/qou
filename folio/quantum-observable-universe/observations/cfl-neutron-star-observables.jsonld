@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-cfl-neutron-star-observables",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:cfl-neutron-star-observables",
+  "kind": "remark",
+  "title": "Observable signatures of the Borromean-to-CFL transition in neutron stars",
+  "interprets": "papers/quantum-observable-universe/blocks/conj-color-superconductivity-borromean",
+  "tags": [
+    "neutron-star",
+    "CFL",
+    "mass-radius",
+    "gravitational-waves",
+    "cooling",
+    "falsifiability"
+  ],
+  "text": "cfl-neutron-star-observables.md",
+  "provenance": "authored"
+}

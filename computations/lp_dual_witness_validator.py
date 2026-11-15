@@ -254,7 +254,7 @@ def _recorded_backends(path: Path) -> tuple[set[str], bool]:
 def collect_wired_witnesses(repo_root: Path) -> set[str]:
     """Collect wired witness basenames from content block `computation.witness`."""
     wired: set[str] = set()
-    content_root = repo_root / "content"
+    content_root = repo_root / "folio"
     ts_files = content_root.glob("*/*/*.ts")
     witness_pattern = re.compile(
         r"witness(?:File)?\s*:\s*[\"']([^\"']+\.json)[\"']"
@@ -296,7 +296,7 @@ def main(argv: list[str]) -> int:
     # walk happened to achieve for that one directory.
     witnesses = sorted(
         w for w in list(root.rglob("*.witness.json")) + list(root.rglob("*-witness.json"))
-        if "_deprecated" not in w.parts
+        if ("_deprecated" not in w.parts and "fsh-guts" not in w.parts)
     )
     flagged = []
     for w in witnesses:

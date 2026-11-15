@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/candetgl/blocks/prose-sec-016",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/candetgl/blocks/prose-sec-016",
   "kind": "prose",
-  "title": "Proof of 2",
-  "pageStart": 25,
-  "pageEnd": 29,
-  "text": "../sections/sec-016-c-proof-of-2.md",
-  "derivedFrom": "library/candetgl/manifest",
-  "sourceDocument": "library/candetgl/manifest",
+  "title": "Proof of Corollary to Theorem A",
+  "pageStart": 15,
+  "pageEnd": 16,
+  "text": "../sections/sec-016-c-proof-of-corollary-to-theorem-a.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/candetgl",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/candetgl",
   "provenance": "ingested"
 }

@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-topological-decomposition-mass",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:topological-decomposition-mass",
+  "kind": "proposition",
+  "title": "Conjectural Topological Decomposition of Mass",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/cor-quantum-dilogarithm"
+  ],
+  "tags": [
+    "mass",
+    "topological-decomposition",
+    "divisor",
+    "vortex",
+    "holonomy"
+  ],
+  "leanRef": "qou:QOU.TopologicalMass.TopologicalDecompositionMass",
+  "text": "topological-mass-conjecture.md",
+  "leanSource": "topological-mass-conjecture.lean",
+  "provenance": "authored"
+}

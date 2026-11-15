@@ -3,7 +3,7 @@
 Re-scope: c_3 does NOT converge to -Vol(4_1); the continuum-geometry claim is
 anchor-blind and WORSE at the muon (CAL-2) anchor than the keystone near-match.
 
-`content/quantum-observable-universe/mass-theory/q-beta-c3-continuum-geometry.md`
+`folio/quantum-observable-universe/mass-theory/q-beta-c3-continuum-geometry.md`
 claims (pushed by a Gemini session) that "the true analytical evaluation of c_3
 in the infinite-order continuum limit is therefore EXACTLY c_3 -> -Vol(4_1) ~
 -2.02988", that this "structurally generates c_3 ... rigorously banishing all
@@ -151,7 +151,7 @@ def main():
             "verdict": verdict,
         },
         "context": {
-            "corrects": "content/quantum-observable-universe/mass-theory/q-beta-c3-continuum-geometry.md (+.lean docstring)",
+            "corrects": "folio/quantum-observable-universe/mass-theory/q-beta-c3-continuum-geometry.md (+.lean docstring)",
             "sibling_rescope": "docs/audits/2026-07-11-qbeta-c3-keystone-rescope-anchor-blind.md (#3501); #3503",
             "canonical_shadow": "registry KC10 (c_3->-2=J_Hopf(1)); KC20 (C_Hopf(2)=-2)",
             "kept": "Vol(4_1)=2*Cl_2(pi/3) hyperbolic geometry + Lobachevsky saddle at pi/3 (real)",

@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-two-tier-scaling-pq",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:two-tier-scaling-pq",
+  "kind": "remark",
+  "title": "Two-tier scaling of $P_K(q)$: quantum dimension $[N]_q$ (topological) and base mass $m_0$ (physical)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-three-calibration-inputs",
+    "papers/quantum-observable-universe/blocks/def-three-calibration-discipline",
+    "papers/quantum-observable-universe/blocks/prop-markov-trace-axiomatic-closed-form",
+    "papers/quantum-observable-universe/blocks/rem-kashaev-volume-density"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-calibration-inputs",
+  "tags": [
+    "calibration",
+    "mass-scale",
+    "quantum-dimension",
+    "markov-trace",
+    "normalization",
+    "boundary-conditions"
+  ],
+  "text": "two-tier-scaling-pq.md",
+  "provenance": "authored"
+}

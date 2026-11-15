@@ -1,0 +1,62 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "kashaev1995",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 335,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-q-alg-9504020v1/9504020v1.pdf"
+        },
+        "id": "kashaev1995",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "*** WRONG JOIN ***. The seeded id points at a TWO-author 1994 quantum-dilogarithm entry. The document is a SINGLE-author preprint from a later year on a link invariant built from the CYCLIC quantum dilogarithm (arXiv:q-alg/9504020v1). Author count, year and result all differ from the seeded entry, so the join is wrong; id set to null. No registered key matches: references.ts carries this author's later volume-conjecture paper (kashaev1997) but nothing for q-alg/9504020, and a grep for '9504020' is empty. On merits: the paper proves that the link invariant obtained from the cyclic quantum dilogarithm via a particular R-matrix construction coincides with the invariant of triangulated links in S^3, notes it vanishes on split links as the Alexander-Conway polynomial does, and presents the R-matrix as the cyclic analogue of the U_q(sl(2)) universal R-matrix. That construction is the immediate precursor of the knot invariant the corpus's volume-conjecture chapter is built on, and the corpus has a dedicated cyclic-dilogarithm-pentagon file (QOU/QBeta/CyclicDilogPentagon.lean) whose subject is exactly this cyclic object.",
+          "keyResults": [
+            {
+              "locator": "Abstract / main theorem",
+              "statement": "The link invariant obtained from the cyclic quantum dilogarithm by the given R-matrix construction coincides with the invariant of triangulated links in S^3; the R-matrix is the cyclic analogue of the U_q(sl(2)) universal R-matrix.",
+              "useForFolio": "Primary source for the cyclic-dilogarithm R-matrix that QOU/QBeta/CyclicDilogPentagon.lean works with, currently referenced only through faddeev_kashaev1994 and kashaev1997.",
+              "targets": [
+                "qou:QOU.QBeta.CyclicDilogPentagon"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "A distinct Kashaev paper with no ref() entry, mis-joined onto the two-author [faddeev_kashaev1994] key. Register it from the title page.",
+              "target": "folio/schema/references.ts",
+              "bean": "qou-xace"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "Once registered, CyclicDilogPentagon.lean should cite the cyclic-dilogarithm R-matrix paper directly rather than only the 1994 quantum-dilogarithm paper, since the cyclic construction is what that file formalises.",
+              "target": "qou:QOU.QBeta.CyclicDilogPentagon",
+              "bean": "qou-x4qm"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "0baef40fa993"
+        },
+        "note": "Source IS held: library/arxiv-q-alg-9504020v1. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
+        "verified_at": "2026-09-03T04:19:53Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

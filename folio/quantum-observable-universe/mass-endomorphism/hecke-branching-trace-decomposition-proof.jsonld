@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-hecke-branching-trace-decomposition",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:hecke-branching-trace-decomposition",
+  "kind": "proof",
+  "title": "Proof of hecke branching trace decomposition",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-hecke-branching-trace-decomposition"
+  ],
+  "text": "hecke-branching-trace-decomposition-proof.md",
+  "provenance": "authored"
+}

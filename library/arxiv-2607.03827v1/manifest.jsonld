@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2607.03827v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "AFFINE CELLULAR ALGEBRAS AND ASYMPTOTIC ALGEBRAS",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2607.03827v1",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Affine cellular algebras and asymptotic algebras",
   "contains": [
     "library/arxiv-2607.03827v1/sections/sec-000",
     "library/arxiv-2607.03827v1/sections/sec-001",
@@ -17,8 +22,18 @@
     "library/arxiv-2607.03827v1/sections/sec-008"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2607.03827&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-2607.03827v1",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "2607.03827v1.pdf",
     "source_sha256": "965d69603381942abe2ab6ff20195f17afbbf9e7f215c098634664b1f87a98f7",
     "pages": 32,

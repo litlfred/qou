@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1002.4860v2/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1002.4860v2/blocks/prose-sec-003",
   "kind": "prose",
   "title": "Semi-normal representations of Hecke algebras",
   "pageStart": 2,
   "pageEnd": 3,
   "text": "../sections/sec-003-2-semi-normal-representations-of-hecke-algebras.md",
-  "derivedFrom": "library/arxiv-1002.4860v2/manifest",
-  "sourceDocument": "library/arxiv-1002.4860v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1002.4860v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1002.4860v2",
   "provenance": "ingested"
 }

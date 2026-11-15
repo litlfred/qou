@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-stat-mech-computational-horizon",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:stat-mech-computational-horizon",
+  "kind": "remark",
+  "title": "Statistical mechanics as the polynomial observable subcategory",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-phase-transition-boundary",
+    "papers/quantum-observable-universe/blocks/rem-incompleteness-horizon"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-quantum-ideal-gas-law",
+  "tags": [
+    "statistical-mechanics",
+    "computational-horizon",
+    "ideal-gas-law",
+    "phase-transition",
+    "polynomial-observable",
+    "degree-0-opacity",
+    "incompleteness"
+  ],
+  "text": "stat-mech-computational-horizon.md",
+  "provenance": "authored"
+}

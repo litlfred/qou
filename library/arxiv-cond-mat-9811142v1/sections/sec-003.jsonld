@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-cond-mat-9811142v1/sections/sec-003",
   "@type": [
     "doco:Section"
   ],
-  "title": "(x(1)",
-  "pageStart": 7,
-  "pageEnd": 11,
+  "title": "The Laguerre ensemble",
+  "pageStart": 8,
+  "pageEnd": 10,
   "contains": [
     "library/arxiv-cond-mat-9811142v1/blocks/prose-sec-003"
   ],
-  "derivedFrom": "library/arxiv-cond-mat-9811142v1/manifest",
-  "sourceDocument": "library/arxiv-cond-mat-9811142v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-cond-mat-9811142v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-cond-mat-9811142v1",
   "provenance": "ingested"
 }

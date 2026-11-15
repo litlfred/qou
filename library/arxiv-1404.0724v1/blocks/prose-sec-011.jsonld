@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1404.0724v1/blocks/prose-sec-011",
+  "kind": "prose",
+  "title": "The Yang-Baxter equation and quasi-triangular bialgebras",
+  "pageStart": 22,
+  "pageEnd": 26,
+  "text": "../sections/sec-011-51-the-yang-baxter-equation-and-quasi-triangular.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1404.0724v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1404.0724v1",
+  "provenance": "ingested"
+}

@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1608.07234v3/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1608.07234v3 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1608.07234v3",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1608.07234&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1608.07234v3",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1608.07234v3",
+    "content_type": "application/gzip",
+    "sha256": "0d71793dc6d6a85c00a71aa66d531e126fa14db7d623038af1b6aca920714b9c",
+    "bytes": 120157,
+    "fetched": "2026-10-10T15:11:13+00:00",
+    "files": [
+      {
+        "path": "source/files/derivedHecke.bbl",
+        "role": "bbl",
+        "sha256": "01bb1a9f0062fb2471c5999ff289612b83e92a3767cd269b033303081b4bcf80",
+        "bytes": 8024
+      },
+      {
+        "path": "source/files/derivedHecke.tex",
+        "role": "tex",
+        "sha256": "2f9db35f63fa6799e1226263ee22416cc7d1b2de980ae2518ce70fef79a87000",
+        "bytes": 380030
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

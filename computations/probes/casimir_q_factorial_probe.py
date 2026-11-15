@@ -67,9 +67,9 @@ sys.path.insert(0, str(HERE.parent))
 
 from mpmath import mp, mpf, pi as mp_pi  # noqa: E402
 
-from q_parameter import Q  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
 
@@ -106,27 +106,59 @@ def verify_classical_limit(f, target: "mpf", eps: "mpf" = mpf("1e-6")) -> bool:
     return abs(val - target) / target < mpf("1e-3")
 
 
+def _ser_qf(row: dict) -> dict:
+    """Serialize one q-factorial row: mpf -> 60-dps decimal string.
+
+    `classical_n_factorial` is left as-is (exact small integer in binary64).
+    """
+    return {
+        k: (fmt(v) if k != "classical_n_factorial" else v)
+        for k, v in row.items()
+    }
+
+
+def _ser_cand(c: dict) -> dict:
+    """Serialize one candidate: the four mpf fields -> 60-dps strings."""
+    return {
+        k: (fmt(v) if k not in ("form", "classical_limit_ok") else v)
+        for k, v in c.items()
+    }
+
+
 def main() -> int:
     builder = WitnessBuilder(
         "casimir-q-factorial-probe",
         engine="mpmath",
     )
 
-    q = mpf(Q)
+    # NOT `mpf(Q)` / `mpf(str(Q))`: `q_parameter.Q` is `float(_d["q"])`, so
+    # either form lifts the DOUBLE's binary expansion and caps this whole
+    # probe at ~17 digits.  Read the pin as the SOURCE STRING and build the
+    # mpf here, i.e. AFTER `set_compute_dps()`.  Do NOT substitute the
+    # module-level `Q_MP`: `q_parameter` builds it at `mp.dps = 50`, so it is
+    # a 50-digit cap, which is BELOW `OUTPUT_DPS = 60`.  Measured against the
+    # exact 50-digit decimal in `Fraction` arithmetic, `mpf(Q_50_DIGIT_STR)`
+    # built at dps 70 sits 4.594e-72 from it and `Q_MP` sits 2.015e-50.
+    q = mpf(Q_50_DIGIT_STR)
     pi_sq = mp_pi ** 2
     pi_sq_720 = pi_sq / 720
     one_percent = pi_sq_720 / 100
 
     # ─── Compute q-factorials at substrate and at q=1 ───
     q_close_to_1 = 1 + mpf("1e-6")
+    # mpf-valued throughout: these are read back by the display loop and
+    # serialized once, at the witness, via `fmt`.  `classical_n_factorial`
+    # stays a float because it is an exact small integer (2 … 5040), which
+    # binary64 represents without loss; the raw-float64 ratchet does not
+    # count integral floats and there is nothing here to drain.
     qf_data = {}
     for n in range(2, 8):
         qf_data[n] = {
-            "[n]_q!_sym_at_substrate": float(q_factorial_sym(n, q)),
-            "[n]_q!_sym_at_q→1": float(q_factorial_sym(n, q_close_to_1)),
+            "[n]_q!_sym_at_substrate": q_factorial_sym(n, q),
+            "[n]_q!_sym_at_q→1": q_factorial_sym(n, q_close_to_1),
             "classical_n_factorial": float(mpf(1) * mpf(2) * mpf(3) * mpf(4) * mpf(5) * mpf(6) * mpf(7)) if n == 7 else float(_fact(n)),
-            "{n}!_q_poch_at_substrate": float(q_factorial_poch(n, q)),
-            "{n}!_q_poch_at_q→1": float(q_factorial_poch(n, q_close_to_1)),
+            "{n}!_q_poch_at_substrate": q_factorial_poch(n, q),
+            "{n}!_q_poch_at_q→1": q_factorial_poch(n, q_close_to_1),
         }
 
     # ─── Casimir candidates with classical limit verified ───
@@ -161,12 +193,15 @@ def main() -> int:
         rel_res_substrate = abs(val_substrate - pi_sq_720) / pi_sq_720
         rel_res_classical = abs(val_classical - pi_sq_720) / pi_sq_720
         classical_ok = rel_res_classical < mpf("1e-3")
+        # mpf-valued: `rel_residue_substrate` is the key of the `min()` below
+        # and is compared against 0.01, so it is arithmetic, not display.
+        # Serialized once, at the witness.
         candidates.append({
             "form": name,
-            "value_at_substrate": float(val_substrate),
-            "value_at_q→1": float(val_classical),
-            "rel_residue_substrate": float(rel_res_substrate),
-            "rel_residue_classical": float(rel_res_classical),
+            "value_at_substrate": val_substrate,
+            "value_at_q→1": val_classical,
+            "rel_residue_substrate": rel_res_substrate,
+            "rel_residue_classical": rel_res_classical,
             "classical_limit_ok": bool(classical_ok),
         })
 
@@ -199,13 +234,19 @@ def main() -> int:
             "residue among candidates with verified classical limit."
         )
         .set_content_block("conj:casimir-epsilon-vacuum")
-        .add_parameter("substrate_q", float(q))
-        .add_parameter("target_pi_sq_720", float(pi_sq_720))
-        .add_data("q_factorials_at_substrate_and_q1", qf_data)
-        .add_data("candidates_with_classical_limit_check", candidates)
+        .add_parameter("substrate_q", fmt(q))
+        .add_parameter("target_pi_sq_720", fmt(pi_sq_720))
+        .add_data(
+            "q_factorials_at_substrate_and_q1",
+            {n: _ser_qf(row) for n, row in qf_data.items()},
+        )
+        .add_data(
+            "candidates_with_classical_limit_check",
+            [_ser_cand(c) for c in candidates],
+        )
         .add_data(
             "best_classical_ok",
-            best_classical_ok
+            _ser_cand(best_classical_ok)
             if best_classical_ok else "none — all candidates fail classical limit",
         )
         # DEMOTED, and deliberately NOT turned into an existence flag (bean

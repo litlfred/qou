@@ -8,199 +8,144 @@ pages: 26-30
 source_pdf: 2311.14221v2.pdf
 source_sha256: 5aa4126bbb6df6eb
 doc_brief: "FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS — The main objective of the present paper is to present a ver- sion of the Tannaka-Krein type reconstruction Theorems: If F : B → C is an exact"
+text_source: latex
+latex_prose_ratio: 0.924
+latex_coverage_ratio: 0.879
 ---
-andB be a rightC-module category. For the rest of this section, ( F,c ) :B→
-C will denote a right exact module functor.
-Consider the functor
-SF :Bop×B→C ,
-SF (A,B ) = F (B)⊗∗F (A).
+Let $\vc$ be a  tensor category, and $\Bc$ be a right $\vc$-module category. For the rest of this section, $(F,c):\Bc\to \vc$ will denote  a right exact module functor. 
+
+\medbreak
+
+
+
+ Consider the functor
+$$S^F:\Bc^{\op}\times \Bc\to \vc, $$
+$$S^F(A,B)=F(B)\ot {}^*F(A).$$
 This functor has a canonical prebalancing, given by
-βX
-A,B :F (B)⊗∗F (A⊳X )→F (B⊳ ∗X)⊗∗F (A),
-βX
-A,B = (c−1
-B,∗X⊗id ∗F (A))(id F (B)⊗(φl
-F (A),X )−1∗(c−1
-A,X )).
-(6.1)
-We deﬁne
-C(F,c ) = C(F ) =
-∮ B∈B
-(SF,β ) =
-∮ B∈B
-F (B)⊗∗F (B).
-LetπB :F (B)⊗∗F (B)→C(F ) be the associated dinatural transformations.
-Existence of this coend follows from Corollary 3.8. The following Lemma is
-FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS 27
-a generalization of [ 22, Lemma 2.1.9]. Recall that, for any M,N ∈B ,X∈C
-we have natural isomorphisms
-ψV
-F (M ),F (N ) : HomC(F (M )⊗∗F (N ),V )→ HomC(F (M ),V⊗F (N ))
-described in ( 2.7).
-Lemma 6.1. The functor V ↦→Natm(F,V⊗F ) is represented by C(F ).
-That is, for any V ∈C there are natural isomorphisms
-ω : Hom C(C(F ),V )→ Natm(F,V⊗F ),
-ω(g)B = (g⊗id F (B))ψC(F )
-F (B),F (B)(πB).(6.2)
-Proof. Fix some object V ∈C . The functor V⊗F is a right module functor,
-then we can consider the prebalancing of the functor
-HomC(F (−),V⊗F (−)) :B×B op→ vect k,
+\begin{equation}\label{preb-s2}\begin{split} \beta^X_{A,B}: F(B)\ot {}^*F(A \triangleleft X) \to F(B \triangleleft  {}^*X)\ot  {}^*F(A),\\
+\beta^X_{A,B}=(c^{-1}_{B, {}^*X}\ot \id_{{}^*F(A)})(\id_{F(B)}\ot (\phi^l_{F(A),X})^{-1} {}^*(c^{-1}_{A,X})).
+\end{split}
+\end{equation}
+We define
+$$C(F,c)=C(F)=\oint^{B\in \Bc} (S^F,\beta)= \oint^{B\in \Bc} F(B)\ot {}^*F(B).$$
+Let $\pi_B:F(B)\ot {}^*F(B)\to C(F)$ be the associated dinatural transformations. Existence of this coend follows from Corollary \ref{existence-coend1}.
+The following Lemma is a generalization of \cite[Lemma 2.1.9]{PS}. Recall that, for any $M, N\in \Bc$, $X\in \vc$ we have natural isomorphisms
+$$\psi^V_{F(M),F(N)}:\Hom_\vc(F(M)\ot {}^*F(N),V)\to \Hom_\vc(F(M),V\ot F(N))$$
+described in \eqref{duals1}.
+\begin{lema}\label{a-omega} The functor 
+$V\mapsto \Nat_{\! m}(F, V\ot F)$
+is represented by $C(F)$. That is, for any $V\in\vc$ there are natural isomorphisms
+\begin{equation}\label{omega-isom}
+\begin{split} \omega: \Hom_\vc(C(F),V)\to \Nat_{\! m}(F, V\ot F),\\
+\omega(g)_B= (g\ot \id_{F(B)})\psi^{C(F)}_{F(B),F(B)}(\pi_B).
+\end{split}
+\end{equation}  
+\end{lema}
+\pf Fix some object $V\in \vc$. The functor $V\ot F$ is a right module functor, then we can consider the prebalancing of the functor
+$$\Hom_\vc(F( -),V\ot F(- )): \Bc\times \Bc^{\op}\to \vect_\ku, $$
 given by
-γX
-B,N : Hom C(F (N ⊳∗X),V⊗F (B))→ HomC(F (N ),V⊗F (B⊳X )),
-γX
-N,B (f ) = (id V⊗cB,X )(f⊗id X)(c−1
-N,∗X⊗id X)(id F (N )⊗coevX ).
-Note that here we are considering Bop as a left C-module category, with
-action X ⊲ B:= B ⊳∗X. Proposition 3.3 (ii) tells us that there is an
-isomorphism
-∮
-B∈B
-(HomC(F (B),V⊗F (B)),γ )≃ Natm(F,V⊗F ).
-From the proof of Proposition 3.4, one can see that the dinatural transfor-
-mations of the end
-∮
-B∈B HomC(F (B)⊗∗F (B),V ) are given by
-ˆπB :
-∮
-B∈B
-HomC(F (B)⊗∗F (B),V )→ HomC(F (B)⊗∗F (B),V ),
-ˆπB(g) = g◦πB.
-Here, we are using identiﬁcation
-∮
-B∈B
-HomC(F (B)⊗∗F (B),V ) = Hom C(
-∮ B∈B
-F (B)⊗∗F (B),V ).
-It follows by a straightforward computation that
-γX
-M,N (ψV
-F (M ⊳∗X),F (N )(f )) = ψV
-F (M ),F (N ⊳X)(f◦βX
-N,M ),
-for any M,N ∈B and any f∈ HomB(F (M⊳ ∗X)⊗∗F (N ),V ). This implies,
-using Proposition 3.3 (i) that, for any V∈C , there exists an isomorphism
-ˆψV :
-∮
-B∈B
-HomC(F (B)⊗∗F (B),V )→
-∮
-B∈B
-HomC(F (B),V⊗F (B)),
-28 LENTNER AND MOMBELLI
-such that µB◦ ˆψV =ψV
-F (B),F (B)◦ ˆπB. For any V∈C we have that
-HomC(C(F ),V )≃
-∮
-B∈B
-HomC(F (B)⊗∗F (B),V )
-≃
-∮
-B∈B
-HomC(F (B),V⊗F (B))
-≃ Natm(F,V⊗F ).
-The ﬁrst isomorphism is Proposition 3.4. Tracing this chain of isomorphisms,
-one can see that, the composition coincides with ω deﬁned by Equation
-(6.2). □
-Proposition 6.2. LetC be a tensor category, and B be a right C-module
-category. Let (F,c ) : B→C be a right exact module functor. The object
-C(F )∈C has a coalgebra structure ∆ : C(F )→C(F )⊗C(F ),ε :C(F )→ 1
-determined by diagramms
-(6.3) F (B)⊗∗F (B)
-id ⊗coevF (B)⊗id
-/d15/d15
-πB /d47/d47C(F )
-∆
-/d15/d15
-F (B)⊗∗F (B)⊗F (B)⊗∗F (B) πB⊗πB
-/d47/d47C(F )⊗C(F ),
-(6.4) F (B)⊗∗F (B)
-πB /d47/d47
-evF (B)
-/d37/d37▲▲▲▲▲▲▲▲▲▲▲ C(F )
-ε
-/d125/d125③③③③③③③③
-1,
-for any B∈B .
-Proof. It follows by a straightforward computation that, the maps
-evF (B) :F (B)⊗∗F (B)→ 1,
-(πB⊗πB)(id⊗coevF (B)⊗id ) :F (B)⊗∗F (B)→C(F )⊗C(F ),
-are dinatural maps. It follows from Diagram ( 2.20) that ev F (B) satisﬁes
-(3.5). It follows from Diagram ( 2.21) and the fact that π satisﬁes ( 3.5)
-that, (πB⊗πB)(id⊗coevF (B)⊗id ) also satisﬁes Equation ( 3.5). Whence, the
-existence of ∆ and ε follow from the universal property of the relative coend.
-The proof that (C(F ), ∆ ,ε ) is a coalgebra is standard, and it follows from
-Diagrams ( 6.3), ( 6.4). □
-LetC be a tensor category and C∈C be a coalgebra. The category CC,
-of left C-comodules in C, is a right C-module category. The action is given
-as follows. If ( W,ρ )∈ CC, then W ⊳Y = W⊗Y , where the coaction on
-W⊗Y is given by ρ⊗id Y. The forgetful functor f : CC→C is a C-module
-functor. The next result says that the coalgebra reconstruc ted from the
-forgetful functor f coincides with C.
-FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS 29
-In this case, the functor Sf has a prebalancing given by
-βX
-A,B = id B⊗(φl
-A,X )−1,
-for any A,B ∈ CC, X∈C .
-Lemma 6.3. There exists an isomorphism of coalgebras C(f )≃C inC.
-Proof. In this particular case, if T∈C is an object, and λW :W⊗∗W→T
-is a dinatural transformation, Equation ( 3.5) writes as
-(6.5) λW ⊗∗V (id W⊗(φl
-W ⊗∗V,V )−1) = λW (id W⊗∗(id W⊗coevV )),
-for any W∈ CC,V ∈C .
-If W ∈ CC has comodule structure given by ρW → C⊗W , then we de-
-ﬁne πW : W⊗∗W → C, the morphisms given by πW = ¯ψC
-W,W (ρ). Recall
-that, natural isomorphisms ¯ψ were deﬁned in ( 2.8). Maps πW are dinatural
-transformations, and they satisfy Equation ( 6.5).
-Let A∈C be another object, equipped with dinatural transformation s
-λW : W⊗∗W → A such that they satisfy Equation ( 6.5). Deﬁne h as the
-composition
-h :C id C ⊗∗ε
-−−−−−→C⊗∗C
-λC
-−−→A.
-Since λ is dinatural, and it satisﬁes ( 6.5), one can see that h◦πW = λW .
-This proves that, indeed, C(f )≃C. □
-Proposition 6.4. LetB be a right C-module category, and (F,c ) : B→C
-be a right exact module functor. Set C = C(F ) the coalgebra deﬁned in
-Proposition 6.2.
-1. The functor (F,c ) :B→C factorizes as
-(6.6) CC
-f
-/d32/d32❆❆❆❆❆❆❆❆
-B
-ˆF
-/d62/d62⑥⑥⑥⑥⑥⑥⑥⑥
-F
-/d47/d47C.
-Here f : CC →C is the forgetful functor, and the functor ˆF is a
-C-module functor.
-2. If F is exact (respect. faithful) then ˆF is exact (respect. faithful).
-Proof. 1. For any A∈B , deﬁne ˆF (A) = (F (A),ρ A), where
-ρA =ψC
-F (A),F (A)(πA) : F (A)→C⊗F (A).
-Using diagrams ( 6.3), ( 6.4), one can prove that
-(id C⊗ρA)ρA = (∆⊗id )ρA,
-(ε⊗id )ρA = id F (A).
-30 LENTNER AND MOMBELLI
-2. Clearly, if F is faithful, then ˆF is faithful. Assume that F is left exact.
-Let f : A→ B be a morphism in B with kernel k = kerf : K→ A. Since
-F is left exact, then, F (k) = ker F (f ). We only need to prove that, the
-morphismF (k) : F (K)→F (A) is a map of C-comodules. That is, we need
-to prove the equality
-(6.7) (id ⊗F (k))ψC
-F (K),F (K)(πK ) = ψC
-F (A),F (A)(πA)F (k).
-Using the naturality of ψ, it follows that
-ψC
-F (A),F (A)(πA)F (k) = ψC
-F (K),F (A)(πA(F (k)⊗id ))
-=ψC
-F (K),F (A)(πK (id⊗∗F (k)))
-= (id⊗F (k))ψC
-F (K),F (K)(πK).
-The second equality follows from the dinaturality of π, the third equality
-follows again by the naturality of ψ. The proof that, if F is right exact,
-then ˆF is right exact, follows similarly. □
+$$\gamma^X_{B,N} :\Hom_\vc(F(N\triangleleft {}^*X),V\ot F(B  ))\to   \Hom_\vc(F(N ),V\ot F(B\triangleleft X)),$$
+$$\gamma^X_{N,B}(f)=(\id_V\ot c_{B, X})(f\ot \id_X) (c^{-1}_{N, {}^*X}\ot \id_X)(\id_{F(N)}\ot \coev_X).$$
+Note that here we are considering $\B^{\op}$ as a left $\vc$-module category, with action $X\triangleright B:=B\triangleleft {}^*X$.
+Proposition \ref{compilat-r} (ii) tells us that there is an isomorphism
+$$\oint_{B\in \Bc}  (\Hom_\vc(F(B),V\ot F(B)), \gamma) \simeq \Nat_{\! m}(F, V\ot F). $$
+From the proof of Proposition \ref{int-hom}, one can see that the dinatural transformations of the end $\oint_{B\in \Bc}  \Hom_\vc(F(B)\ot {}^*F(B),V)$ are given by
+$$\widehat{\pi}_B:\oint_{B\in \Bc}  \Hom_\vc(F(B)\ot {}^*F(B),V)\to \Hom_\vc(F(B)\ot {}^*F(B),V), $$
+$$\widehat{\pi}_B(g)= g\circ \pi_B.$$
+Here, we are using identification $$\oint_{B\in \Bc}  \Hom_\vc(F(B)\ot {}^*F(B),V)= \Hom_\vc(\oint^{B\in \Bc}  F(B)\ot {}^*F(B),V).$$
+
+
+ It follows by a straightforward computation that
+$$\gamma^X_{M,N} (\psi^V_{F(M\triangleleft {}^*X ),F(N )}(f))=\psi^V_{F(M ),F(N\triangleleft X)}(f\circ \beta^X_{N,M} ),$$
+for any $M, N\in \Bc$ and any $f\in \Hom_\Bc(F(M \triangleleft {}^*X)\ot {}^*F(N ),V)$. This implies, using Proposition \ref{compilat-r} (i) that, for any $V\in \vc$, there exists an isomorphism 
+$$ \widehat{\psi}^V:\oint_{B\in \Bc}  \Hom_\vc(F(B)\ot {}^*F(B),V)\to \oint_{B\in \Bc}  \Hom_\vc(F(B),V\ot F(B)),$$
+such that $\mu_B\circ\widehat{\psi}^V= \psi^V_{F(B),F(B)}\circ \widehat{\pi}_B.$ For any $V\in \vc$ we have that 
+\begin{align*}  \Hom_\vc(C(F),V)&\simeq \oint_{B\in \Bc}  \Hom_\vc(F(B)\ot {}^*F(B),V)\\
+&\simeq \oint_{B\in \Bc}  \Hom_\vc(F(B),V\ot F(B))\\
+&\simeq \Nat_{\! m}(F, V\ot F).
+\end{align*}
+The first isomorphism is Proposition \ref{int-hom}. Tracing this chain of isomorphisms, one can see that, the composition coincides with $\omega$ defined by Equation \eqref{omega-isom}.
+\epf
+
+
+\begin{prop}\label{coalg-coend} Let $\vc$ be a  tensor category, and $\Bc$ be a right $\vc$-module category. Let $(F,c):\Bc\to \vc$ be  a right exact module functor. The object $C(F)\in\vc$ has a coalgebra structure $\Delta:C(F)\to C(F)\ot C(F)$, $\varepsilon:C(F)\to \uno$ determined by diagramms
+\begin{equation}\label{coproduct-c}
+\xymatrix{
+ F(B)\ot {}^*F(B) \ar[d]_{\id\ot \mathrm{coev}_{F(B)} \ot\mathrm{id}}\ar[rr]^{\pi_B}&& C(F)
+ \ar[d]^{\Delta} \\
+ F(B)\ot {}^*F(B)\ot  F(B)\ot {}^*F(B) \ar[rr]_{\qquad\pi_B\ot \pi_B }&& C(F)\ot C(F),}
+\end{equation}
+\begin{equation}\label{counit-c}
+\xymatrix{ F(B)\ot {}^*F(B)    \ar[rr]^{\pi_B}
+\ar[dr]_{ \mathrm{ev}_{F(B)}  }&& C(F)
+\ar[dl]^{\varepsilon }\\ & \uno,&}
+\end{equation}
+for any $B\in \Bc$.
+\end{prop}
+\pf It follows by a straightforward computation that, the maps
+$$ \ev_{F(B)}:F(B)\ot {}^*F(B)\to \uno,  $$
+$$(\pi_B\ot \pi_B )(\id\ot \coev_{F(B)} \ot\id): F(B)\ot {}^*F(B)\to C(F)\ot C(F), $$
+are dinatural maps. It follows from Diagram \eqref{evaluation-mod} that $ \ev_{F(B)}$  satisfies \eqref{dinat:coend:module:right}.  It follows from Diagram \eqref{coevaluation-mod} and the fact that $\pi$ satisfies \eqref{dinat:coend:module:right} that, $(\pi_B\ot \pi_B )(\id\ot \coev_{F(B)} \ot\id)$ also satisfies Equation \eqref{dinat:coend:module:right}. Whence, the existence of $\Delta$ and $\varepsilon$ follow from the universal property of the relative coend. 
+\medbreak
+
+The proof that $(C(F),\Delta, \varepsilon)$ is a coalgebra is standard, and it follows from Diagrams \eqref{coproduct-c}, \eqref{counit-c}.
+\epf 
+
+Let $\vc$ be a tensor category and $C\in \vc$ be a coalgebra. The category ${}^C\vc$, of left $C$-comodules in $\vc$, is a right $\vc$-module category. The action is given as follows. If $(W,\rho)\in {}^C\vc$, then $W \triangleleft Y=W\ot Y$, where the coaction on $W\ot Y$ is given by $\rho\ot \id_Y.$
+The forgetful functor $\uc:{}^C\vc\to \vc$ is a $\vc$-module functor. The next result says that the coalgebra reconstructed from the forgetful functor $\uc$ coincides with $C$.
+
+\bigbreak
+
+In this case, the functor $S^\uc$ has a prebalancing given by
+$$\beta^X_{A,B}=\id_B\ot (\phi^l_{A,X})^{-1},$$
+for any $A, B\in {}^C\vc$, $X\in \vc$. 
+\begin{lema}\label{cc} There exists an isomorphism of coalgebras $C(\uc)\simeq C$ in $\vc$.
+\end{lema}
+\pf  In this particular case, if $T\in\vc$ is an object, and $\lambda_W:W\ot {}^*W\to T$ is a dinatural transformation, Equation \eqref{dinat:coend:module:right} writes as
+\begin{equation}\label{new.3.5} 
+\lambda_{W\ot {}^*V}(\id_W\ot (\phi^l_{W\ot {}^*V,V})^{-1}) =\lambda_W (\id_W\ot {}^*(\id_W\ot \coev_V)),
+\end{equation}
+for any $W\in {}^C\vc, V\in \vc.$
+
+If $W\in {}^C\vc$ has comodule structure given by $\rho_W\to C\ot W$, then we define
+$\pi_W:W\ot {}^*W\to  C,$ the morphisms given by $\pi_W=\bar{\psi}^C_{W,W}(\rho)$. Recall that, natural isomorphisms $\bar{\psi}$ were defined in \eqref{duals2}. Maps $\pi_W$ are dinatural transformations, and they satisfy Equation \eqref{new.3.5}.
+
+Let $A\in \vc$ be another object, equipped with dinatural transformations $\lambda_W:W\ot {}^*W\to  A$ such that they satisfy Equation \eqref{new.3.5}. Define $h$ as the composition
+$$h: C\xrightarrow{\id_C\ot {}^*\varepsilon}C\ot {}^*C   \xrightarrow{\lambda_C} A.$$
+Since $\lambda$ is dinatural, and it satisfies  \eqref{new.3.5}, one can see that $h\circ \pi_W= \lambda_W$. This proves that, indeed, $C(\uc)\simeq C$.
+\epf
+
+
+
+\begin{prop}\label{factorization-F} Let $\Bc$ be a right $\vc$-module category, and $(F,c):\Bc\to \vc$ be a right exact module functor. Set $C=C(F)$ the coalgebra defined in Proposition \ref{coalg-coend}.
+\begin{itemize}
+
+\item[1.] The functor $(F,c):\Bc\to \vc$ factorizes as
+\begin{equation}
+\xymatrix{
+&{}^C\vc\ar[dr]^-{\uc}\ar@{}[d]|{}&\\
+\Bc\ar[ru]^-{\widehat{F}}\ar[rr]_-{F}&&\vc.
+}
+\end{equation} 
+Here $\uc:{}^C\vc \to\vc$ is the forgetful functor, and the functor $\widehat{F}$ is a $\vc$-module functor.
+\item[2.] If $F$ is exact (respect. faithful) then $\widehat{F}$ is exact (respect. faithful). 
+\end{itemize}
+\end{prop}
+\pf 1. For any $A\in \Bc$, define $\widehat{F}(A)=(F(A),\rho_A),$ where 
+$$\rho_A=\psi^C_{F(A),F(A)}(\pi_A):F(A)\to C\ot F(A).$$ Using diagrams \eqref{coproduct-c}, \eqref{counit-c}, one can prove that
+$$(\id_C\ot \rho_A)\rho_A=(\Delta\ot \id)\rho_A,$$
+$$(\varepsilon\ot\id)\rho_A=\id_{F(A)}.$$
+
+
+\bigbreak
+
+2. Clearly, if $F$ is faithful, then $\widehat{F}$ is faithful. Assume that $F$ is left exact. Let $f:A\to B$ be a morphism in $\Bc$ with kernel $k=\ker f: K\to A$. Since $F$ is left exact, then, $F(k)=\ker F(f)$. We only need to prove that, the morphism $F(k):F(K)\to F(A)$ is a map of $C$-comodules. That is, we need to prove the equality
+\begin{equation}\label{exact-F} (\id\ot F(k))  \psi^C_{F(K),F(K)}(\pi_K)= \psi^C_{F(A),F(A)}(\pi_A)  F(k).
+\end{equation}
+Using the naturality of $\psi$, it follows that
+\begin{align*}  \psi^C_{F(A),F(A)}(\pi_A)  F(k)&=  \psi^C_{F(K),F(A)}(\pi_A (F(k)\ot \id))\\
+&=\psi^C_{F(K),F(A)}(\pi_K (\id \ot {}^*F(k)))\\
+&=(\id \ot F(k)) \psi^C_{F(K),F(K)}(\pi_K ).
+\end{align*}
+The second equality follows from the dinaturality of $\pi$, the third equality follows again by the naturality of $\psi$. The proof that, if $F$ is right exact, then $\widehat{F}$ is right exact, follows similarly.
+\epf

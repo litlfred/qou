@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-000",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-000",
   "kind": "prose",
-  "title": "Rozansky 1",
-  "pageStart": 1,
-  "pageEnd": 1,
-  "text": "../sections/sec-000-l-rozansky-1.md",
-  "derivedFrom": "library/arxiv-q-alg-9504015v2/manifest",
-  "sourceDocument": "library/arxiv-q-alg-9504015v2/manifest",
+  "title": "Acknowledgements",
+  "pageStart": 32,
+  "pageEnd": 33,
+  "text": "../sections/sec-000-acknowledgements.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-q-alg-9504015v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-q-alg-9504015v2",
   "provenance": "ingested"
 }

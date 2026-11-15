@@ -1,16 +1,24 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/mcmullen-braids-hodge-2013/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Braiding of the attractor and the failure of iterative algorithms",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/mcmullen-braids-hodge-2013",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Inventiones Mathematicae",
   "contains": [
     "library/mcmullen-braids-hodge-2013/sections/sec-000"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "mcmullen-braids-hodge-2013",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "mcmullen-braids-hodge-2013.pdf",
     "source_sha256": "b859c9ad6f621baa3df0dd613a18cde08192b115277ca0e39fe538ff6a6a4f7a",
     "pages": 14,

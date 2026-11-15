@@ -1,8 +1,13 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1901.01312v1/manifest",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1901.01312v1",
   "@type": [
-    "folio:SourceDocument"
+    "cat-harness:SourceDocument"
   ],
   "title": "Braided fermions from Hurwitz algebras",
   "contains": [
@@ -19,19 +24,22 @@
     "library/arxiv-1901.01312v1/sections/sec-010",
     "library/arxiv-1901.01312v1/sections/sec-011",
     "library/arxiv-1901.01312v1/sections/sec-012",
-    "library/arxiv-1901.01312v1/sections/sec-013",
-    "library/arxiv-1901.01312v1/sections/sec-014",
-    "library/arxiv-1901.01312v1/sections/sec-015",
-    "library/arxiv-1901.01312v1/sections/sec-016",
-    "library/arxiv-1901.01312v1/sections/sec-017",
-    "library/arxiv-1901.01312v1/sections/sec-018",
-    "library/arxiv-1901.01312v1/sections/sec-019",
-    "library/arxiv-1901.01312v1/sections/sec-020",
-    "library/arxiv-1901.01312v1/sections/sec-021"
+    "library/arxiv-1901.01312v1/sections/sec-013"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1901.01312&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-1901.01312v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1901.01312v1.pdf",
     "source_sha256": "a480da38283622d6e9e89a10085df082351fe3e7687c88b86e0da444742cb0c6",
     "pages": 10,

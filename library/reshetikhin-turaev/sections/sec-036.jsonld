@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/reshetikhin-turaev/sections/sec-036",
   "@type": [
     "doco:Section"
@@ -10,7 +15,7 @@
   "contains": [
     "library/reshetikhin-turaev/blocks/prose-sec-036"
   ],
-  "derivedFrom": "library/reshetikhin-turaev/manifest",
-  "sourceDocument": "library/reshetikhin-turaev/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/reshetikhin-turaev",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/reshetikhin-turaev",
   "provenance": "ingested"
 }

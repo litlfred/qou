@@ -8,36 +8,11 @@ pages: 4-5
 source_pdf: 2311.02632v2.pdf
 source_sha256: 0da5ba097b79340d
 doc_brief: "SPECTRUM OF THE LAPLACIAN ON THE FRICKE-MACBEATH SURFACE — The Fricke-Macbeath surface is the unique Hurwitz surface of genus 7 with 504 conformal automorphisms."
+text_source: latex
+latex_prose_ratio: 0.961
+latex_coverage_ratio: 0.898
 ---
-review of the properties of the Laplacian on a Riemannian manifold. For a detailed
-discussion on this topic, see [Bus10]. Consider a Riemannian manifold M with the
-metric given by
-ds2 =
-X
-j,k
-gjkdxjdxk.
-The Laplacian ∆, acting on C∞(M), can be locally expressed by:
-∆ =−
-X
-j,k
-1√detg
-∂
-∂xj
-p
-detgg jk ∂
-∂xk
-
-,
-SPECTRUM OF THE LAPLACIAN ON THE FRICKE-MACBEATH SURF ACE 5
-where gjk are the entries of the inverse matrix of ( gjk) and detg stands for the deter-
-minant of the matrix ( gjk). For a compact connected manifold, ∆ has non-negative
-discrete eigenvalues
-0 =λ0 <λ 1≤λ2≤... →∞,
-with corresponding C∞-eigenfunctions given by
-∆ϕi =λiϕi,
-which together provide an orthonormal basis for L2(M).
-For a Riemannian manifold, the Laplacian ∆ commutes with isometries of M. This
-implies that for an eigenfunction f of ∆ and an isometry g,f◦g−1 is an eigenfunction
-with the same eigenvalue as f. Consequently, the complex vector space of eigenfunc-
-tions with a given eigenvalue becomes a representation for a group of isometries of
-M.
+In this subsection, we provide a brief review of the properties of the Laplacian on a Riemannian manifold. For a detailed discussion on this topic, see [@MR2742784]. Consider a Riemannian manifold $M$ with the metric given by $$ds^2 = \sum_{j,k} g_{jk} dx^j dx^k.$$ The Laplacian $\Delta$, acting on $C^\infty(M)$, can be locally expressed by: $$\Delta = -\sum_{j,k} \frac{1}{\sqrt{\det g}} \frac{\partial}{\partial x^j}
+\left( \sqrt{\det g}\, g^{jk} \frac{\partial}{\partial x^k} \right),$$ where $g^{jk}$ are the entries of the inverse matrix of $(g_{jk})$ and $\det g$ stands for the determinant of the matrix $(g_{jk})$. For a compact connected manifold, $\Delta$ has non-negative discrete eigenvalues $$0=\la_0< \la_1 \leq \la_2 \leq \ldots \to \infty,$$ with corresponding $C^{\infty}$-eigenfunctions given by $$\Delta \phi_{i}=\la_{i} \phi_{i},$$ which together provide an orthonormal basis for $L^{2}(M)$.
+
+For a Riemannian manifold, the Laplacian $\Delta$ commutes with isometries of $M$. This implies that for an eigenfunction $f$ of $\Delta$ and an isometry $g$, $f\circ g^{-1}$ is an eigenfunction with the same eigenvalue as $f$. Consequently, the complex vector space of eigenfunctions with a given eigenvalue becomes a representation for a group of isometries of $M$.

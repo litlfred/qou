@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-25T19:11:10.744025+00:00",
-  "commitSha": "ff136a8c12b173bac1a7f16cdd997f05727333c6",
+  "computedAt": "2026-10-05T14:21:53.592301+00:00",
+  "commitSha": "21ddc42fa77458b1226f3fcd08020dcdccc58bd4",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "habiro-frobenius-norm-probe",
   "scriptFile": "habiro_frobenius_norm_probe.py",
   "scriptHash": "1493a8beb6c6",
-  "scriptCommitSha": "19e6bb4e41ec4d78bcb97ea17b3463b8e0e364a5",
+  "scriptCommitSha": "aec13cd14c411eb4147f57997ef58513b1559694",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -18,10 +18,10 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+    "mpmath": "1.3.0"
   },
   "invocation": {
     "argv": [
@@ -231,12 +231,12 @@
           "exact": true,
           "truncates_at_m": 10,
           "galois_orbit_size": 4,
-          "galois_trace_int": 58,
+          "galois_trace_int": -1077,
           "galois_trace_is_integer": true,
-          "galois_norm_int": 101321,
+          "galois_norm_int": 1606039171,
           "galois_norm_is_integer": true,
           "galois_norm_is_unit": false,
-          "galois_norm_abs": 101321
+          "galois_norm_abs": 1606039171
         },
         {
           "prime": 7,
@@ -281,12 +281,188 @@
           "galois_trace_int": null
         }
       ]
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "frobenius_norms": [
+        {
+          "prime": 2,
+          "exact": true,
+          "truncates_at_m": 4,
+          "galois_orbit_size": 2,
+          "galois_trace_int": 768,
+          "galois_trace_is_integer": true,
+          "galois_norm_int": 147456,
+          "galois_norm_is_integer": true,
+          "galois_norm_is_unit": false,
+          "galois_norm_abs": 147456
+        },
+        {
+          "prime": 3,
+          "exact": true,
+          "truncates_at_m": 6,
+          "galois_orbit_size": 2,
+          "galois_trace_int": 21,
+          "galois_trace_is_integer": true,
+          "galois_norm_int": 171,
+          "galois_norm_is_integer": true,
+          "galois_norm_is_unit": false,
+          "galois_norm_abs": 171
+        },
+        {
+          "prime": 5,
+          "exact": true,
+          "truncates_at_m": 10,
+          "galois_orbit_size": 4,
+          "galois_trace_int": 69011,
+          "galois_trace_is_integer": true,
+          "galois_norm_int": 194330739691,
+          "galois_norm_is_integer": true,
+          "galois_norm_is_unit": false,
+          "galois_norm_abs": 194330739691
+        },
+        {
+          "prime": 7,
+          "exact": true,
+          "truncates_at_m": 14,
+          "galois_orbit_size": 6,
+          "galois_trace_int": 200404,
+          "galois_trace_is_integer": true,
+          "galois_norm_int": 1789496558770579,
+          "galois_norm_is_integer": true,
+          "galois_norm_is_unit": false,
+          "galois_norm_abs": 1789496558770579
+        },
+        {
+          "prime": 11,
+          "exact": false,
+          "galois_norm_int": null,
+          "galois_norm_is_unit": null,
+          "galois_trace_int": null
+        },
+        {
+          "prime": 13,
+          "exact": false,
+          "galois_norm_int": null,
+          "galois_norm_is_unit": null,
+          "galois_trace_int": null
+        },
+        {
+          "prime": 17,
+          "exact": false,
+          "galois_norm_int": null,
+          "galois_norm_is_unit": null,
+          "galois_trace_int": null
+        },
+        {
+          "prime": 19,
+          "exact": false,
+          "galois_norm_int": null,
+          "galois_norm_is_unit": null,
+          "galois_trace_int": null
+        },
+        {
+          "prime": 23,
+          "exact": false,
+          "galois_norm_int": null,
+          "galois_norm_is_unit": null,
+          "galois_trace_int": null
+        }
+      ]
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "frobenius_norms": [
+        {
+          "prime": 2,
+          "exact": true,
+          "truncates_at_m": 4,
+          "galois_orbit_size": 2,
+          "galois_trace_int": 3072,
+          "galois_trace_is_integer": true,
+          "galois_norm_int": 2359296,
+          "galois_norm_is_integer": true,
+          "galois_norm_is_unit": false,
+          "galois_norm_abs": 2359296
+        },
+        {
+          "prime": 3,
+          "exact": true,
+          "truncates_at_m": 6,
+          "galois_orbit_size": 2,
+          "galois_trace_int": 21,
+          "galois_trace_is_integer": true,
+          "galois_norm_int": 171,
+          "galois_norm_is_integer": true,
+          "galois_norm_is_unit": false,
+          "galois_norm_abs": 171
+        },
+        {
+          "prime": 5,
+          "exact": true,
+          "truncates_at_m": 10,
+          "galois_orbit_size": 4,
+          "galois_trace_int": -190286,
+          "galois_trace_is_integer": true,
+          "galois_norm_int": 2314302445411,
+          "galois_norm_is_integer": true,
+          "galois_norm_is_unit": false,
+          "galois_norm_abs": 2314302445411
+        },
+        {
+          "prime": 7,
+          "exact": true,
+          "truncates_at_m": 14,
+          "galois_orbit_size": 6,
+          "galois_trace_int": 1816931,
+          "galois_trace_is_integer": true,
+          "galois_norm_int": 15652593660234049,
+          "galois_norm_is_integer": true,
+          "galois_norm_is_unit": false,
+          "galois_norm_abs": 15652593660234049
+        },
+        {
+          "prime": 11,
+          "exact": false,
+          "galois_norm_int": null,
+          "galois_norm_is_unit": null,
+          "galois_trace_int": null
+        },
+        {
+          "prime": 13,
+          "exact": false,
+          "galois_norm_int": null,
+          "galois_norm_is_unit": null,
+          "galois_trace_int": null
+        },
+        {
+          "prime": 17,
+          "exact": false,
+          "galois_norm_int": null,
+          "galois_norm_is_unit": null,
+          "galois_trace_int": null
+        },
+        {
+          "prime": 19,
+          "exact": false,
+          "galois_norm_int": null,
+          "galois_norm_is_unit": null,
+          "galois_trace_int": null
+        },
+        {
+          "prime": 23,
+          "exact": false,
+          "galois_norm_int": null,
+          "galois_norm_is_unit": null,
+          "galois_trace_int": null
+        }
+      ]
     }
   ],
   "summary": {
-    "n_exact": 7,
+    "n_exact": 15,
     "n_unit": 2,
-    "n_nonunit": 5,
+    "n_nonunit": 13,
     "route_a_supported": false
   }
 }

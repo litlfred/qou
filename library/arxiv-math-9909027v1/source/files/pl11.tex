@@ -1,0 +1,430 @@
+%%%%%%%%% pl11.tex %%%%%%
+\begin{abstract}
+We introduce a notion of planar
+algebra, the simplest example of which is a vector
+space of tensors, closed under planar
+contractions. A planar algebra with suitable
+positivity properties produces a finite index
+subfactor of a II${}_1$ factor, and vice versa.
+\end{abstract}
+
+\baselineskip=16 pt
+
+\noindent
+{\large\bf 0. Introduction}
+
+\medskip At first glance there is nothing planar
+about a subfactor. A factor $M$ is a unital
+$*$-algebra of bounded linear operators on a
+Hilbert space, with trivial centre and closed in
+the topology of pointwise convergence. The factor
+$M$ is of type II${}_1$ if it admits a
+(normalized) trace, a linear function $tr$:
+$M\to\Bbb C$ with $tr(ab)=tr(ba)$ and
+tr$(1)=1$. In [J1] we defined the notion of {\it
+index} $[M:N]$ for II${}_1$ factors $N\subset M$.
+The most surprising result of [J1] was that
+$[M:N]$ is ``quantized" --- to be precise, if
+$[M:N] <4$ there is an integer $n\geq 3$ with
+$[M:N]=4\cos^2\pi/n$. This led to a surge of
+interest in subfactors and the major theorems of
+Pimsner, Popa and Ocneanu ([PP],[Po1],[O1]). These
+results turn around a ``standard invariant" for
+finite index subfactors, also known variously as
+the ``tower of relative commutants", the
+``paragroup", or the ``$\l$-lattice". In favorable
+cases the standard invariant allows one to
+reconstruct the subfactor, and both the paragroup
+and $\l$-lattice approaches give complete
+axiomatizations of the standard invariant. In this
+paper we give, among other things, yet another
+axiomatization which has the advantage of
+revealing an underlying {\it planar} structure not
+apparent in other approaches.  It also places the standard
+invariant in a larger mathematical context. In
+particular we give a rigorous justification for
+pictorial proofs of subfactor theorems.
+Non-trivial results have already been obtained
+from such arguments in [BJ1]. The standard
+invariant is sufficiently rich to justify several
+axiomatizations --- it has led to the discovery of
+invariants in knot theory ([J2]), 3-manifolds
+([TV]) and combinatorics ([NJ]), and is of
+considerable interest in conformal and algebraic
+quantum field theory ([Wa],[FRS],[Lo]).
+
+Let us now say exactly what we mean by a planar
+algebra. The best language to use is that of
+operads ([Ma]). We define the {\it planar operad},
+each element of which determines a multilinear
+operation on the standard invariant.
+
+A planar $k$-tangle will consist of the unit disc
+$D$ $(=D_0)$ in $\Bbb C$ together with a finite
+(possibly empty) set of disjoint subdiscs
+$D_1,D_2,\dots ,D_n$ in the interior of $D$. Each
+disc $D_i$, $i\geq 0$, will have an even number
+$2k_i\geq 0$ of marked points on its boundary
+(with $k=k_0$). Inside $D$ there is also a finite
+set of disjoint smoothly embedded curves called
+{\it strings} which are either closed curves or
+whose boundaries are marked points of the $D_i$'s.
+Each marked point is the boundary point of some
+string, which meets the boundary of the
+corresponding disc transversally. The strings all
+lie in the complement of the interiors $\stackrel{\circ}{D_i}$
+of the $D_i$, $i\geq 0$. The connected components of
+the complement of the strings in 
+$\dsize{\stackrel{\circ}{D}\backslash \bigcup^n_{i=1}D_i}$ 
+are called regions
+and are shaded black and white so that regions
+whose closures meet have different shadings. The
+shading is part of the data of the tangle, as is
+the choice, at every $D_i$, $i\geq 0$, of a white
+region whose closure meets that disc. 
+The case $k=0$ is exceptional - 
+there are two kinds of 0-tangle, according to
+whether the region near the boundary is shaded
+black or white. An example of a planar 4-tangle,
+where the  chosen white regions are marked with a
+$*$ close to their respective discs, is given
+below.
+
+\[
+\input{xfig/pic1}
+\]
+The {\it planar operad} $\Bbb P$ is the set of all
+orientation-preserving diffeomorphism classes of
+planar $k$ tangles, $k$ being arbitrary. The
+diffeomorphisms preserve the boundary of $D$ but
+may move the $D_i$'s, $i>1$.
+
+Given a planar $k$ tangle $T$, a $k'$-tangle $S$,
+and a disk $D_i$ of $T$ with $k_i=k'$ we define
+the  $k$ tangle $T\circ_i S$ by isotoping $S$ so
+that its boundary, together with the marked
+points, coincides with that of $D_i$, and the
+chosen white regions for $D_i$ (in $T$) and $S$ share a
+boundary segment.  The strings may then be joined
+at the boundary of $D_i$ and smoothed. The
+boundary of $D_i$ is then removed to obtain the
+tangle $T\circ_i S$ whose diffeomorphism class
+clearly depends only on those of $T$ and $S$.
+This gives $\Bbb P$ the structure of a coloured
+operad, where each $D_i$ for $i>0$ is assigned
+the colour $k_i$ and composition is only allowed
+when the colours match. There are two distinct
+colours for $k=0$ according to the shading near
+the boundary. The $D_i$'s for $i\geq 1$ are to be
+thought of as inputs and $D_0$ is the output. (In
+the usual definition of an operad the inputs are
+labelled and the symmetric group $S_n$ acts on
+them. Because of the colours, $S_n$ is here replaced by
+$S_{n_1}\x S_{n_2}\x\dots\x S_{n_p}$ where  $n_j$ is the
+number of internal discs coloured $j$.
+Axioms for such a coloured operad could be given
+along the lines of [Ma] but we do not need them
+since we have a concrete example.) The picture
+below exhibits the composition
+
+\[
+	\input{xfig/pic2}
+\]
+
+The most general notion of a planar algebra that
+we will contemplate is that of an algebra over
+$\Bbb P$ in the sense of [Ma].  That is to say, first
+of all, a disjoint union $V_k$ of vector spaces
+for $k>0$ and two vector spaces
+$V_0^{\text{white}}$ and $V_0^{\text{black}}$
+(which we will call $P_0$ and $P_{1,1}$ later on).
+Linear maps between tensor powers of these vector
+spaces form a coloured operad \ Hom \ in the
+obvious way under composition of maps and the
+planar algebra structure  on the $V$'s is given by
+a morphism of coloured operads from $\Bbb P$ to Hom. 
+In
+practice this means that, to a $k$-tangle $T$ in
+$\Bbb P$ there is a linear map
+$Z(T):\bigotimes^n_{i=1}V_{k_i}\to V_k$ such that
+$Z(T\circ_i S)=Z(T)\circ_i Z(S)$ where the
+$\circ_i$ on the right-hand side is composition of
+linear maps in \ Hom \ .
+
+Note that the vector spaces $V_0^{\text{white}}$ and $V_0^{\text{black}}$
+may be different. This is the case for the ``spin
+models" of $\S$3. Both these $V_0$'s become
+commutative associative algebras using the tangles
+
+\[
+	\input{xfig/pic3}
+\]
+
+To handle tangles with no internal discs we decree
+that the tensor product over the empty set be the
+field $K$ and identify Hom$(K,V_k)$ with $V_k$ so
+that each $V_k$ will contain a privileged subset
+which is $Z(\{ k$-tangles with no internal
+discs$\})$. This is the ``unital"
+ structure (see [Ma]).
+
+One may want to impose various conditions such as
+dim$(V_k)<\i$ for all $k$. The condition
+dim$(V_0^{\text{white}})=1=$dim$(V_0^{\text{black}})$
+is significant and we impose it in our formal
+definition of planar algebra (as opposed to
+general planar algebra) later on.  It implies that
+there is a unique way to identify each $V_0$ with
+$K$ as algebras, and $Z(\bigcirc)=1=Z(\deyea )$.
+There are thus also two scalars associated to a
+planar algebra, $\d_1=Z(\weye )$ and
+$\d_2=Z(\beye )$ (the inner circles are strings,
+not discs!). It follows that  $Z$ is
+multiplicative on connected components, i.e., if a
+part of a tangle $T$ can be surrounded by a disc
+so that $T=T'\circ_i S$ for a tangle $T'$ and a
+0-tangle $S$, then $Z(T)=Z(S)Z(T')$ where $Z(S)$
+is a multilinear map into the field $K$.
+
+Two simple examples serve as the keys to
+understanding the notion of a planar algebra. The
+first is the Temperley-Lieb algebra $TL$, some
+vestige of which is present in every planar
+algebra. The vector spaces $TL_k$ are:
+$$
+TL_0^{\text{black}}\simeq
+TL_0^{\text{white}}\simeq K
+$$
+and $TL_k$ is the vector space  whose basis is the
+set of diffeomorphism classes of connected planar
+$k$-tangles with no internal discs, of which there
+are $\frac{1}{k+1}{2k\choose k}$. The
+action of a planar $k$-tangle on $TL$ is almost
+obvious --- when one fills the internal discs of a
+tangle with basis elements of $TL$ one obtains
+another basis element, except for some simple
+closed curves. Each closed curve counts a
+multiplicative factor of $\d$ and then is removed.
+It is easily verified that this defines an action
+of $\Bbb P$ on $TL$.
+As we have observed, any planar algebra contains
+elements corresponding to the $TL$ basis. They are
+not necessarily linearly independent. See [GHJ]
+and $\S$2.1.
+
+ The second key example of a planar algebra is
+given by tensors. We think of a tensor as an
+object which yields a number each time its indices
+are specified. Let $V_k$ be the vector space of
+tensors with $2k$ indices. An element of $\Bbb P$
+gives a scheme for contracting tensors, once a
+tensor is assigned to each internal disc. The
+indices lie on the strings and are locally
+constant thereon. The boundary indices are fixed
+and are the indices of the output tensor. All
+indices  on strings not touching $D$ are summed
+over and one contracts by taking, for a given set
+of indices, the product of the values of the
+tensors in the internal discs. One recognizes the
+partition function of a statistical mechanical
+model ([Ba]), the boundary index values being the
+boundary conditions and the tensor values being
+the Boltzmann weights. This diagrammatic
+contraction calculus for tensors is well known
+([Pe]) but here we are only considering {\it
+planar} contraction systems. If the whole planar
+algebra of all tensors were the only example this
+subject would be of no interest, but in fact there
+is a huge family of planar subalgebras --- vector
+spaces of tensors closed under planar contractions
+--- rich enough to contain the theory of finitely
+generated groups and their Cayley graphs. See
+$\S$2.7.
+
+The definition of planar algebra we give in $\S$1
+is not the operadic one. When the planar algebra
+structure first revealed itself, the $V_k$'s
+already had an associative algebra structure
+coming from the von Neumann algebra context. Thus
+our definition will be in terms of a universal planar
+algebra on some set of generators (labels) which
+can be combined in arbitrary planar fashion. The
+discs we have used above become boxes in section one, reflecting
+the  specific algebra structure we began with. The
+equivalence of the two definitions is completed in
+Proposition 1.20. The main ingredient of the equivalence is that the
+planar operad $\Bbb P$ is generated by the Temperley-Lieb algebra
+and tangles of two kinds:
+\begin{enumerate}
+\item Multiplication, which is the following
+tangle (illustrated for k =5)
+
+\[
+	\input{xfig/pic4}
+\]
+
+\item Annular tangles: ones with only one internal
+disc, e.g.,
+\end{enumerate}
+
+\[
+	\input{xfig/pic5}
+\]
+
+The universal planar algebra is useful for
+constructing planar algebras and restriction to
+the two generating tangles sometimes makes it
+shorter to check that a given structure is a
+planar  algebra.
+The algebra structure we begin with in $\S$1 corresponds of
+course to the multiplication tangle given above.
+
+The original algebra structure has been studied in
+some detail (see $\S$3.1) but it should be quite
+clear that the operad provides a vast family of
+algebra structures on a planar algebra which we
+have only just begun to appreciate. For instance,
+the annular tangles above form an algebra over
+which all the $V_k$'s in a planar algebra are
+modules. This structure alone seems quite rich
+([GL]) and we exploit it just a little to get
+information on principal graphs of subfactors in
+4.2.11. We have obtained more sophisticated
+results in terms of generating functions  which we
+will present in a future paper.
+
+We present several examples of planar algebras in
+$\S$2, but it is the connection with subfactors
+that has been our main motivation and guide for
+this work. The two leading theorems occur in
+$\S$4. The first one shows how to obtain a planar
+algebra from  a finite index subfactor $N\subset
+M$. The vector space $V_k$ is the set of
+$N$-central vectors in the $N-N$ bimodule
+$M_{k-1}=M\otimes_N M\otimes_N\dots\otimes_N M$
+($k$ copies of $M$), which, unlike $M_{k-1}$
+itself, is finite dimensional. The planar algebra
+structure on these $V_k$'s is obtained by a method
+reminiscent of topological quantum field theory.
+Given a planar  $k$-tangle $T$ whose internal
+discs are labelled by elements of the $V_j$'s, we
+have to show how to construct an element of $V_k$,
+associated with the boundary of $T$, in a natural
+way. One starts with a very small circle (the
+``bubble") in the distinguished white region of
+$T$, tangent to the boundary of $D$. We then allow
+this circle to bubble out until it gets to the
+boundary. On its way the bubble will have to cross
+strings of the tangle and envelop internal discs.
+As it does so it acquires shaded intervals which
+are its intersections  with the shaded regions of
+$T$. Each time the bubble envelops an internal
+disc $D_i$, it acquires $k_i$ such shaded
+intervals and, since an element of $V_{k_i}$ is a
+tensor in $\otimes^{k_i}_N M$, we assign elements
+of $M$ to the shaded region according to this
+tensor.  There are also rules for assigning and
+contracting tensors as the bubble crosses strings
+of the tangle. At the end we have an element of
+$\otimes^k_N M$ assigned to the boundary. This is
+the action of the operad element on the vectors in
+$V_{k_i}$. Once the element of $\otimes^k_N M$ has
+been constructed and shown to be invariant under
+diffeomorphisms, the formal operadic properties
+are immediate.
+
+One could try to carry out this procedure for an
+arbitrary inclusion $A\subset B$ of rings, but
+there are a few obstructions involved in showing
+that our bubbling process is well defined. Finite
+index (extremal) subfactors have all the special
+properties required, though there are surely other
+families of subrings for which the procedure is
+possible.
+
+The following tangle:
+
+\[
+	\input{xfig/pic6}
+\]
+
+\noindent defines a rotation of period $k$ ($2k$
+boundary points) so it is a consequence of the
+planar algebra structure that the rotation
+$x_1\otimes x_2\otimes\dots\otimes x_k\mapsto
+x_2\otimes x_3\otimes\dots\otimes x_k\otimes x_1$,
+which makes no sense on $M_{k-1}$, is well defined
+on $N$-central vectors and has period $k$. This
+result is in fact an essential technical
+ingredient of the proof of Theorem 4.2.1.
+
+Note that we seem to have avoided the use of
+correspondences in the sense of Connes ([Co1]) by
+working in the {\it purely algebraic} tensor
+product. But the avoidance of $L^2$-analysis,
+though extremely convenient, is a little illusory
+since the proof of the existence and periodicity
+of the rotation uses $L^2$ methods. The Ocneanu
+approach ([EK]) uses the $L^2$ definition and the vector spaces $V_k$ are defined
+as $Hom_{N,N}(\otimes^j_N M)$ and $Hom_{N,M}(\otimes^j_N M)$
+depending on the parity of k. It is no doubt possible
+to give a direct proof of Theorem 4.2.1 using this
+definition - this would be the ``hom" 
+version, our method being the ``$\otimes$" 
+method.
+
+To identify the operad structure with the usual
+algebra structure on $M_{k-1}$ coming from the
+``basic construction" of [J1], we show that the
+multiplication tangle above does indeed define the
+right formula. This, and a few similar details, is
+suprisingly involved and accounts for some
+unpleasant looking formulae in $\S$4. Several other
+subfactor notions, e.g.~tensor product, are shown
+to correspond to their planar algebra
+counterparts, already abstractly defined in $\S$3.
+Planar algebras also inspired, in joint work with
+D.~Bisch, a notion of free product. We give the
+definition here and will explore this notion in a
+forthcoming paper with Bisch.
+
+The second theorem of $\S$4 shows that one can
+construct a subfactor from a planar algebra with
+$*$-structure and suitable ``reflection"
+positivity. It is truly remarkable that the axioms
+needed by Popa for his construction of subfactors
+in [Po2] follow so closely the axioms of planar
+algebra, at least as formulated using boxes and
+the universal planar algebra. For Popa's construction is
+quite different from the ``usual" one of
+[J1], [F+], [We1], [We2]. Popa uses an
+amalgamated free product construction which
+introduces an unsatisfactory element in the
+correspondence between planar algebras and
+subfactors. For although it is true that the
+standard invariant of Popa's subfactor  is indeed
+the planar algebra from which the subfactor was
+constructed, it is {\it not} true that, if one
+begins with a subfactor $N\subset M$, even
+hyperfinite, and applies Popa's procedure to the
+standard invariant, one obtains $N\subset M$ as a
+result. There are many difficult questions here,
+the main one of which is to decide when a given
+planar algebra arises from a subfactor of the
+Murray-von Neumann hyperfinite type II${}_1$
+factor ([MvN]).
+
+There is a criticism that has and should be made of 
+our definition of a planar algebra - that it is
+too restrictive. By enlarging the class of tangles in the   
+planar operad, say so as to include oriented edges and 
+boundary points, or discs with an odd number of 
+boundary points, one would obtain a notion of planar
+algebra applicable to more examples. For instance,
+if the context were the study of group representations
+our definition would have us studying say, SU(n) by 
+looking at tensor powers of the form ${V\otimes\bar V\otimes V\otimes \bar V\dots}$
+(where V is the defining representation on $\Bbb C^n$)
+
+
+

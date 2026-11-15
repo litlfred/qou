@@ -1,0 +1,41 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-chern-character",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:chern-character",
+  "kind": "definition",
+  "title": "The Chern character of a quantum universe",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-grothendieck-group-of-a-qou",
+    "papers/quantum-observable-universe/blocks/def-hochschild-homology",
+    "papers/quantum-observable-universe/blocks/def-rigid-monoidal-category"
+  ],
+  "foreshadows": [
+    "papers/quantum-observable-universe/blocks/ex-su2-characters-and-quantum-dimension"
+  ],
+  "cites": [
+    "references/bghl-2017",
+    "references/loday-1998"
+  ],
+  "tags": [
+    "chern-character",
+    "hochschild-homology",
+    "grothendieck-group",
+    "quantum-dimension",
+    "trace"
+  ],
+  "defines": [
+    "chern-character"
+  ],
+  "leanRef": "qou:QOU.GrothendieckChern.chernCharacter",
+  "text": "chern-character.md",
+  "provenance": "authored"
+}

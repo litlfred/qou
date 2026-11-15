@@ -12,7 +12,7 @@ That probe closed with:
      but specifically **the rate**."
 
 That is WRONG as written.  `prop:hadron-half-life`
-(content/quantum-observable-universe/predicted-spectra/hadron-half-life.md)
+(folio/quantum-observable-universe/predicted-spectra/hadron-half-life.md)
 states a categorical decay RATE:
 
     Gamma_beta = |W(q)|^2 mu_0 / (2 pi^3) * [2]_q * |M_q|^2 * f(Q),
@@ -38,7 +38,7 @@ The single missing input is the weak-scale crossing count N_v:
      "... using q, mu_0, and the standard-physics value of G_F^2 m_e^5
       (which decomposes into q-dependent factors times mu_0, PENDING
       DERIVATION OF THE WEAK-SCALE CROSSING COUNT N_v)."
-  2. computations/_deprecated/t35-transfer-matrix.py:281:
+  2. fsh-guts/deprecated/computations/t35-transfer-matrix.py:281:
      "The ABSOLUTE half-life requires G_F (or N_v), which is open."
   3. hadron-half-life-verification Table 1, row `v`:
      "N_v * m_e/3 | Topological invariant N_v (OPEN)".

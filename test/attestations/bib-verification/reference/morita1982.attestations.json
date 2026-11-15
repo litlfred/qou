@@ -1,0 +1,63 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "morita1982",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 324,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/67-6-1860/67-6-1860.pdf"
+        },
+        "id": "morita1982",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Scanned journal article with no usable text layer (pdftotext returns only the download banner for all 17 pages); identified by rendering page 1 as an image and reading it directly. It formulates the electroweak theory over the QUATERNIONS: fermions and Higgs mesons are defined over H, the unit quaternions realise the gauge SU(2), and the construction reproduces the left-right symmetric SU(2)_L x SU(2)_R x U(1) theory at the phenomenological level while offering an algebraic explanation for the replication of quarks and leptons in flavour doublets. The corpus contains QOU/QuaternionicElectroweak.lean, whose docstring and declarations implement that construction essentially verbatim -- a fermion doublet is one quaternion (its four real degrees of freedom being the two complex degrees of a standard SU(2) doublet), IsSU2 is the unit-norm condition, su2L is left multiplication, su2R is right multiplication, and u1Y_isSU2 places the hypercharge phase inside SU(2) -- with no citation of any kind. That is a provenance gap: a library Lean file independently re-deriving a published 1982 construction. It is also a constraint, not just an attribution: bring_tetraplectic.md is explicit that identifying its Reeb-triad SU(2) with a physical gauge symmetry is 'interpretive, not derived', and this document's analysis says the natural gauge group of the quaternionic construction is LEFT-RIGHT SYMMETRIC, which the Standard Model is not at accessible energies. So the prior art both supplies the missing attribution and sharpens the open question the corpus has already flagged as interpretive.",
+          "keyResults": [
+            {
+              "locator": "Abstract and Sec. 1",
+              "statement": "Formulating fermions and Higgs mesons over the quaternions reproduces the left-right symmetric SU(2)_L x SU(2)_R x U(1) electroweak theory phenomenologically, gives an algebraic account of the replication of quarks and leptons in flavour doublets, and correlates the breakdown to U(1)_em with the existence of a Fock space for gauge singlets but not for quaternionic states.",
+              "useForFolio": "Supplies the missing attribution for the corpus's quaternionic-electroweak Lean file and, more usefully, tells the corpus what its own construction predicts: a left-right symmetric gauge group, which is a testable consequence of the interpretive identification bring_tetraplectic.md already flags as underived.",
+              "targets": [
+                "qou:QOU.Tetraplectic.su2L_su2R_commute",
+                "folio/quantum-observable-universe/lean/QOU/QuaternionicElectroweak.lean"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "A library Lean file reproduces a published construction with no citation; the entry is the minimum required for honest provenance.",
+              "target": "qou:QOU.Tetraplectic.su2L_su2R_commute",
+              "bean": "qou-csat"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "The prior art's conclusion -- that the quaternionic construction naturally yields a left-right symmetric gauge group -- is a concrete consequence of the corpus's own interpretive identification and should be recorded as such, so the identification is falsifiable rather than merely 'interpretive'.",
+              "target": "qou:QOU.Tetraplectic.su2L_su2R_commute",
+              "bean": "qou-t1ry"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "e2e5d45edd36"
+        },
+        "note": "Source IS held: library/67-6-1860. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
+        "verified_at": "2026-09-03T04:19:53Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-rigid-monoidal-vect",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:rigid-monoidal-vect",
+  "kind": "example",
+  "title": "$\\mathbb{C}[z]$ and $\\mathcal{O}(\\mathrm{SU}(2))$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-rigid-monoidal-category"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-rigid-monoidal-category",
+  "tags": [
+    "complex",
+    "su2",
+    "representation-theory"
+  ],
+  "leanRef": "qou:QOU.Examples.su2RigidData",
+  "text": "rigid-monoidal-vect.md",
+  "leanSource": "rigid-monoidal-vect.lean",
+  "provenance": "authored"
+}

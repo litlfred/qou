@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-macroscopic-stability-equivalence",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:macroscopic-stability-equivalence",
+  "kind": "conjecture",
+  "title": "Macroscopic stability is equivalent to the Riemann hypothesis",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-quantum-gap-collapse"
+  ],
+  "cites": [
+    "references/vonkoch1901"
+  ],
+  "tags": [
+    "stability",
+    "equivalence",
+    "riemann-hypothesis",
+    "macroscopic",
+    "continuum"
+  ],
+  "leanRef": "qou:QOU.AlgebraicSubstrate.macroscopic_stability_equivalence",
+  "text": "macroscopic-stability-equivalence.md",
+  "leanSource": "macroscopic-stability-equivalence.lean",
+  "provenance": "authored"
+}

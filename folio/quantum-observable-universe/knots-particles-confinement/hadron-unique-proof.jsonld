@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-hadron-unique",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:hadron-unique",
+  "kind": "proof",
+  "title": "Proof of uniqueness of hadrons up to braid isotopy",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-hadron-unique"
+  ],
+  "text": "hadron-unique-proof.md",
+  "provenance": "authored"
+}

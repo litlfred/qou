@@ -117,6 +117,39 @@ m_n_derived_3input = _M_N_MEV_MP   # mpf; float() cast removed 2026-08-31 (qou-4
 # float literals violate the NO-FLOAT64 discipline; TR_M feeds _geom(), a
 # live computation, so the truncation propagates into the emitted witness.
 # Both are fixed here by carrying mpmath.mpf at full witness precision.
+#
+# ══════════════════════════════════════════════════════════════════════════
+# ⚠ (iii) A THIRD DEFECT, 2026-09-13 — AND IT IS THE SAME SHAPE AS (i).
+#
+# The fix for (i) moved these to "convention D at the proton pin", canonical
+# when it landed on 2026-08-31. The 2026-09-05 owner ruling (bean `qou-hu1f`)
+# then made the borromean intra-nucleon word canonical, and this table did not
+# follow. So the entries below are GROUPED-era.
+#
+# MEASURED, not inferred (bean `qou-4383`): every entry reproduces to 50
+# significant digits under `atom_braid_word_3A(..., intra_order="grouped")`.
+# The canonical (borromean) values at the same pin are
+#
+#   p    0.62932840220292191816534574677848592760021940063436
+#   n    0.47513351715568221250609023267500579955840763470875
+#   D    0.15196833920423160759266569775106614127124096465526
+#   T    0.029144042360972065357254218791869844065838803564741
+#   3He  0.058596253654436380218956715452130256830877107284187
+#   4He  0.011237417659767421564199549374410607269662696081262
+#
+# NOT FLIPPED HERE, and the reason differs from the twelve-consumer argument
+# that pins `derivation_chain.TR_M_AT_Q0`. This table is self-contained —
+# nothing imports it. What stops a mechanical swap is that `alpha` is a
+# CALIBRATED fit parameter (`alpha = B(D)/defect(D)`) and T / 3He / 4He are
+# then pure predictions. Recomputing in the canonical frame does not correct a
+# constant; it changes what the model SAYS about every atom, which is the
+# owner's call on the model, not a frame repair. The emitted witness now
+# declares `intra_ordering_frame: "grouped"` so no consumer has to guess.
+#
+# The lesson (i) and (iii) share: a hardcoded trace does not track a ruling.
+# The durable fix is to read `canonical_trm_reference.tr_m_nucleon()`, which
+# selects by recorded q0 and cannot serve the wrong frame silently.
+# ══════════════════════════════════════════════════════════════════════════
 TR_M = {
     "p":   mp.mpf("1.1457596924573008696890815957741193059437280619435"),
     "n":   mp.mpf("0.98774368811580957163402016550129498205504875906279"),
@@ -266,6 +299,25 @@ def main() -> int:
             "from D's binding.  T, 3He, 4He are pure predictions."
         ),
         "computedAt": datetime.now(timezone.utc).isoformat(),
+        # WHICH FRAME THE NUMBERS ABOVE ARE IN (bean qou-4383, 2026-09-13).
+        # Machine-readable, because a consumer reading `rows` has no other way
+        # to tell, and the same omission is what let the grouped values sit
+        # here unnoticed. Same pattern as `weight_family` in the Magnus Omega2
+        # witnesses (qou-za3q): declaring the frame costs nothing and removes
+        # the ambiguity without re-meaning any existing field.
+        "intra_ordering_frame": "grouped",
+        "intra_ordering_frame_note": (
+            "SUPERSEDED. The TR_M table this probe computes from is grouped-era: "
+            "every entry reproduces to 50 significant digits under "
+            "atom_braid_word_3A(..., intra_order='grouped'), measured 2026-09-13. "
+            "The canonical word has been borromean since the 2026-09-05 owner "
+            "ruling (bean qou-hu1f). So alpha and every prediction in `rows` are "
+            "computed in a retired frame. Not silently re-framed here: alpha is a "
+            "calibrated fit parameter (from B(D)), so recomputing in the canonical "
+            "frame changes what the MODEL says, which is an owner call rather than "
+            "a mechanical constant fix. Canonical values are recorded above the "
+            "TR_M table in this file."
+        ),
         "alpha_MeV_per_unit_defect": alpha,
         "calibrated_from": "deuteron",
         "rows": rows,

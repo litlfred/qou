@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-skein-shell-correction",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:skein-shell-correction",
+  "kind": "remark",
+  "title": "Shell corrections from Skein polynomial factorization of the multi-nucleon link",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-elliptic-stability-locus"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-skein-binding-lagrangian",
+  "tags": [
+    "shell-correction",
+    "skein-polynomial",
+    "factorization",
+    "stability-pairs",
+    "closed-sublink",
+    "binding-energy"
+  ],
+  "leanRef": "qou:QOU.SkeinShellCorrection.SkeinShellCorrection",
+  "text": "skein-shell-correction.md",
+  "leanSource": "skein-shell-correction.lean",
+  "provenance": "authored"
+}

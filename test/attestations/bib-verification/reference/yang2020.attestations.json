@@ -1,0 +1,46 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "yang2020",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 277,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2009.03688v6/2009.03688v6.pdf"
+        },
+        "id": "yang2020",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "Invariant theory of SL(2,13) on the modular curve X(13): the surface equation x^5+y^3+z^2=0 is realised as a quotient CY/SL(2,13), giving a negative answer to Arnol'd-Brieskorn ('the E8-singularity need not be the Kleinian icosahedral singularity'), plus the analogous Q18 and E20 variations. QOU's two uses of E8 both run in the opposite, standard McKay direction and are untouched by this: (i) ex:ale classifies archimedean QOUs by resolving C^2/Gamma for Gamma subset SU(2) and reading the exceptional-divisor Dynkin graph; (ii) the s5-so3 keystone value map d_q(lambda)=[mark]_q (PR #3685) uses McKay 2I <-> affine E8-hat at the level of irreps -> Coxeter marks. Yang shows the *equation* admits other constructions; he does not show that C^2/2I resolves to anything other than E8-hat, so no step of either QOU argument is put at risk and no statement here is consumable. Scope-(a) negative: this document, as read, supplies nothing usable in the corpus. A devil's-advocate remark at ex:ale could cite it defensively (E8-as-equation vs E8-as-McKay-graph are different objects) but nothing in the corpus currently needs that distinction spelled out.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Read in full front matter + section outline; the results are about modular parametrisations of the E8/Q18/E20 surface equations over X(13), a direction the folio does not use. Adding a ref() entry would create a bib orphan.",
+              "target": "ex:ale"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T16:12:29.859Z",
+          "source_sha": "8eb9b4cbe269"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-integer-stability",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:integer-stability",
+  "kind": "proposition",
+  "title": "Integer stability: the valley of stability as a Diophantine constraint",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-stable-nucleus"
+  ],
+  "tags": [
+    "stability",
+    "diophantine",
+    "integer",
+    "valley-of-stability",
+    "coulomb",
+    "magic-numbers"
+  ],
+  "leanRef": "qou:QOU.Archimedean.integer_stability",
+  "text": "integer-stability.md",
+  "leanSource": "integer-stability.lean",
+  "provenance": "authored"
+}

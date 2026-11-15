@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1905.11619v2/blocks/prose-sec-011",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1905.11619v2/blocks/prose-sec-011",
   "kind": "prose",
   "title": "Derivations and the Akemann-Ostrand property",
   "pageStart": 17,
   "pageEnd": 18,
   "text": "../sections/sec-011-5-derivations-and-the-akemann-ostrand-property.md",
-  "derivedFrom": "library/arxiv-1905.11619v2/manifest",
-  "sourceDocument": "library/arxiv-1905.11619v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1905.11619v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1905.11619v2",
   "provenance": "ingested"
 }

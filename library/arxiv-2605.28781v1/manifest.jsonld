@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2605.28781v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2605.28781v1",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "The sum-product conjecture is false for real numbers",
   "contains": [
     "library/arxiv-2605.28781v1/sections/sec-000",
     "library/arxiv-2605.28781v1/sections/sec-001",
@@ -25,8 +30,18 @@
     "library/arxiv-2605.28781v1/sections/sec-016"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2605.28781&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-2605.28781v1",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "2605.28781v1.pdf",
     "source_sha256": "eee6d535af1996ca3f1592e51bba764df3ae6b01e6f7edfdb79a93abb196c08d",
     "pages": 25,

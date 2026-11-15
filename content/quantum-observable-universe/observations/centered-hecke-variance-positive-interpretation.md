@@ -1,1 +1,0 @@
-**Significance for the q-CLT.** The second free cumulant $\kappa_2^{(q)} = \mathrm{Var}(\sigma_i)$ prevents q-Gaussian degeneration. This guarantees a non-degenerate q-CLT limit across the Wenzl regime.

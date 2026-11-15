@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-co2-linear-geometry-and-d0",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:co2-linear-geometry-and-d0",
+  "kind": "remark",
+  "title": "Linear vs bent $CO_2$ geometry and observed dissociation energy",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-co2-molecular-braid"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-co2-molecular-braid",
+  "tags": [
+    "CO2",
+    "linear",
+    "geometry",
+    "LP-dual",
+    "dissociation-energy"
+  ],
+  "text": "co2-linear-geometry-and-d0.md",
+  "provenance": "authored"
+}

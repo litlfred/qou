@@ -1,0 +1,21 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+
+\begin{document}
+  \begin{tikzpicture}
+    \tikzstyle{vn} = [color=darkgray          , circle, outer sep=0.5pt, fill, inner sep=1.5pt]
+
+    \node[vn] (1) at ( 0.00, 0.00) {};
+    \node[vn] (2) at ( 0.25, 0.00) {};
+    \node[vn] (3) at ( 0.50, 0.00) {};
+    \node[vn] (4) at ( 0.50, 0.25) {};
+    \node[vn] (5) at ( 0.75, 0.00) {};
+    \node[vn] (7) at ( 1.00, 0.00) {};
+    \draw (1) -- (2);
+    \draw (2) -- (3);
+    \draw (3) -- (4);
+    \draw (3) -- (5);
+    \draw (5) -- (7);
+  \end{tikzpicture}
+\end{document}

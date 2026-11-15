@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-t211-ideal-annihilation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:t211-ideal-annihilation",
+  "kind": "remark",
+  "title": "Behaviour of $T_{2,11}$ on the jet bundle ideals",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-genus-filtration-ideal",
+    "papers/quantum-observable-universe/blocks/prop-vertex-algebra-jet-relations",
+    "papers/quantum-observable-universe/blocks/prop-shell-structure-eigenvalues",
+    "papers/quantum-observable-universe/blocks/prop-x5-bring-weight-identification",
+    "papers/quantum-observable-universe/blocks/thm-hyperelliptic-z5-classification"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-vertex-algebra-jet-relations",
+  "cites": [
+    "references/kassel1995",
+    "references/jones1987"
+  ],
+  "tags": [
+    "torus-knot",
+    "genus-bound",
+    "spectral-filter",
+    "hecke-algebra",
+    "knot-coordinates",
+    "ideal"
+  ],
+  "text": "t211-ideal-annihilation.md",
+  "leanSource": "t211-ideal-annihilation.lean",
+  "provenance": "authored"
+}

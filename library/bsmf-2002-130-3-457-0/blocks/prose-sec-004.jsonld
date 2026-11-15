@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/bsmf-2002-130-3-457-0/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/bsmf-2002-130-3-457-0/blocks/prose-sec-004",
   "kind": "prose",
-  "title": "(which, as a reminder,",
-  "pageStart": 17,
-  "pageEnd": 21,
-  "text": "../sections/sec-004-0-which-as-a-reminder.md",
-  "derivedFrom": "library/bsmf-2002-130-3-457-0/manifest",
-  "sourceDocument": "library/bsmf-2002-130-3-457-0/manifest",
+  "title": "Necessary conditions",
+  "pageStart": 8,
+  "pageEnd": 10,
+  "text": "../sections/sec-004-2-necessary-conditions.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/bsmf-2002-130-3-457-0",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/bsmf-2002-130-3-457-0",
   "provenance": "ingested"
 }

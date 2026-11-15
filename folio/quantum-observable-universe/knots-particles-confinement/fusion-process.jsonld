@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-fusion-process",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:fusion-process",
+  "kind": "definition",
+  "title": "Fusion process",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-atom-knot"
+  ],
+  "tags": [
+    "fusion",
+    "process",
+    "strong-sector",
+    "strand-conservation",
+    "littlewood-richardson",
+    "support-contraction"
+  ],
+  "leanRef": "qou:QOU.Interactions.FusionProcessBlock.Process.isRearrangement",
+  "text": "fusion-process.md",
+  "leanSource": "fusion-process.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0408210v3/blocks/prose-sec-006",
+  "kind": "prose",
+  "title": "The local version of the algebraic index theorem",
+  "pageStart": 12,
+  "pageEnd": 15,
+  "text": "../sections/sec-006-3-the-local-version-of-the-algebraic-index-theor.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0408210v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0408210v3",
+  "provenance": "ingested"
+}

@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2504.18825v2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "MURNAGHAN–NAKAYAMA RULE FOR THE CYCLOTOMIC HECKE ALGEBRA AND APPLICATIONS NAIHUAN JING AND NING LIU",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2504.18825v2",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Murnaghan-Nakayama rule for the cyclotomic Hecke algebra and applications",
   "contains": [
+    "library/arxiv-2504.18825v2/sections/sec-front-matter",
     "library/arxiv-2504.18825v2/sections/sec-000",
     "library/arxiv-2504.18825v2/sections/sec-001",
     "library/arxiv-2504.18825v2/sections/sec-002",
@@ -16,16 +22,21 @@
     "library/arxiv-2504.18825v2/sections/sec-007",
     "library/arxiv-2504.18825v2/sections/sec-008",
     "library/arxiv-2504.18825v2/sections/sec-009",
-    "library/arxiv-2504.18825v2/sections/sec-010",
-    "library/arxiv-2504.18825v2/sections/sec-011",
-    "library/arxiv-2504.18825v2/sections/sec-012",
-    "library/arxiv-2504.18825v2/sections/sec-013",
-    "library/arxiv-2504.18825v2/sections/sec-014",
-    "library/arxiv-2504.18825v2/sections/sec-015"
+    "library/arxiv-2504.18825v2/sections/sec-010"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2504.18825&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-2504.18825v2",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "2504.18825v2.pdf",
     "source_sha256": "829f97190cb1c8adcc6c5fcfa347fc73b8fb5100ad16b2b8d8e2653c0a5d78a0",
     "pages": 56,
@@ -36,8 +47,8 @@
       "stamp_date": "11 Mar 2026"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -563,7 +563,7 @@ def main() -> int:
                 "lp_active_partitions": [
                     list(parts[i]) for i in lp_primary["active_set"]
                 ],
-                "L_inf_diff": str(linf),
+                "L_inf_diff": str_at_true_precision(linf),  # lp x_star is binary64 (see above)
                 "per_partition": cmp_rows,
                 "verdict": (
                     "LP-dual reproduces Occam exactly"

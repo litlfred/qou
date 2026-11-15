@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-q-codifferential-formula",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:q-codifferential-formula",
+  "kind": "proposition",
+  "title": "Closed formula for the $q$-codifferential $\\delta_q$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-q-ext-deriv",
+    "papers/quantum-observable-universe/blocks/ex-reeb-decomposition"
+  ],
+  "tags": [
+    "codifferential",
+    "reeb",
+    "adjoint",
+    "webster"
+  ],
+  "leanRef": "qou:QOU.QuantumGeometry.q_codifferential_formula",
+  "text": "q-codifferential-formula-prop.md",
+  "leanSource": "q-codifferential-formula-prop.lean",
+  "provenance": "authored"
+}

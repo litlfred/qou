@@ -10,7 +10,7 @@
 |----|--------|--------|--------|---------------|
 | **#875** | `copilot/integration-backlog-proof` | rebased onto `07e272f4`, ready-pending | proof axis | `content/pipeline/qa-checkers-extended.ts`, `content/pipeline/script-sidecars/proof-no-trivial-skeleton.script.json` |
 | **#880** | `claude/friendly-wright-GH0qG` | open, ready | proof axis + MCP | `scripts/start-folio-assistant.sh` |
-| #883 | `claude/cool-newton-JXanC` | open | MCP (paper-search / openalex) | `.mcp.json`, `content/bib-qa-verifications.json`, `scripts/bib-papers-list.txt`, `docs/coordination/…` |
+| #883 | `claude/cool-newton-JXanC` | open | MCP (paper-search / openalex) | `.mcp.json`, `folio/bib-qa-verifications.json`, `scripts/bib-papers-list.txt`, `docs/coordination/…` |
 | #881 | `claude/prepare-merge-no-squash-default-2026-05-22` | open | skill policy | `.claude/commands/prepare-merge.md` |
 | #882 | `claude/eager-gauss-S36Uk` | open | one-voice axis | one-voice sidecars |
 | #878 | `claude/wenzl-lr-consumer-fix-2026-05-22` | open | canonical axis | docs-only |

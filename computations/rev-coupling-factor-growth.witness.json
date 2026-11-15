@@ -1,0 +1,124 @@
+{
+  "bean": "qou-hok7",
+  "calibration": [
+    {
+      "W": 7,
+      "brute": "4.04809401688",
+      "ell": 4,
+      "local": "4.04809401688",
+      "match": true
+    },
+    {
+      "W": 8,
+      "brute": "6.89055242662",
+      "ell": 5,
+      "local": "6.89055242662",
+      "match": true
+    },
+    {
+      "W": 10,
+      "brute": "9.21284641772",
+      "ell": 6,
+      "local": "9.21284641772",
+      "match": true
+    },
+    {
+      "W": 12,
+      "brute": "11.5733492069",
+      "ell": 7,
+      "local": "11.5733492069",
+      "match": true
+    },
+    {
+      "W": 14,
+      "brute": "13.9448036438",
+      "ell": 8,
+      "local": "13.9448036438",
+      "match": true
+    }
+  ],
+  "checks": [
+    {
+      "check": "R1_the_local_search_reproduces_brute_force_exactly",
+      "detail": "on l = 4..8 with W = round(1.7 l) \u2014 the regime the maximizer selects \u2014 the local search finds exactly the brute-force P_min at every l. Without this the upper bounds at large l would be uninterpretable: a search that misses the ground state reports a ratio that is too HIGH, which is the direction that would falsely revive the route.",
+      "pass": true
+    },
+    {
+      "check": "R2_the_coupling_ratio_upper_bound_DECREASES_with_l",
+      "detail": "ratio <= 1.20809 at l=8 falling MONOTONICALLY to 1.07192 at l=60 \u2014 the l=60 bound is 0.887287x the l=8 one, i.e. it DECREASES by 11.27%. Every entry is a rigorous upper bound on the true coupling ratio, since any configuration's energy dominates the ground state.\n\n        At the maximizer's own argmax l = 22 the bound is 1.12752, NOT the 1.21 that #7093 carried over from l = 4..8. Recomputing that PR's impact estimate with the right value: B falls 78.79051 -> 72.311312, only 8.223% rather than the 13.54% it reported. **#7093's projection was generous in the wrong direction** \u2014 the available gain is smaller still.",
+      "pass": true
+    },
+    {
+      "check": "R3_verdict_the_l_W_route_is_DEAD",
+      "detail": "**The coupling factor does not grow with l \u2014 it SHRINKS, so the (l, W) route is dead.** The ratio's upper bound falls monotonically 1.20809 -> 1.07192 over l = 8..60. The maximizer's argmax l is 22 at n = 40 and 151 at n = 4000 \u2014 inside and just past this range \u2014 so the relevant values are at the SMALL end of what is available, and heading down.\n\n        This is a stronger answer than the 'flat' case #7093 anticipated, and it corrects that PR rather than confirming it: #7093 applied the l = 4..8 figure of 1.21 at l = 22 and estimated a 13.54% shrink in B. The true bound at l = 22 is 1.12752, giving 8.223%. Against the ~3x over-statement #7081 measured, that is not close.\n\n        **So no bound of the form B(l, W) can settle sharpness**, and the three results compose to say why: #7081 showed the (l, W) relaxation is tight to under 1% (so nothing is lost passing from a partition to the two integers); #7093 showed Jensen is already optimal per distance class (so the coupling is the only slack); and this shows the coupling is bounded by ~1.13 where it is used and shrinking. The missing information is not in those two integers.\n\n        What remains unspent: the dropped constraint sum(beta) = n + l(l-1)/2, which couples the beta's to n beyond (l, W). That is now the whole of the remaining search space on this route, and sharpness stays OPEN \u2014 REV_n is still in [Omega(sqrt n), O(n^(3/4))].\n\n        Method caveat, stated because it bounds what this can conclude: local search gives upper bounds on P_min, hence upper bounds on the ratio. That can KILL the route (a decreasing upper bound proves no growth) and cannot revive it (a high value could be search failure). R1 calibrates the search against exact brute force at l = 4..8, where it is exact at all five points.",
+      "pass": true
+    }
+  ],
+  "checks_passed": 3,
+  "checks_total": 3,
+  "computedAt": "2026-10-13T15:47:50.762443+00:00",
+  "dps": 40,
+  "method": "local search gives configurations whose energy UPPER-bounds P_min, hence upper-bounds the coupling ratio; calibrated against brute force at l = 4..8",
+  "probe": "rev_coupling_factor_growth_probe",
+  "q0Anchor": "proton",
+  "q0_anchor": "physical_proton",
+  "ratio_growth_l8_to_l60": "0.887286501",
+  "ratio_scan": [
+    {
+      "W": 14,
+      "ell": 8,
+      "energy_upper_bound": "13.975348437",
+      "jensen": "11.5681555207",
+      "ratio_upper_bound": "1.2080879"
+    },
+    {
+      "W": 20,
+      "ell": 12,
+      "energy_upper_bound": "26.2538348608",
+      "jensen": "22.4799513234",
+      "ratio_upper_bound": "1.1678777"
+    },
+    {
+      "W": 27,
+      "ell": 16,
+      "energy_upper_bound": "38.1695921405",
+      "jensen": "33.2168990239",
+      "ratio_upper_bound": "1.1491016"
+    },
+    {
+      "W": 37,
+      "ell": 22,
+      "energy_upper_bound": "57.289224655",
+      "jensen": "50.8100286468",
+      "ratio_upper_bound": "1.1275181"
+    },
+    {
+      "W": 51,
+      "ell": 30,
+      "energy_upper_bound": "82.012352806",
+      "jensen": "74.0540181454",
+      "ratio_upper_bound": "1.1074666"
+    },
+    {
+      "W": 68,
+      "ell": 40,
+      "energy_upper_bound": "114.169455268",
+      "jensen": "104.588987339",
+      "ratio_upper_bound": "1.0916011"
+    },
+    {
+      "W": 85,
+      "ell": 50,
+      "energy_upper_bound": "146.434454209",
+      "jensen": "135.551795442",
+      "ratio_upper_bound": "1.0802841"
+    },
+    {
+      "W": 102,
+      "ell": 60,
+      "energy_upper_bound": "178.755163694",
+      "jensen": "166.761654683",
+      "ratio_upper_bound": "1.0719201"
+    }
+  ]
+}

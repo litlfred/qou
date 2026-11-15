@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1608.03227v4/blocks/prose-sec-006",
+  "kind": "prose",
+  "title": "Basic space and Matrix factorizations",
+  "pageStart": 8,
+  "pageEnd": 8,
+  "text": "../sections/sec-006-2-basic-space-and-matrix-factorizations.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1608.03227v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1608.03227v4",
+  "provenance": "ingested"
+}

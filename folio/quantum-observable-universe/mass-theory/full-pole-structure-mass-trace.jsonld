@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-full-pole-structure-mass-trace",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:full-pole-structure-mass-trace",
+  "kind": "proposition",
+  "title": "Habiro completion of the mass trace",
+  "cites": [
+    "references/habiro2004",
+    "references/jones1987"
+  ],
+  "tags": [
+    "habiro-ring",
+    "cyclotomic-completion",
+    "markov-trace",
+    "root-of-unity",
+    "mass"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.HabiroCompletion",
+  "text": "full-pole-structure-mass-trace.md",
+  "leanSource": "full-pole-structure-mass-trace.lean",
+  "provenance": "authored"
+}

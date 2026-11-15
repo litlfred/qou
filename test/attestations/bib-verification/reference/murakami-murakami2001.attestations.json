@@ -1,0 +1,30 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "murakami-murakami2001",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 55,
+      "entry": {
+        "id": "murakami-murakami2001",
+        "status": "partial",
+        "verified_at": "2026-05-19T15:51:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 4,
+        "fix_commit": "(this commit)",
+        "note": "Murakami & Murakami, colored Jones + simplicial volume (Acta Math. 186, 2001, arXiv:math/9905075). 4 bare-URL Refs upgraded with title+publisher form. No local PDF.",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1007/BF02392716"
+        }
+      }
+    }
+  ]
+}

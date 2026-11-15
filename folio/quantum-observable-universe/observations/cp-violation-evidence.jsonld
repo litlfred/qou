@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/sec-cp-violation-evidence",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "sec:cp-violation-evidence",
+  "kind": "prose",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-complex-chirality-rotation",
+    "papers/quantum-observable-universe/blocks/prop-crossing-energy-decomposition",
+    "papers/quantum-observable-universe/blocks/def-crossing-energy",
+    "papers/quantum-observable-universe/blocks/prop-antiparticle-crossing-reversal"
+  ],
+  "cites": [
+    "references/christenson1964",
+    "references/aubert2001"
+  ],
+  "tags": [
+    "cp-violation",
+    "kaon",
+    "b-meson",
+    "CKM",
+    "matter-antimatter",
+    "experimental"
+  ],
+  "text": "cp-violation-evidence.md",
+  "provenance": "authored"
+}

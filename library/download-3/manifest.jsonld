@@ -1,0 +1,49 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/download-3",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "download-3",
+  "contains": [
+    "library/download-3/sections/sec-front-matter",
+    "library/download-3/sections/sec-000",
+    "library/download-3/sections/sec-001",
+    "library/download-3/sections/sec-002",
+    "library/download-3/sections/sec-003",
+    "library/download-3/sections/sec-004",
+    "library/download-3/sections/sec-005",
+    "library/download-3/sections/sec-006",
+    "library/download-3/sections/sec-007",
+    "library/download-3/sections/sec-008",
+    "library/download-3/sections/sec-009",
+    "library/download-3/sections/sec-010",
+    "library/download-3/sections/sec-011",
+    "library/download-3/sections/sec-012",
+    "library/download-3/sections/sec-013",
+    "library/download-3/sections/sec-014",
+    "library/download-3/sections/sec-015",
+    "library/download-3/sections/sec-016",
+    "library/download-3/sections/sec-017",
+    "library/download-3/sections/sec-018"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "meta": {
+    "doc_id": "download-3",
+    "title_source": "slug",
+    "source_file": "Download (3).pdf",
+    "source_sha256": "7c2b83ba9f9baad71d84fccb3330e660fccca6fcdd072edf58338d89d28cce25",
+    "pages": 40,
+    "arxiv": null,
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

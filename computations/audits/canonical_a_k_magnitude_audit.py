@@ -77,16 +77,40 @@ from codata_constants import (
 )
 
 
-# Closed-form atomic Markov traces at q_0 (from various witnesses)
+# Atomic Markov traces at q_0 — READ, not hardcoded (bean qou-4383, 2026-09-13).
+#
+# THIS DICT USED TO HOLD, as literals:
+#
+#     p 1.6331535640480814257473330892701240938276544598183
+#     n 1.2482482717548397202242497985371807788067261625718
+#     D 0.3882864715477132
+#
+# which were TWO rulings behind. `trm_proton_five_values_census.py` (bean
+# qou-soj6) identified the proton entry on 2026-08-30 as "the convention-C /
+# muon-pin value … UNEXPLAINED, LIVE" and named this very file; convention C
+# was excised by owner ruling on 2026-08-09, and the intra-nucleon ordering
+# moved again on 2026-09-05 (qou-hu1f). The census fixed `derivation_chain`'s
+# copy and explicitly left this one, so it sat two frames behind.
+#
+# It also escaped the value-keyed source scan that found the other eight
+# hardcoded traces, and the reason is worth recording: that scan fingerprints
+# the two ORDERINGS at the two PINS under convention D, so a convention-C
+# value matches nothing and is invisible to it. Keying on the answer only finds
+# answers you thought to compute.
+#
+# Now read from the single source, so it cannot go stale a third time. The
+# loader validates BOTH the pin and the intra-nucleon ordering (bean qou-y4gi)
+# and raises rather than serving an undeclared frame.
+from canonical_trm_reference import tr_m_nucleon  # noqa: E402
 TR_M_AT_Q0 = {
-    "p":   mp.mpf("1.6331535640480814257473330892701240938276544598183"),
-    "n":   mp.mpf("1.2482482717548397202242497985371807788067261625718"),
+    "p": tr_m_nucleon("proton"),
+    "n": tr_m_nucleon("neutron"),
     # The deuteron is the only compound with a published closed-form Markov
     # trace at q_0 (from `2026-05-05-categorical-chain-gamma-to-six-term.md §5`).
     # For T, ³He, ⁴He we'd need their separate closed-form chains; those
     # don't exist yet in the canonical witness set, so we report the structural
     # ansatz comparisons and flag what's missing.
-    "D":   mp.mpf("0.3882864715477132"),
+    "D": tr_m_nucleon("deuteron"),
 }
 
 
@@ -168,7 +192,15 @@ def main() -> int:
     # ⁴He has Z=N=2 (even-even). Let's verify a_k(⁴He) ≈ V_std for ⁴He.
     # The jet-knot-invariants witness reports per atom:
     #   sp, V_std, ap, levels=[{k, a_k, chi_weighted, dim_weighted}]
-    here = Path(__file__).parent
+    # `.parent.parent`, i.e. computations/, NOT audits/. This read
+    # `Path(__file__).parent` and the witness lives one level up, so every run
+    # of this audit died on FileNotFoundError before reaching the
+    # structural-ansatz section — it has been dead weight that looked like
+    # coverage. Third instance of this exact shape found on 2026-09-13 (see
+    # bean qou-72f8 for the qou_mass one); a _HERE-relative data path that is
+    # one directory too deep fails as a missing FILE, which reads like a
+    # regeneration problem rather than a path bug.
+    here = Path(__file__).parent.parent
     jki_path = here / "jet-knot-invariants.witness.json"
     with open(jki_path) as f:
         jki = json.load(f)

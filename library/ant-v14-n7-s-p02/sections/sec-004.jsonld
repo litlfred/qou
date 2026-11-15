@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/ant-v14-n7-s-p02/sections/sec-004",
   "@type": [
     "doco:Section"
   ],
-  "title": "Comparison between equations on integrals and equations on series 1739",
-  "pageStart": 1,
-  "pageEnd": 1,
+  "title": "Comparison between equations on integrals and equations on series",
+  "pageStart": 29,
+  "pageEnd": 31,
   "contains": [
     "library/ant-v14-n7-s-p02/blocks/prose-sec-004"
   ],
-  "derivedFrom": "library/ant-v14-n7-s-p02/manifest",
-  "sourceDocument": "library/ant-v14-n7-s-p02/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s-p02",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s-p02",
   "provenance": "ingested"
 }

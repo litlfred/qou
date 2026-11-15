@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-benzene-symmetric-projector",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:benzene-symmetric-projector",
+  "kind": "example",
+  "title": "Benzene as the assembly projector $e_{(2,2,2),(6)}$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-molecular-assembly-projector",
+    "papers/quantum-observable-universe/blocks/def-threading-link"
+  ],
+  "tags": [
+    "benzene",
+    "aromaticity",
+    "symmetric-projector",
+    "threading-link",
+    "delocalization",
+    "T26"
+  ],
+  "text": "benzene-symmetric-projector.md",
+  "provenance": "authored"
+}

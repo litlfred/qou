@@ -1,0 +1,17 @@
+---
+doc_id: arxiv-2604.05244v1
+doc_title: "Edge universality in Floquet sideband spectra"
+section_id: sec-021-summary
+section_title: "Summary"
+section_number: null
+pages: 24-25
+source_pdf: 2604.05244v1.pdf
+source_sha256: a5097e763dd89d06
+toc_source: outline
+text_source: latex
+latex_prose_ratio: 0.954
+latex_coverage_ratio: 0.974
+---
+This paper connects two objects that are usually treated separately in the Floquet literature [@MoskBuett2002; @PedersenBuett1998]: the linear detection chain that turns a time trace into a measured number, and the Floquet scattering matrix that describes how a periodic drive redistributes quantum states across energy sidebands. The detection kernel $K_{\rm phys}$ encodes the instrument's time gate, filter, and analysis frequency [@Clerk2010]; the outgoing correlator $C$ encodes the device physics. The projection identity [\[eq:projection\]](#eq:projection){reference-type="eqref" reference="eq:projection"} makes the bridge between them explicit: the analysis frequency selects a definite *coherence order* $k=n-p$ of $C$, and with a commensurate gate this selection is exact. We have been careful to distinguish what this bridge does and does not provide: it selects a coherence-order block, not an individual sideband index. Accessing the soft edge requires spectral resolution beyond the coherence-order projection: either energy-selective detection, or DC transport observables whose bias dependence is sensitive to the edge. We have derived a concrete prediction for the latter: the photo-assisted shot noise slope $dS_I/dV$ realizes the same diagonal discrete Bessel kernel $K_A^{\rm(disc)}(\nu_V,\nu_V)$ as a function of bias voltage, and the deficit from the high-bias plateau collapses onto $K_{\mathop{\mathrm{Ai}}}(s,s)$ under the universal scaling $s=(eV/\hbar\Omega-A)/\kappa_A$.
+
+Under the conditions enumerated in the Introduction---non-interacting fermions, monochromatic spatially uniform phase drive, wide-band static scatterer, sharp Fermi step (or double step in the two-terminal case), $k_BT_{\rm el}\ll\hbar\Omega\kappa_A$, and large drive amplitude $A\gg 1$---the outgoing sideband process at fixed central energy is determinantal. In the single-step case (equilibrium or single populated reservoir), the kernel is the discrete Bessel kernel $K_A^{\rm(disc)}$, and its soft edge converges to the Airy kernel on the $A^{1/3}$ scale [@TracyWidom1994; @Forrester2010]. In the two-terminal double-step case (Sec. [\[sec:multi-step\]](#sec:multi-step){reference-type="ref" reference="sec:multi-step"}), the kernel is a weighted sum of two shifted Bessel kernels; when the bias window exceeds $\kappa_A$, the edge correlations near each isolated edge are governed by a thinned Airy kernel $\tau\,K_{\mathop{\mathrm{Ai}}}(s,t)$ with $\tau=\mathcal T$ or $\mathcal R$, though the lower edge carries a smooth bulk background from the opposite step (negligible in the tunnel limit). At finite temperature, the edge kernel crosses over to the finite-temperature Airy kernel [@Johansson2007; @DeanLeDoussal2015; @DeanLeDoussal2016] with crossover parameter $\theta_A=k_BT/(\hbar\Omega\kappa_A)$ (Sec. [\[sec:finite-T\]](#sec:finite-T){reference-type="ref" reference="sec:finite-T"}). We have argued, on the basis of the two-dimensional structure of Sambe space [@Sambe1973], that multi-tone drives can promote the fold (Airy) edge to a cusp (Pearcey) edge [@ArnoldSingularities; @DuseJohanssonMetcalfe2015], but the rigorous derivation of this limit from the explicit two-tone Fourier coefficients remains open.

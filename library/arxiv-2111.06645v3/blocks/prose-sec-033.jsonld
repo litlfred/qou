@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2111.06645v3/blocks/prose-sec-033",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2111.06645v3/blocks/prose-sec-033",
   "kind": "prose",
   "title": "Numerical aspects",
   "pageStart": 71,
   "pageEnd": 74,
   "text": "../sections/sec-033-10-numerical-aspects.md",
-  "derivedFrom": "library/arxiv-2111.06645v3/manifest",
-  "sourceDocument": "library/arxiv-2111.06645v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2111.06645v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2111.06645v3",
   "provenance": "ingested"
 }

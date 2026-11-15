@@ -1,0 +1,39 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "hammer2007fourbody",
+  "library": {
+    "docId": "arxiv-nucl-th-0610105v2",
+    "dir": "library/arxiv-nucl-th-0610105v2",
+    "pdf": "library/arxiv-nucl-th-0610105v2/0610105v2.pdf",
+    "stage": "candidates",
+    "pages": 14,
+    "sections": 8,
+    "arxiv": "nucl-th/0610105v2"
+  },
+  "type": "article-journal",
+  "title": "Universal properties of the four-body system with large scattering length",
+  "author": [
+    {
+      "family": "Hammer",
+      "given": "H.-W."
+    },
+    {
+      "family": "Platter",
+      "given": "L."
+    }
+  ],
+  "container-title": "The European Physical Journal A",
+  "issued": {
+    "date-parts": [
+      [
+        2007
+      ]
+    ]
+  },
+  "volume": "32",
+  "issue": "1",
+  "page": "113-120",
+  "DOI": "10.1140/epja/i2006-10301-8",
+  "URL": "https://arxiv.org/abs/nucl-th/0610105",
+  "note": "PDF library/arxiv-nucl-th-0610105v2/ — joined 2026-08-16. This branch had drafted a separate entry [arxiv-nucl-th-0610105v2] for the same paper from the library copy; main registered it independently with fuller metadata, so that draft was dropped and the library join moved here. arXiv:nucl-th/0610105v2; read in full 2026-08-15 from library/arxiv-nucl-th-0610105v2/0610105v2.pdf. The four-boson Yakubovsky calculation whose §III supplies the field's own DIMENSIONLESS Tjon target, which is what makes it usable as a convention-free cross-check of a corpus ladder. Load-bearing claims: (i) §III.B, p. 11 — 'Away from the thresholds, the binding energies of the ground and excited four-body states are related to the deepest three-body state by factors of 5 and 1.01, respectively', i.e. B₄⁽⁰⁾/B₃⁽⁰⁾ ≈ 5 in the universal limit; (ii) §III.B / Figs. 3-4 — the B₃-B₄ correlation is a universal curve, approximately linear away from threshold independent of the sign of a, with POSITIVE curvature for a > 0 and negative curvature for a < 0, the nonlinearity confined to the threshold region; (iii) §II.C, p. 7 — following ref. [12] no four-body parameter is included, the two- and three-body contact interactions being the minimal renormalising set. CAUTION, and the paper says so itself: the LO 'no four-body parameter' claim is CONTESTED. §I p. 3 records that Yamashita et al. found a strong sensitivity of the deepest four-body energy to a four-body subtraction constant and 'concluded that a four-body parameter should generally enter at leading order' — while explicitly EXEMPTING the nuclear case, 'four-body systems of 4He atoms and nucleons (where this sensitivity is absent) are special because repulsive interactions strongly reduce the probability to have four particles close together'. So for nucleons specifically both sides agree, but a QOU citer must not upgrade this to 'no four-body force exists': that is a different statement, and [jurgenson2009srg] puts the 4N force at tens-to-hundreds of keV, small but nonzero. The paper's §IV also stresses that its universality rests on the RG analysis of its ref. [12]. The ratio 5 is the number the corpus operator ladder is scored against in tjon_external_cross_check_probe.py; it is a comparison target and must never be fitted to."
+}

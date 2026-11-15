@@ -7,179 +7,112 @@ section_number: 3
 pages: 7-10
 source_pdf: 2105.09342v1.pdf
 source_sha256: 57ae12327da7b9a1
-doc_brief: "A Unitary Matrix Model for q-deformed Plancherel Growth — In this paper we construct a unitary matrix model that captures the asymptotic growth of Young diagrams under q-deformed Plancherel measure."
+toc_source: outline
+text_source: latex
+latex_prose_ratio: 0.955
+latex_coverage_ratio: 0.985
 ---
-The growth of Young diagrams can be compared with the growth of a two-dimensional
-crystal as shown in ﬁgure 2. We consider every box as a unit falling from sky under gravity.
-There is a boundary given by the two lines passing through the origin with slope ±1.
-Since the gravity is working downward it is easy to understand that the boxes will arrange
-themselves following the rules of a rotated Young diagrams. One can study a controlled
-growth process by assigning a probability to each diagram in this process. Following [1, 2],
-we can deﬁne a grand canonical ensemble of Young diagrams
-E =
-∞⋃
-k=0
-Yk (3.1)
-whereYk is a set of Young diagrams with k boxes. Next, assigning a probability for every
-diagram in the ensemble we write a grand canonical partition function for the q-deformed
-growth process as
-Zq =
-∞∑
-k=0
-∑
-λk
-tkPq(λk)δ(k−|λk|) (3.2)
-where t > 0 is called fugacity. In the above expression, Pq(λk) denotes the q-deformed
-Plancherel measure for a Young diagram λk discussed in section 2.
-7
-In order to study the above partition function in the large k limit, we regularise the
-sum by imposing a cut-oﬀ on the Young diagrams in the summation over λk in (3.2). We
-introduce a large positive integer N and constrain the Young diagrams in the ensemble to
-have no more than N rows. This regularisation gives us a handle on the partition function
-to carry out a saddle point analysis of the problem. Later we show that the asymptotic
-behaviour of this regularised partition function can be captured by a unitary matrix model
-where N plays the role of the rank of the unitary group.
-The partition function (3.2) for measure (2.16) is given by
-Zq =
-∞∑
-k=1
-∑
-λk
-tkPq(λk) =
-∞∑
-k=1
-∑
-λk
-tkk!(1−q)2k q2b(λk)
-∏
-u∈λk
-[h(u)]2 . (3.3)
-It was observed in [1] that the ordinary Plancherel growth model is equivalent toU(N) GWW
-model after restricting the Young diagrams to have maximumN number of rows. The no-gap
-phase of GWW model describes the automodel class of Kerov. The limit shape corresponds
-to the GWW transition point. In this section, we ﬁrst study the partition function (3.3)
-in the large N limit. The partition function admits two possible phases depending the
-value of the parameter t for a given q. The weak coupling phase of this theory captures
-the q-deformed growth of Young diagrams. Using the connection between UMM and 2D
-droplets we show that there exists an equivalentU(N) UMM for the partition function (3.3)
-whose no-gap phase captures the growth of Young diagrams under q-deformed Plancherel
-measure. Like GWW, this matrix model also admits a third order phase transition. This is
-a q-deformed analogue of GWW phase transition.
-Using the deﬁnitions of q deformation (2.9), one can write the partition function as
-Zq =
-∞∑
-k=1
-∑
-λk
-exp
-[
-k lnt +k lnk−k + 2k ln(1−q) +
-∑
-i⁄=j
-ln|qhj−qhi|
-−2
-N∑
-i=1
-hi∑
-j=1
-ln(1−qj)
-] (3.4)
-where we have dropped a constant term which makes no contribution to the saddle point
-equation.
-In order to go to the continuum limit, we ﬁrst re-deﬁne the parameter q,
-q =e−gs (3.5)
+The growth of Young diagrams can be compared with the growth of a two-dimensional crystal as shown in figure \ref{rotated_YD}. We consider every box as a unit falling from sky under gravity. There is a boundary given by the two lines passing through the origin with slope $\pm1$. Since the gravity is working downward it is easy to understand that the boxes will arrange themselves following the rules of a rotated Young diagrams. One can study a controlled growth process by assigning a probability to each diagram in this process. Following \cite{Eynard:2008mt, Chattopadhyay:2019pkl}, we can define a grand canonical ensemble of Young diagrams
+
+\ben
+\mathcal{E} = \bigcup_{k=0}^\infty \mathcal{Y}_k
+\een
+
+where $\mathcal{Y}_k$ is a set of Young diagrams with $k$ boxes. Next, assigning a probability for every diagram in the ensemble we write a grand canonical partition function for the $q$-deformed growth process as
+\begin{equation}
+\label{q-partition}
+Z_q=\sum_{k=0}^{\infty}\sum_{\lambda_k} t^k \mathcal{P}_q(\lambda_k)\delta(k-|\lambda_k|)
+\end{equation}
+where $t>0$ is called \emph{fugacity}. In the above expression, $\mathcal{P}_q(\lambda_k)$ denotes the $q$-deformed Plancherel measure for a Young diagram $\lambda_k$ discussed in section \ref{sec:qplancherel}.
+
+In order to study the above partition function in the large $k$ limit, we regularise the sum by imposing a cut-off on the Young diagrams in the summation over $\lambda_k$ in (\ref{q-partition}).  We introduce a large positive integer $N$ and constrain the Young diagrams in the ensemble to have no more than $N$ rows. This regularisation gives us a handle on the partition function to carry out a saddle point analysis of the problem. Later we show that the asymptotic behaviour of this regularised partition function can be captured by a unitary matrix model where $N$ plays the role of the rank of the unitary group.
+
+The partition function \eqref{q-partition} for measure \eqref{eq:qmeasure2} is given by
+
+\begin{equation}\label{eq:qdeformedgrowthpf2}
+	\mathcal{Z}_q=\sum_{k=1}^{\infty}\sum_{\lambda_k}t^k \mathcal{P}_q(\lambda_k)=\sum_{k=1}^{\infty}\sum_{\lambda_k}t^k k! \frac{(1-q)^{2k}\ q^{2b(\lambda_k)}}{\prod_{u \in \lambda_k} [h(u)]^2}.
+\end{equation}
+
+It was observed in \cite{Chattopadhyay:2019pkl} that the ordinary Plancherel growth model is equivalent to $U(N)$ GWW model after restricting the Young diagrams to have maximum $N$ number of rows. The no-gap phase of GWW model describes the automodel class of Kerov. The limit shape corresponds to the GWW transition point. In this section, we first study the partition function (\ref{eq:qdeformedgrowthpf2}) in the large $N$ limit. The partition function admits two possible phases depending the value of the parameter  $t$ for a given $q$. The weak coupling phase of this theory captures the \qd growth of Young diagrams. Using the connection between UMM and 2D droplets we show that there exists an equivalent $U(N)$ UMM for the partition function (\ref{eq:qdeformedgrowthpf2}) whose no-gap phase captures the growth of Young diagrams under \qd Plancherel measure. Like GWW, this matrix model also admits a third order phase transition. This is a \qd analogue of GWW phase transition.
+
+Using the definitions of \qq deformation (\ref{box-defn}), one can write the partition function as
+
+\begin{equation}\label{eq:pfkind2}
+	\begin{aligned}
+	\mathcal{Z}_q & = \sum_{k=1}^{\infty}\sum_{\lambda_k}\exp \left[k \ln t + k \ln k-k+2k \ln (1-q)  + \sum_{i \neq j}\ln |q^{h_j}-q^{h_i}|\right. \\
+	& \hspace{6cm} \left. - 2\sum_{i=1}^N \sum_{j=1}^{h_i}\ln (1-q^j)\right]
+	\end{aligned}
+\end{equation}
+
+where we have dropped a constant term which makes no contribution to the saddle point equation.\\
+In order to go to the continuum limit, we first re-define the parameter $q$,
+
+\ben
+q=e^{-g_s}
+\een
+
 and take the following double scaling limit
-N→∞ , g s→ 0 , such that λ =Ngs is ﬁnite. (3.6)
-We also scale the variables and the summation appropriately with a factor of N as follows
-x = i
-N, h (x) = hi
-N and
-N∑
-i=1
-=N
-∫ 1
-0
-dx. (3.7)
-8
-In the large N limit, the total number of boxes scales as
-k =
-N∑
-i=1
-hi− N(N− 1)
-2
-large N
-−−−−→
-limit
-N 2
-∫ 1
-0
-dx h(x)− N 2
-2 ≡N 2k′ (3.8)
-where ∫ 1
-0
-dx h(x) =k′ + 1
-2 (3.9)
-is an O(1) quantity.
-The partition function (3.4) in the double-scaling limit can be written as
-Zq =
-∫
-[Dh]eSeff, (3.10)
-where Seff is given by
-Seff [h(x)] =N 2
-[
-k′ ln(N 2t(1−q)2k′)−k′ +
-∫ 1
-0
-dx−
-∫ 1
-0
-dy ln|e−λh(x)−e−λh(y)|
-−2
-∫ 1
-0
-dx−
-∫ h(x)
-0
-dy ln(1−e−λy)
-] (3.11)
-Varying the eﬀective action with respect to h(x), we get the saddle-point equation, which
-in terms of Young diagram density
-u(h) =−∂x
-∂h (3.12)
+\begin{equation}\label{eq:doublescalling}
+N \to \infty\ , \qquad g_s \to 0\ , \quad \mbox{such that}\ \lambda =N g_s\ \text{is finite.} 
+\end{equation}
+We also scale the variables and the summation appropriately with a factor of $N$ as follows
+\begin{equation}
+x=\frac{i}{N} , \quad  h(x) = \frac{h_i}{N}\quad \tand \quad \sum_{i=1}^{N} = N\int_0^1 dx.
+\end{equation}
+In the large $N$ limit, the total number of boxes scales as
+\begin{equation}
+k=\sum_{i=1}^N h_i -\frac{N(N-1)}{2} \xrightarrow[\text{limit}]{\text{large}\ N}N^2\int_0^1 dx\ h(x) -\frac{N^2}{2} \equiv N^2k'
+\end{equation}
+where
+\begin{equation}
+\int_0^1 dx\ h(x)=k'+\frac{1}{2}
+\end{equation}
+is an $O(1)$ quantity.\\
+The partition function \eqref{eq:pfkind2} in the double-scaling limit can be written as
+
+\begin{equation}
+\cZ_q =\int [Dh]\, e^{S_{eff}},   
+\end{equation}
+where $S_{eff}$ is given by
+\begin{equation}
+	\begin{aligned}
+	S_{eff}[h(x)]&=N^2 \left[k' \ln (N^2 t (1-q)^2 k')-k'+\int_0^1 dx \Xint-_0^1 dy \ln |e^{-\lambda h(x)}-e^{-\lambda h(y)}|\right.\\
+	&\hspace*{7cm}\left. -2\int_0^1 dx \Xint-_0^{h(x)}dy \ln (1-e^{-\lambda y}) \right]
+	\end{aligned}
+\end{equation}
+
+Varying the effective action with respect to $h(x)$, we get the saddle-point equation, which in terms of Young diagram density 
+\ben
+u(h)=-\frac{\partial x}{\partial h}
+\een
 is given by
-−
-∫ hU
-hL
-dh′u(h′) e−λh
-e−λh−e−λh′ =− 1
-λ log
-[1−e−λh
-λξ
-]
-(3.13)
+
+\be
+\label{eq:saddle_eynard}
+\Xint-_{h_L}^{h_U} dh' u(h')\frac{e^{-\lambda h}}{e^{-\lambda h}-e^{-\lambda h'}}=-\frac{1}{\lambda} \log\left[\frac{1-e^{-\lambda h}}{\lambda\xi}\right]
+\ee
+
 with
-ξ2 =t k′. (3.14)
-u(h) has support between hL andhU. From the monotonicity of hi (2.4), it follows that the
-Young diagram density satisﬁes an upper bound
-u(h)≤ 1. (3.15)
-Therefore, one has to solve the above saddle-point equation in the presence of this constraint.
-To solve the integral equation (3.13), we deﬁne new variables
-w = 1−e−λh
-λ (3.16)
-9
-such that u(w) = dh
-dwu(h). In terms of these variables, the saddle point equation reduces to
-−
-∫ wU
-wL
-dw′ u(w′)
-w−w′ = 1
-(1−λw) logw
-ξ (3.17)
-wherewL = 1−e−λhL
-λ andwU = 1−e−λhU
-λ correspond to the end points of the support of u(w).
-Since the Young diagram density, u(h) and hence u(w) have an upper cap, we can
-classify solutions of (3.17) in two diﬀerent classes. In the ﬁrst class, the Young diagram
-density saturates the upper cap whereas in the second class, it does not. The solution class
-1 captures the asymptotic growth of Young diagrams.
+\ben
+\xi^2 = t \ k'.
+\een
+$u(h)$ has support between $h_L$ and $h_U$. From the monotonicity of $h_i$ (\ref{eq:hiconst}), it follows that the Young diagram density satisfies an upper bound
+\ben
+u(h) \leq 1.
+\een
+Therefore, one has to solve the above saddle-point equation in the presence of this constraint.\\
+To solve the integral equation \eqref{eq:saddle_eynard}, we define new variables
+\be\label{eq:hwrelation}
+w = \frac{1-e^{-\lambda h}}{\lambda}
+\ee
+such that $u(w)= \frac{dh}{dw}u(h)$. 
+In terms of these variables, the saddle point equation reduces to
+
+\be
+\label{eq:saddle_w}
+\Xint-_{w_L}^{w_U} dw' \frac{u(w')}{w-w'} = \frac{1}{(1-\lambda w)} \log \frac{w}{\xi}
+\ee
+
+where $w_L=\frac{1-e^{-\lambda h_L}}{\lambda}$ and $w_U=\frac{1-e^{-\lambda h_U}}{\lambda}$ correspond to the end points of the support of $u(w)$.
+
+Since the Young diagram density, $u(h)$ and hence $u(w)$ have an upper cap, we can classify solutions of (\ref{eq:saddle_w}) in two different classes. In the first class, the Young diagram density saturates the upper cap whereas in the second class, it does not. The solution class 1 captures the asymptotic growth of Young diagrams.

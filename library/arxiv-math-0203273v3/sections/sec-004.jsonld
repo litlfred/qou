@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-0203273v3/sections/sec-004",
   "@type": [
     "doco:Section"
   ],
-  "title": "Radicaux et nilpotence",
-  "pageStart": 7,
-  "pageEnd": 7,
+  "title": "Traces",
+  "pageStart": 35,
+  "pageEnd": 50,
   "contains": [
     "library/arxiv-math-0203273v3/blocks/prose-sec-004"
   ],
-  "derivedFrom": "library/arxiv-math-0203273v3/manifest",
-  "sourceDocument": "library/arxiv-math-0203273v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203273v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203273v3",
   "provenance": "ingested"
 }

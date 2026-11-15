@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-lat-9912004v2/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-lat-9912004v2/blocks/prose-sec-003",
   "kind": "prose",
-  "title": "EXPECTATIONS FROM CHRMT",
+  "title": "Expectations from chRMT",
   "pageStart": 2,
-  "pageEnd": 3,
-  "text": "../sections/sec-003-ii-expectations-from-chrmt.md",
-  "derivedFrom": "library/arxiv-hep-lat-9912004v2/manifest",
-  "sourceDocument": "library/arxiv-hep-lat-9912004v2/manifest",
+  "pageEnd": 4,
+  "text": "../sections/sec-003-2-expectations-from-chrmt.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-lat-9912004v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-lat-9912004v2",
   "provenance": "ingested"
 }

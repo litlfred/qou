@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0908.4305v3/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-0908.4305v3 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0908.4305v3",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0908.4305&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-0908.4305v3",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/0908.4305v3",
+    "content_type": "application/gzip",
+    "sha256": "02aaf0fc26c352b9dedb984d2fafe781f97191ea423efdfebbf38455e9dd6632",
+    "bytes": 59274,
+    "fetched": "2026-10-10T15:02:30+00:00",
+    "files": [
+      {
+        "path": "source/files/hda7_arxiv_4.tex",
+        "role": "tex",
+        "sha256": "99ca9b0706504a5286432e3a4b7a5b809abcdfa74846f59fdaa68347fdcd617c",
+        "bytes": 162036
+      },
+      {
+        "path": "source/files/undertilde.sty",
+        "role": "sty",
+        "sha256": "39698e87abff60cc14ac1f92e40e7af9d19544fd047bdfcb5c7905fdfad67881",
+        "bytes": 1216
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

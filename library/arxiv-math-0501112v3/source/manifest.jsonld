@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0501112v3/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0501112v3 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0501112v3",
+  "provenance": "ingested",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0501112&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-0501112v3",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/math/0501112v3",
+    "content_type": "application/gzip",
+    "sha256": "a5ee9e2f2a5a3937c5a8304ab7908c21fbcda4ad83bfdd541132b471a538d9cc",
+    "bytes": 63187,
+    "fetched": "2026-10-10T15:28:45+00:00",
+    "files": [
+      {
+        "path": "source/files/gaussian02.bbl",
+        "role": "bbl",
+        "sha256": "75a7b68731269ccc4afc620276038c56ae290c3cfa15d5f6cdb18f77a5ab965a",
+        "bytes": 8574
+      },
+      {
+        "path": "source/files/gaussian02.tex",
+        "role": "tex",
+        "sha256": "23340e65c44c3a5df988ab451ec926fafa01d09c4e1f4cd96593552207983278",
+        "bytes": 101594
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

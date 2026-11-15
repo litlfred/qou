@@ -1,0 +1,48 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "jacobson1995",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 95,
+      "entry": {
+        "id": "jacobson1995",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T16:14:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 1,
+        "fix_commit": "(this commit)",
+        "note": "1 bare-URL Ref upgraded with title+author+year form. | PDF verified: Jacobson, \"Thermodynamics of Spacetime: The Einstein Equation of State,\" Phys. Rev. Lett. 75 (1995), arXiv:gr-qc/9504004. Verified.",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/jacobson1995.pdf"
+        },
+        "local_pdf": "uploads/jacobson1995.pdf",
+        "relevance": {
+          "verdict": "undetermined",
+          "rationale": "FILE ABSENT from uploads/ and git; identity unverifiable from front matter. CORPUS-SIDE AUDIT: five sites \u2014 gravitational-constant.ts:23, .lean:16 and .lean:33; gravitational-constant-properties.ts:24; information-causality.ts:19. Three of the five are bare cites[] entries with no prose anchor, and the two Lean lines are provenance pointers with no locator. information-causality.md discusses the Bremermann limit (lines 18-19) and the Margolus-Levitin rate (line 41) but never invokes the spacetime-thermodynamics derivation this key names, so the information-causality.ts:19 entry reads as topic adjacency rather than use.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Nothing verifiable to correct without the document; the weak information-causality.ts:19 entry is adjacency, not a miscitation, since no claim is attributed to the source.",
+              "target": "prop:gravitational-constant"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z"
+        }
+      }
+    }
+  ]
+}

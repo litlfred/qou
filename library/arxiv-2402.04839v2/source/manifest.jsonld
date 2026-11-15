@@ -1,0 +1,58 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2402.04839v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "On a volume invariant of 3-manifolds (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2402.04839v2",
+  "provenance": "ingested",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2402.04839&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2402.04839v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2402.04839v2",
+    "content_type": "application/gzip",
+    "sha256": "7070bc51a4f873507e2f3f682b4b93ecd54d6bf95dc5d2110ba900c151f803ce",
+    "bytes": 518696,
+    "fetched": "2026-10-10T15:19:46+00:00",
+    "files": [
+      {
+        "path": "source/files/bib.bib",
+        "role": "bib",
+        "sha256": "020ee6dad0e6641f1b293ac44e8e3c798eb94e1d47061bb122ee776273a0697c",
+        "bytes": 26907
+      },
+      {
+        "path": "source/files/gtart.cls",
+        "role": "cls",
+        "sha256": "a1bf50a6a81c401afbadf122f03043d0d6a8c59eb927f83d446f7b0391959d44",
+        "bytes": 9429
+      },
+      {
+        "path": "source/files/volt.bbl",
+        "role": "bbl",
+        "sha256": "345e32ea00542d4d4361d0ce23a838eb1a183cd4b1604b48617c4e637f17ede4",
+        "bytes": 18320
+      },
+      {
+        "path": "source/files/volt.tex",
+        "role": "tex",
+        "sha256": "1493b8209802ac4605187d947216839fa6ea634e00cb6c8f7d23717ce1d5e095",
+        "bytes": 95182
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

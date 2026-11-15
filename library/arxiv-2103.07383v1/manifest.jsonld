@@ -1,0 +1,56 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2103.07383v1",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "On the Analyticity of Critical Points of the Generalized Integral Menger Curvature in the Hilbert Case",
+  "contains": [
+    "library/arxiv-2103.07383v1/sections/sec-front-matter",
+    "library/arxiv-2103.07383v1/sections/sec-000",
+    "library/arxiv-2103.07383v1/sections/sec-001",
+    "library/arxiv-2103.07383v1/sections/sec-002",
+    "library/arxiv-2103.07383v1/sections/sec-003",
+    "library/arxiv-2103.07383v1/sections/sec-004",
+    "library/arxiv-2103.07383v1/sections/sec-005",
+    "library/arxiv-2103.07383v1/sections/sec-006",
+    "library/arxiv-2103.07383v1/sections/sec-007",
+    "library/arxiv-2103.07383v1/sections/sec-008",
+    "library/arxiv-2103.07383v1/sections/sec-009",
+    "library/arxiv-2103.07383v1/sections/sec-010",
+    "library/arxiv-2103.07383v1/sections/sec-011"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2103.07383&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2103.07383v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "2103.07383v1.pdf",
+    "source_sha256": "9dca35ea16490ad864811e4b8eb0aacc6b34421bc333fb948f1d89b7258d1294",
+    "pages": 31,
+    "arxiv": {
+      "id": "2103.07383",
+      "version": "1",
+      "primary_class": "math.AP",
+      "stamp_date": "12 Mar 2021"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

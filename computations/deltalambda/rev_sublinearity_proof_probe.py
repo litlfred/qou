@@ -350,7 +350,7 @@ def main() -> int:
         "bean": "qou-hok7",
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "q0Value": mp.nstr(Q0, 50),
-        "q0_anchor": "physical_proton",
+        "q0_anchor": "physical_proton", "q0Anchor": "proton",
         "dps": mp.dps,
         "identity_E": "R_lambda = sum_{c in lambda} eps_{h(c)} - sum_{i<=n} eps_i, eps_m = -log(1-q0^{-2m})",
         "constants": {"C_sum_eps": mp.nstr(C, 20), "A_sum_eps_odd": mp.nstr(A, 20),

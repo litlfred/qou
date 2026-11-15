@@ -198,7 +198,7 @@ already in the paper (see §6 below).
 
 The 2-term blend collapsed `(Φ_1, Φ_2, Φ_3) ↦ (V̂_Frob, V̂_det)`,
 discarding chirality. The paper's full formula
-([Wedderburn mass formula](../content/quantum-observable-universe/braids-and-knots/wedderburn-mass-formula.md))
+([Wedderburn mass formula](../folio/quantum-observable-universe/braids-and-knots/wedderburn-mass-formula.md))
 keeps all three log-magnitudes:
 
 $$
@@ -228,7 +228,7 @@ The coefficients are derived structurally (not fitted):
 - **`-2[3]_q` for Φ₂**: q-deformation of $\binom{3}{2} = 3$ quark
   pair channels, doubled by the pn crossing convention. The
   factor $[3]_q$ is the categorical Hecke level-3 weight
-  ([degree-2 weight](../content/quantum-observable-universe/braids-and-knots/degree-two-baryon-weight.md)).
+  ([degree-2 weight](../folio/quantum-observable-universe/braids-and-knots/degree-two-baryon-weight.md)).
 - **`H_A²` for Φ₃**: leading H_A-correction from chirality —
   only quadratic in $H_A = q-q^{-1}$ because $\Phi_3$ vanishes
   identically at $q = 1$ (sym = alt classically).
@@ -236,7 +236,7 @@ The coefficients are derived structurally (not fitted):
 ### 6.2 Geom(K) and topological mass m = Vol(K)/ℏ_q²
 
 The whole construction is unified by the **topological mass
-formula** ([topological-mass-formula](../content/quantum-observable-universe/braids-and-knots/topological-mass-formula.md)):
+formula** ([topological-mass-formula](../folio/quantum-observable-universe/braids-and-knots/topological-mass-formula.md)):
 
 $$
   \mathfrak{m}(K) = \frac{\mathrm{Vol}(K)}{\hbar_q^2}
@@ -247,7 +247,7 @@ This is **mass = energy density × volume**, with $1/\hbar_q^2$ as
 the energy density and $\mathrm{Vol}(K)$ as the geometric volume.
 The categorical functional underlying this identification is
 $\mathrm{Geom}(K)$
-([Geom universality](../content/quantum-observable-universe/braids-and-knots/geom-universality.md)),
+([Geom universality](../folio/quantum-observable-universe/braids-and-knots/geom-universality.md)),
 the unique trace functional on knot complements satisfying
 additivity, Frobenius–Hopf functoriality, and the
 $\mathrm{Geom}(4_1) = \mathrm{Vol}(4_1)/\hbar_q^2$ normalisation.
@@ -479,8 +479,8 @@ $$
 $$
 
 with **algebraic Wedderburn weights** (paper:
-[three-parameters-wedderburn](../content/quantum-observable-universe/braids-and-knots/three-parameters-wedderburn.md),
-[confined-knot-binding](../content/quantum-observable-universe/braids-and-knots/confined-knot-binding.md)):
+[three-parameters-wedderburn](../folio/quantum-observable-universe/braids-and-knots/three-parameters-wedderburn.md),
+[confined-knot-binding](../folio/quantum-observable-universe/braids-and-knots/confined-knot-binding.md)):
 
 $$
   w_\lambda = \frac{(\dim_q V_\lambda)^2}{[3A]_q!}, \qquad
@@ -551,7 +551,7 @@ Three cases:
 **At $A \ge 2$**: there are many self-conjugate partitions
 ($\lambda = \lambda'$) — these are the "Wigner partitions" that
 contribute T=0 isoscalar pairing. The (2,2) ⊢ 4 partition
-([wigner-np-pairing](../content/quantum-observable-universe/braids-and-knots/wigner-np-pairing.md))
+([wigner-np-pairing](../folio/quantum-observable-universe/braids-and-knots/wigner-np-pairing.md))
 is self-conjugate and contributes the empirical Wigner energy
 $\Delta_W \approx 6.3$ MeV via $H_q((2,2)) = [3]_q [2]_q^2$.
 
@@ -563,7 +563,7 @@ the proton↔neutron Frobenius involution.
 ### 6.6b Why the per-nucleon (sym, std, alt) restriction is sufficient
 
 The paper proves
-([three-parameters-wedderburn §"Why three suffices for all A"](../content/quantum-observable-universe/braids-and-knots/three-parameters-wedderburn.md))
+([three-parameters-wedderburn §"Why three suffices for all A"](../folio/quantum-observable-universe/braids-and-knots/three-parameters-wedderburn.md))
 that the **typed crossing operators** $C(\mathfrak{p},\mathfrak{p})$,
 $C(\mathfrak{p},\mathfrak{n})$, $C(\mathfrak{n},\mathfrak{n})$ — which
 are the only ingredients of the atomic braid — are determined entirely
@@ -619,7 +619,7 @@ error inflates to 40-90% binding error. Specifically:
 The ⁴He case is decisive: the formula's per-generator $\Phi$'s miss
 the **(2,2)⊢4 self-conjugate partition** that contributes the
 Wigner T=0 pairing (paper:
-[wigner-np-pairing](../content/quantum-observable-universe/braids-and-knots/wigner-np-pairing.md))
+[wigner-np-pairing](../folio/quantum-observable-universe/braids-and-knots/wigner-np-pairing.md))
 with $\Delta_W = m_e \cdot H_q((2,2)) = m_e \cdot [3]_q [2]_q^2
 \approx 6.3$ MeV per pair. The full 3A-partition sum at $\lambda \vdash 12$
 would include this; the per-generator $H_3$-reduction does not.
@@ -641,7 +641,7 @@ Two refinements implemented in
    and $m_n$ exactly for $A = 1$.
 2. **Wigner correction.** Add $\Delta_W = -m_e \cdot [3]_q [2]_q^2 \cdot \min(Z,N)/A$
    from the self-conjugate $(2,2) \vdash 4$ partition (paper
-   [wigner-np-pairing](../content/quantum-observable-universe/braids-and-knots/wigner-np-pairing.md)).
+   [wigner-np-pairing](../folio/quantum-observable-universe/braids-and-knots/wigner-np-pairing.md)).
    Numerically $\Delta_W^{\text{per pair}} = 6.29$ MeV at $q_0$.
 
 | Isotope | Φ_1 | Φ_2 | Φ_3 | binding | Δ_W | M_pred | err |

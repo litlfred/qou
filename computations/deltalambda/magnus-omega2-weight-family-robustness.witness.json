@@ -1,22 +1,34 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-07T16:35:05.737677+00:00",
-  "commitSha": "6240c0ed9b7fb86902498e334fb3d543d2b66290",
+  "computedAt": "2026-10-13T14:20:18.480410+00:00",
+  "commitSha": "d3fc1984798d417519e0e0a4d07c80a6e62169b6",
   "assertions": [
     {
-      "name": "sign_robust_to_weight_family",
+      "name": "all_sources_post_ruling",
       "computed": "0",
-      "expected": "1",
-      "passed": false
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "atoms_measured",
+      "computed": "3",
+      "expected": "3",
+      "passed": true
+    },
+    {
+      "name": "atoms_where_weight_family_flips_the_sign",
+      "computed": "2",
+      "expected": "2",
+      "passed": true
     }
   ],
-  "allPassed": false,
-  "durationMs": 65,
+  "allPassed": true,
+  "durationMs": 75,
   "computation": "magnus-omega2-weight-family-robustness",
   "scriptFile": "magnus_omega2_weight_family_robustness_probe.py",
-  "scriptHash": "1df338736044",
-  "scriptCommitSha": "e41b647561499c5f54c3b63f31655ca74f55fbc0",
+  "scriptHash": "df4b78a3af0c",
+  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -24,14 +36,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e87a23f8d6fd6732"
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -44,7 +56,7 @@
     "per_atom": [
       {
         "atom": "deuteron",
-        "source_computed_at": "2026-09-07",
+        "source_computed_at": "2026-09-13",
         "source_pre_ruling": false,
         "partitions": 11,
         "wenzl_nonzero_partitions": 4,
@@ -61,7 +73,7 @@
       },
       {
         "atom": "triton",
-        "source_computed_at": "2026-09-07",
+        "source_computed_at": "2026-09-13",
         "source_pre_ruling": false,
         "partitions": 30,
         "wenzl_nonzero_partitions": 5,
@@ -78,20 +90,20 @@
       },
       {
         "atom": "helium-4",
-        "source_computed_at": "2026-09-04",
-        "source_pre_ruling": true,
+        "source_computed_at": "2026-09-11",
+        "source_pre_ruling": false,
         "partitions": 77,
         "wenzl_nonzero_partitions": 7,
         "trace_sign_split": {
-          "positive": 26,
-          "negative": 49,
+          "positive": 33,
+          "negative": 42,
           "zero": 2
         },
-        "P_total_plancherel": "-57.803114026890178954",
-        "P_total_wenzl": "-100.82684432565260085",
-        "sign_plancherel": -1,
+        "P_total_plancherel": "34.126027285357652927",
+        "P_total_wenzl": "-20.466481428076021593",
+        "sign_plancherel": 1,
         "sign_wenzl": -1,
-        "sign_robust": true
+        "sign_robust": false
       }
     ],
     "weight_families": {
@@ -101,6 +113,9 @@
   },
   "caveats": [
     "A source witness computed before the 2026-09-05 ordering ruling carries grouped-era traces; re-weighting those compares two contractions of a superseded braid word, so its verdict is excluded from the gate. `source_pre_ruling` records which. This is not hypothetical: the first run of this probe reported robustness on all three atoms because triton's source was 2026-09-03, and the canonical regeneration flipped its sign.",
-    "Establishes only that the published SIGN does not distinguish the two measures. It does NOT establish that either is the correct pairing for a Magnus Omega2 question, and the MAGNITUDES differ substantially — so any conclusion drawn from |P_total| rather than its sign is still weight-family dependent."
-  ]
+    "The published SIGN DOES distinguish the two measures, at A=3 and A=4 both. Plancherel runs -,+,+ over A=2,3,4 (one sign change, between deuteron and triton); Wenzl runs -,-,- (no sign change anywhere). So the A-dependent sign change exists only under the measure the probes aggregate with, not under the production Markov weight. This caveat previously read 'the published SIGN does not distinguish the two measures' — true when only the deuteron had a canonical source, and contradicted by this witness's own per_atom rows once triton and helium-4 did.",
+    "Does NOT establish that either measure is the correct pairing for a Magnus Omega2 question — that is bean qou-za3q decision 1, still open. It establishes that the choice is no longer cosmetic: it determines whether the programme's target sign change is exhibited at all. Choosing the measure that yields the wanted sign would be fitting (AGENTS.md: selection against the target), so the honest reading is that under the production weight the sign change is NOT exhibited in A=2,3,4. Magnitudes remain weight-family dependent and non-monotone."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

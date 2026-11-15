@@ -63,14 +63,14 @@ sys.path.insert(0, str(HERE.parent))
 from witness_base import WitnessBuilder  # noqa: E402
 
 REPO_ROOT = HERE.parent.parent
-CONTENT_ROOT = REPO_ROOT / "content"
+CONTENT_ROOT = REPO_ROOT / "folio"
 # Scan the whole computations/ tree, not the audits/ subdirectory this
 # script was relocated into (Phase-2 refactor 2026-06-02): probe
 # witnesses live in computations/probes/ and other cluster subdirs.
 WITNESS_DIR = HERE.parent
 
 # lean.ref package prefix → Lake library root (mirrors
-# folio-assistant/schemas/lean-packages.ts).
+# folio-assistant/cat-harness/schemas/lean-packages.ts).
 LEAN_PKG_ROOTS = {
     "qou": CONTENT_ROOT / "quantum-observable-universe" / "lean",
     "ugb": CONTENT_ROOT / "unital-groebner-bases" / "lean",

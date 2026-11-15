@@ -121,7 +121,7 @@ except ImportError:
 
 
 def _is_in_scope(name: str) -> bool:
-    if "_deprecated" in Path(name).parts:
+    if ("_deprecated" in Path(name).parts or "fsh-guts" in Path(name).parts):
         return False
     return not any(name.endswith(suf) for suf in AUDIT_SUFFIXES)
 

@@ -1,8 +1,14 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant/folio-assistant-sci/ns#"
+    }
+  ],
   "@id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/lem-sec-022-02",
   "@type": [
-    "folio:Lemma",
+    "folio-assistant-sci:Lemma",
     "doco:Section"
   ],
   "kind": "lemma",
@@ -10,6 +16,6 @@
   "pageEnd": 93,
   "text": "lem-sec-022-02.md",
   "derivedFrom": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/sections/sec-022",
-  "sourceDocument": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/manifest",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/malkin-2021-galois-action-on-motivic-fundamental-groups-thes",
   "provenance": "ingested"
 }

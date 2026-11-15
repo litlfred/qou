@@ -22,9 +22,10 @@
 #         non-zero = no matching cache branch / empty payload.
 set -uo pipefail
 source "$(dirname "$0")/lib/lean-env.sh"
+source "$(dirname "$0")/lib/lake-cache-family.sh"
 
 slug="$(lean_toolchain_slug)"                      # e.g. v4-24-0
-branch="lake-cache/toolchain-$slug"
+branch="$(lake_cache_read_branch "toolchain-$slug")"
 # Pinned toolchain name/version (used for logging + the version-match check).
 # The extracted directory name (elan uses `leanprover--lean4---v4.24.0`) is NOT
 # recomputed here — detection is by `find … -path '*/bin/lean'`, which is
@@ -68,7 +69,7 @@ if ! git -C "$REPO_ROOT" fetch --depth=1 origin "$branch" 2>/dev/null; then
   echo "  Seed it first (on a machine WITH the toolchain installed):" >&2
   echo "    scripts/lean-toolchain-cache-seed.sh" >&2
   echo "  available lake-cache branches:" >&2
-  git -C "$REPO_ROOT" ls-remote origin 'lake-cache/*' 2>/dev/null \
+  lake_cache_ls_remote 2>/dev/null \
     | awk '{print "    " $2}' >&2
   exit 1
 fi

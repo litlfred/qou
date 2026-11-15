@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-0302267v2/sections/sec-005",
   "@type": [
     "doco:Section"
   ],
-  "title": "Le groupe fondamental motivique du compl´ ement,",
-  "pageStart": 2,
-  "pageEnd": 2,
+  "title": "Le groupe fondamental unipotent motivique d’une vari´et´e rationnelle",
+  "pageStart": 43,
+  "pageEnd": 53,
   "contains": [
     "library/arxiv-math-0302267v2/blocks/prose-sec-005"
   ],
-  "derivedFrom": "library/arxiv-math-0302267v2/manifest",
-  "sourceDocument": "library/arxiv-math-0302267v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0302267v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0302267v2",
   "provenance": "ingested"
 }

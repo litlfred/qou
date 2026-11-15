@@ -515,7 +515,7 @@ def main() -> int:
             "QOU.QBeta.ConventionDAdmissibleRoots",
             "QOU.BraidKnot.MarkovConventionSeparation",
             "qou-cds1 / 336a35ff278 (C and D are different algebras; z is a rank label)",
-            "content/quantum-observable-universe/lean/QOU/Braiding/SkeinNormalisation.lean",
+            "folio/quantum-observable-universe/lean/QOU/Braiding/SkeinNormalisation.lean",
             "library/li-braid-closures (HOMFLYPT normalisation change, held, uncited)",
         ],
         "source": "beans qou-99qc (robustness) and qou-8bxv (the two normalisations)",

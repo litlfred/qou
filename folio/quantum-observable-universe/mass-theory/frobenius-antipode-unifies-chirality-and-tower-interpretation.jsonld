@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-frobenius-antipode-unifies-chirality-and-tower-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:frobenius-antipode-unifies-chirality-and-tower-interpretation",
+  "kind": "remark",
+  "title": "Geometric reading of $G/3$ as the Borromean volume over $|S_4|$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-frobenius-antipode-unifies-chirality-and-tower",
+    "papers/quantum-observable-universe/blocks/def-algebraic-quantum-volume",
+    "papers/quantum-observable-universe/blocks/rem-kashaev-volume-density"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-frobenius-antipode-unifies-chirality-and-tower",
+  "text": "frobenius-antipode-unifies-chirality-and-tower-interpretation.md",
+  "provenance": "authored"
+}

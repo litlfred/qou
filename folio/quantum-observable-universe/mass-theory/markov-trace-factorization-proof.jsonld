@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-markov-trace-factorization",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:markov-trace-factorization",
+  "kind": "proof",
+  "title": "Proof of markov trace factorization",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-markov-trace-factorization"
+  ],
+  "text": "markov-trace-factorization-proof.md",
+  "provenance": "authored"
+}

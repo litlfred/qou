@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/poincare-proof-outline/blocks/prose-sec-028",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/poincare-proof-outline/blocks/prose-sec-028",
   "kind": "prose",
-  "title": "H-betweenness in the Poincaré model",
-  "pageStart": 77,
-  "pageEnd": 77,
-  "text": "../sections/sec-028-h-betweenness-in-the-poincaré-model.md",
-  "derivedFrom": "library/poincare-proof-outline/manifest",
-  "sourceDocument": "library/poincare-proof-outline/manifest",
+  "title": "Intersection of circles in special positions",
+  "pageStart": 71,
+  "pageEnd": 74,
+  "text": "../sections/sec-028-intersection-of-circles-in-special-positions.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/poincare-proof-outline",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/poincare-proof-outline",
   "provenance": "ingested"
 }

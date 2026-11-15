@@ -163,7 +163,8 @@ def _q_schur_y_lambda_mpf(partition: tuple[int, ...], q: Any, n: int) -> Any:
 
     Generic in q (mpf / float). Closed form per
     `docs/audits/2026-05-25-markov-trace-convention-audit.md` §3
-    and `prop:q-schur-y-lambda-closed-form` (PR #1259).
+    and the retired `q-schur-y-lambda-closed-form` (PR #1259; deleted in
+    edf658ff19, record in docs/audits/2026-10-11-retired-label-records.md §B).
     """
     c = _content_sum(partition)
     return q ** c / _q_factorial_mpf(n, q)

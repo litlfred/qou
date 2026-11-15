@@ -4,10 +4,10 @@
 # Context: qou is CONTENT ONLY. The platform it consumes (content
 # pipeline, schemas, LaTeX rendering, viewer, computations) lives in a
 # SEPARATE repo, litlfred/folio-assistant. qou's content `.ts` files and
-# the `content/schema/*.ts` shims import the platform through the in-repo
-# path `folio-assistant/` (e.g. `content/schema/types.ts` does
-# `export * from "../../folio-assistant/schemas/types"`), and the
-# package.json scripts run `../folio-assistant/content/pipeline/*.ts`.
+# the `folio/schema/*.ts` shims import the platform through the in-repo
+# path `folio-assistant/` (e.g. `folio/schema/builders.ts` re-exports the
+# builders from `../../folio-assistant/cat-harness/schemas/builders`), and the
+# package.json scripts run `../folio-assistant/cat-harness-tools/pipeline/*.ts`.
 # Both resolve to `<repo-root>/folio-assistant/`.
 #
 # This script makes `<repo-root>/folio-assistant/` resolve by:
@@ -119,6 +119,20 @@ if [ -e "$CLONE_DIR" ] && [ ! -d "$CLONE_DIR/.git" ]; then
   die "$CLONE_DIR exists but is not a git clone — move it aside or set FOLIO_ASSISTANT_DIR"
 fi
 
+# A 40-hex SHA pin (the default, from .folio-assistant-pin) cannot be cloned with
+# --branch, and the fallback full clone of the monorepo did not finish within ten
+# minutes through a proxied sandbox (2026-10-04). Fetch exactly the pinned commit
+# instead: one shallow fetch, then the unified checkout below finds it locally.
+if [ ! -d "$CLONE_DIR/.git" ] && printf '%s' "$REF" | grep -Eq '^[0-9a-f]{40}$'; then
+  info "pin is a SHA — fetching only $REF into $CLONE_DIR"
+  mkdir -p "$CLONE_DIR" && git -C "$CLONE_DIR" init --quiet \
+    && git -C "$CLONE_DIR" remote add origin "$REPO_URL" \
+    && git_retry git -C "$CLONE_DIR" fetch --quiet --depth 1 origin "$REF" \
+    && git -C "$CLONE_DIR" checkout --quiet FETCH_HEAD \
+    || die "shallow fetch of $REF failed (check network / repo access)"
+  SHALLOW_PIN_FETCHED=1
+fi
+
 if [ ! -d "$CLONE_DIR/.git" ]; then
   info "cloning $REPO_URL -> $CLONE_DIR (ref: $REF)"
   # --branch accepts a branch or tag but NOT a SHA; on a SHA ref this first
@@ -127,6 +141,12 @@ if [ ! -d "$CLONE_DIR/.git" ]; then
   git_retry git clone --branch "$REF" "$REPO_URL" "$CLONE_DIR" \
     || git_retry git clone "$REPO_URL" "$CLONE_DIR" \
     || die "clone failed after retries (check network / repo access)"
+elif [ "${SHALLOW_PIN_FETCHED:-0}" = 1 ]; then
+  : # just fetched exactly the pinned commit above; a full `fetch --tags` would undo the point
+elif printf '%s' "$REF" | grep -Eq '^[0-9a-f]{40}$' && ! git -C "$CLONE_DIR" rev-parse --verify --quiet "$REF^{commit}" >/dev/null 2>&1; then
+  info "platform clone exists at $CLONE_DIR — fetching only the pinned commit $REF"
+  git_retry git -C "$CLONE_DIR" fetch --quiet --depth 1 origin "$REF" \
+    || info "fetch failed (offline?) — using existing clone as-is"
 else
   info "platform clone exists at $CLONE_DIR — fetching $REF"
   git_retry git -C "$CLONE_DIR" fetch --tags origin \
@@ -168,8 +188,75 @@ else
   info "ref '$REF' not found locally or on origin — leaving clone on its current branch"
 fi
 
+# Platform main (2026-10) carries bootstrap/ and bootstrap-tools/ as git
+# SUBMODULES; without them every pipeline import fails with "Cannot find module
+# ../../bootstrap-tools/schemas/graph". Initialise them at the recorded commits.
+if [ -f "$CLONE_DIR/.gitmodules" ]; then
+  git_retry git -C "$CLONE_DIR" submodule update --init --depth 1 --quiet \
+    || warn "submodule init failed — imports into bootstrap/ and bootstrap-tools/ will not resolve"
+fi
+
+# Platform main (from 2026-10-09) carries NO layer in-tree: cat-harness,
+# cat-harness-tools, folio-assistant-core, folio-assistant-sci, bootstrap, ...
+# are remote mounts recorded in `index.lock.json`, each pinned to a commit and
+# verified against a tree digest. A clone at such a pin has none of them until
+# they are laid down, and every `folio-assistant/cat-harness/...` import fails.
+# The platform's own entry point does it with nothing but bun + git; it is
+# idempotent (an intact mount is reported `current`).
+if [ -f "$CLONE_DIR/index.lock.json" ] && [ -f "$CLONE_DIR/.github/mount-from-lock.sh" ]; then
+  info "mounting platform layers from index.lock.json"
+  (cd "$CLONE_DIR" && bash .github/mount-from-lock.sh --root .) >&2 \
+    || warn "mount-from-lock failed — platform layers (cat-harness, folio-assistant-sci, …) may be absent"
+fi
+
 # absolute, normalized path to the clone
 CLONE_ABS="$(cd "$CLONE_DIR" && pwd)" || die "cannot resolve $CLONE_DIR"
+
+# --- which layout is this clone? -----------------------------------------
+# folio-assistant split its own tree on 2026-09-20: the platform (schemas/,
+# content/pipeline/, src/, scripts/, adapters/) moved from the clone ROOT down
+# into `cat-harness/`. The clone root keeps package.json and node_modules, so
+# `bun install` and the dep check below still belong there — only the code
+# moved.
+#
+# This is DETECTED rather than assumed, and it has to be, because the two
+# layouts coexist right now: `.folio-assistant-pin` still names a pre-split
+# SHA, so a fresh run of this script checks out a clone with no `cat-harness/`
+# at all. Hardcoding either answer breaks the other, and it breaks it the
+# quiet way — every `folio-assistant/...` import resolves to nothing and the
+# first error names bun's global cache rather than this link (the 2026-09-13
+# `qou-wdh9` shape).
+#
+# Probe for a FILE the platform must have, not for the directory: a stray
+# empty `cat-harness/` would otherwise answer "split" and point the link at
+# nothing.
+#
+# The LINK points at the clone ROOT in both layouts (bean qou-msp2). Every qou
+# importer writes the split path in full — `folio-assistant/cat-harness/<x>` —
+# since the 2026-09-26 pin bump re-pointed them. Until 2026-09-29 this script
+# linked one level deeper, to `<clone>/cat-harness`, so each of those imports
+# resolved to `cat-harness/cat-harness/<x>` and failed: `run-validate.ts` could
+# not start after a stock setup. The layout is still DETECTED, because the
+# bibliography bridge below applies to a pre-split clone only, but it is kept
+# in PLATFORM_SPLIT rather than inferred from where the link points.
+# The schemas code moved to cat-harness-tools/schemas/ on 2026-10-30 (bean 8lcl);
+# either location means the split layout.
+if [ -f "$CLONE_ABS/cat-harness-tools/schemas/types.ts" ] || [ -f "$CLONE_ABS/cat-harness/schemas/types.ts" ]; then
+  PLATFORM_ABS="$CLONE_ABS"
+  PLATFORM_SPLIT=1
+  PLATFORM_LAYOUT="split (code under cat-harness/)"
+elif [ -f "$CLONE_ABS/schemas/types.ts" ]; then
+  PLATFORM_ABS="$CLONE_ABS"
+  PLATFORM_SPLIT=0
+  PLATFORM_LAYOUT="pre-split (code at clone root)"
+  warn "pre-split platform clone: qou imports folio-assistant/cat-harness/<x>, which a pre-split clone does not have"
+else
+  # Neither answers. Do NOT guess: linking to a root that holds no schemas/
+  # produces a link that exists and resolves nothing, which is the state this
+  # script is for detecting. Say so and stop.
+  die "clone at $CLONE_ABS holds schemas/types.ts at neither the root nor cat-harness/ — not a folio-assistant checkout, or a failed clone"
+fi
+info "platform layout: $PLATFORM_LAYOUT -> $PLATFORM_ABS"
 
 # --- create the in-repo symlink: <root>/folio-assistant -> clone ----------
 LINK="$ROOT/folio-assistant"
@@ -182,8 +269,8 @@ fi
 
 # Prefer a relative symlink target (portable across machines); fall back
 # to the absolute path if realpath lacks --relative-to.
-if TARGET="$(realpath --relative-to="$ROOT" "$CLONE_ABS" 2>/dev/null)"; then :; else
-  TARGET="$CLONE_ABS"
+if TARGET="$(realpath --relative-to="$ROOT" "$PLATFORM_ABS" 2>/dev/null)"; then :; else
+  TARGET="$PLATFORM_ABS"
 fi
 
 # Move an untracked husk (leftover bun.lock + node_modules, or a stale
@@ -201,10 +288,10 @@ case "${OSTYPE:-}" in
     # (Crostini); this branch is unverified here — Windows devs should report
     # issues or use WSL.
     [ -e "$LINK" ] && rm -rf "$LINK"
-    win_link="$(cygpath -w "$LINK")"; win_target="$(cygpath -w "$CLONE_ABS")"
+    win_link="$(cygpath -w "$LINK")"; win_target="$(cygpath -w "$PLATFORM_ABS")"
     cmd //c mklink //j "$win_link" "$win_target" >/dev/null \
       || die "could not create directory junction (use WSL, or run 'mklink /j' manually)"
-    info "created Windows directory junction: folio-assistant -> $CLONE_ABS"
+    info "created Windows directory junction: folio-assistant -> $PLATFORM_ABS"
     ;;
   *)
     if [ -L "$LINK" ]; then
@@ -223,52 +310,134 @@ case "${OSTYPE:-}" in
 esac
 
 # --- bridge: expose the repo's bibliography to platform checkers ----------
-# qa-checkers-extended.ts resolves references.ts relative to the PLATFORM
-# clone (CONTENT_DIR = <clone>/content), but the bibliography source of
-# truth lives in THIS repo at content/schema/references.ts. Without this
-# bridge every \cite{} fails bib-cite-resolves with "does not resolve in
-# references.ts" (the 2026-06-21 233-block false-fail batch).
-if [ ! -e "$CLONE_ABS/content/schema/references.ts" ]; then
-  mkdir -p "$CLONE_ABS/content/schema"
-  ln -s "$ROOT/content/schema/references.ts" \
-    "$CLONE_ABS/content/schema/references.ts" \
-    && info "bridged content/schema/references.ts into platform clone" \
-    || info "could not bridge references.ts — bib-cite-resolves will false-fail"
+# ONLY for a pre-split clone. Both consumers were fixed upstream and the
+# bridges are not merely unnecessary against a split clone — they are WRONG
+# there, because `mkdir -p "$CLONE_ABS/folio/schema"` would mint directories
+# at a clone root that no longer holds any of the platform's code, and the
+# consumer looking for them has stopped looking.
+#
+# What changed, checked in the platform tree on 2026-09-20 rather than assumed:
+#
+#   qa-checkers-extended.ts  reads `join(FOLIO_DIR, "schema", "references.ts")`,
+#                            and FOLIO_DIR is `folioDir(findContentRepoRoot())`.
+#                            For qou that resolves through `qou.json` to
+#                            `<qou>/content` — the source of truth itself. The
+#                            bridge existed because the path used to be
+#                            import-relative and landed in the platform clone.
+#
+#   export-bibtex.ts         no longer imports `../../schemas/references` at
+#                            all. It imports `./references-registry-di`, a DI
+#                            point the folio fills by calling
+#                            `configureReferenceRegistry` — which qou's
+#                            `scripts/run-validate.ts` does, under `--strict`
+#                            only and for reasons recorded there (bean
+#                            `qou-cite`). So the bridge is inert rather than
+#                            merely unnecessary: the file it creates is at a
+#                            path nothing imports. Note that qou has no caller
+#                            of export-bibtex today, so `references.bib` is not
+#                            regenerated from here by any route; that is a
+#                            pre-existing gap this script never closed, and
+#                            leaving the bridge in place would not close it.
+#
+# So this whole block is dead the moment `.folio-assistant-pin` moves past the
+# split. It is kept, guarded, because the pin has NOT moved yet: until it does,
+# a fresh clone is pre-split and needs these links exactly as before.
+if [ "$PLATFORM_SPLIT" = 0 ]; then
+  # qa-checkers-extended.ts (pre-split) resolved references.ts relative to the
+  # PLATFORM clone (CONTENT_DIR = <clone>/content), but the bibliography source
+  # of truth lives in THIS repo at folio/schema/references.ts. Without this
+  # bridge every \cite{} fails bib-cite-resolves with "does not resolve in
+  # references.ts" (the 2026-06-21 233-block false-fail batch).
+  if [ ! -e "$CLONE_ABS/folio/schema/references.ts" ]; then
+    mkdir -p "$CLONE_ABS/folio/schema"
+    ln -s "$ROOT/folio/schema/references.ts" \
+      "$CLONE_ABS/folio/schema/references.ts" \
+      && info "bridged folio/schema/references.ts into pre-split platform clone" \
+      || info "could not bridge references.ts — bib-cite-resolves will false-fail"
+  fi
+
+  # The pre-split platform imported the bibliography by TWO different paths,
+  # and bridging only the one above left the other broken:
+  #
+  #   qa-checkers-extended.ts  -> <clone>/folio/schema/references  (above)
+  #   export-bibtex.ts         -> <clone>/schemas/references         (here)
+  #
+  # Without this second link, regenerating references.bib dies with
+  # "Cannot find module '../../schemas/references'", the .bib silently
+  # stays stale, and every \cite{} added since the last successful export
+  # renders as an undefined citation in the PDF. Measured 2026-08-16: 16
+  # keys present in references.ts were missing from references.bib, for
+  # 23 "Citation ... undefined" warnings in the full build.
+  if [ ! -e "$CLONE_ABS/schemas/references.ts" ]; then
+    mkdir -p "$CLONE_ABS/schemas"
+    ln -s "$ROOT/folio/schema/references.ts" \
+      "$CLONE_ABS/schemas/references.ts" \
+      && info "bridged schemas/references.ts into pre-split platform clone" \
+      || info "could not bridge schemas/references.ts — export-bibtex will fail"
+  fi
+else
+  info "split platform: no bibliography bridge needed (FOLIO_DIR and the DI registry resolve it)"
 fi
 
-# The platform imports the bibliography by TWO different paths, and
-# bridging only the one above leaves the other broken:
+# --- install the platform's own deps, and VERIFY it ----------------------
 #
-#   qa-checkers-extended.ts  → <clone>/content/schema/references  (above)
-#   export-bibtex.ts         → <clone>/schemas/references         (here)
+# Still best-effort (a failure here does not abort setup), but no longer SILENT.
 #
-# Without this second link, regenerating references.bib dies with
-# "Cannot find module '../../schemas/references'", the .bib silently
-# stays stale, and every \cite{} added since the last successful export
-# renders as an undefined citation in the PDF. Measured 2026-08-16: 16
-# keys present in references.ts were missing from references.bib, for
-# 23 "Citation ... undefined" warnings in the full build.
-if [ ! -e "$CLONE_ABS/schemas/references.ts" ]; then
-  mkdir -p "$CLONE_ABS/schemas"
-  ln -s "$ROOT/content/schema/references.ts" \
-    "$CLONE_ABS/schemas/references.ts" \
-    && info "bridged schemas/references.ts into platform clone" \
-    || info "could not bridge schemas/references.ts — export-bibtex will fail"
-fi
-
-# --- best-effort: install the platform's own deps ------------------------
+# Measured 2026-09-13 (bean qou-wdh9): this block ran, `bun` was on PATH,
+# FOLIO_SKIP_INSTALL was unset, and the clone still had no node_modules three
+# hours later. Why was unrecoverable -- the `|| info` swallowed the reason and
+# nothing was logged. What the agent saw instead, from `run-validate`, was
+#
+#     error: Cannot find module 'unist-util-visit-parents/do-not-use-color'
+#       from '/root/.bun/install/cache/unist-util-visit-parents@6.0.2@@@1/lib/index.js'
+#
+# which names bun's GLOBAL CACHE and neither this script nor the clone. The
+# remark/unified family lives in the PLATFORM's package.json and nowhere in qou,
+# so with no node_modules bun resolves out of that cache, where it does not
+# honour the `./do-not-use-color` conditional subpath export. The agent
+# reasonably read it as a broken gate and ran `bun install` in qou/ -- which
+# cannot work, and measured no change.
+#
+# So two things are added: the install output is KEPT, and the outcome is
+# CHECKED against the artifact that actually matters (node_modules), not against
+# bun's exit code. Checking the exit code alone would not have caught this if
+# the clone was materialised by some path that never reached this block.
 if [ "${FOLIO_SKIP_INSTALL:-0}" != "1" ] && [ -f "$CLONE_ABS/package.json" ]; then
   if command -v bun >/dev/null 2>&1; then
-    info "installing platform deps (bun install in $CLONE_ABS)"
-    (cd "$CLONE_ABS" && bun install) || info "bun install failed — run it manually in $CLONE_ABS"
+    _install_log="${TMPDIR:-/tmp}/folio-assistant-bun-install.log"
+    info "installing platform deps (bun install in $CLONE_ABS; log: $_install_log)"
+    (cd "$CLONE_ABS" && bun install) >"$_install_log" 2>&1 \
+      || warn "bun install exited non-zero — see $_install_log"
   else
-    info "bun not found — skip platform deps (install bun, then 'cd $CLONE_ABS && bun install')"
+    warn "bun not found — platform deps NOT installed. Install bun, then run:"
+    warn "    cd $CLONE_ABS && bun install"
   fi
+fi
+
+# Verify the artifact, not the exit code. This runs even when the install was
+# skipped, so a clone materialised by any other route is still checked.
+if [ -f "$CLONE_ABS/package.json" ] && [ ! -d "$CLONE_ABS/node_modules" ]; then
+  warn "=============================================================="
+  warn "PLATFORM DEPS ARE MISSING: $CLONE_ABS/node_modules does not exist."
+  warn ""
+  warn "Every checker runs from the platform clone, so the content gate"
+  warn "will fail before validating anything, with an error naming bun's"
+  warn "global cache rather than this clone. It looks like a broken gate."
+  warn "It is not. Running 'bun install' in the qou repo will NOT fix it —"
+  warn "the missing packages are declared in the PLATFORM's package.json."
+  warn ""
+  warn "Fix:  cd $CLONE_ABS && bun install"
+  warn "=============================================================="
 fi
 
 cat >&2 <<EOF
 setup-folio-assistant: done.
   platform clone : $CLONE_ABS
   in-repo link   : $LINK -> $TARGET
-Next: cd content && bun install && bun run validate
+
+Next, from the REPO ROOT:
+  bun run scripts/run-validate.ts folio/quantum-observable-universe
+
+(\`bun run validate\` no longer exists — the package.json alias was dropped in
+the folio-assistant migration; run-validate.ts is its standalone replacement.)
 EOF

@@ -179,6 +179,7 @@ def main() -> int:
 
     out = HERE / "qbeta-f-bar-parity-requirement.witness.json"
     w = {
+        "q0Anchor": "independent", "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal",
         "description": "Is the Q_beta correction factor F required to be bar-even? "
                        "No -- Q_A carries no bar parity to divide out, so bar-evenness "
                        "of F is unsatisfiable, not merely un-required. Answers the open "

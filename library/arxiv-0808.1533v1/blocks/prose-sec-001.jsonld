@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0808.1533v1/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0808.1533v1/blocks/prose-sec-001",
   "kind": "prose",
   "title": "Energy bound.",
   "pageStart": 23,
   "pageEnd": 27,
   "text": "../sections/sec-001-energy-bound.md",
-  "derivedFrom": "library/arxiv-0808.1533v1/manifest",
-  "sourceDocument": "library/arxiv-0808.1533v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0808.1533v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0808.1533v1",
   "provenance": "ingested"
 }

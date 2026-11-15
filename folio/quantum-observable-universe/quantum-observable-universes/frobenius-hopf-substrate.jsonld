@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-frobenius-hopf-substrate",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:frobenius-hopf-substrate",
+  "kind": "definition",
+  "title": "The quantum vacuum as a Frobenius--Hopf algebra",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-frobenius-pairing"
+  ],
+  "tags": [
+    "frobenius",
+    "hopf-algebra",
+    "substrate",
+    "vacuum"
+  ],
+  "leanRef": "qou:QOU.AlgebraicSubstrate.FrobeniusHopfSubstrate",
+  "text": "frobenius-hopf-substrate.md",
+  "leanSource": "frobenius-hopf-substrate.lean",
+  "provenance": "authored"
+}

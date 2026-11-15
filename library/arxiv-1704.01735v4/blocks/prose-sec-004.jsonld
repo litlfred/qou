@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1704.01735v4/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1704.01735v4/blocks/prose-sec-004",
   "kind": "prose",
-  "title": "A diﬀerent construction: from the modular curve X(13) to E8",
-  "pageStart": 1,
-  "pageEnd": 1,
-  "text": "../sections/sec-004-4-a-diﬀerent-construction-from-the-modular-curve.md",
-  "derivedFrom": "library/arxiv-1704.01735v4/manifest",
-  "sourceDocument": "library/arxiv-1704.01735v4/manifest",
+  "title": "E8-singularity: from the icosahedron to E8",
+  "pageStart": 8,
+  "pageEnd": 10,
+  "text": "../sections/sec-004-21-e8-singularity-from-the-icosahedron-to-e8.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1704.01735v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1704.01735v4",
   "provenance": "ingested"
 }

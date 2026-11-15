@@ -191,7 +191,7 @@ def newest_activity(entries, now):
 
 def load_beans(root: pathlib.Path) -> dict:
     out = {}
-    for f in sorted((root / ".beans").glob("*.md")):
+    for f in sorted((root / "beans/defs").glob("*.md")):
         head = f.read_text(errors="replace")[:1200]
         g = {k: re.search(rf"^{k}: (.+)$", head, re.M) for k in
              ("status", "updated_at", "priority", "title")}

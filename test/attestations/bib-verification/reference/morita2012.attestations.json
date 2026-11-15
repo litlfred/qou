@@ -1,0 +1,63 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "morita2012",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 231,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1203.3404v1/1203.3404v1.pdf"
+        },
+        "id": "morita2012",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "*** WRONG JOIN ***. The seeded id points at a two-author textbook on basic hypergeometric series. The document is not a book at all: it is a single-author research preprint on connection formulae for local solutions of the Ramanujan equation (arXiv:1203.3404v1, math.CA). Type, authorship and date all differ. id set to null - no registered key matches (a grep for '1203.3404' in references.ts is empty, and the only entries under the same surname are for a different person working on quaternionic electroweak theory). CONSEQUENCE FOR THE SEEDED KEY: gasper-rahman-2004 is cited at QOU/QBeta/StageCSigma3LiftObligation.lean:54 with a fine-grained locator (three-term recurrences and Casoratian positivity, section 7.7 Askey-Wilson), but there is NO copy of that textbook anywhere in uploads/, so the locator is not backed by any local source and never was - this upload does not supply it. On merits the actual document is directly in scope: it gives connection formulae between 0 and infinity for the Ramanujan function, the q-Airy function and the divergent 2phi0(0,0;-;q,x), via two distinct q-Borel-Laplace transformations. The corpus has an active q-Airy / q-Borel-Laplace / q-Gevrey programme - QOU/Mathlib/QGevreyOrder.lean, QGevreyTaming.lean, QOU/MathlibExt/QBorelKernelLevel.lean, QOU/QBeta/C1FuchsianExponents.lean - and its existing q-Airy A_q reference is registered at metadata-verification level only.",
+          "keyResults": [
+            {
+              "locator": "Abstract / main connection formulae",
+              "statement": "Connection formulae between 0 and infinity for local solutions of the Ramanujan equation (Ramanujan function, q-Airy function, divergent 2phi0), obtained by two distinct q-Borel-Laplace transformations.",
+              "useForFolio": "Literature grounding for the corpus's q-Borel-Laplace / q-Gevrey level machinery and for the q-Airy A_q object whose current reference is registered at metadata-verification level only.",
+              "targets": [
+                "qou:QOU.MathlibExt.QBorelKernelLevel",
+                "qou:QOU.Mathlib.QGevreyOrder"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "A corpus-relevant q-Borel-Laplace / q-Airy source with no ref() entry, currently mis-joined onto the [gasper-rahman-2004] entry. Register it from its title page before citing.",
+              "target": "folio/schema/references.ts",
+              "bean": "qou-uejz"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "The corpus's q-Airy A_q reference is registered at metadata-verification level only; this paper is a readable, in-repo source for the q-Borel-Laplace connection problem behind it. A remark naming what it does and does not settle would stop the gap being re-declared.",
+              "target": "qou:QOU.MathlibExt.QBorelKernelLevel",
+              "bean": "qou-cdr1"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "2318b14fb270"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

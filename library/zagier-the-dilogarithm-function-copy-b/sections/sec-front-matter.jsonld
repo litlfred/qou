@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/zagier-the-dilogarithm-function-copy-b/sections/sec-front-matter",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Front matter",
+  "pageStart": 1,
+  "pageEnd": 4,
+  "contains": [
+    "library/zagier-the-dilogarithm-function-copy-b/blocks/prose-sec-front-matter"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/zagier-the-dilogarithm-function-copy-b",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/zagier-the-dilogarithm-function-copy-b",
+  "provenance": "ingested"
+}

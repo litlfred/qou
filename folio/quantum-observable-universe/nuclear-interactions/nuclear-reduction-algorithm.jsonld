@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-nuclear-reduction-algorithm",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:nuclear-reduction-algorithm",
+  "kind": "remark",
+  "title": "Nuclear braid reduction algorithm",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-inductive-gb-reduction"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-nuclear-groebner-reduction",
+  "cites": [
+    "references/leitnerpawloski2004"
+  ],
+  "tags": [
+    "algorithm",
+    "groebner-shirshov",
+    "hecke-algebra",
+    "normal-form",
+    "leitner-pawloski"
+  ],
+  "text": "nuclear-reduction-algorithm.md",
+  "provenance": "authored"
+}

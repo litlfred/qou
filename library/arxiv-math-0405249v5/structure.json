@@ -1,0 +1,544 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0405249v5",
+ "source": {
+  "file": "0405249v5.pdf",
+  "sha256": "bc699482e5cd7679c881f01e2dd973253cebc2bccc86d8d4286b58075c571288",
+  "bytes": 346323,
+  "pages": 28,
+  "text_source": "embedded",
+  "extractor": "pypdf",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0405249",
+   "version": "5",
+   "primary_class": null,
+   "stamp_date": "27 Jun 2005"
+  },
+  "doi": null,
+  "title": "Twisted homology of quantum SL(2)",
+  "authors_raw": "Tom Hadfield \u22171, Ulrich Kr\u00e4hmer2",
+  "title_lines": [
+   "Twisted homology of quantum SL(2)"
+  ],
+  "abstract": "We calculate the twisted Hochschild and cyclic homology (in the sense of Kustermans, Murphy and Tuset) of the coordinate algebra o f the quan- tum SL(2) group relative to twisting automorphisms acting by resc aling the standard generators a,b,c,d . We discover a family of automorphisms for which the \u201ctwisted\u201d Hochschild dimension coincides wit h the classical dimension of SL(2, C), thus avoiding the \u201cdimension drop\u201d in Hochschild homology seen for many quantum deformations. Strikingly, t he simplest such automorphism is the canonical modular automorphism ar ising from the Haar functional. In addition, we identify the twisted cy clic cohomol- ogy classes corresponding to the three covariant di\ufb00erenti al calculi over quantumSU (2) discovered by Woronowicz.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181026001507-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Twisted cyclic homology",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "motivation",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "twisted hochschild and cyclic homology",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "hochschild homology of hopf algebras",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "noncommutative koszul resolutions",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Quantum SL(2)",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "the hopf algebra A(SLq (2))",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "the haar functional",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "the automorphism group of A( SLq (2))",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Twisted Hochschild homology of A( SLq (2))",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "a koszul resolution of A/ ker",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Computation of HHn(A), n 3",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "HH0(A)",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Twisted cocycles defined by derivations",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "HH1(A)",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "HH2(A)",
+   "page": 18,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "HH3(A)",
+   "page": 19,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Twisted cyclic homology of A( SLq (2))",
+   "page": 20,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Case 1",
+   "page": 21,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Case 2",
+   "page": 21,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Cases 3, 4 and 5",
+   "page": 24,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Covariant differential calculi",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "three dimensional left-covariant calculus",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "four dimensional bicovariant calculi",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Conclusions",
+   "page": 27,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 27,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1237,
+   "n_words": 183
+  },
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 5901,
+   "n_words": 1016
+  },
+  {
+   "id": "sec-001-twisted-cyclic-homology",
+   "number": null,
+   "title": "Twisted cyclic homology",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 814,
+   "n_words": 130
+  },
+  {
+   "id": "sec-002-motivation",
+   "number": null,
+   "title": "motivation",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1614,
+   "n_words": 299
+  },
+  {
+   "id": "sec-003-twisted-hochschild-and-cyclic-homology",
+   "number": null,
+   "title": "twisted hochschild and cyclic homology",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 4161,
+   "n_words": 795
+  },
+  {
+   "id": "sec-004-hochschild-homology-of-hopf-algebras",
+   "number": null,
+   "title": "hochschild homology of hopf algebras",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 1739,
+   "n_words": 311
+  },
+  {
+   "id": "sec-005-noncommutative-koszul-resolutions",
+   "number": null,
+   "title": "noncommutative koszul resolutions",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 286,
+   "n_words": 54
+  },
+  {
+   "id": "sec-006-quantum-sl2",
+   "number": null,
+   "title": "Quantum SL(2)",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 3829,
+   "n_words": 746
+  },
+  {
+   "id": "sec-007-the-haar-functional",
+   "number": null,
+   "title": "the haar functional",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1756,
+   "n_words": 338
+  },
+  {
+   "id": "sec-008-a-koszul-resolution-of-a-ker",
+   "number": null,
+   "title": "a koszul resolution of A/ ker",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 20,
+   "n_chars": 18566,
+   "n_words": 3794
+  },
+  {
+   "id": "sec-009-case-2",
+   "number": null,
+   "title": "Case 2",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 1674,
+   "n_words": 332
+  },
+  {
+   "id": "sec-010-case-1",
+   "number": null,
+   "title": "Case 1",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 24,
+   "n_chars": 5574,
+   "n_words": 1092
+  },
+  {
+   "id": "sec-011-cases-3-4-and-5",
+   "number": null,
+   "title": "Cases 3, 4 and 5",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 26,
+   "n_chars": 3909,
+   "n_words": 754
+  },
+  {
+   "id": "sec-012-three-dimensional-left-covariant-calculus",
+   "number": null,
+   "title": "three dimensional left-covariant calculus",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 1293,
+   "n_words": 233
+  },
+  {
+   "id": "sec-013-four-dimensional-bicovariant-calculi",
+   "number": null,
+   "title": "four dimensional bicovariant calculi",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 744,
+   "n_words": 129
+  },
+  {
+   "id": "sec-014-conclusions",
+   "number": null,
+   "title": "Conclusions",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 1001,
+   "n_words": 159
+  },
+  {
+   "id": "sec-015-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 3825,
+   "n_words": 590
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 27,
+  "sections": 17,
+  "chars_total": 57923,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 27,
+   "overlaid": 10,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-twisted-cyclic-homology",
+     "title": "Twisted cyclic homology",
+     "prose_ratio": 0.5,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-motivation",
+     "title": "motivation",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-twisted-hochschild-and-cyclic-homology",
+     "title": "twisted hochschild and cyclic homology",
+     "prose_ratio": 0.956,
+     "coverage_ratio": 0.943,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-hochschild-homology-of-hopf-algebras",
+     "title": "hochschild homology of hopf algebras",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.916,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-noncommutative-koszul-resolutions",
+     "title": "noncommutative koszul resolutions",
+     "prose_ratio": 0.147,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-quantum-sl2",
+     "title": "Quantum SL(2)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-the-haar-functional",
+     "title": "the haar functional",
+     "prose_ratio": 0.942,
+     "coverage_ratio": 0.953,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-a-koszul-resolution-of-a-ker",
+     "title": "a koszul resolution of A/ ker",
+     "prose_ratio": 0.873,
+     "coverage_ratio": 0.918,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-case-2",
+     "title": "Case 2",
+     "prose_ratio": 0.219,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-010-case-1",
+     "title": "Case 1",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.279,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-011-cases-3-4-and-5",
+     "title": "Cases 3, 4 and 5",
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.894,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-three-dimensional-left-covariant-calculus",
+     "title": "three dimensional left-covariant calculus",
+     "prose_ratio": 0.922,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-four-dimensional-bicovariant-calculi",
+     "title": "four dimensional bicovariant calculi",
+     "prose_ratio": 0.923,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-conclusions",
+     "title": "Conclusions",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.257,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
+ }
+}

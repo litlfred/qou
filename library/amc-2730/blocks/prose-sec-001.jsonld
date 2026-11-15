@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/amc-2730/blocks/prose-sec-001",
+  "kind": "prose",
+  "title": "The colored Jones polynomial and walks along braids",
+  "pageStart": 3,
+  "pageEnd": 6,
+  "text": "../sections/sec-001-the-colored-jones-polynomial-and-walks-along-bra.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/amc-2730",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/amc-2730",
+  "provenance": "ingested"
+}

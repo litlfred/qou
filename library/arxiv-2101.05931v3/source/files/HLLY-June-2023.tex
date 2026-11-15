@@ -1,0 +1,2206 @@
+\documentclass[11pt,reqno]{amsart}
+
+\usepackage{enumerate, amsmath, amsthm, amsfonts, amssymb, %xy,  
+mathrsfs, graphicx, paralist, ulem}
+\usepackage[usenames, dvipsnames]{color}
+\usepackage[margin=1in]{geometry} 
+\usepackage{hyperref}
+%\usepackage[inline]{showlabels}
+\usepackage{comment}
+\usepackage{bbm}
+%\usepackage{dynkin-diagrams}x
+
+\usepackage{mathabx} %This is for \sqbullet
+\usepackage{breqn} %This is for dmath
+%For tikz-cd
+\usepackage{tikz-cd}
+% For bib tex:
+\usepackage{amsrefs}
+
+%\input xy
+%\xyoption{all}
+
+\numberwithin{equation}{section}
+\newtheorem{Theorem}[equation]{Theorem}
+\newtheorem{Proposition}[equation]{Proposition}
+\newtheorem{Lemma}[equation]{Lemma}
+\newtheorem{Corollary}[equation]{Corollary}
+\newtheorem{Conjecture}[equation]{Conjecture}
+\newtheorem{Example}[equation]{Example}
+\newtheorem{Question}[equation]{Question}
+
+\theoremstyle{definition}
+\newtheorem{Remark}[equation]{Remark}
+\newtheorem{Acknowledgement}[equation]{Acknowledgement}
+\newenvironment{acknowledgement}[1][]{\begin{ack}[#1]\pushQED{\qed}}{\popQED \end{ack}}
+\newenvironment{remark}[1][]{\begin{rmk}[#1] \pushQED{\qed}}{\popQED \end{rmk}}
+\newtheorem{eg}[equation]{Example}
+\newenvironment{example}[1][]{\begin{eg}[#1] \pushQED{\qed}}{\popQED \end{eg}}
+\newtheorem{Definition}[equation]{Definition}
+\newenvironment{definition}[1][]{\begin{defn}[#1]\pushQED{\qed}}{\popQED \end{defn}}
+
+%\newtheorem*{theorem}{Theorem}
+
+\newtheoremstyle{named}{}{}{\itshape}{}{\bfseries}{.}{.5em}{#1\thmnote{ #3}}
+\theoremstyle{named}
+\newtheorem*{namedtheorem}{Theorem}
+
+
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\fA}{\mathfrak{A}}
+\newcommand{\rA}{\mathrm{A}}
+\newcommand{\sA}{\mathscr{A}}
+\newcommand{\bB}{\mathbf{B}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\fB}{\mathfrak{B}}
+\newcommand{\rB}{\mathrm{B}}
+\newcommand{\sB}{\mathscr{B}}
+\newcommand{\bC}{\mathbf{C}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\fC}{\mathfrak{C}}
+\newcommand{\rC}{\mathrm{C}}
+\newcommand{\sC}{\mathscr{C}}
+\newcommand{\bD}{\mathbf{D}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\fD}{\mathfrak{D}}
+\newcommand{\rD}{\mathrm{D}}
+\newcommand{\sD}{\mathscr{D}}
+\newcommand{\bE}{\mathbf{E}}
+\newcommand{\cE}{\mathcal{E}}
+\newcommand{\fE}{\mathfrak{E}}
+\newcommand{\rE}{\mathrm{E}}
+\newcommand{\sE}{\mathsf{E}}
+
+%\newcommand{\sE}{\mathscr{E}}
+\newcommand{\bF}{\mathbf{F}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\fF}{\mathfrak{F}}
+\newcommand{\rF}{\mathrm{F}}
+\newcommand{\sF}{\mathsf{F}}
+\newcommand{\bG}{\mathbf{G}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\fG}{\mathfrak{G}}
+\newcommand{\rG}{\mathrm{G}}
+\newcommand{\sG}{\mathsf{G}}
+\newcommand{\bH}{\mathbf{H}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\fH}{\mathfrak{H}}
+\newcommand{\rH}{\mathrm{H}}
+\newcommand{\sH}{\mathsf{H}}
+\newcommand{\bI}{\mathbf{I}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\fI}{\mathfrak{I}}
+\newcommand{\rI}{\mathrm{I}}
+\newcommand{\sI}{\mathscr{I}}
+\newcommand{\bJ}{\mathbf{J}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\fJ}{\mathfrak{J}}
+\newcommand{\rJ}{\mathrm{J}}
+\newcommand{\sJ}{\mathscr{J}}
+\newcommand{\bK}{\mathbf{K}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\fK}{\mathfrak{K}}
+\newcommand{\rK}{\mathrm{K}}
+\newcommand{\sK}{\mathscr{K}}
+\newcommand{\bL}{\mathbf{L}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\fL}{\mathfrak{L}}
+\newcommand{\rL}{\mathrm{L}}
+\newcommand{\sL}{\mathscr{L}}
+\newcommand{\bM}{\mathbf{M}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\fM}{\mathfrak{M}}
+\newcommand{\rM}{\mathrm{M}}
+\newcommand{\sM}{\mathsf{M}}
+\newcommand{\bN}{\mathbf{N}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\fN}{\mathfrak{N}}
+\newcommand{\rN}{\mathrm{N}}
+\newcommand{\sN}{\mathscr{N}}
+\newcommand{\bO}{\mathbf{O}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\fO}{\mathfrak{O}}
+\newcommand{\rO}{\mathrm{O}}
+\newcommand{\sO}{\mathscr{O}}
+\newcommand{\bP}{\mathbf{P}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\fP}{\mathfrak{P}}
+\newcommand{\rP}{\mathrm{P}}
+\newcommand{\sP}{\mathscr{P}}
+\newcommand{\bQ}{\mathbf{Q}}
+\newcommand{\cQ}{\mathcal{Q}}
+\newcommand{\fQ}{\mathfrak{Q}}
+\newcommand{\rQ}{\mathrm{Q}}
+\newcommand{\sQ}{\mathscr{Q}}
+\newcommand{\bR}{\mathbf{R}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\fR}{\mathfrak{R}}
+\newcommand{\rR}{\mathrm{R}}
+\newcommand{\sR}{\mathscr{R}}
+\newcommand{\bS}{\mathbf{S}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\fS}{\mathfrak{S}}
+\newcommand{\rS}{\mathrm{S}}
+\newcommand{\sS}{\mathscr{S}}
+\newcommand{\bT}{\mathbf{T}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\fT}{\mathfrak{T}}
+\newcommand{\rT}{\mathrm{T}}
+\newcommand{\sT}{\mathscr{T}}
+\newcommand{\bU}{\mathbf{U}}
+\newcommand{\cU}{\mathcal{U}}
+\newcommand{\fU}{\mathfrak{U}}
+\newcommand{\rU}{\mathrm{U}}
+\newcommand{\sU}{\mathscr{U}}
+\newcommand{\bV}{\mathbf{V}}
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\fV}{\mathfrak{V}}
+\newcommand{\rV}{\mathrm{V}}
+\newcommand{\sV}{\mathscr{V}}
+\newcommand{\bW}{\mathbf{W}}
+\newcommand{\cW}{\mathcal{W}}
+\newcommand{\fW}{\mathfrak{W}}
+\newcommand{\rW}{\mathrm{W}}
+\newcommand{\sW}{\mathscr{W}}
+\newcommand{\bX}{\mathbf{X}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\fX}{\mathfrak{X}}
+\newcommand{\rX}{\mathrm{X}}
+\newcommand{\sX}{\mathscr{X}}
+\newcommand{\bY}{\mathbf{Y}}
+\newcommand{\cY}{\mathcal{Y}}
+\newcommand{\fY}{\mathfrak{Y}}
+\newcommand{\rY}{\mathrm{Y}}
+\newcommand{\sY}{\mathscr{Y}}
+\newcommand{\bZ}{\mathbf{Z}}
+\newcommand{\cZ}{\mathcal{Z}}
+\newcommand{\fZ}{\mathfrak{Z}}
+\newcommand{\rZ}{\mathrm{Z}}
+\newcommand{\sZ}{\mathscr{Z}}
+
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\fa}{\mathfrak{a}}
+\newcommand{\ra}{\mathrm{a}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\fb}{\mathfrak{b}}
+\newcommand{\rb}{\mathrm{b}}
+\newcommand{\bc}{\mathbf{c}}
+\newcommand{\fc}{\mathfrak{c}}
+\newcommand{\rc}{\mathrm{c}}
+\newcommand{\bd}{\mathbf{d}}
+\newcommand{\fd}{\mathfrak{d}}
+\newcommand{\rd}{\mathrm{d}}
+\newcommand{\be}{\mathbf{e}}
+\newcommand{\fe}{\mathfrak{e}}
+\newcommand{\re}{\mathrm{e}}
+%\renewcommand{\bf}{\mathbf{f}}
+\newcommand{\ff}{\mathfrak{f}}
+\newcommand{\rf}{\mathrm{f}}
+\newcommand{\bg}{\mathbf{g}}
+\newcommand{\fg}{\mathfrak{g}}
+\newcommand{\rg}{\mathrm{g}}
+\newcommand{\bh}{\mathbf{h}}
+\newcommand{\fh}{\mathfrak{h}}
+\newcommand{\rh}{\mathrm{h}}
+\newcommand{\bi}{\mathbf{i}}
+%\renewcommand{\fi}{\mathfrak{i}}
+\newcommand{\ri}{\mathrm{i}}
+\newcommand{\bj}{\mathbf{j}}
+\newcommand{\fj}{\mathfrak{j}}
+\newcommand{\rj}{\mathrm{j}}
+\newcommand{\bk}{\mathbf{k}}
+\newcommand{\kk}{\mathbbm{k}}
+\newcommand{\fk}{\mathfrak{k}}
+\newcommand{\rk}{\mathrm{k}}
+\newcommand{\bl}{\mathbf{l}}
+\newcommand{\fl}{\mathfrak{l}}
+\newcommand{\rl}{\mathrm{l}}
+\newcommand{\bm}{\mathbf{m}}
+\newcommand{\fm}{\mathfrak{m}}
+%\renewcommand{\rm}{\mathrm{m}}
+\newcommand{\bn}{\mathbf{n}}
+\newcommand{\fn}{\mathfrak{n}}
+\newcommand{\rn}{\mathrm{n}}
+\newcommand{\bo}{\mathbf{o}}
+\newcommand{\fo}{\mathfrak{o}}
+\newcommand{\ro}{\mathrm{o}}
+\newcommand{\bp}{\mathbf{p}}
+\newcommand{\fp}{\mathfrak{p}}
+\newcommand{\rp}{\mathrm{p}}
+\newcommand{\bq}{\mathbf{q}}
+\newcommand{\fq}{\mathfrak{q}}
+%\renewcommand{\rq}{\mathrm{q}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\fr}{\mathfrak{r}}
+\newcommand{\rr}{\mathrm{r}}
+\newcommand{\bs}{\mathbf{s}}
+\newcommand{\fs}{\mathfrak{s}}
+\newcommand{\rs}{\mathrm{s}}
+\newcommand{\bt}{\mathbf{t}}
+\newcommand{\ft}{\mathfrak{t}}
+\newcommand{\rt}{\mathrm{t}}
+\newcommand{\st}{\mathsf{t}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\fu}{\mathfrak{u}}
+\newcommand{\ru}{\mathrm{u}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\fv}{\mathfrak{v}}
+\newcommand{\rv}{\mathrm{v}}
+\newcommand{\bw}{\mathbf{w}}
+\newcommand{\fw}{\mathfrak{w}}
+\newcommand{\rw}{\mathrm{w}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\fx}{\mathfrak{x}}
+\newcommand{\rx}{\mathrm{x}}
+\newcommand{\by}{\mathbf{y}}
+\newcommand{\fy}{\mathfrak{y}}
+\newcommand{\ry}{\mathrm{y}}
+\newcommand{\bz}{\mathbf{z}}
+\newcommand{\fz}{\mathfrak{z}}
+\newcommand{\rz}{\mathrm{z}}
+
+
+
+% MATHBB shortcuts
+\renewcommand{\AA}{\mathbb{A}}
+\newcommand{\BB}{\mathbb{B}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\DD}{\mathbb{D}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\GG}{\mathbb{G}}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\II}{\mathbb{I}}
+\newcommand{\JJ}{\mathbb{J}}
+\newcommand{\KK}{\mathbb{K}}
+\newcommand{\LL}{\mathbb{L}}
+\newcommand{\MM}{\mathbb{M}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\OO}{\mathbb{O}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\renewcommand{\SS}{\mathbb{S}}
+\newcommand{\TT}{\mathbb{T}}
+\newcommand{\UU}{\mathbb{U}}
+\newcommand{\VV}{\mathbb{V}}
+\newcommand{\WW}{\mathbb{W}}
+\newcommand{\XX}{\mathbb{X}}
+\newcommand{\YY}{\mathbb{Y}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+% Preferences
+\renewcommand{\phi}{\varphi}
+\renewcommand{\emptyset}{\varnothing}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\injects}{\hookrightarrow}
+\newcommand{\surjects}{\twoheadrightarrow}
+\renewcommand{\tilde}[1]{\widetilde{#1}}
+\newcommand{\ol}[1]{\overline{#1}}
+\newcommand{\ul}[1]{\underline{#1}}
+\newcommand{\DS}{\displaystyle}
+\newcommand{\leftexp}[2]{\vphantom{#2}^{#1} #2}
+\newcommand{\todo}[1]{\textcolor{blue}{$[\star$ To do: #1 $\star]$}}
+\newcommand{\iva}[1]{\textcolor{red}{$[\star$ Iva: #1 $\star]$}}
+\newcommand{\oded}[1]{\textcolor{red}{$[\star$ Oded: #1 $\star]$}}
+\newcommand{\tony}[1]{\textcolor{red}{$[\star$ Tony: #1 $\star]$}}
+\newcommand{\ivan}[1]{\textcolor{red}{$[\star$ Ivan: #1 $\star]$}}
+\newcommand{\arxiv}[1]{\href{http://arxiv.org/abs/#1}{{\tt arXiv:#1}}}
+\newcommand{\sh}[1]{[#1]}
+%\newcommand{\bysame}{---------}
+
+%\makeatletter
+%\def\Ddots{\mathinner{\mkern1mu\raise\p@
+%\vbox{\kern7\p@\hbox{.}}\mkern2mu
+%\raise4\p@\hbox{.}\mkern2mu\raise7\p@\hbox{.}\mkern1mu}}
+%\makeatother
+
+% Algebra
+\DeclareMathOperator{\im}{image} 
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\coker}{coker}
+\renewcommand{\hom}{\operatorname{Hom}}
+\newcommand{\cHom}{\mathcal{H}om}
+\DeclareMathOperator{\supp}{Supp} 
+\DeclareMathOperator{\rad}{rad} 
+\DeclareMathOperator{\ass}{Ass}
+\DeclareMathOperator{\ann}{Ann}
+\DeclareMathOperator{\norm}{Norm}
+\DeclareMathOperator{\trace}{Tr}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\ext}{Ext}
+\DeclareMathOperator{\reg}{reg}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Pf}{Pf}
+\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\depth}{depth}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\pdim}{pdim}
+\DeclareMathOperator{\vdim}{vdim}
+\DeclareMathOperator{\idim}{idim}
+\DeclareMathOperator{\gldim}{gldim}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\grade}{grade}
+\DeclareMathOperator{\mult}{mult}
+\DeclareMathOperator{\ind}{ind}
+\DeclareMathOperator{\res}{res}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\SYT}{SYT}
+
+% Lie groups
+\newcommand{\GL}{GL}
+\newcommand{\SL}{SL}
+\newcommand{\Sp}{\mathbf{Sp}}
+\newcommand{\SO}{\mathbf{SO}}
+\newcommand{\Gr}{\mathbf{Gr}}
+\newcommand{\IGr}{\mathbf{IGr}}
+\newcommand{\OGr}{\mathbf{OGr}}
+\newcommand{\SGr}{\mathbf{SGr}}
+\newcommand{\spin}{\mathbf{spin}}
+\newcommand{\Spin}{\mathbf{Spin}}
+
+% Lie algebras
+\newcommand{\fsl}{\mathfrak{sl}}
+\newcommand{\fgl}{\mathfrak{gl}}
+\newcommand{\fso}{\mathfrak{so}}
+\newcommand{\fsp}{\mathfrak{sp}}
+\newcommand{\fpe}{\mathfrak{pe}}
+\newcommand{\fosp}{\mathfrak{osp}}
+
+\newcommand{\bone}{\mathbbm{1}}
+\newcommand{\sone}{\mathsf{1}}
+\newcommand{\mmod}{\mathrm{-mod}}
+\newcommand{\proj}{\mathrm{-proj}}
+\newcommand{\soc}{\mathrm{soc}}
+
+
+\newcommand{\twomat}[4]{\begin{bmatrix}
+        #1 & #2  \\[1em]
+        #3 & #4 \\
+     \end{bmatrix}}
+\newcommand{\threemat}[9]{\begin{bmatrix}
+        #1 & #2 & #3 \\[1em]
+        #4 & #5 & #6 \\[1em]
+        #7 & #8 & #9 
+     \end{bmatrix}}
+\newcommand{\suchthat}{\mid}
+\newcommand{\val}{\text{val}}
+% \renewcommand{\Gr}{\cG r}
+\newcommand{\asl}[1]{\widehat{\fs\fl}_{#1}}
+\newcommand{\wt}{\text{wt}}
+
+\newcommand{\Span}{\mathrm{Span}}
+\renewcommand{\Gr}{\cG r}
+\renewcommand{\SGr}{\cS\Gr}
+\renewcommand{\det}{\mathrm{det}}
+\newcommand{\mmap}{\mathrm M}
+
+\newcommand\iso\cong
+\newcommand\into\hookrightarrow
+\newcommand\onto\twoheadrightarrow
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\nc}{\newcommand}
+\nc{\la}{\lambda}
+\nc{\Iso}{\mathsf{Iso}}
+\nc{\Irr}{\mathsf{Irr}}
+\nc{\Id}{\mathrm{Id}}
+
+
+
+\begin{document}
+
+
+\title[Categorical braid group actions and cactus groups]{Categorical braid group actions \\ and cactus groups}
+\author{Iva Halacheva}
+\address{I.~Halacheva: Department of Mathematics, Northeastern University, USA}
+\email{i.halacheva@northeastern.edu}
+
+\author{Anthony Licata}
+\address{A.~Licata: Mathematical Sciences Institute, Australian National University, Australia}
+\email{anthony.licata@anu.edu.au}
+
+\author{Ivan Losev}
+\address{I.~Losev: Department of Mathematics, Yale University, and School of Mathematics, IAS, USA}
+\email{ivan.loseu@gmail.com}
+
+\author{Oded Yacobi}
+\address{O.~Yacobi: School of Mathematics and Statistics, University of Sydney, Australia}
+\email{oded.yacobi@sydney.edu.au}
+\date{}
+\maketitle
+
+\begin{abstract}
+Let $\fg$ be a semisimple simply-laced Lie algebra of finite type.  Let $\cC$ be an abelian categorical representation of the quantum group $U_q(\fg)$ categorifying an integrable representation $V$.  
+The Artin braid group $B$ of $\fg$ acts on $D^b(\cC)$ by Rickard complexes, providing a triangulated equivalence 
+\begin{align*}
+\Theta_{w_0}:D^b(\cC_\mu) \to D^b(\cC_{w_0(\mu)})
+\end{align*}
+where $\mu$ is a weight of $V$, and $\Theta_{w_0}$ is a positive lift of the longest element of the Weyl group.  
+
+We prove that this equivalence is t-exact up to shift when $V$ is isotypic, generalising a fundamental result of Chuang and Rouquier in the case $\fg=\fsl_2$.
+For general $V$, we prove that $\Theta_{w_0}$ is a perverse equivalence with respect to a Jordan-H\"older filtration of $\cC$.  
+
+Using these results we construct, from the action of 
+$B$ on $V$, an action of the cactus group on the crystal of $V$.  This recovers the  cactus group action on $V$ defined via generalised Sch\"utzenberger involutions, and  provides a new connection between categorical representation theory and crystal bases.
+We also use these results to give new  proofs of theorems of Berenstein-Zelevinsky, Rhoades, and Stembridge regarding the action of symmetric group on the Kazhdan-Lusztig basis of its Specht modules.  
+\end{abstract}
+
+\section{Introduction}
+In their seminal work, Chuang and Rouquier introduced $\fsl_2$ categorifications on abelian categories \cite{CR}.  Their definition mirrors the notion of an $\fsl_2$ representation on a vector space: weight spaces are replaced by weight categories, Chevalley generators acting on them are replaced by Chevalley functors, and Lie algebra relations are replaced by isomorphisms of functors.  But, crucially, these isomorphisms are part of the ``higher data'' of categorification.
+%, and are efficiently encoded by actions of Hecke-like algebras on powers of the Chevalley functors.  
+
+The richness of this theory was immediately evident.  As a corollary of an $\fsl_2$ categorification on representations of symmetric groups in positive characteristic, Chuang and Rouquier proved Broue's abelian defect conjecture in that case.  The essential tool allowing them to do this is the Rickard complex, which is a categorical lifting of the reflection matrix in $\SL_2$, and provides a derived equivalence between opposite weight categories.
+
+Subsequently, Rouquier and Khovanov-Lauda vastly generalised this theory to  quantum symmetrisable Kac-Moody algebras $U_q(\fg)$ \cite{Rou2KM,KLI,KLII}.  Let $\kk$ be any field.  A graded abelian $\kk$-linear category $\cC$ endowed with a categorical representation of $U_q(\fg)$ possesses a family of Rickard complexes $\Theta_i$, indexed by the simple roots of $\fg$, acting on the derived category $D^b(\cC)$.  
+
+Henceforth let $\fg$ be a semisimple simply-laced Lie algebra of finite type with Dynkin diagram $I$, $W$  its Weyl group, and $B$ its Artin braid group. Let $\cC$ be a categorical representation of $U_q(\fg)$ as in the previous paragraph.  Cautis and Kamnitzer proved that Rickard complexes satisfy the braid relations, as conjectured by Rouquier \cite{CK3}.  This defines an action of $B$ on $D^b(\cC)$, and is our main object of study.    
+
+Categorical braid group actions defined via Rickard complexes have many significant applications.  For example, in low dimensional topology, the type A link homology theories (in particular Khovanov homology) emerge as a byproduct of these types of categorical braid group actions \cite{CK, CKII, LQR}.  In mirror symmetry, the theory of spherical twists plays an important role, and these all arise from categorical $\fsl_2$ representations \cite{ST01}.  
+
+To describe our first theorem, recall that minimal categorifications are certain distinguished categorifications of simple representations.  On these the Rickard complex $\Theta_i$  is t-exact up to shift \cite[Theorem 6.6]{CR}.  Notice that this is a result about $\fsl_2$ categorifications, and in fact, this is one of Chuang-Rouquier's key technical results which they use to prove the derived equivalence.  
+
+We generalise this result to $U_q(\fg)$, where we show that the composition of Rickard complexes corresponding to a positive lift of the longest element $w_0 \in W$ is t-exact up to shift on any isotypic categorification.  More precisely:
+
+\begin{namedtheorem}[A][Theorem \ref{thm:mincat} \& Corollary \ref{cor:mainthm}]\label{thm:A}
+Let $\cC$ be a categorical representation of $U_q(\fg)$ categorifying an isotypic representation of type $\lambda$, where $\lambda$ is a dominant integral weight.  Let $\mu$ be any weight, and let $n$ be the height of $\mu-w_0(\lambda)$.  Then the derived equivalence
+\begin{align*}
+\Theta_{w_0}\bone_\mu[n]:D^b(\cC_\mu) \to D^b(\cC_{w_0(\mu)})
+\end{align*}
+is t-exact.  
+\end{namedtheorem}
+
+This theorem is the technical heart of the paper.
+In order to prove it we introduce a new combinatorial notion of ``marked words'' (Section \ref{sec:commrels}).  This allows us to use relations between $\Theta_i$ and Chevalley functors established by Cautis and Kamnitzer to deduce  the commutation relations involving $\Theta_{w_0}$ (Proposition \ref{prop:mainrel}).  We then use these relations to prove the theorem by induction on $n$.     
+
+Our second theorem describes $\Theta_{w_0}$ on an arbitrary categorical representation of $U_q(\fg)$, also generalising a result of Chuang-Rouquier in the case $\fg=\fsl_2$.  Indeed, their study of the Rickard complex on an $\fsl_2$ categorification led them to define the notion of a ``perverse equivalence'' \cite{CRperv}.  
+
+Consider an equivalence of triangulated categories $\sF:\cT\to\cT'$ with t-structures \cite{BBD}.  Suppose further that $\cT$ (respectively $\cT'$) is filtered by thick triangulated subcategories 
+\begin{align*}
+0\subset \cT_0 \subset \cdots \subset \cT_r=\cT, \quad 0\subset \cT_0' \subset \cdots \subset \cT_r'=\cT',
+\end{align*}
+and $\sF$ is compatible with these filtrations (cf. Section \ref{sec:pervdef} for precise definitions).  Then, roughly speaking,  $\sF$ is a perverse equivalence if on each subquotient $\sF:\cT_i/\cT_{i-1} \to \cT_i'/\cT_{i-1}'$ is t-exact up to shift.  
+
+Since their introduction, perverse equivalences have proven useful in various contexts (e.g. representations of finite groups \cite{Cra-Rou}, geometric representation theory and mirror symmetry \cite{Agan}, and algebraic combinatorics \cite{GJN}).  Our second theorem shows that perverse equivalences are ubiquitous in categorical representation theory:
+
+\begin{namedtheorem}[B][Theorem \ref{thm:perveq}]\label{thm:B}
+Let $\cC$ be a categorical representation of $U_q(\fg)$, and let $\mu$ be any weight.  The derived equivalence
+$
+\Theta_{w_0}\bone_\mu:D^b(\cC_\mu) \to D^b(\cC_{w_0(\mu)})
+$
+is a perverse equivalence with respect to a Jordan-H\"older or isotypic filtration of $\cC$.  
+\end{namedtheorem}
+
+Note that if $J\subseteq I$ is a subdiagram, and $w_0^J$ is corresponding longest element, then this theorem implies that $\Theta_{w_0^J}\bone_\mu$ is a perverse equivalence for any $J$.  We also remark that our argument go through  in the ungraded setting, where $\cC$ is a categorical representation of $\fg$.  
+
+Let us explain the filtration arising in Theorem B more precisely.  We apply Rouquier's Jordan-H\"older theory for representations of $2$-Kac-Moody algebras to our setting \cite{Rou2KM}.  We thus obtain a filtration of $\cC$ by Serre subcategories, 
+\begin{align*}
+0\subset \cC_0 \subset \cdots \subset \cC_r=\cC,
+\end{align*}
+such that each factor $\cC_i$ is a subrepresentation, and each subquotient $\cC_i/\cC_{i-1}$ categorifies either a simple module (Theorem \ref{thm:JH}) or an isotypic component (Remark \ref{rem:isofilts}).  Then   $
+\Theta_{w_0}\bone_\mu$ is a perverse equivalence with respect to the filtration whose $i$-th filtered component consists of complexes in $D^b(\cC_\mu)$ with cohomology supported in $\cC_i$.
+
+We remark that in the case $\fg=\fsl_2$ this gives a more conceptual proof of a result of Chuang-Rouquier \cite[Proposition 8.4]{CRperv}.  If $\cC$ is the tensor product categorification of the $n$-fold tensor product of the standard representation of $\fsl_n$, we recover a theorem of the third author \cite{LosCacti}.  We explain this in Example \ref{ex:catO}, where we show how to interpret the filtration on the principal block of the BGG category $\cO$ using the Robinson-Schensted correspondence. 
+
+In fact, the third author and Bezrukavnikov formulated a principle that suitable categorical braid group representations should have a ``crystal limit'' \cite[Section 9]{BLet}.  As an application of our results we can make this precise in the setting of categorical representations of $U_q(\fg)$.
+
+%Our first application of these results is to the theory of $\fg$-crystals introduced by Kashiwara.  
+Recall that to an integrable representation $V$ of $U_q(\fg)$, Kashiwara associated its crystal basis $\bB_V$ \cite{Kash90}, which is closely related to Lusztig's canonical basis \cite{GL92}.  If $V$ is categorified by $\cC$ then there is a natural identification $\bB_V=\Irr(\cC)$, the set of isomorphism classes of simple objects in $\cC$ up to shift (cf. Proposition \ref{prop:cryst})	.
+
+One of the most important features of the theory is the existence of a tensor product, endowing the category of crystals with a monoidal structure. The commutator of crystals is controlled by a group called the cactus group, just as $B$ controls the commutator in the category of representations of $U_q(\fg)$ \cite{HK06}.  There is also an internal cactus group action, mirroring Lusztig's internal braid group action on $V$.  Indeed, there is a cactus group $C$ associated to $\fg$ (or rather to its Dynkin diagram $I$), which can be presented by generators $c_J$ indexed by connected subdiagrams $J \subseteq I$ (cf. Section \ref{sec:cactus}).  Then $C$ acts on $\bB_V$ via the so-called Sch\"utzenberger involutions (cf. Theorem \ref{thm:cactact}).  
+
+So, starting with an integrable representation $V$ of the quantum group we obtain:
+an action of $B$ on V,
+a $\fg$-crystal $\bB_V$, and
+an action of $C$ on $\bB_V$.
+We schematically picture this situation as follows:
+\[
+\begin{tikzcd}
+U_q(\fg) \curvearrowright V  \ar[rr]  \ar[d] &  & B \curvearrowright V  \arrow[d, dashed,"?"] \\
+                        %&  &                      \\
+\fg\text{-crystal } \bB_V \ar[rr]            &  & C       \curvearrowright    \bB_V        
+\end{tikzcd}
+\]
+Naturally one asks: can we ``crystallise'' the braid group action on $V$ directly to obtain the cactus group action on $\bB_V$?  Our results allow us to answer this in the affirmative.    
+
+The key point is that a perverse equivalence $\sF:\cT \to \cT'$ induces a bijection $\Irr(\cT^\heartsuit) \leftrightarrow \Irr((\cT')^\heartsuit)$, where $\cT^\heartsuit$ denotes the heart of the t-structure. In the setting of Theorem B, we obtain a bijection $\varphi_I:\Irr(\cC) \to \Irr(\cC)$.  In fact, if $J\subseteq I$ is a subdiagram and $\fg_J \subseteq \fg_I$ is the corresponding Lie subalgebra, we can regard $\cC$ as a categorical representation of $U_q(\fg_J)$ by restriction.  By Theorem B we also obtain a bijection $\varphi_J:\Irr(\cC) \to \Irr(\cC)$.
+
+\begin{namedtheorem}[C][Theorem \ref{thm:cactus} \& Theorem \ref{thm:agree}]\label{thm:C}
+Let $\cC$ be a categorical representation of $U_q(\fg)$, categorifying the integrable representation $V$.  The assignment $c_J \mapsto \varphi_J$ defines an action of $C$ on $\bB_V=\Irr(\cC)$, and this  agrees with the combinatorial action arising from Sch\"utzenberger involutions.  
+\end{namedtheorem}
+
+We thus obtain the sought-after crystalisation process for braid groups:
+$$
+B \curvearrowright V \quad\rightsquigarrow\quad B \curvearrowright D^b(\cC) \quad\rightsquigarrow\quad C \curvearrowright \Irr(\cC),
+$$
+which  associates a cactus group set $\Irr(\cC)$ to the braid group representation of $B$ on $V$.  The first appearance of such a crystalisation process is in the work of the third author, where a cactus group action on $W$ is constructed \cite{LosCacti}.  It's an interesting  question to crystallise the braid group action without appealing to categorical representation theory.
+
+Finally we remark that perversity of Rickard complexes, and more specifically the t-exactness of $\Theta_{w_0}$ on isotypic categorifications as in Theorem A, is a fruitful vantage from which to view results in algebraic combinatorics.  
+
+For example, we show in Section \ref{sec:typeA} how to use this to easily recover theorems of Berenstein-Zelevinsky \cite{BZ96}  and Stembridge \cite{Stem96}, namely that the action of $w_0\in S_n$ 
+on the Kazhdan-Lusztig basis of a Specht module of $S_n$ is governed by the evacuation operator  on standard Young tableaux.  We note that this theorem was earlier proven by Mathas in slightly different form (without explicit reference to the evacuation operator, and credited to J.J. Graham) \cite[Theorem 3.1]{Mathas}, and a similar result was shown even earlier by Lusztig in 1990 \cite[Corollary 5.9]{LusCBII}.
+
+As another example, we use our methods to also recover Rhoades' Theorem that the Coxeter element $(1,2,\hdots,n) \in S_n$ acts on the  Kazhdan-Lusztig basis of a Specht module associated to a rectangular partition by the promotion operator.  This point of view led us to generalise Rhoades' result to arbitrary partitions \cite{GY1}, and isolate the class of permutations (the separable permutations) for which such results can hold \cite{GY2}.
+
+
+
+\section*{Acknowledgement}
+We would like to thank Sabin Cautis, Ian Grojnowski, Joel Kamnitzer,  Aaron Lauda, Andrew Mathas, Peter McNamara, Bregje Pauwels, Raph\"ael Rouquier, and Geordie Williamson  for insightful discussions.  We are grateful to two anonymous referees for their helpful comments.
+I.L. is partially supported by the NSF under grant DMS-2001139.
+O.Y. is supported by the Australian Research Council Grants DP180102563 and DP230100654.
+
+\section{Background on quantum groups}
+\subsection{The quantum group} In this article we work with a  simply-laced quantum group $U_q(\fg)$ of finite type.  Recall that we have an associated Cartan datum and a root datum, which consists of:
+\begin{itemize}
+\item A finite set $I$,
+\item a symmetric bilinear form $(\cdot,\cdot)$ on $\ZZ I$ satisfying $(i,i)=2$ and $(i,j)\in \{0,-1\}$ for all $i \neq j \in I$,
+\item a free $\ZZ$-module $X$, called the weight lattice, and
+\item a choice of simple roots $\{ \alpha_i \}_{i\in I} \subset X$ and simple coroots $\{ h_i \}_{i\in I} \subset X^\vee=\Hom(X,\ZZ)$ satisfying $\langle h_i,\alpha_j\rangle=(i,j)$, where $\langle \cdot,\cdot\rangle:X^\vee \times X \to \ZZ$ is the natural pairing.  
+\end{itemize}
+
+The quantum group $U_q(\fg)$ is the unital, associative, $\CC(q)$ algebra generated by $E_i,F_i,K_h, (i\in I, h\in X^\vee)$ subject to relations:
+\begin{enumerate}
+\item $K_0=1$ and $K_hK_{h'}=K_{h+h'}$ for any $h,h'\in X^\vee$,
+\item $K_hE_i=q^{\langle h,\alpha_i \rangle}E_iK_h$ for any $i\in I, h\in X^\vee$,
+\item $K_hF_i=q^{-\langle h,\alpha_i \rangle}F_iK_h$ for any $i\in I, h\in X^\vee$,
+\item $E_iF_j-F_jE_i=\delta_{ij}\frac{K_i-K_i^{-1}}{q-q^{-1}}$, where we set $K_i=K_{h_i}$, and
+\item for all $i\neq j$,
+$$
+\sum_{a+b=-\langle h_i,\alpha_j \rangle+1}(-1)^aE_i^{(a)}E_j E_i^{(b)}=0 \quad \text{ and } \quad \sum_{a+b=-\langle h_i,\alpha_j \rangle+1}(-1)^aF_i^{(a)}F_j F_i^{(b)}=0,
+$$
+where $E_i^{(a)}=E_i^a/[a]!, F_i^{(a)}=F_i^a/[a]!$, and $[a]!=\prod_{i=1}^a \frac{q^i-q^{-i}}{q-q^{-1}}$.
+\end{enumerate}
+%Recall also that we have a triangular decomposition $U_q(\fg)=U_q(\fg)^-\otimes U_q(\fg)^0 \otimes U_q(\fg)^+$, where $U_q(\fg)^+$ (respectively $U_q(\fg)^-, U_q(\fg)^0$) is the subalgebra generated by $E_i,\;(i\in I)$ (respectively $F_i,\;(i\in I)$, $K_h,\;(h\in X^\vee)$).
+
+We let $a_{ij}=(i,j)$, so that $(a_{ij})_{i,j\in I}$ is a Cartan matrix.  Given $\la \in X$ we abbreviate $\la_i=\langle h_i,\la\rangle$, and let $$X_+=\{\la\in X:\la_i\geq0 \text{ for all } i\in I\}$$ be the set of dominant weights.  
+
+Let $R\subset X$ be the root lattice, defined as the $\ZZ$-span of the simple roots, and let $R_+\subset R$ be the $\NN$-span of the simple roots.  We define the usual preorder $\succ$ on $X$ by $\lambda \succeq \mu$ if $\lambda-\mu \in R_+$.
+For $\mu \in R$ let $ht(\mu)$ denote the height of $\mu$, i.e. $ht(\sum_i a_i\alpha_i)=\sum_i a_i$.
+
+When convenient, we also view $I$ as the Dynkin diagram of $\fg$, and make reference to subdiagrams or diagram automorphisms of $I$.
+
+\subsection{Braid group actions on integrable representations of $U_q(\fg)$.}     
+Given a $U_q(\fg)$-module $V$ and $\mu \in X$ we let $V_\mu$ denote the $\mu$ weight space of $V$.  
+For $\lambda \in X_+$ we let $L(\lambda)$ be the irreducible representation of $U_q(\fg)$ of highest weight $\lambda$.  Let $\Iso_\lambda(V)$ denote the $\lambda$-isotypic component of $V$.  We say that $V$ is \textbf{isotypic} if there exists $\lambda \in X_+$ such that $V=\Iso_\lambda(V)$.
+
+
+
+
+The representation $L(\lambda)$ has a canonical basis, which we denote by $\bB(\lambda)$ \cite{Lusbook}.  We let $v_\lambda$ (respectively $v_\la^{low}$) denote the unique highest weight (respectively lowest weight) element of $\bB(\la)$.
+
+
+
+
+
+Let $B=B_I$ denote the braid group of type $I$, which is generated by $\theta_i\; (i\in I)$ subject to the braid relations:
+\begin{align*}
+    \theta_i\theta_j &=\theta_j\theta_i, \text{ if } (i,j)=0, \text{ and }\\
+    \theta_i\theta_j\theta_i&=\theta_j\theta_i\theta_j, \text{ if } (i,j)=-1.
+\end{align*}
+Let $W=W_I$ be the Weyl group of type $I$, which has generators $s_i\; (i\in I)$ subject to the braid relations,  and in addition the quadratic relation $s_i^2=1$.  Let $w_0\in W$  be the longest element.  Recall that $W$ acts on $X$ via $s_i\cdot \la=\la-\langle h_i, \la\rangle\alpha_i$.  We define $\tau: I\to I$ by the equality $
+\alpha_{\tau(i)}=-w_0(\alpha_i)$  for any $i \in I$.
+
+
+To $J \subset I$ a subdiagram, we associate $W_J \subset W$  the parabolic subgroup, $w_0^J\in W_J$  its longest element, and $\tau_J:I\to I$  the bijection given by
+\begin{align*}
+\alpha_{\tau_J(i)}= \begin{cases} -w_0^J(\alpha_i) &\text{ if } i \in J,\\
+\alpha_i &\text{otherwise.} \end{cases}
+\end{align*}
+
+For any $w\in W$ we can consider its positive lift $\theta_w\in B$, where $\theta_w=\theta_{i_1}\cdots \theta_{i_\ell}$ and $w=s_{i_1}\cdots s_{i_\ell}$ is any reduced decomposition.
+
+
+
+
+
+
+Let $V$ be an integrable representation of $U_q(\fg)$.
+A fundamental structure of $V$, discovered by Lusztig, is that it admits (several) braid group symmetries, sometimes referred to as the ``quantum Weyl group actions''.  To recall this, let $\sone_\mu$ denote the projection onto the $\mu$ weight space.  For each $i\in I$ we define $\st_i:V\to V$ by:
+\begin{align}
+    \st_i\sone_\mu=\sum_{b-a=(\mu,\alpha_i)}(-q)^{-b}E_i^{(a)}F_i^{(b)}\sone_\mu.
+\end{align}
+Note that the indexing set of this sum is infinite, but the sum itself is finite on $V$.
+In the notation of \cite{Lusbook}, $\st_i=\st''_{i,-1}$.  (Note that the formula given in \cite{Lusbook} is more complicated. This simpler form was initially observed in \cite{CR} in the non-quantum setting, and generalised in \cite{CKM} to the quantum setting.). The assignment $\theta_i \mapsto \st_i$ defines an action of $B$ on $V$, and so we can unambiguously write $\st_w$ for any $w\in W$.  
+
+\section{Categorical representations of $U_q(\fg)$}
+%\todo{Definition of a categorical representation of $\fg$.  Make sure to recall that the Chevalley functors are biadjoint.}
+%
+%\iva{We should also add the grading below for the quantum setting}
+\subsection{Notation}
+Fix a field $\kk$ of any characteristic. In this paper we will be concerned mostly with abelian $\kk$-linear categories $\cC$.  We will assume throughout that each block of $\cC$ is a finite abelian category \cite[Definition 1.8.6]{EGNO}.
+
+
+Recall that a category $\cA$ is graded  if it is equipped with an auto-equivalence $\langle 1 \rangle :\cA \to \cA$ called the ``shift functor''.   We let $\langle \ell \rangle$ be the auto-equivalence obtained by applying the shift functor $\ell$ times.  We denote by $\Irr(\cA)$ the set of equivalence classes of simple objects of $\cA$ up to shift.  
+ 
+A functor $F:\cA \to \cA'$ between graded categories is graded if it commutes with the shift functors. We denote by $[\cA]_\ZZ$ the Grothendieck group of an abelian  category $\cA$.  If $\cA$ is graded we denote by $[\cA]_{\ZZ[q,q^{-1}]}$ the quotient of $[\cA]_\ZZ \otimes_\ZZ \ZZ[q,q^{-1}]$ by the additional relation $q[M]=[M\langle-1\rangle]$. This quotient is naturally a $\ZZ[q,q^{-1}]$-module. Set 
+\begin{align*}
+[\cA]_\CC &=[\cA]_\ZZ\otimes_{\ZZ}\CC, \\
+[\cA]_{\CC(q)} &=[\cA]_{\ZZ[q,q^{-1}]}\otimes_{\ZZ[q,q^{-1}]}\CC(q).
+\end{align*}
+
+For a $\kk$-algebra $A$, we let $A\mmod$ be the category of finitely generated $A$-modules, and if $A$ is $\ZZ$-graded, we let $A\mmod_\ZZ$ be the category of finitely generated $\ZZ$-graded modules.  These are naturally $\kk$-linear abelian categories.  
+
+\subsection{Definition}
+In this section we introduce our main objects of study: representations of the 2-quantum group on abelian categories, which we refer to as “categorical representations” of $U_q(\fg)$.  This definition of the categorified quantum groups and their categorical actions is originally due to Rouquier and Khovanov-Lauda \cite{Rou2KM, KLI,KLII}.  
+
+In the literature, there are a number of slightly different-looking examples of 2-representations, depending not just on whether or not one is working with the Khovanov-Lauda or Rouquier 2-categories, but also depending on whether or not one is interested in categorifications of representations of $U_q(\fg)$ or of $U(\fg)$.  At the categorical level, the difference between $U_q(\fg)$ or of $U(\fg)$ arises from grading considerations; in categorifications of representations of  $U_q(\fg)$, one works with categories enriched in graded vector spaces, whereas in categorifications of representations of  $U(\fg)$ no such grading is needed.  
+
+Fortunately, the different notions of categorical representations - and in particular relationships between the Rouquier and Khovanov-Lauda frameworks in both graded and ungraded settings, have been brought in line by work of Cautis-Lauda, who proved that in the graded setting, integrable 2-representations of the Rouquier 2-category induce 2-representations of the Khovanov-Lauda 2-category \cite{CaLa}, and by work of Brundan \cite{Brundandef}, who proved that the underlying ungraded 2-categories of Rouquier and Khovanov-Lauda are equivalent.  
+
+The important point for us is that all our theorems, including our main results (Theorem \ref{thm:mincat} and Theorem \ref{thm:perveq}), remain true in any 2-representation of the Khovanov-Lauda-Rouqier 2-category, in either the graded or ungraded setting.
+Since the compatibility of the internal grading with the braid group is of some independent combinatorial interest, we elect to keep track of the gradings in the rest of the paper, and leave it to the reader to verify that the arguments go through while ignoring the gradings and working in the setup of, e.g. Brundan \cite{Brundandef}.  To that end, we have chosen to follow the notation and conventions of Cautis-Lauda below.
+
+A \textbf{categorical representation} of $U_q(\fg)$ consists of the following data:
+\begin{itemize}
+\item A family of graded abelian $\kk$-linear categories $\cC_\mu$ indexed by $\mu \in X$.  We refer to each $\cC_\mu$ as a \textbf{weight category}. 
+\item Exact graded functors $\sE_i\bone_\mu:\cC_\mu\to \cC_{\mu+\alpha_i}$ and $\sF_i\bone_\mu:\cC_\mu\to \cC_{\mu-\alpha_i}$, for $i\in I$ and $\mu\in X$. We refer to $\sE_i,\sF_i$ as \textbf{Chevalley functors}. 
+\item A collection of natural transformations between these functors.  We won't be using directly these natural transformations in this work, so refer the reader to \cite[Definition 1.1]{CaLa} for their definition.
+%We assume that $\sE_i\bone_\mu$ admits a left and right adjoint, and
+%$$
+%\sF_i\bone_\mu\cong (\sE_i\bone_{\mu-\alpha_i})_R\langle -\mu_i-1 \rangle.
+%$$
+\end{itemize}
+This data is subject to the conditions spelled out in items (1)-(5) of \cite[Definition 1.1]{CaLa}.  We only record those that are relevant for us:
+\begin{enumerate}
+\item The functors $\sE_i\bone_\mu$ and $\sF_i\bone_\mu$ are biadjoint up to a specified degree shift (see \eqref{eqs:biadjs} below).  
+\item The powers of  $\sE_i$ carry an action of the KLR algebra associated to $Q$, where $Q$ denotes a choice of units $(t_{ij})_{i \neq j \in I}$ in $\mathbbm{k}^\times$.  These units satisfy some restrictions which are not relevant for us.  
+% such that $t_{ij}=t_{ji}$ if $a_{ij}=0$, and scalars $(s^{pq}_{ij})_{i,j,p,q}$ in $\mathbbm{k}$, where $i,j \in I, 0 \leq p <-a_{ij}, 0 \leq q < -a_{ji}$, and $s^{pq}_{ij}=s^{qp}_{ji}$..
+\item We have the following isomorphisms:
+\begin{align*}
+\sF_i\sE_i\bone_\mu &\cong \sE_i\sF_i\bone_\mu\oplus_{[-\langle h_i,\mu \rangle]}\bone_\mu, \text{ if  }\langle h_i,\mu \rangle \leq 0, \\
+\sE_i\sF_i\bone_\mu &\cong \sF_i\sE_i\bone_\mu\oplus_{[\langle h_i,\mu \rangle]}\bone_\mu, \text{ if  }\langle h_i,\mu \rangle \geq 0,\\
+\sE_i\sF_j\bone_\mu &\cong \sF_j\sE_i\bone_\mu.
+\end{align*}
+This notation is explained as follows: for a Laurent polynomial $f=\sum f_a q^a$, $\oplus_f A$ is a direct sum over $a\in \ZZ$ of $f_a$ copies of $A\langle a \rangle$, and $[n]:=q^{n-1}+q^{n-3}+\cdots+q^{1-n}$.
+\end{enumerate}
+
+Usually we just say that $\cC=\bigoplus_\mu \cC_\mu$ is a categorical representation of $U_q(\fg)$ (the remaining data is implicit).   Given an integrable $U_q(\fg)$-module $V$, we say that $\cC$ is a categorification of $V$ if $\cC$ is a categorical representation of $U_q(\fg)$ such that $[\cC]_{\CC(q)} \cong V$ as $U_q(\fg)$-modules.
+
+An \textbf{additive categorification} is a categorical representation on a graded additive $\kk$-linear category $\cV$ satisfying the same conditions as above, except the Chevalley functors are of course only required to be additive.  We let $\cV^i$ be the idempotent completion of $\cV$.
+
+Given an abelian category $\cC$, we consider the additive category $\cC\proj$ defined as the full subcategory of projective objects in $\cC$.  Note that if $\cC$ is a categorical representation of $U_q(\fg)$, then $\cC\proj$ naturally inherits the structure of an additive categorification.  
+
+
+
+As a consequence of this definition, and in particular condition (2), there exist divided power functors $\sE_i^{(r)}\bone_\lambda \subset \sE_i^r\bone_\lambda, \sF_i^{(r)}\bone_\lambda \subset \sF_i^r\bone_\lambda$ which categorify the usual divided powers on the level of the quantum group.  Again, we refer the reader to \cite{CaLa} and references therein for further details.  We note that their adjoints are related as follows:
+\begin{align}\label{eqs:biadjs}
+(\sE_i^{(r)}\bone_\lambda)_R &\cong \sF_i^{(r)}\bone_{\lambda+r\alpha_i}\langle r(\lambda_i+r) \rangle,\\
+(\sE_i^{(r)}\bone_\lambda)_L &\cong \sF_i^{(r)}\bone_{\lambda+r\alpha_i}\langle -r(\lambda_i+r) \rangle.
+\end{align}
+
+%The \textbf{Kac--Moody $2$-category $\cU(\fg)$} is the strict additive $\mathbbm{k}$-linear $2$-category with
+%\begin{itemize}
+%	\item objects given by the elements of $X$
+%	\item $1$-morphisms generated by $E_i 1_\la: \la \rightarrow \la + \alpha_i$ and $F_i 1_\la: \la \rightarrow \la-\alpha_i$ for each $i \in I, \; \la \in X$
+%	\item $2$-morphisms generated by $x: E_i 1_\la \rightarrow E_i 1_\la, \; \tau: E_iE_j 1_\la \rightarrow E_jE_i 1_\la, \; \eta: 1_\la \rightarrow F_iE_i 1_\la, \; \eps: E_iF_i 1_\la \rightarrow 1_\la$
+%\end{itemize}
+%subject to certain relations, including the quiver Hecke relations for upward pointing strands, right adjunction relations (which imply in particular that $F_i 1_{\la + \alpha_i}$ is right dual to $E_i 1_\la$), and some inversion relations.
+%
+%A \textbf{categorical $\fg$-action}, or a \textbf{$2$-representation of $\fg$}, i.e. a representation of $\cU(\fg)$ on $\mathbbm{k}$-linear categories is a strict $2$-functor $\Phi: \cU(\fg) \rightarrow \mathbbm{k}-Cat$, to the strict $2$-category of $\mathbbm{k}$-linear categories, i.e. it is the data:
+%\begin{itemize}
+%	\item a $\mathbbm{k}$-linear category $\cC_\la$ for each $\la \in X$
+%	\item a $\mathbbm{k}$-linear functor $E_i: \cC_\la \rightarrow \cC_{\la+\alpha_i}$ admitting a right adjoint $F_i$ for each $\la \in X, \; i \in I$
+%	\item $x \in End(E_i), \; \tau \in \Hom(E_iE_j, E_jE_i)$ satisfying the relations above.
+%\end{itemize}
+%
+%Such a $2$-representation will be called \textbf{integrable} when $E_i$ and $F_i$ are locally nilpotent for all $i \in I$.
+
+
+\subsection{Crystals}
+
+We recall the definition of a crystal. 
+
+\begin{Definition} [\cite{Kash90}] A \textbf{$\fg$-crystal} is a finite set $\bB$ together with maps:
+	$$\tilde{e}_i,\tilde{f}_i:\bB \rightarrow \bB\sqcup \{0\}, \quad \eps_i,\phi_i : \bB\rightarrow \ZZ, \quad \wt: \bB \rightarrow X$$
+	for all $i \in I$, such that:
+	\begin{enumerate}
+		\item for any $b,b' \in \bB$, $\tilde{e}_i(b)=b'$ if and only if $b=\tilde{f}_i(b')$ ,
+		\item for all $b \in \bB$, if $\tilde{e}_i(b) \in \bB$ then $\wt(\tilde{e}_i(b))=\wt(b)+\alpha_i$, and if $\tilde{f}_i(b) \in \bB$ then $\wt(\tilde{f}_i(b))=\wt(b)-\alpha_i$,
+		\item for all $b \in \bB$, $\eps_i(b)=\max\{n \in \ZZ~:~\tilde{e}^n_i(b) \neq 0\}$, $\phi_i(b)=\max\{n \in \ZZ~:~\tilde{f}^n_i(b)\neq 0\}$,
+		\item for all $b \in \bB$, $\phi_i(b)-\eps_i(b)=\left\langle \wt(b),h_i\right\rangle$.
+	\end{enumerate}
+\end{Definition}
+
+Any $U_q(\fg)$-representation $V$ has a corresponding $\fg$-crystal $\bB=\bB_V$.  The underlying set of $\bB$ is in natural bijection with a particular basis of $V$ (the ``global crystal basis'' or ``canonical basis'').  The maps $\tilde{e}_i,\tilde{f}_i$ are related to the raising and lowering Chevalley operators; vaguely speaking they encode information about the leading terms of the Chevalley operators acting on this basis. In particular, for an integral dominant weight $\la$, the canonical basis $\bB(\la)$ of $L(\la)$ carries a natural crystal structure \cite{GL92}.
+
+The crystal  of $V$ naturally arises via categorical representation theory. Namely, as we describe in the next proposition, if $\cC$ is a categorification of $V$, then $\Irr(\cC)$ carries a crystal structure isomorphic to $\bB_V$. This follows  from \cite[Proposition 5.20]{CR} and \cite{LV}, and is explained in detail in \cite{BDcryst}.  
+
+\begin{Proposition}(\cite[Theorem 4.31]{BDcryst})\label{prop:cryst}
+	The set $\Irr(\cC)$ together with:
+	\begin{itemize}
+	 \item Kashiwara operators defined as $\widetilde{\sE}_i(X)=\operatorname{soc}{\sE_i(X)}$, $\widetilde{\sF}_i(X)=\operatorname{soc}{\sF_i(X)}$ for $X \in \Irr(\cC)$, 
+	 \item $\wt(X) = \mu$ for $X \in \cC_\mu$, and
+	 \item $\varepsilon(X)=max\{ n \;|\; \sE_i^n(X)\neq 0\}$, and $\varphi(X)=max\{ n \;|\; \sF_i^n(X)\neq 0\}$,
+	 \end{itemize}
+	  is a $\fg$-crystal isomorphic to the crystal $\bB=\bB_V$.
+\end{Proposition}
+
+
+
+
+
+\subsection{Jordan-H\"older series}
+A categorification of a simple representation (respectively an isotypic representation)  is called  a \textbf{simple categorification} (respectively an \textbf{isotypic categorification}).
+There is a  distinguished  categorification of $L(\lambda)$ called the \textbf{minimal categorification} and denoted $\cL(\lambda)$ \cite{CR,Rou2KM,KLI,Webmerged,KK}. It  is characterized by the fact that $\cL(\lambda)_{\lambda}\cong \cL(\lambda)_{w_0(\lambda)} \cong \kk\mmod_{\ZZ}$.  We let $\kk_{low} \in \cL(\lambda)_{w_0(\lambda)}, \kk_{high}\in \cL(\lambda)_{\lambda}$ be the generators.  
+
+%The minimal categorification can be realised on the category of finitely generated graded modules over the \textbf{cyclotomic KLR algebra} $R(\lambda)$.  This algebra is defined as a direct sum $R(\lambda) =\bigoplus_{\mu \in X} R(\lambda)_\mu$, and we set 
+%\begin{align*}
+%\cL(\lambda)=R(\lambda)\mmod_{\ZZ} \supset \cL(\lambda)_\mu=R(\lambda)_\mu\mmod_{\ZZ}.
+%\end{align*}
+%$\cL(\lambda)$ is endowed with the structure of a categorical representation of $U_q(\fg)$ using induction and restriction functors - we refer the reader to the references above for details.  
+%
+
+The Jordan-H\"older Theorem for categorical representations will play an important role in our work.  
+This was originally developed by Rouquier for additive categorifications \cite{Rou2KM}, and in this section we transfer these results to the abelian setting.
+To set this up, recall that given finite abelian $\kk$-linear categories $\cA,\cB$ the \textbf{Deligne tensor product} $\cA \otimes_\kk \cB$  is universal for the functor assigning to every such abelian category $\cC$ the category of bilinear bifunctors $\cA \times \cB \to \cC$ right exact in both variables \cite[Definition 1.11.1]{EGNO}.  The tensor product is again a finite abelian $\kk$-linear category, and there is a bifunctor $\cA \times \cB \to \cA \otimes_\kk \cB, (X,Y) \mapsto X\otimes Y$.  This construction enjoys the following properties: 
+\begin{enumerate}
+\item The tensor product is unique up to unique equivalence,
+\item for finite $\kk$-algebras $A,B$ we have that $(A\mmod)\otimes_\kk (B\mmod) \cong (A\otimes_\kk B)\mmod$, and
+\item $\Hom_{\cA \otimes_\kk \cB}(X_1\otimes Y_1, X_2\otimes Y_2) \cong \Hom_\cA(X_1,Y_1)\otimes\Hom_\cB(X_2,Y_2)$.
+\end{enumerate}
+
+Let $\cC$ be a categorical representation, and let $\cA$ be a finite $\kk$-linear abelian category.  We can endow $\cC \otimes_\kk\cA$ with a structure of a categorical representation, by setting $(\cC \otimes_\kk\cA)_\mu=\cC_\mu \otimes_\kk\cA$, defining Chevalley functors $\sE_i\bone_\mu \otimes \bone_\cA$, etc.  If $\cC$ is a simple categorification, then clearly  $\cC \otimes_\kk\cA$ is an isotypic categorification.  Conversely, we have:  
+
+\begin{Lemma}\label{lem:isocat}
+Let $\cC$ be an isotypic categorification of type $\lambda \in X_+$.  Then there exists an abelian category $\cA$ such that $\cC \cong \cL(\lambda)\otimes_\kk \cA$.  
+\end{Lemma}
+
+
+\begin{proof}
+Since $\cC$ is an isotypic categorification, so is $\cC\proj$.  By Rouquier's Jordan-H\"older series for additive categorifications \cite[Theorem 5.8]{Rou2KM}, there exists an additive $\kk$-linear category $\cM$ such that 
+\begin{align*}
+\cC\proj\cong (\cL(\lambda)\proj \otimes_\kk \cM)^i.
+\end{align*}
+Note that no filtration appears here since, in the notation of \cite{Rou2KM}, $(\cC\proj)_{-\lambda}^{lw}=(\cC\proj)_{-\lambda}$.
+
+Let $\{P_i\}$ (respectively $\{Q_j\}$) be a complete list of the projective indecomposable objects of $\cL(\lambda)$ (respectively $\cM$).  Let $P=\bigoplus_{i,j}P_i\otimes Q_j$, and let $B=\End_\cC(P)^{op}$.  By Morita theory, $B\mmod\cong \cC$.  On the other hand,
+\begin{align*}
+B\cong \End_{\cL(\lambda)}(\bigoplus_i P_i)^{op} \otimes \End_\cM(\bigoplus_j Q_j)^{op}.
+\end{align*}
+Since $\cL(\lambda)\cong \End_{\cL(\lambda)}(\bigoplus_i P_i)^{op}\mmod$ we have the desired result with $\cA=\End_\cM(\bigoplus_j Q_j)^{op}\mmod$.
+\end{proof}
+
+\begin{Theorem}\label{thm:JH}
+Let $\cC$ be a categorical representation of $U_q(\fg)$.  Then there exists a filtration by Serre subcategories
+\begin{align}\label{eq:JHfiltration}
+0=\cC_0 \subset \cC_1\subset \cdots\subset \cC_n=\cC, 
+\end{align}
+such that for each $i$: $\cC_i$ is a subrepresentation of $\cC$, 
+$\cC_{i}/\cC_{i-1}$ is a simple categorification of type $\lambda_i\in X_+$, and the list of highest weights is weakly increasing so that $\la_i \prec \la_j \Longrightarrow i<j$. 
+\end{Theorem}
+
+\begin{proof}
+The $\fg$-crystal $\Irr(\cC)$ is isomorphic to a finite direct sum of irreducible crystals $\bB(\la)$ for various $\la$, i.e. we have an isomorphism
+$$
+\Irr(\cC) \cong \bigoplus_{\la\in X_+} \bB(\la)^{\oplus m_\la},
+$$
+where $m_\la \geq 0$ and only finitely many are nonzero.
+
+Define $M=\{ \la \in X_+ \;|\; m_\la\neq0\}$, and let $\la \in M$. We claim that there exists a highest weight simple object $L \in \cC_\la$.  Indeed, otherwise for any simple object $L\in \cC_\la$ there exists $i\in I$ such that $\sE_i(X) \neq 0$.  This implies that $\soc(\sE_i(X))\neq 0$, and by Proposition \ref{prop:cryst} we conclude that $\Irr(\cC)$ has no highest weight elements of weight $\la$,  a contradiction.  
+
+Now take $\la \in M$  which is minimal with respect to $\preceq$, and let $L \in \cC_\la$ be a highest weight object.
+ Let $\cC_1$ be the Serre subcategory of $\cC$ generated by objects
+\begin{align}\label{eq:Serregens}
+\{\sF_{i_1}\cdots \sF_{i_\ell}(L)\;|\; i_j\in I, \ell \geq 0\}.
+\end{align}
+By the exactness and bi-adjunction of the Chevalley functors, $\cC_1$ is  a subrepresentation of $\cC$.  Moreover it categorifies $L(\lambda)$.  Indeed, by our choice of $\lambda$ there cannot be any highest weight objects with weight $\prec\lambda$ occuring in $\cC_1$, and by construction the only simple object in  $(\cC_1)_\lambda$ is $L$.  
+
+Next consider the categorical representation $\cC/\cC_1$ and repeat this construction.  This produces a Serre subcategory $\cC_2' \subset \cC/\cC_1$ which is again a simple categorification.  Let $\pi:\cC \to \cC/\cC_1$ be the natural quotient functor, and define $\cC_2=\pi^{-1}(\cC_2')$.  Clearly, we have that $\cC_1\subset \cC_2$, $\cC_2$ is Serre, it is a subrepresentation, and $\cC_2/\cC_1 \cong \cC_2'$ is a simple categorification.  
+
+Iterating this process produces a filtration of $\cC$ such that each composition factor is a simple categorification, and the highest weights of the subquotients are weakly increasing.
+\end{proof}
+
+
+
+
+%\begin{Theorem}\label{thm:JH}
+%Let $\cC$ be a categorical representation of $U_q(\fg)$.  Then there exists a filtration by Serre subcategories
+%\begin{align}\label{eq:JHfiltration}
+%0=\cC_0 \subset \cC_1\subset \cdots\subset \cC_n=\cC, 
+%\end{align}
+%such that each $\cC_i$ is a subrepresentation of $\cC$, and 
+%$
+%\cC_{i}/\cC_{i-1} \cong \cL(\lambda_i)\otimes_\kk\cA_i
+%$
+%where $\lambda_i\in X_+$, $\cA_i$ a $\kk$-linear graded abelian category, and $\cC_{i}/\cC_{i-1}$ is a simple categorification.
+%\end{Theorem}
+%
+%\begin{proof}
+%Choose a dominant highest weight $\lambda$ occurring in the isotypic decomposition of $[\cC]_{\CC(q)}$, which is minimal among all dominant weights such that there exists a nonzero  highest weight object $L \in \cC_\la$.  Without loss of generality we can assume that $L$ is simple. 
+%
+% Let $\cC_1$ be the Serre subcategory of $\cC$ generated by objects
+%\begin{align}\label{eq:Serregens}
+%\{\sF_{i_1}\cdots \sF_{i_\ell}(L)\;|\; i_j\in I, \ell \geq 0\}.
+%\end{align}
+%By the exactness and bi-adjunction of the Chevalley functors, $\cC_1$ is  a subrepresentation of $\cC$.  Moreover it categorifies $L(\lambda)$.  Indeed, by our choice of $\lambda$ there cannot be any highest weight objects with weight $<\lambda$ occuring in $\cC_1$, and by construction the only simple object in  $(\cC_1)_\lambda$ is $L$.  
+%
+%Next consider the categorical representation $\cC/\cC_1$ and repeat this construction.  This produces a Serre subcategory $\cC_2' \subset \cC/\cC_1$ which is again a simple categorification.  Let $\pi:\cC \to \cC/\cC_1$ be the natural quotient functor, and define $\cC_2=\pi^{-1}(\cC_2')$.  Clearly, we have that $\cC_1\subset \cC_2$, $\cC_2$ is Serre, it is a subrepresentation, and $\cC_2/\cC_1 \cong \cC_2'$ is a simple categorification.  
+%
+%Iterating this process produces a filtration of $\cC$ such that each composition factor is a simple categorification.  By Lemma \ref{lem:isocat} any simple categorification is of the form $\cL(\lambda)\otimes_\kk \cA$, with $\cA$ a $\kk$-linear abelian category (with one simple object).
+%\end{proof}
+%
+%We can refine the ordering of simple categorifications appearing in a Jordan-H\"older filtration as follows.
+
+%\begin{Proposition}\label{prop:order}
+%Let $\cC$ be a categorical representation of $U_q(\fg)$.  Let $\la_1,\hdots,\la_n$ be a list of the simple representations appearing in $[\cC]_{\CC(q)}$ (with multiplicity), and choose any ordering of these weights such that $\lambda_i > \lambda_j \Longrightarrow i <j$.  Then there is a Jordan-H\"older filtration \eqref{eq:JHfiltration} of $\cC$ such that $\cC_{i}/\cC_{i-1}$ categorifies the simple representation of highest weight $\lambda_i$.
+%\end{Proposition}
+%
+%\begin{proof}
+%Firstly, note that if $\lambda$ is a maximal dominant highest weight occurring in $[\cC]_{\CC(q)}$ then there necessarily exists a simple highest weight object $L \in \cC_\lambda$.  Indeed, any simple object in $\cC_\lambda$ would do.  Secondly, we claim that if $L \in \cC$ is any highest weight object then the Serre subcategory generated by \eqref{eq:Serregens} contains no other highest weight objects.  To see this, consider $\sF_{i_1}\cdots \sF_{i_\ell}(L)$.  Suppose $X \subset \sF_{i_1}\cdots \sF_{i_\ell}(L)$, and consider the short exact sequence
+%$$
+%0 \to X \to \sF_{i_1}\cdots \sF_{i_\ell}(L) \to Y \to 0.
+%$$
+%By the adjunction we have that $\Hom(\sE_{i_1}(X),\sF_{i_2}\cdots \sF_{i_\ell}(L)) \neq 0 \Leftrightarrow \Hom(X,\sF_{i_1}\cdots \sF_{i_\ell}(L)) \neq 0$ and we know the latter is nonzero by the short exact sequence.  Therefore $\sE_{i_1}(X) \neq 0$.  One can similarly show that $\sE_{i_1}(Y) \neq 0$ using the adjunction in the other direction.  This shows that $\sF_{i_1}\cdots \sF_{i_\ell}(L)$ contains no highest weight subquotients.
+%
+%Now we can follow the construction of the Jordan-H\"older filtration in the proof of Theorem \ref{thm:JH}, but choosing a maximal highest weight object.  The argument above shows that $\cC_1$ contains no highest weight subobjects, and so one can proceed with the construction as above.  
+%
+%\end{proof}
+
+
+\begin{Remark}\label{rem:isofilts}
+Note that the construction in the proof of Theorem \ref{thm:JH} can produce also an isotypic filtration with similar properties.  Namely, if $\la_1,\hdots,\la_N$ is a list of the \textit{distinct} isotypic types appearing in $[\cC]_{\CC(q)}$, and we choose any ordering of this list so that $\lambda_i \prec \lambda_j \Longrightarrow i <j$, then there is a filtration $0=\cC'_0 \subset \cC'_1\subset \cdots\subset \cC'_N=\cC$ such that $\cC'_{k}/\cC'_{k-1}$ categorifies the isotypic component of $[\cC]_{\CC(q)}$ of highest weight $\lambda_k$.  To construct this isotypic filtration, consider the  Jordan-H\"older filtration  from the theorem.  From the proof of Theorem \ref{thm:JH}, it's easy to see that one can ensure that the subquotients which categorify the same simple representations appear in sequence.  Assuming then that our Jordan-H\"older filtration satisfies this property, a coarsening of it is  the desired isotypic filtration.
+\end{Remark}
+
+
+\begin{Remark}\label{rem:JHfromCrystal}
+Note that one can read off the isotypic filtration of $\cC$  from the crystal structure on $\Irr(\cC)$.  Indeed, suppose that $\Irr(\cC)$ decomposes into  components 
+$$
+\Irr(\cC)=\bX(\la_1) \sqcup \cdots \sqcup \bX(\la_N),
+$$
+where $\la_1,\hdots,\la_N \in X_+$ are distinct dominant integral weights, and $\bX(\la_i)$ is a disjoint union of copies of $\bB(\la_i)$.  Further, we arrange the weights  as above so that  $\la_i \prec \la_j \Longrightarrow i < j$.  Let $\cC_i$ be the Serre subcategory of $\cC$ generated by simple objects $L$ such that $[L] \in \bX(\la_j)$, where $j \leq i$.  Then it follows from Remark \ref{rem:isofilts} that $\{0\} \subset \cC_1 \subset \cC_2 \subset \cdots \subset \cC_N$ is an isotypic filtration of $\cC$.
+\end{Remark}
+
+\subsection{The categorical braid group action}
+Let $\cC$ be a categorical representation of $U_q(\fg), \mu \in X$ and $i\in I$.     
+We define a complex of functors $\Theta_i\bone_\mu$, supported in nonpositive cohomological degrees, where for $r\geq0$ the $-r$ component is
+\begin{align*}
+(\Theta_i\bone_\mu)^{-r}=\begin{cases}\sE_i^{(-\mu_i+r)}\sF_i^{(r)}\bone_\mu\langle -s \rangle &\text{ if } \mu_i\leq0, \\
+\sF_i^{(\mu_i+r)}\sE_i^{(r)}\bone_\mu\langle -r \rangle &\text{ if } \mu_i\geq0.
+\end{cases}
+\end{align*}
+The differential $d^r:(\Theta_i\bone_\mu)^{-r} \to (\Theta_i\bone_\mu)^{-r+1}$ is defined using the counits of the bi-adjunctions relating $\sE_i$ and $\sF_i$ (see \cite[Section 4]{Cauclasp} for details).  This produces a functor $\Theta_i\bone_\mu:D^b(\cC_\mu)\to D^b(\cC_{s_i(\mu)})$, which following Chuang and Rouquier we call the \textbf{Rickard complex}.
+
+
+It's straightforward to verify that the Rickard complex $\Theta_i\bone_\mu$ categorifies Lusztig's braid group operators $\st_i\sone_\mu$ (\cite[Section 2]{Cauclasp}).
+On the level of categories we have the following two theorems of Chuang-Rouquier and Cautis-Kamnitzer, which are the fundamental results about  Rickard complexes.  Note that the latter theorem was conjectured in \cite[Conjecture 5.19]{Rou2KM}.
+
+\begin{Theorem}\cite[Theorem 6.4]{CR}\label{thm:CR}
+For any $\mu,i$, $\Theta_i\bone_\mu:D^b(\cC_\mu)\to D^b(\cC_{s_i(\mu)})$ is an equivalence of triangulated categories.
+\end{Theorem}
+
+\begin{Theorem}\cite[Theorem 6.3]{CK3}\label{thm:CK}
+The Rickard complexes satisfy the braid relations:
+\begin{align*}
+\Theta_i\Theta_j\bone_\mu &\cong \Theta_j\Theta_i\bone_\mu \text{ if } (i,j)=0,\\
+\Theta_i\Theta_j\Theta_i\bone_\mu &\cong \Theta_j\Theta_i\Theta_j\bone_\mu \text{ if } (i,j)=-1,
+\end{align*}
+thereby defining a weak action of $B$ on $D^b(\cC)$.
+\end{Theorem}
+
+This action is ``weak'' since we don't make any claim on the canonicity of the functorial isomorphisms.  Nevertheless, for $w \in W$ we define $\Theta_w\bone_\mu := \Theta_{i_1}\circ\cdots\circ\Theta_{i_\ell}\bone_\mu$, where $w=s_{i_1}\cdots s_{i_\ell}$ is a reduced expression.  Thus  $\Theta_w\bone_\mu$ is defined up to isomorphism, but not canonical isomorphism.  Luckily, everything we do in this paper only requires $\Theta_w\bone_\mu$ to be defined up to isomorphism.
+
+
+As a consequence of their proof of Theorem \ref{thm:CR}, Chuang and Rouquier show that the inverse  of $\Theta_i\bone_\mu$ is its right adjoint.  We denote this functor by $\Theta_i'\bone_{\mu}:D^b(\cC_\mu)\to D^b(\cC_{s_i(\mu)})$, so that $\Theta_i\Theta_i'\bone_\mu \cong \Theta'_i\Theta_i\bone_\mu \cong \bone_\mu$.  As a complex of functors, $\Theta_i'\bone_\mu$ is supported in nonnegative cohomological degrees, where for $s\geq0$ the $s$ component is
+\begin{align*}
+(\Theta_i'\bone_\mu)^s =\begin{cases}
+\sE_i^{(s)}\sF_i^{(\mu_i+s)}\bone_\mu\langle s(-2\mu_i-2s+1) \rangle &\text{ if } \mu_i \geq 0, \\
+\sF_i^{(s)}\sE_i^{(-\mu_i+s)}\bone_\mu\langle s(-2\mu_i+2s+1) \rangle&\text{ if } \mu_i \leq 0.
+\end{cases}
+\end{align*}
+
+\section{Perverse equivalences}
+\subsection{General definition}\label{sec:pervdef}
+Let $\cT$ be a triangulated category with shift functor $[1]:\cT \rightarrow \cT$. In the cases of most interest to us, $\cT$ is a subcategory of a derived category, in which case $[1]$ is the homological shift functor.
+Suppose $\cT$ has a t-structure $t=(\cT^{\leq0},\cT^{\geq0})$, with heart $\cT^\heartsuit=\cT^{\leq0} \cap \cT^{\geq0}$ \cite{BBD}.  Recall that a triangulated functor $F:\cT \to \cS$ between triangulated categories with $t$-structure is \textbf{$t$-exact} if $F(\cT^{\leq0})\subseteq \cS^{\leq0}$ and $F(\cT^{\geq0})\subseteq \cS^{\geq0}$.  We let $F[p]: \cT \to \cS$ denote the pre-composition of $F$ with the $p$-shift $[p]$.
+
+
+Now let $\cS \subset \cT$ be a thick triangulated subcategory, and consider the quotient functor $Q:\cT \to \cT/\cS$.  Following \cite{CRperv}, we say that $t$ is \textbf{compatible} with $\cS$ if $t_{\cT/\cS}=(Q(\cT^{\leq0}),Q(\cT^{\geq0}))$ is a t-structure on $\cT/\cS$.  By \cite[Lemmas 3.3 \& 3.9]{CRperv}, if $t$ is compatible with $\cS$ then $(\cT/\cS)^\heartsuit=\cT^\heartsuit/\cT^\heartsuit\cap \cS$, and  $t_\cS=(\cS\cap\cT^{\leq0},\cS\cap\cT^{\geq0})$ is a t-structure on $\cS$ such that $\cS^\heartsuit=\cT^\heartsuit\cap \cS$.
+
+Now suppose that $\cT,\cT'$ are two triangulated categories with t-structures $t,t'$.  Suppose further that we have filtrations by thick triangulated subcategories:
+\begin{align*}
+0 \subset \cT_0 \subset \cT_1\subset \cdots\subset \cT_r=\cT ,\quad 0 \subset \cT_0' \subset \cT_1'\subset \cdots\subset \cT_r'=\cT', 
+\end{align*}
+such that for every $i$, $t$ is compatible with $\cT_i$ and $t'$ is compatible with $\cT'_i$. By \cite[Lemma 3.11]{CRperv}, $t_{\cT_i}$ is also compatible with $\cT_{i-1}$, and hence $\cT_i/\cT_{i-1}$ inherits a natural t-structure.  Let $p: \{0,\hdots,r\} \rightarrow \ZZ$.  The data $(\cT_\bullet, \cT'_\bullet, p)$ is termed a \textbf{perversity triple}.  
+
+Although Chuang and Rouquier didn't formulate perverse equivalences for graded categories, it is straightforward to extend their definitions to this setting.
+
+\begin{Definition}\label{def:PE}
+A graded equivalence of graded triangulated categories $\sF:\cT\to\cT'$ is a \textbf{(graded) perverse equivalence} with respect to $(\cT_\bullet, \cT'_\bullet, p)$ if for every $i$, 
+\begin{enumerate}
+\item $\sF(\cT_i)= \cT_i'$, and
+\item the induced equivalence $\sF[-p(i)]:\cT_i/\cT_{i-1}\to \cT_i'/\cT_{i-1}'$ is t-exact.
+\end{enumerate}
+\end{Definition}
+For brevity, we say $\sF$ is \textbf{perverse} if it is a graded perverse equivalence with respect to some perversity datum.  Since we will be working exclusively in the graded setting, a perverse equivalence for us will always mean a graded perverse equivalence.    
+
+A perverse equivalence $\sF:\cT\to\cT'$  induces a bijection $\varphi_\sF:\Irr(\cT^\heartsuit) \to \Irr(\cT^{\prime\heartsuit})$.  Indeed, by (2) $\sF[-p(i)]$ induces a bijection $\Irr(\cT_i^\heartsuit)\setminus \Irr(\cT_{i-1}^\heartsuit) \to \Irr(\cT_i^{\prime\heartsuit})\setminus \Irr(\cT_{i-1}^{\prime\heartsuit})$, and these yield $\varphi_\sF$.
+
+
+Although the construction of $\varphi_\sF$ depends on a choice of perversity triple, the resulting bijection does not when $\cT^\heartsuit,\cT^{\prime\heartsuit}$ have finitely many simple objects.  This follows from the following lemma.
+ 
+
+\begin{Lemma}[\cite{LosCacti}, Lemma 2.4]\label{lem:LosLem}
+ Suppose that $\cT^\heartsuit,\cT^{\prime\heartsuit}$ have finitely many simple objects, and for $i=1,2$ let $\sF_i:\cT \to \cT'$ be a  perverse equivalence with respect to the perversity datum $(\cT_{i,\bullet}, \cT'_{i,\bullet}, p_i)$.  If the induced maps $[\sF_1],[\sF_2]:[\cT]_\ZZ \to [\cT']_\ZZ$ coincide then $\varphi_{\sF_1}=\varphi_{\sF_2}$.
+ \end{Lemma}
+ 
+ \begin{Corollary}
+ Suppose that $\cT^\heartsuit,\cT^{\prime\heartsuit}$ have finitely many simple objects, and  $\sF:\cT \to \cT'$ is perverse.  Then $\varphi_\sF$ is independent of the choice of perversity triple.
+ \end{Corollary}
+ 
+ \begin{proof}
+Suppose $\sF$ is a graded perverse equivalence with respect to two choices of perversity triples $(\cT_{i,\bullet}, \cT'_{i,\bullet}, p_i)$, $i=1,2$.  Now apply the lemma.
+ \end{proof}
+ 
+ The proofs of the following lemmas are straightforward.
+ 
+ \begin{Lemma}\label{lem:pervshift}
+ Suppose $\sF:\cT \rightarrow \cT'$ is perverse.  Then for any $\ell\in\ZZ$, $\sF[\ell]$ is also perverse and $\varphi_{\sF[\ell]}=\varphi_\sF$.
+ \end{Lemma}
+ 
+ \begin{Lemma}\label{lem:pervcomp}
+ Suppose $\sF:\cT \rightarrow \cT'$ is a  perverse equivalence with respect to $(\cT_\bullet, \cT'_\bullet, p)$, and $\sG:\cT' \rightarrow \cT''$ is a  perverse equivalence with respect to $(\cT'_\bullet, \cT''_\bullet, q)$.  Then $\sG\circ \sF$ is a  perverse equivalence with respect to $(\cT_\bullet, \cT''_\bullet, p+q)$, and $\varphi_{\sG\circ \sF}=\varphi_\sG\circ\varphi_\sF$.
+ \end{Lemma}
+ 
+\begin{Lemma}\label{lem:quot}
+Let $\cT,\cT'$ be triangulated with t-structures $t,t'$, and let $\cS\subset \cT, \cS'\subset \cT'$ be thick triangulated subcategories such that $t$ is compatible with $\cS$ and $t'$ is compatible with $\cS'$.  Suppose further that $\sF:\cT\to\cT'$ is a perverse equivalence with respect to $(\cT_\bullet, \cT'_\bullet, p)$, and $\sF(\cS)=\cS'$.  
+
+Define $\cS_i=\cS\cap \cT_i, \cS_i'=\cS'\cap \cT_i'$ and  $(\cT/\cS)_i=Q(\cT_i), (\cT'/\cS')_i=Q'(\cT_i')$.  Let 
+$\sG:\cS\to\cS'$ and $\sH:\cT/\cS \to \cT'/\cS'$ be the induced equivalences.  Then:
+\begin{enumerate}
+\item $\sG$ is a perverse equivalence with respect to $(\cS_\bullet, \cS'_\bullet,p)$, and $\varphi_{\sG}=\varphi_{\sF}|_{\Irr{\cS^\heartsuit}}$.
+\item $\sH$ is a perverse equivalence with respect to $((\cT/\cS)_\bullet,(\cT'/\cS')_\bullet,p)$, and
+$
+\varphi_{\sH}=\varphi_{\sF}|_{\Irr{\cT^\heartsuit} \setminus \Irr{\cS^\heartsuit}}.
+$
+\end{enumerate}
+\end{Lemma}
+
+\begin{Lemma}[\cite{LosCacti}, Lemma 2.4]\label{lem:texactperv}
+Suppose $\sF:\cT \rightarrow \cT'$ is perverse, and $\sG$ (respectively $\sG'$) is an autoequivalence of $\cT$ (respectively $\cT'$) which is t-exact up to shift.  Then $\sG'\circ \sF \circ \sG$ is perverse, and $\varphi_{\sG'\circ \sF \circ \sG}=\varphi_{\sG'}\circ\varphi_{\sF}\circ\varphi_{\sG'}$.  
+\end{Lemma}
+
+Note that in \cite[Lemma 2.4]{LosCacti}  is stated for functors which are t-exact.  Our formulation for functors which are t-exact up to shift follows by Lemma \ref{lem:pervshift}.
+
+
+
+\subsection{Derived categories of graded abelian categories}
+We now specialise to the case of derived categories.  We recall that if $\cA$ is an abelian category, then the bounded derived category $D^b(\cA)$ has a standard t-structure $(D^b(\cA)^{\leq0},D^b(\cA)^{\geq0})$ whose heart is $\cA$.  
+
+Given a $\cB \subset \cA$ a Serre subcategory, we let $D_\cB^b(\cA) \subset D^b(\cA)$ denote the thick subcategory consisting of complexes with cohomology supported in $\cB$. The category $D_\cB^b(\cA)$ inherits a natural t-structure from the standard t-structure on $D^b(\cA)$: $D_\cB^b(\cA)^{\leq0}=D_\cB^b(\cA) \cap D^b(\cA)^{\leq0}$ and $D_\cB^b(\cA)^{\geq0}=D_\cB^b(\cA) \cap D^b(\cA)^{\geq0}$.  The heart of the t-structure on 
+$D_\cB^b(\cA)$ is $\cB$.  Moreover, if $\cC \subset \cB$ is another Serre subcategory then 
+the $t$-structure on $D_\cB^b(\cA)$ is compatible with $D_\cC^b(\cA)$.  In particular, the quotient  $D_\cB^b(\cA)/D_\cC^b(\cA)$ inherits a natural t-structure whose heart is $\cB/\cC$.
+
+For the remainder of this section let $\cA,\cA'$ be graded abelian categories.  In the setting of derived categories of graded abelian categories, a perverse equivalence can be packaged as follows.  We can encode a perversity triple $(\mathcal{A}_\bullet, \mathcal{A}'_\bullet, p)$ using filtrations on the abelian categories: $\cA_\bullet$ and $\cA'_\bullet$ are filtrations by shift-invariant Serre subcategories:
+\begin{align*}
+	0 = \mathcal{A}_{-1} \subset \mathcal{A}_0 \subset \mathcal{A}_1 \subset \hdots \subset \mathcal{A}_r=\mathcal{A}, \quad
+	0 = \mathcal{A}'_{-1} \subset \mathcal{A}'_0 \subset \mathcal{A}'_1 \subset \hdots \subset \mathcal{A}'_r=\mathcal{A}'.
+	\end{align*}
+Then a graded equivalence $\sF:D^b(\mathcal{A}) \to D^b(\mathcal{A}')$ is a perverse with respect to $(\mathcal{A}_\bullet, \mathcal{A}'_\bullet, p)$ if conditions (1) and (2) of Definition \ref{def:PE} hold for $\cT_i=D^b_{\mathcal{A}_i}(\mathcal{A})$ and $\cT_i'=D^b_{\mathcal{A}'_i}(\mathcal{A}')$
+%	\begin{enumerate}
+%		\item $F[-p(i)]$ restricts to an equivalence $D^b_{\mathcal{A}_i}(\mathcal{A}) \rightarrow D^b_{\mathcal{A}'_i}(\mathcal{A}')$, and 
+%		\item the induced equivalence $F[-p(i)]:D^b_{\mathcal{A}_i}(\mathcal{A})/D^b_{\mathcal{A}_{i-1}}(\mathcal{A}) \xrightarrow{\cong} D^b_{\mathcal{A}'_i}(\mathcal{A}')/D^b_{\mathcal{A}'_{i-1}}(\mathcal{A}')$ 
+%		is t-exact.
+%	\end{enumerate}	
+
+%\oded{We may need to be a bit more careful in the setting of graded categories.  Indeed, suppose that $A$ is a $\ZZ$-graded algebra and we consider the category $A-mod_\ZZ$ of it graded modules.  Consider the grading shift functor $\langle 1 \rangle:D^b(A-mod_\ZZ) \to D^b(A-mod_\ZZ)$.  This is a perverse equivalence with trivial datum, and the induced bijection would map $[L] \mapsto q[L]$ for any simple $L$.  But we would want to set this up so that the induced bijection is the identity map, and so I think the set up needs to be rephrased a bit in the graded setting}
+
+%We denote by $\Irr(\cA)$ the set of equivalence classes of simple objects of $\cA$ up to shift.  
+ As above, a graded perverse equivalence $\sF:D^b(\mathcal{A}) \to D^b(\mathcal{A}')$ induces a bijection $\varphi_\sF:\Irr(\cA)\to\Irr(\cA')$.  
+ 
+The following standard lemma will be useful in the proof of our main result.  
+
+\begin{Lemma}\label{lem:trianginv}
+Let $\cA,\cA'$ be abelian categories, and $\cB,\cB'$ Serre subcategories.  Let $a\leq b$ be integers, and $\sF_i:\cA \to \cA'$ be exact functors for $a \leq i \leq b$.  Suppose these functors  fit into a  complex $\sF=(\sF_a \to \sF_{a+1} \to \cdots \to \sF_{b} )$, defining a functor 
+$$
+\sF:D^b(\cA) \to D^b(\cA').
+$$
+If $\sF_i(\cB)\subset \cB'$ for all $a \leq i \leq b$, then $\sF(D_\cB^b(\cA))\subseteq D_{\cB'}^b(\cA')$.
+\end{Lemma} 
+
+ 
+ 
+ 
+% Indeed, by condition (2) we have families of graded abelian equivalences $$F[-p(i)]:\mathcal{A}_i/\mathcal{A}_{i-1} \xrightarrow{\cong} \mathcal{A}'_i/\mathcal{A}'_{i-1}.$$  Each induces a bijection $\Irr(\cA_i)\setminus\Irr(\cA_{i-1}) \leftrightarrow \Irr(\cA_i')\setminus\Irr(\cA_{i-1}')$, and  these  yield $\varphi_F$.  
+%  
+% \begin{Corollary}
+% Suppose $F_i,G_j$ ($1\leq i\leq n, 1\leq j \leq m$) are perverse equivalences between bounded derived categories of abelian categories with finitely many simple objects.  Suppose furthermore that the compositions $F_1\cdots F_n$, $G_1 \cdots G_m$ are well-defined, and $F_1\cdots F_n \cong G_1 \cdots G_m$.  Then $$\varphi_{F_1}\cdots\varphi_{F_n} = \varphi_{G_1}\cdots\varphi_{G_m}.$$
+% \end{Corollary}
+
+%Chuang and Rouquier give also a useful criterion for verifying perversity.  For the benefit of the reader, we reproduce their proof with added details.   
+%%We present a version of this criterion which is slightly stronger than what appears in \cite{CRperv}.  
+%
+%\begin{Lemma}[\cite{CRperv}, Lemma 4.12]\label{lem:CRlemma}
+%Let $F:D^b(\cA) \to D^b(\cA')$ be a graded equivalence of triangulated categories, and let $(\mathcal{A}_\bullet, \mathcal{A}'_\bullet, p)$ be a perversity datum.  Suppose there exist collections of objects $\cF_0,\hdots, \cF_r$ (resp. $\cF'_0,\hdots,\cF'_r$) of $\cA$ (resp. $\cA'$) such that the following conditions hold:
+%	\begin{enumerate}
+%		\item $F(X)[-p(i)] \in \cF'_i$ for all $X \in \cF_i$.
+%		\item $F^{-1}(X')[p(i)] \in \cF_i$ for all $X' \in \cF'_i$.
+%		\item The following are equivalent for $M \in \cA$:
+%		\begin{itemize}
+%			\item[(i)] $M \in \cA_i$
+%			\item[(ii)] $\Hom(X,M[r])=\Hom(M,X[r])=0$ for all $X \in \cF_j, \; j>i$ and $r \in \ZZ$.
+%			\item[(iii)] $\Hom(X,M)=0$ for all $X \in \cF_j$, $j>i$.
+%			\item[(iv)] $\Hom(M,X)=0$ for all $X \in \cF_j$, $j>i$.
+%		\end{itemize}
+%		\item Same as (3) with $\cA$ and $\cA'$ switched.	
+%	\end{enumerate}
+%	Then $F$ is a graded perverse equivalence relative to $(\cA_{\bullet}, \cA'_{\bullet},p)$.
+%\end{Lemma}
+%\begin{proof}
+%
+%We aim to show:
+%\begin{align}
+%&\text{For any } M \in \cA_i, H^r (F(M)) \in \cA_{i-1}' \text{ for all } r\neq -p(i), \text{ and } H^{-p(i)}(F(M))\in \cA_i' \label{eq:uselemma4.8}, \text{ and } \\
+%&\text{for any } M' \in \cA'_i, H^r(F^{-1}(M')) \in \cA_{i-1} \text{ for all } r\neq p(i), \text{ and } H^{p(i)}(F^{-1}(M')) \in \cA_i. \label{eq:uselemma4.8-2}
+%\end{align}
+%Once we do this, by \cite[Lemma 4.10]{CRperv} the result follows.
+%
+%
+%We will  prove (\ref{eq:uselemma4.8}). A similar argument also proves (\ref{eq:uselemma4.8-2}).
+%Let $M \in \cA_i$.  Let $j\geq i, V' \in \cF_j'$ and $r \in \ZZ$.  We will consider the two cases:
+%\begin{itemize}
+%\item[(a)] $j>i$ and $r$ arbitrary, and 
+%\item[(b)] $j=i$ and $r\neq -p(i)$.
+% \end{itemize} 
+%
+%\vspace{1mm}
+%\textit{Claim 0:} We have that $\Hom(V',F(M)[r])=0$ in cases (a) and (b)
+%\vspace{1mm}
+%
+%Consider the isomorphism
+%$
+%\Hom(V',F(M)[r])\cong \Hom(F^{-1}(V')[p(j)],M[r+p(j)]).
+%$
+%Since $$F^{-1}(V')[p(j)] \in \cF_j,$$ we deduce Claim 0 in case (a) (using the implication (i) $\Rightarrow$ (ii)) and also in case (b).
+%
+%Now let $d$ be minimal such that $H^dF(M) \notin \cA_{i-1}'$ (if such a $d$ doesn't exist then clearly (\ref{eq:uselemma4.8}) holds).   By the implication  (i) $\Rightarrow$ (ii)  we get that 
+%\begin{align}\label{eq:homvan}
+%\Hom(V',H^nF(M)[r])=0 \text{ for any } r \text{ and } n<d.
+%\end{align} 
+%
+%\vspace{1mm}
+%\textit{Claim 1:} We have that $\Hom(V',\tau_{\leq \ell}F(M)[r])=0$ for any $\ell < d$ and any $r$
+%\vspace{1mm}
+%
+%Before proving Claim 1 we note that for any $X$, we have a distinguished triangle
+%\begin{align*}
+%\tau_{<\ell}X \to \tau_{\leq \ell}X \to H^\ell(X)[-\ell],
+%\end{align*}
+%where we've used that $\tau_{\geq \ell}\tau_{\leq \ell}X=H^\ell(X)[-\ell]$.  
+%
+%Let $\ell_0$ be minimal such that $H^{\ell_0} F(M)\neq0$.  We can assume that $\ell_0 <d$ since otherwise Claim 1 is obvious, and similarly the claim is also obvious for any $\ell <\ell_0$.  Consider the triangle
+%\begin{align}\label{eq:tria1}
+%(\tau_{<\ell_0}F(M))[r] \to (\tau_{\leq \ell_0}F(M))[r] \to H^{\ell_0} F(M))[-\ell_0+r].
+%\end{align}
+%Since $(\tau_{<\ell_0}F(M))$ is quasi-isomorphic to zero, and by (\ref{eq:homvan}) there are no nonzero maps $V' \to H^{\ell_0} F(M))[-\ell_0+r] $, we conclude that $\Hom(V',(\tau_{\leq \ell_0}F(M))[r])=0$ for any $r$.  This forms the base case of an induction.
+%
+%Now consider any $\ell <d$ and suppose we've proven the claim for any $k <\ell$.  Then by induction we have that there are no maps $V' \to (\tau_{<\ell}F(M))[r]$, and by (\ref{eq:homvan}) there are no nonzero maps $V' \to H^\ell F(M))[-\ell+r]$.  By (\ref{eq:tria1}) (with $\ell$ replacing $\ell_o$) we conclude that $\Hom(V',(\tau_{\leq \ell}F(M))[r])=0$ for any $r$, completing the proof of Claim 1.
+%
+%\vspace{1mm}
+%\textit{Claim 2:} We have that $\Hom(V',\tau_{\geq d}F(M)[r])=0$ in  cases (a) and (b).  
+%\vspace{1mm}
+%
+%To prove this claim we start with the triangle
+%\begin{align*}
+%\tau_{<d}F(M) \to F(M) \to \tau_{\geq d}F(M),
+%\end{align*} 
+%which when rotated and shifted gives us
+%\begin{align*}
+%F(M)[r] \to \tau_{\geq d}F(M)[r] \to \tau_{<d}F(M)[r+1].
+%\end{align*} 
+%In either of the cases, we have that $\Hom(V',F(M)[r])=0$ by Claim 0, and by Claim 1 we have that $\Hom(V',\tau_{<d}F(M)[r+1])=0$.   Claim 2 follows.
+%
+%\vspace{1mm}
+%\textit{Claim 3:} We have that $\Hom(V',H^rF(M))=0$ in cases (a) and (b).
+%\vspace{1mm}
+%
+%Indeed:
+%\begin{align*}
+%\Hom(V',H^rF(M)) &\cong \Hom(V'[-r],H^rF(M)[-r]) \\
+%&\cong \Hom(V'[-r],\tau_{\leq r}\tau_{\geq r}F(M)) \\
+%&\cong \Hom(V'[-r],\tau_{\geq r}F(M)) \\
+%&\cong \Hom(V',\tau_{\geq r}F(M)[r])
+%\end{align*}
+%and now Claim 3 follows from Claim 2.
+%
+%Using the implication (iii) $\Rightarrow$ (i), we now apply Claim 3 to deduce \ref{eq:uselemma4.8}.  
+%
+%
+%
+%%Let $M\in\cA_i$ and take $j \geq i, X'\in\cF_j'$ and $r\in\ZZ$.  Note that
+%%\begin{equation}
+%%\label{eq:homiso}
+%%\Hom(X',F(M)[r])\cong \Hom(F^{-1}(X')[p(j)],M[r+p(j)]).
+%%\end{equation}
+%%Suppose first that $j>i$.  Since $F^{-1}(X')[p(j)] \in \cF_j$, by the implication (i)$\Rightarrow$(ii) we get that $\Hom(X',F(M)[r])=0$.  This implies that $\Hom(X',H^rF(M))=0$, so the implication (iii)$\Rightarrow$(i) gives us that $H^rF(M) \in \cA_i'$ for all $r$.
+%%
+%%Now let $r\neq -p(i)$, and suppose further that $j=i$.  Then $\Hom(F^{-1}(X')[p(i)],M[r+p(i)])=0$, so by (\ref{eq:homiso}) $\Hom(X',F(M)[r])=0$, which again implies that $\Hom(X',H^rF(M))=0$.  Since this holds for any $X'\in\cF_i'$, the implication (iii)$\Rightarrow$(i) implies that $H^rF(M) \in \cA_{i-1}'$.
+%%
+%%A similar proof starting with $M'\in\cA_i',j \geq i, X\in\cF_j$ and $r\in\ZZ$ shows that $H^rF^{-1}(M') \in \cA_{i-1}$ for $r\neq p(i)$, and $H^{p(i)}(F^{-1}(M))\in \cA_{i}$.  
+%%
+%%We've shown that:
+%%\begin{itemize}
+%%\item for any $M\in\cA_i$ we have $H^r(F(M))\in \cA_{i-1}'$ for $r\neq -p(i)$ and $H^{-p(i)}(F(M))\in \cA_{i}'$, and 
+%%\item for any $M'\in\cA_i'$ we have $H^r(F^{-1}(M'))\in \cA_{i-1}$ for $r\neq p(i)$ and $H^{p(i)}(F^{-1}(M'))\in \cA_{i}$.
+%%\end{itemize}
+%%By \cite[Lemma 4.10]{CRperv}, this shows that $F$ is perverse with respect to $(\mathcal{A}_\bullet, \mathcal{A}'_\bullet, p)$.
+%\end{proof}
+
+%\begin{Remark}\label{rem:conv}
+%Consider a functor $F:D^b(\cA) \to D^b(\cA')$ which is given as a complex
+%$$
+%F=(\cdots\to F_i\to F_{i+1} \to\cdots):D^b(\cA) \to D^b(\cA'),
+%$$
+%where $F_i:\cA \to \cA'$ are exact. Suppose that $F$ is an equivalence and we have a perversity datum  $(\cA_\bullet, \cA_\bullet',p)$.
+%Suppose moreover that there exist sets $\cF_j,\cF_j'$ satisfying the hypothesis of Lemma \ref{lem:CRlemma} (so in particular $F$ is a perverse equivalence with respect to $(\cA_\bullet, \cA_\bullet',p)$).
+%
+%Now let $\cM$ be an abelian $\kk$-linear category and consider the complex of functors
+%$$
+%\ol{F} =(\cdots\to F_i\otimes\bone\to F_{i+1}\otimes\bone \to\cdots):D^b(\cA\otimes\cM) \to D^b(\cA'\otimes\cM).
+%$$
+%We claim that $\ol{F}$ is perverse with respect to $(\cA_\bullet\otimes\cM, \cA'_\bullet\otimes\cM,p)$.
+%Indeed, define $\tilde{\cF}_j=\cF_j\times \Irr{\cM}$ and $\tilde{\cF}_j'=\cF'_j\times\Irr{\cM}$.  It is straightforward to check that $\tilde{\cF}_j$ and $\tilde{\cF}_j'$ also satisfy the hypothesis of Lemma \ref{lem:CRlemma}.  Note, moreover, that $\varphi_{\ol{F}}([L],[L'])=(\varphi_F([L]),[L'])$.
+%\end{Remark}
+%
+%\begin{Lemma}\label{lem:pervtens}
+%%Let $F:D^b(\cA) \to D^b(\cA')$ be an equivalence of triangulated categories, and let $(\mathcal{A}_\bullet, \mathcal{A}'_\bullet, p)$ be a perversity datum.  Suppose there exist collections of objects $\cF_0,\hdots, \cF_r$ (resp. $\cF'_0,\hdots,\cF'_r$) of $\cA$ (resp. $\cA'$) satisfying the  conditions of Lemma \ref{CRlemma} (so in particular $F$ is perverse).  Let $\cM$ be an abelian $k$-linear category
+%%
+%Let $\cA,\cA',\cM$ be abelian, $k$-linear categories.  Consider complexes of functors
+%\begin{align*}
+%F=(\cdots\to F_i\to F_{i+1} \to\cdots)&:D^b(\cA) \to D^b(\cA'), \text{ and }\\
+%F\otimes\bone =(\cdots\to F_i\otimes\bone\to F_{i+1}\otimes\bone \to\cdots)&:D^b(\cA\otimes\cM) \to D^b(\cA'\otimes\cM).
+%\end{align*}
+%If $F$ is perverse then so is $F\otimes\bone$, and moreover, $\varphi_{F\otimes\bone}([L],[L'])=(\varphi_F([L]),[L'])$.
+%\end{Lemma}
+%
+%\begin{proof}
+%Suppose that $F$ is perverse relative to $(\cA_{\bullet}, \cA'_{\bullet},p)$.  Define $(\cA\otimes\cM)_i=\cA_i\otimes \cM$ and $(\cA'\otimes\cM)_i=\cA'_i\otimes \cM$.  We claim that $F\otimes\bone$ is perverse relative to $((\cA\otimes\cM)_{\bullet}, (\cA'\otimes\cM)_{\bullet},p)$.  By Remark \ref{rem:conv} there exist sets $\cF_j,\cF_j'$ satisfying the hypothesis of Lemma \ref{lem:CRlemma}.  Define $\tilde{\cF}_j=\cF_j\times \Irr{\cM}$ and $\tilde{\cF'}_j=\cF'_j\times\Irr{\cM}$.  It is straightforward to check now $\tilde{\cF}_j$ and $\tilde{\cF}_j'$ also satisfy the hypothesis of Lemma \ref{lem:CRlemma}, and therefore $F\otimes\bone$ is perverse.  The claim about $\varphi_{F\otimes\bone}$ follows immediatley.
+%\end{proof}
+%
+%
+%%\begin{Remark}
+%%In \cite[Lemma 4.12]{CRperv} condition (ii) requires also that $\Hom(M[r],X)=0$, and there is  a fourth condition which requires that $\Hom(M,X)=0$ for all $X \in \cF_j$, $j>i$. We note also that Lemma \ref{lem:CRlemma} also holds with conditions (ii) and (iii) replaced by $\Hom(M,X[r])=0$ and $\Hom(M,X)=0$ respectively.
+%%\end{Remark}
+
+
+\section{Some commutation relations}\label{sec:commrels}
+We fix throughout a categorical representation $\cC$ of  $U_q(\fg)$.
+Recall that $w_0\in W$ is the longest word, and let $w_0=s_{i_1}s_{i_2} \cdots s_{i_r}$ be a reduced expression.
+We consider the composition of Rickard complexes which categorifies the positive lift in $B$ of $w_0$:
+$$
+\Theta_{w_0}\bone_\lambda=\Theta_{i_1} \cdots \Theta_{i_r}\bone_\mu:D^b(\cC_\lambda) \to D^b(\cC_{w_0(\lambda)}).
+$$
+In preparation for the proofs our main results in the next section, we prove some commutation relations between $\Theta_{w_0}$ and the Chevalley functors.  
+
+
+\subsection{Cautis' relations}
+To begin, we recall some relations of Cautis (building on work with Kamnitzer \cite{CK3}).  Although they are stated only for type A,  their proofs apply to any simply-laced Lie algebra.
+
+\begin{Lemma}[Lemma 4.6, \cite{Cauclasp}]\label{lem:Cau0}
+For any $i\in I, \lambda \in X$ we have the following relations:
+\begin{align*}
+\Theta_i\sE_i\bone_\lambda &\cong \sF_i\Theta_i\bone_\lambda[1]\langle \lambda_i \rangle, 
+%\text{ if } \lambda_i \leq -2, 
+\\
+\Theta_i\sF_i\bone_\lambda &\cong \sE_i\Theta_i\bone_\lambda[1]\langle -\lambda_i \rangle. 
+%\text{ if } \lambda_i \geq 2.
+\end{align*}
+\end{Lemma}
+
+\begin{Remark}
+The careful reader will notice that actually Cautis proves Lemma \ref{lem:Cau0} under certain conditions on $\lambda$.  For instance, the first relation is only proven in the case when $\lambda_i \leq 0$.  To deduce the general case from this, one can rewrite the relation
+as $\sE_i \Theta_i^{-1}\cong \Theta_i^{-1}\sF_i[1]\langle \lambda_i \rangle$.  Now recall that there is an anti-automorphism $\tilde{\sigma}$ on the $\fsl_2$ 2-category which on objects maps $n \mapsto -n$ \cite[Section 5.6]{Laucq}.  This anti-automorphism maps $\Theta_i^{-1}$ to $\Theta_i$, and hence applying it to the relation above we deduce the desired relation in the case when $\lambda_i \geq 0$.
+
+Alternatively, in a recent preprint Vera proves a version of the relation between the Rickard complex and Chevalley functors in the (bounded homotopy category of the) $\fsl_2$ 2-category, which of course implies it also in any 2-representation \cite{Vera}.
+\end{Remark}
+
+%\begin{proof}
+%Cautis proves the following formula in \cite[Corollary 4.6]{Cauclasp}:
+%\begin{align*}
+%\Theta_iE_i\bone_\lambda \cong F_i\Theta_i\bone_\lambda[1]\langle \lambda_i \rangle \text{ if } \lambda_i \leq -2.
+%\end{align*}
+%We rewrite this using the inverse Rickard complexes:
+%\begin{align*}
+%E_i\Theta_i'\bone_{s_i\lambda} \cong \Theta_iF_i\bone_{s_i(\lambda)}[1]\langle \lambda_i \rangle \text{ if } \lambda_i \leq -2.
+%\end{align*}
+%\end{proof}
+%
+
+Next we recall the categorical analogues of commutators $[E_i,E_j]$ acting on representations of $U_q(\fg)$.  Given nodes $i,j\in I$ such that $(i,j)=-1$ and  $\lambda \in X$, define complexes of functors 
+\begin{align*}
+\sE_{ij}\bone_\lambda:D^b(\cC_\lambda) \to D^b(\cC_{\lambda+\alpha_i+\alpha_j}), \quad \sE_{ij}\bone_\lambda &=\sE_i\sE_j\bone_\lambda\langle-1\rangle \to \sE_j\sE_i\bone_\lambda, \\
+\sF_{ij}\bone_\lambda: D^b(\cC_\lambda) \to D^b(\cC_{\lambda-\alpha_i-\alpha_j}), \quad \sF_{ij}\bone_\lambda &=\sF_i\sF_j\bone_\lambda \to \sF_j\sF_i\bone_\lambda\langle 1 \rangle.
+\end{align*}
+In both instances the differential  is given by the element $T_{ij}$ arising from the KLR algebra, and the left term of the complex is in homological degree zero \cite{Cauclasp}.
+
+
+
+\begin{Lemma}[Lemma 5.2, \cite{Cauclasp}]\label{lem:Cau} Let $i,j\in I,  \lambda \in X$ and suppose $(i,j)=-1$.  We have the following isomorphisms:
+\begin{align*}
+%\Theta_i\bone_\lambda E_i &\cong \begin{cases} \bone_{s_i(\lambda)}F_i\Theta_i\langle \lambda_i+2 \rangle[1] &\text{ if } \lambda_i\leq 0, \\
+\sE_{ij} \Theta_i \bone_\lambda &\cong \begin{cases} \Theta_i\sE_j &\text{ if } \lambda_i>0, \\
+\Theta_i\sE_j[1]\langle -1 \rangle &\text{ if } \lambda_i\leq 0 \end{cases} \\
+\sF_{ij} \Theta_i \bone_\lambda &\cong \begin{cases} \Theta_i\sF_j &\text{ if } \lambda_i\geq0, \\
+\Theta_i\sF_j[-1]\langle 1 \rangle &\text{ if } \lambda_i< 0 \end{cases} \\
+\bone_\lambda\Theta_j\sE_{ij} &\cong \begin{cases} \sE_i\Theta_j &\text{ if } \lambda_j<0, \\
+\sE_i\Theta_j[1]\langle -1 \rangle &\text{ if } \lambda_j\geq 0 \end{cases} \\
+\bone_\lambda\Theta_j\sF_{ij} &\cong \begin{cases} \sF_i\Theta_j &\text{ if } \lambda_j\leq0, \\
+\sF_i\Theta_j[-1]\langle 1 \rangle &\text{ if } \lambda_j> 0 \end{cases} 
+\end{align*}
+
+\end{Lemma}
+
+
+
+
+%\begin{Proposition}\label{lem:comm}
+%	\begin{align*}
+%	\Theta^{\mu+\alpha_i}_{w_0} \circ E_i &\cong F_{i^{\ast}} \circ \Theta^{\mu}_{w_0}[r(\mu,i)] \\
+%	\Theta^{\mu}_{w_0} \circ F_i &\cong E_{i^{\ast}} \circ \Theta^{\mu+\alpha_i}_{w_0}[s(\mu,i)]
+%	\end{align*}
+%	\oded{Need to give precise definitions for $r(\mu,i)$ and $s(\mu,i)$.}
+%\end{Proposition}
+
+
+%\begin{Proposition}\label{lem:comm}
+%%Let $\cC$ be a categorical $\fg(=\fg_\Gamma)$ representation.  
+%There exist integers $r(\mu,i), s(\mu,i)$ such that the following isomorphism holds:
+%\begin{align*}
+%	\Theta_{w_0}  E_i\bone_\mu &\cong F_{\tau(i)} \; \Theta_{w_0}\bone_\mu[r(\mu,i)]\langle s(\mu,i)\rangle 
+%	%\\
+%	%\Theta^{\mu}_{w_0} \circ F_i &\cong E_{i^{\ast}} \circ \Theta^{\mu+\alpha_i}_{w_0}[s(\mu,i)]
+%	\end{align*}
+%
+%\end{Proposition}
+%
+\subsection{Marked words}
+We now introduce a combinatorial set-up which we'll use to prove  Proposition \ref{prop:mainrel} below.  A \textbf{marked word} is a word in the elements of $I$ with one letter marked: $\ba=(i_1,i_2,...,\ul{i_\ell},...,i_n)$.  From $\ba$ we can define a functor and an element of $W$: 
+\begin{align*}
+\Phi(\ba)&=\Theta_{i_1}\cdots\Theta_{i_{\ell-1}}\sF_{i_\ell}\Theta_{i_{\ell1}}\cdots \Theta_{i_n}\bone_\lambda, \\
+w(\ba)&=s_{i_1}\cdots s_{i_n}.
+\end{align*}
+Note that unlike $\Phi(\ba)$, $w(\ba)$ forgets the location of the marked letter.  We say that $\ba$ is \textbf{reduced}, if the corresponding unmarked word is a reduced expression for $w(\ba)$. 
+
+We will apply braid relations to marked words.  Away from the marked letter these operate as usual, and at the marked letter we have:
+\begin{align}
+\label{rel1}(\hdots,k,\ul{\ell},\hdots) &\leftrightarrow (\hdots,\ul{\ell},k,\hdots),\quad \text{ if } (k,\ell)=0 \text{ and,}\\
+\label{rel2}(\hdots,\ell,k,\ul{\ell},\hdots) &\leftrightarrow (\hdots,\ul{k},\ell,k,\hdots),\quad \text{ if } (k,\ell)=-1.
+\end{align}
+For marked words $\ba,\bb$ we write $\ba \sim \bb$ if they are related by a sequence of braid relations.  
+\begin{Lemma}
+Let $\ba,\bb$ be marked words which differ by a single braid relation.  Then  there exists $k\in \{0,\pm 1\}$ such that $\Phi(\ba) \cong \Phi(\bb)[k]\langle -k \rangle$.
+\end{Lemma}
+\begin{proof}
+If the relation doesn't involve the marked letter then $\Phi(\ba)\cong \Phi(\bb)$ since Rickard complexes satisfy the braid relations \cite[Theorem 2.10]{CK3}.  Suppose then that the relation does involve the marked letter.
+If $(j,\ell)=0$ the result follows from the fact that $\Theta_j\sF_\ell \cong \sF_\ell \Theta_j$.  Otherwise $(j,\ell)=-1$.  Set $\mu=s_\ell s_j(\lambda)-\alpha_j$.  Applying Lemma \ref{lem:Cau} (twice) we deduce that
+\begin{align*}
+\bone_\mu\Theta_\ell\Theta_j \sF_\ell \bone_\lambda = \Theta_\ell\Theta_j \sF_\ell \bone_\lambda &\cong
+\begin{cases}
+\Theta_\ell \sF_{j\ell}\Theta_j\bone_\lambda, &\text{ if } \lambda_j\geq 0,\\
+\Theta_\ell \sF_{j\ell}\Theta_j\bone_\lambda[1]\langle -1 \rangle, &\text{ if } \lambda_j< 0.
+\end{cases}\\
+&\cong
+\begin{cases}
+%F_j\Theta_\ell\Theta_j\bone_\lambda &\text{ if } \lambda_j \geq0, \mu_\ell \leq 0,\\
+\sF_j\Theta_\ell\Theta_j\bone_\lambda[-1]\langle 1 \rangle &\text{ if } \lambda_j \geq0, \mu_\ell > 0,\\
+\sF_j\Theta_\ell\Theta_j\bone_\lambda[1]\langle -1 \rangle &\text{ if } \lambda_j <0, \mu_\ell \leq 0,\\
+\sF_j\Theta_\ell\Theta_j\bone_\lambda &\text{ otherwise.}
+\end{cases}
+\end{align*}
+Hence the result follows.
+\end{proof}
+
+\begin{Corollary}\label{lem:markwrds1}
+Let $\ba,\bb$ be marked words such that $\ba \sim \bb$.  Then there exists an integer $k$ such that $\Phi(\ba) \cong \Phi(\bb)[k]\langle -k \rangle$.
+\end{Corollary}
+
+\begin{Lemma}\label{lem:markwrds2}
+Let $\ba=(i_1,...,i_n,\ul{\ell})$ and $\bb=(\ul{\ell'},i_1,...,i_n)$ be reduced marked words such that $w(\ba)=w(\bb)$.  Then $\ba \sim \bb$.  
+\end{Lemma}
+
+\begin{proof}
+We prove the claim by induction on $n$.  Since $w(\ba)=w(\bb)$ there is a Matsumoto sequence of length $M$ relating the unmarked words  $\fa=(i_1,...,i_n,\ell)$ and $\fb=(\ell',i_1,...,i_n)$.  Let $\fa_0=\fa \to \fa_1 \to\cdots\to \fa_M=\fb$ denote the 
+resulting sequence of unmarked words, starting at $\fa$ and ending $\fb$.  Let $\fa_{r+1}$ be the first word in this sequence whose last entry is not $\ell$.  In other words, the first $r$ steps in the sequence do not involve the last entry of $\fa$, but the $(r+1)^{st}$ step does.  
+
+We will now consider  the same sequence of steps, but applied to the marked words.  We then obtain a sequence of marked words $\ba_0=\ba \to \ba_1 \to \cdots\;$.  Further, we know that $\ba_r=(j_1,\dots,j_n,\ul{\ell})$ for some $j_1,\hdots,j_n$, and the next step involves the marked letter.  
+
+If the $(r+1)^{st}$ step is an application of (\ref{rel2}) then $j_{n-1}=\ell$ and the step is:
+\begin{align*}
+\ba_r=(j_1,\hdots,j_{n-2},\ell,j_n,\ul{\ell}) \to \ba_{r+1}=(j_1,\hdots,j_{n-2},\ul{j_n},\ell,j_n).
+\end{align*}
+Let $\bb':=(\ul{\ell'},j_1,...,j_{n-2},\ell,j_n)$, i.e. $\bb'$ is obtained from $\bb$ by applying the first $r$ steps to its (last $n$) entries as were used for the (first $n$) entries of $\ba$. Note that $\ba_{r+1}$ and $\bb'$ are reduced marked words such that $w(\ba_{r+1})=w(\bb')$, and both end in $(\ell,j_n)$.    Hence, if we delete these last two entries we obtain two reduced marked words $\ba''=(j_1,...,j_{n-2},\ul{j_n})$ and $\bb''=(\ul{\ell'},j_1,...,j_{n-2})$ such that $w(\ba'')=w(\bb'')$.  
+By induction $\ba'' \sim \bb''$ and therefore $\ba_{r+1} \sim \bb'$.  Since clearly $\bb' \sim \bb$, we have our desired result:
+$$
+\ba \sim \ba_r \sim \ba_{r+1} \sim \bb' \sim \bb.
+$$
+
+If  the $(r+1)^{st}$ step  is an application of (\ref{rel1}) then the step is:
+\begin{align*}
+\ba_r=(j_1,\hdots,j_{n-1},j_n,\ul{\ell}) \to \ba_{r+1}=(j_1,\hdots,j_{n-1},\ul{\ell},j_n).
+\end{align*}
+ Note that  $\ba_{r+1}$ and $\bb':=(\ul{\ell'},j_1,...,j_{n-1},j_n)$ are reduced marked words such that $w(\ba_{r+1})=w(\bb')$, and both end in $j_n$.  Hence we can delete this last entry and apply a similar analysis as above.
+
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\textbf{Proof 2}
+%
+%
+%Since $w(\ba)=w(\bb)$ there is a Matsumoto sequence of length $M$ relating the unmarked words  $(i_1,...,i_n,\ell)$ and $(\ell',i_1,...,i_n)$.    Consider  the same sequence of steps, but now applied to the marked words.  By changing the sequence if necessary, we can assume each step involves the marked letter. We claim this sequence relates $\ba$ to $\bb$, and we prove this by induction on $n$.  
+%
+%If the first step is an application of (\ref{rel2}) then $i_{n-1}=\ell$ and the first step of sequence is:
+%\begin{align*}
+%\ba=(i_1,\hdots,i_{n-2},\ell,i_n,\ul{\ell}) \to \ba'=(i_1,\hdots,i_{n-2},\ul{i_n},\ell,i_n).
+%\end{align*}
+%Note that  $\ba'$ and $\bb$ are reduced marked words such that $w(\ba')=w(\bb)$, and both end in $(\ell,i_n)$.    Hence, if we delete these last two entries we obtain two reduced marked words $\ba''=(i_1,...,i_{n-2},\ul{i_n})$ and $\bb''=(\ul{\ell'},i_1,...,i_{n-2})$ such that $w(\ba'')=w(\bb'')$.  The remaining $M-1$ steps of the Matsumoto sequence must relate the reduced expression $(i_1,...,i_{n-2},i_n)$ to the reduced expression $(\ell',i_1,...,i_{n-2})$, and hence by induction these steps relate also the marked worked $\ba''$ and $\bb''$.  This implies that the last $M-1$ steps relate $\ba'$ and $\bb$, and since $\ba$ and $\ba'$ are related by the first step we get our desired result. 
+%
+%If the first step of the sequence is an application of (\ref{rel1}) then the first step of sequence is:
+%\begin{align*}
+%\ba=(i_1,\hdots,i_{n-1},i_n,\ul{\ell}) \to \ba'=(i_1,\hdots,i_{n-1},\ul{\ell},i_n).
+%\end{align*}
+% Note that  $\ba'$ and $\bb$ are reduced marked words such that $w(\ba')=w(\bb)$, and both end in $i_n$.  Hence we can delete this last entry and apply a similar analysis as above.
+\end{proof}
+
+
+\subsection{The relation between $\Theta_{w_0}$ and Chevalley functors}
+
+We now have the machinery in place to prove our main relation.  
+
+\begin{Proposition}\label{prop:mainrel}
+For any $i\in I, \lambda \in X$ we have the following relations:
+\begin{align*}
+\Theta_{w_0}\sE_i\bone_\lambda &\cong \sF_{\tau(i)}\Theta_{w_0}\bone_\lambda[1]\langle \lambda_i \rangle, %\text{ if } \lambda_i \leq -2, 
+\\
+\Theta_{w_0}\sF_i\bone_\lambda &\cong \sE_{\tau(i)}\Theta_{w_0}\bone_\lambda[1]\langle -\lambda_i \rangle. %\text{ if } \lambda_i \geq 2.
+\end{align*}
+\end{Proposition}
+
+\begin{proof}
+We'll prove the first relation, the second being entirely analogous.  
+For two functors $\sF,\sG$ we write $\sF \equiv \sG$ if there exist integers $\ell,k$ such that $\sF \cong \sG[\ell]\langle k \rangle$.  
+
+We first show that $\Theta_{w_0}\sE_i \equiv \sF_{\tau(i)}\Theta_{w_0}$ by induction on the rank of $\fg$.   The base case, when $\fg=\fsl_2$,  follows from Lemma \ref{lem:Cau0}.  For the inductive step let $J \subset I$ be a strict subdiagram containing $i$.  Recall the bijection $\tau_J:I\to I$ induced by the longest element $w_0^J \in W_J$.  Let $u=w_0(w_0^J)^{-1}$ and let $u=s_{i_1}\cdots s_{i_n}$ be a reduced expression.  Define two marked words:
+\begin{align*}
+\ba&=(i_1,\hdots,i_n,\ul{\tau_J(i)}),\\
+\bb&=(\ul{\tau(i)},i_1,\hdots,i_n).
+\end{align*}
+Note that $w(\ba)=w(\bb)$.  By the inductive hypothesis we have $\Theta_{w_0^J}\sE_i 
+\equiv  \sF_{\tau_J(i)}\Theta_{w_0^J}$, and therefore
+\begin{align*}
+\Theta_{w_0}\sE_i \equiv \Theta_u\Theta_{w_0^J}\sE_i 
+\equiv  \Theta_u\sF_{\tau_J(i)}\Theta_{w_0^J} \equiv \Phi(\ba)\Theta_{w_0^J}.
+\end{align*}
+Note that $\ba,\bb$ satisfy the hypothesis of Lemma \ref{lem:markwrds2}, so by Lemmas \ref{lem:markwrds1} and \ref{lem:markwrds2}
+we have that $\Phi(\ba)\equiv\Phi(\bb)$, and hence
+$\Theta_{w_0}\sE_i \equiv \Phi(\bb)\Theta_{w_0^J} \equiv \sF_{\tau(i)}\Theta_{w_0}.$
+
+We now know there exist integers $k,\ell$ such that $\Theta_{w_0}\sE_i\bone_\lambda \cong \sF_{\tau(i)}\Theta_{w_0}\bone_\lambda[\ell]\langle k \rangle$, and it remains to show that $\ell=1, k=\lambda_i$.  Let $u=w_0s_i$ and let $u=s_{i_1}\cdots s_{i_n}$ be a reduced expression.  Define two marked words:
+\begin{align*}
+\ba&=(i_1,\hdots,i_n,\ul{i}),\\
+\bb&=(\ul{\tau(i)},i_1,\hdots,i_n).
+\end{align*}
+Note that $\ba,\bb$ satisfy the hypothesis of Lemma \ref{lem:markwrds2}, so by Lemmas \ref{lem:markwrds1} and \ref{lem:markwrds2} there exists an integer $m$ such that $\Phi(\ba)\cong \Phi(\bb)[m]\langle -m \rangle$.  Hence we have that
+\begin{align*}
+\Theta_{w_0} \sE_i \bone_\lambda &\cong \Theta_u \Theta_i \sE_i\bone_\lambda \\
+& \cong \Theta_u \sF_i \Theta_i\bone_\lambda [1]\langle \lambda_i \rangle \\
+& \cong \sF_{\tau(i)}\Theta_u \Theta_i \bone_\lambda[m+1]\langle -m+\lambda_i \rangle \\
+& \cong \sF_{\tau(i)}\Theta_{w_0} \bone_\lambda[m+1]\langle -m+\lambda_i \rangle
+\end{align*}
+showing that $\ell+k=1+\lambda_i$.  
+
+On the other hand, we can deduce $k$ by inspecting the relation on the level of Grothendieck groups.  Namely, by \cite[Lemma 5.4]{KT}, we have that 
+$$
+\st_{w_0}E_i\sone_\lambda = -q^{-\lambda_i}F_{\tau(i)}\st_{w_0}\sone_\lambda,
+$$
+showing that $k=\lambda_i$.
+\end{proof}
+
+%\begin{proof}
+%To simplify notation, for two functors $F,G$ let us write $F \equiv G$ to mean that there exist integers $\ell,k$ such that $F \cong G[\ell]\langle k \rangle$.
+%
+%We first prove the claim in type $A_n$ by induction on $n$.  The case $n=1$ follows from Lemma \ref{lem:Cau}.
+%%, and it follows that 
+%%\begin{align*}
+%%r_{A_1}(\mu,i)=h(\langle h_i,\mu \rangle), \text{ and } s_{A_1}(\mu,i)=g(\langle h_i,\mu \rangle).
+%%\end{align*}
+%Assume the claim holds in type $A_{n}$.  Suppose that $i \leq n-1$.  We write $w_0=s_1\cdots s_n w_0^J$, where $J=\{1,\hdots,n-1\}$.  By the inductive hypothesis, we have that
+%\begin{align*}
+%\Theta_{w_0} E_i \bone_\mu \equiv 
+%\Theta_1\cdots\Theta_n F_j \Theta_{w_0^J}\bone_\mu, 
+%\end{align*} 
+%where $j=\tau_J(i)$.  By Lemma \ref{lem:Cau} we have the following:
+%\begin{align*}
+%\Theta_1\cdots\Theta_{j+1}F_j\bone_\mu \equiv F_{j+1}\Theta_1\cdots\Theta_{j+1}\bone_\mu
+%\end{align*}
+%%\begin{align*}
+%%\Theta_1\cdots\Theta_{j+1}F_j\bone_\mu &\cong \begin{cases} \Theta_1\cdots\Theta_{j}F_{j+1,j}\Theta_{j+1}\bone_\mu &\text{ if } \mu_{j+1} \geq 0, \\
+%%\Theta_1\cdots\Theta_{j}F_{j+1,j}\Theta_{j+1}\bone_\mu[1]\langle -1 \rangle  &\text{ if } \mu_{j+1} <0,
+%%\end{cases} \\
+%%&\cong \begin{cases}
+%%F_{j+1}\Theta_1\cdots\Theta_{j+1}\bone_\mu &\text{ if } \mu_{j+1}\geq0 \text{ and } 1 \leq \mu_j+\mu_{j+1},\\
+%%F_{j+1}\Theta_1\cdots\Theta_{j+1}\bone_\mu &\text{ if } \mu_{j+1}<0 \text{ and } 1 > \mu_j+\mu_{j+1}, \\
+%% F_{j+1}\Theta_1\cdots\Theta_{j+1}\bone_\mu[-1]\langle 1\rangle &\text{ if } \mu_{j+1}\geq0 \text{ and } 1 > \mu_j+\mu_{j+1}, \\
+%% F_{j+1}\Theta_1\cdots\Theta_{j+1}\bone_\mu[1]\langle -1\rangle &\text{ if } \mu_{j+1}<0 \text{ and } 1 \leq \mu_j+\mu_{j+1}.
+%%\end{cases}
+%%\end{align*}
+%Noting that $\tau(i)=j+1$, we deduce the claim. 
+%%It also follows that  
+%%\begin{align*}
+%%r_{A_n}(\mu,i) = \begin{cases} 
+%%r_{A_{n-1}}(\mu,i) &\text{ if } w_0^J(\mu)_{j+1}\geq0 \text{ and } 1 \leq w_0^J(\mu)_j+w_0^J(\mu)_{j+1},\\
+%%r_{A_{n-1}}(\mu,i) &\text{ if } w_0^J(\mu)_{j+1}<0 \text{ and } 1 > w_0^J(\mu)_j+w_0^J(\mu)_{j+1}, \\
+%%r_{A_{n-1}}(\mu,i)-1&\text{ if } w_0^J(\mu)_{j+1}\geq0 \text{ and } 1 > w_0^J(\mu)_j+w_0^J(\mu)_{j+1}, \\
+%%r_{A_{n-1}}(\mu,i)+1&\text{ if } w_0^J(\mu)_{j+1}<0 \text{ and } 1 \leq w_0^J(\mu)_j+w_0^J(\mu)_{j+1},
+%%\end{cases}
+%%\end{align*}
+%%and $s_{A_n}(\mu,i)$ is defined similarly, exchanging the $\mp 1$.  
+%If $i=n$ a similar argument works with the decomposition $w_0=s_n\cdots s_1w_0^J$, where $J=\{2,\hdots,n\}$.
+%
+%We now proceed to type $D_n, n\geq 4$.  Label the Dynkin diagram as:
+%$$
+%\dynkin[labels={1,,,,n-1,n}, edge length=.75cm] D{}
+%$$
+%Let $J=\{2,...,n\}, J'=\{1,...,n-1\}$.  We assume by induction that the claim holds for $\fg_{J}$ (type $D_{n-1}$) and $\fg_{J'}$ (type $A_{n-1}$).  
+%
+%We'll need the following  preliminary computation:
+%\begin{align}\label{eq:commrel}
+%\Theta_1\cdots\Theta_{n-2}\Theta_n\cdots\Theta_1 F_i \equiv \begin{cases} F_{n-1}\Theta_1\cdots\Theta_{n-2}\Theta_n\cdots\Theta_1 &\text{ if } i=n,\\
+%F_{n}\Theta_1\cdots\Theta_{n-2}\Theta_n\cdots\Theta_1 &\text{ if } i=n-1,\\
+%F_{i}\Theta_1\cdots\Theta_{n-2}\Theta_n\cdots\Theta_1 &\text{ if } i\leq n-2,\\
+%\end{cases}
+%\end{align}
+%Let us explain how to deduce the case $i=n$, the others follow very similarly. Indeed by Lemma \ref{lem:Cau} we have the following:
+%\begin{align*}
+%\Theta_1\cdots\Theta_{n-2}\Theta_n\cdots\Theta_1 F_n &\equiv \Theta_1\cdots\Theta_{n-2}\Theta_n\Theta_{n-1}\Theta_{n-2}F_n\Theta_{n-3}\cdots\Theta_1 \\
+%&\equiv \Theta_1\cdots\Theta_{n-2}\Theta_n\Theta_{n-1}F_{n-2,n}\Theta_{n-2}\cdots \Theta_1 \\
+%&\equiv  \Theta_1\cdots\Theta_{n-2}\Theta_{n-1}\Theta_{n}F_{n-2,n}\Theta_{n-2}\cdots \Theta_1 \\
+%&\equiv \Theta_1\cdots\Theta_{n-2}\Theta_{n-1}F_{n-2}\Theta_{n}\Theta_{n-2}\cdots \Theta_1 \\
+%&\equiv \Theta_1\cdots\Theta_{n-2}F_{n-1,n-2}\Theta_{n-1}\Theta_{n}\Theta_{n-2}\cdots \Theta_1 \\
+%&\equiv \Theta_1\cdots\Theta_{n-2}F_{n-1,n-2}\Theta_{n}\cdots \Theta_1 \\
+%&\equiv \Theta_1\cdots\Theta_{n-3}F_{n-1}\Theta_{n-2}\Theta_{n}\cdots \Theta_1 \\
+%&\equiv F_{n-1}\Theta_1\cdots\Theta_{n-2}\Theta_{n}\cdots \Theta_1
+%\end{align*}
+%
+%Recall that in type $D_n$, the involution $\tau:I\to I$ is  trivial if $n$ is even, and if $n$ is odd it  interchanges $n-1 \leftrightarrow n$.  Note also that we have the following equality in the Weyl group
+%\begin{align}\label{eq:reddecD}
+%w_0^{D_n}=s_1\cdots s_{n-2}s_ns_{n-1}\cdots s_1 w_0^{J}.
+%\end{align}
+%
+%Suppose that $i\geq 2$, and  $n$ is odd.  Then by induction and the above computation we have :
+%\begin{align*}
+%\Theta_{w_0^{D_n}}E_i &\equiv \Theta_1\cdots\Theta_{n-2}\Theta_n\cdots\Theta_1 F_i \Theta_{w_0^J} \\
+%&\equiv F_{\tau(i)}\Theta_{w_0^{D_n}}
+%\end{align*}
+%The case that $n$ is even is entirely analogous.
+%
+%Suppose now that $i=1$ and $n$ is even.  We use the following equality in $W$:
+%\begin{align*}
+%w_0^{D_n}=uw_0^{J'},
+%\end{align*}  
+%where $u=u_1\cdots u_{n-1}$, and 
+%\begin{align*}
+%u_i=\begin{cases}
+%s_{n-1}s_{n-2}s_{n-3}\cdots s_i &\text{ if } i \text{ is  even,}\\
+%s_{n}s_{n-2}s_{n-3}\cdots s_i &\text{ if } i \text{ is  odd.}
+%\end{cases}
+%\end{align*}
+%Let $U_i$ be the categorification of $u_i$, i.e. replace the $s_j$ by $\Theta_j$, and let $U=U_1\cdots U_{n-1}$.  A direct computation similar to the ones we did above shows that
+%\begin{align*}
+%UF_{n-1}\equiv F_1 U.
+%\end{align*}
+%Using this and our inductive hypothesis we have that 
+%\begin{align*}
+%\Theta_{w_0^{D_n}}E_1 \equiv UF_{n-1}\Theta_{w_0^{J'}} \equiv F_1 U\Theta_{w_0^{J'}}\equiv F_1\Theta_{w_0^{D_n}}.
+%\end{align*} 
+%The case where $n$ is odd is entirely analogous, using the decomposition 
+%\begin{align*}
+%w_0^{D_n}=vw_0^{J'},
+%\end{align*}  
+%where $v=v_1\cdots v_{n-1}$, and 
+%\begin{align*}
+%v_i=\begin{cases}
+%s_{n}s_{n-2}s_{n-3}\cdots s_i &\text{ if } i \text{ is  even,}\\
+%s_{n-1}s_{n-2}s_{n-3}\cdots s_i &\text{ if } i \text{ is  odd.}
+%\end{cases}
+%\end{align*}
+%\end{proof}
+
+%\begin{Lemma}\label{lem:bcase}
+%For any derived equivalence $F: D^b(\mathbbm{k}-mod) \xrightarrow{\sim} D^b(\mathbbm{k}-mod)$, then $F(V)=V[l](m)$ for some integers $\ell$ and $m$.
+%\end{Lemma}
+
+
+\section{On t-exactness and perversity of $\Theta_{w_0}$}
+
+In this section we will state and prove the central results of the paper.  We fix throughout a categorical representation $\cC$ of  $U_q(\fg)$, and let $w_0=s_{i_1}s_{i_2} \cdots s_{i_n}$ be a reduced expression.
+
+
+
+
+\subsection{$\Theta_{w_0}$ on isotypic categorifications}	In this section we prove that $\Theta_{w_0}$ is t-exact on any isotypic categorification.  Fix $\lambda \in X_+$.  We write $\Theta=\Theta_{w_0}, L=L(\lambda)$ and $\cL=\cL(\lambda)$.
+
+\begin{Lemma}\label{lem:techbit}
+Let $k\in\{2,\hdots,n\}$ and set $\mu=s_{i_k}\cdots s_{i_n}(w_0(\lambda))$.  The weight space $L(\lambda)_{\mu-\alpha_{i_{k-1}}}$ is zero.
+\end{Lemma}
+
+\begin{proof}
+By \cite[Proposition 21.3]{Humph}, it suffices to find $u\in W$ such that $u(\mu-\alpha_{i_{k-1}}) \nsucc w_0(\lambda)$.  Take $u=s_{i_{k-1}}$ and, noting that $(\mu,\alpha_{i_{k-1}})<0$, the result follows.
+\end{proof}
+
+Recall that $v_\lambda$ and $v_\lambda^{low}$ are the highest and lowest weight elements of the canonical basis $\bB(\lambda)$.
+
+\begin{Lemma}\cite[Comment 5.10]{KT}\label{lemma:KT}
+We have $\st_{w_0}(v_\lambda^{low})=v_\lambda$.
+\end{Lemma}
+
+\begin{Proposition}\label{prop:lowestwt}
+The equivalence $\Theta\bone_{w_0(\lambda)}:D^b(\cL_{w_0(\lambda)})\to D^b(\cL_{\lambda})$ satisfies $\kk_{low}\mapsto\kk_{high}$, where both are considered as complexes concentrated in degree zero.  In particular, under the equivalences $\cL_\lambda \cong \cL_{w_0(\lambda)}\cong \kk\mmod_\ZZ$,  $\Theta\bone_{w_0(\lambda)}$ is isomorphic to the identity autofunctor of $D^b(\kk\mmod_\ZZ)$.
+\end{Proposition}
+
+\begin{proof}
+Consider first the case $\fg=\fsl_2$.  On the minimal categorification of highest weight $m$, we have that $\Theta\bone_{-m}(\kk_{low})=\kk_{high}\langle \ell \rangle$ for some $\ell$ by \cite[Theorem 6.6]{CR}.  Since $[\Theta\bone_{-m}]=\st_{1}\sone_{-m}$, by Lemma \ref{lemma:KT} we conclude that $\ell=0$, and hence $\Theta\bone_{-m}(\kk_{low})=\kk_{high}$.
+
+For general $\fg$, suppose $X \in \cL_\nu$ is simple and  $\sF_iX=0$ for some $i \in I$.  Consider $\cL$ as a categorical representation of $\fsl_2$ by restriction to the $i$-th root subalgebra. 
+Then for some $m$ we have a morphism of categorical $\fsl_2$ representations
+$
+R_X:\cL(m) \to \cL,
+$
+such that $R_X(\kk_{low})=X$ \cite[Theorem 5.24]{CR}.  
+
+The functor $R_X$ is equivariant for the categorical $\fsl_2$ action on $\cC$ determined by $\sE_i,\sF_i$ (in fact it is strongly equivariant in the sense of \cite[Definition 3.1]{LoWe}), and hence commutes with $\Theta_i\bone_\nu$.  Therefore we have that 
+\begin{align*}
+\Theta_i\bone_{\nu}(X) &\cong  \Theta_i\bone_{\nu}(R_X(\kk_{low})) \\
+&\cong R_X(\Theta_i\bone_{\nu}(\kk_{low})) \\
+&\cong R_X(\kk_{high}) \in \cL,
+\end{align*}
+and so $\Theta_i\bone_{\nu}(X)$ is in homological degree zero.  
+It follows that in the case when $X$ is not necessarily simple (but still assume that $\sF_iX=0$), $\Theta_i\bone_{\nu}(X)$ is still in homological degree zero.  Indeed, by induction on the length of a Jordan-H\"older filtration of $X$ one deduces this since $\cL \subset D^b(\cL)$ is extension closed. 
+
+%
+%
+% By Theorem \ref{JHthm} there is a subrepresentation $\cL'\subset \cL$ such that $X \in \cL'_\nu$ and $\cL'\cong \cL(m)$ for some $m$.  We fix the equivalence $\cL'\cong \cL(m)$ so that $X \mapsto \kk_{low}$.  Then by the previous paragraph, $\Theta_i\bone_{\nu}(X) \mapsto \kk_{high}$, and in particular $\Theta_i\bone_{\nu}(X)$ is in homological degree zero.
+%
+Now we study $\Theta\bone_{w_0(\lambda)}$ applied to $\kk_{low}$.  For $k=2,\hdots,n$, by Lemma \ref{lem:techbit}, $$\sF_{i_{k-1}}(\Theta_{i_k}\cdots\Theta_{i_n}\bone_{w_0(\lambda)}(\kk_{low}))=0.$$ By the previous paragraph, it follows that $\Theta_{i_{k-1}}\cdots\Theta_{i_n}\bone_{w_0(\lambda)}(\kk_{low})$ is in homological degree zero, and in particular, $\Theta\bone_{w_0(\lambda)}(\kk_{low})$ is supported in homological degree zero.  Since in addition $$[\Theta\bone_{w_0(\lambda)}]=\st_{w_0}\sone_{w_0(\lambda)},$$ by Lemma \ref{lemma:KT} we conclude that $\Theta\bone_{w_0(\lambda)}(\kk_{low})\cong\kk_{high}$.
+\end{proof}
+
+\begin{Theorem}\label{thm:mincat}
+Let $\lambda \in X_+$ and set $\cL=\cL(\lambda)$.  For any $\mu \in X$, $$\Theta\bone_\mu[-n]:D^b(\cL_\mu) \to D^b(\cL_{w_0(\mu)})$$ is t-exact, where $n=ht(\mu-w_0(\lambda))$.
+\end{Theorem}
+
+\begin{proof}
+Consider  $P=\sE_{i_1}\cdots \sE_{i_\ell}(\kk_{low}) \in \cL_\mu$.  We will first prove by induction on $n$ that there exists an integer $k$ such that 
+\begin{align}\label{eq:ind}
+\Theta(P)[-n] \cong \sF_{j_1}\cdots \sF_{j_\ell}(\kk_{high})\langle k \rangle \in \cL_{w_0(\mu)},
+\end{align}
+where $j_r=\tau(i_{r})$.
+
+The base case when $n=0$ follows by Proposition \ref{prop:lowestwt}.  For the inductive step write $P=\sE_{i_1}(Q)$. Note that $Q\in \cL_{\mu-\alpha_{i_1}}$.  By Proposition \ref{prop:mainrel} we have that 
+\begin{align*}
+\Theta\bone_\mu(P)[-n] &= \Theta \sE_{i_1}\bone_{\mu-\alpha_{i_1}}(Q)[-n] \\
+&\cong \sF_{\tau(i_1)}\Theta\bone_{\mu-\alpha_{i_1}}(Q)[-n+1]\langle (\mu-\alpha_{i_1},\alpha_{i_1}) \rangle.
+\end{align*}
+By hypothesis $$\Theta\bone_{\mu-\alpha_{i_1}}(Q)[-n+1] \cong \sF_{j_2}\cdots \sF_{j_\ell}(\kk_{high})\langle k \rangle \in \cL_{w_0(\mu-\alpha_{i_1})}$$ for some $k$, and hence Equation (\ref{eq:ind}) follows.
+
+Since up to grading shift, any projective indecomposable object in $\cL_\mu$, respectively $\cL_{w_0(\mu)}$, is a summand of an object of the form $\sE_{i_1}\cdots \sE_{i_\ell}(\kk_{low})$ (respectively $\sF_{j_1}\cdots \sF_{j_\ell}(\kk_{high})$), it follows that $\Theta\bone_\mu[-n]$ takes projective objects in $\cL_\mu$ to projective objects in $\cL_{w_0(\mu)}$.  Since $\Theta\bone_\mu[-n]$ is a derived equivalence it follows that it is t-exact.
+
+%To prove that  $\Theta(A)[-n]\in \cL_{w_0(\mu)}$ for any object $A \in \cL_\mu$, recall that $\cL_{w_0(\mu)}\cong R\mmod_\ZZ$, where $R$ is a  cyclotomic KLR algebra.  Moreover, by the above argument, $\Theta^{-1}(P)[n]$ is a projective object in the heart $D^b(\cL_\mu)$, for any projective object $P \in \cL_{w_0(\mu)}$.  Therefore we have
+%\begin{align}
+%H^i(\Theta(A)[-n]) &\cong \Hom_{D^b(\cL_{w_0(\mu)})}(R,\Theta(A)[i-n]) \\
+%&\cong \Hom_{D^b(\cL_{w_0(\mu)})}(\Theta^{-1}(R)[n],A[i]) \\
+%& \cong \Hom_{K^b(\cL_{w_0(\mu)})}(\Theta^{-1}(R)[n],A[i]).
+%\end{align}
+%In the last isomorphism, $K^b(\cL_{w_0(\mu)})$ denotes the bounded homotopy category, and the isomorphism follows from \cite[Corollary 10.4.7]{Weibel} since $\Theta^{-1}(R)[n]$ is projective.  Since $\Theta^{-1}(R)[n]$ is an object in the heart $D^b(\cL_\mu)$, $H^i(\Theta_{w_0}(A)[-n])=0$ for $i\neq 0$, i.e. $\Theta(A)[-n] \in \cL_{w_0(\mu)}$.
+\end{proof}
+
+
+\begin{Remark}
+Theorem \ref{thm:mincat} is a generalisation of  \cite[Theorem 6.6]{CR}, which covers the $\fsl_2$ case.  Note that \cite[Theorem 6.6]{CR} is crucial in the work of Chuang and Rouquier, since it's one of the main technical results needed to prove that Rickard complexes are invertible.  Our proof in the general case follows a completely different approach, but   it does not give a new proof in the case of $\fsl_2$. Indeed we use \cite[Theorem 6.6]{CR} explicitly in the proof of Proposition \ref{prop:lowestwt}, and more generally we use the fact the $\Theta_i$ is invertible throughout.  
+\end{Remark}
+
+\begin{Corollary}\label{cor:mainthm}
+Suppose $\cC$ is an isotypic categorification of type $\lambda$, for some $\lambda \in X_+$, and let $\mu \in X$.  Then $\Theta\bone_\mu[-n]:D^b(\cC_\mu) \to D^b(\cC_{w_0(\mu)})$ is a t-exact equivalence, where $n=ht(\mu-w_0(\lambda))$.  
+\end{Corollary}
+
+\begin{proof}
+By Lemma \ref{lem:isocat}, there exists an abelian $\kk$-linear category $\cA$ such that $\cC \cong \cL(\lambda)\otimes_\kk \cA$ as categorical representations.  We have that 
+$$
+\Theta\bone_\mu[-n](\cL(\lambda)_\mu\otimes_\kk \cA) \cong \Theta\bone_\mu[-n](\cL(\lambda)_\mu) \otimes_\kk \cA \cong \cL(\lambda)_{w_0(\mu)}\otimes_\kk \cA,
+$$
+proving that $\Theta\bone_\mu[-n]:D^b(\cC_\mu) \to D^b(\cC_{w_0(\mu)})$ is a t-exact equivalence.
+%Since $[\cC]_\CC$ has only one isotypic component, the filtration of $\cC_\mu$ and $\cC_{w_0(\mu)}$  which is used in the perversity data is trivial.  This implies that $\Theta\bone_\mu$ is t-exact up to shift with the prescribed shift.  
+\end{proof}
+
+\subsection{$\Theta_{w_0}$ on general categorical representations}\label{sec:mainpf}
+%Recall that $w_0\in W$ is the longest word, and $w_0=s_{i_1}s_{i_2} \cdots s_{i_n}$ is a reduced expression.
+In this section we prove that $\Theta_{w_0}$ is a perverse equivalence on an arbitrary categorical representation.
+Fix $\mu \in X$ such that $\cC_\mu$ is nonzero.  For ease of notation, set $\cA=\cC_\mu$ and $\cA'=\cC_{w_0(\mu)}$.    
+
+
+Consider a filtration by Serre subcategories
+\begin{align*}
+0=\cC_0\subset \cC_1\subset \cdots \subset \cC_r=\cC,
+\end{align*}
+which can be either the Jordan-H\"older filtration (Theorem \ref{thm:JH}) or the isotypic filtration (Remark \ref{rem:isofilts}).  So for every $i$,  $\cC_i$ is a subrepresentation of $\cC$, and $\cC_i/\cC_{i-1}$ is either a simple categorification or an isotypic one.  Define $\lambda_i \in X_+$ by requiring that $[\cC_i/\cC_{i-1}]_{\CC(q)}$ is a representation of type $\lambda_i$.  
+
+
+
+
+Construct filtrations of $\cA$ and $\cA'$ by $\cA_i=\cC_i\cap \cA, \cA_i'=\cC_i \cap \cA'$.  These are Serre subcategories of $\cA$ and $\cA'$ respectively.  Let $p:\{0,...,r\}\to \ZZ$ be given by 
+$p(i)=ht(\mu-w_0(\lambda_i))$.  
+
+\begin{Theorem}
+\label{thm:perveq}
+$\Theta_{w_0}\bone_\mu:D^b(\cA) \to D^b(\cA')$ is a perverse equivalence with respect to $(\cA_\bullet, \cA_\bullet',p)$ for either the Jordan-H\"older or the isotypic filtration. 
+\end{Theorem}
+
+%We will prove this theorem in two main steps. The essential step is the case when $\cC$ is a minimal categorifications, and in Theorem \ref {thm:mincat} we will prove a generalization of Theorem 6.6 in \cite{CR}.  In Section \ref{sec:mainpf} we then easily deduce the case of a general categorification from the minimal case.  
+%
+\begin{proof}
+Since $\cC_i \subset \cC$ is a categorical subrepresentation, the terms of the functor $\Theta_{w_0}\bone_\mu$ leave $\cC_i$ invariant, and in particular take objects in $\cA_i$ to $\cA_i'$.  By Lemma \ref{lem:trianginv} this implies that $\Theta_{w_0}\bone_\mu (D^b_{\cA_i}(\cA)) \subseteq D^b_{\cA_i'}(\cA')$.
+
+Now, $\cC_i/\cC_{i-1}$ is a simple or isotypic categorification (of type $\lambda_i$).  By Corollary \ref{cor:mainthm}, $\Theta_{w_0}\bone_\mu[-p(i)]$ restricts to an abelian equivalence $\cA_i/\cA_{i-1} \to \cA_i'/\cA_{i-1}'$, i.e. the functor 
+$$
+\Theta_{w_0}\bone_\mu[-p(i)]:D^b_{\cA_i}(\cA)/D^b_{\cA_{i-1}}(\cA) \to D^b_{\cA'_i}(\cA')/D^b_{\cA'_{i-1}}(\cA')
+$$
+is a t-exact equivalence.  This shows that $\Theta_{w_0}\bone_\mu$ is a perverse equivalence with respect to $(\cA_\bullet, \cA'_\bullet, p)$.
+\end{proof}
+
+\begin{Remark}
+The $\fsl_2$ case of Theorem \ref{thm:perveq} appears as \cite[Proposition 8.4]{CRperv}, by a different argument relying on a technical lemma \cite[Lemma 4.12]{CRperv}.  
+\end{Remark}
+
+ 
+\section{Crystalising the braid group action}\label{sec:cacti}
+
+Already in the work of Chuang and Rouquier, a close connection is established between categorical representation theory and the theory of crystals (although it is not phrased in this language, cf. Proposition \ref{prop:cryst} below).  In this section we describe a new component of this theory.  More precisely, let $V$ be an integrable representation of $U_q(\fg)$.  Recall that Lusztig has defined a braid group action on $V$ \cite{Lusbook}.
+In this section we explain how to use our results to ``crystalise'' this braid group action to obtain a cactus group action on the crystal of $V$, recovering the recently discovered action by generalised Sch\"utzenberger involutions. 
+
+\subsection{Cactus groups}\label{sec:cactus}
+The cactus group associated to the Dynkin diagram $I$ has several incarnations.  Geometrically, it appears  as the fundamental group of a  space associated to the Cartan subalgebra $\fh$ of $\fg$. Namely, let $\fh^{\text{reg}}\subseteq \fg$ denote the regular elements of $\fh$. The cactus group $C=C_I$ is the $W$-equivariant fundamental group of the real locus of the de Concini-Procesi wonderful compactification of $\fh^{\text{reg}}$ (see \cite{DJS03}, \cite[Section 2]{HKRW} for further details):
+$$C=\pi^W_1(\overline{\PP(\fh^{\text{reg}})}(\RR)).$$
+There is a surjective map $C \to W$, and the kernel of this map is called the pure cactus group.  In type A it is  the fundamental
+group of the Deligne-Mumford compactification of the moduli space of real genus
+$0$ curves with $n + 1$ marked points \cite{HK06}. 
+
+The cactus group has a presentation using Dynkin diagram combinatorics. For any subdiagram $J \subseteq I$, recall that $\tau_J:J\to J$ is the diagram automorphism induced by the longest element $w_0^J \in W_J$.
+\begin{Definition}
+	The \textbf{cactus group} $C=C_I$ is generated by $c_J$, where $J \subseteq I$ is a connected subdiagram, subject to the following relations:
+	\begin{itemize}
+		\item[(i)] $c_J^2=1$ for all $J \subseteq I$,
+		\item[(ii)] $c_Jc_K=c_Kc_J$, if $J \cap K=\emptyset$ and there are no edges connecting any $j \in J$ to any $k\in K$, and
+		\item[(iii)] $c_Jc_K=c_Kc_{\tau_K(J)}$ if $J \subseteq K$.
+	\end{itemize}
+\end{Definition}
+The surjective map $C \to W$ mentioned above is given by $c_J \mapsto w_0^J$. We are interested in the cactus group in connection to the theory of crystals. 
+
+A $\fg$-crystal $\bB$ is called \textbf{normal} if it is isomorphic to a disjoint union $\sqcup_\la \bB(\la)$ for some collection of highest weights $\la$. The category of normal $\fg$-crystals has the structure of a coboundary category analogous to the braided tensor category structure on $U_q(\fg)$-representations. It is realized through an ``external'' cactus group action of $C_{A_{n-1}}$ on $n$-tensor products of $\fg$-crystals, described by Henriques and Kamnitzer \cite[Theorems 6,7]{HK06}. 
+
+We are interested in the ``internal'' cactus group action of $C$ on any $\fg$-crystal $\bB$. Both the internal and external actions 
+rely on the following combinatorially defined maps, which are generalisations of the partial Sch\"utzenberger involutions in type $A$.
+
+\begin{Definition} \label{def:genSchutz}
+The \textit{generalised Sch\"utzenberger involution} $\xi_\la$ on $\bB(\la)$ is the set map defined uniquely by the following properties. For all $b \in \bB(\la)$ and $i \in I$:
+	\begin{enumerate}
+		\item $\wt(\xi_\la(b))=w_0\wt(b)$,
+		\item $\xi_\la \tilde{e}_i(b)=\tilde{f}_{\tau(i)} \xi_\la(b)$,
+		\item $\xi_\la \tilde{f}_i(b)=\tilde{e}_{\tau(i)} \xi_\la(b)$.
+	\end{enumerate}	
+	Note that from (1), $\xi_\la$ swaps the lowest and highest weight element of $\bB(\la)$, and the rest of its behavior is then determined from (2) and (3). The generalised Sch\"utzenberger involution $\xi$ on $\bB=\sqcup_\la \bB(\la)$ is the set map which acts as $\xi_\la$ on each irreducible component $\bB(\la)$.
+\end{Definition}
+
+Note that (1) implies that $\xi_\la$ maps the lowest  weight element to the highest weight element (and vice-versa), and then (2) and (3) ensure that it is uniquely defined.  
+
+For $J \subseteq I$, denote by $\bB_J$ the crystal $\bB$ restricted to the subdiagram $J$.  We denote the corresponding Sch\"utzenberger involution by $\xi_J$. 
+
+\begin{Theorem}(\cite[Theorem 5.19]{HKRW})\label{thm:cactact}
+	For any $\fg$-crystal $\bB$, the assignment $c_J \mapsto \xi_{J}$ defines a (set-theoretic) action of $C$ on $\bB$.
+\end{Theorem}
+
+
+%The map $\sigma: \bB_1 \otimes \bB_2 \rightarrow \bB_2 \otimes \bB_1$, for any $\fg$-crystals $\bB_1, \bB_2$, given by $\sigma(b_1 \otimes b_2)=\xi_{\bB_1 \otimes \bB_2}(\xi_{\bB_2}(b_2) \otimes \xi_{\bB_1}(b_1)) \quad \quad \forall \; b_1 \in \bB_1,\; b_2 \in \bB_2$
+%defines a coboundary commutor on the category $\fg\operatorname{-Crystals}$. These commutors generate an action of the cactus group $C_{A_{n-1}}$ on $n$-tensor products of $\fg$-crystals.
+
+%\section{Crystalising the braid group action}\label{sec:cacti}
+%\subsection{Cactus groups}\label{sec:cactus}
+%For any subdiagram $J \subset I$, recall that $\tau_J:J\to J$ is the diagram automorphism induced by the longest element $w_0^J \in W_J$.
+%\begin{Definition}
+%	The \textbf{cactus group} $C=C_I$ is generated by $c_J$, where $J \subset I$ is a connected subdiagram, subject to the following relations:
+%	\begin{itemize}
+%		\item[(i)] $c_J^2=1$ for all $J \subset I$,
+%		\item[(ii)] $c_Jc_K=c_Kc_J$, if $J \cap K=\emptyset$ and there are no edges connecting any $j \in J$ to any $k\in K$, and
+%		\item[(iii)] $c_Jc_K=c_Kc_{\tau_K(J)}$ if $J \subset K$.
+%	\end{itemize}
+%\end{Definition}
+%We have a surjective map $C \to W$ given by $c_J \mapsto w_0^J$.  
+%
+%Let $\fh^{\text{reg}}\subseteq \fg$ denote the regular elements of the Cartan of $\fg$. The cactus group appears as the $W$-equivariant fundamental group of the real locus of the de Concini-Procesi wonderful compactification of $\fh^{\text{reg}}$ (see \cite{DJS03}, \cite[Section 2]{HKRW} for further details):
+%$$C=\pi^W_1(\overline{\PP(\fh^{\text{reg}})}(\RR))$$
+%
+%\begin{Definition} [\cite{Kash90}] A \textbf{$\fg$-crystal} is a finite set $\bB$ together with maps:
+%	$$\tilde{e}_i,\tilde{f}_i:\bB \rightarrow \bB\sqcup \{0\}, \quad \eps_i,\phi_i : \bB\rightarrow \ZZ, \quad \wt: \bB \rightarrow X$$
+%	for all $i \in I$, such that:
+%	\begin{enumerate}
+%		\item for any $b,b' \in \bB$, $\tilde{e}_i(b)=b'$ if and only if $b=\tilde{f}_i(b')$ ,
+%		\item for all $b \in \bB$, if $\tilde{e}_i(b) \in \bB$ then $\wt(\tilde{e}_i(b))=\wt(b)+\alpha_i$, and if $\tilde{f}_i(b) \in \bB$ then $\wt(\tilde{f}_i(b))=\wt(b)-\alpha_i$,
+%		\item for all $b \in \bB$, $\eps_i(b)=\max\{n \in \ZZ~:~\tilde{e}^n_i(b) \neq 0\}$, $\phi_i(b)=\max\{n \in \ZZ~:~\tilde{f}^n_i(b)\neq 0\}$,
+%		\item for all $b \in \bB$, $\phi_i(b)-\eps_i(b)=\left\langle \wt(b),h_i\right\rangle$.
+%	\end{enumerate}
+%\end{Definition}
+%
+%Any $U_q(\fg)$-representation $V$ has a corresponding $\fg$-crystal $\bB=\bB_V$, whose elements can be thought of as a basis for $V$ and the maps $\tilde{e}_i,\tilde{f}_i$ as the raising and lowering Chevalley operators. For a dominant weight $\la$, let $\bB(\la)$ denote the crystal associated to the highest weight $\fg$-representation $L(\la)$.
+%
+%\begin{Definition}[\cite{Joseph}] A $\fg$-crystal $\bB$ is called \textit{normal} if it is isomorphic to a disjoint union $\sqcup_\la \bB(\la)$ for some collection of highest weights $\la$. Let $\fg\operatorname{-Crystals}$ denote the category of normal $\fg$-crystals, which we will work with.
+%\end{Definition}
+%
+%The crystal structure can also be recovered from categorical representations. Work of Lauda--Vazirani \cite{LV} has shown that from the categorical $\cL(\lambda)$ representation of $U_q(\fg)$, one can obtain a $\fg$-crystal structure on the set $\Irr(\cL(\la))$, isomorphic to $\bB(\la)$. More generally, if $\cC$ is a categorical representation of $U_q(\fg)$ categorifying the representation $V$, then $\Irr(\cC)$ carries a crystal structure isomorphic to $\bB_V$.
+%
+%There are two types of cactus group actions associated to crystals, analogous to the braid group actions on $U_q(\fg)$-representations. These actions rely on the so called generalised Sch\"utzenberger involutions.
+%
+%\begin{Definition} The \textit{generalised Sch\"utzenberger involution} $\xi=\xi_\bB$ on $\bB=\sqcup_\la \bB(\la)$ is the set map which acts as $\xi_\la$ on each irreducible component $\bB(\la)$, where for all $b \in \bB(\la)$ and $i \in I$:
+%	\begin{enumerate}
+%		\item $\wt(\xi_\la(b))=w_0\wt(b)$,
+%		\item $\xi_\la \tilde{e}_i(b)=\tilde{f}_{\tau(i)} \xi_\la(b)$,
+%		\item $\xi_\la \tilde{f}_i(b)=\tilde{e}_{\tau(i)} \xi_\la(b)$.
+%	\end{enumerate}	
+%\end{Definition}
+%
+%Each $\fg$-crystal $\bB$ carries an ``internal'' action of the cactus group $C=C_I$, where $I$ is the Dynkin diagram of $\fg$, as described in the next theorem. For $J \subseteq I$, denote by $\bB_J$ the crystal $\bB$ restricted to the subdiagram $J$.
+%
+%
+%\begin{Theorem}(\cite[Theorem 5.19]{HKRW})
+%	For any $\fg$-crystal $\bB$, the assignment $c_J \mapsto \xi_{\bB_J}$ defines a (set-theoretic) action of $C$ on $\bB$.
+%\end{Theorem}
+%
+%On the other hand, for any $\fg$ there is an ``external'' cactus group action of $C_{A_{n-1}}$ on $n$-tensor products of $\fg$-crystals, described by Henriques--Kamnitzer. It endows the category of $\fg$-crystals with the structure of a coboundary category, analogous to the braided tensor category structure on $U_q(\fg)$-representations.
+%
+%\begin{Theorem}(\cite[Theorems 6, 7]{HK06}) The map $\sigma: \bB_1 \otimes \bB_2 \rightarrow \bB_2 \otimes \bB_1$, for any $\fg$-crystals $\bB_1, \bB_2$, $$\sigma(b_1 \otimes b_2)=\xi_{\bB_1 \otimes \bB_2}(\xi_{\bB_2}(b_2) \otimes \xi_{\bB_1}(b_1)) \quad \quad \forall \; b_1 \in \bB_1,\; b_2 \in \bB_2$$
+%	defines a coboundary commutor on the category $\fg\operatorname{-Crystals}$. These commutors generate an action of the cactus group $C_{A_{n-1}}$ on $n$-tensor products of $\fg$-crystals.
+%\end{Theorem}
+%
+%
+%
+
+
+\subsection{The cactus group action arising from Rickard complexes}
+We now explain how  cactus group actions arise from categorical representations, analogous to the construction of the crystal on $\Irr(\cC)$ in Proposition \ref{prop:cryst}.
+
+Let $\cC$ be a categorical representation of $U_q(\fg)$.  For any weight $\mu \in X$, by Theorem \ref{thm:perveq} $\Theta_{w_0}\bone_\mu:D^b(\cC_\mu) \to D^b(\cC_{w_0(\mu)})$ is a perverse equivalence, and hence it induces a bijection $\varphi_I1_\mu:\Irr(\cC_\mu) \to \Irr(\cC_{w_0(\mu)})$.  By varying $\mu$  we obtain a bijection 
+$
+\varphi_I:\Irr(\cC) \to \Irr(\cC).
+$  
+
+Now let $J\subseteq I$ be a connected subdiagram, and let $\fg_J \subset \fg$ be the corresponding subalgebra.  By restriction, $\cC$ is also a categorical representation of $U_q(\fg_J)$, and hence by the above discussion we also obtain a bijection $
+\varphi_J:\Irr(\cC) \to \Irr(\cC).
+$
+
+
+We will prove that this family of bijections defines an action of the cactus group $\Irr(\cC)$.  First we need the following technical result.  The important point here is just that there exists an integer $n$ such that 
+$\st^2_{w_0}\sone_\mu=\pm q^n\sone_\mu$.
+
+\begin{Lemma}\label{lem:fulltwist}
+Let $\lambda\in X_+, \mu \in X$, and let $\mu-w_0(\lambda)=\sum_{r=1}^\ell \alpha_{i_r}$, where $i_r\in I$.  Set $j_r=\tau(i_r)$ and 
+define $n(\la,\mu)\in\ZZ$ by 
+    $$
+    n(\la,\mu)=2\left(\sum_{r=1}^\ell \la_{j_r}+1-\sum_{1\leq r\leq s\leq \ell}a_{j_rj_s}+(\la,\rho)\right)
+    $$
+    Then on  $L(\lambda)_\mu$ we have \begin{align}\label{eq:fulltwist}\st^2_{w_0}\sone_\mu=(-1)^{\langle 2\lambda ,\rho^\vee \rangle}q^{n(\la,\mu)}\sone_\mu.\end{align}
+\end{Lemma}
+
+\begin{proof}
+We will prove the  claim by induction on $ht(\mu-w_0(\la))$.  For $\mu=w_0(\la)$, we have that $\ell=0$ so  $n(\la,\mu)=(\la,\rho)$.  By \cite[Equation (7)]{KT}  $\st_{w_0}(v_\la)=(-1)^{\langle \lambda ,\rho^\vee \rangle}q^{(\la,\rho)}v_\la^{low}$, which, combined with Lemma \ref{lemma:KT}, implies that $\st_{w_0}^2(v_\la^{low})=(-1)^{\langle \lambda ,\rho^\vee \rangle}q^{(\la,\rho)}v_\la^{low}$.  Since $\dim(L(\la)_{w_0(\la)})=1$, this proves the base case.  
+
+Now choose any $\mu$ and suppose (\ref{eq:fulltwist}) holds for any weight $\mu'$ such that $ht(\mu'-w_0(\la))<ht(\mu-w_0(\la))$.  Consider  $v=E_{j_1}\cdots  E_{j_\ell}v_\la^{low} \in L(\la)_\mu$.  First note that by \cite[Lemma 5.4]{KT} we have that
+\begin{align}\label{lem:ftcomm}
+\st_{w_0}^2E_i=q^2K_i^{-2}E_i\st_{w_0}^2.
+\end{align}
+Setting $v'=E_{j_2}\cdots  E_{j_\ell}v_\la^{low}$, by induction we have
+\begin{align*}
+\st_{w_0}^2v &= q^2K_{j_1}^{-2}E_{j_1}\st_{w_0}^2v' \\
+&= (q^2K_{j_1}^{-2}E_{j_1})(-1)^{\langle \lambda ,\rho^\vee \rangle}q^{n(\la,\mu-\alpha_{j_1})}v' \\
+&= (-1)^{\langle \lambda ,\rho^\vee \rangle}q^{2+n(\la,\mu-\alpha_{j_1})-2(\mu,\alpha_{j_1})}v
+\end{align*}
+One checks easily that $n(\la,\mu)=2+n(\la,\mu-\alpha_{j_1})-2(\mu,\alpha_{j_1})$, proving that $\st_{w_0}^2v=(-1)^{\langle \lambda ,\rho^\vee \rangle}q^{n(\la,\mu)}v$.  Since this holds for any vector of the form $E_{j_1}\cdots  E_{j_\ell}v_\la^{low}$ in $L(\la)_\mu$, this completes the inductive step.
+\end{proof}
+
+
+
+\begin{Theorem}\label{thm:cactus}
+The assignment $c_J \mapsto \varphi_J$ defines an action of $C$ on $\Irr(\cC)$.
+\end{Theorem}
+
+\begin{proof} We need to show that the bijections $\varphi_J$ satisfy the cactus group relations. 
+%
+% Let us first explain how to reduce to the case of minimal categorifications.  Indeed, suppose we have connected subdiagrams $I_1,\hdots,I_r,J_1,\hdots,J_s \subset I$ and that the relation
+%\begin{align*}
+%\varphi_{I_1}\cdots\varphi_{I_r}=\varphi_{J_1}\cdots\varphi_{J_s}
+%\end{align*}
+%holds on all minimal categorifications $\cC\cong \cL(\lambda)$.   
+%
+%
+%
+
+\textit{Relation (i)}: Without loss of generality we may assume $J=I$.   Fix a weight $\mu$.  Our aim is to show that 
+\begin{equation}
+\label{eq:rel1}
+\varphi_I \varphi_I1_\mu=\Id_{\Irr(\cC_\mu)}.
+\end{equation}
+
+
+%Consider first the case when $\cC$ categorifies an isotypic representation. 
+Since the filtration of $\cC_{w_0(\mu)}$ which we use in the perversity data of $\Theta_{w_0}\bone_\mu$, agrees with the filtration of $\cC_{w_0(\mu)}$ which we use in the perversity data of $\Theta_{w_0}\bone_{w_0(\mu)}$, by Lemma \ref{lem:pervcomp} the composition $\Theta_{w_0} \Theta_{w_0}\bone_\mu$ is a perverse autoequivalence of $D^b(\cC_\mu)$. 
+
+The  functor $[\langle 2\lambda ,\rho^\vee \rangle]\langle n(\lambda,\mu)\rangle$ is also a perverse autoequivalence of $D^b(\cC_\mu)$.   By Lemma \ref{lem:fulltwist} these two perverse equivalences induce the same map on Grothendieck groups, and hence by Lemma \ref{lem:LosLem} they also induce the same bijection.  Since the bijection induced by $[\langle 2\lambda ,\rho^\vee \rangle]\langle n(\lambda,\mu)\rangle$ is the identity, this proves  relation (i).
+
+%If  $\cC\cong \cL(\lambda)\otimes_k \cM$ is isotypic (here $\cM$ is a multiplicity category) then $\Irr(\cC)=\Irr(\cL(\lambda))\times \Irr(\cM)$.  Since the action of $\fg$ on $\cC$ is only on the first factor, by Lemma \ref{lem:pervtens} we have that for any connected subdiagram $J\subset I$, $\varphi_J([L],[L'])=(\varphi_J([L]),[L'])$.   Therefore the relation in the isotypic case follows from the minimal case.
+
+
+%Now consider a general categorical representation $\cC$ and let 
+%\begin{align*}
+%\cC(0) \subset \cC(1) \subset \cdots \subset \cC(m) =\cC
+%\end{align*}
+%be a Jordan-H\"older series, so that 
+%\begin{align*}
+%\cC(i)/\cC(i-1) \cong \cL(\lambda_i),
+%\end{align*}
+%where $\lambda_i\in X_+$ for $i=0,\hdots,m$.
+%Since $\cC(0)$ is a minimal categorication, the relations holds for simple objects in  $\cC(0)_\mu$ by the previous paragraph.  Suppose now the relation  holds   for simple objects in $\cC(i-1)_\mu$.  Since it also holds for $(\cC(i)/\cC(i-1))_\mu$ (again, by the previous paragraph), by Lemma \ref{lem:quot} it holds also for simple objects in $\cC(i)_\mu$.  By induction the result follows.
+
+\textit{Relation (ii)}:  Let $J,K \subset I$ be disjoint subdiagrams with no connecting edges.  Our aim is to show that
+\begin{align}\label{eq:rel2}
+\varphi_J\varphi_K1_\mu = \varphi_K \varphi_J1_\mu.
+\end{align}
+We prove a slightly more general statement, namely that for any categorical representation $\cC$ of $U_q(\fg_J \times\fg_K)$, relation (\ref{eq:rel2}) holds.
+
+Note that $\Theta_J\Theta_K\bone_\mu\cong \Theta_K\Theta_J\bone_\mu$ are isomorphic perverse equivalences, so they induce the same bijections.  It remains to show that
+\begin{align}\label{eq:rel2again}
+\varphi_{\Theta_J\Theta_K\bone_\mu} =\varphi_J\circ\varphi_K 1_\mu.
+\end{align}
+
+Consider first the case when $\cC$ categorifies an simple representation of $U_q(\fg_J\times\fg_K)$.  A minimal categorification of $U_q(\fg_J\times\fg_K)$ is of the form $\cL(\lambda)\otimes_\kk\cL(\mu)$, where $\lambda$ is a highest weight for $\fg_J$ and $\mu$ is a highest weight for $\fg_K$.  Hence by Lemma \ref{lem:isocat}, a simple categorification of $U_q(\fg_J\times\fg_K)$ is of the form $\cL(\lambda)\otimes_\kk\cL(\mu)\otimes_\kk\cA$ for some abelian category $\cA$.  
+
+This implies that as a categorical representation of $U_q(\fg_J)$ (respectively $U_q(\fg_K)$), $\cC$  categorifies an isotypic representation.  
+By Corollary \ref{cor:mainthm} $\Theta_J\bone_{w_0^K(\mu)}$ and $\Theta_K\bone_\mu$ are t-exact up shift on isotypics categorifications.  Hence Equation (\ref{eq:rel2again}) follows by Lemma \ref{lem:pervcomp}.
+
+Now consider a Jordan-H\"older filtration (Theorem \ref{thm:JH}):
+\begin{align*}
+0=\cC_0\subset \cdots\subset \cC_n=\cC,
+\end{align*}
+where for every $i$, $\cC_i$ is a  subrepresentation of $\cC$, and $\cC_i/\cC_{i-1}$ is a simple categorification of $U_q(\fg_J\times\fg_K)$.  Equation (\ref{eq:rel2again}) now follows by an easy induction on $i$.
+Indeed the base case when $i=1$ holds by the paragraph above, and the inductive step by Lemma \ref{lem:quot}.
+
+
+%Define the functor
+%$$
+%F=\bigoplus_\mu \Theta_{w_0}^\mu[-\ell(\lambda,\mu)]:D^b(\cL(\lambda)) \to D^b(\cL(\lambda)),
+%$$
+%where the sum ranges over the set of weights of $L(\lambda)$.  By Proposition \ref{lem:comm}, $[F^2]$ commutes with $e_i,f_i \in \fg$, \oded{need to include more detail here - this will need the precise formula for $\ell(\lambda,\mu)$} and hence $[F^2]\in \Hom_\fg(L(\lambda),L(\lambda))$.  Moreover, $[F^2]([\kk_{low}])=[\kk_{low}]$ and so  by Schur's Lemma $[F^2]=[\Id_{\cL(\lambda)}]$.  In particular, 
+%$$
+%[\Theta_{w_0}^{w_0(\mu)}[-\ell(\lambda,w_0(\mu))]\circ \Theta_{w_0}^\mu[-\ell(\lambda,\mu)]]=[\Id_{\cL(\lambda)_{\mu}}].
+%$$
+%Now the filtrations on $\cL_{w_0(\mu)}$ coming from the perversity data for $\Theta_{w_0}^\mu$ and $\Theta_{w_0}^{w_0(\mu)}$ coincide.  Hence be  Lemmas \ref{lem:pervshift} and  \ref{lem:pervcomp}, $\Theta_{w_0}^{w_0(\mu)}[-\ell(\lambda,w_0(\mu))]\circ \Theta_{w_0}^\mu[-\ell(\lambda,\mu)]$ is perverse, and its corresponding bijection is $\varphi_I^{w_0(\mu)}\circ\varphi_I^\mu$.  Since the identity functor is clearly perverse, by Lemma \ref{lem:LosLem} we deduce that $$\varphi_I^{w_0(\mu)}\circ\varphi_I^\mu=\Id_{\Irr(\cL(\lambda)_\mu)}.$$  
+
+\textit{Relation (iii)}: We need to show that $\varphi_J\varphi_K1_\mu=\varphi_K\varphi_{\tau_K(J)}1_\mu$, where $J\subset K$.  Again, we may assume that $K=I$.  Note that we have an isomorphism at the level of functors:
+\begin{align*}
+\Theta_{w_0}^{-1}\Theta_{w_0^J}\Theta_{w_0}\bone_\mu \cong \Theta_{w_0^{\tau_K(J)}}\bone_\mu,
+\end{align*}
+which lifts the corresponding relation in $B$.  Since this is an isomorphism of perverse equivalences, they must induce the same bijections by Lemma \ref{lem:LosLem}.  
+
+It remains to show that 
+\begin{align}\label{eq:compo}
+\varphi_{\Theta_{w_0}^{-1}\Theta_{w_0^J}\Theta_{w_0}\bone_\mu} =\varphi_I^{-1}\circ \varphi_J\circ \varphi_I.
+\end{align}
+When $\cC$ is a simple categorification, by Corollary \ref{cor:mainthm} $\Theta_{w_0}\bone_\mu$ is t-exact (up to shift).  Hence Equation (\ref{eq:compo}) follows by Lemma \ref{lem:texactperv}.  Now apply the same reasoning as in the proof of Relation (ii) to deduce equation (\ref{eq:compo}) in the general case.  
+
+
+  
+
+%\oded{It would be nice if we could prove that in fact the reduced cactus group acts on $\Irr(\cC)$, i.e. that we also have the relation $\varphi_i\varphi_{i+1}\varphi_i=\varphi_{i+1}\varphi_{i}\varphi_{i+1}$.  Note that the functors $\Theta_i\Theta_{i+1}\Theta_i\cong \Theta_{i+1}\Theta_i\Theta_{i+1}$ are perverse (they are $\Theta_{w_0^J}$ for $J=\{i,i+1\}$ after all), and hence induce the same bijections.  Therefore it suffices to show that $\varphi_{\Theta_i\Theta_{i+1}\Theta_i}=\varphi_i\varphi_{i+1}\varphi_i$.  Moreover, it suffices to show this only for minimal categorifications of $\fsl_3$.}
+%
+
+
+\end{proof}
+
+\subsection{Reconciling the two cactus group actions}
+
+Let $\cC$ be a categorical representation of $U_q(\fg)$, and consider the $\fg$-crystal $\bB=\Irr(\cC)$.   There are two actions of the cactus group on $\bB$, the first arising combinatorially via  Sch\"utzenberger involutions (Theorem \ref{thm:cactact}) and the other categorically via Theorem \ref{thm:cactus}. 
+
+\begin{Theorem}\label{thm:agree}
+The two actions of the cactus group on $\bB$  agree.
+\end{Theorem}
+
+\begin{proof}
+It suffices to show that $\varphi_I=\xi_I$.  
+First, suppose $\cC$ is a simple categorification of type $\lambda \in X_+$.  In this case $\bB=\bB(\lambda)$, and $\xi=\xi_I$ is determined by:
+\begin{align*}
+\xi(v_\lambda)&=v_\lambda^{low}, \text{ and } \\
+\xi(\tilde{e}_i(v))&=\tilde{f}_{\tau(i)}(\xi(v)) \text{ for all } v \in \bB,
+\end{align*}
+so we need to show that $\varphi_I$ satisfies these properties as well.  
+
+The first is an immediate consequence of Corollary \ref{cor:mainthm}.  To show that $\varphi_I$ satisfies the second property, fix $\mu \in X$ and $ i \in I$.  We set $n=ht(\mu-w_0(\lambda)), j=\tau(i)$, and write $\Theta=\Theta_{w_0}$.  
+
+Consider the following diagram:
+\begin{equation}
+\begin{tikzcd}
+D^b(\cC_\mu) \arrow[rrr,"\Theta\bone_\mu\sh{-n}\langle \mu_i \rangle"] \arrow[d,"\sE_i\bone_\mu"] &&&  D^b(\cC_{w_0(\mu)}) \arrow[d,"\sF_j\bone_{w_0(\mu)}"] \\
+D^b(\cC_{\mu+\alpha_i}) \arrow[rrr,"\Theta\bone_{\mu+\alpha_i}\sh{-n-1}"]  &&&  D^b(\cC_{w_0(\mu)-\alpha_j})
+\end{tikzcd}
+\end{equation}
+By  Proposition \ref{prop:mainrel} this diagram commutes (note that we shifted both sides of the equation by $-n-1$).  By Theorem \ref{thm:mincat} both horizontal arrows are in fact t-exact equivalences so this restricts to a diagram of abelian categories:
+\begin{equation}
+\begin{tikzcd}
+\cC_\mu \arrow[rrr,"\Theta\bone_\mu\sh{-n}\langle \mu_i \rangle"] \arrow[d,"\sE_i\bone_\mu"] &&&  \cC_{w_0(\mu)} \arrow[d,"\sF_j\bone_{w_0(\mu)}"] \\
+\cC_{\mu+\alpha_i} \arrow[rrr,"\Theta\bone_{\mu+\alpha_i}\sh{-n-1}"]  &&&  \cC_{w_0(\mu)-\alpha_j}
+\end{tikzcd}
+\end{equation}
+
+Let $L\in \cC_\mu$ be a simple object,  and let $L'=\Theta\bone_\mu(L)\sh{-n}\langle \mu_i \rangle$.  Note that $L'\in \cC_{w_0(\mu)}$ is simple and $\varphi_I(L)=L'$.  By the above diagram we have an isomorphism
+\begin{align*}
+\Theta\bone_{\mu+\alpha_i}(\sE_i(L))\sh{-n-1} \cong \sF_j(L').
+\end{align*}
+Now, $\widetilde{\sF}_j(L') \subset \sF_j(L')$ is the unique simple subobject.  On the other hand, since $\Theta\bone_{\mu+\alpha_i}\sh{-n-1}$ is an abelian equivalence, $\Theta\bone_{\mu+\alpha_i}(\widetilde{\sE}_i(L))\sh{-n-1}\subset \Theta\bone_{\mu+\alpha_i}(\sE_i(L))\sh{-n-1}$ is a simple subobject.  Therefore
+\begin{align*}
+\Theta\bone_{\mu+\alpha_i}(\widetilde{\sE}_i(L))\sh{-n-1} \cong \widetilde{\sF}_j(L').
+\end{align*}
+Since the equivalence class of the left hand side is $\varphi_I\circ \tilde{e}_i(L)$, this shows that $\varphi_I$ satisfies the second defining property, and hence the two cactus group actions agree in the case of a simple categorification. 
+
+The general case when $\cC$ is not necessarily a simple categorification follows easily using the Jordan-H\"older filtration (Theorem \ref{thm:JH}) and Lemma \ref{lem:quot}.
+\end{proof}
+
+
+
+\section{Examples and Applications}
+\subsection{Examples}
+We now examine three examples.  The first two consider minimal categorifications of the adjoint representation, while the third studies the categorification of the $n$-fold tensor product of the standard representation of $\fsl_n$.  For ease of presentation, we ignore gradings and consider non-quantum categorical representations.
+
+\begin{example}
+Let's consider the first non-trivial example of Theorem \ref{thm:mincat}: the minimal categorification of the adjoint representation of $\fsl_2$.  We can model this as follows:
+$$
+\begin{tikzcd}
+\kk\mmod \arrow[rr, bend left, "ind"] &  & R\mmod \arrow[rr, bend left,"res"] \arrow[ll, bend left, "res"] &  & \kk\mmod \arrow[ll, bend left, "ind"]
+\end{tikzcd}
+$$
+where $R=\kk[x]/(x^2)$ \cite[Example 5.17]{CR}.  Here $\kk\mmod$ is the $\pm2$ weight category, and $R\mmod$ is the zero weight category.  The arrows describe the $\sE,\sF$ functors (we omit the higher structure). 
+
+Consider the Rickard complex $\Theta=\Theta\bone_0:D^b(R\mmod) \to D^b(R\mmod)$.  For $M\in R\mmod$, we have:
+\begin{align*}
+\Theta(M)=R\otimes_\kk M \to M,
+\end{align*}
+where the differential is given by the action map, and $M$ is in  cohomological degree $0$.  It's an exercise to verify that $\Theta(M)$ is quasi-isomorphic to $M'[1]$, where $M'$ is the twist of $M$ by the automorphism of $R$ given by $a+bx \mapsto a-bx$.  This shows that $\Theta[-1]$ is the t-exact equivalence $M\mapsto M'$.
+\end{example}
+
+\begin{example}
+More generally, one can consider the minimal categorification of the adjoint representation of a simple simply-laced Lie algebra $\fg$.  This was studied by Khovanov and Huerfano in \cite{HuerKh}, who used zigzag algebras to model this category.  
+
+For a weight $\alpha$ of the adjoint representation of $\fg$, the weight  category $\cC_\alpha$ is taken to be $\kk\mmod$ as long as $\alpha\neq 0$.  However, the zero weight  category is more interesting:  $\cC_0 := A \mmod$, where $A$ is the zigzag algebra associated to the Dynkin diagram $I$ of $\fg$ (cf. \cite{HuerKh} for the precise definition).  
+
+The isomorphism classes of indecomposable projective left $A$-modules $\{P_i\}$ and the isomorphism classes of indecomposable projective right $A$-modules $\{Q_{i}\}$ are both indexed by $i \in I$.  Tensoring with these modules defines functors 
+\begin{align*}
+	&\sE_i: \cC_0 \longrightarrow \cC_{\alpha_i}, \quad M \mapsto Q_{i} \otimes_{A} M, \\
+	&\sE_i : \cC_{-\alpha_i} \longrightarrow \cC_0, \quad  V \mapsto  P_i\otimes_\kk V.
+\end{align*}
+The functors $\sF_i$ are defined analogously and are biadjoint to the $\sE_i$.
+
+The Rickard complex
+$\Theta_i \bone_0$ is given by tensoring with the complex
+$$
+	P_i\otimes_\kk Q_i \rightarrow A
+$$
+of $(A,A)$-bimodules, where the differential is given by the multiplication in $A$, and $A$ sits in cohomological degree zero.  These functors are autoequivalences of the derived category $D^b(\cC_0)$.  
+
+By Theorem \ref{thm:mincat}  $\Theta_{w_0}\bone_0[-n]$ is t-exact, where $n+1$ is the Coxeter number of $\fg$.  
+This auto-equivalence can be explicitly described as follows: the automorphism of the Dynkin diagram $\tau:I\to I$ induces an automorphism $\psi$ of $A$.  Then we claim that $\Theta_{w_0}\bone_0[-n]$ is the abelian autoequivalence of $A\mmod$ defined by twisting with $\psi$.  Indeed, since $\Theta_{w_0}\bone_0[-n]$ is an abelian autoequivalence, it is determined up to isomorphism by its action on simple objects.  Moreover, the action on simple objects can be read off from the action of $W$ on the Grothendieck group of $A \mmod$ as follows: $[A \mmod]_\ZZ$ is isomorphic to the Cartain subalgebra by mapping $[L_i]$ ($L_i$ is the simple head of $P_i$) to the simple root vector $H_i$.  And on the root vectors we have that $w_0\cdot H_i = -H_{\tau(i)}$ 
+\end{example}
+
+
+\begin{example}\label{ex:catO}
+Let $\fg=\fsl_n$ and consider the $n$-fold tensor power of the standard representation $V^{\otimes n}$.  Categorifications of $V^{\otimes n}$ have been well-studied, and a model $\cC$ for this categorical representation can be constructed using the BGG category $\cO$ of $\fg$ \cite{Sussan2007, MS09}.  In this model, the principal block $\cO_0 \subset \cO$ appears as the zero weight category of $\cC$, and the Rickard complexes acting on $D^b(\cO_0)$ are the well-known shuffling functors.
+
+By Theorem \ref{thm:perveq} $\Theta_{w_0}\bone_0:D^b(\cO_0)\to D^b(\cO_0)$ is a perverse equivalence with respect to an isotypic filtration.  In fact, this recovers the type A case of a theorem of the third named author \cite{LosCacti}, using completely different methods (in \cite{LosCacti} the perversity of $\Theta_{w_0}$ is proved using the theory of W-algebras).  We can interpret the filtration of $\cO_0$ arising from our perspective concretely using the Robinson-Schensted correspondence .  
+
+Recall that the simple objects in $\cO_0$ are the irreducible highest weight representations $L(w), w \in S_n$, where $L(w)$ has highest weight $w\rho-\rho$ ($\rho$ is the half-sum of positive roots of $\fsl_n$). 
+
+We view a partition $\lambda$ of $n$  simultaneously as a dominant integral weight for $\fsl_n$, and as an index for the irreducible Specht module $S^\lambda$ of the symmetric group $S_n$. Let $\SYT(\lambda)$ denote the set of standard Young tableau of shape $\lambda$, and let $d(\lambda)=|\SYT(\lambda)|$.  Recall that $d(\lambda)=\dim S^\lambda$.  
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+Choose an ordering of the partitions of $n$, $\lambda_1,\hdots,\lambda_r$, so that if $\lambda_i \prec \lambda_j$ in the dominance order, then $i<j$.  Note that the dominance order on partitions of $n$ is equivalent to the positive root ordering on partitions (thought of as weights for $\fsl_n$).
+By Remark \ref{rem:isofilts} there is an isotypic filtration on $\cC$,
+$
+0 \subset \cC_1 \subset \cdots\subset \cC_N=\cC,
+$
+where  $\cC_i/\cC_{i-1}$ is an isotypic categorification of type $\lambda_i$.  Then  $\Theta_{w_0}$ is a perverse equivalence with respect to the filtration $\cO_{0,i} = \cO_0\cap \cC_i$ and the perversity function $p(i)=ht(\lambda_i)$.
+
+
+We would like now to define the categories $\cO_{0,i}$ more explicitly using the Robinson-Schensted correspondence, which recall is a bijection \cite{Sagan}:
+\begin{align*}
+\mathsf{RS}:S_n \longrightarrow \bigsqcup_{j=1}^r\SYT(\lambda_j)\times\SYT(\lambda_j), \; w \mapsto (P(w),Q(w)).
+\end{align*}
+We will use a crystal analogue of classical Schur-Weyl duality.  This is given by a crystal isomorphism: 
+\begin{align}\label{eq:crystalSW}
+\bB(\varpi_1)^{\otimes n} \longrightarrow \bigsqcup_{j=1}^r \bB(\lambda_j)\times\SYT(\lambda_j).
+\end{align}
+
+Now, recall that for a partition $\la$ of $n$, the underlying set of the crystal $\bB(\la)$ can be chosen to be the set of semistandard Young tableaux of shape $\la$ with entries $1,\hdots,n$, and the weight zero subset of $\bB(\la)$ is precisely $\SYT(\la)$.  
+The essential point is that the isomorphism \eqref{eq:crystalSW} can be chosen so that it restricts to the map $\mathsf{RS}$ on the elements of weight zero (\cite[Theorem 3.5]{Shimozono}). (Note that  the elements of weight zero in $\bB(\varpi_1)^{\otimes n}$ are naturally identified with permutations of $1,\hdots,n$.)
+
+This shows that as an element of the crystal $\bB(\varpi_1)^{\otimes n}$, $[L(w)]$ is in a connected component whose highest weight is the shape of $Q(w)$ (or equivalently $P(w)$).   
+Therefore, following Remark \ref{rem:JHfromCrystal}, we can construct the isotypic filtration be defining  $\cO_{0,i}$ to be  the Serre subcategory of $\cO_0$ generated by $L(w)$ such that the shape of $Q(w)$ is among $\la_1,\hdots,\la_i$.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Let $\lambda_1,...,\lambda_r$ be the partitions of $n$ ordered so that if $\lambda_i > \lambda_j$ in the dominance order, then $j<i$.  Set $N=\sum_{i=1}^r d(\lambda_i)$.
+%There is a Jordan-H\"older filtration on $\cC$,
+%$
+%0 \subset \cC_1 \subset \cdots\subset \cC_N=\cC,
+%$
+%where each $\cC_i/\cC_{i-1}$ is a simple categorification, and is of type $\lambda_1$ if $0<i\leq d(\lambda_1)$, of type $\lambda_2$ if $d(\lambda_1)<i \leq d(\lambda_1)+d(\lambda_2)$, and so on.  
+%Then $\Theta$ is a perverse equivalence with respect to the filtration $\cO_{0,i} = \cO_0\cap \cC_i$ and the perversity function $p(i)=ht(\lambda_\ell)$, for $\sum_{j=1}^{\ell-1}d(\lambda_j)<i\leq \sum_{j=1}^{\ell}d(\lambda_j)$.
+%
+%
+%We can interpret the filtration of  $\cO_0$  using the Robinson-Schensted correspondence \cite{Sagan}:
+%\begin{align*}
+%\mathsf{RS}:S_n \to \bigsqcup_{j=1}^r\SYT(\lambda_j)\times\SYT(\lambda_j).
+%\end{align*}
+%The essential point is that the  correspondence is a crystal isomorphism (by Theorem 3.5 in \ref{Shimozono}): 
+%$$
+%\bB(\varpi_1)^{\otimes n} \to \bigsqcup_{j=1}^r \bB(\lambda_j)\times\SYT(\lambda_j),\; b \mapsto (P(b),Q(b)),
+%$$ 
+%which restricts to the map $\mathsf{RS}$ on the elements of weight zero.  
+%
+%
+%Now let $Q_1,...,Q_N$ be an ordering of the standard Young tableau of size $n$, so that the first $d(\lambda_1)$ are of shape $\lambda_1$, the next $d(\lambda_2)$  are of shape $\lambda_2$, and so on. 
+%Then by Remark \ref{rem:JHfromCrystal}, $\cO_{0,i}$ is  the Serre subcategory of $\cO_0$ generated by simples $L(w)$ such that 
+%$
+% \mathsf{RS}(w)=(P,Q),
+%$
+%where $Q\in \{Q_1,...,Q_i \}$.
+\end{example}
+
+\subsection{Type A combinatorics}\label{sec:typeA}
+
+In this final section, we specialise to type A and discuss  the combinatorics of Kazhdan-Lusztig bases and standard Young tableaux from the vantage of perverse equivalences.   
+
+Set  $I=A_{n-1}=\{1,\hdots,n-1\}$.
+We continue with the notation in Example \ref{ex:catO} and view a partition $\lambda \vdash n$ simultaneously as a dominant integral highest weight for $\fsl_n$, and as an index of the Specht module $S^\lambda$. Recall that by Schur-Weyl duality, $L(\lambda)_0$ is isomorphic to $S^\lambda$.  The Kazhdan-Lusztig basis of the Hecke algebra naturally descends to a basis of $S^\la$, which we denote $\{C_T\}$ indexed by   $T\in\SYT(\lambda)$.  For further details we recommend the exposition in \cite{Rhoad}.  
+
+Consider the  minimal categorification $\cL(\lambda)$, and in particular its zero weight category $\cL(\lambda)_0$.  For convenience, we forget the grading and work in the non-quantum setting.  The simple objects $L(T)  \in \cL(\lambda)_0$ are indexed by $T\in \SYT(\lambda)$, and hence a perverse equivalence $\sF:D^b( \cL(\lambda)_0) \to D^b( \cL(\lambda)_0)$ induces a bijection $\varphi_\sF:\SYT(\lambda) \to \SYT(\lambda)$.  
+
+The bijection $\varphi_I$ studied in the previous section specialises to the well-known Sch\"utzenberger involution on standard Young tableau, otherwise known as the ``evacuation operator'' $e$ \cite{Sagan}.  Indeed, by Theorem \ref{thm:agree} $\varphi_I$ recovers the cactus group action on the crystal $\Irr(\cC)$ by generalised Sch\"utzenberger involutions.  The Sch\"utzenberger involution is well-known to agree with the evacuation operator \cite[Theorem A1.2.10]{StanleyII}).  Note that this is elementary: it follows directly from the fact that the evacuation operator satisfies the properties of Definition \ref{def:genSchutz} on standard Young tableaux.
+
+The promotion operator $j:\SYT(\lambda)\to \SYT(\lambda)$ is another important function in algebraic combinatorics, which is closely connected to the RSK correspondence and related ideas such as jeu de taquin.  
+Letting $J=\{1,\hdots,n-2\}\subset I$, we can express promotion in terms of the Sch\"utzenberger involution: $j=\varphi_I\varphi_{J}$.
+We refer the reader to \cite{Sagan} for a detailed exposition.  We can now see easily that promotion also arises from a perverse equivalence:
+
+\begin{Proposition}\label{prop:promo}
+Let $c_n=(1,2,\hdots,n)\in S_n$ be the long cycle.  Then $$\Theta_{c_n}:D^b( \cL(\lambda)_0) \to D^b( \cL(\lambda)_0)$$ is a perverse equivalence whose associated bijection is the promotion operator: $\varphi_{\Theta_{c_n}}=j$.%\SYT(\lambda)\to \SYT(\lambda)$.
+\end{Proposition}
+
+\begin{proof}
+Notice that $c_n=w_0w_0^J$ for $J$ as above. % is the long cycle $(1,2,\hdots,n)$.  This leads us to ask: is $\Theta_{c_n}$ a perverse autoequivalence of $D^b( \cL(\lambda)_0)$ whose corresponding bijection is the promotion operator $j$?
+%
+Now recall that $\Theta_{w_0}$ is (up to shift) a t-exact  autoequivalence of $D^b( \cL(\lambda)_0)$ (Theorem \ref{thm:mincat}).  Since $\Theta_{w_0^J}$ is a perverse equivalence (Theorem \ref{thm:perveq}),  its inverse is too.  Therefore $\Theta_{c_n}\cong\Theta_{w_0}\Theta_{w_0^J}^{-1}$ is also a perverse autoequivalence. 
+By Lemma \ref{lem:texactperv} we have that $\varphi_{\Theta_{c_n}}=\varphi_I\varphi_J$, and hence we recover the promotion operator.
+\end{proof}
+
+We can also use this set-up to extract information about the action of $S_n$ on the Kazhdan-Lusztig basis of $S(\lambda)$.  This is based on the following elementary lemma:
+
+\begin{Lemma}\label{lem:KLact}
+Let $w \in S_n, \lambda \vdash n$ and suppose $\Theta_w :D^b(\cL(\lambda)_0) \to D^b(\cL(\lambda)_0)$ is t-exact up to shift. 
+Then for any $T \in \SYT(\lambda)$, $w\cdot C_T=\pm C_{S}$, where $S=\varphi_{\Theta_w}(T)$.
+\end{Lemma}
+
+\begin{proof}
+Since $\Theta_w$ is t-exact up to shift, we have: 
+\begin{align*}
+[\Theta_{w}(L(T))]=\pm [L(S)].
+\end{align*}
+The result now follows since the isomorphism $[\cL(\lambda)_0]_\CC \cong S^\lambda, L(T) \mapsto C_T$, is $S_n$-equivariant, and  by \cite[Proposition 10]{BauqWeyl}, the action of the braid group $B=B_n$ on $L(\lambda)_0$  factors through $S_n$.
+\end{proof}
+
+Applying this lemma to Theorem \ref{thm:mincat} we obtain a result of Berenstein-Zelevinsky and Stembridge:
+
+\begin{Corollary}\cite{BZ96, Stem96} 
+The action of the longest element  on the Kazhdan-Lusztig basis recovers the Sch\"utzenberger evacuation operator, i.e. for $w_0 \in S_n, \lambda \vdash n$ and $T\in \SYT(\lambda)$, we have that 
+$w_0\cdot C_T =\pm C_{e(T)}$.
+\end{Corollary}
+
+Similarly we can prove a result of Rhoades regarding the action of the long cycle  $c_n=(1,2,\hdots,n)$ on the Kazhdan-Lusztig basis.  Note that in the statement below the significance of $\lambda$ being rectangular  is that the restriction of $S(\lambda)$ to $S_{n-1}$ in this case remains irreducible. 
+
+\begin{Proposition}(cf. \cite[Proposition 3.5]{Rhoad})
+Let $\lambda=(a^b)\vdash n$ be a rectangular partition.  Then for any $T \in \SYT(\lambda)$, the action of the long cycle on the Kazhdan-Lusztig basis element $C_T$ recovers the promotion operator:
+$$
+c_n\cdot C_T=\pm C_{j(T)}.
+$$ 
+\end{Proposition}
+
+\begin{proof}
+As above, set $J=\{1,\hdots,n-2\} \subset I$.  Recall that, since $\cL(\la)$ is a simple categorification, we know  $\Theta_{w_0}:D^b( \cL(\lambda)_0) \to D^b( \cL(\lambda)_0)$ is t-exact up to shift by Theorem \ref{thm:mincat}. However, $L(\la)|_{\fsl_{n-1}}$ is no longer simple, so a priori we only know that $\Theta_{w_0^J}:D^b( \cL(\lambda)_0) \to D^b( \cL(\lambda)_0)$ is perverse, but not necessarily t-exact up to shift.
+We first prove that $\Theta_{w_0^J}$ is indeed t-exact up to shift.  
+
+Consider the set of functors which are monomials in the Chevalley functors indexed by $J$:
+\begin{align*}
+\bM=\{\sG_{j_1}\cdots \sG_{j_s}\;|\; \sG \in \{\sE,\sF \},\;  j_\ell \in J \}.
+\end{align*}
+Let $\cC$ be the abelian category generated by $\{\sM(X)\;|\; X \in \cL(\lambda)_0,\sM \in \bM\}$, that is, $\cC$ is the category closed under subobjects and quotients of objects of the form $\sM(X)$.  Since the Chevalley functors are exact, it is easy to see that $\cC$ is a categorical representation of $U_q(\fsl_{n-1})$.  
+
+Let $\nu \vdash (n-1)$ be the (unique) partition obtained from $\lambda$ by removing a box.  We claim that $\cC$ is a categorification of $L(\nu)$.  Note that this is  a categorification of the fact that $L(\nu) \cong U_q(\fsl_{n-1})\cdot L(\lambda)_0$.  Indeed, it is clear that $[\cC]_\CC$ contains $L(\nu)$.  On the other hand, if $\cC_\mu\neq0$ then $\mu$ is in the root lattice of $\fsl_{n-1}$, and $L(\nu)$ is the unique constituent of $L(\lambda)|_{\fsl_{n-1}}$ whose weights are in the root lattice.  
+
+Now observe that $\cC_0=\cL(\lambda)_0$. Hence, by Corollary \ref{cor:mainthm} it follows that $\Theta_{w_0^J}:D^b( \cL(\lambda)_0) \to D^b( \cL(\lambda)_0)$ is t-exact up to shift.  Since $\Theta_{w_0}$ is also t-exact up to shift, it follows that $\Theta_{c_n}$ is too.  The result now follows by Proposition \ref{prop:promo} and Lemma \ref{lem:KLact}.
+\end{proof}
+
+
+%\subsection{Examples}
+%\begin{itemize}
+%	\item Trivial filtration 
+%	
+%	If $r=0$, we have the trivial filtration, and so $F$ is $t$-exact up to shift.
+%	\item $\fsl_2$ (\cite{CRperv}, Proposition 8.4)
+%	\item Losev's theorem.  We can deduce Losev's perversity result in type A by applying our theorem to the categorification of $\bigotimes^nV$ where $V$ is the standard rep of $\fsl_n$.  In this case the zero weight category is a regular block $\cO_0$ of category $\cO$.  The Rickard complex $\Theta_{w_0}$ acting on the zero weight category is isomorphic to the wall-crossing functor $\fW\fC_{w_0}$ that Losev considers.  This follows since $\Theta_i \cong \fW\fC_{s_i}$.  It's interesting to work out what the filtrations look like in this case.
+%	
+%	Let $\Irr(\cO_0)=\{L(w):w\in S_n\}$, where $L(w)$ is the irreducible representation of $\fsl_n$ of highest weight $w\rho-\rho$.  Recall that by the RSK algorithm, $w$ corresponds to a pair of tableau $(P(w),Q(w))$ of the same shape, which we denote $\lambda(w)$.  Let $\lambda_1,...,\lambda_m$ be the partitions of $n$ thought of as weights of $\fsl_n$, and ordered so that 
+%	$$
+%	ht(-w_0(\lambda_1)) \leq \cdots\leq ht(-w_0(\lambda_m)).
+%	$$
+%	Then we define $\cA_i=\langle L(w)\;|\; \lambda(w)\in\{\lambda_1,...,\lambda_i \}\rangle_{\mathrm{Serre}}$.   
+%	\item Burau (zero weight space of adjoint representation of simply laced $\fg$)
+%	
+%	In the case of $\fsl_2 \curvearrowright \cC=\bigoplus^n_{i=-n} \cC_i$ (irreducible representation), Rickard complex $\Theta: D^b(\cC_{-n}) \rightarrow D^b(\cC_n)$ is $$\Theta= (\hdots \rightarrow E^{(n+3)}F^{(3)} \rightarrow E^{(n+2)}F^{(2)} \rightarrow E^{(n+1)}F \rightarrow \underline{E^{(n)}})$$
+%	
+%	In particular, in the case of the zero-weight space of the adjoint representation, $(i=0)$, $\cC_0 \cong R-mod$ where $R=k[x]/x^2$ and $\Theta: D^b(R-mod) \rightarrow D^b(R-mod)$ is given by, for $M \in R-mod$, $\Theta(M)=(R\otimes M \xrightarrow{act} \underline{M})$, and $H^0 \Theta(M)=0, \; H^{-1} \Theta(M)=M'$, the twist of $M$ by ``conjugation'' on $R$.
+%	
+%	
+%	Consider more generally the zero-weight space for the adjoint representation of $\fsl_{n+1}$.
+%	Here, $\cC_0=A_n-pmod_{\ZZ}$, projective graded modules for the zigzag algebra $A_n$.
+%	Let $P_i=A_ne_i$ and ${}_iP=e_iA_n$. Then $\Theta_i=(P_i \otimes {}_iP \rightarrow A_n)$, a complex of bimodules. This gives a functor $\Theta_i : K^b(\cC_0) \rightarrow K^b(\cC_0)$, where the heart of $K^b(\cC_0)$ is $LCP(A_n)$, the category of linear complexes of projectives, i.e. complexes $\hdots X^i \rightarrow X^{i+1} \rightarrow \hdots$ such  thatfor each $i$, $X^i$ is projective and lives in $add(A_n\left\langle i \right\rangle)$. Then $\Theta_{w_0} [1](P_i)=P_{n-i}[n]\left\langle -n \right\rangle$ is an autoequivalence of $LCP(A_n)$.
+%	
+%	We get a crystalization of the Burau representation of $B_\fg$, namely the action $B_g \curvearrowright Burau=[A_\fg-pmod_\ZZ]_\CC$ crystalizes to $C_\fg \curvearrowright I$, where
+%	
+%	\[c_J(i)=\begin{cases}
+%	i & \text{ if } i \notin J \\
+%	\alpha_J(i) & \text{ if } i \in J 
+%	\end{cases}\]
+%	\end{itemize}
+
+
+
+\maketitle
+
+
+
+
+
+\bibliography{./monbib}
+\bibliographystyle{amsalpha}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

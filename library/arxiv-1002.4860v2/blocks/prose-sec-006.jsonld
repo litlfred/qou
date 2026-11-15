@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1002.4860v2/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1002.4860v2/blocks/prose-sec-006",
   "kind": "prose",
   "title": "Construction",
   "pageStart": 5,
   "pageEnd": 7,
   "text": "../sections/sec-006-3-construction.md",
-  "derivedFrom": "library/arxiv-1002.4860v2/manifest",
-  "sourceDocument": "library/arxiv-1002.4860v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1002.4860v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1002.4860v2",
   "provenance": "ingested"
 }

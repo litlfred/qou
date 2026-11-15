@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/sections/sec-049",
   "@type": [
     "doco:Section"
   ],
-  "title": "Special functions and algebras",
-  "pageStart": 89,
+  "title": "Conclusions and Perspectives",
+  "pageStart": 85,
   "pageEnd": 89,
   "contains": [
     "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-049"
   ],
-  "derivedFrom": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/manifest",
-  "sourceDocument": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/klein-few-body-systems-in-lattice-effective-field-theory-the",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/klein-few-body-systems-in-lattice-effective-field-theory-the",
   "provenance": "ingested"
 }

@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-molecular-assembly-projector",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:molecular-assembly-projector",
+  "kind": "definition",
+  "title": "Molecular assembly projector $e_{\\lambda,\\mu}$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-parabolic-hecke-subalgebra",
+    "papers/quantum-observable-universe/blocks/rem-h3-hecke-idempotents"
+  ],
+  "tags": [
+    "assembly-projector",
+    "idempotent",
+    "jones-wenzl",
+    "wedderburn",
+    "delocalization",
+    "q-young-symmetrizer"
+  ],
+  "leanRef": "qou:QOU.Molecular.AssemblyProjector",
+  "text": "molecular-assembly-projector.md",
+  "leanSource": "molecular-assembly-projector.lean",
+  "provenance": "authored"
+}

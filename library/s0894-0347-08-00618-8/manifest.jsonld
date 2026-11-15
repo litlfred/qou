@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/s0894-0347-08-00618-8/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "AMERICAN MATHEMATICAL SOCIETY",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s0894-0347-08-00618-8",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "s0894-0347-08-00618-8",
   "contains": [
+    "library/s0894-0347-08-00618-8/sections/sec-front-matter",
     "library/s0894-0347-08-00618-8/sections/sec-000",
     "library/s0894-0347-08-00618-8/sections/sec-001",
     "library/s0894-0347-08-00618-8/sections/sec-002",
@@ -25,11 +31,15 @@
     "library/s0894-0347-08-00618-8/sections/sec-016",
     "library/s0894-0347-08-00618-8/sections/sec-017",
     "library/s0894-0347-08-00618-8/sections/sec-018",
-    "library/s0894-0347-08-00618-8/sections/sec-019"
+    "library/s0894-0347-08-00618-8/sections/sec-019",
+    "library/s0894-0347-08-00618-8/sections/sec-020",
+    "library/s0894-0347-08-00618-8/sections/sec-021"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "s0894-0347-08-00618-8",
+    "title_source": "slug",
     "source_file": "S0894-0347-08-00618-8.pdf",
     "source_sha256": "7c0b2ca41992b21ca897acfe77482872d71b86252ca061cfa300cb0e0a7975d1",
     "pages": 47,

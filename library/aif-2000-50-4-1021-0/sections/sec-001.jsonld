@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/aif-2000-50-4-1021-0/sections/sec-001",
   "@type": [
     "doco:Section"
   ],
-  "title": "Notation",
-  "pageStart": 11,
-  "pageEnd": 12,
+  "title": "Comportement de la matrice de connexion lorsque q •—>",
+  "pageStart": 3,
+  "pageEnd": 3,
   "contains": [
     "library/aif-2000-50-4-1021-0/blocks/prose-sec-001"
   ],
-  "derivedFrom": "library/aif-2000-50-4-1021-0/manifest",
-  "sourceDocument": "library/aif-2000-50-4-1021-0/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/aif-2000-50-4-1021-0",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/aif-2000-50-4-1021-0",
   "provenance": "ingested"
 }

@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/chinta-2025-j-phys-a-math-theor-58-035203/sections/sec-front-matter",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Front matter",
+  "pageStart": 1,
+  "pageEnd": 1,
+  "contains": [
+    "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/prose-sec-front-matter"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/chinta-2025-j-phys-a-math-theor-58-035203",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/chinta-2025-j-phys-a-math-theor-58-035203",
+  "provenance": "ingested"
+}

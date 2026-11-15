@@ -1,0 +1,71 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "morita2014",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 245,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1404.2541v1/1404.2541v1.pdf"
+        },
+        "id": "morita2014",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Join CONFIRMED 2026-09-07 against the title page: arXiv:1404.2541v1, single author, 22 pp, matches the morita2014 entry (library block docId arxiv-1404.2541v1). HISTORY, kept because the row read the opposite for a month: the 2026-08-08 assessment recorded 'WRONG JOIN - LOUD' (the seeded id then named a two-author monograph) and set id: null; the id was backfilled to morita2014 on 2026-09-03 (note below) but this rationale and the add-reference action were not updated, so a reader of the row saw an unregistered orphan while references.ts held the entry. The add-reference action is DONE (bean qou-zdty completed); the cite-in-block action stays open (bean qou-hnuw, todo). Verdict unchanged, supporting: Thm 3.1 / Thm 7.1 give the connection formulae of the Ramanujan equation q x u(q^2 x) - u(q x) + u(x) = 0 between 0 and infinity by q-Borel-Laplace resummation, and Thm 8.3 / 9.3 the level r-1 extension for the divergent rphi0 - the explicit q-Stokes precedent the W2 attack needs, registered as the RSZ frame's complement (RSZ covers only integral slopes and gives dimension 0 for a single-slope module). Companion precedent one order down: morita2012b (arXiv:1205.1453, the bilateral 1psi0), triaged 2026-09-07.",
+          "keyResults": [
+            {
+              "locator": "Thm 3.1 (and Thm 7.1)",
+              "statement": "Connection formula between the local solutions of the Ramanujan q-difference equation qxu(q\u00b2x) \u2212 u(qx) + u(x) = 0 at the origin and at infinity, valid for x \u2208 C* off a q-spiral, obtained by q-Borel\u2013Laplace resummation.",
+              "useForFolio": "A worked, explicit q-Stokes / connection computation on a divergent \u2082\u03c6\u2080(0,0;\u2212;q,x) \u2014 the model case for the c\u2083 W2 bar-odd Stokes extraction.",
+              "targets": [
+                "QOU.MathlibExt.QBorelKernel",
+                "docs/audits/2026-08-08-w2-stokes-qborel-attack-plan.md"
+              ]
+            },
+            {
+              "locator": "Thm 8.3, Thm 9.3 (level r\u22121 extension)",
+              "statement": "A q-Borel\u2013Laplace transformation of level r\u22121 yielding an asymptotic formula for the divergent series \u1d63\u03c6\u2080(0,\u2026,0;\u2212;q,x).",
+              "useForFolio": "A higher-level q-Borel kernel to compare against the level parameter in QBorelKernelLevel.lean.",
+              "targets": [
+                "QOU.MathlibExt.QBorelKernelLevel"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "DONE (bean qou-zdty completed 2026-08-21, PR #5384): the entry morita2014 exists with a library block pointing at this directory. Kept for the record; no further work.",
+              "target": "folio/schema/references.ts",
+              "bean": "qou-zdty"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "Once registered, cite at the q-Borel kernel level file as a second explicit connection-formula precedent alongside the RSZ entry, which the corpus itself records as inapplicable to a single-slope module.",
+              "target": "folio/quantum-observable-universe/lean/QOU/MathlibExt/QBorelKernelLevel.lean",
+              "bean": "qou-hnuw"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-09-07T08:38:46Z",
+          "source_sha": "edb7c9b2b156"
+        },
+        "note": "Bib key backfilled from library block in references.ts (2026-09-03). Row rationale corrected 2026-09-07 by the q-difference/Stokes triage: it still described the document as an unregistered wrong join.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

@@ -1,8 +1,13 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/resur-and-mld-calc-d-sauzin-hal/manifest",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/resur-and-mld-calc-d-sauzin-hal",
   "@type": [
-    "folio:SourceDocument"
+    "cat-harness:SourceDocument"
   ],
   "title": "Resurgence and Mould Calculus",
   "contains": [
@@ -17,8 +22,11 @@
     "library/resur-and-mld-calc-d-sauzin-hal/sections/sec-008"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "resur-and-mld-calc-d-sauzin-hal",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "Resur_and_Mld_Calc_D_SAUZIN_HAL.pdf",
     "source_sha256": "b33f24cc76102f330b4a4584b109dd290564aab1ceb7cd619b6ebcdfb5bd3e6e",
     "pages": 16,

@@ -41,7 +41,7 @@ Public API:
 
 References:
     prop:lr-tensor-character-bridge
-        content/quantum-observable-universe/braids-and-knots/
+        folio/quantum-observable-universe/braids-and-knots/
         lr-tensor-character-bridge.md
     tools/hecke-engine/src/bin/hecke_tr_m_wenzl_lr.rs (Rust producer)
     tools/hecke-engine/src/bin/v12_atomic.rs (Rust 1-strand producer)

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/blocks/prose-sec-001",
   "kind": "prose",
-  "title": "(a)). We write S=S(z). The three numbers z, z' :=(z-l)/z and z\" : = l/(l-z)",
-  "pageStart": 2,
-  "pageEnd": 5,
-  "text": "../sections/sec-001-11-a-we-write-ssz-the-three-numbers-z-z-z-lz-and.md",
-  "derivedFrom": "library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/manifest",
-  "sourceDocument": "library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/manifest",
+  "title": "UdC",
+  "pageStart": 10,
+  "pageEnd": 13,
+  "text": "../sections/sec-001-f-udc.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma",
   "provenance": "ingested"
 }

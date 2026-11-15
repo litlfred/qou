@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0707.2340v2/blocks/prose-sec-014",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0707.2340v2/blocks/prose-sec-014",
   "kind": "prose",
-  "title": "Negative Results on Negative Dependence",
-  "pageStart": 41,
-  "pageEnd": 45,
-  "text": "../sections/sec-014-7-negative-results-on-negative-dependence.md",
-  "derivedFrom": "library/arxiv-0707.2340v2/manifest",
-  "sourceDocument": "library/arxiv-0707.2340v2/manifest",
+  "title": "Symmetric Homogenization via Gårding Hyperbolic Polynomials",
+  "pageStart": 21,
+  "pageEnd": 24,
+  "text": "../sections/sec-014-41-symmetric-homogenization-via-gårding-hyperbol.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0707.2340v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0707.2340v2",
   "provenance": "ingested"
 }

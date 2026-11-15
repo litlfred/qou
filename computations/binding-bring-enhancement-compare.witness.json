@@ -3,17 +3,17 @@
   "description": "Re-runs the T vs ³He f-factor comparison with pn_convention='bring_color_weighted' to test whether the substrate-pure δ = Δm/M_N at q_0 closes the 15% single-magic A=3 p/n asymmetry. Per the audit docs/audits/2026-05-31-binding-magic-A-wireup.md.",
   "computation": "closed_form_ratio(Z, N, q_0, pn_convention) compared across 'strict_averaged' and 'bring_color_weighted'; f required to close B_endo to B_AME under each.",
   "generator": "computations/binding_bring_enhancement_compare.py",
-  "timestamp_utc": "2026-08-23T08:55:18.832695+00:00",
+  "timestamp_utc": "2026-09-13T19:25:32.465166+00:00",
   "inputs": {
     "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
     "m_e_MeV": 0.51099895069,
     "delta_flavor_split_leading": 0.001375710807027096,
     "vol_borromean_8G": 7.327724753417752,
     "AME": {
-      "D": 2.224566,
-      "T": 8.481798,
+      "D": "2.22456619999999999999999999999999999999999999999999734095406",
+      "T": "8.48179620000000000000000000000000000000000000000000958520993",
       "³He": 7.718058,
-      "⁴He": 28.295674
+      "⁴He": "28.2956623999999999999999999999999999999999999999999915823563"
     }
   },
   "predictions": [
@@ -26,9 +26,9 @@
       "tau_M_ratio_delta_ppm": 141.4946610627719,
       "B_endo_strict_MeV": 1.8416829483856698,
       "B_endo_bring_MeV": 1.84141371563979,
-      "B_AME_MeV": 2.224566,
-      "f_required_strict": 1.2078984615402704,
-      "f_required_bring": 1.20807506814246
+      "B_AME_MeV": "2.22456619999999999999999999999999999999999999999999734095406",
+      "f_required_strict": "1.20789857013659550971270399720143909646990682706622071981434",
+      "f_required_bring": "1.20807517675466292986632010250392992494030524336561416955797"
     },
     {
       "atom": "T",
@@ -39,9 +39,9 @@
       "tau_M_ratio_delta_ppm": 141.4946610627719,
       "B_endo_strict_MeV": 2.976446199269664,
       "B_endo_bring_MeV": 2.9763375294653547,
-      "B_AME_MeV": 8.481798,
-      "f_required_strict": 2.8496392785736204,
-      "f_required_bring": 2.8497433224663875
+      "B_AME_MeV": "8.48179620000000000000000000000000000000000000000000958520993",
+      "f_required_strict": "2.84963867382558220964059427770072675665887824235462920384300",
+      "f_required_bring": "2.84974271769626934900367104530376751878920784161543408834938"
     },
     {
       "atom": "³He",
@@ -65,20 +65,20 @@
       "tau_M_ratio_delta_ppm": 141.4946610627719,
       "B_endo_strict_MeV": 3.2739070002204516,
       "B_endo_bring_MeV": 3.273840419531352,
-      "B_AME_MeV": 28.295674,
-      "f_required_strict": 8.642784904426023,
-      "f_required_bring": 8.642960674317322
+      "B_AME_MeV": "28.2956623999999999999999999999999999999999999999999915823563",
+      "f_required_strict": "8.64278136125879122037869896769853403881147588031370026272558",
+      "f_required_bring": "8.64295713107803310874129363091924037076116987932322206083979"
     }
   ],
   "f_spread_summary": "T vs ³He f-factor spread (single-magic A=3 p/n asymmetry): strict_averaged = 4.79%, bring_color_weighted = 4.79%. The Bring weighting at q_0 produces a substantially identical f-spread — the 180.9 ppm uniform correction cancels out of the T vs ³He ratio because both have exactly one pn arc. The 15%+ T vs ³He spread is at the arc-COMPOSITION layer (T = pn+nn vs ³He = pp+pn, distinct factors f_nn ≠ f_pp), NOT at the pn-arc weighting layer; Bring weighting cannot close it. The actual closure path is the operator-valued Wenzl branching with full per-arc operator extracts (canonical_tr_m_via_branching.py + A_operator_extract_at_level.py), not a scalar pn-weighting refinement.",
-  "scriptHash": "be71d69befd0",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "scriptFile": "binding_bring_enhancement_compare.py",
+  "scriptHash": "3f1f908f8749",
+  "scriptCommitSha": "70ae502091a8812b80e72e2a7b49aac0fc2b4e7a",
+  "commitSha": "3f197282d33cb26fbe265b84f7a401452302e936",
   "engine": "mpmath",
-  "computedAt": "2026-08-23T08:55:18.844923+00:00",
+  "computedAt": "2026-09-13T19:25:32.854541+00:00",
   "durationMs": 0,
   "engineVersion": "mpmath 1.4.1",
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736",
-  "scriptFile": "binding_bring_enhancement_compare.py"
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

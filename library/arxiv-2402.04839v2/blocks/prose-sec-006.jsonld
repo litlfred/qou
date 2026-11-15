@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2402.04839v2/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2402.04839v2/blocks/prose-sec-006",
   "kind": "prose",
   "title": "Constructions of unbounded topological volume",
   "pageStart": 7,
   "pageEnd": 8,
   "text": "../sections/sec-006-constructions-of-unbounded-topological-volume.md",
-  "derivedFrom": "library/arxiv-2402.04839v2/manifest",
-  "sourceDocument": "library/arxiv-2402.04839v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2402.04839v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2402.04839v2",
   "provenance": "ingested"
 }

@@ -49,7 +49,25 @@ from codata_constants import (
     M_E_MEV  # noqa: E402,
 )
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
+
+
+def _ser(o):
+    """Recursively replace mpf with its full-precision decimal string.
+
+    `json.dumps` cannot encode an mpf, and `write_text` receives its result,
+    so this producer died before writing anything -- leaving its witness at
+    whatever the last successful run left. The three AME_B_* imports above
+    (and M_E_MEV) are mpf as of `70ae502091a`, which is how it got here.
+    Bean `qou-lz8f`.
+    """
+    if isinstance(o, mp.mpf):
+        return fmt(o)
+    if isinstance(o, dict):
+        return {k: _ser(v) for k, v in o.items()}
+    if isinstance(o, list):
+        return [_ser(v) for v in o]
+    return o
 
 
 # AME2020 binding energies (MeV)
@@ -180,7 +198,7 @@ def main() -> int:
     from witness_base import WitnessBuilder  # noqa: E402
     WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="mpmath")
     witness["scriptFile"] = _os.path.basename(__file__)
-    out_path.write_text(json.dumps(witness, indent=2, ensure_ascii=False) + "\n")
+    out_path.write_text(json.dumps(_ser(witness), indent=2, ensure_ascii=False) + "\n")
     print(f"witness emitted: {out_path}")
     if args.print:
         print()

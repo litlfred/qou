@@ -62,6 +62,32 @@ Deliberately NOT matched, each verified against the corpus rather than assumed:
   convention-C marker is a camelCase name like `zPrimeC`, with no underscored
   `_C` and no `z`+`c` adjacency anywhere, is invisible here.
 
+* **A site whose deliberateness is in the GUARD, not in any name.** Measured
+  2026-10-10 on `main` `ac111c1814`, and it is the first observed instance of
+  the trade above being paid: `convention-c-triage.py` reports
+  `computations/qbeta/qbeta_ck_cache.py:140` as `deliberate=False`, bucket
+  "computations -- live producers". It is the canonical `c_k` producer, the file
+  AGENTS.md's own `c_k` banner names -- and the site is correct. Its target is a
+  bare ``z``::
+
+      # Convention C, reached ONLY via the explicit --historical-convention-C
+      # flag. C was excised by owner ruling (2026-08-09, re-affirmed 2026-08-15
+      # and 2026-08-26); this path exists solely so the committed witness stays
+      # machine-reproducible, and it is never the default.
+      z = sqrt(q) / (1 + q)
+
+  The deliberateness lives in a ``convention != "C"`` raise, a function
+  parameter and a CLI flag; the D path prints REFUSING TO RUN and exits 2, and
+  the whole site is adjudicated `completed` under bean ``qou-ckwt``. **No
+  name-keyed check can see any of that**, however the patterns are widened --
+  there is no identifier to widen onto.
+
+  Recorded rather than fixed, because the DIRECTION is the acceptable one. This
+  under-blocks: a false "actionable" costs a reader one site visit. The `re.I`
+  bug this module replaced over-blocked, and a false "deliberate" told an agent
+  to skip a real defect (bean ``qou-4bq3``). Entry 52 in
+  ``docs/audits/2026-08-15-detector-blindness-taxonomy.md``.
+
 Net effect, measured the same day: 1112 distinct names dropped, **2 gained**
 (`zc1`, `zC0`, both genuine, reached by the digit lookahead), and **0 genuine
 convention-C labels lost** -- the only dropped names that even look relevant,

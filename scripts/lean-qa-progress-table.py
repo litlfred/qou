@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Per-chapter Lean proof-progress + QA-sidecar stats table.
 
-Walks every chapter of content/quantum-observable-universe, classifies each
+Walks every chapter of folio/quantum-observable-universe, classifies each
 provable block's Lean formalization (sorry-free / has-sorry / trivial stub /
 missing), and aggregates QA results from the <block>.qa.json sidecars
 (latest entry per criterion; staleness via source-hash drift).
@@ -17,7 +17,7 @@ import hashlib, json, re, sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-ROOT = REPO / "content/quantum-observable-universe"
+ROOT = REPO / "folio/quantum-observable-universe"
 LEAN_ROOT = ROOT / "lean"
 
 PAPER_TS = ROOT / "quantum-observable-universe.ts"

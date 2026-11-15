@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-adelic-reeb-restricted-product",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:adelic-reeb-restricted-product",
+  "kind": "proof",
+  "title": "Proof of adelic reeb restricted product",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-adelic-reeb-restricted-product"
+  ],
+  "text": "adelic-reeb-restricted-product-proof.md",
+  "provenance": "authored"
+}

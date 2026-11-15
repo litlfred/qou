@@ -247,14 +247,14 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     already states. `precision-goals.md` scores Q_β as a *prediction*
     carrying 1248–1279 ppb, not as a calibration input, and
     `three-calibration-inputs-context` forbids "a second hadronic scale".
-    Per [`prop:three-calibration-inputs`](../../content/quantum-observable-universe/braids-and-knots/three-calibration-inputs.md)).
+    Per [`prop:three-calibration-inputs`](../../folio/quantum-observable-universe/braids-and-knots/three-calibration-inputs.md)).
 
     **Naming note (2026-05-17, this branch).** This binding-scale
     parameter is the **β-decay Q-value $Q_\\beta(n)$**, **NOT** the
     canonical energy scale $E_0 = m_e/(q_0(q_0-1)) \\approx 4.186$
     MeV (a different quantity, ~5× larger). Earlier revisions
     misnamed this parameter `E_0`; the value used here is correct
-    (the formula in [`prop:categorical-mass-markov`](../../content/quantum-observable-universe/braids-and-knots/categorical-mass-markov.md)
+    (the formula in [`prop:categorical-mass-markov`](../../folio/quantum-observable-universe/braids-and-knots/categorical-mass-markov.md)
     requires $Q_\\beta$-scaled dimensionless trace differences),
     only the name was wrong. The function now exposes the parameter
     with its correct identifier. **Dimensional note.** `Q_beta_n_mev`
@@ -376,11 +376,30 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
             # tau_p, tau_n via the Wenzl bridge at H_3 — same
             # entry point as the production atom-level code, with
             # Python fallback when pyhecke_native is unavailable.
+            #
+            # GROUPED intra-nucleon ordering, deliberately left as it was and
+            # now named rather than open-coded (bean `qou-t29k`). Two reasons,
+            # and the first is why switching would be churn rather than a fix:
+            #
+            #   1. THE TAUS CANCEL IN EVERYTHING THAT SURVIVED THE REFUTATION.
+            #      Below, `tr_free = tau_p^Z tau_n^N` and `tr_atom =
+            #      closed_form_tau_M(..., tau_p, tau_n)`, so the ratio is
+            #      `prod f_i(q)` — the bond factors b_pp / b_pn / b_nn are
+            #      independent of tau. The live law is the log-RATIO stated in
+            #      this module's own header, `B = E_0 log(tr_free/tr_atom)`,
+            #      implemented in `binding_log_free_energy.py`. It does not
+            #      move under the intra ordering, whichever frame these taus
+            #      are in. Only `Delta_tr = tr_free - tr_atom` scales with
+            #      them, and that is the REFUTED law this file is marked
+            #      "do not quote" for.
+            #   2. Re-framing a superseded provenance number makes it stop
+            #      matching the record it exists to preserve. The 1592x
+            #      residual spread in the header was measured against these
+            #      values; changing them would leave that measurement
+            #      describing numbers no longer in the file.
             def _nucleon_word(g0, g1):
-                return (
-                    [(c, d, 0) for c, d in g0]
-                    + [(c, d, 1) for c, d in g1]
-                )
+                from pyhecke.atom import grouped_word_from_chains
+                return grouped_word_from_chains(g0, g1)
             tau_p = tr_M_via_wenzl_bridge_mpfr(
                 _nucleon_word(_PROTON_G0, _PROTON_G1),
                 3, Q_50_DIGIT_STR, dps=50,

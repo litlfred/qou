@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ant-v14-n7-s/blocks/prose-sec-045",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ant-v14-n7-s/blocks/prose-sec-045",
   "kind": "prose",
-  "title": "1C1. The three frameworks of computation",
-  "pageStart": 55,
-  "pageEnd": 56,
-  "text": "../sections/sec-045-1c1-the-three-frameworks-of-computation.md",
-  "derivedFrom": "library/ant-v14-n7-s/manifest",
-  "sourceDocument": "library/ant-v14-n7-s/manifest",
+  "title": "1B2. Compatibility between the ultrametric structure and the usual algebraic operations",
+  "pageStart": 53,
+  "pageEnd": 53,
+  "text": "../sections/sec-045-1b2-compatibility-between-the-ultrametric-struct.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s",
   "provenance": "ingested"
 }

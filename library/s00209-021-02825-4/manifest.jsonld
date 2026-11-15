@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/s00209-021-02825-4/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Mathematische Zeitschrift (2022) 300:1359–1400 A representation theoretic explanation of the Borcea–Brändén characterization Jonathan Leake 1 © The Author(s) 2021",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s00209-021-02825-4",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "A representation theoretic explanation of the Borcea–Brändén characterization",
   "contains": [
     "library/s00209-021-02825-4/sections/sec-000",
     "library/s00209-021-02825-4/sections/sec-001",
@@ -36,8 +41,11 @@
     "library/s00209-021-02825-4/sections/sec-027"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "s00209-021-02825-4",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "s00209-021-02825-4.pdf",
     "source_sha256": "85ca5ec21f42a98839650384c0db181914ee4f2af49dd7282ff17681f7096a01",
     "pages": 42,

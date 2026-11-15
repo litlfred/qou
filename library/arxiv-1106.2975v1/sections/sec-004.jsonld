@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1106.2975v1/sections/sec-004",
   "@type": [
     "doco:Section"
   ],
-  "title": "Berezin density asymptotics for an exterior point",
-  "pageStart": 14,
-  "pageEnd": 21,
+  "title": "Reproducing kernel and Berezin density asymptotics for a boundary point",
+  "pageStart": 23,
+  "pageEnd": 30,
   "contains": [
     "library/arxiv-1106.2975v1/blocks/prose-sec-004"
   ],
-  "derivedFrom": "library/arxiv-1106.2975v1/manifest",
-  "sourceDocument": "library/arxiv-1106.2975v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1106.2975v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1106.2975v1",
   "provenance": "ingested"
 }

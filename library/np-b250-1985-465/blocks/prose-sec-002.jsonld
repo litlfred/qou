@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/np-b250-1985-465/blocks/prose-sec-002",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/np-b250-1985-465/blocks/prose-sec-002",
   "kind": "prose",
   "title": "O(x) tr \"\"~ 16rr 2 . (G~,,G ). (2.2)",
   "pageStart": 3,
   "pageEnd": 6,
   "text": "../sections/sec-002-1-ox-tr-16rr-2-gg-22.md",
-  "derivedFrom": "library/np-b250-1985-465/manifest",
-  "sourceDocument": "library/np-b250-1985-465/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/np-b250-1985-465",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/np-b250-1985-465",
   "provenance": "ingested"
 }

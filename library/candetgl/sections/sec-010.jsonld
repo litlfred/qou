@@ -1,19 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/candetgl/sections/sec-010",
   "@type": [
     "doco:Section"
   ],
-  "title": "Examples",
-  "pageStart": 12,
-  "pageEnd": 13,
+  "title": "STANDARD INFORMATION ABOUT THE BIOT–SAVART OPERATOR",
+  "pageStart": 8,
+  "pageEnd": 8,
   "contains": [
-    "library/candetgl/blocks/prose-sec-010",
-    "library/candetgl/blocks/ex-sec-010-01",
-    "library/candetgl/blocks/ex-sec-010-02",
-    "library/candetgl/blocks/ex-sec-010-03"
+    "library/candetgl/blocks/prose-sec-010"
   ],
-  "derivedFrom": "library/candetgl/manifest",
-  "sourceDocument": "library/candetgl/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/candetgl",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/candetgl",
   "provenance": "ingested"
 }

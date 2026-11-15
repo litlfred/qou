@@ -4,7 +4,7 @@
 Lean, culminating in Identity-I `Σ_{λ⊢n} (f^λ)² = n!` (i.e. `RSKBurnsideHolds n`)
 for **general `n`**, replacing the `RSK_substrate_axiom` that `RSKBridge` carries.
 
-All work lives in new `content/quantum-observable-universe/lean/QOU/Mathlib/Schensted*`
+All work lives in new `folio/quantum-observable-universe/lean/QOU/Mathlib/Schensted*`
 files (namespace `QOU.Mathlib.Schensted`), disjoint from the `RSKBurnsideTarget` /
 `RSKBridge` layer except for the `QOU.lean` import list.
 

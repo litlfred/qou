@@ -8,29 +8,14 @@ pages: 2-2
 source_pdf: 0910.5695v2.pdf
 source_sha256: 703c2a2f1f9380b1
 doc_brief: "ON BLOCKS OF DELIGNE’S CATEGORY Rep(St) — We describe blocks in Deligne’s category Re p(St)."
+text_source: latex
+latex_prose_ratio: 0.91
+latex_coverage_ratio: 0.968
 ---
-gory is anF -linear∗ categoryT along with anF -linear bifunctor⊗ :T×T →T and
-associativity, commutativity, and unit constraints satisfying the triangle, pentagon,
-and hexagon axioms (see [BK01]). Moreover, we require our tensor categories to
-be rigid with EndT (1) =F .
-A Young diagram is an inﬁnite tuple of nonnegative integers λ = (λ1,λ 2,... )
-withλi≥λi+1 for all i> 0 such that λk = 0 for some k> 0. As usual, we identify
-a Young diagram with an array of boxes:
-Let|λ| denote the number of boxes inλ. Given Young diagramsλ = (λ1,λ 2,... ) and
-λ′ = (λ′
-1,λ′
-2,... ) write λ⊂λ′ if λi≤λ′
-i for all i> 0. If |λ| =|λ′| we write λ≺λ′
-if∑m
-i=1λi≤∑m
-i=1λ′
-i for all m> 0. Occasionally it will be useful to give a Young
-diagram by its multiplicities. We will write ( lm1
-1 ,...,l mr
-r ) to denote the Young
-diagram with mi rows of length li for each i = 1,...,r . If F has characteristic
-zero and d is a nonnegative integer, the simple modules of the symmetric group
-Sd are labelled by Young diagrams λ with|λ| = d (see e.g. [FH91, 4.2]). Let
-Lλ denote the simple Sd-module corresponding to λ. For example, L(d,0,...) is the
-trivial representation of Sd. Finally, for arbitrary t∈ F , the t-completion of λ is
-λ(t) := (t−|λ|,λ 1,λ 2,... ).
+[]{#notation label="notation"} Let $F$ be a field. A *tensor category* is an $F$-linear[^1] category $\mathcal{T}$ along with an $F$-linear bifunctor $\otimes:\mathcal{T}\times\mathcal{T}\to\mathcal{T}$ and associativity, commutativity, and unit constraints satisfying the triangle, pentagon, and hexagon axioms (see [@MR1797619]). Moreover, we require our tensor categories to be rigid with $\text{End}_\mathcal{T}({\bf 1})=F$.
+
+A *Young diagram* is an infinite tuple of nonnegative integers $\lambda=(\lambda_1, \lambda_2,\ldots)$ with $\lambda_i\geq\lambda_{i+1}$ for all $i>0$ such that $\lambda_k=0$ for some $k>0$. As usual, we identify a Young diagram with an array of boxes: $$\includegraphics{diss74.pdf}$$ Let $|\lambda|$ denote the number of boxes in $\lambda$. Given Young diagrams $\lambda=(\lambda_1, \lambda_2,\ldots)$ and $\lambda'=(\lambda_1', \lambda_2',\ldots)$ write $\lambda\subset\lambda'$ if $\lambda_i\leq\lambda_i'$ for all $i>0$. If $|\lambda|=|\lambda'|$ we write $\lambda\prec\lambda'$ if $\sum_{i=1}^m\lambda_i\leq\sum_{i=1}^m\lambda_i'$ for all $m>0$. Occasionally it will be useful to give a Young diagram by its *multiplicities*. We will write $(l_1^{m_1},\ldots, l_r^{m_r})$ to denote the Young diagram with $m_i$ rows of length $l_i$ for each $i=1,\ldots, r$. If $F$ has characteristic zero and $d$ is a nonnegative integer, the simple modules of the symmetric group $S_d$ are labelled by Young diagrams $\lambda$ with $|\lambda|=d$ (see e.g. [@MR1153249 4.2]). Let $L_\lambda$ denote the simple $S_d$-module corresponding to $\lambda$. For example, $L_{(d,0,\ldots)}$ is the trivial representation of $S_d$. Finally, for arbitrary $t\in F$, the *$t$-completion of $\lambda$* is $\lambda(t):=(t-|\lambda|, \lambda_1, \lambda_2,\ldots)$.
+
+# The tensor category $\underline{\operatorname{Re}}\!\operatorname{p}(S_t)$
+
+[^1]: Notice that we do not require our tensor categories to be abelian, or even additive.

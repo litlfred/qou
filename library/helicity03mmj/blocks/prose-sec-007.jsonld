@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/helicity03mmj/blocks/prose-sec-007",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/helicity03mmj/blocks/prose-sec-007",
   "kind": "prose",
   "title": "Linking of a Vector Field with a Measured Foliation",
   "pageStart": 12,
   "pageEnd": 12,
   "text": "../sections/sec-007-4-linking-of-a-vector-field-with-a-measured-foli.md",
-  "derivedFrom": "library/helicity03mmj/manifest",
-  "sourceDocument": "library/helicity03mmj/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/helicity03mmj",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/helicity03mmj",
   "provenance": "ingested"
 }

@@ -1,0 +1,96 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "dubois-yamaguchi2012",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 201,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-0906.1500v4/0906.1500v4.pdf"
+        },
+        "id": "dubois-yamaguchi2012",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "This paper supplies a triangulation-independent computation of exactly the quantity whose triangulation-dependent computation the corpus REFUTED last week. computations/whitehead_c_sigma_torsion.py derives |tau_adjoint(L5a1)| from Neumann-Zagier ideal-triangulation data as |det J|, and carries a header note: 'REFUTED 2026-08-07 (PR #4691, bean qou-fl4t). |det J| as computed here is NOT a topological invariant: retriangulating the same manifold gives 8 distinct values for 5_2, 17 for 6_2, 6 for L5a1, 7 for L6a4.' Dubois-Yamaguchi compute the SAME adjoint (non-abelian) Reidemeister torsion by Fox free differential calculus on a Wirtinger presentation plus a derivative formula \u2014 a CW/cut-and-paste construction with no ideal triangulation anywhere, hence manifestly retriangulation-immune. And their two worked examples (\u00a74) are precisely QOU's two anchor manifolds: the figure-eight knot exterior (the |tau(4_1)| = sqrt(3) calibration the refuted script used) and the Whitehead link exterior (= L5a1, the c_sigma = 2^{-3/4} target). The corpus already carries the 1-loop = adjoint-torsion literature (garoufalidis-yoon2024, ohtsuki-takata, dimofte-garoufalidis) but nothing giving a computational route; this is that route, and it is unregistered.",
+          "keyResults": [
+            {
+              "locator": "Theorem 5, \u00a76 (eq. (15))",
+              "statement": "For a hyperbolic M with b torus boundary components satisfying (A_M), (A_phi), (A_rho), lim_{t->1} Delta^{phi (x) Ad.rho}_M(t) / prod_{l=1..b}(t^{a_l} - 1) = (-1)^b * T^lambda_M(rho), i.e. the derivative of the twisted Alexander invariant at t = 1 computes the non-abelian (adjoint) Reidemeister torsion for the multi-longitude lambda \u2014 for LINK exteriors, not only knot exteriors.",
+              "useForFolio": "A route to |tau_adjoint(L5a1)| that does not pass through an ideal triangulation, replacing the |det J| construction refuted in bean qou-fl4t. The multi-component (b > 1) generality is the part that matters: the earlier corpus work needed the Whitehead link (b = 2) and would need the Borromean rings (b = 3) next.",
+              "targets": [
+                "computations/whitehead_c_sigma_torsion.py",
+                "computations/probes/borromean_nz_adjoint_torsion.py",
+                "computations/one_loop_torsion.py"
+              ]
+            },
+            {
+              "locator": "\u00a74 'Examples of computations', p.12 onward",
+              "statement": "Explicit computation of the polynomial torsion for the figure-eight knot exterior and for the Whitehead link exterior, via Fox free differential calculus on Wirtinger presentations.",
+              "useForFolio": "Both QOU anchors done in the source. The 4_1 case is the non-circular calibration (known |tau| = sqrt(3)); the Whitehead case is the disputed value. Running the corpus's number against the paper's own computation is a direct, cheap adjudication of the 4*sqrt(2) vs 2*sqrt(2) discrepancy that motivated the per-cusp 2^{(c-1)/2} factor.",
+              "targets": [
+                "computations/whitehead_c_sigma_torsion.py",
+                "computations/whitehead_c_sigma_hiprec.py"
+              ]
+            },
+            {
+              "locator": "Example 3, \u00a73.1.2, p.8",
+              "statement": "For a link exterior E_L in S^3 whose components have pairwise linking number zero, the abelianization phi: pi_1 -> H_1 = Z^b satisfies assumption (A_phi).",
+              "useForFolio": "The applicability check for the next step: the Borromean rings have all pairwise linking numbers zero, so the framework's hypothesis is met there as well as for the Whitehead link. That is what makes borromean_nz_adjoint_torsion.py extendable by this route rather than blocked.",
+              "targets": [
+                "computations/probes/borromean_nz_adjoint_torsion.py"
+              ]
+            },
+            {
+              "locator": "Theorem 14 + eq. (32), \u00a78, p.23",
+              "statement": "Duality with sign: Delta^{phi (x) Ad.rho}_{E_L}(t^{-1}) = (-1)^b * Delta^{phi (x) Ad.rho}_{E_L}(t) for a link exterior with b boundary components (sign term epsilon = (-1)^{b(b-1)/2} computed in Prop. 16).",
+              "useForFolio": "A proved bar-involution (t -> t^{-1}) parity law for the torsion polynomial, with the parity set by the component count b. QOU's bar-even/bar-odd bookkeeping is currently asserted per-object; this is an external, proved instance of exactly that symmetry on an object the corpus already computes, and it is a falsifiable constraint on any candidate torsion polynomial the corpus produces.",
+              "targets": [
+                "computations/whitehead_c_sigma_torsion.py",
+                "folio/quantum-observable-universe/lean/QOU/OneLoopEdgeLattice.lean"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Orphan, and the only computational-method source for the adjoint torsion the corpus's 1-loop thread depends on. Suggested id dubois-yamaguchi2012 (Ann. Inst. Fourier / arXiv:0906.1500).",
+              "target": "folio/schema/references.ts",
+              "bean": "qou-gam1"
+            },
+            {
+              "action": "compute-check",
+              "rationale": "Recompute |tau_adjoint| for 4_1 and for the Whitehead link L5a1 by the Theorem-5 derivative formula on the Wirtinger presentation, and compare against the corpus values sqrt(3) and 2^{5/2}. This is the highest-value item in the slice: it adjudicates a refuted computation (bean qou-fl4t) with a method that is triangulation-independent by construction, and it either restores or kills the c_sigma = 2^{-3/4} derivation.",
+              "target": "computations/whitehead_c_sigma_torsion.py",
+              "bean": "qou-1el8"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "Record why the refutation in qou-fl4t is a defect of the |det J| route and not of the torsion itself: the adjoint torsion is a well-defined invariant with an independent CW-level computation, so the negative is scope-(a) (this construction, as computed, is not invariant) and not scope-(b) (the quantity does not exist). Prevents the refutation from over-narrowing the search.",
+              "target": "folio/quantum-observable-universe/lean/QOU/OneLoopEdgeLattice.lean",
+              "bean": "qou-l5kl"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T16:12:29.859Z",
+          "source_sha": "9a586f6d134c"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

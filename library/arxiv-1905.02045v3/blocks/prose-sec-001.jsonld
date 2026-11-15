@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1905.02045v3/blocks/prose-sec-001",
+  "kind": "prose",
+  "title": "Outline of the paper and sketch of the proofs",
+  "pageStart": 6,
+  "pageEnd": 7,
+  "text": "../sections/sec-001-11-outline-of-the-paper-and-sketch-of-the-proofs.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1905.02045v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1905.02045v3",
+  "provenance": "ingested"
+}

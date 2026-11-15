@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Does the Magnus Ω₂ sign conclusion depend on WHICH partition-weight family
-is used to aggregate it?  Measured: **yes at A=3**, no at A=2, undetermined at
-A=4 until its source witness is regenerated.
+is used to aggregate it?  Measured: **yes at A=3 and A=4**, no at A=2. All
+three sources are now post-ruling, so nothing is excluded from the gate.
 
 WHY THIS EXISTS (bean qou-za3q)
 -------------------------------
@@ -39,7 +39,20 @@ at A=3 it does:
     atom      source        P_plancherel   P_wenzl     agree?
     deuteron  canonical         -15.095     -6.921     yes
     triton    canonical          +2.470    -13.931     NO
-    ⁴He       pre-ruling        -57.803   -100.827     undetermined
+    ⁴He       canonical         +34.126    -20.466     NO
+
+Read down the sign columns rather than across the rows. Plancherel gives
+-, +, + over A = 2, 3, 4 — one sign change, between the deuteron and the
+triton. Wenzl gives -, -, - — no sign change anywhere. The programme's target
+is a sign change in A, so the two measures do not merely disagree on a number:
+they disagree on whether the target phenomenon is present.
+
+That is a finding about the measures, NOT a reason to prefer Plancherel. It
+yields the wanted sign, and picking it for that reason is fitting. Note also
+that Plancherel's tr(1) is 11.139 / 184.233 / 6751.541 at n = 6, 9, 12 against
+Wenzl's exact 1.0 — it is not a normalised trace and its scale drifts ~600x
+from A=2 to A=4, which is precisely what makes a cross-A statement under it
+hard to read.
 
 METHOD
 ------
@@ -50,6 +63,13 @@ exact (the traces are shared, not recomputed) and cheap.
 
 NOT CLAIMED: that either measure is the right pairing for a Magnus Ω₂ sign
 question. Only which atoms the published sign distinguishes them on.
+
+WHAT IT ASSERTS. Not the hypothesis — the preconditions and the measured
+outcome: every source post-ruling, all three atoms actually read, and the
+number of atoms on which the weight family flips the sign locked at its
+measured 2. Asserting the hypothesis (`sign_robust == 1`) is what the first
+version did, and once the answer came back "not robust" that left a witness
+that could never pass. See the comment above the assertions.
 
 A NOTE ON THE FIRST VERSION OF THIS FILE. It reported robustness on all three
 atoms, because it re-weighted each probe's committed traces without checking
@@ -181,20 +201,72 @@ def main() -> int:
         "its sign."
     )
     wb.add_caveat(
-        "Establishes only that the published SIGN does not distinguish the two "
-        "measures. It does NOT establish that either is the correct pairing for "
-        "a Magnus Omega2 question, and the MAGNITUDES differ substantially — so "
-        "any conclusion drawn from |P_total| rather than its sign is still "
-        "weight-family dependent."
+        "The published SIGN DOES distinguish the two measures, at A=3 and A=4 "
+        "both. Plancherel runs -,+,+ over A=2,3,4 (one sign change, between "
+        "deuteron and triton); Wenzl runs -,-,- (no sign change anywhere). So "
+        "the A-dependent sign change exists only under the measure the probes "
+        "aggregate with, not under the production Markov weight. This caveat "
+        "previously read 'the published SIGN does not distinguish the two "
+        "measures' — true when only the deuteron had a canonical source, and "
+        "contradicted by this witness's own per_atom rows once triton and "
+        "helium-4 did."
+    )
+    wb.add_caveat(
+        "Does NOT establish that either measure is the correct pairing for a "
+        "Magnus Omega2 question — that is bean qou-za3q decision 1, still "
+        "open. It establishes that the choice is no longer cosmetic: it "
+        "determines whether the programme's target sign change is exhibited at "
+        "all. Choosing the measure that yields the wanted sign would be "
+        "fitting (AGENTS.md: selection against the target), so the honest "
+        "reading is that under the production weight the sign change is NOT "
+        "exhibited in A=2,3,4. Magnitudes remain weight-family dependent and "
+        "non-monotone."
+    )
+    # WHAT THIS PROBE ASSERTS, AND WHY IT CHANGED.
+    #
+    # It used to assert `sign_robust_to_weight_family == 1` — the HYPOTHESIS it
+    # exists to test. Once the measurement came back "not robust at A=3 or A=4"
+    # that assertion could never pass on correct inputs, so the witness carried
+    # `allPassed: false` permanently while the file's own docstring recorded
+    # non-robustness as the finding. A gate that fails identically whether the
+    # science is fine or the inputs are stale carries no signal, and a standing
+    # red is a gate someone eventually silences.
+    #
+    # It now asserts the two things that must actually hold:
+    #   1. every source witness is post-ruling — a real precondition, and the
+    #      exact failure that produced the wrong answer the first time round;
+    #   2. the MEASURED outcome, locked at its measured value, so that a change
+    #      in it goes red and gets read rather than passing quietly.
+    #
+    # This is not a weakened gate: (2) is strictly more sensitive than the old
+    # assertion, which could not distinguish 2 disagreeing atoms from 3.
+    n_stale = sum(1 for r in rows if r["source_pre_ruling"])
+    n_disagree = sum(1 for r in rows
+                     if not r["source_pre_ruling"] and not r["sign_robust"])
+    wb.add_assertion(
+        name="all_sources_post_ruling",
+        computed=str(n_stale),
+        expected="0",
+    )
+    # A missing source witness `continue`s above and contributes no row, so
+    # without this a run that lost an atom could still show 2 disagreements and
+    # look clean. Count what was actually read.
+    wb.add_assertion(
+        name="atoms_measured",
+        computed=str(len(rows)),
+        expected=str(len(WITNESSES)),
     )
     wb.add_assertion(
-        name="sign_robust_to_weight_family",
-        computed=str(int(all_robust)),
-        expected="1",
+        name="atoms_where_weight_family_flips_the_sign",
+        computed=str(n_disagree),
+        expected="2",  # measured: triton (A=3) and helium-4 (A=4); not deuteron
     )
-    print(f"\n  sign robust on all atoms: {all_robust}")
+    print(f"\n  sign robust on all atoms: {all_robust}"
+          f"   (atoms where the weight family flips the sign: {n_disagree}; "
+          f"stale sources: {n_stale})")
     print(f"  Witness: {wb.save()}")
-    return 0 if all_robust else 1
+    return 0 if (n_stale == 0 and n_disagree == 2
+                 and len(rows) == len(WITNESSES)) else 1
 
 
 if __name__ == "__main__":

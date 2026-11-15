@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-helicity-conservation",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:helicity-conservation",
+  "kind": "proposition",
+  "title": "Categorical helicity conservation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-braid-fluid",
+    "papers/quantum-observable-universe/blocks/prop-discrete-vortex-spectrum"
+  ],
+  "tags": [
+    "helicity",
+    "topological-invariant",
+    "conservation",
+    "fluid-dynamics",
+    "knot"
+  ],
+  "leanRef": "qou:QOU.FluidDynamics.helicity_conservation",
+  "text": "helicity-conservation.md",
+  "leanSource": "helicity-conservation.lean",
+  "provenance": "authored"
+}

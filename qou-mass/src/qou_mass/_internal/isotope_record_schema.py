@@ -181,9 +181,58 @@ class IsotopeRecord:
 
 # ─── Knot-operator primitives (the catalogue) ─────────────────────────
 
-CANONICAL_INTRA_PROTON = "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)"
-CANONICAL_INTRA_NEUTRON = "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)"
+# The intra labels describe the PRODUCTION nucleon word, read letter by letter
+# off `pyhecke.atom.nucleon_word_letters(quarks, intra_order="borromean")`
+# (which is what `mass_at_3A_proper.atom_braid_word_3A` builds), with
+# ⟨σ⟩ := (σ + σ⁻¹)/2 = σ − (h/2)·𝟙 the averaged (mixed-flavour) letter:
+#
+#   proton  (uud): (σ₀σ₁⁻¹)³ · σ₀ ⟨σ₀⟩ ⟨σ₁⟩ · σ₀σ₀
+#   neutron (udd): (σ₀σ₁⁻¹)³ · ⟨σ₀⟩ ⟨σ₀⟩ σ₁⁻¹ · σ₀σ₀
+#
+# i.e. Borromean core (6) + quark-pair block (3) + gluon pair (2) = 11 letters,
+# the element `nuc11_interleaved` that the L2 dashboard scores.
+#
+# CORRECTED 2026-10-11 (owner request, word-provenance audit). These read
+# "σ_0 σ_0 σ_0 (trefoil at 3-strand block)" / "σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror
+# trefoil)" -- a label-only THIRD nucleon model that matched neither builder
+# (`nucleon_word_letters`, 11 letters; `build_nucleon_nf`, 9). The labels were
+# never consumed as data: `build_knot_operator_catalogue` attaches them as
+# `canonical_form_label` strings only. Witnesses that STORE the old strings
+# (low-isotope-mass-table, canonical-mass-table-extended, and the qou-mass
+# data copy of the latter) were deliberately NOT refreshed here; they pick up
+# the corrected text the next time their producers run.
+#
+# Provenance of the letters (not derived from the categorical action):
+#   * core (σ₀σ₁⁻¹)³ -- defined (`def:categorical-proton`); selected among
+#     gamma-gamma words only conditionally (provisional reading 3, empty word
+#     excluded; GammaGammaFrobeniusSelection.frobeniusSelected_borromean).
+#   * quark block -- a CHOSEN template (uu→σ, dd→σ⁻¹, ud→avg; pair→generator
+#     assignment is not a corpus statement).
+#   * gluon σ₀σ₀ -- CHOSEN; its "ILP-derived" citation is dead and it fails
+#     reading 3 (bean qou-99qc).
+CANONICAL_INTRA_PROTON = (
+    "proton intra (uud, 11 letters): (σ_0 σ_1⁻¹)³ · σ_0 ⟨σ_0⟩ ⟨σ_1⟩ · σ_0 σ_0 "
+    "(Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)"
+)
+CANONICAL_INTRA_NEUTRON = (
+    "neutron intra (udd, 11 letters): (σ_0 σ_1⁻¹)³ · ⟨σ_0⟩ ⟨σ_0⟩ σ_1⁻¹ · σ_0 σ_0 "
+    "(Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)"
+)
 
+# PROVENANCE of the interface labels below (added 2026-10-11, values NOT
+# changed -- that is an owner decision):
+#   * pp = σ (d = 0) and nn = σ⁻¹ (d = −h) are ASSERTED, with no `prop:` block
+#     (docs/coordination/2026-05-24-low-isotope-mass-anatomy-ledger.md item 5).
+#     Sorry-free Lean argues AGAINST them:
+#     `QOU.QBeta.InterfaceScalar.charge_independence_iff` (z+0 = z−h ↔ h = 0,
+#     so the σ/σ⁻¹ split breaks charge independence at q ≠ 1) and
+#     `content_keyed_interface_refuted` (an interface keyed on nucleon content
+#     gives the ³S₁ deuteron and the ¹S₀ pn virtual state the same energy;
+#     bean qou-kj4v).
+#   * pn: the label says −h/2 (averaged), but production
+#     (`mass_at_3A_proper.atom_braid_word_3A`, bring_color_weighted) uses
+#     d = −h·(1/2 − δ/4) with δ = flavor_split_leading(q), and that δ is
+#     FITTED to Δm_np = m_n − m_p (bean qou-vls6); the /4 has no derivation.
 CANONICAL_INTERFACE_PP = "pp coupling: σ at gen 3k+2 (positive)"
 CANONICAL_INTERFACE_NN = "nn coupling: σ + (-h)·𝟙 at gen 3k+2"
 CANONICAL_INTERFACE_PN = "pn coupling: σ + (-h/2)·𝟙 at gen 3k+2 (averaged)"
@@ -192,7 +241,7 @@ CANONICAL_INTERFACE_PN = "pn coupling: σ + (-h/2)·𝟙 at gen 3k+2 (averaged)"
 # the *uniform-flavor* channel assignment (one Hecke generator per
 # inter-nucleon arc, indexed only by the pair of nucleon types).  Per
 # `conj:inter-nucleon-channel-color-tube`
-# (`content/quantum-observable-universe/braids-and-knots/`),
+# (`folio/quantum-observable-universe/braids-and-knots/`),
 # this is the **flavor-only projection** of a categorically-refined
 # Bring color-tube weighted assignment that averages over the 9 color-
 # pair couplings (3 colors per nucleon × 3 colors per nucleon) on each

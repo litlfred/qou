@@ -8,38 +8,12 @@ pages: 74-75
 source_pdf: 2111.06645v3.pdf
 source_sha256: 2a4826bd1c2f0823
 doc_brief: "Knots, Perturbative Series and Quantum Modularity — We introduce an invariant of a hyperbolic knot which is a map α7→ Φα(h) from Q/Z to matrices with entries in Q[[h]] and with rows and columns"
+text_source: latex
+latex_prose_ratio: 0.973
+latex_coverage_ratio: 0.967
 ---
-One of the main numerical aspects concerns smoothed optimal truncation, which was originally
-an appendix to an earlier draft of this paper but has now been relegated to a planned independent
-publication [45] because the methods are applicable to many problems outside the realm of
-quantum topology. This is a method for the numerical summation of factorially divergent series
-when only a finite number of coefficients are known and we do not have information about the
-possible analytic continuation of the Borel transform, which is the method usually used.
-We already explained in Section 4.1 the naive optimal truncation, Φ( h)opt of a factorially
-divergent series Φ(h) = P∞
-n=0Anhn, defined simply as PN
-n=0Anhn where N is the approxi-
-mate value of n at which the term Anhn takes on its minimum absolute value, given explicitly
-by N =|B/h| if An grows like n!B−n. The idea of smoothed optimal truncation is very sim-
-ply to replace Φ(h)opt by a “smoothed” version Φ(h)smooth which is defined as Φ(h)opt +εN(h)
-where the exponentially small correction term εN(h) depends on the cutoff parameter N in such
-a way that Φ(h)smooth does not jump when one changes N by 1. This means simply that we
-requireεN−1(h)−εN(h) =Anhn. Of course, if we knew how to solve this equation exactly, then
-the function Φ(h)smooth would be completely independent of N and would give us a canonical
-way to lift the power series Φ(h) to an actual function. This is not the case, but ifAn has a known
-asymptotic expansion, which is true for all of the series in this paper (see Section 3.4) then we
-can define εN(h) asymptotically as the product of e−N and a power series in 1/n chosen in such
-a way that the desired equality εN−1(h)−εN(h) = Anhn is true asymptotically to all orders
-in 1/n. The details of how to do this if An has the asymptotic form B−nP∞
-ℓ=0cℓΓ(n +κ−ℓ) for
-some real number κ and some numerical coefficients cℓ (as in equations (3.16), (3.17) or (3.18))
-are given in [45] and will not be repeated here. The only thing that is of importance to us here
-is that the result of the smoothing gives an evaluation of Φ(h) that is independent of all choices
-(and hence gives a predicted “right” definition of the corresponding function) up to an error
-that is exponentially small with a better exponent than that given by naive optimal truncation.
-Specifically, the new error is e−N(1+|C|)−N rather than simply e−N as before if, as is always the
-case for us, the coefficients cℓ themselves grow factorially like ℓ!C−ℓ. Examples of this dramatic
-numerical improvement were given in Section 4.3, where in one case the error in evaluating
-Knots, Perturbative Series and Quantum Modularity 75
-a series Φ(h) was of the order of 10−29 using naive optimal truncation but of the order of 10−56
-using smoothed optimal truncation.
+[]{#sub.optimal label="sub.optimal"}
+
+One of the main numerical aspects concerns smoothed optimal truncation, which was originally an appendix to an earlier draft of this paper but has now been relegated to a planned independent publication [@GZ:optimal] because the methods are applicable to many problems outside the realm of quantum topology. This is a method for the numerical summation of factorially divergent series when only a finite number of coefficients are known and we do not have information about the possible analytic continuation of the Borel transform, which is the method usually used.
+
+We already explained in Section [\[sub.4.1\]](#sub.4.1){reference-type="ref" reference="sub.4.1"} the naive optimal truncation, $\Phi(h)^{\mathrm{opt}}$ of a factorially divergent series $\Phi(h)=\sum_{n=0}^\infty A_nh^n$, defined simply as $\sum_{n=0}^NA_nh^n$ where $N$ is the approximate value of $n$ at which the term $A_nh^n$ takes on its minimum absolute value, given explicitly by ${N=|B/h|}$ if $A_n$ grows like $n! B^{-n}$. The idea of smoothed optimal truncation is very simply to replace $\Phi(h)^{\mathrm{opt}}$ by a "smoothed" version $\Phi(h)^{\mathrm{smooth}}$ which is defined as $\Phi(h)^{\mathrm{opt}}+\varepsilon_N(h)$ where the exponentially small correction term $\varepsilon_N(h)$ depends on the cutoff parameter $N$ in such a way that $\Phi(h)^{\mathrm{smooth}}$ does not jump when one changes $N$ by 1. This means simply that we require ${\varepsilon_{N-1}(h)-\varepsilon_N(h)=A_nh^n}$. Of course, if we knew how to solve this equation exactly, then the function $\Phi(h)^{\mathrm{smooth}}$ would be completely independent of $N$ and would give us a canonical way to lift the power series $\Phi(h)$ to an actual function. This is not the case, but if $A_n$ has a known asymptotic expansion, which is true for all of the series in this paper (see Section [\[sub.CoeffA\]](#sub.CoeffA){reference-type="ref" reference="sub.CoeffA"}) then we can define $\varepsilon_N(h)$ asymptotically as the product of ${\rm e}^{-N}$ and a power series in $1/n$ chosen in such a way that the desired equality $\varepsilon_{N-1}(h)-\varepsilon_N(h)=A_nh^n$ is true asymptotically to all orders in $1/n$. The details of how to do this if $A_n$ has the asymptotic form $B^{-n} \sum_{\ell=0}^\infty c_\ell \Gamma(n+\kappa-\ell)$ for some real number $\kappa$ and some numerical coefficients $c_\ell$ (as in equations [\[AnFirst\]](#AnFirst){reference-type="eqref" reference="AnFirst"}, [\[BnFirst\]](#BnFirst){reference-type="eqref" reference="BnFirst"} or [\[CoeffAsymp\]](#CoeffAsymp){reference-type="eqref" reference="CoeffAsymp"}) are given in [@GZ:optimal] and will not be repeated here. The only thing that is of importance to us here is that the result of the smoothing gives an evaluation of $\Phi(h)$ that is independent of all choices (and hence gives a predicted "right" definition of the corresponding function) up to an error that is exponentially small with a better exponent than that given by naive optimal truncation. Specifically, the new error is ${\rm e}^{-N} (1+|C|)^{-N}$ rather than simply ${\rm e}^{-N}$ as before if, as is always the case for us, the coefficients $c_\ell$ themselves grow factorially like $\ell! C^{-\ell}$. Examples of this dramatic numerical improvement were given in Section [\[sub.4.3\]](#sub.4.3){reference-type="ref" reference="sub.4.3"}, where in one case the error in evaluating a series $\Phi(h)$ was of the order of $10^{-29}$ using naive optimal truncation but of the order of $10^{-56}$ using smoothed optimal truncation.

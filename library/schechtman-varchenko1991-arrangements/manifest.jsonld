@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/schechtman-varchenko1991-arrangements",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "schechtman-varchenko1991-arrangements",
+  "contains": [
+    "library/schechtman-varchenko1991-arrangements/sections/sec-front-matter",
+    "library/schechtman-varchenko1991-arrangements/sections/sec-000",
+    "library/schechtman-varchenko1991-arrangements/sections/sec-001",
+    "library/schechtman-varchenko1991-arrangements/sections/sec-002",
+    "library/schechtman-varchenko1991-arrangements/sections/sec-003",
+    "library/schechtman-varchenko1991-arrangements/sections/sec-004",
+    "library/schechtman-varchenko1991-arrangements/sections/sec-005",
+    "library/schechtman-varchenko1991-arrangements/sections/sec-006",
+    "library/schechtman-varchenko1991-arrangements/sections/sec-007",
+    "library/schechtman-varchenko1991-arrangements/sections/sec-008"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "meta": {
+    "doc_id": "schechtman-varchenko1991-arrangements",
+    "title_source": "slug",
+    "source_file": "schechtman-varchenko1991-arrangements.pdf",
+    "source_sha256": "0100fd32438740f03e9fb686d8b3687161e9bbe93b8a2ed9a540d869d6d00970",
+    "pages": 56,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

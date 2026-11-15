@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2608.25107v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2608.25107v1",
+  "provenance": "ingested",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2608.25107&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2608.25107v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2608.25107v1",
+    "content_type": "application/gzip",
+    "sha256": "8c9d5384b386ff5737f4ea658ac7428d8f8c0c441407ca4f9e0955c1752b673d",
+    "bytes": 698652,
+    "fetched": "2026-10-10T15:23:22+00:00",
+    "files": [
+      {
+        "path": "source/files/biblio.bib",
+        "role": "bib",
+        "sha256": "7375abbe86ba3d2acc8baa5edff73dac904af5c9e03690de5c14ebf173b367b6",
+        "bytes": 95596
+      },
+      {
+        "path": "source/files/main.tex",
+        "role": "tex",
+        "sha256": "cc3c61c241c200db0cbb5fae7244a2280e9475c0f5290e07cff7d16c66d5816c",
+        "bytes": 91522
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

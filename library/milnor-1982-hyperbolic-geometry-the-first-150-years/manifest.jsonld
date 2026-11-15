@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/milnor-1982-hyperbolic-geometry-the-first-150-years/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Hyperbolic geometry: The first 150 years",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/milnor-1982-hyperbolic-geometry-the-first-150-years",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "milnor-1982-hyperbolic-geometry-the-first-150-years",
   "contains": [
     "library/milnor-1982-hyperbolic-geometry-the-first-150-years/sections/sec-000",
     "library/milnor-1982-hyperbolic-geometry-the-first-150-years/sections/sec-001",
@@ -17,8 +22,10 @@
     "library/milnor-1982-hyperbolic-geometry-the-first-150-years/sections/sec-008"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "milnor-1982-hyperbolic-geometry-the-first-150-years",
+    "title_source": "slug",
     "source_file": "milnor-1982-hyperbolic-geometry-the-first-150-years.pdf",
     "source_sha256": "d444d7a61af54c7c3be374149917560103b614bd2afa02c6d0cb54fb06c4063f",
     "pages": 16,

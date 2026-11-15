@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-9805023v1/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-9805023v1/blocks/prose-sec-004",
   "kind": "prose",
-  "title": "(−c, −q/c; q)∞",
-  "pageStart": 10,
-  "pageEnd": 11,
-  "text": "../sections/sec-004-2-c-qc-q.md",
-  "derivedFrom": "library/arxiv-math-9805023v1/manifest",
-  "sourceDocument": "library/arxiv-math-9805023v1/manifest",
+  "title": "Direct proof of the orthogonality relations of Theorem 4.1.",
+  "pageStart": 11,
+  "pageEnd": 13,
+  "text": "../sections/sec-004-5-direct-proof-of-the-orthogonality-relations-of.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9805023v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9805023v1",
   "provenance": "ingested"
 }

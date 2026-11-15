@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1312.6411v4/blocks/prose-sec-005",
+  "kind": "prose",
+  "title": "Perfect DG Modules",
+  "pageStart": 24,
+  "pageEnd": 30,
+  "text": "../sections/sec-005-5-perfect-dg-modules.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1312.6411v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1312.6411v4",
+  "provenance": "ingested"
+}

@@ -8,10 +8,8 @@ pages: 4-4
 source_pdf: 1012.1039v2.pdf
 source_sha256: acb2575050db419d
 doc_brief: "SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS — Let M be a hyperbolic n–manifold whose cusps have torus cross- sections."
+text_source: latex
+latex_prose_ratio: 0.919
+latex_coverage_ratio: 1.0
 ---
-manifolds and pseudomanifolds, and apply work of Mineyev–Yaman to obtain the
-lower bound in the main theorem. Subsection 2.2 and Appendix B are te chnical
-sections concerned with replacing singular chains by “symmetric” sin gular chains.
-The upper bound of the main theorem is proved in Section 3. In Appen dix A
-we give a proof of the proportionality of volume and relative simplicial v olume for
-cusped hyperbolic manifolds.
+In Subsection [\[ss:norms\]](#ss:norms){reference-type="ref" reference="ss:norms"} we recall the definition of simplicial volume for manifolds and pseudomanifolds, and apply work of Mineyev--Yaman to obtain the lower bound in the main theorem. Subsection [\[ss:symm\]](#ss:symm){reference-type="ref" reference="ss:symm"} and Appendix [\[a:symm\]](#a:symm){reference-type="ref" reference="a:symm"} are technical sections concerned with replacing singular chains by "symmetric" singular chains. The upper bound of the main theorem is proved in Section [\[s:main\]](#s:main){reference-type="ref" reference="s:main"}. In Appendix [\[s:prop\]](#s:prop){reference-type="ref" reference="s:prop"} we give a proof of the proportionality of volume and relative simplicial volume for cusped hyperbolic manifolds.

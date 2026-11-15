@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/afst-2007-6-16-3-665-0/blocks/prose-sec-010",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/afst-2007-6-16-3-665-0/blocks/prose-sec-010",
   "kind": "prose",
-  "title": "(Canonical representatives forcoker(Φ −1,M",
-  "pageStart": 20,
-  "pageEnd": 21,
-  "text": "../sections/sec-010-26-canonical-representatives-forcokerφ-1m.md",
-  "derivedFrom": "library/afst-2007-6-16-3-665-0/manifest",
-  "sourceDocument": "library/afst-2007-6-16-3-665-0/manifest",
+  "title": "The Galois group of a q-diﬀerence module",
+  "pageStart": 30,
+  "pageEnd": 30,
+  "text": "../sections/sec-010-5-the-galois-group-of-a-q-diﬀerence-module.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/afst-2007-6-16-3-665-0",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/afst-2007-6-16-3-665-0",
   "provenance": "ingested"
 }

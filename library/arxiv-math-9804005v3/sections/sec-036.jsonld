@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9804005v3/sections/sec-036",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+  "pageStart": 22,
+  "pageEnd": 23,
+  "contains": [
+    "library/arxiv-math-9804005v3/blocks/prose-sec-036",
+    "library/arxiv-math-9804005v3/blocks/thm-sec-036-01",
+    "library/arxiv-math-9804005v3/blocks/prop-sec-036-02",
+    "library/arxiv-math-9804005v3/blocks/remark-sec-036-03",
+    "library/arxiv-math-9804005v3/blocks/thm-sec-036-04",
+    "library/arxiv-math-9804005v3/blocks/cor-sec-036-05",
+    "library/arxiv-math-9804005v3/blocks/cor-sec-036-06",
+    "library/arxiv-math-9804005v3/blocks/thm-sec-036-07",
+    "library/arxiv-math-9804005v3/blocks/lem-sec-036-08"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9804005v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9804005v3",
+  "provenance": "ingested"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "pr1899",
+  "type": "webpage",
+  "title": "Mass-side kernel §4 formalize-first gate (q=1 anchor hunt: Σ f^λ/4 = 5/2)",
+  "author": [
+    {
+      "literal": "QOU project (litlfred/qou)"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2026
+      ]
+    ]
+  },
+  "URL": "https://github.com/litlfred/qou/pull/1899",
+  "note": "Internal QOU pull request #1899 (mass-side q=1 anchor hunt: Σ f^λ/4 = 5/2). Mass-side analogue of the §4 formalize-first invariant gates. Cited by mass-side-kernel-formalize-first-gates.lean."
+}

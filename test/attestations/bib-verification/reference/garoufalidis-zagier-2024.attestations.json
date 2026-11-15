@@ -1,0 +1,59 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "garoufalidis-zagier-2024",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 284,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2111.06645v3/2111.06645v3.pdf"
+        },
+        "id": "garoufalidis-zagier-2024",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "JOIN CONFIRMED from front matter: the document self-identifies as arXiv:2111.06645v3 with the journal volume and article number recorded on the registered entry, and its title and author pair match. LOAD-BEARING AND VERIFIED AGAINST THE SOURCE at the tightest locator in this slice. lean/QOU/QBeta/GZWeightSelection.lean:32 and lean/QOU/QBeta/GZWeightGeneral.lean:31 both cite 'eq. 3.7' and define kappa(sigma_0) = 3/2, kappa(non-trivial) = 0. I read eq. (3.7) in the source: the weight kappa(sigma) of a representation sigma in P_K is defined to be 3/2 if sigma = sigma_0 and 0 otherwise. That is verbatim what the Lean encodes, and the surrounding eq. (3.6) is the generalized quantum modularity conjecture whose automorphy factor (cX+d)^(-kappa(sigma)) is what makes kappa a weight \u2014 so GZWeightGeneral's knot-independent kappaGZ is a faithful generalisation, since (3.7) is stated for all sigma in P_K and not only for 4_1. The two .md citations also check out: mass-endomorphism/channel-rotation-askey-lit.md:30 claims the state integral factors into a q-series and a q-tilde series with leading asymptotics tracing Vol + i*CS, and the source supports both halves (restrictions to C minus R factorize bilinearly as finite sums of products of a q-series and a q-tilde series; the leading asymptotic exponent of the new matrices involves the complex volume); mass-endomorphism/complex-volume-character-variety-path.md:19 uses it only as consistency framing, which is within scope. The files' own discipline notes \u2014 that the weight values are the cited definition and the selection rules are their algebraic consequences, no fit \u2014 are accurate.",
+          "keyResults": [
+            {
+              "locator": "eq. (3.7)",
+              "statement": "The weight of a representation sigma in P_K is kappa(sigma) = 3/2 for the trivial connection sigma_0 and 0 for every other connection.",
+              "useForFolio": "Already the sole external input to QOU.QBeta.GZWeightSelection.kappa and GZWeightGeneral.kappaGZ; verified verbatim, so the b = kappa(sigma) - kappa(sigma') selection rules rest on a checked definition.",
+              "targets": [
+                "folio/quantum-observable-universe/lean/QOU/QBeta/GZWeightSelection.lean",
+                "folio/quantum-observable-universe/lean/QOU/QBeta/GZWeightGeneral.lean"
+              ]
+            },
+            {
+              "locator": "eq. (3.6)",
+              "statement": "Generalized quantum modularity: (cX+d)^(-kappa(sigma)) e^(-v(sigma) lambda_gamma(X)) J^(K,sigma)(gamma X) is asymptotic to J^(K,sigma)(X) Phihat_(a/c)(2 pi i / (c(cX+d))) as X tends to infinity with bounded denominator.",
+              "useForFolio": "Supplies the automorphy-factor context making kappa a modular weight rather than a Borel index \u2014 the distinction GZWeightSelection.lean turns into its category-error correction.",
+              "targets": [
+                "folio/quantum-observable-universe/lean/QOU/QBeta/GZWeightSelection.lean"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Read the cited equation in the source and it says exactly what the two Lean files encode; the two .md uses are also supported. Nothing to change.",
+              "target": "folio/quantum-observable-universe/lean/QOU/QBeta/GZWeightSelection.lean"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "2a4826bd1c2f"
+        }
+      }
+    }
+  ]
+}

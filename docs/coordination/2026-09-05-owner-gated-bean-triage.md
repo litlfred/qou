@@ -279,7 +279,7 @@ belong in that epic's bare bucket, not here.
 **could not see `volume_perturbation`**, the cleanest projection of the four,
 because the class field spells `QOU.QInteger.qIntBalZ` while the theorem spells
 `qIntSym`, a file-local reducible `abbrev` for that head. Closed by
-`fileHeadAliases` in `content/pipeline/lean-vacuity-axiom-audit.ts`; whole-corpus
+`fileHeadAliases` in `folio/pipeline/lean-vacuity-axiom-audit.ts`; whole-corpus
 before/after is exactly one new hit and no other line changed.
 
 **`qou-t7mt` — its Option 1 was already applied, in full.**
@@ -425,6 +425,86 @@ rather than chooses"*). Every item below is what survives after nine
 already-answered items and four misclassifications were removed. **The no-op for
 every one of them is safe**: nothing breaks if you say nothing, the beans stay as
 they are, and the audits keep reporting what they report.
+
+## 🟧 RULED 2026-09-13 — D1 RESOLVED · D2 AUTHORISED · D3 ALLOWED
+
+Owner, verbatim: *"work convention-D c_k re-derivation"* / *"allow the binding
+channel use CAL-3 (why not?)"* / *"reoslve D1"*.
+
+### D1 — RESOLVED as the proposed default: disclose, do not pick
+
+Enacted 2026-09-13. Docstrings added naming what each builder models, what
+excludes it, and which consumers it feeds:
+
+* `mass_at_3A_proper.atom_braid_word_3A` — the **NUCLEUS** (chain), feeds
+  `binding_canonical`;
+* `pyhecke.gram.build_atom_nf` — the **ATOM** (all pairs), and **this is the one
+  that reaches the paper**, via `all_nuclides_sdp_admissibility.py` →
+  `nuclear-interactions/demand-stability`.
+
+Both stay live. Neither is selected, because both topologies are refuted
+(`CoordinationSaturation` kills the complete graph; `ChainBondOrderDependence`
+kills the chain), and `t7qv` RESULT 5 refutes a one-parameter falloff outright —
+so RESULT 4's "all-pairs halves the error" is a preference between refuted
+options, not a result. **This closes the ledger item, not the physics**; the
+topology question stays open under `qou-brng`.
+
+**One correction to this entry's own text.** It says `build_atom_nf` "feeds
+`demand-stability.ts`". True, but **indirectly** — that block's
+`computation.script` is `all_nuclides_sdp_admissibility.py`, which names
+`build_atom_nf(Z,N)` as its per-nucleus categorical object. And the canonical
+definition is `pyhecke/gram.py:994`, not any `computations/` copy.
+
+**Found while disclosing: a THIRD builder the entry does not mention.**
+`computations/molecular-frobenius-lp.py:186` defines its own `build_atom_nf` —
+same name, same all-pairs topology, but accumulating in **Python floats**
+(`nf = [1.0, …]`, `h/2` in f64), with no docstring. It is module-local and
+nothing else imports it. Now labelled as a local copy pointing at the canonical
+entry; **retiring it is a behaviour change and was not done.**
+
+### D3 — ALLOWED. The binding channel may use CAL-3.
+
+The ledger's proposed default (no new anchor) is **overruled**, and on reflection
+it was the wrong call: **CAL-3 is not a new anchor.** 𝔇_π is one of the three
+admissible calibrations, and §🟥 NO FITTING says *"the only admissible
+calibration is CAL-1/2/3"* — using one of them in a channel adds no fourth
+constant. AGENTS.md already gives CAL-3 a scale role ("the orthogonal meson
+scale"), so a channel consuming it is consuming a published calibration.
+
+**The owner asked "why not?" — here is the one condition, and it is the whole
+of my objection.** It matters *why* the binding channel uses CAL-3:
+
+* **Derived** — the framework says the binding channel's scale *is* the
+  orthogonal meson class ⇒ legitimate, and nothing in the anti-fit directive
+  touches it.
+* **Chosen** — CAL-3 was adopted there because the residual came out better ⇒
+  that is **selection against the target**, which §🟥 NO FITTING names explicitly
+  and which needs *no continuous parameter* to be a fit. It would be a fit
+  wearing an admissible name.
+
+So the discipline is not "don't use CAL-3"; it is **"don't pick a channel's
+calibration by looking at its residual."** Whoever wires this should record the
+derivational reason in the block, not the accuracy it buys.
+
+**Separate and still open:** this entry also records a real defect underneath the
+anchor question — two scales live in one table on different channels, with
+`qou-zloi` having already settled that the cause is **not** the Markov convention
+(`markov_param_eq_half_h`, sorry-free). The ruling resolves the anchor; the
+straddle fix is its own work.
+
+### D2 — AUTHORISED, and the authorisation is smaller than it looks
+
+See the entry below for what was authorised. The finding that shapes it: the
+Markov convention reaches the ladder at **exactly one place**, the N=1 eigenphase
+`α = (z − 1)·h/2`; the tail factors `N2…N5` never mention `z`. So the work is
+**one phase to derive, then five values to re-extract** — the ansatz survives,
+the numbers do not. Every extracted `c_k` divides through `Q_N1`, so all five
+rungs and their near-matches stay C-conditional exactly as AGENTS.md says
+(measured on `main`: implied `c₂` −1.0176 → −9.2989, `c₃` −2.0693 → −974.43).
+Full working:
+[`2026-09-13-d2-convention-enters-at-one-rung.md`](../audits/2026-09-13-d2-convention-enters-at-one-rung.md).
+
+---
 
 ### D1 — Cluster 1. May the two nucleon-word builders keep disagreeing?
 **Beans:** `qou-goc9` · `qou-im4m` · `t7qv` · `qou-48is` (merged in 2026-09-05).

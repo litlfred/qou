@@ -1,12 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/ant-v14-n7-s-p09/sections/sec-001",
   "@type": [
     "doco:Section"
   ],
   "title": "Blocks with normal defect group",
   "pageStart": 3,
-  "pageEnd": 7,
+  "pageEnd": 8,
   "contains": [
     "library/ant-v14-n7-s-p09/blocks/prose-sec-001",
     "library/ant-v14-n7-s-p09/blocks/thm-sec-001-01",
@@ -19,7 +24,7 @@
     "library/ant-v14-n7-s-p09/blocks/lem-sec-001-08",
     "library/ant-v14-n7-s-p09/blocks/thm-sec-001-09"
   ],
-  "derivedFrom": "library/ant-v14-n7-s-p09/manifest",
-  "sourceDocument": "library/ant-v14-n7-s-p09/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s-p09",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s-p09",
   "provenance": "ingested"
 }

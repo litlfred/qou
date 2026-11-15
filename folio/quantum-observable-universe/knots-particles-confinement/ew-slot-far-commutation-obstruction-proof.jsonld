@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-ew-slot-far-commutation-obstruction",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:ew-slot-far-commutation-obstruction",
+  "kind": "proof",
+  "title": "The far-commuting slots cannot carry the non-abelian bracket",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-ew-slot-far-commutation-obstruction"
+  ],
+  "text": "ew-slot-far-commutation-obstruction-proof.md",
+  "provenance": "authored"
+}

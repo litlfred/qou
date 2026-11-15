@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0108215v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0108215v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0108215v1",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0108215&metadataPrefix=arXiv), submitted 2001-08-30, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-0108215v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/math/0108215v1",
+    "content_type": "application/gzip",
+    "sha256": "707a1470445928cd1f301048719f1962da5b63a1db76da5df8ce08fe3eb30c8f",
+    "bytes": 13307,
+    "fetched": "2026-10-10T15:26:51+00:00",
+    "files": [
+      {
+        "path": "source/files/boundsv15.bbl",
+        "role": "bbl",
+        "sha256": "8b5e97f03b21a990d3b6d3b8d56ab7a1f88f5b80cd86d20db5010d02277b3d75",
+        "bytes": 5646
+      },
+      {
+        "path": "source/files/boundsv15.tex",
+        "role": "tex",
+        "sha256": "03731e11277beb4dd900b3672f418d0e9d29eaa6851617bfec45c99a5fe24c45",
+        "bytes": 31427
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

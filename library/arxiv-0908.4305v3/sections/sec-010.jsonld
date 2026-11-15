@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0908.4305v3/sections/sec-010",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "A Review of Groupoids",
+  "pageStart": 58,
+  "pageEnd": 67,
+  "contains": [
+    "library/arxiv-0908.4305v3/blocks/prose-sec-010",
+    "library/arxiv-0908.4305v3/blocks/lem-sec-010-01",
+    "library/arxiv-0908.4305v3/blocks/lem-sec-010-02",
+    "library/arxiv-0908.4305v3/blocks/lem-sec-010-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0908.4305v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0908.4305v3",
+  "provenance": "ingested"
+}

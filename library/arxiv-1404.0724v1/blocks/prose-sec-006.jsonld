@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1404.0724v1/blocks/prose-sec-006",
+  "kind": "prose",
+  "title": "Braids, knots and the Alexander Conway polynomial",
+  "pageStart": 10,
+  "pageEnd": 13,
+  "text": "../sections/sec-006-33-braids-knots-and-the-alexander-conway-polynom.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1404.0724v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1404.0724v1",
+  "provenance": "ingested"
+}

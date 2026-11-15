@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/0310279v5/blocks/prose-sec-029",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/0310279v5/blocks/prose-sec-029",
   "kind": "prose",
   "title": "Open problems",
   "pageStart": 123,
   "pageEnd": 128,
   "text": "../sections/sec-029-7-open-problems.md",
-  "derivedFrom": "library/0310279v5/manifest",
-  "sourceDocument": "library/0310279v5/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/0310279v5",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/0310279v5",
   "provenance": "ingested"
 }

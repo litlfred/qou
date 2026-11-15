@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-electroweak-higgs-torus-link-triplet-table3-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:electroweak-higgs-torus-link-triplet-table3-data",
+  "kind": "table",
+  "title": "Data table 3 from conj:electroweak-higgs-torus-link-triplet",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-electroweak-higgs-torus-link-triplet"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "electroweak-higgs-torus-link-triplet-table3-data.md",
+  "provenance": "authored"
+}

@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-2602.15276v1/sections/sec-001",
   "@type": [
     "doco:Section"
   ],
-  "title": "The Lagrangian and Euler-Lagrange equations",
+  "title": "The extended Skyrme-Faddeev model with potential",
   "pageStart": 4,
-  "pageEnd": 7,
+  "pageEnd": 4,
   "contains": [
     "library/arxiv-2602.15276v1/blocks/prose-sec-001"
   ],
-  "derivedFrom": "library/arxiv-2602.15276v1/manifest",
-  "sourceDocument": "library/arxiv-2602.15276v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2602.15276v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2602.15276v1",
   "provenance": "ingested"
 }

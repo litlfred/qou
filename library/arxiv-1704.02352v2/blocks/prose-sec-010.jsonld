@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1704.02352v2/blocks/prose-sec-010",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1704.02352v2/blocks/prose-sec-010",
   "kind": "prose",
-  "title": "Normalized Jack characters",
-  "pageStart": 15,
-  "pageEnd": 17,
-  "text": "../sections/sec-010-22-normalized-jack-characters.md",
-  "derivedFrom": "library/arxiv-1704.02352v2/manifest",
-  "sourceDocument": "library/arxiv-1704.02352v2/manifest",
+  "title": "The first main result: Law of Large Numbers",
+  "pageStart": 8,
+  "pageEnd": 9,
+  "text": "../sections/sec-010-114-the-first-main-result-law-of-large-numbers.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1704.02352v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1704.02352v2",
   "provenance": "ingested"
 }

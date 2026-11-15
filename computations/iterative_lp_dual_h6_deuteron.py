@@ -4,7 +4,7 @@
 Iterative LP-dual at H_6 for the deuteron — natural next step after
 Phase 1.14 (H_3 LP-dual at proton).
 
-Per term7-alpha5's `prop:mass-formula-iterative-lp-dual`:
+Per term7-alpha5's `mass-formula-iterative-lp-dual`:
 
   𝔪(T_w) = Σ_{ℓ=0}^{ℓ_max} u^{(ℓ)*}(T_w)
   u^{(ℓ)*}(T_w) = m_e · tr_M(P_ℓ · T_w) / [n]_q!
@@ -29,6 +29,11 @@ This script:
      - 2·m_p_pred (the disjoint product convention)
 
 Output: iterative-lp-dual-h6-deuteron.witness.json
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 
@@ -179,7 +184,7 @@ def main() -> int:
     # Markov trace |tr_M(β_D)| loaded from markov-peel-atomic-tr-m.witness.json
     # (leading-δ canonical value).  The prior reference was a hardcoded
     # 0.3882864715477132 sourced from wenzl_n6_closed_form.witness.json — now
-    # DEPRECATED (computations/_deprecated/); it disagreed with the canonical
+    # DEPRECATED (fsh-guts/deprecated/computations/); it disagreed with the canonical
     # value by ~1.8e-4, which spuriously failed this assertion.  Load from the
     # canonical witness so the reference cannot go stale again.
     tr_M_check = sum(y_at_q0[p] * chi_at_q0[p] for p in parts_6)

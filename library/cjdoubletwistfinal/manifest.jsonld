@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/cjdoubletwistfinal/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "THE COLORED JONES POLYNOMIAL AND KONTSEVICH-ZAGIER SERIES FOR DOUBLE TWIST KNOTS",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/cjdoubletwistfinal",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "cjdoubletwistfinal",
   "contains": [
     "library/cjdoubletwistfinal/sections/sec-000",
     "library/cjdoubletwistfinal/sections/sec-001",
@@ -27,8 +32,10 @@
     "library/cjdoubletwistfinal/sections/sec-018"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "cjdoubletwistfinal",
+    "title_source": "slug",
     "source_file": "cJdoubletwistfinal.pdf",
     "source_sha256": "a1e18db5232b39f4c76cb6dc74cc3f06cf2683f9a39b652a66ec7e880e4771de",
     "pages": 24,

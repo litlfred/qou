@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-commutative-crossing-energy-table2-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:commutative-crossing-energy-table2-data",
+  "kind": "table",
+  "title": "Table 2 from rem:commutative-crossing-energy",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-commutative-crossing-energy"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "commutative-crossing-energy-table2-data.md",
+  "provenance": "authored"
+}

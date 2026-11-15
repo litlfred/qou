@@ -8,60 +8,46 @@ pages: 5-7
 source_pdf: 0806.2317v1.pdf
 source_sha256: c54e80d460413a5e
 doc_brief: "Bounds for codes and designs in complex subspaces Aidan Roy ∗ — We introduce the concepts of complex Grassmannian codes and designs."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-In this section and the next, we develop the representation t heory needed for
-Grassmannian LP bounds.
-As is standard for compact Lie groups, we work with functions on Gm,n to
-ﬁnd irreducible representations. Deﬁne an inner product fo r functions on Gm,n
-5
-as follows:
-⟨f, g ⟩ :=
-∫
-Gm,n
-f (a)g(a) da.
-Here da is the unique measure invariant on Gm,n , normalized so that
-∫
-da = 1.
-That such a measure exists an is unique (the Haar measure) fol lows from the
-fact that Gm,n is a compact Lie group. Equivalently, we may write
-⟨f, g ⟩ :=
-∫
-U (n)
-f (U ∗PaU )g(U ∗PaU ) dU,
-where dU is the Haar measure on U (n), and Pa is the projection matrix for
-some ﬁxed a ∈ G m,n . Now let L2(Gm,n ) denote the space of square-integrable
-functions on Gm,n . Then U (n) acts on f ∈ G m,n as follows:
-(U f)(Pa) := f (U ∗PaU ).
-It follows that L2(Gm,n ) provides a representation of U (n). As we will see, this
-representation can be decomposed into irreducible subrepr esentations explicity,
-and the decomposition is multiplicity-free: no irreducible representation of U (n)
-occurs more than once in L2(Gm,n ).
-Since U (n) is a compact Lie group, its irreducible representations ar e well-
-studied: see for example [22, 15, 6, 12]. Every irreducible r epresentation is
-indexed by a dominant weight [22, Theorem 7.34]. In the case of U (n), we may
-take these weights to have the form [6, Theorem 38.3]
-λ = (λ 1, . . . , λ n) : λ 1 ≥ λ 2 ≥ . . . ≥ λ n, λ i ∈ Z.
-The dimension of the irreducible representation Vλ indexed by λ is given by
-Weyl’s character formula [22, Theorem 7.32]. In the case of U (n), the formula
-reduces to:
-dim Vλ =
-∏
-1≤i<j≤n
-λ i − λ j + j − i
-j − i . (3.1)
-For example, the standard representation of U (n) is indexed by λ = (1, 0, . . . , 0),
-which gives
-dim V(1, 0,..., 0) = n.
-Note that there is more than one irreducible representation with the same
-dimension.
-Each dominant weight may also be thought of as a form acting on a maximal
-Abelian subgroup of the Lie group. Here λ acts on the diagonal matrix d =
-6
-diag(d1, . . . , d n) ∈ U (n) as follows:
-dλ :=
-n∏
-i=1
-dλ i
-i .
-The next section describes exactly which of these forms cont ribute to the de-
-composition of L2(Gm,n ).
+\label{sec:representations}
+
+In this section and the next, we develop the representation theory needed for Grassmannian LP bounds.
+
+As is standard for compact Lie groups, we work with functions on $\gras{m}{n}$ to find irreducible representations. Define an inner product for functions on $\gras{m}{n}$ as follows:
+\[
+\ip{f}{g} := \int_{\gras{m}{n}} \conj{f(a)}g(a) \; da.
+\]
+Here $da$ is the unique measure invariant on $\gras{m}{n}$, normalized so that $\nobreak{\int da = 1}$. That such a measure exists an is unique (the Haar measure) follows from the fact that $\gras{m}{n}$ is a compact Lie group. Equivalently, we may write
+\[
+\ip{f}{g} := \int_{U(n)} \conj{f(U^*P_aU)}g(U^*P_aU) \;dU,
+\]
+where $dU$ is the Haar measure on $U(n)$, and $P_a$ is the projection matrix for some fixed $a \in \gras{m}{n}$. Now let $L^2(\gras{m}{n})$ denote the space of square-integrable functions on $\gras{m}{n}$. Then $U(n)$ acts on $f\ \in \gras{m}{n}$ as follows:
+\[
+(Uf)(P_a) := f(U^*P_aU).
+\]
+It follows that $L^2(\gras{m}{n})$ provides a representation of $U(n)$. As we will see, this representation can be decomposed into irreducible subrepresentations explicity, and the decomposition is \defn{multiplicity-free}: no irreducible representation of $U(n)$ occurs more than once in $L^2(\gras{m}{n})$. 
+
+Since $U(n)$ is a compact Lie group, its irreducible representations are well-studied: see for example \cite{sep,gw1,bump,fh1}. Every irreducible representation is indexed by a \defn{dominant weight} \cite[Theorem 7.34]{sep}. In the case of $U(n)$, we may take these weights to have the form \cite[Theorem 38.3]{bump}
+\[
+\la = (\la_1,\ldots,\la_n): \la_1 \geq \la_2 \geq \ldots \geq \la_n, \la_i \in \ints.
+\]
+
+The dimension of the irreducible representation $V_\la$ indexed by $\la$ is given by \defn{Weyl's character formula} \cite[Theorem 7.32]{sep}. In the case of $U(n)$, the formula reduces to: 
+\begin{equation}
+\dim V_\la = \prod_{1 \leq i < j \leq n} \frac{\la_i - \la_j + j-i}{j-i}.
+\label{eqn:weylchar}
+\end{equation}
+For example, the standard representation of $U(n)$ is indexed by $\la = (1,0,\ldots,0)$, which gives
+\[
+\dim V_{(1,0,\ldots,0)} = n.
+\]
+Note that there is more than one irreducible representation with the same dimension.
+
+Each dominant weight may also be thought of as a form acting on a maximal Abelian subgroup of the Lie group. Here $\la$ acts on the diagonal matrix $d =\diag(d_1,\ldots,d_n) \in U(n)$ as follows:
+\[
+d^{\la} := \prod_{i=1}^n d_i^{\la_i}.
+\]
+The next section describes exactly which of these forms contribute to the decomposition of $L^2(\gras{m}{n})$.

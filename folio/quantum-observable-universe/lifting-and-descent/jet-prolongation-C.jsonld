@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/cor-jet-prolongation-C",
+  "@type": [
+    "folio-assistant-core:Corollary",
+    "doco:Section"
+  ],
+  "label": "cor:jet-prolongation-C",
+  "kind": "corollary",
+  "title": "Archimedean realisation of jet prolongation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-jet-prolongation",
+    "papers/quantum-observable-universe/blocks/ex-c-quantum-observable-universe"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-jet-prolongation-C"
+  ],
+  "tags": [
+    "archimedean",
+    "jet-bundle"
+  ],
+  "leanRef": "qou:QOU.Torsion.jet_prolongation_C",
+  "text": "jet-prolongation-C.md",
+  "leanSource": "jet-prolongation-C.lean",
+  "provenance": "authored"
+}

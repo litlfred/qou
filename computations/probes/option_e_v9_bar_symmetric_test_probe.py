@@ -6,7 +6,7 @@ CONTEXT. Option-E v9 closed mirror-pair B_T − B_³He to 0.11% via:
 
     B_T − B_³He = m_π · ℏ_q · (1+q)/2 · Σ_λ y_λ · (χ^λ(β_T) + χ^{λᵀ}(β_³He))/2
 
-Per PR #1643 (`prop:li2q-phiq-bar-symmetrization` + my paper audit):
+Per PR #1643 (`li2q-phiq-bar-symmetrization` + my paper audit):
 binding-context formulas (Q_β, Δ_λ, mirror-pair binding differences)
 should be **bar-symmetric** under q ↔ q⁻¹.
 
@@ -34,6 +34,11 @@ VERDICTS:
 
 DISCIPLINE: this probe is DIAGNOSTIC. Per AGENTS.md, do NOT use the
 result to WIRE a new factor; report the verdict honestly.
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 

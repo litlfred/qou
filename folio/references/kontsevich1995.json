@@ -1,0 +1,23 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "kontsevich1995",
+  "type": "speech",
+  "title": "Lecture at Orsay",
+  "author": [
+    {
+      "family": "Kontsevich",
+      "given": "Maxim"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        1995,
+        12,
+        7
+      ]
+    ]
+  },
+  "publisher-place": "Université Paris-Sud, Orsay",
+  "note": "Original introduction of motivic integration. Defines the motivic measure on arc spaces valued in the dimension-completed Grothendieck ring of varieties, and proves the change-of-variables formula for blow-ups used to compute QOU's topological mass."
+}

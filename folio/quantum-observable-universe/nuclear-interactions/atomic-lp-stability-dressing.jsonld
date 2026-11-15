@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-atomic-lp-stability-dressing",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:atomic-lp-stability-dressing",
+  "kind": "remark",
+  "title": "Borromean dressing and composite-nucleus stabilisation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-atomic-lp-stability",
+    "papers/quantum-observable-universe/blocks/def-atomic-braid"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-atomic-lp-stability",
+  "tags": [
+    "lp-stability",
+    "borromean",
+    "atomic-braid",
+    "confinement"
+  ],
+  "text": "atomic-lp-stability-dressing.md",
+  "provenance": "authored"
+}

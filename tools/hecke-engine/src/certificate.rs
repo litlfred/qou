@@ -89,9 +89,10 @@ pub struct WitnessCertificate {
     pub f_pauli_f64: Option<f64>,
     pub tr_alt_f64: Option<f64>,
     pub net_f64: Option<f64>,
-    pub tr_markov_f64: Option<f64>,        // Markov trace of full NF at q₀
-    pub tr_markov_cleared: SparsePoly,     // tr_M × (t+t⁻¹)^L — symbolic in t
-    pub tr_markov_denom_power: usize,      // L: divide by (t+t⁻¹)^L to get tr_M
+    /// Exact Ocneanu (Markov) trace at convention D of the full crossing
+    /// product. Replaces `tr_markov_f64`, which was Σ_w c_w z^len(w) with
+    /// convention-C z and is not a Markov trace (bean qou-m7py).
+    pub tr_markov_d: MarkovTraceD,
 
     // Per-strand build metadata
     pub strands: Vec<StrandInfo>,
@@ -101,6 +102,28 @@ pub struct WitnessCertificate {
     pub max_coeff_log10: f64,
     pub elapsed_seconds: f64,
     pub computed_at: String,
+}
+
+#[derive(Serialize)]
+pub struct MarkovTraceD {
+    /// False when the element was stripped mid-construction or too large.
+    pub computed: bool,
+    /// tr(E)/2^pn_count at q₀, 60 significant digits.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub value: Option<String>,
+    /// tr(E) exactly, as [z_power, t_power, coefficient], t = q^{1/2}.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub exact_z_t: Option<Vec<(usize, i32, String)>>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub reason: Option<String>,
+    /// How the value was obtained, when it was. v9 traces its own T_w
+    /// expansion; certificates whose build was stripped carry a value from
+    /// the two-row tower probe instead, which recomputes the element itself.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub method: Option<String>,
+    pub z: String,
+    pub q0: String,
+    pub normalisation: String,
 }
 
 #[derive(Serialize)]

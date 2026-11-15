@@ -8,222 +8,63 @@ pages: 17-19
 source_pdf: 0701051v4.pdf
 source_sha256: 4592a048c3b84a8d
 doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS RELATED TO STANLEY CHARACTER FORMULA — We prove an upper bound for characters of the symmetric groups."
+text_source: latex
+latex_prose_ratio: 0.628
+latex_coverage_ratio: 0.947
 ---
-shik and Kerov [VK81] proved that if π is a ﬁxed permutation with the
-lengths of non-trivial cycles k1, . . . , kr then for any Young diagram λ with
-n boxes
-χλ(π) =
-r∏
-i=1
-[∑
-j
-αki
-j −
-∑
-j
-(−βj)ki
-]
-+ O
-( 1
-n
-)
-where αj = λj
-n , βj =
-λ′
-j
-n ; we prefer to write this formula in an equivalent
-form
-(21) χλ(π) = nl
-(n)l
-r∏
-i=1
-[∑
-j
-αki
-j −
-∑
-j
-(−βj)ki
-]
-+ O
-( 1
-n
-)
-.
-In this section we will prove Theorem 17 which together with T heorem
-16 give a uniform estimate for the error term in the formula (21). In partic-
-ular, for A = n and ε = D
-n we recover the result of Vershik and Kerov.
-Theorem 17. There exist constants a, C > 0 with the following property.
-Let k1, . . . , kr be positive integers; we denote k1 + . . . + kr = l. If λ is a
-Young diagram havingn boxes with less than A rows and columns and such
-that ε = (k2
-1+···+k2
-r )n
-A2 < C then
-(22)
-⏐
-⏐
-⏐
-⏐
-⏐
-∏ r
-i=1 Rki+1(λ)
-nl −
-r∏
-i=1
-[∑
-j
-αki
-j −
-∑
-j
-(−βj)ki
-]⏐
-⏐
-⏐
-⏐
-⏐ ≤ ε
-( A
-n
-) l−r
-ar,
-where αj = λj
-n , βi =
-λ′
-j
-n .
-18 V ALENTIN FÉRAY AND PIOTR ´SNIADY
-Proof. Firstly, let us consider the case r = 1. Note that
-N λ(
-e, (1, . . . , k)
-)
-=
-∑
-j
-(nαj)k, N λ(
-(1, . . . , k), e
-)
-=
-∑
-j
-(nβj)k
-therefore Theorem 9 implies that the left-hand side of (22) is equal to
-⏐
-⏐
-⏐
-⏐
-⏐
-1
-nk
-∑
-σ1,σ2∈Sk\{e}
-σ1σ2=π
-|σ1|+|σ2|=|π|
-(−1)|σ1|N λ(σ1, σ2)
-⏐
-⏐
-⏐
-⏐
-⏐.
-For a pair of permutations σ1, σ2 which contributes to the above sum we
-consider the bipartite graphG and the graph ˜G given by Lemma 11. Clearly,
-in this case graph ˜G has more than one component. With Lemma 15 and
-Lemma 11
-(23)
-( n
-A
-) k−1
-⏐
-⏐
-⏐
-⏐
-⏐
-Rλ
-k+1
-nk −
-∑
-j
-(
-αk
-j − (−βj)k)
-⏐
-⏐
-⏐
-⏐
-⏐ ≤
-∑
-s≥2
-(C0k)2s−2
-(2s − 2)!
-( n
-A2
-) s−1
-≤ 2C 2
-0 k2n
-A2 = 2C 2
-0 ε,
-where the last inequality holds true if 2C2
-0 k2n
-A2 = 2 C 2
-0 ε is smaller than some
-positive constant and the proof is ﬁnished in the case r = 1.
-For the general case, we put ǫi = k2
-i n
-A2 . We denote
-Xi = 1
-a
-( n
-A
-) ki−1 Rλ
-ki+1
-nki
-,
-Yi = 1
-a
-( n
-A
-) ki−1∑
-j
-(
-αki
-j − (−βj)ki
-)
-.
-Let us ﬁx a > 2. Clearly, |Yi| < 2
-a < 1 hence (23) shows that |Xi| < 1 if ε
-is smaller than some positive constant. Telescopic summation
-X1 · · ·Xr − Y1 · · · Yr = X1 · · · Xr−1(Xr − Yr)+
-X1 · · · Xr−2(Xr−1 − Yr−1)Yr + · · · + (X1 − Y1)Y2 · · · Yr
-shows that
-1
-ar
-( n
-A
-) l−r
-⏐
-⏐
-⏐
-⏐
-⏐
-∏ r
-i=1 Rλ
-ki+1
-nl −
-r∏
-i=1
-[∑
-j
-αki
-j −
-∑
-j
-(−βj)ki
-]⏐
-⏐
-⏐
-⏐
-⏐ ≤
-2C0(ǫ1 + · · · + ǫr)
-a . □
-ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS 19
+Vershik and Kerov [@VershikKerov1981] proved that if $\pi$ is a fixed permutation with the lengths of non-trivial cycles $k_1,\dots,k_r$ then for any Young diagram $\lambda$ with $n$ boxes
+
+$$\chi^{\lambda}(\pi) =
+\prod_{i=1}^r \left[ \sum_j
+\alpha_j^{k_i} - \sum_j (-\beta_{j})^{k_i} \right] + O\left(\frac{1}{n}\right)$$
+
+where $\alpha_j=\frac{\lambda_j}{n}$, $\beta_j=\frac{\lambda'_j}{n}$; we prefer to write this formula in an equivalent form $$\label{eq:vershik-kerov2}
+\chi^{\lambda}(\pi) = \frac{n^l}{(n)_l}
+\prod_{i=1}^r \left[ \sum_j
+\alpha_j^{k_i} - \sum_j (-\beta_{j})^{k_i} \right] + O\left(\frac{1}{n}\right).$$
+
+In this section we will prove Theorem [\[theo:estimate-free\]](#theo:estimate-free){reference-type="ref" reference="theo:estimate-free"} which together with Theorem [\[theo:equiv-cumulants\]](#theo:equiv-cumulants){reference-type="ref" reference="theo:equiv-cumulants"} give a uniform estimate for the error term in the formula [\[eq:vershik-kerov2\]](#eq:vershik-kerov2){reference-type="eqref" reference="eq:vershik-kerov2"}. In particular, for $A=n$ and $\varepsilon = \frac{D}{n}$ we recover the result of Vershik and Kerov.
+
+::: theorem
+[]{#theo:estimate-free label="theo:estimate-free"} There exist constants $a,C>0$ with the following property. Let $k_1,\dots,k_r$ be positive integers; we denote $k_1+\ldots+k_r=l$. If $\lambda$ is a Young diagram having $n$ boxes with less than $A$ rows and columns and such that $\varepsilon=\frac{(k_1^2+\cdots+k_r^2) n}{A^2} < C$ then $$\label{eq:freecumulants-estimate}
+\left| \frac{\prod_{i=1}^r R_{k_i+1}(\lambda)}{n^l} - \prod_{i=1}^r \left[
+\sum_j
+\alpha_j^{k_i} - \sum_j (-\beta_{j})^{k_i} \right] \right|
+\leq  \varepsilon \left(\frac{A}{n}\right)^{l-r} a^r,$$ where $\alpha_j=\frac{\lambda_j}{n}$, $\beta_i=\frac{\lambda'_j}{n}$.
+:::
+
+::: proof
+*Proof.* Firstly, let us consider the case $r=1$. Note that $$\begin{aligned}
+N^\lambda\big(e,(1,\ldots,k)\big) =\sum_j (n \alpha_j)^k,\quad
+N^\lambda\big((1,\ldots,k),e\big) =\sum_j (n \beta_j)^k
+\end{aligned}$$ therefore Theorem [\[theo:cumulants\]](#theo:cumulants){reference-type="ref" reference="theo:cumulants"} implies that the left-hand side of [\[eq:freecumulants-estimate\]](#eq:freecumulants-estimate){reference-type="eqref" reference="eq:freecumulants-estimate"} is equal to $$\Bigg|\frac{1}{n^k} \sum_{\substack{\sigma_1,\sigma_2 \in S_k \backslash \{e\}
+\\ \sigma_1 \sigma_2 = \pi \\ |\sigma_1| + |\sigma_2| = |\pi|}}
+(-1)^{|\sigma_1|} N^\lambda(\sigma_1,\sigma_2)\Bigg|.$$ For a pair of permutations $\sigma_1,\sigma_2$ which contributes to the above sum we consider the bipartite graph $G$ and the graph $\tilde{G}$ given by Lemma [\[lem:grafGprim\]](#lem:grafGprim){reference-type="ref" reference="lem:grafGprim"}. Clearly, in this case graph $\tilde{G}$ has more than one component. With Lemma [\[lem:numer-of-cutted-graphs\]](#lem:numer-of-cutted-graphs){reference-type="ref" reference="lem:numer-of-cutted-graphs"} and Lemma [\[lem:grafGprim\]](#lem:grafGprim){reference-type="ref" reference="lem:grafGprim"} $$\begin{gathered}
+\label{eq:estimate-a-la-vk}
+\left(\frac{n}{A}\right)^{k-1} \left|
+\frac{R^\lambda_{k+1}}{n^k} - \sum_j \big( \alpha_j^{k} - 
+
+(-\beta_{j})^{k} \big) \right|
+\leq \\ \sum_{s \geq 2} \frac{(C_0 k)^{2s-2}}{(2s-2)!}
+\left(\frac{n}{A^2}\right)^{s-1} \leq
+ \frac{2 C_0^2 k^2 n}{A^2}= 2 C_0^2 \varepsilon,
+\end{gathered}$$ where the last inequality holds true if $\frac{2 C_0^2 k^2 n}{A^2}=2 C_0^2
+\varepsilon$ is smaller than some positive constant and the proof is finished in the case $r=1$.
+
+For the general case, we put $\epsilon_i = \frac{k_i^2
+n}{A^2}$. We denote $$\begin{aligned}
+ X_i&=\frac{1}{a} \left(\frac{n}{A}\right)^{k_i-1}
+\frac{R^\lambda_{{k_i}+1}}{n^{k_i}},\\
+ Y_i&=\frac{1}{a} \left(\frac{n}{A}\right)^{k_i-1} \sum_j \big( \alpha_j^{k_i} -
+(-\beta_{j})^{k_i} \big).
+\end{aligned}$$ Let us fix $a>2$. Clearly, $|Y_i|< \frac{2}{a}< 1$ hence [\[eq:estimate-a-la-vk\]](#eq:estimate-a-la-vk){reference-type="eqref" reference="eq:estimate-a-la-vk"} shows that $|X_i|<1$ if $\varepsilon$ is smaller than some positive constant. Telescopic summation $$\begin{gathered}
+X_1 \cdots X_r - Y_1 \cdots Y_r= X_1 \cdots X_{r-1} (X_r-Y_r)+\\
+ X_1 \cdots X_{r-2} (X_{r-1}-Y_{r-1}) Y_r + \cdots 
++(X_1-Y_1) Y_2 \cdots Y_r
+\end{gathered}$$ shows that $$\begin{gathered}
+ \frac{1}{a^r} \left(\frac{n}{A}\right)^{l-r}
+\left| \frac{\prod_{i=1}^r R^\lambda_{k_i+1}}{n^l} - \prod_{i=1}^r \left[ \sum_j
+\alpha_j^{k_i} - \sum_j (-\beta_{j})^{k_i} \right] \right| \leq \\
+\frac{2 C_0 (\epsilon_1+\cdots+\epsilon_r)}{a}.\qedhere
+\end{gathered}$$ ◻
+:::

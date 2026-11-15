@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0203206v1/blocks/prose-sec-002",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0203206v1/blocks/prose-sec-002",
   "kind": "prose",
-  "title": "Tensor Categories",
-  "pageStart": 2,
-  "pageEnd": 3,
-  "text": "../sections/sec-002-21-tensor-categories.md",
-  "derivedFrom": "library/arxiv-math-0203206v1/manifest",
-  "sourceDocument": "library/arxiv-math-0203206v1/manifest",
+  "title": "Preliminaries",
+  "pageStart": 3,
+  "pageEnd": 6,
+  "text": "../sections/sec-002-2-preliminaries.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203206v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203206v1",
   "provenance": "ingested"
 }

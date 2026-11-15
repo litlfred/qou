@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-x5-bring-prym-jacobian",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:x5-bring-prym-jacobian",
+  "kind": "remark",
+  "title": "Parallel structure at the Jacobian level",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-x5-bring-weight-identification"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-x5-bring-weight-identification",
+  "cites": [
+    "references/edge1978",
+    "references/riera-rodriguez-1992",
+    "references/braden-northover-2012"
+  ],
+  "tags": [
+    "jacobian",
+    "prym",
+    "z5",
+    "bring",
+    "hyperelliptic"
+  ],
+  "text": "x5-bring-prym-jacobian.md",
+  "provenance": "authored"
+}

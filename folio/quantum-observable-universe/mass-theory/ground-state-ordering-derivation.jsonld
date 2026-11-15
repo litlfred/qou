@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-ground-state-ordering-derivation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:ground-state-ordering-derivation",
+  "kind": "remark",
+  "title": "Ground-state ordering: eigenvalue derivation and verification",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-ground-state-ordering",
+    "papers/quantum-observable-universe/blocks/def-typed-crossing-operator"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-ground-state-ordering",
+  "tags": [
+    "ground-state",
+    "transfer-matrix",
+    "eigenvalue",
+    "ordering",
+    "nuclear",
+    "shell-model"
+  ],
+  "text": "ground-state-ordering-derivation.md",
+  "provenance": "authored"
+}

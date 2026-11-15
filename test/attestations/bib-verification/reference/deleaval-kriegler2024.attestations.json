@@ -1,0 +1,46 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "deleaval-kriegler2024",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 417,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/maximal-hoermander-q-var-revised-v03/Maximal-Hoermander-q-Var-revised-v03.pdf"
+        },
+        "id": "deleaval-kriegler2024",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "FALSE FRIEND \u2014 the 'q' in the filename is NOT the substrate deformation parameter. Def. 3.1 fixes 'q in [2, infinity)' as the exponent of the Lepingle-type q-VARIATION seminorm sup over increasing sequences of (sum |a(t_{k+1}) - a(t_k)|^q)^{1/q}; the paper is harmonic analysis (Hoermander spectral multipliers, UMD-lattice-valued L^p, maximal estimates for Schroedinger/wave propagators, Carleson pointwise convergence). It contains no q-deformation, no q-difference equation, no q-Borel transform, no summability level, and no Stokes data \u2014 so it does not touch the C1 degree-budget / multi-level question at all. Citation status checked three ways: no ref() entry (greps over folio/schema/references.ts on both author surnames, the HAL id and the DOI suffix all return empty), no \\cite site in content/**/*.md, no '-- Ref:' in content/**/*.lean. Corpus-side grep is likewise empty for 'hoermander', 'spectral multiplier', 'UMD lattice', 'q-variation', 'maximal function' (only .lake/Mathlib vendor hits). The one genuine adjacency is that the corpus DOES carry a semigroup/functional-calculus object: prop:q-heat-equation-unique defines exp(-t Delta_q) and rem:q-resolvent-properties defines R_q(s) as its Laplace transform, diagonalising over SU_q(2) irreducibles with eigenvalues lambda_j(q) = [j]_q[j+1]_q(1-q^{-1})^2. But Thm 3.3 and Thm 5.1 are stated for a 0-sectorial operator A on L^p(Omega, Y) with Y a UMD Banach lattice, (Omega, mu) sigma-finite, and A carrying an R-bounded Hoermander H_2^alpha calculus (Def. 2.12, Prop. 2.14). The corpus establishes NONE of that scaffolding for Delta_q \u2014 it has no L^p(Omega, Y) setting, no sectoriality statement, no Gaussian/Davies-Gaffney bounds, and Delta_q's spectrum as recorded is a discrete algebraic family, not an operator on a Bochner space. So the hypotheses demonstrably do not hold as the corpus stands, and no block, script, or Lean declaration here consumes a maximal or variational estimate. Scope-(a) negative: this document, as read, supplies nothing this folio can currently use; that is not a claim that Hoermander-calculus technique is excluded from the folio's future analytic layer.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Orphan with no citation site and no consumable statement; adding a ref() entry now would be inflation. Worth recording once, though, that the filename's 'q' is a variation exponent (Def. 3.1) and not the substrate parameter \u2014 a future agent grepping uploads for 'q-' will otherwise re-open this paper expecting q-deformation machinery. If the folio ever builds an actual L^p / Banach-lattice analytic layer for Delta_q (sectoriality + Hoermander calculus), revisit against rem:q-resolvent-properties.",
+              "target": "rem:q-resolvent-properties"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-09T00:10:43.091Z",
+          "source_sha": "135332c04a1b"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

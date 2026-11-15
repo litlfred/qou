@@ -1,0 +1,58 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2101.05931v3/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2101.05931v3 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2101.05931v3",
+  "provenance": "ingested",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2101.05931&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2101.05931v3",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2101.05931v3",
+    "content_type": "application/gzip",
+    "sha256": "cb1233a2b35633f649a64c913d7bdd6d870e35ab7bcb8d44ce0c228d9af1e937",
+    "bytes": 127041,
+    "fetched": "2026-10-10T15:15:55+00:00",
+    "files": [
+      {
+        "path": "source/files/HLLY-June-2023.bbl",
+        "role": "bbl",
+        "sha256": "b937e7316538265cd03d6bf6a46687eaefa7bd6c273e2cf7f738357d6f503703",
+        "bytes": 14279
+      },
+      {
+        "path": "source/files/HLLY-June-2023.tex",
+        "role": "tex",
+        "sha256": "d14903b76b79f9bae50254418deaf02d5159b6d36825b1df34a07e4dbf9f22d2",
+        "bytes": 157134
+      },
+      {
+        "path": "source/files/monbib.bib",
+        "role": "bib",
+        "sha256": "1a018f7cccb024502123805a9b18d9dc85e55de126d0ee0dbf00492ad0b7b723",
+        "bytes": 301863
+      },
+      {
+        "path": "source/files/picins.sty",
+        "role": "sty",
+        "sha256": "966be2d6697d350acc45763d06f503a80205c7f528f6eb580db004a8ae2939c0",
+        "bytes": 17807
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-glossary-quantum-flatness",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:glossary-quantum-flatness",
+  "kind": "remark",
+  "title": "Quantum flatness",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-instanton",
+    "papers/quantum-observable-universe/blocks/def-quantum-gauge-group"
+  ],
+  "tags": [
+    "glossary",
+    "flatness",
+    "2-group",
+    "instanton"
+  ],
+  "leanRef": "qou:QOU.QuantumFlatness",
+  "text": "glossary-quantum-flatness.md",
+  "leanSource": "glossary-quantum-flatness.lean",
+  "provenance": "authored"
+}

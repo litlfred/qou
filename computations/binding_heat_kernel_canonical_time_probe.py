@@ -60,6 +60,14 @@ HBAR = 1 - 1 / q0                      # ℏ_q = (q−1)/q — the corpus conven
 S_STAR = HBAR                          # canonical Reeb time
 H_OLD = q0 - 1 / q0                    # what the parent probe used (≈ 2·ℏ)
 
+# The A-growth target, EXACT. `A_GROWTH_TARGET` imported from the parent probe is
+# `float(AME_B["4He"]/AME_B["D"])` — a float64 of a ratio of two exact AME decimals.
+# Three other producers import that name, so it is not changed at source (that needs
+# one owner across all four); it is re-derived here as the exact mpf and used for
+# every comparison and every emitted figure in this file. Same value to 3.97e-17,
+# i.e. this is a precision fix with no effect on any verdict, not a value change.
+A_GROWTH_TARGET_EXACT = AME_B["4He"] / AME_B["D"]
+
 
 def main() -> int:
     print("=" * 78)
@@ -106,6 +114,8 @@ def main() -> int:
 
     isos = [k for k in CHI if k in S["kernel_s_star"]]
     results = {}
+    raw_mpf = {}  # mpf twins of the serialized fields, for ordering/comparison
+                  # (NOT `raw` — the K4 block below binds that to a json load)
     print(f"\n {'variant':<20}{'worst|err|':>12}{'S(⁴He)/S(D)':>14}{'fit':>8}")
     for w in variants:
         if len(isos) < 2:
@@ -117,14 +127,25 @@ def main() -> int:
         for k in isos:
             Bp = scale * S[w][k]
             err = (Bp - AME_B[k]) / AME_B[k]
-            per[k] = {"B_pred": float(Bp), "err": float(err)}
+            # NOT float(): Bp and err are mpf built from 50-digit chi
+            # strings and exact CODATA/AME decimals, so a float64 cast at the
+            # write discards ~33 determined digits (AGENTS.md NO-FLOAT64;
+            # drained 2026-09-13). Rendered at the 50-digit INPUT precision,
+            # not at mp.dps, so no digit is manufactured.
+            per[k] = {"B_pred": mp.nstr(Bp, 50), "err": mp.nstr(err, 50)}
             worst = max(worst, fabs(err))
-        growth = float(S[w]["4He"] / S[w]["D"]) if S[w].get("D") else float("nan")
+        # `growth` is kept as an mpf for the ORDERING below and serialized
+        # only at the write: once S_4He_over_S_D is a string, `min(...,
+        # key=...)` and `<=` against it compare text, not magnitude.
+        growth = (S[w]["4He"] / S[w]["D"]) if S[w].get("D") else mp.nan
         tier = "0-fit" if w in ("kernel_s_star", "kernel_mu_s_star",
                                 "heat_mu_lambda", "y_lambda") else "1-param"
-        results[w] = {"global_scale": float(scale), "worst_err": float(worst),
-                      "S_4He_over_S_D": growth, "tier": tier, "per_isotope": per}
-        print(f" {w:<20}{float(worst):>11.4f}{growth:>14.3f}{tier:>8}")
+        results[w] = {"global_scale": mp.nstr(scale, 50),
+                      "worst_err": mp.nstr(worst, 50),
+                      "S_4He_over_S_D": mp.nstr(growth, 50),
+                      "tier": tier, "per_isotope": per}
+        raw_mpf[w] = {"worst_err": worst, "S_4He_over_S_D": growth}
+        print(f" {w:<20}{float(worst):>11.4f}{float(growth):>14.3f}{tier:>8}")
 
     # ---- [K4] the τ-family is BOUNDED, hence excluded for every τ ≥ 0 -------
     # Damping can only shrink the A-growth: sup over τ is attained at τ → 0
@@ -154,33 +175,36 @@ def main() -> int:
         Sx = {k: sum(MP_E ** (-C * tau) * a for C, a in rr) for k, rr in rows.items()}
         return Sx["4He"] / Sx["D"]
 
-    sup_spread = float(spread_at(mpf(0)))          # τ → 0, the undamped supremum
-    tau_sweep = {f"tau={float(t):.4g}": float(spread_at(mpf(t)))
+    sup_spread = spread_at(mpf(0))                 # τ → 0, the undamped supremum
+    tau_sweep = {f"tau={float(t):.4g}": mp.nstr(spread_at(mpf(t)), 50)
                  for t in ("0", "0.01", "0.0991", "0.2091", "1")}
-    family_excluded = sup_spread < A_GROWTH_TARGET
-    print(f"\n [K4] τ-family bound: sup over τ ≥ 0 is at τ→0 = {sup_spread:.4f} "
-          f"vs target {A_GROWTH_TARGET:.4f}")
+    family_excluded = sup_spread < A_GROWTH_TARGET_EXACT
+    print(f"\n [K4] τ-family bound: sup over τ ≥ 0 is at τ→0 = {float(sup_spread):.4f} "
+          f"vs target {float(A_GROWTH_TARGET_EXACT):.4f}")
     for k, v in tau_sweep.items():
-        print(f"      {k:<14} spread {v:>12.6g}")
+        print(f"      {k:<14} spread {float(v):>12.6g}")
     print(f"      ⇒ damping only SHRINKS A-growth, and even the undamped limit falls")
     print(f"        short ⇒ NO τ (canonical or fitted) reproduces the growth: "
           f"{bool(family_excluded)}")
     print("      This excludes the whole exponential-kernel family, not merely the")
     print("      canonical point — and forecloses tuning τ as a fit escape.")
 
-    k1 = results.get("kernel_s_star", {})
-    k2 = results.get("kernel_mu_s_star", {})
-    closes = bool(k1 and k1["worst_err"] <= 0.05) or bool(k2 and k2["worst_err"] <= 0.05)
+    k1 = raw_mpf.get("kernel_s_star", {})
+    k2 = raw_mpf.get("kernel_mu_s_star", {})
+    closes = (bool(k1 and k1["worst_err"] <= 0.05)
+              or bool(k2 and k2["worst_err"] <= 0.05))
     # spread diagnostic: does any canonical variant land near the 12.72 target?
-    spreads = {w: results[w]["S_4He_over_S_D"] for w in results}
-    best_spread = min(spreads, key=lambda w: abs(spreads[w] - A_GROWTH_TARGET))
+    # Read the mpf twins, NOT results[...]: those are serialized strings now
+    # and `min(key=...)`/`>` on them would order lexicographically.
+    spreads = {w: raw_mpf[w]["S_4He_over_S_D"] for w in results}
+    best_spread = min(spreads, key=lambda w: abs(spreads[w] - A_GROWTH_TARGET_EXACT))
     print(f"\n canonical-τ kernel closes to ≤5%: {closes}")
-    print(f" closest A-growth to target {A_GROWTH_TARGET:.3f}: {best_spread} "
-          f"({spreads[best_spread]:.3f})")
+    print(f" closest A-growth to target {float(A_GROWTH_TARGET_EXACT):.3f}: {best_spread} "
+          f"({float(spreads[best_spread]):.3f})")
     print(" ⇒ the isotope-SPREAD diagnostic is the discriminator, not worst-error:")
     for w in results:
-        print(f"     {w:<20} spread {spreads[w]:>9.3f}  "
-              f"({'OVER' if spreads[w] > A_GROWTH_TARGET else 'UNDER'}-grows)")
+        print(f"     {w:<20} spread {float(spreads[w]):>9.3f}  "
+              f"({'OVER' if spreads[w] > A_GROWTH_TARGET_EXACT else 'UNDER'}-grows)")
 
     wb = WitnessBuilder("binding-heat-kernel-canonical-time", engine="mpmath")
     wb.set_description(
@@ -202,18 +226,36 @@ def main() -> int:
         "hbar_q_s_star": mp.nstr(S_STAR, 12),
         "parent_probe_h": mp.nstr(H_OLD, 12),
         "why_untested": "parent τ ∈ {1, h², 1/h²} with h = q−1/q ≠ ℏ_q = (q−1)/q",
-        "A_growth_target": A_GROWTH_TARGET,
+        # NOT the imported A_GROWTH_TARGET: the parent probe binds it as
+        # float(AME_B["4He"]/AME_B["D"]) and three OTHER producers import that
+        # name, so it is re-derived locally here as the exact mpf ratio of the
+        # same two AME decimals rather than changing a shared constant.
+        "A_growth_target": mp.nstr(A_GROWTH_TARGET_EXACT, 50),
         "results": results,
-        "closest_spread_variant": f"{best_spread} ({spreads[best_spread]:.4f})",
-        "tau_family_sup_at_tau0": sup_spread,
+        "closest_spread_variant": f"{best_spread} ({float(spreads[best_spread]):.4f})",
+        "tau_family_sup_at_tau0": mp.nstr(sup_spread, 50),
         "tau_sweep": tau_sweep,
         "tau_family_excluded_for_all_tau": str(bool(family_excluded)),
         "verdict": ("canonical-τ kernel tested zero-fit; see worst_err and the spread "
                     "diagnostic per variant — recorded whichever way it lands"),
-        "family_verdict": ("the exponential-kernel weight family e^{-C_λ τ} is EXCLUDED for "
-                           "every τ ≥ 0: damping only shrinks A-growth and even the undamped "
-                           "τ→0 supremum (3.658) falls short of the 12.72 target — so no τ, "
-                           "canonical or fitted, works. Forecloses τ-tuning as a fit escape.")})
+        # DERIVED, never hardcoded. Both figures and the conclusion itself are read from
+        # what this run computed. The previous form asserted "EXCLUDED for every τ ≥ 0"
+        # unconditionally while quoting a literal supremum (3.658) and a literal target
+        # (12.72) — so the sentence could not track `family_excluded`, which is computed
+        # four lines up, and its quoted supremum went stale when the upstream χ witnesses
+        # moved (3.658 → 0.9194, measured 2026-09-14). A verdict that cannot go stale is
+        # the only kind worth emitting.
+        "family_verdict": (
+            (f"the exponential-kernel weight family e^{{-C_λ τ}} is EXCLUDED for every "
+             f"τ ≥ 0: damping only shrinks A-growth and even the undamped τ→0 supremum "
+             f"({mp.nstr(sup_spread, 6)}) falls short of the "
+             f"{mp.nstr(A_GROWTH_TARGET_EXACT, 6)} target — so no τ, canonical or fitted, "
+             f"works. Forecloses τ-tuning as a fit escape.")
+            if family_excluded else
+            (f"the exponential-kernel family is NOT excluded by this bound: the undamped "
+             f"τ→0 supremum ({mp.nstr(sup_spread, 6)}) REACHES the "
+             f"{mp.nstr(A_GROWTH_TARGET_EXACT, 6)} target, so the τ-family is not "
+             f"foreclosed and the per-variant results below decide it instead."))})
     # Was add_assertion(name, X, X) -- both slots the same literal, so `x == x`:
     # it renders as "passed": true beside real checks, which reads as machine-
     # verified. This is a DECLARATION the code cannot verify about itself, so it is

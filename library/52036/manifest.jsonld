@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/52036",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "kusner.dvi",
+  "contains": [
+    "library/52036/sections/sec-front-matter",
+    "library/52036/sections/sec-000",
+    "library/52036/sections/sec-001",
+    "library/52036/sections/sec-002",
+    "library/52036/sections/sec-003",
+    "library/52036/sections/sec-004",
+    "library/52036/sections/sec-005",
+    "library/52036/sections/sec-006",
+    "library/52036/sections/sec-007"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "meta": {
+    "doc_id": "52036",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "52036.pdf",
+    "source_sha256": "ab02866e1f7191b73633f6d84afd95a9668ac1eb4be5c6220ae4e14238a00d0c",
+    "pages": 9,
+    "arxiv": null,
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

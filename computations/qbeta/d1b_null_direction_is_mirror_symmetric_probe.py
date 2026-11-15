@@ -258,12 +258,12 @@ def main() -> int:
     import subprocess
     bar_files = subprocess.run(
         ["grep", "-rl", "bar involution", str(REPO / "computations"),
-         str(REPO / "content"), str(REPO / "docs")],
+         str(REPO / "folio"), str(REPO / "docs")],
         capture_output=True, text=True).stdout.split()
     bar_on_nz = [f for f in bar_files if subprocess.run(
         ["grep", "-lE", "gluing|Neumann|tetrahed", f],
         capture_output=True, text=True).stdout.strip()]
-    cusp_lean = (REPO / "content/quantum-observable-universe/lean/QOU/QBeta/"
+    cusp_lean = (REPO / "folio/quantum-observable-universe/lean/QOU/QBeta/"
                  "CuspShapeBarParity.lean")
     c6 = (len(bar_on_nz) > 20 and cusp_lean.is_file())
     print("\n  ── C6: 🛑 a BROKEN detector of mine returned 0; the truth is many ──")
@@ -406,7 +406,7 @@ def main() -> int:
     for ok, name, detail in checks:
         wb.add_assertion(name, computed="PASS" if ok else "FAIL",
                          expected="PASS", tolerance="exact", source=detail)
-    wb.save()
+    wb.save({"q0Anchor": "independent", "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal"})
 
     n_ok = sum(1 for ok, _, _ in checks if ok)
     print(f"\n  {n_ok}/{len(checks)} checks passed")

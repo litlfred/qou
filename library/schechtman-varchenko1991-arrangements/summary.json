@@ -1,0 +1,71 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "schechtman-varchenko1991-arrangements",
+ "source_sha256": "0100fd32438740f0",
+ "brief": "Arrangements of hyperplanes and Lie algebra homology — 10 sections: Front matter; Introduction; Orlik-Solomon algebra (Part I. Coh",
+ "extended": "**Arrangements of hyperplanes and Lie algebra homology**\n\n*Vadim V. Schechtman and Alexander N. Varchenko*\n\n56 pp, 10 sections.\n\n**Outline.** Front matter; 0 Introduction; 1 Orlik-Solomon algebra (Part I. Cohomology of; 2 Flag complex; 3 Contravariant form; 4 Topology; 5 Free Lie algebras (Part II. Discriminantal a; 6 Contravariant form, II; 7 Knizhnik-Zamolodchikov equations; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 4.6: mentioned in 0.1 says that for general k integrals over covariant-\n- Theorem 4.6: 4.6.7 Remark. The idea of the above proof arose from the discussion with Misha\n- Theorem 6.16.2: defines canonical isomorphisms of complexes of vector bun-\n- Corollary: The maps : induce isomorphisms of complexes",
+ "tokens": {
+  "brief": 32,
+  "extended": 187
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-0-introduction",
+   "title": "Introduction",
+   "pages": "1-5"
+  },
+  {
+   "id": "sec-001-1-orlik-solomon-algebra-part-i-cohomology-of",
+   "title": "Orlik-Solomon algebra (Part I. Cohomology of local systems over complements of hyperplanes)",
+   "pages": "5-10"
+  },
+  {
+   "id": "sec-002-2-flag-complex",
+   "title": "Flag complex",
+   "pages": "10-13"
+  },
+  {
+   "id": "sec-003-3-contravariant-form",
+   "title": "Contravariant form",
+   "pages": "13-19"
+  },
+  {
+   "id": "sec-004-4-topology",
+   "title": "Topology",
+   "pages": "19-25"
+  },
+  {
+   "id": "sec-005-5-free-lie-algebras-part-ii-discriminantal-a",
+   "title": "Free Lie algebras (Part II. Discriminantal arrangements and Lie algebra homology)",
+   "pages": "25-32"
+  },
+  {
+   "id": "sec-006-6-contravariant-form-ii",
+   "title": "Contravariant form, II",
+   "pages": "32-44"
+  },
+  {
+   "id": "sec-007-7-knizhnik-zamolodchikov-equations",
+   "title": "Knizhnik-Zamolodchikov equations",
+   "pages": "44-55"
+  },
+  {
+   "id": "sec-008-references",
+   "title": "References",
+   "pages": "55-56"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

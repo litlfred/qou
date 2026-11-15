@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/ant-v14-n7-s/sections/sec-178",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Heights and Bogomolov constants",
+  "pageStart": 322,
+  "pageEnd": 323,
+  "contains": [
+    "library/ant-v14-n7-s/blocks/prose-sec-178",
+    "library/ant-v14-n7-s/blocks/thm-sec-178-01",
+    "library/ant-v14-n7-s/blocks/thm-sec-178-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s",
+  "provenance": "ingested"
+}

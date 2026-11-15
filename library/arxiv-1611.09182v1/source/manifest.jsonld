@@ -1,0 +1,52 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1611.09182v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "uWaterloo LaTeX Thesis Template (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1611.09182v1",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1611.09182&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1611.09182v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1611.09182v1",
+    "content_type": "application/gzip",
+    "sha256": "bc7c3e7ed9cf6a78867600ac96c68a861413bbfc95ebcefe7feb96605554abbc",
+    "bytes": 262797,
+    "fetched": "2026-10-10T15:11:41+00:00",
+    "files": [
+      {
+        "path": "source/files/Furey_thesis_arxiv_20161115.bbl",
+        "role": "bbl",
+        "sha256": "be3b2dd79759dc8abbe6e75ab3bff864c87968eba27b5df57e2d4c06af799730",
+        "bytes": 10752
+      },
+      {
+        "path": "source/files/Furey_thesis_arxiv_20161115.tex",
+        "role": "tex",
+        "sha256": "d03d97510cd53da864f92380fe13fc8c5507f71ce7399475a44bc506cc9678b8",
+        "bytes": 244772
+      },
+      {
+        "path": "source/files/uw-ethesis-frontpgs.tex",
+        "role": "tex",
+        "sha256": "09632818e6068461f4d42323794268a8b92a567030d063f369fe4e998ae7cd5c",
+        "bytes": 6653
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

@@ -87,7 +87,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-BEANS = ROOT / ".beans"
+BEANS = ROOT / "beans/defs"
 
 # A path-shaped token inside a bean body. Deliberately narrow: it must look
 # like a real repo path with an extension we care about, so prose does not
@@ -102,7 +102,7 @@ PATH_RE = re.compile(
 # demands a top-level prefix. Resolving those recovers 22 of 187 (11%).
 REL_RE = re.compile(r"\b([\w-]+(?:/[\w.-]+)*\.(?:py|lean|ts|json))\b")
 REL_PREFIXES = (
-    "", "computations", "content", "scripts", "docs", "tools", "schemas",
+    "", "computations", "folio", "scripts", "docs", "tools", "schemas",
     "computations/probes", "computations/audits", "computations/qbeta",
     "computations/sweeps", "computations/markov", "computations/alpha",
     "computations/deltalambda", "computations/schurweyl",

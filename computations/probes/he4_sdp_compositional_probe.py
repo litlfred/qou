@@ -7,7 +7,7 @@ Recreated 2026-07-02: the original producer
 while the block kept declaring
 computations/he4-sdp-compositional-probe.witness.json. This probe
 regenerates that witness from the block's .md specification
-(content/quantum-observable-universe/mass-theory/he4-channel-active-set.md).
+(folio/quantum-observable-universe/mass-theory/he4-channel-active-set.md).
 
 SETUP. The ⁴He = (Z=2, N=2) bound state admits three primary
 compositional channels (each summing to A = 4 nucleons):
@@ -24,7 +24,7 @@ The channel binding residual is
 free-constituent sum. The Δ_cat anchors are LOADED (not hardcoded)
 from the empirical-instantiation witness
 magic-shell-empirical-instantiation.witness.json (currently under
-computations/_deprecated/ — see caveat), so t is COMPUTED from the
+fsh-guts/deprecated/computations/ — see caveat), so t is COMPUTED from the
 anchors. Expected per the .md table (2-decimal rounding):
 t ≈ (24.16, 20.38, 21.18) MeV.
 
@@ -95,17 +95,17 @@ def _anchor_witness_path() -> Path:
     """Resolve magic-shell-empirical-instantiation.witness.json.
 
     The .md cites it at computations/ but it currently lives under
-    computations/_deprecated/ (which _path_bridge.witness_path skips
+    fsh-guts/deprecated/computations/ (which _path_bridge.witness_path skips
     by convention) — check both explicitly."""
     for cand in (
         COMP / "magic-shell-empirical-instantiation.witness.json",
-        COMP / "_deprecated" / "magic-shell-empirical-instantiation.witness.json",
+        COMP.parent / "fsh-guts" / "deprecated" / "computations" / "magic-shell-empirical-instantiation.witness.json",
     ):
         if cand.exists():
             return cand
     raise FileNotFoundError(
         "magic-shell-empirical-instantiation.witness.json not found in "
-        "computations/ or computations/_deprecated/"
+        "computations/ or fsh-guts/deprecated/computations/"
     )
 
 
@@ -142,9 +142,9 @@ def main() -> int:
     delta_cat = {
         k: mp.mpf(v["delta_cat_MeV_50dps"]) for k, v in per_atom.items()
     }
-    if "_deprecated" in str(anchor_path):
+    if ("_deprecated" in str(anchor_path) or "fsh-guts" in str(anchor_path)):
         builder.add_caveat(
-            "Δ_cat anchors loaded from computations/_deprecated/"
+            "Δ_cat anchors loaded from fsh-guts/deprecated/computations/"
             "magic-shell-empirical-instantiation.witness.json — the anchor "
             "witness was moved to _deprecated/ after the .md was written "
             "(the .md still cites the top-level path). Values are the "

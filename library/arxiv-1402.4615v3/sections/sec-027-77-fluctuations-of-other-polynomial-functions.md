@@ -8,150 +8,47 @@ pages: 53-54
 source_pdf: 1402.4615v3.pdf
 source_sha256: b6e7c795cd1a7cd2
 doc_brief: "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel meas ure linked to Jack polynomials."
+text_source: latex
+latex_prose_ratio: 0.927
+latex_coverage_ratio: 1.0
 ---
-sis of polynomial functions, Theorem 1.2 implies that any po lynomial function F
-converge, after proper normalization, towards a multivariate polynomial evaluated
-in independent Gaussian variables.
-However, the proper order of normalization and the actual po lynomial are not
-easy to be expressed explicitly, as this relies on the expans ion of F in the Ch(k)
-basis. In particular, we are not able to do it for Chµ, when µ is not a hook and
-hence we can not describe the ﬂuctuations of these random variables as it was done
-in the case α = 1; see [Hor98] and [IO02, Theorem 6.5].
-8. J ACK MEASURE : CENTRAL LIMIT THEOREMS FOR YOUNG DIAGRAMS AND
-TRANSITION MEASURES
-In this section, we state formally and prove our ﬂuctuation r esults for Young
-diagrams under Jack measure. We will also present a ﬂuctuati on result for the
-transition measures of these diagrams.
-Before we state our results, we need some preparations. We fo llow here nota-
-tions from [IO02, Sections 7 and 8]. First, we deﬁne
-uk(x) = Uk(x/2) =
-∑
-0≤j≤⌊k/2⌋
-(−1)j
-(k − j
-j
-)
-xk−2j,
-tk(x) = 2 Tk(x/2) =
-∑
-0≤j≤⌊k/2⌋
-(−1)j k
-k − j
-(k − j
-j
-)
-xk−2j,
-where Tk and Uk are respectively Chebyshev polynomials of the ﬁrst and seco nd
-kind. They can be alternatively deﬁned by the following equations:
-uk(2 cos(θ)) = sin((k + 1)θ)
-sin(θ) ;
-tk(2 cos(θ)) = 2 cos( kθ).
-It is known that (uk(x))k and (tk(x))k form a family of orthonormal polynomials
-with respect to the measures
-√
-4−x2
-2π dx and 1
-2π
-√
-4−x2 dx, respectively, i. e.:
-∫ 2
-−2
-uk(x)ul(x)
-√
-4 − x2
-2π dx = δk,l;
-∫ 2
-−2
-tk(x)tl(x) 1
-2π
-√
-4 − x2 dx = δk,l.
-The measure
-√
-4−x2
-2π dx supported on the interval [−2, 2] is called the semi-circular
-distribution and is denoted by the µS−C (see Subsection 1.1).
-Recall from Theorem 1.1 that the limit shape of scaled Young diagrams
-ω
-(
-D1/√n
-(
-Aα(λ(n))
-) )
-is given by Ω , where λ(n) is a random Young diagram with n boxes distributed
-according to Jack measure. Hence, in order to study ﬂuctuati ons of the random
-54 M. DOŁ ˛ EGA AND V . FÉRAY
-Young diagrams around the limit shape, we introduce the foll owing application
-from the set of Young diagrams to the space of functions from R to R:
-∆ (α)(λ)(x) := √
-n
-ω
-(
-D1/√n
-(
-Aα(λ)
-) )
-(x) − Ω( x)
-2 ,
-where n is the number of boxes of λ.
-Besides, tt was shown by Kerov [Ker93a] that the transition m easure (see Sub-
-section 2.2) of the continuous Young diagram Ω is the semi-circular distribution
-(see Subsection 1.1). Thus we deﬁne the following function o n the set of Young
-diagrams with n boxes with values in the space of real signed measures:
-ˆ∆ (α)(λ) := √n
-
-
-µ(
-D1/√
-n
-(
-Aα(λ)
-) ) − µS−C
-
-
- .
-As above, n is the number of boxes of λ. This function describes the (scaled)
-difference between the transition measure of the scaled You ng diagram and the
-limiting semi-circular measure.
-Now, we are ready to formulate the central limit theorem for t he Jack measure.
-Here, we use the usual notation [condition] for the indicator function of the corre-
-sponding condition.
-Theorem 8.1. Choose a sequence (Ξ k)k=2,3,... of independent standard Gaussian
-random variables and let λ(n) be a random Young diagram of size n distributed
-according to Jack measure. As n → ∞, we have
-(1) a central limit theorem for Young diagrams:
-(
-u(α)
-k (λ(n))
-)
-k=1,2,...
-d− →
-( Ξ k+1
-√
-k + 1 − γ
-k + 1 [k is odd]
-)
-k=1,2,...
-,
-where u(α)
-k (λ) =
-∫
-R uk(x)∆ (α)(λ)(x) dx;
-(2) and a central limit theorem for transition measures:
-(
-t(α)
-k (λ(n))
-)
-k=3,4,...
-d− →
-(√
-k − 1 Ξ k−1 − γ [k is odd]
-)
-k=3,4,...
-,
-where t(α)
-k (λ) =
-∫
-R tk(x)ˆ∆ (α)(λ)(dx).
-Remark. Notice that, for γ = 0 (i.e. α = 1 ), this theorem specializes to Kerov’s
-central limit theorems for Plancherel measure [Ker93a, IO02].
+[]{#subsect:Fluct_NonHook label="subsect:Fluct_NonHook"}
+
+As $\mathop{\mathrm{Ch}}_{(k)}$ is an algebraic basis of polynomial functions, Theorem [\[theo:FluctuationsJackCharacters\]](#theo:FluctuationsJackCharacters){reference-type="ref" reference="theo:FluctuationsJackCharacters"} implies that any polynomial function $F$ converge, after proper normalization, towards a multivariate polynomial evaluated in independent Gaussian variables.
+
+However, the proper order of normalization and the actual polynomial are not easy to be expressed explicitly, as this relies on the expansion of $F$ in the $\mathop{\mathrm{Ch}}_{(k)}$ basis. In particular, we are not able to do it for $\mathop{\mathrm{Ch}}_{\mu}$, when $\mu$ is not a hook and hence we can not describe the fluctuations of these random variables as it was done in the case $\alpha=1$; see [@HoraFluctuationsCharacters] and [@IvanovOlshanski2002 Theorem 6.5].
+
+# Jack measure: central limit theorems for Young diagrams and transition measures {#sect:CLT2}
+
+In this section, we state formally and prove our fluctuation results for Young diagrams under Jack measure. We will also present a fluctuation result for the transition measures of these diagrams.
+
+Before we state our results, we need some preparations. We follow here notations from [@IvanovOlshanski2002 Sections 7 and 8]. First, we define $$\begin{aligned}
+u_k(x) &= U_k(x/2) = \sum_{0 \leq j \leq \lfloor k/2 \rfloor}(-1)^j\binom{k-j}{j}x^{k-2j},\\
+ t_k(x) &= 2T_k(x/2) = \sum_{0 \leq j \leq \lfloor k/2 \rfloor}(-1)^j\frac{k}{k-j}\binom{k-j}{j}x^{k-2j},
+\end{aligned}$$ where $T_k$ and $U_k$ are respectively Chebyshev polynomials of the first and second kind. They can be alternatively defined by the following equations: $$\begin{aligned}
+ u_k(2 \cos(\theta)) &= \frac{\sin((k+1)\theta)}{\sin(\theta)};\\
+ t_k(2 \cos(\theta)) &= 2 \cos(k\theta).
+\end{aligned}$$ It is known that $\left(u_k(x)\right)_k$ and $\left(t_k(x)\right)_k$ form a family of orthonormal polynomials with respect to the measures $\frac{\sqrt{4-x^2}}{2\pi}dx$ and $\frac{1}{2\pi \sqrt{4-x^2}}dx$, respectively, *i. e.*: $$\begin{aligned}
+ \int^2_{-2} u_k(x)u_l(x)\frac{\sqrt{4-x^2}}{2\pi }dx &= \delta_{k,l};\\
+ \int^2_{-2} t_k(x)t_l(x)\frac{1}{2\pi \sqrt{4-x^2}}dx &= \delta_{k,l}.
+\end{aligned}$$ The measure $\frac{\sqrt{4-x^2}}{2\pi}dx$ supported on the interval $[-2,2]$ is called the *semi-circular distribution* and is denoted by the $\mu_{S-C}$ (see Subsection [\[subsect:JackPlancherel\]](#subsect:JackPlancherel){reference-type="ref" reference="subsect:JackPlancherel"}).
+
+Recall from Theorem [\[theo:RYD-limit\]](#theo:RYD-limit){reference-type="ref" reference="theo:RYD-limit"} that the limit shape of scaled Young diagrams $$\omega\bigg(D_{1/\sqrt{n}}\big(A_\alpha(\lambda_{(n)})\big)\bigg)$$ is given by $\Omega$, where $\lambda_{(n)}$ is a random Young diagram with $n$ boxes distributed according to Jack measure. Hence, in order to study fluctuations of the random Young diagrams around the limit shape, we introduce the following application from the set of Young diagrams to the space of functions from $\mathbb{R}$ to $\mathbb{R}$: $$\Delta^{(\alpha)}(\lambda)(x) := \sqrt{n}\frac{\omega\bigg(D_{1/\sqrt{n}}\big(A_\alpha(\lambda)\big)\bigg)(x)
+ - \Omega(x)}{2},$$ where $n$ is the number of boxes of $\lambda$.
+
+Besides, tt was shown by Kerov [@Kerov1993] that the transition measure (see Subsection [\[subsect:TransMeasure\]](#subsect:TransMeasure){reference-type="ref" reference="subsect:TransMeasure"}) of the continuous Young diagram $\Omega$ is the semi-circular distribution (see Subsection [\[subsect:JackPlancherel\]](#subsect:JackPlancherel){reference-type="ref" reference="subsect:JackPlancherel"}). Thus we define the following function on the set of Young diagrams with $n$ boxes with values in the space of real signed measures: $$\widehat{\Delta}^{(\alpha)}(\lambda) := \sqrt{n}\left( \mu_{\bigg(D_{1/\sqrt{n}}\big(A_\alpha(\lambda)\big)\bigg)} - \mu_{S-C} \right) .$$ As above, $n$ is the number of boxes of $\lambda$. This function describes the (scaled) difference between the transition measure of the scaled Young diagram and the limiting semi-circular measure.
+
+Now, we are ready to formulate the central limit theorem for the Jack measure. Here, we use the usual notation $[\text{condition}]$ for the indicator function of the corresponding condition.
+
+::: theorem
+[]{#theo:Fluctuations label="theo:Fluctuations"} Choose a sequence $\left(\Xi_k \right)_{k=2,3,\dots}$ of independent standard Gaussian random variables and let $\lambda_{(n)}$ be a random Young diagram of size $n$ distributed according to Jack measure. As $n \to \infty$, we have
+
+1.  []{#item:fluctuationsOfDiagrams label="item:fluctuationsOfDiagrams"} a central limit theorem for Young diagrams: $$\left( u^{(\alpha)}_{k}(\lambda_{(n)}) \right)_{k=1,2,\dots} \xrightarrow{d} 
+    \left(  \frac{\Xi_{k+1}}{\sqrt{k+1}} - \frac{\gamma}{k+1} \, [k\text{ is odd}]\right)_{k=1,2,\dots},$$ where $u^{(\alpha)}_{k} (\lambda) = \int_\mathbb{R}u_k(x) \Delta^{(\alpha)}(\lambda)(x)\ dx$;
+
+2.  []{#item:fluctuationsOfTransition label="item:fluctuationsOfTransition"} and a central limit theorem for transition measures: $$\left( t^{(\alpha)}_{k}(\lambda_{(n)}) \right)_{k=3,4,\dots} \xrightarrow{d} \left(  \sqrt{k-1}\, \Xi_{k-1} - \gamma \, [k\text{ is odd}]  \right)_{k=3,4,\dots},$$ where $t^{(\alpha)}_{k} (\lambda) = \int_\mathbb{R}t_k(x) \widehat{\Delta}^{(\alpha)}(\lambda)(dx)$.
+:::
+
+::: remark
+Notice that, for $\gamma=0$ (*i.e.* $\alpha=1$), this theorem specializes to Kerov's central limit theorems for Plancherel measure [@Kerov1993; @IvanovOlshanski2002].
+:::

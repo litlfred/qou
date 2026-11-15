@@ -23,6 +23,7 @@ from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -301,6 +302,96 @@ Fixed by the owner ruling of 2026-08-15, which excised convention C
 """
 
 
+#: Every ``markov_convention`` spelling measured in the corpus, as fixtures for
+#: :func:`_normalise_markov_convention`.  Produced 2026-10-10 by scanning the
+#: 3510 non-``_deprecated`` ``computations/**/*.witness.json``: **44 declare the
+#: field (1.3 %), in 23 distinct spellings for 4 states.**  Kept here so a
+#: change to the normaliser cannot silently reclassify one of them.
+MARKOV_CONVENTION_SPELLINGS = {
+    # -- D ----------------------------------------------------------------
+    "D": "D",
+    "D canonical": "D",
+    "D (N = 2)": "D",
+    "D (z = q^3/(q^2+1))": "D",
+    "D  (z = q^3/(q^2+1))": "D",                      # note the double space
+    "D (with C as control)": "D",
+    "D canonical, C carried as control": "D",
+    "D — z_D = q^3/(q^2+1), Wenzl level 2": "D",
+    "D — the ruled functional, z_D = q^3/(q^2+1)": "D",
+    "D (z = q^3/(q^2+1)); C measured for comparison": "D",
+    "D (z = q^3/(q^2+1)) via closed_form_tau_M.markov_z": "D",
+    # -- C ----------------------------------------------------------------
+    "C": "C",
+    # -- both compared; the stamp privileges neither ----------------------
+    "both (C and D compared)": "both",
+    "both, compared — D canonical": "both",
+    "both admissible parameters are evaluated: z = q (level 1, the "
+    "augmentation) and z_D = q^3/(q^2+1) (level 2, convention D)": "both",
+    # -- no Markov parameter enters at all --------------------------------
+    "not applicable": "n/a",
+    "n/a (counit only)": "n/a",
+    "n/a - no Markov parameter z enters": "n/a",
+    "not applicable — no z enters this computation": "n/a",
+    "convention-free — no z is specialised": "n/a",
+    "convention-free — no Markov parameter is specialised": "n/a",
+    "convention-free — z is symbolic; the D pin appears as one root": "n/a",
+    "convention-free — the results hold for every z, and the floor contains "
+    "no Markov parameter at all": "n/a",
+}
+
+
+def _normalise_markov_convention(raw) -> str:
+    """Map a free-text ``markov_convention`` stamp to D / C / both / n/a.
+
+    **Why this exists — a LATENT defect, not a live one.**  The check in
+    :func:`_convention_frame_check` was
+
+        matched = str(conv).strip().upper() == CANONICAL_MARKOV_CONVENTION
+
+    an exact equality against the single character ``"D"``.  Measured
+    2026-10-10 over the 3510 non-``_deprecated`` witnesses: **44 carry the
+    field, in 23 distinct spellings, and only 13 are a bare** ``"D"``.  So ten
+    of the eleven spellings that MEAN convention D — ``"D canonical"``,
+    ``"D (z = q^3/(q^2+1))"``, ``"D (N = 2)"``, ``"D — the ruled functional,
+    …"`` — classified as ``INHERITED_C``: a correctly-stamped *canonical*
+    artifact reported as carrying the *excised* convention, on the dashboard
+    AGENTS.md directs readers to quote for L2 status.
+
+    It has never produced a wrong verdict, because the one cache this dashboard
+    reads (``qbeta-ck-cache.witness.json``) carries the bare ``"C"`` — which
+    the old check got right.  **Zero wrong verdicts is not a sound check**
+    (detector-blindness taxonomy row 34): the moment ``qou-cds1`` lands and
+    that cache is re-stamped with anything longer than one character, the
+    dashboard calls the ruled result convention C.
+
+    **Deliberately conservative.**  An unrecognised spelling returns
+    ``"unparsed"`` — never ``"D"``, never ``"C"`` — so a new spelling fails
+    *loudly* rather than being absorbed into either verdict.  ``"unparsed"`` is
+    **not a clearance**: it means this function has nothing to say, in the same
+    sense as the sibling consumer-control-arm audit's ``unmeasured``.
+    """
+    if raw is None:
+        return "unparsed"
+    s = " ".join(str(raw).split())           # collapse runs of whitespace
+    for spelling, state in MARKOV_CONVENTION_SPELLINGS.items():
+        if s == " ".join(spelling.split()):
+            return state
+    low = s.lower()
+    # Rules below run only after the exact vocabulary misses.  Each is anchored
+    # at the START of the stamp: a mention of C further along is in practice
+    # "C carried as a control", which describes a D-framed computation.
+    if low.startswith(("not applicable", "n/a", "convention-free",
+                       "convention free")):
+        return "n/a"
+    if low.startswith("both"):
+        return "both"
+    if re.match(r"^d\b", low):
+        return "D"
+    if re.match(r"^c\b", low):
+        return "C"
+    return "unparsed"
+
+
 def _convention_frame_check(cache: dict) -> dict:
     """Record the Markov convention a cached Q_β prediction was BUILT in.
 
@@ -346,10 +437,26 @@ def _convention_frame_check(cache: dict) -> dict:
                        "cannot be verified from the artifact alone"),
             "canonical": CANONICAL_MARKOV_CONVENTION,
         }
-    matched = str(conv).strip().upper() == CANONICAL_MARKOV_CONVENTION
+    # The stamp is FREE TEXT -- 23 spellings for 4 states corpus-wide -- so it
+    # is normalised rather than compared character-for-character against "D".
+    # See `_normalise_markov_convention` for the measurement and for why an
+    # unrecognised spelling is reported rather than absorbed into a verdict.
+    state = _normalise_markov_convention(conv)
+    matched = state == CANONICAL_MARKOV_CONVENTION
+    status = {
+        "D": "matched",
+        "C": "INHERITED_C",
+        "both": "both_conventions_compared",
+        "n/a": "no_markov_parameter",
+        "unparsed": "unparsed_stamp",
+    }[state]
     return {
-        "status": "matched" if matched else "INHERITED_C",
+        "status": status,
+        # `INHERITED_C` is the only status any consumer acts on, and only `C`
+        # now reaches it. `unparsed_stamp` is NOT a clearance -- it says this
+        # check has nothing to say about the frame.
         "cache_convention": conv,
+        "cache_convention_normalised": state,
         "canonical": CANONICAL_MARKOV_CONVENTION,
         "cache_note": data.get("markov_convention_note"),
         # Deliberately None, not 0 and not a guess -- see the docstring.
@@ -384,11 +491,24 @@ def _functional_admissibility_check() -> dict:
     AT the substrate pin either (the numerator vanishes at `z = 1` only at the
     supergolden ratio 1.4656, above `q₀ = 1.10998`).
 
-    So the 164× this dashboard scores is the miss of a functional the canonical
-    convention excludes. The best admissible cell is **+12.470 %** (the
-    augmentation on `Δ_S`) against the published **+0.168 %** — **74.3× worse,
-    base to base**. That is the number a reader needs in order to size the gap,
-    and until 2026-09-07 the dashboard carried no trace of it.
+    🟧 RULED 2026-09-08, RE-SCORED 2026-09-12 — read this before the rest.
+    The owner ruled that `ε` **is** the Markov trace at `z_D`, and on
+    2026-09-12 authorised the dashboard re-score onto it. So the `Q_β` row no
+    longer scores the excluded `z = 1` cell, and this check's role has changed
+    from *"the scored value rests on an excluded functional"* to *"here is the
+    admissibility evidence, and which cell the ruling picked"*. It is kept
+    rather than deleted because the `z = 1` identification is what makes the
+    ruling legible, and because the re-score is guarded by a calibration that
+    can fail — if it does, the old row is published and this check's note is
+    again the live warning.
+
+    The three cells at the proton pin: `z = 1` **+0.168 %** (retired,
+    inadmissible), `z = q` **+12.470 %** (the augmentation — admissible, but
+    the strictly finer one-row truncation, so NOT convention D), and
+    **`z_D` −43.157 %** (RULED). Note the ruled cell is the FARTHEST of the
+    three from CODATA. That is not a defect in the ruling: the choice turned on
+    what `ε` means under D7, and ranking these cells by residual would be the
+    selection-against-the-target AGENTS.md §"NO FITTING" forbids.
 
     🛑 COMPARE BASE TO BASE, and do not relate either to the 1279 ppb scored
     here. The 1279 ppb is the value AFTER the `c_k` ladder, which improves its
@@ -421,7 +541,22 @@ def _functional_admissibility_check() -> dict:
         "scored_prediction_rests_on_z": solved.get("positive_branch"),
         "admissible_roots_under_D": solved.get("admissible_roots"),
         "err_pct_by_functional": errs,
-        "best_admissible_err_pct": errs.get("z=q (augmentation)"),
+        # RENAMED 2026-09-12 on owner instruction, from
+        # `best_admissible_err_pct`, which read `errs["z=q (augmentation)"]`.
+        # Two defects in one field. It named the augmentation — the owner ruled
+        # for `z_D` (D7: convention D is the two-row truncation; the
+        # augmentation is the strictly finer one-row truncation and is NOT D),
+        # so a consumer of this witness took the wrong functional for the
+        # adopted one. And "best" ranked the admissible cells BY RESIDUAL,
+        # which is the selection-against-the-target AGENTS.md §"NO FITTING"
+        # forbids — accuracy is a diagnostic here, never a tie-breaker. The
+        # ruled cell is in fact 3.4609x FARTHER from CODATA than the
+        # augmentation, so the old name asserted a ranking that points away
+        # from the ruling. Both cells stay visible in
+        # `err_pct_by_functional`; only the singled-out one changes.
+        "ruled_cell_err_pct": errs.get("z=z_D (Markov, convention D)"),
+        "ruled_cell_markov_parameter": "z_D = q^3/(q^2+1)",
+        "augmentation_err_pct_for_comparison": errs.get("z=q (augmentation)"),
         "source_witness": path.name,
         "lean": "QOU.QBeta.ConventionDAdmissibleRoots (sorry-free)",
         "probe_assertions_failed": failed or None,
@@ -431,21 +566,275 @@ def _functional_admissibility_check() -> dict:
             "ladder sits on uses a functional convention D provably excludes: the "
             "published closed form solves to z = 1, which is not a root of the "
             "(1^3) weight numerator. The best ADMISSIBLE cell is +12.47% (the "
-            "augmentation on Delta_S) against the published 0.16776% -- 74.3x "
-            "worse, BASE TO BASE. Do NOT relate either to the 1279 ppb scored "
-            "here: that is the post-ladder value, and no ladder has been derived "
-            "on an admissible base, so what it would become is UNKNOWN. "
-            "Which functional to adopt is an open owner decision (seven "
-            "options, docs/audits/2026-09-05-qbeta-functional-decision-options.md, "
-            "bean qou-99qc); that the scored value rests on an excluded one is "
-            "true under all of them. Applies to the m_n and Delta_pn rows, which "
+            "augmentation on Delta_S) against the published 0.16776%, and the "
+            "RULED cell is -43.157% -- the ruled cell is the FARTHEST of the "
+            "three from CODATA, which is the anti-fit directive working as "
+            "designed, not a defect in the ruling. WHICH FUNCTIONAL TO ADOPT IS "
+            "NO LONGER OPEN: the owner ruled 2026-09-08 that eps is the Markov "
+            "trace at z_D = q^3/(q^2+1) (convention D, two-row truncation, D7), "
+            "and authorised the dashboard re-score on 2026-09-12 with its price "
+            "measured first (qbeta/qbeta-zd-rescore-price.witness.json). The "
+            "Q_beta row is scored on the ruled base from that date, so this "
+            "field records the admissibility EVIDENCE rather than a live defect "
+            "-- it becomes the live warning again only if the re-score's "
+            "calibration against this witness fails. Do NOT relate any cell to "
+            "the ~1279 ppb the retired row used to show: that was post-ladder, "
+            "and no ladder has been derived on an admissible base (qou-cds1, "
+            "blocked on the phase qou-pdix), so what the ruled base would become "
+            "with one is UNKNOWN. Applies to the m_n and Delta_pn rows, which "
             "are derived from this value -- and unlike the convention note, it is "
             "written ONTO those rows rather than cross-referenced from this one."
         ),
     }
 
 
-def _inherited_qbeta_scope(conv: dict, adm: dict) -> str | None:
+def _qbeta_ruled_base() -> dict:
+    """Q_β on the RULED base: the Markov trace at `z_D = q³/(q²+1)`.
+
+    OWNER RULING 2026-09-08, and OWNER AUTHORISATION 2026-09-12 to score it.
+    `ε` in `Q_β = |ε(Δ)|·E₀` is the Markov trace at `z_D` (convention D, the
+    two-row truncation — D7). Until 2026-09-12 this dashboard scored the
+    **retired `z = 1`** cell instead, which is the coordinate sum and is
+    provably NOT an admissible root under D
+    (`ConventionDAdmissibleRoots.lean`, sorry-free). The owner authorised the
+    re-score with the price measured in
+    `qbeta-zd-rescore-price.witness.json`: it degrades the `Q_β` / `m_n` /
+    `Δ_pn` rows by roughly 5–7 orders of magnitude.
+
+    DERIVED FROM q₀, NOT INVERTED FROM CODATA. The tempting implementation is
+    to read the probe witness's recorded `-43.157175 %` residual and invert it
+    (`pred = Q_exp·(1+err)`), which is arithmetically exact and optically
+    circular: the row's residual would then be a pass-through of a number that
+    was itself computed against CODATA. This instead evaluates the functional
+
+        tr_M(Δ_S)(z) = q²/2 − q·z − 1 + z/q + 1/(2q²)      (affine trace)
+        E₀           = m_e / (q(q−1))
+        Q_β(z)       = |tr_M(Δ_S)(z)| · E₀
+
+    at `z = z_D` from `q₀` alone — no CODATA anywhere in the value — and then
+    CALIBRATES against the committed probe witness. If the calibration misses,
+    `calibrated` is False and the caller keeps the old row rather than
+    publishing a number my arithmetic invented.
+
+    🛑 THE RESULT IS A BASE, WITH ZERO `c_k` RUNGS, AND THAT IS THE WHOLE
+    CAVEAT. No ladder has been derived on an admissible base — that is exactly
+    what `qou-cds1` is, blocked on the phase `qou-pdix`. On the retired `z = 1`
+    base the five rungs bought 1 677 569 → 37.7 ppb, about 4.5 orders. So this
+    row is NOT "convention D's accuracy"; it is the ruled base before any
+    ladder exists, and the owner authorised a SECOND re-score once `qou-pdix`
+    closes (bean `qou-iagg`). Quoting it as D's accuracy repeats the
+    mislabelling bean `qou-99qc` already had to retract once.
+    """
+    from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+    sys.path.insert(0, str(COMPUTE_DIR / "qbeta"))
+    from qbeta_e0 import canonical as _e0_canonical, order_zero as _e0_order_zero
+    q = mpf(Q_50_DIGIT_STR)
+    z_D = q ** 3 / (q ** 2 + 1)
+    # ── ELEMENT: THE gamma-gamma-SELECTED NUCLEON WORD (bean qou-wfvl) ────────
+    # MIGRATED 2026-09-12. This scored `Delta_S`, the short normal-form element,
+    # whose provenance is the census / NF construction. The owner ruled the SAME
+    # DAY as the eps ruling (`qou-ales`, 2026-09-08): "All selection of great
+    # words should be done through gamma gamma production and the semi-definite
+    # product solutions at q0. Shouldn't use census." So `Delta_S` was not an
+    # admissible element and the functional had been migrated without it.
+    #
+    # THE CHAIN, every link on main or committed -- NOT depending on the open
+    # sibling PR #7212:
+    #   1. `QOU.Mass.GammaGammaWordSelection.vertex i = [(i, +), (i+1, -)]`, so
+    #      every gamma-gamma word has a NEGATIVE second letter. The gen-grouped
+    #      core begins `sigma_0 sigma_0` (positive second letter) and is therefore
+    #      excluded; the interleaved core `(sigma_0 sigma_1^-1)^3` is three
+    #      vertices and is admitted.
+    #   2. `qbeta-option-e-required-level.witness.json` (on main, q0_anchor
+    #      proton, BOTH admissible parameters evaluated) carries `tr_conv_D` for
+    #      all four candidate elements.
+    # PR #7212 proves (1) as an explicit Lean lemma; it is OPEN, so it is cited
+    # as corroboration, not as the authority. The authority is the ruling plus
+    # `vertex`'s definition on main.
+    #
+    # NOT CHOSEN BY RESIDUAL, and that must stay true if a later agent revisits
+    # this: the gamma-gamma-selected element happens to be 2.5x closer to CODATA
+    # than `Delta_S`, but it is selected because it is DERIVED. Were it further
+    # away it would still be the right element. Ranking candidates by residual is
+    # the selection-against-the-target AGENTS.md forbids.
+    _CENSUS = json.loads(
+        (COMPUTE_DIR / "qbeta" / "qbeta-option-e-required-level.witness.json"
+         ).read_text())
+    _cand = _CENSUS["data"]["per_candidate"]
+    _ELEMENT = "nuc11_interleaved"
+    tr_M = mpf(_cand[_ELEMENT]["tr_conv_D"])
+    # tr^{z_D}(Delta_S) = h^2/2 - z_D*h exactly (h = q - 1/q), kept so the
+    # superseded cell stays reproducible and the delta is measurable.
+    _tr_M_delta_S = q ** 2 / 2 - q * z_D - 1 + z_D / q + 1 / (2 * q ** 2)
+    # E_0 THROUGH THE UNIFIED MODULE (owner instruction 2026-09-12). It had two
+    # live forms differing by 1/(1 - hbar_q^2) = +0.9915 %, with no signal at
+    # either call site; qbeta_e0 is now the single definition and the
+    # tower-summed form is canonical per the 2026-09-03 full-tower ruling.
+    # NOTE the tower SERIES is itself an open derivation (bean qou-y3bm) --
+    # canonical by ruling, not by proof.
+    pred = abs(tr_M) * _e0_canonical(q=q, m_e=M_E_MEV)
+    pred_order_zero = abs(tr_M) * _e0_order_zero(q=q, m_e=M_E_MEV)
+
+    # CALIBRATE THE TRACE, NOT THE E_0 CHOICE -- and this distinction is not
+    # cosmetic: it was found by the guard firing. The probe witness's recorded
+    # cell (-43.157175 %) was computed with the ORDER-ZERO E_0, so when E_0 was
+    # unified onto the tower-summed form (+0.9915 %) the comparison missed by
+    # ~0.56 points, `calibrated` went False, and the producer correctly refused
+    # to publish -- silently reverting the whole row to the retired z = 1 cell.
+    # The guard did its job; the calibration was asking the wrong question.
+    # So: calibrate the TRACE against the recorded cell at the E_0 that cell was
+    # computed with, then publish at the CANONICAL E_0. One check per claim.
+    adm = _functional_admissibility_check()
+    # Calibrate against the CENSUS witness's own recorded pct for the element
+    # actually scored -- not against the Delta_S cell, which is a different
+    # element. Both are at order-zero E_0, so the trace/E_0 separation below
+    # still holds.
+    recorded = _cand[_ELEMENT]["pct_D"]
+    err_pct = (pred - Q_BETA_MEV) / Q_BETA_MEV * 100
+    err_pct_order_zero = (pred_order_zero - Q_BETA_MEV) / Q_BETA_MEV * 100
+    calibrated = False
+    if recorded is not None:
+        calibrated = abs(err_pct_order_zero - mpf(str(recorded))) < mpf("1e-4")
+    return {
+        "Q_beta_MeV": fmt(pred),
+        "markov_parameter": "z_D = q^3/(q^2+1)",
+        "E0_form": "tower_summed (canonical, qbeta_e0.canonical)",
+        "E0_MeV": fmt(_e0_canonical(q=q, m_e=M_E_MEV)),
+        "E0_tower_series_is_open": "qou-y3bm -- canonical by the 2026-09-03 "
+                                   "full-tower ruling, series not derived",
+        "Q_beta_MeV_at_order_zero_E0": fmt(pred_order_zero),
+        "E0_choice_moves_row_pct": fmt(
+            (pred / pred_order_zero - 1) * 100, 6),
+        "err_pct": fmt(err_pct),
+        "err_pct_at_order_zero_E0": fmt(err_pct_order_zero),
+        "recorded_err_pct_in_probe_witness": recorded,
+        "calibration_compares": "err_pct_at_order_zero_E0 vs the recorded cell -- "
+                                "the cell was computed at order-zero E_0, so "
+                                "calibrating the published (tower-E_0) value "
+                                "against it would conflate the trace with the "
+                                "E_0 choice and fail by ~0.56 points",
+        "calibrated_against_probe_witness": bool(calibrated),
+        "ck_rungs_applied": 0,
+        "ladder_on_admissible_base_exists": False,
+        "_pred": pred,
+        "ruling": "owner 2026-09-08 (eps := Markov trace at z_D, D7); "
+                  "re-score authorised 2026-09-12",
+        "price_witness": "qbeta/qbeta-zd-rescore-price.witness.json",
+        "second_rescore_due_after": "qou-pdix (phase) -> qou-cds1 (ladder); "
+                                    "bean qou-iagg",
+        # 🛑 THE ELEMENT IS RULED IN 6 OF ITS 11 LETTERS, NOT IN ALL OF THEM.
+        # (This comment said "THE ELEMENT IS NOT RULED ... This row uses
+        # delta_S" until 2026-09-13. That was the pre-migration text: 573b2ece24
+        # had already moved the scored element to `nuc11_interleaved` and the row
+        # had already improved 2.55x, 4.259e+8 -> 1.668e+8 ppb, while this block
+        # still told a reader the row was delta_S at -43.157 %. PR #7212, cited
+        # below as OPEN, merged as 85ffb930e2. Corrected, not re-argued.)
+        #
+        # What IS ruled: the 2026-09-08 owner ruling fixes `eps` (the Markov
+        # trace at z_D), and the gamma-gamma word-selection ruling (qou-ales)
+        # selects the nucleon ORDERING -- interleaved over gen-grouped.
+        # The candidate census (witness qbeta-option-e-required-level) carries
+        # FOUR elements, all undershooting at level 2 = z_D, at order-zero E_0:
+        #     delta_S short NF        -43.157 %   <- superseded
+        #     nuc9 build_nucleon_nf   -30.936 %
+        #     nuc11 interleaved       -17.496 %   <- what this row scores
+        #     nuc11 gen-grouped       -15.451 %
+        # (on the canonical tower-summed E_0 the scored cell is -16.678 %.)
+        #
+        # What is NOT ruled, and it is a PARITY bound rather than an opinion.
+        # `nuc11_interleaved` is ELEVEN letters, read off its construction in
+        # qbeta_delta_candidate_census_probe.py: nuc9 = 3 x (sigma_0, sigma_1) core
+        # = 6, + a 3-letter quark block = 9, + 2 sigma_0 gluon letters = 11.
+        # Every gamma-gamma word has EVEN length, being a concatenation of
+        # 2-letter vertices (`gammaGamma_length_even`, sorry-free). 11 is odd, so
+        # nuc11_interleaved is not a gamma-gamma word and the ruling cannot have
+        # selected it whole:
+        #     core   6 letters  gamma-gamma-reachable (three vertices)
+        #     quark  3 letters  NOT -- odd
+        #     gluon  2 letters  NOT -- even, but both letters positive, and it
+        #                       follows an odd block so no vertex boundary aligns
+        # So the element is 6/11 ruling-derived and 5/11 census-derived, which
+        # matters because qou-ales is "shouldn't use census". Measured and
+        # surfaced to the owner on bean qou-99qc (2026-09-12); the counts are
+        # emitted below as `element_ruled_letters` / `element_census_letters`.
+        # `element_is_ruled` WAS left True DELIBERATELY -- it is an owner-facing
+        # provenance label and re-meaning it is the owner's call, not an agent's.
+        #
+        # 🟧 CHANGED TO False 2026-10-11, AT THE OWNER'S REQUEST (ofri, in
+        # session, 2026-10-11T07:22Z: draft the fix for review). The boolean now
+        # answers "is the WHOLE scored element ruled?", and the answer is no:
+        #   * 6/11 letters (the core) are gamma-gamma-reachable, and even that
+        #     selection is CONDITIONAL -- on confinement reading 3, which is
+        #     provisional ("try ... 3 for now", qou-ales), and on excluding the
+        #     empty word, which reading 3 otherwise selects
+        #     (GammaGammaFrobeniusSelection.frobeniusSelected_borromean /
+        #     frobeniusSelected_nil, sorry-free);
+        #   * 5/11 letters are CHOSEN: the 3-letter quark template and the
+        #     sigma_0 sigma_0 gluon pair, whose "ILP-derived" citation is dead
+        #     and which fails reading 3 (bean qou-99qc).
+        # Evidence: word-provenance audit
+        # (mass-endomorphism/klambda/word-provenance.md, 2026-10-11).
+        # `element_ruled_status` carries the partial verdict as a string.
+        # Consumer check at the change: no code reads `element_is_ruled`; the
+        # only other mentions are prose in
+        # qbeta_scored_element_is_not_gamma_gamma_produced_probe.py (and its
+        # witness), which warns against reading True as "gamma-gamma-produced".
+        #
+        # So the figure is scoped twice over, not once: no ladder (above), AND
+        # an element whose 5 free letters have no derived constraint. Do not read
+        # it as the framework's Q_beta.
+        "element_scored": _ELEMENT + " (gamma-gamma-selected nucleon word)",
+        "element_is_ruled": False,
+        "element_ruled_status": "partial",
+        "element_ruled_status_rationale": (
+            "6/11 letters (the core (sigma_0 sigma_1^-1)^3) are gamma-gamma-"
+            "reachable, and even those are conditional on the provisional "
+            "confinement reading 3 and on excluding the empty word "
+            "(frobeniusSelected_borromean / frobeniusSelected_nil); the other "
+            "5 letters (3-letter quark template + sigma_0 sigma_0 gluon pair) "
+            "are chosen -- the gluon pair's 'ILP-derived' citation is dead and "
+            "it fails reading 3 (qou-99qc). Source: word-provenance audit "
+            "2026-10-11; False set at owner request 2026-10-11"
+        ),
+        # The boolean cannot express a partial selection; these two can, and
+        # they are what the parity bound in the comment above measures. Kept
+        # ALONGSIDE the boolean so no consumer breaks. 6 + 5 = 11 letters.
+        "element_ruled_letters": 6,
+        "element_census_letters": 5,
+        "element_ruled_scope": (
+            "the 6-letter core (sigma_0, sigma_1)^3 = three gamma-gamma "
+            "vertices. The 3-letter quark block is odd and the 2-letter gluon "
+            "pair has both letters positive, so neither is gamma-gamma "
+            "reachable -- gammaGamma_length_even, sorry-free. qou-ales says "
+            "'shouldn't use census' and 5 of 11 letters are still census-"
+            "derived; those 5 have no derived constraint and are where a "
+            "closing Delta would have to come from (bean qou-99qc, 2026-09-12)"
+        ),
+        "element_authority": "owner gamma-gamma ruling qou-ales 2026-09-08 + "
+                             "GammaGammaWordSelection.vertex on main (a "
+                             "gamma-gamma word's 2nd letter is negative, which "
+                             "excludes the gen-grouped core)",
+        "element_superseded": "delta_S (short NF) -- census-derived, "
+                              "inadmissible under the gamma-gamma ruling; its "
+                              "cell was -43.157175%",
+        "Q_beta_MeV_on_superseded_delta_S": fmt(
+            abs(_tr_M_delta_S) * _e0_canonical(q=q, m_e=M_E_MEV)),
+        "element_ordering_proof_open_in": "PR #7212 (Lean lemma for the "
+                                          "2nd-letter exclusion; corroboration, "
+                                          "not the authority)",
+        "element_candidates_level2_pct": {
+            "delta_S short NF": "-43.157",
+            "nuc9 build_nucleon_nf": "-30.936",
+            "nuc11 interleaved (gamma-gamma-selected per PR #7212, OPEN)": "-17.496",
+            "nuc11 gen-grouped": "-15.451",
+        },
+        "element_tracked_by": "qou-99qc (the Delta/eps fork, open); "
+                              "PR #7212 narrows the nucleon-word branch",
+    }
+
+
+def _inherited_qbeta_scope(conv: dict, adm: dict,
+                           ruled: dict | None = None) -> str | None:
     """The scope `m_n` and `Δ_pn` inherit from `Q_β`, written onto their own rows.
 
     `m_n = m_p + Q_β + m_e` and `Δ_pn = Q_β + m_e`, so every caveat on `Q_β`
@@ -458,9 +847,35 @@ def _inherited_qbeta_scope(conv: dict, adm: dict) -> str | None:
     Returns None when neither scope applies, so a future state in which the
     ladder is re-derived under D on an admissible functional silently drops
     the note rather than leaving a stale one.
+
+    **That promise did not hold, and the guard below is the repair.** The C
+    note was gated on ``conv["status"] == "INHERITED_C"``, which is a property
+    of ``qbeta-ck-cache.witness.json`` and not of the value this row scores.
+    The cache is a convention-C artifact *by construction* and
+    ``qbeta_ck_cache.py`` raises ``SystemExit(2)`` under D, so that status can
+    never become anything else — the note could never drop, whatever happened
+    downstream. Meanwhile the 2026-09-12 re-score moved ``Q_pred`` onto the
+    ruled ``z_D`` base, so the committed witness carried both notes appended
+    and they contradict each other: "the Q_beta term **was built in Markov
+    convention C** … **not reproducible under the canonical convention**"
+    beside "the Q_beta term **is now** |tr_M(Delta_S)(z_D)|*E0 at
+    z_D = q^3/(q^2+1)". The second is current; the first is superseded and, on
+    this row, false in both of its operative clauses — the value is built at
+    z_D, which *is* the canonical convention.
+
+    So the C note now fires only when the row does **not** rest on the ruled
+    base, i.e. when the scored value genuinely came from the C cache. That is
+    the same condition that selects ``Q_pred`` in the caller, which is what
+    makes it the right one: it keys on the provenance of the number rather
+    than on the convention of a file the number may no longer touch. What
+    remains true under the ruled base — that no ``c_k`` ladder exists on an
+    admissible functional — is already stated, correctly and in full, by the
+    RULED-base note. Bean ``qou-zzwm``.
     """
     parts = []
-    if conv.get("status") == "INHERITED_C":
+    _on_ruled_base = bool(ruled is not None
+                          and ruled.get("calibrated_against_probe_witness"))
+    if conv.get("status") == "INHERITED_C" and not _on_ruled_base:
         parts.append(
             f"INHERITS THE Q_beta CONVENTION FRAME: this value is "
             f"m_p(substrate) + Q_beta + m_e, and the Q_beta term was built in "
@@ -469,20 +884,38 @@ def _inherited_qbeta_scope(conv: dict, adm: dict) -> str | None:
             f"Not reproducible under the canonical convention "
             f"(bean {conv.get('tracked_by')})."
         )
-    if adm.get("status") == "INADMISSIBLE_FUNCTIONAL":
+    if _on_ruled_base:
+        # Re-scored 2026-09-12 on owner authorisation. The note that stood here
+        # said the miss "understates the gap by an amount that is NOT yet
+        # quantifiable" -- true while the row was on the retired cell, and now
+        # the wrong statement: the row IS the ruled cell, and what is unknown
+        # has moved to the other side (what a ladder would recover).
+        parts.append(
+            f"INHERITS THE RULED Q_beta BASE: this value is "
+            f"m_p(substrate) + Q_beta + m_e, and the Q_beta term is now "
+            f"|tr_M(Delta_S)(z_D)|*E0 at z_D = q^3/(q^2+1) -- the functional the "
+            f"owner ruled on 2026-09-08 (convention D, two-row truncation, D7), "
+            f"re-scored here on the 2026-09-12 authorisation. IT CARRIES ZERO "
+            f"c_k RUNGS: no ladder has been derived on an admissible base "
+            f"(qou-cds1, blocked on the phase qou-pdix), and on the retired "
+            f"z = 1 base the five rungs bought ~4.5 orders. So this row is NOT "
+            f"convention D's accuracy -- it is the ruled base before any ladder "
+            f"exists, and a second re-score is authorised once qou-pdix closes "
+            f"(bean qou-iagg). Price of the move: "
+            f"{ruled.get('price_witness')}."
+        )
+    elif adm.get("status") == "INADMISSIBLE_FUNCTIONAL":
         parts.append(
             f"INHERITS THE Q_beta FUNCTIONAL ADMISSIBILITY DEFECT: the Q_beta "
             f"term's base closed form solves to Markov parameter "
             f"z = {adm.get('scored_prediction_rests_on_z')}, which convention D "
             f"excludes (admissible roots: "
             f"{', '.join(adm.get('admissible_roots_under_D') or [])}; "
-            f"ConventionDAdmissibleRoots.lean, sorry-free). The best admissible "
-            f"cell is {adm.get('best_admissible_err_pct')}% on Delta_S, so the "
-            f"published base of 0.16776% -- 74.3x worse, base to base. So the "
-            f"miss shown here understates the gap by an amount that is NOT yet "
-            f"quantifiable: no c_k ladder has been derived on an admissible base "
-            f"(qou-cds1). Which functional to adopt is an open owner decision "
-            f"(bean qou-99qc)."
+            f"ConventionDAdmissibleRoots.lean, sorry-free). The RULED cell is "
+            f"{adm.get('ruled_cell_err_pct')}% on Delta_S against the published "
+            f"base of 0.16776%. The re-score onto the ruled base did not "
+            f"calibrate, so this row still inherits the excluded functional -- "
+            f"see the Q_beta row's note and fix the calibration."
         )
     return "  ".join(parts) if parts else None
 
@@ -698,11 +1131,44 @@ def main() -> dict:
         if last_derived_row is not None:
             k = last_derived_row["k"]
             Q_pred_str = last_derived_row["Q_pred_after_this_rung_MeV"]
-            Q_pred = mpf(Q_pred_str)
+            Q_pred_laddered_z1 = mpf(Q_pred_str)
+            # ── RE-SCORE ONTO THE RULED BASE (owner 2026-09-08 + 2026-09-12) ──
+            # Until 2026-09-12 `Q_pred` here — and, through `Q_beta_best`, the
+            # m_n and Delta_pn rows — was the LADDERED value on the retired
+            # `z = 1` cell, a functional convention D provably excludes. The
+            # owner ruled the functional (`eps` := Markov trace at `z_D`) and
+            # then authorised this re-score with its price measured first
+            # (`qbeta-zd-rescore-price.witness.json`): ~5-7 orders worse on all
+            # three rows. Accuracy is a diagnostic here, not a tie-breaker, so a
+            # worse number on the ruled base is the correct publication.
+            #
+            # The laddered figure is NOT deleted — it is recorded on the row as
+            # the retired cell, because a reader needs to see what moved and by
+            # how much. Dropping it would make this look like a regression of
+            # unknown origin.
+            _ruled = _qbeta_ruled_base()
+            if _ruled["calibrated_against_probe_witness"]:
+                Q_pred = _ruled["_pred"]
+            else:
+                # The functional evaluated here does not reproduce the committed
+                # probe witness's own cell. Publish the old row rather than a
+                # number this producer's arithmetic invented, and say so.
+                Q_pred = Q_pred_laddered_z1
             Q_beta_best = Q_pred
             _anchor_note = ""
             _conv_note = ""
-            if qbeta_convention.get("status") == "INHERITED_C":
+            # Same repair as in `_inherited_qbeta_scope`: this note must key on
+            # whether the SCORED VALUE came from the C cache, not on the cache's
+            # own convention. Two lines up, `Q_pred` is the ruled `z_D` base
+            # whenever the calibration holds — built in convention D — so firing
+            # the note on the cache's status printed "this prediction was built
+            # in Markov convention C … UNREPRODUCIBLE under the canonical
+            # convention" over a number built at `z_D = q³/(q²+1)`, which IS the
+            # canonical convention. Both clauses were false of the published row.
+            # What is still true (no `c_k` ladder on an admissible base) is said
+            # by `_adm_note` / the ruled-base note below. Bean `qou-zzwm`.
+            if (qbeta_convention.get("status") == "INHERITED_C"
+                    and not _ruled["calibrated_against_probe_witness"]):
                 _conv_note = (
                     f" ⚠ CONVENTION FRAME: this prediction was built in Markov "
                     f"convention {qbeta_convention['cache_convention']}, which "
@@ -720,23 +1186,71 @@ def main() -> dict:
                 )
             _adm = _functional_admissibility_check()
             _adm_note = ""
-            if _adm.get("status") == "INADMISSIBLE_FUNCTIONAL":
+            if _ruled["calibrated_against_probe_witness"]:
                 _adm_note = (
-                    f" 🛑 FUNCTIONAL ADMISSIBILITY (separate from, and stronger "
-                    f"than, the convention-frame note above): the base closed form "
-                    f"this ladder sits on solves to Markov parameter z = "
+                    f" 🟧 SCORED ON THE RULED BASE, ZERO c_k RUNGS. The owner "
+                    f"ruled 2026-09-08 that eps in Q_beta = |eps(Delta)|*E0 is the "
+                    f"Markov trace at z_D = q^3/(q^2+1) (convention D, the two-row "
+                    f"truncation -- D7), and authorised this re-score 2026-09-12 "
+                    f"with the price measured first "
+                    f"({_ruled['price_witness']}). This row is now "
+                    f"|tr_M(Delta_S)(z_D)|*E0 evaluated from q0 alone -- no CODATA "
+                    f"in the value -- and calibrated against "
+                    f"{_adm.get('source_witness')} (recorded cell "
+                    f"{_ruled['recorded_err_pct_in_probe_witness']}%). "
+                    f"🛑 IT IS A BASE: no c_k ladder has been derived on an "
+                    f"admissible base (qou-cds1, blocked on the phase qou-pdix), so "
+                    f"do NOT read this as convention D's accuracy. WHAT IT REPLACED, "
+                    f"for comparison only: the laddered value on the RETIRED z = 1 "
+                    f"cell was {fmt(Q_pred_laddered_z1, 12)} MeV (err 0.16776% base, "
+                    f"~1279 ppb after five rungs) -- z = 1 is the coordinate sum and "
+                    f"is provably NOT an admissible root under D (roots: "
+                    f"{', '.join(_adm.get('admissible_roots_under_D') or [])}; "
+                    f"ConventionDAdmissibleRoots.lean, sorry-free). On the retired "
+                    f"base the ladder bought ~4.5 orders, so a z_D ladder could move "
+                    f"this row a long way; a SECOND re-score is authorised once "
+                    f"qou-pdix closes (bean qou-iagg). The ruled cell is also "
+                    f"3.4609x farther from CODATA than the augmentation (z = q), "
+                    f"which is admissible but is the finer one-row truncation and is "
+                    f"NOT convention D -- recorded because a referee will notice, "
+                    f"not as an argument: ranking cells by residual is the "
+                    f"selection-against-the-target the anti-fit directive forbids. "
+                    f"🛑 AND THE ELEMENT IS RULED IN "
+                    f"{_ruled['element_ruled_letters']} OF ITS "
+                    f"{_ruled['element_ruled_letters'] + _ruled['element_census_letters']} "
+                    f"LETTERS, NOT IN ALL OF THEM: this row scores Delta = "
+                    f"{_ruled['element_scored']}, selected over nuc11 gen-grouped "
+                    f"by the gamma-gamma word-selection ruling (qou-ales). But "
+                    f"that word is ELEVEN letters and every gamma-gamma word has "
+                    f"EVEN length (gammaGamma_length_even, sorry-free), so the "
+                    f"ruling reaches only the 6-letter core and provably cannot "
+                    f"reach the 3-letter quark block (odd) or the 2-letter gluon "
+                    f"pair (both letters positive). 5 of 11 letters are still "
+                    f"census-derived, which is what qou-ales asks not to use. The "
+                    f"corpus carries FOUR candidate Delta, all undershooting at "
+                    f"z_D (order-zero E_0) -- delta_S -43.157%, nuc9 -30.936%, "
+                    f"nuc11 interleaved -17.496% (this row, -16.678% on the "
+                    f"canonical tower E_0), nuc11 gen-grouped -15.451%. So the "
+                    f"figure is scoped TWICE: no ladder, and 5 element letters "
+                    f"with no derived constraint ({_ruled['element_tracked_by']})."
+                )
+            elif _adm.get("status") == "INADMISSIBLE_FUNCTIONAL":
+                _adm_note = (
+                    f" 🛑 RE-SCORE ONTO THE RULED BASE DID NOT CALIBRATE, so "
+                    f"this row is still the RETIRED z = 1 cell. The functional "
+                    f"evaluated by _qbeta_ruled_base() gave "
+                    f"{_ruled['err_pct']}% against the committed probe witness's "
+                    f"{_ruled['recorded_err_pct_in_probe_witness']}%, so the "
+                    f"producer published the old value rather than a number its own "
+                    f"arithmetic invented. The base closed form scored here solves "
+                    f"to Markov parameter z = "
                     f"{_adm['scored_prediction_rests_on_z']}, which is NOT one of "
                     f"the admissible roots under convention D "
                     f"({', '.join(_adm['admissible_roots_under_D'])}) — "
                     f"ConventionDAdmissibleRoots.lean, sorry-free, and "
-                    f"{_adm['source_witness']} (15/15, exact over Q(q)). The best "
-                    f"ADMISSIBLE cell is {_adm['best_admissible_err_pct']}% (the "
-                    f"augmentation on Delta_S) against the published 0.16776% -- "
-                    f"74.3x worse, BASE TO BASE. Do NOT relate either to the value "
-                    f"scored here: that is post-ladder, and no ladder exists on an "
-                    f"admissible base (qou-cds1), so what it would become is "
-                    f"UNKNOWN. Which functional to adopt is an open owner decision "
-                    f"(bean qou-99qc)."
+                    f"{_adm['source_witness']} (15/15, exact over Q(q)). The RULED "
+                    f"cell is {_adm['ruled_cell_err_pct']}% on Delta_S. Fix the "
+                    f"calibration; do not read this row as the ruled position."
                 )
             if qbeta_anchor.get("status") == "STRADDLE":
                 _anchor_note = (
@@ -816,7 +1330,8 @@ def main() -> dict:
         # survives in the others" failure this corpus keeps recording. Write
         # the inherited scope onto the derived rows themselves.
         _inherited = _inherited_qbeta_scope(qbeta_convention,
-                                            _functional_admissibility_check())
+                                            _functional_admissibility_check(),
+                                            _qbeta_ruled_base())
         for _obs, _val in (("m_n", m_n_path_c), ("Delta_pn", delta_pn_path_c)):
             _r = _row_for(_obs, _val, path_c_source)
             if _inherited:
@@ -865,8 +1380,17 @@ def main() -> dict:
         _row["note"] = (
             "CONDITIONAL on three unproved classes (ArchimedeanLimit, "
             "BlochSuslinUniqueness, BringZeroModeBlochClass) — a conditional "
-            "prediction, not a proved derivation. The Schwinger factor is derived, "
-            "not fitted. Second-best scoreable row: 238x, against 970x (m_mu) and "
+            "prediction, not a proved derivation. The Schwinger factor is NOT "
+            "FITTED and this is measured, not asserted: parametrising it as "
+            "(1 - c*h^2*alpha), the c that hits CODATA exactly is 0.7312340272 "
+            "and the 1-sigma window is [0.61846303, 0.84400502], so the "
+            "published c = 1 lies OUTSIDE it, at 2.383 sigma -- a fitter would "
+            "have taken 0.731. But it is NOT DERIVED either: the exact "
+            "vertex-moment check (docs/audits/2026-07-14-alpha-em-phase3-"
+            "schwinger-coefficient-exact-check.md) gives +0.1281 against the "
+            "claimed -h^2 = -0.0437, wrong order and wrong sign, ratio -2.93, "
+            "and recommends the tier 'structurally-motivated / "
+            "empirically-anchored'. That is the honest label. Second-best scoreable row: 238x, against 970x (m_mu) and "
             "152-177x (the Q_beta trio). NOTE the residual's SIGN depends on the "
             "CODATA edition (the 2018->2022 shift is 2.2x the residual); the "
             "reference is read from the registry so the edition is not a choice."
@@ -980,8 +1504,42 @@ def main() -> dict:
         ),
         "rows": rows,
         "anchor_layer_qbeta": qbeta_anchor,
-        "convention_frame_qbeta": qbeta_convention,
+        # `qbeta_convention` describes `qbeta-ck-cache.witness.json`, which is a
+        # convention-C artifact by construction — `qbeta_ck_cache.py` raises
+        # SystemExit(2) under D, so its `status` is pinned at INHERITED_C
+        # forever. Read bare, that looks like a statement about the rows this
+        # dashboard publishes, and since the 2026-09-12 re-score it is not one.
+        # Say which, in the block itself, so a reader does not have to infer it
+        # from `qbeta_ruled_base` three keys away. Bean `qou-zzwm`.
+        "convention_frame_qbeta": {
+            **qbeta_convention,
+            "describes": "qbeta-ck-cache.witness.json (the c_k ladder cache)",
+            "scored_rows_consume_this_cache": not bool(
+                _ruled.get("calibrated_against_probe_witness")),
+            "scored_rows_note": (
+                "The Q_beta / m_n / Delta_pn rows published here are built at "
+                "z_D = q^3/(q^2+1) -- the canonical convention -- on the base "
+                "the owner ruled 2026-09-08, re-scored 2026-09-12. They do NOT "
+                "consume this C cache, so this block records the cache's frame "
+                "and is NOT a caveat on those rows. What IS open is that no "
+                "c_k ladder exists on an admissible base (qou-cds1); see "
+                "qbeta_ruled_base.ladder_on_admissible_base_exists."
+            ) if _ruled.get("calibrated_against_probe_witness") else (
+                "The Q_beta / m_n / Delta_pn rows published here DO consume "
+                "this convention-C cache, so the frame above applies to them "
+                "directly."
+            ),
+        },
         "functional_admissibility_qbeta": _functional_admissibility_check(),
+        # EMITTED 2026-09-12. `_qbeta_ruled_base()` computes the element, the
+        # E_0 form, the calibration verdict, the four candidate elements and the
+        # superseded cell -- and NONE of it reached the witness: the dict was
+        # consumed for `pred` and for the row's `note` string and then dropped.
+        # A previous PR of mine claimed "the row now carries `element_scored` /
+        # `element_is_ruled`" as structured fields. It did not; they were in
+        # prose only. A field a consumer cannot read is not a record.
+        "qbeta_ruled_base": {k: v for k, v in _qbeta_ruled_base().items()
+                             if not k.startswith("_")},
         "summary": {
             "total": len(rows),
             "beats_1x_count": sum(1 for r in rows if r.get("beats_1x_experimental")),
@@ -1096,7 +1654,17 @@ if __name__ == "__main__":
     w.add_data("anchor_layer_qbeta", out["anchor_layer_qbeta"])
     w.add_data("convention_frame_qbeta", out["convention_frame_qbeta"])
     w.add_data("functional_admissibility_qbeta", out["functional_admissibility_qbeta"])
-    if out["convention_frame_qbeta"].get("status") == "INHERITED_C":
+    w.add_data("qbeta_ruled_base", out["qbeta_ruled_base"])
+    # Third and last site of the same repair (see `_inherited_qbeta_scope`).
+    # This caveat asserted that the three published rows "were built in Markov
+    # convention C" and are "UNREPRODUCIBLE under the canonical convention".
+    # Since the 2026-09-12 re-score they are built at `z_D = q³/(q²+1)`, so
+    # both clauses are false of what the witness publishes, and the caveat sat
+    # in the same file as `qbeta_ruled_base`, which says so. Gate on the scored
+    # value's provenance, not on the cache's convention. Bean `qou-zzwm`.
+    if (out["convention_frame_qbeta"].get("status") == "INHERITED_C"
+            and not out["qbeta_ruled_base"].get(
+                "calibrated_against_probe_witness")):
         w.add_caveat(
             "Q_β / m_n / Δ_pn rows: these figures were built in Markov "
             "convention C (z = √q/(q+1)), which the owner ruling of "

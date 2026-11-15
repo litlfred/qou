@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/cor-knot-factor-shell-closed",
+  "@type": [
+    "folio-assistant-core:Corollary",
+    "doco:Section"
+  ],
+  "label": "cor:knot-factor-shell-closed",
+  "kind": "corollary",
+  "title": "Shell-closed $Z = N$ even-even nuclei give $a = 1$ exactly",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-knot-factor-spectral-form"
+  ],
+  "tags": [
+    "knot-factor",
+    "shell-closed",
+    "even-even",
+    "markov-equilibrium",
+    "carbon-12",
+    "calcium-40",
+    "iron-56",
+    "lead-208"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.knot_factor_shell_closed",
+  "text": "knot-factor-shell-closed.md",
+  "leanSource": "knot-factor-shell-closed.lean",
+  "provenance": "authored"
+}

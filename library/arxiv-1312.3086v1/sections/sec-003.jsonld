@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1312.3086v1/sections/sec-003",
   "@type": [
     "doco:Section"
   ],
-  "title": "Discussion",
-  "pageStart": 8,
-  "pageEnd": 8,
+  "title": "Error detection and prevention",
+  "pageStart": 5,
+  "pageEnd": 6,
   "contains": [
     "library/arxiv-1312.3086v1/blocks/prose-sec-003"
   ],
-  "derivedFrom": "library/arxiv-1312.3086v1/manifest",
-  "sourceDocument": "library/arxiv-1312.3086v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1312.3086v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1312.3086v1",
   "provenance": "ingested"
 }

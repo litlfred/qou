@@ -1,0 +1,115 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T15:16:22.902712+00:00",
+  "commitSha": "266c147ee39666e932727287228d9e48d3b84a5c",
+  "assertions": [
+    {
+      "name": "the_markov_parameter_is_convention_D_verified_by_value",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "ZD matches q^3/(q^2+1) to 0.0 and differs from the convention-C value sqrt(q)/(q+1) by 0.1133677. Verified by VALUE and by source -- _order.ZD is literally Q0**3/(Q0**2+1) -- never by the name, which AGENTS.md records as unreliable here (markovZ spans both conventions; markovZC and markovZc differ by one letter's case and mean opposite things). NOT verified: whether tr_at's coefficient pattern z,z,z^2,z^2,z(hz+1) is itself convention-neutral"
+    },
+    {
+      "name": "the_hecke_cost_is_orthogonal_to_the_radical_reproducing_y0_equals_zero",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "<t_Hecke, v> = 1.33638e-51, zero to the working precision. This REPRODUCES the corpus's y_0 = 0 (y_0_eq_zero_of_radical, sorry-free; qou-8na1 exact in Q(q)) by an independent route: the cost vector is read off the trace's own definition in the normal-form basis, not taken from the LP literature. Agreement is evidence, not restatement"
+    },
+    {
+      "name": "the_basis_ordering_and_radical_are_validated_by_the_closed_form",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "<1, v> = -0.12340409412061894061 against the corpus's published closed form -(q-1)(q^2-q+1) = -0.12340409412061894061, agreeing to 1.67048e-51. This is the assertion that validates the BASIS ORDERING: had my nf coordinates been permuted relative to the corpus's operator basis, this pairing would not hit the published value. It also confirms the Lean hypothesis <1, v> != 0 that dual_price_determined_by_radical carries"
+    },
+    {
+      "name": "orthogonality_is_codimension_one_here_not_structural",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "perturbing ONE coordinate by 1.0e-12 moves the pairing to -1.36755183695e-12, exactly eps*v[0]. So orthogonality to v is a single linear condition on a 6-dimensional space -- a codimension-1 subspace -- and nothing in the construction forces a cost into it. CONTRAST with the block basis, where the Gram is diag(y_lambda*dim_lambda) and the cost t_lambda = y_lambda*f(lambda) carries the SAME factor, so orthogonality is automatic for every f (diagonal_gram_kills_every_cost_on_its_diagonal). The argument that killed the block basis does NOT reach this one"
+    },
+    {
+      "name": "this_is_a_prune_that_does_not_fire_not_a_positive_result",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "the route is not FORBIDDEN; that is all. No per-operator geometric energy is defined here, because none is in hand -- and writing one to see whether it clears the bar, then keeping it because it did, is selection against the target. The measurement this calibration enables is deliberately left un-run. Recorded as an assertion so the boundary travels with the calibration"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 16,
+  "computation": "qbeta-operator-basis-radical-calibration",
+  "scriptFile": "qbeta_operator_basis_radical_calibration_probe.py",
+  "scriptHash": "7e0b39cca42f",
+  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_operator_basis_radical_calibration_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_operator_basis_radical_calibration_probe.py"
+  },
+  "description": "Calibrates the six-operator-basis machinery against the corpus's known y_0 = 0 result by an INDEPENDENT route -- the Hecke cost vector read straight off tr_at's own formula, against the symbolic Q(q) computation the corpus used -- and then establishes that orthogonality to the radical is codimension-1 on this basis rather than forced by the construction, as it was on the block basis. Invents no energy and runs no LP; the measurement it enables is deliberately left un-run.",
+  "data": {
+    "cost_vector_operator_basis": {
+      "t[0]": "1.0",
+      "t[1]": "0.612688037146465251595829863946",
+      "t[2]": "0.612688037146465251595829863946",
+      "t[3]": "0.375386630862388383999372303379",
+      "t[4]": "0.375386630862388383999372303379",
+      "t[5]": "0.691166478358444526147719530979"
+    },
+    "radical": {
+      "v": [
+        "-1.36755183695138518796672402991",
+        "1.23205245416676393126980451354",
+        "1.23205245416676393126980451354",
+        "-1.10997858275138080759166909561",
+        "-1.10997858275138080759166909561",
+        "1.0"
+      ],
+      "name": "q-antisymmetriser",
+      "t_dot_v": "1.33638235504609782307026823358e-51",
+      "one_dot_v": "-0.12340409412061894061045319406",
+      "one_dot_v_closed_form": "-(q-1)(q^2-q+1)"
+    },
+    "convention": {
+      "markov_parameter": "z_D = q^3/(q^2+1), convention D",
+      "verified_how": "by value against both conventions AND at the source (_order.ZD is literally Q0**3/(Q0**2+1))",
+      "entry_points": "exactly one -- word_nf folds through hm_num using h = q - 1/q and never sees z",
+      "NOT_verified": "whether tr_at's coefficient pattern z,z,z^2,z^2,z(hz+1) is itself convention-neutral"
+    },
+    "scope": {
+      "class": "(a) calibration + a prune that does not fire",
+      "not_claimed": [
+        "that any geometric energy separates the candidates",
+        "that a per-operator energy exists -- none is defined here",
+        "that the operator-basis route works; only that the block-basis exclusion does not reach it"
+      ],
+      "no_selection_by_accuracy": "no Q_beta, no CODATA, no residual"
+    },
+    "q0_pin": "proton",
+    "q0_value": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

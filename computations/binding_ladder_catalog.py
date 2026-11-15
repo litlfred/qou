@@ -111,21 +111,52 @@ ISOTOPES = [
 ]
 
 
+def _mp(x):
+    """Lift to mpf without a float64 round-trip.
+
+    The AME entries below are mixed: three come from the codata_constants
+    registry and are ALREADY mpf (qou-psjm, 70ae502091a), three are still
+    decimal literals.  `mp.mpf(str(...))` on an mpf would truncate it to its
+    repr, so dispatch on the type rather than stringifying unconditionally.
+    """
+    return x if isinstance(x, mp.mpf) else mp.mpf(str(x))
+
+
 def find_best_alpha(B_AME, leading, ranks=range(2, 9)):
     """Find best (α, r) such that B_pred = leading + α·m_e·|(q;q)_r| matches B_AME."""
     if leading is None:
         return None
-    residual = mp.mpf(str(B_AME)) - leading
+    B_ame = _mp(B_AME)
+    residual = B_ame - leading
     fits = []
     for r in ranks:
         qpr = abs(qpoch(r))
         if qpr > 1e-30:
-            alpha_r = float(residual / (m_e * qpr))
+            # alpha_r is NOT a display value: it is fed straight back into
+            # B_pred on the next line, so casting it to float here put the
+            # whole ladder on float64.  Kept as mpf; serialized by _ser().
+            alpha_r = residual / (m_e * qpr)
             B_pred = leading + alpha_r * m_e * qpr
-            err_ppb = float((B_pred - mp.mpf(str(B_AME)))/mp.mpf(str(B_AME)) * mp.mpf("1e9"))
-            fits.append({"r": r, "alpha": alpha_r, "B_pred_MeV": float(B_pred),
+            err_ppb = (B_pred - B_ame) / B_ame * mp.mpf("1e9")
+            fits.append({"r": r, "alpha": alpha_r, "B_pred_MeV": B_pred,
                          "err_ppb": err_ppb})
     return fits
+
+
+def _ser(o):
+    """Recursively replace mpf with its full-precision decimal string.
+
+    `json.dump` cannot encode an mpf at all — since 70ae502091a made B_AME an
+    mpf this producer has died at `"B_AME_MeV"` on the first isotope, after
+    `open(..., "w")` had already truncated the witness from 7352 bytes to 491.
+    """
+    if isinstance(o, mp.mpf):
+        return fmt(o)
+    if isinstance(o, dict):
+        return {k: _ser(v) for k, v in o.items()}
+    if isinstance(o, list):
+        return [_ser(v) for v in o]
+    return o
 
 
 print("=" * 110)
@@ -139,28 +170,28 @@ for label, Z, N, B_AME, formula, leading in ISOTOPES:
     print(f"\n──── {label}  (Z={Z}, N={N}, A={Z+N}, B_AME = {B_AME:.6f} MeV) ────")
     if leading is not None:
         print(f"  Leading: {formula} = {float(leading):.6f} MeV")
-        leading_err_pct = float((leading - mp.mpf(str(B_AME)))/mp.mpf(str(B_AME)) * 100)
-        residual = mp.mpf(str(B_AME)) - leading
-        print(f"  Leading error: {leading_err_pct:+.4f}%   residual = {float(residual):+.6f} MeV")
+        leading_err_pct = (leading - _mp(B_AME)) / _mp(B_AME) * 100
+        residual = _mp(B_AME) - leading
+        print(f"  Leading error: {float(leading_err_pct):+.4f}%   residual = {float(residual):+.6f} MeV")
         fits = find_best_alpha(B_AME, leading)
         print(f"  Per-rank fitted α (residual / m_e·|(q;q)_r|):")
         print(f"    {'r':>3} {'α':>10} {'closure ppb':>14}")
         for f in fits:
-            print(f"    {f['r']:>3} {f['alpha']:>+10.4f} {f['err_ppb']:>+14.0f}")
+            print(f"    {f['r']:>3} {float(f['alpha']):>+10.4f} {float(f['err_ppb']):>+14.0f}")
         results.append({
             "iso": label, "Z": Z, "N": N, "A": Z+N,
-            "B_AME_MeV": B_AME,
+            "B_AME_MeV": _mp(B_AME),
             "leading_formula": formula,
-            "leading_MeV": float(leading),
+            "leading_MeV": leading,
             "leading_err_pct": leading_err_pct,
-            "residual_MeV": float(residual),
+            "residual_MeV": residual,
             "fits": fits,
             "best_fit_at_rank_4": next((f for f in fits if f['r'] == 4), None)
         })
     else:
         print(f"  (no zero-param leading rule; ⁶Li, ⁷Li would need atom-knot derivation)")
         results.append({
-            "iso": label, "Z": Z, "N": N, "A": Z+N, "B_AME_MeV": B_AME,
+            "iso": label, "Z": Z, "N": N, "A": Z+N, "B_AME_MeV": _mp(B_AME),
             "no_leading_rule": True
         })
 
@@ -175,8 +206,10 @@ for r in results:
     if "no_leading_rule" in r: continue
     f4 = r["best_fit_at_rank_4"]
     if f4 is None: continue
-    a = f4["alpha"]; A = r["A"]; B = r["B_AME_MeV"]
-    print(f"  {r['iso']:<6} {A:>3} {B:>10.4f} {r['leading_MeV']:>12.4f} {r['leading_err_pct']:>+13.4f}% {a:>+12.4f} {a/A:>+10.4f} {a/B:>+14.4f}")
+    # display only — the stored values stay mpf and are serialized by _ser()
+    a = float(f4["alpha"]); A = r["A"]; B = float(r["B_AME_MeV"])
+    print(f"  {r['iso']:<6} {A:>3} {B:>10.4f} {float(r['leading_MeV']):>12.4f} "
+          f"{float(r['leading_err_pct']):>+13.4f}% {a:>+12.4f} {a/A:>+10.4f} {a/B:>+14.4f}")
 
 # Compare to n→p α₄ = 0.827
 print()
@@ -192,7 +225,7 @@ out = {
                     "α·m_e·|(q;q)_r|.  Tests universality of α across isotopes "
                     "at fixed rank."),
     "timestamp_utc": datetime.now(timezone.utc).isoformat(),
-    "isotopes": results
+    "isotopes": _ser(results)
 }
 out_path = Path(__file__).parent / "binding-ladder-catalog.witness.json"
 with open(out_path, "w") as fp:

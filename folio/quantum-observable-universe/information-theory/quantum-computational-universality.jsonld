@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-quantum-computational-universality",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:quantum-computational-universality",
+  "kind": "conjecture",
+  "title": "Quantum computational universality via descent to roots of unity",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-reeb-turing-completeness-classical",
+    "papers/quantum-observable-universe/blocks/rem-toffoli-q-and",
+    "papers/quantum-observable-universe/blocks/rem-jet-planck-steps",
+    "papers/quantum-observable-universe/blocks/rem-complex-substrate-interpretation"
+  ],
+  "cites": [
+    "references/freedman2003"
+  ],
+  "tags": [
+    "tier:S",
+    "computation",
+    "universality",
+    "descent",
+    "root-of-unity",
+    "FKLW",
+    "toffoli",
+    "hecke-algebra",
+    "path-integral"
+  ],
+  "leanRef": "qou:QOU.QuantumComputationalUniversality.QuantumComputationalUniversality",
+  "text": "quantum-computational-universality.md",
+  "leanSource": "quantum-computational-universality.lean",
+  "provenance": "authored"
+}

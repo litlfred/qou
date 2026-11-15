@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/sections/sec-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Materials and Methods",
+  "pageStart": 8,
+  "pageEnd": 10,
+  "contains": [
+    "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-005"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co",
+  "provenance": "ingested"
+}

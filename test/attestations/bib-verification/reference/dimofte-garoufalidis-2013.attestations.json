@@ -1,0 +1,51 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "dimofte-garoufalidis-2013",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 229,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1202.6268v2/1202.6268v2.pdf"
+        },
+        "id": "dimofte-garoufalidis-2013",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "JOIN CONFIRMED from front matter: the document self-identifies as arXiv:1202.6268v2 and its title and author pair match the registered entry. CITATION STATE: a true bib orphan \u2014 zero sites in content/ and zero in computations/. RELEVANCE IS REAL AND UNUSED, and unusually close to live QOU work: it takes a Neumann-Zagier datum (shapes together with the gluing equations in canonical form) and defines a formal power series whose first subleading term is the non-abelian Reidemeister-Ray-Singer torsion, then proves topological invariance of that 1-loop part and checks it numerically against the torsion for all 59924 hyperbolic knots with at most 14 crossings. QOU has lean/QOU/OneLoopEdgeLattice.lean plus a family of NZ-datum Lean files (NZBarEvenVolumeFace, ObservableComplexVolumeVsFullPotential, CuspShapeBarParity) that all cite neumann-zagier1985 for the classical datum but have no source for the quantum/1-loop refinement they work around. Held at supporting rather than core because I found no QOU claim that presently requires the 1-loop invariance theorem \u2014 only claims that would be better sourced by it.",
+          "keyResults": [
+            {
+              "locator": "Abstract / topological invariance of the 1-loop part",
+              "statement": "The 1-loop term of the series built from a Neumann-Zagier datum is independent of the ideal triangulation and equals the non-abelian Reidemeister-Ray-Singer torsion; verified numerically for all 59924 hyperbolic knots with at most 14 crossings.",
+              "useForFolio": "Sources the 1-loop/torsion layer that the one-loop edge-lattice and NZ-datum Lean files reach for without a citation beyond the classical NZ result.",
+              "targets": [
+                "folio/quantum-observable-universe/lean/QOU/OneLoopEdgeLattice.lean"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "A registered reference with zero citation sites that directly supplies the 1-loop-from-NZ-datum construction the one-loop edge-lattice file is built around.",
+              "target": "folio/quantum-observable-universe/lean/QOU/OneLoopEdgeLattice.lean",
+              "bean": "qou-0u2a"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "209af6ae2543"
+        }
+      }
+    }
+  ]
+}

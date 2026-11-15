@@ -288,7 +288,7 @@ def audit_source(source: str) -> dict | None:
 def scan(root: Path) -> list[dict]:
     out: list[dict] = []
     for p in sorted((root / "computations").rglob("*.py")):
-        if "_deprecated" in p.parts:
+        if ("_deprecated" in p.parts or "fsh-guts" in p.parts):
             continue
         try:
             src = p.read_text(encoding="utf-8")
@@ -450,7 +450,7 @@ def main() -> int:
     # the witness? Scanned over the same tree so both answers come from one run.
     broken = []
     for f in sorted(Path(a.root).resolve().rglob("*.py")):
-        if {"_deprecated", "node_modules", ".lake", ".claude"} & set(f.parts):
+        if {"_deprecated", "fsh-guts", "node_modules", ".lake", ".claude"} & set(f.parts):
             continue
         if f.name == "witness.py" and "qou_substrate" in f.parts:
             continue

@@ -1,0 +1,42 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s00526-018-1443-6",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "On the analyticity of critical points of the Möbius energy",
+  "contains": [
+    "library/s00526-018-1443-6/sections/sec-front-matter",
+    "library/s00526-018-1443-6/sections/sec-000",
+    "library/s00526-018-1443-6/sections/sec-001",
+    "library/s00526-018-1443-6/sections/sec-002",
+    "library/s00526-018-1443-6/sections/sec-003",
+    "library/s00526-018-1443-6/sections/sec-004",
+    "library/s00526-018-1443-6/sections/sec-005",
+    "library/s00526-018-1443-6/sections/sec-006",
+    "library/s00526-018-1443-6/sections/sec-007",
+    "library/s00526-018-1443-6/sections/sec-008",
+    "library/s00526-018-1443-6/sections/sec-009",
+    "library/s00526-018-1443-6/sections/sec-010"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "meta": {
+    "doc_id": "s00526-018-1443-6",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "s00526-018-1443-6.pdf",
+    "source_sha256": "34f3cd94e3b2d9d79f430ab44854c468d41505cf818139086968b6a50d317316",
+    "pages": 28,
+    "arxiv": null,
+    "doi": "10.1007/s00526-018-1443-6",
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

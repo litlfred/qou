@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/thm-ns-singularity-descartes",
+  "@type": [
+    "folio-assistant-core:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:ns-singularity-descartes",
+  "kind": "theorem",
+  "title": "The Descartes universe is NS-singular: Navier--Stokes admits finite-time blowup",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-observability-q-independent"
+  ],
+  "tags": [
+    "theorem",
+    "navier-stokes",
+    "blowup",
+    "descartes",
+    "millennium-problem",
+    "categorical"
+  ],
+  "leanRef": "qou:QOU.FluidDynamics.ns_singularity_descartes",
+  "text": "ns-singularity-descartes.md",
+  "provenance": "authored"
+}

@@ -32,11 +32,11 @@ import { join, resolve } from "path";
 // The platform (content pipeline + this tool) lives in the sibling
 // folio-assistant repo, wired in via the in-repo `folio-assistant/` symlink
 // (scripts/setup-folio-assistant.sh). Run that once if this import fails.
-import { computeStats } from "../folio-assistant/scripts/lean-coverage";
+import { computeStats } from "../folio-assistant/cat-harness-tools/scripts/lean-coverage";
 
 const REPO_ROOT = resolve(import.meta.dir, "..");
 const PAPER = "quantum-observable-universe";
-const CONTENT_ROOT = join(REPO_ROOT, "content");
+const CONTENT_ROOT = join(REPO_ROOT, "folio");
 const NOTE = join(CONTENT_ROOT, PAPER, "introduction", "authors-note.md");
 const WITNESS = join(CONTENT_ROOT, PAPER, "introduction", "lean-coverage.json");
 
@@ -77,11 +77,17 @@ function main() {
 
   let after = before;
   const problems: string[] = [];
+  // A rule whose span is MISSING is not drift: the note's structure changed,
+  // so that number is no longer maintained. Write mode used to report success
+  // anyway; it now refuses, as --check always did (T11 audit, bean qou-aq9i).
+  const missing: string[] = [];
   for (const rule of RULES) {
     const want = rule.make(stats);
     const m = after.match(rule.re);
     if (!m) {
-      problems.push(`  ✗ ${rule.name}: no span matching ${rule.re} found in the note`);
+      const line = `  ✗ ${rule.name}: no span matching ${rule.re} found in the note`;
+      problems.push(line);
+      missing.push(line);
       continue;
     }
     if (m[0] !== want) {
@@ -108,6 +114,11 @@ function main() {
     return;
   }
 
+  if (missing.length) {
+    console.error("author-note: cannot refresh, rule span(s) missing from the note:");
+    console.error(missing.join("\n"));
+    process.exit(1);
+  }
   if (after !== before) writeFileSync(NOTE, after);
   writeFileSync(WITNESS, witness);
   console.log(

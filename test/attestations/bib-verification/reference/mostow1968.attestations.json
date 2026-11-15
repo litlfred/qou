@@ -1,0 +1,47 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "mostow1968",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 15,
+      "entry": {
+        "id": "mostow1968",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T06:30:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 0,
+        "note": "Confirmed paper is 'Quasi-conformal mappings in n-space and the rigidity of hyperbolic space forms' by G. D. Mostow (Publications IHES vol 34, 1968) \u2014 the canonical 'Mostow rigidity' paper. QOU .md citations in atom-knot-mass-derivation-proof.md and encounter-literature-bridge.md cite it for Mostow rigidity; title matches exactly.",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/mostow1968.pdf"
+        },
+        "local_pdf": "uploads/mostow1968.pdf",
+        "relevance": {
+          "verdict": "undetermined",
+          "rationale": "DOCUMENT ABSENT \u2014 cannot verify the join. Path does not exist; never committed (no deletion in `git log --diff-filter=D`); no arXiv-named substitute is possible for a document of this vintage. 16 corpus hits; the two citers named in the prior ledger row (`atom-knot-mass-derivation-proof.md`, `encounter-literature-bridge.md`) cite it for the rigidity theorem, which is a plausible reading of the registered entry on its face. But the document is unavailable, so I record no verdict on the join and no verdict on whether the rigidity attribution is correct.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Nothing to change in content; the dangling source.file is a ledger-hygiene item for the merge pass.",
+              "target": "folio/bib-qa-verifications.json"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z"
+        }
+      }
+    }
+  ]
+}

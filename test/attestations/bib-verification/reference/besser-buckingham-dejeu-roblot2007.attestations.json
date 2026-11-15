@@ -1,0 +1,46 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "besser-buckingham-dejeu-roblot2007",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 187,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-0707.3682v2/0707.3682v2.pdf"
+        },
+        "id": "besser-buckingham-dejeu-roblot2007",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "Adjacent to conj:qou-infra-discharges-goncharov-zeta5, which invokes Borel's theorem for K_5^ind(Q(zeta_5)) tensor Q of rank 2 and the Goncharov regulator on the weight-3 Bloch group -- so this paper's subject (regulators for higher K-groups of number fields versus special values of L-functions) is the right neighbourhood, and Q(zeta_5) is abelian over Q, which is precisely the case they prove. But their content is the P-ADIC analogue: syntomic regulators and p-adic L-functions, a conjecture the folio makes no claim about anywhere. What QOU needs is the ARCHIMEDEAN Borel regulator, which this paper only recalls in its introduction as motivation and does not extend. I read the introduction and conjecture statements looking for a transferable result and did not find one. Scope-(a) negative: this document, as read, supplies nothing the folio can consume -- not a claim that p-adic regulator methods are excluded from the Goncharov-zeta5 program.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Read and judged. No block wants a result from it; the only overlap is background that conj:qou-infra-discharges-goncharov-zeta5 already carries (Borel's theorem, Bloch groups, regulators), and registering a p-adic reference with no citation site would just add an uncited bib entry.",
+              "target": "conj:qou-infra-discharges-goncharov-zeta5 (considered and declined as a citation site)"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T16:12:29.859Z",
+          "source_sha": "609a6f67a0cd"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

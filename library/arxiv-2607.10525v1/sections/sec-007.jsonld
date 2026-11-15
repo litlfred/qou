@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-2607.10525v1/sections/sec-007",
   "@type": [
     "doco:Section"
@@ -15,7 +20,7 @@
     "library/arxiv-2607.10525v1/blocks/prop-sec-007-04",
     "library/arxiv-2607.10525v1/blocks/thm-sec-007-05"
   ],
-  "derivedFrom": "library/arxiv-2607.10525v1/manifest",
-  "sourceDocument": "library/arxiv-2607.10525v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2607.10525v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2607.10525v1",
   "provenance": "ingested"
 }

@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-descent-reduction-three",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:descent-reduction-three",
+  "kind": "remark",
+  "title": "Reduction at dimension 3",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/ex-q-reeb-vector-field",
+    "papers/quantum-observable-universe/blocks/prop-brings-is-qou",
+    "papers/quantum-observable-universe/blocks/rem-descent-reduction-two"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-mass-identity",
+  "tags": [
+    "descent",
+    "dimension-reduction",
+    "reeb",
+    "contact"
+  ],
+  "text": "descent-reduction-three.md",
+  "provenance": "authored"
+}

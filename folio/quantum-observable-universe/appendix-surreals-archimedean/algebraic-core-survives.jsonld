@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-algebraic-core-survives",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:algebraic-core-survives",
+  "kind": "remark",
+  "title": "The algebraic core of QOU lifts to any real-closed field",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-hoefsmit-scattering-pipeline"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-quantum-observable-universe",
+  "cites": [
+    "references/conway1976",
+    "references/gonshor1986",
+    "references/costin-ehrlich-friedman2015"
+  ],
+  "tags": [
+    "surreal-numbers",
+    "algebraic",
+    "field-polymorphism",
+    "hecke-algebra",
+    "hoefsmit",
+    "jones-polynomial"
+  ],
+  "text": "algebraic-core-survives.md",
+  "provenance": "authored"
+}

@@ -8,85 +8,36 @@ pages: 7-8
 source_pdf: 2410.14661v1.pdf
 source_sha256: 3362fcd5e28eb1f0
 doc_brief: "On the asymptotic expansion of various quantum invariants III: the Reshetikhin-Turaev invariants of closed hyperbolic 3-manifolds obtained by integral surgery along the figure-eight knot — This is"
+text_source: latex
+latex_prose_ratio: 0.906
+latex_coverage_ratio: 0.892
 ---
-as illustrated in [18].
-8 QINGTAO CHEN AND SHENGMAO ZHU
-Proposition 2.8 ([18], Proposition 3.1). LetA be a non-singular symmetric complex 3×3
-matrix, and let Ψ(z1,z 2,z 3) and r(z1,z 2,z 3) be holomorphic functions of the forms,
-Ψ(z1,z 2,z 3) = zTAz +r(z1,z 2,z 3),(2.24)
-r(z1,z 2,z 3) =
-X
-i,j,k
-bijkzizjzk +
-X
-i,j,k,l
-cijklzizjzkzl +···
-defined in a neighborhood of 0∈ C3. The restriction of the domain
-{(z1,z 2,z 3)∈ C3|ReΨ(z1,z 2,z 3)< 0}(2.25)
-to a neighborhood of 0∈ C3 is homotopy equivalent to S2. Let D be an oriented disk
-embeded in C3 such that∂D is included in the domain (2.25) whose inclusion is homotopic
-to a homotopy equivalence to the above S2 in the domain (2.25). Then we have the
-following asymptotic expansion
-Z
-D
-eNψ (z1,z2,z3)dz1dz2dz3 = π
-3
-2
-N
-3
-2
-p
-det(−A)
- 
-1 +
-dX
-i=1
-λi
-Ni +O( 1
-Nd+1 )
-!
-,(2.26)
-for any d, where we choose the sign of
-p
-det (−A) as explained in Proposition [16], and
-λi’s are constants presented by using coefficients of the expansion Ψ(z1,z 2,z 3), such pre-
-sentations are obtained by formally expanding the following formula,
-1 +
-∞X
-i=1
-λi
-Ni
-(2.27)
-= exp
-
-Nr
- ∂
-∂w1
-, ∂
-∂w2
-, ∂
-∂w3
-
-exp
-
-− 1
-4N (w1,w 2,w 3)A−1
-
-
-w1
-w2
-w3
-
-
-
-|w1=w2=w3=0.
-For a proof of the Proposition 2.8, see [16].
-Remark 2.9 ([18], Remark 3.2) . As mentioned in Remark 3.6 of [16], we can extend
-Proposition 2.8 to the case where Ψ(z1,z 2,z 3) depends onN in such a way that Ψ(z1,z 2,z 3)
-is of the form
-Ψ(z1,z 2,z 3) = Ψ0(z1,z 2,z 3) + Ψ1(z1,z 2,z 3) 1
-N +R(z1,z 2,z 3) 1
-N 2.(2.28)
-where Ψi(z1,z 2,z 3)’s are holomorphic functions independent of N, and we assume that
-Ψ0(z1,z 2,z 3) satisfies the assumption of the Proposition and |R(z1,z 2,z 3)| is bounded by
-a constant which is independent of N.
+We need to use the following version of saddle point method as illustrated in [@Oht18].
+
+::: proposition
+[]{#proposition-saddlemethod label="proposition-saddlemethod"} Let $A$ be a non-singular symmetric complex $3\times 3$ matrix, and let $\Psi(z_1,z_2,z_3)$ and $r(z_1,z_2,z_3)$ be holomorphic functions of the forms, $$\begin{aligned}
+    \Psi(z_1,z_2,z_3)&=\mathbf{z}^{T}A\mathbf{z}+r(z_1,z_2,z_3), \\\nonumber
+    r(z_1,z_2,z_3)&=\sum_{i,j,k}b_{ijk}z_iz_jz_k+\sum_{i,j,k,l}c_{ijkl}z_iz_jz_kz_l+\cdots
+   
+\end{aligned}$$ defined in a neighborhood of $\mathbf{0}\in \mathbb{C}^3$. The restriction of the domain $$\begin{aligned}
+ \label{formula-domain0}
+       \{(z_1,z_2,z_3)\in \mathbb{C}^3| \text{Re}\Psi(z_1,z_2,z_3)<0\}  
+   
+\end{aligned}$$ to a neighborhood of $\mathbf{0}\in \mathbb{C}^3$ is homotopy equivalent to $S^2$. Let $D$ be an oriented disk embeded in $\mathbb{C}^3$ such that $\partial D$ is included in the domain ([\[formula-domain0\]](#formula-domain0){reference-type="ref" reference="formula-domain0"}) whose inclusion is homotopic to a homotopy equivalence to the above $S^2$ in the domain ([\[formula-domain0\]](#formula-domain0){reference-type="ref" reference="formula-domain0"}). Then we have the following asymptotic expansion $$\begin{aligned}
+    \int_{D}e^{N\psi(z_1,z_2,z_3)}dz_1dz_2dz_3=\frac{\pi^{\frac{3}{2}}}{N^{\frac{3}{2}}\sqrt{\det(-A)}}\left(1+\sum_{i=1}^d\frac{\lambda_i}{N^i}+O(\frac{1}{N^{d+1}})\right),
+\end{aligned}$$ for any $d$, where we choose the sign of $\sqrt{\det{(-A)}}$ as explained in Proposition [@Oht16], and $\lambda_i$'s are constants presented by using coefficients of the expansion $\Psi(z_1,z_2,z_3)$, such presentations are obtained by formally expanding the following formula, $$\begin{aligned}
+    &1+\sum_{i=1}^{\infty}\frac{\lambda_i}{N^i}\\\nonumber
+    &=\exp\left(Nr\left(\frac{\partial }{\partial w_1},\frac{\partial }{\partial w_2},\frac{\partial }{\partial w_3}\right)\right)\exp\left(-\frac{1}{4N}(w_1,w_2,w_3)A^{-1}\begin{pmatrix}
+      w_1 \\ w_2 \\ w_3  
+    \end{pmatrix}\right)|_{w_1=w_2=w_3=0}.
+\end{aligned}$$
+:::
+
+For a proof of the Proposition [\[proposition-saddlemethod\]](#proposition-saddlemethod){reference-type="ref" reference="proposition-saddlemethod"}, see [@Oht16].
+
+::: remark
+[]{#remark-saddle label="remark-saddle"} As mentioned in Remark 3.6 of [@Oht16], we can extend Proposition [\[proposition-saddlemethod\]](#proposition-saddlemethod){reference-type="ref" reference="proposition-saddlemethod"} to the case where $\Psi(z_1,z_2,z_3)$ depends on $N$ in such a way that $\Psi(z_1,z_2,z_3)$ is of the form $$\begin{aligned}
+        \Psi(z_1,z_2,z_3)=\Psi_0(z_1,z_2,z_3)+\Psi_1(z_1,z_2,z_3)\frac{1}{N}+R(z_1,z_2,z_3)\frac{1}{N^2}. 
+    
+\end{aligned}$$ where $\Psi_i(z_1,z_2,z_3)$'s are holomorphic functions independent of $N$, and we assume that $\Psi_0(z_1,z_2,z_3)$ satisfies the assumption of the Proposition and $|R(z_1,z_2,z_3)|$ is bounded by a constant which is independent of $N$.
+:::

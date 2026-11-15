@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-descartes-knot-eigenbasis-derivation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:descartes-knot-eigenbasis-derivation",
+  "kind": "remark",
+  "title": "Derivation of knot-eigenbasis completeness",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/cor-descartes-knot-eigenbasis",
+    "papers/quantum-observable-universe/blocks/cor-descartes-braid-structure",
+    "papers/quantum-observable-universe/blocks/thm-jones-markov-trace",
+    "papers/quantum-observable-universe/blocks/prop-knot-eigenbasis-complete"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/cor-descartes-knot-eigenbasis",
+  "tags": [
+    "archimedean-universe",
+    "knot-invariant",
+    "hecke-algebra",
+    "schur-weyl"
+  ],
+  "text": "descartes-knot-eigenbasis-derivation.md",
+  "provenance": "authored"
+}

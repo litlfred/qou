@@ -127,7 +127,7 @@ and checksummed". The engine itself is verified on small cases.
 Each witness is a content block triple:
 
 ```
-content/quantum-observable-universe/appendix-witnesses/
+folio/quantum-observable-universe/appendix-witnesses/
   witness-<isotope>.ts     ← Manifest: label, engine ref, uses
   witness-<isotope>.md     ← Human-readable polynomial display
   witness-<isotope>.lean   ← Lean definitions + verification tier

@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-categorical-trace-is-the-markov-trace",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:categorical-trace-is-the-markov-trace",
+  "kind": "remark",
+  "title": "The rigid trace of the tensor representation is the Markov trace",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-markov-trace-frobenius-selection",
+    "papers/quantum-observable-universe/blocks/rem-trace-ledger",
+    "papers/quantum-observable-universe/blocks/def-chern-character",
+    "papers/quantum-observable-universe/blocks/def-grothendieck-group-of-a-qou"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-markov-trace-frobenius-selection",
+  "cites": [
+    "references/jones1987",
+    "references/reshetikhin-turaev1990",
+    "references/kassel1995"
+  ],
+  "tags": [
+    "markov-trace",
+    "quantum-trace",
+    "rigid-trace",
+    "convention-d",
+    "hecke-algebra",
+    "trace"
+  ],
+  "leanRef": "qou:QOU.MassTheory.qtrace_rHecke_div",
+  "text": "categorical-trace-is-the-markov-trace.md",
+  "provenance": "authored"
+}

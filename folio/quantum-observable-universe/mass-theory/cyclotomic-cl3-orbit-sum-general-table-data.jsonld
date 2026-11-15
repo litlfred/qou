@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-cyclotomic-cl3-orbit-sum-general-table-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:cyclotomic-cl3-orbit-sum-general-table-data",
+  "kind": "table",
+  "title": "Data table from prop:cyclotomic-cl3-orbit-sum-general",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-cyclotomic-cl3-orbit-sum-general"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "cyclotomic-cl3-orbit-sum-general-table-data.md",
+  "provenance": "authored"
+}

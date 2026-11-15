@@ -48,11 +48,13 @@
   },
   "allPassed": true,
   "verdict": "PROVED (derive-and-verify, 60 dps). The Hahn–Exton q-Bessel generating function g(w)=Σ c_k w^k satisfies the SECOND-ORDER q-difference equation (☆) q^ν g(q²w) − (1+q^ν−w) g(qw) + g(w) = 0, equivalent order-by-order to the first-order coefficient recurrence (★) proved in PR #2279, and contracting to the ordinary Bessel recurrence as q→1. This is the function-level q-Bessel equation underlying the c_k ladder; the linear-in-w middle term is the source of the descending ladder (c_2=−1 leading). No fit; nothing wired; c_k stays cal-anchored (the archimedean real-x closure is refuted, PR #2300 — this is fibre-level structure).",
+  "scriptFile": "qbessel_second_order_qdifference_equation.py",
   "scriptHash": "0f6ea9f202c8",
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-  "commitSha": "5fd004f3a5f1057cc20b55f89c1febcbeacdf28a",
+  "scriptCommitSha": "9e62944951a74873db36bf96989f5c0cc69d2271",
+  "commitSha": "de5ea77d8444299e47ec5ddab92e44ee869c5f06",
   "engine": "python",
-  "computedAt": "2026-07-18T17:46:16.650527+00:00",
+  "computedAt": "2026-10-05T07:58:38.146602+00:00",
   "durationMs": 0,
-  "scriptFile": "qbessel_second_order_qdifference_equation.py"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

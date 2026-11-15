@@ -1,0 +1,225 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2004.04939v1",
+ "source": {
+  "file": "2004.04939v1.pdf",
+  "sha256": "59a06f9f7d97cad25436cbb5f2759e0a71002a5f4229e573a7a92386ece037f8",
+  "bytes": 193614,
+  "pages": 10,
+  "text_source": "embedded",
+  "extractor": "pypdf",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2004.04939",
+   "version": "1",
+   "primary_class": "math.RT",
+   "stamp_date": "10 Apr 2020"
+  },
+  "doi": null,
+  "title": "BRAID GROUP ACTION ON THE MODULE CATEGORY OF",
+  "authors_raw": "QUANTUM AFFINE ALGEBRAS",
+  "title_lines": [
+   "BRAID GROUP ACTION ON THE MODULE CATEGORY OF"
+  ],
+  "abstract": "Let g0 be a simple Lie algebra of type ADE and let U \u2032 q(g) be the corre- sponding untwisted quantum a\ufb03ne algebra. We show that there exis ts an action of the braid group B(g0) on the quantum Grothendieck ring Kt(g) of Hernandez-Leclerc\u2019s category C 0 g . Focused on the case of type AN \u22121, we construct a family of monoidal autofunctors {Si}i\u2208Z on a localization TN of the category of \ufb01nite-dimensional graded modules over the quiver Hecke algebra of type A\u221e. Under an isomorphism between the Grothendieck ring K(TN ) of TN and the quantum Grothendieck ring Kt(A(1) N \u22121), the functors {Si}1\u2264i\u2264N \u22121 recover the action of the braid group B(AN \u22121). We inves- tigate further properties of these functors.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20200412203440-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Braid group action on the quantum Grothendieck rings",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The category TN and reflection functors",
+   "page": 5,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Reflections by root modules",
+   "page": 8,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Conjectures",
+   "page": 8,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 884,
+   "n_words": 151
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 5028,
+   "n_words": 897
+  },
+  {
+   "id": "sec-001-2-braid-group-action-on-the-quantum-grothendieck",
+   "number": "2",
+   "title": "Braid group action on the quantum Grothendieck rings",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 4142,
+   "n_words": 849
+  },
+  {
+   "id": "sec-002-3-the-category-tn-and-reflection-functors",
+   "number": "3",
+   "title": "The category TN and reflection functors",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 8,
+   "n_chars": 5720,
+   "n_words": 1372
+  },
+  {
+   "id": "sec-003-4-reflections-by-root-modules",
+   "number": "4",
+   "title": "Reflections by root modules",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1515,
+   "n_words": 386
+  },
+  {
+   "id": "sec-004-5-conjectures",
+   "number": "5",
+   "title": "Conjectures",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 840,
+   "n_words": 185
+  },
+  {
+   "id": "sec-005-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 2610,
+   "n_words": 403
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 6,
+  "sections": 7,
+  "chars_total": 20739,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 5,
+   "overlaid": 5,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-braid-group-action-on-the-quantum-grothendieck",
+     "title": "Braid group action on the quantum Grothendieck rings",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-3-the-category-tn-and-reflection-functors",
+     "title": "The category TN and reflection functors",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-4-reflections-by-root-modules",
+     "title": "Reflections by root modules",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-5-conjectures",
+     "title": "Conjectures",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
+ }
+}

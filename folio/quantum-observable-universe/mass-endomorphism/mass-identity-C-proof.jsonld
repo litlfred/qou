@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-mass-identity-C",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:mass-identity-C",
+  "kind": "proof",
+  "title": "Proof of archimedean mass identity",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/cor-mass-identity-C"
+  ],
+  "cites": [
+    "references/yekutieli2015"
+  ],
+  "text": "mass-identity-C-proof.md",
+  "provenance": "authored"
+}

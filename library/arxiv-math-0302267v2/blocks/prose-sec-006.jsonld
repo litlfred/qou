@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0302267v2/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0302267v2/blocks/prose-sec-006",
   "kind": "prose",
-  "title": "Profondeur 67",
-  "pageStart": 2,
-  "pageEnd": 7,
-  "text": "../sections/sec-006-6-profondeur-67.md",
-  "derivedFrom": "library/arxiv-math-0302267v2/manifest",
-  "sourceDocument": "library/arxiv-math-0302267v2/manifest",
+  "title": "Le groupe fondamental motivique du compl´ement, dans P1, de 0, ∞et µN",
+  "pageStart": 53,
+  "pageEnd": 70,
+  "text": "../sections/sec-006-5-le-groupe-fondamental-motivique-du-complement.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0302267v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0302267v2",
   "provenance": "ingested"
 }

@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1808.05026v1/sections/sec-004",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Gröbner-Shirshov bases for the Temperley-Lieb algebras of type Dn",
+  "pageStart": 6,
+  "pageEnd": 9,
+  "contains": [
+    "library/arxiv-1808.05026v1/blocks/prose-sec-004"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1808.05026v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1808.05026v1",
+  "provenance": "ingested"
+}

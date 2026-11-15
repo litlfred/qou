@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2601.07906v2/blocks/prose-sec-029",
+  "kind": "prose",
+  "title": "Virasoro TQFT identities",
+  "pageStart": 98,
+  "pageEnd": 106,
+  "text": "../sections/sec-029-virasoro-tqft-identities.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2601.07906v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2601.07906v2",
+  "provenance": "ingested"
+}

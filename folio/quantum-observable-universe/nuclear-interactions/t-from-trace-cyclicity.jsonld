@@ -1,0 +1,41 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-t-from-trace-cyclicity",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:t-from-trace-cyclicity",
+  "kind": "conjecture",
+  "title": "Time-reversal $T$ as Markov-trace word reversal (trace cyclicity dual)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-cpt-d6-d7-d8-closure",
+    "papers/quantum-observable-universe/blocks/def-bar-involution",
+    "papers/quantum-observable-universe/blocks/conj-cpt-orbit-closure-density",
+    "papers/quantum-observable-universe/blocks/thm-jones-markov-trace"
+  ],
+  "cites": [
+    "references/jones1987",
+    "references/kassel1995",
+    "references/wenzl1988"
+  ],
+  "tags": [
+    "tier:S",
+    "time-reversal",
+    "duality-d8",
+    "markov-trace-cyclicity",
+    "word-reversal",
+    "cpt-decomposition",
+    "axiom-class",
+    "open-problem",
+    "conditional-on-class"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.TFromTraceCyclicity",
+  "text": "t-from-trace-cyclicity.md",
+  "provenance": "authored"
+}

@@ -13,11 +13,16 @@ KLR/crystal residue-A program (scope doc
 `probe_q_beta_operator_valued_N3.py` (on `main`) already carries α_eff in
 **closed symbolic form**:
 
-    z      = 1 / (√q + 1/√q)            # bar-EVEN  (= 1/(2 cosh(η/2)))
+    z      = q**3 / (q**2 + 1)          # bar-EVEN  (convention D)
     h      = q − 1/q                    # bar-ODD   (= 2 sinh η, Hecke param)
     alpha  = (z − 1) · h / 2            # bar-ODD   ⇒ sources the bar-odd c_3
     ℏ_q    = (q − 1)/q,   u = b·ℏ_q²    # ladder variable
     Q_β/Q_A = cos( alpha − u/2 − u²/2 − u³/2 − … )       (N=3 candidate, line 144)
+
+(The `z` line above quoted that producer's **pre-migration** body,
+`1 / (√q + 1/√q)`, long after it moved to convention D — its own line 86-87
+carries the before/after comment. Re-synced 2026-10-10, bean `qou-u5z0`.
+Convention D is canonical per the 2026-08-15 ruling R1.)
 
 So the "symbolic α(q)" is **not open** — it is `alpha = (z−1)h/2`, and its
 bar-ODD parity independently confirms the #1900 kernel constraint
@@ -104,7 +109,12 @@ def main() -> int:
     print("=" * 84)
     print(" Q_β α_eff (on-main N=3 closed form) → ladder c_k reconciliation")
     print("=" * 84)
-    print(f"  α = (z-1)·h/2,  z = 1/(√q+1/√q) [bar-even],  h = q-1/q [bar-odd] ⇒ α bar-ODD")
+    # Banner label was `z = 1/(√q+1/√q)` (convention C) printed beside an α
+    # computed from the convention-D z at line 71 — the same mislabelled-banner
+    # defect fixed in ocneanu_weights.py (bean qou-pc7l), and worse than a
+    # stale docstring because the wrong name is printed next to the right
+    # number, so a reader copying the pair out of a terminal carries both.
+    print(f"  α = (z-1)·h/2,  z = q³/(q²+1) [bar-even],  h = q-1/q [bar-odd] ⇒ α bar-ODD")
     print(f"  producer phase: Q_β/Q_A = cos(α - Σ u^k/2),  u = b·ℏ_q²")
     print()
     print(f"  {'anchor':<8}{'α':>16}{'u':>14}{'c_1':>14}{'c_2':>14}{'c_3':>14}")
@@ -163,7 +173,12 @@ def main() -> int:
     wb.set_content_block("conj:qbeta-precision-ladder")
     wb.add_data("anchors", rows)
     wb.add_data("verdict", verdict)
-    wb.add_data("alpha_eff_symbolic", "(z-1)*h/2 ; z=1/(sqrt(q)+1/sqrt(q)) ; h=q-1/q")
+    # The `z=` clause read `1/(sqrt(q)+1/sqrt(q))` — convention C — while the
+    # z this field documents is computed at line 71 as `q**3 / (q**2 + 1)`
+    # (convention D). This is durable, machine-readable PROVENANCE, so it was
+    # worse than the banner below it: a consumer re-deriving alpha_eff from the
+    # recorded formula would get the C value. Bean qou-u5z0.
+    wb.add_data("alpha_eff_symbolic", "(z-1)*h/2 ; z=q**3/(q**2+1) ; h=q-1/q")
     wb.add_data("interpretation", (
         "α_eff = (z-1)·h/2 is closed-form symbolic on main (not open as the "
         "KLR scope lists). It is bar-ODD, confirming #1900. The open piece is "

@@ -188,7 +188,7 @@ def class_is_inhabited(cls: str, root: pathlib.Path) -> bool:
     return found
 
 def main() -> int:
-    beans = sorted(pathlib.Path('.beans').glob('qou-pqmw--*.md'))
+    beans = sorted(pathlib.Path('beans/defs').glob('qou-pqmw--*.md'))
     if not beans:
         print("bean qou-pqmw not found", file=sys.stderr); return 2
     rows = re.findall(r"^- `([^`]+):(\d+)` — `([^`]+)`", beans[0].read_text(), re.M)
@@ -210,10 +210,10 @@ def main() -> int:
         rec = {"decl": decl, "path": path, "bean_line": int(line), "now_line": now,
                "class": cls}
         if cls:
-            rec["class_inhabited"] = class_is_inhabited(cls, pathlib.Path("content"))
+            rec["class_inhabited"] = class_is_inhabited(cls, pathlib.Path("folio"))
         if cls:
             rec["class_refuted"] = class_has_refutation(cls, path)
-            rec["class_constructed"] = class_has_constructor(cls, pathlib.Path("content"))
+            rec["class_constructed"] = class_has_constructor(cls, pathlib.Path("folio"))
         nxt = re.search(rf"^[ \t]*{DECL}[ \t]+", s[m.end():], re.M)
         blk = s[m.start(): m.end() + (nxt.start() if nxt else 4000)]
         rec["bare_projection"] = proof_is_bare_projection(blk)

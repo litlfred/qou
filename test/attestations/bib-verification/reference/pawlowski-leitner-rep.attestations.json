@@ -1,0 +1,30 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "pawlowski-leitner-rep",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 123,
+      "entry": {
+        "id": "pawlowski-leitner-rep",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T18:01:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 0,
+        "fix_commit": "(this commit)",
+        "note": "DEPRECATED 2026-06-24 (author): agent-mistake duplicate; no separate Pawloski-Leitner inner-product paper exists. The 8 citation sites were rewired back to leitnerpawloski2004 (arXiv:math/0409565). Entry retained as a no-cite stub.",
+        "source": {
+          "kind": "external",
+          "url": ""
+        }
+      }
+    }
+  ]
+}

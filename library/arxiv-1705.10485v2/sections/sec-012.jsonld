@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1705.10485v2/sections/sec-012",
   "@type": [
     "doco:Section"
   ],
-  "title": "(R) of",
-  "pageStart": 9,
-  "pageEnd": 10,
+  "title": "Approximation of a stable law by compound Poisson laws",
+  "pageStart": 21,
+  "pageEnd": 26,
   "contains": [
     "library/arxiv-1705.10485v2/blocks/prose-sec-012"
   ],
-  "derivedFrom": "library/arxiv-1705.10485v2/manifest",
-  "sourceDocument": "library/arxiv-1705.10485v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1705.10485v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1705.10485v2",
   "provenance": "ingested"
 }

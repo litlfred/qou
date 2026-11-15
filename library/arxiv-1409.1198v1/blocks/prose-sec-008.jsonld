@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1409.1198v1/blocks/prose-sec-008",
+  "kind": "prose",
+  "title": "The trace and idempotent completions",
+  "pageStart": 15,
+  "pageEnd": 16,
+  "text": "../sections/sec-008-33-the-trace-and-idempotent-completions.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1409.1198v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1409.1198v1",
+  "provenance": "ingested"
+}

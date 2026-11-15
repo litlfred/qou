@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-binding-error-amplification",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:binding-error-amplification",
+  "kind": "proposition",
+  "title": "Binding-energy error amplification: $\\mathcal{A} = M_{\\mathrm{atom}}/B$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-binding-scale-catalan"
+  ],
+  "leanRef": "qou:QOU.MassTheory.BindingErrorAmplification.binding_rel_error",
+  "text": "binding-error-amplification.md",
+  "leanSource": "binding-error-amplification.lean",
+  "provenance": "authored"
+}

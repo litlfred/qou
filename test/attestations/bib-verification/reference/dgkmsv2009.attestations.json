@@ -1,0 +1,97 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "dgkmsv2009",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 195,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-0901.1612v1/0901.1612v1.pdf"
+        },
+        "id": "dgkmsv2009",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "JOIN CONFIRMED from front matter: the document self-identifies as the preprint id implied by the filename, its six-author byline matches the registered entry's author list length and names, and its subject matches the entry. CITATION STATE: a true bib orphan \u2014 zero sites in content/ (.md, .ts, .lean) and zero in computations/. RELEVANCE IS REAL AND UNUSED: the document classifies three-component links up to link homotopy by the pairwise linking numbers p,q,r plus the triple linking number mu, uses the Borromean rings as its running example (p=q=r=0, mu=+/-1), and gives integral formulas for mu. QOU's entire nucleon construction is the Borromean braid (def:f-bor-borromean-observable, prop:borromean-markov-trace-closed-form), so a rigorous invariant-theoretic account of what distinguishes the Borromean rings from the unlink at the level of linking data is directly usable context. Held at supporting, not core: QOU's Borromean input is the Markov trace of a specific braid word, not the Milnor triple linking number, and I found no QOU claim that currently needs mu.",
+          "keyResults": [
+            {
+              "locator": "Abstract / \u00a71",
+              "statement": "Three-component links in S^3 are classified up to link homotopy by the pairwise linking numbers p,q,r together with the triple linking number mu, well-defined modulo gcd(p,q,r); for the Borromean rings p=q=r=0 and mu=+/-1.",
+              "useForFolio": "Gives the precise invariant separating the Borromean rings from the three-component unlink, which is the topological content the Borromean observable presumes when it treats B_3 as non-trivial with vanishing pairwise linking.",
+              "targets": [
+                "def:f-bor-borromean-observable"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "The Borromean observable block asserts the pairwise-trivial-but-globally-linked character of B_3 without a source; this is the standard reference for it and is already registered but cited nowhere.",
+              "target": "def:f-bor-borromean-observable",
+              "bean": "qou-fn3n"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "b4f3efcadd1e"
+        }
+      }
+    },
+    {
+      "position": 320,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-linking-numbers.pdf"
+        },
+        "id": "dgkmsv2009",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Not an orphan, and there is a metadata discrepancy worth fixing. The registered entry dgkmsv2009 (references.ts L8066-8085) is the same work \u2014 same six-author collaboration, same title, same abstract, same 'we give here only sketches of the proofs' announcement character \u2014 but it is registered as an arXiv preprint whose note says 'Uploaded library/arxiv-0901.1612v1/0901.1612v1.pdf'. This upload is instead the JOURNAL version of the same work. So the corpus holds two artefacts of one work while the registered stanza carries only the preprint venue and year; the published venue, year, volume, page range and DOI are all printed on this PDF's first page and are absent from the stanza. Content-wise the existing note is accurate and already scoped: mu-bar_123 as the helicity of a characteristic field on the configuration 3-torus, unambiguous when the pairwise linkings vanish (the Brunnian/baryon case the folio's Borromean nucleon needs), but totally antisymmetric under permuting components \u2014 obstruction O1. I re-read the abstract and confirm both facts, including the explicit 'Borromean rings: p = q = r = 0, mu = +/-1' figure caption. No new key result beyond what the note records.",
+          "keyResults": [
+            {
+              "locator": "Abstract; figure caption p. 252",
+              "statement": "For a three-component link with vanishing pairwise linking numbers the triple linking number is an honest integer (mu = +/-1 for the Borromean rings), equal to half Pontryagin's ambiguous Hopf invariant of the associated map from the 3-torus to the 2-sphere.",
+              "useForFolio": "Backs the Brunnian/unambiguous-mu premise the folio's Borromean-nucleon confinement blocks rely on; the antisymmetry half is already recorded as obstruction O1.",
+              "targets": [
+                "conj:brunnian-property-of-borromean"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "The published journal version (venue, year, volume, pages, DOI) differs from the registered preprint stanza; either correct dgkmsv2009 to the published metadata or register the published version as a distinct entry and cross-note the two uploads.",
+              "target": "conj:brunnian-property-of-borromean",
+              "bean": "qou-qqzm"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "dgkmsv2009 has zero citation sites in content/ despite being read in full and used to settle an obstruction; conj:brunnian-property-of-borromean is the block whose premise it supports.",
+              "target": "conj:brunnian-property-of-borromean",
+              "bean": "qou-d2s7"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "db149864ce36"
+        }
+      }
+    }
+  ]
+}

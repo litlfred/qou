@@ -1,0 +1,53 @@
+{
+ "probe": "ptolemy_duality_generic",
+ "manifold": "m004",
+ "obstruction_class": 1,
+ "field": {
+  "generator": "t",
+  "min_poly": "t**2 + 11*t + 31",
+  "degree": 2,
+  "irreducible_over_Q": true,
+  "discriminant": "-3"
+ },
+ "n_automorphisms": 2,
+ "K_over_Q_normal": true,
+ "automorphism_element_orders": [
+  1,
+  2
+ ],
+ "automorphism_group_axioms_verified": {
+  "roots": true,
+  "identity": true,
+  "closed": true,
+  "inverses": true
+ },
+ "relator_gate": true,
+ "sl3_lift": true,
+ "rows": {
+  "t -> t": {
+   "untwisted_dim": 0,
+   "untwisted_found": false,
+   "twisted_dim": 0,
+   "twisted_found": false,
+   "lambda": "other",
+   "is_identity": true
+  },
+  "t -> -t - 11": {
+   "untwisted_dim": 2,
+   "untwisted_found": true,
+   "twisted_dim": 2,
+   "twisted_found": true,
+   "lambda": "all 1",
+   "is_identity": false
+  }
+ },
+ "refutation_control_passes": true,
+ "untwisted_winners": [
+  "t -> -t - 11"
+ ],
+ "twisted_winners": [
+  "t -> -t - 11"
+ ],
+ "schur_dims_ok": true,
+ "verdict": "UNTWISTED duality HOLDS for ['t -> -t - 11'] -- an equality of GL(3,K) representations, reproducing the L6a4 class-1 phenomenon on m004."
+}

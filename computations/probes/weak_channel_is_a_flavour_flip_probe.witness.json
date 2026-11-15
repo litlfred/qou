@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-03T04:59:44.191192+00:00",
-  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
+  "computedAt": "2026-09-14T06:28:53.528157+00:00",
+  "commitSha": "281f9145dcfb05bb618aa7d52bc702138523577d",
   "assertions": [
     {
       "name": "A1_weak_is_a_beta_reassignment",
@@ -34,7 +34,7 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "W(n->p)[s0] shrinks 1.22e-32 -> 1.258e-82; W(p->n)[s0] stable at -0.0022596184"
+      "source": "W(n->p)[s0] shrinks -1.644e-32 -> 7.224e-83; W(p->n)[s0] stable at -0.0022596184"
     },
     {
       "name": "A5_fraction_invisible_to_trace",
@@ -50,15 +50,15 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "n heavier than p and 3H heavier than 3He; model n/p 1.6069 against 1.00137841917"
+      "source": "n heavier than p and 3H heavier than 3He; model n/p 1.6069 against 1.00137841946"
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 7,
   "computation": "weak_channel_is_a_flavour_flip_probe",
   "scriptFile": "weak_channel_is_a_flavour_flip_probe.py",
-  "scriptHash": "1dd76f276df4",
-  "scriptCommitSha": "ae777020c1515c082b6cb4d0b187708b6bbdc62a",
+  "scriptHash": "7098b958ec7e",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -73,7 +73,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -101,7 +101,7 @@
     },
     "W_nf_coords": [
       "0.989191546992138",
-      "-5.15998857563969e-53",
+      "3.24838763759033e-52",
       "0.101041962421142",
       "0.000472396501075564",
       "-0.0117738926699988",
@@ -110,9 +110,9 @@
     "W_determinant": "1.06737646099",
     "W_residual": "1.67e-52",
     "sigma0_forward": {
-      "30": "1.21992e-32",
-      "50": "-5.15999e-53",
-      "80": "1.25798e-82"
+      "30": "-1.64361e-32",
+      "50": "3.24839e-52",
+      "80": "7.22424e-83"
     },
     "sigma0_reverse": {
       "30": "-0.00225961842",

@@ -105,7 +105,7 @@ HA               = Q0 - QI0
 #     σ_0^k is PSD  ⇔  k is even.
 #
 # Proved, sorry-free and over a generic ordered field, in
-# content/quantum-observable-universe/lean/QOU/QBeta/GluonVertexPsdParity.lean
+# folio/quantum-observable-universe/lean/QOU/QBeta/GluonVertexPsdParity.lean
 # (`vertex_psd_iff_even`).  It mentions no Markov parameter, no Gram matrix
 # and no anchor, so unlike the integer-LP rule it replaces it cannot go stale
 # under a convention change.  It makes σ_0² the minimal non-zero admissible

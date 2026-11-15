@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-ph-0105039v1/blocks/prose-sec-008",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-ph-0105039v1/blocks/prose-sec-008",
   "kind": "prose",
-  "title": "(a−d)2− 1",
-  "pageStart": 9,
-  "pageEnd": 9,
-  "text": "../sections/sec-008-2-ad2-1.md",
-  "derivedFrom": "library/arxiv-math-ph-0105039v1/manifest",
-  "sourceDocument": "library/arxiv-math-ph-0105039v1/manifest",
+  "title": "Gluing Around Ridgeline of Octahedron",
+  "pageStart": 20,
+  "pageEnd": 24,
+  "text": "../sections/sec-008-53-gluing-around-ridgeline-of-octahedron.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-ph-0105039v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-ph-0105039v1",
   "provenance": "ingested"
 }

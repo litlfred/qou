@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-information-theoretic-time-properties",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:information-theoretic-time-properties",
+  "kind": "remark",
+  "title": "Reeb time coordinate, three regimes, and the arrow of time",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-information-theoretic-time",
+    "papers/quantum-observable-universe/blocks/prop-reeb-operations-per-planck",
+    "papers/quantum-observable-universe/blocks/prop-local-substrate-q",
+    "papers/quantum-observable-universe/blocks/def-planck-time",
+    "papers/quantum-observable-universe/blocks/ex-q-reeb-flow",
+    "papers/quantum-observable-universe/blocks/rem-information-theoretic-time-julia-microscopic",
+    "papers/quantum-observable-universe/blocks/rem-information-theoretic-time-arrow"
+  ],
+  "foreshadows": [
+    "papers/quantum-observable-universe/blocks/rem-information-theoretic-time-julia-microscopic",
+    "papers/quantum-observable-universe/blocks/rem-information-theoretic-time-arrow"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-information-theoretic-time",
+  "tags": [
+    "information-theory",
+    "planck-time",
+    "discrete-time",
+    "statistical-mechanics",
+    "reeb-flow",
+    "julia-set"
+  ],
+  "text": "information-theoretic-time-properties.md",
+  "provenance": "authored"
+}

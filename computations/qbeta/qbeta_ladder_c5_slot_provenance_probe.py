@@ -294,7 +294,7 @@ FINDINGS
 
 5. DIRECTION SETTLED, and it is the reverse of how the question was posed.
    `3c_3^2 + b` lives in exactly one place in the tree:
-   `computations/_deprecated/precision-ladder-superseded/`.  Its coefficient
+   `fsh-guts/deprecated/computations/precision-ladder-superseded/`.  Its coefficient
    family there is identical to the live conjecture family at c_4, c_6 and c_7
    and differs ONLY at c_5 -- so c_5 is precisely what the supersession changed.
 

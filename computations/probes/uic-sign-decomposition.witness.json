@@ -1,0 +1,301 @@
+{
+  "engine": "python+mpmath+rust",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T14:59:58.504718+00:00",
+  "commitSha": "cf13de45381038fe90515829757a2d4b8ed809af",
+  "assertions": [
+    {
+      "name": "C_lambda >= 0 on every partition, to tolerance 1.0e-40",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_sign_decomposition_probe"
+    },
+    {
+      "name": "the one-dimensional blocks' weights are zero to the compute floor (exact cancellation at finite precision, NOT proved exact)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_sign_decomposition_probe"
+    },
+    {
+      "name": "every atom's ungated sum is negative",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_sign_decomposition_probe"
+    },
+    {
+      "name": "at 2H the positive mass P is zero to the compute floor",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_sign_decomposition_probe"
+    },
+    {
+      "name": "at A >= 3 the positive mass is NONZERO -- the A=2 result does NOT generalise",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_sign_decomposition_probe"
+    },
+    {
+      "name": "at A >= 3 the negative mass still outweighs the positive by > 20x",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_sign_decomposition_probe"
+    },
+    {
+      "name": "no single block carries more than 25% of |N| -- the sign is not one outlier",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_sign_decomposition_probe"
+    },
+    {
+      "name": "at 2H every block with L > 0 is ONE-DIMENSIONAL, at every cap",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_sign_decomposition_probe"
+    },
+    {
+      "name": "at 2H every block with L > 0 has C_lambda = 0 -- the positive set is exactly the annihilated set",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_sign_decomposition_probe"
+    },
+    {
+      "name": "at 2H |P| / |S| is at the compute floor at every cap, so S < 0 is FORCED to that precision (scope-(a): measured to |lambda| <= 10, not proved)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_sign_decomposition_probe"
+    },
+    {
+      "name": "the reconstruction matches the producer where they agree (2H, k = 6)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_sign_decomposition_probe"
+    },
+    {
+      "name": "|S| grows monotonically with the truncation over the measured range -- NO evidence of convergence (not a divergence claim)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_sign_decomposition_probe"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "uic-sign-decomposition",
+  "scriptFile": "uic_sign_decomposition_probe.py",
+  "scriptHash": "e51b3858966e",
+  "scriptCommitSha": "3e377a368384538adab53a835eab0fb1bf34ca67",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/uic_sign_decomposition_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/uic_sign_decomposition_probe.py"
+  },
+  "description": "Bean qou-21oc: the ungated unified_iterative_correction sum decomposed by sign. C_lambda >= 0 on every partition, so sign(term) = sign(L) with L = l + ln|t| - ln d (note the ACCUMULATED l: L is NOT ln|tr| - ln d). At A = 2 the positive mass is zero TO THE COMPUTE FLOOR at caps |lambda| <= 6, 8, 10 (|P|/|S| < 1e-70; NOT exactly zero -- 12 of 28 one-dimensional blocks carry a cancellation residue at ~1e-74, some negative): every block with L > 0 is a one-dimensional row partition (k), which is exactly the set the subtrahend 1/[k]_q! annihilates, so S < 0 is FORCED rather than observed. SCOPE-(a), NOT (b): measured to |lambda| <= 10, not proved for all k. It does NOT generalise -- at A >= 3 the blocks (2,1) and (2,2) carry L > 0 with C > 0, so P > 0, merely 21-68x too small. These sums are the PROBE'S OWN reconstruction, not the producer's return; validated against it at 2H k=6 only.",
+  "auditOnly": "docs/audits/2026-09-14-uic-sign-decomposition-at-a2.md",
+  "data": {
+    "per_atom_cap6": [
+      {
+        "atom": "2H",
+        "A": 2,
+        "P": "0.0",
+        "N": "-2.25113197732131113650186438771942010476118720999213004061417",
+        "S": "-2.25113197732131113650186438771942010476118720999213004061417",
+        "n_positive_L": 5,
+        "n_negative_L": 23,
+        "abs_N_over_P": "infinite (P = 0)",
+        "top1_share_of_abs_N": "0.152202646399242321489592425054409722413696815572590495961645"
+      },
+      {
+        "atom": "3H",
+        "A": 3,
+        "P": "0.0663709177109259584801423870713600519042737871553310810126825",
+        "N": "-1.86998814344685437100256849852425133751049242413497818653534",
+        "S": "-1.80361722573592841252242611145289128560621863697964710552266",
+        "n_positive_L": 6,
+        "n_negative_L": 22,
+        "abs_N_over_P": "28.1748122210914908366426664666038282683543102371499572600994",
+        "top1_share_of_abs_N": "0.168635023824470054802359793078180263299217349139908979016851"
+      },
+      {
+        "atom": "3He",
+        "A": 3,
+        "P": "0.0779521459477272280984522313171418703719862805963022440556483",
+        "N": "-1.82454508072406593026642510226810416871053235604532924257880",
+        "S": "-1.74659293477633870216797287095096229833854607544902699852316",
+        "n_positive_L": 6,
+        "n_negative_L": 22,
+        "abs_N_over_P": "23.4059634733796875848210804964745522680251764068692378766401",
+        "top1_share_of_abs_N": "0.193113962422886344993796809166250692972730439639546566658488"
+      },
+      {
+        "atom": "4He",
+        "A": 4,
+        "P": "0.0689751904722346106180607071136080534774643701683993673150998",
+        "N": "-1.43909391388213359263860898915238270793208561272186031039276",
+        "S": "-1.37011872340989898202054828203877465445462124255346094307766",
+        "n_positive_L": 7,
+        "n_negative_L": 21,
+        "abs_N_over_P": "20.8639353371764718984707494583806736041641946598742315689144",
+        "top1_share_of_abs_N": "0.161908671080763290964820403043364236317722218338995616911086"
+      },
+      {
+        "atom": "6Li",
+        "A": 6,
+        "P": "0.0296059053120718456849848531279072275738101953189271289358164",
+        "N": "-1.99928429812073243548332145213065131443912513849626229740957",
+        "S": "-1.96967839280866058979833659900274408686531494317733516847376",
+        "n_positive_L": 6,
+        "n_negative_L": 22,
+        "abs_N_over_P": "67.5299159761050006026935648037024673058880409209609711265229",
+        "top1_share_of_abs_N": "0.201255453245327636318211795138006207629828295452702887204480"
+      }
+    ],
+    "two_h_truncation_sweep": [
+      {
+        "cap_abs_lambda": 6,
+        "n_partitions": 28,
+        "n_positive_L": 5,
+        "positive_L_all_one_dimensional": true,
+        "positive_L_all_zero_weight": true,
+        "P": "0.0",
+        "S": "-2.25113197732131113650186438771942010476118720999213004061417",
+        "positive_L_blocks": [
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ]
+        ]
+      },
+      {
+        "cap_abs_lambda": 8,
+        "n_partitions": 65,
+        "n_positive_L": 7,
+        "positive_L_all_one_dimensional": true,
+        "positive_L_all_zero_weight": true,
+        "P": "-6.31898040427095582532407613903763602276997629640800753375335e-74",
+        "S": "-5.72179517355659904169015662908050936152000853780103069397799",
+        "positive_L_blocks": [
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ],
+          [
+            8
+          ]
+        ]
+      },
+      {
+        "cap_abs_lambda": 10,
+        "n_partitions": 137,
+        "n_positive_L": 9,
+        "positive_L_all_one_dimensional": true,
+        "positive_L_all_zero_weight": true,
+        "P": "-9.58297037691771783450747000370875307661488697438332039055178e-74",
+        "S": "-12.4690392076405019460155713111129671042148810759065831487894",
+        "positive_L_blocks": [
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ],
+          [
+            8
+          ],
+          [
+            9
+          ],
+          [
+            10
+          ]
+        ]
+      }
+    ],
+    "scope": {
+      "classification": "scope-(a) negative -- measured, not proved",
+      "proved_for_all_k": false,
+      "generalises_beyond_A2": false,
+      "what_would_make_it_scope_b": "A proof that L_lambda(A=2) > 0 implies lambda is one-dimensional. Then the positive set is contained in the annihilated set for all k and S < 0 at deuterium becomes a structural exclusion.",
+      "reconstruction_not_producer": "Sums are over |lambda| <= cap with ordering ['p']*Z + ['n']*N and one kernel call per partition; the producer uses the alternating ground-state ordering and its own k_exact ladder. Agreement is checked at 2H k=6 only.",
+      "not_the_entanglement_result": "computations/meson/binding_cut_entropy_sign_is_forced_probe.py concludes 'the sign is forced' about entanglement entropy across the proton|neutron cut, where positivity is a theorem. Unrelated."
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

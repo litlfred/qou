@@ -8,114 +8,19 @@ pages: 1-3
 source_pdf: 2512.18642v1.pdf
 source_sha256: c4c7f8b0a719aa2d
 doc_brief: "A Hidden Quantum Markov model framework for — This paper introduces a hidden quantum Markov models (HQMMs) framework to the Af- fleck–Kennedy–Lieb–Tasaki (AKLT) state—a cornerstone example of a"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.997
 ---
-Hidden Markov models [1] are recognized as powerful stochastic processes due to their ability
-to capture complex correlations, with broad applications across various domains [2]—especially
-in machine learning tasks [3], where algorithmic implementations [4, 5] have achieved significant
-success. Several proposals have been made to generalize hidden Markov models into the quantum
-setting [7, 8, 9]. Namely, with the rising interest in quantum computing and quantum machine
-learning [10] but a suitable generalized probabilistic picture is remained missing [11]. Recently,
-an algebraic approach to HQMM within the framework of quantum probability has been sug-
-gested [12], offering promising features such as entanglement [13] and the ability to represent an
-important class of matrix product states as observations [14]. This approach defines a HQMM as
-a hidden system—described by a Quantum Markov Chain (QMC) [15, 16], and an observation
-system strongly correlated with it. Information is encoded through sequences of hidden transi-
-tions and emission transition expectations, whose dual maps are quantum channels [17], these
-represent the fundamental building blocks of the HQMMs framework. It is worth noting that
-QMCs serve as the quantum generalization of classical Markov chains and offer a powerful frame-
-work for describing the dynamics of quantum systems. They play a particularly foundational role
-in the theory of finitely correlated states on quantum spin chains [18, 19, 20]. Beyond this core
-1
-arXiv:2512.18642v1  [quant-ph]  21 Dec 2025
-application, QMCs find broad use in diverse areas such as quantum control [21], quantum informa-
-tion theory [22], quantum software development [23], and quantum communication systems [24].
-A particularly important subclass, quantum walks, has proven instrumental in developing novel
-quantum algorithms [25].
-The AKLT model, introduced in [26, 27], provides a paradigmatic example of a gapped spin-
-1 system with an exactly solvable ground state described by a Matrix Product State (MPS)
-[18]. It explicitly satisfies Haldane’s conjecture [28], which distinguishes integer-spin antiferro-
-magnetic chains—possessing a gapped spectrum (the “Haldane gap”) and exponentially decaying
-correlations—from their gapless, power-law-correlated half-integer counterparts. Beyond confirm-
-ing Haldane’s conjecture, the AKLT state has emerged as a foundational model for SPT order
-[29, 30]. This stems from its elegant construction, where each physical spin-1 site arises from
-projecting two virtual spin-½degrees of freedom into the symmetric triplet subspace, revealing a
-hidden layer of entanglement. At the virtual level, the system is constructed on auxiliary spin-½
-spacesH 1
-2
-∼= C2, where the physicalSO(3) rotation symmetry is realized projectively through the
-double-cover mapSU(2)→SO(3). Formally, a groupGof symmetry acts onH 1
-2
-via a projective
-unitary representationπ:G→U(H 1
-2
-), characterized by a non-trivial 2-cocycleω:G×G→U(1).
-Its cohomology class [ω]∈H 2(SO(3),U(1)) ∼= Z2 directly encodes theZ 2 topological index of
-the SPT phase [31]. This algebraic structure arising from the mismatch between the virtual
-projective representationπand the physical spin-1 representationρ:G→ U(H 1) acting on
-H1∼= C3—underpins the robustness of fractionalized spin-½edge modes and defines the SPT
-nature of the AKLT phase.
-Previous works have shown a deep connection between quantum Markov chains on infinite
-tensor product of matrix algebras and finitely correlated states including matrix product states
-ansatz[18]. Moreover, recent algebraic approaches, framed within infinite tensor products of C*-
-algebras [32], have been used to classify topological order in solid-state physics [33, 34, 35].
-In this context, this work establishes a HQMM framework for the AKLT spin chain, capturing its
-entanglement structure and SPT order within a quantum probabilistic formalism. We construct
-the generative triplet ΞAKLT = (ϕ0,EH,EO,H), whereϕ 0 :B(H 1
-2
-)→Cinitializes the hidden spin-½
-system,E H :B(H 1
-2
-)⊗B(H 1
-2
-)→B(H 1
-2
-) governs its hidden dynamics, andEO,H :B(H 1
-2
-)⊗B(H 1)→
-B(H 1
-2
-) encodes theG-equivariant emission transition to the physical spin-1 space. The sequential
-quantum dynamics is defined by the transition map
-EXℓ,Yℓ(·) =E H
-(
-EO,H(Xℓ⊗Yℓ)⊗·
-)
-.
-Within this framework, we demonstrate the following principal results: Theorem 3.4 pro-
-vides an explicit HQMM decomposition of the AKLT state, determining virtual-physical cor-
-relations within the model. We explicitly characterize the conditional dependency of physical
-observations on the underlying Markov process through the AKLT quantum channel. Theo-
-rem 4.1 studies the entanglement structure of the underlying Markov dynamics. It establishes
-that the Choi–Jamio/suppress lkowski stateJ(E∗
-H) of the encoding channelE ∗
-H is a pure, maximally entan-
-gled bipartite state between the reference and output spaces. The resulting entanglement entropy
-S(ρR) =S(ρ B) = 1 ebit confirms that the hidden dynamics fully encode the chain’s entanglement
-structure [39, 40]. Theorem 5.1 explicitly formulates theG-covariance of the emission process,
-proving thatE O,H isG-equivariant. The covariance condition
-EO,H
-(
-π(g)Xπ(g)†⊗ρ(g)Yρ(g) †
-)
-=π(g)E O,H(X⊗Y)π(g) †
-holds with respect to the projective virtual representationπ:G→ U(H 1
-2
-) and the physical
-representationρ:G→U(H 1), thereby embedding the SPT index in the HQMM’s symmetry
-structure.
-This framework translates the topological and entanglement properties of the AKLT chain
-into a well-defined quantum stochastic process. Our approach directly connects tensor network
-2
-states [41] to quantum models [42], with promising implications for quantum machine learning
-and quantum computation architectures. Natural extensions include multi-dimensional general-
-izations to cluster states and projected entangled pair states [37, 43], with promising implications
-for measurement-based quantum computation [44, 45] makes them prime candidates for this
-framework. The present work thus opens a pathway to investigating solid-state models through
-hidden quantum Markov dynamics, namely with the increasing efficiency of algebraic methods in
-understanding topological order [53, 34] .
-We begin in Section 2 with the necessary background and definitions. Building on this foun-
-dation, Section 3 is devoted to constructing the HQMM for the AKLT chain. With this model
-established, we then explore the entanglement properties of its hidden dynamics in Section 4. Fur-
-thermore, in Section 5, we reveal how this HQMM framework naturally encodes the Symmetry-
-Protected Topological (SPT) order characteristic of the AKLT state. We synthesize our findings
-and offer conclusions in Section 6.
+Hidden Markov models [@Rab2002] are recognized as powerful stochastic processes due to their ability to capture complex correlations, with broad applications across various domains [@Mor2021]---especially in machine learning tasks [@Li17], where algorithmic implementations [@V03; @FV05] have achieved significant success. Several proposals have been made to generalize hidden Markov models into the quantum setting [@Monras11; @Srin2017; @MRDFS22]. Namely, with the rising interest in quantum computing and quantum machine learning [@Li2024] but a suitable generalized probabilistic picture is remained missing [@FLW24]. Recently, an algebraic approach to HQMM within the framework of quantum probability has been suggested [@AGLS24Q], offering promising features such as entanglement [@Abd23] and the ability to represent an important class of matrix product states as observations [@Sou25]. This approach defines a HQMM as a hidden system---described by a Quantum Markov Chain (QMC) [@accardi1974; @ASS20], and an observation system strongly correlated with it. Information is encoded through sequences of hidden transitions and emission transition expectations, whose dual maps are quantum channels [@AccOhy99], these represent the fundamental building blocks of the HQMMs framework. It is worth noting that QMCs serve as the quantum generalization of classical Markov chains and offer a powerful framework for describing the dynamics of quantum systems. They play a particularly foundational role in the theory of finitely correlated states on quantum spin chains [@FNW92; @fannes2; @fannes3]. Beyond this core application, QMCs find broad use in diverse areas such as quantum control [@ticozzi2008], quantum information theory [@guan2024], quantum software development [@ying2016], and quantum communication systems [@wolf2012]. A particularly important subclass, quantum walks, has proven instrumental in developing novel quantum algorithms [@ambainis2003].
+
+The AKLT model, introduced in [@AKLT1987; @Affleck1988], provides a paradigmatic example of a gapped spin-1 system with an exactly solvable ground state described by a Matrix Product State (MPS) [@FNW92]. It explicitly satisfies Haldane's conjecture [@Haldine83], which distinguishes integer-spin antiferromagnetic chains---possessing a gapped spectrum (the "Haldane gap") and exponentially decaying correlations---from their gapless, power-law-correlated half-integer counterparts. Beyond confirming Haldane's conjecture, the AKLT state has emerged as a foundational model for SPT order [@Pollmann2010; @Pollmann2012]. This stems from its elegant construction, where each physical spin-1 site arises from projecting two virtual spin-½ degrees of freedom into the symmetric triplet subspace, revealing a hidden layer of entanglement. At the virtual level, the system is constructed on auxiliary spin-½ spaces $\mathcal{H}_{\frac{1}{2}} \cong \mathbb{C}^2$, where the physical $SO(3)$ rotation symmetry is realized projectively through the double-cover map $SU(2) \to SO(3)$. Formally, a group $G$ of symmetry acts on $\mathcal{H}_{\frac{1}{2}}$ via a projective unitary representation $\pi: G \to \mathcal{U}(\mathcal{H}_{\frac{1}{2}})$, characterized by a non-trivial 2-cocycle $\omega: G \times G \to U(1)$. Its cohomology class $[\omega] \in H^{2}(SO(3), U(1)) \cong \mathbb{Z}_2$ directly encodes the $\mathbb{Z}_2$ topological index of the SPT phase [@Chen2011b]. This algebraic structure arising from the mismatch between the virtual projective representation $\pi$ and the physical spin-1 representation $\rho: G \to \mathcal{U}(\mathcal{H}_1)$ acting on $\mathcal{H}_1 \cong \mathbb{C}^3$---underpins the robustness of fractionalized spin-½ edge modes and defines the SPT nature of the AKLT phase.
+
+Previous works have shown a deep connection between quantum Markov chains on infinite tensor product of matrix algebras and finitely correlated states including matrix product states ansatz[@FNW92]. Moreover, recent algebraic approaches, framed within infinite tensor products of C\*-algebras [@BR], have been used to classify topological order in solid-state physics [@O21; @O22; @Tas23].\
+In this context, this work establishes a HQMM framework for the AKLT spin chain, capturing its entanglement structure and SPT order within a quantum probabilistic formalism. We construct the generative triplet $\Xi_{\mathrm{AKLT}} = (\phi_0, \mathcal{E}_H, \mathcal{E}_{O,H})$, where $\phi_0: \mathcal{B}(\mathcal{H}_{\frac{1}{2}}) \to \mathbb{C}$ initializes the hidden spin-½ system, $\mathcal{E}_H: \mathcal{B}(\mathcal{H}_{\frac{1}{2}}) \otimes \mathcal{B}(\mathcal{H}_{\frac{1}{2}}) \to \mathcal{B}(\mathcal{H}_{\frac{1}{2}})$ governs its hidden dynamics, and $\mathcal{E}_{O,H}: \mathcal{B}(\mathcal{H}_{\frac{1}{2}}) \otimes \mathcal{B}(\mathcal{H}_{1}) \to \mathcal{B}(\mathcal{H}_{\frac{1}{2}})$ encodes the $G$-equivariant emission transition to the physical spin-$1$ space. The sequential quantum dynamics is defined by the transition map $$E_{X_\ell,Y_\ell}(\cdot) = \mathcal{E}_H\big(\mathcal{E}_{O,H}(X_\ell \otimes Y_\ell) \otimes \cdot\big).$$
+
+Within this framework, we demonstrate the following principal results: Theorem [\[thm:main1\]](#thm:main1){reference-type="ref" reference="thm:main1"} provides an explicit HQMM decomposition of the AKLT state, determining virtual-physical correlations within the model. We explicitly characterize the conditional dependency of physical observations on the underlying Markov process through the AKLT quantum channel. Theorem [\[thm:entropy\]](#thm:entropy){reference-type="ref" reference="thm:entropy"} studies the entanglement structure of the underlying Markov dynamics. It establishes that the Choi--Jamiołkowski state $J(\mathcal{E}_H^*)$ of the encoding channel $\mathcal{E}_H^*$ is a pure, maximally entangled bipartite state between the reference and output spaces. The resulting entanglement entropy $S(\rho_R) = S(\rho_B) = 1$ ebit confirms that the hidden dynamics fully encode the chain's entanglement structure [@FC2024; @Kitaev06]. Theorem [\[thm:EOH-sym\]](#thm:EOH-sym){reference-type="ref" reference="thm:EOH-sym"} explicitly formulates the $G$-covariance of the emission process, proving that $\mathcal{E}_{O,H}$ is $G$-equivariant. The covariance condition $$\mathcal{E}_{O,H}\big(\pi(g)X\pi(g)^\dagger \otimes \rho(g)Y\rho(g)^\dagger\big) = \pi(g)\,\mathcal{E}_{O,H}(X \otimes Y)\,\pi(g)^\dagger$$ holds with respect to the projective virtual representation $\pi: G \to \mathcal{U}(\mathcal{H}_{\frac{1}{2}})$ and the physical representation $\rho: G \to \mathcal{U}(\mathcal{H}_1)$, thereby embedding the SPT index in the HQMM's symmetry structure.
+
+This framework translates the topological and entanglement properties of the AKLT chain into a well-defined quantum stochastic process. Our approach directly connects tensor network states [@SV12] to quantum models [@BCLY20], with promising implications for quantum machine learning and quantum computation architectures. Natural extensions include multi-dimensional generalizations to cluster states and projected entangled pair states [@Schuch2011; @Chen2009], with promising implications for measurement-based quantum computation [@Chen24; @Von08] makes them prime candidates for this framework. The present work thus opens a pathway to investigating solid-state models through hidden quantum Markov dynamics, namely with the increasing efficiency of algebraic methods in understanding topological order [@kap25; @O22] .
+
+We begin in Section [\[Sect_prel\]](#Sect_prel){reference-type="ref" reference="Sect_prel"} with the necessary background and definitions. Building on this foundation, Section [\[Sect_HQMM_AKLT\]](#Sect_HQMM_AKLT){reference-type="ref" reference="Sect_HQMM_AKLT"} is devoted to constructing the HQMM for the AKLT chain. With this model established, we then explore the entanglement properties of its hidden dynamics in Section [\[Sect_HiddenEntang\]](#Sect_HiddenEntang){reference-type="ref" reference="Sect_HiddenEntang"}. Furthermore, in Section [\[Sect_SPT_HQMM\]](#Sect_SPT_HQMM){reference-type="ref" reference="Sect_SPT_HQMM"}, we reveal how this HQMM framework naturally encodes the Symmetry-Protected Topological (SPT) order characteristic of the AKLT state. We synthesize our findings and offer conclusions in Section [\[Sect_Disc_Concl\]](#Sect_Disc_Concl){reference-type="ref" reference="Sect_Disc_Concl"}.

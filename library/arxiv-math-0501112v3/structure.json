@@ -6,7 +6,12 @@
   "sha256": "f95088789da2453ad00f1a60d147922bf270149fe5ffb01394643e0a1e60ac81",
   "bytes": 283411,
   "pages": 37,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:24Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -16,964 +21,1551 @@
    "stamp_date": "31 May 2005"
   },
   "doi": null,
-  "title": "GAUSSIAN FLUCTUATIONS OF CHARACTERS OF",
-  "authors_raw": "SYMMETRIC GROUPS AND OF YOUNG DIAGRAMS",
+  "title": "arXiv:math/0501112v3 [math.CO] 31 May 2005",
+  "authors_raw": "PIOTR \u015aNIADY",
   "title_lines": [
-   "GAUSSIAN FLUCTUATIONS OF CHARACTERS OF"
+   "GAUSSIAN FLUCTUATIONS OF CHARACTERS OF",
+   "SYMMETRIC GROUPS AND OF YOUNG DIAGRAMS"
   ],
-  "abstract": "We study asymptotics of reducible representations of the symmetric groups Sq for large q. We decompose such a representation as a sum of irreducible components (or, alternatively, Youn g diagrams) and we ask what is the character of a randomly chosen componen t (or, what is the shape of a randomly chosen Young diagram). Our main result is that for a large class of representations the \ufb02uctuations of characters (and \ufb02uctuations of the shape of the Young diagrams) are asym ptoti- cally Gaussian; in this way we generalize Kerov\u2019s central limit theorem. The considered class consists of representations for whichthe characters almost factorize and this class includes, for example, left -regular repre- sentation (Plancherel measure), tensor representations. This class is also closed under induction, restriction, outer product and ten sor product of representations. Our main tool in the proof is the method of g enus ex- pansion, well known from the random matrix theory. 1. I NTRODUCTION 1.1. Representations of large symmetric groups. Irreducible represen- tations of the symmetric groups Sq are indexed by Young diagrams and nearly all questions about them, such as values of the charac ters or de- composition into irreducible components of a restriction, induction, tensor product or outer product of representations can be answered by combinato- rial algorithms such as Murnaghan-Nakayama formula or the L ittlewood- Richardson rule. Unfortunately, these exact combinatoria l tools become very complicated and cumbersome when the size of the symmetr ic group Sq tends to in\ufb01nity. For example, a restriction of an irreducib le representa- tion consists typically of a very large number of Young diagrams and listing them all does not give much insight into their structure. In order to deal with such questions in the asymptotic region when q \u2192 \u221e we should be more modest and ask questions of a more statistical \ufb02avor: what is the typical shape of a Young diagram contributing to a given rep",
+  "abstract": "We study asymptotics of reducible representations of the symmetric groups Sq for large q. We decompose such a representation as a sum of irreducible components (or, alternatively, Young diagrams) and we ask what is the character of a randomly chosen component (or, what is the shape of a randomly chosen Young diagram). Our main result is that for a large class of representations the \ufb02uctuations of characters (and \ufb02uctuations of the shape of the Young diagrams) are asymptoti- cally Gaussian; in this way we generalize Kerov\u2019s central limit theorem. The considered class consists of representations for which the characters almost factorize and this class includes, for example, left-regular repre- sentation (Plancherel measure), tensor representations. This class is also closed under induction, restriction, outer product and tensor product of representations. Our main tool in the proof is the method of genus ex- pansion, well known from the random matrix theory.",
   "docinfo": {
+   "Title": "arXiv:math/0501112v3  [math.CO]  31 May 2005",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20210706184846-04'00'",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
-   "Title": "arXiv:math/0501112v3  [math.CO]  31 May 2005"
+   "CreationDate": "D:20210706184846-04'00'"
+  },
+  "title_raw": "GAUSSIAN FLUCTUATIONS OF CHARACTERS OF SYMMETRIC GROUPS AND OF YOUNG DIAGRAMS",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:math/0501112v3 [math.CO] 31 May 2005",
+   "heading": "GAUSSIAN FLUCTUATIONS OF CHARACTERS OF SYMMETRIC GROUPS AND OF YOUNG DIAGRAMS 1. I NTRODUCTION 1.1. Representations of large symmetric groups. Irreducible representations of the symmetric groups S q are indexed by Young diagrams and nearly all questions about them, such as values of the characters o",
+   "text": "GAUSSIAN FLUCTUATIONS OF CHARACTERS OF SYMMETRIC GROUPS AND OF YOUNG DIAGRAMS",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "I NTRODUCTION",
+   "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Representations of large symmetric groups. Irreducible represen-",
+   "title": "Representations of large symmetric groups",
    "page": 1,
    "source": "inferred",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
-   "level": 1,
-   "title": "PIOTR \u00b4SNIADY",
+   "level": 2,
+   "title": "Genus expansion, random matrices and free probability",
    "page": 2,
    "source": "inferred",
-   "number": "2"
+   "number": "1.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Genus expansion, random matrices and free probability. Free",
-   "page": 2,
-   "source": "inferred",
-   "number": "1.2"
-  },
-  {
-   "level": 2,
-   "title": "Higher-order free probability. As we mentioned above, the \ufb01rst or-",
+   "title": "Higher-order free probability",
    "page": 3,
    "source": "inferred",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Factorization of characters. Biane [Bia01] proved (under some mild",
+   "title": "Factorization of characters",
    "page": 3,
    "source": "inferred",
-   "number": "1.4"
+   "number": "1.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
-   "level": 1,
-   "title": "PIOTR \u00b4SNIADY",
+   "level": 2,
+   "title": "Fluctuations of Young diagrams",
    "page": 4,
    "source": "inferred",
-   "number": "4"
+   "number": "1.5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Fluctuations of Young diagrams. Every \ufb01nite-dimensional represen-",
+   "title": "Overview of this article",
    "page": 4,
    "source": "inferred",
-   "number": "1.5"
-  },
-  {
-   "level": 2,
-   "title": "Overview of this article. In Section 2 we present brie\ufb02y all necessary",
-   "page": 4,
-   "source": "inferred",
-   "number": "1.6"
+   "number": "1.6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "P RELIMINARIES",
+   "title": "Preliminaries",
    "page": 5,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Normalized conjugacy class indicators. Let integer numbers",
+   "title": "Normalized conjugacy class indicators",
    "page": 5,
    "source": "inferred",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": 0.5,
+   "evidence": [
+    "latex"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Disjoint product. Usually by a product of normalized conjugacy",
+   "title": "Disjoint product",
    "page": 5,
    "source": "inferred",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
-   "level": 1,
-   "title": "PIOTR \u00b4SNIADY",
+   "level": 2,
+   "title": "Classical cumulants",
    "page": 6,
    "source": "inferred",
-   "number": "6"
+   "number": "2.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Classical cumulants. The notion of cumulants (or semi-invariants)",
+   "title": "Elements of the group algebra as random variables",
    "page": 6,
    "source": "inferred",
-   "number": "2.3"
+   "number": "2.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Elements of the group algebra as random variables. Let us \ufb01x",
-   "page": 6,
+   "title": "Canonical probability measure on Young diagrams associated to a representation",
+   "page": 7,
    "source": "inferred",
-   "number": "2.4"
+   "number": "2.5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Canonical probability measure on Young diagrams associated to a",
+   "title": "Generalized Young diagrams",
    "page": 7,
    "source": "inferred",
-   "number": "2.5"
+   "number": "2.6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Generalized Young diagrams. Let \u03bb be a Young diagram. We assign",
+   "title": "Functionals of the shape of Young diagrams",
    "page": 7,
    "source": "inferred",
-   "number": "2.6"
-  },
-  {
-   "level": 1,
-   "title": "We",
-   "page": 7,
-   "source": "inferred",
-   "number": "2"
+   "number": "2.7",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Functionals of the shape of Young diagrams.The main result of this",
-   "page": 7,
-   "source": "inferred",
-   "number": "2.7"
-  },
-  {
-   "level": 1,
-   "title": "PIOTR \u00b4SNIADY",
+   "title": "Transition measure of a Young diagram",
    "page": 8,
    "source": "inferred",
-   "number": "8"
+   "number": "2.8",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Transition measure of a Young diagram. To any generalized Young",
-   "page": 8,
-   "source": "inferred",
-   "number": "2.8"
-  },
-  {
-   "level": 2,
-   "title": "Free cumulants of the transition measure. Cauchy transform of a",
+   "title": "Free cumulants of the transition measure",
    "page": 9,
    "source": "inferred",
-   "number": "2.9"
+   "number": "2.9",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "PIOTR \u00b4SNIADY",
+   "title": "Representations with character factorization property",
    "page": 10,
    "source": "inferred",
-   "number": "10"
-  },
-  {
-   "level": 1,
-   "title": "R EPRESENTATIONS WITH CHARACTER FACTORIZATION PROPERTY",
-   "page": 10,
-   "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Factorization of characters and Gaussian \ufb02uctuations. The follow-",
+   "title": "Factorization of characters and Gaussian fluctuations",
    "page": 10,
    "source": "inferred",
-   "number": "3.1"
-  },
-  {
-   "level": 1,
-   "title": "PIOTR \u00b4SNIADY",
-   "page": 12,
-   "source": "inferred",
-   "number": "12"
-  },
-  {
-   "level": 1,
-   "title": "(Ri \u2212 ERi)",
-   "page": 12,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "( \u02dcpi \u2212 E \u02dcpi)",
-   "page": 12,
-   "source": "inferred",
-   "number": "2"
+   "number": "3.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Examples. All examples presented in this section not only have the",
+   "title": "Examples",
    "page": 13,
    "source": "inferred",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "PIOTR \u00b4SNIADY",
-   "page": 14,
-   "source": "inferred",
-   "number": "14"
-  },
-  {
-   "level": 1,
-   "title": "PIOTR \u00b4SNIADY",
-   "page": 16,
-   "source": "inferred",
-   "number": "16"
-  },
-  {
-   "level": 1,
-   "title": "PIOTR \u00b4SNIADY",
+   "title": "Proof of the main result",
    "page": 18,
    "source": "inferred",
-   "number": "18"
-  },
-  {
-   "level": 1,
-   "title": "P ROOF OF THE MAIN RESULT",
-   "page": 18,
-   "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Toy example. Let us have a look on the main result (Theorem and",
+   "title": "Toy example",
    "page": 18,
    "source": "inferred",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Partitions. We recall that \u03c0 = {\u03c0 1, . . . , \u03c0 r} is a partition of a \ufb01nite",
+   "title": "Partitions",
    "page": 18,
    "source": "inferred",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Algebra of conjugacy classes and its \ufb01ltration. Ivanov and Kerov",
+   "title": "Algebra of conjugacy classes and its filtration",
    "page": 19,
    "source": "inferred",
-   "number": "4.3"
-  },
-  {
-   "level": 1,
-   "title": "PIOTR \u00b4SNIADY",
-   "page": 20,
-   "source": "inferred",
-   "number": "20"
-  },
-  {
-   "level": 2,
-   "title": "Three probability spaces. Commutative algebras A and A\u2022 can be",
-   "page": 20,
-   "source": "inferred",
-   "number": "4.4"
+   "number": "4.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Cumulants of products. If \u03c1 = {\u03c11, . . . , \u03c1 k}is a partition of the set",
+   "title": "Three probability spaces",
+   "page": 20,
+   "source": "inferred",
+   "number": "4.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Cumulants of products",
    "page": 21,
    "source": "inferred",
-   "number": "4.5"
+   "number": "4.5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
-   "level": 1,
-   "title": "PIOTR \u00b4SNIADY",
-   "page": 22,
+   "level": 2,
+   "title": "Proof of the main theorem: equivalence $\\iff$",
+   "page": 23,
    "source": "inferred",
-   "number": "22"
+   "number": "4.6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
-   "level": 1,
-   "title": "PIOTR \u00b4SNIADY",
+   "level": 2,
+   "title": "Proof of the main theorem: equivalence $\\iff$",
    "page": 24,
    "source": "inferred",
-   "number": "24"
+   "number": "4.7",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 3,
-   "title": "Cumulants of falling factorials. Element \u03a3 1, . . . , 1",
+   "title": "Cumulants of falling factorials",
    "page": 24,
    "source": "inferred",
-   "number": "4.7.1"
-  },
-  {
-   "level": 1,
-   "title": "PIOTR \u00b4SNIADY",
-   "page": 26,
-   "source": "inferred",
-   "number": "26"
-  },
-  {
-   "level": 1,
-   "title": "P ROOF OF THEOREM 4.3",
-   "page": 26,
-   "source": "inferred",
-   "number": "5"
+   "number": "4.7.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Cumulants. If \u00b5 = {\u00b5 1, . . . , \u00b5 k} is a partition of the set {1, . . . , n }",
-   "page": 26,
+   "title": "Proof of the main theorem: equivalence $\\iff$",
+   "page": 25,
    "source": "inferred",
-   "number": "5.1"
-  },
-  {
-   "level": 2,
-   "title": "Partition\u2013indexed conjugacy classes. In the following we present",
-   "page": 26,
-   "source": "inferred",
-   "number": "5.2"
-  },
-  {
-   "level": 1,
-   "title": "(1, 2 ) . . . (1, q ) 1",
-   "page": 26,
-   "source": "inferred",
-   "number": "0"
+   "number": "4.8",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "PIOTR \u00b4SNIADY",
-   "page": 28,
+   "title": "Proof of Theorem",
+   "page": 26,
    "source": "inferred",
-   "number": "28"
+   "number": "5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Geometric interpretation of the degree of \u03a3 \u03c0 . It is very useful to",
+   "title": "Cumulants",
+   "page": 26,
+   "source": "inferred",
+   "number": "5.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Partition--indexed conjugacy classes",
+   "page": 26,
+   "source": "inferred",
+   "number": "5.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Products of conjugacy classes",
+   "page": 27,
+   "source": "inferred",
+   "number": "5.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Geometric interpretation of the degree of $\\Sigma_{\\pi}$",
    "page": 29,
    "source": "inferred",
-   "number": "5.4"
-  },
-  {
-   "level": 1,
-   "title": "PIOTR \u00b4SNIADY",
-   "page": 30,
-   "source": "inferred",
-   "number": "30"
-  },
-  {
-   "level": 2,
-   "title": "Geometric interpretation of Theorem 5.1. We will use the notations",
-   "page": 30,
-   "source": "inferred",
-   "number": "5.5"
+   "number": "5.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Fat partitions. Let \u03c0 = {\u03c0 1, . . . , \u03c0 r} be a partition of the set",
+   "title": "Geometric interpretation of Theorem",
+   "page": 30,
+   "source": "inferred",
+   "number": "5.5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Fat partitions",
    "page": 32,
    "source": "inferred",
-   "number": "5.6"
+   "number": "5.6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Explicit form of the partition\u2013indexed conjugacy class ind ica-",
+   "title": "Explicit form of the partition--indexed conjugacy class indicator $\\Sigma_\\pi$",
    "page": 33,
    "source": "inferred",
-   "number": "5.7"
+   "number": "5.7",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "A CKNOWLEDGMENTS",
+   "title": "Acknowledgments",
    "page": 35,
    "source": "inferred",
-   "number": "6"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 35,
-   "source": "inferred",
-   "number": null
+   "number": "6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "2.1",
+   "title": "Young diagram associated with a partition 8 =",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2.2",
+   "title": "Generalized Young diagram associated with a",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "5.2",
+   "title": "The \ufb01rst collection of discs for partition \u03c0",
+   "page": 29,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "5.3",
+   "title": "Graphical representation of example (5.8). The following result was proved in our previous work [\u00b4Sni03]",
+   "page": 30,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "5.4",
+   "title": "Figure 5.3 after in\ufb02ating small holes. that were lying on the boundary of the same small hole \u03c1s if were not con-",
+   "page": 31,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "5.5",
+   "title": "Partitions \u03c3 with genus 1 which contribute to (5.6)",
+   "page": 33,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "5.6",
+   "title": "The fat partition \u03c0fat corresponding to the par-",
+   "page": 33,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "5.7",
+   "title": "Bijection corresponding to the partition \u03c0fat",
+   "page": 34,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "5.8",
+   "title": "A version of Figure 5.7 in which all lines wind",
+   "page": 35,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-2-piotr-sniady",
-   "number": "2",
-   "title": "PIOTR \u00b4SNIADY",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 986,
-   "n_words": 156
+   "n_chars": 1117,
+   "n_words": 168,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-1-i-ntroduction",
+   "id": "sec-000-1-introduction",
    "number": "1",
-   "title": "I NTRODUCTION",
+   "title": "Introduction",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-11-representations-of-large-symmetric-groups-irr",
+   "id": "sec-001-11-representations-of-large-symmetric-groups",
    "number": "1.1",
-   "title": "Representations of large symmetric groups. Irreducible represen-",
+   "title": "Representations of large symmetric groups",
    "level": 2,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 2551,
-   "n_words": 409
+   "n_chars": 2177,
+   "n_words": 335,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-14-factorization-of-characters",
+   "number": "1.4",
+   "title": "Factorization of characters",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 280,
+   "n_words": 45,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-12-genus-expansion-random-matrices-and-free-prob",
    "number": "1.2",
-   "title": "Genus expansion, random matrices and free probability. Free",
+   "title": "Genus expansion, random matrices and free probability",
    "level": 2,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 2211,
-   "n_words": 359
+   "n_chars": 2195,
+   "n_words": 343,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-13-higher-order-free-probability-as-we-mentioned",
+   "id": "sec-004-13-higher-order-free-probability",
    "number": "1.3",
-   "title": "Higher-order free probability. As we mentioned above, the \ufb01rst or-",
-   "level": 2,
-   "page_start": 3,
-   "page_end": 3,
-   "n_chars": 836,
-   "n_words": 135
-  },
-  {
-   "id": "sec-005-14-factorization-of-characters-biane-bia01-prove",
-   "number": "1.4",
-   "title": "Factorization of characters. Biane [Bia01] proved (under some mild",
+   "title": "Higher-order free probability",
    "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 1091,
-   "n_words": 205
+   "n_chars": 3039,
+   "n_words": 511,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-006-4-piotr-sniady",
-   "number": "4",
-   "title": "PIOTR \u00b4SNIADY",
-   "level": 1,
-   "page_start": 4,
-   "page_end": 4,
-   "n_chars": 1068,
-   "n_words": 204
-  },
-  {
-   "id": "sec-007-15-fluctuations-of-young-diagrams-every-\ufb01nite-di",
+   "id": "sec-005-15-fluctuations-of-young-diagrams",
    "number": "1.5",
-   "title": "Fluctuations of Young diagrams. Every \ufb01nite-dimensional represen-",
+   "title": "Fluctuations of Young diagrams",
    "level": 2,
    "page_start": 4,
    "page_end": 4,
    "n_chars": 1160,
-   "n_words": 196
+   "n_words": 196,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-008-16-overview-of-this-article-in-section-2-we-pres",
+   "id": "sec-006-16-overview-of-this-article",
    "number": "1.6",
-   "title": "Overview of this article. In Section 2 we present brie\ufb02y all necessary",
+   "title": "Overview of this article",
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 692,
-   "n_words": 115
+   "n_chars": 687,
+   "n_words": 110,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-009-2-p-reliminaries",
+   "id": "sec-007-2-preliminaries",
    "number": "2",
-   "title": "P RELIMINARIES",
+   "title": "Preliminaries",
    "level": 1,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 1267,
+   "n_words": 259,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-010-21-normalized-conjugacy-class-indicators-let-int",
-   "number": "2.1",
-   "title": "Normalized conjugacy class indicators. Let integer numbers",
-   "level": 2,
-   "page_start": 5,
-   "page_end": 5,
-   "n_chars": 1263,
-   "n_words": 312
-  },
-  {
-   "id": "sec-011-22-disjoint-product-usually-by-a-product-of-norm",
+   "id": "sec-008-22-disjoint-product",
    "number": "2.2",
-   "title": "Disjoint product. Usually by a product of normalized conjugacy",
+   "title": "Disjoint product",
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 548,
-   "n_words": 115
+   "n_chars": 583,
+   "n_words": 97,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-012-6-piotr-sniady",
-   "number": "6",
-   "title": "PIOTR \u00b4SNIADY",
-   "level": 1,
-   "page_start": 6,
-   "page_end": 6,
-   "n_chars": 47,
-   "n_words": 8
-  },
-  {
-   "id": "sec-013-23-classical-cumulants-the-notion-of-cumulants-o",
+   "id": "sec-009-23-classical-cumulants",
    "number": "2.3",
-   "title": "Classical cumulants. The notion of cumulants (or semi-invariants)",
+   "title": "Classical cumulants",
    "level": 2,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 142,
-   "n_words": 23
+   "n_chars": 914,
+   "n_words": 157,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-014-2-we",
-   "number": "2",
-   "title": "We",
-   "level": 1,
-   "page_start": 6,
-   "page_end": 6,
-   "n_chars": 725,
-   "n_words": 148
-  },
-  {
-   "id": "sec-015-24-elements-of-the-group-algebra-as-random-varia",
+   "id": "sec-010-24-elements-of-the-group-algebra-as-random-varia",
    "number": "2.4",
-   "title": "Elements of the group algebra as random variables. Let us \ufb01x",
+   "title": "Elements of the group algebra as random variables",
    "level": 2,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 1022,
-   "n_words": 191
+   "n_chars": 1007,
+   "n_words": 176,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-016-25-canonical-probability-measure-on-young-diagra",
+   "id": "sec-011-25-canonical-probability-measure-on-young-diagra",
    "number": "2.5",
-   "title": "Canonical probability measure on Young diagrams associated to a",
+   "title": "Canonical probability measure on Young diagrams associated to a representation",
    "level": 2,
    "page_start": 7,
    "page_end": 7,
-   "n_chars": 614,
-   "n_words": 109
+   "n_chars": 607,
+   "n_words": 102,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-017-26-generalized-young-diagrams-let-\u03bb-be-a-young-d",
+   "id": "sec-012-26-generalized-young-diagrams",
    "number": "2.6",
-   "title": "Generalized Young diagrams. Let \u03bb be a Young diagram. We assign",
+   "title": "Generalized Young diagrams",
    "level": 2,
    "page_start": 7,
    "page_end": 7,
-   "n_chars": 932,
-   "n_words": 173
+   "n_chars": 928,
+   "n_words": 169,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-018-27-functionals-of-the-shape-of-young-diagramsthe",
+   "id": "sec-013-27-functionals-of-the-shape-of-young-diagrams",
    "number": "2.7",
-   "title": "Functionals of the shape of Young diagrams.The main result of this",
+   "title": "Functionals of the shape of Young diagrams",
    "level": 2,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 375,
-   "n_words": 61
+   "n_chars": 940,
+   "n_words": 158,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-019-8-piotr-sniady",
-   "number": "8",
-   "title": "PIOTR \u00b4SNIADY",
-   "level": 1,
-   "page_start": 8,
-   "page_end": 8,
-   "n_chars": 555,
-   "n_words": 101
-  },
-  {
-   "id": "sec-020-28-transition-measure-of-a-young-diagram-to-any",
+   "id": "sec-014-28-transition-measure-of-a-young-diagram",
    "number": "2.8",
-   "title": "Transition measure of a Young diagram. To any generalized Young",
+   "title": "Transition measure of a Young diagram",
    "level": 2,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 1241,
-   "n_words": 259
+   "n_chars": 1209,
+   "n_words": 227,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-021-29-free-cumulants-of-the-transition-measure-cauc",
+   "id": "sec-015-29-free-cumulants-of-the-transition-measure",
    "number": "2.9",
-   "title": "Free cumulants of the transition measure. Cauchy transform of a",
+   "title": "Free cumulants of the transition measure",
    "level": 2,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 1406,
-   "n_words": 273
+   "n_chars": 1982,
+   "n_words": 361,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-022-10-piotr-sniady",
-   "number": "10",
-   "title": "PIOTR \u00b4SNIADY",
-   "level": 1,
-   "page_start": 10,
-   "page_end": 10,
-   "n_chars": 582,
-   "n_words": 109
-  },
-  {
-   "id": "sec-023-3-r-epresentations-with-character-factorization",
+   "id": "sec-016-3-representations-with-character-factorization-p",
    "number": "3",
-   "title": "R EPRESENTATIONS WITH CHARACTER FACTORIZATION PROPERTY",
+   "title": "Representations with character factorization property",
    "level": 1,
    "page_start": 10,
-   "page_end": 10,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-024-31-factorization-of-characters-and-gaussian-\ufb02uct",
-   "number": "3.1",
-   "title": "Factorization of characters and Gaussian \ufb02uctuations. The follow-",
-   "level": 2,
-   "page_start": 10,
-   "page_end": 12,
-   "n_chars": 3165,
-   "n_words": 665
-  },
-  {
-   "id": "sec-025-12-piotr-sniady",
-   "number": "12",
-   "title": "PIOTR \u00b4SNIADY",
-   "level": 1,
-   "page_start": 12,
-   "page_end": 12,
-   "n_chars": 118,
-   "n_words": 20
-  },
-  {
-   "id": "sec-026-2-ri-eri",
-   "number": "2",
-   "title": "(Ri \u2212 ERi)",
-   "level": 1,
-   "page_start": 12,
-   "page_end": 12,
-   "n_chars": 549,
-   "n_words": 99
-  },
-  {
-   "id": "sec-027-2-pi-e-pi",
-   "number": "2",
-   "title": "( \u02dcpi \u2212 E \u02dcpi)",
-   "level": 1,
-   "page_start": 12,
    "page_end": 13,
-   "n_chars": 1248,
-   "n_words": 252
+   "n_chars": 5023,
+   "n_words": 880,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-028-32-examples-all-examples-presented-in-this-secti",
+   "id": "sec-017-32-examples",
    "number": "3.2",
-   "title": "Examples. All examples presented in this section not only have the",
+   "title": "Examples",
    "level": 2,
    "page_start": 13,
-   "page_end": 14,
-   "n_chars": 1625,
-   "n_words": 357
-  },
-  {
-   "id": "sec-029-14-piotr-sniady",
-   "number": "14",
-   "title": "PIOTR \u00b4SNIADY",
-   "level": 1,
-   "page_start": 14,
-   "page_end": 16,
-   "n_chars": 4198,
-   "n_words": 822
-  },
-  {
-   "id": "sec-030-16-piotr-sniady",
-   "number": "16",
-   "title": "PIOTR \u00b4SNIADY",
-   "level": 1,
-   "page_start": 16,
    "page_end": 18,
-   "n_chars": 3766,
-   "n_words": 856
+   "n_chars": 9240,
+   "n_words": 1647,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-031-18-piotr-sniady",
-   "number": "18",
-   "title": "PIOTR \u00b4SNIADY",
-   "level": 1,
-   "page_start": 18,
-   "page_end": 18,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-032-4-p-roof-of-the-main-result",
+   "id": "sec-018-4-proof-of-the-main-result",
    "number": "4",
-   "title": "P ROOF OF THE MAIN RESULT",
+   "title": "Proof of the main result",
    "level": 1,
    "page_start": 18,
    "page_end": 18,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-033-41-toy-example-let-us-have-a-look-on-the-main-re",
+   "id": "sec-019-41-toy-example",
    "number": "4.1",
-   "title": "Toy example. Let us have a look on the main result (Theorem and",
+   "title": "Toy example",
    "level": 2,
    "page_start": 18,
    "page_end": 18,
-   "n_chars": 1961,
-   "n_words": 411
+   "n_chars": 1861,
+   "n_words": 311,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-034-42-partitions-we-recall-that-\u03c0-\u03c0-1-\u03c0-r-is-a-part",
+   "id": "sec-020-42-partitions",
    "number": "4.2",
-   "title": "Partitions. We recall that \u03c0 = {\u03c0 1, . . . , \u03c0 r} is a partition of a \ufb01nite",
+   "title": "Partitions",
    "level": 2,
    "page_start": 18,
-   "page_end": 19,
-   "n_chars": 569,
-   "n_words": 134
-  },
-  {
-   "id": "sec-035-43-algebra-of-conjugacy-classes-and-its-\ufb01ltratio",
-   "number": "4.3",
-   "title": "Algebra of conjugacy classes and its \ufb01ltration. Ivanov and Kerov",
-   "level": 2,
-   "page_start": 19,
    "page_end": 20,
-   "n_chars": 1990,
-   "n_words": 378
+   "n_chars": 2819,
+   "n_words": 528,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-036-20-piotr-sniady",
-   "number": "20",
-   "title": "PIOTR \u00b4SNIADY",
-   "level": 1,
-   "page_start": 20,
-   "page_end": 20,
-   "n_chars": 214,
-   "n_words": 45
-  },
-  {
-   "id": "sec-037-44-three-probability-spaces-commutative-algebras",
+   "id": "sec-021-44-three-probability-spaces",
    "number": "4.4",
-   "title": "Three probability spaces. Commutative algebras A and A\u2022 can be",
+   "title": "Three probability spaces",
    "level": 2,
    "page_start": 20,
    "page_end": 21,
-   "n_chars": 2296,
-   "n_words": 493
+   "n_chars": 2210,
+   "n_words": 426,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-038-45-cumulants-of-products-if-\u03c1-\u03c11-\u03c1-kis-a-partiti",
+   "id": "sec-022-45-cumulants-of-products",
    "number": "4.5",
-   "title": "Cumulants of products. If \u03c1 = {\u03c11, . . . , \u03c1 k}is a partition of the set",
+   "title": "Cumulants of products",
    "level": 2,
    "page_start": 21,
-   "page_end": 22,
-   "n_chars": 852,
-   "n_words": 226
-  },
-  {
-   "id": "sec-039-22-piotr-sniady",
-   "number": "22",
-   "title": "PIOTR \u00b4SNIADY",
-   "level": 1,
-   "page_start": 22,
    "page_end": 24,
-   "n_chars": 4164,
-   "n_words": 928
+   "n_chars": 5101,
+   "n_words": 1104,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-040-24-piotr-sniady",
-   "number": "24",
-   "title": "PIOTR \u00b4SNIADY",
-   "level": 1,
-   "page_start": 24,
-   "page_end": 24,
-   "n_chars": 751,
-   "n_words": 185
-  },
-  {
-   "id": "sec-041-471-cumulants-of-falling-factorials-element-\u03c3-1",
+   "id": "sec-023-471-cumulants-of-falling-factorials",
    "number": "4.7.1",
-   "title": "Cumulants of falling factorials. Element \u03a3 1, . . . , 1",
+   "title": "Cumulants of falling factorials",
    "level": 3,
    "page_start": 24,
    "page_end": 26,
-   "n_chars": 3792,
-   "n_words": 695
+   "n_chars": 2678,
+   "n_words": 597,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-042-26-piotr-sniady",
-   "number": "26",
-   "title": "PIOTR \u00b4SNIADY",
-   "level": 1,
-   "page_start": 26,
-   "page_end": 26,
-   "n_chars": 198,
-   "n_words": 40
-  },
-  {
-   "id": "sec-043-5-p-roof-of-theorem-43",
-   "number": "5",
-   "title": "P ROOF OF THEOREM 4.3",
-   "level": 1,
-   "page_start": 26,
-   "page_end": 26,
-   "n_chars": 185,
-   "n_words": 36
-  },
-  {
-   "id": "sec-044-51-cumulants-if-\u00b5-\u00b5-1-\u00b5-k-is-a-partition-of-the",
+   "id": "sec-024-51-cumulants",
    "number": "5.1",
-   "title": "Cumulants. If \u00b5 = {\u00b5 1, . . . , \u00b5 k} is a partition of the set {1, . . . , n }",
+   "title": "Cumulants",
    "level": 2,
    "page_start": 26,
    "page_end": 26,
-   "n_chars": 572,
-   "n_words": 139
+   "n_chars": 8,
+   "n_words": 1,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-045-52-partitionindexed-conjugacy-classes-in-the-fol",
-   "number": "5.2",
-   "title": "Partition\u2013indexed conjugacy classes. In the following we present",
-   "level": 2,
-   "page_start": 26,
-   "page_end": 26,
-   "n_chars": 304,
-   "n_words": 66
-  },
-  {
-   "id": "sec-046-0-1-2-1-q-1",
-   "number": "0",
-   "title": "(1, 2 ) . . . (1, q ) 1",
+   "id": "sec-025-5-proof-of-theorem",
+   "number": "5",
+   "title": "Proof of Theorem",
    "level": 1,
    "page_start": 26,
-   "page_end": 28,
-   "n_chars": 2225,
-   "n_words": 610
+   "page_end": 27,
+   "n_chars": 2222,
+   "n_words": 463,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-047-28-piotr-sniady",
-   "number": "28",
-   "title": "PIOTR \u00b4SNIADY",
-   "level": 1,
-   "page_start": 28,
-   "page_end": 29,
-   "n_chars": 1776,
-   "n_words": 439
-  },
-  {
-   "id": "sec-048-54-geometric-interpretation-of-the-degree-of-\u03c3-\u03c0",
-   "number": "5.4",
-   "title": "Geometric interpretation of the degree of \u03a3 \u03c0 . It is very useful to",
+   "id": "sec-026-53-products-of-conjugacy-classes",
+   "number": "5.3",
+   "title": "Products of conjugacy classes",
    "level": 2,
-   "page_start": 29,
+   "page_start": 27,
    "page_end": 30,
-   "n_chars": 815,
-   "n_words": 164
+   "n_chars": 3836,
+   "n_words": 805,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-049-30-piotr-sniady",
-   "number": "30",
-   "title": "PIOTR \u00b4SNIADY",
-   "level": 1,
-   "page_start": 30,
-   "page_end": 30,
-   "n_chars": 205,
-   "n_words": 37
-  },
-  {
-   "id": "sec-050-55-geometric-interpretation-of-theorem-51-we-wil",
+   "id": "sec-027-55-geometric-interpretation-of-theorem",
    "number": "5.5",
-   "title": "Geometric interpretation of Theorem 5.1. We will use the notations",
+   "title": "Geometric interpretation of Theorem",
    "level": 2,
    "page_start": 30,
    "page_end": 32,
-   "n_chars": 5393,
-   "n_words": 1152
+   "n_chars": 5275,
+   "n_words": 1032,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-051-56-fat-partitions-let-\u03c0-\u03c0-1-\u03c0-r-be-a-partition-o",
+   "id": "sec-028-56-fat-partitions",
    "number": "5.6",
-   "title": "Fat partitions. Let \u03c0 = {\u03c0 1, . . . , \u03c0 r} be a partition of the set",
+   "title": "Fat partitions",
    "level": 2,
    "page_start": 32,
-   "page_end": 33,
-   "n_chars": 998,
-   "n_words": 235
-  },
-  {
-   "id": "sec-052-57-explicit-form-of-the-partitionindexed-conjuga",
-   "number": "5.7",
-   "title": "Explicit form of the partition\u2013indexed conjugacy class ind ica-",
-   "level": 2,
-   "page_start": 33,
    "page_end": 35,
-   "n_chars": 1759,
-   "n_words": 430
+   "n_chars": 2761,
+   "n_words": 576,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-053-6-a-cknowledgments",
+   "id": "sec-029-6-acknowledgments",
    "number": "6",
-   "title": "A CKNOWLEDGMENTS",
-   "level": 1,
-   "page_start": 35,
-   "page_end": 35,
-   "n_chars": 283,
-   "n_words": 39
-  },
-  {
-   "id": "sec-054-references",
-   "number": null,
-   "title": "References",
+   "title": "Acknowledgments",
    "level": 1,
    "page_start": 35,
    "page_end": 37,
-   "n_chars": 6045,
-   "n_words": 875
+   "n_chars": 6289,
+   "n_words": 864,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 55,
-  "sections": 55,
-  "chars_total": 72063
+  "toc_entries": 39,
+  "toc_inferred_entries": 39,
+  "toc_inferred_mean_confidence": 0.987,
+  "toc_inferred_empty_share": 0.1,
+  "toc_inferred_method": "latex",
+  "figure_entries": 9,
+  "figure_sequence_gaps": [
+   "figure 5.1"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 31,
+  "chars_total": 69415,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "gaussian02.tex",
+   "tex_sections": 39,
+   "overlaid": 23,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-representations-of-large-symmetric-groups",
+     "title": "Representations of large symmetric groups",
+     "prose_ratio": 0.865,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-14-factorization-of-characters",
+     "title": "Factorization of characters",
+     "prose_ratio": 0.141,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-12-genus-expansion-random-matrices-and-free-prob",
+     "title": "Genus expansion, random matrices and free probability",
+     "prose_ratio": 0.939,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-13-higher-order-free-probability",
+     "title": "Higher-order free probability",
+     "prose_ratio": 0.934,
+     "coverage_ratio": 0.395,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-005-15-fluctuations-of-young-diagrams",
+     "title": "Fluctuations of Young diagrams",
+     "prose_ratio": 0.939,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-16-overview-of-this-article",
+     "title": "Overview of this article",
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-2-preliminaries",
+     "title": "Preliminaries",
+     "prose_ratio": 0.903,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-22-disjoint-product",
+     "title": "Disjoint product",
+     "prose_ratio": 0.842,
+     "coverage_ratio": 0.944,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-23-classical-cumulants",
+     "title": "Classical cumulants",
+     "prose_ratio": 0.862,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-24-elements-of-the-group-algebra-as-random-varia",
+     "title": "Elements of the group algebra as random variables",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.855,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-25-canonical-probability-measure-on-young-diagra",
+     "title": "Canonical probability measure on Young diagrams associated to a representation",
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-26-generalized-young-diagrams",
+     "title": "Generalized Young diagrams",
+     "prose_ratio": 0.9,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-27-functionals-of-the-shape-of-young-diagrams",
+     "title": "Functionals of the shape of Young diagrams",
+     "prose_ratio": 0.915,
+     "coverage_ratio": 0.918,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-28-transition-measure-of-a-young-diagram",
+     "title": "Transition measure of a Young diagram",
+     "prose_ratio": 0.887,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-29-free-cumulants-of-the-transition-measure",
+     "title": "Free cumulants of the transition measure",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.961,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-3-representations-with-character-factorization-p",
+     "title": "Representations with character factorization property",
+     "prose_ratio": 0.938,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-32-examples",
+     "title": "Examples",
+     "prose_ratio": 0.954,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-018-4-proof-of-the-main-result",
+     "title": "Proof of the main result",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-019-41-toy-example",
+     "title": "Toy example",
+     "prose_ratio": 0.918,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-020-42-partitions",
+     "title": "Partitions",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-021-44-three-probability-spaces",
+     "title": "Three probability spaces",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.947,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-022-45-cumulants-of-products",
+     "title": "Cumulants of products",
+     "prose_ratio": 0.938,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-023-471-cumulants-of-falling-factorials",
+     "title": "Cumulants of falling factorials",
+     "prose_ratio": 0.779,
+     "coverage_ratio": 0.935,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-024-51-cumulants",
+     "title": "Cumulants",
+     "prose_ratio": 0.023,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-025-5-proof-of-theorem",
+     "title": "Proof of Theorem",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-53-products-of-conjugacy-classes",
+     "title": "Products of conjugacy classes",
+     "prose_ratio": 0.845,
+     "coverage_ratio": 0.529,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-027-55-geometric-interpretation-of-theorem",
+     "title": "Geometric interpretation of Theorem",
+     "prose_ratio": 0.848,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-028-56-fat-partitions",
+     "title": "Fat partitions",
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.917,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-029-6-acknowledgments",
+     "title": "Acknowledgments",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.107,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

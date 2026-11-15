@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-gram-matrix-spectral-connection",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:gram-matrix-spectral-connection",
+  "kind": "remark",
+  "title": "Gram matrix of Markov pairing $\\leftrightarrow$ Frobenius co-Casimir / $E_\\infty$ pairing",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-e-infinity-page-identifications",
+    "papers/quantum-observable-universe/blocks/prop-q-laplacian-spectral-tower"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-e-infinity-page-identifications",
+  "tags": [
+    "gram-matrix",
+    "frobenius",
+    "co-casimir",
+    "markov-pairing",
+    "spectral-sequence"
+  ],
+  "text": "gram-matrix-spectral-connection.md",
+  "provenance": "authored"
+}

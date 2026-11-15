@@ -1,0 +1,191 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T14:59:26.492656+00:00",
+  "commitSha": "cf13de45381038fe90515829757a2d4b8ed809af",
+  "assertions": [
+    {
+      "name": "crossing_energy_orientation_matches_the_published_pair",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "electron 3.32993574825 vs ~3.330, positron -2.70275485187 vs ~-2.703 (pair-creation-energy.md). A reversed sign convention would swap these, so the orientation is pinned before any verdict is read off the functional"
+    },
+    {
+      "name": "a_gamma_gamma_vertex_contributes_exactly_h",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "sigma_i sigma_{i+1}^-1 = q + (-1/q) = h = 0.20906029879563931543, reproducing part 7's closed form independently"
+    },
+    {
+      "name": "E_cross_on_gg_words_is_k_times_h_so_energy_IS_count_there",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "a 5-vertex gg word has E_cross = 1.0453014939781965772 = 5h exactly. On gg words energy is PROPORTIONAL to count, so part 7 is right that swapping the cost changes nothing there -- and E_cross(empty) = 0 is below every non-empty gg word, which is its degeneracy"
+    },
+    {
+      "name": "count_and_energy_select_DIFFERENT_gluons",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "crossing count TIES ['sigma_1', 'sigma_1^-1'] at k = 1; crossing energy strictly prefers sigma_1^-1 at -0.900918283956. The two costs do not agree on this family, so the choice of cost is a real decision rather than a formality -- the owner's objection, measured"
+    },
+    {
+      "name": "sigma_1_inv_strictly_beats_sigma_1_by_energy_while_tying_by_count",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "sigma_1^-1 E = -0.900918283956 < sigma_1 E = 1.10997858275, both at k = 1 and both reading-3-feasible. A negative crossing carries NEGATIVE energy, which no count can see"
+    },
+    {
+      "name": "the_empty_word_is_NOT_the_energy_minimum_on_the_gluon_family",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "-0.900918283956 < 0.0. gg words are sign-BALANCED by construction so every non-empty one costs a positive multiple of h; the gluon is outside that construction and admits a bare negative crossing. So the degeneracy that retired this functional in part 7 is specific to gg words and does NOT transfer -- crossing energy is usable here"
+    },
+    {
+      "name": "crossing_energy_is_order_blind_and_ties_the_two_crossing_gluons",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "E_cross is a sum over letters, so reordering is invisible (0.0 apart) and all 3 feasible 2-crossing gluons tie at one value. It breaks the k = 1 tie and leaves the k = 2 tie standing -- which is why an EMBEDDING energy, not a letter-sum, is what the question actually needs"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 35,
+  "computation": "qbeta-crossing-energy-separates-the-gluon",
+  "scriptFile": "qbeta_crossing_energy_separates_the_gluon_probe.py",
+  "scriptHash": "527f0f2f7670",
+  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_crossing_energy_separates_the_gluon_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_crossing_energy_separates_the_gluon_probe.py"
+  },
+  "description": "Crossing COUNT is the cost FrobeniusSelected is instantiated with; the owner objected that it is a combinatorial proxy and a stabiliser that adds a crossing may lower the energy. Measured: on gamma-gamma words part 7's verdict holds exactly (E_cross = k*h, so energy is proportional to count and the empty word is the minimum), but the gluon dressing is NOT a gg word and there the two costs DISAGREE -- sigma_1 and sigma_1^-1 tie at count 1 while sigma_1^-1 = -0.9009 strictly beats sigma_1 = +1.1100 by energy. The degeneracy also dissolves: E_cross(empty) = 0 is NOT minimal once negative crossings are available, which gg words never have. But E_cross is a letter-sum and stays order-blind -- the three two-crossing feasible gluons tie exactly -- so it breaks one tie and not the other. Points at an embedding energy (O'Hara/Moebius via Bring), for which the corpus has the integrator but NO braid-word-to-curve map.",
+  "data": {
+    "crossing_energy_convention": {
+      "positive_crossing": "+q",
+      "negative_crossing": "-1/q",
+      "calibration": "electron 3q vs ~3.330, positron -3/q vs ~-2.703 (pair-creation-energy.md)",
+      "gamma_gamma_vertex": "q + (-1/q) = h",
+      "undefined_on": "the bar-fixed letter d = -h/2 (not a crossing) -- the implementation raises rather than fudging it"
+    },
+    "candidates": {
+      "(empty)": {
+        "k": 0,
+        "reading3_feasible": false,
+        "E_cross": "0.0",
+        "Q_beta_MeV": "0.54566426648554880749"
+      },
+      "sigma_1": {
+        "k": 1,
+        "reading3_feasible": true,
+        "E_cross": "1.109978582751380807591669",
+        "Q_beta_MeV": "0.51105498379339043247"
+      },
+      "sigma_1^-1": {
+        "k": 1,
+        "reading3_feasible": true,
+        "E_cross": "-0.9009182839557414921608229",
+        "Q_beta_MeV": "0.39697824919981824264"
+      },
+      "sigma_0": {
+        "k": 1,
+        "reading3_feasible": false,
+        "E_cross": "1.109978582751380807591669",
+        "Q_beta_MeV": "0.50794935330401305813"
+      },
+      "sigma_0^-1": {
+        "k": 1,
+        "reading3_feasible": false,
+        "E_cross": "-0.9009182839557414921608229",
+        "Q_beta_MeV": "0.3938726187104408683"
+      },
+      "sigma_0 sigma_0 (LIVE)": {
+        "k": 2,
+        "reading3_feasible": false,
+        "E_cross": "2.219957165502761615183338",
+        "Q_beta_MeV": "0.65185631006033753776"
+      },
+      "sigma_1 sigma_0": {
+        "k": 2,
+        "reading3_feasible": true,
+        "E_cross": "2.219957165502761615183338",
+        "Q_beta_MeV": "0.68221595437880640309"
+      },
+      "sigma_0 sigma_1": {
+        "k": 2,
+        "reading3_feasible": true,
+        "E_cross": "2.219957165502761615183338",
+        "Q_beta_MeV": "0.33570905533291080615"
+      },
+      "sigma_1 sigma_1": {
+        "k": 2,
+        "reading3_feasible": true,
+        "E_cross": "2.219957165502761615183338",
+        "Q_beta_MeV": "0.65250557409839561919"
+      }
+    },
+    "selection": {
+      "min_by_count": [
+        "sigma_1",
+        "sigma_1^-1"
+      ],
+      "min_by_energy": "sigma_1^-1",
+      "they_disagree": true,
+      "empty_is_energy_minimum": false,
+      "note": "neither is adopted; both are proxies and RESULT 4 shows the energy does not separate the remaining candidates"
+    },
+    "open_target_not_attempted": {
+      "what": "an embedding energy -- O'Hara / Moebius via the Bring embedding -- which is order-SENSITIVE and can rank a longer word below a shorter one",
+      "exists": [
+        "mobius_cross_energy_hopf_calibration.py (calibrated against the proved E(Hopf) = 2*pi^2)",
+        "mobius_cross_energy_borromean.py",
+        "QOU.MobiusEnergy (categorical E_cat; 2 sorries; its header records a prior vacuity incident where classicalLimit made E_cat blind)",
+        "Bring period matrix / mapping-torus residue machinery"
+      ],
+      "missing": "any map from a braid word to a curve in or on the Bring surface; the integrators consume hand-parametrised named embeddings (Hopf, Borromean). Searched computations/ and tools/ -- an absence on those surfaces, not a proof of absence",
+      "hard_part": "Moebius energy is a property of an EMBEDDING and is not a knot invariant (the invariant is the infimum over the isotopy class), so a bridge needs the minimiser or a canonical embedding -- which is what the Bring surface would be for"
+    },
+    "scope": {
+      "class": "(a) scope-limited",
+      "unconditional": [
+        "E_cross = k*h on gamma-gamma words",
+        "sigma_1 and sigma_1^-1 tie by count and differ by energy",
+        "the empty word is not the energy minimum on the gluon family",
+        "E_cross is order-blind and ties the 2-crossing gluons"
+      ],
+      "not_claimed": [
+        "that sigma_1^-1 should be adopted",
+        "that crossing energy is the right cost",
+        "that no braid-to-Bring-embedding map exists anywhere"
+      ],
+      "no_selection_by_accuracy": "the Q_beta column is a reported consequence of each candidate and is not an input to any ordering here"
+    },
+    "q0_pin": "proton",
+    "q0_value": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

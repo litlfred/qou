@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1202.4698v3/blocks/prose-sec-014",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1202.4698v3/blocks/prose-sec-014",
   "kind": "prose",
-  "title": "Quantization of Fenchel-Nielsen coordinates",
-  "pageStart": 16,
-  "pageEnd": 17,
-  "text": "../sections/sec-014-54-quantization-of-fenchel-nielsen-coordinates.md",
-  "derivedFrom": "library/arxiv-1202.4698v3/manifest",
-  "sourceDocument": "library/arxiv-1202.4698v3/manifest",
+  "title": "Classical Teichmüller theory of the four-holed sphere",
+  "pageStart": 13,
+  "pageEnd": 14,
+  "text": "../sections/sec-014-51-classical-teichmüller-theory-of-the-four-hole.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1202.4698v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1202.4698v3",
   "provenance": "ingested"
 }

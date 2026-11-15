@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/s0025-5718-07-02027-3/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Li(p)-service? An algorithm for computing p-adic polylogarithms",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s0025-5718-07-02027-3",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "s0025-5718-07-02027-3",
   "contains": [
     "library/s0025-5718-07-02027-3/sections/sec-000",
     "library/s0025-5718-07-02027-3/sections/sec-001",
@@ -16,8 +21,10 @@
     "library/s0025-5718-07-02027-3/sections/sec-007"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "s0025-5718-07-02027-3",
+    "title_source": "slug",
     "source_file": "S0025-5718-07-02027-3.pdf",
     "source_sha256": "080b5ac8542ff19ce7e39dd1dfcd56438e63ce3c26210d2950c9fefd7353ef92",
     "pages": 30,

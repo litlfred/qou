@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/cspaper/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/cspaper/blocks/prose-sec-004",
   "kind": "prose",
-  "title": "Note that R(z) is a multivalued function of z. It has singularities at 0 and",
-  "pageStart": 3,
-  "pageEnd": 4,
-  "text": "../sections/sec-004-4-note-that-rz-is-a-multivalued-function-of-z-it.md",
-  "derivedFrom": "library/cspaper/manifest",
-  "sourceDocument": "library/cspaper/manifest",
+  "title": "Proof of Theorem 2.4",
+  "pageStart": 27,
+  "pageEnd": 29,
+  "text": "../sections/sec-004-6-proof-of-theorem-24.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/cspaper",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/cspaper",
   "provenance": "ingested"
 }

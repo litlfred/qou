@@ -67,12 +67,42 @@ sys.path.insert(0, str(HERE.parent))
 
 from mpmath import mp, mpf, pi as mp_pi  # noqa: E402
 
-from q_parameter import Q  # noqa: E402
-from _precision import json_safe_float  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from _precision import json_safe_float, NONFINITE_MARKERS  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
+
+
+def _ser(value):
+    """Serialise one leaf, keeping the pole sentinel a sentinel.
+
+    `json_safe_float` maps a non-finite Python float to a marker STRING
+    ("inf" / "-inf" / "nan") rather than to `null`, because a pole and a
+    missing value are different facts.  It tests `isinstance(value, float)`,
+    so an `mpf` falls straight through it — which is why this producer used
+    to call it as `json_safe_float(float(norm))`, casting to f64 first and
+    losing the precision to get the sentinel.  Here the non-finite test is
+    done on the `mpf` itself, so the sentinel survives and so does the value.
+    """
+    if isinstance(value, mp.mpf):
+        if mp.isnan(value):
+            return NONFINITE_MARKERS["nan"]
+        if mp.isinf(value):
+            return NONFINITE_MARKERS["inf" if value > 0 else "-inf"]
+        return fmt(value)
+    return json_safe_float(value)
+
+
+def _serialise(obj):
+    """Recursively `_ser` the mpf leaves; drop `_`-prefixed working keys."""
+    if isinstance(obj, dict):
+        return {k: _serialise(v) for k, v in obj.items()
+                if not k.startswith("_")}
+    if isinstance(obj, list):
+        return [_serialise(v) for v in obj]
+    return _ser(obj)
 
 
 # ── Partition utilities ────────────────────────────────────────────
@@ -176,7 +206,15 @@ def main() -> int:
         engine="mpmath",
     )
 
-    q = mpf(Q)
+    # NOT `mpf(Q)` / `mpf(str(Q))`: `q_parameter.Q` is `float(_d["q"])`, so
+    # either form lifts the DOUBLE's binary expansion and caps this whole
+    # probe at ~17 digits.  Read the pin as the SOURCE STRING and build the
+    # mpf here, i.e. AFTER `set_compute_dps()`.  Do NOT substitute the
+    # module-level `Q_MP`: `q_parameter` builds it at `mp.dps = 50`, so it is
+    # a 50-digit cap, which is BELOW `OUTPUT_DPS = 60`.  Measured against the
+    # exact 50-digit decimal in `Fraction` arithmetic, `mpf(Q_50_DIGIT_STR)`
+    # built at dps 70 sits 4.594e-72 from it and `Q_MP` sits 2.015e-50.
+    q = mpf(Q_50_DIGIT_STR)
     pi_sq = mp_pi ** 2
     pi_sq_720 = pi_sq / 720
     geom_mult = pi_sq / 6   # standard Casimir geometric factor
@@ -205,7 +243,7 @@ def main() -> int:
                 # has no such token, so this witness did not parse under a
                 # strict loader. json_safe_float keeps the fact ("inf") and
                 # makes the file valid.
-                per_partition[str(lam)] = json_safe_float(float(norm))
+                per_partition[str(lam)] = _ser(norm)
         norms_table[t_name] = per_partition
 
     # ─── Cherednik q-zeta candidates per (n, t) ───
@@ -236,21 +274,27 @@ def main() -> int:
                         f"cand{c_idx}(n={n}, {t_name}): "
                         f"sum_over_λ⊢{n}"
                     ),
-                    "raw_value": float(val),
-                    "rel_residue_direct": float(direct_res),
-                    "geom_mult_value": float(geom_val),
-                    "rel_residue_geom_mult": float(geom_res),
+                    "raw_value": val,
+                    "rel_residue_direct": direct_res,
+                    "geom_mult_value": geom_val,
+                    "rel_residue_geom_mult": geom_res,
                     "note": note,
                 })
 
     # ─── Best matches ───
+    # THE VERDICT IS DECIDED HERE, and until 2026-09-13 it was decided on a
+    # float64 shadow: the residues were `float()`-ed at the point of record
+    # above, and this test then read that cast value back.  The residues are
+    # `mpf` now, so both the 1% cut and the two `min` below run on the
+    # arithmetic that was actually performed.
+    ONE_PCT = mpf("0.01")
     sub_one_pct_direct = [
         c for c in candidates
-        if c["rel_residue_direct"] < 0.01
+        if c["rel_residue_direct"] < ONE_PCT
     ]
     sub_one_pct_geom = [
         c for c in candidates
-        if c["rel_residue_geom_mult"] < 0.01
+        if c["rel_residue_geom_mult"] < ONE_PCT
     ]
     n_sub_one_pct = len(sub_one_pct_direct) + len(sub_one_pct_geom)
 
@@ -275,42 +319,45 @@ def main() -> int:
             "doesn't easily yield the Casimir prefactor at substrate."
         )
         .set_content_block("conj:casimir-epsilon-vacuum")
-        .add_parameter("substrate_q", float(q))
-        .add_parameter("target_pi_sq_720", float(pi_sq_720))
+        .add_parameter("substrate_q", fmt(q))
+        .add_parameter("target_pi_sq_720", fmt(pi_sq_720))
         .add_data(
             "macdonald_norms_per_t_specialization",
             norms_table,
         )
-        .add_data("cherednik_candidates", candidates)
+        .add_data("cherednik_candidates", _serialise(candidates))
         .add_data(
             "best_direct",
-            {
+            _serialise({
                 "form": best_direct["form"],
                 "raw_value": best_direct["raw_value"],
                 "rel_residue": best_direct["rel_residue_direct"],
-            },
+            }),
         )
         .add_data(
             "best_geom_multiplied",
-            {
+            _serialise({
                 "form": best_geom["form"],
                 "value": best_geom["geom_mult_value"],
                 "rel_residue": best_geom["rel_residue_geom_mult"],
-            },
+            }),
         )
         .add_data(
             "sub_one_pct_matches_direct",
-            sub_one_pct_direct,
+            _serialise(sub_one_pct_direct),
         )
         .add_data(
             "sub_one_pct_matches_geom_multiplied",
-            sub_one_pct_geom,
+            _serialise(sub_one_pct_geom),
         )
         .add_assertion(
             name="zero_macdonald_candidates_within_one_percent",
-            computed=float(n_sub_one_pct),
-            expected=0.0,
-            tolerance=0.5,
+            # A CARDINALITY, so a string integer rather than `0.0` — this is
+            # a count of candidates, and writing it as a float invited the
+            # ratchet to read it as a floored measurement.
+            computed=str(n_sub_one_pct),
+            expected="0",
+            tolerance="0.5",
             unit=(
                 "count of Macdonald-derived Cherednik-q-zeta "
                 "candidates within 1% of π²/720 (across 7 "

@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/chinta-2025-j-phys-a-math-theor-58-035203/sections/sec-009",
   "@type": [
     "doco:Section"
   ],
-  "title": "Application 2: finite trigonometric sums",
-  "pageStart": 14,
-  "pageEnd": 15,
+  "title": "Potential applications to differential privacy",
+  "pageStart": 20,
+  "pageEnd": 20,
   "contains": [
     "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/prose-sec-009"
   ],
-  "derivedFrom": "library/chinta-2025-j-phys-a-math-theor-58-035203/manifest",
-  "sourceDocument": "library/chinta-2025-j-phys-a-math-theor-58-035203/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/chinta-2025-j-phys-a-math-theor-58-035203",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/chinta-2025-j-phys-a-math-theor-58-035203",
   "provenance": "ingested"
 }

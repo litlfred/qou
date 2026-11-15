@@ -8,239 +8,53 @@ pages: 22-25
 source_pdf: 2211.12836v2.pdf
 source_sha256: 4ffbb8b21f8b175d
 doc_brief: "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY DYSON BROWNIAN MOTION — We study a class of commuting Markov kernels whose simplest element describes the movement ofk particles on a discrete"
+text_source: latex
+latex_prose_ratio: 0.955
+latex_coverage_ratio: 0.899
 ---
-I∈Bk,n CeI denotes the Hilbert space of functions on Bk,n with the scalar product⟨eI,eJ⟩ =δI,J ,
-whereB0 = (eI)I∈Bk,n is the canonical basis on L2(Bk,n). Then, the graph structure on Bk,n is
-encoded in the adjacency matrix A∈B (L2(Bk,n)) given by
-AeI =
-∑
-I↗J
-eJ.
-In the sequel, we will use a specialization of the quantum cohomology of the Grassmannian
-QH(Gk,n) to prove that Bk,n is an integrable PM-graph as deﬁned in Deﬁnition 3.1. The reader
-should refer to Appendix A for any background on QH(Gk,n). We mainly need the fact that
-QH(Gk,n) = Sym[x1,...,x k]⊗ C[q]/Sym[x1,...,x k]/⟨(x1,...,x k) = q1/k(
-eit1,...e itk
-)
-,⃗t∈ Tk,n⟩,
-see Appendix A, and we will consider the specialization
-QH1(Gk,n) :=QH(Gk,n)/⟨q = 1⟩ =Sym[x1,...,x k]/⟨(x1,...,x k) =
-(
-eit1,...e itk
-)
-,⃗t∈Tk,n⟩.
-The algebra QH1(Gk,n) is spanned by the basis{sλ,λ∈ Λk,n}, and we denote by 𝓁 :QH1(Gk,n)→
-L2(Bk,n) the isomorphism deﬁned by
-𝓁(sλ) =eIλ.
-Then,Bk,n is a PM-graph in the sense of Deﬁnition 3.1 with an enveloping algebraA≃ QH1(Gk,n),
-as the next proposition shows.
-Proposition 4.2. There is a commutative algebra A ⊂ B(L2(Bk,n)) containing C[A] which is
-isomorphic to QH1(Gk,n) through an isomorphism T : QH1(Gk,n)→A such that T (sλ)eI0 = eIλ
-and T (s(1)) =A.
-As a consequence Bk,n is a PM-graph rooted at I0.
-Proof. Remark ﬁrst that since dim L2(Bk,n) =|Bk,n| =
-(n
-k
-)
-, for any commutative subalgebra A of
-B(L2(Bk,n)) we have dimA≤
-(n
-k
-)
-. Recall that we deﬁned
-QH1(Gk,n) =Sym[x1,...,x k]/⟨(x1,...,x k) =
-(
-eit1,...e itk
-)
-,⃗t∈Tk,n⟩.
-SinceTk,n has cardinal
-(n
-k
-)
-and the map (t1,...,t k)↦→
-(
-eit1,...e itk
-)
-is injective onTk,n,QH1(Gk,n)
-is isomorphic to the space of functions on
-(n
-k
-)
-elements and thus dim QH1(Gk,n) =
-(n
-k
-)
-. Since
-QH1(Gk,n) is spanned by {sλ}λ∈Λk,n, by a dimension argument the latter set is actually a basis
-of QH1(Gk,n). Recall that 𝓁 : QH1(Gk,n)→ L2(Bk,n) is the isomorphism sending sλ to eIλ, and
-deﬁne T :QH1(Gk,n)→B (L2(Bk,n)) by
-T (x)eI =𝓁(x𝓁−1(eI)), x∈QH1(Gk,n), I∈Bk,n.
-Then,T is an injective morphism of algebra, since it can be written as the composition of the mul-
-tiplication map m :QH1(Gk,n)→B (QH1(Gk,n)) with the conjugation map C𝓁 :B(QH1(Gk,n))→
-QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY DYSON BROWNIAN MOTION 23
-B(L2(Bk,n)) given by M↦→ 𝓁◦M◦𝓁−1, both maps being injective morphisms of algebras. Since
-QH1(Gk,n) is commutative, T (QH1(Gk,n)) is a commutative subalgebra of B(L2(Bk,n)).
-Since 𝓁−1(eI) =sλI, we have
-T (s(1))eI =𝓁(s(1)sλI).
-The multiplication by s(1) in QH(Gk,n) is given by the quantum Pieri rule [6, Eq. (22)], which
-gives for λ∈ Λk,n after specializing q = 1
-s(1)sλ =
-∑
-λ↗µ
-sµ +δλ1=n−k,λk>0qs˜λ =
-∑
-λ↗µ
-sµ +δλ1=n−k,λk>0s˜λ,
-where ˜λ = (λ2− 1,...,λ k− 1, 0). Hence, by Lemma 4.1, s(1)sλ = ∑
-Iλ↗IsλI, which yields for
-I∈Bk,n
-T (s(1))eI =𝓁(s(1)sλI) =
-∑
-I↗J
-𝓁(sλJ ) =
-∑
-I↗J
-eJ,
-and ﬁnally T (s(1)) =A, so that C[A]⊂T (QH1(Gk,n)).
-For allI∈Bk,n,
-T (sλI)eI0 =𝓁(sλIs∅) =𝓁(sλI) =eI,
-which implies that the map T (QH1(Gk,n))→ L2(Bk,n) given by x↦→ x(eI0) is injective. Then,
-since
-[AT (sλI)]eI0 =AeI =
-∑
-I↗J
-eJ =
-
-∑
-I↗J
-T (sλJ )
-
-eI0,
-we deduce that
-AT (sλI) =
-∑
-I↗J
-T (sλJ ) =
-∑
-J∈Bk,n
-AJIT (sλJ ).
-Finally, by (62), for all λ,µ∈ Λk,n we have
-T (sλ)T (sµ) =T (sλsµ) =
-∑
-d≥0,ν∈Λk,n
-⟨λ,µ,ν c⟩dT (sν)
-with each term⟨λ,µ,ν c⟩d≥ 0.
-By the previous results, Bk,n is a PM-graph whose enveloping algebra isA =T (QH1(Gk,n)) and
-the corresponding basis is {T (sλI),I ∈Bk,n}. □
-As a consequence of the latter result and the presentation of QH1(Gk,n), we will prove thatBk,n
-is an integrable PM-graph. Let us simply write AI =T (sλI). In the case of Bk,n, there is a natural
-indexation of left and right common eigenvectors of {AI}I∈Bk,n by the set Bk,n itself. We do not
-known if such natural indexation holds for any integrable PM-graph. As we will see in the next
-proposition, we are in the particular case where the adjacency matrix A is normal, so that left and
-right eigenvectorsu(I) andw(I),I∈Bk,n of all operators AI coincide up to a constant, see (9). For
-I∈Bk,n, set
-(10) w(I) =
-∑
-J∈Bk,n
-SJ(ξn(I))eJ,
-where SJ(⃗ u) = sλJ
-(
-eiu1,...,e iuk
-)
-for ⃗ u∈ Rk, and let V (u1,...,u k) = ∏
-j<j′
-(
-eiuj′−eiuj
-)
-be the
-Vandermonde determinant of
-(
-eiuj
-)
-1≤j≤k.
-Lemma 4.3. The set{w(I)}I∈Bk,n is an orthogonal basis of L2(Bk,n), and for all J∈Bk,n,
-AJ(w(I)) =SJ(ξn(I))w(I) and A∗
-J(w(I)) =SJ(ξn(I))w(I).
-24 J. GUILHOT, C. LECOUVEY, AND P. TARRAGO
-Proof. The orthogonality relation is given by the following Cauchy type formula from [47, Propo-
-sition 4.3]: for I,I′∈Bk,n,
-(11)
-∑
-J∈Bk,n
-SJ(ξn(I))SJ(ξn(I′)) =δI,I′
-nk
-|V (ξn(J))|2,
-which directly yields
-⟨w(I),w (I′)⟩ =δI,I′
-nk
-|V (ξn(J))|2(12)
-for I,I′∈Bk,n.
-To prove the eigenvector property, it is easier to work on QH1(Bk,n). Indeed, by Proposition
-4.2, it suﬃces to prove that sλJ·𝓁−1(w(I)) = SJ(ξn(I))𝓁−1(w(I)), where· denotes the product in
-QH1(Gk,n). From the proof of Proposition 4.2, QH1(Bk,n) is the space of functions on Zk,n =
-{exp(i⃗ u),⃗ u∈ Tk,n}, where exp(i⃗ u) =
-(
-eiu1,...,e iuk
-)
-for ⃗ u∈ Rk. Hence, we need to show that
-the values of sλJ·𝓁−1(w(I)) and SJ(ξn(I))𝓁−1(w(I)) agree on Zk,n. First, we have by the usual
-evaluation of multiplication of functions
-[
-sλJ·𝓁−1
-(
-w(I)
-)]
-(exp(iξn(I))) =sλJ (exp(iξn(I)))
-[
-𝓁−1
-(
-w(I)
-)]
-(exp(iξn(I)))
-=
-[
-SJ(ξn(I))𝓁−1(w(I))
-]
-(exp(iξn(I))).
-Then, for I′⁄=I,
-[
-sλJ·𝓁−1(w(I))
-]
-(exp(iξn(I′)))−
-[
-SJ(ξn(I))𝓁−1(w(I))
-]
-(exp(iξn(I′)))
-=
-(
-SJ(ξn(I′))−SJ(ξn(I))
-)
-
- ∑
-J′∈Bk,n
-SJ′(ξn(I))sλJ′
-
- (exp(iξn(I′)))
-=
-(
-SJ(ξn(I′))−SJ(ξn(I))
-) ∑
-J′∈Bk,n
-SJ′(ξn(I))SJ′(ξn(I′)) = 0
-by (12). Hence, we deduce that sλJ·𝓁−1(w(I)) =SJ(ξn(I))𝓁−1(w(I)), and the result is deduced by
-applying𝓁. Since AJ is diagonalized on an orthogonal basis, it is actually normal and we thus have
-A∗
-J
-(
-w(I)
-)
-=SJ(ξn(I))w(I).
-□
-Note that as a corollary of (12), we have
-‖w(I)‖2 = nk/2
-|V (ξn(I))|.
-Hence, following the notation of Section 3, we set
-(13) u(I) =|V (ξn(I))|2
-nk w(I),
-so that⟨w(I),u (J)⟩ =δIJ .
-QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY DYSON BROWNIAN MOTION 25
+Recall from Section [\[sec:intro_model\]](#sec:intro_model){reference-type="ref" reference="sec:intro_model"} that $L^2(B_{k,n})=\bigoplus_{I\in B_{k,n}}\mathbb{C} e_{I}$ denotes the Hilbert space of functions on $B_{k,n}$ with the scalar product $\langle e_{I},e_{J}\rangle=\delta_{I,J}$, where $\mathcal{B}_0=(e_{I})_{I\in B_{k,n}}$ is the canonical basis on $L^2(B_{k,n})$. Then, the graph structure on $B_{k,n}$ is encoded in the adjacency matrix $A\in \mathcal{B}(L^2(B_{k,n}))$ given by $$Ae_I=\sum_{I\nearrow J}e_J.$$
+
+In the sequel, we will use a specialization of the quantum cohomology of the Grassmannian $QH(G_{k,n})$ to prove that $B_{k,n}$ is an integrable PM-graph as defined in Definition [\[def:PM-graph\]](#def:PM-graph){reference-type="ref" reference="def:PM-graph"}. The reader should refer to Appendix [\[sec:quantum_cohomology\]](#sec:quantum_cohomology){reference-type="ref" reference="sec:quantum_cohomology"} for any background on $QH(G_{k,n})$. We mainly need the fact that $QH(G_{k,n})=Sym[x_1,\ldots,x_k]\otimes \mathbb{C}[q]/Sym[x_1,\ldots,x_k]/\langle (x_1,\ldots,x_k)=q^{1/k}\left(e^{it_1},\ldots e^{it_k}\right), \vec{t}\in T_{k,n}\rangle$, see Appendix [\[sec:quantum_cohomology\]](#sec:quantum_cohomology){reference-type="ref" reference="sec:quantum_cohomology"}, and we will consider the specialization $$QH_{1}(G_{k,n}):=QH(G_{k,n})/\langle q=1\rangle=Sym[x_1,\ldots,x_k]/\langle(x_1,\ldots,x_k)=\left(e^{it_1},\ldots e^{it_k}\right), \vec{t}\in T_{k,n}\rangle.$$ The algebra $QH_{1}(G_{k,n})$ is spanned by the basis $\{s_{\lambda},\lambda\in \Lambda_{k,n}\}$, and we denote by $\ell:QH_1(G_{k,n})\rightarrow L^2(B_{k,n})$ the isomorphism defined by $$\ell(s_{\lambda})=e_{I_{\lambda}}.$$ Then, $B_{k,n}$ is a PM-graph in the sense of Definition [\[def:PM-graph\]](#def:PM-graph){reference-type="ref" reference="def:PM-graph"} with an enveloping algebra $\mathcal{A}\simeq QH_{1}(G_{k,n})$, as the next proposition shows.
+
+::: proposition
+[]{#prop:equiv_graph_qh label="prop:equiv_graph_qh"} There is a commutative algebra $\mathcal{A}\subset \mathcal{B}(L^2(B_{k,n}))$ containing $\mathbb{C}[A]$ which is isomorphic to $QH_{1}(G_{k,n})$ through an isomorphism $T:QH_{1}(G_{k,n})\rightarrow\mathcal{A}$ such that $T(s_{\lambda})e_{I_0}=e_{I_{\lambda}}$ and $T(s_{(1)})=A$.
+
+As a consequence $B_{k,n}$ is a PM-graph rooted at $I_0$.
+:::
+
+::: proof
+*Proof.* Remark first that since $\dim L^2(B_{k,n})=\vert B_{k,n}\vert=\binom nk$, for any commutative subalgebra $\mathcal{A}$ of $\mathcal{B}(L^2(B_{k,n}))$ we have $\dim \mathcal{A}\leq \binom nk$. Recall that we defined $$QH_1(G_{k,n})=Sym[x_1,\ldots,x_k]/\langle (x_1,\ldots,x_k)=\left(e^{it_1},\ldots e^{it_k}\right), \vec{t}\in T_{k,n}\rangle.$$ Since $T_{k,n}$ has cardinal $\binom nk$ and the map $(t_1,\ldots,t_k)\mapsto\left(e^{it_1},\ldots e^{it_k}\right)$ is injective on $T_{k,n}$, $QH_1(G_{k,n})$ is isomorphic to the space of functions on $\binom nk$ elements and thus $\dim QH_1(G_{k,n})=\binom nk$. Since $QH_1(G_{k,n})$ is spanned by $\{s_{\lambda}\}_{\lambda\in \Lambda_{k,n}}$, by a dimension argument the latter set is actually a basis of $QH_1(G_{k,n})$. Recall that $\ell:QH_1(G_{k,n})\rightarrow L^2(B_{k,n})$ is the isomorphism sending $s_\lambda$ to $e_{I_{\lambda}}$, and define $T:QH_1(G_{k,n})\rightarrow \mathcal{B}(L^2(B_{k,n}))$ by $$T(x)e_{I}=\ell(x\ell^{-1}(e_I)),\,x\in QH_1(G_{k,n}),\,  I\in B_{k,n}.$$ Then, $T$ is an injective morphism of algebra, since it can be written as the composition of the multiplication map $m:QH_1(G_{k,n})\rightarrow \mathcal{B}(QH_1(G_{k,n}))$ with the conjugation map $C_{\ell}:\mathcal{B}(QH_1(G_{k,n}))\rightarrow \mathcal{B}(L^2(B_{k,n}))$ given by $M\mapsto \ell\circ M\circ \ell^{-1}$, both maps being injective morphisms of algebras. Since $QH_{1}(G_{k,n})$ is commutative, $T(QH_{1}(G_{k,n}))$ is a commutative subalgebra of $\mathcal{B}(L^2(B_{k,n}))$.
+
+Since $\ell^{-1}(e_{I})=s_{\lambda_I}$, we have $$T(s_{(1)})e_{I}=\ell(s_{(1)}s_{\lambda_{I}}).$$ The multiplication by $s_{(1)}$ in $QH(G_{k,n})$ is given by the quantum Pieri rule [@BCF Eq. (22)], which gives for $\lambda\in \Lambda_{k,n}$ after specializing $q=1$ $$s_{(1)}s_{\lambda}=\sum_{\lambda\nearrow \mu}s_{\mu}+\delta_{\lambda_1=n-k,\lambda_k>0}qs_{\tilde{\lambda}}=\sum_{\lambda\nearrow \mu}s_{\mu}+\delta_{\lambda_1=n-k,\lambda_k>0}s_{\tilde{\lambda}},$$ where $\tilde{\lambda}=(\lambda_2-1,\ldots,\lambda_k-1,0)$. Hence, by Lemma [\[lem:equivalence_graph_pieri\]](#lem:equivalence_graph_pieri){reference-type="ref" reference="lem:equivalence_graph_pieri"}, $s_{(1)}s_{\lambda}=\sum_{I_{\lambda}\nearrow I}s_{\lambda_{I}}$, which yields for $I\in B_{k,n}$ $$T(s_{(1)})e_{I}=\ell(s_{(1)}s_{\lambda_{I}})=\sum_{I\nearrow J}\ell(s_{\lambda_{J}})=\sum_{I\nearrow J}e_{J},$$ and finally $T(s_{(1)})=A$, so that $\mathbb{C}[A]\subset T(QH_{1}(G_{k,n}))$.
+
+For all $I\in B_{k,n}$, $$T(s_{\lambda_I})e_{I_0}=\ell(s_{\lambda_I}s_{\emptyset})=\ell(s_{\lambda_I})=e_{I},$$ which implies that the map $T(QH_{1}(G_{k,n}))\rightarrow L^2(B_{k,n})$ given by $x\mapsto x(e_{I_0})$ is injective. Then, since $$\left[AT(s_{\lambda_I})\right]e_{I_0}=Ae_{I}=\sum_{I\nearrow J}e_{J}=\left(\sum_{I\nearrow J} T(s_{\lambda_J})\right)e_{I_0},$$ we deduce that $$AT(s_{\lambda_I})=\sum_{I\nearrow J} T(s_{\lambda_J})=\sum_{J\in B_{k,n}}A_{JI} T(s_{\lambda_J}).$$ Finally, by [\[eq:multiplication_quantum\]](#eq:multiplication_quantum){reference-type="eqref" reference="eq:multiplication_quantum"}, for all $\lambda,\mu \in \Lambda_{k,n}$ we have $$T(s_{\lambda})T(s_{\mu})=T(s_{\lambda}s_{\mu})=\sum_{d\geq 0,\nu\in \Lambda_{k,n}}\langle\lambda,\mu,\nu^c\rangle_dT(s_{\nu})$$ with each term $\langle\lambda,\mu,\nu^c\rangle_d\geq 0$.
+
+By the previous results, $B_{k,n}$ is a PM-graph whose enveloping algebra is $\mathcal{A}=T(QH_1(G_{k,n}))$ and the corresponding basis is $\{T(s_{\lambda_I}),I\in B_{k,n}\}$. ◻
+:::
+
+As a consequence of the latter result and the presentation of $QH_1(G_{k,n})$, we will prove that $B_{k,n}$ is an integrable PM-graph. Let us simply write $A_{I}=T(s_{\lambda_I})$. In the case of $B_{k,n}$, there is a natural indexation of left and right common eigenvectors of $\{A_I\}_{I\in B_{k,n}}$ by the set $B_{k,n}$ itself. We do not known if such natural indexation holds for any integrable PM-graph. As we will see in the next proposition, we are in the particular case where the adjacency matrix $A$ is normal, so that left and right eigenvectors $u^{(I)}$ and $w^{(I)}$, $I\in B_{k,n}$ of all operators $A_{I}$ coincide up to a constant, see [\[eq:normal_adjacency\]](#eq:normal_adjacency){reference-type="eqref" reference="eq:normal_adjacency"}. For $I\in B_{k,n}$, set $$\label{eq:def_vI}
+w^{(I)}=\sum_{J\in B_{k,n}}\overline{S_{J}(\xi_{n}(I))}e_{J},$$ where $S_J(\vec{u})=s_{\lambda_J}\left(e^{iu_1},\ldots,e^{iu_k}\right)$ for $\vec{u}\in \mathbb{R}^k$, and let $V(u_1,\ldots,u_k)=\prod_{j<j'}\left(e^{iu_{j'}}-e^{iu_{j}}\right)$ be the Vandermonde determinant of $\left(e^{iu_j}\right)_{1\leq j\leq k}$.
+
+::: lemma
+[]{#lem:action_s_mu label="lem:action_s_mu"} The set $\{w^{(I)}\}_{I\in B_{k,n}}$ is an orthogonal basis of $L^2(B_{k,n})$, and for all $J\in B_{k,n}$, $$A_{J}(w^{(I)})=S_{J}(\xi_{n}(I))w^{(I)}\quad
+\text{   and    } \quad A_{J}^*(w^{(I)})=\overline{S_{J}(\xi_{n}(I))}w^{(I)}.$$
+:::
+
+::: proof
+*Proof.* The orthogonality relation is given by the following Cauchy type formula from [@Ri Proposition 4.3]: for $I,I'\in B_{k,n}$, $$\label{eq:first_ortho_rietsch}
+\sum_{J \in B_{k,n}}S_{J}(\xi_{n}(I))\overline{S_{J}(\xi_{n}(I'))}=\delta_{I,I'}\frac{n^k}{\vert V(\xi_{n}(J))\vert^2},$$ which directly yields $$\begin{aligned}
+\langle w^{(I)},w^{(I')}\rangle=&\delta_{I,I'}\frac{n^k}{\vert V(\xi_{n}(J))\vert^2}\label{eq:orthogonality_relation}
+\end{aligned}$$ for $I,I'\in B_{k,n}$.
+
+To prove the eigenvector property, it is easier to work on $QH_1(B_{k,n})$. Indeed, by Proposition [\[prop:equiv_graph_qh\]](#prop:equiv_graph_qh){reference-type="ref" reference="prop:equiv_graph_qh"}, it suffices to prove that $s_{\lambda_{J}}\cdot\ell^{-1}(w^{(I)})=S_{J}(\xi_{n}(I))\ell^{-1}(w^{(I)})$, where $\cdot$ denotes the product in $QH_{1}(G_{k,n})$. From the proof of Proposition [\[prop:equiv_graph_qh\]](#prop:equiv_graph_qh){reference-type="ref" reference="prop:equiv_graph_qh"}, $QH_{1}(B_{k,n})$ is the space of functions on $\mathcal{Z}_{k,n}=\{\exp(i\vec{u}), \vec{u}\in T_{k,n}\}$, where $\exp(i\vec{u})=\left(e^{iu_1},\ldots,e^{iu_k}\right)$ for $\vec{u}\in \mathbb{R}^k$. Hence, we need to show that the values of $s_{\lambda_{J}}\cdot\ell^{-1}(w^{(I)})$ and $S_{J}(\xi_{n}(I))\ell^{-1}(w^{(I)})$ agree on $\mathcal{Z}_{k,n}$. First, we have by the usual evaluation of multiplication of functions $$\begin{aligned}
+\left[s_{\lambda_{J}}\cdot\ell^{-1}\left(w^{(I)}\right)\right](\exp(i\xi_{n}(I)))=&s_{\lambda_{J}}(\exp(i\xi_{n}(I)))\left[\ell^{-1}\left(w^{(I)}\right)\right](\exp(i\xi_{n}(I)))\\
+=&\left[S_{J}(\xi_{n}(I))\ell^{-1}(w^{(I)})\right](\exp(i\xi_{n}(I))).
+\end{aligned}$$ Then, for $I'\not=I$, $$\begin{aligned}
+&\left[s_{\lambda_{J}}\cdot\ell^{-1}(w^{(I)})\right](\exp(i\xi_{n}(I')))-\left[S_{J}(\xi_{n}(I))\ell^{-1}(w^{(I)})\right](\exp(i\xi_{n}(I')))\\
+&\hspace{3cm}=\left(S_{J}(\xi_{n}(I'))-S_{J}(\xi_{n}(I))\right)\left[\sum_{J'\in B_{k,n}}\overline{S_{J'}(\xi_{n}(I))} s_{\lambda_{J'}}\right](\exp(i\xi_{n}(I')))\\
+&\hspace{3cm}=\left(S_{J}(\xi_{n}(I'))-S_{J}(\xi_{n}(I))\right)\sum_{J'\in B_{k,n}}\overline{S_{J'}(\xi_{n}(I))} S_{J'}(\xi_{n}(I'))=0
+\end{aligned}$$ by [\[eq:orthogonality_relation\]](#eq:orthogonality_relation){reference-type="eqref" reference="eq:orthogonality_relation"}. Hence, we deduce that $s_{\lambda_{J}}\cdot\ell^{-1}(w^{(I)})=S_{J}(\xi_{n}(I))\ell^{-1}(w^{(I)})$, and the result is deduced by applying $\ell$. Since $A_{J}$ is diagonalized on an orthogonal basis, it is actually normal and we thus have $$A_{J}^*\left(w^{(I)}\right)= \overline{S_{J}(\xi_{n}(I))}w^{(I)}.$$ ◻
+:::
+
+Note that as a corollary of [\[eq:orthogonality_relation\]](#eq:orthogonality_relation){reference-type="eqref" reference="eq:orthogonality_relation"}, we have $$\Vert w^{(I)}\Vert_2=\frac{n^{k/2}}{\vert V(\xi_{n}(I))\vert}.$$ Hence, following the notation of Section [\[sec:pm_graph\]](#sec:pm_graph){reference-type="ref" reference="sec:pm_graph"}, we set $$\label{eq:def_uI_Bkn}
+u^{(I)}=\frac{\vert V(\xi_{n}(I))\vert^2}{n^k}w^{(I)},$$ so that $\langle w^{(I)},u^{(J)}\rangle=\delta_{IJ}$.

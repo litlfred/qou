@@ -12,11 +12,11 @@ README regeneration + authors-note Lean coverage stats)
 | PR / branch | Domain | Overlap with this ledger |
 |---|---|---|
 | **THIS — `claude/pdf-build-split-O0pTu`** | PDF post-processing (per-chapter PDFs split from `main.pdf`), README regeneration on `main` publish, authors-note refresh with live Lean coverage stats (385/567 sorry-free, 121/132 class-axiomatised conjectures) | None on bib content. Authors-note explicitly retains the "we used large language models" disclaimer; no claims about agent-verified citations. |
-| **#820 — `claude/detangler-bib-followup-batch-2026-05-19`** | `content/bib-qa-verifications.json` (typed per-paper verification sidecar), `validate-bib.ts` (5 audit modes), `upload-bib-papers.sh`, 654 `-- Ref:` upgrades, `bib-qa.ts` two new tags (`has_local_pdf`, `verification_status`) | This ledger documents a question about the `verified_by` field's shape — not a request to block the PR. |
+| **#820 — `claude/detangler-bib-followup-batch-2026-05-19`** | `folio/bib-qa-verifications.json` (typed per-paper verification sidecar), `validate-bib.ts` (5 audit modes), `upload-bib-papers.sh`, 654 `-- Ref:` upgrades, `bib-qa.ts` two new tags (`has_local_pdf`, `verification_status`) | This ledger documents a question about the `verified_by` field's shape — not a request to block the PR. |
 
 ## The question
 
-PR #820's `content/bib-qa-verifications.json` records, per reference id:
+PR #820's `folio/bib-qa-verifications.json` records, per reference id:
 
 ```json
 {
@@ -106,10 +106,10 @@ focused follow-up.
 ## Cross-references
 
 - This branch's authors-note refresh:
-  [`authors-note.md@claude/pdf-build-split-O0pTu`](https://github.com/litlfred/qou/blob/claude/pdf-build-split-O0pTu/content/quantum-observable-universe/introduction/authors-note.md)
+  [`authors-note.md@claude/pdf-build-split-O0pTu`](https://github.com/litlfred/qou/blob/claude/pdf-build-split-O0pTu/folio/quantum-observable-universe/introduction/authors-note.md)
 - This branch's coverage tooling:
   [`scripts/lean-coverage.ts`](https://github.com/litlfred/qou/blob/claude/pdf-build-split-O0pTu/scripts/lean-coverage.ts)
 - PR #820's verification sidecar:
-  [`content/bib-qa-verifications.json@claude/detangler-bib-followup-batch-2026-05-19`](https://github.com/litlfred/qou/blob/claude/detangler-bib-followup-batch-2026-05-19/content/bib-qa-verifications.json)
+  [`folio/bib-qa-verifications.json@claude/detangler-bib-followup-batch-2026-05-19`](https://github.com/litlfred/qou/blob/claude/detangler-bib-followup-batch-2026-05-19/folio/bib-qa-verifications.json)
 - PR #820's audit script:
   [`content/pipeline/validate-bib.ts@claude/detangler-bib-followup-batch-2026-05-19`](https://github.com/litlfred/qou/blob/claude/detangler-bib-followup-batch-2026-05-19/content/pipeline/validate-bib.ts)

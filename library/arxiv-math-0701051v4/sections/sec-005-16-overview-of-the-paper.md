@@ -8,19 +8,18 @@ pages: 4-5
 source_pdf: 0701051v4.pdf
 source_sha256: 4592a048c3b84a8d
 doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS RELATED TO STANLEY CHARACTER FORMULA — We prove an upper bound for characters of the symmetric groups."
+text_source: latex
+latex_prose_ratio: 0.898
+latex_coverage_ratio: 1.0
 ---
-tion of Stanley-Féray character formula, Theorem 2.
-In Section 3 we present a relation between the characters of s ymmetric
-groups and characters of some Gaussian random matrices. We a lso give a
-new formula for calculating free cumulants of (the transition measure of) a
-Young diagram.
-Section 4 is devoted to the proofs of some techical inequalities.
-In Section 5 we prove estimates for the characters of the symm etric
-groups based on Stanley character formula.
-2. S TANLEY CHARACTER FORMULA
-In this section, we prove Theorem 2. It is quite easy to show th at it is
-equivalent to a recent formula, conjectured by Stanley [Sta 06] and proved
-by the ﬁrst author [Fér10]. But the formulation given here ismore useful for
-the purposes of character estimates and its proof is more ele mentary than
-the one given in [Fér10].
-ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS 5
+In Section [1](#sec:stanley-feray){reference-type="ref" reference="sec:stanley-feray"} we will prove the new formulation of Stanley-Féray character formula, Theorem [\[theo:character-sniady\]](#theo:character-sniady){reference-type="ref" reference="theo:character-sniady"}.
+
+In Section [\[sec:random-matrices\]](#sec:random-matrices){reference-type="ref" reference="sec:random-matrices"} we present a relation between the characters of symmetric groups and characters of some Gaussian random matrices. We also give a new formula for calculating free cumulants of (the transition measure of) a Young diagram.
+
+Section [\[sec:technical\]](#sec:technical){reference-type="ref" reference="sec:technical"} is devoted to the proofs of some techical inequalities.
+
+In Section [\[sec:asymptotics-characters\]](#sec:asymptotics-characters){reference-type="ref" reference="sec:asymptotics-characters"} we prove estimates for the characters of the symmetric groups based on Stanley character formula.
+
+# Stanley character formula {#sec:stanley-feray}
+
+In this section, we prove Theorem [\[theo:character-sniady\]](#theo:character-sniady){reference-type="ref" reference="theo:character-sniady"}. It is quite easy to show that it is equivalent to a recent formula, conjectured by Stanley [@Stanley-preprint] and proved by the first author [@{F'eray-preprint}]. But the formulation given here is more useful for the purposes of character estimates and its proof is more elementary than the one given in [@{F'eray-preprint}].

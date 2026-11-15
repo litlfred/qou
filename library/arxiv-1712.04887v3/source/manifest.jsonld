@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1712.04887v3/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "BLOCH GROUPS, ALGEBRAIC K -THEORY, UNITS, AND NAHM’S CONJECTURE (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1712.04887v3",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1712.04887&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1712.04887v3",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1712.04887v3",
+    "content_type": "application/gzip",
+    "sha256": "d45e227eadf5f4aab9ba8332bd98d1c1a4e6d75eee53a4f5495835a3c7a22dcd",
+    "bytes": 53585,
+    "fetched": "2026-10-10T15:13:05+00:00",
+    "files": [
+      {
+        "path": "source/files/qDilog.45.bbl",
+        "role": "bbl",
+        "sha256": "e8dfc745ce93ff088b03bf6ddfe6ad95320fd668f21df098b12ae1279bf94bea",
+        "bytes": 7419
+      },
+      {
+        "path": "source/files/qDilog.45.tex",
+        "role": "tex",
+        "sha256": "d9551e27cfd3f4d1713fc8f8691f03c39eab4a7206e49dbce6f1f70aea1419ad",
+        "bytes": 154884
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

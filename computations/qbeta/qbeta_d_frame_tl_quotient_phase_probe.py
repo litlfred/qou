@@ -6,7 +6,7 @@ weight that happens to vanish. One candidate, zero free parameters.
 
 # Ref: .beans/qou-cds1--s1-science-re-derive-the-qbeta-ck-ladder-under-d-n.md
 # Ref: computations/qbeta/qbeta_phase_block_resolution_probe.py
-# Ref: content/quantum-observable-universe/lean/QOU/QBeta/WenzlWeightVanishing.lean
+# Ref: folio/quantum-observable-universe/lean/QOU/QBeta/WenzlWeightVanishing.lean
 
 THE OPENING. The block-resolved identity
 

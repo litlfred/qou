@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-transfer-matrix-level-independence",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:transfer-matrix-level-independence",
+  "kind": "proof",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-transfer-matrix-level-independence",
+    "papers/quantum-observable-universe/blocks/lem-tmli-constituent-composite-agreement"
+  ],
+  "text": "transfer-matrix-level-independence-proof.md",
+  "provenance": "authored"
+}

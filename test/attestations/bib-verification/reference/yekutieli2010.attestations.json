@@ -1,0 +1,55 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "yekutieli2010",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 30,
+      "entry": {
+        "id": "yekutieli2010",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T15:48:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 20,
+        "fix_commit": "(this commit)",
+        "note": "Yekutieli, \"Central Extensions of Gerbes\", Adv. Math. 225 (2010). 20 bare-URL Refs upgraded with title+publisher form. No local PDF (publisher paywalled). Partial. | PDF verified: 'Central Extensions of Gerbes' by Amnon Yekutieli, arXiv:0801.0083v4. Title verbatim matches references.ts.",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/yekutieli2010.pdf"
+        },
+        "local_pdf": "uploads/yekutieli2010.pdf",
+        "relevance": {
+          "verdict": "undetermined",
+          "rationale": "FILE ABSENT (a prior ledger row itself notes no local PDF is available while still setting source.file to this path). Identity unverifiable here. CORPUS-SIDE AUDIT \u2014 this is the finding: the key is the most heavily cited in my slice (~80 sites across lifting-and-descent, Torsion, LiftingDescent, brings-surface, climax-volume-mass, stochastic-mechanics, mass-endomorphism), and the DOI attached inline in the Lean disagrees with the registered one at EVERY site that carries one. Counting distinct DOI strings on lines mentioning this key in *.lean: SIX distinct variants over 20 lines, and ZERO occurrences of the registered value. Variant A (8 lines): descent-condition.lean:20, cosimplicial-crossed-groupoid.lean:133, weak-equiv-invariance.lean:20, global-gluing.lean:22, QOU/Torsion/DescentCondition.lean:17, QOU/Torsion/GlobalGluing.lean:21, stochastic-mechanics/classical-limit-obstruction.lean:13 and :48. Variant B (3): quantum-characteristic-classes-unique.lean:33 and :47, quantum-characteristic-classes-exists.lean:16. Variant C (3): climax-volume-mass/vertex-algebra-jet-relations.lean:23 and :109, brings-surface/genus-filtration-ideal.lean:26. Variant D (2, a book DOI rather than an article one): QOU/LiftingDescent/HomologicalCondensation.lean:24, QOU/LiftingDescent/BBStratification.lean:42. Variant E (2): QOU/ClassicalLimitObstruction.lean:54 and :76. Variant F (2, a different journal's prefix): lifting-and-descent/p3-blowup-yekutieli.lean:36, QOU/FluidDynamics/yekutieli_obstruction_level.lean:53. SEPARATE WRONG-TITLE SITE: QOU/LiftingDescent/ccg_crossed_module_structure.lean:17 renders this key under the title belonging to yekutieli2015, not the one the registered entry carries. The corpus has already caught one instance of exactly this key confusion \u2014 QOU/Archimedean/HyperbolicVolumeTranscendence.lean:39-40 carries an inline note that the key was previously used wrongly there for the same reason \u2014 so the failure mode is known and recurring. The cited locators themselves (Thm 1.7 at yekutieli-lifting.lean:27 and yekutieli-mapping-table.md:18; Thm 4.5 at global-gluing-proof.md; Def 2.1 at ccg-crossed-module-structure.lean:42) are specific and plausible but unverifiable without the document.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "new-remark",
+              "rationale": "Six distinct inline DOIs and one wrong title are attached to this key across ~20 Lean sites, and none matches the registered entry. Normalise the inline -- Ref: DOIs to the registered value, or drop them and let references.ts own the metadata (which AGENTS.md prefers), and fix the wrong title at ccg_crossed_module_structure.lean:17.",
+              "target": "prop:ccg-crossed-module-structure",
+              "bean": "qou-b35e"
+            },
+            {
+              "action": "compute-check",
+              "rationale": "The Thm 1.7 / Thm 4.5 / Def 2.1 locators relied on at yekutieli-lifting.lean:27, global-gluing-proof.md and ccg-crossed-module-structure.lean:42 are unverified because no copy of the document is present. Obtain it and confirm the locators before the next proof-integration pass leans on them.",
+              "target": "prop:yekutieli-lifting",
+              "bean": "qou-cqs9"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z"
+        }
+      }
+    }
+  ]
+}

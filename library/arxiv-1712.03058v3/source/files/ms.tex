@@ -1,0 +1,58 @@
+\pdfoutput=1
+
+\documentclass[12pt,a4paper,notitlepage,oneside]{book}
+
+\include{header_Stocks}
+
+% Custom abstract environment for book class
+\usepackage{abstract_def}
+
+\tolerance=5000
+
+% Move the title up a bit
+\usepackage{titling}
+\setlength{\droptitle}{-3.5cm}
+
+% Change spacing of table of contents
+% \usepackage{tocloft}
+% \setlength{\cftbeforetoctitleskip}{2cm}
+% \setlength{\cftaftertoctitleskip}{3pt}
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{3}
+
+
+\usepackage{authblk}
+\usepackage{bm}
+\title{Iterated filtering methods for Markov process epidemic models}
+%\author[1]{Benjamin Allévius}
+\author[1]{Theresa Stocks}
+\affil[1]{Department of Mathematics, Stockholm University, Sweden}
+\date{\vspace{-5ex}}
+
+\begin{document}
+\maketitle
+
+\framebox{
+  \begin{minipage}{0.9\linewidth}
+    This manuscript is a preprint of a Chapter to appear in the
+    \textit{Handbook of Infectious Disease Data Analysis}, Held, L.,
+    Hens, N., O'Neill, P.D. and Wallinga, J. (Eds.). Chapman \& Hall/CRC,
+    2018. Please use the book for possible citations.
+  \end{minipage}
+}\\[2ex]
+
+
+\begin{chapabstract} 
+  \input{abstract}  
+\end{chapabstract}
+\thispagestyle{empty}
+% \clearpage
+% \tableofcontents
+\thispagestyle{empty}
+\clearpage
+\setcounter{page}{1}
+\input{iterated_filtering}
+\bibliographystyle{apalike}
+\bibliography{ms}
+\end{document}

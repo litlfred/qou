@@ -1,0 +1,58 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1203.2182v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Volume Conjecture: Reﬁned and Categoriﬁed (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1203.2182v1",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1203.2182&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1203.2182v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1203.2182v1",
+    "content_type": "application/gzip",
+    "sha256": "3e8a0132d9d6ad08519f8490c34b025aae9216395246bbb6139dae6579c011e4",
+    "bytes": 1941874,
+    "fetched": "2026-10-10T15:06:15+00:00",
+    "files": [
+      {
+        "path": "source/files/JHEP3.cls",
+        "role": "cls",
+        "sha256": "41975bc63ef3aad236f88e3dce435b4f87e4d0a213a5c906676c771c55f3233c",
+        "bytes": 71897
+      },
+      {
+        "path": "source/files/appendix.sty",
+        "role": "sty",
+        "sha256": "cb69ae0ad2da0ab952a4f4c51a322a40c568abb6bc503eea162a5116240b25c6",
+        "bytes": 3468
+      },
+      {
+        "path": "source/files/refined.bbl",
+        "role": "bbl",
+        "sha256": "24aa2b3aedfd3e64e2d3ca393112217887dc081b7000a2dad5c4bb8edb84ef1d",
+        "bytes": 21008
+      },
+      {
+        "path": "source/files/refined.tex",
+        "role": "tex",
+        "sha256": "b13ee2a298ec83e72dce7edc4cfaf9dec3719f09cf7669af947d26dc20115d25",
+        "bytes": 236482
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

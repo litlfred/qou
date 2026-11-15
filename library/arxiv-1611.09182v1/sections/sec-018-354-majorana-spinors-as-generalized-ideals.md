@@ -8,22 +8,18 @@ pages: 22-23
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
 doc_brief: "Standard model physics from an algebra? — 57 sections: Abstract; Acknowledgements; Introduction"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-Given our description above of Dirac spinors, it is now easy to build Majorana spinors.
-Any Dirac spinor splits into two Majorana spinors, given by
-ΨM1≡ 1
-2 (ΨD + Ψ∗
-D) Ψ M2≡ 1
-2 (ΨD− Ψ∗
-D). (3.20)
-Clearly, Ψ M1 is invariant under complex conjugation, Ψ ∗
-M1 = Ψ M1, while Ψ M2 acquires
-a minus sign, Ψ ∗
-M2 =−ΨM2. The reader is encouraged to conﬁrm that Ψ M1 and Ψ M2
-both constitute generalized ideals, and that mc(L, ΨM) gives their transformation under
-SL(2, C).
-To summarize, we have just found that left- and right-handed Weyl spinors, Dirac
-spinors, and Majorana spinors are all simply generalized ideals of the same complex
-invariant-action, mc. Furthermore, in every case, their transformation under SL(2, C)
-can be described succinctly as Ψ′ =mc(L, Ψ).
-14
+Given our description above of Dirac spinors, it is now easy to build Majorana spinors.  Any Dirac spinor splits into two Majorana spinors, given by 
+\begin{equation} \begin{array}{lll}\Psi_{\textup{M}_1} \equiv  \frac{1}{2}\left( \Psi_{\textup{D}} + \Psi_{\textup{D}}^* \right) &\hspace{1cm} & \Psi_{\textup{M}_2} \equiv  \frac{1}{2}\left( \Psi_{\textup{D}} - \Psi_{\textup{D}}^* \right). 
+\end{array}\end{equation}
+\noindent Clearly, $\Psi_{\textup{M}_1}$ is invariant under complex conjugation, $\Psi_{\textup{M}_1}^* = \Psi_{\textup{M}_1}$, while $\Psi_{\textup{M}_2}$ acquires a minus sign, $\Psi_{\textup{M}_2}^* = -\Psi_{\textup{M}_2}$.  The reader is encouraged to confirm that $\Psi_{\textup{M}_1}$ and $\Psi_{\textup{M}_2}$ both constitute generalized ideals, and that $m_c(L, \Psi_{\textup{M}})$ gives their transformation under $SL(2, \mathbb{C})$.
+
+
+
+
+\vspace{1cm}
+
+To summarize, we have just found that left- and right-handed Weyl spinors, Dirac spinors, and Majorana spinors are all simply  generalized ideals of the same complex invariant-action, $m_c$.  Furthermore, in every case, their transformation under $SL(2, \mathbb{C})$ can be described succinctly as $\Psi ' =m_c(L, \Psi)$.

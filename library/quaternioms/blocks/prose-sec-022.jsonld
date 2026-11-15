@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/quaternioms/blocks/prose-sec-022",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/quaternioms/blocks/prose-sec-022",
   "kind": "prose",
   "title": "Resource Analysis and the Potential for Circuit Simplification",
   "pageStart": 21,
   "pageEnd": 22,
   "text": "../sections/sec-022-resource-analysis-and-the-potential-for-circuit.md",
-  "derivedFrom": "library/quaternioms/manifest",
-  "sourceDocument": "library/quaternioms/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/quaternioms",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/quaternioms",
   "provenance": "ingested"
 }

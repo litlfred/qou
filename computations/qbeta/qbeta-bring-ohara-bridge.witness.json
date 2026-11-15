@@ -1,0 +1,182 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T15:13:13.837362+00:00",
+  "commitSha": "266c147ee39666e932727287228d9e48d3b84a5c",
+  "assertions": [
+    {
+      "name": "the_lattice_window_is_converged",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "widening the lattice window from 3 to 5 moves the energy by 0.0 relative -- the nearest-translate minimisation is saturated, so the reported energies are not window artifacts"
+    },
+    {
+      "name": "the_integrand_is_IDENTICALLY_zero_near_the_diagonal",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "worst residual 0.0 over four decades approaching the diagonal. On a flat torus the nearest lattice translate of a short geodesic arc is 0, so d_ambient = |u| = d_arc EXACTLY and O'Hara's regularisation cancels on the nose. That is what makes this computable without a principal value"
+    },
+    {
+      "name": "the_energy_is_scale_and_therefore_q0_independent",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "three scales spanning 1e-1 to 1e3 agree to 2.216e-41 relative. Moebius energy is scale-invariant, so the ln q0 prefactor of the log-holonomy DROPS OUT. Consequence: this energy cannot be the 'evaluated at q_0' quantity the 2026-08-01 method redirect asked for -- it does not see q0 at all"
+    },
+    {
+      "name": "every_energy_is_non_negative",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "min over candidates = 22.4666084053. O'Hara energy is an integral of `1/d_ambient^2 - 1/d_arc^2` with `d_ambient <= d_arc` pointwise, so it cannot be negative. The first build of this probe returned ~-4e44 here -- catastrophic cancellation at the endpoints, where the integrand is analytically zero and was being evaluated as 1e80 - 1e80. This assertion and [C3] are what caught it"
+    },
+    {
+      "name": "the_cusp_torus_class_is_writhe_and_strands_only",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "all 4 two-crossing dressings map to the single class (2, 3). m is the exponent sum (a sum over letters) and l is the strand count (independent of the word), so the class is a letter-sum-type invariant by construction"
+    },
+    {
+      "name": "the_bridge_TIES_the_candidates_it_was_built_to_separate",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "one distinct O'Hara energy over 4 candidates. The same tie crossing count and crossing energy already failed on, reached by a third and independent route. The O'Hara functional is innocent: the CUSP-TORUS EMBEDDING is the lossy step, and it provably forgets the knot"
+    },
+    {
+      "name": "this_does_NOT_retract_the_green_light",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "qbeta_embedding_energy_can_discriminate (5/5) showed the four candidates are DISTINCT LINKS, so an isotopy-class functional is not barred from separating them. That stands. This probe shows only that the cusp-torus winding class is too coarse an embedding to realise it -- a statement about the embedding, not about the energy"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 107388,
+  "computation": "qbeta-bring-ohara-bridge",
+  "scriptFile": "qbeta_bring_ohara_bridge_probe.py",
+  "scriptHash": "9579fc9a042c",
+  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_bring_ohara_bridge_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_bring_ohara_bridge_probe.py"
+  },
+  "description": "Builds the Bring->O'Hara bridge and reports what it gives. CORRECTS my own claim (bean qou-pzsi, PR #7370) that the corpus has no braid-word to curve map: qbeta_cusp_lattice_geodesic_probe carries it, filed under GEODESIC, on the author's steering of 2026-07-27. What was genuinely missing is the geodesic -> O'Hara energy step, implemented here: on a flat torus a geodesic is straight in the universal cover, so the ambient and arc distances are both closed-form and the O'Hara subtraction cancels EXACTLY (the integrand is identically zero near the diagonal, not merely integrable). Half A is derived: m = exponent sum from the proved meridian-holonomy boost, l = strand count from the closure. RESULT, a negative: (m, l) = (writhe, strands) are both letter-sum-type, so all four two-crossing gluon dressings share one class, one geodesic and one energy -- the same tie, by a third route. The O'Hara energy is innocent; the cusp-torus embedding is the lossy step, and it provably forgets the knot. Also measured: the energy is scale- hence q0-INDEPENDENT, so it cannot be the 'evaluated at q_0' quantity the 2026-08-01 redirect asked for.",
+  "data": {
+    "bridge": {
+      "half_A_word_to_class": "m = exponent sum (meridian-holonomy-boost.md: one meridian turn is a boost of rapidity ln q0, and a positive crossing carries the Hecke eigenvalue q); l = strand count (the closure wraps the axis once per strand). Both forced.",
+      "half_B_class_to_geodesic": "u_{m,l} = ln q0 * (m + l*omega) on the flat cusp torus C/Lambda, Lambda = Z<1, omega>, omega = e^{i pi/3} -- the corpus's own map (qbeta_cusp_lattice_geodesic_probe)",
+      "half_C_geodesic_to_energy": "E = L * int_0^L [1/d_ambient(u)^2 - 1/d_arc(u)^2] du, with d_ambient the flat-torus distance (min over lattice translates) and d_arc = min(u, L-u). NEW."
+    },
+    "candidates": {
+      "(empty)": {
+        "writhe": 0,
+        "class": [
+          0,
+          3
+        ],
+        "geodesic_length": "3.0",
+        "ohara_energy": "1228769.506253411292996958"
+      },
+      "sigma_1": {
+        "writhe": 1,
+        "class": [
+          1,
+          3
+        ],
+        "geodesic_length": "3.605551275463989293119221",
+        "ohara_energy": "66.32167843605995369595766"
+      },
+      "sigma_1^-1": {
+        "writhe": -1,
+        "class": [
+          -1,
+          3
+        ],
+        "geodesic_length": "2.645751311064590590501616",
+        "ohara_energy": "22.4666084053416493686167"
+      },
+      "sigma_1 sigma_0": {
+        "writhe": 2,
+        "class": [
+          2,
+          3
+        ],
+        "geodesic_length": "4.358898943540673552236982",
+        "ohara_energy": "122.2055221072557798765323"
+      },
+      "sigma_0 sigma_1": {
+        "writhe": 2,
+        "class": [
+          2,
+          3
+        ],
+        "geodesic_length": "4.358898943540673552236982",
+        "ohara_energy": "122.2055221072557798765323"
+      },
+      "sigma_1 sigma_1": {
+        "writhe": 2,
+        "class": [
+          2,
+          3
+        ],
+        "geodesic_length": "4.358898943540673552236982",
+        "ohara_energy": "122.2055221072557798765323"
+      },
+      "sigma_0 sigma_0 (LIVE)": {
+        "writhe": 2,
+        "class": [
+          2,
+          3
+        ],
+        "geodesic_length": "4.358898943540673552236982",
+        "ohara_energy": "122.2055221072557798765323"
+      }
+    },
+    "verdict": {
+      "distinct_classes_over_two_crossing_candidates": 1,
+      "distinct_energies": 1,
+      "reading": "the cusp-torus winding class is (writhe, strands), both letter-sum-type, so this bridge inherits the blindness that defeated crossing count and crossing energy",
+      "what_survives": "the green light -- the candidates ARE distinct links, so a FINER embedding is not excluded. The genus-4 Bring curve itself is not used here; only the genus-1 cusp torus the corpus's braid map lands in",
+      "separate_finding": "the energy is scale- hence q0-independent, so it cannot be the 'evaluated at q_0' quantity the 2026-08-01 method redirect asked for"
+    },
+    "corrects": {
+      "qou-pzsi / PR #7370": "'no map from a braid word to a curve in or on the Bring surface' is WRONG -- qbeta_cusp_lattice_geodesic_probe carries it, filed under GEODESIC. My searches keyed on embed/curve/parametrise near 'bring' and on consumers of the Moebius integrators, and the map was one word away from every one of them"
+    },
+    "scope": {
+      "class": "(a) scope-limited -- one embedding, one family",
+      "not_claimed": [
+        "that O'Hara energy cannot select -- the prune says it is not excluded and this does not touch that",
+        "that no finer Bring embedding exists -- the genus-4 curve is unused here",
+        "that any candidate should be adopted"
+      ],
+      "no_selection_by_accuracy": "no Q_beta appears in this probe"
+    },
+    "q0_pin": "proton",
+    "q0_value": "1.1099785827513808075916690956107688798744991218736",
+    "q0_note": "recorded for provenance; the result is measured scale-invariant and therefore q0-independent (C3)"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

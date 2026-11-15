@@ -70,20 +70,41 @@ def _load_y_lambda_canonical(n: int):
 def _hp_binding_word(Z: int, N: int, q):
     """The ⁴He binding word as MPFR `(c, d, gen0)` triples (color-weighted p-n).
     Mirrors `mass_at_3A_proper.atom_braid_word_3A` but keeps every coefficient at
-    the active mpmath precision instead of floating it."""
-    from pyhecke.atom import nucleon_gen_chains
+    the active mpmath precision instead of floating it.
+
+    IT DID NOT MIRROR IT UNTIL 2026-09-14 (bean `qou-t29k`). The interfaces
+    always matched — p-p `σ`, n-n `σ − h`, p-n colour-weighted
+    `σ − h(½ − δ/4)` — but the intra letters were laid down as all of `g0` then
+    all of `g1`, which is `pyhecke.atom.nucleon_word_letters`'
+    `intra_order="grouped"`, while `atom_braid_word_3A` has defaulted to the
+    canonical borromean interleaving since the 2026-09-05 ruling (`qou-hu1f`).
+    Different elements of H₃(q), so the claim above was false on the one axis it
+    did not name. It is true now.
+
+    NOT the staleness `qou-92u9` tracks. Those six caches come from
+    `chi_at_q0_via_hoefsmit_mpfr.py`, which calls `atom_braid_word_3A` with no
+    `intra_order`, so a fresh run there produces the canonical word and the
+    committed artifact is merely old. This function hand-built the word, so no
+    re-run could ever have corrected it — that bean records this producer only
+    as a 665 s runtime observation, never as a defect.
+
+    Safe to switch, checked rather than assumed. The single assertion
+    `mpfr_binding_chi_extends_f64_atomic` compares the MPFR and f64 characters
+    of the SAME word (built once, at the call below), so it moves with the word
+    and stays valid; and nothing consumes the emitted per-λ table — the only
+    other file naming this cache is `f64_into_mpmath_audit.py`, which matches on
+    the filename. All 77 χ^λ values change, necessarily: they characterise a
+    different element of H₁₂(q), and now the intended one.
+    """
+    from pyhecke.atom import nucleon_word_letters
     from _li_2_q_util import flavor_split_leading
     h = q - 1 / q
     delta = flavor_split_leading(q)
-    p_g0, p_g1 = nucleon_gen_chains(['u', 'u', 'd'], q=q)
-    n_g0, n_g1 = nucleon_gen_chains(['u', 'd', 'd'], q=q)
     word, ordering, A = [], ['p'] * Z + ['n'] * N, Z + N
     for k, nuc in enumerate(ordering):
-        g0, g1 = (p_g0, p_g1) if nuc == 'p' else (n_g0, n_g1)
-        for c, d in g0:
-            word.append((mp.mpf(c), mp.mpf(d), 3 * k))
-        for c, d in g1:
-            word.append((mp.mpf(c), mp.mpf(d), 3 * k + 1))
+        quarks = ['u', 'u', 'd'] if nuc == 'p' else ['u', 'd', 'd']
+        for c, d, off in nucleon_word_letters(quarks, q=q):
+            word.append((mp.mpf(c), mp.mpf(d), 3 * k + off))
         if k < A - 1:
             nxt = ordering[k + 1]
             if nuc == 'p' and nxt == 'p':

@@ -150,7 +150,7 @@ witness = {
         "torus_link_family": "(2, 2k): k=1 Hopf (meson/2H anchor), k>=2 higher windings",
         "related": [
             "prop:hoefsmit-toroidal-ladder-locus (forced mu = 1/2, degree - 1/2)",
-            "content/quantum-observable-universe/braids-and-knots/trm-hopf-sigma1-sq-closed-form.md (k=1 closed form)",
+            "folio/quantum-observable-universe/braids-and-knots/trm-hopf-sigma1-sq-closed-form.md (k=1 closed form)",
         ],
     },
     "assertions": assertions,

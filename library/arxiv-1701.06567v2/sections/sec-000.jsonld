@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1701.06567v2/sections/sec-000",
   "@type": [
     "doco:Section"
   ],
-  "title": "Walter Burke Institute for Theoretical Physics, California Institute of Technology,",
-  "pageStart": 1,
-  "pageEnd": 1,
+  "title": "Introduction",
+  "pageStart": 2,
+  "pageEnd": 6,
   "contains": [
     "library/arxiv-1701.06567v2/blocks/prose-sec-000"
   ],
-  "derivedFrom": "library/arxiv-1701.06567v2/manifest",
-  "sourceDocument": "library/arxiv-1701.06567v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1701.06567v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1701.06567v2",
   "provenance": "ingested"
 }

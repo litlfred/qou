@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1712.03058v3/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1712.03058v3/blocks/prose-sec-005",
   "kind": "prose",
   "title": "Likelihood of a POMP",
   "pageStart": 5,
   "pageEnd": 7,
   "text": "../sections/sec-005-131-likelihood-of-a-pomp.md",
-  "derivedFrom": "library/arxiv-1712.03058v3/manifest",
-  "sourceDocument": "library/arxiv-1712.03058v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1712.03058v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1712.03058v3",
   "provenance": "ingested"
 }

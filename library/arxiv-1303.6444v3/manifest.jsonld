@@ -1,0 +1,55 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1303.6444v3",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1303.6444v3",
+  "contains": [
+    "library/arxiv-1303.6444v3/sections/sec-front-matter",
+    "library/arxiv-1303.6444v3/sections/sec-000",
+    "library/arxiv-1303.6444v3/sections/sec-001",
+    "library/arxiv-1303.6444v3/sections/sec-002",
+    "library/arxiv-1303.6444v3/sections/sec-003",
+    "library/arxiv-1303.6444v3/sections/sec-004",
+    "library/arxiv-1303.6444v3/sections/sec-005",
+    "library/arxiv-1303.6444v3/sections/sec-006",
+    "library/arxiv-1303.6444v3/sections/sec-007",
+    "library/arxiv-1303.6444v3/sections/sec-008",
+    "library/arxiv-1303.6444v3/sections/sec-009",
+    "library/arxiv-1303.6444v3/sections/sec-010",
+    "library/arxiv-1303.6444v3/sections/sec-011",
+    "library/arxiv-1303.6444v3/sections/sec-012"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1303.6444&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1303.6444v3",
+    "title_source": "slug",
+    "source_file": "1303.6444v3.pdf",
+    "source_sha256": "4f12ace2197f70ca9b6e2f8c6ee90d4c5d193c73e911153a62563f499d606379",
+    "pages": 14,
+    "arxiv": {
+      "id": "1303.6444",
+      "version": "3",
+      "primary_class": "math-ph",
+      "stamp_date": "24 Jul 2013"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

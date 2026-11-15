@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-physics-0203048v1/sections/sec-008",
   "@type": [
     "doco:Section"
   ],
-  "title": "Acknowledgments",
-  "pageStart": 11,
+  "title": "References",
+  "pageStart": 14,
   "pageEnd": 14,
   "contains": [
     "library/arxiv-physics-0203048v1/blocks/prose-sec-008"
   ],
-  "derivedFrom": "library/arxiv-physics-0203048v1/manifest",
-  "sourceDocument": "library/arxiv-physics-0203048v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-physics-0203048v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-physics-0203048v1",
   "provenance": "ingested"
 }

@@ -1,0 +1,431 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "1104248094",
+ "source": {
+  "file": "1104248094.pdf",
+  "sha256": "c1fdb4791afcad3b5faa41fdcd9bed0cd23c88123a851af0f17de9857bd9c7a2",
+  "bytes": 3769953,
+  "pages": 42,
+  "text_source": "embedded",
+  "extractor": "pypdf",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "Commun. Math. Phys. 140, 481-521 (1991) Communications in Mathematical Physics\u00a9 Springer-Verlag 1991 Hochschild and Cyclic Homology of Quantum Groups",
+  "authors_raw": "Ping Feng1'* and Boris Tsygan2'**",
+  "title_lines": [
+   "Commun. Math. Phys. 140, 481-521 (1991) Communications in",
+   "Mathematical",
+   "Physics\u00a9 Springer-Verlag 1991",
+   "Hochschild and Cyclic Homology of Quantum Groups"
+  ],
+  "abstract": "For an arbitrary complex linear semisimple Lie group G, we consider Hopf algebras of the deformations of the formal and algebraic functions on G. The Hochschild and cyclic homology of these Hopf algebras are computed when the value of the deformation parameter is generic. Table of Contents",
+  "docinfo": {
+   "CreationDate": "D:20040924015228Z",
+   "Title": "",
+   "Creator": "ABBYY FineReader",
+   "Author": "",
+   "Producer": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Definitions of Hochschild and Cyclic Homology",
+   "page": 4,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Associativity:",
+   "page": 5,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Coassociativity:",
+   "page": 5,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Counit:",
+   "page": 5,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Connection Axiom:",
+   "page": 6,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Antipode:",
+   "page": 6,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Quantum Groups",
+   "page": 8,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Let G be connected and semi-simple, then every Poisson Lie group structure on G",
+   "page": 9,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "For the Lie bialgebra (g, g*) there is a unique Lie algebra structure on the vector",
+   "page": 9,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "A Spectral Sequence",
+   "page": 13,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "The Lie Algebra Homology",
+   "page": 20,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Formal Functions. Recall that we have the identification:",
+   "page": 20,
+   "source": "inferred",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Algebraic Functions. Now we do not have a nice filtration for C[XC] as we",
+   "page": 21,
+   "source": "inferred",
+   "number": "5.2"
+  },
+  {
+   "level": 1,
+   "title": "Hochschild and Cyclic Homology of Quantum Groups",
+   "page": 25,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Quantum Algebraic Groups. This subsection is mainly devoted to the proof2",
+   "page": 26,
+   "source": "inferred",
+   "number": "6.2"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 40,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Drinfeld, V. G.: Hamiltonian structure on Lie groups, Lie bialgebras and the geometric",
+   "page": 40,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 1,
+   "title": "Feigin, B. L., Tsygan, B. L.: Riemann-Roch theorem and Lie algebra cohomology. In:",
+   "page": 40,
+   "source": "inferred",
+   "number": "16"
+  },
+  {
+   "level": 1,
+   "title": "Hilton, P. J., Stammbach, U.: A course in homological algebra. Berlin, Heidelberg, New",
+   "page": 40,
+   "source": "inferred",
+   "number": "20"
+  },
+  {
+   "level": 1,
+   "title": "Knapp, A. W.: Representation theory of semisimple groups. Princeton, NJ: Princeton",
+   "page": 41,
+   "source": "inferred",
+   "number": "25"
+  },
+  {
+   "level": 1,
+   "title": "Lu, J.-H., Weinstein, A.: Poisson Lie groups, dressing transformations and the Bruhat",
+   "page": 41,
+   "source": "inferred",
+   "number": "28"
+  },
+  {
+   "level": 1,
+   "title": "Mack, G., Schomerus, V.: Conformal field algebras with quantum symmetry from the theory",
+   "page": 41,
+   "source": "inferred",
+   "number": "30"
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 9140,
+   "n_words": 1449
+  },
+  {
+   "id": "sec-000-2-definitions-of-hochschild-and-cyclic-homology",
+   "number": "2",
+   "title": "Definitions of Hochschild and Cyclic Homology",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1481,
+   "n_words": 259
+  },
+  {
+   "id": "sec-001-1-associativity",
+   "number": "1",
+   "title": "Associativity:",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 62,
+   "n_words": 18
+  },
+  {
+   "id": "sec-002-3-coassociativity",
+   "number": "3",
+   "title": "Coassociativity:",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 27,
+   "n_words": 7
+  },
+  {
+   "id": "sec-003-4-counit",
+   "number": "4",
+   "title": "Counit:",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 23,
+   "n_words": 6
+  },
+  {
+   "id": "sec-004-5-connection-axiom",
+   "number": "5",
+   "title": "Connection Axiom:",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 169,
+   "n_words": 36
+  },
+  {
+   "id": "sec-005-6-antipode",
+   "number": "6",
+   "title": "Antipode:",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 512,
+   "n_words": 105
+  },
+  {
+   "id": "sec-006-3-quantum-groups",
+   "number": "3",
+   "title": "Quantum Groups",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 4040,
+   "n_words": 761
+  },
+  {
+   "id": "sec-007-2-let-g-be-connected-and-semi-simple-then-every",
+   "number": "2",
+   "title": "Let G be connected and semi-simple, then every Poisson Lie group structure on G",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 429,
+   "n_words": 73
+  },
+  {
+   "id": "sec-008-3-for-the-lie-bialgebra-g-g-there-is-a-unique-li",
+   "number": "3",
+   "title": "For the Lie bialgebra (g, g*) there is a unique Lie algebra structure on the vector",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 13,
+   "n_chars": 5488,
+   "n_words": 1045
+  },
+  {
+   "id": "sec-009-4-a-spectral-sequence",
+   "number": "4",
+   "title": "A Spectral Sequence",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 20,
+   "n_chars": 9378,
+   "n_words": 1772
+  },
+  {
+   "id": "sec-010-5-the-lie-algebra-homology",
+   "number": "5",
+   "title": "The Lie Algebra Homology",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 321,
+   "n_words": 54
+  },
+  {
+   "id": "sec-011-51-formal-functions-recall-that-we-have-the-iden",
+   "number": "5.1",
+   "title": "Formal Functions. Recall that we have the identification:",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 3343,
+   "n_words": 564
+  },
+  {
+   "id": "sec-012-52-algebraic-functions-now-we-do-not-have-a-nice",
+   "number": "5.2",
+   "title": "Algebraic Functions. Now we do not have a nice filtration for C[XC] as we",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 25,
+   "n_chars": 8655,
+   "n_words": 1500
+  },
+  {
+   "id": "sec-013-6-hochschild-and-cyclic-homology-of-quantum-grou",
+   "number": "6",
+   "title": "Hochschild and Cyclic Homology of Quantum Groups",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 4507,
+   "n_words": 761
+  },
+  {
+   "id": "sec-014-62-quantum-algebraic-groups-this-subsection-is-m",
+   "number": "6.2",
+   "title": "Quantum Algebraic Groups. This subsection is mainly devoted to the proof2",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 40,
+   "n_chars": 22139,
+   "n_words": 4012
+  },
+  {
+   "id": "sec-015-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 40,
+   "page_end": 40,
+   "n_chars": 1498,
+   "n_words": 219
+  },
+  {
+   "id": "sec-016-12-drinfeld-v-g-hamiltonian-structure-on-lie-gro",
+   "number": "12",
+   "title": "Drinfeld, V. G.: Hamiltonian structure on Lie groups, Lie bialgebras and the geometric",
+   "level": 1,
+   "page_start": 40,
+   "page_end": 40,
+   "n_chars": 590,
+   "n_words": 93
+  },
+  {
+   "id": "sec-017-16-feigin-b-l-tsygan-b-l-riemann-roch-theorem-an",
+   "number": "16",
+   "title": "Feigin, B. L., Tsygan, B. L.: Riemann-Roch theorem and Lie algebra cohomology. In:",
+   "level": 1,
+   "page_start": 40,
+   "page_end": 40,
+   "n_chars": 407,
+   "n_words": 58
+  },
+  {
+   "id": "sec-018-20-hilton-p-j-stammbach-u-a-course-in-homologica",
+   "number": "20",
+   "title": "Hilton, P. J., Stammbach, U.: A course in homological algebra. Berlin, Heidelberg, New",
+   "level": 1,
+   "page_start": 40,
+   "page_end": 41,
+   "n_chars": 575,
+   "n_words": 84
+  },
+  {
+   "id": "sec-019-25-knapp-a-w-representation-theory-of-semisimple",
+   "number": "25",
+   "title": "Knapp, A. W.: Representation theory of semisimple groups. Princeton, NJ: Princeton",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 41,
+   "n_chars": 274,
+   "n_words": 40
+  },
+  {
+   "id": "sec-020-28-lu-j-h-weinstein-a-poisson-lie-groups-dressin",
+   "number": "28",
+   "title": "Lu, J.-H., Weinstein, A.: Poisson Lie groups, dressing transformations and the Bruhat",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 41,
+   "n_chars": 127,
+   "n_words": 22
+  },
+  {
+   "id": "sec-021-30-mack-g-schomerus-v-conformal-field-algebras-w",
+   "number": "30",
+   "title": "Mack, G., Schomerus, V.: Conformal field algebras with quantum symmetry from the theory",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 42,
+   "n_chars": 2117,
+   "n_words": 316
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 1,
+  "likely_scanned": false,
+  "toc_entries": 22,
+  "sections": 23,
+  "chars_total": 75302
+ }
+}

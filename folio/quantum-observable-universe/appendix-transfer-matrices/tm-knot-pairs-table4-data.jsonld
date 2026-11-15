@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-tm-knot-pairs-table4-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:tm-knot-pairs-table4-data",
+  "kind": "table",
+  "title": "Data table 4 from tm-knot-pairs",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/tm-knot-pairs"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "tm-knot-pairs-table4-data.md",
+  "provenance": "authored"
+}

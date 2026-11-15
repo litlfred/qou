@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-sdp-regime-switch-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:sdp-regime-switch-interpretation",
+  "kind": "remark",
+  "title": "SDP regime switches: observed sign-flips and physical interpretation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-sdp-regime-switch",
+    "papers/quantum-observable-universe/blocks/prop-q-heat-kernel-peter-weyl",
+    "papers/quantum-observable-universe/blocks/prop-mass-coefficient-shadow-price",
+    "papers/quantum-observable-universe/blocks/def-q-heat-equation"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-sdp-regime-switch",
+  "tags": [
+    "sdp",
+    "regime-switch",
+    "shell-closure",
+    "isotope-scan",
+    "interpretation"
+  ],
+  "text": "sdp-regime-switch-interpretation.md",
+  "provenance": "authored"
+}

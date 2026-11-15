@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/bn/blocks/prose-sec-008",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/bn/blocks/prose-sec-008",
   "kind": "prose",
-  "title": "Topological preliminaries",
-  "pageStart": 9,
-  "pageEnd": 11,
-  "text": "../sections/sec-008-2-topological-preliminaries.md",
-  "derivedFrom": "library/bn/manifest",
-  "sourceDocument": "library/bn/manifest",
+  "title": "Factors of the Jacobian",
+  "pageStart": 36,
+  "pageEnd": 40,
+  "text": "../sections/sec-008-8-factors-of-the-jacobian.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/bn",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/bn",
   "provenance": "ingested"
 }

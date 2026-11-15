@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/thm-optimal-normal-form-valley",
+  "@type": [
+    "folio-assistant-core:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:optimal-normal-form-valley",
+  "kind": "theorem",
+  "title": "Optimal Gröbner–Shirshov normal form has exactly $A$ terms in the valley of stability",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-gs-quotient-ideals-I8-I9",
+    "papers/quantum-observable-universe/blocks/prop-shell-closure-normal-form"
+  ],
+  "tags": [
+    "groebner-basis",
+    "normal-form",
+    "optimal-basis",
+    "valley-of-stability",
+    "transfer-matrix",
+    "markov-trace",
+    "nuclear-structure"
+  ],
+  "leanRef": "qou:QOU.OptimalNF.optimal_nf_is_standard_basis",
+  "text": "optimal-normal-form-valley.md",
+  "leanSource": "optimal-normal-form-valley.lean",
+  "provenance": "authored"
+}

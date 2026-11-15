@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-observation",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:observation",
+  "kind": "definition",
+  "title": "Observation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-substrate-parameter",
+    "papers/quantum-observable-universe/blocks/def-categorical-point",
+    "papers/quantum-observable-universe/blocks/prop-fibre-functor-atlas"
+  ],
+  "tags": [
+    "observation",
+    "quantum"
+  ],
+  "leanRef": "qou:QOU.Intent",
+  "text": "observation.md",
+  "leanSource": "observation.lean",
+  "provenance": "authored"
+}

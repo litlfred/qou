@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-canonical-trace-factorises-over-chain",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:canonical-trace-factorises-over-chain",
+  "kind": "remark",
+  "title": "The canonical mass trace factorises over the chain: the bond constants are $-\\log(z+d)$ and the canonical closure carries no many-body binding",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-canonical-closure-torus-chain",
+    "papers/quantum-observable-universe/blocks/thm-markov-trace-factorization",
+    "papers/quantum-observable-universe/blocks/rem-ks-multiplicativity-via-markov"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-canonical-closure-torus-chain",
+  "cites": [
+    "references/birman1974",
+    "references/lickorish1997"
+  ],
+  "tags": [
+    "mass-theory",
+    "markov-trace",
+    "connected-sum",
+    "binding-energy",
+    "lean-formalised",
+    "draft"
+  ],
+  "leanRef": "qou:QOU.Mass.ChainTraceFactor.twoStrandTrace_eq",
+  "sorryFree": true,
+  "text": "canonical-trace-factorises-over-chain.md",
+  "provenance": "authored"
+}

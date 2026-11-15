@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-crossing-graded-mass-expansion-table-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:crossing-graded-mass-expansion-table-data",
+  "kind": "table",
+  "title": "Crossing-graded mass expansion: first three orders",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-crossing-graded-mass-expansion"
+  ],
+  "tags": [
+    "crossing-graded",
+    "mass-expansion",
+    "groebner"
+  ],
+  "text": "crossing-graded-mass-expansion-table-data.md",
+  "provenance": "authored"
+}

@@ -1,5 +1,6 @@
 {
   "computation": "qbeta-disjoint-support-factorisation",
+  "q0Anchor": "proton",
   "assertions": [
     {
       "name": "trace_is_normalised_to_one",
@@ -93,8 +94,8 @@
     "peak_A": 62
   },
   "provenance": {
-    "headSha": "e9f956591268a61f454b60f781a60f18f497f767",
+    "headSha": "eb645d81e7fe1646342513e676f6498caab4a229",
     "producer": "computations/qbeta/qbeta_disjoint_support_factorisation_probe.py",
-    "elapsed_sec": 0.298
+    "elapsed_sec": 0.289
   }
 }

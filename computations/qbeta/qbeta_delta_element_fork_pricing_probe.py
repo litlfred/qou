@@ -6,9 +6,9 @@ smaller one, and the D-frame trace baseline is priced across the two.
 
 # Ref: .beans/qou-cds1--s1-science-re-derive-the-qbeta-ck-ladder-under-d-n.md
 # Ref: .beans/qou-avt6--proved-no-typed-crossing-word-difference-has-couni.md
-# Ref: content/quantum-observable-universe/nuclear-interactions/qbeta-counit-closed-form.md
-# Ref: content/quantum-observable-universe/mass-theory/q-beta-c3-hopf-three-fold-markov.md
-# Ref: content/quantum-observable-universe/mass-theory/deuteron-binding-dressing-proton-net.md
+# Ref: folio/quantum-observable-universe/nuclear-interactions/qbeta-counit-closed-form.md
+# Ref: folio/quantum-observable-universe/mass-theory/q-beta-c3-hopf-three-fold-markov.md
+# Ref: folio/quantum-observable-universe/mass-theory/deuteron-binding-dressing-proton-net.md
 # Ref: computations/qbeta/qbeta_d_frame_trace_baseline_probe.py
 # Ref: computations/qbeta/qbeta_phase_block_resolution_probe.py
 
@@ -176,15 +176,46 @@ def _d_sym(d):
 
 
 def _crossings(g0, g1):
-    """(gen, d) list for a typed-crossing word: gen-0 factors, then gen-1."""
-    out = []
-    for c, d in g0:
+    """(gen, d) list for a typed-crossing word: gen-0 factors, then gen-1.
+
+    GROUPED, deliberately, and now said out loud (bean `qou-t29k`). Nothing in
+    this probe forces it: `_mult` multiplies `L[g] + d*ONE` in whatever order it
+    is handed, and the shared regular-representation helpers imported from
+    `qbeta_net_trace_invariance_probe` are frame-agnostic. So unlike the four
+    monotone-kernel siblings (`qou-11l4`), the frame here is a choice.
+
+    It is the right choice, MEASURED rather than inherited. Driving both fork
+    probes with the same symbols reordered into the borromean word:
+
+        qbeta_delta_bar_parity_probe            16/16 -> 15/16
+        qbeta_delta_element_fork_pricing_probe  15/15 -> 13/15
+
+    Every substantive fork conclusion is INVARIANT: the two models are
+    different elements, the corpus counit and trace closed forms fail on the
+    long model and hold on the short one, chi^(2,1) vanishes on the short model
+    only, the phase identity fails on the long model, the bar-parity split, the
+    fork surviving descent, neither element in the two-row quotient. **The
+    Delta fork does not depend on the intra-nucleon ordering.**
+
+    What is frame-bound is narrow and identified. Two `calibration_*` legs
+    check against COMMITTED grouped-era witnesses and published values, so they
+    are frame-bound by construction -- the same reason
+    `qbeta_delta_vs_deltaTbeta_settled_probe` chose grouped deliberately
+    (2026-09-06, `qou-y2o7`). And one real content difference, `qou-epmq`:
+    `Delta_L`'s `e_minus` coordinate is 0 grouped but
+    `-(q^2-1)^2 Phi_12(q)^2 / (2 q^6)` canonical, so `net` and `tr_M(z=1)` stop
+    coinciding on the long model.
+
+    Switching to canonical would therefore break the calibration without
+    changing a single finding. Named via `grouped_word_from_chains` so the
+    frame is visible at the site rather than only in a bean.
+    """
+    from pyhecke.atom import grouped_word_from_chains
+    for c, _d in list(g0) + list(g1):
         assert c == 1, "typed crossing with c != 1 is outside this reading"
-        out.append((0, _d_sym(d)))
-    for c, d in g1:
-        assert c == 1, "typed crossing with c != 1 is outside this reading"
-        out.append((1, _d_sym(d)))
-    return out
+    return [(off, d) for _c, d, off in grouped_word_from_chains(
+        [(c, _d_sym(d)) for c, d in g0],
+        [(c, _d_sym(d)) for c, d in g1])]
 
 
 def _mult(word_ops):

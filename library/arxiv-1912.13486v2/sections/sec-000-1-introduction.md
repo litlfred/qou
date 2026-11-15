@@ -8,668 +8,156 @@ pages: 2-9
 source_pdf: 1912.13486v2.pdf
 source_sha256: 9a8dbc1a143f7448
 doc_brief: "Index for a Model of 3d-3d Correspondence for Plumbed 3-Manifolds — We consider theS2×qS1 supersymmetric index of a 3dN = 2 theory T [M3] when M3 is a plumbed 3-manifold."
+text_source: latex
+latex_prose_ratio: 0.913
+latex_coverage_ratio: 0.941
 ---
-2 Supersymmetric index on S2×qS1 and factorization 2
-2.1 Supersymmetric index, factorization, and D2×qS1 partition function 2
-2.2 Analysis on homological block and index of lens space theory 8
-3 Supersymmetric index of a 3d N = 2 theory on S2×q S1 for plumbed
-3-manifolds 9
-3.1 Engineering a 3d N = 2 theory T [M3] from homological blocks 10
-3.2 Index for an eﬀective description of T [M3] 13
-1 Introduction
-The categoriﬁcation of the Witten-Reshetikhin-Turaev (WRT) invariants for closed 3-
-manifolds has not been known. This is because ﬁrstly the integrality for the WRT in-
-variants was not obvious. However, recently, a conjecture in [1, 2] states that the WRT
-invariant can be expressed in a speciﬁc way in terms of the q-series with integer powers
-and integer coeﬃcients, which would allow the categoriﬁcation. These q-series invariants
-were called the homological block in [1, 2]. 1
-Via the 3d-3d correspondence, the homological block is expected to correspond to the
-D2×qS1 partition function or the half-index of the corresponding 3d N = 2 theory T [M3]
-with an appropriate boundary condition,
-ˆZb(q) =
-∑
-i,j
-(−1)iqjdimH(b)
-i,j (1.1)
-whereH(b)
-i,j is the Hilbert space of BPS states of T [M3] on D2× R1 and i,j denote the
-charges under certain linear combinations of the U(1)R symmetry and the U(1) rotational
-symmetry on D2. b denotes the boundary condition, which is given by the abelian ﬂat
-connections on M3. Therefore, it is expected that the desired homology for the WRT in-
-variants is given by the Hilbert space of BPS states in T [M3] on D2× R1. Some examples
-of T [M3] including the 3-sphere, the lens spaces, and O(−p)→ Σg have been discussed in
-[2].
-The homological block for plumbed 3-manifolds with G = SU (2) was obtained in
-[2]. A plumbed 3-manifold is represented by a plumbing graph that is made of vertices
-and edges where an integer is assigned to each vertex. It is a large class of 3-manifolds,
-1For its properties and developments, we refer to [3–9]
-– 1 –
-which includes Seifert manifolds. Therefore, it would be interesting to consider T [M3] for
-plumbed 3-manifolds.
-In this paper, we don’t give a complete answer for it. Rather, via an experimental
-approach, we engineer an eﬀective description of T [M3] for plumbed 3-manifolds M3 to
-calculate the S2×q S1 supersymmetric index. Such an eﬀective description of T [M3] is
-useful for the calculation of the index, but it has limitations for being a complete descrip-
-tion of the theory as will be discussed in section 3. Nevertheless, we check that the index
-without reﬁnement is invariant under the 3d Kirby moves, so the analysis here could shed
-some light on a complete description of T [M3].
-In section 2, we discuss some aspects of the S2×q S1 supersymmetric index and its
-factorization. Also, we study the case of the lens space in detail, which is a well known
-example, for extrapolation to the case of plumbed 3-manifolds in section 3. In section 3,
-from the expression of homological blocks for plumbed 3-manifolds, we engineer an eﬀec-
-tive description of a 3d N = 2 theory T [M3] and consider its S2×qS1 index. We discuss
-the invariance of the index under the 3d Kirby moves. We also give some remarks on the
-S2×qS1 topologically twisted index.
-Note added : Near completion of the main part of this work, a paper [10] on a similar
-topic appeared, but the approach, the quantities under interest, and the theory discussed
-in this paper are diﬀerent from it.
-2 Supersymmetric index on S2×q S1 and factorization
-We discuss the index and its factorization that are relevant to later discussion. We also re-
-view the lens space theory, which is a well known example in the context of the homological
-block and the index.
-2.1 Supersymmetric index, factorization, and D2×qS1 partition function
-We begin with a brief review on the formula for the index of the 3d N = 2 theory with a
-Lagrangian description at the UV.
-Supersymmetric index on S2×qS1
-The supersymmetric index on S2×qS1 with fugacities for ﬂavor symmetries turned on was
-obtained in [11] based on [12, 13]. The 1-loop contributions from the vector multiplet and
-the chiral mutiplet are
-Ivect(z =eih,m,q ) =
-∏
-α∈∆G
-q− 1
-4|α(s)|(1−eiα(h)q
-1
-2|α(s)|) (2.1)
-Ichiral(z =eih,m,q ) =
-∏
-ρ∈RΦ
-(
-q
-1
-2 (1−R(Φ))∏
-j
-e−iρ(h)∏
-a
-t−fa(Φ)
-a
-) 1
-2|ρ(m)| (e−iρ(h)t−fa(Φ)
-a q
-1
-2|ρ(m)|+1− 1
-2R(Φ);q)∞
-eiρ(h)tfa(Φ)
-a q
-1
-2|ρ(m)|+ 1
-2R(Φ);q)∞
-(2.2)
-– 2 –
-where zj are the Wilson lines, mj are the magnetic ﬂuxes, RΦ is the representation of a
-chiral multiplet Φ under the gauge groupG,ta’s are the fugacities for the global symmetries,
-fa(Φ) is the charge of a chiral multiplet Φ under the global symmetries, and R(Φ) is the
-R-charge of Φ. The contribution from the Chern-Simons (CS) term for G =U(N) with a
-levelk is
-ICS(z =eih,m ) =eik ∑
-jhjmj =
-N∏
-j=1
-zkmj
-j . (2.3)
-The index is given by
-IS1×S2 =
-∑
-m
-1
-|Wm|
-∮
-TrankG
-dz
-2πizIvectIchiralsICS (2.4)
-whereWm is a symmetrization factor from the Weyl group of the gauge group that is
-unbroken in the presence of the magnetic ﬂux m, which is given by∏
-l rank(Gl)! when the
-gauge group is broken to ⊗lGl.
-In particular, when the gauge group is G =SU (N), the contributions from the vector
-multiplet and the adjoint chiral multiplet charged +1 under the global symmetry U(1)t
-with R-chargeR are given by
-Ivect(z,m,q ) =
-∏
-1≤i⁄=j≤N
-q− 1
-4|mi−mj|(1−ziz−1
-j q
-1
-2|mi−mj|), (2.5)
-Iadj(z,m,t,R,q ) = (t−1q1−R
-2 ;q)N−1
-∞
-(tq
-R
-2 ;q)N−1∞
-∏
-1≤i⁄=j≤N
-(−q
-1
-2 (1−R)t−1)
-1
-2|mi−mj| (z−1
-i zjt−1q
-1
-2|mi−mj|+1−R
-2 ;q)∞
-(ziz−1
-j tq
-1
-2|mi−mj|+R
-2 ;q)∞
-,
-(2.6)
-respectively, where∏N
-j=1zj = 1 and∑N
-j=1mj = 0 are imposed. 2 Also, the q-Pochhammer
-symbol,
-(x;q)∞ =
-∞∏
-n=0
-(1−xqn), (2.7)
-is used. We will consider only G =SU (N), in particular, G =SU (2) in this paper. 3
-Factorization of index
-The index can be factorized as a fusion of two D2×qS1 partition functions [15, 16]. 4 For
-the vector multiplet V ,
-Ivect =
-∏
-i⁄=j
-q− 1
-4|mi−mj|(1−ziz−1
-j q
-1
-2|mi−mj|) (2.8)
-=
-∏
-1≤i<j≤N
-(s1/2
-i s−1/2
-j −s−1/2
-i s1/2
-j )(˜s1/2
-i ˜s−1/2
-j − ˜s−1/2
-i ˜s1/2
-j ) =:
-∏
-1≤i<j≤N
-‖(s1/2
-i s−1/2
-j −s−1/2
-i s1/2
-j )‖2
-id
-(2.9)
-2The expression for Iadj in (2.6) comes from [14, 15] where there is an additional phase factor∏
-1≤i⁄=j≤N(−1)
-1
-2|mi−mj| in (2.6) compared to the expression in [11, 13].
-3If we include a factor ∏
-1≤i⁄=j≤N(−1)
-1
-2|mi−mj| in (2.5) or include it in (2.6), the analysis on the G =
-SU (2) case in this paper where such a factor is 1 would be generalized to G =SU (N) or U(N) cases.
-4See also [17] for adjoint chiral multiplets.
-– 3 –
-where‖·‖ id denotes the identity fusion [15] of half- and anti-half-index with sj =zjqmj/2
-and ˜sj =z−1
-j qmj/2.
-For the adjoint chiral multiplet Φ±
-R charged±1 under the global symmetry U(1)t with
-R-chargeR,
-I±,R
-adj = (t∓q1−R
-2 ;q)N−1
-∞
-(t±q
-R
-2 ;q)N−1∞
-∏
-1≤i⁄=j≤N
-(z−1
-i zjt∓q− 1
-2 (mi−mj)+1−R
-2 ;q)∞
-(ziz−1
-j t±q− 1
-2 (mi−mj)+R
-2 ;q)∞
-(z−1/2
-i z1/2
-j )−(mi−mj)
-(2.10)
-=‖(t∓q1−R
-2 ;q)∞‖N−1
-id
-∏
-1≤i⁄=j≤N
-‖‖‖‖
-(s−1
-i sjv∓q1−R
-2 ;q)∞
-θ(−q1/2s−1
-i sj;q)1/2
-‖‖‖‖
-2
-id
-(2.11)
-where ˜q = q−1, v = tqn/2, and ˜v = t−1qn/2. We also set the magnetic ﬂux for U(1)t
-symmetry to zero, n = 0, so v =t and ˜v =t−1. Here,
-θ(x;q) = (−q1/2x;q)∞(−q1/2x−1;q)∞ (2.12)
-is the Jacobi theta function. In (2.11), we may also choose ∏
-1≤i⁄=j≤Nθ((−q1/2)bs−1
-i sjvc;q)
-in (2.11) with arbitrary b,c∈ Z and zero ﬂux n = 0 for U(1)t, which gives the same index
-after the identity fusion. Or, since the square root to the Jacobi theta function is rather
-unusual, we may also replace the theta function part with other Jacobi theta functions
-such as∏
-1≤i<j≤Nθ(s−1
-i sj;q)−1, which gives the same index upon the identity fusion.
-The index for the adjoint chiral multiplet can also be written in another way,
-I±,R
-adj = (t∓q1−R
-2 ;q)N−1
-∞
-(t±q
-R
-2 ;q)N−1∞
-∏
-1≤i⁄=j≤N
-(z−1
-i zjt∓q
-1
-2 (mi−mj)+1−R
-2 ;q)∞
-(ziz−1
-j t±q
-1
-2 (mi−mj)+R
-2 ;q)∞
-(z−1/2
-i z1/2
-j )(mi−mj) (2.13)
-= 1
-‖(v±q
-R
-2 ;q)∞‖N−1
-id
-∏
-1≤i⁄=j≤N
-‖‖‖‖
-θ(−q1/2s−1
-i sj;q)1/2
-(sis−1
-j v±q
-R
-2 ;q)∞
-‖‖‖‖
-2
-id
-. (2.14)
-We note that whent is turned oﬀ,t = 1, the contribution to the index from the adjoint
-chiral multiplets Φ±
-R with R = 2 and R = 0 become
-I±,R=2
-adj
-⏐⏐⏐
-t→1
-= (t∓;q)N−1
-∞
-(t±q;q)N−1∞
-⏐⏐⏐⏐
-t→1
-∏
-1≤i<j≤N
-(−1)mi−mj‖(s1/2
-i s−1/2
-j −s−1/2
-i s1/2
-j )‖2
-id, (2.15)
-I±,R=0
-adj
-⏐⏐⏐
-t→1
-= (t∓q;q)N−1
-∞
-(t±;q)N−1∞
-⏐⏐⏐⏐
-t→1
-∏
-1≤i<j≤N
-(−1)mi−mj‖(s1/2
-i s−1/2
-j −s−1/2
-i s1/2
-j )‖−2
-id , (2.16)
-and they need to be regularized. As in [2, 18], we may take t =qϵ and multiply an overall
-factor ϵ−N+1 and ϵN−1 to (2.15) and (2.16), respectively. Then for the case of R = 2,
-upon ϵ→ 0, (t∓;q)N−1
-∞
-(t±q;q)N−1
-∞
-ϵ−N+1
-⏐⏐⏐
-t→1
-becomes (± logq)N−1. Similarly, (t∓q;q)N−1
-∞
-(t±;q)N−1
-∞
-ϵN−1
-⏐⏐⏐
-t→1
-→
-(∓ logq)−N+1 for the case of R = 0. Or we may rescale (2.15) and (2.16) by multiplying
-– 4 –
-(t±q;q)N−1
-∞
-(t∓;q)N−1
-∞
-and (t±;q)N−1
-∞
-(t∓q;q)N−1
-∞
-, respectively. 5 In this paper, when t = 1 we will consider the
-regularized index for the adjoint chiral multiplets,
-I±,R=2
-adj
-⏐⏐⏐
-t→1
-≃
-∏
-1≤i<j≤N
-(−1)mi−mj‖(s1/2
-i s−1/2
-j −s−1/2
-i s1/2
-j )‖2
-id, (2.17)
-I±,R=0
-adj
-⏐⏐⏐
-t→1
-≃
-∏
-1≤i<j≤N
-(−1)mi−mj‖(s1/2
-i s−1/2
-j −s−1/2
-i s1/2
-j )‖−2
-id , (2.18)
-up to an overall factor, (± logq)N−1 and (∓ logq)−N+1, respectively. The contribution from
-the adjoint chiral multiplet Φ 0
-R=0 with R = 0 and U(1)t charge 0 is given by (2.18) after
-the regularization or the rescaling of t→ 1 limit (2.16). In particular, when G = SU (2),
-since m1 =−m2, (2.17) and (2.18) with R = 2 and R = 0, respectively, are equal and are
-inverse precisely to Ivect in (2.9).
-The D2×q S1 partition function with given N = (0, 2) boundary conditions on 3d
-N = 2 multiplets and with boundary degrees of freedom was studied in [19–22]. The
-contribution from the 3d bulk vector multiplet forG =SU (N) with the Neumann boundary
-condition [21] is given by
-∏
-1≤i⁄=j≤N
-e
-1
-4ℏ (logsis−1
-j )2
-(sis−1
-j ;q)∞ =
-∏
-1≤i<j≤N
-e
-1
-2ℏ (logsis−1
-j )2
-(sis−1
-j ;q)∞(s−1
-i si;q)∞ (2.19)
-where q =eℏ. We note that the asymptotic expansion of the Jacobi theta function termi-
-nates at ℏ1
-θ(x;q) = (−q1/2x;q)∞(−q1/2x−1;q)∞≃C−1e− 1
-2ℏ (logx)2
-as ℏ→ 0 (2.20)
-whereC =e
-π2
-6ℏ− ℏ
-24 . Since we take |q|< 1 (i.e. q⁄= 1) in the calculation of the homological
-block or the index, we can use the approximation (2.20) in (2.19). Or such replacement of
-exponential term in (2.19) by the theta function can be regarded as the elliptic completion
-of a partition function of quantum mechanics on R+ ofD2×S1≃ R+×T 2 [15]. Then, the
-exponential term in (2.19) can be expressed as
-∏
-i<j
-e
-1
-2ℏ (logsis−1
-j )2
-=
-∏
-i<j
-e
-1
-4ℏ (logsis−1
-j )2+ 1
-2ℏ (logsis−1
-j )(πi+ℏ/2)e
-1
-4ℏ (logsis−1
-j )2− 1
-2ℏ (logsis−1
-j )(πi+ℏ/2)
-≃
-∏
-i<j
-θ(−q1/2sis−1
-j ;q)−1/2θ(−q−1/2sis−1
-j ;q)−1/2
-(2.21)
-up to an irrelevant overall constant factor and the theta function ambiguity. 6 Therefore,
-5This could also be regarded as introducing extra N−1 free chiral multiplets withU(1)R×U(1)t charge
-(0,∓1) and (2,∓1) by hand, respectively.
-6Here, what we mean by theta function ambiguity is that there can be various theta functions that gives
-the same contribution to the index upon the identity fusion. For example, contributions from θ(s2;q) and
-θ(s;q)4 to the index are the same. But at the level of the half-index, only speciﬁc types of expressions of
-the Jacobi theta function arise from the N = (0, 2) boundary degrees of freedom, so not all Jacobi theta
-functions can have a proper interpretation in the 3d-2d system onD2×qS1 as contributions from boundary
-N = (0, 2) chiral or Fermi multiplets.
-– 5 –
-in the region|q|< 1, (2.19) can be expressed as
-∏
-1≤i<j≤N
-e
-1
-2ℏ (logsis−1
-j )2
-(sis−1
-j ;q)∞(s−1
-i sj;q)∞≃
-∏
-1≤i<j≤N
-(sis−1
-j ;q)∞(s−1
-i sj;q)∞
-θ(−q1/2sis−1
-j ;q)1/2θ(−q−1/2sis−1
-j ;q)1/2
-(2.22)
-=
-∏
-1≤i<j≤N
-( θ(−q1/2sis−1
-j ;q)
-θ(−q−1/2sis−1
-j ;q)
-)1/2
-(1−sis−1
-j ) =
-∏
-1≤i<j≤N
-q−1/4(s1/2
-i s−1/2
-j −s−1/2
-i s1/2
-j )
-(2.23)
-and this agrees with the factorization in (2.9) up to an irrelevant overall factor q−1/4. We
-can also see that the original expression (2.19) and (2.23) give the same index∏
-i<j‖(s1/2
-i s−1/2
-j −
-s−1/2
-i s1/2
-j )‖2
-id upon the identity fusion.
-Similarly, the contribution from the 3d bulk adjoint chiral multiplet Φ ±
-R,N and Φ±
-R,D
-with the Neumann or the Dirichlet boundary condition 7 [21] are given by, respectively,
-Z±,(N)
-adj (sj,v,R,q ) =
-∏
-1≤i,j≤N
-e− 1
-4ℏ
-(
-logsi/sj+( ℏ
-2 +πi)(R−1)+logv±1
-)2
-+ ℏ
-48 (sis−1
-j v±1(−q1/2)R;q)−1
-∞ ,
-(2.24)
-Z±,(D)
-adj (sj,v,R,q ) =
-∏
-1≤i,j≤N
-e
-1
-4ℏ
-(
-logsi/sj+( ℏ
-2 +πi)(R−1)+logv±1
-)2
-− ℏ
-48 (s−1
-i sjv∓1(−q1/2)2−R;q)∞.
-(2.25)
-As discussed above, the exponential factor in (2.24) and (2.25) can be approximated to
-the exact asymptotic expansion of, for example, ∏
-1≤i,j≤Nθ((−q1/2)1−Rs−1
-i sjv−1;q)±1/2 or∏
-1≤i,j≤Nθ((−q1/2)#s−1
-i sj)±1/2×θ((−q1/2)1−Rv−1;q)±1/2 up to irrelevant constant factors.
-The exponential factors and the Jacobi theta function in the contributions to D2×qS1
-partition function above can be regarded as the factors that cancel out the (mixed) CS
-contributions that the q-Pochhammer symbols have. Putting diﬀerently, each contribu-
-tions (2.19), (2.24), and (2.25) above are regarded as the contributions purely from the
-supermultiplet without any CS levels.
-Summarizing the calculations above, there are two equivalent expressions for each
-contribution from vector multiplets and adjoint chiral multiplets in the perspective of the
-index. When G =SU (2), for the vector multiplet with the Neumann boundary condition,
-we had
-e
-1
-2ℏ (logs2)2
-(s−2;q)∞(s2;q)∞ (2.26)
-from the localization (2.19), and
-s−s−1 (2.27)
-7In this paper, we work with Tr(−1)R··· instead of Tr(−1)F··· . They are equivalent when R-charges
-are integer, which is the case in our example. We replace −q1/2 with q1/2 if we want to use Tr(−1)F [15].
-– 6 –
-from the factorization of the index (2.9) and also from the approximation to (2.26) up
-to an irrelevant overall factor and the theta function ambiguity. They all give the same
-contribution to the index, which is (2.8). 8
-Similarly, for the adjoint chiral multiplets, Φ +
-R=2,N, Φ−
-R=0,D, and Φ 0
-R=0,N, the contri-
-butions to the half-index are, respectively,
-e− 1
-2ℏ (logs2)2(
-(s−2tq;q)∞(s2tq;q)∞(tq;q)∞
-)−1, e
-1
-2ℏ (logs2)2
-(s−2tq;q)∞(s2tq;q)∞(tq;q)∞, e− 1
-2ℏ (logs2)2(
-(s−2;q)∞(s2;q)∞
-)−1
-(2.28)
-from the localization where we ignore the background CS contributions, and
-θ(−q1/2s−2;q)1/2θ(−q1/2s2;q)1/2
-(s−2tq;q)∞(s2tq;q)∞(tq;q)∞
-, (s−2tq;q)∞(s2tq;q)∞(tq;q)∞
-θ(−q1/2s−2;q)1/2θ(−q1/2s2;q)1/2, θ(−q1/2s−2;q)1/2θ(−q1/2s2;q)1/2
-(s−2;q)∞(s2;q)∞
-(2.29)
-from the factorization of the index (2.11) and (2.14) and also from the approximation to
-(2.28) up to theta function ambiguity and an irrelevant overall factor. 9 They all give the
-same contributions to the index, (2.10) or (2.13). In particular, when t = 1, we have
-e− 1
-2ℏ (logs2)2(
-(s−2q;q)∞(s2q;q)∞
-)−1, e
-1
-2ℏ (logs2)2
-(s−2q;q)∞(s2q;q)∞, e − 1
-2ℏ (logs2)2(
-(s−2;q)∞(s2;q)∞
-)−1
-(2.30)
-from (2.28) and
-s−s−1, (s−s−1)−1, (s−s−1)−1, (2.31)
-from (2.29), respectively, up to an overall factor.
-Homological block and D2×qS1 partition function
-It was discussed in [1, 2] that the Witten-Reshetikhin-Turaev (WRT) invariants for closed 3-
-manifolds can be expressed in terms of q-series with integer powers and integer coeﬃcients,
-which was called the homological block. Interestingly, the homological blocks are labeled
-by abelian ﬂat connections, i.e. it can be regarded as the contribution from abelian ﬂat
-connections to the partition function of analytically continued Chern-Simons theory whose
-gauge group is complex, GC, and at the same time it contains all the information of
-the contribution from non-abelian ﬂat connections [3]. In the perspective of the 3d-3d
-correspondence, this means that the homological block ofM3 which is labeled by an abelian
-ﬂat connection corresponds to the D2×q S1 partition function of the corresponding 3d
-N = 2 theory with a boundary condition given by the abelian ﬂat connection [23, 24].
-8For explicitness, the identity fusion for e
-1
-2ℏ (logs2)2
-is given by e
-1
-2ℏ (logs2)2
-e− 1
-2ℏ (log ˜s2)2
-.
-9Also from s−1θ(−q1/2s−2;q) instead of θ(−q1/2s−2;q)1/2θ(−q1/2s2;q)1/2, we have the same desired
-result (s−s−1)±1 upon t = 1 limit. We could choose a diﬀerent Jacobi theta functions, e.g. θ(s−2;q),
-which gives the same contribution to the index, but with this expression, we don’t have ( s−s−1)±1 when
-t = 1.
-– 7 –
-Since the homological block is the D2×qS1 partition function with a boundary condi-
-tion, the index of T [M3] onS2×qS1 is also expected to be expressed as the identity fusion
-of homological block and anti-homological block,
-I =
-∑
-m
-1
-|Wm|
-∮
-|z|=1
-dz
-2πiz
-‖‖Integrand[ZD2×qS1(q;s,··· )]
-‖‖2
-id (2.32)
-where Integrand[ZD2×qS1(q;s,··· )] denotes the integrand of the integral expression of ho-
-mological blocks.
-In the next section, we discuss how the discussion above ﬁts in the case of the lens
-space.
+The categorification of the Witten-Reshetikhin-Turaev (WRT) invariants for closed 3-manifolds has not been known. This is because firstly the integrality for the WRT invariants was not obvious. However, recently, a conjecture in [@Gukov-Putrov-Vafa; @Gukov-Pei-Putrov-Vafa] states that the WRT invariant can be expressed in a specific way in terms of the $q$-series with integer powers and integer coefficients, which would allow the categorification. These $q$-series invariants were called the homological block in [@Gukov-Putrov-Vafa; @Gukov-Pei-Putrov-Vafa].[^1]
+
+Via the 3d-3d correspondence, the homological block is expected to correspond to the $D^2 \times_q S^1$ partition function or the half-index of the corresponding 3d $\mathcal{N}=2$ theory $T[M_3]$ with an appropriate boundary condition, $$\begin{aligned}
+\widehat{Z}_b(q) = \sum_{i,j} (-1)^i q^j \text{dim} \mathcal{H}^{(b)}_{i,j}
+\end{aligned}$$ where $\mathcal{H}^{(b)}_{i,j}$ is the Hilbert space of BPS states of $T[M_3]$ on $D^2 \times \mathbb{R}^1$ and $i, j$ denote the charges under certain linear combinations of the $U(1)_R$ symmetry and the $U(1)$ rotational symmetry on $D^2$. $b$ denotes the boundary condition, which is given by the abelian flat connections on $M_3$. Therefore, it is expected that the desired homology for the WRT invariants is given by the Hilbert space of BPS states in $T[M_3]$ on $D^2 \times \mathbb{R}^1$. Some examples of $T[M_3]$ including the 3-sphere, the lens spaces, and $\mathcal{O}(-p)\rightarrow \Sigma_g$ have been discussed in [@Gukov-Pei-Putrov-Vafa].\
+The homological block for plumbed 3-manifolds with $G=SU(2)$ was obtained in [@Gukov-Pei-Putrov-Vafa]. A plumbed 3-manifold is represented by a plumbing graph that is made of vertices and edges where an integer is assigned to each vertex. It is a large class of 3-manifolds, which includes Seifert manifolds. Therefore, it would be interesting to consider $T[M_3]$ for plumbed 3-manifolds.
+
+In this paper, we don't give a complete answer for it. Rather, via an experimental approach, we engineer an effective description of $T[M_3]$ for plumbed 3-manifolds $M_3$ to calculate the $S^2 \times_q S^1$ supersymmetric index. Such an effective description of $T[M_3]$ is useful for the calculation of the index, but it has limitations for being a complete description of the theory as will be discussed in section 3. Nevertheless, we check that the index without refinement is invariant under the 3d Kirby moves, so the analysis here could shed some light on a complete description of $T[M_3]$.\
+In section 2, we discuss some aspects of the $S^2 \times_q S^1$ supersymmetric index and its factorization. Also, we study the case of the lens space in detail, which is a well known example, for extrapolation to the case of plumbed 3-manifolds in section 3. In section 3, from the expression of homological blocks for plumbed 3-manifolds, we engineer an effective description of a 3d $\mathcal{N}=2$ theory $T[M_3]$ and consider its $S^2 \times_q S^1$ index. We discuss the invariance of the index under the 3d Kirby moves. We also give some remarks on the $S^2 \times_q S^1$ topologically twisted index.\
+\
+*Note added*: Near completion of the main part of this work, a paper [@Eckhard:2019jgg] on a similar topic appeared, but the approach, the quantities under interest, and the theory discussed in this paper are different from it.
+
+# Supersymmetric index on $S^2 \times_q S^1$ and factorization
+
+We discuss the index and its factorization that are relevant to later discussion. We also review the lens space theory, which is a well known example in the context of the homological block and the index.
+
+## Supersymmetric index, factorization, and $D^2 \times_q S^1$ partition function {#ssec:factorization}
+
+We begin with a brief review on the formula for the index of the 3d $\mathcal{N}=2$ theory with a Lagrangian description at the UV.
+
+### Supersymmetric index on $S^2 \times_q S^1$
+
+The supersymmetric index on $S^2 \times_q S^1$ with fugacities for flavor symmetries turned on was obtained in [@Kapustin-Willett] based on [@KimS; @Imamura-Yokoyama]. The 1-loop contributions from the vector multiplet and the chiral mutiplet are $$\begin{aligned}
+I_{\text{vect}} (z =e^{i h }, m , q) &= \prod_{\alpha \in \Delta_G } q^{-\frac{1}{4} | \alpha(s) |} (1- e^{i \alpha(h)} q^{\frac{1}{2}|\alpha(s)|}) \\
+I_{\text{chiral}} (z =e^{i h }, m , q) &= \prod_{\rho \in \mathcal{R}_{\Phi}} \big( q^{\frac{1}{2}(1-R(\Phi))} \prod_{j} e^{-i\rho(h)} \prod_{a} t_a^{-f_a(\Phi)} \big)^{\frac{1}{2}| \rho(m) | } 
+\frac{(e^{-i\rho(h)} t_a^{-f_a(\Phi)} q^{\frac{1}{2} |\rho(m)| +1 -\frac{1}{2} R(\Phi)} ; q)_\infty}{e^{i\rho(h)} t_a^{f_a(\Phi)} q^{\frac{1}{2} |\rho(m)| + \frac{1}{2} R(\Phi)} ; q)_\infty}
+\end{aligned}$$ where $z_j$ are the Wilson lines, $m_j$ are the magnetic fluxes, $\mathcal{R}_\Phi$ is the representation of a chiral multiplet $\Phi$ under the gauge group $G$, $t_a$'s are the fugacities for the global symmetries, $f_a(\Phi)$ is the charge of a chiral multiplet $\Phi$ under the global symmetries, and $R(\Phi)$ is the $R$-charge of $\Phi$. The contribution from the Chern-Simons (CS) term for $G=U(N)$ with a level $k$ is $$\begin{aligned}
+I_{\text{CS}}(z=e^{ih}, m) = e^{i k \sum_{j} h_j m_j} = \prod^{N}_{j=1} z_j^{k m_j} \,  .
+\end{aligned}$$ The index is given by $$\begin{aligned}
+\mathcal{I}_{S^1 \times S^2} = \sum_{\mathbf{m}} \frac{1}{|\mathcal{W}_{\mathbf{m}}|} \oint_{\mathbb{T}^{\text{rank} G}} \frac{d\mathbf{z}}{2 \pi i \mathbf{z}} \, I_{\text{vect}} \, I_{\text{chirals}} \, I_{\text{CS}}
+\end{aligned}$$ where $\mathcal{W}_{\mathbf{m}}$ is a symmetrization factor from the Weyl group of the gauge group that is unbroken in the presence of the magnetic flux $\mathbf{m}$, which is given by $\prod_{l} \text{rank}(G_l)!$ when the gauge group is broken to $\otimes_{l} G_l$.
+
+In particular, when the gauge group is $G=SU(N)$, the contributions from the vector multiplet and the adjoint chiral multiplet charged $+1$ under the global symmetry $U(1)_t$ with $R$-charge $R$ are given by $$\begin{aligned}
+I_{\text{vect}} (z,m,q) &= \prod_{1\leq i \neq j \leq N} q^{-\frac{1}{4} |m_i-m_j|} (1- z_i z_j^{-1} q^{\frac{1}{2} |m_i-m_j|}) \,  ,   \label{sci-vect}    \\
+I_{\text{adj}} (z,m,t, R, q) &=  \frac{( t^{-1} q^{ 1 -\frac{R}{2} };q)^{N-1}_\infty}{( t  q^{\frac{R}{2} };q)_\infty^{N-1}} 
+\prod_{1 \leq i \neq j \leq N} (-q^{\frac{1}{2} (1-R)} t^{-1})^{\frac{1}{2} |m_i-m_j|} \frac{(z_i^{-1} z_j t^{-1} q^{\frac{1}{2} |m_i-m_j| +1 -\frac{R}{2} };q)_\infty}{(z_i z_j^{-1} t  q^{\frac{1}{2} |m_i-m_j| +\frac{R}{2} };q)_\infty} \,  ,   \label{sci-adj}
+\end{aligned}$$ respectively, where $\prod_{j=1}^N z_j=1$ and $\sum_{j=1}^N m_j = 0$ are imposed.[^2] Also, the $q$-Pochhammer symbol, $$\begin{aligned}
+(x;q)_\infty = \prod_{n=0}^{\infty} (1-xq^n)    \,  ,
+\end{aligned}$$ is used. We will consider only $G=SU(N)$, in particular, $G=SU(2)$ in this paper.[^3]
+
+### Factorization of index
+
+The index can be factorized as a fusion of two $D^2 \times_q S^1$ partition functions [@Beem-Dimofte-Pasquetti; @Pasquetti-3d].[^4] For the vector multiplet $V$, $$\begin{aligned}
+I_{\text{vect}} &= \prod_{i \neq j} q^{-\frac{1}{4}|m_i - m_j|} (1-z_i z_j^{-1} q^{\frac{1}{2} |m_i-m_j| })     \label{vect-ind}    \\
+&= \prod_{1 \leq i <j \leq N} (s_i^{1/2} s_j^{-1/2} -s_i^{-1/2} s_j^{1/2}) (\tilde{s}_i^{1/2} \tilde{s}_j^{-1/2} -\tilde{s}_i^{-1/2} \tilde{s}_j^{1/2})
+=: \prod_{1 \leq i <j \leq N} \| (s_i^{1/2} s_j^{-1/2} -s_i^{-1/2} s_j^{1/2}) \|_{\text{id}}^2  \label{vect-factor}
+\end{aligned}$$ where $\| \cdot \|_{\text{id}}$ denotes the identity fusion [@Beem-Dimofte-Pasquetti] of half- and anti-half-index with $s_j = z_j q^{m_j/2}$ and $\tilde{s}_j = z_j^{-1} q^{m_j/2}$.\
+For the adjoint chiral multiplet $\Phi_{R}^{\pm}$ charged $\pm1$ under the global symmetry $U(1)_t$ with $R$-charge $R$, $$\begin{aligned}
+I^{\pm,R}_{\text{adj}} &= \frac{( t^{\mp} q^{ 1 -\frac{R}{2} };q)^{N-1}_\infty}{( t^{\pm}  q^{\frac{R}{2} };q)_\infty^{N-1}}  
+\prod_{1\leq i \neq j \leq N} \frac{(z_i^{-1} z_j t^{\mp} q^{-\frac{1}{2} (m_i-m_j) +1 -\frac{R}{2} };q)_\infty}{(z_i z_j^{-1} t^{\pm}  q^{-\frac{1}{2} (m_i-m_j) +\frac{R}{2} };q)_\infty} (z_i^{-1/2} z_j^{1/2})^{-(m_i-m_j)}     \label{adj-factor-D}    \\
+&= \|( t^{\mp} q^{ 1 -\frac{R}{2} };q)_\infty \|_{\text{id}}^{N-1}
+\prod_{1\leq i \neq j \leq N} \bigg\| \frac{(s_i^{-1} s_j v^{\mp} q^{1 -\frac{R}{2} };q)_\infty }{\theta(-q^{1/2} s_i^{-1} s_j;q)^{1/2}} \bigg\|_{\text{id}}^2  \label{adj-block-D}
+\end{aligned}$$ where $\tilde{q}=q^{-1}$, $v=t q^{n/2}$, and $\tilde{v}=t^{-1} q^{n/2}$. We also set the magnetic flux for $U(1)_t$ symmetry to zero, $n=0$, so $v=t$ and $\tilde{v}=t^{-1}$. Here, $$\begin{aligned}
+\theta(x;q) = (-q^{1/2} x ;q)_\infty (-q^{1/2} x^{-1};q)_\infty
+\end{aligned}$$ is the Jacobi theta function. In [\[adj-block-D\]](#adj-block-D){reference-type="eqref" reference="adj-block-D"}, we may also choose $\prod_{1 \leq i \neq j \leq N} \theta((-q^{1/2})^b s_i^{-1} s_j v^{c} ;q)$ in [\[adj-block-D\]](#adj-block-D){reference-type="eqref" reference="adj-block-D"} with arbitrary $b, c \in \mathbb{Z}$ and zero flux $n=0$ for $U(1)_t$, which gives the same index after the identity fusion. Or, since the square root to the Jacobi theta function is rather unusual, we may also replace the theta function part with other Jacobi theta functions such as $\prod_{1 \leq i < j \leq N} \theta(s_i^{-1} s_j;q)^{-1}$, which gives the same index upon the identity fusion.
+
+The index for the adjoint chiral multiplet can also be written in another way, $$\begin{aligned}
+I^{\pm,R}_{\text{adj}} &= \frac{( t^{\mp} q^{ 1 -\frac{R}{2} };q)^{N-1}_\infty}{( t^{\pm}  q^{\frac{R}{2} };q)_\infty^{N-1}} 
+\prod_{1\leq i \neq j \leq N} \frac{(z_i^{-1} z_j t^{\mp} q^{\frac{1}{2} (m_i-m_j) +1 -\frac{R}{2} };q)_\infty}{(z_i z_j^{-1} t^{\pm}  q^{\frac{1}{2} (m_i-m_j) +\frac{R}{2} };q)_\infty} (z_i^{-1/2} z_j^{1/2})^{(m_i-m_j)}    \label{adj-factor-N}    \\
+&= \frac{1}{ \| ( v^{\pm}  q^{\frac{R}{2} };q)_\infty \|_{\text{id}}^{N-1} }  
+\prod_{1\leq i \neq j \leq N} \bigg\| \frac{\theta(-q^{1/2} s_i^{-1} s_j;q)^{1/2}}{(s_i s_j^{-1} v^{\pm} q^{\frac{R}{2} };q)_\infty } \bigg\|_{\text{id}}^2 \,  .   \label{adj-block-N}
+\end{aligned}$$
+
+We note that when $t$ is turned off, $t=1$, the contribution to the index from the adjoint chiral multiplets $\Phi^{\pm}_R$ with $R=2$ and $R=0$ become $$\begin{aligned}
+ I^{\pm,R=2}_{\text{adj}} \Big|_{t \rightarrow 1} &= \frac{( t^{\mp} ;q)^{N-1}_\infty}{( t^{\pm}  q;q)_\infty^{N-1}} \bigg|_{t \rightarrow 1} \prod_{1\leq i < j \leq N} (-1)^{m_i-m_j} \| (s_i^{1/2} s_j^{-1/2} - s_i^{-1/2} s_j^{1/2}) \|_{\text{id}}^2   \,  ,   \label{adj2-factor-unref}   \\
+ I^{\pm,R=0}_{\text{adj}} \Big|_{t \rightarrow 1} &= \frac{( t^{\mp} q;q)^{N-1}_\infty}{( t^{\pm} ;q)_\infty^{N-1}} \bigg|_{t \rightarrow 1} \prod_{1\leq i < j \leq N} (-1)^{m_i-m_j} \| (s_i^{1/2} s_j^{-1/2} - s_i^{-1/2} s_j^{1/2}) \|_{\text{id}}^{-2}     \,  ,   \label{adj0-factor-unref}
+\end{aligned}$$ and they need to be regularized. As in [@Gukov-Pei-Putrov-Vafa; @Pei-Ye], we may take $t=q^{\epsilon}$ and multiply an overall factor $\epsilon^{-N+1}$ and $\epsilon^{N-1}$ to [\[adj2-factor-unref\]](#adj2-factor-unref){reference-type="eqref" reference="adj2-factor-unref"} and [\[adj0-factor-unref\]](#adj0-factor-unref){reference-type="eqref" reference="adj0-factor-unref"}, respectively. Then for the case of $R=2$, upon $\epsilon \rightarrow 0$, $\frac{( t^{\mp} ;q)^{N-1}_\infty}{( t^{\pm}  q;q)_\infty^{N-1}} \epsilon^{-N+1} \Big|_{t \rightarrow 1}$ becomes $(\pm \log q)^{N-1}$. Similarly, $\frac{( t^{\mp} q;q)^{N-1}_\infty}{( t^{\pm} ;q)_\infty^{N-1}} \epsilon^{N-1} \Big|_{t \rightarrow 1}  \rightarrow (\mp \log q)^{-N+1}$ for the case of $R=0$. Or we may rescale [\[adj2-factor-unref\]](#adj2-factor-unref){reference-type="eqref" reference="adj2-factor-unref"} and [\[adj0-factor-unref\]](#adj0-factor-unref){reference-type="eqref" reference="adj0-factor-unref"} by multiplying $\frac{( t^{\pm}  q;q)_\infty^{N-1}}{( t^{\mp} ;q)^{N-1}_\infty}$ and $\frac{( t^{\pm} ;q)_\infty^{N-1}}{( t^{\mp} q;q)^{N-1}_\infty}$, respectively.[^5] In this paper, when $t=1$ we will consider the regularized index for the adjoint chiral multiplets, $$\begin{aligned}
+ I^{\pm,R=2}_{\text{adj}} \Big|_{t \rightarrow 1} &\simeq \prod_{1\leq i < j \leq N} (-1)^{m_i-m_j} \| (s_i^{1/2} s_j^{-1/2} - s_i^{-1/2} s_j^{1/2}) \|_{\text{id}}^2   \,  ,   \label{adj2-factor-unref-reg}   \\
+ I^{\pm,R=0}_{\text{adj}} \Big|_{t \rightarrow 1} &\simeq \prod_{1\leq i < j \leq N} (-1)^{m_i-m_j} \| (s_i^{1/2} s_j^{-1/2} - s_i^{-1/2} s_j^{1/2}) \|_{\text{id}}^{-2}        \,  ,   \label{adj0-factor-unref-reg}
+\end{aligned}$$ up to an overall factor, $(\pm \log q)^{N-1}$ and $(\mp \log q)^{-N+1}$, respectively. The contribution from the adjoint chiral multiplet $\Phi_{R=0}^0$ with $R=0$ and $U(1)_t$ charge 0 is given by [\[adj0-factor-unref-reg\]](#adj0-factor-unref-reg){reference-type="eqref" reference="adj0-factor-unref-reg"} after the regularization or the rescaling of $t\rightarrow 1$ limit [\[adj0-factor-unref\]](#adj0-factor-unref){reference-type="eqref" reference="adj0-factor-unref"}. In particular, when $G=SU(2)$, since $m_1=-m_2$, [\[adj2-factor-unref-reg\]](#adj2-factor-unref-reg){reference-type="eqref" reference="adj2-factor-unref-reg"} and [\[adj0-factor-unref-reg\]](#adj0-factor-unref-reg){reference-type="eqref" reference="adj0-factor-unref-reg"} with $R=2$ and $R=0$, respectively, are equal and are inverse precisely to $I_{\text{vect}}$ in [\[vect-factor\]](#vect-factor){reference-type="eqref" reference="vect-factor"}.\
+The $D^2 \times_q S^1$ partition function with given $\mathcal{N}=(0,2)$ boundary conditions on 3d $\mathcal{N}=2$ multiplets and with boundary degrees of freedom was studied in [@Gadde-Gukov-Putrov-wall; @Gadde-Gukov-Putrov-4manifold; @Yoshida-Sugiyama; @Dimofte-Gaiotto-Paquette]. The contribution from the 3d bulk vector multiplet for $G=SU(N)$ with the Neumann boundary condition [@Yoshida-Sugiyama] is given by $$\begin{aligned}
+\prod_{1 \leq i \neq j \leq N} e^{\frac{1}{4 \hbar} (\log s_i s_j^{-1})^2} (s_i s_j^{-1};q)_\infty
+= \prod_{1 \leq i < j \leq N} e^{\frac{1}{2 \hbar} (\log s_i s_j^{-1})^2 } (s_i s_j^{-1};q)_\infty (s_i^{-1} s_i;q)_\infty  \label{vect-loc}
+\end{aligned}$$ where $q=e^{\hbar}$. We note that the asymptotic expansion of the Jacobi theta function terminates at $\hbar^1$ $$\begin{aligned}
+\theta(x;q) = (-q^{1/2} x;q )_\infty (-q^{1/2} x^{-1};q )_\infty \simeq C^{-1} e^{-\frac{1}{2 \hbar} (\log x)^2 }   \   \text{as }  \hbar \rightarrow 0 \label{theta-appr}
+\end{aligned}$$ where $C = e^{\frac{\pi^2}{6 \hbar} - \frac{\hbar}{24}}$. Since we take $|q|<1$ (*i.e.* $q \neq 1$) in the calculation of the homological block or the index, we can use the approximation [\[theta-appr\]](#theta-appr){reference-type="eqref" reference="theta-appr"} in [\[vect-loc\]](#vect-loc){reference-type="eqref" reference="vect-loc"}. Or such replacement of exponential term in [\[vect-loc\]](#vect-loc){reference-type="eqref" reference="vect-loc"} by the theta function can be regarded as the elliptic completion of a partition function of quantum mechanics on $\mathbb{R}_+$ of $D^2 \times S^1 \simeq \mathbb{R}_+ \times T^2$ [@Beem-Dimofte-Pasquetti]. Then, the exponential term in [\[vect-loc\]](#vect-loc){reference-type="eqref" reference="vect-loc"} can be expressed as $$\begin{aligned}
+\begin{split}
+\prod_{i<j} e^{\frac{1}{2 \hbar} (\log s_i s_j^{-1})^2} 
+&= \prod_{i<j} e^{\frac{1}{4 \hbar} (\log s_i s_j^{-1})^2 + \frac{1}{2\hbar} (\log s_i s_j^{-1}) (\pi i + \hbar/2) } e^{\frac{1}{4 \hbar} (\log s_i s_j^{-1})^2 - \frac{1}{2\hbar} (\log s_i s_j^{-1}) (\pi i + \hbar/2) }  \\
+&\simeq \prod_{i<j} \theta(-q^{1/2} s_i s_j^{-1};q)^{-1/2} \theta(-q^{-1/2} s_i s_j^{-1};q)^{-1/2}  \,
+\end{split} 
+\end{aligned}$$ up to an irrelevant overall constant factor and the theta function ambiguity.[^6] Therefore, in the region $|q|<1$, [\[vect-loc\]](#vect-loc){reference-type="eqref" reference="vect-loc"} can be expressed as $$\begin{aligned}
+&\prod_{1 \leq i < j \leq N} e^{\frac{1}{2 \hbar} (\log s_i s_j^{-1})^2 } (s_i s_j^{-1};q)_\infty (s_i^{-1} s_j;q)_\infty
+\simeq \prod_{1\leq i < j \leq N} \frac{(s_i s_j^{-1};q)_\infty (s_i^{-1} s_j;q)_\infty}{\theta(-q^{1/2} s_i s_j^{-1};q)^{1/2} \theta(-q^{-1/2} s_i s_j^{-1};q)^{1/2}}  \label{vec-loc1}    \\
+&= \prod_{1\leq i < j \leq N} \bigg( \frac{\theta(-q^{1/2} s_i s_j^{-1};q)}{\theta(-q^{-1/2} s_i s_j^{-1};q)} \bigg)^{1/2} (1-s_i s_j^{-1}) 
+= \prod_{1\leq i < j \leq N} q^{-1/4} (s_i^{1/2} s_j^{-1/2} - s_i^{-1/2} s_j^{1/2}) \label{vect-loc2}
+\end{aligned}$$ and this agrees with the factorization in [\[vect-factor\]](#vect-factor){reference-type="eqref" reference="vect-factor"} up to an irrelevant overall factor $q^{-1/4}$. We can also see that the original expression [\[vect-loc\]](#vect-loc){reference-type="eqref" reference="vect-loc"} and [\[vect-loc2\]](#vect-loc2){reference-type="eqref" reference="vect-loc2"} give the same index $\prod_{i<j} \| (s_i^{1/2} s_j^{-1/2} - s_i^{-1/2} s_j^{1/2}) \|_{\text{id}}^2$ upon the identity fusion.\
+Similarly, the contribution from the 3d bulk adjoint chiral multiplet $\Phi_{R,N}^{\pm}$ and $\Phi_{R,D}^{\pm}$ with the Neumann or the Dirichlet boundary condition[^7] [@Yoshida-Sugiyama] are given by, respectively, $$\begin{aligned}
+Z_{\text{adj}}^{\pm, (N)}(s_j, v, R, q) &= \prod_{1 \leq i , j \leq N} e^{ -\frac{1}{4 \hbar} \big( \log s_i/s_j +(\frac{\hbar}{2} + \pi i) (R-1) + \log v^{\pm 1} \big)^2 + \frac{\hbar}{48}} (s_i s_j^{-1} v^{\pm 1} (-q^{1/2})^{R};q)_\infty^{-1}\,, \label{adj-loc-N}   \\
+Z_{\text{adj}}^{\pm, (D)}(s_j, v, R, q) &= \prod_{1 \leq i , j \leq N} e^{ \frac{1}{4 \hbar} \big( \log s_i/s_j +(\frac{\hbar}{2} + \pi i) (R-1)+ \log v^{\pm 1} \big)^2 - \frac{\hbar}{48}} (s_i^{-1} s_j v^{\mp 1} (-q^{1/2})^{2-R};q)_\infty\,.  \label{adj-loc-D}
+\end{aligned}$$ As discussed above, the exponential factor in [\[adj-loc-N\]](#adj-loc-N){reference-type="eqref" reference="adj-loc-N"} and [\[adj-loc-D\]](#adj-loc-D){reference-type="eqref" reference="adj-loc-D"} can be approximated to the exact asymptotic expansion of, for example, $\prod_{1 \leq i , j \leq N} \theta((-q^{1/2})^{1-R} s_i^{-1} s_j v^{-1};q)^{\pm 1/2}$ or $\prod_{1 \leq i , j \leq N} \theta((-q^{1/2})^{\#} s_i^{-1} s_j )^{\pm 1/2}$ $\times \theta((-q^{1/2})^{1-R} v^{-1};q)^{\pm 1/2}$ up to irrelevant constant factors.
+
+The exponential factors and the Jacobi theta function in the contributions to $D^2 \times_q S^1$ partition function above can be regarded as the factors that cancel out the (mixed) CS contributions that the $q$-Pochhammer symbols have. Putting differently, each contributions [\[vect-loc\]](#vect-loc){reference-type="eqref" reference="vect-loc"}, [\[adj-loc-N\]](#adj-loc-N){reference-type="eqref" reference="adj-loc-N"}, and [\[adj-loc-D\]](#adj-loc-D){reference-type="eqref" reference="adj-loc-D"} above are regarded as the contributions purely from the supermultiplet without any CS levels.\
+Summarizing the calculations above, there are two equivalent expressions for each contribution from vector multiplets and adjoint chiral multiplets in the perspective of the index. When $G=SU(2)$, for the vector multiplet with the Neumann boundary condition, we had $$\begin{aligned}
+e^{\frac{1}{2\hbar} (\log s^2)^2 } (s^{-2};q)_\infty (s^{2};q)_\infty   \,  \label{vect-loc-summ1}
+\end{aligned}$$ from the localization [\[vect-loc\]](#vect-loc){reference-type="eqref" reference="vect-loc"}, and $$\begin{aligned}
+s-s^{-1}        \label{vect-loc-summ2}
+\end{aligned}$$ from the factorization of the index [\[vect-factor\]](#vect-factor){reference-type="eqref" reference="vect-factor"} and also from the approximation to [\[vect-loc-summ1\]](#vect-loc-summ1){reference-type="eqref" reference="vect-loc-summ1"} up to an irrelevant overall factor and the theta function ambiguity. They all give the same contribution to the index, which is [\[vect-ind\]](#vect-ind){reference-type="eqref" reference="vect-ind"}.[^8]
+
+Similarly, for the adjoint chiral multiplets, $\Phi^{+}_{R=2, N}$, $\Phi^{-}_{R=0,D}$, and $\Phi^{0}_{R=0,N}$, the contributions to the half-index are, respectively, $$\begin{aligned}
+\begin{split}
+\hspace{-25mm}
+e^{ -\frac{1}{2\hbar} (\log s^2)^2 } \big( (s^{-2} t q ;q)_\infty (s^{2} t q ;q)_\infty ( t q ;q)_\infty \big)^{-1} ,   \hspace{1mm}    
+e^{ \frac{1}{2\hbar} (\log s^2)^2 } (s^{-2} t q;q)_\infty (s^{2} t q;q)_\infty ( t q ;q)_\infty ,   \hspace{1mm}
+e^{ -\frac{1}{2\hbar} (\log s^2)^2 } \big( (s^{-2} ;q)_\infty (s^{2} ;q)_\infty \big)^{-1}  \quad\label{adj-loc-summ1}
+\end{split}
+\end{aligned}$$ from the localization where we ignore the background CS contributions, and $$\begin{aligned}
+\hspace{-5mm}
+\frac{\theta(-q^{1/2} s^{-2};q)^{1/2} \theta(-q^{1/2} s^{2};q)^{1/2}}{(s^{-2} t q ;q)_\infty (s^{2} t q ;q)_\infty ( t q;q)_\infty} \,  ,   \quad   
+\frac{(s^{-2} t q;q)_\infty (s^{2} t q;q)_\infty ( t q;q)_\infty}{\theta(-q^{1/2} s^{-2};q)^{1/2} \theta(-q^{1/2} s^{2};q)^{1/2}}   \,  ,   \quad   
+\frac{\theta(-q^{1/2} s^{-2};q)^{1/2} \theta(-q^{1/2} s^{2};q)^{1/2}}{(s^{-2} ;q)_\infty (s^{2} ;q)_\infty} \label{adj-loc-summ2}
+\end{aligned}$$ from the factorization of the index [\[adj-block-D\]](#adj-block-D){reference-type="eqref" reference="adj-block-D"} and [\[adj-block-N\]](#adj-block-N){reference-type="eqref" reference="adj-block-N"} and also from the approximation to [\[adj-loc-summ1\]](#adj-loc-summ1){reference-type="eqref" reference="adj-loc-summ1"} up to theta function ambiguity and an irrelevant overall factor.[^9] They all give the same contributions to the index, [\[adj-factor-D\]](#adj-factor-D){reference-type="eqref" reference="adj-factor-D"} or [\[adj-factor-N\]](#adj-factor-N){reference-type="eqref" reference="adj-factor-N"}. In particular, when $t=1$, we have $$\begin{aligned}
+\hspace{-5mm}
+e^{-\frac{1}{2\hbar} (\log s^2)^2 } \big( (s^{-2} q ;q)_\infty (s^{2} q ;q)_\infty \big)^{-1}   \,  ,   \quad   
+e^{\frac{1}{2\hbar} (\log s^2)^2 } (s^{-2} q;q)_\infty (s^{2} q;q)_\infty   \,  ,   \quad   
+e^{-\frac{1}{2\hbar} (\log s^2)^2 } \big( (s^{-2} ;q)_\infty (s^{2} ;q)_\infty \big)^{-1}   \,  \label{adj-loc-summ-unref1}
+\end{aligned}$$ from [\[adj-loc-summ1\]](#adj-loc-summ1){reference-type="eqref" reference="adj-loc-summ1"} and $$\begin{aligned}
+s-s^{-1}    \,  ,   \quad   
+(s-s^{-1})^{-1} \,  ,   \quad   
+(s-s^{-1})^{-1} \,  ,   \label{adj-loc-summ-unref2}
+\end{aligned}$$ from [\[adj-loc-summ2\]](#adj-loc-summ2){reference-type="eqref" reference="adj-loc-summ2"}, respectively, up to an overall factor.
+
+### Homological block and $D^2 \times_q S^1$ partition function
+
+It was discussed in [@Gukov-Putrov-Vafa; @Gukov-Pei-Putrov-Vafa] that the Witten-Reshetikhin-Turaev (WRT) invariants for closed 3-manifolds can be expressed in terms of $q$-series with integer powers and integer coefficients, which was called the homological block. Interestingly, the homological blocks are labeled by abelian flat connections, *i.e.* it can be regarded as the contribution from abelian flat connections to the partition function of analytically continued Chern-Simons theory whose gauge group is complex, $G_\mathbb{C}$, and at the same time it contains all the information of the contribution from non-abelian flat connections [@Gukov-Marino-Putrov]. In the perspective of the 3d-3d correspondence, this means that the homological block of $M_3$ which is labeled by an abelian flat connection corresponds to the $D^2 \times_q S^1$ partition function of the corresponding 3d $\mathcal{N}=2$ theory with a boundary condition given by the abelian flat connection [@Wfiveknots; @DGG].
+
+Since the homological block is the $D^2 \times_q S^1$ partition function with a boundary condition, the index of $T[M_3]$ on $S^2 \times_q S^1$ is also expected to be expressed as the identity fusion of homological block and anti-homological block, $$\begin{aligned}
+\mathcal{I} = \sum_{m} \frac{1}{|\mathcal{W}_m|} \oint_{|z|=1} \frac{dz}{2 \pi i z} \big\| \text{Integrand}[Z_{D^2 \times_q S^1}(q;s, \cdots)] \big\|^2_{\text{id}} \label{id-fusion}
+\end{aligned}$$ where $\text{Integrand}[Z_{D^2 \times_q S^1}(q;s, \cdots)]$ denotes the integrand of the integral expression of homological blocks.
+
+In the next section, we discuss how the discussion above fits in the case of the lens space.
+
+[^1]: For its properties and developments, we refer to [@Gukov-Marino-Putrov; @Cheng-Chun-Ferrari-Gukov-Harrison; @Chung-Seifert; @Kucharski:2019fgh; @Chung-rationalk; @Park:2019xey; @Chun-Gukov-Park-Sopenko]
+
+[^2]: The expression for $I_{\text{adj}}$ in [\[sci-adj\]](#sci-adj){reference-type="eqref" reference="sci-adj"} comes from [@Dimofte-Gaiotto-Gukov-index; @Beem-Dimofte-Pasquetti] where there is an additional phase factor $\prod_{1 \leq i \neq j \leq N} (-1)^{\frac{1}{2}|m_i-m_j|}$ in [\[sci-adj\]](#sci-adj){reference-type="eqref" reference="sci-adj"} compared to the expression in [@Imamura-Yokoyama; @Kapustin-Willett].
+
+[^3]: If we include a factor $\prod_{1 \leq i \neq j \leq N}(-1)^{\frac{1}{2}|m_i-m_j|}$ in [\[sci-vect\]](#sci-vect){reference-type="eqref" reference="sci-vect"} or include it in [\[sci-adj\]](#sci-adj){reference-type="eqref" reference="sci-adj"}, the analysis on the $G=SU(2)$ case in this paper where such a factor is 1 would be generalized to $G=SU(N)$ or $U(N)$ cases.
+
+[^4]: See also [@Hwang-Park] for adjoint chiral multiplets.
+
+[^5]: This could also be regarded as introducing extra $N-1$ free chiral multiplets with $U(1)_R \times U(1)_t$ charge $(0, \mp 1)$ and $(2, \mp 1)$ by hand, respectively.
+
+[^6]: Here, what we mean by theta function ambiguity is that there can be various theta functions that gives the same contribution to the index upon the identity fusion. For example, contributions from $\theta(s^2;q)$ and $\theta(s;q)^4$ to the index are the same. But at the level of the half-index, only specific types of expressions of the Jacobi theta function arise from the $\mathcal{N}=(0,2)$ boundary degrees of freedom, so not all Jacobi theta functions can have a proper interpretation in the 3d-2d system on $D^2 \times_q S^1$ as contributions from boundary $\mathcal{N}=(0,2)$ chiral or Fermi multiplets.
+
+[^7]: In this paper, we work with $\text{Tr} (-1)^R \cdots$ instead of $\text{Tr} (-1)^F \cdots$. They are equivalent when $R$-charges are integer, which is the case in our example. We replace $-q^{1/2}$ with $q^{1/2}$ if we want to use $\text{Tr} (-1)^F$ [@Beem-Dimofte-Pasquetti].
+
+[^8]: For explicitness, the identity fusion for $e^{\frac{1}{2\hbar} (\log s^2)^2}$ is given by $e^{\frac{1}{2\hbar} (\log s^2)^2} e^{-\frac{1}{2\hbar} (\log \tilde{s}^2)^2}$.
+
+[^9]: Also from $s^{-1} \theta(-q^{1/2} s^{-2};q)$ instead of $\theta(-q^{1/2} s^{-2};q)^{1/2} \theta(-q^{1/2} s^{2};q)^{1/2}$, we have the same desired result $(s-s^{-1})^{\pm1}$ upon $t=1$ limit. We could choose a different Jacobi theta functions, *e.g.* $\theta(s^{-2};q)$, which gives the same contribution to the index, but with this expression, we don't have $(s-s^{-1})^{\pm1}$ when $t=1$.

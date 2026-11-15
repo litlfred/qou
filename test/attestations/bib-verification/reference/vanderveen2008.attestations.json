@@ -1,0 +1,52 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "vanderveen2008",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 184,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-math-0611181v2/0611181v2.pdf"
+        },
+        "id": "vanderveen2008",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "JOIN CONFIRMED from the arXiv title page (arXiv:math/0611181v2, math.GT): single-author, subject and identifier match the seeded entry. Citation sites: QOU/Knot/WhiteheadVolumeConjecture.lean:26 and :303, QOU/Knot/WhiteheadSaddleClausen.lean:19 and :822. LOAD-BEARING at the site that matters - line 303 is the -- Ref: attached to the single honest `sorry` on theorem whitehead_volume_conjecture, whose statement is (2 pi / N) log(kashaev N) -> 4 * catalanG. The paper's abstract states exactly that class of result ('We prove the volume conjecture for an infinite family of links called Whitehead chains that generalizes both the Whitehead link and the Borromean rings'), and 4G = 3.66386... is the hyperbolic volume of the Whitehead link, so the cited source does support the queued claim. This is a correct application of the every-sorry-carries-a-Ref rule rather than a decorative citation. Worth noting: because Whitehead chains contain the Borromean rings, this document is also an independent second source for the Borromean identification the corpus currently takes only from garoufalidis-le-2011.",
+          "keyResults": [
+            {
+              "locator": "Abstract / main theorem",
+              "statement": "The volume conjecture holds for the infinite family of Whitehead chains, which contains both the Whitehead link and the Borromean rings.",
+              "useForFolio": "Backs the queued sorry in whitehead_volume_conjecture, and supplies a SECOND, independent literature proof of the Borromean case now carried only by garoufalidis-le-2011 App. A.",
+              "targets": [
+                "qou:QOU.Knot.WhiteheadVC.whitehead_volume_conjecture",
+                "qou:QOU.Knot.FigureEightVolume.borromeanKashaev"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "BorromeanVolume.lean sources the Borromean volume conjecture solely from garoufalidis-le-2011. the Whitehead-chain family proved in [vanderveen2008] contains the Borromean rings, so adding [vanderveen2008] there gives an independent second source for the same identification.",
+              "target": "qou:QOU.Knot.FigureEightVolume.borromeanKashaev",
+              "bean": "qou-ykgx"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "6931e3ebca58"
+        }
+      }
+    }
+  ]
+}

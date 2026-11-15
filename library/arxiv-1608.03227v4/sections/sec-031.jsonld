@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1608.03227v4/sections/sec-031",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Computational aspects of push-forward",
+  "pageStart": 32,
+  "pageEnd": 33,
+  "contains": [
+    "library/arxiv-1608.03227v4/blocks/prose-sec-031"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1608.03227v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1608.03227v4",
+  "provenance": "ingested"
+}

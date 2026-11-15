@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-classical-limit-obstruction-properties",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:classical-limit-obstruction-properties",
+  "kind": "remark",
+  "title": "The Hochschild tower of the classical limit obstruction",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-classical-limit-obstruction",
+    "papers/quantum-observable-universe/blocks/def-quantum-characteristic-classes"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-classical-limit-obstruction",
+  "cites": [
+    "references/yekutieli2010"
+  ],
+  "tags": [
+    "obstruction",
+    "classical-limit",
+    "hochschild-cohomology",
+    "deformation-theory",
+    "q-to-1"
+  ],
+  "text": "classical-limit-obstruction-properties.md",
+  "provenance": "authored"
+}

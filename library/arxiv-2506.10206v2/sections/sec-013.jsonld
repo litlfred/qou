@@ -1,17 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-2506.10206v2/sections/sec-013",
   "@type": [
     "doco:Section"
   ],
-  "title": "A full solution to a problem due to Sun",
-  "pageStart": 7,
-  "pageEnd": 9,
+  "title": "A sextic two-term identity",
+  "pageStart": 31,
+  "pageEnd": 33,
   "contains": [
-    "library/arxiv-2506.10206v2/blocks/prose-sec-013",
-    "library/arxiv-2506.10206v2/blocks/thm-sec-013-01"
+    "library/arxiv-2506.10206v2/blocks/prose-sec-013"
   ],
-  "derivedFrom": "library/arxiv-2506.10206v2/manifest",
-  "sourceDocument": "library/arxiv-2506.10206v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2506.10206v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2506.10206v2",
   "provenance": "ingested"
 }

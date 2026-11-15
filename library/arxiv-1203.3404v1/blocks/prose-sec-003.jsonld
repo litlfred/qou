@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1203.3404v1/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1203.3404v1/blocks/prose-sec-003",
   "kind": "prose",
   "title": "The q-Airy function Aiq(x)",
   "pageStart": 9,
   "pageEnd": 10,
   "text": "../sections/sec-003-32-the-q-airy-function-aiqx.md",
-  "derivedFrom": "library/arxiv-1203.3404v1/manifest",
-  "sourceDocument": "library/arxiv-1203.3404v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1203.3404v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1203.3404v1",
   "provenance": "ingested"
 }

@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/stateintegralsqseries/sections/sec-008",
   "@type": [
     "doco:Section"
@@ -11,7 +16,7 @@
     "library/stateintegralsqseries/blocks/prose-sec-008",
     "library/stateintegralsqseries/blocks/lem-sec-008-01"
   ],
-  "derivedFrom": "library/stateintegralsqseries/manifest",
-  "sourceDocument": "library/stateintegralsqseries/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/stateintegralsqseries",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/stateintegralsqseries",
   "provenance": "ingested"
 }

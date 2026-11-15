@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-9907032v1/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-9907032v1/blocks/prose-sec-003",
   "kind": "prose",
-  "title": "SUFFICIENCY OF CONDITIONS 2.1 AND 2.2",
-  "pageStart": 7,
+  "title": "Necessary conditions on dihedral angles",
+  "pageStart": 5,
   "pageEnd": 7,
-  "text": "../sections/sec-003-3-sufficiency-of-conditions-21-and-22.md",
-  "derivedFrom": "library/arxiv-math-9907032v1/manifest",
-  "sourceDocument": "library/arxiv-math-9907032v1/manifest",
+  "text": "../sections/sec-003-2-necessary-conditions-on-dihedral-angles.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9907032v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9907032v1",
   "provenance": "ingested"
 }

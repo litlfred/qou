@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0910.5695v2/blocks/prose-sec-009",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0910.5695v2/blocks/prose-sec-009",
   "kind": "prose",
   "title": "Interpolating sums of r-cycles",
   "pageStart": 23,
   "pageEnd": 26,
   "text": "../sections/sec-009-41-interpolating-sums-of-r-cycles.md",
-  "derivedFrom": "library/arxiv-0910.5695v2/manifest",
-  "sourceDocument": "library/arxiv-0910.5695v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0910.5695v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0910.5695v2",
   "provenance": "ingested"
 }

@@ -74,7 +74,7 @@ REPO = Path(__file__).resolve().parent.parent
 SCAN_EXTS = {".py", ".ts", ".md", ".lean", ".json"}
 SKIP_DIRS = {
     ".git", "node_modules", ".lake", "__pycache__", "library",
-    ".beans", "build", "dist", ".pytest_cache", "_deprecated",
+    ".beans", "build", "dist", ".pytest_cache", "_deprecated", "fsh-guts",
     # `.claude/worktrees/` holds gitignored agent worktrees — whole extra
     # copies of the repo. Scanning them reports the SAME literal once per
     # worktree and turns this gate RED on findings that are not in the branch,
@@ -302,7 +302,7 @@ def _nonexec_spans_text(path: Path, text: str) -> list[tuple[int, int, int, int,
     string could merely let a delimiter inside it open a comment that is not
     there -- an under-report. That reasoning was wrong in the direction that
     matters: prose sitting inside a string is then classified `code`, which
-    OVER-reports. Measured, `content/values/registry.ts:647` is a CODATA value
+    OVER-reports. Measured, `folio/values/registry.ts:647` is a CODATA value
     quoted inside a `description:` string and was reported as executable.
 
     Still cruder than the Python path: no escape-aware interpolation, no

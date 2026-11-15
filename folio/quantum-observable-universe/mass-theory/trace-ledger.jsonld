@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-trace-ledger",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:trace-ledger",
+  "kind": "remark",
+  "title": "The trace ledger: four traces, one Markov trace, and where the Euler characteristic is not",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-chern-character",
+    "papers/quantum-observable-universe/blocks/def-grothendieck-group-of-a-qou",
+    "papers/quantum-observable-universe/blocks/def-hochschild-homology",
+    "papers/quantum-observable-universe/blocks/prop-markov-trace-frobenius-selection",
+    "papers/quantum-observable-universe/blocks/rem-three-euler-characteristics"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-markov-trace-frobenius-selection",
+  "cites": [
+    "references/bghl-2017",
+    "references/caldararu-willerton-2010",
+    "references/trinh-2021",
+    "references/nest-tsygan-1995"
+  ],
+  "tags": [
+    "markov-trace",
+    "categorical-trace",
+    "quantum-dimension",
+    "hochschild-homology",
+    "chern-character",
+    "wedderburn"
+  ],
+  "text": "trace-ledger.md",
+  "provenance": "authored"
+}

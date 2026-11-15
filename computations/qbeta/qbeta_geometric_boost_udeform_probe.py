@@ -10,7 +10,7 @@ fit): the meridian log-holonomy is *derived* geometrically, then its `Im 𝔙₄
 readout is *checked* against the two measured anchors.
 
 DERIVE (not fitted).
-  `content/quantum-observable-universe/braids-and-knots/meridian-holonomy-boost.md`
+  `folio/quantum-observable-universe/braids-and-knots/meridian-holonomy-boost.md`
   (proved sorry-free): the cusp-torus meridian holonomy IS multiplication by the
   substrate parameter q₀ — a hyperbolic BOOST of rapidity `ln q₀` at real q₀>1,
   becoming a compact U(1) SPIN only at |q|=1. So the geometric log meridian

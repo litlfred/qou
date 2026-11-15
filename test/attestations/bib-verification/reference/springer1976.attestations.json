@@ -1,0 +1,63 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "springer1976",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 363,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/ppn356556735-0036/PPN356556735_0036.pdf"
+        },
+        "id": "springer1976",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "The PDF has no text layer beyond a Goettingen digitisation cover sheet (1652 extractable characters over 38 pages), so it was read as page images. It is the article beginning on p.173 of Inventiones Mathematicae vol. 36 (1976): the paper that constructs Weyl-group representations from trigonometric sums / Green functions of finite groups -- i.e. the source of the Springer correspondence. This is directly load-bearing terminology in the corpus's PROVED Delta_lambda result. alg:delta-lambda-closure states the output as Delta_lambda = (-1)^{n(lambda)} dim V_lambda and calls it 'the signed Springer dimension' with no citation, and there is no Springer entry in references.ts (every 'Springer' hit is the publisher). The connection is not merely nominal: the corpus's own Lean documents nStat as 'the b-invariant / Lusztig a-function' on the two-sided cell of V_lambda, constant on Kazhdan-Lusztig cells -- the b-invariant is exactly the Springer-correspondence grading attached to the partition. Corpus-grep over docs/audits/, content/, computations/, docs/coordination/: no prior agent has registered a Springer reference.",
+          "keyResults": [
+            {
+              "locator": "pp. 173-207 (Introduction and main construction)",
+              "statement": "Construction, via trigonometric sums and Green functions of finite groups of Lie type, of the correspondence attaching irreducible Weyl-group representations to unipotent/nilpotent data.",
+              "useForFolio": "Sources the eponym and the structure behind 'signed Springer dimension' in alg:delta-lambda-closure and behind the corpus's identification of n(lambda) with the b-invariant / a-function in QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional. NOTE for whoever writes the citation: the corpus derives both legs independently (sign = jet-order valuation parity, magnitude = Wedderburn dimension), so this reference explains WHY the name is apt and grounds the a-function claim -- it is not an input to the proof, and the citation must not be phrased as though it were.",
+              "targets": [
+                "alg:delta-lambda-closure",
+                "QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "A sorry-free, general-n, load-bearing result names its value after a construction with no ref() entry anywhere in the corpus.",
+              "target": "alg:delta-lambda-closure",
+              "bean": "qou-uamy"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "alg:delta-lambda-closure uses 'the signed Springer dimension' as its output description with no source, and the Lean docstrings assert the b-invariant / Lusztig a-function identification without one either.",
+              "target": "alg:delta-lambda-closure",
+              "bean": "qou-o0na"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "a41a1773c81c"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

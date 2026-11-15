@@ -1,0 +1,41 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-alpha-k-categorical-closure",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:alpha-k-categorical-closure",
+  "kind": "conjecture",
+  "title": "Closed-form resummation of the categorical stratum prefactors $\\alpha_k$ — geometric vs symmetric q-dilogarithm candidates",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-alpha-k-derivation-procedure",
+    "papers/quantum-observable-universe/blocks/rem-beta-decay-energy-scale"
+  ],
+  "cites": [
+    "references/wenzl1988",
+    "references/jones1985",
+    "references/kassel1995"
+  ],
+  "tags": [
+    "tier:E",
+    "alpha-k",
+    "categorical-closure",
+    "geometric-series",
+    "q-dilogarithm",
+    "li2q",
+    "brane-tower",
+    "CAL-3",
+    "open-conjecture",
+    "open-rd-item-6"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.AlphaKCategoricalClosure",
+  "text": "alpha-k-categorical-closure.md",
+  "leanSource": "alpha-k-categorical-closure.lean",
+  "provenance": "authored"
+}

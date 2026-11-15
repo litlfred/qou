@@ -123,8 +123,8 @@ def main():
         "result": {"all_ok": bool(all_ok), "checks": checks, "numeric_at_q0": numeric},
         "refs": [
             "docs/audits/2026-06-07-knot-factor-skein-verification.md",
-            "content/quantum-observable-universe/mass-theory/knot-factor-frobenius-pairing.md",
-            "content/quantum-observable-universe/mass-theory/nuclear-knot-classification.md",
+            "folio/quantum-observable-universe/mass-theory/knot-factor-frobenius-pairing.md",
+            "folio/quantum-observable-universe/mass-theory/nuclear-knot-classification.md",
         ],
     }
     import sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)

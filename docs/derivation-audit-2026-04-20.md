@@ -5,7 +5,7 @@
 ## Part I — Categorical Action → Mass Identity
 
 ### Step 1 — Categorical action
-- **Block**: `def:categorical-action` — `content/quantum-observable-universe/quantum-observable-universes/categorical-action.md`
+- **Block**: `def:categorical-action` — `folio/quantum-observable-universe/quantum-observable-universes/categorical-action.md`
 - **Given**: QOU $(\mathbf{C}, A, \tau)$ with Frobenius–Hopf $A$, rigid monoidal structure (ev, coev), endomorphism $\Phi \in \text{End}_\mathbf{C}(A)$.
 - **Equation**: $\mathcal{S} = \text{ev}_A \circ (\text{id}_{A^\vee} \otimes \Phi) \circ \text{coev}_A = \text{tr}(\Phi)$
 

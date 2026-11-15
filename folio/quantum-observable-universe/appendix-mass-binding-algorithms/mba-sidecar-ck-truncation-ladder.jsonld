@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/alg-ck-truncation-ladder",
+  "@type": [
+    "folio-assistant-core:Algorithm",
+    "doco:Section"
+  ],
+  "label": "alg:ck-truncation-ladder",
+  "kind": "algorithm",
+  "title": "$c_k$ truncation ladder — tiered classification",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-beta-categorical-precision-ladder"
+  ],
+  "tags": [
+    "mba",
+    "sidecar",
+    "ck-truncation",
+    "q-beta",
+    "tiered-coefficients"
+  ],
+  "text": "mba-sidecar-ck-truncation-ladder.md",
+  "provenance": "authored"
+}

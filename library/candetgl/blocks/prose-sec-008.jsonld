@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/candetgl/blocks/prose-sec-008",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/candetgl/blocks/prose-sec-008",
   "kind": "prose",
-  "title": "GG˜grounded gradients",
-  "pageStart": 8,
+  "title": "HGÄharmonic gradients",
+  "pageStart": 7,
   "pageEnd": 8,
-  "text": "../sections/sec-008-5-gggrounded-gradients.md",
-  "derivedFrom": "library/candetgl/manifest",
-  "sourceDocument": "library/candetgl/manifest",
+  "text": "../sections/sec-008-4-hgäharmonic-gradients.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/candetgl",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/candetgl",
   "provenance": "ingested"
 }

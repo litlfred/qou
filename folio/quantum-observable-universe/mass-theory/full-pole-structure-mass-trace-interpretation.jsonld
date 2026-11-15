@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-full-pole-structure-mass-trace-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:full-pole-structure-mass-trace-interpretation",
+  "kind": "remark",
+  "title": "The Mittag-Leffler residue sum as a heuristic shadow of the Habiro expansion",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-full-pole-structure-mass-trace",
+    "papers/quantum-observable-universe/blocks/prop-gb-residue-spectral-sum"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-full-pole-structure-mass-trace",
+  "text": "full-pole-structure-mass-trace-interpretation.md",
+  "provenance": "authored"
+}

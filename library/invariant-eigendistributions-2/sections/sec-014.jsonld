@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/invariant-eigendistributions-2/sections/sec-014",
   "@type": [
     "doco:Section"
   ],
-  "title": "Corollary . In top dimension the W -map",
-  "pageStart": 6,
-  "pageEnd": 9,
+  "title": "A conjecture of Joseph",
+  "pageStart": 26,
+  "pageEnd": 28,
   "contains": [
     "library/invariant-eigendistributions-2/blocks/prose-sec-014"
   ],
-  "derivedFrom": "library/invariant-eigendistributions-2/manifest",
-  "sourceDocument": "library/invariant-eigendistributions-2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/invariant-eigendistributions-2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/invariant-eigendistributions-2",
   "provenance": "ingested"
 }

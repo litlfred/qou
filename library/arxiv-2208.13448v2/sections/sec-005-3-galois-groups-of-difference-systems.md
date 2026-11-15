@@ -8,15 +8,17 @@ pages: 9-9
 source_pdf: 2208.13448v2.pdf
 source_sha256: 8bfa244cf7ca867d
 doc_brief: "ON THE COMPUTATION OF THE DIFFERENCE GALOIS GROUPS OF ORDER THREE EQUATIONS — In this paper we consider the problem of computing the diﬀere nce Galois groups of order three equations for a large"
+text_source: latex
+latex_prose_ratio: 0.896
+latex_coverage_ratio: 0.979
 ---
-Consider the diﬀerence system ( 2.1) and let G ⊂ GLn(C) be its Galois group. In order
-to compute G, we follow the strategy of the seminal paper [ Hen98], that is, computing
-a gauge transformation T ∈ GLn(k) such that [ φ(T )AT −1] is in reduced form. We will
-study the following cases (deﬁnitions of reducible and impr imitive groups are given in the
-corresponding section):
-• G is reducible;
-• G is irreducible and imprimitive;
-• G is irreducible and primitive.
-Before considering the particular case of diﬀerence equatio ns of order 2 and 3, the aim of
-this section is to prove some general results for the Galois g roups G of systems of the form
-(2.1), with n /greaterorequalslant2.
+\label{sec:GaloisGpDiffceSystems}
+
+Consider the difference system \eqref{eq:diffcesystembase} and let 
+ $G\subset \GL_{n}(C)$ be its Galois group.   In order to compute $G$, we follow the strategy of the seminal paper \cite{hendriks1998algorithm}, that is,  computing a gauge transformation $T\in \mathrm{GL}_n (\k)$ such that $[\phi(T)AT^{-1}]$ is in reduced form.  We will study the following cases (definitions of reducible and imprimitive groups are given in the corresponding section): 
+ \begin{itemize}
+ \item $G$ is reducible;
+ \item $G$ is irreducible and imprimitive;
+ \item $G$ is irreducible and primitive. 
+ \end{itemize}
+Before considering the particular case of difference equations of order $2$ and $3$, the aim of this section is to prove some general results for the Galois groups $G$ of systems of the form \eqref{eq:diffcesystembase}, with $n\geq 2$.

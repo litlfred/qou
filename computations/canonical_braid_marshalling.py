@@ -52,11 +52,16 @@ the current convention is preserved.  See `closed_form_tau_M.py` for
 the open `pn_convention="bring_color_weighted"` placeholder and the
 queued research item.
 
-  Ref: prop:constit-factor-tau-M-proton-identity.md (Phase 5l)
+  Ref: `constit-factor-tau-M-proton-identity` (Phase 5l)
   Ref: prop:interface-knot-markov-z.md (Phase 5c.1 — z, z-h convention)
   Ref: prop:averaging-resonance-rule.md (categorical σ_avg = σ - h/2)
   Ref: probe_pn_flavor_asymmetry.py (Bring color-tube weighted averaging probe)
   Ref: docs/canonical-derivation-cheat-sheet.md (audit finding)
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 

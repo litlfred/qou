@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1609.08719v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1609.08719v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1609.08719v1",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1609.08719&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1609.08719v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1609.08719v1",
+    "content_type": "application/gzip",
+    "sha256": "e81d322964fe422ef57e260b5b8e56655d069d80b9d6579d026fe9e71857de1d",
+    "bytes": 48209,
+    "fetched": "2026-10-10T15:11:20+00:00",
+    "files": [
+      {
+        "path": "source/files/investigation-of-Neumann_s-conjecture.bbl",
+        "role": "bbl",
+        "sha256": "ca85381ad66f31e2986e5055f54910d6b856bc3da832b3ea8eb2209d2ce51302",
+        "bytes": 8497
+      },
+      {
+        "path": "source/files/investigation-of-Neumann_s-conjecture.tex",
+        "role": "tex",
+        "sha256": "981ab00e4a471428bd4f17e4a2f3881d5b1d8d23031cb3924b57d279042780fd",
+        "bytes": 67876
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

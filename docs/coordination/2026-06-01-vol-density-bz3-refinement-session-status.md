@@ -36,7 +36,7 @@ To shift m_avg, Option A would need a DIFFERENT categorical formalism — e.g. p
 
 ## Option B — g·g' substrate-derived couplings: 3 Lean theorems scaffolded
 
-`content/quantum-observable-universe/lean/QOU/BraidKnot/SubstrateEWHypotheses.lean` has 3 conjectural-class theorems with documented derivation gaps:
+`folio/quantum-observable-universe/lean/QOU/BraidKnot/SubstrateEWHypotheses.lean` has 3 conjectural-class theorems with documented derivation gaps:
 
 | Hypothesis | Empirical | Lean theorem | Gap to close |
 |---|---|---|---|
@@ -96,5 +96,5 @@ Topic 1 is genuinely multi-session, multi-person research. Closing the +2.89 % m
 - L2 100× status (3 failing shared root): [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](../audits/2026-05-30-l2-100x-status-3-failing-shared-root.md)
 - linking_weight-residual confirmation: [`docs/audits/2026-06-01-linking-weight-residual-fix.md`](../audits/2026-06-01-linking-weight-residual-fix.md)
 - bring_color_weighted implementation: [`computations/closed_form_tau_M.py:178`](../../computations/closed_form_tau_M.py)
-- SubstrateEWHypotheses Lean targets: [`content/quantum-observable-universe/lean/QOU/BraidKnot/SubstrateEWHypotheses.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/SubstrateEWHypotheses.lean)
+- SubstrateEWHypotheses Lean targets: [`folio/quantum-observable-universe/lean/QOU/BraidKnot/SubstrateEWHypotheses.lean`](../../folio/quantum-observable-universe/lean/QOU/BraidKnot/SubstrateEWHypotheses.lean)
 - Cheat sheet §5: [`docs/canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md)

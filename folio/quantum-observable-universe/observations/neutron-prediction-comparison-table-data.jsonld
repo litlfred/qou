@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-neutron-prediction-comparison-table-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:neutron-prediction-comparison-table-data",
+  "kind": "table",
+  "title": "Data table from prop:neutron-prediction-comparison",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-neutron-prediction-comparison"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "neutron-prediction-comparison-table-data.md",
+  "provenance": "authored"
+}

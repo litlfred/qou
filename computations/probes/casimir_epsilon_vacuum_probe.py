@@ -54,8 +54,18 @@ sys.path.insert(0, str(HERE.parent))
 
 import sympy as sp  # noqa: E402
 
+from mpmath import mp, mpf  # noqa: E402
+
 from experimental_constants import HBAR_MEV_S  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import fmt, set_compute_dps  # noqa: E402
+
+# This probe never raised mp.dps, so every mpf operation below ran at mpmath's
+# DEFAULT 15 — binary64 grade.  `fmt` then rendered a 53-bit value out to the
+# full serialization width, which is the exact failure _precision.py's own
+# docstring warns about and which the float64-padding ratchet catches.  Must
+# precede the module-scope HBAR_J_S arithmetic.  Idempotent.
+set_compute_dps()
 
 
 # Derived from registry's HBAR_MEV_S + the CODATA 2018 / SI-exact
@@ -63,9 +73,12 @@ from witness_base import WitnessBuilder  # noqa: E402
 # (defined exactly since 2019).  Per `computations/
 # README.md:85-89`, this is the right way to use repository
 # constants — derive SI-form ℏc from the MeV-form HBAR registry entry.
-_C_M_S_SI_EXACT = 299_792_458            # exact by SI definition
-_EV_TO_J_SI_EXACT = 1.602_176_634e-19    # exact by SI definition
-HBAR_J_S = HBAR_MEV_S * 1e6 * _EV_TO_J_SI_EXACT  # ≈ 1.0546e-34 J·s
+# "Exact by SI definition" is a claim about the DECIMAL value, so it must be
+# parsed as a decimal string: 1.602176634e-19 is not representable in
+# binary64, and neither is 1e-6 or 1e6 below.
+_C_M_S_SI_EXACT = mpf(299_792_458)       # exact by SI definition
+_EV_TO_J_SI_EXACT = mpf("1.602176634e-19")  # exact by SI definition
+HBAR_J_S = HBAR_MEV_S * mpf("1e6") * _EV_TO_J_SI_EXACT  # ≈ 1.0546e-34 J·s
 C_M_S = _C_M_S_SI_EXACT
 HBAR_C_J_M = HBAR_J_S * C_M_S    # ℏc ≈ 3.1615e-26 J·m
 
@@ -84,14 +97,16 @@ def _symbolic_calculus_check() -> tuple[sp.Expr, sp.Expr, sp.Expr]:
     return energy_per_area, deriv, expected
 
 
-def _numerical_force_per_area(d_m: float) -> float:
+def _numerical_force_per_area(d_m: "mpf") -> "mpf":
     """Standard-physics Casimir force per unit area at separation d.
 
     F/A = -π² ℏc / (240 d⁴).  Units: N/m² (Pa).
     Negative sign = attractive.
     """
-    pi_sq = 3.14159265358979323846 ** 2
-    return -pi_sq * HBAR_C_J_M / (240.0 * d_m ** 4)
+    # mp.pi, not a 21-digit literal: the literal is parsed as a binary64
+    # (~17 digits) and then SQUARED, so the truncation enters doubled.
+    pi_sq = mp.pi ** 2
+    return -pi_sq * HBAR_C_J_M / (mpf(240) * d_m ** 4)
 
 
 def main() -> int:
@@ -106,15 +121,17 @@ def main() -> int:
     calculus_ok = (diff_residue == 0)
 
     # ── Step 2: numerical Casimir force at sample separations.
-    sample_separations_um = [0.1, 0.5, 1.0, 5.0]
+    # mpf strings: 0.1 and 0.5 are not representable in binary64, and each
+    # is multiplied by 1e-6 and then raised to the 4th power below.
+    sample_separations_um = [mpf("0.1"), mpf("0.5"), mpf(1), mpf(5)]
     force_results = []
     for d_um in sample_separations_um:
-        d_m = d_um * 1e-6
+        d_m = d_um * mpf("1e-6")
         fA = _numerical_force_per_area(d_m)
         force_results.append({
-            "separation_um": d_um,
-            "force_per_area_Pa": fA,
-            "force_per_area_uPa": fA * 1e6,
+            "separation_um": fmt(d_um),
+            "force_per_area_Pa": fmt(fA),
+            "force_per_area_uPa": fmt(fA * mpf("1e6")),
         })
 
     # ── Step 3: open-content markers (the actual conjecture).
@@ -223,7 +240,7 @@ def main() -> int:
 
         "framework_doc":
 
-            "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+            "folio/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
 
         "note": "Certifies T_w uniqueness at the abstract empty-constraint SDP level (PR #1537 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md.",
 
@@ -244,8 +261,10 @@ def main() -> int:
     print(f"  {'d (µm)':<10} {'F/A (Pa)':<18} {'F/A (µPa)':<14}")
     for r in force_results:
         print(
-            # float() is DISPLAY-ONLY (AGENTS.md): mpf.__format__ rejects a format
-            # spec, and separation_um is now an mpf.  No arithmetic uses this value.
+            # float() is DISPLAY-ONLY (AGENTS.md). These three fields are now
+            # 60-dps decimal STRINGS (serialized via fmt at the point of
+            # recording), so float() here is a parse for the format spec and no
+            # arithmetic uses its result.
             f"  {float(r['separation_um']):<10.2f} "
             f"{float(r['force_per_area_Pa']):<18.6e} "
             f"{float(r['force_per_area_uPa']):<14.6e}"

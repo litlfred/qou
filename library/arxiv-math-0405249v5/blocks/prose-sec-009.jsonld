@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0405249v5/blocks/prose-sec-009",
+  "kind": "prose",
+  "title": "Case 2",
+  "pageStart": 20,
+  "pageEnd": 21,
+  "text": "../sections/sec-009-case-2.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0405249v5",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0405249v5",
+  "provenance": "ingested"
+}

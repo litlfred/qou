@@ -1,0 +1,271 @@
+\section{Introduction}
+
+\subsection{Improved Brunn--Minkowski inequalities}
+Let $\nu$ be a Borel measure on $\RR^{n}$. We say that $\nu$ satisfies
+a Brunn--Minkowski inequality with exponent $a$ if for
+all Borel sets $K_{0}, K_{1} \subseteq\RR^{n}$ satisfying $\nu(K_{0}),\nu(K_{1})>0$ and
+every $0\le t \le1$ we have
+\begin{equation} \label{eq:BM}
+\nu\left((1-t)K_{0}+ t K_{1}\right)\ge\left((1-t)\nu(K_{0})^{a}+ t \nu(K_{1})^{a}\right)^{1/a}.
+\end{equation}
+Here $(1-t)K_{0} +t K_{1}=\left\{ (1-t) x+ t  y:\ x\in K_{0},\ y\in K_{1}\right\} $ is the $t$-\emph{Minkowski average} of the sets $K_{0}$ and $K_{1}$. Note that the inequality becomes stronger as $a$ increases. The prototypical
+example is the classical Brunn\textendash Minkowski inequality, which
+states that the Lebesgue measure satisfies (\eqref{eq:BM}) with exponent
+$a=\frac{1}{n}$ (see e.g. \cite{Gardner02} for a survey on the
+Brunn\textendash Minkowski inequality and its importance). When $\nu$ is not the Lebesgue measure, inequalities such as \eqref{eq:BM} are sometimes called weighted Brunn--Minkowski inequalities.
+
+More generally, from the works of Borell (\cite{Borell74}, \cite{Borell75}) and Brascamp--Lieb (\cite{BrascampLieb76BBL}), a characterization of all measures $\nu$ which satisfy (\eqref{eq:BM}) for some exponent
+$a$ is known: 
+\begin{thm} \label{thm: Borell}
+Let $\nu$ be a Borel measure on $\RR^{n}$ with density $\phi$ with
+respect to the Lebesgue measure on $\R^n$, and fix $a\in[-\infty,\frac{1}{n}]$.
+Then the following are equivalent: 
+\begin{enumerate}
+\item $\nu$ satisfies a Brunn\textendash Minkowski inequality with exponent
+$a$ (we also say that $\nu$ is $a$-concave). 
+\item For all $x,y\in\RR^{n}$ with $\phi(x),\phi(y)>0$ and every $0\le t \le1$
+we have 
+\begin{equation}
+\phi\left(\left(1-t\right)x+t y\right)\ge\left((1-t)\phi(x)^{b}+t\phi(y)^{b}\right)^{1/b},
+\end{equation}
+ where $\frac{1}{a}=\frac{1}{b}+n$ (we also say that $\phi$ is $b$-concave). 
+\end{enumerate}
+\end{thm}
+
+For simplicity we assumed that $\nu$ has a density, though Borell's original result is slightly more general. Note that the cases where $a$ or
+$b$ belong to $\left\{ -\infty,0,+\infty\right\} $ are interpreted
+in the limiting sense: We define $\left((1-\lambda)x^{a}+\lambda y^{a}\right)^{1/a}$
+to be $\max(x,y)$ if $a=\infty$, $x^{1-\lambda}y^{\lambda}$ if
+$a=0$, and $\min(x,y)$ if $a=-\infty$. 
+
+Of special interest to us will be the case $a=b=0$, when Borell's
+theorem essentially reduces to the Prékopa\textendash Leindler inequality (\cite{Prekopa71, Leindler72}):
+A measure $\nu$ is \emph{log-concave}, i.e. it satisfies 
+\begin{equation}
+\nu\left((1-t)K_{0}+t K_{1}\right)\ge\nu(K_{0})^{1-t}\nu(K_{1})^{t},
+\end{equation}
+ if and only if its density $\phi$ is of the form $\phi=e^{-V}$
+where $V:\RR^{n}\to[0,\infty)$ is a convex function.
+
+Borell's theorem gives us the best possible Brunn\textendash Minkowski
+inequality satisfied by a measure $\nu$ for \emph{all} Borel sets
+$K_{0}$ and $K_{1}$. However, a better inequality may hold for specific
+choices of $K_{0}$ and $K_{1}$. For example, let $\gamma$ denote the standard
+Gaussian measure on $\RR^{n}$, i.e. the measure with density $\frac{\dd\gamma}{\dd x}=\frac{1}{\left(2\pi\right)^{n/2}}e^{-\left|x\right|^{2}/2}$.
+This is a log-concave measure, but in general it doesn't satisfy the
+Brunn\textendash Minkowski inequality with any exponent $a>0$. However,
+Kolesnikov\textendash Livshyts (\cite{KolesnikovLivshyts21}) proved that
+if $K_{0},K_{1}\subseteq\RR^{n}$ are convex sets such that $0\in K_{0}\cap K_{1}$,
+then we have 
+\begin{equation} 
+\gamma\left((1-t)K_{0} + t K_{1}\right)^{\frac{1}{2n}}\ge(1-t)\gamma(K_{0})^{\frac{1}{2n}}+t \gamma(K_{1})^{\frac{1}{2n}}.\label{eq:gassian-BM-2n}
+\end{equation}
+
+Eskenazis and Moschidis (\cite{EskenazisMoschidis21}) further proved that if $K_{0},K_{1}\subseteq\RR^{n}$
+are convex and \emph{origin-symmetric} (i.e. $K_{0}=-K_{0}$ and $K_{1}=-K_{1}$),
+the exponent $\frac{1}{2n}$ improves to $\frac{1}{n}$, which is
+the best possible. This settled a conjecture of Gardner and Zvavitch
+(\cite{GardnerZvavitch10}). In fact, the original conjecture was that perhaps
+the condition $0\in K_{0}\cap K_{1}$ is sufficient to have (\eqref{eq:gassian-BM-2n})
+with exponent $\frac{1}{n}$, but Nayar and Tkocz (\cite{NayarTkocz13})
+proved that this is not the case and suggested that central symmetry
+may be the correct condition.
+
+More generally, the following conjecture is widely believed:
+\begin{con}
+\label{conj:DBM}Let $\nu$ be an even log-concave measure on $\RR^{n}$.
+Then for every $K_{0},K_{1} \subseteq\RR^{n}$ which are convex and origin-symmetric
+we have 
+\begin{equation}
+\nu\left((1-t)K_{0}+t K_{1}\right)^{\frac{1}{n}}\ge(1-t)\nu(K_{0})^{\frac{1}{n}}+ t\nu(K_{1})^{\frac{1}{n}}.
+\end{equation}
+\end{con}
+
+One reason to believe this conjecture is the paper \cite{LivshytsMarsigliettiNayarZvavitch17},
+which shows that it would follow from another important conjecture,
+the log-Brunn\textendash Minkowski conjecture. In particular, the
+results of Böröczky\textendash Lutwak\textendash Yang\textendash Zhang
+(\cite{BoroczkyLutwakYangZhang12}) show that Conjecture \ref{conj:DBM} holds
+in dimension $n=2$. 
+
+In dimensions $n>2$, not much is known. It is immediate from Borell's
+theorem that uniform measures on convex bodies satisfy the Brunn\textendash Minkowski
+inequality with exponent $\frac{1}{n}$ without any symmetry assumptions.
+The results of \cite{Cordero-ErasquinRotem23} show that the conjecture
+holds in particular for rotation-invariant log-concave measures (as
+well as some rotation-invariant measures that are not log-concave). Livshyts
+(\cite{Livshyts23}) proved that the conjecture holds for all even
+log-concave measures, but with the optimal exponent $\frac{1}{n}$
+replaced by $\frac{1}{n^{4+o(1)}}$. 
+
+The proofs of all the results mentioned so far followed the same general
+strategy. The idea was developed by Kolesnikov and Milman (\cite{KolesnikovMilman18},
+\cite{KolesnikovMilman22}) to study various Brunn\textendash Minkowski
+type inequalities, both on $\RR^{n}$ and in the setting of Riemannian
+manifolds. The details will not be very important for us, but roughly
+speaking one tries to prove that $\frac{\dd^{2}}{\dd t^{2}}\left(\nu\left((1-t)K_{0}+t K_{1}\right)^{a}\right)\le0$
+by directly computing this second derivative. Without loss of generality
+it is enough to check this at $t=0$, which gives a functional inequality
+for functions $f:\partial K_{0} \to\RR$. Then the crucial step is to transform
+this inequality to an inequality for functions $u:K_{0} \to\RR$ by taking
+$u$ to be the solution of a certain elliptic PDE with $f$ as its
+Neumann boundary condition. As far as we can tell this strategy strongly
+depends on the convexity of $K_{0}$ and $K_{1}$, and without this assumption
+no results are possible. 
+
+\subsection{Weighted Brunn--Minkowski inequalities for star bodies}
+Despite the difficulties mentioned above when dealing with non-convex sets, in this paper we prove the following theorem:
+\begin{thm}
+\label{thm:main-BM intro}Let $V:\RR^{n}\to[0,\infty)$ be a $p$-homogeneous
+convex function for $1<p<\infty$, and let $\nu$ be a measure with
+density $\frac{\dd\nu}{\dd x}$ proportional to $e^{-V}$. Let $K_{0},K_{1}\subseteq\RR^{n}$
+be star bodies. Then for all $0\le t \le1$ we have
+\begin{equation}
+\text{\ensuremath{\nu\left((1-t)K_{0}+t K_{1}\right)^{\frac{p-1}{pn}}\ge(1-t)\nu(K_{0})^{\frac{p-1}{pn}}+ t \nu\left(K_{1}\right)^{\frac{p-1}{pn}}.}}
+\end{equation} 
+\end{thm}
+
+To explain the terminology, we say that $K\subseteq\RR^{n}$ is a star
+body if $K$ is a Borel set such that for all $x\in K$ and $0\le \lambda \le1$
+we have $\lambda x\in K$ (i.e. the ``star'' of $K$ is always assumed
+to be at the origin). Also recall that $V$ is $p$-homogeneous if
+$V(\lambda x)=\lambda^{p}V(x)$ for all $x\in\RR^{n}$ and $\lambda>0$. 
+
+Note that one specific choice, $V(x)=\frac{1}{2}\left|x\right|^{2}$,
+gives the Kolesnikov\textendash Livshyts result (\eqref{eq:gassian-BM-2n}),
+but this time without the convexity assumption on the sets. For any
+fixed $p>1$ the exponent $\frac{p-1}{pn}$ is asymptotically (for
+large $n$) better than the result of \cite{Livshyts23}, and again
+we need no convexity or symmetry assumptions, but of course our result
+is only for homogeneous potentials and not for all log-concave measures.
+Note that as $p\to\infty$ we have $\frac{p-1}{pn}\to\frac{1}{n}$,
+the optimal exponent. This makes sense since for large $p$ the measure
+$\nu$ is almost uniform on some convex body, and such uniform measures
+do satisfy the Brunn\textendash Minkowski inequality with exponent
+$\frac{1}{n}$, applicable to all Borel sets. 
+
+As mentioned above, as far as we know none of the previously used
+techniques can prove a result like Theorem \ref{thm:main-BM intro}. Our
+proof will therefore follow completely different lines, using tools
+of optimal transport and information theory. We lift the problem at hand from the realm of geometry of sets to the realm of geometry of measures, where calculus is sometimes ``smoother'' than in classical differential geometry. Arguably, even for the Gaussian measure, our proof is simpler than the known arguments.
+
+The theory of optimal transport gives us a natural way to interpolate between two probability measures $\mu_{0}$ and $\mu_{1}$, such that the interpolant $\mu_{t}$ is supported in the Minkowski average $(1-t) \cdot \supp(\mu_{0}) + t \cdot \supp(\mu_{1})$ of the two supports, thereby playing a role parallel to the Minkowski averaging of sets. Along these interpolations, the relative entropy $D(\cdot \Vert \nu)$ enjoys convexity properties of various degrees depending on $\nu$. The reader will find precise definitions in Section \ref{sec: overview}. However, the main point is that a variational formula for $\nu$ can be written in terms of the relative entropy $D(\cdot \Vert \nu)$,
+\begin{equation} \label{eq: variationalmeasureIntro}
+\sup_{\mu \in \mathcal{P}(K)} e^{- D(\mu \Vert \nu)} = \nu (K),
+\end{equation}
+where the supremum runs over all probability measures on $K$ and is attained at the normalized restriction $\nu_{K}$ of $\nu$ to $K$, allowing us to translate convexity properties of the relative entropy into concavity properties of the measure $\nu$. 
+
+
+
+Since the density $\frac{\d \nu_{K}}{ \d \nu}$ is radially decreasing when $K$ is a star body, we will obtain Theorem \ref{thm:main-BM intro} as a corollary to the following result.
+\begin{thm}
+\label{thm:main-entropy}Let $V:\RR^{n}\to[0,\infty)$ be a $p$-homogeneous
+convex function for $1<p<\infty$, and let $\nu$ be the probability
+measure with density proportional to $e^{-V}$. Let $\mu_{0}$, $\mu_{1}$
+be Borel probability measures, absolutely continuous with respect
+to $\nu$, such that $\frac{\dd\mu_{0}}{\dd\nu}$ and $\frac{\dd\mu_{1}}{\dd\nu}$
+are radially decreasing. Finally, let $\left\{ \mu_{t}\right\} _{t\in[0,1]}$
+be the displacement interpolation between $\mu_{0}$ and $\mu_{1}$.
+Then 
+\begin{equation}
+t\mapsto e^{-\frac{p-1}{pn}\DD{\mu_{t}}{\nu}}
+\end{equation}
+ is concave. 
+\end{thm}
+
+It is well known that the behavior of information-theoretic quantities under optimal transport is intimately related to the geometry of the underlying space, which is useful in the context of Brunn\textendash Minkowski type inequalities (see  for example Remark \ref{rem: cdhistory}). There are known proofs of the classical Brunn\textendash Minkowski or Prékopa\textendash Leindler
+inequalities along these lines (\cite[Chapter 6]{Villani03}). However, to the best of
+our knowledge this is the first time such tools are used to prove
+previously unknown Brunn\textendash Minkowski type inequalities for measures on Euclidean space. 
+
+To prove Theorem \ref{thm:main-entropy} we split the relative entropy $D(\mu \Vert \nu)$ of a measure $\mu$ into its ``internal energy'' $D(\mu \Vert \vol_{n})$ and ``potential energy'' $\int V \d \mu$ components. We observe that, under the assumptions on $\mu_{0}$ and $\mu_{1}$ as in Theorem \ref{thm:main-entropy}, $e^{- \frac{p-1}{n} \int V \d \mu_{t}}$ is concave in $t$. Theorem \ref{thm:main-entropy} is then obtained by combining our observation with a result of Erbar, Kuwada, and Sturm \cite{ErbarKuwadaSturm15} that $e^{- \frac{1}{n} D(\cdot \Vert \vol_{n})}$ is concave along all displacement interpolations. The aforementioned convexity property of the potential energy is established locally, that is, by taking two derivatives. 
+
+\subsection{Towards the best possible exponent in the entropy inequality}
+
+As mentioned, Theorem \ref{thm:main-BM intro} implies the Kolesnikov-Livshyts inequality \eqref{eq:gassian-BM-2n}, but not the result of Eskenazis--Moschidis with the optimal exponent $\frac{1}{n}$. Since this result is 
+known to be true, one can hope for a version of Theorem \ref{thm:main-entropy} that will imply it, that is, a version with the sharp coefficient $\frac{1}{n}$, under suitable assumptions on the potential $V$ and the measures $\mu_0$ and $\mu_1$. 
+
+One natural way to approach this problem is to perform the local analysis directly on $D(\cdot \Vert \nu)$ instead of splitting it to two components. Indeed, the concavity of $e^{-a D(\mu_{t} \Vert \nu)}$ along a displacement interpolation $\{ \mu_{t} \}_{t \in [0,1]}$ amounts to the inequality
+\begin{equation}
+    \frac{\d^{2}}{\d t^{2}} D(\mu_{t} \Vert \nu) \geq a \left( \frac{\d}{\d t} D(\mu_{t} \Vert \nu)  \right)^{2}.
+\end{equation}
+As we will see later, both sides of the above inequality can be explicitly written in terms of certain differential operators applied to the velocity field driving the optimal transport. This  leaves us with an inequality of almost the same form as the sufficiency criteria of Kolesnikov--Livshyts discussed earlier. 
+\begin{comment}
+\begin{equation}
+    \int \left( \Vert \grad^{2} \theta_{t} \Vert_{2} + \langle \grad V \cdot \grad \theta_{t} , \grad \theta_{t} \rangle \right) \d \mu_{t} \geq a \left( \int \left( \Delta \theta_{t} - \langle \grad V , \grad \theta_{t}\rangle \right) \d \mu_{t} \right)^{2},
+\end{equation}
+for the canonical velocity field $\grad \theta_{t}$ driving the interpolation $\{ \mu_{t} \}_{t \in [0,1]}$. Here $\Vert \cdot \Vert$ denotes the Hilbert--Schmidt norm. 
+\end{comment}
+In the case of $\nu = \gamma$, an auxiliary construction from \cite{EskenazisMoschidis21} allows us to prove the following theorem:
+\begin{thm} \label{thm: gaussianentintro}
+    Suppose $\{ \mu_{t} \}_{t \in [0,1]}$ is a displacement interpolation such that each $\mu_{t}$ is even and satisfies the odd Poinc\'are inequality with constant $1$, that is $\int f^{2} \d \mu_{t} \leq \int \vert \grad f \vert^{2} \d \mu$, for every odd test function $f$. Then,
+    \begin{equation}
+    \frac{\d^{2}}{\d t^{2}} D(\mu_{t} \Vert \gamma) \geq 2 \wasser^{2}(\mu_{0},\mu_{1}) + \frac{1}{n} \left( \frac{\d}{\d t} D(\mu_{t} \Vert \gamma)  \right)^{2},
+    \end{equation}
+    where $\wasser(\mu_{0},\mu_{1})$ denotes the $2$-Wasserstein metric (induced by the optimal transport problem).
+\end{thm}
+Thus, as readers familiar with the curvature-dimension framework may notice, under these assumptions on the $\mu_{t}$, not only can the ``dimensional'' improvement to $\frac{1}{n}$ be obtained, but the ``curvature'' also improves to $2$. Note that, without any restrictions on the $\mu_{t}$, $\frac{\d^{2}}{\d t^{2}} D(\mu_{t} \Vert \gamma) \geq  \wasser^{2}(\mu_{0},\mu_{1})$ is always true, which is reflective of the fact that Gauss space satisfies properties akin to a complete Riemannian manifold with Ricci curvature lower bounded by the metric tensor.
+
+When $K$ is a convex body, then the density of $\nu_{K}$ with respect to $\nu$ is a log-concave function. This is the property of $\nu_{K}$ that typically expresses itself in extensions of various phenomena from the geometry of sets to the geometry of measures. When $\nu$ is the Gaussian measure $\gamma$, measures having a log-concave density with respect to $\gamma$ are called strongly log-concave measures. Given that the Gaussian measure satisfies a Brunn--Minkowski inequality with exponent $\frac{1}{n}$ over origin-symmetric convex bodies, it is a natural question whether displacement interpolation between two even strongly log-concave probability measures satisfies the assumptions of Theorem \ref{thm: gaussianentintro}.
+\begin{qstn} \label{qstn: poincare}
+    Suppose $\mu_{0}, \mu_{1}$ are even strongly log-concave probability measures on $\R^n$. Let $\{ \mu_{t} \}_{t \in [0,1]}$ denote the displacement interpolation between $\mu_{0}$ and $\mu_{1}$. Is it true that each $\mu_{t}$, $t\in (0,1)$, satisfies the Poinc\'are inequality for odd functions with constant $1$?
+\end{qstn}
+
+Note that the Brascamp--Lieb inequality (\cite[Theorem 4.1]{BrascampLieb76}) guarantees that $\mu_{0}$ and $\mu_{1}$ in the above setup satisfy a Poinc\'are inequality with constant $1$ for all functions. Also note, that a positive answer to Question \ref{qstn: poincare}, combined with our Theorem \ref{thm: gaussianentintro}, would yield an entropic proof of the Eskenazis--Moschidis result. 
+We show that Question \ref{qstn: poincare} has an affirmative answer in several cases, namely when the dimension of the ambient space is one, or when both $\mu_{0}$ and $\mu_{1}$ are themselves Gaussian measures, or when one of $\{ \mu_{0}, \mu_{1} \}$ is the standard Gaussian $\gamma$. 
+
+%Moreover, it is also not hard to see that displacement interpolation between two even measures stays within the class of even measures. %
+
+\subsection{Functional Inequalities}
+While we cannot answer Question \ref{qstn: poincare} in full generality, the case where $\mu_0$ or $\mu_1$ is $\gamma$ itself does suffice to prove several fundamental functional inequalities.
+
+The HWI inequality, originally introduced by Otto and Villani in \cite{OttoVillani00}, asserts a relationship between the three elemental quantities--- $D(\cdot \Vert \gamma), \wasser(\cdot, \gamma)$, and $I(\cdot \Vert \gamma)$. The ``H'' in HWI stands for relative entropy (as it is sometimes denoted), ``W'' is for the Wasserstein distance, and ``I'' for Fisher information. Recall that, if $P^{\ast}_{s} \mu$ denotes the evolution of the measure $\mu$ under the Ornstein--Uhlenbeck process at time $s$, then the Fisher information is $I(\mu \Vert \gamma) = - \left. \frac{\d}{\d s} D(P^{\ast}_{s} \mu \Vert \gamma) \right|_{s=0}$. Using the methods from \cite{ErbarKuwadaSturm15}, we obtain the following strengthening of the Gaussian HWI inequality for even strongly log-concave measures as a consequence of our results. 
+\begin{thm}[An HWI inequality] \label{thm: HWIintro}
+    Let $\mu$ be an even strongly log-concave probability measure on $\R^n$. Suppose $\{ \mu_{0}, \mu_{1} \} = \{ \mu , \gamma \}$. Then,
+        \begin{equation} \label{eq: HWIintro}
+        e^{\frac{D(\mu_{0} \Vert \gamma)}{n} - \frac{D(\mu_{1} \Vert \gamma)}{n}} \leq \cos \left( \sqrt{\frac{2}{n}}\wasser(\mu_{0}, \mu_{1}) \right) + \frac{1}{\sqrt{2n}} \sin \left(  \sqrt{\frac{2}{n}} \wasser(\mu_{0}, \mu_{1}) \right) \sqrt{I(\mu_{0} \Vert \gamma)}.
+        \end{equation}
+\end{thm}
+
+The original HWI inequality of Otto--Villani (\cite[Theorem 3]{OttoVillani00}) for the Gaussian measure, which is valid without symmetry or log-concavity assumptions on $\mu$, states that
+\begin{equation} \label{eq: originalHWI}
+D(\mu_{0} \Vert \gamma) - D(\mu_{1} \Vert \gamma) \leq \wasser (\mu_{0}, \mu_{1}) \sqrt{I(\mu_{0} \Vert \gamma)} - \frac{1}{2} \wasser^{2} (\mu_{0}, \mu_{1}).
+\end{equation}
+To compare our inequality \eqref{eq: HWIintro} with the original HWI inequality \eqref{eq: originalHWI}, the reader may raise both sides of \eqref{eq: HWIintro} to the power $n$ and send $n \to \infty$. A key feature of HWI type inequalities, perhaps even the motivation behind it in \cite{OttoVillani00}, is that they unify two other important families of inequalities. At one end, by setting $\mu_{0} = \mu$ and $\mu_{1} = \gamma$ in Theorem \ref{thm: HWIintro}, after some elementary manipulations, we get a refinement of the Gaussian Logarithmic Sobolev inequality. Although first popularized in the mathematical community through a contribution of Gross (\cite{Gross75}), the Gaussian Logarithmic Sobolev inequality had previously appeared in the work of Federbush (\cite{Federbush69}) and even earlier as an information-theoretic uncertainty principle by Stam (\cite{Stam59}). 
+ \begin{cor}[A Logarithmic Sobolev inequality with an application] 
+     Let $\mu$ be an even strongly log-concave probability measure on $\R^n$. Then, 
+     \begin{equation}
+4 D(\mu \Vert \gamma) \leq 2n \left( e^{\frac{2}{n}D(\mu \Vert \gamma)} - 1 \right) \leq I( \mu \Vert \gamma).
+       \end{equation}
+       Therefore, 
+       \begin{equation}
+ D(P^{\ast}_{t} \mu \Vert \gamma ) \leq e^{-4t} D(\mu_{0} \Vert \gamma).
+       \end{equation}
+ \end{cor}
+On the other hand, with $\mu_{0} = \gamma$ and $\mu_{1} = \mu$, the transportation cost-information inequality of Talagrand (\cite{Talagrand96}) is improved for even strongly log-concave probability measures.
+\begin{cor}[A Talagrand inequality] 
+    Let $\mu$ be an even strongly log-concave probability measure on $\R^n$. Then,
+        \begin{equation}
+\wasser^{2} (\mu , \gamma) \leq - n \log \cos \left( \sqrt{\frac{2}{n}} \wasser(\mu, \gamma) \right) \leq D(\mu \Vert \gamma).
+        \end{equation}
+\end{cor}
+The original inequalities assert $2D (\mu \Vert \gamma) \leq I(\mu \Vert \gamma)$ and $\frac{1}{2} \wasser^{2}(\mu, \gamma) \leq D(\mu \Vert \gamma)$, respectively, for all probability measures $\mu$. Thus, even if we completely ignore the dimensional improvements that we have obtained, both the Gaussian Logarithmic Sobolev and the Talagrand inequalities show an improvement by a multiplicative factor of $2$ when restricted to even strongly log-concave measures. From examples presented in the main body of the text (see Examples \ref{exmpl: betterlsineedsslc} and \ref{exmpl: bettertalagrandneedsslc}), the reader will see that both assumptions--- central symmetry and strong log-concavity of the measure, are essential for this improvement. Dimensional improvements in Gaussian functional inequalities have been pursued before, for example, in the works of Bakry and Ledoux (\cite{BakryLedoux06}), Bobkov, Gozlan, Roberto, and Samson (\cite{BobkovGozlanRobertoSamson14}), and more recently, Bolley, Gentil, and Guillin (\cite{BolleyGentilGuillin18}). However, none of these results gives the multiplicative improvement we get by restricting to even strongly log-concave measures. Readers interested in dimension-dependent functional inequalities may also consult \cite{BakryBolleyGentil12, BakryBolleyGentil17, EskenazisShenfeld24, Shenfeld24}. 
+
+The rest of this paper is organized as follows. In Section \ref{sec: overview} we
+give the necessary background on optimal transport and describe
+the previous works on displacement concavity of entropy. In Section
+\ref{sec: dimconhomo} we give the relatively short proofs of Theorems \ref{thm:main-BM intro} and \ref{thm:main-entropy}.
+
+Then, in Section \ref{sec: gaussian} we restrict our attention to the case $\nu=\gamma$, to discuss potential improvements to convexity properties of $D(\cdot \Vert \gamma)$ beyond those established in Section \ref{sec: dimconhomo}. In particular we prove Theorem \ref{thm: gaussianentintro}. Finally, in Section \ref{sec: gaussianapp} we apply our findings from the previous section to prove functional inequalities such as Theorem \ref{thm: HWIintro} and its corollaries. 
+
+\subsection*{Some notation and conventions:}
+\begin{itemize}
+\item The standard Euclidean norm on $\R^n$ is denoted by $\vert \cdot \vert$ .
+    \item Let $K \subseteq \R^n$ be a measurable subset. We denote by $\mathcal{P}(K)$ the space of all Borel probability measures on $K$, $\mathcal{P}_{2}(K)$ all Borel probability measures on $K$ with finite second moments, and $\mathcal{P}_{ac}(K)$ the space of Borel probability measures on $K$ absolutely continuous with respect to the Lebesgue measure $\vol_{n}$ on $\R^n$. Further, we set $\mathcal{P}_{2,ac}(K) = \mathcal{P}_{2}(K) \cap \mathcal{P}_{ac}(K)$.
+    \item We will sometimes write $\int f$ for $\int f(x) \d x$. Lebesgue measure is the only case when the measure may not be specified in the integral.
+    \item Let $\nu$ be a Borel measure on $\R^n$. For every Borel set $K$ such that $\nu(K) >0$, we define the probability measure $\nu_{K}$ by setting $\nu_{K}(E) = \frac{\nu(E \cap K)}{\nu(K)}$, for every $E$. 
+    \item An \emph{even function} is a function $f$ satisfying $f(x) = f(-x)$ for all $x$. An \emph{odd function} is a function satisfying $f(-x) = - f(x)$ for all $x$. An \emph{even measure} is a measure $\mu$ on $\R^n$ satisfying $\mu(E) = \mu (-E)$ for all measurable sets $E$. 
+\end{itemize}
+
+\paragraph{\textbf{Acknowledgments:}} We would like to thank Emanuel Milman for providing some useful references regarding the Logarithmic Sobolev inequality. We would also like to thank the anonymous referees for their very useful suggestions and corrections. The authors were supported by ISF grant 1468/19 and NSF-BSF grant 2022707.
+\paragraph{\textbf{Declarations of interest:}} none.

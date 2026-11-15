@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-q-beta-spectral-bridge-table-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:q-beta-spectral-bridge-table-data",
+  "kind": "table",
+  "title": "Data table from prop:q-beta-spectral-bridge",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-beta-spectral-bridge"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "q-beta-spectral-bridge-table-data.md",
+  "provenance": "authored"
+}

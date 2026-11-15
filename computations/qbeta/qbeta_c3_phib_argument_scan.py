@@ -273,7 +273,7 @@ def main() -> int:
         "context": {
             "s_leak_target": "docs/audits/2026-07-11-qbeta-c3-barodd-sleak-phib-target.md",
             "evaluator_validation": "computations/qbeta/phi-b-substrate-regime.witness.json",
-            "lean_scaffold": "content/quantum-observable-universe/lean/QOU/MathlibExt/FaddeevQuantumDilogarithm.lean",
+            "lean_scaffold": "folio/quantum-observable-universe/lean/QOU/MathlibExt/FaddeevQuantumDilogarithm.lean",
             "smoothness_kill": "PR #1821 (dc3/dq ~ 4.6e6 impossible for smooth real f)",
         },
     }

@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-9811173v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Determinations of rational Dedekind-zeta invariants of hyperbolic manifolds and Feynman knots and links",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9811173v1",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-hep-th-9811173v1",
   "contains": [
+    "library/arxiv-hep-th-9811173v1/sections/sec-front-matter",
     "library/arxiv-hep-th-9811173v1/sections/sec-000",
     "library/arxiv-hep-th-9811173v1/sections/sec-001",
     "library/arxiv-hep-th-9811173v1/sections/sec-002",
@@ -20,38 +26,20 @@
     "library/arxiv-hep-th-9811173v1/sections/sec-011",
     "library/arxiv-hep-th-9811173v1/sections/sec-012",
     "library/arxiv-hep-th-9811173v1/sections/sec-013",
-    "library/arxiv-hep-th-9811173v1/sections/sec-014",
-    "library/arxiv-hep-th-9811173v1/sections/sec-015",
-    "library/arxiv-hep-th-9811173v1/sections/sec-016",
-    "library/arxiv-hep-th-9811173v1/sections/sec-017",
-    "library/arxiv-hep-th-9811173v1/sections/sec-018",
-    "library/arxiv-hep-th-9811173v1/sections/sec-019",
-    "library/arxiv-hep-th-9811173v1/sections/sec-020",
-    "library/arxiv-hep-th-9811173v1/sections/sec-021",
-    "library/arxiv-hep-th-9811173v1/sections/sec-022",
-    "library/arxiv-hep-th-9811173v1/sections/sec-023",
-    "library/arxiv-hep-th-9811173v1/sections/sec-024",
-    "library/arxiv-hep-th-9811173v1/sections/sec-025",
-    "library/arxiv-hep-th-9811173v1/sections/sec-026",
-    "library/arxiv-hep-th-9811173v1/sections/sec-027",
-    "library/arxiv-hep-th-9811173v1/sections/sec-028",
-    "library/arxiv-hep-th-9811173v1/sections/sec-029",
-    "library/arxiv-hep-th-9811173v1/sections/sec-030",
-    "library/arxiv-hep-th-9811173v1/sections/sec-031",
-    "library/arxiv-hep-th-9811173v1/sections/sec-032",
-    "library/arxiv-hep-th-9811173v1/sections/sec-033",
-    "library/arxiv-hep-th-9811173v1/sections/sec-034",
-    "library/arxiv-hep-th-9811173v1/sections/sec-035",
-    "library/arxiv-hep-th-9811173v1/sections/sec-036",
-    "library/arxiv-hep-th-9811173v1/sections/sec-037",
-    "library/arxiv-hep-th-9811173v1/sections/sec-038",
-    "library/arxiv-hep-th-9811173v1/sections/sec-039",
-    "library/arxiv-hep-th-9811173v1/sections/sec-040",
-    "library/arxiv-hep-th-9811173v1/sections/sec-041"
+    "library/arxiv-hep-th-9811173v1/sections/sec-014"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:hep-th/9811173&metadataPrefix=arXiv), submitted 1998-11-19, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-hep-th-9811173v1",
+    "title_source": "slug",
     "source_file": "9811173v1.pdf",
     "source_sha256": "986bf57947746523a0647891dc9e452d9b60bf99a7257d33140d146056e1bf7e",
     "pages": 54,

@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/unital-groebner-bases/blocks/ex-motivating-examples",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:motivating-examples",
+  "kind": "example",
+  "title": "Motivating examples",
+  "tags": [
+    "groebner-basis",
+    "polynomial",
+    "universal-enveloping-algebra"
+  ],
+  "text": "motivating-examples.md",
+  "provenance": "authored"
+}

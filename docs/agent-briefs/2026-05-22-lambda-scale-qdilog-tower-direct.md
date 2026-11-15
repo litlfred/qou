@@ -20,7 +20,7 @@ ruled out for the proton's Bring-decomposition class.
 ## Background — what is `λ_scale` and why does it matter
 
 The **Borromean baryon mass formula**
-([`conj:borromean-baryon-mass-formula`](../../content/quantum-observable-universe/braids-and-knots/borromean-baryon-mass-formula.md)):
+([`conj:borromean-baryon-mass-formula`](../../folio/quantum-observable-universe/braids-and-knots/borromean-baryon-mass-formula.md)):
 
 $$
 \mathfrak{m}(B) = m_e \cdot \left[\frac{\mathrm{Vol}(\mathcal{B}_3)}{\hbar_q^2} \cdot \lambda_{\mathrm{scale}} + S(B)\right]
@@ -30,9 +30,9 @@ $$
   calibration inputs.
 - `Vol(𝓑₃) = 8G ≈ 7.32772...` is a fixed topological invariant
   (Catalan's constant identity per
-  [`prop:binding-scale-catalan`](../../content/quantum-observable-universe/braids-and-knots/binding-scale-catalan.md);
+  [`prop:binding-scale-catalan`](../../folio/quantum-observable-universe/braids-and-knots/binding-scale-catalan.md);
   see also the 100-dps witness chain referenced from
-  [`prop:lambda-scale-bring-bloch-identity`](../../content/quantum-observable-universe/braids-and-knots/lambda-scale-bring-bloch-identity.md)).
+  [`prop:lambda-scale-bring-bloch-identity`](../../folio/quantum-observable-universe/braids-and-knots/lambda-scale-bring-bloch-identity.md)).
 - `ℏ_q = (q-1)/q` is the q-deformed Planck constant; at `q_0`
   this gives `Vol(𝓑₃)/ℏ_q² ≈ 746.4`.
 - `S(B)` is the Skein-orientation correction (different for proton
@@ -48,7 +48,7 @@ $$
 
 ## Why Bring-Bloch is exhausted
 
-Per [`prop:lambda-scale-bring-bloch-identity`](../../content/quantum-observable-universe/braids-and-knots/lambda-scale-bring-bloch-identity.md),
+Per [`prop:lambda-scale-bring-bloch-identity`](../../folio/quantum-observable-universe/braids-and-knots/lambda-scale-bring-bloch-identity.md),
 the conjecture was `λ_scale = (1/8G) · D(Σ_i n_i^(p) [Z_K_i])` where
 `D` is the Bloch-Wigner dilogarithm and `n_i^(p)` is an integer
 multiset over hyperbolic-knot Bring-decomposition classes. The
@@ -105,7 +105,7 @@ detour entirely. Candidate forms:
 
 ## What's already known structurally
 
-From [`prop:lambda-scale-bring-bloch-identity §Open work`](../../content/quantum-observable-universe/braids-and-knots/lambda-scale-bring-bloch-identity.md):
+From [`prop:lambda-scale-bring-bloch-identity §Open work`](../../folio/quantum-observable-universe/braids-and-knots/lambda-scale-bring-bloch-identity.md):
 
 > Three tasks remain:
 > 1. Find K_p's explicit decomposition (Tier 1+ PSLQ search;
@@ -153,7 +153,7 @@ multiplies the topological volume → mass scale.
 
 **Compute kernel.** `computations/phi_q.py` or
 similar; CMP per `Φ_q` definition in
-[`prop:mass-tower-operator-valued`](../../content/quantum-observable-universe/braids-and-knots/mass-tower-operator-valued.md).
+[`prop:mass-tower-operator-valued`](../../folio/quantum-observable-universe/braids-and-knots/mass-tower-operator-valued.md).
 
 ### Strategy C — cosh / cos_q ladder
 
@@ -163,7 +163,7 @@ The closed-form `cosh` level is the easiest to PSLQ.
 
 Already tried (negative): the "5/2 − h²·G ansatz" was an
 empirical PSLQ coincidence at `h, h²` order;
-[`prop:lambda-scale-bring-bloch-identity`](../../content/quantum-observable-universe/braids-and-knots/lambda-scale-bring-bloch-identity.md)
+[`prop:lambda-scale-bring-bloch-identity`](../../folio/quantum-observable-universe/braids-and-knots/lambda-scale-bring-bloch-identity.md)
 notes this. Look for **higher-order combinations** (`h³`, `h⁵`)
 or different basis functions (`sinh`, `cosh(h)^n`).
 
@@ -494,7 +494,7 @@ Procedure:
 6. Check if `λ_scale = (1/8G) · D([Z_K_p])`.
 
 This is the categorical identity from
-[`prop:lambda-scale-bring-bloch-identity`](../../content/quantum-observable-universe/braids-and-knots/lambda-scale-bring-bloch-identity.md)
+[`prop:lambda-scale-bring-bloch-identity`](../../folio/quantum-observable-universe/braids-and-knots/lambda-scale-bring-bloch-identity.md)
 with the **integer multi-set** replaced by the **explicit
 triangulation**. The 6-tier negative ruled out the existence of
 the multi-set decomposition; it did NOT rule out the underlying
@@ -571,7 +571,7 @@ from F/G/H/I/K.
   categorical identity** — all four are substrate-q_0 coincidences.
   The cluster has added an "Empirical-exhaustion update 2026-05-23"
   banner to
-  [`prop:lambda-scale-bring-bloch-identity`](../../content/quantum-observable-universe/braids-and-knots/lambda-scale-bring-bloch-identity.md)
+  [`prop:lambda-scale-bring-bloch-identity`](../../folio/quantum-observable-universe/braids-and-knots/lambda-scale-bring-bloch-identity.md)
   documenting six independent searches all returning negative.
 - **Updated reclassification for this PR's findings:**
   - Strategy G's `5/2 − ℏ_q² · ⟨𝓑_3⟩(q_0^{1/2})` at 165 ppm:
@@ -597,7 +597,7 @@ point:
   1. **q-dilog Tier 1+ extensions** (per `af2d27ee` audit
      §Recommendation): the operator-valued spectral coordinates
      `|V̂_S|` from
-     [`prop:mass-tower-operator-valued`](../../content/quantum-observable-universe/braids-and-knots/mass-tower-operator-valued.md);
+     [`prop:mass-tower-operator-valued`](../../folio/quantum-observable-universe/braids-and-knots/mass-tower-operator-valued.md);
      2-variable Bloch-Wigner regulators
      `L_2(x,y) := D[x] + D[y] + D[xy/((1−x)(1−y))]`; the
      `Q(ζ_60)` trace-field rank-8 basis. These are bigger
@@ -894,11 +894,11 @@ distinguish a structural identity from a numerical coincidence.
 
 ## Cross-references
 
-- [`conj:borromean-baryon-mass-formula`](../../content/quantum-observable-universe/braids-and-knots/borromean-baryon-mass-formula.md)
+- [`conj:borromean-baryon-mass-formula`](../../folio/quantum-observable-universe/braids-and-knots/borromean-baryon-mass-formula.md)
   — the formula that uses `λ_scale`.
-- [`prop:lambda-scale-bring-bloch-identity`](../../content/quantum-observable-universe/braids-and-knots/lambda-scale-bring-bloch-identity.md)
+- [`prop:lambda-scale-bring-bloch-identity`](../../folio/quantum-observable-universe/braids-and-knots/lambda-scale-bring-bloch-identity.md)
   — the now-incomplete Bring-Bloch hypothesis.
-- [`prop:li2q-phiq-bar-symmetrization`](../../content/quantum-observable-universe/braids-and-knots/li2q-phiq-bar-symmetrization.md)
+- [`prop:li2q-phiq-bar-symmetrization`](../../folio/quantum-observable-universe/braids-and-knots/li2q-phiq-bar-symmetrization.md)
   — the Φ_q ↔ Li_2^q bar-symmetry identity.
 - [`docs/audits/2026-05-18-210x-scale-gap-root-cause-v2.md`](../audits/2026-05-18-210x-scale-gap-root-cause-v2.md)
   — diagnostic identifying `λ_scale` as the CAL-4 problem.

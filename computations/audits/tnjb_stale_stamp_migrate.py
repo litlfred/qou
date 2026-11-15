@@ -162,7 +162,7 @@ def candidates() -> list[tuple[str, Path]]:
         # colliding `.py` names to `_deprecated/`. This tool then classifies
         # the retired copy's pin and migrates a stamp on that basis.
         hits = [p for p in REPO.rglob(sp.name)
-                if ".git" not in p.parts and "_deprecated" not in p.parts
+                if ".git" not in p.parts and ("_deprecated" not in p.parts and "fsh-guts" not in p.parts)
                 and ".claude" not in p.parts and p.is_file()]
         if not hits:
             continue

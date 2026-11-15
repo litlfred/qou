@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/kohno1987-aif/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "MONODROMY OF INTEGRABLE CONNECTIONS ARISING",
+  "pageStart": 4,
+  "pageEnd": 6,
+  "contains": [
+    "library/kohno1987-aif/blocks/prose-sec-001"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/kohno1987-aif",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/kohno1987-aif",
+  "provenance": "ingested"
+}

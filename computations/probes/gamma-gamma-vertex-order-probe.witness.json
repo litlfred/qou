@@ -1,0 +1,187 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-12T10:44:53.074109+00:00",
+  "commitSha": "465d1795cd9b9f860dc29ea11f02b6047e655aea",
+  "assertions": [
+    {
+      "name": "det_V_is_one",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "Lean vtx_det"
+    },
+    {
+      "name": "trace_V_is_minus_one_minus_h_sq",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "Lean vtx_trace"
+    },
+    {
+      "name": "chebyshev_closed_forms_match_direct_powers",
+      "computed": "5.44513836812849899375105604705760871051647064763102124146348e-61",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "Lean trace_vtx_pow_one..five via pow_eq_lin"
+    },
+    {
+      "name": "chebyshev_closed_forms_match_step3_witness",
+      "computed": "2.64478149309098522553622722285655280225085717170649603156797e-60",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-40",
+      "source": "gamma-gamma-h3-psd-selector-probe.witness.json h3_candidates[k].chi_21"
+    },
+    {
+      "name": "vertex_cube_is_q_deformed_identity",
+      "computed": "2.43086534291450847935315002100786103148056725340670591136762e-61",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "Lean vtx_three_sub_one"
+    },
+    {
+      "name": "pin_inside_lean_interval",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean h_sq_le_of_q_le: 1 < q <= 23/20 => h^2 <= 1/10"
+    },
+    {
+      "name": "alpha_k_nonzero_k_le_5",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean lin_ne_zero_of_small (min |alpha_k| recorded in data)"
+    },
+    {
+      "name": "sign_pattern_chi_1_to_5",
+      "computed": "--+--",
+      "expected": "--+--",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean chi_signs_of_small"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "gamma-gamma-vertex-order-probe",
+  "scriptFile": "gamma_gamma_vertex_order_probe.py",
+  "scriptHash": "bbb0bf63d3a9",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/gamma_gamma_vertex_order_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/gamma_gamma_vertex_order_probe.py"
+  },
+  "description": "qou-ales step 4: numerical cross-check of QOU/Mass/GammaGammaVertexOrder.lean at the proton pin. The (2,1)-image V of the gamma-gamma vertex has det 1 and trace -1-h^2; V^k = alpha_k V + beta_k 1 (Chebyshev/Cayley-Hamilton); the closed-form traces chi_1..chi_5 reproduce the step-3 witness column chi_21; V^3 - 1 = h^2((2+h^2)V + 1) (the q-deformed 3-cycle); the Lean interval hypotheses (1 < q <= 23/20, 0 < h^2 <= 1/10) hold at the pin and alpha_k != 0 for k <= 5. Informational: theta/pi and the closest approach of V^k to a scalar for k <= 60. No AME/CODATA binding value read; no census.",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "convention": "D (Hoefsmit (2,1) block; Markov parameter not used here)",
+    "dps": 60,
+    "tolerance": "1.00000000000000000000000000000000000000000000000000000000000e-40",
+    "step3_witness": "computations/probes/gamma-gamma-h3-psd-selector-probe.witness.json"
+  },
+  "data": {
+    "h": "0.209060298795639315430846213129674943859757495263063078255215",
+    "h_sq": "0.0437062085325219894020193356773883097682139607135222162428474",
+    "trace_V": "-1.04370620853252198940201933567738830976821396071352221624285",
+    "det_V": "1.00000000000000000000000000000000000000000000000000000000000",
+    "chebyshev_table": [
+      {
+        "k": 0,
+        "chi_closed": "2.00000000000000000000000000000000000000000000000000000000000",
+        "chi_direct": "2.00000000000000000000000000000000000000000000000000000000000",
+        "chi_witness_step3": "2.00000000000000000000000000000000000000000000000000000000000",
+        "alpha_k": "0.0",
+        "beta_k": "1.00000000000000000000000000000000000000000000000000000000000",
+        "lin_decomposition_dev": "0.0",
+        "sign": "+"
+      },
+      {
+        "k": 1,
+        "chi_closed": "-1.04370620853252198940201933567738830976821396071352221624285",
+        "chi_direct": "-1.04370620853252198940201933567738830976821396071352221624285",
+        "chi_witness_step3": "-1.04370620853252198940201933567738830976821396071352221624285",
+        "alpha_k": "1.00000000000000000000000000000000000000000000000000000000000",
+        "beta_k": "0.0",
+        "lin_decomposition_dev": "0.0",
+        "sign": "-"
+      },
+      {
+        "k": 2,
+        "chi_closed": "-0.910677350270667723245624754038263478072193579917334030930940",
+        "chi_direct": "-0.910677350270667723245624754038263478072193579917334030930941",
+        "chi_witness_step3": "-0.910677350270667723245624754038263478072193579917334030930941",
+        "alpha_k": "-1.04370620853252198940201933567738830976821396071352221624285",
+        "beta_k": "-1.00000000000000000000000000000000000000000000000000000000000",
+        "lin_decomposition_dev": "7.77876909732642713393008006722515530073781521090145891637640e-62",
+        "sign": "-"
+      },
+      {
+        "k": 3,
+        "chi_closed": "1.99418581297996408672819936801871670008913958251181051846763",
+        "chi_direct": "1.99418581297996408672819936801871670008913958251181051846763",
+        "chi_witness_step3": "1.99418581297996408672819936801871670008913958251181051846763",
+        "alpha_k": "0.0893226497293322767543752459617365219278064200826659690690595",
+        "beta_k": "1.04370620853252198940201933567738830976821396071352221624285",
+        "lin_decomposition_dev": "2.33363072919792814017902402016754659022134456327043767491292e-61",
+        "sign": "+"
+      },
+      {
+        "k": 4,
+        "chi_closed": "-1.17066676370399557005502108338909471953858810314365848873230",
+        "chi_direct": "-1.17066676370399557005502108338909471953858810314365848873230",
+        "chi_witness_step3": "-1.17066676370399557005502108338909471953858810314365848873230",
+        "alpha_k": "0.950479604447442097326180032341328390320925621798288302224782",
+        "beta_k": "-0.0893226497293322767543752459617365219278064200826659690690595",
+        "lin_decomposition_dev": "1.94469227433160678348252001680628882518445380272536472909410e-61",
+        "sign": "-"
+      },
+      {
+        "k": 5,
+        "chi_closed": "-0.772353643579429041922799558857865778759660526428891116556487",
+        "chi_direct": "-0.772353643579429041922799558857865778759660526428891116556488",
+        "chi_witness_step3": "-0.772353643579429041922799558857865778759660526428891116556488",
+        "alpha_k": "-1.08134411397466329330064583742735819761078168306099251966324",
+        "beta_k": "-0.950479604447442097326180032341328390320925621798288302224782",
+        "lin_decomposition_dev": "3.11150763893057085357203202689006212029512608436058356655056e-61",
+        "sign": "-"
+      }
+    ],
+    "V3_minus_1_frobenius": "0.112648788462711942322055182476300562279512192641668202470054",
+    "theta_over_pi": "0.674759090836824267539361888564439565924405155696549155139939",
+    "three_theta_minus_2pi_deg": "4.36990905188510447125541982479736559917878407613654377556716",
+    "closest_scalar_approach_k_le_60": {
+      "k": 40,
+      "abs_alpha_k": "0.0354837741188914183285594315353778248475940469479621323881929"
+    },
+    "signs_chi_1_to_5": "--+--",
+    "min_abs_alpha_k_le_5": "0.0893226497293322767543752459617365219278064200826659690690595"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

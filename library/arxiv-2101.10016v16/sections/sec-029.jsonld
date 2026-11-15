@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2101.10016v16/sections/sec-029",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Compatible unitary coboundary wqh, an abstract Drinfeld-Kohno",
+  "pageStart": 183,
+  "pageEnd": 187,
+  "contains": [
+    "library/arxiv-2101.10016v16/blocks/prose-sec-029",
+    "library/arxiv-2101.10016v16/blocks/def-sec-029-01",
+    "library/arxiv-2101.10016v16/blocks/example-sec-029-02",
+    "library/arxiv-2101.10016v16/blocks/prop-sec-029-03",
+    "library/arxiv-2101.10016v16/blocks/remark-sec-029-04",
+    "library/arxiv-2101.10016v16/blocks/thm-sec-029-05",
+    "library/arxiv-2101.10016v16/blocks/thm-sec-029-06"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2101.10016v16",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2101.10016v16",
+  "provenance": "ingested"
+}

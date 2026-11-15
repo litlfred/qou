@@ -1,0 +1,287 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "s00526-018-1443-6",
+ "source": {
+  "file": "s00526-018-1443-6.pdf",
+  "sha256": "34f3cd94e3b2d9d79f430ab44854c468d41505cf818139086968b6a50d317316",
+  "bytes": 603606,
+  "pages": 28,
+  "text_source": "embedded",
+  "extractor": "pypdf",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": "10.1007/s00526-018-1443-6",
+  "title": "Calc. Var. (2019) 58:16 Calculus of Variations On the analyticity of critical points of the M\u00f6bius energy Simon Blatt 1 \u00b7 Nicole Vorderobermeier 1 \u00a9 The Author(s) 2018",
+  "authors_raw": null,
+  "title_lines": [
+   "Calc. Var. (2019) 58:16",
+   "Calculus of Variations",
+   "On the analyticity of critical points of the M\u00f6bius energy",
+   "Simon Blatt 1 \u00b7 Nicole Vorderobermeier 1",
+   "\u00a9 The Author(s) 2018"
+  ],
+  "abstract": "We prove that smooth critical points of the M\u00f6bius energy E parametrized by arc-length are analytic. Together with the main result in Blatt et al. (Trans Am Math Soc 368(9):6391\u20136438, 2016) this implies that critical points of the M\u00f6bius energy with merely bounded energy are not only C\u221e but also analytic. Our proof is based on Cauchy\u2019s method of majorants and a decomposition of the gradient which has already proved useful in the proof of the regularity results in Blatt and Reiter (Manuscr Math 140(1\u20132):29\u201350, 2013) and Blatt et al. (Trans Am Math Soc 368(9):6391\u20136438, 2016). To the best of the authors knowledge, this is the \ufb01rst analyticity result in the context of non-local differential equations. Mathematics Subject Classi\ufb01cation 35B65 \u00b7 57M25",
+  "docinfo": {
+   "Author": "Simon Blatt ",
+   "CreationDate": "D:20181207120615+05'30'",
+   "Creator": "Springer",
+   "Producer": "Acrobat Distiller 10.1.8 (Windows)",
+   "Title": "On the analyticity of critical points of the M\u00f6bius energy"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "On the analyticity of critical points of the M\u00f6bius energy",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Abstract",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 3,
+   "title": "Expos\u00e9 of the present work",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Preliminaries",
+   "page": 4,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 3,
+   "title": "Fractional Sobolev spaces",
+   "page": 4,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 3,
+   "title": "Properties of analytic functions",
+   "page": 5,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 3,
+   "title": "Fa\u00e0 di Bruno's formula",
+   "page": 6,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Decomposition of the first variation of mathcalE",
+   "page": 7,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Estimate of the main term Q",
+   "page": 8,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Form of PT Q\u03b3 and the bilinear Hilbert transform",
+   "page": 10,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Form of the remaining parts",
+   "page": 16,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 3,
+   "title": "Form of Pperp R2\u03b5\u03b3",
+   "page": 17,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 3,
+   "title": "Form of Pperp R1\u03b5\u03b3",
+   "page": 18,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 2,
+   "title": "Proof of the main theorem by Cauchy's method of majorants",
+   "page": 20,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgements",
+   "page": 27,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "References",
+   "page": 27,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 89,
+   "n_words": 8
+  },
+  {
+   "id": "sec-000-on-the-analyticity-of-critical-points-of-the-m\u00f6b",
+   "number": null,
+   "title": "On the analyticity of critical points of the M\u00f6bius energy",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 147,
+   "n_words": 26
+  },
+  {
+   "id": "sec-001-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 764,
+   "n_words": 123
+  },
+  {
+   "id": "sec-002-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 7361,
+   "n_words": 1267
+  },
+  {
+   "id": "sec-003-expos\u00e9-of-the-present-work",
+   "number": null,
+   "title": "Expos\u00e9 of the present work",
+   "level": 3,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 181,
+   "n_words": 37
+  },
+  {
+   "id": "sec-004-21-fractional-sobolev-spaces",
+   "number": "2.1",
+   "title": "Fractional Sobolev spaces",
+   "level": 3,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 91,
+   "n_words": 12
+  },
+  {
+   "id": "sec-005-2-preliminaries",
+   "number": "2",
+   "title": "Preliminaries",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 3346,
+   "n_words": 711
+  },
+  {
+   "id": "sec-006-22-properties-of-analytic-functions",
+   "number": "2.2",
+   "title": "Properties of analytic functions",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 8,
+   "n_chars": 5968,
+   "n_words": 1340
+  },
+  {
+   "id": "sec-007-4-estimate-of-the-main-term-q",
+   "number": "4",
+   "title": "Estimate of the main term Q",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 16,
+   "n_chars": 13494,
+   "n_words": 3152
+  },
+  {
+   "id": "sec-008-6-form-of-the-remaining-parts",
+   "number": "6",
+   "title": "Form of the remaining parts",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 27,
+   "n_chars": 18624,
+   "n_words": 4345
+  },
+  {
+   "id": "sec-009-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 407,
+   "n_words": 56
+  },
+  {
+   "id": "sec-010-references",
+   "number": null,
+   "title": "References",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 6319,
+   "n_words": 941
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 17,
+  "sections": 12,
+  "chars_total": 56791
+ }
+}

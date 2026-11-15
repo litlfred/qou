@@ -8,17 +8,11 @@ pages: 9-9
 source_pdf: 1010.5321v3.pdf
 source_sha256: c6bb20926b1f291f
 doc_brief: "Formulas on hyperbolic volume — This paper collects some important formulas on hyperbolic volume."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-As an application of our general formulas we determine the vo lume of the orthosceme as the
-function of its edge-lengthes a, b and c. We note that there are formulas to transform the
-dihedral angles into the edge-lengthes. By the notation of t he previous section these are:
-a = 1
-2 ln sin(α +δ)
-sin(α −δ), c = 1
-2 ln sin(γ +δ)
-sin(γ −δ), z = 1
-2 ln sin(π
-2 −β +δ)
-sin(π
-2 −β −δ).
-It is clear that there is no simple way to get a new volume formu la using these ones.
+As an application of our general formulas we determine the volume of the orthosceme as the function of its edge-lengthes $a$, $b$ and $c$. We note that there are formulas to transform the dihedral angles into the edge-lengthes. By the notation of the previous section these are: $$a=\frac{1}{2}\ln\frac{\sin(\alpha +\delta)}{\sin(\alpha -\delta)}, \hspace{ 0,3cm}
+c=\frac{1}{2}\ln\frac{\sin(\gamma +\delta)}{\sin(\gamma -\delta)},
+\hspace{ 0,3cm}
+z=\frac{1}{2}\ln\frac{\sin(\frac{\pi}{2}-\beta +\delta)}{\sin(\frac{\pi}{2}-\beta -\delta)}.$$ It is clear that there is no simple way to get a new volume formula using these ones.

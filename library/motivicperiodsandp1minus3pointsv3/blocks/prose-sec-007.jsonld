@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/motivicperiodsandp1minus3pointsv3/blocks/prose-sec-007",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/motivicperiodsandp1minus3pointsv3/blocks/prose-sec-007",
   "kind": "prose",
-  "title": "Francis Brown",
-  "pageStart": 4,
-  "pageEnd": 4,
-  "text": "../sections/sec-007-4-francis-brown.md",
-  "derivedFrom": "library/motivicperiodsandp1minus3pointsv3/manifest",
-  "sourceDocument": "library/motivicperiodsandp1minus3pointsv3/manifest",
+  "title": "References",
+  "pageStart": 23,
+  "pageEnd": 25,
+  "text": "../sections/sec-007-7-references.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/motivicperiodsandp1minus3pointsv3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/motivicperiodsandp1minus3pointsv3",
   "provenance": "ingested"
 }

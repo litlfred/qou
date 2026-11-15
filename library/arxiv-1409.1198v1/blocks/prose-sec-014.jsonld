@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1409.1198v1/blocks/prose-sec-014",
+  "kind": "prose",
+  "title": "Quantum sln",
+  "pageStart": 21,
+  "pageEnd": 22,
+  "text": "../sections/sec-014-41-quantum-sln.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1409.1198v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1409.1198v1",
+  "provenance": "ingested"
+}

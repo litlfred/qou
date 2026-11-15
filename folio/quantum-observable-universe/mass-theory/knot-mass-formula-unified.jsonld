@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/thm-knot-mass-formula-unified",
+  "@type": [
+    "folio-assistant-core:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:knot-mass-formula-unified",
+  "kind": "theorem",
+  "title": "Unified mass formula: tower + Frobenius co-Casimir correction",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-frobenius-codim-universal",
+    "papers/quantum-observable-universe/blocks/conj-knot-factor-frobenius-pairing"
+  ],
+  "cites": [
+    "references/kassel1995"
+  ],
+  "tags": [
+    "mass",
+    "knot",
+    "vortex",
+    "frobenius",
+    "co-casimir",
+    "tower",
+    "unified-formula",
+    "universal"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.knot_mass_unified",
+  "text": "knot-mass-formula-unified.md",
+  "leanSource": "knot-mass-formula-unified.lean",
+  "provenance": "authored"
+}

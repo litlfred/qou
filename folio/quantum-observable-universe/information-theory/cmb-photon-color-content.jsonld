@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-cmb-photon-color-content",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:cmb-photon-color-content",
+  "kind": "remark",
+  "title": "The CMB as photon color content surviving the horizon",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-cmb-boundary-datum",
+    "papers/quantum-observable-universe/blocks/rem-breit-wheeler-vertex"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-cmb-boundary-datum",
+  "tags": [
+    "cmb",
+    "photon",
+    "color-content",
+    "polarization",
+    "jet-horizon",
+    "hecke-algebra",
+    "boundary-datum"
+  ],
+  "text": "cmb-photon-color-content.md",
+  "provenance": "authored"
+}

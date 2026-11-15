@@ -1,0 +1,66 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "morita2012b",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 454,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1205.1453v2/1205.1453v2.pdf"
+        },
+        "id": "morita2012b",
+        "status": "uncited",
+        "note": "Identified from the title page (arXiv:1205.1453v2, single author, 12 pp, 4 sections). No ref() entry existed; morita2012b created 2026-09-07 by the triage (the suffix distinguishes it from morita2012 = arXiv:1203.3404, the Ramanujan-equation connection formulae). No citation site yet; one bean queued.",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "A worked first-kind q-Borel-Laplace resummation of a divergent BILATERAL series whose connection coefficient is a q-elliptic theta quotient \u2014 the same shape as C1's connection-matrix entries ('elliptic per entry', bean qou-wgnx) and the precedent that bean's route (a) needs (resum in two directions lambda != mu, form S_q from the direction dependence). Read: \u00a71 (1psi0 and Ramanujan's 1psi1 summation, eq. (1); the intro theorem), \u00a72 (theta function, q-Borel and q-Laplace of first and second kind), \u00a73.1 (eq. (19) the degenerate first-order equation ((1/q - ax)sigma_q + x)u = 0 with formal solution 1psi0, eq. (20), and the theta-normalised solution at infinity), \u00a73.2 Thm 1 (the resummation in direction lambda equals (q;q)_inf/(q/a;q)_inf times theta(aq lambda)/theta(q lambda) times theta(ax/lambda)/theta(x/lambda) times 1/(1/ax;q)_inf off the q-spiral [-lambda;q]) and Cor 1 (C(x;q) is q-elliptic), \u00a74 Thm 2 (q -> 1 gives the bilateral 1H0). Corpus-grep: 'bilateral' has one Lean hit (BalancedThetaLimit.lean, a bilateral theta series) and one compute hit (the theta-kernel bilateral Laplace of qbeta_g3_5two_qborel_theta_laplace.py, a different object: the Masbaum bar-side series); '1psi0' / 'bilateral basic hypergeometric' have no hits. So no block or witness evaluates 1psi0 and there is nothing to compute-check; the value is as a citable precedent beside morita2014 (bean qou-hnuw, todo) at the level-1 q-Borel kernel file. Not inflated to core: one theorem, order one, and no corpus number depends on it.",
+          "keyResults": [
+            {
+              "locator": "Thm 1 (\u00a73.2), Cor 1",
+              "statement": "The first-kind q-Borel-Laplace resummation of 1psi0(a;-;q,x) in direction lambda is an explicit product of theta quotients times 1/(1/ax;q)_inf, valid off the q-spiral [-lambda;q]; the connection coefficient C(x;q) is q-elliptic.",
+              "useForFolio": "The simplest worked instance of the summation-direction dependence of a q-Borel-Laplace resummation sitting entirely in a theta quotient \u2014 the route-(a) precedent bean qou-wgnx names, one order below morita2014's.",
+              "targets": [
+                "QOU.MathlibExt.QBorelKernel",
+                "qou-wgnx"
+              ]
+            },
+            {
+              "locator": "eq. (19)-(20), \u00a73.1",
+              "statement": "1psi0 is the divergent formal solution of the degenerate first-order q-difference equation ((1/q - ax)sigma_q + x)u = 0.",
+              "useForFolio": "A first-order divergent model equation for the level-1 kernel t_n = q^{C(n,2)} formalised in QBorelKernel.lean.",
+              "targets": [
+                "QOU.MathlibExt.QBorelKernel"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "No ref() entry existed; created as morita2012b in this triage.",
+              "target": "folio/schema/references.ts"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "Cite beside the morita2014 citation qou-hnuw will add at the level-1 kernel file, as the bilateral / first-order precedent for a theta-quotient connection coefficient.",
+              "target": "folio/quantum-observable-universe/lean/QOU/MathlibExt/QBorelKernel.lean",
+              "bean": "qou-89w7"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-09-07T08:38:46Z",
+          "source_sha": "29d1b1fd9466"
+        }
+      }
+    }
+  ]
+}

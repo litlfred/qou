@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-nucl-th-0610105v2/blocks/prose-sec-002",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-nucl-th-0610105v2/blocks/prose-sec-002",
   "kind": "prose",
   "title": "The Three-Body Sector",
   "pageStart": 5,
   "pageEnd": 6,
   "text": "../sections/sec-002-the-three-body-sector.md",
-  "derivedFrom": "library/arxiv-nucl-th-0610105v2/manifest",
-  "sourceDocument": "library/arxiv-nucl-th-0610105v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-nucl-th-0610105v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-nucl-th-0610105v2",
   "provenance": "ingested"
 }

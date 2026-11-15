@@ -25,7 +25,7 @@ export PATH="$HOME/.elan/bin:$PATH" ELAN_NO_OVERRIDE_NOTICE=1
 
 LP=""
 for d in "$ROOT"/.lake/packages/*/.lake/build/lib/lean; do LP="$LP$d:"; done
-LP="$LP$ROOT/content/quantum-observable-universe/lean/.lake/build/lib/lean"
+LP="$LP$ROOT/folio/quantum-observable-universe/lean/.lake/build/lib/lean"
 LP="$LP:$ROOT/scripts/lean"
 export LEAN_PATH="$LP"
 

@@ -66,7 +66,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import _path_bridge  # noqa: F401, E402
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import fmt, set_compute_dps  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from codata_constants import (
     AME_B_DEUTERON_MEV_VALIDATION,
@@ -410,11 +410,25 @@ def compute_atom(atom: str) -> dict:
     err_bar = (B_bar - ame) / ame
     return {
         "atom": atom, "Z": Z, "N": N, "A": A, "n_strands": n,
-        "B_arch_MeV": float(B_arch),
-        "B_bar_MeV": float(B_bar),
-        "AME_MeV": float(ame),
-        "err_arch_pct": float(err_arch * 100),
-        "err_bar_pct": float(err_bar * 100),
+        # `fmt`, NOT `float`. All five are mpf at this point -- `B_arch` and
+        # `B_bar` are accumulated in mpmath, `ame` is an mpf constant
+        # (`AME_B_*_MEV_VALIDATION`), and the two errors are mpf ratios -- so
+        # `float()` was a pure truncation applied at serialization time, and
+        # the witness recorded binary64. That is what the raw-float64 ratchet
+        # saw (this witness read 5 -> 20 REGRESSED).
+        #
+        # NOTE the two audits disagree about this line ON PURPOSE, and both
+        # are right about their own question. `audits/float64_leak_audit.py`
+        # EXEMPTS it by `DICT_VALUE_RX`, citing `"B_arch_MeV": float(B_arch)`
+        # by name as its worked false positive -- correctly, because it asks
+        # "did a float enter a COMPUTE path?" and the answer is no. The
+        # ratchet asks "did a float enter a WITNESS?" and the answer is yes.
+        # Do not read the leak audit's exemption as a licence here.
+        "B_arch_MeV": fmt(B_arch),
+        "B_bar_MeV": fmt(B_bar),
+        "AME_MeV": fmt(ame),
+        "err_arch_pct": fmt(err_arch * 100),
+        "err_bar_pct": fmt(err_bar * 100),
         "growth_channels_free": n_growth_free,
         "growth_channels_atom": n_growth_atom,
     }
@@ -436,10 +450,14 @@ def main(argv: list[str]) -> int:
     for atom in atoms:
         r = compute_atom(atom)
         results.append(r)
+        # These five row fields are now serialized strings (see `compute_atom`),
+        # so re-parse for the console table. `float()` inside an f-string is
+        # display, which is the one place the NO-FLOAT64 rule permits it.
         print(f"{r['atom']:<10}"
-              f"{r['B_arch_MeV']:>10.4f}{r['B_bar_MeV']:>10.4f}"
-              f"{r['AME_MeV']:>10.4f}"
-              f"{r['err_arch_pct']:>+10.2f}{r['err_bar_pct']:>+10.2f}"
+              f"{float(r['B_arch_MeV']):>10.4f}{float(r['B_bar_MeV']):>10.4f}"
+              f"{float(r['AME_MeV']):>10.4f}"
+              f"{float(r['err_arch_pct']):>+10.2f}"
+              f"{float(r['err_bar_pct']):>+10.2f}"
               f"{r['growth_channels_free']:>5d}/{r['growth_channels_atom']:<4d}",
               flush=True)
     out = HERE / "bar-pairing-binding-observable-extension.witness.json"

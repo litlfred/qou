@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0701051v4/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0701051v4 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0701051v4",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0701051&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-0701051v4",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/math/0701051v4",
+    "content_type": "application/gzip",
+    "sha256": "19a340becc77f9b2a161d97a1dfad6e4c94ac3b7008fb53694f60ddf13a55211",
+    "bytes": 42394,
+    "fetched": "2026-10-10T15:30:22+00:00",
+    "files": [
+      {
+        "path": "source/files/stanley-feray01.bbl",
+        "role": "bbl",
+        "sha256": "e05a7f4113d988b6de1243e8cafaf85f6f318ed58399bc1b16fd7523c4f8706c",
+        "bytes": 4547
+      },
+      {
+        "path": "source/files/stanley-feray01.tex",
+        "role": "tex",
+        "sha256": "44b3e1cda8ea5210d09e96be3529254b1b4173d082dc348eb4dcbd2fcaff23ca",
+        "bytes": 88365
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

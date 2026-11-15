@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/1-s20-s002212362200012x-main/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "www.elsevier.com/locate/jfa",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/1-s20-s002212362200012x-main",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "1-s20-s002212362200012x-main",
   "contains": [
     "library/1-s20-s002212362200012x-main/sections/sec-000",
     "library/1-s20-s002212362200012x-main/sections/sec-001",
@@ -21,8 +26,10 @@
     "library/1-s20-s002212362200012x-main/sections/sec-012"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "1-s20-s002212362200012x-main",
+    "title_source": "slug",
     "source_file": "1-s2.0-S002212362200012X-main.pdf",
     "source_sha256": "6fc7d28c8d40bf423dd361a7a83ce95503ca8e54248b5c67d2bd80b6b9692453",
     "pages": 22,

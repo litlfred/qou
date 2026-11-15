@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/squier-burau-unitary-1984/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/squier-burau-unitary-1984/blocks/prose-sec-004",
   "kind": "prose",
   "title": "References",
   "pageStart": 4,
   "pageEnd": 4,
   "text": "../sections/sec-004-references.md",
-  "derivedFrom": "library/squier-burau-unitary-1984/manifest",
-  "sourceDocument": "library/squier-burau-unitary-1984/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/squier-burau-unitary-1984",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/squier-burau-unitary-1984",
   "provenance": "ingested"
 }

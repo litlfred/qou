@@ -1,0 +1,74 @@
+%%%%%%%%%%%%%%%%%
+%% plnalg1.tex %%%
+%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article}
+\usepackage{amsthm, amssymb}
+\usepackage{amsfonts}
+\usepackage{epsfig,multicol}
+%author: v.jones
+%date: 8/1/97
+\title{Planar Algebras, I}
+\author{V. F. R. Jones
+\thanks{Research supported in part by NSF Grant DMS93--22675, the Marsden fund
+UOA520, and the Swiss National Science Foundation.}
+}
+\date{Department of Mathematics\\University of
+    California\\Berkeley, California 94720--3840}
+\begin{document}
+\maketitle
+
+\input{defs}
+%Operator name macros
+\def\op#1{\bf\rm{#1}} %for text in math mode use   
+                                              %\op{...}
+
+
+%QED box, from the TeXbook, p. 106.
+\def\qed{{\unskip\nobreak\hfil\penalty50\hskip2em\vadjust{}\nobreak\hfil
+    $\square$\parfillskip=0pt\finalhyphendemerits=0\par}}
+
+\def\normalbaselines{\baselineskip20pt
+  \lineskip3pt \lineskiplimit3pt }
+\def\eqdef#1{\smash{\mathop{=}\limits^{#1}}} 
+             
+        \newcommand\x{\times}
+        \def\<{\langle}
+        \def\>{\rangle}
+        \renewcommand\a{\alpha}
+        \renewcommand\b{{\cal B}}
+        \newcommand\bs{\bigskip}
+        \newcommand\dt{\cdot}
+        \renewcommand\d{\delta} 
+        \newcommand\D{\Delta}
+        \newcommand\e{\varepsilon}
+        \newcommand\g{\gamma} 
+        \newcommand\G{\Gamma}
+        \newcommand\J{{\cal J}} 
+        \renewcommand\l{\lambda} 
+        \renewcommand\L{\Lambda}
+        \renewcommand\ni{\noindent}
+        \newcommand\var{\varphi}
+        \renewcommand\r{\mathbb R^2}
+        \newcommand\s{\sigma}
+        \renewcommand\th{\theta}
+        \renewcommand\O{\Omega}
+        \renewcommand\o{\omega}  
+        \newcommand\z{\mathbb Z}
+        \renewcommand\i{\infty}
+        \newcommand\p{\partial}
+        \def\text#1{\scriptstyle{\rm #1}}       
+        \renewcommand\P{{\cal P}}
+
+\baselineskip=16 pt
+\input{pl11}
+\input{pl2}
+\input{pl3}
+\input{pl4}
+\input{pl5}
+\input{pl6}
+\input{pl7}
+\input{plk1}
+\input{plk2}
+\input{plk3}
+\input{plk4}
+\end{document}

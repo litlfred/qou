@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/022201-1-online/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Online Export Citation RESEARCH ARTICLE | FEBRUARY 01 2021 Efficient algorithms for approximating quantum partition functions Ryan L. Mann ; Tyler Helmuth",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/022201-1-online",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "022201-1-online",
   "contains": [
+    "library/022201-1-online/sections/sec-front-matter",
     "library/022201-1-online/sections/sec-000",
     "library/022201-1-online/sections/sec-001",
     "library/022201-1-online/sections/sec-002",
@@ -13,11 +19,17 @@
     "library/022201-1-online/sections/sec-004",
     "library/022201-1-online/sections/sec-005",
     "library/022201-1-online/sections/sec-006",
-    "library/022201-1-online/sections/sec-007"
+    "library/022201-1-online/sections/sec-007",
+    "library/022201-1-online/sections/sec-008",
+    "library/022201-1-online/sections/sec-009",
+    "library/022201-1-online/sections/sec-010",
+    "library/022201-1-online/sections/sec-011"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "022201-1-online",
+    "title_source": "slug",
     "source_file": "022201_1_online.pdf",
     "source_sha256": "50331bf18a2bd4d5e3b3dcbbde4da73c4884a60d94e266b3a9fc2ab62ccd716e",
     "pages": 8,

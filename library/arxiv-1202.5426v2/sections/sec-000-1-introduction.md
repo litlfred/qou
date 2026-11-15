@@ -1,0 +1,212 @@
+---
+doc_id: arxiv-1202.5426v2
+doc_title: "Hard analysis meets critical knots Stationary points of the M öbius energy are smooth S. Blatt∗ Φ. Reiter∗∗ A. Schikorra∗∗∗"
+section_id: sec-000-1-introduction
+section_title: "Introduction"
+section_number: 1
+pages: 1-5
+source_pdf: 1202.5426v2.pdf
+source_sha256: 6c7668ad72e33b4b
+text_source: latex
+latex_prose_ratio: 0.963
+latex_coverage_ratio: 0.933
+doc_brief: "Hard analysis meets critical knots Stationary points of the M öbius energy are smooth S. Blatt∗ Φ. Reiter∗∗ A. Schikorra∗∗∗ — 5 sections: Front matter; Introduction; Euler-Lagrange equation: Proof of"
+---
+To find nice geometric representatives within a given knot class, several new energies have been invented 
+in the last two decades. 
+The earliest knot energy for smooth curves  was the so-called \emph{M\"obius energy} introduced 
+by Jun O'Hara
+in \cite{OH91}, 
+\[
+ E^{(2)}(\soln) := \intl_{\R/\Z}\intl_{-1/{2}}^{1/{2}} 
+  \brac{\fracm{\abs{\soln(u+w)-\soln(u)}^2}-\fracm{d_{\soln}(u+w,u)^2}}\ \abs{\soln'(u+w)}\abs{\soln'(u)}\ 
+ \d w\d u
+\]
+which was later on extended to the family of energies
+
+
+
+
+
+
+\[
+E^{(\alpha,p)}(\soln) := \intl_{\R/\Z}\intl_{-1/{2}}^{1/{2}} 
+  \brac{\fracm{\abs{\soln(u+w)-\soln(u)}^\alpha}-\fracm{d_{\soln}(u+w,u)^\alpha}}^p\ \abs{\soln'(u+w)}\abs{\soln'(u)}\ 
+ \d w\d u
+\]
+for $\alpha, p \in [1,\infty)$, see~\cite{OHara1994}.
+Here $d_\g(u+w,u)$ denotes the intrinsic distance between $\g(u+w)$ and $\g(u)$ on the curve~$\g$.
+More precisely,
+\begin{equation}\label{eq:intrinsic}
+ d_\g(u+w,u):= \min\big(\length(\g|_{[u,u+w]}),\length(\g)-\length(\g|_{[u,u+w]})\big)
+\end{equation}
+provided $\abs w\le\tfrac12$ where
+$
+ \length(\g) := \int_0^1 \abs{\dg(\theta)}\d\theta
+$
+is the length of~$\g$.
+
+
+Crucially using the M\"obius invariance of this knot energy, Michael Freedman, Zheng-Xu He, and Zhenghan Wang \cite{Freedman1994} were able to show that there are minimizers of the M\"obius energy within every 
+prime knot class and that these are in fact of class $C^{1,1}$. More precisely, they
+could show that if $\g$ is a local minimizer with respect to the $L^\infty$-topology, and 
+if $\g$ is parametrized by arc length, then $\g$ is $C^{1,1}$.
+Together with a bootstrapping argument due to He \cite{He2000}, one then obtains that local 
+minimizers of the M\"obius energy are smooth, also see~\cite{Reiter2009a}.
+
+Unfortunately, motivated by numerical evidence, Rob Kusner and John Sullivan were led to conjecture 
+that there are no minimizers within composite knot classes \cite{Kusner1997}. In contrast to that, there
+are minimizers of the energies $E^{(\alpha,p)}$ in the case that $jp>2$ as shown in \cite{OHara1994}. 
+
+In this article, we will prove that even only stationary points of the M\"obius energy are of class
+$C^\infty$ under the mildest condition one can think of: that $E^{(2)}(\g)$
+is finite - an assumption which, as shown in a recent work of the first author \cite{Blatt2010a}, is equivalent to 
+assuming that $\g$ is an injective curve of class $H^{\frac 3 2}(\R / \Z, \R ^n)$.
+Our motivation to do so is twofold:
+First of all, of course, 
+this is a much stronger result than the smoothness of 
+local minimizers as stated above.
+Secondly, the M\"obius invariance is
+not essential for proving smoothness of local minimizers as we do not need it in our arguments.
+Thus there is the chance
+to study other, possibly not M\"obius invariant, critical knot energies, using the techniques
+developed in this article.
+Additionally, our arguments are not restricted to the
+one-dimensional situation but can be applied to arbitrary dimensions.
+ 
+The price we pay is that, instead of the very appealing geometric argument in \cite{Freedman1994}, we have to adapt some 
+sophisticated techniques originally developed  by Tristan Rivi\`ere and Francesca Da Lio \cite{DR11Sphere,DR11Man,DL11MannD}
+and the third author \cite{SchikorranharmSphere,SchikorraIntBoundFrac11} to deal with $\frac n2$- harmonic maps into manifolds.
+
+The first task in order to prove this result, is to derive the Euler-Lagrange equation for such stationary
+points. In \cite{Freedman1994}, it was shown that for simple closed curves 
+$\g \in C^{1,1}(\mathbb R / \mathbb Z, \mathbb R^n)$ and $h\in C^{1,1}(\mathbb R / \mathbb Z, \mathbb R^n)$
+we have
+\begin{align*}
+ \delta E ^{(2)}(\g;h) &:= \lim_{\tau \searrow 0 } \frac {E^{(2)}(\g+\tau h) - E^{(2)}(\g)}\tau \\
+ &= \int_{\mathbb R / \mathbb Z} \int_{\mathbb R / \mathbb Z} 
+  \left(\frac {\g'(u) h'(u) - \frac {\left\langle \g(u)- \g(v), h(u)-h(v) \right\rangle}
+      {|\g(u)-\g(v)|^2}}{|\g(u)-\g(v)|^2 }\right)\ |\g'(v)|\ |\g'(u)|\ dv\ du.
+\end{align*} 
+ 
+We will show that this formula is still valid under the weaker assumption that 
+$\g \in H^{3/2}(\R / \Z,$ $\R^\tdim)$ with $\dg\in L^{\infty}$, i.e., for
+arc-length parametrized $\g$ we only assume that the M\"obius energy
+is finite.
+We call a curve \emph{regular}
+if there is a positive constant $c=c(\g)$ with
+$|\g'(x)| \geq c$ {for all } $x \in \mathbb R/ \mathbb Z$.
+
+
+\begin{theorem}[$E^{(2)}\in C^1(\Hir\capH)$] \label{thm:EulerLagrangeEquation}
+ The energy $\E$ is continuously differentiable on the space of injective and regular
+ curves belonging to $\W\capH$. Furthermore, if
+ $\g\in\W$ is injective and parametrized by arc-length
+ and $\h\in \W\capH$
+
+
+
+
+   the first variation \[ \delta\E(\g;\h) := \lim_{\tau\to0}\frac{\E(\g+\tau\h)-\E(\g)}\tau \]
+   exists and equals
+   \[
+     
+     2\lim_{\eps\searrow0} \iint\limits_{U_\eps}
+     \br{\sp{\dg(u),\dh(u)}-\frac{\sp{\D\g,\D\h}}{\abs{\D\g}^2}} 
+     
+     \frac{\d w\d u}{\abs{\D\g}^2}
+   \]
+   where
+   \begin{equation}\label{eq:Ue}
+     U_\eps := \R/\Z\times\br{[-\tfrac12,-\eps]\cup[\eps,\tfrac12]}.
+   \end{equation}
+
+\end{theorem}
+
+Though the space $\W\capH$ seems somewhat artificial at first sight, it just guarantees that 
+we do not use bad parametrizations of our curves. The proof of this 
+result is similar to~\cite{BlattReiterStationary11}.
+
+We will then use the resulting Euler-Langrange equation for stationary points of the M\"obius energy to
+prove that these points are smooth:
+
+\begin{theorem}[Stationary points are smooth] \label{thm:MainResult}
+Any stationary point $\soln \in H^{\frac 3 2}(\R / \Z, \R^n)$ of $E^{(2)}$, i.e., any curve
+$\soln \in H^{\frac 3 2 }(\R / \Z, \R^n)$ for which
+\begin{equation*}
+ \delta E^{(2)} (\g;h) =0 \quad \mbox{for all $h \in C^{\infty}(\mathbb R / \mathbb Z, \mathbb R^n)$},
+\end{equation*}
+belongs to $C^\infty$ when parametrized by arc-length.
+\end{theorem}
+
+In \cite{BlattReiterStationary11}, improving a previous result~\cite{ReiterOharaKnot11},
+the smoothness of stationary points of finite energy was already shown
+for the case of $E^{(\alpha)}:= E^{(\alpha,1)}$, $\alpha \in (2,3)$, instead of the M\"obius energy.
+It is worth noting, that those energies lead to 
+a \emph{subcritical} Euler-Langrage equation, and that in some sense the regularity theory can be based on  Sobolev 
+embeddings for fractional Sobolev and Besov spaces. 
+In contrast to this, the Euler-Lagrange equation of the M\"obius energy is \emph{critical}. As for 
+well-known critical geometric equations -- like the Euler-Lagrange equation of the
+Willmore functional, see, e.g., \cite{Simon1993, Riviere2006},
+or harmonic maps on $\mathbb R^2$, see, e.g., \cite{Helein1991,Riviere2007}, -- one has first to find a way 
+to gain an $\eps$ of additional regularity (via gaining a $\delta$ of additional integrability) and then start a bootstrapping argument.
+That is, in a quite natural way, the proof of Theorem~\ref{thm:MainResult} is an immediate consequence of two technically independent steps:
+
+\begin{theorem}[Initial regularity]\label{th:reg:1alpha} \label{thm:FirstStep}
+Let $\soln \in H^{\frac{3}{2}}(\R /\Z,\R^\tdim)$, $\soln' \in \S^{\tdim-1}$, be a stationary point of the M\"obius energy, i.e. satisfying $\delta\E(\g,\varphi) = 0$ for all $\varphi\in C^\infty\rzd$.
+Then $\soln \in C^{1,\alpha}$, for some $\alpha > 0$, and  $\soln \in H^{\frac{3}{2},p}(\R /\Z,\R^\tdim)$ for some $p > 2$.
+\end{theorem}
+
+\begin{theorem}[Bootstrapping] \label{thm:bootstrapping}
+ For some $p > 2$, let $\soln \in H^{\frac{3}{2},p}(\R /\Z,\R^\tdim)$, $\soln' \in \S^{\tdim-1}$,
+ be a stationary point of the M\"obius energy. Then $\soln$ is smooth.
+\end{theorem}
+Theorem~\ref{th:reg:1alpha} is proven in Section \ref{sec:initial}, Theorem~\ref{thm:bootstrapping} in Section \ref{sec:bootstrapping}.
+While Theorem~\ref{thm:bootstrapping} relies mainly on bringing together Sobolev embeddings and 
+standard commutator estimates for Bessel potential spaces with techniques developed in
+\cite{Blatt2010a}, some very delicate estimates
+are needed to get anything more than the critical and initial regularity $H^{\frac 3 2}$ for 
+stationary points as stated in Theorem~\ref{thm:FirstStep}.
+
+Both theorems rely on a decomposition of the first variation dating back to~\cite[Formula~(4.5)]{He2000} which 
+already proved to be helpful in the analysis of the functionals 
+$E^{(\alpha)}$ for $\alpha \in (2,3)$ (cf. \cite{BlattReiterStationary11}) and the gradient flow 
+of the energies $E^{(\alpha)}$ for $\alpha \in [2,3)$ \cite{Blatt2011,Blatt2011c}. 
+
+For  $f, g: \R \to \R^\tdim$, $\eps>0$ let 
+\begin{equation}\label{eq:defQeps}
+ Q_\varepsilon(f,g) := 
+  \intl_{0}^1 \intl_{[-\frac{1}{2},\frac{1}{2}]\backslash (-\varepsilon,\varepsilon)} \br{\sbrac{{f}'(u), {g}'(u)}\ w^2 - \Sbrac{ f(u+w)-f(u), g(u+w)-g(u)}}
+  \frac{dw}{w^4}\ du,
+\end{equation}
+\begin{equation}\label{eq:defT1}
+ T_1(f,g) := - \intl_{0}^{1}\intl_{-\frac{1}{2}}^{\frac{1}{2}}\sbrac{{f}'(u),\ {g}'(u) }\ \brac{\fracm{\abs{f(u+w)-f(u)}^2}-\fracm{\abs{w}^2}}\ dw\ du,
+\end{equation}
+and
+\begin{equation}\label{eq:defT2}
+ T_2(f,g) := \intl_0^1\intl_{-\frac{1}{2}}^{\frac{1}{2}} \sbrac{ f(u+w)-f(u),\ g(u+w)-g(u) }\ \brac{\fracm{\abs{f(u+w)-f(u)}^4}-\fracm{\abs{w}^4}}\ dw\ du.
+\end{equation}
+From Theorem~\ref{thm:EulerLagrangeEquation} we deduce
+that a critical knot $\soln \in H^{\frac{3}{2}}(\R /\Z,\R^\tdim)$,  parametrized by arc length, satisfies
+\begin{equation}
+\label{eq:knotPDE}
+ Q(\soln,h) := \lim_{\varepsilon \to 0} Q_\varepsilon(\soln,h) = T_1(\soln,h) + T_2(\soln,h) \quad \mbox{for all $h \in C^\infty(\R /\Z)$}.
+\end{equation}
+This is the form of the Euler-Lagrange equation,  with which we will work in the proofs of Theorem~\ref{thm:FirstStep}
+and Theorem~\ref{thm:bootstrapping}.
+
+Let us conclude this introduction by remarking that, in contrast to stationary
+points of $E^{(\alpha,1)}$, for $p>1$ we do not expect stationary points of $E^{(\alpha,p)}$ to be $C^\infty$-smooth:
+The resulting Euler-Lagrange equation should be in some sense
+a nonlocal degenerate elliptic equation. 
+Keeping in mind the regularity theory for elliptic degenerate equations, one might expect nevertheless
+that stationary points are at least 
+a bit more regular than an arbitrary finite-energy curve alone. 
+
+
+
+\paragraph*{Acknowledgements.}
+The first author was supported by Swiss National Science Foundation Grant Nr.~200020\_125127 and
+the Leverhulm trust.
+The second author was supported by DFG Transregional Collaborative Research Centre SFB~TR~71.
+The third author has received funding from the European Research Council under the European Union's Seventh Framework Programme (FP7/2007-2013) / ERC grant agreement no 267087, DAAD PostDoc Program (D/10/50763) and the Forschungsinstitut f\"ur Mathematik, ETH Z\"urich. He would like to thank Tristan Rivi\`ere and the ETH for their hospitality.

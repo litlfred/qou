@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/poincare-proof-outline/blocks/prose-sec-008",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/poincare-proof-outline/blocks/prose-sec-008",
   "kind": "prose",
-  "title": "H-line uniqueness",
-  "pageStart": 11,
-  "pageEnd": 14,
-  "text": "../sections/sec-008-h-line-uniqueness.md",
-  "derivedFrom": "library/poincare-proof-outline/manifest",
-  "sourceDocument": "library/poincare-proof-outline/manifest",
+  "title": "Classification of h-lines into Euclidean segments and circles",
+  "pageStart": 7,
+  "pageEnd": 8,
+  "text": "../sections/sec-008-classification-of-h-lines-into-euclidean-segment.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/poincare-proof-outline",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/poincare-proof-outline",
   "provenance": "ingested"
 }

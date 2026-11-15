@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-sqrt-q-ribbon-structure",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:sqrt-q-ribbon-structure",
+  "kind": "remark",
+  "title": "The element $\\sqrt{q}$ and the ribbon structure",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-braiding-eigenvalue-extraction",
+    "papers/quantum-observable-universe/blocks/rem-tqft-context"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-braiding-eigenvalue-extraction",
+  "tags": [
+    "ribbon",
+    "twist",
+    "sqrt-q",
+    "tqft",
+    "framed-links",
+    "braiding",
+    "eigenvalue"
+  ],
+  "text": "sqrt-q-ribbon-structure.md",
+  "provenance": "authored"
+}

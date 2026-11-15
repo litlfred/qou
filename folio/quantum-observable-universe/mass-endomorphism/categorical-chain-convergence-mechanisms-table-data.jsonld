@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-categorical-chain-convergence-mechanisms-table-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:categorical-chain-convergence-mechanisms-table-data",
+  "kind": "table",
+  "title": "Data table from prop:categorical-chain-convergence-mechanisms",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-categorical-chain-convergence-mechanisms"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "categorical-chain-convergence-mechanisms-table-data.md",
+  "provenance": "authored"
+}

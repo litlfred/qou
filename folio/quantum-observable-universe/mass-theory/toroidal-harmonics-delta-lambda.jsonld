@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-toroidal-harmonics-delta-lambda",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:toroidal-harmonics-delta-lambda",
+  "kind": "proposition",
+  "title": "A toroidal-harmonic change of variables and the Markov loop values",
+  "leanRef": "qou:QOU.QBeta.toroidal_ode_to_markov_w",
+  "text": "toroidal-harmonics-delta-lambda.md",
+  "meta": {
+    "is_mathematics": true
+  },
+  "provenance": "authored"
+}

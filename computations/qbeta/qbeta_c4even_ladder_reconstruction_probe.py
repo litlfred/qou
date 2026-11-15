@@ -30,7 +30,7 @@ ask actually cares about:
   three read as a discrepancy. dc3/dq ~ 3.84e6, NOT the 4.6e6 this line
   used to carry: that figure is the stale-c3 twin, computed from the
   superseded muon c_3 = -2.0097 (pre-#1422). Re-measured at 50 dps from
-  c_3(p) = -2.0693425728, c_3(mu) = -2.0202002328, dq = 1.28e-8: secant
+  c_3(p) = -2.0693425771, c_3(mu) = -2.0202002328, dq = 1.28e-8: secant
   3.839e6, and AGENTS.md's independent 2.37/u^3 route 3.832e6.)
 
 Wiring verdict: c_4^even is correctly *used* (folded into the even partial sum)

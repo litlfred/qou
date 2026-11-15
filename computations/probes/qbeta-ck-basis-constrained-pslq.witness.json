@@ -1,10 +1,10 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-05T10:17:36.669974+00:00",
+  "computedAt": "2026-10-10T12:50:38.114046+00:00",
   "computation": "qbeta-ck-basis-constrained-pslq",
   "scriptFile": "qbeta_ck_basis_constrained_pslq.py",
-  "commitSha": "6dc176454cc02a14e8f4ef51fc1f9dd2885aee04",
+  "commitSha": "1247b17f515528e90c50a31c4efa09a4f411f616",
   "description": "PROBE 4 (2026-07-11 avenues audit \u00a73.D): basis-constrained PSLQ for the empirical Q_\u03b2 ladder coefficients c_3/c_4 against the arithmetic-dictated basis {1, \u221a3, \u03c0\u00b2, Vol(4\u2081), \u03b6(3)} (4\u2081 trace field \u211a(\u221a\u22123)). Two-stage formalize-first: STAGE 1 is a mandatory entropy audit of the ACTUAL effective precision of the empirical coefficients, traced through the extraction chain c_3 = (Q_CODATA/Q_N2 \u2212 1)/u\u00b3, which amplifies the relative Q_\u03b2 error by 1/u\u00b3 \u2248 1.6e6 (c_4: 1/u\u2074 \u2248 1.9e8). STAGE 2 (PSLQ) runs only if the effective digits exceed the PSLQ entropy bound D > n\u00b7log10(2H) + margin (PR #1805 discipline). No c_k value proposed; nothing wired.",
   "precisionMetadata": {
     "compute_dps": 60
@@ -115,7 +115,7 @@
       "expected": 0.0,
       "passed": false,
       "tolerance": "1e-08",
-      "source": "same chain + same Q_codata + same q0 as qbeta-ck-cache.witness.json (cache prints Q_codata rounded to 0.78233341)"
+      "source": "same chain + same Q_codata + same q0 as qbeta-ck-cache.witness.json (cache prints Q_codata rounded to 0.78233341) -- but NOT the same Markov convention, which is why this assertion fails. This probe computes at z_D = q**3/(q**2+1) (convention D, canonical per owner ruling R1 2026-08-15; see the z binding above), while qbeta-ck-cache.witness.json declares markov_convention='C' and its c_3 is reachable only via --historical-convention-C. The two numbers are one formula under two different z, not two evaluations of one quantity. Re-deriving the ladder under D is bean `qou-cds1`; this assertion is left FAILING on purpose -- it is the frame disagreement reporting itself, and silencing it would ratify one frame."
     },
     {
       "name": "stage1_entropy_verdict_is_blocked",
@@ -133,8 +133,10 @@
     "conclusion": "ENTROPY-BLOCKED: the empirical c_3 carries at most ~2 reliable digits per anchor (c_4: zero) because the extraction divides the Q_\u03b2 experimental error by u\u00b3 (\u00d71.6e6) / u\u2074 (\u00d71.9e8); even the minimal 4-term H\u2264100 basis needs ~9.2 digits. PSLQ was NOT run \u2014 any relation it returned would be lattice noise. The coefficients remain empirical under the arithmetic basis; no value proposed, nothing wired. Closing this avenue requires either sigma(Q_\u03b2) improved by ~9 orders of magnitude or a canonical (non-extracted) high-precision c_3 producer \u2014 i.e. the open keystone F(q) itself."
   },
   "allPassed": false,
-  "scriptHash": "c53beb3b9bbc",
-  "scriptCommitSha": "c2a262ddce51416b953be11fb7d189f72c40fe07",
+  "markov_convention": "D",
+  "markov_convention_reason": "z = q**3/(q**2 + 1) at the binding above; convention D, canonical per owner ruling R1 (2026-08-15). NOT a proposed c_3: qou-cds1 records -974.38 as a sensitivity measurement and says explicitly 'do not wire it anywhere'. The failing assertion extraction_chain_reproduces_cache_c3 is the frame disagreement with the C-framed qbeta-ck-cache.witness.json, not a chain defect.",
+  "scriptHash": "0bc5aa564e82",
+  "scriptCommitSha": "6ff3254a0f7d56d7961ba93607680644b8d7b07b",
   "durationMs": 0,
   "q0Anchor": "ambiguous",
   "q0AnchorReason": "reads BOTH pins on purpose: c3_reproduced_canonical is at the muon canonical pin (data.q0_canonical) while the proton readout and cross-anchor slope (data.q0_proton, data.anchor_slope_dc3_dq) are at the proton pin. The witness carries both signatures, so the pin is undetermined and the manifest files this stem ambiguous; the values actually used are in data.q0_canonical / data.q0_proton. NOT q0-independent (bean qou-v6wz)."

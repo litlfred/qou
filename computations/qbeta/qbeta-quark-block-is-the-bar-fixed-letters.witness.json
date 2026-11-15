@@ -1,0 +1,164 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T15:48:04.701591+00:00",
+  "commitSha": "eb645d81e7fe1646342513e676f6498caab4a229",
+  "assertions": [
+    {
+      "name": "unique_bar_fixed_shift_is_minus_h_over_2",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "solutions c of bar(c*h) = c*h + h : [-1/2]"
+    },
+    {
+      "name": "zero_and_minus_h_are_swapped",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "bar exchanges the shifts 0 and -h"
+    },
+    {
+      "name": "minus_h_over_2_is_fixed",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "all_bar_fixed_letters_are_in_the_quark_block",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "core and gluon carry zero bar-fixed letters"
+    },
+    {
+      "name": "quark_block_carries_two_bar_fixed_letters_each",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "p and n each have 2 of 3 quark letters bar-fixed"
+    },
+    {
+      "name": "coefficient_level_bar_does_NOT_map_p_to_n",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "6 of 6 NF slots differ; the naive reading fails"
+    },
+    {
+      "name": "e_minus_shares_the_shape_h2_times_H_plus_1_squared",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "both are -h^2 (h^2+1)^2 (h^2+c)/4, c = 2 (p) and 4 (n)"
+    },
+    {
+      "name": "e_minus_factors_are_all_bar_invariant",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 1410,
+  "computation": "qbeta-quark-block-is-the-bar-fixed-letters",
+  "scriptFile": "qbeta_quark_block_is_the_bar_fixed_letters_probe.py",
+  "scriptHash": "aaee3236bf10",
+  "scriptCommitSha": "b66bb4547db13638c8099f077e34464f80e426d1",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_quark_block_is_the_bar_fixed_letters_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_quark_block_is_the_bar_fixed_letters_probe.py"
+  },
+  "description": "The five census-derived letters of nuc11_interleaved are exactly the bar-fixed ones; -h/2 is the unique bar-fixed shift on the h-line. Scope-(a) characterisation, not a derivation: it narrows the search for a principle that would derive the quark block, and selects nothing.",
+  "data": {
+    "unique_bar_fixed_shift_is_minus_h_over_2": true,
+    "bar_fixed_shift": "-h/2",
+    "letter_classification": {
+      "0": {
+        "image": "-h",
+        "fixed": false
+      },
+      "-h": {
+        "image": "0",
+        "fixed": false
+      },
+      "-h/2": {
+        "image": "-h/2",
+        "fixed": true
+      }
+    },
+    "zero_and_minus_h_are_swapped": true,
+    "minus_h_over_2_is_fixed": true,
+    "bar_fixed_letters_per_block": {
+      "p": {
+        "core": 0,
+        "quark": 2,
+        "gluon": 0,
+        "_letters": {
+          "core": 6,
+          "quark": 3,
+          "gluon": 2
+        }
+      },
+      "n": {
+        "core": 0,
+        "quark": 2,
+        "gluon": 0,
+        "_letters": {
+          "core": 6,
+          "quark": 3,
+          "gluon": 2
+        }
+      }
+    },
+    "all_bar_fixed_letters_are_in_the_quark_block": true,
+    "quark_block_carries_two_bar_fixed_letters_each": true,
+    "coefficient_bar_residuals_p_to_n": {
+      "gamma": "-(q - 1)*(q + 1)*(2*q**16 - 4*q**14 + 7*q**12 - 12*q**10 + 8*q**8 - 12*q**6 + 7*q**4 - 4*q**2 + 2)/(4*q**9)",
+      "sigma_0": "-(q - 1)**2*(q + 1)**2*(2*q**12 - 5*q**10 + 7*q**8 - 9*q**6 + 7*q**4 - 5*q**2 + 2)/(4*q**8)",
+      "sigma_1": "-(q - 1)**2*(q + 1)**2*(q**4 - q**2 + 1)/(4*q**4)",
+      "L-": "-(q - 1)*(q + 1)*(2*q**8 + q**6 + 2*q**4 + q**2 + 2)/(4*q**5)",
+      "L+": "(q - 1)*(q + 1)*(2*q**12 - q**10 - 4*q**6 - q**2 + 2)/(4*q**7)",
+      "e^-": "(q - 1)**2*(q + 1)**2*(q**4 - q**2 + 1)**2/(2*q**6)"
+    },
+    "coefficient_level_bar_does_NOT_map_p_to_n": true,
+    "e_minus_shares_the_shape_h2_times_H_plus_1_squared": true,
+    "e_minus_factors_are_all_bar_invariant": true,
+    "e_minus_shape": {
+      "form": "-h^2 (h^2+1)^2 (h^2+c)/4",
+      "c_proton": 2,
+      "c_neutron": 4,
+      "h2_plus_2_is": "q^2 + q^-2",
+      "h2_plus_4_is": "(q + 1/q)^2 = [2]_q^2",
+      "factors_bar_invariant": {
+        "h^2": true,
+        "h^2+1": true,
+        "h^2+2": true,
+        "h^2+4": true
+      },
+      "scope": "OBSERVATION on two data points. Recorded for a later derivation to explain or discard; the anti-numerology discipline applies in full. NOT evidence for anything."
+    },
+    "scope": "scope-(a). CHECK 1-3 CHARACTERISE the quark block as the bar-fixed part of the census word; they do not DERIVE it and select nothing. CHECK 4 is a recorded negative. CHECK 5 is an observation on two points. Assumed but not proved here: bar is an order-preserving ring automorphism of H_3(q) -- CHECK 1-3 are per-letter and independent of that, any word-level reading is not.",
+    "open_gap": "Which two of the three quark slots carry -h/2, their generator indices, and the gluon pair, remain census-derived. qou-99qc stays todo: this narrows the search, it does not close it."
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal"
+}

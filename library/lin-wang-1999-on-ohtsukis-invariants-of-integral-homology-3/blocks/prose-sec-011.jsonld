@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/blocks/prose-sec-011",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/blocks/prose-sec-011",
   "kind": "prose",
   "title": "It will be useful to note that X(L; t), O(L; t) E Z[t, t -1, t--~]-",
   "pageStart": 7,
   "pageEnd": 10,
   "text": "../sections/sec-011-1-it-will-be-useful-to-note-that-xl-t-ol-t-e-zt.md",
-  "derivedFrom": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/manifest",
-  "sourceDocument": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3",
   "provenance": "ingested"
 }

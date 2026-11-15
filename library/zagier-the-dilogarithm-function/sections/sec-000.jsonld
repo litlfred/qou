@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/zagier-the-dilogarithm-function/sections/sec-000",
   "@type": [
     "doco:Section"
   ],
-  "title": "Don Zagier",
-  "pageStart": 1,
-  "pageEnd": 1,
+  "title": "Special values",
+  "pageStart": 4,
+  "pageEnd": 6,
   "contains": [
     "library/zagier-the-dilogarithm-function/blocks/prose-sec-000"
   ],
-  "derivedFrom": "library/zagier-the-dilogarithm-function/manifest",
-  "sourceDocument": "library/zagier-the-dilogarithm-function/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/zagier-the-dilogarithm-function",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/zagier-the-dilogarithm-function",
   "provenance": "ingested"
 }

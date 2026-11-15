@@ -8,170 +8,61 @@ pages: 5-8
 source_pdf: 1205.1453v2.pdf
 source_sha256: 29d1b1fd9466a3d8
 doc_brief: "An asymptotic formula of the divergent bilateral basic hypergeometric series Takeshi MORITA∗ — We show an asymptotic formula of the divergent bilateral bas ic hypergeometric series 1ψ 0(a; −;q, ·)"
+text_source: latex
+latex_prose_ratio: 0.711
+latex_coverage_ratio: 0.976
 ---
-In this section, we ﬁx our notations. We assume that 0 < |q|< 1 andσq is the
-q-diﬀerence operator such that σqf (x) = f (qx). The basic hypergeometric
-series is
-rϕ s(a1,...,a r;b1,...,b r;q,x )
-:=
-∑
-n≥ 0
-(a1,...,a r;q)n
-(b1,...,b s;q)n(q;q)n
-{
-(−1)nq
-n(n− 1)
-2
-} 1+s− r
-xn. (6)
-The radius of convergence ρ of the basic hypergeometric series is given by [7]
-ρ =
-
-
-
-∞, if r <s + 1,
-1, if r =s + 1,
-0, if r >s + 1.
-The bilateral basic hypergeometric series is
-rψ s(a1,...,a r;b1,...,b s;q,x )
-:=
-∑
-n∈ Z
-(a1,...,a r;q)n
-(b1,...,b s;q)n
-{
-(−1)nq
-n(n− 1)
-2
-} s− r
-xn. (7)
-Ifs<r , the series (7) diverges for x ⁄= 0 and if r =s, the series (7) converges
-|b1...b s/a 1...a r| < |x| < 1 (see [3] for more detail). The series (6) is a q-
-analogue of the generalized hypergeometric function
-rFs(α 1,...,α r;β1,...,β s;x) :=
-∑
-n≥ 0
-(α 1,...,α r)n
-(β1,...,β s)nn!xn
-and the series (7) is a q-analogue of the bilateral hypergeometric function
-rHs(α 1,...,α r;β1,...,β s;x) :=
-∑
-n∈ Z
-(α 1,...,α r)n
-(β1;...,β s)n
-xn.
-5
-By D’Alembert’s ratio test, it can be checked that rHr converges only for
-|x| = 1 [12], provided that ℜ(β1 + · · · +βr −α 1 − · · · −α r)> 1.
-The q-exponential function eq(x) is
-eq(x) := 1ϕ 0(0; −;q,x ) =
-∑
-n≥ 0
-xn
-(q;q)n
-The function eq(x) has the inﬁnite product representation as follows;
-eq(x) = 1
-(x;q)∞
-, |x|< 1.
-The limit q → 1 − 0 of eq(x) is the exponential function [3];
-lim
-q→ 1− 0
-eq(x(1 −q)) = ex. (8)
-The q-gamma function Γ q(x) is
-Γ q(x) := (q;q)∞
-(qx;q)∞
-(1 −q)1− x, 0<q < 1.
-The limit q → 1 − 0 of Γ q(x) gives the gamma gunction [3];
-lim
-q→ 1− 0
-Γ q(x) = Γ(x). (9)
-The theta function of Jacobi is given by
-θ(x) :=
-∑
-n∈ Z
-q
-n(n− 1)
-2 xn, ∀x ∈ C∗.
-Jacobi’s triple product identity is
-θ(x) = (q, −x, −q/x ;q)∞
-and the theta function satisﬁes the following q-diﬀerence equation
-θ(qkx) = x− kq− k(k− 1)
-2 θ(x), ∀k ∈ Z.
-The inversion formula is
-θ(x) = xθ(1/x ). (10)
-We remark that θ(λq k/x ) = 0 if and only if x ∈ [−λ;q]. In our study, the
-following proposition [15] is useful to consider the limit q → 1 − 0 of our
-formula.
-6
-Proposition 1. For any x ∈ C∗(−π <argx<π ), we have
-lim
-q→ 1− 0
-θ(qαx)
-θ(qβx) =xβ − α (11)
-and
-lim
-q→ 1− 0
-θ
-( qαx
-(1 −q)
-)
-θ
-( qβx
-(1 −q)
-) (1 −q)β − α =
-( 1
-x
-) α − β
-. (12)
-We also use the limit [3] as follows;
-lim
-q→ 1− 0
-(xqα ;q)∞
-(x;q)∞
-= (1 −x)− α, |x|< 1. (13)
-3 An asymptotic formula of the divergent se-
-ries 1ψ 0(a; −;q,x )
-In this section, we show an asymptotic formula of the divergent ser ies 1ψ 0(a; −;q,x ).
-At ﬁrst, we review Ramanujan’s sum for 1ψ 1(a;b;q,z ) and its property. Ra-
-manujan gives the following sum [4]
-1ψ 1(a;b;q,z ) = (q,b/a,az,q/az ;q)∞
-(b,q/a,z,b/az ;q)∞
-, |b/a |< |z|< 1. (14)
-We can regard this sum as a q-analogue of the bilateral binomial theorem [6]
-as follows;
-Theorem. (Horn [6]) If z is a complex number such that |z| = 1, we have
-1H1(α ;β ;z) = Γ(β )Γ(1 −α )
-Γ(β −α )
-(1 −z)β − α − 1
-(−z)β − 1 , (15)
-provided that ℜ(β −α )> 1.
-Let z is a complex number such that −π < argz < π. The summation
-(14) is rewritten by
-(q,b/a,az,q/az ;q)∞
-(b,q/a,z,b/az ;q)∞
-= (q,b/a ;q)∞
-(b,q/a ;q)∞
-θ(−az)
-θ(−aqz/b )
-(aqz/b ;q)∞
-(z;q)∞
-. (16)
-7
-In (16), we put a =qα and b =qβ (with ℜ(β −α )> 1), we obtain
-1ψ 1(qα ;qβ ;q,z ) = Γ q(β )Γ q(1 −α )
-Γ q(β −α )
-θ(qα (−z))
-θ(qα +1− β (−z))
-(qα +1− βz;q)∞
-(z;q)∞
-, (17)
-where |qβ − α | < |z| < 1. Combining (9), (11) and (13), we can check out
-that the limit q → 1 − 0 of (17) gives the bilateral binomial theorem (15),
-provided that −π <argz <π.
-The bilateral basic hypergeometric series 1ψ 1(a;b;q,z ) satisﬁes the q-
-diﬀerence equation
-( b
-q −az
-)
-u(qz) + (z − 1)u(z) = 0. (18)
-We consider the degeneration of the equation (18) in the next sect ion.
+In this section, we fix our notations. We assume that $0<|q|<1$ and $\sigma_q$ is the $q$-difference operator such that $\sigma_qf(x)=f(qx)$. The basic hypergeometric series is $$\begin{aligned}
+{}_r\varphi_s(a_1,\dots ,a_r;&b_1,\dots ,b_r;q,x)\notag\\
+&:=\sum_{n\ge 0}\frac{(a_1,\dots ,a_r;q)_n}{(b_1,\dots ,b_s;q)_n(q;q)_n}
+\left\{(-1)^nq^{\frac{n(n-1)}{2}}\right\}^{1+s-r}x^n.
+\label{bh}
+\end{aligned}$$ The radius of convergence $\rho$ of the basic hypergeometric series is given by [@Koo] $$\rho =
+\begin{cases}
+\infty ,& \textrm{if }\quad r<s+1, \\
+1, & \textrm{if }\quad r=s+1, \\
+0, & \textrm{if }\quad r>s+1.
+\end{cases}$$ The bilateral basic hypergeometric series is $$\begin{aligned}
+{}_r\psi_s(a_1,\dots ,a_r;&b_1,\dots ,b_s;q,x)\notag\\
+&:=\sum_{n\in\mathbb{Z}}\frac{(a_1,\dots ,a_r;q)_n}{(b_1,\dots ,b_s;q)_n}
+\left\{(-1)^nq^{\frac{n(n-1)}{2}}\right\}^{s-r}x^n.
+\label{bbh}
+\end{aligned}$$ If $s<r$, the series [\[bbh\]](#bbh){reference-type="eqref" reference="bbh"} diverges for $x\not=0$ and if $r=s$, the series [\[bbh\]](#bbh){reference-type="eqref" reference="bbh"} converges $|b_1\dots b_s/a_1\dots a_r|<|x|<1$ (see [@GR] for more detail). The series [\[bh\]](#bh){reference-type="eqref" reference="bh"} is a $q$-analogue of the generalized hypergeometric function $$\begin{aligned}
+{}_rF_s (\alpha_1,\dots ,\alpha_r&;\beta_1,\dots ,\beta_s;x)
+:=\sum_{n\ge 0}\frac{(\alpha_1,\dots ,\alpha_r)_n}{(\beta_1,\dots ,\beta_s)_nn!}x^n
+\end{aligned}$$ and the series [\[bbh\]](#bbh){reference-type="eqref" reference="bbh"} is a $q$-analogue of the bilateral hypergeometric function $${}_rH_s(\alpha_1,\dots ,\alpha_r;\beta_1,\dots ,\beta_s;x)
+:=\sum_{n\in\mathbb{Z}}\frac{(\alpha_1,\dots ,\alpha_r)_n}{(\beta_1;\dots ,\beta_s)_n}x^n.$$ By D'Alembert's ratio test, it can be checked that ${}_rH_r$ converges only for $|x|=1$ [@Slater], provided that $\Re (\beta_1+\dots +\beta_r-\alpha_1-\dots -\alpha_r)>1$.
+
+The $q$-exponential function $e_q(x)$ is $$e_q(x):={}_1\varphi_0(0;-;q,x)
+=\sum_{n\ge 0}\frac{x^n}{(q;q)_n}$$ The function $e_q(x)$ has the infinite product representation as follows; $$e_q(x)=\frac{1}{(x;q)_\infty},\qquad |x|<1.$$ The limit $q\to 1-0$ of $e_q(x)$ is the exponential function [@GR]; $$\lim_{q\to 1-0}e_q(x(1-q))=e^x.
+\label{limexp}$$
+
+The $q$-gamma function $\Gamma_q(x)$ is $$\Gamma_q(x):=\frac{(q;q)_\infty}{(q^x;q)_\infty}(1-q)^{1-x},\qquad 0<q<1.$$ The limit $q\to 1-0$ of $\Gamma_q(x)$ gives the gamma gunction [@GR]; $$\lim_{q\to 1-0}\Gamma_q(x)=\Gamma (x).\label{limgamma}$$ The theta function of Jacobi is given by $$\theta (x):=\sum_{n\in\mathbb{Z}}q^{\frac{n(n-1)}{2}}x^n,\qquad \forall x\in\mathbb{C}^*.$$ Jacobi's triple product identity is $$\theta (x)=(q,-x,-q/x;q)_\infty$$ and the theta function satisfies the following $q$-difference equation $$\theta (q^kx)=x^{-k}q^{-\frac{k(k-1)}{2}}\theta (x),\qquad \forall k\in\mathbb{Z}.$$ The inversion formula is $$\theta (x)=x\theta (1/x).
+\label{inv}$$ We remark that $\theta (\lambda q^k/x)=0$ if and only if $x\in[-\lambda ;q]$. In our study, the following proposition [@Z1] is useful to consider the limit $q\to 1-0$ of our formula.
+
+::: prop
+For any $x\in\mathbb{C}^* (-\pi <\arg x<\pi )$, we have $$\lim_{q\to 1-0}\frac{\theta (q^\alpha x)}{\theta (q^\beta x)}=x^{\beta -\alpha}\label{limt1}$$ and $$\lim_{q\to 1-0}\frac{\theta \left(\dfrac{q^\alpha x}{(1-q)}\right)}{\theta \left(\dfrac{q^\beta x}{(1-q)}\right)}(1-q)^{\beta -\alpha}=
+\left(\frac{1}{x}\right)^{\alpha -\beta}.\label{limt2}$$
+:::
+
+We also use the limit [@GR] as follows; $$\lim_{q\to 1-0}\frac{(xq^\alpha ;q)_\infty}{(x;q)_\infty}=(1-x)^{-\alpha},\qquad |x|<1.
+\label{limbin}$$
+
+# An asymptotic formula of the divergent series ${}_1\psi_0(a;-;q,x)$
+
+In this section, we show an asymptotic formula of the divergent series ${}_1\psi_0(a;-;q,x)$. At first, we review Ramanujan's sum for ${}_1\psi_1(a;b;q,z)$ and its property. Ramanujan gives the following sum [@Hardy] $${}_1\psi_1(a;b;q,z)=\frac{(q,b/a,az,q/az;q)_\infty}{(b,q/a,z,b/az;q)_\infty},\qquad \left|b/a\right|<|z|<1.
+\label{Rsum}$$ We can regard this sum as a $q$-analogue of the bilateral binomial theorem [@Horn] as follows;
+
+**Theorem.** *(Horn [@Horn])* *If $z$ is a complex number such that $|z|=1$, we have*$${}_1H_1(\alpha ;\beta ;z)=\frac{\Gamma (\beta )\Gamma (1-\alpha )}{\Gamma (\beta -\alpha )}\frac{(1-z)^{\beta -\alpha -1}}{(-z)^{\beta -1}},
+\label{bbt}$$ *provided that $\Re (\beta -\alpha )>1$.*
+
+Let $z$ is a complex number such that $-\pi <\arg z <\pi$. The summation [\[Rsum\]](#Rsum){reference-type="eqref" reference="Rsum"} is rewritten by $$\frac{(q,b/a,az,q/az;q)_\infty}{(b,q/a,z,b/az;q)_\infty}
+=\frac{(q,b/a;q)_\infty}{(b,q/a;q)_\infty}\frac{\theta (-az)}{\theta (-aqz/b)}\frac{(aqz/b;q)_\infty}{(z;q)_\infty}.
+\label{bin3}$$ In [\[bin3\]](#bin3){reference-type="eqref" reference="bin3"}, we put $a=q^\alpha$ and $b=q^\beta$ (with $\Re (\beta -\alpha )>1$), we obtain $${}_1\psi_1 (q^\alpha ;q^\beta ;q,z)
+=\frac{\Gamma_q(\beta )\Gamma_q (1-\alpha )}{\Gamma_q(\beta -\alpha )}
+\frac{\theta (q^\alpha (-z))}{\theta (q^{\alpha +1-\beta }(-z))}
+\frac{(q^{\alpha +1-\beta}z;q)_\infty}{(z;q)_\infty},
+\label{qbb}$$ where $|q^{\beta -\alpha}|<|z|<1$. Combining [\[limgamma\]](#limgamma){reference-type="eqref" reference="limgamma"}, [\[limt1\]](#limt1){reference-type="eqref" reference="limt1"} and [\[limbin\]](#limbin){reference-type="eqref" reference="limbin"}, we can check out that the limit $q\to 1-0$ of [\[qbb\]](#qbb){reference-type="eqref" reference="qbb"} gives the bilateral binomial theorem [\[bbt\]](#bbt){reference-type="eqref" reference="bbt"}, provided that $-\pi <\arg z <\pi$.
+
+The bilateral basic hypergeometric series ${}_1\psi_1(a;b;q,z)$ satisfies the $q$-difference equation $$\left(\frac{b}{q}-az\right)u(qz)+(z-1)u(z)=0.
+\label{bqua}$$ We consider the degeneration of the equation [\[bqua\]](#bqua){reference-type="eqref" reference="bqua"} in the next section.

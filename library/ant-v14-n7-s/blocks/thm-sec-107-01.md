@@ -1,1 +1,1 @@
-Unlessϵ2g+1ϵ(E)=− 1 and M= 1, we have
+Let πX : X →B be a smooth projective morphism with B a regular separated scheme of

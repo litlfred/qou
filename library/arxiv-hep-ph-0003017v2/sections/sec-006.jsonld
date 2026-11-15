@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-hep-ph-0003017v2/sections/sec-006",
   "@type": [
     "doco:Section"
   ],
-  "title": "Acknowledgments",
-  "pageStart": 55,
-  "pageEnd": 55,
+  "title": "ANTI-UNITARY SYMMETRIES",
+  "pageStart": 16,
+  "pageEnd": 17,
   "contains": [
     "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-006"
   ],
-  "derivedFrom": "library/arxiv-hep-ph-0003017v2/manifest",
-  "sourceDocument": "library/arxiv-hep-ph-0003017v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-0003017v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-0003017v2",
   "provenance": "ingested"
 }

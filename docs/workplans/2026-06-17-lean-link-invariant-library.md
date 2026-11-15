@@ -13,7 +13,7 @@ library realises that.
 
 ## Brick 1 (this PR) — a computable link invariant, Borromean nontriviality proved
 
-[`content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean`](../../content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean):
+[`folio/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean`](../../folio/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean):
 
 - **`LP`** — integer Laurent polynomials `ℤ[A, A⁻¹]` with normalised
   representation and `DecidableEq` (so polynomial equality is `decide`-able).
@@ -35,7 +35,7 @@ brick 2's enumeration will need `native_decide`, see below.)
 ## Brick 2 (DONE, this PR) — crossing-minimality by enumerate-then-assert
 
 `theorem QOU.Knots.TL.borromean_crossing_minimal` in
-[`KauffmanTL3.lean`](../../content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean),
+[`KauffmanTL3.lean`](../../folio/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean),
 proved by **`native_decide`** (axioms `Lean.ofReduceBool` + `Lean.trustCompiler`).
 It enumerates **every** 3-braid word of length `< 6` over `{σ₁^±, σ₂^±}` and asserts:
 
@@ -102,7 +102,7 @@ Borromean-signature — matching the oracle. The `native_decide` verdict (minima
 The Kauffman/`TL₃` bracket is reusable for *any* 3-braid closure. The figure-eight
 `4₁ = closure of (σ₁σ₂⁻¹)²` is the natural reuse target — the **q₀-calibration
 knot** (`m_μ/m_e = Vol(4₁)/ℏ_q²`, CAL-2). Two new theorems in
-[`KauffmanTL3.lean`](../../content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean),
+[`KauffmanTL3.lean`](../../folio/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean),
 both **`decide`, AXIOM-FREE**:
 
 - `figure_eight_jones`: `jones (4₁ closure) = δ · V(4₁)` with
@@ -118,7 +118,7 @@ both **`decide`, AXIOM-FREE**:
 Completing the library's knot ladder (unknot → trefoil → figure-eight → Borromean),
 the trefoil `3₁ = T(3,2) = closure of (σ₁σ₂)²` — the all-positive `(3,2)` torus knot,
 a 1-component 3-braid closure — is the third validation target. Two new theorems in
-[`KauffmanTL3.lean`](../../content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean),
+[`KauffmanTL3.lean`](../../folio/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean),
 both **`decide`, AXIOM-FREE**:
 
 - `trefoil_jones`: `jones (3₁ closure) = δ · V(3₁)` with
@@ -140,7 +140,7 @@ Bricks 3–4 validated *knots* (1-component); brick 5 extends the bracket to a g
 multi-component **link** against a literature Jones polynomial. The **Hopf link** —
 the closure of `σ₁²` — is the framework's **CAL-3 / `m_π`** object (`Vol(Hopf) = 0`,
 the meson scale). Four new theorems in
-[`KauffmanTL3.lean`](../../content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean),
+[`KauffmanTL3.lean`](../../folio/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean),
 all **`decide`, AXIOM-FREE** (`#print axioms`: *does not depend on any axioms*):
 
 - `hopf_link_jones`: `jones (σ₁² closure) = δ² · V(Hopf)` with `V(Hopf) = -A⁻² - A⁻¹⁰`
@@ -165,7 +165,7 @@ Completing the ladder with a higher-crossing knot. `8₁₉ = T(3,4) = closure o
 (permutation a 3-cycle ⇒ single component). At 8 crossings and Jones span `20` it is the
 **widest reduction in the ladder** — a stress-test of the kernel-`decide` bracket compute
 (~70 s, `maxHeartbeats 2000000`) — and a third *chiral* cross-check. Theorems in
-[`KauffmanTL3.lean`](../../content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean),
+[`KauffmanTL3.lean`](../../folio/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean),
 all **`decide`, AXIOM-FREE**:
 
 - `torus819_jones`: `jones (8₁₉ closure) = δ · V(8₁₉)` with
@@ -183,16 +183,16 @@ nontriviality + literature `V` (links), all axiom-free `decide`.
 
 - **qa-sweep sidecar refresh — `prop:confinement-operator-selection`.** #2455
   changed the block's `.md`/`.ts`/`.lean`; its
-  [`confinement-operator-selection.qa.json`](../../content/quantum-observable-universe/particle-interactions/confinement-operator-selection.qa.json)
+  [`confinement-operator-selection.qa.json`](../../folio/quantum-observable-universe/particle-interactions/confinement-operator-selection.qa.json)
   sidecar still carries the pre-#2455 `source_hashes`
   (`md a7e748cdc000`, `ts 6c77b7d17276`, `lean f8db5d74c684`, last reviewed
   2026-05-27) and now reads **stale**. Refresh with
-  `bun run content/pipeline/qa-sweep.ts content/quantum-observable-universe/particle-interactions/confinement-operator-selection.md`
+  `bun run content/pipeline/qa-sweep.ts folio/quantum-observable-universe/particle-interactions/confinement-operator-selection.md`
   (or `/integration-audit voice` to batch the axis). **Could not run in the
   sparse remote checkout** — `content/pipeline/` + `folio-assistant/schemas/` are
   absent here — so this is a full-checkout / CI follow-up.
 
 ## Cross-links
-- `content/quantum-observable-universe/lean/QOU/ParticleInteractions/confinement_operator_selection.lean` — the Brunnian signature + sublink-triviality (`decide`, axiom-free).
+- `folio/quantum-observable-universe/lean/QOU/ParticleInteractions/confinement_operator_selection.lean` — the Brunnian signature + sublink-triviality (`decide`, axiom-free).
 - `computations/probes/b3_brunnian_minimality_enumeration.py` — the Python enumeration oracle.
 - `docs/audits/2026-06-17-b3-dense-sdp-lever-closed.md` — why the selection is topological, not operator-space.

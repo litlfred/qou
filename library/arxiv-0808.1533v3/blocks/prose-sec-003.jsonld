@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0808.1533v3/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0808.1533v3/blocks/prose-sec-003",
   "kind": "prose",
   "title": "Zero contribution of short paths to the time average",
   "pageStart": 29,
   "pageEnd": 30,
   "text": "../sections/sec-003-zero-contribution-of-short-paths-to-the-time-ave.md",
-  "derivedFrom": "library/arxiv-0808.1533v3/manifest",
-  "sourceDocument": "library/arxiv-0808.1533v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0808.1533v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0808.1533v3",
   "provenance": "ingested"
 }

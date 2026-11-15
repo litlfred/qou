@@ -1,0 +1,47 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "purcell2008",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 169,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-math-0410233v4/0410233v4.pdf"
+        },
+        "id": "purcell2008",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "Already examined in the corpus and recorded as an APPLICABILITY NEGATIVE, correctly. computations/qbeta/qbeta_cusp_shape_drift_robustness_probe.py and its witness name this exact file (library/arxiv-math-0410233v4/0410233v4.pdf) and state: Purcell's Thm 1.2 requires a cone deformation along a singular locus DISJOINT from the cusp torus T, cone angle running 0 -> 2*pi, with T remaining a cusp throughout -- whereas the QOU setup deforms the 4_1 cusp ITSELF (Neumann-Zagier, u = 2 ln q_0 != 0). I read the hypotheses and agree they do not transfer. So the paper is the right subject area (cusp shape bounds, prop:cusp-shape-bar-parity) but supplies no result the folio can consume. This is a scope-(a) negative -- this document, as read, does not close the cusp-shape-drift objection; it is not a claim that no cone-deformation bound could.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "The recorded negative currently cites the paper by upload path ('Purcell's Cusp shapes under cone deformation (library/arxiv-math-0410233v4/0410233v4.pdf)') with no bib key -- a citation-hygiene gap. Registering it lets the witness and probe cite [purcell2008] so the negative survives any uploads/ reorganisation.",
+              "target": "folio/schema/references.ts (new id, e.g. purcell2008cusp), consumed by computations/qbeta/qbeta_cusp_shape_drift_robustness_probe.py",
+              "bean": "qou-e1pj"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T16:12:29.859Z",
+          "source_sha": "1f7215c9f21a"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

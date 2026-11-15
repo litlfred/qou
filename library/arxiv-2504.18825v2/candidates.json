@@ -1,0 +1,71 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2504.18825v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "829f97190cb1c8adcc6c5fcfa347fc73b8fb5100ad16b2b8d8e2653c0a5d78a0",
+  "file": "2504.18825v2.pdf"
+ },
+ "provenance": {
+  "title": "Murnaghan-Nakayama rule for the cyclotomic Hecke algebra and applications",
+  "authors": "NAIHUAN JING AND NING LIU",
+  "arxiv": {
+   "id": "2504.18825",
+   "version": "2",
+   "primary_class": "math.RT",
+   "stamp_date": "11 Mar 2026"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 3,
+  "by_kind": {
+   "corollary": 1,
+   "lemma": 2
+  },
+  "formalization_candidates": 3
+ },
+ "candidates": [
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": null,
+   "name": null,
+   "statement": "\\ref{c:dualMN2} ensures that the iteration can continue even when the parts of $\\la^{(1)}$ are exhausted. The Murnaghan--Nakayama rule expresses $\\chi^{\\bm{\\la}}_{\\bm{\\mu}}$ in terms of irreducible characters where one part is removed from the lower multipartition $\\bm{\\mu}$. In contrast, Corollary \\ref{c:dualMN2} computes $\\chi^{\\bm{\\la}}_{\\bm{\\mu}}$ using irreducible characters in which at least one part is removed from the upper multipartition $\\bm{\\la}$. For this reason, we refer to equation \\eqref{e:dualMN2} as the dual Murnaghan--Nakayama rule for $\\chi^{\\bm{\\la}}_{\\bm{\\mu}}$.",
+   "section_file": "sections/sec-004-5-a-dual-murnaghannakayama-rule-via-vertex-opera.md",
+   "section_title": "A dual Murnaghan\u2013Nakayama rule via vertex operators",
+   "pages": "20-25",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "A.1. Let \u03c8\u03bb be the irreducible character of the Hecke algebra in type A indexed",
+   "section_file": "sections/sec-008-appendix-a-an-alternative-proof-of-corollary-63.md",
+   "section_title": "Appendix A. An alternative proof of Corollary 6.3",
+   "pages": "49-51",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "A.2. ([JL22, Theorem 3.1],[Zha19, Theorem B]) The Regev formula for the Hecke",
+   "section_file": "sections/sec-008-appendix-a-an-alternative-proof-of-corollary-63.md",
+   "section_title": "Appendix A. An alternative proof of Corollary 6.3",
+   "pages": "49-51",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

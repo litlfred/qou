@@ -1,0 +1,24 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "bridgeland2007",
+  "type": "article-journal",
+  "title": "Stability conditions on triangulated categories",
+  "author": [
+    {
+      "family": "Bridgeland",
+      "given": "Tom"
+    }
+  ],
+  "container-title": "Annals of Mathematics",
+  "volume": "166",
+  "issued": {
+    "date-parts": [
+      [
+        2007
+      ]
+    ]
+  },
+  "DOI": "10.4007/annals.2007.166.317",
+  "URL": "https://doi.org/10.4007/annals.2007.166.317",
+  "note": "DOI written by the author at the citing site (Mathlib/WallCrossing.lean:26). Container, year and volume are DECODED FROM THAT DOI, not supplied from memory: the Annals DOI scheme is annals.<year>.<volume>.<first-page>, so 2007 and 166 are read directly off the author-written string. The first page it also encodes (317) is NOT written as a `page` field, because only the start is recoverable and a half-range would be a fabricated range. DISTINCT from `bridgeland2016` (Riemann-Hilbert problems from Donaldson-Thomas theory, arXiv 1611.03697) — different work. WallCrossing.lean cites it for the existence of stability conditions, which corroborates the title. Registered by the dangling-citation drain, bean qou-ghy5."
+}

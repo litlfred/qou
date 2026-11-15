@@ -1,0 +1,40 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "ame2020tables",
+  "type": "article-journal",
+  "title": "The AME 2020 atomic mass evaluation (II)",
+  "author": [
+    {
+      "family": "Wang",
+      "given": "Meng"
+    },
+    {
+      "family": "Huang",
+      "given": "W. J."
+    },
+    {
+      "family": "Kondev",
+      "given": "F. G."
+    },
+    {
+      "family": "Audi",
+      "given": "Georges"
+    },
+    {
+      "family": "Naimi",
+      "given": "Sarah"
+    }
+  ],
+  "container-title": "Chinese Physics C",
+  "issued": {
+    "date-parts": [
+      [
+        2021
+      ]
+    ]
+  },
+  "volume": "45",
+  "issue": "3",
+  "page": "030003",
+  "note": "The companion volume to ame2020, added 2026-08-15 (bean qou-wy51) because the corpus cites tabulated binding energies, which are paper (II)'s content rather than (I)'s input-data-and-adjustment-procedures. EVERY field here is read verbatim off the header of library/mass_1.mas20.txt ('\"The Ame2020 atomic mass evaluation (II)\" by M.Wang, W.J.Huang, F.G.Kondev, G.Audi and S.Naimi / Chinese Physics C45, 030003, March 2021'). The subtitle and the DOI are DELIBERATELY OMITTED rather than guessed: api.crossref.org is blocked by the sandbox egress proxy, so neither could be verified. Fill them in when a session with network access next touches this entry — do not supply them from memory."
+}

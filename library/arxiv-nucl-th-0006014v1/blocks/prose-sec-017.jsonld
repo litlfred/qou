@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-nucl-th-0006014v1/blocks/prose-sec-017",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-nucl-th-0006014v1/blocks/prose-sec-017",
   "kind": "prose",
-  "title": "(q′,q ) ≡ ⟨+ + |RJ(q′,q )| − −⟩",
-  "pageStart": 19,
-  "pageEnd": 19,
-  "text": "../sections/sec-017-2-qq-rjqq.md",
-  "derivedFrom": "library/arxiv-nucl-th-0006014v1/manifest",
-  "sourceDocument": "library/arxiv-nucl-th-0006014v1/manifest",
+  "title": "Deuteron calculations",
+  "pageStart": 33,
+  "pageEnd": 69,
+  "text": "../sections/sec-017-d-deuteron-calculations.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-nucl-th-0006014v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-nucl-th-0006014v1",
   "provenance": "ingested"
 }

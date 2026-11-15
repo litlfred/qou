@@ -1,0 +1,50 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "garoufalidis2012",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 235,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1208.1663v2/1208.1663v2.pdf"
+        },
+        "id": "garoufalidis2012",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Join CORRECT (arXiv:1208.1663v2, Garoufalidis, 'The 3D index of an ideal triangulation and angle structures', with an appendix by S. Zwegers; matches the registered entry's author, year and URL). Cited at three Lean sites - lean/QOU/Knot/SymmetricOptimum.lean:46, L6a4AngleStructure.lean:58, M004AngleStructure.lean:63 - each as '-- Ref: [garoufalidis2012] arXiv:1208.1663 Sec. 2.2-2.3 (generalised angle structures)', and regenerated from computations/probes/gen_l6a4_angle_structure_lean.py:111. The locator is ACCURATE and load-bearing: Sec. 2.2 of this document is titled 'Angle structures' and defines a generalized angle structure on a combinatorial ideal tetrahedron as an assignment of angles summing to 1 at each vertex, determined by a triple (alpha, beta, gamma) in R^3 with alpha + beta + gamma = 1, and calls it strict when all three are positive; Sec. 2.3 supplies the Neumann-Zagier matrices. That is exactly the object the three Lean modules manipulate. Scope note on what is NOT claimed: SymmetricOptimum.lean is explicit that it proves only the symmetry half (orbit averaging, convexity, Jensen) and nothing about uniqueness of the symmetric point or about hyperbolic volume - so the citation is used at the right strength, not overreached.",
+          "keyResults": [
+            {
+              "locator": "Sec. 2.2 (Def. of generalized angle structure); Sec. 2.3 (Neumann-Zagier matrices)",
+              "statement": "A generalized angle structure on an ideal tetrahedron is a triple (alpha, beta, gamma) in R^3 with alpha + beta + gamma = 1, strict when all are positive; index structures are a generalization of strict angle structures, and the domain of the 3D index is exactly the triangulations supporting an index structure.",
+              "useForFolio": "Sources the angle-structure polytope the SymmetricOptimum / L6a4 / M004 modules argue over, including the linear constraint that makes the feasible set convex - which is what the Jensen/orbit-averaging argument needs.",
+              "targets": [
+                "folio/quantum-observable-universe/lean/QOU/Knot/SymmetricOptimum.lean"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Correctly joined, accurately located, load-bearing, and used at the right strength. Nothing to change.",
+              "target": "folio/quantum-observable-universe/lean/QOU/Knot/SymmetricOptimum.lean"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "87e94e429d58"
+        }
+      }
+    }
+  ]
+}

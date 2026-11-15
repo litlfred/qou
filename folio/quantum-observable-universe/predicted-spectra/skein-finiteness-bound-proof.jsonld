@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-skein-finiteness-bound",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:skein-finiteness-bound",
+  "kind": "proof",
+  "title": "Proof of the Skein finiteness bound",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-skein-finiteness-bound",
+    "papers/quantum-observable-universe/blocks/prop-skein-polynomial-transfer-matrix"
+  ],
+  "text": "skein-finiteness-bound-proof.md",
+  "provenance": "authored"
+}

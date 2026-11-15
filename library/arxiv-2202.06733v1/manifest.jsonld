@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2202.06733v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Received <day> <Month>, <year>; Revised <day> <Month>, <year>; Accepted <day> <Month>, <year> ARTICLE TYPE",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2202.06733v1",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Overleaf Example",
   "contains": [
     "library/arxiv-2202.06733v1/sections/sec-000",
     "library/arxiv-2202.06733v1/sections/sec-001",
@@ -20,8 +25,18 @@
     "library/arxiv-2202.06733v1/sections/sec-011"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2202.06733&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-2202.06733v1",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "2202.06733v1.pdf",
     "source_sha256": "e670632090447f148576cb99c1da40a2cdacb7fb4985e1b80e1359c9360d6406",
     "pages": 20,

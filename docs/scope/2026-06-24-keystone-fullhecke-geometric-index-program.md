@@ -3,7 +3,7 @@
 **Date:** 2026-06-24
 **Status:** scoping only — a **multi-session / multi-PR research frontier**, owner-gated by the
 2026-06-19 narrow reversal (keystone geometric `W_λ` construction). Deliberately **not** attempted as a single build; this doc lays out the program, its falsifiable targets, and what is already foreclosed, so the (hard) geometric work starts from a single coherent map.
-**Triggering result:** the Step-1 gate ([#2717](https://github.com/litlfred/qou/pull/2717)) **refuted the SU(2)/WRT(S³/2I) sub-route** (coverage: ≥3-row blocks incl. the electron `(3,1,1)` are outside the GL₂ Schur–Weyl image; value: `d_q=[2j+1]_q` only on the standard rep `(n−1,1)`). Machine-checked in [`Su2SchurWeylForeclosure.lean`](../../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/Su2SchurWeylForeclosure.lean). So the index must live on the **full-Hecke side**.
+**Triggering result:** the Step-1 gate ([#2717](https://github.com/litlfred/qou/pull/2717)) **refuted the SU(2)/WRT(S³/2I) sub-route** (coverage: ≥3-row blocks incl. the electron `(3,1,1)` are outside the GL₂ Schur–Weyl image; value: `d_q=[2j+1]_q` only on the standard rep `(n−1,1)`). Machine-checked in [`Su2SchurWeylForeclosure.lean`](../../folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/Su2SchurWeylForeclosure.lean). So the index must live on the **full-Hecke side**.
 
 ## The object
 
@@ -63,7 +63,7 @@ specialization / `d→∞` limit (no finite colour `ℂ^N`), per the arena corre
 ## Cross-references
 
 - [#2717](https://github.com/litlfred/qou/pull/2717) — the Step-1 gate that forecloses the SU(2) sub-route (this program's trigger).
-- [`Su2SchurWeylForeclosure.lean`](../../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/Su2SchurWeylForeclosure.lean) — the foreclosure, machine-checked.
+- [`Su2SchurWeylForeclosure.lean`](../../folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/Su2SchurWeylForeclosure.lean) — the foreclosure, machine-checked.
 - [#2524](https://github.com/litlfred/qou/pull/2524) (mechanism), [#2488](https://github.com/litlfred/qou/pull/2488) (selection rule), [#2710](https://github.com/litlfred/qou/pull/2710)/[#2722](https://github.com/litlfred/qou/pull/2722) (Bring/Jacobian).
 - [`docs/coordination/s5-so3-keystone.md`](../coordination/s5-so3-keystone.md) — keystone ledger.
 - [`docs/scope/2026-06-19-keystone-dg-construction-attack-plan.md`](2026-06-19-keystone-dg-construction-attack-plan.md) — #2503's attack plan (this program is its post-Step-1 continuation).

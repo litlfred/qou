@@ -1,0 +1,80 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2212.04436v1",
+ "source": {
+  "file": "2212.04436v1.pdf",
+  "sha256": "0f98a851d030ec05262ee046de574af7467facf7b8ea5b6f6440457f44e6c02b",
+  "bytes": 564142,
+  "pages": 6,
+  "text_source": "embedded",
+  "extractor": "pypdf",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2212.04436",
+   "version": "1",
+   "primary_class": "nucl-th",
+   "stamp_date": "8 Dec 2022"
+  },
+  "doi": null,
+  "title": "Dilute neutron star matter from neural-network quantum states",
+  "authors_raw": "Bryce Fore,1 Jane M. Kim, 2 Giuseppe Carleo, 3 Morten Hjorth-Jensen, 2, 4 and Alessandro Lovato 5, 6, 7",
+  "title_lines": [
+   "Dilute neutron star matter from neural-network quantum states"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20221209012853Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "pdfTeX-1.40.21",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Dilute neutron star matter from neural-network quantum states",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Abstract",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "References",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-dilute-neutron-star-matter-from-neural-network-q",
+   "number": null,
+   "title": "Dilute neutron star matter from neural-network quantum states",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 6,
+   "n_chars": 26342,
+   "n_words": 3958
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 3,
+  "sections": 1,
+  "chars_total": 26342
+ }
+}

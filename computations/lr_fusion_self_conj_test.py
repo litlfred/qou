@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """LR-fusion self-conjugacy test for the magic-shell rank-collapse
-conjecture (conj:sdp-rank-collapse-magic-shell).
+conjecture (`sdp-rank-collapse-magic-shell` -- RETIRED, removed in
+    f8fbcc5ce3; record in docs/audits/2026-10-11-retired-label-records.md §B).
 
 For each canonical self-conjugate partition lambda of n in {magic,
 non-magic}, computes the dominant LR-fusion product

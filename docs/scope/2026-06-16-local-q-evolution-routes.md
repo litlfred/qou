@@ -12,7 +12,7 @@ Validity assessment: [`docs/audits/2026-06-16-q-anchor-drift-and-local-q-routes.
 
 ### Step 1 — the germ `δq(p)` already lives in the corpus
 
-[`two-observer-parallelogram.md`](../../content/quantum-observable-universe/quantum-observable-universes/two-observer-parallelogram.md):
+[`two-observer-parallelogram.md`](../../folio/quantum-observable-universe/quantum-observable-universes/two-observer-parallelogram.md):
 two independent observations at a point `p` each perturb the substrate
 by `δq_i(p)`, giving shifted parameters `q_i'(p) = q(p) + δq_i(p)`, and
 the obstruction is the **commutator of observations**
@@ -35,7 +35,7 @@ two transport directions `X_1, X_2 ∈ T_pM`; the "parallelogram"
 (transport along `X_1` then `X_2` minus the reverse) over an
 area element `dA = X_1 ∧ X_2` picks up holonomy = curvature × area.
 Identifying the parallelogram commutator with the curvature 2-form of the
-**q-flat connection** ([`q-flat-connection.md`](../../content/quantum-observable-universe/q-geometric-langlands/q-flat-connection.md)):
+**q-flat connection** ([`q-flat-connection.md`](../../folio/quantum-observable-universe/q-geometric-langlands/q-flat-connection.md)):
 
 $$
 [\delta q_1(p),\, \delta q_2(p)]
@@ -56,7 +56,7 @@ term `(q-1)𝓕_q^intr` survives; matter turns on `𝓕_q^conn`.
 
 The only missing piece is *time evolution* of `q(p)`. The natural
 candidate uses the existing **q-heat equation**
-([`q-gaussian-solves-q-heat.md`](../../content/quantum-observable-universe/information-theory/q-gaussian-solves-q-heat.md)),
+([`q-gaussian-solves-q-heat.md`](../../folio/quantum-observable-universe/information-theory/q-gaussian-solves-q-heat.md)),
 whose fundamental solution is the Reeb-invariant q-Gaussian with the
 clock running at rate `q⁻²`. Promote `q(p)` itself to the diffusing
 field — a **q-harmonic-map heat flow**:
@@ -96,7 +96,7 @@ single out the numerical `q₀ ≈ 1.1097`. **The naive route is false.**
 records where one sits in the `𝔾_m`-family" — i.e. `q₀` is a **modulus**.
 Selecting it requires distinguishing one point of the `𝔾_m`-family.
 Candidate conditions (all conjectural; consistent with the candidate list
-in [`epistemic-status-of-calibrations.md`](../../content/quantum-observable-universe/observations/epistemic-status-of-calibrations.md)):
+in [`epistemic-status-of-calibrations.md`](../../folio/quantum-observable-universe/observations/epistemic-status-of-calibrations.md)):
 
 1. **Curvature extremum.** `q₀ = ` critical point of the intrinsic-curvature
    functional `q ↦ ‖(q-1)\mathcal{F}_q^{\mathrm{intr}}‖`. Needs the explicit

@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ant-v14-n7-s-p07/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Nonvanishing of hyperelliptic zeta functions over finite fields",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s-p07",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "ant-v14-n7-s-p07",
   "contains": [
     "library/ant-v14-n7-s-p07/sections/sec-000",
     "library/ant-v14-n7-s-p07/sections/sec-001",
@@ -15,8 +20,10 @@
     "library/ant-v14-n7-s-p07/sections/sec-006"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "ant-v14-n7-s-p07",
+    "title_source": "slug",
     "source_file": "ant-v14-n7-s-p07.pdf",
     "source_sha256": "c5a749ef6be194fd9d8efaea085e4bab3aa771134912a6352dd9eb793926dc5d",
     "pages": 16,

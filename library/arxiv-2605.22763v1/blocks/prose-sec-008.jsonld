@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2605.22763v1/blocks/prose-sec-008",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2605.22763v1/blocks/prose-sec-008",
   "kind": "prose",
   "title": "Prompts",
   "pageStart": 22,
   "pageEnd": 22,
   "text": "../sections/sec-008-prompts.md",
-  "derivedFrom": "library/arxiv-2605.22763v1/manifest",
-  "sourceDocument": "library/arxiv-2605.22763v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2605.22763v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2605.22763v1",
   "provenance": "ingested"
 }

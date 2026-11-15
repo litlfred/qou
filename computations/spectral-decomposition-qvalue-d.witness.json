@@ -1,0 +1,346 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-10-10T13:09:52.157419+00:00",
+  "commitSha": "3a71395875bbbccd1cd0db64e69660851b99ec0c",
+  "assertions": [
+    {
+      "name": "tr_M^D(e_(1^3)) = 0 (Ocneanu weight of (1^3) vanishes under D)",
+      "computed": "1.13195988485333904593863991136097397258531639976739227369783e-72",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-55",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "e_(1^3) is idempotent",
+      "computed": "2.26391976970667809187727982272194794517063279953478454739565e-72",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-55",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "Pauli^D[tau(2,3)] = 0",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "Pauli^D[tau(2,5)] = 0",
+      "computed": "4.57731321419120579939625623960373940832640719605581226397900e-72",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "Pauli^D[tau(2,7)] = 0",
+      "computed": "4.57731321419120579939625623960373940832640719605581226397900e-72",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "Pauli^D[tau(3,5)] = 0",
+      "computed": "2.28865660709560289969812811980186970416320359802790613198950e-72",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "Pauli^D[tau(2,9)] = 0",
+      "computed": "6.86596982128680869909438435940560911248961079408371839596850e-72",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "Pauli^D[tau(3,4)] = 0",
+      "computed": "2.28865660709560289969812811980186970416320359802790613198950e-72",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "tr_M^D(T_beta) = z^2 - (q-q^-1) z",
+      "computed": "0.247297886748034598406220648379763862169824401125095318673972",
+      "expected": "0.247297886748034598406220648379763862169824401125095318673972",
+      "passed": true,
+      "tolerance": "1e-60",
+      "unit": "dimensionless"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "spectral-decomposition-qvalue-d",
+  "scriptFile": "spectral_decomposition_qvalue_d.py",
+  "scriptHash": "6d78f1cfe54d",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "832ce4e14a00d523"
+  },
+  "invocation": {
+    "argv": [
+      "computations/spectral_decomposition_qvalue_d.py"
+    ],
+    "reproduce": "python3 -u computations/spectral_decomposition_qvalue_d.py"
+  },
+  "description": "Convention-D (z = q^3/(q^2+1)) recomputation at the proton q0 of every number quoted by cor:spectral-decomposition-qvalue and its table/interpretation siblings: Q_bare for six beta^- decays, the H_3 Markov traces tr_M(tau(r,s) s0 s1^-1), J(tau(2,9)), J(tau(3,4)), F_deg2, and the Pauli case (identically 0 under D). Replaces the float-only convention-C producer _deprecated/rosso-jones-qvalues.py (bean qou-wlnx).",
+  "contentBlock": "cor:spectral-decomposition-qvalue",
+  "parameters": {
+    "q0": "1.10997858275138080759166909561076887987449912187357873607281",
+    "q0_anchor": "proton",
+    "markov_convention": "D: z = q^3/(q^2+1)",
+    "z_D": "0.612688037146465251595829863945899248026308391545064759724287",
+    "m_e_MeV": "0.51099895069",
+    "mp_dps": 70,
+    "nucleon_ordering": "protons first, then neutrons (inherited)"
+  },
+  "data": {
+    "table1_traces": [
+      {
+        "knot": "tau(2,3)",
+        "tr_M_D": "0.526928735058188102384438929663974253923696941023045944582440",
+        "pauli_D": "0.0",
+        "tr_M_C_HISTORICAL": "0.364869848189609734363392760014788094733493786101206683628457",
+        "pauli_C_HISTORICAL": "0.114755775218538609702448137203752334294379942780791057423689"
+      },
+      {
+        "knot": "tau(2,5)",
+        "tr_M_D": "0.621559618846707182799293694073617556330471039777204653219355",
+        "pauli_D": "4.57731321419120579939625623960373940832640719605581226397900e-72",
+        "tr_M_C_HISTORICAL": "0.425127057178968632147932101505505948060966972842566292918314",
+        "pauli_C_HISTORICAL": "0.0931419557912798824623224754447780018914964047290578904846155"
+      },
+      {
+        "knot": "tau(2,7)",
+        "tr_M_D": "0.743356516951935332220877791067041128929358530805806877396564",
+        "pauli_D": "4.57731321419120579939625623960373940832640719605581226397900e-72",
+        "tr_M_C_HISTORICAL": "0.503964957982208932432174852260098746611459598261929719697142",
+        "pauli_C_HISTORICAL": "0.0755990181069617779460779310160932206847056746321268048204010"
+      },
+      {
+        "knot": "tau(3,5)",
+        "tr_M_D": "1.94018272639792804770089518169944106191820117545641578477293",
+        "pauli_D": "2.28865660709560289969812811980186970416320359802790613198950e-72",
+        "tr_M_C_HISTORICAL": "1.76140557202615273228857272251219281984794141104815161156595",
+        "pauli_C_HISTORICAL": "0.0552805502974504296672481758890560714051311503708090852979808"
+      },
+      {
+        "knot": "tau(2,9)",
+        "tr_M_D": "0.897642710001073984517257188369533255474434083171986773606519",
+        "pauli_D": "6.86596982128680869909438435940560911248961079408371839596850e-72",
+        "tr_M_C_HISTORICAL": "0.604829256332103338630347167924979598920641245915049696049330",
+        "pauli_C_HISTORICAL": "0.0613602268728804506639530492006528396381567027596772505166468"
+      },
+      {
+        "knot": "tau(3,4)",
+        "tr_M_D": "0.917245469374198665139765429613442159326114281262546219249497",
+        "pauli_D": "2.28865660709560289969812811980186970416320359802790613198950e-72",
+        "tr_M_C_HISTORICAL": "0.686089068860532520044401058208681251025676458437251976314213",
+        "pauli_C_HISTORICAL": "0.0681085376616630337052485134410703736578593882115174835054175"
+      }
+    ],
+    "tr_M_T_beta": {
+      "D": "0.247297886748034598406220648379763862169824401125095318673972",
+      "C_HISTORICAL": "0.144932737870134668866681102889894244403896870381369632327197"
+    },
+    "tr_M_e_1_3": {
+      "D": "1.13195988485333904593863991136097397258531639976739227369783e-72",
+      "C_HISTORICAL": "0.0227449425773471831332598675181433801849788578221039122049620"
+    },
+    "pauli_T_beta_alone": {
+      "D": "1.37319396425736173981887687188112182249792215881674367919370e-71",
+      "C_HISTORICAL": "0.156934471200892721712026850260893473078675817166834962174213"
+    },
+    "rosso_jones": {
+      "J_tau_2_9": "7.39356825937779787236643600957887603204277264882748558883090",
+      "J_tau_2_9_parts": {
+        "(2,)": "7.78456092276997810500419471813812332294704740965488990419849",
+        "(1, 1)": "-0.390992663392180232637758708559247290904274760827404315367586"
+      },
+      "J_tau_3_4": "16.3850891647783109332302699301985537742379727426020482672311",
+      "J_tau_3_4_parts": {
+        "(3,)": "14.3741922980711886334777779521066909583487319941179153504672",
+        "(2, 1)": "2.01089686670712229975249197809186281588924074848413291676393",
+        "(1, 1, 1)": "0.0"
+      },
+      "weight_ratio_J34_over_J29": "2.21612739477936328856846409632925332008097574059618700085810",
+      "F_deg2_D": "3.68442422789918880021164753623171141339637505626161019451108",
+      "weighted_trace_average_without_division_D": "0.911150325442728409081936065742952046133161536193538917468534"
+    },
+    "hbar_q_over_ln_q": "0.949597776791682952757367915979421154216249282989693855628892",
+    "qvalues": [
+      {
+        "nucleus": "3H",
+        "Z": 1,
+        "N": 2,
+        "shell_of_converting_neutron": 1,
+        "N_magic": true,
+        "delta_ln_P_D": "0.227230046067092084424497816399032612218971450182541431333785",
+        "Q_bare_D_MeV": "0.0367539651592983050145812230914574550658486857824729905370564",
+        "Q_bare_D_err_pct": "97.4957826937039495678733105398036274360488220444545434554346",
+        "Q_bare_D_ln_normalisation_MeV": "0.0387047717018414721601744255700339797249946945181154267896716",
+        "Q_combined_D_MeV": "0.0367539651592983050145812230914574550658486857824729905370564",
+        "Q_combined_D_err_pct": "97.4957826937039495678733105398036274360488220444545434554346",
+        "combined_rule": "shell <= 4: F = 1 (Q = Q_bare)",
+        "Q_exp_MeV": "0.01861",
+        "Q_exp_err_MeV": "0.00001",
+        "Q_bare_C_HISTORICAL_ln_normalisation_MeV": "0.0422422228166137096695901254924927319827285079562457675127719",
+        "Q_bare_C_HISTORICAL_published_formula_MeV": "0.0401131208733952822438438785750811374474907540033126930812868",
+        "chain_diagnostics_D": {
+          "zero_V_parent": 0,
+          "zero_V_daughter": 0,
+          "neg_V_parent": 0,
+          "neg_V_daughter": 0
+        }
+      },
+      {
+        "nucleus": "14C",
+        "Z": 6,
+        "N": 8,
+        "shell_of_converting_neutron": 2,
+        "N_magic": true,
+        "delta_ln_P_D": "0.888959311103217691432399305227851212998698281429962678245339",
+        "Q_bare_D_MeV": "0.143787232867410944137441727011416592994175565775677120267619",
+        "Q_bare_D_err_pct": "-8.11143093851550093466147302440146153235201573640265831568302",
+        "Q_bare_D_ln_normalisation_MeV": "0.151419091726616502201533416013505667068592836715539080436410",
+        "Q_combined_D_MeV": "0.143787232867410944137441727011416592994175565775677120267619",
+        "Q_combined_D_err_pct": "-8.11143093851550093466147302440146153235201573640265831568302",
+        "combined_rule": "shell <= 4: F = 1 (Q = Q_bare)",
+        "Q_exp_MeV": "0.15648",
+        "Q_exp_err_MeV": "0.00004",
+        "Q_bare_C_HISTORICAL_ln_normalisation_MeV": "0.141643199255094546897527061419546504340729080319614994382986",
+        "Q_bare_C_HISTORICAL_published_formula_MeV": "0.134504067110299144627892863983242284747999238891943465064943",
+        "chain_diagnostics_D": {
+          "zero_V_parent": 0,
+          "zero_V_daughter": 0,
+          "neg_V_parent": 0,
+          "neg_V_daughter": 0
+        }
+      },
+      {
+        "nucleus": "60Co",
+        "Z": 27,
+        "N": 33,
+        "shell_of_converting_neutron": 5,
+        "N_magic": false,
+        "delta_ln_P_D": "0.528803400796493478155455775961251951638729889496192136789765",
+        "Q_bare_D_MeV": "0.0855327986126192356890167951581676181208458090399338585852204",
+        "Q_bare_D_err_pct": "-73.1172647915833561652522880352743444948154103026891728996384",
+        "Q_bare_D_ln_normalisation_MeV": "0.0900726609761038925229554460716331577953685331656312782167330",
+        "Q_combined_D_MeV": "0.315139115488356434462062079380137259747508240847704457836757",
+        "Q_combined_D_err_pct": "-0.952599085911168726761769060521966323818008973911915693887784",
+        "combined_rule": "degree-2 shell: Q_bare * F_deg2^D",
+        "Q_exp_MeV": "0.31817",
+        "Q_exp_err_MeV": "0.00013",
+        "Q_bare_C_HISTORICAL_ln_normalisation_MeV": "0.0230930269481705258884754941858566286947740904584696658946931",
+        "Q_bare_C_HISTORICAL_published_formula_MeV": "0.0219290870493731544148798639375636106446654043098502294994842",
+        "chain_diagnostics_D": {
+          "zero_V_parent": 0,
+          "zero_V_daughter": 0,
+          "neg_V_parent": 13,
+          "neg_V_daughter": 12
+        }
+      },
+      {
+        "nucleus": "90Sr",
+        "Z": 38,
+        "N": 52,
+        "shell_of_converting_neutron": 6,
+        "N_magic": false,
+        "delta_ln_P_D": "0.338915636530553328823279685662309452018477988529880227702758",
+        "Q_bare_D_MeV": "0.0548188662220640175368066093004318800282853738448235697839234",
+        "Q_bare_D_err_pct": "-89.9580754310195974470037352444711705388742674766763931518733",
+        "Q_bare_D_ln_normalisation_MeV": "0.0577285115465153943845941506059443892211703848765435506891625",
+        "Q_combined_D_MeV": "0.201975958854537138704743690947250466307323422977827628152135",
+        "Q_combined_D_err_pct": "-63.0012898233124860405305567050283080587427325558110225037306",
+        "combined_rule": "degree-2 shell: Q_bare * F_deg2^D",
+        "Q_exp_MeV": "0.54590",
+        "Q_exp_err_MeV": "0.00007",
+        "Q_bare_C_HISTORICAL_ln_normalisation_MeV": "0.0280248048251011314662151722692000181907568260994930238014804",
+        "Q_bare_C_HISTORICAL_published_formula_MeV": "0.0266122923569368636497865422081193967135649751601996382588606",
+        "chain_diagnostics_D": {
+          "zero_V_parent": 0,
+          "zero_V_daughter": 0,
+          "neg_V_parent": 22,
+          "neg_V_daughter": 22
+        }
+      },
+      {
+        "nucleus": "137Cs",
+        "Z": 55,
+        "N": 82,
+        "shell_of_converting_neutron": 6,
+        "N_magic": true,
+        "delta_ln_P_D": "0.946776734155148524121411482136603141954136863912798819300110",
+        "Q_bare_D_MeV": "0.153139075148971024038483289286908513152117106406043998393084",
+        "Q_bare_D_err_pct": "-70.2064056130406568018515001387337523050355824112754866939526",
+        "Q_bare_D_ln_normalisation_MeV": "0.161267305896995326495714473844507294926507017854695841441142",
+        "Q_combined_D_MeV": "0.0",
+        "Q_combined_D_err_pct": "-100.000000000000000000000000000000000000000000000000000000000",
+        "combined_rule": "Pauli (magic N, shell>=5): F_Pauli^D = 0 => Q = 0",
+        "Q_exp_MeV": "0.51400",
+        "Q_exp_err_MeV": "0.00021",
+        "Q_bare_C_HISTORICAL_ln_normalisation_MeV": "0.190974193280988928551141235810164773470291749715357719482186",
+        "Q_bare_C_HISTORICAL_published_formula_MeV": "0.181348669364212242869936226992982362379697270733623373387448",
+        "chain_diagnostics_D": {
+          "zero_V_parent": 0,
+          "zero_V_daughter": 0,
+          "neg_V_parent": 37,
+          "neg_V_daughter": 37
+        }
+      },
+      {
+        "nucleus": "210Bi",
+        "Z": 83,
+        "N": 127,
+        "shell_of_converting_neutron": 8,
+        "N_magic": false,
+        "delta_ln_P_D": "3.23429667135320672667368606781635379892284093650543140727075",
+        "Q_bare_D_MeV": "0.523140443929900262841046023798142342258755967950328294791959",
+        "Q_bare_D_err_pct": "-55.0064123221897081929090888622910172650936640620686079993154",
+        "Q_bare_D_ln_normalisation_MeV": "0.550907401760549473232301071562876323623788990276017454867041",
+        "Q_combined_D_MeV": "1.92747132620926164622473350762854612732037348250874747698897",
+        "Q_combined_D_err_pct": "65.7754645402306395652131682831810550718477236181945021922223",
+        "combined_rule": "degree-2 shell: Q_bare * F_deg2^D",
+        "Q_exp_MeV": "1.16270",
+        "Q_exp_err_MeV": "0.00006",
+        "Q_bare_C_HISTORICAL_ln_normalisation_MeV": "0.617682356118053544019765062102096100627110978446499807184567",
+        "Q_bare_C_HISTORICAL_published_formula_MeV": "0.586549792133152230407755692028670765465994069587792378041773",
+        "chain_diagnostics_D": {
+          "zero_V_parent": 0,
+          "zero_V_daughter": 0,
+          "neg_V_parent": 60,
+          "neg_V_daughter": 59
+        }
+      }
+    ]
+  },
+  "caveats": [
+    "Q_bare uses the published normalisation |log_q(P_dau/P_par)| * hbar_q * m_e/3. The deprecated producer used |ln(P_dau/P_par)| * m_e/3 (factor ln q/hbar_q ~1.053 larger); both are emitted.",
+    "Columns suffixed _C_HISTORICAL use the excised convention C and exist only to identify the provenance of figures the block quoted before 2026-10-10.",
+    "The Pauli branch of part (iii) vanishes identically under D, so the combined formula gives Q = 0 for 137Cs (N = 82, shell 6). No replacement projection is derived here."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

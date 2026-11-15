@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-0001202v2/blocks/prose-sec-010",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-th-0001202v2/blocks/prose-sec-010",
   "kind": "prose",
-  "title": "Natural growth by a single node",
-  "pageStart": 13,
-  "pageEnd": 13,
-  "text": "../sections/sec-010-53-natural-growth-by-a-single-node.md",
-  "derivedFrom": "library/arxiv-hep-th-0001202v2/manifest",
-  "sourceDocument": "library/arxiv-hep-th-0001202v2/manifest",
+  "title": "Prospects",
+  "pageStart": 17,
+  "pageEnd": 18,
+  "text": "../sections/sec-010-6-prospects.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-0001202v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-0001202v2",
   "provenance": "ingested"
 }

@@ -120,7 +120,7 @@ Core:
 - Ocneanu — weighted seminormal characters
 
 QOU-specific:
-- See `content/schema/references.ts` for the CSL-JSON bibliography.
+- See `folio/schema/references.ts` for the CSL-JSON bibliography.
 
 ## Repository pointers for the next agent
 

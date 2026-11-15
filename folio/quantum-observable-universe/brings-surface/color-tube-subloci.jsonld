@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-color-tube-subloci",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:color-tube-subloci",
+  "kind": "remark",
+  "title": "Sublocus $\\widetilde{C}=0$ and colour confinement",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-color-tube-constraints",
+    "papers/quantum-observable-universe/blocks/rem-intrinsic-color-cubic-pairing"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-color-tube-coordinates",
+  "text": "color-tube-subloci.md",
+  "provenance": "authored"
+}

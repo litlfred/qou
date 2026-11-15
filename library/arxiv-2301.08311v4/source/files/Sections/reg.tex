@@ -1,0 +1,320 @@
+
+\section{Regularity} \label{sec:reg}
+
+
+We prove that under a generic perturbation of complex structure, every broken disc or strip with only puncture nodes (the nodes between two levels) are either regular or high-index. As a consequence of this regularity, we will see in Section \ref{sec:classif} that the only rigid broken strip or rigid broken disc with point constraint has two levels, and the inner level consists of simple discs.
+
+
+From the construction of moduli space of broken discs and strips, we know that broken maps are fiber products of moduli spaces of levels under the evaluation maps at the punctures. Thus, it is enough to show each level is regular, and the evaluation maps are transverse, we will take this approach to prove regularity. We will prove that the standard complex structure $J_0$ of $\C^n$ is enough to ensure the inner and neck pieces to be transversally cut out. Finally, we use a domain dependent choice of almost complex structure on the outside level to cut the last layer of evaluation fiber product transversally.
+
+\noindent Here is an outline of this section :
+\begin{itemize}
+    \item In the first subsection, we will focus on the interior pieces. A short exact sequence argument shows that when we forget about the matching condition at Reeb chord/orbits, discs in the interior piece are transversally cut out when they don't touch the critical locus (set of critical points) of the fibration $\pi_m$ (see Equation (\ref{eq:pim}) for definition). As for when the discs touch the critical locus, we show that we can obtain a stronger regularity result. We show that a constrained moduli space of discs that touch the critical locus is transversely cut out.
+    \item In the second subsection we will focus on the neck piece and show that all of them are regular and the evaluation map at any of the puncture is a surjective map to the Legendrian torus.
+    \item In the third subsection, we will use domain dependent perturbation to regularize the outside component. Notice that using domain dependent perturbations, we can cut out any matching condition coming from the necks transversally. Thus, we can choose domain dependent perturbation to make the evaluation map of the outer pieces transverse to the matching conditions coming from the inside and neck pieces.
+    \item In the fourth subsection, we explain how to obtain the fiber product under the matching condition of Reeb chords between the levels transversally cut out.
+\end{itemize}
+
+\begin{remark}[Transversality of punctured spheres]
+    We leave the details of transversality of punctured spheres with cylindrical ends in the broken maps, since it has already been well studied in the literature. See subsection 7.5 in \cite{floerflip} for details, specifically Lemma 7.20 proves all the required transversality result needed for spheres. Thus, from now on we will deal with transversality of pieces with nonempty boundary.  
+\end{remark}
+
+
+
+\subsection{Interior piece} \label{ssec:interior}
+
+In this subsection, we show that with the standard  almost complex structure, we can obtain regularity of the moduli space of punctured discs in the interior piece $\C^n$ of the broken manifold $\mathbb M$. We prove a stronger result that the constrained moduli space where the points that touch the critical locus are constrained to be on a particular subspace in $crit(\pi_m)$ is regularly cut out. This shows that the moduli space of discs that touch the critical locus is regular, and of high index.
+
+\subsubsection{When discs don't touch the critical locus}
+We show regularity of discs that don't touch the critical locus. Let $u$ be a map from a punctured disc $\Sigma$ with $l$ boundary punctures to $\C^n$ with boundary on the Lagrangian torus $T_\gamma$. If we assume that $u$ never touches a point where $d\pi_m$ is 0, we can obtain the following short exact sequence of 2 – chains where $D_i$ refers to the corresponding linearization of $\delbar$ and the boundary conditions are suppressed from the notation for clarity.
+
+
+
+\begin{adjustwidth*}{-5em}{-5em} 
+\begin{tikzcd}[sep=0.8em] \label{diag:ses} \centering
+            & 0 \arrow[d]                                               & 0 \arrow[d]                                & \arrow[d]0 & \\
+0\arrow[r]& {W^{1,p,\delta}(u^*T^v\mathbb{C}^n)}\oplus V^l   \arrow[r,"i"] \arrow[d,"D_1"] &{W^{1,p,\delta}(u^*T\mathbb{C}^n)} \oplus V^l \oplus H^l                  \arrow[r,"d\pi_{m}"] \arrow[d,"D_2"]& {W^{1,p,\delta+\frac{\pi}{n}}((\pi_m\circ u)^*T\mathbb{C})}\oplus H^l                      \arrow[r]\arrow[d,"D_3"]&  0\\
+ 0\arrow[r]& {W^{0,p,\delta}( \bar{Hom}(T\Sigma, u^*T^v\mathbb{C}^n)}   \arrow[r,"i"]\arrow[d] &{W^{0,p,\delta}( \bar{Hom}(T\Sigma, u^*T\mathbb{C}^n)}                      \arrow[r,"d\pi_{m}"]\arrow[d] & {W^{0,p,\delta+\frac{\pi}{n}}( \bar{Hom}(T\Sigma, (\pi_m \circ u)^*T\mathbb{C})}                        \arrow[r]\arrow[d]&  0\\
+  & 0                                               & 0                               & 0 & \\
+\end{tikzcd}
+
+\end{adjustwidth*}
+
+    
+\noindent Since the above is a short exact sequence, to prove $D_2$ is surjective, it is enough to prove that $D_1 , D_3$ are surjective. We show that $\wt D_2$, the parameterized version of $D_2$ that takes into account the moduli space of domains $\Gamma_{in}$. We need the domain perturbations to prove $\wt D_3$ is surjective. To prove $D_1$ is surjective, one approach is to directly show that index of $D_1$ is $n-1$ and kernel is of dimension $n-1$. We outline another approach to show regularity using a splitting argument similar to Lemma 3.3.2 in \cite{jholobook}. 
+
+
+\subsubsection{Compactifying along the ends and index computations} 
+
+The index problem and regularity of Cauchy Riemann operators on bundles over discs have been well understood in the literature, see Appendix C of \cite{jholobook}.  We aim to extend our bundles to the closed disc so that we can use the results of appendix C in \cite{jholobook}. We can compactify $u^*T^v\C^n$ to a holomorphic vector bundle over the closed disc such that $\del u^* T^v T_\gamma$ compactifies to a real sub-bundle. Notice that near the ends, $u^*T^v\C^n$ is holomorphically trivial such that on the boundary since it is isomorphic to the bundle $T^v ((\pi_m \of u)^*\C^n)$ where $(\pi_m \of u)^*\C^n$ is the pullback of the fibration $\pi_m : \C^n \to \C$. We can take the pullback of the fibration $\pi_m$ since near the ends $u$ doesn't hit the critical locus as the map $u$ is close to a trivial strip over a Reeb chord or a trivial cylinder over a Reeb orbit. We compactify $u^*T^v\C^n$ by gluing a trivial bundle at the ends, we denote this bundle as $(u^*T^v\C^n)_{comp}$. Similarly, $\pi_m \of u$ extends to a holomorphic map $\ol{\pi_m \of u}$ from the closed disc to $\C\P^1$ with boundary on $\ol{\gamma}$. We can compactify $(\pi_m\of u )^* T\C$ by $(\ol{\pi_m \of u})^*T\C\P^1$. We denote the linearization of the Cauchy-Riemann section $\delbar$ at $\ol{\pi_m \of u}$ as  $D^c_i$. We can check that the restriction of $D^c_i$  to $(\pi_m \of u)^*T\C$ equal to $D_i$ by a direct computation.
+
+We can identify the kernel and cokernel of the compactified problem with the cylindrical problem by adding constraints. Since we are using the standard complex structure, the linearizations $D_i$ are just $\delbar$, we can use Taylor series expansion to identify the kernel and cokernel of the uncompactified linearized problems with the kernel and cokernel of the compactified problem with constraints. See Proposition 5.9 in \cite{palmerwoodwardsurg} for a proof of isomorphism between the (co)kernels of the cylindrical and compactified linearized operator. 
+\begin{lemma}\label{lemm:identif}
+$\ker D_i \cong \ker D^c_i$ and $\coker D_i \cong \coker D^c_i$ where the compactified problem for $D_2$ with constraint of having sections that vanish at points mapping to $\infty$ at the same order as $ \ol {\pi_m\of u}$.
+\end{lemma}
+
+We now use Lemma \ref{lemm:identif} to compute indices. From the short exact sequence, we know that $\Ind(D_2) = \Ind(D_1) + \Ind (D_3)$. The index of $D_1$ is $n-1$ by an index gluing argument applied to the vertical index of the fibration $(\pi_m \of u )^* \C^n$ where we pinch off the singular fibers. Note that for index computation, we can perturb any $u$ smoothly over a compact region while preserving the Fredholm index, thus even if $u$ passes through the critical locus, we can assume that after small perturbation over a compact region, $u$ misses the critical locus. Thus we still get a short exact sequence whose $D_1$ has index $n-1$.  The index of $D^c_2$ without any constraints is given directly by the Riemann-Roch formula as $1 + \mu(\ol{\pi_m \of u})$ where $\mu$ is the Maslov index, and with the constraint of vanishing at the same order as $\ol{\pi_m \of u}$, the index is $1 + \mu(\ol{\pi_m \of u}) - \ol{\pi_m \of u }_{weighted} \inv (\infty)$ where $\ol{\pi_m \of u }_{weighted} \inv (\infty)$ is a weighted sum of intersection of $\pi_m \of u$ with $\infty$ where interior intersections are weighted with $2$ and boundary intersections are weighted with $1$. Thus, we have the following index formula :
+
+\begin{lemma}\label{indexLemm}
+Let $D_u $ denote the linearization of the $\delbar$ operator at $u$ in the cylindrical setting, then 
+$ \Ind(D_u) = n + \mu(\ol{\pi_m \of u}) - \ol{\pi_m \of u }_{weighted} \inv (\infty).$
+\end{lemma}
+\begin{remark} \label{rem:indexsinglepunct}
+
+As a quick application of the index formula, we  compute the index of a disc with only one boundary puncture. The index of a disc $u : \mathbb{H} \to (\C^n, T_{\gamma)}$ that is asymptotic to a Reeb chord of length $k\pi/n$ is $n+k$. We can also prove the surjectivity of $D_2$ at this stage by using the identification of kernel and cokernel with compactified problem.
+\end{remark}
+\begin{Theorem}[Horizontal Transversality] \label{thm:hortran}
+$\coker \wt D_3 = \{0\}$.
+\end{Theorem}
+
+\begin{proof}
+From the identification of the cokernels in Lemma \ref{lemm:identif}, it is enough to check that $\coker \wt D^c_3$ is 0 with the appropriate constraints. Since this is a one dimensional problem, a modification of the automatic transversality result in \cite{seidelFuk} proves transversality in this case. The only modification to Lemma 13.1 and 13.2 in \cite{seidelFuk} which we need for our case is working with marked points in the interior. See the proof of horizontal transversality in Theorem \ref{thm:vctran} below for a detailed explanation.
+\end{proof}
+
+\subsubsection{Splitting of holomorphic bundles over disc}
+
+We show that a Cauchy Riemann operator on a holomorphic bundle over a closed disc with  totally real boundary conditions can be split using results of Oh in \cite{riemHilb}. Any holomorphic bundle over the closed disc is holomorphically trivial by applying the Oka-Grauert principle to an extension of the bundle to a slightly larger open disc. Thus, a pair ($\wt E,\wt F$) of holomorphic bundle with real sub-bundle on the boundary of a disc is holomorphically isomorphic to the pair of bundles $(\D \times \C^n, F)$ where $F$ is a real sub-bundle of $S^1\times \C^n$. In \cite{riemHilb}, Oh proves that a linearized Cauchy-Riemann problem with boundary for the standard complex structure splits into a direct sum of 1 dimensional problems (see Theorem 1 in \cite{riemHilb} and Corollary 5.19 in
+\cite{palmerwoodwardsurg} for adaptation to the cylindrical setting). Applying Oh's splitting result to the vertical part, we have the following: 
+
+\begin{lemma}[Splitting Lemma]\label{lemm:splitt}
+The Cauchy-Riemann problem, $$D^c_1: W^{k,p}(u^*T^v\C^n,\del u^* T^vT_\gamma)_{comp} \to W^{k-1,p}(\ol \Hom (T\ol \D,(u^*T^v\C^n)_{comp}),$$ splits into direct sum of $n-1$ one dimensional problem under a change of trivialization, $$D^c_1:\oplus_{i=1}^{n-1}W^{k,p}(E_i,F_i) \to \oplus_{i=1}^{n-1}W^{k-1,p}(\ol\Hom (T\D,E_i))$$ where $\oplus E_i \cong u^*T^v \C^n$ and $\oplus F_i \cong \del u^* T^vT_\gamma$.
+\end{lemma}
+
+We can apply Lemma \ref{lemm:splitt} to obtain the following transversality result.
+
+\begin{Theorem}(Vertical Transversality)\label{thm:verttran}
+$\coker D_1 = 0$
+\end{Theorem}
+\begin{proof}
+From the splitting Lemma, we have that $\coker D_1 = \oplus_{i=1}^{n-1} \coker D_1|_i$ where $D_1|_i$ is the restriction of $D_1$ to the bundle pair $(E_i,F_i)$. Thus, it is enough to show that each of the $\coker$ are 0. We also know that for 1 dimensional Cauchy-Riemann problem with boundary condition, either the kernel or the cokernel is non-zero. Thus it is enough to show that $\ker D_1|i$ is non-zero for all $i$.
+
+
+Note that there is a $T^{n-1}$ action on the space of maps given by $$(\theta_1, \dots \theta_{n-1}). (u_1,\dots,u_n) = (e^{i\theta_1}u_1,e^{i\theta_2}u_2\dots,e^{-i\sum\theta_j}u_n),$$ and this action preserves the projection of the map under the map $\pi_m$. This action restricts to an action on the space of holomorphic maps, thus taking the infinitesimal action at $u$, we get a map $\mathfrak{t}^{n-1} \to \ker D_1 \cong D^c_1$. Also note that if we compose $\mathfrak{t}^{n-1} \to \ker D_1 \cong \ker D^c_1$ with the evaluation map $ev_q$ for a point $q$ on $\del \Sigma$, we have an isomorphism of vector spaces $\mathfrak{t}^{n-1} \xrightarrow{\sim} u^*T^v\C^n|_q $. This proves that $\ker D_1|_i$ is non-zero for all $i$ as otherwise we wouldn't get an isomorphism since $\oplus E_i \cong u^*T^v\C^n$. Thus $\coker D_1 = 0$
+\end{proof}
+
+
+
+\subsubsection{When discs touch the critical locus}
+
+In this section, we show that discs that touch the critical locus are regular. Moreover, we prove that a constrained moduli space is regularly cut out. When a disc $u$ touches the critical locus of $\pi_m$ at the points $\{\zeta_1,\dots \zeta_i\}$, we lose the vertical bundle which helped us prove regularity.  The vertical bundle still exists over $\D \setminus \{\zeta_1,\dots \zeta_i\} $. We will show that the vertical bundle can be holomorphically extended over the points $\zeta_j$ and then use a splitting argument with domain dependent perturbations to prove transversality of a ``vertically constrained"" problem where we put high codimension constraints to the extension of the vertical bundle. This allows us to show that broken strips that touch the critical locus are high index, hence can't be rigid.
+
+
+The primary obstruction to defining a vertical bundle when a disc touches the critical locus is that the dimension of the kernel jumps up at the critical points. When $p\in \C^n \setminus \text{crit}(\pi_m)$, the vertical direction is $$T^v_p\mathbb C^n = \ker \langle [p_2\dots p_n \quad p_1p_3\dots p_n \quad p_1\dots p_{n-1}], \rule{0.5cm}{0.15mm}\rangle, $$ where $\langle \;, \, \rangle$ is the complex bilinear dot product. Define the rational map $\phi$ as follows
+
+\begin{align*}
+    \phi : \mathbb C^n &\dashrightarrow \mathbb P^{n-1}\\
+    (z_1,\dots,z_n)&\mapsto [z_2z_3\dots z_n : z_1z_3\dots z_n:\dots : z_1\dots z_{n-1}].
+\end{align*}
+
+\noindent The vertical fiber over a point $p$ is equal to $\ker \langle \phi (p), \rule{0.4cm}{0.15mm} \rangle$ since the kernel of the dot product is invariant under scaling by $\C^*$. We will show that this rational map, $\phi$, can be lifted to a smooth map.
+
+\begin{Theorem}
+There exists a complex manifold $\wt \C^n$ obtained by iterated blow up of $\C^n$ along complex subspaces and a smooth map $\wt \phi: \wt \C^n \to \P^{n-1}$ such that  the following diagram commutes,
+$$\begin{tikzcd}
+\centering
+        \wt \C^n \arrow{r}{\wt \phi}  \arrow{d}{\wt \pi} &\P^{n-1} \\
+        \C^n \arrow[ur,dashed,"\phi"]
+\end{tikzcd}
+$$
+where $\wt \pi$ is a composition of blowdown maps.
+\end{Theorem}
+
+ Now, $\phi$ can be extended to a map $\widetilde \phi : \widetilde{\mathbb{C}} \rightarrow \mathbb P^{n-1}$ by doing an inductive iterated blowup. Now the vertical subbundle of $u^*T\mathbb C^n $  over $z $ is defined by $\ker \widetilde\phi \circ \widetilde u (z)$ where $\widetilde u$ is the lift of the disc to the blowup. Because the disc $u$ maps to trivial cylinders (or strips) over Reeb orbits (or  chords) near the punctures, we can check that there is an extension of $\widetilde \phi \circ \widetilde u $ to the whole disc. 
+
+
+\begin{proof}
+
+The iterated blowup is constructed by first blowing up the origin in $\C^n$ to obtain $\wt \C^n_0 \xrightarrow{\pi_0} \C^n$, then blowing up the lift of the lines $\C\langle e_i \rangle$ in $\C^n$ generated  by the standard basis vector $\{e_1,\dots,e_n\}$ of $\C^n$ to obtain $\wt \C^n _1 \xrightarrow{\pi_1} \wt \C_0^n$. We continue this process of blowing up and stop at the $(n-2)^{th}$ step where we have blown up all (lifts of) the standard subspaces of complex dimension $\leq n-2$ in $\C^n$ to obtain a chain of blowups as follows 
+\begin{equation}\label{iterblow}
+    \wt \C^n _{n-2} \xrightarrow{\pi_{n-2}} \wt \C_{n-3}^n \xrightarrow{\pi_{n-3}} \dots  \wt \C^n_0 \xrightarrow{\pi_0} \C^n
+\end{equation}
+
+\noindent We denote the $n-2$ iterated blown up space as $$\wt \C^n \xrightarrow{\pi_{tot}} \C^n.$$ Note that the map $\phi$ factors as $\psi \of pr$ where $pr:\C^n \setminus \{0\} \to \P^{n-1}$ is the standard projection map to the projective space and 
+
+\begin{align*}
+    \psi : \P^{n-1} &\dashrightarrow \P^{n-1} \\
+    [z_1 : \dots : z_n]&\mapsto [z_2z_3\dots z_n : z_1z_3\dots z_n:\dots : z_1\dots z_{n-1} ].
+\end{align*}
+
+Let $\wt \P^{n-1}$ be the space obtained by a similar construction as in (\ref{iterblow}), $(n-2)$ times iterated blowups of $\P^{n-1}$ along the standard coordinate projective subspaces. We can check that $\wt \C^n$ is a $\C^*$ bundle over $\wt \P^{n-1}$. To get a lift of $\phi$, it is enough to show that the rational map $\psi$ lifts to a smooth map $\wt \psi$ on $\wt \P^{n-1}$. Indeed, we can define $$\wt \phi (z)  = \wt \psi (\wt{pr}  (z))$$ where $\wt{pr}$ is the projection map from $\wt \C^n \to \wt \P^{n-1}$.
+
+We use an inductive process to lift the map. When the dimension is two, we can define the map $\wt \psi$ to be just $\psi$. Assume $\wt \psi$ has been defined for dimension $n$ and thus $\wt \phi$ is defined for dimension $n+1$. We can define $\wt \psi$ for dimension $n+1$ by taking  a standard $\C^{n+1}$ chart near the vertex of the moment polytope of $\P^n$ and extending the map $\psi$ to $\wt \C^{n+1}$ by $\wt\phi$ that has already been defined. For example, take the chart $\C^{n+1} \to \P^{n+1}$ given by $z\mapsto [1:z]$, then we define, under the identification of the domain using this chart,  $$\wt\psi ( z) := [0:\wt\phi(z)]$$ on the exceptional divisors of $\wt \C^{n+1}$. We can do this for all the vertices of the moment polytope of $\P^{n+1}$ and check that we get a well-defined map $\wt \psi : \wt \P^{n+1} \to \P^{n+1} $ which is a smooth lift of the rational map $\psi$.
+
+\end{proof}
+
+\begin{cor}
+Let $u:\Sigma \to \C^n$ be a holomorphic punctured disc with boundary on a torus segment $T_\gamma$, such that $u\inv(crit(\pi_m))=\{\zeta_1,\dots,\zeta_l\}$. Then the pullback bundle $u^*T\C^n$ splits as 
+\begin{equation*}
+    u^*T\C^n  = \wt V \oplus \wt H
+\end{equation*}
+where $\wt V$ is a subbundle that matches with the vertical bundle $ V = \ker d\pi_m\big|_{\Sigma\setminus \{\zeta_i\}}$ on away from the critical points $\Sigma\setminus \{\zeta_1, \dots \zeta_l\}  $.
+\end{cor}
+\begin{proof}
+
+We use the lifted map to obtain extension of vertical sub-bundles over the critical points in a disc.  From the lifting property of blowup, the holomorphic map $u$ to $\C^n$ extends to $\wt u$, a holomorphic map to the blowup $\wt \C^n$. We have a map $\wt \phi \of \wt u$ to $\P^{n-1}$, thus we can define a holomorphic sub bundle $\wt V$ of $u^*T\C^n$ by defining $\wt V_z = \ker \langle \wt \phi \of \wt u (z),\sbl \rangle $. We can then define a quotient line bundle $u^*T\C^n/\wt V$ over the disc after compactifying the bundles, and since any short exact sequence of holomorphic bundles over a closed disc split, we get a splitting $$ u^*T\C^n = \wt V \oplus \wt H$$ where $\wt H$ denotes the quotient bundle. 
+
+
+\end{proof}
+
+The previous corollary lets us split the Cauchy-Riemann operator. Denote the split operator as follows, $$D_u= D_V \oplus D_H.$$
+
+\noindent We now compute the index of $D_V$. For simplicity of notation, let $u$ be a map from a punctured disc that touch the critical locus $\text{crit}\pi_m$ only at $0$ and assume  $$u(0) = (0,0,\dots,p_{k+1},\dots,p_n),$$where $p_i \neq 0 $. Thus, we have, $$u_i(z)=z^{m_i} + \text{higher order terms}$$ for some positive integers $m_i$, we can assume without loss of generality that $m_i\leq m_{i+1}$. We will prove that the index of $D_V$ is $n-1+ 2(\sum_{i=1}^{k-1} m_i)$. Consider the holomorphic sections, $$X_i(z) = (0,\dots,u_i(z),\dots,-u_k(z),\dots,0),$$ then the sections $X_1,\dots, X_{k-1},X_{k+1},\dots,X_n$ forms a frame of $\wt V$ over $\D^2\setminus\{0\}$ and the boundary condition of the bundle pair $(\wt V,\del u^* T^v T_\gamma)$ is just $i\R^{n-1}$. Note that $X_{k+1}(0),\dots,X_{n}(0)$ are linearly independent and the $X_i(z)$ vanishes at the order $m_i$ for $i<k$. Thus these sections give an isomorphism of $\wt V$ near $0$ with the twisted trivial bundle $\oplus_{i=1}^{k-1} O(m_i)$, thus from a gluing argument we have $$\Ind(D_V) = n-1 + 2c_1(\oplus_{i=1}^{k-1} O(m_i)) =n-1 + 2(\sum_{i=1}^{k-1} m_i). $$
+
+\noindent  Assume the map $u$ that touches the critical locus at $(\zeta_1,\dots,\zeta_i)$ and $k_l$ is the number of 0's in $u(\zeta_l)$ for $1\leq l \leq i$. Let $m_{l_1} \leq m_{l_2} \leq \dots m_{l_{k_l}}$ be the order of the vanishing of the coordinates of $u$ at $\zeta_l$. We define the critical multiplicity $m_c$ of the map $u$ as $$m_c(u)=\sum_{l=1}^i\sum_{q=1}^{k_l-1} m_{l_q}.$$
+
+
+\begin{lemma}\label{lemm:vertcrit}
+If $u$ touches the critical points of $\pi_m$, the index of the vertical linearized operator $D_V$ is  $n-1 + 2m_c(u)$ and the horizontal index is $1 + \mu(\ol{\pi_m \of u}) - \ol{\pi_m \of u}_{weighted}\inv (\infty) - 2m_c(u) $
+
+$$\Ind (D_V) = n-1 + 2m_c(u)$$
+$$\Ind (D_H) = 1 + \mu(\ol{\pi_m \of u}) - \ol{\pi_m \of u}_{weighted}\inv (\infty) - 2m_c(u)$$
+\end{lemma}
+\begin{proof}
+    By using an index-gluing argument we can generalize the discussion to obtain the required index formula.
+\end{proof}
+
+
+We will now relate the kernel and cokernel of the linearized operators with a linearized operator of a constrained problem on. 
+
+\begin{lemma}\label{lemm:horiden}
+$\ker \wt D_H \cong \ker \wt D^{const}_{\pi_m \of u} $ and 
+$\coker \wt D_H \cong \coker \wt D^{const}_{\pi_m \of u} $
+\end{lemma}
+\begin{proof}
+Let $D^{const}_{\pi_m \of u}$ be the linearization of $\delbar$ of the constrained Cauchy Riemann problem at $\pi_m \of u$ with the constraint of vanishing at $\zeta_l$ to the order $\sum_{q=1}^{k_l-1} m_q$ where $m_1 \leq m_2 \leq \dots m_{k_l}$ are the orders of vanishing of the coordinates of $u$ at $\zeta_l$.
+The push-forward $d\pi_m$, maps $\ker D_H$ isomorphically to $\ker D^{const}_{\pi_m \of u}$. This follows from the fact that $d\pi_m$ has this order of vanishing at $\zeta_l$. Since $d\pi_m$ is isomorphism on fibers of $\wt H$ except over $\zeta_i$, we see that the map $\ker D_H \xrightarrow{d\pi_m} \ker D^{const}_{\pi_m \of u}$ is injective. By checking the order of vanishing at $\zeta_i$ we see that this map is also surjective. We also know that $\Ind (D_H) = \Ind (D^{const}_{\pi_m \of u})$, thus, their cokernels are also isomorphic. We can use the fact that since $d\pi_m$ is complex linear and the linearizations $D$ we deal with are $\delbar$ under holomorphic frames to see that the kernels of the parameterized linear operators $\wt  D_H$ and $\wt D^{const}_{\pi_m \of u}$ are isomorphic, and the index argument shows that the cokernels are isomorphic. 
+\end{proof}
+
+\begin{defn}[Level Structure]
+
+We can define a \textit{level structure} on the set crit$(\pi_m)$ by defining a point $(p_1,\dots,p_n) \in \text{crit}(\pi_m)$ to be of level $k$ if exactly $k$ of the $p_i$'s are 0. Thus, every critical point has a level ranging from $2$ to $n$.
+\end{defn}
+
+
+We will now define the notion of being \textit{vertically constrained} at the critical points and the notion of point constrained.
+
+\begin{defn}[Vertically Constrained moduli space]
+Let $u$ be a holomorphic map from a punctured disc to $\C^n$ with boundary on $T_\gamma$ that meets the critical locus $crit(\pi_m)$ at the points $\{ \zeta_1 , \dots, \zeta_i \}$. Assume that the \textit{level} of $u(\zeta_j)$ is $k_j$. The family of punctured holomorphic discs with the constraint of touching a critical point of level $k_i$ at the point $\zeta_i$ is called the vertically constrained moduli space.
+\end{defn} 
+\noindent We denote the linearization of $\delbar$ at $u$ of the vertically constrained problem by $D_u^{vc}$. By using the splitting of $u^*T\C^n$ into $\wt V \oplus \wt H$ as before, we get a splitting of $D_u^{vc} = D_V^{vc} \oplus D_H^{vc}$, where $D_H^{vc} = D_H$ since the constraints are only on the subbundle $\wt V$. We denote the linearized operator including domain parameterization by $\wt D_u^{vc}$. From Lemma \ref{lemm:vertcrit} we have the following, $$\Ind (D^{vc}_u) = \Ind (D_u) - 2\sum_{j=1}^i{k_j}.$$ If a disc doesn't meet the critical locus, then by definition, being vertically constrained would impose no constraints on the linearized Cauchy-Riemann problem. We denote the moduli space of vertically constrained discs in $\C^n$ with boundary on $T_\gamma$ as $\mathcal{M}^{vc}_{in}$.  
+
+Recall that the disc potential is obtained by count of rigid discs with point constraints. We define the notion of \textit{point constrained} moduli space of broken discs. The notion of point constrained interior moduli space is defined similar to the notion of broken disc with point constraint. Given a point $p$ in $L_{in}$, the moduli space of discs with constraint at $p$ is defined to be the subspace of the moduli of discs that pass through $p$.  The moduli space with point constraint can be realized as $ev_{q}\inv(p)$ where $q$ is a point on the boundary of a disc and $ev_q$ is the evaluation map at $q$. 
+
+
+\begin{Theorem}\label{thm:vctran}
+For any disc $u$ touching  crit $(\pi_m)$, the parameterized vertically constrained moduli space of discs with point constraint preserving the level structure of the critical points is regularly cut out, i.e. $\wt D_u^{vc}$ is a surjective map.
+\end{Theorem}
+
+
+\begin{proof}
+First, we split the operator $\wt D_u^{vc} = D_V^{vc} \oplus \wt D_H$. Since the action of $T^{n-1}$ as defined in Theorem \ref{thm:verttran} on the space of maps preserves the level structure of the critical points, the action descends to the vertically constrained problem and gives transversality of $D_V^{vc}$. From Lemma \ref{lemm:horiden}, we see that it is enough to prove that linearization of $\delbar$ at $\pi_m \of u $ with the constraint of vanishing at the critical points $\zeta_i$ is surjective. From the proof of Lemma 4.3.2 of \cite{JholoWendl} we see that for any smooth vector field $X$ that vanishes at the points $\zeta_i$s, we have that $d(\pi_m \of u) X$ is a smooth vector field that satisfies the constraint of vanishing at $\zeta_i$ to the correct order since $d(\pi_m \of u)$ has order of vanishing $1$ less than that of $\pi \of u$ and $X$ has an order of vanishing at least $1$ at the points $\zeta_i$. Thus, we can apply the result Lemma 4.3.2 in our case to conclude that image of $ D^{const}_{\pi_m \of u}$ doesn't change if we expand our domain to $W^{k,p} (\ol {\text{End}} (T\Sigma)) \oplus W^{k,p,\delta + \frac{\pi}{n}}_{const}((\pi_m \of u )^*T\C,\del(\pi_m \of u )^*T\gamma)$. Now since $\pi_m \of u$ is a non-constant map to one dimensional manifold, we can use the argument of automatic transversality as done in Lemma 13.2 in \cite{seidelFuk} to get that $\wt D^{const}_H$ is surjective. We finally use the vertical and horizontal transversality to show that $p$ is a regular value of the evaluation map $ev_q$ to prove the regularity of the point constraint.
+\end{proof}
+
+
+\begin{cor} \label{corr:submatch}
+The moduli space $\mathcal{M}_{in}$ of vertically constrained discs in $\C^n$ with boundary on $T_\gamma$ is a smooth manifold and the evaluation map $ev_p$ at any boundary puncture $p$ that takes a map $u$ to the starting point of the Reeb chord $u$ is asymptotic to at the puncture $p$, 
+$$ev_p : \mathcal{M}^{vc}_{in} \to T_\pm,$$ is a submersion to the Legendrian torus.
+\end{cor}
+
+\begin{proof}
+Theorem \ref{thm:vctran} shows that $\mathcal{M}^{vc}_{in}$ is a manifold. The submersion to the Legendrian torus follows from the $T^{n-1}$ action. 
+\end{proof}
+
+
+\subsection{Neck Pieces}
+
+
+In this subsection, we show that regularity of maps in the neck piece can be obtained without perturbing the standard complex structure. The treatment of the neck piece is very similar to the treatment of the interior piece, albeit a bit easier.
+
+We use a similar splitting trick as in Subsection \ref{ssec:interior} to split the Cauchy-Riemann operator. Let $u$ be a disc mapping to the neck piece $\C^n\setminus\{0\}$ with boundary on $T_{\R^*}$. Using \cite{riemHilb}, we get that $(u^*T\C^n,\del u^* TT_{\R^*})$ splits into 1 dimensional bundle pairs $\oplus_{i=1}^n(E_i,F_i)$. We can show regularity of $D_u$ by showing that the kernel of the restriction, $\ker D|_i$ is non-zero for all $i$ since these are one dimensional problems.  
+\begin{Theorem}\label{thm:necktranss}
+If $u$ is map to the neck-piece with boundary on the cylindrical Lagrangian $T_{\R^*}$, then $\coker D_u = \{0\}$
+\end{Theorem}
+\begin{proof}
+ In the neck piece, there is an action of $\R \times T^{n-1}$ where the $\R$ action is by translation and $T^{n-1}$ action is same as in the interior piece. The infinitesimal action provides a map $\R \times \mathfrak{t}^{n-1} \to \ker D_u$ such that under the evaluation map at a boundary point $q$, we have an isomorphism $\R \times \mathfrak{t}^{n-1} \xrightarrow{\sim} T_{u(q)}T_{\R^*} $. A similar argument as in Theorem \ref{thm:verttran} gives us $\coker D_u=\{0\}$.
+\end{proof}
+
+\noindent Let $p$ be a boundary puncture. Let $ev_p$ denote the evaluation map at $p$ that takes values in the space of Reeb chords. Specifically,  $ev_p(u)$ is the starting point of the Reeb chord the map $u$ is asymptotic to at the puncture $p$. As a corollary of Theorem \ref{thm:necktranss}, we have the following result,
+\begin{cor}\label{corr:neckmatch}
+The moduli space $\mathcal{M}_{neck}$ of discs in the neck piece is a smooth manifold and the evaluation map $ev_p$ \begin{equation*}
+ev_p : \mathcal{M}_{neck} \to T_\pm,    
+\end{equation*} is a submersion to the Legendrian torus.
+\end{cor}
+\begin{proof}
+Same argument as in proof of Corollary \ref{corr:submatch}.
+\end{proof}
+
+\subsection{Outer Piece} \label{subsec:outtran}
+
+We will now show that we can choose a domain dependent perturbation data on broken strips and broken discs to form a coherent perturbation data that attains our goal of showing every broken strip is either regular or of high index. For any combinatorial type $\Gamma^{st}$ of stable connected nodal strip with $k$ markings, the smooth components of $\Gamma^{st}$ can be divided into the following collections 
+\begin{itemize}
+    \item strip piece,
+    \item discs without interior marked points,
+    \item discs with interior markings.
+\end{itemize}
+\noindent  Given a stabilized combinatorial type $\Gamma^{st}$ of broken disc with $k$ intersections with the nice divisor $D$, we will show that we can choose generic domain dependent complex structure to obtain regularity for all outside pieces along with regularity of the matching condition at the contact $S^{2n-1}$ and Legendrian $T_\pm$. The matching conditions between the last neck piece and outside piece is given by countably many images of smooth maps coming the interior pieces given by evaluating at the positive puncture of last level. For a broken strip with $l$ neck pieces, the smooth map it contributes is   $$ev_{l+} : \mathcal{M}^{vc}_{in} \times_{ev_{in},ev_{1^-}} \mathcal{M}_1 \times_{ev_{1^+},ev_{2^-}} \dots \times_{ev_{l-1^+},ev_{l^-}}\mathcal{M}_l.$$
+
+
+\noindent The choice will be made such that it satisfies the following properties on each type of smooth component.
+
+\begin{itemize}
+    \item \textbf{(P1)} On strips, $J_k$ will be only $t$ dependent and equal to $J_{out}$ at the boundaries .
+    \item  \textbf{(P2)} On discs without interior marked points, $J_k$ will be the constant almost complex structure $J_{out}$.
+    \item \textbf{(P3)} On discs with interior marked points, $J_k$ is a domain dependent almost complex structure that is equal to $J_{out}$ on the boundary .
+\end{itemize}
+
+
+\noindent Once we set such a perturbation data $\mathcal{P}$, given any combinatorial type $\Gamma$ of a broken strip or a broken disc, we define the notion of domain dependent broken holomorphic strip by using the standard complex structure on the inside and neck pieces and the domain dependent complex structure on $\Gamma^{st}$.      
+
+
+\begin{Theorem}[Outside Transversality] \label{thm:outtrans}
+There is a coherent family of perturbation data $\mathcal{P}$ satisfying the properties (P1-3) which makes moduli space of strips $\M^{dd}_k(\widehat M_{out},L_{out},K,D)$ or the moduli space of discs with $\M^{dd}_k(\widehat M_{out},L_{out},D)$ regular and the evaluation map at the cylindrical punctures transversely intersecting with the matching condition coming from the inside and neck pieces.
+\end{Theorem}
+
+\begin{proof}
+For satisfying the coherence conditions we inductively choose the perturbations based on the number of interior marked points. After choosing perturbations for at most $k-1$ markings, we use the perturbations of $\M_{<k}$ to define perturbation on lower dimensional strata of $\M_k$. Since the space of almost complex structures we care about is contractible, we can extend the perturbations from the lower dimensional strata of $\M_k$ to the whole of $\M_k$.
+
+For $k=0$ markings, there is no stable combinatorial type of strip. The only possible broken type $\Gamma$ without any outside interior marking mapping to $D$ is the case when the outside piece is just a strip with punctures going to Reeb chords or orbits. Let $S$ be a strip with punctures and $u:S \to \widehat M_{out}$ with boundary on $L_{sing}$ and $K$ where the $u$ is asymptotically a trivial strip or cylinder over a Reeb chord or orbit, a similar proof as Theorem 4.3 in \cite{FlHStrans}  shows that the set $R(u)$ of regular points that are somewhere injective in the $s-$direction (notation from \cite{FlHStrans} ) is open dense in the strip $S$. Thus, by constructing a universal moduli space and usual generic transversality arguments we can see that for a generic $t$ dependent family of almost complex structure, the moduli space $\M_t(\widehat M_{out})$ of $J_t$ holomorphic punctured strips in $\widehat M_{out}$ with boundary on $L_{out}$ and $K$ is a smooth manifold and the evaluation maps at the punctures are transverse to countably many matching conditions. The important fact of generic transversality we use here is that the set of regular $J_t$ families  for which each evaluation map is transverse forms a comeagre/Baire set hence countable intersection of  such comeagre sets is also comeagre.
+
+For $k=1$, we first define a domain dependent almost complex structure on a punctured disc with 1 marking where the punctures go to Reeb orbits or chords so that the holomorphic punctured discs are regular and the evaluation at the punctures are transverse to the evaluation from the inside and neck pieces and the evaluation at the interior marking is transverse to $D$. This is obtained by the usual technique of creating a universal moduli space of pairs $(J_k,u)$  of domain-dependent almost complex structure and holomorphic map, showing that it is a Banach manifold and then using Sard-Smale. See proof of Theorem 4.1 in \cite{charwoodstabil}  The boundary strata of a strip with $1$ marked point have strip breaking due to the marking escaping to infinity or disc bubbling when the interior marking goes to the boundary. The domain from the strip breaking will not have any holomorphic maps from it since the ends of the strip go to $L_{out}\cap K$ and the interior marking goes to $D$ but $D\cap (L_{out} \cup K) = \emptyset $.  By choosing domain-dependent almost complex structure on the punctured disc with $1$ marking and a $t$ dependent $J_t$ on the strip without any markings, we force the choice of domain dependent almost complex structure at the boundary strata obtained by disc bubbling. 
+
+In the case of $k=2$ we first encounter a situation where the lower dimensional strata will have a disc without any marking. This combinatorial type can only occur as a domain of a holomorphic strip when the disc without marking is in the neck piece or the map is constant on the disc, as $L_{out}$ is exact in $\M_{out} \setminus D$. In either of those cases, we know that such discs are $J_{neck}$ or $J_out$ regular. We continue this method of choosing domain dependent perturbation inductively by extending the pre-determined choice of almost complex structure on lower dimensional strata of $\M_k$ to choose a coherent perturbation data which makes the moduli space of outer piece regular such that the matching condition with the inside pieces are transversely cut out.
+\end{proof}
+
+
+
+
+
+
+
+\subsection{Moduli space of broken discs and strips}
+
+At this stage, we know that the moduli space of maps to the blow-up of interior, neck and outer piece are regularly cut out and the evaluation map at the punctures are submersions when the complex structure on the blown-up interior and neck piece is the standard complex structure and the complex structure on the outer piece is a domain-dependent perturbation, $J_{\Gamma_{out}}$, of the complex structure $J_{out}$. We will show that for such a choice of complex structure, any holomorphic broken disc that avoids the critical locus in the interior is regular in the sense of Definition \ref{defn:brokendiscreg}. 
+
+We define the notion of a \textit{vertically constrained} broken strip by constraining the inner piece of the broken strip to be vertically constrained. We denote the moduli space of such broken strips by $$\mathcal{M}^{vc}_{Br}(\Gamma,\mathbb{M}[l],\mathbb{L}[l],K).$$
+
+Similar to strips, we can add vertical constraints to broken discs with point constraints. We denote the moduli space of broken discs with point and vertical constraints by $$\M^{vc}_{Br}(\Gamma,\mathbb M [l], \mathbb{L}[l],p).$$
+
+We will show that for any combinatorial type $\Gamma = (\Gamma_{in},\Gamma_1,\dots,\Gamma_{out})$, any ($J_{std},\dots,J_{\Gamma_{out}}$)-holomorphic broken strip $\mathfrak{(u,D)}$ is regularly cut out as a fiber product. We illustrate an inductive method which ensures that $$\mathcal{M}^{vc}_{in} \times_{ev_{in},ev_1} \mathcal{M}_1 \times_{ev_1,ev_2} \dots \times_{ev_{l-1},ev_l}\mathcal{M}_l $$ is a smooth fiber product.
+
+
+\begin{lemma}\label{lemm:brokenpretrans}
+There is a coherent perturbation datum $\mathcal{P}$ such that every $l-$ broken strip $(\mathfrak{u,D}) \in \mathcal{M}_{Br}(\Gamma,\mathbb{M}[l],\mathbb{L}[l],K) $ or broken disc $(\mathfrak{u,D})\in \M^{vc}_{Br}(\Gamma,\mathbb M [l], \mathbb{L}[l],p)$ where there are no multiply covered pieces and the only nodes are puncture nodes that map asymptotically to Reeb orbit or chord is regular where the standard complex structure of $\C^n$ is chosen in the neck pieces and inner pieces.
+\end{lemma}
+
+\begin{proof}
+From Corollaries \ref{corr:submatch}, \ref{corr:neckmatch} and Theorem \ref{thm:outtrans}, we get that for any  holomorphic $(u_{in},u_1,\dots,u_{l})$ satisfying the matching condition, it is regular in the moduli space of (vertically constrained) punctured discs to the inside and neck pieces respectively.  The corollaries also show that the evaluation map at a puncture is a submersion at the matching condition, thus by an inductive argument we see that $(u_{in},u_1,\dots, u_l)$  is a regular broken strip with an inner piece and $l$ neck pieces since the transversality of the evaluation maps at the puncture nodes among these levels can be ensured by using the submersion of the evaluation map at a single puncture as illustrated above. Thus $\mathcal{M}^{vc}_{in} \times_{ev_{in},ev_1} \mathcal{M}_1 \times_{ev_1,ev_2} \dots \times_{ev_{l-1},ev_l}\mathcal{M}_l $ is a smooth manifold and we have an evaluation map $ev_{medium}$ from it to $T_\pm \hookrightarrow S^{2n-1}$, we use a domain dependent perturbation on $\D_{out}$ as shown in Theorem \ref{thm:outtrans} to achieve regularity of $\mathcal{M}_{out}$ and to ensure the evaluation map $ev_{out}$ is transversely intersecting with $ev_{medium}$, hence the total fiber product that produces the moduli of broken strips is transversely cut out. 
+\end{proof}
+
+
+\noindent Using Lemma \ref{lemm:brokenpretrans}, we can now prove the main transversality theorem of this section.
+
+
+
+\begin{Theorem}\label{thm:ultimatetransversality}
+There is a coherent perturbation datum such that every broken strip or a broken disc with point constraint is either regular or high-index.
+\end{Theorem}
+
+\begin{proof}
+Once we have attained regularity for broken strips with only puncture nodes, we can conclude that the only possible non-regular broken strips are of high index by using monotonicity of $M$ and $L,K$. Given a broken strip, after replacing multiple covered components by the underlying simple and forgetting nodal components to obtain a single nodal strip with only puncture nodes, we get a holomorphic broken strip which is regular by Lemma \ref{lemm:brokenpretrans} hence non-negative index. Removing non-constant nodal components reduces the total energy, by an index gluing argument we see that monotonicity implies that removing nodal components reduces the index. Replacing multiple covers by single covers also cause the index to decrease. Thus, we have attained our goal of showing that either the broken strip is of high index or is regular.
+\end{proof}

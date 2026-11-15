@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ds15v1-2008/blocks/prose-sec-046",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ds15v1-2008/blocks/prose-sec-046",
   "kind": "prose",
-  "title": "Mod 32 Identities",
-  "pageStart": 29,
-  "pageEnd": 30,
-  "text": "../sections/sec-046-332-mod-32-identities.md",
-  "derivedFrom": "library/ds15v1-2008/manifest",
-  "sourceDocument": "library/ds15v1-2008/manifest",
+  "title": "Acknowledgements",
+  "pageStart": 57,
+  "pageEnd": 59,
+  "text": "../sections/sec-046-acknowledgements.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ds15v1-2008",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ds15v1-2008",
   "provenance": "ingested"
 }

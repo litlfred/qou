@@ -8,281 +8,100 @@ pages: 95-102
 source_pdf: 0811.2435v1.pdf
 source_sha256: 615b04eca83bcade
 doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 43 sections: Introduction; Counting problems for 3-dimensiona; Non-commutative varieties with pol"
+text_source: latex
+latex_prose_ratio: 0.99
+latex_coverage_ratio: 0.958
 ---
-torus
-Assume thatC is an ind-constructible 3d Calabi-Yau category endowed with
-polarization and orientation data
-√
-D. The Hall algebra of C is graded by
-the corresponding lattice Γ: H(C) =⊕γ∈ΓH(C)γ. Main result of this section
-is the following theorem.
-95
-Theorem 8 The map Φ : H(C)→R Γ given by the formula
-Φ( ν) = (ν,w )ˆeγ, ν∈H(C)γ
-is a homomorphism of Γ -graded Q-algebras. Here w is the motivic weight
-and (•,•) is the pairing between motivic measures and functions.
-In other words, the homomorphism H(C)→R Γ can be written as
-[π :Y→Ob(C)]↦→
-↦→
-∫
-Y
-(1−MF (π(y))) (1−MF 0(Qπ(y))) L− 1
-2 rkQπ (y) L
-1
-2 (π(y),π(y))≤1 ˆecl(π(y)) ,
-where
-∫
-Y is understood as the direct image functor (see Section 4.2).
-The natural extension of the above homomorphism to the compl etion of
-ˆH(CV ) maps the element AHall
-V to the element Amot
-V deﬁned in Section 6.2.
-Proof. For simplicity we will present the proof of the Theorem for
-νE := [δE :pt→Ob(C)] ,
-where δE(pt) = E∈Ob(C(k)) is the “delta-function”. The general proof for
-equivariant constructible families is similar. We will als o assume that our
-category is minimal on the diagonal.
+Assume that $\CC$ is an ind-constructible $3d$ Calabi-Yau category endowed with polarization and orientation data $\sqrt{\cal D}$. The Hall algebra of $\CC$ is graded by the corresponding lattice $\Gamma$: $H(\CC)=\oplus_{\gamma\in \Gamma}H(\CC)_{\gamma}$. Main result of this section is the following theorem.
+
+::: thm
+The map $\Phi: H(\CC)\to {\cal R}_{\Gamma}$ given by the formula $$\Phi(\nu)=(\nu,w)\hat{e}_{\gamma}, \,\,\,\nu\in H(\CC)_{\gamma}$$ is a homomorphism of $\Gamma$-graded $\Q$-algebras. Here $w$ is the motivic weight and $(\bullet,\bullet)$ is the pairing between motivic measures and functions.
+:::
+
+In other words, the homomorphism $H(\CC)\to {\cal R}_{\Gamma}$ can be written as $$[\pi: Y\to Ob(\CC)]\mapsto$$ $$\mapsto \int_{Y}(1-MF(\pi(y)))\,(1-MF_0(Q_{\pi(y)}))\,{\mathbb L}^{-{1\over{2}}\op{rk}Q_{\pi(y)}}\,{\mathbb L}^{{1\over{2}}(\pi(y),\pi(y))_{\le 1}}\,\hat{e}_{\op{cl}(\pi(y))}\,\,,$$ where $\int_Y$ is understood as the direct image functor (see Section 4.2).
+
+The natural extension of the above homomorphism to the completion of $\widehat{H}(\CC_V)$ maps the element $A_V^{\op{Hall}}$ to the element $A_V^{mot}$ defined in Section 6.2.
+
+*Proof.* For simplicity we will present the proof of the Theorem for $$\nu_E:=[\delta_E:pt\to Ob(\CC)]\,\,,$$ where $\delta_E(pt)=E\in Ob(\CC(\k))$ is the "delta-function\". The general proof for equivariant constructible families is similar. We will also assume that our category is minimal on the diagonal.
+
 The proof will consists of several steps.
-Step 1.
+
+*Step 1.*
+
 We have:
-νE1·νE2 = L−(E2,E1)≤0[π21 : Ext 1(E2,E 1)→Ob(C)] ,
-the map π21 is the restriction of the cone map 21
-tot(Ker(m1 :HOM0→HOM 1))→Ob(C)
-to the ﬁber over the point ( E2[−1],E 1). Under this map the element α∈
-Ext1(E2,E 1) is mapped to the object
-Eα =Cone(α :E2[−1]→E1) .
-21Recall that we pretend that such a map exists. In fact, it is de ﬁned only as a 1-
-morphism of stacks.
-96
-Let us denote by γi the class cl(Ei)∈ Γ,i = 1, 2. Then we have:
-Φ( νEi) = L
-1
-2 (Ei,Ei)≤1(1−MF 0(Wmin
-Ei ))I(h(Ei)) ˆeγi, i = 1, 2 ,
-where h(Ei) is the value at Ei of the element h∈ J2(C) (i.e. the image of
-the restriction map to J2(C)) given by the super line bundle
-√
-D⊗D −1
-≤1 with
-trivialized tensor square.
+
+$$\nu_{E_1}\cdot\nu_{E_2}={\mathbb L}^{-(E_2,E_1)_{\le 0}}[\pi_{21}:\op{Ext}^1(E_2,E_1)\to Ob(\CC)]\,\,,$$ the map $\pi_{21}$ is the restriction of the cone map[^1] $$tot(\op{Ker}(m_1:{\cal HOM}^0\to{\cal HOM}^1))\to Ob(\CC)$$ to the fiber over the point $(E_2[-1],E_1)$. Under this map the element $\alpha\in \op{Ext}^1(E_2,E_1)$ is mapped to the object $$E_{\alpha}=Cone(\alpha: E_2[-1]\to E_1)\,\,.$$
+
+Let us denote by $\gamma_i$ the class $\op{cl}(E_i)\in \Gamma, i=1,2$. Then we have: $$\Phi(\nu_{E_i})={\mathbb L}^{{1\over{2}}(E_i,E_i)_{\le 1}}(1-MF_0(W_{E_i}^{min}))\,\overline{I}(h(E_i))\,\hat{e}_{\gamma_i},\,\,\, i=1,2\,\,,$$ where $h(E_i)$ is the value at $E_i$ of the element $h\in J_2(\CC)$ (i.e. the image of the restriction map to $J_2(\CC)$) given by the super line bundle $\sqrt{{\cal D}}\otimes {\cal D}_{\le 1}^{-1}$ with trivialized tensor square.
+
 We have:
-Φ( νE1)Φ( νE2) = L
-1
-2 ((E1,E1)≤1+(E2,E2)≤1)×
-× L
-1
-2 ((E1,E2)≤1−(E2,E1)≤1)(1−MF 0(Wmin
-E1 ⊕Wmin
-E2 ))I(h(E1))I(h(E2)) ˆeγ1+γ2 .
-In order to obtain this formula we used the Calabi-Yau proper ty, which
-implies that
-⟨γ1,γ 2⟩= ∑
-j∈Z(−1)j(E1,E 2)j = (E1,E 2)≤1 + (E1,E 2)/greaterorequalslant2 =
-= ( E1,E 2)≤1− (E2,E 1)≤1 ,
-where we employ the notation ( E1,E 2)/greaterorequalslantm =∑
-j/greaterorequalslantm(−1)j(E1,E 2)j. Also we
-used the motivic Thom-Sebastiani theorem for the Milnor ﬁbe rs and the
-product formula for the basis elements in the motivic quantu m torusRΓ .
-On the other hand, we can apply Φ to the product νE1·νE2 and obtain:
-Φ( νE1·νE2) =
-= L−(E2,E1)≤0
-∫
-α∈Ext1(E2,E1) L
-1
-2 (Eα ,Eα )≤1(1−MF 0(Wmin
-Eα ))I(h(Eα))ˆeγ1+γ2 .
-Using the identity ( E2,E 1)≤0 = (E2,E 1)≤1 + (E2,E 1)1 (and also recall
-that (E2,E 1)1 = dim Ext1(E2,E 1)) and observing that
-(E1⊕E2,E 1⊕E2)≤1 = (E1,E 1)≤1 + (E2,E 2)≤1 + (E1,E 2)≤1 + (E2,E 1)≤1
-we arrive to the following equality which is equivalent to
-Φ( νE1·νE2) = Φ( νE1)Φ( νE2)
-and hence implies the Theorem:
-L(E2,E1)1(1−MF 0(Wmin
-E1 ⊕Wmin
-E2 ))I(h(E1))I(h(E2)) =
-=
-∫
-α∈Ext1(E2,E1)
-L
-1
-2 ((Eα ,Eα )≤1−(E1⊕E2,E1⊕E2)≤1)(1−MF 0(Wmin
-Eα ))I(h(Eα)) .
-97
-Step 2.
-Now we would like to express the diﬀerence
-(Eα,Eα)≤1− (E1⊕E2,E 1⊕E2)≤1
-as the rank of a certain linear operator. Recall that the obje ct Eα can be
-thought of as a deformation of the object E0 :=E1⊕E2. Therefore, there is
-a spectral sequence which starts at Ext •(E1⊕E2,E 1⊕E2) and converges to
-Ext•(Eα,Eα). Using the A∞-structure one can make it very explicit. Namely,
-let us denote by dα : Ext•(E1⊕E2,E 1⊕E2)→ Ext•(E1⊕E2,E 1⊕E2) the
-diﬀerential of degree +1 given by the formula
-dα =m2(α,•) +m2(•,α ) +m3(α,•,α ) .
-Then the graded vector space Ext •(Eα,Eα) is isomorphic to the cohomology
-of dα (cf. e.g. [42], Remark 10.1.5).
-It is clear that for any cohomological complex (C•,d ) of ﬁnite-dimensional
-vector spaces we have the equality
-∑
-i≤1
-(−1)i dimHi(C)−
-∑
-i≤1
-(−1)i dimCi = rkd(1),
-where d(1) : C 1→ C 2 is the component of d. Applying this observation to
-our complex we obtain that
-(Eα,Eα)≤1− (E1⊕E2,E 1⊕E2)≤1 = rkd(1)
-α .
-Step 3.
-Let us introduce a
-k-vector space
-ME1,E2 = Ext 1(E1⊕E2,E 1⊕E2) =
-= Ext 1(E1,E 1)⊕ Ext1(E2,E 1)⊕ Ext1(E1,E 2)⊕ Ext1(E2,E 2) .
-It can be interpreted as the tangent space to the moduli space of formal
-deformations of the object E1⊕E2. We choose coordinates ( x,α,β,y ) on
-this space in such a way that x denotes the coordinates on Ext 1(E1,E 1),
-α denotes the coordinates on Ext 1(E2,E 1), β denotes the coordinates on
-Ext1(E1,E 2) and y denotes the coordinates on Ext 1(E2,E 2). Then the point
-(0,α, 0, 0) corresponds (by abuse of notation) to the isomorphism cla ss α∈
-Ext1(E2,E 1) of an exact triangle E1→Eα→E2. Later we are going to use
-98
-the integral identity from Section 4.4 applying it to the for mal neighborhood
-of the subspace consisting of the points (0 ,α, 0, 0). In order to do that we
-will relate the potential of the object Eα with a certain formal function on
-ME1,E2.
-We may assume that the full subcategory C(E1,E 2) consisting of the pair
-of objects E1,E 2 is minimal. As in the case of one object the potential
-ofC induces a formal power series WE1,E2 = W (x,α,β,y ) on ME1,E2. It
-is deﬁned as the abelianization of a series ∑
-n/greaterorequalslant3Wn/n in cyclic paths in
-the quiver QE1,E2 with the vertices E1 and E2 and (Ei,Ej)1 edges between
-vertices Ei and Ej for i,j ∈ {1, 2}. Since any cyclic path has the same
-number of edges in the direction E1→ E2 as in the direction E2→ E1 we
-conclude that the potential WE1,E2 is Gm-invariants with respect to the Gm-
-action on the graded vector space ME1,E2 with the weights wtx =wty = 0
-and wtα =−wtβ = 1. The potential WE1,E2 is obtained from the potential
-WE1⊕E2 by a formal change of variables.
-It follows from Gm-invariance of WE1,E2 that it belongs to k[α][[x,β,γ ]].
-Therefore it deﬁnes a function on the formal neighborhood of the aﬃne sub-
-space{(0,α, 0, 0)}⊂M E1,E2. In particular, for any α∈ Ext1(E2,E 1) we
-obtain a formal power series WE1,E2,α onME1,E2 which is the Taylor expan-
-sion of WE1,E2 at the point (0 ,α, 0, 0). Similarly to the Proposition 7 from
-Section 3.3 the series WE1,E2,α becomes (after a formal change of coordinates)
-a direct sum Wmin
-Eα ⊕QEα ⊕NEα , where QEα is a non-degenerate quadratic
-form, NEα is the zero function on a vector subspace, and Wmin
-Eα does not
-contain terms of degree less than 3 in its Taylor expansion. B y the motivic
-Thom-Sebastiani theorem we have
-(1−MF 0(WE1,E2,α)) = (1−MF (Eα))(1−MF 0(QEα )) .
-Let us consider the quadratic form (( WE1,E2)′′)|(0,α,0,0) onME1,E2, where
-(WE1,E2)′′ denotes the second derivative of the potential with respect to the
-aﬃne coordinates. It follows from the above discussion that this quadratic
-form is equal to the direct sum of QEα and the zero quadratic form.
-It is easy to check that
-(
-((WE1,E2)′′)|(0,α,0,0)
-)
-(v) is equal to ( d(1)
-α v,v ) for
-any v∈M E1,E2. Hence QEα can be identiﬁed with the quadratic form on
-Im(d(1)
-α ) given by ( u, (d(1)
-α )−1u).
-Step 4.
-Recall (see Section 5.2) that for any exact triangle E1→ Eα→ E2 we
-have a super line bundle L with a canonically trivialized square:
-99
-LE1→Eα→E2 = (D≤1,Eα ⊗D−1
-≤1,E1⊗D−1
-≤1,E2)⊗ (sdet(Ext•(E1,E 2)))−1.
-For a split triangle Eα≃E1⊕E2 (i.e. α = 0) this line bundle is canonically
-trivialized since
-• by deﬁnition, for Eα≃E1⊕E2 we have
-D≤1,Eα ≃D≤1,E1⊗D≤1,E2⊗
-⊗ sdet(Ext≤1(E1,E 2))⊗ sdet(Ext≤1(E2,E 1)) ,
-• by the Calabi-Yau property we have
-sdet(Ext≤1(E2,E 1))≃ sdet(Ext/greaterorequalslant2(E1,E 2)) .
-Therefore, for any exact triangle E1→Eα→E2 we have an isomorphism
-LE1→Eα→E2≃D≤1,Eα ⊗D−1
-≤1,E1⊕E2 .
-On the other hand, considerations similar to those in Step 2 g ive rise to a
-canonical isomorphism
-D≤1,Eα ⊗D−1
-≤1,E1⊕E2≃ sdet(Im(d(1)
-α )) .
-One can see that the trivialization (sdet(Im( d(1)
-α )))⊗2≃ 1 comes exactly from
-the non-degenerate quadratic form QEα . Therefore, for an arbitrary exact
-triangle E1→ Eα→ E2 we have an isomorphism of super lines compatible
-with the trivializations of squares:
-LE1→Eα→E2≃ sdet(Im(d(1)
-α )) .
-This implies that
-I(QEα ) = I(l(E1→Eα→E2)) ,
-where l∈J2(Funct (C3,C)) was deﬁned in Section 5.2.
-Step 5.
-Let us apply the integral identity from Section 4.4 to the pot entialWE1,E2.
-We put
-V1 := Ext 1(E2,E 1), V2 := Ext 1(E1,E 2), V3 := Ext 1(E1,E 1)⊕ Ext1(E2,E 2).
-100
-We have: ∫
-α∈Ext1(E2,E1)
-(1−MF (0,α,0,0)(WE1,E2)) =
-= L(E2,E1)1(1−MF 0((WE1,E2)| Ext1(E1,E1)⊕Ext1(E2,E2))) .
-On the other hand the LHS of the integral identity is equal to
-∫
-α∈Ext1(E2,E1)
-(1−MF 0(QEα ))(1−MF (Wmin
-Eα ) =
-=
-∫
-α∈Ext1(E2,E1)
-L
-1
-2 rkQEα I(QEα )(1−MF (Wmin
-Eα )) .
-Recall that rk QEα = rk(d(1)
-α ) = ( Eα,Eα)≤1− (E1⊕E2,E 1⊕E2)≤1 by
-Steps 2 and 3. Then the integral identity becomes the followi ng equality:
-∫
-α∈Ext1(E2,E1)
-L
-1
-2 ((Eα ,Eα )≤1−(E1⊕E2,E1⊕E2)≤1)I(QEα )(1−MF (Wmin
-Eα )) =
-= L(E2,E1)1(1−MF 0(Wmin
-E1 ⊕Wmin
-E2 )) .
-Comparing this formula with the one we wanted to prove on Step 1 we
-see that they coincide if
-I(QEα ) = I(h(Eα))
-I(h(E1))I(h(E2)) .
-Now using Step 4 we observe that this cocycle condition is equ ivalent to the
-main property of the orientation data on exact triangles. Th is concludes the
-proof of the Theorem. ■
-Deﬁnition 18 LetC be an ind-constructible 3-dimensional Calabi-Yau cat-
-egory endowed with polarization, σ∈ Stab(C, cl). We call the collection of
-elements (Amot
-V ∈R V ) of the completed motivic quantum tori (RV ) (for all
-strict sectors V⊂ R2) the motivic Donaldson-Thomas invariant of C.
-Let us consider the following unital Q-subalgebra of Q(q1/2):
-Dq := Z[q1/2,q−1/2,
-(
-(qn− 1)−1)
-n/greaterorequalslant1].
-There is a homomorphism of rings
-Dµ → Dq given by the twisted Serre
-polynomial. Namely, it maps L1/2↦→q1/2, and on Mµ it is the composition
-101
-of the Serre polynomial with the involution q1/2 ↦→−q1/2. Therefore, we
-have a homomorphism of algebras RΓ →R Γ,q, where RΓ,q is a Dq-algebra
-generated by ˆeγ,γ ∈ Γ, subject to the relations
-ˆeγ ˆeµ =q
-1
-2⟨γ,µ⟩ˆeγ+µ, ˆe0 = 1.
-Similarly to the motivic case, we have the algebra RV,q associated with any
-strict sector V .
-The motivic DT-invariants give rise to stability data on the graded Lie
-algebra associated with RΓ,q. We will denote by AV,q ∈R V,q the element
-corresponding to Amot
-V .
+
+$$\Phi(\nu_{E_1})\Phi(\nu_{E_2})={\mathbb L}^{{1\over{2}}((E_1,E_1)_{\le 1}+(E_2,E_2)_{\le 1})}\times$$ $$\times\,{\mathbb L}^{{1\over{2}}((E_1,E_2)_{\le 1}-(E_2,E_1)_{\le 1})}(1-MF_0(W_{E_1}^{min}\oplus W_{E_2}^{min}))\overline{I}(h(E_1))\overline{I}(h(E_2))\,\hat{e}_{\gamma_1+\gamma_2}\,\,.$$ In order to obtain this formula we used the Calabi-Yau property, which implies that $$\begin{array}{rcl}
+\langle \gamma_1,\gamma_2\rangle&=&\sum_{j\in \Z}(-1)^j(E_1,E_2)_j=(E_1,E_2)_{\le 1}+(E_1,E_2)_{\geqslant 2}=\\
+&=&(E_1,E_2)_{\le 1}-(E_2,E_1)_{\le 1}\,\,,
+\end{array}$$ where we employ the notation $(E_1,E_2)_{\geqslant m}=\sum_{j\geqslant m}(-1)^j(E_1,E_2)_j$. Also we used the motivic Thom-Sebastiani theorem for the Milnor fibers and the product formula for the basis elements in the motivic quantum torus ${\cal R}_{\Gamma}$.
+
+On the other hand, we can apply $\Phi$ to the product $\nu_{E_1}\cdot \nu_{E_2}$ and obtain: $$\begin{array}{l}
+\Phi(\nu_{E_1}\cdot \nu_{E_2})=\\
+={\mathbb L}^{-(E_2,E_1)_{\le 0}}\int_{\alpha\in
+\op{Ext}^1(E_2,E_1)}{\mathbb L}^{{1\over{2}}(E_{\alpha},E_{\alpha})_{\le
+1}}(1-MF_0(W_{E_{\alpha}}^{min}))\overline{I}(h(E_{\alpha}))\hat{e}_{\gamma_1+\gamma_2}\,\,.
+\end{array}$$
+
+Using the identity $(E_2,E_1)_{\le 0}=(E_2,E_1)_{\le 1}+(E_2,E_1)_1$ (and also recall that $(E_2,E_1)_1=\dim \op{Ext}^1(E_2,E_1)$) and observing that $$(E_1\oplus E_2,E_1\oplus E_2)_{\le 1}=(E_1,E_1)_{\le 1}+(E_2,E_2)_{\le 1}+(E_1,E_2)_{\le 1}+(E_2,E_1)_{\le 1}$$ we arrive to the following equality which is equivalent to $$\Phi(\nu_{E_1}\cdot \nu_{E_2})=\Phi(\nu_{E_1})\Phi(\nu_{E_2})$$ and hence implies the Theorem:
+
+$${\mathbb L}^{(E_2,E_1)_1}(1-MF_0(W_{E_1}^{min}\oplus W_{E_2}^{min}))\overline{I}(h(E_1))\overline{I}(h(E_2))=$$ $$=\int_{\alpha\in \op{Ext}^1(E_2,E_1)}{\mathbb L}^{{1\over{2}}((E_{\alpha},E_{\alpha})_{\le
+1}-(E_1\oplus E_2,E_1\oplus E_2)_{\le 1})}(1-MF_0(W_{E_{\alpha}}^{min}))\overline{I}(h(E_{\alpha}))\,\,.$$
+
+*Step 2.*
+
+Now we would like to express the difference
+
+$$(E_{\alpha},E_{\alpha})_{\le 1}-(E_1\oplus E_2,E_1\oplus E_2)_{\le 1}$$ as the rank of a certain linear operator. Recall that the object $E_{\alpha}$ can be thought of as a deformation of the object $E_0:=E_1\oplus E_2$. Therefore, there is a spectral sequence which starts at $\op{Ext}^{\bullet}(E_1\oplus E_2,E_1\oplus E_2)$ and converges to $\op{Ext}^{\bullet}(E_{\alpha},E_{\alpha})$. Using the $\A$-structure one can make it very explicit. Namely, let us denote by $d_{\alpha}:\op{Ext}^{\bullet}(E_1\oplus E_2,E_1\oplus E_2)\to \op{Ext}^{\bullet}(E_1\oplus E_2,E_1\oplus E_2)$ the differential of degree $+1$ given by the formula $$d_{\alpha}=m_2(\alpha,\bullet)+m_2(\bullet,\alpha)+m_3(\alpha,\bullet,\alpha)\,\,.$$ Then the graded vector space $\op{Ext}^{\bullet}(E_{\alpha},E_{\alpha})$ is isomorphic to the cohomology of $d_{\alpha}$ (cf. e.g. [@KoSo3], Remark 10.1.5).
+
+It is clear that for any cohomological complex $(C^{\bullet},d)$ of finite-dimensional vector spaces we have the equality $$\sum_{i\le 1}(-1)^i\dim H^i(C)-\sum_{i\le 1}(-1)^i\dim C^i
+=\op{rk}d^{(1)},$$ where $d^{(1)}: C^1\to C^2$ is the component of $d$. Applying this observation to our complex we obtain that $$(E_{\alpha},E_{\alpha})_{\le 1}-(E_1\oplus E_2,E_1\oplus E_2)_{\le 1}=\op{rk}d^{(1)}_{\alpha}.$$
+
+*Step 3.*
+
+Let us introduce a $\kk$-vector space $${\cal M}_{E_1,E_2}=\op{Ext}^1(E_1\oplus E_2, E_1\oplus E_2)=$$ $$=\op{Ext}^1(E_1,E_1)\oplus \op{Ext}^1(E_2,E_1)\oplus \op{Ext}^1(E_1,E_2)\oplus \op{Ext}^1(E_2,E_2)\,\,.$$ It can be interpreted as the tangent space to the moduli space of formal deformations of the object $E_1\oplus E_2$. We choose coordinates $(x,\alpha,\beta,y)$ on this space in such a way that $x$ denotes the coordinates on $\op{Ext}^1(E_1,E_1)$, $\alpha$ denotes the coordinates on $\op{Ext}^1(E_2,E_1)$, $\beta$ denotes the coordinates on $\op{Ext}^1(E_1,E_2)$ and $y$ denotes the coordinates on $\op{Ext}^1(E_2,E_2)$. Then the point $(0,\alpha,0,0)$ corresponds (by abuse of notation) to the isomorphism class $\alpha\in \op{Ext}^1(E_2,E_1)$ of an exact triangle $E_1\to E_{\alpha}\to E_2$. Later we are going to use the integral identity from Section 4.4 applying it to the formal neighborhood of the subspace consisting of the points $(0,\alpha,0,0)$. In order to do that we will relate the potential of the object $E_{\alpha}$ with a certain formal function on ${\cal M}_{E_1,E_2}$.
+
+We may assume that the full subcategory $\CC(E_1,E_2)$ consisting of the pair of objects $E_1,E_2$ is minimal. As in the case of one object the potential of $\CC$ induces a formal power series $W_{E_1,E_2}=W(x,\alpha,\beta, y)$ on ${\cal M}_{E_1,E_2}$. It is defined as the abelianization of a series $\sum_{n\geqslant 3} W_n/n$ in cyclic paths in the quiver $Q_{E_1,E_2}$ with the vertices $E_1$ and $E_2$ and $(E_i,E_j)_1$ edges between vertices $E_i$ and $E_j$ for $i,j\in \{1,2\}$. Since any cyclic path has the same number of edges in the direction $E_1\to E_2$ as in the direction $E_2\to E_1$ we conclude that the potential $W_{E_1,E_2}$ is ${\bf G}_m$-invariants with respect to the ${\bf G}_m$-action on the graded vector space ${\cal M}_{E_1,E_2}$ with the weights $wt\, x=wt\, y=0$ and $wt\, \alpha=-wt\, \beta=1$. The potential $W_{E_1,E_2}$ is obtained from the potential $W_{E_1\oplus E_2}$ by a formal change of variables.
+
+It follows from ${\bf G}_m$-invariance of $W_{E_1,E_2}$ that it belongs to $\kk[\alpha][[x,\beta,\gamma]]$. Therefore it defines a function on the formal neighborhood of the affine subspace $\{(0,\alpha,0,0)\}\subset {\cal M}_{E_1,E_2}$. In particular, for any $\alpha\in \op{Ext}^1(E_2,E_1)$ we obtain a formal power series $W_{E_1,E_2,\alpha}$ on ${\cal M}_{E_1,E_2}$ which is the Taylor expansion of $W_{E_1,E_2}$ at the point $(0,\alpha,0,0)$. Similarly to the Proposition 7 from Section 3.3 the series $W_{E_1,E_2,\alpha}$ becomes (after a formal change of coordinates) a direct sum $W_{E_{\alpha}}^{min}\oplus Q_{E_{\alpha}}\oplus N_{E_{\alpha}}$, where $Q_{E_{\alpha}}$ is a non-degenerate quadratic form, $N_{E_{\alpha}}$ is the zero function on a vector subspace, and $W_{E_{\alpha}}^{min}$ does not contain terms of degree less than $3$ in its Taylor expansion. By the motivic Thom-Sebastiani theorem we have $$(1-MF_0(W_{E_1,E_2,\alpha}))=(1-MF(E_{\alpha}))(1-MF_0(Q_{E_{\alpha}}))\,\,.$$ Let us consider the quadratic form $((W_{E_1,E_2})^{\prime\prime})_{|(0,\alpha,0,0)}$ on ${\cal M}_{E_1,E_2}$, where $(W_{E_1,E_2})^{{\prime\prime}}$ denotes the second derivative of the potential with respect to the affine coordinates. It follows from the above discussion that this quadratic form is equal to the direct sum of $Q_{E_{\alpha}}$ and the zero quadratic form.
+
+It is easy to check that $\left(((W_{E_1,E_2})^{\prime\prime})_{|(0,\alpha,0,0)}\right)(v)$ is equal to $(d_{\alpha}^{(1)}v,v)$ for any $v\in {\cal M}_{E_1,E_2}$. Hence $Q_{E_{\alpha}}$ can be identified with the quadratic form on $\op{I
+m}(d_{\alpha}^{(1)})$ given by $(u, (d_{\alpha}^{(1)})^{-1}u)$.
+
+*Step 4.*
+
+Recall (see Section 5.2) that for any exact triangle $E_1\to E_{\alpha}\to E_2$ we have a super line bundle $L$ with a canonically trivialized square:
+
+$$L_{E_1\to E_{\alpha}\to E_2}=({\cal D}_{{\le 1},E_{\alpha}}\otimes {\cal D}_{{\le 1},E_1}^{-1}\otimes {\cal D}_{{\le 1},E_2}^{-1})\otimes (\op{sdet}(\op{Ext}^{\bullet}(E_1,E_2)))^{-1}.$$ For a split triangle $E_{\alpha}\simeq E_1\oplus E_2$ (i.e. $\alpha=0$) this line bundle is canonically trivialized since
+
+-   by definition, for $E_{\alpha}\simeq E_1\oplus E_2$ we have $${\cal D}_{\le 1,E_{\alpha}}\simeq {\cal D}_{\le 1,E_{1}}\otimes {\cal D}_{\le 1,E_{2}}\otimes$$ $$\otimes\op{sdet}(\op{Ext}^{\le 1}(E_1,E_2))\otimes \op{sdet}(\op{Ext}^{\le 1}(E_2,E_1))\,\,,$$
+
+-   by the Calabi-Yau property we have $$\op{sdet}(\op{Ext}^{\le 1}(E_2,E_1))\simeq \op{sdet}(\op{Ext}^{\geqslant 2}(E_1,E_2))\,\,.$$
+
+Therefore, for any exact triangle $E_1\to E_{\alpha}\to E_2$ we have an isomorphism $$L_{E_1\to E_{\alpha}\to E_2}\simeq {\cal D}_{\le 1,E_{\alpha}}\otimes {\cal D}_{\le 1,E_{1}\oplus E_2}^{-1}\,\,.$$ On the other hand, considerations similar to those in Step 2 give rise to a canonical isomorphism $${\cal D}_{\le 1,E_{\alpha}}\otimes {\cal D}_{\le 1,E_{1}\oplus E_2}^{-1}\simeq \op{sdet}(\op{Im}(d_{\alpha}^{(1)}))\,\,.$$ One can see that the trivialization $(\op{sdet}(\op{Im}(d_{\alpha}^{(1)})))^{\otimes 2}\simeq {\bf 1}$ comes exactly from the non-degenerate quadratic form $Q_{E_{\alpha}}$. Therefore, for an arbitrary exact triangle $E_1\to E_{\alpha}\to E_2$ we have an isomorphism of super lines compatible with the trivializations of squares: $$L_{E_1\to E_{\alpha}\to E_2}\simeq \op{sdet}(\op{Im}(d_{\alpha}^{(1)}))\,\,.$$ This implies that $$\overline{I}(Q_{E_{\alpha}})=\overline{I}(l(E_1\to E_{\alpha}\to E_2))\,\,,$$ where $l\in J_2(Funct({\CC}_3, \CC))$ was defined in Section 5.2.
+
+*Step 5.*
+
+Let us apply the integral identity from Section 4.4 to the potential $W_{E_1,E_2}$. We put $$V_1:=\op{Ext}^1(E_2,E_1),\,V_2:=\op{Ext}^1(E_1,E_2),\,V_3:=\op{Ext}^1(E_1,E_1)\oplus\op{Ext}^1(E_2,E_2)\,.$$ We have: $$\int_{\alpha\in \op{Ext}^1(E_2,E_1)}(1-MF_{(0,\alpha,0,0)}(W_{E_1,E_2}))=$$ $$=
+{\mathbb L}^{(E_2,E_1)_1}(1-MF_0((W_{E_1,E_2})_{|\op{Ext}^1(E_1,E_1)\oplus \op{Ext}^1(E_2,E_2)}))\,\,.$$
+
+On the other hand the LHS of the integral identity is equal to $$\int_{\alpha\in \op{Ext}^1(E_2,E_1)}(1-MF_0(Q_{E_{\alpha}}))(1-MF(W^{min}_{E_{\alpha}})=$$ $$=\int_{\alpha\in \op{Ext}^1(E_2,E_1)}{\mathbb L}^{{1\over{2}}\op{rk}Q_{E_{\alpha}}}\overline{I}(Q_{E_{\alpha}})(1-MF(W^{min}_{E_{\alpha}}))\,\,.$$
+
+Recall that $\op{rk} Q_{E_{\alpha}}=\op{rk}(d_{\alpha}^{(1)})=(E_{\alpha},E_{\alpha})_{\le 1}-(E_1\oplus E_2,E_1\oplus E_2)_{\le 1}$ by Steps 2 and 3. Then the integral identity becomes the following equality: $$\int_{\alpha\in \op{Ext}^1(E_2,E_1)}{\mathbb L}^{{1\over{2}}((E_{\alpha},E_{\alpha})_{\le 1}-(E_1\oplus E_2,E_1\oplus E_2)_{\le 1}) }\overline{I}(Q_{E_{\alpha}})(1-MF(W^{min}_{E_{\alpha}}))=$$ $$={\mathbb L}^{(E_2,E_1)_1}(1-MF_0(W^{min}_{E_1}\oplus W^{min}_{E_2}))\,\,.$$
+
+Comparing this formula with the one we wanted to prove on Step 1 we see that they coincide if $$\overline{I}(Q_{E_{\alpha}})={{\overline{I}(h(E_{\alpha}))}\over{{\overline{I}(h(E_{1}))}{\overline{I}(h(E_{2}))}}}\,\,.$$ Now using Step 4 we observe that this cocycle condition is equivalent to the main property of the orientation data on exact triangles. This concludes the proof of the Theorem. $\blacksquare$
+
+::: defn
+Let $\CC$ be an ind-constructible $3$-dimensional Calabi-Yau category endowed with polarization, $\sigma\in Stab(\CC,\op{cl})$. We call the collection of elements $(A_V^{mot}\in {\cal R}_V)$ of the completed motivic quantum tori $({\cal R}_V)$ (for all strict sectors $V\subset \R^2$) the motivic Donaldson-Thomas invariant of $\CC$.
+:::
+
+Let us consider the following unital $\Q$-subalgebra of $\Q(q^{1/2})$: $$D_q:=\Z[q^{1/2},q^{-1/2},\left((q^n-1)^{-1}\right)_{n\geqslant 1}]\,.$$ There is a homomorphism of rings $\overline{D^{\mu}}\to D_q$ given by the twisted Serre polynomial. Namely, it maps ${\mathbb L}^{1/2}\mapsto q^{1/2}$, and on ${\cal M}^{\mu}$ it is the composition of the Serre polynomial with the involution $q^{1/2}\mapsto -q^{1/2}$. Therefore, we have a homomorphism of algebras ${\cal R}_{\Gamma}\to {\cal R}_{\Gamma,q}$, where ${\cal R}_{\Gamma,q}$ is a $D_q$-algebra generated by $\hat{e}_{\gamma}, \gamma\in \Gamma$, subject to the relations $$\hat{e}_{\gamma}\hat{e}_{\mu}=q^{{1\over{2}}{\langle\gamma,\mu\rangle}}\hat{e}_{\gamma+\mu}\,,\,\,\,\hat{e}_0=1\,.$$ Similarly to the motivic case, we have the algebra ${\cal R}_{V,q}$ associated with any strict sector $V$.
+
+The motivic DT-invariants give rise to stability data on the graded Lie algebra associated with ${\cal R}_{\Gamma,q}$. We will denote by $A_{V,q}\in {\cal R}_{V,q}$ the element corresponding to $A_V^{mot}$.
+
+[^1]: Recall that we pretend that such a map exists. In fact, it is defined only as a 1-morphism of stacks.

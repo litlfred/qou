@@ -9,12 +9,13 @@ rings L6a4), this script:
 1. Reads SnapPy's converged tetrahedral shape parameters {z_i}.
 2. Computes the q-Pochhammer denominator zeros {q_0^{-k}} at the QOU
    substrate q_0 and lifts them to ℂ via a fixed imaginary
-   perturbation (IM_PERTURBATION, shared with `q_pochhammer_seed.py`).
+   perturbation (IM_PERTURBATION_STR, shared with `q_pochhammer_seed.py`).
 3. Pairs each algebraic seed against SnapPy's shape parameters by
    nearest distance in ℂ and records the pairing distances.
 
 The output is a witness for `conj:shared-denominator-cusp-holonomy`
-and `conj:pl-jsj-mass-integration-equivalence`: it measures how far
+(it also once named `pl-jsj-mass-integration-equivalence`, which
+has no carrier): it measures how far
 the bare algebraic seeds sit from SnapPy's actual hyperbolic
 shape parameters, bounding the conjecture's strong "literal numerical
 identity" form. A genuine SnapPy-driven Newton-Raphson seeding test
@@ -24,8 +25,26 @@ SnapPea kernel and is left to a future witness.
 
 Manuscript references:
   - conj:shared-denominator-cusp-holonomy
-  - conj:pl-jsj-mass-integration-equivalence
-  - conj:denominator-zeros-as-sw-critical-points
+  - `pl-jsj-mass-integration-equivalence`          [REMOVED -- see below]
+  - `denominator-zeros-as-sw-critical-points`  [no carrier]
+  (The two labels marked [no carrier] were blocks in the removed
+   `descartes-universe/` chapter; no file in the tree defines them.
+   See bean qou-3kni.)
+
+Removal record for `pl-jsj-mass-integration-equivalence` (owner ruling
+"a1", relayed 2026-10-10: the carrier stays REMOVED and citations point at the
+record). Deleted in f86ea9d7ac, 2026-05-18, "content(thimble): demote
+def:picard-lefschetz-thimble + delete redundant bridges" -- Phase C of the
+thimble simplification, on the stated ground that "PL is no longer rigorously
+needed after Tier 1+2 (algebraic-residue swap on principal Galois orbit +
+Moebius-from-binomials derivation)". It was a REDUNDANT bridge, not a lost one.
+Its chapter `descartes-universe/` has since been removed entirely, so there is
+no longer anywhere for it to live. Do NOT restore it.
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 
@@ -44,7 +63,7 @@ import snappy  # noqa: E402
 sys.path.insert(0, str(Path(__file__).parent))
 
 from q_parameter import Q as Q0_FLOAT  # noqa: E402
-from q_pochhammer_seed import IM_PERTURBATION  # noqa: E402
+from q_pochhammer_seed import IM_PERTURBATION_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 # Manifolds to probe.  m004 = figure-eight = 4_1.  m003 = figure-eight
@@ -71,7 +90,7 @@ def probe_manifold(name: str, q0: float) -> dict:
     # Algebraic seeds.  Use real-line roots q^{-k} of the q-Pochhammer
     # denominator, lifted to ℂ by a small imaginary kick.
     real_seeds = algebraic_seeds(q0, n)
-    seeds = [s + IM_PERTURBATION for s in real_seeds]
+    seeds = [s + complex(0, float(IM_PERTURBATION_STR)) for s in real_seeds]
 
     # Pairing: for each seed find the closest SnapPy shape.  The
     # `shared-denominator-cusp-holonomy` conjecture asserts that under

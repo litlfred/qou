@@ -14,7 +14,7 @@ author refinement pass.
 
 ## Ch 2 — Quantum Universes  `quantum-universes`
 
-### §2.1 Introduction  `sec:qou-intro`  · ✓ existing  · [`intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-universes/intro.md)
+### §2.1 Introduction  `sec:qou-intro`  · ✓ existing  · [`intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/quantum-universes/intro.md)
 
 > This chapter introduces the **quantum universe** (QU): a rigid
 > :refterm[braided monoidal category]{#braided-monoidal-category} equipped with a Frobenius--Hopf object,
@@ -34,13 +34,13 @@ author refinement pass.
 > $\mathrm{SU}_2(R)$ as the gauge group — is the subject of
 > [Chapter 2](#chap\:qou).
 
-### §2.2 Preliminary: rigid monoidal categories  `sec:rigid-monoidal`  · 🆕 **DRAFT**  · [`rigid-monoidal-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-universes/rigid-monoidal-intro.md)
+### §2.2 Preliminary: rigid monoidal categories  `sec:rigid-monoidal`  · 🆕 **DRAFT**  · [`rigid-monoidal-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/quantum-universes/rigid-monoidal-intro.md)
 
 > _[draft]_ Before stating the quantum-universe axioms we fix the categorical setting in which they live. **Snake identity** (def) records the zig-zag equations that exhibit $V^{\vee}$ as a right dual of $V$, and **Why monoidal categories?** (rem) tracks two independent routes — Coecke--Kissinger from the grammar of composable processes, and Haag--DHR from superselection-sector analysis — that converge on a rigid braided monoidal framework for any compositional theory of physical systems. **Rigid monoidal category** (def) assembles these into the structure used throughout the chapter: an $R$-linear category with tensor product, unit, duals, and braiding, with the symmetric case isolated by $c_{Y,X} \circ c_{X,Y} = \mathrm{id}$. **$\mathbb{C}[z]$ and $\mathcal{O}(\mathrm{SU}(2))$** (ex) closes the section with the two running examples — the polynomial ring on the affine line and the coordinate ring of $\mathrm{SU}(2)$ — that recur through every subsequent definition. The next section, *The Quantum Universe*, adds the Frobenius--Hopf object, fibre functor, and differential calculus to this rigid monoidal scaffold.
 > 
 > _(draft.)_
 
-### §2.3 The Quantum Universe  `sec:quantum-universe`  · 🆕 **DRAFT**  · [`quantum-universe-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-universes/quantum-universe-intro.md)
+### §2.3 The Quantum Universe  `sec:quantum-universe`  · 🆕 **DRAFT**  · [`quantum-universe-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/quantum-universes/quantum-universe-intro.md)
 
 > _[draft]_ With the rigid monoidal scaffold in place, we add the data that distinguishes a quantum universe from a generic rigid braided category. **Quantum Universe** (def) packages four pieces — an $R$-linear rigid braided monoidal category $\mathbf{C}$, a Frobenius--Hopf object $A$ carrying multiplication $\mu$, unit $\eta$, comultiplication $\Delta$, counit $\varepsilon$, antipode $S$, and Frobenius form $\int_A$, a fibre functor $\tau \colon \mathbf{C} \to R\text{-}\mathrm{Mod}$, and a differential calculus $\Omega^1(A)$ — into a single triple $(\mathbf{C}, A, \tau)$. **Existence of quantum universes** (prop) then exhibits at least one such triple, and **Notation: the forgetful functor $\tau$** (prose) records the conventions for the symbol $\tau$ used thereafter.
 > 
@@ -50,7 +50,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §2.4 Consequences of the QU axioms  `sec:qu-consequences`  · 🆕 **DRAFT**  · [`qu-consequences-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-universes/qu-consequences-intro.md)
+### §2.4 Consequences of the QU axioms  `sec:qu-consequences`  · 🆕 **DRAFT**  · [`qu-consequences-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/quantum-universes/qu-consequences-intro.md)
 
 > _[draft]_ With the QU axioms fixed and the Frobenius pairing in hand, we read off what they force. **Frobenius relation** (prop) shows that the comultiplication $\Delta_\mu$ dual to $\mu$ under the Frobenius pairing satisfies $(\mu \otimes \mathrm{id}) \circ (\mathrm{id} \otimes \Delta_\mu) = \Delta_\mu \circ \mu$, with **The Frobenius relation in $\mathrm{SU}(2)$** (ex) verifying the identity on $\mathcal{O}(\mathrm{SU}(2))$ via the group-multiplication rule for $\Delta$. **Involutive structure ($\ast$-structure)** (def) introduces the contravariant endofunctor $\dagger$ built from the antipode and Frobenius form, and **Frobenius dagger is positive-definite** (prop) shows that $f^{\dagger} \circ f$ is a positive element of $\mathrm{End}(\mathbf{1})$ for every non-zero $f$ — the categorical analogue of the $C^*$-axiom. **Positive-definite dagger in $\mathrm{SU}(2)$** (ex) recovers the conjugate-transpose adjoint in $\mathbf{Rep}(\mathrm{SU}(2))$ as a special case.
 > 
@@ -58,7 +58,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §2.5 Structures on a Quantum Universe  `sec:qu-structures`  · 🆕 **DRAFT**  · [`qu-structures-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-universes/qu-structures-intro.md)
+### §2.5 Structures on a Quantum Universe  `sec:qu-structures`  · 🆕 **DRAFT**  · [`qu-structures-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/quantum-universes/qu-structures-intro.md)
 
 > _[draft]_ With the QU axioms and their immediate consequences settled, we equip a quantum universe with a differential-geometric vocabulary: connections with curvature, jet objects, a Hodge star, and an internal Poisson structure. **Categorical connection and curvature** (def) introduces a connection as a morphism $\nabla \colon A \to A \otimes \Omega^1(A)$ satisfying the Leibniz rule, with curvature $F_\nabla = \nabla^2 \colon A \to A \otimes \Omega^2(A)$. **Existence of categorical connections** (prop) and **Uniqueness of categorical connections (up to gauge)** (prop) show that every QU admits such a $\nabla$ and that the space of connections is an affine space over $\Omega^1(A) \otimes \mathrm{Ad}(A)$; **Categorical connection as Maurer--Cartan form on $\mathrm{SU}(2)$** (ex) instantiates the abstract object as the flat left-invariant connection $\varTheta = g^{-1} dg$. **Categorical jet object** (def) packages the first-order data $J^1(A) = A \otimes_{\mathbf{C}} \Omega^1(A)$ as the middle term of the universal extension $0 \to A \otimes \Omega^1(A) \to J^1(A) \to A \to 0$.
 > 
@@ -71,7 +71,7 @@ author refinement pass.
 
 ## Ch 3 — Quantum Observable Universes  `quantum-observable-universes`
 
-### §3.1 The Quantum Observable Universe  `sec:qou-definition`  · 🆕 **DRAFT**  · [`qou-definition-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/qou-definition-intro.md)
+### §3.1 The Quantum Observable Universe  `sec:qou-definition`  · 🆕 **DRAFT**  · [`qou-definition-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/quantum-observable-universes/qou-definition-intro.md)
 
 > _[draft]_ This chapter opens by adding three conditions to the
 > quantum universe of Chapter 1 — non-degenerate integration,
@@ -107,7 +107,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §3.2 Emergence from observability  `sec:emergence`  · 🆕 **DRAFT**  · [`emergence-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/emergence-intro.md)
+### §3.2 Emergence from observability  `sec:emergence`  · 🆕 **DRAFT**  · [`emergence-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/quantum-observable-universes/emergence-intro.md)
 
 > _[draft]_ The previous section fixed the QOU triple
 > $(\mathbf{C}, A, \tau)$ and named the four axioms it satisfies.
@@ -149,7 +149,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §3.3 Maximal torus and weight decomposition  `sec:weight-decomposition`  · 🆕 **DRAFT**  · [`weight-decomposition-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/weight-decomposition-intro.md)
+### §3.3 Maximal torus and weight decomposition  `sec:weight-decomposition`  · 🆕 **DRAFT**  · [`weight-decomposition-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/quantum-observable-universes/weight-decomposition-intro.md)
 
 > _[draft]_ With $G \cong \mathrm{SU}(2)$ in hand and the simple
 > objects $V_j$ labelled by spin, we now isolate the rank-one
@@ -184,7 +184,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §3.4 Vectors, hadrons, and the PawLei basis  `sec:vectors-hadrons`  · 🆕 **DRAFT**  · [`vectors-hadrons-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/vectors-hadrons-intro.md)
+### §3.4 Vectors, hadrons, and the PawLei basis  `sec:vectors-hadrons`  · 🆕 **DRAFT**  · [`vectors-hadrons-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/quantum-observable-universes/vectors-hadrons-intro.md)
 
 > _[draft]_ The weight decomposition supplied a $T$-equivariant
 > splitting of $\Omega^\bullet(A)$; we now collect the trace and
@@ -209,7 +209,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §3.5 Differential structures and gauge actions  `sec:differential-structures`  · 🆕 **DRAFT**  · [`differential-structures-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/differential-structures-intro.md)
+### §3.5 Differential structures and gauge actions  `sec:differential-structures`  · 🆕 **DRAFT**  · [`differential-structures-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/quantum-observable-universes/differential-structures-intro.md)
 
 > _[draft]_ The PawLei machinery treated $\mathrm{Hom}$-spaces;
 > we now turn to first-order differential structure on $A$ itself
@@ -264,7 +264,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §3.6 Substrate parameter and deformation  `sec:substrate-parameter`  · ✓ existing  · [`quantum-universe-explication.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/quantum-universe-explication.md)
+### §3.6 Substrate parameter and deformation  `sec:substrate-parameter`  · ✓ existing  · [`quantum-universe-explication.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/quantum-observable-universes/quantum-universe-explication.md)
 
 > The substrate parameter $q \in \mathrm{End}(\mathbf{1})$ is not part
 > of the categorical definition of a quantum universe or observable
@@ -280,7 +280,7 @@ author refinement pass.
 > ([$\mathrm{SU}(2)$ emergence](#thm:su2-emergence)) deforms from $\mathrm{SU}(2)$
 > to $\mathrm{SU}_q(2)$.
 
-### §3.7 The algebraic substrate and the Reeb derivation  `sec:algebraic-substrate-reeb`  · ✓ existing  · [`algebraic-substrate-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/algebraic-substrate-intro.md)
+### §3.7 The algebraic substrate and the Reeb derivation  `sec:algebraic-substrate-reeb`  · ✓ existing  · [`algebraic-substrate-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/quantum-observable-universes/algebraic-substrate-intro.md)
 
 > The algebraic substrate is the Frobenius--Hopf algebra $A$ viewed as
 > a graded ring equipped with the Reeb derivation --- the differential
@@ -299,7 +299,7 @@ author refinement pass.
 > obstruction to classicality being a non-trivial categorical
 > invariant.
 
-### §3.8 Examples of quantum observable universes  `sec:qou-examples`  · ✓ existing  · [`archimedean-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/archimedean-intro.md)
+### §3.8 Examples of quantum observable universes  `sec:qou-examples`  · ✓ existing  · [`archimedean-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/quantum-observable-universes/archimedean-intro.md)
 
 > We now specialise the categorical framework to the archimedean setting,
 > where the base ring is an archimedean field $K$ (e.g.
@@ -313,7 +313,7 @@ author refinement pass.
 > and quantum mechanics in a unified commutative diagram within this
 > setting.
 
-### §3.9 Categorical Dirac operator  `sec:categorical-dirac-operator`  · 🆕 **DRAFT**  · [`categorical-dirac-operator-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/categorical-dirac-operator-intro.md)
+### §3.9 Categorical Dirac operator  `sec:categorical-dirac-operator`  · 🆕 **DRAFT**  · [`categorical-dirac-operator-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/quantum-observable-universes/categorical-dirac-operator-intro.md)
 
 > _[draft]_ The examples of the previous section showed how the
 > abstract QOU triple realises over different base rings; the
@@ -337,7 +337,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §3.10 Categorical Lagrangian  `sec:categorical-lagrangian`  · 🆕 **DRAFT**  · [`categorical-lagrangian-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/categorical-lagrangian-intro.md)
+### §3.10 Categorical Lagrangian  `sec:categorical-lagrangian`  · 🆕 **DRAFT**  · [`categorical-lagrangian-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/quantum-observable-universes/categorical-lagrangian-intro.md)
 
 > _[draft]_ The categorical Dirac operator $\mathcal{D}_\nabla$
 > combines with a state $\psi \colon \mathbf{1} \to A$ to form the
@@ -357,7 +357,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §3.11 Categorical action  `sec:categorical-action`  · 🆕 **DRAFT**  · [`categorical-action-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/categorical-action-intro.md)
+### §3.11 Categorical action  `sec:categorical-action`  · 🆕 **DRAFT**  · [`categorical-action-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/quantum-observable-universes/categorical-action-intro.md)
 
 > _[draft]_ The Lagrangian $\mathcal{L}_q$ is an endomorphism
 > of $A$; we now trace it to a morphism $\mathbf{1} \to
@@ -392,7 +392,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §3.12 Variational equations and wavefronts  `sec:variational-equations`  · 🆕 **DRAFT**  · [`variational-equations-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/variational-equations-intro.md)
+### §3.12 Variational equations and wavefronts  `sec:variational-equations`  · 🆕 **DRAFT**  · [`variational-equations-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/quantum-observable-universes/variational-equations-intro.md)
 
 > _[draft]_ The canonical action $\mathcal{S}_q$ depends on three
 > inputs — the Frobenius form $\int_A$, the connection $\nabla$,
@@ -421,7 +421,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §3.13 Particles, fermions, bosons, and observation  `sec:particles`  · 🆕 **DRAFT**  · [`particles-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/particles-intro.md)
+### §3.13 Particles, fermions, bosons, and observation  `sec:particles`  · 🆕 **DRAFT**  · [`particles-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/quantum-observable-universes/particles-intro.md)
 
 > _[draft]_ The transport equation $\mathcal{D}_\nabla \psi = 0$
 > selects on-shell solutions, but does not yet say what a particle
@@ -477,7 +477,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §3.14 Geometric interpretations  `sec:geometric-interpretations`  · 🆕 **DRAFT**  · [`geometric-interpretations-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/geometric-interpretations-intro.md)
+### §3.14 Geometric interpretations  `sec:geometric-interpretations`  · 🆕 **DRAFT**  · [`geometric-interpretations-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/quantum-observable-universes/geometric-interpretations-intro.md)
 
 > _[draft]_ The categorical $d_q$, $\delta_q$, $\Delta_q$, and
 > the fermion--boson decomposition are now in hand; we read them
@@ -524,7 +524,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §3.15 Categorical instanton and self-duality  `sec:instanton`  · 🆕 **DRAFT**  · [`instanton-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/instanton-intro.md)
+### §3.15 Categorical instanton and self-duality  `sec:instanton`  · 🆕 **DRAFT**  · [`instanton-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/quantum-observable-universes/instanton-intro.md)
 
 > _[draft]_ The gauge term $\int_A \mathrm{tr}_A(F_\nabla \wedge_q
 > \star_q F_\nabla)$ of the canonical action takes its extremal
@@ -564,7 +564,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §3.16 Non-vanishing of $d_q^2$ and jet prolongation  `sec:dq-squared`  · 🆕 **DRAFT**  · [`dq-squared-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/dq-squared-intro.md)
+### §3.16 Non-vanishing of $d_q^2$ and jet prolongation  `sec:dq-squared`  · 🆕 **DRAFT**  · [`dq-squared-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/quantum-observable-universes/dq-squared-intro.md)
 
 > _[draft]_ Self-duality controlled the gauge sector; we now ask
 > how the deformed differential $d_q$ behaves under iteration.
@@ -598,7 +598,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §3.17 $q$-Deformed operators  `sec:q-deformed-operators`  · 🆕 **DRAFT**  · [`q-deformed-operators-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/q-deformed-operators-intro.md)
+### §3.17 $q$-Deformed operators  `sec:q-deformed-operators`  · 🆕 **DRAFT**  · [`q-deformed-operators-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/quantum-observable-universes/q-deformed-operators-intro.md)
 
 > _[draft]_ The categorical $q$-deformed operators of the previous
 > section live abstractly on $\Omega^\bullet(A)$; we now specialise
@@ -638,7 +638,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §3.18 $q$-Harmonic analysis: heat equation, Laplace, Fourier  `sec:q-harmonic-analysis`  · 🆕 **DRAFT**  · [`q-harmonic-analysis-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/q-harmonic-analysis-intro.md)
+### §3.18 $q$-Harmonic analysis: heat equation, Laplace, Fourier  `sec:q-harmonic-analysis`  · 🆕 **DRAFT**  · [`q-harmonic-analysis-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/quantum-observable-universes/q-harmonic-analysis-intro.md)
 
 > _[draft]_ The previous section delivered the $q$-deformed
 > operators in coordinate form on $M$; we now build heat-flow,
@@ -697,7 +697,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §3.19 Braiding conventions: eigenvalue labelling, ribbon, orientation  `sec:braiding-conventions`  · 🆕 **DRAFT**  · [`braiding-conventions-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/braiding-conventions-intro.md)
+### §3.19 Braiding conventions: eigenvalue labelling, ribbon, orientation  `sec:braiding-conventions`  · 🆕 **DRAFT**  · [`braiding-conventions-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/quantum-observable-universes/braiding-conventions-intro.md)
 
 > _[draft]_ The substrate parameter $q$, the imaginary unit $i$,
 > and the ribbon twist $v = q^{1/2}$ are bound by sign and
@@ -741,7 +741,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §3.20 Elaboration: categorical context  `sec:elaboration-intro`  · ✓ existing  · [`intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/intro.md)
+### §3.20 Elaboration: categorical context  `sec:elaboration-intro`  · ✓ existing  · [`intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/quantum-observable-universes/intro.md)
 
 > The remaining sections of this chapter collect the categorical,
 > algebraic, and analytic elaborations of the QOU axioms.  A reader
@@ -751,7 +751,7 @@ author refinement pass.
 > physical interpretation of the categorical action, and the
 > categorical lifting that prepares the Yekutieli tower.
 
-### §3.21 Non-vanishing of $d_q^2$ and the $q$-jacobiator  `sec:dq-squared-elaboration`  · 🆕 **DRAFT**  · [`dq-squared-elaboration-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/dq-squared-elaboration-intro.md)
+### §3.21 Non-vanishing of $d_q^2$ and the $q$-jacobiator  `sec:dq-squared-elaboration`  · 🆕 **DRAFT**  · [`dq-squared-elaboration-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/quantum-observable-universes/dq-squared-elaboration-intro.md)
 
 > _[draft]_ The categorical $d_q^2$ obstruction was computed in
 > the earlier core development; we now specialise it to the
@@ -779,7 +779,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §3.22 Physical elaborations  `sec:physical-elaborations`  · 🆕 **DRAFT**  · [`physical-elaborations-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/physical-elaborations-intro.md)
+### §3.22 Physical elaborations  `sec:physical-elaborations`  · 🆕 **DRAFT**  · [`physical-elaborations-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/quantum-observable-universes/physical-elaborations-intro.md)
 
 > _[draft]_ The deformed operators of the previous sections have
 > direct physical readings; we collect the four that the rest of
@@ -808,7 +808,7 @@ author refinement pass.
 
 ## Ch 4 — Lifting and Descent  `lifting-and-descent`
 
-### §4.1 Jet Prolongation and the Recursive Brane Tower  `sec:jet-prolongation`  · 🆕 **DRAFT**  · [`jet-prolongation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/lifting-and-descent/jet-prolongation-intro.md)
+### §4.1 Jet Prolongation and the Recursive Brane Tower  `sec:jet-prolongation`  · 🆕 **DRAFT**  · [`jet-prolongation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/lifting-and-descent/jet-prolongation-intro.md)
 
 > _[draft]_ This chapter takes the quantum observable universe $(\mathbf{C}, A, \tau)$ and grows it: each level $A_n$ of a recursive tower is the jet prolongation of the previous one, and the whole edifice of lifting, descent, and mass decomposition rests on the tower being well-defined. This section sets up the tower.
 > 
@@ -816,7 +816,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §4.2 Categorical Lifting: Transport and Torsion  `sec:lifting`  · ✓ existing  · [`lifting-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/lifting-and-descent/lifting-intro.md)
+### §4.2 Categorical Lifting: Transport and Torsion  `sec:lifting`  · ✓ existing  · [`lifting-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/lifting-and-descent/lifting-intro.md)
 
 > The categorical jet object $J^1(A)$ ([categorical jet](#def:categorical-jet))
 > encodes first-order deformations of the Frobenius--Hopf object. In this
@@ -824,13 +824,13 @@ author refinement pass.
 > observable universe on $A$ to one on $J^1(A)$, and iterating to build
 > the brane tower.
 
-### §4.3 Descent Preliminaries  `ssec:descent-prelim`  · 🆕 **DRAFT**  · [`sdescent-prelim-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/lifting-and-descent/sdescent-prelim-intro.md)
+### §4.3 Descent Preliminaries  `ssec:descent-prelim`  · 🆕 **DRAFT**  · [`sdescent-prelim-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/lifting-and-descent/sdescent-prelim-intro.md)
 
 > _[draft]_ With the brane tower in hand, we can ask what structure passes from $A_{n+1}$ back down to $A_n$. **Descent preserves the quantum observable universe** (lemma) shows that the restriction $r_n \colon A_n \to A_{n-1}$ induces a surjective algebra homomorphism $\mathfrak{d}_n$ on endomorphism algebras that intertwines the $G_q$-actions, so each level inherits the full QOU structure. **Descent involution** (def) then composes ascent and descent into the idempotent $\hat{\tau}_n = \ell_n \circ \mathfrak{d}_{n+1}$, whose image cuts out the descended subalgebra inside $\mathrm{End}_{\mathbf{C}}(A_{n+1})$. The $\mathrm{SU}(2)$ examples pin both constructions to the archimedean model. The Yekutieli-lifting section that follows takes the descent involution and the surjectivity of $\mathfrak{d}_n$ as inputs to the obstruction calculus.
 > 
 > _(draft.)_
 
-### §4.4 Categorical Lifting and Quantum Characteristic Classes  `sec:yekutieli-lifting`  · 🆕 **DRAFT**  · [`yekutieli-lifting-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/lifting-and-descent/yekutieli-lifting-intro.md)
+### §4.4 Categorical Lifting and Quantum Characteristic Classes  `sec:yekutieli-lifting`  · 🆕 **DRAFT**  · [`yekutieli-lifting-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/lifting-and-descent/yekutieli-lifting-intro.md)
 
 > _[draft]_ The brane tower is built level by level, but the existence of each level depends on a cohomological obstruction vanishing. This section measures that obstruction, identifies it with a quantum characteristic class, and uses the result to upgrade a quantum universe to a quantum observable universe. We follow Yekutieli's framework for central extensions of gerbes throughout.
 > 
@@ -842,7 +842,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §4.5 Direct Limit Algebra  `sec:direct-limit`  · 🆕 **DRAFT**  · [`direct-limit-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/lifting-and-descent/direct-limit-intro.md)
+### §4.5 Direct Limit Algebra  `sec:direct-limit`  · 🆕 **DRAFT**  · [`direct-limit-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/lifting-and-descent/direct-limit-intro.md)
 
 > _[draft]_ The brane tower carries a coherent QOU structure at every level, and the categorical lifting machinery of the previous section ensures the levels assemble. We now pass to the colimit and study the algebra that emerges.
 > 
@@ -852,7 +852,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §4.6 Mass in the Brane Tower  `sec:mass-brane`  · 🆕 **DRAFT**  · [`mass-brane-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/lifting-and-descent/mass-brane-intro.md)
+### §4.6 Mass in the Brane Tower  `sec:mass-brane`  · 🆕 **DRAFT**  · [`mass-brane-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/lifting-and-descent/mass-brane-intro.md)
 
 > _[draft]_ The direct-limit algebra of the previous section is the arena in which a categorical notion of mass becomes available. This section defines that notion as a Frobenius trace, shows it is well-defined and unique, and connects it to the obstruction class through Euler-characteristic stability.
 > 
@@ -862,7 +862,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §4.7 Betti Numbers and Harmonic Basis  `sec:betti-harmonic`  · 🆕 **DRAFT**  · [`betti-harmonic-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/lifting-and-descent/betti-harmonic-intro.md)
+### §4.7 Betti Numbers and Harmonic Basis  `sec:betti-harmonic`  · 🆕 **DRAFT**  · [`betti-harmonic-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/lifting-and-descent/betti-harmonic-intro.md)
 
 > _[draft]_ The Euler characteristic is stable along the tower, but it aggregates Hodge-theoretic data we now want to expose. This section refines the count into Betti numbers, fixes a $q$-harmonic basis, and uses the curvature commutator to sort the basis into fermionic and bosonic sectors.
 > 
@@ -872,7 +872,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §4.8 Descent  `ssec:descent`  · ✓ existing  · [`descent-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/lifting-and-descent/descent-intro.md)
+### §4.8 Descent  `ssec:descent`  · ✓ existing  · [`descent-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/lifting-and-descent/descent-intro.md)
 
 > The :refterm[descent]{#descent} machinery connects the infinite brane tower to finite-dimensional
 > geometry.  Given a quantum observable universe $(\mathbf{C}, A, \tau)$ with
@@ -885,7 +885,7 @@ author refinement pass.
 > develops the :refterm[descent]{#descent} involution, its eigenspace decomposition, and the
 > topological mass formula that results.
 
-### §4.9 Cosimplicial Crossed Groupoid Structure  `ssec:cosimplicial-crossed-groupoid`  · ✓ existing  · [`cosimplicial-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/lifting-and-descent/cosimplicial-intro.md)
+### §4.9 Cosimplicial Crossed Groupoid Structure  `ssec:cosimplicial-crossed-groupoid`  · ✓ existing  · [`cosimplicial-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/lifting-and-descent/cosimplicial-intro.md)
 
 > The recursive brane tower carries a higher-categorical structure that
 > organises the transitions between levels into a cosimplicial crossed
@@ -893,7 +893,7 @@ author refinement pass.
 > extensions of gerbes [yekutieli2010] furnishes exactly the triples
 > $(x, g, a)$ needed to define the face and degeneracy maps.
 
-### §4.10 Localized Knots  `sec:localized-knots`  · ✓ existing  · [`localized-knot-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/lifting-and-descent/localized-knot-intro.md)
+### §4.10 Localized Knots  `sec:localized-knots`  · ✓ existing  · [`localized-knot-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/lifting-and-descent/localized-knot-intro.md)
 
 > The preceding sections established the $q$-torsion as a geometric invariant
 > of the brane tower, and the topological decomposition of mass showed that
@@ -910,7 +910,7 @@ author refinement pass.
 > $\mathbb{P}(V) \cong \mathbb{CP}^1$, producing the trajectories observed
 > in the time-evolution display.
 
-### §4.11 Archimedean Specialisations  `sec:archimedean-lifting`  · 🆕 **DRAFT**  · [`archimedean-lifting-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/lifting-and-descent/archimedean-lifting-intro.md)
+### §4.11 Archimedean Specialisations  `sec:archimedean-lifting`  · 🆕 **DRAFT**  · [`archimedean-lifting-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/lifting-and-descent/archimedean-lifting-intro.md)
 
 > _[draft]_ The preceding sections developed the lifting, descent, and mass machinery over a generic ring $R$. This section specialises everything to the archimedean realisation $R = \mathbb{R}$, where the brane tower becomes a tower of smooth jet bundles $J^1 \mathcal{S}_n$ and the categorical mass identity becomes a multiplicative integral. We collect here the corollaries and lemmas that ground the abstract framework in differential geometry.
 > 
@@ -925,7 +925,7 @@ author refinement pass.
 
 ## Ch 5 — Braids and Knots  `braids-and-knots`
 
-### §5.1 Introduction  `sec:path-integrals-intro`  · ✓ existing  · [`intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/intro.md)
+### §5.1 Introduction  `sec:path-integrals-intro`  · ✓ existing  · [`intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/braids-and-knots/intro.md)
 
 > In the QOU framework, traditional path integrals are replaced by finite sums
 > over the discrete fibre structure.  Since the base space $B$ and each fibre are
@@ -953,7 +953,7 @@ author refinement pass.
 > [Chapter 9](#chap:descartes-universe); the physical predictions it generates
 > are collected in [Chapter 11](#chap:observations).
 
-### §5.2 Categorical origin of braiding  `sec:categorical-braiding`  · ✓ existing  · [`categorical-braiding-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/categorical-braiding-intro.md)
+### §5.2 Categorical origin of braiding  `sec:categorical-braiding`  · ✓ existing  · [`categorical-braiding-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/braids-and-knots/categorical-braiding-intro.md)
 
 > The braid group is conventionally introduced through the topology of
 > configuration spaces or knot complements.  In the QOU framework, however,
@@ -961,32 +961,32 @@ author refinement pass.
 > geometric realisation and carries over unchanged to non-archimedean settings
 > ([Chapter 5](#chap:models-qou)) where knot complements in $S^3$ are unavailable.
 
-### §5.3 Braid group and symmetric group  `sec:braid-symmetric`  · ✓ existing  · [`braid-symmetric-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/braid-symmetric-intro.md)
+### §5.3 Braid group and symmetric group  `sec:braid-symmetric`  · ✓ existing  · [`braid-symmetric-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/braids-and-knots/braid-symmetric-intro.md)
 
 > With the categorical origin established, we now give explicit presentations
 > and representations of the braid group.
 
-### §5.4 $\\mathrm{SU}(2)$ and $\\mathrm{SO}(3)$ framework  `sec:su2-so3`  · ✓ existing  · [`su2-so3-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/su2-so3-intro.md)
+### §5.4 $\\mathrm{SU}(2)$ and $\\mathrm{SO}(3)$ framework  `sec:su2-so3`  · ✓ existing  · [`su2-so3-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/braids-and-knots/su2-so3-intro.md)
 
 > 
 
-### §5.5 Braid involutions and holonomy  `sec:braid-involutions`  · ✓ existing  · [`braid-involutions-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/braid-involutions-intro.md)
+### §5.5 Braid involutions and holonomy  `sec:braid-involutions`  · ✓ existing  · [`braid-involutions-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/braids-and-knots/braid-involutions-intro.md)
 
 > 
 
-### §5.6 The trefoil knot  `sec:trefoil-knot`  · ✓ existing  · [`trefoil-knot-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/trefoil-knot-intro.md)
+### §5.6 The trefoil knot  `sec:trefoil-knot`  · ✓ existing  · [`trefoil-knot-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/braids-and-knots/trefoil-knot-intro.md)
 
 > 
 
-### §5.7 Knot fundamental groups  `sec:knot-fundamental-groups`  · ✓ existing  · [`knot-fundamental-groups-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/knot-fundamental-groups-intro.md)
+### §5.7 Knot fundamental groups  `sec:knot-fundamental-groups`  · ✓ existing  · [`knot-fundamental-groups-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/braids-and-knots/knot-fundamental-groups-intro.md)
 
 > 
 
-### §5.8 Universal enveloping algebras and quantum groups  `sec:enveloping-algebras`  · ✓ existing  · [`enveloping-algebras-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/enveloping-algebras-intro.md)
+### §5.8 Universal enveloping algebras and quantum groups  `sec:enveloping-algebras`  · ✓ existing  · [`enveloping-algebras-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/braids-and-knots/enveloping-algebras-intro.md)
 
 > 
 
-### §5.9 Categorical Möbius energy and self-avoidance  `sec:mobius-energy`  · 🆕 **DRAFT**  · [`mobius-energy-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/mobius-energy-intro.md)
+### §5.9 Categorical Möbius energy and self-avoidance  `sec:mobius-energy`  · 🆕 **DRAFT**  · [`mobius-energy-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/braids-and-knots/mobius-energy-intro.md)
 
 > _[draft]_ The previous section produced the universal $R$-matrix for $\mathcal{U}_q(\mathfrak{su}(2))$, fixing the braiding on $\mathbf{Rep}(\mathcal{U}_q(\mathfrak{su}(2)))$. With the braiding in hand, we can extract a numerical invariant of a closed strand: an energy that grows when the strand folds back on itself. We define it categorically and check that it reproduces the classical Möbius energy in the limit $q \to 1$.
 > 
@@ -994,7 +994,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §5.10 Crossing energy and Coulomb charge  `sec:crossing-energy`  · 🆕 **DRAFT**  · [`crossing-energy-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/crossing-energy-intro.md)
+### §5.10 Crossing energy and Coulomb charge  `sec:crossing-energy`  · 🆕 **DRAFT**  · [`crossing-energy-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/braids-and-knots/crossing-energy-intro.md)
 
 > _[draft]_ The previous section converted the $R$-matrix into a global energy for a closed strand. We now localise that energy at the points where strands cross. Each crossing has a sign and a weight, and the weights are forced on us by the Hecke relation rather than chosen by hand; the consequence is a per-crossing decomposition that splits cleanly into a strong baseline and an electromagnetic correction.
 > 
@@ -1002,7 +1002,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §5.11 Lagrange Resolvents and $q$-Deformed Kinematics  `sec:lagrange-q-kinematics`  · 🆕 **DRAFT**  · [`lagrange-q-kinematics-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/lagrange-q-kinematics-intro.md)
+### §5.11 Lagrange Resolvents and $q$-Deformed Kinematics  `sec:lagrange-q-kinematics`  · 🆕 **DRAFT**  · [`lagrange-q-kinematics-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/braids-and-knots/lagrange-q-kinematics-intro.md)
 
 > _[draft]_ The previous section read kinematic data off a single crossing. We now diagonalise the cyclic symmetry that ties crossings together. The relevant cyclic group is $C_5 \subset S_5$ acting on the five branch points of Bring's surface, and the diagonalisation is the discrete Fourier transform — the Lagrange resolvents. Once $C_5$ is diagonal, the categorical analogues of momentum, angular momentum and energy fall out as the natural eigencoordinates.
 > 
@@ -1010,13 +1010,13 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §5.12 Exceptional Divisor and Vertex Operators  `sec:exceptional-divisor-reeb`  · 🆕 **DRAFT**  · [`exceptional-divisor-reeb-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/exceptional-divisor-reeb-intro.md)
+### §5.12 Exceptional Divisor and Vertex Operators  `sec:exceptional-divisor-reeb`  · 🆕 **DRAFT**  · [`exceptional-divisor-reeb-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/braids-and-knots/exceptional-divisor-reeb-intro.md)
 
 > _[draft]_ The Lagrange resolvents of the previous section diagonalised the $C_5$-action on Bring's surface but did not yet provide an operator algebra acting along the resolvent eigenlines. We now blow up a brane point $p$ and read the missing operators off the resulting exceptional divisor. The blow-up replaces $p$ by a $\mathbb{CP}^1$ that supports a Reeb circle bundle, and vertex operators on the resulting bundle play the role of a state-operator correspondence on the substrate. The section opens with **Exceptional divisor at $p$** (def), continues with **Reeb bundle over the exceptional divisor** (def) and the interpretive **Reeb vector field on the exceptional divisor** (rem), and culminates in **Vertex operator on the exceptional divisor** (def) together with the **VOA--QOU dictionary** (rem) that pins each vertex-algebra datum to the categorical structure already in play. The next section, **Vertex Factorisation and the Markov Trace**, takes the vertex operator as given and shows that every operator acting on the categorical state space factors through the exceptional divisor.
 > 
 > _(draft.)_
 
-### §5.13 Vertex Factorisation and the Markov Trace  `sec:vertex-factorisation`  · 🆕 **DRAFT**  · [`vertex-factorisation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/vertex-factorisation-intro.md)
+### §5.13 Vertex Factorisation and the Markov Trace  `sec:vertex-factorisation`  · 🆕 **DRAFT**  · [`vertex-factorisation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/braids-and-knots/vertex-factorisation-intro.md)
 
 > _[draft]_ The exceptional divisor of the previous section carries a Reeb bundle and vertex operators, but we have not yet shown that this local structure is the unique source of all the operator content the chapter uses. We close that gap now. Every vertex operator factors through the exceptional divisor; the resulting factorisation matches the Markov trace term by term, and the two structures together identify a Feynman path integral with a categorical trace.
 > 
@@ -1026,7 +1026,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §5.14 Transfer Matrix and Topological Mass  `sec:transfer-matrix-mass`  · 🆕 **DRAFT**  · [`transfer-matrix-mass-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/transfer-matrix-mass-intro.md)
+### §5.14 Transfer Matrix and Topological Mass  `sec:transfer-matrix-mass`  · 🆕 **DRAFT**  · [`transfer-matrix-mass-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/braids-and-knots/transfer-matrix-mass-intro.md)
 
 > _[draft]_ The previous section identified the Feynman amplitude with the Markov trace through vertex factorisation. We now compile the same data into a single operator on the categorical state space — the transfer matrix — and read mass off it. The transfer matrix is level-independent in a precise sense, and the topological mass formula it produces is the version every later section consumes.
 > 
@@ -1036,13 +1036,13 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §5.15 Braiding Relations and the Spectral Filter  `sec:braiding-relations`  · 🆕 **DRAFT**  · [`braiding-relations-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/braiding-relations-intro.md)
+### §5.15 Braiding Relations and the Spectral Filter  `sec:braiding-relations`  · 🆕 **DRAFT**  · [`braiding-relations-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/braids-and-knots/braiding-relations-intro.md)
 
 > _[draft]_ The transfer matrix of the previous section is built from Hecke generators, but we have not yet asked which Hecke relations the categorical axioms actually enforce. We now read those relations off the rigid monoidal structure and use them as a spectral filter on candidate braid configurations. The section pivots on **QU and QUO axioms as relations on Hecke generators** (prop), which translates the quantum-universe and quantum-universe-observation axioms into a finite list of polynomial relations on the generators, and on its prolongation **QU/QUO and cohomological relations on the jet bundle** (prop), which lifts those relations along the brane-tower jet bundle. The framing remark **Skein relations as an archimedean shadow** (rem) records that the familiar Skein relations are the archimedean image of the categorical identities, and the closing remark **Behaviour of $T_{2,11}$ on the jet bundle ideals** (rem) puts the filter to work, exhibiting the $(2,11)$ torus knot as the genus-bound test case that detects the ideal structure. The next section, **Hadron Algebra and Knot Factorisation**, takes the filtered relation algebra as fixed and uses it to define the hadron composite and its factorisation into constituent knots.
 > 
 > _(draft.)_
 
-### §5.16 Hadron Algebra and Knot Factorisation  `sec:hadron-algebra`  · 🆕 **DRAFT**  · [`hadron-algebra-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/hadron-algebra-intro.md)
+### §5.16 Hadron Algebra and Knot Factorisation  `sec:hadron-algebra`  · 🆕 **DRAFT**  · [`hadron-algebra-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/braids-and-knots/hadron-algebra-intro.md)
 
 > _[draft]_ The previous section produced a relation algebra on Hecke generators. We now use those relations to single out the configurations that bind into stable composites. A hadron is a knot composite whose Coulomb charge and crossing energy place it in the stability stratum of the relation algebra; an algebraic Gröbner reduction then factorises any closed strand uniquely into hadron constituents.
 > 
@@ -1050,7 +1050,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §5.17 Skein Generation and Particle Correspondence  `sec:skein-particle-generation`  · 🆕 **DRAFT**  · [`skein-particle-generation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/skein-particle-generation-intro.md)
+### §5.17 Skein Generation and Particle Correspondence  `sec:skein-particle-generation`  · 🆕 **DRAFT**  · [`skein-particle-generation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/braids-and-knots/skein-particle-generation-intro.md)
 
 > _[draft]_ The previous section established that hadrons factorise uniquely into knot constituents under the relation algebra. We now show that a single family of fundamental strands — the torus knots $T_{m,n}$ — already generates every hadron under the Skein-relation moves. The corresponding mass is then read off the linking and the constituent volume, and the resulting dictionary identifies each torus generator with a physical particle.
 > 
@@ -1058,7 +1058,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §5.18 Bundle Structure and Observation  `sec:bundle-observation`  · 🆕 **DRAFT**  · [`bundle-observation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/bundle-observation-intro.md)
+### §5.18 Bundle Structure and Observation  `sec:bundle-observation`  · 🆕 **DRAFT**  · [`bundle-observation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/braids-and-knots/bundle-observation-intro.md)
 
 > _[draft]_ The knot--particle dictionary of the previous section assigned a particle to each knot composite but left the carrier untouched: the state bundle of the brane, the observation map, and the colour-fibre dynamics. We now make the carrier explicit. A bundle initial condition fixes the data over the brane, the observation map factors through a braid, and the resulting sorting deposits energy $q + q^{-1}$ per crossing in the colour fibre — making the dictionary measurable.
 > 
@@ -1066,7 +1066,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §5.19 Borromean Baryons and Reidemeister Invariance  `sec:borromean-reidemeister`  · 🆕 **DRAFT**  · [`borromean-reidemeister-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/borromean-reidemeister-intro.md)
+### §5.19 Borromean Baryons and Reidemeister Invariance  `sec:borromean-reidemeister`  · 🆕 **DRAFT**  · [`borromean-reidemeister-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/braids-and-knots/borromean-reidemeister-intro.md)
 
 > _[draft]_ The bundle and observation data of the previous section make the knot--particle dictionary measurable. We now run the dictionary on its hardest test case: the Borromean baryon, three pairwise-unlinked unknots that nonetheless bind into a stable composite. Borromean binding forces the typed crossing operator, the nucleon Hecke element, and a numerical mass formula that the rest of the chapter has to match.
 > 
@@ -1076,7 +1076,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §5.20 Categorical Mass Foundations  `sec:categorical-mass-foundations`  · 🆕 **DRAFT**  · [`categorical-mass-foundations-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/categorical-mass-foundations-intro.md)
+### §5.20 Categorical Mass Foundations  `sec:categorical-mass-foundations`  · 🆕 **DRAFT**  · [`categorical-mass-foundations-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/braids-and-knots/categorical-mass-foundations-intro.md)
 
 > _[draft]_ The previous section established Reidemeister invariance of mass on the Borromean test case. We now build the foundations on which every subsequent mass calculation rests. Mass is a categorical invariant: it equals the Markov trace of a distinguished element of the Hecke algebra, it splits along the descent involution into a base-level term plus a transient blow-up correction, and it admits a recursive symbolic reducer whose disjoint-product property lets us compute it on multi-atom composites.
 > 
@@ -1088,7 +1088,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §5.21 Calibration and Algebraic Mass Formula  `sec:calibration-algebraic-mass`  · 🆕 **DRAFT**  · [`calibration-algebraic-mass-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/calibration-algebraic-mass-intro.md)
+### §5.21 Calibration and Algebraic Mass Formula  `sec:calibration-algebraic-mass`  · 🆕 **DRAFT**  · [`calibration-algebraic-mass-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/braids-and-knots/calibration-algebraic-mass-intro.md)
 
 > _[draft]_ The previous section produced a categorical mass functor that is dimensionless and unfixed in scale. We now insert the minimum data needed to anchor it to physical units. The three inputs are aligned with the three Wedderburn channels of $H_3(R, q)$, so the calibration is structural rather than empirical: each channel takes one anchor, and the rest of the formula is forced. From the anchored mass we then derive the algebraic mass formula, the Hoefsmit seminormal $R$-matrix, the Habiro brane tower, and the quantum-dilogarithm $\Phi_q$ that compiles the whole chapter's numerical witnesses.
 > 
@@ -1100,7 +1100,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §5.22 Atom, Isotope, and Confinement Levels  `sec:atom-isotope-confinement`  · 🆕 **DRAFT**  · [`atom-isotope-confinement-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/atom-isotope-confinement-intro.md)
+### §5.22 Atom, Isotope, and Confinement Levels  `sec:atom-isotope-confinement`  · 🆕 **DRAFT**  · [`atom-isotope-confinement-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/braids-and-knots/atom-isotope-confinement-intro.md)
 
 > _[draft]_ The previous section calibrated the mass formula on three Wedderburn inputs. We now climb from a single atomic braid to the full confinement structure: knot operator, confinement level, atom, isotope, electron shell, and the stability test that decides which configurations survive. The shadow-price LP that ranks Wedderburn channels turns out to be the structural mechanism, so the entire ladder is read off LP-dual data.
 > 
@@ -1112,7 +1112,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §5.23 Nuclear Binding and Beta Stability  `sec:nuclear-binding-beta-stability`  · 🆕 **DRAFT**  · [`nuclear-binding-beta-stability-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/nuclear-binding-beta-stability-intro.md)
+### §5.23 Nuclear Binding and Beta Stability  `sec:nuclear-binding-beta-stability`  · 🆕 **DRAFT**  · [`nuclear-binding-beta-stability-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/braids-and-knots/nuclear-binding-beta-stability-intro.md)
 
 > _[draft]_ The confinement filtration of the previous section fixed which knot operators are admissible. We now ask which of them actually bind. The binding mechanism is a character-ratio decomposition per jet level; the level-$\ell$ coefficient is the LP-dual variable of a Frobenius-positivity constraint, with cost given by the $\ell$-th elementary symmetric polynomial in the Jucys--Murphy elements. The resulting iterative LP-dual recursion replaces seven ad-hoc mass-formula terms with a single recursion, and the beta-stability valley falls out as the level set of the Skein binding Lagrangian.
 > 
@@ -1124,7 +1124,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §5.24 Pre-Archimedean Derivation Chain and Audit  `sec:derivation-audit`  · ✓ existing  · [`pre-archimedean-derivation-chain.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/pre-archimedean-derivation-chain.md)
+### §5.24 Pre-Archimedean Derivation Chain and Audit  `sec:derivation-audit`  · ✓ existing  · [`pre-archimedean-derivation-chain.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/braids-and-knots/pre-archimedean-derivation-chain.md)
 
 > This document records the complete step-by-step pre-Archimedean derivation
 > chain that backs all mass, beta-decay, and binding-energy computations in
@@ -1512,11 +1512,11 @@ author refinement pass.
 > Every arrow is algebraic (lives in $\mathbb{Q}(q)$).  No fitting,
 > no empirical nuclear-physics constants, no analytic asymptotic content.
 
-### §5.25 Varying Euler Characteristic and the Mirror Bundle  `sec:varying-euler-mirror`  · ✓ existing  · [`varying-euler-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/varying-euler-intro.md)
+### §5.25 Varying Euler Characteristic and the Mirror Bundle  `sec:varying-euler-mirror`  · ✓ existing  · [`varying-euler-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/braids-and-knots/varying-euler-intro.md)
 
 > <!-- Content pending: varying Euler characteristic and Bring's surface variants. -->
 
-### §5.26 Classical limit and the macroscopic continuum  `sec:classical-limit`  · ✓ existing  · [`classical-limit-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/classical-limit-intro.md)
+### §5.26 Classical limit and the macroscopic continuum  `sec:classical-limit`  · ✓ existing  · [`classical-limit-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/braids-and-knots/classical-limit-intro.md)
 
 > The preceding sections established that the algebraic substrate is
 > unconditionally stable at the $q$-scale: the Hasse--Weil bound
@@ -1574,7 +1574,7 @@ author refinement pass.
 
 ## Ch 6 — Models of QOUs  `models-of-qous`
 
-### §6.1 Physical interpretation and the main result  `sec:physical-interpretation`  · ✓ existing  · [`models-of-qous-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/models-of-qous/models-of-qous-intro.md)
+### §6.1 Physical interpretation and the main result  `sec:physical-interpretation`  · ✓ existing  · [`models-of-qous-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/models-of-qous/models-of-qous-intro.md)
 
 > The axioms of a quantum observable universe admit realisations over
 > diverse ground fields and geometric settings.  This chapter surveys
@@ -1591,7 +1591,7 @@ author refinement pass.
 > the flexibility of the categorical framework while identifying the
 > structural constraints that are universal.
 
-### §6.2 Archimedean specialisations  `sec:archimedean-models`  · 🆕 **DRAFT**  · [`archimedean-models-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/models-of-qous/archimedean-models-intro.md)
+### §6.2 Archimedean specialisations  `sec:archimedean-models`  · 🆕 **DRAFT**  · [`archimedean-models-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/models-of-qous/archimedean-models-intro.md)
 
 > _[draft]_ We turn to archimedean specialisations: realisations of the QOU axioms over $\mathbb{R}$ and $\mathbb{C}$ where the substrate parameter $q$ varies smoothly and the categorical data refines to differential geometry on a contact $3$-manifold. The thread set by the main commutative diagram of the preceding section is that every archimedean QOU arises as a $\mathbb{P}^1(\mathbb{C})$-bundle over a strictly pseudoconvex CR base with an $\mathrm{SU}(2)$ frame; the present section populates that thread with concrete fibre geometries.
 > 
@@ -1603,7 +1603,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §6.3 Non-Archimedean models  `sec:non-archimedean-models`  · ✓ existing  · [`categorical-reformulation.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/models-of-qous/categorical-reformulation.md)
+### §6.3 Non-Archimedean models  `sec:non-archimedean-models`  · ✓ existing  · [`categorical-reformulation.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/models-of-qous/categorical-reformulation.md)
 
 > * Rephrase the QOU definitions
 >   ([Chapter](#chap\:qou)) in the language of monoidal categories
@@ -1621,7 +1621,7 @@ author refinement pass.
 >   perspective; motivate categorical analogies
 >   (e.g. Tannaka--Krein duality).
 
-### §6.4 Lifting via Formal Groups and Witt Vectors  `sec:witt-vector-lifting`  · ✓ existing  · [`witt-vector-lifting-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/models-of-qous/witt-vector-lifting-intro.md)
+### §6.4 Lifting via Formal Groups and Witt Vectors  `sec:witt-vector-lifting`  · ✓ existing  · [`witt-vector-lifting-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/models-of-qous/witt-vector-lifting-intro.md)
 
 > The $\mathbb{Q}_\pp$ realisation ([$p$-adic realisation](#ex:p-adic-realisation)) provides
 > a QOU over characteristic $0$, while the $\mathbb{F}_\pp$ realisation
@@ -1630,13 +1630,13 @@ author refinement pass.
 > *Witt vector functor* $W$ and the theory of formal groups
 > over $\pp$-adic rings.
 
-### §6.5 Finite fields and Jones polynomials  `sec:finite-fields`  · 🆕 **DRAFT**  · [`finite-fields-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/models-of-qous/finite-fields-intro.md)
+### §6.5 Finite fields and Jones polynomials  `sec:finite-fields`  · 🆕 **DRAFT**  · [`finite-fields-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/models-of-qous/finite-fields-intro.md)
 
 > _[draft]_ We close the catalogue of general models with realisations over finite fields, where the substrate parameter $q$ ranges over $\mathbb{F}_\pp^{\times}$ (or a primitive $\ell$-th root of unity in $\overline{\mathbb{F}}_\pp$ with $\ell$ coprime to $\pp$) and the categorical data lives in a fusion category with finitely many simple objects. **$\mathbb{F}_\pp$ realisation** (ex) constructs $\mathrm{Rep}_{\mathbb{F}_\pp}(\mathrm{SU}_q(2))$ as a QOU and checks the Frobenius and observability axioms on the regular representation, supplying the finite-field counterpart of the Calabi--Yau and Bring's-surface witnesses of the archimedean section. **Outlook for finite-field models** (prose) lists the reductions to $\mathbb{F}_\pp$ from $\mathbb{Q}_\pp$, the finite-group representation theory, and the Betti-number comparison with characteristic zero. **Jones polynomials** (prose) sketches how the universal $R$-matrix of $U_q(\mathfrak{sl}_2)$ at a root of unity produces the Jones invariant $J_K(q)$ via the Markov trace, recovering the same knot-theoretic output from both the archimedean and finite-field models when both apply. The next section, **Mostow confinement and the Archimedean wall**, takes that compatibility as the setting for its rigidity-pairing narrative.
 > 
 > _(draft.)_
 
-### §6.6 Mostow confinement and the Archimedean wall  `sec:archimedean-encounter`  · 🆕 **DRAFT**  · [`archimedean-encounter-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/models-of-qous/archimedean-encounter-intro.md)
+### §6.6 Mostow confinement and the Archimedean wall  `sec:archimedean-encounter`  · 🆕 **DRAFT**  · [`archimedean-encounter-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/models-of-qous/archimedean-encounter-intro.md)
 
 > _[draft]_ We narrate the archimedean wall that the preceding section specifies formally: how the hyperbolic-rigidity input on the geometric side of the wall meets the SDP-uniqueness input on the algebraic side, and what the existing literature has already established about each. **Mostow confinement: hyperbolic rigidity locks the mass eigenvalue** (prop) states the geometric half — under the conditional-class hypothesis `MostowRigidity`, the hyperbolic volume of the link complement determines a discrete mass spectrum. **Algebraic and geometric rigidity: SDPSlaterUniqueness paired with MostowRigidity** (rem) pairs that geometric rigidity with the SDP Slater-uniqueness class on the algebraic side, exhibiting a single picture of why encounters have unique outcomes on both sides of the wall. **Literature precedents for the geometric encounter picture** (rem) records the matches with Mostow, Thurston, Neumann--Zagier, Witten, and Kashaev. The next section, **Fluid dynamics moved to Chapter 10**, redirects readers to the brane fluid development; the chapter then resumes with the Descartes universe in Part B, which consumes the archimedean wall as its setting.
 > 
@@ -1645,7 +1645,7 @@ author refinement pass.
 
 ## Ch 7 — The Descartes Universe  `descartes-universe`
 
-### §7.1 Why this universe  `sec:descartes-preamble`  · ✓ existing  · [`descartes-preamble.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/descartes-preamble.md)
+### §7.1 Why this universe  `sec:descartes-preamble`  · ✓ existing  · [`descartes-preamble.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/descartes-universe/descartes-preamble.md)
 
 > We inhabit a universe in which three facts are immediately apparent
 > to any observer:
@@ -1680,7 +1680,7 @@ author refinement pass.
 > This chapter develops the geometry of this surface and derives the
 > Descartes condition that forces $\chi = -6$.
 
-### §7.2 Bring  `sec:brings-surface-qou`  · 🆕 **DRAFT**  · [`brings-surface-qou-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/brings-surface-qou-intro.md)
+### §7.2 Bring  `sec:brings-surface-qou`  · 🆕 **DRAFT**  · [`brings-surface-qou-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/descartes-universe/brings-surface-qou-intro.md)
 
 > _[draft]_ Having laid out in the preamble why three colors, a Reeb flow,
 > and a $\chi = -6$ ledger force the same surface, we now fix that
@@ -1706,7 +1706,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §7.3 Color tube coordinates  `sec:color-tube-coords`  · 🆕 **DRAFT**  · [`color-tube-coords-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/color-tube-coords-intro.md)
+### §7.3 Color tube coordinates  `sec:color-tube-coords`  · 🆕 **DRAFT**  · [`color-tube-coords-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/descartes-universe/color-tube-coords-intro.md)
 
 > _[draft]_ The braid-group action on the resolvents leaves three
 > $S_5$-invariants that the previous section already named in
@@ -1730,7 +1730,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §7.4 Color fibration and elliptic curves  `sec:color-fibration-elliptic`  · 🆕 **DRAFT**  · [`color-fibration-elliptic-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/color-fibration-elliptic-intro.md)
+### §7.4 Color fibration and elliptic curves  `sec:color-fibration-elliptic`  · 🆕 **DRAFT**  · [`color-fibration-elliptic-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/descartes-universe/color-fibration-elliptic-intro.md)
 
 > _[draft]_ The intrinsic color cubic of the previous section sets up
 > exactly the data needed to identify an elliptic curve over the color
@@ -1754,7 +1754,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §7.5 Bundle structures and smoothness  `sec:brings-smoothness`  · 🆕 **DRAFT**  · [`brings-smoothness-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/brings-smoothness-intro.md)
+### §7.5 Bundle structures and smoothness  `sec:brings-smoothness`  · 🆕 **DRAFT**  · [`brings-smoothness-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/descartes-universe/brings-smoothness-intro.md)
 
 > _[draft]_ The color fibration of the previous section is well-defined
 > generically, but the geometry needs a smooth bundle to support the
@@ -1783,7 +1783,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §7.6 Spectral resolvents and gauge structures  `sec:spectral-gauge`  · 🆕 **DRAFT**  · [`spectral-gauge-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/spectral-gauge-intro.md)
+### §7.6 Spectral resolvents and gauge structures  `sec:spectral-gauge`  · 🆕 **DRAFT**  · [`spectral-gauge-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/descartes-universe/spectral-gauge-intro.md)
 
 > _[draft]_ With the smooth Bring surface and its cyclotomic reduction
 > in hand, we can write the gauge data the rest of the chapter uses.
@@ -1814,7 +1814,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §7.7 The Descartes condition and lepton spectrum  `sec:descartes-condition`  · 🆕 **DRAFT**  · [`descartes-condition-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/descartes-condition-intro.md)
+### §7.7 The Descartes condition and lepton spectrum  `sec:descartes-condition`  · 🆕 **DRAFT**  · [`descartes-condition-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/descartes-universe/descartes-condition-intro.md)
 
 > _[draft]_ The Descartes elliptic curve $\mathcal{E}_q$ of the previous
 > section names a structure; the Descartes condition is what selects
@@ -1861,7 +1861,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §7.8 The unit particle as a cohomological defect  `sec:cohomological-defect`  · ✓ existing  · [`cohomological-defect-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/cohomological-defect-intro.md)
+### §7.8 The unit particle as a cohomological defect  `sec:cohomological-defect`  · ✓ existing  · [`cohomological-defect-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/descartes-universe/cohomological-defect-intro.md)
 
 > Having established the self-dual algebraic substrate, we now ask:
 > where does matter arise? The Frobenius structure of $A$ is globally
@@ -1871,7 +1871,7 @@ author refinement pass.
 > cohomological defect, a generator of the local cohomology at the
 > singular point $z = 1$.
 
-### §7.9 Fundamental particles  `sec:fundamental-particles`  · 🆕 **DRAFT**  · [`fundamental-particles-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/fundamental-particles-intro.md)
+### §7.9 Fundamental particles  `sec:fundamental-particles`  · 🆕 **DRAFT**  · [`fundamental-particles-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/descartes-universe/fundamental-particles-intro.md)
 
 > _[draft]_ The unit particle was the simplest defect. We now populate
 > the full elementary spectrum the embeddable-knot generators of the
@@ -1933,7 +1933,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §7.10 Nuclear stability and decay  `sec:nuclear-stability-decay`  · 🆕 **DRAFT**  · [`nuclear-stability-decay-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/nuclear-stability-decay-intro.md)
+### §7.10 Nuclear stability and decay  `sec:nuclear-stability-decay`  · 🆕 **DRAFT**  · [`nuclear-stability-decay-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/descartes-universe/nuclear-stability-decay-intro.md)
 
 > _[draft]_ The valley of stability handed over by the previous section
 > is a Diophantine locus; the present section asks which transitions
@@ -1970,7 +1970,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §7.11 Atomic shells and the periodic table  `sec:atomic-shells`  · 🆕 **DRAFT**  · [`atomic-shells-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/atomic-shells-intro.md)
+### §7.11 Atomic shells and the periodic table  `sec:atomic-shells`  · 🆕 **DRAFT**  · [`atomic-shells-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/descartes-universe/atomic-shells-intro.md)
 
 > _[draft]_ The previous section handed over a Skein-polynomial
 > factorisation of the multi-nucleon link as the shape of shell
@@ -2018,7 +2018,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §7.12 The Descartes theorem  `sec:descartes-theorem`  · 🆕 **DRAFT**  · [`descartes-theorem-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/descartes-theorem-intro.md)
+### §7.12 The Descartes theorem  `sec:descartes-theorem`  · 🆕 **DRAFT**  · [`descartes-theorem-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/descartes-universe/descartes-theorem-intro.md)
 
 > _[draft]_ The atomic and nuclear spectra of the previous sections
 > are all consequences of one structural choice: $\chi(A) = -6$. The
@@ -2041,7 +2041,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §7.13 Topological mass and the knot-particle spectrum  `sec:topological-mass-spectrum`  · ✓ existing  · [`hyperbolic-volumes-prose.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/hyperbolic-volumes-prose.md)
+### §7.13 Topological mass and the knot-particle spectrum  `sec:topological-mass-spectrum`  · ✓ existing  · [`hyperbolic-volumes-prose.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/descartes-universe/hyperbolic-volumes-prose.md)
 
 > **Hyperbolic volumes and the topological mass ansatz.**
 > The key idea behind the following two propositions is that inertial mass
@@ -2081,7 +2081,7 @@ author refinement pass.
 > crossing in the color-exchange diagram, generalising the Jones-polynomial
 > Skein relation to a mass-valued setting.
 
-### §7.14 Orbital Symmetry and Cohomological Embedding  `sec:orbital-symmetry-embedding`  · 🆕 **DRAFT**  · [`orbital-symmetry-embedding-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/orbital-symmetry-embedding-intro.md)
+### §7.14 Orbital Symmetry and Cohomological Embedding  `sec:orbital-symmetry-embedding`  · 🆕 **DRAFT**  · [`orbital-symmetry-embedding-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/descartes-universe/orbital-symmetry-embedding-intro.md)
 
 > _[draft]_ The topological mass spectrum of the previous section
 > extracts particle masses from knots embedded in Bring's surface.
@@ -2111,7 +2111,7 @@ author refinement pass.
 
 ## Ch 8 — Particle Interactions and Nuclear Structure  `particle-interactions`
 
-### §8.1 The Gröbner–Shirshov reduction engine  `sec:groebner-engine`  · ✓ existing  · [`particle-interactions-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/particle-interactions/particle-interactions-intro.md)
+### §8.1 The Gröbner–Shirshov reduction engine  `sec:groebner-engine`  · ✓ existing  · [`particle-interactions-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/particle-interactions/particle-interactions-intro.md)
 
 > This chapter develops the computational engine that derives particle
 > interactions, nuclear structure, and atomic construction from the
@@ -2141,7 +2141,7 @@ author refinement pass.
 > extensions of this machinery are developed in
 > [Chapter 12](#chap:molecular-construction).
 
-### §8.2 Confinement operator selection  `sec:confinement-selection`  · 🆕 **DRAFT**  · [`confinement-selection-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/particle-interactions/confinement-selection-intro.md)
+### §8.2 Confinement operator selection  `sec:confinement-selection`  · 🆕 **DRAFT**  · [`confinement-selection-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/particle-interactions/confinement-selection-intro.md)
 
 > _[draft]_ The reduction engine of §1 produces unique normal forms but is silent on which braid words are the physically distinguished ones. We supply the missing principle here: confinement operator selection by linear and semidefinite programming over the Frobenius Gram matrix. We open with **Algebraic primality of $n$ at substrate $q$** (def) and its companions **Vacuous primality at $n = 1$** (prop) and the conjectural empirical match **Algebraic primality at $q_0$ equals the empirical magic ladder** (conj), which fix the structural notion of primality the LP and SDP machinery will detect.
 > 
@@ -2151,19 +2151,19 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §8.3 Nucleon derivation from pair production  `sec:nucleon-derivation`  · 🆕 **DRAFT**  · [`nucleon-derivation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/particle-interactions/nucleon-derivation-intro.md)
+### §8.3 Nucleon derivation from pair production  `sec:nucleon-derivation`  · 🆕 **DRAFT**  · [`nucleon-derivation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/particle-interactions/nucleon-derivation-intro.md)
 
 > _[draft]_ The LP machinery of §2 selects the Borromean operator $\mathcal{B}_3$ as the unique confinement optimum; we now feed that selection rule into the photon pair-production vertex and read off the nucleons. **Nucleon derivation from 4-term photon pair production** (prop) closes the four-term photon braid with $\mathcal{B}_3$ and recovers the proton and neutron normal forms; **Confinement universality: nucleon NF independent of photon polarization** (prop) shows that the resulting NF does not depend on the polarization of the incoming photons. The construction is packaged for downstream use as the **Derived atom $\mathcal{A}(Z, N)$ from pair production** (def), and **The full photon-to-atom derivation chain** (rem) records the chain $\gamma\gamma \to q\bar q \to \mathfrak{p}, \mathfrak{n} \to \mathcal{A}(Z, N)$ that §4 takes as given when it studies nuclear stability.
 > 
 > _(draft.)_
 
-### §8.4 Nuclear binding and magic numbers  `sec:nuclear-binding`  · 🆕 **DRAFT**  · [`nuclear-binding-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/particle-interactions/nuclear-binding-intro.md)
+### §8.4 Nuclear binding and magic numbers  `sec:nuclear-binding`  · 🆕 **DRAFT**  · [`nuclear-binding-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/particle-interactions/nuclear-binding-intro.md)
 
 > _[draft]_ With the derived atom $\mathcal{A}(Z, N)$ in hand, the next question is which $(Z, N)$ pairs are stable and where the shell closures fall. **Demand profile determines nuclear and atomic stability** (prop) shows that the LP demand profile alone fixes stability; **Three operator regimes for nuclear binding** (prop) partitions the $(Z, N)$ lattice into torus-knot, Hopf-link, and post-magic regimes and reproduces the empirical magic ladder $2, 8, 20, 28, 50, 82, 126$ from the regime transitions. The section closes on the global statement **The valley of stability is the demand-minimizing locus in $(Z, N)$-space** (conj), which §5 then verifies on the explicit derived atoms $\mathrm{H}$, $\mathrm{D}$, $\mathrm{He}\text{-}4$, $\mathrm{Li}\text{-}6$, and $\mathrm{O}\text{-}16$.
 > 
 > _(draft.)_
 
-### §8.5 Derived atom examples  `sec:derived-atoms`  · 🆕 **DRAFT**  · [`derived-atoms-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/particle-interactions/derived-atoms-intro.md)
+### §8.5 Derived atom examples  `sec:derived-atoms`  · 🆕 **DRAFT**  · [`derived-atoms-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/particle-interactions/derived-atoms-intro.md)
 
 > _[draft]_ The three operator regimes of §4 are abstract; we instantiate them on five concrete light nuclei to confirm that the regime predictions match the empirical normal forms and binding energies. **Hydrogen: full normal form from pair production** (ex) is the base case --- a single proton with no internucleon crossings --- and **Deuterium: proton--neutron binding normal form** (ex) supplies the simplest two-nucleon braid.
 > 
@@ -2171,13 +2171,13 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §8.6 Typed Garside element and Gram-weighted $\\mathcal{Q}_q$-value  `sec:garside-gram`  · 🆕 **DRAFT**  · [`garside-gram-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/particle-interactions/garside-gram-intro.md)
+### §8.6 Typed Garside element and Gram-weighted $\\mathcal{Q}_q$-value  `sec:garside-gram`  · 🆕 **DRAFT**  · [`garside-gram-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/particle-interactions/garside-gram-intro.md)
 
 > _[draft]_ The derived-atom examples of §5 produced specific normal forms but kept the Frobenius Gram weighting implicit. **Typed Garside element of the nuclear braid** (def) names the staircase form that organises the typed crossings of the nuclear braid; **Gram-weighted $\mathcal{Q}_q$-value from Frobenius norm of conversion channels** (prop) defines the $\mathcal{Q}_q$-value as the $G^{-1}$-weighted Frobenius norm over conversion channels and exhibits it as the right input for the transfer-matrix calculations of §7. **Eigenstructure of the Gram weight and the adjoint character** (rem) records that the Gram eigenstructure is the adjoint character on Wedderburn blocks, anchoring the $\mathcal{Q}_q$-value in the Jucys--Murphy spectral data.
 > 
 > _(draft.)_
 
-### §8.7 Transfer matrices and beta decay  `sec:transfer-beta-decay`  · 🆕 **DRAFT**  · [`transfer-beta-decay-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/particle-interactions/transfer-beta-decay-intro.md)
+### §8.7 Transfer matrices and beta decay  `sec:transfer-beta-decay`  · 🆕 **DRAFT**  · [`transfer-beta-decay-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/particle-interactions/transfer-beta-decay-intro.md)
 
 > _[draft]_ The Gram-weighted $\mathcal{Q}_q$-value of §6 is the right input for beta decay; we now exhibit beta decay as a transfer-matrix insertion in the Skein-polynomial factorisation. **The nuclear Skein polynomial as a transfer matrix product in $q$** (prop) factors the Skein polynomial of the nuclear braid as a product of $2 \times 2$ transfer matrices, and **Transfer Matrix Operator for Nuclear Braid Interactions** (def) names the universal operator that this factorisation produces. **Beta decay as a universal matrix-valued polynomial in $q$** (prop) is the central structural fact: every beta-decay event becomes a single matrix insertion in the same universal polynomial.
 > 
@@ -2187,7 +2187,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §8.8 Atomic braid and Wedderburn mass formula  `sec:atomic-braid-mass`  · 🆕 **DRAFT**  · [`atomic-braid-mass-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/particle-interactions/atomic-braid-mass-intro.md)
+### §8.8 Atomic braid and Wedderburn mass formula  `sec:atomic-braid-mass`  · 🆕 **DRAFT**  · [`atomic-braid-mass-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/particle-interactions/atomic-braid-mass-intro.md)
 
 > _[draft]_ The transfer matrices of §7 act on the nuclear braid alone; we now attach the electron strands to obtain the full atomic braid and derive the Wedderburn mass formula. **Atomic braid $H_{A+Z}(q)$** (def) names the $(A+Z)$-strand Hecke algebra carrying $A$ nucleon strands plus $Z$ electron strands, and **LP stability of the atomic braid** (prop) extends the LP confinement criterion to this larger braid. **Atomic braid normal form witness** (prop) supplies the per-atom NF witness against which every mass calculation is cross-checked.
 > 
@@ -2199,7 +2199,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §8.9 Branching Q-value derivation  `sec:branching-qvalue`  · 🆕 **DRAFT**  · [`branching-qvalue-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/particle-interactions/branching-qvalue-intro.md)
+### §8.9 Branching Q-value derivation  `sec:branching-qvalue`  · 🆕 **DRAFT**  · [`branching-qvalue-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/particle-interactions/branching-qvalue-intro.md)
 
 > _[draft]_ The Wedderburn mass formula of §8 gives total atomic masses; what remains is the per-channel decomposition that organises individual beta-decay branches. **Per-nucleon channel decomposition via $S_3^A$ branching** (def) names the $S_3^A$ branching that separates the per-nucleon channels, **Spectator normalization factor** (def) factors out the spectator contribution to leave the active channel exposed, and **Exact factorization of the branching Q-value** (prop) writes the branching $\mathcal{Q}_q$-value as an exact character-sum product over those channels. The first structural theorem is **Parity regime selection for Q-values** (thm): the sign and regime of the $\mathcal{Q}_q$-value is fixed by the parity of the mass number $A$.
 > 
@@ -2210,7 +2210,7 @@ author refinement pass.
 
 ## Ch 9 — Physical Observations  `observations`
 
-### §9.1 The Substrate Consistency Window  `sec:substrate-consistency`  · ✓ existing  · [`observations-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/observations-intro.md)
+### §9.1 The Substrate Consistency Window  `sec:substrate-consistency`  · ✓ existing  · [`observations-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/observations/observations-intro.md)
 
 > This chapter collects the physical predictions of the Descartes
 > universe and compares them with experimental data.  The knot-to-particle
@@ -2251,13 +2251,13 @@ author refinement pass.
 > table juxtaposes "QOU prediction" against "CODATA value", both are
 > in MeV; the ratio is dimensionless and substrate-derived.
 
-### §9.2 Particle Identification Conjectures  `sec:particle-conjectures`  · 🆕 **DRAFT**  · [`particle-conjectures-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/particle-conjectures-intro.md)
+### §9.2 Particle Identification Conjectures  `sec:particle-conjectures`  · 🆕 **DRAFT**  · [`particle-conjectures-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/observations/particle-conjectures-intro.md)
 
 > _[draft]_ With the substrate consistency window in hand, the next question is which knots correspond to which particles. Four blocks pin down the dictionary: **Quarks as Borromean-linked unknots in the exceptional divisor** (conj) proposes the quark identification, **The Higgs boson as $T(2,8)$: the link spanning three exceptional divisors** (conj) places the Higgs as a torus link, **$S_5$-equivariant torus-knot embeddings: only $T_{2,3}$ and $T_{2,5}$** (prop) constrains the embeddings the Bring-surface symmetry permits, and **Symmetry-preserving versus symmetry-broken lepton generators** (rem) sorts the lepton sector by which generators commute with the residual symmetry. These four assignments are the input the double-slit treatment in the next section consumes when distinguishing photon from massive-particle propagation.
 > 
 > _(draft.)_
 
-### §9.3 Double-slit experiment  `sec:double-slit-experiment`  · ✓ existing  · [`double-slit-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/double-slit-intro.md)
+### §9.3 Double-slit experiment  `sec:double-slit-experiment`  · ✓ existing  · [`double-slit-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/observations/double-slit-intro.md)
 
 > The double-slit experiment provides the sharpest test of any quantum
 > framework: it demands a single formalism that reproduces interference
@@ -2294,13 +2294,13 @@ author refinement pass.
 > which recorded 6235 individual electron detections at 600 eV
 > ($\lambda = 50$ pm, slit width $a = 50$ nm, separation $d = 280$ nm).
 
-### §9.4 Substrate Parameter from Lepton Masses  `sec:substrate-from-leptons`  · 🆕 **DRAFT**  · [`substrate-from-leptons-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/substrate-from-leptons-intro.md)
+### §9.4 Substrate Parameter from Lepton Masses  `sec:substrate-from-leptons`  · 🆕 **DRAFT**  · [`substrate-from-leptons-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/observations/substrate-from-leptons-intro.md)
 
 > _[draft]_ The double-slit analysis fixed photon and massive-particle propagation modes; we now calibrate the substrate parameter $q$ from lepton masses alone. The block **$q$-Deformed Skein Relation (Observation)** (rem) records the deformation of the standard Skein identity that the lepton sector exhibits, with **Proof of $q$-Deformed Skein Relation** (prf) supplying the derivation. **Knot volume verification (SnapPy)** (prf) checks the predicted hyperbolic volumes against SnapPy's independent computation, and **Building block knots: classification, polynomials, and volumes** (rem) tabulates the small-crossing knots whose Jones polynomials and volumes feed every subsequent mass formula. The output is the calibrated value $q_0 \approx 1.1097$ that the mass-predictions section then applies to the full hadron spectrum.
 > 
 > _(draft.)_
 
-### §9.5 Mass Predictions and CODATA Comparison  `sec:mass-predictions`  · 🆕 **DRAFT**  · [`mass-predictions-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/mass-predictions-intro.md)
+### §9.5 Mass Predictions and CODATA Comparison  `sec:mass-predictions`  · 🆕 **DRAFT**  · [`mass-predictions-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/observations/mass-predictions-intro.md)
 
 > _[draft]_ Having calibrated $q_0$ from the lepton sector, we apply the mass formula to the full hadron and nuclear spectrum and compare to CODATA / PDG values. The section opens with the lattice geometry: **The stability cubic at $q = 1.1097$: lattice points and the nuclear chart** (rem) marks which $(Z, N)$ points sit on the stability surface, **Comparison of predicted and observed stable neutron numbers for $p \leq 103$** (prop) tabulates the neutron-number predictions element by element, and **Stability of $n_{\mathrm{pred}}$ under local variations in $q$** (rem) records how the predictions move under perturbations of the substrate parameter.
 > 
@@ -2312,7 +2312,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §9.6 Beta Decay  `sec:beta-decay-observations`  · 🆕 **DRAFT**  · [`beta-decay-observations-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/beta-decay-observations-intro.md)
+### §9.6 Beta Decay  `sec:beta-decay-observations`  · 🆕 **DRAFT**  · [`beta-decay-observations-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/observations/beta-decay-observations-intro.md)
 
 > _[draft]_ Beta-decay half-lives and Q-values are the most stringent quantitative test of the framework: rates span twenty orders of magnitude, so any error in the dependence on $q$ amplifies enormously. The opening blocks fix the observable. **Q-value predictions vs experiment: $q$-weighted channel separation** (rem) sets the channel decomposition the half-life formula uses, **Half-life predictions for selected beta emitters** (ex) compares predicted to measured lifetimes across the relevant nuclei, and **Half-life regimes and the $q$-landscape** (rem) sorts the emitters by which regime of the $q$-landscape they sit in. **S_5 action on H_n(q) at the electroweak slice** (conj), **Brane-tower depth from m_e to v equals 90** (conj), and **Leading-order N_v = |S_5| \cdot q_0^{90} (= 120 \cdot q_0^{90})** (conj) propose the conjectural structure linking the electroweak vacuum scale to the brane tower.
 > 
@@ -2324,7 +2324,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §9.7 Large-Scale Observations  `sec:large-scale`  · 🆕 **DRAFT**  · [`large-scale-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/large-scale-intro.md)
+### §9.7 Large-Scale Observations  `sec:large-scale`  · 🆕 **DRAFT**  · [`large-scale-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/observations/large-scale-intro.md)
 
 > _[draft]_ Strutinsky's shell correction expressed the nuclear residue as a categorical sum; at large scales the same residue structure surfaces in CMB anisotropy, gravitational coupling, and topological defects. The section opens with the cosmic microwave background: **CMB non-uniformity from $q$-torsion** (rem) attributes the angular power spectrum to a $q$-torsion contribution and **CMB torsion data** records the measured anisotropies the prediction is fitted against. The gravitational sector follows. **Gravity as emergent substrate geometry** (rem) frames Newton's constant as an emergent quantity, **Newton's $G$ as the universal-residue prefactor of the unified mass formula** (prop) is the central proposition of the section — the residue-prefactor identification of $G$ that the remaining blocks build on — and **Closed $q$-rational form of $G(q)$ and Planck-unit consistency** (rem) writes $G(q)$ in closed $q$-rational form and verifies Planck-unit consistency. **Gravity emergent data** collects the numerical fits.
 > 
@@ -2332,13 +2332,13 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §9.8 Nuclear Stability  `sec:nuclear-stability-observations`  · 🆕 **DRAFT**  · [`nuclear-stability-observations-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/nuclear-stability-observations-intro.md)
+### §9.8 Nuclear Stability  `sec:nuclear-stability-observations`  · 🆕 **DRAFT**  · [`nuclear-stability-observations-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/observations/nuclear-stability-observations-intro.md)
 
 > _[draft]_ Large-scale intermittency hints at a substrate parameter approaching a critical value; here we examine the same boundary inside the nucleus. **Representative stable isotopes: Coulomb ratio and Diophantine error** (rem) tabulates the Coulomb-to-strong ratio along the valley of stability and reports the Diophantine residue, **The golden ratio as the boundary of stable chiral structure** (rem) identifies $q_{\mathrm{gold}} = 1/\varphi^2$ as the wall where chiral structure dissolves, **Hydrogen: the simplest atom in knot form** (ex) works the calculation out explicitly for hydrogen, and **Discrete regime switches in SDP cross-channel couplings across isotopes** (prop) records the discrete regime changes the SDP coupling exhibits as isotope number increases. These four blocks supply the chart-reading skills the strangelet-stability section will use when pushing density up past nuclear saturation.
 > 
 > _(draft.)_
 
-### §9.9 Strangelet Stability and Deconfinement  `sec:strangelet-stability`  · ✓ existing  · [`strangelet-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/strangelet-intro.md)
+### §9.9 Strangelet Stability and Deconfinement  `sec:strangelet-stability`  · ✓ existing  · [`strangelet-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/observations/strangelet-intro.md)
 
 > The strange quark $\mathfrak{s} = T_{2,5}^{\sigma}$ has five
 > crossings; the down quark $\mathfrak{d} = T_{2,3}^{\sigma}$
@@ -2413,7 +2413,7 @@ author refinement pass.
 > approaches the conformal limit $c_s^2 = 1/3$ at physically
 > achievable densities.
 
-### §9.10 Precision Tests  `sec:precision-tests`  · 🆕 **DRAFT**  · [`precision-tests-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/precision-tests-intro.md)
+### §9.10 Precision Tests  `sec:precision-tests`  · 🆕 **DRAFT**  · [`precision-tests-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/observations/precision-tests-intro.md)
 
 > _[draft]_ Strangelets test the framework at extreme density; the present section tests it at ordinary density but extreme precision. The photonic and electromagnetic precision data come first. **Photonic quantum Hall effect and $q$-deformed braiding** (rem) with **Photonic Hall data** matches the measured Hall conductance plateaux against $q$-deformed braiding amplitudes, and **Fine structure constant: CODATA comparison** (rem) with **Fine structure data** compares the predicted $\alpha$ to the CODATA value.
 > 
@@ -2421,7 +2421,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §9.11 Proton Radius and Gravity Tests  `sec:proton-gravity-tests`  · 🆕 **DRAFT**  · [`proton-gravity-tests-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/proton-gravity-tests-intro.md)
+### §9.11 Proton Radius and Gravity Tests  `sec:proton-gravity-tests`  · 🆕 **DRAFT**  · [`proton-gravity-tests-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/observations/proton-gravity-tests-intro.md)
 
 > _[draft]_ Lepton anomalies suggested a single substrate observable; here we ask whether proton-radius measurements and gravitational tests probe the same parameter. **The Proton Radius Puzzle** (rem) and **Proton radius data** summarise the electronic-vs-muonic radius discrepancy and assemble the experimental table, and **Entropic forces and the substrate parameter** (rem) with **Entropic gravity data** records the entropic-force reformulation of gravity and the supporting numerical evidence.
 > 
@@ -2429,7 +2429,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §9.12 Crystal Resonance Experiments  `sec:crystal-resonance`  · 🆕 **DRAFT**  · [`crystal-resonance-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/crystal-resonance-intro.md)
+### §9.12 Crystal Resonance Experiments  `sec:crystal-resonance`  · 🆕 **DRAFT**  · [`crystal-resonance-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/observations/crystal-resonance-intro.md)
 
 > _[draft]_ The proton-radius and gravity blocks fixed a local value of $q$ from existing data; we now turn to experiments designed specifically to probe substrate variation. The lattice-probe blocks come first. **Crystal-lattice probe of $q$** (rem) describes how a periodic crystal samples the substrate phase, **Substrate Telescopes** (rem) extends the same idea to large-aperture detectors, and **Non-monotonic magnetic friction from collective rotor dynamics** (rem) predicts a non-monotonic magnetic-friction signature that collective rotor dynamics in the lattice would produce.
 > 
@@ -2437,13 +2437,13 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §9.13 Breit--Wheeler Pair Creation  `sec:breit-wheeler-pair-creation`  · 🆕 **DRAFT**  · [`breit-wheeler-pair-creation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/breit-wheeler-pair-creation-intro.md)
+### §9.13 Breit--Wheeler Pair Creation  `sec:breit-wheeler-pair-creation`  · 🆕 **DRAFT**  · [`breit-wheeler-pair-creation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/observations/breit-wheeler-pair-creation-intro.md)
 
 > _[draft]_ Crystal-resonance experiments probed the substrate at lattice scales; we now turn to the cleanest high-energy probe of pair creation. Two blocks anchor the section: **Breit--Wheeler process: first direct observation and QOU prediction** (rem) compares the first direct observation of the Breit–Wheeler process against the QOU prediction for the $\gamma\gamma \to e^+ e^-$ cross-section, and **Energy cost of electron--positron conversion** (rem) computes the energy cost of the conversion in terms of crossing energy. Together these set up the categorical reading of pair creation that the complexity-and-interpretation section will need when treating virtual pairs as excitations of the exceptional divisor.
 > 
 > _(draft.)_
 
-### §9.14 Complexity and Interpretation  `sec:complexity-interpretation`  · 🆕 **DRAFT**  · [`complexity-interpretation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/complexity-interpretation-intro.md)
+### §9.14 Complexity and Interpretation  `sec:complexity-interpretation`  · 🆕 **DRAFT**  · [`complexity-interpretation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/observations/complexity-interpretation-intro.md)
 
 > _[draft]_ Breit–Wheeler pair creation forced a categorical reading of the photon-photon vertex; the present section assembles the interpretive pieces — chirality, virtual pairs, CP violation, and the fate of the electron — that the framework now supports. The structural blocks come first. **Fermion--boson sectors as chart-glue data of $\mathbb{P}_q(V)$** (rem) reads the fermion–boson distinction off the chart-glue data of the $q$-projective bundle, **Chirality as continuous phase rotation in the pre-observable sector** (conj) proposes that chirality is a continuous phase rotation in the pre-observable sector, **Can the chirality of a stable trefoil vortex flip?** (rem) asks whether the stable trefoil vortex can flip chirality at all. **Crossing energy decomposes into strong and Coulomb channels** (prop) is the central proposition of the section: the crossing energy splits cleanly into a strong and a Coulomb channel. **Physical interpretation: strong binding and Coulomb repulsion** (rem) and **Time reversal requires infinite energy in the observable sector** (rem) read the decomposition off as confinement plus electromagnetism and record the infinite-energy obstruction to time reversal in the observable sector.
 > 
@@ -2451,7 +2451,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §9.15 Non-Commutative Probability, the q-CLT, and the Archimedean Macroscopic Limit  `sec:non-comm-probability-q-clt`  · ✓ existing  · [`non-comm-probability-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/non-comm-probability-intro.md)
+### §9.15 Non-Commutative Probability, the q-CLT, and the Archimedean Macroscopic Limit  `sec:non-comm-probability-q-clt`  · ✓ existing  · [`non-comm-probability-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/observations/non-comm-probability-intro.md)
 
 > QOU's algebraic side is a non-commutative probability space in
 > Voiculescu's sense [`biane1998`]: the inductive-limit Hecke algebra
@@ -2486,13 +2486,13 @@ author refinement pass.
 > The subsequent section then uses this framework to compare QOU to
 > Finster's causal fermion systems.
 
-### §9.16 Transcendence Falsifiability Signatures  `sec:transcendence-signatures`  · 🆕 **DRAFT**  · [`transcendence-signatures-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/transcendence-signatures-intro.md)
+### §9.16 Transcendence Falsifiability Signatures  `sec:transcendence-signatures`  · 🆕 **DRAFT**  · [`transcendence-signatures-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/observations/transcendence-signatures-intro.md)
 
 > _[draft]_ The non-commutative-probability section closed with a $q$-CLT that does not commit to whether the QOU volumes are algebraically independent; the present section catalogues the observable consequences of either answer. **Observational signatures if the QOU volumes are algebraically independent** (rem) lists the experimental signatures the algebraically-independent case would produce — irrational ratios with no Diophantine relations — and **Observational signatures if the QOU volumes are algebraically dependent** (rem) catalogues the corresponding signatures of the dependent case, including the specific rational identities that would have to hold. The simulations section that closes the chapter then provides interactive tools for inspecting these signatures numerically.
 > 
 > _(draft.)_
 
-### §9.17 Interactive Simulations  `sec:simulations`  · 🆕 **DRAFT**  · [`simulations-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/simulations-intro.md)
+### §9.17 Interactive Simulations  `sec:simulations`  · 🆕 **DRAFT**  · [`simulations-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/observations/simulations-intro.md)
 
 > _[draft]_ The transcendence-signature blocks catalogued the predictions we expect to test numerically; here we supply the interactive tools. **q-Deformed Double-Slit Simulator** (sim) and **Double-Slit Analytical Simulator** (sim) implement the two-mode interference patterns of the earlier double-slit section, **Bring's Surface Simulator** (sim) and **Quantum Bring's Surface Simulator** (sim) expose the Bring-surface geometry that underlies the particle-identification conjectures and the $S_5$-equivariant embeddings, and **Beta-Decay Half-Life Simulator** (sim) lets the reader vary $q$ and watch the predicted half-lives move against the experimental table from the beta-decay section. These tools close the chapter by making every numerical prediction of Chapter 7 reproducible at the slider level.
 > 
@@ -2501,13 +2501,13 @@ author refinement pass.
 
 ## Ch 10 — Molecular Construction from Nucleon Braids  `molecular-construction`
 
-### §10.1 The molecular Hecke algebra  `sec:molecular-hecke-algebra`  · 🆕 **DRAFT**  · [`molecular-hecke-algebra-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/molecular-construction/molecular-hecke-algebra-intro.md)
+### §10.1 The molecular Hecke algebra  `sec:molecular-hecke-algebra`  · 🆕 **DRAFT**  · [`molecular-hecke-algebra-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/molecular-construction/molecular-hecke-algebra-intro.md)
 
 > _[draft]_ We extend the atomic constructor of Chapter 11 to multi-atom systems. The molecular braid $H_{N_{\mathrm{mol}}}(q)$ (def) joins pre-computed atomic braids inside a single Hecke algebra, and the inter-atomic crossing coefficients (rem) record how strands from different nuclei interact. Two atoms share a single electron trefoil to form a covalent bond as shared electron trefoil (def), and the ILP characterisation of the covalent bond (prop) identifies that shared trefoil as the inverse trefoil $T_{2,3}^{-1}$ — the minimum-crossing knot operator with positive binding energy. With these four objects in hand we can compute any molecule by Hopf-linking atoms.
 > 
 > _(draft.)_
 
-### §10.2 Electron shells and bonding capacity  `sec:electron-shells`  · 🆕 **DRAFT**  · [`electron-shells-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/molecular-construction/electron-shells-intro.md)
+### §10.2 Electron shells and bonding capacity  `sec:electron-shells`  · 🆕 **DRAFT**  · [`electron-shells-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/molecular-construction/electron-shells-intro.md)
 
 > _[draft]_ Before assembling molecules we settle the question of how many bonds each atom can form. The electron shell as braid bonding capacity (def) reads the shell structure of an atom as the number of trefoils its braid will admit, and the shell-filling rule (prop) recovers the aufbau principle by minimising the LP-dual cost $\Phi_1$. Valence and bonding capacity from the atomic braid (rem) translates this back into the chemist's count of valence electrons and the octet rule.
 > 
@@ -2515,31 +2515,31 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §10.3 Hydrogen molecule $H_2$: the covalent bond prototype  `sec:h2-computation`  · 🆕 **DRAFT**  · [`h2-computation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/molecular-construction/h2-computation-intro.md)
+### §10.3 Hydrogen molecule $H_2$: the covalent bond prototype  `sec:h2-computation`  · 🆕 **DRAFT**  · [`h2-computation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/molecular-construction/h2-computation-intro.md)
 
 > _[draft]_ We turn to the smallest covalent molecule. The hydrogen molecule $H_2$ as a braid in $H_4(q)$ (def) places two protons and two electrons on four strands and lets them share a single trefoil. The LP dual gives optimal $H_2$ binding (prop) selects the bond order and reads off the binding energy, $H_2$ binding energy from the LP dual (rem) compares the prediction with the spectroscopic value, and $H_2$ bond length from the covalent channel eigenvalue ratio (rem) extracts the equilibrium internuclear separation from the ratio of LP eigenvalues. This sets the template for the heteronuclear and polyatomic cases that follow.
 > 
 > _(draft.)_
 
-### §10.4 Carbon monoxide: heteronuclear bonding  `sec:co-computation`  · 🆕 **DRAFT**  · [`co-computation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/molecular-construction/co-computation-intro.md)
+### §10.4 Carbon monoxide: heteronuclear bonding  `sec:co-computation`  · 🆕 **DRAFT**  · [`co-computation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/molecular-construction/co-computation-intro.md)
 
 > _[draft]_ Carbon monoxide is the first heteronuclear test of the template. Carbon monoxide $CO$ as a molecular braid (def) joins the $(6,6)$ carbon braid to the $(8,8)$ oxygen braid with three shared electron pairs on a common strand set. The LP dual selects the triple bond as optimal for $CO$ (prop) shows that the LP-optimal sharing pattern is precisely the chemist's triple bond, and $CO$ triple bond energy from the Wedderburn invariants (rem) extracts the binding energy from the dominant Wedderburn block weight. Heteronuclear bonding requires no new machinery beyond §3 — only the asymmetric strand counts of the two atomic factors.
 > 
 > _(draft.)_
 
-### §10.5 Carbon dioxide: linear triatomic molecule  `sec:co2-computation`  · 🆕 **DRAFT**  · [`co2-computation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/molecular-construction/co2-computation-intro.md)
+### §10.5 Carbon dioxide: linear triatomic molecule  `sec:co2-computation`  · 🆕 **DRAFT**  · [`co2-computation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/molecular-construction/co2-computation-intro.md)
 
 > _[draft]_ With heteronuclear bonding in place we add a third atom. Carbon dioxide $CO_2$ as a molecular braid (def) couples a central carbon to two oxygens, each via a shared electron pair on the molecular Hecke strands. The LP dual selects linear $O{=}C{=}O$ geometry (prop) shows that the optimum places the two $C{=}O$ trefoils on opposite sides of the central strand, and VSEPR molecular geometry from $\Phi_1$ minimisation (rem) reads this configuration as the braid-theoretic origin of the VSEPR rule. The linear triatomic case isolates molecular geometry as a consequence of $\Phi_1$ minimisation, independent of bond order.
 > 
 > _(draft.)_
 
-### §10.6 Methane: tetrahedral bonding from braid optimization  `sec:ch4-computation`  · 🆕 **DRAFT**  · [`ch4-computation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/molecular-construction/ch4-computation-intro.md)
+### §10.6 Methane: tetrahedral bonding from braid optimization  `sec:ch4-computation`  · 🆕 **DRAFT**  · [`ch4-computation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/molecular-construction/ch4-computation-intro.md)
 
 > _[draft]_ Methane raises the coordination number from two to four. Methane $CH_4$ as a molecular braid (def) joins a central carbon to four hydrogens by four shared trefoils on the molecular strand set. The $S_4$-symmetric strand ordering minimises $\Phi_1$ for $CH_4$ (prop) shows that among all ways of arranging the four bond strands, the LP cost is minimised by configurations invariant under $S_4$, and tetrahedral geometry as $S_4$ symmetry of the LP dual (rem) reads this $S_4$ symmetry as the $109.5^\circ$ tetrahedral bond angle. The same $\Phi_1$ minimisation that produced linear $CO_2$ in §5 now selects the tetrahedral geometry of $CH_4$.
 > 
 > _(draft.)_
 
-### §10.7 Benzene: delocalization from threading links  `sec:benzene-computation`  · 🆕 **DRAFT**  · [`benzene-computation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/molecular-construction/benzene-computation-intro.md)
+### §10.7 Benzene: delocalization from threading links  `sec:benzene-computation`  · 🆕 **DRAFT**  · [`benzene-computation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/molecular-construction/benzene-computation-intro.md)
 
 > _[draft]_ Benzene closes the chapter with a genuinely new structural feature. Benzene $C_6H_6$ as a molecular braid (def) arranges six carbons in a ring on twelve strands, with $\pi$-electrons spread across the cycle rather than localised on alternating bonds. Threading link $T(2,6)$ emerges as the LP-optimal $\pi$ configuration (prop) shows that the LP dual prefers the $(2,6)$ threading link over any Kekulé alternation, and bond equalization from $D_6$ symmetry of $T(2,6)$ (rem) reads the $D_6$ symmetry of this threading link as the experimental fact that all six $C{-}C$ bonds have equal length. Aromaticity here is not an extra postulate but a forced output of the LP minimum on an $n$-membered ring.
 > 
@@ -2548,13 +2548,13 @@ author refinement pass.
 
 ## Ch 11 — Organic Chemistry from Hopf Chains  `organic-chemistry`
 
-### §11.1 Covalent bonding as shared sub-Hopf links  `sec:covalent-bonding`  · 🆕 **DRAFT**  · [`covalent-bonding-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/organic-chemistry/covalent-bonding-intro.md)
+### §11.1 Covalent bonding as shared sub-Hopf links  `sec:covalent-bonding`  · 🆕 **DRAFT**  · [`covalent-bonding-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/organic-chemistry/covalent-bonding-intro.md)
 
 > _[draft]_ Where metallic bonding shares residual sub-links across an entire lattice, molecular chemistry localises the sharing between two atoms. We make this precise as a **covalent bond** of order $k$ — a shared sub-Hopf link of $k$ trefoils simultaneously linked to one open site in each partner — and read off single, double, and triple bonds as $k = 1, 2, 3$ (def: [covalent bond](#def:covalent-bond-types)). The crossing-energy formula $E_{\mathrm{bond}}(k) = k \cdot \mathfrak{E}_{\mathrm{cross}}(T(2,2)) + \binom{k}{2} \Delta E_{\mathrm{inter}}$ then tracks higher bond order as additional rigidity. We close the section by partitioning carbon's electron cloud $6 \cdot T_{2,3}$ into a closed $1s^2$ pair and a residual sub-link of size four (rem: [carbon's four open linking sites](#rem:carbon-valence)), showing that the half-filling $|R|/2n^2 = 1/2$ is what places carbon at the maximally covalent midpoint of the metallic-character spectrum.
 > 
 > _(draft.)_
 
-### §11.2 Molecular Hopf chains and rings  `sec:molecular-chains-rings`  · 🆕 **DRAFT**  · [`molecular-chains-rings-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/organic-chemistry/molecular-chains-rings-intro.md)
+### §11.2 Molecular Hopf chains and rings  `sec:molecular-chains-rings`  · 🆕 **DRAFT**  · [`molecular-chains-rings-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/organic-chemistry/molecular-chains-rings-intro.md)
 
 > _[draft]_ Bonds in hand, we assemble atoms into extended molecular structures. A **molecular Hopf chain** of length $N$ composes $N - 1$ covalent bonds along a backbone, giving a tridiagonal linking matrix with free endpoint sites (def: [molecular Hopf chain (open)](#def:molecular-hopf-chain)). The crucial step in passing to closed rings is to replace the naïve picture — $N$ pairwise Hopf links — with a single non-local invariant: the **threading link** $T(2,N)$ whose braid word $(\sigma_1 \cdots \sigma_{N-1})^2$ winds twice through every atom and whose Alexander polynomial $\Delta_{T(2,2m)}(q) = (q^m - q^{-m})/(q - q^{-1})$ records half the pairwise Alexander weight (def: [threading link $T(2,N)$](#def:threading-link)). A **molecular Hopf ring** is then $[\mathcal{A}_1, \ldots, \mathcal{A}_N] \bowtie \mathcal{T}_N$ — atoms bound globally by the threading link rather than locally by Hopf links (def: [molecular Hopf ring (closed)](#def:molecular-hopf-ring)).
 > 
@@ -2562,13 +2562,13 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §11.3 Carbon chains and benzene  `sec:carbon-chains-benzene`  · 🆕 **DRAFT**  · [`carbon-chains-benzene-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/organic-chemistry/carbon-chains-benzene-intro.md)
+### §11.3 Carbon chains and benzene  `sec:carbon-chains-benzene`  · 🆕 **DRAFT**  · [`carbon-chains-benzene-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/organic-chemistry/carbon-chains-benzene-intro.md)
 
 > _[draft]_ We instantiate the chain–ring machinery at $N = 6$, the smallest case where the contrast is experimentally sharp. The **linear $\mathrm{C}_6$ Hopf chain** assembles six carbons with a $6 \times 6$ tridiagonal linking matrix; interior carbons consume two of their four sites for the backbone and the endpoint carbons carry three dangling links each — the soft modes that make linear $\mathrm{C}_6$ flexible as cumulene or carbyne (ex: [linear $\mathrm{C}_6$ Hopf chain](#ex:carbon-chain-c6)). **Benzene** is the closed counterpart: six carbons threaded by $T(2,6)$, whose two components are the two delocalised $\pi$ electrons, and whose Alexander polynomial $q^2 + 1 + q^{-2}$ replaces six pairwise Hopf weights with a single threading invariant — explaining bond-order equalisation and the $\mathrm{C}_6\mathrm{H}_6$ formula without further input (ex: [benzene as a molecular Hopf ring](#ex:benzene-ring)). Comparing the two structures, the threaded ring binds one more atom at Alexander weight $3$ versus the chain's $5$, yet the chain persists because pairwise-to-threaded is discontinuous and the geometric reconfiguration sets an activation barrier (rem: [why the C$_6$ chain resists hexagonalisation](#rem:chain-ring-energy)). The section closes with the parameter-free prediction $\Delta E \approx 2 \cdot |q + q^{-1}|_{\mathrm{mol}} \approx 193\text{--}386\,\mathrm{kJ/mol}$, matched against the experimental $200\text{--}400\,\mathrm{kJ/mol}$ window — the $1/2$ threading factor is the resolution of the pairwise picture's factor-of-two overshoot (prop: [predicted vs. observed $\mathrm{C}_6$ ring-closure barrier](#prop:chain-ring-comparison)).
 > 
 > _(draft.)_
 
-### §11.4 Organic chain taxonomy  `sec:organic-taxonomy`  · 🆕 **DRAFT**  · [`organic-taxonomy-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/organic-chemistry/organic-taxonomy-intro.md)
+### §11.4 Organic chain taxonomy  `sec:organic-taxonomy`  · 🆕 **DRAFT**  · [`organic-taxonomy-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/organic-chemistry/organic-taxonomy-intro.md)
 
 > _[draft]_ Having pinned down chains, rings, and the $\mathrm{C}_6$ case, we sort the standard organic classes by two parameters of the Hopf-chain framework: the bond-order pattern $(k_1, \ldots, k_{N-1})$ along the backbone, and whether the structure is open or closed. The classification recovers alkanes, alkenes, alkynes, cumulenes, and polyynes as distinct distributions of shared trefoils, reads saturation as linking-site occupancy, and writes the hydrogen capacity formula $\mathrm{C}_N \mathrm{H}_{2N+2-2d}$ (open) versus $\mathrm{C}_N \mathrm{H}_{2N-2d}$ (closed) directly from the total degree of unsaturation $d = \sum_i (k_i - 1)$ (rem: [organic chain taxonomy from bond-order patterns](#rem:organic-chain-taxonomy)). Aromatic rings — those with $d = N/2$ — appear as the case where the secondary trefoils themselves close, suggesting Hückel's $4n + 2$ rule is the molecular analogue of the shell capacity $2n^2$.
 > 
@@ -2577,7 +2577,7 @@ author refinement pass.
 
 ## Ch 12 — Fluid Dynamics of the Brane  `fluid-dynamics`
 
-### §12.1 $q$-deformed hydrodynamics  `sec:q-hydrodynamics`  · ✓ existing  · [`fluid-dynamics-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/fluid-dynamics/fluid-dynamics-intro.md)
+### §12.1 $q$-deformed hydrodynamics  `sec:q-hydrodynamics`  · ✓ existing  · [`fluid-dynamics-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/fluid-dynamics/fluid-dynamics-intro.md)
 
 > The brane of a quantum observable universe carries a natural fluid
 > dynamics whose viscosity, vortex spectrum, and turbulence structure
@@ -2602,7 +2602,7 @@ author refinement pass.
 > from the Hecke algebra and provides a new criterion for the classical
 > Navier--Stokes regularity problem.
 
-### §12.2 Vortex spectrum and helicity  `sec:vortex-spectrum`  · 🆕 **DRAFT**  · [`vortex-spectrum-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/fluid-dynamics/vortex-spectrum-intro.md)
+### §12.2 Vortex spectrum and helicity  `sec:vortex-spectrum`  · 🆕 **DRAFT**  · [`vortex-spectrum-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/fluid-dynamics/vortex-spectrum-intro.md)
 
 > _[draft]_ The $q$-deformation of brane hydrodynamics forces vortex
 > circulation onto a discrete ladder and pins helicity to a
@@ -2628,7 +2628,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §12.3 Turbulence and acoustics  `sec:turbulence-acoustics`  · 🆕 **DRAFT**  · [`turbulence-acoustics-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/fluid-dynamics/turbulence-acoustics-intro.md)
+### §12.3 Turbulence and acoustics  `sec:turbulence-acoustics`  · 🆕 **DRAFT**  · [`turbulence-acoustics-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/fluid-dynamics/turbulence-acoustics-intro.md)
 
 > _[draft]_ With the vortex spectrum and helicity invariant in hand,
 > we treat collective behaviour: how the discrete modes assemble into
@@ -2655,7 +2655,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §12.4 Global regularity for $q > 1$  `sec:q-ns-regularity`  · 🆕 **DRAFT**  · [`q-ns-regularity-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/fluid-dynamics/q-ns-regularity-intro.md)
+### §12.4 Global regularity for $q > 1$  `sec:q-ns-regularity`  · 🆕 **DRAFT**  · [`q-ns-regularity-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/fluid-dynamics/q-ns-regularity-intro.md)
 
 > _[draft]_ The $q$-deformed hydrodynamics of the preceding sections
 > delivers a closed evolution equation on $\Omega^1(A)$. We now prove
@@ -2684,7 +2684,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §12.5 The NS obstruction  `sec:ns-obstruction`  · 🆕 **DRAFT**  · [`ns-obstruction-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/fluid-dynamics/ns-obstruction-intro.md)
+### §12.5 The NS obstruction  `sec:ns-obstruction`  · 🆕 **DRAFT**  · [`ns-obstruction-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/fluid-dynamics/ns-obstruction-intro.md)
 
 > _[draft]_ The global regularity theorem for the $q$-deformed system
 > isolates the classical Navier--Stokes question as a degeneration
@@ -2736,7 +2736,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §12.6 Approaches and open problems  `sec:ns-approaches`  · 🆕 **DRAFT**  · [`ns-approaches-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/fluid-dynamics/ns-approaches-intro.md)
+### §12.6 Approaches and open problems  `sec:ns-approaches`  · 🆕 **DRAFT**  · [`ns-approaches-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/fluid-dynamics/ns-approaches-intro.md)
 
 > _[draft]_ The NS obstruction places the classical Navier--Stokes
 > regularity question inside a one-parameter family of well-posed
@@ -2786,7 +2786,7 @@ author refinement pass.
 
 ## Ch 13 — Information-Theoretic Perspectives  `information-theory`
 
-### §13.1 Emergent Gravity and Information Geometry  `sec:info-emergent-gravity`  · ✓ existing  · [`information-theory-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/information-theory/information-theory-intro.md)
+### §13.1 Emergent Gravity and Information Geometry  `sec:info-emergent-gravity`  · ✓ existing  · [`information-theory-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/information-theory/information-theory-intro.md)
 
 > The categorical framework of the QOU determines not only the geometry
 > and particle spectrum but also the information-theoretic structure of
@@ -2809,7 +2809,7 @@ author refinement pass.
 > the horizon functor that implements Penrose's conformal cyclic
 > cosmology within the QOU framework.
 
-### §13.2 Time and Computation  `sec:info-time-computation`  · ✓ existing  · [`time-info.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/information-theory/time-info.md)
+### §13.2 Time and Computation  `sec:info-time-computation`  · ✓ existing  · [`time-info.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/information-theory/time-info.md)
 
 > Time in the QOU is not an external parameter imposed on the
 > dynamics — it is the dynamics.  The fundamental time variable is
@@ -2837,19 +2837,19 @@ author refinement pass.
 > information-theoretic time, and describes the statistical
 > mechanical bridge from discrete computation to continuous flow.
 
-### §13.3 Golden Ratio, Julia Sets, and Discrete Dynamics  `sec:golden-julia-dynamics`  · 🆕 **DRAFT**  · [`golden-julia-dynamics-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/information-theory/golden-julia-dynamics-intro.md)
+### §13.3 Golden Ratio, Julia Sets, and Discrete Dynamics  `sec:golden-julia-dynamics`  · 🆕 **DRAFT**  · [`golden-julia-dynamics-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/information-theory/golden-julia-dynamics-intro.md)
 
 > _[draft]_ The Reeb flow on the exceptional divisor has been built without committing to a discrete time step. Here we cut it into Planck units and read off the resulting symbolic dynamics on the Descartes elliptic curve $\mathcal{E}_q$, with the golden ratio $\varphi$ appearing as both a metric ratio at $q_0$ and an algebraic root at $q_{\mathrm{gold}} = 1/\varphi^2$.
 > 
 > The remark **Parallel transport of a golden-ratio parallelogram to $q_{\mathrm{gold}}$** (rem) carries a fundamental domain of the chiral fiber along the $q$-connection and shows the two occurrences of $\varphi$ are the same algebraic number seen from opposite ends of substrate parameter space. **Julia set of the Reeb flow on the exceptional divisor** (rem) identifies the invariant set of the iterated Reeb map, and **Operational entropy of the Reeb dynamics** (def) extracts the metric entropy $\eta_q = (2q-1)/q^3$ via Bowen--Ruelle thermodynamic formalism. **Discrete time at the Big Bang: one Planck step of Reeb flow** (rem) anchors the time variable at $\mathcal{S}_0$, and **Planck steps as jet orders: Taylor approximation of $E$ at the Big Bang** (rem) identifies the $k$-th Planck step with the $k$-th floor of the brane tower $A_k$. The next section, **Speed of Light and Mass--Energy Equivalence**, consumes $\eta_q$ and the Planck step as the operational scales from which $c_q$ and $\mathfrak{m}$ will be built. _(draft.)_
 
-### §13.4 Speed of Light and Mass--Energy Equivalence  `sec:speed-of-light`  · 🆕 **DRAFT**  · [`speed-of-light-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/information-theory/speed-of-light-intro.md)
+### §13.4 Speed of Light and Mass--Energy Equivalence  `sec:speed-of-light`  · 🆕 **DRAFT**  · [`speed-of-light-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/information-theory/speed-of-light-intro.md)
 
 > _[draft]_ Having fixed the Reeb-flow operational entropy and the Planck step in the preceding sections, we now extract from them a velocity and a mass--energy law. The $q$-connection on the state bundle, together with the substrate parameter $q_0$, picks out a Lieb--Robinson cone for information propagation; that cone is what the chapter will call the speed of light.
 > 
 > We open with **Speed of light as Lieb--Robinson velocity** (def), which packages the cone as $c_q = 1/(q-1)$ and identifies it with the maximum information bandwidth per Planck step. The mass--energy law **Mass--energy equivalence ($E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2$)** (thm) follows by computing the categorical trace of the crossing energy in the ribbon category, and the proposition **Mass as photon threading cost** (prop) gives the Groebner--Shirshov reading of $\mathfrak{m}$ as the cost of threading a photon through a knot. The **Gravitational constant from information geometry** (def) supplies $G(q)$ along Jacobson's entropy--area line, and the remarks **Discrete recurrence of the Hausdorff dimension** (rem) and **Information causality and the light cone** (rem) close the section by linking $d_H(q) = (2q-1)^2/q^3$ to the Margolus--Levitin bound. The next section, **Computation at Planck Time Lengths**, consumes $c_q$ and $\mathfrak{B}(q)$ as the bandwidth budget that bounds every Toffoli step. _(draft.)_
 
-### §13.5 Computation at Planck Time Lengths  `sec:planck-scale-computation`  · ✓ existing  · [`planck-scale-computation.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/information-theory/planck-scale-computation.md)
+### §13.5 Computation at Planck Time Lengths  `sec:planck-scale-computation`  · ✓ existing  · [`planck-scale-computation.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/information-theory/planck-scale-computation.md)
 
 > This section frames every Planck-time step as the application of a
 > single transfer matrix on the brane fibre.  The total cost of a
@@ -2878,17 +2878,17 @@ author refinement pass.
 > information-theoretic cost is bounded by the bandwidth $\mathfrak{B}(q)$
 > ([information speed of light](#def:information-speed-of-light)).
 
-### §13.6 P versus NP as a Boundary Condition  `sec:p-vs-np-boundary`  · 🆕 **DRAFT**  · [`p-vs-np-boundary-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/information-theory/p-vs-np-boundary-intro.md)
+### §13.6 P versus NP as a Boundary Condition  `sec:p-vs-np-boundary`  · 🆕 **DRAFT**  · [`p-vs-np-boundary-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/information-theory/p-vs-np-boundary-intro.md)
 
 > _[draft]_ The jet horizon of §1 separates degree-$0$ data from degree $\geq 1$ leakage, and the Skein Turing machine of the previous section encodes every decision problem as a braid closure. We now combine the two: the answer of an NP-complete decision is a degree-$0$ section of the resolution tree, the polynomial-time witnesses are degree-$1$ paths, and the gap between them is a jet horizon of complexity-theoretic origin.
 > 
 > **Computational horizon** (def) opens the section by transplanting the jet-horizon construction onto the Skein resolution tree $\mathcal{R}(L)$ of a braid closure. **Skein resolution obstruction $\kappa_c^{\mathrm{comp}}(L, q)$** (def) measures the obstruction via Yekutieli cohomology, and **Polynomial computation as sub-horizon bandwidth** (prop) shows that polynomial-time computation saturates the information bandwidth $\mathfrak{B}(q)$ below the horizon. The structural statement **$\mathrm{P} \neq \mathrm{NP}$ as jet horizon opacity** (conj) recasts the millennium problem as a degree-$0$ opacity claim, **P versus NP through the event horizon: information loss and computational irreversibility** (rem) interprets the gap via Hawking radiation, and the closing conjecture **$\mathrm{P} \neq \mathrm{NP}$ at non-torsion $q \in \mathbb{G}_m$** (conj) localises the inequality at the QOU substrate. The next section, **$q$-Heat kernel and spectral analysis**, consumes the computational horizon as the discrete spectral cut-off below which the $q$-heat kernel must collapse to a Perron--Frobenius fallback. _(draft.)_
 
-### §13.7 $q$-Heat kernel and spectral analysis  `sec:q-heat-kernel-analysis`  · 🆕 **DRAFT**  · [`q-heat-kernel-analysis-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/information-theory/q-heat-kernel-analysis-intro.md)
+### §13.7 $q$-Heat kernel and spectral analysis  `sec:q-heat-kernel-analysis`  · 🆕 **DRAFT**  · [`q-heat-kernel-analysis-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/information-theory/q-heat-kernel-analysis-intro.md)
 
 > _[draft]_ The substrate has supplied a Jackson derivative $D_q$ and a categorical Fourier transform; we now build the heat kernel governed by them and read off its spectral decomposition. The point of the section is to verify that the standard tools of heat-kernel analysis survive the $q$-deformation when $q = q_0$ is non-torsion, and to provide a computational fallback when the Peter--Weyl sum diverges at large rank. **Taylor series of $\exp_q$ (archimedean)** (prop) realises the abstract grouplike $\exp_q$ as a convergent power series with coefficients $1/[n]_q!$, **Reeb-invariant $q$-Gaussian solves the $q$-heat equation (archimedean)** (prop) verifies that the resulting $q$-Gaussian is the fundamental solution of $\partial_t u = D_q^2 u$, and **Peter--Weyl decomposition of the $q$-heat kernel (archimedean)** (prop) expands that solution in Hecke--Wedderburn characters. The closing remark **Computational fallback at large $k$: $q$-heat kernel and Perron--Frobenius** (rem) supplies the Perron--Frobenius truncation used whenever the rank-$k$ sum cannot be evaluated symbolically. The next section, **Statistical Mechanics**, consumes the $q$-heat kernel as the partition function $Z_q$ from which quantum temperature, pressure, and volume will be extracted. _(draft.)_
 
-### §13.8 Statistical Mechanics  `sec:stat-mech`  · ✓ existing  · [`stat-mech-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/information-theory/stat-mech-intro.md)
+### §13.8 Statistical Mechanics  `sec:stat-mech`  · ✓ existing  · [`stat-mech-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/information-theory/stat-mech-intro.md)
 
 > The statistical mechanical structure of the QOU is not an
 > analogy — it is the mechanism by which continuous physics
@@ -2912,15 +2912,15 @@ author refinement pass.
 > mechanical framework for the information-theoretic time
 > ([information-theoretic time](#def:information-theoretic-time)).
 
-### §13.9 Phase Transitions and Sublimation  `sec:phase-transitions`  · 🆕 **DRAFT**  · [`phase-transitions-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/information-theory/phase-transitions-intro.md)
+### §13.9 Phase Transitions and Sublimation  `sec:phase-transitions`  · 🆕 **DRAFT**  · [`phase-transitions-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/information-theory/phase-transitions-intro.md)
 
 > _[draft]_ The quantum ideal gas law of the previous section yields a partition function whose dominant saddle point sits inside one Hecke channel of $H_n(q)$; phase transitions are the loci where that dominance changes. **Phase transitions as $S^3$ boundary actions** (prop) computes the critical temperatures from the restriction of the categorical action to the Hopf base $S^2$ of $S^1 \hookrightarrow S^3_q \to S^2$, with $T_q^{(g \to l)}$ and $T_q^{(l \to s)}$ controlled by $[2]_q$ and $[n_K]_q$. **Three phases from Hecke channels and the triple point** (rem) reads gas, liquid, and solid as the symmetric, mixed, and antisymmetric Hecke channels and locates the triple point. **Sublimation from shell-filling representation theory** (prop) then derives the direct solid--gas transition from a non-split extension classified by $\mathrm{Ext}^1_{H_n(q)}$, and **Observational test of the $Z$-parity sublimation rule** (rem) gives the metallic-bonding test that distinguishes it from continuous condensation. The next section, **Incompleteness and the Horizon**, consumes the phase-transition boundary as the canonical example of a degree-$0$ opacity in statistical mechanics. _(draft.)_
 
-### §13.10 Incompleteness and the Horizon  `sec:incompleteness-horizon`  · 🆕 **DRAFT**  · [`incompleteness-horizon-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/information-theory/incompleteness-horizon-intro.md)
+### §13.10 Incompleteness and the Horizon  `sec:incompleteness-horizon`  · 🆕 **DRAFT**  · [`incompleteness-horizon-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/information-theory/incompleteness-horizon-intro.md)
 
 > _[draft]_ The phase-transition boundary of the previous section is a particular degree-$0$ opacity; we now show that any opacity of this kind is forced by Goedel's diagonal argument applied to the Skein Turing machine. The proposition **Turing completeness with $\mathbb{N}$-embedding implies non-empty computational horizon** (prop) constructs a non-computable function $d(n) = \mathrm{eval}(e(n))(n) + 1$ on the Skein resolution system, witnessing a section of $A_0$ that no finite braid factors through. **Incompleteness as degree-$0$ opacity: the Turing--Goedel--horizon triangle** (rem) reads the diagonal as a degree-$0$ vanishing locus, **Statistical mechanics as the polynomial observable subcategory** (rem) restricts the picture to the polynomial-bandwidth observables of $\S 1$, and **The information paradox as a theorem of arithmetic** (rem) closes by identifying the black-hole information paradox with Goedel incompleteness applied to the Hawking quanta. The next section, **Horizons and Aeons**, consumes the computational horizon as the prototype of every jet horizon in the descended universe. _(draft.)_
 
-### §13.11 Horizons and Aeons  `sec:horizons-aeons`  · 🆕 **DRAFT**  · [`horizons-aeons-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/information-theory/horizons-aeons-intro.md)
+### §13.11 Horizons and Aeons  `sec:horizons-aeons`  · 🆕 **DRAFT**  · [`horizons-aeons-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/information-theory/horizons-aeons-intro.md)
 
 > _[draft]_ The incompleteness horizon of the previous section is local to a single resolution tree; we now globalise it. The brane tower $A_0 \hookrightarrow A_1 \hookrightarrow A_2 \hookrightarrow \cdots$ supplies a stratification of every affine chart by jet order, and a horizon is a codimension-$1$ locus where the lowest floor $A_0$ vanishes while higher floors leak through. The section defines these horizons, organises their connected components into aeons, and matches the resulting cyclic structure to Penrose's Conformal Cyclic Cosmology.
 > 
@@ -2928,7 +2928,7 @@ author refinement pass.
 > 
 > The categorical packaging follows: **Observable subcategory $\mathrm{Bun}^{\circ}(\mathbb{P}(V))$** (def) cuts out the locus where $A_0$ does not vanish, **Aeon** (def) is a connected component of that subcategory, and **Horizon functor** (def) and **CMB functor** (def) send each aeon to its boundary and its surviving jet data respectively. The conjecture **Aeon recycling: $\Phi_1^q \circ \mathrm{CMB}$ lands in $\mathrm{Bun}^{\circ}$** (conj) asserts that the boundary datum regenerates a chart under one Planck step of the torsion flow. **Conformal invariance at the jet horizon** (prop) and **A QOU with aeons is a conformal cyclic cosmology** (prop) match the structure to Penrose's framework, and **Relation to Penrose's Conformal Cyclic Cosmology** (rem) provides the translation dictionary used downstream. The next section, **Quantum Geometry Variants**, consumes the aeon boundary and the degree-$0$ vanishing as input to alternative Euler-characteristic scenarios for the descended universe. _(draft.)_
 
-### §13.12 Quantum Geometry Variants  `sec:info-geometry-variants`  · ✓ existing  · [`quantum-brings-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/information-theory/quantum-brings-intro.md)
+### §13.12 Quantum Geometry Variants  `sec:info-geometry-variants`  · ✓ existing  · [`quantum-brings-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/information-theory/quantum-brings-intro.md)
 
 > **Outline (future work).**  This section will develop the quantum
 > deformation of the commutator relations on Bring's surface.  The
@@ -2948,7 +2948,7 @@ author refinement pass.
 
 ## Ch 14 — $q$-Geometric Langlands Correspondence  `q-geometric-langlands`
 
-### §14.1 Introduction  `sec:q-gl-intro`  · ✓ existing  · [`q-gl-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/q-geometric-langlands/q-gl-intro.md)
+### §14.1 Introduction  `sec:q-gl-intro`  · ✓ existing  · [`q-gl-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/q-geometric-langlands/q-gl-intro.md)
 
 > The substrate parameter
 > $q \in \mathbb{G}_m^{\mathrm{nt}}(k) = k^\times \setminus \mu_\infty$
@@ -2988,7 +2988,7 @@ author refinement pass.
 > ([Kummer filtration](#rem:kummer-filtration-obstruction))
 > forces the correspondence to be intrinsically non-torsion.
 
-### §14.2 $\\mathbb{G}_m$-torsors and $q$-local systems  `sec:q-local-systems`  · 🆕 **DRAFT**  · [`q-local-systems-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/q-geometric-langlands/q-local-systems-intro.md)
+### §14.2 $\\mathbb{G}_m$-torsors and $q$-local systems  `sec:q-local-systems`  · 🆕 **DRAFT**  · [`q-local-systems-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/q-geometric-langlands/q-local-systems-intro.md)
 
 > _[draft]_ We set up the geometric objects on which the rest of the
 > chapter operates. The section introduces the **$q$-Local system** (def)
@@ -3005,7 +3005,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §14.3 $q$-Hecke correspondences  `sec:q-hecke-correspondences`  · 🆕 **DRAFT**  · [`q-hecke-correspondences-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/q-geometric-langlands/q-hecke-correspondences-intro.md)
+### §14.3 $q$-Hecke correspondences  `sec:q-hecke-correspondences`  · 🆕 **DRAFT**  · [`q-hecke-correspondences-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/q-geometric-langlands/q-hecke-correspondences-intro.md)
 
 > _[draft]_ Building on the moduli of $q$-local systems, we introduce the
 > algebraic operators that govern the automorphic side. The section
@@ -3023,7 +3023,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §14.4 The $q$-Geometric Langlands conjecture  `sec:q-gl-conjecture`  · 🆕 **DRAFT**  · [`q-gl-conjecture-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/q-geometric-langlands/q-gl-conjecture-intro.md)
+### §14.4 The $q$-Geometric Langlands conjecture  `sec:q-gl-conjecture`  · 🆕 **DRAFT**  · [`q-gl-conjecture-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/q-geometric-langlands/q-gl-conjecture-intro.md)
 
 > _[draft]_ We now state the central conjecture of the chapter and the
 > structural results that surround it. The section opens with the
@@ -3052,7 +3052,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §14.5 $q$-Opers and the spectral side  `sec:q-opers`  · 🆕 **DRAFT**  · [`q-opers-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/q-geometric-langlands/q-opers-intro.md)
+### §14.5 $q$-Opers and the spectral side  `sec:q-opers`  · 🆕 **DRAFT**  · [`q-opers-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/q-geometric-langlands/q-opers-intro.md)
 
 > _[draft]_ With the conjecture in place, we turn to the spectral side
 > and the canonical objects that realise it. The section introduces the
@@ -3071,7 +3071,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §14.6 Classical limit and physical interpretation  `sec:q-gl-classical-limit`  · 🆕 **DRAFT**  · [`q-gl-classical-limit-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/q-geometric-langlands/q-gl-classical-limit-intro.md)
+### §14.6 Classical limit and physical interpretation  `sec:q-gl-classical-limit`  · 🆕 **DRAFT**  · [`q-gl-classical-limit-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/q-geometric-langlands/q-gl-classical-limit-intro.md)
 
 > _[draft]_ Having stated the conjecture on the non-torsion locus, we
 > verify that the $q \to 1$ degeneration recovers familiar geometry and
@@ -3093,7 +3093,7 @@ author refinement pass.
 > 
 > _(draft.)_
 
-### §14.7 Spectral trace and Tannaka--Krein duality  `sec:q-gl-spectral-trace-tannaka`  · ✓ existing  · [`spectral-trace-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/q-geometric-langlands/spectral-trace-intro.md)
+### §14.7 Spectral trace and Tannaka--Krein duality  `sec:q-gl-spectral-trace-tannaka`  · ✓ existing  · [`spectral-trace-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/q-geometric-langlands/spectral-trace-intro.md)
 
 > Having identified the unit particle as a cohomological defect — a maximal
 > ideal of $\mathcal{O}_q(\mathcal{B})$ at which the local cohomology
@@ -3113,7 +3113,7 @@ author refinement pass.
 > and spectral sides — the non-commutative analog of the classical explicit
 > formula of prime number theory.
 
-### §14.8 Geometric stability via the Weil bound  `sec:q-gl-weil-bound-stability`  · ✓ existing  · [`weil-bound-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/q-geometric-langlands/weil-bound-intro.md)
+### §14.8 Geometric stability via the Weil bound  `sec:q-gl-weil-bound-stability`  · ✓ existing  · [`weil-bound-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/folio/quantum-observable-universe/q-geometric-langlands/weil-bound-intro.md)
 
 > The explicit formula relates the distribution of defects to the spectrum
 > of the Reeb flow. But is this spectrum stable? If the Reeb eigenvalues

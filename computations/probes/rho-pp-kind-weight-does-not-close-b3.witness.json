@@ -1,0 +1,113 @@
+{
+ "schema": "witness/v1",
+ "computedAt": "2026-10-13T11:36:03.131743+00:00",
+ "engine": "mpmath",
+ "scriptFile": "rho_pp_kind_weight_does_not_close_b3_probe.py",
+ "commitSha": "e43d2617f2eb8c43ce6147ff3b80b6fd25343bed",
+ "q0Anchor": "proton",
+ "q0AnchorReason": "seeded from Q_50_DIGIT_STR; the bond series are in eps = q - 1",
+ "description": "Takes over qou-qqm4's unanswered target from #7097 and computes rho_pp INDEPENDENTLY from the corpus's derived kind-dependent bond factors, then compares. The answer is NO under all four identifications tried, and the PRINCIPLED one (log/additive, which the binding law B = E0*log(tr ratio) implies) misses worst at 55.9%. No carrier m in 1..6 closes it. The escape from BrunnianTripleExhaustion is real structurally and far too weak quantitatively. Nothing is fitted; the closest identification is reported as such and NOT adopted as the answer.",
+ "free_parameters": 0,
+ "inputs": {
+  "bond_series_eps": {
+   "pp": [
+    "1/2",
+    "1",
+    "1/4",
+    "-1/4",
+    "1/8",
+    "0"
+   ],
+   "pn": [
+    "1/2",
+    "0",
+    "3/4",
+    "-3/4",
+    "31/24",
+    "-5/2"
+   ],
+   "nn": [
+    "1/2",
+    "-1",
+    "5/4",
+    "-5/4",
+    "9/8",
+    "-1"
+   ]
+  },
+  "bond_series_source": "computations/probes/bond_pn_kind_order_four_discriminator_probe.py",
+  "rMeasured": "950815/1483044",
+  "target_rho_pp": "2433859/1483044"
+ },
+ "bond_values_at_q0": {
+  "pp": "0.612688136242055625246751827394",
+  "pn": "0.50822254157688310747600160899",
+  "nn": "0.403626243278318814879027897017"
+ },
+ "identifications": [
+  {
+   "id": "A multiplicative  pp/pn",
+   "rho_pp": "1.20555088788671748981360001403",
+   "miss_pct": "26.541143"
+  },
+  {
+   "id": "B ADDITIVE (log)  log pp / log pn",
+   "rho_pp": "0.723808025364247955231876135706",
+   "miss_pct": "55.89559"
+  },
+  {
+   "id": "C shifted additive 1 + (log pp - log pn)",
+   "rho_pp": "1.18693663084371755800853758503",
+   "miss_pct": "27.675381"
+  },
+  {
+   "id": "D inverse         pn/pp",
+   "rho_pp": "0.829496299200575449257825339409",
+   "miss_pct": "49.455597"
+  }
+ ],
+ "carrier_scan": {
+  "A": {
+   "best_m_pp": 1,
+   "best_m_pn": 1,
+   "closest_miss_pct": "67.938978"
+  },
+  "B": {
+   "best_m_pp": 2,
+   "best_m_pn": 1,
+   "closest_miss_pct": "30.182601"
+  }
+ },
+ "uniform_reference_miss_pct": "55.98",
+ "assertions": [
+  {
+   "name": "the derived kind weight does NOT reach the target under ANY identification tried",
+   "passed": true
+  },
+  {
+   "name": "the PRINCIPLED (log/additive) identification misses by more than 50%",
+   "passed": true
+  },
+  {
+   "name": "the closest identification is NOT the principled one -- so reporting it would be selection against the target",
+   "passed": true
+  },
+  {
+   "name": "no carrier m in 1..6 closes it under either identification",
+   "passed": true
+  },
+  {
+   "name": "under the MULTIPLICATIVE reading the kind weight is WORSE than uniform",
+   "passed": true
+  },
+  {
+   "name": "under the PRINCIPLED reading it IMPROVES on uniform but does not close",
+   "passed": true
+  },
+  {
+   "name": "bond_pp > bond_pn: the SIGN of the kind-dependence is right, the magnitude is not",
+   "passed": true
+  }
+ ],
+ "allPassed": true
+}

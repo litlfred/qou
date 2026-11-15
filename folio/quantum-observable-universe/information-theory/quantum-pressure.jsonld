@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-quantum-pressure",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:quantum-pressure",
+  "kind": "definition",
+  "title": "Quantum pressure",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quantum-temperature"
+  ],
+  "tags": [
+    "pressure",
+    "statistical-mechanics",
+    "frobenius",
+    "boundary",
+    "q-anomaly"
+  ],
+  "leanRef": "qou:QOU.Information.boundaryPressure",
+  "text": "quantum-pressure.md",
+  "leanSource": "quantum-pressure.lean",
+  "provenance": "authored"
+}

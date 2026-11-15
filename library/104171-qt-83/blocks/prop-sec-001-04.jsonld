@@ -1,8 +1,14 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant/folio-assistant-sci/ns#"
+    }
+  ],
   "@id": "library/104171-qt-83/blocks/prop-sec-001-04",
   "@type": [
-    "folio:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "kind": "proposition",
@@ -10,6 +16,6 @@
   "pageEnd": 25,
   "text": "prop-sec-001-04.md",
   "derivedFrom": "library/104171-qt-83/sections/sec-001",
-  "sourceDocument": "library/104171-qt-83/manifest",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/104171-qt-83",
   "provenance": "ingested"
 }

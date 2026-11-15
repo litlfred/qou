@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-categorical-instanton",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:categorical-instanton",
+  "kind": "definition",
+  "title": "Categorical instanton",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-connection",
+    "papers/quantum-observable-universe/blocks/def-q-hodge-star"
+  ],
+  "tags": [
+    "instanton",
+    "self-dual"
+  ],
+  "leanRef": "qou:QOU.CategoricalInstanton",
+  "text": "categorical-instanton.md",
+  "leanSource": "categorical-instanton.lean",
+  "provenance": "authored"
+}

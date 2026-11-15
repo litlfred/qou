@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/milnor-hyperbolic/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "BULLETIN (New Series) OF THE AMERICAN MATHEMATICAL SOCIETY HYPERBOLIC GEOMETRY: THE FIRST 150 YEARS BY JOHN MILNOR This will be a description of a few highlights in the early history of",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/milnor-hyperbolic",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "milnor-hyperbolic",
   "contains": [
     "library/milnor-hyperbolic/sections/sec-000",
     "library/milnor-hyperbolic/sections/sec-001",
@@ -17,8 +22,10 @@
     "library/milnor-hyperbolic/sections/sec-008"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "milnor-hyperbolic",
+    "title_source": "slug",
     "source_file": "milnor_hyperbolic.pdf",
     "source_sha256": "d444d7a61af54c7c3be374149917560103b614bd2afa02c6d0cb54fb06c4063f",
     "pages": 16,

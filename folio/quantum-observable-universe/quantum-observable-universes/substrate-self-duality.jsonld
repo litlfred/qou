@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/thm-substrate-self-duality",
+  "@type": [
+    "folio-assistant-core:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:substrate-self-duality",
+  "kind": "theorem",
+  "title": "Self-duality of the algebraic substrate",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-rigid-dualizing-complex"
+  ],
+  "cites": [
+    "references/yekutieli2015",
+    "references/kock2004",
+    "references/yekutieli2010"
+  ],
+  "tags": [
+    "self-duality",
+    "frobenius",
+    "dualizing-complex"
+  ],
+  "leanRef": "qou:QOU.AlgebraicSubstrate.substrate_self_duality",
+  "text": "substrate-self-duality.md",
+  "leanSource": "substrate-self-duality.lean",
+  "provenance": "authored"
+}

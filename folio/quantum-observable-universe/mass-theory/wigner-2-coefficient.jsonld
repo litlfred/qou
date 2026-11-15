@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-wigner-2-coefficient",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:wigner-2-coefficient",
+  "kind": "proposition",
+  "title": "Wigner-2 coefficient $C_{[3,2,1]} = w_{[3,2,1]} \\cdot h/2$ from self-conjugate trace pairing",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-mass-coefficient-shadow-price",
+    "papers/quantum-observable-universe/blocks/prop-hoefsmit-seminormal-form"
+  ],
+  "tags": [
+    "wigner",
+    "self-conjugate",
+    "seminormal",
+    "shadow-price",
+    "isospin",
+    "cyclotomic"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.wigner2_coefficient",
+  "text": "wigner-2-coefficient.md",
+  "leanSource": "wigner-2-coefficient.lean",
+  "provenance": "authored"
+}

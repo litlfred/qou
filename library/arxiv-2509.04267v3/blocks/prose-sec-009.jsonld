@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2509.04267v3/blocks/prose-sec-009",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2509.04267v3/blocks/prose-sec-009",
   "kind": "prose",
-  "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
-  "pageStart": 18,
-  "pageEnd": 20,
-  "text": "../sections/sec-009-18-masahico-saito-and-emanuele-zappala.md",
-  "derivedFrom": "library/arxiv-2509.04267v3/manifest",
-  "sourceDocument": "library/arxiv-2509.04267v3/manifest",
+  "title": "Invariants from the tensor version of quandle 2-cocycle invariants",
+  "pageStart": 15,
+  "pageEnd": 19,
+  "text": "../sections/sec-009-52-invariants-from-the-tensor-version-of-quandle.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2509.04267v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2509.04267v3",
   "provenance": "ingested"
 }

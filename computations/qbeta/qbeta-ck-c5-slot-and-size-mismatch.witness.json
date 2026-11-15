@@ -7,29 +7,30 @@
   "scope": "(a); c_3 hardcoded at the proton extraction, proton pin only",
   "q0": "1.1099785827513808076",
   "q0_pin": "proton (q_at)",
+  "q0Anchor": "proton",
   "dps": 50,
   "u": "0.0085172345501561421893",
   "c5_live": "-1.2527021132519654016",
-  "c5_superseded": "13.714120117772822457",
+  "c5_superseded": "13.714120171350184205",
   "omitted_term_ppb_live": "0.056148847412132610882",
-  "omitted_term_ppb_superseded": "0.6146968459129612575",
+  "omitted_term_ppb_superseded": "0.61469684831441574353",
   "residual_ppb": {
     "live": {
       "1": "73827.222593690312772",
       "2": "1278.5825421130361078",
-      "3": "2.6662081863285703109e-6",
-      "4": "-6.1698258276700210078",
-      "5": "-6.2259746747357250097"
+      "3": "1.7082005420759134179e-42",
+      "4": "-6.1698285067440378153",
+      "5": "-6.2259773538097416668"
     },
     "superseded": {
       "1": "73827.222593690312772",
       "2": "1278.5825421130361078",
-      "3": "2.6662081863285703109e-6",
-      "4": "-6.1698258276700210078",
-      "5": "-5.5551289855496322264"
+      "3": "1.7082005420759134179e-42",
+      "4": "-6.1698285067440378153",
+      "5": "-5.5551316622221962095"
     }
   },
-  "crossing_margin_pct_live": "0.91005562610684112019",
+  "crossing_margin_pct_live": "0.91005523094085001849",
   "assertions": [
     {
       "name": "agents_md_omitted_term_used_the_superseded_c5",
@@ -44,7 +45,7 @@
     {
       "name": "nonmonotonicity_holds_under_LIVE_and_not_under_superseded",
       "passed": true,
-      "detail": "|residual| goes 6.16983 -> 6.22597 ppb under the LIVE c_5 (increases, so the signature holds) and 6.16983 -> 5.55513 under the superseded one (decreases) -- the OPPOSITE of what my PR #6424 concluded, which read the SIGNED column"
+      "detail": "|residual| goes 6.16983 -> 6.22598 ppb under the LIVE c_5 (increases, so the signature holds) and 6.16983 -> 5.55513 under the superseded one (decreases) -- the OPPOSITE of what my PR #6424 concluded, which read the SIGNED column"
     },
     {
       "name": "crossing_margin_is_small_and_is_reported_as_such",

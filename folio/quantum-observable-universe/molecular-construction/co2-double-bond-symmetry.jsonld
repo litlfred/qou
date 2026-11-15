@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-co2-double-bond-symmetry",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:co2-double-bond-symmetry",
+  "kind": "remark",
+  "title": "VSEPR molecular geometry from $\\Phi_1$ minimisation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-co2-molecular-braid"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-co2-lp-dual-binding",
+  "tags": [
+    "CO2",
+    "VSEPR",
+    "geometry",
+    "symmetry",
+    "LP-dual"
+  ],
+  "text": "co2-double-bond-symmetry.md",
+  "provenance": "authored"
+}

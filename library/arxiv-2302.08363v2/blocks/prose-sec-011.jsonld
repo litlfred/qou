@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2302.08363v2/blocks/prose-sec-011",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2302.08363v2/blocks/prose-sec-011",
   "kind": "prose",
   "title": "Large N solution",
   "pageStart": 31,
   "pageEnd": 31,
   "text": "../sections/sec-011-large-n-solution.md",
-  "derivedFrom": "library/arxiv-2302.08363v2/manifest",
-  "sourceDocument": "library/arxiv-2302.08363v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2302.08363v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2302.08363v2",
   "provenance": "ingested"
 }

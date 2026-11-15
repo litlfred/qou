@@ -1,7 +1,8 @@
 {
+ "diagnostic_frame": "TWO-ROW (Temperley-Lieb) DIAGNOSTIC. Owner ruling 2026-10-12 (qou-uir6, options ii+iii): the convention-D values in this witness (P_total_wenzl, z = q^3/(q^2+1)) are evaluated OUTSIDE the faithful window 0 <= z <= h, where every three-row weight vanishes, so they see only the two-row quotient. They are kept unchanged as a two-row diagnostic. THE result is the faithful-window scan, computations/deltalambda/magnus-omega2-markov-window-scan.witness.json. Annotation added by hand, label only, no number changed; the producer does not emit this key yet.",
  "computation": "deuteron-magnus-omega2-sign",
  "scriptFile": "deuteron_magnus_omega2_sign_probe.py",
- "computedAt": "2026-09-08T04:33:17.900041+00:00",
+ "computedAt": "2026-09-13T08:27:18.810525+00:00",
  "engine": "mpmath mpf at 140 dps (H\u2086 Hoefsmit seminormal; finite-diff germ; 0 free params)",
  "free_parameters": 0,
  "inputs": {
@@ -45,7 +46,7 @@
   "germ": "A_g = q\u00b7(\u2202_q \u03c3_g)\u00b7\u03c3_g\u207b\u00b9 (central finite diff; validated vs differentiated Hecke {\u03c3,\u03c3'}=h'\u03c3+h\u03c3')",
   "Omega2": "\u00bd \u03a3_{i<j} [A_{g_i},A_{g_j}] over the ordered crossings",
   "density": "\u03c1(\u03b2_D) = \u220f \u03c3_{g_i} (bare word; d\u00b7I dressing central \u21d2 drops from \u03a9\u2082)",
-  "pairing": "P = \u03a3_\u03bb y_\u03bb tr(\u03c1_\u03bb \u03a9\u2082_\u03bb), y_\u03bb = d_q(\u03bb)\u00b2/[n]_q!"
+  "pairing": "P = \u03a3_\u03bb w(\u03bb) tr(\u03c1_\u03bb \u03a9\u2082_\u03bb) on both weight families: w = d_q(\u03bb)\u00b2/[n]_q! (quantum Plancherel) \u2192 P_total; w = y_\u03bb (Wenzl bridge, production Markov weight) \u2192 P_total_wenzl, the headline arm"
  },
  "results": {
   "per_partition": [
@@ -185,7 +186,7 @@
    }
   ],
   "weight_family": "quantum_plancherel_dq2_over_n_factorial",
-  "weight_family_note": "NOT the Wenzl y_lambda used by the production Markov trace. AGENTS.md forbids conflating y_lambda / w_lambda / w~_lambda, which are distinct at q != 1. Re-weighting this witness's own per-partition tr(rho.Omega2) with the Wenzl bridge weight leaves the sign of P_total unchanged \u2014 measured in magnus_omega2_weight_family_robustness_probe.py.",
+  "weight_family_note": "The `y_lambda` column of `per_partition` holds the quantum Plancherel measure d_q(lambda)^2/[n]_q!, NOT the Wenzl y_lambda used by the production Markov trace. AGENTS.md forbids conflating y_lambda / w_lambda / w~_lambda, which are distinct at q != 1, and these two are not a rescaling of one another: the Wenzl weight carries the level r = 2 row cap (bean qou-fq0f) that zeroes every shape with >= 3 rows, and is a normalised Markov trace with tr(1) = 1 at every n, whereas Plancherel's tr(1) drifts from 11.1 to 6751.5 over n = 6 to 12. Both arms are computed here from the SAME per-partition tr(rho.Omega2): P_total (Plancherel) and P_total_wenzl (headline). On this atom they AGREE in sign. Across A = 2, 3, 4 the Plancherel arm runs -, +, + (one sign change, between deuteron and triton) and the Wenzl arm runs -, -, - (no sign change anywhere). The A-dependent sign change the programme targets is therefore exhibited by the Plancherel arm and NOT by the production Wenzl/Markov weight. Choosing the measure BECAUSE it yields the wanted sign would be fitting (AGENTS.md: selection against the target), so the honest reading is that under the production weight the sign change is not exhibited in A = 2, 3, 4. Which measure is the correct pairing for a Magnus Omega2 question is bean qou-za3q decision 1, still OPEN. Measured in magnus_omega2_weight_family_robustness_probe.py; analysed in docs/audits/2026-09-07-magnus-omega2-weight-family-analysis.md.",
   "headline_pairing": "P_total_wenzl",
   "P_total_wenzl": "-6.92125065297273509910663235394448522642033111261279915338580",
   "P_total_wenzl_sign": -1,
@@ -202,14 +203,14 @@
   "clears_non_negativity_wall": true,
   "live": true
  },
- "verdict": "LIVE \u2014 the linear Magnus pairing tr_M(\u03c1\u00b7\u03a9\u2082) CLEARS the non-negativity wall that excluded the quadrature \u2016F_q\u2016\u00b2. Evidence, all 0-fit: (i) the \u03c1=I control tr_M(\u03a9\u2082) vanishes exactly (\u03a9\u2082 has no Markov trace), so the quadrature's non-negativity argument provably does NOT transfer to this linear object; (ii) the per-partition pairing is SIGN-INDEFINITE (4 positive, 5 negative \u2014 e.g. (2,2,2) is positive while (5,1) is negative), which a square structurally cannot be; (iii) the y_\u03bb-weighted total is definite and nonzero, net NEGATIVE. This makes the 2nd-order Magnus term a VIABLE carrier for the sign-changing missing binding term, the role the traceless-\u21d2-quadrature F_q could not fill. HONEST LIMITS: this is a fact about the object's sign structure, NOT a derivation of the 0.608 MeV (needs the open \u0394_\u03bb MeV normalization) and NOT yet a sign-MATCH to the deuteron \u2014 mapping 'net-negative' to 'reduces/adds binding' needs the binding-sign convention of the mass functional, and the 'flips positive at A\u22653' half needs H\u2089. Both are flagged open, neither claimed.",
- "scope": "scope-(a): decides the SIGN of the 2nd-order Magnus pairing tr_M(\u03c1\u00b7\u03a9\u2082) at A=2. Does NOT reproduce the 0.608 MeV (needs the open \u0394_\u03bb MeV normalization \u2014 claiming it would be a fit). Does NOT test the 'positive at A\u22653' half (needs H\u2089). No fit; \u03bc\u2083/c\u2083/B(D) never inverted; nothing wired.",
+ "verdict": "LIVE \u2014 the linear Magnus pairing tr_M(\u03c1\u00b7\u03a9\u2082) CLEARS the non-negativity wall that excluded the quadrature \u2016F_q\u2016\u00b2. Evidence, all 0-fit: (i) the \u03c1=I control tr_M(\u03a9\u2082) vanishes exactly (\u03a9\u2082 has no Markov trace), so the quadrature's non-negativity argument provably does NOT transfer to this linear object; (ii) the per-partition pairing is SIGN-INDEFINITE (4 positive, 5 negative \u2014 e.g. (2,2,2) is positive while (5,1) is negative), which a square structurally cannot be; (iii) the weighted total is definite and nonzero, net NEGATIVE \u2014 on the Plancherel arm P_total, and the headline Wenzl arm P_total_wenzl agrees with it, so this verdict does not rest on the open choice of pairing measure. This makes the 2nd-order Magnus term a VIABLE carrier for the sign-changing missing binding term, the role the traceless-\u21d2-quadrature F_q could not fill. HONEST LIMITS: this is a fact about the object's sign structure, NOT a derivation of the 0.608 MeV (needs the open \u0394_\u03bb MeV normalization) and NOT yet a sign-MATCH to the deuteron \u2014 mapping 'net-negative' to 'reduces/adds binding' needs the binding-sign convention of the mass functional. The 'flips positive at A\u22653' half is no longer open at A=2 \u2014 it has since been measured on H\u2089 (triton) and H\u2081\u2082 (\u2074He), and the answer depends on the weight family: the Plancherel arm runs -,+,+ over A=2,3,4 while the production Wenzl arm runs -,-,-. So the flip is exhibited only under the measure this probe's P_total uses, not under the Markov weight. Neither is claimed here; see magnus_omega2_weight_family_robustness_probe.py and bean qou-za3q decision 1, still open.",
+ "scope": "scope-(a): decides the SIGN of the 2nd-order Magnus pairing tr_M(\u03c1\u00b7\u03a9\u2082) at A=2. Does NOT reproduce the 0.608 MeV (needs the open \u0394_\u03bb MeV normalization \u2014 claiming it would be a fit). Does NOT test the 'positive at A\u22653' half; that is measured elsewhere, on H\u2089 (triton) and H\u2081\u2082 (\u2074He), and its answer is weight-family dependent \u2014 see `weight_family_note`. No fit; \u03bc\u2083/c\u2083/B(D) never inverted; nothing wired.",
  "lean": "QOU.QBeta.YekutieliTrefoilDiscretization",
  "wired": false,
  "notes": "Magnus continuation (qou-dp32) of deuteron_interface_handle_curvature_probe.py (qou-jqof). The prior probe established F_q traceless \u21d2 quadrature \u2016F_q\u2016\u00b2\u22650, excluded from the negative-at-A=2 term. This tests whether the LINEAR Magnus pairing escapes that non-negativity.",
- "scriptHash": "0380bf07c793",
- "scriptCommitSha": "87bf883793d02a378b6ce38b3627293995758317",
- "commitSha": "bb6ea21617d3c7869ef6d711fcf3eebc0f881c39",
+ "scriptHash": "0fcf59fd103e",
+ "scriptCommitSha": "9cb117e96189ac8c9a37b1bec94d8d827465b294",
+ "commitSha": "6c7f0b046752c4037cd545a5262d74066c7cb028",
  "durationMs": 0,
  "q0Anchor": "proton",
  "q0Value": "1.1099785827513808075916690956107688798744991218736"

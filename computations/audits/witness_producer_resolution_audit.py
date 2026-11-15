@@ -184,7 +184,7 @@ def resolve_producer(witness_path: Path, d: dict, producers, basenames):
         if stem + suf + ".py" in basenames:
             return "FOUND_BY_CONVENTION", stem + suf + ".py"
     writers = producers.get(wid, [])
-    live = [f for f in writers if "_deprecated" not in f]
+    live = [f for f in writers if ("_deprecated" not in f and "fsh-guts" not in f)]
     if live:
         return "FOUND_BY_PRODUCER_CALL", live[:3]
     if writers:
@@ -213,7 +213,7 @@ def scan(root: Path):
     key_names_producer = collections.Counter()
     total = 0
     for p in sorted((root / "computations").rglob("*.witness.json")):
-        if "_deprecated" in str(p):
+        if ("_deprecated" in str(p) or "fsh-guts" in str(p)):
             continue
         try:
             d = json.loads(p.read_text())

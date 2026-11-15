@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0905.0591v3/blocks/prose-sec-015",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0905.0591v3/blocks/prose-sec-015",
   "kind": "prose",
   "title": "Twisted Alexander polynomials and knot concordance",
   "pageStart": 14,
   "pageEnd": 16,
   "text": "../sections/sec-015-52-twisted-alexander-polynomials-and-knot-concor.md",
-  "derivedFrom": "library/arxiv-0905.0591v3/manifest",
-  "sourceDocument": "library/arxiv-0905.0591v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0905.0591v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0905.0591v3",
   "provenance": "ingested"
 }

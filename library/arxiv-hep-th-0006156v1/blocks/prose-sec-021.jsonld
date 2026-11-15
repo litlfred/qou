@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-021",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-021",
   "kind": "prose",
-  "title": "(j−k−1)",
-  "pageStart": 7,
-  "pageEnd": 7,
-  "text": "../sections/sec-021-2-jk1.md",
-  "derivedFrom": "library/arxiv-hep-th-0006156v1/manifest",
-  "sourceDocument": "library/arxiv-hep-th-0006156v1/manifest",
+  "title": "Dual Liouville equation",
+  "pageStart": 12,
+  "pageEnd": 13,
+  "text": "../sections/sec-021-44-dual-liouville-equation.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-0006156v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-0006156v1",
   "provenance": "ingested"
 }

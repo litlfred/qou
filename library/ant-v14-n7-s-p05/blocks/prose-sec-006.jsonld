@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ant-v14-n7-s-p05/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ant-v14-n7-s-p05/blocks/prose-sec-006",
   "kind": "prose",
-  "title": "Motivic Gauss–Bonnet",
-  "pageStart": 25,
-  "pageEnd": 27,
-  "text": "../sections/sec-006-5-motivic-gaussbonnet.md",
-  "derivedFrom": "library/ant-v14-n7-s-p05/manifest",
-  "sourceDocument": "library/ant-v14-n7-s-p05/manifest",
+  "title": "SL-oriented cohomology theories",
+  "pageStart": 27,
+  "pageEnd": 31,
+  "text": "../sections/sec-006-6-sl-oriented-cohomology-theories.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s-p05",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s-p05",
   "provenance": "ingested"
 }

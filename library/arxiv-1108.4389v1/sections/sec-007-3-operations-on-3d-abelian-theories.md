@@ -1,0 +1,19 @@
+---
+doc_id: arxiv-1108.4389v1
+doc_title: "Gauge Theories Labelled by Three-Manifolds"
+section_id: sec-007-3-operations-on-3d-abelian-theories
+section_title: "Operations on 3d abelian theories"
+section_number: 3
+pages: 20-21
+source_pdf: 1108.4389v1.pdf
+source_sha256: d3ac77510654d828
+toc_source: inferred
+text_source: latex
+latex_prose_ratio: 0.9
+latex_coverage_ratio: 0.818
+---
+[]{#sec:ops label="sec:ops"}
+
+Our next goal is introduce the basic ingredients and building blocks necessary to understand the field theory side of the correspondence $(M,\Pi)\leftrightarrow T_{M,\Pi}$. We will see a clear parallel with the construction of 3-manifolds in Section [\[sec:geom\]](#sec:geom){reference-type="ref" reference="sec:geom"}, which will lead us to the definition of the theory $T_{M,\Pi}$ in Section [\[sec:glue\]](#sec:glue){reference-type="ref" reference="sec:glue"}.
+
+## An $Sp(2N,{\mathbb Z})$ action on 3d CFTs with $U(1)^N$ flavor symmetry {#sec:dualities}

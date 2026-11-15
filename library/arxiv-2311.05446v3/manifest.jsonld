@@ -1,0 +1,54 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2311.05446v3",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "New Brunn--Minkowski and functional inequalities via convexity of entropy",
+  "contains": [
+    "library/arxiv-2311.05446v3/sections/sec-front-matter",
+    "library/arxiv-2311.05446v3/sections/sec-000",
+    "library/arxiv-2311.05446v3/sections/sec-001",
+    "library/arxiv-2311.05446v3/sections/sec-002",
+    "library/arxiv-2311.05446v3/sections/sec-003",
+    "library/arxiv-2311.05446v3/sections/sec-004",
+    "library/arxiv-2311.05446v3/sections/sec-005",
+    "library/arxiv-2311.05446v3/sections/sec-006",
+    "library/arxiv-2311.05446v3/sections/sec-007",
+    "library/arxiv-2311.05446v3/sections/sec-008",
+    "library/arxiv-2311.05446v3/sections/sec-009",
+    "library/arxiv-2311.05446v3/sections/sec-010"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2311.05446&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2311.05446v3",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "2311.05446v3.pdf",
+    "source_sha256": "c5809730f598a56d6c4546b09abaceb65dd0764b8da08cd411ed8dbef9ac90ef",
+    "pages": 32,
+    "arxiv": {
+      "id": "2311.05446",
+      "version": "3",
+      "primary_class": "math.MG",
+      "stamp_date": "20 Mar 2026"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

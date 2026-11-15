@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0804.0917v1/blocks/prose-sec-001",
+  "kind": "prose",
+  "title": "Composition-Diamond lemma for left ideals of a free algebra",
+  "pageStart": 2,
+  "pageEnd": 7,
+  "text": "../sections/sec-001-composition-diamond-lemma-for-left-ideals-of-a-f.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0804.0917v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0804.0917v1",
+  "provenance": "ingested"
+}

@@ -148,7 +148,7 @@ SELF_TEST = [
 
 
 def self_test() -> int:
-    base = REPO / "content/quantum-observable-universe"
+    base = REPO / "folio/quantum-observable-universe"
     bad = 0
     for rel, car, fld, want in SELF_TEST:
         p = base / rel

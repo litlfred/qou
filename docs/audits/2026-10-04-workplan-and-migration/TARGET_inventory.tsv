@@ -1,0 +1,37 @@
+path	current_role	target_node_kind	target_instance_or_dir	action	blocked_on	evidence
+<slug>.json	instance declaration	declaration	qou root	declare-in-place		cat-harness/schemas/cat-harness.ts:2789; dependents retired :890
+<slug>.config.json	instance config	config	qou root	declare-in-place		cat-harness/schemas/harness-config.ts:327; dependency schema :198
+folio.config.json	retired config name	config(retired)	qou root	retire	T1	cat-harness/scripts/check-instance-config.ts header
+folio/<doc>/<doc>.ts	document manifest	folio:document	qou folio/	declare-in-place		cat-harness/schemas/types.ts:1210; folio-graph-kind.ts:40
+folio/<doc>/<ch>/<ch>.ts	chapter manifest	folio:chapter	qou folio/	declare-in-place		types.ts:1175 Section :1122; folio-test handbook/folio/cold-chain/introduction/introduction.ts
+folio/<doc>/<ch>/<root>.ts	block manifest	folio:block(BLOCK_KINDS)	qou folio/	declare-in-place		block-kinds.ts:42 MATH :232; types.ts:391
+folio/<doc>/<ch>/<root>.md	block narrative	folio:block-body	qou folio/	declare-in-place		constraints.ts:726 md-exists
+folio/<doc>/<ch>/<root>.lean	lean sibling	folio:block-formal	qou folio/ or Lake root via lean.ref	declare-in-place	T2 (configureLeanPackages 0 callers)	constraints.ts:738; lean-packages.ts:44,133; types.ts:91
+<lakeRoot>/**/*.lean	lake package source	folio:block-formal (via lean.ref)	LeanPackage.lakeRoot	declare-in-place	T2	lean-packages.ts:44; templates/paper/github/scripts/folio_lean/config.py default folio/<paper>/lean
+folio/schema/builders.ts	builder shim	code	qou folio/schema/	declare-in-place		init-folio.ts:1267
+computations/*.py	computation script	code (Tool via invoke.shell)	qou computations/ (code kind)	wrap-as-tool	T6	types.ts:259-275; tool.ts:414
+computations/*.witness.json	computation witness	NONE (no graph kind; TS interface only)	qou computations/	keep-as-data	T3	types.ts:205; no Zod schema
+<sim>.html + sim .ts	simulator	folio:simulator	qou folio/ + html	declare-in-place		types.ts:895; constraints.ts:793,802
+library/<entry>/	ingested source	library (holds derived)	qou library/	declare-in-place		folio-assistant-sci/library/codata-2022/; graph-kind-registry.ts ~1719-1734
+library/<entry>/values.json	reference dataset values	library:tabular	qou library/	declare-in-place		skills/data/reference-dataset-ingestion.md (sci)
+test/results/**	qa verdicts	qa (state, branch cat/cat-harness/qa-reports)	cat-harness qa-reports branch	move-by-rename		cat-harness/cat-harness.json qa storage
+test/attestations/**	judgements	attestations	qou test/attestations/	declare-in-place		cat-harness/cat-harness.json attestations
+tools/index.ts	Tool barrel	tools	qou tools/ (graphKinds tools)	wrap-as-tool	T6 (discovery platform-checkout-only)	cat-harness/tools/discover.ts:52,114,123; folio-assistant-core/tools/index.ts
+scripts/*.ts|py	CLI producer	code + Tool node	qou scripts/	wrap-as-tool	T6	tool.ts:214 invoke.shell; @covers audit-coverage.md:48
+processes/<concern>/*.bpmn	process	processes	qou processes/	wrap-as-process		folio-assistant-sci/processes/content/authoring-a-paper.bpmn; src/tools/workflow.ts:83
+processes/<concern>/decisions/*.dmn	decision	processes (DMN)	qou processes/	wrap-as-process		folio-assistant-sci/processes/content/decisions/lean-build-gate.dmn
+beans/workflows/*.json	process instance state	workflow-state	qou beans/workflows/	declare-in-place		cat-harness/src/workflow/store.ts:40; beans/beans.json
+skills/<grp>/<pkg>/<name>.md	skill	skills	qou skills/ or upstream-to:<instance>	convert-to-skill		skill-registration.md:34-69; harness-config.ts:1570 (root wins)
+skills/<grp>/<pkg>/package-manifest.json	skill package	skills	qou skills/	declare-in-place		folio-assistant-sci/skills/content/folio-paper-adapter/package-manifest.json
+skills/skills.json	skill subgraph decl	skills (skill-topics/v1)	qou skills/	declare-in-place		folio-assistant-sci/skills/skills.json
+scenarios/roles.json	role extensions	scenarios	qou scenarios/	declare-in-place		role-graph.ts:386,497; folio-assistant-sci/scenarios/roles.json (roles:[], 9 extensions)
+scenarios/actors/*.json	actor	scenarios	only if new actor	needs-owner		skill-package.ts:173
+beans/defs/*.md	work item	bean-defs	qou beans/defs/	declare-in-place		cat-harness/schemas/bean-graph.ts:106; init-folio.ts:896 writes path: beans (disagrees)
+todos/	feedback	todos	qou todos/	declare-in-place		init-folio.ts:1133
+glossary.json	term ledger	glossary	qou glossary/	move-by-rename		folio-assistant-core/folio-assistant-core.json glossary; schemas/glossary-graph-kind.ts:52
+docs/	folio docs pages	docs (renderable)	qou docs/	declare-in-place	T5 for folio content	graph-kind-registry.ts:774; scripts/compose-docs.ts
+uploads/	intake queue	uploads	qou uploads/	declare-in-place		DEFAULT_DIRECTORIES cat-harness.ts:1854
+fsh-guts/	deleted-but-kept	fsh-guts (context)	branch-sourced	declare-in-place		folio-assistant.json fsh-guts
+methodologies/*.md	methodology	methodology (context)	folio-assistant-sci methodologies/	upstream-to:folio-assistant-sci		folio-assistant-sci/folio-assistant-sci.json
+.github/workflows/lean-build*.yml	CI	code (template)	cat-harness/templates/paper	keep-as-data		init-folio.ts:802 folioTemplates
+.github/workflows/staging.yml	site build	code	qou	needs-owner	T5 (paper build_command unset)	init-folio.ts:646-656

@@ -67,7 +67,9 @@ CATALAN = mp.catalan
 # the 50-digit q string.  Not 1e-40 (over-tight for accumulated logs) and never
 # 1e-15, which would only certify float64.
 TOL = mp.mpf("1e-30")
-B_AME_D = mp.mpf("2.224566")   # deuteron binding, AME2020, MeV (positive)
+# Deuteron binding, AME2020, MeV (positive) -- read from the registry. The literal
+# 2.224566 truncated it (2.2245662; reference-literal ratchet).
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION as B_AME_D  # noqa: E402
 
 
 def consts(q):

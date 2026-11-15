@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2104.04941v2/sections/sec-019",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Triangular quivers and Fock–Goncharov coordinate structures",
+  "pageStart": 17,
+  "pageEnd": 21,
+  "contains": [
+    "library/arxiv-2104.04941v2/blocks/prose-sec-019"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2104.04941v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2104.04941v2",
+  "provenance": "ingested"
+}

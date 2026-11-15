@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1511.00400v2/blocks/prose-sec-016",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1511.00400v2/blocks/prose-sec-016",
   "kind": "prose",
   "title": "Higher torsions for closed manifolds",
   "pageStart": 27,
   "pageEnd": 29,
   "text": "../sections/sec-016-42-higher-torsions-for-closed-manifolds.md",
-  "derivedFrom": "library/arxiv-1511.00400v2/manifest",
-  "sourceDocument": "library/arxiv-1511.00400v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1511.00400v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1511.00400v2",
   "provenance": "ingested"
 }

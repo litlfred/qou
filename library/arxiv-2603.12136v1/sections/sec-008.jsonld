@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2603.12136v1/sections/sec-008",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Split reformulations of linear programs",
+  "pageStart": 14,
+  "pageEnd": 15,
+  "contains": [
+    "library/arxiv-2603.12136v1/blocks/prose-sec-008"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2603.12136v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2603.12136v1",
+  "provenance": "ingested"
+}

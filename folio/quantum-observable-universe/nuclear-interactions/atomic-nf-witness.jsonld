@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-atomic-nf-witness",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:atomic-nf-witness",
+  "kind": "proposition",
+  "title": "Atomic braid normal form witness",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-atomic-braid"
+  ],
+  "leanRef": "qou:QOU.ParticleInteractions.atomic_nf_witness",
+  "text": "atomic-nf-witness.md",
+  "provenance": "authored"
+}

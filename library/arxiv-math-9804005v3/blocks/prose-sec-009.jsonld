@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9804005v3/blocks/prose-sec-009",
+  "kind": "prose",
+  "title": "For every nonzero A-module M there is a nonzero submodule N ⊂M which",
+  "pageStart": 7,
+  "pageEnd": 7,
+  "text": "../sections/sec-009-1-for-every-nonzero-a-module-m-there-is-a-nonzer.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9804005v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9804005v3",
+  "provenance": "ingested"
+}

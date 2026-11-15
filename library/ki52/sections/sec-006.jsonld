@@ -1,17 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/ki52/sections/sec-006",
   "@type": [
     "doco:Section"
   ],
-  "title": "Calculation by the Poisson summation formula",
-  "pageStart": 19,
-  "pageEnd": 19,
+  "title": "Calculation of the asymptotic expansion",
+  "pageStart": 30,
+  "pageEnd": 36,
   "contains": [
-    "library/ki52/blocks/prose-sec-006",
-    "library/ki52/blocks/prop-sec-006-01"
+    "library/ki52/blocks/prose-sec-006"
   ],
-  "derivedFrom": "library/ki52/manifest",
-  "sourceDocument": "library/ki52/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ki52",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ki52",
   "provenance": "ingested"
 }

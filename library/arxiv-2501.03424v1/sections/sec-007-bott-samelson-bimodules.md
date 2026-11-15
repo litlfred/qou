@@ -8,25 +8,18 @@ pages: 6-7
 source_pdf: 2501.03424v1.pdf
 source_sha256: 53e00a30fd850a5b
 doc_brief: "Soergel bimodules and Kazhdan-Lusztig polynomials ethan eugene wynner — This paper presents an exposition of Soergel bimodules, the categ oriﬁcation of Hecke alge- bras, and their applications to"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.98
 ---
-Let Bs for s∈ S denote the graded R-bimodule
-Bs = R⊗Rs R(1),
-where R(1) is obtained by shifting down by 1. That is, M (1)i ≡ M i−1. Elements in Bs are
-expressable as sums ∑
-i
-fi⊗ gi, f i, gi∈ R.
-Given a reduced expression w = (s1, . . . sn). We deﬁne the Bott-Samelson bimodule to be the graded
-R-bimodule
-BS (w) = Bs1 Bs2··· Bsn ,
-equivalently,
-BS (w) = R⊗RS1 R⊗RS2···⊗ RSn R(l(w)).
-6
-Thus, we express our elements of BS (w) as
-∑
-i
-fi⊗ gi⊗···⊗ hi,
-with of course, fi, gi, . . . hi∈ R. We can now deﬁne the titular bimodule of this paper: A Soergel
-bimodule is a direct summand of a ﬁnite direct sum of grading shifts of Bott-Sa melson bimodules.
-The category of Soergel bimodules SBim is the strictly full smallest subcategory of R-gbim6.3 (the
-category of graded R-bimodules) containing both R and Bs for every s∈ S, and is closed under
-tensor products, direct sums/summands, and grade shifting.
+Let $B_s$ for $s \in S$ denote the graded $R$-bimodule
+$$B_s = R \otimes_{R^s}R(1),$$
+where $R(1)$ is obtained by shifting down by 1. That is, $M(1)^i \equiv M^{i-1}.$ Elements in $B_s$ are expressable as sums 
+$$\sum_i f_i \otimes g_i, \text{ }f_i, g_i \in R.$$
+Given a reduced expression $\underbar{$w$} = (s_1, \ldots s_n).$ We define the Bott-Samelson bimodule to be the graded $R$-bimodule 
+$$BS(\underbar{$w$}) = B_{s_1}B_{s_2}\cdots B_{s_n},$$
+equivalently, 
+$$BS(\underbar{$w$}) = R \otimes_{R^{S_1}}R \otimes_{R^{S_2}} \cdots \otimes_{R^{S_n}} R(l(w)).$$
+Thus, we express our elements of $BS(\underbar{$w$})$ as 
+$$\sum_i f_i \otimes g_i \otimes \cdots \otimes h_i,$$
+with of course, $f_i, g_i, \ldots h_i \in R.$ We can now define the titular bimodule of this paper: A \textit{Soergel bimodule} is a direct summand of a finite direct sum of grading shifts of Bott-Samelson bimodules. The category of Soergel bimodules $\mathbb{S}$Bim is the strictly full smallest subcategory of $R$-gbim\ref{app3} (the category of graded $R$-bimodules) containing both $R$ and $B_s$ for every $s \in S$, and is closed under tensor products, direct sums/summands, and grade shifting.

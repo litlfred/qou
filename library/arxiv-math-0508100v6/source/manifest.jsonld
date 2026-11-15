@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0508100v6/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0508100v6 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0508100v6",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0508100&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-0508100v6",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/math/0508100v6",
+    "content_type": "application/gzip",
+    "sha256": "2a6d9a1f862a68a48d50cae56ffceed9cac6d59b4dddf5ee4a8c7b6009666924",
+    "bytes": 63229,
+    "fetched": "2026-10-10T15:29:07+00:00",
+    "files": [
+      {
+        "path": "source/files/text13.bbl",
+        "role": "bbl",
+        "sha256": "06853cd0f0fe7989e663977101fc960902b0a58dda8cd75f23f439530d3def83",
+        "bytes": 6841
+      },
+      {
+        "path": "source/files/text13.tex",
+        "role": "tex",
+        "sha256": "eabe221b0f02b2473dd5448e6b87da3d529867c9b92b55890c071fed8732c3e2",
+        "bytes": 106866
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

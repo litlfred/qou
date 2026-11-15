@@ -8,120 +8,50 @@ pages: 8-10
 source_pdf: 2205.07095v1.pdf
 source_sha256: 2ec6916399150e2d
 doc_brief: "Virial Expansions for Correlation Functions in Canonical Ensemble A. L. Rebenko — The inﬁnite set of coupled integral nonlinear equations for correlation func- tions in the case of classical"
+text_source: latex
+latex_prose_ratio: 0.945
+latex_coverage_ratio: 1.0
 ---
-Rewrite the equation (3.29), (3.31) as follows:
-~Q(ρj)ρj(η) = ̺e−βW (x1;η(ˆx1))j(x1)
-∫
-Γ 0
-K(x1;ξ)ρj(η(ˆx1) ∪ξ)λσ(dξ), (4.32)
-~Q(ρj) =
-∫
-Γ 0
-K(x1;ξ)ρj(ξ)λσ(dξ), (4.33)
-where, following [12], a continuous positive function j : Rd → R+ is intro-
-duced and ρ(η) becomes functional such as ρ(η) = ρj(η)|j=1.
-8
-We will look for the solution of these equations in the form:
-ρj(η) = e(j;η)
-∫
-Γ 0
-T (η|γ)e(j;γ)λσ(dγ), (4.34)
-where e(j;η) is given by (2.4).
-The idea of ﬁnding a solution is to consider the left side of th e equation
-(4.32) as the product of two generating functionals (see (2. 5)) and compare
-it with the right part, which is also written in the form of a ge nerating
-functional of the form (2.3). So, substituting in (4.33) the corresponding
-expression for ρj(ξ) we have:
-~Q(ρj) =
-∫
-Γ 0
-∫
-Γ 0
-e(j;ξ ∪γ)K(x1;ξ)T (ξ|γ)λσ(dγ)λσ(dξ). (4.35)
-Apply to the integral on the right side of the (4.35) lemma 2.1 with
-G(ξ ∪γ) = e(j;ξ ∪γ) and H(ξ;γ) = K(x1;ξ)T (ξ|γ). (4.36)
-Then
-~Q(ρj) = ~Fψ1(j) =
-∫
-Γ 0
-e(j;γ)ψ1(γ)λσ(dγ), (4.37)
-with
-ψ1(γ) =
-∑
-ξ⊆γ
-K(x1;ξ)T (ξ|γ \ξ). (4.38)
-Write down (4.34) in the form of generating functional:
-ρj(η) = ~Fψ2(j) =
-∫
-Γ 0
-e(j;γ)ψ2(γ)λσ(dγ), (4.39)
-with
-ψ2(γ) = e(j;η)T (η|γ). (4.40)
-Left hand side (4.32) is:
-~Q(ρj)ρj(η) = ~Fψ1(j) ~Fψ2(j) = ~Fψ1∗ψ2(j) =
-∫
-Γ 0
-e(j;γ)(ψ1 ∗ψ2)(γ)λσ(dγ),
-(4.41)
-where
-(ψ1 ∗ψ2)(γ) =
-∑
-ξ⊆γ
-ψ1(ξ)ψ2(γ \ξ) =
-∑
-ξ⊆γ
-ψ2(γ \ξ)ψ1(ξ) = (4.42)
-=e(j;η)
-∑
-ξ⊆γ
-T (η|γ \ξ)
-∑
-ζ⊆ξ
-K(x1;ζ)T (ζ|ξ \ζ)
-9
-Right hand side (4.32) after substitution of ρj(η(ˆx1) ∪ξ) in the form
-(4.34) will look as:
-̺e−βW (x1;η(ˆx1))e(j;η)
-∫
-Γ 0
-∫
-Γ 0
-e(j;ξ ∪γ)K(x1;ξ)T (η(ˆx1) ∪ξ|γ)λσ(dγ)λσ(dξ).
-(4.43)
-Let us use lemma 2.1 again with
-G(ξ ∪γ) = e(j;ξ ∪γ) and H(ξ;γ) = K(x1;ξ)T (η(ˆx1) ∪ξ|γ). (4.44)
-Then right hand side of (4.32) will be as
-̺e−βW (x1;η(ˆx1))e(j;η)
-∫
-Γ 0
-e(j;γ)
-∑
-ξ⊆γ
-K(x1;ξ)T (η(ˆx1) ∪ξ|γ \ξ)λσ(dγ). (4.45)
-We equate the functions near e(j;γ) under the integrals of the expressions
-(4.41) and (4.45) and, reducing the multiplier e(j;η) we get the relation:
-∑
-ξ⊆γ
-T (η|γ \ξ)
-∑
-ζ⊆ξ
-K(x1;ζ)T (ζ|ξ \ζ) = (4.46)
-= ̺e−βW (x1;η(ˆx1)) ∑
-ξ⊆γ
-K(x1;ξ)T (η(ˆx1) ∪ξ|γ \ξ).
-Select the term with ξ = ∅ in the left side of this relation and take into
-account that T (∅|∅) = 1 and T (∅|γ) = 0, if γ ⁄= ∅), we obtain the following
-nonlinear recurrent relation:
-T (η|γ) = ̺e−βW (x1;η(ˆx1)) ∑
-ξ⊆γ
-K(x1;ξ)T (η(ˆx1) ∪ξ|γ \ξ)−
-−
-∑
-∅⁄=ξ⊆γ
-T (η|γ \ξ)
-∑
-∅⁄=ζ⊆ξ
-K(x1;ζ)T (ζ|ξ \ζ). (4.47)
-Initial conditions:
-T (∅|∅) = 1 , T (∅|γ) = 0 , if γ ⁄= ∅, (4.48)
-T ({η|γ) = 0 , if η ∩γ ⁄= ∅. (4.49)
+Rewrite the equation [\[limeq\]](#limeq){reference-type="eqref" reference="limeq"}, [\[ratioPF1\]](#ratioPF1){reference-type="eqref" reference="ratioPF1"} as follows:
+
+$$\label{limeq-1}
+ \widetilde{Q}(\rho_j)\rho_j(\eta)\;=\;\varrho  e^{-\beta W(x_1; \eta^{(\hat{x}_1)})}
+ j(x_1)\int_{\Gamma_0}K(x_1;\xi)\rho_j(\eta^{(\hat{x}_1)}\cup\xi)\lambda_{\sigma}(d\xi),$$ $$\label{ratioPF1-1}
+ \widetilde{Q}(\rho_j)\;=\;\int_{\Gamma_0}K(x_1;\xi)\rho_j(\xi)\lambda_{\sigma}(d\xi),$$ where, following [@MP77], a continuous positive function $j: \Bbb R^d \rightarrow \Bbb R_+$ is introduced and $\rho (\eta)$ becomes functional such as $\rho(\eta)\;=\;\rho_j(\eta)|_{j=1}.$
+
+We will look for the solution of these equations in the form: $$\label{SSCA-2}
+\rho_j(\eta)\;=\;e(j;\eta)\int_{\Gamma^0}T(\eta|\gamma)e(j;\gamma)\lambda_\sigma(d\gamma),$$ where $e(j;\eta)$ is given by [\[I-lam4\]](#I-lam4){reference-type="eqref" reference="I-lam4"}.
+
+The idea of finding a solution is to consider the left side of the equation [\[limeq-1\]](#limeq-1){reference-type="eqref" reference="limeq-1"} as the product of two generating functionals (see [\[odprod\]](#odprod){reference-type="eqref" reference="odprod"}) and compare it with the right part, which is also written in the form of a generating functional of the form [\[GFf\]](#GFf){reference-type="eqref" reference="GFf"}. So, substituting in [\[ratioPF1-1\]](#ratioPF1-1){reference-type="eqref" reference="ratioPF1-1"} the corresponding expression for $\rho_j (\xi)$ we have: $$\label{ratioPF1-1a}
+ \widetilde{Q}(\rho_j)\;=\;\int_{\Gamma_0}\int_{\Gamma_0}e(j;\xi\cup\gamma)K(x_1;\xi)T(\xi|\gamma)\lambda_{\sigma}(d\gamma)\lambda_{\sigma}(d\xi).$$ Apply to the integral on the right side of the [\[ratioPF1-1a\]](#ratioPF1-1a){reference-type="eqref" reference="ratioPF1-1a"} lemma [\[lem2\]](#lem2){reference-type="ref" reference="lem2"} with $$\label{GH1}
+   G(\xi\cup\gamma)=e(j;\xi\cup\gamma)\;\;\text{and}\;\;H(\xi;\gamma)= K(x_1;\xi)T(\xi|\gamma).$$ Then $$\label{ratioPF1-2}
+ \widetilde{Q}(\rho_j)\;=\;\widetilde{F}_{\psi_1}(j)\;=\;\int_{\Gamma_0} e(j;\gamma)\psi_1(\gamma)\lambda_{\sigma}(d\gamma),$$ with $$\label{ratioPF1-2a}
+ \psi_1(\gamma)\;=\;\sum_{\xi\subseteq\gamma}K(x_1;\xi)T(\xi|\gamma\setminus\xi).$$ Write down [\[SSCA-2\]](#SSCA-2){reference-type="eqref" reference="SSCA-2"} in the form of generating functional: $$\label{SSCA-3}
+\rho_j(\eta)\;=\; \widetilde{F}_{\psi_2}(j)\;=\;\int_{\Gamma_0} e(j;\gamma)\psi_2(\gamma)\lambda_{\sigma}(d\gamma),$$ with $$\label{ratioPF1-2b}
+ \psi_2(\gamma)\;=\;e(j;\eta) T(\eta|\gamma).$$ Left hand side [\[limeq-1\]](#limeq-1){reference-type="eqref" reference="limeq-1"} is: $$\label{limeq-1-left}
+ \widetilde{Q}(\rho_j)\rho_j(\eta)\;=\; \widetilde{F}_{\psi_1}(j)\widetilde{F}_{\psi_2}(j)\;=\;\widetilde{F}_{\psi_1*\psi_2}(j)\;
+ =\;\int_{\Gamma_0} e(j;\gamma)(\psi_1*\psi_2)(\gamma)\lambda_{\sigma}(d\gamma),$$ where $$\begin{aligned}
+\label{help}
+(\psi_1*\psi_2)(\gamma)&=\sum_{\xi\subseteq\gamma}\psi_1(\xi)\psi_2(\gamma\setminus\xi)=\sum_{\xi\subseteq\gamma}\psi_2(\gamma\setminus\xi)\psi_1(\xi)=\\
+&=e(j;\eta)\sum_{\xi\subseteq\gamma} T(\eta|\gamma\setminus\xi)\sum_{\zeta\subseteq\xi}K(x_1;\zeta)T(\zeta|\xi\setminus\zeta)\notag
+\end{aligned}$$
+
+Right hand side [\[limeq-1\]](#limeq-1){reference-type="eqref" reference="limeq-1"} after substitution of $\rho_j(\eta^{(\hat{x}_1)}\cup\xi)$ in the form [\[SSCA-2\]](#SSCA-2){reference-type="eqref" reference="SSCA-2"} will look as: $$\label{limeq-1-right0}
+\varrho  e^{-\beta W(x_1; \eta^{(\hat{x}_1)})}
+ e(j;\eta)\int_{\Gamma_0}\int_{\Gamma_0}e(j;\xi\cup\gamma)K(x_1;\xi)T(\eta^{(\hat{x}_1)}\cup\xi|\gamma)\lambda_{\sigma}(d\gamma)
+\lambda_{\sigma}(d\xi).$$ Let us use lemma [\[lem2\]](#lem2){reference-type="ref" reference="lem2"} again with $$\label{GH1}
+   G(\xi\cup\gamma)=e(j;\xi\cup\gamma)\;\;\text{and}\;\;H(\xi;\gamma)= K(x_1;\xi)T(\eta^{(\hat{x}_1)}\cup\xi|\gamma).$$ Then right hand side of [\[limeq-1\]](#limeq-1){reference-type="eqref" reference="limeq-1"} will be as $$\label{limeq-1-right}
+\varrho  e^{-\beta W(x_1; \eta^{(\hat{x}_1)})}
+ e(j;\eta)\int_{\Gamma_0} e(j;\gamma)\sum_{\xi\subseteq\gamma} K(x_1;\xi)T(\eta^{(\hat{x}_1)}\cup\xi|\gamma\setminus\xi)\lambda_{\sigma}(d\gamma).$$ We equate the functions near $e(j;\gamma)$ under the integrals of the expressions [\[limeq-1-left\]](#limeq-1-left){reference-type="eqref" reference="limeq-1-left"} and [\[limeq-1-right\]](#limeq-1-right){reference-type="eqref" reference="limeq-1-right"} and, reducing the multiplier $e(j; \eta)$ we get the relation: $$\begin{aligned}
+\label{help}
+ &\sum_{\xi\subseteq\gamma} T(\eta|\gamma\setminus\xi)\sum_{\zeta\subseteq\xi}K(x_1;\zeta)T(\zeta|\xi\setminus\zeta)\;=\\
+ &=\;\varrho  e^{-\beta W(x_1; \eta^{(\hat{x}_1)})}\sum_{\xi\subseteq\gamma} K(x_1;\xi)T(\eta^{(\hat{x}_1)}\cup\xi|\gamma\setminus\xi).\notag
+\end{aligned}$$ Select the term with $\xi = \emptyset$ in the left side of this relation and take into account that $T(\emptyset | \emptyset) = 1$ and $T (\emptyset | \gamma) = 0$, if $\gamma \neq \emptyset)$, we obtain the following nonlinear recurrent relation: $$\begin{aligned}
+\label{final}
+T(\eta|\gamma)&= \varrho  e^{-\beta W(x_1; \eta^{(\hat{x}_1)})}\sum_{\xi\subseteq\gamma} K(x_1;\xi)T(\eta^{(\hat{x}_1)}\cup\xi|\gamma\setminus\xi)-\notag\\
+&-\sum_{\emptyset\neq\xi\subseteq\gamma} T(\eta|\gamma\setminus\xi)\sum_{\emptyset\neq\zeta\subseteq\xi}K(x_1;\zeta)T(\zeta|\xi\setminus\zeta).
+\end{aligned}$$
+
+**Initial conditions:** $$\label{incon0}
+    T(\emptyset|\emptyset)\;=\;1,\;\;\;T(\emptyset|\gamma)\;=\;0, \text{if}\;\;\gamma\neq\emptyset,$$ $$\label{incon1}
+    T(\{\eta|\gamma)\;=\;0,\text{if}\;\;\eta\cap\gamma\neq\;\emptyset.$$

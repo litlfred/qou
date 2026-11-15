@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0707.3799v3/blocks/prose-sec-010",
+  "kind": "prose",
+  "title": "Tensor structure on equivariant cohomology",
+  "pageStart": 11,
+  "pageEnd": 14,
+  "text": "../sections/sec-010-35-tensor-structure-on-equivariant-cohomology.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0707.3799v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0707.3799v3",
+  "provenance": "ingested"
+}

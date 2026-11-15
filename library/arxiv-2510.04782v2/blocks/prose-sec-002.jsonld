@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2510.04782v2/blocks/prose-sec-002",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2510.04782v2/blocks/prose-sec-002",
   "kind": "prose",
   "title": "q-Hodge filtrations and Habiro descent",
   "pageStart": 4,
   "pageEnd": 10,
   "text": "../sections/sec-002-12-q-hodge-filtrations-and-habiro-descent.md",
-  "derivedFrom": "library/arxiv-2510.04782v2/manifest",
-  "sourceDocument": "library/arxiv-2510.04782v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2510.04782v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2510.04782v2",
   "provenance": "ingested"
 }

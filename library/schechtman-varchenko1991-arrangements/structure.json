@@ -1,0 +1,219 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "schechtman-varchenko1991-arrangements",
+ "source": {
+  "file": "schechtman-varchenko1991-arrangements.pdf",
+  "sha256": "0100fd32438740f03e9fb686d8b3687161e9bbe93b8a2ed9a540d869d6d00970",
+  "bytes": 4012585,
+  "pages": 56,
+  "text_source": "ocr",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T19:16:48Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "Arrangements of hyperplanes and Lie algebra homology",
+  "authors_raw": "Vadim V. Schechtman and Alexander N. Varchenko",
+  "title_lines": [
+   "Invent. Math. 106, 139-194 (1991)",
+   "Inventiones",
+   "mathematicae",
+   "C Springer-Verlag 1991"
+  ],
+  "abstract": null,
+  "docinfo": {},
+  "title_raw": "Invent. Math. 106, 139-194 (1991) Inventiones mathematicae C Springer-Verlag 1991",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "text": "Invent. Math. 106, 139-194 (1991) Inventiones mathematicae C Springer-Verlag 1991",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_note": "title/authors set by hand from the article's first page. Invent. Math. 106 (1991), pp. 139-194; cut from PDF pp. 146-201 of the 673-page GDZ volume scan (first and last page checked visually by OCR of the journal header/page number; the next article starts on the following PDF page). PDF page n here = journal page 138 + n.",
+  "rights_note": "Cut from the Göttingen State and University Library (SUB/GDZ) digitisation of Inventiones Mathematicae vol. 106 (1991), WerkId PPN356556735_0106. The GDZ Terms and Conditions on page 1 of that volume file state that access is provided 'strictly for noncommercial educational, research and private purposes', that 'each copy of any part of this document must contain these Terms and Conditions', and that 'Reproductions of material on the web site may not be made for or donated to other repositories, nor may be further reproduced without written permission from the Goettingen State- and University Library.' The volume file itself is NOT held in this repository; this per-article cut does not carry the GDZ cover page. Owner decision whether to keep this copy.",
+  "journal_ref": "Invent. Math. 106 (1991) 139-194",
+  "volume_pdf_pages": "146-201",
+  "journal_page_offset": 138
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "Orlik-Solomon algebra (Part I. Cohomology of local systems over complements of hyperplanes)",
+   "page": 5,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Flag complex",
+   "page": 10,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Contravariant form",
+   "page": 13,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Topology",
+   "page": 19,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Free Lie algebras (Part II. Discriminantal arrangements and Lie algebra homology)",
+   "page": 25,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Contravariant form, II",
+   "page": 32,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Knizhnik-Zamolodchikov equations",
+   "page": 44,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 55,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 810,
+   "n_words": 121
+  },
+  {
+   "id": "sec-000-0-introduction",
+   "number": "0",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 5,
+   "n_chars": 10619,
+   "n_words": 1861
+  },
+  {
+   "id": "sec-001-1-orlik-solomon-algebra-part-i-cohomology-of",
+   "number": "1",
+   "title": "Orlik-Solomon algebra (Part I. Cohomology of local systems over complements of hyperplanes)",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 10,
+   "n_chars": 8500,
+   "n_words": 1624
+  },
+  {
+   "id": "sec-002-2-flag-complex",
+   "number": "2",
+   "title": "Flag complex",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 13,
+   "n_chars": 3249,
+   "n_words": 614
+  },
+  {
+   "id": "sec-003-3-contravariant-form",
+   "number": "3",
+   "title": "Contravariant form",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 19,
+   "n_chars": 9093,
+   "n_words": 1668
+  },
+  {
+   "id": "sec-004-4-topology",
+   "number": "4",
+   "title": "Topology",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 25,
+   "n_chars": 11242,
+   "n_words": 2042
+  },
+  {
+   "id": "sec-005-5-free-lie-algebras-part-ii-discriminantal-a",
+   "number": "5",
+   "title": "Free Lie algebras (Part II. Discriminantal arrangements and Lie algebra homology)",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 32,
+   "n_chars": 10631,
+   "n_words": 1891
+  },
+  {
+   "id": "sec-006-6-contravariant-form-ii",
+   "number": "6",
+   "title": "Contravariant form, II",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 44,
+   "n_chars": 18147,
+   "n_words": 3503
+  },
+  {
+   "id": "sec-007-7-knizhnik-zamolodchikov-equations",
+   "number": "7",
+   "title": "Knizhnik-Zamolodchikov equations",
+   "level": 1,
+   "page_start": 44,
+   "page_end": 55,
+   "n_chars": 15976,
+   "n_words": 2964
+  },
+  {
+   "id": "sec-008-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 55,
+   "page_end": 56,
+   "n_chars": 4491,
+   "n_words": 674
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": true,
+  "toc_entries": 9,
+  "toc_inferred_entries": 9,
+  "sections": 10,
+  "chars_total": 92758
+ },
+ "structure_note": "Sectioning: split by hand at the OCR'd numbered section headings (journal pages from the printed contents / running heads)."
+}

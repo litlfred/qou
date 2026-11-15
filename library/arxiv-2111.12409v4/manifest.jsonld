@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2111.12409v4/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "On the generalisation of Roth’s theorem Paolo Dolce Francesco Zucconi 0 Introduction 1 0.1 History . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2111.12409v4",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2111.12409v4",
   "contains": [
     "library/arxiv-2111.12409v4/sections/sec-000",
     "library/arxiv-2111.12409v4/sections/sec-001",
@@ -17,8 +22,17 @@
     "library/arxiv-2111.12409v4/sections/sec-008"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2111.12409&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-2111.12409v4",
+    "title_source": "slug",
     "source_file": "2111.12409v4.pdf",
     "source_sha256": "3f0b94ee06fe79bf50355d5643695b1bbdd7d50ef3cda3001c1f54d5e8136033",
     "pages": 21,

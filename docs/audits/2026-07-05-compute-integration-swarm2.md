@@ -35,7 +35,7 @@ This doc re-inventories both problem classes on current `main` so the next
 | `.py` files containing a CODATA mass fingerprint (excl. registry) | 307 |
 | Total literal occurrences | 521 |
 | **Live-input** assignments `m_x = <codata literal>` (code, not comment) | 26 |
-| — of those, under `computations/_deprecated/` (out of scope) | 17 |
+| — of those, under `fsh-guts/deprecated/computations/` (out of scope) | 17 |
 | — active, non-deprecated live-inputs | ~5 |
 | Inline **full-precision (≥20-digit) mpf-string** CODATA literals (the only bit-identical-safe pin category) | **0** |
 
@@ -88,7 +88,7 @@ each runs in ⇒ defer per rule 2.
   downstream witness → owner-gated. This is the true blocker for the remaining
   m_e live-inputs.
 - **ce18** — `binding_alpha_shift_witness.py` stale CODATA-2018 m_e (live input).
-- **Deprecated tail** — 17 live-inputs under `computations/_deprecated/`: policy
+- **Deprecated tail** — 17 live-inputs under `fsh-guts/deprecated/computations/`: policy
   is leave alone.
 - **Exploratory probe tail** — `option_e_*/probe_*/delta_lambda_*`: low value per
   three prior drains.

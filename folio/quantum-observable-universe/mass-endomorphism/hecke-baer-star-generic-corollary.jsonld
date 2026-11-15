@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-hecke-baer-star-generic-corollary",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:hecke-baer-star-generic-corollary",
+  "kind": "remark",
+  "title": "Central primitive idempotents as a complete system of bar-aware projections",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-hecke-baer-star-generic",
+    "papers/quantum-observable-universe/blocks/prop-explicit-central-idempotent"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-hecke-baer-star-generic",
+  "tags": [
+    "hecke-algebra",
+    "baer-star",
+    "central-idempotent",
+    "bar-involution"
+  ],
+  "text": "hecke-baer-star-generic-corollary.md",
+  "provenance": "authored"
+}

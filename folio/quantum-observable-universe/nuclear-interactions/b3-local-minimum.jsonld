@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-b3-local-minimum",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:b3-local-minimum",
+  "kind": "remark",
+  "title": "$\\mathcal{B}_3$ is a local minimum of the categorical action",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-confinement-lp"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-confinement-lp",
+  "tags": [
+    "b3",
+    "local-minimum",
+    "gram-matrix",
+    "eigenvalue",
+    "confinement"
+  ],
+  "text": "b3-local-minimum.md",
+  "provenance": "authored"
+}

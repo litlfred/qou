@@ -1,0 +1,50 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "lurie2009",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 42,
+      "entry": {
+        "id": "lurie2009",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T15:54:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 3,
+        "fix_commit": null,
+        "note": "PDF verified: 'On the Classification of Topological Field Theories (Draft)' by Jacob Lurie, arXiv:0905.0465. Matches references.ts metadata. Cited in QOU for Lurie's TQFT classification.",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/lurie2009.pdf"
+        },
+        "local_pdf": "uploads/lurie2009.pdf",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Join CORRECT (arXiv:0905.0465v1, 'On the Classification of Topological Field Theories (Draft)', matching the registered entry). Not in the working tree on this branch; recovered from intake commit 8093f698c4, sha matches. Cited at folio/quantum-observable-universe/quantum-observable-universes/tqft-context.ts:6 (a cites array alongside atiyah1988, baez1995, freed2010, kock2004, turaev2010, witten1988 - appropriate background for a TQFT-context block) and at glossary-descent.lean:17 plus lean/QOU/Glossary.lean:136,149. The glossary sites are the weak ones: the DescentData structure they annotate carries a level and a restriction_exists : Prop and is explicitly mapped to CategoryTheory.EffectiveEpiFamily / descent data in a fibered category. That is ordinary descent, not the cobordism hypothesis; this document is an expository account of the cobordism hypothesis and does not supply the descent-data notion being glossed. Supporting, not core: the folio consumes it as background for 'TQFT and higher categories', and no result of it (the cobordism hypothesis, the (infinity,n)-categorical framework, complete Segal spaces) is used.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "new-remark",
+              "rationale": "The Glossary DescentData entry is annotated with a cobordism-hypothesis reference while describing ordinary descent in a fibered category. Either point it at a descent reference or say which part of this document it is meant to gloss.",
+              "target": "folio/quantum-observable-universe/lean/QOU/Glossary.lean",
+              "bean": "qou-mzmk"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "15bd014472f2"
+        }
+      }
+    }
+  ]
+}

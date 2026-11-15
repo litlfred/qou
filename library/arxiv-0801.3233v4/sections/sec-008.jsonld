@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0801.3233v4/sections/sec-008",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Appendix B. The Universal Quantization Map",
+  "pageStart": 12,
+  "pageEnd": 15,
+  "contains": [
+    "library/arxiv-0801.3233v4/blocks/prose-sec-008",
+    "library/arxiv-0801.3233v4/blocks/thm-sec-008-01",
+    "library/arxiv-0801.3233v4/blocks/thm-sec-008-02",
+    "library/arxiv-0801.3233v4/blocks/cor-sec-008-03",
+    "library/arxiv-0801.3233v4/blocks/remark-sec-008-04"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0801.3233v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0801.3233v4",
+  "provenance": "ingested"
+}

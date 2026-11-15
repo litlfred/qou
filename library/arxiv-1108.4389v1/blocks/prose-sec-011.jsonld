@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1108.4389v1/blocks/prose-sec-011",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1108.4389v1/blocks/prose-sec-011",
   "kind": "prose",
-  "title": "Operations on 3d abelian theories",
-  "pageStart": 20,
-  "pageEnd": 21,
-  "text": "../sections/sec-011-3-operations-on-3d-abelian-theories.md",
-  "derivedFrom": "library/arxiv-1108.4389v1/manifest",
-  "sourceDocument": "library/arxiv-1108.4389v1/manifest",
+  "title": "Figure-eight knot",
+  "pageStart": 39,
+  "pageEnd": 42,
+  "text": "../sections/sec-011-46-figure-eight-knot.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1108.4389v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1108.4389v1",
   "provenance": "ingested"
 }

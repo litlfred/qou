@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/topologicalinvariance3dindex/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/topologicalinvariance3dindex",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "topologicalinvariance3dindex",
   "contains": [
     "library/topologicalinvariance3dindex/sections/sec-000",
     "library/topologicalinvariance3dindex/sections/sec-001",
@@ -30,8 +35,10 @@
     "library/topologicalinvariance3dindex/sections/sec-021"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "topologicalinvariance3dindex",
+    "title_source": "slug",
     "source_file": "topological.invariance.3Dindex.pdf",
     "source_sha256": "22953b4eee66dca290f6b793517cc2eb020c8e862e13b54bd43329c3979f32e7",
     "pages": 60,

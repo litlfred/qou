@@ -8,426 +8,152 @@ pages: 27-35
 source_pdf: 1409.4073v1.pdf
 source_sha256: b40be7f0022f70a1
 doc_brief: "SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION FABIO TONINI — W e introduce “sheaﬁﬁcation” functors from categories of (l ax monoidal) linear functors to categories of quasi-coherent sheaves"
+text_source: latex
+latex_prose_ratio: 0.769
+latex_coverage_ratio: 0.989
 ---
-Deﬁnition 5.1. A (contravariant) monoidal functor Ω : C − →D between symmetric monoidal
-categories is called strong if the maps
-ΩV ⊗ ΩW − →ΩV ⊗W
-are isomorphisms for all V,W ∈ C and the map J − →FI is an isomorphism, where I andJ are
-the unities of C and D respectively.
-SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION 28
-In this section we want to understand what sheaves of algebra s correspond to strong monoidal
-functors in the equivalence of 3.34, in the case where D is a subcategory of locally free sheaves.
-We will consider only fpqc stacks with quasi-aﬃne diagonal, for instance algebraic stacks with
-quasi-aﬃne diagonal (see [ MBL99, Corollary 10.7]) and quasi-separated schemes. This is bec ause
-resolution property is somehow meaningless for other stack s, see for instance Remark (1) in the
-introduction of [ Tot04].
-Deﬁnition 5.2. If X is a ﬁber category over R, C ⊆ Loc X is a monoidal subcategory and A
-is an R-algebra we deﬁne SMex R(C,A ) as the subcategory of MLex R(C,A ) of functors Γ which
-are strong monoidal and, for all geometric points Spec k − →SpecA, Γ ⊗A k ∈ MLexR(C,k ).
-Given a ﬁber category Y we denote by Fib X, C(Y) the category of covariant,R-linear and strong
-monoidal functors Γ : C − →Loc Y which are exact on all exact sequences E ′′ − → E′ − → E − →0
-with E ∈ C and E ′, E ′′ ∈ C ⊕. We also deﬁne Fib X, C as the ﬁber category over R whose ﬁber over
-an R-algebra A is Fib X, C(SpecA) and we call PC the functor
-(5.1) PC : X − → FibX, C, (SpecA
-s
-− − → X) ↦− →(s∗ : C − →LocA)
+::: defn
+A (contravariant) monoidal functor $\Omega\colon\catC\arr\catD$ between symmetric monoidal categories is called *strong* if the maps $$\Omega_{V}\otimes\Omega_{W}\arr\Omega_{V\otimes W}$$ are isomorphisms for all $V,W\in\catC$ and the map $J\arr F_{I}$ is an isomorphism, where $I$ and $J$ are the unities of $\catC$ and $\catD$ respectively.
+:::
+
+In this section we want to understand what sheaves of algebras correspond to strong monoidal functors in the equivalence of [\[thm:fundamental for sheaf of algebras and monoidal functors\]](#thm:fundamental for sheaf of algebras and monoidal functors){reference-type="ref" reference="thm:fundamental for sheaf of algebras and monoidal functors"}, in the case where $\shD$ is a subcategory of locally free sheaves.
+
+We will consider only fpqc stacks with quasi-affine diagonal, for instance algebraic stacks with quasi-affine diagonal (see [@Laumon1999 Corollary 10.7]) and quasi-separated schemes. This is because resolution property is somehow meaningless for other stacks, see for instance Remark $(1)$ in the introduction of [@Totaro2002].
+
+::: defn
+If $\stX$ is a fiber category over $R$, $\shC\subseteq\mathop{\mathrm{\textup{Loc}}}\stX$ is a monoidal subcategory and $A$ is an $R$-algebra we define $\mathop{\mathrm{\textup{SMex}}}_{R}(\shC,A)$ as the subcategory of $\mathop{\mathrm{\textup{MLex}}}_{R}(\shC,A)$ of functors $\Gamma$ which are strong monoidal and, for all geometric points $\mathop{\mathrm{\textup{Spec}}}k\arr\mathop{\mathrm{\textup{Spec}}}A$, $\Gamma\otimes_{A}k\in\mathop{\mathrm{\textup{MLex}}}_{R}(\shC,k)$. Given a fiber category $\stY$ we denote by $\text{Fib}_{\stX,\shC}(\stY)$ the category of *covariant*, $R$-linear and strong monoidal functors $\Gamma\colon\shC\arr\mathop{\mathrm{\textup{Loc}}}\stY$ which are exact on all exact sequences $\E''\arr\E'\arr\E\arr0$ with $\E\in\shC$ and $\E',\E''\in\shC^{\oplus}$. We also define $\text{Fib}_{\stX,\shC}$ as the fiber category over $R$ whose fiber over an $R$-algebra $A$ is $\text{Fib}_{\stX,\shC}(\mathop{\mathrm{\textup{Spec}}}A)$ and we call $\shP_{\shC}$ the functor $$\shP_{\shC}\colon\stX\arr\text{Fib}_{\stX,\shC}\comma(\mathop{\mathrm{\textup{Spec}}}A\arrdi s\stX)\longmapsto(s^{*}\colon\shC\arr\mathop{\mathrm{\textup{Loc}}}A)\label{eq:tannaka reconstruction functor}$$
+:::
+
 We will prove the following:
-Theorem 5.3. Let X be a quasi-compact fpqc stack over R with quasi-aﬃne diagonal, A be an
-R-algebra and C ⊆ Loc X be a monoidal subcategory with duals that generates QCoh X . Then
-the functors
-(Spec AΓ, C − → X) (Γ : C − →ModA)
-X (A) SMexR(C,A )
-(s : SpecA − → X) ((s∗
-|C)∨ : C − →LocA)
-are well deﬁned and quasi-inverses of each other. In particular t he functor PC : X − → FibX, C is
-an equivalence of stacks.
-An immediate corollary and generalization of Theorem 5.3 is the following.
-Corollary 5.4. Let X be a quasi-compact fpqc stack over R with quasi-aﬃne diagonal, C ⊆ Loc X
-be a monoidal subcategory with duals that generates QCoh X and Y be a ﬁbered category over R.
-Then the functor
-Hom(Y, X ) − →FibX, C(Y), (Y
-f
-− − → X) ↦− →f ∗
-|C : C − →Loc(Y)
-is an equivalence of categories.
-Proof. The map in the statement is obtained applying Hom (Y, −) to the functor PC : X − →
-FibX, C, which is an equivalence by 5.3. □
-One of the key points in the proof of statements above is a char acterization of the following
-stacks.
-Deﬁnition 5.5. A pseudo-aﬃne stack is a quasi-compact fpqc stack with quasi-aﬃne diagona l
-such that all quasi-coherent sheaves on it are generated by g lobal sections. A map f : Y ′ − → Y
-of ﬁbered categories is called pseudo-aﬃne if for all maps T − → Y from an aﬃne scheme the
-ﬁber product T ×Y Y ′ is pseudo-aﬃne.
-Theorem 5.6. Intersection of quasi-compact open subschemes (thought of as sheaves) of aﬃne
-schemes are pseudo-aﬃne. Conversely if U is a pseudo-aﬃne stack then it is (equivalent to) a
-sheaf and it is the intersection of the quasi-compact open sub schemes of Spec H0(OU ) containing
-it.
-SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION 29
-A quasi-aﬃne scheme is pseudo-aﬃne and, conversely, a pseud o-aﬃne stack which is algebraic
-is quasi-aﬃne (see [ Gro13, Proposition 3.1]). In general a pseudo-aﬃne sheaf is not qu asi-aﬃne.
-An example is the sheaf intersection of all the complement of closed points in Spec k[x,y ], where
-k is a ﬁeld.
-The last statement of Theorem 5.3 admits an almost converse. Let X be a ﬁbered category
-overR and C ⊆ Loc X be a full monoidal subcategory. We have a functor G∗ : C − →Loc(FibX, C)
-which maps a E ∈ C to the locally free sheaf
-GE : Fibop
-X, C − →(Ab), GE (Γ ∈ FibX, C(A)) = Γ E for all R-algebras A
-In particular P ∗
-CGE ≃ E for E ∈ C . Notice that, a priori, Fib X, C is not necessarily ﬁbered in
-groupoids and therefore the notion of a locally free sheaf on it is not deﬁned (although one can
-easily guess the deﬁnition). Part of Theorems 5.3 and 5.7 (below) is to prove that, under suitable
-conditions on C, this is indeed true.
-Theorem 5.7. Let X be a quasi-compact ﬁbered category over R and C ⊆ Loc X be a full
-monoidal subcategory with duals and with Symn E ∈ C for all n ∈ N if E has local rank not
-invertible in R. If f : C − → N is a function then Fib f
-X, C, the sub-ﬁbered category of Fib X, C of
-functors Γ such that rk Γ E = f (E) for all E ∈ C , is a quotient stack of a pseudo-aﬃne sheaf by
-the action of a (possibily inﬁnite) products of GLn; in particular it is a quasi-compact fpqc stack
-in groupoids with aﬃne diagonal. Moreover the subcategory {GE }E∈C ⊆ Loc(Fibf
-X, C) generates
-QCoh(Fibf
-X, C) and, in particular, Fib f
-X, C has the resolution property.
-Let I be the set of functions f : C − →N such that there exists a geometric point s : SpecL − →
-X with f (E) = rks∗E. Given f : C − →N then Fibf
-X, C ⁄= ∅ if and only if f ∈ I and, if I is ﬁnite,
-then
-FibX, C =
-⨆
-f ∈I
-Fibf
-X, C
-In particular if I is ﬁnite then Fib X, C is a quasi-compact fpqc stack in groupoids with aﬃne
-diagonal, the subcategory {GE }E∈C ⊆ Loc(FibX, C) generates QCoh(FibX, C) and Fib X, C has the
-resolution property.
-Remark 5.8. The condition that I is ﬁnite in 5.7 is not optimal, but at least it covers the case
-where X admits a surjective (on equivalence classes of geometric po ints) map X ′ − → X from
-an algebraic stack whose connected components are open (e.g . X is a connected or Noetherian
-algebraic stack). It is not clear if Fib X, C always has the resolution property.
-We start with a ﬁrst characterization of pseudo-aﬃne stacks . Notice that the condition that
-all quasi-coherent sheaves on X are generated by global section exactly means that the categ ory
-{OX } generates QCoh X .
-Proposition 5.9. Let X
-π
-− − →SpecR be a quasi-compact fpqc stack with quasi-aﬃne diagonal.
-Then the following conditions are equivalent:
-1) the stack X is pseudo-aﬃne;
-2) the map π∗π∗F − → F is surjective for all F ∈ QCoh X ;
-3) the stack X is equivalent to a sheaf and there exists a ﬂat monomorphism X − → SpecB,
-whereB is a ring.
-In this case the map p : X − → Spec H0(OX ) is a ﬂat monomorphism, p∗ : QCoh X − → Mod H0(X )
-is fully faithful and p∗p∗ ≃ id. Moreover if X × H0(OX )k ⁄= ∅ for all geometric points Speck − →
-Spec H0(OX ) then p is an isomorphism.
-SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION 30
-Proof. 2) = ⇒ 1). Given F ∈ QCoh X , take a surjective map R(I) − →π∗F . In this case the
-composition
-O(I)
-X ≃π∗R(I) − →π∗π∗F − → F
-is surjective.
-1) = ⇒ 2). A sheaf F ∈ QCoh X is generated by global sections and the image of π∗π∗F − → F
-contains all of them.
-3) = ⇒ 1). Denote by p : X − → SpecB the ﬂat monomorphism. We are going to show that
-δF : p∗p∗F − → F is an isomorphism for all F ∈ QCoh X . Arguing as in 2) = ⇒ 1) this will
-conclude the proof. By hypothesis there exists a representa ble fpqc covering h : SpecC − → X
-and we must prove that h∗δF is an isomorphism. Let f = ph : SpecC − → SpecB be the
-composition, which is ﬂat by hypothesis, and consider the co mmutative diagram
-SpecC X ×BC SpecC
-X SpecB
-s α
-p
-fh
-Since α is a monomorphism with a section, α and s are inverses of each other. Using the fact
-that f is ﬂat the map h∗δF is given by
-p∗p∗F (SpecC
-h
-− − → X) = p∗F (SpecC
-f
-− − →SpecB) = F (X ×BC − → X)
-s∗
-− − → F(SpecC
-h
-− − → X)
-and therefore it is an isomorphism.
-1) = ⇒ 3). Set B = H0(OX ) and p : X − → SpecB the induced map. Notice that
-LB({OX },B ) ≃ ModB and under this isomorphism Ω ∗ : QCoh X − → LB({OX },B ) and F∗, {OX } : LB({OX },B ) − →
-QCoh X correspond to p∗ : QCoh X − → ModB and p∗ : ModB − →QCoh X respectively. By
-hypothesis, 3.12 and 3.18 the map p : X − → SpecB is ﬂat, p∗ : QCoh X − → ModB is fully
-faithful and p∗p∗ ≃ id.
-We want to show that X − → SpecB is fully faithful or, equivalently, that the diagonal
-X − → X ×B X is an equivalence. Let V = SpecC − → X be a representable fpqc covering and
-denote by s : V − → X ×BV the graph of h. We have Cartesian diagrams
-V ×X V V ×BV V ×X V V ×BV
-X X ×B X V X ×BV
-q
-∆ s
-q
-and the vertical arrows are representable fpqc coverings. B y descent it follows that ∆ is an
-equivalence if we prove that s is an equivalence.
-Letf :V − → X
-p
-− − →SpecB be the composition. Since p is ﬂat also f is ﬂat and, in particular,
-H0(OX ×BV ) = C. Since X ×BV − → X is aﬃne it follows that {OX ×BV } generates QCoh(X ×B
-V ). Since s is a section of X ×BV − →V , we see that we can assume that p : X − → SpecB has a
-section, that we still denote by s : SpecB − → X. In this case we have to prove that p ors is an
-equivalence. Notice that this implies the last claim in the s tatement. Indeed if X ×Bk ⁄= ∅ for all
-geometric points then f :V − →SpecB is an fpqc covering: it follows that the map X − → SpecB
-is an equivalence because it has this property fpqc locally.
-We ﬁrst prove that p∗ : QCoh X − → ModB is an equivalence. It suﬃces to show that, if
-M ∈ ModB, then the map γM : M − →p∗p∗M is an isomorphism. Notice that p∗γM is a section
-of the map (p ∗p∗)p∗M − →p∗M which is an isomorphism. So p∗γM and γM = s∗p∗γM are
-isomorphisms. Since p∗s∗ : ModB − →ModB is the identity, we can conclude that s∗ ≃p∗ and
-SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION 31
-s∗ ≃p∗. Consider the Cartesian diagram
-U SpecC
-SpecB X
-g
-s
-ht
-where h is a representable fpqc covering. Since X has quasi-aﬃne diagonal it follows that U is
-a quasi-aﬃne scheme. Moreover
-H0(OU ) ≃g∗t∗OB ≃h∗s∗OB ≃h∗p∗OB ≃C
-Thus g : U − → SpecC and s : SpecB − → X are open immersions. We prove that g is a
-surjective, which imply that g ands are isomorphisms. Let Z be the complement of U in SpecC
-with reduced structure. We have
-H0(OZ) ≃p∗h∗OZ ≃s∗h∗OZ =t∗g∗OZ = 0
-ThusZ is empty as required. □
-Remark 5.10. The assumption on the diagonal in 5.9 is necessary: the stack X = BkE, where
-E is an elliptic curve over a ﬁeld k, is not a sheaf but QCoh X ≃ QCohk.
-Remark 5.11. Iff : Y − → X is a pseudo-aﬃne map of pseudo-algebraic ﬁber categories th en it is
-quasi-compact with aﬃne diagonal and the map f ∗f∗F − → F is surjective for all F ∈ QCoh Y.
-In particular if D ⊆ QCoh X generates QCoh X then f ∗D generates QCoh Y. The ﬁrst claims
-follow by standard argument of descent while the second by co nsidering an atlas of X and using
-the characterization 3) of 5.9.
-If Y − → SpecA is a map of ﬁbered categories then Y is pseudo-aﬃne if and only if Y − →
-SpecA is pseudo-aﬃne, because if Y is pseudo-aﬃne and g : Y ′ − → Y is an aﬃne map, then Y ′
-is an fpqc sheaf with quasi-aﬃne diagonal and OY ′ =g∗OY generates QCoh Y ′.
-Finally, if f : Y ′ − → Y is a map of fpqc stacks and Y − → Y is an fpqc atlas such that
-Y ′ =Y ×Y Y ′ − →Y is pseudo-aﬃne then f is pseudo-aﬃne. Indeed by standard arguments of
-descent we can assume Y = SpecB and Y = SpecB′ aﬃne, which also implies that Y ′ is quasi-
-compact with aﬃne diagonal. Moreover since B − →B′ is ﬂat we have H 0(OY ′ ) ≃ H0(OY ′ )⊗BB′
-and therefore we can assume that H 0(OY ′ ) = B and H 0(OY ′ ) = B′. In this case Y ′ − →Y is ﬂat
-and fully faithful and, since Y is an fpqc stack, it follows that also Y ′ − → Y is a ﬂat and fully
-faithful.
-Remark 5.12. LetG be a ﬂat and aﬃne group scheme over R such that BRG has the resolution
-property. Taking into account 5.11, if U is a pseudo-aﬃne sheaf over R with an action of G then
-[U/G] has the resolution property because the map [U/G] − →BRG is pseudo-aﬃne. The same
-conclusion follows for a stack X = [X/G], where X is a scheme, if there exists L ∈ Pic(X ) whose
-pullback M toX is very ample relatively to R. Indeed X can be written as [U/G × Gm] whereU
-is the complement of the zero section of M − →X: the fact that M is very ample tells us that U
-is quasi-aﬃne. Moreover B (G × Gm) has the resolution property. Indeed let N be the canonical
-invertible sheaf on B R Gm and F ∈ QCoh(BRG). The action of Gm yields a decomposition
-F =
-⨁
-n∈Z
-Fn
-and all Fn = ( F ⊗ N ⊗−n)Gm are sub G × Gm-representations. If x ∈ F n there exists E ∈
-Loc(BRG) and aG-equivariant map E − →Fn withx in its image. Thus the map E ⊗N ⊗n − →Fn,
-where E has the trivial action of Gm, is G × Gm-equivariant and has x in its image.
-SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION 32
-The following property is known for algebraic stacks (see [ Gro13, Corollary 5.11] and [ Tot04,
-Proposition 1.3]).
-Corollary 5.13. A quasi-compact fpqc stack X with quasi-aﬃne diagonal and with the resolution
-property has aﬃne diagonal.
-Proof. Since X is pseudo-algebraic the category Loc X is essentially small. Thus we can consider
-a set R of representatives of locally free sheaves over X . Given E ∈ R we deﬁne the sheaf
-Fr(E) : (Sch/X )op − →(Sets), Fr(E)(U
-f
-− − → X) =
-⨆
-n∈N
-IsoU (On
-U,f ∗E)
-It is easy to see that Fr(E) − → Xis an aﬃne fpqc covering. In particular g : Fr = ∏
-E∈R Fr(E) − →
-X is also an aﬃne fpqc covering and Fr is quasi-compact with qua si-aﬃne diagonal. Thus it is
-enough to show that Fr has aﬃne diagonal. Since g is aﬃne by 5.11g∗ Loc X generates QCoh Fr.
-On the other hand if E ∈ Loc X then by construction Fr is a (ﬁnite) disjoint union of open
-substacks over which g∗E is free, which implies that g∗E is generated by global sections. We can
-conclude that Fr is a pseudo-aﬃne sheaf and thus has aﬃne diag onal. □
-Proof. (of Theorem 5.3). Since X has aﬃne diagonal by 5.13, all morphisms Spec A − → X are
-aﬃne. Therefore the functor X (A) − →QAlgA X which maps s : SpecA − → X to s∗OA is fully
-faithful. By 3.34 and the fact that
-Ωs∗OA
-E = Hom(E,s ∗OA) ≃ (s∗E)∨ for s ∈ X (A), E ∈ C
-we can conclude that the functor X (A) − →SMexR(C,A ), s ↦− →(s∗
-|C)∨ is well deﬁned and fully
-faithful. Thus everything follows if we prove that, given Γ ∈ SMexR(C,A ), the composition
-p : Spec AΓ, C − → XA − →SpecA is an isomorphism. Set A = AΓ, C, Y = Spec A and f : Y − →
-X for the structure morphism. We want to apply 5.9 on p : Y − → SpecA. Notice that Y is
-quasi-compact and has aﬃne diagonal. Moreover by 3.34
-Γ E ≃ Ω A
-E = Hom(E, A ) = Hom(E,f ∗OY ) ≃ Hom(f ∗E, OY ) = H0((f ∗E)∨)
-In particular, since Γ OX ≃A, the map A − →H0(A ) is an isomorphism. We show now that, if
-Speck − →SpecA is a geometric point, then Y ×Ak ⁄= ∅. If g : Xk − → XA is the projection then
-Y ×Ak ≃ Spec(g∗A ), while by 2.12 we haveg∗A ≃ AΓ ⊗Ak, C. By 3.34 we get Γ ⊗Ak ≃ Ω AΓ ⊗A k, C
-and therefore AΓ ⊗Ak, C = 0, that is Y ×Ak = ∅, implies Γ ⊗Ak = 0, while Γ OX ⊗Ak =A⊗Ak ≃k.
-It remains to show that {OY } generates QCoh Y. Since Y
-f
-− − → Xis aﬃne, f ∗C generates
-QCoh Y by 5.11. Thus we have to prove that all the sheaves f ∗E are generated by global
-sections. By hypothesis the map
-H0(f ∗E ′∨) ⊗ H0(f ∗E ∨) − →H0(f ∗(E ′ ⊗ E )∨)
-is an isomorphism for all E, E ′ ∈ C . Since C has duals, choosing E ′ = E ∨ the above map became
-the evaluation
-ω : H0(f ∗E) ⊗ HomY (f ∗E, OY ) − →EndY (f ∗E)
-Since ω is an isomorphism there exist x1,...,x n ∈ H0(f ∗E), φ1,...,φ n ∈ Hom(f ∗E, OX ) such
-that idf ∗E =ω(∑
-ixi ⊗φi). This implies that the map On
-Y − →f ∗E given by the global sections
-x1,...,x n is surjective, as required.
-For the last statement we claim that −∨ : FibX, C(A) − →SMexR(C,A ), Γ ↦− →Γ ∨ is an equiv-
-alence. Taking into account 3.26, if Γ ∈ FibX, C(A) then Γ ∨ ∈ SMexR(C,A ) because Γ is exact
-on all ﬁnite test sequences and the dual of a right exact seque nce of locally free sheaves is again
-exact. Moreover the map X (A) − →SMexR(C,A ) factors as
-X (A)
-PC
-− − →FibX, C(A)
-−∨
-− − →SMexR(C,A )
-SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION 33
-Thus −∨ : FibX, C(A) − →SMexR(C,A ) is essentially surjective and −∨ : SMexR(C,A ) − →FibX, C(A)
-is a quasi-inverse. □
-Proof. (of Theorem 5.6) Let X = SpecB be an aﬃne scheme, {Ui}i∈I be a set of quasi-compact
-open subsets of X and set U = ∩iUi. If i ∈ I the subscheme Ui is the complement of the
-zero locus of ﬁnitely many element of B and thus there exists a free B-module Ei and a map
-φi : Ei − →B such that Ui is the locus where φi is surjective. Let V : Aﬀ /B − →(Sets) be the
-functor
-V (A) = {(si)i∈I | si ∈Ei ⊗BA |φi(si) = 1 }
-which is an aﬃne scheme. The map V − →SpecB factors through U and V − →U is surjective
-(as functors). Moreover if Spec A − →U is a map then V ×UA =V ×XA because U − →X is a
-monomorphism. Since V ×XA is isomorphic to (∏
-i Kerφi) ×XA we can conclude that V − →U
-is an aﬃne fpqc epimorphism, so that U is quasi-compact, and that U − →X is ﬂat. The result
-then follows from 5.9.
-For the converse, denote by Z the intersection in the statement, set C = {OU },B = H0(OU )
-and let α : SpecA − → SpecB be a map which factors through Z and T∗ : On
-U − → Om
-U − →
-OU − →0 be an exact sequence on U . Since C = {OSpecB} as monoidal categories, by 5.3 it
-is enough to show that α∗
-|C : C − → LocA is exact on T∗. The sequence T∗ deﬁnes a complex
-W∗ of free A-modules, namely W∗ = H0(T∗), and the locus W in Spec A where W∗ is exact is
-quasi-compact, open and contains U . Thus Z ⊆ W , the sequence W∗ become exact on Z and
-therefore α∗ maintains its exactness, as required. □
-Lemma 5.14. Let R be a set, f : R − →N be a map and set
-GLf =
-∏
-i∈R
-GLf (i)
-and Fi for the locally free sheaf of rank f (i) on B GLf coming from the universal one on B GLf (i).
-Then the subcategory of Loc(B GLf ) consisting of all tensor products of sheaves
-{Fi}i∈R, {(Symm Fi)∨}i∈R s.t. f (i)/∈R∗, m∈N
-generates QCoh(B GLf ).
-Proof. We are going to apply 4.2. Let D be the subcategory of Loc B GL f generated by direct
-sums and tensor products of the sheaves Sym m Fi, (det Fi)−1 for i ∈ R, m ∈ N. We claim that
-R[GLf ] is a direct limit of representations in D. The representation R[GLf ] is a direct limit of
-tensor products of the regular representations R[GLf (i)] fori ∈ R. This allows us to reduce to the
-case of GLn (i.e. R has one element). Call F the universal rank n sheaf on B GLn and G the free
-R-module of rank n. As usual we can write R[GLn] = R[Xuv]det for 1 ≤u,v ≤n, where det is the
-determinant polynomial. The R-submodule generated by the Xu,v is a GL n-subrepresentation
-isomorphic to F ⊗ G . In particular we obtain injective maps
-Symnm(F ⊗ G ) ⊗ (det F )−⊗m − →R[GLn]
-whose image is the set of fractions f/ detm wheref is homogeneous of degree nm. Those images
-form an incresing sequence of sub representations saturati ngR[GLn]. Thus R[GLn] is the direct
-limit of the sheaves Sym nm(F ⊗ G ) ⊗ (det F )−⊗m which belongs to D.
-Coming back to the general framework, by 4.2 and the existence of surjective maps F ⊗f (i)
-i − →
-det Fi and, if f (i) ∈R∗ so that GLf (i) is linearly reductive, (F ∨
-i )⊗m − →(Symm Fi)∨ we get the
-desired result. □
-Proof. (of Theorem 5.7). It is easy to see that Fib X, C is a stack (not necessarily in groupoids)
-for the fpqc topology on Aﬀ /R. To avoid problems with disjoint unions we can assume that X
-SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION 34
-is a Zariski stack. We will use notation from 5.14. Let R be a set of representatives of C/ ≃ with
-OX ∈ R,J be a ﬁnite subset of R and denote by IJ the set of f ∈ NJ extending to a function of
-I. Given f ∈ NJ we denote by Xf the open locus of X where rk E =f (E) for all E ∈ J. Notice
-that X = ⨆
-f ∈IJ Xf and, since X is quasi-compact, IJ is ﬁnite. The sheaves (E|Xf )E∈J induces
-a map Xf − →B GLf = Bf and thus a map
-ωJ : X − →
-⨆
-f ∈IJ
-Bf = BJ
-For all E ∈ J there is a locally free sheaf HE,J on BJ such that (HE,J )|Bf is the canonical locally
-free sheaf of rank f (E) (pullback from B GLf (E)), so that ω∗
-J HE,J ≃ E . Let DJ be the subcategory
-of Loc(BJ ) consisting of all tensor products and duals of HE,J and, if there exists f ∈ IJ such that
-f (E) /∈ R∗, also of Sym n HE,J for n ∈ N and E ∈ J. We have ω∗
-J DJ ⊆ C by construction, that
-DJ generates QCoh(BJ ) by 5.14 and, in particular, that PDJ : BJ − →FibBJ, DJ is an equivalence
-of stacks by 5.3. When J = {E} we will replace J by E in the subscripts.
-We now show that Fib X, C is a stack in groupoids. If Γ, Γ ′ ∈ FibX, C(A), δ : Γ − →Γ ′ is a
-morphism and E ∈ C then δE : Γ E − →Γ ′
-E is an isomorphism because Γ ◦ω∗
-E
-δ◦ω ∗
-E
-− − − →Γ ′ ◦ω∗
-E is a
-morphism in the groupoid Fib BE, DE (A) ≃ B E (A).
-Givenf : C − →N, we show that Fib f
-X, C ⁄= ∅ if and only if f ∈ I . For the if part, if f ∈ I there
-exists s : SpecL − → X such that rk s∗E =f (E) for all E ∈ C . Thus s∗
-|C ∈ Fibf
-X, C. For the only
-if part we show that, if L is an algebraically closed ﬁeld and Γ ∈ FibX, C(L) then rk Γ ∗ : C − →N
-belongs to I. This will also show that, if I is ﬁnite, then Fib X, C is the disjoint union of the
-Fibf
-X, C for f ∈ I : indeed Fib f
-X, C is the locus where rk GE =f (E) for all E ∈ C .
-So let Γ ∈ FibX, C(L). Given J ⊆ R ﬁnite consider Γ ◦ω∗
-J ∈ FibBJ, DJ (L) ≃ BJ (L), so that
-there exists a map Spec L
-s
-− − → BJ such that Γ ◦ω∗
-J ≃ s∗
-|DJ
-. The map s has image in some
-component Bf with f ∈ IJ . In particular if E ∈ J we have
-rk Γ E = rk Γω ∗
-J HE,J = rk(s∗(HE,J )|Bf ) = f (E)
-This shows that for all ﬁnite subsets J ⊆ R we have that fJ = ( rk Γ ∗)|J belongs to IJ . By
-construction XfJ is a non-empty (open and) closed substack of X . Since XfJ ⊆ XfJ′ if J ′ ⊆ J
-and X is quasi-compact it follows that ⋂
-J XfJ ⁄= ∅ and thus that rk Γ ∗ ∈ I .
-It remains to show the claims about Fib f
-X, C when f ∈ I . The sheaf GE has rank f (E) on
-Fibf
-X, C and thus we get a map g : Fibf
-X, C − →B GLf such that g∗FE ≃ G E for E ∈ R (here
-we are using notation from 5.14). Let C′ be the subcategory of Loc B GL f obtained by taking
-tensor products and duals of the sheaves FE and, if f (E) /∈R∗, also of Sym n FE for n ∈ N and
-E ∈ R . Moreover set D = {GE }E∈C ⊆ Loc(FibX, C). We claim that g∗C′ ⊆ D |Fibf
-X , C
-. It suﬃces
-to show that if E ∈ C then GE ∨ ≃ (GE )∨ and, if f (E) /∈ R∗, GSymn E ≃ Symn GE over the whole
-FibX, C. Consider J = {E} ⊆ R . The functor ωE : X − → BE inducesω∗
-E : DE − → Cand a functor
-δ : FibX, C − →FibBE, DE ≃ B E . If t is either (−)∨ or Symn and Γ ∈ FibX, C we have isomorphisms
-Gt(E)(Γ) = Γ t(E) ≃ (Γ ◦ω∗
-E)t(HE, {E} ) ≃δ(Γ) ∗t(HE, {E} ) ≃t(δ(Γ) ∗HE, {E} ) ≃t(Γ E ) = t(GE )(Γ)
-natural in Γ and thus that Gt(E) ≃t(GE ).
-Using 5.14 and 5.11 all the claims in the statement follow if we show that the ﬁber product
-U of g : Fibf
-X, C − →B GLf along the canonical map Spec R − →B GLf is pseudo-aﬃne. Since
-Loc(X ) is essentially small, it is easy to ﬁnd a sub monoidal subcate gory ˜C of C which is small and
-such that ~C − → C is an equivalence. Via restriction we get an equivalence Fib X, C − →FibX, ˜C and
-we can assume that C is small. If A is an R-algebra then U (A) is the groupoid of Γ ∈ Fibf
-X, C(A)
-together with basis of Γ E for all E ∈ C . In particular it is easy to see that U is (equivalent to) a
-SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION 35
-sheaf. Let V : Aﬀ /R − →(Sets) be the functor which maps an R-algebraA to the set of R-linear
-and strong monoidal functors Γ : C − →LocA such that rk Γ E =f (E) together with a basis of Γ E
-for E ∈ C . The sheaf V is aﬃne because it is a closed subscheme of
-V =
-∏
-E− →E′∈Arr(C)
-Hom(Rf (E),Rf (E ′))×
-∏
-E, E ′∈C
-Iso(Rf (E)⊗Rf (E ′),Rf (E⊗E ′))×Gm,R : Aﬀ /R − →(Sets)
-which is aﬃne. Write V = SpecB and denote by Γ : C − → LocB the canonical R-linear and
-strong monoidal functor. Given a ﬁnite test sequence T in C the sequence of maps Γ T is a
-complex of free B-modules and denote by VT the locus in V where this complex is exact. Clearly
-U is the intersection of the VT for all ﬁnite test sequences T . Since one can easily check that VT
-is a quasi-compact open subscheme of V the result follows from 5.6. □
+
+::: thm
+[]{#thm: Tannaka reconstrion for Loc X label="thm: Tannaka reconstrion for Loc X"} Let $\stX$ be a quasi-compact fpqc stack over $R$ with quasi-affine diagonal, $A$ be an $R$-algebra and $\shC\subseteq\mathop{\mathrm{\textup{Loc}}}\stX$ be a monoidal subcategory with duals that generates $\mathop{\mathrm{\textup{QCoh}}}\stX$. Then the functors $$\begin{tikzpicture}[xscale=4.2,yscale=-0.6]     \node (A0_0) at (0, 0) {$(\mathop{\mathrm{\textup{Spec}}}\alA_{\Gamma,\shC }\arr \stX)$};     \node (A0_1) at (1, 0) {$(\Gamma \colon \shC\arr\mathop{\mathrm{\textup{Mod}}}A)$};     \node (A1_0) at (0, 1) {$\stX(A)$};     \node (A1_1) at (1, 1) {$\mathop{\mathrm{\textup{SMex}}}_R(\shC,A)$};     \node (A2_0) at (0, 2) {$(s\colon \mathop{\mathrm{\textup{Spec}}}A\arr\stX)$};     \node (A2_1) at (1, 2) {$(\duale {(s^*_{|\shC})}\colon \shC\arr\mathop{\mathrm{\textup{Loc}}}A)$};     \path (A1_0) edge [->]node [auto] {$\scriptstyle{}$} (A1_1);     \path (A2_0) edge [|->,gray]node [auto] {$\scriptstyle{}$} (A2_1);     \path (A0_1) edge [|->,gray]node [auto] {$\scriptstyle{}$} (A0_0);   \end{tikzpicture}$$ are well defined and quasi-inverses of each other. In particular the functor $\shP_{\shC}\colon\stX\arr\text{Fib}_{\stX,\shC}$ is an equivalence of stacks.
+:::
+
+An immediate corollary and generalization of Theorem [\[thm: Tannaka reconstrion for Loc X\]](#thm: Tannaka reconstrion for Loc X){reference-type="ref" reference="thm: Tannaka reconstrion for Loc X"} is the following.
+
+::: cor
+[]{#cor:Lurie s point of view label="cor:Lurie s point of view"} Let $\stX$ be a quasi-compact fpqc stack over $R$ with quasi-affine diagonal, $\shC\subseteq\mathop{\mathrm{\textup{Loc}}}\stX$ be a monoidal subcategory with duals that generates $\mathop{\mathrm{\textup{QCoh}}}\stX$ and $\stY$ be a fibered category over $R$. Then the functor $$\mathop{\mathrm{\textup{Hom}}}(\stY,\stX)\arr\text{Fib}_{\stX,\shC}(\stY)\comma(\stY\arrdi f\stX)\longmapsto f_{|\shC}^{*}\colon\shC\arr\mathop{\mathrm{\textup{Loc}}}(\stY)$$ is an equivalence of categories.
+:::
+
+::: proof
+*Proof.* The map in the statement is obtained applying $\mathop{\mathrm{\textup{Hom}}}(\stY,-)$ to the functor $\shP_{\shC}\colon\stX\arr\text{Fib}_{\stX,\shC}$, which is an equivalence by [\[thm: Tannaka reconstrion for Loc X\]](#thm: Tannaka reconstrion for Loc X){reference-type="ref" reference="thm: Tannaka reconstrion for Loc X"}. ◻
+:::
+
+One of the key points in the proof of statements above is a characterization of the following stacks.
+
+::: defn
+A *pseudo-affine* stack is a quasi-compact fpqc stack with quasi-affine diagonal such that all quasi-coherent sheaves on it are generated by global sections. A map $f\colon\stY'\arr\stY$ of fibered categories is called *pseudo-affine* if for all maps $T\arr\stY$ from an affine scheme the fiber product $T\times_{\stY}\stY'$ is pseudo-affine.
+:::
+
+::: thm
+[]{#prop:arbitrary intersection of quasi-compact open is pseudo-affine label="prop:arbitrary intersection of quasi-compact open is pseudo-affine"} Intersection of quasi-compact open subschemes (thought of as sheaves) of affine schemes are pseudo-affine. Conversely if $U$ is a pseudo-affine stack then it is (equivalent to) a sheaf and it is the intersection of the quasi-compact open subschemes of $\mathop{\mathrm{\textup{Spec}}}\mathop{\mathrm{\textup{H}}}^{0}(\odi U)$ containing it.
+:::
+
+A quasi-affine scheme is pseudo-affine and, conversely, a pseudo-affine stack which is algebraic is quasi-affine (see [@Gross2013 Proposition 3.1]). In general a pseudo-affine sheaf is not quasi-affine. An example is the sheaf intersection of all the complement of closed points in $\mathop{\mathrm{\textup{Spec}}}k[x,y]$, where $k$ is a field.
+
+The last statement of Theorem [\[thm: Tannaka reconstrion for Loc X\]](#thm: Tannaka reconstrion for Loc X){reference-type="ref" reference="thm: Tannaka reconstrion for Loc X"} admits an almost converse. Let $\stX$ be a fibered category over $R$ and $\shC\subseteq\mathop{\mathrm{\textup{Loc}}}\stX$ be a full monoidal subcategory. We have a functor $\shG_{*}\colon\shC\arr\mathop{\mathrm{\textup{Loc}}}(\text{Fib}_{\stX,\shC})$ which maps a $\E\in\shC$ to the locally free sheaf $$\shG_{\E}\colon\text{Fib}_{\stX,\shC}^{\mathop{\mathrm{\textup{op}}}}\arr\Ab\comma\shG_{\E}(\Gamma\in\text{Fib}_{\stX,\shC}(A))=\Gamma_{\E}\text{ for all }R\text{-algebras }A$$ In particular $\shP_{\shC}^{*}\shG_{\E}\simeq\E$ for $\E\in\shC$. Notice that, a priori, $\text{Fib}_{\stX,\shC}$ is not necessarily fibered in groupoids and therefore the notion of a locally free sheaf on it is not defined (although one can easily guess the definition). Part of Theorems [\[thm: Tannaka reconstrion for Loc X\]](#thm: Tannaka reconstrion for Loc X){reference-type="ref" reference="thm: Tannaka reconstrion for Loc X"} and [\[thm:when FibX,C has the resolution property\]](#thm:when FibX,C has the resolution property){reference-type="ref" reference="thm:when FibX,C has the resolution property"} (below) is to prove that, under suitable conditions on $\shC$, this is indeed true.
+
+::: thm
+[]{#thm:when FibX,C has the resolution property label="thm:when FibX,C has the resolution property"} Let $\stX$ be a quasi-compact fibered category over $R$ and $\shC\subseteq\mathop{\mathrm{\textup{Loc}}}\stX$ be a full monoidal subcategory with duals and with $\mathop{\mathrm{\textup{Sym}}}^{n}\E\in\shC$ for all $n\in\N$ if $\E$ has local rank not invertible in $R$. If $f\colon\shC\arr\N$ is a function then $\text{Fib}_{\stX,\shC}^{f}$, the sub-fibered category of $\text{Fib}_{\stX,\shC}$ of functors $\Gamma$ such that $\mathop{\mathrm{\textup{rk}}}\Gamma_{\E}=f(\E)$ for all $\E\in\shC$, is a quotient stack of a pseudo-affine sheaf by the action of a (possibily infinite) products of $\mathop{\mathrm{\textup{GL}}}_{n}$; in particular it is a quasi-compact fpqc stack in groupoids with affine diagonal. Moreover the subcategory $\{\shG_{\E}\}_{\E\in\shC}\subseteq\mathop{\mathrm{\textup{Loc}}}(\text{Fib}_{\stX,\shC}^{f})$ generates $\mathop{\mathrm{\textup{QCoh}}}(\text{Fib}_{\stX,\shC}^{f})$ and, in particular, $\text{Fib}_{\stX,\shC}^{f}$ has the resolution property.
+
+Let $\shI$ be the set of functions $f\colon\shC\arr\N$ such that there exists a geometric point $s\colon\mathop{\mathrm{\textup{Spec}}}L\arr\stX$ with $f(\E)=\mathop{\mathrm{\textup{rk}}}s^{*}\E$. Given $f\colon\shC\arr\N$ then $\text{Fib}_{\stX,\shC}^{f}\neq\emptyset$ if and only if $f\in\shI$ and, if $\shI$ is finite, then $$\text{Fib}_{\stX,\shC}=\bigsqcup_{f\in\shI}\text{Fib}_{\stX,\shC}^{f}$$ In particular if $\shI$ is finite then $\text{Fib}_{\stX,\shC}$ is a quasi-compact fpqc stack in groupoids with affine diagonal, the subcategory $\{\shG_{\E}\}_{\E\in\shC}\subseteq\mathop{\mathrm{\textup{Loc}}}(\text{Fib}_{\stX,\shC})$ generates $\mathop{\mathrm{\textup{QCoh}}}(\text{Fib}_{\stX,\shC})$ and $\text{Fib}_{\stX,\shC}$ has the resolution property.
+:::
+
+::: rem
+The condition that $\shI$ is finite in [\[thm:when FibX,C has the resolution property\]](#thm:when FibX,C has the resolution property){reference-type="ref" reference="thm:when FibX,C has the resolution property"} is not optimal, but at least it covers the case where $\stX$ admits a surjective (on equivalence classes of geometric points) map $\stX'\arr\stX$ from an algebraic stack whose connected components are open (e.g. $\stX$ is a connected or Noetherian algebraic stack). It is not clear if $\text{Fib}_{\stX,\shC}$ always has the resolution property.
+:::
+
+We start with a first characterization of pseudo-affine stacks. Notice that the condition that all quasi-coherent sheaves on $\stX$ are generated by global section exactly means that the category $\{\odi{\stX}\}$ generates $\mathop{\mathrm{\textup{QCoh}}}\stX$.
+
+::: prop
+[]{#lem:recognizing affine rings from global sections label="lem:recognizing affine rings from global sections"} Let $\stX\arrdi{\pi}\mathop{\mathrm{\textup{Spec}}}R$ be a quasi-compact fpqc stack with quasi-affine diagonal. Then the following conditions are equivalent:
+
+1.  the stack $\stX$ is pseudo-affine;
+
+2.  the map $\pi^{*}\pi_{*}\shF\arr\shF$ is surjective for all $\shF\in\mathop{\mathrm{\textup{QCoh}}}\stX$;
+
+3.  the stack $\stX$ is equivalent to a sheaf and there exists a flat monomorphism $\stX\arr\mathop{\mathrm{\textup{Spec}}}B$, where $B$ is a ring.
+
+In this case the map $p\colon\stX\arr\mathop{\mathrm{\textup{Spec}}}\mathop{\mathrm{\textup{H}}}^{0}(\odi{\stX})$ is a flat monomorphism, $p_{*}\colon\mathop{\mathrm{\textup{QCoh}}}\stX\arr\mathop{\mathrm{\textup{Mod}}}\mathop{\mathrm{\textup{H}}}^{0}(\stX)$ is fully faithful and $p^{*}p_{*}\simeq\id$. Moreover if $\stX\times_{\mathop{\mathrm{\textup{H}}}^{0}(\odi{\stX})}k\neq\emptyset$ for all geometric points $\mathop{\mathrm{\textup{Spec}}}k\arr\mathop{\mathrm{\textup{Spec}}}\mathop{\mathrm{\textup{H}}}^{0}(\odi{\stX})$ then $p$ is an isomorphism.
+:::
+
+::: proof
+*Proof.* $2)\then1)$. Given $\shF\in\mathop{\mathrm{\textup{QCoh}}}\stX$, take a surjective map $R^{(I)}\arr\pi_{*}\shF$. In this case the composition $$\odi{\stX}^{(I)}\simeq\pi^{*}R^{(I)}\arr\pi^{*}\pi_{*}\shF\arr\shF$$ is surjective.
+
+$1)\then2)$. A sheaf $\shF\in\mathop{\mathrm{\textup{QCoh}}}\stX$ is generated by global sections and the image of $\pi^{*}\pi_{*}\shF\arr\shF$ contains all of them.
+
+$3)\then1)$. Denote by $p\colon\stX\arr\mathop{\mathrm{\textup{Spec}}}B$ the flat monomorphism. We are going to show that $\delta_{\shF}\colon p^{*}p_{*}\shF\arr\shF$ is an isomorphism for all $\shF\in\mathop{\mathrm{\textup{QCoh}}}\stX$. Arguing as in $2)\then1)$ this will conclude the proof. By hypothesis there exists a representable fpqc covering $h\colon\mathop{\mathrm{\textup{Spec}}}C\arr\stX$ and we must prove that $h^{*}\delta_{\shF}$ is an isomorphism. Let $f=ph\colon\mathop{\mathrm{\textup{Spec}}}C\arr\mathop{\mathrm{\textup{Spec}}}B$ be the composition, which is flat by hypothesis, and consider the commutative diagram $$\begin{tikzpicture}[xscale=2.0,yscale=-1.0]     \node (A0_0) at (0, 0) {$\mathop{\mathrm{\textup{Spec}}}C$};     \node (A0_1) at (1, 0) {$\stX\times_B C$};     \node (A0_2) at (2, 0) {$\mathop{\mathrm{\textup{Spec}}}C$};     \node (A1_1) at (1, 1) {$\stX$};     \node (A1_2) at (2, 1) {$\mathop{\mathrm{\textup{Spec}}}B$};     \path (A0_0) edge [->]node [auto] {$\scriptstyle{s}$} (A0_1);     \path (A0_1) edge [->]node [auto] {$\scriptstyle{\alpha}$} (A0_2);     \path (A1_1) edge [->]node [auto] {$\scriptstyle{p}$} (A1_2);     \path (A0_2) edge [->]node [auto] {$\scriptstyle{f}$} (A1_2);     \path (A0_0) edge [->]node [auto] {$\scriptstyle{h}$} (A1_1);     \path (A0_1) edge [->]node [auto] {$\scriptstyle{}$} (A1_1);   \end{tikzpicture}$$ Since $\alpha$ is a monomorphism with a section, $\alpha$ and $s$ are inverses of each other. Using the fact that $f$ is flat the map $h^{*}\delta_{\shF}$ is given by $$p^{*}p_{*}\shF(\mathop{\mathrm{\textup{Spec}}}C\arrdi h\stX)=p_{*}\shF(\mathop{\mathrm{\textup{Spec}}}C\arrdi f\mathop{\mathrm{\textup{Spec}}}B)=\shF(\stX\times_{B}C\arr\stX)\arrdi{s^{*}}\shF(\mathop{\mathrm{\textup{Spec}}}C\arrdi h\stX)$$ and therefore it is an isomorphism.
+
+$1)\then3)$. Set $B=\mathop{\mathrm{\textup{H}}}^{0}(\odi{\stX})$ and $p\colon\stX\arr\mathop{\mathrm{\textup{Spec}}}B$ the induced map. Notice that $\L_{B}(\{\odi{\stX}\},B)\simeq\mathop{\mathrm{\textup{Mod}}}B$ and under this isomorphism $\Omega^{*}\colon\mathop{\mathrm{\textup{QCoh}}}\stX\arr\L_{B}(\{\odi{\stX}\},B)$ and $\shF_{*,\{\odi{\stX}\}}\colon\L_{B}(\{\odi{\stX}\},B)\arr\mathop{\mathrm{\textup{QCoh}}}\stX$ correspond to $p_{*}\colon\mathop{\mathrm{\textup{QCoh}}}\stX\arr\mathop{\mathrm{\textup{Mod}}}B$ and $p^{*}\colon\mathop{\mathrm{\textup{Mod}}}B\arr\mathop{\mathrm{\textup{QCoh}}}\stX$ respectively. By hypothesis, [\[prop:excatness properties of Omega\* and shF\*\]](#prop:excatness properties of Omega* and shF*){reference-type="ref" reference="prop:excatness properties of Omega* and shF*"} and [\[thm:general theorem for equivalences\]](#thm:general theorem for equivalences){reference-type="ref" reference="thm:general theorem for equivalences"} the map $p\colon\stX\arr\mathop{\mathrm{\textup{Spec}}}B$ is flat, $p_{*}\colon\mathop{\mathrm{\textup{QCoh}}}\stX\arr\mathop{\mathrm{\textup{Mod}}}B$ is fully faithful and $p^{*}p_{*}\simeq\id$.
+
+We want to show that $\stX\arr\mathop{\mathrm{\textup{Spec}}}B$ is fully faithful or, equivalently, that the diagonal $\stX\arr\stX\times_{B}\stX$ is an equivalence. Let $V=\mathop{\mathrm{\textup{Spec}}}C\arr\stX$ be a representable fpqc covering and denote by $s\colon V\arr\stX\times_{B}V$ the graph of $h$. We have Cartesian diagrams $$\begin{tikzpicture}[xscale=2.0,yscale=-1.2]     \node (A0_0) at (0, 0) {$V\times_\stX V$};     \node (A0_1) at (1, 0) {$V\times_B V$};     \node (A0_2) at (2, 0) {$V\times_\stX V$};     \node (A0_3) at (3, 0) {$V\times_B V$};     \node (A1_0) at (0, 1) {$\stX$};     \node (A1_1) at (1, 1) {$\stX\times_B \stX$};     \node (A1_2) at (2, 1) {$V$};     \node (A1_3) at (3, 1) {$\stX\times_B V$};     \path (A0_0) edge [->]node [auto] {$\scriptstyle{q}$} (A0_1);     \path (A0_1) edge [->]node [auto] {$\scriptstyle{}$} (A1_1);     \path (A1_0) edge [->]node [auto] {$\scriptstyle{\Delta}$} (A1_1);     \path (A0_3) edge [->]node [auto] {$\scriptstyle{}$} (A1_3);     \path (A0_2) edge [->]node [auto] {$\scriptstyle{}$} (A1_2);     \path (A1_2) edge [->]node [auto] {$\scriptstyle{s}$} (A1_3);     \path (A0_2) edge [->]node [auto] {$\scriptstyle{q}$} (A0_3);     \path (A0_0) edge [->]node [auto] {$\scriptstyle{}$} (A1_0);   \end{tikzpicture}$$ and the vertical arrows are representable fpqc coverings. By descent it follows that $\Delta$ is an equivalence if we prove that $s$ is an equivalence.
+
+Let $f\colon V\arr\stX\arrdi p\mathop{\mathrm{\textup{Spec}}}B$ be the composition. Since $p$ is flat also $f$ is flat and, in particular, $\mathop{\mathrm{\textup{H}}}^{0}(\odi{\stX\times_{B}V})=C$. Since $\stX\times_{B}V\arr\stX$ is affine it follows that $\{\odi{\stX\times_{B}V}\}$ generates $\mathop{\mathrm{\textup{QCoh}}}(\stX\times_{B}V)$. Since $s$ is a section of $\stX\times_{B}V\arr V$, we see that we can assume that $p\colon\stX\arr\mathop{\mathrm{\textup{Spec}}}B$ has a section, that we still denote by $s\colon\mathop{\mathrm{\textup{Spec}}}B\arr\stX$. In this case we have to prove that $p$ or $s$ is an equivalence. Notice that this implies the last claim in the statement. Indeed if $\stX\times_{B}k\neq\emptyset$ for all geometric points then $f\colon V\arr\mathop{\mathrm{\textup{Spec}}}B$ is an fpqc covering: it follows that the map $\stX\arr\mathop{\mathrm{\textup{Spec}}}B$ is an equivalence because it has this property fpqc locally.
+
+We first prove that $p_{*}\colon\mathop{\mathrm{\textup{QCoh}}}\stX\arr\mathop{\mathrm{\textup{Mod}}}B$ is an equivalence. It suffices to show that, if $M\in\mathop{\mathrm{\textup{Mod}}}B$, then the map $\gamma_{M}\colon M\arr p_{*}p^{*}M$ is an isomorphism. Notice that $p^{*}\gamma_{M}$ is a section of the map $(p*p_{*})p^{*}M\arr p^{*}M$ which is an isomorphism. So $p^{*}\gamma_{M}$ and $\gamma_{M}=s^{*}p^{*}\gamma_{M}$ are isomorphisms. Since $p_{*}s_{*}\colon\mathop{\mathrm{\textup{Mod}}}B\arr\mathop{\mathrm{\textup{Mod}}}B$ is the identity, we can conclude that $s_{*}\simeq p^{*}$ and $s^{*}\simeq p_{*}$. Consider the Cartesian diagram $$\begin{tikzpicture}[xscale=1.5,yscale=-1.2]     \node (A0_0) at (0, 0) {$U$};     \node (A0_1) at (1, 0) {$\mathop{\mathrm{\textup{Spec}}}C$};     \node (A1_0) at (0, 1) {$\mathop{\mathrm{\textup{Spec}}}B$};     \node (A1_1) at (1, 1) {$\stX$};     \path (A0_0) edge [->]node [auto] {$\scriptstyle{g}$} (A0_1);     \path (A1_0) edge [->]node [auto] {$\scriptstyle{s}$} (A1_1);     \path (A0_1) edge [->]node [auto] {$\scriptstyle{h}$} (A1_1);     \path (A0_0) edge [->]node [auto] {$\scriptstyle{t}$} (A1_0);   \end{tikzpicture}$$ where $h$ is a representable fpqc covering. Since $\stX$ has quasi-affine diagonal it follows that $U$ is a quasi-affine scheme. Moreover $$\mathop{\mathrm{\textup{H}}}^{0}(\odi U)\simeq g_{*}t^{*}\odi B\simeq h^{*}s_{*}\odi B\simeq h^{*}p^{*}\odi B\simeq C$$ Thus $g\colon U\arr\mathop{\mathrm{\textup{Spec}}}C$ and $s\colon\mathop{\mathrm{\textup{Spec}}}B\arr\stX$ are open immersions. We prove that $g$ is a surjective, which imply that $g$ and $s$ are isomorphisms. Let $Z$ be the complement of $U$ in $\mathop{\mathrm{\textup{Spec}}}C$ with reduced structure. We have $$\mathop{\mathrm{\textup{H}}}^{0}(\odi Z)\simeq p_{*}h_{*}\odi Z\simeq s^{*}h_{*}\odi Z=t_{*}g^{*}\odi Z=0$$ Thus $Z$ is empty as required. ◻
+:::
+
+::: rem
+[]{#rem: classifying stack of elliptic curve label="rem: classifying stack of elliptic curve"} The assumption on the diagonal in [\[lem:recognizing affine rings from global sections\]](#lem:recognizing affine rings from global sections){reference-type="ref" reference="lem:recognizing affine rings from global sections"} is necessary: the stack $\stX=\mathop{\mathrm{\textup{B}}}_{k}E$, where $E$ is an elliptic curve over a field $k$, is not a sheaf but $\mathop{\mathrm{\textup{QCoh}}}\stX\simeq\mathop{\mathrm{\textup{QCoh}}}k$.
+:::
+
+::: rem
+[]{#rem: generating subcategory under pseudo-affine maps label="rem: generating subcategory under pseudo-affine maps"} If $f\colon\stY\arr\stX$ is a pseudo-affine map of pseudo-algebraic fiber categories then it is quasi-compact with affine diagonal and the map $f^{*}f_{*}\shF\arr\shF$ is surjective for all $\shF\in\mathop{\mathrm{\textup{QCoh}}}\stY$. In particular if $\shD\subseteq\mathop{\mathrm{\textup{QCoh}}}\stX$ generates $\mathop{\mathrm{\textup{QCoh}}}\stX$ then $f^{*}\shD$ generates $\mathop{\mathrm{\textup{QCoh}}}\stY$. The first claims follow by standard argument of descent while the second by considering an atlas of $\stX$ and using the characterization $3)$ of [\[lem:recognizing affine rings from global sections\]](#lem:recognizing affine rings from global sections){reference-type="ref" reference="lem:recognizing affine rings from global sections"}.
+
+If $\stY\arr\mathop{\mathrm{\textup{Spec}}}A$ is a map of fibered categories then $\stY$ is pseudo-affine if and only if $\stY\arr\mathop{\mathrm{\textup{Spec}}}A$ is pseudo-affine, because if $\stY$ is pseudo-affine and $g\colon\stY'\arr\stY$ is an affine map, then $\stY'$ is an fpqc sheaf with quasi-affine diagonal and $\odi{\stY'}=g^{*}\odi{\stY}$ generates $\mathop{\mathrm{\textup{QCoh}}}\stY'$.
+
+Finally, if $f\colon\stY'\arr\stY$ is a map of fpqc stacks and $Y\arr\stY$ is an fpqc atlas such that $Y'=Y\times_{\stY}\stY'\arr Y$ is pseudo-affine then $f$ is pseudo-affine. Indeed by standard arguments of descent we can assume $\stY=\mathop{\mathrm{\textup{Spec}}}B$ and $Y=\mathop{\mathrm{\textup{Spec}}}B'$ affine, which also implies that $\stY'$ is quasi-compact with affine diagonal. Moreover since $B\arr B'$ is flat we have $\mathop{\mathrm{\textup{H}}}^{0}(\odi{Y'})\simeq\mathop{\mathrm{\textup{H}}}^{0}(\odi{\stY'})\otimes_{B}B'$ and therefore we can assume that $\mathop{\mathrm{\textup{H}}}^{0}(\odi{\stY'})=B$ and $\mathop{\mathrm{\textup{H}}}^{0}(\odi{Y'})=B'$. In this case $Y'\arr Y$ is flat and fully faithful and, since $\stY$ is an fpqc stack, it follows that also $\stY'\arr\stY$ is a flat and fully faithful.
+:::
+
+::: rem
+[]{#rem: cases for resolution property label="rem: cases for resolution property"} Let $G$ be a flat and affine group scheme over $R$ such that $\mathop{\mathrm{\textup{B}}}_{R}G$ has the resolution property. Taking into account [\[rem: generating subcategory under pseudo-affine maps\]](#rem: generating subcategory under pseudo-affine maps){reference-type="ref" reference="rem: generating subcategory under pseudo-affine maps"}, if $U$ is a pseudo-affine sheaf over $R$ with an action of $G$ then $[U/G]$ has the resolution property because the map $[U/G]\arr\mathop{\mathrm{\textup{B}}}_{R}G$ is pseudo-affine. The same conclusion follows for a stack $\stX=[X/G]$, where $X$ is a scheme, if there exists $\shL\in\mathop{\mathrm{\textup{Pic}}}(\stX)$ whose pullback $\shM$ to $X$ is very ample relatively to $R$. Indeed $\stX$ can be written as $[U/G\times\Gm]$ where $U$ is the complement of the zero section of $\shM\arr X$: the fact that $\shM$ is very ample tells us that $U$ is quasi-affine. Moreover $\mathop{\mathrm{\textup{B}}}(G\times\Gm)$ has the resolution property. Indeed let $N$ be the canonical invertible sheaf on $\mathop{\mathrm{\textup{B}}}_{R}\Gm$ and $\shF\in\mathop{\mathrm{\textup{QCoh}}}(\mathop{\mathrm{\textup{B}}}_{R}G)$. The action of $\Gm$ yields a decomposition $$\shF=\bigoplus_{n\in\Z}\shF_{n}$$ and all $\shF_{n}=(\shF\otimes N^{\otimes-n})^{\Gm}$ are sub $G\times\Gm$-representations. If $x\in\shF_{n}$ there exists $\E\in\mathop{\mathrm{\textup{Loc}}}(\mathop{\mathrm{\textup{B}}}_{R}G)$ and a $G$-equivariant map $\E\arr F_{n}$ with $x$ in its image. Thus the map $\E\otimes N^{\otimes n}\arr F_{n}$, where $\E$ has the trivial action of $\Gm$, is $G\times\Gm$-equivariant and has $x$ in its image.
+:::
+
+The following property is known for algebraic stacks (see [@Gross2013 Corollary 5.11] and [@Totaro2002 Proposition 1.3]).
+
+::: cor
+[]{#cor:quasi-affine and resolution implies affine label="cor:quasi-affine and resolution implies affine"} A quasi-compact fpqc stack $\stX$ with quasi-affine diagonal and with the resolution property has affine diagonal.
+:::
+
+::: proof
+*Proof.* Since $\stX$ is pseudo-algebraic the category $\mathop{\mathrm{\textup{Loc}}}\stX$ is essentially small. Thus we can consider a set $\shR$ of representatives of locally free sheaves over $\stX$. Given $\E\in\shR$ we define the sheaf $$\mathop{\mathrm{\textup{Fr}}}(\E)\colon(\Sch/\stX)^{\text{op}}\arr\sets\comma\mathop{\mathrm{\textup{Fr}}}(\E)(U\arrdi f\stX)=\bigsqcup_{n\in\N}\mathop{\mathrm{\textup{Iso}}}_{U}(\odi U^{n},f^{*}\E)$$ It is easy to see that $\mathop{\mathrm{\textup{Fr}}}(\E)\arr\stX$ is an affine fpqc covering. In particular $g\colon\mathop{\mathrm{\textup{Fr}}}=\prod_{\E\in\shR}\mathop{\mathrm{\textup{Fr}}}(\E)\arr\stX$ is also an affine fpqc covering and $\mathop{\mathrm{\textup{Fr}}}$ is quasi-compact with quasi-affine diagonal. Thus it is enough to show that $\mathop{\mathrm{\textup{Fr}}}$ has affine diagonal. Since $g$ is affine by [\[rem: generating subcategory under pseudo-affine maps\]](#rem: generating subcategory under pseudo-affine maps){reference-type="ref" reference="rem: generating subcategory under pseudo-affine maps"} $g^{*}\mathop{\mathrm{\textup{Loc}}}\stX$ generates $\mathop{\mathrm{\textup{QCoh}}}\mathop{\mathrm{\textup{Fr}}}$. On the other hand if $\E\in\mathop{\mathrm{\textup{Loc}}}\stX$ then by construction $\mathop{\mathrm{\textup{Fr}}}$ is a (finite) disjoint union of open substacks over which $g^{*}\E$ is free, which implies that $g^{*}\E$ is generated by global sections. We can conclude that $\mathop{\mathrm{\textup{Fr}}}$ is a pseudo-affine sheaf and thus has affine diagonal. ◻
+:::
+
+::: proof
+*Proof.* (of Theorem [\[thm: Tannaka reconstrion for Loc X\]](#thm: Tannaka reconstrion for Loc X){reference-type="ref" reference="thm: Tannaka reconstrion for Loc X"}). Since $\stX$ has affine diagonal by [\[cor:quasi-affine and resolution implies affine\]](#cor:quasi-affine and resolution implies affine){reference-type="ref" reference="cor:quasi-affine and resolution implies affine"}, all morphisms $\mathop{\mathrm{\textup{Spec}}}A\arr\stX$ are affine. Therefore the functor $\stX(A)\arr\mathop{\mathrm{\textup{QAlg}}}_{A}\stX$ which maps $s\colon\mathop{\mathrm{\textup{Spec}}}A\arr\stX$ to $s_{*}\odi A$ is fully faithful. By [\[thm:fundamental for sheaf of algebras and monoidal functors\]](#thm:fundamental for sheaf of algebras and monoidal functors){reference-type="ref" reference="thm:fundamental for sheaf of algebras and monoidal functors"} and the fact that $$\Omega_{\E}^{s_{*}\odi A}=\mathop{\mathrm{\textup{Hom}}}(\E,s_{*}\odi A)\simeq\duale{(s^{*}\E)}\text{ for }s\in\stX(A)\comma\E\in\shC$$ we can conclude that the functor $\stX(A)\arr\mathop{\mathrm{\textup{SMex}}}_{R}(\shC,A)$, $s\longmapsto\duale{(s_{|\shC}^{*})}$ is well defined and fully faithful. Thus everything follows if we prove that, given $\Gamma\in\mathop{\mathrm{\textup{SMex}}}_{R}(\shC,A)$, the composition $p\colon\mathop{\mathrm{\textup{Spec}}}\alA_{\Gamma,\shC}\arr\stX_{A}\arr\mathop{\mathrm{\textup{Spec}}}A$ is an isomorphism. Set $\alA=\alA_{\Gamma,\shC}$, $\stY=\mathop{\mathrm{\textup{Spec}}}\alA$ and $f\colon\stY\arr\stX$ for the structure morphism. We want to apply [\[lem:recognizing affine rings from global sections\]](#lem:recognizing affine rings from global sections){reference-type="ref" reference="lem:recognizing affine rings from global sections"} on $p\colon\stY\arr\mathop{\mathrm{\textup{Spec}}}A$. Notice that $\stY$ is quasi-compact and has affine diagonal. Moreover by [\[thm:fundamental for sheaf of algebras and monoidal functors\]](#thm:fundamental for sheaf of algebras and monoidal functors){reference-type="ref" reference="thm:fundamental for sheaf of algebras and monoidal functors"} $$\Gamma_{\E}\simeq\Omega_{\E}^{\alA}=\mathop{\mathrm{\textup{Hom}}}(\E,\alA)=\mathop{\mathrm{\textup{Hom}}}(\E,f_{*}\odi{\stY})\simeq\mathop{\mathrm{\textup{Hom}}}(f^{*}\E,\odi{\stY})=\mathop{\mathrm{\textup{H}}}^{0}(\duale{(f^{*}\E)})$$ In particular, since $\Gamma_{\odi{\stX}}\simeq A$, the map $A\arr\mathop{\mathrm{\textup{H}}}^{0}(\alA)$ is an isomorphism. We show now that, if $\mathop{\mathrm{\textup{Spec}}}k\arr\mathop{\mathrm{\textup{Spec}}}A$ is a geometric point, then $\stY\times_{A}k\neq\emptyset$. If $g\colon\stX_{k}\arr\stX_{A}$ is the projection then $\stY\times_{A}k\simeq\mathop{\mathrm{\textup{Spec}}}(g^{*}\alA)$, while by [\[prop:base change for FstarC\]](#prop:base change for FstarC){reference-type="ref" reference="prop:base change for FstarC"} we have $g^{*}\alA\simeq\alA_{\Gamma\otimes_{A}k,\shC}$. By [\[thm:fundamental for sheaf of algebras and monoidal functors\]](#thm:fundamental for sheaf of algebras and monoidal functors){reference-type="ref" reference="thm:fundamental for sheaf of algebras and monoidal functors"} we get $\Gamma\otimes_{A}k\simeq\Omega^{\alA_{\Gamma\otimes_{A}k,\shC}}$ and therefore $\alA_{\Gamma\otimes_{A}k,\shC}=0$, that is $\stY\times_{A}k=\emptyset$, implies $\Gamma\otimes_{A}k=0$, while $\Gamma_{\odi{\stX}}\otimes_{A}k=A\otimes_{A}k\simeq k$.
+
+It remains to show that $\{\odi{\stY}\}$ generates $\mathop{\mathrm{\textup{QCoh}}}\stY$. Since $\stY\arrdi f\stX$ is affine, $f^{*}\shC$ generates $\mathop{\mathrm{\textup{QCoh}}}\stY$ by [\[rem: generating subcategory under pseudo-affine maps\]](#rem: generating subcategory under pseudo-affine maps){reference-type="ref" reference="rem: generating subcategory under pseudo-affine maps"}. Thus we have to prove that all the sheaves $f^{*}\E$ are generated by global sections. By hypothesis the map $$\mathop{\mathrm{\textup{H}}}^{0}(\duale{f^{*}\E'})\otimes\mathop{\mathrm{\textup{H}}}^{0}(\duale{f^{*}\E})\arr\mathop{\mathrm{\textup{H}}}^{0}(\duale{f^{*}(\E'\otimes\E)})$$ is an isomorphism for all $\E,\E'\in\shC$. Since $\shC$ has duals, choosing $\E'=\duale{\E}$ the above map became the evaluation $$\omega\colon\mathop{\mathrm{\textup{H}}}^{0}(f^{*}\E)\otimes\mathop{\mathrm{\textup{Hom}}}_{\stY}(f^{*}\E,\odi{\stY})\arr\mathop{\mathrm{\textup{End}}}_{\stY}(f^{*}\E)$$ Since $\omega$ is an isomorphism there exist $x_{1},\dots,x_{n}\in\mathop{\mathrm{\textup{H}}}^{0}(f^{*}\E)$, $\phi_{1},\dots,\phi_{n}\in\mathop{\mathrm{\textup{Hom}}}(f^{*}\E,\odi{\stX})$ such that $\id_{f^{*}\E}=\omega(\sum_{i}x_{i}\otimes\phi_{i})$. This implies that the map $\odi{\stY}^{n}\arr f^{*}\E$ given by the global sections $x_{1},\dots,x_{n}$ is surjective, as required.
+
+For the last statement we claim that $\duale -\colon\text{Fib}_{\stX,\shC}(A)\arr\mathop{\mathrm{\textup{SMex}}}_{R}(\shC,A)$, $\Gamma\longmapsto\duale{\Gamma}$ is an equivalence. Taking into account [\[ prop: Lex and left exact functors\]](# prop: Lex and left exact functors){reference-type="ref" reference=" prop: Lex and left exact functors"}, if $\Gamma\in\text{Fib}_{\stX,\shC}(A)$ then $\duale{\Gamma}\in\mathop{\mathrm{\textup{SMex}}}_{R}(\shC,A)$ because $\Gamma$ is exact on all finite test sequences and the dual of a right exact sequence of locally free sheaves is again exact. Moreover the map $\stX(A)\arr\mathop{\mathrm{\textup{SMex}}}_{R}(\shC,A)$ factors as $$\stX(A)\arrdi{\shP_{\shC}}\text{Fib}_{\stX,\shC}(A)\arrdi{\duale -}\mathop{\mathrm{\textup{SMex}}}_{R}(\shC,A)$$ Thus $\duale -\colon\text{Fib}_{\stX,\shC}(A)\arr\mathop{\mathrm{\textup{SMex}}}_{R}(\shC,A)$ is essentially surjective and $\duale -\colon\mathop{\mathrm{\textup{SMex}}}_{R}(\shC,A)\arr\text{Fib}_{\stX,\shC}(A)$ is a quasi-inverse. ◻
+:::
+
+::: proof
+*Proof.* (of Theorem [\[prop:arbitrary intersection of quasi-compact open is pseudo-affine\]](#prop:arbitrary intersection of quasi-compact open is pseudo-affine){reference-type="ref" reference="prop:arbitrary intersection of quasi-compact open is pseudo-affine"}) Let $X=\mathop{\mathrm{\textup{Spec}}}B$ be an affine scheme, $\{U_{i}\}_{i\in I}$ be a set of quasi-compact open subsets of $X$ and set $U=\cap_{i}U_{i}$. If $i\in I$ the subscheme $U_{i}$ is the complement of the zero locus of finitely many element of $B$ and thus there exists a free $B$-module $E_{i}$ and a map $\phi_{i}\colon E_{i}\arr B$ such that $U_{i}$ is the locus where $\phi_{i}$ is surjective. Let $V\colon\mathop{\mathrm{\textup{Aff}}}/B\arr\sets$ be the functor $$V(A)=\{(s_{i})_{i\in I}\st s_{i}\in E_{i}\otimes_{B}A\st\phi_{i}(s_{i})=1\}$$ which is an affine scheme. The map $V\arr\mathop{\mathrm{\textup{Spec}}}B$ factors through $U$ and $V\arr U$ is surjective (as functors). Moreover if $\mathop{\mathrm{\textup{Spec}}}A\arr U$ is a map then $V\times_{U}A=V\times_{X}A$ because $U\arr X$ is a monomorphism. Since $V\times_{X}A$ is isomorphic to $(\prod_{i}\mathop{\mathrm{\textup{Ker}}}\phi_{i})\times_{X}A$ we can conclude that $V\arr U$ is an affine fpqc epimorphism, so that $U$ is quasi-compact, and that $U\arr X$ is flat. The result then follows from [\[lem:recognizing affine rings from global sections\]](#lem:recognizing affine rings from global sections){reference-type="ref" reference="lem:recognizing affine rings from global sections"}.
+
+For the converse, denote by $Z$ the intersection in the statement, set $\shC=\{\odi U\}$, $B=\mathop{\mathrm{\textup{H}}}^{0}(\odi U)$ and let $\alpha\colon\mathop{\mathrm{\textup{Spec}}}A\arr\mathop{\mathrm{\textup{Spec}}}B$ be a map which factors through $Z$ and $\shT_{*}\colon\odi U^{n}\arr\odi U^{m}\arr\odi U\arr0$ be an exact sequence on $U$. Since $C=\{\odi{\mathop{\mathrm{\textup{Spec}}}B}\}$ as monoidal categories, by [\[thm: Tannaka reconstrion for Loc X\]](#thm: Tannaka reconstrion for Loc X){reference-type="ref" reference="thm: Tannaka reconstrion for Loc X"} it is enough to show that $\alpha_{|\shC}^{*}\colon\shC\arr\mathop{\mathrm{\textup{Loc}}}A$ is exact on $\shT_{*}$. The sequence $\shT_{*}$ defines a complex $\shW_{*}$ of free $A$-modules, namely $\shW_{*}=\mathop{\mathrm{\textup{H}}}^{0}(\shT_{*})$, and the locus $W$ in $\mathop{\mathrm{\textup{Spec}}}A$ where $\shW_{*}$ is exact is quasi-compact, open and contains $U$. Thus $Z\subseteq W$, the sequence $\shW_{*}$ become exact on $Z$ and therefore $\alpha^{*}$ maintains its exactness, as required. ◻
+:::
+
+::: lem
+[]{#lem:generators for GLn label="lem:generators for GLn"} Let $\shR$ be a set, $f\colon\shR\arr\N$ be a map and set $$\mathop{\mathrm{\textup{GL}}}_{f}=\prod_{i\in\shR}\mathop{\mathrm{\textup{GL}}}_{f(i)}$$ and $\shF_{i}$ for the locally free sheaf of rank $f(i)$ on $\mathop{\mathrm{\textup{B}}}\mathop{\mathrm{\textup{GL}}}_{f}$ coming from the universal one on $\mathop{\mathrm{\textup{B}}}\mathop{\mathrm{\textup{GL}}}_{f(i)}$. Then the subcategory of $\mathop{\mathrm{\textup{Loc}}}(\mathop{\mathrm{\textup{B}}}\mathop{\mathrm{\textup{GL}}}_{f})$ consisting of all tensor products of sheaves $$\{\shF_{i}\}_{i\in\shR}\comma\{\duale{(\mathop{\mathrm{\textup{Sym}}}^{m}\shF_{i})}\}_{i\in\shR\text{ s.t. }f(i)\notin R^{*}\comma m\in\N}$$ generates $\mathop{\mathrm{\textup{QCoh}}}(\mathop{\mathrm{\textup{B}}}\mathop{\mathrm{\textup{GL}}}_{f})$.
+:::
+
+::: proof
+*Proof.* We are going to apply [\[thm:generating sheaves for BG\]](#thm:generating sheaves for BG){reference-type="ref" reference="thm:generating sheaves for BG"}. Let $\shD$ be the subcategory of $\mathop{\mathrm{\textup{Loc}}}\mathop{\mathrm{\textup{B}}}\mathop{\mathrm{\textup{GL}}}_{f}$ generated by direct sums and tensor products of the sheaves $\mathop{\mathrm{\textup{Sym}}}^{m}\shF_{i},(\det\shF_{i})^{-1}$ for $i\in\shR$, $m\in\N$. We claim that $R[\mathop{\mathrm{\textup{GL}}}_{f}]$ is a direct limit of representations in $\shD$. The representation $R[\mathop{\mathrm{\textup{GL}}}_{f}]$ is a direct limit of tensor products of the regular representations $R[\mathop{\mathrm{\textup{GL}}}_{f(i)}]$ for $i\in\shR$. This allows us to reduce to the case of $\mathop{\mathrm{\textup{GL}}}_{n}$ (i.e. $\shR$ has one element). Call $\shF$ the universal rank $n$ sheaf on $\mathop{\mathrm{\textup{B}}}\mathop{\mathrm{\textup{GL}}}_{n}$ and $\shG$ the free $R$-module of rank $n$. As usual we can write $R[\mathop{\mathrm{\textup{GL}}}_{n}]=R[X_{uv}]_{\det}$ for $1\leq u,v\leq n$, where $\det$ is the determinant polynomial. The $R$-submodule generated by the $X_{u,v}$ is a $\mathop{\mathrm{\textup{GL}}}_{n}$-subrepresentation isomorphic to $\shF\otimes\shG$. In particular we obtain injective maps $$\mathop{\mathrm{\textup{Sym}}}^{nm}(\shF\otimes\shG)\otimes(\det\shF)^{-\otimes m}\arr R[\mathop{\mathrm{\textup{GL}}}_{n}]$$ whose image is the set of fractions $f/\det^{m}$ where $f$ is homogeneous of degree $nm$. Those images form an incresing sequence of sub representations saturating $R[\mathop{\mathrm{\textup{GL}}}_{n}]$. Thus $R[\mathop{\mathrm{\textup{GL}}}_{n}]$ is the direct limit of the sheaves $\mathop{\mathrm{\textup{Sym}}}^{nm}(\shF\otimes\shG)\otimes(\det\shF)^{-\otimes m}$ which belongs to $\shD$.
+
+Coming back to the general framework, by [\[thm:generating sheaves for BG\]](#thm:generating sheaves for BG){reference-type="ref" reference="thm:generating sheaves for BG"} and the existence of surjective maps $\shF_{i}^{\otimes f(i)}\arr\det\shF_{i}$ and, if $f(i)\in R^{*}$ so that $\mathop{\mathrm{\textup{GL}}}_{f(i)}$ is linearly reductive, $(\shF_{i}^{\vee})^{\otimes m}\arr(\mathop{\mathrm{\textup{Sym}}}^{m}\shF_{i})^{\vee}$ we get the desired result. ◻
+:::
+
+::: proof
+*Proof.* (of Theorem [\[thm:when FibX,C has the resolution property\]](#thm:when FibX,C has the resolution property){reference-type="ref" reference="thm:when FibX,C has the resolution property"}). It is easy to see that $\text{Fib}_{\stX,\shC}$ is a stack (not necessarily in groupoids) for the fpqc topology on $\mathop{\mathrm{\textup{Aff}}}/R$. To avoid problems with disjoint unions we can assume that $\stX$ is a Zariski stack. We will use notation from [\[lem:generators for GLn\]](#lem:generators for GLn){reference-type="ref" reference="lem:generators for GLn"}. Let $\shR$ be a set of representatives of $\shC/\simeq$ with $\odi{\stX}\in\shR$, $J$ be a finite subset of $\shR$ and denote by $\shI_{J}$ the set of $f\in\N^{J}$ extending to a function of $\shI$. Given $f\in\N^{J}$ we denote by $\stX_{f}$ the open locus of $\stX$ where $\mathop{\mathrm{\textup{rk}}}\E=f(\E)$ for all $\E\in J$. Notice that $\stX=\bigsqcup_{f\in\shI_{J}}\stX_{f}$ and, since $\stX$ is quasi-compact, $\shI_{J}$ is finite. The sheaves $(\E_{|\stX_{f}})_{\E\in J}$ induces a map $\stX_{f}\arr\mathop{\mathrm{\textup{B}}}\mathop{\mathrm{\textup{GL}}}_{f}=\shB_{f}$ and thus a map $$\omega_{J}\colon\stX\arr\bigsqcup_{f\in\shI_{J}}\shB_{f}=\shB_{J}$$ For all $\E\in J$ there is a locally free sheaf $\shH_{\E,J}$ on $\shB_{J}$ such that $(\shH_{\E,J})_{|\shB_{f}}$ is the canonical locally free sheaf of rank $f(\E)$ (pullback from $\mathop{\mathrm{\textup{B}}}\mathop{\mathrm{\textup{GL}}}_{f(\E)}$), so that $\omega_{J}^{*}\shH_{\E,J}\simeq\E$. Let $\shD_{J}$ be the subcategory of $\mathop{\mathrm{\textup{Loc}}}(\shB_{J})$ consisting of all tensor products and duals of $\shH_{\E,J}$ and, if there exists $f\in\shI_{J}$ such that $f(\E)\notin R^{*}$, also of $\mathop{\mathrm{\textup{Sym}}}^{n}\shH_{\E,J}$ for $n\in\N$ and $\E\in J$. We have $\omega_{J}^{*}\shD_{J}\subseteq\shC$ by construction, that $\shD_{J}$ generates $\mathop{\mathrm{\textup{QCoh}}}(\shB_{J})$ by [\[lem:generators for GLn\]](#lem:generators for GLn){reference-type="ref" reference="lem:generators for GLn"} and, in particular, that $\shP_{\shD_{J}}\colon\shB_{J}\arr\text{Fib}_{\shB_{J},\shD_{J}}$ is an equivalence of stacks by [\[thm: Tannaka reconstrion for Loc X\]](#thm: Tannaka reconstrion for Loc X){reference-type="ref" reference="thm: Tannaka reconstrion for Loc X"}. When $J=\{\E\}$ we will replace $J$ by $\E$ in the subscripts.
+
+We now show that $\text{Fib}_{\stX,\shC}$ is a stack in groupoids. If $\Gamma,\Gamma'\in\text{Fib}_{\stX,\shC}(A)$, $\delta\colon\Gamma\arr\Gamma'$ is a morphism and $\E\in\shC$ then $\delta_{\E}\colon\Gamma_{\E}\arr\Gamma'_{\E}$ is an isomorphism because $\Gamma\circ\omega_{\E}^{*}\arrdi{\delta\circ\omega_{\E}^{*}}\Gamma'\circ\omega_{\E}^{*}$ is a morphism in the groupoid $\text{Fib}_{\stB_{\E},\shD_{\E}}(A)\simeq\shB_{\E}(A)$.
+
+Given $f\colon\shC\arr\N$, we show that $\text{Fib}_{\stX,\shC}^{f}\neq\emptyset$ if and only if $f\in\shI$. For the if part, if $f\in\shI$ there exists $s\colon\mathop{\mathrm{\textup{Spec}}}L\arr\stX$ such that $\mathop{\mathrm{\textup{rk}}}s^{*}\E=f(\E)$ for all $\E\in\shC$. Thus $s_{|\shC}^{*}\in\text{Fib}_{\stX,\shC}^{f}$. For the only if part we show that, if $L$ is an algebraically closed field and $\Gamma\in\text{Fib}_{\stX,\shC}(L)$ then $$$\mathop{\mathrm{\textup{rk}}}\Gamma_{*}\colon\shC\arr\N$ belongs to $\shI$. This will also show that, if $\shI$ is finite, then $\text{Fib}_{\stX,\shC}$ is the disjoint union of the $\text{Fib}_{\stX,\shC}^{f}$ for $f\in\shI$: indeed $\text{Fib}_{\stX,\shC}^{f}$ is the locus where $\mathop{\mathrm{\textup{rk}}}\shG_{\E}=f(\E)$ for all $\E\in\shC$.
+
+So let $\Gamma\in\text{Fib}_{\stX,\shC}(L)$. Given $J\subseteq\shR$ finite consider $\Gamma\circ\omega_{J}^{*}\in\text{Fib}_{\shB_{J},\shD_{J}}(L)\simeq\shB_{J}(L)$, so that there exists a map $\mathop{\mathrm{\textup{Spec}}}L\arrdi s\shB_{J}$ such that $\Gamma\circ\omega_{J}^{*}\simeq s_{|\shD_{J}}^{*}$. The map $s$ has image in some component $\shB_{f}$ with $f\in\shI_{J}$. In particular if $\E\in J$ we have $$\mathop{\mathrm{\textup{rk}}}\Gamma_{\E}=\mathop{\mathrm{\textup{rk}}}\Gamma_{\omega_{J}^{*}\shH_{\E,J}}=\mathop{\mathrm{\textup{rk}}}(s^{*}(\shH_{\E,J})_{|\shB_{f}})=f(\E)$$ This shows that for all finite subsets $J\subseteq\shR$ we have that $f_{J}=(\mathop{\mathrm{\textup{rk}}}\Gamma_{*})_{|J}$ belongs to $\shI_{J}$. By construction $\stX_{f_{J}}$ is a non-empty (open and) closed substack of $\stX$. Since $\stX_{f_{J}}\subseteq\stX_{f_{J'}}$ if $J'\subseteq J$ and $\stX$ is quasi-compact it follows that $\bigcap_{J}\stX_{f_{J}}\neq\emptyset$ and thus that $\mathop{\mathrm{\textup{rk}}}\Gamma_{*}\in\shI$.
+
+It remains to show the claims about $\text{Fib}_{\stX,\shC}^{f}$ when $f\in\shI$. The sheaf $\shG_{\E}$ has rank $f(\E)$ on $\text{Fib}_{\stX,\shC}^{f}$ and thus we get a map $g\colon\text{\text{Fib}}_{\stX,\shC}^{f}\arr\mathop{\mathrm{\textup{B}}}\mathop{\mathrm{\textup{GL}}}_{f}$ such that $g^{*}\shF_{\E}\simeq\shG_{\E}$ for $\E\in\shR$ (here we are using notation from [\[lem:generators for GLn\]](#lem:generators for GLn){reference-type="ref" reference="lem:generators for GLn"}). Let $\shC'$ be the subcategory of $\mathop{\mathrm{\textup{Loc}}}\mathop{\mathrm{\textup{B}}}\mathop{\mathrm{\textup{GL}}}_{f}$ obtained by taking tensor products and duals of the sheaves $\shF_{\E}$ and, if $f(\E)\notin R^{*}$, also of $\mathop{\mathrm{\textup{Sym}}}^{n}\shF_{\E}$ for $n\in\N$ and $\E\in\shR$. Moreover set $\shD=\{\shG_{\E}\}_{\E\in\shC}\subseteq\mathop{\mathrm{\textup{Loc}}}(\text{Fib}_{\stX,\shC})$. We claim that $g^{*}\shC'\subseteq\shD_{|\text{Fib}_{\stX,\shC}^{f}}$. It suffices to show that if $\E\in\shC$ then $\shG_{\duale{\E}}\simeq\duale{(\shG_{\E})}$ and, if $f(\E)\notin R^{*}$, $\shG_{\mathop{\mathrm{\textup{Sym}}}^{n}\E}\simeq\mathop{\mathrm{\textup{Sym}}}^{n}\shG_{\E}$ over the whole $\text{Fib}_{\stX,\shC}$. Consider $J=\{\E\}\subseteq\shR$. The functor $\omega_{\E}\colon\stX\arr\shB_{\E}$ induces $\omega_{\E}^{*}\colon\shD_{\E}\arr\shC$ and a functor $\delta\colon\text{Fib}_{\stX,\shC}\arr\text{Fib}_{\shB_{\E},\shD_{\E}}\simeq\shB_{\E}$. If $t$ is either $(-)^{\vee}$ or $\mathop{\mathrm{\textup{Sym}}}^{n}$ and $\Gamma\in\text{Fib}_{\stX,\shC}$ we have isomorphisms $$\shG_{t(\E)}(\Gamma)=\Gamma_{t(\E)}\simeq(\Gamma\circ\omega_{\E}^{*})_{t(\shH_{\E,\{\E\}})}\simeq\delta(\Gamma)^{*}t(\shH_{\E,\{\E\}})\simeq t(\delta(\Gamma)^{*}\shH_{\E,\{\E\}})\simeq t(\Gamma_{\E})=t(\shG_{\E})(\Gamma)$$ natural in $\Gamma$ and thus that $\shG_{t(\E)}\simeq t(\shG_{\E})$.
+
+Using [\[lem:generators for GLn\]](#lem:generators for GLn){reference-type="ref" reference="lem:generators for GLn"} and [\[rem: generating subcategory under pseudo-affine maps\]](#rem: generating subcategory under pseudo-affine maps){reference-type="ref" reference="rem: generating subcategory under pseudo-affine maps"} all the claims in the statement follow if we show that the fiber product $U$ of $g\colon\text{\text{Fib}}_{\stX,\shC}^{f}\arr\mathop{\mathrm{\textup{B}}}\mathop{\mathrm{\textup{GL}}}_{f}$ along the canonical map $\mathop{\mathrm{\textup{Spec}}}R\arr\mathop{\mathrm{\textup{B}}}\mathop{\mathrm{\textup{GL}}}_{f}$ is pseudo-affine. Since $\mathop{\mathrm{\textup{Loc}}}(\stX)$ is essentially small, it is easy to find a sub monoidal subcategory $\tilde{\shC}$ of $\shC$ which is small and such that $\widetilde{\shC}\arr\shC$ is an equivalence. Via restriction we get an equivalence $\text{Fib}_{\stX,\shC}\arr\text{Fib}_{\stX,\tilde{\shC}}$ and we can assume that $\shC$ is small. If $A$ is an $R$-algebra then $U(A)$ is the groupoid of $\Gamma\in\text{Fib}_{\stX,\shC}^{f}(A)$ together with basis of $\Gamma_{\E}$ for all $\E\in\shC$. In particular it is easy to see that $U$ is (equivalent to) a sheaf. Let $V\colon\mathop{\mathrm{\textup{Aff}}}/R\arr\sets$ be the functor which maps an $R$-algebra $A$ to the set of $R$-linear and strong monoidal functors $\Gamma\colon\shC\arr\mathop{\mathrm{\textup{Loc}}}A$ such that $\mathop{\mathrm{\textup{rk}}}\Gamma_{\E}=f(\E)$ together with a basis of $\Gamma_{\E}$ for $\E\in\shC$. The sheaf $V$ is affine because it is a closed subscheme of $$\overline{V}=\prod_{\E\arr\E'\in\mathop{\mathrm{\textup{Arr}}}(\shC)}\mathop{\mathrm{\underline{\textup{Hom}}}}(R^{f(\E)},R^{f(\E')})\times\prod_{\E,\E'\in\shC}\mathop{\mathrm{\underline{\textup{Iso}}}}(R^{f(\E)}\otimes R^{f(\E')},R^{f(\E\otimes\E')})\times\mathbb{G}_{m,R}\colon\mathop{\mathrm{\textup{Aff}}}/R\arr\sets$$ which is affine. Write $V=\mathop{\mathrm{\textup{Spec}}}B$ and denote by $\Gamma\colon\shC\arr\mathop{\mathrm{\textup{Loc}}}B$ the canonical $R$-linear and strong monoidal functor. Given a finite test sequence $\shT$ in $\shC$ the sequence of maps $\Gamma_{\shT}$ is a complex of free $B$-modules and denote by $V_{\shT}$ the locus in $V$ where this complex is exact. Clearly $U$ is the intersection of the $V_{\shT}$ for all finite test sequences $\shT$. Since one can easily check that $V_{\shT}$ is a quasi-compact open subscheme of $V$ the result follows from [\[prop:arbitrary intersection of quasi-compact open is pseudo-affine\]](#prop:arbitrary intersection of quasi-compact open is pseudo-affine){reference-type="ref" reference="prop:arbitrary intersection of quasi-compact open is pseudo-affine"}. ◻
+:::

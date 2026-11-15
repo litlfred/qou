@@ -1,0 +1,65 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "orellana1998",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 130,
+      "entry": {
+        "id": "orellana1998",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T18:45:33Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 0,
+        "fix_commit": "(this commit)",
+        "note": "Halverson Markov-trace weights on Hecke. DIRECT fit with QOU Wedderburn-block weight content. Cited in wedderburn-weight-canonical.ts (cites array).",
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-math-9806163v1/9806163v1.pdf"
+        },
+        "local_pdf": "library/arxiv-math-9806163v1/9806163v1.pdf",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "JOIN CORRECT ON DOCUMENT, KEY IS A KNOWN MISNOMER, AND THE CITATIONS ARE NOT LOAD-BEARING. The document's front matter matches the registered entry, including the registry's own standing correction that the key names the wrong author and is retained only to avoid re-keying its citers. The substantive finding is about SCOPE. The document computes the Markov-trace weights for the Hecke algebras of TYPE B_n AND TYPE D_n, indexed by PAIRS of Young diagrams (abstract, p. 1; Introduction: 'The weights are also indexed by pairs of Young diagrams') \u2014 precisely because the type-A case was already settled by the other sources sitting alongside it in the same cites[] arrays. Its method is to map H(B) onto a REDUCED type-A Hecke algebra and to use the D \u2282 B inclusion. The QOU corpus is type A throughout. Checking each of the 5 citation sites: `wedderburn-weight-canonical.ts:21` cites it for the single-partition type-A canonical weight w\u0303_\u03bb = dim_q(\u03bb)\u00b2/[n]_q! \u2014 this document supplies no such formula, while `wenzl1988` / `jones1985`, already in the same array, do. `hecke-branching-trace-decomposition.ts:18` cites it for an H_{n+m} \u2192 H_n \u2297 H_m Littlewood\u2013Richardson operator-valued branching coefficient A^\u03bb_{\u03bc\u03bd}(I) in type A \u2014 again not this document's content, and the registry note already carries exactly this FLAG, recommending [ram1991]/[hoefsmit1974] instead. The three Lean sites (`MarkovGramRealSymm.lean:38`, `Hoefsmit.lean:87`, `MarkovTrace.lean:56`) are bare entries in a docstring 'Refs:' list attached to no `sorry` and to no specific assertion. Scope-(a): this document, as read, supplies nothing the type-A corpus consumes \u2014 a statement about the citation, not about type-B/D Markov weights, which stay a legitimate object should the corpus ever need them.",
+          "keyResults": [
+            {
+              "locator": "Abstract + Introduction, p. 1",
+              "statement": "Weights of the Geck\u2013Lambropoulou Markov trace at the minimal idempotents of the type-B and type-D Hecke algebras, expressed as a product of Schur functions and indexed by PAIRS of Young diagrams.",
+              "useForFolio": "Usable only if the corpus ever needs type-B/D Markov weights; it does not supply the type-A single-partition weight the two citing blocks assert.",
+              "targets": [
+                "prop:wedderburn-weight-canonical"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "Drop this id from the canonical-weight block's cites[] \u2014 the type-A weight is supplied by the wenzl/jones entries already in the array \u2014 or replace it there with the type-A source that actually carries the hook-content formula.",
+              "target": "prop:wedderburn-weight-canonical",
+              "bean": "qou-z76u"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "Act on the registry's own standing FLAG: the branching / Murnaghan\u2013Nakayama-type content asserted by the branching-trace block is in [ram1991]/[hoefsmit1974], not in this type-B/D weights paper.",
+              "target": "prop:hecke-branching-trace-decomposition",
+              "bean": "qou-11p0"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "dba44975f29c"
+        }
+      }
+    }
+  ]
+}

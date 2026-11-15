@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-hep-th-0206161v1/sections/sec-001",
   "@type": [
     "doco:Section"
   ],
-  "title": "(1 .3)",
-  "pageStart": 3,
-  "pageEnd": 6,
+  "title": "Introduction",
+  "pageStart": 2,
+  "pageEnd": 7,
   "contains": [
     "library/arxiv-hep-th-0206161v1/blocks/prose-sec-001"
   ],
-  "derivedFrom": "library/arxiv-hep-th-0206161v1/manifest",
-  "sourceDocument": "library/arxiv-hep-th-0206161v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-0206161v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-0206161v1",
   "provenance": "ingested"
 }

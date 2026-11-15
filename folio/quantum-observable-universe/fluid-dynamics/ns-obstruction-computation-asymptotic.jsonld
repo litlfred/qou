@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-ns-obstruction-computation-asymptotic",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:ns-obstruction-computation-asymptotic",
+  "kind": "remark",
+  "title": "Formal asymptotic content of the jet divergence",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-surreal-blowup-calculus",
+    "papers/quantum-observable-universe/blocks/def-standard-part-functor",
+    "papers/quantum-observable-universe/blocks/rem-conway-normal-form",
+    "papers/quantum-observable-universe/blocks/rem-body-asymptotics-catalog"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-ns-obstruction-computation",
+  "tags": [
+    "navier-stokes",
+    "asymptotics",
+    "surreal",
+    "blowup"
+  ],
+  "text": "ns-obstruction-computation-asymptotic.md",
+  "provenance": "authored"
+}

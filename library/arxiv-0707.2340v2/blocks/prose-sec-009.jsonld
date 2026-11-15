@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0707.2340v2/blocks/prose-sec-009",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0707.2340v2/blocks/prose-sec-009",
   "kind": "prose",
-  "title": "Negative Dependence Theory for Strongly Rayleigh Measures",
-  "pageStart": 21,
-  "pageEnd": 24,
-  "text": "../sections/sec-009-4-negative-dependence-theory-for-strongly-raylei.md",
-  "derivedFrom": "library/arxiv-0707.2340v2/manifest",
-  "sourceDocument": "library/arxiv-0707.2340v2/manifest",
+  "title": "Hadamard-Fischer Inequalities and GKK-Matrices",
+  "pageStart": 15,
+  "pageEnd": 17,
+  "text": "../sections/sec-009-32-hadamard-fischer-inequalities-and-gkk-matrice.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0707.2340v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0707.2340v2",
   "provenance": "ingested"
 }

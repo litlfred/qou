@@ -1,5 +1,6 @@
 {
   "computation": "qbeta-bar-branch-refuted",
+  "q0Anchor": "proton",
   "assertions": [
     {
       "name": "the_swap_turns_one_violation_into_hundreds",
@@ -120,8 +121,8 @@
     "charge_magnitude_ratio": "2"
   },
   "provenance": {
-    "headSha": "7dcbef29f12d755480569bbcc868401786e6f209",
+    "headSha": "eb645d81e7fe1646342513e676f6498caab4a229",
     "producer": "computations/qbeta/qbeta_bar_branch_refuted_probe.py",
-    "elapsed_s": 1.018
+    "elapsed_s": 1.153
   }
 }

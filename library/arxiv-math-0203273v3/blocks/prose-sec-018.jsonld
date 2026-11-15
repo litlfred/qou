@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0203273v3/blocks/prose-sec-018",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0203273v3/blocks/prose-sec-018",
   "kind": "prose",
-  "title": "D ´eﬁnition. Un objet X d’une cat´ egorieC est compact si le foncteur Y ↦→",
-  "pageStart": 11,
-  "pageEnd": 11,
-  "text": "../sections/sec-018-135-d-eﬁnition-un-objet-x-dune-cat-egoriec-est-c.md",
-  "derivedFrom": "library/arxiv-math-0203273v3/manifest",
-  "sourceDocument": "library/arxiv-math-0203273v3/manifest",
+  "title": "Le paysage discret",
+  "pageStart": 79,
+  "pageEnd": 112,
+  "text": "../sections/sec-018-141-le-paysage-discret.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203273v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203273v3",
   "provenance": "ingested"
 }

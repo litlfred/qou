@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1303.0720v2/blocks/prose-sec-012",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1303.0720v2/blocks/prose-sec-012",
   "kind": "prose",
-  "title": "The basic estimate. We begin with a lemma. We decompose the given bianalytic function",
-  "pageStart": 7,
-  "pageEnd": 9,
-  "text": "../sections/sec-012-42-the-basic-estimate-we-begin-with-a-lemma-we-d.md",
-  "derivedFrom": "library/arxiv-1303.0720v2/manifest",
-  "sourceDocument": "library/arxiv-1303.0720v2/manifest",
+  "title": "Asymptotic expansion of polyanalytic Bergman kernels",
+  "pageStart": 9,
+  "pageEnd": 10,
+  "text": "../sections/sec-012-5-asymptotic-expansion-of-polyanalytic-bergman-k.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1303.0720v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1303.0720v2",
   "provenance": "ingested"
 }

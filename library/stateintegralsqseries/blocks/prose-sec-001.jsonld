@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/stateintegralsqseries/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/stateintegralsqseries/blocks/prose-sec-001",
   "kind": "prose",
   "title": "State-integrals and their q-series",
   "pageStart": 1,
   "pageEnd": 4,
   "text": "../sections/sec-001-11-state-integrals-and-their-q-series.md",
-  "derivedFrom": "library/stateintegralsqseries/manifest",
-  "sourceDocument": "library/stateintegralsqseries/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/stateintegralsqseries",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/stateintegralsqseries",
   "provenance": "ingested"
 }

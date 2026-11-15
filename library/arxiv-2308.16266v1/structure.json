@@ -1,0 +1,97 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2308.16266v1",
+ "source": {
+  "file": "2308.16266v1.pdf",
+  "sha256": "59f0cbfb48d717bb4ef70dc7ceaa287a724d0a0ed30bbe659747b3b6bad14d09",
+  "bytes": 472632,
+  "pages": 7,
+  "text_source": "embedded",
+  "extractor": "pypdf",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2308.16266",
+   "version": "1",
+   "primary_class": "nucl-th",
+   "stamp_date": "30 Aug 2023"
+  },
+  "doi": null,
+  "title": "Distilling the essential elements of nuclear binding via neural-network quantum states",
+  "authors_raw": "Alex Gnech, 1, 2 Bryce Fore, 3 and Alessandro Lovato 2, 3, 4",
+  "title_lines": [
+   "Distilling the essential elements of nuclear binding via neural-network quantum states"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20230901004222Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "pdfTeX-1.40.25",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Distilling the essential elements of nuclear binding via neural-network quantum states",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Abstract",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "References",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Appendix: Wigner-Eckart",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-distilling-the-essential-elements-of-nuclear-bin",
+   "number": null,
+   "title": "Distilling the essential elements of nuclear binding via neural-network quantum states",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 7,
+   "n_chars": 32525,
+   "n_words": 4986
+  },
+  {
+   "id": "sec-001-appendix-wigner-eckart",
+   "number": null,
+   "title": "Appendix: Wigner-Eckart",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1524,
+   "n_words": 257
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 4,
+  "sections": 2,
+  "chars_total": 34049
+ }
+}

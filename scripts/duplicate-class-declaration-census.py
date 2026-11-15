@@ -50,7 +50,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-CONTENT = ROOT / "content"
+CONTENT = ROOT / "folio"
 
 # ALL declaration kinds that put a name in the environment, not just `class`.
 #
@@ -224,7 +224,7 @@ def main() -> int:
         for ns, fs in sorted(collide[k].items()):
             print(f"      {ns}")
             for f in fs:
-                print(f"        {f.replace('content/quantum-observable-universe/', '')}")
+                print(f"        {f.replace('folio/quantum-observable-universe/', '')}")
 
     if args.json:
         Path(args.json).write_text(

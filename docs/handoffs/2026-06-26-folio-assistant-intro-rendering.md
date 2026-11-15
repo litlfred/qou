@@ -114,7 +114,7 @@ the number: **"0. Introduction"**.
 (`\chapter*`) while its section counter is set to chapter 0. Either emit it
 numbered with the chapter counter at 0, or prefix the starred heading with
 the number explicitly. The chapter manifest is
-`qou/content/quantum-observable-universe/introduction/introduction.ts`
+`qou/folio/quantum-observable-universe/introduction/introduction.ts`
 (`title: "Introduction"`, `tabLabel: "I"`). The **Notation** front-matter
 chapter (`tabLabel: "N"`) stays unnumbered; only Introduction = 0.
 

@@ -1,5 +1,6 @@
 {
   "computation": "qbeta-flavour-split-series",
+  "q0Anchor": "proton",
   "assertions": [
     {
       "name": "the_tail_identity_holds_numerically",
@@ -72,8 +73,8 @@
     ]
   },
   "provenance": {
-    "headSha": "7adb05491f39297b15cfb4cc93f3a4212dae1b42",
+    "headSha": "eb645d81e7fe1646342513e676f6498caab4a229",
     "producer": "computations/qbeta/qbeta_flavour_split_series_probe.py",
-    "elapsed_s": 0.007
+    "elapsed_s": 0.004
   }
 }

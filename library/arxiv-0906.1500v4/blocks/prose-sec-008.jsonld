@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0906.1500v4/blocks/prose-sec-008",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0906.1500v4/blocks/prose-sec-008",
   "kind": "prose",
-  "title": "(M ) /greaterorequalslantb. Thus C∗(M ; sl2(C)ρ) is never acyclic for",
-  "pageStart": 6,
+  "title": "Definition of the polynomial torsion",
+  "pageStart": 5,
   "pageEnd": 7,
-  "text": "../sections/sec-008-1-m-greaterorequalslantb-thus-cm-sl2cρ-is-never.md",
-  "derivedFrom": "library/arxiv-0906.1500v4/manifest",
-  "sourceDocument": "library/arxiv-0906.1500v4/manifest",
+  "text": "../sections/sec-008-3-definition-of-the-polynomial-torsion.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0906.1500v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0906.1500v4",
   "provenance": "ingested"
 }

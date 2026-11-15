@@ -327,13 +327,13 @@ def main():
                         "substrate, NOT nucleon isospin. So the closed form, which is exact "
                         "and stands, is a statement about the wrong SU(2) for bean qou-buxs."),
                     "evidence": [
-                        "content/quantum-observable-universe/braids-and-knots/"
+                        "folio/quantum-observable-universe/braids-and-knots/"
                         "jones-markov-trace.md: 'the fibre V is the two-dimensional "
                         "fundamental of SU_q(2), so no partition with three or more rows "
                         "survives Schur-Weyl'.",
                         "Corpus grep for any identification of the SU_q(2) fundamental with "
                         "isospin, over content/ and docs/: ZERO hits.",
-                        "content/quantum-observable-universe/mass-theory/"
+                        "folio/quantum-observable-universe/mass-theory/"
                         "flavor-split-habiro-derivation.md: the p/n split comes from a "
                         "CROSSING REVERSAL (Hopf antipode S(T_w)=T_{w^-1}), with "
                         "sigma_1^3 - sigma_1^-3 = q^3 - q^-3 exactly. Flavour is a property "

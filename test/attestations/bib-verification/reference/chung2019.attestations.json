@@ -1,0 +1,56 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "chung2019",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 273,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1912.13486v2/1912.13486v2.pdf"
+        },
+        "id": "chung2019",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Engineers an effective 3d N=2 theory T[M_3] for PLUMBED 3-manifolds from the homological-block expression as a D^2 x_q S^1 partition function, computes its S^2 x_q S^1 supersymmetric index, and checks invariance under the 3d Kirby moves. conj:mirror-3d-3d-correspondence is the corpus's block on the 3d-3d correspondence and is stated for the HYPERBOLIC case (T[B_3] and its partition function on a squashed three-sphere). This document works the complementary class -- plumbed manifolds are graph/Seifert-fibred, hence non-hyperbolic with vanishing hyperbolic volume -- so it supplies no result the Borromean statement can consume directly. It is nonetheless worth citing for one specific reason recorded in the corpus's own risk register: the volume-route attack carries an explicit caveat that if the light-nucleus braid closures turn out to be torus links or otherwise non-hyperbolic then Vol = 0 and the route dies. Plumbed manifolds with homological blocks are precisely where quantum invariants remain computable in that regime, so this is the technique to reach for if that caveat fires. Supporting, not core: the corpus has no plumbed-manifold object wired today, and the Kirby-move invariance check is a consistency technique rather than an input.",
+          "keyResults": [
+            {
+              "locator": "Sec. 3 (index for an effective description of T[M_3]) + Sec. 3.1",
+              "statement": "For a plumbed 3-manifold the homological block determines an effective 3d N=2 theory whose S^2 x_q S^1 supersymmetric index is invariant under the 3d Kirby moves, giving a topologically well-defined index outside the hyperbolic setting.",
+              "useForFolio": "The fallback machinery for the non-hyperbolic branch of the volume-route caveat, where the corpus's Vol-based invariants degenerate to zero.",
+              "targets": [
+                "conj:mirror-3d-3d-correspondence"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "The corpus carries several 3d-3d references but none covering the non-hyperbolic/plumbed branch, which is a named risk in the current volume-route attack.",
+              "target": "conj:mirror-3d-3d-correspondence",
+              "bean": "qou-z2bq"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "9a8dbc1a143f"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

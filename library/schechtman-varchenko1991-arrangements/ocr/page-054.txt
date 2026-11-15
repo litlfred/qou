@@ -1,0 +1,30 @@
+192 V.V. Schechtman and A.N. Varchenko
+7.10 End of the proof of 7.5.7
+ ()   s s  ()  sods s
+i..., @ Oi ...i . Diagrams (7.5.2) included in it have the shape
+(7.10.1)
+Using the Circle Lemma 7.4.2, we may present (7.10.1) as a sum (with ±1
+coefficients) of diagrams of 3 types:
+(7.10.2)
+(a) (b) (c)
+n(x)
+A diagram of type (b) is equal to
+Z1Z2
+1 n(2° x)
+of all diagrams of type (b) (with their coefficients) is equal to
+Let us consider a diagram of type (c) K Z1Z2
++k
+(7.10.3)
+Z1— Z2
+shape -
+(the summation in the r.h.s. of 7.9.1
+K Z1—Z2
+corresponds to the twofold application to 7.4.4 to (7.10.3). Analogously, the
+sum of diagrams of type (7.10.2) (a) is equal to 1 n(2= x) . This proves 7.5.7
+K Z1-Z2
+when K is non-degenerate and a -(1, 1, :.., 1). The case of an arbitrary a follows
+by symmetrization.
+Both sides of 7.5.7 are polynomial functions on matrix elements of B=(bij),
+and by (3.4.5) they are equal for a Zarisky dense subset of matrices B, hence
+they are equal for all B. This completes the proof of 7.5.7 and of Theorem
+7.2.5'.

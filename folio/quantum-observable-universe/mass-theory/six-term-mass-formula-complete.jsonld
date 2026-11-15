@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/thm-six-term-mass-formula-complete",
+  "@type": [
+    "folio-assistant-core:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:six-term-mass-formula-complete",
+  "kind": "theorem",
+  "title": "Six-term mass formula: derivation + computation index",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-terms-2-6-higher-operations",
+    "papers/quantum-observable-universe/blocks/prop-chirality-writhe-ribbon-derivation"
+  ],
+  "tags": [
+    "mass-formula",
+    "six-term",
+    "master-index",
+    "completeness",
+    "derivation-status"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.six_term_mass_formula_complete",
+  "text": "six-term-mass-formula-complete.md",
+  "provenance": "authored"
+}

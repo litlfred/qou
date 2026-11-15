@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2604.05244v1/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2604.05244v1/blocks/prose-sec-005",
   "kind": "prose",
-  "title": "Large drive amplitude A ≫1. The Airy limit is an asymptotic statement as A →∞; the edge",
-  "pageStart": 2,
+  "title": "Sideband operators and the Floquet scattering matrix",
+  "pageStart": 6,
   "pageEnd": 7,
-  "text": "../sections/sec-005-6-large-drive-amplitude-a-1-the-airy-limit-is-an.md",
-  "derivedFrom": "library/arxiv-2604.05244v1/manifest",
-  "sourceDocument": "library/arxiv-2604.05244v1/manifest",
+  "text": "../sections/sec-005-sideband-operators-and-the-floquet-scattering-ma.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2604.05244v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2604.05244v1",
   "provenance": "ingested"
 }

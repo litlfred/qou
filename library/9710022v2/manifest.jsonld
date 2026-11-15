@@ -1,17 +1,25 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/9710022v2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Harmonic Analysis on the quantum Lorentz group",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/9710022v2",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "plancherelfinal.dvi",
   "contains": [
     "library/9710022v2/sections/sec-000",
     "library/9710022v2/sections/sec-001"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "9710022v2",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "9710022v2.pdf",
     "source_sha256": "e5ff373a1ec6884a46db43d20f94b467f8abd63bde63b70f5230c4b446af1da7",
     "pages": 60,

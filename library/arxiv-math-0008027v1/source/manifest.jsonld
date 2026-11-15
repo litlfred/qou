@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0008027v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0008027v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0008027v1",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0008027&metadataPrefix=arXiv), submitted 2000-08-03, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-0008027v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/math/0008027v1",
+    "content_type": "application/gzip",
+    "sha256": "f44e7b778044a9acbba393893a7b655ebafa59c772c6a2d870b19144d1a0a81c",
+    "bytes": 431769,
+    "fetched": "2026-10-10T15:26:33+00:00",
+    "files": [
+      {
+        "path": "source/files/nagoya99.bbl",
+        "role": "bbl",
+        "sha256": "2464923e6dd7ae74f50b1c964503a638a886f956478594ce1ac7e946b890be10",
+        "bytes": 2257
+      },
+      {
+        "path": "source/files/nagoya99.tex",
+        "role": "tex",
+        "sha256": "902901344ee419f49a42b98a836930c4fc146164569c826e1ed8d7362376d7bb",
+        "bytes": 33865
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

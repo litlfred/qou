@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-q-heat-equation-exists",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:q-heat-equation-exists",
+  "kind": "proof",
+  "title": "Proof of existence and uniqueness for the $q$-heat equation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-heat-equation-exists"
+  ],
+  "text": "q-heat-equation-exists-proof.md",
+  "provenance": "authored"
+}

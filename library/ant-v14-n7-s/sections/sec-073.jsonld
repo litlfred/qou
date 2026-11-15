@@ -1,18 +1,23 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/ant-v14-n7-s/sections/sec-073",
   "@type": [
     "doco:Section"
   ],
-  "title": "2A. Rappels sur les motifs algébriques et leurs cohomologies",
-  "pageStart": 88,
-  "pageEnd": 95,
+  "title": "A.2. Harmonic analogue of the Ihara bracket",
+  "pageStart": 79,
+  "pageEnd": 79,
   "contains": [
     "library/ant-v14-n7-s/blocks/prose-sec-073",
-    "library/ant-v14-n7-s/blocks/thm-sec-073-01",
-    "library/ant-v14-n7-s/blocks/prop-sec-073-02"
+    "library/ant-v14-n7-s/blocks/prop-sec-073-01",
+    "library/ant-v14-n7-s/blocks/remark-sec-073-02"
   ],
-  "derivedFrom": "library/ant-v14-n7-s/manifest",
-  "sourceDocument": "library/ant-v14-n7-s/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s",
   "provenance": "ingested"
 }

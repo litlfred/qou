@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-blowup-yekutieli",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:blowup-yekutieli",
+  "kind": "proposition",
+  "title": "Blowup mechanism as Yekutieli lifting obstruction in the brane tower",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-descent-condition",
+    "papers/quantum-observable-universe/blocks/def-local-cohomology-group",
+    "papers/quantum-observable-universe/blocks/rem-vortex-reconnection"
+  ],
+  "tags": [
+    "blowup",
+    "yekutieli",
+    "obstruction",
+    "cohomology",
+    "brane-tower",
+    "gerbe",
+    "millennium-problem"
+  ],
+  "leanRef": "qou:QOU.FluidDynamics.BlowupYekutieli",
+  "text": "p3-blowup-yekutieli.md",
+  "leanSource": "p3-blowup-yekutieli.lean",
+  "provenance": "authored"
+}

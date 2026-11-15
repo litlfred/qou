@@ -30,7 +30,6 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from derivation_chain import (  # noqa: E402
-    TR_M_AT_Q0,
     DerivationChain,
     DerivationStep,
     FirstPrinciple,
@@ -41,7 +40,25 @@ from derivation_chain import (  # noqa: E402
 HERE = Path(__file__).parent
 OUTPUT = _pb.witness_path("markov-trace-assembly-neutron.derivation.json", HERE)
 
-NEUTRON_TR_M_Q0 = TR_M_AT_Q0["n"]
+# MIGRATED 2026-09-13 (bean qou-4383). This read `derivation_chain.TR_M_AT_Q0['n']`,
+# a hardcoded float that was grouped-era: correct when written, stale from the
+# 2026-09-05 ordering ruling (qou-hu1f) onward. It now reads the witness through
+# `canonical_trm_reference`, which selects by recorded q0 AND rejects a witness
+# in the wrong (or an undeclared) intra-nucleon ordering — bean qou-y4gi. The
+# point of the migration is not three better digits; it is that a hardcoded
+# constant cannot track a ruling and a read value can.
+from canonical_trm_reference import tr_m_nucleon  # noqa: E402
+from _precision import fmt  # noqa: E402
+
+# NO `float()` HERE — same defect, same fix, as the proton sibling; see the
+# comment there for the history (beans `qou-btqh` / `qou-nhkv` / `qou-ejfy`).
+# `tr_m_nucleon` returns an mpf carrying 60 digits
+# (0.475133517155682212506090232675005799558407634708751231268857); the cast
+# kept 16 and wrote a raw JSON float into the derivation. Carry the mpf,
+# serialize once with `_precision.fmt`, and keep `float()` for display only.
+NEUTRON_TR_M_Q0 = tr_m_nucleon("neutron")
+NEUTRON_TR_M_Q0_STR = fmt(NEUTRON_TR_M_Q0)
+
 
 
 def build() -> DerivationChain:
@@ -246,7 +263,7 @@ def build() -> DerivationChain:
         ),
         inputs=["tr_M_neutron_symbolic"],
         output_name="tr_M_neutron_q0",
-        output_value=NEUTRON_TR_M_Q0,
+        output_value=NEUTRON_TR_M_Q0_STR,
         trust_basis=TrustBasis.COMPUTATIONAL,
         jet_order=0,
         gb_filtration_level=0,
@@ -261,14 +278,14 @@ def build() -> DerivationChain:
 
     return DerivationChain(
         target="tr_M(n, q_0)  [canonical Wenzl-bridge]",
-        target_value=NEUTRON_TR_M_Q0,
+        target_value=NEUTRON_TR_M_Q0_STR,
         target_tolerance=1e-9,
         content_block="prop:full-pole-structure-mass-trace",
         description=(
             "Markov-trace assembly chain for the neutron: combines "
             "schur-weyl-weight-{3,21,111} + hoefsmit-rep-21-{sigma1,"
             "sigma2} + atomic-braid-recipe-n via the finite-Jones "
-            "axiom into tr_M(n, q_0) ≈ " + f"{NEUTRON_TR_M_Q0:.10f}" + ".  "
+            "axiom into tr_M(n, q_0) ≈ " + f"{float(NEUTRON_TR_M_Q0):.10f}" + ".  "
             "STALE-NUMBER FIX 2026-08-31 (bean qou-1ucq): this description carried the stale 1.5894, a value from an era before canon moved to convention D at the proton pin. It is regenerated from TR_M_AT_Q0 rather than restated, so it cannot drift from the leaf again. "
             "Trust profile is "
             "{axiom: 1, mathlib-cited: 0, derived: 7, script-cited: 0, "

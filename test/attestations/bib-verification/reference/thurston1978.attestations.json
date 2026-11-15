@@ -1,0 +1,30 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "thurston1978",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 86,
+      "entry": {
+        "id": "thurston1978",
+        "status": "partial",
+        "verified_at": "2026-09-03T04:19:53Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        },
+        "fixes_applied": 1,
+        "fix_commit": "(this commit)",
+        "note": "1 bare-URL Ref upgraded with title+author+year form. \u2014 Source IS held: library/thurston. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py. Previous source record: {\"kind\": \"external\", \"url\": \"https://www.msri.org/publications/books/gt3m/\"}.",
+        "source": {
+          "kind": "upload",
+          "file": "library/thurston/Thurston.pdf"
+        }
+      }
+    }
+  ]
+}

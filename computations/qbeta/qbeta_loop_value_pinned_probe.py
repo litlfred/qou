@@ -217,6 +217,7 @@ def main() -> int:
 
     witness = {
         "computation": "qbeta-loop-value-pinned",
+        "q0Anchor": "proton",
         "assertions": a,
         "allPassed": bool(ok),
         "parameters": {"q0": Q0_STR, "dps": DPS, "E_0_MeV": mp.nstr(E0, 20),

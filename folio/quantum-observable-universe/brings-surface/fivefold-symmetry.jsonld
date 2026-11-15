@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-fivefold-symmetry",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:fivefold-symmetry",
+  "kind": "remark",
+  "title": "Five-fold symmetry of $\\Sigma_4$: the deepest structural feature",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-force-knot-identification",
+    "papers/quantum-observable-universe/blocks/prop-skein-finiteness-bound"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-quantum-universe",
+  "tags": [
+    "five-fold",
+    "symmetry",
+    "bring-surface",
+    "S5"
+  ],
+  "text": "fivefold-symmetry.md",
+  "provenance": "authored"
+}

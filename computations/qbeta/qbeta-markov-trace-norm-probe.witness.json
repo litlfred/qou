@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-09-04T07:39:37.338671+00:00",
-  "commitSha": "0749eb0a6b4a615bce8907d4e08947f3687137b6",
+  "computedAt": "2026-10-13T12:00:15.875317+00:00",
+  "commitSha": "8f1b70555159d7e170bef87c379448651b822c55",
   "assertions": [
     {
       "name": "gram-matrix-symmetric",
@@ -36,11 +36,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 334,
+  "durationMs": 281,
   "computation": "qbeta-markov-trace-norm-probe",
   "scriptFile": "qbeta_markov_trace_norm_probe.py",
-  "scriptHash": "729f257480a7",
-  "scriptCommitSha": "6af337c6c1c60d1a91d6d167eec9a08d1644739d",
+  "scriptHash": "a78bcb4cfd63",
+  "scriptCommitSha": "d5e7b46038ca75c2b42438697ccf8a8793992a5c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -48,14 +48,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -92,12 +92,12 @@
         "e_-"
       ],
       "x_L2": [
-        "0.074450296843839289251398838587192585691809654235840",
-        "0.045614806238223573608969729775708401575684547424316",
-        "0.045614806238223573608969729775708401575684547424316",
-        "0.027947646098913536683028269180795177817344665527344",
-        "0.027947646098913536683028269180795177817344665527344",
-        "0.051457549482297221254967212189512792974710464477539"
+        "0.07445029684383929",
+        "0.045614806238223574",
+        "0.045614806238223574",
+        "0.027947646098913537",
+        "0.027947646098913537",
+        "0.05145754948229722"
       ],
       "x_M": [
         "0.19837655345993209433495798233413585700943204213091",

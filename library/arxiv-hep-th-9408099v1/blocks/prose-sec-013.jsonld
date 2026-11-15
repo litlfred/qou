@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-9408099v1/blocks/prose-sec-013",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-th-9408099v1/blocks/prose-sec-013",
   "kind": "prose",
-  "title": "For large mass this happens at large |u| where semiclassical techniques are",
-  "pageStart": 22,
-  "pageEnd": 24,
-  "text": "../sections/sec-013-2-for-large-mass-this-happens-at-large-u-where-s.md",
-  "derivedFrom": "library/arxiv-hep-th-9408099v1/manifest",
-  "sourceDocument": "library/arxiv-hep-th-9408099v1/manifest",
+  "title": "Some convenient facts",
+  "pageStart": 39,
+  "pageEnd": 43,
+  "text": "../sections/sec-013-112-some-convenient-facts.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9408099v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9408099v1",
   "provenance": "ingested"
 }

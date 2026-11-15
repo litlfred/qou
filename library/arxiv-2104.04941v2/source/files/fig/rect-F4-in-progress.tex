@@ -1,0 +1,83 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+
+\begin{document}
+  %noformat{
+  \begin{tikzpicture}
+    \tikzstyle{v1} = [color=darkgray, circle, outer sep=0.5pt, fill, inner sep=1.5pt]
+    \tikzstyle{v2} = [color=darkgray, circle, outer sep=0.5pt, fill, inner sep=3.0pt]
+    \tikzstyle{e} = [->, >={stealth}]
+    \tikzstyle{h} = [dashed, color=gray, ->, >={stealth}]
+
+    \tikzset{font=\tiny}
+
+    \begin{scope}[shift={(0,0)}]
+      \node[v2,label={0:{$v_{10}$}}] (v10) at (0,0) {};
+      \node[v2,label={0:{$v_{20}$}}] (v20) at (0,1) {};
+      \node[v1,label={0:{$v_{30}$}}] (v30) at (0,2) {};
+      \node[v1,label={0:{$v_{40}$}}] (v40) at (0,3) {};
+
+      \draw[e] (v10) -- (v20);
+      \draw[e] (v20) -- (v30);
+      \draw[e] (v30) -- (v40);
+    \end{scope}
+
+    \begin{scope}[shift={(5,0)}]
+      \node[v2,label={0:{$v_{10}$}}] (v10) at (0,0) {};
+      \node[v2,label={0:{$v_{20}$}}] (v20) at (0,1) {};
+      \node[v1,label={0:{$v_{30}$}}] (v30) at (0,2) {};
+      \node[v1,label={0:{$v_{40}$}}] (v40) at (0,3) {};
+
+      \node[v2,label={[label distance=-3pt]95:{$v_{11}$}}] (v11) at (-2,0) {};
+
+      \draw[e] (v10) -- (v20);
+      \draw[e] (v20) -- (v30);
+      \draw[e] (v30) -- (v40);
+      \draw[e] (v20) -- (v11);
+
+      \draw[e] (v11) -- (v10);
+    \end{scope}
+
+    \begin{scope}[shift={(8,0)}]
+      \node[v2,label={0:{$v_{10}$}}] (v10) at (4,0) {};
+      \node[v2,label={0:{$v_{20}$}}] (v20) at (4,1) {};
+      \node[v1,label={0:{$v_{30}$}}] (v30) at (4,2) {};
+      \node[v1,label={0:{$v_{40}$}}] (v40) at (4,3) {};
+
+      \node[v2,label={[label distance=-3pt]95:{$v_{11}$}}] (v11) at (2,0) {};
+      \node[v2,label={[label distance=-3pt]95:{$v_{21}$}}] (v21) at (2,1) {};
+      \node[v1,label={[label distance=-3pt]95:{$v_{31}$}}] (v31) at (2,2) {};
+      \node[v1,label={[label distance=-3pt]95:{$v_{41}$}}] (v41) at (2,3) {};
+
+      \node[v2,label={[label distance=-3pt]95:{$v_{12}$}}] (v12) at (0,0) {};
+      \node[v2,label={[label distance=-3pt]95:{$v_{22}$}}] (v22) at (0,1) {};
+
+      \draw[e] (v10) -- (v20);
+      \draw[e] (v20) -- (v30);
+      \draw[e] (v30) -- (v40);
+
+      \draw[e] (v11) -- (v21);
+      \draw[e] (v21) -- (v31);
+      \draw[e] (v31) -- (v41);
+
+      \draw[e] (v12) -- (v22);
+
+      \draw[e] (v11) -- (v10);
+      \draw[e] (v21) -- (v20);
+      \draw[e] (v31) -- (v30);
+      \draw[e] (v41) -- (v40);
+
+      \draw[e] (v20) -- (v11);
+      \draw[e] (v30) -- (v21);
+      \draw[e] (v40) -- (v31);
+
+      \draw[e] (v12) -- (v11);
+      \draw[e] (v31) -- (v22);
+      \draw[e] (v22) -- (v21);
+      \draw[e] (v21) -- (v12);
+    \end{scope}
+
+  \end{tikzpicture}
+  %}noformat
+\end{document}

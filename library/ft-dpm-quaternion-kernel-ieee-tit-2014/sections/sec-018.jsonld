@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-018",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "KERNEL RIDGE REGRESSION IN QUATERNION RKHS",
+  "pageStart": 9,
+  "pageEnd": 9,
+  "contains": [
+    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/blocks/prose-sec-018"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ft-dpm-quaternion-kernel-ieee-tit-2014",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ft-dpm-quaternion-kernel-ieee-tit-2014",
+  "provenance": "ingested"
+}

@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1608.03227v4/sections/sec-036",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Unit in convolution algebra",
+  "pageStart": 38,
+  "pageEnd": 40,
+  "contains": [
+    "library/arxiv-1608.03227v4/blocks/prose-sec-036",
+    "library/arxiv-1608.03227v4/blocks/cor-sec-036-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1608.03227v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1608.03227v4",
+  "provenance": "ingested"
+}

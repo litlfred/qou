@@ -1,5 +1,20 @@
 #!/usr/bin/env python3
-"""The level-3 channel, built and run. It yields a colour observable with no
+"""RE-SCOPED 2026-11-15 (bean qou-sl3f, PR #7830; owner ruling G5 = (a)).
+The factor-2 miss below is the u_1 part of gl_N = sl_N (+) u_1, not a
+structural degeneracy. The Hecke generator is the gl_N braiding, with
+exponents 2c_R + 1/N. The SU(N) braiding q^(-1/N) sigma has exponents
+exactly 2c_R, so the ratio is (N+1)/(N-1) = 2 at N = 3. The factor is FORCED:
+it is the unique positive c with c^(2N) q^2 = 1, which makes the colour
+singlet braid trivially. See QOU.Braiding.SlNFraming.forced_framing_eq_inv
+and sl_n_framing_colour_factor_probe.py. A6's "e = e_max/3 exactly" is this
+same q^(-1/3).
+Colour observables are read in the SU(N) frame; z, convention D and the
+writhe-normalised tr_M stay as ruled. The "same degeneracy as the nuclear
+sector" reading below holds only as arithmetic (scope a): the sl_2 frame
+gives the nuclear ratio 3, not 33.7, so the colour fix does not transfer.
+The original text is kept below as the historical record of this run.
+
+The level-3 channel, built and run. It yields a colour observable with no
 fourth calibration — the substrate gets the QCD colour-factor SIGNS right and
 the RATIO wrong by exactly 2, via the same `det T = -1` degeneracy that caps the
 nuclear sector.
@@ -468,6 +483,15 @@ def main() -> int:
             "affects which blocks are alive and the Markov parameter z_r — it "
             "does not touch the obstruction. Anyone hoping colour would repair "
             "the nuclear sector should read this as the reason it cannot.")
+        wb.add_caveat(
+            "RE-SCOPED 2026-11-15 (bean qou-sl3f, owner ruling G5 = (a)): the "
+            "factor-2 miss is the u_1 part of gl_N. The forced SU(N) frame "
+            "q^(-1/N) sigma gives ratio (N+1)/(N-1) = 2 at N = 3 "
+            "(QOU.Braiding.SlNFraming, sl_n_framing_colour_factor_probe). It "
+            "applies to colour observables only. 'Same degeneracy as the "
+            "nuclear sector' holds only as arithmetic (scope a): sl_2 gives "
+            "3, not 33.7. This run's assertions are unchanged; they measure "
+            "the Hecke (gl) frame.")
         wb.add_caveat(
             "e = e_max/3 is what a framing fix WOULD cost for the QCD ratio, "
             "reported for comparison with the nuclear requirement. It is not "

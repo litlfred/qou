@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T08:57:02.261271+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-10-10T08:07:31.726933+00:00",
+  "commitSha": "dad0098b93fcab52d3336b0bb185a6e8e3f0fc9a",
   "assertions": [
     {
       "name": "jet_rank_0_derivation_q_independent_and_matches_textbook",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "casimir-jet-order-derivation",
   "scriptFile": "casimir_jet_order_derivation.py",
-  "scriptHash": "7e34286678f9",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "50cc8560f32c",
+  "scriptCommitSha": "63818809830f4c1d9b7166d39c99ca7d973e8207",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,14 +27,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.17",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "2986fe4aa825b156"
   },
   "invocation": {
     "argv": [
@@ -45,40 +45,40 @@
   "description": "Derivation attempt under the jet-order axiom: Casimir lives at GB rank 0 (commutative substratum, no q-deformation).  This forces ε_n = n·ε (no [n]_q), which gives Σ n³ → ζ(-3) = -1/120 (standard ζ-regularization), yielding c_q = π²/720 EXACTLY at any q.  Test: evaluate the derived prefactor at three q values (1.05, substrate, 1.5).  If all three give π²/720, the derivation is q-independent (as required by the rank-0 hypothesis) and matches the textbook value.  This makes the jet-order route the FIRST candidate that's both derived (no q-deformation choice) AND matches standard Casimir at substrate.",
   "contentBlock": "conj:casimir-epsilon-vacuum",
   "parameters": {
-    "target_energy_prefactor": 0.013707783890401887,
-    "target_force_prefactor": 0.04112335167120566
+    "target_energy_prefactor": "0.0137077838904018869706034597220502099101579158433899869811297",
+    "target_force_prefactor": "0.0411233516712056609118103791661506297304737475301699609433890"
   },
   "data": {
     "prefactor_at_three_q_values": [
       {
-        "q_input": 1.05,
-        "zeta_neg_3_used": 0.008333333333333333,
-        "energy_prefactor_c_q": 0.013707783890401887,
-        "force_prefactor_3c_q": 0.04112335167120566,
-        "expected_textbook_energy": 0.013707783890401887,
-        "expected_textbook_force": 0.04112335167120566
+        "q_input": "1.05000000000000000000000000000000000000000000000000000000000",
+        "zeta_neg_3_used": "0.00833333333333333333333333333333333333333333333333333333333333",
+        "energy_prefactor_c_q": "0.0137077838904018869706034597220502099101579158433899869811297",
+        "force_prefactor_3c_q": "0.0411233516712056609118103791661506297304737475301699609433890",
+        "expected_textbook_energy": "0.0137077838904018869706034597220502099101579158433899869811297",
+        "expected_textbook_force": "0.0411233516712056609118103791661506297304737475301699609433890"
       },
       {
-        "q_input": 1.1099785827513808,
-        "zeta_neg_3_used": 0.008333333333333333,
-        "energy_prefactor_c_q": 0.013707783890401887,
-        "force_prefactor_3c_q": 0.04112335167120566,
-        "expected_textbook_energy": 0.013707783890401887,
-        "expected_textbook_force": 0.04112335167120566
+        "q_input": "1.10997858275138080759166909561076887987449912187360000000000",
+        "zeta_neg_3_used": "0.00833333333333333333333333333333333333333333333333333333333333",
+        "energy_prefactor_c_q": "0.0137077838904018869706034597220502099101579158433899869811297",
+        "force_prefactor_3c_q": "0.0411233516712056609118103791661506297304737475301699609433890",
+        "expected_textbook_energy": "0.0137077838904018869706034597220502099101579158433899869811297",
+        "expected_textbook_force": "0.0411233516712056609118103791661506297304737475301699609433890"
       },
       {
-        "q_input": 1.5,
-        "zeta_neg_3_used": 0.008333333333333333,
-        "energy_prefactor_c_q": 0.013707783890401887,
-        "force_prefactor_3c_q": 0.04112335167120566,
-        "expected_textbook_energy": 0.013707783890401887,
-        "expected_textbook_force": 0.04112335167120566
+        "q_input": "1.50000000000000000000000000000000000000000000000000000000000",
+        "zeta_neg_3_used": "0.00833333333333333333333333333333333333333333333333333333333333",
+        "energy_prefactor_c_q": "0.0137077838904018869706034597220502099101579158433899869811297",
+        "force_prefactor_3c_q": "0.0411233516712056609118103791661506297304737475301699609433890",
+        "expected_textbook_energy": "0.0137077838904018869706034597220502099101579158433899869811297",
+        "expected_textbook_force": "0.0411233516712056609118103791661506297304737475301699609433890"
       }
     ],
     "verdict": {
       "q_independence": true,
       "matches_textbook": true,
-      "max_variation_across_q": 0.0,
+      "max_variation_across_q": "0.0",
       "derivation_works": true,
       "interpretation": "Under jet-rank-0 axiom, QOU Casimir = standard Casimir exactly at substrate.  No deviation predicted.  Sub-problem 3 RESOLVED via structural assignment (not fitting)."
     }

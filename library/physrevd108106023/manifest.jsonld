@@ -1,24 +1,31 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/physrevd108106023/manifest",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/physrevd108106023",
   "@type": [
-    "folio:SourceDocument"
+    "cat-harness:SourceDocument"
   ],
   "title": "Knot-quiver correspondence for double twist knots",
   "contains": [
+    "library/physrevd108106023/sections/sec-front-matter",
     "library/physrevd108106023/sections/sec-000",
     "library/physrevd108106023/sections/sec-001",
     "library/physrevd108106023/sections/sec-002",
     "library/physrevd108106023/sections/sec-003",
     "library/physrevd108106023/sections/sec-004",
     "library/physrevd108106023/sections/sec-005",
-    "library/physrevd108106023/sections/sec-006",
-    "library/physrevd108106023/sections/sec-007",
-    "library/physrevd108106023/sections/sec-008"
+    "library/physrevd108106023/sections/sec-006"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "physrevd108106023",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "PhysRevD.108.106023.pdf",
     "source_sha256": "50c7980e88cd21a07f420b53a6dc0d9397e6334cad2c6c39eb27b5745817e209",
     "pages": 11,

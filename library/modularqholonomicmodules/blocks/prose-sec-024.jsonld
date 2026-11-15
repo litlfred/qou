@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/modularqholonomicmodules/blocks/prose-sec-024",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/modularqholonomicmodules/blocks/prose-sec-024",
   "kind": "prose",
   "title": "State integral",
   "pageStart": 46,
   "pageEnd": 47,
   "text": "../sections/sec-024-55-state-integral.md",
-  "derivedFrom": "library/modularqholonomicmodules/manifest",
-  "sourceDocument": "library/modularqholonomicmodules/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/modularqholonomicmodules",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/modularqholonomicmodules",
   "provenance": "ingested"
 }

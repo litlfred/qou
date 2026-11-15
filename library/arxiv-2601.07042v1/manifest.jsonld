@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2601.07042v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "A TANNAKIAN DESCRIPTION OF THE LOCAL KALETHA GERBE",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2601.07042v1",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "A Tannakian description of the local Kaletha gerbe",
   "contains": [
     "library/arxiv-2601.07042v1/sections/sec-000",
     "library/arxiv-2601.07042v1/sections/sec-001",
@@ -24,8 +29,18 @@
     "library/arxiv-2601.07042v1/sections/sec-015"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2601.07042&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-2601.07042v1",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "2601.07042v1.pdf",
     "source_sha256": "c2f3e302624e7abbb7516137ad7e9faa828eda570f211604863674015ae4352e",
     "pages": 26,

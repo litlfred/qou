@@ -1,0 +1,47 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-kashaev-surreal",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:kashaev-surreal",
+  "kind": "conjecture",
+  "title": "Kashaev volume conjecture as a surreal standard-part identity",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-kashaev-volume-density",
+    "papers/quantum-observable-universe/blocks/conj-kashaev-volume-conjecture",
+    "papers/quantum-observable-universe/blocks/def-surreal-blowup-calculus",
+    "papers/quantum-observable-universe/blocks/def-ecalle-borel-resummation",
+    "papers/quantum-observable-universe/blocks/prop-one-loop-prefactor-provenance"
+  ],
+  "cites": [
+    "references/kashaev1997",
+    "references/murakami-murakami2001",
+    "references/berarducci-mantova2018",
+    "references/ecalle1981",
+    "references/garoufalidis-zagier-2024",
+    "references/garoufalidis-gu-marino2021",
+    "references/fantini-rella2024"
+  ],
+  "tags": [
+    "tier:famous",
+    "surreal-numbers",
+    "kashaev",
+    "volume-conjecture",
+    "hyperbolic-volume",
+    "standard-part",
+    "open-problem",
+    "reformulation",
+    "omega-grade",
+    "asymptotics"
+  ],
+  "leanRef": "qou:QOU.AppendixSurreals.KashaevSurreal",
+  "text": "kashaev-surreal.md",
+  "provenance": "authored"
+}

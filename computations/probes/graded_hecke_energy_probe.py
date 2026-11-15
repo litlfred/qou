@@ -8,7 +8,7 @@ Phase 8 of the 1 ppb workplan
 — **graded Hecke energy probe** for the canonical small-A atom set.
 
 Demonstrates the truncation bound proved in
-[`prop:graded-hecke-energy-truncation-bound`](../../content/quantum-observable-universe/braids-and-knots/graded-hecke-energy-truncation-bound.md):
+[`prop:graded-hecke-energy-truncation-bound`](../../folio/quantum-observable-universe/braids-and-knots/graded-hecke-energy-truncation-bound.md):
 the mass-spectrum generating function $P_K(q) = \\sum_d c_d q^d$
 has at most $\\ell(K, q_0) + 1$ nonzero grades, where $\\ell(K, q_0)$
 is the confinement level.
@@ -48,7 +48,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 
 import mpmath as mp
-from canonical_trm_reference import tr_m_nucleon  # noqa: E402
+from canonical_trm_reference import tr_m_nucleon  # noqa: E402  (serves the deuteron row too)
 
 from _precision import set_compute_dps, fmt  # noqa: E402
 set_compute_dps()
@@ -70,7 +70,9 @@ TR_M_TARGETS = {
     # 7.55% from the canonical D values.
     "proton":   tr_m_nucleon("proton"),
     "neutron":  tr_m_nucleon("neutron"),
-    "deuteron": mp.mpf("0.3882864715477132"),
+    # Was the superseded grouped/convention-C literal 0.38828647… (tracker
+    # #7735 item K); read from the owning borromean/D witness row instead.
+    "deuteron": tr_m_nucleon("deuteron"),
 }
 
 # Atom braid encodings (Z, N, include_inter, n_strands) — same as

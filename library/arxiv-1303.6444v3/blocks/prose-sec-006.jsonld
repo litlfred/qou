@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1303.6444v3/blocks/prose-sec-006",
+  "kind": "prose",
+  "title": "Morais-Procacci Bound",
+  "pageStart": 7,
+  "pageEnd": 8,
+  "text": "../sections/sec-006-52-morais-procacci-bound.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1303.6444v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1303.6444v3",
+  "provenance": "ingested"
+}

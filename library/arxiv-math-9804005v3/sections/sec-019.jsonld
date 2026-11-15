@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9804005v3/sections/sec-019",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "A module M is called dim -critical if M ⁄= 0, and dim M/M ′ < dimM for",
+  "pageStart": 11,
+  "pageEnd": 11,
+  "contains": [
+    "library/arxiv-math-9804005v3/blocks/prose-sec-019"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9804005v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9804005v3",
+  "provenance": "ingested"
+}

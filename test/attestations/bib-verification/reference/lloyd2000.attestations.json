@@ -1,0 +1,49 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "lloyd2000",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 112,
+      "entry": {
+        "id": "lloyd2000",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T16:14:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 0,
+        "fix_commit": null,
+        "note": "PDF verified: Lloyd, \"Ultimate physical limits to computation,\" Nature 406 (2000), arXiv:quant-ph/9908043. Verified.",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/lloyd2000.pdf"
+        },
+        "local_pdf": "uploads/lloyd2000.pdf",
+        "relevance": {
+          "verdict": "undetermined",
+          "rationale": "FILE ABSENT from uploads/ and git; identity unverifiable. CORPUS-SIDE AUDIT \u2014 worth flagging: exactly ONE site in the whole corpus, and it is a bare cites[] entry with no prose or Lean anchor: folio/quantum-observable-universe/information-theory/information-causality.ts:18. The sibling .md never names the author and attributes nothing to the source; it treats the Bremermann limit (lines 18-19) and the Margolus-Levitin rate (line 41) as generic named bounds. This is the cited-once-in-passing pattern the triage exists to surface: the key is topically appropriate for exactly those two bounds, but nothing in the corpus depends on it and a reader cannot see what it supports.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "The reference is a bare cites[] entry with no prose anchor. If it is meant to source the Bremermann-limit and Margolus-Levitin statements at information-causality.md:18-19 and :41, add an explicit \\cite there so it becomes load-bearing; if not, drop the cites[] entry.",
+              "target": "prop:information-causality",
+              "bean": "qou-y90u"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z"
+        }
+      }
+    }
+  ]
+}

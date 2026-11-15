@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T10:52:32.860872+00:00",
-  "commitSha": "a95c80239e9c67ac63c5e7312e41b9466cda9db2",
+  "computedAt": "2026-10-10T08:07:34.743797+00:00",
+  "commitSha": "dad0098b93fcab52d3336b0bb185a6e8e3f0fc9a",
   "assertions": [
     {
       "name": "vol_borromean_registry_matches_8G",
@@ -30,27 +30,27 @@
     },
     {
       "name": "disjoint_union_volumes_are_additive",
-      "computed": "6.29520766772e-16",
+      "computed": "0.0",
       "expected": "0",
       "passed": true,
-      "tolerance": "1e-15",
-      "source": "max over the 5 recorded pairs of |tabulated Vol(L₁⊔L₂) − (Vol(L₁)+Vol(L₂))| = 6.29521e-16; gate 1e-15 is the float64 the table is serialised through, not a chosen band"
+      "tolerance": "1.47e-57",
+      "source": "max over the 5 recorded pairs of |tabulated Vol(L₁⊔L₂) − (Vol(L₁)+Vol(L₂))| = 0.0. The gate ran at 1e-15 until 2026-09-14 and that band was honest about the wrong thing: it described the float64 the table was cast to, which was this probe's own doing. The table now carries the 50-dps registry volumes through `fmt`, so the gate is the 60-digit serialization width instead — derived from OUTPUT_DPS and the largest tabulated volume, so it cannot silently widen if either changes"
     },
     {
       "name": "geom_epsilon_coefficient_is_linear_in_N",
-      "computed": "7.39021942997e-12",
+      "computed": "4.64747280152e-55",
       "expected": "0",
       "passed": true,
-      "tolerance": "1e-9",
-      "source": "max over N ∈ [1, 2, 5, 10, 100, 1000] of |tabulated coefficient − N/ℏ_q²| = 7.39022e-12, with 1/ℏ_q² = 101.8621786045972 recomputed at substrate precision; gate 1e-9 covers the float64 the table stores at N = 1000"
+      "tolerance": "1.02e-53",
+      "source": "max over N ∈ [1, 2, 5, 10, 100, 1000] of |tabulated coefficient − N/ℏ_q²| = 4.64747e-55, with 1/ℏ_q² = 101.8621786045972 recomputed at substrate precision. The gate ran at 1e-9 until 2026-09-14, and what it covered was this assertion's own asymmetry: the tabulated side was float64 while the side it was compared against was recomputed exactly, so the residual measured the cast rather than the linearity. Both sides are now mpf and the residual is the 60-digit serialization alone, which is what the gate is derived from"
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 8,
   "computation": "casimir-hoefsmit-additivity-probe",
   "scriptFile": "casimir_hoefsmit_additivity_probe.py",
-  "scriptHash": "ae2fbac72980",
-  "scriptCommitSha": "e8b4dea4ee4b1a0469126f92d786d9647a3b1c61",
+  "scriptHash": "e70728c0fb09",
+  "scriptCommitSha": "99dd39354d2b06357199e8d9739e5119a477922f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -58,14 +58,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.17",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "pyhecke_native_build": "2986fe4aa825b156"
   },
   "invocation": {
     "argv": [
@@ -76,49 +76,49 @@
   "description": "Route-B probe for conj:casimir-epsilon-vacuum: verify Hoefsmit Geom additivity on disjoint unions of unknots.  Step 1: record hyperbolic-volume additivity (well-known, Thurston).  Step 2: derive the symbolic form Geom_ε(N·⊙) = N · ε / ℏ_q² under the ε-relaxed vacuum axiom and tabulate the real-part coefficient for several N.  Step 3: dimensional cross-check against the conjecture's A/d³ scaling — uncovers that the surreal-infinitesimal birthday rank of N⊙ may be ε⁻² rather than ε⁻¹ once the ℏ_q² normalisation in VolDensity is accounted for; this is a refinement to carry back into the conjecture .md.",
   "contentBlock": "conj:casimir-epsilon-vacuum",
   "parameters": {
-    "substrate_q": 1.1099785827513808,
-    "hbar_q_sq": 0.009817186454275078
+    "substrate_q": "1.10997858275138080759166909561076887987449912187360000000000",
+    "hbar_q_sq": "0.00981718645427507381056905717956425288904928457540136626246705"
   },
   "data": {
     "hyperbolic_volume_additivity_pairs": [
       {
         "L1": "⊙",
         "L2": "⊙",
-        "Vol_L1": 0.0,
-        "Vol_L2": 0.0,
-        "Vol_L1_plus_L2_expected": 0.0,
+        "Vol_L1": "0.0",
+        "Vol_L2": "0.0",
+        "Vol_L1_plus_L2_expected": "0.0",
         "additive": true
       },
       {
         "L1": "⊙",
         "L2": "4_1",
-        "Vol_L1": 0.0,
-        "Vol_L2": 2.0298832128193074,
-        "Vol_L1_plus_L2_expected": 2.0298832128193074,
+        "Vol_L1": "0.0",
+        "Vol_L2": "2.02988321281930725004240510854904057188337861506060000000000",
+        "Vol_L1_plus_L2_expected": "2.02988321281930725004240510854904057188337861506060000000000",
         "additive": true
       },
       {
         "L1": "4_1",
         "L2": "4_1",
-        "Vol_L1": 2.0298832128193074,
-        "Vol_L2": 2.0298832128193074,
-        "Vol_L1_plus_L2_expected": 4.059766425638615,
+        "Vol_L1": "2.02988321281930725004240510854904057188337861506060000000000",
+        "Vol_L2": "2.02988321281930725004240510854904057188337861506060000000000",
+        "Vol_L1_plus_L2_expected": "4.05976642563861450008481021709808114376675723012120000000000",
         "additive": true
       },
       {
         "L1": "4_1",
         "L2": "𝓑₃",
-        "Vol_L1": 2.0298832128193074,
-        "Vol_L2": 7.327724753417752,
-        "Vol_L1_plus_L2_expected": 9.35760796623706,
+        "Vol_L1": "2.02988321281930725004240510854904057188337861506060000000000",
+        "Vol_L2": "7.32772475341775212043682811945907288619319499425340000000000",
+        "Vol_L1_plus_L2_expected": "9.35760796623705937047923322800811345807657360931400000000000",
         "additive": true
       },
       {
         "L1": "𝓑₃",
         "L2": "𝓑₃",
-        "Vol_L1": 7.327724753417752,
-        "Vol_L2": 7.327724753417752,
-        "Vol_L1_plus_L2_expected": 14.655449506835504,
+        "Vol_L1": "7.32772475341775212043682811945907288619319499425340000000000",
+        "Vol_L2": "7.32772475341775212043682811945907288619319499425340000000000",
+        "Vol_L1_plus_L2_expected": "14.6554495068355042408736562389181457723863899885068000000000",
         "additive": true
       }
     ],
@@ -126,50 +126,50 @@
       {
         "N": 1,
         "Vol_N_unknots": "1 · ε",
-        "linking_weight": 1.0,
+        "linking_weight": "1",
         "Geom_epsilon_N_unknots": "1 · ε / ℏ_q² ≈ 101.8622 · ε",
-        "real_part_coefficient": 101.86217860459716
+        "real_part_coefficient": "101.862178604597213080330027214700541765568052427639043784438"
       },
       {
         "N": 2,
         "Vol_N_unknots": "2 · ε",
-        "linking_weight": 1.0,
+        "linking_weight": "1",
         "Geom_epsilon_N_unknots": "2 · ε / ℏ_q² ≈ 203.7244 · ε",
-        "real_part_coefficient": 203.72435720919432
+        "real_part_coefficient": "203.724357209194426160660054429401083531136104855278087568875"
       },
       {
         "N": 5,
         "Vol_N_unknots": "5 · ε",
-        "linking_weight": 1.0,
+        "linking_weight": "1",
         "Geom_epsilon_N_unknots": "5 · ε / ℏ_q² ≈ 509.3109 · ε",
-        "real_part_coefficient": 509.3108930229858
+        "real_part_coefficient": "509.310893022986065401650136073502708827840262138195218922188"
       },
       {
         "N": 10,
         "Vol_N_unknots": "10 · ε",
-        "linking_weight": 1.0,
+        "linking_weight": "1",
         "Geom_epsilon_N_unknots": "10 · ε / ℏ_q² ≈ 1018.6218 · ε",
-        "real_part_coefficient": 1018.6217860459716
+        "real_part_coefficient": "1018.62178604597213080330027214700541765568052427639043784438"
       },
       {
         "N": 100,
         "Vol_N_unknots": "100 · ε",
-        "linking_weight": 1.0,
+        "linking_weight": "1",
         "Geom_epsilon_N_unknots": "100 · ε / ℏ_q² ≈ 10186.2179 · ε",
-        "real_part_coefficient": 10186.217860459716
+        "real_part_coefficient": "10186.2178604597213080330027214700541765568052427639043784438"
       },
       {
         "N": 1000,
         "Vol_N_unknots": "1000 · ε",
-        "linking_weight": 1.0,
+        "linking_weight": "1",
         "Geom_epsilon_N_unknots": "1000 · ε / ℏ_q² ≈ 101862.1786 · ε",
-        "real_part_coefficient": 101862.17860459717
+        "real_part_coefficient": "101862.178604597213080330027214700541765568052427639043784438"
       }
     ],
     "dimensional_consistency_check": {
       "naive_N_birthday_in_eps": "ε⁻¹",
       "after_Geom_normalisation_N_birthday": "ε⁻²",
-      "ℏ_q²_at_substrate": 0.009817186454275078,
+      "ℏ_q²_at_substrate": "0.00981718645427507381056905717956425288904928457540136626246705",
       "implication": "The conjecture's N⊙ ~ ε⁻¹ · A/d³ scaling may need refinement: dimensional analysis with the VolDensity = Vol/ℏ_q² normalisation suggests N⊙ ~ ε⁻² · A/d³, with the extra ε⁻¹ factor absorbing the ℏ_q² denominator.",
       "follow_up": "Recompute the conditional Casimir derivation under the ε⁻² scaling and confirm π²/(240 d⁴) still falls out."
     }

@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
-  "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-09-03T04:00:39.691328+00:00",
-  "commitSha": "e3e4302fa037bd83883d5de0912062abbc1efef5",
+  "engineVersion": "numpy 2.5.3",
+  "computedAt": "2026-10-13T14:31:01.879006+00:00",
+  "commitSha": "d6019fd4c044f86ed6c0ef36b5a6ea3244375302",
   "assertions": [
     {
       "name": "A1_c2_is_ordering_independent",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 25,
+  "durationMs": 14,
   "computation": "c5_sign_is_robust_convergence_claim_is_not_probe",
   "scriptFile": "c5_sign_is_robust_convergence_claim_is_not_probe.py",
-  "scriptHash": "eeda559466ba",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "a0e5f2797a68",
+  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -66,11 +66,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -199,5 +202,7 @@
     "WITHDRAWS A CLAIM OF MINE FROM THE PREVIOUS TURN. qou-441t's 'the hierarchy does not converge' rested on the canonical ordering alone and does not survive eleven others. Its sign result and its cumulant identification both do. Anyone quoting qou-441t should quote this alongside it.",
     "TWELVE ORDERINGS IS ENOUGH TO FALSIFY, NOT TO CHARACTERISE. One counterexample refutes a universal claim and there are eleven; but no distribution is estimated and none should be read in. 'c5 > 0 in 12/12' is reported as a count, not as a probability, and a thirteenth ordering could in principle differ.",
     "ONE NUCLEON ORDERING ONLY. All twelve trials use 5He at production nucleon ordering 'pnpnn' and vary only the BOND order. Nucleon ordering is a separate artifact (measured at 4-5% in three_body_term_has_the_wrong_sign_probe) and is not varied here."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

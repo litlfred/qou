@@ -1,0 +1,772 @@
+
+
+
+\newpage
+
+
+\dspace
+\subhead
+1. Motifs de Tate mixte sur l'anneau des
+$S$-entiers d'un corps de nombres
+\endsubhead
+
+\subhead
+1.1
+\endsubhead
+Soit $k$ un corps. 
+Nombre de r\'esultats cit\'es d\'ependant de
+la r\'esolution des singularit\'es, nous
+supposons $k$ de caract\'eristique $0$.
+Hanamura (1995), Levine (1998) et Voevodsky
+(2000) ont chacun d\'efini une cat\'egorie
+triangul\'ee de motifs sur $k$, et Levine
+(1998) VI 2.5.5 construit une \'equivalence
+entre sa cat\'egorie triangul\'ee et celle de
+Voevodsky.
+Cette derni\`ere sera pour nous la plus
+commode.
+Nous la noterons $\DM(k)$ et noterons
+$\DM(k)_{\dbQ}$ celle qui s'en d\'eduit par
+tensorisation avec $\dbQ$.
+On dispose dans $\DM(k)$ d'objets de Tate
+$\dbZ(n)$ ($n\in\dbZ$), dont les images dans
+$\DM(k)_{\dbQ}$ seront not\'ees $\dbQ(n)$.
+Seule nous importera la sous-cat\'egorie
+triangul\'ee $\DMT(k)_{\dbQ}$ de
+$\DM(k)_{\dbQ}$ engendr\'ee par les $\dbQ(n)$:
+celle des ``extensions it\'er\'ees'' de
+$\dbQ(n)[m]$.
+Rappelons que $E$ est {\it extension} de $B$
+par $A$ s'il existe un triangle distingu\'e
+$A\to E\to B\to A[1]$.
+
+On dispose dans $\DM(k)$ d'un produit
+tensoriel associatif et commutatif \`a unit\'e
+$\otimes$, compatible \`a la structure
+triangul\'ee.
+L'automorphisme de sym\'etrie de
+$\dbZ(1)\otimes\dbZ(1)$ est l'identit\'e
+(Voevodsky (2000) 2.1.5), $M\mapsto
+M(1):=M\otimes \dbZ(1)$ est une \'equivalence
+(loc. cit. 4.1.3), et $\dbZ(n)$ est
+$\dbZ(1)^{\otimes n}$ ($n\in\dbZ$).
+Le produit tensoriel $\otimes$ est rigide
+(loc. cit. 4.3.7): existence pour tout objet
+$M$ d'un dual $M^*$ muni de $\ev\colon\,
+M^*\otimes M\to \dbZ(0)$ et $\delta\colon\,
+\dbZ(0)\to M\otimes M^*$ tels que les compos\'es
+$M\to M\otimes M^*\otimes M\to M$ et $M^*\to
+M^*\otimes M\otimes M^*\to M^*$ soient l'identit\'e.
+
+Rappelons, d'apr\`es Levine (1993), comment,
+lorsque la conjecture d'annulation de
+Beilinson Soul\'e est v\'erifi\'ee
+pour $k$, on peut extraire de $\DMT(k)_{\dbQ}$
+une cat\'egorie tannakienne $\MT(k)$ qui
+m\'erite le nom de cat\'egorie des motifs de
+Tate mixte sur $k$.
+
+Ecrivons $\Hom^j(M,N)$ pour $\Hom(M,N[j])$.
+Les $\Hom^*(\dbZ(a),\dbZ(b))$ ne d\'ependant
+que de $i=b-a$.
+Ils sont donn\'es par les groupes de Chow
+sup\'erieurs convenablement num\'erot\'es de
+$\Spec(k)$ (loc. cit. 4.2.9 pour
+$X=\Spec(k)$).
+Pour $i< 0$ ils sont nuls. 
+Pour $i=0$,
+$$
+\align
+&\matrix
+\Hom^j(\dbZ(0),\dbZ(0))
+   &=\dbZ &\qquad \text{ si $j=0$},\\
+   &\hfill 0 &\qquad \text{ sinon}.\hfill
+\endmatrix\tag1.1.1\\
+\intertext{Pour $i=1$,}
+&\matrix
+\Hom^j(\dbZ(0),\dbZ(1))&=k^* 
+   &\qquad\text{ si $j=1$,}\\
+   &\,\,\,\,0 &\qquad \text{ sinon}.\hfill
+\endmatrix\tag1.1.2
+\endalign
+$$
+
+Apr\`es tensorisation avec $\dbQ$, ces groupes
+sont encore donn\'ees par les sous-espaces
+propres des op\'erations d'Adams dans les
+groupes de $K$-th\'eorie de $k$ (Levine
+(1998) II 3.6.6; r\'ef\'erence originale:
+Bloch (1986) compl\'et\'e par Bloch (1994);
+voir aussi Levine (1994)).
+La conjecture d'annulation de
+Beilinson-Soul\'e est que
+$$
+\Hom^j(\dbQ(0),\dbQ(i))=0\quad
+\text{pour}\quad i>0\quad\text{et}\quad
+j\Le 0.
+\tag1.1.3
+$$
+Lorsque tel est le cas, Beilinson Bernstein
+Deligne (1982) 1.3.14, appliqu\'e \`a la
+sous-cat\'egorie pleine de $\DMT(k)_{\dbQ}$
+d'objets les $\dbQ(n)$, montre que les
+extensions it\'er\'ees de $\dbQ(n)$
+($n\in\dbZ$) forment une cat\'egorie
+ab\'elienne, coeur d'une $t$-structure sur
+$\DMT(k)_{\dbQ}$.
+On l'appelle la cat\'egorie
+$\MT(k)$ des motifs de Tate mixte sur $k$.
+Elle est stable par produit tensoriel et
+passage au dual.
+Ces foncteurs \'etant exacts, cela r\'esulte
+de ce que $\dbQ(n)\otimes\dbQ(m)=\dbQ(n+m)$ et
+que $\dbQ(n)^*=\dbQ(-n)$.
+On obtient ainsi sur $\MT(k)$ un produit
+tensoriel exact en chaque variable,
+associatif, commutatif, \`a unit\'e et rigide.
+
+De ce que $\MT(k)$ est le coeur d'une
+$t$-structure sur $\DMT(k)_{\dbQ}$ r\'esulte
+que pour $A$ et $B$ dans $\MT(k)$, on a
+$$
+\align
+\Ext^1(A,B) &=
+\Hom^1(A,B)\qquad\text{et}\tag1.1.4\\
+\Ext^2(A,B) &\hookrightarrow \Hom^2(A,B).\tag1.1.5
+\endalign
+$$
+En particulier,
+$$
+\Ext^1(\dbQ(n),\dbQ(m))=0\quad
+\text{pour}\quad m\Le n.\tag1.1.6
+$$
+Pour $A$ dans $\MT(k)$, il r\'esulte de
+(1.1.6), par induction sur une description de
+$A$ comme extension it\'er\'ee, que $A$ admet
+une unique filtration ``par le poids''
+$W$, finie, croissante et index\'ee par les
+entiers pairs, telle que
+$$
+\Gr_{-2n}^W(M):= W_{-2n}(M)/W_{-2(n+1)}(M)
+$$
+soit une somme de copies de $\dbQ(n)$.
+Posons
+$$
+\omega_n(M):=\Hom(\dbQ(n),\Gr_{-2n}^W(M)).
+$$
+On a donc 
+$$
+\Gr_{-2n}^W(M)=\dbQ(n)\otimes_\dbQ
+\omega_n(M).
+$$
+La filtration $W$ est fonctorielle, exacte et
+compatible au produit tensoriel.
+Parce que l'automorphisme de symm\'etrie de
+$\dbQ(1)\otimes\dbQ(1)$ est l'identit\'e, on
+dispose d'isomorphismes 
+$\dbQ(n)\otimes\dbQ(m)\simover\dbQ(n+m)$
+compatibles \`a l'associativit\'e et \`a la
+commutativit\'e de $\otimes$.
+Le foncteur exact $M\mapsto
+\omega(M):=\oplus\omega_n(M)$ est donc
+un $\otimes$-foncteur: c'est un foncteur fibre
+et la cat\'egorie $MT(k)$ est tannakienne.
+
+\subhead
+1.2
+\endsubhead
+Pour $M$ un motif de Tate mixte, le
+sous-quotient $W_{-2n}(M)/W_{-2(n+2)}(M)$ de
+$M$ est une extension $M_{n,n+1}$ de
+$\Gr_{-2n}^W(M)=\dbQ(n)\otimes\omega_n(M)$ par
+$\Gr_{-2(n+1)}^W(M)=\dbQ(n+1)\otimes\omega_{n+1}(M)$.
+La classe de cette extension est un \'el\'ement
+$$
+e_n\in \Ext^1(\dbQ(n),\dbQ(n+1))\otimes\Hom
+(\omega_n(M),\omega_{n+1}(M)).
+$$
+La tensorisation avec $\dbQ(n)$ est un
+isomorphisme
+$$
+\Ext^1(\dbQ(0),\dbQ(1))\simover
+\Ext^1(\dbQ(n),\dbQ(n+1))\tag1.2.1
+$$
+et les $e_n$ d\'efinissent
+$$
+e_M\colon\,\omega_*(M)\to\Ext^1(\dbQ(0),
+\dbQ(1))\otimes\omega_*(M).
+\tag1.2.2
+$$
+
+Pour $x\colon\,\dbQ(n)\to\Gr_{-2n}^W(M)$ dans
+$\omega_n(M)$, l'image inverse par $x$ de
+l'extension $M_{n,n+1}$ est une extension de
+$\dbQ(n)$ par $\Gr_{-2(n+1)}^W(M)=\dbQ(n+1)
+\otimes\omega_{n+1}(M)$, et $e_M(x)$ est la
+classe de cette extension dans
+$$
+\Ext^1(\dbQ(0),\dbQ(1))\otimes
+\omega_{n+1}(M)=\Ext^1(\dbQ(n),
+\dbQ(n+1))\otimes\omega_{n+1}(M).
+$$
+
+On regardera $e_M$ comme une coaction, au sens
+des coalg\`ebres de Lie.
+Plus pr\'ecis\'ement, comme une coaction, sur
+$\omega(M):=\oplus \omega_*(M)$, de la
+coalg\`ebre de Lie librement coengendr\'ee par
+$\Ext^1(\dbQ(0),\dbQ(1))$.
+
+\proclaim{Proposition 1.3}
+La coaction $e_M$ est fonctorielle en $M$ et
+compatible au produit tensoriel.
+\endproclaim
+
+\demo{Preuve}
+La v\'erification de la fonctorialit\'e en $M$
+est laiss\'ee au lecteur.
+Pour $x\in\omega_m(M)$ et $y\in\omega_n(N)$, on
+doit montrer que
+$$
+e_{M\otimes N}(x\otimes y)=e_M(x)\otimes y
++x\otimes e_N(y).
+\tag1.3.1
+$$
+Par fonctorialit\'e, on peut pour le
+v\'erifier remplacer $M$ par $W_{-2m}(M)$, une
+extension de $\dbQ(m)\otimes\omega_m(M)$ par
+$W_{-2(m+1)}(M)$, puis par l'image inverse de
+cette extension par
+$x\colon\,\dbQ(m)\to\dbQ(m)\otimes\omega_m(M)$.
+De m\^{e}me pour $N$, $n$ et $y$.
+On se ram\`ene ainsi \`a supposer que
+$M=W_{-2m}(M)$, $\omega_m(M)=\dbQ$, $x=1$, et
+de m\^{e}me pour $N$, $n$ et $y$.
+On a alors
+$$
+\align
+\omega_{m+n+1}(M\otimes N)\simover
+  &\omega_{m+n+1}(M\otimes\text{(quotient
+$\dbQ(n)$ de $N$)})\\
+\oplus\,\, &\omega_{m+n+1}\text{((quotient
+$\dbQ(m)$ de $M$)}\otimes N).
+\endalign
+$$
+et, par fonctorialit\'e en $M$ et $N$ de
+$e_{M\otimes N}$, il suffit de v\'erifier
+(1.3.1) pour $M$ remplac\'e par son quotient
+$\dbQ(m)$, ainsi que pour $N$ remplac\'e par
+son quotient $\dbQ(n)$.
+Ces cas se r\'eduisent \`a la d\'efinition de
+l'isomorphisme (1.2.1).
+\enddemo
+
+Si $E$ est une extension de $\dbQ(0)$ par
+$\dbQ(1)$, il r\'esulte de 1.3 que la classe
+de l'extension $E^*(1)$ de $\dbQ(0)$ par
+$\dbQ(1)$ est l'oppos\'ee de la classe de $E$.
+
+\definition{Definition 1.4}
+{\it Pour $\Gamma$ un sous-espace vectoriel de
+$\Ext^1(\dbQ(0),\dbQ(1))$, 
+$MT(k)_\Gamma$ est la cat\'egorie des motifs de
+Tate mixte tels que la coaction (1.2.2) se
+factorise par une coaction de $\Gamma$}.
+\enddefinition
+
+Pour que $M$ soit dans $\MT(k)_\Gamma$, il
+faut et il suffit que pour tout sous-quotient
+$E$ de $M$ qui est une extension d'un
+$\dbQ(n)$ par $\dbQ(n+1)$, la classe de $E$
+dans 
+$$
+\Ext^1(\dbQ(0),\dbQ(1)\simover \Ext^1
+(\dbQ(n),\dbQ(n+1))
+$$ 
+soit dans $\Gamma$. 
+D'apr\`es 1.3, cette sous-cat\'egorie de
+$MT(k)$, qui contient l'objet unit\'e $\dbQ(0)$,
+est stable par sous-quotients, produits
+tensoriels et duaux.
+C'est une sous-cat\'egorie tannakienne de
+$MT(k)$.
+
+\subhead
+1.5
+\endsubhead
+Quel que soit $k$ (de caract\'erisque $0$), on
+dispose d'un foncteur ``r\'ealisation'' de
+$\DM(k)$ dans la cat\'egorie triangul\'ee
+``syst\`emes de r\'ealisations'' de Huber (1995).
+L'\'etat de la litt\'erature \`a ce sujet
+n'est pas satisfaisant, sp\'ecialement en ce qui
+concerne la r\'ealisation de Hodge.
+Dans Huber (2000), il est suppos\'e \`a tort
+dans la preuve de 2.1.4, p.~775 que les
+hyperrecouvrements propres de $X$ forment une
+cat\'egorie filtrante.
+Cette erreur est corrig\'ee dans un erratum
+dat\'e d'octobre 2002.
+Dans Levine (1998) V. 2.3.7 le foncteur Dec
+de d\'ecalage d'une filtration par le poids
+est appliqu\'e \`a un complexe de faisceaux,
+alors qu'il devrait \^{e}tre appliqu\'e
+apr\`es passage \`a $R\Gamma$.
+
+Nous esquissons ci-dessous une fa\c{c}on
+possible de proc\'eder, adapt\'ee \`a la
+d\'efinition de Voevodsky
+de $\DM(k)$, que nous commen\c{c}ons par
+rappeler.
+Le foncteur obtenu sera contravariant
+(cohomologique).
+Dans la suite de l'article, c'est sa variante
+covariante (homologique), d\'eduite par
+passage au dual, qui nous sera utile.
+
+Soit $\SmCor(k)$ la cat\'egorie d'objets les
+sch\'emas s\'epar\'es lisses sur $k$, un
+morphisme de $X$ dans $Y$ \'etant une
+correspondance finie de $X$ vers $Y$:
+$\Hom(X,Y)$ est le groupe ab\'elien librement
+engendr\'e par les sous-sch\'emas r\'eduits
+irr\'eductibles ferm\'es $Z$ de $X\times Y$,
+finis sur $X$ et dominant une composante
+connexe de $X$.
+La cat\'egorie $\SmCor(k)$ est additive
+(avec $\oplus=\Coprod$).
+La cat\'egorie triangul\'ee $\DM(k)$ se d\'eduit
+de la cat\'egorie triangul\'ee de complexes
+born\'es $K^b(\SmCor(k))$ par
+
+\medskip\noindent
+{\sans (a)} localisation:
+on divise par la sous-cat\'egorie \'epaisse
+engendr\'ee par les $[X\times A^1]\to[X]$
+(invariance 
+d'homotopie) et les $[U\CAP V]\to[U]\oplus[V]
+\to[X]$ pour $X$ la r\'eunion des ouverts $U$
+et $V$ (Mayer-Vietoris); 
+
+\smallskip\noindent
+{\sans (b)}\enspace 
+adjonction de facteurs directs images
+d'endomorphismes idempotents;
+
+\smallskip\noindent
+{\sans (c)}\enspace
+inversion formelle de $\dbQ(1)$.
+
+\medskip
+Il r\'esulte de Voevodsky (2000) 
+3.2.6 et de (a), Mayer
+Vietoris, qu'on obtiendrait une cat\'egorie
+\'equivalente si dans $\SmCor(k)$ on se
+limitait aux sch\'emas lisses et
+quasi-projectifs sur $k$.
+Pour d\'efinir le foncteur r\'ealisation,
+l'essentiel est de d\'efinir la r\'ealisation
+d'un complexe born\'e $X^*$ d'objets de
+$\SmCor(k)$, et par la remarque ci-dessus, on
+peut se ramener au cas o\`u les $X^i$ sont
+quasi-projectifs.
+
+\proclaim{Lemme 1.5.1}
+Soit $\Gamma\colon\, X\to Y$ dans $\SmCor(k)$.
+Si $\Ybar$ est une compactification projective
+et lisse de $Y$, il existe une
+compactification projective et lisse $\Xbar$
+de $X$ telle que $\Gamma$ se prolonge en
+$\Gammabar\colon\,\Xbar\to\Ybar$.
+quand elle existe, l'extension $\Gammabar$ 
+est unique.
+\endproclaim
+
+\demo{Preuve}
+Il suffit de traiter du cas o\`u $X$ est
+connexe et o\`u $\Gamma$ est un sous-sch\'ema
+ferm\'e $Z$ de $X\times Y$, r\'eduit,
+irr\'eductible, fini et dominant sur $X$.
+Si $d$ est le degr\'e de $Z$ sur $X$, $Z$ d\'efinit
+un morphisme de sch\'emas $z$ de $X$ dans
+$\Sym^d(Y)$.
+D'apr\`es Hironaka, il existe une
+compactification projective et lisse $\Xbar$
+de $X$ telle que $z$ se prolonge en
+$\zbar\colon\, \Xbar\to\Sym^d(\Ybar)$.
+Pour un tel $\Xbar$, l'adh\'erence $\Zbar$ de
+$Z$ dans $\Xbar\times\Ybar$ est encore finie
+sur $\Xbar$.
+Elle fournit le prolongement cherch\'e.
+L'unicit\'e est claire.
+Noter que, par Hironaka encore, on peut
+supposer que $X$ est le compl\'ement dans
+$\Xbar$ d'un diviseur \`a croisements normaux.
+
+Pour $X^*$ un complexe born\'e d'objets de
+$\SmCor(k)$, on d\'eduit de 1.5.1 l'existence
+d'un syst\`eme de compactifications $\Xbar^n$
+des $X^n$ tel que \ (a) $\Xbar^n$ est
+projectif et lisse, et $X^n$ est le
+compl\'ement dans $\Xbar^n$ d'un diviseur \`a
+croisements normaux $D^n$; \ (b) la
+diff\'erentielle $d$ se prolonge de $X^*$ \`a
+$\Xbar^*$.
+Par unicit\'e du prolongement, le prolongement
+v\'erifie encore $d^2=0$.
+Les syst\`emes de compactifications $\Xbar$
+forment une cat\'egorie filtrante.
+Pour $f\colon\, X^*\to Y^*$ un morphisme de
+complexes, et pour $\Ybar^*$ une
+compactification de $Y^*$ v\'erifiant (a),
+(b), il existe une compactification $\Xbar^*$
+de $X^*$ v\'erifiant (a), (b) et telle que $f$
+se prolonge en un morphisme de complexes de
+$\Xbar^*$ dans $\Ybar^*$.
+\enddemo
+
+D\'efinissons la r\'ealisation de de Rham de
+$X^*$ -- ingr\'edient essentiel de la
+r\'ealisation de Hodge relative \`a un
+plongement complexe de $k$ dans $\dbC$.
+L'id\'ee est de choisir une compactification
+$\Xbar^*$ de $X^*$ comme ci-dessus et de
+prendre sur chaque $\Xbar^n$ le complexe de de
+Rham \`a p\^{o}les logarithmiques
+$\Omega_{\Xbar^n}^*(\log\,D^n)$.
+Ce complexe est bifiltr\'e: par le filtration
+de Hodge $F^p=\sigma_{\Ge p}$, et par la
+filtration par le poids $W_*$, qui compte le
+nombre de facteurs $\frac{dz_i}{z_i}$ pour
+$z_i$ une \'equation locale d'une composante
+lisse de $D^n$.
+Il s'agit ensuite d'obtenir des complexes
+bifiltr\'es $(K^{(n)},W,F)$ repr\'esentant les
+$R\Gamma(\Xbar^n,\Omega^*(\log\,D^n))$ et
+d'utiliser la diff\'erentielle de $\Xbar^*$
+pour en faire un complexe double bifiltr\'e,
+avec $K^{(n)}$ comme colonne de premier indice
+$-n$.
+La difficult\'e sera de d\'eduire de $d^2=0$
+pour $\Xbar^*$ que $d'{^2}=0$ identiquement.
+Ceci fait, il reste \`a
+
+\medskip\noindent
+{\sans (i)}\enspace
+remplacer la filtration $W$ de $K^{(n)}$ par
+son translat\'e $W'$ d\'efini par
+$W'{^m}=W^{m-n}$;
+
+\smallskip\noindent
+{\sans (ii)}\enspace
+passer au complexe simple associ\'e; on notera
+que son $\Gr^W$ est la somme des\break
+$\Gr^W(K^{(n)})[n]$;
+
+\smallskip\noindent
+{\sans (iii)}\enspace
+remplacer la filtration $W$ par sa d\'ecal\'ee
+$\Dec\,W$.
+
+\medskip
+Nous travaillerons avec la topologie \'etale.
+Celle de Nisnevitch ferait aussi bien
+l'affaire, mais non celle de Zariski.
+Pour un faisceau quasi-coh\'erent, la
+cohomologie est la m\^{e}me.
+L'hypercohomologie d'un complexe de de Rham
+aussi.
+Gain: pour $p\colon\, Z\to X$ un morphisme
+fini, le foncteur $p_*$ est exact.
+Ceci est faux pour Zariski.
+Soit $\Gamma\colon\, X\to Y$ dans $\SmCor(k)$:
+$\Gamma=\sum n_i Z_i$ et $Z_i\Subset X\times
+Y$ est fini sur $X$.
+Soient des compactifications $X$ et $Y$ en $\Xbar$ et
+$\Ybar$, avec \`a l'infini un diviseur \`a
+croisement normaux, et supposons que $\Gamma$
+se prolonge en $\Gammabar$, i.e. que chaque
+adh\'erence $\Zbar_i$ de $Z_i$ dans
+$\Xbar\times\Ybar$ soit finie sur $\Xbar$.
+Soit enfin $\vert\Gammabar\vert$ le support
+$\cup \Zbar_i$ de $\Gammabar$.
+La correspondance $\Gammabar$ d\'efinit alors
+un morphisme de complexes de faisceaux sur
+$\vert\Gamma\vert$
+$$
+[\Gammabar]\colon\, \pr_2^*\Omega^*
+(\log)\to\pr_1^*\Omega^*(\log).
+$$
+Ici aussi que la topologie soit \'etale ou de
+Nisnevitch est essentiel.
+Prendre garde que $\pr_2^*$ est une image
+inverse au sens des faisceaux, et non pas au
+sens des faisceaux coh\'erents (pour laquelle
+l'image inverse de la diff\'erentielle de de
+Rham $d$ ne serait pas d\'efinie).
+Ce morphisme s'\'etend aux r\'esolutions
+flasques canoniques $\scrC^*$ et il suffit de
+repr\'esenter
+$R\Gamma(\Xbar^n,\Omega^*(\log))$ par
+$\Gamma(\Xbar^n,\scrC^*\Omega^*(\log))$.
+
+\subhead
+1.6
+\endsubhead
+En caract\'eristique z\'ero, les seuls
+corps pour lesquels la conjecture d'annulation
+de Beilinson-Soul\'e soit d\'emontr\'ee sont
+les corps de nombres ($=$ extensions finies de
+$\dbQ$), les corps de fonctions rationelles
+d'une courbe de genre $0$ sur un corps de
+nombres, et les limites inductives de tels
+corps.
+Le cas qui nous importe est celui des corps de
+nombres.
+Pour ceux-ci, $K_n(k)\otimes\dbQ$ est nul pour
+$n$ pair $>0$ et on a
+$$
+\align
+\Ext^1(\dbQ(0),\dbQ(n))
+&=K_{2n-1}(k)\otimes\dbQ,\quad\text{et}\\
+\Ext^2(\dbQ(0),\dbQ(n)) &=0,
+\endalign
+$$
+car $\Hom^2(\dbQ(0),\dbQ(n))=0$ dans
+$\DM(k)_{\dbQ}$.
+
+Soit $k$ un corps de nombres.
+Le foncteur ``r\'ealisation'' sur $\DM(k)$
+induit sur $\MT(k)$ un $\otimes$-foncteur \`a
+valeurs dans les syst\`emes de r\'ealisations
+au sens de Deligne (1989) (aspect cristallin
+exclus) ou Jannsen (1990).
+
+Rappelons que
+$\Ext^1(\dbQ(0),\dbQ(1))=k^*\otimes\dbQ$.
+Si $S$ est un ensemble de places finies de
+$k$, et que $\scrO_S$ est l'ensemble des
+$S$-entiers de $k$ (int\'egralit\'e en dehors
+de $S$), nous d\'efinissons artificiellement la
+cat\'egorie des motifs de Tate mixte sur
+$\scrO_S$ comme \'etant $\MT(k)_\Gamma$
+pour $\Gamma=\scrO_S^*\otimes\dbQ\Subset
+k^*\otimes\dbQ^*$.
+Cas particulier: pour $S$ le compl\'ement
+d'une place finie $v$, $\scrO_S$
+est le localis\'e $\scrO_{(v)}$ en $v$ de
+l'anneau des entiers $\scrO$ de $k$, et on
+parle de motifs de Tate mixte {\it non ramifi\'es}
+en $v$.
+Un motif de Tate mixte sur $\scrO_S$ est donc
+un motif de Tate mixte sur $k$ non ramifi\'e
+en chaque place finie $v\notin S$.
+
+\proclaim{Proposition 1.7}
+Soit $\ell$ un nombre premier distinct de la
+caract\'eristique r\'esiduelle de $v$.
+Pour qu'un motif de Tate mixte $M$ sur $k$ soit
+non ramifi\'e en $v$, il faut et il suffit que
+sa r\'ealisation $\ell$-adique $M_\ell$
+soit non ramifi\'ee en $v$.
+\endproclaim
+
+\demo{Preuve}
+La r\'ealisation $\ell$-adique est un
+$\dbQ_\ell$-espace vectoriel d\'ependant
+fonctoriellement du choix d'une cl\^{o}ture
+alg\'ebrique $\kbar$ de $k$.
+La fonctorialit\'e en $\kbar$ en fait une
+repr\'esentation continue de $\Gal(\kbar/k)$.
+Nous utiliserons que 
+
+\medskip\noindent
+{\sans (a)}
+la r\'ealisation l-adique de $\dbQ(1)$
+est $\dbQ_\ell(1)
+:=\dbZ_\ell(1)\otimes_{\dbZ_\ell}\dbQ_\ell$,
+avec $\dbZ_\ell(1)=\lim\,\mu_{\ell^n}(\kbar)$;
+
+\medskip\noindent
+{\sans (b)}
+Pour $n\not=m$, puisque $\Hom(\dbQ(n),\dbQ(m))=0$,
+une extension de $\dbQ(n)$ par $\dbQ(m)$ est
+d\'etermin\'ee \`a isomorphisme unique pr\`es
+par sa classe dans $\Ext^1(\dbQ(n),\dbQ(m))$.
+Pour $x\in k^*\Subset\Ext^1(\dbQ(0),\dbQ(1))$,
+notons $K(x)$ l'extension de $\dbQ(0)$
+par $\dbQ(1)$, dite de Kummer, de classe $x$.
+Sa r\'ealisation l-adique est d\'eduite,
+par tensorisation avec $\dbQ_\ell$, de
+l'extension  de Kummer $K_\ell(x)$ de
+$\dbZ_\ell$ par $\dbZ_\ell(1)$.
+La donn\'ee d'une extension
+$$
+0\to\dbZ_\ell(1)\to E\mapright{f}
+\dbZ_\ell\to 0
+$$
+de  $\dbZ_\ell$ par $\dbZ_\ell(1)$ \'equivaut
+\`a celle du $\dbZ_\ell(1)$-torseur
+$f^{-1}(1)$, et $K_\ell(x)$ correspond au
+$\dbZ_\ell(1)$ torseur limite projective des
+$\mu_{\ell^n}(\kbar)$-torseurs des racines
+$(\ell^n)^{\iemes}$ de $x$ dans $\kbar$.
+
+\medskip
+La repr\'esentation $\ell$-adique $K_\ell(x)$
+est non ramifi\'ee en $v$ si et seulement si
+$x$ est une unit\'e en $v$, i.e. est dans
+$\scrO_{(v)}^*$.
+Pour $M$ de Tate mixte, il r\'esulte donc de
+(b) que $M$ est dans $MT(\scrO_v)$ si et
+seulement si les repr\'esentations
+$\ell$-adiques
+$W_{-2n}(M_\ell)/W_{-2(n+2)}(M_\ell)$ sont non
+ramifi\'ees.
+Il reste \`a v\'erifier le lemme suivant.
+
+\proclaim{Lemme 1.8}
+Soient $K_v$ le corps des fractions de
+l'hens\'elis\'e $\scrO_{(v)}^h$ de $\scrO_v$
+et $H$ une repr\'e-\break
+sentation $\ell$-adique de
+$\Gal(\Kbar_v/K_v)$, munie d'une filtration
+finie croissante index\'ee par les entiers
+pairs $W$, telle que $\Gr_{-2n}^W(H)$ soit
+somme de copies de $\dbQ_\ell(n)$.
+Pour que la repr\'esentation $H$ soit non
+ramifi\'ee, il suffit que les
+repr\'esentations $W_{-2n}/W_{-2(n+2)}$ le
+soient.
+\endproclaim
+
+\demo{Preuve}
+Soit $I_v\Subset \Gal(\Kbar_v/K_v)$ le groupe
+d'inertie.
+On sait que son plus grand pro-$\ell$-quotient
+est canoniquement isomorphe \`a
+$\dbZ_\ell(1)$.
+Soit $t_\ell\colon\, I_v\to\dbZ_\ell(1)$ le
+morphisme de passage au quotient.
+Il est $\Gal(\Kbar_v/K_v)$-\'equivariant.
+\enddemo
+
+Supposons que $I_v$ agisse trivialement sur
+les $W_{-2n}/W_{-2(n+2)}$ et prouvons par
+r\'e-\break
+currence sur $r\Ge 2$ qu'il agit
+trivialement sur les $W_{-2n}/W_{-2(n+r)}$.
+Pour $r=2$, c'est l'hypo-\break
+th\`ese.
+Pour $r>2$, l'hypoth\`ese  de r\'ecurrence
+assure que l'action de $I_v$ est triviale sur
+$W_{-2n}/W_{-2(n+r-1)}$ et sur
+$W_{-2(n+1)}/W_{-2(n+r)}$.
+L'action de $\sigma\in I_v$ est donc de la
+forme $1+\nu(\sigma)$, avec pour $\nu(\sigma)$
+un compos\'e
+$$
+W_{-2n}/W_{-2(n+r)}\to
+\Gr_{-2n}^W\longmapright{35}{n(\sigma)}
+\Gr_{-2(n+r-1)}^W\to W_{-2n}/W_{-2(n+r)},
+$$
+et $n(\sigma_1\sigma_2)=n(\sigma_1)+n(\sigma_2)$.
+L'application $\sigma\mapsto n(\sigma)$
+se factorise donc par $\dbZ_\ell(1)$, et est
+de la forme
+$$
+n(\sigma)=n \cdot t_\ell(\sigma),\,\,
+\text{\rm pour }n\colon\,\Gr_{-2n}^W(1)\to
+\Gr_{-2(n+r-1)}^W.
+$$
+Le morphisme $n$ est
+$\Gal(\Kbar_v/K_v)$-equivariant.
+Puisque $r>2$,
+$\Hom_{\Gal(\Kbar_v/K_v)}(\dbQ_\ell(n+1~),$\break
+$\dbQ_\ell(n+r-1))=0$ et $n$ est nul, ce qui
+conclut la r\'ecurrence.
+\enddemo
+
+\proclaim{Proposition 1.9}
+Soit $\Gamma$ un sous-espace vectoriel de
+$\Ext^1(\dbQ(0),\dbQ(1))$.
+
+\medskip\noindent
+{\sans (i)}
+Pour $r\Ge 2$, $\Ext^1(\dbQ(n),\dbQ(n+r))$ est
+le m\^{e}me dans $MT(k)$ et dans
+$MT(k)_\Gamma$.
+
+\noindent
+{\sans (ii)}
+Les $\Ext^2$ de Yoneda sont nuls dans
+$MT(k)_\Gamma$.
+\endproclaim
+
+\demo{Preuve}\quad (i) Si $r\Ge 2$, une
+extension de $\dbQ(n)$ par $\dbQ(n+r)$ est en
+effet automatiquement dans $MT(k)_\Gamma$.
+
+\noindent
+(ii)
+Il suffit de v\'erifier la nullit\'e des
+$\Ext^2(\dbQ(n),\dbQ(m))$.
+Pour toute classe $c$ dans cet $\Ext^2$, il
+existe dans $MT(k)_\Gamma$ une extension
+$$
+0\to F\to E_1\to\dbQ(n)\to 0,
+\tag1.8.1
+$$
+de classe not\'ee $c_1$, et une extension
+$E_2$ de $F$ par $\dbQ(m)$, de classe $c_2$,
+telle que $c$ soit le produit de Yoneda
+$c_2c_1$.
+Ce produit est l'image de $c_2$ par le cobord
+$$
+\partial\colon\, \Ext^1(F,\dbQ(m))\to
+\Ext^2(\dbQ(n),\dbQ(m))
+$$
+d\'efini par (1.8.1).
+C'est aussi l'obstruction \`a l'existence dans
+$MT(k)_\Gamma$ de\break
+$X=X_0\Supset X_1\Supset
+X_2\Supset X_3=0$  de quotients successifs
+$X_i/X_{i+1}$ ($i=0,1,2$) munis\break
+d'isomorphismes avec $\dbQ(n)$, $F$ et
+$\dbQ(m)$, tel que la classe de l'extension
+$X/X_2$ de $\dbQ(n)$ par $F$ soit $c_1$, et
+que la classe de l'extension $X_1$ de $F$ par
+$\dbQ(m)$ soit $c_2$.
+
+Relevons $\dbQ(n)$ dans  $\Gr_{-2n}^W(E_1)$ et
+soit $E'_1$ l'image inverse dans
+$W_{-2n}(E_1)$ de ce rel\`evement.
+C'est une extension de $\dbQ(n)$ par $F':=
+F\CAP E'_1=W_{-2(n+1)}(F)$.
+Si $E'_2$ est l'image inverse de $F'$ dans
+$E_2$, $c$ est encore le produit de Yoneda
+$c'_2c'_1$ de la classe $c'_1$ de $E'_1$ par
+la classe $c'_2$ de $E'_2$.
+On a gagn\'e que $F'=W_{-2(n+1)}(F')$.
+Un argument dual permet ensuite de se ramener
+au cas o\`u $F=W_{-2(n+1)}(F)$ et
+$W_{-2m}(F)=0$.
+Le $\Ext^2$ ne peut donc \^{e}tre non nul que
+si $m\Ge n+2$.
+Puisque le $\Ext^2$ est nul dans $MT(k)$, il
+existe dans $MT(k)$ une extension it\'er\'ee
+$X=X_0\Supset X_1\Supset X_2\Supset X_3=0$ du
+type consid\'er\'e plus haut, le sous-quotient
+$W_{-2a}/W_{-2(a+2)}$ de $X$ coincide avec le
+m\^{e}me sous-quotient de $X_0/X_3$ si $a+2\le
+m$, et avec le m\^{e}me sous-quotient de $X_1$
+si $a>n$.
+Si, comme on peut le supposer, $m\Ge n+2$, on
+est pour tout a dans un de ces deux cas, $X$
+est donc dans $MT(k)_\Gamma$, et $c=0$.
+\enddemo
+
+
+
+
+

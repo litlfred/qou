@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T02:10:15.196082+00:00",
-  "commitSha": "4ef07cfc2535e33fafce05a9baa4eaaf3001f2ce",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T15:21:33.847889+00:00",
+  "commitSha": "607fa41877ecf00f1a0bfb9a85e8cd21594a50a3",
   "assertions": [
     {
       "name": "mirror_difference_collapses_to_the_exact_identity",
@@ -34,11 +34,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 31,
+  "durationMs": 24,
   "computation": "c1-mirror-asymmetry-sign-probe",
   "scriptFile": "c1_mirror_asymmetry_sign_probe.py",
-  "scriptHash": "48763944edd7",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "a8e419775885",
+  "scriptCommitSha": "b66bb4547db13638c8099f077e34464f80e426d1",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,14 +46,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -3312,5 +3312,7 @@
       "24": "41943027/281474976710656"
     },
     "verdict": "The derived c1 mirror asymmetry is WRONG IN SIGN for every one of the 230 AME mirror pairs with A >= 3. The prediction is exact and parameter-free — c1(Z,N) - c1(N,Z) = (Z-N) 4^-A (5*2^(A-1) - 13), positive for Z > N whenever A >= 3 — and the comparison is SCALE-FREE, since any positive energy scale preserves a sign. SCOPE (a): the trace channel alone, at leading order in hbar_q, gets the mirror asymmetry backwards. It is not a structural exclusion; no invariant is cited. What it localises is that the missing term must be charge-dependent and REPULSIVE, and must exceed the wrong-signed c1 contribution rather than merely supply the observed gap — i.e. the Coulomb term the corpus records as nowhere derived."
-  }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal"
 }

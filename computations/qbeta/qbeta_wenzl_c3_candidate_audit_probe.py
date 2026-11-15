@@ -25,7 +25,7 @@ is the wrong object -- only that this identification is not established.
    against the ledger's own stated target.
 
 3. THE PROMISED FORMAL DERIVATION IS A TAUTOLOGY.
-   `content/quantum-observable-universe/lean/QOU/BraidKnot/QBetaWenzlDecomposition.lean`
+   `folio/quantum-observable-universe/lean/QOU/BraidKnot/QBetaWenzlDecomposition.lean`
    defines
 
        noncomputable def q_beta_c3_wenzl_coefficient (q : R) : R :=
@@ -60,6 +60,7 @@ sys.path.insert(0, str(HERE.parent))
 mp.mp.dps = 50
 
 from qou_substrate.constants import M_E_MEV, Q_NEUTRON_MEV, q_at  # noqa: E402
+from qbeta_utils import c3_proton_extracted  # noqa: E402
 
 ME = mp.mpf(str(M_E_MEV))
 QEXP = mp.mpf(str(Q_NEUTRON_MEV))
@@ -85,6 +86,26 @@ def ladder_N3(q, c3):
     h = q - 1 / q
     hb = (q - 1) / q
     b = mp.sqrt(q**4 + q**2 + 1) / (q**2 + 1)
+    # CONVENTION C, DELIBERATELY, AND SAID SO — this was the silent part.
+    #
+    # `z_C = sqrt(q)/(q+1) = 1/(sqrt(q) + 1/sqrt(q)) = 0.49932033418369445241`
+    # at the proton pin, against the canonical `z_D = q^3/(q^2+1) =
+    # 0.61268803714646525160` (owner ruling 2026-08-15). This site fed the
+    # ladder's `alpha = (z-1)h/2` from C while declaring nothing — neither the
+    # variable name nor the module docstring said which frame it was in, so a
+    # reader had no way to know (bean `qou-qgtk`, measured down to three such
+    # sites on 2026-09-15).
+    #
+    # NOT SWAPPED TO z_D, and that is not caution — it is the rule.
+    # `qbeta_ladder_convention_fee_probe` records that the published agreement
+    # needs z_C, that substituting z_D sends the ladder to 601192 ppb, and that
+    # this number is NOT "what convention D gives": AGENTS.md and
+    # `QOU.QBeta.decayLadder_zC_threeRow_ne_zero` both state the ladder must be
+    # RE-DERIVED under D and that **a z-swap is not a valid move**. If the decay
+    # channel's decomposition kills the third row then its trace IS z_D, and the
+    # existing C-frame ladder is not that trace. Excising C here therefore means
+    # DECLARING it, the `qou-cexc` precedent ("declared, not silent"), and
+    # leaving the re-derivation to the arc that owns it.
     z = mp.sqrt(q) / (q + 1)
     eps = (q - 1 / q) / 2 * h - h
     QA = abs(eps * ME / (q * (q - 1)))
@@ -109,8 +130,12 @@ def main() -> int:
     cand = -2 - mp.mpf(3) / 2 * W4
 
     ledger_target = mp.mpf("-2.06249")          # the ledger's own stated target
-    live_proton = mp.mpf("-2.0693425728")       # live extracted c_3, proton pin
-    live_muon = mp.mpf("-2.0202002328")         # live extracted c_3, muon pin
+    live_proton = c3_proton_extracted()         # live extracted c_3, proton pin (recomputed)
+    # NOT recomputed (out of scope of the 2026-10-13 proton trace): this muon literal
+    # is 2.2e-9 from the CODATA-2018 muon-pin extraction (-2.0202002350213) and
+    # 1.7e-4 from the live CODATA-2022 one (-2.0198603119); see the PR that added
+    # c3_proton_extracted.
+    live_muon = mp.mpf("-2.0202002328")         # extracted c_3, muon pin (typed)
 
     print("Convention C (the ledger's frame).  mpmath, 50 dps.\n")
     print(f"  q0 (proton)        = {mp.nstr(q_pr, 15)}")

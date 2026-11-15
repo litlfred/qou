@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "noEmit": true,
+    "types": ["bun-types"],
+    "paths": {
+      "@schemas/*": ["../folio-assistant/cat-harness-tools/schemas/*"]
+    }
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["dist", "node_modules"]
+}

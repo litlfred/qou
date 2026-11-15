@@ -8,141 +8,56 @@ pages: 37-38
 source_pdf: 1402.4615v3.pdf
 source_sha256: b6e7c795cd1a7cd2
 doc_brief: "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel meas ure linked to Jack polynomials."
+text_source: latex
+latex_prose_ratio: 0.928
+latex_coverage_ratio: 0.984
 ---
-asymptotics of large Young diagrams we need to understand some special cases of
-structure constants. Here, we present some technical, but useful lemma about them:
-Lemma 5.6. We have the following identities:
-(1) gµ,ν;ρ = δρ,µ∪ν for |ρ| + ℓ(ρ) ≥ |µ| + ℓ(µ) + |ν| + ℓ(ν);
-(2) gµ,ν;1k = 0 for ˜µ ⁄= ˜ν and 2k ≥ |µ| + ℓ(µ) + |ν| + ℓ(ν) − 2;
-(3) g(k),(k);1k = k;
-(4) g(k),(l);ρ = 0 for |ρ| + ℓ(ρ) = k + l + 1.
-Proof. Let x(µ, ν; ρ) := |µ| + ℓ(µ) + |ν| + ℓ(ν) − (|ρ| + ℓ(ρ)).
-By Theorem 1.4 we know that gµ,ν;ρ is a polynomial in γ of degree at most
-x(µ, ν; ρ) and of the same parity as x(µ, ν; ρ). Hence, if one wants to prove that
-for some particular partitions, gµ,ν;ρ is identically equal to some constant c, it is
-enough to prove that:
-• g(1)
-µ,ν;ρ = c in the case x(µ, ν; ρ) = 0 ;
-• g(2)
-µ,ν;ρ = c in the case x(µ, ν; ρ) = 1 (necessarily, c = 0 in this case);
-• g(1)
-µ,ν;ρ = g(2)
-µ,ν;ρ = c in the case x(µ, ν; ρ) = 2 .
-Applying this idea, we see that the ﬁrst item holds true, sinc e this is true for
-α = 1 [IO02, Proposition 4.9.].
-Consider now the second item. In this case, x(µ, ν; ρ) ≤ 2, hence we need to
-prove that g(1)
-µ,ν;1k = g(2)
-µ,ν;1k = 0. We know from Lemma 5.2 (1) thatc(1)
-π,ρ;1n = 0 for
-any pair of different partitions π, ρ ⊢ n. It means that for n large enough, thanks
-to (19), we have the following equation:
-0 =
-∑
-0≤i≤k+1
-g(1)
-˜π, ˜ρ;(1i) · i! ·
-(n
-i
-)
-,
-hence
-g(1)
-˜π, ˜ρ;(1i) = 0 for each 0 ≤ i ≤ k + 1.
-The same holds for g(2) using Lemma 5.5. This ﬁnishes the case where µ and ν
-have no parts equal to 1.
-The general case follows, since for any λ ⊢ n one has
-Chµ(λ) = ( n − |˜µ|)m1(µ) Ch˜µ(λ).
-In order to prove the third item, we need to prove the equalities
-g(1)
-(k),(k);1k = k = g(2)
-(k),(k);1k (as x((k), (k); 1k )) = 2 ).
-Here, we use Equation (19) again. We have that
-c(1)
-(k1n),(k1n);(1k+n) = 1
-k2
-∑
-0≤i≤k+n
-g(1)
-(k),(k);(1i)i!
-(k + n
-i
-)
-.
-38 M. DOŁ ˛ EGA AND V . FÉRAY
-Moreover, the summation index can be restricted to i ≤ k as g(1)
-(k),(k);(1i) = 0 for
-i > k . By Lemma 5.2 (2) one has that
-c(1)
-(k1n),(k1n);(1k+n) =
-(k + n
-k
-)
-(k − 1)!.
-It gives us
-(k + n
-k
-)
-(k − 1)! = 1
-k2
-∑
-0≤i≤k
-g(1)
-(k),(k);(1i)i!
-(k + n
-i
-)
-and since both sides of the equation are polynomials inn, the equationg(1)
-(k),(k);(1k ) =
-k follows (all others g(1)
-(k),(k);(1i) vanish). The same proof works for α = 2 , using
-Lemma 5.5 (2).
-Finally, let us prove the last item. As x((k), (l), ρ) = 1 in this case, it is enough
-to prove that g(2)
-(k),(l);ρ = 0. Here, we shall use a different approach. It is proved in
-[F´S11, Theorem 5.3] that the coefﬁcient of
-(
-R(2)
-2
-) s2(
-R(2)
-3
-) s3
-· · ·
-in Kerov’s expansion of Ch(2)
-(k) Ch(2)
-(l) − Ch(2)
-(k,l) is, up to some constant factor, the
-number of maps with 2 faces, k + l edges, 2s2 + 3s3 + · · · vertices and some
-additional properties (the details of which is irrelevant here). But, using the theory
-of Euler characteristic, such maps may exist only if
-2 − (k + l) + 2s2 + 3s3 + · · · ≤ 2,
-that is
-2s2 + 3s3 + · · · ≤ k + l.
-This implies that
-deg1
-(
-Ch(2)
-(k) Ch(2)
-(l) − Ch(2)
-(k,l)
-)
-= k + l.
-Expanding it in the Jack characters basis one has
-Ch(2)
-(k) Ch(2)
-(l) = Ch (2)
-(k,l) +
-∑
-|ρ|+ℓ(ρ)≤k+l
-g(2)
-(k),(l);ρ Ch(2)
-ρ ,
-which ﬁnishes the proof. □
-Remark. The equality g(1)
-(k),(k);(1k) = k was also established by Kerov, Ivanov and
-Olshanski [IO02, Proposition 4.12.], using their combinat orial interpretation for
-g(1)
-µ,ν;ρ.
-6. J ACK MEASURE : LAW OF LARGE NUMBERS
-The purpose of this Section is to prove Theorem 1.1. As in [IO02], the key point
+In order to study asymptotics of large Young diagrams we need to understand some special cases of structure constants. Here, we present some technical, but useful lemma about them:
+
+::: lemma
+[]{#lem:SC label="lem:SC"} We have the following identities:
+
+1.  []{#eq:SC-1 label="eq:SC-1"} $g_{\mu,\nu;\rho} = \delta_{\rho, \mu \cup \nu}$ for $|\rho| + \ell(\rho) \geq |\mu| + \ell(\mu) + |\nu| + \ell(\nu)$;
+
+2.  []{#eq:SC-2 label="eq:SC-2"} $g_{\mu,\nu;1^k} = 0$ for $\tilde{\mu} \neq \tilde{\nu}$ and $2k \geq |\mu| + \ell(\mu) + |\nu| + \ell(\nu) - 2$;
+
+3.  []{#eq:SC-3 label="eq:SC-3"} $g_{(k),(k);1^k} = k$;
+
+4.  []{#eq:SC-4 label="eq:SC-4"} $g_{(k),(l);\rho} = 0$ for $|\rho| + \ell(\rho) = k+l+1$.
+:::
+
+::: proof
+*Proof.* Let $x(\mu,\nu;\rho) :=  |\mu| + \ell(\mu) + |\nu| + \ell(\nu) -  (|\rho| + \ell(\rho))$.
+
+By Theorem [\[theo:struct-const\]](#theo:struct-const){reference-type="ref" reference="theo:struct-const"} we know that $g_{\mu,\nu;\rho}$ is a polynomial in $\gamma$ of degree at most $x(\mu,\nu;\rho)$ and of the same parity as $x(\mu,\nu;\rho)$. Hence, if one wants to prove that for some particular partitions, $g_{\mu,\nu;\rho}$ is identically equal to some constant $c$, it is enough to prove that:
+
+-   $g^{(1)}_{\mu,\nu;\rho} = c$ in the case $x(\mu,\nu;\rho) = 0$;
+
+-   $g^{(2)}_{\mu,\nu;\rho} = c$ in the case $x(\mu,\nu;\rho) = 1$ (necessarily, $c=0$ in this case);
+
+-   $g^{(1)}_{\mu,\nu;\rho} = g^{(2)}_{\mu,\nu;\rho} = c$ in the case $x(\mu,\nu;\rho) = 2$.
+
+Applying this idea, we see that the first item holds true, since this is true for $\alpha = 1$ [@IvanovOlshanski2002 Proposition 4.9.].
+
+Consider now the second item. In this case, $x(\mu,\nu;\rho) \le 2$, hence we need to prove that $g^{(1)}_{\mu,\nu;1^k} = g^{(2)}_{\mu,\nu;1^k} = 0$. We know from Lemma [\[lem:SC1\]](#lem:SC1){reference-type="ref" reference="lem:SC1"} [\[eq:SC1-1\]](#eq:SC1-1){reference-type="eqref" reference="eq:SC1-1"} that $c^{(1)}_{\pi,\rho;1^n} = 0$ for any pair of different partitions $\pi, \rho \vdash n$. It means that for $n$ large enough, thanks to [\[EqCG\]](#EqCG){reference-type="eqref" reference="EqCG"}, we have the following equation: $$0 = \sum_{0 \leq i \leq k+1} g^{(1)}_{\tilde{\pi},\tilde{\rho}; (1^i)} \cdot i! \cdot \binom{n}{i},$$ hence $$g^{(1)}_{\tilde{\pi},\tilde{\rho}; (1^i)} = 0 \quad \text{for each $0\leq i\leq k+1$.}$$ The same holds for $g^{(2)}$ using Lemma [\[lem:SC2\]](#lem:SC2){reference-type="ref" reference="lem:SC2"}. This finishes the case where $\mu$ and $\nu$ have no parts equal to $1$.
+
+The general case follows, since for any $\lambda \vdash n$ one has $$\mathop{\mathrm{Ch}}_\mu(\lambda) = (n-|\tilde{\mu}|)_{m_1(\mu)}\mathop{\mathrm{Ch}}_{\tilde{\mu}}(\lambda).\bigskip$$
+
+In order to prove the third item, we need to prove the equalities $$g^{(1)}_{(k),(k);1^k} = k = g^{(2)}_{(k),(k);1^k}
+\text{ (as $x( (k),(k);1^k ))=2$)}.$$ Here, we use Equation [\[EqCG\]](#EqCG){reference-type="eqref" reference="EqCG"} again. We have that $$c^{(1)}_{(k 1^n),(k 1^n);(1^{k+n})} = \frac{1}{k^2} 
+\sum_{0 \leq i \leq k+n} g^{(1)}_{(k),(k);(1^i)}    
+i! \binom{k+n}{i}.$$ Moreover, the summation index can be restricted to $i \le k$ as $g^{(1)}_{(k),(k);(1^i)}=0$ for $i>k$. By Lemma [\[lem:SC1\]](#lem:SC1){reference-type="ref" reference="lem:SC1"} [\[eq:SC1-2\]](#eq:SC1-2){reference-type="eqref" reference="eq:SC1-2"} one has that $$c^{(1)}_{(k 1^n),(k 1^n);(1^{k+n})} = \binom{k+n}{k} (k-1)!.$$ It gives us $$\binom{k+n}{k} (k-1)! = \frac{1}{k^2} 
+\sum_{0 \leq i \leq k} g^{(1)}_{(k),(k);(1^i)}    
+i! \binom{k+n}{i}$$ and since both sides of the equation are polynomials in $n$, the equation $g^{(1)}_{(k),(k);(1^k)} = k$ follows (all others $g^{(1)}_{(k),(k);(1^i)}$ vanish). The same proof works for $\alpha=2$, using Lemma [\[lem:SC2\]](#lem:SC2){reference-type="ref" reference="lem:SC2"} [\[eq:SC2-2\]](#eq:SC2-2){reference-type="eqref" reference="eq:SC2-2"}.
+
+Finally, let us prove the last item. As $x( (k),(l),\rho)=1$ in this case, it is enough to prove that $g^{(2)}_{(k),(l);\rho} = 0$. Here, we shall use a different approach. It is proved in [@NousZonal Theorem 5.3] that the coefficient of $$\left(R_2^{(2)}\right)^{s_2}
+\left(R_3^{(2)}\right)^{s_3} \cdots$$ in Kerov's expansion of $\mathop{\mathrm{Ch}}^{(2)}_{(k)}\mathop{\mathrm{Ch}}^{(2)}_{(l)} - \mathop{\mathrm{Ch}}^{(2)}_{(k,l)}$ is, up to some constant factor, the number of maps with $2$ faces, $k+l$ edges, $2s_2+ 3s_3 + \cdots$ vertices and some additional properties (the details of which is irrelevant here). But, using the theory of Euler characteristic, such maps may exist only if $$2-(k+l)+2s_2+ 3s_3 + \cdots \le 2,$$ that is $$2s_2+ 3s_3 + \cdots \le k+l.$$ This implies that $$\deg_1\left(\mathop{\mathrm{Ch}}^{(2)}_{(k)}\mathop{\mathrm{Ch}}^{(2)}_{(l)} - \mathop{\mathrm{Ch}}^{(2)}_{(k,l)}\right) = k+l.$$ Expanding it in the Jack characters basis one has $$\mathop{\mathrm{Ch}}^{(2)}_{(k)}\mathop{\mathrm{Ch}}^{(2)}_{(l)} = \mathop{\mathrm{Ch}}^{(2)}_{(k,l)} + \sum_{|\rho|+\ell(\rho) \leq k+l} g^{(2)}_{(k),(l);\rho} \mathop{\mathrm{Ch}}^{(2)}_\rho,$$ which finishes the proof. ◻
+:::
+
+::: remark
+The equality $g^{(1)}_{(k),(k);(1^k)} = k$ was also established by Kerov, Ivanov and Olshanski [@IvanovOlshanski2002 Proposition 4.12.], using their combinatorial interpretation for $g^{(1)}_{\mu,\nu;\rho}$.
+:::
+
+# Jack measure: law of large numbers {#sect:FirstOrder}
+
+The purpose of this Section is to prove Theorem [\[theo:RYD-limit\]](#theo:RYD-limit){reference-type="ref" reference="theo:RYD-limit"}. As in [@IvanovOlshanski2002], the key point is to prove the convergence of polynomial functions.

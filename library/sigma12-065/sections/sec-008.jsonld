@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/sigma12-065/sections/sec-008",
   "@type": [
     "doco:Section"
@@ -10,13 +15,13 @@
   "contains": [
     "library/sigma12-065/blocks/prose-sec-008",
     "library/sigma12-065/blocks/lem-sec-008-01",
-    "library/sigma12-065/blocks/rem-sec-008-02",
+    "library/sigma12-065/blocks/remark-sec-008-02",
     "library/sigma12-065/blocks/cor-sec-008-03",
     "library/sigma12-065/blocks/thm-sec-008-04",
     "library/sigma12-065/blocks/thm-sec-008-05",
-    "library/sigma12-065/blocks/rem-sec-008-06"
+    "library/sigma12-065/blocks/remark-sec-008-06"
   ],
-  "derivedFrom": "library/sigma12-065/manifest",
-  "sourceDocument": "library/sigma12-065/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/sigma12-065",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/sigma12-065",
   "provenance": "ingested"
 }

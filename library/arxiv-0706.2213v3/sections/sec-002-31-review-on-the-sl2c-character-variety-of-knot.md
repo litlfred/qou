@@ -8,29 +8,21 @@ pages: 4-5
 source_pdf: 0706.2213v3.pdf
 source_sha256: 75dd29acc9e34bda
 doc_brief: "NON–ABELIAN REIDEMEISTER TORSION FOR TWIST KNOTS — This paper gives an explicit formula for the SL 2(C)−non–abelian Reidemeister torsion as deﬁned in [Dub06] in the case of twist knots."
+text_source: latex
+latex_prose_ratio: 0.961
+latex_coverage_ratio: 0.938
 ---
-group π, we let
-R(π; SL2(C)) = Hom(π; SL2(C))
-denote the space of SL 2(C)-representations of π. As usual, this space is endowed with
-the compact–open topology. Here π is assumed to have the discrete topology and the Lie
-group SL2(C) is endowed with the usual one.
-A representation ρ: π → SL2(C) is called abelian if ρ(π) is an abelian subgroup of
-SL2(C). A representation ρ is called reducible if there exists a proper subspace U⊂ C2
-such that ρ(g)(U)⊂ U, for all g∈ π. Of course, any abelian representation is reducible
-(while the converse is false in general). A representation i s called irreducible if it is not
-reducible.
-The group SL2(C) acts on the representation spaceR(π; SL2(C)) by conjugation, but the
-naive quotient R(π; SL2(C))/SL2(C) is not Hausdor ﬀin general. Following [CS83], we
-will focus on the character variety X(π) = X(π; SL2(C)) which is the set of characters of
-π. Associated to the representation ρ∈ R(π; SL2(C)), its character χρ : π→ C is deﬁned
-by χρ(g) = tr(ρ(g)), where tr denotes the trace of matrices. In some sense X(π) is the
-“algebraic quotient” of R(π; SL2(C)) by the action by conjugation of PSL 2(C). It is well
-known that R(π, SL2(C)) and X(π) have the structure of complex algebraic a ﬃne varieties
-(see [CS83]).
-4
-Let Rirr(π; SL2(C)) denote the subset of irreducible representations of π, and Xirr(π)
-denote its image under the map R(π; SL2(C))→ X(π). Note that two irreducible repre-
-sentations of π in SL2(C) with the same character are conjugate by an element of SL 2(C),
-see [CS83, Proposition 1.5.2]. Similarly, we write Xnab(Π(K)) for the image of the set
-Rnab(Π(K)) of non–abelian representations in X(Π(K)). Note that Xirr(Π(K))⊂ Xnab(Π(K))
-and observe that this inclusion is strict in general.
+\label{ModuliK}
+
+
+Given a finitely genera\-ted group $\pi$, we let $$R(\pi; \SL) = \mathrm{Hom}(\pi; \SL)$$ denote the space of $\SL$-representations of $\pi$. As usual, this space is endowed with the {compact--open topology}. Here $\pi$ is assumed to have the discrete topology and the Lie group $\SL$ is endowed with the usual one. 
+
+A representation $\rho \colon \pi \to \SL$ is called \emph{abelian} if $\rho(\pi)$ is an abelian subgroup of $\SL$.  A representation $\rho$ is called \emph{reducible} if there exists a \emph{proper} subspace $U \subset \C^2$ such that $\rho(g)(U) \subset U$, for all $g \in \pi$. Of course, any abelian representation is reducible (while the converse is false in general). A  
+representation is called {\it irreducible} if it is not reducible.
+
+  The group $\SL$ acts on the representation space $R(\pi; \SL)$ by conjugation, but the naive quotient $R(\pi; \SL)/\SL$ is not Hausdorff in general. Following~\cite{CS:1983}, we will focus on the \emph{character variety} $X(\pi) = X(\pi; \SL)$ which is the set of \emph{characters} of $\pi$. Associated to the representation $\rho \in R(\pi; \SL)$, its character $\chi_\rho \colon \pi \to \C$ is defined by $\chi_\rho(g) = \mathrm{tr}(\rho(g))$, where $\mathrm{tr}$ denotes the trace of matrices. 
+    In some sense $X(\pi)$ is the \lq\lq algebraic quotient\rq\rq\, of $R(\pi; \SL)$ by the action by conjugation of $\PSL$. It is well known that $R(\pi, \SL)$ and $X(\pi)$ have the structure of {complex algebraic affine varieties} (see~\cite{CS:1983}).
+
+  
+  Let ${R}^\mathrm{irr}(\pi; \SL)$ denote the subset of irreducible representations of $\pi$, and $X^\mathrm{irr}(\pi)$ denote its image under the map ${R}(\pi; \SL) \to X(\pi)$. Note that two irreducible representations of $\pi$ in $\SL$ with the same character are conjugate by an element of $\SL$, see~\cite[Proposition 1.5.2]{CS:1983}. Similarly, we write $X^\mathrm{nab}(\Pi(K))$ for the image of the set $R^{\mathrm{nab}}(\Pi(K))$ of non--abelian representations in $X(\Pi(K))$. 
+Note that $X^\mathrm{irr}(\Pi(K)) \subset X^\mathrm{nab}(\Pi(K))$ and observe that this inclusion is strict in general.

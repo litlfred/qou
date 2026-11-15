@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1912.10638v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1912.10638v2 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1912.10638v2",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1912.10638&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1912.10638v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1912.10638v2",
+    "content_type": "application/gzip",
+    "sha256": "ce23dcf12c684da49761ada220db2c7aba216eae0d8fed280e71a8ab97278ccc",
+    "bytes": 1582630,
+    "fetched": "2026-10-10T15:14:58+00:00",
+    "files": [
+      {
+        "path": "source/files/Asymptotics_of_some_quantum_invariants_of_the_Whitehead_chains.tex",
+        "role": "tex",
+        "sha256": "7e0474ebf32daf6288e9eece81ae140837a7148579d92deb1b3e9fe70a25fc34",
+        "bytes": 125982
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

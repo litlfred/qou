@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1604.01247v2/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1604.01247v2/blocks/prose-sec-005",
   "kind": "prose",
   "title": "Exceptional almost classical quantum spacetime",
   "pageStart": 16,
   "pageEnd": 18,
   "text": "../sections/sec-005-34-exceptional-almost-classical-quantum-spacetim.md",
-  "derivedFrom": "library/arxiv-1604.01247v2/manifest",
-  "sourceDocument": "library/arxiv-1604.01247v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1604.01247v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1604.01247v2",
   "provenance": "ingested"
 }

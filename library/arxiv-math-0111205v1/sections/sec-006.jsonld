@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-0111205v1/sections/sec-006",
   "@type": [
     "doco:Section"
   ],
-  "title": "The sets of 2-morphisms in E are ﬁnite dimensional F-vector spaces and the",
-  "pageStart": 7,
-  "pageEnd": 7,
+  "title": "Modularity of the Quantum Double",
+  "pageStart": 29,
+  "pageEnd": 39,
   "contains": [
     "library/arxiv-math-0111205v1/blocks/prose-sec-006"
   ],
-  "derivedFrom": "library/arxiv-math-0111205v1/manifest",
-  "sourceDocument": "library/arxiv-math-0111205v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0111205v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0111205v1",
   "provenance": "ingested"
 }

@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/sections/sec-004",
   "@type": [
     "doco:Section"
   ],
-  "title": "X1 =0⇑/arrowvertexdbl⇓X0 =−x0 −x1,X 1 =x2,X 2 =−x1",
-  "pageStart": 6,
-  "pageEnd": 7,
+  "title": "Rational points on E and Haken manifolds",
+  "pageStart": 7,
+  "pageEnd": 8,
   "contains": [
     "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/blocks/prose-sec-004"
   ],
-  "derivedFrom": "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/manifest",
-  "sourceDocument": "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh",
   "provenance": "ingested"
 }

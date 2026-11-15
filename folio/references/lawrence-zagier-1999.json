@@ -1,0 +1,29 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "lawrence-zagier-1999",
+  "type": "article-journal",
+  "title": "Modular forms and quantum invariants of 3-manifolds",
+  "author": [
+    {
+      "family": "Lawrence",
+      "given": "Ruth"
+    },
+    {
+      "family": "Zagier",
+      "given": "Don"
+    }
+  ],
+  "container-title": "Asian Journal of Mathematics",
+  "volume": "3",
+  "issue": "1",
+  "page": "93-108",
+  "issued": {
+    "date-parts": [
+      [
+        1999
+      ]
+    ]
+  },
+  "DOI": "10.4310/AJM.1999.v3.n1.a5",
+  "note": "The Poincare-sphere WRT invariant as an Eichler integral of a weight-3/2 false theta; flat-connection asymptotics via near-modularity. Foundation of the Sigma(2,3,5) keystone false-theta machinery. NOT READ AT FULL TEXT IN-REPO and not needed for it: `hikami2005brieskorn` (library/arxiv-math-ph-0405028v2/0405028v2.pdf) restates the Poincare-sphere result as its Theorem 10, attributed to this paper, and generalises it to all Sigma(p1,p2,p3). Every host carrying this paper is EGRESS_BLOCKED from the remote execution environment (math.huji.ac.il, people.mpim-bonn.mpg.de, arxiv.org, doi.org), so read Hikami instead unless the PDF is uploaded. RELEVANCE TO c_sigma: the Brieskorn asymptotic has the shape sqrt(N) * sum_l S_l e^{i CS N}, with S_l the Reidemeister torsion (Hikami section 6) and the exponential a PHASE only since Vol = 0 -- so it is the non-hyperbolic analogue of c_sigma = k |tau_DG|^{-1/2}, with a different N-power and no Lobachevsky saddle. The two must not be conflated."
+}

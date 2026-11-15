@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0501112v3/blocks/prose-sec-024",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0501112v3/blocks/prose-sec-024",
   "kind": "prose",
-  "title": "Factorization of characters and Gaussian ﬂuctuations. The follow-",
-  "pageStart": 10,
-  "pageEnd": 12,
-  "text": "../sections/sec-024-31-factorization-of-characters-and-gaussian-ﬂuct.md",
-  "derivedFrom": "library/arxiv-math-0501112v3/manifest",
-  "sourceDocument": "library/arxiv-math-0501112v3/manifest",
+  "title": "Cumulants",
+  "pageStart": 26,
+  "pageEnd": 26,
+  "text": "../sections/sec-024-51-cumulants.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0501112v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0501112v3",
   "provenance": "ingested"
 }

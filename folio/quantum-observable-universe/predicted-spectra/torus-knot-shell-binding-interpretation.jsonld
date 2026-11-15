@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-torus-knot-shell-binding-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:torus-knot-shell-binding-interpretation",
+  "kind": "remark",
+  "title": "Torus-knot mediation of inter-shell crossings",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-torus-knot-shell-binding",
+    "papers/quantum-observable-universe/blocks/prop-shell-closure-normal-form"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-torus-knot-shell-binding",
+  "text": "torus-knot-shell-binding-interpretation.md",
+  "provenance": "authored"
+}

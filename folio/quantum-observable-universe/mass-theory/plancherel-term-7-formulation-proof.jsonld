@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-plancherel-term-7-formulation",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:plancherel-term-7-formulation",
+  "kind": "proof",
+  "title": "Proof of plancherel term 7 formulation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-plancherel-term-7-formulation"
+  ],
+  "text": "plancherel-term-7-formulation-proof.md",
+  "provenance": "authored"
+}

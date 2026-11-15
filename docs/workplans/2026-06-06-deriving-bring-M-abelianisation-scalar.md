@@ -66,7 +66,7 @@ both are weight-1 (rank-2 Hodge) Picard–Fuchs.
 The Gauss–Manin monodromy preserves the curve's principal polarisation (the
 cup-product symplectic form, non-degenerate on the rank-2 `W`-Hodge plane by
 Hodge–Riemann), so `B ∈ Sp(2) = SL₂` ⇒ **`det B = 1`**
-([`prop:sl2-prolongation-recurrence`](../../content/quantum-observable-universe/mass-theory/sl2-prolongation-recurrence.md),
+([`prop:sl2-prolongation-recurrence`](../../folio/quantum-observable-universe/mass-theory/sl2-prolongation-recurrence.md),
 Lean `sl2_prolongation_recurrence`, sorry-free). Hence
 
 > `R = x² − τ·x + 1`,  recurrence `a_D⁽ⁿ⁺²⁾ = τ·a_D⁽ⁿ⁺¹⁾ − a_D⁽ⁿ⁾`,

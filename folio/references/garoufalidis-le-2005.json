@@ -1,0 +1,37 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "garoufalidis-le-2005",
+  "library": {
+    "docId": "0309214v3",
+    "dir": "library/0309214v3",
+    "pdf": "library/0309214v3/0309214v3.pdf",
+    "stage": "candidates",
+    "pages": 41,
+    "sections": 23
+  },
+  "type": "article-journal",
+  "title": "The colored Jones function is q-holonomic",
+  "author": [
+    {
+      "family": "Garoufalidis",
+      "given": "Stavros"
+    },
+    {
+      "family": "Lê",
+      "given": "Thang T. Q."
+    }
+  ],
+  "container-title": "Geometry & Topology",
+  "issued": {
+    "date-parts": [
+      [
+        2005
+      ]
+    ]
+  },
+  "volume": "9",
+  "page": "1253-1293",
+  "DOI": "10.2140/gt.2005.9.1253",
+  "URL": "https://doi.org/10.2140/gt.2005.9.1253",
+  "note": "arXiv:math/0309214. The existence half of the AJ machinery: the (multi-)colored Jones function satisfies a nontrivial q-difference recurrence for every knot and link — a THEOREM needing no framework input. Added 2026-07-06 (ds4b Borromean-AJ literature check, PR #3434); metadata verified via msp.org/Project Euclid snippets, PDF body not read in-sandbox."
+}

@@ -8,7 +8,8 @@ pages: 14-14
 source_pdf: 1611.03697v5.pdf
 source_sha256: 3d7e5a14a079c8c5
 doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory."
+text_source: latex
+latex_prose_ratio: 0.867
+latex_coverage_ratio: 1.0
 ---
-where we can say something about solutions to the Riemann-Hilbert p roblem. Both are also of
-interest in theoretical physics. They are treated a little more thor oughly in Sections 6 and 7, but
-there are many unanswered questions which we leave for future re search.
+There are two important classes of examples of BPS structures where we can say something about solutions to the Riemann-Hilbert problem. Both are also of interest in theoretical physics. They are treated a little more thoroughly in Sections \ref{gw} and \ref{in}, but  there are many unanswered questions which we leave for future research.

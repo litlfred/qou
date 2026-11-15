@@ -66,6 +66,10 @@ from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
 from y_lambda_su_n import y_lambda_su_n  # noqa: E402
 from hecke_character_symbolic import _hoefsmit_build  # noqa: E402
 
+# Module-scope constants below are built at import time; mpmath's default is
+# 15 dps, so raise it first (import-time dps ratchet).
+set_compute_dps()
+
 # CODATA: sin^2(theta_W) = 0.23129 -> cot(theta_W). Carried as the target the
 # two consumer files compare against, not as an input to anything computed here.
 COT_THETA_W_CODATA = mp.mpf("1.82306787")

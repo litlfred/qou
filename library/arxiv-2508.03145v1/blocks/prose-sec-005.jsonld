@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2508.03145v1/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2508.03145v1/blocks/prose-sec-005",
   "kind": "prose",
   "title": "The Tannakian duality theorem",
   "pageStart": 23,
   "pageEnd": 29,
   "text": "../sections/sec-005-the-tannakian-duality-theorem.md",
-  "derivedFrom": "library/arxiv-2508.03145v1/manifest",
-  "sourceDocument": "library/arxiv-2508.03145v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2508.03145v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2508.03145v1",
   "provenance": "ingested"
 }

@@ -1,8 +1,14 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant/folio-assistant-sci/ns#"
+    }
+  ],
   "@id": "library/arxiv-math-0411647v2/blocks/thm-sec-014-08",
   "@type": [
-    "folio:Theorem",
+    "folio-assistant-sci:Theorem",
     "doco:Section"
   ],
   "kind": "theorem",
@@ -10,6 +16,6 @@
   "pageEnd": 53,
   "text": "thm-sec-014-08.md",
   "derivedFrom": "library/arxiv-math-0411647v2/sections/sec-014",
-  "sourceDocument": "library/arxiv-math-0411647v2/manifest",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0411647v2",
   "provenance": "ingested"
 }

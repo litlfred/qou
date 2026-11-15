@@ -30,10 +30,26 @@ fit; not a 4th-calibration violation).
 Numerical evaluator for B/A from the spectral decomposition of the
 6×6 transfer matrix of H_3(R, q).
 
-Implements the boxed formula of
-[prop:b-over-a-spectral-decomposition](
-  content/quantum-observable-universe/braids-and-knots/b-over-a-spectral-decomposition.md
-):
+Implements the boxed formula of the retired `b-over-a-spectral-decomposition`
+proposition (deleted in c703e576b5; record in docs/audits/2026-10-11-retired-label-records.md §B).
+
+🛑 THAT BLOCK IS REMOVED, AND IT WAS REMOVED BECAUSE THIS FORMULA IS NOT THE
+CANONICAL ONE. Owner ruling "a1", relayed 2026-10-10: the carrier stays removed
+and citations point at the record. Deleted in c703e576b5, 2026-04-27,
+"content+compute: delete stale b-over-a-spectral-decomposition + v3 artifacts",
+whose own body states the ground verbatim:
+
+    The .md formula in `b-over-a-spectral-decomposition`
+      (E_0/A) Sum_lambda w_lambda log|Lambda_lambda^free / Lambda_lambda^nuc|
+    is NOT the canonical formula. v3 was attacking the wrong target.
+
+The canonical mass identity it was superseded by is
+B(h) = m_e * rho * tr_M(T_w) at q = q_0, a single finite-categorical pipeline.
+So read everything below as the recorded v3 evaluator, NOT as a live derivation,
+and do NOT restore the carrier. The markdown link that stood here pointed at
+`folio/.../braids-and-knots/b-over-a-spectral-decomposition.md`, a path deleted
+with the block -- a dead link, which is how the dead-citation audit found it
+(bean qou-3kni).
 
     B/A = (E_0 / A) · Σ_λ w_λ · log| Λ_λ^free / Λ_λ^nuc(q_0; Z, N) |
 

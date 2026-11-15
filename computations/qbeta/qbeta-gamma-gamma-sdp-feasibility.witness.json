@@ -1,0 +1,295 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T15:15:43.782625+00:00",
+  "commitSha": "266c147ee39666e932727287228d9e48d3b84a5c",
+  "assertions": [
+    {
+      "name": "hoefsmit_generators_are_symmetric_so_the_basis_is_orthogonal",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "every generator of every block at n = 2, 3, 4 is a symmetric matrix, so the realisation is the ORTHOGONAL one and PSD-ness is invariant under the remaining freedom. Non-symmetric: none"
+    },
+    {
+      "name": "control_reproduces_the_h2_parity_rule",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "sigma_0^k PSD-feasible iff k even, k = 0..8: [(0, True), (1, False), (2, True), (3, False), (4, True), (5, False), (6, True), (7, False), (8, True)] -- this is GammaGammaWordSelection.h2_psdFeasible_iff_even (sorry-free), recovered by this file's PSD machinery"
+    },
+    {
+      "name": "control_predicate_is_not_vacuous_at_n3_and_n4",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "(sigma_0^2 feasible, sigma_0 feasible) per n: {2: (True, False), 3: (True, False), 4: (True, False)}. The shipped gluon vertex is accepted and the bare crossing is rejected at EVERY n tested -- so a rejection below is about the word, not about a predicate that refuses everything"
+    },
+    {
+      "name": "h3_vertex_has_det_one_and_trace_minus_one_minus_h_squared",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "in the (2,1) block: a = -1/(q*(q**2 + 1)), a' = q**3/(q**2 + 1) (= z_D exactly); the matrices satisfy the Hecke quadratic (True) and the braid relation (True); tr(V) + 1 + h^2 = 0 and det(V) - 1 = 0"
+    },
+    {
+      "name": "one_dim_blocks_are_exactly_one_and_the_2x2_is_elliptic",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "the two 1-dim H_3 blocks send the gamma-gamma vertex to {(3,): '1.0', (1, 1, 1): '1.0'} -- exactly 1, independently confirming the character result of #7295 from the Hoefsmit matrices; and tr(V) = -1.0437062085325219894 with |tr| < 2, so V is ELLIPTIC and every power has eigenvalues on the unit circle"
+    },
+    {
+      "name": "v_cubed_is_the_identity_only_at_q_equals_one",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "for a det-1 2x2, V^3 = 1 iff tr V = -1, i.e. h^2 = 0. Solving tr(V) = -1 over q > 0 gives [1] -- the CLASSICAL LIMIT only. So the Borromean baryon (sigma_0 sigma_1^-1)^3 is SDP-feasible only as q -> 1, and at q_0 it is not"
+    },
+    {
+      "name": "no_gamma_gamma_power_is_psd_feasible_at_n3",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "k = 1..200: max tr(V^k) = 1.99975281675 < 2, and det(V^200) = 1.0 = 1 -- so PsdDetOneTrace.not_posSemidef_of_trace_lt_two (sorry-free) applies to every one of them. Direct PSD test for k <= 12 agrees: [False, False, False, False, False, False, False, False, False, False, False, False]"
+    },
+    {
+      "name": "four_strand_feasible_set_is_tiny_and_non_empty",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "5 of 8190 gamma-gamma words with 1..12 vertices on four strands (both indices, every order) are PSD-feasible: [[0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0, 1], [0, 0, 1, 1, 0, 1, 1, 0, 0, 1], [0, 1, 1, 0, 0, 1, 0, 0, 1, 1], [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]]. NON-empty, unlike n = 3, and under 1 % of the candidate set -- the SDP is a real selector here"
+    },
+    {
+      "name": "alternating_word_is_feasible_iff_its_power_is_even",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "(v0 v1)^m PSD-feasible by m: {1: False, 2: True, 3: False, 4: True, 5: False, 6: True} -- feasible iff m is EVEN, which is the same parity rule the H_2 gluon vertex obeys (sigma_0^k PSD iff k even, h2_psdFeasible_iff_even, sorry-free). The smallest derived candidate is (v0 v1)^2: four vertices, eight letters"
+    },
+    {
+      "name": "parity_rule_mechanism_is_a_negative_eigenvalue_not_an_analogy",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "in BOTH 3-dimensional blocks [(3, 1), (2, 1, 1)], the spectrum of v0 v1 is exactly {-q^2, -q^-2, 1} = ['-1.23205245417', '-0.811653754366', '1.0'] -- two NEGATIVE eigenvalues, so odd powers cannot be PSD and even powers have spectrum {q^-4, 1, q^4}. That is the SAME cause as the H_2 rule (sigma_0 has eigenvalue -1/q), not an analogy with it. And (v0 v1)^2 is NOT the identity in either block (max |M - I| > 1e-3), so its feasibility is genuine positivity rather than triviality -- without this the 'selection' would be vacuous"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 27203,
+  "computation": "qbeta-gamma-gamma-sdp-feasibility",
+  "scriptFile": "qbeta_gamma_gamma_sdp_feasibility_probe.py",
+  "scriptHash": "29c9806fe64a",
+  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_gamma_gamma_sdp_feasibility_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_gamma_gamma_sdp_feasibility_probe.py"
+  },
+  "description": "The confinement SDP's PSD-feasibility predicate (GammaGammaWordSelection.SDPSelected) rejects every non-empty gamma-gamma word at n=3 -- the H_3 vertex has det 1 and trace -1-h^2, hence is elliptic, and V^3=1 forces q=1, so the Borromean baryon is SDP-feasible only in the classical limit; the exclusion rests on QOU.Mass.PsdDetOneTrace (sorry-free), not on arithmetic. At n=4 it is NON-empty and very selective: 5 of 8190 words, the alternating (v0 v1)^m being feasible iff m is even -- the same parity rule as the H_2 gluon vertex. Controls: the predicate reproduces the H_2 rule and accepts sigma_0^2 at every n tested. Feasibility ONLY -- no cost/minimality, no observable. Scope-(a).",
+  "data": {
+    "mechanism": {
+      "spectrum_of_v0v1_per_block": {
+        "(4,)": [
+          "1.0"
+        ],
+        "(3, 1)": [
+          "-1.23205245417",
+          "-0.811653754366",
+          "1.0"
+        ],
+        "(2, 2)": [
+          "1.0",
+          "1.0"
+        ],
+        "(2, 1, 1)": [
+          "-1.23205245417",
+          "-0.811653754366",
+          "1.0"
+        ],
+        "(1, 1, 1, 1)": [
+          "1.0"
+        ]
+      },
+      "max_dev_from_identity_per_block": {
+        "(4,)": "8.03561e-41",
+        "(3, 1)": "1.81165",
+        "(2, 2)": "9.18355e-41",
+        "(2, 1, 1)": "2.23205",
+        "(1, 1, 1, 1)": "1.72192e-40"
+      },
+      "three_dim_blocks_spectrum": "{-q^2, -q^-2, 1}",
+      "even_power_spectrum": "{q^-4, 1, q^4}",
+      "note": "the 1-dim and (2,2) blocks send every power to the identity; all the discrimination lives in the two 3-dim blocks, which carry identical spectra"
+    },
+    "h3_vertex": {
+      "a": "-1/(q*(q**2 + 1))",
+      "a_prime": "q**3/(q**2 + 1)",
+      "a_prime_is_z_D": true,
+      "det": "1",
+      "trace": "-1 - h^2",
+      "trace_at_q0": "-1.0437062085325219894",
+      "one_dim_blocks": {
+        "(3,)": "1.0",
+        "(1, 1, 1)": "1.0"
+      },
+      "V_cubed_eq_one_iff": "q = 1 (classical limit)"
+    },
+    "controls": {
+      "h2_parity_rule": [
+        [
+          0,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          2,
+          true
+        ],
+        [
+          3,
+          false
+        ],
+        [
+          4,
+          true
+        ],
+        [
+          5,
+          false
+        ],
+        [
+          6,
+          true
+        ],
+        [
+          7,
+          false
+        ],
+        [
+          8,
+          true
+        ]
+      ],
+      "sigma0_sq_feasible_sigma0_not": {
+        "2": [
+          true,
+          false
+        ],
+        "3": [
+          true,
+          false
+        ],
+        "4": [
+          true,
+          false
+        ]
+      }
+    },
+    "feasibility": {
+      "n3_powers_tested": 200,
+      "n3_feasible": [],
+      "n4_words_tested": 8190,
+      "n4_feasible": [
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      "max_trace_n3": "1.9997528167520007534"
+    },
+    "lean": [
+      "QOU.Mass.PsdDetOneTrace.trace_ge_two -- a real PSD 2x2 of det 1 has trace >= 2",
+      "QOU.Mass.PsdDetOneTrace.eq_one_of_trace_eq_two -- equality only for the identity",
+      "QOU.Mass.PsdDetOneTrace.not_posSemidef_of_trace_lt_two -- the form used here",
+      "QOU.Mass.GammaGammaWordSelection.h2_psdFeasible_iff_even -- the control this file reproduces"
+    ],
+    "scope": "a",
+    "qou_ales_two_halves": {
+      "n3": "EMPTY -- gamma-gamma production and PSD-feasibility have no common non-empty solution on three strands at q_0",
+      "n4": "NON-EMPTY and selective -- 5 of 8190 words to 12 vertices",
+      "smallest_derived_candidate": "(v0 v1)^2, four vertices, eight letters",
+      "parity_rule": "(v0 v1)^m feasible iff m even -- the same rule as the H_2 gluon vertex sigma_0^k",
+      "not_claimed": [
+        "the feasible set is NOT characterised, only enumerated to 12 vertices; the two sporadic 10-vertex words show it is not merely the even alternating family, and nothing here explains them",
+        "no cost / minimality is computed -- SDPSelected also requires minimal cost among feasible candidates, so this narrows the candidate set without selecting a word",
+        "no observable is computed and no Q_beta comparison is made"
+      ]
+    },
+    "basis": "orthogonal Hoefsmit (symmetric generators, CHECK 0); PSD is invariant under the remaining orthogonal freedom, so the verdicts are basis-free",
+    "q0_pin": "proton",
+    "q0_value": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

@@ -1,0 +1,110 @@
+% \usepackage{showkeys}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Line numbering
+\usepackage[left,mathlines,pagewise]{lineno}
+\newcommand*\patchAmsMathEnvironmentForLineno[1]{%
+\expandafter\let\csname old#1\expandafter\endcsname\csname #1\endcsname
+\expandafter\let\csname oldend#1\expandafter\endcsname\csname end#1\endcsname
+\renewenvironment{#1}%
+{\linenomath\csname old#1\endcsname}%
+{\csname oldend#1\endcsname\endlinenomath}}%
+\newcommand*\patchBothAmsMathEnvironmentsForLineno[1]{%
+\patchAmsMathEnvironmentForLineno{#1}%
+\patchAmsMathEnvironmentForLineno{#1*}}%
+\AtBeginDocument{%
+\patchBothAmsMathEnvironmentsForLineno{equation}%
+\patchBothAmsMathEnvironmentsForLineno{align}%
+\patchBothAmsMathEnvironmentsForLineno{flalign}%
+\patchBothAmsMathEnvironmentsForLineno{alignat}%
+\patchBothAmsMathEnvironmentsForLineno{gather}%
+\patchBothAmsMathEnvironmentsForLineno{multline}%
+}
+
+
+%very horrible equation
+\usepackage{array} %\displaystyle%
+\newenvironment{ma}{\renewcommand{\arraystretch}{2.0}\begin{array}{>{\displaystyle}r >{\displaystyle}c >{\displaystyle}l}}{\end{array}\renewcommand{\arraystretch}{1.0}}%
+
+\usepackage{amsmath,amsxtra,amsthm}
+\usepackage[varg]{txfonts}
+\usepackage[unicode]{hyperref}
+\usepackage{framed}
+%\usepackage[amsmath,hyperref,framed,thmmarks]{ntheorem}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+
+%\usepackage{bbm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+ %vruler
+%\usepackage{vruler}
+%\setvruler[10pt][0][2][4][1][1cm][1cm][-5mm][\textheight]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Theorems
+
+\makeatletter
+\def\th@plain{%
+%%  \let\thm@indent\noindent % no indent
+\thm@headfont{\bfseries}% heading font is bold
+\thm@notefont{}% same as heading font
+%%  \thm@headpunct{.}% add period after heading
+%%  \let\thm@swap\@gobble
+%%  \thm@preskip\topsep
+%%  \thm@postskip\theorempreskipamount
+  \itshape % body font
+}
+\makeatother
+
+\newtheorem{theorem}{Theorem}%
+\renewcommand{\thetheorem}{\Roman{theorem}}
+\newtheorem{lemma}{Lemma}[section]%
+\newtheorem{proposition}[lemma]{Proposition}%
+\newtheorem{corollary}[lemma]{Corollary}%
+
+\newcounter{mythmct}
+\setcounter{mythmct}{0}
+%\renewcommand{\themythmct}{\Roman{mythmct}}
+\newtheorem{mythm}[mythmct]{Theorem}
+
+\newtheorem{remark}[lemma]{Remark}
+\newtheorem{example}[lemma]{Example}%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Hyperlinks in blue
+
+\hypersetup{
+breaklinks=true,
+colorlinks=true,
+linkcolor=blue,
+citecolor=blue,
+urlcolor=blue,
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Paragraph layout
+\setlength{\parindent}{0ex}
+\setlength{\parskip}{1ex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% displaybreaks
+\allowdisplaybreaks
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% boldmath (from http://www.volkerschatz.com/tex/thacks.html)
+\def\bfseries{\fontseries \bfdefault \selectfont \boldmath}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Roman numbers for enumerate
+\renewcommand{\theenumi}{\textup{(\roman{enumi})}}
+\renewcommand{\labelenumi}{\theenumi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% fnsymbols by asterisks
+\makeatletter
+\def\@fnsymbol#1{\ensuremath{\ifcase#1\or *\or **\or {**}* \or {**}{**}\else\@ctrerr\fi}}
+\makeatother
+
+\setcounter{tocdepth}{1}

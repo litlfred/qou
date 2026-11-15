@@ -1,0 +1,94 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1704.02352v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1704.02352v2 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1704.02352v2",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1704.02352&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1704.02352v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1704.02352v2",
+    "content_type": "application/gzip",
+    "sha256": "37a79575d8c4926cc8e2a3e6815667d0bb60180cc74e5a7e857d91ebdc6c5b8c",
+    "bytes": 57508,
+    "fetched": "2026-10-10T15:12:04+00:00",
+    "files": [
+      {
+        "path": "source/files/approximate-factorization-Jack.bbl",
+        "role": "bbl",
+        "sha256": "0a3fb212528698327455e26a56db8eb7ce75e154bfc858a26cc1d32c53d78d46",
+        "bytes": 7096
+      },
+      {
+        "path": "source/files/approximate-factorization-Jack.tex",
+        "role": "tex",
+        "sha256": "0412b58e4e9c999c3643663c35edaccb882fbeca2bf146d56adc0f01c671f44c",
+        "bytes": 121466
+      },
+      {
+        "path": "source/files/figures/bok10alpha4-1000prob.tex",
+        "role": "tex",
+        "sha256": "656610fb6f0924ea67f5e96711300300cf4ce40b4ad9f261b33c052090f53426",
+        "bytes": 17369
+      },
+      {
+        "path": "source/files/figures/bok10alpha4-1000probANISOTROPIC.tex",
+        "role": "tex",
+        "sha256": "cf1a05c404056c8e4c1251bf315f257d0b05d10496cdd83312287e9c2cfc48a4",
+        "bytes": 17444
+      },
+      {
+        "path": "source/files/figures/bok20alpha4-1000probANISO.tex",
+        "role": "tex",
+        "sha256": "3acae89af92c3438e7a9a61b69ea322bf149d7a8954a6b30946098aff4bd1bad",
+        "bytes": 37552
+      },
+      {
+        "path": "source/files/figures/bok5alpha4-1000prob-ANISORESCALED.tex",
+        "role": "tex",
+        "sha256": "bc4cc3d9dc654c3e9d7210674658d8be6f58b34bdb56ca28df940f4e083517ab",
+        "bytes": 7528
+      },
+      {
+        "path": "source/files/figures/bok5alpha4-1000prob.tex",
+        "role": "tex",
+        "sha256": "7124229dc96d1a968a0e43cd4ccc2699502906f92e981657dbcfce6b252c26c3",
+        "bytes": 7428
+      },
+      {
+        "path": "source/files/figures/single-walk-bok80.tex",
+        "role": "tex",
+        "sha256": "c0380710c844c52d82288c1af9bdbef12c7ea456e88f2fa8f434a1f8200c8bd8",
+        "bytes": 16486
+      },
+      {
+        "path": "source/files/genyoungtabtikz.sty",
+        "role": "sty",
+        "sha256": "971b2da9af9a09e05aba894e335bc20c1cf9bcba621b7a1879d51addbdff401b",
+        "bytes": 32906
+      },
+      {
+        "path": "source/files/preamble.tex",
+        "role": "tex",
+        "sha256": "248230dba50d0d1d3c3bcbf6e469f52b72486600dc68801768268387de58665c",
+        "bytes": 6428
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

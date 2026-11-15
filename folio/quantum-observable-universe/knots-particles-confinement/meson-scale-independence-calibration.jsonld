@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-meson-scale-independence-calibration",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:meson-scale-independence-calibration",
+  "kind": "remark",
+  "title": "Calibration structure and the volume-zero geometric core of meson-scale independence",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-meson-scale-independence"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-meson-scale-independence",
+  "tags": [
+    "meson-scale",
+    "calibration",
+    "cal-3",
+    "hopf-volume",
+    "obstruction"
+  ],
+  "text": "meson-scale-independence-calibration.md",
+  "provenance": "authored"
+}

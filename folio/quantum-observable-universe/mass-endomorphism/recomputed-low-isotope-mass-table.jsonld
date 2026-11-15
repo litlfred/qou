@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-recomputed-low-isotope-mass-table",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:recomputed-low-isotope-mass-table",
+  "kind": "remark",
+  "title": "Recomputed low-isotope mass table after the q-Hecke character gap closure (proton, neutron, D, T, ³He)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-hecke-seminormal-character-closure",
+    "papers/quantum-observable-universe/blocks/prop-markov-trace-recursive-reducer"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-q-hecke-seminormal-character-closure",
+  "cites": [
+    "references/wenzl1988",
+    "references/hoefsmit1974"
+  ],
+  "tags": [
+    "mass-table",
+    "low-isotopes",
+    "binding-energy",
+    "tr-m",
+    "q-hecke-character",
+    "machine-epsilon",
+    "cross-validation",
+    "lp-dual",
+    "shadow-price",
+    "operator-selection-lp"
+  ],
+  "text": "recomputed-low-isotope-mass-table.md",
+  "provenance": "authored"
+}

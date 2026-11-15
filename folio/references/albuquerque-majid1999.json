@@ -1,0 +1,30 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "albuquerque-majid1999",
+  "type": "article-journal",
+  "title": "Quasialgebra structure of the octonions",
+  "author": [
+    {
+      "family": "Albuquerque",
+      "given": "Helena"
+    },
+    {
+      "family": "Majid",
+      "given": "Shahn"
+    }
+  ],
+  "container-title": "Journal of Algebra",
+  "volume": "220",
+  "issue": "1",
+  "page": "188-224",
+  "issued": {
+    "date-parts": [
+      [
+        1999
+      ]
+    ]
+  },
+  "DOI": "10.1006/jabr.1999.7916",
+  "URL": "https://arxiv.org/abs/math/9802116",
+  "note": "The octonions $\\mathbb{O}$ = ℝ_F[(ℤ/2)³] realised as the group algebra of (ℤ/2)³ twisted by a sign 2-cochain F that is not a 2-cocycle (dF ≠ 0) — octonion non-associativity as a pentagon-cochain deformation, the associativity-side analogue of the braiding/hexagon (quantum-group) deformation. The multiplication associator dF is a coboundary (cohomologically trivial); Albuquerque–Majid's nontrivial H³ class is the category associator of Vect_(ℤ/2)³^ω. Cited in the genus-4 octonion-recovery audit (docs/audits/2026-07-12-octonion-recovery-from-genus4-analysis.md)."
+}

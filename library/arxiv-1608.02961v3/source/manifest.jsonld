@@ -1,0 +1,58 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1608.02961v3/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1608.02961v3 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1608.02961v3",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1608.02961&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1608.02961v3",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1608.02961v3",
+    "content_type": "application/gzip",
+    "sha256": "30169ddd35f8fbb5568e6c37e344734937ee5525b04cc6557b8c30b472c9aaf5",
+    "bytes": 592440,
+    "fetched": "2026-10-10T15:11:06+00:00",
+    "files": [
+      {
+        "path": "source/files/DI.bbl",
+        "role": "bbl",
+        "sha256": "a0baed7b24c5f9fbdc55ed69a990e0f6886d907dbfb6968cd1dd37891339ca7b",
+        "bytes": 26332
+      },
+      {
+        "path": "source/files/DI.tex",
+        "role": "tex",
+        "sha256": "56638b55cbc25edbbc9569e5809218ce66a5059cc1bf82222bd327bfbbaeb029",
+        "bytes": 81526
+      },
+      {
+        "path": "source/files/DIdef.tex",
+        "role": "tex",
+        "sha256": "94ecae6b804f40d46cd7a749618e52fcc1a31fa80471bfcb60f9b0577dfd67dc",
+        "bytes": 330
+      },
+      {
+        "path": "source/files/header.tex",
+        "role": "tex",
+        "sha256": "26232283d431c068dd02270c9ada542806bc626bbd336f2ccf8333a1da5b190a",
+        "bytes": 2044
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

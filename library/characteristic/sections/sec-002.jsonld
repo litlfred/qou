@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/characteristic/sections/sec-002",
   "@type": [
     "doco:Section"
   ],
-  "title": "A polynomial version of Conjecture 1",
-  "pageStart": 4,
-  "pageEnd": 4,
+  "title": "Introduction",
+  "pageStart": 1,
+  "pageEnd": 1,
   "contains": [
     "library/characteristic/blocks/prose-sec-002"
   ],
-  "derivedFrom": "library/characteristic/manifest",
-  "sourceDocument": "library/characteristic/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/characteristic",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/characteristic",
   "provenance": "ingested"
 }

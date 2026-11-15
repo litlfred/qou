@@ -78,7 +78,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
 SEARCH_ROOTS = [ROOT / "computations", ROOT / "scripts", ROOT / "tools",
-                ROOT / "content" / "pipeline"]
+                ROOT / "folio" / "pipeline"]
 
 BROAD = {"Exception", "BaseException", "SyntaxError", "ValueError", "OSError"}
 
@@ -167,7 +167,7 @@ def scan() -> list[dict]:
         if not root.exists():
             continue
         for p in sorted(root.rglob("*.py")):
-            if "_deprecated" in p.parts or ".lake" in p.parts:
+            if ("_deprecated" in p.parts or "fsh-guts" in p.parts) or ".lake" in p.parts:
                 continue
             rel = p.relative_to(ROOT).as_posix()
             try:

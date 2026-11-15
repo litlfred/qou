@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-dark-vision-strand-bandwidth",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:dark-vision-strand-bandwidth",
+  "kind": "remark",
+  "title": "Dark-vision impossibility from strand-bandwidth of the observation channel",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-observation",
+    "papers/quantum-observable-universe/blocks/conj-confinement-grading-correspondence"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-observation",
+  "cites": [
+    "references/kashiwara1991"
+  ],
+  "tags": [
+    "interpretation",
+    "observation-frame",
+    "vision",
+    "strand-count",
+    "information"
+  ],
+  "text": "dark-vision-strand-bandwidth.md",
+  "provenance": "authored"
+}

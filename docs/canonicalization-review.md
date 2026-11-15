@@ -54,7 +54,7 @@ The seven named "empirical / fitted" constants in the pipeline are largely
    > independent ground that it is a **fit**: it was determined by normalising
    > the scale on CODATA `M_p` and root-finding on CODATA `M_n` — two inputs,
    > neither of them CAL-1/2/3, both quantities the framework is meant to
-   > derive. Producer retired to `computations/_deprecated/`.
+   > derive. Producer retired to `fsh-guts/deprecated/computations/`.
    >
    > What the nucleon channel is actually missing is **open**.
    >
@@ -99,7 +99,7 @@ incompleteness.**
 The "mass tower" is **not** an atom-by-atom recursion. It is the
 six-term spectral-sequence decomposition of a *single* braid's Markov
 trace, stratified by GB filtration depth (curvature-rank) — see
-[`six-term-mass-formula-complete.md`](../content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.md):
+[`six-term-mass-formula-complete.md`](../folio/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.md):
 
 $$
 \mathfrak{m}(\varrho) =
@@ -129,7 +129,7 @@ require at least $\ell$ rewrites to reach Gröbner–Shirshov normal form.
 Hyperbolic-knot braids ($4_1$, $5_2$, $6_1$, $6_2$, $6_3$, $7_2$–$7_7$,
 …) appear as **sub-words** in the atomic GB reduction, each pinned to a
 specific (depth, jet, Wedderburn channel) cell — see
-[`curvature-rank-gb-stratification.md`](../content/quantum-observable-universe/braids-and-knots/curvature-rank-gb-stratification.md).
+[`curvature-rank-gb-stratification.md`](../folio/quantum-observable-universe/braids-and-knots/curvature-rank-gb-stratification.md).
 
 The neutron's extra **6₁ knot at (depth 3, jet 1, std channel)** is the
 canonical algebraic origin of p/n mass splitting. *That* is the kind
@@ -207,7 +207,7 @@ The volumes 4.4008 / 8.2863 / 7.3277 are correct hyperbolic constants
   Jones polynomial of $6_2$; the AME match is approximate.
 - D's GB-NF actually contains named sub-patterns: trefoil (length 3) +
   Hopf link (length 2) + electron bridge (length 3) — see
-  [`d-nf-knot-operators.md`](../content/quantum-observable-universe/braids-and-knots/d-nf-knot-operators.md).
+  [`d-nf-knot-operators.md`](../folio/quantum-observable-universe/braids-and-knots/d-nf-knot-operators.md).
 - The canonical formula consumes that structure via the six-term
   decomposition. `Vol(6₂) · m_e` is a coarse approximation of the
   rank-1 term *only*.
@@ -226,7 +226,7 @@ per-atom certificates and produces `b_pred_mev` from `filtration_certificate.by_
 **A2.** Run on D/T/³He; report ppb residuals against AME. This becomes
 the new baseline for Family 1.
 
-**A3.** Update [`recursive-atom-knot-atlas.md`](../content/quantum-observable-universe/braids-and-knots/recursive-atom-knot-atlas.md):
+**A3.** Update [`recursive-atom-knot-atlas.md`](../folio/quantum-observable-universe/braids-and-knots/recursive-atom-knot-atlas.md):
 flip Family 1 methodology tag from `manual-historical-volume-match` to
 `canonical-six-term-from-gb-nf`, with the sub-ideal pattern (trefoil +
 Hopf + electron bridge for D, etc.) documented per atom.
@@ -240,7 +240,7 @@ the witness.
 **B1.** Reformulate `alpha_blend_tower.py` to include the chirality
 channel $H_A^2 \Phi_3$. Reference the antipode-Frobenius symmetrisation
 analysis in
-[`chirality-from-frobenius-self-pairing.md`](../content/quantum-observable-universe/braids-and-knots/chirality-from-frobenius-self-pairing.md).
+[`chirality-from-frobenius-self-pairing.md`](../folio/quantum-observable-universe/braids-and-knots/chirality-from-frobenius-self-pairing.md).
 
 **B2.** Rerun neutron / proton mass derivation; α* and α₄ should be
 either closed-form expressions in `q₀` or removed entirely from the
@@ -310,8 +310,8 @@ but a measurement input.
 - [`docs/b-over-a-error-budget.md`](b-over-a-error-budget.md) — Tier 3 error decomposition by family
 - [`tools/hecke-engine/R5_FULL_PLAN.md`](../tools/hecke-engine/R5_FULL_PLAN.md) — R5.1–R5.8 sequenced plan
 - [`tools/hecke-engine/R5_5_BUG_REPORT.md`](../tools/hecke-engine/R5_5_BUG_REPORT.md) — svec post-mortem (issue resolved)
-- [`prop:atom-knot-mass-derivation`](../content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md) — pipeline status table
-- [`prop:joint-tower-sdp-confinement`](../content/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.md) — design spec
+- [`prop:atom-knot-mass-derivation`](../folio/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md) — pipeline status table
+- [`prop:joint-tower-sdp-confinement`](../folio/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.md) — design spec
 - [`computations/joint-tower-sdp-rust.witness.json`](../computations/joint-tower-sdp-rust.witness.json) — current GB-NF + Wedderburn data for 7 particles
 
 ---
@@ -389,22 +389,22 @@ sorry-free at the proof level:
 
 | Term | Lean file | Actual `sorry` tactic uses |
 |------|-----------|:------:|
-| T1 (descended Markov trace) | [`categorical-mass-markov.lean`](../content/quantum-observable-universe/braids-and-knots/categorical-mass-markov.lean) | **0 ✓** |
-| T2 / T3 (brane tower) | [`mass-endomorphism-tower.lean`](../content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.lean) | **0 ✓** |
-| T4 (Frobenius co-Casimir) | [`frobenius-codim-universal.lean`](../content/quantum-observable-universe/braids-and-knots/frobenius-codim-universal.lean) | **0 ✓** |
-| T5 (chirality) | [`chirality-dual-space-derivation.lean`](../content/quantum-observable-universe/braids-and-knots/chirality-dual-space-derivation.lean) | **0 ✓** |
-| T6 (full pole structure) | [`full-pole-structure-mass-trace.lean`](../content/quantum-observable-universe/braids-and-knots/full-pole-structure-mass-trace.lean) | **0 ✓** |
-| T6 (cyclotomic-residue spectral sum) | [`gb-residue-spectral-sum.lean`](../content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.lean) | **2** (line 86 in-type + line 89 body) |
-| support (Markov trace product) | [`markov-trace-product.lean`](../content/quantum-observable-universe/braids-and-knots/markov-trace-product.lean) | **2** (line 110, line 120) |
+| T1 (descended Markov trace) | [`categorical-mass-markov.lean`](../folio/quantum-observable-universe/braids-and-knots/categorical-mass-markov.lean) | **0 ✓** |
+| T2 / T3 (brane tower) | [`mass-endomorphism-tower.lean`](../folio/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.lean) | **0 ✓** |
+| T4 (Frobenius co-Casimir) | [`frobenius-codim-universal.lean`](../folio/quantum-observable-universe/braids-and-knots/frobenius-codim-universal.lean) | **0 ✓** |
+| T5 (chirality) | [`chirality-dual-space-derivation.lean`](../folio/quantum-observable-universe/braids-and-knots/chirality-dual-space-derivation.lean) | **0 ✓** |
+| T6 (full pole structure) | [`full-pole-structure-mass-trace.lean`](../folio/quantum-observable-universe/braids-and-knots/full-pole-structure-mass-trace.lean) | **0 ✓** |
+| T6 (cyclotomic-residue spectral sum) | [`gb-residue-spectral-sum.lean`](../folio/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.lean) | **2** (line 86 in-type + line 89 body) |
+| support (Markov trace product) | [`markov-trace-product.lean`](../folio/quantum-observable-universe/braids-and-knots/markov-trace-product.lean) | **2** (line 110, line 120) |
 
 **Remaining work — 3 distinct sorry sites:**
 
-1. [`markov-trace-product.lean:110`](../content/quantum-observable-universe/braids-and-knots/markov-trace-product.lean) — `markov_trace_product`
+1. [`markov-trace-product.lean:110`](../folio/quantum-observable-universe/braids-and-knots/markov-trace-product.lean) — `markov_trace_product`
    theorem. The proof outline is documented (Markov property recursion
    from i = n-2 down to i = 0; Jones 1987 + Kassel 1995). Substantial
    inductive proof; hard sorry.
 
-2. [`markov-trace-product.lean:120`](../content/quantum-observable-universe/braids-and-knots/markov-trace-product.lean) — `degree_bound`
+2. [`markov-trace-product.lean:120`](../folio/quantum-observable-universe/braids-and-knots/markov-trace-product.lean) — `degree_bound`
    theorem. **Stub: the type is literally `True`**, so `sorry` is
    trivially closeable but the sorry-removal would be vacuous. The
    actual mathematical claim (`polynomial degree ≤ n²−1`) is in the
@@ -412,7 +412,7 @@ sorry-free at the proof level:
    strengthening the type to express the claim, then closing it; the
    sorry should not be removed without strengthening.
 
-3. [`gb-residue-spectral-sum.lean:86 + :89`](../content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.lean) —
+3. [`gb-residue-spectral-sum.lean:86 + :89`](../folio/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.lean) —
    `spectral_sum_finite` theorem. Two sorrys: one inside the type
    signature (`S.roots⟨0, sorry⟩` Fin index) and one in the body.
    The statement asserts that above the confinement level `ℓ(K, q)`,

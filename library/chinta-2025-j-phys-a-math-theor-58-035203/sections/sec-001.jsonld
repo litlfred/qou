@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/chinta-2025-j-phys-a-math-theor-58-035203/sections/sec-001",
   "@type": [
     "doco:Section"
   ],
-  "title": "Section de mathématiques Université de Genève, Case Postale 64, 1211 Genève 4,",
-  "pageStart": 2,
-  "pageEnd": 2,
+  "title": "Introduction",
+  "pageStart": 3,
+  "pageEnd": 7,
   "contains": [
     "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/prose-sec-001"
   ],
-  "derivedFrom": "library/chinta-2025-j-phys-a-math-theor-58-035203/manifest",
-  "sourceDocument": "library/chinta-2025-j-phys-a-math-theor-58-035203/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/chinta-2025-j-phys-a-math-theor-58-035203",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/chinta-2025-j-phys-a-math-theor-58-035203",
   "provenance": "ingested"
 }

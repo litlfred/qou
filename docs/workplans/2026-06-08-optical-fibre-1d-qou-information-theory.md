@@ -21,7 +21,7 @@
 A "fibre" here is the **physical** optical fibre (a 1D waveguide that
 carries information), NOT the categorical fibre functor τ. The section
 belongs in the **information-theory** chapter
-(`content/quantum-observable-universe/information-theory/`).
+(`folio/quantum-observable-universe/information-theory/`).
 
 Core questions to answer in QOU terms:
 
@@ -60,7 +60,7 @@ Core questions to answer in QOU terms:
 - Distinguish **physical fibre** from **fibre functor τ** explicitly in
   prose (collision risk).
 - Corpus-grep before declaring anything missing.
-- Lit claims get bibliographic citations (`content/schema/references.ts`).
+- Lit claims get bibliographic citations (`folio/schema/references.ts`).
 - Primary content links point to the `.md` sibling.
 
 ## Sibling coordination

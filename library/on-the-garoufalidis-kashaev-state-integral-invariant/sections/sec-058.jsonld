@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/sections/sec-058",
   "@type": [
     "doco:Section"
@@ -10,13 +15,13 @@
   "contains": [
     "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-058",
     "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/thm-sec-058-01",
-    "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/rem-sec-058-02",
-    "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/rem-sec-058-03",
-    "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/rem-sec-058-04",
-    "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/rem-sec-058-05",
-    "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/rem-sec-058-06"
+    "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/remark-sec-058-02",
+    "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/remark-sec-058-03",
+    "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/remark-sec-058-04",
+    "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/remark-sec-058-05",
+    "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/remark-sec-058-06"
   ],
-  "derivedFrom": "library/on-the-garoufalidis-kashaev-state-integral-invariant/manifest",
-  "sourceDocument": "library/on-the-garoufalidis-kashaev-state-integral-invariant/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/on-the-garoufalidis-kashaev-state-integral-invariant",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/on-the-garoufalidis-kashaev-state-integral-invariant",
   "provenance": "ingested"
 }

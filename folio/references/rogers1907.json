@@ -1,0 +1,24 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "rogers1907",
+  "type": "article-journal",
+  "title": "On function sum theorems connected with the series $\\sum x^n / n^2$",
+  "author": [
+    {
+      "family": "Rogers",
+      "given": "L. J."
+    }
+  ],
+  "container-title": "Proceedings of the London Mathematical Society",
+  "series": "2",
+  "volume": "4",
+  "page": "169-189",
+  "issued": {
+    "date-parts": [
+      [
+        1907
+      ]
+    ]
+  },
+  "note": "Verified 2026-06-23 (doth): Rogers's original paper on dilogarithm functional equations (later the 'Rogers pentagon' / 'Rogers L-function'), Proc. London Math. Soc. (2) 4, 169–189 (1907). Pre-DOI archival source (1907 PLMS volumes have no DOI). Cited in QRogersPentagonArchimedean.lean. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §F."
+}

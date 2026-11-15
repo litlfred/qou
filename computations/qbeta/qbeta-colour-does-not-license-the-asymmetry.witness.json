@@ -1,5 +1,6 @@
 {
   "computation": "qbeta-colour-does-not-license-the-asymmetry",
+  "q0Anchor": "proton",
   "assertions": [
     {
       "name": "the_fibre_dimension_cannot_carry_a_colour_index",
@@ -84,8 +85,8 @@
     "corpus_justification": "meson-to-proton-via-borromean.md: 'Typed crossings close this gap' (untyped net 1.506 vs CODATA proton net 0.999)"
   },
   "provenance": {
-    "headSha": "3298f3e8066d316fc622c58771bf3e4524b12a80",
+    "headSha": "eacf7ca73101030f04c9f788e9f705839bef23c3",
     "producer": "computations/qbeta/qbeta_colour_does_not_license_the_asymmetry_probe.py",
-    "elapsed_s": 0.881
+    "elapsed_s": 0.997
   }
 }

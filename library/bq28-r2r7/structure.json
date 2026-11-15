@@ -1,38 +1,402 @@
 {
-  "_schema": "pdf-structure/v1",
-  "doc_id": "bq28-r2r7",
-  "source": {
-    "file": "bq28-r2r7.pdf",
-    "sha256": "38419a88531ebce78cc3845ce7ae0fca2cc21ae026a719724865c9400bbd20fe",
-    "bytes": 819705,
-    "pages": 15
-  },
-  "metadata": {
-    "arxiv": null,
-    "doi": null,
-    "title": "Classical and Quantum Algorithms for Characters of the Symmetric Group",
-    "authors_raw": "Sergey Bravyi, David Gosset, Vojtech Havlicek, Louis Schatzki",
-    "citation": "PRX Quantum 6, 030323 (2025)"
-  },
-  "toc": [],
-  "toc_source": "headings",
-  "sections": [
-    {
-      "number": null,
-      "title": "Full text",
-      "level": 1,
-      "page_start": 1,
-      "page_end": 15,
-      "id": "sec-000-full-text",
-      "n_chars": 63028,
-      "n_words": 11738
-    }
+ "_schema": "pdf-structure/v1",
+ "doc_id": "bq28-r2r7",
+ "source": {
+  "file": "bq28-r2r7.pdf",
+  "sha256": "38419a88531ebce78cc3845ce7ae0fca2cc21ae026a719724865c9400bbd20fe",
+  "bytes": 819705,
+  "pages": 15,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": "10.1103/bq28-r2r7",
+  "title": "Classical and Quantum Algorithms for Characters of the Symmetric Group",
+  "authors_raw": "Classical and Quantum Algorithms for Characters of the Symmetric Group",
+  "title_lines": [
+   "PRX QUANTUM 6, 030323 (2025)"
   ],
-  "diagnostics": {
-    "pages_without_text": 0,
-    "likely_scanned": false,
-    "toc_entries": 0,
-    "sections": 1,
-    "chars_total": 63017
+  "abstract": null,
+  "docinfo": {
+   "Title": "Classical and Quantum Algorithms for Characters of the Symmetric Group",
+   "Author": "Bravyi Sergey",
+   "Producer": "Acrobat Distiller 10.0.0 (Windows)",
+   "Creator": "LaTeX with hyperref package + hypdvips",
+   "CreationDate": "D:20250805212300Z"
+  },
+  "title_raw": "PRX QUANTUM 6, 030323 (2025)",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Classical and Quantum Algorithms for Characters of the Symmetric Group",
+   "heading": "PRX QUANTUM 6, 030323 (2025) Classical and Quantum Algorithms for Characters of the Symmetric Group",
+   "outline": "I.. INTRODUCTION",
+   "text": "PRX QUANTUM 6, 030323 (2025)",
+   "corroborated_by": [
+    "heading",
+    "page"
+   ],
+   "browser_print": false
   }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "I.. INTRODUCTION",
+   "page": 1,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
+  },
+  {
+   "level": 1,
+   "title": "II.. GROUP THEORY REFRESHER",
+   "page": 3,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
+  },
+  {
+   "level": 1,
+   "title": "III.. BUILDING THE CHARACTER",
+   "page": 3,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
+  },
+  {
+   "level": 1,
+   "title": "IV.. CLASSICAL MPS ALGORITHMS",
+   "page": 5,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
+  },
+  {
+   "level": 1,
+   "title": "V.. QUANTUM ALGORITHM",
+   "page": 7,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
+  },
+  {
+   "level": 1,
+   "title": "VI.. CLASSICAL COMPLEXITY OF SAMPLING",
+   "page": 10,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
+  },
+  {
+   "level": 2,
+   "title": "A.. Granularity and quantum advantage",
+   "page": 10,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
+  },
+  {
+   "level": 2,
+   "title": "B.. Row and column sampling",
+   "page": 11,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
+  },
+  {
+   "level": 1,
+   "title": "VII.. CLASSICAL MPS ALGORITHM FOR KOSTKA NUMBERS",
+   "page": 12,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
+  },
+  {
+   "level": 1,
+   "title": ". ACKNOWLEDGMENTS",
+   "page": 14,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
+  },
+  {
+   "level": 1,
+   "title": ". DATA AVAILABILITY",
+   "page": 14,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
+  },
+  {
+   "level": 1,
+   "title": ". REFERENCES",
+   "page": 14,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "MPO representation of the current operator J\u2113. Horizontal lines represent virtual indices of dimension \u2113+ 2. We",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Runtime for computing the characters \u03c7\u03bb(g) for permutations g \u2208Sn composed of n/2 length-2 cycles and all irreps",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Comparison between the observed maximum MPS bond dimension for the problem instances reported in Fig. 2 (blue) and the upper bound (17) (green)",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "MPO representation of the noncommuting complete symmetric polynomial \u02c6hk. Horizontal lines represent virtual",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "13"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Runtime for computing Kostka numbers K\u03bb,\u03bc. Each runtime is, \ufb01xing a random \u03bc, for computing the set {K\u03bb,\u03bc}\u03bb",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "14"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-000-document",
+   "number": null,
+   "title": "Document",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 15,
+   "n_chars": 62146,
+   "n_words": 11068,
+   "label_start": "1",
+   "label_end": "15"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 12,
+  "toc_inferred_entries": 0,
+  "figure_entries": 5,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 1,
+  "chars_total": 62146
+ }
 }

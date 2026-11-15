@@ -6,7 +6,11 @@
   "sha256": "2ccb480f4bd4a9705501d60deb89508cb733705a09c779e58db9030c2aa99f94",
   "bytes": 616484,
   "pages": 50,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -869,6 +873,324 @@
   "likely_scanned": false,
   "toc_entries": 57,
   "sections": 43,
-  "chars_total": 143253
+  "chars_total": 143253,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 52,
+   "overlaid": 27,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-results-on-squared-norms-global-dimensions-wea",
+     "title": "Results on squared norms, global dimensions, weak Hopf algebras, and Ocneanu rigidity",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.884,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-21-squared-norms-and-global-dimensions",
+     "title": "Squared norms and global dimensions",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-22-results-on-pivotal-spherical-and-modular-cate",
+     "title": "Results on pivotal, spherical, and modular categories",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-24-multi-fusion-categories",
+     "title": "Multi-fusion categories",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-25-results-on-weak-hopf-algebras",
+     "title": "Results on weak Hopf algebras",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-27-ocneanu-rigidity",
+     "title": "Ocneanu rigidity",
+     "prose_ratio": 0.736,
+     "coverage_ratio": 0.956,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-31-proof-of-theorem-23",
+     "title": "Proof of Theorem 2.3",
+     "prose_ratio": 0.307,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-3-fusion-categories-over-c",
+     "title": "Fusion categories over C",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.919,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-32-proof-of-proposition-29",
+     "title": "Proof of Proposition 2.9",
+     "prose_ratio": 0.931,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-33-proof-of-proposition-212-and-properties-of-mo",
+     "title": "Proof of Proposition 2.12 and properties of modular categories",
+     "prose_ratio": 0.555,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-4-weak-hopf-algebras-and-their-integrals",
+     "title": "Weak Hopf algebras and their integrals",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-42-integrals",
+     "title": "Integrals",
+     "prose_ratio": 0.817,
+     "coverage_ratio": 0.927,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-43-proof-of-theorem-26",
+     "title": "Proof of Theorem 2.6",
+     "prose_ratio": 0.173,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-014-44-canonical-integrals",
+     "title": "Canonical integrals",
+     "prose_ratio": 0.653,
+     "coverage_ratio": 0.909,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-015-5-trs2-and-the-global-dimension",
+     "title": "Tr(S2) and the global dimension",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-51-proof-of-theorem-224",
+     "title": "Proof of Theorem 2.24",
+     "prose_ratio": 0.244,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-017-52-proof-of-theorem-215",
+     "title": "Proof of Theorem 2.15",
+     "prose_ratio": 0.291,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-018-53-proof-of-theorem-216",
+     "title": "Proof of Theorem 2.16",
+     "prose_ratio": 0.701,
+     "coverage_ratio": 0.861,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-019-55-proof-of-proposition-217",
+     "title": "Proof of Proposition 2.17",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-56-proof-of-theorem-218",
+     "title": "Proof of Theorem 2.18",
+     "prose_ratio": 0.291,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-021-57-surjective-and-injective-functors",
+     "title": "Surjective and injective functors",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-022-58-the-induction-functor-and-the-class-equation",
+     "title": "The induction functor and the class equation for fusion categories",
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.925,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-023-59-graded-categories",
+     "title": "Graded categories",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-024-510-deformations-of-weak-hopf-algebras",
+     "title": "Deformations of weak Hopf algebras",
+     "prose_ratio": 0.968,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-025-511-sphericity-of-pivotalization",
+     "title": "Sphericity of pivotalization",
+     "prose_ratio": 0.715,
+     "coverage_ratio": 0.931,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-026-6-the-co-hochschild-complex-of-a-cosemisimple-un",
+     "title": "The co-Hochschild complex of a cosemisimple unimodular weak Hopf algebra and its subcomplex of invariants",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-62-the-vanishing-theorem-for-cohomology",
+     "title": "The vanishing theorem for cohomology",
+     "prose_ratio": 0.431,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-028-7-the-yetter-cohomology-of-a-tensor-category-and",
+     "title": "The Yetter cohomology of a tensor category and Ocneanu rigidity",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-029-72-comparison-of-two-complexes",
+     "title": "Comparison of two complexes",
+     "prose_ratio": 0.454,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-030-73-proof-of-theorem-227-and-theorem-230",
+     "title": "Proof of Theorem 2.27 and Theorem 2.30",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-031-8-frobenius-perron-dimensions",
+     "title": "Frobenius-Perron dimensions",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.92,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-032-84-pseudo-unitary-categories",
+     "title": "Pseudo-unitary categories",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.803,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-033-87-categories-with-integer-frobenius-perron-dime",
+     "title": "Categories with integer Frobenius-Perron dimensions of simple objects",
+     "prose_ratio": 0.367,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-034-88-group-theoretical-fusion-categories",
+     "title": "Group-theoretical fusion categories",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-035-89-a-question",
+     "title": "A question",
+     "prose_ratio": 0.968,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-036-810-cyclotomicity-of-dimension-functions",
+     "title": "Cyclotomicity of dimension functions",
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.945,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-037-811-module-categories-over-products",
+     "title": "Module categories over products",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-038-9-fusion-categories-in-positive-characteristic",
+     "title": "Fusion categories in positive characteristic",
+     "prose_ratio": 0.915,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-039-92-lifting-theorems",
+     "title": "Lifting theorems",
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-040-94-some-applications-of-lifting",
+     "title": "Some applications of lifting",
+     "prose_ratio": 0.938,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-041-10-appendix-galois-properties-of-s-matrix",
+     "title": "Appendix: Galois properties of S-matrix",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-042-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

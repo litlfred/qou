@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1907.03683v4/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1907.03683v4/blocks/prose-sec-004",
   "kind": "prose",
-  "title": "Main results. As mentioned above, it is easy to deﬁne Christoﬀel deformations of",
-  "pageStart": 4,
-  "pageEnd": 4,
-  "text": "../sections/sec-004-14-main-results-as-mentioned-above-it-is-easy-to.md",
-  "derivedFrom": "library/arxiv-1907.03683v4/manifest",
-  "sourceDocument": "library/arxiv-1907.03683v4/manifest",
+  "title": "Acknowledgments.",
+  "pageStart": 5,
+  "pageEnd": 5,
+  "text": "../sections/sec-004-acknowledgments.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1907.03683v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1907.03683v4",
   "provenance": "ingested"
 }

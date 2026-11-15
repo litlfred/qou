@@ -14,7 +14,7 @@ remark carries `interprets: 0`. (The sibling proofs
 `prop:q-beta-c-k-recursion-from-habiro-q-difference`; only the Jackson one is
 inverted.)
 
-Backing is solid: `content/quantum-observable-universe/lean/QOU/QBeta/`
+Backing is solid: `folio/quantum-observable-universe/lean/QOU/QBeta/`
 `QBesselContiguityRecurrence.lean` is **sorry-free** (8 theorems), incl.
 `qbessel_first_kind_coeff_closed_form` / `qbessel_second_kind_coeff_closed_form`;
 compute witness `computations/qbeta/qbessel-jackson-contiguity.witness.json`.

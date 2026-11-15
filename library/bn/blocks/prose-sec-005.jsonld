@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/bn/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/bn/blocks/prose-sec-005",
   "kind": "prose",
-  "title": "It transports the discrete action of Bn on T ∗",
-  "pageStart": 6,
-  "pageEnd": 7,
-  "text": "../sections/sec-005-2-it-transports-the-discrete-action-of-bn-on-t.md",
-  "derivedFrom": "library/bn/manifest",
-  "sourceDocument": "library/bn/manifest",
+  "title": "Complex reﬂection groups",
+  "pageStart": 22,
+  "pageEnd": 27,
+  "text": "../sections/sec-005-5-complex-reﬂection-groups.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/bn",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/bn",
   "provenance": "ingested"
 }

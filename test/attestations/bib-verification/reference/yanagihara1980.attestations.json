@@ -1,0 +1,46 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "yanagihara1980",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 421,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/yanagihara-1980-meromorphic-solutions-difference-equations/yanagihara-1980-meromorphic-solutions-difference-equations.pdf"
+        },
+        "id": "yanagihara1980",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "READ VIA PAGE IMAGES (pdftoppm at 90-110 dpi; the PDF is an image-only scan, pdftotext yields ~18 chars), 18 pages, front matter and running heads legible. Subject: meromorphic solutions of the NONLINEAR ORDINARY difference equation y(x+1) = R(x, y(x)) with R = P/Q rational in y (eqs. 1.1-1.4), q_0 := max(deg P, deg Q) (eq. 1.5). Thm 1 (p. 311): a transcendental meromorphic solution has Nevanlinna characteristic T(r, y) >= K_1((1-eps) q_0)^r, hence order infinity unless q_0 = 1 \u2014 proved from Valiron's theorem T(r, R(x,y)) = q_0 T(r,y) + O(log r). Thm 3 (p. 313): a Picard-type value-distribution trichotomy driven by 'maximally fixed values / pairs' of R. Sec. 3 (p. 315) + Cor. 6: existence of meromorphic solutions for any rational R, with asymptotic expansions in x^{-1/m} carrying (log x / x)^k corrections, valid in the sectors D_1(R, eps); Sec. 4 (pp. 315-320) gives asymptotic behaviour in horizontal strips Sigma(eta; A, alpha) via Lemmas 14-16. DIRECT ANSWER TO THE QUESTION POSED: this is NOT the corpus's problem class, merely adjacent. Two mismatches, either one decisive. (1) OPERATOR: Yanagihara's is the ADDITIVE shift x -> x+1; the corpus's C1 object is the q-DILATION sigma acting through L1 = (q^2 x - 1) sigma^2 - (q-1) sigma - (q-1) (docs/audits/2026-08-08-rsz-c1-infinity-route-closed.md), and sec:q-difference-viewpoint-method defines the folio's shift as sigma_q : q -> q zeta. (2) LINEARITY: Yanagihara's equation is nonlinear in y (that is the whole point \u2014 the Nevanlinna machinery exists to handle R(x,y) rational in y); the corpus's C1 operator is linear. Note also a notation trap: Yanagihara's 'q_0' (eq. 1.5) is max(deg P, deg Q), an integer degree, and has nothing to do with the substrate q_0 ~ 1.10998. On the C1 degree-budget question specifically: the growth Yanagihara controls is the Nevanlinna characteristic T(r, y) of a SOLUTION in the complex plane, not the q-degree of the COEFFICIENTS of a formal series; the corpus's budget is deg_q(c_n) = n^2 against the q-Borel kernel exponent, a different quantity for a different object, and the paper contains no Borel/q-Borel transform, no summability level, no slope filtration and no Stokes multipliers. Citation status checked three ways: no ref() entry (an author-surname grep over folio/schema/references.ts returns empty), no \\cite site in content/**/*.md, no '-- Ref:' in content/**/*.lean; the corpus's only Nevanlinna hits are the unrelated Nevanlinna-Sokal Borel-summability criterion and the Nevanlinna parametrization of indeterminate moment problems. Scope-(a) negative: this document, as read, supplies nothing usable for the C1 infinity-residual; it is not a claim that difference-equation value-distribution theory is excluded from the folio.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Orphan with no citation site. The corpus's q-difference machinery is linear and dilation-type; this is nonlinear and additive-shift, so no statement here is consumable and add-reference would be inflation. Recording the classification is the useful output: a future search for 'meromorphic solutions of difference equations' should not re-open this file expecting q-difference content. If the folio ever needs value-distribution growth bounds it should look for the q-difference Nevanlinna literature instead, not this additive-shift paper.",
+              "target": "sec:q-difference-viewpoint-method"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-09T00:10:43.091Z",
+          "source_sha": "c5e4a39ec3d4"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

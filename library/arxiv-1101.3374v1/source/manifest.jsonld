@@ -1,0 +1,100 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1101.3374v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Pontryagin invariants and integral formulas for Milnor's triple linking number (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1101.3374v1",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1101.3374&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1101.3374v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1101.3374v1",
+    "content_type": "application/gzip",
+    "sha256": "4d3f7624481e3db08c2062bc20647a071332ce26e1028eacb735628844cbd590",
+    "bytes": 444159,
+    "fetched": "2026-10-10T15:04:20+00:00",
+    "files": [
+      {
+        "path": "source/files/0.tex",
+        "role": "tex",
+        "sha256": "410000194b370fdaf4e6f8e8e43f74f3bd9b5a2582d3d12aadab79e1ac0b9087",
+        "bytes": 9054
+      },
+      {
+        "path": "source/files/1introduction.tex",
+        "role": "tex",
+        "sha256": "06461a2190ca12857b608cf807c7606ab507ee2d2517280a2685666b0f9c70ee",
+        "bytes": 27601
+      },
+      {
+        "path": "source/files/2milnor.tex",
+        "role": "tex",
+        "sha256": "146efaf5f9935577f7e89b1f75524882c95877e7a6da4dc87ca74911d702017e",
+        "bytes": 7331
+      },
+      {
+        "path": "source/files/3pontryagin.tex",
+        "role": "tex",
+        "sha256": "bcf79ec81242db68406f63ec6d340420677b66cc2eba8dcfb94674612713dc31",
+        "bytes": 28772
+      },
+      {
+        "path": "source/files/4characteristic.tex",
+        "role": "tex",
+        "sha256": "104122b62cbd24f9110b92737675fff6af6d24ef680bb05815404e2663d3c9a7",
+        "bytes": 18969
+      },
+      {
+        "path": "source/files/5Aprep.tex",
+        "role": "tex",
+        "sha256": "05ed06db8ef16ed8cb8b1aed5e2631904ec2947f1751a36cb390f02a8af28535",
+        "bytes": 50088
+      },
+      {
+        "path": "source/files/6A.tex",
+        "role": "tex",
+        "sha256": "b73f1c264a62bddfe59272d0b81dd6398d000a6d59235e905f1e90985d78f2ab",
+        "bytes": 5023
+      },
+      {
+        "path": "source/files/7A.tex",
+        "role": "tex",
+        "sha256": "ee4041fc277212ba9f708349563232dbd20e0b34a5c4d1af7ccb2e6a4c1e7156",
+        "bytes": 5061
+      },
+      {
+        "path": "source/files/8B.tex",
+        "role": "tex",
+        "sha256": "3d9ff548378884d7a672d91126031697f1d88fe072f15dce36a51caf76465c94",
+        "bytes": 30921
+      },
+      {
+        "path": "source/files/9bibliography.tex",
+        "role": "tex",
+        "sha256": "24c86377483e908552e9c7d8013097b8b8dd6e41a8cd89ab6953d218a9ed5acd",
+        "bytes": 16533
+      },
+      {
+        "path": "source/files/INDENT.STY",
+        "role": "sty",
+        "sha256": "13143b53d756bee5e222b24cca41e14c45f1ba5c9fe7cfb7f661296f9deb0472",
+        "bytes": 5150
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

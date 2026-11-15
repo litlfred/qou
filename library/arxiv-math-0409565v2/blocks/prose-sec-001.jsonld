@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0409565v2/blocks/prose-sec-001",
+  "kind": "prose",
+  "title": "Unital Gröbner Bases.",
+  "pageStart": 2,
+  "pageEnd": 10,
+  "text": "../sections/sec-001-unital-gröbner-bases.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0409565v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0409565v2",
+  "provenance": "ingested"
+}

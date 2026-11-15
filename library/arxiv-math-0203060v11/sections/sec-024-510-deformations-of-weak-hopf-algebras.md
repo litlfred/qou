@@ -8,18 +8,16 @@ pages: 22-22
 source_pdf: 0203060v11.pdf
 source_sha256: fa7e21ceab3e9933
 doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in pa rtic- ular, the theory of weak Hopf algebras), we prove a number of g eneral results about fusion categories in"
+text_source: latex
+latex_prose_ratio: 0.968
+latex_coverage_ratio: 1.0
 ---
-semisimple ﬁnite dimensional algebra can be perturbed into a semisimple one.
-However, for (connected) weak Hopf algebras the situation is diﬀe rent. Namely,
-we have the following result.
-Proposition 5.11. Let Ht be a continuous family of ﬁnite dimensional regular
-connected weak Hopf algebras over C depending of a real parameter t ∈ (a,b ) (i.e.,
-Ht is independent of t as a vectors space, and the structure maps continuously
-depend on t). Then either Ht is semisimple for all t or Ht is non-semisimple for
-all t.
-Proof. The set U ⊂ (a,b ) where Ht is semisimple is open. Assume that this set
-is nonempty. The function f (t) = Tr( S2|Ht ) is a continuous function of t. By
-Corollary 4.13, f is zero on the complement Uc of U . Also, by Theorem 2.3 and
-Remark 2.25, f is a nonzero algebraic integer for any t ∈U . Since f is continuous,
-this implies that f is constant (and nonzero) on each connected component of U .
-Thus,Uc is empty. We are done. □
+It is well known that a non-semisimple finite dimensional algebra can be perturbed into a semisimple one. However, for (connected) weak Hopf algebras the situation is different. Namely, we have the following result.
+
+::: proposition
+Let $H_t$ be a continuous family of finite dimensional regular connected weak Hopf algebras over $\Bbb C$ depending of a real parameter $t\in (a,b)$ (i.e., $H_t$ is independent of $t$ as a vectors space, and the structure maps continuously depend on $t$). Then either $H_t$ is semisimple for all $t$ or $H_t$ is non-semisimple for all $t$.
+:::
+
+::: proof
+*Proof.* The set $U\subset (a,b)$ where $H_t$ is semisimple is open. Assume that this set is nonempty. The function $f(t)=\text{Tr}(S^2|_{H_t})$ is a continuous function of $t$. By Corollary [\[Tr S2 connected\]](#Tr S2 connected){reference-type="ref" reference="Tr S2 connected"}, $f$ is zero on the complement $U^c$ of $U$. Also, by Theorem [\[posi\]](#posi){reference-type="ref" reference="posi"} and Remark [\[tra\]](#tra){reference-type="ref" reference="tra"}, $f$ is a nonzero algebraic integer for any $t\in U$. Since $f$ is continuous, this implies that $f$ is constant (and nonzero) on each connected component of $U$. Thus, $U^c$ is empty. We are done. ◻
+:::

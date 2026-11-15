@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-0006156v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Strongly coupled quantum discrete Liouville theory I: algebraic approach and duality",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-0006156v1",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-hep-th-0006156v1",
   "contains": [
+    "library/arxiv-hep-th-0006156v1/sections/sec-front-matter",
     "library/arxiv-hep-th-0006156v1/sections/sec-000",
     "library/arxiv-hep-th-0006156v1/sections/sec-001",
     "library/arxiv-hep-th-0006156v1/sections/sec-002",
@@ -35,39 +41,20 @@
     "library/arxiv-hep-th-0006156v1/sections/sec-026",
     "library/arxiv-hep-th-0006156v1/sections/sec-027",
     "library/arxiv-hep-th-0006156v1/sections/sec-028",
-    "library/arxiv-hep-th-0006156v1/sections/sec-029",
-    "library/arxiv-hep-th-0006156v1/sections/sec-030",
-    "library/arxiv-hep-th-0006156v1/sections/sec-031",
-    "library/arxiv-hep-th-0006156v1/sections/sec-032",
-    "library/arxiv-hep-th-0006156v1/sections/sec-033",
-    "library/arxiv-hep-th-0006156v1/sections/sec-034",
-    "library/arxiv-hep-th-0006156v1/sections/sec-035",
-    "library/arxiv-hep-th-0006156v1/sections/sec-036",
-    "library/arxiv-hep-th-0006156v1/sections/sec-037",
-    "library/arxiv-hep-th-0006156v1/sections/sec-038",
-    "library/arxiv-hep-th-0006156v1/sections/sec-039",
-    "library/arxiv-hep-th-0006156v1/sections/sec-040",
-    "library/arxiv-hep-th-0006156v1/sections/sec-041",
-    "library/arxiv-hep-th-0006156v1/sections/sec-042",
-    "library/arxiv-hep-th-0006156v1/sections/sec-043",
-    "library/arxiv-hep-th-0006156v1/sections/sec-044",
-    "library/arxiv-hep-th-0006156v1/sections/sec-045",
-    "library/arxiv-hep-th-0006156v1/sections/sec-046",
-    "library/arxiv-hep-th-0006156v1/sections/sec-047",
-    "library/arxiv-hep-th-0006156v1/sections/sec-048",
-    "library/arxiv-hep-th-0006156v1/sections/sec-049",
-    "library/arxiv-hep-th-0006156v1/sections/sec-050",
-    "library/arxiv-hep-th-0006156v1/sections/sec-051",
-    "library/arxiv-hep-th-0006156v1/sections/sec-052",
-    "library/arxiv-hep-th-0006156v1/sections/sec-053",
-    "library/arxiv-hep-th-0006156v1/sections/sec-054",
-    "library/arxiv-hep-th-0006156v1/sections/sec-055",
-    "library/arxiv-hep-th-0006156v1/sections/sec-056",
-    "library/arxiv-hep-th-0006156v1/sections/sec-057"
+    "library/arxiv-hep-th-0006156v1/sections/sec-029"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:hep-th/0006156&metadataPrefix=arXiv), submitted 2000-06-20, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-hep-th-0006156v1",
+    "title_source": "slug",
     "source_file": "0006156v1.pdf",
     "source_sha256": "b799d4ef150291cf7c6aeca96ff9eae2abbba976c49fc668d36e3141653f0217",
     "pages": 20,

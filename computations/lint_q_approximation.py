@@ -73,7 +73,7 @@ def main() -> int:
             continue
         for py in root.rglob("*.py"):
             parts = py.parts
-            if "_deprecated" in parts or ".lake" in parts:
+            if ("_deprecated" in parts or "fsh-guts" in parts) or ".lake" in parts:
                 continue
             if py.name.startswith("test_") or "tests" in parts:
                 continue

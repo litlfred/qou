@@ -1,0 +1,30 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "kassel1995",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 7,
+      "entry": {
+        "id": "kassel1995",
+        "status": "fixed",
+        "verified_at": "2026-05-19T06:55:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 43,
+        "fix_commit": "(this commit)",
+        "note": "Kassel, 'Quantum Groups', Springer GTM 155, 1995 (DOI 10.1007/978-1-4612-0783-2). 43 truly-bare-URL Refs across 23 .lean files updated with thematic chapter citations: Group A (15 Hecke/Markov/Schur-Weyl/Anyonic files) \u2192 Ch. X (Hecke algebras and Markov trace); Group B (7 braiding/R-matrix/Casimir/quantum-SL(2) files) \u2192 Ch. VIII (Quantum SL(2)) + Ch. XIII (Braided categories); Group C (1 broad-ref file: magic-numbers-bring) \u2192 generic title-only ref. 11 already-\u00a7-specific Refs (e.g. \u00a7V.5, \u00a7VIII.3, Ch. XIII at specific sites) preserved unchanged. Status fixed. | UPDATE 2026-05-19 18:18: local_pdf path was stale (uploads/kassel-1995-quantum-groups-preprint.pdf doesn't exist on upload branch); removed. The kassel1995 entry has been verified via citation-content match (all 43 sites map to thematic Ch. citations).",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1007/978-1-4612-0783-2"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2502.06229v5/sections/sec-013",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Differences between the original Drinfeld-Kohno theorem and our analogue Theorem 29.4 in the treatment of the associativity morphisms, to prove (d).",
+  "pageStart": 21,
+  "pageEnd": 23,
+  "contains": [
+    "library/arxiv-2502.06229v5/blocks/prose-sec-013"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2502.06229v5",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2502.06229v5",
+  "provenance": "ingested"
+}
