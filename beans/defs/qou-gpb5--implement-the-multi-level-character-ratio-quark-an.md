@@ -313,3 +313,8 @@ added to `conj:jet-filtered-knot-factor` and `prop:confined-knot-binding`.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-05 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-11-15 — γγ-built nucleon (PR #7741, `h2_gg_atom/`, `h2_gg_electron/`; owner decision C)
+
+On three strands every γγ word is a power of V = σ₀σ₁⁻¹, so a γγ-built nucleon is V^m. Pre-registered and measured: only V³ and V⁶ pass reading 3 at every level (m = 3…7); proton and neutron are then the same word, so there is no flavour on three strands. With a γγ electron (V³ or V⁶) H₂ passes every level and the only passing bond is V³. Every γγ word has χ_(1³) = 1 (#7896). Scope (a). Bearing on this bean: every-level reading 3 (closing strands from the top) is now implemented in h2_one_rule_probe.level_chars; it is a positivity test per level, not the character ratio R this bean asks for.
