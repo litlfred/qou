@@ -45,7 +45,10 @@ export default conjecture({
         "order-of-magnitude match against an order-of-magnitude benchmark. The Lean sibling's " +
         "projection theorem (`sigma_shell_from_beta_chain := inst.identity data`) was a " +
         "self-assuming projection and is removed; the class remains as the conjecture carrier, " +
-        "with no instance.",
+        "with no instance. Read under convention D, the carrier's single field " +
+        "($y_{\\mathrm{target}} = C \\cdot y \\cdot |\\chi| / |\\mathrm{tr}_M|$) therefore asserts only " +
+        "$y_{\\mathrm{target}} = 0$ at every magic staircase: as stated, the conjecture predicts no " +
+        "shell magnitude at all.",
     },
   ],
   computation: {
