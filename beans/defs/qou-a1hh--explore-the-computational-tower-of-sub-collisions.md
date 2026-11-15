@@ -119,3 +119,6 @@ Reading 3 on H₄, vertices V/V̄ at sites 0,1, m=1..6. Pass counts 0/4, 0/16, 1
 
 ## 2026-11-15 — J₄-projected reading 3 (8f8c472b110, PR #7950)
 454 m=6 passing words with a site-1 vertex, (3,1) rep from PR #7957. 448 pass in every J₄ sector (all 111111 and 000111-rotation words). The six mixed-site words fail: tr(Jb w Jb) ∈ [−0.40, −0.20]. Two rotation words (V1.B0.V0.B0.B1.V1, B1.V0.B0.V0.V1.B1) give d_a = 1 and flip = 0 (identity on Ja). Scope (a).
+
+## 2026-11-15 — reading 3 tracks pure braids (c8b20019919, PR #7950; post hoc)
+At m ≤ 6 on 4 strands: every pure γγ word passes reading 3 (560/560); the only non-pure passes are the six mixed-site words, which fail the J₄ projection. So J₄-projected reading 3 ⟺ pure braid. At q = 1 it is S₄ character theory under convention D. Open: a uniform bound in q−1 (pure words of length m pass for q ≤ 1 + c/m) and whether it holds for m > 6. Lean (7fd7a7ec2de): site-0 vertices fix Ja; two strand-4 words commute with J₄.
