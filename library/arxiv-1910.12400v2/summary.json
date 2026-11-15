@@ -1,0 +1,30 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1910.12400v2",
+ "source_sha256": "fdab4ab385400e34",
+ "brief": "Measurement of e + e − Momentum and Angular Distributions from Linearly Polarized Photon Collisions — 2 sections: Front matter; STAR",
+ "extended": "**Measurement of e + e − Momentum and Angular Distributions from Linearly Polarized Photon Collisions**\n\n*Photon Collisions*\n\n9 pp, 2 sections.\n\n**Outline.** Front matter; STAR",
+ "tokens": {
+  "brief": 33,
+  "extended": 44
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-6"
+  },
+  {
+   "id": "sec-000-star",
+   "title": "STAR",
+   "pages": "6-9"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -406,7 +406,7 @@ reprs recorded deliberately, and converging estimates quoted in prose.
 
 ### The catch: a live wrong constant in a mass formula
 
-`content/quantum-observable-universe/mass-theory/nuclear-knot-classification.lean`
+`folio/quantum-observable-universe/mass-theory/nuclear-knot-classification.lean`
 lines 28 and 30:
 
     bindingScale .satellite = m_e * 7.327724753846269

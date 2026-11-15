@@ -5,8 +5,8 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-10-12T18:13:09Z
-updated_at: 2026-10-13T11:39:48Z
-parent: qou-xhci
+updated_at: 2026-11-15T13:30:00Z
+parent: qou-59vq
 ---
 
 Needed to instantiate the KZ Step 2 ribbon lemma at D_ℏ (θ = e^{iπℏC}). No Lean construction of D_ℏ as a MonoidalCategory with the KZ associator exists; pentagon/hexagon are matrix identities in QOU/KZ/KZPentagon, KZHexagon (#7706), not yet packaged as BraidedCategory with twist and duals. Do not close while open.
@@ -125,3 +125,7 @@ Do not close.
 - Hecke: `hecke_DH`: s·β_{V,V} − s⁻¹·β⁻¹ = (q−q⁻¹)·𝟙, s=e^{iπℏ/2}, q=e^{iπℏ}. The UNSCALED relation β−β⁻¹ ∈ ℂ·𝟙 is FALSE for every transcendental ℏ (`not_hecke_unscaled`, proved): sl₂ braiding has eigenvalues s on Sym², −s⁻³ on Λ². So ribbon_hecke_qDim_eq_qint_two does not apply verbatim; used `ribbon_hecke_dimension_scaled` (same proof, generic ribbon category).
 - S6: `qDim_V_eq_qint_two`: qDimTwistedWith V Vᘁ = (q + q⁻¹)•𝟙_𝟙 in DH c, q = e^{iπℏ}, θ_V = e^{3iπℏ/2} = q^{3/2}; hypotheses Fact(Transcendental ℚ ℏ), Fact(‖ℏ‖ ≤ 1/12) (jointly satisfiable: exists_admissible). #print axioms: propext, Classical.choice, Quot.sound only.
 - Still open (stream goal): identification of the KZ braid rep with Jimbo's (β on V^{⊗n} vs Jimbo R-matrix) — this bean's dimension result is one input.
+
+## Parented 2026-11-15 (owner-approved bean triage)
+
+Parent `qou-xhci` → `qou-59vq`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.

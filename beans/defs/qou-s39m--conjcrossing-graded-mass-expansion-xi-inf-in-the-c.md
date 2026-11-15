@@ -18,7 +18,7 @@ production and `computations/canonical_mass.py` does not use `xi` at all.
 
 ## The defect
 
-[`crossing-graded-mass-expansion.md`](../content/quantum-observable-universe/mass-theory/crossing-graded-mass-expansion.md)
+[`crossing-graded-mass-expansion.md`](../folio/quantum-observable-universe/mass-theory/crossing-graded-mass-expansion.md)
 defines the depth scalar `xi(q) = D(z_q)/hbar_q^2` and closes with:
 
 > "Taking the classical limit `xi -> 0` recovers the baseline Groebner-Shirshov

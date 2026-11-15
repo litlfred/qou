@@ -64,7 +64,7 @@ Note `qou-17mq` (O2 neutrality obstruction) still reshapes this bean's
 
 ## ROAST 2026-08-30 — route (2)'s corpus asset does not exist; the route is untouched
 
-Four defects in `content/quantum-observable-universe/lean/QOU/MobiusEnergy.lean`,
+Four defects in `folio/quantum-observable-universe/lean/QOU/MobiusEnergy.lean`,
 the file this bean cites as *"corpus MobiusEnergy.lean exists"*. All four are
 **machine-verified against the committed declarations** (lean-direct, exit 0,
 `#print axioms` clean), and all four were invisible to every detector: none
@@ -248,7 +248,7 @@ needs the complementary statement, and it was missing — "the map must be even"
 is half an instruction.
 
 Three lemmas added to
-[`MilnorTripleLinkingMagnus.lean`](../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/MilnorTripleLinkingMagnus.lean),
+[`MilnorTripleLinkingMagnus.lean`](../folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/MilnorTripleLinkingMagnus.lean),
 `lean`-direct exit 0, sorry-free; two of them depend on **no axioms at all**.
 
 1. **`even_functional_is_symmetric`** — an even `F` satisfies the exchange-
@@ -1177,7 +1177,7 @@ For the whole `d = |Z−N| = 1` ladder — the entire `A = 2Z−1` series the ar
 against — this is **one constant, independent of the nucleus**. Sorry-free in Lean,
 `lean`-direct exit 0, `#print axioms` = `[propext, Quot.sound]` on all five decls
 (no `Classical.choice`, no `sorryAx`):
-`content/quantum-observable-universe/lean/QOU/Mass/FreedmanHeMirrorSplitChargeBlind.lean`
+`folio/quantum-observable-universe/lean/QOU/Mass/FreedmanHeMirrorSplitChargeBlind.lean`
 — `mirrorSplit_eq`, `mirrorSplit_succ_const`, `mirrorSplit_succ_eq_of_ne`,
 `mirrorSplit_eq_zero_of_flux_eq`, `mirrorSplit_add_eq`.
 
@@ -1196,7 +1196,7 @@ sign, **9.41×** in magnitude. Both corpus figures are reproduced exactly in the
 witness before being disputed (2.098835 and 1.4487357, to 1e-6).
 
 **And the framework defines no flux.** Measured, not recalled: `Flux` occurs
-nowhere in `content/quantum-observable-universe/lean/` as a quantity. The grep hits
+nowhere in `folio/quantum-observable-universe/lean/` as a quantity. The grep hits
 are a photon docstring (`KnotRegistry.lean:48`), meson colour tubes
 (`MesonFluxTubeReduction.lean`), and the English idiom *"in flux in Mathlib's
 CoxeterSystem API"* (`Tw.lean:56`, `Defn.lean:114`, `Quotient.lean:62,136`). So
@@ -1250,7 +1250,7 @@ that admits the statements (`[AddCommGroup R] [LinearOrder R]
 [IsOrderedAddMonoid R]` — an ordering is genuinely required here, unlike the
 sibling file's generic `CommRing`; note `LinearOrderedAddCommGroup` is deprecated
 in this Mathlib and is no longer a class at all, so it cannot be used as a binder):
-`content/quantum-observable-universe/lean/QOU/Mass/LowerBoundCannotConstrainADifference.lean`
+`folio/quantum-observable-universe/lean/QOU/Mass/LowerBoundCannotConstrainADifference.lean`
 — `diff_unconstrained`, `no_split_value_is_excluded`, `diff_of_saturated`,
 `diff_bounded_of_upper`, `diff_bounded_collapses_iff_saturated`. `#print axioms`:
 four carry `[propext, Classical.choice, Quot.sound]` (Classical.choice enters via
@@ -1307,7 +1307,7 @@ assertion** and prompts a revisit, rather than the probe asserting a stale
 absence. The precision argument does not depend on it.
 
 Lean, sorry-free, `lean`-direct exit 0 no warnings:
-`content/quantum-observable-universe/lean/QOU/Mass/MirrorSplitIsASmallFractionOfTheEnergy.lean`
+`folio/quantum-observable-universe/lean/QOU/Mass/MirrorSplitIsASmallFractionOfTheEnergy.lean`
 — `split_fraction_bound`, `interval_width`, `interval_narrower_than_split_iff`.
 `#print axioms`: `interval_width` is `[propext, Quot.sound]`; the other two add
 `Classical.choice`. Zero `sorry`/`axiom`.
@@ -1355,7 +1355,7 @@ here the conclusion survives by direct computation:
   like an escape sits *inside* the excluded regime, not outside it.
 
 Both proved, sorry-free, `lean`-direct exit 0 no warnings, in
-`content/quantum-observable-universe/lean/QOU/Mass/MirrorSplitIsASmallFractionOfTheEnergy.lean`
+`folio/quantum-observable-universe/lean/QOU/Mass/MirrorSplitIsASmallFractionOfTheEnergy.lean`
 — `zero_neutron_flux_is_the_r_eq_three_case` (needs `N ≤ Z`, true throughout the
 `A = 2Z−1` ladder where `N = Z−1`) and
 `zero_neutron_flux_fraction_is_exactly_one_over_Z`. `#print axioms`: the first
@@ -1426,7 +1426,7 @@ ladder where `|P| − |Q| = 1`.
 
 Lean, sorry-free, `lean`-direct exit 0 no warnings, generic `CommRing` (no
 ordering used, so none assumed, §7c):
-`content/quantum-observable-universe/lean/QOU/Mass/NonUniformAcRelocatesTheObligation.lean`
+`folio/quantum-observable-universe/lean/QOU/Mass/NonUniformAcRelocatesTheObligation.lean`
 — `mirrorSplit_nonuniform_eq`, `mirrorSplit_uniform_eq`,
 `mirrorSplit_eq_zero_of_equal_weight`. All three `[propext, Classical.choice,
 Quot.sound]`; zero `sorry`/`axiom`.
@@ -2253,7 +2253,7 @@ level up.
 ### The derivation that replaces it — the ladder is not merely unwalked, it is unaskable
 
 **Step 1 — the element is not a braid. PRIOR ART; cite it, do not re-derive.**
-[`braids-and-knots/markov-disambiguation.md`](../content/quantum-observable-universe/braids-and-knots/markov-disambiguation.md)
+[`braids-and-knots/markov-disambiguation.md`](../folio/quantum-observable-universe/braids-and-knots/markov-disambiguation.md)
 (PR #5765, **2026-08-25**):
 
 > `tr_M` is defined on ALL of `H_n(q)` … no braid, no closure, and no topology

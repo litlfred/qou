@@ -17,7 +17,7 @@ parent: qou-l2vh
 ---
 
 **File:** `QOU/Interactions/nucleon_ordering_factorization.lean` (QOU)  ·  1 cited sorry(s)
-**GitHub:** https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/content/quantum-observable-universe/lean/QOU/Interactions/nucleon_ordering_factorization.lean
+**GitHub:** https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/folio/quantum-observable-universe/lean/QOU/Interactions/nucleon_ordering_factorization.lean
 
 ### `nucleon_ordering_factorization`  —  line 89  ·  tier **P** (repo-infra-dependent)
 - **Proposition:** `theorem nucleon_ordering_factorization [ctx : NucleonOrderingFactorizationContext] : ctx.trM_N = ctx.W_sym * ctx.S_pi + ctx.W_std * (ctx.z * ctx.a_pi + ctx.b_pi) + ctx.W_alt * ctx.A_pi `

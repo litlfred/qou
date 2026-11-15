@@ -17,7 +17,7 @@ parent: qou-5vkl
 Work item: check content blocks citing `prop:unified-iterative-correction` for
 quoted numbers the gate drop moves. Nine blocks cite it; one carries numbers.
 
-`content/quantum-observable-universe/mass-theory/unified-iterative-correction-table-data.md`:
+`folio/quantum-observable-universe/mass-theory/unified-iterative-correction-table-data.md`:
 
 | Atom | `B_dedi` | `B_unif` | `B_AME` | `Σ_λ B_λ` |
 |:--|--:|--:|--:|--:|

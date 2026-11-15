@@ -1,13 +1,13 @@
 ---
 # qou-ttb1
 title: witness environment guard treats pyhecke_native_build as ORDERED, but a .so content hash is not
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T20:06:56Z
-updated_at: 2026-10-04T15:25:38Z
+updated_at: 2026-11-15T13:40:00Z
 parent: qou-5vkl
 ---
 
@@ -85,3 +85,7 @@ from a different route (I hit it as an anomalous preserved build hash on
 convention-C work; they hit it auditing witness provenance). Two independent
 observations of the same defect strengthen it. Close this as duplicate when
 #5683 merges.
+
+## Closed 2026-11-15 (owner tap, E1 bean triage)
+
+Its own instruction was "close as duplicate when #5683 merges". #5683 merged on 2026-08-24.

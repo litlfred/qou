@@ -687,3 +687,127 @@ Was in-progress with no bean update since 2026-09-08 and no main commit naming i
 Tracked under carrier M7 (qou-g16t) of epic `qou-d8c7` "Mass endomorphism" (issue litlfred/qou#7547). Parent and status unchanged; the epic body lists what is still open for this item and where it sits in the attack-vector catalogue.
 
 2026-10-10 (bean qou-we2d, PR #7557): Lean now proves the Molien weight M_mu(q^2) = q^{-kappa}/prod[h]_q is the z = 0 Markov trace and equals the symmetrising trace tau(T_w)=delta_{w,1} (QOU.SchurWeyl.SeminormalRep.molienMarkovTrace_symmetrising, eq_molien_of_zero; ocneanuWeight q 0 = molienWeight). Consequence for this bean: Molien as a TRACE weight has z = 0, so any channel that needs a Markov property with z != 0 (interface mu = tau(sigma)) cannot use it; Molien as a MEASURE is unaffected.
+
+## 2026-09-14 — the ruling had TWO live carriers still saying "open", and AGENTS.md was one
+
+The 2026-09-08 entry above says the audit doc was corrected. It was — rows D2
+of `docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md` (lines 624, 745)
+are on `main` and say so in their own words: *"This row was written as open by
+mistake; corrected 2026-09-08."* **But the sweep stopped there.** Measured
+`grep -rn "right numerator"` across `.md` / `.py` / `.ts`, excluding `.beans/`:
+exactly **two** live carriers of the stale claim, and neither was an audit doc.
+
+| carrier | what it said |
+|---|---|
+| `AGENTS.md:4924` | *"Cross-atom consumers use the self-normalised `d_q^2/D^2` … Whether `dim_q^2` is even the right numerator … is **open**, bean `qou-oots`."* |
+| `computations/audits/confinement_filtration_vs_gbdepth_probe.py:180` | *"bean `qou-oots` records that whether dim_q^2 is even the right numerator is OPEN"* |
+
+**AGENTS.md is the one that matters, and it is worse than a stale status
+line.** It does not merely *record* the question as open — it gives a
+**directive**, "cross-atom consumers use the self-normalised `d_q^2/D^2`", i.e.
+it tells every agent to reach for the arm the owner ruled is a labelled
+comparison, nine days after the ruling and six after the re-affirmation. And
+the arms are not close: Molien gives the FR mechanism **+21.4 %** over its own
+baseline (best knot `5_2`), `d_q^2/D^2` gives **+1.7 %** (best knot `6_1`), and
+the paper's `6_1` gets **no** support under the canonical arm. An agent
+following the old sentence picks the arm that flatters a different knot.
+
+**The second carrier is MINE, and it is the laundering path this repo keeps
+recording.** `confinement_filtration_vs_gbdepth_probe.py` merged ~2 h earlier
+(PR #7375). I did not measure that claim — I copied it out of AGENTS.md while
+writing a probe whose whole §0 is about reading a convention off the corpus
+rather than assuming one. A stale instruction file produced a fresh artifact
+that then corroborates it; that is the mechanism, not a coincidence.
+
+**One thing the carriers got right by accident, now made explicit.** AGENTS.md
+cites the Molien identity `Σ_λ f^λ dim_q(λ) = [n]_q!` as Lean-proved sorry-free
+for all `n`, all `q>1`. That identity holds under the **fake-degree**
+convention and **fails** under the symmetric one — measured independently in
+the probe's §0 (`n = 2..5`, fake holds at all four, symmetric fails at all
+four), and recorded from the other side in `notation-collisions.md:34`, which
+identifies the corpus's Molien weight with `𝕄_{n,q}` at `Q = q²` exactly. So
+AGENTS.md's own cited theorem **already commits to fake-degree** and the line
+never said so; resolving a bare `dim_q` to symmetric silently breaks the
+theorem being cited. Now stated in the line.
+
+**🛑 Do NOT collapse the two questions — the fix deliberately keeps them
+apart.** `qou-oots` ruled the Φ_k **weight family**. The probe's two
+conventions are how `dim_q` **itself** is computed inside
+`def:knot-operator-energy`'s `E(λ,q)` — a different object from the Φ_k weight.
+The ruling reaches the first and, via the Molien identity, fixes fake-degree
+for the canonical Φ_k weight; it does **not** reach `E`, whose own block text
+pins **symmetric** (it says the minimum `1/[k]_q!` is attained by the trivial
+`(k)` *and* `(1^k)` reps, which needs `dim_q = 1` for both — true only without
+the `q^{n(λ)}` prefactor). That internal tension in `def:knot-operator-energy`
+is **untouched by the ruling and stays open**. The probe carries both arms for
+exactly this reason and its conclusion holds under each.
+
+**Scope of the AGENTS.md rewrite — narrower than it may look.** The ruling is
+about **Φ_k**. For a cross-atom consumer outside Φ_k the self-normalisation
+argument in that line still stands; what changed is that the family is now a
+**declared choice**, never an implicit `d_q^2/D^2`. I did not promote Molien to
+"all cross-atom consumers" — the ruling does not say that.
+
+**This bean stays open** (§13a). The remaining scope is unchanged and is what
+the 2026-09-08 entry names: the **α_EM-axis triage** — three `alpha_em*`
+producers build `dim_q^2/[n]_q!` and whether the ruling moves a physics-facing
+number there is still untriaged. Nothing here touches that.
+
+### α_EM-axis triage — partial: prior art exists for 1 of 3, and the dashboard row is CLEAN
+
+The entry above names the remaining scope as the α_EM-axis triage. Two findings,
+one of them a re-derivation I should have grepped for first.
+
+**1. It is already triaged for `alpha_em_b2_scalar_c_probe`, and I re-derived
+the argument before checking.**
+[`computations/probes/alpha_em_b2_weight_family_triage_probe.py`](../computations/probes/alpha_em_b2_weight_family_triage_probe.py)
+exists, cites this bean by name, and runs clean (2/2). Its result:
+
+    lambda = (4,1), n = 5, q0 = 1.109978582751, f^lambda = 4, kappa = contentSum = 5
+    Plancherel  d_q^2/[5]_q!         = 0.12862000417524688333   <- what the consumer computes
+    Molien      f^l q^-k d_q/[5]_q!  = 0.07429973308938433194   <- what the ruling makes canonical
+    Markov      y_(4,1) at N=2       = 0.12498539716794710592   <- what its verdict CALLS it
+    Molien / Plancherel = 0.577668563811813569   (-42.2331 %)
+
+It also carries a finding I did not have: the consumer's verdict **mislabels**
+the object, calling `d_q²/[n]_q!` *"the canonical MARKOV normalization"* when the
+Markov weight is `y_λ` — three families, one name. And note `κ` is the **content
+sum**, not Macdonald's `n(λ)`; I would have guessed wrong.
+
+**2. NEW — the dashboard's `α_em⁻¹` row does NOT depend on the weight family.**
+Measured, and it narrows that probe's own stated worry. The row's
+`source_witness` is `alpha-em-schwinger-ladder.witness.json ::
+data.ladder_proton.form_B_alpha_inv`, produced by
+`alpha_em_schwinger_ladder_probe.py`. That producer:
+
+- reads **no** witness and no JSON (`json.load` / `witness.json` / `open(` all absent);
+- contains **zero** matches for `dim_q` / `d_q` / `q_dimension` / `q_factorial` /
+  `wedderburn` / `plancherel` / `molien` / `weight`;
+- imports only `mpmath`, `_path_bridge`, `witness_base`, `_precision`,
+  `q_parameter`, `qou_substrate.codata` — and the only two regex hits anywhere in
+  that cone are **prose in comments** (`_precision.py:26`, `q_parameter.py:150`).
+
+So the Molien ruling moves the three named producers' internal quantities and
+**does not move the one physics-facing α_EM number the dashboard scores**
+(238.3× miss, added 2026-09-07). Import cone checked explicitly rather than
+file-locally, since that is the documented trap.
+
+**Still open, and this is the live question.** The existing probe's concern is
+not the dashboard row — it is that *"the corpus's ONE scoreable L2 result
+(m_K/m_π) is α_em-conditional"*. `m_K/m_π`'s α_em is a **CLASS-A acknowledged
+anchor** (CS ansatz conditional on the open Witten-κ `sorry`) per its dashboard
+`source_witness`. Whether that anchor's value traces to the schwinger ladder
+(weight-free, so clean) or to the B2 scalar-c route (weight-dependent, −42.2 %)
+is **not yet measured**, and it is what decides whether the ruling reaches the
+framework's only sub-100× number. Note the B2 route is not currently delivered
+at all — the existing probe states the Hodge denominator (Braden–Northover
+period polarization of Jac(Bring)) is not supplied — so the likely answer is
+"clean", but that is an expectation, not a measurement.
+
+The other two named producers are **not** triaged: `alpha_5_jucys_murphy_central`
+builds `Σ dim_q² c_5 / Σ dim_q²`, a same-`n` weighted average — the `[n]_q!`
+cancels but `f^λ q^{−κ} dim_q` vs `dim_q²` differ per λ, so it is **not**
+invariant under Molien (it *is* invariant under the `d_q²/D²` comparison arm,
+the same asymmetry recorded for `beta_ew_delta_I_321_and_wedderburn.py`);
+`alpha_em_b2_canonical_scale_ratio_probe` reports `y_(4,1)` vs `w_(4,1)` as an
+explicit two-arm comparison with Molien absent as a third arm.

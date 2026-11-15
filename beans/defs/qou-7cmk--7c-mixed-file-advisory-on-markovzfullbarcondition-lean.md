@@ -15,7 +15,7 @@ parent: qou-rtxm
 
 `scripts/check-sidecars.sh`, run properly scoped during the #5111 merge
 pipeline, flags a **branch-introduced §7c mixed-file advisory** on the new
-`content/quantum-observable-universe/lean/QOU/QBeta/MarkovZFullBarCondition.lean`
+`folio/quantum-observable-universe/lean/QOU/QBeta/MarkovZFullBarCondition.lean`
 (bean `qou-b3nk`, merged as `4f1cea6223`).
 
 The PR body had claimed "check-sidecars: no §7c flags". That was **false** —

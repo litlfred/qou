@@ -45,7 +45,7 @@ This bean's framing ("different particles = different ϑ_K") silently assumes a
 **free, per-particle** cusp datum *on a fixed knot*. That is **forbidden by the
 geometric invariant**: the complete-hyperbolic-structure cusp shape is a *fixed
 topological invariant of the knot*. The corpus's own
-[`cusp-shape-bar-parity`](../content/quantum-observable-universe/braids-and-knots/cusp-shape-bar-parity.md)
+[`cusp-shape-bar-parity`](../folio/quantum-observable-universe/braids-and-knots/cusp-shape-bar-parity.md)
 pins `4₁ → ω = e^{iπ/3}` (Φ₆ root, trace field ℚ(√−3)), computable by
 Neumann–Zagier / SnapPy. So if the proton and the muon are **both** 4₁-based
 they have the **same** geometric ϑ_K — the per-particle-varying ϑ is impossible
@@ -60,7 +60,7 @@ geometric cusp shape.
    deformation off the complete point), so a single knot supports a
    one-parameter family of ϑ and different particles sit at different points of
    it. Consistent with
-   [`meridian-holonomy-boost`](../content/quantum-observable-universe/braids-and-knots/meridian-holonomy-boost.md):
+   [`meridian-holonomy-boost`](../folio/quantum-observable-universe/braids-and-knots/meridian-holonomy-boost.md):
    at real `q₀>1` the meridian turn is a **boost of rapidity ln q₀**, i.e. the
    incomplete/deformed regime, not the compact-spin complete point. If this is
    the intended reading, restate ϑ_K as an *incomplete-structure boundary

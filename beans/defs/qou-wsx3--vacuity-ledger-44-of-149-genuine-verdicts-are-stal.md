@@ -33,7 +33,7 @@ Reproduce: hash each `k.split('::')[0]` with `sha256[:12]` and compare to `file_
 ## Why it matters, and the worked case
 
 **At least four of the stale `genuine` entries are demonstrably already fixed**, all in
-`content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean`:
+`folio/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean`:
 
 - `frobeniusCoCasimirTraceFallback` / `proof-docstring-body-mismatch` — the ledger says
   *"DOCSTRING CONTRADICTS BODY … docstring ends 'returns 0 for every n ≥ 6'; the body is

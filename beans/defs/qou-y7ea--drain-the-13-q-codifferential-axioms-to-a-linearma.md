@@ -13,7 +13,7 @@ parent: qou-6qbv
 
 ## What was there
 
-`content/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula-prop.lean`
+`folio/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula-prop.lean`
 carried **13 `axiom` declarations** — the largest single concentration of
 `[manuscript]`-cited axioms in the corpus (12 of the 59 pure-manuscript
 axioms measured in the 2026-09-03 cited-not-proved witness). They split

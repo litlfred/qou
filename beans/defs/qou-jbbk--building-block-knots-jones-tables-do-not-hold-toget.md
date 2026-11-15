@@ -18,8 +18,8 @@ Found by `agent:pq_03` on the `observations/` trap-drain and **re-derived
 independently in the coordinating session**. Two blocks are involved and they
 are inconsistent with each other as well as with the standard invariants:
 
-- [`building-block-knots-table1-data.md`](../content/quantum-observable-universe/observations/building-block-knots-table1-data.md) — the polynomials
-- [`building-block-knots-table5-data.md`](../content/quantum-observable-universe/observations/building-block-knots-table5-data.md) — their values at `q₀`
+- [`building-block-knots-table1-data.md`](../folio/quantum-observable-universe/observations/building-block-knots-table1-data.md) — the polynomials
+- [`building-block-knots-table5-data.md`](../folio/quantum-observable-universe/observations/building-block-knots-table5-data.md) — their values at `q₀`
 
 ## 1. Two printed values are outside the range of the polynomial that is supposed to produce them
 
@@ -89,7 +89,7 @@ polynomial also evaluates to `1` at `q = 1`, so it passes the same check.
 
 ## 4. And a volume in the neighbouring table
 
-[`building-block-knots-table3-data.md`](../content/quantum-observable-universe/observations/building-block-knots-table3-data.md)
+[`building-block-knots-table3-data.md`](../folio/quantum-observable-universe/observations/building-block-knots-table3-data.md)
 gives the Solomon link `L4a1` hyperbolic volume `≈ 6.45`. `L4a1` is the
 `(2,4)`-torus link; its complement is Seifert-fibered and admits no hyperbolic
 structure, so the volume is **0** — which the adjacent Hopf-link row gets right,

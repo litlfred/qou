@@ -438,6 +438,63 @@ construction. It does **not** derive one-sidedness, because the mirror corner ca
 the same structure. Which corner is "weak" is again the bit, fixed by `leftLine` (owner
 ruling). Identifying the `(3,1)` multiplicity doublet with the `(u, d)` doublet is scope (a).
 
+## 7. Owner decisions after #7855 merged: the remark, and whether the corner `sl₂` persists
+
+Bean `qou-wkcj`.
+
+**Headline: the exclusive one-sidedness of §6.4 is an `n = 4` accident.**
+
+- At `n = 4` the right corner's only `sl₂` carrier is `(2,1,1)`, which convention D gives
+  weight zero.
+- At `n = 5` the right corner already has a carrier that D keeps, `(3,2)` of rank 2.
+- So no level beyond 4 shows the structure "SU(2) visible to the trace on L only".
+
+**What survives at every `n` is a weighted bias of `[3]_q : 1`.**
+`QOU/QuarkState/ConventionDLineWeights.lean` proves the following for any linear
+functional with `τ(1) = 1` and `τ(σ) = z`:
+
+- `trace_Pp`: `τ(P₊) = (z+q⁻¹)/[2]`.
+- `trace_Pm`: `τ(P₋) = (q−z)/[2]`.
+- `zD_line_ratio`: at `z_D`, `τ(P₊) = [3]_q τ(P₋)`.
+- `zD_trace_Pm`: `τ(P₋)` is nonzero.
+- `three_bar_invariant`, `three_relabel_invariant`: `[3]_q` is unchanged by bar and by
+  the root relabel.
+- `zD_ratio_at_one`: at `q = 1` the ratio is `3 : 1`.
+
+These values do not depend on `n`.
+
+Probe `corner_sl2_weighted_persistence_probe.py` (all checks pass; exact sympy, then
+mpmath at 70 dps at the proton `q₀`):
+
+- `T_L = (z_D+q⁻¹)/[2]` and `T_R = (q−z_D)/[2]` hold exactly for `n = 2…16`, using the
+  closed-form weights `y_(n−k,k) = [n−2k+1]/[2]ⁿ`.
+- The `sl₂`-carrying parts of the two corners have weighted ratio ∞ at `n = 4`, then
+  4.566, 3.786, 3.440, …, 3.046 at `n = 16`. They tend to `[3]_{q₀} = 3.0437`.
+
+**Reading (observation, scope a).**
+
+- `[3]_q : 1` is `qdim Sym²V : qdim Λ²V` for the `SU_q(2)` fundamental. It is the
+  fibre that defines convention D.
+- The bias is present at `q = 1` (`3 : 1`) and is bar-invariant in size. It is therefore
+  a property of **convention D**, not of `|q₀| > 1`.
+- `|q₀| > 1` enters only through the owner's `leftLine` definition. At `q > 1` that
+  definition lands on the line D favours, so the ruled definition and the ruled trace
+  convention point to the **same** side.
+- A Plancherel or Wenzl weight share is exactly this computation: `y_λ` is the Wenzl
+  weight at `z_D`. The limit is not a new mechanism; it reproduces `[3]_q`.
+
+**Remark added.** `mass-theory/convention-d-chirality-side.{ts,md}`
+(`rem:convention-d-chirality-side`, interprets `prop:markov-trace-frobenius-selection`)
+records all three forms of the one-sidedness:
+
+1. at `n = 3`, the all-right block `(1³)` has weight 0;
+2. `z_D` is not invariant under the root relabel;
+3. the `[3]_q : 1` line weights.
+
+It states explicitly that no identification with physical chirality or with the weak
+coupling is made. The corner `n = 4` / `n = 5` rank facts are probe-only (exact integer
+counts that rest on the cited seminormal form); they are not formalised in Lean.
+
 ## 5. What is not established
 
 - That convention D's one-sidedness (§6.2) is the weak chirality. Scope (a).
@@ -445,3 +502,77 @@ ruling). Identifying the `(3,1)` multiplicity doublet with the `(u, d)` doublet 
 - That left-multiplication `Sp(1)` is weak isospin. Scope (a).
 - Any map between quaternion sides and Hecke eigenlines.
 - An argument for the `> 1` root of the mass formula (§1.5a: none found; convergence points the other way).
+
+## 8. Does the corner asymmetry alternate with n, or with a sign? No: it is monotone (owner question, 2026-11-15)
+
+Probe: `computations/probes/corner_sl2_parity_probe.py` (all checks pass; exact SYT counts,
+sympy symbolic, mpmath 70 dps at the proton `q₀`).
+
+- **Exclusivity, by parity of n.** For each `n = 4…16` the probe lists the corner `sl₂`
+  carriers that convention D keeps. The right corner has **none** only at `n = 4`. From
+  `n = 5` on, the right corner keeps every two-row shape `(n−k, k)` with `k ≥ 2`, and the
+  left corner keeps those plus `(n−1, 1)`. Exclusivity does not return at even `n`, at
+  `n ≡ 0 (mod 4)`, or anywhere else in the range.
+- **The weighted ratio sequence.** `S_L/S_R` (computed for `n = 5…16`) **decreases
+  monotonically**. Every increment is negative: −0.779, −0.346, −0.177, −0.0960, −0.0537,
+  −0.0304, −0.0172, −0.00978, −0.00553, −0.00312, −0.00175. Every deviation from
+  `[3]_{q₀} = 3.0437` is positive, from 1.522 down to 0.00222, so the ratio approaches
+  `[3]_{q₀}` from above. The difference `S_L − S_R` **increases monotonically**, from 0.436
+  to 0.5053. None of the three sequences alternates.
+- **Transpose `λ ↔ λ'`** (the sign twist).
+  - It swaps the two line ranks, `a ↔ b`. This holds for every `λ`, `n ≤ 16`.
+  - Convention D is not transpose-symmetric. It kills the transpose of a two-row shape
+    exactly when that shape has ≥ 3 columns. The only kept transposes are two-column
+    shapes, such as `(2,2)`.
+  - My first version of this check claimed "always killed" for `n ≥ 4`. That was wrong:
+    `(2,2)` is its own transpose. The probe caught it, and the check now states the exact
+    condition.
+- **Root relabel `q ↦ −q⁻¹`.** At `z_D(−q⁻¹)` the line weights are `1 : [3]_q`: the bias
+  flips side and keeps the same size. At `n = 3` the relabelled weights are
+  `y_(3) = 0`, `y_(2,1) = q²/(q²+1)²`, `y_(1³) = (q⁴+1)/(q²+1)²`. That is exactly the
+  transpose of convention D: the all-q block is now the one that is killed.
+
+**Verdict: monotone, not alternating.** The only sign change anywhere is the single global
+L↔R swap under the root relabel or the transpose. That is the same one bit as §1.1, not
+an alternation in `n`.
+
+## 9. Is the `n = 4` corner doublet the same thing as flavour (`σ₃ ↦ σ₃⁻¹`)? No (owner priority 3, 2026-11-15)
+
+Probe: `computations/probes/corner_doublet_vs_flavour_probe.py` (all checks pass; exact
+sympy over symbolic `q`; no floats, no fit, no witness). The probe builds Young's
+seminormal form itself and **checks** the quadratic and braid relations, so the matrices
+below do not rest on the cited form.
+
+Setting: `D` is the `q`-line of `σ₁` inside the block `(3,1)` of `H₄`, spanned by the two
+tableaux with 1, 2 in the first row. It is the doublet of §6.4. Flavour is read as letter
+orientation (#7836): `u ~ σ₃`, `d ~ σ₃⁻¹`. `σ₃` commutes with `σ₁`, so it acts inside the
+corner.
+
+- **`dim D = 2`** and `σ₃|_D` has eigenvalues `q` and `−q⁻¹`, once each.
+- **`σ₃⁻¹|_D = σ₃|_D − h·I`.** This is the corpus definition `flip q s = s − h·1`
+  (`HelicityCommonSource.lean`) seen on `D`. The flavour flip is a shift by a central
+  scalar.
+- Consequences on `D`:
+  - in `σ₃`'s eigenbasis the flip is `diag(−q, q⁻¹)` against `diag(−q⁻¹, q)`: it **fixes both
+    doublet states** and never exchanges them;
+  - `span{I, σ₃|_D, σ₃⁻¹|_D}` has dimension 2 and is commutative: the Cartan part of `gl₂`,
+    with no raising or lowering element;
+  - the off-diagonal part of the corner `sl₂` comes from `P₊σ₂P₊`, the letter that does
+    **not** commute with `σ₁`; with it the corner acts on `D` as all of `M₂(K)`.
+- **The doublet's two states are the two eigenlines of `σ₃`**: one on `σ₃`'s `q`-line, one on
+  its `−q⁻¹`-line. The doublet label is `σ₃`'s chirality bit, not its orientation.
+- Sweep: every `sl₂`-carrying block of the left corner for `n = 4…6`, and every letter
+  `σ_j` (`j ≥ 3`) commuting with `σ₁`: 33 cases. The flip is a central shift on the
+  multiplicity space in all of them.
+
+**Verdict, scope (b) for this identification.** The invariant is the quadratic relation:
+`σ⁻¹ = σ − h` holds in every corner of every `H_n`, so letter orientation can only ever
+move a multiplicity space by a scalar. It can supply at most a `U(1)` direction, never the
+two states of a doublet. Conditional on the #7836 reading "flavour = letter orientation";
+if that reading changes, this must be rechecked. The `(3,1)` doublet itself is real
+(§6.4), but what it doubles is `L₁ ∩ L₃` vs `L₁ ∩ R₃`: chirality of a second letter, not
+`u` vs `d`.
+
+**Consequence for the plan.** Building the `H₄` doublet in Lean **as a flavour doublet** is
+not supported. What a build could still claim is "a left-only `sl₂` whose doublet is the
+`σ₃` chirality pair", which needs a different physical reading and is an owner call.

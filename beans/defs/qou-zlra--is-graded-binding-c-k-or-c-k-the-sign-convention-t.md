@@ -1,13 +1,13 @@
 ---
 # qou-zlra
 title: Is graded binding +c_k or -c_k? The sign convention the type-two result hangs on
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T12:02:10Z
-updated_at: 2026-10-04T15:13:08Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-v2om
 ---
 
@@ -292,3 +292,7 @@ it is underived and its stated justification false; it does NOT show it is wrong
 
 Audit: `docs/audits/2026-09-12-uic-functional-resolution.md`.
 Probe: `computations/probes/uic_functional_resolution_probe.py` (16/16).
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

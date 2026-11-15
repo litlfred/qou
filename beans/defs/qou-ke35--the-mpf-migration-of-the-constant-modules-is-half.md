@@ -5,7 +5,8 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-13T16:24:39Z
-updated_at: 2026-09-13T16:28:29Z
+updated_at: 2026-11-15T13:30:00Z
+parent: qou-9nnz
 ---
 
 ## The claim
@@ -204,3 +205,7 @@ Worth stating plainly because the section above reads as more promising than it
 turned out to be: I found a pattern, offered it as a lead, tested it, and it was
 wrong. The pattern is still real for `per_atom_rho_deviation`; it is not a
 general explanation.
+
+## Parented 2026-11-15 (owner-approved bean triage)
+
+Parent `(none)` → `qou-9nnz`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.

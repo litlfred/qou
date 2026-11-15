@@ -40,7 +40,7 @@ that build the layer carry **no `cites` field at all**:
 `brings-surface/brings-qou-axiom-map`.
 
 **Where it bites hardest.**
-`content/quantum-observable-universe/lean/QOU/Eightfold/ContactDistributionRank.lean:91`
+`folio/quantum-observable-universe/lean/QOU/Eightfold/ContactDistributionRank.lean:91`
 defers explicitly — *"that is a cited fact about contact geometry, not something
 [proved here]"* — and the file carries **zero `-- Ref:` lines**. That file is the
 formal backbone of the CR-dimension decision

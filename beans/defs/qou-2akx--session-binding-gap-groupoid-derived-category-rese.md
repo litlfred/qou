@@ -1,13 +1,13 @@
 ---
 # qou-2akx
 title: 'Session: binding-gap groupoid / derived-category research survey (full tower)'
-status: in-progress
+status: todo
 type: feature
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T17:47:03Z
-updated_at: 2026-10-04T15:11:23Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-v2om
 ---
 
@@ -22,3 +22,7 @@ parent: qou-v2om
 ## Reorganisation 2026-10-04
 
 This body is a charter, not a log: it is now the Route C story under the extensive-binding epic, keeping its open children.
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

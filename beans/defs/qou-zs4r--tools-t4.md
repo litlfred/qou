@@ -1,14 +1,14 @@
 ---
 # qou-zs4r
 title: '[TOOLS T4] Parity harness: witness-parity Tool'
-status: in-progress
+status: todo
 type: feature
 priority: normal
 tags:
     - migration
     - tools
 created_at: 2026-10-04T16:35:42Z
-updated_at: 2026-10-05T05:21:33Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-k3er
 ---
 
@@ -36,3 +36,7 @@ Calibration on qou, measured:
 - Without pyhecke_native: chi-sym-alt-closed-form gives **unknown**, naming pyhecke_native and clarabel. This matches the done-when.
 - With pyhecke_native 0.9.0 built from today's source plus clarabel 0.11.1: also **unknown**, not pass. The committed witness records build `88833bbb2bd7f717` and today's source builds `fd6b97f9ca5fec82`. The re-run's values differ from the committed ones only near the 60th significant digit (relative 1e-48 to 1e-60), at the 60-digit output precision. The tool now reads the re-run's own `environment` and calls any difference unknown, so this is reported as a different build, not as pass or fail. No numeric tolerance was added. The done-when's expected pass for this witness is not reproducible here, because the recorded native build is not the one current source produces.
 - Sample, the 10 cheapest witnesses whose recorded environment matches this container: **10 pass, 0 fail**. The qou tree was untouched and no worktree was left. Run with pyhecke_native installed, the same 10 come back unknown, because the producer records the extra package; that is correct, since it is a different environment.
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

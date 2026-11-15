@@ -1,13 +1,13 @@
 ---
 # qou-p77d
 title: 'GAP: 883 non-integral float64 at .assertions[].computed/.expected across 300 witnesses — the class #5910 deferred'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-29T02:28:37Z
-updated_at: 2026-10-04T15:12:48Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-9nnz
 ---
 
@@ -593,3 +593,7 @@ the Python version is not installable away. Worth a provenance downgrade only
 if bundled with a run that needs one anyway; it is also a different domain from
 the PR that found it (#7438, Markov-trace assembly chains). Left to whoever is
 on this bean, on a container matching the recorded environment.
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

@@ -17,7 +17,7 @@ parent: qou-gdcu
 ---
 
 **File:** `QOU/Archimedean/HyperbolicVolumeIndependence.lean` (QOU)  ·  1 cited sorry(s)
-**GitHub:** https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/content/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicVolumeIndependence.lean
+**GitHub:** https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/folio/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicVolumeIndependence.lean
 
 ### `instance:HyperbolicVolumeIndependence`  —  line 42  ·  tier **B** (infra-blocked / open-conjecture)
 - **Proposition:** `noncomputable instance : HyperbolicVolumeIndependence where no_relation `

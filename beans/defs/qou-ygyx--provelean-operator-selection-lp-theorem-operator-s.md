@@ -17,7 +17,7 @@ parent: qou-l2vh
 ---
 
 **File:** `QOU/ParticleInteractions/operator_selection_lp.lean` (QOU)  ·  1 cited sorry(s)
-**GitHub:** https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/content/quantum-observable-universe/lean/QOU/ParticleInteractions/operator_selection_lp.lean
+**GitHub:** https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/folio/quantum-observable-universe/lean/QOU/ParticleInteractions/operator_selection_lp.lean
 
 ### `operator_selection_lp`  —  line 99  ·  tier **B** (infra-blocked / open-conjecture)
 - **Proposition:** `theorem operator_selection_lp [ctx : OperatorSelectionLpContext] : OperatorSelectionLpContext.IsFeasible ctx.x_star ∧ (∀ x : Fin ctx.d → ℝ, OperatorSelectionLpContext.IsFeasible x → OperatorSelectionLpContext.objective ctx.x_star ≤ OperatorSelectionLpContext.objective x) ∧ OperatorSelectionLpContext`

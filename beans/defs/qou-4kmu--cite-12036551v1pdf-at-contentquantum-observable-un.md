@@ -1,6 +1,6 @@
 ---
 # qou-4kmu
-title: Cite 1203.6551v1.pdf at content/quantum-observable-universe/mass-theory/hyperbolic-knot-positive-…
+title: Cite 1203.6551v1.pdf at folio/quantum-observable-universe/mass-theory/hyperbolic-knot-positive-…
 status: todo
 type: task
 priority: normal

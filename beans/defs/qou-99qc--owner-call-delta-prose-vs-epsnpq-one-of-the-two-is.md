@@ -97,7 +97,7 @@ nobody has derived. The fork was the wrong question -- not a question with a
 reassuring answer.
 
 Probe: computations/qbeta/qbeta_epsnpq_functional_mismatch_probe.py (7/7).
-Lean:  content/quantum-observable-universe/lean/QOU/QBeta/CounitSigmaOneForcesHZero.lean
+Lean:  folio/quantum-observable-universe/lean/QOU/QBeta/CounitSigmaOneForcesHZero.lean
 
 STILL AN OWNER CALL, but a different one. Not "which of (a)/(b)", rather:
 which functional is `eps` MEANT to be in the Q_beta ansatz, and what is the
@@ -183,7 +183,7 @@ Items 1 (colour-blind crossing, 80 ppm) and 3 (muon pin) are unaffected.
 ## 2026-08-26 — the mislabelling has a hard consequence under convention D
 
 From `qou-879g` (now answered): the corpus's own
-[`prf:algebraic-gns-embedding`](content/quantum-observable-universe/observations/algebraic-gns-embedding-proof.md)
+[`prf:algebraic-gns-embedding`](folio/quantum-observable-universe/observations/algebraic-gns-embedding-proof.md)
 places the convention-D theory in the **Temperley–Lieb quotient**
 `H_∞(q)/rad ≅ TL_∞(q)` — the radical being exactly the `ℓ(λ) ≥ 3` blocks, since
 `y_λ = 0` there.

@@ -115,7 +115,7 @@ step 2's inference from bias to forcing is withdrawn. scope-(a).
 - `qou-ai7v` and `qou-px38` — two further carriers of the same disproved
   argument in the same file, recorded and deliberately not changed.
 - **Merge-order dependency:** #7237 rewrites
-  `content/quantum-observable-universe/mass-theory/unified-iterative-correction.md`
+  `folio/quantum-observable-universe/mass-theory/unified-iterative-correction.md`
   to state the gate as part of the proposition ("the total ... is the sum ...
   over those λ whose final seminormal trace satisfies tr <= 0") plus a "Scope of
   the selection rule" section. After the drop that text is wrong. **`main`'s

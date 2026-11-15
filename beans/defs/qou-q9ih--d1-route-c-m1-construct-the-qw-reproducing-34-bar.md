@@ -1062,7 +1062,7 @@ The corpus turns out to carry exactly the right scaffolding and it is **dead**:
 `QOU/Mathlib/WallCrossing.lean` declares `ChargeLattice` (with an antisymmetric
 integral Euler pairing), `CentralCharge`, `BPSState`, `BPSSpectrum`, `Wall` and
 `KSWallCrossing` — and has **0 instances, 0 importers, and 0 mentions anywhere
-else in `content/quantum-observable-universe/`** (grep 2026-09-04, excluding
+else in `folio/quantum-observable-universe/`** (grep 2026-09-04, excluding
 `.lake/`). It compiles only because the QOU library is glob-declared. So the
 test is blocked on *data*, not on infrastructure, and that is now a measurement
 rather than my assertion.

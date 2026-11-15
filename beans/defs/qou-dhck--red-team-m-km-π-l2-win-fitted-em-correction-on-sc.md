@@ -1,13 +1,13 @@
 ---
 # qou-dhck
 title: 'RED-TEAM m_K/m_π L2 win: fitted EM correction on scan-selected term, NOT parameter-free'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-22T15:35:55Z
-updated_at: 2026-10-04T15:23:17Z
+updated_at: 2026-11-15T13:30:28Z
 parent: qou-3l2l
 ---
 
@@ -76,3 +76,7 @@ them would over-call the second.
 
 **Commits:** `e3ebd00a6` (de-fit), `0463a10be` (tracker + §8),
 `f711201aa` (content block), `a353ba0ed` (de-launder the power scan).
+
+## 2026-11-15 closed (owner card, E3 bean triage)
+
+Verified done against main 0d4e4a005: Red-team done; recommendations 1-3 landed in PR #5467 (merged 2026-08-23). The 0/5 verdict stands; the remaining knobs (scan-selected (3,4) pair, alpha_em conditionality) are tracked in qou-5ipv and the alpha_em beans. Not an open conjecture.

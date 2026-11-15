@@ -1,7 +1,7 @@
 ---
 # qou-b7cy
 title: 'Route 9: Bloch torsion at ℚ(ζ₇)⁺ makes the 5₂ sum rule a RATIONALITY statement'
-status: in-progress
+status: todo
 type: task
 priority: high
 tags:
@@ -12,7 +12,7 @@ tags:
     - reduction
     - reorg-2026-10-04
 created_at: 2026-08-07T17:05:00Z
-updated_at: 2026-10-04T15:11:07Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-n4nr
 ---
 
@@ -200,7 +200,11 @@ fudged at a seam.
 The six theorems were first compiled in a standalone project; that is not the
 same as compiling in this repo. Now done properly:
 `lake build QOU.QBeta.FiveTwoCyclotomicBloch` in
-`content/quantum-observable-universe/lean` → **707 jobs, success**, olean at
+`folio/quantum-observable-universe/lean` → **707 jobs, success**, olean at
 `.lake/build/lib/lean/QOU/QBeta/FiveTwoCyclotomicBloch.olean`, and `#print axioms`
 in-tree reproduces `[propext, Classical.choice, Quot.sound]` (and
 `[propext, Quot.sound]` for the two Vieta products). Recipe: `qou-lnbk`.
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

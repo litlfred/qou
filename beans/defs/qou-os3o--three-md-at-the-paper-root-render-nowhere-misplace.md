@@ -31,7 +31,7 @@ None is referenced by any `.ts` anywhere under `content/`.
 
 ## Why this is not just "write three manifests"
 
-They sit at **`content/quantum-observable-universe/` top level**, not in a
+They sit at **`folio/quantum-observable-universe/` top level**, not in a
 chapter directory. Blocks live in chapter dirs and are listed by a section
 manifest, so these are **misplaced as well as unmanifested**. Fixing them means
 deciding which chapter each belongs to — or that they do not belong in

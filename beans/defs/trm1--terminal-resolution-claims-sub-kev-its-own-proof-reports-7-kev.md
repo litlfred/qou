@@ -15,7 +15,7 @@ Surfaced by the adversarial second reader on PR #4921 (bean `fwr11`) while
 refuting a proposed `uses[]` edge, and verified independently before filing.
 Not fixed here: this is a content claim, not bookkeeping.
 
-[`prop:terminal-resolution`](../content/quantum-observable-universe/mass-theory/terminal-resolution.md)
+[`prop:terminal-resolution`](../folio/quantum-observable-universe/mass-theory/terminal-resolution.md)
 opens *"the predictions match CODATA to **sub-keV** precision"* over a four-row
 table:
 
@@ -32,7 +32,7 @@ Three problems, in increasing order of seriousness.
    2.224 vs 2.225 — a **1 keV** discrepancy on a table captioned "sub-keV".
 
 2. **The proof reports a residual ~7x larger than the caption allows.**
-   [`prf:terminal-resolution`](../content/quantum-observable-universe/observations/terminal-resolution-proof.md)
+   [`prf:terminal-resolution`](../folio/quantum-observable-universe/observations/terminal-resolution-proof.md)
    closes: *"These reproduce the CODATA proton and neutron masses to within a
    $-0.53\%$ residual on the splitting $m_n - m_p$."* At
    $m_n - m_p = 1.2933$ MeV that is **6.9 keV**.

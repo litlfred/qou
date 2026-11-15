@@ -79,7 +79,7 @@ gap with **no available route**, and the tractable open item is back to the
 
 ## Independent corroboration from main — `pn-bond-cannot-be-extremal` (merged 2026-09-04)
 
-A sibling landed `content/quantum-observable-universe/mass-theory/pn-bond-cannot-be-extremal.md`
+A sibling landed `folio/quantum-observable-universe/mass-theory/pn-bond-cannot-be-extremal.md`
 reaching the same defect from `A = 2` instead of from 2548 nuclides, with the
 same numbers: `L_pp = 0.489899`, `L_pn = 0.676822`, `L_nn = 0.907262`, and
 `alpha = 2.0507 MeV` — which is exactly this arc's `E_0.|ln z|`, so the two

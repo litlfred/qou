@@ -1,6 +1,6 @@
 ---
 # qou-6m79
-title: Remark interpreting [gauthier2019] at content/quantum-observable-universe/observations/bec-vortex…
+title: Remark interpreting [gauthier2019] at folio/quantum-observable-universe/observations/bec-vortex…
 status: todo
 type: task
 priority: normal

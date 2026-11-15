@@ -91,7 +91,7 @@ extra mechanism that is not present.
 
 ## The parity separation is now FORMALISED — 2026-09-14, sorry-free
 
-`content/quantum-observable-universe/lean/QOU/MassTheory/BondChannelTzParity.lean`
+`folio/quantum-observable-universe/lean/QOU/MassTheory/BondChannelTzParity.lean`
 (13 theorems, no `sorry`, axioms `[propext, Classical.choice, Quot.sound]` on
 every one; sweep 7 ok / 0 RED).
 

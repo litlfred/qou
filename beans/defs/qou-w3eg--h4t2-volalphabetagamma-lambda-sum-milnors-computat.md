@@ -155,9 +155,9 @@ areas; do not assume the acute case is general).
 > **H4-5b + H4-5c-i are DONE (2026-08-09, sorry-free) — PR #4864**, which also
 > carries #4842's five tiers forward onto current `main` (they had drifted ~388
 > commits behind). Files
-> [`OrthoschemeWedgePair.lean`](../content/quantum-observable-universe/lean/QOU/Archimedean/OrthoschemeWedgePair.lean)
+> [`OrthoschemeWedgePair.lean`](../folio/quantum-observable-universe/lean/QOU/Archimedean/OrthoschemeWedgePair.lean)
 > and
-> [`OrthoschemeRotation.lean`](../content/quantum-observable-universe/lean/QOU/Archimedean/OrthoschemeRotation.lean).
+> [`OrthoschemeRotation.lean`](../folio/quantum-observable-universe/lean/QOU/Archimedean/OrthoschemeRotation.lean).
 > H4-5 was **split**, because the "bookkeeping" framing above hid a real
 > infrastructure step:
 >
@@ -300,7 +300,7 @@ areas; do not assume the acute case is general).
 > with 0 all-same-sign occurrences in 200 000 draws.
 >
 > **H4-5c-ii(b) LANDED (2026-08-09, sorry-free) — PR #4883**, file
-> [`OrthoschemeTiling.lean`](../content/quantum-observable-universe/lean/QOU/Archimedean/OrthoschemeTiling.lean).
+> [`OrthoschemeTiling.lean`](../folio/quantum-observable-universe/lean/QOU/Archimedean/OrthoschemeTiling.lean).
 > 22 declarations, `#print axioms` clean on every one. **The H4 tier's target
 > is now a statement about a triangle:**
 >

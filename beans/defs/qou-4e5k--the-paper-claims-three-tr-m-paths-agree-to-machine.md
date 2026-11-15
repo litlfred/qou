@@ -16,7 +16,7 @@ witness moved 99 lines, which sent me to compare it against its siblings.
 
 ## The published claim
 
-`content/quantum-observable-universe/mass-endomorphism/recomputed-low-isotope-mass-table.md:3`
+`folio/quantum-observable-universe/mass-endomorphism/recomputed-low-isotope-mass-table.md:3`
 
   "three independent production paths to the Markov trace tr_M(B_K) at q = q_0
    **agree to machine epsilon** across the proton, neutron, deuteron, tritium,

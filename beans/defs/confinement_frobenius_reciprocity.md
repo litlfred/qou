@@ -11,7 +11,7 @@ updated_at: 2026-10-04T15:26:44Z
 parent: qou-uot9
 ---
 
-File: `content/quantum-observable-universe/lean/QOU/ParticleInteractions/confinement_frobenius_reciprocity.lean`
+File: `folio/quantum-observable-universe/lean/QOU/ParticleInteractions/confinement_frobenius_reciprocity.lean`
 The `confinement_frobenius_reciprocity` theorem is unprovable. The class `ConfinementFrobeniusReciprocityContext` only provides data fields (Gram matrix, shadow prices, active set) without the KKT/complementary slackness axioms needed to prove the reciprocity master formula.
 
 

@@ -1,0 +1,106 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-0706.3688v1",
+ "source": {
+  "structure_sha256": "f2a18b0defebff6613024fe7b454849667caf8065c8e0ef33b7c1d857b8e492f",
+  "file": "0706.3688.pdf"
+ },
+ "provenance": {
+  "title": "WHY THE STANDARD MODEL",
+  "authors": "ALI H. CHAMSEDDINE AND ALAIN CONNES",
+  "arxiv": {
+   "id": "0706.3688",
+   "version": "1",
+   "primary_class": "hep-th",
+   "stamp_date": "25 Jun 2007"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 5,
+  "by_kind": {
+   "recommendation": 5
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall prove below in Lemma 3.1 that the above case Z(AC) = C is incompatible with the commutation relation J\u03b3 = \u2212\u03b3J for the grading and hence with the K-theoretic dimension 6.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-21-the-case-zacc.md",
+   "section_title": "The case Z(AC)=C",
+   "pages": "4-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "This grading should be compatible with a Z/2-grading of the algebra A which amounts to asking that \u03b3A\u03b3\u22121 = A.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-004-3-z2-grading.md",
+   "section_title": "Z/2-grading",
+   "pages": "7-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We know that we are in the case Z(AC) = C \u2295C but we must choose the integer k and the real form A of AC = Mk(C) \u2295Mk(C).",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-004-3-z2-grading.md",
+   "section_title": "Z/2-grading",
+   "pages": "7-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Since W is a non-trivially Z/2-graded vector space over H its dimension must be at least 2 (and hence 4 when viewed as a complex vector space).",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-004-3-z2-grading.md",
+   "section_title": "Z/2-grading",
+   "pages": "7-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "For any operator T in H, one has (4.3) [T, a] = 0 , \u2200a \u2208AF \u21d2[e1Te2, a] = 0 , \u2200a \u2208AF \u21d2e1Te2 = 0 , since any intertwining operator such as e1Te2 must vanish as the two representations are disjoint.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-005-4-the-subalgebra-and-the-order-one-condition.md",
+   "section_title": "The subalgebra and the order one condition",
+   "pages": "8-11",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

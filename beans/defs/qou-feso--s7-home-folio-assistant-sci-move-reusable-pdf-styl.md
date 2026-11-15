@@ -1,13 +1,13 @@
 ---
 # qou-feso
 title: 'S7 (home: folio-assistant-sci) Move PDF generation tooling and reusable styling to sci'
-status: in-progress
+status: todo
 type: feature
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-04T15:10:17Z
-updated_at: 2026-10-04T18:58:42Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-n4r9
 ---
 
@@ -38,3 +38,7 @@ qou main.tex has 133 \newunicodechar plus 163 \DeclareUnicodeCharacter maps (the
 
 ## Q1 done 2026-10-04 (session_01NdDGeP1SyShmoUssLuRZ91)
 folio/quantum-observable-universe/latex/notation-preamble.tex: the 32 notation lines, verbatim (each a line of main.tex's preamble, checked by line multiset), under an 8-line comment header. paper-feature-build reads it by default. Platform side: folio-assistant#2118 carries P1 (sci template), the fixed feature-build Tool and the skill loop. On qou the render completes, and the regenerated preamble equals qou's committed main.tex preamble as a line multiset. run-validate is unchanged (5 issues). Remaining: P2 and P5 (wiring), Q2 (build.yml), Q3 (skill forks), Q4 (legacy outputs; owner D4).
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

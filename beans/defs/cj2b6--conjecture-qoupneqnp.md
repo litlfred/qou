@@ -11,7 +11,7 @@ updated_at: 2026-10-04T15:25:53Z
 parent: qou-b1je
 ---
 
-§3b conjecture-class Lean carrier `instance : QouPNeqNp := sorry` at content/quantum-observable-universe/lean/QOU/Information/QouPNeqNp.lean:75. The sorry IS the conjecture (per AGENTS.md §3b) — do NOT fabricate an instance (audit-dodge). Category: framework/substrate §3b carrier. Track backing/derivation status; advance only via genuine derivation or owner-directed reframing. Parent: b9cj.
+§3b conjecture-class Lean carrier `instance : QouPNeqNp := sorry` at folio/quantum-observable-universe/lean/QOU/Information/QouPNeqNp.lean:75. The sorry IS the conjecture (per AGENTS.md §3b) — do NOT fabricate an instance (audit-dodge). Category: framework/substrate §3b carrier. Track backing/derivation status; advance only via genuine derivation or owner-directed reframing. Parent: b9cj.
 
 STATE (2026-07-24 week-review). The chippable program around this carrier has LANDED on main, all sorry-free — do NOT re-derive:
 - `ObstructionGenericity.lean` (d7682e8a): nonzero obstruction vanishes at finitely many params ⇒ non-vanishing is cofinite/generic.

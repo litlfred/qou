@@ -1,6 +1,6 @@
 ---
 # qou-cc4t
-title: Remark interpreting 1203.6551v1.pdf at content/quantum-observable-universe/information-theory/qua…
+title: Remark interpreting 1203.6551v1.pdf at folio/quantum-observable-universe/information-theory/qua…
 status: todo
 type: task
 priority: normal

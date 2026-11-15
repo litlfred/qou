@@ -1,6 +1,6 @@
 ---
 # qou-p2o4
-title: Cite [garoufalidis-hodgson-rubinstein-segerman2015] at content/quantum-observable-universe/lean/Q…
+title: Cite [garoufalidis-hodgson-rubinstein-segerman2015] at folio/quantum-observable-universe/lean/Q…
 status: todo
 type: task
 priority: normal

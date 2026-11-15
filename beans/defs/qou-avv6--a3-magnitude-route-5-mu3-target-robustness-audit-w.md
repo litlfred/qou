@@ -1,14 +1,14 @@
 ---
 # qou-avv6
 title: 'A=3 magnitude ROUTE 5: mu3 target robustness audit — well-posed at ~10pct, NOT an artifact, NOT to 3 sig figs'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - a3-cross-channel
     - reorg-2026-10-04
 created_at: 2026-08-01T23:55:59Z
-updated_at: 2026-10-04T15:16:12Z
+updated_at: 2026-11-15T13:50:00Z
 parent: qou-v2om
 ---
 
@@ -25,7 +25,11 @@ ROBUSTNESS:
 
 DELIVERABLES:
 - computations/deltalambda/mu3_target_robustness_audit_probe.py + mu3-target-robustness-audit.witness.json
-- content/quantum-observable-universe/lean/QOU/MassTheory/Mu3TargetWellPosedness.lean (sorry-free, lean-direct exit 0; mu2 FORCED [cannot reach 1] vs mu3 FREE [surjective in target])
+- folio/quantum-observable-universe/lean/QOU/MassTheory/Mu3TargetWellPosedness.lean (sorry-free, lean-direct exit 0; mu2 FORCED [cannot reach 1] vs mu3 FREE [surjective in target])
 - docs/audits/2026-08-01-mu3-target-robustness-audit.md
 
 Branch claude/mu3-target-robustness-audit-2026-08-01. Nothing wired.
+
+## 2026-11-15 — closed (binding-epic triage)
+
+All three deliverables named above are on `main`: `computations/deltalambda/mu3_target_robustness_audit_probe.py` (+ witness), `QOU/MassTheory/Mu3TargetWellPosedness.lean`, and `docs/audits/2026-08-01-mu3-target-robustness-audit.md`. The bean's question was "is μ₃ a well-posed target?", and the audit answers it (well-posed at ~10 %, not an artifact). That answer does not depend on an open conjecture, so the bean closes. Closed on the owner's choice in the binding thread. The μ₃ magnitude itself is still open and lives in its parent `qou-v2om`.

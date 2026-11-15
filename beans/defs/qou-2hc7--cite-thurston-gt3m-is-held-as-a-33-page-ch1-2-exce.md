@@ -34,15 +34,15 @@ Measured inside the held copy, 2026-09-04:
 **113 files** cite `thurston1978`, and several cite it precisely for Chapter 4
 material the held excerpt does not contain:
 
-- `content/quantum-observable-universe/mass-theory/shared-denominator-cusp-holonomy.lean:91`
+- `folio/quantum-observable-universe/mass-theory/shared-denominator-cusp-holonomy.lean:91`
   — `-- Ref: [thurston1978] §4.5 (gluing equations)`
-- `content/quantum-observable-universe/lean/QOU/MathlibExt/ManifoldVolumeBridge.lean:112`
+- `folio/quantum-observable-universe/lean/QOU/MathlibExt/ManifoldVolumeBridge.lean:112`
   — `-- Ref: [thurston1978] Ch. 4 (hyperbolisation; the gluing-equation solution)`
-- `content/quantum-observable-universe/lean/QOU/MathlibExt/ManifoldVolumePositive.lean:30`
+- `folio/quantum-observable-universe/lean/QOU/MathlibExt/ManifoldVolumePositive.lean:30`
   — `-- Ref: [thurston1978] Ch. 4`
-- `content/quantum-observable-universe/mass-theory/kashaev-volume-conjecture.lean:142`
+- `folio/quantum-observable-universe/mass-theory/kashaev-volume-conjecture.lean:142`
   — `hyperbolic structure on figure-eight complement`
-- `content/quantum-observable-universe/mass-theory/figure-8-archimedean-illustration.md:5,97`
+- `folio/quantum-observable-universe/mass-theory/figure-8-archimedean-illustration.md:5,97`
 
 **The citations are very likely correct about the book** — GT3M Ch. 4 does carry
 that material. The defect is that **no reader or agent can check a Ch. 4 locator
