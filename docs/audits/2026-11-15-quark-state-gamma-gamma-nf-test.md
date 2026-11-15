@@ -89,6 +89,27 @@ affine in h. It has an h² term in degree 0, and its e⁻ coordinate has no h te
   label rather than a single-quark state. Nothing here tests that; it bears on decision D2 below.
 - No fitting, no CODATA, no selection. Every statement is an identity over a generic ring or field.
 
+## 4a. First question: is a quark one strand (one letter) or one channel?
+
+This question is prior to D1, and the hypothesis as stated answers it in a way that does not hold.
+
+- **The (2,1) projection reads a three-strand channel.** Sibling #7823 (`qou-qs4c` §0.4) shows that at
+  level 2 the (2,1) block of H₃ is isospin ½ for three strands, which is a nucleon. Klein–Kreisler's
+  (2,1) state is a nucleon as well. So "NF(γγ) projected to (2,1)" names a **nucleon-type composite**.
+  **Scope-(a) negative:** the hypothesis, as stated, does not define a single-quark state. This is not
+  a structural exclusion. It is a mismatch between the object and its name.
+- **What this file's theorems actually treat as the quark is a single letter.** In
+  `template_*`, flavour is a per-letter sign bit: ℓ_g(c) = ρ(σ_g) + c·h·1, and a flip changes one
+  letter by σ⁻¹ − σ = −h. The (2,1) character is taken of the **whole word** (core plus three quark
+  letters) and is a nucleon observable. `template_order_zero` and `template_SplusAVG_proton` are
+  therefore statements of the form "nucleon (2,1) observable built from three single-letter
+  quarks". They are not statements about a (2,1)-projected quark.
+- **Proposed alternative, NOT adopted:** quark state := a single-letter object σ_g^ε (generator g,
+  flavour ε), with γγ supplying it through the word-degree-1 coordinates of NF(γγ). The (2,1)
+  projection is then reserved for the **nucleon** state built from three of them. Under this
+  reading the theorems already proved need no change. Only the names `quarkState` / `rho_pairNF_split`
+  would move to a nucleon-level name. Nothing is redefined here. This is the owner's call (D1/D2).
+
 ## 5. Verification
 
 `lean -DautoImplicit=false -s 65536` against the restored `cat/folio-assistant-sci/lake-cache/qou-v4-24-0`

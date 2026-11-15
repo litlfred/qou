@@ -36,3 +36,13 @@ Audit: `docs/audits/2026-11-15-quark-state-gamma-gamma-nf-test.md`.
 - Trap: H3 coordinate 3 is labelled L₊ but is σ₁σ₀; the remark's L₊ = σ₀σ₁ is coordinate 4.
 
 Stays in-progress: what to call "the quark state" is the owner's choice (D1–D3 in the PR).
+
+## 2026-11-15, coordinator input (from sibling #7823): one strand or one channel?
+
+Recorded as a scope-(a) negative in the audit, §4a. At level 2, the (2,1) channel is a three-strand,
+isospin-½ (nucleon) channel, so the hypothesis does not define a single-quark state. The template
+theorems already treat the quark as a single letter σ_g^ε and the (2,1) character as a nucleon
+observable.
+
+Proposed (not adopted): quark = single letter σ_g^ε, supplied by the word-degree-1 coordinates of
+NF(γγ); (2,1) = the nucleon built from three of them. This is the owner's call.
