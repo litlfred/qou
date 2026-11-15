@@ -178,4 +178,37 @@ theorem conventionD_tau_PR (y3 : K) :
     tau y3 (q ^ 2 / (q ^ 2 + 1) ^ 2) 0 (PR q) = q ^ 2 / (q ^ 2 + 1) ^ 2 := by
   rw [tau_PR, add_zero]
 
+/-! ### The torus words `(σ₁σ₂)^N` at `n = 3` -/
+
+/-- `σ₁σ₂` on the blocks. -/
+theorem S1_mul_S2 (hq : q ≠ 0) :
+    S1 q * S2 q = (q ^ 2, !![-1, q; -q⁻¹, 0], q⁻¹ ^ 2) := by
+  unfold S1 S2
+  refine Prod.ext ?_ (Prod.ext ?_ ?_)
+  · simp; ring
+  · ext i j
+    fin_cases i <;> fin_cases j <;> simp
+    all_goals first | ring1 | (field_simp; ring1) | field_simp
+  · simp; ring
+
+/-- **The full twist** `(σ₁σ₂)³` is `q⁶` on the trivial block, the identity on `(2,1)`,
+and `q⁻⁶` on the sign block. -/
+theorem twist (hq : q ≠ 0) :
+    (S1 q * S2 q) ^ 3 = (q ^ 6, 1, q⁻¹ ^ 6) := by
+  rw [S1_mul_S2 hq]
+  refine Prod.ext ?_ (Prod.ext ?_ ?_)
+  · simp; ring
+  · ext i j
+    fin_cases i <;> fin_cases j <;> simp [pow_succ]
+    all_goals first | ring1 | (field_simp; ring1) | (left; ring1) | (field_simp; left; ring1) | field_simp
+  · simp; ring
+
+/-- **Periodicity.** Under any trace with `y₁₁₁ = 0` (convention D among them), the
+right-line part of `(σ₁σ₂)^N` depends only on `N mod 3`. -/
+theorem tau_torus_PR_periodic (hq : q ≠ 0) (y3 y21 : K) (m r : ℕ) :
+    tau y3 y21 0 ((S1 q * S2 q) ^ (3 * m + r) * PR q) =
+      tau y3 y21 0 ((S1 q * S2 q) ^ r * PR q) := by
+  rw [pow_add, pow_mul, twist hq]
+  simp [tau, PR]
+
 end QOU.QuarkState.RightLineTraceObstruction
