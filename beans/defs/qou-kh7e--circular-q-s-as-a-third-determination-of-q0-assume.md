@@ -16,7 +16,7 @@ experimental `Q_beta`.** Verified and quantified below.
 
 ## The claim, as published
 
-`content/quantum-observable-universe/mass-theory/rem-qstar-decay-sector-q0.md`
+`folio/quantum-observable-universe/mass-theory/rem-qstar-decay-sector-q0.md`
 (a `remark` block in the paper), line 9:
 
 > `q*` is a *third determination of `q_0`*, **independent of both mass-sector

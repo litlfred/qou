@@ -1,11 +1,11 @@
 ---
 # qou-y4ca
 title: Prove the two converses the iff-rename tranche left one-directional
-status: in-progress
+status: todo
 type: task
 priority: low
 created_at: 2026-10-10T07:29:24Z
-updated_at: 2026-10-10T09:55:01Z
+updated_at: 2026-11-15T13:30:00Z
 parent: b9cj
 ---
 
@@ -297,3 +297,7 @@ and in a corpus whose docstrings cite lemmas by name — which this one does,
 deliberately and usefully — prose dominates. Here it was 3 prose-or-self of 5.
 Had the refactor been genuinely 5 cross-file call sites, the estimate would have
 been right by luck rather than by measurement.
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

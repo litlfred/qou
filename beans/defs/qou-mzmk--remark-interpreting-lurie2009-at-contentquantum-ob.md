@@ -1,6 +1,6 @@
 ---
 # qou-mzmk
-title: Remark interpreting [lurie2009] at content/quantum-observable-universe/lean/QOU/Glossary.lean
+title: Remark interpreting [lurie2009] at folio/quantum-observable-universe/lean/QOU/Glossary.lean
 status: todo
 type: task
 priority: normal

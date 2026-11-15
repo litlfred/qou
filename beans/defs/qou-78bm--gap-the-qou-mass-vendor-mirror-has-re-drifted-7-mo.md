@@ -1,11 +1,11 @@
 ---
 # qou-78bm
 title: 'GAP: the qou-mass vendor mirror has RE-DRIFTED (7 modules, 2026-09-26) — qou-hp3g''s drain does not hold, because nothing blocks on --check'
-status: todo
+status: scrapped
 type: task
 priority: normal
 created_at: 2026-09-26T21:22:59Z
-updated_at: 2026-10-04T15:20:27Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-weeq
 ---
 
@@ -115,3 +115,7 @@ Content is untouched; only this work item is closed.
 <!-- 2026-11-15 port note -->
 
 Port note, 2026-11-15: the entry above was ported from PR #7481, but the qou-mass mirror drain it describes (commit 5c6ed636b) was **not** ported. On `main` `0d3ee898f`, `scripts/sync-qou-mass-vendor.py --check` reports 1 missing and 13 drifted modules, so that drain is still owed. It is tracked by `qou-a0j7`, the bean this one was scrapped into.
+
+## Closed 2026-11-15 (owner tap, bean triage)
+
+Status set to `scrapped`: its body already records it as scrapped, a duplicate of `qou-a0j7` (reorganisation 2026-10-04), but the status field still said todo. The qou-mass mirror drain it describes is owed under `qou-a0j7`.

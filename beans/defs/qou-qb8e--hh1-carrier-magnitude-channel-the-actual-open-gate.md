@@ -368,7 +368,7 @@ malformed.
 
 Lean, sorry-free, axioms `[propext, Classical.choice, Quot.sound]` on all 8
 declarations:
-`content/quantum-observable-universe/lean/QOU/QBeta/HabiroEvaluationTrichotomy.lean`
+`folio/quantum-observable-universe/lean/QOU/QBeta/HabiroEvaluationTrichotomy.lean`
   - `qPoch_reflection`                     the identity, GENERIC (any field)
   - `qPoch_eq_zero_of_pow_eq_one`          roots of unity, GENERIC (CommRing)
   - `qPoch_not_tendsto_zero_of_one_lt`     real q > 1, archimedean

@@ -13,7 +13,7 @@ parent: qou-6qbv
 
 ## The finding (2026-09-12, PR #7208)
 
-`content/quantum-observable-universe/brings-surface/brings-smoothness-resolution.lean`
+`folio/quantum-observable-universe/brings-surface/brings-smoothness-resolution.lean`
 carried, until this PR:
 
 ```lean

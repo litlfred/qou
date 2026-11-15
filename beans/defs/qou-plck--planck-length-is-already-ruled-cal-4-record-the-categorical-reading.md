@@ -14,7 +14,7 @@ parent: qou-ddmn
 ANSWERED IN THE CORPUS, both halves, found by corpus-grep path 2:
 
 1. FORBIDDEN AS AN INPUT.
-   content/quantum-observable-universe/braids-and-knots/meridian-exceptional-divisor-note.md:9
+   folio/quantum-observable-universe/braids-and-knots/meridian-exceptional-divisor-note.md:9
    "Identifying the computational tick with the Planck time would pin the
    substrate at m_Planck, i.e. introduce Newton's constant G — an input outside
    the three-calibration weak sector. That is a fourth calibration and a
@@ -22,7 +22,7 @@ ANSWERED IN THE CORPUS, both halves, found by corpus-grep path 2:
    Also blocked by the 2026-08-02 FOREVER GATE on substrate-q_0 derivation.
 
 2. THE ADMISSIBLE READING IS ALREADY WRITTEN.
-   content/quantum-observable-universe/brings-surface/approach-to-exceptional-divisor.md:3
+   folio/quantum-observable-universe/brings-surface/approach-to-exceptional-divisor.md:3
    "'Below Planck scale' in QOU is a CATEGORICAL statement, not a metric one.
    The relevant geometry switches from the base M to the fibre S_p."
    And observations/g-q-closed-form.md carries G in PLANCK UNITS as a

@@ -13,7 +13,7 @@ parent: qou-6qbv
 
 FOUND 2026-08-22 while resolving qou-oy4r (main red on
 def:qou-motivic-galois-instance). File:
-content/quantum-observable-universe/lean/QOU/LiftingDescent/MotivicPerpetualObstructionFromTrace.lean
+folio/quantum-observable-universe/lean/QOU/LiftingDescent/MotivicPerpetualObstructionFromTrace.lean
 Sorry-free, so every sorry and axiom audit reports it clean.
 
 Two theorems are docstring'd as the QOU instances:

@@ -17,7 +17,7 @@ parent: qou-aabg
 ---
 
 **File:** `QOU/HadronicMass/pair_skein_mass_formula.lean` (QOU)  ·  1 cited sorry(s)
-**GitHub:** https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/content/quantum-observable-universe/lean/QOU/HadronicMass/pair_skein_mass_formula.lean
+**GitHub:** https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/folio/quantum-observable-universe/lean/QOU/HadronicMass/pair_skein_mass_formula.lean
 
 ### `pair_skein_mass_formula`  —  line 64  ·  tier **P** (repo-infra-dependent)
 - **Proposition:** `theorem pair_skein_mass_formula : ∀ a b : ℕ, S_ab a b = (q * μ a + q⁻¹ * μ b) / (Real.sqrt q + 1 / Real.sqrt q) `

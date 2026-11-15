@@ -58,7 +58,7 @@ The magnitude gap survives, unchanged.**
 Applying the discipline that worked on `qou-s4h6`: ask what the structure permits
 before hunting a formula. The corpus already argues that an EM-sector quantity is
 *where* a splitting must live —
-[`rem:isospin-mass-split-em-localisation`](content/quantum-observable-universe/mass-theory/isospin-mass-split-em-localisation.md)
+[`rem:isospin-mass-split-em-localisation`](folio/quantum-observable-universe/mass-theory/isospin-mass-split-em-localisation.md)
 concludes the mirror-isobar split *"must therefore be entirely sourced by the
 Coulomb term"* because *"the trace tower, co-Casimir, chirality, and
 shell-correction functionals all respect these structural involutions."* It is a

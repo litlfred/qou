@@ -13,7 +13,7 @@ parent: qou-mub3
 
 **Class M — a `-- Ref:` key that resolves to nothing, in a file merged this session.**
 
-`content/quantum-observable-universe/lean/QOU/Eightfold/CircleBundleBettiObstruction.lean:63`:
+`folio/quantum-observable-universe/lean/QOU/Eightfold/CircleBundleBettiObstruction.lean:63`:
 
 ```
 -- Ref: [hatcher2002] §4.D (the Gysin sequence of an oriented sphere bundle;

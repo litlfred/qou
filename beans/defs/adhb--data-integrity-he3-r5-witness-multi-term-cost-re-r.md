@@ -73,7 +73,7 @@ strict-complementarity cert from the re-emitted per-block min-eigs).
 ## Refs
 
 - Audit: `docs/audits/2026-06-25-r5-witness-staleness-and-rescoped-todo-triage.md` §1–2
-- Lean: `content/quantum-observable-universe/lean/QOU/BraidKnot/Helium3Witness.lean`
+- Lean: `folio/quantum-observable-universe/lean/QOU/BraidKnot/Helium3Witness.lean`
   (*Witness divergence* note)
 - Producer: `computations/r5_full_canonical_knot_solver.py` — `cost_for_candidate`
   uses single-term `B_pred = ρ · m_e · |tr_M|` (line ~491)
@@ -83,7 +83,7 @@ strict-complementarity cert from the re-emitted per-block min-eigs).
 
 Grounding the "multi-term-cost re-run" found it is **gated on an open derivation
 question**, not a straightforward implementation. Per
-`content/quantum-observable-universe/mass-theory/six-term-mass-formula-complete.md`
+`folio/quantum-observable-universe/mass-theory/six-term-mass-formula-complete.md`
 the formula is
 `m(ρ) = |tr_M(T_w)| [T1] + Σ Φ_q(|V_i|) [T2] + z² Σ Φ_q(|V_iV_j|) [T3]
 + m_e·τ(C_dimq) [T4] + a_K·C_K [T5] + Σ Res_ζ [T6]`:

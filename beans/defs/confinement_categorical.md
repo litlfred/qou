@@ -11,7 +11,7 @@ updated_at: 2026-10-04T15:26:44Z
 parent: qou-uot9
 ---
 
-File: `content/quantum-observable-universe/lean/QOU/WedderburnMass/confinement_categorical.lean`
+File: `folio/quantum-observable-universe/lean/QOU/WedderburnMass/confinement_categorical.lean`
 The `confinement_categorical` theorem is unprovable. The `ConfinementCategoricalContext` carries only the structural data (algebra, projectors) but lacks the Hochschild vanishing and Whitehead lemma inputs needed to prove the three categorical confinement properties.
 
 

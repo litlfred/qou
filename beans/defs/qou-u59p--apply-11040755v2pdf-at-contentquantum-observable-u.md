@@ -1,6 +1,6 @@
 ---
 # qou-u59p
-title: Apply 1104.0755v2.pdf at content/quantum-observable-universe/lean/QOU/Archimedean/AwZeroLocalizat…
+title: Apply 1104.0755v2.pdf at folio/quantum-observable-universe/lean/QOU/Archimedean/AwZeroLocalizat…
 status: todo
 type: task
 priority: normal

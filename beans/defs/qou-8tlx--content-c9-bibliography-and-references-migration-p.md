@@ -1,14 +1,14 @@
 ---
 # qou-8tlx
 title: '[CONTENT C9] Bibliography and references migration (plan + stories B1-B6)'
-status: in-progress
+status: todo
 type: feature
 priority: normal
 tags:
     - migration
     - content
 created_at: 2026-10-05T16:00:50Z
-updated_at: 2026-10-05T16:15:40Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-5lsb
 ---
 
@@ -21,3 +21,7 @@ B2 done 2026-10-05: scripts/check-references-bib.ts + Tool references-bib-check 
 B5 done 2026-10-05: 4 read-only bib Tool nodes (references-pdf-check, references-library-sync-check, references-propose-from-library, reference-literals-dry-run); tools() = 234. Writing modes stay undeclared. Findings: sync-references-library --check is STALE (1 entry to add, 439 to refresh); drain-reference-literals dry run would route 25 literals across 11 files (a sweep → owner).
 
 Owner rulings 1,2,4 applied 2026-10-05: references.bib regenerated (check clean); citations fixed (4 Lean comment key renames + 7 new entries; validate-references 11 errors -> 0); library sync applied ONLY for the 1 addition (ohara1991). NOT applied: sync --apply would drop 10 valid library links (dunfield2001, brown-zhang-2008, hadfield-krahmer-2005, feng-tsygan-1991, caldararu-willerton-2010, bghl-2017, trinh-2021, nest-tsygan-1995, dolgushev-rubtsov-2005, kontsevich-2003 — folders exist, ledger has no row) and swap 2 copies (neumann-zagier1985, riera-rodriguez-1992). Those 12 need the owner; sync --check stays red until then. reid1991 title is a placeholder (doi.org/Crossref blocked). Ruling 3 (attestations) next.
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

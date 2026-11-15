@@ -5,7 +5,8 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-10-13T00:00:00Z
-updated_at: 2026-10-13T00:00:00Z
+updated_at: 2026-11-15T13:30:00Z
+parent: qou-v2om
 ---
 
 **Finding (2026-10-13, owner ruling D on the PR #7788 follow-up, branch
@@ -55,3 +56,7 @@ has not landed — check before acting.
   definition because it passes would be selection against the target.
 - Does the conjecture's content block / any consumer cite the old PASS?
   `grep -rn atom-braid-active-partitions content/ docs/` before quoting.
+
+## Parented 2026-11-15 (owner-approved bean triage)
+
+Parent `(none)` → `qou-v2om`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.

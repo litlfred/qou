@@ -15,7 +15,7 @@ Found while auditing the Standard-Model work against the full tower (owner reque
 
 ## The observation
 
-`content/quantum-observable-universe/mass-theory/staircase-ew-residual.md`
+`folio/quantum-observable-universe/mass-theory/staircase-ew-residual.md`
 conjectures, for the staircase partition `rho_k = (k, k-1, ..., 1)`, an
 eigenvalue ratio `q^{1/(2k-1)}` on the Specht module `V_{rho_k}` of
 `H_{n_k}(q)`. **`rho_k` has exactly `k` rows**, so the Schur-Weyl row cap
@@ -243,7 +243,7 @@ opens no third.
 
 ### G — the general row cap, formalized
 
-`content/quantum-observable-universe/lean/QOU/Hecke/RowCap.lean`, registered in
+`folio/quantum-observable-universe/lean/QOU/Hecke/RowCap.lean`, registered in
 `QOU.lean`. `QOU.Eightfold.RowCapObstruction` proved the cap for `V^(x)3` alone
 (`weylDimAlt N = N.choose 3`); every other appeal to it — `(3,2,1)` at n = 6,
 `(2,2,1,1)`, the whole `l(lambda) > 2` sector — was corpus prose plus a

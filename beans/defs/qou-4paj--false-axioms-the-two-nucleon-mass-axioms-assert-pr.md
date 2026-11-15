@@ -17,7 +17,7 @@ two `axiom` declarations assert propositions whose **negations are provable**
 from definitions in the same file, so each file is inconsistent.
 
 ```lean
--- content/quantum-observable-universe/knots-particles-confinement/categorical-proton.lean
+-- folio/quantum-observable-universe/knots-particles-confinement/categorical-proton.lean
 noncomputable def q₀ : ℝ := 1.10998
 noncomputable def proton_mass (q : ℝ) : ℝ :=
   let vol_borromean := 7.32772475341775

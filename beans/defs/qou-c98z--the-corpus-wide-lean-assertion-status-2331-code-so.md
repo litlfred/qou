@@ -5,7 +5,8 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-11T14:48:36Z
-updated_at: 2026-09-11T15:14:14Z
+updated_at: 2026-11-15T13:30:00Z
+parent: qou-rtxm
 ---
 
 **Question asked (owner, 2026-09-11): "all assertions proved in lean?"** Answer: **no**,
@@ -229,3 +230,7 @@ instance supplied by `derive`, by an anonymous-constructor `instance` whose type
 definitional alias, or from outside `content/**`. Every such miss moves a class from the
 187 into the 47, so **187 is an upper bound on the open set** — and 47 is a lower bound on
 the discharged set, which is the conservative direction for a claim about what is proved.
+
+## Parented 2026-11-15 (owner-approved bean triage)
+
+Parent `(none)` → `qou-rtxm`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.

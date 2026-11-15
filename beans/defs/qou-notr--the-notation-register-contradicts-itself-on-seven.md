@@ -30,7 +30,7 @@ excised C.
 
 **Sharper than "it disagrees with its sibling table": it disagreed with the very
 block it was citing.** The parenthetical's own cross-reference,
-[`def:markov-axioms-primitive`](../content/quantum-observable-universe/braids-and-knots/markov-axioms-primitive.md),
+[`def:markov-axioms-primitive`](../folio/quantum-observable-universe/braids-and-knots/markov-axioms-primitive.md),
 states `z = q^3/(q^2+1)` as **convention D** in its axiom 3 and carries the
 selection note recording the 2026-08-09 owner ruling that excised C. So a reader
 following the pointer to settle the question found it already settled, by the

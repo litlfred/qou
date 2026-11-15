@@ -17,11 +17,11 @@ owner's.
 
 ## The two statements, both verified verbatim
 
-1. `content/quantum-observable-universe/introduction/chapter-overview.md:30`
+1. `folio/quantum-observable-universe/introduction/chapter-overview.md:30`
 
    > "The lifting obstructions **force** the Descartes condition $\chi(A) = -6$."
 
-2. `content/quantum-observable-universe/information-theory/qou-p-neq-np.md:33`
+2. `folio/quantum-observable-universe/information-theory/qou-p-neq-np.md:33`
 
    > "The third leg, the Riemann--Roch / branch-point chain that pins the scalar
    > to $-6$ ([the $\chi(A) = -6$ chain](#ex:chi-minus-six-derivation)), **reads
@@ -34,7 +34,7 @@ denies it.
 ## What the corpus says — five artifacts, all against statement (1)
 
 **A. The definition block states the CONVERSE implication.**
-`content/quantum-observable-universe/brings-surface/archimedean-condition.md:1-9`
+`folio/quantum-observable-universe/brings-surface/archimedean-condition.md:1-9`
 (`def:archimedean-condition`, kind `definition`):
 
   > "A quantum observable universe ... **satisfies the Descartes condition if**
@@ -46,7 +46,7 @@ So the corpus's own definition runs `chi = -6  =>  kappa_n != 0` and `=> 6
 branch points`. `chapter-overview.md` states that arrow backwards.
 
 **B. The named derivation chain disclaims forcing, in its own first paragraph.**
-`content/quantum-observable-universe/brings-surface/chi-minus-six-chain.md:1`
+`folio/quantum-observable-universe/brings-surface/chi-minus-six-chain.md:1`
 (`ex:chi-minus-six-derivation`, the block BOTH prose sites point at):
 
   > "Steps 1--4 and 6--7 run forward from the QOU triple. **Step 5, which fixes

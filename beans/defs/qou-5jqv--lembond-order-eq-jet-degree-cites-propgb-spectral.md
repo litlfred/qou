@@ -1,11 +1,12 @@
 ---
 # qou-5jqv
 title: lem:bond-order-eq-jet-degree cites prop:gb-spectral-sequence for a filtration that block does not name
-status: in-progress
+status: todo
 type: task
 priority: normal
 created_at: 2026-09-14T20:06:19Z
-updated_at: 2026-09-14T20:07:22Z
+updated_at: 2026-11-15T13:30:00Z
+parent: qou-v2om
 ---
 
 
@@ -127,3 +128,11 @@ refutation.
 
 There are at least three repairs with different blast radii. **Stays open per
 §13a** — `qou-sw8n`'s question is an open conjecture and this is one hop from it.
+
+## Parented 2026-11-15 (owner-approved bean triage)
+
+Parent `(none)` → `qou-v2om`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

@@ -1,13 +1,13 @@
 ---
 # qou-840k
 title: 'EXCISE FLOAT64: 222 float()-casts of q-derived constants across 129 files; existing audit tier was too narrow and read clean'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:54:30Z
-updated_at: 2026-10-04T15:12:31Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-9nnz
 ---
 
@@ -328,7 +328,7 @@ path. Note the module is f64 below `atom_braid_word_3A` regardless: L71
 
 **Item 6 — "1e-50" claims that are really about tr_M.** Targets, in order:
 
-* `content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step03-markov-trace.md:92-95`
+* `folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step03-markov-trace.md:92-95`
   — "The numerical mode at $q = q_0$ meets L1 to $10^{-50}$ by the precision
   discipline of `qou-substrate`." Any tr_M routed through `y_lambda_at` fast
   path 2 is capped at ~1e-30. Content block ⇒ needs the `.md` + `.ts` sibling,
@@ -1582,7 +1582,7 @@ Also `computations/_deprecated/rho_k_markov_multiplicativity_probe.py` is a
 
 ### One downstream artifact left deliberately stale, and it UNDERSTATES
 
-`content/quantum-observable-universe/mass-endomorphism/rho-k-graded-expansion.md`
+`folio/quantum-observable-universe/mass-endomorphism/rho-k-graded-expansion.md`
 line 43 cites the verification as *"machine precision ($3.2 \times 10^{-14}$)"*.
 That is now 56 orders pessimistic. The block belongs to the mass-endomorphism
 arc, so it was not edited — rewriting another arc's published figure is an owner
@@ -1590,3 +1590,7 @@ call and not a side effect of a float64 drain. It understates rather than
 overstates, so nothing downstream is inflated by leaving it; the discrepancy is
 recorded in the producer docstring and the witness description so a reader
 comparing the two is not misled.
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

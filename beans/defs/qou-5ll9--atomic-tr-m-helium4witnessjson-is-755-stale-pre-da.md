@@ -67,7 +67,7 @@ attribution anywhere durable.
     computations/atomic_tr_m_helium4_canonical.py
     computations/canonical_tr_m_helium4_stub.py
     computations/probes/nucleon_h3_marshalling_divergence_probe.py
-    content/quantum-observable-universe/observations/atom-mass-full-hecke.ts   <-- READER-FACING
+    folio/quantum-observable-universe/observations/atom-mass-full-hecke.ts   <-- READER-FACING
 
 The content block is the one that matters for the paper: `atom-mass-full-hecke`
 is an observations block, so a 7.55% stale |tr_M| feeding it is not an internal

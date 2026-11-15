@@ -16,7 +16,7 @@ parent: qou-l2vh
 ---
 
 **File:** `QOU/ParticleInteractions/atomic_nf_witness.lean` (QOU)  ·  1 cited sorry(s)
-**GitHub:** https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/content/quantum-observable-universe/lean/QOU/ParticleInteractions/atomic_nf_witness.lean
+**GitHub:** https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/folio/quantum-observable-universe/lean/QOU/ParticleInteractions/atomic_nf_witness.lean
 
 ### `atomic_nf_witness`  —  line 90  ·  tier **P** (repo-infra-dependent)
 - **Proposition:** `theorem atomic_nf_witness (ctx : AtomicNfWitnessContext) : (∀ π : ℕ, ctx.Phi_1 ctx.pi_star ≤ ctx.Phi_1 π) ∧ (∀ p : ℕ, ctx.Phi_1_electron ctx.electron_pos_star ≤ ctx.Phi_1_electron p) ∧ (∀ k : ℕ, ctx.gb_converges k) ∧ (∀ a : ℕ, a ≤ 9 → ctx.NF_no_strip a) ∧ ctx.F_Pauli = |ctx.trAlt / ctx.net| `

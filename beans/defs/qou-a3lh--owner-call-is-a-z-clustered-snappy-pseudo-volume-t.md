@@ -8,7 +8,8 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-09-12T20:15:44Z
-updated_at: 2026-10-04T15:15:00Z
+updated_at: 2026-11-15T13:30:00Z
+parent: qou-v2om
 ---
 
 **This is an owner decision, not agent work**, and it is the successor to
@@ -81,3 +82,7 @@ measured above, does not actually reach this input.
 **It also re-frames the A3 refutation:** if `VOL` is the wrong input, that negative
 is about the **route**, not merely the convention frame. Worth knowing before
 anyone re-attempts the trend.
+
+## Parented 2026-11-15 (owner-approved bean triage)
+
+Parent `(none)` → `qou-v2om`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.

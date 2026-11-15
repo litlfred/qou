@@ -144,7 +144,7 @@ having been maintained.
 Not worked; measured while validating an unrelated content edit, and recorded
 per the BASELINE discipline rather than left to be quoted as current.
 
-`bun run scripts/run-validate.ts content/quantum-observable-universe` at
+`bun run scripts/run-validate.ts folio/quantum-observable-universe` at
 `origin/main` 2cf6afcbf85: **exit 0, 14 issues, of which 10 are unknown-field
 warnings** (down from 37) and **4 are lost author notes** (down from 5):
 
@@ -158,7 +158,7 @@ as before -- `q-beta-form-a-n1-symbolic-table-data` is on this list and was not
 called out in the original triage -- so the remaining set needs re-triaging
 against the current tree rather than picking up from the old list.
 
-Reproduce: `bun run scripts/run-validate.ts content/quantum-observable-universe`,
+Reproduce: `bun run scripts/run-validate.ts folio/quantum-observable-universe`,
 then `grep 'Unknown field'`. Cheap, seconds, no producer involved.
 
 

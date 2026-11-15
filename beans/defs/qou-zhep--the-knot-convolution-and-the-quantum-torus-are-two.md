@@ -11,7 +11,7 @@ updated_at: 2026-10-04T15:24:56Z
 parent: qou-n4nr
 ---
 
-MEASURED 2026-09-04 on content/quantum-observable-universe/, all spellings.
+MEASURED 2026-09-04 on folio/quantum-observable-universe/, all spellings.
 
   files mentioning the knot convolution (bowtie 30, U+22C8 14, 'knot convolution' 1, de-duplicated): 44
   of those, also mentioning quantum torus / A-polynomial / AJ conjecture / recurrence ideal: 0
@@ -27,7 +27,7 @@ WHERE THE MACHINERY ALREADY IS, and it is not thin: QOU/Machinery/QuantumTorus.l
 
 Audit: docs/audits/2026-09-04-quantum-functions-on-the-knot-complement.md
 
-THE CONVOLUTION IS DEFINED - located 2026-09-04 at def:canonical-braid-interface-composition (content/quantum-observable-universe/mass-theory/canonical-braid-interface-composition.md), with the symbol contract in tbl:notation-register-table3-data rows 7 and 10. I had said I could not find the defining block; that was wrong, and it was a kind-scan artifact - the block defines the interface COMPOSITION without using the bowtie glyph in its statement.
+THE CONVOLUTION IS DEFINED - located 2026-09-04 at def:canonical-braid-interface-composition (folio/quantum-observable-universe/mass-theory/canonical-braid-interface-composition.md), with the symbol contract in tbl:notation-register-table3-data rows 7 and 10. I had said I could not find the defining block; that was wrong, and it was a kind-scan artifact - the block defines the interface COMPOSITION without using the bowtie glyph in its statement.
 
 WHAT IT SAYS. B_K in H_{3A}(q) is the canonical atomic braid for atom K=(Z,N), A=Z+N, pppnnn ordering, factorising B_K = B_K^vac * bowtie_K. The interface is the product of the A-1 inter-nucleon generators sigma_{3k+2}, classified by the flavour pair bridged, counts n_pp = max(0,Z-1), n_nn = max(0,N-1), n_pn = 1 when Z,N >= 1, summing to A-1. The (p,n) entry is sigma - h/2 at delta=0, or colour-tube-weighted sigma - h(1/2 - delta/4) canonically. Register: replacement for Delta_I^K; bare bowtie re-assigned to the inter-block Hopf-link operation.
 
@@ -39,7 +39,7 @@ A morphism is a statement about how STRAND COMPOSITION interacts with COLOUR REC
 
 TWO CONSEQUENCES, the second a warning. (1) The classical prototype exists: under CONNECTED SUM the coloured Jones multiplies, J_{K1 # K2} = J_{K1} J_{K2}, so recurrence ideals interact predictably and A_{K1} x A_{K2} -> A_{K1#K2} is the natural first target. (2) bowtie_K is NOT a connected sum - the register calls it 'Hopf-link-style', and under a genuine link operation the coloured Jones does not simply multiply. So this is the known-HARD shape. Expect connected sum to work and the Hopf-linked case to be the problem - which is where the corpus puts its physics, since the inter-block operation assembling Z p + N n is exactly the Hopf link.
 
-CONNECTED-SUM PROBE DONE 2026-09-04, formalize-first, BEFORE any search: content/quantum-observable-universe/lean/QOU/Eightfold/ConnectedSumAnnihilator.lean. lean-direct exit 0, 6 theorems, all sorry-free; shift_mul needs NO axioms at all, the rest [propext, (Classical.choice,) Quot.sound].
+CONNECTED-SUM PROBE DONE 2026-09-04, formalize-first, BEFORE any search: folio/quantum-observable-universe/lean/QOU/Eightfold/ConnectedSumAnnihilator.lean. lean-direct exit 0, 6 theorems, all sorry-free; shift_mul needs NO axioms at all, the rest [propext, (Classical.choice,) Quot.sound].
 
 RESULT: THE NAIVE MAP DOES NOT EXIST, and this CORRECTS my own framing. I called connected sum 'the known-easy prototype' and proposed A_{K1} x A_{K2} -> A_{K1#K2} as the natural first target. The naive form of that map is now EXCLUDED.
 

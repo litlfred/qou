@@ -31,7 +31,7 @@ Not a warning. **The two modules cannot both be imported by anything, ever.**
 
 ### The population
 
-Scanning every `def`/`abbrev` in `content/quantum-observable-universe/lean`,
+Scanning every `def`/`abbrev` in `folio/quantum-observable-universe/lean`,
 tracking `namespace` / `section` / `end`: **38 fully-qualified names are
 declared in more than one module.** Each is a module pair (or triple) that is
 mutually un-importable.

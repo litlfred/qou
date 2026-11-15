@@ -1,13 +1,13 @@
 ---
 # z3a2
 title: 'Compute infra: factor shared Young-diagram/dim_q/S(m) machinery into reusable cached module'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-06-28T06:54:32Z
-updated_at: 2026-10-04T15:18:00Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-5vkl
 ---
 
@@ -23,3 +23,7 @@ parent: qou-5vkl
 **2026-06-28 (cont.):** binding_qaskey_product_probe migrated — qint/qfact/dim_q/partitions/S from young_qdim; qpoch (q-Pochhammer) kept local. Witness BYTE-IDENTICAL (stores booleans + sp.factor strings). Source −35 lines. **6/7 migrated**; remaining 1: wlambda_identity_i_structure_probe (entangles classical f_lambda with partitions/hook — needs care, follow-on).
 
 **2026-06-28 (cont.) — 7/7 COMPLETE.** wlambda_identity_i_structure_probe migrated (conservative): the q-side (qint/qfact/dim_q) now from young_qdim; the classical SYT/hook combinatorics (f_lambda, conj, cells, arm, leg, hook, content + list-form partitions) kept LOCAL because (a) their hook/leg arg order differs from young_qdim and (b) the W_λ witness keys embed list-form partitions. dim_q called as dim_q(tuple(lam)). Witness BYTE-IDENTICAL; source −22 lines. **All 7 z3a2 probes now import the shared young_qdim module** (lever1_binding_habiro_qexponential, lever1_qholonomic_kernel_fit, lever1_qholonomic_order3_fit, lever1_lw_depth2, lever1_qinvolution_kernel_test, binding_qaskey_product_probe, wlambda_identity_i_structure_probe). Bean ready to close (human-only §4a).
+
+## Closed 2026-11-15 (owner tap, bean triage)
+
+Status set to `completed`: its author recorded it ready to close: all 7 z3a2 probes import the shared `young_qdim` module and the witness is byte-identical.

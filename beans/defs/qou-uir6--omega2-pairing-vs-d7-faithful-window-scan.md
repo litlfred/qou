@@ -1,11 +1,11 @@
 ---
 # qou-uir6
 title: 'Omega_2 pairing vs D7: report the faithful-window scan of P(z) as the result; convention-D values are a two-row diagnostic'
-status: in-progress
+status: todo
 type: task
 priority: high
 created_at: 2026-10-12T19:30:00Z
-updated_at: 2026-10-12T19:30:00Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-za3q
 ---
 **Recreated 2026-10-12** (stream 4 of #7735, session_01PmZzY27QHceKGXwNivRt64). The original bean,
@@ -56,3 +56,7 @@ them would drop it; adding it to the producers is a follow-up.
 **Status stays open (owner).** Not established: which z inside the window is physical; any MeV
 normalisation; that the closed-form `ocneanuWeight` is the Markov weight system at n = 9, 12 (proved at
 n = 3, checked to n = 6).
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

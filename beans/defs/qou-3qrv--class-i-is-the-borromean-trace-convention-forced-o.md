@@ -38,7 +38,7 @@ parent: qou-v2om
 > `([4]_q/[2]_q³, 1/[2]_q², 0)` = **convention D**. So **D is the unique Markov
 > trace factoring through TL₃ and faithful on it** — no residual freedom, no
 > CODATA anywhere in the chain. Sorry-free in
-> [`MarkovTraceTLUniqueness.lean`](../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/MarkovTraceTLUniqueness.lean)
+> [`MarkovTraceTLUniqueness.lean`](../folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/MarkovTraceTLUniqueness.lean)
 > (`lean`-direct exit 0; `#print axioms` → `[propext, Classical.choice,
 > Quot.sound]`, no `sorryAx`). Now written into the `trM_borromean` docstring,
 > which previously asserted the convention with no justification.
@@ -46,7 +46,7 @@ parent: qou-v2om
 > *(b) — the premise is NOT established, and the corpus contradicts itself.*
 > **This is the headline finding.** The scope note of
 > `prop:h3-markov-wenzl-weights`
-> ([`h3-markov-wenzl-weights-context.md`](../content/quantum-observable-universe/mass-theory/h3-markov-wenzl-weights-context.md))
+> ([`h3-markov-wenzl-weights-context.md`](../folio/quantum-observable-universe/mass-theory/h3-markov-wenzl-weights-context.md))
 > says verbatim that the **mass and binding computations use the full-Hecke
 > Ocneanu trace** — convention **C** — while production uses **D**
 > (`canonical_mass.py:108` → `F_Bor` → `trM_borromean`). Switching to the trace

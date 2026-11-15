@@ -11,4 +11,4 @@ updated_at: 2026-10-04T15:25:51Z
 parent: qou-m9o4
 ---
 
-§3b conjecture-class Lean carrier `instance : q_gl_fiber_functor := sorry` at content/quantum-observable-universe/lean/QOU/QGeometricLanglands/q_gl_fiber_functor.lean:39. The sorry IS the conjecture (per AGENTS.md §3b) — do NOT fabricate an instance (audit-dodge). Category: framework/substrate §3b carrier. Track backing/derivation status; advance only via genuine derivation or owner-directed reframing. Parent: b9cj.
+§3b conjecture-class Lean carrier `instance : q_gl_fiber_functor := sorry` at folio/quantum-observable-universe/lean/QOU/QGeometricLanglands/q_gl_fiber_functor.lean:39. The sorry IS the conjecture (per AGENTS.md §3b) — do NOT fabricate an instance (audit-dodge). Category: framework/substrate §3b carrier. Track backing/derivation status; advance only via genuine derivation or owner-directed reframing. Parent: b9cj.

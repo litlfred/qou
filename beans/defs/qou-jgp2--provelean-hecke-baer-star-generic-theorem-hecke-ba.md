@@ -17,7 +17,7 @@ parent: qou-d8c7
 ---
 
 **File:** `QOU/BraidKnot/HeckeBaerStarGeneric/hecke_baer_star_generic.lean` (QOU)  ·  1 cited sorry(s)
-**GitHub:** https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/content/quantum-observable-universe/lean/QOU/BraidKnot/HeckeBaerStarGeneric/hecke_baer_star_generic.lean
+**GitHub:** https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/folio/quantum-observable-universe/lean/QOU/BraidKnot/HeckeBaerStarGeneric/hecke_baer_star_generic.lean
 
 ### `hecke_baer_star_generic`  —  line 99  ·  tier **P** (repo-infra-dependent)
 - **Proposition:** `theorem hecke_baer_star_generic [ctx : HeckeBaerStarGenericContext] : ∀ I : ctx.RightAnnihilator, ctx.is_self_adjoint (ctx.generator_of I) ∧ ctx.is_idempotent (ctx.generator_of I) `
