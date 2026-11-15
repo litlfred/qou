@@ -162,6 +162,47 @@ parameter would be `q₀⁻¹ < 1`. So `q₀ > 1` is not an independent fact abo
 is the orientation convention for σ, made visible through a formula (`ℏ_q`) that is not
 bar-symmetric.
 
+### 1.6 Owner ruling 2026-11-15: the left line, and how it resolves the 9a obstacle
+
+The ruling, verbatim: *"Define left = the line on which the positive-crossing generator σ
+acts with eigenvalue of size > 1"*. It is formalised as a **definition**, `leftLine`, in
+`QOU/QuarkState/LeftLineDefinition.lean`; every consequence below is derived from it.
+
+**Why this avoids the obstacle of §1.3.** The modulus criterion is applied once, to the
+generator `σ`, and not to each letter. The eigenlines are shared by `σ` and `σ⁻¹`
+(`flip_Pp`), so a single line serves every flavour. The obstacle in §1.3 comes from
+applying the criterion letter by letter. Its scope-(b) negative stands for that reading
+and does not bear on the ruled definition.
+
+| consequence | lemma |
+|---|---|
+| independent of the root label (`q` or `−q⁻¹`) when `|q| ≠ 1`, so independent of D-H1 | `leftLine_neg_inv` |
+| flavour-blind: the left line is an eigenline of `σ⁻¹` | `flip_eigenline_left` |
+| universal: `σ` and `σ⁻¹` both act on the same line by scalars | `leftLine_eigen_sigma`, `leftLine_eigen_flip` |
+| the vertex `weakVertex` (`W_L` if `|q| > 1`, otherwise `W_R`) acts as `σ⁻¹` on the left line and as `σ` on the right line, so it changes flavour on the left only: `u_L ↔ d_L` | `weakVertex_mul_leftLine`, `weakVertex_mul_rightLine` |
+| `leftLine = P₊` iff `|q| > 1` | `leftLine_eq_Pp_iff` |
+| under the mirror, `σ⁻¹` becomes the positive crossing (at parameter `q⁻¹`) and its left line is the old right line | `leftLine_mirror` |
+| "positive-crossing generator" is well posed: given an index character `σ_i ↦ q > 0`, `−σ⁻¹` is the image of no braid word (sign argument); that the character exists on `H_n` is cited | `neg_flip_ne_braid_image` |
+
+**Handedness = (orientation of space) × (side of `|q| = 1`).** The first factor is the
+Ozma convention. The second is the measured `q₀ > 1`, which in the corpus is a declared
+root (§1.5a). Consistency checks:
+
+- At `|q| = 1` neither eigenvalue qualifies. The definition then picks nothing, and its
+  `else` branch is only a default, which the label-independence lemma excludes.
+- At `q = 1` the two vertices coincide (`oneSidedL_eq_oneSidedR_iff`).
+
+In the generic fibre, bar and the root relabelling both exchange the two lines. On this
+reading, parity violation is an observable-level (archimedean) effect of `q₀` lying off
+the unit circle. The **"local measurement / domains" reading** is that `q₀ < 1` elsewhere
+would mean opposite handedness there. That is a reading of `leftLine_eq_Pp_iff`, not a
+derivation, and nothing in the corpus models regions with different `q₀`.
+
+**Conflicts.** With D-H1 = A (the `+q` line is L) the ruling agrees whenever `q > 1`,
+since then `leftLine = P₊` = the `q`-line. It does not depend on D-H1 otherwise
+(`leftLine_neg_inv`). D-H2 (no swap bit) is kept: the swap `σ ↦ −σ⁻¹` is not a braid
+image, so it is not a choice of positive crossing.
+
 ## 2. Route 2: quaternion left vs right multiplication
 
 Lean: `QOU/StandardModel/QuaternionSidedSymmetry.lean` (generic `[CommRing R]`).
@@ -256,6 +297,8 @@ a naming convention.**
 - *Risk:* the second space is an input in every model that has one, so this would import
   Connes' structure rather than derive it.
 - *Commits to:* a modelling choice the owner would have to own.
+
+**Update after the owner's ruling (§1.6).** D-W1 is effectively taken, in a sharper form: the label is fixed by a definition tied to the measured `q₀ > 1` and to the orientation that makes `σ` the positive crossing. D-W2 remains open as a *mechanism* (why a long-braid limit would be physical); it is no longer needed to fix the label.
 
 **Default (no answer):** nothing changes. The bean `qou-hlx7` stays open with this audit
 attached, nothing is written into content, and no number moves.
