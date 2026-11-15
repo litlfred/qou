@@ -300,6 +300,7 @@ import QOU.Knot.PerNeutronLadder
 import QOU.MathlibExt.IdealTriangulation
 import QOU.MathlibExt.ManifoldVolumeBridge
 import QOU.MathlibExt.ManifoldVolumePositive
+import QOU.MathlibExt.Bicommutant
 import QOU.MathlibExt.BraidGroup
 import QOU.Knot.FiveTwoVolumeConstant
 import QOU.Knot.FiveTwoAngleSum
