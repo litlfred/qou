@@ -166,6 +166,11 @@ for nuc in nuclei:
     best_quark_dau = None
     best_affected = 0
 
+    # Parent volumes do not depend on the conversion site: compute once.
+    # traced_volumes_all gives the same exact rationals as per-generator
+    # traced_volume calls, in one O(A) sweep (bean qou-l1zd).
+    _vp_all = [float(v) for v in qr.traced_volumes_all(quark_par)]
+
     for site in neutron_positions:
         nucleon_dau_trial = list(nucleon_par)
         nucleon_dau_trial[site] = 1
@@ -176,9 +181,10 @@ for nuc in nuclei:
         n_gens = strands_L1 - 1
         lr_sum = 0.0
         aff = 0
+        _vd_all = [float(v) for v in qr.traced_volumes_all(quark_dau_trial)]
         for i in range(n_gens):
-            vp = float(qr.traced_volume(i, quark_par))
-            vd = float(qr.traced_volume(i, quark_dau_trial))
+            vp = _vp_all[i]
+            vd = _vd_all[i]
             if vp != 0 and vd != 0 and abs(vp - vd) > 1e-15:
                 lr_sum += mp.log(abs(vp)) - mp.log(abs(vd))
                 aff += 1
@@ -205,9 +211,10 @@ for nuc in nuclei:
             n_gens = strands_L1 - 1
             lr_sum = 0.0
             aff = 0
+            _vd_all = [float(v) for v in qr.traced_volumes_all(quark_dau_trial)]
             for i in range(n_gens):
-                vp = float(qr.traced_volume(i, quark_par))
-                vd = float(qr.traced_volume(i, quark_dau_trial))
+                vp = _vp_all[i]
+                vd = _vd_all[i]
                 if vp != 0 and vd != 0 and abs(vp - vd) > 1e-15:
                     lr_sum += mp.log(abs(vp)) - mp.log(abs(vd))
                     aff += 1
