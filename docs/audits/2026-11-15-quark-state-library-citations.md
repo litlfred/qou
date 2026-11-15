@@ -162,3 +162,5 @@ the definition is framed against the literature.
 factor-relations audit independently derives it.
 
 **Default.** No content block cites these yet, so nothing changes and nothing breaks.
+
+**Owner ruling 2026-11-15: Option 2.** A future quark-state block that cites these papers states the mismatch.

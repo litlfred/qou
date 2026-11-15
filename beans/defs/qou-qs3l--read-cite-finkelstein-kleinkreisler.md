@@ -15,3 +15,6 @@ Held, uncited in content: `library/arxiv-0806.3105v3` (Finkelstein: quark famili
 
 ## 2026-11-15 — assessed (PR #7823)
 `docs/audits/2026-11-15-quark-state-library-citations.md`. All three are precedent only (no Hecke, no real q>1, no derived charge; Finkelstein's k=e/3 and Klein-Kreisler's q are fits). Both deformed-SL(2) papers put the (2,1) state at preon/nucleon level, not a single quark. Owner decision (cite precedent only vs state the mismatch) framed in §4.
+
+## 2026-11-15 — owner ruling D3 = yes, state the mismatch
+When a quark-state block cites finkelstein2008 / kleinkreisler1996, it must say that their mixed (2,1)-type state is a preon (Finkelstein) / nucleon (Klein-Kreisler), not a single quark. No block cites them yet.
