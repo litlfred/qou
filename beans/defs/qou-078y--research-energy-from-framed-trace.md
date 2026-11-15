@@ -7,7 +7,7 @@ tags:
     - mass-energy
     - research
 created_at: 2026-11-15T20:26:03Z
-updated_at: 2026-11-15T21:10:00Z
+updated_at: 2026-11-15T23:00:00Z
 parent: qou-6qbv
 ---
 
@@ -82,3 +82,9 @@ Owner choice 2026-11-15: record (this note) + Lean the exclusion (PR) + then the
 - PR #8005 (issue #8004): exclusion theorem (additive braid-invariant ⇒ c·writhe) sorry-free; HeckeGS σ⁻¹ and photon σ₀⁻¹ fixed; reduced cost + |τ| ≤ M·cost bound with Mₙ(q) as hypothesis.
 - Info route (project file qou-crossing-energy/result-info.md): 𝔪(q=1) = 2^{components} on all 11 test braids (proof sketch: tr = z^{n−cyc} at q=1, z=1/2). 𝔪 is not a positive state sum (trefoil, Borromean). 𝔈 = 𝔪c_q² is linear in 𝔪, so not Landauer-derivable; Landauer gives T·ln 𝔪.
 - Still open: Lean the q=1 counting theorem; owner call on vertex-algebra-relations axiom tr(σ)=tr(σ⁻¹).
+
+## 2026-11-15: QUO-3a withdrawn; c₁ is the determinant character
+
+- Owner chose options 1 and 3. Option 1 pushed to PR #8005 (e38b10f9f): `axiom first_chern_vanishes` removed; proved `trace_sub_trace_inv` (τ(x) − τ(x⁻¹) = h·τ(1)) and `trace_ne_trace_inv`; .md QUO-3a withdrawn, wr(a) = abelianisation writhe, relations 26 → 25.
+- Option 3 (pre-registered, project file qou-crossing-energy/result-c1.md): the c₁ candidate is the determinant character. det ρ_λ(σ) = ±q^{c₁}, c₁(V_λ) = χ^λ(transposition); log_q|det ρ(β)| = c₁·w(β). det(Ad) = 1 and c₁(regular) = 0 for every λ, n = 2..5, exact. So the true "c₁(Ad A) = 0" holds identically and constrains nothing.
+- Open: whether the crossing-energy writhe coefficient is a y_λ-weighted sum of c₁(V_λ). Not tested.
