@@ -1,7 +1,7 @@
 ---
 # qou-f7je
 title: 'NOTATION: rename the non-Q_beta c_i cluster coefficients to an unused symbol'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
@@ -134,3 +134,6 @@ The compute rename is hygiene with real breakage risk and no remaining reader be
 4. Batch ≤ 49 files per PR (Gemini review limit).
 
 Do **not** sed the tree.
+
+
+2026-11-15 (owner card): KEEP cl_k. notation-collisions.md already renames the mu3 door and Borromean H9 cluster coefficients to \mathrm{cl}_k; Q_beta keeps c_k. No content block writes the door c_3. Owner chose "Keep cl3 (already in place)" over decorated c_3^door/c_3^Bor. Residual cl3 in computations/ probes (~13) not swept.

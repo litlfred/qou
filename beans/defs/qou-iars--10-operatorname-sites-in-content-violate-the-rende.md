@@ -1,13 +1,13 @@
 ---
 # qou-iars
 title: 10 \operatorname sites in content/ violate the render-QA gate
-status: todo
+status: completed
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-31T06:01:00Z
-updated_at: 2026-10-04T15:15:34Z
+updated_at: 2026-11-15T14:40:00Z
 parent: qou-mub3
 ---
 
@@ -45,3 +45,5 @@ actually break rendering today. The AGENTS.md rule asserts KaTeX rejects
 or may be about the LaTeX path rather than KaTeX. I did not run the renderer.
 So this is *"violates a stated repo rule, ten times"* — not *"the paper renders
 wrong"*. Someone should settle which before spending effort on it.
+
+SUPERSEDED 2026-11-15. AGENTS.md (corrected 2026-09-03, citing this bean) rules that \operatorname is NOT a violation: the viewer loads KaTeX 0.16.11, which supports it, and pdflatex/amsmath always did. Nothing to fix.

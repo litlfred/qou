@@ -1,7 +1,7 @@
 ---
 # qou-9iwt
 title: Omega_q denotes at least 3 different objects — one is a topological space
-status: todo
+status: completed
 type: bug
 priority: high
 tags:
@@ -131,3 +131,6 @@ rule. Both files pass the battery once it is read correctly.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-04 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+2026-11-15 (owner cards): Omega_q = Reeb period only, one object in two regimes (integer period in the categorical model, surreal ~eps^-1 at the substrate) -- owner chose "Keep: same period, two regimes". The Plancherel space was already renamed K_q; Omega_q(rho) is the holonomy residue, disambiguated by its loop argument. q-torsion-leaf-minimum used an undefined ||Omega_q||: owner chose the curvature reading, now ||nabla_q^2|| (PR #7930, merged). explicit-formula sets Omega_q = 1/2pi only in a counterexample; left as is. The 6 | Omega_q test still needs an inhabited CategoricalReebDerivation.

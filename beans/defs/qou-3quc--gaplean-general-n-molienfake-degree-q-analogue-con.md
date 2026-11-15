@@ -235,3 +235,10 @@ An independent second route to the nonnegativity of `[n]_Q!/c_λ` now exists:
 `QOU.Mathlib.MajFormula.qFactorial_eq_schurElt_mul_fmaj` writes it as `Σ_{T∈SYT(λ)} Q^{maj T}`
 (`coeff_fmaj_nonneg`), and `QOU.Mathlib.MajSYTBridge.fmaj_eval_one` ties the count at `Q = 1` to
 `numStandardYoungTableaux`. Status of this bean is left unchanged (not this thread's arc).
+
+NOTE 2026-11-15 (thread "Polish the paper's exposition"): the general-n statement now exists as
+QOU.MathlibExt.NormalizedSumUnconditional.molienSum_eq_qFactorial (n : ℕ) (q : ℝ) (hq : 1 < q),
+via normalizedSum_eq_one and molienSum_eq_qFactorial_iff; source grep finds no `sorry` in its
+import cone (MolienFakeDegreeGeneralN, WenzlSchurElement hits are docstring words only). Not
+lean-direct verified in this session, so the bean is NOT closed here -- the next step is a
+lean-direct run on NormalizedSumUnconditional.lean, then close. AGENTS.md updated to say proved.

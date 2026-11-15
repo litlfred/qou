@@ -1,13 +1,13 @@
 ---
 # qou-uzzk
 title: 'CITE: [ohtsuki2016-52] is a dangling Ref key for the held ohtsuki2016 — M — FiveTwoOhtsukiBridge.lean:161'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T09:05:25Z
-updated_at: 2026-10-04T15:17:53Z
+updated_at: 2026-11-15T14:40:00Z
 parent: qou-mub3
 ---
 
@@ -39,3 +39,5 @@ with the section locator if one is to hand. No registry change needed.
 Found alongside `[hatcher2002]` in a 70-key sweep of `-- Ref:` keys across
 `Eightfold/`, `QuantumObservableUniverse/`, `BringsSurface/` and `Archimedean/`
 (4 unresolved); see `docs/audits/2026-09-04-citation-gap-inventory.md`.
+
+DONE 2026-11-15: already fixed on main e67273779. The string ohtsuki2016-52 no longer occurs in folio/.

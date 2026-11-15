@@ -1,13 +1,13 @@
 ---
 # qou-josl
 title: 'CITE: [hatcher2002] is a dangling Ref key — M — CircleBundleBettiObstruction.lean:63, and the Gysin count is ''cited not derived'''
-status: todo
+status: completed
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T09:04:51Z
-updated_at: 2026-10-04T15:14:44Z
+updated_at: 2026-11-15T14:40:00Z
 parent: qou-mub3
 ---
 
@@ -52,3 +52,5 @@ which are **content-block labels used in a bibliography slot** — arguably fine
 `[manuscript] conj:…`, which is the shape the rest of the corpus uses.
 
 Found by the citation-gap sweep, `docs/audits/2026-09-04-citation-gap-inventory.md`.
+
+DONE 2026-11-15: already fixed on main e67273779. hatcher2002 is registered (folio/references/hatcher2002.json, ORDER entry in folio/schema/references.ts:2700).
