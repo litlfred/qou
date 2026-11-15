@@ -80,3 +80,7 @@ lean-direct exit 0, axioms standard). Audit: docs/audits/2026-11-15-one-sided-we
   partner" belongs to the retired z = 1 form.
 - Owner decisions D-W1 (take the bit from cone point u?) and D-W2 (scope the bar-odd label?)
   framed in audit section 7. Stays in-progress: the L/R bit source is open.
+- Addendum (coordinator input, 9a's skein_asym_eq): [2]W_L = [2]s − (q s − q⁻¹ s⁻¹) and
+  [2]W_R = [2]s − (q⁻¹ s − q s⁻¹), both sorry-free. The one-sided vertex is the letter minus
+  the normalised skein difference. L vs R is exactly the weighting convention (which crossing
+  carries q), and bar swaps both. 9a's risk is confirmed, scope (b) within one letter. Audit §8.
