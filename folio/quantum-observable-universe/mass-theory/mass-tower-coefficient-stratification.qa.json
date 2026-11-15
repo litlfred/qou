@@ -48,6 +48,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ca8a517a9a32",
+          "ts": "ade2ff4089f1",
+          "lean": "ded5e2b019b0",
+          "lean_statement": "88aa6d21ebd0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:25.106Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "mass-tower-coefficient-stratification.lean:61-64 `theorem mass_tower_coefficient_stratification (term : MassTowerTerm) : stratumDepth term ≤ 4 := by cases term <;> decide`; docstring 'The full narrative claim … is not formalised here'",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
       }
     ],
     "milnor-amalgamated-flow": [
@@ -2125,6 +2143,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T21:46:16.025Z",
+  "updated_at": "2026-11-15T21:57:25.106Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

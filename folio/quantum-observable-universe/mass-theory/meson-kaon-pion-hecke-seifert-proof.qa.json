@@ -238,6 +238,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "3431acc2746f",
+          "ts": "6dd81030c32d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:31.951Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "statement .md:12 'The exact algebraic evaluation matches the experimental ratio to 290 ppm' and .md:9 '≈ 3.536' are empirical claims; exponent n_q = 2 underived, scanned against data proof.md:28-37; proof.md:60 cites removed `meson_squaring_exponent`",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: exposition"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1142,7 +1158,7 @@
           "in_degree": 0,
           "cone_size": 9,
           "depth": 7,
-          "pagerank": 7.6e-05,
+          "pagerank": 0.000076,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1442,7 +1458,7 @@
         },
         "reviewed_at": "2026-08-21T21:51:42.358Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
-        "evidence": "Three em-dashes in 435 words, each marking a genuine appositive ('\u2014 the witness JSON is the evidence', '\u2014 the invertibility the rational identity genuinely needs')."
+        "evidence": "Three em-dashes in 435 words, each marking a genuine appositive ('— the witness JSON is the evidence', '— the invertibility the rational identity genuinely needs')."
       }
     ],
     "trap-triples": [
@@ -1648,7 +1664,7 @@
         "reviewed_at": "2026-08-21T21:51:42.845Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
         "severity": "minor",
-        "evidence": "'The canonical EXACT MATCH to the PDG ratio (~290 ppm) is a witnessed near-match, not a Lean equality' contradicts itself inside one sentence \u2014 an exact match is not a ~290 ppm near-match \u2014 and opens on a bare lowercase 'canonical' used as an adjective for a numerical agreement, which is the known 'canonical' <- 'numerical' sweep substitution. The sentence's own second half is the correct statement.",
+        "evidence": "'The canonical EXACT MATCH to the PDG ratio (~290 ppm) is a witnessed near-match, not a Lean equality' contradicts itself inside one sentence — an exact match is not a ~290 ppm near-match — and opens on a bare lowercase 'canonical' used as an adjective for a numerical agreement, which is the known 'canonical' <- 'numerical' sweep substitution. The sentence's own second half is the correct statement.",
         "notes": "Proposed: 'The numerical agreement with the PDG ratio (~290 ppm) is a witnessed near-match, not a Lean equality.' Not applied inline because 'canonical' here is a substituted token and the original wording should be recovered from history."
       }
     ],
@@ -1707,6 +1723,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T19:53:52.178Z",
+  "updated_at": "2026-11-15T21:57:31.951Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

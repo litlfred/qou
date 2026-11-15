@@ -143,6 +143,22 @@
         "reviewed_at": "2026-06-28T22:26:39.926Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes basic QA."
+      },
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:25.485Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "proof:1-13 factor bound, geometric summability, g_k comparison, one-plus-summable multipliability; checked by hand",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: other"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -959,7 +975,7 @@
           "in_degree": 0,
           "cone_size": 45,
           "depth": 21,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1177,7 +1193,7 @@
         "reviewed_at": "2026-08-15T10:31:00.869Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
-        "evidence": "1 negation-contrast construction(s): \", not the regularization question.\" \u2014 state the positive claim directly"
+        "evidence": "1 negation-contrast construction(s): \", not the regularization question.\" — state the positive claim directly"
       },
       {
         "field_hash": {
@@ -1531,6 +1547,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T02:44:28.334Z",
+  "updated_at": "2026-11-15T21:57:25.485Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
