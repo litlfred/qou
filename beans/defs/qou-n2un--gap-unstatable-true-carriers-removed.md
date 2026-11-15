@@ -7,7 +7,7 @@ tags:
     - lean-foundations
     - devacuify
 created_at: 2026-11-15T14:05:00Z
-updated_at: 2026-11-15T20:50:20Z
+updated_at: 2026-11-15T20:53:34Z
 parent: qou-6qbv
 ---
 
@@ -77,3 +77,9 @@ Next: CategoricalQExtDeriv.exists_axiom and frobeniusForm_unique.
 - CategoricalQExtDeriv.exists_axiom is removed and proved, with the unit Frobenius–Hopf object as the witness. Note: the structure puts no law on d, so the existence is cheap.
 - frobeniusForm_unique_of_schur is proved (preadditive with kernels, monoidal-preadditive, A and 𝟙 simple). frobeniusForm_unique_axiom is KEPT.
 - GAP: does frobeniusForm_unique_axiom hold without linear structure or simplicity of 𝟙? No counterexample is known. In Schur-type categories the unit forces A ≅ 𝟙. A counterexample would need a non-abelian category with zero morphisms and a simple A ≇ 𝟙 carrying a Frobenius–Hopf structure.
+
+## 2026-11-15: option B, first repairs
+- QResolventAlg.first_identity is proved: s + Δ has a two-sided inverse in a K-algebra.
+- int_factors_through_centre_of_invariant is proved. Its content sits in the hypothesis intA ∘ π_Z = intA, which is still open for the concrete H_n(q).
+- matrix_algebra_baer_right_axiom is removed and proved (projection onto a complement of the column span).
+- energy_path_independent repair is NOT attempted. It is unclear that the Hecke-step count is invariant across reduction paths even when the system is confluent, since the Hecke rule branches into a sum. This needs a definition of "energy of a path" before a claim can be stated.
