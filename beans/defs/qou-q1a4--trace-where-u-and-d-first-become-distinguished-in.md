@@ -8,7 +8,7 @@ tags:
     - needs-owner
     - convention-d
 created_at: 2026-11-15T18:54:18Z
-updated_at: 2026-11-15T19:10:23Z
+updated_at: 2026-11-15T19:13:24Z
 parent: qou-avtq
 ---
 
@@ -41,3 +41,6 @@ A grep of folio/ content and Lean for an isospin orientation convention (e₁ = 
 
 
 **2026-11-15 §14 (commit above):** (1) α = m_e·8G is asserted for the n–p log-trace in one sentence of the proof, not derived; the −39.58 % is conditional on it. (2) Level 3 (gl₃, K = q^{2ρ}) gives the same q^{∓2} for adjacent u,d, at any level (permutation-module argument). Non-adjacent placement gives q^{∓4}, but that is a choice. (3) K = diag(q,1/q) is Markov for both Ř and Ř⁻¹, so crossing sign does not select u's vector. Step 4 reduces to identifying the writhe T₃ (u = T(2,3)) with the Cartan weight in K = q^{2T³}. Open.
+
+
+**2026-11-15 19:13Z, from the weak-vertex thread (not adopted).** A candidate link: on the D-forced Ř, a crossing (σ or σ⁻¹) is a pure swap iff the over-strand carries e₁. Checked by hand: Ř(e₁⊗e₂) = e₂⊗e₁, Ř(e₂⊗e₁) = e₁⊗e₂ + h e₂⊗e₁, Ř⁻¹ = Ř − h. With def:down-quark (u passes over d, flavour kept), this gives u = e₁ = T³ = +½. It depends on the over-strand convention for σᵢ, and the owner has a card on that. Not adopted yet.
