@@ -3520,3 +3520,18 @@ With the Coulomb insertion X = Σ_{a<b≤5} Q_aQ_b between Δ_S and the emission
 - Asymmetry = 2Y exactly. It is zero at Y = 0.
 Prediction (i) holds only for Y ≠ 0. Prediction (iii) 'the braid adds corrections' FAILS: in this placement the braid adds nothing, and the charge enters as pure classical charge algebra (the Y·T³ cross term).
 Reading (scope a): on canonically traced isospin-½ states, the whole n↔p asymmetry this route can produce is carried by the hypercharge Y, linearly. Since Y is OPEN in the corpus (eightfold-open-problems; conj:sm-hypercharge-invariant; strand-twist-datum is a free label), the n–p break via charge is gated on deriving Y. It is not gated on the braid.
+
+
+### PRE-REGISTRATION ε-Y1 (2026-11-16 00:05Z; route chosen: "Derive Y from colour", the stated default on the open card)
+Hypothesis under test: the source is the untested line in bean qou-sl3f, "the stripped u1 factor q^(1/N) per crossing reads as baryon number 1/N per quark".
+Setup:
+- Jimbo gl_N R on V⊗V versus sl_N R. The ratio is the u1 factor.
+- Model a U(1) braiding with charges a, b as q^(c·a·b). Here c is the pairing normalisation and is NOT chosen in advance.
+Questions:
+- (i) Does the u1 factor fix a alone, or only the product c·a²?
+- (ii) What does singlet transparency (V around Λ^N V) add to (i): an independent constraint, or the same one?
+- (iii) Which further input, if any, sets a = 1/N?
+- (iv) Is that input data, a convention, or a derived fact?
+- (v) Does a = 1/N give Y = 1/3 for the quark doublet in the ε-EM1 convention Q = T³ + Y/2? Or does that need Y = B − L, which brings in lepton-sector input?
+Prediction: (i) only c·a² is fixed; (ii) it is the same constraint; (iii) a lattice normalisation "the baryon Λ^N V has unit charge" is needed. So the route gives the RATIO quark : baryon = 1 : N categorically, while Y = B for quarks stays an identification.
+No value of Y is compared to data. The δε numbers at Y = 1/3 are reported only as consequences.
