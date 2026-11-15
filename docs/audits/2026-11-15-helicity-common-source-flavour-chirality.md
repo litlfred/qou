@@ -181,6 +181,12 @@ missing Mathlib olean. That is about the cache, not the source.
 
 ## 7. Owner decisions
 
+> **Decided 2026-11-15 (relayed by the coordinator, session_01M5GA1LmsEf8tSMxFjMkmnn):
+> D-H1 = A, D-H2 = no.** The Hecke-parameter labelling is canonical (BW's +q root is L), and the
+> swap is not added as a second per-letter bit: chirality stays on the cone side. The left-only
+> weak coupling therefore still needs a separate source (scope (a) for V−A), tracked as bean
+> `qou-hlx7`.
+
 ### D-H1: which labelling of L/R is canonical for a letter?
 
 * **(A) By the Hecke parameter.** L is the line whose eigenvalue equals the parameter; this

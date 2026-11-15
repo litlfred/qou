@@ -38,3 +38,9 @@ no_one_sided_letter: a left-only flip is a letter at no parameter unless q^2 = 1
 BW photon helicity. Only a modulus (archimedean) labelling makes flip look like a swap
 — recorded as owner decision D-H1. Audit:
 docs/audits/2026-11-15-helicity-common-source-flavour-chirality.md.
+
+## 2026-11-15 owner decisions (relayed by coordinator)
+
+D-H1 = A: Hecke-parameter labelling canonical (BW +q root = L). D-H2 = no: the swap is not a
+second per-letter bit; chirality stays on the cone side. Consequence: the left-only weak
+coupling still needs a SEPARATE source (scope (a) for V-A) — follow-up bean qou-hlx7.
