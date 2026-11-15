@@ -47,3 +47,19 @@ Starts from #7844 (OneSidedWeakVertex.lean), #7836 (HelicityCommonSource.lean),
 - Route 3: no held source derives which side; one-sidedness derived (Connes, Furey,
   SO(10)), label conventional; LR models take v_R > v_L as input.
 Open: D-W2 (long-braid limit as mechanism), D-W3 (second singlet space). Audit §4.
+
+## 2026-11-15 owner decisions D1/D2/D3 (coordinator relay) — results, audit §6
+
+- D1 flavour su(2) on leftLine: NEGATIVE inside one letter (scope b; invariant: commutative
+  corner, left line 1-dim). u_L, d_L proportional; span{u,d} = L ⊕ R so a flavour sl2 mixes
+  lines (same failure as quaternion Sp(1)_left). H3 same (cited Wedderburn). n >= 4 open lead.
+  FlavourDoubletOnLeftLine.lean.
+- D2 long-braid limit: real (tendsto_normalised_pow) but no current observable in regime
+  (scope a). T(3,5) 17.2 % from limit; 1e-3 needs N = 31. Probe
+  long_braid_limit_dominant_line_probe.py ALL PASS; matches corpus W(q) (qou-egvf).
+  Finding: convention D kills the all-R (sign) block and z_D is not relabel-invariant, so
+  the D ruling already chose the side (agrees with leftLine = P+ at q > 1). Scope (a).
+- D3 index character built from corpus indexRep + §7a rescaling; neg_flip no-braid-image
+  now uncited (wordImage_ne_neg_negCrossing). BalancedIndexCharacter.lean.
+Lean verified at 4139a76ee (lean-direct exit 0, no sorryAx). Precision gates: the RED
+ratchets are tree-wide and do not name this branch's probe (no witness added).
