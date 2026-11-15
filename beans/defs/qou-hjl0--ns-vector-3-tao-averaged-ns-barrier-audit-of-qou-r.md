@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-12T20:57:49Z
-updated_at: 2026-10-12T20:57:49Z
+updated_at: 2026-11-15T21:40:00Z
 parent: qou-vo9t
 ---
 
@@ -27,3 +27,7 @@ Audit doc: `docs/audits/2026-10-12-ns-v3-tao-barrier.md` (18 claims, each with f
 - **Heuristic.** Of the categorical structure, Frobenius and `q`-dissipation are averaged-invariant and cannot help. Braiding / vortex-line linking (helicity) is the only plausible "finer structure", and no block derives a PDE estimate from it.
 
 Status stays in-progress: four follow-ups need the owner (audit §4). No Lean core lemma was written in this pass.
+
+## 2026-11-15 — Owner ruling `Q-VO9T-2 = 1` applied to `def:ns-regular-qou` and consumers (PR `litlfred/qou#7982`, commit `f67322a50a`)
+
+Resolved the `def:ns-regular-qou` vs `thm:ns-singularity-descartes` item 3 contradiction by redefining `NS(A)` as the global surface Euler class `e(ξ) ∈ H²(S, ℤ) ≅ ℤ` of degree `χ(A)` (`def:ns-regular-qou`, `def:ns-obstruction`, `QOU/GaugeFieldFluidDynamics.lean`) and explicitly separating the 2D topological classification (`NS(A) = 0` iff `g = 1`, `NS(A_D) = -6 ≠ 0` at `g = 4`) from the open 3D classical Navier–Stokes PDE regularity / blow-up question (citing the Tao averaged-NS barrier in `ns-regular-qou`, `ns-obstruction`, `ns-obstruction-computation-interpretation`, `leray-profile`, `torus-ns-regular`, `torus-ns-regular-table-data`, and `observability-independent-motivation`).

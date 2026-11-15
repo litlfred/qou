@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-10-12T20:08:02Z
-updated_at: 2026-10-12T20:08:02Z
+updated_at: 2026-11-15T21:40:00Z
 parent: qou-vo9t
 ---
 
@@ -43,3 +43,7 @@ Task: re-derive or honestly re-scope every step that relied on kappa_n != 0 for 
 The label is kept; the title is now "Topology of the Reeb bundle of the Descartes universe". The proof covers items 1–3 and keeps the old 4-step NS argument, marked retracted. `uses` changed from thm:observability-q-independent to thm:qu-to-qou. Lean: the self-assuming `NsSingularityDescartesContext` carrier is removed; `descartes_kummer_root_levels` (sorry-free, arithmetic only, labelled as such) replaces it, and lean.ref now points to it. lean-direct exits 0; axioms are standard.
 
 **Still open:** the interpretive blocks (ns-singularity-descartes-interpretation, ns-obstruction-computation-interpretation, observability-independent-motivation), plus the consumers leray-profile and torus-ns-regular, still speak of NS-singularity. The owner chose B only, so they are not rewritten. Rescue exploration continues in qou-ocof.
+
+## 2026-11-15 — Consumers and interpretive blocks updated under owner ruling `Q-VO9T-2 = 1` (PR `litlfred/qou#7982`, commit `f67322a50a`)
+
+Updated `ns-regular-qou.{md,ts,lean}`, `ns-obstruction.{md,ts,lean}`, `ns-obstruction-computation-interpretation.{md,ts}`, `leray-profile.{md,ts}`, `torus-ns-regular.{md,ts}`, `torus-ns-regular-table-data.{md,ts}`, `observability-independent-motivation.{md,ts}`, and `QOU/GaugeFieldFluidDynamics.lean` to use the global surface Euler class `NS(A) = e(ξ) ∈ H²(S, ℤ) ≅ ℤ` of degree `χ(A)` (matching `thm:ns-singularity-descartes` item 1) and to scope out any unproved 3D classical Navier–Stokes regularity or blow-up inference per `qou-hjl0`.
