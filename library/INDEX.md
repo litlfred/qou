@@ -692,7 +692,6 @@ whose abstract did not extract get a structural brief instead.
 | [`pjm-v154-n1-p09-s`](pjm-v154-n1-p09-s/) | The period matrix of Bring's curve — 8 sections: Introduction. When studying the ge; The universal cover of Bring's cur; The Riemann matrix. We now compute |
 | [`pjm-v161-n1-p02-p`](pjm-v161-n1-p02-p/) | Paciﬁc Journal of Mathematics STUDYING LINKS VIA CLOSED BRAIDS. III. CLASSIFYING LINKS WHICH ARE CLOSED 3-BRAIDS — 24 sections: JOAN S. BIRMAN AND WILLIAM W. MENA; Introduction. This manuscript is t |
 | [`poincare-proof-outline`](poincare-proof-outline/) | Formalization of the Poincare disc model of hyperbolic geometry — We describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL proof assistant. |
-| [`ppn356556735-0036`](ppn356556735-0036/) | Trigonometric Sums, Green Functions of Finite Groups and Representations of Weyl Groups — 1 sections: Document |
 | [`procrsoclondona92`](procrsoclondona92/) | Helicity and the Calugareanu invariant — 1 sections: Document |
 | [`qt2pf5d0mn`](qt2pf5d0mn/) | UC Santa Barbara — 18 sections: Abstract; Introduction; Higher Categories |
 | [`quaternioms`](quaternioms/) | Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations — 40 sections: Introduction; Extended Related Work; Introduction: Bridging |
@@ -716,6 +715,7 @@ whose abstract did not extract get a structural brief instead.
 | [`schechtman-varchenko1991-arrangements`](schechtman-varchenko1991-arrangements/) | Arrangements of hyperplanes and Lie algebra homology — 10 sections: Front matter; Introduction; Orlik-Solomon algebra (Part I. Coh |
 | [`sigma12-065`](sigma12-065/) | Bring’s Curve: its Period Matrix and the Vector of Riemann Constants ⋆ — Bring’s curve is the genus 4 Riemann surface with automorphism group of maximal size, S5. |
 | [`sm10137-eng`](sm10137-eng/) | Sbornik: Mathematics 215:12 1607–1632 Matematicheski˘ı Sbornik 215:12 30–55 Rate of convergence in the central limit theorem for the determinantal point process with Bessel kernel S. M. Gorbunov — We |
+| [`springer-1976-invent-36-173`](springer-1976-invent-36-173/) | Trigonometric Sums, Green Functions of Finite Groups and Representations of Weyl Groups — 35 sections: Page 1; Page 2; Page 3 |
 | [`squier-burau-unitary-1984`](squier-burau-unitary-1984/) | The Burau representation is unitary — A slight modification of the Burau representation of the braid group is shown to be unitary relative to an explicitly defined Hermitian form. |
 | [`symmetry-04-00039-v3`](symmetry-04-00039-v3/) | Knots on a Torus: A Model of the Elementary Particles — Two knots; just two rudimentary knots, th e unknot and the trefoil. |
 | [`the-period-matrix-of-bring-s-curve-1hik02mwva`](the-period-matrix-of-bring-s-curve-1hik02mwva/) | PACIFI C JOURNA L OF MATHEMATICS — 3 sections: Front matter; J K; (l |

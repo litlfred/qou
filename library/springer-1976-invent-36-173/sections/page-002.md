@@ -1,0 +1,68 @@
+---
+doc_id: springer-1976-invent-36-173
+doc_title: "springer-1976-invent-36-173"
+section_id: page-002
+section_title: "Page 2"
+pages: 2-2
+pdf_page: 2
+source_pdf: springer-1976-invent-36-173.pdf
+source_sha256: dc3217946960a8e0
+text_source: ocr
+granularity: page
+doc_brief: "Trigonometric Sums, Green Functions of Finite Groups and Representations of Weyl Groups — 35 sections: Page 1; Page 2; Page 3"
+---
+174 T.A. Springer
+
+gonometric sums like S°(A, A’) via I-adic cohomology. We also compute, as
+an example and for later use, the S°(A, A’) for G=GL,. No.2 deals with alge-
+braic questions. Since a “Killing form” does not always exist, we have preferred
+to avoid an identification of g with its dual vector space g’ via such a form, working
+instead directly with g’. We then require a number of results about g’, in particular
+about the existence of strongly regular elements in g’ and (g’)’. These are established
+in no. 2.
+
+In no.3 we take up the trigonometric sums S°(A, A’) in the setting of the
+previous paragraph. We take A’e(q’)’ strongly regular and Aeg’ arbitrary.
+The main result 3.15 of this section is a reduction theorem (proved by cohomologi-
+cal methods). Let A= A,+A, be the Jordan decomposition of A and H the con-
+nected centralizer of A,. Then 3.15 reduces the determination of S°(A, A’) to that
+of the S#(A,, A’). This result is similar to [10, Th. 4.2].
+
+No.4 deals with the S°(A, A’) for nilpotent A. The centralizer T of A’ is a
+maximal torus of G which is defined over k. Let W be the Weyl group of T. If B
+is a Borel subgroup of G containing T there is we W such that FB=w- B. Let
+B,, be the variety of Borel subgroups of G whose Lie algebra contains A. The main
+result 4.4 of no. 4 is that there exists a graded representation rf of W on the I-adic
+cohomology of #, with constant coefficients, such that S°(A, 4’) is given (up to a
+constant) by the alternating sum of the traces of the F*r,(w) on the cohomology
+groups H‘(@,). It follows, in particular, that S°(A, A’) depends only on the cen-
+tralizer T of A’.
+
+Using the last fact, we define in no. 5 Green functions Q; ¢, which are func-
+tions on the nilpotent set of g’ indexed by (G’-conjugacy classes of) maximal
+tori of G defined over k. Under some restrictions on p and q, we prove that they
+satisfy orthogonality relations (see 5.6). By Kazhdan’s results these Green functions
+can be connected with the Green functions of [10, no. 4].
+
+As a consequence of the results of no. 4 and no. 5 we obtain in no. 6 realiza-
+tion of the irreducible representations of the Weyl group W of G. To do this we
+study the behaviour of the Q7 , for large q. The results are as follows. Assume p
+sufficiently large. Fix a nilpotent Aeg, let Z,(A) be its centralizer and C(A) the
+quotient of Z,(A) by its identity component. We have e(A)=dim #, =4 (dim Z,(A)-
+rank G).
+
+There is a representation s of C(A) in H?*(@,): it is the permutation re-
+presentation defined by the action of C(A) on the irreducible components of #,
+of dimension e(A). The results of no. 5 give a representation of W in H?*4)(@,),
+which turns out to commute with s. We prove that C(A) x W acts irreducibly in
+the non-zero isotypic subspaces of s and if A runs through a set of representatives
+of the nilpotent G-orbits in g, then each irreducible representation of W is obtained
+in a unique manner (see 6.10). A reduction argument then gives a similar state-
+ment in characteristic 0 (6.14). It would be interesting to have a more direct
+proof of such results over C.
+
+In the last section we discuss a number of examples and special cases.
+
+It will be clear from the preceding that /-adic cohomology provides the key
+to the nontrivial results of this paper. 1 am greatly indebted to P. Deligne, who
+showed me (in a letter of November, 1973) how to use this key, by determining
