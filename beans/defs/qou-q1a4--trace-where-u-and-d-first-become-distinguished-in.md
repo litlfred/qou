@@ -8,7 +8,7 @@ tags:
     - needs-owner
     - convention-d
 created_at: 2026-11-15T18:54:18Z
-updated_at: 2026-11-15T19:04:54Z
+updated_at: 2026-11-15T19:10:23Z
 parent: qou-avtq
 ---
 
@@ -38,3 +38,6 @@ A grep of folio/ content and Lean for an isospin orientation convention (e₁ = 
 
 
 **Correction (2026-11-15, commit e606f824a8).** An earlier note here said both K = diag(q^{±1}) give a Markov trace with z = z_D. That is wrong. It came from a weaker test (full traces of 1 and Ř). The partial quantum trace tr₂((1⊗K)Ř) is z_D·1 only for K = diag(q, 1/q); for diag(1/q, q) it is diag(q/(q²+1), (q⁴+q²−1)/(q³+q)), not a scalar. Raised by the weak-vertex thread and re-checked with sympy. So D forces K = q on e₁ (T³ = +½). Step 4 is still open: which quark sits on e₁ (positive crossing ↔ K = q would give u = +½). Same claim also appeared in audit §13 (fixed) and PR #7966 comment 6899536326 (superseded by a new comment).
+
+
+**2026-11-15 §14 (commit above):** (1) α = m_e·8G is asserted for the n–p log-trace in one sentence of the proof, not derived; the −39.58 % is conditional on it. (2) Level 3 (gl₃, K = q^{2ρ}) gives the same q^{∓2} for adjacent u,d, at any level (permutation-module argument). Non-adjacent placement gives q^{∓4}, but that is a choice. (3) K = diag(q,1/q) is Markov for both Ř and Ř⁻¹, so crossing sign does not select u's vector. Step 4 reduces to identifying the writhe T₃ (u = T(2,3)) with the Cartan weight in K = q^{2T³}. Open.
