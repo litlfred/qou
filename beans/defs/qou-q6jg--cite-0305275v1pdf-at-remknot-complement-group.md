@@ -1,13 +1,13 @@
 ---
 # qou-q6jg
 title: Cite 0305275v1.pdf at rem:knot-complement-group
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T16:12:40Z
-updated_at: 2026-10-04T15:17:02Z
+updated_at: 2026-11-15T14:10:00Z
 parent: qou-19m0
 ---
 
@@ -30,3 +30,5 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   Hyperbolic volume of representations of fundamental groups of cusped 3-manifolds
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [francaviglia2003] as the citation key when you do it.
+
+DONE 2026-11-15 on branch claude/exposition-cite-queue-2026-11-15 (thread "Polish the paper's exposition"). Citation added with a locator checked against the held library text; wording scoped to what the source proves.

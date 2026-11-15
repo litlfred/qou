@@ -1,13 +1,13 @@
 ---
 # qou-von8
 title: Cite [dgkmsv2013] at conj:borromean-quark
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:34:45Z
-updated_at: 2026-10-04T15:17:29Z
+updated_at: 2026-11-15T14:10:00Z
 parent: qou-mub3
 ---
 
@@ -23,3 +23,5 @@ Source: `library/arxiv-1101.3374v1/1101.3374v1.pdf` (`dgkmsv2013`)
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+DONE 2026-11-15 on branch claude/exposition-cite-queue-2026-11-15 (thread "Polish the paper's exposition"). Citation added with a locator checked against the held library text; wording scoped to what the source proves.
