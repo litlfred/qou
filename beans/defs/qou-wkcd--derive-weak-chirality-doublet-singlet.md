@@ -31,3 +31,19 @@ Three routes, each to a derivation or a scoped negative:
 
 Starts from #7844 (OneSidedWeakVertex.lean), #7836 (HelicityCommonSource.lean),
 #7825 (PolarizationActionHecke / ChiralityPolarizationHopf / PolarizationRealStructure).
+
+## 2026-11-15 result (PR #7855, draft; Lean verified at 6e1e536a9, lean-direct exit 0, sorry-free)
+
+- Route 1: a letter fixes only h; the root relabel q ↦ −q⁻¹ swaps lines and W_L ↔ W_R
+  (WeakChiralityRootLabel.lean). "Which crossing carries q" = "which root is q" = L/R.
+  Per-letter modulus labelling flips under flavour (scope b, conditional on #7836).
+  q0 > 1 is declared, not derived (q-zero-complex-extension.md:11; solvers seed it).
+- Owner ruling 2026-11-15: leftLine := eigenline where the positive generator σ has
+  |eigenvalue| > 1 (LeftLineDefinition.lean). Derived: label-independent, flavour-blind,
+  universal; weakVertex flips flavour on the left line only; = P+ iff |q| > 1; mirror
+  swaps; −σ⁻¹ is no braid image (given an index character, cited).
+- Route 2: right complex structure ⇒ Sp(1)_left × U(1)_right; conjugation swaps sides;
+  left Sp(1) moves Γ_u (QuaternionSidedSymmetry.lean). Weak-isospin identification: scope (a).
+- Route 3: no held source derives which side; one-sidedness derived (Connes, Furey,
+  SO(10)), label conventional; LR models take v_R > v_L as input.
+Open: D-W2 (long-braid limit as mechanism), D-W3 (second singlet space). Audit §4.
