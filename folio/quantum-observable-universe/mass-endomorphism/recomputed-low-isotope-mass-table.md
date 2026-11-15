@@ -1,6 +1,6 @@
 # Recomputed low-isotope mass table
 
-Following the $q$-Hecke character closure ([`prop:q-hecke-seminormal-character-closure`](#prop:q-hecke-seminormal-character-closure)) and the $\rho_K$ refinement, three independent production paths to the Markov trace $\mathrm{tr}_M(\mathcal{B}_K)$ at $q = q_0$ agree to machine epsilon across the proton, neutron, deuteron, tritium, and ${}^{3}\mathrm{He}$.
+Following the $q$-Hecke character closure ([`prop:q-hecke-seminormal-character-closure`](#prop:q-hecke-seminormal-character-closure)) and the $\rho_K$ refinement, three independent production paths to the Markov trace $\mathrm{tr}_M(\mathcal{B}_K)$ at $q = q_0$ agree to the 60-digit serialization floor (relative residual $\lesssim 10^{-49}$) across the proton, neutron, deuteron, tritium, and ${}^{3}\mathrm{He}$. Both tabulated paths are convention D on the borromean word at the proton pin, so the agreement certifies the character closure, not the choice of convention.
 
 ## Cross-check
 
