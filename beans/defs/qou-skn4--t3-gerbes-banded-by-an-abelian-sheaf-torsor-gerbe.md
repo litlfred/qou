@@ -1,11 +1,11 @@
 ---
 # qou-skn4
 title: 'T3: gerbes banded by an abelian sheaf; torsor gerbe; carry T2 residuals'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-10-12T19:48:14Z
-updated_at: 2026-11-15T19:08:37Z
+updated_at: 2026-11-15T20:20:00Z
 parent: qou-533l
 ---
 
@@ -71,3 +71,15 @@ STILL OPEN (do not close this bean): C2, that the hemisphere cover computes the
 full open-cover colimit Ȟ²(S², G). Needs either Leray (Čech H¹ = H² = 0 on the
 convex-cone slices of S²) or a triangulation argument for fine covers; neither is
 in the repo or Mathlib. Estimated 5–10 sessions. C3 (full instance, χ = 2) waits on C2.
+
+## 2026-11-15 — D3 `StackGerbe.lean` Milestones 2 & 3 landed (PR #7985, commit `c9b5c7d59272bea9b0afd42852a09253e27ad54c`)
+
+Per owner ruling `Q-VO9T-1 = 3` (session `session_012EE90758AE4945AC814D43`), proved sorry-free in `QOU/MathlibExt/StackGerbe.lean` (0 warnings, standard axioms `[propext, Classical.choice, Quot.sound]`):
+- **Milestone 2 (`Hom = Iso` on `A`-torsors, fibre groupoid, band isomorphism):**
+  - `SheafTorsor J A P`, `equivariantHom_injective`, `equivariantHom_surjective`, `isIso_of_equivariantHom_torsor`, `inv_mem_equivariantHom`
+  - `trivialSheafTorsor`, `trivialTorsorEndEquiv : (equivariantHom (regularAction A hA) (regularAction A hA)).obj (op X) ≃ A.obj (op X)`
+  - `TorsorFibre J A X`, `torsorFibreCategory`, `torsorFibreGroupoid`, `torsorPullback`, `torsorPullback_id`, `torsorPullback_comp`
+- **Milestone 3 (genuine `SiteGerbeData` over `(C, J)` and `Tors(A)` instantiation):**
+  - `equivariantHom_of_sections`, `localIsoSieve`, `torsor_locallyConnected`
+  - `SiteGerbeData J A` and `torsorSiteGerbe J A hA hAsheaf`
+- **Still open (keep `status: in-progress`, do NOT close):** C2/C3 surface colimit and effective descent of objects / central extension of gerbes (Yekutieli Def 3.21 / Thm 4.17).
