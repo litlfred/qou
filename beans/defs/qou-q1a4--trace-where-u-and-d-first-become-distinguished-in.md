@@ -8,7 +8,7 @@ tags:
     - needs-owner
     - convention-d
 created_at: 2026-11-15T18:54:18Z
-updated_at: 2026-11-15T19:13:24Z
+updated_at: 2026-11-15T19:17:47Z
 parent: qou-avtq
 ---
 
@@ -44,3 +44,6 @@ A grep of folio/ content and Lean for an isospin orientation convention (e₁ = 
 
 
 **2026-11-15 19:13Z, from the weak-vertex thread (not adopted).** A candidate link: on the D-forced Ř, a crossing (σ or σ⁻¹) is a pure swap iff the over-strand carries e₁. Checked by hand: Ř(e₁⊗e₂) = e₂⊗e₁, Ř(e₂⊗e₁) = e₁⊗e₂ + h e₂⊗e₁, Ř⁻¹ = Ř − h. With def:down-quark (u passes over d, flavour kept), this gives u = e₁ = T³ = +½. It depends on the over-strand convention for σᵢ, and the owner has a card on that. Not adopted yet.
+
+
+**2026-11-15 §15 (3e0aa5fce5).** Scale: each corpus mass formula, applied to the weight ratio, gives 89–219 MeV (canonical facade, linearised facade, unified formula). Only the asserted α route gives a MeV-scale value (−39.58 %). No corpus formula derives a MeV-scale multiplier; the scale is the open object. Lean MarkovOrientationForced.lean (sorry-free, generic Field): the Markov condition is a = b q² for both Ř and Ř⁻¹; the K-weights of adjacent basis vectors differ by q². The permutation-module half is not formalised.
