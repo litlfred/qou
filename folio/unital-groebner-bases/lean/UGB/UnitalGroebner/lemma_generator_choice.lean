@@ -57,7 +57,7 @@ variable {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     relation** (an equality on `AlgElement`, or an existential producing
     `r ∈ sys.rules` and the witnessing subword occurrence), not a bare
     `Prop`. Proved by `cases` on the reduction derivation. -/
--- Ref: [manuscript] unital-groebner-bases/unital-groebner-bases-chapter/lemma-generator-choice.ts
+-- Ref: [leitner2026] unital-groebner-bases/unital-groebner-bases-chapter/lemma-generator-choice.ts
 theorem lemma_generator_choice
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)

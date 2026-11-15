@@ -38,10 +38,10 @@ claim. The empirical witnesses (A=4, A=6) provide concrete
 instance data but not Lean instances — those would require
 formalising the Hecke representation theory at q ≠ 1.
 
-Ref: [manuscript] conj:psd-trace-orthogonality
-Ref: [manuscript] computations/probe_1_project_4he_on_dominant.py
-Ref: [manuscript] computations/probe_1b_li6_orthogonality.py
-Ref: [manuscript] computations/probe_4_li6_rectangular_python.py
+Ref: [leitner2026] conj:psd-trace-orthogonality
+Ref: [leitner2026] computations/probe_1_project_4he_on_dominant.py
+Ref: [leitner2026] computations/probe_1b_li6_orthogonality.py
+Ref: [leitner2026] computations/probe_4_li6_rectangular_python.py
 -/
 
 namespace QOU.BraidKnot.PSDTraceOrthogonality
@@ -109,7 +109,7 @@ class PSDTraceOrthogonalityHolds where
 /-- The conjecture statement: orthogonality holds for all atoms
 with `A ≥ 2`.
 
-Ref: [manuscript] conj:psd-trace-orthogonality
+Ref: [leitner2026] conj:psd-trace-orthogonality
 -/
 theorem psd_trace_orthogonality_holds_for_all_atoms
     [PSDTraceOrthogonalityHolds] :

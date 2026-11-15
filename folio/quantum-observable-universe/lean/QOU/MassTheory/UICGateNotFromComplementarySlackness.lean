@@ -74,7 +74,7 @@ Bean `qou-8urh`; appends to `qou-t6be`, `qou-zlra`, `qou-brng`.
 -/
 
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP duality, complementary slackness)
--- Ref: [manuscript] quantum-observable-universe/mass-theory/operator-selection-lp.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/operator-selection-lp.md
 
 namespace QOU.MassTheory.UICGateLP
 

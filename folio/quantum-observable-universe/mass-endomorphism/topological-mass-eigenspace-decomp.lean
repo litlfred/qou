@@ -24,7 +24,7 @@ LaTeX label: `lem:topological-mass-eigenspace-decomp`
 
 ## References
 
-- [manuscript] §3 Lifting and Descent
+- [leitner2026] §3 Lifting and Descent
 - See `QOU.LiftingDescent.JetChain.decomposition` for the underlying
   module-theoretic decomposition.
 -/
@@ -40,7 +40,7 @@ open QOU.LiftingDescent.JetChain in
     is the structural statement that powers the Killing-form
     orthogonality + multiplicative-integral additivity used in the
     mass-identity proof. -/
--- Ref: [manuscript] §3 Lifting and Descent
+-- Ref: [leitner2026] §3 Lifting and Descent
 theorem tm_eigenspace_decomp
     {R : Type*} [CommRing R]
     {EndAlg : ℕ → Type*}
@@ -55,7 +55,7 @@ theorem tm_eigenspace_decomp
 
 /-- The descended part of `x` lies in the descended subalgebra
     `𝒜_{n+1}^{desc} = im τ̂ₙ = im ℓₙ`. -/
--- Ref: [manuscript] §3 Lifting and Descent
+-- Ref: [leitner2026] §3 Lifting and Descent
 theorem tm_eigenspace_descendedPart_isDescended
     {R : Type*} [CommRing R]
     {EndAlg : ℕ → Type*}
@@ -69,7 +69,7 @@ theorem tm_eigenspace_descendedPart_isDescended
 
 /-- The transient part of `x` lies in the transient subalgebra
     `𝒜_{n+1}^{trans} = ker τ̂ₙ`. -/
--- Ref: [manuscript] §3 Lifting and Descent
+-- Ref: [leitner2026] §3 Lifting and Descent
 theorem tm_eigenspace_transientPart_isTransient
     {R : Type*} [CommRing R]
     {EndAlg : ℕ → Type*}

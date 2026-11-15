@@ -20,7 +20,7 @@ Archimedean (ℝ): `‖·‖`, inner product — §7c.
 
   -- Ref: [thurston1978] Ch. 2 §2.4 (isometries of the upper half-space model)
   -- Ref: [milnor1982] §1 (reflections in vertical planes)
-  -- Ref: [manuscript] beans qou-473l (T2 C1), qou-idvt (T2)
+  -- Ref: [leitner2026] beans qou-473l (T2 C1), qou-idvt (T2)
 -/
 
 import QOU.Archimedean.HyperbolicMetric

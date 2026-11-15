@@ -50,7 +50,7 @@ collapse. This is the colimit carrier, not that one.
 is stated over `ℝ`) and from `finrank_hecke_eq_factorial` (which needs semisimplicity). At a root of
 unity every step of this fails, not merely weakens.
 
--- Ref: [manuscript] beans qou-ejde, qou-p8yg, qou-0fmb.
+-- Ref: [leitner2026] beans qou-ejde, qou-p8yg, qou-0fmb.
 -/
 
 namespace QOU.SchurWeyl.HeckeColimit

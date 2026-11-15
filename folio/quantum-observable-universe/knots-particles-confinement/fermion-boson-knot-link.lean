@@ -1,6 +1,6 @@
 import Mathlib.Data.Nat.GCD.Basic
 
--- Ref: [manuscript] Ch. 6, §3
+-- Ref: [leitner2026] Ch. 6, §3
 -- Fermions are knots (1 component, odd n in T(2,n)).
 -- Bosons are links (2 components, even n in T(2,n)).
 -- The vertical projection π_V detects the Reeb winding number.

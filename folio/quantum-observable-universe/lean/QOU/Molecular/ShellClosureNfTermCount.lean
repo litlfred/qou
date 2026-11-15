@@ -377,7 +377,7 @@ def magic_numbers : Finset ℕ := {2, 8, 20, 28, 50, 82, 126}
     `[ShellClosureNFTermCount]` as an explicit hypothesis to remain
     `theorem`/`proposition` per AGENTS.md §3b-cond.
 
-    Ref: [manuscript] §Shell closure NF term count, conj:shell-closure-nf-term-count -/
+    Ref: [leitner2026] §Shell closure NF term count, conj:shell-closure-nf-term-count -/
 class ShellClosureNFTermCount where
   /-- The NF term count after Z electrons (in H_{Z+1}(q)). -/
   nf_term_count : ℕ → ℕ
@@ -413,7 +413,7 @@ class ShellClosureNFTermCount where
     every `Z` with no conjecture assumed.
 
     Callers name it: `letI := canonical`. -/
--- Ref: [manuscript] conj:shell-closure-nf-term-count §"Skeleton"
+-- Ref: [leitner2026] conj:shell-closure-nf-term-count §"Skeleton"
 def canonical : ShellClosureNFTermCount where
   nf_term_count := fun _ => 0
   helium_base := rfl

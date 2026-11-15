@@ -15,7 +15,7 @@ the crossing coefficients (c_n, d_n) for each T_{2,n}.
 LaTeX label: `prop:torus-knot-shell-binding`
 
 ## References
-- [manuscript] §6/torus-knot-shell-binding
+- [leitner2026] §6/torus-knot-shell-binding
 - [jones1987] https://doi.org/10.2307/1971403
 - Computation: computations/qvalue-representation-theory.py
 
@@ -77,7 +77,7 @@ theorem chebyshev_crossing_one (q : ℝ) :
     linear in σ (degree 1 in the Hecke generator), so it introduces
     no σ² terms by itself — only products with existing normal form
     words can create squares, which the Gröbner division resolves. -/
--- Ref: [manuscript] §6/torus-knot-shell-binding
+-- Ref: [leitner2026] §6/torus-knot-shell-binding
 theorem chebyshev_crossing_coefficients (q : ℝ) (n : ℕ) :
     chebyshev_crossing q n = ((chebyshev_crossing q n).1, (chebyshev_crossing q n).2) :=
   Prod.ext rfl rfl
@@ -130,7 +130,7 @@ def shell_sizes : List ℕ := [2, 6, 12, 8, 22, 32, 44]
 def magic_numbers : List ℕ := [2, 8, 20, 28, 50, 82, 126]
 
 /-- Verification: cumulative sums of shell_sizes equal magic_numbers. -/
--- Ref: [manuscript] §6/torus-knot-shell-binding
+-- Ref: [leitner2026] §6/torus-knot-shell-binding
 theorem magic_from_shells :
     (shell_sizes.scanl (· + ·) 0).tail = magic_numbers := by
   decide
@@ -154,7 +154,7 @@ noncomputable def shell_eigenvalue_ratio (q : ℝ) (n_s : ℕ) : ℝ :=
   q ^ (2 * n_s)
 
 /-- The eigenvalue ratio grows with shell size. -/
--- Ref: [manuscript] §6/torus-knot-shell-binding
+-- Ref: [leitner2026] §6/torus-knot-shell-binding
 theorem eigenvalue_ratio_monotone (q : ℝ) (hq : q > 1) (n m : ℕ) (h : n < m) :
     shell_eigenvalue_ratio q n < shell_eigenvalue_ratio q m := by
   unfold shell_eigenvalue_ratio
@@ -164,7 +164,7 @@ theorem eigenvalue_ratio_monotone (q : ℝ) (hq : q > 1) (n m : ℕ) (h : n < m)
 
 /-- First shell gap: He-4 → Li-5 gives ratio ≈ 14.8.
     This uses the witness data from sequential-nucleus-builder. -/
--- Ref: [manuscript] sequential-nucleus-builder.witness.json
+-- Ref: [leitner2026] sequential-nucleus-builder.witness.json
 noncomputable def first_shell_gap : ℝ := 1.4093 / 0.0951
 
 theorem first_shell_gap_large : first_shell_gap > 14 := by

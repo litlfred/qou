@@ -28,7 +28,7 @@ load-bearing (b)-invariant. Everything is over a generic `CommRing R`
 
 ## References
 
-- [manuscript] §5-brings-surface/sw-classical-jet-exactness
+- [leitner2026] §5-brings-surface/sw-classical-jet-exactness
 -/
 
 namespace QOU.Mathlib.FormalLaurentResidue

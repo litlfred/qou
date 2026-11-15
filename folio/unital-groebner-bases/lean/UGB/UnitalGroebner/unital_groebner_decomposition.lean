@@ -67,7 +67,7 @@ variable {G : Type u} {k : Type v}
     existential over `AlgElement` together with an `isFlat` equality of
     Hilbert functions — substantive content the former `holds : Prop`
     lacked. -/
--- Ref: [manuscript] unital-groebner-bases/unital-groebner-bases-chapter/main-theorem.ts
+-- Ref: [leitner2026] unital-groebner-bases/unital-groebner-bases-chapter/main-theorem.ts
 theorem unital_groebner_decomposition [Field k] [DecidableEq G]
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)

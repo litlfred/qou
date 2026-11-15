@@ -45,12 +45,12 @@
   slack; the true residual is `O(1/N³)` (the `O(1/N²)` proved here is not
   sharp, by one order, for parity reasons this proof does not exploit).
 
-  -- Ref: [manuscript] QOU/Knot/KashaevEndpointSplit.lean
-  -- Ref: [manuscript] QOU/Knot/LogSincNearZero.lean
-  -- Ref: [manuscript] QOU/Knot/LobNearZero.lean
-  -- Ref: [manuscript] QOU/MathlibExt/StirlingRobbins.lean
-  -- Ref: [manuscript] QOU/MathlibExt/CompositeEulerMaclaurin.lean
-  -- Ref: [manuscript] computations/probes/kashaev_assembly_bound_probe.py
+  -- Ref: [leitner2026] QOU/Knot/KashaevEndpointSplit.lean
+  -- Ref: [leitner2026] QOU/Knot/LogSincNearZero.lean
+  -- Ref: [leitner2026] QOU/Knot/LobNearZero.lean
+  -- Ref: [leitner2026] QOU/MathlibExt/StirlingRobbins.lean
+  -- Ref: [leitner2026] QOU/MathlibExt/CompositeEulerMaclaurin.lean
+  -- Ref: [leitner2026] computations/probes/kashaev_assembly_bound_probe.py
 -/
 import QOU.Knot.LobNearZero
 import QOU.MathlibExt.StirlingRobbins

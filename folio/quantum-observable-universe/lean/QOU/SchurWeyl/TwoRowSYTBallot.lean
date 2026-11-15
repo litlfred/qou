@@ -43,7 +43,7 @@ the term that must vanish is `ballot (2j+1) (j+1)`, which is exactly `ballot_bou
 already proved for a different purpose.  Bean `qou-7wf6` noted that one lemma resolves both; this
 is the second use.
 
--- Ref: [manuscript] beans qou-7vht, qou-7wf6.
+-- Ref: [leitner2026] beans qou-7vht, qou-7wf6.
 -/
 
 namespace QOU.SchurWeyl.TwoRowSYTBallot
@@ -225,7 +225,7 @@ Cited by `QOU.Mathlib.TwoRowDimCatalan`'s module docstring, whose claim that
 **because of this theorem** — before it, that file's `dimHLF` was a formula value with no proved
 tie to any tableau count at general `n`.
 
--- Ref: [manuscript] bean qou-7vht item 1. -/
+-- Ref: [leitner2026] bean qou-7vht item 1. -/
 theorem numSYT_twoRow_eq_dimHLF (m k : ℕ) (h : k ≤ m) :
     (numStandardYoungTableaux (twoRow m k h) : ℤ) = ((dimHLF [m, k] : ℕ) : ℤ) := by
   have hk2 : 2 * k ≤ m + k := by omega

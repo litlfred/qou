@@ -61,7 +61,7 @@ Nothing is fit; nothing is wired. "No seventh fit-based ansatz" + PROBE-4 KL-pru
 -- Ref: [habiro2002] K. Habiro, On the colored Jones polynomials of some simple links,
 --   Surikaisekikenkyusho Kokyuroku 1172 (2000) 34–43; [habiro2004] A unified Witten–Reshetikhin–
 --   Turaev invariant for integral homology spheres, Invent. Math. 171 (2008) 1–81.
--- Ref: [manuscript] deltalambda GAP-A-3 ROUTE 4 audit 2026-08-01; habiro_a3_probe.py.
+-- Ref: [leitner2026] deltalambda GAP-A-3 ROUTE 4 audit 2026-08-01; habiro_a3_probe.py.
 -/
 import Mathlib.Tactic
 import QOU.MathlibExt.QIntegerCanonical

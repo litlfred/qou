@@ -12,7 +12,7 @@ LaTeX label: `def:aeon-adjacency`
 
 ## References
 - [penrose2010] R. Penrose, "Cycles of Time", Bodley Head 2010.
-- [manuscript] §9/aeon
+- [leitner2026] §9/aeon
 -/
 
 namespace QOU
@@ -24,19 +24,19 @@ abbrev AdjBunObject := ℕ
     intersect.  Given the two boundary sets `b₁`, `b₂`, adjacency is
     the non-emptiness of `b₁ ∩ b₂`. -/
 -- Ref: [penrose2010] R. Penrose, "Cycles of Time", Bodley Head 2010.
--- Ref: [manuscript] §9/aeon
+-- Ref: [leitner2026] §9/aeon
 def aeonAdjacent (b₁ b₂ : Set AdjBunObject) : Prop :=
   (b₁ ∩ b₂).Nonempty
 
 /-- Adjacency is symmetric. -/
--- Ref: [manuscript] §9/aeon
+-- Ref: [leitner2026] §9/aeon
 theorem aeonAdjacent_symm {b₁ b₂ : Set AdjBunObject}
     (h : aeonAdjacent b₁ b₂) : aeonAdjacent b₂ b₁ := by
   obtain ⟨x, hx₁, hx₂⟩ := h
   exact ⟨x, hx₂, hx₁⟩
 
 /-- Adjacency exhibits a shared boundary object. -/
--- Ref: [manuscript] §9/aeon
+-- Ref: [leitner2026] §9/aeon
 theorem aeonAdjacent_shared {b₁ b₂ : Set AdjBunObject}
     (h : aeonAdjacent b₁ b₂) : ∃ s, s ∈ b₁ ∧ s ∈ b₂ :=
   h

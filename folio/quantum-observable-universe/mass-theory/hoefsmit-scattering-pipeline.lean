@@ -21,7 +21,7 @@
   abstract.
 
   Ref: [hoefsmit1974], [wenzl1988]
-       [manuscript] §5.14, prop:hoefsmit-scattering-pipeline
+       [leitner2026] §5.14, prop:hoefsmit-scattering-pipeline
 -/
 
 import Mathlib.Algebra.Field.Basic
@@ -70,7 +70,7 @@ noncomputable def scatteringAmplitudeForward
     categorical functor objects and is downstream of
     `QOU.ArchimedeanMassFormula`; it is not part of this stub.
 
-    Ref: [manuscript] §5.14 -/
+    Ref: [leitner2026] §5.14 -/
 theorem pipeline_functoriality {R : Type u} [Field R]
     (m_e geom jK jK' : R) :
     m_e * (geom * jK) = (m_e * geom) * jK ∧
@@ -95,7 +95,7 @@ theorem pipeline_truncation_well_defined
     (full truncated tail : R)
     (h_split : full = truncated + tail) :
     full - truncated = tail := by
-  -- Ref: [manuscript] §5.13
+  -- Ref: [leitner2026] §5.13
   rw [h_split]; ring
 
 /-- **Conditional Hoefsmit pipeline.**  The pipeline truncation

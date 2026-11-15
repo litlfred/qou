@@ -82,7 +82,7 @@
 
   -- Ref: [milnor1982] Appendix (the circumcentre subdivision; obtuse minus sign)
   -- Ref: [thurston1978] Ch. 7
-  -- Ref: [manuscript] beans qou-w3eg (H4-5, obtuse), qou-idvt
+  -- Ref: [leitner2026] beans qou-w3eg (H4-5, obtuse), qou-idvt
 -/
 import QOU.Archimedean.LobachevskyMaximum
 

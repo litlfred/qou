@@ -62,7 +62,7 @@ about the log channel, nothing about the scale (`qou-59j5`), and nothing
 past first order — the exact `c₂` values are in the witness and are NOT
 closed-form here.
 
--- Ref: [manuscript] bean qou-pdg9; computations/probes/c1_leading_coefficient_derived_probe.py
+-- Ref: [leitner2026] bean qou-pdg9; computations/probes/c1_leading_coefficient_derived_probe.py
 -/
 
 namespace QOU.MassTheory

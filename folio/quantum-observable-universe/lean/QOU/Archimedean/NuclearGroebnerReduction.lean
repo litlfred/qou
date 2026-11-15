@@ -13,12 +13,12 @@ gives the unique normal form N̄(p,n).
 LaTeX label: `prop:nuclear-groebner-reduction`
 
 ## References
-- [manuscript] §6/nuclear-groebner-reduction
+- [leitner2026] §6/nuclear-groebner-reduction
 -/
 
 namespace QOU.Archimedean
 
--- Ref: [manuscript] §6/nuclear-groebner-reduction
+-- Ref: [leitner2026] §6/nuclear-groebner-reduction
 /-- A braid word as a plain list of generator indices, local to the
 Gröbner–Shirshov reduction in this module.
 
@@ -31,13 +31,13 @@ and nesting would have moved that name too. -/
 abbrev NuclearBraidWord := List ℕ
 
 /-- An element of the Hecke algebra: a list of (word, coefficient) pairs. -/
--- Ref: [manuscript] §6/nuclear-groebner-reduction
+-- Ref: [leitner2026] §6/nuclear-groebner-reduction
 abbrev HeckeElement := List (NuclearBraidWord × ℝ)
 
 /-- The crossing sign for a nucleon pair.
     pp = positive (weight q), nn = negative (weight q⁻¹),
     mixed = neutral (weight (q+q⁻¹)/2). -/
--- Ref: [manuscript] §6/nuclear-groebner-reduction
+-- Ref: [leitner2026] §6/nuclear-groebner-reduction
 inductive CrossingType
   | pp    -- proton-proton
   | nn    -- neutron-neutron
@@ -47,7 +47,7 @@ inductive CrossingType
 /-- The nuclear crossing matrix: for each pair (i,j) with i < j,
     the crossing type depends on whether nucleon i and j are
     protons or neutrons. -/
--- Ref: [manuscript] §6/nuclear-groebner-reduction
+-- Ref: [leitner2026] §6/nuclear-groebner-reduction
 def crossingType (p : ℕ) (i j : ℕ) : CrossingType :=
   if i < p && j < p then CrossingType.pp
   else if i ≥ p && j ≥ p then CrossingType.nn
@@ -57,7 +57,7 @@ def crossingType (p : ℕ) (i j : ℕ) : CrossingType :=
 
     This is the unique energy-changing generator in the
     Gröbner basis. -/
--- Ref: [manuscript] §6/nuclear-groebner-reduction
+-- Ref: [leitner2026] §6/nuclear-groebner-reduction
 structure HeckeRelation where
   q : ℝ
   q_gt_one : 1 < q
@@ -73,7 +73,7 @@ structure HeckeRelation where
 
 /-- The Gröbner basis for the Hecke algebra consists of three
     types of relations. -/
--- Ref: [manuscript] §6/nuclear-groebner-reduction
+-- Ref: [leitner2026] §6/nuclear-groebner-reduction
 inductive GroebnerRelation
   | hecke (i : ℕ)         -- σ_i² = (q-q⁻¹)σ_i + 1
   | yangBaxter (i : ℕ)    -- σ_iσ_{i+1}σ_i = σ_{i+1}σ_iσ_{i+1}
@@ -81,7 +81,7 @@ inductive GroebnerRelation
   deriving DecidableEq
 
 /-- A word is Gröbner-reduced if no relation in G applies. -/
--- Ref: [manuscript] §6/nuclear-groebner-reduction
+-- Ref: [leitner2026] §6/nuclear-groebner-reduction
 def isReduced (w : NuclearBraidWord) : Prop :=
   -- No adjacent repeated generators (Hecke)
   (∀ i, i + 1 < w.length → w[i]! ≠ w[i+1]!) ∧
@@ -104,14 +104,14 @@ def isReduced (w : NuclearBraidWord) : Prop :=
 /-- The maximum word length of a reduced word with no duplicate
     generators and all generators in {0, ..., A-2} is A-1.
     This follows by pigeonhole: A-1 distinct values, no repeats. -/
--- Ref: [manuscript] §6/nuclear-groebner-reduction
+-- Ref: [leitner2026] §6/nuclear-groebner-reduction
 theorem max_word_length_bound (A : ℕ) (w : NuclearBraidWord)
     (hw : isReduced w) (hgen : ∀ g ∈ w, g < A - 1)
     (hnodup : w.Nodup) :
     w.length ≤ A - 1 := by
   -- Each generator index is in {0, ..., A-2} (A-1 values) by hgen,
   -- and hnodup says no duplicates, so |w| ≤ |{0,...,A-2}| = A-1.
-  -- Ref: [manuscript] §6/nuclear-groebner-reduction
+  -- Ref: [leitner2026] §6/nuclear-groebner-reduction
   calc w.length = w.toFinset.card := (List.toFinset_card_of_nodup hnodup).symm
     _ ≤ (Finset.range (A - 1)).card := by
         apply Finset.card_le_card
@@ -121,7 +121,7 @@ theorem max_word_length_bound (A : ℕ) (w : NuclearBraidWord)
     _ = A - 1 := Finset.card_range _
 
 /-- Top-level alias matching the manifest declaration. -/
--- Ref: [manuscript] §6/nuclear-groebner-reduction
+-- Ref: [leitner2026] §6/nuclear-groebner-reduction
 noncomputable def nuclear_groebner_reduction (q : ℝ) (hq : 1 < q)
     (p n : ℕ) : Prop :=
   ∃ (nf : HeckeElement),

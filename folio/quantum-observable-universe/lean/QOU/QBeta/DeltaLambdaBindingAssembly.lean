@@ -39,7 +39,7 @@
 
   Archimedean (ℂ/ℝ): genuinely archimedean (`Real.sqrt`, `Complex`).
 
-  -- Ref: [manuscript] docs/coordination/delta-lambda-magnitude-derivation.md
+  -- Ref: [leitner2026] docs/coordination/delta-lambda-magnitude-derivation.md
   -- Ref: [garoufalidis-gu-marino2021] (GGM) 2012.00062, Theorem 9
 -/
 

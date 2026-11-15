@@ -1,7 +1,7 @@
 /-
   Vorticity lower bound (conditional on the q-NS cone).
 
-  Ref: [manuscript] §Fluid dynamics / Vorticity lower bound,
+  Ref: [leitner2026] §Fluid dynamics / Vorticity lower bound,
        prop:vorticity-lower-bound
 -/
 
@@ -80,7 +80,7 @@ class VorticityLowerBoundContext (bkmIntegralDiverges : Prop) where
     `VorticityLowerBoundContext` (it composes them; it does not
     assume its own conclusion).
 
-    Ref: [manuscript] §Fluid dynamics / Vorticity lower bound,
+    Ref: [leitner2026] §Fluid dynamics / Vorticity lower bound,
          prop:vorticity-lower-bound -/
 def vorticity_lower_bound_conditional
     {bkmIntegralDiverges : Prop}

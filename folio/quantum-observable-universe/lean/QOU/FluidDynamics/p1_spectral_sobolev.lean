@@ -56,7 +56,7 @@ class P1SpectralSobolevContext (R : Type*) [CommRing R] [LinearOrder R] [IsStric
     eigenvalue formula and `q`-integer monotonicity (`mul_self_le_mul_self`
     / `mul_self_nonneg`); (b) restates the spectral computation; (c)
     restates the Sobolev input. -/
--- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/p1-spectral-sobolev.ts
+-- Ref: [leitner2026] quantum-observable-universe/fluid-dynamics/p1-spectral-sobolev.ts
 theorem p1_spectral_sobolev {R : Type*} [CommRing R] [LinearOrder R] [IsStrictOrderedRing R]
     [ctx : P1SpectralSobolevContext R] :
     (∀ k : ℕ, ctx.μ k ≤ ctx.μ (k + 1) ∧ 0 ≤ ctx.μ 0) ∧

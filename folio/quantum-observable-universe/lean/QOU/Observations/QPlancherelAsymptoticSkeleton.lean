@@ -104,7 +104,7 @@ class QPlancherelAsymptoticSkeletonContext where
     from, which is why the unsourced provenance does not touch the
     theorem. -/
 -- Ref: [feray-meliot2012] https://doi.org/10.1007/s00440-010-0331-6
--- Ref: [manuscript] quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.md
+-- Ref: [leitner2026] quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.md
 theorem QPlancherelAsymptoticSkeleton [ctx : QPlancherelAsymptoticSkeletonContext] :
     Tendsto (fun n : ℕ => ctx.char_variance n) atTop (𝓝 0) := by
   -- The assumed majorant `1/√(n − 3)` tends to `0`.

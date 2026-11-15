@@ -18,7 +18,7 @@ pairing. The definition is categorical (monoidal-category
 self-duality) and universal: it applies to any unital ring `A`
 equipped with a trace `τ : A → R` and an antipode `star : A → A`.
 
--- Ref: [manuscript] def:frobenius-self-pairing-chirality
+-- Ref: [leitner2026] def:frobenius-self-pairing-chirality
 -- Ref: [jones1987] V.F.R. Jones, "Hecke algebra representations of braid groups and link polynomials," Ann. of Math. 126 (1987)
 -/
 

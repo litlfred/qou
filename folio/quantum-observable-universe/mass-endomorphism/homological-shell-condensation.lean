@@ -16,7 +16,7 @@ We axiomatise the conjecture as a `class` per AGENTS.md §3b.
 Downstream theorems (e.g., the `magic-numbers-from-q` ladder)
 become conditional on `[ShellCondensation n]` instances.
 
--- Ref: [manuscript] conj:homological-shell-condensation
+-- Ref: [leitner2026] conj:homological-shell-condensation
 -- Ref: [bialynicki1973]     title: — see folio/schema/references.ts
 -- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
 -- Ref: [ariki1996] Ariki, "On the decomposition numbers of the Hecke algebra of G(m, 1, n)," J. Math. Kyoto Univ. 36 (1996)
@@ -55,7 +55,7 @@ attribute [instance] BBSpectralSequence.EInftyAddGroup
     positive part of the `E_∞` page vanishes at the saturated level
     `n`. The unproved input is the existence of the instance;
     downstream conditional theorems are then fully verified. -/
--- Ref: [manuscript] conj:homological-shell-condensation
+-- Ref: [leitner2026] conj:homological-shell-condensation
 class HomologicalConjecture (n : ℕ) extends BBSpectralSequence n where
   /-- Precondition: `n` is saturated. -/
   saturated : Saturated n
@@ -68,7 +68,7 @@ class HomologicalConjecture (n : ℕ) extends BBSpectralSequence n where
     conjecture, every two elements of the strict-positive part of
     `E_∞` at a saturated level are equal (since they are both
     zero). -/
--- Ref: [manuscript] conj:homological-shell-condensation §"Statement"
+-- Ref: [leitner2026] conj:homological-shell-condensation §"Statement"
 theorem strict_positive_collapse_unique
     (n : ℕ) [c : HomologicalConjecture n]
     (p q : ℕ) (hq : 0 < q) (x y : c.EInfty p q) :
@@ -77,7 +77,7 @@ theorem strict_positive_collapse_unique
 
 /-- Conditional theorem: at a saturated level, the strict-positive
     part of the `E_∞` page is a singleton (the zero subgroup). -/
--- Ref: [manuscript] conj:homological-shell-condensation §"Statement"
+-- Ref: [leitner2026] conj:homological-shell-condensation §"Statement"
 theorem strict_positive_subsingleton
     (n : ℕ) [c : HomologicalConjecture n]
     (p q : ℕ) (hq : 0 < q) :
@@ -89,7 +89,7 @@ theorem strict_positive_subsingleton
     page contains exactly one element (the zero of the additive
     group), at a saturated level. Combines `Subsingleton` with
     the existence of `EInftyZero`. -/
--- Ref: [manuscript] conj:homological-shell-condensation §"Statement"
+-- Ref: [leitner2026] conj:homological-shell-condensation §"Statement"
 theorem strict_positive_eq_zero
     (n : ℕ) [c : HomologicalConjecture n]
     (p q : ℕ) (hq : 0 < q) (x : c.EInfty p q) :
@@ -99,7 +99,7 @@ theorem strict_positive_eq_zero
 /-- Conditional corollary: at a saturated level, every additive
     operation in the strict-positive part of `E_∞` is trivial.
     `x + y = 0` for any `x, y` in the strict-positive page. -/
--- Ref: [manuscript] conj:homological-shell-condensation §"Statement"
+-- Ref: [leitner2026] conj:homological-shell-condensation §"Statement"
 theorem strict_positive_add_zero
     (n : ℕ) [c : HomologicalConjecture n]
     (p q : ℕ) (hq : 0 < q) (x y : c.EInfty p q) :
@@ -111,7 +111,7 @@ theorem strict_positive_add_zero
     spectral sequence collapses on the entire upper-triangular
     region above the `q = 0` line, not just the strictly off-
     diagonal part. -/
--- Ref: [manuscript] conj:homological-shell-condensation §"Statement"
+-- Ref: [leitner2026] conj:homological-shell-condensation §"Statement"
 theorem strict_diagonal_collapse
     (n : ℕ) [c : HomologicalConjecture n]
     (p : ℕ) (hp : 0 < p) (x : c.EInfty p p) :

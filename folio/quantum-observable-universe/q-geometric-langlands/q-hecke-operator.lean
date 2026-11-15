@@ -17,7 +17,7 @@ namespace QOU
 
 /-- $q$-Hecke operator -/
 def QHeckeOperator   :=
-  -- Ref: [manuscript] def:q-hecke-operator
+  -- Ref: [leitner2026] def:q-hecke-operator
   trivial
 
 end QOU

@@ -18,7 +18,7 @@ symmetry = stabiliser of the assembly projector" (benzene's three equal
 acetylene units give `S₃`).
 
 ## References
-- [manuscript] Ch. 12, Definition: H₂O molecular braid
+- [leitner2026] Ch. 12, Definition: H₂O molecular braid
 - [kassel1995] Kassel, "Quantum Groups," GTM 155
 -/
 

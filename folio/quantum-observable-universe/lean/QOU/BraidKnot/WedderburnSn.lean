@@ -30,8 +30,8 @@ the `∏ Matrix` blocks and their `𝔫ᵢ²` dimensions — leaving only the **
 identification** (`𝔫ᵢ` ↔ `dim(λ)=#SYT(λ)`, and the JM-eigenvalue = contents) as the conditional input.
 
 ## References
-- [manuscript] content/.../BraidKnot/RegularRepBlockTrace.lean (`SnWedderburnSpectralData`, side 2)
-- [manuscript] content/.../BraidKnot/MaschkeSnSemisimple.lean (`sn_isSemisimpleRing`)
+- [leitner2026] content/.../BraidKnot/RegularRepBlockTrace.lean (`SnWedderburnSpectralData`, side 2)
+- [leitner2026] content/.../BraidKnot/MaschkeSnSemisimple.lean (`sn_isSemisimpleRing`)
 -/
 
 namespace QOU.BraidKnot.WedderburnSn

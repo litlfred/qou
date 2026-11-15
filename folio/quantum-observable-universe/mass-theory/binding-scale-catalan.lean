@@ -7,14 +7,14 @@ import Mathlib.Tactic
 
 α = m_e × Vol(B₃) = m_e × 8G where G is Catalan's constant.
 
--- Ref: [manuscript] prop:binding-scale-catalan
+-- Ref: [leitner2026] prop:binding-scale-catalan
 -/
 
 namespace QOU.BindingScale
 
 /-- Catalan's constant G = Σ (-1)^k / (2k+1)².
     Migrate to `Real.catalan` once it lands in Mathlib. -/
--- Ref: [manuscript] §5/binding-scale-catalan
+-- Ref: [leitner2026] §5/binding-scale-catalan
 noncomputable def catalanConstant : ℝ := 0.9159655941772190
 
 /-- Volume of the Borromean rings complement = 8G.

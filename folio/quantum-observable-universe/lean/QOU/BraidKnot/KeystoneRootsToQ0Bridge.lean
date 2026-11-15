@@ -60,7 +60,7 @@ nothing wired; L2 unchanged.
 Base ring (§7c): horn (iii) is set-theoretic over arbitrary types (no `ℝ`); horn (i)
 is genuinely archimedean/analytic and so lives over `ℂ`, as it must.
 
--- Ref: [manuscript] docs/coordination/s5-so3-keystone.md
+-- Ref: [leitner2026] docs/coordination/s5-so3-keystone.md
 -/
 import Mathlib.Analysis.Analytic.IsolatedZeros
 import Mathlib.Analysis.Complex.Basic

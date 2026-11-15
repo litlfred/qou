@@ -41,7 +41,7 @@ value is produced or wired; the argument-identification is a separate item.
 
 -- Ref: [faddeev1995] Faddeev, Lett. Math. Phys. 34 (1995) 249.
 --        https://doi.org/10.1007/BF01872779
--- Ref: [manuscript] PR #3544 real-form pin; docs/audits/2026-07-11-qbeta-c3-barodd-sleak-phib-target.md
+-- Ref: [leitner2026] PR #3544 real-form pin; docs/audits/2026-07-11-qbeta-c3-barodd-sleak-phib-target.md
 -/
 
 namespace QOU.MathlibExt.FaddeevPhiBRealIntegral

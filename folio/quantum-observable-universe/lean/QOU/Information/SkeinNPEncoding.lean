@@ -42,7 +42,7 @@ polynomiality both ways*. Nothing is wired to production. This composes
 with — does not replace — `PNeqNpEquivalence.JonesComplexityCitations`
 (the `#P` counting inclusion) and the instance-free `QouPNeqNp` carrier.
 
--- Ref: [manuscript] information-theory/skein-turing-machine,
+-- Ref: [leitner2026] information-theory/skein-turing-machine,
    information-theory/p-vs-np-boundary
 -/
 

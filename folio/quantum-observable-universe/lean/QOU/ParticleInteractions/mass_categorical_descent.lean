@@ -135,7 +135,7 @@ end MassDescentChannels
     resulting `B_total` is the physical binding.  That instantiation is
     the manuscript-level descent statement; it lives in the *instance*,
     which this file honestly does not provide. -/
--- Ref: [manuscript] quantum-observable-universe/mass-theory/mass-categorical-descent.ts
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/mass-categorical-descent.ts
 theorem mass_categorical_descent [MassDescentChannels] :
     MassDescentChannels.B_total
       = MassDescentChannels.B_desc + MassDescentChannels.B_trans :=

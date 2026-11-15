@@ -41,7 +41,7 @@ This is scope **(a)**: it rules out module categories as QOU witnesses. It does
 **not** show a QOU exists anywhere, and it is not progress toward discharging
 `QuantumObservableUniverse.exists_instance`, whose `sorry` is untouched.
 
--- Ref: [manuscript] §2-quantum-observable-universes/quantum-observable-universe-exists
+-- Ref: [leitner2026] §2-quantum-observable-universes/quantum-observable-universe-exists
 -- Ref: [kassel1995] Quantum Groups (Springer GTM 155), §IX (quantum SU(2))
 -/
 

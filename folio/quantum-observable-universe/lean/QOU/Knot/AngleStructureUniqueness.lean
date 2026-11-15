@@ -63,7 +63,7 @@ Archimedean (ℝ): genuinely archimedean — strict concavity and Jensen over `�
 --      with prescribed dihedral angles)
 -- Ref: [rivin1994] https://doi.org/10.2307/2118572 (strict concavity of the
 --      hyperbolic volume on the angle-structure polytope)
--- Ref: [manuscript] docs/audits/2026-08-15-rivin-9907032-comb-opt-analysis.md,
+-- Ref: [leitner2026] docs/audits/2026-08-15-rivin-9907032-comb-opt-analysis.md,
 --      beans qou-krvm (ii), qou-tcfb
 -/
 

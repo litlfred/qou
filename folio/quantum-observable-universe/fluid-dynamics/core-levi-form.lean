@@ -1,7 +1,7 @@
 /-
   Core Levi form on geodesic vortices (conditional on the q-NS cone).
 
-  Ref: [manuscript] §Fluid dynamics / Core Levi form,
+  Ref: [leitner2026] §Fluid dynamics / Core Levi form,
        prop:core-levi-form
 
   ## What the load-bearing claim is
@@ -137,7 +137,7 @@ bridge): `max(λ∥,λ⊥)/min(λ∥,λ⊥) = max(a⊥/a∥, a∥/a⊥)²`.
 
 Derived from the aspect relation and positivity by case split on the
 eigenvalue ordering. -/
--- Ref: [manuscript] prop:core-levi-form
+-- Ref: [leitner2026] prop:core-levi-form
 theorem core_levi_ratio_eq_aspect_sq (d : CoreLeviData)
     (hnd : d.NonDegenerate) (hasp : d.AspectSqIsEigenvalueRatio) :
     max d.lamPar d.lamPerp / min d.lamPar d.lamPerp
@@ -179,7 +179,7 @@ On the normal plane of a geodesic vortex core, given the md's definition of
 Both conjuncts are derived; neither is a hypothesis restated.  The md writes
 part (b) with a `(1 + O(ℏ_q²))` factor, which the hypotheses here do not
 carry — see the module docstring. -/
--- Ref: [manuscript] prop:core-levi-form
+-- Ref: [leitner2026] prop:core-levi-form
 theorem core_levi_form (d : CoreLeviData)
     (hnd : d.NonDegenerate) (hcond : d.CondIsEigenvalueRatio)
     (hasp : d.AspectSqIsEigenvalueRatio) :
@@ -203,7 +203,7 @@ the `O(ℏ_q²)` correction.  It carries none: the two hypotheses already pin
 the statement is `0 ≤ C₀ℏ_q²`.  Kept as a derived corollary because the md
 writes part (b) in this form, and recorded as redundant so no later reader
 mistakes it for content. -/
--- Ref: [manuscript] prop:core-levi-form
+-- Ref: [leitner2026] prop:core-levi-form
 theorem core_levi_cond_aspect_bound (d : CoreLeviData)
     (hnd : d.NonDegenerate) (hcond : d.CondIsEigenvalueRatio)
     (hasp : d.AspectSqIsEigenvalueRatio) :
@@ -219,7 +219,7 @@ the condition number is bounded by `C²` iff the squared max-aspect ratio is.
 md (c) also lists clauses (3) contact non-degeneracy, (4) the observability
 axiom `Hom_𝐂(𝟙, Ad(A)) = 0`, and (5) clean failure of Frobenius
 integrability, as strictly equivalent.  None of those three is encoded. -/
--- Ref: [manuscript] prop:core-levi-form
+-- Ref: [leitner2026] prop:core-levi-form
 theorem core_levi_aspect_equiv (d : CoreLeviData)
     (hnd : d.NonDegenerate) (hasp : d.AspectSqIsEigenvalueRatio) (C : ℝ) :
     max d.lamPar d.lamPerp / min d.lamPar d.lamPerp ≤ C ^ 2
@@ -235,7 +235,7 @@ This replaces the old `core_levi_cond_bound`, which was `:= ctx.cond_bound` —
 the bound handed straight back from the class that assumed it.  Here md (d)
 is an explicit hypothesis on caller-supplied data and the conclusion is a
 different statement derived from it through `core_levi_form`. -/
--- Ref: [manuscript] prop:core-levi-form
+-- Ref: [leitner2026] prop:core-levi-form
 theorem core_levi_aspect_bounded_of_quantum_pressure (d : CoreLeviData)
     (hnd : d.NonDegenerate) (hcond : d.CondIsEigenvalueRatio)
     (hasp : d.AspectSqIsEigenvalueRatio) (hqp : d.QuantumPressureBound) :

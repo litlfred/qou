@@ -21,7 +21,7 @@ endomorphism down to `f = z • id`. The dagger is the conjugate
 transpose, so `f† ∘ f = |z|² • id`.
 
 -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
--- Ref: [manuscript] quantum-observable-universe/quantum-universes/positive-definite-dagger.md
+-- Ref: [leitner2026] quantum-observable-universe/quantum-universes/positive-definite-dagger.md
 -/
 
 open Matrix
@@ -37,7 +37,7 @@ def ctrans (f : Matrix (Fin 2) (Fin 2) ℂ) : Matrix (Fin 2) (Fin 2) ℂ :=
 
     For every non-zero morphism `f : 𝟙 → X`, the composite `f† ∘ f` is a
     positive element of `End(𝟙)`. -/
--- Ref: [manuscript] quantum-observable-universe/quantum-universes/positive-definite-dagger.md
+-- Ref: [leitner2026] quantum-observable-universe/quantum-universes/positive-definite-dagger.md
 theorem frobenius_dagger_positive_definite (z : ℂ) :
     let f : Matrix (Fin 2) (Fin 2) ℂ := z • 1
     let f_dag := ctrans f

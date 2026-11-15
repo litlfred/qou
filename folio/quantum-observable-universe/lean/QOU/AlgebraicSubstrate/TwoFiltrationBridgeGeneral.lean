@@ -31,7 +31,7 @@ class TwoFiltrationBridgeContext where
     The bar-class → iterated-integral-depth bridge map: self-
     conjugate cells go to depth 2, chiral pairs go to depth 3,
     at every partition. -/
--- Ref: [manuscript] quantum-observable-universe/algebraic-substrate/two-filtration-bridge-general.md
+-- Ref: [leitner2026] quantum-observable-universe/algebraic-substrate/two-filtration-bridge-general.md
 theorem bridge_map_general [ctx : TwoFiltrationBridgeContext] :
     (∀ lam : ctx.PartitionIdx, ctx.conj lam = lam → ctx.depth lam = 2) ∧
     (∀ lam : ctx.PartitionIdx, ctx.conj lam ≠ lam → ctx.depth lam = 3) := by

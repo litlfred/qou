@@ -17,7 +17,7 @@ LaTeX label: `prop:categorical-archimedean-bridge`
 ## References
 
 - [kock2004] https://doi.org/10.1017/CBO9780511615443
-- [manuscript] §1-quantum-observable-universe/categorical-archimedean-bridge
+- [leitner2026] §1-quantum-observable-universe/categorical-archimedean-bridge
 -/
 
 open CategoryTheory MonoidalCategory
@@ -38,7 +38,7 @@ universe u v
     This is encoded as a commutative square: applying the fibre functor
     to the categorical `π_V ≫ d` yields the same morphism as the
     geometric `θ ∧ ℒ_ξ` on the realised manifold. -/
--- Ref: [kock2004], [manuscript] §1
+-- Ref: [kock2004], [leitner2026] §1
 structure CategoricalArchimedeanBridge (C : Type u) [Category.{v} C]
     [MonoidalCategory C] [CategoryTheory.BraidedCategory C] where
   /-- The Frobenius–Hopf object `A` in `C`. -/

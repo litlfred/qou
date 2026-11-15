@@ -73,8 +73,8 @@ It does **not** exclude:
 the observable side of the wall. There is no generic-`R` version — a hyperbola
 having no interior maximum is meaningless without an order.
 
--- Ref: [manuscript] computations/probe_collective_binding_residual.py
--- Ref: [manuscript] docs/audits/2026-08-02-deltalambda-value-proved-downstream-and-additive-term.md
+-- Ref: [leitner2026] computations/probe_collective_binding_residual.py
+-- Ref: [leitner2026] docs/audits/2026-08-02-deltalambda-value-proved-downstream-and-additive-term.md
 -/
 
 namespace QOU.MassTheory

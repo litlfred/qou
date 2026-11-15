@@ -54,7 +54,7 @@ Boolean grading in PR-D Step 4.
 Refs:
 - [bourbaki1968] Bourbaki, "Groupes et Algèbres de Lie" Ch IV-VI
 - [humphreys1990] Humphreys, "Reflection Groups and Coxeter Groups"
-- [manuscript] docs/audits/2026-05-30-atom-braid-categorical-proof-feasibility.md
+- [leitner2026] docs/audits/2026-05-30-atom-braid-categorical-proof-feasibility.md
 -/
 
 

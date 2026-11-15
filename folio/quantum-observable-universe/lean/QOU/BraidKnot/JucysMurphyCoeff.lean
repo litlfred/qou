@@ -27,8 +27,8 @@ Wedderburn step — over **ℚ** (S_n is a rational group), **not ℂ** — and 
 block-decomposition infrastructure absent from the pinned Mathlib.
 
 ## References
-- [manuscript] docs/audits/2026-06-23-keystone-identity-I-content-decomposition.md §"Proof of (B)"
-- [manuscript] docs/coordination/s5-so3-keystone.md (Identity I is the one carried RT input)
+- [leitner2026] docs/audits/2026-06-23-keystone-identity-I-content-decomposition.md §"Proof of (B)"
+- [leitner2026] docs/coordination/s5-so3-keystone.md (Identity I is the one carried RT input)
 -/
 
 open MonoidAlgebra Finset

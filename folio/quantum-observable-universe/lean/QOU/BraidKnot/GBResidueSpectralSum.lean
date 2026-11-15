@@ -35,10 +35,10 @@ built at `R := ℝ` from the crystal-basis witness (see
 construction stays here, the ℝ realisation consumes it via
 `(R := ℝ)`.
 
-Ref: [manuscript] Chapter 6, §Nuclear Binding and Beta Stability
+Ref: [leitner2026] Chapter 6, §Nuclear Binding and Beta Stability
 LaTeX label: `prop:gb-residue-spectral-sum`
--- Ref: [manuscript] prop:graded-markov-trace-from-gs-filtration
--- Ref: [manuscript] prop:residue-at-root
+-- Ref: [leitner2026] prop:graded-markov-trace-from-gs-filtration
+-- Ref: [leitner2026] prop:residue-at-root
 -/
 
 namespace QOU.BraidKnot
@@ -99,7 +99,7 @@ def gradedMarkovTrace (S : GBResidueSpectralSum R)
 /-- Classical limit: when every cyclotomic residue vanishes, the
     mass reduces to the descended Markov trace.
 
-    Ref: [manuscript] `prop:categorical-mass-markov`. -/
+    Ref: [leitner2026] `prop:categorical-mass-markov`. -/
 theorem classical_limit_descended
     (S : GBResidueSpectralSum R)
     (hres : ∀ ℓ : Fin S.levelBound, S.residue ℓ = 0) :
@@ -110,7 +110,7 @@ theorem classical_limit_descended
 /-- **GB residue spectral sum proposition.**  Conditional on a
     `[GBResidueSpectralSum]` instance, the spectral decomposition
     holds. -/
--- Ref: [manuscript] `prop:gb-residue-spectral-sum`
+-- Ref: [leitner2026] `prop:gb-residue-spectral-sum`
 theorem gb_residue_spectral_sum (R : Type*) [CommRing R] [LinearOrder R]
     [s : GBResidueSpectralSum R] :
     s.mass = |s.descended| + ∑ ℓ : Fin s.levelBound, s.residue ℓ :=

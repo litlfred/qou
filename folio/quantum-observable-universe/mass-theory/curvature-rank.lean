@@ -16,7 +16,7 @@ define the curvature-rank as that grade of the iterated-curvature
 image. This sibling axiomatises the rank as the least index at which
 the filtered piece is non-trivial.
 
--- Ref: [manuscript] def:curvature-rank
+-- Ref: [leitner2026] def:curvature-rank
 -- Ref: [bokutchen2014] Bokut, Chen, "Gröbner–Shirshov bases and their calculation," Bull. Math. Sci. 4 (2014)
 -/
 

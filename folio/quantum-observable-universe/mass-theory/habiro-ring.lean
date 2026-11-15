@@ -64,7 +64,7 @@ def embed (f : R → R) : HabiroElement R where
   compatible := by intro n; intro q _; exact ⟨fun _ => 0, by ring⟩
 
 /-- The algebraic quantum volume lives in the Habiro ring. -/
--- Ref: [manuscript] def:algebraic-quantum-volume
+-- Ref: [leitner2026] def:algebraic-quantum-volume
 def algebraicVolume (tracedVolumes : List (R → R)) : R → R :=
   fun q => tracedVolumes.foldl (fun acc v => acc * v q) 1
 

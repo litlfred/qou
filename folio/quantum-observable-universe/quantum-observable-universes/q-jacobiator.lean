@@ -16,7 +16,7 @@ LaTeX label: `prop:q-jacobiator`
 
 ## References
 
-- [manuscript] §1-quantum-observable-universe/q-jacobiator
+- [leitner2026] §1-quantum-observable-universe/q-jacobiator
 
 **Ground ring (AGENTS.md §7c)**: the formal data is stated over a bare
 commutative ring `R`, with the substrate parameter carried as a **unit**

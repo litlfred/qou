@@ -23,7 +23,7 @@ Frobenius co-Casimir of the Markov-trace pairing on H_n(q).
 At q = 1 this reduces to the classical (5/2)·m_e via
 dim_q(λ) → d_λ and [2]_q → 2.
 
-Ref: [manuscript] Chapter 6, §Nuclear Binding and Beta Stability
+Ref: [leitner2026] Chapter 6, §Nuclear Binding and Beta Stability
 LaTeX label: `prop:partition-sum-proton-residual`
 -/
 
@@ -108,7 +108,7 @@ noncomputable def frobeniusCoCasimirTraceN3 : ℝ :=
     giving residual ≈ −0.45 MeV, not +1.2779 MeV; corrected here to use the
     witnessed residual directly).
 
-    Ref: [manuscript] §Frobenius derivation in
+    Ref: [leitner2026] §Frobenius derivation in
     `prop:partition-sum-proton-residual`;
     `computations/frobenius_partition_sum.py`. -/
 theorem proton_tower_residual_frobenius :
@@ -198,7 +198,7 @@ theorem neutronTowerMass_witness :
     factor 413) is recorded in the proof comment and the witness
     JSON.
 
-    Ref: [manuscript] `rem:deuteron-first-principles`. -/
+    Ref: [leitner2026] `rem:deuteron-first-principles`. -/
 theorem neutron_tower_residual_5halves_fails :
     ¬ ∃ (ε : ℝ), abs ε ≤ electronMass * (3 / 1000) ∧
       neutronCodata - neutronTowerMass = electronMass * (5 / 2) + ε := by
@@ -208,7 +208,7 @@ theorem neutron_tower_residual_5halves_fails :
   --   ε = (neutronCodata - neutronTowerMass) - electronMass · 5/2
   --     ≥ 939.564 - 411.228 - 0.511 · 2.5 = 527.0585 MeV,
   --   |ε| ≤ electronMass · 3/1000 ≤ 0.511 · 0.003 < 1 MeV  →  ⊥.
-  -- Ref: [manuscript] `rem:deuteron-first-principles`;
+  -- Ref: [leitner2026] `rem:deuteron-first-principles`;
   -- \cite{wenzl1988} for the underlying neutron-mass-tower
   -- structural undershoot (V̂_0^n far from q_0 pole).
   rintro ⟨ε, hε_bound, hε_eq⟩

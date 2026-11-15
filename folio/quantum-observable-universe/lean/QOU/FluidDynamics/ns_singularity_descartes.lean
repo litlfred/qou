@@ -43,7 +43,7 @@ class NsSingularityDescartesContext (R : Type*) [CommRing R] where
     With `χ(A) = -6` the NS obstruction is non-zero.  The singularity
     conclusion is *derived* from the Euler characteristic via
     `obstruction_from_chi`, not asserted. -/
--- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/ns-singularity-descartes.ts
+-- Ref: [leitner2026] quantum-observable-universe/fluid-dynamics/ns-singularity-descartes.ts
 theorem ns_singularity_descartes {R : Type*} [CommRing R]
     [ctx : NsSingularityDescartesContext R] :
     ctx.chi_A = -6 ∧ ctx.NS_A ≠ 0 :=

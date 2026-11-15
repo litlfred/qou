@@ -60,7 +60,7 @@ variable {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     explicitly as `hnqz`: it is what the S-polynomial half of the
     composition lemma needs, and it is discharged for the free algebra on
     any non-empty generating set by `noQuasiZerosFree_of_generator`. -/
--- Ref: [manuscript] unital-groebner-bases/unital-groebner-bases-chapter/buchberger.ts
+-- Ref: [leitner2026] unital-groebner-bases/unital-groebner-bases-chapter/buchberger.ts
 theorem buchberger
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)

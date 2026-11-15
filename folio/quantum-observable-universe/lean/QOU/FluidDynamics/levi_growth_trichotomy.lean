@@ -89,7 +89,7 @@ Archimedean: `β` and `C_L` are real (a `limsup` of real log-ratios, an order
 comparison). `ℝ` is correct — this block is on the archimedean side of the wall.
 
 ## References
-- [manuscript] fluid-dynamics/levi-degeneracy-conjecture (`conj:levi-degeneracy`),
+- [leitner2026] fluid-dynamics/levi-degeneracy-conjecture (`conj:levi-degeneracy`),
   core-levi-form, ns-obstruction-tower
 -/
 
@@ -106,7 +106,7 @@ about it looks conjectural. The structure-level corollaries follow. -/
     falls into one of `β = 0`, `0 < β < 1`, `β = 1` — so the original two-branch
     dichotomy (`β = 0` xor `β = 1`) is *not* a valid partition; the marginal
     window `0 < β < 1` is the missing third case. -/
--- Ref: [manuscript] fluid-dynamics/levi-degeneracy-conjecture (Finding 3)
+-- Ref: [leitner2026] fluid-dynamics/levi-degeneracy-conjecture (Finding 3)
 theorem beta_trichotomy {β : ℝ} (h0 : 0 ≤ β) (h1 : β ≤ 1) :
     β = 0 ∨ (0 < β ∧ β < 1) ∨ β = 1 := by
   rcases eq_or_lt_of_le h0 with h | h
@@ -117,7 +117,7 @@ theorem beta_trichotomy {β : ℝ} (h0 : 0 ≤ β) (h1 : β ≤ 1) :
 
 /-- **The marginal window is a genuine third case.** When `0 < β < 1`, neither
     `β = 0` nor `β = 1` holds, so neither branch is triggered. -/
--- Ref: [manuscript] fluid-dynamics/levi-degeneracy-conjecture (Finding 3)
+-- Ref: [leitner2026] fluid-dynamics/levi-degeneracy-conjecture (Finding 3)
 theorem beta_marginal_undetermined {β : ℝ} (h : 0 < β ∧ β < 1) :
     β ≠ 0 ∧ β ≠ 1 :=
   ⟨ne_of_gt h.1, ne_of_lt h.2⟩
@@ -179,7 +179,7 @@ theorem levi_marginal_undetermined {P : Prop} (T : LeviGrowthTrichotomy P)
     `(0 : ℝ) ≠ 1`, so the hypotheses are jointly unsatisfiable and no instance is
     consulted.  It is kept because the `.md` asserts exclusivity, not because the
     structure supplies it. -/
--- Ref: [manuscript] fluid-dynamics/levi-degeneracy-conjecture
+-- Ref: [leitner2026] fluid-dynamics/levi-degeneracy-conjecture
 theorem levi_branches_exclusive {β : ℝ} (hA : β = 0) (hB : β = 1) : False := by
   rw [hA] at hB; exact zero_ne_one hB
 
@@ -196,7 +196,7 @@ direction is a theorem. -/
     positive exponent survives `beta_lower`, because `κ^(β/2) → ∞` overtakes any
     bound.  This is the `.md`'s branch-(A) identification, derived rather than
     assumed. -/
--- Ref: [manuscript] fluid-dynamics/levi-degeneracy-conjecture (branch A)
+-- Ref: [leitner2026] fluid-dynamics/levi-degeneracy-conjecture (branch A)
 theorem bounded_condNumber_forces_beta_zero {P : Prop}
     (T : LeviGrowthTrichotomy P) (hb : ∃ M : ℝ, ∀ κ : ℕ, T.condNumber κ ≤ M) :
     T.beta = 0 := by

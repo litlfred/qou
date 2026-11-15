@@ -41,7 +41,7 @@ the Iwahori–Hecke algebra `H_{m+2}(q)` (`heckeOfKZ`, `heckeOfKZ_σ`).
 
 No numerical input; sorry-free; axioms `propext`, `Classical.choice`, `Quot.sound`.
 
--- Ref: [manuscript] docs/audits/2026-10-11-drinfeld-kohno-sl2-via-emvz.md §5.1 gap 1
+-- Ref: [leitner2026] docs/audits/2026-10-11-drinfeld-kohno-sl2-via-emvz.md §5.1 gap 1
 -/
 
 namespace QOU.Mass.KZHolonomy.LocalMonodromy

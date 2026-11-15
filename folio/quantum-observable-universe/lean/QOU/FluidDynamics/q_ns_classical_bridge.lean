@@ -53,7 +53,7 @@ as if it did.
   (`q → 1⁺`, `ε > 0`) lives in the prose, not the statement. No `ℝ`.
 
 ## References
-- [manuscript] fluid-dynamics/ns-obstruction, ns-singularity-descartes,
+- [leitner2026] fluid-dynamics/ns-obstruction, ns-singularity-descartes,
   regularity-breakdown, p2-critical-exponent
 - Nečas–Růžička–Šverák, *On Leray's self-similar solutions of the
   Navier–Stokes equations*, Acta Math. 176 (1996) 283–294 (self-similar no-go;
@@ -78,7 +78,7 @@ namespace QOU.FluidDynamics
     * `obstruction_is_regularity_criterion` — **B1, the transfer statement**:
       the categorical obstruction is a *faithful* regularity criterion for the
       QOU-internal flow, i.e. it vanishes iff that flow is globally regular. -/
--- Ref: [manuscript] fluid-dynamics/ns-obstruction, ns-singularity-descartes
+-- Ref: [leitner2026] fluid-dynamics/ns-obstruction, ns-singularity-descartes
 class CategoricalClassicalNSBridge {R : Type*} [CommRing R] (NS_A : R) where
   /-- Global regularity of the QOU's internal `q = 1` NS flow. -/
   globallyRegular : Prop
@@ -100,7 +100,7 @@ class CategoricalClassicalNSBridge {R : Type*} [CommRing R] (NS_A : R) where
     shows only that the (unconditional) categorical side transfers to the
     *QOU-internal* flow *given* the bridge.  It says nothing about the external
     `ℝ³` PDE and does not resolve the Clay problem. -/
--- Ref: [manuscript] fluid-dynamics/ns-singularity-descartes
+-- Ref: [leitner2026] fluid-dynamics/ns-singularity-descartes
 theorem classical_blowup_of_obstruction {R : Type*} [CommRing R] (NS_A : R)
     [br : CategoricalClassicalNSBridge NS_A] (h : NS_A ≠ 0) : br.blowsUp := by
   rw [br.blowup_iff_not_regular]
@@ -110,7 +110,7 @@ theorem classical_blowup_of_obstruction {R : Type*} [CommRing R] (NS_A : R)
 /-- **Contrapositive: global regularity forces a vanishing obstruction —
     CONDITIONAL on Bridge (B).**  A sanity check that the bridge criterion is
     used in the honest direction. -/
--- Ref: [manuscript] fluid-dynamics/ns-obstruction
+-- Ref: [leitner2026] fluid-dynamics/ns-obstruction
 theorem obstruction_zero_of_regular {R : Type*} [CommRing R] (NS_A : R)
     [br : CategoricalClassicalNSBridge NS_A] (h : br.globallyRegular) :
     NS_A = 0 :=
@@ -131,7 +131,7 @@ theorem obstruction_zero_of_regular {R : Type*} [CommRing R] (NS_A : R)
     `k^{−5/3}` spectrum truncated at `N_eff`); the two are not reconciled — see
     the audit, Finding 2.  The `2q ≠ 0` hypothesis is the only ring condition
     the identity needs. -/
--- Ref: [manuscript] fluid-dynamics/p2-critical-exponent
+-- Ref: [leitner2026] fluid-dynamics/p2-critical-exponent
 theorem enstrophy_alpha_one_of_dissipation_closure {K : Type*} [Field K]
     (q ε Ω ν : K) (h2q : (2 * q : K) ≠ 0)
     (hν : ν = (q - 1) / (2 * q)) (hclosure : ε = ν * Ω) :

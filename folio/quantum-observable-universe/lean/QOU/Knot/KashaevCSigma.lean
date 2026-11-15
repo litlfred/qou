@@ -25,8 +25,8 @@
   `stirling_mul_gaussWidth` is the link back to the analysis — the exact
   identity showing the two ingredients combine to `c_σ·N^{3/2}`.
 
-  -- Ref: [manuscript] QOU/OneLoopPrefactorInvariance.lean
-  -- Ref: [manuscript] QOU/Knot/KashaevAsymptoticBounds.lean
+  -- Ref: [leitner2026] QOU/OneLoopPrefactorInvariance.lean
+  -- Ref: [leitner2026] QOU/Knot/KashaevAsymptoticBounds.lean
 -/
 import QOU.Knot.KashaevAsymptoticBounds
 import QOU.OneLoopPrefactorInvariance

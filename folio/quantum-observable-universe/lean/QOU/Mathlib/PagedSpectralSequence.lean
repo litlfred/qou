@@ -47,7 +47,7 @@ whole content of the substrate axiom `S-GB-spectral-collapse`. It makes the
 squaring to zero, and the page-turning isomorphism, none of which a `PUnit`
 model can fake.
 
--- Ref: [manuscript] quantum-observable-universe/eightfold-way
+-- Ref: [leitner2026] quantum-observable-universe/eightfold-way
 -/
 
 namespace QOU.Mathlib.PagedSpectralSequence

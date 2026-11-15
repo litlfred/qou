@@ -37,7 +37,7 @@ LaTeX label: `prop:plancherel-weight-boundedness`
 
 ## References
 
-- [manuscript] Ch. Braids and Knots, §Plancherel boundedness
+- [leitner2026] Ch. Braids and Knots, §Plancherel boundedness
 - [jones1987] https://doi.org/10.2307/1971403
 -/
 
@@ -59,7 +59,7 @@ variable {R : Type*} [CommRing R] [LinearOrder R] [IsStrictOrderedRing R]
 variable (P : PlancherelDistribution R)
 
 /-- Each Plancherel weight is bounded above by 1. -/
--- Ref: [manuscript] Ch. Braids and Knots, §Plancherel boundedness
+-- Ref: [leitner2026] Ch. Braids and Knots, §Plancherel boundedness
 theorem weight_le_one : ∀ p ∈ P.partitions, P.weight p ≤ 1 := by
   intro p hp
   -- weight p ≤ Σ_μ weight μ = 1, since other weights are non-negative.
@@ -71,7 +71,7 @@ theorem weight_le_one : ∀ p ∈ P.partitions, P.weight p ≤ 1 := by
   exact h_sum
 
 /-- A bounded function on partitions yields a bounded weighted sum. -/
--- Ref: [manuscript] Ch. Braids and Knots, §Plancherel boundedness
+-- Ref: [leitner2026] Ch. Braids and Knots, §Plancherel boundedness
 theorem weighted_sum_bounded
     (f : List ℕ → R) (M : R)
     (hM : ∀ p ∈ P.partitions, |f p| ≤ M) (_hM_nn : 0 ≤ M) :
@@ -104,7 +104,7 @@ end PlancherelDistribution
     average bounded by `‖f‖_∞`.
 
     Stated over any linearly ordered commutative ring (§7c). -/
--- Ref: [manuscript] Ch. Braids and Knots, §Plancherel boundedness
+-- Ref: [leitner2026] Ch. Braids and Knots, §Plancherel boundedness
 theorem plancherel_weight_boundedness {R : Type*} [CommRing R] [LinearOrder R]
     [IsStrictOrderedRing R] (P : PlancherelDistribution R) :
     (∀ p ∈ P.partitions, 0 ≤ P.weight p ∧ P.weight p ≤ 1) ∧

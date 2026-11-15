@@ -58,7 +58,7 @@ records as open.
 | `join_lt_of_lt_sum` | a pair past the window cannot reach `V` |
 | `le_of_le_join` | so a pair that reaches `V` lies in the window |
 
--- Ref: [manuscript] `computations/deltalambda/rev_e_infinity_search_reduction_probe.py`
+-- Ref: [leitner2026] `computations/deltalambda/rev_e_infinity_search_reduction_probe.py`
 -/
 
 namespace QOU.BraidKnot.SearchCoercivity

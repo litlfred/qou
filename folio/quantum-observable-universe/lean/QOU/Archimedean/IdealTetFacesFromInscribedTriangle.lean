@@ -37,7 +37,7 @@ Archimedean (ℝ): `sin`, `cos`, `arccos`, ordering — §7c.
 
 -- Ref: [milnor1982] Appendix (the normalized ideal tetrahedron and its angles)
 -- Ref: [thurston1978] Ch. 7
--- Ref: [manuscript] beans qou-473l (T2 File 4), qou-idvt (T2)
+-- Ref: [leitner2026] beans qou-473l (T2 File 4), qou-idvt (T2)
 -/
 
 import QOU.Archimedean.HyperbolicDihedralAngle

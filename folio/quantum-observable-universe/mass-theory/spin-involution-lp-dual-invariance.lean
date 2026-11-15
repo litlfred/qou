@@ -255,7 +255,7 @@ theorem isospin_is_spin_grading_under_spin_involution
 
     This is the **algebraic basis** for the `z_n_symmetry` axiom
     in `conj:magic-shell-stabilization`. -/
--- Ref: [manuscript] prop:spin-involution-lp-dual-invariance §"Corollary (pair-knot Z↔N symmetry)"
+-- Ref: [leitner2026] prop:spin-involution-lp-dual-invariance §"Corollary (pair-knot Z↔N symmetry)"
 theorem pair_knot_Z_N_trace_invariance
     {F : FrobeniusSelfDualityForcesLPDualExtraction A R}
     (S : SpinInvolution F)
@@ -275,7 +275,7 @@ theorem pair_knot_Z_N_trace_invariance
     #638 closure work: AME data confirms this symmetry directly
     (substrate-binding difference between ³He and ³H vanishes
     after Coulomb correction, to ~0.03 MeV ≈ 0.5%). -/
--- Ref: [manuscript] prop:spin-involution-lp-dual-invariance §"Corollary"
+-- Ref: [leitner2026] prop:spin-involution-lp-dual-invariance §"Corollary"
 theorem mirror_nucleus_trace_equality
     {F : FrobeniusSelfDualityForcesLPDualExtraction A R}
     (S : SpinInvolution F)

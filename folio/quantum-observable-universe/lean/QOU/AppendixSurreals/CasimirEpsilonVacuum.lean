@@ -85,7 +85,7 @@ theorem energyPerArea_deriv
     (d : ℝ) (hd : 0 < d) :
     deriv CasimirEpsilonVacuum.energyPerArea d = Real.pi ^ 2 / (240 * d ^ 4) := by
   -- Ref: [casimir1948] https://dwc.knaw.nl/DL/publications/PU00018547.pdf
-  -- Ref: [manuscript] appendix-surreals/casimir-epsilon-vacuum.md
+  -- Ref: [leitner2026] appendix-surreals/casimir-epsilon-vacuum.md
   have hd_ne : d ≠ 0 := ne_of_gt hd
   have hd3_ne : d ^ 3 ≠ 0 := pow_ne_zero 3 hd_ne
   have hd4_pos : (0 : ℝ) < d ^ 4 := pow_pos hd 4

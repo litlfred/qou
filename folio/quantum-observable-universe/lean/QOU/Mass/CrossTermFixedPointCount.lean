@@ -26,7 +26,7 @@ spin-½ route of `markov_trace_n4_interleaved_cross_term_probe.py`), which degen
 ordinary trace of the permutation matrix — the fixed-point count — at `q = 1`. That degeneration
 is checked exactly in the probe; here only the classical counts are formalised.
 
--- Ref: [manuscript] computations/probes/interleaving_cross_term_closures_probe.py
+-- Ref: [leitner2026] computations/probes/interleaving_cross_term_closures_probe.py
 -- Ref: [baez-hoffnung-walker2010-groupoidification] https://arxiv.org/abs/0908.4305
 -/
 

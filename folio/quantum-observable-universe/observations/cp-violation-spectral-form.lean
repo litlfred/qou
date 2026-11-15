@@ -13,7 +13,7 @@ LaTeX label: `conj:cp-violation-spectral-form`
 
 ## References
 
-- [manuscript] §6/cp-violation-spectral-form
+- [leitner2026] §6/cp-violation-spectral-form
 - [christenson1964] https://doi.org/10.1103/PhysRevLett.13.138
 -/
 
@@ -84,7 +84,7 @@ the open half is left in the narrative where it can be read as open. -/
 
     This is the falsifiable content the `.md` names: an amphicheiral hadron
     exhibiting CP violation would contradict it. Both hypotheses are used. -/
--- Ref: [manuscript] §6/cp-violation-spectral-form
+-- Ref: [leitner2026] §6/cp-violation-spectral-form
 -- Ref: [christenson1964] Evidence for the $2\pi$ Decay of the $K_2^0$ Meso — see folio/schema/references.ts
 theorem deltaCP_eq_zero_of_real_characters
     (W : WedderburnComplexCharacters)
@@ -113,7 +113,7 @@ theorem deltaCP_eq_zero_of_real_characters
     bound `δ_CP = O(θ²)` as future work. Per the `.md`, a proof also needs
     `R_ℂ`-enrichment uniqueness and a match of `θ_res` to the Wolfenstein
     parameterisation. -/
--- Ref: [manuscript] §6/cp-violation-spectral-form
+-- Ref: [leitner2026] §6/cp-violation-spectral-form
 -- Ref: [christenson1964] Evidence for the $2\pi$ Decay of the $K_2^0$ Meso — see folio/schema/references.ts
 class CPViolationSpectralForm
     (physicalDeltaCP : WedderburnComplexCharacters → ℝ) : Prop where

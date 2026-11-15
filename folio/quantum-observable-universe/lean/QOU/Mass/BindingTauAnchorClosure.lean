@@ -34,7 +34,7 @@ zero residue at the finite branch points, so that identification needs the prolo
 LaTeX label: `prop:binding-tau-anchor-closure` (interprets `prop:binding-genfun-qdifference`).
 
 ## References
-- [manuscript] §mass-theory/binding-genfun-qdifference, §mass-theory/sl2-prolongation-recurrence
+- [leitner2026] §mass-theory/binding-genfun-qdifference, §mass-theory/sl2-prolongation-recurrence
 - [seiberg1994] https://doi.org/10.1016/0550-3213(94)90124-4
 -/
 

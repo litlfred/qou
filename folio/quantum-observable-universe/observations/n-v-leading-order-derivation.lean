@@ -12,9 +12,9 @@
   axioms, modulo the sub-leading correction (currently a separate
   conjecture for the residual 0.58%).
 
-  Ref: [manuscript] `conj:n-v-leading-order-derivation`,
-       [manuscript] `conj:n-v-bring-action`,
-       [manuscript] `conj:n-v-tower-depth-ninety`.
+  Ref: [leitner2026] `conj:n-v-leading-order-derivation`,
+       [leitner2026] `conj:n-v-bring-action`,
+       [leitner2026] `conj:n-v-tower-depth-ninety`.
 -/
 
 import Mathlib.Data.Real.Basic
@@ -81,7 +81,7 @@ noncomputable def N_v : ℝ := 3 * v_ew_real / m_e_real
     Status: **this statement is a THEOREM, not an axiom** — see below.
     What remains open is not it.
 
-    Ref: [manuscript] `def:hecke-mass-element`,
+    Ref: [leitner2026] `def:hecke-mass-element`,
          `conj:mass-endomorphism`,
          `conj:n-v-bring-action`,
          `conj:n-v-tower-depth-ninety`.

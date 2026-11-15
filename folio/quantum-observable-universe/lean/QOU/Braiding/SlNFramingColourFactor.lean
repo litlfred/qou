@@ -31,7 +31,7 @@ forcing lemma needs an ordering, because it picks the positive root.
 
 -- Ref: [kassel1995] Kassel, *Quantum Groups*, ch. VIII (Jimbo R-matrix) and
    ch. XIV (ribbon element `θ_V = q^{C₂(V)}`)
--- Ref: [manuscript] computations/probes/sl_n_framing_colour_factor_probe.py
+-- Ref: [leitner2026] computations/probes/sl_n_framing_colour_factor_probe.py
 -/
 
 namespace QOU.Braiding.SlNFraming

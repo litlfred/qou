@@ -49,7 +49,7 @@ on the nose. The two are the same bookkeeping at different resolution, and
 statements are about kernels and ranges, which exist over any ring — including
 `R_q = ℤ[q, q⁻¹]`, where the corpus actually works.
 
--- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes
+-- Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes
 -/
 
 namespace QOU.Mathlib.LongExactSequence

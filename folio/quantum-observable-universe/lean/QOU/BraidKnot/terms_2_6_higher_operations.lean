@@ -56,7 +56,7 @@ This proposition sketches concrete avenues to close both via
 **higher operations** on the Hochschild cohomology of $H_n(R, q)$.
 
     The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/terms-2-6-higher-operations.ts
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/terms-2-6-higher-operations.ts
 def terms_2_6_higher_operations [ctx : Terms26HigherOperationsContext] :
     (ctx.target_page_term_2 = 1 ∧ ctx.hochschild_arity_term_2 = 2) ∧
     (ctx.target_page_term_6 = 5 ∧ ctx.hochschild_arity_term_6 = 6) :=

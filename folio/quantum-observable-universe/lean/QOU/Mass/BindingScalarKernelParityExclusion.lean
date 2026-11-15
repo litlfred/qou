@@ -82,9 +82,9 @@ independently required (bean `qou-hh9q`).
 `§7c`: generic `[Field K]` throughout (the Riccati needs `x⁻¹`; no ordering, no
 `Real`, no archimedean structure — this is fibre-level algebra). Sorry-free.
 
--- Ref: [manuscript] mass-theory, prop:binding-genfun-qdifference;
+-- Ref: [leitner2026] mass-theory, prop:binding-genfun-qdifference;
 --      conj:qdifference-kernel-prolongation-symbol
--- Ref: [manuscript] docs/audits/2026-07-20-qdifference-kernel-confluent-narrowing.md §§4–5
+-- Ref: [leitner2026] docs/audits/2026-07-20-qdifference-kernel-confluent-narrowing.md §§4–5
 -- Ref: [vanderput-reversat2007] library/afst-2007-6-16-3-665-0/ (Prop. 1.3: E(c z^{t/n}) is irreducible of rank n and slope t/n)
 -- Ref: [vanderput2006] https://arxiv.org/abs/math/0612592 (Thm 3.4–3.5: the same over C({z}), triple (t/n, c^n, m) unique)
 -- Ref: [bugeaud2011] library/crmath-2011-349-19-20-1037-0/ (the E(r,d,b) notation, non-integral slopes)

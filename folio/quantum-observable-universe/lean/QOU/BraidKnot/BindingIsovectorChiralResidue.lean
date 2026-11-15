@@ -23,7 +23,7 @@ import Mathlib.Tactic
 
   All `ring` over a generic `[CommRing R]` (§7c).
 
-  -- Ref: [manuscript] docs/audits/2026-06-29-kappa-framing-route-refuted.md;
+  -- Ref: [leitner2026] docs/audits/2026-06-29-kappa-framing-route-refuted.md;
   --      QOU.BraidKnot keystone residual-(i) `BWVacuumRowIsHecke` (PR #3106);
   --      QOU.WedderburnMass.chirality_residue_mass_term (mass_chiral).
 -/

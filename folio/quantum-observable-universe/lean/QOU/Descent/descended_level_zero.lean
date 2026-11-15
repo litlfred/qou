@@ -38,7 +38,7 @@ only at jet level `0`:
 This names the conditional claim of the jet-tower descent proposition
 (pattern C); it is *not* asserted — an inhabitant witnesses the
 stabilisation of the descended projector under iterated descent. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/descended-level-zero.ts
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/descended-level-zero.ts
 def descended_level_zero (desc_contrib : ℕ → ℝ) : Prop :=
     ∀ n : ℕ, 1 ≤ n → desc_contrib n = 0
 

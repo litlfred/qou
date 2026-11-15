@@ -33,7 +33,7 @@ Base ring: a generic `Field`, per §7c. The claim is pure algebra — no
 ordering, no `Real.sqrt`, no archimedean content — so it is stated over
 `{R : Type*} [Field R]` and specialises to `ℝ` for free.
 
--- Ref: [manuscript] `computations/qbeta/qbeta_ck_cache.py`, extraction loop;
+-- Ref: [leitner2026] `computations/qbeta/qbeta_ck_cache.py`, extraction loop;
 -- bean `qou-cwin` T0.5; PR #5235.
 -/
 import Mathlib.Algebra.Field.Basic

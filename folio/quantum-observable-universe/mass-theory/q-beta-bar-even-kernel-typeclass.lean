@@ -79,7 +79,7 @@ noncomputable def directionThreshold : ℝ := 10
     Per Gemini's HIGH-priority feedback on PR #1890: PARAMETRIC over
     the candidate-specific arguments so multiple candidates can be
     checked in the same environment. -/
--- Ref: [manuscript] prop:q-beta-bar-even-kernel-typeclass
+-- Ref: [leitner2026] prop:q-beta-bar-even-kernel-typeclass
 class BarEvenKernel
     (pole : ℝ) (c2 c3 : ℝ → ℝ) (magnitude : ℝ) : Prop where
   /-- §4(a) radius-of-convergence: candidate's nearest pole is at
@@ -101,7 +101,7 @@ class BarEvenKernel
 
 /-- **§4(a) lifting**: from the bundle, the radius-of-convergence
     pole-location invariant. -/
--- Ref: [manuscript] prop:q-beta-bar-even-kernel-typeclass
+-- Ref: [leitner2026] prop:q-beta-bar-even-kernel-typeclass
 -- Ref: [pr1889] https://github.com/litlfred/qou/pull/1889
 theorem bar_even_kernel_implies_radius_of_convergence
     (pole : ℝ) (c2 c3 : ℝ → ℝ) (magnitude : ℝ)
@@ -118,7 +118,7 @@ theorem bar_even_kernel_implies_radius_of_convergence
     derivation of the shadows. `c2`/`c3` are arbitrary functions, so the
     statement is genuinely conditional and may not be strengthened to a
     global `axiom`. -/
--- Ref: [manuscript] prop:q-beta-bar-even-kernel-typeclass
+-- Ref: [leitner2026] prop:q-beta-bar-even-kernel-typeclass
 -- Ref: [pr1890] https://github.com/litlfred/qou/pull/1890 (Track A)
 def bar_even_kernel_implies_q_one_shadow
     (pole : ℝ) (c2 c3 : ℝ → ℝ) (magnitude : ℝ)
@@ -128,7 +128,7 @@ def bar_even_kernel_implies_q_one_shadow
 
 /-- **§4(d) lifting**: from the bundle, the direction-sanity
     magnitude-match invariant. -/
--- Ref: [manuscript] prop:q-beta-bar-even-kernel-typeclass
+-- Ref: [leitner2026] prop:q-beta-bar-even-kernel-typeclass
 -- Ref: [pr1890] https://github.com/litlfred/qou/pull/1890 (Track B)
 theorem bar_even_kernel_implies_direction_sanity
     (pole : ℝ) (c2 c3 : ℝ → ℝ) (magnitude : ℝ)
@@ -155,7 +155,7 @@ theorem bar_even_kernel_implies_direction_sanity
     `BarEvenKernel` (it is automatic for substrate-derived candidates, per the
     module docstring), so "all four gates" here is three class fields plus the
     two `q = 1` shadows. -/
--- Ref: [manuscript] prop:q-beta-bar-even-kernel-typeclass
+-- Ref: [leitner2026] prop:q-beta-bar-even-kernel-typeclass
 theorem barEvenKernel_iff
     (pole : ℝ) (c2 c3 : ℝ → ℝ) (magnitude : ℝ) :
     BarEvenKernel pole c2 c3 magnitude ↔
@@ -177,7 +177,7 @@ theorem barEvenKernel_iff
     lemma makes the obstruction explicit for one specific failure
     mode (wrong c_2 shadow); analogous rejection lemmas exist
     per-field in PR #1890's parametric gate classes. -/
--- Ref: [manuscript] prop:q-beta-bar-even-kernel-typeclass
+-- Ref: [leitner2026] prop:q-beta-bar-even-kernel-typeclass
 theorem bar_even_kernel_reject_wrong_c2_shadow
     (pole : ℝ) (c2 c3 : ℝ → ℝ) (magnitude a : ℝ)
     (h_candidate_c2 : c2 1 = a) (h_mismatch : a ≠ -1) :
@@ -190,7 +190,7 @@ theorem bar_even_kernel_reject_wrong_c2_shadow
 
 /-- **Direction threshold positivity**: 10 > 0. Used downstream when
     reasoning about the magnitude check. -/
--- Ref: [manuscript] prop:q-beta-bar-even-kernel-typeclass
+-- Ref: [leitner2026] prop:q-beta-bar-even-kernel-typeclass
 theorem direction_threshold_positive :
     directionThreshold > 0 := by
   unfold directionThreshold
@@ -235,7 +235,7 @@ theorem direction_threshold_positive :
     parameter-free carrier; but a caller should still say
     `letI := barEvenKernelAtIntendedPoint` and have the dependence visible at
     the use site. -/
--- Ref: [manuscript] prop:q-beta-bar-even-kernel-typeclass
+-- Ref: [leitner2026] prop:q-beta-bar-even-kernel-typeclass
 noncomputable def barEvenKernelAtIntendedPoint :
     BarEvenKernel uSubstrate (fun _ => -1) (fun _ => jonesHopfAtQOne)
       directionTarget where
@@ -250,7 +250,7 @@ noncomputable def barEvenKernelAtIntendedPoint :
 
 /-- The class is inhabited — the statement the three lifting lemmas rest on,
     now available at the class rather than only in an unimported probe. -/
--- Ref: [manuscript] prop:q-beta-bar-even-kernel-typeclass
+-- Ref: [leitner2026] prop:q-beta-bar-even-kernel-typeclass
 theorem barEvenKernel_nonempty :
     Nonempty (BarEvenKernel uSubstrate (fun _ => -1)
       (fun _ => jonesHopfAtQOne) directionTarget) :=

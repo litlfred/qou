@@ -59,7 +59,7 @@ theorem shell_self_duality
     (part : List ℕ) :
     sc.coeff part = sc.coeff (conjugatePartition part) := by
   -- With conjugatePartition := id, this is reflexivity.
-  -- Ref: [manuscript] prop:shell-schur-weyl-self-duality
+  -- Ref: [leitner2026] prop:shell-schur-weyl-self-duality
   rfl
 
 end QOU.BraidKnot

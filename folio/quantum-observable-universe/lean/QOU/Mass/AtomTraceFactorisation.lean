@@ -57,7 +57,7 @@ Base ring: generic `[CommRing R]`, generic `R`-algebra `A`; the colimit
 corollary is generic `[CommRing K]`.  No `ℝ`.
 
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
--- Ref: [manuscript] beans qou-5zl1 / qou-qqm4 / qou-slz5; computations/mass_at_3A_proper.py.
+-- Ref: [leitner2026] beans qou-5zl1 / qou-qqm4 / qou-slz5; computations/mass_at_3A_proper.py.
 -/
 
 namespace QOU.Mass.AtomTraceFactorisation

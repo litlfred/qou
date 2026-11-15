@@ -28,7 +28,7 @@ and prove the defining functional equation
 TODO upstream: `Mathlib.RingTheory.PowerSeries` — the `q`-Pochhammer /
 `q`-exponential as a `PowerSeries` with its `q`-difference equation.
 -- Ref: [faddeev1994] https://doi.org/10.1007/BF02101594 — Faddeev, the quantum dilogarithm.
--- Ref: [manuscript] QOU.MathlibExt.QuantumDilogarithm (finite backbone; PR #3500)
+-- Ref: [leitner2026] QOU.MathlibExt.QuantumDilogarithm (finite backbone; PR #3500)
 -/
 
 namespace QOU.MathlibExt.QuantumDilogarithmInfinite

@@ -60,7 +60,7 @@ situation. The Kummer *divisibility/torsion* refinement (which `χ(A) = -6`
 survives) is handled separately by `prop:ns-kummer-specialisation`. No `ℝ`.
 
 ## References
-- [manuscript] fluid-dynamics/ns-obstruction-tower (`prop:ns-obstruction-tower`),
+- [leitner2026] fluid-dynamics/ns-obstruction-tower (`prop:ns-obstruction-tower`),
   core-levi-form (`prop:core-levi-form`), levi-degeneracy-conjecture
   (`conj:levi-degeneracy`), ns-kummer-specialisation
 -/
@@ -103,7 +103,7 @@ variable {M : Type*} [AddCommGroup M] [NoZeroSMulDivisors ℤ M]
     obstruction on `Σ` is nonzero **iff** the Levi form is non-degenerate at `p`
     — the categorical face of the Levi dichotomy. Derived from `kappa_def`,
     `smul_ne_zero_iff`, and the two geometric equivalences (c)/(d). -/
--- Ref: [manuscript] fluid-dynamics/ns-obstruction-tower, core-levi-form
+-- Ref: [leitner2026] fluid-dynamics/ns-obstruction-tower, core-levi-form
 theorem ns_obstruction_iff_levi [ctx : NSObstructionLeviData M]
     (hlk : ctx.linking ≠ 0) :
     ctx.kappaLeading ≠ 0 ↔ ctx.leviNonDegenerate := by
@@ -113,7 +113,7 @@ theorem ns_obstruction_iff_levi [ctx : NSObstructionLeviData M]
 
 /-- **Branch A (blow-up side).** A surviving obstruction forces the Levi form to
     be non-degenerate at `p` (discrete cores, no sheet). -/
--- Ref: [manuscript] fluid-dynamics/levi-degeneracy-conjecture (branch A)
+-- Ref: [leitner2026] fluid-dynamics/levi-degeneracy-conjecture (branch A)
 theorem levi_nondegenerate_of_obstruction [ctx : NSObstructionLeviData M]
     (hlk : ctx.linking ≠ 0) (hobs : ctx.kappaLeading ≠ 0) :
     ctx.leviNonDegenerate :=
@@ -122,7 +122,7 @@ theorem levi_nondegenerate_of_obstruction [ctx : NSObstructionLeviData M]
 /-- **Branch B (regular side).** If the Levi form degenerates (the core flattens
     into a sheet), the leading NS obstruction on `Σ` vanishes — categorically
     NS-regular. -/
--- Ref: [manuscript] fluid-dynamics/levi-degeneracy-conjecture (branch B)
+-- Ref: [leitner2026] fluid-dynamics/levi-degeneracy-conjecture (branch B)
 theorem ns_regular_of_sheet [ctx : NSObstructionLeviData M]
     (hlk : ctx.linking ≠ 0) (hsheet : ¬ ctx.leviNonDegenerate) :
     ctx.kappaLeading = 0 := by

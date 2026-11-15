@@ -12,7 +12,7 @@ base `90°` — equals the bar-anti-symmetric (chiral) `S³` braid holonomy of t
 The two reals are supplied by the geometry; the conjecture is their equality.
 
 ## References
-- [manuscript] Ch. 12, Conjecture: H₂S angle = chiral S³ braid holonomy
+- [leitner2026] Ch. 12, Conjecture: H₂S angle = chiral S³ braid holonomy
 -/
 
 namespace QOU.Molecular

@@ -42,7 +42,7 @@ explicit `[Instance]` hypothesis to retain
 
 ## References
 
-- [manuscript] §Levi degeneracy conjecture: contact non-degeneracy at
+- [leitner2026] §Levi degeneracy conjecture: contact non-degeneracy at
   vortex collision determines NS regularity, `conj:levi-degeneracy`
 -/
 
@@ -83,7 +83,7 @@ class LeviDegeneracy where
       $\{1/\kappa : \kappa \geq 2\}$, where each $1/\kappa$ is the
       angular reciprocal of the manuscript's principal-root parameter
       $q_\kappa = e^{i\pi/\kappa}$ on the unit circle. -/
-  -- Ref: [manuscript] fluid-dynamics/levi-degeneracy-conjecture
+  -- Ref: [leitner2026] fluid-dynamics/levi-degeneracy-conjecture
   levi_degeneracy_holds :
     degeneracySet = { x : ℝ | ∃ κ : ℕ, 2 ≤ κ ∧ x = 1 / (κ : ℝ) }
 

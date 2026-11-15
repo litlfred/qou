@@ -9,7 +9,7 @@ import QOU.MathlibExt.QIntegerCanonical
 The coefficient of Φ₂ in the mass formula comes from the
 quantum 3-integer, encoding the 3-quark baryon structure.
 
--- Ref: [manuscript] prop:degree-two-baryon-weight
+-- Ref: [leitner2026] prop:degree-two-baryon-weight
 -/
 
 namespace QOU.BaryonWeight

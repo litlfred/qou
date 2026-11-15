@@ -167,7 +167,7 @@ two inverse braidings, and those are the monodromy.
 * [turaev1994] Turaev, *Quantum invariants of knots and 3-manifolds* — pivotal and spherical
   categories, and the Drinfeld morphism in the braided case.
 
--- Ref: [manuscript] docs/coordination/s5-so3-keystone.md
+-- Ref: [leitner2026] docs/coordination/s5-so3-keystone.md
 -/
 
 namespace QOU.MathlibExt

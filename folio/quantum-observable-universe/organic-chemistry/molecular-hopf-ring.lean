@@ -13,7 +13,7 @@ carries half the weight of the pairwise construction.
 
 ## References
 
-- [manuscript] Ch. 10, §2 Molecular Hopf chains and rings
+- [leitner2026] Ch. 10, §2 Molecular Hopf chains and rings
 -/
 
 namespace QOU.Organic
@@ -23,7 +23,7 @@ namespace QOU.Organic
     module, so inlined here for single-file `lean`-direct checking).
     Fields match the canonical declaration's structure. -/
 -- canonical decl: QOU.Organic.ThreadingLink
--- Ref: [manuscript] Ch. 10, Definition: Threading link T(2,N)
+-- Ref: [leitner2026] Ch. 10, Definition: Threading link T(2,N)
 structure ThreadingLink where
   /-- Number of atoms threaded. -/
   atoms : ℕ
@@ -33,12 +33,12 @@ structure ThreadingLink where
 /-- Alexander weight of T(2,2m) at q=1 is m = N/2 (mirror of the
     canonical `QOU.Organic.ThreadingLink.alexanderWeightAtOne`). -/
 -- canonical decl: QOU.Organic.ThreadingLink.alexanderWeightAtOne
--- Ref: [manuscript] Ch. 10, Definition: Threading link T(2,N)
+-- Ref: [leitner2026] Ch. 10, Definition: Threading link T(2,N)
 def ThreadingLink.alexanderWeightAtOne (t : ThreadingLink) : ℕ :=
   t.atoms / 2
 
 /-- A molecular Hopf ring: N atoms bound by a threading link T(2,N). -/
--- Ref: [manuscript] Ch. 10, Definition: Molecular Hopf ring (closed)
+-- Ref: [leitner2026] Ch. 10, Definition: Molecular Hopf ring (closed)
 structure MolecularHopfRing where
   /-- The threading link binding the ring. -/
   threading : ThreadingLink
@@ -53,7 +53,7 @@ def MolecularHopfRing.alexanderWeight (r : MolecularHopfRing) : ℕ :=
 
 /-- The ring's Alexander weight is strictly less than the chain's
     for N ≥ 4. This means the ring is energetically more efficient. -/
--- Ref: [manuscript] Ch. 10, Remark: Why the C₆ chain resists hexagonalisation
+-- Ref: [leitner2026] Ch. 10, Remark: Why the C₆ chain resists hexagonalisation
 theorem MolecularHopfRing.weight_lt_chain (r : MolecularHopfRing)
     (heven : Even r.threading.atoms)
     (hge : 4 ≤ r.threading.atoms) :

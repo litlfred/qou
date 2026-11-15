@@ -5,7 +5,7 @@
   Colored photons carry Hopf link content that supplies the pair production
   threshold energy.
 
-  Ref: [manuscript] Chapter 6, §3b
+  Ref: [leitner2026] Chapter 6, §3b
 -/
 import Mathlib.Tactic
 
@@ -13,7 +13,7 @@ namespace QOU.Archimedean
 
 /-- A colored photon is the identity element plus color dressing
     in the Hecke algebra: γ_φ = 𝟙 + φ·σ₀ + φ·σ₁. -/
--- Ref: [manuscript] Chapter 6, §3b
+-- Ref: [leitner2026] Chapter 6, §3b
 structure ColoredPhoton (q : ℝ) where
   colorWeight : ℝ
   colorWeight_pos : colorWeight ≥ 0
@@ -35,7 +35,7 @@ def pairThreshold (q : ℝ) (γ₁ γ₂ : ColoredPhoton q) : ℝ :=
     photons (the channel is bosonic in the photon labels).  Both are
     *derived* here — (a) from `colorWeight_pos` via `add_nonneg`, (b)
     from commutativity of `+` — replacing the former `True` placeholder. -/
--- Ref: [manuscript] Chapter 6, §3b
+-- Ref: [leitner2026] Chapter 6, §3b
 theorem breit_wheeler_pair_production (q : ℝ) (γ₁ γ₂ : ColoredPhoton q) :
     0 ≤ pairThreshold q γ₁ γ₂ ∧
       pairThreshold q γ₁ γ₂ = pairThreshold q γ₂ γ₁ := by

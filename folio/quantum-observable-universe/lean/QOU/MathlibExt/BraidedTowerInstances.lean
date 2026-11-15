@@ -147,7 +147,7 @@ Two limits, both inherited from the carriers and neither repaired here.
 **Nothing here derives the bond product.** That reading of the atom word
 remains measured, per `DisjointBlockTraceLaw`'s own statement of scope.
 
--- Ref: [manuscript] beans qou-301d / qou-cins / qou-fq1i / qou-0fmb /
+-- Ref: [leitner2026] beans qou-301d / qou-cins / qou-fq1i / qou-0fmb /
 --      qou-p8yg / qou-ejde;
 --      Jones, *Hecke algebra representations of braid groups and link
 --      polynomials*, Ann. of Math. 126 (1987).

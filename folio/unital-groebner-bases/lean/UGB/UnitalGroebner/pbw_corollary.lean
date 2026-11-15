@@ -60,7 +60,7 @@ variable {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     The conclusion is a **concrete conjunction over `AlgElement`** — a
     `ReducesToNF` existential plus a `∀`-uniqueness clause — the
     substantive content the former `holds : Prop` lacked. -/
--- Ref: [manuscript] unital-groebner-bases/unital-groebner-bases-chapter/pbw-corollary.ts
+-- Ref: [leitner2026] unital-groebner-bases/unital-groebner-bases-chapter/pbw-corollary.ts
 theorem pbw_corollary
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)

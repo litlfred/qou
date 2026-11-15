@@ -15,9 +15,9 @@ involutions, so the algebra-level claim reduces to the
 parameter-level claim proved here.
 -/
 
--- Ref: [manuscript] prop:lusztig-vs-hermitian-bar
--- Ref: [manuscript] def:bar-involution
--- Ref: [manuscript] prop:q-zero-complex-extension
+-- Ref: [leitner2026] prop:lusztig-vs-hermitian-bar
+-- Ref: [leitner2026] def:bar-involution
+-- Ref: [leitner2026] prop:q-zero-complex-extension
 -- Ref: [wenzl1988] doi:10.1007/BF01404457
 
 namespace QOU.BraidKnot.LusztigVsHermitianBar

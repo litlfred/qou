@@ -67,7 +67,7 @@ them.  With real instance binders the paths are defeq (Mathlib forgetful
 inheritance) and the proof goes through.  Hence this block does not extend
 the shared data-field carrier `QOU.Shared.MarkovTraceContext`.
 
--- Ref: [manuscript] quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.md
 -- Ref: QOU.Braiding.markov_trace_flatten (chain-list realisation of the same identity)
 -/
 
@@ -141,7 +141,7 @@ class TmliConstituentCompositeAgreementContext
     length; the definitional links `constituent_product_def` /
     `composite_trace_def` / `partial_full` reduce the claim to that
     aggregate. -/
--- Ref: [manuscript] quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.md
 -- Ref: QOU.Braiding.markov_trace_flatten (chain-list realisation)
 theorem tmli_constituent_composite_agreement
     {R : Type u} [CommRing R] [Inv R] {n : ℕ} {q : R}
@@ -175,7 +175,7 @@ theorem tmli_constituent_composite_agreement
     `P_K(q) = tr_M(ρ(β_𝔥))` gives the outer equality of the manuscript
     display, `∏ᵢ V̂ᵢ^const = P_{K_𝔥}(q)`.  Genuine composition of the
     main claim with a definitional link, not a projected field. -/
--- Ref: [manuscript] quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.md
 theorem tmli_constituent_product_is_link_polynomial
     {R : Type u} [CommRing R] [Inv R] {n : ℕ} {q : R}
     {A : Type u} [Ring A] [Algebra R A]

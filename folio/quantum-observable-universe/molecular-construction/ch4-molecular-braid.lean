@@ -1,4 +1,4 @@
--- Ref: [manuscript] Ch. 10, §ch4-molecular-braid
+-- Ref: [leitner2026] Ch. 10, §ch4-molecular-braid
 -- Methane CH₄ as a molecular braid
 
 namespace QOU.Molecular

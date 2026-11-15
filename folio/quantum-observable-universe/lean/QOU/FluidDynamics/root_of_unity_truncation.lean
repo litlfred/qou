@@ -65,7 +65,7 @@ accumulation of infinitely many such truncations.
     The Lean encoding below states the claim over the context class and
     discharges it from the class's `impl_*` fields (§3b-conditional;
     fully proved). -/
--- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.ts
+-- Ref: [leitner2026] quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.ts
 theorem root_of_unity_truncation [ctx : RootOfUnityTruncationContext] :
     1 < ctx.q ∧ 2 ≤ ctx.κ ∧
     2 * ctx.j_max + 2 ≤ ctx.κ ∧

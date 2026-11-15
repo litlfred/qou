@@ -51,7 +51,7 @@ def torusKnotGenus (m n : ℕ) : ℕ := (m - 1) * (n - 1) / 2
     `Σ₄` (genus ≤ 4) and they are **distinct** torus knots. This is the discrete
     content the audit doc records — two torus knots in one `Σ₄`, not one fibre
     with two symmetries. -/
--- Ref: [manuscript] brings-surface/bring-trefoil-cinquefoil-channel
+-- Ref: [leitner2026] brings-surface/bring-trefoil-cinquefoil-channel
 theorem bring_trefoil_cinquefoil_channel :
     torusKnotGenus 2 3 = 1 ∧ torusKnotGenus 2 5 = 2 ∧
       torusKnotGenus 2 3 ≤ bringsGenus ∧ torusKnotGenus 2 5 ≤ bringsGenus ∧

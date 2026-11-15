@@ -17,7 +17,7 @@ LaTeX label: `rem:mass-from-generators`, `rem:mass-comparison-table`
 
 - CODATA 2022 recommended values of fundamental physical constants
 - AME2020 Atomic Mass Evaluation (Wang et al., CPC 45 030003, 2021)
-- [manuscript] §11-experimental-evidence/mass-from-generators
+- [leitner2026] §11-experimental-evidence/mass-from-generators
 
 **Ground ring**: `ℝ` (archimedean realisation).
 Evaluates formal results at q₀ ≈ 1.1098 for comparison with
@@ -149,51 +149,51 @@ noncomputable def binding_per_A_fe56 : ℝ := 8.7903
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- Hydrogen-1 atom (¹H): 𝔭 ⋈ T_{2,3}. -/
--- Ref: [manuscript] §11/mass-from-generators
+-- Ref: [leitner2026] §11/mass-from-generators
 noncomputable def qou_hydrogen_1 : ℝ := 938.780495
 
 /-- Deuterium atom (²H): 𝔭 ⋈ 𝔫 ⋈ T_{2,3}. -/
--- Ref: [manuscript] §11/mass-from-generators
+-- Ref: [leitner2026] §11/mass-from-generators
 noncomputable def qou_deuterium : ℝ := 1876.120855
 
 /-- Helium-3 atom (³He): 2𝔭 ⋈ 𝔫 ⋈ 2T_{2,3}. -/
--- Ref: [manuscript] §11/mass-from-generators
+-- Ref: [leitner2026] §11/mass-from-generators
 noncomputable def qou_helium_3 : ℝ := 2809.407650
 
 /-- Helium-4 atom (⁴He): 2𝔭 ⋈ 2𝔫 ⋈ 2T_{2,3}. -/
--- Ref: [manuscript] §11/mass-from-generators
+-- Ref: [leitner2026] §11/mass-from-generators
 noncomputable def qou_helium_4 : ℝ := 3728.394911
 
 /-- Lithium-6 atom (⁶Li): 3𝔭 ⋈ 3𝔫 ⋈ 3T_{2,3}. -/
--- Ref: [manuscript] §11/mass-from-generators
+-- Ref: [leitner2026] §11/mass-from-generators
 noncomputable def qou_lithium_6 : ℝ := 5603.040766
 
 /-- Lithium-7 atom (⁷Li): 3𝔭 ⋈ 4𝔫 ⋈ 3T_{2,3}. -/
--- Ref: [manuscript] §11/mass-from-generators
+-- Ref: [leitner2026] §11/mass-from-generators
 noncomputable def qou_lithium_7 : ℝ := 6535.356427
 
 /-- Beryllium-9 atom (⁹Be): 4𝔭 ⋈ 5𝔫 ⋈ 4T_{2,3}. -/
--- Ref: [manuscript] §11/mass-from-generators
+-- Ref: [leitner2026] §11/mass-from-generators
 noncomputable def qou_beryllium_9 : ℝ := 8394.780582
 
 /-- Carbon-12 atom (¹²C): 6𝔭 ⋈ 6𝔫 ⋈ 6T_{2,3}. -/
--- Ref: [manuscript] §11/mass-from-generators
+-- Ref: [leitner2026] §11/mass-from-generators
 noncomputable def qou_carbon_12 : ℝ := 11177.910333
 
 /-- Nitrogen-14 atom (¹⁴N): 7𝔭 ⋈ 7𝔫 ⋈ 7T_{2,3}. -/
--- Ref: [manuscript] §11/mass-from-generators
+-- Ref: [leitner2026] §11/mass-from-generators
 noncomputable def qou_nitrogen_14 : ℝ := 13043.758388
 
 /-- Oxygen-16 atom (¹⁶O): 8𝔭 ⋈ 8𝔫 ⋈ 8T_{2,3}. -/
--- Ref: [manuscript] §11/mass-from-generators
+-- Ref: [leitner2026] §11/mass-from-generators
 noncomputable def qou_oxygen_16 : ℝ := 14899.142843
 
 /-- Silicon-28 atom (²⁸Si): 14𝔭 ⋈ 14𝔫 ⋈ 14T_{2,3}. -/
--- Ref: [manuscript] §11/mass-from-generators
+-- Ref: [leitner2026] §11/mass-from-generators
 noncomputable def qou_silicon_28 : ℝ := 26060.297976
 
 /-- Iron-56 atom (⁵⁶Fe): 26𝔭 ⋈ 30𝔫 ⋈ 26T_{2,3}. -/
--- Ref: [manuscript] §11/mass-from-generators
+-- Ref: [leitner2026] §11/mass-from-generators
 noncomputable def qou_iron_56 : ℝ := 52102.978883
 
 -- ═══════════════════════════════════════════════════════════════════

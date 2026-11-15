@@ -218,7 +218,7 @@ finite-`List` formalisation and not the mathematics.
 explicit formula for the zeta function of a curve over `𝔽_q`; the identity here
 is its **q-deformation**, and `[ρ]_q`, `ln_q` and the `Ω_q` term are the
 framework's own constructions, appearing in none of the three works. The
-citation is withdrawn and replaced by `[manuscript]`, per the disposition
+citation is withdrawn and replaced by `[leitner2026]`, per the disposition
 `qou-rhax` required for the same defect. -/
 
 /-- The data of one q-zeta geometry: its parameters, its maximal ideals, and its
@@ -257,7 +257,7 @@ structure QZetaDatum where
     the class is *not* satisfiable for every datum: `not_qExplicitFormula_empty`
     exhibits one it fails on, so any future instance must come with the side
     conditions that make `ideals` and `spectrum` the two faces of one geometry. -/
--- Ref: [manuscript] Ch. 8 §explicit-formula
+-- Ref: [leitner2026] Ch. 8 §explicit-formula
 class QExplicitFormula (D : QZetaDatum) : Prop where
   /-- The identity, at every `X > 1`. -/
   formula : ∀ X : ℝ, 1 < X →

@@ -17,7 +17,7 @@ Riemann sum — is scoped in bean `qou-jplv` and not yet discharged here.
   dilog derivative `hasDerivAt_LiTwo` + FTC (both endpoints in `(0,1)`, so the
   integrand is continuous — no branch-point/`t=0` singularity).
 
--- Ref: [manuscript] conj:dilogarithm-archimedean-limit
+-- Ref: [leitner2026] conj:dilogarithm-archimedean-limit
 -- Ref: [faddeev1994] https://doi.org/10.1142/S0217732394002793
 -/
 

@@ -18,7 +18,7 @@ LaTeX label: `ex:spin-labels-su2`
 ## References
 
 - [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
-- [manuscript] §1 Example: Spin decomposition
+- [leitner2026] §1 Example: Spin decomposition
 -/
 
 namespace QOU.Examples

@@ -57,7 +57,7 @@ Archimedean: `β` is a `limsup` of real log-ratios and `Real.rpow` is the
 statement. `ℝ` is correct — this is on the archimedean side of the wall.
 
 ## References
-- [manuscript] fluid-dynamics/levi-degeneracy-conjecture (`conj:levi-degeneracy`),
+- [leitner2026] fluid-dynamics/levi-degeneracy-conjecture (`conj:levi-degeneracy`),
   hyperbolic-overlap-saturation (the Levi lock `κ² = πν/Γ`)
 -/
 
@@ -89,7 +89,7 @@ theorem exists_large_rpow (c : ℝ) (hc : 0 ≤ c) (e : ℝ) (he : 0 < e) (M : �
 
     Note what is *not* needed: no lower bound on `β`, no fit, and no
     precision claim.  `beta_mem` supplies `β ≤ 1` and this supplies `β ≥ 1`. -/
--- Ref: [manuscript] fluid-dynamics/levi-degeneracy-conjecture (branch B)
+-- Ref: [leitner2026] fluid-dynamics/levi-degeneracy-conjecture (branch B)
 theorem linear_condNumber_forces_beta_one {P : Prop} (T : LeviGrowthTrichotomy P)
     (A : ℝ) (hA : 0 < A) (N₀ : ℕ)
     (hlin : ∀ κ : ℕ, N₀ ≤ κ → A * κ ≤ T.condNumber κ) :
@@ -141,7 +141,7 @@ theorem linear_condNumber_forces_beta_one {P : Prop} (T : LeviGrowthTrichotomy P
     This is the payoff — `branchB` is a field of the carrier, and this is
     the first place in the corpus where its hypothesis is *derived* from the
     condition number rather than assumed. -/
--- Ref: [manuscript] fluid-dynamics/levi-degeneracy-conjecture (branch B)
+-- Ref: [leitner2026] fluid-dynamics/levi-degeneracy-conjecture (branch B)
 theorem linear_condNumber_degenerate {P : Prop} (T : LeviGrowthTrichotomy P)
     (A : ℝ) (hA : 0 < A) (N₀ : ℕ)
     (hlin : ∀ κ : ℕ, N₀ ≤ κ → A * κ ≤ T.condNumber κ) :

@@ -14,7 +14,7 @@ With a vanishing geometric invariant the meson has no scale-setting
 datum derivable from `(m_e, q_0)`; the absolute scale must enter as the
 independent calibration input CAL-3 (`P_avg^π`, the pion-sector bar-even channel).
 
-Ref: [manuscript] prop:meson-scale-independence
+Ref: [leitner2026] prop:meson-scale-independence
 -/
 
 /-- Hyperbolic volume of the Hopf-link complement (a solid torus): `0`. -/
@@ -39,7 +39,7 @@ def borromeanComplementVolume : ℝ := 7.32772
     volume is `0` while the baryon volume is positive, so the linear
     volume-scaling map sends the meson's geometric scale to `0`
     independently of `(m_e, q_0)`. -/
--- Ref: [manuscript] prop:meson-scale-independence
+-- Ref: [leitner2026] prop:meson-scale-independence
 theorem meson_scale_independence :
     hopfComplementVolume = 0
       ∧ 0 < borromeanComplementVolume

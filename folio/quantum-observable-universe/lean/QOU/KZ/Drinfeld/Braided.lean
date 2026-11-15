@@ -9,7 +9,7 @@ Stage S3 of bean `qou-zoyv`. For `ℏ` transcendental over `ℚ`, the Drinfeld c
 `β_{X,Y} = swap · exp(iπℏ t^{sl}_{X,Y})`. Naturality is `βmat_natural`; the two hexagons are
 `hexagon_fwd_mat` / `hexagon_rev_mat`. Sorry-free.
 
--- Ref: [manuscript] beans/defs/qou-zoyv (stage S3)
+-- Ref: [leitner2026] beans/defs/qou-zoyv (stage S3)
 -/
 
 noncomputable section

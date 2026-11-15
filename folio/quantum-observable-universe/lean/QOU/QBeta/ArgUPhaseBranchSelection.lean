@@ -45,8 +45,8 @@ No `c_k` value is produced; nothing inverts `Q_β`/CODATA; nothing is wired.
 Base ring: archimedean (`Real.cos`, `Complex.arg`, ordering) ⇒ `ℝ` (§7c).
 
 -- Ref: [neumann-zagier1985] https://doi.org/10.1016/0040-9383(85)90004-7
--- Ref: [manuscript] docs/audits/2026-07-27-nzImVolume-sincos-convention-bug.md
--- Ref: [manuscript] docs/audits/2026-07-25-argu-phase-branch-selection.md
+-- Ref: [leitner2026] docs/audits/2026-07-27-nzImVolume-sincos-convention-bug.md
+-- Ref: [leitner2026] docs/audits/2026-07-25-argu-phase-branch-selection.md
 -/
 
 namespace QOU.QBeta.ArgUPhaseBranchSelection

@@ -23,7 +23,7 @@ plus monotone nesting `n_1 < … < n_k` is downstream work once the
 underlying knot-theoretic structures (`HopfLink`, `T_{2,3}`,
 `SubLink`) have been Lean-translated.
 
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/noble-gas-characterization.md
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/noble-gas-characterization.md
 -/
 
 namespace QOU.Archimedean
@@ -56,7 +56,7 @@ class AtomLike where
     of its electron cloud.  Both directions of the iff are recorded
     as a single statement; concretising either side to explicit
     Hopf-link enumeration is downstream work. -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/noble-gas-characterization.md
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/noble-gas-characterization.md
 theorem noble_gas_characterization [a : AtomLike] (h_stable : a.stable) :
     a.IsNobleGas ↔ a.IsFullOfCurls :=
   a.claim_noble_iff_curls h_stable

@@ -54,7 +54,7 @@ but a general-`n` positivity theorem is not in the tree.
 (a nonzero traceless block is invisible to it). The unit theorem needs only
 `x = 1`, where the two coincide.
 
--- Ref: [manuscript] prop:frobenius-pairing; def:markov-axioms-primitive; def:confinement-level
+-- Ref: [leitner2026] prop:frobenius-pairing; def:markov-axioms-primitive; def:confinement-level
 -/
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Algebra.BigOperators.Ring.Finset

@@ -98,6 +98,6 @@ end ConfinementNfStructureForcing
 -- instance — an instance is exactly the open conjecture (see the module
 -- docstring).  Honest open state (§3b-tax): content-bearing class, no
 -- instance.
--- Ref: [manuscript] quantum-observable-universe/mass-theory/confinement-nf-structure-forcing.ts
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/confinement-nf-structure-forcing.ts
 
 end QOU.BraidKnot

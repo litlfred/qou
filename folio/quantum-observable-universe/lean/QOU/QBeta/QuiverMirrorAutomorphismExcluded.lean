@@ -38,7 +38,7 @@ remains open; this only says where not to search).
 ## References
 
 - [kontsevich-soibelman2008] https://doi.org/10.48550/arXiv.0811.2435 (DT counts; op-invariance)
-- [manuscript] docs/audits/2026-08-11-aomega-internal-derivation-attack-options.md (D1/M1);
+- [leitner2026] docs/audits/2026-08-11-aomega-internal-derivation-attack-options.md (D1/M1);
   QOU/QBeta/ChiralityGradedCount.lean (the pair machinery);
   QOU/QBeta/RouteCM3CategoryIdentification.lean (distinct Borel rays, M2).
 -/

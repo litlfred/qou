@@ -38,7 +38,7 @@ Base ring is a generic `CommRing R` with an abstract involution `σ : R →+* R`
 not crossed (AGENTS.md §7c). Companion: `QOU.QBeta.CrossingWeightAffine` (the
 concrete affine bar-odd carrier `−h·w`, the shape's simplest realization).
 
--- Ref: [manuscript] docs/audits/2026-07-18-ck-odd-fibre-attack-options.md (shape-leg frontier)
+-- Ref: [leitner2026] docs/audits/2026-07-18-ck-odd-fibre-attack-options.md (shape-leg frontier)
 -/
 import Mathlib.Algebra.Field.Basic
 

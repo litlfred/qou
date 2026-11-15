@@ -34,8 +34,8 @@
   replaces what would otherwise be an eighth-order cancellation bound on
   `logSinc⁗`.
 
-  -- Ref: [manuscript] QOU/MathlibExt/CorrectedTrapezoid.lean   (the reduction)
-  -- Ref: [manuscript] QOU/Knot/LogSincNearZero.lean            (|logSinc″| ≤ 1)
+  -- Ref: [leitner2026] QOU/MathlibExt/CorrectedTrapezoid.lean   (the reduction)
+  -- Ref: [leitner2026] QOU/Knot/LogSincNearZero.lean            (|logSinc″| ≤ 1)
 -/
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds
 import Mathlib.Analysis.Calculus.MeanValue

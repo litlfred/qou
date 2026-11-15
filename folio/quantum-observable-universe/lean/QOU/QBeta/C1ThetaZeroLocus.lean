@@ -31,7 +31,7 @@ What is θ-specific, and is done here:
 * `qThetaC_zero_locus_annulus` — hence a single simple zero, and if a lattice
   point `−P^{2k}` lies in the annulus it *is* that zero.
 
--- Ref: [manuscript] bean `qou-argp` — the converse theta zero locus.
+-- Ref: [leitner2026] bean `qou-argp` — the converse theta zero locus.
 -/
 
 open scoped Real

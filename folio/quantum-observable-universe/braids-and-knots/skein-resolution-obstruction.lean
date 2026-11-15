@@ -30,8 +30,8 @@ LaTeX labels: `def:skein-resolution-obstruction`,
 
 ## References
 
-- [manuscript] §9/skein-resolution-obstruction
-- [manuscript] §3/qu-to-qou (item 3: perpetual obstruction)
+- [leitner2026] §9/skein-resolution-obstruction
+- [leitner2026] §3/qu-to-qou (item 3: perpetual obstruction)
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
 Part of the formal proof chain. The parameter `q` is the canonical
@@ -96,8 +96,8 @@ structure ComplementaryDecomposition (α : Type*) [AddCommGroup α] where
     This mirrors QU-to-QOU theorem item 3: κ₀ (topological) and δₙ
     (analytic) live in complementary subgroups, so κₙ = κ₀ + δₙ ≠ 0
     whenever κ₀ ≠ 0. -/
--- Ref: [manuscript] §3/qu-to-qou (item 3)
--- Ref: [manuscript] §9/computational-perpetual-obstruction
+-- Ref: [leitner2026] §3/qu-to-qou (item 3)
+-- Ref: [leitner2026] §9/computational-perpetual-obstruction
 theorem perpetual_obstruction_top {α : Type*} [AddCommGroup α]
     (D : ComplementaryDecomposition α)
     (v : α)

@@ -35,7 +35,7 @@ and the `144^k` ladder of denominators, and the **value table** cross-checking t
 witness's `1036800·D(n)` integers (held-out `n=9,10` included). The *derivation* of
 `D(n)` from `1 − Z(n)` stays **deferred** — exactly parallel to how the companion file
 defers the general-`n` Identity I (which needs the hook-length formula, absent from
-Mathlib). Ref: [manuscript] docs/audits/2026-06-24-wlambda-defect-cn-closedform-crosscheck.md
+Mathlib). Ref: [leitner2026] docs/audits/2026-06-24-wlambda-defect-cn-closedform-crosscheck.md
 -/
 
 namespace QOU.BraidKnot.WLambdaDefect

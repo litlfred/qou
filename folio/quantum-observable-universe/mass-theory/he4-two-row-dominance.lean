@@ -20,7 +20,7 @@ whose instance encodes the witness-verified ≥ 80 % bound.
 Downstream propositions take this class as a
 `[HasHe4TwoRowDominance]` hypothesis.
 
-Ref: [manuscript] §F1 ⁴He compositional probe (audit doc)
+Ref: [leitner2026] §F1 ⁴He compositional probe (audit doc)
 -/
 
 import Mathlib.Tactic.Linarith

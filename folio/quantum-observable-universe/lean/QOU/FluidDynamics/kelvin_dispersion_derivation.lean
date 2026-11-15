@@ -47,7 +47,7 @@ $\lambda_k^{(q)} = [k]_q^2 \cdot \hbar_q / L_q^2$.  This
 subsection derives this from first principles.
 
     The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
--- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/kelvin-dispersion-derivation.ts
+-- Ref: [leitner2026] quantum-observable-universe/fluid-dynamics/kelvin-dispersion-derivation.ts
 theorem kelvin_dispersion_derivation [ctx : KelvinDispersionDerivationContext] :
     ∀ k : ℕ, ctx.«λ» k = ctx.q_int k ^ 2 * ctx.hbar_q / ctx.L_q ^ 2 :=
   ctx.impl_dispersion_identity ctx.dispersion_active

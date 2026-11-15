@@ -21,7 +21,7 @@ LaTeX label: `def:ccg-cosimplicial-identities`
 ## References
 
 - [yekutieli2010] Central Extensions of Gerbes, §4
-- [manuscript] §3 Lifting and Descent
+- [leitner2026] §3 Lifting and Descent
 -/
 
 namespace QOU.LiftingDescent
@@ -39,7 +39,7 @@ namespace QOU.LiftingDescent
     maps; this lemma packages the level-based fragment that is
     immediately discharged from the structure. -/
 -- Ref: [yekutieli2010] §4, Theorem 4.2
--- Ref: [manuscript] §3, Lemma: CCG cosimplicial identities
+-- Ref: [leitner2026] §3, Lemma: CCG cosimplicial identities
 def ccg_cosimplicial_identities
     {M : Type*} (ccg : CosimplicialCrossedGroupoid M) :
     (∀ (n : ℕ) (t : YekutieliTriple M),

@@ -238,7 +238,7 @@ theorem chirality_at_h_zero (crossings : List CrossingSign) :
     Dual-space identity per pn crossing:
       τ_sym(σ) - τ_sym(σ⁻¹) = h.
 
-    Ref: [manuscript] `prop:chirality-dual-space-derivation` §Derivation.
+    Ref: [leitner2026] `prop:chirality-dual-space-derivation` §Derivation.
     Ref: [kassel1995] Quantum Groups, Ch. III §2. -/
 theorem chirality_dual_space_derivation (h : ℝ)
     (crossings : List CrossingSign) :

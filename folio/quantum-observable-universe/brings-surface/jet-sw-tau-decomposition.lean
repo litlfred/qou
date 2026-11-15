@@ -33,7 +33,7 @@ graded sum, then rewrites each summand to the SW period — yielding
 
 ## References
 
-- [manuscript] §5-brings-surface/jet-sw-tau-decomposition
+- [leitner2026] §5-brings-surface/jet-sw-tau-decomposition
 - [seiberg1994] https://doi.org/10.1016/0550-3213(94)90124-4
 
 **Ground ring**: `ℂ` (archimedean realisation). See `GroundRingAnnotations.lean`.
@@ -75,7 +75,7 @@ structure JetSWArchDecomposition where
     rewrite `τ` to the graded sum (`tau_additive`), then rewrite each
     summand `tauGraded n` to the SW period `period n`
     (`graded_eq_period`).  Neither hypothesis field is this conclusion. -/
--- Ref: [manuscript] §5-brings-surface
+-- Ref: [leitner2026] §5-brings-surface
 theorem jet_sw_tau_decomposition (D : JetSWArchDecomposition) :
     D.tauValue = ∑ n ∈ Finset.range D.maxOrder, D.period n := by
   rw [D.tau_additive]

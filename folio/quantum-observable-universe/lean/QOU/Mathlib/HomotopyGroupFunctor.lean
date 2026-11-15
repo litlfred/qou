@@ -46,7 +46,7 @@ lifting theory is what keeps the fibration hypothesis in
 result here specialises to it; stating them for `Fin n` only would have been a
 gratuitous restriction, and `Cube.boundary` never needed the finiteness.
 
--- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes
+-- Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes
 -/
 
 namespace QOU.Mathlib.HomotopyGroupFunctor

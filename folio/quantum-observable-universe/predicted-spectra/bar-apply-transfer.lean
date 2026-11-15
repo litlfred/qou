@@ -15,8 +15,8 @@ LaTeX label: `prop:bar-apply-transfer`
 
 ## References
 
-- [manuscript] §6/bar-apply-transfer
-- [manuscript] §6/bar-self-dual-confinement-band
+- [leitner2026] §6/bar-apply-transfer
+- [leitner2026] §6/bar-self-dual-confinement-band
 -/
 
 namespace QOU.Archimedean.BarApplyTransfer
@@ -28,7 +28,7 @@ def BarInvariant (P : ℝ → Prop) : Prop :=
 /-- **Lower-bound transfer**: for a bar-invariant property,
     "P holds for all q > a" is equivalent to
     "P holds for all q ∈ (0, a⁻¹)". -/
--- Ref: [manuscript] §6/bar-apply-transfer
+-- Ref: [leitner2026] §6/bar-apply-transfer
 theorem lower_bound_transfer
     {P : ℝ → Prop} (hP : BarInvariant P) {a : ℝ} (ha : 0 < a) :
     (∀ q : ℝ, a < q → P q) ↔ (∀ q : ℝ, 0 < q → q < a⁻¹ → P q) := by
@@ -51,7 +51,7 @@ theorem lower_bound_transfer
 /-- A simpler form of the transfer lemma that avoids the iff:
     if P holds on (a, ∞) and P is bar-invariant, then P holds on
     (0, a⁻¹) (positive part). -/
--- Ref: [manuscript] §6/bar-apply-transfer
+-- Ref: [leitner2026] §6/bar-apply-transfer
 theorem bar_apply_lower
     {P : ℝ → Prop} (hP : BarInvariant P) {a : ℝ} (ha : 0 < a)
     (h : ∀ q : ℝ, a < q → P q) :
@@ -65,7 +65,7 @@ theorem bar_apply_lower
 
 /-- **Negation transfer**: a counterexample to P at q < a (with q > 0)
     transports along bar to a counterexample at q⁻¹ > a⁻¹. -/
--- Ref: [manuscript] §6/bar-apply-transfer
+-- Ref: [leitner2026] §6/bar-apply-transfer
 theorem neg_transfer
     {P : ℝ → Prop} (hP : BarInvariant P) {a q : ℝ}
     (ha : 0 < a) (hq : 0 < q) (hqa : q < a) (hnotP : ¬ P q) :
@@ -78,7 +78,7 @@ theorem neg_transfer
 
     Combines the lower-bound transfer and the negation transfer
     into the headline statement. -/
--- Ref: [manuscript] §6/bar-apply-transfer
+-- Ref: [leitner2026] §6/bar-apply-transfer
 theorem bar_apply_transfer
     {P : ℝ → Prop} (hP : BarInvariant P) {a : ℝ} (ha : 0 < a) :
     (∀ q : ℝ, a < q → P q) ↔ (∀ q : ℝ, 0 < q → q < a⁻¹ → P q) :=

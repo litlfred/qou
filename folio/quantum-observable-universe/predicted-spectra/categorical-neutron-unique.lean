@@ -11,7 +11,7 @@ LaTeX: `\label{prop:categorical-neutron-unique}`
 
 ## References
 
-- [manuscript] §6-archimedean-universe/categorical-neutron-unique
+- [leitner2026] §6-archimedean-universe/categorical-neutron-unique
 - [jones1987] Hecke Algebra Representations of Braid Groups
 -/
 

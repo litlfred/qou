@@ -7,7 +7,7 @@ import Mathlib.Tactic
   S(Z_spec, N_spec) = a^{Z_spec} × b^{N_spec} where
   a = Σ_c G_P(c) = −h/2 and b = Σ_c G_N(c).
 
-  Ref: [manuscript] Ch 11 §9 / spectator-normalization
+  Ref: [leitner2026] Ch 11 §9 / spectator-normalization
 -/
 
 namespace QOU.ParticleInteractions

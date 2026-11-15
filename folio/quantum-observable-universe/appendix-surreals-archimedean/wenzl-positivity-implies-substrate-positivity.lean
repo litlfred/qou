@@ -37,7 +37,7 @@ decided. The change is that assuming it now costs a proof of an implication
 instead of costing nothing. There were zero consumers of the class, so nothing
 downstream moves.
 
--- Ref: [manuscript] quantum-observable-universe/appendix-surreals/wenzl-positivity-implies-substrate-positivity.ts
+-- Ref: [leitner2026] quantum-observable-universe/appendix-surreals/wenzl-positivity-implies-substrate-positivity.ts
 -- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors," Invent. Math. 92 (1988)
 -/
 
@@ -58,7 +58,7 @@ class WenzlPositivityImpliesSubstratePositivity
       ∈ R_{>1} implies substrate C*-Frobenius positivity (Müger /
       BKLR sense) of the QOU Frobenius–Hopf substrate. The class
       instance is the §3b-cond conjectural witness. -/
-  -- Ref: [manuscript] conj:wenzl-positivity-implies-substrate-positivity
+  -- Ref: [leitner2026] conj:wenzl-positivity-implies-substrate-positivity
   holds : WenzlPositiveAtQ0 → SubstrateFrobeniusPositive
 
 end QOU.AppendixSurreals

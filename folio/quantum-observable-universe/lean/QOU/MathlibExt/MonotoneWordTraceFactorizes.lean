@@ -60,8 +60,8 @@ Generic `CommRing R` acting on a generic `Ring A`, through the `MarkovTrace` str
 `QOU.MathlibExt.OcneanuTrace` (T1–T3). The Hecke quadratic is a hypothesis where a run
 `g m ^ e` is collapsed. The one convention-D evaluation is over a generic `Field`.
 
--- Ref: [manuscript] computations/mass_at_3A_proper.py (atom_braid_word_3A)
--- Ref: [manuscript] docs/audits/2026-08-25-atom-word-closures-are-not-hyperbolic.md
+-- Ref: [leitner2026] computations/mass_at_3A_proper.py (atom_braid_word_3A)
+-- Ref: [leitner2026] docs/audits/2026-08-25-atom-word-closures-are-not-hyperbolic.md
 -- Ref: [jones1987] https://doi.org/10.2307/1971403 — the Markov trace on the Hecke tower.
 -/
 

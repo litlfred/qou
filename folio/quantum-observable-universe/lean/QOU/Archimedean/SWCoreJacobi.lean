@@ -48,7 +48,7 @@ Base ring (§7c): generic `[Field K]` — the recurrence and the closed form
 are rational identities in `v`; no ordering, no `Real.sqrt` (the
 half-variable enters as the formal `v`, not as `Real.sqrt q`).
 
--- Ref: [manuscript] docs/audits/2026-08-01-ksel2id-u1-promotion.md §1.1;
+-- Ref: [leitner2026] docs/audits/2026-08-01-ksel2id-u1-promotion.md §1.1;
 --      docs/audits/2026-08-01-ksel2id-friedrichs-sw-identification.md §1;
 --      [christiansen2003sw] the SW moment problem; [moak1981] q-Laguerre.
 -/

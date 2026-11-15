@@ -30,7 +30,7 @@ only which involution the defect belongs to.
 
 Generic over a `Field`; no anchor, no `ℝ`, per §7c.
 
--- Ref: [manuscript] beans `qou-ndt5` / `qou-fi93`,
+-- Ref: [leitner2026] beans `qou-ndt5` / `qou-fi93`,
 --      `prop:antiparticle-crossing-reversal`
 -/
 import Mathlib.Algebra.Field.Basic

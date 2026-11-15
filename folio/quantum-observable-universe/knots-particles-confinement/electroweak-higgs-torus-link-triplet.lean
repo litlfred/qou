@@ -48,7 +48,7 @@ and no vacuous `: True` bodies.
 
 ## References
 
-- [manuscript] particle-interactions/electroweak-higgs-torus-link-triplet
+- [leitner2026] particle-interactions/electroweak-higgs-torus-link-triplet
 - `thm:ew-triplet-far-commuting-minimal` (far-commuting minimality + enumeration, proved)
 - `prop:electroweak-triplet-bring-embedding` (genus/embedding core, proved)
 - `thm:ew-triplet-charge-spin-from-involution` (charge+spin from the sector postulate, proved)

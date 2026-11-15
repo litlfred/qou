@@ -28,7 +28,7 @@ spectrum, dispersion and decay rate are projected. Mirrors the
 build-graph copy under `QOU/FluidDynamics/kelvin_dispersion_derivation.lean`.
 
 ## References
-- [manuscript] §Fluid dynamics / Kelvin dispersion derivation,
+- [leitner2026] §Fluid dynamics / Kelvin dispersion derivation,
   prop:kelvin-dispersion-derivation
 -/
 
@@ -81,27 +81,27 @@ class KelvinDispersionContext where
 /-- **`q`-Laplacian eigenvalue.** `Δ_q(zᵏ) = -[k]_q² zᵏ` — the core of the
     md derivation, *proved* from the `q`-derivative ladder and the
     definition `Δ_q = -(zD_q)²` ([`prop:kelvin-dispersion-derivation`]). -/
--- Ref: [manuscript] prop:kelvin-dispersion-derivation
+-- Ref: [leitner2026] prop:kelvin-dispersion-derivation
 theorem kelvin_dispersion_derivation [ctx : KelvinDispersionContext]
     (k : ℕ) :
     ctx.laplacian k = -(ctx.qInt k) ^ 2 := by
   rw [ctx.laplacian_def k, ctx.zDq_ladder k]
 
 /-- **Spectrum with units.** `λ_k = [k]_q² ℏ_q / L_q²`. -/
--- Ref: [manuscript] prop:kelvin-dispersion-derivation
+-- Ref: [leitner2026] prop:kelvin-dispersion-derivation
 theorem kelvin_spectrum [ctx : KelvinDispersionContext] (k : ℕ) :
     ctx.lam k = (ctx.qInt k) ^ 2 * ctx.hbar / ctx.Lq ^ 2 :=
   ctx.spectrum k
 
 /-- **Undamped Kelvin dispersion.** `ω_k ∝ [k]_q / L_q`. -/
--- Ref: [manuscript] prop:kelvin-dispersion-derivation
+-- Ref: [leitner2026] prop:kelvin-dispersion-derivation
 theorem kelvin_undamped_dispersion [ctx : KelvinDispersionContext] (k : ℕ) :
     ctx.omega k
       = ctx.sqrtGamma / (2 * ctx.sqrtPiConst * ctx.aq) * ctx.qInt k / ctx.Lq :=
   ctx.dispersion k
 
 /-- **Damped decay rate.** `γ_k = ν_q/2 · [k]_q² / L_q²`. -/
--- Ref: [manuscript] prop:kelvin-dispersion-derivation
+-- Ref: [leitner2026] prop:kelvin-dispersion-derivation
 theorem kelvin_damped_decay [ctx : KelvinDispersionContext] (k : ℕ) :
     ctx.gamma k = ctx.nuq / 2 * (ctx.qInt k) ^ 2 / ctx.Lq ^ 2 :=
   ctx.decay k

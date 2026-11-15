@@ -1,4 +1,4 @@
--- Ref: [manuscript] Ch. 10, §h2-molecular-braid
+-- Ref: [leitner2026] Ch. 10, §h2-molecular-braid
 -- Hydrogen molecule H₂ as a braid in H₄(q)
 
 import Mathlib.Tactic.NormNum.Basic

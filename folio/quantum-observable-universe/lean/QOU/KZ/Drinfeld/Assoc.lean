@@ -16,7 +16,7 @@ and its inverse is `Φ_KZ(ℏ t_{S_Y,S_Z}, ℏ t_{S_X,S_Y}) · reidx(sumAssoc)�
 
 Sorry-free.
 
--- Ref: [manuscript] beans/defs/qou-zoyv (stage S2)
+-- Ref: [leitner2026] beans/defs/qou-zoyv (stage S2)
 -/
 
 noncomputable section

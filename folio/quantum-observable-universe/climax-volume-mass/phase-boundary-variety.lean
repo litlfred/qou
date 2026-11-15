@@ -25,7 +25,7 @@ universe u
     (The downstream measure-zero claim for the finite union `ℬ`
     additionally requires the variety / measure API for `Q`; it is
     recorded as `phaseBoundary_measure_zero` below.) -/
--- Ref: [manuscript] climax-volume-mass/local-shadow-ordering
+-- Ref: [leitner2026] climax-volume-mass/local-shadow-ordering
 theorem phaseBoundaryLocus_eq_zeroSet {R : Type u} [CommRing R]
     (y₁ y₂ : R → R) :
     {q : R | (y₁ q) ^ 2 = (y₂ q) ^ 2}
@@ -41,7 +41,7 @@ theorem phaseBoundaryLocus_eq_zeroSet {R : Type u} [CommRing R]
     loci. A finite union of codimension-≥1 Zariski-closed sets is
     measure-zero; the proof needs the algebraic-variety / Lebesgue
     measure API for the base ring `Q`, deferred here. -/
--- Ref: [manuscript] climax-volume-mass/local-shadow-ordering
+-- Ref: [leitner2026] climax-volume-mass/local-shadow-ordering
 theorem PhaseBoundaryVariety {R : Type u} [CommRing R]
     (B : Set R) (hB : ∃ (y₁ y₂ : R → R), B = {q : R | (y₁ q) ^ 2 = (y₂ q) ^ 2}) :
     ∃ (f : R → R), B = {q : R | f q = 0} := by

@@ -31,7 +31,7 @@ pinned up to the additive `R_q`-scalar — Kassel §VI.4.9).
 
 ## References
 
-- [manuscript] §4-braids-and-knots/q-casimir-unique
+- [leitner2026] §4-braids-and-knots/q-casimir-unique
 - [kassel1995] Quantum Groups, §VI.4.9 (Joseph–Letzter centre)
 -/
 

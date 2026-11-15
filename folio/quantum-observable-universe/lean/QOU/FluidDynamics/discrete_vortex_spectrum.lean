@@ -66,7 +66,7 @@ sections of the normal bundle $N_\varrho$.  Then:
     The Lean encoding below states the claim over the context class and
     discharges it from the class's structural fields (§3b-conditional;
     fully proved). -/
--- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts
+-- Ref: [leitner2026] quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts
 theorem discrete_vortex_spectrum [ctx : DiscreteVortexSpectrumContext] :
     (∀ k : ℕ, 1 ≤ k →
       ctx.«λ» k = (ctx.q_int k) ^ 2 * ctx.hbar_q / ctx.L_q ^ 2) ∧

@@ -84,12 +84,12 @@
   a generic field with no ordering, so nothing here depends on the archimedean
   structure of the LP -- only on its linear algebra.
 
-  -- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/.../operator_selection_lp.lean
+  -- Ref: [leitner2026] folio/quantum-observable-universe/lean/QOU/.../operator_selection_lp.lean
   --      (y_0_eq_zero_of_radical -- the recorded Hecke collapse)
-  -- Ref: [manuscript] computations/confinement_lp_braid_gram_probe.py
-  -- Ref: [manuscript] tools/pyhecke/python/pyhecke/lp_dual_solver.py
-  -- Ref: [manuscript] QOU/QBeta/ECatBlockDecomposition.lean  (the cost being proposed)
-  -- Ref: [manuscript] .beans/qou-99qc
+  -- Ref: [leitner2026] computations/confinement_lp_braid_gram_probe.py
+  -- Ref: [leitner2026] tools/pyhecke/python/pyhecke/lp_dual_solver.py
+  -- Ref: [leitner2026] QOU/QBeta/ECatBlockDecomposition.lean  (the cost being proposed)
+  -- Ref: [leitner2026] .beans/qou-99qc
 -/
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset.Lemmas

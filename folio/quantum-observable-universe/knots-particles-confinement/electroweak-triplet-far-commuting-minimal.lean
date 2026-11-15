@@ -35,7 +35,7 @@ LaTeX label: `thm:ew-triplet-far-commuting-minimal`.
 
 ## References
 
-- [manuscript] particle-interactions/electroweak-triplet-far-commuting-minimal
+- [leitner2026] particle-interactions/electroweak-triplet-far-commuting-minimal
 - `prop:electroweak-triplet-bring-embedding` (`ew_enumeration`, the canonical
   genus enumeration; reproduced inline per the self-containment note above)
 - `thm:hoefsmit-ew-cell-content` (the `n = 6` minimality *physical*

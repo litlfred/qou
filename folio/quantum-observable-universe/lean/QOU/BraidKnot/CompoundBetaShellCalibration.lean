@@ -67,6 +67,6 @@ theorem CompoundBetaShellCalibration.ofCalibration_E0
     (m_e muRatio Qbeta : ℝ) :
     (CompoundBetaShellCalibration.ofCalibration m_e muRatio Qbeta).E0 = Qbeta := rfl
 
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/compound-beta-shell-calibration-interpretation.ts
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/compound-beta-shell-calibration-interpretation.ts
 
 end QOU.BraidKnot

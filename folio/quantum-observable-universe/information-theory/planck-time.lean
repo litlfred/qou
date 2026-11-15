@@ -23,23 +23,23 @@ variable {R : Type*} [CommRing R]
 
 /-- The quantum Planck constant `ℏ_q = 1 - q⁻¹`, for `q` a unit of
     the ground ring. -/
--- Ref: [manuscript] Ch 8, Definition: Planck Time
+-- Ref: [leitner2026] Ch 8, Definition: Planck Time
 def hbarQ (q : Rˣ) : R := 1 - ↑q⁻¹
 
 /-- Planck time as a function of the substrate parameter `q`:
     `t_P = q / (q - 1)`, written division-free as `q · (q-1)⁻¹`
     with `q - 1` supplied as the unit `d`. -/
--- Ref: [manuscript] Ch 8, Definition: Planck Time
+-- Ref: [leitner2026] Ch 8, Definition: Planck Time
 def planckTime (q d : Rˣ) (_hd : (d : R) = (q : R) - 1) : R :=
   (q : R) * ↑d⁻¹
 
 /-- `ℏ_q` is itself a unit whenever `q - 1` is, namely
     `ℏ_q = q⁻¹ · (q - 1)`. -/
--- Ref: [manuscript] Ch 8, Definition: Planck Time
+-- Ref: [leitner2026] Ch 8, Definition: Planck Time
 def hbarUnit (q d : Rˣ) (_hd : (d : R) = (q : R) - 1) : Rˣ := q⁻¹ * d
 
 /-- The unit `hbarUnit` really has value `ℏ_q`. -/
--- Ref: [manuscript] Ch 8, Definition: Planck Time
+-- Ref: [leitner2026] Ch 8, Definition: Planck Time
 theorem hbarUnit_val (q d : Rˣ) (hd : (d : R) = (q : R) - 1) :
     ((hbarUnit q d hd : Rˣ) : R) = hbarQ q := by
   unfold hbarUnit hbarQ
@@ -49,7 +49,7 @@ theorem hbarUnit_val (q d : Rˣ) (hd : (d : R) = (q : R) - 1) :
     constant: `t_P = ℏ_q⁻¹`, stated as the inverse of the unit
     `hbarUnit` (whose value is `ℏ_q` by `hbarUnit_val`).  Over a
     field this is the familiar `planckTime = 1 / (1 - q⁻¹)`. -/
--- Ref: [manuscript] Ch 8, Definition: Planck Time
+-- Ref: [leitner2026] Ch 8, Definition: Planck Time
 theorem planckTime_eq_inv_hbar (q d : Rˣ) (hd : (d : R) = (q : R) - 1) :
     planckTime q d hd = ((hbarUnit q d hd)⁻¹ : Rˣ) := by
   unfold planckTime hbarUnit
@@ -57,7 +57,7 @@ theorem planckTime_eq_inv_hbar (q d : Rˣ) (hd : (d : R) = (q : R) - 1) :
   exact mul_comm _ _
 
 /-- Planck length is identically 1: `ℏ_q · t_P = 1`. -/
--- Ref: [manuscript] Ch 8, Definition: Planck Time
+-- Ref: [leitner2026] Ch 8, Definition: Planck Time
 theorem planck_length_eq_one (q d : Rˣ) (hd : (d : R) = (q : R) - 1) :
     hbarQ q * planckTime q d hd = 1 := by
   unfold hbarQ planckTime

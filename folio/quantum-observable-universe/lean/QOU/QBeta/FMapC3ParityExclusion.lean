@@ -23,7 +23,7 @@ many bar-even combinations and none equals the full (non-bar-even) Hopf
 polynomial — recorded in the probe and the audit, not here (it is not a proved
 invariant). Sorry-free.
 
--- Ref: [manuscript] conj:dilogarithm-archimedean-limit
+-- Ref: [leitner2026] conj:dilogarithm-archimedean-limit
 -- Ref: docs/audits/2026-08-21-fmap-c3-parity-genericity-exclusion.md
 -/
 

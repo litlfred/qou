@@ -23,7 +23,7 @@ claim unverifiable from the source; separating them lets the compiler carry it.
 (`compress_seminormalRep_heckeIncl`) is stated over `ℝ` with `qi = q⁻¹`. The strictness statement is
 *not* confined to `ℝ`; only this sharpening is.
 
--- Ref: [manuscript] beans qou-p8yg, qou-ejde.
+-- Ref: [leitner2026] beans qou-p8yg, qou-ejde.
 -/
 
 namespace QOU.SchurWeyl

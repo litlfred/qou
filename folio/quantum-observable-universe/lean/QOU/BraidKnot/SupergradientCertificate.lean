@@ -84,7 +84,7 @@ padded coordinate may have gradient exactly zero and there the `if` takes the *o
 | `sum_charge_extend_le` | and when they are not — the bottom edge's case — the bound grows by at most their total |
 | `capped_lt_not_sufficient` | a capped maximum falling short of a bound proves nothing about the true one |
 
--- Ref: [manuscript] `computations/deltalambda/rev_e_infinity_block_sup_relaxation_probe.py`
+-- Ref: [leitner2026] `computations/deltalambda/rev_e_infinity_block_sup_relaxation_probe.py`
 -/
 
 namespace QOU.BraidKnot.SupergradientCertificate

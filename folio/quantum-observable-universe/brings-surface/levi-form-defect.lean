@@ -59,7 +59,7 @@ proving things about *it*:
 
 ## References
 
-- [manuscript] Ch 8 §2, The unit particle as a cohomological defect
+- [leitner2026] Ch 8 §2, The unit particle as a cohomological defect
 -/
 
 set_option autoImplicit false
@@ -101,7 +101,7 @@ structure LeviFormDefect (R : Type w) [CommRing R] where
   /-- The Levi form as a bilinear map (abstracting T^{1,0} × T^{0,1} → k). -/
   leviForm : carrier →ₗ[R] carrier →ₗ[R] R
   /-- Non-degeneracy: there exists a point where the Levi form is nonzero. -/
-  -- Ref: [manuscript] Ch 8 §2
+  -- Ref: [leitner2026] Ch 8 §2
   nondeg : ∃ (x y : carrier), leviForm x y ≠ 0
 
 attribute [instance] LeviFormDefect.addCommInst LeviFormDefect.modulInst
@@ -114,14 +114,14 @@ attribute [instance] LeviFormDefect.addCommInst LeviFormDefect.modulInst
     counterpart in the Lean, so a theorem could name it without any object to
     be about. It lives in `carrier × carrier` rather than in a spectrum; see
     the module docstring. -/
--- Ref: [manuscript] Ch 8 §2
+-- Ref: [leitner2026] Ch 8 §2
 def LeviFormDefect.matterLocus {R : Type w} [CommRing R]
     (d : LeviFormDefect.{v, w} R) : Set (d.carrier × d.carrier) :=
   {p | d.leviForm p.1 p.2 ≠ 0}
 
 /-- The matter locus is non-empty — one step from `nondeg`, but about the
     defined set rather than a restatement of the field's type. -/
--- Ref: [manuscript] Ch 8 §2
+-- Ref: [leitner2026] Ch 8 §2
 theorem matter_locus_nonempty {R : Type w} [CommRing R]
     (d : LeviFormDefect.{v, w} R) : d.matterLocus.Nonempty := by
   obtain ⟨x, y, h⟩ := d.nondeg
@@ -153,7 +153,7 @@ theorem matterLocus_ne_univ {R : Type w} [CommRing R]
     locus — supplies the right. A defect *locus* that were empty or that were
     the whole space would not be a locus, and neither is excluded by the
     structure's fields alone. -/
--- Ref: [manuscript] Ch 8 §2
+-- Ref: [leitner2026] Ch 8 §2
 theorem matterLocus_proper {R : Type w} [CommRing R]
     (d : LeviFormDefect.{v, w} R) :
     d.matterLocus.Nonempty ∧ d.matterLocus ≠ Set.univ :=

@@ -78,7 +78,7 @@ noncomputable def hoefsmitStandardEig (q : ℝ) : ℝ × ℝ :=
     representation has eigenvalues `(q², (q²)⁻¹)`.  Squaring the
     diagonal `(+q, −q⁻¹)` yields `(q², q⁻²)`. -/
 -- Ref: [hoefsmit1974] http://hdl.handle.net/2429/19407
--- Ref: [manuscript] docs/audits/2026-06-02-binding-link-psd-feasibility-supports-structural-decomposition.md
+-- Ref: [leitner2026] docs/audits/2026-06-02-binding-link-psd-feasibility-supports-structural-decomposition.md
 noncomputable def hopfLinkStandardEig (q : ℝ) : ℝ × ℝ :=
   (q ^ 2, (q ^ 2)⁻¹)
 
@@ -102,7 +102,7 @@ theorem hopfLinkStandardEig_snd (q : ℝ) :
     standard-(2,1) representation are strictly positive.  This is
     the categorical strengthening of the numerical PSD-feasibility
     finding for the Hopf link at q_0. -/
--- Ref: [manuscript] docs/audits/2026-06-02-binding-link-psd-feasibility-supports-structural-decomposition.md
+-- Ref: [leitner2026] docs/audits/2026-06-02-binding-link-psd-feasibility-supports-structural-decomposition.md
 theorem hopfLinkStandardEig_pos {q : ℝ} (hq : 0 < q) :
     0 < (hopfLinkStandardEig q).1 ∧ 0 < (hopfLinkStandardEig q).2 := by
   unfold hopfLinkStandardEig

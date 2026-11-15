@@ -95,7 +95,7 @@ untested by the octet, and testing it needs data the octet does not contain.
 Everything is over `ℚ` — charges and couplings are rational, no archimedean
 construct appears (§7c).
 
--- Ref: [manuscript] prop:neutron-proton-mass-splitting
+-- Ref: [leitner2026] prop:neutron-proton-mass-splitting
 -/
 
 namespace QOU.MassTheory.ChargeQuadraticSumRule

@@ -14,7 +14,7 @@ LaTeX label: `def:q-resolvent`
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes/q-resolvent
+- [leitner2026] §2-quantum-observable-universes/q-resolvent
 - [kassel1995] Quantum Groups (Springer GTM 155), §IV.4 (spectral
   theory of quantum groups)
 -/

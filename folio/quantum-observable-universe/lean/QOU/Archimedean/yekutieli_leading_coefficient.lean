@@ -86,7 +86,7 @@ namespace QOU.Archimedean
     and the `q`-wedge value `wedge` `ν = ω_V ∧_q ω_T` (nondegenerate,
     nonzero).  The nonzero witnesses are geometric-nondegeneracy inputs,
     carried as data so the non-vanishing theorem below is non-vacuous. -/
--- Ref: [manuscript] quantum-observable-universe/brings-surface/yekutieli-leading-coefficient.md
+-- Ref: [leitner2026] quantum-observable-universe/brings-surface/yekutieli-leading-coefficient.md
 structure YekutieliObstructionData (R : Type*) [CommRing R] where
   /-- The substrate parameter `q`, carried as a **unit** of the ground
       ring: algebraic invertibility (the old `q ≠ 0`), not the
@@ -107,7 +107,7 @@ variable {R : Type*} [CommRing R]
     `κ_raw = q⁻¹(1 − q⁻¹) · w · ν` — the `d_q²` formula of the narrative
     proof (`prop:categorical-dq-squared`).  A `def` of the data (not a
     free field) so that `..._kappaRaw_ne_zero` is non-vacuous. -/
--- Ref: [manuscript] quantum-observable-universe/brings-surface/yekutieli-leading-coefficient-proof.md
+-- Ref: [leitner2026] quantum-observable-universe/brings-surface/yekutieli-leading-coefficient-proof.md
 def YekutieliObstructionData.kappaRaw (d : YekutieliObstructionData R) : R :=
   ((d.q⁻¹ : Rˣ) : R) * (1 - ((d.q⁻¹ : Rˣ) : R)) * d.weight * d.wedge
 
@@ -117,7 +117,7 @@ def YekutieliObstructionData.kappaRaw (d : YekutieliObstructionData R) : R :=
     reason `κ(T_{2,p}) ≠ 0` away from the classical limit `q = 1`: the
     universal `d_q²` coefficient `q⁻¹(1 − q⁻¹)` vanishes iff `q = 1`, and the
     geometric factors `w`, `ν` are nonzero by nondegeneracy. -/
--- Ref: [manuscript] quantum-observable-universe/brings-surface/yekutieli-leading-coefficient-proof.md
+-- Ref: [leitner2026] quantum-observable-universe/brings-surface/yekutieli-leading-coefficient-proof.md
 theorem yekutieliObstructionData_kappaRaw_ne_zero [IsDomain R]
     (d : YekutieliObstructionData R) (hq : d.q ≠ 1) :
     d.kappaRaw ≠ 0 := by
@@ -217,7 +217,7 @@ theorem leadingCoeff_C_mul_monicCheb [IsDomain R] (c : R) (n : ℕ) :
     asserts) and the scalar `raw_normalised`.  `chebyshev_top_eq_one` stays
     discharged (`leadingChebyshev_eq_one`). -/
 -- Ref: [yekutieli2015] https://doi.org/10.1142/9537
--- Ref: [manuscript] quantum-observable-universe/brings-surface/yekutieli-leading-coefficient.md
+-- Ref: [leitner2026] quantum-observable-universe/brings-surface/yekutieli-leading-coefficient.md
 class YekutieliStokesNormalisation (R : Type*) [CommRing R]
     (d : YekutieliObstructionData R) (p : ℕ) where
   /-- The genus generating polynomial of the obstruction class. -/
@@ -258,7 +258,7 @@ theorem obstructionCoord_eq_kappaRaw [IsDomain R]
     identity, it does not assume it.  This is the decl named by the content
     block's `lean.ref`. -/
 -- Ref: [yekutieli2015] https://doi.org/10.1142/9537
--- Ref: [manuscript] quantum-observable-universe/brings-surface/yekutieli-leading-coefficient.md
+-- Ref: [leitner2026] quantum-observable-universe/brings-surface/yekutieli-leading-coefficient.md
 theorem yekutieli_leading_coefficient [IsDomain R]
     (d : YekutieliObstructionData R)
     (p : ℕ) (_hp_odd : Odd p) (_hq_ne : d.q ≠ 1)
@@ -273,7 +273,7 @@ theorem yekutieli_leading_coefficient [IsDomain R]
     `obstructionCoord_eq_kappaRaw` (hence via `stokes_expansion`) — *not* via
     the normalisation `raw_normalised`, so the non-vanishing rests on
     genuinely proved content. -/
--- Ref: [manuscript] quantum-observable-universe/brings-surface/yekutieli-leading-coefficient.md
+-- Ref: [leitner2026] quantum-observable-universe/brings-surface/yekutieli-leading-coefficient.md
 theorem yekutieli_obstruction_ne_zero [IsDomain R]
     (d : YekutieliObstructionData R)
     (p : ℕ) (_hp_odd : Odd p) (hq_ne : d.q ≠ 1)

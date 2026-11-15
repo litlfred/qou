@@ -96,7 +96,7 @@ construct.  `CharZero` is **required, not tactic convenience**: the
 normalisation statements divide by `2` and `4`, so they are false in
 characteristic 2.  Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-06-29-color-weighting-coverage-and-flavor-split-closed-form.md
+-- Ref: [leitner2026] docs/audits/2026-06-29-color-weighting-coverage-and-flavor-split-closed-form.md
 -/
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring

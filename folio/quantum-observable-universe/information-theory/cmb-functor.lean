@@ -14,7 +14,7 @@ Formalization: extracted from jet-horizon.lean for content-block co-location.
 Source declaration: `QOU.CMBFunctor` in jet-horizon.lean
 
 ## References
-- [manuscript] §9/cmb-functor
+- [leitner2026] §9/cmb-functor
 -/
 
 -- Prerequisite types mirrored from jet-horizon.lean (`QOU.JetHorizon` library
@@ -87,7 +87,7 @@ structure Aeon where
 /-- The CMB functor value: the degree ≥ 1 data surviving a
     boundary horizon. Composition of ∂ with the colimit of
     (A_1/A_0 ⊕ A_2/A_0) over the boundary. -/
--- Ref: [manuscript] §9/cmb-functor
+-- Ref: [leitner2026] §9/cmb-functor
 structure CMBFunctorValue where
   /-- The source aeon. -/
   source : Aeon

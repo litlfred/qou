@@ -12,6 +12,6 @@ in `delta-pre-archimedean.ts`. That module is imported by `QOU.lean`, so
 it so the content-pipeline validator (which requires a sibling `.lean`
 next to the `.ts`/`.md`) is satisfied.
 
--- Ref: [manuscript] prop:delta-pre-archimedean — content block
+-- Ref: [leitner2026] prop:delta-pre-archimedean — content block
 -/
 

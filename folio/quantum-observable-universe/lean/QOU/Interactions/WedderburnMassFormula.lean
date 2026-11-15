@@ -152,43 +152,43 @@ noncomputable def w_std (q : ℝ) : ℝ := (q_int_2 q)^2 / q_fact_3 q
 /-! ## Positivity lemmas for the weights -/
 
 /-- For `q > 0`, `[2]_q = 1 + q > 0`. -/
--- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
+-- Ref: [leitner2026] particle-interactions/wedderburn-mass-formula
 theorem q_int_2_pos {q : ℝ} (hq : 0 < q) : 0 < q_int_2 q := by
   unfold q_int_2; linarith
 
 /-- For `q > 0`, `[3]_q = 1 + q + q² > 0`. -/
--- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
+-- Ref: [leitner2026] particle-interactions/wedderburn-mass-formula
 theorem q_int_3_pos {q : ℝ} (hq : 0 < q) : 0 < q_int_3 q := by
   unfold q_int_3
   have hq2 : 0 ≤ q^2 := sq_nonneg q
   linarith
 
 /-- For `q > 0`, `[3]_q! = (1 + q + q²)(1 + q) > 0`. -/
--- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
+-- Ref: [leitner2026] particle-interactions/wedderburn-mass-formula
 theorem q_fact_3_pos {q : ℝ} (hq : 0 < q) : 0 < q_fact_3 q := by
   unfold q_fact_3
   exact mul_pos (q_int_3_pos hq) (q_int_2_pos hq)
 
 /-- For `q > 0`, `[3]_q! ≠ 0`. -/
--- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
+-- Ref: [leitner2026] particle-interactions/wedderburn-mass-formula
 theorem q_fact_3_ne_zero {q : ℝ} (hq : 0 < q) : q_fact_3 q ≠ 0 :=
   ne_of_gt (q_fact_3_pos hq)
 
 /-- For `q > 0`, the symmetric weight is strictly positive. -/
--- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
+-- Ref: [leitner2026] particle-interactions/wedderburn-mass-formula
 theorem w_sym_pos {q : ℝ} (hq : 0 < q) : 0 < w_sym q := by
   unfold w_sym
   exact one_div_pos.mpr (q_fact_3_pos hq)
 
 /-- For `q > 0`, the alternating weight is strictly positive. -/
--- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
+-- Ref: [leitner2026] particle-interactions/wedderburn-mass-formula
 theorem w_alt_pos {q : ℝ} (hq : 0 < q) : 0 < w_alt q := by
   unfold w_alt
   exact one_div_pos.mpr (q_fact_3_pos hq)
 
 /-- For `q > 0`, the standard weight is strictly positive
     (since `[2]_q² > 0`). -/
--- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
+-- Ref: [leitner2026] particle-interactions/wedderburn-mass-formula
 theorem w_std_pos {q : ℝ} (hq : 0 < q) : 0 < w_std q := by
   unfold w_std
   have h2 : 0 < (q_int_2 q)^2 := by
@@ -198,7 +198,7 @@ theorem w_std_pos {q : ℝ} (hq : 0 < q) : 0 < w_std q := by
 
 /-- The symmetric and alternating weights are equal (both equal
     `1/[3]_q!`). -/
--- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
+-- Ref: [leitner2026] particle-interactions/wedderburn-mass-formula
 theorem w_sym_eq_w_alt (q : ℝ) : w_sym q = w_alt q := by
   unfold w_sym w_alt; rfl
 
@@ -228,7 +228,7 @@ noncomputable def wedderburnMass (Z N : ℕ) [HasHoefsmitData Z N] (q : ℝ) : �
 /-- **Wedderburn mass formula (definitional expansion).** The mass
     splits canonically into nucleon, electron, and binding
     contributions. -/
--- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
+-- Ref: [leitner2026] particle-interactions/wedderburn-mass-formula
 -- Ref: [wedderburn1908] Wedderburn, "On hypercomplex numbers," Proc. London Math. Soc. s2-6 (1908)
 theorem wedderburnMass_split (Z N : ℕ) [HasHoefsmitData Z N] (q : ℝ) :
     wedderburnMass Z N q
@@ -238,7 +238,7 @@ theorem wedderburnMass_split (Z N : ℕ) [HasHoefsmitData Z N] (q : ℝ) :
 
 /-- **Wedderburn weight identity at the baryon level.**
     `w_sym + w_std + w_alt = (2 + [2]_q²) / [3]_q!`. -/
--- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
+-- Ref: [leitner2026] particle-interactions/wedderburn-mass-formula
 theorem wedderburn_weights_sum (q : ℝ) (hq : q_fact_3 q ≠ 0) :
     w_sym q + w_std q + w_alt q
       = (2 + (q_int_2 q)^2) / q_fact_3 q := by
@@ -248,7 +248,7 @@ theorem wedderburn_weights_sum (q : ℝ) (hq : q_fact_3 q ≠ 0) :
 
 /-- **Wedderburn weights are strictly positive at any `q > 0`.**
     The full sum `w_sym + w_std + w_alt > 0`. -/
--- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
+-- Ref: [leitner2026] particle-interactions/wedderburn-mass-formula
 theorem wedderburn_weights_sum_pos {q : ℝ} (hq : 0 < q) :
     0 < w_sym q + w_std q + w_alt q := by
   have h1 := w_sym_pos hq
@@ -259,7 +259,7 @@ theorem wedderburn_weights_sum_pos {q : ℝ} (hq : 0 < q) :
 /-- **Zero-fitted-parameter property.** The Wedderburn weights are
     determined by `q` alone — they contain no free coupling
     constants. -/
--- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
+-- Ref: [leitner2026] particle-interactions/wedderburn-mass-formula
 theorem wedderburn_weights_q_only (q₁ q₂ : ℝ) (hq : q₁ = q₂) :
     (w_sym q₁, w_std q₁, w_alt q₁) = (w_sym q₂, w_std q₂, w_alt q₂) := by
   rw [hq]
@@ -269,7 +269,7 @@ theorem wedderburn_weights_q_only (q₁ q₂ : ℝ) (hq : q₁ = q₂) :
     rest-mass term by `m_p + m_e`. The binding term is `Z`-dependent
     via `V_std`, `λ^sym`, `λ^alt` (opaque), so we can only state the
     rest-mass part as an algebraic identity. -/
--- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
+-- Ref: [leitner2026] particle-interactions/wedderburn-mass-formula
 theorem wedderburnMass_succ_Z (Z N : ℕ)
     [HasHoefsmitData Z N] [HasHoefsmitData (Z + 1) N] (q : ℝ) :
     wedderburnMass (Z + 1) N q - wedderburnMass Z N q
@@ -282,7 +282,7 @@ theorem wedderburnMass_succ_Z (Z N : ℕ)
 /-- **Mass is monotone in `N` along the neutron-rich axis.** Adding
     one neutron (with proton number fixed) increases the leading
     rest-mass term by `m_n`, plus the binding-term shift. -/
--- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
+-- Ref: [leitner2026] particle-interactions/wedderburn-mass-formula
 theorem wedderburnMass_succ_N (Z N : ℕ)
     [HasHoefsmitData Z N] [HasHoefsmitData Z (N + 1)] (q : ℝ) :
     wedderburnMass Z (N + 1) q - wedderburnMass Z N q
@@ -303,7 +303,7 @@ theorem catalan_G_pos : 0 < catalan_G := by
   unfold catalan_G; norm_num
 
 /-- **Numerical sanity check.** The binding scale `α > 0`. -/
--- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
+-- Ref: [leitner2026] particle-interactions/wedderburn-mass-formula
 theorem alpha_bind_pos : 0 < alpha_bind := by
   unfold alpha_bind
   have hme : 0 < m_e := rest_masses_pos.2.2

@@ -59,7 +59,7 @@ Generic `{k : Type*} [CommRing k]` for the obstruction; `χ(A) : ℤ`; other dat
 are `Prop`s. The concrete instance uses `k = ℤ`. No `ℝ`.
 
 ## References
-- [manuscript] quantum-observable-universes/quantum-observable-universe,
+- [leitner2026] quantum-observable-universes/quantum-observable-universe,
   stochastic-mechanics/qou-obstruction-reduction, fluid-dynamics/ns-obstruction,
   ns-obstruction-tower, ns-kummer-specialisation, ns-singularity-descartes,
   lifting-and-descent/p3-blowup-yekutieli
@@ -96,7 +96,7 @@ structure QOUFluidUniverse (k : Type*) [CommRing k] where
 variable {k : Type*} [CommRing k]
 
 /-- **The QOU's NS obstruction is nonzero.** Given a QOU, `NS(A) ≠ 0`. -/
--- Ref: [manuscript] fluid-dynamics/ns-obstruction, ns-kummer-specialisation
+-- Ref: [leitner2026] fluid-dynamics/ns-obstruction, ns-kummer-specialisation
 theorem qou_obstruction_nonzero (U : QOUFluidUniverse k) : U.obstruction ≠ 0 :=
   U.chi_forces_obstruction (U.observability_forces_chi U.observability_holds)
 
@@ -106,13 +106,13 @@ theorem qou_obstruction_nonzero (U : QOUFluidUniverse k) : U.obstruction ≠ 0 :
     `χ(A) ≠ 0` ⇒ `NS(A) ≠ 0` ⇒ internal blow-up. A statement **about the QOU** —
     it does **not** resolve the classical Navier–Stokes problem, and
     `internalBlowup` is the categorical internal observable, not the `ℝ³` PDE. -/
--- Ref: [manuscript] fluid-dynamics/ns-obstruction-tower, blowup-yekutieli
+-- Ref: [leitner2026] fluid-dynamics/ns-obstruction-tower, blowup-yekutieli
 theorem qou_internal_ns_singular (U : QOUFluidUniverse k) : U.internalBlowup :=
   U.obstruction_iff_internal_blowup.mp (qou_obstruction_nonzero U)
 
 /-- **Contrapositive scope check.** If a QOU's internal q-NS flow were regular,
     its NS obstruction would vanish — impossible for a genuine QOU. -/
--- Ref: [manuscript] fluid-dynamics/ns-obstruction-tower
+-- Ref: [leitner2026] fluid-dynamics/ns-obstruction-tower
 theorem qou_not_internally_regular (U : QOUFluidUniverse k)
     (hreg : ¬ U.internalBlowup) : False :=
   hreg (qou_internal_ns_singular U)
@@ -138,7 +138,7 @@ def descartesQOU : QOUFluidUniverse ℤ where
     capstone applied to the concrete instance; no `sorry`, no open hypothesis
     (still an *in-QOU* statement, not the `ℝ³` PDE). Witnesses that the general
     `qou_internal_ns_singular` is not vacuous. -/
--- Ref: [manuscript] fluid-dynamics/ns-singularity-descartes
+-- Ref: [leitner2026] fluid-dynamics/ns-singularity-descartes
 theorem descartes_internal_ns_singular : descartesQOU.internalBlowup :=
   qou_internal_ns_singular descartesQOU
 
@@ -160,7 +160,7 @@ structure QOUFluidUniverseLevi (k : Type*) [CommRing k]
     forced into the non-degenerate branch** — branch A of `conj:levi-degeneracy`
     (`β = 0`, blow-up side). *In a QOU* the trichotomy branch is decided; the
     general growth-rate `β` of a classical flow is untouched. -/
--- Ref: [manuscript] fluid-dynamics/ns-obstruction-tower, levi-degeneracy-conjecture
+-- Ref: [leitner2026] fluid-dynamics/ns-obstruction-tower, levi-degeneracy-conjecture
 theorem qou_levi_nondegenerate (U : QOUFluidUniverseLevi k) :
     U.leviNonDegenerate :=
   U.obstruction_iff_levi.mp (qou_obstruction_nonzero U.toQOUFluidUniverse)

@@ -111,7 +111,7 @@ the open choice, and the corpus carries two.
 Generic over a `Field`; no anchor, no `ℝ`, per §7c.  Every evaluation at `q₀`
 lives in the probe.
 
--- Ref: [manuscript] `def:crossing-energy`, AGENTS.md §7a (Hecke-Skein
+-- Ref: [leitner2026] `def:crossing-energy`, AGENTS.md §7a (Hecke-Skein
 --      convention), bean `qou-fi93`
 -/
 import Mathlib.Algebra.Field.Basic

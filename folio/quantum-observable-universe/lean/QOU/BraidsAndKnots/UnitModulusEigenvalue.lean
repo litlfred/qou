@@ -56,7 +56,7 @@ Only the integer determinant `(−1)^{2k}` uses `ℤ`. No archimedean structure
 is needed — `|λ| = 1` is the narrative reading of `λ₁λ₂ = 1` with
 `|tr| ≤ 2`, not a Lean hypothesis here.
 
--- Ref: [manuscript] Hecke algebra Wedderburn decomposition
+-- Ref: [leitner2026] Hecke algebra Wedderburn decomposition
 -/
 
 namespace QOU.BraidsAndKnots
@@ -72,7 +72,7 @@ namespace QOU.BraidsAndKnots
     `q : Rˣ` and the inverse is `Units.inv`. Over a field this is exactly
     the old `q ≠ 0`; unlike the field version it also applies over
     `ℤ[q, q⁻¹]`, where `q` is a unit but no division is available. -/
--- Ref: [manuscript] Iwahori-Hecke algebra, det on standard rep
+-- Ref: [leitner2026] Iwahori-Hecke algebra, det on standard rep
 theorem hecke_generator_det_neg_one {R : Type*} [CommRing R] (q : Rˣ) :
     (q : R) * (-(↑q⁻¹ : R)) = -1 := by
   rw [mul_neg, Units.mul_inv]
@@ -83,7 +83,7 @@ theorem hecke_generator_det_neg_one {R : Type*} [CommRing R] (q : Rˣ) :
     has determinant `(−1)^{2k} = 1` (each generator contributes `−1`).
     Together with `|tr| ≤ 2` this is the unit-circle condition
     `λ₁λ₂ = 1`. -/
--- Ref: [manuscript] det(σ₁···σ_{2k}) = (−1)^{2k} = 1
+-- Ref: [leitner2026] det(σ₁···σ_{2k}) = (−1)^{2k} = 1
 theorem even_braid_det_one (n : ℕ) : (-1 : ℤ) ^ (2 * n) = 1 := by
   simp [pow_mul]
 
@@ -103,7 +103,7 @@ theorem even_braid_det_one (n : ℕ) : (-1 : ℤ) ^ (2 * n) = 1 := by
     The data `tr = −2` is the Hoefsmit / Markov-trace input (carried as
     a hypothesis, not asserted here); `det = 1` is `even_braid_det_one`
     for the 6-generator word. -/
--- Ref: [manuscript] BorromeanMarkovTrace.lean closed form (tr_{(2,1)}(β_Bor) = −2)
+-- Ref: [leitner2026] BorromeanMarkovTrace.lean closed form (tr_{(2,1)}(β_Bor) = −2)
 theorem borromean_eigenvalue_neg_one {R : Type*} [CommRing R] [NoZeroDivisors R]
     (lam tr det : R) (h_tr : tr = -2) (h_det : det = 1)
     (h_root : lam ^ 2 - tr * lam + det = 0) : lam = -1 := by

@@ -10,7 +10,7 @@ LaTeX: `\label{prop:categorical-connection-exists}`
 
 ## References
 
-- [manuscript] §1-quantum-universes/categorical-connection-exists
+- [leitner2026] §1-quantum-universes/categorical-connection-exists
 - [kock2004] Frobenius Algebras and 2D TQFT, Ch 2
 -/
 
