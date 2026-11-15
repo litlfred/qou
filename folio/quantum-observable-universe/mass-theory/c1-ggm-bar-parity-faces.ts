@@ -14,6 +14,10 @@ export default conjecture({
   ],
   authorNotes: [
     {
+      kind: "note",
+      body: "An earlier version of this note denied that the recurrence oscillates inside the window; it does, but never at two consecutive pairs.",
+    },
+    {
       kind: "status",
       date: "2026-08-08",
       body:

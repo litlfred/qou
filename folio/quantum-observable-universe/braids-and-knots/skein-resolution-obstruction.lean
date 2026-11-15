@@ -93,9 +93,11 @@ structure ComplementaryDecomposition (α : Type*) [AddCommGroup α] where
     and either component is nonzero, and the subspaces are complementary,
     then the total element is nonzero.
 
-    This mirrors QU-to-QOU theorem item 3: κ₀ (topological) and δₙ
-    (analytic) live in complementary subgroups, so κₙ = κ₀ + δₙ ≠ 0
-    whenever κ₀ ≠ 0. -/
+    This was written to mirror QU-to-QOU theorem item 3 (κ₀ and δₙ in
+    complementary subgroups, so κₙ = κ₀ + δₙ ≠ 0). The algebraic lemma here is
+    unaffected, but that reading of item 3 is withdrawn: on Bring's surface the
+    obstruction vanishes for `n ∣ χ = -6` (re-scoped 2026-11-15, owner decision,
+    PR #7747, bean `qou-lx8f`). -/
 -- Ref: [manuscript] §3/qu-to-qou (item 3)
 -- Ref: [manuscript] §9/computational-perpetual-obstruction
 theorem perpetual_obstruction_top {α : Type*} [AddCommGroup α]

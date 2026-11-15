@@ -142,7 +142,7 @@ substrate-specific — $\overline{z} = z - h$, the bar-symmetriser form, the bar
 defect $-(\overline{\varepsilon} + \varepsilon)h$, and the bar-even-iff-offset-bar-odd
 equivalence — are formalised over an arbitrary characteristic-zero field in
 [`QOU/MassTheory/PnInterfaceBarStructure.lean`](../lean/QOU/MassTheory/PnInterfaceBarStructure.lean),
-sorry-free (`#print axioms`: `propext`, `Classical.choice`, `Quot.sound` only).
+using only the axioms `propext`, `Classical.choice` and `Quot.sound`.
 
 ### Full-trace verification at convention D (4 atoms)
 
@@ -165,9 +165,6 @@ place of $z$ the ratios are $\approx 0.50822979$, $0.20513564$, $0.31138631$ and
 $0.12568415$, again equal to the predicted product to $\le 5\times10^{-50}$ (and
 likewise for the colour-blind $\sigma_g - h/2$). The identity ($\star$) therefore holds
 at convention D on every word tested, at the $10^{-50}$ floor of the arithmetic.
-Producer: `computations/probes/interface_knot_markov_z_convention_d_probe.py`.
-(2026-10-10: this replaces a table measured at the excised convention-C weight
-$z = \sqrt q/(q+1)$, bean `qou-7xpx`.)
 
 Per-atom interface census (from `atom_braid_word_3A`):
 

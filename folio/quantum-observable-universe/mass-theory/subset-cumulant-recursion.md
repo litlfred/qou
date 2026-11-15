@@ -49,8 +49,7 @@ ring, and are proved as `sum_powerset_cum`, `cum_eq_sizeCum` and
 facts that make the bond model an instance -- that the homonuclear $L(S)$
 depends only on $|S|$, and that it does not see nucleons outside $S$ -- are
 properties of this particular trace. They are established at 200-bit precision
-(residuals at the working floor, $\sim 10^{-59}$, at $A = 3, 4, 5$) by
-`computations/probes/the_binding_arc_was_measured_in_float64_probe.py`, and
+(residuals at the working floor, $\sim 10^{-59}$, at $A = 3, 4, 5$), and
 they are **not** formalised: the corpus's `MarkovTrace.lean` carries cyclicity
 and single-generator conjugation, not the split-link tensor rule, and the band
 routing of a far bond sits between other letters where conjugation invariance

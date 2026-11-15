@@ -30,7 +30,7 @@ Frobenius framework).**
 > [`MarkovGramDegenerate.lean`](../lean/QOU/QBeta/MarkovGramDegenerate.lean):
 > `block_mem_radical` → `gram_det_eq_zero_of_radical_combination` for the
 > vanishing, `pairing_descends` and `mem_radical_of_pairing_zero` for the
-> descent. Sorry-free.
+> descent.
 
 **Role of the Gram matrix.**
 *The **Gram matrix** $G$ of the Markov pairing is the common

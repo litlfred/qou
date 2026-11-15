@@ -83,7 +83,7 @@ entire content.
 
 ## What is formalised
 
-`QOU.Mass.ChainTraceFactor` (sorry-free): the convex-combination identity
+`QOU.Mass.ChainTraceFactor`: the convex-combination identity
 (`dPN_eq_convex`, `convex_weights_sum`), the strict betweenness of the offsets
 for $0 < \delta < 2$ (`dPN_strict_between`), its transport through the affine
 trace (`factors_strict_mono`), and the ordering $L_{pp} < L_{pn} < L_{nn}$

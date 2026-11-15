@@ -1,0 +1,348 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1807.01453v2",
+ "source": {
+  "file": "1807.01453v2.pdf",
+  "sha256": "0cc84fde6f95260894cb0ed93840434bc44686f7fd3d3d5b29b679d03f5434f5",
+  "bytes": 741452,
+  "pages": 8,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:22:14Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1807.01453",
+   "version": "2",
+   "primary_class": "hep-ph",
+   "stamp_date": "30 Oct 2018"
+  },
+  "doi": null,
+  "title": "Standard Model Extension with Flipped Generations",
+  "authors_raw": "Carlos Alvaradoa,b, Alfredo Arandac",
+  "title_lines": [
+   "Standard Model Extension with Flipped Generations"
+  ],
+  "abstract": "An extension of the Standard Model is presented that leads to the possible existence of new gauge bosons with masses in the range of a few TeV. Due to the fact that their couplings to Standard Model fermions are strongly suppressed, it is possible for them to be hidden from current searches. The model contains additional generations of fermions with quantum numbers resembling those of the Standard Model fermion generations but with a twist: their charge assignments are such that their electric charges and chiralities are \ufb02ipped with respect to those of their corresponding Standard Model counterparts. This feature provides a way to obtain potential dark matter candidates and the interesting possibility for a Lepton number conserving dimension-\ufb01ve operator for Dirac neutrino masses. The model implications associated to electroweak precision parameters, \ufb02avor changing neutral currents, and diphoton rate contributions are brie\ufb02y discussed. The general assumptions of this set up are also used to sketch a couple of variants of the model with peculiar features that could motivate further study.",
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.17",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20181031003924Z"
+  },
+  "title_raw": "Standard Model Extension with Flipped Generations",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Standard Model Extension with Flipped Generations",
+   "outline": "1 Introduction",
+   "text": "Standard Model Extension with Flipped Generations",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "The model",
+   "page": 2,
+   "source": "outline",
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
+  },
+  {
+   "level": 1,
+   "title": "Phenomenology highlights",
+   "page": 4,
+   "source": "outline",
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
+  },
+  {
+   "level": 1,
+   "title": "Conclusions",
+   "page": 6,
+   "source": "outline",
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
+  },
+  {
+   "level": 1,
+   "title": "Appendix A Anomaly coefficients",
+   "page": 7,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
+  },
+  {
+   "level": 1,
+   "title": "Appendix B Bidoublet potential",
+   "page": 7,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Transformation properties of the fermion and scalar \ufb01eld content of the model. Family indices are not shown and three generations for all fermion \ufb01elds are included. Fermion \ufb01elds not present in the SM are primed",
+   "page": 2,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "2"
+  },
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Generic decay of an electrically charged, color-singlet hidden fermion into SM states. This is possible through the mixing of the interaction-basis f",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Tree-level \u03c1 parameter variation with vhid, at \ufb01xed tan \u03b2, for several gh values (green solid lines in each panel). Latest \ufb01t and",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "table",
+   "number": "2",
+   "title": "Main W \u2032\u00b1 branching fractions and a few representative subdominant ones. Also shown are the BRs of the mostly-bidoublet",
+   "page": 5,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "This situation is analogous of the one encountered in 2HDMs outside the (\u03b2 \u2212\u03b1) = \u03c0/2 (alignment) regime,",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1506,
+   "n_words": 220,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 4459,
+   "n_words": 732,
+   "label_start": null,
+   "label_end": "2"
+  },
+  {
+   "id": "sec-001-2-the-model",
+   "number": "2",
+   "title": "The model",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 10544,
+   "n_words": 1893,
+   "label_start": "2",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-002-3-phenomenology-highlights",
+   "number": "3",
+   "title": "Phenomenology highlights",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 11854,
+   "n_words": 2243,
+   "label_start": "4",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-003-4-conclusions",
+   "number": "4",
+   "title": "Conclusions",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 1625,
+   "n_words": 262,
+   "label_start": "6",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-004-appendix-a-anomaly-coefficients",
+   "number": null,
+   "title": "Appendix A Anomaly coefficients",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 785,
+   "n_words": 151,
+   "label_start": "7",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-005-appendix-b-bidoublet-potential",
+   "number": null,
+   "title": "Appendix B Bidoublet potential",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 10072,
+   "n_words": 1397,
+   "label_start": "7",
+   "label_end": "8"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 6,
+  "toc_inferred_entries": 0,
+  "figure_entries": 5,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 7,
+  "chars_total": 40845,
+  "furniture_lines_stripped": 0
+ }
+}

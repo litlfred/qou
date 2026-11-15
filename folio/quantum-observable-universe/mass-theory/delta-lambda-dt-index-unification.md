@@ -40,8 +40,8 @@ proved in general.
 
 ### Lean
 
-`QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional` states the conjunction of both legs
-and is sorry-free. The value leg is `dtEulerG_eq_deltaLambdaG`; the chirality leg is
+`QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional` proves the conjunction of both legs.
+The value leg is `dtEulerG_eq_deltaLambdaG`; the chirality leg is
 `parity_eq_w0_sign_general`, which discharges $(\dagger)$ via
 `aStat_eq_sumChoose2_conjugate`.
 

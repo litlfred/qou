@@ -75,7 +75,7 @@ The framework reproduces the $Q$-value to $0.17\,\%$ — that result is untouche
 and $\Gamma_n$ is a width the reciprocal mechanism demonstrably fails to produce.
 
 The coupling and the phase-space integral are, however, **supplied elsewhere in
-the corpus**, which an earlier version of this section denied. The rate formula
+the corpus**. The rate formula
 of [hadron half-life](../predicted-spectra/hadron-half-life.md) is
 
 $$

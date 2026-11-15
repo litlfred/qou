@@ -1,0 +1,181 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/brings-surface/brings-is-qou-verification",
+    "path": "folio/quantum-observable-universe/brings-surface/brings-is-qou-verification"
+  },
+  "criteria": {
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "13868cb6326b",
+          "ts": "c19d5c83d2c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:01:43.482Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "Full-block agent read (all ten categories judged in context); no confirmed instance of this category."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "13868cb6326b",
+          "ts": "c19d5c83d2c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:01:43.517Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "Full-block agent read (all ten categories judged in context); no confirmed instance of this category."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "13868cb6326b",
+          "ts": "c19d5c83d2c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:01:43.551Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "Full-block agent read (all ten categories judged in context); no confirmed instance of this category."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "13868cb6326b",
+          "ts": "c19d5c83d2c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:01:43.585Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "Full-block agent read (all ten categories judged in context); no confirmed instance of this category."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "13868cb6326b",
+          "ts": "c19d5c83d2c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:01:43.621Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "Full-block agent read (all ten categories judged in context); no confirmed instance of this category."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "13868cb6326b",
+          "ts": "c19d5c83d2c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:01:43.658Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "Full-block agent read (all ten categories judged in context); no confirmed instance of this category."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "13868cb6326b",
+          "ts": "c19d5c83d2c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:01:43.694Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "Full-block agent read (all ten categories judged in context); no confirmed instance of this category."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "13868cb6326b",
+          "ts": "c19d5c83d2c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:01:43.729Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "Full-block agent read (all ten categories judged in context); no confirmed instance of this category."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "13868cb6326b",
+          "ts": "c19d5c83d2c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:01:43.764Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "Full-block agent read (all ten categories judged in context); no confirmed instance of this category."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "13868cb6326b",
+          "ts": "c19d5c83d2c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:01:43.800Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "Full-block agent read (all ten categories judged in context); no confirmed instance of this category."
+      }
+    ]
+  }
+}

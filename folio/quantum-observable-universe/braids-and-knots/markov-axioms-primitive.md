@@ -22,23 +22,20 @@ selection is forced by the dimension of the mass fibre:
   is the two-row count and no other. So $y_{(1^3)} = 0$ is a restatement of the
   decomposition the mass chapter uses, not an extra assumption.
 - Given $y_{(1^3)} = 0$, `markovWeights_eq_jones_of_threeRow_eq_zero`
-  ([`MarkovTraceTLUniqueness.lean`](../lean/QOU/BraidsAndKnots/MarkovTraceTLUniqueness.lean),
-  sorry-free) shows the faithful normalised Markov trace is **unique** and equals
+  ([`MarkovTraceTLUniqueness.lean`](../lean/QOU/BraidsAndKnots/MarkovTraceTLUniqueness.lean))
+  shows the faithful normalised Markov trace is **unique** and equals
   $z = q^3/(q^2+1)$ — **convention D**. The competing root $z = q$ is real but
   degenerate ($y_{(2,1)} = 0$, not faithful on $\mathrm{TL}_3$), which is why the
   faithfulness hypothesis is load-bearing (`markovWeights_degenerate_root`).
 
 So the loop value is a **consequence** of the fibre being two-dimensional, not a
-stipulation. Full forcing argument:
-[`2026-08-08-mass-fibre-dimension-forces-convention-d.md`](../../../docs/audits/2026-08-08-mass-fibre-dimension-forces-convention-d.md);
-the D-vs-C analysis it rests on:
-[`2026-08-08-borromean-trace-convention-forcing.md`](../../../docs/audits/2026-08-08-borromean-trace-convention-forcing.md).
+stipulation.
 
 Convention D has $y_{(1^3)} = 0$, so it **is** the trace whose braid closure is
 the Jones polynomial: under D the "Jones–Markov" name is accurate, and under
-[convention C](../../../docs/coordination/trace-convention-registry.md) —
+convention C,
 $z = 1/(q^{1/2}+q^{-1/2})$, where the loop value is stipulated rather than
-derived — it is not.
+derived, it is not.
 
  Because $\mathrm{tr}_M$ is compatible with the tower inclusions and evaluates disjoint generators by iterated application of axiom 3, the joint Markov trace of two braids acting on disjoint strand sets is strictly multiplicative:
 $$

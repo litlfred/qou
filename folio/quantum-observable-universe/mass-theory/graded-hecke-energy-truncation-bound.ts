@@ -21,4 +21,11 @@ export default proposition({
     "computational-bound",
     "klr-module",
   ],
+  authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-09-06",
+      body: "The scope note was added because this block's premise read as though the atomic word satisfied the braid hypothesis. The producer's docstring has carried the averaged-letter misnomer note since 2026-08-25 (PR #5765).",
+    },
+  ],
 });

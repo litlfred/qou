@@ -53,7 +53,7 @@ $$
   P_{7,6}(q) \;=\; -\,\hbar_\times\,\cdot\,\frac{S(q)}{2(q^2+1)^2},
   \qquad S(q) = q^6+q^4+2q^2+1,
 $$
-and $S$ has no real root while $(q^2+1)^2 > 0$, so the cofactor is strictly positive on all of $\mathbb{R}$. The flip amplitude is therefore $-\hbar_\times$ times something positive, while the cone coordinate is $+\hbar_\times$ — giving $P_{7,6}(q)\,\hbar_\times(q) \leq 0$ for every $q > 0$. Sorry-free in `QOU.Information.toffoliFlip_mul_coneCoord_nonpos`, with the symbolic cross-check in [`toffoli_sign_inversion_is_structural.py`](https://github.com/litlfred/qou/blob/main/computations/probes/toffoli_sign_inversion_is_structural.py) (7/7).
+and $S$ has no real root while $(q^2+1)^2 > 0$, so the cofactor is strictly positive on all of $\mathbb{R}$. The flip amplitude is therefore $-\hbar_\times$ times something positive, while the cone coordinate is $+\hbar_\times$ — giving $P_{7,6}(q)\,\hbar_\times(q) \leq 0$ for every $q > 0$. Formalized in `QOU.Information.toffoliFlip_mul_coneCoord_nonpos`, with the symbolic cross-check in [`toffoli_sign_inversion_is_structural.py`](https://github.com/litlfred/qou/blob/main/computations/probes/toffoli_sign_inversion_is_structural.py) (7/7).
 
 This is a **scope-(b) exclusion**, and the invariant is the factorisation above: no reduction in which the cone condition *inherits* the flip amplitude's sign can hold, at any anchor or in any convention, because the two carry exactly opposite signs of the same factor. It does **not** exclude a reduction carrying a *negative* proportionality — one in which the cone condition follows $-P_{7,6}$ — and that is the natural remaining candidate.
 
@@ -73,7 +73,7 @@ No claim of LP-instability is made, and none is available: the condition as stat
 | $W_{\mathrm{std}} > 0$ and $P_{7,7}W_{\mathrm{std}} > 0$ | `wStd_pos`, `toffoliDiagonal_mul_wStd_pos` |
 | $\mathrm{sign}\,P_{7,6} = -\mathrm{sign}\,\hbar_\times$ | `toffoliFlip_mul_coneCoord_nonpos` |
 
-All sorry-free, axioms `[propext, Classical.choice, Quot.sound]`. The antisymmetry defect is exact and vanishes only at $q = 1$, so "reversing the crossing negates it" fails everywhere except the classical limit. Symbolic cross-check: [`toffoli_amplitude_sign_claims.py`](https://github.com/litlfred/qou/blob/main/computations/probes/toffoli_amplitude_sign_claims.py), 9/9.
+All use only the axioms `propext`, `Classical.choice` and `Quot.sound`. The antisymmetry defect is exact and vanishes only at $q = 1$, so "reversing the crossing negates it" fails everywhere except the classical limit. Symbolic cross-check: [`toffoli_amplitude_sign_claims.py`](https://github.com/litlfred/qou/blob/main/computations/probes/toffoli_amplitude_sign_claims.py), 9/9.
 
 **The reduction is refuted by a zero-set argument.** The proof reduces the cone condition to $P_{7,7}W_{\mathrm{std}}$ *"with the appropriate sign from"* $P_{7,6}$. A product vanishes exactly where a factor does, so such a reduction forces the cone condition's zero set into the union of the factors'. With the symbolic Gram — validated against the production `gram_matrix_mp` at five values of $q$ — the cone condition is a **single** constraint, the one indexed by the longest word $\sigma_0\sigma_1\sigma_0$:
 
@@ -97,7 +97,7 @@ $$
   \;-\; \tfrac{28}{9}M_{33}^2 \;+\; \tfrac{20}{3}M_{33}M_{44} \;+\; \tfrac{38}{9}M_{33}P_{7,7} \;+\; \tfrac{20}{9}M_{44}^2 \;+\; \tfrac{5}{36}P_{7,7}^2
 $$
 
-Sorry-free in `QOU.Information.cone_eq_quadratic_in_amplitudes`, with `coneCoordRow5_pos_iff` carrying the sign from the numerator to the constraint. Only $+$ and $\times$ appear: no division by an amplitude, hence no reconstruction of $q$. The *cross* terms are load-bearing — the span of the amplitudes and their squares alone has rank $14$ and does **not** contain the constraint.
+Formalized in `QOU.Information.cone_eq_quadratic_in_amplitudes`, with `coneCoordRow5_pos_iff` carrying the sign from the numerator to the constraint. Only $+$ and $\times$ appear: no division by an amplitude, hence no reconstruction of $q$. The *cross* terms are load-bearing — the span of the amplitudes and their squares alone has rank $14$ and does **not** contain the constraint.
 
 This sharpens the refutation rather than softening it. A monomial vanishes exactly where a factor does; a degree-$2$ polynomial can vanish where none of its terms does, and that is precisely the mechanism producing the root at $q_c$. So the published reduction was the right kind of relation in the wrong class: it needed cancellation *between* products, which a single product cannot supply. Whether any member of the (one-parameter) solution family has a Hecke-theoretic reading is open. Measurement: [`toffoli_cone_in_entry_subring.py`](https://github.com/litlfred/qou/blob/main/computations/probes/toffoli_cone_in_entry_subring.py), 8/8.
 
@@ -107,7 +107,7 @@ $$
   (G\vec t)_5 \;=\; z^2 \;+\; 2\hbar_\times z \;+\; 3\hbar_\times^2 z^2 \;+\; \hbar_\times^3 z \;+\; \hbar_\times^4 z^2 ,
 $$
 
-with integer coefficients $(1,2,3,1,1)$ and no denominators. **Degree $6$ is minimal** — no polynomial in $(z,\hbar_\times)$ of total degree $\leq 5$ equals it — and minimal degree is a genuine invariant of the class. Sorry-free in `QOU.Information.cone_eq_markov_hecke_polynomial`.
+with integer coefficients $(1,2,3,1,1)$ and no denominators. **Degree $6$ is minimal** — no polynomial in $(z,\hbar_\times)$ of total degree $\leq 5$ equals it — and minimal degree is a genuine invariant of the class. Formalized in `QOU.Information.cone_eq_markov_hecke_polynomial`.
 
 **The coefficient string, however, is not an invariant.** The two parameters are algebraically dependent, satisfying the irreducible degree-$4$ relation
 
@@ -115,7 +115,7 @@ $$
   \hbar_\times^3 z - \hbar_\times^2 z^2 + 4\hbar_\times z - 4z^2 + 1 \;=\; 0 ,
 $$
 
-so $\mathbb{Q}[z,\hbar_\times]$ is not a polynomial ring but the coordinate ring of an affine rational curve, and a polynomial representative is unique only modulo that relation. The degree-$6$ representatives form a **six-parameter family**: $-1 + 4z^2 - 3\hbar_\times z + 4z^4 + \hbar_\times^2 z^4$ is an equally integral one, differing from the first by $(\hbar_\times z + z^2 + 1)$ times the relation. A reproducible choice is the grevlex normal form $\hbar_\times^5 z + 4\hbar_\times^3 z + \hbar_\times^2 - 2\hbar_\times z + 5z^2 - 1$, but even that depends on the term order. The relation is sorry-free in `QOU.Information.markov_hecke_relation`; it is a fact about $H_n(q)$ and its Markov trace, not about the $q$-Toffoli.
+so $\mathbb{Q}[z,\hbar_\times]$ is not a polynomial ring but the coordinate ring of an affine rational curve, and a polynomial representative is unique only modulo that relation. The degree-$6$ representatives form a **six-parameter family**: $-1 + 4z^2 - 3\hbar_\times z + 4z^4 + \hbar_\times^2 z^4$ is an equally integral one, differing from the first by $(\hbar_\times z + z^2 + 1)$ times the relation. A reproducible choice is the grevlex normal form $\hbar_\times^5 z + 4\hbar_\times^3 z + \hbar_\times^2 - 2\hbar_\times z + 5z^2 - 1$, but even that depends on the term order. The relation is in `QOU.Information.markov_hecke_relation`; it is a fact about $H_n(q)$ and its Markov trace, not about the $q$-Toffoli.
 
 This is **forced, not fitted**. Every Markov trace of a Hecke word lies in $\mathbb{Z}[z,\hbar_\times]$ — the Markov property $\mathrm{tr}(x\sigma_{\mathrm{last}}) = z\,\mathrm{tr}(x)$ removes the highest generator and the quadratic relation reduces the rest — and the corpus already carries that as a table, `QOU.Machinery.MarkovTraceH4.TRM`, whose entries 9 and 13 are $\hbar_\times z^2 + z = \mathrm{tr}(\sigma_0\sigma_1\sigma_0)$. Since the $q$-Toffoli's normal-form coordinates are $\vec t = (0,0,1,\hbar_\times,0,0)$, that is $T_q = \sigma_1 + \hbar_\times\sigma_0\sigma_1$, the constraint $(G\vec t)_5 = \mathrm{tr}(W\sigma_1) + \hbar_\times\mathrm{tr}(W\sigma_0\sigma_1)$ lies in $\mathbb{Z}[z,\hbar_\times]$ before any computation is done.
 

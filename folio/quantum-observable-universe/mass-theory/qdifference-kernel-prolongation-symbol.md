@@ -71,7 +71,7 @@ local monodromy, not fitted numerically.
 > associated $q$-Riccati $(q^2x-1)a(qx)a(x) - (q-1)a(x) - (q-1) = 0$ has no
 > solution in $K(x)$, because the three terms of its cleared form have degrees
 > $1+2p$, $p+u$, $2u$ and the odd/even parity of the outer two forces the
-> maximum to be attained exactly once. Sorry-free in
+> maximum to be attained exactly once. Formalized in
 > [`QOU.Mass.BindingScalarKernelParityExclusion`](../lean/QOU/Mass/BindingScalarKernelParityExclusion.lean);
 > corroborated by the van der Put--Reversat classification
 > \cite{vanderput-reversat2007,vanderput2006} of pure modules of non-integral
@@ -113,7 +113,7 @@ local monodromy, not fitted numerically.
 > (shift $k$, multiplier $c$), which *is* its symbol on the punctured $t$-disk,
 > and symbols compose by adding shifts and multiplying multipliers along the
 > shift. Two exact facts then constrain any single-shift candidate $D_q$
-> (`QOU.Mathlib.RamifiedShiftCalculus`, sorry-free over a generic commutative
+> (`QOU.Mathlib.RamifiedShiftCalculus`, over a generic commutative
 > ring):
 >
 > 1. **Residue.** If $D_q$ annihilates constants, $c(-k) = 0$ — as every
@@ -145,7 +145,7 @@ local monodromy, not fitted numerically.
 > $1$ and $2$ — classical $d/dt + (1/t)\,d/dt$, or Jackson $[e+1]_q$ with
 > $[e+2]_q$ — **do** reach the residue slot: at level $n+2$ it is
 > $c_1(-2)\,c_2(-1)$ times the $t^{1}$ coefficient of the level-$n$ jet, weight
-> $-1$ in both cases (`QOU.Mathlib.RamifiedShiftCalculusSum`, sorry-free). The
+> $-1$ in both cases (`QOU.Mathlib.RamifiedShiftCalculusSum`). The
 > non-derivative clause is therefore a single-shift statement. What restores it
 > for sums is the residual: an operator with even part $E$ and odd part $O$
 > satisfies $\mathrm{mono}(Df) = E(\mathrm{mono}\,f) - O(\mathrm{mono}\,f)$, and
@@ -187,7 +187,7 @@ local monodromy, not fitted numerically.
 > $s_{m} = (D_{q}^{m}X)_{t^{1}}$, since $r_{m+2} = c_{1}(-2)c_{2}(-1)\,s_{m}$;
 > each level's constraint reaches one new seed coefficient and none of them
 > reads the branch value $a_{0}$ (`QOU.Mass.C1KernelLevelReading`,
-> sorry-free, $q$ not a root of unity). On the actual seed — the branch-point
+> $q$ not a root of unity). On the actual seed — the branch-point
 > expansion of the colour cubic at its simple ramification point — neither
 > the Jackson nor the $q$-derivative tower, in either $q$-integer convention
 > and on either sheet, satisfies that recurrence at any tested $q$: the
@@ -199,7 +199,7 @@ local monodromy, not fitted numerically.
 > and the two-term derivative-only class, respectively. The weights cannot be
 > supplied by a $q$-connection on the base either: the colour cubic is
 > irreducible over $K(z)$ for every field $K$ of characteristic zero
-> (`QOU.Mass.ColorCubicIrreducible`, sorry-free), so no sheet is a rational
+> (`QOU.Mass.ColorCubicIrreducible`), so no sheet is a rational
 > function of $z$; each sheet is algebraic, hence D-finite; and a rational
 > rank-$3$ $q$-difference system in $z \mapsto \lambda z$ with the sheets as
 > solutions would make a sheet $q$-holonomic, which together with D-finiteness
@@ -210,7 +210,7 @@ local monodromy, not fitted numerically.
 > $z = z_{c} + t^{2}$, the sheets are power series algebraic over $K(t)$ and so
 > still D-finite; and they are still not rational, because $t^{2} = z - z_{c}$
 > makes $K(t)/K(z)$ quadratic while an irreducible cubic has no root of degree
-> at most two (`QOU.Mass.IrreducibleCubicNoQuadraticRoot`, sorry-free). The
+> at most two (`QOU.Mass.IrreducibleCubicNoQuadraticRoot`). The
 > same theorem therefore excludes the local $q$-dilation as well, and what
 > survives is an operator whose coefficients are not rational in a coordinate,
 > or one defined on the curve rather than on a coordinate line.
@@ -245,7 +245,7 @@ local monodromy, not fitted numerically.
 > which is squarefree with $D(0) = 16 \neq 0$. Equal root multisets means
 > $D(\lambda z) = c\,D(z)$, and then two coefficients settle it: the constant
 > term gives $16 = 16c$, so $c = 1$, and the linear term gives $24\lambda = 24$,
-> so $\lambda = 1$ (`QOU.Mass.DilationBranchLocusRigidity`, sorry-free, generic
+> so $\lambda = 1$ (`QOU.Mass.DilationBranchLocusRigidity`, generic
 > characteristic-zero field). **Only the identity dilation lifts to $\Sigma$**,
 > for every $\lambda$ and at every $q$ — scope (b), the invariant being the
 > sextic's own coefficients rather than a cited analytic theorem, so this

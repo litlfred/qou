@@ -63,6 +63,7 @@ whose abstract did not extract get a structural brief instead.
 | [`72-4-841`](72-4-841/) | Progress of Theoretical Physics, Vol. 72, No.4, October 1984 Euclidean Quantum Gravity on a Flat Lattice — 3 sections: Front matter; § 3. Reflection positivity; Appendix |
 | [`9-81`](9-81/) | Kamei, Singular Euclidean structures on a simplicial complex with weighted edges (2003) — extends Rivin's geometric structures on a 2-simplicial complex to weighted-edge assignments. |
 | [`90-1-219`](90-1-219/) | Quaternions and non-commutative geometry — 10 sections: Front matter; Quaternionic formulation of the Di; TST |
+| [`9305356`](9305356/) | Introduction to Left-Right Symmetric Models — We motivate left-right symmetric models by the possibility of spontaneous parity breaking. |
 | [`9511222v1`](9511222v1/) | Murnaghan–Nakayama rules for characters of Iwahori–Hecke algebras of classical type — 26 sections: Page 1; Page 2; Page 3 |
 | [`9710022v2`](9710022v2/) | Harmonic Analysis on the quantum Lorentz group — This w ork b egins with a review of complexi/ cation and reali/ cation of Hopf algebras/. |
 | [`978-3-98547-562-9-volume-4-chapter-5483`](978-3-98547-562-9-volume-4-chapter-5483/) | Floer cohomology, singularities, and birational geometry — We explain a few recent results concerning the application of various Floer theories to topics in algebraic geometry, including singularity |
@@ -277,6 +278,7 @@ whose abstract did not extract get a structural brief instead.
 | [`arxiv-1610.09640v4`](arxiv-1610.09640v4/) | Derived Categories — This is the fourth (and last) prepublication version of a book on derived categories, that will be published by Cambridge University Press. |
 | [`arxiv-1611.03697v5`](arxiv-1611.03697v5/) | RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY — We study a class of Riemann-Hilbert problems arising naturally in Donaldson-Thomas theory. |
 | [`arxiv-1611.09182v1`](arxiv-1611.09182v1/) | Standard model physics from an algebra? — 77 sections: Front matter; Abstract; Acknowledgements |
+| [`arxiv-1612.07165v2`](arxiv-1612.07165v2/) | Unification and Local Baryon Number — 7 sections: Page 1; Page 2; Page 3 |
 | [`arxiv-1701.06567v2`](arxiv-1701.06567v2/) | BPS spectra and 3-manifold invariants — We provide a physical deﬁnition of new homological invariants Ha(M3) of 3- manifolds (possibly, with knots) labeled by abelian ﬂat connections. |
 | [`arxiv-1702.00039v1`](arxiv-1702.00039v1/) | Gentle introduction to Soergel bimodules I: The basics — This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules. |
 | [`arxiv-1704.00850v3`](arxiv-1704.00850v3/) | Estimating the spectral gap of a trace-class Markov operator — The utility of a Markov chain Monte Carlo algorithm is, in large part, determined by the size of the spectral gap of the corresponding |
@@ -301,6 +303,7 @@ whose abstract did not extract get a structural brief instead.
 | [`arxiv-1804.03926v3`](arxiv-1804.03926v3/) | Weighted Poincaré inequalities, concentration inequalities and tail bounds related to Stein kernels in dimension one — We investigate links between the so-called Stein’s density approach in dimension |
 | [`arxiv-1804.10084v1`](arxiv-1804.10084v1/) | Concentration of Lipschitz Functions of Negatively Dependent Variables — We explore the question whether Lipschitz functions of random variables under various forms of negative correlation satisfy |
 | [`arxiv-1806.09450v1`](arxiv-1806.09450v1/) | Deducing the symmetry of the standard model from the automorphism and structure groups of the exceptional Jordan algebra ∗ — We continue the study undertaken in [DV] of the exceptional Jordan algebra |
+| [`arxiv-1807.01453v2`](arxiv-1807.01453v2/) | Standard Model Extension with Flipped Generations — An extension of the Standard Model is presented that leads to the possible existence of new gauge bosons with masses in the range of a few TeV. |
 | [`arxiv-1808.02836v2`](arxiv-1808.02836v2/) | On minimal ideal triangulations of cusped hyperbolic 3–manifolds Introduction — Previous work of the authors studies minimal triangulations of closed 3–manifolds using a characterisation of low |
 | [`arxiv-1808.08110v1`](arxiv-1808.08110v1/) | Exceptional quantum geometry and particle physics II — We continue the study undertaken in [13] of the relevance of the exceptional Jordan algebra J8 3 of hermitian 3 × 3 octonionic matrices for the |
 | [`arxiv-1809.08419v1`](arxiv-1809.08419v1/) | GRÖBNER-SHIRSHOV BASES FOR NON-CRYSTALLOGRAPHIC COXETER GROUPS — For the noncrystallographic Coxeter groups of type H, we construct their Gr¨obner- Shirshov bases and the corresponding standard |
@@ -366,6 +369,7 @@ whose abstract did not extract get a structural brief instead.
 | [`arxiv-2201.05665v1`](arxiv-2201.05665v1/) | HAROLD WIDOM’S WORK IN RANDOM MATRIX THEORY — This is a survey of Harold Widom’s work in random matrices. |
 | [`arxiv-2202.06733v1`](arxiv-2202.06733v1/) | Received <day> <Month>, <year> — Diﬀerent ways of representing the group 푆푈(3) within a Geometric Algebra approach are explored. |
 | [`arxiv-2203.06568v4`](arxiv-2203.06568v4/) | Semideﬁnite programming bounds for binary codes from a split Terwilliger algebra — We study the upper bounds for A(n, d), the maximum size of codewords with length n and Hamming distance at least d. |
+| [`arxiv-2204.12175v1`](arxiv-2204.12175v1/) | Beyond the Standard Model with Lepton Flavor Universality Violation — In recent years, exciting (indirect) hints for physics beyond the Standard Model (SM) have been accumulated. |
 | [`arxiv-2205.01282v2`](arxiv-2205.01282v2/) | WITTEN–RESHETIKHIN–TURAEV INVARIANTS AND HOMOLOGICAL BLOCKS FOR PLUMBED HOMOLOGY SPHERES — In this paper, we prove a conjecture by Gukov–Pei–Putrov–Vafa for a wide class of plumbed 3-manifolds. |
 | [`arxiv-2205.06874v2`](arxiv-2205.06874v2/) | State sum models with defects based on spherical fusion categories — We define a Turaev-Viro-Barrett-Westbury state sum model of triangulated 3-manifolds with surface, line and point defects. |
 | [`arxiv-2205.07095v1`](arxiv-2205.07095v1/) | Virial Expansions for Correlation Functions in Canonical Ensemble — The inﬁnite set of coupled integral nonlinear equations for correlation func- tions in the case of classical canonical ensemble is |
@@ -472,6 +476,7 @@ whose abstract did not extract get a structural brief instead.
 | [`arxiv-hep-lat-9912004v2`](arxiv-hep-lat-9912004v2/) | arXiv:hep-lat/9912004v2 9 Mar 2000 — 11 sections: Front matter; Chiral Random Matrix Theory; Introduction |
 | [`arxiv-hep-ph-0003017v2`](arxiv-hep-ph-0003017v2/) | arXiv:hep-ph/0003017v2 26 Jun 2000 — Random matrix theory is a powerful way to describe universal correlations of eigenvalues of complex systems. |
 | [`arxiv-hep-ph-0103325v4`](arxiv-hep-ph-0103325v4/) | Quantum algebras in phenomenological description of particle properties — 10 sections: Front matter; Introduction; Vector mesons: $q$-deformation vs |
+| [`arxiv-hep-ph-0210230v2`](arxiv-hep-ph-0210230v2/) | The Minimal Left-Right Symmetric Model and Radiative Corrections to the Muon Decay — 5 sections: Page 1; Page 2; Page 3 |
 | [`arxiv-hep-ph-0503213v2`](arxiv-hep-ph-0503213v2/) | A topological model of composite preons — 7 sections: Front matter; Introduction; The Helon model |
 | [`arxiv-hep-ph-0601023v3`](arxiv-hep-ph-0601023v3/) | Proton Stability in Grand Unified Theories, in Strings and in Branes — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes |
 | [`arxiv-hep-ph-0702179v1`](arxiv-hep-ph-0702179v1/) | Large-NC estimate of the chiral low-energy constants ∗ — 6 sections: Front matter; Introduction; The role of Resonance Chiral Theor |
@@ -521,6 +526,7 @@ whose abstract did not extract get a structural brief instead.
 | [`arxiv-math-0104104v3`](arxiv-math-0104104v3/) | Geometry of Four-Vector Fields on Quaternionic Flag Manifolds — The purpose of this paper is to describe certain natural 4-vector ﬁelds on quaternionic ﬂag manifolds, which geometrically determine |
 | [`arxiv-math-0104249v1`](arxiv-math-0104249v1/) | Irrationality of values of the zeta-function — 2 sections: Front matter; Ob irracionalьnosti znaqeni dzeta |
 | [`arxiv-math-0105186v2`](arxiv-math-0105186v2/) | A long exact sequence for symplectic Floer cohomology — 17 sections: Front matter; Introduction; Dehn twists, and all that |
+| [`arxiv-math-0108046v3`](arxiv-math-0108046v3/) | Presenting Schur algebras — Motivated by work of R.M. Green, we obtain a pre- sentation of Schur algebras (both the classical and quantized ver- sions) in terms of generators and relations. |
 | [`arxiv-math-0108215v1`](arxiv-math-0108215v1/) | arXiv:math/0108215v1 [math.GT] 30 Aug 2001 — The M¨obius energy of a knot is an energy functional for smooth curves based on an idea of self-repelling. |
 | [`arxiv-math-0110009v3`](arxiv-math-0110009v3/) | arXiv:math/0110009v3 [math.MG] 3 Sep 2003 — We develop an analogue for sphere packing of the linear programming bounds for error-correcting codes, and use it to prove upper bounds for the density of |
 | [`arxiv-math-0111022v1`](arxiv-math-0111022v1/) | Some remarks on q-deformed multiple polylogarithms — We introduce general q-deformed multiple polylogarithms which even in the dilogarithm case diﬀer slightly from the deformation usu- ally discussed |
@@ -581,7 +587,9 @@ whose abstract did not extract get a structural brief instead.
 | [`arxiv-math-0611941v3`](arxiv-math-0611941v3/) | HECKE ALGEBRAS OF FINITE TYPE ARE CELLULAR — Let H be the one-parameter Hecke algebra associated to a ﬁnite Weyl group W, deﬁned over a ground ring in which “bad” primes for W are invertible. |
 | [`arxiv-math-0612592v1`](arxiv-math-0612592v1/) | Analytic q -diﬀerence equations — 7 sections: Front matter; Difference equations in general; First examples of q-difference equ |
 | [`arxiv-math-0701051v4`](arxiv-math-0701051v4/) | VALENTIN FÉRAY AND PIOTR ŚNIADY Tr ρλ(π) a max Tr ρλ(e) — We prove an upper bound for characters of the symmetric groups. |
+| [`arxiv-math-9201302v1`](arxiv-math-9201302v1/) | The Quantum G_2 Link Invariant — We derive an inductive, combinatorial deﬁnition of a polynomial-valued regular isotopy invariant of links and tangled graphs. |
 | [`arxiv-math-9301212v1`](arxiv-math-9301212v1/) | arXiv:math/9301212v1 [math.GT] 1 Jan 1993 — A physically natural potential energy for simple closed curves in R3 is shown to be invariant under M¨obius transformations. |
+| [`arxiv-math-9802116v1`](arxiv-math-9802116v1/) | Quasialgebra structure of the octonions — We show that the octonions are a twisting of the group algebra of Z2 × Z2 × Z2 in the quasitensor category of representations of a quasi-Hopf algebra asso |
 | [`arxiv-math-9804005v3`](arxiv-math-9804005v3/) | RINGS WITH AUSLANDER DUALIZING COMPLEXES — A ring with an Auslander dualizing complex is a generalizati on of an Auslander-Gorenstein ring. |
 | [`arxiv-math-9805023v1`](arxiv-math-9805023v1/) | q-Laguerre polynomials and big q-Bessel functions and their orthogonality relations — The q-Laguerre polynomials correspond to an indetermined moment problem. |
 | [`arxiv-math-9805116v3`](arxiv-math-9805116v3/) | Weak Hopf Algebras I: Integral Theory and C*-structure — We give an introduction to the theory of weak Hopf algebras proposed recently as a coassociative alternative of weak quasi-Hopf algebras. |
@@ -648,8 +656,11 @@ whose abstract did not extract get a structural brief instead.
 | [`download-3`](download-3/) | Algebraic index theorem — We prove the Atiyah-Singer index theorem where the algebra of pseudo- differential operators is replaced by an arbitrary deformation quantization of the algebra of functions |
 | [`drinfeld1991-quasitriangular`](drinfeld1991-quasitriangular/) | On quasitriangular quasi-Hopf algebras and a group closely connected with Gal(Q̄/Q) — 17 sections: Page 1; Page 2; Page 3 |
 | [`ds15v1-2008`](ds15v1-2008/) | Rogers-Ramanujan-Slater Type Identities — In this survey article, we present an expanded version of Lucy Slater’s famous list of identities of the Rogers-Ramanujan type, including identities of |
+| [`du-1995-algebra-colloq-2-363`](du-1995-algebra-colloq-2-363/) | A note on quantized Weyl reciprocity at roots of unity — 13 sections: Page 1; Page 2; Page 3 |
+| [`du-fu-quantum-gln-qschur-survey`](du-fu-quantum-gln-qschur-survey/) | Quantum gl_n, q-Schur algebras and their infinite/infinitesimal counterparts — We present a survey of recent developments of the Beilinson–Lusztig–MacPherson approach in the study of quantum gln |
 | [`eps-hep2019-615`](eps-hep2019-615/) | PoS(EPS-HEP2019)615 — 6 sections: Page 1; Page 2; Page 3 |
 | [`equations-aux-q-differences`](equations-aux-q-differences/) | Équations aux q-différences — 14 sections: Front matter; Introduction; Br´eviaire |
+| [`erlijman-wenzl-pjm-231-2`](erlijman-wenzl-pjm-231-2/) | Subfactors from braided C* tensor categories — 10 sections: Front matter; Bimodules; Categories |
 | [`exploring-the-geometric-buchberger-algorithm-in-integer-prog`](exploring-the-geometric-buchberger-algorithm-in-integer-prog/) | exploring-the-geometric-buchberger-algorithm-in-integer-prog — 8 sections: Page 1; Page 2; Page 3 |
 | [`fd58d8e182edda805fed0946606c5ab82f81`](fd58d8e182edda805fed0946606c5ab82f81/) | GRÖBNER-SHIRSHOV BASES FOR TEMPERLEY-LIEB ALGEBRAS — For Temperley-Lieb algebras of type B, we construct their Gröbner-Shirshov bases and the corresponding standard monomials, which give another |
 | [`ft-dpm-quaternion-kernel-ieee-tit-2014`](ft-dpm-quaternion-kernel-ieee-tit-2014/) | Quaternion Reproducing Kernel Hilbert Spaces: Existence and Uniqueness Conditions — The existence and uniqueness conditions of quater- nion reproducing kernel Hilbert spaces (QRKHS) are established |
@@ -675,8 +686,11 @@ whose abstract did not extract get a structural brief instead.
 | [`kmj-48-2-255`](kmj-48-2-255/) | A Formula for the Colored Jones Polynomial of 2-Bridge Knots — We derive a formula for the colored Jones polynomial of 2-bridge knots. |
 | [`kohno1987-aif`](kohno1987-aif/) | Monodromy representations of braid groups and Yang-Baxter equations — 6 sections: Front matter; MONODROMY REPRESENTATIONS OF BRAID; INTRODUCTION |
 | [`kondev-2021-chinese-phys-c-45-030001`](kondev-2021-chinese-phys-c-45-030001/) | The NUBASE2020 evaluation of nuclear physics properties — 119 sections: Front matter; Introduction; Isomers |
+| [`kuperberg-1996-cmp-180-109-spiders`](kuperberg-1996-cmp-180-109-spiders/) | Spiders for Rank 2 Lie Algebras — A spider is an axiomatization of the representation theory of a group, quantum group, Lie algebra, or other group or group-like object. |
+| [`kwiat-2024-jhepgc-elementary-fermions`](kwiat-2024-jhepgc-elementary-fermions/) | Elementary Fermions: Strings, Planck Constant, Preons and Hypergluons — Using real fields instead of complex ones, it is suggested here that the fer- mions are pairs of coupled strings with an |
 | [`lect-mathematical-ideas-notions-qft-2002`](lect-mathematical-ideas-notions-qft-2002/) | Mathematical ideas and notions of quantum field theory — 78 sections: Page 1; Page 2; Page 3 |
 | [`lee-vanderveen-colored-jones-polynomials-without-tails`](lee-vanderveen-colored-jones-polynomials-without-tails/) | COLORED JONES POLYNOMIALS WITHOUT TAILS — We exhibit an inﬁnite family of knots with the property that the ﬁrst coeﬃcient of the n-colored Jones polynomial grows linearly with n. |
+| [`lee-yang-1956-physrev-104-254`](lee-yang-1956-physrev-104-254/) | Question of Parity Conservation in Weak Interactions — 5 sections: Page 1; Page 2; Page 3 |
 | [`li-braid-closures`](li-braid-closures/) | Knot polynomials on braid closures — We explore properties of the Jones and Alexander polynomials of braid closures of braids of index 3. |
 | [`lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3`](lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/) | On Ohtsuki's invariants of integral homology 3-spheres — We provide some more explicit formulae to facilitate the computation of Ohtsuki's rational invariants ,k,~ of integral homology 3-spheres |
 | [`m4-24`](m4-24/) | Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3 |
@@ -709,7 +723,7 @@ whose abstract did not extract get a structural brief instead.
 | [`reshetikhin-turaev`](reshetikhin-turaev/) | Ribbon graphs and their invariants derived from quantum groups — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented. |
 | [`resur-and-mld-calc-d-sauzin-hal`](resur-and-mld-calc-d-sauzin-hal/) | Resurgence and Mould Calculus — 18 sections: Front matter; Introduction; ``Simple'' version of Resurgence T |
 | [`revmodphys97025002pdf`](revmodphys97025002pdf/) | CODATA recommended values of the fundamental physical constants: 2022* — 85 sections: CODATA recommended values of the f; Contents; I. Introduction |
-| [`rosso-1988-cmp-117-581-firstpage`](rosso-1988-cmp-117-581-firstpage/) | Rosso 1988, Finite dimensional representations of the quantum analog of the enveloping algebra of a complex simple Lie algebra (FIRST PAGE ONLY) — Let ^ be a complex |
+| [`rosso-1988-cmp-117-581`](rosso-1988-cmp-117-581/) | Finite dimensional representations of the quantum analog of the enveloping algebra of a complex simple Lie algebra — Let ^ be a complex simple Lie algebra. |
 | [`roth-lemma`](roth-lemma/) | ROTH'S LEMMA — 2 sections: Front matter; JL^..+JaL |
 | [`s0002-9947-96-01660-1`](s0002-9947-96-01660-1/) | AMERICAN MATHEMATICAL SOCIETY INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS — This paper presents an algebraic framework for constructing in- variants of closed oriented 3-manifolds by taking a state |
 | [`s00209-021-02825-4`](s00209-021-02825-4/) | A representation theoretic explanation of the Borcea–Brändén characterization — In 2009, Borcea and Brändén characterized all linear operators on multivariate polynomials which preserve the property |
@@ -732,6 +746,7 @@ whose abstract did not extract get a structural brief instead.
 | [`thurston`](thurston/) | The Geometry and Topology of Three-Manifolds — 22 sections: Introduction; GEOMETRY AND THREE-MANIFOLDS; Start with the three sphereS3, whi |
 | [`topologicalinvariance3dindex`](topologicalinvariance3dindex/) | 1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD — In this paper we will promote the 3D index of an ideal triangulation T of an oriented cusped 3-manifold M (a collection of |
 | [`traczyk1991-periodic-knots`](traczyk1991-periodic-knots/) | Periodic knots and the skein polynomial — 12 sections: Page 1; Page 2; Page 3 |
+| [`wu-1957-physrev-105-1413`](wu-1957-physrev-105-1413/) | Experimental Test of Parity Conservation in Beta Decay — 3 sections: Page 1; Page 2; Page 3 |
 | [`xi`](xi/) | Cellular algebras — This is a series of 4 lectures on cellular algebras. |
 | [`yanagihara-1980-meromorphic-solutions-difference-equations`](yanagihara-1980-meromorphic-solutions-difference-equations/) | Meromorphic Solutions of Some Difference Equations — 18 sections: Page 1; Page 2; Page 3 |
 | [`yuasa-rims-kokyuroku-2163-05`](yuasa-rims-kokyuroku-2163-05/) | Twist formulas for one-row colored A_2 webs and sl_3 tails of (2,2m)-torus links — 11 sections: Page 1; Page 2; Page 3 |

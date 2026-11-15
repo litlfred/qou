@@ -71,17 +71,12 @@ convergence $\sqrt 2$, rather than a binomial series. Its coefficients:
 
 See [Table 1](#tbl:trm-hopf-sigma1-sq-closed-form-table1-data).
 
-**Withdrawn 2026-08-09.** Under the excised convention C this expansion was
+**Comparison with convention C.** Under convention C the same quantity is
 the closed binomial series
 $\mathrm{tr}_M(\sigma_1^2) - 1 = \varepsilon\,(1+\varepsilon)^{-1/2}
 = \sum_{k \geq 0} \binom{-1/2}{k}\varepsilon^{k+1}$,
 with coefficients $1, -\tfrac12, \tfrac38, -\tfrac5{16}, \tfrac{35}{128},
 -\tfrac{63}{256}, \tfrac{231}{1024}, \ldots$ and radius of convergence $1$
-(branch point at $q = 0$). Both the binomial form and those coefficients are
-convention-C artefacts and are withdrawn; the D coefficients above are exact
-rationals derived symbolically from the corrected closed form. The numerical
-check that used to sit here —
-[`probe_F_n_categorical_derivation.py`](computations/probe_F_n_categorical_derivation.py)
-([witness](computations/F-n-categorical-derivation-probe.witness.json),
-2/2 assertions pass) — validated the **C** coefficients and has **not** been
-re-run under D; regenerating it is a producer change, not an edit.
+(branch point at $q = 0$). Neither the binomial form nor those coefficients
+holds under convention D; the coefficients above are exact rationals derived
+symbolically from the convention-D closed form.

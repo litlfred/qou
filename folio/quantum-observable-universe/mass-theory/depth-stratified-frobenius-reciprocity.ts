@@ -4,6 +4,11 @@ export default conjecture({
   authorNotes: [
     {
       kind: "note",
+      date: "2026-09-05",
+      body: "Weight-family dependence of the K_3* ranking added 2026-09-05 (bean qou-oots). Measurements: docs/audits/2026-09-05-phi-k-weight-family.md; labelling sweep: docs/audits/2026-09-05-k3-weight-family-labelling.md.",
+    },
+    {
+      kind: "note",
       date: "2026-08-08",
       body:
         "**§7c base-ring note — deliberate two-sided placement.** The " +

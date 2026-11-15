@@ -18,9 +18,8 @@ using the same partition and the same $\min/A$ structure, replacing
 $\min(Z,N)$ (number of $T=0$ pn pairs) by $n_{pp} + n_{nn}$ (number
 of $T=1$ same-flavor pairs).
 
-canonical evaluation at $q_0 = 1.1099785955541805\ldots$ (50 dps; the CODATA-2018 muon pin recorded in the witness, which now sits in `fsh-guts/deprecated/computations/`) uses
-the formal derivation
-(witness `derived-only-formula.witness.json`).
+canonical evaluation at $q_0 = 1.1099785955541805\ldots$ (50 dps; the CODATA-2018 muon pin) uses
+the formal derivation.
 $\square$
 
 **Witness:** `derived-only-formula.witness.json`.

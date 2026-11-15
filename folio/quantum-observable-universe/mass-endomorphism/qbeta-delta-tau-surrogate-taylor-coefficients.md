@@ -16,14 +16,14 @@ $$
 
 | Order $n$ | Coefficient $c_n$ | Status in Lean |
 |---|---|---|
-| 0 | $0$ | proved sorry-free (`delta_tau_M_surrogate_vanish_at_one`) |
-| 1 | $-5/6$ | proved sorry-free (`delta_tau_M_surrogate_hasDerivAt_one`) |
-| 2 | $5/6$ | proved sorry-free (`delta_tau_M_surrogate_taylor_coeff_2`) |
-| 3 | $-23/9$ | proved sorry-free (`delta_tau_M_surrogate_taylor_coeff_3`) |
-| 4 | $77/18$ | proved sorry-free (`delta_tau_M_surrogate_taylor_coeff_4`) |
-| 5 | $1349/108$ | proved sorry-free (`delta_tau_M_surrogate_taylor_coeff_5`) |
-| 6 | $-191/4$ | proved sorry-free (`delta_tau_M_surrogate_taylor_coeff_6`) |
-| 7 | $26285/162$ | proved sorry-free (`delta_tau_M_surrogate_taylor_coeff_7`) |
+| 0 | $0$ | proved (`delta_tau_M_surrogate_vanish_at_one`) |
+| 1 | $-5/6$ | proved (`delta_tau_M_surrogate_hasDerivAt_one`) |
+| 2 | $5/6$ | proved (`delta_tau_M_surrogate_taylor_coeff_2`) |
+| 3 | $-23/9$ | proved (`delta_tau_M_surrogate_taylor_coeff_3`) |
+| 4 | $77/18$ | proved (`delta_tau_M_surrogate_taylor_coeff_4`) |
+| 5 | $1349/108$ | proved (`delta_tau_M_surrogate_taylor_coeff_5`) |
+| 6 | $-191/4$ | proved (`delta_tau_M_surrogate_taylor_coeff_6`) |
+| 7 | $26285/162$ | proved (`delta_tau_M_surrogate_taylor_coeff_7`) |
 
 Every order is now formally proved, orders 2 and 3 by explicit quotient-rule
 derivative towers and orders 4 to 7 by an iterated-Leibniz recurrence on the

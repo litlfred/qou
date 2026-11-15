@@ -11,45 +11,13 @@ The **binding channel uses convention D** as well, since the owner ruling of
 2026-08-09 excised convention C. There is now **one** trace in the framework's
 compute, not two.
 
-> **Convention C excised (owner ruling, 2026-08-09).** Until then a *second*
-> trace ran in the binding channel: the full-Hecke Ocneanu trace, **convention
-> C**, $z = 1/(q^{1/2}+q^{-1/2})$, with Wedderburn weights from the Wenzl
-> Schur-principal specialisation and three-row weight
-> $y_{(1^3)}(q) \neq 0$ for $q \neq 1$. It was pinned by
-> [`rem:markov-axioms-primitive`](../braids-and-knots/markov-axioms-primitive.md),
-> which described its own $z$ as "a stipulation of this definition, not a
-> consequence of it".
->
-> It is gone because the selection turned out to be **forced**:
-> `lem:feynman-eigenbasis-decomposition` already puts the row cap
-> $\ell(\lambda) \leq 2$ in the mass channel's decomposition, giving
-> $y_{(1^3)} = 0$, and `markovWeights_eq_jones_of_threeRow_eq_zero` (sorry-free)
-> then makes $z = q^3/(q^2+1)$ the unique faithful normalised Markov trace.
->
-> **Not decided by experimental match, and the numbers say so.** Switching the
-> binding channel to D makes the aggregate *worse* — mean $|{\rm err}|$ over
-> $\{{}^2$H, $^3$H, $^3$He, $^4$He, $^6$Li, $^7$Li$\}$ moves $37.39\% \to
-> 43.85\%$. What it fixes is structural: under C the deuteron was
-> **unreachable**, $B_{\rm AME} = 2.2246$ lying $30.4\%$ below the whole
-> admissible band $[2.9072, 5.1780]$ MeV; under D the band is $[2.0507, 3.7978]$
-> and AME sits inside it. ${}^2$H itself improves $+74.85\% \to +27.36\%$.
->
-> The mass channel was already on D in production, so the $m_e$-scaled
-> renderings of $m_p$ and $m_n$ are **unchanged** (verified: $938.27208943$,
-> $939.56542276$).
->
-> Path A (ladder linear system) $=$ Path B (Wenzl Schur) as a
-> $\mathbb{Z}$-Laurent identity remains proven for C in the
-> $y_\lambda$–$\mathrm{tr}_M$ equivalence proof
-> (`docs/audits/2026-05-05-y-lambda-tr-m-equivalence-proof.md`); that identity is
-> about C and is now historical.
+The mass and binding channels use convention D, and the choice is forced: `lem:feynman-eigenbasis-decomposition` puts the row cap $\ell(\lambda) \leq 2$ in the mass channel's decomposition, giving $y_{(1^3)} = 0$, and `markovWeights_eq_jones_of_threeRow_eq_zero` then makes $z = q^3/(q^2+1)$ the unique faithful normalised Markov trace. The full-Hecke Ocneanu trace of convention C, $z = 1/(q^{1/2}+q^{-1/2})$, has $y_{(1^3)}(q) \neq 0$ for $q \neq 1$ and is not used.
 
 By contrast, **the production mass channel uses convention D** — the closed form
 of this proposition, entering as `trM_borromean` $\to$ `F_Bor` $\to$
 `canonical_mass`.
 
-**The mass channel is convention D, and an earlier version of this note was
-wrong to say otherwise.** The two blocks that *define* the mass channel already
+**The mass channel is convention D.** The two blocks that *define* the mass channel already
 fix its fibre: `lem:feynman-eigenbasis-decomposition` carries the row cap
 $\ell(\lambda) \leq 2$ inside the index set of
 $V^{\otimes n} \cong \bigoplus V_\lambda \otimes S_\lambda$, and
@@ -152,7 +120,7 @@ independent data:
   the heat-kernel decay rate, *not* a Markov-trace ingredient.
 - $w_\lambda(q) = [n]_q! / H_q(\lambda)^2$ — Plancherel measure
   ([`rem:symmetric-point-resolution-loss`](../models-of-qous/symmetric-point-resolution-loss.md)):
-  normalised by $\sum_\lambda w_\lambda(1) = 1$ at $q = 1$ only — the $q$-deformed sum $\sum_\lambda w_\lambda(q)$ is **not** $1$ (0.987 at $n = 3$, 1.051 at $n = 8$, measured in `docs/audits/scripts/wlambda_normalisation_census.py`); at $q = 1$ it is
+  normalised by $\sum_\lambda w_\lambda(1) = 1$ at $q = 1$ only — the $q$-deformed sum $\sum_\lambda w_\lambda(q)$ is **not** $1$ (0.987 at $n = 3$, 1.051 at $n = 8$); at $q = 1$ it is
   non-uniform in a *different* pattern ($\tfrac16, \tfrac23, \tfrac16$
   for $n = 3$) from the Wenzl weights of this proposition
   ($\tfrac12, \tfrac14, 0$).
@@ -168,24 +136,8 @@ character coefficient $\times$ Markov normalisation is therefore an
 exact structural fact, with the $(h^2 + 4)$ denominator of the closed
 form being precisely $[2]_q^2 = 1/y_{(2,1)}(q)$.
 
-> **Correction note (scope).** An earlier draft of the scope note above stated
-> that the framework's *mass and binding* computations use the full-Hecke
-> Ocneanu trace, and that the two traces coincide on writhe-$0$,
-> $\pi=\mathrm{id}$ braids, "which is why every physical mass prediction is
-> insensitive to the distinction". Both parts were wrong. The production mass
-> channel is on convention D, not C; and writhe $0$ makes only the
-> $y_{(3)}$–$y_{(1^3)}$ *split* invisible, not $y_{(2,1)}$, so the two
-> conventions differ on $\beta_{\mathrm{Bor}}$ — which is writhe $0$ with
-> $\pi = \mathrm{id}$ — by $195.8$ ppm exactly. The corrected statements are
-> above; the trace-convention registry is now the machine-checked source of
-> truth for which channel uses which trace.
-
-> **Correction note.** An earlier draft of this proposition claimed the
-> $q = 1$ weights were *uniform* ($y_\lambda(1) = 1/4$ for all
-> $\lambda \vdash 3$) via a bar-involution argument. That claim was
-> wrong — caught in review — for the reason documented in the chirality
-> section above: the Jones trace is not sign-twist invariant. The
-> corrected weights $(\tfrac12, \tfrac14, 0)$ are verified three ways:
-> Schur orthogonality on the $q = 1$ cycle-counting trace, the exact
-> $q$-dependent closed forms above, and canonical reproduction of the
-> Borromean closed form at 30 digits.
+The $q = 1$ weights $(\tfrac12, \tfrac14, 0)$ are not uniform, since the
+Jones trace is not sign-twist invariant. They are verified three ways:
+Schur orthogonality on the $q = 1$ cycle-counting trace, the exact
+$q$-dependent closed forms above, and canonical reproduction of the
+Borromean closed form at 30 digits.

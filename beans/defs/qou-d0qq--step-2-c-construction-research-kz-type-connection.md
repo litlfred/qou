@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T08:13:53Z
-updated_at: 2026-10-11T06:39:37Z
+updated_at: 2026-11-15T17:10:00Z
 parent: qou-wp3h
 ---
 
@@ -72,3 +72,7 @@ The discrete mass identity tr_M(β) = (1+q²)^{-n}·Tr(K^{⊗n}·Hol(β)) is pro
 Kohno 1987 Remark 1.3.14 (library/kohno1987-aif, p.150): Theorem 1.2.8 holds at any complex coupling λ for which the R-side images φ(γ_k), γ_k=(σ1…σ_{k−1})^k, are diagonalizable, which holds when φ is completely reducible. At real q0>1 (not a root of unity) the U_q(sl2) tensor powers are semisimple and γ_k acts by ribbon scalars, so the theorem holds at the imaginary coupling λ0 = ln q0/(iπ) ≈ −0.0332i. The weight-preserving intertwiner argument (PR #7632) needs only q not a root of unity, so the weighted trace Tr(K^{⊗n}·) transports there too. Numerical check computations/kz_real_q0_pure_braid_monodromy_probe.py (mpmath 40 dps, n=3, pure braids incl. products): per-weight-sector traces agree to 1e-15, residual ∝ h^4, wrong orientation q→1/q fails by 0.70. Branch claude/kz-real-q0-2026-10-11. Cited, not proved in Lean. STILL OPEN (do not close): whether the framework's substrate connection IS this KZ connection (KZPullbackGenerators), and n>3 / full braid group only by citation.
 
 2026-10-11: (a) Framework-connection check: as the corpus stands its connection is not the KZ connection. QFlatConnection is := trivial in its content sibling, and the library structure's flatness is an optional Prop-valued field (not an obligation) beside a tautological total_curvature equation. The Hecke 'curvature' F(σ)=σ²−(q−q⁻¹)σ−1 is a hypothesis class (QOU.Mass.HeckeMonodromy), stipulated, not computed from a connection form. A⁰ = X dz is rank 1, has zero residues and trivial holonomy. (b) Added def:kz-connection-sl2 (mass-endomorphism/kz-connection-sl2.lean), whose flatness is the infinitesimal pure braid relations, proved sorry-free, with a non-flat example. (c) The EMVZ route to sl2 at any ℏ∉ℚ is in docs/audits/2026-10-11-drinfeld-kohno-sl2-via-emvz.md (our adaptation, unrefereed; 3 checks owed). The open question here is unchanged: whether the substrate connection IS this one.
+
+## 2026-11-15 — re-scoped by the γγ rule
+
+The owner ruled that the γγ selection rule also covers the nuclear bond letters. Any number in this bean computed on the single-crossing interface letters of `atom_braid_word_3A` (`d_k`, `μ_e`, the chain law `∏(z_D + d_k)`, the `b₃` magnitudes −1.2277 / −0.7973 MeV, or a sign map on that word) is now a record of a superseded word, not a current result. Lean results stated for generic bond weights are unaffected. The redo waits on a γγ-selected word per nucleus (PR #7876). Record: `docs/audits/2026-11-15-gg-rule-rescopes-old-letter-binding.md`. The bean stays open.

@@ -12,4 +12,4 @@ The chain from the algebra to Bring's surface runs:
 
 **What the chain does establish is step 1, and independently of $\chi$.** The QOU volume axiom $\Lambda^2 V \cong \mathbf{1}$, together with the dagger condition and $\det = 1$, forces $\dim V = 2$ and $G \subseteq \mathrm{SU}(2)$ — with no Euler characteristic, genus, or reference to Bring's surface anywhere in the argument. So step 1 is not a place where $\chi = -6$ re-enters, and the chain is not circular *there*. It is instead incomplete at step 3.
 
-**Consequently the closing claim is withdrawn.** This block previously opened *"the full argument is non-circular"* and closed *"Bring's surface is a consequence of the algebra, not an input."* The second does not follow: with step 3 unavailable, nothing in steps 1 and 2 selects genus $4$, and Bring's surface enters through the genus rather than being produced by it.
+**Consequently Bring's surface is an input to the chain, not a consequence of it.** With step 3 unavailable, nothing in steps 1 and 2 selects genus $4$, and Bring's surface enters through the genus rather than being produced by it.

@@ -16,7 +16,7 @@ for an isotope knot $K$, consumed by Step 9b
 
 ### Status: value proved, magnitude external
 
-**The per-partition value is PROVED, sorry-free, general-$n$:**
+**The per-partition value is PROVED, general-$n$:**
 $\Delta_\lambda = (-1)^{n(\lambda)}\dim V_\lambda$
 (`QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional`;
 value + chirality sign, no $n \le 5$ restriction). The sign leg is the
@@ -35,8 +35,8 @@ a category distinction the old framing conflated:
   extensive one.
   The pairwise log-det cumulant is likewise **proved-capped at $A = 4$**:
   $\rho_4 \le C(4,2) = 6$, while strong targets need $\rho_4 \approx 13 > 6$
-  ([`QOU.MassTheory.exchangeDet_pow_two_le_four`](../lean/QOU/MassTheory/BindingSaturationCapA4.lean),
-  sorry-free), so the missing term is **super-pairwise** (irreducibly
+  ([`QOU.MassTheory.exchangeDet_pow_two_le_four`](../lean/QOU/MassTheory/BindingSaturationCapA4.lean)),
+  so the missing term is **super-pairwise** (irreducibly
   $\ge 3$-body). The cap is stated for general $A$ as $\rho_A \le C(A,2)$ in
   that file's header, but what is *proved* there is the single determinant
   inequality $(1-m^2)^6 \le (1+3m)(1-m)^3$ on $[0,1]$, which is the $A = 4$

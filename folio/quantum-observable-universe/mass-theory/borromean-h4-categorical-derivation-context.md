@@ -15,7 +15,7 @@ framework after the initial derivation:
   from direct substitution on the closed-form trace.
   The categorical projector onto the (2,1) channel is the
   $\mathbf{e}_-$ minus-eigenspace idempotent of the Hecke quadratic
-  relation $q\sigma^2 = (q^2 − 1)\sigma + q$, formalised sorry-free
+  relation $q\sigma^2 = (q^2 − 1)\sigma + q$, formalised
   in `QOU.Hecke.SpectralProjector` (`eminus_idem`,
   `eplus_eminus_orthogonal`, `eplus_add_eminus = 1`).
   Closed-form trace computation on $V^{\otimes 3}$ can be done via

@@ -18,7 +18,7 @@ downstream.
   `pole_nonzero : 1 - h_q · q^n ≠ 0` records the **pole
   non-vanishing** — the substantive output any concrete contour route
   must establish.
-- `theorem bring_residue_equation` — sorry-free: given the class, the
+- `theorem bring_residue_equation`: given the class, the
   canonical resolvent $F_n(q) = (1 - h_q \cdot q^n)^{-1}$ satisfies the
   **resolvent equation** $(1 - h_q \cdot q^n) \cdot F_n(q) = 1$ (proof:
   `mul_inv_cancel₀ h.pole_nonzero`).
@@ -70,5 +70,5 @@ in all three cases.
 
 This proposition is **proved conditional on
 `BringResidueAtOrder` class instances at the relevant pole orders**.
-The four specialised theorems above are sorry-free conditional on
+The four specialised theorems above are conditional on
 the class.  Closing the class is the Mathlib-import follow-up.

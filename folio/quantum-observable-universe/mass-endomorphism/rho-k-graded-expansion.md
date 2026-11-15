@@ -95,7 +95,7 @@ Combined with the Hecke branching trace decomposition (refined Sub-lemma 2.1, op
 
 ## Production wiring
 
-The graded expansion is realised end-to-end by `computations/rho_k_graded_atomic_mass.py` (witness `rho-k-graded-atomic-mass.witness.json`). The leading-order constituents $Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e$ are drawn from the canonical muon-anchored mass facade (`computations/canonical_mass.py`). No CODATA nucleon masses enter. The single-generator correction $\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|$ is evaluated at $50$ decimal places of precision, yielding $0.19\%$ mean error and $0.30\%$ maximum error across the published $Z = 1..10$ table. The pair-generator tier is reported as the open residual only. It is never added to the mass, as its naive log-additive form degrades accuracy (see Table 1). Per-generator volumes carry the known $H_3$-weight convention of the published table. The dynamic $H_{3A}$ re-weighting remains a separate open correction.
+The graded expansion has been computed end to end. The leading-order constituents $Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e$ are the muon-anchored nucleon and electron masses. No CODATA nucleon masses enter. The single-generator correction $\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|$ is evaluated at $50$ decimal places of precision, yielding $0.19\%$ mean error and $0.30\%$ maximum error across the published $Z = 1..10$ table. The pair-generator tier is reported as the open residual only. It is never added to the mass, as its naive log-additive form degrades accuracy (see Table 1). Per-generator volumes carry the known $H_3$-weight convention of the published table. The dynamic $H_{3A}$ re-weighting remains a separate open correction.
 
 ## References
 
