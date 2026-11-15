@@ -1,13 +1,13 @@
 ---
 # qou-3bq6
 title: 'GAP: d_from_scratch emits 3 raw float64 fields — latent, newly visible now the producer can run'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T14:43:39Z
-updated_at: 2026-10-04T15:19:53Z
+updated_at: 2026-11-15T09:00:00Z
 parent: qou-9nnz
 ---
 
@@ -36,3 +36,11 @@ reproduce until now.
 
 Found while cost-checking the 11 `qou-tekx` "reads a declared pin, merely
 stale" producers.
+
+## 2026-11-15 — closed
+
+The three named fields were moved to `_precision.fmt` in #7826 (merged `99781d7aa8`). The remaining
+float64 inputs, `tr_M_f64` (free traces from `light_isotope_sweep.tr_M_at_q0`), are removed
+entirely by the one-functional fix (tracker #7735, owner "1 2 fix"): every trace in Term 1 is now
+read at 50 dps from `atomic-tr-m-mpfr-50dps-proton` / `binding-canonical`. The producer no longer
+emits any float64-derived value.
