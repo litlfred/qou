@@ -9,7 +9,7 @@ tags:
     - chirality
 parent: qou-qs0e
 created_at: 2026-11-15T09:00:00Z
-updated_at: 2026-11-15T17:20:00Z
+updated_at: 2026-11-15T17:45:00Z
 ---
 
 Owner 2026-11-15: "work Helicity bean. Derive whether flavour and chirality share the
@@ -51,3 +51,12 @@ coupling still needs a SEPARATE source (scope (a) for V-A) — follow-up bean qo
 Question answered: refuted, scope (b), sorry-free (`HelicityCommonSource.lean`). Owner
 decisions D-H1 = A and D-H2 = no are recorded above. The open follow-up (source of the
 left-only weak coupling) lives in qou-hlx7, which stays open.
+
+## 2026-11-15 pair-level restatement of D-H2 (owner tap, SM-map thread)
+
+Option "Restate: chirality is the pair bit". D-H2 = no still holds for single letters
+(`flip_ne_swap`). On a γγ pair, iota(V) = V-bar: (−σᵢ⁻¹)(−σᵢ₊₁) = σᵢ⁻¹σᵢ₊₁. So the V/V̄
+orientation bit is the chirality mirror and flavour must come from elsewhere (qou-wkcd).
+Lean: `QOU.QuarkState.Helicity.iota_vertex`, `iota_vertex_pow` in
+`QOU/QuarkState/ChiralityPairBit.lean` (sorry-free, lean-direct exit 0), branch
+claude/chirality-pair-bit-2026-11-15. Audit §7 updated.
