@@ -54,7 +54,7 @@ $$
 $$
 demonstrates that Form A and Form B represent a single observable in two bases: the normal form counit basis (where $\Delta(\mathrm{net})$ is discrete) and the transfer-matrix basis (where $\ln V_{\mathrm{pp}}/V_{\mathrm{nn}}$ is the natural eigenfunction). The $1/z$ factor in Form B is the required Markov–Jones normalization mapping the eigenfunction space onto MeV.
 
-The exponential-remainder bound dampens the eigenfunction (conj:archimedean-remainder-exponential-decay). Finite-depth truncations recover the exact $\mathfrak{Q}_\beta$ exponentially fast in depth $N$. This rapid convergence explains why the single-wrap symbolic form (Form A at $N = 0$) achieves $+0.168\%$ accuracy.
+The exponential-remainder bound dampens the eigenfunction (conj:archimedean-remainder-exponential-decay). Finite-depth truncations recover the exact $\mathfrak{Q}_\beta$ exponentially fast in depth $N$. Under convention C this was read as the reason the single-wrap symbolic form (Form A at $N = 0$) achieves $+0.168\%$ accuracy. Form A is now retired as the base; the ruled convention-D base (the Markov trace at $z_D$) gives $0.4447$ MeV ($-43.16\%$), and its convention-D ladder is not yet derived.
 
 ## Provenance
 

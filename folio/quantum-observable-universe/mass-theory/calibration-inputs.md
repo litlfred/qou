@@ -12,9 +12,12 @@ The QOU framework requires exactly three calibration inputs from experiment: the
 > $\beta$-decay Q-value $\mathfrak{Q}_\beta(n) = \hbar/P_{\mathrm{skew}}^{\beta}
 > = 0.78233341 \pm 0.00000061$ MeV is the **proxy for CAL-2**. The
 > hadronic energy scale $\mathfrak{E}_0$ is framework-derived from
-> $(m_e, q_0)$; $\mathfrak{Q}_\beta$ reproduced from $q_0$ then validates
-> it to $0.17\%$ (subject to the net-ansatz caveat below). It is a
-> cross-check, not a fourth calibration.
+> $(m_e, q_0)$; $\mathfrak{Q}_\beta$ computed from $q_0$ by the ruled
+> convention-D base (the Markov trace at $z_D$) gives $0.4447$ MeV, a
+> $-43.16\%$ miss, pending the convention-D $c_k$ ladder. The retired
+> Form A gave $0.17\%$ (subject to the net-ansatz caveat below) and is kept
+> only as a historical cross-check. Either way it is a cross-check, not a
+> fourth calibration.
 
 The first input is a **dimensionless ratio** — it fixes $q_0$
 via the **leading-order substrate-truncation** of the canonical
