@@ -1,6 +1,7 @@
 import QOU.Knot.WhiteheadInnerGaussianProof
 import QOU.Knot.WhiteheadLemma4Reduction
 import QOU.Knot.WhiteheadMajorantRate
+import QOU.Knot.WhiteheadLemma1RootOfUnity
 
 /-!
 # The Whitehead-link volume conjecture, unconditional
@@ -32,5 +33,18 @@ theorem whiteheadLink_volume_conjecture :
       (fun N : ℕ => (2 * Real.pi / N) * Real.log ‖whiteheadLinkKashaev N‖)
       Filter.atTop (nhds (QOU.Archimedean.Vol_Borromean / 2)) :=
   whiteheadLink_volume_of_lemma4
+
+/-- The same limit stated on vdV's generic-`t` tangle formula, evaluated at
+    `t = e^{2πi/N}`.  The root-of-unity evaluation is derived, not cited
+    (`vdvWhiteheadLinkJones_at_kashaev_point`); what remains cited is the
+    tangle formula itself (Zheng's tangle functions and multiplicativity). -/
+theorem whiteheadLink_volume_conjecture_tangle :
+    Filter.Tendsto
+      (fun N : ℕ => (2 * Real.pi / N) *
+        Real.log ‖vdvWhiteheadLinkJones (Complex.exp (((Real.pi / N : ℝ) : ℂ) * Complex.I)) N‖)
+      Filter.atTop (nhds (QOU.Archimedean.Vol_Borromean / 2)) := by
+  refine whiteheadLink_volume_conjecture.congr' ?_
+  filter_upwards [Filter.eventually_ge_atTop 1] with N hN
+  rw [vdvWhiteheadLinkJones_at_kashaev_point hN]
 
 end QOU.Knot.FigureEightVolume
