@@ -35,5 +35,25 @@ export default conjecture({
         "content sharpened: the action on the framework's own three-strand " +
         "Hecke state space, compatible with its braid structure.",
     },
+    {
+      kind: "status",
+      date: "2026-11-15",
+      body:
+        "**Calibration: the class as written is a dimension count (bean " +
+        "qou-cb3r).** `ColourStabilizerAction g V` asks only for an " +
+        "injective linear map g -> End V. The corpus proves that this needs " +
+        "finrank g <= (finrank V)^2 (`not_colourStabilizerAction_of_dim_sq_lt`), " +
+        "and `ColourBridgeObstructions.colourStabilizerAction_of_finrank_le` " +
+        "proves the converse. So the class is equivalent to that inequality, " +
+        "and an instance on the tower triplet Q^3 exists for any 8-dimensional " +
+        "colour algebra with no octonion or Hecke input. No instance of this " +
+        "class is evidence for the bridge. The bridge question needs a " +
+        "Lie-hom, complex-structure and crossing-compatible strengthening; " +
+        "by the audit (docs/audits/2026-11-15-colour-stabilizer-bridge.md, " +
+        "sections 0, 8 and 8.1) that strengthening is satisfiable only after " +
+        "complexification, with one 3 vs 3bar bit, and only at q = 1. " +
+        "No q-deformed G2 braiding restricts to the tower crossing on the " +
+        "colour triplet at generic q.",
+    },
   ],
 });
