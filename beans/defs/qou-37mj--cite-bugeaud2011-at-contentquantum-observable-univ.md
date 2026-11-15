@@ -1,6 +1,6 @@
 ---
 # qou-37mj
-title: Cite [bugeaud2011] at content/quantum-observable-universe/lean/QOU/MathlibExt/RSZIsoformalInterfa…
+title: Cite [bugeaud2011] at folio/quantum-observable-universe/lean/QOU/MathlibExt/RSZIsoformalInterfa…
 status: todo
 type: task
 priority: normal

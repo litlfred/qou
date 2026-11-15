@@ -55,7 +55,7 @@ paths. That is exactly the difference from Feynman, and it is the semiring.
       lem:feynman-markov-identification  "Markov-weighted eigenbasis sum equals
                                     the Markov trace"
       prop:feynman-categorical-trace, prop:feynman-classical-limit
-      content/quantum-observable-universe/braids-and-knots/feynman-eigenbasis.md
+      folio/quantum-observable-universe/braids-and-knots/feynman-eigenbasis.md
     i.e. the corpus HAS ALREADY replaced Int Dphi e^{iS/hbar} with the Markov
     trace on the knot eigenbasis.
   * The algebra and trace: Hecke H_n(q) + Markov.

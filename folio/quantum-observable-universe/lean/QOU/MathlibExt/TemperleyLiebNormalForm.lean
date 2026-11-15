@@ -55,14 +55,46 @@ used. Measured, not assumed — it is how the first draft failed.
 That second point is the reason to trust the general definition: at the only two
 places where a proved basis exists, the general construction lands on it.
 
-## 🛑 What is NOT proved
+## 🛑 These objects are PUBLISHED — corrected after the fact
 
-**The general theorem is not here, and nothing in this file stands in for it.**
+Both the index type and its count are in the literature, and this file was
+written without knowing it. `NormalIdx m` is *exactly* the set of
+Gröbner–Shirshov standard monomials of `T(A_m)` in Kim–Lee, *Gröbner-Shirshov
+bases for Temperley-Lieb algebras*, Palestine J. Math. **7** (2018) 11–17,
+Prop. 3.1 — same `E_{i,j}` blocks, same `i₁ < ⋯ < i_p`, `j₁ < ⋯ < j_p`,
+`j_r ≤ i_r` — quoted there from Kang–Lee–Lee–Oh, J. Algebra **252** (2002)
+258–292, Prop. 6.2, where `|MT(A_{n-1})| = C_n` is the stated theorem. That
+PDF is held at `library/fd58d8e182edda805fed0946606c5ab82f81/` and registered
+as `[kimlee2018]`, read 2026-08-09, months before this file.
+
+**What that changes is the epistemic status, not the workload.** Everything
+listed below is still absent from this repository and still has to be written;
+but it is *unformalised published mathematics*, not an open problem, and it
+must not be described as the latter. In particular the closure lemma is the
+four-rule reduction
+
+    E_i E_i → δE_i,   E_i E_j → E_j E_i (i > j+1),
+    E_{i,j} E_i → E_{i-2,j} E_i (i > j),   E_j E_{i,j} → E_j E_{i,j+2} (i > j)
+
+which `computations/tl_gs_reduction_probe.py` checks against this folio's own
+planar-diagram ground truth: 3456 products reproduced with zero mismatches,
+closure on 19,413 monomial pairs, confluence under 9 reduction orders.
+
+**The primary is not held** (bean `qou-qspu`); Kim–Lee is a type-B paper
+quoting it. So cite Kim–Lee §3 as the accessible statement and Kang–Lee–Lee–Oh
+as the source, and note that this folio has verified the rules rather than
+read the proof of them.
+
+## 🛑 What is NOT proved HERE
+
+**No general theorem is in this file, and nothing in it stands in for one.**
 
 * `Fintype.card (NormalIdx m) = catalan (m+1)` is checked at `m ≤ 6` by
-  `decide` — it is **not** proved for general `m`.
+  `decide` — it is **not** proved for general `m`. It *is* Kang–Lee–Lee–Oh
+  Prop. 6.2 (above), so what is missing is a Lean proof of a known count.
 
-  **The route is identified, and it is not "a bijection to Dyck paths".** A pair
+  **A self-contained route is identified, and it is not "a bijection to Dyck
+  paths".** A pair
   `(I, J)` is exactly a word of length `m` over four letters — `I`-only,
   `J`-only, *both*, *neither* — and the domination condition says every prefix
   has `#(I-only) ≤ #(J-only)`, with equality overall. Those are the **bicoloured
@@ -93,15 +125,19 @@ places where a proved basis exists, the general construction lands on it.
   `Matrix.ext_iff_trace_mul_right` correction, where the lemma existed under the
   shape it was used for rather than the name it was known by.
 * **`elt` is not proved to span `TL_{m+1}(δ)` for general `m`**, and that is the
-  real content of `dim TL_n = catalan n`. It needs the closure lemma, on the
-  `(I, J)` index and not on word length. `span_range_elt_two` is the `m = 2`
+  real content of `dim TL_n = catalan n`. It needs the closure lemma — which is
+  the published four-rule reduction above, so the work is formalising a stated
+  rewriting system, not finding one — on the `(I, J)` index and not on word
+  length. `span_range_elt_two` is the `m = 2`
   instance only, and it is proved by *citing the existing `TL₃` result*, not by
   any general argument.
 * `elt` is not proved injective at general `m` either.
 
-No class, axiom or `sorry` stands in for any of these. They are open.
+No class, axiom or `sorry` stands in for any of these. They are open **in this
+repository**; per the correction above, they are not open in the literature.
 
 -- Ref: [jones1985] https://doi.org/10.2307/1971403
+-- Ref: [kimlee2018] Palestine J. Math. 7 (2018), Special Issue I, 11-17, Prop. 3.1
 -/
 
 namespace QOU.MathlibExt.TemperleyLiebNormalForm

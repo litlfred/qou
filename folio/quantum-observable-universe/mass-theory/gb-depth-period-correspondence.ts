@@ -34,4 +34,22 @@ export default conjecture({
     "open-problem",
     "keystone",
   ],
+  authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-10-13",
+      body:
+        "**The object called $\\mathcal{H}_q$ here is not the Frobenius–Hopf " +
+        "substrate.** Grouplikes ($\\Delta g = g \\otimes g$, " +
+        "$\\varepsilon(g) = 1$) need a bialgebra. The substrate's $\\Delta$ is the " +
+        "Frobenius comultiplication, and the corpus excludes both unit-side " +
+        "bimonoid axioms for a non-trivial substrate " +
+        "(`FrobeniusBialgebraCollapse.not_one_comul_of_nontrivial`) and a " +
+        "multiplicative counit outright " +
+        "(`MultiplicativeCounitCollapse.eq_counit_smul_one`, bean `qou-aj49`). " +
+        "The conjecture needs a Hopf algebra with a **different** comultiplication; " +
+        "which one is not fixed here. The link to `def:frobenius-hopf-substrate` " +
+        "is kept as provenance only.",
+    },
+  ],
 });

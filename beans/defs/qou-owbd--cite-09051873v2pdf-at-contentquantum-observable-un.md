@@ -1,6 +1,6 @@
 ---
 # qou-owbd
-title: Cite 0905.1873v2.pdf at content/quantum-observable-universe/lean/QOU/MassTheory/TjonSimplexForm.lean
+title: Cite 0905.1873v2.pdf at folio/quantum-observable-universe/lean/QOU/MassTheory/TjonSimplexForm.lean
 status: todo
 type: task
 priority: normal

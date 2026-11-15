@@ -259,7 +259,7 @@ been the only way to close them.
 
 ### Side finding worth its own bean
 
-`bun run scripts/run-validate.ts content/quantum-observable-universe` prints:
+`bun run scripts/run-validate.ts folio/quantum-observable-universe` prints:
 
     ℹ [(bibliography)]: no reference registry configured — cites-resolve did
       not run, so cites[] entries were NOT validated against references

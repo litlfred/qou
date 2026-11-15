@@ -1,13 +1,13 @@
 ---
 # qou-krvm
 title: 'GAP: discharge optima_coincide''s hypotheses for the actual m004/L6a4 polytopes'
-status: in-progress
+status: todo
 type: feature
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-07T17:10:13Z
-updated_at: 2026-10-04T15:10:46Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-r9ih
 ---
 
@@ -151,3 +151,7 @@ now the ONLY thing between this bean and closure.
 Also still true, and stated in both files: what is proved is that the regular
 point is AN optimum / THE symmetric point, not that the LP optimum is unique.
 The min-angle objective is a min of linear forms — concave, not strictly.
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

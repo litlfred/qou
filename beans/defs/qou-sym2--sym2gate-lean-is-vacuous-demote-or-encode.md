@@ -13,7 +13,7 @@ parent: qou-6qbv
 
 ## The defect
 
-`content/quantum-observable-universe/lean/QOU/Eightfold/Sym2Gate.lean` carries
+`folio/quantum-observable-universe/lean/QOU/Eightfold/Sym2Gate.lean` carries
 three declarations whose conclusions are arithmetic tautologies:
 
     theorem sym2_dim_3 : 3 * (3 + 1) / 2 = 6 := by norm_num

@@ -25,7 +25,7 @@ parent: qou-n4nr
 That is proved **on paper, citing a classical theorem**. It is *not* formalizable,
 and this bean records exactly how far from formalizable it is — **measured, not
 asserted**, against Mathlib rev `f897ebcf72cd16f89ab4577d0c826cd14afaafc7`
-(the rev `content/quantum-observable-universe/lean/lakefile.toml` pins).
+(the rev `folio/quantum-observable-universe/lean/lakefile.toml` pins).
 
 ## The survey — 6,996 Mathlib `.lean` files
 

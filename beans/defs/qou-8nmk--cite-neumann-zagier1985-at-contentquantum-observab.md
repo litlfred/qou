@@ -1,6 +1,6 @@
 ---
 # qou-8nmk
-title: Cite [neumann-zagier1985] at content/quantum-observable-universe/lean/QOU/Knot/NeumannZagierParit…
+title: Cite [neumann-zagier1985] at folio/quantum-observable-universe/lean/QOU/Knot/NeumannZagierParit…
 status: todo
 type: task
 priority: normal

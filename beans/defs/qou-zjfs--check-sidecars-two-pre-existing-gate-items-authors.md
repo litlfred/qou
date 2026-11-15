@@ -174,12 +174,12 @@ inequality branch, which regenerates `authors-note.md` via the sanctioned
 does not work" claim and was about to file it as new.** The false-positive analysis above
 is right and I am not disputing it. What follows is a case it does **not** cover.
 
-**Measured.** `content/quantum-observable-universe/introduction/` holds three blocks —
+**Measured.** `folio/quantum-observable-universe/introduction/` holds three blocks —
 `intro`, `chapter-overview`, `authors-note`, all three listed in `introduction.ts`'s
 `sections[].blocks[]`. A full dry-run enumerates **one**:
 
     bun run folio-assistant/content/pipeline/qa-sweep.ts \
-        content/quantum-observable-universe/introduction --dry-run
+        folio/quantum-observable-universe/introduction --dry-run
     → criteria: 96, blocks: 1
 
 96 criteria, so this is **not** a criterion-applicability filter — it is enumeration.
@@ -217,7 +217,7 @@ weakens the first candidate; do not assume it before measuring.
 
 ## 2026-08-30 (later) — the DIRECTORY form works, and its blast radius is 57 sidecars
 
-Measured on `content/quantum-observable-universe/observations/` while fixing one block
+Measured on `folio/quantum-observable-universe/observations/` while fixing one block
 (#6280). Completes the picture from the entry above, which established that neither
 documented invocation refreshes `authors-note`.
 

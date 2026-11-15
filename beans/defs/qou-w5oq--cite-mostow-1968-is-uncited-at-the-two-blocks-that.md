@@ -24,10 +24,10 @@ and neither is among them). So the ledger points at files that are gone.
 
 **The two load-bearing, uncited sites.**
 
-1. `content/quantum-observable-universe/brings-surface/approach-to-exceptional-divisor.md:11`
+1. `folio/quantum-observable-universe/brings-surface/approach-to-exceptional-divisor.md:11`
    — *"Mostow rigidity (geometric confinement) makes the resulting topology—and
    hence the mass—discrete."* Its `.ts` has **no `cites` field at all**.
-2. `content/quantum-observable-universe/information-theory/swampland-island-of-consistency.md:11`
+2. `folio/quantum-observable-universe/information-theory/swampland-island-of-consistency.md:11`
    — *"By Mostow rigidity, a finite-volume hyperbolic structure of dimension at
    least three admits no continuous deformation. Therefore, the topological data
    and the masses derived from it are discrete."* Its `.ts` cites

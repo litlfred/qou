@@ -17,7 +17,7 @@ Follow-up to PR #4492 (branch `claude/fw-eq14-recursion-brick-2026-08-01`),
 which formalized Fantini–Wheeler eq. (14) (arXiv:2410.20973) as the
 hypothesis class `QOU.QBeta.StateIntegral.Recursion` and proved the
 one-step lattice reductions sorry-free in
-`content/quantum-observable-universe/lean/QOU/QBeta/StateIntegralRecursionLattice.lean`.
+`folio/quantum-observable-universe/lean/QOU/QBeta/StateIntegralRecursionLattice.lean`.
 
 ## The open target
 

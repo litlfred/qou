@@ -510,7 +510,7 @@ Probe: computations/probes/one_loop_c_sigma_percusp_dissolution_probe.py
 
 ## 2026-08-08 (ninth pass) — the algebra is now Lean, sorry-free.
 
-`content/quantum-observable-universe/lean/QOU/OneLoopEdgeLattice.lean`.
+`folio/quantum-observable-universe/lean/QOU/OneLoopEdgeLattice.lean`.
 Nine theorems, `#print axioms` = [propext, Classical.choice, Quot.sound] on every
 one, zero sorries, wired into QOU.lean.
 

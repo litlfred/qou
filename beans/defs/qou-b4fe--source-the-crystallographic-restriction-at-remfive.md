@@ -11,7 +11,7 @@ updated_at: 2026-10-04T15:26:00Z
 parent: qou-1qhv
 ---
 
-`content/quantum-observable-universe/brings-surface/fivefold-crystallographic-obstruction.ts`
+`folio/quantum-observable-universe/brings-surface/fivefold-crystallographic-obstruction.ts`
 cites exactly one work, `shechtman1984` -- the experimental discovery paper --
 while the remark states the crystallographic restriction (rotational order k in
 {1,2,3,4,6} for n = 2,3) and links 5-fold symmetry to aperiodicity. That is an

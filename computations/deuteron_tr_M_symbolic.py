@@ -5,7 +5,7 @@ internal A=2 (deuteron) braid in the Iwahori–Hecke algebra H_6(q).
 
 **Trace conventions (per docs/audits/2026-05-17-dual-tr-m-discrepancy.md):**
 This script's HISTORICAL output (the rational function in q reported
-since 2026-05-05) is the **q-Plancherel trace** (regular Hopf integral),
+since 2026-05-05) is the **q-Plancherel measure trace** (weights dim_q²/[n]_q!),
 NOT the canonical Markov trace. As of 2026-05-17 the script computes
 BOTH:
 

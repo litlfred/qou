@@ -1,13 +1,13 @@
 ---
 # qou-img9
 title: Six Iwahori-Hecke presentations coexist in the Lean tree
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T04:13:13Z
-updated_at: 2026-10-04T15:13:57Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-k4oq
 ---
 
@@ -272,3 +272,7 @@ fences, comments and `import` lines before matching, which is also what takes
 `IwahoriHeckeQuot` from an apparent 4 consumers to a true 2 (two of the four
 mention it only in prose saying what it is not) and stops `QOU.lean` — which
 imports the library — from reading as a consumer of everything.
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

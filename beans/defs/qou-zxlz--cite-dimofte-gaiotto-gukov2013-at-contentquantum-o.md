@@ -1,6 +1,6 @@
 ---
 # qou-zxlz
-title: Cite [dimofte-gaiotto-gukov2013] at content/quantum-observable-universe/lean/QOU/QBeta/WindingGFT…
+title: Cite [dimofte-gaiotto-gukov2013] at folio/quantum-observable-universe/lean/QOU/QBeta/WindingGFT…
 status: todo
 type: task
 priority: normal

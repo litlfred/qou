@@ -205,7 +205,7 @@ Probe: `computations/probes/uic_sign_forced_by_gate_probe.py` (5/5).
 
 ## The gate's justification is disproved — by a proof already in the corpus
 
-`content/quantum-observable-universe/mass-theory/operator-selection-lp.md`
+`folio/quantum-observable-universe/mass-theory/operator-selection-lp.md`
 (commit `6b7d2ec4a8`) proves the operator-selection LP degenerate: `b_1 = 1`
 makes the first Frobenius row equal the objective vector, so the optimum is
 identically 0, `y_0* = 0` by strong duality, and the minimiser set is a

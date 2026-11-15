@@ -151,7 +151,7 @@ that ("a difference of counts is not a list of files") — recorded because the
 prediction was cheap and the check confirmed it.
 
 **One of the six is not even qou's file:**
-`content/quantum-observable-universe/lean/.lake/packages/proofwidgets/widget/src/index.ts`
+`folio/quantum-observable-universe/lean/.lake/packages/proofwidgets/widget/src/index.ts`
 — a VENDORED Lean dependency inside `.lake/`, which any `content/**/*.ts` walk
 picks up. Worth knowing before a future count is read as a corpus fact: `.lake/`
 must be excluded, and this walk did not exclude it.

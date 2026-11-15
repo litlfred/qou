@@ -38,38 +38,38 @@ all cited by files from PRs #4513/#4725, i.e. mine). 46 remain:
 
     fulman2004stein                   8x   computations/deltalambda/wlambda_D_reduction_content_covariance.py
     sniady2006asymptotics             7x   computations/deltalambda/fl_kernel_sign_structure.py
-    serre1977                         6x   content/quantum-observable-universe/lean/QOU/Archimedean/CanonicalTitsIso.lean
+    serre1977                         6x   folio/quantum-observable-universe/lean/QOU/Archimedean/CanonicalTitsIso.lean
     ivanov-olshanski                  4x   computations/deltalambda/wlambda_covariance_epic_A2_even_moment_positivity_proved.py
-    donagi-markman1996cubics          3x   content/quantum-observable-universe/lean/QOU/Brings/CategoricalLagrangianDMCubic.lean
+    donagi-markman1996cubics          3x   folio/quantum-observable-universe/lean/QOU/Brings/CategoricalLagrangianDMCubic.lean
     rsz2013                           3x   computations/qbeta/c3_w2_c1_parity_artifact.py
     moralespakpanova2016              3x   computations/deltalambda/fl_sniady_genus_biased_measure.py
     biane1998representations          3x   computations/deltalambda/fl_sniady_genus_biased_measure.py
-    ramis-sauloy-zhang-2013           2x   content/quantum-observable-universe/lean/QOU/Mass/C1FormalSolutionGrowth.lean
-    voisin2002                        2x   content/quantum-observable-universe/lean/QOU/Archimedean/HodgeGramLift.lean
-    beasleywitten2005                 2x   content/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneRTSurgeryConstruction.lean
-    donagi1997swintegrable            2x   content/quantum-observable-universe/lean/QOU/Brings/CategoricalLagrangianDMCubic.lean
-    faddeev-kashaev-volkov-2001       2x   content/quantum-observable-universe/lean/QOU/QBeta/FaddeevStripGrowthConstructor.lean
+    ramis-sauloy-zhang-2013           2x   folio/quantum-observable-universe/lean/QOU/Mass/C1FormalSolutionGrowth.lean
+    voisin2002                        2x   folio/quantum-observable-universe/lean/QOU/Archimedean/HodgeGramLift.lean
+    beasleywitten2005                 2x   folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneRTSurgeryConstruction.lean
+    donagi1997swintegrable            2x   folio/quantum-observable-universe/lean/QOU/Brings/CategoricalLagrangianDMCubic.lean
+    faddeev-kashaev-volkov-2001       2x   folio/quantum-observable-universe/lean/QOU/QBeta/FaddeevStripGrowthConstructor.lean
     lawrence-rozansky1999             2x   computations/habiro_interpolation_wlambda.py
     cherednik2006                     2x   computations/probes/casimir_macdonald_probe.py
-    costin2020                        1x   content/quantum-observable-universe/lean/QOU/Mathlib/BorelSingularity.lean
-    frenkel2020                       1x   content/quantum-observable-universe/lean/QOU/Mathlib/QOper.lean
-    koroteev-zeitlin2022              1x   content/quantum-observable-universe/lean/QOU/Mathlib/QOper.lean
-    kontsevich-soibelman2008          1x   content/quantum-observable-universe/lean/QOU/Mathlib/WallCrossing.lean
-    bridgeland2007                    1x   content/quantum-observable-universe/lean/QOU/Mathlib/WallCrossing.lean
-    sauzin2014                        1x   content/quantum-observable-universe/lean/QOU/Mathlib/AlienDerivation.lean
-    murakami1996                      1x   content/quantum-observable-universe/lean/QOU/KnotTheory/JonesPolynomial.lean
-    kauffman1987                      1x   content/quantum-observable-universe/lean/QOU/KnotTheory/JonesPolynomial.lean
-    habeggermasbaum2000               1x   content/quantum-observable-universe/lean/QOU/MassTheory/MilnorExactCoefficient.lean
-    wielenberg1978                    1x   content/quantum-observable-universe/lean/QOU/Archimedean/WhiteheadVolumeCatalan.lean
-    grassi-gu-marino2019qsw           1x   content/quantum-observable-universe/lean/QOU/Brings/CategoricalLagrangianDMCubic.lean
-    kashaev1995                       1x   content/quantum-observable-universe/lean/QOU/BraidsAndKnots/BorromeanTowerConvergence.lean
-    macdonald1995symmetric            1x   content/quantum-observable-universe/lean/QOU/BraidsAndKnots/NStatConjugateGeneral.lean
-    gavrilik2001                      1x   content/quantum-observable-universe/lean/QOU/BraidsAndKnots/QIntegerAlexanderTorus.lean
-    mckay1980graphs                   1x   content/quantum-observable-universe/lean/QOU/BraidsAndKnots/S5SO3FiberAction.lean
-    fulton-harris                     1x   content/quantum-observable-universe/lean/QOU/Eightfold/Sym2GateParity.lean
-    murakami2013                      1x   content/quantum-observable-universe/lean/QOU/QBeta/MeridianLinearBarOdd.lean
-    ggmw2020                          1x   content/quantum-observable-universe/lean/QOU/QBeta/HabiroClassicalLimit.lean
-    garoufalidis2020                  1x   content/quantum-observable-universe/lean/QOU/QBeta/FiveTwoSaddleSumRule.lean
+    costin2020                        1x   folio/quantum-observable-universe/lean/QOU/Mathlib/BorelSingularity.lean
+    frenkel2020                       1x   folio/quantum-observable-universe/lean/QOU/Mathlib/QOper.lean
+    koroteev-zeitlin2022              1x   folio/quantum-observable-universe/lean/QOU/Mathlib/QOper.lean
+    kontsevich-soibelman2008          1x   folio/quantum-observable-universe/lean/QOU/Mathlib/WallCrossing.lean
+    bridgeland2007                    1x   folio/quantum-observable-universe/lean/QOU/Mathlib/WallCrossing.lean
+    sauzin2014                        1x   folio/quantum-observable-universe/lean/QOU/Mathlib/AlienDerivation.lean
+    murakami1996                      1x   folio/quantum-observable-universe/lean/QOU/KnotTheory/JonesPolynomial.lean
+    kauffman1987                      1x   folio/quantum-observable-universe/lean/QOU/KnotTheory/JonesPolynomial.lean
+    habeggermasbaum2000               1x   folio/quantum-observable-universe/lean/QOU/MassTheory/MilnorExactCoefficient.lean
+    wielenberg1978                    1x   folio/quantum-observable-universe/lean/QOU/Archimedean/WhiteheadVolumeCatalan.lean
+    grassi-gu-marino2019qsw           1x   folio/quantum-observable-universe/lean/QOU/Brings/CategoricalLagrangianDMCubic.lean
+    kashaev1995                       1x   folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/BorromeanTowerConvergence.lean
+    macdonald1995symmetric            1x   folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/NStatConjugateGeneral.lean
+    gavrilik2001                      1x   folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/QIntegerAlexanderTorus.lean
+    mckay1980graphs                   1x   folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/S5SO3FiberAction.lean
+    fulton-harris                     1x   folio/quantum-observable-universe/lean/QOU/Eightfold/Sym2GateParity.lean
+    murakami2013                      1x   folio/quantum-observable-universe/lean/QOU/QBeta/MeridianLinearBarOdd.lean
+    ggmw2020                          1x   folio/quantum-observable-universe/lean/QOU/QBeta/HabiroClassicalLimit.lean
+    garoufalidis2020                  1x   folio/quantum-observable-universe/lean/QOU/QBeta/FiveTwoSaddleSumRule.lean
     adams1985                         1x   computations/gamma_gamma_pair_production_decomposition.py
     dimofte-garoufalidis2013          1x   computations/one_loop_torsion.py
     garoufalidis-yoon                 1x   computations/one_loop_torsion.py

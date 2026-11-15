@@ -1,6 +1,6 @@
 ---
 # qou-ry2s
-title: Remark interpreting 1704.01735v4.pdf at content/quantum-observable-universe/mass-theory/cyclotomi…
+title: Remark interpreting 1704.01735v4.pdf at folio/quantum-observable-universe/mass-theory/cyclotomi…
 status: todo
 type: task
 priority: normal

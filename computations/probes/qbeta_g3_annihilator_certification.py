@@ -36,92 +36,63 @@ overall monomial normalization — it is no longer load-bearing for structure.
 
 Scope-(a); exact integer/monomial arithmetic; no fit; no c_k wired; the GGM
 Stokes reading (step 2) starts only from a certified index.
+
+
+## REDUCED 2026-10-10 — the annihilator half is RETIRED; only the calibrator remains
+
+Owner ruling (relayed 2026-10-10): this script keeps `trefoil_calibrate()` and
+nothing else, and its superseded FAIL is dropped. No port of the missing names.
+
+WHAT WAS REMOVED, and why restoring it was declined. The file imported
+`tet_norm` and `_dense_mul` from `qbeta_g3_fourone_index_assembly`; neither
+exists there any more, so the whole annihilator path had been UN-IMPORTABLE
+while its witness sat `scriptHash`-in-sync. Three corpus artifacts adjudicate
+those names rather than merely losing them:
+
+  - `docs/coordination/1ppq-qbeta.md` (#3813, 2026-07-18) records `tet_norm` as
+    a NUMERICAL BUG and `tet_abs` as its fix;
+  - the `_corrected` producer's docstring says "NOT the buggy `tet_norm`";
+  - `qbeta-g3-fourone-index-assembly.witness.json` names the mechanism --
+    rebasing each tetrahedron factor to its un-cancelled minimum exponent,
+    versus computing I_Delta at ABSOLUTE DEGREE.
+
+So "abs" in `tet_abs` means absolute DEGREE, not absolute value, and the two
+have different return contracts that would mis-unpack silently. Rewriting the
+missing helpers would have resurrected the bug in order to re-derive a verdict
+the corpus had already reversed: this script's own witness published
+`assembly_certified_by_annihilator` = FAIL with "candidate non-convergent at
+grid point" -- literally the `return None` of the rejection guard that ledger
+entry overturned -- while the PROVIDER's `main()` step [5] already performs the
+certification and records PASS.
+
+WHAT SURVIVES, and it is not superseded. `trefoil_calibrate()` verifies that
+(l-hat + q^(3/2) M-hat^3) annihilates delta(e,3m) for the pinned action
+convention and for NO other of the 16 combinations. It is self-contained --
+it calls none of the removed helpers and needs neither missing name -- and the
+provider does NOT re-verify that uniqueness. Dropping it would have lost the one
+result here that nothing else computes.
+
+The witness is REGENERATED rather than deleted, so the calibrator's record
+survives and only the superseded assertions go. Beans qou-2cz1 (the import) and
+qou-3kni (the dead-citation surface that found it).
 """
+
 from __future__ import annotations
 
 import sys
 from pathlib import Path
 
-import mpmath as mp
-
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
+import mpmath as mp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from qbeta_g3_fourone_index_assembly import (  # noqa: E402
-    tet_norm, _dense_mul, series_str,
-)
 from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
 
-ORD = 44           # x-order for grid assemblies (q-order 22)
-GRID = [(m, e) for m in range(-2, 3) for e in range(-2, 3)]
-ANCHOR_11 = {2: -1, 4: -1, 6: 2, 8: 7, 10: 11, 12: 11, 14: 3}
 
-
-# ---------------- Laurent-in-x series with shift: (shift, {deg: int}) -------
-def sadd(a, b):
-    (sha, da), (shb, db) = a, b
-    sh = min(sha, shb)
-    out = {}
-    for d, c in da.items():
-        out[d + sha - sh] = out.get(d + sha - sh, 0) + c
-    for d, c in db.items():
-        out[d + shb - sh] = out.get(d + shb - sh, 0) + c
-    return sh, {d: c for d, c in out.items() if c != 0}
-
-
-def smono(a, xpow, scal=1):
-    sh, da = a
-    return sh + xpow, {d: scal * c for d, c in da.items()}
-
-
-def struncate_top(a, valid_abs):
-    """Zero all coefficients above absolute x-degree valid_abs."""
-    sh, da = a
-    return sh, {d: c for d, c in da.items() if d + sh <= valid_abs}
-
-
-# ------------------------------ assembly (from tranche 2, parametrized) ----
-_asm_cache = {}
-
-
-def assemble(m, e, order, pref_qcoef):
-    key = (m, e, order, pref_qcoef)
-    if key in _asm_cache:
-        return _asm_cache[key]
-    res = _assemble(m, e, order, pref_qcoef)
-    _asm_cache[key] = res
-    return res
-
-
-def _assemble(m, e, order, pref_qcoef):
-    """Σ_{e₂} q^{pref_qcoef·e₂} I_Δ(m−e₂, m+e−e₂) I_Δ(e−e₂, −e₂); None if
-    non-convergent (flat/inward wings)."""
-    e2max = 2 * order + 24
-    terms = []
-    for e2 in range(-e2max, e2max + 1):
-        sh1, s1 = tet_norm(m - e2, m + e - e2, order)
-        sh2, s2 = tet_norm(e - e2, -e2, order)
-        terms.append((e2, sh1 + sh2 + 2 * pref_qcoef * e2, s1, s2))
-    ms = min(t[1] for t in terms)
-    if not all(t[1] - ms > order for t in terms if abs(t[0]) == e2max):
-        return None
-    out = {}
-    for e2, lead, s1, s2 in terms:
-        off = lead - ms
-        if off > order:
-            continue
-        prod = _dense_mul(s1, s2, order - off)
-        for d, c in enumerate(prod):
-            if c:
-                out[d + off] = out.get(d + off, 0) + c
-    return ms, {d: c for d, c in out.items() if c != 0}
-
-
-# --------------------- calibrator: trefoil annihilation, symbolic ----------
 def trefoil_calibrate():
     """Verify (ℓ̂ + q^{3/2}M̂³)·δ_{e,3m} = 0 on a grid with the pinned actions,
     and that the 15 other action-convention combinations FAIL."""
@@ -158,159 +129,61 @@ def trefoil_calibrate():
     return pinned, others_fail, n_pass
 
 
-# --------------------- the annihilator L̂₄₁ applied to an assembly ----------
-def annihilator_residual(pref_qcoef, m, e, order):
-    """R(m,e) = L̂₄₁·I at charge (m,e); exact Laurent series in x.
-    Uses: M̂f = q^{m/2}f(m,e−1) [x^m], ℓ̂f = −q^{e/2}f(m+1,e) [−x^e],
-    ℓ̂⁻¹f = −q^{−e/2}f(m−1,e); M̂ᵏf = q^{km/2}f(m,e−k)."""
-    def I(mm, ee):
-        s = assemble(mm, ee, order, pref_qcoef)
-        if s is None:
-            raise RuntimeError("candidate non-convergent at grid point")
-        return s
-
-    terms = []
-    # --- term 1: (q^{1/2}M̂ − q^{−1/2}M̂⁻¹)·ℓ̂⁻¹ ---
-    # ℓ̂⁻¹I at (m,e): g(m,e) = −q^{−e/2} I(m−1, e)
-    # then M̂g = q^{m/2} g(m, e−1) = −q^{m/2} q^{−(e−1)/2} I(m−1, e−1)
-    terms.append(smono(I(m - 1, e - 1), 1 + m - (e - 1), -1))       # q^{1/2}M̂ℓ̂⁻¹
-    # M̂⁻¹g = q^{−m/2} g(m, e+1) = −q^{−m/2}q^{−(e+1)/2} I(m−1, e+1); × −q^{−1/2}
-    terms.append(smono(I(m - 1, e + 1), -1 - m - (e + 1), +1))
-    # --- term 2: −(M̂ − M̂⁻¹)(M̂² + M̂⁻² − M̂ − M̂⁻¹ − q − q⁻¹)·I ---
-    # product expands to pure M̂-powers: M̂³ − M̂² ... do it symbolically:
-    # P = (M − M⁻¹)(M² + M⁻² − M − M⁻¹ − (q+q⁻¹))
-    #   = M³ + M⁻¹·... expand exactly (M-powers with q-scalars):
-    # (M)(M²)=M³; (M)(M⁻²)=M⁻¹; (M)(−M)=−M²; (M)(−M⁻¹)=−1(=M⁰);
-    # (M)(−q−q⁻¹) = −(q+q⁻¹)M
-    # (−M⁻¹)(M²)=−M; (−M⁻¹)(M⁻²)=−M⁻³; (−M⁻¹)(−M)=+1; (−M⁻¹)(−M⁻¹)=+M⁻²;
-    # (−M⁻¹)(−q−q⁻¹)=+(q+q⁻¹)M⁻¹
-    # NOTE: M̂-powers commute among themselves, so no q-ordering corrections here.
-    Ppows = {3: [(0, 1)], 1: [(2, -1), (-2, -1), (0, -1)],
-             2: [(0, -1)], 0: [(0, -1), (0, 1)],
-             -1: [(0, 1), (2, 1), (-2, 1)], -3: [(0, -1)],
-             -2: [(0, 1)]}
-    # simplify: coefficient lists (xpow, coeff) per M-power
-    for k, lst in Ppows.items():
-        agg = {}
-        for xp, c in lst:
-            agg[xp] = agg.get(xp, 0) + c
-        for xp, c in agg.items():
-            if c == 0:
-                continue
-            # −P·I: M̂ᵏ I = q^{km/2} I(m, e−k) = x^{km} I(m, e−k)
-            terms.append(smono(I(m, e - k), xp + k * m, -c))
-    # --- term 3: (q^{−1/2}M̂ − q^{1/2}M̂⁻¹)·ℓ̂ ---
-    # ℓ̂I at (m,e): h(m,e) = −q^{e/2} I(m+1, e)
-    # M̂h = q^{m/2}h(m,e−1) = −q^{m/2}q^{(e−1)/2}I(m+1, e−1); × q^{−1/2}
-    terms.append(smono(I(m + 1, e - 1), -1 + m + (e - 1), -1))
-    # M̂⁻¹h = q^{−m/2}h(m,e+1) = −q^{−m/2}q^{(e+1)/2}I(m+1,e+1); × −q^{1/2}
-    terms.append(smono(I(m + 1, e + 1), 1 - m + (e + 1), +1))
-
-    tot = terms[0]
-    for t in terms[1:]:
-        tot = sadd(tot, t)
-    return tot
-
-
 def main() -> int:
     print("=" * 78)
-    print(" A_ω step 1, tranche 3 — annihilator certification of the 4₁ index")
+    print(" A_omega step 1, tranche 3 — trefoil calibrator (annihilator half retired)")
     print("=" * 78)
 
-    # ---- [1] trefoil calibrator ----
     pinned, others_fail, n_pass = trefoil_calibrate()
-    print(f"\n[1] trefoil calibrator: pinned actions annihilate δ(e,3m): {pinned}; "
-          f"conventions passing: {n_pass} (uniqueness: {others_fail})")
-
-    # ---- [2] annihilator residuals per candidate ----
-    print("\n[2] L̂₄₁ residuals on the grid (exact; valid to the common window):")
-    results = {}
-    for pref in (-1, 1):
-        label = f"q^({pref}·e₂)"
-        try:
-            max_nonzero = 0
-            worst = None
-            for (m, e) in GRID:
-                r = annihilator_residual(pref, m, e, ORD)
-                sh, d = struncate_top(r, ORD - 12)   # conservative common window
-                nz = len(d)
-                if nz > max_nonzero:
-                    max_nonzero = nz
-                    worst = (m, e, series_str((sh, d), 4) if d else "0")
-            results[label] = {"max_nonzero_terms": max_nonzero, "worst": worst}
-            print(f"    {label}: max nonzero residual terms over grid = "
-                  f"{max_nonzero}" + (f"  (worst at {worst[0:2]}: {worst[2]})"
-                                      if worst and max_nonzero else "  → ANNIHILATED"))
-        except RuntimeError as ex:
-            results[label] = {"error": str(ex)}
-            print(f"    {label}: {ex}")
-
-    certified = [k for k, v in results.items() if v.get("max_nonzero_terms") == 0]
-    unique = len(certified) == 1
-
-    # ---- [3] anchor status for the certified candidate ----
-    anchor_note = "n/a"
-    if certified:
-        pref = -1 if "-1" in certified[0] else 1
-        s = assemble(1, 1, 40, pref)
-        sh, a = s
-        hit = None
-        for t in range(-6, 7):
-            if all(a.get(d - sh - t, 0) == v for d, v in ANCHOR_11.items()):
-                hit = t
-        anchor_note = (f"matches printed (4.20) with monomial shift x^{hit}"
-                       if hit is not None else
-                       "does NOT match printed (4.20) at any monomial shift — "
-                       "the anchor's charge normalization differs (U=2·log m); "
-                       "the annihilator certificate is primary")
-        print(f"\n[3] certified candidate {certified[0]} vs printed anchor: {anchor_note}")
-        print(f"    I(1,1) = {series_str(s, 8)}")
+    print(f"\n[1] trefoil calibrator: pinned actions annihilate delta(e,3m): "
+          f"{pinned}; conventions passing: {n_pass} (uniqueness: {others_fail})")
 
     verdict = (
         f"Trefoil calibrator pins the operator actions "
-        f"(M̂f=q^(m/2)f(m,e−1), ℓ̂f=−q^(e/2)f(m+1,e); unique among 16 "
-        f"conventions: {others_fail}). Annihilator certification: "
-        f"{'candidate ' + certified[0] + ' is ANNIHILATED by the quantum A-polynomial on the full grid — the assembly is CERTIFIED anchor-independently' if certified else 'no candidate annihilated — operator reading or assembly space needs revisit'}; "
-        f"uniqueness {unique}. Anchor status: {anchor_note}. Exact arithmetic "
-        f"throughout; scope-(a); no fit; no c_k wired."
+        f"(Mf=q^(m/2)f(m,e-1), lf=-q^(e/2)f(m+1,e)); it annihilates delta(e,3m) "
+        f"for that convention and for no other of the 16 combinations "
+        f"(passing: {n_pass}, unique: {others_fail}). The annihilator-certification "
+        f"half of this probe is RETIRED -- see the module docstring: its two "
+        f"missing helpers are a corpus-adjudicated numerical bug, and the "
+        f"provider's own main() step [5] already certifies the assembly and "
+        f"records PASS. Exact integer arithmetic; scope-(a); no fit; no c_k wired."
     )
     print("\nVERDICT:", verdict)
 
-    wb = WitnessBuilder("qbeta-g3-annihilator-certification",
-                        engine="python-int+mpmath")
+    wb = WitnessBuilder("qbeta-g3-annihilator-certification", engine="python-int")
     wb.set_description(
-        "A_omega step 1 tranche 3: anchor-independent certification of the 4_1 "
-        "total-index assembly by the quantum A-polynomial annihilator (DGG C.7, "
-        "glyph-decoded), with operator conventions pinned analytically and "
-        "verified by the trefoil calibrator (C.9). Certified assembly becomes "
-        "the input for the GGM Stokes reading (step 2).")
+        "A_omega step 1 tranche 3, REDUCED 2026-10-10: the trefoil calibrator "
+        "(C.9) alone. It pins the operator action convention analytically and "
+        "shows it unique among the 16 combinations. The annihilator-certification "
+        "half is retired -- its helpers are a corpus-adjudicated numerical bug "
+        "(1ppq-qbeta.md #3813) and the provider already certifies the assembly.")
     wb.set_content_block("conj:im-q-physical-role")
-    wb.add_data("operator", "L41 = (q^(1/2)M - q^(-1/2)M^-1)l^-1 - (M - M^-1)"
-                            "(M^2 + M^-2 - M - M^-1 - q - q^-1) + "
-                            "(q^(-1/2)M - q^(1/2)M^-1)l")
     wb.add_data("actions", "Mf = q^(m/2) f(m,e-1); lf = -q^(e/2) f(m+1,e) "
                            "(trefoil-calibrated, unique)")
     wb.add_data("calibrator", {"pinned_ok": bool(pinned),
                                "unique": bool(others_fail),
                                "n_conventions_passing": n_pass})
-    wb.add_data("residuals", {k: {kk: (str(vv) if not isinstance(vv, int) else vv)
-                                  for kk, vv in v.items()}
-                              for k, v in results.items()})
-    wb.add_data("certified_candidates", certified)
-    wb.add_data("anchor_status", anchor_note)
+    wb.add_data("retired", {
+        "what": "annihilator_residual + the assemble/_assemble/sadd/smono/"
+                "struncate_top helper chain, and the two assertions "
+                "assembly_certified_by_annihilator and certified_candidate_unique",
+        "why": "imported tet_norm and _dense_mul, which no longer exist; the "
+               "corpus adjudicates tet_norm as a numerical bug and the provider's "
+               "main() step [5] already certifies the assembly and records PASS",
+        "ruling": "owner, relayed 2026-10-10: keep only trefoil_calibrate(), "
+                  "drop the superseded FAIL, do not port",
+    })
     wb.add_data("verdict", verdict)
+    # mpf, not float: the raw-float64 ratchet counts an assertion's `computed`
+    # and `expected`, and a regenerated witness is the regenerator's dirt even
+    # when the float literals were inherited. Baselines drain, never grow.
     wb.add_assertion("trefoil_calibrator_pins_actions",
-                     computed=1.0 if (pinned and others_fail) else 0.0,
-                     expected=1.0, tolerance=0.5,
-                     source="(C.9) annihilates delta(e,3m) only for the pinned action convention")
-    wb.add_assertion("assembly_certified_by_annihilator",
-                     computed=1.0 if certified else 0.0, expected=1.0, tolerance=0.5,
-                     source="L41 residual identically zero on the (m,e) grid for a candidate")
-    wb.add_assertion("certified_candidate_unique",
-                     computed=1.0 if unique else 0.0, expected=1.0, tolerance=0.5,
-                     source="exactly one candidate assembly is annihilated")
+                     computed=mp.mpf(1) if (pinned and others_fail) else mp.mpf(0),
+                     expected=mp.mpf(1), tolerance=mp.mpf("0.5"),
+                     source="(C.9) annihilates delta(e,3m) only for the pinned "
+                            "action convention")
     wb.save()
-    return 0 if (pinned and certified) else 1
+    return 0 if (pinned and others_fail) else 1
 
 
 if __name__ == "__main__":

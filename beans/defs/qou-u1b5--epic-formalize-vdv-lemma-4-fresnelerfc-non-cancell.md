@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-11T00:36:10Z
-updated_at: 2026-10-04T15:46:36Z
+updated_at: 2026-11-15T11:48:19Z
 parent: qou-n4nr
 ---
 
@@ -25,8 +25,8 @@ Euler-Maclaurin rule nine days after the composite one landed, and the lane had
 ALREADY applied it to the same function (logSinc = phi - log 2).
 
 STANDING RULE for every remaining brick, before writing a line:
-  grep -rln "<topic>" content/quantum-observable-universe/lean/QOU/MathlibExt/ \
-                      content/quantum-observable-universe/lean/QOU/Knot/
+  grep -rln "<topic>" folio/quantum-observable-universe/lean/QOU/MathlibExt/ \
+                      folio/quantum-observable-universe/lean/QOU/Knot/
 "I checked what landed since my fork point" is NOT the corpus-grep checklist --
 it cannot see a file that has been on main for nine days.
 Audit: docs/audits/2026-08-19-qou-shrp-duplicated-corpus-euler-maclaurin.md
@@ -93,3 +93,28 @@ Ledger: docs/coordination/whitehead-link-volume-conjecture-join.md
 
 
 Former title (before 2026-10-04, when this became a story under a programme epic): EPIC: formalize vdV Lemma 4 (Fresnel/erfc non-cancellation) — discharge VdVWhiteheadLemma4
+
+<!-- ported 2026-11-15 from PR #5338 (branch predates the beans/defs and folio/ moves) -->
+
+CORRECTION 2026-08-19 to my own scoping note above.  I reported qou-vy77 as
+"the only thing between the corpus and the Whitehead-link VC".  That is
+OVERSTATED.  The remaining bricks are THREE, not one:
+
+  qou-vy77  L4-2  vdV Lemma 2a/2b -- the Gaussian window (sum -> integral)
+  qou-kc8h  L4-3  far-sum kill
+  qou-epy2  L4-5  Gaussian sum/integral cell comparison
+
+(L4-1 redundant, L4-4 landed, L4-6 supplied+obviated.)  What IS true is that the
+limit integral's VALUE, the majorant rate, the inner-sum saddle and the
+one-sided narrowing are all in hand; the three above are the sum-to-integral
+analysis, and none of them is done.
+
+ALSO WORTH KNOWING, and it changes the framing of the epic: vdV's MAIN THEOREM
+IS A THEOREM.  His asymptotic
+    J_N(W) ~ exp{ (1/2 pi)[ (Vol + i CS) N + D log N + E ] }
+holds; the three published slips this corpus found "move only the constant" and
+"none of the three touches the volume conjecture -- his theorem needs only Vol,
+D and E != 0, and all three survive".  So the Whitehead-link VC is PROVED IN THE
+LITERATURE; what is open HERE is its formalization.  Do not describe this epic
+as an open mathematical problem -- it is an open formalization of a published
+theorem, with three corrected-spec bricks remaining.

@@ -13,7 +13,7 @@ parent: qou-mub3
 
 MEASURED 2026-08-25, bean qou-qpj9's arc.
 
-content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas-interpretation.md asserts:
+folio/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas-interpretation.md asserts:
   - 'The atlas is auto-rendered by [recursive_atom_knot_atlas_render.py]'
   - '[witness_staleness_tracker.py] marks the affected entries stale and the
      atlas is recomputed from the sources above; no entry is maintained by hand.'

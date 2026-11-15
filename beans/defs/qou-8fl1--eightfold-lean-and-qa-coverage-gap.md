@@ -175,7 +175,7 @@ Remaining tiers T2 (Sym2Gate SU(3)/FS), T3 (octonion def), T4 (QA sidecars) unch
 
 ## PROGRESS 2026-08-23 (2) — T1 CLOSED (all 3 item-2 props now Lean-backed)
 
-meson-octet: authored content/quantum-observable-universe/eightfold-way/meson-octet-decomposition.lean
+meson-octet: authored folio/quantum-observable-universe/eightfold-way/meson-octet-decomposition.lean
 (QOU.Eightfold.MesonOctet) with the genuine dimension shadow — NOT a trivial 9=9:
 - fundAntifundDim N = N*N (dim V⊗V*); adjointDim N = N*N−1 (adjoint/octet dim).
 - meson_nonet_dim (N≥1): N² = (N²−1)+1 (V⊗V* = adjoint ⊕ singlet at dim level).

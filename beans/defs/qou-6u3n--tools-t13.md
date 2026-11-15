@@ -1,14 +1,14 @@
 ---
 # qou-6u3n
 title: '[TOOLS T13] Retire renderers and deploy into fsh-guts/ (deploy/, paper-builder-image, build-lean-mcp, docs-site.yml,…'
-status: in-progress
+status: todo
 type: feature
 priority: normal
 tags:
     - migration
     - tools
 created_at: 2026-10-04T16:35:45Z
-updated_at: 2026-10-04T18:06:44Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-k3er
 ---
 
@@ -136,3 +136,7 @@ T13 row: `fsh-guts/` itself also left `main`.
   - The `wedderburn-weight-canonical.ts` `verified`-against-deprecated question is unchanged: its path follows the file, and the owner decision is still pending.
 
 **2026-10-10 (later): the simulator gap is closed.** The paper still used nine of the eleven files in the deprecated simulators folder, so they were restored to `simulators/` on main and the eleven blocks re-pointed there (two are `todo-html` stubs whose HTML never existed). `double_slit.html` and `empty.html` are unreferenced and stay on the branch store. run-validate **unmounted** now reads Valid, 9 issues, the same as main, so the platform publish workflow no longer needs a mount step.
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

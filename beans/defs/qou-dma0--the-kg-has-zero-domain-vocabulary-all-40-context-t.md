@@ -95,7 +95,7 @@ grep finds prior work only if it used your words."*
    terms were agreed.
 2. **Which domain terms are worth minting?** This is an ontology decision, not a
    mechanical one, and the corpus already has an authority for term naming —
-   `content/quantum-observable-universe/notation/notation-register.md` and
+   `folio/quantum-observable-universe/notation/notation-register.md` and
    `notation-collisions.md`, which AGENTS.md §7aa makes authoritative for every
    symbol. A `qou:` vocabulary that disagreed with the notation register would be
    a second truth.

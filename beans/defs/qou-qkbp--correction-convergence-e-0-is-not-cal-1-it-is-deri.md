@@ -18,7 +18,7 @@ parent: qou-wp3h
 `qou-59j5` closed with *"E_0 is the corpus's, but it is CAL-1, a calibration, not
 a derivation. So neither side is pinned, and until one is, no N× claim about the
 extensive term means anything."* **That is a mislabel.**
-`content/quantum-observable-universe/nuclear-interactions/energy-scale-planck.md`
+`folio/quantum-observable-universe/nuclear-interactions/energy-scale-planck.md`
 (`rem:energy-scale-planck`) derives the form from two independently defined
 substrate constants:
 

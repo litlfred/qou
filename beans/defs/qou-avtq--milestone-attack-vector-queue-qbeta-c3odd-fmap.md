@@ -1,11 +1,11 @@
 ---
 # qou-avtq
 title: 'MILESTONE: attack-vector queue (Q_beta / c3^odd / f-map)'
-status: in-progress
+status: todo
 type: epic
 priority: high
 created_at: 2026-08-26T04:22:51Z
-updated_at: 2026-10-04T15:09:57Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-10v9
 ---
 
@@ -173,3 +173,7 @@ Now the epic for P1.QB under PROGRAM: L2 at 1 ppQ (mass and binding accuracy).
 | `qou-nlbj` | SUPERSEDED | `todo` → `scrapped` |
 | `qou-qsme` | SUPERSEDED | `todo` → `scrapped` |
 | `qou-xzrj` | SUPERSEDED | `todo` → `scrapped` |
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

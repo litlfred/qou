@@ -11,7 +11,7 @@ updated_at: 2026-10-04T15:26:47Z
 parent: qou-uot9
 ---
 
-File: `content/quantum-observable-universe/lean/QOU/BraidsKnots/nsi_q_deformed_kernel.lean`
+File: `folio/quantum-observable-universe/lean/QOU/BraidsKnots/nsi_q_deformed_kernel.lean`
 The `nsi_q_deformed_kernel` theorem is unprovable. Its class lacks constraints on the data fields and has `*_unconstrained_false` lemmas proving that the conclusion is independent and refutable from the provided data alone.
 
 

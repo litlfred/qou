@@ -160,7 +160,7 @@ pairing term, which IS nuclear physics — just not magic numbers." A sibling ha
 now derived that from the other side, and I verified it rather than taking the
 comment at face value (AGENTS.md: a sibling's claim is not a primary source).
 
-`content/quantum-observable-universe/lean/QOU/Mass/PairingParityForcesPositiveB3.lean`
+`folio/quantum-observable-universe/lean/QOU/Mass/PairingParityForcesPositiveB3.lean`
 on the PR #6197 head — 108 lines, **0 sorry, 0 axiom**, checked by fetching
 refs/pull/6197/head, not from the comment. `b3Contrib f2 f3 := f3 - 3*f2` with
 `pairing_b3_eq : b3Contrib (-delta) 0 = 3*delta`, so pairing (f2 = -delta,

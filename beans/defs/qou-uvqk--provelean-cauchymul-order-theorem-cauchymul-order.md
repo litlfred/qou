@@ -17,7 +17,7 @@ parent: qou-u2al
 ---
 
 **File:** `QOU/Mathlib/QGevreyOrder.lean` (QOU)  ·  1 cited sorry(s)
-**GitHub:** https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/content/quantum-observable-universe/lean/QOU/Mathlib/QGevreyOrder.lean
+**GitHub:** https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/folio/quantum-observable-universe/lean/QOU/Mathlib/QGevreyOrder.lean
 
 ### `cauchyMul_order`  —  line 268  ·  tier **P** (repo-infra-dependent)
 - **Proposition:** `theorem cauchyMul_order {q s t : ℝ} {a b : ℕ → K} (ha : IsQGevreyOrder q s a) (hb : IsQGevreyOrder q t b) (hq : 1 < q) : IsQGevreyOrder q (cauchyEnvelope s t) (cauchyMul a b) `

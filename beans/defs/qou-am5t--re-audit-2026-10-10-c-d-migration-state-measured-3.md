@@ -1,11 +1,11 @@
 ---
 # qou-am5t
 title: 'RE-AUDIT 2026-10-10: C->D migration state measured — 3 of 4 channels DONE, one science blocker, 57 todo beans against 6 live sites'
-status: in-progress
+status: todo
 type: epic
 priority: normal
 created_at: 2026-10-10T07:15:58Z
-updated_at: 2026-10-10T07:28:16Z
+updated_at: 2026-11-15T13:30:00Z
 ---
 
 ## Measurement record — 2026-10-10, `main` 77695711d
@@ -85,3 +85,7 @@ ruled `z_D` base needs `F_required = 1.759`.
 - **Did not refresh the registry's `updated: 2026-09-05`.** Its content is
   correct and only its date is behind; the status doc carries its own date in
   every table instead.
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

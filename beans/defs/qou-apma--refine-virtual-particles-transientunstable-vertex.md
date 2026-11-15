@@ -21,7 +21,7 @@ parent: qou-8lxd
 
 QOU already localises virtual particles geometrically:
 
-- [`virtual-particles-exceptional-divisor`](https://github.com/litlfred/qou/blob/claude/agent-task-662242-vag458/content/quantum-observable-universe/observations/virtual-particles-exceptional-divisor.md):
+- [`virtual-particles-exceptional-divisor`](https://github.com/litlfred/qou/blob/claude/agent-task-662242-vag458/folio/quantum-observable-universe/observations/virtual-particles-exceptional-divisor.md):
   a virtual particle operates in the Reeb bundle over the exceptional
   divisor $\mathcal{S}_p\cong\mathbb{P}^1$ (the **vertex** — cf.
   `prop:vertex-is-exceptional-divisor`), propagates through the recursive
@@ -30,7 +30,7 @@ QOU already localises virtual particles geometrically:
   $n$-virtual depth; $\pi_0:A_n\to A_0$ annihilates $\Omega^1$ (off-shell
   = projects no shadow). Lifetime from the level-$n$ Heisenberg
   commutator $\hbar_{q_n}=1-q_n^{-1}$.
-- [`vacuum-polarization-virtual-pairs`](https://github.com/litlfred/qou/blob/claude/agent-task-662242-vag458/content/quantum-observable-universe/observations/vacuum-polarization-virtual-pairs.md).
+- [`vacuum-polarization-virtual-pairs`](https://github.com/litlfred/qou/blob/claude/agent-task-662242-vag458/folio/quantum-observable-universe/observations/vacuum-polarization-virtual-pairs.md).
 - AGENTS.md §7b item 3: **unstable intermediaries (W/Z, resonances,
   virtual particles) are Demazure sub-crystals** — incomplete
   topological states; their non-symmetric Macdonald evaluation under the
@@ -115,7 +115,7 @@ W/Z / hadronic-resonance sector (cross-ref SM-26 m_W/m_Z beans).
 
 ## ✅ PROVED (2026-08-02) — off-shell non-observability, sorry-free
 
-[`VirtualProjection.lean`](https://github.com/litlfred/qou/blob/claude/agent-task-662242-vag458/content/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/VirtualProjection.lean)
+[`VirtualProjection.lean`](https://github.com/litlfred/qou/blob/claude/agent-task-662242-vag458/folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/VirtualProjection.lean)
 (`QOU.Virtual`), generic domain `K`, module `A`:
 
 - `pi0 e f = (∏ i, e i) • f` — base-level projection of a level-n excitation

@@ -331,7 +331,7 @@ Enacted:
 Verification: render-QA grep battery clean (`$$` 6, inline `$` 52, braces 33/33,
 `\Bigl`/`\Bigr` 3/3, no list-parser hijack, no non-ASCII inside math — the em
 dashes are in prose, matching the file's existing §Archimedean paragraph);
-`run-validate content/quantum-observable-universe` against pinned platform
+`run-validate folio/quantum-observable-universe` against pinned platform
 `df28d02` → **2 issue(s)**, both pre-existing and unrelated (a bibliography info
 line, `lem:piece-a-corner-removal-obligation` without a Lean declaration).
 No Lean changed in this commit.
