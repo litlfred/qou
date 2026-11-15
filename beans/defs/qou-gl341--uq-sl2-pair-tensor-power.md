@@ -8,7 +8,7 @@ tags:
     - quark-state
     - schur-weyl
 created_at: 2026-11-15T10:20:00Z
-updated_at: 2026-11-15T10:40:00Z
+updated_at: 2026-11-15T10:55:00Z
 parent: qou-gl34
 ---
 
@@ -20,3 +20,4 @@ Owner ruling via coordinator 2026-11-15: "work G3.4, dispatch siblings". Direct 
 `QuantumGLSl2Pair.lean`: `fundPair`, `powRep`, `powRep_E` (= `raiseOp`), `powRep_Kp` (= `cartan κ`).
 Sorry-free, axioms `[propext, Classical.choice, Quot.sound]`. Note: the merged `lowerOp` is not the
 standard `Δ(F)`; `powRep`'s `F` is the standard one.
+Merged as #7870 on 2026-11-15.
