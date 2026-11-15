@@ -54,6 +54,14 @@ identification of the Bloch-group class on Bring's surface; that
 identification is the remaining open computational sub-problem
 documented in `em-coupling-bring-zero-mode.md`.
 
+**Update 2026-11-15 (issue #7942).** `BlochWigner_unit_circle` is now
+*defined* as `Cl_2` (it was an `opaque`), and the class field only asks for
+some real angle `θ`.  So the class has an unconditional instance by the
+intermediate value theorem (`instBringZeroModeBlochClass` in
+`BringZeroModeClausenWitness.lean`).  That instance does **not** identify a
+Bloch class: the open sub-problem above is unchanged and now lives in the
+stronger, root-of-unity class `BringZeroModeRootOfUnityClass` (no instance).
+
 -- Ref: [manuscript] prop:em-coupling-bring-zero-mode
 -- Ref: [manuscript] prop:archimedean-functor-uniqueness
 -- Ref: [manuscript] prop:force-carrier-bring-uniqueness
@@ -306,7 +314,12 @@ class BringZeroModeBlochClass : Prop where
       that loophole is closed.  Closing the strengthened class
       (Phase 3) requires identifying the specific angle from
       the Bring genus-4 force-carrier pair `{T(2,9), T(3,5)}` —
-      research-grade per PR #952. -/
+      research-grade per PR #952.
+
+      **2026-11-15:** with `BlochWigner_unit_circle := Cl_2` this field is
+      an intermediate-value fact (`exists_Cl_2_eq_bringZeroModeValue`), so it
+      no longer encodes the angle identification; that content moved to
+      `BringZeroModeRootOfUnityClass`. -/
   -- Ref: [manuscript] prop:archimedean-functor-uniqueness
   bring_zero_mode_realised :
     ∃ θ : ℝ, BlochWigner_unit_circle θ = bringZeroModeValue
@@ -334,7 +347,9 @@ theorem bring_zero_mode_additive_form
 
 -- /-- **Faithful instance.** Carries the explicit research-grade conjecture as a sorry.
 --     Since `BlochWigner_unit_circle` is an unconstrained axiom, this cannot be mathematically
---     proven from first principles without additional axioms on the range of the Bloch-Wigner function. -/
+--     proven from first principles without additional axioms on the range of the Bloch-Wigner function.
+--     (Superseded 2026-11-15: the function is now `Cl_2` and the instance is
+--     `instBringZeroModeBlochClass` in `BringZeroModeClausenWitness.lean`.) -/
 -- Per AGENTS.md §3b-cond we provide NO global instance.
 -- instance canonical_bloch : BringZeroModeBlochClass where
 --   -- Ref: [manuscript] prop:em-coupling-bring-zero-mode — identifying the

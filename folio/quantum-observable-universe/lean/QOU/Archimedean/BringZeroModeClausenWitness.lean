@@ -8,14 +8,13 @@ import Mathlib.Analysis.Real.Pi.Bounds
 
 The class field is `∃ θ : ℝ, BlochWigner_unit_circle θ = 2/(3π)`.
 
-* `BlochWigner_unit_circle` is declared `noncomputable opaque` in
-  `BlochWignerUnitCircle.lean`.  An opaque constant has no defining equation the
-  kernel can use, so the field can be neither proved nor refuted from it: the
-  class is **independent** as stated.
-* Once the function is identified with its documented body `Cl_2`, the field is
+* `BlochWigner_unit_circle` was a `noncomputable opaque` until 2026-11-15, so
+  the field could be neither proved nor refuted.  It is now defined as its
+  documented body `Cl_2` (`BlochWignerUnitCircle.lean`).
+* With that body, the field is
   an **intermediate-value fact**: `Cl_2 0 = 0` and `Cl_2 (π/2) = G > 0.915`
   (Catalan's constant), while `2/(3π) < 2/9`.  So some `θ ∈ [0, π/2]` works.
-  This file proves that, sorry-free.
+  This file proves that, sorry-free, and gives the instance.
 
 So the "transcendence obstruction" recorded in the class docstring does **not**
 bear on the class as written: a real angle always exists.  The obstruction is
@@ -64,6 +63,13 @@ theorem bringZeroModeBlochClass_of_eq_Cl_2
     BringZeroModeBlochClass := by
   obtain ⟨θ, -, hθ⟩ := exists_Cl_2_eq_bringZeroModeValue
   exact ⟨⟨θ, by rw [h θ, hθ]⟩⟩
+
+/-- **The instance.**  `BlochWigner_unit_circle` is defined as `Cl_2`, so the
+    class holds unconditionally.  Its content is only that `2/(3π)` lies in
+    the range of `Cl₂`; it says nothing about which Bloch class, if any,
+    realises the value (see `BringZeroModeRootOfUnityClass`). -/
+instance instBringZeroModeBlochClass : BringZeroModeBlochClass :=
+  bringZeroModeBlochClass_of_eq_Cl_2 (fun _ => rfl)
 
 /-- **Corrected statement (conjecture, no instance).**  The content the class
     docstring intends: the angle is a rational multiple of `π`, i.e. the Bloch
