@@ -137,11 +137,25 @@ theorem hol_append (w w' : List (𝟙_ C ⟶ F.obj)) :
   | nil => simp [hol, unit_conv]
   | cons g w ih => simp [hol, ih, conv_assoc]
 
+@[simp] theorem hol_nil : hol F [] = F.unit := rfl
+
+@[simp] theorem hol_cons (g : 𝟙_ C ⟶ F.obj) (w : List (𝟙_ C ⟶ F.obj)) :
+    hol F (g :: w) = conv F g (hol F w) := rfl
+
+@[simp] theorem hol_singleton (g : 𝟙_ C ⟶ F.obj) : hol F [g] = g := by
+  simp [hol, conv_unit]
+
 /-- The endomorphism of a word is the composite of the letters' endomorphisms,
     last letter acting first. -/
 theorem leftMul_hol_cons (g : 𝟙_ C ⟶ F.obj) (w : List (𝟙_ C ⟶ F.obj)) :
     leftMul F (hol F (g :: w)) = leftMul F (hol F w) ≫ leftMul F g :=
   leftMul_conv F g (hol F w)
+
+/-- Concatenation of transport words composes their left-multiplication
+    endomorphisms in diagrammatic order. -/
+theorem leftMul_hol_append (w w' : List (𝟙_ C ⟶ F.obj)) :
+    leftMul F (hol F (w ++ w')) = leftMul F (hol F w') ≫ leftMul F (hol F w) := by
+  rw [hol_append, leftMul_conv]
 
 /-- **The mass integrand is left multiplication by the density.**
     `Ψ = L_u` with `u = Ψ ∘ η`. -/
@@ -181,6 +195,20 @@ theorem frobeniusForm_massIntegrand_of_frobeniusForm_eq_counit
     (h : F.frobeniusForm = F.counit) (x : 𝟙_ C ⟶ F.obj) :
     x ≫ massIntegrand F ≫ F.frobeniusForm = x ≫ F.frobeniusForm := by
   rw [massIntegrand_eq_id_of_frobeniusForm_eq_counit F h, Category.id_comp]
+
+/-- **Frobenius mass functional on the non-abelian holonomy product (Option 1).**
+    The cycle is formed first as the ordered convolution product `hol F w` in `Hom(𝟙, A)`,
+    and then integrated through `Ψ` and `∫_A`. -/
+theorem frobeniusForm_massIntegrand_hol (w : List (𝟙_ C ⟶ F.obj)) :
+    hol F w ≫ massIntegrand F ≫ F.frobeniusForm =
+      conv F (density F) (hol F w) ≫ F.frobeniusForm :=
+  frobeniusForm_massIntegrand F (hol F w)
+
+/-- When `∫_A = ε`, the Frobenius mass functional of a transport word `w` is `∫_A(hol w)`. -/
+theorem frobeniusForm_massIntegrand_hol_of_frobeniusForm_eq_counit
+    (h : F.frobeniusForm = F.counit) (w : List (𝟙_ C ⟶ F.obj)) :
+    hol F w ≫ massIntegrand F ≫ F.frobeniusForm = hol F w ≫ F.frobeniusForm :=
+  frobeniusForm_massIntegrand_of_frobeniusForm_eq_counit F h (hol F w)
 
 /-- **Trace of a left multiplication.** `tr(L_y) = ∫_A(y · c)`. -/
 theorem leftTrace_leftMul (y : 𝟙_ C ⟶ F.obj) :
