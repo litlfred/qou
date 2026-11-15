@@ -89,3 +89,10 @@ Closed form, PR #7741 `h2_gg_atom/level6_trefoil_derivation.py` (7/7). χ_(3,3)(
   H₂ cells pass every level (bare and several bonds), and every mirror fails, so the rule is chiral on this
   family. The electron fails reading 3 on its own three strands. **OPEN (owner):** must an electron pass
   on its own? If yes, no torus electron survives. The passing set is a tail m ≥ 7, not a choice.
+
+## 2026-11-15 — order test (h2_order_test, PR #7741)
+
+Outcome (i), order-dependent. The torus T(2,7) electron passes H₂ only with the proton on the bottom strands;
+with the electron on the bottom it fails levels 2–4 (it fails alone). The V³ electron passes in every order
+(P = V³, V⁶). Higher levels also test upper particles. Still OPEN (owner): must each particle pass alone?
+Owner leans to option 1 ("i think A").
