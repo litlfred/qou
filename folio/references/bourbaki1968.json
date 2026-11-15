@@ -1,0 +1,21 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "bourbaki1968",
+  "type": "book",
+  "title": "Groupes et algèbres de Lie, Chapitres IV, V et VI",
+  "author": [
+    {
+      "family": "Bourbaki",
+      "given": "Nicolas"
+    }
+  ],
+  "publisher": "Hermann",
+  "issued": {
+    "date-parts": [
+      [
+        1968
+      ]
+    ]
+  },
+  "note": "Added 2026-10-05 so a Lean `-- Ref:` key resolves (C9, issue #7528; owner ruling). Metadata written by an agent from standard bibliographic knowledge and NOT checked against the source in this session; review status stays unreviewed until a human validates it."
+}

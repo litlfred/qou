@@ -20,7 +20,12 @@ From $q$ and $\mu_0$ alone, we determine:
 
 1. **Weak scale crossing count $N_v$.** Target: $N_v \cdot \kappa_{\mathrm{cross}} \cdot \mu_0 \approx 246$ GeV.
 2. **$Q$-values for $A > 4$.** RESOLVED.
-3. **Axial coupling $g_A$.** RESOLVED. $g_A(q) \approx 1.277$.
+3. **Axial coupling $g_A$.** Not derived. The value $g_A(q_0) \approx 1.277$
+   carries the imported naive-quark-model factor $5/3$ and a colour average
+   chosen from three candidates listed beside their deviations from
+   experiment ($-23\%$, $+46\%$, $+0.1\%$); the closest was kept. That is a
+   selection against the target, i.e. a fit under the no-fitting
+   discipline, not a prediction (`QOU/Archimedean/AxialCoupling.lean`).
 4. **Fine structure constant $\alpha_{\mathrm{EM}}$.** RESOLVED. $\alpha^{-1} \approx 137.036$.
 5. **Shell correction energy scale $\lambda_{\mathrm{shell}}$.** The binding energy of the alpha particle.
 

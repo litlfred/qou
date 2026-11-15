@@ -1,0 +1,26 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "cartan1956",
+  "type": "book",
+  "title": "Homological Algebra",
+  "author": [
+    {
+      "family": "Cartan",
+      "given": "Henri"
+    },
+    {
+      "family": "Eilenberg",
+      "given": "Samuel"
+    }
+  ],
+  "publisher": "Princeton University Press",
+  "publisher-place": "Princeton, NJ",
+  "issued": {
+    "date-parts": [
+      [
+        1956
+      ]
+    ]
+  },
+  "note": "Foundational reference; Whitehead's lemma (Ch. IX §7) is cited for spectral sequence collapse."
+}

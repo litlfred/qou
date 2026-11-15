@@ -1633,6 +1633,20 @@ def _lp_kernel_steps(partition, chains):
     accumulation loop (`math.log(abs(tr_run))`, see the note on
     `binding_energy`'s return) and returns a Python float.  That narrowing is
     downstream of this one and is tracked separately.
+
+    MEMOISED (2026-10-13, branch claude/binding-energy-profile-2026-10-13).
+    `binding_energy` asks the kernel
+    the SAME question up to three times per partition: the accumulator here,
+    then `atom_character_raw(include_inter=True)` from the SDP leg and again
+    from the Frobenius leg -- identical `(partition, chains)`, so an identical
+    payload.  The kernel is deterministic (measured: three calls on (4,3,2,1)
+    returned byte-identical strings), so the repeat calls bought nothing.
+    The cache stores the kernel's raw DECIMAL STRINGS, keyed on the full
+    serialized payload plus the q₀ string and the MPFR precision, and the
+    `mpf` conversion below runs on every call exactly as before -- so a hit
+    is byte-identical to a miss whatever the caller's ambient `mp.dps`.  It
+    deliberately does NOT cache mpf values: a cached mpf carries the dps of
+    whoever built it first (see `_partition_table`'s note).
     """
     if not _HAS_LP_KERNEL:
         return None
@@ -1640,9 +1654,24 @@ def _lp_kernel_steps(partition, chains):
     from q_parameter import Q_50_DIGIT_STR as _Q50
     with _mp.workdps(_EXACT_COEFF_DPS):
         payload = [[(str(c), str(d), g) for c, d, g in ch] for ch in chains]
-    out = _PHN.lp_accumulator_step_traces_mpfr(
-        list(partition), payload, _Q50, 50)
+    key = (tuple(partition),
+           tuple(tuple(step) for step in payload), _Q50, 50)
+    out = _LP_KERNEL_MEMO.get(key)
+    if out is None:
+        out = _PHN.lp_accumulator_step_traces_mpfr(
+            list(partition), payload, _Q50, 50)
+        out = tuple((str(t), str(l)) for (t, l) in out)
+        if len(_LP_KERNEL_MEMO) >= _LP_KERNEL_MEMO_MAX:
+            _LP_KERNEL_MEMO.pop(next(iter(_LP_KERNEL_MEMO)))
+        _LP_KERNEL_MEMO[key] = out
     return [(_mp.mpf(t), _mp.mpf(l)) for (t, l) in out]
+
+
+# Raw kernel output (decimal strings), keyed on the exact serialized request.
+# Bounded FIFO: one atom touches at most 2 x (partitions <= K_PARTITION_MAX)
+# keys (inter on / off), so 4096 covers a whole binding_energy call with room.
+_LP_KERNEL_MEMO: dict = {}
+_LP_KERNEL_MEMO_MAX = 4096
 
 
 def _exact_log(x):

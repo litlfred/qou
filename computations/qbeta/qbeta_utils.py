@@ -377,3 +377,48 @@ def c3_target_at(q: mpf, q_codata: mpf, m_e: mpf, *,
     Q_N1 = Q_A * mpcos(sub["alpha"] - sub["b"] * sub["hbar_q"] ** 2 / 2)
     Q_N2 = Q_N1 * (1 + (-1) * sub["u"] ** 2)
     return (q_codata / Q_N2 - 1) / sub["u"] ** 3
+
+
+def c3_proton_extracted(dps: int | None = None) -> mpf:
+    """The corpus's c_3 at the PROTON pin -- the value `qbeta_ck_cache.py`
+    writes as `rows[k=3].c_k` -- recomputed live rather than typed in.
+
+    Same definition as the canonical producer, input for input: convention C
+    (the excised frame the ladder was extracted in; under D there is no
+    derived ladder, bean `qou-cds1`), `q = q_at(dps)` (proton, CODATA-2022
+    m_p/m_e), `Q_codata = mpf(str(Q_BETA_MEV))`, `m_e = mpf(M_E_MEV)`
+    (CODATA 2022). At 70 dps it reproduces the committed
+    `qbeta-ck-cache.witness.json` value -2.06934257711516783787971951725 in
+    all 30 recorded digits.
+
+    WHY THIS EXISTS (2026-10-13, owner-authorised trace). Seven probes typed
+    `c_3 = -2.0693425728`, which is 4.3e-9 (2.1e-9 relative) from every
+    producer in the corpus that computes c_3 at the proton pin. No input
+    choice reproduces that literal: CODATA-2018 m_p/m_e gives -2.0693430192,
+    CODATA-2018 m_e gives -2.0671571682, a float64 q, m_e or Q_beta each move
+    the canonical value by only ~1e-10, and no 15/16-digit q literal lands on
+    it. It is an unreproducible copy, not a second definition. c_3 is an
+    extraction amplified by 1/u^3 = 1.6e6, so a typed copy is only as good as
+    the arithmetic that produced it -- recompute, do not copy.
+    """
+    import sys
+    from pathlib import Path
+    from mpmath import mp
+
+    _comp = str(Path(__file__).resolve().parents[1])     # computations/
+    if _comp not in sys.path:
+        sys.path.insert(0, _comp)
+    import _path_bridge  # noqa: F401  -- puts computations/substrate on the path
+    from codata_constants import M_E_MEV, Q_BETA_MEV
+    from q_parameter import q_at
+
+    # GUARD DIGITS. The extraction (Q/Q_N2 - 1)/u^3 cancels ~6 digits
+    # (u^3 = 6.2e-7), so evaluating at d digits leaves ~d-6 correct and a
+    # d-digit rendering would manufacture the rest. Measured: at 60 dps the
+    # value parts from the 70-dps one at digit ~55. Compute at d + 15, round to d.
+    d = mp.dps if dps is None else dps
+    with mp.workdps(d + 15):
+        c3 = c3_target_at(q_at(d + 15), mpf(str(Q_BETA_MEV)), mpf(M_E_MEV),
+                          convention="C")
+    with mp.workdps(d):
+        return +c3

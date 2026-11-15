@@ -113,6 +113,9 @@ export default chapter({
       blocks: [
         "octonion-algebra",
         "color-su3-from-g2",
+        // SU(N) framing of sigma: color factors (bean qou-sl3f, PR #7830)
+        "sl-n-color-framing",
+        "sl-n-color-frame-scope",
         // Cross-chapter references (blocks live in SM appendix):
         // conj:sm-colour-stabilizer-action — faithfulness of SU(3) on state space
         // TODO: color-tube-coords-intro (new block, from brings-surface)

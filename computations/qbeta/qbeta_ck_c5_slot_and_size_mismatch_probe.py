@@ -63,8 +63,10 @@ residual MAGNITUDE increases from N=4 to N=5 under the live family.
 
 ## Caveat, stated because it is load-bearing
 
-`c_3` is taken as the recorded proton-pin extraction -2.0693425728, hardcoded,
-not re-extracted here; and only the proton pin is computed.  The magnitude
+`c_3` is the proton-pin extraction, recomputed via
+`qbeta_utils.c3_proton_extracted` (the same extraction `qbeta_ck_cache.py`
+performs; this file typed a copy until 2026-10-13 that no producer reproduces),
+and only the proton pin is computed.  The magnitude
 crossing is 0.9 % (6.1698 -> 6.2260), so it is NOT robust to a large c_3 move.
 A full settlement re-extracts c_3 at both pins.  This probe establishes the
 DIRECTION and the coefficient question, not a final margin.
@@ -89,10 +91,11 @@ from mpmath import mp                                          # noqa: E402
 
 from codata_constants import M_E_MEV, Q_BETA_MEV               # noqa: E402
 from q_parameter import q_at                                   # noqa: E402
+from qbeta_utils import c3_proton_extracted                    # noqa: E402
 
 DPS = 50
 mp.dps = DPS   # before the module-scope mpf literals below (import-time dps ratchet)
-C3_PROTON = mp.mpf("-2.0693425728")     # recorded extraction; see Caveat
+C3_PROTON = c3_proton_extracted(DPS)    # canonical extraction; see Caveat
 AGENTS_QUOTED_OMITTED_TERM = mp.mpf("0.577")   # ppb, as written into AGENTS.md
 
 results: list[tuple[str, bool, str]] = []

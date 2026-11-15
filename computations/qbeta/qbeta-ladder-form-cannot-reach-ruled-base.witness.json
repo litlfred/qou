@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-14T08:39:33.560971+00:00",
-  "commitSha": "124a13c77bd2eaf2388a773247c48ff9f279c045",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-10-13T17:34:52.195745+00:00",
+  "commitSha": "b5f5f6bd8f92f88c6532d78513db772b50af553c",
   "assertions": [
     {
       "name": "reproduces_cds1_F_table_on_the_retired_base",
@@ -50,7 +50,7 @@
       "expected": "PASS",
       "passed": true,
       "tolerance": "exact",
-      "source": "the objection check 3 invites is 'a higher rung saves it'. It does not: every c_k the corpus records or derives is NEGATIVE — c_2 = -1 (structural), c_3 = -2.0693425728 (recorded proton extraction), c_5 = -(b^2 + 1/2) = -1.25270211325 (derived) — so each factor (1 + c_k u^k) < 1 and the product is 0.99992617817132 < 1. With cos <= 1 the whole F is strictly below 1 at EVERY truncation order, not merely at N=2. Reaching F > 1 needs a POSITIVE coefficient, and none of the derived ones is."
+      "source": "the objection check 3 invites is 'a higher rung saves it'. It does not: every c_k the corpus records or derives is NEGATIVE — c_2 = -1 (structural), c_3 = -2.06934257712 (recorded proton extraction), c_5 = -(b^2 + 1/2) = -1.25270211325 (derived) — so each factor (1 + c_k u^k) < 1 and the product is 0.99992617817132 < 1. With cos <= 1 the whole F is strictly below 1 at EVERY truncation order, not merely at N=2. Reaching F > 1 needs a POSITIVE coefficient, and none of the derived ones is."
     },
     {
       "name": "the_target_is_stated_as_a_magnitude_not_as_a_search",
@@ -73,8 +73,8 @@
   "durationMs": 5,
   "computation": "qbeta-ladder-form-cannot-reach-ruled-base",
   "scriptFile": "qbeta_ladder_form_cannot_reach_ruled_base_probe.py",
-  "scriptHash": "57aa15166330",
-  "scriptCommitSha": "124a13c77bd2eaf2388a773247c48ff9f279c045",
+  "scriptHash": "5f235b28d344",
+  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -82,12 +82,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -145,7 +147,7 @@
     }
   ],
   "ladder_sup_over_all_phases": "0.999927456715617626498201895199068388200910824829001040100072",
-  "full_ladder_is_reducing": "every c_k the corpus records or derives is NEGATIVE (c_2 = -1 structural, c_3 = -2.0693425728 recorded, c_5 = -(b^2+1/2) derived), so each factor (1 + c_k u^k) < 1 and F is strictly below 1 at EVERY truncation order -- not merely at the N=2 one check 3 bounds. Reaching F > 1 needs a POSITIVE coefficient; none of the derived ones is.",
+  "full_ladder_is_reducing": "every c_k the corpus records or derives is NEGATIVE (c_2 = -1 structural, c_3 = -2.06934257712 recorded, c_5 = -(b^2+1/2) derived), so each factor (1 + c_k u^k) < 1 and F is strictly below 1 at EVERY truncation order -- not merely at the N=2 one check 3 bounds. Reaching F > 1 needs a POSITIVE coefficient; none of the derived ones is.",
   "invariant_cited": "cos <= 1 (Real.cos_le_one, Mathlib; already used by QOU.QBeta.EigenphaseCarrier.replacement_excludes_some_matrix)",
   "sign_F_minus_one_by_base": [
     {

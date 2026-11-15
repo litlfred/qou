@@ -1,0 +1,23 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "fred2005",
+  "type": "thesis",
+  "title": "Integration of Skewed-Poisson Structures on Non-commutative Formal Groups",
+  "author": [
+    {
+      "family": "Fred",
+      "given": "Litl"
+    }
+  ],
+  "genre": "PhD thesis",
+  "publisher": "University of Arizona",
+  "issued": {
+    "date-parts": [
+      [
+        2005
+      ]
+    ]
+  },
+  "URL": "https://repository.arizona.edu/handle/10150/193802",
+  "note": "Proves that skewed-Poisson structures on commutative formal groups integrate to non-commutative formal groups via Gröbner-Shirshov deformations of distribution algebras; introduces the strong multiplicativity condition ensuring comultiplication is preserved under lifting from characteristic p to characteristic 0"
+}

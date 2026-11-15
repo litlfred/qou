@@ -1,0 +1,35 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "geck-lambropoulou-2004",
+  "library": {
+    "docId": "arxiv-math-0405508v1",
+    "dir": "library/arxiv-math-0405508v1",
+    "pdf": "library/arxiv-math-0405508v1/0405508v1.pdf",
+    "stage": "candidates",
+    "pages": 27,
+    "sections": 30,
+    "arxiv": "math/0405508v1"
+  },
+  "type": "article",
+  "title": "Markov traces and knot invariants related to Iwahori-Hecke algebras of type B",
+  "author": [
+    {
+      "family": "Geck",
+      "given": "Meinolf"
+    },
+    {
+      "family": "Lambropoulou",
+      "given": "Sofia"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2004
+      ]
+    ]
+  },
+  "container-title": "arXiv preprint",
+  "URL": "https://arxiv.org/abs/math/0405508",
+  "note": "arXiv:math/0405508. Added 2026-05-19 from library/ gap audit. DIRECT fit with QOU's Hecke / Markov-trace content (braids-and-knots chapters). Potential citation target alongside jones1987 (Hecke type A Markov trace)."
+}

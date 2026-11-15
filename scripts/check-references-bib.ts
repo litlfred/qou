@@ -11,7 +11,7 @@
  *
  *   bun run scripts/check-references-bib.ts    # exit 0 current, 1 drift, 2 could not run
  *
- * The fix for drift is `bun run folio-assistant/cat-harness/content/pipeline/export-bibtex.ts`
+ * The fix for drift is `bun run folio-assistant/cat-harness-tools/pipeline/export-bibtex.ts`
  * with the registry configured (this script's first half), and regenerating is
  * a write to a committed file, so it is a separate, deliberate step.
  *
@@ -21,7 +21,7 @@
 import { mkdtempSync, readFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
-import { configureReferenceRegistry } from "../folio-assistant/cat-harness/content/pipeline/references-registry-di";
+import { configureReferenceRegistry } from "../folio-assistant/cat-harness-tools/pipeline/references-registry-di";
 
 const ROOT = resolve(import.meta.dir, "..");
 const committed = join(ROOT, "references.bib");
@@ -35,7 +35,7 @@ try {
     CSLEntrySchema: bib.CSLEntrySchema,
   });
   process.argv.push("--out", out);
-  await import("../folio-assistant/cat-harness/content/pipeline/export-bibtex");
+  await import("../folio-assistant/cat-harness-tools/pipeline/export-bibtex");
 } catch (e) {
   console.error(`? could not regenerate references.bib: ${(e as Error).message}`);
   process.exit(2);

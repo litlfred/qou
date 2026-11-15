@@ -40,13 +40,12 @@ Everything in *this* file is unconditional: `#print axioms` gives
 
 The **arithmetic** — that the two-row square-sum is `catalan n` — is therefore
 settled for all `n`. What is *not* settled here, and is not claimed, is the
-identification of the visible blocks with `ℓ(λ) ≤ 2`: that rests on the Wenzl
-weight system, which the corpus carries as a Lean class rather than a proof
-(`QOU.QBeta.WenzlWeight.IsOcneanuWeightSystem`, the `_of_wenzl` naming
-convention). Per bean `qou-fpjy` a class hypothesis is a binder, not an axiom,
-so `#print axioms` **cannot see** that dependency — a conditional declaration
-and an unconditional one produce identical axiom reports. Do not read a clean
-axiom report on a `_of_wenzl` declaration as evidence that Wenzl is proved.
+identification of the visible blocks with `ℓ(λ) ≤ 2`.  That once rested on the Wenzl
+weight system carried as the class `QOU.QBeta.WenzlWeight.IsOcneanuWeightSystem`; the
+class is deleted (2026-11-15, bean `qou-gld2`) and the identification is now proved
+unconditionally: `SchurWeyl.JimboActionKernel.finrank_range_jimbo` (`d = 2`) and
+`SchurWeyl.JimboGL.finrank_range_jimbo` (any `d`).  The `_of_wenzl` names in
+`MassTheory.TwoRowCapDerived` are historical; those lemmas never used the class.
 
 Numerical cross-check of the whole reduction (hook length formula against full
 partition enumeration, `n ≤ 14`):

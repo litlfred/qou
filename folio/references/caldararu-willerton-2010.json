@@ -1,0 +1,37 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "caldararu-willerton-2010",
+  "library": {
+    "docId": "arxiv-0707.2052v1",
+    "dir": "library/arxiv-0707.2052v1",
+    "pdf": "library/arxiv-0707.2052v1/0707.2052v1.pdf",
+    "stage": "sections",
+    "pages": 0,
+    "sections": 28,
+    "arxiv": "0707.2052v1"
+  },
+  "type": "article-journal",
+  "title": "The Mukai pairing, I: a categorical approach",
+  "author": [
+    {
+      "family": "Căldăraru",
+      "given": "Andrei"
+    },
+    {
+      "family": "Willerton",
+      "given": "Simon"
+    }
+  ],
+  "container-title": "New York Journal of Mathematics",
+  "volume": "16",
+  "page": "61-98",
+  "issued": {
+    "date-parts": [
+      [
+        2010
+      ]
+    ]
+  },
+  "URL": "https://arxiv.org/abs/0707.2052",
+  "note": "Hochschild homology as a functor on the 2-category of derived categories and kernels; the Mukai pairing and the categorical Chern character ch(E) in HH_0(X); functoriality under Fourier–Mukai transforms. Cited by rem:trace-ledger (the categorical trace as a generalised trace into HH_0) and by docs/audits/2026-09-15-chi-as-a-component-of-the-chern-character.md §11. Ingested 2026-09-15 (owner upload 8a3c9a474)."
+}

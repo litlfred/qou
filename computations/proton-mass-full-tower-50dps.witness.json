@@ -1,30 +1,30 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T12:34:01.483016+00:00",
-  "commitSha": "6cfcaca9219cc9e705ef156e7bca6ae2a63ed109",
+  "computedAt": "2026-11-15T07:56:47.934329+00:00",
+  "commitSha": "0b88920e3516ad7d6c2744ca4f7c49cad9a81029",
   "assertions": [
     {
       "name": "m_p_within_1_percent",
-      "computed": "0.98636505806463899672906238531666897310556174599382",
+      "computed": "0.9882208012195824196622142381661327707412604885044578779855158346145246",
       "expected": "0",
       "passed": false,
       "tolerance": "0.01"
     },
     {
       "name": "m_p_within_2_percent",
-      "computed": "0.98636505806463899672906238531666897310556174599382",
+      "computed": "0.9882208012195824196622142381661327707412604885044578779855158346145246",
       "expected": "0",
       "passed": false,
       "tolerance": "0.02"
     }
   ],
   "allPassed": false,
-  "durationMs": 34,
+  "durationMs": 16,
   "computation": "proton-mass-full-tower-50dps",
   "scriptFile": "derive_m_p_hecke_full_tower_50dps.py",
   "scriptHash": "f597b2ee422e",
-  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
+  "scriptCommitSha": "d9573481fce67572354918f91b289cf0995ab922",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,14 +32,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -51,7 +51,7 @@
   "contentBlock": "prop:mass-endomorphism-tower",
   "parameters": {
     "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
-    "M_E_MEV_CAL1": "0.51099895069"
+    "M_E_MEV_CAL1": "0.5109989506900000000000000000000000000000000000000005654434719000544678"
   },
   "data": {
     "particles": {
@@ -62,17 +62,17 @@
         "Z": 1,
         "N": 0,
         "knot_type": "none",
-        "T1_descended_50dps": "1.0228959844379788408313736343645202995751592625828",
-        "T2_single_Li2q_50dps": "3.3998637032393299015498634469359737220606382392366",
-        "T3_pair_Li2q_50dps": "0.6243720979079347669945930133660007589644398143774",
-        "T4_Frobenius_50dps": "1.636287114593083917134660394638053126521738160248",
-        "T5_chirality_BW_50dps_cat_units": "4.1887308561594205768837158432987722251106659563856",
-        "T6_Habiro_residue_50dps_cat_units": "1.9211357026101485369694937915059302643594631996641",
+        "T1_descended_50dps": "1.022895984437978840831373634364520299575159262582842336739188251493033",
+        "T2_single_Li2q_50dps": "3.399863703239329901549863446935973722060638198532351317139306519107301",
+        "T3_pair_Li2q_50dps": "0.624372097907934766994593013366000758964439810136004945050153075149889",
+        "T4_Frobenius_50dps": "1.636287114593083917134660394638053126521738160247950867577163193062976",
+        "T5_chirality_BW_50dps_cat_units": "2.447538848725234907959147654756475562320912907856612654526982750920566",
+        "T6_Habiro_residue_50dps_cat_units": "1.921135702610148536969493791505930264359463199664048832073264790145902",
         "tower_convention": "Paper canon: m(β) = |Π V̂_i| − Σ Li_2^q(−|V̂_i|) − Σ_{i<j} z² Li_2^q(−|V̂_i V̂_j|) + T4 + T5 + T6 + …. T2/T3 via symmetric q-dilogarithm (NOT compact q-dilog Φ_q). T5 categorical via A_max_grade. T6 from Habiro residue bridge.  T7+ pending (σ-shell α_5 for A=1 atoms is research-scope).",
-        "m_hecke_50dps": "12.793285458947896540363700124109250396592104632495",
+        "m_hecke_50dps": "11.05209345151371087143913193556695373380235153901981095310605857987967",
         "wedderburn_vols_full_50dps": [
-          "1.0802151925176545762883182088992907776660314204556",
-          "0.94693723206569422992782148997618831591459450576481"
+          "1.08021519251765457628831820889929077766603142045559955823059077110612",
+          "0.9469372320656942299278214899761883159145945057648099898895980808863501"
         ]
       },
       "neutron": {
@@ -82,40 +82,40 @@
         "Z": 0,
         "N": 1,
         "knot_type": "none",
-        "T1_descended_50dps": "0.88754454647994472531374208357547420933637637804854",
-        "T2_single_Li2q_50dps": "2.7937712184080390475758008504041607049000170449614",
-        "T3_pair_Li2q_50dps": "0.47227075243573922597713918055025847623397251992449",
-        "T4_Frobenius_50dps": "1.6362871145930839171346603946380531265217381602479",
-        "T5_chirality_BW_50dps_cat_units": "4.0020362578956172456348134056940016648387024584836",
-        "T6_Habiro_residue_50dps_cat_units": "1.9211357026101485369694937915059302643594631996641",
+        "T1_descended_50dps": "0.8875445464799447253137420835754742093363763780485347180321036909132408",
+        "T2_single_Li2q_50dps": "2.793771218408039047575800850404160704900017055171716222662144275332481",
+        "T3_pair_Li2q_50dps": "0.4722707524357392259771391805502584762339725211655487759128951791499814",
+        "T4_Frobenius_50dps": "1.636287114593083917134660394638053126521738160247950867577163193062976",
+        "T5_chirality_BW_50dps_cat_units": "2.394703429870894541286955948941185987892543430260444385111318785729829",
+        "T6_Habiro_residue_50dps_cat_units": "1.921135702610148536969493791505930264359463199664048832073264790145902",
         "tower_convention": "Paper canon: m(β) = |Π V̂_i| − Σ Li_2^q(−|V̂_i|) − Σ_{i<j} z² Li_2^q(−|V̂_i V̂_j|) + T4 + T5 + T6 + …. T2/T3 via symmetric q-dilogarithm (NOT compact q-dilog Φ_q). T5 categorical via A_max_grade. T6 from Habiro residue bridge.  T7+ pending (σ-shell α_5 for A=1 atoms is research-scope).",
-        "m_hecke_50dps": "11.71304559242257269860564970636787844619026976133",
+        "m_hecke_50dps": "10.10571276439784999425779224961506276924411074455824380136888991433441",
         "wedderburn_vols_full_50dps": [
           "0.94109151746029701580416596399818528296188877481681",
           "0.94310120749482651420240983797149680197895809756501"
         ]
       },
       "electron": {
-        "m_hecke_50dps": "0.51099895069"
+        "m_hecke_50dps": "0.5109989506900000000000000000000000000000000000000005654434719000544678"
       }
     },
     "ratios": {
-      "m_p_over_m_e_50dps": "25.035835086692781522438903002885636701603819945987",
-      "m_n_over_m_e_50dps": "22.921858404222729615573508070069728867040053297707"
+      "m_p_over_m_e_50dps": "21.6284073315416984960054418376460438242125180498182261804838332834449",
+      "m_n_over_m_e_50dps": "19.77638652829353815645854247187527188392495355352494299060305124903942"
     },
     "predictions_MeV": {
-      "m_p_pred_50dps": "12.793285458947896540363700124109250396592104632495",
-      "m_n_pred_50dps": "11.71304559242257269860564970636787844619026976133"
+      "m_p_pred_50dps": "11.05209345151371087143913193556695373380235153901981095310605857987967",
+      "m_n_pred_50dps": "10.10571276439784999425779224961506276924411074455824380136888991433441"
     },
     "comparisons": {
       "m_p_codata_MeV": "938.27208943",
-      "rel_diff_p": "0.98636505806463899672906238531666897310556174599382",
-      "rel_diff_p_ppm": "986365.05806463899672906238531666897310556174599382"
+      "rel_diff_p": "0.9882208012195824196622142381661327707412604885044578779855158346145246",
+      "rel_diff_p_ppm": "988220.8012195824196622142381661327707412604885044578779855158346145246"
     },
     "lean_uniqueness_ref": {
       "nucleus": "proton",
       "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
-      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "framework_doc": "folio/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
       "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
     },
     "upstream_witness_hashes": [

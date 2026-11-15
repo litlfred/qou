@@ -1,0 +1,36 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "milnor1982",
+  "library": {
+    "docId": "milnor-1982-hyperbolic-geometry-the-first-150-years",
+    "dir": "library/milnor-1982-hyperbolic-geometry-the-first-150-years",
+    "pdf": "library/milnor-1982-hyperbolic-geometry-the-first-150-years/milnor-1982-hyperbolic-geometry-the-first-150-years.pdf",
+    "stage": "candidates",
+    "pages": 16,
+    "sections": 9,
+    "alternates": [
+      "milnor-hyperbolic"
+    ]
+  },
+  "type": "article-journal",
+  "title": "Hyperbolic geometry: The first 150 years",
+  "author": [
+    {
+      "family": "Milnor",
+      "given": "John W."
+    }
+  ],
+  "container-title": "Bulletin of the American Mathematical Society",
+  "volume": "6",
+  "issue": "1",
+  "page": "9-24",
+  "issued": {
+    "date-parts": [
+      [
+        1982
+      ]
+    ]
+  },
+  "DOI": "10.1090/S0273-0979-1982-14958-8",
+  "note": "Source for the Lobachevsky function $\\Lambda$ and the ideal-simplex volume $\\mathrm{Vol}(\\alpha,\\beta,\\gamma) = \\Lambda(\\alpha) + \\Lambda(\\beta) + \\Lambda(\\gamma)$, together with the theorem that the regular ideal simplex is the unique volume maximiser. The analytic half of the latter is formalized in `QOU.Archimedean.IdealTetrahedronConcavity.volChart_isMaxOn_regular`; the volume identification itself is bean qou-5gai H4 (open).PDF library/milnor-1982-hyperbolic-geometry-the-first-150-years/ — joined 2026-08-16: the library held this paper unlinked, so it read as an unregistered document. "
+}

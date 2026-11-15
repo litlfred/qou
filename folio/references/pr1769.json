@@ -1,0 +1,20 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "pr1769",
+  "type": "webpage",
+  "title": "S(q) = Q_β(q) / E_0(q) vanishes at the classical point q = 1",
+  "author": [
+    {
+      "literal": "QOU project (litlfred/qou)"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2026
+      ]
+    ]
+  },
+  "URL": "https://github.com/litlfred/qou/pull/1769",
+  "note": "Internal QOU pull request #1769. The simplified substrate ratio S(q) = (2q + 1 − q²)(q² − 1)/(2q²) inherits a (q − 1) factor, so S(1) = 0 — the 'c_k from u-ladder Taylor of Q_β/E_0' recipe is degenerate at the classical point. Cited by q-beta-over-e0-classical-vanishing.lean."
+}

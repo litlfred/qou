@@ -388,7 +388,7 @@ def _chi_lambda_of_word_mpf(sigmas: list, dim: int,
 # but at 50 dps for the mpfr consumer (atomic_tr_m_mpfr_50dps.py and
 # any other 50-dps caller). Key includes mp.dps so a precision change
 # invalidates the cached parse.
-_Y_LAMBDA_CACHE: dict[tuple[str, int, int], dict] = {}
+_Y_LAMBDA_CACHE: dict[tuple, dict] = {}
 
 
 def _load_y_lambda(n: int, path: Path | None = None,
@@ -424,7 +424,11 @@ def _load_y_lambda(n: int, path: Path | None = None,
         anchor = anchor_of_q0(q_str) if q_str is not None else None
         # Unrecognised q₀ keeps the previous default rather than guessing.
         p = _Y_LAMBDA_BY_ANCHOR.get(anchor, _Y_LAMBDA_DEFAULT)
-    key = (str(p), n, mp.mp.dps)
+    # The caller's q is part of the key: the table-vs-caller q check below must
+    # run for every distinct q, and a key without it let a proton call's cached
+    # table answer a later live-muon call on the same path.
+    key = (str(p), n, mp.mp.dps, None if path is not None else
+           (None if q_str is None else str(q_str)))
     cached = _Y_LAMBDA_CACHE.get(key)
     if cached is not None:
         return cached
@@ -435,6 +439,33 @@ def _load_y_lambda(n: int, path: Path | None = None,
         raise KeyError(
             f"y-lambda-mpfr-witness.json has no table for n={n}; "
             f"available: {sorted(W['tables_by_n'].keys(), key=int)}")
+    # The table must be AT the caller's q, not merely on the same named layer
+    # (2026-10-13, deuteron tr_M adjudication). `anchor_of_q0` recognises the
+    # muon layer by the prefix of the SUPERSEDED pin A ("1.10997859555"); the
+    # live muon anchor is C ("1.10997859564…", CODATA 2022, fca08de7d2), so a
+    # live-muon caller got anchor None and fell through to the PROTON table:
+    # word and χ at muon, y_λ at proton. Measured on the deuteron, A=2, H_6:
+    #     y from proton table (what it served)   0.15196834395846875587
+    #     y computed live at the muon q          0.15196834576094227586
+    #     markov_peel at muon (symbolic z)       0.15196834576094227586
+    # so the bridge disagreed with the peel by 1.19e-8 at muon and agreed
+    # exactly at proton. The muon table itself records pin A, so mapping C to
+    # it would only shrink the straddle (to 0.15196834574900…), not close it.
+    # When the table's own q differs from the caller's, compute y_λ live at
+    # the caller's exact q, as `load_y_lambda_for_q0` already does for an
+    # off-anchor q; the closed form agrees with both tables at their own q to
+    # ≤ 2.7e-51 at n = 3, 6, 9. An explicit `path` is the caller's assertion
+    # and is honoured as before.
+    if path is None and q_str is not None and table.get("q") is not None:
+        with mp.workdps(max(mp.mp.dps, 50) + 10):
+            same_q = abs(mp.mpf(str(table["q"])) - mp.mpf(str(q_str))) \
+                <= mp.mpf(10) ** (-(min(mp.mp.dps, 50) - 5))
+        if not same_q:
+            from schur_principal_mpmath import y_lambda_at_q0_mpmath
+            live = {tuple(k): mp.mpf(v) for k, v in
+                    y_lambda_at_q0_mpmath(n, mp.mpf(str(q_str))).items()}
+            _Y_LAMBDA_CACHE[key] = live
+            return live
     parsed = {tuple(w["partition"]): mp.mpf(w["y_lambda"])
               for w in table["weights"]}
     parsed = _apply_wenzl_row_cap(parsed, table.get("z"), table.get("q"),

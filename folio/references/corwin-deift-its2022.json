@@ -1,0 +1,38 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "corwin-deift-its2022",
+  "library": {
+    "docId": "arxiv-2201.05665v1",
+    "dir": "library/arxiv-2201.05665v1",
+    "pdf": "library/arxiv-2201.05665v1/2201.05665v1.pdf",
+    "stage": "sections",
+    "pages": 16,
+    "sections": 8,
+    "arxiv": "2201.05665v1"
+  },
+  "type": "article",
+  "title": "Harold Widom's work in random matrix theory",
+  "author": [
+    {
+      "family": "Corwin",
+      "given": "Ivan Z."
+    },
+    {
+      "family": "Deift",
+      "given": "Percy A."
+    },
+    {
+      "family": "Its",
+      "given": "Alexander R."
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2022
+      ]
+    ]
+  },
+  "URL": "https://arxiv.org/abs/2201.05665",
+  "note": "Survey of Widom's random-matrix work, opening with the sine-kernel Fredholm determinant (the bulk emptiness-formation probability) and Widom's asymptotic answering Dyson, then the Tracy–Widom edge distributions and ASEP. Used in qou-k5r5 as the pin for Widom's sine-kernel determinant references and the sine-vs-Airy (bulk-vs-edge) regime split. Context/survey, not a primary rate computation for the Plancherel linear statistic. PDF library/arxiv-2201.05665v1/."
+}

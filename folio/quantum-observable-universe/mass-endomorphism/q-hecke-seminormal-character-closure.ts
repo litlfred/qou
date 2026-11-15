@@ -54,6 +54,8 @@ export default proposition({
     script: "computations/tr_m_q_hecke_seminormal.py",
     witness: [
       "computations/tr-m-q-hecke-seminormal.witness.json",
+      // Numerical-verification table reads this (proton pin, owner S2 2026-11-15).
+      "computations/atomic-tr-m-mpfr-50dps-proton.witness.json",
     ],
     status: "verified",
     requires: ["numpy", "sympy"],

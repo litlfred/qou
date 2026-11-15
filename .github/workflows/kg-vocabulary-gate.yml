@@ -35,7 +35,7 @@ name: kg-vocabulary-gate
 # 2 seconds for the whole corpus (3613 siblings), so this is also worth running
 # by hand before any commit that touches a content block's `.ts`:
 #
-#   bun run folio-assistant/cat-harness/content/pipeline/gen-block-jsonld.ts --check
+#   bun run folio-assistant/cat-harness-tools/pipeline/gen-block-jsonld.ts --check
 #
 # WHAT IT DOES NOT COVER, measured rather than assumed
 # 64 authored blocks are outside the KG entirely and this gate cannot see them:
@@ -80,7 +80,7 @@ jobs:
           # the same file:
           #
           #   clone root     folio-assistant -> ../folio-assistant
-          #                  => folio-assistant/cat-harness/content/pipeline/...
+          #                  => folio-assistant/cat-harness-tools/pipeline/...
           #   cat-harness    folio-assistant -> ../folio-assistant/cat-harness
           #                  => folio-assistant/content/pipeline/...
           #
@@ -91,7 +91,7 @@ jobs:
           # Run 1 of this gate hardcoded ONE layout and so could only ever fail
           # on the runner, while reproducing clean by hand.
           GEN=""
-          for c in folio-assistant/cat-harness/content/pipeline/gen-block-jsonld.ts \
+          for c in folio-assistant/cat-harness-tools/pipeline/gen-block-jsonld.ts \
                    folio-assistant/content/pipeline/gen-block-jsonld.ts; do
             if [ -f "$c" ]; then GEN="$c"; break; fi
           done
@@ -160,4 +160,4 @@ jobs:
           echo "restored  -> check passes. The gate is live."
 
       - name: Gate — every .jsonld sibling matches its .ts and the pinned vocabulary
-        run: bun run folio-assistant/cat-harness/content/pipeline/gen-block-jsonld.ts --check
+        run: bun run folio-assistant/cat-harness-tools/pipeline/gen-block-jsonld.ts --check

@@ -297,7 +297,7 @@ def main() -> int:
 
     if not cited:
         print("No citations found. If content/**/*.jsonld is absent, run\n"
-              "  bun run folio-assistant/cat-harness/content/pipeline/gen-block-jsonld.ts\n"
+              "  bun run folio-assistant/cat-harness-tools/pipeline/gen-block-jsonld.ts\n"
               "first — an ungenerated graph reads as a corpus that cites nothing.")
         return 0
 

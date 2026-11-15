@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-10T07:03:49Z
-updated_at: 2026-10-11T14:00:00Z
+updated_at: 2026-11-15T09:10:00Z
 parent: qou-3e6w
 ---
 
@@ -325,3 +325,19 @@ for any `AddCommMonoid`: the hooks are a copy of `δ_{k−r}`, a copy of `δ_r`,
 rectangle of EVEN hooks. This is the direct-hook form of the β-set identity above (rectangle =
 `X_{k,r}`). The ε-valued assembly (`rem ≥ 0`, `F ≤ C`, `√(2n) < k + 3/2`) stays in the probe.
 Issue #7745.
+
+## 2026-11-15 — independent confirmation (#7802), two lemmas ported
+
+#7802 (session `01RDZSaansT3gCHtnzymkVL7`, 2026-10-17) derived the same lower bound
+independently: the same family (δ_k plus its r top outer corners), the same hook split
+`hooks δ_r + hooks δ_{k−r} + 2·hooks(r × (k−r+1))`, and the same constant
+`K3 = 3A/2 + 2B + C = 21.955`. Its probe measured the family's worst deficit at −15.01, inside
+−K3. So the result here now has two independent derivations.
+
+On the owner's ruling (option B), #7802 is closed as superseded by #7750, with its branch kept.
+Its two lemmas that `main` lacked are ported into `StaircaseRowDeletedHook.lean` in this file's
+(k, r) form:
+- `rowDeleted_hookSum_ge`: for g ≥ 0, the two staircase hook sums are ≤ the shape's hook sum.
+- `rowDeletedYD_card`: the cell count is `T_{k−r} + T_r + r(k−r+1)`.
+
+The ε-valued assembly is still not in Lean, in either derivation. This bean stays open.

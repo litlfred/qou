@@ -21,8 +21,12 @@ of its bond weights.
 exactly one bond: `T` carries an `nn` where `³He` carries a `pp` (both carry two
 `pn`). Every symmetric / type-blind bond model therefore gives their ratio as
 `1`. The inverse-product weight instead gives their ratio **exactly** `(a/b)²`
-— the empirical μ_ext split (T/³He = 4.44/3.29 ≈ 1.3501) that the type-blind
-model cannot produce (numerically `(a/b)² ≈ 1.3315`, −1.38%).
+— a split the type-blind model cannot produce. (The numerical agreement once
+quoted here, `(a/b)² ≈ 1.3315` vs 1.3501, −1.38%, used retired convention-C
+traces and stale targets. On the canonical traces — borromean word,
+convention D, proton pin — `(a/b)² ≈ 1.7544` against the live target 1.3671,
++28.3%; see `perknot-pn-bond-mayer-grounding.witness.json`. The identity
+proved below is unaffected.)
 
 This file proves the **exact algebraic identity** behind that reduction. It is a
 generic-field statement (§7c: no `ℝ`, no ordering — a pure `GroupWithZero`

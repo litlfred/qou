@@ -1,0 +1,34 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "mclean2022",
+  "library": {
+    "docId": "978-3-98547-562-9-volume-4-chapter-5483",
+    "dir": "library/978-3-98547-562-9-volume-4-chapter-5483",
+    "pdf": "library/978-3-98547-562-9-volume-4-chapter-5483/978-3-98547-562-9-volume-4-chapter-5483.pdf",
+    "stage": "candidates",
+    "pages": 22,
+    "sections": 8
+  },
+  "type": "chapter",
+  "title": "Floer cohomology, singularities, and birational geometry",
+  "author": [
+    {
+      "family": "McLean",
+      "given": "Mark"
+    }
+  ],
+  "container-title": "Proceedings of the International Congress of Mathematicians 2022",
+  "publisher": "EMS Press",
+  "volume": "4",
+  "page": "2616-2637",
+  "issued": {
+    "date-parts": [
+      [
+        2022
+      ]
+    ]
+  },
+  "DOI": "10.4171/ICM2022/13",
+  "URL": "https://doi.org/10.4171/ICM2022/13",
+  "note": "PDF library/978-3-98547-562-9-volume-4-chapter-5483/978-3-98547-562-9-volume-4-chapter-5483.pdf — The only entry here whose publication data is printed on the document itself (DOI, volume, pages, publisher), so it is recorded. Proves part of the cohomological McKay correspondence by computing one Floer cohomology group two different ways — the same move as `QOU/Mathlib/EulerCharacteristic.lean`'s `eulerChar_bump_eq`, where an index is page-independent and so may be evaluated wherever it is reachable."
+}

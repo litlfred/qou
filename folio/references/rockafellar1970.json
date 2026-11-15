@@ -1,0 +1,24 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "rockafellar1970",
+  "type": "book",
+  "title": "Convex Analysis",
+  "author": [
+    {
+      "family": "Rockafellar",
+      "given": "R. Tyrrell"
+    }
+  ],
+  "publisher": "Princeton University Press",
+  "publisher-place": "Princeton, NJ",
+  "issued": {
+    "date-parts": [
+      [
+        1970
+      ]
+    ]
+  },
+  "collection-title": "Princeton Mathematical Series",
+  "collection-number": 28,
+  "note": "Cited for the conic Carathéodory theorem, Cor. 17.1.2, in QOU/Mathlib/FinitelyGeneratedConeClosed.lean."
+}

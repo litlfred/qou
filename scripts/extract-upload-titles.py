@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Seed the source-ledger join by matching upload titles to references.ts.
+"""Seed the source-ledger join by matching upload titles to the bibliography (folio/references/).
 
 The source-ledger indexer
-(``folio-assistant/cat-harness/content/pipeline/source-ledger-index.ts``) resolves an
+(``folio-assistant/cat-harness-tools/pipeline/source-ledger-index.ts``) resolves an
 upload to a reference when the *filename* carries an arXiv id.  Most of the
 corpus does not: books, journal PDFs, and pre-arXiv scans arrive under
 opaque names.  This helper reads the first page of each document and reports
-which ``references.ts`` titles appear verbatim in it, so the indexer can seed
+which bibliography titles appear verbatim in it, so the indexer can seed
 those joins instead of leaving them for an agent to rediscover.
 
 It is an **accelerator, not an authority**.  A match is only seeded when it is
@@ -19,7 +19,7 @@ Usage::
     python3 scripts/extract-upload-titles.py                 # report
     python3 scripts/extract-upload-titles.py -o matches.json
 
-    bun run folio-assistant/cat-harness/content/pipeline/source-ledger-index.ts \\
+    bun run folio-assistant/cat-harness-tools/pipeline/source-ledger-index.ts \\
         --write --matches matches.json
 
 Requires ``pypdf``.  Documents with no text layer (scans) are reported so
@@ -40,7 +40,8 @@ import warnings
 # extraction succeeds regardless.
 warnings.filterwarnings("ignore")
 
-REFERENCES = "folio/schema/references.ts"
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "lib"))
+import references_dir  # noqa: E402  -- folio/references/<id>.json (bean qou-l7pj)
 UPLOADS_GLOB = "library/*"
 SOURCE_EXT = (".pdf",)
 
@@ -61,17 +62,9 @@ def normalise(text: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
-def parse_references(path: str) -> list[tuple[str, str]]:
-    """Return ``(id, title)`` for every ``ref()`` entry."""
-    src = open(path, encoding="utf-8").read()
-    out: list[tuple[str, str]] = []
-    for m in re.finditer(r"ref\(\{(.*?)\n\s*\}\)", src, re.S):
-        body = m.group(1)
-        rid = re.search(r'\bid:\s*"([^"]+)"', body)
-        title = re.search(r'\n\s*title:\s*"((?:[^"\\]|\\.)*)"', body)
-        if rid:
-            out.append((rid.group(1), title.group(1) if title else ""))
-    return out
+def parse_references(repo: str = ".") -> list[tuple[str, str]]:
+    """Return ``(id, title)`` for every bibliography entry (folio/references/, bean qou-l7pj)."""
+    return [(e["id"], e.get("title") or "") for e in references_dir.entries(repo)]
 
 
 def first_page_text(path: str) -> tuple[str, str | None]:
@@ -104,7 +97,7 @@ def main() -> int:
     args = ap.parse_args()
 
     os.chdir(args.repo_root)
-    refs = [(rid, normalise(t)) for rid, t in parse_references(REFERENCES)]
+    refs = [(rid, normalise(t)) for rid, t in parse_references()]
     refs = [(rid, t) for rid, t in refs if len(t) >= MIN_TITLE_CHARS]
     print(f"references with a usable title: {len(refs)}", file=sys.stderr)
 

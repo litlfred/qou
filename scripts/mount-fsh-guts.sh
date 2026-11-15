@@ -17,8 +17,8 @@ ROOT=$(git -C "$(dirname "$0")/.." rev-parse --show-toplevel) || exit 0
 cd "$ROOT" || exit 0
 BRANCH=cat/cat-harness/fsh-guts
 
-if [ -d folio-assistant/cat-harness/scripts ] && command -v bun >/dev/null 2>&1; then
-  bun folio-assistant/cat-harness/scripts/state-mount.ts && exit 0
+if [ -d folio-assistant/cat-harness-tools/scripts ] && command -v bun >/dev/null 2>&1; then
+  bun folio-assistant/cat-harness-tools/scripts/state-mount.ts && exit 0
   echo "mount-fsh-guts: state:mount failed; trying the read-only fallback" >&2
 fi
 

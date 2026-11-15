@@ -9,7 +9,7 @@ tags:
     - 8f-gen
     - 8f-open
 created_at: 2026-08-10T18:57:48Z
-updated_at: 2026-10-13T12:00:00Z
+updated_at: 2026-11-15T12:00:00Z
 parent: qou-8lxd
 ---
 
@@ -445,5 +445,46 @@ So on the model cone the choice of `u` is inessential up to triad-commuting auto
 **Not attempted, by the owner's ordering:** (b) moving the Reeb involution onto Bring's own cone (link `UT(Σ₄)`, `qou-rydq`), and (c) a `Gen1Quark` → rays map. Note for whoever picks up (b): on Bring's cone the analogue of "a point of the Hopf base" would be a point (or section) over `Σ₄`, and the Euler number −6 of the link fibration (vs −1 for Hopf) is the known obstruction to a global quaternionic triad there.
 
 Stays `todo` (rule 13a).
+
+Session: https://claude.ai/code/session_01A1NHnUY3QMcdoxDYQmLCXB
+
+---
+
+## 2026-11-15 — owner ruling (option 1): `u` is a gauge choice; then (b) and (c) — PR #7820
+
+**(a) Covariance.** `QOU/BringConeGauge.lean`, generic `[CommRing R]`:
+- `exists_triad_equiv_conj_chiralGammaU`: let `u`, `v` be pure units, and suppose either `IsUnit (2(1+u·v))` or (`v = −u` and some pure `w ⊥ u` has unit norm). Then a linear automorphism `e` exists that commutes with `M_i, M_j, M_k` and satisfies `e ∘ Γ_u = Γ_v ∘ e`. The intertwiners are `L_{1−vu}` and `L_w`.
+- `exists_triad_equiv_conj_chiralGammaU_ordered`: the same with **no extra hypothesis** over a linearly ordered field (ℝ). WLOG `u = i` holds there.
+- `TriadGauge.eigen_iff` transports eigenvectors and eigenvalues. Every Γ-statement in BringCone.lean therefore holds for all admissible `u`. `reebM_{j,k}_flips_eigenU` and `reebM_i_preserves_eigenU` give the `u`-generic flips.
+- **NOT covariant:** `isUnit_two_of_triadGauge_i_j` shows that a triad gauge `Γ_i → Γ_j` forces `IsUnit 2`. Over ℤ the choice of `u` is not a gauge choice. `chiralGamma_apply` (coordinates) holds only in the gauge `u = i`.
+
+**(b) Bring's own cone.** `QOU/BringConeSplitChirality.lean`, split model `M₂(R)`, the sl₂ triad of `UT(Σ₄)`:
+- `M_j² = M_k² = id`. `M_j` fixes `1+j` (`M_j_not_ray_free`), so the Hopf flip `ι = M_j` fails here (V10 necessity).
+- `M_i` (fibre rotation) is the only ray-free Reeb operator (`M_i_ray_free`). It anticommutes with `M_j`, and `M_j` is itself a grading. That gives V10's shape from the triad alone.
+- `commutes_span_scalar`: if `L_u` commutes with a set whose span contains `i, j`, then `u` is scalar. So `L_u` does not descend to `SL₂/Γ₄`.
+- GAP 1: the spanning of `Γ₄` (Borel density) is a hypothesis; it is not in the corpus or the library.
+- GAP 2: on points of the link only `M_i` acts (norm +1); `M_j` and `M_k` are module operators. Which object the states are (rays, points of `UT(Σ₄)`, sections) is not fixed. Bean `qou-pu2x`.
+
+**(c) Gen1Quark → rays.** `QOU/StandardModel/Gen1QuarkRays.lean`:
+- `no_vector_equivariant_map`: the flip matches `M_j` only projectively.
+- `gen1Ray seed`: L goes to `Γ_u=−1` and R to `+1` (`gen1Ray_gamma`); the flip becomes `±M_j` (`gen1Ray_flip`); only the 4 left-handed values are free (`gen1Ray_unique`).
+- particle↔anti cannot be `M_j` or `M_k` (`reebM_{j,k}_not_chirality_preserving`).
+- **Flavour (and particle placement) are the free `seed`.** The constant seed collapses `uL`/`dL` (`constSeed_collapses_flavour`).
+
+Lean-direct `-DautoImplicit=false -s 65536` exit 0 with 0 warnings on all three files and on `BringConeSplit`. `#print axioms` on all 38 new declarations ⊆ {propext, Classical.choice, Quot.sound}.
+
+Stays `todo` (rule 13a). The physical identification of the Reeb involution on states is still open.
+
+Session: https://claude.ai/code/session_01A1NHnUY3QMcdoxDYQmLCXB
+
+## 2026-11-15 — does Bring's S₅ single out `u`? No (owner ruling, option 2; PR #7818)
+
+Preregistered before measuring: `docs/audits/2026-11-15-bring-s5-distinguished-unit-preregistration.md` (commit `5b76d41e08`; results in §5, rules unchanged).
+
+- **Action leg — outcome (iii).** The corpus has no action of Bring's `S₅` or `A₅` on the model cone or its admissible units. Its `A₅`'s act on Klein's `ℙ(V)` and on `Σ₄`; the `S²` of `u` is the Hopf base of the model (`qou-rydq`). `S₅` has no faithful real 3-dim rep, so only `A₅` could act, and its two icosahedral embeddings (Galois `√5 ↦ −√5`, measured to have different characters) are swapped by `S₅`'s odd coset.
+- **Assuming the action through `2I` by left multiplication** (the only triad-respecting linear shape): it acts on `u` by conjugation (`leftMul_conj_chiralGammaU`). No `u` is fixed (R0 empty; Lean via `i, j ∈ 2I`, and exact compute). The maximal-stabiliser rule picks one orbit: the **12 vertex directions** (6 axes, stabiliser `C₅`); the other exceptional orbits are 20 (`C₃`) and 30 (`C₂`).
+- **And it cannot fix a handedness.** Each exceptional orbit contains `−u` for every `u` (moved there by 5 / 3 / 2 perpendicular half-turns), and `leftMul_flips_chiralGammaU` shows such a half-turn carries `Γ_u` to `−Γ_u`. So the `A₅` symmetry identifies L with R. The orbit also moves with the placement of `2I` inside the unit quaternions, which the triad does not fix.
+
+Lean: `QOU/BringConeIcosahedral.lean`, 7 decls, sorry-free, lean-direct (`-DautoImplicit=false -s 65536`) exit 0, axioms ⊆ propext / Classical.choice / Quot.sound. Probe: `computations/probes/bring_cone_icosahedral_unit_orbits_probe.py` (exact ℚ(√5), 12/12). Gap opened as `qou-b5ic`. Stays `todo` (rule 13a).
 
 Session: https://claude.ai/code/session_01A1NHnUY3QMcdoxDYQmLCXB

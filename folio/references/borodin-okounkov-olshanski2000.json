@@ -1,0 +1,43 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "borodin-okounkov-olshanski2000",
+  "library": {
+    "docId": "arxiv-math-9905032v2",
+    "dir": "library/arxiv-math-9905032v2",
+    "pdf": "library/arxiv-math-9905032v2/9905032v2.pdf",
+    "stage": "sections",
+    "pages": 43,
+    "sections": 43,
+    "arxiv": "math/9905032v2"
+  },
+  "type": "article-journal",
+  "title": "Asymptotics of Plancherel measures for symmetric groups",
+  "author": [
+    {
+      "family": "Borodin",
+      "given": "Alexei"
+    },
+    {
+      "family": "Okounkov",
+      "given": "Andrei"
+    },
+    {
+      "family": "Olshanski",
+      "given": "Grigori"
+    }
+  ],
+  "container-title": "Journal of the American Mathematical Society",
+  "volume": "13",
+  "page": "481-515",
+  "issue": "3",
+  "issued": {
+    "date-parts": [
+      [
+        2000
+      ]
+    ]
+  },
+  "DOI": "10.1090/S0894-0347-00-00337-4",
+  "URL": "https://arxiv.org/abs/math/9905032",
+  "note": "The descent set D(λ)={λ_i−i} is a determinantal point process with the discrete Bessel kernel (Thm 1/eq 1.8-1.9); Thm 3 gives the bulk discrete-sine-kernel limit (rate-free); Remark 1.6 identifies the Toeplitz-determinant structure (Widom). Published twin s0894-0347-00-00337-4. PDF library/arxiv-math-9905032v2/."
+}

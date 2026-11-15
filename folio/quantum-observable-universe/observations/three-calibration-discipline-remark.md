@@ -33,8 +33,7 @@ Induction along the 19-link derivation chain. At each step:
     \mathfrak{Q}_\beta \;=\; m_e\,\frac{\lvert q_0^2 - 2q_0 - 1\rvert\,(q_0+1)}{2\,q_0^{3}}
     \;\approx\; 0.784\ \text{MeV}\quad(0.17\%\text{ vs CODATA}),
   $$
-  the bar-odd ($\sinh$) partner of the bar-even ($\cosh$) meson scale
-  $m_\pi$: the :refterm[descent]{#descent} obstruction
+  so the :refterm[descent]{#descent} obstruction
   class
   ([motivic perpetual obstruction theorem](#thm:motivic-perpetual-obstruction))
   is normalised by the already-fixed scales, not by a fourth input.

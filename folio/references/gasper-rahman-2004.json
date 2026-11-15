@@ -1,0 +1,31 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "gasper-rahman-2004",
+  "type": "book",
+  "title": "Basic Hypergeometric Series",
+  "author": [
+    {
+      "family": "Gasper",
+      "given": "George"
+    },
+    {
+      "family": "Rahman",
+      "given": "Mizan"
+    }
+  ],
+  "edition": "2",
+  "publisher": "Cambridge University Press",
+  "publisher-place": "Cambridge",
+  "issued": {
+    "date-parts": [
+      [
+        2004
+      ]
+    ]
+  },
+  "collection-title": "Encyclopedia of Mathematics and its Applications",
+  "collection-number": 96,
+  "DOI": "10.1017/CBO9780511526251",
+  "URL": "https://doi.org/10.1017/CBO9780511526251",
+  "note": "Standard reference for basic (q-)hypergeometric series, q-Pochhammer (q;q)_k, the q-Bessel functions, and their q-difference equations. Normalisation used for the Hahn–Exton q-Bessel J_ν(x;q) = x^ν (q^{ν+1};q)_∞/(q;q)_∞ · ₁φ₁(0;q^{ν+1};q,qx²) in the QOU compute."
+}

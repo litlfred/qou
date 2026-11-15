@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns#"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-sl-n-color-frame-scope",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:sl-n-color-frame-scope",
+  "kind": "remark",
+  "title": "Scope of the $\\mathrm{SU}(N)$ frame",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-sl-n-color-framing"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-sl-n-color-framing",
+  "text": "sl-n-color-frame-scope.md",
+  "provenance": "authored"
+}

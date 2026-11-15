@@ -1,0 +1,35 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "fantini-wheeler2024",
+  "library": {
+    "docId": "arxiv-2410.20973v1",
+    "dir": "library/arxiv-2410.20973v1",
+    "pdf": "library/arxiv-2410.20973v1/2410.20973v1.pdf",
+    "stage": "candidates",
+    "pages": 44,
+    "sections": 16,
+    "arxiv": "2410.20973v1"
+  },
+  "type": "article",
+  "title": "Summability for State Integrals of hyperbolic knots",
+  "author": [
+    {
+      "family": "Fantini",
+      "given": "Veronica"
+    },
+    {
+      "family": "Wheeler",
+      "given": "Campbell"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2024
+      ]
+    ]
+  },
+  "container-title": "arXiv preprint",
+  "URL": "https://arxiv.org/abs/2410.20973",
+  "note": "arXiv:2410.20973. PROVES the Garoufalidis–Gu–Mariño conjecture that the perturbative (trivial-connection) series of the hyperbolic knots 4₁ and 5₂ are resurgent and Borel summable, and gives an algorithm computing the Borel–Laplace (median) resummation explicitly as the Andersen–Kashaev state integral, with explicit Stokes constants. Directly on-point for the QOU c₃-via-Borel route: 4₁ is the muon anchor and 5₂ is the saddle source (PR #4408 canonical saddle values, #4414 q-Borel Lean chain). The state-integral = Borel-Laplace identity is the closed-form target the median_borel_resummation probe approximates numerically; the Stokes constants are the A_ω integers of bean qou-4iy0 / qou-3s30. Registered 2026-08-01 (c₃-via-Borel literature sweep)."
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "cantarella-deturck-gluck2001",
+  "library": {
+    "docId": "candetgl",
+    "dir": "library/candetgl",
+    "pdf": "library/candetgl/candetgl.pdf",
+    "stage": "candidates",
+    "pages": 31,
+    "sections": 18
+  },
+  "type": "article-journal",
+  "title": "The Biot--Savart operator for application to knot theory, fluid dynamics, and plasma physics",
+  "author": [
+    {
+      "family": "Cantarella",
+      "given": "Jason"
+    },
+    {
+      "family": "DeTurck",
+      "given": "Dennis"
+    },
+    {
+      "family": "Gluck",
+      "given": "Herman"
+    }
+  ],
+  "container-title": "Journal of Mathematical Physics",
+  "volume": "42",
+  "page": "876-905",
+  "issued": {
+    "date-parts": [
+      [
+        2001
+      ]
+    ]
+  },
+  "note": "Read in full 2026-08-01. Supplies the operator-theoretic skeleton for any per-pair construction: Theorem D proves the Biot--Savart operator is bounded, compact and SELF-ADJOINT (⟨V₁,BS(V₂)⟩ = ⟨BS(V₁),V₂⟩) by pure kernel antisymmetry, so the mechanism should port to H³; helicity is its quadratic form H(V) = ⟨V,BS(V)⟩; and ‖BS‖ ≤ OS(V)/4π via the 'optical size' domain functional. CRITICAL distinction recorded in the audit: the pairing it forms, $\\int J_1\\cdot B_2$, is mutual helicity (topological, zero for unlinked separated tubes) — NOT the electromagnetic interaction energy ∫A₁·J₂, which the paper never writes. R³ only. Uploaded library/candetgl/candetgl.pdf."
+}

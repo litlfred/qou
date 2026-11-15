@@ -1,0 +1,34 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "komendarczyk2008",
+  "library": {
+    "docId": "arxiv-0808.1533v3",
+    "dir": "library/arxiv-0808.1533v3",
+    "pdf": "library/arxiv-0808.1533v3/0808.1533v3.pdf",
+    "stage": "candidates",
+    "pages": 30,
+    "sections": 4,
+    "arxiv": "0808.1533v3",
+    "alternates": [
+      "arxiv-0808.1533v1"
+    ]
+  },
+  "type": "article",
+  "title": "On the third order helicity of magnetic fields on invariant domains in S³",
+  "author": [
+    {
+      "family": "Komendarczyk",
+      "given": "Rafal"
+    }
+  ],
+  "container-title": "arXiv preprint",
+  "issued": {
+    "date-parts": [
+      [
+        2008
+      ]
+    ]
+  },
+  "URL": "https://arxiv.org/abs/0808.1533",
+  "note": "arXiv:0808.1533. Read in full 2026-08-01. DOES prove a third-order-helicity energy bound (Thm 6.1: |H₁₂₃| ≤ C_𝒯·E₂^{3/2}) for Borromean flux tubes — but the constant is geometric, not topological, and the author states it 'is meaningless when the handlebodies get close', i.e. it degrades exactly in the regime of interest. Also settles two negatives for bean qou-o6ml: Rem. 2.6 PROVES the total antisymmetry of μ̄₁₂₃ (obstruction O1), and the third-order invariant scales as Flux³ where a Coulomb-like pair energy needs Flux². The only pair-indexed object (Cor. 2.5) is forced to zero by the unlinked hypothesis. Uploaded library/arxiv-0808.1533v1/0808.1533v1.pdf. RE-READ 2026-08-01 (round 5), §6 eq. (43) — the decisive text for the Freedman–He route, and it overturns two of our readings: (i) the FH asymptotic crossing number in the LINK bound is ac(L_k, L), ONE component against the WHOLE link, summed over n COMPONENTS — it is not pairwise, so a per-pair ACN is the wrong object; (ii) eq. (43) carries (π/16)^{1/4}, a pure constant, and NO volume factor — the Vol^{−1/3} we had called 'the Freedman–He template' is Khesin Thm 3.6's SINGLE-torus bound, misapplied. Also states the bound applies 'for borromean links', with ac(L_k,L) bounded below by a smallest genus among surfaces in ℝ³∖(other components) with boundary L_k — a complement constraint, which is what actually holds the Brunnian value up."
+}

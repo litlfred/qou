@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-09-02T20:52:19Z
-updated_at: 2026-09-02T20:56:17Z
+updated_at: 2026-11-15T10:10:00Z
 ---
 
 
@@ -76,3 +76,6 @@ That is progress and it is not a theory.
 SCOPE: n=2 interface, |mu| < 1 binding convention inherited from qou-m896. The
 A1/A2 determinant scaling is independent of that convention; the ratio and
 window numbers are not. Lifting to 3-strands-per-nucleon is qou-r1yj.
+
+## 2026-11-15 — OWNER RULING (PR #7823): the 33.7 comparison is ILL-POSED
+A one-crossing coupling ratio (gl_N frame 1; SU(N) frame (N+1)/(N-1) <= 3) compared to B_d / E_virtual(1S0) = 2.224566/0.066 is a coupling-vs-energy category mismatch across the bound/virtual threshold, not a 33.7x miss. The 0.066 MeV itself is correct (effective-range np 1S0 pole, 0.0657 MeV). Probes quoting 33.7 left unedited (scriptHash). Follow-up: a derived coupling -> two-body binding step. See docs/audits/2026-11-15-quark-equals-strand-implications.md §4.

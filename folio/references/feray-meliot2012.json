@@ -1,0 +1,37 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "feray-meliot2012",
+  "library": {
+    "docId": "arxiv-1001.2180v2",
+    "dir": "library/arxiv-1001.2180v2",
+    "pdf": "library/arxiv-1001.2180v2/1001.2180v2.pdf",
+    "stage": "sections",
+    "pages": 27,
+    "sections": 27,
+    "arxiv": "1001.2180v2"
+  },
+  "type": "article-journal",
+  "title": "Asymptotics of $q$-Plancherel measures",
+  "author": [
+    {
+      "family": "Féray",
+      "given": "Valentin"
+    },
+    {
+      "family": "Méliot",
+      "given": "Pierre-Loïc"
+    }
+  ],
+  "container-title": "Probability Theory and Related Fields",
+  "volume": "152",
+  "page": "589-624",
+  "issued": {
+    "date-parts": [
+      [
+        2012
+      ]
+    ]
+  },
+  "DOI": "10.1007/s00440-010-0331-6",
+  "note": "Central limit theorem for the q-Plancherel measure on Young PDF library/arxiv-1001.2180v2/ — the entry writes the title with TeX math delimiters ($q$-Plancherel) and the copy's title page does not, so a title match does not join them.diagrams, with convergence rate $O(1/\\sqrt{k})$. Provides the asymptotic theory for iterative q-hook walk accumulation."
+}

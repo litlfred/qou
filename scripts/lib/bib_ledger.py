@@ -1,5 +1,5 @@
 """Read this folio's two bibliography judgement ledgers — the Python twin of the
-platform's ONE reader, `folio-assistant/cat-harness/schemas/bib-attestations.ts`.
+platform's ONE reader, `folio-assistant/cat-harness-tools/schemas/library/bib-attestations.ts`.
 
 Since C9 stories B3/B4 (2026-10-05) the ledgers live in the attestation store,
 one file per reference:

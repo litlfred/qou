@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Does a block's `computation.status` agree with the witness it cites?
 
-`ComputationStatus` (folio-assistant/cat-harness/schemas/types.ts) is explicit:
+`ComputationStatus` (folio-assistant/cat-harness-tools/schemas/types.ts) is explicit:
 
     "verified"  script ran, witness matches expected values within tolerance
     "failed"    script ran, witness does NOT match expected values

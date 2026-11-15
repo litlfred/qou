@@ -1,0 +1,35 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "franecki-kapranov-1999",
+  "library": {
+    "docId": "arxiv-math-9909088v1",
+    "dir": "library/arxiv-math-9909088v1",
+    "pdf": "library/arxiv-math-9909088v1/9909088v1.pdf",
+    "stage": "candidates",
+    "pages": 9,
+    "sections": 9,
+    "arxiv": "math/9909088v1"
+  },
+  "type": "article",
+  "title": "The Gauss Map and a Noncompact Riemann-Roch Formula for Constructible Sheaves on Semiabelian Varieties",
+  "author": [
+    {
+      "family": "Franecki",
+      "given": "J."
+    },
+    {
+      "family": "Kapranov",
+      "given": "M."
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        1999
+      ]
+    ]
+  },
+  "container-title": "arXiv preprint",
+  "URL": "https://arxiv.org/abs/math/9909088",
+  "note": "arXiv:math/9909088. Added 2026-05-19 from library/ gap audit. Possible fit with QOU's categorical / constructible-sheaves content but no obvious citation target found in current QOU prose; mark pending-placement."
+}

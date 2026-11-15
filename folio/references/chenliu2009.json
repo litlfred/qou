@@ -1,0 +1,35 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "chenliu2009",
+  "library": {
+    "docId": "arxiv-0910.0096v1",
+    "dir": "library/arxiv-0910.0096v1",
+    "pdf": "library/arxiv-0910.0096v1/0910.0096v1.pdf",
+    "stage": "candidates",
+    "pages": 21,
+    "sections": 2,
+    "arxiv": "0910.0096v1"
+  },
+  "type": "article",
+  "title": "Gröbner-Shirshov bases for Coxeter groups I",
+  "author": [
+    {
+      "family": "Chen",
+      "given": "Yuqun"
+    },
+    {
+      "family": "Liu",
+      "given": "Cihua"
+    }
+  ],
+  "container-title": "arXiv preprint",
+  "issued": {
+    "date-parts": [
+      [
+        2009
+      ]
+    ]
+  },
+  "URL": "https://arxiv.org/abs/0910.0096",
+  "note": "arXiv:0910.0096v1 [math.GR], 21 pp. No journal venue or DOI is printed on the preprint and none was sought; the title's 'I' promises a sequel that was not located. Read 2026-08-09. Example 3.2 (pp. 4-5) refutes by explicit counterexample — Σ = {s₁<s₂<s₃<s₄}, m₁₂ = m₂₃ = m₂₄ = ∞, m₁₃ = 3, m₁₄ = 2, m₃₄ = 5 — the Bokut–Shiao conjecture that a GS basis of an ARBITRARY Coxeter group is obtainable from S = {(1),(2),(3′)} using only the commuting relations, and exhibits the corrected basis. Its introduction restricts the known positive results to FINITE Coxeter groups, which is why the folio's type A_{n-1} case is unaffected. Thm 3.19 with Example 3.20 give three sufficient families, of which (i) all m_ij ≥ 3 covers the rank-2 case m₁₂ = 3 (W = S₃) but not n ≥ 4. Like [bokut2001] it works with the Coxeter GROUP and never mentions H_n(q)."
+}

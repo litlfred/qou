@@ -158,7 +158,7 @@ No further parameters exist because:
 - Hecke amplitude: $h = q - q^{-1} \approx 0.209$
 - Crossing asymmetry: $q/q^{-1} \approx 1.231$ (matter/antimatter)
 - Neutron-proton splitting structure: $m_n - m_p \propto \mathcal{S}_{\mathfrak{d}\mathfrak{d}} - \mathcal{S}_{\mathfrak{u}\mathfrak{u}}$
-- Pair production polarisation selection rule
+- Pair production polarisation selection rule (a model statement; tree-level QED gives nonzero pair production for parallel linear polarisations, so this is not a successful prediction; see [rem:breit-wheeler-vertex](#rem:breit-wheeler-vertex))
 - All NF decompositions and operator selection weights
 
 **From $q_0$ + $m_e$ (in MeV):**
@@ -204,16 +204,3 @@ The reduction from 19 to 3 is possible because:
   not independent inputs
 - **Mixing angles** are Clebsch--Gordan coefficients of the knot
   eigenbasis decomposition
-
-> **⚠ Vintage: this row is CODATA 2018, not 2022** (measured 2026-09-05,
-> `qou-i229`). $206.7682830 \pm 0.0000045$ is the CODATA-**2018**
-> muon–electron mass ratio; CODATA 2022 gives $206.7682827 \pm 0.0000046$, and
-> the substrate reads the latter from the NIST table
-> (`qou_substrate.constants.MASS_RATIO_MU_E`) since 2026-08-15.
-> `epistemic-status-of-calibrations` already records that this literal is 2018.
->
-> The **value is not changed here**: it is CAL-2 itself, so substituting it moves
-> $q_0$ and every quantity derived from it, which is the tracked refresh in
-> `qou-i229` and not a labelling fix. The discrepancy is $1.451$ ppb
-> ($0.065\sigma$) — physically nothing, which is why it survived the 2026-08-15
-> drain that fixed the same literal across `computations/`.

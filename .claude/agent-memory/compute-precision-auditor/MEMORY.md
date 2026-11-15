@@ -318,6 +318,31 @@ worth anything once it reproduces the first.
 them is SILENT at `n >= 4` (it just evaluates a different word) and only panics
 at small `n`, where the index falls out of range.
 
+## TRAP — `binding_energy` depends on whether cvxpy is INSTALLED, and no stamp records it
+
+Measured 2026-10-13, same commit, same proton pin: `binding_energy(1, 1)` =
+**−15.814194895935406** without cvxpy and **+0.5381481252873015** with it (cvxpy
+1.9.3 in a private `--target` dir). `sdp_cross_channel` falls back to a scalar LP
+when `import cvxpy` fails; its status is then not `optimal`, so the SDP leg is
+silently **0.0**. With cvxpy the leg is ≈ +16.35 MeV. The witness `environment`
+block lists python/numpy/scipy/sympy/mpmath/clarabel and **not cvxpy**, so a
+committed binding number cannot be traced to its branch. This is the first
+CONFIRMED environment case (the 48 % `binding_canonical` case was import-cone).
+Install extras with `pip install --target <scratch>` and delete any numpy it
+drags in, or you change the environment of every sibling on the container.
+
+## TRAP — the convention-D zero-weight skip does NOT apply to `binding_energy`
+
+Its accumulator weights by `lp_shadow_price = w/d − 1/[k]_q!` (Plancherel-based)
+and its Frobenius leg by Plancherel `w_λ` — neither vanishes on ≥3-row shapes.
+Exactly-zero scale occurs only on the twelve 1-dim trivial/sign blocks (and not
+on (7),(8),(9),(11) and their columns: `w/d − 1/[k]!` cancels only to a
+rounding residue, scale 5e-74 … 1.3e-73 MeV, measured). ≥3-row shapes
+are 96–98.5 % of kernel time (k = 8, 9), so a convention-D re-weighting would
+be a ~25–70× speedup (from those shares) — and a PHYSICS change, owner-gated. What did ship is a
+byte-identical memo: the accumulator, the SDP leg and the Frobenius
+`include_inter=True` leg send the kernel the IDENTICAL request.
+
 ## TRAP — `git checkout -- computations/` (what the gate PRINTS) eats your source edits
 
 `precision-gates.sh` says, of the regenerated contended audit witnesses (**six**
@@ -390,7 +415,8 @@ Everything here is a *method*, not an answer.
 | producers that genuinely fail | the seven-requirement runner above | 2 (`su4_1111_markov_trace_probe`, `qbeta_habiro_element_probe`) | 2026-08-24 |
 | missing-dual LP/SDP witnesses | `python3 computations/lp_dual_witness_validator.py` | run it — do not cite a dated baseline | — |
 | `path_bridge` bootstrap defects | `python3 computations/audits/path_bridge_bootstrap_audit.py` | 6 | 2026-08-29 |
-| `binding_energy(1,1)` wall cost | `hecke_core_legacy.binding_energy(1, 1)`, kernel live | **1233.9 s** (1278.5 s on `origin/main`) for the SMALLEST bound atom; A ≥ 3 strictly worse — `uic_binding_a_series_kernel_live_probe` exits 124 at 2400 s with no rows | 2026-09-12 |
+| `binding_energy(1,1)` cost | cProfile per term, proton pin, no cvxpy | **1052 s** clean: UIC 333 + Frobenius 719 (two kernel passes); **99.75 %** in `lp_accumulator_step_traces_mpfr`. After the kernel memo: ²H-with-cvxpy CPU 1267 → 628 s, ³H CPU 1654 → 1091 s. Cost ≈ 15.5 s × total chain letters (all partitions); full 16-bound-atom table ≈ 64 h → 38 h. | 2026-10-13 |
+| `binding_energy(1,1)` wall cost | `hecke_core_legacy.binding_energy(1, 1)`, kernel live | **1233.9 s** (1278.5 s on `origin/main`) for the SMALLEST bound atom; A ≥ 3 strictly worse — `uic_binding_a_series_kernel_live_probe` exits 124 at 2400 s with no rows | 2026-09-12 (superseded row, kept for its method) |
 
 **Read the over-flag row's history before quoting anything near it.** Two
 earlier figures were wrong in opposite directions and both were an agent's
@@ -608,3 +634,66 @@ TRAPs.
   long `timeout`. Most refill NEWs are ONE producer each: there is no
   many-witnesses group, and the mechanical groups are by fix SHAPE (manifest,
   near-miss key, save(extra)).
+- 2026-10-13 (PR #7791, aK_v2 import-cone refresh, 7 witnesses): only **1 of 7** was a
+  clean cone refresh (vhat, 37 fields, 5.35e-15). The two-arm run (parent of the fix
+  commit vs HEAD) split the rest: `proton-mass-full-tower` carried both the 5e-15 fix
+  delta AND 0.416 drift that predates the fix. `d-from-scratch` (1.43) and
+  `cross-check-trM-1ppb` (an allPassed True->False flip) had fix delta 0. Held all
+  three. Skipped: mass_formula_6term (li2q guard crash at both arms), six_term_model_b
+  (refuses, `qou-imkb`), and term5_aK_audit (>34 min; it never calls aK_v2). **TRAP:**
+  a list of "import-cone stale" witnesses is not a list of fix-attributable moves.
+  Without the base arm, three would have shipped large drift under a 1e-14 label.
+  **TRAP:** the pip editable installs of qou-substrate/pyhecke pointed at a sibling
+  worktree (`/home/user/wt-pgt`). Set PYTHONPATH to your own `tools/*/python`. Gates:
+  the red set was identical to pristine main (10).
+- 2026-10-13 (PR #7792, owner-authorised c_3 provenance trace): proton c_3 typed as
+  -2.0693425728 in 7 probes vs -2.06934257711516783787971951725 from every producer
+  (`qbeta_ck_cache`, the canonical extraction; re-run reproduces it byte-for-byte).
+  Replaced with `qbeta_utils.c3_proton_extracted(dps)`. Two TRAPs worth carrying:
+  * **A typed EXTRACTED constant can be checked by the residual it is defined to zero.**
+    c_3 := (Q/Q_N2 - 1)/u^3, so the N=3 residual must be ~0; with the typed copy it was
+    2.666e-6 ppb, with the extraction 3.4e-42. Cheaper and more decisive than enumerating
+    pins/editions, which here reproduced NOTHING (2018 ratio, 2018 m_e, Q_NEUTRON_MEV,
+    muon pins, float64 q/m_e/Q, the float64 q grid -1..+8 ulps).
+  * **Any extraction through 1/u^k loses ~k*2.07 digits; carry guard digits.** At 60 dps
+    c_3 parted from its 70-dps value at digit ~55, and `fmt` would have published the
+    rest as manufactured digits. Helper computes at d+15, rounds to d.
+  Gates: `--changed` EXIT 1, 9 reds, all pre-existing (none of 8 touched files in log);
+  copy ratchet NARROW 212->206. `mcp__github__create_pull_request` not offered and
+  `gh pr create` 403s (GraphQL): `gh api -X POST repos/litlfred/qou/pulls --input` works.
+- 2026-10-13 (rulings D/E/G/H on #7788 leftovers). **TRAP — a stale tag literal + a bare
+  `except` = a vacuous PASS.** `atom_braid_active_partitions` compared letters to a typed
+  `HA` 1.11e-7 off at 1e-12; every word raised `ValueError`, `except` stored `None`, and
+  "0 active <= bound" passed for months against a 2026-05-25 audit recording the opposite.
+  Grep `except Exception` near any threshold test before trusting its PASS. **TRAP — a
+  "stale literal" may be DEAD code or in a mismatched normalisation**: `rho_f_categorical`'s
+  0.388 fallback is overridden by the peel witness at import; `deuteron_delta_i_audit` is
+  dead by construction and pairs D with p/n in another basis. And the "live" 0.5751 the
+  ruling cited is itself stale on main (canonical deuteron 0.151968…). Measure what the
+  literal actually FEEDS before swapping it. Baseline drains: write `old − measured_fixed`
+  by hand, never `--rebaseline` (main carried 51 NEW unstamped / 25 NEW copies).
+- 2026-10-13 (`binding_energy` profile, branch `claude/binding-energy-profile-2026-10-13`):
+  99.75 % in one Rust call; memoised it byte-identically (²H, ³H, ²H+cvxpy:
+  every per-step mpf `_mpf_`-equal). Gates `--changed`: my file in 0 of 609
+  lines, raw-float64 NEW 0 / REGRESSED 0. Two TRAPs above (cvxpy dependence;
+  conv-D skip inapplicable). The `float(_tr)` narrowing in `atom_character_raw`
+  is already on bean `qou-w2vy`; the Frobenius mpf carries a 52-bit mantissa.
+- 2026-10-13 (PR #7795, owner-authorised "owning deuteron tr_M"). Canonical = borromean word,
+  convention D, proton pin `0.151968339204231607592665697751`; 0.575 is the GROUPED word
+  (qou-hu1f ruling 2026-09-05, factor R_quark 3.784816689 reproduced by `intra_order` alone);
+  0.388 is grouped + convention C. Three TRAPs, all found by building the full grid
+  (ordering × word-pin × eval-pin) instead of reading witnesses:
+  * **TRAP — a prefix-keyed anchor map silently retires with its pin.** `tr_m_wenzl_bridge_mpfr`
+    keyed muon on `1.10997859555` (retired pin A); the live muon pin C (`…564…`) got anchor None
+    and the PROTON y_λ table → muon word/χ with proton y, 1.19e-8 on the deuteron. And the
+    parsed-table cache key carried no q, so a proton call answered every later muon call. The
+    tell was internal: bridge-vs-peel agreed to 1e-51 at proton and 1e-8 at muon. A pin change
+    moves both methods together; a method SPLIT that appears at one pin only is a straddle.
+  * **TRAP — env `QOU_Q0_ANCHOR=ideal` vs file suffix `-muon`.** The chi-cache producer and
+    consumer built filenames from the RAW env string; the substrate maps ideal/muon/canonical
+    to one anchor. Under the documented `=ideal` run the consumer missed every `-muon` cache and
+    fell back to proton χ (T/3He/4He) or the GROUPED symbolic caches (p/n/D) — with no error.
+    Normalise through `qou_substrate.witness.resolve_q0_anchor`.
+  * **Two agents "contradicting" each other can both be right about different FILES**:
+    "the chi-cache gives 0.152" (proton witness) vs "0.575" (`-muon` witness, built 2026-08-30,
+    before the ordering ruling). Resolve by naming the file, then measure.

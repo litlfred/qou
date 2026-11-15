@@ -1,0 +1,26 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "kashiwara1990-cmp2",
+  "type": "article-journal",
+  "title": "Crystal bases of the modified quantized enveloping algebra",
+  "author": [
+    {
+      "family": "Kashiwara",
+      "given": "Masaki"
+    }
+  ],
+  "container-title": "Duke Mathematical Journal",
+  "volume": "73",
+  "issue": "2",
+  "page": "383-413",
+  "issued": {
+    "date-parts": [
+      [
+        1994
+      ]
+    ]
+  },
+  "DOI": "10.1215/S0012-7094-94-07317-1",
+  "URL": "https://doi.org/10.1215/S0012-7094-94-07317-1",
+  "note": "Corrected 2026-06-23 (doth): the prior DOI 10.1007/BF02100009 resolves to a WITTEN paper ('On quantum gauge theories in two dimensions', CMP 141, 1991) — wrong on every field. The intended paper is Kashiwara, 'Crystal bases of the modified quantized enveloping algebra', Duke MJ 73(2) (1994) 383-413, DOI 10.1215/S0012-7094-94-07317-1 (Duke, not CMP; 1994, not 1990). Genuinely distinct from kashiwara1990 (CMP 133, BF02097367). Id retained for cross-ref stability. Identification at link-title confidence (sandbox 403'd DOI pages); resolve the DOI directly before publication. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §A."
+}

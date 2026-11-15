@@ -12,8 +12,8 @@
  * Exit 0 iff every named block passes.
  */
 import { existsSync, readFileSync, readdirSync } from "node:fs";
-import { checkWallSide } from "../folio-assistant/cat-harness/content/pipeline/qa-checkers-voice.ts";
-import { resolveCanonicalLean } from "../folio-assistant/cat-harness/content/pipeline/qa-utils.ts";
+import { checkWallSide } from "../folio-assistant/cat-harness-tools/pipeline/qa-checkers-voice.ts";
+import { resolveCanonicalLean } from "../folio-assistant/cat-harness-tools/pipeline/qa-utils.ts";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 

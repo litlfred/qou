@@ -1,0 +1,31 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "habiro2000",
+  "library": {
+    "docId": "1172-3",
+    "dir": "library/1172-3",
+    "pdf": "library/1172-3/1172-3.pdf",
+    "stage": "candidates",
+    "pages": 10,
+    "sections": 9
+  },
+  "type": "article-journal",
+  "title": "On the colored Jones polynomials of some simple links",
+  "author": [
+    {
+      "family": "Habiro",
+      "given": "Kazuo"
+    }
+  ],
+  "container-title": "Recent progress towards the volume conjecture (RIMS Kokyuroku)",
+  "volume": "1172",
+  "page": "34-43",
+  "issued": {
+    "date-parts": [
+      [
+        2000
+      ]
+    ]
+  },
+  "note": "Sūrikaisekikenkyūsho Kōkyūroku No. 1172 (2000), 34-43 — unrefereed proceedings, no DOI/arXiv. Citation CONFIRMED 2026-07-06 (ds4b literature check, PR #3434; title pluralised to match standard citations): the single-sum cyclotomic expansion of the colored Jones of simple links including the BORROMEAN RINGS, symmetric in the three colors — the key input to the Garoufalidis-Lê 2011 Borromean volume-conjecture appendix (garoufalidis-le-2011) and the published-derivation companion masbaum2003 (twist knots). Exact formula NOT transcribed into the corpus yet (PDF unavailable in-sandbox; bean n920). Distinct from habiro2002 (bottom tangles) and habiro2004cyclotomic (Habiro ring)."
+}

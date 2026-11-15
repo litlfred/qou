@@ -7,7 +7,7 @@
 # the `folio/schema/*.ts` shims import the platform through the in-repo
 # path `folio-assistant/` (e.g. `folio/schema/builders.ts` re-exports the
 # builders from `../../folio-assistant/cat-harness/schemas/builders`), and the
-# package.json scripts run `../folio-assistant/cat-harness/content/pipeline/*.ts`.
+# package.json scripts run `../folio-assistant/cat-harness-tools/pipeline/*.ts`.
 # Both resolve to `<repo-root>/folio-assistant/`.
 #
 # This script makes `<repo-root>/folio-assistant/` resolve by:
@@ -239,7 +239,9 @@ CLONE_ABS="$(cd "$CLONE_DIR" && pwd)" || die "cannot resolve $CLONE_DIR"
 # not start after a stock setup. The layout is still DETECTED, because the
 # bibliography bridge below applies to a pre-split clone only, but it is kept
 # in PLATFORM_SPLIT rather than inferred from where the link points.
-if [ -f "$CLONE_ABS/cat-harness/schemas/types.ts" ]; then
+# The schemas code moved to cat-harness-tools/schemas/ on 2026-10-30 (bean 8lcl);
+# either location means the split layout.
+if [ -f "$CLONE_ABS/cat-harness-tools/schemas/types.ts" ] || [ -f "$CLONE_ABS/cat-harness/schemas/types.ts" ]; then
   PLATFORM_ABS="$CLONE_ABS"
   PLATFORM_SPLIT=1
   PLATFORM_LAYOUT="split (code under cat-harness/)"

@@ -1,5 +1,25 @@
 # k(A) extensivity via an additive Ursell-cluster derivation (bean qou-7uxa)
 
+> **🛑 CORRECTION 2026-11-15 (tracker #7735, item J) — the −1.38 % / −2.61 %
+> agreement does not survive the canonical traces.** Every magnitude quoted in
+> this document was computed on typed nucleon traces `1.0653062 / 0.9232333`,
+> which are the **retired convention-C** traces (bean `qou-am5t`), not the
+> canonical borromean / convention-D / proton-pin traces
+> (`atomic-tr-m-mpfr-50dps-proton.witness.json`: `0.6293284022 / 0.4751335172`).
+> On the canonical traces, with the live μ targets:
+>
+> | | pred | target | rel err | 5 % gate |
+> |---|---|---|---|---|
+> | grounding probe, `(tr_p/tr_n)²` | 1.7544 | 1.3671 | **+28.3 %** | FAIL |
+> | lead screen, best of 8 (`sum:inv`) | 1.2067 | 1.3671 | −11.7 % | FAIL |
+>
+> So the magnitude claim is a **scope-(a) negative**: this construction alone,
+> on canonical traces, does not reproduce the T/³He split. What stands: the
+> exact reduction to `(tr_p/tr_n)²` (Lean, `BondWeightIsospinSplit.lean`) and
+> the correct sign (`tr_n < tr_p`). The fitted exponent is now 1.112, not ≈ 2.
+> The text below is kept as the dated record of the analysis.
+
+
 **Date:** 2026-07-18 · **Discipline:** formalize-first (AGENTS.md §Formalize-first
 probe discipline; §Before declaring "refuted"). Different-context attack on the
 single open GAP-A-3 gap, authorized parallel to the active #3808 front (owner:

@@ -1,0 +1,30 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "frechet-shohat1931",
+  "type": "article-journal",
+  "title": "A proof of the generalized second-limit theorem in the theory of probability",
+  "author": [
+    {
+      "family": "Fréchet",
+      "given": "Maurice"
+    },
+    {
+      "family": "Shohat",
+      "given": "James"
+    }
+  ],
+  "container-title": "Transactions of the American Mathematical Society",
+  "volume": "33",
+  "issue": "2",
+  "page": "533-543",
+  "issued": {
+    "date-parts": [
+      [
+        1931
+      ]
+    ]
+  },
+  "DOI": "10.1090/S0002-9947-1931-1501604-6",
+  "URL": "https://doi.org/10.1090/S0002-9947-1931-1501604-6",
+  "note": "The moment-convergence theorem: if all moments converge and the limit moment sequence is determinate, the measures converge weakly. Cited by the kernel-convergence Mathlib-gap scaffold (QOU/MathlibExt/FrechetShohat.lean, 2026-07-25) as one of the two missing classical theorems carried as content-bearing hypothesis classes."
+}

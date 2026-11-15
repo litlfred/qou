@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-05T18:00:53.294247+00:00",
-  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
+  "computedAt": "2026-11-15T08:26:44.185696+00:00",
+  "commitSha": "2952d6594a37f0b18a22b504ba7c13a168aa2fe3",
   "assertions": [
     {
       "name": "A1_level_family_and_z3_verified",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 3,
   "computation": "level_three_colour_channel_probe",
   "scriptFile": "level_three_colour_channel_probe.py",
-  "scriptHash": "fb05efcf18c9",
-  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
+  "scriptHash": "e9a5b9cbfcb0",
+  "scriptCommitSha": "9b47649c57e57db83f4ba06c8bb0fbe2368c8589",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -66,14 +66,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -148,6 +149,7 @@
     "THE COLOUR-FACTOR COMPARISON IS AN IDENTIFICATION, NOT A DERIVATION. It reads the two-strand symmetric/antisymmetric Wedderburn blocks as the sextet and antitriplet of 3(x)3. That is the natural reading — exchange symmetry matches on both sides — but nothing here constructs an SU(3) action on the strands, and no gluon exchange is modelled. What is computed is that the substrate's two exchange channels have the right relative sign and a ratio of exactly 1 against a required 2.",
     "'ATTRACTIVE/REPULSIVE' USES THE ARC'S |mu| < 1 BINDING CONVENTION (qou-m896), needed because the antisymmetric eigenvalue is negative. The A5 statement L_a + L_s = 0 is convention-independent (it is |det T| = 1); the sign labels in A4 are not.",
     "RAISING THE LEVEL CHANGES THE WEIGHTS, NOT THE ALGEBRA. The block eigenvalues are q and -1/q at every r, so every per-block ratio and the whole degeneracy argument are level-independent. The level affects which blocks are alive and the Markov parameter z_r — it does not touch the obstruction. Anyone hoping colour would repair the nuclear sector should read this as the reason it cannot.",
+    "RE-SCOPED 2026-11-15 (bean qou-sl3f, owner ruling G5 = (a)): the factor-2 miss is the u_1 part of gl_N. The forced SU(N) frame q^(-1/N) sigma gives ratio (N+1)/(N-1) = 2 at N = 3 (QOU.Braiding.SlNFraming, sl_n_framing_colour_factor_probe). It applies to colour observables only. 'Same degeneracy as the nuclear sector' holds only as arithmetic (scope a): sl_2 gives 3, not 33.7. This run's assertions are unchanged; they measure the Hecke (gl) frame.",
     "e = e_max/3 is what a framing fix WOULD cost for the QCD ratio, reported for comparison with the nuclear requirement. It is not derived from anything, and qou-vlrq's caveat applies: no substrate mechanism producing a fractional twist is exhibited."
   ],
   "q0Anchor": "proton",

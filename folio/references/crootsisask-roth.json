@@ -1,0 +1,25 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "crootsisask-roth",
+  "library": {
+    "docId": "noniterativeroth2",
+    "dir": "library/noniterativeroth2",
+    "pdf": "library/noniterativeroth2/noniterativeroth2.pdf",
+    "stage": "candidates",
+    "pages": 5,
+    "sections": 7
+  },
+  "type": "manuscript",
+  "title": "A proof of Roth's theorem on arithmetic progressions",
+  "author": [
+    {
+      "family": "Croot",
+      "given": "Ernie"
+    },
+    {
+      "family": "Sisask",
+      "given": "Olof"
+    }
+  ],
+  "note": "PDF library/noniterativeroth2/noniterativeroth2.pdf — NO YEAR ASSERTED, and the id therefore breaks the <lastname><year> convention deliberately rather than inventing one. The document (5 pp, `library/noniterativeroth2/`) carries no date, no arXiv stamp and no journal mark; its bibliography cites Szemerédi 'to appear in the Montreal Conference Proceedings on Additive Combinatorics', which brackets it to the late 2000s but does not fix it. Author affiliation on the last page: Georgia Institute of Technology. Needs a human pass to fix the year and any publication venue."
+}

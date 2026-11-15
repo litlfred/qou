@@ -1,0 +1,26 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "baez2002",
+  "type": "article-journal",
+  "title": "The Octonions",
+  "author": [
+    {
+      "family": "Baez",
+      "given": "John C."
+    }
+  ],
+  "container-title": "Bulletin of the American Mathematical Society",
+  "volume": "39",
+  "issue": "2",
+  "page": "145-205",
+  "issued": {
+    "date-parts": [
+      [
+        2002
+      ]
+    ]
+  },
+  "DOI": "10.1090/S0273-0979-01-00934-X",
+  "URL": "https://arxiv.org/abs/math/0105155",
+  "note": "The canonical survey of the octonions. §4.1 identifies the derivation algebra of the octonions with the compact exceptional Lie algebra $\\mathfrak{g}_2$: $\\mathrm{Der}(\\mathbb{O})\\cong\\mathfrak{g}_2$, a 14-dimensional space. Cited by QOU/MathlibExt/OctonionDerivationsBound.lean for the upper bound $\\dim\\mathrm{Der}(\\mathbb{O})\\le 14$ (the lower bound and the rank-nullity reduction are machine-verified there)."
+}

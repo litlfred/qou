@@ -1,0 +1,43 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "garoufalidis-gu-marino2023peacock",
+  "library": {
+    "docId": "arxiv-2012.00062v3",
+    "dir": "library/arxiv-2012.00062v3",
+    "pdf": "library/arxiv-2012.00062v3/2012.00062v3.pdf",
+    "stage": "candidates",
+    "pages": 68,
+    "sections": 19,
+    "arxiv": "2012.00062v3"
+  },
+  "type": "article-journal",
+  "title": "Peacock Patterns and Resurgence in Complex Chern–Simons Theory",
+  "author": [
+    {
+      "family": "Garoufalidis",
+      "given": "Stavros"
+    },
+    {
+      "family": "Gu",
+      "given": "Jie"
+    },
+    {
+      "family": "Mariño",
+      "given": "Marcos"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2023
+      ]
+    ]
+  },
+  "container-title": "Research in the Mathematical Sciences",
+  "volume": "10",
+  "issue": "3",
+  "page": "29",
+  "DOI": "10.1007/s40687-023-00391-1",
+  "URL": "https://arxiv.org/abs/2012.00062",
+  "note": "arXiv:2012.00062, Res. Math. Sci. 10 (2023) Paper No. 29. Added 2026-07-17 from library/arxiv-2012.00062v3/2012.00062v3.pdf. Companion to garoufalidis-gu-marino2021: the state-integral partition function $Z_M(u;\\tau)$, its $q$-holonomic module and descendants $W_m(x;q)$ (holomorphic for $|q|\\neq 1$), and the Stokes matrices for real $u$ (§5.6). Key structural fact for the 1ppq $A_\\omega$ target: the Stokes constants are integers equal to the Donaldson–Thomas invariants of the associated $q$-difference structure (eq. 16(d)) — a derived integer count, not a fit."
+}

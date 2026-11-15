@@ -1,0 +1,23 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "billingsley1995",
+  "type": "book",
+  "title": "Probability and Measure",
+  "author": [
+    {
+      "family": "Billingsley",
+      "given": "Patrick"
+    }
+  ],
+  "publisher": "Wiley",
+  "edition": "3rd",
+  "issued": {
+    "date-parts": [
+      [
+        1995
+      ]
+    ]
+  },
+  "ISBN": "978-0471007104",
+  "note": "Textbook source for the method of moments (Thm 30.2: moment convergence to a determinate limit implies weak convergence) and Carleman-adjacent determinacy criteria. Cited by the kernel-convergence Mathlib-gap scaffold (2026-07-25)."
+}
