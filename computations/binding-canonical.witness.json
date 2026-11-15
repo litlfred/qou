@@ -1,15 +1,15 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-15T20:28:17.243479+00:00",
-  "commitSha": "6898a93de88af7d81d0c34b80d3a9160e6ba9680",
+  "computedAt": "2026-11-15T20:38:08.062770+00:00",
+  "commitSha": "53c9d708b755f5a1dd8d55a1b3082a154e005446",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 18,
   "computation": "binding-canonical",
   "scriptFile": "binding_canonical.py",
-  "scriptHash": "a54fa3953ec5",
-  "scriptCommitSha": "547b78208f6bb667ec8b3580f16390a74dbb9ce4",
+  "scriptHash": "13a466479b54",
+  "scriptCommitSha": "f8303963717b1fa40b115bd774ad113df59764e3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -57,7 +57,7 @@
         "use_closed_form": false,
         "use_transfer": true,
         "n_partitions": 11,
-        "elapsed_sec": 0.01838207244873047,
+        "elapsed_sec": 0.014568567276000977,
         "atom": "D",
         "B_AME_MeV": "2.2245662",
         "delta_m_over_m_pct": "0.11241550797751077344306351402849983834787112568200"
@@ -77,7 +77,7 @@
         "use_closed_form": false,
         "use_transfer": true,
         "n_partitions": 30,
-        "elapsed_sec": 0.10039424896240234,
+        "elapsed_sec": 0.08980751037597656,
         "atom": "T",
         "B_AME_MeV": "8.4817962",
         "delta_m_over_m_pct": "0.29818816013019679092513785007130242002780027650385"
@@ -97,7 +97,7 @@
         "use_closed_form": false,
         "use_transfer": true,
         "n_partitions": 30,
-        "elapsed_sec": 0.08068251609802246,
+        "elapsed_sec": 0.0690145492553711,
         "atom": "3He",
         "B_AME_MeV": "7.71804132",
         "delta_m_over_m_pct": "0.27059189522818378291798231482747682220438933562799"
@@ -117,7 +117,7 @@
         "use_closed_form": false,
         "use_transfer": true,
         "n_partitions": 77,
-        "elapsed_sec": 0.4282841682434082,
+        "elapsed_sec": 0.4122965335845947,
         "atom": "4He",
         "B_AME_MeV": "28.2956624",
         "delta_m_over_m_pct": "0.75230057758484650827231219715875564016307388982080"
@@ -137,7 +137,7 @@
         "use_closed_form": false,
         "use_transfer": true,
         "n_partitions": 385,
-        "elapsed_sec": 7.1809916496276855,
+        "elapsed_sec": 8.12985110282898,
         "atom": "6Li",
         "B_AME_MeV": "31.9939872",
         "delta_m_over_m_pct": "0.56795397307464538169882161320485235682575157562920"
@@ -157,7 +157,7 @@
         "use_closed_form": false,
         "use_transfer": true,
         "n_partitions": 792,
-        "elapsed_sec": 25.60903835296631,
+        "elapsed_sec": 30.323607683181763,
         "atom": "7Li",
         "B_AME_MeV": "39.2450807",
         "delta_m_over_m_pct": "0.59737876675800250410788493053206838063763043142792"
@@ -177,7 +177,7 @@
         "use_closed_form": false,
         "use_transfer": true,
         "n_partitions": 792,
-        "elapsed_sec": 26.858755111694336,
+        "elapsed_sec": 33.19413900375366,
         "atom": "7Be",
         "B_AME_MeV": "37.6008409",
         "delta_m_over_m_pct": "0.57229711612096853032354345342659583068277298794997"

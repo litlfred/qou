@@ -663,6 +663,17 @@ if __name__ == "__main__":
     from ame_2020_binding_energies import _binding_mev_exact
     from _precision import fmt
 
+    def _mass_and_rel_err(A: int, B_pred, B_AME):
+        """M_total and |B_pred - B_AME| / M_total in percent, at 60 dps.
+
+        A function rather than an inline `with mp.workdps(60)` inside the atom
+        loop: the import-time-dps audit walks one block level of `__main__`, so
+        the inline form (already at 60 dps) read as an mpf built at dps 15.
+        """
+        with mp.workdps(60):
+            M_total = A * M_P_MEV_VALIDATION
+            return M_total, abs(B_pred - mp.mpf(str(B_AME))) / M_total * 100
+
     def _ame_exact(Z: int, A: int, accessor_value) -> Decimal:
         d = _binding_mev_exact(Z, A)
         with mp.workdps(60):
@@ -723,9 +734,7 @@ if __name__ == "__main__":
         tr_f = complex(r["tr_M_free"].replace("(", "").replace(")", ""))
         # Proton mass from codata_constants registry (CODATA 2022, full
         # precision); was hardcoded inline as 938.272.
-        with mp.workdps(60):
-            M_total = A * M_P_MEV_VALIDATION
-            dm = abs(r["B_MeV"] - mp.mpf(str(B_AME))) / M_total * 100
+        M_total, dm = _mass_and_rel_err(A, r["B_MeV"], B_AME)
         print(f"  {name:>6} {A:>3} {3*A:>3} {B_AME:>8.3f} "
               f"{abs(tr_a):>12.6e} {abs(tr_f):>12.6e} "
               f"{r['B_MeV']:>+10.4f} {dm:>8.4f}%")
