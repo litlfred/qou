@@ -49,11 +49,21 @@ if str(HERE) not in sys.path:
 _WITNESS = HERE / "m-p-substrate-identity-50dps.witness.json"
 
 
-def _from_witness() -> tuple[float, float] | None:
+def _wrap_formattable_mpf(val):
+    """Parse ``val`` (decimal string or mpf) at >= 50 dps into the module's one
+    format-spec-compatible ``mp.mpf`` subclass (``_as_formattable_mpf``), so
+    witness strings are never truncated to float64 (beans qou-4tui, qou-4ohh)."""
+    import mpmath as mp
+    with mp.workdps(max(50, mp.mp.dps)):
+        return _as_formattable_mpf(str(val))
+
+
+def _from_witness():
     if not _WITNESS.exists():
         return None
     preds = json.loads(_WITNESS.read_text())["data"]["predictions"]
-    return float(preds["m_p_MeV"]), float(preds["m_n_MeV"])
+    return (_wrap_formattable_mpf(preds["m_p_MeV"]),
+            _wrap_formattable_mpf(preds["m_n_MeV"]))
 
 
 def proton_neutron_mass_mev() -> tuple[float, float]:
@@ -144,7 +154,9 @@ def prediction_uncertainty_ppb(Z: int, N: int, layer: str = "canonical") -> floa
     dq = q * mp.mpf(str(sig["q0"])); dme = m_e * mp.mpf(str(sig["m_e"]))
     d_q0 = (constit(q + dq, m_e) - constit(q - dq, m_e)) / 2
     d_me = (constit(q, m_e + dme) - constit(q, m_e - dme)) / 2
-    return float(mp.sqrt(d_q0 ** 2 + d_me ** 2) / abs(base) * mp.mpf(10) ** 9)
+    return _wrap_formattable_mpf(
+        mp.sqrt(d_q0 ** 2 + d_me ** 2) / abs(base) * mp.mpf(10) ** 9
+    )
 
 
 def _as_formattable_mpf(val):
@@ -159,6 +171,9 @@ def _as_formattable_mpf(val):
             if not format_spec:
                 return str(self)
             return format(float(self), format_spec)
+
+        def __round__(self, n=None):
+            return round(float(self), n)
 
         def _wrap(self, res):
             return _FormattableMpf(res) if isinstance(res, mp.mpf) else res
