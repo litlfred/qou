@@ -36,3 +36,30 @@ on), and almost blind to orientation (V vs B):
   single-orientation words. Site placement does.
 - The site bit is a new binary label beyond V/B. Whether it is related to the σ₃-eigenline
   flavour of the n ≥ 4 doublet thread is not tested here.
+
+## Amendment 2: J₄-projected reading 3 on the m = 6 flavour-changing words
+
+Pre-registered at 669d96f2adb. Probe `gg_four_strand_j4_projected_probe.py`, witness
+`gg-four-strand-j4-projected.witness.json`. Explicit (3,1) rep of H₄(q) from draft PR #7957, mpmath at
+proton q₀ (40 dps). T_rep (Ja + Jb = PL, J₄ commutes with σ₁, σ₂) and T1 (tr w = base χ_(3,1)(w), all
+454 words, to 1e-30) both pass.
+
+Candidates: the 454 m = 6 words that passed reading 3 and contain a site-1 vertex (518 passing minus the
+64 words of pattern 000000).
+
+| group | words | projected pass (d_a, d_b, d_R ≥ 0) |
+|---|---|---|
+| pattern 111111 | 64 | 64 |
+| rotations of 000111 | 384 | 384 |
+| the six mixed-site words | 6 | **0** |
+
+All six mixed-site words fail in the same place: the Jb diagonal d_b = tr(Jb w Jb) is negative (−0.20 to
+−0.40), while d_a and d_R stay positive. Their full χ_(3,1) is positive only because d_R outweighs d_b.
+
+Flavour flip tr(Ja w Jb w Ja) is nonzero on 452 of 454 words; it is ≈ 0 on V1.B0.V0.B0.B1.V1 and
+B1.V0.B0.V0.V1.B1 (both rotations of 000111). Its sign is not definite (114 negative), and no criterion
+was registered on it.
+
+**Reading.** Scope (a): within this grammar, every site-pattern word survives the J₄ projection, and the
+six orientation-sensitive exceptions do not. So at m = 6, "passes reading 3 in every flavour sector"
+coincides with "passes by site pattern". Nothing is selected or adopted.
