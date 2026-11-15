@@ -123,10 +123,10 @@ theorem rot90_normal_axial (h2 : ∀ x : R, 2 * x = 0 → x = 0) {n : BringCone 
   have hK := congrArg (fun x : BringCone R => x.imK) h
   simp [conjBy, cplx] at hJ hK
   rcases hr with rfl | rfl
-  · have hk : n.imK = 0 := h2 _ (by linear_combination hJ + hK)
+  · have hk : n.imK = 0 := h2 _ (h2 _ (by linear_combination -(hJ + hK)))
+    refine ⟨h2 _ (by linear_combination hK + 2 * hk), hk⟩
+  · have hk : n.imK = 0 := h2 _ (h2 _ (by linear_combination hK - hJ))
     refine ⟨h2 _ (by linear_combination hK - 2 * hk), hk⟩
-  · have hk : n.imK = 0 := h2 _ (by linear_combination hK - hJ)
-    refine ⟨h2 _ (by linear_combination -hK + 2 * hk), hk⟩
 
 /-! ## 4. The icosahedral 3-fold element fixes no member of the family -/
 
@@ -170,10 +170,10 @@ theorem apply_mem_of_comm_swap {α : Type*} [DecidableEq α] {g : Equiv.Perm α}
     g a = a ∨ g a = b := by
   by_contra hne
   push_neg at hne
-  have e := congrArg (fun f : Equiv.Perm α => f b) hc
-  simp only [Equiv.Perm.mul_apply, Equiv.swap_apply_right] at e
+  have e := congrArg (fun f : Equiv.Perm α => f a) hc
+  simp only [Equiv.Perm.mul_apply, Equiv.swap_apply_left] at e
   rw [Equiv.swap_apply_of_ne_of_ne hne.1 hne.2] at e
-  exact hab (g.injective e)
+  exact hab (g.injective e).symm
 
 /-- **A permutation commuting with every transposition is the identity**, on any set in
 which every point has two further distinct points (so on `Fin 5`). -/
