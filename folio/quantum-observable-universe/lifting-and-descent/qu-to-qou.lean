@@ -80,10 +80,14 @@ structure QuToQou where
   eulerChar : ℤ
   /-- κ₀ maps to χ(A) under the trace. -/
   trace_map : kappa_zero_obstruction = eulerChar
-  /-- (3) Perpetual obstruction: if κ₀ is non-torsion, κₙ ≠ 0 for all n. -/
+  /-- (3) Kummer persistence (degree condition): the level-`n` obstruction
+      vanishes exactly when `n` divides `χ(A)`. Restated 2026-11-15 (owner
+      decision, PR #7747, bean `qou-lx8f`); the former field
+      `perpetual : κ₀ ≠ 0 → ∀ n, κₙ ≠ 0` is false on Bring's surface, where
+      `κₙ = 0` for `n ∈ {1, 2, 3, 6}`. -/
   kappa : ℕ → ℤ
   kappa_at_zero : kappa 0 = kappa_zero_obstruction
-  perpetual : kappa_zero_obstruction ≠ 0 → ∀ n, kappa n ≠ 0
+  kummer_persistence : ∀ n, 0 < n → (kappa n = 0 ↔ (n : ℤ) ∣ eulerChar)
   /-- (4) Branch point formula (Riemann–Hurwitz). -/
   branchData : BranchData
   /-- (5) Terminal fiber data at each branch point. -/
@@ -101,7 +105,7 @@ theorem qu_to_qou_exists
     (descent : DescentTower) (branchData : BranchData)
     (kappa0 eulerChar : ℤ) (htrace : kappa0 = eulerChar)
     (kappa : ℕ → ℤ) (hkappa0 : kappa 0 = kappa0)
-    (hperpetual : kappa0 ≠ 0 → ∀ n, kappa n ≠ 0)
+    (hkummer : ∀ n, 0 < n → (kappa n = 0 ↔ (n : ℤ) ∣ eulerChar))
     (terminalFibers : Fin branchData.numBranchPoints → TerminalFiber) :
     ∃ X : QuToQou, X.descent = descent ∧ X.branchData = branchData :=
   ⟨{ descent := descent
@@ -110,7 +114,7 @@ theorem qu_to_qou_exists
      trace_map := htrace
      kappa := kappa
      kappa_at_zero := hkappa0
-     perpetual := hperpetual
+     kummer_persistence := hkummer
      branchData := branchData
      terminalFibers := terminalFibers }, rfl, rfl⟩
 
@@ -123,6 +127,24 @@ theorem qu_to_qou_descent_terminates (X : QuToQou) :
 theorem qu_to_qou_first_obstruction_eq_euler (X : QuToQou) :
     X.kappa_zero_obstruction = X.eulerChar :=
   X.trace_map
+
+/-- Property (3): the level-`n` obstruction persists exactly when `n ∤ χ(A)`. -/
+theorem qu_to_qou_obstruction_persists_iff (X : QuToQou) (n : ℕ) (hn : 0 < n) :
+    X.kappa n ≠ 0 ↔ ¬ (n : ℤ) ∣ X.eulerChar :=
+  not_congr (X.kummer_persistence n hn)
+
+/-- On a surface with `χ(A) = -6`, the obstruction vanishes at levels `1, 2, 3, 6`
+    and persists at every level `n` coprime to `6`: it is not perpetual. -/
+theorem qu_to_qou_chi_neg_six (X : QuToQou) (hχ : X.eulerChar = -6) :
+    X.kappa 6 = 0 ∧ ∀ n, 0 < n → Nat.Coprime n 6 → n ≠ 1 → X.kappa n ≠ 0 := by
+  refine ⟨(X.kummer_persistence 6 (by norm_num)).mpr (by rw [hχ]; norm_num), ?_⟩
+  intro n hn hcop hn1 hzero
+  have hdvd := (X.kummer_persistence n hn).mp hzero
+  rw [hχ] at hdvd
+  have h6 : (n : ℤ) ∣ 6 := by
+    have := hdvd.neg_right; simpa using this
+  have h6' : n ∣ 6 := by exact_mod_cast h6
+  exact hn1 (Nat.Coprime.eq_one_of_dvd hcop h6')
 
 /-- Property (4): the Riemann–Hurwitz branch-point identity. -/
 theorem qu_to_qou_riemann_hurwitz (X : QuToQou) :
