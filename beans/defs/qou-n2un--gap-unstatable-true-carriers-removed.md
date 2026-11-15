@@ -7,7 +7,7 @@ tags:
     - lean-foundations
     - devacuify
 created_at: 2026-11-15T14:05:00Z
-updated_at: 2026-11-15T17:45:00Z
+updated_at: 2026-11-15T17:39:33Z
 parent: qou-6qbv
 ---
 
@@ -61,3 +61,10 @@ content is open): `division_terminates_unique` (shell-closure),
 Untouched: the four `p-vs-np-boundary` assertions (open-problem epic, `qou-ptnp`).
 
 Branch `claude/lean-devacuify-true-carriers-2026-11-15`, PR #7915.
+
+## 2026-11-15 audit (option A), continued — PR #7915, commits e49ad7357c..c15ee59ce6
+- Two more false claims found:
+  - UGB `local_confluence` is false without unit leading coefficients (refuted sorry-free in LocalConfluenceRefutation.lean); repaired with the `hlc` hypothesis.
+  - `evenPower_necessary_for_blockPosSemidef` is false under its intended reading (the full twist (σ₁σ₂)³ is block-PSD). Removed; Lean cannot refute it because braidWordEval is opaque.
+- Three former axioms now proved: term_6_plus_term_7_eq_high_strata, descartes_elliptic_curve, habiro_step_zero.
+- Still open (checked, believed true; not proved): habiro_expansion_exists/unique (by triangularity), CategoricalQExtDeriv.exists, frobeniusForm_unique.
