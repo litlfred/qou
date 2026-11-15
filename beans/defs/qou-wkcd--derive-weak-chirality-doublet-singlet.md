@@ -12,7 +12,7 @@ parent: qou-qs0e
 blocking:
     - qou-hlx7
 created_at: 2026-11-15T13:00:00Z
-updated_at: 2026-11-15T13:00:00Z
+updated_at: 2026-11-15T18:15:00Z
 ---
 
 Owner question (relayed by coordinator session_01M5GA1LmsEf8tSMxFjMkmnn, tracker #7735):
@@ -67,3 +67,17 @@ ratchets are tree-wide and do not name this branch's probe (no witness added).
 
 ## 2026-11-15 owner ruling (thread 'Map SM and eightfold way', decision card): D-H2 restated at the pair level
 D-H2 = no stays for single letters (flip_ne_swap). Added: on γγ pairs the swap ι: σ ↦ −σ⁻¹ sends V = σᵢσᵢ₊₁⁻¹ to V̄ = σᵢ⁻¹σᵢ₊₁ (signs cancel on even words), so the pair orientation bit V/V̄ IS the chirality mirror. Flavour must come from elsewhere (n ≥ 4 lead, qou-wkcd). Lean lemma ι(V)=V̄ not yet written. Evidence: PR #7741 gg_two_orientations (03b13f15561), gg_decay (6ff2aaaa8bf).
+
+## 2026-11-15 n >= 4 lead — four-strand left flavour doublet (PR #7957 draft, issue #7956)
+
+Thread "Derive flavour from the n ≥ 4 doublet". Branch claude/n4-left-flavour-doublet-2026-11-15 (9f1f05c7c).
+FlavourDoubletFourStrands.lean (lean-direct exit 0, std axioms only): explicit (3,1) rep of H4(q);
+sigma1 left line 2-dim (doublet), right 1-dim (singlet).
+- A. sigma3 eigenline (pre-registered): nonzero left-only sl2, c = 2(q^4+1)/(q^2+1)^2; gg vertex
+  s1 s2^-1 carries it; 3-strand words mix u<->d.
+- B. J4 = s3 s2 s1^2 s2 s3 eigenline (owner: both side by side): no 3-strand word mixes it; only
+  strand-4 vertices (s2 s3^-1, mirror) flip it; nonzero sl2, c = 2(q^2+1)^2(q^4+1)/(q^4+q^2+1)^2.
+- Probe computations/probes/n4_left_doublet_flavour_probe.py on SM-thread reading-3 passing words
+  (m=3,4): ALL PASS. On Ja ((3) sector) every gg vertex acts as 1.
+Open: 3-strand words mix L and R; which of Ja/Jb is n is unassigned (owner call); physical
+reading is scope (a).
