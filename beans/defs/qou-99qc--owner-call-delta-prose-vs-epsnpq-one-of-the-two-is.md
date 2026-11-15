@@ -3404,3 +3404,12 @@ Probe `computations/probes/qbeta_delta_doublet/delta_doublet_candidates_probe.py
 - Every p-state and n-state passes reading 3 at strand counts 3 and 4.
 
 Scope (a). Nothing selected. Label B is outside the cos <= 1 ladder cap, exactly as the H_3 ruled base is. Label A is inside it, but only with the ladder phase alpha chosen, which is a fit until alpha is derived (qou-pdix). The word choice within a label stays open. Bean stays open (rule 13a).
+
+
+## 2026-11-15 — route 3 (γγ + reading-3 element search): the Hecke side cannot carry n vs p
+
+The owner chose route 3 to replace nuc11, as part of the m_n / Q_β factor question (bean qou-cds1). This synthesises existing results; no new compute was run.
+
+- **3 strands:** the γγ nucleon is Vᵐ, and only V³ and V⁶ pass reading 3 at every level (h2_gg_atom, PR #7741 results.md). The proton and neutron are the **same word**, so Δ = n − p = 0. Any linear ε then gives ε(Δ) = 0, so Q_β = 0. This is exact, within that family.
+- **4 strands:** many γγ words pass (#8046 / gg_four_strand). But PR #7975 (sorry-free) shows Hecke elements commute with the U_q action, so **no braid word and no weak vertex changes T³**. Neither J₄ state is n or p. Assigning "neutron" and "proton" to two passing words would be a label choice, and making it by Q_β would be a fit.
+- **Verdict, scope (a)+(b):** inside the Hecke algebra the element search cannot produce a flavour-distinguished pair. The invariant is #7975's commutation. So the factor question merges into what ε means: flavour (T³) lives on the U_q / weight side of Schur–Weyl, not in the word. The candidate taken to the owner is a weight-graded split of the rank-2 (convention D) quantum trace into T³ = ∓½ parts. It is not derived here.
