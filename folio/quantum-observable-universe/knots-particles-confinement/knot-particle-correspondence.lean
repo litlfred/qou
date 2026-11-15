@@ -10,13 +10,13 @@ representations and knot/link types arising as braid closures.
 
 ## References
 
-- [manuscript] Ch. 4, §10
+- [leitner2026] Ch. 4, §10
 - [jones1987] https://doi.org/10.2307/1971403
 -/
 
 namespace QOU.Braiding
 
--- Ref: [manuscript] Ch. 4, §10
+-- Ref: [leitner2026] Ch. 4, §10
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
@@ -39,7 +39,7 @@ axiom markovTraceMap (n : ℕ) : IrrepSummand n → KnotType n
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
--- Ref: [manuscript] Ch. 4, §10
+-- Ref: [leitner2026] Ch. 4, §10
 axiom knot_particle_correspondence_axiom :
     ∀ (n : ℕ), Function.Bijective (markovTraceMap n)
 

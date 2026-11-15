@@ -131,7 +131,7 @@ theorem norm_whiteheadLinkKashaev_le (N : ℕ) :
     share their exponential growth.  This is the analytic essence of
     van der Veen's Lemma 4 (Gaussian → erfc, arXiv:math/0611181 §3); a
     future sorry-free discharge would formalize that argument.
-    -- Ref: [manuscript] library/arxiv-math-0611181v2/0611181v2.pdf, Lemma 4 -/
+    -- Ref: [leitner2026] library/arxiv-math-0611181v2/0611181v2.pdf, Lemma 4 -/
 class VdVWhiteheadLemma4 : Prop where
   /-- The majorant exceeds the modulus by at most `N^p` for some fixed `p`,
       eventually in `N` — phases cost polynomially, never exponentially. -/

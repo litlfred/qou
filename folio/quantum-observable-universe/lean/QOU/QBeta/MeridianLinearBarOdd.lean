@@ -39,7 +39,7 @@ the bound are the content. No `sorry`.
 --    knots, of which 4₁ is one. The 2013 Murakami work the original key
 --    named is not in `references.ts` nor in `library/`, `ocr/` tier
 --    included. Inferred repoint, not a recovered citation.)
--- Ref: [manuscript] docs/audits/2026-07-12-bar-odd-s-three-routes.md
+-- Ref: [leitner2026] docs/audits/2026-07-12-bar-odd-s-three-routes.md
 -/
 
 namespace QOU.QBeta

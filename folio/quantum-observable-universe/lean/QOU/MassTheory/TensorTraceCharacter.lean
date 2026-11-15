@@ -60,7 +60,7 @@ disproportionate, so `permMatrixOf` below is defined directly over
 needed (a five-line `Finset.sum` computation). If the cone is ever trimmed upstream,
 this should be replaced by the Mathlib pair.
 
--- Ref: [manuscript] bean qou-uinl; the permutation character on a tensor power is
+-- Ref: [leitner2026] bean qou-uinl; the permutation character on a tensor power is
 -- classical, and `d^{c(σ)}` is its standard form.
 -/
 

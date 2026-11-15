@@ -34,7 +34,7 @@ universe u
     fields; the categorical-axiom theorems below never inspect them
     Downstream proofs continue to close by `rfl`-style
     evaluation. -/
--- Ref: [manuscript] braids-and-knots/confined-particle
+-- Ref: [leitner2026] braids-and-knots/confined-particle
 structure ConfinedParticleTy where
   /-- Number of strands in the confined particle's braid representation. -/
   strands : ℕ
@@ -45,7 +45,7 @@ structure ConfinedParticleTy where
 /-- Morphism family in the confinement category: unfolding (to a
     finer level), folding (to a coarser level), or dressing
     (attach an electron shell). -/
--- Ref: [manuscript] braids-and-knots/confinement-category
+-- Ref: [leitner2026] braids-and-knots/confinement-category
 inductive ConfMorphism : ConfinedParticleTy → ConfinedParticleTy → Type where
   /-- Unfold `P` to a finer representation `P'` (strand count grows). -/
   | unfold : ∀ (P P' : ConfinedParticleTy), ConfMorphism P P'
@@ -56,7 +56,7 @@ inductive ConfMorphism : ConfinedParticleTy → ConfinedParticleTy → Type wher
                (shellName : String), ConfMorphism P_bare P_dressed
 
 /-- Identity morphism on any object — concrete pick. -/
--- Ref: [manuscript] braids-and-knots/confinement-category
+-- Ref: [leitner2026] braids-and-knots/confinement-category
 def ConfId : ∀ (P : ConfinedParticleTy), ConfMorphism P P :=
   fun P => ConfMorphism.unfold P P
 
@@ -67,7 +67,7 @@ def ConfId : ∀ (P : ConfinedParticleTy), ConfMorphism P P :=
     rebuilds `f` itself when `f = unfold P Q` (and similarly for
     `fold` / `dress`).  The earlier "always return `unfold`" model
     failed the identity law for `dress`/`fold` morphisms. -/
--- Ref: [manuscript] braids-and-knots/confinement-category
+-- Ref: [leitner2026] braids-and-knots/confinement-category
 def ConfComp {P Q R : ConfinedParticleTy}
     (g : ConfMorphism Q R) (_f : ConfMorphism P Q) : ConfMorphism P R :=
   match g with
@@ -84,7 +84,7 @@ theorem ConfComp_right_id (P Q : ConfinedParticleTy) (f : ConfMorphism P Q) :
     the kind-preserving model: composing on either side with `h`
     reduces by `match` to `h.kind P S` whichever way you parenthesise.
     Witnessed by `rfl`-style evaluation after `cases h`. -/
--- Ref: [manuscript] braids-and-knots/confinement-category
+-- Ref: [leitner2026] braids-and-knots/confinement-category
 theorem ConfinementCategory
     (P Q R S : ConfinedParticleTy)
     (f : ConfMorphism P Q) (g : ConfMorphism Q R) (h : ConfMorphism R S) :

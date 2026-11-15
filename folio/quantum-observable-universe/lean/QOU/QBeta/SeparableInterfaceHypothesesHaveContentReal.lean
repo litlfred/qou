@@ -19,7 +19,7 @@ This file adds the two things that genuinely need `ℝ`: that the escape stays i
 physically admissible positive-weight regime, and that the specific measured ratio is one
 of the values it reaches.
 
--- Ref: [manuscript] quantum-observable-universe/lean/QOU/QBeta/InterfaceScalar.lean
+-- Ref: [leitner2026] quantum-observable-universe/lean/QOU/QBeta/InterfaceScalar.lean
 -/
 
 namespace QOU.QBeta.SeparableInterfaceContent

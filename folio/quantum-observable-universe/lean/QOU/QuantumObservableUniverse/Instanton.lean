@@ -117,7 +117,7 @@ Classical counterpart: Donaldson–Kronheimer, *The Geometry of Four-Manifolds*,
 §4.2 (irreducibility of anti-self-dual connections).
 
 References:
-- [manuscript] §1-quantum-observable-universe
+- [leitner2026] §1-quantum-observable-universe
 - [donaldson1990] https://doi.org/10.1093/oso/9780198535539.001.0001
 -/
 
@@ -249,7 +249,7 @@ theorem categorical_irreducible {C : Type u} [CategoryTheory.Category.{v} C]
     and the topological invariance of the second term; the structure here
     carries no variational data at all, so the implication cannot be
     stated against it. -/
--- Ref: [manuscript] §1-quantum-observable-universe
+-- Ref: [leitner2026] §1-quantum-observable-universe
 theorem categorical_self_duality {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     (fh : @FrobeniusHopfData C _ _ _)
@@ -263,7 +263,7 @@ theorem categorical_self_duality {C : Type u} [CategoryTheory.Category.{v} C]
     When `q = 1`, `d_q²` vanishes whenever the classical `d²` vanishes.
     This is the classical-limit direction; for the non-vanishing direction
     (`d_q² ≠ 0` when `q ≠ 1`) see `categorical_dq_squared_nonvanishing`. -/
--- Ref: [manuscript] §1-quantum-observable-universe
+-- Ref: [leitner2026] §1-quantum-observable-universe
 theorem categorical_dq_squared_classical_limit {C : Type u}
     [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
@@ -301,7 +301,7 @@ so the cross-term is generically non-zero.
 Ref: Connes, *Noncommutative Geometry*, Ch IV (spectral deformations).
 
 References:
-- [manuscript] §1-quantum-observable-universe
+- [leitner2026] §1-quantum-observable-universe
 - [connes1994] https://doi.org/10.1016/0022-4049(94)90126-0
 -/
 

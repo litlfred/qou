@@ -82,7 +82,7 @@ tying the two ends.
 Sorry-free.  No fit, nothing wired, no Stokes multiplier computed.
 
 -- Ref: [ramis-sauloy-zhang2013] https://arxiv.org/abs/0903.0853
--- Ref: [manuscript] docs/audits/2026-08-08-rsz-c1-infinity-route-closed.md
+-- Ref: [leitner2026] docs/audits/2026-08-08-rsz-c1-infinity-route-closed.md
 -/
 import Mathlib.Tactic
 import QOU.QBeta.C1ZeroSideExponents

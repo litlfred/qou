@@ -38,7 +38,7 @@ is wired; no channel instance is fabricated; `u(q₀)` stays OPEN.**
 
 Base ring is `ℝ` (archimedean §7c: `Real.sqrt`, `Real.pi`, ordering).
 
--- Ref: [manuscript] docs/audits/2026-08-01-schannel-saddle-point-ohtsuki-vs-ck.md
+-- Ref: [leitner2026] docs/audits/2026-08-01-schannel-saddle-point-ohtsuki-vs-ck.md
 -- Ref: [andersen-hansen2006] https://doi.org/10.1142/S0218216506004555 (κ-tower)
 -- Ref: [murakami-murakami2001] https://doi.org/10.1007/BF02392716
 -/

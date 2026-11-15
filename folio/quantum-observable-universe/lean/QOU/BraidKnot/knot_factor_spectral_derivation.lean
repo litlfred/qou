@@ -72,7 +72,7 @@ Wedderburn.
 
 Bean `qou-z9ws`.
 
--- Ref: [manuscript] quantum-observable-universe/mass-theory/knot-factor-spectral-derivation.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/knot-factor-spectral-derivation.md
 -/
 
 namespace QOU.BraidKnot
@@ -82,7 +82,7 @@ trace identity).
 
 Named over caller-supplied data.  Note this says nothing about the weights
 being `dim_q²(V_λ) / [n]_q!` — only that they are normalised. -/
--- Ref: [manuscript] quantum-observable-universe/mass-theory/knot-factor-spectral-derivation.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/knot-factor-spectral-derivation.md
 def PlancherelNormalised {P : Type} (partitions : Finset P)
     (plancherelWeight : P → ℝ) : Prop :=
   (partitions.sum fun lam => plancherelWeight lam) = 1
@@ -93,7 +93,7 @@ def PlancherelNormalised {P : Type} (partitions : Finset P)
 
 **Named, not asserted** — see the module docstring for why neither a
 projection nor a `sorry` is the honest form here. -/
--- Ref: [manuscript] quantum-observable-universe/mass-theory/knot-factor-spectral-derivation.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/knot-factor-spectral-derivation.md
 def knot_factor_spectral_derivation {P : Type} (partitions : Finset P)
     (plancherelWeight chi_beta chi_beta_mirror chi_one : P → ℝ)
     (knotFactor : ℝ) : Prop :=
@@ -113,7 +113,7 @@ the normalisation.
 
 This is why naming the two propositions recovers content rather than only a
 schema: they combine into a theorem about the caller's data. -/
--- Ref: [manuscript] quantum-observable-universe/mass-theory/knot-factor-spectral-derivation.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/knot-factor-spectral-derivation.md
 theorem knotFactor_eq_one_of_trivial_braid {P : Type} (partitions : Finset P)
     (plancherelWeight chi_one : P → ℝ)
     (hne : ∀ lam ∈ partitions, chi_one lam ≠ 0)

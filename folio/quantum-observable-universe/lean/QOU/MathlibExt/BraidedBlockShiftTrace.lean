@@ -31,7 +31,7 @@ which `ginv_letter` records.
 Base ring: generic `[CommRing R]`, generic `R`-algebra `A`; no ordering.
 
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
--- Ref: [manuscript] bean qou-5zl1.
+-- Ref: [leitner2026] bean qou-5zl1.
 -/
 
 namespace QOU.MathlibExt.BraidedBlockShiftTrace

@@ -26,7 +26,7 @@ See [Table 2](#tbl:mass-comparison-table-table2-data).
 
 #### FULL $\mathfrak{Q}_\beta$ prediction (framework, no CODATA mass injection)
 
-Per [`prop:neutron-qvalue-symbolic`](../../particle-interactions/neutron-qvalue-symbolic.md), the framework predicts the $\beta$-decay Q-value using only CAL-1 ($m_e$) and CAL-2 ($q_0$):
+Per [`prop:neutron-qvalue-symbolic`](../nuclear-interactions/neutron-qvalue-symbolic.md), the framework predicts the $\beta$-decay Q-value using only CAL-1 ($m_e$) and CAL-2 ($q_0$):
 
 $$
 \boxed{
@@ -42,7 +42,7 @@ The $+1.31$ keV residual stems from the brane-tower truncation. The derived $E_0
 
 *Light nuclei (from multi-body Skein).* 
 
-All rows below come from the LO $\rho_K$ assembly using CODATA $m_p, m_n$ inputs. The $\Delta$ column equals the CODATA binding energy by construction. The FULL multi-body unified knot mass formula at $H_{3A}$ remains intractable beyond $A = 1$. Binding-energy predictions require resolving the open $\Delta_\lambda$ research question (see [recomputed-low-isotope-mass-table.md:99](../braids-and-knots/recomputed-low-isotope-mass-table.md)).
+All rows below come from the LO $\rho_K$ assembly using CODATA $m_p, m_n$ inputs. The $\Delta$ column equals the CODATA binding energy by construction. The FULL multi-body unified knot mass formula at $H_{3A}$ remains intractable beyond $A = 1$. Binding-energy predictions require resolving the open $\Delta_\lambda$ research question (see [recomputed-low-isotope-mass-table.md:99](../mass-endomorphism/recomputed-low-isotope-mass-table.md)).
 
 See [Table 3](#tbl:mass-comparison-table-table3-data).
 

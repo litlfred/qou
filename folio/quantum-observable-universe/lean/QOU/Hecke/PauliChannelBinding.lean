@@ -51,7 +51,7 @@ must carry it.
 Nothing in this file's Lean depends on the value: the strict bound test below is
 stated for an abstract channel value `f`.
 
--- Ref: [manuscript] docs/audits/2026-06-20-chirality-forces-complete-graph-topology.md ;
+-- Ref: [leitner2026] docs/audits/2026-06-20-chirality-forces-complete-graph-topology.md ;
    docs/audits/2026-06-17-hecke-channel-chirality-binding.md
 -/
 import Mathlib.Tactic

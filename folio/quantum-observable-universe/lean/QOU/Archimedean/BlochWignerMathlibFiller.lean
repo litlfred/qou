@@ -43,9 +43,9 @@ Mathlib gaps still open after this filler:
 * `BlochSuslinUniqueness D` instance — depends on the pentagon
   identity plus the K-theoretic injectivity of the Suslin map.
 
--- Ref: [manuscript] prop:archimedean-functor-uniqueness
--- Ref: [manuscript] rem:figure-8-archimedean-illustration
--- Ref: [manuscript] binding-scale-catalan
+-- Ref: [leitner2026] prop:archimedean-functor-uniqueness
+-- Ref: [leitner2026] rem:figure-8-archimedean-illustration
+-- Ref: [leitner2026] binding-scale-catalan
 -- Ref: [bloch2000]
 -- Ref: [zagier1986] DOI 10.1007/BFb0084581
 -/
@@ -78,7 +78,7 @@ noncomputable def BlochWigner_figure_8_per_tetrahedron : ℝ :=
     parameter `i = e^{iπ/2}`, each contributing
     `D(i) = Cl_2(π/2) = G` (Catalan constant). The
     per-octahedron BW value is therefore `4 · Cl_2(π/2) = 4G`. -/
--- Ref: [manuscript] binding-scale-catalan
+-- Ref: [leitner2026] binding-scale-catalan
 noncomputable def BlochWigner_Borromean_per_octahedron : ℝ :=
   4 * BlochWigner_unit_circle (Real.pi / 2)
 
@@ -98,7 +98,7 @@ theorem Vol_figure_8_eq_two_BW_tetrahedron :
     Via the 2-octahedra decomposition of the Borromean rings
     complement, each octahedron contributing `4G = 4 Cl_2(π/2)`.
     Sorry-free by definition. -/
--- Ref: [manuscript] binding-scale-catalan
+-- Ref: [leitner2026] binding-scale-catalan
 theorem Vol_Borromean_eq_two_BW_octahedron :
     Vol_Borromean = 2 * BlochWigner_Borromean_per_octahedron := by
   unfold Vol_Borromean BlochWigner_Borromean_per_octahedron

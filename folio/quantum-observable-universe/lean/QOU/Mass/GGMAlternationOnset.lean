@@ -33,8 +33,8 @@ archimedean side of the wall — `[Field K] [LinearOrder K] [IsStrictOrderedRing
 
 ## References
 
-- [manuscript] mass-theory/c1-ggm-bar-parity-faces (the block being re-scoped)
-- [manuscript] docs/audits/2026-09-03-door-v-residual-scope.md
+- [leitner2026] mass-theory/c1-ggm-bar-parity-faces (the block being re-scoped)
+- [leitner2026] docs/audits/2026-09-03-door-v-residual-scope.md
 
 LaTeX label: (library module — no content block)
 -/

@@ -53,23 +53,23 @@ class HasRealAxisData (P : ConfinedParticle) where
   sigmaF : ℝ → ℝ
 
 /-- Confinement predicate at real `q`. -/
--- Ref: [manuscript] particle-interactions/confinement-sdp
+-- Ref: [leitner2026] particle-interactions/confinement-sdp
 def confinedReal (P : ConfinedParticle) [h : HasRealAxisData P] (q : ℝ) : Prop :=
   h.confined q
 
 /-- **Confinement locus** `Ω(P) ⊆ ℝ` — the set of real `q` at which
     `P` is confined. -/
--- Ref: [manuscript] braids-and-knots/confinement-phase-stratification
+-- Ref: [leitner2026] braids-and-knots/confinement-phase-stratification
 def confinementLocus (P : ConfinedParticle) [HasRealAxisData P] : Set ℝ :=
   { q : ℝ | confinedReal P q }
 
 /-- Binding multiplicity `μ(P, q)` on the real q-axis. -/
--- Ref: [manuscript] braids-and-knots/electron-shell
+-- Ref: [leitner2026] braids-and-knots/electron-shell
 def muReal (P : ConfinedParticle) [h : HasRealAxisData P] (q : ℝ) : ℕ :=
   h.mu q
 
 /-- Frobenius stability index `σ_F(P, q)` on the real q-axis. -/
--- Ref: [manuscript] braids-and-knots/shell-closure-stability
+-- Ref: [leitner2026] braids-and-knots/shell-closure-stability
 def sigmaFReal (P : ConfinedParticle) [h : HasRealAxisData P] (q : ℝ) : ℝ :=
   h.sigmaF q
 
@@ -97,7 +97,7 @@ opaque StrictlyFeasible (P : ConfinedParticle) (q : ℝ) : Prop
     strict-feasibility set is open with the value/multiplicity data locally
     regular. These are hypotheses (the "IF" of the stratification claim),
     not the topological conclusions. -/
--- Ref: [manuscript] braids-and-knots/confinement-phase-stratification
+-- Ref: [leitner2026] braids-and-knots/confinement-phase-stratification
 -- Ref: [boyd-vandenberghe-2004] §5.6 (Perturbation and sensitivity
 --      analysis — feasibility-set topology + value-function continuity)
 class HasSDPRegularity (P : ConfinedParticle) [HasRealAxisData P] : Prop where
@@ -161,7 +161,7 @@ theorem phase_sigmaF_continuous_on_locus
 /-- **Confinement phase stratification (headline).** The locus `Ω(P)` is
     open and μ is locally constant on its components — derived from the SDP
     regularity hypotheses, not assumed. -/
--- Ref: [manuscript] braids-and-knots/confinement-phase-stratification
+-- Ref: [leitner2026] braids-and-knots/confinement-phase-stratification
 theorem ConfinementPhaseStratification (P : ConfinedParticle)
     [HasRealAxisData P] [HasSDPRegularity P] :
     IsOpen (confinementLocus P) :=

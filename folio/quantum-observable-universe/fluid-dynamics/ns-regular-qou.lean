@@ -1,6 +1,6 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Int.Basic
--- Ref: [manuscript] Ch. 7, §ns-regular-qou
+-- Ref: [leitner2026] Ch. 7, §ns-regular-qou
 -- NS-regular quantum observable universe
 
 /-- Data of a quantum observable universe as used by the NS-regularity

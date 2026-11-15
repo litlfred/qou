@@ -26,8 +26,8 @@ during the transition: once both blocks land on main, downstream
 consumers can choose either canonical import.
 -/
 
--- Ref: [manuscript] def:bar-involution
--- Ref: [manuscript] prop:bar-symmetric-three-layer-synthesis
+-- Ref: [leitner2026] def:bar-involution
+-- Ref: [leitner2026] prop:bar-symmetric-three-layer-synthesis
 -- Ref: [wenzl1988] doi:10.1007/BF01404457
 -- Ref: [hoefsmit1974]
 

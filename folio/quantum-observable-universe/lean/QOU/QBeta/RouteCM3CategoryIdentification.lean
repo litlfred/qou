@@ -37,7 +37,7 @@ LaTeX context: `docs/audits/2026-08-11-route-c-bps-cohomology-scoping.md`.
 - [davison-meinhardt2020] Davison & Meinhardt, "Cohomological Donaldson–Thomas
   theory of a quiver with potential and quantum enveloping algebras."
   https://doi.org/10.1007/s00222-020-00961-y
-- [manuscript] docs/audits/2026-08-14-aomega-to-S-bridge-refuted-O2-negative.md (M2 scope).
+- [leitner2026] docs/audits/2026-08-14-aomega-to-S-bridge-refuted-O2-negative.md (M2 scope).
 -/
 
 namespace QOU.QBeta.RouteCM3CategoryIdentification

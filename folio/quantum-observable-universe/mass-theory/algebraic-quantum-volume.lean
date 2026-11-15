@@ -1,4 +1,4 @@
--- Ref: [manuscript] Ch. 3, §algebraic-quantum-volume
+-- Ref: [leitner2026] Ch. 3, §algebraic-quantum-volume
 -- Algebraic quantum volume Vol_q(β) as product of traced volumes
 
 import Mathlib.Data.Real.Basic

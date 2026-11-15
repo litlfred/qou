@@ -1,6 +1,6 @@
 **Proof.** Algebraic rearrangement of the 3-term recursion
 `4(n+1) · a_{n+1} + 6n · a_n + (2n-1) · a_{n-1} = 0` from
-[`prop:qbeta-per-block-chi-closed-forms`](qbeta-per-block-chi-closed-forms.md)
+[`prop:qbeta-per-block-chi-closed-forms`](../mass-endomorphism/qbeta-per-block-chi-closed-forms.md)
 §Extension #5, dividing through by $4(n+1)$ (positive for $n \geq 0$).
 The Lean proof is `field_simp` + `linarith` on the recursion equation.
 $\square$
@@ -51,7 +51,7 @@ shapes differ). However:
 2. The $z$-recursion's role in this picture is **upstream auxiliary
    data**: the Markov parameter $z(q)$ enters $\Delta\mathrm{tr}_M(q)$
    through the canonical Wenzl weights $y_\lambda(q)$
-   (see [`prop:qbeta-per-block-chi-closed-forms`](qbeta-per-block-chi-closed-forms.md)
+   (see [`prop:qbeta-per-block-chi-closed-forms`](../mass-endomorphism/qbeta-per-block-chi-closed-forms.md)
    §Extension #4), and the $z$-Taylor expansion is what one would
    eventually convolve against the per-block characters to recover
    the f-map. The $z$-recursion is a structural input to the f-map

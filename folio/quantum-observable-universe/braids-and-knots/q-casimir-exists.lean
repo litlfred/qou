@@ -11,7 +11,7 @@ LaTeX: `\label{prop:q-casimir-exists}`
 
 ## References
 
-- [manuscript] §4-braids-and-knots/q-casimir-exists
+- [leitner2026] §4-braids-and-knots/q-casimir-exists
 - [kassel1995] Quantum Groups (Springer GTM 155), §VI.4
 - [lusztig1993] Introduction to Quantum Groups (Birkhäuser)
 -/

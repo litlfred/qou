@@ -20,7 +20,7 @@ namespace QOU
 /-- The observed spacetime value: the element of 𝔸¹ recovered
     from color tube coordinates by the Vieta identity z = S/D,
     where S = Σ cᵢ and D = Σ cᵢcⱼ. -/
--- Ref: [manuscript] Ch. 8 Glossary
+-- Ref: [leitner2026] Ch. 8 Glossary
 structure ObservedValue where
   /-- The spacetime coordinate z. -/
   z : ℝ

@@ -43,7 +43,7 @@ NF-basis constant `z = 4993/10000`).  Provenance + symbolic derivation:
 `traced_volume` construction is not yet ported to Lean
 (AGENTS.md anti-laundering rule).
 
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/neutron-proton-splitting.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/neutron-proton-splitting.md
 -/
 
 namespace QOU.Torsion
@@ -114,7 +114,7 @@ class NeutronProtonSplittingNumerics extends NeutronProtonSplittingContext where
     value violates the §7ab approximation convention — the manuscript
     claims `≈` with a stated tolerance, which is exactly conjunct (2)
     here.  The prediction-formula conjunct (1) holds definitionally. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/neutron-proton-splitting.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/neutron-proton-splitting.md
 theorem neutron_proton_splitting [cm : NeutronProtonSplittingNumerics] :
     (predictedNeutronProtonSplitting = cm.α * |cm.Φ_udd - cm.Φ_uud|) ∧
     (|predictedNeutronProtonSplitting - codataNeutronProtonSplittingMeV|

@@ -30,7 +30,7 @@ splits (6, 9, 12) is verified in `combiner_branching_completeness.py`.
 Refs:
 - [wenzl1988] Hecke algebras of type A_n and subfactors, Invent. Math. 92
 - [halverson-ram1998] Murnaghan–Nakayama rule for the Hecke algebra
-- [manuscript] content/.../mass-endomorphism/hecke-branching-trace-decomposition.md
+- [leitner2026] content/.../mass-endomorphism/hecke-branching-trace-decomposition.md
 -/
 
 open QOU.MathlibExt.QPartitionCombinatorics

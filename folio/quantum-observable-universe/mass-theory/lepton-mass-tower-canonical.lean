@@ -24,8 +24,8 @@ Conjectural content (with sorry):
   - lepton_mass_ratio (muon/tau cases) — Ref: conj:lepton-mass-tower-canonical
   - im_q_invariance_at_leading_order — modulus projection invariance
 
-Ref: [manuscript] conj:lepton-mass-tower-canonical
-Ref: [manuscript] docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md
+Ref: [leitner2026] conj:lepton-mass-tower-canonical
+Ref: [leitner2026] docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md
 
 Generic over `[CommRing R]` per AGENTS.md §7c base-ring discipline.
 NOT YET LAKE-VERIFIED — defer to follow-up branch with lake toolchain.
@@ -54,10 +54,10 @@ noncomputable def lepton_mass_ratio
     {R : Type*} [CommRing R] (q : R) [hi : LeptonMassRatioConjecture q] : LeptonType → R
   | LeptonType.electron => (1 : R)  -- calibration convention
   | LeptonType.muon     =>
-      -- Ref: [manuscript] conj:lepton-mass-tower-canonical
+      -- Ref: [leitner2026] conj:lepton-mass-tower-canonical
       hi.muon_ratio
   | LeptonType.tau      =>
-      -- Ref: [manuscript] conj:lepton-mass-tower-canonical
+      -- Ref: [leitner2026] conj:lepton-mass-tower-canonical
       hi.tau_ratio
 
 /-- **THEOREM.** The electron mass ratio is the multiplicative identity
@@ -161,7 +161,7 @@ theorem figure_eight_reduction
     (hh2 : σ_2^2 = h * σ_2 + 1)
     (hbr : σ_1 * σ_2 * σ_1 = σ_2 * σ_1 * σ_2) :
     (σ_1 * (σ_2 - h))^2 = σ_2 * σ_1 - h^2 * (σ_1 * σ_2) - h * σ_2 + h^3 * σ_1 + h^2 := by
-  -- Ref: [manuscript] — deferred to a non-commutative ring setting +
+  -- Ref: [leitner2026] — deferred to a non-commutative ring setting +
   -- lake verification; full proof strategy in the docstring above.
   exact hi.reduction hh1 hh2 hbr
 
@@ -172,7 +172,7 @@ def lepton_mass_ratio_im_q_invariance_at_LO
     (ℓ : LeptonType) :
     True := by
   trivial
-  -- Ref: [manuscript] conj:lepton-mass-tower-canonical, property 1
+  -- Ref: [leitner2026] conj:lepton-mass-tower-canonical, property 1
 
 /-- **THEOREM.** The lepton-tower index walk: leptons are indexed by
     natural numbers via the T(2, 2m+1) torus-knot tower

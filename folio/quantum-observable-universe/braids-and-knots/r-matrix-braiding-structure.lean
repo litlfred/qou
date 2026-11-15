@@ -11,7 +11,7 @@ and yields a braid group representation via Ř = P ∘ R.
 LaTeX label: `prop:r-matrix-braiding-structure`
 
 ## References
-- [manuscript] Ch. 4, §enveloping-algebras
+- [leitner2026] Ch. 4, §enveloping-algebras
 - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 - [drinfeld1985] V. Drinfeld, Hopf algebras and the quantum Yang–Baxter equation, 1985
 
@@ -94,7 +94,7 @@ that `R`-matrix is not done in this development, so no declaration here claims
 it. -/
 -- Ref: [drinfeld1985] V. Drinfeld, Hopf algebras and the quantum Yang–Baxter equation, 1985
 -- Ref: [kassel1995] Ch. VIII (Quantum SL(2)) + Ch. XIII (Braided categories)
--- Ref: [manuscript] Ch. 4, §enveloping-algebras
+-- Ref: [leitner2026] Ch. 4, §enveloping-algebras
 def r_matrix_braiding_structure {V3 : Type} (comp : V3 → V3 → V3)
     (R12 R13 R23 Rcheck1 Rcheck2 : V3) : Prop :=
   YangBaxterHolds comp R12 R13 R23 ∧ BraidRelationHolds comp Rcheck1 Rcheck2
@@ -132,7 +132,7 @@ structure RMatrixEigenData where
     eigenvalues `q` and `-q⁻¹`; their sum is `q - q⁻¹` and their product is
     `-1` (so `σ² = (q - q⁻¹)σ + 1`, the Hecke relation). -/
 -- Ref: [kassel1995] Ch. VIII (Quantum SL(2))
--- Ref: [manuscript] Ch. 4, §enveloping-algebras
+-- Ref: [leitner2026] Ch. 4, §enveloping-algebras
 noncomputable def su2_fundamental_r_matrix (q qInv : R_q)
     (hq : q * qInv = 1) : RMatrixEigenData where
   repDim := 2

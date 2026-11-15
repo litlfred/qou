@@ -27,7 +27,7 @@ here is wired into production (anti-laundering rule).  Everything is over `ℚ`
 
 The EM self-energy sign of `m_p − m_n` is the standard PDG result.
 
--- Ref: [manuscript] prop:neutron-proton-mass-splitting
+-- Ref: [leitner2026] prop:neutron-proton-mass-splitting
 -/
 
 namespace QOU.MassTheory.NeutronProtonEMSign

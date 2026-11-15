@@ -11,7 +11,7 @@ Bring's surface. The Coulomb and pairing terms in the
 liquid-drop ansatz reduce to a Weierstrass elliptic curve whose
 integer points trace the valley.
 
--- Ref: [manuscript]
+-- Ref: [leitner2026]
 Per `AGENTS.md §3b-cond`, opaque Props + class fields + sorry
 instance per claim. Algebraic tier only — the numerical match
 to the observed stable-isotope set belongs to a future
@@ -19,9 +19,9 @@ Archimedean tier (per gemini review on #721).
 
 ## References
 
-- `[manuscript]` `rem:elliptic-stability-locus`
-- `[manuscript]` `prop:integer-stability`
-- `[manuscript]` `def:color-tube-fibers`
+- `[leitner2026]` `rem:elliptic-stability-locus`
+- `[leitner2026]` `prop:integer-stability`
+- `[leitner2026]` `def:color-tube-fibers`
 -/
 
 namespace QOU.EllipticStabilityLocus

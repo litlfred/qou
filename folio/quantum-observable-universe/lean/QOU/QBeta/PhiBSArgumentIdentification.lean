@@ -41,8 +41,8 @@ binding ONLY through that unproven channel identity; nothing in this file
 assumes it.  The class below is about the numerical S-map (a function of the
 substrate modulus), not about the decay observable.
 
--- Ref: [manuscript] conj:algebraic-geometric-dilog-equivalence; docs/audits/2026-07-11-qbeta-c3-barodd-sleak-phib-target.md
--- Ref: [manuscript] docs/audits/2026-07-11-algebraic-geometric-dilog-provability.md
+-- Ref: [leitner2026] conj:algebraic-geometric-dilog-equivalence; docs/audits/2026-07-11-qbeta-c3-barodd-sleak-phib-target.md
+-- Ref: [leitner2026] docs/audits/2026-07-11-algebraic-geometric-dilog-provability.md
 -- Ref: [faddeev1995] Faddeev, Lett. Math. Phys. 34 (1995) 249. https://doi.org/10.1007/BF01872779
 -/
 
@@ -55,7 +55,7 @@ open QOU.MathlibExt.FaddeevPhiBRealIntegral
     `√(ln q₀/2π)·e^{iπ/4}` (`QOU.MathlibExt.PhiBProd.substrateB`) — the
     `e^{iπ/4}` phase removed, so the modular parameter lands ON the unit
     circle instead of inside it. -/
--- Ref: [manuscript] docs/audits/2026-07-11-phib-lean-route-memo.md
+-- Ref: [leitner2026] docs/audits/2026-07-11-phib-lean-route-memo.md
 noncomputable def fibreB (q₀ : ℝ) : ℝ :=
   Real.sqrt (Real.log q₀ / (2 * Real.pi))
 
@@ -96,8 +96,8 @@ theorem fibreQParam_fibreB {q₀ : ℝ} (h : 1 ≤ q₀) :
     structural content rather than a vacuous pointwise choice (module
     docstring).  An instance for the structural map is the OPEN state —
     none is fabricated here. -/
--- Ref: [manuscript] conj:algebraic-geometric-dilog-equivalence
--- Ref: [manuscript] docs/audits/2026-07-11-qbeta-c3-barodd-sleak-phib-target.md
+-- Ref: [leitner2026] conj:algebraic-geometric-dilog-equivalence
+-- Ref: [leitner2026] docs/audits/2026-07-11-qbeta-c3-barodd-sleak-phib-target.md
 class SArgumentIdentification (zArg S : ℝ → ℝ) : Prop where
   /-- Continuity of the S-map on the physical domain. -/
   S_continuousOn : ContinuousOn S (Set.Ioi 1)
@@ -122,7 +122,7 @@ theorem readout_phiB {zArg S : ℝ → ℝ} [h : SArgumentIdentification zArg S]
     substrate `q*` between the anchors with `S(q*) = 0` — i.e.
     `c₃ = −Vol(4₁)` exactly, purely bar-even.  (The two measured signs
     enter as hypotheses: measured values are not Lean-provable.) -/
--- Ref: [manuscript] docs/audits/2026-07-11-qbeta-c3-barodd-sleak-phib-target.md §New observation
+-- Ref: [leitner2026] docs/audits/2026-07-11-qbeta-c3-barodd-sleak-phib-target.md §New observation
 theorem exists_zero_crossing {S : ℝ → ℝ} (hS : ContinuousOn S (Set.Ioi 1))
     {a c : ℝ} (ha : 1 < a) (hac : a ≤ c) (hSa : 0 < S a) (hSc : S c < 0) :
     ∃ q ∈ Set.Icc a c, S q = 0 := by
@@ -168,7 +168,7 @@ the angular deformation `ϑ_K` has no real solution at the muon anchor
 (bean `qou-3kos`, session 2026-07-27). The class carries `A_ω` as a
 field — instances fix it (e.g. `A_ω = 3` for 4₁ via Faddeev rigidity).
 
--- Ref: [manuscript] conj:binding-qbeta-complex-volume
+-- Ref: [leitner2026] conj:binding-qbeta-complex-volume
 -- Ref: docs/audits/2026-07-11-complex-volume-conditional-mass-binding.md
 -- Ref: docs/audits/2026-07-27-nzImVolume-sincos-convention-bug.md
 -/
@@ -189,7 +189,7 @@ field — instances fix it (e.g. `A_ω = 3` for 4₁ via Faddeev rigidity).
 
     The class asserts nothing provable-outright; instances are the open
     conjecture. -/
--- Ref: [manuscript] conj:binding-qbeta-complex-volume
+-- Ref: [leitner2026] conj:binding-qbeta-complex-volume
 class SDeformedVolumeChannel (S : ℝ → ℝ) where
   /-- The substrate → deformation map `u(q₀)` (log meridian holonomy). -/
   u : ℝ → ℂ

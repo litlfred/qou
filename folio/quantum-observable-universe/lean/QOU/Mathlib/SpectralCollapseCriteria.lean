@@ -59,7 +59,7 @@ into "exhibit an anticommuting involution", which is a smaller and *checkable*
 obligation — not a discharged one. Saying otherwise would repeat the defect
 this file exists downstream of.
 
--- Ref: [manuscript] quantum-observable-universe/eightfold-way
+-- Ref: [leitner2026] quantum-observable-universe/eightfold-way
 -/
 
 namespace QOU.Mathlib.SpectralCollapseCriteria

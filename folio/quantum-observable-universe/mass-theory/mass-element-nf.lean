@@ -23,14 +23,14 @@ $$
 with $a_0 = 0$ (the $\gamma$ coefficient vanishes — photon masslessness).
 
 ## References
-- [manuscript] conj:mass-element-nf
-- [manuscript] conj:mass-endomorphism
-- [manuscript] def:hecke-mass-element
+- [leitner2026] conj:mass-element-nf
+- [leitner2026] conj:mass-endomorphism
+- [leitner2026] def:hecke-mass-element
 -/
 
 namespace QOU.BraidKnot
 
--- Ref: [manuscript] conj:mass-element-nf
+-- Ref: [leitner2026] conj:mass-element-nf
 
 /-- Enumeration of the four NF basis elements of $H_3(R, q)$
     relevant to the mass element decomposition. -/
@@ -45,8 +45,8 @@ inductive MassNFBasis : Type
     An instance for braid data `β` asserts that the Hecke mass element
     decomposes in the NF basis with vanishing $\gamma$ coefficient and
     positive coefficients $a_1, a_3, a_5 > 0$. -/
--- Ref: [manuscript] conj:mass-element-nf
--- Ref: [manuscript] def:hecke-mass-element
+-- Ref: [leitner2026] conj:mass-element-nf
+-- Ref: [leitner2026] def:hecke-mass-element
 class HeckeMassNF (β : Type*) where
   /-- NF coefficient for the σ₀ + σ₁ channel (degree 1). -/
   a₁ : ℝ
@@ -66,7 +66,7 @@ class HeckeMassNF (β : Type*) where
     `norm_num`.  Encodes none of the actual NF-decomposition content
     (the genuine coefficients are q-rational functions of the braid
     word) but discharges the §3b-cond hypothesis. -/
--- Ref: [manuscript] conj:mass-element-nf §"Skeleton"
+-- Ref: [leitner2026] conj:mass-element-nf §"Skeleton"
 instance canonical (β : Type*) : HeckeMassNF β where
   a₁ := 1
   a₃ := 1

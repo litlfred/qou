@@ -86,7 +86,7 @@ opaque braidWordEval :
 
     Axiomatised at the categorical-content level; concrete proof
     requires the Hoefsmit-eigenvalue computation per block. -/
--- Ref: [manuscript] Ch. braid-knot, prop:operator-selection-lp (evenPower necessary for block PSD; binding-k-solver.witness.json)
+-- Ref: [leitner2026] Ch. braid-knot, prop:operator-selection-lp (evenPower necessary for block PSD; binding-k-solver.witness.json)
 axiom evenPower_necessary_for_blockPosSemidef :
     ∀ (n : ℕ) (w : List Int),
     (braidWordEval n w).PosSemidef →

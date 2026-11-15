@@ -39,7 +39,7 @@ analyticity hypotheses live in `QOU.MathlibExt.ComplexDilogarithm` (the
 
 Nothing is stubbed: no `sorry`, no axiom. Tracked in `qou-gkco`.
 
--- Ref: [manuscript] beans qou-gkco, qou-ph1k
+-- Ref: [leitner2026] beans qou-gkco, qou-ph1k
 -/
 import QOU.MathlibExt.ComplexDilogarithm
 import QOU.Archimedean.DilogReflection

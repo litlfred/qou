@@ -20,7 +20,7 @@ LaTeX label: `prop:topological-mass-formula`
 
 ## References
 
-- [manuscript] §4/topological-mass-formula
+- [leitner2026] §4/topological-mass-formula
 - [kock2004] https://doi.org/10.1017/CBO9780511615443
 - [thurston1978] https://doi.org/10.1007/978-1-4612-9903-6
 
@@ -62,7 +62,7 @@ noncomputable def archimedeanMass (q : ℝ) (vol : ℝ) : ℝ :=
     1. Baseline holonomy → Vol(K) via Chern-Simons/volume correspondence
     2. Exceptional divisor contributions → Vol(K) · (1/ℏ_q² - 1)
     3. Total: m = Vol(K)/ℏ_q² -/
--- Ref: [manuscript] §4/topological-mass-formula
+-- Ref: [leitner2026] §4/topological-mass-formula
 -- Ref: [thurston1978] The Geometry and Topology of Three-Manifolds — see folio/schema/references.ts
 theorem ArchimedeanMassFormula
     (q : ℝ) (hq : 1 < q)
@@ -74,14 +74,14 @@ theorem ArchimedeanMassFormula
   unfold archimedeanMass
   rw [h_baseline, h_exceptional]
   -- Vol + Vol · (1/ℏ² - 1) = Vol · (1 + 1/ℏ² - 1) = Vol/ℏ²
-  -- Ref: [manuscript] §4/topological-mass-formula
+  -- Ref: [leitner2026] §4/topological-mass-formula
   have hℏ : (quantumPlanck q) ^ 2 ≠ 0 :=
     pow_ne_zero 2 (ne_of_gt (quantumPlanck_pos q hq))
   field_simp
   ring
 
 /-- The archimedean mass is positive for hyperbolic knots (Vol > 0). -/
--- Ref: [manuscript] §4/topological-mass-formula
+-- Ref: [leitner2026] §4/topological-mass-formula
 theorem archimedeanMass_pos (q : ℝ) (hq : 1 < q)
     (vol : ℝ) (hvol : 0 < vol) :
     0 < archimedeanMass q vol := by

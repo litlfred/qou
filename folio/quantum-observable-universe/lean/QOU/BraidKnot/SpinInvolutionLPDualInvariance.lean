@@ -83,6 +83,6 @@ noncomputable def matrixModel (n : ℕ) :
 
 end SpinInvolutionLPDualInvariance
 
--- Ref: [manuscript] quantum-observable-universe/mass-theory/spin-involution-lp-dual-invariance-proof.ts
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/spin-involution-lp-dual-invariance-proof.ts
 
 end QOU.BraidKnot

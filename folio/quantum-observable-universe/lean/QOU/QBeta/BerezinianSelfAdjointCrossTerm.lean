@@ -34,7 +34,7 @@ dependency on PR #4140's unmerged `SuperDMBerezinian.lean` (uses only on-`main`
 `ZBarParity`). §7c: generic `{R : Type*} [CommRing R]` with an abstract bar
 involution `σ : R →+* R`; no archimedean construct, no `ℝ`. Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-07-31-berezinian-selfadjoint-crossterm-bar-even.md
+-- Ref: [leitner2026] docs/audits/2026-07-31-berezinian-selfadjoint-crossterm-bar-even.md
 -/
 import QOU.QBeta.ZBarParity
 

@@ -119,7 +119,7 @@ $$
     conditional conjecture is honest per §3b; an instance discharging
     it (none here) would be the conjecture, the open state being the
     absence of one. -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/orbital-fourier-decomposition.ts
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/orbital-fourier-decomposition.ts
 def orbital_fourier_decomposition (ctx : OrbitalFourierDecompositionContext) : Prop :=
     ctx.k = 2 * (ctx.n - 1 : ℤ) ∧ ctx.ℓ < ctx.n ∧
     -(ctx.ℓ : ℤ) ≤ ctx.m ∧ ctx.m ≤ (ctx.ℓ : ℤ) ∧

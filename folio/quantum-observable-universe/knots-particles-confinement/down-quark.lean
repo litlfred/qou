@@ -16,7 +16,7 @@ LaTeX label: `def:down-quark`
 
 ## References
 - [jones1987] https://doi.org/10.2307/1971403
-- [manuscript] Ch. 5, §down-quark
+- [leitner2026] Ch. 5, §down-quark
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
 Part of the formal proof chain. The parameter `q` is the canonical
@@ -39,18 +39,18 @@ theorem down_quark_is_unknot :
     ({} : DownQuark).genus = ({} : Neutrino).genus := ⟨rfl, rfl⟩
 
 /-- The down quark has negative crossing orientation. -/
--- Ref: [manuscript] Ch. 5, §down-quark
+-- Ref: [leitner2026] Ch. 5, §down-quark
 theorem down_quark_negative_orientation :
     ({} : DownQuark).crossing_orientation = -1 := rfl
 
 /-- Up and down quarks have opposite crossing orientations. -/
--- Ref: [manuscript] Ch. 5, §down-quark
+-- Ref: [leitner2026] Ch. 5, §down-quark
 theorem quark_crossing_asymmetry :
     ({} : DownQuark).crossing_orientation = -({} : UpQuark).crossing_orientation := by
   decide
 
 /-- The down quark is color-confined. -/
--- Ref: [manuscript] Ch. 5, §down-quark
+-- Ref: [leitner2026] Ch. 5, §down-quark
 theorem down_quark_confined : ({} : DownQuark).confined = true := rfl
 
 end

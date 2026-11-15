@@ -39,7 +39,7 @@ structure BreitWheelerPairProduction where
   /-- `net(γγ) = nfConst + nfSigma = 1 + (q − q⁻¹)`. -/
   net_def : net = nfConst + nfSigma
 
--- Ref: [manuscript] quantum-observable-universe/predicted-spectra/breit-wheeler-pair-production-derivation.ts
+-- Ref: [leitner2026] quantum-observable-universe/predicted-spectra/breit-wheeler-pair-production-derivation.ts
 
 /-- In the QOU regime `q > 1` the bare pair carries net weight `> 1`
     (the `q`-deformation raises it above the classical value), since

@@ -62,7 +62,7 @@ Generic `R`, `A`; no `ℝ`.
 ## References
 
 - [jones1987] https://doi.org/10.2307/1971403
-- [manuscript] `docs/audits/2026-09-13-interior-markov-of-braided-tower.md`;
+- [leitner2026] `docs/audits/2026-09-13-interior-markov-of-braided-tower.md`;
   `docs/audits/2026-09-07-route-c-step3-and-kz-level-plans.md` §A step 4.
 -/
 

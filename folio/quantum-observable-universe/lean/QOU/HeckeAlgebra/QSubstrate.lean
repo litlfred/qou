@@ -34,7 +34,7 @@ number existence claim.
 
 ## References
 
-- [manuscript] `def:m-mu-over-m-e-calibration` — the equation
+- [leitner2026] `def:m-mu-over-m-e-calibration` — the equation
   defining `q_0` from the lepton mass ratio
 - `computations/substrate/q_parameter.py` — the 50-dps
   Python derivation
@@ -63,7 +63,7 @@ namespace QOU.HeckeAlgebra.QSubstrate
     this `def` to the substrate-derivation pipeline output once the
     `def:m-mu-over-m-e-calibration` Lean port lands. -/
 -- Ref: q-pinning-50-digit.witness.json (proton-anchor re-pin, 2026-05-28)
--- Ref: [manuscript] def:m-mu-over-m-e-calibration
+-- Ref: [leitner2026] def:m-mu-over-m-e-calibration
 noncomputable def q_0 : ℝ :=
   1.10997858275138080759166909561076887987449912187357763605672
 

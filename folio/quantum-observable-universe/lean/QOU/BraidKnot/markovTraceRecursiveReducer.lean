@@ -20,7 +20,7 @@ using only:*
 *The algorithm terminates in `O(ℓ(β) · n!)` basis evaluations and
 verifies the disjoint-product property `tr_M(α ⊗ β) = tr_M(α) · tr_M(β)`.*
 
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/markov-trace-recursive-reducer.md
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/markov-trace-recursive-reducer.md
 -/
 
 namespace QOU.BraidKnot
@@ -54,7 +54,7 @@ class MarkovTraceRecursiveReducerContext where
 
     For every braid word, the reducer terminates, produces a correct
     closed form, and preserves disjoint products. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/markov-trace-recursive-reducer.md
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/markov-trace-recursive-reducer.md
 theorem markovTraceRecursiveReducer
     [ctx : MarkovTraceRecursiveReducerContext] (β : ctx.Braid) :
     ctx.terminates β ∧ ctx.correct β (ctx.reduce β) ∧

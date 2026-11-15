@@ -21,7 +21,7 @@ LaTeX label: `prop:electroweak-triplet-bring-embedding`.
 
 ## References
 
-- [manuscript] particle-interactions/electroweak-triplet-bring-embedding
+- [leitner2026] particle-interactions/electroweak-triplet-bring-embedding
 - `thm:hoefsmit-ew-cell-content` (the idempotent decomposition, cited)
 - `prop:torus-embeddable-complete` (the `g(K) ≤ g(Σ₄)` embedding bound, cited)
 -/

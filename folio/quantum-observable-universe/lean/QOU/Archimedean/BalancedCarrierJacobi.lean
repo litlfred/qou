@@ -85,7 +85,7 @@ reproduction n ≤ 12; K3: exact-ℚ closed-form check k ≤ 8 at q = 6/5; K4:
 60 dps at both q₀ pins). Witness:
 computations/probes/ksel2-favard-jacobi.witness.json.
 
--- Ref: [manuscript] predicted-spectra, conj:schwinger-measure-computational-time;
+-- Ref: [leitner2026] predicted-spectra, conj:schwinger-measure-computational-time;
 --      docs/audits/2026-08-01-ksel2-gns-favard-canonicity.md §3 + §5 item 1;
 --      docs/audits/2026-07-20-keystone-bridge-c1-binding.md (the carrier
 --      recurrence, Lean-proved);

@@ -50,7 +50,7 @@ structure QuarkAntiquarkProduction (R : Type*) [CommRing R] where
   cLp_def : cLp = φ₀ * ψ₁
   cLm_def : cLm = φ₁ * ψ₀
 
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/quark-antiquark-production-reduction.ts
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/quark-antiquark-production-reduction.ts
 
 namespace QuarkAntiquarkProduction
 

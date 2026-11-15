@@ -62,7 +62,7 @@ namespace QOU.FlavorSplit
     The proof routes through the *conjugate* quadratic `σ⁻² = 1 - hσ⁻¹`
     satisfied by the mirror generator, then reads each cubic off its own
     quadratic. Centrality is used at exactly one step, squaring `σ - h`. -/
--- Ref: [manuscript] conj:flavor-split-habiro-derivation
+-- Ref: [leitner2026] conj:flavor-split-habiro-derivation
 theorem topological_flavor_split_of_central
     {R : Type*} [Ring R]
     (σ σ_inv h : R)

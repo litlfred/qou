@@ -49,7 +49,7 @@ where `cuspModulus = √3/4` is the proved geometric datum and
 * **V = V₄₁** — the channel uses the figure-eight complex volume.
   Carried as the hypothesis `hV`.
 
--- Ref: [manuscript] docs/coordination/delta-lambda-magnitude-derivation.md — T5
+-- Ref: [leitner2026] docs/coordination/delta-lambda-magnitude-derivation.md — T5
 -- Ref: [garoufalidis-gu-marino2021] GGM 2012.00062
 -/
 

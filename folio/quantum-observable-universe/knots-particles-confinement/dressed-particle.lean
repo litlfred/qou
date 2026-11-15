@@ -34,7 +34,7 @@ namespace QOU.BraidKnot
 
 -- Witness that the canonical declarations are in scope (no re-declaration).
 -- canonical decls: QOU.BraidKnot.DressedParticle, QOU.BraidKnot.dressing_composes
--- Ref: [manuscript] braids-and-knots/dressed-particle
+-- Ref: [leitner2026] braids-and-knots/dressed-particle
 example (D : DressedParticle) : D.composite.level = D.bare.level :=
   D.level_preserved
 

@@ -46,7 +46,7 @@ LaTeX label: `rem:braid-group-n-strand`
 -- The dependency is imported at the top of this file (imports must
 -- precede all other commands in Lean 4); the sibling is wired into
 -- the Lake `QOU.BraidKnot.*` namespace as `BraidLinkTypes`.
--- Ref: [manuscript] rem:braid-link-types
+-- Ref: [leitner2026] rem:braid-link-types
 
 namespace QOU.BraidKnot
 
@@ -121,7 +121,7 @@ def borromeanBraidWord3 : BraidWord 3 :=
 noncomputable def closure3 (w : BraidWord 3) : Link :=
   if w = borromeanBraidWord3 then Link.borromean else Link.unknot
 
--- Ref: [manuscript] rem:braid-group-n-strand §"n=3 Borromean"
+-- Ref: [leitner2026] rem:braid-group-n-strand §"n=3 Borromean"
 -- Ref: [jones1985] doi:10.2307/1971403
 /-- **The canonical Borromean braid word Markov-closes to the
     Borromean link.** Closed by `if_pos rfl` on the definition of
@@ -268,7 +268,7 @@ def Braid2.toBraidWord : Braid2 → BraidWord 2
   | (Int.ofNat k) => List.replicate k ⟨(0 : Fin 1), true⟩
   | (Int.negSucc k) => List.replicate (k + 1) ⟨(0 : Fin 1), false⟩
 
--- Ref: [manuscript] rem:braid-group-n-strand §"specialisations"
+-- Ref: [leitner2026] rem:braid-group-n-strand §"specialisations"
 -- Ref: [jones1985] doi:10.2307/1971403 §"Markov braid closure"
 /-- Writhe of a constant replicate word: `k` positive crossings give
     writhe `k`. -/
@@ -304,16 +304,16 @@ The closure at `n = 2` is by construction the writhe composed with
 `closure2` from `rem:braid-link-types`. We record this as a
 theorem closed by `rfl`. -/
 
--- Ref: [manuscript] rem:braid-group-n-strand §"specialisations"
--- Ref: [manuscript] rem:braid-link-types
+-- Ref: [leitner2026] rem:braid-group-n-strand §"specialisations"
+-- Ref: [leitner2026] rem:braid-link-types
 /-- **`closureN` at `n = 2` factors through `closure2`** via the
     writhe. Closed by `rfl` from the concrete definition of `closureN`
     at `n = 2`. -/
 theorem closureN_eq_closure2 (w : BraidWord 2) :
     closureN w = closure2 w.writhe := rfl
 
--- Ref: [manuscript] rem:braid-group-n-strand §"specialisations"
--- Ref: [manuscript] rem:braid-link-types
+-- Ref: [leitner2026] rem:braid-group-n-strand §"specialisations"
+-- Ref: [leitner2026] rem:braid-link-types
 /-- **`closureN` at `n = 3` dispatches to `closure3`** by direct
     pattern match. Closed by `rfl` from the concrete definition of
     `closureN` at `n = 3`. -/
@@ -330,7 +330,7 @@ Re-add the bridge (generator index preserved; boolean sign onto the
 sibling's `sigma`/`sigma_inv` constructors, `averaged` excluded) when
 the sibling is wired into the Lake `QOU.BraidKnot.*` namespace.
 
--- Ref: [manuscript] rem:typed-b3-sub-braid-extraction
+-- Ref: [leitner2026] rem:typed-b3-sub-braid-extraction
 -/
 
 /-! ## Open R&D

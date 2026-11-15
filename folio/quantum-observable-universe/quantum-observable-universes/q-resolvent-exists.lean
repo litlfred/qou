@@ -12,7 +12,7 @@ LaTeX: `\label{prop:q-resolvent-exists}`
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes/q-resolvent-exists
+- [leitner2026] §2-quantum-observable-universes/q-resolvent-exists
 - [kassel1995] Quantum Groups, §IV.4
 -/
 

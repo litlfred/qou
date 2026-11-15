@@ -66,8 +66,8 @@ replaces, not a closed one.
 The cyclotomic specialisation only needs `IsPrimitiveRoot`.
 
 Ref: [habiro2002]
-Ref: [manuscript] def:qou-motivic-galois-instance
-Ref: [manuscript] def:motivic-galois-character
+Ref: [leitner2026] def:qou-motivic-galois-instance
+Ref: [leitner2026] def:motivic-galois-character
 -/
 
 open Finset

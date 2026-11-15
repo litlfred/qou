@@ -24,7 +24,7 @@ that reduce a.e. convergence to a pure *measure* estimate (the one genuine resea
 
 Archimedean throughout (`ℝ`): `Real.exp`, `Real.log`, `Nat.floor`, ordering `1 < q`.
 
--- Ref: [manuscript] conj:dilogarithm-archimedean-limit; docs/coordination/dilog-part-b-cusp-attack.md; bean qou-jplv, qou-zuuz
+-- Ref: [leitner2026] conj:dilogarithm-archimedean-limit; docs/coordination/dilog-part-b-cusp-attack.md; bean qou-jplv, qou-zuuz
 -/
 
 namespace QOU.Archimedean

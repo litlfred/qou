@@ -16,7 +16,7 @@
   exceptional divisors (s-orbital pairing enhancement).  See
   conj:shell-closure-nf-term-count and conj:palindromicity-orbital-type.
 
-  Ref: [manuscript] Ch 11 §8, conj:q-integer-mass-formula
+  Ref: [leitner2026] Ch 11 §8, conj:q-integer-mass-formula
 -/
 
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
@@ -30,7 +30,7 @@ noncomputable def q_int (q : ℝ) (n : ℤ) : ℝ :=
 -- ── Standard five mass-formula coefficients ──────────────────────────────
 
 /-- Volume coefficient λ_V = 2[2]_q[7]_q · m_e. -/
--- Ref: [manuscript] Ch 11 §8
+-- Ref: [leitner2026] Ch 11 §8
 noncomputable def lambda_V (q m_e : ℝ) : ℝ :=
   2 * q_int q 2 * q_int q 7 * m_e
 
@@ -55,7 +55,7 @@ noncomputable def delta_P (q m_e : ℝ) : ℝ :=
 /-- Exchange Coulomb coefficient λ_ex = [3]_q/[2]_q · m_e.
     The ratio [3]_q/[2]_q is the nucleon screening factor:
     the 3-strand internal structure partially screens pp repulsion. -/
--- Ref: [manuscript] Ch 11 §8
+-- Ref: [leitner2026] Ch 11 §8
 noncomputable def lambda_ex (q m_e : ℝ) : ℝ :=
   q_int q 3 / q_int q 2 * m_e
 
@@ -64,14 +64,14 @@ noncomputable def lambda_ex (q m_e : ℝ) : ℝ :=
     nucleon strand count ([3]_q).  Active at magic-number closures
     where torus knot T_{2,m} coherence aligns exceptional divisors.
     See conj:shell-closure-nf-term-count. -/
--- Ref: [manuscript] Ch 11 §8
+-- Ref: [leitner2026] Ch 11 §8
 noncomputable def delta_S (q m_e : ℝ) : ℝ :=
   (q_int q 2) ^ 2 * q_int q 3 * m_e
 
 -- ── Algebraic relations ────────────────────────────────────────
 
 /-- The relation a_asym = (3/2) × λ_V holds exactly. -/
--- Ref: [manuscript] Ch 11 §8
+-- Ref: [leitner2026] Ch 11 §8
 theorem asym_volume_relation (q m_e : ℝ) :
     a_asym q m_e = (3 / 2) * lambda_V q m_e := by
   unfold a_asym lambda_V
@@ -80,7 +80,7 @@ theorem asym_volume_relation (q m_e : ℝ) :
 /-- The exchange-to-Coulomb ratio is the nucleon screening factor:
     λ_ex · (q-q⁻¹) · [6]_q · [2]_q = λ_C · [3]_q.
     Both sides equal (q-q⁻¹) · [3]_q · [6]_q · m_e when expanded. -/
--- Ref: [manuscript] Ch 11 §8
+-- Ref: [leitner2026] Ch 11 §8
 theorem exchange_coulomb_relation (q m_e : ℝ) (hq : q_int q 2 ≠ 0) :
     lambda_ex q m_e * (q - q⁻¹) * q_int q 6 * q_int q 2 =
     lambda_C q m_e * q_int q 3 := by
@@ -97,7 +97,7 @@ theorem exchange_coulomb_relation (q m_e : ℝ) (hq : q_int q 2 ≠ 0) :
     peaks at magic numbers {2,8,20,28,50,82,126}.  This function is
     left abstract here; the computational implementation uses a
     Gaussian with σ = 2. -/
--- Ref: [manuscript] Ch 11 §8
+-- Ref: [leitner2026] Ch 11 §8
 noncomputable def binding_energy_bw (q m_e : ℝ) (Z N : ℕ)
     (f_Z f_N : ℝ) : ℝ :=
   let A := (Z + N : ℝ)
@@ -146,7 +146,7 @@ noncomputable def binding_energy_bw (q m_e : ℝ) (Z N : ℕ)
     `[QIntegerMassFormula]` as an explicit hypothesis to remain
     `theorem`/`proposition` per AGENTS.md §3b-cond.
 
-    Ref: [manuscript] Ch 11 §8, conj:q-integer-mass-formula -/
+    Ref: [leitner2026] Ch 11 §8, conj:q-integer-mass-formula -/
 class QIntegerMassFormula where
   /-- Magic-proximity function. Peaks at the nuclear magic numbers
       {2, 8, 20, 28, 50, 82, 126}; smooth decay between magics. -/

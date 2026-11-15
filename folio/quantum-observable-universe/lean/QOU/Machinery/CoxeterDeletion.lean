@@ -52,7 +52,7 @@ second deletion. No case analysis on the Coxeter matrix, no rank restriction.
 
 -- Ref: [bjornerbrenti2005] Combinatorics of Coxeter Groups, Thm 1.4.4 (deletion)
 -- Ref: [bourbaki1968] Lie IV §1
--- Ref: [manuscript] bean qou-06h7
+-- Ref: [leitner2026] bean qou-06h7
 -/
 
 namespace QOU.Machinery.CoxeterDeletion

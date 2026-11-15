@@ -61,7 +61,7 @@ identically, killing the elliptic-freedom obstruction.
 This is honest scaffolding of a known gap: **not** vacuous `True`, **not**
 axiomatized-as-proved. See `docs/audits/2026-07-20-pi2-elliptic-divisor-scaffold.md`.
 
--- Ref: [manuscript] Liouville's third theorem (degree of an elliptic divisor is
+-- Ref: [leitner2026] Liouville's third theorem (degree of an elliptic divisor is
 --   zero); docs/audits/2026-07-20-pentagon-entire-leg.md (§"exact residual analytic fact").
 -/
 
@@ -241,7 +241,7 @@ theorem elliptic_divisor_degree_zero {f : ℂ → ℂ} {ω₁ ω₂ : ℂ}
       {z | z ∈ fundamentalParallelogram ω₁ ω₂ ∧
         (MeromorphicOn.divisor f Set.univ) z ≠ 0}) :
     ∑ z ∈ S, (MeromorphicOn.divisor f Set.univ) z = 0 := by
-  -- Ref: [manuscript] Liouville's third theorem; argument principle absent from
+  -- Ref: [leitner2026] Liouville's third theorem; argument principle absent from
   --   Mathlib v4.24.0. See docs/audits/2026-07-20-pi2-elliptic-divisor-scaffold.md.
   -- Proved via the class HasArgumentPrinciple (approach B).
   exact hArg.argument_principle_parallelogram

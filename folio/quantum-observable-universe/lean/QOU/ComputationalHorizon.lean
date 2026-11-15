@@ -46,7 +46,7 @@ structure ComputationalHorizon where
   minTime_eq :
     minTime = (c * Real.log 3 / bandwidth) * (3 : ℝ) ^ ((c : ℝ) - c0)
 
--- Ref: [manuscript] quantum-observable-universe/information-theory/computational-horizon.ts
+-- Ref: [leitner2026] quantum-observable-universe/information-theory/computational-horizon.ts
 
 /-- The saturation time is non-negative (it is `0` only in the degenerate
     `c = 0` case). -/

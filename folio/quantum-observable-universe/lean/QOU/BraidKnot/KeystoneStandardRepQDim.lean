@@ -37,7 +37,7 @@ commutativity (`ring`).
 Base ring: generic `[Field R]` throughout (matches
 `QOU.BraidKnot.qIntGeo` / `qFactorial`; no archimedean construct — §7c).
 
--- Ref: [manuscript] KeystoneQBesselRadialTarget.lean `shape_41` (the `n = 5` instance)
+-- Ref: [leitner2026] KeystoneQBesselRadialTarget.lean `shape_41` (the `n = 5` instance)
 -- Ref: [macdonald1995] Symmetric Functions and Hall Polynomials, I.3 (q-hook-length formula)
 -/
 

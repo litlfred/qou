@@ -29,7 +29,7 @@ Everything here is `ℝ`/archimedean (real analysis) — §7c. `#print axioms` o
 unconditional theorems shows only `[propext, Classical.choice, Quot.sound]`: no
 `sorryAx`, no new axiom, no remaining conjecture. **T2 is at zero citation.**
 
--- Ref: [manuscript] beans qou-npxs (wall milestone), qou-0a0z (WALL-2),
+-- Ref: [leitner2026] beans qou-npxs (wall milestone), qou-0a0z (WALL-2),
 --   qou-xidi (WALL-4), qou-r111 (HypMinimizerUnique closure)
 -/
 

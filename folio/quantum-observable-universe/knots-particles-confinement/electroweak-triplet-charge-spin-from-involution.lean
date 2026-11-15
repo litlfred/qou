@@ -56,7 +56,7 @@ LaTeX label: `thm:ew-triplet-charge-spin-from-involution`.
 
 ## References
 
-- [manuscript] particle-interactions/electroweak-triplet-charge-spin-from-involution
+- [leitner2026] particle-interactions/electroweak-triplet-charge-spin-from-involution
 - `def:spin-involution` (`QOU.BraidKnot.SpinInvolution`; the abstract σ algebra)
 - `thm:hoefsmit-ew-cell-content` (sym/alt block, the `tr_pure` bar-even trace)
 - `braids-and-knots/self-dual-higgs-real-volume` (H = bar-even carrier)

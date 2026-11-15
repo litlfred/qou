@@ -12,7 +12,7 @@
   (it proved the length, not optimality) and `axiom h2_binding_energy`
   (`∃ E, 0 < E ∧ E < 5`, which holds for E = 1 and says nothing about H₂).
 
-  Ref: [manuscript] prop:ilp-covalent-bond; bean qou-ales
+  Ref: [leitner2026] Ch 12 §1, prop:ilp-covalent-bond; bean qou-ales
 -/
 
 import QOU.QBeta.GammaGammaSelectedDeltaVanishes

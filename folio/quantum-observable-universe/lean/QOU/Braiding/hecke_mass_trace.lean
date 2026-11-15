@@ -25,7 +25,7 @@ The Lean encoding uses the existing `QOU.Hecke.MarkovTrace`
 infrastructure for the Markov trace, with abstract fields for the
 Hecke mass element and the topological decomposition components.
 
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hecke-mass-trace.md
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/hecke-mass-trace.md
 -/
 
 namespace QOU.Braiding
@@ -84,7 +84,7 @@ class HeckeMassTraceContext where
     The categorical mass coincides with the norm of the Markov trace
     of the Hecke mass element; the trace decomposes additively over
     the descended + transient pieces. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hecke-mass-trace.md
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/hecke-mass-trace.md
 def hecke_mass_trace [ctx : HeckeMassTraceContext] :
     -- The class stores the ring/algebra structure as plain fields; bring
     -- them into instance scope so the restated arithmetic (`+`, `0 : R`)
@@ -102,7 +102,7 @@ def hecke_mass_trace [ctx : HeckeMassTraceContext] :
   -- The manuscript's categorical argument is carried as the two class
   -- fields `claim_cat_mass_eq_norm_trace` + `claim_trace_decomposition`
   -- (§3b-cond); this theorem recombines them.
-  -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hecke-mass-trace.md
+  -- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/hecke-mass-trace.md
   ⟨ctx.claim_cat_mass_eq_norm_trace, ctx.claim_trace_decomposition⟩
 
 end QOU.Braiding

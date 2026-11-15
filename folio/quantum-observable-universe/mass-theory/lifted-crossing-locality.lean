@@ -17,7 +17,7 @@
   of unity (Jones-Wenzl truncation).
 
   Ref: [kohno1987] https://doi.org/10.5802/aif.1075
-  Ref: [manuscript] Ch 11 §8 / lifted-crossing-locality
+  Ref: [leitner2026] Ch 11 §8 / lifted-crossing-locality
 -/
 
 import Mathlib.Data.Real.Basic
@@ -63,7 +63,7 @@ noncomputable def productFormCollapse
     Encodes none of the KZ-flatness / Kohno–Drinfeld content but
     uses the canonical multiplicative-identity local factor rather
     than `0`. -/
--- Ref: [manuscript] particle-interactions/lifted-crossing-locality §"Skeleton"
+-- Ref: [leitner2026] particle-interactions/lifted-crossing-locality §"Skeleton"
 instance canonical {K C : Type*} : LiftedCrossingLocality K C where
   crossings := fun _ => []
   massGB := fun _ => 0

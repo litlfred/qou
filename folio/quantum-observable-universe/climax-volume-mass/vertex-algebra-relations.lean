@@ -190,7 +190,7 @@ axiom markov_nondegenerate {n : ℕ} (hp : HeckeParams)
 
 /-- QUO-2: An element commuting with all generators under conjugation
     is a scalar. Equivalent to Hom(1, Ad(A)) = 0. -/
--- Ref: [manuscript] §4/vertex-algebra-relations
+-- Ref: [leitner2026] §4/vertex-algebra-relations
 axiom observability {n : ℕ} (hp : HeckeParams)
     (f : AlgElement (HeckeGen n) ℝ) :
     (∀ i : Fin n, AlgElement.leftMulGen ⟨i⟩
@@ -203,7 +203,7 @@ axiom observability {n : ℕ} (hp : HeckeParams)
 
 /-- QUO-3a: c₁(Ad(A)) = 0. Writhe balance: for each generator,
     tr_M(σᵢ) = tr_M(σᵢ⁻¹). -/
--- Ref: [manuscript] §4/vertex-algebra-relations
+-- Ref: [leitner2026] §4/vertex-algebra-relations
 axiom first_chern_vanishes {n : ℕ} (hp : HeckeParams) (i : Fin n) :
     MarkovTrace hp (embedPositiveGen i)
     = MarkovTrace hp (embedNegativeGen i hp)
@@ -228,7 +228,7 @@ theorem dq_squared_nonzero (q : ℝ) (hq : q > 1) :
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- C-4b: χ = 2 - 2g = -6 forces g = 4. -/
--- Ref: [manuscript] §4/vertex-algebra-relations
+-- Ref: [leitner2026] §4/vertex-algebra-relations
 theorem descartes_genus : (2 : ℤ) - 2 * 4 = -6 := by norm_num
 
 /- `descartes_trace` RETIRED 2026-09-15.  It asserted, as an `axiom` over the
@@ -245,7 +245,7 @@ theorem descartes_genus : (2 : ℤ) - 2 * 4 = -6 := by norm_num
 
 /-- C-7: The curvature [σᵢ, σⱼ] is self-adjoint under the antipode:
     S([σᵢ, σⱼ]) = [σᵢ, σⱼ] where [a, b] = ab(ba)⁻¹. -/
--- Ref: [manuscript] §4/vertex-algebra-relations
+-- Ref: [leitner2026] §4/vertex-algebra-relations
 axiom self_dual_curvature {n : ℕ} [NeZero n] (hp : HeckeParams)
     (i j : Fin n) (hij : i ≠ j) :
     -- S(ab · ba⁻¹) = ab · ba⁻¹, where ab = braidToAlg [σᵢ, σⱼ] and

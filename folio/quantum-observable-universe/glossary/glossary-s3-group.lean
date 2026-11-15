@@ -17,12 +17,12 @@ namespace QOU
 /-- The symmetric group S₃ as the quotient B₃/⟨σᵢ²=id⟩.
 
     Maps to Mathlib: `Equiv.Perm (Fin 3)`. -/
--- Ref: [manuscript] Ch. 8 Glossary
+-- Ref: [leitner2026] Ch. 8 Glossary
 -- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
 abbrev S3Group := Equiv.Perm (Fin 3)
 
 /-- S₃ has order 6. -/
--- Ref: [manuscript] Ch. 8 Glossary
+-- Ref: [leitner2026] Ch. 8 Glossary
 theorem s3_card : Fintype.card S3Group = 6 := by
   simp [S3Group]
   decide

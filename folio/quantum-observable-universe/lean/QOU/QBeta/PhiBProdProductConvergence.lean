@@ -37,7 +37,7 @@ Verified `lean`-direct against the pinned Mathlib `MultipliableUniformlyOn` +
 
 -- Ref: [faddeev1995] Faddeev, Lett. Math. Phys. 34 (1995) 249.
 --        https://doi.org/10.1007/BF01872779
--- Ref: [manuscript] docs/audits/2026-07-25-faddeev-uniqueness-keystone-state.md
+-- Ref: [leitner2026] docs/audits/2026-07-25-faddeev-uniqueness-keystone-state.md
 -/
 
 open Set Filter Topology Complex

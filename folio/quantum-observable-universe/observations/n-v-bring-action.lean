@@ -9,7 +9,7 @@
   Status: conjecture.  Per AGENTS.md §3b, axiomatised as a Lean
   class with sorry-fields encoding the structural content.
 
-  Ref: [manuscript] `prop:n-v-bring-action`,
+  Ref: [leitner2026] `prop:n-v-bring-action`,
        `prop:brings-is-qou`,
        `def:hyperelliptic-quintic`,
        \cite{bring1786}, \cite{klein1888} (Bring/Klein curve).
@@ -87,7 +87,7 @@ noncomputable opaque rescale_EW (slice : ElectroweakSlice) : ℝ
 
     Ref: \cite{bring1786}, \cite{klein1888} for the Bring/Klein
     curve and its `S_5` automorphism group;
-    [manuscript] `prop:brings-is-qou` for the Bring-as-QOU-substrate
+    [leitner2026] `prop:brings-is-qou` for the Bring-as-QOU-substrate
     identification. -/
 /-- **`conj:n-v-bring-action` (axiomatised as a typeclass).**
 

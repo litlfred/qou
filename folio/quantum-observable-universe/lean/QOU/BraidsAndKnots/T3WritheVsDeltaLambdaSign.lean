@@ -55,7 +55,7 @@ Refs:
   - docs/audits/2026-08-02-t3-writhe-vs-delta-lambda-sign.md (this probe)
   - docs/audits/2026-06-16-option-e-probe4-kl-positivity-prune.md (the target is mixed-sign)
   - content/.../lean/QOU/ParticleInteractions/WeakIsospinT3Grading.lean (T₃)
-  -- Ref: [manuscript] Ch. "Predicted Spectra"; Option-E Δ_λ closure ledger
+  -- Ref: [leitner2026] Ch. "Predicted Spectra"; Option-E Δ_λ closure ledger
 -/
 
 namespace QOU.BraidsAndKnots.T3WritheVsDeltaLambda

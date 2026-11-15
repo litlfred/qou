@@ -41,7 +41,7 @@ rotation about the polar axis.  Then:
 Both are *derived*: the pole count is `rfl` on the literal `2`, and the
 interval length is `π − 0 = π` by `sub_zero`.  These are concrete facts,
 not self-assuming projections of a carrier field. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/u1-equivariant-reduction.ts
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/u1-equivariant-reduction.ts
 theorem u1EquivariantReduction :
     nFixedPoles = 2 ∧ orbitIntervalLength = Real.pi := by
   refine ⟨rfl, ?_⟩

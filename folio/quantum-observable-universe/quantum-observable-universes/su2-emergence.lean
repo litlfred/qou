@@ -26,7 +26,7 @@ downstream relies on this result.
 ## References
 
 - [lusztig1993] Introduction to Quantum Groups
-- [manuscript] §1 Theorem: Emergence of SU(2)
+- [leitner2026] §1 Theorem: Emergence of SU(2)
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
 Part of the formal proof chain. The parameter `q` is the canonical

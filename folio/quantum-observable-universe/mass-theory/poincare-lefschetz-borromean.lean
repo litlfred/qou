@@ -84,7 +84,7 @@ form against the fundamental class.
 Ranks rather than groups: the block's use of the duality is the rank statement
 ("in particular `H²(∂𝓑₃) ≅ H₁ ≅ ℤ³`"), and recording groups would require the
 manifold-with-cusps machinery the block itself lists as missing. -/
--- Ref: [manuscript] conj:poincare-lefschetz-borromean
+-- Ref: [leitner2026] conj:poincare-lefschetz-borromean
 structure BorromeanHomology where
   /-- rank of `H_k(M)`. -/
   rankH : ℕ → ℕ
@@ -109,7 +109,7 @@ about the caller's datum rather than about one the instance chose. No instance i
 supplied for any datum other than the consistency witness below. -/
 -- Ref: [lefschetz1926] Lefschetz, "Intersections and transformations of complexes and manifolds"
 -- Ref: [neumann-zagier1985] Neumann, Zagier, "Volumes of hyperbolic three-manifolds"
--- Ref: [manuscript] conj:poincare-lefschetz-borromean
+-- Ref: [leitner2026] conj:poincare-lefschetz-borromean
 class PoincareLefschetzBorromean (D : BorromeanHomology) : Prop where
   /-- Poincaré–Lefschetz duality, at the level of ranks. -/
   duality : ∀ k, k ≤ 3 → D.rankHrel k = D.rankH (3 - k)

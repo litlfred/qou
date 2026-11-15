@@ -50,8 +50,8 @@
 
   Sorry-free. No `axiom`, no conditional class, no `native_decide`.
 
-  -- Ref: [manuscript] QOU/Mass/GammaGammaSelectionTen.lean
-  -- Ref: [manuscript] computations/probes/gamma_gamma_three_divides_k_breaks_at_23_probe.py
+  -- Ref: [leitner2026] QOU/Mass/GammaGammaSelectionTen.lean
+  -- Ref: [leitner2026] computations/probes/gamma_gamma_three_divides_k_breaks_at_23_probe.py
 -/
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Tactic.Linarith

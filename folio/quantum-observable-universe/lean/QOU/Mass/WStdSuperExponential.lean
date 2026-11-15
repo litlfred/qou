@@ -61,7 +61,7 @@ results; everything above `wStd_sq_lower` is `ℕ`-combinatorial.
 
 ## References
 
-- [manuscript] bean `wsxl`, bean `qou-b21r`
+- [leitner2026] bean `wsxl`, bean `qou-b21r`
 -/
 
 namespace QOU.Mass.WStd

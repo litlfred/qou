@@ -34,7 +34,7 @@ the anchor signs as **hypotheses**, so none depends on the identification.
 itself is *defined* as `a₁/κ_(2,1)` with `a₁ = −c₃`, so it too is a
 reparametrisation of `c₃` and carries no independent information about the split.
 
--- Ref: [manuscript] docs/audits/2026-08-08-c3-even-vol41-contradicts-canonical-split.md
+-- Ref: [leitner2026] docs/audits/2026-08-08-c3-even-vol41-contradicts-canonical-split.md
 
 Documented anchor values (50 dps, `computations/qbeta/qbeta_c3_barodd_sleak_probe.py`;
 `Vol(4₁) = 2.02988321`):
@@ -140,7 +140,7 @@ anti-laundering "prove the invariant" discipline. No `c_k` wired.
 
 Archimedean by necessity (ordering + continuity + IVT), so `ℝ` per §7c.
 
--- Ref: [manuscript] docs/audits/2026-07-11-qbeta-c3-barodd-sleak-phib-target.md
+-- Ref: [leitner2026] docs/audits/2026-07-11-qbeta-c3-barodd-sleak-phib-target.md
 -/
 import Mathlib.Topology.Order.IntermediateValue
 import Mathlib.Topology.Instances.Real.Lemmas

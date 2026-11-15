@@ -18,9 +18,9 @@ LaTeX label: `prop:moduli-symmetry-d4`
 
 ## References
 
-- [manuscript] §6/moduli-symmetry-d4
-- [manuscript] §6/golden-quartet-galois
-- [manuscript] §5/baryon-integration-limit
+- [leitner2026] §6/moduli-symmetry-d4
+- [leitner2026] §6/golden-quartet-galois
+- [leitner2026] §5/baryon-integration-limit
 -/
 
 namespace QOU.Archimedean.ModuliSymmetryD4
@@ -34,7 +34,7 @@ noncomputable def sigma (q : ℂ) : ℂ := I * q
 noncomputable def tau (q : ℂ) : ℂ := q⁻¹
 
 /-- σ has order dividing 4: σ⁴(q) = q for every q. -/
--- Ref: [manuscript] §6/moduli-symmetry-d4
+-- Ref: [leitner2026] §6/moduli-symmetry-d4
 theorem sigma_pow_four (q : ℂ) : sigma (sigma (sigma (sigma q))) = q := by
   unfold sigma
   have hII : I * I = -1 := Complex.I_mul_I
@@ -44,25 +44,25 @@ theorem sigma_pow_four (q : ℂ) : sigma (sigma (sigma (sigma q))) = q := by
     _ = q := by ring
 
 /-- τ has order dividing 2: τ²(q) = q for nonzero q. -/
--- Ref: [manuscript] §6/moduli-symmetry-d4
+-- Ref: [leitner2026] §6/moduli-symmetry-d4
 theorem tau_pow_two (q : ℂ) (_ : q ≠ 0) : tau (tau q) = q := by
   unfold tau
   exact inv_inv q
 
 /-- σ maps nonzero to nonzero. -/
--- Ref: [manuscript] §6/moduli-symmetry-d4
+-- Ref: [leitner2026] §6/moduli-symmetry-d4
 theorem sigma_ne_zero (q : ℂ) (hq : q ≠ 0) : sigma q ≠ 0 := by
   unfold sigma
   exact mul_ne_zero Complex.I_ne_zero hq
 
 /-- τ maps nonzero to nonzero. -/
--- Ref: [manuscript] §6/moduli-symmetry-d4
+-- Ref: [leitner2026] §6/moduli-symmetry-d4
 theorem tau_ne_zero (q : ℂ) (hq : q ≠ 0) : tau q ≠ 0 := by
   unfold tau
   exact inv_ne_zero hq
 
 /-- σ⁻¹(q) = -i · q (since I⁻¹ = -I). -/
--- Ref: [manuscript] §6/moduli-symmetry-d4
+-- Ref: [leitner2026] §6/moduli-symmetry-d4
 theorem I_inv : I⁻¹ = -I := by
   have h : I * (-I) = 1 := by
     have h2 : I * I = -1 := Complex.I_mul_I
@@ -71,7 +71,7 @@ theorem I_inv : I⁻¹ = -I := by
 
 /-- The composition (σ ∘ τ) is its own inverse: (στ)²(q) = q for nonzero q.
     This is the dihedral commutation, equivalent to τστ = σ⁻¹. -/
--- Ref: [manuscript] §6/moduli-symmetry-d4
+-- Ref: [leitner2026] §6/moduli-symmetry-d4
 theorem sigma_tau_involution (q : ℂ) (hq : q ≠ 0) :
     sigma (tau (sigma (tau q))) = q := by
   unfold sigma tau
@@ -99,7 +99,7 @@ theorem sigma_tau_involution (q : ℂ) (hq : q ≠ 0) :
     Together with σ ≠ id (σ has actual order 4 since I⁴ = 1 and
     I, I², I³ are distinct from 1), τ ≠ id (since q ≠ q⁻¹ for, e.g.,
     q = 2), and σ ≠ τ, this presents D₄ of order 8 acting on ℂ×. -/
--- Ref: [manuscript] §6/moduli-symmetry-d4
+-- Ref: [leitner2026] §6/moduli-symmetry-d4
 theorem moduli_symmetry_d4 :
     (∀ q : ℂ, sigma (sigma (sigma (sigma q))) = q) ∧
     (∀ q : ℂ, q ≠ 0 → tau (tau q) = q) ∧

@@ -36,7 +36,7 @@ well, so bar-parity NARROWS the fibre to full-bar — it does not pin a unique
 Base ring: generic `[Field R]` per AGENTS.md §7c. The bar involution is modelled
 by evaluating at `q⁻¹`, so no ordering and nothing archimedean is needed.
 
--- Ref: [manuscript] bean `qou-cds1`; probe
+-- Ref: [leitner2026] bean `qou-cds1`; probe
 --      computations/qbeta/qbeta_decay_fibre_bar_parity_derivation_probe.py
 -/
 import Mathlib.Algebra.Field.Basic

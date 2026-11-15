@@ -20,9 +20,9 @@ LaTeX label: `prop:bar-self-dual-confinement-band`
 
 ## References
 
-- [manuscript] §6/bar-self-dual-confinement-band
-- [manuscript] §6/golden-skew-dual-node
-- [manuscript] §7/deconfinement-golden-threshold
+- [leitner2026] §6/bar-self-dual-confinement-band
+- [leitner2026] §6/golden-skew-dual-node
+- [leitner2026] §7/deconfinement-golden-threshold
 -/
 
 namespace QOU.Archimedean.BarSelfDualConfBand

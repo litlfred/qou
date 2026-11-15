@@ -18,7 +18,7 @@ LaTeX: `\label{prop:categorical-dirac-operator-exists}`
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes/categorical-dirac-operator-exists
+- [leitner2026] §2-quantum-observable-universes/categorical-dirac-operator-exists
 - [connes1994] Noncommutative Geometry (Academic Press)
 -/
 

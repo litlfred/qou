@@ -39,7 +39,7 @@ This file does **not** re-prove RSZ and claims no Stokes multiplier. It fixes th
 Sorry-free.
 
 -- Ref: [ramis-sauloy-zhang2013] https://arxiv.org/abs/0903.0853 (§3.3, Thm 3.3.5)
--- Ref: [manuscript] docs/audits/2026-08-08-w2-stokes-qborel-attack-plan.md
+-- Ref: [leitner2026] docs/audits/2026-08-08-w2-stokes-qborel-attack-plan.md
 -/
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Algebra.BigOperators.Fin

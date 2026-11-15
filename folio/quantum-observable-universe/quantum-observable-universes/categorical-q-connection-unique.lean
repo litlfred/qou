@@ -31,7 +31,7 @@ use `HEq` transported along the object equalities.
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes/categorical-q-connection-unique
+- [leitner2026] §2-quantum-observable-universes/categorical-q-connection-unique
 - [connes1994] Noncommutative Geometry
 -/
 

@@ -54,7 +54,7 @@ def directionalBlock (q : Rˣ) (σ : R)
   ((q : R) - σ) * ⅟((q : R) + ((q⁻¹ : Rˣ) : R))
 
 /-- The two blocks partition unity: `e₊ + e₋ = 1`. -/
--- Ref: [manuscript] information-theory/van-der-waals-hopf-channel
+-- Ref: [leitner2026] information-theory/van-der-waals-hopf-channel
 theorem blocks_partition_unity (q : Rˣ) (σ : R)
     [Invertible ((q : R) + ((q⁻¹ : Rˣ) : R))] :
     vdwSymmetricBlock q σ + directionalBlock q σ = 1 := by
@@ -72,7 +72,7 @@ theorem blocks_partition_unity (q : Rˣ) (σ : R)
     In this cleared form nothing is divided at all: the identity is a
     `linear_combination` of the Hecke relation and the unit relation
     `q⁻¹ · q = 1`, so `[2]_q` need not be invertible here. Sorry-free. -/
--- Ref: [manuscript] information-theory/van-der-waals-hopf-channel
+-- Ref: [leitner2026] information-theory/van-der-waals-hopf-channel
 theorem vdw_idempotent_cleared (q : Rˣ) (σ : R)
     (hHecke : σ ^ 2 = ((q : R) - ((q⁻¹ : Rˣ) : R)) * σ + 1) :
     (σ + ((q⁻¹ : Rˣ) : R)) ^ 2

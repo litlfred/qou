@@ -16,7 +16,7 @@ LaTeX label: `def:maximal-ideal-defect`
 
 ## References
 
-- [manuscript] Ch 8 §2, The unit particle as a cohomological defect
+- [leitner2026] Ch 8 §2, The unit particle as a cohomological defect
 -/
 
 set_option autoImplicit false
@@ -44,10 +44,10 @@ structure MaximalIdealDefect (R : Type*) [CommRing R] where
   /-- The evaluation homomorphism ev₁ : A → R at z = 1. -/
   eval_one : algebra →+* R
   /-- 𝔪₁ is the kernel of ev₁. -/
-  -- Ref: [manuscript] Ch 8 §2
+  -- Ref: [leitner2026] Ch 8 §2
   ideal_eq_ker : maxIdeal = RingHom.ker eval_one
   /-- 𝔪₁ is maximal. -/
-  -- Ref: [manuscript] Ch 8 §2
+  -- Ref: [leitner2026] Ch 8 §2
   is_maximal : maxIdeal.IsMaximal
 
 attribute [instance] MaximalIdealDefect.ringInst

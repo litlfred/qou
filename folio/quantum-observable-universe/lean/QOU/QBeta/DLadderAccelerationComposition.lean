@@ -34,7 +34,7 @@ identical additive structure via `Real.rpow_add`, and the collapse argument is
 verbatim. The additivity `(k!)^{s+t} = (k!)^s (k!)^t` is an elementary true fact
 (not the claim being laundered); the **theorem** is its consequence, the collapse.
 
--- Ref: [manuscript] docs/audits/2026-07-17-dladder-ecalle-phib-resummation.md
+-- Ref: [leitner2026] docs/audits/2026-07-17-dladder-ecalle-phib-resummation.md
 -/
 
 namespace QOU.QBeta.DLadderAccelerationComposition

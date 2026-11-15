@@ -113,7 +113,7 @@ def QouObstructionReductionContext.obstruction_class
     the two structural inputs (`vdb_duality`, `drinfeld_rigidity`) and is
     left as the honest domain gap. -/
 -- Ref: [yekutieli2010] Van den Bergh duality for Hochschild (co)homology; Euler/trace class computation
--- Ref: [manuscript] quantum-observable-universe/stochastic-mechanics/qou-obstruction-reduction.md (parts b,c)
+-- Ref: [leitner2026] quantum-observable-universe/stochastic-mechanics/qou-obstruction-reduction.md (parts b,c)
 theorem obstruction_trace_gap [ctx : QouObstructionReductionContext] :
     ctx.kappa0 = ctx.chi_A ∧ ctx.phi_1_image = (ctx.chi_A : ℝ) := by
   constructor
@@ -147,7 +147,7 @@ Euler characteristic; (c) the level-`n` obstruction vanishes iff
 Part (a) is **derived** from the two inputs (Van den Bergh CY-3 duality
 composed with Drinfeld rigidity).  Parts (b),(c) reduce to the single
 honest trace gap `obstruction_trace_gap`. -/
--- Ref: [manuscript] quantum-observable-universe/stochastic-mechanics/qou-obstruction-reduction.md
+-- Ref: [leitner2026] quantum-observable-universe/stochastic-mechanics/qou-obstruction-reduction.md
 theorem qou_obstruction_reduction [ctx : QouObstructionReductionContext] :
     ctx.hhCohDim 2 = 1 ∧
     ctx.phi_1_image = (ctx.chi_A : ℝ) ∧

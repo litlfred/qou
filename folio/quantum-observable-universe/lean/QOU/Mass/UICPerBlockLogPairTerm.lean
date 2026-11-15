@@ -57,7 +57,7 @@ leaves the additive class, not a closed form for the production accumulator.
 Nothing here asserts that the UIC has, or lacks, a valley. That is measured in the probe;
 §2 is what makes the measurement's discriminator meaningful.
 
--- Ref: [manuscript] prop:unified-iterative-correction (mass-theory chapter); the
+-- Ref: [leitner2026] prop:unified-iterative-correction (mass-theory chapter); the
 -- convention-D letters are `QOU/Mass/ChainTraceFactor.lean`.
 -/
 import Mathlib.Tactic.Ring

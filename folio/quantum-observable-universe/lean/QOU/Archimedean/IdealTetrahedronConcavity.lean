@@ -71,7 +71,7 @@
 
   -- Ref: [rivin1994] https://doi.org/10.2307/2118572 (concavity of hyperbolic
   --      volume on the angle-structure polytope — the qou-krvm (iv) source)
-  -- Ref: [manuscript] beans qou-idvt (T3), qou-krvm (iv)
+  -- Ref: [leitner2026] beans qou-idvt (T3), qou-krvm (iv)
 -/
 
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic

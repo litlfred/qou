@@ -97,7 +97,7 @@ contour integrals, no factors of $2 \pi i$, and no renormalisation-group
     The Lean encoding below splits the manuscript claim into named
     sub-claim fields; concretisation requires per-block manuscript
     translation. -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/em-coupling-projection.ts
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/em-coupling-projection.ts
 theorem em_coupling_projection [ctx : EmCouplingProjectionContext] :
     (ctx.endRank = 2 ∧ ctx.centralIdempotentCount = 2) ∧
     ctx.singlet_channel_count = 1 ∧

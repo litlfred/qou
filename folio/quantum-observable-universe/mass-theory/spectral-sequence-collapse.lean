@@ -20,7 +20,7 @@ on the centre are bounded (`Σ_λ w_λ = 1`), avoiding the super-
 exponential blow-up that disrupted naive numerical tests of the
 universal residue.
 
--- Ref: [manuscript] prop:spectral-sequence-collapse
+-- Ref: [leitner2026] prop:spectral-sequence-collapse
 -/
 
 namespace QOU.WedderburnMass

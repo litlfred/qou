@@ -34,7 +34,7 @@ docs/audits/2026-05-16-sublemma-2-1-h9-phase-1.md; the canonical
 pole-order witness records 21/21 passing assertions
 (computations/crystal-pole-order.witness.json).
 
-Ref: [manuscript] prop:crystal-r-matrix-sub-lemma
+Ref: [leitner2026] prop:crystal-r-matrix-sub-lemma
 Ref: [wenzl1988] Wenzl, Invent. Math. 92 (1988) 349-383
 Ref: [brundankleshchev2009] Brundan & Kleshchev, Invent. Math. 178 (2009)
 Local audit: docs/audits/2026-05-16-sublemma-2-1-h9-phase-1.md

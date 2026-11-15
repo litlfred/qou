@@ -20,7 +20,7 @@ energies scale as `1 : 2 : 3`.
 This sibling axiomatises the bond-energy weighted sum and proves the
 linear `n`-scaling of the energy in the per-bond shift.
 
--- Ref: [manuscript] prop:molecular-bond-binding-from-trefoil-insertion
+-- Ref: [leitner2026] prop:molecular-bond-binding-from-trefoil-insertion
 -- Ref: [adams1985hyperbolic] Adams, "Thrice-punctured spheres in hyperbolic 3-manifolds," Trans. AMS 287 (1985)
 -/
 

@@ -19,7 +19,7 @@ LaTeX label: `prop:global-gluing`
 
 - [yekutieli2008] Twisted Deformation Quantization of Algebraic Varieties
 - [yekutieli2010] https://doi.org/10.1016/j.aim.2009.12.006
-- [manuscript] §3-lifting-of-quantum-torsion/global-gluing
+- [leitner2026] §3-lifting-of-quantum-torsion/global-gluing
 -/
 
 namespace QOU.Torsion
@@ -56,7 +56,7 @@ attribute [instance] TwistedQuantizationMap.instGlobalRing
 /-- **Global gluing theorem**: the Yekutieli twisted quantization
     map produces a well-defined global algebra, and the vacuum state
     τ is globally consistent. -/
--- Ref: [yekutieli2008] Main Theorem, [manuscript] §3
+-- Ref: [yekutieli2008] Main Theorem, [leitner2026] §3
 structure GlobalGluing (R : Type*) [CommRing R] where
   tqm : TwistedQuantizationMap R
   -- Ref: [yekutieli2008] Main Theorem

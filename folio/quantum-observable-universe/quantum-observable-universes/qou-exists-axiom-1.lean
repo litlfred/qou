@@ -24,7 +24,7 @@ LaTeX label: `lem:qou-exists-axiom-1`
 
 ## References
 
-- [manuscript] §1 Quantum Observable Universe, Axiom 1
+- [leitner2026] §1 Quantum Observable Universe, Axiom 1
 - [kock2004] J. Kock, *Frobenius Algebras and 2D TQFTs*
 -/
 
@@ -39,7 +39,7 @@ namespace QOU.QuantumObservableUniverse
     Any `QuantumObservableUniverse R` carries `frobHopf` — the
     `FrobeniusHopfData` whose snake identities encode the
     non-degenerate Haar-state Frobenius pairing on `A`. -/
--- Ref: [manuscript] §1 Quantum Observable Universe, Axiom 1
+-- Ref: [leitner2026] §1 Quantum Observable Universe, Axiom 1
 -- Ref: [kock2004]
 -- NOTE: `def`, not `theorem` — `FrobeniusHopfData` is a `Type _`
 -- (data, not a proposition).  Per Copilot review on PR #794.

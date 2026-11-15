@@ -14,7 +14,7 @@
   conjecture is expected to provide, mirroring the shape of the
   upstream class (existence/uniqueness/commutativity hypotheses).
 
-  Ref: [manuscript]
+  Ref: [leitner2026]
     - conj:hyperbolic-volume-transcendence
     - rem:baryon-period-ratio
 -/
@@ -33,7 +33,7 @@ namespace QOU.BraidKnot
     Frobenius self-pairing is unitary on every nuclear knot type
     (a structural consequence of irrationality / non-commensurability
     of hyperbolic volumes). -/
--- Ref: [manuscript] conj:hyperbolic-volume-transcendence
+-- Ref: [leitner2026] conj:hyperbolic-volume-transcendence
 class SingleVolumeIrrational : Prop where
   /-- The Frobenius self-pairing on the rigid dualizing complex
       is unitary on every nuclear knot type. -/
@@ -50,7 +50,7 @@ class SingleVolumeIrrational : Prop where
     period ratio is bounded between two non-negative real values
     (an existence statement for the Picard-Lefschetz decomposition
     of the period integral, with explicit witness bounds). -/
--- Ref: [manuscript] rem:baryon-period-ratio
+-- Ref: [leitner2026] rem:baryon-period-ratio
 class PLCorrectnessHypotheses : Prop where
   /-- Picard-Lefschetz decomposition admits a non-negative
       lower-bound witness on every q > 1.  Canonical form: the

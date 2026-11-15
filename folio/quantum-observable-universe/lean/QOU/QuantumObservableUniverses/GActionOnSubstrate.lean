@@ -95,6 +95,6 @@ require a `sorry`); downstream theorems take `[GActionOnSubstrate]` as
 an explicit hypothesis.  This removes the naked `sorry` while keeping the
 conjecture's content faithfully encoded in the class fields above.
 
-Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.ts -/
+Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.ts -/
 
 end QOU.QuantumObservableUniverses

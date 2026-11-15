@@ -48,7 +48,7 @@ here over `ℝ` (it needs the order).
 
 `ℤ` throughout, matching `HookSumClosedForm`; `ℝ` only in `quad_max_le`.
 
--- Ref: [manuscript] computations/deltalambda/rev_sqrt_n_upper_bound_probe.py
+-- Ref: [leitner2026] computations/deltalambda/rev_sqrt_n_upper_bound_probe.py
 -/
 namespace QOU.BraidKnot.HookSum
 

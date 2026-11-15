@@ -31,7 +31,7 @@ Everything in this file is over the generic `MarkovTrace R A` structure of
 `QOU.MathlibExt.OcneanuTrace` (base ring §7c: `CommRing R`), sorry-free, with the same hypotheses
 as `interleaved_sub_sequential`.
 
--- Ref: [manuscript] computations/probes/interleaving_cross_term_closures_probe.py
+-- Ref: [leitner2026] computations/probes/interleaving_cross_term_closures_probe.py
 -- Ref: [jones1987] https://doi.org/10.2307/1971403 — Markov moves and the Ocneanu trace.
 -/
 

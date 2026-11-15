@@ -34,7 +34,7 @@ Archimedean (ℝ): `exp`, `log`, `‖·‖`, ordering `0 < z` — §7c.
 
   -- Ref: [thurston1978] Ch. 2 §2.3 p. 12 (the metric `ds² = (dx²+dy²+dz²)/z²`)
   -- Ref: [ratcliffe] §4.6 (the upper half-space distance is a metric)
-  -- Ref: [manuscript] beans qou-v8u3 (horizontal separation), qou-322e (metric walls)
+  -- Ref: [leitner2026] beans qou-v8u3 (horizontal separation), qou-322e (metric walls)
 -/
 
 import QOU.Archimedean.HyperbolicMetric

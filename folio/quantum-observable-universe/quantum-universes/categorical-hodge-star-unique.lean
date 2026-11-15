@@ -28,7 +28,7 @@ deriving `star` from non-degeneracy is the open structure refactor.
 
 ## References
 
-- [manuscript] §1-quantum-universes/categorical-hodge-star-unique
+- [leitner2026] §1-quantum-universes/categorical-hodge-star-unique
 - [kock2004] Frobenius Algebras and 2D TQFT, Ch 2
 -/
 

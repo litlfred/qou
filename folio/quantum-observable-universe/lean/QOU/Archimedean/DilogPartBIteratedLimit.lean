@@ -45,7 +45,7 @@ This file provides the INNER brick, sorry-free:
 Everything is over `ℝ` (archimedean — `LiTwo`, `Real.log`, `Real.exp`, and the ordering
 `1 < q` live past the substrate→archimedean wall).
 
--- Ref: [manuscript] conj:dilogarithm-archimedean-limit; bean qou-jplv; PR #4299
+-- Ref: [leitner2026] conj:dilogarithm-archimedean-limit; bean qou-jplv; PR #4299
 -- Ref: [faddeev1994] https://doi.org/10.1142/S0217732394002793
 -/
 

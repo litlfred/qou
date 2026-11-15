@@ -25,7 +25,7 @@ and out of scope here.
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes/q-heat-equation-unique
+- [leitner2026] §2-quantum-observable-universes/q-heat-equation-unique
 - [kassel1995] Quantum Groups (Springer GTM 155), §VII.4
 -/
 

@@ -13,7 +13,7 @@ Formalization: extracted from jet-horizon.lean for content-block co-location.
 Source declaration: `QOU.ObservableSubcategory` in jet-horizon.lean
 
 ## References
-- [manuscript] §9/observable-subcategory
+- [leitner2026] §9/observable-subcategory
 -/
 
 -- Prerequisite type mirrored from the `QOU.JetHorizon` library module so this
@@ -27,7 +27,7 @@ namespace QOU
 /-- Prerequisite type — canonical decl: `QOU.GradedJetAlgebra` in
     `QOU/JetHorizon.lean`. A graded jet algebra: type family indexed by
     degree k ∈ ℕ, with sections at each degree. -/
--- Ref: [manuscript] def:graded-jet-algebra
+-- Ref: [leitner2026] def:graded-jet-algebra
 structure GradedJetAlgebra where
   /-- The type of sections at degree k. -/
   sections : ℕ → Type*
@@ -37,7 +37,7 @@ structure GradedJetAlgebra where
 /-- The observable subcategory Bun°(P(V)): configurations where
     the degree-0 algebra is non-trivial (Frobenius pairing
     non-degenerate on A_0). -/
--- Ref: [manuscript] §9/observable-subcategory
+-- Ref: [leitner2026] §9/observable-subcategory
 structure ObservableConfig where
   /-- The graded jet algebra. -/
   algebra : GradedJetAlgebra

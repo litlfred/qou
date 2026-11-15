@@ -15,7 +15,7 @@ LaTeX: `\label{prop:categorical-reeb-unique}`
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes/categorical-reeb-unique
+- [leitner2026] §2-quantum-observable-universes/categorical-reeb-unique
 - [witten1988] Topological Quantum Field Theory,
   https://doi.org/10.1007/BF01223371
 -/

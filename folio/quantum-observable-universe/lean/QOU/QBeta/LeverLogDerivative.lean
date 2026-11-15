@@ -17,7 +17,7 @@ log-derivative term is only ~10²).  This file machine-checks the *algebraic
 form* of that decomposition so the gate is not re-derived by hand.  No
 numerical value is used or wired; the statement is generic real calculus.
 
--- Ref: [manuscript] computations/qbeta/qbeta-c3-phib-mq-logderivative-constraint.witness.json
+-- Ref: [leitner2026] computations/qbeta/qbeta-c3-phib-mq-logderivative-constraint.witness.json
 -/
 
 namespace QOU.QBeta.LeverLogDerivative

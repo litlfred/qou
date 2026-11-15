@@ -142,8 +142,8 @@ theorem knot_operator_lp_selection
     ∃ oStar : ops.Op, ∃ x : ops.Op → R,
       ops.Optimal x n_T ∧ (∀ o : ops.Op, x o ≠ 0 ↔ o = oStar) := by
   -- Ref: [schrijver1986theory] https://www.wiley.com/en-us/Theory+of+Linear+and+Integer+Programming-p-9780471982326
-  -- Ref: [manuscript] docs/audits/2026-05-05-path-alpha-bring-refinement.md §3
-  -- Ref: [manuscript] knot-operator-lp-selection.md §"Statement (formal)"
+  -- Ref: [leitner2026] docs/audits/2026-05-05-path-alpha-bring-refinement.md §3
+  -- Ref: [leitner2026] knot-operator-lp-selection.md §"Statement (formal)"
   -- Compose strong duality (§7.2) with complementary slackness (§7.4),
   -- both packaged as class hypotheses since Mathlib lacks formal LP duality.
   obtain ⟨x, hx⟩ := inst.strongDuality n_T

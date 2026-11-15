@@ -20,7 +20,7 @@ conclusion.  The previous encoding axiomatised an opaque
 self-assuming projection (the two fields just *posit* the answer) and
 is removed.
 
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/corrected-markov-trace.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/corrected-markov-trace.md
 -/
 
 namespace QOU.ParticleInteractions
@@ -43,7 +43,7 @@ From these, `tr_M(σ₀σ₁σ₀) = z·(z·(z)) = z³` by substitution and
 (`z·z·z = z³`) — only `+`, `*`, substitution, and a `≠` distinctness
 hypothesis; no inverse, no `Real.*`, no ordering. It is therefore stated
 over a generic commutative ring `{R : Type*} [CommRing R]`. -/
--- Ref: [manuscript] thm:jones-markov-trace (Markov reduction property)
+-- Ref: [leitner2026] thm:jones-markov-trace (Markov reduction property)
 theorem corrected_markov_trace {R : Type*} [CommRing R]
     (z trM_σ0 trM_σ1σ0 trM_σ0σ1σ0 : R)
     (h_single : trM_σ0 = z)
@@ -57,7 +57,7 @@ vertex-volume product `h·z² + z` (whenever those two scalars differ).
 
 Combines `corrected_markov_trace` with the inequality hypothesis
 `z³ ≠ h·z² + z`. -/
--- Ref: [manuscript] prop:corrected-markov-trace (product factorisation invalid for adjacent generators)
+-- Ref: [leitner2026] prop:corrected-markov-trace (product factorisation invalid for adjacent generators)
 theorem corrected_markov_trace_ne_naive {R : Type*} [CommRing R]
     (h z trM_σ0 trM_σ1σ0 trM_σ0σ1σ0 : R)
     (h_single : trM_σ0 = z)

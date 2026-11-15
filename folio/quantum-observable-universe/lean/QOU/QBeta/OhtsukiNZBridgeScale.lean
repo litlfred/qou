@@ -52,7 +52,7 @@ No numerical `S`, no `c_k`, no instance wired.
 
 - [neumann-zagier1985] Neumann & Zagier, Topology 24 (1985). https://doi.org/10.1016/0040-9383(85)90004-7
 - [andersen-hansen2006] https://doi.org/10.1142/S0218216506004555 (the κ-tower)
-- [manuscript] docs/coordination/2026-08-02-c3-odd-aomega-unification.md (the single open question).
+- [leitner2026] docs/coordination/2026-08-02-c3-odd-aomega-unification.md (the single open question).
 -/
 
 namespace QOU.QBeta.OhtsukiNZBridgeScale

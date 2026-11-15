@@ -15,7 +15,7 @@ LaTeX label: `prop:descent-condition`
 ## References
 
 - [yekutieli2010] https://doi.org/10.1016/j.aim.2009.12.006
-- [manuscript] §3-lifting-of-quantum-torsion/descent-condition
+- [leitner2026] §3-lifting-of-quantum-torsion/descent-condition
 -/
 
 namespace QOU.Torsion
@@ -30,7 +30,7 @@ structure CechCocycleData (G : Type*) [Group G] where
     deviation i j k = transition i j * transition j k * (transition i k)⁻¹
 
 /-- **Twisted 2-cocycle condition**. -/
--- Ref: [yekutieli2010] §4, [manuscript] §3
+-- Ref: [yekutieli2010] §4, [leitner2026] §3
 structure TwistedCocycleCondition (G : Type*) [Group G] where
   cech : CechCocycleData G
   twoMorphism : Fin cech.numPatches → Fin cech.numPatches → G
@@ -45,7 +45,7 @@ structure TwistedCocycleCondition (G : Type*) [Group G] where
 /-- **Descent condition**: when the twisted 2-cocycle condition holds
     at all levels of the brane tower, the distributional connection
     `A_∞` is globally consistent. -/
--- Ref: [yekutieli2010] §3-4, [manuscript] §3
+-- Ref: [yekutieli2010] §3-4, [leitner2026] §3
 structure DescentCondition where
   G : ℕ → Type*
   [grp : ∀ n, Group (G n)]

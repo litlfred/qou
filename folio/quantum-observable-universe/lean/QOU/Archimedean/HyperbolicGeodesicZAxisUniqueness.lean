@@ -58,7 +58,7 @@ Archimedean (ℝ): `exp`, `log`, `‖·‖`, ordering `0 < z`, real analysis / F
 
   -- Ref: [thurston1978] Ch. 2 §2.3 p. 12 (the metric; vertical geodesics)
   -- Ref: [ratcliffe] §4.6 (geodesics of `H³`; the z-axis is the length-minimiser)
-  -- Ref: [manuscript] beans qou-xidi (T2 WALL-4 z-axis uniqueness),
+  -- Ref: [leitner2026] beans qou-xidi (T2 WALL-4 z-axis uniqueness),
   --   qou-0a0z (WALL-2), qou-r111 (the full geodesic-uniqueness wall)
 -/
 

@@ -17,7 +17,7 @@ typeclass instance is the conjectural input; downstream results
 become conditional theorems parameterised on
 `[SaturatedShellConjecture n]`.
 
--- Ref: [manuscript] conj:categorical-neutrality-saturated-shells
+-- Ref: [leitner2026] conj:categorical-neutrality-saturated-shells
 -- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
 --      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
 --      DOI: 10.1007/978-1-4612-0783-2
@@ -61,7 +61,7 @@ attribute [instance] MassEndoModule.endoMonoid
     `Φ_n` in the endomorphism algebra `Endo n`. The unproved input
     is the existence of the instance; downstream conditional
     theorems are then fully verified by Lean. -/
--- Ref: [manuscript] conj:categorical-neutrality-saturated-shells
+-- Ref: [leitner2026] conj:categorical-neutrality-saturated-shells
 class SaturatedShellConjecture (n : ℕ) extends MassEndoModule n where
   /-- The level `n` lies in the magic set (precondition). -/
   saturated : Saturated n
@@ -74,7 +74,7 @@ class SaturatedShellConjecture (n : ℕ) extends MassEndoModule n where
 
 /-- Conditional theorem: under the saturated-shell conjecture, the
     full-twist commutes with `Φ_n`. -/
--- Ref: [manuscript] conj:categorical-neutrality-saturated-shells §"Statement"
+-- Ref: [leitner2026] conj:categorical-neutrality-saturated-shells §"Statement"
 theorem fullTwist_commutes
     (n : ℕ) [c : SaturatedShellConjecture n] :
     c.fullTwist * c.phi = c.phi * c.fullTwist := by
@@ -84,7 +84,7 @@ theorem fullTwist_commutes
     the full-twist still leave `Φ_n` invariant — the discrete
     `ℤ`-action of the full-twist factors through the trivial
     representation on `Φ_n`. -/
--- Ref: [manuscript] conj:categorical-neutrality-saturated-shells §"Statement"
+-- Ref: [leitner2026] conj:categorical-neutrality-saturated-shells §"Statement"
 theorem fullTwist_iter_neutral
     (n : ℕ) [c : SaturatedShellConjecture n] (k : ℕ) :
     c.fullTwist ^ k * c.phi = c.phi := by
@@ -98,7 +98,7 @@ theorem fullTwist_iter_neutral
     `Φ_n · fullTwist^k = Φ_n` for any `k : ℕ`. Proves directly by
     induction using `neutrality_right`, mirroring the left-side
     proof. -/
--- Ref: [manuscript] conj:categorical-neutrality-saturated-shells §"Statement"
+-- Ref: [leitner2026] conj:categorical-neutrality-saturated-shells §"Statement"
 theorem fullTwist_iter_neutral_right
     (n : ℕ) [c : SaturatedShellConjecture n] (k : ℕ) :
     c.phi * c.fullTwist ^ k = c.phi := by
@@ -114,7 +114,7 @@ theorem fullTwist_iter_neutral_right
     for any `a, b : ℕ` at a saturated level. The full-twist's
     discrete `ℕ × ℕ`-monoid action on `Φ_n` factors through the
     trivial representation under the saturated-shell conjecture. -/
--- Ref: [manuscript] conj:categorical-neutrality-saturated-shells §"Statement"
+-- Ref: [leitner2026] conj:categorical-neutrality-saturated-shells §"Statement"
 theorem fullTwist_iter_two_sided_neutral
     (n : ℕ) [c : SaturatedShellConjecture n] (a b : ℕ) :
     c.fullTwist ^ a * c.phi * c.fullTwist ^ b = c.phi := by

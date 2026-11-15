@@ -2,7 +2,7 @@
   Geometric universality of the categorical volume form
   (conditional on hyperbolic-volume + baryon-period conjectures).
 
-  Ref: [manuscript] §Braids and knots / Geometric universality,
+  Ref: [leitner2026] §Braids and knots / Geometric universality,
        prop:geom-universality
 -/
 

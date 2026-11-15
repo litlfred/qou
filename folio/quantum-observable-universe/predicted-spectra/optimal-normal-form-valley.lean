@@ -17,7 +17,7 @@ generator `σᵢ`.
 LaTeX label: `thm:optimal-normal-form-valley`
 
 ## References
-- [manuscript] §13/optimal-normal-form-valley
+- [leitner2026] §13/optimal-normal-form-valley
 - [unital-groebner-bases] main theorem (division algorithm)
 -/
 
@@ -32,7 +32,7 @@ def inValley (Z N : ℕ) : Prop := N + 1 ≥ Z
 /-- The per-generator Markov-traced transfer-matrix volume `V̂ᵢ(q)` at
     generator slot `i`.  (Externally supplied by the transfer-matrix chain;
     here abstracted as a real-valued function of the slot and `q`.) -/
--- Ref: [manuscript] §13/optimal-normal-form-valley
+-- Ref: [leitner2026] §13/optimal-normal-form-valley
 opaque markovVolume (i : ℕ) (q : ℝ) : ℝ
 
 /-- **Optimal Normal Form theorem.**  In the valley of stability, the

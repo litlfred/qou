@@ -55,10 +55,10 @@
   So (A) is no longer blocked on a singularity.  It is blocked on two standard,
   clearly-named pieces of analysis that Mathlib does not yet have.
 
-  -- Ref: [manuscript] QOU/Knot/KashaevProdEndpoint.lean
-  -- Ref: [manuscript] QOU/Knot/KashaevReflectionTrapezoid.lean
-  -- Ref: [manuscript] computations/probes/kashaev_endpoint_split_probe.py
-  -- Ref: [manuscript] computations/probes/kashaev_reflection_probe.py
+  -- Ref: [leitner2026] QOU/Knot/KashaevProdEndpoint.lean
+  -- Ref: [leitner2026] QOU/Knot/KashaevReflectionTrapezoid.lean
+  -- Ref: [leitner2026] computations/probes/kashaev_endpoint_split_probe.py
+  -- Ref: [leitner2026] computations/probes/kashaev_reflection_probe.py
 -/
 import QOU.Knot.KashaevReflectionTrapezoid
 

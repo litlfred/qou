@@ -26,7 +26,7 @@ bridge theorem is fully verified by Lean.  This is Workplan B from
 
 ## References
 
-- [manuscript] Ch 3 §sec:calibration-algebraic-mass /
+- [leitner2026] Ch 3 §sec:calibration-algebraic-mass /
   phi-q-tower-jsj-bridge
 - [kashaev1997] https://doi.org/10.1023/A:1007364912784
 - [murakami-murakami2001] https://doi.org/10.1007/BF02392716
@@ -88,7 +88,7 @@ class PerPieceBridge (q : ℝ) [VolumeConjecture q] [TowerSummandRealization q] 
 
     No `sorry`: every step is either definitional or supplied by a
     typeclass field. -/
--- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass /
+-- Ref: [leitner2026] Ch 3 §sec:calibration-algebraic-mass /
 --                   phi-q-tower-jsj-bridge
 -- Ref: [kashaev1997] Kashaev, "The hyperbolic volume of knots from the quantum dilogarithm," Lett. Math. Phys. 39 (1997)
 theorem bridge {q : ℝ} [VolumeConjecture q] [TowerSummandRealization q]

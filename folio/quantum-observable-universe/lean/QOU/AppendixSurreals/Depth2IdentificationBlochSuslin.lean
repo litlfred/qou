@@ -32,7 +32,7 @@ class Depth2IdentificationContext where
 /-- **Proposition (`prop:depth-2-identification-bloch-suslin`).**
     The depth-2 graded piece is canonically identified with
     `K_3^{ind}(F) ⊗ ℚ` via Bloch-Suslin. -/
--- Ref: [manuscript] quantum-observable-universe/appendix-surreals/depth-2-identification-bloch-suslin.md
+-- Ref: [leitner2026] quantum-observable-universe/appendix-surreals/depth-2-identification-bloch-suslin.md
 theorem depth_2_identification [ctx : Depth2IdentificationContext] :
     Function.LeftInverse ctx.bs_inv ctx.bs_map ∧
     Function.RightInverse ctx.bs_inv ctx.bs_map := by

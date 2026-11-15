@@ -100,7 +100,7 @@ All three sub-claims are *derived*:
   `c_{n+1} = (q−q⁻¹)·cₙ + dₙ`, `d_{n+1} = cₙ`;
 * (iii) the magic numbers `(2, 8, 20, 28, 50, 82, 126)` are the
   closed-shell occupancies. -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/torus-knot-shell-binding.ts
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/torus-knot-shell-binding.ts
 theorem torus_knot_shell_binding {H : Type} (φ : H → H) (one : H) (q : ℝ) :
     shellOp φ 0 one = one ∧
     (∀ n : ℕ,

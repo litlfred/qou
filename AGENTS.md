@@ -4370,7 +4370,7 @@ sorry
   `folio/references/<key>.json` file, loaded by `folio/schema/references.ts`.
   (`references.bib` is auto-generated from `references.ts` — the `export-bibtex`
   shortcut was dropped in the miga migration, pending re-wiring).
-- If no published reference exists, use `[manuscript]` and cite chapter/section.
+- If no published reference exists, use `[leitner2026]` (the self-citation) and cite chapter/section. The legacy `[manuscript]` key was renamed to `leitner2026` at every site on owner ruling 2026-11-15.
 - A `sorry` without `-- Ref:` is always a review failure.
 
 ### 1a. No audit-dodging / sorry-workarounds (STRICT, 2026-06-23)

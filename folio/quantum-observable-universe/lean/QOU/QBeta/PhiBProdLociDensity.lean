@@ -19,7 +19,7 @@ zeros are a countable union over `k` of the factor `ℤ`-lattices.
 
 Verified `lean`-direct against the merged `phiBProd` chain + `Common.PeriodicDense`. Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-07-26-faddeev-keystone-7xvy-canonical-arc.md
+-- Ref: [leitner2026] docs/audits/2026-07-26-faddeev-keystone-7xvy-canonical-arc.md
 -/
 
 open Complex Set

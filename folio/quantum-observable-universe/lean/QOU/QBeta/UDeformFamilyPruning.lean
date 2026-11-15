@@ -63,7 +63,7 @@ the kill-test *laws* over the corrected harmonic form; the measured numbers
 stay in
 `computations/qbeta/qbeta-udeform-map-constraint.witness.json`.
 
--- Ref: [manuscript] conj:binding-qbeta-complex-volume;
+-- Ref: [leitner2026] conj:binding-qbeta-complex-volume;
      computations/qbeta/qbeta_udeform_map_constraint_probe.py;
      docs/audits/2026-07-26-sdeformed-channel-signflip.md
 -- Ref: [neumann-zagier1985] Neumann & Zagier, "Volumes of hyperbolic three-manifolds," Topology 24 (1985). https://doi.org/10.1016/0040-9383(85)90004-7

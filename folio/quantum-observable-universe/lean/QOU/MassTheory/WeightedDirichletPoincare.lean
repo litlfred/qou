@@ -66,7 +66,7 @@ hypothesis, because the corpus does not have it either (the recorded eigenvalues
 (`LinearOrderedField` is deprecated in this Mathlib and is no longer a class; the three-way
 binder is its replacement, not a weakening.)
 
--- Ref: [manuscript] .beans/qou-k5r5, docs/audits/2026-07-24-covariance-kernel-route1-exchangeable-pair.md
+-- Ref: [leitner2026] .beans/qou-k5r5, docs/audits/2026-07-24-covariance-kernel-route1-exchangeable-pair.md
 -/
 
 import Mathlib.Algebra.Order.BigOperators.Group.Finset

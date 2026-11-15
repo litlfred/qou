@@ -16,7 +16,7 @@ This is the symmetric reference angle `θ₀` of the bent-geometry shift
 from it to `≈ 104.5°`.
 
 ## References
-- [manuscript] Ch. 12, Proposition: tetrahedral H-bond directions
+- [leitner2026] Ch. 12, Proposition: tetrahedral H-bond directions
 -/
 
 namespace QOU.Molecular

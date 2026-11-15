@@ -67,8 +67,8 @@ supplies.  The substantive bridge lives in `QOU.PhiQJSJ.bridge`.
 
 Bean `qou-z9ws`.
 
--- Ref: [manuscript] quantum-observable-universe/mass-theory/reeb-bundle-complement-equals-volume.md
--- Ref: [manuscript] quantum-observable-universe/mass-theory/mass-volume-factorization.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/reeb-bundle-complement-equals-volume.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/mass-volume-factorization.md
 -/
 
 namespace QOU.BraidsKnots
@@ -81,7 +81,7 @@ proposition over caller-supplied data:
 **Named, not asserted**, and conditional on `conj:mass-volume-factorization`.
 The sum is explicit rather than collapsed into one scalar — see the module
 docstring for why that distinction is the proposition's content. -/
--- Ref: [manuscript] quantum-observable-universe/mass-theory/reeb-bundle-complement-equals-volume.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/reeb-bundle-complement-equals-volume.md
 def ReebBundleComplementEqualsVolume {P : Type} (hyperbolicPieces : Finset P)
     (rhoF volHyp : P → ℝ) (markovTrace : ℝ) : Prop :=
   markovTrace = hyperbolicPieces.sum (fun p => rhoF p * volHyp p)
@@ -92,7 +92,7 @@ observable vanishes.
 The `.md`'s *"pure-rotation 3-cycles trace Heegaard torus trajectories,
 leaving a Seifert-fibered complement where `V_hyp = 0`"* — obtained from the
 graded sum rather than assumed. -/
--- Ref: [manuscript] quantum-observable-universe/mass-theory/reeb-bundle-complement-equals-volume.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/reeb-bundle-complement-equals-volume.md
 theorem markovTrace_eq_zero_of_no_hyperbolic_pieces {P : Type}
     {rhoF volHyp : P → ℝ} {markovTrace : ℝ}
     (h : ReebBundleComplementEqualsVolume (∅ : Finset P) rhoF volHyp
@@ -106,7 +106,7 @@ Thurston volume ⇒ the observable vanishes.
 The other reading of the same sentence in the `.md`. Stated separately
 because an empty piece set and a set of volume-zero pieces are different
 geometric situations that happen to share a conclusion. -/
--- Ref: [manuscript] quantum-observable-universe/mass-theory/reeb-bundle-complement-equals-volume.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/reeb-bundle-complement-equals-volume.md
 theorem markovTrace_eq_zero_of_volumes_vanish {P : Type}
     {hyperbolicPieces : Finset P} {rhoF volHyp : P → ℝ} {markovTrace : ℝ}
     (hvol : ∀ p ∈ hyperbolicPieces, volHyp p = 0)

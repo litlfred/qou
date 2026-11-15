@@ -26,7 +26,7 @@ LaTeX label: `prop:em-coupling-projection`
 
 ## References
 
-- [manuscript] §5/em-coupling-projection
+- [leitner2026] §5/em-coupling-projection
 - [jones1987] https://doi.org/10.2307/1971403
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
@@ -76,7 +76,7 @@ def antisymmetricEigenvalue : R_q := q_inv
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
--- Ref: [manuscript] §5/em-coupling-projection
+-- Ref: [leitner2026] §5/em-coupling-projection
 def IsEmCoupling (α : R_q) : Prop :=
   qInt strongCrossingNumber * qInt weakCrossingNumber * α = antisymmetricEigenvalue
 
@@ -84,7 +84,7 @@ def IsEmCoupling (α : R_q) : Prop :=
     antisymmetric eigenvalue unfolded: `[9]_q · [10]_q · α = q⁻¹`.  Holds
     by definitional unfolding (`strongCrossingNumber = 9`,
     `weakCrossingNumber = 10`, `antisymmetricEigenvalue = q_inv`). -/
--- Ref: [manuscript] §5/em-coupling-projection
+-- Ref: [leitner2026] §5/em-coupling-projection
 theorem isEmCoupling_iff (α : R_q) :
     IsEmCoupling α ↔ qInt 9 * qInt 10 * α = q_inv := Iff.rfl
 

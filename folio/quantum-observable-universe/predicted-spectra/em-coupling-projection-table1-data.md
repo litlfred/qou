@@ -33,4 +33,4 @@ are small and they act in the same direction:
 | muon pin $\to$ proton pin | $79.17$ ppb (for either form) |
 
 Reproduce with
-[`alpha_em_form_comparison_probe.py`](computations/alpha/alpha_em_form_comparison_probe.py).
+[`alpha_em_form_comparison_probe.py`](../../../computations/alpha/alpha_em_form_comparison_probe.py).

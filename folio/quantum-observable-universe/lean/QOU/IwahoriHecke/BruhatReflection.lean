@@ -111,7 +111,7 @@ what makes it free.**
 
 -- Ref: [bjornerbrenti2005] Combinatorics of Coxeter Groups, §2.1–2.2 (both definitions, Thm 2.2.2)
 -- Ref: [mathas1999] Iwahori–Hecke Algebras and Schur Algebras of the Symmetric Group, Prop 3.7
--- Ref: [manuscript] beans qou-06h7, qou-phir
+-- Ref: [leitner2026] beans qou-06h7, qou-phir
 -/
 
 namespace QOU.IwahoriHecke.BruhatReflection

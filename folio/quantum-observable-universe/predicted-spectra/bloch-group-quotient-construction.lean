@@ -35,7 +35,7 @@ gaps.
 
 -- Ref: [bloch2000] AMS CRM Monograph 11
 -- Ref: [suslin1991] Trudy Mat. Inst. Steklova 183
--- Ref: [manuscript] rem:three-substantive-mathlib-fillers
+-- Ref: [leitner2026] rem:three-substantive-mathlib-fillers
 -/
 
 namespace QOU.Archimedean.BlochQuotient
@@ -361,7 +361,7 @@ theorem quot_rogersGenerator_eq_zero
   exact (QuotientAddGroup.eq_zero_iff _).mpr
     (rogersGenerator_mem_pentagonSubgroup r)
 
--- Ref: [manuscript] rem:three-substantive-mathlib-fillers
+-- Ref: [leitner2026] rem:three-substantive-mathlib-fillers
 /- **The two instances that stood here are REMOVED (2026-09-03), and the
    compile error that removing them resolves was the guard working.**
 

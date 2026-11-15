@@ -12,7 +12,7 @@ pair, so lepton number is conserved by construction.
 LaTeX label: `def:lepton-number-categorical`
 
 ## References
-- [manuscript] §6/lepton-number-categorical
+- [leitner2026] §6/lepton-number-categorical
 -/
 
 namespace QOU.Archimedean
@@ -26,13 +26,13 @@ namespace QOU.Archimedean
 
     Each Skein smoothing L₀ produces one (lepton, antilepton) pair
     with total lepton number 0. -/
--- Ref: [manuscript] §6/lepton-number-categorical
+-- Ref: [leitner2026] §6/lepton-number-categorical
 structure LeptonNumber where
   /-- The lepton number value. -/
   L : ℤ
 
 /-- A Skein smoothing event: produces exactly one lepton pair. -/
--- Ref: [manuscript] §6/lepton-number-categorical
+-- Ref: [leitner2026] §6/lepton-number-categorical
 structure SkeinSmoothing where
   /-- Lepton number of the charged component. -/
   charged : ℤ
@@ -42,14 +42,14 @@ structure SkeinSmoothing where
   pair_conservation : charged + neutral = 0
 
 /-- β⁻ smoothing: electron (L=+1) + antineutrino (L=-1). -/
--- Ref: [manuscript] §6/lepton-number-categorical
+-- Ref: [leitner2026] §6/lepton-number-categorical
 def betaMinusSmoothing : SkeinSmoothing where
   charged := 1
   neutral := -1
   pair_conservation := by norm_num
 
 /-- β⁺ smoothing: positron (L=-1) + neutrino (L=+1). -/
--- Ref: [manuscript] §6/lepton-number-categorical
+-- Ref: [leitner2026] §6/lepton-number-categorical
 def betaPlusSmoothing : SkeinSmoothing where
   charged := -1
   neutral := 1
@@ -57,7 +57,7 @@ def betaPlusSmoothing : SkeinSmoothing where
 
 /-- Lepton number is conserved: any sequence of k Skein smoothings
     produces total lepton number 0 in the lepton sector. -/
--- Ref: [manuscript] §6/lepton-number-categorical
+-- Ref: [leitner2026] §6/lepton-number-categorical
 theorem lepton_number_conservation (smoothings : List SkeinSmoothing) :
     (smoothings.map (fun s => s.charged + s.neutral)).sum = 0 := by
   induction smoothings with

@@ -150,7 +150,7 @@ def interfaceTrace {R : Type*} [CommRing R] (z h tvac : R) : List Bool → R
   | [] => tvac
   | s :: rest => (if s then z else z - h) * interfaceTrace z h tvac rest
 
--- Ref: [manuscript] prop:interface-knot-markov-z §"Consequences" (1)
+-- Ref: [leitner2026] prop:interface-knot-markov-z §"Consequences" (1)
 /-- **Iterated interface-knot factorisation.**  Folding the per-interface
     factors over the constituent vacuum yields the closed product
 
@@ -205,7 +205,7 @@ class MarkovHeckeSkeinAlgebra (R : Type*) [CommRing R]
                     = z · τ_M(α) - h · τ_M(α)
                     = (z - h) · τ_M(α). -/
 -- Ref: [jones1987] Hecke algebra representations of braid groups
--- Ref: [manuscript] prop:interface-knot-markov-z §"Negative interface variant"
+-- Ref: [leitner2026] prop:interface-knot-markov-z §"Negative interface variant"
 theorem interface_knot_markov_z_negative
     {R : Type*} [CommRing R] [inst : MarkovHeckeSkeinAlgebra R]
     (alpha sigma : R)
@@ -242,7 +242,7 @@ theorem interface_knot_markov_z_negative
     Stated division-free over a generic `CommRing R` (the 1/2 is deferred to
     the archimedean step, per AGENTS.md §7c base-ring convention). -/
 -- Ref: [jones1987] Hecke algebra representations of braid groups
--- Ref: [manuscript] prop:interface-knot-markov-z §"Averaged (bar-invariant) interface"
+-- Ref: [leitner2026] prop:interface-knot-markov-z §"Averaged (bar-invariant) interface"
 -- Ref: prop:averaging-resonance-rule.md
 theorem interface_knot_markov_z_bar_symmetric
     {R : Type*} [CommRing R] [inst : MarkovHeckeSkeinAlgebra R]
@@ -264,7 +264,7 @@ theorem interface_knot_markov_z_bar_symmetric
 /-- **Per-Z step factorisation**: for the per-Z-step transition
     (Z, N) → (Z+1, N), the new interface is a *positive* generator
     (p-p or p-n boundary), contributing a factor of `z`. -/
--- Ref: [manuscript] prop:interface-knot-markov-z §"Per-Z step"
+-- Ref: [leitner2026] prop:interface-knot-markov-z §"Per-Z step"
 theorem interface_knot_markov_z_per_Z_step
     {R : Type*} [CommRing R] [inst : MarkovTraceAlgebra R]
     (beta_prev sigma_interface : R)

@@ -47,7 +47,7 @@ six cases. It says nothing about the `+1.07 %` residual in the Weinberg-angle
 comparison — that is a question about which of `cosh` and `cos` the physics selects,
 and `QOU.MathlibExt.CoshCosSeparation` shows the two are not near each other.
 
--- Ref: [manuscript] torus-knot-h-expansion-pattern
+-- Ref: [leitner2026] torus-knot-h-expansion-pattern
 -/
 
 namespace QOU.BraidKnot

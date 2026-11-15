@@ -94,7 +94,7 @@ substrate→archimedean wall.
 
 ## References
 
-- [manuscript] `conj:qdifference-kernel-prolongation-symbol` (the DM q-cubic period
+- [leitner2026] `conj:qdifference-kernel-prolongation-symbol` (the DM q-cubic period
   datum that would pin the anti-self-adjoint off-block); `QOU.QBeta.SuperBerezinianA3Magnitude`
   (Route 2 — the surjectivity/fit result this file sharpens);
   `QOU.QBeta.BerezinianSelfAdjointCrossTerm` (self-adjoint ⇒ bar-even cross-term);

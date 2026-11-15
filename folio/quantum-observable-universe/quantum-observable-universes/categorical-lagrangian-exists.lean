@@ -15,7 +15,7 @@ LaTeX: `\label{prop:categorical-lagrangian-exists}`
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes/categorical-lagrangian-exists
+- [leitner2026] §2-quantum-observable-universes/categorical-lagrangian-exists
 - [connes1994] Noncommutative Geometry
 -/
 

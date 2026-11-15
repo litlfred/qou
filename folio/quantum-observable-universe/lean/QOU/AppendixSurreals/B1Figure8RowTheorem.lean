@@ -26,7 +26,7 @@ class B1Figure8RowContext where
   bloch_wigner_ne_zero : bloch_wigner_4_1 ≠ 0
 
 /-- **Proposition (`prop:b1-figure-8-row-theorem`).** -/
--- Ref: [manuscript] quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem.md
+-- Ref: [leitner2026] quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem.md
 theorem b1_figure_8_row [ctx : B1Figure8RowContext] :
     ctx.depth_4_1 = 2 ∧ ctx.bloch_wigner_4_1 ≠ 0 := by
   constructor

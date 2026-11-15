@@ -22,7 +22,7 @@ etc.) where the conjecture is actually proved.
 - [murakami-murakami2001] The colored Jones polynomial and the simplicial
   volume of a knot. Acta Math. 186 (2001).
   https://doi.org/10.1007/BF02392716
-- [manuscript] Ch 3 §sec:calibration-algebraic-mass /
+- [leitner2026] Ch 3 §sec:calibration-algebraic-mass /
   kashaev-volume-conjecture
 -/
 
@@ -74,7 +74,7 @@ class PieceVolumeConjecture (q : ℝ) [VolumeConjecture q] where
     `SubLink.hypVolume` field on the geometry side and the typeclass
     `VolumeConjecture.hypVolume` on the analysis side: any concrete
     instance of `VolumeConjecture` populates a real value. -/
--- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass /
+-- Ref: [leitner2026] Ch 3 §sec:calibration-algebraic-mass /
 --                   kashaev-volume-conjecture
 noncomputable def pieceVolume (q : ℝ) [VolumeConjecture q] [hi : PieceVolumeConjecture q]
     (β : Braid) (S : Finset (Fin (β.n - 1))) : ℝ :=
@@ -86,7 +86,7 @@ noncomputable def pieceVolume (q : ℝ) [VolumeConjecture q] [hi : PieceVolumeCo
   -- placeholder (the full-braid volume) for the genuine S-dependent
   -- piece volume.  The KVC class only constrains the full-braid
   -- limit, not the per-piece values.
-  -- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass /
+  -- Ref: [leitner2026] Ch 3 §sec:calibration-algebraic-mass /
   --                   kashaev-volume-conjecture
   -- CONJECTURE: A combinatorial constructor for subLink and its hyperbolic volume is deferred to the SnapPy bridge layer.
   hi.pieceVolume β S
@@ -97,7 +97,7 @@ theorem pieceVolume_nonneg (q : ℝ) [VolumeConjecture q] [inst : PieceVolumeCon
   -- Once `pieceVolume` is given a concrete combinatorial definition,
   -- this becomes a non-trivial fact derived from `inst.hypVolume_nonneg`
   -- applied to the sub-braid `subLink β S`.
-  -- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass /
+  -- Ref: [leitner2026] Ch 3 §sec:calibration-algebraic-mass /
   --                   kashaev-volume-conjecture
   -- CONJECTURE: Becomes a non-trivial fact derived from hypVolume_nonneg applied to the sub-braid subLink β S once pieceVolume is concrete.
   exact inst.pieceVolume_nonneg β S
@@ -150,7 +150,7 @@ theorem figure_eight_volume_from_vc (q : ℝ) [inst : VolumeConjecture q] :
     `G` = Catalan's constant — entering the proton mass formula via the
     Borromean Markov trace — is cited, not derived.) -/
 -- Ref: [adams1985hyperbolic] — hyperbolic volume of Borromean rings
--- Ref: [manuscript] lean/QOU/Archimedean/BorromeanVolumeCatalan.lean
+-- Ref: [leitner2026] lean/QOU/Archimedean/BorromeanVolumeCatalan.lean
 theorem borromean_volume_from_vc (q : ℝ) [inst : VolumeConjecture q] :
     inst.hypVolume borromeanBraid = inst.kashaevLimit borromeanBraid :=
   inst.kvc_holds borromeanBraid

@@ -4,7 +4,7 @@
   The same LP selects operators at every level of the QOU construction:
   confinement, gluon, electron attachment, and molecular bonding.
 
-  Ref: [manuscript] Ch 11 §8, def:universal-ilp-algorithm
+  Ref: [leitner2026] Ch 11 §8, def:universal-ilp-algorithm
 -/
 
 import Mathlib.Data.Real.Basic
@@ -36,7 +36,7 @@ structure KnotOperator (q : ℝ)
 /-- The structure is refutable: no knot operator exists over a predicate
     that holds of nothing.  The previous `is_knot : Prop` admitted
     `is_knot := True` and so could not be empty for any `q`. -/
--- Ref: [manuscript] Ch 11 §8, def:universal-ilp-algorithm
+-- Ref: [leitner2026] Ch 11 §8, def:universal-ilp-algorithm
 theorem knotOperator_isEmpty_of_never_single_component (q : ℝ) :
     IsEmpty (KnotOperator q (fun _ _ => False)) :=
   ⟨fun K => K.is_knot⟩
@@ -61,7 +61,7 @@ theorem knotOperator_isEmpty_of_never_single_component (q : ℝ) :
     rank-5 form is a different condition, and picking how the radical
     direction is treated is a modelling choice, not a transcription.  Left
     to the author; NOT changed here. -/
--- Ref: [manuscript] Ch 11, prop:frobenius-gram-matrix
+-- Ref: [leitner2026] Ch 11, prop:frobenius-gram-matrix
 noncomputable def gram_matrix (_q : ℝ) : Matrix (Fin 6) (Fin 6) ℝ :=
   0
 
@@ -76,7 +76,7 @@ def frobenius_positive (q : ℝ) (x : Fin 6 → ℝ) : Prop :=
     structure** (`is_knot`, `is_nontrivial`), so restating them here added
     nothing.  Before this change the first was worse than redundant — it
     was the free universe-`Prop` field, satisfiable by `True`. -/
--- Ref: [manuscript] Ch 11 §8
+-- Ref: [leitner2026] Ch 11 §8
 def universal_ilp (q : ℝ) (state : Fin 6 → ℝ)
     {IsSingleComponent : (Fin 6 → ℝ) → ℕ → Prop} :
     KnotOperator q IsSingleComponent → Prop :=
@@ -90,7 +90,7 @@ def universal_ilp (q : ℝ) (state : Fin 6 → ℝ)
     vacuity was already stated in `gram_matrix`'s docstring, where nothing
     checked it.  A machine-checked statement goes stale the moment a real
     Gram lands — this theorem will simply stop compiling. -/
--- Ref: [manuscript] Ch 11 §8
+-- Ref: [leitner2026] Ch 11 §8
 theorem universal_ilp_holds_of_zero_gram
     (q : ℝ) (state : Fin 6 → ℝ)
     {IsSingleComponent : (Fin 6 → ℝ) → ℕ → Prop}
@@ -105,7 +105,7 @@ theorem universal_ilp_holds_of_zero_gram
     condition (§3b). The previous
     `(hmin : K.cr ≤ K'.cr) : K.cr ≤ K'.cr := hmin` self-assumingly
     re-projected the given comparison and asserted nothing about the LP. -/
--- Ref: [manuscript] Ch 11 §8
+-- Ref: [leitner2026] Ch 11 §8
 def universal_ilp_selects_minimum (q : ℝ) (state : Fin 6 → ℝ)
     {IsSingleComponent : (Fin 6 → ℝ) → ℕ → Prop}
     (K : KnotOperator q IsSingleComponent) : Prop :=

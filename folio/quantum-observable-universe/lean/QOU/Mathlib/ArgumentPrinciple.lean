@@ -132,7 +132,7 @@ single on-disc Cauchy integral formula, and the rectangle vanishing are present)
 The earlier design routed the argument principle through this missing engine; the
 factorization route removes that dependence entirely.
 
--- Ref: [manuscript] Argument principle / residue of the logarithmic derivative;
+-- Ref: [leitner2026] Argument principle / residue of the logarithmic derivative;
 --   standard complex analysis (Ahlfors, *Complex Analysis*, Ch. 5 §2; Conway
 --   VI.1). Proved here via the Weierstrass zero/pole factorization route. See
 --   docs/audits/2026-07-20-argument-principle-scaffold.md.

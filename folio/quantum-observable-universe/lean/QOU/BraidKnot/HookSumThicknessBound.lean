@@ -49,7 +49,7 @@ needed — only the inequality is used downstream).
 substrate parameter, no archimedean input. Per AGENTS.md §7c this is a purely combinatorial
 statement and must not be stated over `ℝ`.
 
--- Ref: [manuscript] computations/deltalambda/rev_sublinearity_closed_probe.py
+-- Ref: [leitner2026] computations/deltalambda/rev_sublinearity_closed_probe.py
 -/
 
 namespace QOU.BraidKnot.HookSum

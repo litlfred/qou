@@ -65,7 +65,7 @@ namespace RootOfUnityMTCTruncation
 
 /-- Unconditional structural lemma: the truncation level `k` is at
     least `2` (positivity of the MTC rank). -/
--- Ref: [manuscript] braids-and-knots/root-of-unity-mtc-truncation
+-- Ref: [leitner2026] braids-and-knots/root-of-unity-mtc-truncation
 theorem k_pos
     {R : Type u} [CommRing R] {q : R} {k : ℕ}
     [C : CrystalGraphRealization R q]
@@ -75,7 +75,7 @@ theorem k_pos
 
 /-- Unconditional consequence: every normal form's crystal node is
     in the truncated component (direct from `truncation_holds`). -/
--- Ref: [manuscript] braids-and-knots/root-of-unity-mtc-truncation
+-- Ref: [leitner2026] braids-and-knots/root-of-unity-mtc-truncation
 theorem nodeOf_inTruncation
     {R : Type u} [CommRing R] {q : R} {k : ℕ}
     [C : CrystalGraphRealization R q]
@@ -90,7 +90,7 @@ theorem nodeOf_inTruncation
     the form actually used downstream by the MTC truncation pipeline:
     it bounds the number of columns in the partition labelling each
     GS normal form by the chosen root-of-unity level `k`. -/
--- Ref: [manuscript] braids-and-knots/root-of-unity-mtc-truncation
+-- Ref: [leitner2026] braids-and-knots/root-of-unity-mtc-truncation
 theorem columnCount_nodeOf_lt_k
     {R : Type u} [CommRing R] {q : R} {k : ℕ}
     [C : CrystalGraphRealization R q]
@@ -131,7 +131,7 @@ def canonical (R : Type u) [CommRing R] (q : R)
   inTruncation v := 0 < 2
   columnCount _ := 0
   inTruncation_iff _ := by decide
-  -- Ref: [manuscript] conj:root-of-unity-mtc-truncation (§3b-cond conjectural class;
+  -- Ref: [leitner2026] conj:root-of-unity-mtc-truncation (§3b-cond conjectural class;
   --      discharged here by `columnCount := 0` and a constantly-true `inTruncation`,
   --      not by a `sorry` and not by the conjecture)
   truncation_holds _ := Nat.zero_lt_succ 1

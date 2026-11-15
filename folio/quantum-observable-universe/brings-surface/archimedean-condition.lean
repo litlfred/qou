@@ -24,7 +24,7 @@ namespace QOU
     curve via 2 - 2g = χ, forcing genus g = 4.
 
     LaTeX: `\label{def:archimedean-condition}`
-    Ref: [manuscript] Chapter 6, §Descartes condition -/
+    Ref: [leitner2026] Chapter 6, §Descartes condition -/
 structure ArchimedeanCondition (R : Type*) [CommRing R] where
   /-- The categorical Euler characteristic χ(A) = tr(id_A). -/
   eulerChar : R
@@ -37,19 +37,19 @@ structure ArchimedeanCondition (R : Type*) [CommRing R] where
     condition via the Gauss-Bonnet formula 2 - 2g = χ.
 
     When χ = -6: 2 - 2g = -6, so 2g = 8, hence g = 4. -/
--- Ref: [manuscript] Chapter 6, §Descartes condition
+-- Ref: [leitner2026] Chapter 6, §Descartes condition
 theorem descartes_genus_is_four (χ : ℤ) (g : ℤ)
     (hchi : χ = -6) (hgb : 2 - 2 * g = χ) : g = 4 := by
   omega
 
 /-- The total ramification R_tot = 2d + 6 for a degree-d covering. -/
--- Ref: [manuscript] Chapter 6, §Descartes condition
+-- Ref: [leitner2026] Chapter 6, §Descartes condition
 def totalRamification (d : ℤ) : ℤ := 2 * d + 6
 
 /-- The number of branch points is 6 when the Euler characteristic is -6.
     By Riemann-Hurwitz for a degree-d cover of ℙ¹:
     χ = 2d - R_tot, and the branch number is |χ| = 6. -/
--- Ref: [manuscript] Chapter 6, §Descartes condition
+-- Ref: [leitner2026] Chapter 6, §Descartes condition
 theorem branch_points_eq_six (χ : ℤ) (hchi : χ = -6) :
     |χ| = 6 := by
   subst hchi; decide

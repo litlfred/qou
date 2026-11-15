@@ -107,7 +107,7 @@ noncomputable def habiro_expansion_const (c : ℤ) : HabiroExpansion (C c) where
 
 /-- **External axiom (factor theorem):** for any `p ∈ ℤ[X]`, there
     exist `a₀ ∈ ℤ, p₁ ∈ ℤ[X]` with `p = C a₀ + (1 - X) * p₁`. -/
--- Ref: [manuscript] `prop:habiro-expansion-atomic` Step 2
+-- Ref: [leitner2026] `prop:habiro-expansion-atomic` Step 2
 axiom habiro_step_zero_axiom :
     ∀ (p : ℤ[X]), ∃ (a₀ : ℤ) (p₁ : ℤ[X]), p = C a₀ + (1 - X) * p₁
 
@@ -117,7 +117,7 @@ theorem habiro_step_zero (p : ℤ[X]) :
 
 /-- **External axiom (Habiro 2002):** Habiro expansion exists for
     every integer polynomial. -/
--- Ref: [manuscript] `prop:habiro-expansion-atomic` Step 2–4
+-- Ref: [leitner2026] `prop:habiro-expansion-atomic` Step 2–4
 -- Ref: [habiro2004cyclotomic] Habiro, "Cyclotomic completions of polynomial rings," arXiv:math/0209324
 axiom habiro_expansion_exists_axiom :
     ∀ (p : ℤ[X]), Nonempty (HabiroExpansion p)
@@ -128,7 +128,7 @@ theorem habiro_expansion_exists (p : ℤ[X]) :
 
 /-- **External axiom (Habiro 2002):** Habiro expansion is unique
     under the degree bound. -/
--- Ref: [manuscript] `prop:habiro-expansion-atomic` Step 5
+-- Ref: [leitner2026] `prop:habiro-expansion-atomic` Step 5
 axiom habiro_expansion_unique_axiom :
     ∀ (p : ℤ[X]) (E1 E2 : HabiroExpansion p),
       ∀ m, E1.coeff m = E2.coeff m
@@ -140,7 +140,7 @@ theorem habiro_expansion_unique (p : ℤ[X])
 
 /-- **External axiom (Habiro 2002):** termination bound for the
     Habiro expansion via the triangle-number argument. -/
--- Ref: [manuscript] `prop:habiro-expansion-atomic` Step 3
+-- Ref: [leitner2026] `prop:habiro-expansion-atomic` Step 3
 axiom habiro_termination_bound_axiom :
     ∀ (p : ℤ[X]) (E : HabiroExpansion p),
       ∃ M, (∀ m ≥ M, E.coeff m = 0) ∧

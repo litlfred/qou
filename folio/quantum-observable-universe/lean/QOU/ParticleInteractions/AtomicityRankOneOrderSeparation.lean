@@ -48,9 +48,9 @@ ordering axioms force totality of the tensor-generation order?"*, and the generi
 rank-2 model is refuted against it by a two-line incomparability witness. Nothing
 is wired; no instance is fabricated; the rank-one premise remains a premise.
 
--- Ref: [manuscript] quantum-observable-universes/fundamental-object.ts (def:fundamental-object)
--- Ref: [manuscript] quantum-observable-universes/tannaka-dual.ts (def:tannaka-dual)
--- Ref: [manuscript] mass-theory, conj:binding-manybody-eq-jet-filtration (jet tower)
+-- Ref: [leitner2026] quantum-observable-universes/fundamental-object.ts (def:fundamental-object)
+-- Ref: [leitner2026] quantum-observable-universes/tannaka-dual.ts (def:tannaka-dual)
+-- Ref: [leitner2026] mass-theory, conj:binding-manybody-eq-jet-filtration (jet tower)
 -/
 
 namespace QOU.Atomicity

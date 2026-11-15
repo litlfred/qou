@@ -14,7 +14,7 @@ LaTeX label: `def:aeon-boundary`
 
 ## References
 - [penrose2010] R. Penrose, "Cycles of Time", Bodley Head 2010.
-- [manuscript] §9/aeon
+- [leitner2026] §9/aeon
 -/
 
 namespace QOU
@@ -30,18 +30,18 @@ abbrev BunObject := ℕ
     observable.  These are the jet horizons / big-bang states with
     `Γ(𝒮, A₀) = 0`. -/
 -- Ref: [penrose2010] R. Penrose, "Cycles of Time", Bodley Head 2010.
--- Ref: [manuscript] §9/aeon
+-- Ref: [leitner2026] §9/aeon
 def aeonBoundary (aeonObjs cl : Set BunObject) : Set BunObject :=
   cl \ aeonObjs
 
 /-- A boundary object lies in the closure but not in the aeon. -/
--- Ref: [manuscript] §9/aeon
+-- Ref: [leitner2026] §9/aeon
 theorem mem_aeonBoundary (aeonObjs cl : Set BunObject) (s : BunObject) :
     s ∈ aeonBoundary aeonObjs cl ↔ s ∈ cl ∧ s ∉ aeonObjs :=
   Iff.rfl
 
 /-- The boundary is disjoint from the aeon interior. -/
--- Ref: [manuscript] §9/aeon
+-- Ref: [leitner2026] §9/aeon
 theorem aeonBoundary_disjoint (aeonObjs cl : Set BunObject) :
     Disjoint (aeonBoundary aeonObjs cl) aeonObjs := by
   unfold aeonBoundary

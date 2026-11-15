@@ -82,7 +82,7 @@ dual prices `|y*ᵢ| ≤ κ(G)·‖t‖`, (iii) the partial-confinement
 sub-braid is LP-unstable (`σ₀` channel of `G x_partial` is negative),
 (iv) strong duality `tr_M(x*) = y₀* · n_target`. -/
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP strong duality + dual sensitivity)
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/lp-dual-stability.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/lp-dual-stability.md
 theorem lp_dual_stability [ctx : LpDualStabilityContext] :
     (∀ i : Fin ctx.channels,
       0 ≤ (Finset.univ.sum fun j : Fin ctx.channels =>

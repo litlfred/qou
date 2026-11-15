@@ -76,7 +76,7 @@
   Archimedean (ℝ): `Real.pi`, ordering — §7c.
 
   -- Ref: [milnor1982] https://doi.org/10.1090/S0273-0979-1982-14958-8
-  -- Ref: [manuscript] bean qou-w3eg (H4-5 obtuse)
+  -- Ref: [leitner2026] bean qou-w3eg (H4-5 obtuse)
 -/
 import QOU.Archimedean.ObtuseWedgeDegenerate
 import QOU.Archimedean.IdealTetObtuseReduction

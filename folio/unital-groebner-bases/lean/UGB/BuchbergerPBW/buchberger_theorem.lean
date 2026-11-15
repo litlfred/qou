@@ -57,7 +57,7 @@ variable {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     `IsGrobnerShirshovBasis` and a conjunction of two `∀`-resolution
     clauses — substantive content the former `holds : Prop` lacked.
     Proved by unfolding the GS-basis structure. -/
--- Ref: [manuscript] unital-groebner-bases/buchberger-and-pbw/buchberger-theorem.ts
+-- Ref: [leitner2026] unital-groebner-bases/buchberger-and-pbw/buchberger-theorem.ts
 theorem buchberger_theorem
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k) :

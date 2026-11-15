@@ -36,7 +36,7 @@ is an integer, and non-vanishing of `n • x` needs only that `M` is torsion-fre
 (`[NoZeroSMulDivisors ℤ M]`). No `ℝ`.
 
 ## References
-- [manuscript] fluid-dynamics/ns-obstruction-tower (`prop:ns-obstruction-tower`),
+- [leitner2026] fluid-dynamics/ns-obstruction-tower (`prop:ns-obstruction-tower`),
   core-levi-form (`prop:core-levi-form`), levi-degeneracy-conjecture
   (`conj:levi-degeneracy`), ns-singularity-descartes
 -/
@@ -71,7 +71,7 @@ variable {M : Type*} [AddCommGroup M] [NoZeroSMulDivisors ℤ M]
 /-- With nontrivial linking, the leading obstruction is nonzero **iff** the local
     cohomology at `p` is nonzero. Derived from `kappa_def`, `smul_ne_zero_iff` and
     step (c)/(e). Says nothing about the Levi form or about regularity. -/
--- Ref: [manuscript] fluid-dynamics/ns-obstruction-tower
+-- Ref: [leitner2026] fluid-dynamics/ns-obstruction-tower
 theorem ns_obstruction_iff_localCohom [ctx : NSObstructionLeviData M]
     (hlk : ctx.linking ≠ 0) :
     ctx.kappaLeading ≠ 0 ↔ ctx.localCohomNonzero := by

@@ -125,9 +125,9 @@ named factor to the `MarkovTrace` class via the `(c, d)` bond data of
 ## References
 
 - [jones1987] https://doi.org/10.2307/1971403
-- [manuscript] prop:constit-factor-tau-M-proton-identity (Phase 5l)
-- [manuscript] prop:interface-knot-markov-z (Phase 5c.1)
-- [manuscript] prop:flavor-split-substrate (PR #690 leading split)
+- [leitner2026] prop:constit-factor-tau-M-proton-identity (Phase 5l)
+- [leitner2026] prop:interface-knot-markov-z (Phase 5c.1)
+- [leitner2026] prop:flavor-split-substrate (PR #690 leading split)
 - computations/closed_form_tau_M.py (conventions; bring_color_weighted)
 - computations/probe_9b_laurent_degree_10a5.py (exact-ℚ verification)
 -/
