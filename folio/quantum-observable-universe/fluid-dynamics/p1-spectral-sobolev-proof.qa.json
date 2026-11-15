@@ -237,6 +237,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4910e58fb59d",
+          "ts": "7ffc3914ea13"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:55:10.790Z",
+        "reviewed_sha": "dd3595d7dc1ecd1099ddcb695fb47671676c4ba6",
+        "severity": "critical",
+        "evidence": "Step 2 says Δ_q ≥ 0; Step 3 says Δ_q zᵏ = −[k]²zᵏ (sign clash; Step 5 then uses (λ+[k]²)⁻¹). False bound in Step 5: the inequality [k]_q ≥ q^{k−1}/(q−q⁻¹) fails at k = 1 for 1 < q < φ, and the displayed Σ1/[k]² ≤ (q−q⁻¹)²q²/(q²−1) is false at q = 111/100: RHS = 2321/10000 ≈ 0.232, but the k = 1 term alone is 1 (partial sum ≈ 1.548). Summability itself is true. \"Super-exponentially\" should be \"exponentially\". Step 4 uses SU_q(2) Peter–Weyl to claim completeness of circle monomials zᵏ",
+        "notes": "Hand review 2026-11-15 (statement vs narrative proof); issue #8020. "
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1140,7 +1157,7 @@
           "in_degree": 0,
           "cone_size": 29,
           "depth": 16,
-          "pagerank": 7.8e-05,
+          "pagerank": 0.000078,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1358,7 +1375,7 @@
         "reviewed_at": "2026-08-15T10:30:59.613Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
-        "evidence": "1 negation-contrast construction(s): \"not only compact but\" \u2014 state the positive claim directly"
+        "evidence": "1 negation-contrast construction(s): \"not only compact but\" — state the positive claim directly"
       },
       {
         "field_hash": {
@@ -1684,7 +1701,7 @@
         "reviewed_at": "2026-08-19T21:38:02.766Z",
         "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
         "evidence": "No closing restatement.",
-        "notes": "Local redundancy (reported, not fixed): Step 1 cites the Hodge--Laplacian relation, displays the identity, then repeats 'This follows from the Hodge--Laplacian relation.' \u2014 the same citation twice in three lines, which reads as a partial-edit artefact."
+        "notes": "Local redundancy (reported, not fixed): Step 1 cites the Hodge--Laplacian relation, displays the identity, then repeats 'This follows from the Hodge--Laplacian relation.' — the same citation twice in three lines, which reads as a partial-edit artefact."
       }
     ],
     "trap-performed-warmth": [
@@ -1856,6 +1873,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-19T21:38:03.009Z",
+  "updated_at": "2026-11-15T21:55:10.790Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
