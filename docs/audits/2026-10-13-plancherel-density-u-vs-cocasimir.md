@@ -1,4 +1,4 @@
-# Plancherel-trace coproduct density `u` vs the refuted co-Casimir Δ_λ
+# Plancherel-functional coproduct density `u` vs the refuted co-Casimir Δ_λ
 
 Date: 2026-10-13. Branch `claude/frobenius-counit-axiom2-2026-10-13` (owner-approved exploration, item 4).
 Producer: [`computations/deltalambda/plancherel_density_u_probe.py`](../../computations/deltalambda/plancherel_density_u_probe.py)
@@ -19,7 +19,7 @@ the density it induces against the Markov trace `∫ = tr_M = Σ_λ y_λ χ_λ` 
 (The summand of the mass functional is `y_λ·u_λ = y_λ²/ε_λ`; the effective Δ_λ itself is
 `y_λ/ε_λ`, not `y_λ²/ε_λ`.)
 
-For the corpus Plancherel trace this gives `u_λ = y_λ [n]_q! / dim_q(λ)`, which is **not**
+For the unweighted Plancherel functional (b) this gives `u_λ = y_λ [n]_q! / dim_q(λ)`, which is **not**
 proportional to the co-Casimir `1/dim_q(λ)`; it is non-negative on every block, vanishes on
 every block with ≥ 3 rows, and fails the deuteron test of
 `QOU.BraidKnot.DeltaLambdaRefutation` by a wider margin than the co-Casimir does.
@@ -29,8 +29,8 @@ every block with ≥ 3 rows, and fails the deuteron test of
 | tag | ε | ε_λ | status |
 |---|---|---|---|
 | (a) | `tr_M` | `y_λ` | **no counit on `H_n` for n ≥ 3**: under D, `y_λ = 0` on every ≥3-row block, so `c_λ = 1/0`. Exists only on the quotient `H_n/rad` (TL_n), where `u = 1`. Checked: n=2 passes all axioms, n=3 fails at `(1³)`. |
-| (b) | corpus `τ_P(p_λ) = dim_q(λ)·d_λ/[n]_q!` (docstring of `frobenius_codim_tau_invariant`, `mass-theory/frobenius-codim-universal.lean`) | `dim_q(λ)/[n]_q!` | valid counit. **Not** the canonical trace and **not normalised**: `τ_P(1) = 2q/(q²+1)` (n=2), `2q²/((q²+1)(q²−q+1))` (n=3), `8q⁴/((q²+1)²(q⁴+1))` (n=4). |
-| (bκ) | with the `q^{-κ_λ}` factor of `QOU/MathlibExt/MolienFakeDegree.lean` | `q^{-κ_λ} dim_q(λ)/[n]_q!` | valid counit, and **is** the canonical trace `τ(σ_w) = δ_{w,1}` — verified symbolically on all reduced words at n = 2, 3, 4 (2 / 6 / 24 words) through explicit seminormal matrices. |
+| (b) | **unweighted Plancherel functional** `τ_P(p_λ) = dim_q(λ)·d_λ/[n]_q!` (docstring of `frobenius_codim_tau_invariant`, `mass-theory/frobenius-codim-universal.lean`) | `dim_q(λ)/[n]_q!` | valid counit. **Not** the canonical trace and **not normalised**: `τ_P(1) = 2q/(q²+1)` (n=2), `2q²/((q²+1)(q²−q+1))` (n=3), `8q⁴/((q²+1)²(q⁴+1))` (n=4). |
+| (bκ) | **canonical trace**: with the `q^{-κ_λ}` factor of `QOU/MathlibExt/MolienFakeDegree.lean` | `q^{-κ_λ} dim_q(λ)/[n]_q!` | valid counit, and **is** the canonical trace `τ(σ_w) = δ_{w,1}` — verified symbolically on all reduced words at n = 2, 3, 4 (2 / 6 / 24 words) through explicit seminormal matrices. |
 
 That (bκ) is the canonical symmetrising trace and (b) is not is a structural check, not a
 choice. The corpus therefore carries **two different objects under the name "Plancherel
@@ -136,3 +136,17 @@ the TL quotient. The same fact makes candidate (a), `ε = tr_M`, impossible as a
   examined.
 - The symbolic tables for n = 5, 6 were not inspected for closed-form structure beyond the
   ratio identity in (i).
+
+## Naming (2026-11-15, owner choice: rename across the corpus)
+
+The phrase "Plancherel trace" covered three different functionals. They are now named apart:
+
+| name | weights on `p_λ` (or on `χ_λ`) | where |
+|---|---|---|
+| **canonical trace** | `τ(p_λ) = q^{-κ_λ} dim_q(λ) f^λ/[n]_q!`; equals `τ(σ_w) = δ_{w,1}` | `QOU/MathlibExt/MolienFakeDegree.lean`; (bκ) above |
+| **unweighted Plancherel functional** `τ_P` | `τ_P(p_λ) = dim_q(λ) f^λ/[n]_q!`; valid counit, not normalised, not canonical | `frobenius-codim-universal.lean`; (b) above |
+| **q-Plancherel measure trace** `tr_qP` | `Σ_λ w_λ(q) χ^λ/f^λ` with `w_λ(q) = dim_q²/[n]_q!` | `hoefsmit_symbolic.py`, `deuteron_tr_M_symbolic.py` |
+
+Sums `Σ_λ W_λ χ^λ` with a general transpose-invariant weight (the qbeta tower probes,
+`TraceRealSpectrumComplex.lean`) are called **`W`-weighted traces**. Dated audit docs keep
+their original wording as records; function and file names are unchanged.
