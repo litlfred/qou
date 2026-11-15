@@ -8,7 +8,7 @@ tags:
     - needs-owner
     - convention-d
 created_at: 2026-11-15T18:54:18Z
-updated_at: 2026-11-15T19:49:43Z
+updated_at: 2026-11-15T20:09:57Z
 parent: qou-avtq
 ---
 
@@ -59,3 +59,6 @@ A grep of folio/ content and Lean for an isospin orientation convention (e₁ = 
 
 
 2026-11-15 (§19 + H_α applied): Route 1 done. Φ = Σ log|V̂ᵢ| is a log of algebraic quantum-volume factors, not a hyperbolic volume; the γγ nucleon V³ closes to the Borromean rings for p and n alike, so ΔVol = 0 (scope-(a) negative for the 'Φ is a volume' route). Option A applied (6baace0e793): statement now assumes (H_α). Route 4 done (dc79a1c9153): Lean class ScaleHypothesis + splitting_of_scaleHypothesis, sorry-free, tautological rfl def removed. Route 2 (n–p = Q_β + m_e from the derived Q_β route) next. STAYS OPEN: H_α is an open conjecture.
+
+
+2026-11-15 §20 (6ae1b559261): route 2 done. n-p = Q_beta + m_e on ruled z_D base: 0.9557 MeV (-26.1 %); tower-summed E0 -25.8 %; nuc11 cell -10.1 % but element fails SDP. Production 1.2938 is fit-tier (Form A, z_C, N chosen by target). Route 2 does not validate H_alpha (linear vs log functional). Next: FE/EF weak term in sibling thread.
