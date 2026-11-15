@@ -400,7 +400,7 @@
 | [prop:h2o-bond-angle-shift](#prop:h2o-bond-angle-shift) | Bent angle as a quadratic-well shift | Ch 16 | `qou:QOU.Molecular.bond_angle_shift` |
 | [prop:beta-decay-transfer-matrix](#prop:beta-decay-transfer-matrix) | Beta decay as a universal matrix-valued polynomial in $q$ | Ch 12 | `qou:QOU.Archimedean.BetaDecayTransfer.beta_decay_transfer_matrix` |
 | [prop:beta-stability](#prop:beta-stability) | Beta-stability line from the Skein binding Lagrangian | Ch 10 | `qou:QOU.Braiding.beta_stability` |
-| [prop:bar-parity-split](#prop:bar-parity-split) | Binding (cosh) and β-decay (sinh) are the two bar-parities of one element | Ch 12 | `qou:QOU.Mass.evenPart_add_oddPart` |
+| [lem:bar-involution-parity-decomposition](#lem:bar-involution-parity-decomposition) | Even/odd decomposition under a linear involution | Ch 12 | `qou:QOU.Mass.evenPart_add_oddPart` |
 | [prop:binding-alpha-shift-extension](#prop:binding-alpha-shift-extension) | Binding A≥3 via per-rep Reeb phase at a force-carrier torus knot | Ch 12 | `qou:QOU.BraidKnot.binding_unique_via_alpha_shift` |
 | [prop:binding-scale-catalan](#prop:binding-scale-catalan) | Binding energy scale $\alpha = m_e \times 8G$ | Ch 12 | `qou:QOU.BindingScale.bindingScale_value` |
 | [prop:isovector-chiral-residue](#prop:isovector-chiral-residue) | Binding isovector coefficient as the $W_\lambda$ chiral residue (conditional) | Mass and Binding Algorithms | `qou:QOU.BraidKnot.binding_isovector_mirror_from_chiral` |
