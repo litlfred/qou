@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-15T22:34:04Z
+updated_at: 2026-11-15T22:41:39Z
 parent: qou-10v9
 ---
 
@@ -3425,3 +3425,7 @@ Handed over by the c_k thread (owner card 22:30Z). Exact sympy on (C²)^⊗3, Ji
 Requested by the c_k thread; owner card on the weak-vertex thread pending (recommended 'both, word-level first'). Space (C²)^⊗3 ⊗ V ⊗ V* as in #7981. Jimbo Ř 'std', K = diag(q, q⁻¹), u = e₁. Initial state N ⊗ coev₄₅ (plain coev Σᵢ eᵢ⊗eᵢ), with N ∈ {|udd⟩; |udd⟩+|dud⟩+|ddu⟩ (T³ = −½ weight space, equal K weights)}. Apply X on quark strands, then the emission crossing Ř on strands (3,4) (#7973 arm A). A(X) = sum of components on {two u, one d on 1–3} ⊗ (d on 4, u on 5).
 Quantities: A(Δ_S·V³), A(V³), and ε_W := A(Δ_S·V³)/A(V³) (per-emission normalisation). Q = |ε_W|·E₀·m_e, E₀ = 1/(q(q−1)). Also the same with V⁶. Reported exactly and at q₀.
 Prediction (stated before running, no number): if ε_W = −h for both N and both words, reading B's word-blindness holds at word level and the candidate is just ε_B again. Any other value is reported as found. Not a selector; scored as a diagnostic only. Not scored against the required factor for choosing between variants.
+
+
+## RESULT ε-W1 (2026-11-15 22:45Z)
+Identity check passes: Δ_S = −(q h [2]/4)(W₁+W₂) (8×8, exact). ε_W = A(Δ_S·Vᵏ)/A(Vᵏ) at q₀: V³ |udd⟩ −0.209475 (Q 0.876858 MeV, +12.08 %); V³ T³=−½ sum −0.204726 (0.856981, +9.54 %); V⁶ |udd⟩ −0.221471 (0.927074, +18.50 %); V⁶ sum −0.205606 (0.860665, +10.01 %). −h = −0.209061. Prediction (ε_W = −h everywhere) FAILED: the emission step sees the word and the state. The neutron-state choice moves Q by up to 8 %, and nothing in the corpus fixes it, so no row is selectable. Probe computations/probes/word_level_epsilon_probe.py. Diagnostic only.
