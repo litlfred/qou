@@ -1,13 +1,13 @@
 ---
 # qou-j540
 title: prop:demand-stability is marked verified against a float64 witness blind at Z=82 — and its successor is not a drop-in replacement
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-13T13:54:58Z
-updated_at: 2026-10-04T15:15:01Z
+updated_at: 2026-11-15T22:26:00Z
 parent: qou-9nnz
 ---
 
@@ -155,3 +155,11 @@ relative gap on **q**, 1.86e-4 is the relative gap on **h**. Both are right.
 
 The reusable lesson is mine: I screened the producer before grepping the stem,
 and spent a pass re-measuring a documented trap.
+
+## 2026-11-15 — Owner Ruling `Q-9NNZ-1 = 1` Executed (`litlfred/qou#8048`)
+
+- **Owner Ruling (`Q-9NNZ-1 = 1`):** Repoint `prop:demand-stability` to `all_nuclides_sdp_admissibility_mp.py` & scope the grid in `demand-stability.md`.
+- **Implementation (`litlfred/qou#8048`, commit `7cc1ea945da3aafb646f31234adc81d8872b2519`):**
+  1. Updated `folio/quantum-observable-universe/nuclear-interactions/demand-stability.ts` (`prop:demand-stability`) `computation` to `engine: "python+mpmath"`, `script: "computations/all_nuclides_sdp_admissibility_mp.py"`, and `witness: "computations/all-nuclides-sdp-admissibility-mp.witness.json"`.
+  2. Documented in `folio/quantum-observable-universe/nuclear-interactions/demand-stability.md` the `mp` witness's synthetic magic-$Z$-dense $(Z, N)$ grid (`4,932` rows, `0` NF overflow rows, full $N \in [0, 160]$ scans at magic proton shells $Z \in \{2, 8, 20, 28, 50, 82\}$ and full $Z \in [0, 92]$ scans at magic neutron shells $N \in \{2, 8, 20, 28, 50, 82, 126\}$, with $Z = 126$ out of grid range) vs the superseded float64 AME2020 sweep (`1,337 / 3,558` NF overflow rows, `0 / 43` solvable isotopes at $Z = 82$).
+- **Status:** Kept `in-progress` pending merge of `litlfred/qou#8048` and owner sign-off.

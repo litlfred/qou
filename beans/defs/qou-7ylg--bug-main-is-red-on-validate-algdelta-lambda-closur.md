@@ -1,13 +1,13 @@
 ---
 # qou-7ylg
 title: 'BUG: main is RED on validate — alg:delta-lambda-closure cites only a remark'
-status: todo
+status: in-progress
 type: bug
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-07T10:49:35Z
-updated_at: 2026-10-04T15:14:35Z
+updated_at: 2026-11-15T22:26:00Z
 parent: qou-9nnz
 ---
 
@@ -113,4 +113,11 @@ the proper fix, and then this algorithm should cite *that* instead. Not done
 here: authoring the statement belongs with whoever owns the Δ_λ derivation, and
 getting its scope subtly wrong would be worse than the citation above.
 
-x
+## 2026-11-15 — Owner Ruling `Q-9NNZ-1 = 1` Executed (`litlfred/qou#8048`)
+
+- **Owner Ruling (`Q-9NNZ-1 = 1`):** Proceed with both remaining open items under `qou-9nnz` (`qou-7ylg` and `qou-j540`).
+- **Implementation (`litlfred/qou#8048`, commit `7cc1ea945da3aafb646f31234adc81d8872b2519`):**
+  1. Added sibling Lean file `folio/quantum-observable-universe/mass-theory/delta-lambda-dt-index-unification.lean` importing `QOU.BraidsAndKnots.DeltaLambdaGeneralNUnconditional` and re-exporting `QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional` (`0` `sorry`).
+  2. Retired the stale `NOTE:` comment in `folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-sidecar-delta-lambda-closure.ts` (`alg:delta-lambda-closure`) and linked `[prop:delta-lambda-dt-index-unification](#prop:delta-lambda-dt-index-unification)` in `mba-sidecar-delta-lambda-closure.md`.
+  3. Added `"prop:delta-lambda-dt-index-unification"` to `uses[]` on `folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step09b-per-isotope-binding.ts` (`alg:per-isotope-binding`) and its `.jsonld` companion, and linked `[prop:delta-lambda-dt-index-unification](#prop:delta-lambda-dt-index-unification)` in `mba-step09b-per-isotope-binding.md`.
+- **Status:** Kept `in-progress` pending merge of `litlfred/qou#8048` and owner sign-off.
