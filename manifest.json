@@ -1,7 +1,7 @@
 {
   "$schema": "state-manifest/v1",
-  "status": "seed",
-  "authoritative": false,
+  "status": "authoritative",
+  "authoritative": true,
   "keyedBy": "tip",
   "source": {
     "ref": "main",
@@ -15,5 +15,6 @@
       "files": 5660
     }
   ],
-  "refreshedAt": "2026-11-15T17:11:19Z"
+  "refreshedAt": "2026-11-15T17:12:15Z",
+  "authoritativeSince": "2026-11-15T17:12:15Z"
 }
