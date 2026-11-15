@@ -22,7 +22,14 @@ $$
 
 Evaluating at $k = 9$ gives $\delta_q(T_{2,9}) = q^{9} - q^{-9} = h\,[9]_q$.
 
-For the $3$-strand torus knot $T_{3,5}$, the Rosso-Jones formula computes the categorical trace in $H_3(q)$. Summing the contributions from $V_{(3)}$, $V_{(2,1)}$, and $V_{(1,1,1)}$ with their respective eigenvalue powers yields $\delta_q(T_{3,5}) = q^{10} - q^{-10} = h\,[10]_q$.
+For the $3$-strand torus knot $T_{3,5} = \widehat{(\sigma_1\sigma_2)^5}$, the same unweighted sum over $V_{(3)}$, $V_{(2,1)}$ and $V_{(1,1,1)}$ does **not** give $h\,[10]_q$. The element $(\sigma_1\sigma_2)^5$ acts on $V_{(3)}$ by $q^{10}$ and on $V_{(1,1,1)}$ by $q^{-10}$. On the $2$-dimensional $V_{(2,1)}$, $\sigma_1\sigma_2$ has eigenvalues $\omega, \omega^2$ with $\omega = e^{2\pi i/3}$, so its fifth power has trace $-1$. The sum is
+
+$$
+  q^{10} - 1 + q^{-10} \;
+eq\; q^{10} - q^{-10}.
+$$
+
+The decomposition below therefore holds only with $\delta_q(T_{3,5})$ **set** to $q^{10} - q^{-10} = h\,[10]_q$; that value is not the trace sum, and no derivation of it from $T_{3,5}$ is given here. The value of $\alpha_{EM}$ itself comes from [`prop:em-coupling-projection`](#prop:em-coupling-projection) and is unaffected.
 
 Substitution produces the result:
 
