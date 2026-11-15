@@ -95,4 +95,18 @@ theorem not_int_factors_through_centre_unconstrained :
   have h1 := LinearMap.congr_fun hμ 1
   simp [zeroCentreInstance] at h1
 
+/-- **Repaired form of the removed axiom.** If the trace is invariant under
+    the centre projection, `intA (π_Z a) = intA a`, then it factors through
+    the centre: `intA = μ ∘ π_Z` with `μ := intA|_Z`.
+
+    The content is entirely in the hypothesis. For `H_n(q)` it is the
+    statement that the Markov trace sees only Wedderburn residues, which is
+    still to be proved for the concrete `π_Z`. -/
+theorem int_factors_through_centre_of_invariant
+    {R : Type*} [CommRing R] {A : Type*} [Ring A] [Algebra R A]
+    [I : SemisimpleFrobeniusHeckeLike R A]
+    (hinv : ∀ a : A, I.intA (I.piZ a : A) = I.intA a) :
+    ∃ μ : I.Z →ₗ[R] R, I.intA = μ.comp I.piZ :=
+  ⟨I.intA.comp I.Z.subtype, LinearMap.ext fun a => (hinv a).symm⟩
+
 end QOU.WedderburnMass

@@ -1,4 +1,5 @@
 import QOU.Basic
+import Mathlib.Algebra.Algebra.Defs
 
 
 /-!
@@ -60,6 +61,41 @@ theorem QResolvent.not_first_identity :
   intro h
   have := h ⟨id, 0, id, fun _ => rfl⟩ ⟨id, 1, id, fun _ => rfl⟩ 1
   simp at this
+
+
+/-- **q-Resolvent in an algebra (repaired form).**
+
+    `A` is an algebra over a commutative ring `K` (in the paper, the
+    convolution algebra `𝓗_q` over the ground ring). The spectral parameter
+    is a scalar `s : K`, and `R` is a two-sided inverse of `s + Δ`. Unlike
+    `QResolvent`, this ties `R` to `s`. -/
+structure QResolventAlg (K A : Type*) [CommRing K] [Ring A] [Algebra K A] where
+  /-- The q-Laplacian `Δ̂_q`. -/
+  delta_q : A
+  /-- The spectral parameter. -/
+  s : K
+  /-- The resolvent `R_q(s)`. -/
+  R : A
+  /-- `(s + Δ) R = 1`. -/
+  left_inv : (algebraMap K A s + delta_q) * R = 1
+  /-- `R (s + Δ) = 1`. -/
+  right_inv : R * (algebraMap K A s + delta_q) = 1
+
+/-- **First resolvent identity** (repaired form of the removed axiom).
+    For two resolvents of the same `Δ`:
+    `R(s₁) − R(s₂) = (s₂ − s₁) R(s₁) R(s₂)`. -/
+-- Ref: [kassel1995] Quantum Groups, §IV.4
+theorem QResolventAlg.first_identity {K A : Type*} [CommRing K] [Ring A] [Algebra K A]
+    (R₁ R₂ : QResolventAlg K A) (h : R₁.delta_q = R₂.delta_q) :
+    R₁.R - R₂.R = algebraMap K A (R₂.s - R₁.s) * (R₁.R * R₂.R) := by
+  have hd : algebraMap K A (R₂.s - R₁.s)
+      = (algebraMap K A R₂.s + R₂.delta_q) - (algebraMap K A R₁.s + R₁.delta_q) := by
+    rw [map_sub, h]; abel
+  calc R₁.R - R₂.R
+      = R₁.R * (algebraMap K A (R₂.s - R₁.s) * R₂.R) := by
+        rw [hd, sub_mul, mul_sub, R₂.left_inv, mul_one, ← mul_assoc, R₁.right_inv, one_mul]
+    _ = algebraMap K A (R₂.s - R₁.s) * (R₁.R * R₂.R) := by
+        rw [← mul_assoc, ← Algebra.commutes, mul_assoc]
 
 end
 
