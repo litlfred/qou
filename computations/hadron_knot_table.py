@@ -89,6 +89,13 @@ _XCHECK_REL = mp.mpf("1e-9")
 
 _HE = HeckeEngine(111, 100)  # ground-state ordering only (q-independent)
 
+# `binding_energy`'s SDP leg (`sdp_cross_channel`) needs cvxpy; without it the
+# leg falls back to a scalar LP whose status is not `optimal`, and the leg is
+# SILENTLY 0.0 (measured: deuterium -15.81 MeV without, +0.54 MeV with). The
+# witness `environment` block does not list cvxpy, so record it here.
+import importlib.util as _ilu  # noqa: E402
+_HAS_CVXPY = _ilu.find_spec("cvxpy") is not None
+
 
 def _hm0(nf, c, d, gen):
     """NF × (c·σ_gen + d·I) in H₃(q) at the mpf q — same structure
@@ -438,6 +445,7 @@ def _save_witness(results):
     w.add_parameter("z_squared", fmt(_Z2))
     w.add_parameter("pn_interface_offset", fmt(_D_PN0))
     w.add_parameter("frobenius_tolerance", mp.nstr(_FROB_TOL, 3))
+    w.add_parameter("cvxpy_available", _HAS_CVXPY)
     w.add_parameter("n_atoms_expected", len(ATOMS))
     w.add_parameter("n_atoms_computed", len(results))
     w.add_parameter("total_nf_entries", total_terms)
@@ -489,13 +497,16 @@ def _save_witness(results):
         "float64 conic solve, so no exact source exists to carry; it is "
         "left a float rather than padded. It also depends on whether cvxpy "
         "is installed (the SDP leg is 0.0 without it), which the "
-        "environment block does not record."))
+        "environment block does not record — see parameters.cvxpy_available."))
     w.add_data("atoms", results)
     w.save()
 
 
 results = []
 print(f"Hadron-level knot table ({len(ATOMS)} atoms)")
+if not _HAS_CVXPY:
+    print("⚠ cvxpy not installed: binding_energy's SDP leg will be 0.0 "
+          "(scalar-LP fallback); B_MeV is then the degraded branch.")
 print(f"q = {mp.nstr(_Q0, 20)}, basis = {{γ, σ₀, σ₁, L₊, L₋, e⁻}}")
 print()
 print(f"{'Atom':>12} {'A':>3} {'tr_M':>14} {'B(MeV)':>10} {'cross_sum':>11} {'δ_xchan':>10} {'Frob':>5}")
