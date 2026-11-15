@@ -8,7 +8,7 @@ tags:
     - needs-owner
     - convention-d
 created_at: 2026-11-15T18:54:18Z
-updated_at: 2026-11-15T18:55:48Z
+updated_at: 2026-11-15T18:56:18Z
 parent: qou-avtq
 ---
 
@@ -28,3 +28,7 @@ Status: open. No fitted asymmetry may be used; any labelling choice (which basis
 ## 2026-11-15 19:00Z step 3 result
 Level-2 (gl₂ Jimbo) D trace restricted to weight spaces: n/p = q^∓2 exactly, the same for the half twist, the full twist and γγ V³. |ΔΦ| = 2 ln q (Δm = 0.7814 MeV, −39.58 % vs CODATA, comparison only). Mechanism: K^{⊗3} is the scalar q^{±1} on the p and n weight spaces, and the plain traces agree. Derived: the magnitude. Not derived: the sign, i.e. which basis vector is u. Sector-normalised: n/p = 1. Probe np_level2_weight_space_probe.py (PR #7966, audit §13).
 Next: find independent corpus input that fixes the orientation (e.g. the charge/weight of the γγ core).
+
+
+## 2026-11-15 step 4 (orientation), partial
+A grep of folio/ content and Lean for an isospin orientation convention (e₁ = u, highest-weight = up, etc.) found none. That is the surface searched, not a full six-path check. Note that the published splitting formula Δm = α·|ΔΦ| uses an absolute value, so the 2 ln q magnitude does not depend on the orientation. The orientation only matters for the claim 'n heavier than p', which needs a monotone mass ↔ trace relation the corpus does not state in this formula.
