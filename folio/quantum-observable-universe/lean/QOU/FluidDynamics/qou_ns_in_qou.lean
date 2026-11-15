@@ -18,10 +18,12 @@ is the open wall (`bean qou-innq`); it is deliberately **not** asserted.
 
 Given a QOU, its defining **observability axiom** `Hom_𝐂(𝟙, Ad(A)) = 0` forces
 irreducibility of the adjoint, hence a nonzero Euler characteristic `χ(A)`
-(`qou-obstruction-reduction`), hence — via Kummer non-divisibility — a nonzero
-NS obstruction `NS(A) = e(ξ)|_Σ` (`ns-obstruction`, `ns-kummer-specialisation`),
-which is by definition the QOU's internal q-NS singularity at `q = 1`
-(`ns-obstruction-tower`, `blowup-yekutieli`). The capstone
+(`qou-obstruction-reduction`), hence a nonzero **global** Euler class
+`NS(A) := e(ξ) ∈ H²(S, ℤ)` of the Reeb bundle (its degree is `χ(A)`; item 1 of
+`thm:ns-singularity-descartes`), which is by definition the QOU's internal q-NS
+singularity at `q = 1` (`ns-obstruction-tower`, `blowup-yekutieli`). The
+obstruction lives on the whole surface `S`, not on the vortex locus `Σ`: every
+class in `H²` restricts to zero on a one-dimensional `Σ` (item 3). The capstone
 `qou_internal_ns_singular` composes these QOU-structural steps.
 
 **Every QOU is internally singular — from the axiom, not from `χ = -6`.** The
@@ -57,12 +59,17 @@ single scalar `ξ·curl ξ` (`prop:core-levi-form`), and branch (A) is refuted u
 that reading by a Beltrami solution (`beltrami_refutes_branchA`). No Lean
 declaration consumed them. Bean `qou-fm7s`.
 
-**Not changed here, flagged for the owner.** The base chain below still models
-`NS(A) = e(ξ)|_Σ` and assumes `χ(A) ≠ 0 → NS(A) ≠ 0`. The restated
-`thm:ns-singularity-descartes` (item 3) says every class restricts to zero on a
-one-dimensional `Σ`. Under that reading `chi_forces_obstruction` is not
-satisfiable with `obstruction = e(ξ)|_Σ`, and `descartesQOU` models the obstruction
-by the global class `χ = -6` on `S`, not by its restriction to `Σ`.
+## The obstruction is the global class (2026-11-15, owner decision, PR #7747)
+
+Until this date the base chain modelled `NS(A) = e(ξ)|_Σ` and justified
+`χ(A) ≠ 0 → NS(A) ≠ 0` by Kummer non-divisibility. That contradicts item 3 of the
+restated `thm:ns-singularity-descartes`: `H²(Σ, ·) = 0` for one-dimensional `Σ`, so
+`e(ξ)|_Σ = 0` always and the old step 2 could not be instantiated. The owner chose
+to restate the chain on the global class. The obstruction is now `e(ξ) ∈ H²(S, ℤ)`,
+and step 2 is the degree statement `deg e(ξ) = χ(A)`, so `χ(A) ≠ 0` gives
+`e(ξ) ≠ 0` with no Kummer input. `descartesQOU` already modelled the global class
+(`χ = -6`), so it is unchanged. The cost is that the chain no longer localises the
+singularity on `Σ`; that localisation was the withdrawn Levi step.
 
 ## Base ring (§7c)
 Generic `{k : Type*} [CommRing k]` for the obstruction; `χ(A) : ℤ`; other data
@@ -89,15 +96,16 @@ structure QOUFluidUniverse (k : Type*) [CommRing k] where
   observability_holds : observability
   /-- The Euler characteristic `χ(A) : ℤ`. -/
   eulerChar : ℤ
-  /-- The NS obstruction value `NS(A) = e(ξ)|_Σ`. -/
+  /-- The NS obstruction `NS(A) := e(ξ)`, the **global** Euler class of the Reeb
+      bundle in `H²(S, ℤ) ≅ ℤ` (not its restriction to `Σ`, which is always 0). -/
   obstruction : k
   /-- "The QOU's internal q-NS flow at `q = 1` is singular" — categorical
       internal observable (`blowup-yekutieli`), NOT the `ℝ³` PDE. -/
   internalBlowup : Prop
   /-- **Step 1 (`qou-obstruction-reduction`):** observability forces `χ(A) ≠ 0`. -/
   observability_forces_chi : observability → eulerChar ≠ 0
-  /-- **Step 2 (`ns-obstruction`, `ns-kummer-specialisation`):** `χ(A) ≠ 0`
-      forces `NS(A) ≠ 0` (Kummer non-divisibility). -/
+  /-- **Step 2 (item 1 of `thm:ns-singularity-descartes`):** `deg e(ξ) = χ(A)`,
+      so `χ(A) ≠ 0` forces the global class `NS(A) ≠ 0`. -/
   chi_forces_obstruction : eulerChar ≠ 0 → obstruction ≠ 0
   /-- **Step 3 (`ns-obstruction`):** a nonzero NS obstruction *is*, by
       definition, the QOU's internal q-NS singularity (NS-singular ⟺ NS(A)≠0). -/
@@ -105,15 +113,16 @@ structure QOUFluidUniverse (k : Type*) [CommRing k] where
 
 variable {k : Type*} [CommRing k]
 
-/-- **The QOU's NS obstruction is nonzero.** Given a QOU, `NS(A) ≠ 0`. -/
--- Ref: [manuscript] fluid-dynamics/ns-obstruction, ns-kummer-specialisation
+/-- **The QOU's NS obstruction is nonzero.** Given a QOU, the global class
+    `NS(A) = e(ξ) ≠ 0`. -/
+-- Ref: [manuscript] fluid-dynamics/ns-singularity-descartes
 theorem qou_obstruction_nonzero (U : QOUFluidUniverse k) : U.obstruction ≠ 0 :=
   U.chi_forces_obstruction (U.observability_forces_chi U.observability_holds)
 
 /-- **Given a QOU, its internal q-NS flow at `q = 1` is singular.**
 
     Derived by composing the QOU's own structural steps: observability ⇒
-    `χ(A) ≠ 0` ⇒ `NS(A) ≠ 0` ⇒ internal blow-up. A statement **about the QOU** —
+    `χ(A) ≠ 0` ⇒ `e(ξ) ≠ 0` in `H²(S)` ⇒ internal blow-up. A statement **about the QOU** —
     it does **not** resolve the classical Navier–Stokes problem, and
     `internalBlowup` is the categorical internal observable, not the `ℝ³` PDE. -/
 -- Ref: [manuscript] fluid-dynamics/ns-obstruction-tower, blowup-yekutieli
@@ -130,8 +139,8 @@ theorem qou_not_internally_regular (U : QOUFluidUniverse k)
 /-! ### Non-vacuity: the concrete Descartes QOU -/
 
 /-- **The Descartes QOU** (`χ(A) = -6`, Bring's surface; `ns-singularity-descartes`)
-    as a concrete `QOUFluidUniverse ℤ`. The obstruction is modelled by the scalar
-    `-6 = χ(A)` and `internalBlowup` is *defined* as `NS(A) ≠ 0` (the categorical
+    as a concrete `QOUFluidUniverse ℤ`. The obstruction is the global class
+    `e(ξ) ∈ H²(S, ℤ) ≅ ℤ`, modelled by its degree `-6 = χ(A)` and `internalBlowup` is *defined* as `NS(A) ≠ 0` (the categorical
     meaning of NS-singular). Every base field discharges sorry-free: `-6 ≠ 0` is
     decidable arithmetic, and Step 3 is `Iff.rfl`. -/
 def descartesQOU : QOUFluidUniverse ℤ where
