@@ -9,7 +9,8 @@ import Mathlib.LinearAlgebra.Matrix.DotProduct
 import Mathlib.LinearAlgebra.FreeModule.Finite.Matrix
 
 /-!
-# The `U_q(gl_d)` commutant of `(K^d)^{⊗n}` is the Jimbo image (G3.4, modulo the bound (★))
+# The commutant of `E_i`, `lowerOp`, Cartan elements and weight projectors on `(K^d)^{⊗n}` is the
+# Jimbo image (G3.4)
 
 Bean `qou-gl34`. Scoping: `docs/audits/2026-11-15-gl34-qschur-shortcut-scoping.md`.
 
@@ -412,8 +413,11 @@ theorem sub_inv_ne_zero_of_notRootOfUnity {q : L} (hq : q ≠ 0)
   exact mul_inv_cancel₀ hq
 
 /-- **G3.4**: over a linearly ordered field and for `q` not a root of unity, the image of
-`H_{m+1}(q)` under the `gl_d` Jimbo action is exactly the commutant of the `U_q(gl_d)` operators
-(`E_i`, `F_i`, Cartan elements, weight projectors) on `(L^d)^{⊗(m+1)}`. -/
+`H_{m+1}(q)` under the `gl_d` Jimbo action is exactly the commutant of the operators in `uqGens`:
+`E_i = raiseOp`, `lowerOp`, the Cartan elements and the weight projectors on `(L^d)^{⊗(m+1)}`.
+Scope: this is not yet the commutant of `U_q(gl_d)` itself. That needs (1) the weight projectors to
+be polynomials in the Cartan elements at generic `q`, and (2) `lowerOp` and the standard `Δ(F)` to
+generate the same algebra with the Cartan elements. Both are open (bean `qou-gl34`). -/
 theorem range_jimbo_eq_commutant [LinearOrder L] [IsStrictOrderedRing L] [NeZero d]
     (q : L) (hq : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) (m : ℕ) :
     LinearMap.range (jimbo d q hq m).toLinearMap = commutant (uqGens q m) :=
