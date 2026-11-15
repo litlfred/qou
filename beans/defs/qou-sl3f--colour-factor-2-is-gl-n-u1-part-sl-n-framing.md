@@ -8,7 +8,7 @@ tags:
     - quark-state
     - colour
 created_at: 2026-11-15T09:00:00Z
-updated_at: 2026-11-15T09:00:00Z
+updated_at: 2026-11-15T08:30:00Z
 parent: qou-qs4c
 ---
 
@@ -41,3 +41,11 @@ observables without a separate ruling.
 
 **Hypothesis only, not tested:** the stripped u1 factor q^(1/N) per crossing reads as charge
 (1/N)(1/N)·N, i.e. baryon number 1/N per quark.
+
+**2026-11-15 update: owner ruling G5 = (a)**, relayed by the qou-qs0e coordinator (session_01M5GA1LmsEf8tSMxFjMkmnn). I did not see it first-hand.
+Ruling: adopt the SU(N) frame for colour observables ONLY. z, convention D and the writhe-normalised tr_M stay as ruled.
+Implemented on PR #7830:
+- Lean is verified at 9225bee9d.
+- New blocks in eightfold-way sec:color-algebra: prop:sl-n-color-framing (lean.ref forced_framing_eq_inv) and rem:sl-n-color-frame-scope, which holds the scoped convention, the det T re-scope and the 33.7 -> 3 fact.
+- level_three_colour_channel_probe: re-scope note at the top of the docstring, plus a caveat. Its producer was re-run; values are unchanged.
+Remaining: owner merge go. Sidecars (.qa.json / .jsonld) were not generated, because the folio-assistant pipeline is not available in this container.
