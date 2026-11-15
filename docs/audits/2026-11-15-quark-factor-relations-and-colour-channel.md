@@ -38,8 +38,20 @@ on ℓ(λ) ≤ r.
 | 3 | 10 | 8 (×2) | 1 | colour SU(3), *or* flavour SU(3) (u,d,s) |
 | 6 (spin × flavour, SU(6)) | 56 | 70 (×2) | 20 | spin-flavour |
 
-The dimensions are the hook-content products ∏(N + c)/h. Both 2⁽³⁾ = 4 + 2·2 and
+The dimensions are the hook-content products ∏(N + c)/h. Both 2³ = 4 + 2·2 and
 3³ = 10 + 2·8 + 1 check.
+
+**What is already proved here, so it is not re-derived.**
+- **N = 2 is unconditional.** `QOU/SchurWeyl/JimboActionKernel.lean` contains
+  `jimboTrace_eq_wtrace`, `ker_jimbo_eq_traceRadicalIdeal` (the kernel is exactly the blocks with
+  three or more rows, over ordered fields) and `finrank_range_jimbo_eq_catalan`.
+- **Level r is unconditional only for the weight.** `wenzlWeight_eq_zero_iff` holds at general r.
+- **There is no N = 3 or general-N Jimbo action** (coordinator gap G1). So "level 3 = gl₃ Schur–Weyl" is
+  established for the weight, not for the action.
+- **The level-3 colour weight is not small.** `y_(1³) = q⁶/(Φ₃Φ₆)³`, which is `1/27` at q = 1, so it is
+  present at order zero
+  (`docs/audits/2026-10-10-level3-su3-channel-test.md` §5). The O(h⁴) statement there concerns
+  one element, `tr⁽³⁾(β_Bor) − tr⁽²⁾(β_Bor)`, and not the colour channel.
 
 **The ambiguity at level 3.** Colour and the eightfold way are **both** level-3 Schur–Weyl. The
 octet/decuplet/singlet split (3) ↔ 10, (2,1) ↔ 8 twice, (1³) ↔ 1 is exactly the colour split, so
