@@ -8763,3 +8763,12 @@ Asked: does the 2026-08-30 "no gluon" ruling exclude the 2-letter gluon tail in 
 
 
 2026-11-15: moved under epic `qou-wxhi` (c_k ladder under convention D). Previous parent kept in history.
+
+
+## 2026-11-15 — route 1 (full Hecke tower) cannot supply the missing factor without a free choice
+
+Owner chose "full Hecke tower first" for the factor above 1 that the ruled z_D base needs (1.20016 on the dashboard cell, 1.75924 at order-zero E₀).
+
+- **Trace side: nothing to sum.** `QOU.SchurWeyl.HeckeColimitFamilyTrace.trFam_inclLE` (sorry-free, any CommRing, any z) shows the iterated inclusion preserves the Markov trace. So the z_D trace of a fixed element already *is* its full-tower value. It is also exact in q, so all q-orders are already in it.
+- **E₀ side: the tower factor carries a free scale.** Per qou-y3bm the true sum is 1/(1 − ℏ_q²λ₁) with λ₁ = ℏ_q/L_q², and L_q is free in the corpus. Measured at the proton pin (mp.dps 40), L_q would have to be **0.0745627** (λ₁ = 17.82) to give 1.20016, or **0.0474749** (λ₁ = 43.96) to give 1.75924. Both are above the divergence threshold √(ℏ_q³) = 0.0311882, so the tower can supply any factor in (1, ∞). Picking L_q that way is selection against the target. The one corpus-derived value, Kelvin L_q = L, gives 1.00097, which is −0.885 % against the implemented tower and moves away from CODATA.
+- **Verdict, scope (a):** the full tower does not supply the factor unless the free L_q is chosen, so route 1 reduces to the open L_q modelling call (qou-y3bm successor). The live sources are the element (qou-99qc) and the N=3 colour trace (PR #7896).
