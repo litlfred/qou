@@ -1075,6 +1075,7 @@ import QOU.Archimedean.BlochRigidity.LinearSections
 import QOU.Archimedean.BlochRigidity.ReebPlane
 import QOU.Archimedean.BlochRigidity.Regularity
 import QOU.Archimedean.BlochRigidity.Rigidity
+import QOU.Archimedean.BlochRigidity.Smooth
 import QOU.Archimedean.BlochRigidity.Vanishing
 import QOU.Archimedean.BringEllipticFactor
 import QOU.Archimedean.SigmaJGeometricCarrier
