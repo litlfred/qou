@@ -95,9 +95,8 @@ is the pin all production compute defaults to. All
 three are convention **C**; under convention D the same extraction gives
 $-974.43$, which is the scoping the previous section describes.
 
-**The other five entries are recorded, not verified.** No producer in
-`computations/` publishes $-1.1435$, $-1.2229$, $+3.4976$ or $+57.149$ today —
-the canonical `qbeta-ck-cache` witness stops after one rung by design, because
+**The other five entries are recorded, not verified.** No current computation publishes $-1.1435$, $-1.2229$, $+3.4976$ or $+57.149$ today —
+the canonical extraction stops after one rung by design, because
 extracting a rung by inverting the target drives the next residual to exactly
 zero. They are retained as the calibration record they were, and should not be
 cited as current extractions.

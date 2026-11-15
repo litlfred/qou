@@ -7,8 +7,7 @@ $(\mu, \nu) \mapsto (\nu, \mu)$ and is involutive on the ladder data.*
 
 ## Established results and open questions
 
-The following supporting facts are verified (witness
-`computations/substrate/whipple-rotation-involution-probe.witness.json`):
+The following supporting facts are verified:
 
 - the interpolating ladder is bar-even, $[d]_{q^{-1}} = [d]_q$ (exact);
 - the Whipple argument exchange $\cosh\eta \leftrightarrow \coth\eta$ is an
@@ -31,8 +30,7 @@ $$
   recurrences forces
   $C(\nu,\mu) = \sqrt{2/\pi}\;e^{-i\pi\nu}/\Gamma(\nu+\mu+\tfrac{1}{2})$,
   which matches the direct $60$-digit compute to $\sim 10^{-40}$ across a
-  grid of generic non-integer, non-half-integer $(\nu,\mu)$ points (witness
-  `computations/substrate/whipple-gamma-constant-gridverify.witness.json`);
+  grid of generic non-integer, non-half-integer $(\nu,\mu)$ points;
 - the order $\mu = \tfrac{1}{2}$ and the half-integer degree are forced by the
   Hoefsmit mixing structure
   ([prop:hoefsmit-toroidal-ladder-locus](../braids-and-knots/hoefsmit-toroidal-ladder-locus.md));
@@ -41,8 +39,7 @@ $$
   (the meson is $d = 2$) the same $\Gamma$-constant identity is exact to
   $\sim 10^{-50}$ — not only at the generic grid points, which deliberately
   avoided the $\mu = \tfrac{1}{2}$ order — and the order-ladder factor reproduces
-  the mixing numerator $d^2 - 1$ at each $d$ (witness
-  `computations/substrate/whipple-physical-windings-probe.witness.json`). This
+  the mixing numerator $d^2 - 1$ at each $d$. This
   is numerical evidence for the modeling layer, not a proof.
 
 **Open** is the identification itself: that the channel rotation of the

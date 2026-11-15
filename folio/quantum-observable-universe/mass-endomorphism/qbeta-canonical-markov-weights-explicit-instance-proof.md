@@ -44,7 +44,7 @@ These are exactly the convention-D values this block already quotes below; what 
 
 **The pre-existing `explicitInstance` is untouched and was never wrong.** It satisfies the class axiom because $z + 2(\tfrac12 - z) + z = 1$ for *any* $z$ — which is precisely why it inhabits the class without being the production weights. It differs from the canonical set on all three blocks.
 
-**It is now the class's default instance** (owner decision, 2026-09-03, bean `qou-6u92`), so a bare `delta_tau_M_canonical q` means the production trace's $\Delta\tau_M$ rather than the $\sqrt q$-bearing toy.
+**It is now the class's default instance**, so a bare `delta_tau_M_canonical q` means the production trace's $\Delta\tau_M$ rather than the $\sqrt q$-bearing toy.
 
 The promotion was made as a **pair** with demoting `explicitInstance` from `instance` to `def`, and the pairing is the point: two global instances of one class is a silent hazard, since resolution takes the later declaration and nothing in the source says so. With exactly one instance, what a bare use means is *stated* rather than inferred. `explicitInstance` remains a first-class inhabitant and every use of it is unchanged — they all name it explicitly with `@` — it is simply no longer a candidate for implicit resolution.
 

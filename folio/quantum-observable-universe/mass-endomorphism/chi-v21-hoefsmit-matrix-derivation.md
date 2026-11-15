@@ -42,7 +42,6 @@ $$
 | `hoefsmit_v21_braid_relation` | $\sigma_0\sigma_1\sigma_0 = \sigma_1\sigma_0\sigma_1$, generic $b$ with $b^2 = d_1d_2+1$ | `fin_cases` + `field_simp` + `nlinarith` |
 | `chi_v21_matrix_trace_identity` | **the 11-crossing matrix-product trace difference** | `simp only` + `Matrix.trace_fin_two_of` + `ring_nf` + `field_simp` |
 
-All theorems sorry-free.
 
 ## Laurent decomposition and the ε^k growth
 
