@@ -59,10 +59,10 @@ namespace QOU.Archimedean
     **2026-11-15 (owner decision, issue #7942):** this was a
     `noncomputable opaque` with no body, which made every statement
     about its values independent of Lean.  It now carries its documented
-    body `Cl_2 θ`.  Consequence: `BringZeroModeBlochClass` has an
-    unconditional instance by the intermediate value theorem
-    (`BringZeroModeClausenWitness.lean`), because its field only asks for
-    *some* real angle.  The root-of-unity (transcendence-obstructed)
+    body `Cl_2 θ`.  Consequence: `BringZeroModeBlochClass` is provable
+    by the intermediate value theorem (`bringZeroModeBlochClass_holds` in
+    `BringZeroModeClausenWitness.lean`, a theorem, not a global instance),
+    because its field only asks for *some* real angle.  The root-of-unity (transcendence-obstructed)
     version is the separate class `BringZeroModeRootOfUnityClass`. -/
 noncomputable def BlochWigner_unit_circle (θ : ℝ) : ℝ := Cl_2 θ
 

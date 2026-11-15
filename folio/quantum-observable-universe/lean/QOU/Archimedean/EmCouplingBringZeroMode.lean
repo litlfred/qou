@@ -56,11 +56,12 @@ documented in `em-coupling-bring-zero-mode.md`.
 
 **Update 2026-11-15 (issue #7942).** `BlochWigner_unit_circle` is now
 *defined* as `Cl_2` (it was an `opaque`), and the class field only asks for
-some real angle `θ`.  So the class has an unconditional instance by the
-intermediate value theorem (`instBringZeroModeBlochClass` in
-`BringZeroModeClausenWitness.lean`).  That instance does **not** identify a
-Bloch class: the open sub-problem above is unchanged and now lives in the
-stronger, root-of-unity class `BringZeroModeRootOfUnityClass` (no instance).
+some real angle `θ`.  So the class is provable by the intermediate value
+theorem (`bringZeroModeBlochClass_holds` in
+`BringZeroModeClausenWitness.lean`), which is a named theorem and **not** a
+global instance.  It does **not** identify a Bloch class: the open sub-problem
+above is unchanged (bean `qou-006b`); its root-of-unity sharpening is
+`BringZeroModeRootOfUnityClass` (no instance).
 
 -- Ref: [leitner2026] prop:em-coupling-bring-zero-mode
 -- Ref: [leitner2026] prop:archimedean-functor-uniqueness
@@ -348,8 +349,8 @@ theorem bring_zero_mode_additive_form
 -- /-- **Faithful instance.** Carries the explicit research-grade conjecture as a sorry.
 --     Since `BlochWigner_unit_circle` is an unconstrained axiom, this cannot be mathematically
 --     proven from first principles without additional axioms on the range of the Bloch-Wigner function.
---     (Superseded 2026-11-15: the function is now `Cl_2` and the instance is
---     `instBringZeroModeBlochClass` in `BringZeroModeClausenWitness.lean`.) -/
+--     (Superseded 2026-11-15: the function is now `Cl_2` and the class is proved,
+--     without a global instance, as `bringZeroModeBlochClass_holds` in `BringZeroModeClausenWitness.lean`.) -/
 -- Per AGENTS.md §3b-cond we provide NO global instance.
 -- instance canonical_bloch : BringZeroModeBlochClass where
 --   -- Ref: [leitner2026] prop:em-coupling-bring-zero-mode — identifying the

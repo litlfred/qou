@@ -14,7 +14,8 @@ The class field is `∃ θ : ℝ, BlochWigner_unit_circle θ = 2/(3π)`.
 * With that body, the field is
   an **intermediate-value fact**: `Cl_2 0 = 0` and `Cl_2 (π/2) = G > 0.915`
   (Catalan's constant), while `2/(3π) < 2/9`.  So some `θ ∈ [0, π/2]` works.
-  This file proves that, sorry-free, and gives the instance.
+  This file proves that, sorry-free (`bringZeroModeBlochClass_holds`), and
+  deliberately gives **no** global instance; see that theorem's docstring.
 
 So the "transcendence obstruction" recorded in the class docstring does **not**
 bear on the class as written: a real angle always exists.  The obstruction is
@@ -64,11 +65,17 @@ theorem bringZeroModeBlochClass_of_eq_Cl_2
   obtain ⟨θ, -, hθ⟩ := exists_Cl_2_eq_bringZeroModeValue
   exact ⟨⟨θ, by rw [h θ, hθ]⟩⟩
 
-/-- **The instance.**  `BlochWigner_unit_circle` is defined as `Cl_2`, so the
-    class holds unconditionally.  Its content is only that `2/(3π)` lies in
-    the range of `Cl₂`; it says nothing about which Bloch class, if any,
-    realises the value (see `BringZeroModeRootOfUnityClass`). -/
-instance instBringZeroModeBlochClass : BringZeroModeBlochClass :=
+/-- **The class holds, but there is deliberately no global instance.**
+    `BlochWigner_unit_circle` is defined as `Cl_2`, so the field is true.  Its
+    content is only that `2/(3π)` lies in the range of `Cl₂`; it says nothing
+    about which Bloch class, if any, realises the value, and that
+    identification (the Yekutieli triple on `{T(2,9), T(3,5)}`) is the open
+    claim the class was written for (bean `qou-006b`).  A global `instance`
+    would let typeclass search discharge every `[BringZeroModeBlochClass]`
+    hypothesis, such as the one on `bring_zero_mode_additive_form`, without
+    the open claim, contrary to §3b-cond.  So this is a named theorem; use it
+    explicitly where the weak (range) reading is what you mean. -/
+theorem bringZeroModeBlochClass_holds : BringZeroModeBlochClass :=
   bringZeroModeBlochClass_of_eq_Cl_2 (fun _ => rfl)
 
 /-- **Corrected statement (conjecture, no instance).**  The content the class
