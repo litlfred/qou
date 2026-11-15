@@ -1,0 +1,45 @@
+A.2 Vector fields and differential forms 451
+of two 1-forms is computed by
+
+(adx + bdy) A (pdx + qdy) = ap(dx A dx) + aq(dx A dy)
++ bp(dy A dx) + bq(dy A dy)
+= aq(dx A dy) + bp(dy A dx)
+= (aq — bp)(dx A dy),
+
+where dx A dx = dy A dy = 0 by anticommutativity. S
+
+Bringing our discussion back to differential geometry, let M be a smooth
+m-manifold. For any 1 < k < m the exterior k-algebra bundle of M whose
+ground set is the disjoint union
+
+No = LJ Ar?)
+peM
+
+is defined by the projection map z that takes vy € A*(T?(M)) and returns
+mv) = p. If (U,@) is a chart on M then for any p € U the cotangent vec-
+tors ddi|p,...,dbmlp form a basis for T?(M). Thus, the k-forms d¢j|p =
+doi,|pA-+-Ad¢i,|p form a basis for A‘(T?(M)) as I ranges over strictly increas-
+ing tuples in {1,...,m}*. For any map w : M > A‘(M) with wlp € TP(M)
+this means we can write w as a sum over d®, as I ranges over subsets of [d] of
+cardinality k,
+lp = » c(p)ddjlp forall p€ U.
+
+Wak
+
+As for the tangent and cotangent bundles, we can give A*(M) a smooth struc-
+ture using charts (U, ¢) and the coefficient functions c;. A differential k-form
+on M is a section of A‘(M) under this structure, and a mapping from M to
+A‘(M) is a differential k-form if and only if the coefficient maps cy are all
+smooth as (U, #) ranges over the charts of M. The set of differential k-forms is
+denoted E*(M) and the union of the E*(M) over all k is denoted E*(M). From
+now on we restrict to this differential setting and use the terms k-form and dif-
+ferential k-form interchangeably. A top level form on a manifold of dimension
+m is any m-form.
+
+Example A.18. Once again, let M = S! be the one-dimensional circle in the
+plane, let U be the halfcircle of points in S! with y > 0, and let ¢ be the chart
+map 4(x,y) = x with inverse ¢7!(x) = (x, V1 — x2). If w is a 1-form on S!
+then for (a,b) € U we can write wa, = f(a, b)ddlay, where f(x, y) is smooth
+at (a,b). The criterion of smoothness means the real function (f o @7!)(x) =
+
+f(x, V1 — x*) is smooth at x = a. 4

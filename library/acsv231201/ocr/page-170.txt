@@ -1,0 +1,27 @@
+152 Laurent series, amoebas, and convex geometry
+
+Figure 6.5 Left: The Newton polytope of 1 — x — y with the normal cones at each
+vertex. Right: A drawing of amoeba(1 — x — y) with the recession cones of each
+component of the complement added.
+
+Corollary 6.29. Let f(z) be a rational function and let {r,,} be a sequence of
+vectors in Z4 going to infinity in the non-zero direction # € R4. Then there
+is a component B of amoeba(f)° such that the convergent Laurent expansion
+F(Z) = Dez dnz” with domain of convergence D = Relog™!(B) has ay, = 0
+for all but finitely many n.
+
+Proof For any non-zero vector # € R“ there exists a vertex n € N fy such
+that {n + tf : t > O} does not intersect N; (any of the vertices of Ny on
+the hyperplane touching the boundary of NV’; with outward normal # have this
+property). The desired result then follows from Corollary 6.28 where B is the
+component of amoeba(f)° with order n, whose existence is guaranteed by The-
+orem 6.18. im
+
+Corollary 6.29 turns out to be crucial to our framework for ACSV. Roughly,
+we represent a sequence of interest as a Cauchy integral then move the point
+a in the domain of integration Relog”'(a) from its starting component of
+amoeba(f)° to another component, picking up a residue integral over an in-
+tersection cycle along the way. By moving x into a component where series
+coefficients are eventually zero, we only need to approximate the residue in-
+tegral, which can be done using saddle point techniques. Fully describing this
+argument takes up the majority of Chapter 7.

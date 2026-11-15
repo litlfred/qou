@@ -1,0 +1,47 @@
+64 Univariate asymptotics
+
+where p is a singularity of f(z) with minimal modulus. The exponential growth
+rate of a, can be viewed as the coarsest measure of its asymptotic behavior.
+
+Just as for rational functions, the singularities of f(z) give contributions to
+the asymptotic behavior of a,,. For the rest of this section, we restrict to the
+case where f locally behaves like a rational function near the singularities that
+determine dominant asymptotics of a,. The asymptotic contributions of more
+general types of singularities are discussed in Section 3.4 below.
+
+Definition 3.5 (poles and meromorphic functions). We say that f has a pole
+(or polar singularity) of order x € Z,o at the point z = w if f(z) cannot be ana-
+lytically continued to z = w but (z — w)* f(z) can, and k is the smallest positive
+integer with this property. A pole of order one is usually called a simple pole.
+If f is either analytic or has a pole at every point of a set D c C then we say
+f(2) is a meromorphic function on D.
+
+Suppose now that f(z) is analytic on a closed disk D = {z € C: |z| < S}
+for some S > 0, except at a nonempty collection {p1,...,;} of poles of orders
+K1,...,k; Which lie in the interior of D (by our running assumption that a,
+grows exponentially, the p; must be non-zero). If C_ is any positively oriented
+circle around the origin with radius less than R = minj|p,|, and C, is the
+positively oriented circle around the origin with radius S, then the Cauchy
+residue theorem implies
+
+1 do ad _< el
+ami [, (set ~ an J, FOr = DRS fo]. 6)
+
+For readers unfamiliar with complex residues, the residue of a function g(z) at
+a pole z = w of order k can be defined by the explicit formula
+
+1 — fae A
+Res @(2) = Gy lim |= (c- 0) x) . (3.7)
+
+which for a simple pole reduces to
+Res g(z) = lim [tc - w)g(2)| . (3.8)
+
+It is a classic result in complex analysis that if z = w is a pole of f(z) of order
+k then for z in a neighborhood of w we can write f as a ratio f(z) = p(z)/q(z)
+of analytic functions with p(w), q¢(w) # 0 and gw) = ++» = q—Yw) = 0
+(taking a series expansion of g at z = w shows the converse is also true). We
+can use such a representation to compute the residue of f at z = w.
+
+Lemma 3.6. Under the assumptions of the previous paragraph,
+
+Res f(z"! = w" Pn),

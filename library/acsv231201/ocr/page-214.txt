@@ -1,0 +1,31 @@
+196 Overview of analytic methods for multivariate GFs
+
+While critical points are generically nondegenerate, we now give one com-
+binatorial example in which a critical point w is indeed degenerate and con-
+tributes more than one generator.
+
+Example 7.22 (bi-colored supertrees). Example 9.32 in Chapter 9 looks at
+a rational generating function counting bi-colored supertrees (certain planar
+binary trees that need not concern us here). The singular variety is the smooth
+surface defined by the vanishing of Q(x, y) = Py? + 2x°y — 2x3 y + 4y + x- 2.
+When # = (1/2, 1/2) then there are two nondegenerate critical points, u and v,
+together with a critical point w near which /» is quartic (so doubly degenerate).
+Accordingly there is one cycle yy, one cycle yy, and three cycles y which
+may be configured all to enter w along the solid arc and exit along one of the
+three dashed arcs shown in Figure 7.14. 4
+
+-044
+
+-0.6 4
+
+Figure 7.14 The supertree generating function yields two nondegenerate critical
+points and one doubly degenerate critical point.
+
+7.3 The general case via stratified Morse theory
+
+We now drop the assumption that the singular variety V is smooth. As detailed
+in Appendix D, the correct notion for us is the concept of a Whitney stratified
+space: every real or complex algebraic (or analytic) variety admits a Whitney
+stratification, and the analytic constructions we require for asymptotics can
+be built for stratified spaces. In this chapter we recount only the results from
+Appendix D that we directly require. Although we typically assume that F is

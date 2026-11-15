@@ -1,0 +1,47 @@
+474 Algebraic topology
+
+elements 0% ®Tp_x as 7; ranges over a basis for C; and T,_, ranges over a basis
+for C’” ,. The boundary operator 0 of C is defined by (7% ® Tnx) = (Oo) ®
+Tre + (—1)'o, @ (O"T,_-4). The product Z = X x Y of two simplicial complexes
+X and Y is naturally a cell complex, and this definition is constructed so that
+the product chain complex C(X) ®@ C(Y) is isomorphic [Mun84, Theorem 57.1]
+to the cellular chain complex of Z.
+
+Example B.15. Consider C = A, as a cell complex with two 0-cells {[{0], [1]}
+
+and one 1-cell 7 = [0,1] oriented from 0 to 1, meaning that do, = [1] -
+[0]. Then C x C has four 0-cells {(0, 0), (1,0), (0, 1), (1, 1}, four 1-cells {0 x
+[0], x [1], [0] x 7, [1] x v1}, and one 2-cell 7 x oy. 4
+
+Exercise B.7. Write the circle §! as a cell complex, then describe the product
+cell complex S!xS'. Compute the homology of S!xS! from this cell complex.
+
+The homology of a product is given by the Kiinneth formula. Because we
+study homology with complex coefficients, the formula is relatively simple.
+
+Theorem B.16 (Kiinneth product formula). IfC’ andC” are the singular chain
+complexes for two cell complexes then there is a natural isomorphism
+
+A AC’) @ HC”) > HC @C").
+
+ptq=n
+Proof See [Mun84, Theorem 58.5]. oO
+
+Exercise B.8. Use the Kiinneth formula to compute the homology of S! x S!
+and verify it is the same as you computed in Exercise B.7.
+
+Generalizing the attaching maps for cell complexes, the attachment of a
+space Y to a space X along a closed subset Yo C Y by the map ¢ : Yo — X is
+the topological quotient (X LI Y)/@ obtained from the disjoint union of X and
+Y by identifying each y € Yo with ¢(y) € X. The triple (Y, Yo, 6) is known as
+attachment data.
+
+Remark. When ¢ is one-to-one, attachments are more or less the same as
+unions; that is, both X and Y naturally embed in the attachment and their union
+covers the attachment. In general, an attachment can be thought of as a union of
+a space X with a quotient Y/¢, where points y;, y2 € Yo are identified if (1) =
+(y2). While the two spaces in a union play symmetric roles, the attachment
+of a space Y to a space X is described asymmetrically. This coincides with the
+framework of filtered spaces built up by successive attachments, described in
+the next appendix. Thus attachments, while not entirely new, provide a useful
+way to build up a space.

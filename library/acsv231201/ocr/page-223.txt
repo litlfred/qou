@@ -1,0 +1,47 @@
+7.3 The general case via stratified Morse theory 205
+
+Theorem 7.35. Fix * and assume there are no critical values at infinity. Let
+Z1,.++,2%m enumerate the stratified critical points of V,, in (weakly) decreas-
+ing order of the height function hg, where the stratum containing z; has com-
+plex codimension k,. If all critical points are quadratically nondegenerate then
+there are cycles y\,...,Ym on V,, along with a basis Bj1,..-Bj,s; for the kj-
+homology of the normal Morse data, with the following properties.
+
+(a) hp achieves its maximum on yj at 2};
+
+(b) yj = (BPS, OB);
+
+(c) A basis for the integer homology group Hy(M, —09) can be formed by cy-
+cles 74; = yj X Bj; which, for fixed j, form a basis for G(z;).
+
+Proof Theorem 7.33 and part (i) of Definition 7.32 imply (a) and (b). Com-
+paring parts (v) and (vi) of the definition with Theorem 7.30 gives (c). The
+fact that {o';;} is an integer homology basis follows from the lack of torsion in
+Ha(M), which follows from the fact that V, and M have the homotopy type of
+a d-dimensional cell complex (see Theorem D.23), with no boundaries in di-
+mension d. Because the Morse theoretic results identify the homotopy type of
+the attachments, not just the relative homology groups, the cycles o-;,; generate
+homology with both integer and rational coefficients. ia)
+
+While this theorem may look somewhat abstract, its power lies in its gener-
+ality, and typical applications can be simple. For instance, in Figure 7.19 we
+have a surface V with complement M := C2 \ V where H>(M) has one gen-
+erator local to a critical point in a stratum of complex dimension 0 and two
+quasi-local to critical points in strata of dimension 1; the former has a 2-torus
+for its normal link, while the latter have normal links of dimension 1 which
+may be taken to be topological circles.
+
+A further generalization removes the assumption of quadratic nondegener-
+acy. We do not use this generalization in this text, as we directly compute
+integral manipulations for the few quadratically degenerate cases that arise.
+
+Corollary 7.36. Without the assumption of quadratic nondegeneracy of hp at
+each critical point p, a modified version of Theorem 7.35 still holds. Instead of
+a pair (B, OB) consisting of a ball and its boundary, the tangential Morse data
+is replaced by a more general collection of (d — kj)-cycles {yjx 1 1 < k < rj}
+where rj is the rank of Ha-xj(Vec, Vc-e)- Consequently, the basis in part (d)
+of Theorem 7.35 is instead formed by cycles yjx X Bji for 1 < j < mwith
+lsksrjand\<iss;.
+
+Exercise 7.11. Let M be a manifold of real dimension d in R” for d < n. Many
+classical Morse-theoretic analyses use the height function h(a) = d(p,2),

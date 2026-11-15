@@ -1,0 +1,48 @@
+224 Effective computations and ACSV
+
+In order to make the multivariate division algorithm deterministic, it is im-
+portant to check divisibility of LT(f) by LT(g;) in the order the g; appear in L,
+as the remainder returned by the division algorithm can be different for differ-
+ent orderings of the g;. Related to this technicality is a large problem: even if
+f can be written as a polynomial combination of the g;, meaning f lies in the
+ideal J = (g1,...,m), it is possible for the multivariate division algorithm to
+return a non-zero remainder. The trick to working around this difficulty is to
+compute a particularly nice generating set for the ideal J = (g1,..., gm), which
+also allows us to resolve many other questions about polynomial ideals.
+
+Grobner bases
+
+Fix a monomial order > and let / be an ideal in K[z], where K is algebraically
+closed.
+
+Definition 8.3. A Grébner basis for I with respect to the monomial order > is
+a generating set G = {g1,..., gx} for J with the property that for any non-zero
+f € 1 the leading term LT(f) is divisible by LT(g;) for some i. The basis is a
+reduced Grébner basis if for all i # j no monomial of g; is divisible by LT(g;).
+
+Every non-zero ideal has a Grébner basis with respect to any ordering, re-
+duced Grébner bases are unique and algorithmically computable, and algo-
+rithms to find them have been implemented in most computer algebra systems.
+The size and computation time of finding a Grobner basis can depend heavily
+on the term order used. If G is a Grobner basis for J and f € K[z] then
+
+e the remainder when f is divided by the elements of G is unique (it doesn’t
+depend on the order in which the elements of G are listed),
+
+e f € Jif and only if the remainder when f is divided by G is zero,
+
+e V(J) is empty if and only if G contains the constant 1,
+
+e V(J) is finite if and only if there are a finite number of monomials not divis-
+ible by a leading term of the elements of G, and
+
+e if Gis a Grébner basis for the lexicographical order and V(J) is finite then
+G contains a non-zero univariate polynomial in f € K[za].
+
+The first two items here follow directly from the properties of Grébner bases,
+while the third item is Hilbert’s Nullstellensatz [CLOO7, Section 4.1]. The
+fourth item is proved in [CLOO7, Section 3.5] and the final item, sometimes
+known as the elimination theorem, can be found in [CLO07, Section 3.1]. The
+elimination theorem, which shows how lexicographical Grébner bases general-
+ize the classical resultant beyond two bivariate polynomials, is key as it allows
+us to conveniently encode the solutions of a polynomial system.

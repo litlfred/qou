@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/acsv231201/sections/sec-091",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Description at the level of homology",
+  "pageStart": 523,
+  "pageEnd": 531,
+  "contains": [
+    "library/acsv231201/blocks/prose-sec-091",
+    "library/acsv231201/blocks/recommendation-sec-091-01",
+    "library/acsv231201/blocks/recommendation-sec-091-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/acsv231201",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/acsv231201",
+  "provenance": "ingested"
+}

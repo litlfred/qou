@@ -1,0 +1,45 @@
+D.4 Stratified Morse theory for complex manifolds 527
+D.4 Stratified Morse theory for complex manifolds
+
+If X is a complex variety then the Morse data has an alternate description obey-
+ing the complex structure of X. Let S be a stratum containing a critical point p,
+let N(p) be a small ball in the normal space to S at p, and define the complex
+link L(S) to be the intersection of X with a generic hyperplane A C N(p) that
+comes sufficiently close to p but does not contain it. It is shown in [GM88,
+page 16] that the normal Morse data at p € X is given in terms of L(S) by the
+pair
+
+(Cone *(L(S)), L(S)), (D.4.1)
+
+where Cone *(£(S)) denotes the real cone over £(S). In other words, the nor-
+mal link has the homotopy type of the pair (£(S) x [0, 1] / L(S)x {1}, L£(S)x
+{0}), where the real cone (the first space of this pair) is defined as a quotient.
+
+Suppose that X has dimension d, the stratum S has dimension k, and the
+ambient space has dimension n (all dimensions are complex). Then N(p) is a
+complex space of dimension n — k, its intersection with a generic hyperplane
+has dimension n — k — 1, and thus
+
+dime £L(S) =d-k-1.
+
+In fact the homeomorphism type of the complex link depends on X and S$ but
+not on the individual choice of p € S, nor the ambient space, nor the choice of
+proper Morse function / on the stratified space X (see [GM88, Section II:2.3]).
+Suppose next that X is the complement of a d-dimensional variety in C“*!.
+A formula for the Morse data at a point p ¢ X in a stratum S is given [GM88,
+page 18] by
+(L(S), AL(S)) x (B', B'), (D.4.2)
+where B! is a real interval (which can be interpreted as a 1-ball).
+
+Theorem D.23. (i) If X is a complex analytic variety of dimension d then X
+has the homotopy type of a cell complex of dimension at most d. (ii) If X is the
+complement in a domain of C" of a complex variety of dimension d then X has
+the homotopy type of a cell complex of dimension at most 2n - d - 1.
+
+Remark. The proof of this result in [GM88] is somewhat difficult, mostly
+due to the necessity of establishing the invariance properties of the complex
+link. The result, however, is very useful. For example, suppose that X is the
+complement of the zero set of a polynomial in n variables. Then d = n- 1
+and the homotopy dimension of X is at most n. Note that X may have strata
+of any complex dimension j < d, and that the complement of a j-dimensional
+complex space in C” has homotopy dimension 2n — 2j. The theorem asserts

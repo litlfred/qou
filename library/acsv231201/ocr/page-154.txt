@@ -1,0 +1,50 @@
+136 Laurent series, amoebas, and convex geometry
+
+Z4. Although the space L(z) is a module over the ring of Laurent polynomials,
+it is not itself a ring. Indeed, because a formal Laurent expression can have
+indices with negative sign and arbitrarily large magnitude, there is no natural
+product structure on L(z).
+
+Example 6.2. If G(z) = Yinczz" then attempting to use the usual definition
+of series multiplication gives, for instance, that the constant term of G(z)* is
+Ynez 1, which is not well defined. We also note that (1 — z)G(z) = 0 so, as a
+C[z, z~'] module, elements of L(z) can have non-trivial annihilators. 4
+
+One approach to giving L(z) a ring structure involves restricting the indices
+that can appear, for instance requiring that all coordinates of all indices have
+a fixed lower bound (this is sufficient to develop a rich theory in one variable,
+but the multivariate case is more delicate). Here we work around these formal
+difficulties by restricting ourselves to the study of convergent Laurent series.
+Let D be an open simply connected subset of C4 and let Ly(z) denote the
+subspace of L(z) consisting of series that are absolutely convergent, uniformly
+on compact subsets of D.
+
+When discussing convergence of Laurent series, we always mean uniform
+convergence on compact sets of C4 (we disallow zero coordinates so that we
+do not need to worry about dividing by zero in terms with negative indices).
+
+Definition 6.3. The domain of convergence of a Laurent series >) p<zi Ap2"
+is its open domain of absolute convergence, equal to the interior of the set of
+z € C4 for which ¥).czi |ar2"| is finite.
+
+As usual, we define a convex set to be a subset S of R¢ with the property
+that for each x,y € S$, and each A € [0,1], necessarily (1 — A)x + Ay € S.
+It follows easily by induction that each convex set is closed under taking a
+convex combination of elements and the Chain Rule. That is, if x1,...,%, € S
+and Q,,A,, € [0, 1] with }}; 2; = 1, then ) Aix; € S.
+
+Theorem 6.4 (domains of convergence of Laurent series).
+(1) Let F(Z) = Yipeze apz" be a Laurent series. Then the domain of conver-
+
+gence of F has the form D = Relog”'(B) for some convex open set B CR’.
+
+(2) The function f defined by f(z) = F(z) for z € D is analytic in D.
+
+(3) Conversely, if B is an open convex subset of R4 and f(z) is an analytic
+function on D = Relog”!(B) then there is a unique Laurent series F(Z) €
+Lo(z) converging to f(z). For each r € Z4, the coefficient ap = [z" F(z)
+is given by the Cauchy integral
+
+d
+dy = (+) f. f(Zz7 dz (6.1)
+2ni Relog"! (a)

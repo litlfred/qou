@@ -1,0 +1,46 @@
+11.3 Evaluating asymptotics 361
+
+quote the argument from [BP11, Theorem 5.8]. The range of the homotopy
+one is a projective set in a neighborhood of w, meaning locally it coincides
+with a conical set of the form {Ab : b € K,A > O} for some closed subset
+K of the unit sphere. The variety Vz defined by @ is also a closed conical set
+intersecting the unit sphere in some set L. On the unit sphere these closed sets
+do not intersect and hence are separated by a positive distance p,,. The set of
+normalized secants (z — w)/|z — w| for z € Vz, and |z — w| < s converges as
+s | 0 to L, hence, once the parameter p is chosen smaller than half each p,, the
+homotopy ®,(y) must avoid V, for all y in this case.
+
+The final case occurs when y € N(w) M N(w’) for some w € local(?,)
+and w’ ¢ local(?#,). Reasoning as in Conclusion (i), we observe that K?4(y)
+is a subset of the cone Z(y) once p is sufficiently small as a consequence of
+part (iii) of Lemma 11.27, and the reasoning of the first conclusion applies
+again. ia)
+
+Let ¢ = ®,(Trat) be the final cycle in the homotopy described in Theo-
+rem 11.33. In order to produce a homotopy and a final cycle that completely
+avoids V,, we stop the homotopy early near localarg. Define p(y) by p(y) =
+MiNwelocalarg ly — wl, the distance from y to the closest point of localarg.
+
+Definition 11.34 (chains and stopped homotopy). Consider the following def-
+initions.
+
+(i) Fix 6 > 0 and define the stopped homotopy ®%(y) := &°"*(y) by
+
+Oy) =iy+a+e[(1-t[1 -(6- ply))*)) utt[1-6- pw) | ny),
+(11.11)
+
+where the notation x* for a real number x denotes x* = max{0, x}.
+
+(ii) Let @ = (Tha) denote the cycle resulting from the stopped homotopy;
+see Figure 11.3 for depictions of @ and @’.
+
+(iii) For w € localarg and 0 < 6 < p, where p is less than half the distance
+from w to the nearest other point in localarg, define a (w) to be the
+chain obtained by restricting ®, to the ball of radius p centered at w.
+
+11.3 Evaluating asymptotics
+
+Let F(z) = P(z)/Q(z) = X42" be a rational Laurent series whose open
+logarithmic domain of convergence is the component B of the complement of
+amoeba(Q). Let 7, be a direction such that the height function h(x) = -f, - x
+achieves a unique minimum m on B at some point 2, € OB, and suppose

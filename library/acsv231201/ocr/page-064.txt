@@ -1,0 +1,51 @@
+46 Generating functions
+
+where a,, = 0 if ns ¢ N@ (so the s-diagonal is only non-trivial when s has
+nonnegative rational coordinates). When s = 1 the s-diagonal of F is called
+the main diagonal and denoted diag F or AF. For 1 < i < j < d the (z;,z;)-
+elementary diagonal of F is the formal power series
+
+(Agjacj FV(Z15 ++ +5 Zjats Zjtts + + Za)
+
+obtained by taking the terms of F where the exponent of z; equals the exponent
+of z; and setting z; = 1. Note that the main diagonal of F can be computed by
+taking d— 1 elementary diagonals.
+
+Exercise 2.7. Show that if f(x) is the diagonal of F(x, y) then it is also the
+diagonal of F(—x, -y).
+
+Example 2.29. Consider the generating function
+1 r+s+t)!
+F(xy,2) = _ y ( ) vytd
+l-x-y-z 0 !
+
+enumerating the trinomial coefficients. Then the (x, y)-elementary diagonal of
+F is the series
+
+2r+t)! ,
+Qs Pyan2) = Sy,
+A (r!)? t!
+while the main diagonal is
+3n)!
+(AF)(x) = oe = 146x490 +e,
+nt
+n>0
+
+4
+
+Exercise 2.8. Let F(x,y) = 31,550 @rsx’y* be a bivariate formal power series.
+What is the difference between diag F and F(x, x)?
+
+It is interesting to note that even though the generating function in Exam-
+ple 2.29 is rational, the main diagonal AF is transcendental (i.e., not algebraic).
+Perhaps the easiest way to see this is to compute asymptotics of the diagonal
+coefficients using the methods of Chapter 9 and verify that they do not have
+asymptotic growth compatible with being an algebraic series [Mel21, Corol-
+lary 2.1].
+
+Although the classes of rational and algebraic series are not closed under
+taking diagonals, the class of D-finite series is.
+
+Theorem 2.30 (Lipshitz [Lip88]). Any elementary diagonal of a D-finite series
+in d variables is a D-finite series in d — \ variables. In particular, the main
+diagonal of a D-finite series is a univariate D-finite function. ia)

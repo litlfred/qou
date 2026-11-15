@@ -1,0 +1,52 @@
+266 Smooth point asymptotics
+
+Thus, near o the set V contains k disjoint ascent regions, where h increases
+while moving towards o,, which alternate with k disjoint descent regions, where
+h decreases while moving towards o;; this is illustrated in Figure 9.5 below.
+
+Definition 9.30. Let c,, € [-00, 0) be the infimum of all values c such that
+X?° 1 Y*© = @ (which is also the smallest value c such that X*° and Y*° are
+well-defined). If cyy = —co then let W = @, otherwise let W be the nonempty
+set of critical points o such that h(o) = cyy and, for any sufficiently small
+neighborhood U of o@ in ‘V, the sets UN X*°» and UN Y*» are nonempty.
+
+Our choice of the notation W comes from the following result.
+
+Theorem 9.31. Suppose Assumptions 9.1 and 9.2 hold. If W is empty then the
+intersection cycle C is in the same homology class as a cycle with maximum
+height —m for all sufficiently large m € R (it can be pushed down forever). If
+W is nonempty then C is in the same homology class as a cycle x such that
+
+(i) The points of x with maximum height are precisely the points of W.
+
+(ii) For o € W and a sufficiently small neighborhood U of o in V, if
+Ao,..-,Ax-1 and Do,..., Dy—1 denote the ascent and descent regions of
+«1 U enumerated counterclockwise such that Dj; lies between Aj and
+Ajxt moak then
+
+kel
+KAU = )[XG+ D- Xr),
+
+j=0
+
+where each y; is a curve traveling downward in Dj starting at o and
+
+1 if Aj moak © X°°
+
+X= . —
+0 if Aj moak C Y7°°
+
+In particular, x  U projects to a non-trivial cycle in the relative homology
+group H\(U, U Nn V*»~*) for any € > 0 sufficiently small (so the intersection
+cycle gets stuck at height c,,).
+
+Proof Let M € R be larger than all critical values of h. Then C is homologous
+to closed curves in each component of X=, and in fact it is homologous to the
+boundary 0X2. First, we show that we can push down the intersection cycle
+until arriving at c,y. The topology of V* only changes at critical values c, so
+let o be a critical value in (c,y, M] and suppose that o is the only critical point
+with h(a) =o.
+
+Figure 9.3 shows V** (shaded) for three values of c when the degree of de-
+generacy of o is k = 2 and a circle enclosing a region where the parametriza-
+tion h = o + Re[w*] holds (higher degrees of degeneracy are similar, just with

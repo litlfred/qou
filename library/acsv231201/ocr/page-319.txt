@@ -1,0 +1,50 @@
+10.2 Main results on integrals 301
+
+Remark 10.13. The signs of the determinant of Ty and of the orientation of
+J depend on the order in which the factors Q; are listed. This is addressed
+further in the proof of Theorem 10.25 below.
+
+Proof The claimed result follows from the definition of iterated residues,
+Theorem C.17 in Appendix C for the simple pole case, the reduction of the
+residue in the non-simple pole case to the simple pole case, and the formulae
+computed in Theorem C.24. ia)
+
+Exercise 10.5. Apply Theorem 10.12 to F(z) = 1/Q(z) at the point (1, 1),
+where Q is the polynomial in Exercise 10.4. How does the result differ from
+dy?
+
+In the simple pole case where m = 1 the polynomial P(r, p) is just a con-
+stant. In two dimensions there is an explicit formula in terms of the numerator
+and denominator of F evaluated at z = p.
+
+Corollary 10.14. Jf the hypotheses of Theorem 10.12 hold in dimension d = 2
+with m = 1, so that F(x,y) = P(x, y)/Q(x,y for Q(x, y) = Qi@x,y)Q2(x,y),
+then
+
+P(p)
+
+Sar | Peet tds =p
+Oni)" Jr pip2 JOP) — Oulp)On(p)
+
+for a suitable branch of the square-root.
+
+(10.6)
+
+Exercise 10.6. Prove Corollary 10.14 by computing P(r, p) in terms of Q,., Qyy,
+and Q,, at p.
+
+When k < d the stratum has positive dimension and, after computing the
+integral over the normal Morse data, there is an integral over a (d — k)-chain in
+the stratum S containing p. The leading term of this integral on the stratum is
+straightforward to write down except for a multiplicative constant that depends
+on the quadratic part of —r - log z when restricted to the stratum S. Computing
+this quadratic contribution requires logarithmic coordinates, and we define
+
+g(@) = » Fj log [éi (pe pene Pry .e)| :
+jen
+where, as above, z; = ¢j(z) for j € 7 locally parametrizes z near p on S. Let
+H = H(p) denote the Hessian matrix of g at the origin.
+
+Theorem 10.15 (partial intersection asymptotics). Assume the same notation
+and hypotheses as Theorem 10.12, except that k < dso 7 is nonempty and Y
+parametrizes C4 near p as the product of a normal slice containing the k-torus

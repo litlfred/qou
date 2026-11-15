@@ -1,0 +1,34 @@
+7.3 The general case via stratified Morse theory 203
+
+part that ‘bends upwards’. By the local product structure, the pair for the at-
+tachment of M at p is (homotopy equivalent to) the product of a pair (B', 0B’)
+in the tangent space to S and a pair (£L, £1 Me-_~), where c is the height of
+p, the constant ¢ > 0 is sufficiently small, and £ denotes the normal link (the
+intersection of M with the normal space to S at p in a suitable small neighbor-
+hood of p, described in Definition 7.32 below).
+
+Figure 7.18 An example of an attachment given by the product of a torus with an
+arc (a relative 3-torus).
+
+Example 7.31. Figure 7.18 shows an example of an attachment on a stra-
+tum S$, with complex dimension | defined by the intersection of two trans-
+versely intersecting smooth sheets. In one direction it curves down, as shown;
+in the other direction it curves up (this is not shown). The level set defined
+by h(z) = c — « is the horizontal line and the pair (B',B') is the black arc
+modulo its endpoints. The normal link is the complement of two intersecting
+complex lines in complex 2-space, which is homotopy equivalent to a 2-torus.
+The 2-torus can be drawn arbitrarily close to p, so it can be chosen as an abso-
+lute cycle and the pair (£L, £9 Mec--) is simply (£,0) =~ L. The attachment
+pair is obtained by sliding the 2-torus along the black arc from one endpoint
+to the other, with the second element in the pair being the starting and ending
+positions. Because an arc modulo its boundary is a circle, this means the at-
+tachment is a 3-torus, manifested as a 2-torus times an arc that localizes to a
+1-torus. 4
+
+Formal statement of the attachments
+The following definitions and results are special cases of material in Sec-
+tion D.3 of Appendix D. Attachments are defined in the category of (homotopy
+types of) topological pairs, as are both the tangential and normal Morse data.
+Products in this category are defined by
+
+(A, B) x (C,D) = (Ax C,AX DUBxC), (7.17)

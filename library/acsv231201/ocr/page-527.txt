@@ -1,0 +1,27 @@
+C.4 Description at the level of homology 509
+
+P, Lo,
+
+P oo.
+1
+Figure C.7 A cycle ona torus.
+
+Assume now that X ¢ C4 is a smooth algebraic hypersurface (a real mani-
+fold of dimension 2d — 2) and that the specific height function h(z) = h,(z) =
+—r log|zi| — --- — ralog|za| is a proper Morse function on X. The purpose
+of introducing critical points at infinity in Chapter 7 is to remove the strong
+assumption that / is proper, however, to see how everything works, we now
+derive the results of Chapter 7 in this setting. The height function h is the real
+part of (a branch of) a holomorphic function —r - log z, and is thus harmonic,
+so all critical points for h on X have middle Morse index d — 1. Let p“) for
+1 < j < m enumerate the critical points, ordered so that the critical values
+cj = h(pj) are nondecreasing.
+
+By the Morse Lemma, any cycle supported on X<., can be deformed via
+gradient flow to a cycle in X<, for f arbitrarily small, therefore integrals of
+z-" F(z)dz over such cycles decay faster than any exponential. For this reason,
+it suffices to describe the homology of (X,—co), where —oo stands for X<, for
+any t < c;. The final set of results in this appendix describes this homology.
+
+Theorem C.38. Suppose h = hy is a proper Morse function on a smooth
+algebraic hypersurface X in C4. Then H,(X, -0) vanishes in dimensions k #

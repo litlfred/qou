@@ -1,0 +1,55 @@
+8.4 Further computations for asymptotics 239
+
+By permuting variables if necessary we may assume, without loss of gen-
+erality, that (7),...,0;) = (1,...,s) and, to simplify notation, we write Z =
+(Zs41++++»Za). Since, by construction,
+
+F,(gi(2),...,8s(2), 2) = +++ = Hs(g1(Z),.-., 8s(2), Z) = 0
+
+for all Z sufficiently close to (Ws41,..., Wa), We can differentiate these equations
+with respect to z;,; and use the implicit function theorem to get the linear
+system
+
+Haw) _ Hl(w) gh "ow Hl ay)
+Hay) HE ay) (el e@) HP ay)
+a Reena
+
+M b
+
+Because M is nonsingular, if we let M; denote M after replacing its kth column
+with the vector b then Cramer’s rule implies
+
+a det(M;)
+[tlle
+& =~ Tan
+
+for all 1 < k < s. If w is a critical point on S then the matrix
+
+(Viog M1)(w)
+
+(Viog Hs)(w)
+
+rT Ya
+
+has rank s, so the determinant of the (s + 1) x (s + 1) sub-matrix
+
+H'"(w) a Hw) HM ay)
+HMw) Aw) Ew)
+m1 _ ts tot
+wy Ws Ws+l
+
+vanishes. A cofactor expansion of the determinant along the bottom row gives,
+after carefully accounting for signs, that
+3
+
+det(M) - = detmy),
+ym
+
+J
+
+Vs41
+
+0=
+Ws+1 i=l
+
+so

@@ -1,0 +1,42 @@
+112 Fourier-Laplace integrals in one variable
+
+along the imaginary axis (thus there is no need for arguments about moving
+the contour).
+
+Proof of Theorem 4.10. By assumption, we can write (x) = cyx*(1 + O(x)),
+where O(x) = O(|x|). If y = x(1 + 0(x))!* then y(x) is a diffeomorphism in
+a neighborhood of the origin, and we write x = g(y) for its inverse. Since
+cxy* = 6(x) we may change variables to see that
+
+f 246) A(x) dx = f et" Ay) dy,
+
+and the result follows from Lemma 4.4. ia)
+
+Notes
+
+Our chief sources for Sections 1 and 2 were [BH86] and [Won01], along
+with [Hen91]. Although our main theorem follows from the extensive anal-
+yses in [BH86, Chapter 7], for example, asymptotics of Fourier and Laplace
+transforms are seldom treated together, and we have never seen the univariate
+Fourier—Laplace Theorem stated in exactly this form. We have also not seen a
+derivation by purely complex analytic methods.
+
+Watson’s Lemma may be found in many places. The version here agrees
+with the statements in [BH86, Section 4.1] and [Hen91, Section 11.5]. The
+saddle point method is described very nicely in [dBru81] and [FSO9, Chapter
+VIII]. Our treatment is more akin to [Hen91, Section 11.8]; see also [BH86,
+Chapter 7], especially for some of our exercises.
+
+Section 4.3 borrows heavily from [Ste93], although we have attempted to
+fill in some details. For instance, our proof of Lemma 4.11 is summarized
+as “A simple computation shows...” in [Ste93, page 335], which also omits
+details as to how the argument for k = 2 extends to greater values of k. Despite
+its omission of detail in elementary arguments, Stein’s book is a beautifully
+written modern classic, and is a recommended addition to anyone’s bookshelf.
+
+Additional exercises
+
+Exercise 4.10. Let ¢ : R > R be defined by
+
+_ exp(-4) ifx #0
+poy = ( ifx=0.

@@ -1,0 +1,49 @@
+76 Univariate asymptotics
+
+where c = log(1/(4p))/(4p) and the statement holds for z € [0, 1] (the interest-
+ing situation is when z > 1). If we knew this for all z in a A-domain, we could
+use (3.10) to conclude a, ~ cn~?(logn)~, so that X has a first moment but not
+a “1 + log” moment. Here we establish (3.12) on the unit interval, although
+it is probably true in a A-domain and this is left to the interested reader. Just
+knowing (3.12), we can deduce information on the partial sums )7_p ax via a
+Tauberian theorem of Hardy and Littlewood, and perhaps asymptotic informa-
+tion on a, itself (see [FS09, Sec. VI.11)).
+
+To show (3.12), fix 0 < z < 1 and consider the iterates z, = o— (zo) of
+the inverse of ¢. The function ¢ is convex on [0, 1] with 6(0) > 0, (1) = 1,
+and one other fixed point k with p. < k < 1. Because ¢(x) < x on (k, 1), if
+we iterate ¢ on any point in (c, 1) it converges downward to c. Likewise, if we
+iterate the inverse function ¢~! starting with any point in (c, 1), it converges
+upwards to 1, so z, T 1. The recursion for ¢ gives
+
+Zn = (1 = p)net + Pen-1)>
+and changing variables to y, = 1 — z, implies
+Yn = 1 (1 = py = ynst) + PA = Yn)?
+
+= 1=(1= (= p)ynat = Pye)
+Solving for y,,1 gives
+
+L— yl —Yn = Pyn-1
+Yn+1 eS
+I-p
+Setting x, = y,/(4p)” and using 16p(1 — p) = | results in
+Xnat = 2X) — Xn-1 + OOn)-
+
+Verifying first that y, is small, we then approximately solve the linear re-
+currence for x, to obtain x, ~ An + B, for some constants A,B, whence
+Yn ~ (4p)"(An + B). We may write this as
+
+ntl
+
+Yast = 4pyn + (1 + 0(1)) = Apy, + (1 + 0(1))
+n+1
+
+Yn+1
+log yn+i/log(4p)"
+
+Let z = 1 — yn41 SO O(z) = 1 — yn. We then have
+
+_ lez) 1-z log(4p)
+1-0) = FE (1+ 0(1)) 4p log -2
+
+for all real z T 1, proving (3.12). 4

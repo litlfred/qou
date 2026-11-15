@@ -1,0 +1,46 @@
+50 Generating functions
+
+where f denotes the algebraic conjugate of f, obtained by changing the sign
+in front of the square root in f. Proposition 2.36 gives the diagonal expression
+
+w(1 — 2w — wx(1 - y))
+Fy) = Arew ee .
+—w-xy-—wx(1—-y)
+Note that we cannot use Proposition 2.36 with respect to the variable y. S
+
+The following example from [Saf00] shows that the hypotheses of Proposi-
+tion 2.36 are necessary for its conclusion.
+
+Example 2.38. Let f(x,y) = y Jl -x-—y. If f(x, y) could be expressed as the
+(y, w)-elementary diagonal of a trivariate rational series F(x, y, w) then
+
+Fyy(x, 0,0) = LywlFQ, y, w) = Lyf, y) = fr, 0) = VI- x,
+contradicting the fact that V1 — x is irrational while Fy,,(x,0,0) is rational.
+
+To extend Proposition 2.36 to larger classes of algebraic series we can ei-
+ther increase the dimension of the rational function in question, or relax our
+definition of a diagonal. In the first direction, Denef and Lipshitz proved that
+every algebraic function has a rational diagonal expression in at most double
+the number of variables.
+
+Proposition 2.39 (Denef and Lipshitz [DL87, Theorem 6.2]). Jf f(z) is an
+algebraic power series in d variables then there exists a rational series R(z, y)
+in 2d variables such that f(z) = Az,=y, +++ Azj=y,R(Z,y)- ia]
+
+In the second direction, Safonov gave an algorithm to express any algebraic
+function in d variables as a generalized diagonal of a rational function in d + 1
+variables.
+
+Definition 2.40. A unimodular matrix is a matrix having integer entries and
+determinant +1. Let F(z,y) = Yiesyent+! Gr,s2”y* be a formal power series
+in d + | variables and let M be a unimodular d x d matrix with nonnegative
+entries. The M-diagonal or generalized diagonal (with respect to M) of F is
+the formal power series in d variables given by >),.<ya bpz" with bp = ds.s,,
+where s = Mr.
+
+Exercise 2.11. Let M = ( I ’) and suppose that F(x, y) is the M-diagonal of
+A(x, y,z). Express AF in terms of the coefficients a,.,, of H.
+
+Theorem 2.41 (Safonov [Saf00]). Let f(z) be an algebraic function in d vari-
+ables. Then there is a unimodular matrix M € N®4 and a rational function
+F(z,y) ind + 1 variables such that f is the M-diagonal of F.

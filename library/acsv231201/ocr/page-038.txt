@@ -1,0 +1,44 @@
+20 Generating functions
+2.2 Rational operations on generating functions
+
+A combinatorial class (in d variables) is a set A together with a partition of A
+into finite sets (A, : r € N“} encoded by the weight map ¢ of the class, which
+takes # € A to the unique index 4(x) = r € N¢ with # € A,. In one variable,
+we have a disjoint union A = UA, and call the weight function (x) the
+size of x € A, so that A, contains the number of elements in A of size n.
+
+Exercise 2.3. Prove that the objects in any combinatorial class form a (possi-
+bly finite) countable set.
+
+The generating function of the combinatorial class A is the formal power
+series
+A(z) = 1 2% =D" Ariz” € CllzI,
+eA ren?
+and we say that A enumerates A under the weighting ¢.
+
+Arithmetic operations in the ring of formal power series were defined so
+as to correspond to existing operations on analytic power series. However, it
+is instructive to interpret these operations combinatorially. We begin with a
+list of set-theoretic interpretations for rational operations; the combinatorial
+wealth of these interpretations helps explain why there are so many rational
+generating functions in combinatorics.
+
+Equality corresponds to bijection
+
+Equality between two generating functions A and B corresponds to bijective
+correspondence between the classes A and 8 that they enumerate, because
+A(z) = B(z) as formal series if and only if |A,| = |8,| for all r ¢ N¢.
+
+Multiplying by z; corresponds to re-indexing
+
+In the univariate case, the product zF(z) enumerates the right-shifted sequence
+0, do, 41, d2,.... More generally, the product z;F(z) enumerates the right-shifted
+array {ar-5,}, where dr-6, is defined to be zero if any coordinate of r — 6;
+is negative. Conversely, the left-shifted sequence {ar+5,} is enumerated by
+(F(z) — F(z))/z;, where F(z) = [S]F(z) is obtained from F by taking only
+the terms that are free of z;.
+
+Sum corresponds to disjoint union
+
+If A(z) and B(z) enumerate classes A and 8, respectively, then A(z) + B(z)
+enumerates the disjoint union class C = AU 8 where C,, is the disjoint union

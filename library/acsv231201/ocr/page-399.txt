@@ -1,0 +1,30 @@
+12
+
+Combinatorial applications
+
+The utility of any mathematical theory is ultimately determined by the breadth
+of problems it can solve. In this chapter we illustrate the techniques of ACSV
+developed in previous chapters on a large selection of combinatorial examples.
+These examples are arranged taxonomically in Section 12.1, helping readers
+identify a template for their work when trying to apply ACSV to new prob-
+lems. Sections 12.2, 12.3, and 12.4 give detailed applications of our basic
+theory to the study of Riordan arrays, Lagrange inversion, and the transfer
+matrix method, respectively. Section 12.5 discusses the use of higher order
+asymptotics, and Section 12.6 studies algebraic generating functions by en-
+coding them as subseries of higher-dimensional rational generating functions.
+Section 12.7 presents miscellaneous examples chosen to illustrate particular
+aspects of the theory. Combinatorics and discrete probability are closely re-
+lated, and Section 12.8 applies the results of Chapter 9 to prove probabilistic
+limit laws for asymptotics governed by smooth points, leading to a local central
+limit theorem in Theorem 12.36.
+
+12.1 Some classifications
+
+We begin with a guide to help users of ACSV find examples similar to their
+intended application, with some of the examples occurring in earlier chapters
+and some in this chapter. We classify the examples by local geometry, by form
+of generating function, and by intended application. We also point to some
+examples where our standard hypotheses fail to hold. The website for this book
+contains links to Sage worksheets computing many of the examples listed here.
+
+381

@@ -1,0 +1,46 @@
+402 Combinatorial applications
+
+Comparing these approximations when d = 3 with the actual values for small
+n, we obtain the following table.
+
+7m T Z 4 8
+EW) 0 7.00000 2.50909 5.52056
+(3/4)n 0.75 15 3 6
+
+(3/4)n — 15/32 0.28125 1.03125 2.53125 5.53125
+One-term relative error | Undefined 0.50000 0.19565 0.086846
+Two-term relative error_| Undefined 0.031250 0.088315 __0.0019363
+Vo 0 08 1.20057 2.31961
+(9/32)n 0.28125 0.5625 1.125 2.25
+Relative error Undefined 0.29688 _0.062942__0.030013
+
+12.6 Algebraic generating functions
+
+Algebraic generating functions in one variable can be analyzed asymptotically
+by the transfer theorems of Section 3.4 in Chapter 3, and often exactly by La-
+grange inversion as described in Section 12.3 above. Of course, the situation
+in several variables is more complicated. For the purposes of asymptotics, we
+can sometimes ignore the fact that the generating function is algebraic, because
+the contributing points determining asymptotics might occur in regions where
+the generating function is meromorphic (this happens in several Riordan array
+examples). The more difficult cases occur when asymptotics are determined
+by an algebraic singularity. Assuming that we have an analytic branch at the
+origin, we aim to compute asymptotics of the coefficients of its power series
+expansion as done for rational and meromorphic functions in previous chap-
+ters.
+
+Section 2.4 gives an approach to asymptotics by embedding algebraic gen-
+erating functions as subseries of higher-dimensional rational functions. Un-
+fortunately, there are several difficulties with this approach. First, the results
+of Chapters 9-11 cannot capture asymptotics of all algebraic generating func-
+tions: for any 6 € Z there exists a univariate sequence a, with an algebraic
+generating function such that a, ~ Can’, but our results for nondegenerate
+critical points only give asymptotics of this form with B = k/2 for k € Z. This
+asymptotic behavior also shows that the leading terms in our asymptotic ex-
+pansions often vanish when applied to rational functions constructed by such
+lifting procedures (Exercise 12.11 asks you to prove that this vanishing always
+occurs for an embedding given by the method presented in Proposition 2.36).
+
+Algebraic generating functions are often well-behaved as they are built from
+nice combinatorial constructions, but the rational functions obtained from a
+lifting procedure are built from algebraic machinery and are thus often worse

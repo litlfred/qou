@@ -1,0 +1,54 @@
+446 Integration on manifolds
+
+Example A.9. Let M = S! = {(x,y) € R? : x° +? = 1} be the one-
+dimensional circle in R*. Suppose U is the half-circle of points in S! with
+y > O and ¢ is the chart map (x, y) = x with inverse 6!(x) = (x, V1 — x). If
+(a,b) € U and g is a smooth, real-valued function on a neighborhood of S! in
+R?, then the chain rule applied to g and ¢~! at (a, b) implies
+
+0, d
+ap?) = s(x. V1 — x2 |
+= g.(« Viz) -
+
+a
+= gx(a,b) - poe b).
+
+X=a
+
+= = 8 (a V1- @)
+
+4
+
+If f : M—> M’ isa smooth map of manifolds then the differential of f has
+an explicit representation using local coordinates. Let (U, @) be a chart on M
+containing p and (V,W) be a chart on M’ containing f(p). Working through
+the definitions above shows that with respect to the bases al, an a 1
+the linear map f. : TpM — Typ)M’ given by the differential is represented
+by the m x n Jacobian matrix
+
+OW ° f)
+ID) = Ipou(f) = (em
+abil yy ‘i
+Example A.10. If f : R” — R"” and we take standard coordinates x =
+(X1,...,X%m) and y = (1,...,¥n) for R” and R" respectively, then we can write
+
+f = (fi(a),..., f,(a@)) for functions f, : R” — R. The Jacobian matrix has
+
+entries WED (p) = Shp), so our definition of the Jacobian generalizes the
+x; j
+
+definition from a first calculus course. 4
+
+Proposition A.11 (tangent vectors map functorially). [f f : M — M’ and
+g:M > M” are smooth maps between manifolds then (g 0 f)x = gx ° fe.
+
+Exercise A.7. Prove Proposition A.11 using the definitions above.
+
+Having developed the necessary machinery for the tangent space at a point,
+we now define the tangent bundle of a d-manifold M whose ground set is the
+disjoint union of the tangent spaces at each point,
+
+TM= |_] TpM,
+peM
+
+and whose projection map 7 : TM — M sends all of Tp(M) to p. For any

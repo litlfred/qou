@@ -1,0 +1,55 @@
+3.4 Transfer theorems 71
+
+and Odlyzko [FO90]. The idea of this approach is to establish an estimate of
+the form a, = O(n~°~') for the coefficients of any power series f(z) that is
+analytic in neighborhood of the unit disk in a slit plane, except at z = 1 where
+
+f(z) = OC = 2)*).
+
+Remark. To simplify our notation in this section we state our results for func-
+tions with singularities at z = 1. As noted above, this loses no generality since
+[2"f(z/R) = R[z"] f(z) for any non-zero constant R and analytic function f.
+
+The transfer theorem method is also flexible enough to extend beyond pow-
+ers to other branch singularities. Let alg-log be the class of functions that are
+a product of a power of 1 — z, a power of z7! log(1/(1 — z)), and a power
+of log Jz" log(1/( - 2)I. We begin with a description of asymptotics for all
+functions in the class alg-log, then discuss asymptotics of functions which lo-
+cally behave as if they are in alg-log near their singularities.
+
+Proposition 3.14. Let a,y,6 € C \ N and let
+
+Y 6
+fi) =~ 9° (Eos +) (toe (4108 ! )
+Zz l—z} \z z l-z
+
+Then the power series coefficients {a,} of f satisfy
+
+—a-1
+
+Tea)
+
+(logn)’ (log logn)° .
+
+an ~
+
+Proof See [FO90, Theorem 3B]. oO
+
+Remark. When at least one of a,y, or 6 is a nonnegative integer, different
+formulae can hold. For example, when y ¢ N but 6 = 0 and a € N the coinci-
+dence of a with a nonnegative integer decreases the exponent of the logarithm
+by one, giving the estimate
+
+an ~ Cn '(ogn)”!. (3.10)
+
+For any R > 0 and € € (0,2/2), the A-domain (or Camembert-shaped
+region) defined by R and « is
+
+A(R, €) = {z€C:|y<R+e, z#R, |arg(z—R)| > 2/2- 6},
+pictured in Figure 3.1.
+
+Theorem 3.15 (Transfer Theorem). Let f(z) = Yip dn2" be analytic in a A-
+domain A(A, €). If g(z) = X29 bnz" is in alg-log then the following statements
+hold.
+
+(i) If f(z) = O(g(z)) as z > 1 then a, = O(bn) as n > ©.

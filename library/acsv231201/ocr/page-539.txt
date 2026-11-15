@@ -1,0 +1,27 @@
+D.2 Critical points and the fundamental lemma 521
+
+Figure D.4 Left: A flow in a 2D stratum that turns sharply when reaching a bound-
+ary. Right: A partition of unity blends the flow smoothly between strata (note that
+the flow smoothly becomes zero in a neighborhood of the zero-dimensional stra-
+tum).
+
+identification of tangent spaces with subspaces of the tangent space to the am-
+bient space R4). Fixing any T > (b—a)/c the time T map defines a deformation
+retract of X<, onto X<,, proving homotopy equivalence. ia)
+
+The problem with this sketched proof is that, in general, the local product
+structure is not witnessed by a diffeomorphism. This is shown by Whitney’s
+counterexample [Whi65a], reproduced in Goresky’s introduction [Gor12] to
+Mather’s cleaned up notes [Mat12] as motivation for the work that follows.
+Figure D.5 shows three planes and a ruled surface in R?, whose common inter-
+section is the x-axis. Intersecting with a plane parallel to the yz-plane moving
+down the x-axis results in a configuration of four lines, the first three constant
+and the fourth becoming more sloped. Any coordinate system in which the first
+three lines remain fixed as the slice moves down the x-axis also fixes the slope
+at the origin of the fourth line, and therefore cannot represent the figure as a
+product of the x-axis with a four-line configuration.
+
+Figure D.5 Whitney’s counterexample to smooth isotopy.
+
+The trouble is that the category in which one most naturally deals with
+stratified spaces is smooth within strata and continuous across strata. Whit-

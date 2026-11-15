@@ -1,0 +1,1 @@
+Because the algebraic tangent cone is the limiting secant cone by Lemma 6.48, there must be sequences of real vectors {αn} and {βn} such that (αn + iβn)/|αn + iβn| →(u + iθ)/|u + iθ| and ˜q(z + αn + iβn) = 0.

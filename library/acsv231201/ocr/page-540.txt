@@ -1,0 +1,44 @@
+522 Stratification and stratified Morse theory
+
+ney’s conditions do not guarantee the existence of a differential structure that
+is smooth across strata, even for algebraic hypersurfaces in Euclidean space.
+Nevertheless, it is true that there is a continuous isotopy moving the yz-plane to
+the right while continuously deforming a sector so that the line of intersection
+with the ruled surface in each slice remains identified. Working in the smooth
+within strata continuous across strata category, one can obtain a vector field
+but it will generally not be Lipschitz. The flow in Step 3 will not necessarily
+exist, and the argument falls apart.
+
+Remark D.15. In the neighborhood of a hyperbolic point of a complex alge-
+braic hypersurface, a Lipschitz vector field can be constructed explicitly from a
+lower-semicontinuously varying family of cones. This is carried out in [BP11]
+(see Lemma 5.1 there) and is based on the lengthier development in [ABG70];
+the construction is summarized in Section 11.2 of this book. Thus, the three
+steps above prove Theorem D.13 when X is a complex algebraic hypersur-
+face with all critical points hyperbolic, even though Proposition D.14 will not
+necessarily hold.
+
+Isotopy
+
+To repair the stratified gradient flow argument, one needs a statement of Thom’s
+Isotopy Lemma strong enough to imply the deformation retract in Step 3 di-
+rectly, as well as implying Theorem D.9. This lemma is proved by giving up
+on the idea that the desired vector field can be continuous, providing instead a
+controlled vector field satisfying a set of axioms allowing one to infer that the
+vector field defines a continuous flow with the desired properties. We will not
+go into the theory of controlled vector fields, being content to quote where they
+are used and referring the reader to [Mat12, Proposition 11.1] for the proof of
+the following results and full details of controlled vector fields for stratified
+spaces.
+
+Lemma D.16 (Thom’s Isotopy Lemma). Let Z be a Whitney stratified space
+Z that is a closed subset of some smooth manifold M, and suppose that 1 :
+M — P is a smooth proper mapping to a connected manifold P such that
+the restriction m|s of m to each stratum S of Z is a submersion (surjective
+on tangent spaces). Then any smooth vector field V on P has a lift V to a
+controlled vector field on Z. By a lift, we mean that V is a (not necessarily
+continuous) section of the tangent bundle of each stratum of Z such that n,0V =
+Voz. Although V is not necessarily continuous, it has a continuous flow ¥
+that projects under 1 to the flow ¥ defined by V on P. The fact that there is a
+continuous flow lifting the flow of V implies that n|z : Z > P is a locally trivial
+fiber bundle. oO

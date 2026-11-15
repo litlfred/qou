@@ -1,0 +1,45 @@
+5.5 Higher order terms in the expansions 129
+
+then gives an asymptotic expansion for the integral over each simplex. Invari-
+ance of det J(Y)/ VH under coordinate transformations equates the summand
+in (5.7) with the result (5.4) in Theorem 5.2, provided the correct sign in (5.7)
+is chosen to match (5.4). Summing these expansions then finishes the proof of
+Theorem 5.3. ia)
+
+Exercise 5.11. The simplest case of Theorem 5.3 occurs when p = 0,d =
+1, and k = 0. Take &(z) = -22, so e“#® = e%", and let M be the 1-chain
+consisting of the imaginary axis. Which sign in the equality
+
+fi Bac=ai on
+M Va
+
+is correct when parametrizing M by z = it for t € R, and which sign is correct
+when parametrizing M by z = —it?
+
+5.5 Higher order terms in the expansions
+
+All of our explicit asymptotic computations ultimately reduce to computing
+terms in the asymptotic expansions of Fourier—Laplace integrals. It is therefore
+useful to have a closed formula for the higher-order terms that can appear. The
+following result is derived in [H6r83, Thm. 7.7.5] using smooth methods, and
+we refer the reader to that source for a proof.
+
+Lemma 5.16. Let X C R¢ be an open neighborhood of the origin and let @ and
+A be smooth functions on X such that Re{¢} > 0 on X. Further suppose that ¢
+has a unique critical point on the support of A at the origin, that ¢(0) = 0, and
+that the Hessian H of ¢ at 0 is nonsingular. Then for any positive integer M
+and A > 0 there exist constants L,(A, @) such that
+
+dytl2
+[Ame oae — rr » A*LCA, #)
+x
+
+VdetH eu
+< Cat? SY” sup |DFAl,
+Bls2M
+
+where the constant C(@) has a uniform bound when @ stays in a bounded set of
+(3N + 1)-differentiable functions on X for which |\x\|/\|Vé(a)|| has a uniform
+bound. Setting
+
+(a) = O(a) — (1/2)@- Ha,

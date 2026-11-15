@@ -1,0 +1,41 @@
+C.4 Description at the level of homology S11
+
+completing the induction. Finally, the assumption of distinct critical values
+may be removed via (C.3.1). Oo
+
+Exercise C.6. Let X be a smooth complex algebraic variety of complex di-
+mension d in C”” for m > d and let h be a Morse function on X which is the
+real part of a complex analytic function. Suppose X has five critical points.
+Can you determine the homotopy type of the pair (X<,, X<q) when a — —oco
+and b > +00?
+
+We now have the tools to state a result analogous to what Theorem C.38 tells
+us about X for M = Cc \ X. Recall the tube operator 0 : Hy-1(V.) > Ha(M)
+from Theorem C.2 — this is not only an injection, but (as we will see in the
+next appendix) is an isomorphism on (Xj,1, Xj). An induction then gives the
+following result.
+
+Theorem C.39. Suppose the height function h, is a proper Morse function on
+a smooth complex algebraic hypersurface X in C4 and let M = C4 \ X. Then
+there is a basis for Ha(M, -°) consisting of a single generator yp for each
+critical point p of hy, which is tube around a cycle reaching maximum height
+at p and is homotopy equivalent to S' x (B¢-!, 0B4"). a
+
+We cover Theorem C.39, and generalizations, in Appendix D.
+
+Notes
+
+Detailed treatments of multivariate residues are given in [Phal 1; AY83], while
+the classic text on Morse theory, which we have based our presentation around,
+is [Mil63].
+
+Additional exercises
+
+Exercise C.7 (univariate residues via Stokes’s Theorem). Let f be a meromor-
+phic function inside and on a closed contour y such that f has no singularities
+on y. The familiar residue theorem in one variable states that
+
+x f f= YReio,
+
+where the sum is over the poles a of f inside y. Derive this from Theorem C.9.
+What are a, 8, w, V, and INT[a, 8; V]?

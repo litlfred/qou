@@ -1,0 +1,48 @@
+58 Generating functions
+
+factorials. Hint: After expressing C’ as a rational function A/B, use the fact
+that B and the minimal polynomial P of C are relatively prime, and apply the
+Euclidean algorithm to eventually express B~!(z) modulo P(z).
+
+Exercise 2.15. Given a generating function F(x, y) in dimension d, consider
+the monomial change of variables F(x“y’, x°y”), where a,b,c,d € N. How
+
+does the main diagonal of F relate to the r-diagonal for other values of r?
+
+Exercise 2.16. Using the method shown in this chapter, obtain the generat-
+ing function T(z) for the (2, 1)-diagonal {a2,,,} of the Delannoy numbers and
+compare the algebraic complexity of T to the diagonal generating function in
+Example 2.33.
+
+Exercise 2.17. Let a ¢ N® represent a direction (with all coefficients non-
+zero and relatively prime). Show how to express the a-diagonal of the GF
+F(Z) = Dirand Grz" as the main diagonal of a function related to F in a simple
+way. Hint: Consider roots of unity.
+
+Exercise 2.18. (a D-finite generating function) Let po = 1 and define {p, :n >
+1} recursively by
+
+1 A
+Pu= ay [er + » Prope}
+
+jm2
+This sequence from [LP04] gives the probability that a genome in a certain
+model due to Kaufmann and Levin cannot be improved by changing one al-
+lele. Find a differential equation satisfied by the generating function f(z) =
+XyN-o Pnz", then use a computer algebra system to solve the resulting Riccati
+equation explicitly in terms of Bessel functions. Among the solutions, find the
+only one that is analytic in a neighborhood of the origin.
+
+Exercise 2.19. A left-to-right maximum (respectively right-to-left maximum)
+of a permutation x of size n is a position i for which 7; > 7; for all j <
+i (respectively all j > 7). Derive an explicit formula for the bivariate semi-
+exponential generating function that enumerates permutations by length and
+number of left-to-right maxima. Then derive the trivariate generating function
+that also counts right-to-left maxima.
+
+Exercise 2.20. The Catalan generating function f(x) = (1 — V1 —-4x)/(2x)
+does not satisfy the hypotheses of Proposition 2.34. We can get around this by
+multiplying by x, as in Example 2.35. Find another simple change to f that
+allows Proposition 2.34 to be applied, and compare results.
+
+Exercise 2.21. The Narayana numbers can be further refined by considering

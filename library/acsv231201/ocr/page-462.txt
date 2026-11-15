@@ -1,0 +1,48 @@
+444 Integration on manifolds
+
+and cotangent vectors, and the exterior algebra of differential forms, so that
+integrals are well defined independent of specific parametrizations.
+
+The constructions in this section formalize the following intuitive notion:
+integrating f(x, y,z)dxdy on a surface S involves projecting the surface ele-
+ment onto the xy-direction, multiplying by f, and organizing the sum of the
+infinitesimal contributions into a two-parameter integral. Describing the sur-
+face element without natural coordinates requires the introduction of tangent
+vectors, while describing the role of dx dy in projecting the surface element re-
+quires the introduction of cotangent vectors. Together these concepts allow us
+to define integrals along curves, with the framework of exterior algebra extend-
+ing this to surface integrals of arbitrary dimension. We know how to integrate
+in R4, and within a chart we can map from an abstract manifold to R¢ using
+a chart map, so we can generalize standard definitions from R¢ provided that
+using different charts for the same object provides the same answer.
+
+A.2.1 Tangent vectors and vector fields
+
+In an embedded manifold M c R¢ the tangent space of M at p is naturally de-
+fined as the vector space containing vectors in R¢ tangent to M at p. Although
+thinking about tangent vectors in this manner is concrete, it can be messy to
+naturally identify tangent vectors under different charts, and it can be difficult
+to generalize certain concepts to abstract manifolds. For this reason, we rein-
+terpret the tangent space as a collection of (directional) derivatives.
+
+Let M be a real m-manifold. A smooth germ in M at p is an equiva-
+lence class of smooth functions defined in neighborhoods of p such that two
+functions f on U and g on V are equivalent if there is some neighborhood
+W ¢ UNV of p for which flw = glw. Letting C}(M) denote the set of smooth
+germs of real-valued functions on M at p, we define a derivation on M at p
+to be any linear map D : C}(M) > R that satisfies the Leibniz property,
+
+D(fg) = (Df)g(p) + f(p)(D3).
+
+The tangent space of M at p, denoted T,(M), is the real vector space of
+derivations on M at p. By analogy with embedded manifolds, we call each
+element of Tp(M) a tangent vector.
+
+Example A.8. If M = R” then T,(M) = T,(R”) is the vector space of
+directional derivatives at p. Let x),...,X,, denote the usual coordinates of R’”
+and let Z| a
+
+Ox |p? Ox,
+
+be the maps that take a smooth function g(a) from R”
+Ip

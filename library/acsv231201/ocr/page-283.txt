@@ -1,0 +1,52 @@
+9.3 Smooth bivariate functions 265
+
+Intersection cycles and flows
+Fixing |x| small and expanding |y| gives a homotopy that (up to minor pertur-
+bation) intersects V transversely. In particular, the intersection cycle C created
+from this operation contains a positively oriented circle around the removed
+origin from each of the punctured disks in X*° for c sufficiently large. As usual,
+we get a residue integral expression
+
+ays = J [[R05(5% » xt ty ld a as}
+2ni Jc Ox, y)
+
+when P and Q are polynomials. More generally, when P is an analytic function
+over appropriate regions of C“ we get
+
+1 POY) pts res
+= — | Res| —— “dx Ad on
+ans = f a Oany? > hry +0")
+
+as r,s — oo, for any 6 > 0.
+
+As we have already seen multiple times, in the absence of CPAI the topology
+of V*¢ cannot change with c except at critical values. Because we work in two
+dimensions, we can be very explicit about the change in topology as c passes
+through a critical value.
+
+Definition 9.29. Suppose o = (xo, yo) is a critical point where O,(o) # 0, so
+that we can parametrize y = y(x) in a neighborhood of o in V. The degree of
+degeneracy of Q at a is the integer k such that there is a series expansion
+
+» C(x - w|
+
+pak
+
+A(x, y(x)) = h(o) + Re
+
+in a neighborhood of x9 with c, # 0. Because o is a critical point of the
+height function h, the degree of degeneracy is always at least 2, and o is a
+nondegenerate critical point precisely when the degree of degeneracy is equal
+to 2. Because # has no zero coordinate and o is a critical point, Q,(a) # 0 and
+the degree of degeneracy is the same parametrizing by y instead of x.
+
+If o = (X, Yo) is a critical point with degree of degeneracy k then we can
+substitute y = y(x) and expand H(x, y) = —? log x — Slog y near xo to obtain
+
+A(x, y(x)) = C + (x x0) g(x)
+
+for some C € C and analytic function g with g(x) # 0. In particular, if w =
+(x—x0)g(x)'/* then (dw/dx)(xo) # 0 and we can parametrize the height function
+hin the local coordinate w near o as
+
+h(x(w), yew) = Re [A(xGv), xxw)))] = A(o) + Re [w*].

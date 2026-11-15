@@ -1,0 +1,49 @@
+188 Overview of analytic methods for multivariate GFs
+
+Proposition 7.13. If T’ is a torus described by Proposition 7.12 then
+
+1\o
+ap = (+) f. Res w. (7.10)
+2ni INT(T,T’)
+
+ao
+
+Exercise 7.6. Suppose d = 1 and V = Vg where Q(z) = 2 - 3z+ 2. Let T be
+a circle of some small positive radius ¢ and T’ be a circle of some large radius
+M.
+
+(a) What is the cycle INT(T, T’)?
+
+(b) What is the form Res(w) when w = Q(z)7!z""!dz?
+
+(c) What is Sixecrr) Res(w)?
+
+(d) What is oINT(T7,T’)?
+
+(e) Describe in words why o INT(T, T’) is homologous to T—T’ in H\(C,\V).
+
+Step 3: Determine a Morse-Theoretic Decomposition of the
+Singular Variety
+
+Having reduced the Cauchy integral to an integral over an intersection cycle
+y = INT(T,T’) lying in the singular variety V,, we now want to deform y in
+‘YY, to represent the coefficient sequence of interest as a sum of saddle point in-
+tegrals. Because we are currently assuming V is smooth, we could try to com-
+pute such a representation by taking a gradient flow of y on V with respect to
+the height function h». If y can be deformed so that it lies in the neighborhood
+of a nondegenerate critical point o of hp, except for points of height at most
+o — € for some € > 0, then we can apply the saddle point techniques of Chap-
+ter 5 to compute asymptotics (up to an exponentially negligible error, coming
+from ignoring points of lower height).
+
+Actually computing such a gradient flow on real examples is usually not
+feasible. Fortunately, one of the most important consequences of Morse theory
+is that under reasonable conditions there are only a finite number of possi-
+bilities for the long-term behavior of such a flow. In particular, as detailed in
+Appendix C and summarized here, if the flow does not stay at bounded height
+while escaping to infinity on V, then we can flow y until it gets locally “stuck”
+on one of the critical points of hp.
+
+Our results are phrased in the language of singular homology, reviewed
+in Appendix B. Of particular use to us are the notions of relative homology,
+which allows us to discuss homology near a critical point while ignoring points

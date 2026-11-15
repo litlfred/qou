@@ -1,0 +1,54 @@
+92 Fourier-Laplace integrals in one variable
+
+A and ¢ are monomials
+
+On the positive half-line, we can get away with a change of variables involv-
+ing a fractional power. This allows us to handle the special case of monomial
+phase and amplitude by an exact integral, holding for any positive real a@ and
+nonnegative real 8. The change of variables y = Ax° gives
+
+00 01. Bla 1a-1
+f  exp(—Ax”) dx = f (*) ole dy
+0 0 \a a Ale
+
+1 hy
+= sae fl yoley dy,
+0
+
+so, by the definition of the Gamma function, we have the exact evaluation
+f a exp(—Ax") dx = Cla, B) aa (4.3)
+0
+
+with C(a, B) = ir(+#) as above.
+
+Remark 4.2. All of the contribution to (4.3) comes from a neighborhood of
+zero: for any € > 0 the substitution w = A(x* — €”) proves that the difference
+
+| 6 exp(—Ax") dx — C(a,B) AUP] = [ a exp(—Ax") dx
+0 e
+
+1 a ( Lp
+= lila gare! (wt de)! em dw
+@ 0
+
+= O(aPle")
+
+decays exponentially in A. The fact that a Fourier—Laplace integral decays ex-
+ponentially when integrated over a region where its phase does not vanish will
+be used multiple times in this chapter.
+
+Exercise 4.3. Suppose x has units of time (or length, or any other physical
+unit). Explain the right-hand side of (4.3), except for the constant, via a soft
+analysis: what are the free variables on the left, what units must 2 have in order
+to abide by the principle of unitless exponentiation, what units must the left-
+hand side of (4.3) have (remembering to include the units of dx), and what
+power must J therefore be given on the right-hand side?
+
+When £ = ¢ is an integer and a = 2k is an even integer the corresponding
+two-sided integrals make sense as well, giving
+
+ee 2C(2k, €) A~C+9/CW if € is even
+¢ 7 2k -
+f x‘ exp/( ax ) dx { 0 if Lisodd (4.4)
+
+co

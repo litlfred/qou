@@ -1,0 +1,34 @@
+306 Multiple point asymptotics
+
+Figure 10.10 Because the integrand of the Cauchy integral decays sufficiently
+quickly away from the origin, the ends of the imaginary fibers defining a link-
+ing torus can be joined and the resulting curve deformed to give an actual torus.
+Similarly, a torus can be broken apart into a linking torus.
+
+suppose that the €; define a transverse arrangement. Then
+
+T(é,...,6) = » Tw (10.9)
+wew(h)
+in Ha(M, —09) for all sufficiently small ¢ > 0. In particular, the power series
+coefficients ay of F satisfy
+
+1
+"= Onpd » [Peer tae.
+
+oer) VY Te
+
+The decomposition (10.9) varies with # but is unique for each generic 7
+because the linking tori form a basis. For simplicity we restrict Theorem 10.23
+to power series expansions, however decompositions analogous to (10.9) can
+be computed for any torus T(w) with Relog(w) ¢ amoeba(Q).
+
+Proof Sketch Because any torus in M can be expressed as a sum of imagi-
+nary fibers, it is sufficient to prove that any imaginary fiber can be expressed
+as a sum of linking tori. For each bounded component B of Mg there exists
+a critical point og that minimizes the height function hp on B, and this crit-
+ical point is a contributing point. If a lies in B then we can replace the fiber
+Cz by the t,, plus a sum of fibers Cz,where hp(x’) < hp(og). Repeatedly
+applying this rewriting process results in a sum of linking tori plus imaginary
+fibers over points in components of Mg on which hg is unbounded from be-
+low. These final imaginary fibers are null homologous in (M,—co), and thus
+may be discarded. The result then follows by writing T(e,...,¢) as a “linking

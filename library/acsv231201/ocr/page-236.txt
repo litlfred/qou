@@ -1,0 +1,48 @@
+218 Overview of analytic methods for multivariate GFs
+
+each critical point. However, this argument does not imply that the deforma-
+tion is induced by a homotopy equivalence.
+
+To that end, let x(a) = min{|a — z| : z € critical} denote distance to the
+critical set. For s > 0, define a new vector field v, by
+
+v(x) Kw) 28
+vs(Z) = ¥ p(k(x))v(a) K(x) € [s/2, 5] ,
+0 K(x) < s/2
+
+where p is a smooth nondecreasing function with p(s/2) = 0 and k(s) = 1.
+
+Fix € > 0 with [c — €,c + €] € (a,b) and let ®,(x, 1) denote the flow defined
+similarly to ® but with v, in place of v. Let T(x) = ®,(a, 2e) denote the time
+2e map for the flow ®,. Because h = hp is nonincreasing along ®,, points in
+Mec-¢ remain inside Mz-_,, hence the flow defines a homotopy equivalence
+between the pairs (M +2, Mc_<) and (X, M;_<), where X = t[Me+.].
+
+Define a modified height function g = ho tT. We claim that g has the same
+critical points as h in h-\([c—e, c+6]). To see this, first observe that trajectories
+of ®, are either rest trajectories at points in the set Vo = {a : vs(a) = 0} or else
+never enter Vo. Indeed, this follows from the fact that v, is tangent to all strata,
+smooth on every stratum, and that trajectories of a flow defined by a smooth
+vector field cannot merge. Inside Vo, the height functions h and g are equal,
+and hence have the same critical points. Outside Vo, the differential dg|s can
+never vanish because dg|s(v) < 0; this follows from the fact that for v € S, the
+map dg(v)(x) = d(ho t)(v)(a) sends v to dh(Dr(v)). On trajectories, the map
+Dr carries vs € Tz(S) to p(t(x)) € Tr(~)(S), where p(t(x)) > 0. Thus
+
+dg(vs)(@) = p(t(a))dh(ws)(t(@)) = —p(t(a)) < 0,
+
+showing that dg|s is nonvanishing outside Vo and proving the claim.
+
+The map Tf takes all points of Mz.,, into M<,_,, except possibly for those
+whose trajectories come within distance s of the critical set within time 2e.
+Because v is bounded, trajectories coming within s of the (finite) critical set
+within time 2¢ are all contained in some compact set K, independent of s €
+[0, 1]. Therefore, the difference X \ M__, is bounded and g is a proper height
+function on the pair (X, M._.), in the sense that the inverse image of a compact
+set in X \ M_, is compact.
+
+We may now apply the results of stratified Morse theory (see Theorem D.21
+in Appendix D). The result is that the pair (X, Mzc_.) is homotopy equivalent
+to the direct sum of pairs (N(z) U M--5, Mc_s) as 2 varies over the critical
+points of height c and N(z) can be chosen to be arbitrarily small neighbor-
+hoods of these, after which 6 is chosen sufficiently small. We have seen, in

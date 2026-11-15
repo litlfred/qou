@@ -1,0 +1,35 @@
+34 Generating functions
+
+with a corresponding set of boundary values {b, : r € B}. We study the initial
+value problem with initial conditions
+
+dy, = b, for all r € B, (2.6)
+
+where the recursion (2.4) holds for all r € N7\B (summands with r—s ¢ N@ are
+defined to be zero). Our goal here is to take the set of shifts E, the polynomial
+Q, and the sets of boundary locations and boundary values, and determine
+the generating function enumerating {a,.}. Figure 2.1 shows an example setup
+where E = {(2,-1),(—1,2)} and B is the y-axis. We encode the terms in each
+polynomial that appears by their Newton diagrams, the set of vectors defined
+by the exponents of their monomials.
+
+Tp
+
+(21)
+
+Figure 2.1 Left: The set E and its convex hull (dashed). Right: A Newton diagram
+of K (marked by x), U (marked by m), and B (marked by 0). The quantities
+K, U, B, r, s, and p are defined in the text.
+
+Let Z = N“ \ B and decompose F(z) = Fz(z) + Fp(z) where
+F7(z)= » pz”
+reZ
+is the generating function for the indices where the recursion (2.4) holds and
+F2(z) = » bpz”
+reB
+
+enumerates the boundary conditions. Following the method of Example 2.15,
+to apply the kernel method we study the product Q(z)Fz(z). Examining this
+product shows that there are two types of terms with non-zero coefficients.
+
+e First, for every pair (r,s) with r € Z, s € E,andr-s ¢€ B there isa

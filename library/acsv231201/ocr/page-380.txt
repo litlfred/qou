@@ -1,0 +1,47 @@
+362 Cone point asymptotics
+
+fy
+a ~
+{ ‘N / f \
+{ \ \
+fo [Ut min ||
+\ 4 ‘ \ |
+VA \ XY
+' \
+log T(X nin) \
+
+Figure 11.3 Deforming the chain: #, points to the right; the dotted plane is
+a —u + iR‘. The figure on the left shows that this can be deformed to the pro-
+jective contour ¢. The figure on the right shows that stopping early produces a
+contour differing in an arbitrary small neighborhood of any point of localarg
+and completely avoiding Vj.
+
+that the set of local points local(#,) with respect to x, is nonempty. Theo-
+rem 11.33 and Definition 11.34 show how to deform T = x, — u+ i(R/2m)4 in
+£ with x,.—u € B into acycle 2, which is the sum over w € localarg(f..) of
+locally projective chains aw) near x, +iw together with a chain in M<,_, for
+some s > 0. Applying Cauchy’s integral formula to F, changing coordinates
+via the exponential map, and breaking into pieces near each local point gives
+the following corollary.
+
+Corollary 11.35. Assume the hypotheses in the previous paragraph and let
+f = Foexp. There is a constant c < m, a neighborhood R of ?., and constants
+0 <6 <p such that
+
+— i inl
+ar = - eo” f(z) dz + O(e")
+a (2niy4 @(w)
+Zz” . . .
+- Ima f oY fliy + Y(y))J(y) dy + Oe")
+welocalargtr) ( 7)" Jew)
+
+uniformly as f = r/|r| ranges over R, where of is specified in Definition 11.34
+and J is the Jacobian determinant of the map y o*(y). oO
+
+We are left with the task of asymptotically evaluating the integrals in Corol-
+lary 11.35. While the use of the locally projective deformation in the last corol-
+lary is only to save a few lines in the estimate (Theorem 11.5 would have done
+instead), Lemmas 11.37 and 11.39 and Theorem 11.40 do require it.
+
+When asymptotically evaluating integrals, the first step is typically to ap-
+proximate the amplitude via a series, with each summand having a canonical

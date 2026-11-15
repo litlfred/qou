@@ -1,0 +1,55 @@
+130 Multivariate Fourier—Laplace integrals
+
+which vanishes to order three at 0, we have
+
+perk (Ae) . o(a)')
+24kEN(E +k)! >
+
+x=0
+
+L(A, 6) = (-DS >? (5.14)
+
+0<¢52k
+where D is the differential operator
+= Ho! 0;
+D= » (H ),, 29).
+I<i,jsd
+The total number of derivatives of A in the term L,(A, @) is at most 2k and the
+total number of derivatives of @ is at most 2k + 2. oO
+
+Interpreting this in our context, we obtain the following.
+
+Corollary 5.17 (full expansion of Fourier—Laplace integral). Assume the hy-
+
+potheses of Theorem 5.2 and suppose further that @ has a single critical point
+on N which lies at the origin. Then the constants in (5.3) satisfy
+
+(Q2ntl2
+
+“ VdetH
+
+for each k > 0, where Ly is as defined by (5.14).
+
+L(A, 9)
+
+The fact that Lemma 5.16 requires only smoothness also makes it easy to
+localize.
+
+Lemma 5.18. /f ¢ has a finite number of critical points on N where the hy-
+potheses of Corollary 5.17 hold, then an asymptotic expansion for I(A) is
+obtained by summing the expansions corresponding to each of these critical
+points.
+
+Proof The proof of Theorem 5.2 shows that the contribution from the bound-
+ary of the domain of integration may be ignored — we may localize to a neigh-
+borhood N’ of the critical point that is diffeomorphic to an open ball in R¢.
+Replacing A by the product Aa of A with a compactly supported smooth func-
+tion @ that is equal to one on N’, the result follows from Lemma 5.16. a
+
+Exercise 5.12. Verify that when A(0) # 0 the leading constant of (5.3) matches
+the expression in Corollary 5.17.
+
+Notes
+
+A number of the results in this section originally appeared in [PW 10]. In the
+case of purely real or imaginary phase, the results of this chapter are fairly

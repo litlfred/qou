@@ -1,0 +1,48 @@
+298 Multiple point asymptotics
+
+Example 10.9. The zero set of Q(x, y, z) = (I1-z)(1-z+(1-y)?-(1 +.0)) is the
+union of the plane V; defined by | — z and a smooth surface ‘V> defined by the
+vanishing of the other factor p(x, y, z). These two surfaces intersect in the curve
+S defined by translating the cusp of V(z, x*—y”) to the point (-1, 1, 1). Because
+the expansion of p at (—1, 1, 1) begins p(x, y,z) = 1-z+(y-1)?+--- the tangent
+planes of V; and V2 coincide at (—1, 1, 1), which is not an arrangement point.
+Note that the intersection S is not smooth, so the sets V; \V2, V2 \ V1, and
+S do not form a Whitney stratification. To refine these sets into a Whitney
+stratification requires decomposing S further into the singleton {(—1, 1, 1)} and
+the remainder S \ {(-1, 1, 1}. 4
+
+Every transverse multiple point is an arrangement point. Although there are
+arrangement points that are not transverse points, arrangement points have a
+transversality in successive intersections.
+
+Proposition 10.10. Suppose p is an arrangement point of order n, with divi-
+sors V\,...,V, as above, and let i ¢ T C [n]. Then either Vr Cc V; ina
+neighborhood of p or Vr intersects V; transversely at p. Consequently, if P;
+denotes the tangent space of V; at p then any intersection Vr is a manifold in
+a neighborhood of p with tangent space Lr = NjerP; at p.
+
+Proof We induct on the codimension of V7. If Vr has codimension | then
+Vr =; for all i € T, with tangent space Lr at p. If i ¢ T then P; is distinct
+from the tangent plane to Vr at p, hence the intersection of V; and Vr is
+transverse.
+
+Now suppose V7 has codimension k > 1 andi ¢ T. By induction, V7 is
+smooth with tangent space Lr at p. If i € T then there is nothing to prove, so
+assume i ¢ T and let T’ = TU {i}. The normal vector to ‘V; at pis not in (Lr)+,
+and hence the surface V; intersects V7 transversely. The transverse intersec-
+tion of smooth varieties is smooth with tangent space given by the intersection
+of the tangent spaces, hence V7, is smooth with tangent space Ly, completing
+the induction. oO
+
+We end this section with an example illustrating the most complicated be-
+havior that can occur for multiple points: tangential intersections.
+
+Example 10.11 (two curves intersecting tangentially). Consider the generat-
+ing function
+
+1 _
+F - jxiy!,
+(x,y) @-x-yd—m) Dyan
+
+with the divisors V(2 — x — y) and V(1 — xy) intersecting tangentially at the
+point p = (1, 1) as shown in Figure 10.8.

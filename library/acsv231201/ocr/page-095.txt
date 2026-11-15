@@ -1,0 +1,45 @@
+3.5 The saddle point method 77
+3.5 The saddle point method
+
+One of the crowning achievements of complex analysis is the development of
+techniques to evaluate integrals through clever deformations of their contours
+of integration. Much of this work can be grouped together under the umbrella
+of the saddle point method, aimed at discovering the best deformation for an
+asymptotic analysis. Unlike the techniques discussed above, saddle point meth-
+ods do not require an integrand to have singularities, and it is common to use
+a saddle point analysis in situations where transfer theorems cannot be utilized
+(in fact, the presence of singularities can complicate the saddle point method).
+In this section we give a short overview of univariate saddle point techniques,
+with further development of the univariate case covered in Chapter 4 and mul-
+tivariate generalizations discussed in Chapter 5.
+
+The heart of the saddle point method is the following statement: when the
+modulus of an integrand falls steeply on either side of its maximum, most of the
+contribution to the integral comes from a small interval about the maximum.
+If the descent is steep enough, multiplying the integrand by the length of the
+interval where the modulus is sufficiently near its maximum (or doing some-
+thing slightly more fancy) gives an accurate estimate. Most contours, however,
+cannot be used for this purpose: such an estimate cannot hold if the contour
+can be deformed so as to decrease the maximum modulus of the integrand,
+since then the integral would be less than the claimed estimate.
+
+Let y be a contour and let J = log f(z) — (n + 1) logz be the logarithm of the
+Cauchy integrand in (3.4). Fixing zp € y, we write Re{/’} and Im{/’} for the real
+and imaginary parts of the derivative at zo of J restricted to the curve y. If zo
+maximizes the modulus of the Cauchy integrand on y then Re{/’} = 0, however
+it is not usually true that Im{J’} = 0. In fact, the Cauchy—Riemann equations
+imply that Im{/’} equals the real part of the derivative at z) of J along any
+curve perpendicular to y at zo. Thus, when Im{/’} # 0 the curve y may be
+locally perturbed, fixing the endpoints but pushing the center in the direction
+of increasing Re{J/}, thereby decreasing the maximum modulus of the Cauchy
+integrand on the contour. In other words, if the modulus of the integrand is
+maximized on y at Zo, and this maximum cannot be reduced by perturbing y,
+then /’ must vanish at Zo. The univariate saddle point method thus consists of
+the following steps:
+
+(i) locate the zeros of J’, which form a discrete set of points,
+
+(ii) see whether the contour of integration can be deformed so as to minimize
+Re{/} at such a point,
+
+(iii) estimate the integral via a Taylor series expansion of the integrand.

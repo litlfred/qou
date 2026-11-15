@@ -1,0 +1,33 @@
+470 Algebraic topology
+
+Figure B.2 y is a relative cycle in C(X, Y).
+
+We often use relative homology to “ignore” regions that do not contribute to
+dominant asymptotics in our integral manipulations.
+
+The concept of homotopy equivalence is defined for pairs of spaces simi-
+larly to the definition for spaces, and homotopy equivalent pairs have the same
+relative homology.
+
+Example B.9. Let X be the unit ball in R” and A be the unit sphere $”~!. To
+compute the homology of the pair (X,A) we consider the unit n-simplex A”
+and its boundary: topologically (A", 0A”) and (B,,5”~!) are homeomorphic,
+so their relative homologies are the same. The simplicial chain complex for A”
+contains all faces of A”, hence it has simplices in dimensions 0 through n. The
+complex of the pair is non-trivial only in dimension n because every face of
+dimension less than n is supported on 0A”. Proposition B.5 (that simplicial and
+singular homology coincide) extends to pairs composed of a simplicial com-
+plex and a subcomplex. Therefore, the singular homology of the pair (B", S”~!)
+is computed by this rather small chain complex, leading to Hy(B",S""!) = C
+when k = n and 0 otherwise. 4
+
+Exercise B.4. What is the relative homology of (S?, 5), where S* is the 2-
+sphere and S? is the closed southern hemisphere?
+
+Relative homology is useful for approximating integrals due to the following
+result.
+
+Proposition B.10 (asymptotics depend only on relative homology class). Let
+X be a manifold of dimension n with submanifold Y also of dimension n, and
+let 6 be a smooth complex-valued function on X satisfying Rid} < B on Y for
+some B € R. Suppose that w = wy = exp(A o(z)) n for some closed k-form n on

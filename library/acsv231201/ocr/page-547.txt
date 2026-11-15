@@ -1,0 +1,43 @@
+D.4 Stratified Morse theory for complex manifolds 529
+
+section for complements of manifolds, applying the Kiinneth formula to obtain
+a description of the attachments in terms of specific relative cycles.
+
+Definition D.24 (quasi-local cycles). A (relative or absolute) local cycle at a
+point p is a cycle which may be deformed so as to be in an arbitrarily small
+neighborhood of p. Given a stratified space with Morse function h, a quasi-
+local cycle at a critical point p of the stratification is a cycle C, x Cy, where
+Cj is a disk in S on which h is strictly maximized at p, By is a small ball
+around p in the normal slice, C+ is a local cycle in (Bp \ Y, (Bp \ Y)<np)-e)s
+and the product is taken in any local coordinatization of a neighborhood of p
+by BpxS.
+
+Theorem D.25. Let X be the complement of a complex variety of dimension d
+in C4*!. Then X may be built by attaching spaces that are homotopy equivalent
+to cell complexes of dimension at most d + 1. Consequently, Hq(X) has a basis
+of quasi-local cycles which may be described as B = {p,i}p,i, where p ranges
+over critical points in different strata, and each Op, € X°?. For each fixed p,
+the projection nm, : X°P > (X°P, X<-_¢) = XPiloc maps the set {0p} to a basis
+for the relative homology group H4(XP). ia)
+
+Notes
+
+The idea to use Morse theory to evaluate integrals was not one of the original
+purposes of Morse theory. Nevertheless, the utility of Morse theory for this
+purpose has been known for over 50 years. Much of the history appears difficult
+to trace: the present authors learned it from Yuliy Baryshnikov, who related it
+as mathematical folklore from Arnold’s seminar. The smooth Morse theory
+in this chapter (and some of the pictures) is borrowed from Milnor’s classic
+text [Mil63]. Stratified Morse theory is a relatively new field, in which the
+seminal text is [GM88]; most of our understanding came from this text.
+
+The result usually quoted as the description of the attachment in the strati-
+fied case (a stratified version of Theorem C.28) is an unnumbered result named
+“Theorem” in [GM88, Section 3.12]. This computes the change in topology of
+a stratified space X on which the function / is proper. When h is a continuous
+function on C4, this requires the subset X to be closed. We are chiefly inter-
+ested in the space X = V° which is not closed. Dealing with nonproper height
+functions requires two extra developmental steps. The first is to develop a sys-
+tem for keeping track of the change in topology of the complement of a closed
+space up to a varying height cutoff. This computation is similar to the one for
+the space itself. Goresky and MacPherson state the two results together in a

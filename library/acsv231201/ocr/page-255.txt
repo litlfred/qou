@@ -1,0 +1,47 @@
+8.3 Verifying minimal points 237
+
+hand using specialized results like the Grace—Walsh-Szegé theorem discussed
+in Section 6.4.
+
+For a combinatorial Laurent expansion, Corollary 6.39 implies that w € V
+is minimal if and only if
+
+Ollxil"bwil, «4 Lxal'bwal!) # 0 for all re O, 1)
+
+where « is a point inside the domain of convergence of the series. This non-
+equality can still be rigorously tested using truncation bounds for functions sat-
+isfying linear differential equations [Mez19] and zero certification of analytic
+functions based on Smale’s a-theory [HL17]; however, this is more expensive
+than the algebraic methods in the power series case.
+
+General expansions
+If we consider a (not necessarily combinatorial) power series expansion then
+Corollary 6.36 implies that w € V is minimal if and only if
+
+T(twil-...thead) AV=O  OK<t<D. (8.5)
+
+In order to describe the moduli of complex values using polynomial equa-
+tions we write z = & + iy for real variables 2, y € R¢ and decompose any
+polynomial f(z) € R[z] into
+
+f(z) = fw + iy) = f*(a.y) + if'(e.y)
+
+for f®, f! € R[w, y]. The condition (8.5) is then equivalent to the polynomial
+system
+
+OF (x,y) =0
+O(a, y) = 0
+aztyz sti <k<d)
+
+having no solution (a, y, t) € R2“*! with 0 < t < 1. Melczer and Salvy [MS21]
+analyze algorithms testing this condition using techniques from real algebraic
+geometry, working implicitly with critical points through their defining alge-
+braic equations.
+
+Unfortunately, the complexity of these real algebraic methods and the in-
+crease in dimension corresponding to the change from C4 to R™ mean that
+most current implementations fail to terminate for anything beyond low degree
+bivariate examples. An approach using efficient algorithms for homotopy con-
+tinuation to solve polynomial systems can rule out non-minimal critical points
+for higher dimensional rational functions via a Julia implementation [LMS22],
+however this approach cannot usually prove minimality without additional, by

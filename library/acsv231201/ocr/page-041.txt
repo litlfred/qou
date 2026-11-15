@@ -1,0 +1,46 @@
+2.2 Rational operations on generating functions 23
+
+and ¢(01) = (1, 1) encoding the blocks by the number of zeros and ones they
+contain, then 8 has generating function x + xy. The generating function for A
+is therefore A(x, y) = 1/(1 — x — xy). Note that setting x = y = z recovers the
+univariate generating function A(z, z) = 1/(1 —z—z”) counting these strings by
+total length. 4
+
+Example 2.5 (prefix codes). This example illustrates the use of prefix codes
+to encode messages over an arbitrary alphabet using binary strings. Fix a finite
+rooted planar binary tree T with at least two vertices such that every vertex has
+exactly zero or exactly two children. We label each non-root vertex v of T with
+the binary string obtained by taking the unique path from the root of T to v
+and recording a 0 whenever we move to the left and a 1 whenever we move to
+the right. Thus, the elements in T of distance d from the root are labeled with
+binary strings of length d (we can consider the root itself to have the empty
+string as its label).
+
+Any binary string may be uniquely decomposed into blocks by repeatedly
+stripping off the left-most substring that corresponds to a label of a leaf in T,
+where the decomposition may end with a partial block corresponding to an
+internal node of T. Let 8 be the class of binary sequences enumerated by their
+length and the number of blocks they have under this decomposition. If L(x)
+is the univariate generating function enumerating the number of leaves in T by
+depth (i.e., distance to the root of T) then the subclass of 8 containing strings
+consisting of a single block under this decomposition has generating function
+yL(x). If J(x) is the univariate generating function enumerating the internal
+vertices in T by depth then 1 + y(/(x) — 1) enumerates the possible partial
+blocks that a binary string can end with under our decomposition, including
+having no partial block. As an arbitrary binary string can be uniquely split
+into a sequence of blocks followed by a (possibly empty) partial block, the
+generating function B(x, y) enumerating 8 is
+
+1+yd@)- 1)
+
+BO = TSE)
+
+To use a prefix code over the alphabet A one creates a binary tree T whose
+leaves correspond to the symbols in A and parses a binary string into a word
+over A using the block decomposition described above. The generating func-
+tion B(x, y) encodes how many different messages can be transmitted through
+binary strings of a fixed length (in applications one would like to pick the tree
+T to maximize this quantity, perhaps under some constraints). 4
+
+The field of lattice path enumeration also yields a large and well-studied
+class of examples.

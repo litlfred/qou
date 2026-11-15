@@ -1,0 +1,38 @@
+Smooth point asymptotics 247
+
+B,
+
+B,
+
+Figure 9.1 The amoeba complement component B), corresponding to a power
+series expansion, has one point on its boundary where its support hyperplane has
+normal r = (1,1), which corresponds to contributing points. On the other hand,
+the component B has two boundary points with support hyperplanes having nor-
+mals r = (1, 1), only one of which (the upper-most one) corresponds to contribut-
+ing singularities.
+
+Chapter 7. In order to simplify our presentation, we begin by stating it in the
+common special case where Q is square-free and there is a single minimal
+contributing point.
+
+Theorem 9.4 (Main Theorem of Smooth ACSV (Local Version, Square-Free
+Case)). Let F(z) = P(z)/Q(z) be the ratio of coprime polynomials P and Q
+with convergent Laurent expansion F(Z) = Yipezi Ar 2". Suppose that there is
+a compact set R C R4 of non-zero directions such that if ? lies inR then F has
+a smooth strictly minimal nondegenerate contributing point w = w(#) € C4,
+and let H = H(#) be the Hessian matrix defined by (8.7) and (8.8) when
+H = Q. If Q.,(w) # 0 then
+
+dp * Dy (1)
+
+uniformly as r — co with F € R, where ®,,(r) is an asymptotic series
+
+"lp {O-Ol2 (Qn)? sgen(ra) xe ery. 2)
+
+ydet(sgn(rg) H
+
+The square-root of the matrix determinant is the product of the principal branch
+
+Oy(r) =
+
+square-roots of its eigenvalues (which will have nonnegative real parts). The

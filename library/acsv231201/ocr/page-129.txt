@@ -1,0 +1,46 @@
+4.3 Analytic versus smooth functions 111
+
+has coefficients {bj} and € denotes the smallest index such that by # 0 then
+I,= tL A(x) exp(iAg(x)) dx has an asymptotic development
+
+I. » bj Clk, fy Gay,
+
+jot
+
+The error obtained by taking the (N — 1)st partial sum is O(A~N'*) with the
+implied constant bounded in terms of the suprema of the first N derivatives
+of A near the origin. A similar result holds for the two-sided integral I with
+coefficients a; obtained from conclusion (iii) in Theorem 4.1 with aj = bj.
+
+Proof Let U be a smooth function that is 1 on the support of A and vanishes
+outside of a compact set. Fix N > 1 and 6 > 0, and let P(x) = Pw,s5(x) be the
+Nth Taylor polynomial for e™ A(x) (obtained by truncating its Taylor series at
+the x” term). If b 6 denotes the coefficient of x/ in P(x) and the normalized
+remainder term R(x) = Ry,5(x) is defined by e® A(x) = P(x) + xN*! R(x) then
+I, = B, + By + B3, where
+
+B= f elt eo P(x)dx,
+0
+
+By = f elt yN#1 6 R(X)U(x) dx ,
+0
+
+B; = f * el" 6-8 P(x)\(U(x) - 1) dx .
+0
+
+By Lemma 4.11 with n(x) = eo R(X)U(x) and £ = N +1, we know that |Ba| <
+Ka-“/* for some constant K > 0 that can be bounded in terms of k, €, and
+the first € derivatives of A, the bound being uniform over 6 in a neighborhood
+of the origin.
+
+Similarly, by Corollary 4.12 we see that B3 is rapidly decreasing as A > ov.
+It follows that the asymptotic series for J, up to the A~“*)/* term may be
+obtained by taking 6 — 0 in B;. Since P is a finite sum of monomials, we may
+use Lemma 4.13 to compute B; and prove the theorem. As before, we may sum
+results for J, and the analogous integral J_ over the negative real half-line to
+prove the result for Z. ia)
+
+General A and ¢
+
+Since i@ always lies along the imaginary axis, we may use a diffeomorphic
+change of variables to transform ¢ into ic,x*, under which the contour remains
