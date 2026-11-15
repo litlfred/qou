@@ -66,3 +66,7 @@ Status: open. It waits on re-audit decisions A, B and C.
 - A: the one γγ rule also covers nuclear bond letters (g+d_k). The binding thread is notified.
 - B: trace drop is a RESULT, not a selection clause. Bonds are selected by γγ + reading 3 (every level). tr(xK) < tr(x) is reported. prop:ilp-covalent-bond still lists it as a clause; the rewording will be put to the owner before any edit.
 - C (origin of the 3-letter quark block) is still open.
+
+## 2026-11-15 — decision C ("try γγ first"): H₂ with a γγ nucleon (PR #7741, `h2_gg_atom/`)
+
+Pre-registered (97dacc709d3), then computed (4901ed2c59b). Nucleon block Vᵐ, m = 3…7. On H₃ only V³ and V⁶ pass reading 3 at every level; p and n are the same word (no flavour on three strands). With the T_w0 electron the bare H₂ word passes every level and the bonds that pass are exactly V³ at s = 4 and 5 (trace ratio 0.9974/0.9985, ep at s=5 ratio 1). With the trefoil electron the bare word fails at level 6, block (3,3), so the electron is now the only non-γγ ingredient blocking. Open owner question: does the one rule cover the electron? Scope (a).
