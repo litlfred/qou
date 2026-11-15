@@ -1659,6 +1659,7 @@ import QOU.Common.HookSumIdentity
 import QOU.Hecke.H2KaehlerDegrees
 import QOU.Mass.FormalityBridgeF1
 import QOU.MathlibExt.InterleavedWordClosures
+import QOU.MathlibExt.UniversalDifferentials
 import QOU.Mass.CrossTermFixedPointCount
 import QOU.LiftingDescent.CrossedModuleSurfaceHolonomy
 import QOU.Mass.CrossTermOrderZeroComponentCount
