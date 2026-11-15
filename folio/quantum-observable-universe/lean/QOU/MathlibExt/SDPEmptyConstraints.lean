@@ -7,18 +7,19 @@ import QOU.MathlibExt.SDP
 The `HasStrongDuality` instance for the trivial sub-case `ι :=
 Empty` (no equality constraints).  This is the simplest non-
 trivial SDP: minimise `tr(T · Φ)` over `Φ ⪰ 0` with no
-constraints.  Strong duality holds vacuously: there are no dual
-variables to optimise over, the dual objective is identically
-zero, and the primal infimum is attained at `Φ = 0`.
+constraints.  There are no dual
+variables, the dual objective is identically zero, and the dual slack
+is the cost `T`.  So a dual-feasible point exists iff `T ⪰ 0`, and then
+the primal infimum `0` is attained at `Φ = 0`.
 
 ## What this module provides
 
-- `instHasStrongDualityEmpty` — typeclass instance
-  `HasStrongDuality sdp _h` for any `SDPPrimal n R Empty`
-  whose Slater hypothesis `_h` is satisfied.
-- `instStrictComplementarityEmpty` — the analogous trivial
-  `StrictComplementarityPair` instance (active set is empty,
-  inactive-dual-zero is vacuous).
+- `hasStrongDuality_empty` — `HasStrongDuality sdp _` for any
+  `SDPPrimal n R Empty` whose cost is PSD.  (Until 2026-11-15 this was
+  an unconditional instance, valid only because the pair's dual-feasibility
+  and zero-gap fields were `True`.)
+- `trivialStrictComplementarityPair` — the analogous trivial
+  `StrictComplementarityPair` (active set empty), same hypothesis.
 
 ## Categorical content
 
@@ -57,41 +58,50 @@ theorem one_isStrictlyFeasible (sdp : SDPPrimal n R Empty) :
   refine ⟨1, ?_, fun i => i.elim⟩
   exact Matrix.PosDef.one
 
-/-- **Strong-duality witness for the constraint-free case**: take
-    the primal optimum to be `0 : Matrix _ _ R` (vacuously feasible
-    when constraints are empty), the dual optimum to be the empty
-    function, and observe that primal and dual objectives both
-    equal `0`.
+/-- With no constraints the dual slack is the cost itself. -/
+theorem dualSlack_empty (sdp : SDPPrimal n R Empty) (y : Empty → R) :
+    sdp.dualSlack y = sdp.cost := by
+  simp [SDPPrimal.dualSlack]
 
-    PER COPILOT REVIEW: this construction is only valid as an
-    "optimum" when the primal infimum is attained at 0, which
-    requires `sdp.cost` to have a non-negative direction (i.e.
-    PSD).  For costs with negative directions the infimum is
-    `-∞`.  The `StrongDualityPair`'s `obj_eq` field is `True`
-    so this construction is technically well-typed even without
-    PosSemidef cost; downstream consumers should confirm cost
-    semidefiniteness before relying on the "optimum" claim. -/
-def trivialStrongDualityPair (sdp : SDPPrimal n R Empty) :
-    StrongDualityPair sdp where
+/-- With no constraints the dual objective is `0`. -/
+theorem dualObjAt_empty (sdp : SDPPrimal n R Empty) (y : Empty → R) :
+    sdp.dualObjAt y = 0 := by
+  simp [SDPPrimal.dualObjAt]
+
+/-- **Strong-duality pair for the constraint-free case, given a PSD cost.**
+
+    Primal point `0`, empty dual point.  Dual feasibility is exactly
+    `cost ⪰ 0` (the dual slack *is* the cost), and both objectives are `0`.
+
+    The hypothesis is necessary, not a convenience.  This used to be stated
+    for every cost, which type-checked only because `dual_feas` and `obj_eq`
+    were `True`.  For a cost with a negative direction `v` (e.g. `T = -1`,
+    `n = 1`) the primal objective `tr(T Φ)` is unbounded below on `Φ ⪰ 0`
+    (take `Φ = t · v vᴴ`, `t → ∞`), so there is no optimal pair at all. -/
+def trivialStrongDualityPair (sdp : SDPPrimal n R Empty)
+    (hcost : sdp.cost.PosSemidef) : StrongDualityPair sdp where
   Φstar := 0
   ystar := fun i => i.elim
   primal_feas := zero_isFeasible sdp
-  dual_feas := True.intro
-  obj_eq := True.intro
+  dual_feas := by rw [dualSlack_empty]; exact hcost
+  obj_eq := by simp [SDPPrimal.objAt, dualObjAt_empty]
 
-/-- **Strong duality holds for the constraint-free case** —
-    instance form. -/
-instance instHasStrongDualityEmpty (sdp : SDPPrimal n R Empty) :
-    HasStrongDuality sdp (one_isStrictlyFeasible sdp) where
-  pair := ⟨trivialStrongDualityPair sdp⟩
+/-- **Strong duality for the constraint-free case with PSD cost.**
+    (Formerly an unconditional global instance; see
+    `trivialStrongDualityPair` for why the PSD-cost hypothesis is needed.) -/
+theorem hasStrongDuality_empty (sdp : SDPPrimal n R Empty)
+    (hcost : sdp.cost.PosSemidef) :
+    HasStrongDuality sdp (one_isStrictlyFeasible sdp) :=
+  ⟨⟨trivialStrongDualityPair sdp hcost⟩⟩
 
 /-- **Trivial strict-complementarity pair** for the constraint-
-    free case.  The active set is empty (no constraints to be
-    active), so `active_dual_pos` and `inactive_dual_zero` both
+    free case with PSD cost.  The active set is empty (no constraints
+    to be active), so `active_dual_pos` and `inactive_dual_zero` both
     hold vacuously. -/
-def trivialStrictComplementarityPair (sdp : SDPPrimal n R Empty) :
+def trivialStrictComplementarityPair (sdp : SDPPrimal n R Empty)
+    (hcost : sdp.cost.PosSemidef) :
     StrictComplementarityPair sdp where
-  toStrongDualityPair := trivialStrongDualityPair sdp
+  toStrongDualityPair := trivialStrongDualityPair sdp hcost
   active := ∅
   active_dual_pos := fun i hi => absurd hi (Set.notMem_empty _)
   inactive_dual_zero := fun i _ => i.elim
