@@ -20,8 +20,7 @@ $$
 $F_{\mathrm{Bor}} = |\mathrm{tr}_M(\beta_{\mathrm{Bor}})| \cdot [3]_q! / q^3$,
 via the canonical chain Steps 1 $\to$ 3 $\to$ 5 $\to$ here. This is the
 **raw** identity: the substrate parameter $q_0$ is pinned by solving
-exactly this form against $m_p/m_e$ (an earlier version of the pin carried
-a fitted Habiro 4-loop dressing, which is not used here), so the
+exactly this form against $m_p/m_e$ (with no Habiro 4-loop dressing), so the
 identity round-trips $m_p$ by construction and $m_\mu$, $m_n$ are the
 predictions.*
 
