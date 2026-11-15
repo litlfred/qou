@@ -8772,3 +8772,18 @@ Owner chose "full Hecke tower first" for the factor above 1 that the ruled z_D b
 - **Trace side: nothing to sum.** `QOU.SchurWeyl.HeckeColimitFamilyTrace.trFam_inclLE` (sorry-free, any CommRing, any z) shows the iterated inclusion preserves the Markov trace. So the z_D trace of a fixed element already *is* its full-tower value. It is also exact in q, so all q-orders are already in it.
 - **E₀ side: the tower factor carries a free scale.** Per qou-y3bm the true sum is 1/(1 − ℏ_q²λ₁) with λ₁ = ℏ_q/L_q², and L_q is free in the corpus. Measured at the proton pin (mp.dps 40), L_q would have to be **0.0745627** (λ₁ = 17.82) to give 1.20016, or **0.0474749** (λ₁ = 43.96) to give 1.75924. Both are above the divergence threshold √(ℏ_q³) = 0.0311882, so the tower can supply any factor in (1, ∞). Picking L_q that way is selection against the target. The one corpus-derived value, Kelvin L_q = L, gives 1.00097, which is −0.885 % against the implemented tower and moves away from CODATA.
 - **Verdict, scope (a):** the full tower does not supply the factor unless the free L_q is chosen, so route 1 reduces to the open L_q modelling call (qou-y3bm successor). The live sources are the element (qou-99qc) and the N=3 colour trace (PR #7896).
+
+
+## 2026-11-15 — route 2 (N=3 colour trace) also cannot supply the factor
+
+The owner chose route 2 next. Measured with the census normal forms from `qbeta_option_e_required_level_probe.py` (sympy exact in h, read out at mp.dps 60, proton pin):
+
+| element | z_D (level 2) | rank-3 colour z₃ = q⁵/(q⁴+q²+1) (level 3) |
+|---|---|---|
+| nuc11_interleaved | −17.496 % | −29.702 % |
+| nuc11_gen_grouped | −15.451 % | −27.278 % |
+| nuc9 | −30.936 % | −39.086 % |
+
+- **Whole element at rank 3: wrong direction**, a factor of 0.852 on nuc11. Structural reason: z(r) = (q²−1)/(q(1 − q^{−2r})) is strictly decreasing in r for q > 1, and every census candidate needs a level between 1 and 2 (nuc11 r = 1.46, gen-grouped 1.49, nuc9 1.13, Δ_S 1.13). Any rank ≥ 3 moves away. It also contradicts D7 (D governs the decay channel). Scope: (a) for these candidates, plus the monotonicity of z(r).
+- **Colour trace on the quark block only:** no corpus rule says which letters take which trace. In the reduced 6-slot normal form [γ, σ₀, σ₁, L−, L+, e⁻] the quark block is not a separate slot, and `SecondMarkovTrace.lean` says the rank-3 trace on general H_n elements is not re-derived there. Inventing a per-block rule would be a choice, so this is left as an owner modelling question.
+- Net: routes 1 and 2 are both exhausted without a free choice. What is left is the element (route 3, qou-99qc), the L_q sibling thread, and the meaning of ε (assembly).
