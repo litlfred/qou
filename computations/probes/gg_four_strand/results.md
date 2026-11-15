@@ -39,6 +39,11 @@ on), and almost blind to orientation (V vs B):
 
 ## Amendment 2: J₄-projected reading 3 on the m = 6 flavour-changing words
 
+Scope note (added after the run, 2026-11-15): "flavour" in this section means the J₄ label of
+the n ≥ 4 doublet, which is the H₃ isotypic sector (Ja = (3), Jb = (2,1)): three-strand isospin
+3/2 vs 1/2. It is not n ↔ p; Hecke elements commute with U_q and cannot change T³ (PR #7975,
+beans qou-wkcd / qou-0whz). The numbers below are unchanged.
+
 Pre-registered at 669d96f2adb. Probe `gg_four_strand_j4_projected_probe.py`, witness
 `gg-four-strand-j4-projected.witness.json`. Explicit (3,1) rep of H₄(q) from draft PR #7957, mpmath at
 proton q₀ (40 dps). T_rep (Ja + Jb = PL, J₄ commutes with σ₁, σ₂) and T1 (tr w = base χ_(3,1)(w), all

@@ -18,6 +18,10 @@ So reaching strand 4 is necessary for a `J₄`-flavour change (PR #7957,
 `three_strand_word_no_mix`) but **not sufficient**.
 
 Scope: model statements about `H₄(q)`; no empirical number, no physical identification.
+"`J₄` flavour" here only names the `H₃` isotypic label of the left doublet (`Ja` = `(3)`,
+`Jb` = `(2,1)`), i.e. three-strand isospin 3/2 vs 1/2 under Schur–Weyl. It is **not** the
+`n ↔ p` label: Hecke elements commute with the `U_q` action and cannot change `T³`
+(PR #7975, beans `qou-wkcd` / `qou-0whz`).
 No `sorry`, no axiom, no `native_decide`, no class.
 
 -- Ref: [humphreys1990] §7.4 (Hecke algebra, generic q)
