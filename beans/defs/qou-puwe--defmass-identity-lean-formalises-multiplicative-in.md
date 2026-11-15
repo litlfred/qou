@@ -1,13 +1,13 @@
 ---
 # qou-puwe
 title: def:mass-identity — Lean formalises multiplicative integration, prose defines a categorical trace; and MassIdentity is ℝ-valued inside a generic-k tree
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T02:47:59Z
-updated_at: 2026-10-10T16:42:20Z
+updated_at: 2026-11-15T20:40:00Z
 parent: qou-ywyq
 ---
 
@@ -214,3 +214,13 @@ Open, recorded not fixed: the functional `x ↦ ∫_A(u x c)` is the categorical
 - PROVED (sorry-free, library sweep 15/15): `QOU.Torsion.MassTraceMarkov.braidTrace_wordBraid` — tr_M(β_ℓ) = wi^{m+1}·Tr(K^{⊗(m+1)}·Hol(ℓ)), Hol = ordered product of R-matrix transports (Ř for +, Ř⁻¹ for −); `jonesFn_wordBraid` is the framing-corrected form.
 - `def:mass-identity` retyped: m(ϱ)=‖∫_A Ψ ϱ‖, Ψ=(∫_A⊗id)Δ = id when ∫=ε (counit law).
 - STILL OPEN (bean stays open): Markov's theorem (link invariance); qou-0fmb abstract Ocneanu trace; H_n/rad ≅ TL_n; ∫=ε for the actual data; continuous KZ holonomy (Drinfeld–Kohno cited only).
+
+## 2026-11-15 — PR #7990 (`f6c6c9e`, owner ruling Q-YWYQ-1 = "try 1 and 3")
+- **Option 1 (Non-abelian ordered holonomy before taking the trace):**
+  - `QOU/Torsion/MassTraceIdentity.lean` (sorry-free): added `hol_nil`, `hol_cons`, `hol_singleton`, `leftMul_hol_append`, `frobeniusForm_massIntegrand_hol`, and `frobeniusForm_massIntegrand_hol_of_frobeniusForm_eq_counit`.
+  - `QOU/Torsion/MassTraceMarkov.lean` (sorry-free): added `hol_nil`, `hol_cons`, `hol_append`.
+  - `folio/quantum-observable-universe/mass-endomorphism/mass-identity.lean` (sorry-free): imported `QOU.Torsion.MassTraceIdentity` and added `cycleFrobeniusEval`, `cycleFrobeniusEval_eq`, `cycleMassTrace`, `cycleMassTrace_eq` ontop of `frobeniusMass`, `scalarMass`, `scalarMass_nonneg`, `massComposite`.
+- **Option 3 (Temperley–Lieb / Markov-trace state-sum expansion on $B_n$):**
+  - `QOU/Torsion/MassTraceMarkov.lean` (sorry-free, generic `[CommRing R]` with `q * qi = 1`): defined `tlProjector`, proved `tlProjector_sq` ($e_a^2 = (q + q^{-1}) e_a$) and `transport_eq_lead_sub_tlProjector` ($T(a, \varepsilon) = \mathrm{letterLeadScalar}(q, qi, (a, \varepsilon)) \cdot 1 - e_a$), proved the algebra-level bridge `hol_eq_tlStateSum` between Option 1 and Option 3, the Markov-trace state sum `braidTrace_wordBraid_eq_tlStateSum`, the leading $s \equiv \mathrm{false}$ scalar product isolation `braidTrace_wordBraid_eq_leadProd_add_tlStates`, and the framing-corrected state sum `jonesFn_wordBraid_eq_tlStateSum`.
+  - `QOU/Torsion/MassTraceMarkovClass.lean` (sorry-free): added `massClass_wordBraid_eq_tlStateSum`.
+- **Prose / TS parity:** updated `mass-identity.md` with the `**Non-abelian holonomy and Temperley–Lieb state sum.**` paragraph (preserving `**Archimedean specialisation.**` §7c verbatim) and updated `mass-identity.ts` `authorNotes`. Kept `status: in-progress` for owner review.

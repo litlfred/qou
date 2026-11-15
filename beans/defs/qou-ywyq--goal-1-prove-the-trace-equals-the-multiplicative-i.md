@@ -1,11 +1,11 @@
 ---
 # qou-ywyq
 title: 'GOAL #1: prove the trace equals the multiplicative integral (def:mass-identity)'
-status: todo
+status: in-progress
 type: milestone
 priority: critical
 created_at: 2026-10-10T14:43:05Z
-updated_at: 2026-10-12T20:47:07Z
+updated_at: 2026-11-15T20:40:00Z
 ---
 
 Owner goal #1 (ofri, 2026-10-10, verbatim: 'start new session focused ONLY on showing that the trace equals the multiplicative integral. THAT IS PRIMARY GOAL #1 (GOAL #2 is 1ppq L2)').
@@ -29,3 +29,7 @@ Kohno 1987 Remark 1.3.14 (library/kohno1987-aif, p.150): Theorem 1.2.8 holds at 
 2026-10-12 — PR #7772 (Stream 2, owner decision 1c): the mass identity is restated on braid classes. QOU/Torsion/MassTraceMarkovClass.lean (sorry-free, axioms propext/choice/Quot.sound): artinTower (Artin braid groups as a MarkovMoves.BraidTower), jonesTot_isMarkovInvariant (framing-corrected trace at w=(1,q^2) invariant under conjugation and both stabilisations), massClass (descent to Quot), exists_wordBraid (every braid is a word), massClass_wordBraid (mass identity on classes), holTrace_eq_of_markovEquiv. Content: def:mass-identity gains a braid-classes paragraph with one Alexander-Markov citation; prop:categorical-mass-markov statement and proof scope updated. The Markov's-theorem item is thereby discharged on the algebraic side per 1c (links cited only). Bean stays open: qou-0fmb, H_n/rad = TL_n, integral = counit for the actual data.
 
 2026-10-12 (cont.) — PR #7772 commit 8decf48456: QOU.Mass.KohnoWeightedClass.massClass_kz (sorry-free): mass of a braid class = framing-corrected site-weighted trace of the KZ holonomy kzHeckeC of any representative, for q=e^{2 pi i kappa} not a root of unity.
+
+## 2026-11-15 — PR #7990 (`f6c6c9e`, owner ruling Q-YWYQ-1 = "try 1 and 3")
+- Formalised Option 1 (non-abelian ordered holonomy `hol w` in `Hom(1, A)` before applying `∫_A ∘ Ψ` or `tr(L_{hol(w)} ≫ Ψ)` in `QOU/Torsion/MassTraceIdentity.lean`, `QOU/Torsion/MassTraceMarkov.lean`, and `mass-identity.lean`) and Option 3 (Temperley–Lieb state-sum expansion of `hol q qi ℓs`, `braidTrace`, `jonesFn`, and `massClass` over generic `[CommRing R]` with `q * qi = 1` in `QOU/Torsion/MassTraceMarkov.lean` and `QOU/Torsion/MassTraceMarkovClass.lean`, including `braidTrace_wordBraid_eq_leadProd_add_tlStates` isolating the $s \equiv \mathrm{false}$ naive per-crossing scalar product from the $2^k - 1$ Temperley–Lieb cup-cap states).
+- Updated `mass-identity.{md,ts,lean}` in parity while preserving the §7c wall-side acknowledgement. Kept `status: in-progress` for owner review.
