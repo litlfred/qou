@@ -53,7 +53,7 @@ closed-form.md), built from the same three 2-nucleon `Lbond` constants the
 q-CLT already uses. So `B_sym` (and `m_sym_atom`) are now computed for EVERY
 isotope from a closed form; the exact p(3A) trace is still run when
 `n = 3A ≤ --max-strands` (default 21, A ≤ 7) purely to VALIDATE the chain
-(|chain − exact| ≈ 1e-13). The factorized q-CLT remains the
+(|chain − exact| ≈ 2e-49 at 50 dps). The factorized q-CLT remains the
 cruder A→∞ extrapolations shown alongside for comparison.
 
 EXPLORATORY presentation tool — no production rewire, no fit, no witness emitted
@@ -108,13 +108,17 @@ NUCLEAR_SPINS = {
 
 
 def q_int_float(q, n):
-    return (q**n - q**(-n)) / (q - 1.0/q)
+    with mp.workdps(max(mp.mp.dps, 60)):
+        qq = mp.mpf(str(q)) if not isinstance(q, mp.mpf) else q
+        return (qq**n - qq**(-n)) / (qq - mp.mpf(1) / qq)
 
 def q_fact_float(q, n):
-    res = 1.0
-    for i in range(1, n + 1):
-        res *= q_int_float(q, i)
-    return res
+    with mp.workdps(max(mp.mp.dps, 60)):
+        qq = mp.mpf(str(q)) if not isinstance(q, mp.mpf) else q
+        res = mp.mpf(1)
+        for i in range(1, n + 1):
+            res *= q_int_float(qq, i)
+        return res
 
 def hook_lengths(lam):
     hooks = []
@@ -171,10 +175,12 @@ def hook_lengths(lam):
 def W_lambda_float(q, lam):
     n = sum(lam)
     hooks = hook_lengths(lam)
-    prod_hooks_sq = 1.0
-    for h in hooks:
-        prod_hooks_sq *= (q_int_float(q, h))**2
-    return q_fact_float(q, n) / prod_hooks_sq
+    with mp.workdps(max(mp.mp.dps, 60)):
+        qq = mp.mpf(str(q)) if not isinstance(q, mp.mpf) else q
+        prod_hooks_sq = mp.mpf(1)
+        for h in hooks:
+            prod_hooks_sq *= (q_int_float(qq, h))**2
+        return q_fact_float(qq, n) / prod_hooks_sq
 
 def get_ground_state_partition(Z, N, S):
     Nu = 2*Z + N
@@ -257,22 +263,23 @@ def _ame_table():
     """(Z, A) → (total binding MeV, σ_B MeV, atomic mass MeV, σ_atom MeV) from the
     vendored AME2020 table. σ_B = binding_energy_per_A_unc_keV × A; atomic mass =
     atomic_mass_micro_u × 1e-6 × u — the RAW neutral-atom mass (electrons included)."""
-    U_MEV = float(_codata.U_MEV)                        # CODATA-2022 u→MeV via registry (bean me3r; float-preserving)
-    d = json.loads((HERE / "data" / "ame2020.json").read_text())
-    entries = d["entries"] if isinstance(d, dict) and "entries" in d else d
-    rows = entries.values() if isinstance(entries, dict) else entries
-    out = {}
-    for r in rows:
-        b = r.get("binding_energy_total_keV")
-        if b is None:
-            continue
-        unc_perA = r.get("binding_energy_per_A_unc_keV") or 0.0
-        sigma = unc_perA * r["A"] / 1000.0              # total σ_B in MeV
-        amu = r.get("atomic_mass_micro_u")
-        m_atom = amu * 1e-6 * U_MEV if amu is not None else None
-        s_atom = (r.get("atomic_mass_unc_micro_u") or 0.0) * 1e-6 * U_MEV
-        out[(r["Z"], r["A"])] = (b / 1000.0, sigma, m_atom, s_atom)
-    return out
+    with mp.workdps(max(mp.mp.dps, 60)):
+        U_MEV = mp.mpf(str(_codata.U_MEV))              # CODATA-2022 u→MeV via registry (bean me3r, qou-4ohh)
+        d = json.loads((HERE / "data" / "ame2020.json").read_text())
+        entries = d["entries"] if isinstance(d, dict) and "entries" in d else d
+        rows = entries.values() if isinstance(entries, dict) else entries
+        out = {}
+        for r in rows:
+            b = r.get("binding_energy_total_keV")
+            if b is None:
+                continue
+            unc_perA = mp.mpf(str(r.get("binding_energy_per_A_unc_keV") or 0))
+            sigma = unc_perA * r["A"] / mp.mpf(1000)    # total σ_B in MeV
+            amu = r.get("atomic_mass_micro_u")
+            m_atom = mp.mpf(str(amu)) * mp.mpf("1e-6") * U_MEV if amu is not None else None
+            s_atom = mp.mpf(str(r.get("atomic_mass_unc_micro_u") or 0)) * mp.mpf("1e-6") * U_MEV
+            out[(r["Z"], r["A"])] = (mp.mpf(str(b)) / mp.mpf(1000), sigma, m_atom, s_atom)
+        return out
 
 
 def _electron_binding_mev(Z):
@@ -286,14 +293,15 @@ def _electron_binding_mev(Z):
     at the eV scale and Fe by ~18 keV — all far below the MeV-scale nuclear
     residuals this table reports. mp-exact version + witness:
     computations/atom_electron_mass.py / atom-electron-mass.witness.json."""
-    ry_mev = _E_HARTREE_EV_DERIVED / 2.0 / 1e6
-    total, n, left = 0.0, 1, Z
-    while left > 0:
-        k = min(2 * n * n, left)
-        total += k * (Z * Z) * ry_mev / (n * n)
-        left -= k
-        n += 1
-    return total
+    with mp.workdps(max(mp.mp.dps, 60)):
+        ry_mev = mp.mpf(str(_E_HARTREE_EV_DERIVED)) / mp.mpf(2) / mp.mpf("1e6")
+        total, n, left = mp.mpf(0), 1, Z
+        while left > 0:
+            k = min(2 * n * n, left)
+            total += k * (Z * Z) * ry_mev / (n * n)
+            left -= k
+            n += 1
+        return total
 
 
 def _electron_binding_mev_ame_fit(Z):
@@ -364,7 +372,7 @@ def _bond_type_L():
     Frobenius pairing. Removing it makes the deuteron over-bind by 1.75x, which
     is the theory's actual state. What is gained is that B_sym is now genuinely
     `alpha*ln(tr_free/tr_atom)` -- the docstring's claim that the chain closed
-    form reproduces the exact p(3A) trace to ~1e-13 becomes TRUE, where it was
+    form reproduces the exact p(3A) trace to ~2e-49 becomes TRUE, where it was
     off by a constant 1.6561 MeV for every isotope.
 
     Bean qou-xzda.
@@ -537,127 +545,128 @@ def _nucleon_mass_canonical(me, q0):
 
 def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
     from q_parameter import Q_50_DIGIT_STR as _Q50
-    q0 = float(_Q50)   # f64 only at this display/scalar boundary
-    A = Z + N
-    n = 3 * A
-    bame_t = ame.get((Z, A))
-    bame = bame_t[0] if bame_t else None
-    sigma_ame = bame_t[1] if bame_t else None
-    m_atom_ame = bame_t[2] if bame_t else None
-    sigma_atom = bame_t[3] if bame_t else None
-    # ---- cheap form (any A): factorized q-CLT --------------------------------
-    n_pp, n_pn, n_nn = comb(Z, 2), Z * N, comb(N, 2)
-    sigma_L = n_pp * Lbond["pp"] + n_pn * Lbond["pn"] + n_nn * Lbond["nn"]
-    Lbar = sigma_L / comb(A, 2) if A >= 2 else 0.0
-    B_fac = alpha * (A - 1) * Lbar
-    # ---- colour-weighting decomposition of the factorized q-CLT ------------
-    #   B_qCLT_fac = isospin-symmetric baseline (every bond = the deuteron p-n
-    #   bond) + the p↔n chirality correction. The baseline IS the uniform
-    #   B_qCLT — pure combinatorics on a cached constant, so it (and the
-    #   free-component mass below) are available for ALL A.
-    B_base = alpha * (A - 1) * Lbond["pn"]
-    B_qCLT = B_base                                  # uniform per-bond (un-gated)
-    B_chir = B_fac - B_base
-    # free-component Kashaev mass: tr_free = tr_p^Z·tr_n^N factorizes over GB
-    # components, so m_sym(free) = Z·msp + N·msn for ANY A (no bound-knot trace).
-    msp, msn = nucleon_msym
-    m_sym_free = Z * msp + N * msn
-    # ---- B_sym closed form: the EXACT linear chain (all A, no p(3A) sweep) --
-    #   The atom word ['p']·Z+['n']·N places exactly ONE inter-nucleon crossing
-    #   per DISTINCT generator (monotone word), so the log-binding factorizes
-    #   over the (A−1) adjacency bonds — (Z−1) p-p, 1 p-n interface, (N−1) n-n:
-    #       B_sym = α[(Z−1)L_pp + L_pn + (N−1)L_nn]
-    #   with L_X the single-bond log-suppression already in Lbond. Verified ≡
-    #   the exact p(3A) trace to the 50-dps floor through ¹²C (audit
-    #   2026-06-16-b-sym-linear-chain-closed-form.md). So B_sym — and
-    #   m_sym_atom = B_sym + m_sym_free — are available for EVERY isotope:
-    #   ¹⁶O/⁴⁰Ca/⁵⁶Fe instant, with NO exact-trace wall (which 61abcca9 showed
-    #   is intrinsically O(p(3A)): ¹²C 5.5 min, ¹⁶O hours).
-    b_pp, b_pn, b_nn = (alpha * Lbond["pp"], alpha * Lbond["pn"],
-                        alpha * Lbond["nn"])
-    pn_term = b_pn if (Z >= 1 and N >= 1) else 0.0
-    # max(·,0): a single-nucleon / zero-count species has no same-species bonds
-    # (Z−1 or N−1 would otherwise go negative and fabricate a spurious bond).
-    B_sym = max(Z - 1, 0) * b_pp + pn_term + max(N - 1, 0) * b_nn
-    m_sym_atom = B_sym + m_sym_free               # B_sym = m_sym_atom − m_sym_free
-    # ---- B_lin = α·s, the LINEAR/SATURATING leading term of B_sym. The bond
-    #   suppression s = 1 − tr_atom/tr_free and B_sym = α·L = −α·ln(1−s), so
-    #   s = 1 − e^{−L} with L = B_sym/α — recoverable from the closed-form chain
-    #   (no exact trace needed). B_lin = α·s = α(1 − e^{−B_sym/α}) saturates at α
-    #   (s < 1), so it under-binds increasingly with A. Leading term: B_lin ≈ B_sym
-    #   for small L (B_sym = α(s + s²/2 + …)).
-    B_lin = alpha * (1 - mp.exp(-B_sym / alpha)) if alpha else mp.mpf(0)
-    
-    # Explicit h^4 = (q_0 - q_0^{-1})^4 modification applied to the raw trace B_lin 
-    # scaled by the topological exponent (10A-5), to observe jet-order scaling.
-    h4 = (q0 - 1/q0)**4
-    B_tetra = B_lin * (q0 ** (10*A - 5)) * h4
-    m_tetra = m_sym_free - B_tetra
+    with mp.workdps(max(mp.mp.dps, 60)):
+        q0 = mp.mpf(str(_Q50))   # 50-dps mpf (beans qou-cqk6, qou-4ohh — never float64)
+        A = Z + N
+        n = 3 * A
+        bame_t = ame.get((Z, A))
+        bame = bame_t[0] if bame_t else None
+        sigma_ame = bame_t[1] if bame_t else None
+        m_atom_ame = bame_t[2] if bame_t else None
+        sigma_atom = bame_t[3] if bame_t else None
+        # ---- cheap form (any A): factorized q-CLT --------------------------------
+        n_pp, n_pn, n_nn = comb(Z, 2), Z * N, comb(N, 2)
+        sigma_L = n_pp * Lbond["pp"] + n_pn * Lbond["pn"] + n_nn * Lbond["nn"]
+        Lbar = sigma_L / comb(A, 2) if A >= 2 else mp.mpf(0)
+        B_fac = alpha * (A - 1) * Lbar
+        # ---- colour-weighting decomposition of the factorized q-CLT ------------
+        #   B_qCLT_fac = isospin-symmetric baseline (every bond = the deuteron p-n
+        #   bond) + the p↔n chirality correction. The baseline IS the uniform
+        #   B_qCLT — pure combinatorics on a cached constant, so it (and the
+        #   free-component mass below) are available for ALL A.
+        B_base = alpha * (A - 1) * Lbond["pn"]
+        B_qCLT = B_base                                  # uniform per-bond (un-gated)
+        B_chir = B_fac - B_base
+        # free-component Kashaev mass: tr_free = tr_p^Z·tr_n^N factorizes over GB
+        # components, so m_sym(free) = Z·msp + N·msn for ANY A (no bound-knot trace).
+        msp, msn = nucleon_msym
+        m_sym_free = Z * msp + N * msn
+        # ---- B_sym closed form: the EXACT linear chain (all A, no p(3A) sweep) --
+        #   The atom word ['p']·Z+['n']·N places exactly ONE inter-nucleon crossing
+        #   per DISTINCT generator (monotone word), so the log-binding factorizes
+        #   over the (A−1) adjacency bonds — (Z−1) p-p, 1 p-n interface, (N−1) n-n:
+        #       B_sym = α[(Z−1)L_pp + L_pn + (N−1)L_nn]
+        #   with L_X the single-bond log-suppression already in Lbond. Verified ≡
+        #   the exact p(3A) trace to the 50-dps floor through ¹²C (audit
+        #   2026-06-16-b-sym-linear-chain-closed-form.md). So B_sym — and
+        #   m_sym_atom = B_sym + m_sym_free — are available for EVERY isotope:
+        #   ¹⁶O/⁴⁰Ca/⁵⁶Fe instant, with NO exact-trace wall (which 61abcca9 showed
+        #   is intrinsically O(p(3A)): ¹²C 5.5 min, ¹⁶O hours).
+        b_pp, b_pn, b_nn = (alpha * Lbond["pp"], alpha * Lbond["pn"],
+                            alpha * Lbond["nn"])
+        pn_term = b_pn if (Z >= 1 and N >= 1) else mp.mpf(0)
+        # max(·,0): a single-nucleon / zero-count species has no same-species bonds
+        # (Z−1 or N−1 would otherwise go negative and fabricate a spurious bond).
+        B_sym = max(Z - 1, 0) * b_pp + pn_term + max(N - 1, 0) * b_nn
+        m_sym_atom = B_sym + m_sym_free               # B_sym = m_sym_atom − m_sym_free
+        # ---- B_lin = α·s, the LINEAR/SATURATING leading term of B_sym. The bond
+        #   suppression s = 1 − tr_atom/tr_free and B_sym = α·L = −α·ln(1−s), so
+        #   s = 1 − e^{−L} with L = B_sym/α — recoverable from the closed-form chain
+        #   (no exact trace needed). B_lin = α·s = α(1 − e^{−B_sym/α}) saturates at α
+        #   (s < 1), so it under-binds increasingly with A. Leading term: B_lin ≈ B_sym
+        #   for small L (B_sym = α(s + s²/2 + …)).
+        B_lin = alpha * (1 - mp.exp(-B_sym / alpha)) if alpha else mp.mpf(0)
+        
+        # Explicit h^4 = (q_0 - q_0^{-1})^4 modification applied to the raw trace B_lin 
+        # scaled by the topological exponent (10A-5), to observe jet-order scaling.
+        h4 = (q0 - 1/q0)**4
+        B_tetra = B_lin * (q0 ** (10*A - 5)) * h4
+        m_tetra = m_sym_free - B_tetra
 
-    # ---- m_can⁰: brane-tower LEVEL-0 binding. The per-braid brane tower
-    #   (per-braid-mass-tower.md) has descended (n=0) term |tr_M(W)|, so its
-    #   binding is B_can⁰ = E₀·Δtr_M = α·(|tr_M_free| − |tr_M_atom|) — the
-    #   absolute trace difference (≡ binding_canonical), NOT the log B_sym.
-    #   PURE Markov trace: tr_free = exp(−m_sym_free/α) factorizes over GB
-    #   components (cheap, all A); tr_atom = tr_free·exp(−B_sym/α) from the
-    #   closed-form chain. ZERO AME / CODATA beyond the CAL-1 m_e unit (in α)
-    #   and CAL-2 q₀. Higher Φ_q tower levels (B_can_tower) add O(ℏ_q²)/level.
-    tr_free_val = mp.exp(-m_sym_free / alpha) if alpha else None
-    tr_atom_val = (tr_free_val * mp.exp(-B_sym / alpha)
-                   if (alpha and tr_free_val is not None) else None)
-    B_can0 = (alpha * (tr_free_val - tr_atom_val)
-              if tr_free_val is not None else None)
-    # CANONICAL single-pipeline binding: the convergent per-knot BORROMEAN tower
-    # (shares τ with F_Bor / bean ovud; converges ∀Z, unlike the atom-word above
-    # which diverges the Li₂^q pair for Z≥2). This is the production m_can.
-    try:
-        from borromean_binding_recompute import borromean_binding
-        _bb = borromean_binding(Z, N)
-        B_can_bor = _bb["B_tower"]
-    except Exception:
-        B_can_bor = None
-    # ---- exact p(3A) trace (capped) — VALIDATOR of the chain + the bar-
-    #   involution entanglement split. Computed only when n=3A ≤ max_strands;
-    #   |chain − exact| ≈ 2e-49, i.e. the 50-dps serialization floor.
-    #
-    #   That figure read "≈ 1e-13" until 2026-09-05 and the printed value was
-    #   8.9e-16 — BOTH were artifacts, not measurements (bean `qou-4ohh`). Three
-    #   f64 downcasts sat on this path (`_constants`' return, `_bond_type_L`'s
-    #   return, `_chain_writhe_shift`'s return, plus `float(ta), float(tf)`
-    #   before the logarithm), so the residual could not be smaller than f64
-    #   epsilon on quantities of order 1-30 MeV whatever the mathematics did.
-    #   With them removed the residual is 2.1e-49 / 4.3e-50 / 5.3e-50 at
-    #   2H/3H/3He and every other column of this dashboard is BYTE-IDENTICAL.
-    #
-    #   Note 3H printed exactly `0.0e+00` before. That was not agreement — it
-    #   was the difference underflowing below f64 resolution, which is the
-    #   failure mode AGENTS.md names: a float64 agreement reported as exact is
-    #   the floor of the arithmetic, not evidence about the mathematics. The
-    #   chain really does reproduce the exact p(3A) trace; that claim is now
-    #   supported by a measurement instead of by noise.
-    B_sym_exact = chain_resid = None
-    E_retained = E_emitted = E_multilink = B_sym_ent = None
-    S_val = NUCLEAR_SPINS.get(name, 0.0)
-    lam = get_ground_state_partition(Z, N, S_val)
-    if lam:
-        w_lam = W_lambda_float(q0, lam)
-        E_gate = alpha * mp.log(1 / w_lam)
-        c_lam = (bame / E_gate) if bame else None
-    else:
-        lam, w_lam, E_gate, c_lam = None, None, None, None
-    # ---- B_vol: the ALL-KNOTS entanglement binding = the liquid-drop VOLUME term.
-    #   Entanglement is a property of EVERY knot/particle, not one selected partition
-    #   (the single-partition E_gate is ⁴He-local and breaks for A≳24). Summing the
-    #   per-knot occupancy surprisal over all A nucleon knots gives a_V·A with the
-    #   coefficient DEPRECATED 2026-08-08 (postdiction near-match, NOT derived — no
-    #   basis in the derivation chain; see banner + avol red-team):
-    #   a_V = E₀·ln(1/W_free), W_free = the free
-    #   nucleon's (1,1,1) Plancherel weight. a_V ≈ 7.584 MeV/nucleon ≈ empirical net
-    #   B/A. Valid for ALL A (no W_λ≥1 breakdown); tracks ¹²C/¹⁶O to ~1–5%. The
-    #   residual (light over-binding, magic dips) is the surface/Coulomb/shell
-    #   structure — the open part. Probe: probes/su4_occupancy_binding_probe.py.
-    a_V = alpha * mp.log(1 / W_lambda_float(q0, (1, 1, 1)))   # DEPRECATED postdiction coeff (not derived — see banner)
-    B_vol = A * a_V
+        # ---- m_can⁰: brane-tower LEVEL-0 binding. The per-braid brane tower
+        #   (per-braid-mass-tower.md) has descended (n=0) term |tr_M(W)|, so its
+        #   binding is B_can⁰ = E₀·Δtr_M = α·(|tr_M_free| − |tr_M_atom|) — the
+        #   absolute trace difference (≡ binding_canonical), NOT the log B_sym.
+        #   PURE Markov trace: tr_free = exp(−m_sym_free/α) factorizes over GB
+        #   components (cheap, all A); tr_atom = tr_free·exp(−B_sym/α) from the
+        #   closed-form chain. ZERO AME / CODATA beyond the CAL-1 m_e unit (in α)
+        #   and CAL-2 q₀. Higher Φ_q tower levels (B_can_tower) add O(ℏ_q²)/level.
+        tr_free_val = mp.exp(-m_sym_free / alpha) if alpha else None
+        tr_atom_val = (tr_free_val * mp.exp(-B_sym / alpha)
+                       if (alpha and tr_free_val is not None) else None)
+        B_can0 = (alpha * (tr_free_val - tr_atom_val)
+                  if tr_free_val is not None else None)
+        # CANONICAL single-pipeline binding: the convergent per-knot BORROMEAN tower
+        # (shares τ with F_Bor / bean ovud; converges ∀Z, unlike the atom-word above
+        # which diverges the Li₂^q pair for Z≥2). This is the production m_can.
+        try:
+            from borromean_binding_recompute import borromean_binding
+            _bb = borromean_binding(Z, N)
+            B_can_bor = _bb["B_tower"]
+        except Exception:
+            B_can_bor = None
+        # ---- exact p(3A) trace (capped) — VALIDATOR of the chain + the bar-
+        #   involution entanglement split. Computed only when n=3A ≤ max_strands;
+        #   |chain − exact| ≈ 2e-49, i.e. the 50-dps serialization floor.
+        #
+        #   That figure read "≈ 1e-13" until 2026-09-05 and the printed value was
+        #   8.9e-16 — BOTH were artifacts, not measurements (bean `qou-4ohh`). Three
+        #   f64 downcasts sat on this path (`_constants`' return, `_bond_type_L`'s
+        #   return, `_chain_writhe_shift`'s return, plus `float(ta), float(tf)`
+        #   before the logarithm), so the residual could not be smaller than f64
+        #   epsilon on quantities of order 1-30 MeV whatever the mathematics did.
+        #   With them removed the residual is 2.1e-49 / 4.3e-50 / 5.3e-50 at
+        #   2H/3H/3He and every other column of this dashboard is BYTE-IDENTICAL.
+        #
+        #   Note 3H printed exactly `0.0e+00` before. That was not agreement — it
+        #   was the difference underflowing below f64 resolution, which is the
+        #   failure mode AGENTS.md names: a float64 agreement reported as exact is
+        #   the floor of the arithmetic, not evidence about the mathematics. The
+        #   chain really does reproduce the exact p(3A) trace; that claim is now
+        #   supported by a measurement instead of by noise.
+        B_sym_exact = chain_resid = None
+        E_retained = E_emitted = E_multilink = B_sym_ent = None
+        S_val = NUCLEAR_SPINS.get(name, 0.0)
+        lam = get_ground_state_partition(Z, N, S_val)
+        if lam:
+            w_lam = W_lambda_float(q0, lam)
+            E_gate = alpha * mp.log(1 / w_lam)
+            c_lam = (bame / E_gate) if bame else None
+        else:
+            lam, w_lam, E_gate, c_lam = None, None, None, None
+        # ---- B_vol: the ALL-KNOTS entanglement binding = the liquid-drop VOLUME term.
+        #   Entanglement is a property of EVERY knot/particle, not one selected partition
+        #   (the single-partition E_gate is ⁴He-local and breaks for A≳24). Summing the
+        #   per-knot occupancy surprisal over all A nucleon knots gives a_V·A with the
+        #   coefficient DEPRECATED 2026-08-08 (postdiction near-match, NOT derived — no
+        #   basis in the derivation chain; see banner + avol red-team):
+        #   a_V = E₀·ln(1/W_free), W_free = the free
+        #   nucleon's (1,1,1) Plancherel weight. a_V ≈ 7.584 MeV/nucleon ≈ empirical net
+        #   B/A. Valid for ALL A (no W_λ≥1 breakdown); tracks ¹²C/¹⁶O to ~1–5%. The
+        #   residual (light over-binding, magic dips) is the surface/Coulomb/shell
+        #   structure — the open part. Probe: probes/su4_occupancy_binding_probe.py.
+        a_V = alpha * mp.log(1 / W_lambda_float(q0, (1, 1, 1)))   # DEPRECATED postdiction coeff (not derived — see banner)
+        B_vol = A * a_V
     # ---- E_C: the EM-sector Coulomb energy (bean 754x). Standard uniform-sphere
     #   E_C = (3/5)Z(Z−1)·α_EM·ℏc/(r₀·A^1/3); the strong B-forms above carry NO EM
     #   term. Reported alongside them (additive), NOT subtracted — B_sym etc. are
@@ -833,6 +842,7 @@ def _relerr(v, w=13):
     """
     if v is None:
         return f"{'—':>{w}}"
+    v = _disp(v)
     a = abs(v)
     if a == 0:
         s = "0"
@@ -1069,9 +1079,9 @@ def main(argv=None) -> int:
             for (nm, Z, N) in sel]
 
     title = (args.group or ("custom" if args.isotopes else "low")).upper()
-    print(f"\n  MASS-BINDING DASHBOARD [{title}]   α = E₀ = {E0:.4f} MeV"
-          f"   (bond-type L: pp={Lbond['pp']:.3f} pn={Lbond['pn']:.3f} "
-          f"nn={Lbond['nn']:.3f})")
+    print(f"\n  MASS-BINDING DASHBOARD [{title}]   α = E₀ = {_disp(E0):.4f} MeV"
+          f"   (bond-type L: pp={_disp(Lbond['pp']):.3f} pn={_disp(Lbond['pn']):.3f} "
+          f"nn={_disp(Lbond['nn']):.3f})")
     print(f"  B_sym/m_sym_atom: EXACT closed-form linear chain → all A; the "
           f"p(3A) trace is run for n=3A ≤ {args.max_strands} (A ≤ "
           f"{args.max_strands // 3}) only to validate the chain. "
@@ -1093,13 +1103,14 @@ def main(argv=None) -> int:
     #    Each form X: m_X = m_unbnd,can − B_X. (The measured-baseline ",rel"
     #    columns were removed 2026-06-24 — redundant now that m_unbnd,can ≈ CODATA.)
     from codata_constants import M_P_MEV_VALIDATION as mp_, M_N_MEV_VALIDATION as mn_
-    mp_, mn_ = float(mp_), float(mn_)
+    with mp.workdps(max(mp.mp.dps, 60)):
+        mp_, mn_ = mp.mpf(str(mp_)), mp.mpf(str(mn_))
     print("### Mass  M + error (MeV; err auto-scaled %/ppm/ppb/ppq)   "
           "[canonical = Hecke energy 2(m_μ·F_Bor−6m_e) at the PROTON pin; "
           "m_μ there is derived from q₀, not an anchor; m_X = m_unbnd,can − B_X]")
     print(f"  canonical constituents (λ_A fit + naive Vol·tr_M both EXCISED): "
-          f"m_p,can = {mp_can:.3f} MeV ({(mp_can/mp_-1)*100:+.3f}%), "
-          f"m_n,can = {mn_can:.3f} MeV ({(mn_can/mn_-1)*100:+.3f}%) — "
+          f"m_p,can = {_disp(mp_can):.3f} MeV ({_disp((mp_can/mp_-1)*100):+.3f}%), "
+          f"m_n,can = {_disp(mn_can):.3f} MeV ({_disp((mn_can/mn_-1)*100):+.3f}%) — "
           f"F_Bor = |tr_M(β_Bor)|·[3]_q!/q³ at the proton pin (matches CODATA; m_n the "
           f"genuine prediction).")
     print("| iso | A | M_meas | σ_exp (ppb) | m_can | m_can⁰ | m_tetra | m_qCLT | "
@@ -1154,7 +1165,7 @@ def main(argv=None) -> int:
         for r in rows if r["Z"] > 0
     )
     print(f"\n  B_el is DERIVED (bare-Z hydrogenic @ e-Hartree, swap 2026-08-30); "
-          f"max |derived − AME fit| over this group: {max_fit_dev_kev:.4f} keV "
+          f"max |derived − AME fit| over this group: {_disp(max_fit_dev_kev):.4f} keV "
           f"(screening open; both far below the MeV nuclear residuals)")
 
     # 2. BINDING + error  (B_AME ± exp 1σ from AME2020; err X = B_AME/B_X)
@@ -1182,7 +1193,7 @@ def main(argv=None) -> int:
     if val:
         mx = max(v[1] for v in val)
         print(f"\n  B_sym closed-form chain ≡ exact p(3A) trace: max|Δ| = "
-              f"{mx:.1e} MeV over {{{', '.join(v[0] for v in val)}}} "
+              f"{_disp(mx):.1e} MeV over {{{', '.join(v[0] for v in val)}}} "
               f"(n=3A ≤ {args.max_strands}; writhe-normalised on BOTH sides — the "
               f"chain carries the Lean-proved (1−h)^(δe/2) factor and the raw "
               f"trace does not, so comparing them un-normalised measures that "
@@ -1221,7 +1232,7 @@ def main(argv=None) -> int:
     print("|---|--:|:--:|--:|--:|--:|")
     for r in rows:
         print(f"| {r['name']} | {r['A']} | {r['n_pp']}/{r['n_pn']}/{r['n_nn']} "
-              f"| {r['B_base']:>8.2f} | {r['B_chir']:>+8.2f} | {r['B_qCLT_fac']:>8.2f} |")
+              f"| {_disp(r['B_base']):>8.2f} | {_disp(r['B_chir']):>+8.2f} | {_disp(r['B_qCLT_fac']):>8.2f} |")
 
     # 5. COMPOSITIONAL B_sym (atom GB-braid mass − free GB-component masses).
     #   m_sym(free) is combinatorial (all A); m_sym(atom) needs the bound trace.
@@ -1229,9 +1240,9 @@ def main(argv=None) -> int:
     print("| iso | A | m_sym(free comps) | m_sym(atom) | B_sym (chain) | Δ vs exact trace |")
     print("|---|--:|--:|--:|--:|--:|")
     for r in rows:
-        resid = (f"{r['chain_resid']:.1e}" if r["chain_resid"] is not None
+        resid = (f"{_disp(r['chain_resid']):.1e}" if r["chain_resid"] is not None
                  else "—  (no trace)")
-        print(f"| {r['name']} | {r['A']} | {r['m_sym_free']:>8.3f} "
+        print(f"| {r['name']} | {r['A']} | {_disp(r['m_sym_free']):>8.3f} "
               f"| {_fmt(r['m_sym_atom'],8,3)} | {_fmt(r['B_sym'],8,3)} | {resid:>16} |")
 
 
