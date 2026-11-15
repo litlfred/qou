@@ -1066,7 +1066,10 @@ import QOU.Archimedean.BlochWignerFiveTermInstance
 import QOU.Archimedean.BlochRigidity.Algebra
 import QOU.Archimedean.BlochRigidity.ComplexAlgebra
 import QOU.Archimedean.BlochRigidity.Derivative
+import QOU.Archimedean.BlochRigidity.Growth
+import QOU.Archimedean.BlochRigidity.Holomorphic
 import QOU.Archimedean.BlochRigidity.Regularity
+import QOU.Archimedean.BlochRigidity.Vanishing
 import QOU.Archimedean.BringEllipticFactor
 import QOU.Archimedean.SigmaJGeometricCarrier
 import QOU.Archimedean.HodgeWeilRealStructure
