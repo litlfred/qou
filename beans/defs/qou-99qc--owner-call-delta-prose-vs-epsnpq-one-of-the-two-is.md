@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-15T22:44:40Z
+updated_at: 2026-11-15T22:47:08Z
 parent: qou-10v9
 ---
 
@@ -3449,3 +3449,16 @@ X candidates, all fixed before computing:
 (5) F4 = the u↔d flip on the emitted strand 4, applied after the crossing.
 Words V³ and V⁶; both state choices; both n→p and p→n.
 No numerical prediction. Nothing is selected by closeness to −h or to CODATA. Q at q₀ is shown for display only.
+
+
+### RESULT ε-NP1 (2026-11-15 22:58Z), np_emission_asymmetry_probe.py
+H0 (ε_pn = ε_np) FAILS and H1 (ε_pn(q) = ε_np(1/q)) FAILS for all four (word, state) pairs. Emission does break n↔p.
+- T³ sums: ratio ε_pn/ε_np at q₀ = 1.0446 (V³), 1.0353 (V⁶). Near q=1 it is 1 + (q−1)/2 + O((q−1)²).
+- Single states |udd⟩ vs |uud⟩: ratio 29.7 (V³), 12.1 (V⁶), because the p→n amplitude without Δ_S nearly vanishes. Caveat: |uud⟩ is not the u↔d image of |udd⟩ (that would be |duu⟩). This is recorded as pre-registered, not changed afterwards.
+So the size of the asymmetry depends on the free state choice.
+
+### RESULT ε-TW1 (2026-11-15 22:58Z), twist_involution_epsilon_probe.py
+- The flips F3, Fall and F4 give ε = 0 in every case. A u↔d flip changes the charge content, so the charge-projected amplitude vanishes. A flip is only meaningful with the projection flipped too, and that is just the n↔p map.
+- T23 (Ř² on strands 2,3) raises |ε| in both directions. The n→p over p→n ratio stays near 1.05.
+- J23 (the involution P₊−P₋ on strands 2,3), T³ sums: ε_np = −0.198078 (V³), −0.198057 (V⁶); ε_pn = −0.219804, −0.219591. Exact series: ε_pn/ε_np = q − 22(q−1)⁵ + … (V³) and q − 92(q−1)⁵ + … (V⁶). It matches q through order (q−1)⁴, but it is NOT equal to q, and the deviation coefficient grows with word length. At q₀ the ratio is 1.10968 (V³) and 1.10873 (V⁶), against q₀ = 1.10998.
+- Q values at q₀ are display only; none is selected.
