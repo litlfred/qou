@@ -7,7 +7,7 @@ tags:
     - mass-energy
     - research
 created_at: 2026-11-15T20:26:03Z
-updated_at: 2026-11-15T20:26:03Z
+updated_at: 2026-11-15T20:26:23Z
 parent: qou-6qbv
 ---
 
@@ -39,3 +39,17 @@ the remaining log ∫_A ρ(β) is not additive in general.
 3. Report a scope-(a) negative if no additive part beyond the writhe term exists.
 
 Anti-fit: no choice of word, branch, or truncation against measured masses.
+
+## Owner lead (2026-11-15): crossing energy ~ computational cost
+Owner: "crossing energy - related to computational cost". Starting points in the corpus:
+- UGB `GrobnerShirshov/HeckeGS.lean`: `heckeCost_well_defined`, `threading_cost_unique`
+  (cost of reducing a braid word to Hecke normal form; both conditional on the
+  confluence hypotheses, now including `hlc`).
+- `information-theory/photon-threading-mass.md` + `lean/QOU/Information/photon_threading_mass.lean`
+  and `lean/QOU/PhotonThreading.lean` (threading cost and mass).
+- `information-theory/planck-scale-computation.md`, `computational-spacetime-observer.md`.
+- `mass-theory/graded-hecke-energy-truncation-bound.md`.
+Question to settle: is E_cross (or a weighted crossing count) the reduction cost of the
+Gröbner–Shirshov rewriting, and does the framed-trace energy 𝔈 = m·c_q² bound or equal
+a cost functional? Each Hecke rewrite σ² → (q−q⁻¹)σ + 1 is one crossing step, which is the
+natural link.
