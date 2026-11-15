@@ -2317,8 +2317,19 @@ All three are the **three real DOF of the single H¹(Bring) = 2W** (rank-2 W-pla
   **Both are still live, and this line previously said they were not.** It read "both were live in the corpus until 2026-08-10", i.e. an all-clear. The 2026-08-10 drain (#4886 → #4901 → #4917, reported as "14 sites across 12 files, corpus-wide") swept `content/` only. Measured 2026-08-15 with fixed-string grep: **54 sites across 35 files** remain — 5 in `content/`, 28 in `computations/`, 21 in `docs/` (25 `.py`, 17 `.md`, 12 `.json`; **0** in `.lean`/`.ts`, which the drain did clear). Do not read this guard as "already fixed"; assume the file you are editing still carries it, and check. Tracked as `qou-zdz5`.
 
   Most survivors compute the RIGHT value under the WRONG name — e.g. `VOL41 = 2*mp.clsin(2, mp.pi/3)` is `2·Cl₂(π/3) = 2.0299` ✓ annotated `# Vol(4₁) = 2Λ(π/3)` ✗. So a grep for the bad *name* does not imply a bad *number*; check the arithmetic beside it before "fixing" a value.)
-- **Q_β** (the CAL-2 proxy):  `Q_β = ℏ/𝔇_β = m_e·|q₀²−2q₀−1|(q₀+1)/(2q₀³) ≈ 0.784 MeV` (0.17% vs CODATA) — the bar-odd `sinh` partner of the bar-even `cosh` meson scale m_π. 𝔇_β **is** CAL-2; because the modulus is overdetermined and pinned most precisely by m_μ/m_e, Q_β reproduced from q₀ is a 0.17% **cross-check**, not a fourth input.
+- **Q_β** (the CAL-2 proxy):  `Q_β = ℏ/𝔇_β = m_e·|q₀²−2q₀−1|(q₀+1)/(2q₀³) ≈ 0.784 MeV` (0.17% vs CODATA). 𝔇_β **is** CAL-2; because the modulus is overdetermined and pinned most precisely by m_μ/m_e, Q_β reproduced from q₀ is a 0.17% **cross-check**, not a fourth input.
 
+  > **🛑 EXCISED 2026-11-15 (owner, D-W2): "Q_β is the bar-odd `sinh` partner of the
+  > bar-even `cosh` meson scale m_π".** That description stood here until this date. It is
+  > removed because **no Q_β functional on record has a definite bar parity** under
+  > q ↦ q⁻¹: not Form A above, not the retired z = 1 trace, and not the ruled z_D trace. The
+  > two traces carry only an overall factor h = q − q⁻¹ = 2 sinh λ. Measured exactly in
+  > [`docs/audits/2026-11-15-one-sided-weak-vertex.md` §4](docs/audits/2026-11-15-one-sided-weak-vertex.md).
+  > Nothing numeric, Lean or compute depended on the label. Do **not** reinstate it on the
+  > strength of the letter-level fact that σ − σ⁻¹ = h is bar-odd; that is true of the letter
+  > and was never shown of Q_β. Open question: bean `qou-hlx8`. Out of scope and untouched:
+  > `prop:bar-parity-split` and `conj:binding-qbeta-complex-volume` (Q_β ↔ binding).
+  >
   > **🛑 SCOPING NOTE (2026-09-05) — the route that produces this number is
   > under review; the number is unchanged and nothing here is enacted.**
   > Solving the published closed form against the ansatz shape

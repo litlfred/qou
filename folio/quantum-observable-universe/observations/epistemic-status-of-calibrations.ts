@@ -32,6 +32,12 @@ export default remark({
   },
   authorNotes: [
     {
+      kind: "note",
+      date: "2026-11-15",
+      body: "**Excised (owner, 2026-11-15, D-W2).** The description of $\\mathfrak{Q}_\\beta$ as the bar-odd $\\sinh$ partner of the bar-even $\\cosh$ meson scale $m_\\pi$ was removed. No $\\mathfrak{Q}_\\beta$ functional on record has a definite bar parity under $q \\mapsto q^{-1}$: not Form A, not the $z = 1$ trace, and not the ruled $z_D$ trace. The two traces carry only an overall factor $h = q - q^{-1}$. No number, Lean declaration or producer depended on the label. Whether a bar-odd projection of the ruled trace carries such a role is bean `qou-hlx8`. Measurement: `docs/audits/2026-11-15-one-sided-weak-vertex.md` §4.",
+      see: "https://github.com/litlfred/qou/blob/main/docs/audits/2026-11-15-one-sided-weak-vertex.md",
+    },
+    {
       kind: "status",
       date: "2026-09-04",
       body:
@@ -64,7 +70,7 @@ export default remark({
     {
       kind: "status",
       date: "2026-06-16",
-      body: "**Two-layer convention (owner-clarified 2026-06-16).** Canonical math triple = `(m_e, m_μ/m_e → q₀, m_π)`; **CAL-3 = `m_π`**, and **`$\\mathfrak{Q}$_β` is derived** (the bar-odd `sinh` partner of the bar-even `cosh` meson scale `m_π`). The §\"CAL-3\" section below discusses the *derived* `$\\mathfrak{Q}$_β`/`E₀` hadronic observable — its epistemic status is unchanged, but it is **not** a calibration; the third calibration is `m_π`. CAL-2 stays the canonical lepton ratio `m_μ/m_e` (it dimensionalises to `Vol(4₁)`); the **Physical-Observations** layer may numerically anchor `q₀` on the more-precise proton ratio `m_p/m_e` (re-pin 2026-05-28, `01c18125`), making `m_μ/m_e` a 9.5σ cross-check prediction — a precision substitution, not a change to CAL-2. (m_μ L2 status convention note: ratio-anchored meets 100× to noise; bare-categorical `4₁` Geom misses ~964×, PR #1556.) Live compute: `tools/qou-substrate/python/qou_substrate/constants.py`.",
+      body: "**Two-layer convention (owner-clarified 2026-06-16).** Canonical math triple = `(m_e, m_μ/m_e → q₀, m_π)`; **CAL-3 = `m_π`**, and **`$\\mathfrak{Q}$_β` is derived** (the CAL-2 proxy; `m_π` is the CAL-3 proxy). The §\"CAL-3\" section below discusses the *derived* `$\\mathfrak{Q}$_β`/`E₀` hadronic observable — its epistemic status is unchanged, but it is **not** a calibration; the third calibration is `m_π`. CAL-2 stays the canonical lepton ratio `m_μ/m_e` (it dimensionalises to `Vol(4₁)`); the **Physical-Observations** layer may numerically anchor `q₀` on the more-precise proton ratio `m_p/m_e` (re-pin 2026-05-28, `01c18125`), making `m_μ/m_e` a 9.5σ cross-check prediction — a precision substitution, not a change to CAL-2. (m_μ L2 status convention note: ratio-anchored meets 100× to noise; bare-categorical `4₁` Geom misses ~964×, PR #1556.) Live compute: `tools/qou-substrate/python/qou_substrate/constants.py`.",
       see: "https://github.com/litlfred/qou/blob/claude/gracious-lovelace-uzuovl/docs/audits/2026-06-16-q-anchor-drift-and-local-q-routes.md",
     },
     {
