@@ -151,6 +151,40 @@ theorem gen_of_mem (ω : Ω1 R A) : gen (ω : A ⊗[R] A) = ω := by
   ext1
   rw [gen_coe, (mem_Ω1 R A).1 ω.2, zero_tmul, sub_zero]
 
+variable (R A) in
+/-- The **unit section** `A → A ⊗ A`, `a ↦ a ⊗ 1`.  It is a right inverse
+    of `μ`, and its range is the complement of `Ω¹(A)` below. -/
+def unitSection : A →ₗ[R] A ⊗[R] A := (TensorProduct.mk R A A).flip 1
+
+@[simp] theorem unitSection_apply (a : A) : unitSection R A a = a ⊗ₜ 1 := rfl
+
+theorem mul'_unitSection (a : A) : LinearMap.mul' R A (unitSection R A a) = a := by
+  simp
+
+/-- `a ⊗ 1` is a one-form only when `a = 0`. -/
+theorem tmul_one_mem_Ω1_iff (a : A) : a ⊗ₜ[R] (1 : A) ∈ Ω1 R A ↔ a = 0 := by
+  rw [mem_Ω1]; simp
+
+variable (R A) in
+/-- **`A ⊗ A = Ω¹(A) ⊕ (A ⊗ 1)`.**  The kernel of `μ` and the range of the
+    unit section are complementary submodules: every `z` splits uniquely as
+    `(z − μ(z) ⊗ 1) + μ(z) ⊗ 1`.  Equivalently `μ` restricts to an
+    isomorphism `A ⊗ 1 ≅ A`, so the part of `A ⊗ A` that `μ` sees is
+    exactly the part `Ω¹(A)` misses. -/
+theorem isCompl_Ω1_range_unitSection :
+    IsCompl (Ω1 R A) (LinearMap.range (unitSection R A)) := by
+  constructor
+  · rw [Submodule.disjoint_def]
+    rintro z hz ⟨a, rfl⟩
+    rw [unitSection_apply, tmul_one_mem_Ω1_iff] at hz
+    simp [hz]
+  · rw [codisjoint_iff, eq_top_iff]
+    intro z _
+    have h : z = (gen z : A ⊗[R] A) + unitSection R A (LinearMap.mul' R A z) := by
+      rw [gen_coe, unitSection_apply, sub_add_cancel]
+    rw [h]
+    exact Submodule.add_mem_sup (gen z).2 ⟨_, rfl⟩
+
 /-! ## Universal property -/
 
 section Universal
