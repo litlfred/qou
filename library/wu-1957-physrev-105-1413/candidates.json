@@ -1,0 +1,116 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "wu-1957-physrev-105-1413",
+ "source": {
+  "structure_sha256": "9c60475c26871854c4a22cf81ff22c92dc68b62c07b5a547727b5d9825cb1fef",
+  "file": "wu-1957-physrev-105-1413.pdf"
+ },
+ "provenance": {
+  "title": "Experimental Test of Parity Conservation in Beta Decay",
+  "authors": "E D I TOR",
+  "arxiv": null,
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 6,
+  "by_kind": {
+   "recommendation": 6
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The beta-particle counter should be placedi~side the demagnetization cryostat, and the radioactive nuclei must be located in a thin surface layer and polarized.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-001.md",
+   "section_title": "Page 1",
+   "pages": "1-1",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "This naturally implies that the sign for Cr and Cr' (parity conserved and pa.rity not conserved) must be opposite.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-002.md",
+   "section_title": "Page 2",
+   "pages": "2-2",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In order to evaluate o, accurately, many supplementary experiments must be carried out to determine the various correction factors.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-002.md",
+   "section_title": "Page 2",
+   "pages": "2-2",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In this way the cobalt nuclei should not be cooled su%ciently to produce an appreciable nuclear polarization, whereas the housing will behave as before.",
+   "strength": "should-not",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-002.md",
+   "section_title": "Page 2",
+   "pages": "2-2",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Their hypothesis, born out of the ~\u20140 puzzle, 4 was accom- panied by the suggestion that confirmation should be sought (among other places) in the study of the succes- sive reactions CA E- IN IT I AT I N G NTERS (4\"X4\") x+~p++ v, p+ +6++2 v.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-003.md",
+   "section_title": "Page 3",
+   "pages": "3-3",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "(2) AG NET I Z IN G CURRENT They have pointed out that parity nonconservation implies a polarization of the spin of the muon emitted from stopped pions in (1) along the direction of motion and that furthermore, the angular distribution of electrons in (2) should serve a,s an analyzer for the muon polarization.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-003.md",
+   "section_title": "Page 3",
+   "pages": "3-3",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

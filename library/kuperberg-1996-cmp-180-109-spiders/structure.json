@@ -1,0 +1,652 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "kuperberg-1996-cmp-180-109-spiders",
+ "source": {
+  "file": "kuperberg-1996-cmp-180-109-spiders.pdf",
+  "sha256": "b6c94630554cc15ac98c5801fca01834c93f54a9ef74586ddcc3339cd684b6ea",
+  "bytes": 3346680,
+  "pages": 44,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T12:09:13Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 26,
+    "reason": "11 of 471 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 28,
+    "reason": "16 of 244 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 29,
+    "reason": "13 of 339 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 30,
+    "reason": "22 of 455 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 31,
+    "reason": "14 of 369 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 32,
+    "reason": "16 of 397 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 35,
+    "reason": "12 of 398 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 37,
+    "reason": "18 of 382 words are a stray single letter: the text layer splits words"
+   }
+  ]
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "Spiders for Rank 2 Lie Algebras",
+  "authors_raw": "Greg Kuperberg",
+  "title_lines": [
+   "Commun Math Phys 180, 109-151 (1996)",
+   "Communications I\u03a0",
+   "Mathematical",
+   "Physics",
+   "\u00a9 Springer-Verlag 1996",
+   "Spiders for Rank 2 Lie Algebras"
+  ],
+  "abstract": "A spider is an axiomatization of the representation theory of a group, quantum group, Lie algebra, or other group or group-like object. It is also known as a spherical category, or a strict, monoidal category with a few extra properties, or by several other names. A recently useful point of view, developed by other authors, of the representation theory of sl(2) has been to present it as a spider by generators and relations. That is, one has an algebraic spider, defined by invariants of linear representations, and one identifies it as isomorphic to a combinatorial spider, given by generators and relations. We generalize this approach to the rank 2 simple Lie algebras, namely A2, B2, and G2. Our combinatorial rank 2 spiders yield bases for invariant spaces which are probably related to Lusztig's canonical bases, and they are useful for computing quantities such as generalized 67-symbols and quantum link invariants. Their definition originates in definitions of the rank 2 quantum link invariants that were discovered independently by the author and Francois Jaeger.",
+  "docinfo": {
+   "Creator": "ABBYY FineReader",
+   "CreationDate": "D:20040929051108Z"
+  },
+  "title_raw": "Commun Math Phys 180, 109-151 (1996) Communications I\u03a0 Mathematical Physics \u00a9 Springer-Verlag 1996 Spiders for Rank 2 Lie Algebras",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Spiders for Rank 2 Lie Algebras",
+   "text": "Commun Math Phys 180, 109-151 (1996) Communications I\u03a0 Mathematical Physics \u00a9 Springer-Verlag 1996 Spiders for Rank 2 Lie Algebras",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Pa,a<\u03b2a) = \u03b2a*",
+   "page": 13,
+   "source": "inferred",
+   "number": "3",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "121"
+  },
+  {
+   "level": 1,
+   "title": "Equinumeration",
+   "page": 27,
+   "source": "inferred",
+   "number": "6",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "135"
+  },
+  {
+   "level": 2,
+   "title": "XX-\u00ab'\")c<-r",
+   "page": 40,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "148"
+  },
+  {
+   "level": 3,
+   "title": "References",
+   "page": 43,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.7,
+   "evidence": [
+    "style",
+    "stock-name"
+   ],
+   "page_label": "151"
+  }
+ ],
+ "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "110",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "111",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "112",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "113",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "114",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "115",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "116",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "117",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "118",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "119",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "120",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "121",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "122",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "123",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "124",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "125",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "126",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "127",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "128",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "129",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "130",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "131",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "132",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "133",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "134",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "135",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "136",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "137",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "138",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "139",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "140",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "141",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "142",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "143",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "144",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "145",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "146",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "147",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "148",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "149",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "150",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "151",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1390,
+   "n_words": 213,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 13,
+   "n_chars": 21032,
+   "n_words": 3806,
+   "label_start": null,
+   "label_end": "121"
+  },
+  {
+   "id": "sec-001-3-paa\u03b2a-\u03b2a",
+   "number": "3",
+   "title": "Pa,a<\u03b2a) = \u03b2a*",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 27,
+   "n_chars": 24478,
+   "n_words": 4502,
+   "label_start": "121",
+   "label_end": "135"
+  },
+  {
+   "id": "sec-002-6-equinumeration",
+   "number": "6",
+   "title": "Equinumeration",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 40,
+   "n_chars": 23710,
+   "n_words": 4536,
+   "label_start": "135",
+   "label_end": "148"
+  },
+  {
+   "id": "sec-003-xx-c-r",
+   "number": null,
+   "title": "XX-\u00ab'\")c<-r",
+   "level": 2,
+   "page_start": 40,
+   "page_end": 43,
+   "n_chars": 4971,
+   "n_words": 880,
+   "label_start": "148",
+   "label_end": "151"
+  },
+  {
+   "id": "sec-004-references",
+   "number": null,
+   "title": "References",
+   "level": 3,
+   "page_start": 43,
+   "page_end": 44,
+   "n_chars": 2716,
+   "n_words": 414,
+   "label_start": "151",
+   "label_end": null
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 1,
+  "likely_scanned": false,
+  "toc_entries": 5,
+  "toc_inferred_entries": 7,
+  "toc_inferred_mean_confidence": 0.757,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 6,
+  "chars_total": 78297,
+  "furniture_lines_stripped": 0,
+  "headings_tidied": [
+   {
+    "title": "n) = \u03c3(v\u00aewf",
+    "page": 9,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "CO",
+    "page": 17,
+    "action": "dropped",
+    "why": "a single short word"
+   }
+  ]
+ }
+}

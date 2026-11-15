@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/wu-1957-physrev-105-1413",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Experimental Test of Parity Conservation in Beta Decay",
+  "contains": [
+    "library/wu-1957-physrev-105-1413/sections/page-001",
+    "library/wu-1957-physrev-105-1413/sections/page-002",
+    "library/wu-1957-physrev-105-1413/sections/page-003"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "wu-1957-physrev-105-1413",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "wu-1957-physrev-105-1413.pdf",
+    "source_sha256": "9c60475c26871854c4a22cf81ff22c92dc68b62c07b5a547727b5d9825cb1fef",
+    "pages": 3,
+    "arxiv": null,
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

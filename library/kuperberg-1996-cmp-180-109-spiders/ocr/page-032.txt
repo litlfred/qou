@@ -1,0 +1,42 @@
+140 G. Kuperberg
+
+in both cases. Define
+
+f:U (B(C; A) x BID; 4")) > B(CD)
+A
+
+by the above operation on pairs of cores. By Lemma 6.5 and the fact that H-moves
+preserve cores, there is also a map
+
+g : BCD) > L (B(C; 4) x B(D; 4")
+vi
+
+given by splitting w along a minimal cut path and taking the cores of the two
+halves. By Lemma 6.7, f and g are inverses. Using Lemma 6.7 again, we can see
+g as the bijection claimed by the theorem. O
+
+To prove Theorem 6.1, we need one additional lemma. Say that a sign string s
+is segregated if it is of the form
+
+tHe pore;
+
+a sign string with only +’s or only —’s is automatically segregated. Likewise, say
+that a clasp is segregated if it is of the form [s] for a segregated sign string s.
+
+Lemma 6.8. Let c and d be segregated clasps of weight 4 and yu. Then the web
+basis set B([+]ed) has one element if and only if #* =m+A,, wh =A+A, or
+A* = p+, —A/1, and is empty otherwise.
+
+Proof. Consider first three segregated clasps c, d, and e (one of which might be
+empty) of arbitrary weight, and let w € B(cde). We claim that w must consist of a
+number of bare strands plus a flat component, as in the following example:
+
+The argument is similar to the proof of Lemma 6.5. Assume first that w is not
+connected. If p and q are adjacent endpoints of w, we define the curvature of the
+segment of the boundary of w from p to qg as in Lemma 6.5. Since w is non-elliptic,
+it must on the one hand have total exterior curvature at most 360°. On the other
+hand, there can be no “U” or “Y” attached along c, d, or e, and in there is only
+one place along each clasp where an H is possible. The curvature at this H, if it
+is present, is at most 60°, and the curvature elsewhere along the clasps is at most
+0°. Moreover, unless w is a bare strand, the curvature at the segments between the
+clasps is at most 60° also. The largest possible total is 360° exactly, so that w is

@@ -1,0 +1,39 @@
+Spiders for Rank 2 Lie Algebras 131
+
+It is therefore not a basis web of W([+ — +][+ — +][+ — +]). Clasped web spaces
+can again be interpreted as both quotients and subspaces of unclasped web spaces.
+Any web with at least one partly convex clasp is understood as the zero vector. By
+this convention and Eqs. (2), any trivalent graph in a disk with suitable boundary
+can be interpreted as some vector in the clasped web space.
+
+The non-convexity condition for clasps may seem unnecessarily strong. One
+might alternatively stipulate that every cut path cross at least as many strands as
+the number of strands in the clasp, or that the weight of no cut path be strictly less
+than the weight of the clasp. However, by Lemma 6.5, the two conditions are both
+equivalent to the one given. Say that a cut path of a web is minimal if its weight is
+minimal with respect to the partial ordering. Then in particular, Lemma 6.5 implies
+that all minimal cut paths with a fixed pair of endpoints have the same weight, the
+minimal cut weight.
+
+As usual, join and rotation in the clasped A2 spider are straightforward, but stitch
+involves internal clasps. An internal clasp of type s is defined as an idempotent in
+the unclasped web space W(s*s) that annihilates any web in W(s*t) with wt(t) <
+wt(s). For example,
+
+It is not clear that internal clasps exist; without them, we must understand the
+clasped spider not as a spider but as a collection of web spaces with the operations of
+rotation and join only. We will use this incomplete structure in an indirect argument
+that internal clasps must exist for all three rank 2 cases (as before, they are highest-
+weight projections), but in the 42 case we will also give a more explicit construction.
+
+The construction of the clasped Bz spider is entirely analogous to that of the
+clasped A2 spider, except that the definition of a cut path and its weight are slightly
+different. A cut path may cut diagonally through a tetravalent vertex, and its weight
+is defined as nd; +(k+k')dz, where n is the number of type “1” strands that it
+cuts, k is the number of type “2” strands that it cuts, and k’ is the number of
+tetravalent vertices that it bisects. For example, the following cut path has weight
+Ay +2Ap:
+
+Recall that there is a natural partial ordering of the By weight lattice given by
+aly + big > (€-2)A 4+ (b+ DA, (5)
+ah, + bay > (€4+2)A, + (b-2)A2« (6)

@@ -1,0 +1,45 @@
+396 JULIANA ERLIJMAN AND HANS WENZL
+
+braided, the asymptotic inclusion coincides with the 2-sided inclusion constructed
+in this paper.
+
+(5) Our constructions of bimodules in this paper are based on certain endomor-
+phisms of II; factors. The approach to categories via endomorphisms has been
+used for a long time for type III factors in the framework of algebraic quantum
+field theory (see [Longo and Roberts 1997; Fredenhagen et al. 1989; Xu 2000], for
+example). Here subtleties involving coupling constants do not matter, and objects
+are given directly by morphisms.
+
+6B. Examples for our construction. (1) We first list examples of C*-tensor cate-
+gories with invertible S-matrix.
+
+(a) The S-matrix for the full fusion tensor categories as constructed in [Andersen
+1992],[Andersen and Paradowski 1995] is invertible under the conditions for uni-
+tarizability, as stated in [Wenzl 1998]. Hence if we can find an object X such that
+all irreducible representation of the fusion category appear in some tensor power
+of X, we have ’ = © and the dual principal graph is equal to the principal graph.
+Such representations can be found in all cases, but usually can not be chosen to be
+irreducible. For instance, for Lie type A (the case of Jones subfactors and Hecke
+algebra subfactors), one can choose X =1@V, where V is the analog of the vector
+representation.
+
+(b) Similarly, the S-matrix for the quantum double of a C* tensor category is always
+invertible (see [Miiger 2003], for instance). Hence, as soon as we have found an
+object X for which all irreducible representations of the double category appear
+in some tensor power of X, the dual principal graph of our s-sided inclusion with
+respect to X is equal to the principal graph.
+
+(2) It turns out that our construction not only depends on the category %, but also
+on the choice of the object X. Even though in the case of the fusion tensor cate-
+gories the S-matrix for € is invertible, the S matrix for the category ‘6’ may not
+be invertible. For instance, for type A if one takes X = V, the S-matrix for €’ is
+invertible only if the degree of the root of unity is coprime to k. If this is not the
+case, however, our results for noninvertible S-matrices apply. This will be shown
+in more detail in the following subsection at an example.
+
+6C. Subfactors related to Jones subfactors. We illustrate our examples in some
+detail for the fusion category € of Ugsl2, with g = e7i/! There also exist other,
+more elementary methods to construct these categories using the Temperley—Lieb
+algebras; see [Turaev 1994], for example. As mentioned before, this is also one
+of the cases where the subfactor constructions can be done on the level of braid
+representations, as it was carried out in the original paper [Erlijman 2001].

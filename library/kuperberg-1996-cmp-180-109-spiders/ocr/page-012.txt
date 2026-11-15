@@ -1,0 +1,47 @@
+120 G Kuperberg
+
+We complete the proof that ¢y is an isomorphism by demonstrating that its
+domain and target have the same dimension, thereby generalizing Theorem 2.1 to
+the clasped case:
+
+Theorem 2.4. If N is a multi-index, then
+dim W(N) = dim Inv(Vy) .
+
+Proof. The proof is by induction on |N|, the number of indices in N. The relation
+is straightforward for |N| < 2, so we first assume that |N| = 3.
+The Clebsch-Gordan theorem states that
+
+dim Inv(V; ®V; ®@ Vi) = 1
+
+if each of n, m, and / is less than or equal to the sum of the other two and if the
+sum of all three is even, and
+
+dim Inv(V; ® V; ® Vi) = 0
+
+otherwise. On the other hand, B(i, j,k) has at most one element:
+
+This web exists when there are non-negative integers x, y, and z such that i=x+ y,
+j=x-+z, and k = y+z. These two conditions on i, j, and k are equivalent.
+Now suppose that |V| > 3 and express the multi-index N as JK, where J and K
+each have length at least 2. Since the V,,’s constitute all finite-dimensional irreducible
+representations, and since they are self-dual, there is a decomposition
+
+Inv(V; ® Vk) = PInv(V; @ V;) @ Inv(V; ® Vx),
+T
+
+where / is a single index rather than a multi-index. It suffices to establish a bijection
+f:BU,K) > U (BU) x BU,K)) ,
+1
+where the union is disjoint. The bijection f is very easy to define: A basis web of
+
+w € W(JK) has a minimal cut path, where a cut path is a path whose endpoints
+separate J from K. A cut path is minimal if it crosses as few strands as possible:
+
+\
+
+Let w; and w2 be the two resulting webs. The cut path crosses some i strands, and
+since it is minimal, there can be no U-turns among the i strands in either w; or wo.
+
+t
+
+4
