@@ -19,16 +19,15 @@ one sorry-free Lean file:
     `: True` marker; the statement needs crystal infrastructure).
 (C) KL classical-limit functor placeholder — `H_n(R, q) → ℤ[S_n]`
     at `q = 1` via Kazhdan-Lusztig basis specialisation.
-(D) Minimal `BlochGroup` carrier — free abelian group on `F^×`, for
-    a generic field `F`, modulo the 5-term pentagon relation as a
-    quotient hypothesis.
+(D) Minimal `BlochGroup` carrier — removed 2026-11-15 (it was a
+    `: True` marker; the real quotient lives in
+    `QOU.Archimedean.ThreeSubstantiveMathlibFillers`).
 (E) Pentagon-identity surrogate for `BlochWigner_unit_circle`
     (Cl_2 form) — sketched as a class hypothesis pending Mathlib's
     Fourier-series infrastructure for full Cl_2 functional
     equations.
 
-Base ring (§7c). (A)–(D) are substrate-side: (A) is over `ℕ`, (D)
-quantifies over a generic carrier, and (C) is now generic over a
+Base ring (§7c). (A)–(D) are substrate-side: (A) is over `ℕ` and (C) is now generic over a
 `CommRing` ground ring (it used to be typed `ℝ → ℝ`, which mislabelled
 the `q = 1` Hecke specialisation as archimedean). The residual `ℝ` is
 confined to (E): `Cl_2` is the real Clausen function, so the pentagon
@@ -105,34 +104,17 @@ def KLClassicalLimit {R : Type*} [CommRing R] (f : R → R) : R := f 1
 
 /-! ## (D) Minimal `BlochGroup` carrier -/
 
-/-- A **minimal `BlochGroup` carrier** parameterised by a real
-    auxiliary type `F` (the trace field's Bloch-group elements,
-    abstracted to ℝ for the Lean stub). The full `BlochGroup F`
-    is the quotient of the free abelian group on
-    `F^× × F^×` by the 5-term pentagon relation; here we record
-    the carrier and the existence-of-pentagon-quotient as a
-    typeclass hypothesis pending Mathlib's `FreeAbelianGroup`
-    quotient infrastructure. -/
+/-! **Removed 2026-11-15: `HasBlochGroupQuotient`.** Both fields were
+`True`. Its only user was the `bloch_group_quotient` field of
+`DeeperMathlibFillers`, a class with no instance (see
+`not_deeperMathlibFillers`), so the field was removed there too. A real
+Bloch group quotient and regulator map live in
+`QOU.Archimedean.ThreeSubstantiveMathlibFillers` (`HasPentagonRelation`,
+`HasBlochGroup`). Borel's regulator theorem stays open; recorded in bean
+`qou-n2un`.
+
 -- Ref: [bloch2000] AMS CRM 11
--- Ref: [suslin1991]
-class HasBlochGroupQuotient (F : Type*) : Prop where
-  /-- The free abelian group on `F^×` admits a quotient by the
-      5-term pentagon relation, producing the Bloch group `B(F)`.
-
-      `opaque marker` — Mathlib has no Bloch-group construction
-      (`FreeAbelianGroup` quotient by the 5-term relation), so the
-      genuine existence statement cannot be stated over an abstract
-      field `F`.  Tracked opaque tag for the open Bloch–Suslin
-      scaffold, not a fabricated trivial assertion. -/
-  bloch_quotient_exists : True
-  /-- The Bloch-Wigner regulator `D : B(F)⊗Q → ℝ^{r_2(F)}` is an
-      isomorphism after tensoring with ℝ (Borel's theorem).
-
-      `opaque marker` — Borel's regulator isomorphism has no Mathlib
-      formalisation (no `BlochGroup`, no regulator map), so this is a
-      tracked opaque tag for the open Borel-regulator input, not a
-      fabricated trivial assertion. -/
-  borel_regulator_iso : True
+-- Ref: [suslin1991] -/
 
 /-! ## (E) Pentagon-identity surrogate for Cl_2 -/
 
@@ -162,12 +144,11 @@ class Cl_2_PentagonIdentity : Prop where
 /-- **Synthesis: assembled deeper-filler typeclass.**
 
     A type carrying all deeper-filler instances simultaneously.
-    Inhabiting this class collects (D), (E) — the three
+    Inhabiting this class collects (E) — the three
     Mathlib-pending structural hypotheses — and is the natural
     next §3b-cond hook for full BlochSuslinUniqueness closure. -/
 class DeeperMathlibFillers
     (F : Type*) : Prop where
-  bloch_group_quotient : HasBlochGroupQuotient F
   pentagon_identity : Cl_2_PentagonIdentity
 
 /-- **Conditional theorem: with the deeper fillers, `Cl_2(0) = 0`

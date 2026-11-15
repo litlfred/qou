@@ -29,8 +29,8 @@ not lost. None of these is proved or refuted; each is open.
 | `UniversalHabiroStructure` | `QOU/BraidKnot/MmuR9V9Closure.lean` | `n ↦ ℏ_r^n` is the Markov-trace expansion of a Wenzl–Hoefsmit operator; `n ↦ [3]_r/n²` is the T(2,n) cinquefoil framing factor | operator identification; trace beyond H₃ |
 | 3 fields of `WignerSU4FromSpinIsospin` (class kept, 2 real fields remain) | `QOU/BraidsAndKnots/WignerSU4FromSpinIsospin.lean` | SU(4) action on the 4-dim internal space; Wigner A=4 antisymmetric singlet; α-cluster recursion | SU(4) rep infrastructure (the A=4 singlet is partly linear algebra: ⋀⁴ of a 4-dim space is 1-dim) |
 
-Not yet removed, because something uses it: `HasBlochGroupQuotient` (a field of
-`DeeperMathlibFillers`, which is already refuted via `not_deeperMathlibFillers`).
-Also untouched: the four `p-vs-np-boundary` assertions (open-problem epic, `qou-ptnp`).
+| `HasBlochGroupQuotient` (and its field in the refuted `DeeperMathlibFillers`; owner card 2026-11-15) | `mass-theory/mass-tower-deeper-fillers.lean` | Borel: the Bloch–Wigner regulator `B(F)⊗ℝ → ℝ^{r₂}` is an isomorphism | regulator theorem; the quotient itself exists in `ThreeSubstantiveMathlibFillers` |
+
+Untouched: the four `p-vs-np-boundary` assertions (open-problem epic, `qou-ptnp`).
 
 Branch `claude/lean-devacuify-true-carriers-2026-11-15`, PR #7915.

@@ -210,8 +210,9 @@ class HasAllSubstantiveFillers
     substantive-fillers classes in scope, the §3b-cond hooks for
     BlochGroup quotient, Cl_2 pentagon, and Faddeev-Kashaev limit
     are jointly available — the upstream classes
-    `HasBlochGroupQuotient`, `Cl_2_PentagonIdentity`, and
-    `ArchimedeanLimit` from prior files are all
+    `Cl_2_PentagonIdentity` (refuted: `not_cl_2_pentagonIdentity`) and
+    `ArchimedeanLimit` from prior files (`HasBlochGroupQuotient`, a
+    `: True` marker, was removed 2026-11-15) are all
     "Mathlib-pending" but **structurally connected** via this
     synthesis. -/
 -- Ref: [manuscript] rem:mass-tower-deeper-fillers
