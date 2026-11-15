@@ -48,3 +48,24 @@ module's χ_(3,1)(w) to 1e-30 on every candidate.
 
 Pass criterion ("projected reading 3"): d_a ≥ −TOL and d_b ≥ −TOL and d_R ≥ −TOL. Reported per word, with
 counts. No word is selected by its numbers; all candidates are listed. Scope (a).
+
+## Amendment 3 (2026-11-15, before any run): q-threshold of reading 3 on pure γγ words
+
+Requested by the owner ("thm then merge") to support a theorem of the form: every pure γγ word
+(underlying permutation in S₄ is the identity) of length m passes reading 3 on 1 ≤ q ≤ 1 + c/m.
+
+Object: for each pure word w of length m, q*(w) = inf{ q > 1 : some level character χ_(k,μ)(w) < 0 }
+(levels k = 1..4, two-row μ, convention-D weights y_μ), computed in an independent exact Hoefsmit
+seminormal representation at variable q (mpmath, 40 dps; grid step 1e-3 on [1, 2], then bisection to 1e-12).
+
+Consistency check T2 (must pass before readouts are trusted): at q = q₀ the independent implementation
+reproduces passes_alone and min_char of gg-four-strand.witness.json on all 5460 words (min_char to 1e-6).
+
+Readouts: q*_min(m) = min over pure words of length m, for m = 3..6 (all pure words) and m = 9, 12
+(seeded uniform random sample of 2000 pure words each, seed 0; sample, not exhaustive). Report m·(q*_min(m) − 1).
+Also report which character fails first at the minimiser.
+
+Hypothesis H (may fail): m·(q*_min(m) − 1) is bounded below by a positive constant c. If it is not,
+the 1 + c/m form is wrong and the theorem will be stated in whatever form the data does support, or not at all.
+Nothing selected or fitted; c is a readout, and the Lean statement will use a rational below it, not at it.
+Scope (a).
