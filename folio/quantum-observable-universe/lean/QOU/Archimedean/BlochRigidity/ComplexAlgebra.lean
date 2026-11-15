@@ -1,5 +1,6 @@
 import Mathlib.Analysis.Complex.Basic
 import Mathlib.LinearAlgebra.Complex.FiniteDimensional
+import QOU.Archimedean.BlochRigidity.Algebra
 
 
 /-!
@@ -83,6 +84,33 @@ theorem cocycle_eq_mul_im {ρ : ℂ → ℝ}
     linarith
   · have := him z I hz0 hz1 hI0 hI1 hzI
     simp at this
+    linarith
+
+/-- **Two-term symmetry over `ℂ`.** A real five-term solution that is inversion-odd and
+conjugation-odd satisfies `φ (1 - z) = - φ z` on `ℂ ∖ {0,1}`. This is pure algebra: `two_term`
+handles generic `z`. The exceptional point `z = 2` is real, where conjugation-oddness gives
+`φ = 0`. The exceptional roots of `z² - z + 1` satisfy `1 - z = z⁻¹`, so inversion applies. -/
+theorem one_sub_odd {φ : ℂ → ℝ}
+    (hinv : ∀ z : ℂ, z ≠ 0 → z ≠ 1 → φ z⁻¹ = -φ z)
+    (hconj : ∀ z : ℂ, φ ((starRingEnd ℂ) z) = -φ z)
+    (h5 : ∀ x y : ℂ, x ≠ 0 → x ≠ 1 → y ≠ 0 → y ≠ 1 → x ≠ y →
+      φ x - φ y + φ (y / x) - φ ((1 - x⁻¹) / (1 - y⁻¹)) + φ ((1 - x) / (1 - y)) = 0)
+    {z : ℂ} (hz0 : z ≠ 0) (hz1 : z ≠ 1) : φ (1 - z) = -φ z := by
+  have hreal : ∀ r : ℝ, φ (r : ℂ) = 0 := by
+    intro r; have := hconj (r : ℂ); rw [Complex.conj_ofReal] at this; linarith
+  by_cases h2 : z = 2
+  · subst h2
+    have e1 := hreal 2
+    have e2 := hreal (-1)
+    push_cast at e1 e2
+    rw [show (1 : ℂ) - 2 = -1 by norm_num, e1, e2]; simp
+  by_cases h6 : z ^ 2 - z + 1 = 0
+  · have : 1 - z = z⁻¹ := by
+      field_simp; linear_combination -h6
+    rw [this, hinv z hz0 hz1]
+  · have := two_term hinv h5 hz0 hz1 h2 h6
+    rw [nsmul_eq_mul] at this
+    norm_num at this
     linarith
 
 end QOU.Archimedean.BlochRigidity

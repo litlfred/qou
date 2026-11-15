@@ -1,6 +1,8 @@
 import Mathlib.Algebra.Field.Basic
 import Mathlib.Tactic.Abel
 import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.LinearCombination
+import Mathlib.Tactic.Ring
 
 /-!
 # Bloch–Suslin rigidity: the algebraic layer
@@ -65,5 +67,67 @@ theorem five_term_rearranged {φ : F → A}
   calc φ x = φ x - (φ x - φ y + φ (y / x) - -φ ((1 - y⁻¹) / (1 - x⁻¹))
         + -φ ((1 - y) / (1 - x))) := by rw [e, sub_zero]
     _ = _ := by abel
+
+/-- **The two-term relation is algebraic.** Over any field, with values in any additive group:
+inversion oddness and the five-term relation give `3 • (φ t + φ (1 - t)) = 0` for `t ≠ 0, 1, 2`
+with `t² - t + 1 ≠ 0`. The proof sums the four five-term instances
+`(t, (1-t)⁻¹)`, `(t, t/(t-1))`, `(t, (t-1)/t)`, `(1-t, (1-t)⁻¹)`. These instances were found by a
+linear-algebra search over five-term instances with Möbius-related arguments. -/
+theorem two_term {φ : F → A}
+    (hinv : ∀ z : F, z ≠ 0 → z ≠ 1 → φ z⁻¹ = -φ z)
+    (h5 : ∀ x y : F, x ≠ 0 → x ≠ 1 → y ≠ 0 → y ≠ 1 → x ≠ y →
+      φ x - φ y + φ (y / x) - φ ((1 - x⁻¹) / (1 - y⁻¹)) + φ ((1 - x) / (1 - y)) = 0)
+    {t : F} (ht0 : t ≠ 0) (ht1 : t ≠ 1) (ht2 : t ≠ 2) (ht6 : t ^ 2 - t + 1 ≠ 0) :
+    3 • (φ t + φ (1 - t)) = 0 := by
+  have a1 : 1 - t ≠ 0 := sub_ne_zero.2 (Ne.symm ht1)
+  have a2 : t - 1 ≠ 0 := sub_ne_zero.2 ht1
+  have a3 : t - 1 ≠ 1 := fun h => ht2 (by linear_combination h)
+  have a4 : t * (1 - t) ≠ 0 := mul_ne_zero ht0 a1
+  have a5 : t * (1 - t) ≠ 1 := fun h => ht6 (by linear_combination -h)
+  have a6 : (t - 1) ^ 2 ≠ 0 := pow_ne_zero 2 a2
+  have a7 : (t - 1) ^ 2 ≠ 1 := fun h => ht2 (by
+    have : t * (t - 2) = 0 := by linear_combination h
+    rcases mul_eq_zero.1 this with h' | h'
+    · exact absurd h' ht0
+    · linear_combination h')
+  have a8 : (t - 1) / t ≠ 0 := div_ne_zero a2 ht0
+  have a9 : (t - 1) / t ≠ 1 := by
+    rw [Ne, div_eq_one_iff_eq ht0]; intro h; have : (-1 : F) = 0 := by linear_combination h
+    exact one_ne_zero (neg_eq_zero.1 this)
+  have b1 : (1 - t)⁻¹ ≠ 0 := inv_ne_zero a1
+  have b2 : (1 - t)⁻¹ ≠ 1 := by rw [Ne, inv_eq_one]; intro h; exact ht0 (by linear_combination -h)
+  have b3 : ((t - 1) / t)⁻¹ ≠ 0 := inv_ne_zero a8
+  have b4 : ((t - 1) / t)⁻¹ ≠ 1 := by rw [Ne, inv_eq_one]; exact a9
+  -- the four five-term instances
+  have e1 := h5 t (1 - t)⁻¹ ht0 ht1 b1 b2 (by
+    intro h; apply a5; field_simp at h; linear_combination h)
+  have e2 := h5 t ((t - 1) / t)⁻¹ ht0 ht1 b3 b4 (by
+    intro h; apply ht2; field_simp at h; linear_combination h)
+  have e3 := h5 t ((t - 1) / t) ht0 ht1 a8 a9 (by
+    intro h; apply ht6; field_simp at h; linear_combination h)
+  have e4 := h5 (1 - t) (1 - t)⁻¹ a1 (fun h => ht0 (by linear_combination -h)) b1 b2 (by
+    intro h; apply a7; field_simp at h; linear_combination h)
+  have d1 : 1 - (1 - t)⁻¹ = -t / (1 - t) := by field_simp; ring
+  have d2 : 1 - ((t - 1) / t)⁻¹ = -1 / (t - 1) := by rw [inv_div]; field_simp; ring
+  have d3 : 1 - (t - 1) / t = 1 / t := by field_simp; ring
+  rw [show (1 - t)⁻¹ / t = (t * (1 - t))⁻¹ by field_simp,
+    show (1 - t⁻¹) / (1 - ((1 - t)⁻¹)⁻¹) = (t - 1) / t ^ 2 by rw [inv_inv, sub_sub_cancel]; field_simp,
+    show (1 - t) / (1 - (1 - t)⁻¹) = -((t - 1) ^ 2 / t) by rw [d1]; field_simp; ring] at e1
+  rw [show ((t - 1) / t)⁻¹ / t = (t - 1)⁻¹ by field_simp,
+    show (1 - t⁻¹) / (1 - ((t - 1) / t)⁻¹⁻¹) = t - 1 by field_simp; ring,
+    show (1 - t) / (1 - ((t - 1) / t)⁻¹) = (t - 1) ^ 2 by field_simp; ring] at e2
+  rw [show (t - 1) / t / t = (t - 1) / t ^ 2 by field_simp,
+    show (1 - t⁻¹) / (1 - ((t - 1) / t)⁻¹) = -((t - 1) ^ 2 / t) by rw [d2]; field_simp,
+    show (1 - t) / (1 - (t - 1) / t) = t * (1 - t) by rw [d3]; field_simp] at e3
+  rw [show (1 - t)⁻¹ / (1 - t) = ((t - 1) ^ 2)⁻¹ by field_simp; ring,
+    show (1 - (1 - t)⁻¹) / (1 - ((1 - t)⁻¹)⁻¹) = (t - 1)⁻¹ by rw [d1, inv_inv, sub_sub_cancel]; field_simp; ring,
+    show (1 - (1 - t)) / (1 - (1 - t)⁻¹) = t - 1 by rw [d1, sub_sub_cancel]; field_simp; ring] at e4
+  rw [hinv _ a1 (fun h => ht0 (by linear_combination -h)), hinv _ a4 a5] at e1
+  rw [hinv _ a8 a9] at e2
+  rw [hinv _ a1 (fun h => ht0 (by linear_combination -h)), hinv _ a6 a7] at e4
+  have h := congrArg₂ (· + ·) (congrArg₂ (· + ·) e1 e2) (congrArg₂ (· + ·) e3 e4)
+  simp only [add_zero] at h
+  rw [← h]
+  abel
 
 end QOU.Archimedean.BlochRigidity
