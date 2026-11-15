@@ -254,6 +254,7 @@ import QOU.KZ.KZ4
 import QOU.KZ.KZComplex
 import QOU.KZ.KZCorner
 import QOU.KZ.KZEdge
+import QOU.KZ.DrinfeldAssociator
 import QOU.KZ.KZFunctorial
 import QOU.KZ.KZHalfMonodromy
 import QOU.KZ.KZHexagon
