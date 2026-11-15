@@ -2,7 +2,7 @@ import { definition } from "../../schema/builders";
 
 export default definition({
   label: "def:unstable-atom",
-  title: "Unstable atom (ILP infeasibility)",
+  title: "Unstable atom (failure of normal-form positivity)",
   lean: { ref: "qou:QOU.BraidKnot.UnstableAtom",
     validation: "not_checked",
   },
