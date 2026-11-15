@@ -17,9 +17,13 @@ arguments inverted relative to Suslin.  That combination forces every solution t
   (Suslin 1991, §1).
 * **Two hypotheses, not one.**  The old class bundled a classical identity with
   a rigidity theorem.  Here they are split, so each can be closed on its own:
-  - `BlochWignerFiveTerm D` — `D` satisfies the five-term relation.  For
-    `D = BlochWigner_lob` this is the classical identity (Bloch; Zagier 1991
-    §2), not yet proved in this tree.
+  - `BlochWignerFiveTerm D` — `D` satisfies the five-term relation.  This is
+    the classical identity (Bloch; Zagier 1991 §2).  It is **proved** for the
+    full-plane Bloch–Wigner function `FiveTermProof.blochD`, as the instance
+    `blochWignerFiveTerm_blochD` in `BlochWignerFiveTermInstance.lean`.  That
+    function equals `BlochWigner_lob` on the upper half plane only:
+    `BlochWigner_lob` is `0` below the real axis, so it is not the function
+    the identity is about, and no instance is given for it.
   - `BlochSuslinRigidity D` — every continuous solution with the two
     symmetries is a real multiple of `D`.  This is the rigidity input
     (Bloch 1978; Suslin 1991), not in Mathlib.
@@ -27,7 +31,8 @@ arguments inverted relative to Suslin.  That combination forces every solution t
 With both, `archimedean_functor_uniqueness_complex` is proved, and the figure-8
 calibration `figure8_calibration_complex` now evaluates at the genuine shape
 `e^{iπ/3}`, where `BlochWigner_lob = Cl₂(π/3)` is already a theorem
-(`QOU.Knot.Kummer.blochWigner_lob_exp`).  Neither class has an instance here.
+(`QOU.Knot.Kummer.blochWigner_lob_exp`).  Neither class has an instance in this
+file; `BlochSuslinRigidity` has none anywhere.
 
 -- Ref: [suslin1991] Suslin, K_3 of a field, and the Bloch group, Trudy Mat. Inst. Steklova 183 (1991) 217-239.
 -- Ref: [bloch2000] Bloch, Higher Regulators, Algebraic K-Theory, and Zeta Functions of Elliptic Curves, AMS CRM 11 (2000).
