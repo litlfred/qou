@@ -1063,6 +1063,8 @@ import QOU.Archimedean.BringZeroModeClausenWitness
 import QOU.Archimedean.ArchimedeanLimitDomain
 import QOU.Archimedean.BlochSuslinComplex
 import QOU.Archimedean.BlochWignerFiveTermInstance
+import QOU.Archimedean.BlochRigidity.Algebra
+import QOU.Archimedean.BlochRigidity.Regularity
 import QOU.Archimedean.BringEllipticFactor
 import QOU.Archimedean.SigmaJGeometricCarrier
 import QOU.Archimedean.HodgeWeilRealStructure
