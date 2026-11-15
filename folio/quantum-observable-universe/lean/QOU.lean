@@ -840,6 +840,7 @@ import QOU.QBeta.FiveTwoFiveTermArguments
 import QOU.QBeta.FiveTwoRogersReflection
 import QOU.QBeta.FiveTwoAbelFiveTerm
 import QOU.QBeta.DilogTheory
+import QOU.Archimedean.BlochRigidity.Reflection
 import QOU.QBeta.DilogTheoryArchimedean
 import QOU.QBeta.BarEvenJet
 import QOU.QBeta.BarEvenJetArchimedean

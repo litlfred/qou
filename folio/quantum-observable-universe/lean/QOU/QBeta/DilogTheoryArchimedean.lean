@@ -1,6 +1,6 @@
 import QOU.QBeta.DilogTheory
 import QOU.QBeta.FiveTwoAbelFiveTerm
-import QOU.Archimedean.BlochRigidity.Instance
+import QOU.Archimedean.BlochRigidity.Reflection
 
 /-!
 # The Rogers instance of `RogersDilogTheory` (archimedean half of `DilogTheory`, split per §7c)
@@ -46,5 +46,26 @@ theorem SuslinDilogTheory.eq_mul_blochWigner (T : SuslinDilogTheory ℂ ℝ)
     ∃ c : ℝ, ∀ z : ℂ, z ≠ 0 → z ≠ 1 → T.D z = c * FiveTermProof.blochD z :=
   BlochSuslinRigidity.uniqueness (D := FiveTermProof.blochD) T.D hc
     ⟨fun z h0 _ => by rw [← one_div]; exact T.inv_odd z h0, hconj⟩ T.five
+
+open QOU.Archimedean in
+/-- **The anharmonic orbit of Bloch–Wigner, unconditionally.** Reflection oddness is
+`FiveTermProof.blochD_one_sub`; the rest is the algebra of `SuslinDilogTheory.anharmonic`. -/
+theorem blochWigner_anharmonic {z : ℂ} (hz0 : z ≠ 0) (hz1 : z ≠ 1) :
+    blochWigner.D (1 / (1 - z)) = blochWigner.D z ∧
+      blochWigner.D ((z - 1) / z) = blochWigner.D z ∧
+      blochWigner.D (z / (z - 1)) = -blochWigner.D z :=
+  blochWigner.anharmonic (fun w => FiveTermProof.blochD_one_sub w) hz0 hz1
+
+open QOU.Archimedean in
+/-- **Reflection for every continuous archimedean instance.** Off `{0,1}` it follows from
+rigidity: such an instance is `c · D`, and `D` is reflection-odd. -/
+theorem SuslinDilogTheory.reflection_of_continuous (T : SuslinDilogTheory ℂ ℝ)
+    (hc : ContinuousOn T.D {0, 1}ᶜ) (hconj : ∀ z, T.D ((starRingEnd ℂ) z) = -T.D z)
+    {z : ℂ} (hz0 : z ≠ 0) (hz1 : z ≠ 1) : T.D (1 - z) = -T.D z := by
+  obtain ⟨c, hcD⟩ := T.eq_mul_blochWigner hc hconj
+  have h0 : (1 : ℂ) - z ≠ 0 := sub_ne_zero.2 (Ne.symm hz1)
+  have h1 : (1 : ℂ) - z ≠ 1 := fun h => hz0 (by linear_combination -h)
+  rw [hcD _ h0 h1, hcD _ hz0 hz1, FiveTermProof.blochD_one_sub]
+  ring
 
 end QOU.QBeta.DilogTheory

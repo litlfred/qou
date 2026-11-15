@@ -92,7 +92,8 @@ variable {F : Type*} [Field F] {A : Type*} [AddCommGroup A]
 
 /-- **The anharmonic orbit**, given reflection oddness `D(1 − z) = −D z`: the six cross-ratio
 images of `z` carry `±D z`. Pure algebra. Reflection is a hypothesis here, not a field: it is
-not yet proved in Lean for the Bloch–Wigner instance. -/
+proved for the Bloch–Wigner instance in `FiveTermProof.blochD_one_sub`; see
+`blochWigner_anharmonic`. -/
 theorem SuslinDilogTheory.anharmonic (T : SuslinDilogTheory F A)
     (hrefl : ∀ z : F, T.D (1 - z) = -T.D z) {z : F} (hz0 : z ≠ 0) (hz1 : z ≠ 1) :
     T.D (1 / (1 - z)) = T.D z ∧ T.D ((z - 1) / z) = T.D z ∧ T.D (z / (z - 1)) = -T.D z := by
