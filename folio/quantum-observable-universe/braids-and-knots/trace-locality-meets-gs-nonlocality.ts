@@ -12,27 +12,20 @@ export default proposition({
     "thm:jones-markov-trace",
     "rem:non-commutative-probability-dictionary",
   ],
-  cites: ["wenzl1988"],
   tags: [
     "locality",
     "markov-property",
     "grobner-shirshov",
-    "product-factorization",
-    "vertex-volume",
     "issue-649",
     "established",
   ],
   proofs: ["prf:trace-locality-meets-gs-non-locality"],
   authorNotes: [
     {
-      kind: "status",
+      kind: "refined-framing",
+      date: "2026-11-15",
       body:
-        "**provable from existing infrastructure.** The proof in `prf:trace-locality-meets-gs-non-locality` assembles three already-established QOU components: `thm:jones-markov-trace`, the Gröbner–Shirshov reduction algorithm (as instrumented in QOU's Hecke / Descartes Lean modules), and Wenzl's 1988 vertex-volume factorisation [`wenzl1988`]. No new mathematics is introduced.",
-    },
-    {
-      kind: "note",
-      body:
-        "**Summary.** The proposition resolves the apparent tension between Markov locality and Gröbner–Shirshov non-locality as sequential operations bridged by Wenzl's product factorisation, with the proof a straightforward assembly of cited existing components.",
+        "Part (3), the product factorisation of the Markov trace over the Gröbner–Shirshov normal form, was removed from the statement on owner ruling (2026-11-15) and moved to `rem:trace-locality-product-factorisation-check`. Its proof left the vertex volumes undefined and relied on multiplicativity of the trace, which does not hold; what survives is a finite check of the Wedderburn block weights for n ≤ 5. The Lean class `HasReconciliation` still carries a `productFactorisation` field, so it now assumes more than this statement says; that is for the Lean-foundations work to rescope.",
     },
   ],
 });
