@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0610591v3/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Surjectivity of",
+  "pageStart": 2,
+  "pageEnd": 7,
+  "contains": [
+    "library/arxiv-math-0610591v3/blocks/prose-sec-001",
+    "library/arxiv-math-0610591v3/blocks/recommendation-sec-001-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0610591v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0610591v3",
+  "provenance": "ingested"
+}

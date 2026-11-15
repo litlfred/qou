@@ -1168,6 +1168,9 @@ const ORDER: Array<FileSlot | Reference> = [
   // ── Mathas 1999 (Iwahori–Hecke Algebras and Schur Algebras) ──
   { id: "mathas1999" },
 
+  // ── q-Schur generation (G3.4 Dipper–James route, stream 16) ──
+  { id: "doty2006" },
+
   // ── Mathas 2004 (Mackey filtration for cyclotomic Hecke) ────
   { id: "mathas2004mackey" },
 
