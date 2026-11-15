@@ -68,3 +68,22 @@ the files are complete. Removed before anything was recorded.
 About 50 minutes for 35 items, around 1.5 minutes each, including hand algebra
 and four sympy checks. The corpus is about 905 items, so a single reviewer needs
 about 22 hours. Four parallel reviewers need about 6 hours each.
+
+## Re-review after the owner-ruled fixes (2026-11-15, later)
+
+Six commits on main fixed pilot findings in nine blocks (93cc4bbea, 13f8f3506,
+83d5ee4bf, bb77bb402, b606a8175, 9fb2b100f). I re-read each changed block. No
+`.lean` file changed. The new verdicts are appended after the earlier ones,
+because the earlier verdicts recorded the old text.
+
+| block | S↔L | S↔P | what changed / what remains |
+|---|---|---|---|
+| figure-eight-reeb-rotation | fail | warn (was fail) | q-range added and proved. The Lean is still a generic lemma. The exterior claim is left implicit, and the "lepton channels" reading is still in the statement |
+| pion-half-figure-eight | fail | pass (was warn) | The proof now splits h²<1 from h²≥1. The Lean is still a tautology |
+| three-strand-color-winding-rigidity | pass | pass (was warn) | Hypothesis is now 1−q⁴ invertible. Note a₂ vs a₋₂ label mismatch between statement and proof |
+| hoefsmit-binding-amplitude | fail | warn (was fail) | Physics moved out. The Lean still defines b by its value. The statement omits q⁴≠1 |
+| frobenius-lepton-meson-bridge | fail | warn (was fail) | Physics moved out. The Lean is still `rfl` on a table. The coupling claims are unproved |
+| meson-em-sinh-closed-form | fail, minor (was pass) | warn (was fail) | Empirical content moved out. **New:** the statement says "R a field" while the Lean needs `Invertible 2`; the identity fails to make sense in characteristic 2 |
+| meson-qcg-fusion-identity | pass | pass (was warn) | Mass reading moved out |
+| knot-eigenbasis-complete | fail | warn (was fail) | TL quotient and the inclusions are fixed. The Lean is still self-assuming. "Knot types label summands" is not shown |
+| trace-locality-meets-gs-nonlocality | fail | warn (was fail) | Part (3) moved out. **New:** the Lean class still carries `productFactorisation` (false for the Markov trace) and a convention-C docstring on z |
