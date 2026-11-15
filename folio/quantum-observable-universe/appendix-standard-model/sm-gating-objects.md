@@ -70,7 +70,7 @@ the graded content as a multiset: as ordered pairs, $(-5, +3)$ and $(+3, -5)$
 are distinct, and the ordering is the quark–antiquark strand orientation — the
 same signed-writhe datum that supplies weak isospin. The map from mesons to
 ordered content is injective (`orderedContent_injective`, decided in the
-formalisation), and the earlier statement that the mass cannot be a function of
+formalisation), and the statement that the mass cannot be a function of
 the grading quantifies only over symmetric functions of the *unordered* content;
 it does not constrain a function of the ordered content. So this object does
 not reduce into the first. What remains is a canonical, parameter-free map from

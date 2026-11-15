@@ -93,13 +93,6 @@ $e_X^\pm$ in $H_2(q)$.
 
 **Step 3 — Cell-content trace, not Plancherel weight.**
 
-> **Demoted.** Earlier drafts of this proof used
-> Plancherel weights $w_X = 1/[2]_q$ as a "uniform completeness
-> signature." That uniform-weight expression was a degenerate
-> artifact of the dimensionally-collapsed $H_2(q)$-only
-> formulation (six rank-1 projectors cannot fit in a 2-dim
-> algebra). The Hoefsmit $n=6$ formulation supersedes it.
-
 The substrate-level structural quantity is the cell-content
 trace, computed directly from the eight pure-pattern
 multiplicities $(4, 2, 1, 3, 3, 1, 2, 4)$:

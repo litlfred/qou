@@ -23,6 +23,11 @@ export default conjecture({
   ],
   authorNotes: [
     {
+      kind: "refined-framing",
+      date: "2026-09-04",
+      body: "**This replaces an earlier encoding that violated AGENTS.md §3b-cond item 5.**\nUntil 2026-09-04 the class had a single field whose type *was*\n[`prop:explicit-central-idempotent`](#prop:explicit-central-idempotent)'s\nconclusion, discharged by a bare projection `exact hi.idempotent lam h` — so\nthe \"conditional theorem\" proved nothing modulo the class. Caught by the\n`--item5` mode of `scripts/conditional-on-class-hypothesis-audit.ts`; the fix\nwas to axiomatise what interpolation actually supplies and let the theorem\ncompose it.",
+    },
+    {
       kind: "note",
       date: "2026-09-04",
       body:

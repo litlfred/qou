@@ -21,4 +21,10 @@ export default remark({
   ],
   uses: ["prop:archimedean-functor-uniqueness"],
   cites: ["suslin1991", "bloch2000"],
+  authorNotes: [
+    {
+      kind: "deprecated",
+      body: "The multiplicative gluon-octet PSLQ form was a legacy conjecture, removed from the corpus and superseded by prop:em-coupling-bring-zero-mode.",
+    },
+  ],
 });

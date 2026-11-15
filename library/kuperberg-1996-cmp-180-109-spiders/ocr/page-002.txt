@@ -1,0 +1,57 @@
+110 G Kuperberg
+
+character theory. But it is also useful to consider operations on invariant spaces such
+as tensor products and contractions. Even for finite-dimensional, simple Lie algebras
+over €, these operations are not completely understood.
+
+Interest in multilinear invariant theory was revived after the discovery of quan-
+tum groups. A quantum Lie group is a non-commutative, non-cocommutative Hopf
+algebra U,(g) which is a deformation of the universal enveloping algebra U(g).
+The representation theory of a quantum group is just as important as the quantum
+group itself and may also be defined using loop groups or conformal quantum field
+theory. Among other uses of quantum groups, a quantum invariant of a tangle takes
+a vector in an invariant space Inv(V), where V depends on the boundary of the
+tangle and other data.
+
+Because of non-cocommutativity, the switching map
+
+tT: VOW -WOV
+
+given by
+X@yry@x
+
+is in general not an (equivariant) map between quantum group representations. Thus,
+there is no natural symmetric group action on invariant spaces with n tensor factors
+with n > 2. (There is often a braid group action.) However, the following operations
+exist and are natural:
+
+1. Tensor product:
+Inv(V) @ Inv(W) @ Invi(V @ W),
+2. Cyclic permutation:
+Inv(V ® W)— InvW @V),
+
+3. Contraction:
+Inv(V @ V* ® W) > Inv(W) .
+
+Since V and W may themselves be tensor products, cyclic permutation of two
+tensor factors yields cyclic permutation of n tensor factors, but not general permuta-
+tions. Also, contraction must be interpreted carefully, because in a quantum group,
+one must reverse order when taking duals: (V ®@ W)* = W* @V*.
+
+A spider is an abstraction of a representation theory with these three operations.
+It is a collection of vector spaces, or perhaps modules or sets, to be thought of as
+invariant spaces, together with abstract operations called join, rotation, and stitch,
+to be thought of as tensor product, cyclic permutation, and contraction. It is both
+convenient and conceptually important to depict these operations with certain planar
+graphs. These graphs are called webs, hence the term “spider.”
+
+Another motivation of the spider operations is that they describe the entire equi-
+variant tensor category of representations of a group, Lie algebra, or quantum group.
+In general,
+
+Hom(4, B) & Inv(A* @ B),
+
+the tensor product of two homomorphisms can be defined in terms of tensor prod-
+uct and cyclic permutation of invariants, and composition of homomorphisms can
+be defined in terms of tensor product and contraction. Contrariwise, the spider
+operations can be defined in terms of tensor product and composition of morphisms.

@@ -30,6 +30,6 @@ $$
   F_{\mathrm{Bor}} = \lvert\mathrm{tr}_M(\beta_{\mathrm{Bor}})\rvert\,\frac{[3]_q!}{q^3}.
 $$
 
-The hyperbolic-volume dependence enters through the muon anchor $\mathrm{Vol}(4_1)$, dressed by the dimensionless Borromean factor $F_{\mathrm{Bor}}$ ([`computations/canonical_mass.py`](computations/canonical_mass.py)).
+The hyperbolic-volume dependence enters through the muon anchor $\mathrm{Vol}(4_1)$, dressed by the dimensionless Borromean factor $F_{\mathrm{Bor}}$.
 
 The Skein corrections isolate the crossing asymmetry between the $\mathfrak{u}$ and $\mathfrak{d}$ components. The pair Skein formula dictates $\mathfrak{m}_{\mathfrak{p}} = \mathcal{S}_{\mathfrak{u}\mathfrak{u}}(q) + 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}}(q)$.

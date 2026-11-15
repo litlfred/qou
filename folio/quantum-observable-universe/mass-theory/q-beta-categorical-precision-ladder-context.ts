@@ -14,4 +14,14 @@ export default remark({
     "jones",
   ],
   uses: ["prop:q-beta-categorical-precision-ladder"],
+  authorNotes: [
+    {
+      kind: "refined-framing",
+      body: "An earlier draft of the non-monotonicity paragraph read the signed residual column and reached the reverse conclusion.",
+    },
+    {
+      kind: "deprecated",
+      body: "The precision ladder is superseded by the Habiro-ring identification (prop:habiro-precision-ladder-equivalence). The per-rung content is retained for historical reference and for the derivation narrative.",
+    },
+  ],
 });

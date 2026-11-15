@@ -47,13 +47,13 @@ $-\mathrm{Li}_2^q(-V)$ to all displayed digits at $q_0 \approx 1.110$
 for $V \in \{0.1, 0.3, 0.5, 0.7, 0.85, 0.95, 0.989\}$
 (`kashaev-integration-identity.witness.json`).*
 
-*Earlier versions of this proof identified the integral with the
-compact quantum dilogarithm $\Phi_q(V) = \prod_{k\geq 1}(1 - q^{-k}V)^{-1}$,
-whose logarithm uses asymmetric q-integers $(q^n - 1)$.  Both
-$\mathrm{Li}_2^q$ and $\log\Phi_q$ are q-deformations of the
-classical dilogarithm, but they use different q-integer conventions;
-the Hecke setting requires the symmetric form $[n]_q$, so
-$\mathrm{Li}_2^q$ is the correct identification.*
+*The integral is not the compact quantum dilogarithm
+$\Phi_q(V) = \prod_{k\geq 1}(1 - q^{-k}V)^{-1}$, whose logarithm uses
+asymmetric q-integers $(q^n - 1)$.  Both $\mathrm{Li}_2^q$ and
+$\log\Phi_q$ are q-deformations of the classical dilogarithm, but they
+use different q-integer conventions; the Hecke setting requires the
+symmetric form $[n]_q$, so $\mathrm{Li}_2^q$ is the correct
+identification.*
 
 The NF basis of $H_n(R, q)$ decomposes by generator content.  Each
 subset $S \subseteq \{0,\dots,n-2\}$ contributes a blow-up centre

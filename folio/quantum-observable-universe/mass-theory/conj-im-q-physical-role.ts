@@ -11,6 +11,10 @@ export default conjecture({
   uses: ["rem:im-q-vs-p-skew"],
   authorNotes: [
     {
+      kind: "note",
+      body: "An earlier version of this section stated that the coupling and phase-space integral were not supplied anywhere in the corpus; they are, in the hadron half-life rate formula.",
+    },
+    {
       kind: "status",
       date: "2026-05-25",
       body:

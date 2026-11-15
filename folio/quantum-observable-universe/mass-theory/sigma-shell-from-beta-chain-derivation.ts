@@ -27,6 +27,10 @@ export default conjecture({
   ],
   authorNotes: [
     {
+      kind: "caveat",
+      body: "This block previously reported 12 % agreement with B(D)/(2m_p); that figure was computed in convention C, on the superseded grouped deuteron word.",
+    },
+    {
       kind: "status",
       date: "2026-11-15",
       body:

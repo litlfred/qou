@@ -37,6 +37,8 @@ $$
 
 Thus, the topological obstruction class $\kappa_0 \in H^2(\mathcal{S}, \mathbb{G}_m)$ is not $n$-divisible for $n = 5, 7, 11, 13, \ldots$ (all primes $> 3$ and their multiples). At each such level of the Kummer tower, the $q$-BSD formula carries non-trivial arithmetic content that cannot be cancelled by torsion.
 
+*Scope.* On a closed surface $H^2(\mathcal{S}, \mathbb{G}_m) = 0$. The Kummer obstruction is the image $\chi(A) \bmod n \in H^2(\mathcal{S}, \mu_n) \cong \mathbb{Z}/n$ of the Reeb bundle's class in $H^1(\mathcal{S}, \mathbb{G}_m)$ ([QU-to-QOU](#thm:qu-to-qou), item 3); the non-vanishing for $n \nmid 6$ holds there.
+
 The parallel with the NS obstruction ([NS Kummer](#prop:ns-kummer-specialisation)) is exact:
 
 | Millennium problem | $q$-scale | Classical limit $q \to 1$ | Obstruction |

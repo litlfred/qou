@@ -829,3 +829,5 @@ locations, warn on a running build).
 **First move in a fresh session: `pgrep -f 'lake build'`.** Full detail, and why
 §17's union mirror is still the stronger tool than ranking:
 `verification-harness.md` §17a.
+
+- **TRAP (2026-10-12, PR #7747): a partial extra olean root SHADOWS the full one.** Lean resolves a module by the FIRST `LEAN_PATH` root that contains its top-level directory (`Mathlib/`), not the first that contains the file. So prepending a scratch dir holding only 2 newly built Mathlib oleans made every other Mathlib import fail with "object file … does not exist". **Fix:** `cp -al` the whole `.lake/packages/mathlib/.lake/build/lib/lean/Mathlib` into the scratch root, unlink each target before writing it with `lean -o`, then build into it. Also: the root `.lake/packages/mathlib` holds oleans only, with no `.lean` sources; sources are in `folio/quantum-observable-universe/lean/.lake/packages/mathlib` (same rev, f897ebc). A module that no QOU file imported (e.g. `GroupTheory.GroupExtension.Defs`, `GroupTheory.SemidirectProduct`) is ABSENT from the cache and must be built this way.

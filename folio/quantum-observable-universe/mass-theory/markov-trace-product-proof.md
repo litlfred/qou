@@ -42,11 +42,8 @@ trace** (Ocneanu--Wenzl recursion) is $hz^2 + z$
 ([corrected Markov trace](#prop:corrected-markov-trace)).
 At the proton-pinned $q_0$ with the canonical weight $z = q^3/(q^2+1)$
 (convention D): vertex-product $z^3 \approx 0.2300$ vs Markov trace
-$hz^2 + z \approx 0.6912$ (3.0$\times$ off). The figures $0.1245$ and
-$0.5514$ (4.4$\times$) quoted here before 2026-10-10 were the excised
-convention-C values.
-(Earlier versions had these two values swapped;
-fixed.)
+$hz^2 + z \approx 0.6912$ (3.0$\times$ off). Under convention C the
+same comparison reads $0.1245$ against $0.5514$ (4.4$\times$).
 
 The product formula remains valid for the **nuclear
 Garside element** (where generators are distant) and for

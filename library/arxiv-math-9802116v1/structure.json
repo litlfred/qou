@@ -1,0 +1,660 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-9802116v1",
+ "source": {
+  "file": "9802116v1.pdf",
+  "sha256": "be7999751ffb6db38d57c4bafc589c9a8683a59a0554df9adb28cecb3f4370bf",
+  "bytes": 244217,
+  "pages": 34,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T12:09:13Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/9802116",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "25 Feb 1998"
+  },
+  "doi": null,
+  "title": "Quasialgebra structure of the octonions",
+  "authors_raw": "Helena Albuquerque1",
+  "title_lines": [
+   "QUASIALGEBRA STRUCTURE OF THE OCTONIONS"
+  ],
+  "abstract": "We show that the octonions are a twisting of the group algebra of Z2 × Z2 × Z2 in the quasitensor category of representations of a quasi-Hopf algebra asso- ciated to a group 3-cocycle. We consider general quasi-associative algebras of this type and some general constructions for them, including quasi-linear algebra and representation theory, and an automorphism quasi-Hopf algebra. Other examples include the higher 2n-onion Cayley algebras and examples associated to Hadamard matrices.",
+  "docinfo": {
+   "Title": "arXiv:math/9802116v1  [math.QA]  25 Feb 1998",
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "CreationDate": "D:20180306185911-05'00'"
+  },
+  "title_raw": "QUASIALGEBRA STRUCTURE OF THE OCTONIONS",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:math/9802116v1 [math.QA] 25 Feb 1998",
+   "heading": "QUASIALGEBRA STRUCTURE OF THE OCTONIONS",
+   "text": "QUASIALGEBRA STRUCTURE OF THE OCTONIONS",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_correction": {
+   "title": "Quasialgebra structure of the octonions",
+   "basis": "Printed title on page 1 (H. Albuquerque and S. Majid, DAMTP/97-138); the extracted title was the arXiv stamp",
+   "extracted_title": "arXiv:math/9802116v1 [math.QA] 25 Feb 1998",
+   "corrected_on": "2026-11-15"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1",
+   "confidence": 0.85,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "1"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries: General constructions",
+   "page": 2,
+   "source": "inferred",
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "2"
+  },
+  {
+   "level": 1,
+   "title": "More about the quasi-algebras kFG",
+   "page": 7,
+   "source": "inferred",
+   "number": "3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "7"
+  },
+  {
+   "level": 1,
+   "title": "Cayley algebras",
+   "page": 15,
+   "source": "inferred",
+   "number": "4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "15"
+  },
+  {
+   "level": 1,
+   "title": "The quaternion algebra is of this form with",
+   "page": 19,
+   "source": "inferred",
+   "number": "ii",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "19"
+  },
+  {
+   "level": 1,
+   "title": "The octonion algebra is of this form with",
+   "page": 19,
+   "source": "inferred",
+   "number": "iii",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "19"
+  },
+  {
+   "level": 1,
+   "title": "New quasialgebras",
+   "page": 20,
+   "source": "inferred",
+   "number": "5",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "20"
+  },
+  {
+   "level": 1,
+   "title": "Automorphism quasi-Hopf algebras",
+   "page": 24,
+   "source": "inferred",
+   "number": "6",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "24"
+  },
+  {
+   "level": 1,
+   "title": "Quasiassociative linear algebra",
+   "page": 30,
+   "source": "inferred",
+   "number": "7",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "30"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 33,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "33"
+  }
+ ],
+ "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 920,
+   "n_words": 125,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2903,
+   "n_words": 448,
+   "label_start": "1",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-001-2-preliminaries-general-constructions",
+   "number": "2",
+   "title": "Preliminaries: General constructions",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 7,
+   "n_chars": 8494,
+   "n_words": 1630,
+   "label_start": "2",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-002-3-more-about-the-quasi-algebras-kfg",
+   "number": "3",
+   "title": "More about the quasi-algebras kFG",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 15,
+   "n_chars": 13428,
+   "n_words": 2898,
+   "label_start": "7",
+   "label_end": "15"
+  },
+  {
+   "id": "sec-003-4-cayley-algebras",
+   "number": "4",
+   "title": "Cayley algebras",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 19,
+   "n_chars": 7248,
+   "n_words": 1428,
+   "label_start": "15",
+   "label_end": "19"
+  },
+  {
+   "id": "sec-004-ii-the-quaternion-algebra-is-of-this-form-with",
+   "number": "ii",
+   "title": "The quaternion algebra is of this form with",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 89,
+   "n_words": 21,
+   "label_start": "19",
+   "label_end": "19"
+  },
+  {
+   "id": "sec-005-iii-the-octonion-algebra-is-of-this-form-with",
+   "number": "iii",
+   "title": "The octonion algebra is of this form with",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 2543,
+   "n_words": 537,
+   "label_start": "19",
+   "label_end": "20"
+  },
+  {
+   "id": "sec-006-5-new-quasialgebras",
+   "number": "5",
+   "title": "New quasialgebras",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 24,
+   "n_chars": 5508,
+   "n_words": 1213,
+   "label_start": "20",
+   "label_end": "24"
+  },
+  {
+   "id": "sec-007-6-automorphism-quasi-hopf-algebras",
+   "number": "6",
+   "title": "Automorphism quasi-Hopf algebras",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 30,
+   "n_chars": 12921,
+   "n_words": 2459,
+   "label_start": "24",
+   "label_end": "30"
+  },
+  {
+   "id": "sec-008-7-quasiassociative-linear-algebra",
+   "number": "7",
+   "title": "Quasiassociative linear algebra",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 33,
+   "n_chars": 6000,
+   "n_words": 1059,
+   "label_start": "30",
+   "label_end": "33"
+  },
+  {
+   "id": "sec-009-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 33,
+   "page_end": 34,
+   "n_chars": 1205,
+   "n_words": 176,
+   "label_start": "33",
+   "label_end": "34"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 10,
+  "toc_inferred_entries": 10,
+  "toc_inferred_mean_confidence": 0.75,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 11,
+  "chars_total": 61259,
+  "furniture_lines_stripped": 34
+ }
+}

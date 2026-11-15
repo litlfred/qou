@@ -75,8 +75,8 @@ form the gluing relation sees them.
 
 The proof chain is: the complex five-term identity at $(y_3, y_1)$ and
 $(y_3, y_2)$; the anharmonic evaluations; the branch equations from
-$y^{2} = (1-y)^{3}$; the root data; and the logarithm evaluations. Every step is
-sorry-free on the standard axioms, and `SaddleRoots` is inhabited via the
+$y^{2} = (1-y)^{3}$; the root data; and the logarithm evaluations. Every step uses
+only the standard axioms, and `SaddleRoots` is inhabited via the
 intermediate value theorem — so the closed form is a statement about the
 **actual** roots of $X^{3} - 2X^{2} + 3X - 1$, rather than about a structure
 that might be empty.

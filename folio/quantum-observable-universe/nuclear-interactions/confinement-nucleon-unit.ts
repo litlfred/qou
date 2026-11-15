@@ -14,4 +14,11 @@ export default remark({
   ],
   uses: ["prop:confinement-topological"],
   interprets: "prop:confinement-lp",
+  authorNotes: [
+    {
+      kind: "refined-framing",
+      date: "2026-08-09",
+      body: "The earlier statement here, \"Gram indefiniteness ($\\det G < 0$)\", quoted the convention-C determinant $-0.18920521914403668$ on the bilinear pairing and is withdrawn on both counts (2026-08-09).",
+    },
+  ],
 });

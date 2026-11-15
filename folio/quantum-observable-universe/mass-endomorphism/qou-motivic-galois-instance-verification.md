@@ -16,9 +16,9 @@ construction.
 Were the instance in hand, theorems that carry [`def:motivic-galois-character`](#def:motivic-galois-character) as an `[instance]` hypothesis could consume it directly, and the [motivic perpetual obstruction](#thm:motivic-perpetual-obstruction) would become unconditional for the QOU substrate. That is the intended payoff, not a present fact: the instance is conjectural, so those theorems still carry the hypothesis.
 
 What *is* unconditional is a narrower result on a different route:
-`lean/QOU/LiftingDescent/MotivicPerpetualObstructionFromTrace.lean`
+the Lean module `QOU.LiftingDescent.MotivicPerpetualObstructionFromTrace`
 derives the obstruction from the prime-ideal-collapse invariant
-$C = a_0(-1) + 2 a_1(-1)$, sorry-free, without going through a
+$C = a_0(-1) + 2 a_1(-1)$, without going through a
 `MotivicGaloisCharacter` instance at all.
 
 ## Coherence
