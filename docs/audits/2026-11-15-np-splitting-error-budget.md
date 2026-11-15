@@ -249,3 +249,19 @@ Consequence here: p = uud carries K^{⊗3} = q, n = udd carries q⁻¹. So **n/p
 **Lean** (`QOU/BraidsAndKnots/NucleonWeightSpaceTraces.lean`, generic `[Field R]`, lean-direct `-DautoImplicit=false` exit 0, no sorry, standard axioms). On the (2,1) and (1,2) weight spaces of (C²)^{⊗3}, σ₁ and σ₂ act by explicit 3×3 matrices. An explicit P with det P = −(q²+1)/q⁴ intertwines them (`intertwine₁`, `intertwine₂`, `intertwine_word`). Hence `trace_word_eq`: every braid word in σ₁, σ₂ has the same plain trace on the proton-type and the neutron-type weight space, for q ≠ 0 and q² + 1 ≠ 0. A side fact: σ₁ on one space is σ₂ on the other. Together with `MarkovOrientationForced.lean`, the level-2 statement "the restricted D trace gives n/p = q^{∓2} for every word" is now proved, apart from the bookkeeping that K^{⊗3} is the scalar q^{±1} on each space.
 
 **What the scale multiplies (structural, scope a).** In the producer, Φ = Σᵢ log|V̂ᵢ|, the log of an algebraic quantum volume ∏V̂ᵢ (`quark_volume_provenance_probe.py`). The scale is α = m_e·|Vol_q(B₃)| = m_e·|∏V̂ᵢ^{B₃}| (prop:binding-scale-catalan), built from the same kind of object. So the asserted Δm = α·ΔΦ multiplies one quantum volume (the Borromean's) by a difference of logs of another (the quark ordering's). The corpus's own scale block is linear in the volume (m_e × Vol_q). Read with that form, a quark-ordering change would contribute m_e·ΔVol_q, not m_e·Vol_q(B₃)·Δlog Vol_q. No corpus artifact states which form applies to the splitting, so this is recorded as the reason the scale is underived. It is not used to pick a new formula.
+
+## §18 Derivation attempt with the corpus's derived hadronic scale E₀ (owner: "both, derive first")
+**Corpus search.** The corpus has a *derived* hadronic scale, E₀ = m_e/(q(q−1)) ≈ 4.186 MeV, from CAL-1 and CAL-2 only (notation-collisions, mass-formula-validation, interaction-sector-taxonomy: strong sector). Its tower-summed form is E₀^full = E₀/(1−ℏ_q²) ≈ 4.227 MeV. The corpus calls it "the MeV-per-dimensionless-trace-unit conversion for hadronic predictions", and it is used **linearly** on trace differences: Q_β = |Δnet|·E₀ and Q_β = |ε(Δ)|·E₀. No corpus block derives α = m_e·8G for this use, and none supports the log form α·ΔΦ. One related block, gluon-model-comparison, *calibrates* E₀ = Q/Δ ≈ 4.155 MeV. That is a fit and is not used.
+
+**Pre-registered probe** `np_hadronic_scale_e0_probe.py` (output `probe_output_e0.txt`). Element: the ruled γγ nucleon V³, V = σ₁σ₂⁻¹; V⁶ also passes reading 3 and is reported too. Trace: the D quantum trace with K = diag(q, 1/q), normalised to tr(1) = 1, restricted to the p and n weights with u = e₁.
+
+| candidate | Δm (MeV) | vs CODATA |
+|---|---|---|
+| D1, corpus linear form, E₀^full·\|t_n − t_p\|, V³ | 0.3254 | −74.84 % |
+| D1, same, V⁶ | 0.3235 | −74.98 % |
+| D1′, order-zero E₀, V³ | 0.3222 | −75.08 % |
+| D2, log form kept, E₀^full·2 ln q | 0.8822 | −31.79 % |
+
+t_n/t_p = q⁻² exactly for both words, as proved in Lean (§17).
+
+**Reading (scope a).** The only derived scale in the corpus, used in the corpus's own linear form on the ruled element, gives −74.8 %. That is robust: V³ and V⁶ agree to 0.6 %. D2 is closer, but the log form has no corpus support, so ranking it higher would be selecting by residual. The sign under the linear form is not settled either. t_p is negative here, so whether the neutron is heavier depends on whether the mass reads t or |t|. **The derivation does not close.** Following the owner's card, the next step is a proposed conjecture wording for the n–p block, put up for review and not applied.
