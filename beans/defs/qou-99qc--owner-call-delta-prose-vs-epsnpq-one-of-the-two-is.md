@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-15T23:09:05Z
+updated_at: 2026-11-15T23:09:58Z
 parent: qou-10v9
 ---
 
@@ -3483,3 +3483,14 @@ Prediction: ε_np depends on the multiplicity coordinate (it is not constant on 
 
 It even changes sign and changes with the word. Conclusion: the word-level ratio ε = A(Δ_S·Vᵏn)/A(Vᵏn) is not a stable functional on T=½ neutron states. The ≈ −h values of ε-W1 belonged to non-isospin states. A quick corpus grep (QuarkState/, eightfold, h3 idempotents) found no construction that fixes t, so the choice is OPEN, and that is a shallow grep, not a full corpus-grep.
 **ε-J1.** Prediction CONFIRMED: with no word (V⁰), on the symmetric sum states, ε_pn/ε_np = q exactly. ε_np = −(q−1)(q+1)⁴/(4q²(q²+1)) and ε_pn = q·ε_np. The single state has a zero amplitude at V⁰. For V¹ and V² the ratio departs from q at FIRST order (ratio − q = −(3/2)(q−1) + …), so ≈ q is not generic. V³ and V⁶ return to agreement through (q−1)⁴. Mechanism at V⁰: the p→n channel has one more power of q from the K-weights of the emitted pair, and J does not change it. The return at V³ and V⁶ is unexplained (it may be because the word length is a multiple of 3).
+
+
+### PRE-REGISTRATION ε-TR1 (2026-11-15 23:32Z): remove the neutron-vector choice by a trace
+The emission projections are taken over isospin-½ states.
+- At T³ = +½, the weight space splits canonically into the T=½ part, span{p_A, p_B} = E·span{n_A, n_B}, and the T=3/2 line F₃·uuu.
+- Let π be the projection onto the T=½ part along the T=3/2 line, with coordinates in the basis p_A, p_B.
+- Define the 2×2 matrix M(X)_{ij} = coordinate i of π[(quark part of) the component on pair (d on 4, u on 5) of Ř₃₄·X·Vᵏ·(n_j ⊗ coev)].
+- ε_tr = Tr M(Δ_S) / Tr M(1). It is independent of the basis of the multiplicity space.
+- p→n is the mirror: start p_j; final projection onto the T=½ part at T³ = −½ along F₃²·uuu, in the basis n_A, n_B; pair (u on 4, d on 5).
+Words V⁰, V³, V⁶; X = none and J23.
+Questions: is ε_tr stable across words, and what is ε_tr,pn/ε_tr,np? No numerical prediction. Nothing compared to data.
