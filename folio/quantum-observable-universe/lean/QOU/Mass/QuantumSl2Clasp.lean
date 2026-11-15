@@ -10,7 +10,9 @@ of `X` on `w_j` is a sum over the support `v_k ⊗ v_{j−k}` of `w_j`, and each
 single product of `q`-integers equal to van der Veen's `k`-th term (checked exactly in
 `computations/whitehead_clasp_rotated_monodromy_check.py`).
 
-This file collects the closed forms that the term identity needs.
+This file proves that term identity (`claspTerm_eq_vdvTerm`), sorry-free, from closed forms of
+the highest-weight coefficients and of the entries of `Eⁿ`, `Fⁿ`. It treats the cup and cap
+coefficients as given numbers; their invariance (and the snake identity) is a separate step.
 
 -- Ref: [vanderveen2008] van der Veen, AGT 8 (2008) 603–624, proof of Lemma 1
 -- Ref: [kassel1995] Kassel, "Quantum Groups", Ch. VII, XIV
@@ -180,5 +182,243 @@ theorem mono_clasp_entry (m j k : ℕ) (hkj : k ≤ j) (hjm : j ≤ m) :
   · simp
 
 end ClaspEntry
+
+/-! ## The per-term identity
+
+With `m = k + a + n` and `j = k + a` (so `n = m − j`, the vdV index), the `k`-th summand of the
+clasp eigenvalue at output `v_j ⊗ v_0` is
+`(a_k(j)/a_j(j)) · b_k · a_m · M_{(m−k, j),(j−k, m)}`, where `a_p(j)` are the coefficients of the
+highest-weight vector `w_j` and `a_p = a_p(m)`, `b_p` are the cup and cap coefficients.
+`claspTerm_eq_vdvTerm` shows it equals van der Veen's `k`-th summand. -/
+
+section ClaspTerm
+variable (s : 𝕜) (hs : s ≠ 0)
+
+include hs in
+theorem sq_zpow_split (z : ℤ) (P Q : ℕ) (h : z = (P : ℤ) - Q) :
+    (s ^ 2) ^ z = s ^ (2 * P) / s ^ (2 * Q) := by
+  rw [h, zpow_sub₀ (pow_ne_zero 2 hs), zpow_natCast, zpow_natCast, ← pow_mul, ← pow_mul]
+
+include hs in
+theorem s_zpow_split (z : ℤ) (P Q : ℕ) (h : z = (P : ℤ) - Q) :
+    s ^ z = s ^ P / s ^ Q := by
+  rw [h, zpow_sub₀ hs, zpow_natCast, zpow_natCast]
+
+theorem qfact_ne_zero' (N : ℕ) (hint : ∀ i, 0 < i → i ≤ N → qint (s ^ 2) i ≠ 0) (i : ℕ)
+    (hi : i ≤ N) : qfact (s ^ 2) i ≠ 0 := by
+  unfold qfact
+  exact Finset.prod_ne_zero_iff.mpr (fun r hr => hint _ (by omega)
+    (by have := Finset.mem_range.mp hr; omega))
+
+theorem neg_one_pow_inv (x : ℕ) : ((-1 : 𝕜) ^ x)⁻¹ = (-1) ^ x := by
+  rw [← inv_pow, inv_neg_one]
+
+/-- The cup coefficient `a_p` on `v_p ⊗ v_{m−p}`. -/
+def cupCoef (m p : ℕ) : 𝕜 := hwCoef (s ^ 2) m m m p
+
+/-- The cap coefficient `b_p = (−1)^m q^{m−2p} / a_p`. -/
+def capCoef (m p : ℕ) : 𝕜 := (-1) ^ m * (s ^ 2) ^ ((m : ℤ) - 2 * p) / cupCoef s m p
+
+/-- The `k`-th term of the clasp at output `v_j ⊗ v_0`, with `m = k + a + n`, `j = k + a`. -/
+def claspTerm (k a n : ℕ) : 𝕜 :=
+  hwCoef (s ^ 2) (k + a + n) (k + a + n) (k + a) k
+      / hwCoef (s ^ 2) (k + a + n) (k + a + n) (k + a) (k + a)
+    * capCoef s (k + a + n) k * cupCoef s (k + a + n) (k + a + n)
+    * mono s hs (k + a + n) (k + a + n) (⟨k + a + n - k, by omega⟩, ⟨k + a, by omega⟩)
+        (⟨k + a - k, by omega⟩, ⟨k + a + n, by omega⟩)
+
+theorem claspTerm_closed (k a n : ℕ)
+    (hint : ∀ i, 0 < i → i ≤ k + a + n → qint (s ^ 2) i ≠ 0) :
+    claspTerm s hs k a n
+      = (-1) ^ (k + a) * (s ^ 2 - (s ^ 2)⁻¹) ^ n * qfact (s ^ 2) (n + k) * qfact (s ^ 2) (a + n)
+          * s ^ (2 * (a * (a + n + 1)))
+        / (qfact (s ^ 2) n * qfact (s ^ 2) k * qfact (s ^ 2) a
+          * s ^ (2 * (k * (k + n + 1)) + n * (n + 1))) := by
+  have hq : s ^ 2 ≠ 0 := pow_ne_zero 2 hs
+  have hf := qfact_ne_zero' s (k + a + n) hint
+  have hfm := hf (k + a + n) le_rfl
+  have hfn := hf n (by omega)
+  have hfk := hf k (by omega)
+  have hfa := hf a (by omega)
+  have hfan := hf (a + n) (by omega)
+  have hfnk := hf (n + k) (by omega)
+  have hf0 : qfact (s ^ 2) 0 = 1 := by simp [qfact]
+  -- the four highest-weight coefficients
+  have h1 : hwCoef (s ^ 2) (k + a + n) (k + a + n) (k + a) k
+      = (-1) ^ k * (s ^ (2 * (k * a)) / s ^ (2 * (k * (n + 1)))) * qfact (s ^ 2) (a + n)
+        * qfact (s ^ 2) (n + k) / (qfact (s ^ 2) (k + a + n) * qfact (s ^ 2) n) := by
+    have h := hwCoef_closed (s ^ 2) hq (k + a + n) (k + a) k (by omega) (by omega)
+      (fun i hi => hint _ (by omega) (by omega))
+    rw [show k + a + n - (k + a) = n by omega, show k + a + n - k = a + n by omega,
+      show n + k = n + k from rfl, sq_zpow_split s hs _ (k * a) (k * (n + 1))] at h
+    · rw [eq_div_iff (mul_ne_zero hfm hfn), ← h]; ring
+    · push_cast; ring
+  have h2 : hwCoef (s ^ 2) (k + a + n) (k + a + n) (k + a) (k + a)
+      = (-1) ^ (k + a) / s ^ (2 * ((k + a) * (n + 1))) := by
+    have h := hwCoef_closed (s ^ 2) hq (k + a + n) (k + a) (k + a) le_rfl (by omega)
+      (fun i hi => hint _ (by omega) (by omega))
+    rw [show k + a + n - (k + a) = n by omega, show n + (k + a) = k + a + n by omega,
+      sq_zpow_split s hs _ 0 ((k + a) * (n + 1))] at h
+    · rw [eq_div_iff (pow_ne_zero _ hs)]
+      apply mul_right_cancel₀ (mul_ne_zero hfm hfn)
+      rw [show hwCoef (s ^ 2) (k + a + n) (k + a + n) (k + a) (k + a) * s ^ (2 * ((k + a) * (n + 1)))
+          * (qfact (s ^ 2) (k + a + n) * qfact (s ^ 2) n)
+          = (hwCoef (s ^ 2) (k + a + n) (k + a + n) (k + a) (k + a) * qfact (s ^ 2) (k + a + n)
+            * qfact (s ^ 2) n) * s ^ (2 * ((k + a) * (n + 1))) by ring, h]
+      field_simp
+      simp
+    · push_cast; ring
+  have h3 : hwCoef (s ^ 2) (k + a + n) (k + a + n) (k + a + n) k
+      = (-1) ^ k * (s ^ (2 * (k * (a + n))) / s ^ (2 * k)) * qfact (s ^ 2) (a + n)
+        * qfact (s ^ 2) k / qfact (s ^ 2) (k + a + n) := by
+    have h := hwCoef_closed (s ^ 2) hq (k + a + n) (k + a + n) k (by omega) le_rfl
+      (fun i hi => hint _ (by omega) (by omega))
+    rw [Nat.sub_self, zero_add, hf0, mul_one, show k + a + n - k = a + n by omega,
+      sq_zpow_split s hs _ (k * (a + n)) k] at h
+    · rw [eq_div_iff hfm, h]
+    · push_cast; ring
+  have h4 : hwCoef (s ^ 2) (k + a + n) (k + a + n) (k + a + n) (k + a + n)
+      = (-1) ^ (k + a + n) / s ^ (2 * (k + a + n)) := by
+    have h := hwCoef_closed (s ^ 2) hq (k + a + n) (k + a + n) (k + a + n) le_rfl le_rfl
+      (fun i hi => hint _ (by omega) (by omega))
+    rw [Nat.sub_self, zero_add, hf0, mul_one, mul_one,
+      sq_zpow_split s hs _ 0 (k + a + n)] at h
+    · rw [eq_div_iff (pow_ne_zero _ hs)]
+      apply mul_right_cancel₀ hfm
+      rw [show hwCoef (s ^ 2) (k + a + n) (k + a + n) (k + a + n) (k + a + n) * s ^ (2 * (k + a + n))
+          * qfact (s ^ 2) (k + a + n)
+          = (hwCoef (s ^ 2) (k + a + n) (k + a + n) (k + a + n) (k + a + n) * qfact (s ^ 2) (k + a + n))
+            * s ^ (2 * (k + a + n)) by ring, h]
+      field_simp
+      simp
+    · push_cast; ring
+  have hE : (irrepE (s ^ 2) (k + a + n) ^ (k + a + n - (k + a))) ⟨k + a, by omega⟩ ⟨k + a + n, by omega⟩
+      = qfact (s ^ 2) n := by
+    rw [irrepE_pow_entry _ _ _ _ _ (by simp)]
+    have hd := qfact_mul_prod_down (s ^ 2) n n le_rfl
+    rw [Nat.sub_self, hf0, one_mul] at hd
+    rw [← hd, show k + a + n - (k + a) = n by omega]
+  have hF : (irrepF (s ^ 2) (k + a + n) ^ (k + a + n - (k + a))) ⟨k + a + n - k, by omega⟩
+      ⟨k + a - k, by omega⟩ = qfact (s ^ 2) (a + n) / qfact (s ^ 2) a := by
+    rw [irrepF_pow_entry _ _ _ _ _ (by simp; omega), eq_div_iff hfa]
+    have hu := qfact_mul_prod_up (s ^ 2) a n
+    rw [← hu, show k + a + n - (k + a) = n by omega, mul_comm]
+    exact congrArg _ (Finset.prod_congr rfl (fun l _ => by congr 1; simp))
+  unfold claspTerm capCoef cupCoef
+  rw [h1, h2, h3, h4, mono_clasp_entry s hs (k + a + n) (k + a) k (by omega) (by omega), hE, hF,
+    sq_zpow_split s hs _ (k + a + n) (2 * k),
+    s_zpow_split s hs (wt (k + a + n) (k + a + n) * wt (k + a + n) (k + a - k))
+      ((k + a + n) * a) ((k + a + n) * (k + n)),
+    s_zpow_split s hs (wt (k + a + n) (k + a) * wt (k + a + n) (k + a + n - k))
+      (a * a + 2 * n * k) (n * n + k * k),
+    show k + a + n - (k + a) = n by omega]
+  · unfold rcoef
+    have hnn : s ^ (n * (n - 1)) = s ^ (n * n) / s ^ n := by
+      rcases n with _ | n
+      · simp
+      · rw [eq_div_iff (pow_ne_zero _ hs), ← pow_add]; congr 1
+    rw [hnn, show ((-1 : 𝕜)) ^ (k + a + n) = (-1) ^ k * (-1) ^ a * (-1) ^ n by rw [pow_add, pow_add],
+      show ((-1 : 𝕜)) ^ (k + a) = (-1) ^ k * (-1) ^ a from pow_add _ _ _]
+    generalize s ^ 2 - (s ^ 2)⁻¹ = X
+    generalize hA : qfact (s ^ 2) (n + k) = A at hfnk
+    generalize hB : qfact (s ^ 2) (a + n) = B at hfan
+    generalize hC : qfact (s ^ 2) (k + a + n) = C at hfm
+    generalize hD : qfact (s ^ 2) n = D at hfn
+    generalize hE' : qfact (s ^ 2) k = E at hfk
+    generalize hF' : qfact (s ^ 2) a = F at hfa
+    rcases Nat.even_or_odd k with hk | hk <;> rcases Nat.even_or_odd a with ha | ha <;>
+      rcases Nat.even_or_odd n with hn | hn <;>
+      rw [hk.neg_one_pow, ha.neg_one_pow, hn.neg_one_pow] <;> field_simp <;> ring
+  all_goals
+    try unfold wt
+    try simp only [show k + a - k = a by omega, show k + a + n - k = a + n by omega]
+    push_cast; ring
+
+include hs in
+/-- `1 − t^x = −q^x (q − q⁻¹) [x]` with `q = s²`, `t = q²`. -/
+theorem one_sub_tpow (hq2 : s ^ 2 - (s ^ 2)⁻¹ ≠ 0) (x : ℕ) :
+    1 - ((s ^ 2) ^ 2) ^ x = -((s ^ 2) ^ x * (s ^ 2 - (s ^ 2)⁻¹) * qint (s ^ 2) x) := by
+  have hq : s ^ 2 ≠ 0 := pow_ne_zero 2 hs
+  have hX : (s ^ 2) ^ x * (s ^ 2)⁻¹ ^ x = 1 := by rw [← mul_pow, mul_inv_cancel₀ hq, one_pow]
+  unfold qint
+  rw [mul_assoc, mul_div_assoc', mul_div_cancel_left₀ _ hq2, mul_sub, hX]
+  ring
+
+include hs in
+/-- `[c]! · Π_{i<n} (1 − t^{c+i+1}) = (−1)ⁿ (q − q⁻¹)ⁿ s^{2nc + n(n+1)} [c+n]!`. -/
+theorem qfact_mul_prod_one_sub (hq2 : s ^ 2 - (s ^ 2)⁻¹ ≠ 0) (c n : ℕ) :
+    qfact (s ^ 2) c * ∏ i ∈ Finset.range n, (1 - ((s ^ 2) ^ 2) ^ (c + i + 1))
+      = (-1) ^ n * (s ^ 2 - (s ^ 2)⁻¹) ^ n * s ^ (2 * (n * c) + n * (n + 1))
+        * qfact (s ^ 2) (c + n) := by
+  induction n with
+  | zero => simp
+  | succ n ih =>
+    rw [Finset.prod_range_succ, ← mul_assoc, ih, one_sub_tpow s hs hq2,
+      show c + (n + 1) = (c + n) + 1 by omega, qfact_succ, show c + n + 1 = c + n + 1 from rfl]
+    ring
+
+/-- van der Veen's `k`-th summand of `C(n, t)` (2008, Lemma 1), with `N = m + 1`,
+`m = k + a + n`, `t = q² = s⁴`, and `t^{N(N−1)/2}` written `s^{2N(N−1)}`. -/
+def vdvTerm (k a n : ℕ) : 𝕜 :=
+  (-1) ^ (k + a + n) * s ^ (2 * ((k + a + n + 1) * (k + a + n)))
+    / s ^ (4 * ((k + a + n + 1) * (n + k)))
+    * ∏ i ∈ Finset.Icc 1 n, (1 - ((s ^ 2) ^ 2) ^ (k + a + n + 1 - i - k))
+        * (1 - ((s ^ 2) ^ 2) ^ (i + k)) / (1 - ((s ^ 2) ^ 2) ^ i)
+
+include hs in
+include hs in
+theorem vdvTerm_closed (hq2 : s ^ 2 - (s ^ 2)⁻¹ ≠ 0) (k a n : ℕ)
+    (hint : ∀ i, 0 < i → i ≤ k + a + n → qint (s ^ 2) i ≠ 0) :
+    vdvTerm s k a n
+      = (-1) ^ (k + a) * (s ^ 2 - (s ^ 2)⁻¹) ^ n * qfact (s ^ 2) (n + k) * qfact (s ^ 2) (a + n)
+          * s ^ (2 * (a * (a + n + 1)))
+        / (qfact (s ^ 2) n * qfact (s ^ 2) k * qfact (s ^ 2) a
+          * s ^ (2 * (k * (k + n + 1)) + n * (n + 1))) := by
+  have hf := qfact_ne_zero' s (k + a + n) hint
+  have hfn := hf n (by omega)
+  have hfk := hf k (by omega)
+  have hfa := hf a (by omega)
+  have hf0 : qfact (s ^ 2) 0 = 1 := by simp [qfact]
+  unfold vdvTerm
+  rw [← Finset.Ico_add_one_right_eq_Icc, Finset.prod_Ico_eq_prod_range, Nat.add_sub_cancel,
+    Finset.prod_div_distrib, Finset.prod_mul_distrib]
+  have hA : ∏ i ∈ Finset.range n, (1 - ((s ^ 2) ^ 2) ^ (k + a + n + 1 - (1 + i) - k))
+      = ∏ i ∈ Finset.range n, (1 - ((s ^ 2) ^ 2) ^ (a + i + 1)) := by
+    rw [← Finset.prod_range_reflect]
+    exact Finset.prod_congr rfl (fun i hi => by
+      have := Finset.mem_range.mp hi; congr 2; omega)
+  have hB : ∏ i ∈ Finset.range n, (1 - ((s ^ 2) ^ 2) ^ (1 + i + k))
+      = ∏ i ∈ Finset.range n, (1 - ((s ^ 2) ^ 2) ^ (k + i + 1)) := by
+    exact Finset.prod_congr rfl (fun i _ => by congr 2; omega)
+  have hC : ∏ i ∈ Finset.range n, (1 - ((s ^ 2) ^ 2) ^ (1 + i))
+      = ∏ i ∈ Finset.range n, (1 - ((s ^ 2) ^ 2) ^ (0 + i + 1)) := by
+    exact Finset.prod_congr rfl (fun i _ => by congr 2; omega)
+  have pA := qfact_mul_prod_one_sub s hs hq2 a n
+  have pB := qfact_mul_prod_one_sub s hs hq2 k n
+  have pC := qfact_mul_prod_one_sub s hs hq2 0 n
+  rw [hf0, one_mul, zero_add, mul_zero] at pC
+  rw [mul_comm (qfact (s ^ 2) a)] at pA
+  rw [mul_comm (qfact (s ^ 2) k)] at pB
+  rw [hA, hB, hC, eq_div_of_mul_eq hfa pA, eq_div_of_mul_eq hfk pB, pC,
+    show ((-1 : 𝕜)) ^ (k + a + n) = (-1) ^ k * (-1) ^ a * (-1) ^ n by rw [pow_add, pow_add],
+    show ((-1 : 𝕜)) ^ (k + a) = (-1) ^ k * (-1) ^ a from pow_add _ _ _,
+    show k + n = n + k from add_comm _ _]
+  generalize s ^ 2 - (s ^ 2)⁻¹ = X at hq2
+  generalize qfact (s ^ 2) (n + k) = A
+  generalize qfact (s ^ 2) (a + n) = B
+  generalize hD : qfact (s ^ 2) n = D at hfn
+  generalize qfact (s ^ 2) k = E at hfk
+  generalize qfact (s ^ 2) a = F at hfa
+  rcases Nat.even_or_odd k with hk | hk <;> rcases Nat.even_or_odd a with ha | ha <;>
+    rcases Nat.even_or_odd n with hn | hn <;>
+    rw [hk.neg_one_pow, ha.neg_one_pow, hn.neg_one_pow] <;> field_simp <;> ring
+
+/-- **The clasp term is van der Veen's term.** -/
+theorem claspTerm_eq_vdvTerm (hq2 : s ^ 2 - (s ^ 2)⁻¹ ≠ 0) (k a n : ℕ)
+    (hint : ∀ i, 0 < i → i ≤ k + a + n → qint (s ^ 2) i ≠ 0) :
+    claspTerm s hs k a n = vdvTerm s k a n := by
+  rw [claspTerm_closed s hs k a n hint, vdvTerm_closed s hs hq2 k a n hint]
+
+end ClaspTerm
 
 end QOU.Mass.QuantumSl2
