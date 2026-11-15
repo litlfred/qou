@@ -1,0 +1,44 @@
+4.3 Analytic versus smooth functions 105
+4.3 Analytic versus smooth functions
+
+Although most of our results above are stated for analytic amplitudes and
+phases, their conclusions hold assuming only that these functions are C°-
+smooth. This indicates that there should be arguments using smooth tech-
+niques, such as partitions of unity and integration by parts, rather than con-
+tour deformation. Such an approach to evaluating saddle point integrals has
+been developed and used extensively by harmonic analysts, who are chiefly
+interested in the case where ¢ is purely imaginary. This is not covered by The-
+orem 4.1, which requires that Re{¢} be strictly positive away from zero for
+the contour decomposition used in our proof. Results in this section will be
+used only once or twice for the analysis of generating functions in this book;
+our chief reason for including this material is that any treatment of Fourier—
+Laplace integrals bypassing smooth methods is pedagogically and historically
+incomplete.
+
+When the exponent ¢ is imaginary, the modulus of the Fourier—Laplace in-
+tegrand is equal to |A(z)|, so it is no longer true that one may cut off the integral
+outside of an interval [—e,€] and expect to introduce negligible remainders.
+Instead, one assumes that A has compact support, then uses smooth partitions
+of unity to reduce to integrals over small intervals. Note that neither partitions
+of unity nor compactly supported functions exist in the analytic category; how-
+ever, when the contour of integration y is a closed curve, any amplitude func-
+tion has compact support on y so both the analytic and the smooth methods
+apply and may be compared.
+
+In this section we give asymptotics for the integral
+
+b
+TQ)= f A(z) expliadte)) dz,
+
+where A and ¢ are smooth, ¢ is real, and A is supported on a compact sub-
+interval of (a, b). Matching existing literature we use the term phase to denote ¢
+rather than i¢. The overall argument in the smooth case is the same as the proof
+of Theorem 4.6, except for the insertion of a localization step at the beginning
+and the introduction of a damping term in the step where both amplitude and
+phase are monomial. Our process towards general asymptotics thus becomes:
+localization, big-O estimate, monomials (with damping), monomial phase, and
+then the full theorem.
+
+Localization Lemma in C”
+
+Following [Ste93], we begin with a localization principle.

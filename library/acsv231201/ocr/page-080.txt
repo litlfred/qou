@@ -1,0 +1,47 @@
+62 Univariate asymptotics
+
+where p; is any root of g(z) with second smallest modulus. When p; has mul-
+tiplicity one then P;(n, p,) is constant, and the expression
+
+P(p1)
+pid (er)
+
+gives an asymptotic expansion of a, with exponentially small error term. When
+q(x) has a unique root p; of minimal modulus with multiplicity larger than one
+then, because the coefficients of P\(n, x) get rather unwieldy to compute, it is
+common to give only the leading term (or the first few terms) in P)(n, x) and
+leave an error of polynomially smaller size. Algorithms to separate the roots
+of a univariate polynomial by modulus are discussed in [GS96] and [MS21].
+
+n=
+
+pi" + O(;")
+
+If there are several roots of g with minimal modulus then only those with
+maximum multiplicity contribute to dominant asymptotic behavior. The exis-
+tence of several roots of minimal modulus and maximum multiplicity means
+one must compute the terms in Proposition 3.1 coming from each, and po-
+tentially deal with cancellation in the powers of these roots. Because it can
+be very difficult to track algebraic relations between terms involving powers
+of algebraic numbers with the same modulus, there are (perhaps surprisingly)
+still open problems related to when such cancellation can occur. Thankfully,
+the very pathological cases where it is difficult to detect dominant asymptotic
+behavior do not arise for combinatorial examples; see [Mel21, Section 2.2] for
+further discussion of these issues.
+
+Exercise 3.1. Let ao and a; be any real numbers and suppose ay) = 10a, —
+25an-1 for all integers n > 1. Explicitly determine the generating function
+(2) = Deg Anz" and use this to determine the asymptotic behavior of a, as
+n — ov, Split the parameter space determined by ap and a; into regions de-
+pending on the different asymptotic behaviors of ay.
+
+3.2 Meromorphic asymptotics
+
+Partial fraction decomposition gives a simple algebraic method to determine
+asymptotics for rational generating functions. In this section we introduce an-
+alytic techniques, allowing for a vast generalization from rational functions
+to functions that behave locally like rational functions. Our arguments make
+use of standard results about meromorphic functions and, although we make
+our presentation as self-contained as possible, the reader not familiar with this
+aspect of complex analysis can consult [Con78b] for further background.
+Analytic methods require that the series f(z) represents an analytic function

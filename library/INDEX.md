@@ -67,7 +67,7 @@ whose abstract did not extract get a structural brief instead.
 | [`9511222v1`](9511222v1/) | Murnaghan–Nakayama rules for characters of Iwahori–Hecke algebras of classical type — 26 sections: Page 1; Page 2; Page 3 |
 | [`9710022v2`](9710022v2/) | Harmonic Analysis on the quantum Lorentz group — This w ork b egins with a review of complexi cation and reali cation of Hopf algebras. |
 | [`978-3-98547-562-9-volume-4-chapter-5483`](978-3-98547-562-9-volume-4-chapter-5483/) | Floer cohomology, singularities, and birational geometry — We explain a few recent results concerning the application of various Floer theories to topics in algebraic geometry, including singularity |
-| [`acsv231201`](acsv231201/) | Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction |
+| [`acsv231201`](acsv231201/) | Analytic Combinatorics in Several Variables Expanded Second Edition — 100 sections: Front matter; Preface to the second edition; Preface to the first edition |
 | [`afst-2007-6-16-3-665-0`](afst-2007-6-16-3-665-0/) | Galois theory of q-difference equations (van der Put–Reversat, Ann. Fac. Sci. Toulouse XVI:3, 2007, 665–718) — Galois-theoretic framework for q-difference equations. |
 | [`agt-v12-n2-p04-s`](agt-v12-n2-p04-s/) | The twisted Alexander polynomial for finite abelian covers over three manifolds — 8 sections: Front matter; Introduction; Preliminaries |
 | [`agt-v3-n1-p17-p`](agt-v3-n1-p17-p/) | Skein-theoretical derivation of some formulas of Habiro — We use skein theory to compute the coeﬃcients of certain power series considered by Habiro in his theory of sl2 invariants of integral homol |

@@ -1,0 +1,54 @@
+332 Multiple point asymptotics
+
+for 0 < j < n—1, and observe that £;(s) is a constant multiple of a falling
+factorial with n — j — 1 terms, and therefore has degree n — j— 1 in s.
+
+Lemma 10.60. The right side of (10.31) in Theorem 10.59 can be rewritten
+as
+
+1 d-1 n-1
+X= (=) p* YBa) f 11-0 4 8) a(0) x dt, (10.32)
+7-0 z
+
+and the phase @ satisfies Re ¢ > 0 on &.
+
+Proof Applying the Leibniz rule for differentiating a product to f in (10.30)
+yields
+
+ml ayy g\rld a\i :
+fo) = > (" j (4) rend (<) wWpe®, 1/y)
+
+j=0
+
+n-1
+
+SF @=-DiGatn-D! naif dy. io
+= a Fla pia +P (5) vpet)
+
+a favo.
+=D Bilray’ (<) wpe”, Ly).
+70 y
+
+Plugging this into (10.30) and using the definitions of A;,@, and p; yields the
+stated formula. By strict minimality of p, for each j the modulus of vj(z°)
+achieves its maximum only when z = p®. Thus each convex combination of
+v;(z°) with z # p has modulus less than |v;(p°)|, meaning that Red > 0 on&
+with equality only on {0} x A. oO
+
+Analysis of the integral in (10.32) requires the advanced Theorem 5.3 from
+Chapter 5, as the simpler Theorem 5.2 assumes that the real part of the negative
+phase function has a strict minimum in the interior of the domain of integration.
+Our present assumptions imply that Re¢ will be strictly positive away from
+the origin in the @-coordinates, but allow the real part of ¢ to vanish up to the
+boundary in the t-coordinates.
+
+To apply Theorem 5.3 we need to determine the set G’ of stratified critical
+points for which Re ¢ is maximized, i.e., the critical points in {0} x A. Let C
+be the n x d matrix with entries
+
+ov; we
+C= PiPa %, P) ifi<d
+if j=d.
+
+Exercise 10.15. What is the exact relation between C used in this section and
+Ty used in the residue approach?

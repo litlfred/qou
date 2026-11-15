@@ -1,0 +1,58 @@
+A.2 Vector fields and differential forms 447
+
+open U Cc M we write TU = Upey TpM and, if (U,¢) is a chart on M, we
+define fs : TU > R™ by
+
+fou @) = (@ 0 m\(v), 6.) € GU) X Tyrarwy 4 CR.
+
+It can be shown that as (U, #) ranges over an atlas of M then the collection of
+(TU, fo,u) gives an atlas for TM as a smooth manifold (the main consideration
+is proving compatibility of chart maps, which follows straightforwardly from
+the definition of the differential using coordinates; see [Tul1, Ch. 12] for a
+full derivation). If (U,@) is a chart on M then under this structure the map
+v & (a(v),6,(v)) is a diffeomorphism from TU to U x R¢. The maps ¢, are
+vector space isomorphisms, so that TM is a bundle.
+
+Example A.12. Suppose M = R¢, with the canonical global chart U = R4 and
+chart map ¢(a) = x. Unsurprisingly, if we let vp denote the tangent vector at p
+that takes a smooth map g and returns the directional derivative 4 9 8(P+tv)
+then fsu(Up) = (p, v). Thus, TR* has a global product structure and (in this
+trivial case) there is a canonical isomorphism between two different tangent
+
+spaces T,,(R“) and Tp (R“). 4
+
+Example A.13. Let M = S?. If TM had a global product structure, ie., if
+there existed an isomorphism f : MxR* > TM, then the map s(p) = f(p, e1)
+would define a smooth global non-zero section of TM, contradicting the Hairy
+Ball Theorem (see Example A.7). Thus, the tangent bundle of the sphere S?
+does not admit a global product structure. 4
+
+Asmooth vector field on M is a section of T M. In other words, a vector field
+
+is asmooth map X that takes p € M and returns a tangent vector Xp € Tp M. If
+
+(U, ¢) is a chart on M then for any p € U the tangent vectors on grees Z|
+p np
+
+form a basis for Tp M. Thus, for any map X : M > TM with Xp € TpM we
+
+can write
+
+m
+
+é
+Xp = Yi cxP) is
+
+k=1
+
+for all p € U,
+ip
+
+which defines coefficient maps c, : U — R. The mapping X is a vector field
+(i.e., is smooth) if and only if the coefficient maps c; constructed this way are
+all smooth as (U, ¢) ranges over the charts of M.
+
+A.2.2 Cotangent vectors and 1-forms
+
+Having defined what we need for tangent vectors, we now define cotangent
+vectors by dualizing everything. It can be difficult to build intuition as to why

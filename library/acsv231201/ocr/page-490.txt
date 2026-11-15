@@ -1,0 +1,47 @@
+472 Algebraic topology
+
+<
+
+“iid
+
+Y
+
+~
+_/
+
+G
+
+\
+
+Figure B.3 (X \ U,Y \ U) © (X,Y) is a homology isomorphism.
+
+Proposition B.12 (excision theorem). Given subspaces U C Y C X such that
+U c int(Y), the inclusion (X \ U,Y \ U) — (X,Y) induces an isomorphism
+HX \ U,Y \ U) = HX, Y).
+
+Proof See [Hat02, Theorem 2.20]. oO
+
+Informally, Proposition B.12 says that the relative homology of (X, Y) can-
+not see the interior of U; Figure B.3 gives an illustration. Relative homology
+can also be used to define another important homology theory for cell com-
+plexes. If X = X” is a cell complex then the cellular chain complex of X is the
+complex
+
+> Ape XX) Ms RX) Bs (XE Xe,
+
+where we define X_; = @ and 0, is the composition of the boundary opera-
+tor mapping H,,(X", X""!) to H,-1(X"~!) with the inclusion of H,-\(X"~!) into
+H,-\(X""!, X"-?). The homology groups of this cellular chain complex form
+the cellular homology groups of X. Cellular homology is homology of (rela-
+tive) homology, and can be surprisingly useful. Although its definition might
+seem technical and contrived, H,(X”, X"~!) can be interpreted easily as linear
+combinations of the n-cells in X. The following result makes cellular homol-
+ogy a tool for computation.
+
+Proposition B.13. If X is a cell complex then the nth singular homology group
+of X is isomorphic to the nth cellular homology group of X.
+
+Among other things, Proposition B.13 implies that if X can be represented
+by acell complex with no n-cells then H,,(X) = 0. See [Hat02, Section 2.2] for
+a full discussion of cellular homology, its implications, and a proof of Propo-
+sition B.13.

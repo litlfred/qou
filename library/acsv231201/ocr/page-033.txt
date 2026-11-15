@@ -1,0 +1,41 @@
+1.3 Outline of the remaining chapters 15
+
+is also a case that is reasonably well understood. Finally, we discuss ratio-
+nal functions with singularities having non-trivial monodromy. In this case
+our knowledge is limited, but some known results are derived in Chapter 11.
+This chapter is not quite as self-contained as the preceding ones; in particular,
+some results from [BP11] are quoted without proof. This is because the tech-
+nical background for these analyses exceeds even the relatively large space
+we have allotted for background. The paper [BP11], which is self-contained,
+already reduces by a significant factor the body of work presented in the cel-
+ebrated paper [ABG70], and further reduction is only possible by quoting key
+results. Chapter 12 works out a large number of examples following the the-
+ory in Chapters 9-11. Finally, Chapter 13 is devoted to further topics, includ-
+ing higher order asymptotics, algebraic generating functions, diagonals, and a
+number of open problems.
+
+Notes
+
+The overall viewpoint on enumeration discussed here is heavily influenced
+by [Sta97] and [FSO9]. The two, very different, motivating problems alluded
+to in Section 1.2 were the hitting time generating function from [LL99] and
+the Aztec Diamond placement probability generating function from [JPS98].
+The first versions of the seven step program at the end of Section 1.2 that were
+used to obtain multivariate asymptotics involved expanding a torus of integra-
+tion until it was near a critical point on the boundary of the domain of conver-
+gence of the series under consideration, and then doing some surgery to isolate
+the main asymptotic contribution as the integral of a univariate residue over
+a complementary (d — 1)-dimensional chain. This was carried out in [PW02;
+PW04] and was brought to the attention of the authors by several analysts at
+Wisconsin, among them S. Wainger, J.-P. Rosay, and A. Seeger. Although their
+names do not appear in any bibliographic citations associated with this project,
+they are acknowledged in these early publications and should be credited with
+useful contributions to this enterprise.
+
+Additional exercises
+
+Exercise 1.2. (asymptotic expansions need not converge) Find an asymptotic
+expansion f ~ wo gj for a function f as x | 0 such that 0 &j(x) is not
+convergent for any x > 0. Conversely, suppose that f(x) = v0 gj(x) for
+x > Oand gj+1 = o(g;) as x | 0 — does it follow that ))°5 g; is an asymptotic
+expansion of f at the origin?

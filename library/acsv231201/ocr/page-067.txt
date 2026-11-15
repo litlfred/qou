@@ -1,0 +1,53 @@
+2.4 D-finite generating functions and diagonals 49
+
+Proposition 2.34. Let f(x) be an algebraic univariate power series satisfying
+P(x, f(x)) = 0 for some P(x,y) € CLx, y]. Suppose further that f(0) = 0 and
+P,(0,0) # 0. Then
+
+y Py(ay,y)
+Poysy) |
+The proof of Proposition 2.34 follows directly from factoring P(x, y) = (y -
+
+F(x))u(x, y) for some u € C[[x]][y] with u(0, 0) # 0 and then examining which
+terms lie on the diagonal of y Py (xy, y)/P(xy, y).
+
+fla) = a
+
+Example 2.35. The generating function for binary trees counted by external
+nodes is the shifted Catalan generating function f(x) = (1 — V1 — 4x)/2 with
+minimal polynomial P(x, y) = y? — y + x. Proposition 2.34 yields the rational
+function F(y, z) = y(1 — 2y)/(1 — x — y) whose diagonal is f(x). 4
+
+The hypothesis that P,(0,0) # 0 in Proposition 2.34 restricts it to the case
+where P(x,y) has a single root that passes through the origin. One natural
+generalization to the multivariate setting is the following, which can be found
+in [Saf00, Lemma 2].
+
+Proposition 2.36. Let f(z) be an algebraic power series with P(z, f(z)) = 0
+for some P(z,y) € C[z, y]. Suppose further that f is divisible by za and that in
+some neighborhood of 0 there is a positive integer k and factorization P(z,y) =
+(y — f(z))ku(z, y) such that u(0,0) # 0. Then f(z) is the elementary diagonal
+A.,=yF (2, y) of the rational function
+
+y?Py(Z15 6-65 Za-1s Vas)
+
+F(z,y)= :
+(ay) KP(Z1, «+ +5 Zd-1s Yds Y)
+
+Example 2.37. The Narayana numbers [FS09, Example III.13], defined by
+
+the explicit formula
+_lfr\f r
+ars = r\s)\s — 1)?
+
+are a refinement of the Catalan numbers which enumerate, for example, rooted
+ordered trees by edges and leaves. The Narayana generating function
+
+1l+xQy- 1) - V1 -2x(y + 1) +2°Q - 1?
+
+2
+
+f(x,y) =
+is a root of the polynomial
+
+P(x,y,w) = Ww -w[1 +a(y- D] +ay = [w- fy] [w- Fey],

@@ -1,0 +1,34 @@
+4
+
+Fourier—Laplace integrals in one variable
+
+In this chapter we perform a systematic asymptotic study of Fourier-Laplace
+integrals having the form
+
+f A(z) exp(-2g()) dz,
+Y
+
+as the parameter 2 — oo. The functions A and ¢ are called the amplitude and
+phase functions, respectively (note that when ¢(z) = —ip(z) is purely imaginary
+some authors use the term phase to denote p rather than ip). The univariate
+setting covered in this chapter gives a basis for the multivariate case handled
+in Chapter 5, which in turn underlies the asymptotic results of analytic combi-
+natorics in several variables. Our main result is the following theorem, which
+is proved in Section 4.2.
+
+Theorem 4.1 (univariate Fourier-Laplace asymptotics). Let A and ¢ be ana-
+lytic functions in a neighborhood N C C of the origin. Let
+
+A(z) =) byz!
+j=0
+
+6(z) = » cjz/
+
+j=0
+
+be the power series for A and ¢ at the origin, and let € > 0 and k > 2 be the
+indices of the least nonvanishing terms in these series, so that be, cy. # 0 and
+bj = c; = O for any j < Candi <k. Let y : [-e,€] > C be any smooth curve
+with y(0) = 0 # y‘(O) and assume that Re{¢(y(t))} = 0 with equality only at
+
+89

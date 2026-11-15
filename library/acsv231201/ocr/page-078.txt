@@ -1,0 +1,37 @@
+3
+
+Univariate asymptotics
+
+In this chapter we review some classical results on the asymptotics of univari-
+ate generating functions. Throughout, f(z) = 19 dnz” will be a univariate
+generating function for the sequence {a,}, and for any complex function g(z)
+analytic at the origin we write [z”]g(z) for the coefficient of z” in the power
+series expansion of g(z) at the origin.
+
+3.1 An explicit formula for rational functions
+
+For rational functions in one variable, it is possible to determine an exact for-
+mula for a, when n is sufficiently large. For instance, when p # 0 the equality
+
+a 1 (740) “in 31
+VG zpk \ k-1 |}? GD
+
+holds for k = 1 as the left-hand side is a geometric series, and repeated dif-
+ferentiation proves inductively that it holds for all k ¢ N. More generally,
+suppose f(z) = p(z)/q(z) is any rational function that is analytic at z = 0.
+We assume, without loss of generality, that p and g are relatively prime poly-
+nomials with g having the distinct roots pi,...,p; € C, and that g(0) = 1.
+For each j € {1,...,¢}, let mj denote the multiplicity of the root p; and let
+giz) = q(z)/( - 2/pj)"-
+
+Because the q; have no common root, there exist polynomials p;,..., p; €
+C[z] such that the numerator p of f can be written as a linear combination
+P(2) = Diet pj(z)q;(z). This yields a partial fraction decomposition
+
+P(2) 4 pj(2)qj2) : hj(2)
+- OS ] yee = hoz _ _,
+FQ) q(z) » q(2) 0( oy (1 = z/pj)"
+
+where ho,...,/, € C[z] and for every j € {1,...,7} the polynomial hj(z) has
+
+60

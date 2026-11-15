@@ -1,0 +1,47 @@
+10.4 Classifying multiple points 325
+
+but reducible in O,. Computing in O, is more difficult than working with
+polynomials, but we can often determine what we need.
+
+Proposition 10.52. For any positive integers n and d, determining whether a
+homogeneous polynomial f € Q{z] of degree n in d variables has a factoriza-
+tion into n (possibly repeated) linear terms is decidable via computer algebra.
+If f is a product of linear factors, then whether these factors are distinct is also
+decidable by computer algebra.
+
+Proof The set of coefficients of products of n homogeneous linear polynomi-
+als in d dimensions forms an algebraic variety. Various sets of defining poly-
+nomials are known [Bril0], and containment of a point in an algebraic variety
+is decidable. Such linear factors are distinct if and only if f and all its partial
+derivatives have no common linear factors. im
+
+Exercise 10.11. In the special case d = 2, what is a quick method of deciding
+whether f factors into linear factors with no repeated factor?
+
+Replacing the polynomial Q by its square-free part if necessary, we may
+assume without loss of generality that Q is square-free.
+
+Proposition 10.53. Let Q be a square-free polynomial and let Q(z) = hom(Q)
+be the lowest degree homogeneous part of Q.
+
+(i) If 0 is a multiple point for Q then Q is the product of linear factors.
+
+(ii) If 0 is an arrangement point for Q then Q is the product of distinct linear
+factors.
+
+Proof (i) Suppose 0 is a multiple point for Q. By Proposition 10.48, there is
+a factorization Q(z) = Tint Q;(z) in Oo with each V Q;(0) non-vanishing. If
+€;(z) = V Q,(0)-z denotes the linear homogeneous term of Q; then, because Q
+is homogeneous of degree n, we see that 0 = Mijas €; factors into linear terms.
+
+(ii) Suppose that 0 is an arrangement point. For each distinct i and j, exam-
+ination of the sublattice {V,V;,V;,V; 1 Vj} shows that the gradients at 0,
+which define the linear factors, are distinct. oO
+
+Exercise 10.12. If p is a non-smooth multiple point for Q in dimension 2 then
+must it be an isolated singularity of Vg? What about in dimension d > 2?
+
+Example 10.54. Let
+
+1
+Q(x, y,z) = 1+ xyz- gatytet xy + xz + yz)

@@ -1,0 +1,51 @@
+452 Integration on manifolds
+
+Exercise A.9. Let (U,¢) be a chart on M and f,,..., f; : U > R. Show that
+the wedge product of differentials satisfies
+
+(dfi) Av A (df) = Y) det Jy, 8) dd,
+
+=k
+
+where J;(f, 6) is the Jacobian matrix J;(f, ¢) = (3 when J = (i),..., ix)
+
+90%, Jeane
+
+with ij <-++ <ix.
+
+Let f : M > M’ be a smooth map of manifolds. If p ¢ M then we
+saw above how to define the pullback f* : T/”)M’ > T?M of cotangent
+vectors from M’ to M. Working pointwise, we can also define a pullback
+
+f* . EXM’) > EM) on forms. Concretely, if w is a k-form on M’ then the
+pullback of w by f is the k-form f*w on M defined for each p € M by
+
+(f'o)lp(X1,--- Xk) = Wlpy(F-X1,---+ Xe) for all X1,...,X;, € TpM.
+
+We also define the pullback of a smooth function (which can be considered a
+0-form) g: M’ > R by f*g = go f. Basic properties of the pullback include
+
+e distributivity over addition: f*(w +7) = f*w+ f*t,
+e distributivity over wedge product: f*(w A T) = (f*w) A (f*T),
+e commutativity with the differential: f*(dg) = d(f*g).
+
+Example A.19. Let M = M’ = R¢ with standard coordinates x,,..., xy and
+let f : R’ > R* be smooth, so f = (fi,..., fy) with each f; : R’ > R smooth.
+If w is a top level form on R¢ (i.e., a d-form) then w = a(a) dx, A+++ A dx, for
+some smooth a : R4 > R. Since f*x, = 4%, 0 f = fy, the pullback of w under f
+is given by the Jacobian determinant of f,
+
+fw = f'(alw) dx A+++ A dxq) = a(f(@)) d(f?xy) A+++ A d(f*xa)
+= a(f(a)) fi) \-+- A (dfa)
+
+= asenee(,)
+= a(f(x)) det a (dx; A-++Adxq),
+
+Xj
+
+where the final equality follows from Exercise A.9. 4
+
+A.3 Integration of forms
+
+The only thing remaining before defining integration on manifolds is to discuss
+domains of integration. For each p > 1, let A? denote the standard p-simplex

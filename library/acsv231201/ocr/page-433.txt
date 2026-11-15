@@ -1,0 +1,45 @@
+12.8 Limit laws from probability theory 415
+
+is strictly greater than r - log p, so a, = O((p + €)""') for some ¢ > 0 whose
+choice is uniform as 7 varies over any neighborhood not containing 7. The
+generating function Y,s9 Cyz* of the sequence C, = Lyr)=k Ir iS F(Z,..-,2),
+which has a strictly minimal simple pole at z = p. Proposition 3.1 then implies
+that C, ~ cp~* for some constant c. In particular, Y-eg dp = O(C,) as k >
+co where & consists of all indices whose directions are in a compact set not
+
+containing 772, so a weak law holds with limit m. ia)
+Example 12.32 (multinomial distribution). Let c),...,cg > 0 sum to | and let
+F(z) = 1/(1-c¢- z) be the generating function for the multinomial distribution
+al Mh Vac et
+° ri,.-.5%a) | a
+
+with parameters c. The denominator of F is Q(z) = 1 -c- z. It follows that
+Q(z,...,Z) = 1-z regardless of ¢ and the hypotheses of Theorem 12.31 are sat-
+isfied with p = 1. Thus, there is a weak law with limit m = — Viog Q(p,..., P) =
+c, recovering the well-known weak law for repeated rolls of a die with weights c.
+
+4
+
+Often combinatorial classes are enumerated by a size parameter that is not
+the sum |r| of the indices but is just one of the indices, say rg. A similar weak
+law holds in this case, except that the probability measures {j4,} no longer have
+finite support and an added hypothesis is required. Adding this hypothesis al-
+lows us to work with Laurent series, instead of only power series.
+
+Theorem 12.33 (weak law for coordinate slices). Let F(z) = P(z)/Q(z) =
+Xr a,rz” be a Laurent series with nonnegative coefficients converging on a
+component B of amoeba(Q)°. Suppose there is some p > 0 such that Q(A, p) =
+0 and (0, log x) € B if and only if 0 < x < p. Then Cy = D+,=4 Gr is finite for
+all k and if z = p is also a strictly minimal simple zero of q(z) = Q(1,z) and
+P(L, p) # 0 then the sequence {ux} of probability measures defined by
+
+satisfies a weak law with limit
+
+m = — Viog Q(L, p)-
+Proof Arguing as in the proof of Theorem 12.31, we see again that exp(w) €
+Y for every u € OB and that V(Q o exp) is nonvanishing at (0, log p). Because
+(1, log x) € B for 0 < x < p, we have convergence of the sum
+
+FUL, 2a) =) ancl! = 1 Cee
+
+ra=k k>0

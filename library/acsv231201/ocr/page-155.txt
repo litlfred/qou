@@ -1,0 +1,45 @@
+6.1 Laurent series 137
+for any x € B.
+Proof To be given after Exercise 6.1 below. ia)
+
+Theorem 6.4 allows us to define multiplication in Lp(z) using multiplication
+of analytic functions: if ¢ is the identification map from Lp(z) to the space of
+analytic functions on D then is invertible, and for G,H € Lo(z) we set
+G-H :=¢((G)-(A)). Similarly, if Q is everywhere nonvanishing on D then
+there is a unique Laurent series identified with the analytic function 1/Q(z).
+We may therefore identify a quotient of Laurent polynomials P(z)/Q(z) with
+a unique convergent Laurent series by specifying a point w € C4 such that Q
+does not vanish on T(w) or, equivalently, a point 2 € R@ such that Q does not
+vanish on T.(a) = Relog"!(x).
+
+Exercise 6.1. Let f(x, y,z) = 1/(1—x—y—z) and let B be a small neighborhood
+of the point (0,0,2). Find a Laurent series for f converging on Relog™!(B).
+Hint: You can make 1/z, x/z, and y/z simultaneously less than ; on Relog™!(B).
+
+Theorem 6.4 is classical, but a complete proof is difficult to find in the liter-
+ature so we provide one here. The technicalities that arise are not essential to
+one’s understanding of analytic combinatorics, and the proof may be skipped
+on a first reading without much worry.
+
+Proof of Theorem 6.4
+Our argument requires the development of a few well-known facts about series
+of analytic functions.
+
+Proposition 6.5. If (fx) is a sequence of analytic functions on a domain U Cc
+C4 and fy converges uniformly to a function f then f is analytic.
+
+Proof Let p € U and let D,T c C4 be a polydisk and torus around p with
+radii r € R4 such that D c U. Without loss of generality, we may assume
+that p = 0. If w € D then the multivariate Cauchy Integral Formula for power
+series (Proposition A.28 in Appendix A) implies
+
+_5 — tim (LY fid2)
+few) = ER Keo) 7 lim (21) f (21 — Wi) Ga - wa?
+
+d
+= (+) f lim kw),
+2ni} Jp ko (Zz) — wi)++* (Za — Wa)
+
+1 \ f@)
+=({— dd.
+(+) laweesn *

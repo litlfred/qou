@@ -1,0 +1,52 @@
+13.3 Degenerate phase 427
+
+critical point, and hence amenable to a Complex Morse Lemma argument, but
+more complicated situations can arise.
+
+Example 13.3. Recall from Example 10.69 the generating function
+
+a 1
+Fenn) = Dae’ = Gye)
+
+with main diagonal terms a,, = Dj-0 42? .
+
+The critical point equations for the factor H; = 1 - x/2—y/2 in the direction
+(1, 1) have a unique solution (1, 1), while every point on the torus |x| = |y| = 1
+satisfies the critical point equations for the factor Hy = 1 — xy. The point
+(1, 1) is therefore a minimal, but not strictly minimal, critical point which is a
+double point of the singular variety. In addition to a torus of singularities with
+the same coordinate-wise modulus, the varieties V(H,) and V(H2) intersect
+tangentially at (1, 1).
+
+A systematic application of the surgery approach reduces the problem of
+finding asymptotics of a,, as r — oo to finding asymptotics of
+
+Jt f A(6, t) exp (AGO, 1) duu
+2n Jp
+
+as A — oo, where
+
+2
+AG.9 = 5a
+eid
+@,t) = —log{1—t{1- ——|
+96, t) oe( a)):
+the domain of integration D = [—7,z] x [0,1] ¢ R?, and pis the Lebesgue
+
+measure. Note that Re@ is nonnegative on D, with minimum value 0. The
+stationary points of ¢ on D are (0,t) for 0 < t < 1, and (6,0) for -17 < 0 < a.
+Not only is the phase not equivalent via a smooth change of variables to 1? + 67
+(it looks more like 16”), the stationary phase set consists of more than a single
+point, being a 1-dimensional T-shaped subset of the rectangle. 4
+
+Example 10.69 derived asymptotics for Example 13.3 using an ad hoc ap-
+proach.
+
+Example 13.4. Develop a systematic theory for such degenerate integrals. «
+
+Example 13.5. If S denotes the set of nxn Hermitian matrices with Frobenius
+norm 1, and E denotes the subset of S containing matrices with repeated eigen-
+values, then E has positive codimension in S but has a volume with respect to
+the Riemannian metric inherited from S. It turns out! that this volume is, up
+
+! K. Kozhasov (personal communication)

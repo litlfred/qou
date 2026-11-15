@@ -1,0 +1,47 @@
+xii Preface to the second edition
+
+Over the last ten years, we have gained an improved understanding of the
+technical parts of the theory. Perhaps the largest change is to give ACSV a
+rigorous foundation using stratified Morse theory, whereas in the first edition
+Morse-theoretic arguments were used to motivate constructions that were then
+verified with other techniques. In addition to fixing numerous typographical
+and other errors in the first edition, some the fault of the authors and some of
+the publisher, the following content changes have been made to improve the
+book.
+
+e The chapters in Parts I (Combinatorial Enumeration) and II (Mathemati-
+cal Background) have mainly kept their general structure, however much of
+their discussion has been rewritten. Of particular note, Section 2.4 has been
+revised to better explain how ACSV for rational functions extends to alge-
+braic functions via diagonal embeddings, and Section 5.4 has been revised
+to better explain the proof of Theorem 5.3 (formerly Theorem 5.4.8). Chap-
+ter 6 in the first edition has also been moved after the former Chapters 7
+and 8 so that Part II now ends in Chapter 6 (which was Chapter 7 in the first
+edition).
+
+e Part III (Multivariate Enumeration) begins with Chapter 7, which has been
+completely overhauled and is almost entirely new. The second edition is
+constructed to put the large majority of the topological and homological
+arguments in this chapter and the appendices. The main output of the chapter
+is an expression for coefficient asymptotics as a finite integer sum of saddle-
+point-like integrals, and those wanting to skip the homological material can
+simply assume this decomposition in later chapters.
+
+e Chapter 8, which is a complete re-imagining of Chapter 6 in the first edition,
+discusses how to compute the quantities needed for an asymptotic analysis
+in a computer algebra system. In contrast to the first edition, we now put ad-
+ditional focus on computing the quantities needed for ACSV — this explains
+its postponement until Part II.
+
+e Chapters 9-11 have been reworked to begin from the decomposition de-
+scribed in Chapter 7, streamlining their presentation, and to have more ex-
+plicit results that can be easily cited. Section 11.4 has also been expanded
+to include a worked example of solving a connection problem via creative
+telescoping.
+
+e The appendices have been revised and enlarged to be more self-contained,
+and to give readers a more complete explanation of the constructions they
+will need for ACSV.
+
+e We have greatly increased the number of exercises and examples, and added
+many more signposts and guides so that readers with different motivations

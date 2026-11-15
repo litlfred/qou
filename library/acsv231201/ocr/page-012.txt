@@ -1,0 +1,34 @@
+Preface to the first edition
+
+The term “Analytic Combinatorics” refers to the use of complex analytic meth-
+ods to solve problems in combinatorial enumeration. Its chief objects of study
+are generating functions [FS09, page vii]. Generating functions have been used
+for enumeration for over a hundred years, going back to Hardy and, arguably,
+to Euler. Their systematic study began in the 1950s [Hay56]. Much of the im-
+petus for analytic combinatorics comes from the theory of algorithms, arising
+for example in the work of Knuth [Knu06]. The recent, seminal work [FS09]
+describes the rich univariate theory with literally hundreds of applications.
+
+The multivariate theory, as recently as the mid-1990s, was still in its in-
+fancy. Techniques for deriving multivariate generating functions have been
+well understood, sometimes paralleling the univariate theory and sometimes
+achieving surprising depth [FIM99]. Analytic methods for recovering coef-
+ficients of generating functions once the functions have been derived have,
+however, been sorely lacking. A small body of analytic work goes back to
+the early 1980s [BR83]; however, even by 1995, of 100+ pages in the Hand-
+book of Combinatorics devoted to asymptotic enumeration [Od195], multivari-
+ate asymptotics received fewer than six.
+
+This book is the result of work spanning nearly 15 years. Our aim has been
+to develop analytic machinery to recover, as effectively as possible, asymp-
+totics of the coefficients of a multivariate generating function. Both authors
+feel drawn to this area of study because it combines so many areas of modern
+mathematics. Functions of one or more complex variables are essential, but
+also algebraic topology in the Russian style, stratified Morse theory, computa-
+tional algebraic methods, saddle point integration, and of course the basics of
+combinatorial enumeration. The many applications of this work in areas such
+as bioinformatics, queueing theory, and statistical mechanics are not surprising
+when we realize how widespread is the use of generating functions in applied
+combinatorics and probability.
+
+xiv

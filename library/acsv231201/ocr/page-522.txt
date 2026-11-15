@@ -1,0 +1,40 @@
+504 Residue forms and classical Morse theory
+
+DI oe
+
+Figure C.6 The space X,+ with points of height c represented by a dotted line.
+
+The discussion above implies that the attachment pair (X<,, X<q) is homo-
+topy equivalent to X?°°. Suppose now that / is a Morse function whose critical
+values need not be distinct. If [a,b] contains the unique critical value c € (a, b)
+then the homotopy pushes points down to X<--, except in a neighborhood of
+the set of critical points whose value is p. Since this set of critical points is
+discrete under our assumptions,
+
+(Xp Xea) = EB xP (C:3.1)
+p:h(p)=c
+for sufficiently small ¢ > 0, where the tilde sum denotes the wedge of spaces,
+meaning a disjoint union with the second space in each pair identified. This
+equivalence states that (X<,, X<q) is homotopy equivalent to the wedge of the
+local pairs at all critical points p with value c. The reduced homology of a
+wedge is the direct sum of the reduced homologies of the individual spaces.
+
+Exercise C.4. Intuitively, why is (C.3.1) a (reduced) direct sum? That is, ex-
+plain why cycles in different summands cannot cancel each other.
+
+The last step for this section is to put all this information together to produce
+a global topological picture of X. At the level of homotopy type, the result is
+that X has the topology of a cell complex, about which certain information is
+known.
+
+Theorem C.32. Let X be a manifold and h : X — R be a differentiable
+function with no degenerate critical points. Suppose each sublevel set X<q is
+compact. Then X has the homotopy type of a cell complex with one cell of
+dimension A for each critical point of Morse index A in X <q.
+
+Proof A full proof of Theorem C.32 can be found in [Mil63, Theorem 3.5],
+but we give a sketch here. The proof for the case of finitely many critical points
+with distinct critical values involves showing inductively that for any critical
+value c the homotopy equivalence between X<-_, and a cell complex may be
+extended, via the attachment of a cell, to a homotopy equivalence between
+X<c+e and a cell complex with one more cell. The restriction on distinct critical

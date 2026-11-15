@@ -1,0 +1,1 @@
+Roughly speaking, when there is no canonical parametrization for a manifold then the inﬁnitesimal elements such as dx, dA, and dV that arise in integra- tion must be deﬁned in a way that is independent of parametrization.

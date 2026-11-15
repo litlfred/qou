@@ -1,0 +1,29 @@
+6.4 Singularities, amoeba boundaries, and minimal points 161
+
+ae
+
+Figure 6.7 The dual rate of an expansion is determined by a point on the boundary
+of the amoeba where 7? is the normal to a supporting hyperplane.
+
+rank one, so b = ra for some T € R and (Vjog Q)(w) = (1 +i7)a is a multiple of
+a real vector. Thus (Vjog Q)(w) is a multiple of a real vector v whenever w is
+a minimal point with (VQ)(w) # 0. If w is a minimal point with (VQ)(w) = 0
+then the same result holds with v = 0. If the real vector v is non-zero then it is
+the normal vector to the tangent plane of a neighborhood of w in V under the
+Relog map, meaning it is the normal to a supporting hyperplane of the convex
+component B of amoeba(Q)° with w on its boundary. When v is an outward
+normal then the point Relog(w) is a minimizer of —v - a on B for the same
+reason as our argument in part (a). ia)
+
+Theorem 6.44 will be used in later chapters to help guide deformations of
+domains of integration for Cauchy integrals representing series coefficients of
+interest. Unfortunately, even if the minimum of —# - a over x € B is finite and
+achieved, the bound it gives on exponential growth may not be tight. There are
+two main reasons for this: first, an amoeba is the “real shadow” of a variety
+living in complex space, and the real picture may not capture what happens in
+complex space; second, in non-generic cases the numerator polynomial P may
+cause the coefficients to grow slower than expected in fixed directions, as we
+saw already in Example 6.21.
+
+Example 6.45. Let F = 1/Q(x,y), where Q is the product of Q)(x,y) = 3 -—
+x-2y and Qo(x, y) = 3+2x+y. The amoeba of Q is the same as the amoeba of

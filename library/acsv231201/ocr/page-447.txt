@@ -1,0 +1,48 @@
+13.4 Critical points at infinity 429
+
+Degeneracies of phase can also, in principle, be handled by resolving singu-
+larities to obtain a normal crossing, using a change of coordinates mapping the
+phase function into a monomial, expanding the resulting amplitude function
+into a power series, and then applying known exact asymptotics to each term.
+Resolution of singularities, together with the methods of [Var77], implies that
+the possible asymptotic behaviors for any rational asymptotics fall in a limited
+set of leading terms.
+
+13.4 Critical points at infinity
+
+Let T = T(x), where a is in some component B of the complement of the
+amoeba of the denominator Q of some rational function. As seen in Chapter 7,
+non-existence of CPAI in the direction # is a sufficient condition for [T] to be
+representable as the sum of cycles corresponding to attachments at affine criti-
+cal points in direction *. However, this non-existence is by no means necessary.
+For instance,
+
+e The trajectories flowing to a CPAI may not be trajectories of any stratified
+gradient-like flow.
+
+e A trajectory flowing to a CPAI may be a gradient-like flow, but the particular
+torus [7] may flow down to an affine critical point and not be pulled down a
+path leading to this CPAI.
+
+e [7] may not flow down without being pulled to infinity, but there may be a
+cobordism between T and a cycle lower than any CVAI.
+
+e Even if [7] is pulled to infinity by some gradient-like vector field, the CPAI
+there may not alter the topology and it might be possible to deform [T] to
+“come back from infinity.”
+
+Problem 13.3. a) Can there be unreachable CPAI, meaning that there is a
+downward gradient-like field that has no flows reaching a CPAI?
+
+b) If so, how can we compute which CPAI are like this?
+
+c) Do all CPAI alter the topology of V,? Is there an attachment theory for
+CPAI, giving a way to compute the topological effect of each CPAI?
+
+d) If there is a local attachment, can we find a cycle @ representing it and
+determine f zTlF(z)dz?
+
+Another useful tool would be the capability to rule out the existence of CPAI
+in some direction without an overly long computer algebra computation. An
+early conjecture, which turned out not to be true, was that all CPAI must be
+parallel to some face of the Newton polytope of Q. Some ongoing work proves

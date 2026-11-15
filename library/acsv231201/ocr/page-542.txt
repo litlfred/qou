@@ -1,0 +1,46 @@
+524 Stratification and stratified Morse theory
+
+The tangential Morse data is defined in terms of p and S, regardless of
+whether X = V, or X = M.
+
+Definition D.17 (tangential Morse data). The tangential Morse data at p is
+the homotopy type of the pair (B*, 0B“), where J is the Morse index of hls at
+p and B* denotes the ball of dimension 2. By Theorem C.28, this is the Morse
+data at p for the height function hls on the smooth manifold S.
+
+The normal Morse data is defined in terms of the intersection of X with a
+slice normal to the stratum S, localized to the point p. If D is an arbitrarily
+small disk in N,(V) centered at p then the normal slice at p is N(X) := XO D.
+To visualize this, it sometimes helps to picture the normal link L£(X) at p, de-
+fined by L£(X) := XM 6D. When X = ‘V,, the normal slice N(X) is homeomor-
+phic to a cone over £(X) from the point p. In particular, N(X) is contractible.
+When X = M the point p is absent from the normal slice, which then retracts
+onto £(X), hence N(X) ~ L£(X).
+
+Example D.18. Let V be the union of two complex planes in complex 3-space
+meeting at the line S and let p be a point on S. This line is the stratum con-
+taining p, and the tangent space at p or any other point on S is the translation
+of S to the origin. The normal space N,(‘V) at p (or any other point on S) is
+the complex two-space orthogonal to S.
+
+First consider the case X = ‘V,. The intersection of X with a normal plane
+to S at p is two complex lines meeting at p. The normal slice N(X) is the inter-
+section of this with a ball around p, and thus is two disks joined by identifying
+their centers. The link £(X) = XN dD is the union of two disjoint circles, each
+on one of the complex lines, and the normal slice N(X) is the cone over these
+circles.
+
+Alternatively, if X¥ = M then £(X) = XM OD is the complement of two
+intersecting lines in a small bi-disk, which is the product of two punctured
+disks. Each punctured disk retracts to its boundary, so the four-dimensional
+space N(X) retracts to the three-dimensional space £(X), which retracts to a
+two-dimensional torus $! x S!. 4
+
+Definition D.19 (normal Morse data). Let X be V, or M. The normal Morse
+data for X at p is defined to be the homotopy type of the pair
+
+(NOX) NAc e,¢+ ED), NX)NN (+8), (D.3.1)
+
+where the disk D in the definition of N(X) is sufficiently small, and ¢ is a suf-
+ficiently smaller positive number. It is proved in [GM88] that these homotopy
+types are the same for all D and « sufficiently small.

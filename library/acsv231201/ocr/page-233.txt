@@ -1,0 +1,39 @@
+7.5. Deformations 215
+
+“a
+Yi a
+ras
+tT TL A
+ty
+
+Figure 7.28 A sequence of points moving out to infinity, such that the logarith-
+mic gradient of Q approaches the vector v pointing straight up. This sequence
+witnesses a critical points at infinity in the direction v.
+
+T(#) ¢ C4 x CP*! x R containing elements (z, y, 7) such that (z, y) € R and
+hz) = 7.
+
+Definition 7.43 (CVAI). Let 7 ¢ CP“ x CP“! xR be the closure of the ternary
+relation T in CP¢ x CP*! x R. We call 7, a critical value at infinity (CVAI) if
+some point (z.,7,,7) is in F and z, ¢ cé,
+
+7.5.2 Vector fields and flows
+
+The results we prove in this section are based on [BMP22, Theorem 1].
+
+Theorem 7.44 (homotopy equivalences in the absence of CVAI). Fix a direc-
+tion f and a Whitney stratification {S q : a € I} of (C4, M).
+
+(i) If there are neither affine critical values nor CVAI in the interval [a, b]
+then the inclusion of Mzq into Mey is a homotopy equivalence. The same
+is true replacing M by any stratum S of V..
+
+(ti) If there are no CVAI in [a, b but there is a single affine critical value c €
+[a, b] and it corresponds to the set of critical points z,,..., Zm then there
+is a stratified flow deforming any chain C in M down to a chain in the
+union of M., with sufficiently small balls about each z;. When [c — €,c +
+€] C (a,b), this induces a homotopy equivalence between (M_+2, Mc-«)
+and the direct sum of attachment spaces M*'°° defined in Section 7.3
+above (see also Definition C.31 and Figure C.6 in Appendix C).
+
+The first part Theorem 7.44 directly implies Lemma 7.25. The main work

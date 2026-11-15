@@ -1,0 +1,36 @@
+7.3 The general case via stratified Morse theory 199
+
+point of the algebraic hypersurface defined by the vanishing of Q, then the
+vanishing of dhg|y at p is equivalent to the direction vector # being parallel
+to (Viog Q)(p). More generally, vanishing of dhals at p is equivalent to # lying
+in the space spanned by the logarithmic gradients of the functions g; locally
+defining the stratum S at p.
+
+N2(S)
+
+S
+
+Figure 7.16 The point z on a stratum S defined by the vanishing of two trans-
+versely intersecting smooth sheets in three dimensions is a critical point in the
+direction # if r lies in the log-normal plane to S at z.
+
+Example 7.24. If V is the union of two transversely intersecting smooth
+sheets defined by the vanishing of two polynomials g; and g» then z is a critical
+point on V,, \ Vz, in a direction # if r is parallel to (Viog g1)(2), and the anal-
+ogous criteria holds for critical points on Vz, \‘V¢,. A critical point z on the
+intersection stratum S = V,,V,,, pictured in Figure 7.16, has r lying some-
+where in the log-normal plane spanned by (Viog g1)(Z) and (Viog 82)(2). 4
+
+Exercise 7.10. Describe the set of directions r € R2 such that dhs|y = 0 ata
+point (x, y, z) of the codimension 2 stratum $3 in Example 7.23.
+
+Obstructions are critical points
+The fundamental lemma of Morse theory, described in Lemma 7.14 above,
+states that, in the absence of critical values at infinity, critical values are the
+only places the topology of the sublevel sets of a manifold can change. The
+fundamental lemma of stratified Morse theory says that (stratified) critical val-
+ues are still the only places the topology of Mz, and V<, can change, and
+thus are the only places obstructions to pushing down cycles of integration
+can occur. Lemma 7.14 also specifies the nature of the attachment at a critical
+point, but since this requires a more lengthy explanation, we state the stratified
+version of Lemma 7.14 without describing the attachment. As a reminder, we

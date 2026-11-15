@@ -1,0 +1,47 @@
+246 Smooth point asymptotics
+
+The case when the direction vector 7 is the zero vector is trivial, so we
+always assume that 7 has a non-zero coordinate. When the series expansion
+of F under consideration is a power series we can further assume the stronger
+condition that 7 has no zero coordinates, because asking for terms where (say)
+rq = 0 corresponds to extracting terms from the (d — 1)-variate series obtained
+by setting z, = 0. In this case, because our results hold only for critical points
+with non-zero coordinates, the smooth critical point equations imply that none
+of the partial derivatives of O vanish.
+
+For Laurent expansions, on the other hand, there are combinatorially inter-
+esting cases where 7 has zero coordinates. Even so, if there are to be smooth
+critical points with non-zero coordinates then the critical point equations imply
+the existence of a coordinate k such that r, # 0 and Q.,(w) # 0. Without loss
+of generality, we may assume this coordinate k is the final coordinate d.
+
+Consider a Laurent expansion of F with domain of convergence D. Theo-
+rem 6.44 from Chapter 6 implies that if w is a smooth minimal critical point
+(see Definition 7.7) for the direction 7 then the hyperplane with normal ¢ going
+through the point Relog(w) is a support hyperplane to B = Relog(D).
+
+Definition 9.2 (contributing and nondegenerate points). The smooth minimal
+critical point w described above is called a contributing point for the direction
+f if f points away from B at Relog(w), meaning « - 7 < Relog(w) - f for
+all x € B. The point w is nondegenerate if the Hessian matrix H defined by
+
+Lemma 8.22 in Chapter 8 is nonsingular with H = O.
+
+Remark 9.3. If we consider the power series expansion of F(z), where # has
+positive coordinates, then every smooth minimal critical point is contributing.
+This definition of nondegeneracy is equivalent to our previous definitions in
+terms of the Hessian of the height function h(z) = —r - log z restricted to V.
+
+Definition 9.2 is constructed so that contributing points are minimizers of the
+height function hg on D, which turn out to be the points determining asymp-
+totic behavior. Conversely, non-contributing smooth minimal critical points are
+maximizers of hp on D; see Figure 9.1.
+
+Exercise 9.1. Which of the components of the complement of the amoeba in
+Figure 9.1 have a contributing point in the direction (1,—1)?
+
+We break our main result into three versions, depending on the assumptions
+required and the proof techniques used. Our first version is the most restric-
+tive, however it still holds in a wide variety of applications and has the ad-
+vantage that it can be derived purely through complex analysis and classical
+saddle point techniques, without the need for the homological framework of

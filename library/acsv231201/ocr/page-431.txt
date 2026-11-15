@@ -1,0 +1,45 @@
+12.8 Limit laws from probability theory 413
+
+on the objects of size k to be probability measures. One can ask for limit laws
+with varying degrees of subtlety. A weak law tells us that p4, is concentrated on
+a region of diameter o(k). More precisely, a weak law with limit m holds for
+the sequence {,} if, for any € > 0,
+
+Lk {r 7 —m|>s} 0 (12.20)
+as k — oo. More delicate is a central limit theorem, which states that the distri-
+bution of yz; in a region of diameter O(k!/*) around km has Gaussian behavior:
+r—-km
+mfr : “ae al > O(A) (12.21)
+as k — oo, where A is any “nice” region and ® is a multivariate normal distri-
+bution.
+
+Exercise 12.1. When a central limit theorem holds, what (if anything) can you
+conclude from (12.21) about the probabilities 4, {|km]}, where the greatest
+integer function is applied coordinatewise? What about the probabilities
+
+re: |r —km| s
+Uk a c
+
+for fixed c > 0 as k > 00?
+
+Even better is a local central limit theorem (LCLT) which estimates ju, at
+individual points. A LCLT tells us that p4.(r) ~ n(7r), where n is the density of
+a multivariate normal distribution. In the case where the size parameter is rg,
+for example, the normal density looks like
+
+-1
+n(r) = (2a rg)? Vdet N exp zr —ryv)' N(r°=rgv)}, (12.22)
+
+where r° denotes (7, ...,/g-1), the vector v is the mean of the limit Gaussian
+distribution, and the matrix N is the inverse covariance matrix. As we will see,
+so-called Ornstein-Zernike behavior a, ~ C(?)|r|'-®/2z-” leads to Gaussian
+estimates for individual probabilities if the coordinates of z are nonnegative
+real numbers. Ornstein—Zernike asymptotics are precisely the conclusion of
+our asymptotic estimates in the case where there is a single smooth point and
+the Hessian matrix is nondegenerate. Thus, all we require for a weak law and
+LCLT is that asymptotics are governed by a single smooth point with nonde-
+generate Hessian matrix. The remainder of this section is devoted to the state-
+ment and proof of a weak law and local central limit theorem, holding under
+smoothness and nondegeneracy assumptions.
+
+Exercise 12.2. Suppose a, = 0 unless Die r; is even.

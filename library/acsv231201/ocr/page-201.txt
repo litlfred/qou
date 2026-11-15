@@ -1,0 +1,48 @@
+7.2 The smooth case 183
+
+so that nz,/n?, has dimension d, and this property is invariant under bi-analytic
+mapping. At any smooth point of a complex hypersurface there is a coordinate
+neighborhood taking x to the origin and making the hypersurface into the coor-
+dinate plane where z, = 0. In this case ng /n4, has dimension d—1, which would
+be a contradiction, hence V is not a complex manifold in a neighborhood of
+a. A little more work shows ‘V is not locally a C® manifold either. a
+
+Our starting point, as always, is the multivariate Cauchy Integral Formula
+
+d
+«=(s) [entree (7.7)
+2ni T
+
+which gives an exact representation for a,. We view this representation not as
+a standard integral from multivariate calculus, but as the integral of the differ-
+ential form w = z~"-! F(z) dz over the d-chain T. The necessary background
+on differential geometry and the basics of integration of forms is discussed in
+Appendix A. Appendix B reviews concepts from algebraic topology, including
+homology and cohomology classes. In particular, since M = C4 \ V is the do-
+main of holomorphicity for w, the Cauchy integral depends only on the class
+of T in the singular homology group Hy(M) and the class of w in the singular
+cohomology group H“(M).
+
+We break our argument into pieces, generally mirroring the final approach
+to Example 7.3 above. In this chapter we mainly stick to theoretical consider-
+ations; methods for computing the quantities that arise are discussed in Chap-
+ter 8.
+
+Step 1: Characterize critical points
+We begin by defining the height function
+
+d
+h,(z) := -r - Relog z = -» r;log|zjl,
+jl
+which captures the magnitude of the Cauchy integrand
+
+jz" 1 F(z) = eM . |2-1 F(z)|
+
+as jer (z)| independent of |r|. The ordering /,. gives to C4 does not change if
+r is multiplied by a positive scalar, so our arguments about the height function
+will hold whenever r is replaced by any positive multiple. This invariance
+property means that an analysis of a, as r > oo with * = r/|r| converging to
+some fixed #,. can usually be accomplished with the fixed height function hg..
+In particular, if 7, is a fixed direction and h,, (a) < h,,(y) then, as r > oo with
+f > r,, the Cauchy integrand is exponentially smaller at z = a than at z = y.
+When r is understood we write simply h for h,.

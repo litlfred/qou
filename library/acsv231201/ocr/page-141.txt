@@ -1,0 +1,53 @@
+5.3 Real part of phase has a strict minimum 123
+is chosen. Equation (5.10) thus writes ¢ in the form
+
+$(w) = yi + DY xjxed'ie(@) (5.11)
+jkz2
+for some analytic functions on satisfying on (0) =H ao /2. By induction, if
+we assume that
+
+r-1
+$a) = Vly + DY xd)
+j=l jker
+
+for some | < r < d then setting
+
+= V¢r(£) a)
+»
+
+xin MC)
+
+gives
+
+Ha) = Viyp+ D1 xpmdli(w)
+jl
+
+jk2r+1
+
+for some analytic functions on satisfying 0,0) = He /2 with H nonsin-
+gular, leading in the end to a sequence of bi- holomorphic changes of variables
+writing ¢(x) = wy yj as claimed. Oo
+
+Exercise 5.7. Use the Complex Morse Lemma to find a bi-holomorphic change
+of variables turning ¢(x, y,z) = xy + yz + zx + xyz into the standard quadratic
+form S (u,v, w).
+
+We are now ready to prove Theorem 5.2.
+
+Proof of Theorem 5.2. The convergent power series expansion of ¢ allows us
+to extend it to a neighborhood of the origin in C“. Under the change of variables
+w from Lemma 5.9,
+
+T= f __Awlaye 8 (deravcy) dy
+i
+
+= [syed
+WIN
+
+We need to check that we can move the chain of integration C = W~'N back
+to the real plane. If we can, then applying the expansion from Theorem 5.1
+and noting that the terms with odd values of |r| all vanish yields the desired
+expansion in powers A~4/2~¢,
+
+Let h(z) = Re{S(z)}. Our assumption that the real part of ¢ is nonnegative
+on WN and vanishes only at the origin implies that the chain C lies in the region

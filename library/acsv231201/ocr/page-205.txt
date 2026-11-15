@@ -1,0 +1,32 @@
+7.2 The smooth case 187
+
+f. w = 0 for all but finitely many r, and
+
+1\4
+dy = (+) f w (7.9)
+2ni oINT(T,T’)
+
+whenever the integral over T’ is zero. ia)
+
+Exercise 7.5. Let Q(x,y) = 1 — x — y — x’y’, whose amoeba is shown in
+Figure 7.8. When r = (1,1), which components of amoeba(Q)° have h,. un-
+bounded from below, and which vertices of the Newton polygon for Q do these
+regions correspond to under the relationship described in Theorem 6.18?
+
+Figure 7.8 Amoeba of Q(x, y) = 1 -x-y-2xy?.
+
+We can convert the d-dimensional integral in (7.12) to a (d— 1)-dimensional
+integral over the intersection cycle, which lies in V,. This is accomplished
+using the concept of multivariate residues (also called Leray residues). Ap-
+pendix C.2 gives a summary of multivariate residues, but for this discussion
+it is sufficient to note that the residue form Res(t) of a meromorphic d-form Tt
+with singularities contained in V is a (d— 1) form restricted to V. Theorem C.9
+implies that
+
+1
+— T= f Res(r)
+2ni Joy Ly
+
+for any (d — 1)-chain y in ‘V,, and holomorphic d-form t on M.
+In particular, combining the residue operator with Proposition 7.12 gives the
+following.

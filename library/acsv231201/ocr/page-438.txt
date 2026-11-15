@@ -1,0 +1,52 @@
+420 Combinatorial applications
+
+Nonnegativity of series coefficients implies that (a, f) is in the interior of the
+domain of convergence when t < g(a), while no point (a, g(a)) lies in the
+logarithmic domain because it is on log V. When z is on the torus T,(a, g(x)),
+aperiodicity implies that ¢(z) # O unless z is real. Therefore, each point of
+Vz = VOR? is the only point of V on its torus, and such a minimal point is
+strictly minimal.
+
+As p is a probability measure, g(0) = log(1) = 0. The chain rule further
+implies
+
+a a e°$.,(exp(0))
+axe = ~ ax, 18 og 0 exp)(0) = ~~ Glexp(0))
+=-¢,(1),
+
+and this partial derivative evaluates to )1,cza rju(r), SO
+
+m = —V(go exp)(0) =)" rar)
+
+rez
+
+is the mean of the distribution jz. Differentiating again, if i # j we find that
+
+(0) =-
+
+a Ces END _ CCM, © EXPY: 2EXP)]
+OXjXj go exp (¢ 0 exp)?
+
+= 2,1) — mim;
+
+so that the (i, j) entry of the Hessian of g at the origin is indeed the covariance
+of the i and j coordinates under y. A similar computation works for i = j and
+establishes that the Hessian matrix of g at the origin is the covariance matrix
+for u. Applying Theorem 12.36, we see that u(r) is asymptotically equal to
+c 1,(r). There is no need to compute c because we know ¥,,.. u(r?) = 1.
+Thus c = | and we recover the classical LCLT.
+
+Theorem 12.37. [f 1 is an irreducible aperiodic probability measure on Z"
+with moment generating function ¢ everywhere finite, then
+
+HO (r) ~ Wr)
+
+as k > 0 with |r—km| = o(k*/3), where ny, is defined by (12.24) with d = n+l,
+the vector m equal to the mean of 1, and M equal to the covariance matrix of
+ub. It follows that
+
+sup kK" la, — n(r)| > 0
+
+rez
+
+ask > , ao

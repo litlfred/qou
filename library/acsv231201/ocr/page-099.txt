@@ -1,0 +1,58 @@
+3.5 The saddle point method 81
+
+small. More precisely, define
+
+My = f
+Wek
+
+M2 = f lexpl - By + in)]| dr
+[=n-V/2
+
+dt
+
+exp [ra —Bn)+ wa - bac?
+
+M3 = f lexpl/( — Bn + in)]| de
+ml2>|1>L
+
+Ma =f
+It<L
+
+so that
+
+exp [ra —Bn) + wd - pc —exp[/( -B, + if] dt
+
+e M, is the integral on the right-hand side of (3.16) beyond L,
+
+e the sum of M2 and M; bounds the integral on the left-hand side of (3.16)
+beyond L,
+
+e Msg bounds the difference between the left- and right-hand sides of (3.16) on
+[-L, L],
+
+e and the modulus of the difference between the left and right sides of (3.16)
+is bounded by the sum M, + M) + M3 + My.
+
+Letting M = exp[/(1 — 8,)], we prove M,, Mz, and M3 have upper bounds of
+the form M - exp(—c(log n)*) for some c > 0, and that My = o(Mn-3/*). These
+bounds all lie in o (134 exp (2 vn), completing our derivation of asymptotics
+for this example.
+
+Bound on M, We bound M, with a standard Gaussian tail estimate. For any
+
+a,C>0
+f eo" dt = 2[ eo" dt = Vere? f end -2aCt gy
+\q=C 1=C 0
+
+see [ edt
+20
+
+~aC?
+= yn/ae™ ,
+
+so the growth rates of /’’(1 — £,) and L give the asserted upper bound on M,
+
+for any c < 8.
+
+Bound on M) To bound M), observe first that if |‘| > n~!/? then the exponent
+—? /(B3 + Byt”) decreases to —B;! ~ — Yn. This is small, but integrating it over

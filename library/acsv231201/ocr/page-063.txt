@@ -1,0 +1,49 @@
+2.4 D-finite generating functions and diagonals 45
+
+(i) For each j € [d] there are polynomials {PL(n) :7 €{0,... 4, not all
+zero, such that
+
+DPR parr = 0 forall ,...,7a =k
+
+(ii) All the (d - 1)-variate arrays obtained from {a,.} by holding one of the d
+indices fixed at a value less than k are P-recursive.
+
+The following result, proved in [Lip89, Theorem 31], shows that this defini-
+tion of P-recursiveness is the correct one.
+
+Theorem 2.26. The array {ay : r € N®) is P-recursive if and only if its gener-
+ating function f(z) = )\, az" is D-finite. ia)
+
+2.4.1 Diagonals
+
+D-finite generating functions are finitely specifiable, the arrays they enumerate
+satisfy nice recursions, and they appear often in combinatorics. In addition,
+D-finite functions form an interesting family to study because they satisfy nice
+closure properties. First, we note that D-finite functions are closed under addi-
+tion and multiplication, just like rational and algebraic functions.
+
+Theorem 2.27. If f(z) and g(z) are D-finite then so are f(z) + g(z) and
+f(2)8(2).
+
+Proof Let V be the C(z)-subspace of C((z)) spanned by f(z)+g(z) and all its
+derivatives. Then V is contained in the sum of subspaces V;+V, spanned by the
+derivatives of f and g. Hence, V is a finite-dimensional space with dimension
+at most dim(V;) + dim(V,) and f(z) + g(z) is D-finite.
+
+Similarly, the products f‘”(z)g(z) of the partial derivatives of f and g
+span a finite dimensional space W of dimension at most dim(V,) - dim(V,).
+By the product rule, every derivative of f(z)g(z) lies in W, so f(z)g(z) is
+D-finite. im
+
+A more interesting closure property has to do with diagonals of multivariate
+series.
+
+Definition 2.28 (diagonal of a formal power series). Let F(z) = nena apZ”
+be a formal power series and s € R“ be a fixed vector. The s-diagonal of F is
+the univariate series
+
+(AsFYG1) =)" dnszt
+
+n20
+
+consisting of the series coefficients of F whose indices are multiples of s,

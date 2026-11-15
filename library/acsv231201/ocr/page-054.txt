@@ -1,0 +1,50 @@
+36 Generating functions
+
+Furthermore, if K is analytic in a neighborhood of the origin, then so are Fz
+and U.
+
+Proof The convex hull of E and the closed non-positive orthant are disjoint
+convex polyhedra so there is a hyperplane that separates them and meets nei-
+ther. The normal vector may be perturbed slightly to obtain a rational vector v
+such that v- s > 0 for all s € E and v- s < 0 for all s # 0 in the non-positive
+orthant. The vector v must have positive coordinates and, clearing denomina-
+tors, we may assume v has integer coordinates. Linearly order N“ by the value
+of the dot product with v, breaking ties arbitrarily, to produce a well ordering
+< of N’,
+
+If m € Z is fixed then s € E and r < m implies r — s < m. Consequently,
+the validity of (2.4) for all r < m depends only on values a, with r < m.
+In particular, if there is a unique set of values of {a, : r < m)} such that (2.4)
+holds for r < m then setting r = m in (2.4) uniquely specifies aj. Existence
+and uniqueness thus follow by induction, with the base case the minimal vector
+v €Z under <.
+
+To show analyticity of U and Fz, let y’ = log .gcg|es|. By analyticity of
+K we may choose y’ > y such that |a,| = |b,| < exp(yr- v) for any r € B.
+Furthermore, for r € Z we have by induction that
+
+lapl < [> eal sup [ays
+
+ScE scE
+
+<e” sup laml
+MmvV<r-v
+
+< ele rv-l)
+
+= pyre
+=e",
+
+establishing an exponential bound on |a,| for all r € N¢. Analyticity of Fz(z)
+follows directly, which then implies analyticity of U(z) = K(z) - Q(z)Fz(z).
+ia]
+
+The previous lemma is based on a formal power series approach. Another
+way of thinking about this is that Fz is trying to be the power series K/Q
+but, since Q vanishes at the origin, one must subtract some terms from K to
+cancel whatever factor of Q vanishes at the origin. The kernel method turns this
+intuition into a precise statement, when the boundary locations are specified
+using the coordinatewise partial order > on N¢.
+
+Theorem 2.17 ({BP00, Theorem 13]). Let d > 2 be arbitrary and suppose
+the boundary locations B are of the form {r : r  s} for some s € N“. If the

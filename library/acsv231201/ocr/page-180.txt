@@ -1,0 +1,42 @@
+162 Laurent series, amoebas, and convex geometry
+
+(3-2x—y)(3—x—2y) and is shown on the right-hand side of Figure 6.2. Consider
+the main diagonal direction *# = (1/2, 1/2). On the component corresponding
+to the power series expansion of F, the minimum of —# - x over x € B is 0,
+occurring at a = (0,0), however we will see in Chapter 10 that the growth rate
+in this direction is log(8/9), not 0. Replacing Q) by the polynomial 3 — 2x — y
+does yield a growth rate of 0 (in fact, this growth rate holds for an entire cone of
+directions containing 7). The reason for this difference is that in the first case
+the points on the lines defined by Q; and Q» that map to (0,0) under Relog
+have different signs, so the amoeba intersection does not reflect an intersection
+of varieties, while in the second case both lines contain the point (1, 1). 4
+
+6.5 Additional constructions
+
+We end this chapter by defining some additional constructions that will be
+required in Chapters 10 and 11.
+
+Definition 6.46. If f : C’ — C is analytic at w € C@ then the order of
+vanishing of f at w is
+
+deg(f, w) := sup {n EN: f(w + z) = O(z|") as |z| 3 o} >
+
+and the homogeneous part hom(f,w) of f at w is the sum of all terms of
+degree deg(f, w) in the power series for f(w + z) at z = 0, so
+
+S(w + z) = hom(f, w)(z) + O (later!) :
+The algebraic tangent cone of f at w is the set
+algtan,,(f) = Vnom fw):
+
+When w = 0 we omit w from the notation and write hom(f) = hom(f, 0).
+
+Remark. The algebraic tangent cone is not always a cone. For instance, if
+f(x,y) = xy then the algebraic tangent cone V,, is the union of the x and y
+axes.
+
+A more geometric definition of the algebraic tangent cone is that it consists
+of lines through a that are the limits of secant lines through a. Thus, for a unit
+vector u the line a + ru lies in the algebraic tangent cone if there are points
+x, € Vy distinct from but converging to x for which (@, —2)/||&,—2x|| > +u.
+Equivalence of the two definitions follows from our next result, which we state
+after introducing some new terminology.

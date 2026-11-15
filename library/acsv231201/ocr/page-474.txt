@@ -1,0 +1,42 @@
+456 Integration on manifolds
+
+derivative operator) d : E*(M) > E*(M) defined locally in a chart (U, ¢) by
+
+of
+d(f doy) = = dd; \déy.
+2, 36; 7"
+
+The differential maps a p-form to a (p + 1)-form, applying d twice gives the
+zero map (this is usually written d? = 0), and if w € E?(M) and n € E%(M)
+then
+
+d(w An) = dw) An+(-1)?wA di). (A.3.3)
+
+The differential still commutes with pullbacks, meaning d(¥*(w)) = w*(dw)
+for any smooth map w.
+
+Exercise A.12. Prove that (A.3.3) holds.
+
+We introduce the differential to state Stokes’s Theorem, our last result on the
+integration of forms.
+
+Theorem A.24 (Stokes’s Theorem). Let p > | and suppose that w is a (p—1)-
+form ona manifold M of dimension at least p. IfC is a p-chain on M then
+
+[e= few.
+aC Cc
+
+Stokes’s Theorem follows from our definitions, integration by parts, and
+some elementary computations; see [War83, Theorem 4.7] for details.
+
+A.4 Complex manifolds and differential forms in C”
+
+Having reviewed the basics of differential geometry for real manifolds, we now
+return to the complex case. As noted above, we may identify C” with R>” by
+mapping (x, + iy1,...,Xn + IVa) € C” to (1,...,XnsVis-»-Yn) € R?”" so any
+complex manifold is a real smooth manifold. However, this elides much of the
+extra structure of a complex manifold. In particular, we want to understand
+how complex analytic behavior and the multiplicative structure of the complex
+numbers can be captured in a setting where complex numbers are represented
+as real two-vectors. For the remainder of this section, points of R?” will be
+referred to by (x,,...,Xn,Y1,---,¥n) rather than (x1,..., X2n)-

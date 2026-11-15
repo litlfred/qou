@@ -1,0 +1,50 @@
+322 Multiple point asymptotics
+
+We have a broken circuit {1,2}, so we eliminate the factor of Q3 in the denom-
+inator of F(x, y) by dividing (10.23) by Q to obtain
+
+1 1 1 1
+= + - .
+Qi(x, y)Q2%,y) — Qa(x,y)Q30%,y) — Qi(%, y)Q3(%,y) — Q3(x, y)
+We may write the last term as — ERE so that
+1 y 1
+
+d=d-9)  G=yd=9) * T=Hd =H)
+and thus
+y + u .
+(l-y)d xy? (= 9) - xy?
+
+The generating functions F, and F, have a transverse multiple point at (1, 1),
+which is the only critical point when # ¢ {(0, 1), (1,0), (1, 1)}. Asymptotics can
+be obtained by applying Theorem 10.38 to these two rational functions at the
+point p = (1,1). The lognormal directions for the divisors 1 — x, 1 — y, and
+1 — xy are, respectively, horizontal, vertical, and on the main diagonal; 7 thus
+lies in the dual normal cone to F; at p but not the dual normal cone to F; when
+f has positive slope greater than 1, and vice versa when f has positive slope
+less than 1. We deduce that
+
+F(x, y) = Filx,y) + Fo(x,y) =
+
+r+O(l) ife!> >1+e
+= r
+as = S >
+s+O(Ql) ifl-e>->e
+r
+
+uniformly for any ¢ > 0. A glance at the generating function shows that in fact
+ays = 1+ min{r, s}. 4
+
+10.4 Classifying multiple points
+
+Having discussed the coefficient asymptotics of generating functions with mul-
+tiple points, we turn to the problem of recognizing when they arise.
+
+Proposition 10.48. The point p € V is a multiple point if and only if there is
+a factorization
+
+az) =|] om" (10.24)
+j=l
+
+in Op with V Q;(p) # 0 and Q,(p) = 0. The point p is a transverse multiple
+point with n divisors if and only if in addition the gradient vectors V Q; for
+1 < j < nare linearly independent.

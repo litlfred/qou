@@ -1,0 +1,61 @@
+3.3 Darboux’s method 69
+
+P(t) = e/?/ V1 =t. The Taylor series expansion e~/? = e7!/? + Fa —t)+
+O((1 —1)?) att =1 proves that we can write
+1/2
+
+f= ed yl? + — VI-1+ wt)
+
+for some C! function y(t). Lemma 3.9 then implies
+
+-1/2
+[e1f@) = eV =? + Sty = 9'? + 0(0"),
+so Lemma 3.10 shows that the counting sequence p,, of P satisfies
+-1/2 1/2
+P2n e -1/2 __ ©
+=["lfo ~ —— =—.
+Omi YO~ Foy" Van
+
+4
+
+Exercise 3.3. Find real constants C # 0 and £ such that the generating function
+f(t) in Example 3.11 satisfies
+
+1/2
+
+[| f@ = Ts +(C +0(1)n.
+
+As seen in Example 3.11, it is common that a generating function is an
+analytic function multiplied by a pure power. Applying Darboux’s method in
+this context gives the following result.
+
+Theorem 3.12 (Darboux’s Theorem). Suppose that f(z) = (1 — z/R)*W(z) for
+some R > 0, where a ¢ N and w is analytic on the closed disk \z| < R and
+satisfies W(R) # 0. If the expansion of w about R is Wz) = D9 bn(R - Z)" then
+the power series coefficients {a,} of f have an asymptotic expansion
+
+©
+dn XR" Sew’,
+
+1=0
+where the coefficient c, is an explicit linear combination of bo, ..., by. In par-
+ticular,
+2 YR) ontpen,
+T(-a)
+
+Proof Again, by rescaling our variable we assume without loss of gener-
+ality that R = 1. Lemma 3.10 implies that we can expand (7) into a series
+in decreasing powers n~°-!-*
+convert an asymptotic series of the form a, ~ D9 c(-1)"(
+an * Deo cen tk
+
+is sufficient to show that a, can be expressed as a series in be(-1)"(“*).
+
+n
+
+with explicit coefficients, making it possible to
+ot) into a series
+
+n
+
+with co = co/I'(-a@). Thus, to prove our claimed result it

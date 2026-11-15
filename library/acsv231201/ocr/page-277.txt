@@ -1,0 +1,52 @@
+9.2 The method of residue forms 259
+
+0.08 |
+
+i
+
+0.06
+
+Li
+>
+
+0.04
+
+0.02
+
+prritisrirtiry
+
+°F Oho eS x
+
+0.0 ETE TTF TTT ITT TP TTT ptt
+
+20 30 40 50 60 70 80
+n
+
+°
+
+Figure 9.2 Spacetime generating function for a one-dimensional quantum walk.
+
+Exercise 9.8. Let Q(x,y) = 1 — cy(1 + x) — xy’, where c € (0, 1). The func-
+tion 1/Q is the spacetime generating function for the simplest non-trivial one-
+dimensional quantum walk [BP07].
+
+(a) Show that all singularities on the unit torus are minimal points.
+
+(b) Show that the singularities on the unit torus are not finitely minimal.
+
+(c) Show that for ja — 1/2| < c/2 and? = [a Pal there are two critical
+points in the direction 7 on the unit torus.
+
+(d) Explain why (9.17) produces the picture in Figure 9.2 for the generating
+function F(x, y) = 1/Q(x, y).
+
+9.2.1 Theorem 9.12 via residue integrals
+
+We are now ready to prove the minimal point version of the Main Theorem of
+Smooth ACSV.
+
+Proof of Theorem 9.12 Assume the hypotheses of Theorem 9.12 and let B be
+the component of amoeba(Q)° corresponding to the convergent Laurent series
+under consideration. We use the homological constructions and terminology
+introduced in Appendix C. If T = T.(a) for some x € Band T’ = T,(x’) for
+some a’ € B’, where B’ is one of the components of amoeba(Q)° on which hy
