@@ -96,3 +96,9 @@ Outcome (i), order-dependent. The torus T(2,7) electron passes H₂ only with th
 with the electron on the bottom it fails levels 2–4 (it fails alone). The V³ electron passes in every order
 (P = V³, V⁶). Higher levels also test upper particles. Still OPEN (owner): must each particle pass alone?
 Owner leans to option 1 ("i think A").
+
+## 2026-11-15 — OWNER RULING: each particle must pass alone
+
+Owner chose option 1 on "Must each particle pass reading 3 on its own strands?": yes. Consequence: torus electrons
+(fail alone) are excluded; the electron is in {V⁰, V³, V⁶} within the 3-strand γγ grammar, and H₂ bonds by exactly V³
+(h2_gg_electron). Verdict is order-independent in every cell of h2_order_test. Which power is the electron stays OPEN.
