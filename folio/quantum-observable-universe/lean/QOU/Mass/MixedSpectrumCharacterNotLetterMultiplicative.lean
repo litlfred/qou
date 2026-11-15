@@ -49,7 +49,7 @@ to natural multiplicities needs `CharZero R` and is given as a corollary.
 `q + q⁻¹ ≠ 0` (i.e. `q² ≠ −1`) is the one genuine hypothesis and holds for every
 real `q`.
 
--- Ref: [manuscript] §"Frobenius pairing", per-block characters of `H_n(q)`
+-- Ref: [leitner2026] §"Frobenius pairing", per-block characters of `H_n(q)`
 -/
 
 import Mathlib.Algebra.Algebra.Defs

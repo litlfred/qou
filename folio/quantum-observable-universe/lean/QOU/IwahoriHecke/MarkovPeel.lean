@@ -54,7 +54,7 @@ not done here. Nor is the link invariant: `QOU.IwahoriHecke.MarkovTrace.markovTr
 `noncomputable opaque`, and nothing here constructs it.
 
 -- Ref: [jones1987] Hecke algebra representations of braid groups and link polynomials
--- Ref: [jimbo1986]; [manuscript] bean qou-k4oq
+-- Ref: [jimbo1986]; [leitner2026] bean qou-k4oq
 -/
 
 namespace QOU.IwahoriHecke.MarkovPeel

@@ -22,7 +22,7 @@ LaTeX label: `lem:nucleon-borromean-topology`
 
 ## References
 
-- [manuscript] §10 Observations / nucleon-borromean-topology
+- [leitner2026] §10 Observations / nucleon-borromean-topology
 - The Borromean / Hopf-link volume constants follow SnapPy
   (Bloch–Wigner dilogarithm).
 -/
@@ -38,7 +38,7 @@ namespace QOU.HadronicMass
     The lemma packages the existence of a coherent datum: the Lake
     module's `proton_quarks` already realises one such instance,
     The existence statement holds. -/
--- Ref: [manuscript] §10 Observations / nucleon-borromean-topology
+-- Ref: [leitner2026] §10 Observations / nucleon-borromean-topology
 theorem nucleon_borromean_topology :
     ∃ (qff : QuarkFlavorFactor) (v_borr v_hopf : ℝ),
       0 < v_borr ∧ v_hopf = 0 ∧ qff.n_up + qff.n_down = 3 := by

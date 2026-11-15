@@ -16,7 +16,7 @@ classifies `α` into exactly one of two types:*
 The Lean encoding records the dichotomy as a `∀ α, fermionic α ∨
 bosonic α` statement against an abstract context.
 
--- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.md
+-- Ref: [leitner2026] quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.md
 -/
 
 namespace QOU.Torsion
@@ -43,7 +43,7 @@ class AlgebraicFilterContext where
 /-- **Algebraic-filter dichotomy** ([`prop:algebraic-filter-classification`]).
 
     Every harmonic 1-form `α` is exactly one of fermionic or bosonic. -/
--- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.md
+-- Ref: [leitner2026] quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.md
 theorem algebraic_filter_classification
     [ctx : AlgebraicFilterContext] (F : ctx.F_A) (α : ctx.OneForm) :
     ctx.IsFermionic F α ∨ ctx.IsBosonic F α := by

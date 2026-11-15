@@ -23,7 +23,7 @@ asserted "exactly one S-odd term" (`chirality_is_unique_S_odd`); that
 holds only for `Φ₁⁺`, not for the raw `Φ₁` the formula uses, and was
 removed on owner ruling 2026-10-10 (bean qou-fd2u).
 
--- Ref: [manuscript] prop:frobenius-s-classification
+-- Ref: [leitner2026] prop:frobenius-s-classification
 -/
 
 namespace QOU.WedderburnMass

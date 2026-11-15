@@ -30,7 +30,7 @@ explicit `[Instance]` hypothesis to retain
 
 ## References
 
-- [manuscript] §Critical exponent of the enstrophy divergence at q = 1, `conj:critical-exponent`
+- [leitner2026] §Critical exponent of the enstrophy divergence at q = 1, `conj:critical-exponent`
 -/
 
 namespace QOU.FluidDynamics
@@ -73,7 +73,7 @@ class CriticalExponent where
       $\Omega_{\max}(q) \sim (q-1)^{-\alpha}$: the divergence *rate*
       is not encoded, and `criticalExponent` is accordingly
       unconstrained by any field of this class. -/
-  -- Ref: [manuscript] fluid-dynamics/p2-critical-exponent
+  -- Ref: [leitner2026] fluid-dynamics/p2-critical-exponent
   enstrophy_diverges :
     ∀ M : ℝ, ∀ ε : ℝ, 0 < ε →
       ∃ q : ℝ, 1 < q ∧ q - 1 < ε ∧ M < enstrophy q

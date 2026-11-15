@@ -22,7 +22,7 @@ ordering/positivity used for nonvanishing, so `ℝ` per AGENTS.md §7c.
 Verified symbolically (sympy) before formalising:
 `2α_D(1/q) + 2α_D(q) = (q²−1)²/q²`, nonzero for `q ∉ {0, ±1}`.
 
--- Ref: [manuscript] docs/audits/2026-08-29-convention-d-qbeta-front-adversarial-audit.md
+-- Ref: [leitner2026] docs/audits/2026-08-29-convention-d-qbeta-front-adversarial-audit.md
 -/
 
 namespace QOU.QBeta.EigenphaseBarMixedD

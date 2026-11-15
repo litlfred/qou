@@ -28,7 +28,7 @@ etc.) where the conjecture is actually proved.
 - [murakami-murakami2001] The colored Jones polynomial and the simplicial
   volume of a knot. Acta Math. 186 (2001).
   https://doi.org/10.1007/BF02392716
-- [manuscript] Ch 3 §sec:calibration-algebraic-mass /
+- [leitner2026] Ch 3 §sec:calibration-algebraic-mass /
   kashaev-volume-conjecture
 -/
 
@@ -86,7 +86,7 @@ class VolumeConjecture (q : ℝ) where
     layer for concrete knot families); this definition is the thin
     accessor.  Callers never see a placeholder masquerading as a genuine
     S-dependent piece volume — an instance must provide a real value. -/
--- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass / kashaev-volume-conjecture
+-- Ref: [leitner2026] Ch 3 §sec:calibration-algebraic-mass / kashaev-volume-conjecture
 -- Ref: [kashaev1997] Kashaev, "The hyperbolic volume of knots from the quantum dilogarithm," Lett. Math. Phys. 39 (1997)
 @[simp]
 noncomputable def pieceVolume (q : ℝ) [inst : VolumeConjecture q]
@@ -95,7 +95,7 @@ noncomputable def pieceVolume (q : ℝ) [inst : VolumeConjecture q]
 
 /-- The piece volume is non-negative — a genuine hyperbolic volume,
     discharged by the instance field `pieceVol_nonneg`. -/
--- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass / kashaev-volume-conjecture
+-- Ref: [leitner2026] Ch 3 §sec:calibration-algebraic-mass / kashaev-volume-conjecture
 theorem pieceVolume_nonneg (q : ℝ) [inst : VolumeConjecture q]
     (β : Braid) (S : Finset (Fin (β.n - 1))) :
     0 ≤ pieceVolume q β S :=

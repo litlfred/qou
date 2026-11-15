@@ -24,7 +24,7 @@ depth-2 model* (a window-independent `τ`). It does **not** exclude a `q`-family
 monodromy `B` — that object (the abelianised `λ_SW` holonomy on the color `E_q`) is the open,
 owner-gated keystone target and is untouched here. The file formalizes the audit's finding that
 "`θ_binding = 0.7815` is a 3-point seed-fit artifact, not a derived constant-`τ` rate."
-Ref: [manuscript] docs/audits/2026-06-24-lever1-lw-depth2-recurrence-falsified.md
+Ref: [leitner2026] docs/audits/2026-06-24-lever1-lw-depth2-recurrence-falsified.md
 -/
 
 namespace QOU.Mass.Lever1Depth2

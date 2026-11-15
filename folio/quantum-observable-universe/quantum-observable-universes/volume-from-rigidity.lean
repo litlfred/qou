@@ -14,7 +14,7 @@ LaTeX label: `lem:volume-from-rigidity`
 ## References
 
 - [kock2004] https://doi.org/10.1017/CBO9780511615443
-- [manuscript] §1-quantum-observable-universe/volume-from-rigidity
+- [leitner2026] §1-quantum-observable-universe/volume-from-rigidity
 -/
 
 open CategoryTheory MonoidalCategory
@@ -25,7 +25,7 @@ universe u v
 
 /-- **Volume form factorisation**: for a symplectically self-dual object,
     the evaluation factors through the exterior square. -/
--- Ref: [kock2004], [manuscript] §1
+-- Ref: [kock2004], [leitner2026] §1
 structure VolumeFormFactorisation (C : Type u) [Category.{v} C]
     [MonoidalCategory C] where
   /-- The fundamental object V. -/
@@ -59,7 +59,7 @@ structure VolumeFormFactorisation (C : Type u) [Category.{v} C]
 
     Now a derivation rather than a re-export: the epimorphism follows from
     `epsilon_iso`, where before it *was* the hypothesis `epsilon_epi`. -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 theorem volume_form_is_nondegen {C : Type u} [Category.{v} C]
     [MonoidalCategory C] (vff : VolumeFormFactorisation C) :
     Epi vff.epsilon :=

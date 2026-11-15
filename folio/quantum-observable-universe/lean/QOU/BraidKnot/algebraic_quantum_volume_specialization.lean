@@ -52,7 +52,7 @@ QOU-internal derivation; the other two are*
 [
 
     The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/algebraic-quantum-volume-specialization.ts
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/algebraic-quantum-volume-specialization.ts
 def algebraic_quantum_volume_specialization [ctx : AlgebraicQuantumVolumeSpecializationContext] :
     ctx.z_0 = 1 / (Real.sqrt ctx.q_0 + 1 / Real.sqrt ctx.q_0) ∧
     (∀ β : ctx.Braid, ∃ c : ℝ, ctx.Vol_q_at_q0 β = c * ctx.J_K β) ∧

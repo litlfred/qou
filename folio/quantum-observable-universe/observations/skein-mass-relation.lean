@@ -19,7 +19,7 @@ LaTeX label: `rem:skein-mass-relation`
 
 - [jones1985] https://doi.org/10.1090/S0273-0979-1985-15304-2
 - CODATA 2018 recommended values
-- [manuscript] §11-experimental-evidence/skein-mass-relation
+- [leitner2026] §11-experimental-evidence/skein-mass-relation
 
 **Ground ring**: `ℝ` (archimedean realisation).
 Evaluates formal results at q₀ ≈ 1.1098 for comparison with
@@ -34,7 +34,7 @@ namespace QOU.Experimental
 
     At each crossing in the color-exchange space:
     `q · M(L₊) - q⁻¹ · M(L₋) = (q^{1/2} - q^{-1/2}) · M(L₀)` -/
--- Ref: [jones1985], [manuscript] §11
+-- Ref: [jones1985], [leitner2026] §11
 structure SkeinMassRelation where
   /-- The substrate parameter q > 1. -/
   q : ℝ
@@ -57,7 +57,7 @@ structure SkeinMassRelation where
     volume of the figure-eight knot and the quantum Planck constant:
     `m_μ/m_e = Vol(4₁) / ℏ_q²`
     where `ℏ_q = 1 - q⁻¹`. -/
--- Ref: CODATA 2018, [manuscript] §11
+-- Ref: CODATA 2018, [leitner2026] §11
 structure LeptonMassRatio where
   /-- The substrate parameter q. -/
   q : ℝ
@@ -79,14 +79,14 @@ structure LeptonMassRatio where
   agreement : |predicted_ratio - codata_ratio| < 0.001
 
 /-- The quantum Planck constant is positive for q > 1. -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 theorem hbar_q_pos_of_gt_one {q : ℝ} (hq : 1 < q) :
     0 < 1 - q⁻¹ := by
   have : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq
   linarith
 
 /-- The predicted ratio is positive when Vol(4₁) > 0 and q > 1. -/
--- Ref: [manuscript] §11
+-- Ref: [leitner2026] §11
 theorem predicted_ratio_pos (lmr : LeptonMassRatio) :
     0 < lmr.vol_figure_eight / (1 - lmr.q⁻¹) ^ 2 := by
   apply div_pos lmr.vol_pos

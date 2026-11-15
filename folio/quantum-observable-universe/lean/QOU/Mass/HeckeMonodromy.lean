@@ -44,8 +44,8 @@ the forms `(α, β)` route D2 needs. `NaStokesKeystone.lean`'s docstring claim *
 Base ring §7c: generic `Field K` for the eigenvalue algebra (division by `q`), generic
 `Ring A`/`Ring B` for the tower and its shadow; nothing archimedean.
 
--- Ref: [manuscript] docs/canonical-derivation-cheat-sheet.md §2a
--- Ref: [manuscript] computations/probes/colour_cubic_branch_monodromy_probe.py
+-- Ref: [leitner2026] docs/canonical-derivation-cheat-sheet.md §2a
+-- Ref: [leitner2026] computations/probes/colour_cubic_branch_monodromy_probe.py
 -- Ref: [kohno1987] Kohno, Ann. Inst. Fourier 37 (1987) — the model theorem (KZ monodromy factors
 --      through the Hecke algebra), for option C.
 -/

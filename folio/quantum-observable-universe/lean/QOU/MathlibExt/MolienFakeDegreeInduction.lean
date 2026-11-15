@@ -42,7 +42,7 @@ explicitly (`molienSum_eq_qFactorial_of_recursion`) — a genuine §3b-cond cond
 
 Base ring: `ℝ` (inherited from `normalizedSum`; `1 < q` is archimedean).
 
--- Ref: [manuscript] docs/audits/2026-08-21-molien-mining-the-correct-q-analogue-of-rsk.md
+-- Ref: [leitner2026] docs/audits/2026-08-21-molien-mining-the-correct-q-analogue-of-rsk.md
 -- Ref: computations/qbeta/fake_degree_addable_box_recursion_probe.py (identity (B), exact n ≤ 6)
 -/
 

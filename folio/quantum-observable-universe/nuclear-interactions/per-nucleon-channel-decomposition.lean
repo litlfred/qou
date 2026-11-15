@@ -6,7 +6,7 @@
   decomposed into four channels by the T_{2,3} eigenstructure
   of H₃(q).
 
-  Ref: [manuscript] Ch 11 §9 / per-nucleon-channel-decomposition
+  Ref: [leitner2026] Ch 11 §9 / per-nucleon-channel-decomposition
 -/
 
 import Mathlib.Data.Real.Basic
@@ -53,7 +53,7 @@ noncomputable def gN_alt (q : ℝ) : ℝ := (-q) * (qBracket2 q / 2)^2
     `def:typed-crossing-operator`; this lemma verifies that, summed with
     the explicit symmetric/alternating factors, they give `−h/2`
     (§3b-cond conditional pattern). -/
--- Ref: [manuscript] def:typed-crossing-operator (standard-channel Δ₃ eigendata)
+-- Ref: [leitner2026] def:typed-crossing-operator (standard-channel Δ₃ eigendata)
 theorem protonChannelSum (q : ℝ) (hq : q ≠ 0) (stdP : ℝ)
     (hstd : stdP = -(q - q⁻¹) * (2 + (q + q⁻¹)^2) / 4) :
     gP_sym q + stdP + gP_alt q = -(q - q⁻¹) / 2 := by
@@ -65,7 +65,7 @@ theorem protonChannelSum (q : ℝ) (hq : q ≠ 0) (stdP : ℝ)
 /-- **Neutron channel sum** `b = Σ_c G_N(c) = −3(q²−1)(q²+1)²/(4q³)`,
     stated conditionally on the standard-channel summed expectation
     `stdN` (computed in `def:typed-crossing-operator`). -/
--- Ref: [manuscript] def:typed-crossing-operator (standard-channel Δ₃ eigendata)
+-- Ref: [leitner2026] def:typed-crossing-operator (standard-channel Δ₃ eigendata)
 theorem neutronChannelSum (q : ℝ) (hq : q ≠ 0) (stdN : ℝ)
     (hstd : stdN = -(q^2 - 1)*(q^2 + 1)^2 / (2*q^3)) :
     gN_sym q + stdN + gN_alt q = -3*(q^2 - 1)*(q^2 + 1)^2 / (4*q^3) := by
@@ -76,7 +76,7 @@ theorem neutronChannelSum (q : ℝ) (hq : q ≠ 0) (stdN : ℝ)
 
 /-- Both channel sums are strictly negative for `q > 1` (`a, b < 0`),
     the sign input to the branching factorization `a^Z · b^{N−1} · (a − b)`. -/
--- Ref: [manuscript] Ch 11 §9 / branching-qvalue-factorization
+-- Ref: [leitner2026] Ch 11 §9 / branching-qvalue-factorization
 theorem branchingFactorizationSigns (q : ℝ) (hq : q > 1) :
     (-(q - q⁻¹)/2 : ℝ) < 0 ∧ -3*(q^2 - 1)*(q^2 + 1)^2 / (4*q^3) < 0 := by
   have hq0 : q > 0 := by linarith

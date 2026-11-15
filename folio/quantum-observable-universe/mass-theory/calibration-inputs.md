@@ -62,7 +62,7 @@ framework-derived hadronic scale in two forms — the single-Planck-tick value
 $\mathfrak{E}_0^{(N=0)} = m_e/(q_0(q_0-1)) \approx 4.186$ MeV
 ([energy scale](#rem:energy-scale-planck)) and the tower-summed
 $\mathfrak{E}_0^{\text{full}} = \mathfrak{E}_0^{(N=0)}/(1-\hbar_q^2)
-\approx 4.228$ MeV ([beta-decay energy scale](../particle-interactions/beta-decay-energy-scale.md)
+\approx 4.228$ MeV ([beta-decay energy scale](../nuclear-interactions/beta-decay-energy-scale.md)
 §"tower-summed form"). The free neutron $\beta$-decay Q-value
 calibrates $\mathfrak{E}_0$:
 
@@ -76,7 +76,7 @@ $$
 $$
 
 (The typed-crossings 6-term decomposition yields $\lvert\Delta(\text{net,typed})\rvert \approx 0.18829$ and a slightly smaller $\mathfrak{E}_0 \approx 4.155$ MeV; the 0.6% gap is finite-size noise in the typed decomposition — see
-[`beta-decay-energy-scale`](../particle-interactions/beta-decay-energy-scale.md) §"three values".)
+[`beta-decay-energy-scale`](../nuclear-interactions/beta-decay-energy-scale.md) §"three values".)
 
 where $\Delta(\mathrm{net}) = h(h-2)/2$ is the symbolic NF
 difference between neutron and proton

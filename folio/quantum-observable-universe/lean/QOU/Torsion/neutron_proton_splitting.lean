@@ -44,7 +44,7 @@ historical comparison.  The strand pairing is the all-pairs reading of
 `traced_volume` construction is not yet ported to Lean
 (AGENTS.md anti-laundering rule).
 
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/neutron-proton-splitting.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/neutron-proton-splitting.md
 -/
 
 namespace QOU.Torsion
@@ -109,7 +109,7 @@ class NeutronProtonSplittingNumerics extends NeutronProtonSplittingContext where
     a CODATA-tolerance conjunct, and before that an exact-equality conjunct
     `m_n − m_p = α·|Φ(udd) − Φ(uud)|` that was refutable as written
     (`neutron_proton_splitting_unconstrained_false` below). -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/neutron-proton-splitting.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/neutron-proton-splitting.md
 theorem neutron_proton_splitting [cm : NeutronProtonSplittingNumerics] :
     (predictedNeutronProtonSplitting = cm.α * |cm.Φ_udd - cm.Φ_uud|) ∧
     (predictedNeutronProtonSplitting = (3.7449 : ℝ) * 0.2815) := by

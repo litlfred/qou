@@ -33,7 +33,7 @@ with `G` acting by automorphisms. Generic (no associativity, no `ℝ`; §7c),
 sorry-free. The geometric input `(H¹(Σ₄))^{S₅} = 0` and the fact that
 automorphisms fix `1` are supplied in the narrative.
 
--- Ref: [manuscript] docs/audits/2026-07-12-octonion-recovery-from-genus4-analysis.md
+-- Ref: [leitner2026] docs/audits/2026-07-12-octonion-recovery-from-genus4-analysis.md
 -/
 
 namespace QOU.BringsSurface.OctonionObstruction

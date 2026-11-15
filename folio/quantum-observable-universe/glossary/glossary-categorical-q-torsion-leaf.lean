@@ -16,7 +16,7 @@ a distinguished endomorphism (the q-Reeb flow).
 LaTeX label: `rem:glossary-categorical-q-torsion-leaf`
 
 ## References
-- [manuscript] Ch. 8, §glossary-categorical-q-torsion-leaf
+- [leitner2026] Ch. 8, §glossary-categorical-q-torsion-leaf
 -/
 
 namespace QOU
@@ -29,7 +29,7 @@ open CategoryTheory
 
     In Mathlib terms this is a sub-object equipped with two witnesses:
     horizontality and flow-invariance. -/
--- Ref: [manuscript] Ch. 8, §glossary-categorical-q-torsion-leaf
+-- Ref: [leitner2026] Ch. 8, §glossary-categorical-q-torsion-leaf
 structure CategoricalQTorsionLeaf
     (C : Type*) [Category C]
     [Limits.HasZeroMorphisms C]

@@ -51,7 +51,7 @@ the same condition. What is **NOT** closed here, and is not laundered:
    genuinely open, and not touched by this algebraic equivalence.
 
 -- Ref: [faddeev_kashaev1994] Quantum dilogarithm — see folio/schema/references.ts
--- Ref: [manuscript] rem:q-dilogarithm-pentagon-associator
+-- Ref: [leitner2026] rem:q-dilogarithm-pentagon-associator
 -/
 
 namespace QOU.QuantumObservableUniverses.DilogPentagonAssociator

@@ -183,7 +183,7 @@ axiom barNormalForm {n : ℕ} : HeckeNormalForm n → HeckeNormalForm n
 /-- A predicate isolating those normal forms emitted by the
     pair-production engine (opaque; its content is the conjectural
     symmetric-crystal pair-production engine, not a provable proposition). -/
--- Ref: [manuscript] conj:symmetric-crystal-pair-production
+-- Ref: [leitner2026] conj:symmetric-crystal-pair-production
 axiom isPairProductionOutput {n : ℕ} : HeckeNormalForm n → Prop
 
 /-- Class-form axiomatisation of conj:symmetric-crystal-pair-production.

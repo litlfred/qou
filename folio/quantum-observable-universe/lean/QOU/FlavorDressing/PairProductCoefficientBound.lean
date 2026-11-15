@@ -31,7 +31,7 @@ not toward `0.929`). The `α`-derivation must therefore live on the self-energy 
 This is a narrowing of an open problem, not a closure: `α ≈ 0.929` itself remains underived, and this
 result does not move the L2 dashboard.
 
--- Ref: [manuscript] docs/audits/2026-07-26-flavor-split-pair-product-half-ceiling.md
+-- Ref: [leitner2026] docs/audits/2026-07-26-flavor-split-pair-product-half-ceiling.md
 -/
 
 namespace QOU.FlavorDressing

@@ -38,8 +38,8 @@ residuals carried as hypotheses; they are the open content, honestly delimited,
 and tracked in beans `qou-atsd-t3` / `qou-atsd-t4`. No axiom fabricates the
 conclusion (AGENTS.md §"Axiomatization is NOT a Proof").
 
--- Ref: [manuscript] quantum-universes/fundamental-object.ts (volume form ε = Λ²V→𝟙); def:tannaka-dual
--- Ref: [manuscript] conj:binding-manybody-eq-jet-filtration (jet tower / atomicity)
+-- Ref: [leitner2026] quantum-universes/fundamental-object.ts (volume form ε = Λ²V→𝟙); def:tannaka-dual
+-- Ref: [leitner2026] conj:binding-manybody-eq-jet-filtration (jet tower / atomicity)
 -/
 
 namespace QOU.Atomicity

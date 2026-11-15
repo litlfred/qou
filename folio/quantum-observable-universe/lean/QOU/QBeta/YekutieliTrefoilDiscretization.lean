@@ -38,7 +38,7 @@ does NOT by itself produce the deuteron number — the handle holonomies `A_a, A
 No fit; nothing wired.
 
 ## References
-- [manuscript] bean `qou-prjo` (transverse surface-curvature surviving object); `qou-yczy`
+- [leitner2026] bean `qou-prjo` (transverse surface-curvature surviving object); `qou-yczy`
   (Yekutieli 2-form discretization); `QOU.MathlibExt.YekutieliIntegration`;
   `docs/audits/2026-07-24-eunit-magnus-order2.md` §2 (single-generator ⇒ transverse).
 - [yekutieli2015] A. Yekutieli, *Nonabelian multiplicative integration on surfaces* (the

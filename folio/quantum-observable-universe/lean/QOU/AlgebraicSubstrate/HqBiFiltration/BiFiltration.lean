@@ -68,7 +68,7 @@ theorem proj_add_fixed {α β : A} (hα : F.proj α = α) (hβ : F.proj β = β)
   unfold proj at hα hβ ⊢
   rw [mul_add, add_mul, hα, hβ]
 
--- Ref: [manuscript] quantum-observable-universe/mass-theory/hq-bi-filtration.ts
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/hq-bi-filtration.ts
 
 end BiFiltration
 

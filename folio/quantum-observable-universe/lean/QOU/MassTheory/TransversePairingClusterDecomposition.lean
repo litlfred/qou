@@ -75,7 +75,7 @@ ordering, no `Real.*`, no archimedean evaluation.
 ## References
 - Ref: [yekutieli2015] https://doi.org/10.1142/9537 — non-abelian multiplicative
   integration and Stokes' theorem on surfaces.
-- Ref: [manuscript] `docs/audits/2026-08-09-nastokes-multigenerator-cluster-additivity.md`
+- Ref: [leitner2026] `docs/audits/2026-08-09-nastokes-multigenerator-cluster-additivity.md`
 -/
 
 namespace QOU.MassTheory.TransversePairingCluster

@@ -76,8 +76,8 @@ modulus computations, which are genuinely archimedean (§7c).
 
 ## References
 
-- [manuscript] §5-brings-surface/sw-period-residue-sum
-- [manuscript] §5-brings-surface/sw-classical-jet-exactness
+- [leitner2026] §5-brings-surface/sw-period-residue-sum
+- [leitner2026] §5-brings-surface/sw-classical-jet-exactness
 
 LaTeX label: `prop:colour-cubic-branch-locus-reciprocal`
 -/

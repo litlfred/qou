@@ -46,7 +46,7 @@ mod-reduction + degree bound:
 Kept over generic `Polynomial ℤ` (§7c: no archimedean specialisation
 required — this is pure `q`-deformation combinatorics).
 
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/lepton-continuant-recurrence.md
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/lepton-continuant-recurrence.md
 -/
 
 namespace QOU.Archimedean
@@ -67,7 +67,7 @@ off `main`, where that sibling is not yet merged. -/
     The polynomial Fibonacci addition identity, specialised to
     `b_1 = 1`, `b_2 = X`.  Two-step induction on `m` from
     `morganVoyceB_recurrence`. -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/lepton-continuant-recurrence.md
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/lepton-continuant-recurrence.md
 theorem morganVoyceB_add (m n : ℕ) :
     morganVoyceB (m + n + 1)
       = morganVoyceB (m + 1) * morganVoyceB (n + 1)
@@ -93,7 +93,7 @@ theorem morganVoyceB_add (m n : ℕ) :
 /-- `b_n ∣ b_{n·k}`: the continuant of every multiple winding is
     divisible by that of the base winding.  Induction on `k` from the
     addition law. -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/lepton-continuant-recurrence.md
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/lepton-continuant-recurrence.md
 theorem morganVoyceB_dvd_mul (n k : ℕ) : morganVoyceB n ∣ morganVoyceB (n * k) := by
   induction k with
   | zero => simp [morganVoyceB]
@@ -106,7 +106,7 @@ theorem morganVoyceB_dvd_mul (n k : ℕ) : morganVoyceB n ∣ morganVoyceB (n * 
         exact dvd_add (dvd_mul_left _ _) (ih.mul_right _)
 
 /-- **Forward strong divisibility**: `a ∣ n → b_a ∣ b_n`. -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/lepton-continuant-recurrence.md
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/lepton-continuant-recurrence.md
 theorem morganVoyceB_dvd_of_dvd {a n : ℕ} (h : a ∣ n) :
     morganVoyceB a ∣ morganVoyceB n := by
   obtain ⟨k, rfl⟩ := h
@@ -120,7 +120,7 @@ theorem morganVoyceB_dvd_of_dvd {a n : ℕ} (h : a ∣ n) :
     `b_{n+2} = X·b_{n+1} + b_n`, so coprimality with `b_{n+1}` is
     inherited from `IsCoprime b_{n+1} b_n` by adding a multiple of
     `b_{n+1}` (`IsCoprime.add_mul_right_right`). -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/lepton-continuant-recurrence.md
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/lepton-continuant-recurrence.md
 theorem morganVoyceB_coprime_succ (n : ℕ) :
     IsCoprime (morganVoyceB n) (morganVoyceB (n + 1)) := by
   induction n with
@@ -144,7 +144,7 @@ theorem morganVoyceB_coprime_succ (n : ℕ) :
 /-- `b_{n+1}` is **monic** with `natDegree = n`.  Joint two-step
     induction; the sum `X·b_{n+1} + b_n` has its leading term supplied
     by the strictly-higher-degree first summand. -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/lepton-continuant-recurrence.md
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/lepton-continuant-recurrence.md
 theorem morganVoyceB_monic_natDegree (n : ℕ) :
     (morganVoyceB (n + 1)).Monic ∧ (morganVoyceB (n + 1)).natDegree = n := by
   induction n using Nat.twoStepInduction with
@@ -180,7 +180,7 @@ theorem morganVoyceB_monic_natDegree (n : ℕ) :
     coprime cancellation give `b_a ∣ b_r`, contradicting the strict
     degree bound `natDegree b_r = r − 1 < a − 1 = natDegree b_a`.  Hence
     `r = 0`, i.e. `a ∣ n`. -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/lepton-continuant-recurrence.md
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/lepton-continuant-recurrence.md
 theorem morganVoyceB_dvd_reverse {a n : ℕ} (ha : 1 ≤ a)
     (hdvd : morganVoyceB a ∣ morganVoyceB n) : a ∣ n := by
   rcases Nat.eq_zero_or_pos (n % a) with hr0 | hrpos
@@ -221,7 +221,7 @@ theorem morganVoyceB_dvd_reverse {a n : ℕ} (ha : 1 ≤ a)
 
     Forward: `morganVoyceB_dvd_of_dvd`; reverse:
     `morganVoyceB_dvd_reverse`. -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/lepton-continuant-recurrence.md
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/lepton-continuant-recurrence.md
 theorem morganVoyceB_dvd_iff {a n : ℕ} (ha : 1 ≤ a) :
     morganVoyceB a ∣ morganVoyceB n ↔ a ∣ n :=
   ⟨morganVoyceB_dvd_reverse ha, morganVoyceB_dvd_of_dvd⟩

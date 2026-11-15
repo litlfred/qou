@@ -28,7 +28,7 @@ constructs the intertwiner or evaluates `c`; no `TauRhoHodgeLift` /
 `TauStdIntertwiner` instance is registered for the actual τ. `1/(8π)` stays a
 phase-4 identification; nothing is wired.
 
--- Ref: [manuscript] prop:em-coupling-bring-zero-mode
+-- Ref: [leitner2026] prop:em-coupling-bring-zero-mode
 -- Ref: [serre1977] Linear Representations of Finite Groups (Schur's lemma)
 -/
 import Mathlib.Data.Matrix.Basic

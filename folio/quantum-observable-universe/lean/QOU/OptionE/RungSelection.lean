@@ -37,7 +37,7 @@ that the candidate rule actually closes deuteron lives in
 `DeuteronVerification.lean`.
 
 Refs:
-- [manuscript] docs/audits/2026-05-18-delta-lambda-gating-context.md
+- [leitner2026] docs/audits/2026-05-18-delta-lambda-gating-context.md
 - [kashiwara1991] DOI 10.1215/S0012-7094-91-06321-0
 -/
 

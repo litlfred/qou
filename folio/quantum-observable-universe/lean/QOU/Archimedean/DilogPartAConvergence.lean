@@ -22,7 +22,7 @@ error, B3.4 tail control, B3.5 the `ArchimedeanLimit` instance) build on B3.1.
 No `ArchimedeanLimit` instance is fabricated — the convergence is proved, not
 axiomatised.
 
--- Ref: [manuscript] conj:dilogarithm-archimedean-limit
+-- Ref: [leitner2026] conj:dilogarithm-archimedean-limit
 -/
 
 namespace QOU.Archimedean

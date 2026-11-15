@@ -71,7 +71,7 @@ baseline `½(q + q⁻¹)`).  All three conjuncts are *derived* from `q > 1`
 (no unused hypothesis: the weight asymmetry, the correction identity,
 and the positivity each follow from the single premise). -/
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
--- Ref: [manuscript] quantum-observable-universe/climax-volume-mass/skein-crossing-asymmetry-prop.md
+-- Ref: [leitner2026] quantum-observable-universe/climax-volume-mass/skein-crossing-asymmetry-prop.md
 theorem skein_crossing_asymmetry (q : ℝ) (hq : 1 < q) :
     q⁻¹ < q ∧
     q - (1 / 2) * (q + q⁻¹) = coulombCorrection q ∧

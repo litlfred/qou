@@ -121,7 +121,7 @@ For atom-knot identification at $n = 18$ ($p(n) = 385$, $\max\dim_\lambda \appro
 this drops the per-isotope compute time from
 
     The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/wenzl-qmn-synergy.ts
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/wenzl-qmn-synergy.ts
 def wenzl_qmn_synergy [ctx : WenzlQmnSynergyContext] :
     10000 ≤ ctx.wenzl_speedup ∧
     100 ≤ ctx.qmn_speedup ∧

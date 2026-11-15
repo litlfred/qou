@@ -49,7 +49,7 @@ and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms. Routes 1–4 in
 `qou-0yqu` are dead and Route 5 is a restatement, not a solution; the route that
 worked was the complex five-term identity (Routes 51–70).
 
--- Ref: [manuscript] bean qou-0yqu Route 5; docs/coordination/1ppq-qbeta.md
+-- Ref: [leitner2026] bean qou-0yqu Route 5; docs/coordination/1ppq-qbeta.md
 -/
 import Mathlib.Analysis.SpecialFunctions.Complex.Log
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic

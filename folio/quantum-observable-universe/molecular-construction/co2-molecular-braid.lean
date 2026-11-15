@@ -1,4 +1,4 @@
--- Ref: [manuscript] Ch. 10, §co2-molecular-braid
+-- Ref: [leitner2026] Ch. 10, §co2-molecular-braid
 -- Carbon dioxide CO₂ as a molecular braid
 
 namespace QOU.Molecular

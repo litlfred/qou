@@ -11,7 +11,7 @@
 | Discrepancy (corrected)                  |                                        | $-468\;\mathrm{ppb}$ |
 
 *Refreshed 2026-08-29 to the proton pin and CODATA 2022.* Every cell is recomputed
-from [`alpha_em_form_comparison_probe.py`](computations/alpha/alpha_em_form_comparison_probe.py)
+from [`alpha_em_form_comparison_probe.py`](../../../computations/alpha/alpha_em_form_comparison_probe.py)
 and the canonical `alpha_em_inv_derived`, and the table is now internally
 consistent: $10.3635176 \times 11.8942752 = 123.266530$. The previous cells were
 drifted and did **not** multiply out — they showed $[9]_q[10]_q = 123.257$ against

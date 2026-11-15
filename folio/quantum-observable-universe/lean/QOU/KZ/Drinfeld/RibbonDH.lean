@@ -24,7 +24,7 @@ Stages S5–S6 of bean `qou-zoyv`. Sorry-free.
 * `qDim_V_eq_qint_two` — `qDimTwistedWith V Vᘁ = (q + q⁻¹)·𝟙_𝟙`, `q = e^{iπℏ}`.
   Convention: `θ_V = e^{3iπℏ/2} = q^{C_V}`, `C_V = 3/2`.
 
--- Ref: [manuscript] beans/defs/qou-zoyv (stages S5, S6)
+-- Ref: [leitner2026] beans/defs/qou-zoyv (stages S5, S6)
 -/
 
 noncomputable section

@@ -77,7 +77,7 @@ to any dashboard.  Standalone library file (like its dependency
 `FiveTwoDTSpectrumSplit`), verified `lean`-direct; **not** added to the `QBeta`
 aggregator.
 
--- Ref: [manuscript] docs/audits/2026-08-02-fibre-habiro-q1-centring-verdict.md
+-- Ref: [leitner2026] docs/audits/2026-08-02-fibre-habiro-q1-centring-verdict.md
 -- Ref: [garoufalidis-gu-marino2021] GGM 2012.00062 (5₂ DT spectrum, eqs 96/97/98)
 -/
 

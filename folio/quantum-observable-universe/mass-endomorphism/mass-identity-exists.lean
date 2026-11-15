@@ -11,7 +11,7 @@ LaTeX: `\label{prop:mass-identity-exists}`
 
 ## References
 
-- [manuscript] §5-lifting-and-descent/mass-identity-exists
+- [leitner2026] §5-lifting-and-descent/mass-identity-exists
 - [kock2004] Frobenius Algebras and 2D TQFT, Ch 2
 -/
 

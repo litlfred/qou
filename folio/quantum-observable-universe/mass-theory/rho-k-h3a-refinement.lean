@@ -169,7 +169,7 @@ theorem rho_k_abs_tr_M_pos (h : inst.atomData.abs_tr_M ≠ 0) :
     0 < inst.atomData.abs_tr_M :=
   lt_of_le_of_ne inst.abs_tr_M_nonneg (Ne.symm h)
 
--- Ref: [manuscript] prop:rho-k-h3a-refinement
+-- Ref: [leitner2026] prop:rho-k-h3a-refinement
 /-- **The refinement identity in quotient form.** Derived from the division-free
     H1 by discharging the nonvanishing of `|tr_M(β_K)|`, which is a real side
     condition — see `rho_k_refinement_degenerate`. -/

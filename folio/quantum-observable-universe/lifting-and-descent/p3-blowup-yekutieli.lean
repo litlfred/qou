@@ -32,7 +32,7 @@ existence of a finite obstruction level `n*` at which lifting first fails.
   (vanishing of obstruction classes in an abelian group `B`); no
   archimedean structure is used.
 
--- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/p3-blowup-yekutieli.md
+-- Ref: [leitner2026] quantum-observable-universe/lifting-and-descent/p3-blowup-yekutieli.md
 -- Ref: [yekutieli2010] https://doi.org/10.1007/s00029-010-0029-8
 -/
 
@@ -66,7 +66,7 @@ class BlowupYekutieli where
     - blowup (non-smoothness) ⟺ existence of a finite obstruction level
       `n*` with `κ_{n*}(v) ≠ 0` — *derived* from the first by
       contraposition + `not_forall`. -/
--- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/p3-blowup-yekutieli.md
+-- Ref: [leitner2026] quantum-observable-universe/lifting-and-descent/p3-blowup-yekutieli.md
 theorem blowup_yekutieli [ctx : BlowupYekutieli] :
     (ctx.smooth ↔ ∀ n : ℕ, ctx.obstruction n = 0)
       ∧ (¬ ctx.smooth ↔ ∃ n : ℕ, ctx.obstruction n ≠ 0) := by

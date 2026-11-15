@@ -97,8 +97,8 @@ interface is ~2.7× too large.
 The purely algebraic half (`μ₊ + μ₋ = 1`) already lives over a generic `R` in
 `InterfaceScalar.mu_sum_eq_one` and is not restated here.
 
--- Ref: [manuscript] computations/probes/ribbon_twist_t_selective_probe.py
--- Ref: [manuscript] computations/probes/framing_derivation_attempt_probe.py
+-- Ref: [leitner2026] computations/probes/ribbon_twist_t_selective_probe.py
+-- Ref: [leitner2026] computations/probes/framing_derivation_attempt_probe.py
 -- Ref: [machleidt2001] https://doi.org/10.1103/PhysRevC.63.024001
 -/
 

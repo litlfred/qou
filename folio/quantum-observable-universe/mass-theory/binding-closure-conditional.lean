@@ -25,7 +25,7 @@ LaTeX label: `thm:binding-closure-conditional`.
 
 ## References
 
-- [manuscript] §mass-theory/binding-closure-conditional
+- [leitner2026] §mass-theory/binding-closure-conditional
 
 **Ground ring**: `ℝ` (binding energies). See `GroundRingAnnotations.lean`.
 -/
@@ -56,7 +56,7 @@ class BindingClosureInput where
 /-- **Binding closure (conditional on B).** The total binding is `m_e`
     times the sum of the prolonged Seiberg–Witten periods. Proved from the
     class; the instance is input (B). -/
--- Ref: [manuscript] §mass-theory/binding-closure-conditional
+-- Ref: [leitner2026] §mass-theory/binding-closure-conditional
 theorem binding_closure_conditional [H : BindingClosureInput] :
     H.total = H.m_e * ∑ n ∈ Finset.range H.maxOrder, H.swPeriod n := by
   rw [H.body_is_series, Finset.mul_sum]

@@ -55,7 +55,7 @@ of level `n`, as in `HeckeColimit`.
 Generic `[CommRing K]`, `q qi : K` with `q * qi = 1`.  No ordering, no `ℝ`.
 
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
--- Ref: [manuscript] beans qou-5zl1 / qou-0fmb / qou-ejde; `HeckeColimitMarkovTrace`.
+-- Ref: [leitner2026] beans qou-5zl1 / qou-0fmb / qou-ejde; `HeckeColimitMarkovTrace`.
 -/
 
 namespace QOU.SchurWeyl.HeckeColimitFamilyTrace

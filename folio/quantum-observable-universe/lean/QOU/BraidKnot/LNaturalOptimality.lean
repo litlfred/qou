@@ -42,7 +42,7 @@ which `LNaturalConcaveForm` proves for the arc's objective (`concave_exchange_in
 Values lie in any linearly ordered cancellative additive monoid (§7c: an order is needed; no ring,
 no `ℝ`).
 
--- Ref: [manuscript] computations/deltalambda/rev_e_infinity_xbot_lnatural_probe.py (M5);
+-- Ref: [leitner2026] computations/deltalambda/rev_e_infinity_xbot_lnatural_probe.py (M5);
 --      Murota, Discrete Convex Analysis (SIAM 2003), Thm 7.14 (not held in the corpus).
 -/
 

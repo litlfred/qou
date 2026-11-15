@@ -15,7 +15,7 @@ inherited from A, and (C, J¹(A), ω') is again a QOU.
 
 ## References
 
-- [manuscript] §3 Proposition: Jet Prolongation
+- [leitner2026] §3 Proposition: Jet Prolongation
 - [fred2005] Strong multiplicativity / Gröbner–Shirshov deformation
 -/
 
@@ -35,8 +35,8 @@ universe u v
     4. Adjoint vanishing: Ad(A) = 0 implies Ad(J¹(A)) = 0.
 
     LaTeX: `\label{prop:jet-prolongation}`
-    Ref: [manuscript] §3 -/
--- Ref: [manuscript] §3
+    Ref: [leitner2026] §3 -/
+-- Ref: [leitner2026] §3
 -- Ref: [fred2005] Integration of Skewed-Poisson Structures on Non-co — see folio/schema/references.ts
 structure JetProlongation (C : Type u) [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
@@ -72,7 +72,7 @@ structure JetProlongation (C : Type u) [CategoryTheory.Category.{v} C]
     project to a non-zero invariant in Ad(A), contradicting the hypothesis.
 
     LaTeX: `\label{prop:jet-prolongation}` (conclusion) -/
--- Ref: [manuscript] §3
+-- Ref: [leitner2026] §3
 theorem jet_prolongation_preserves_observability
     {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]

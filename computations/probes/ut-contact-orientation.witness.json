@@ -1,0 +1,143 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-10-12T20:07:02.598300+00:00",
+  "commitSha": "670ff8c6586b485c3724cc385325c9ae91339c25",
+  "assertions": [
+    {
+      "name": "contact_volume_eq_minus_one_over_y_squared",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean contact_volume_coeff"
+    },
+    {
+      "name": "isometry_lift_preserves_alpha: conjugation z -> -conj(z)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "α is metric-defined"
+    },
+    {
+      "name": "isometry_lift_preserves_alpha: dilation z -> lambda z",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "α is metric-defined"
+    },
+    {
+      "name": "isometry_lift_preserves_alpha: inversion z -> -1/z",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "α is metric-defined"
+    },
+    {
+      "name": "conjugation_lift_is_orientation_preserving",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean iota_lift_det"
+    },
+    {
+      "name": "geodesic_spray_is_reeb_alpha_R_eq_1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean reeb_alpha_eq_one"
+    },
+    {
+      "name": "geodesic_spray_is_reeb_contraction_zero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean reeb_contraction_zero"
+    },
+    {
+      "name": "dalpha_components_match_lean_hand_entries",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "hand-entered derivatives in BringUTContactChirality.lean"
+    },
+    {
+      "name": "spray_at_theta_pi_over_2_is_vertical_geodesic",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "x = const is a geodesic of the upper half-plane"
+    },
+    {
+      "name": "fibre_contact_volume_eq_plus_one_over_y_squared",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean fibre_contact_volume_coeff"
+    },
+    {
+      "name": "two_contact_orientations_opposite",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean contact_orientations_opposite"
+    },
+    {
+      "name": "fibre_is_reeb_of_eta",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "η(∂θ) = 1, ι_∂θ dη = 0"
+    },
+    {
+      "name": "legendrian_duality",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean legendrian_duality"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 15,
+  "computation": "ut-contact-orientation",
+  "scriptFile": "ut_contact_orientation_probe.py",
+  "scriptHash": "f0158c7169d0",
+  "scriptCommitSha": "670ff8c6586b485c3724cc385325c9ae91339c25",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "cd378682bfd642d0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/ut_contact_orientation_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/ut_contact_orientation_probe.py"
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "differential geometry of the unit tangent bundle of the hyperbolic plane; never reads q",
+  "description": "PROBE (bean qou-jfx8): α ∧ dα = −(1/y²) dx∧dy∧dθ for the Liouville form of the geodesic flow; conjugation z ↦ −z̄ lifts to a strict contactomorphism with Jacobian det +1; dilation and inversion also preserve α. So UT(Σ₄) carries a canonical contact orientation that conjugation preserves.",
+  "contact_volume_coefficient": "-1/y**2",
+  "isometry_lifts": {
+    "conjugation z -> -conj(z)": {
+      "pullback_equals_alpha": true,
+      "jacobian_det": "1"
+    },
+    "dilation z -> lambda z": {
+      "pullback_equals_alpha": true,
+      "jacobian_det": "lambda**2"
+    },
+    "inversion z -> -1/z": {
+      "pullback_equals_alpha": true,
+      "jacobian_det": "1/(x**4 + 2*x**2*y**2 + y**4)"
+    }
+  }
+}

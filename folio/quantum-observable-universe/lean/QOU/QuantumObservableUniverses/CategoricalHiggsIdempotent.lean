@@ -132,6 +132,6 @@ instance** (which would require a `sorry`): downstream theorems take
 `m_W_over_m_Z_eq_cos_theta_W`, proved conditionally above).  This removes
 the naked `sorry` without asserting the open conjecture.
 
-Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/categorical-higgs-idempotent.ts -/
+Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes/categorical-higgs-idempotent.ts -/
 
 end QOU.QuantumObservableUniverses

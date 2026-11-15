@@ -27,7 +27,7 @@ truncation ($1.8880423$). They were stale, not wrong. The rows above are the **p
 the tower resummed in closed form, matching
 [the Chern-Simons block](#rem:em-coupling-chern-simons), which already carried
 the resummation and the re-pin. Reproduce every entry with
-[`alpha_em_form_comparison_probe.py`](computations/alpha/alpha_em_form_comparison_probe.py).
+[`alpha_em_form_comparison_probe.py`](../../../computations/alpha/alpha_em_form_comparison_probe.py).
 
 ## Why both prior attempts fail
 

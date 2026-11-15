@@ -206,7 +206,7 @@ theorem markov_iterated_stab_real (q : ℝ) (hq : 0 < q)
 
     This DISCHARGES the `MarkovDisjointStabilisation` axiomatic class
     used in `prop:categorical-chain-convergence-mechanisms` (Mechanism 2). -/
--- Ref: [manuscript] prop:categorical-chain-convergence-mechanisms §"Mechanism 2"
+-- Ref: [leitner2026] prop:categorical-chain-convergence-mechanisms §"Mechanism 2"
 -- Ref: [jones1985] doi:10.2307/1971403   (Markov axioms M1–M4)
 theorem disjoint_product_factorisation_gen {R : Type*} [Field R]
     (z : R) (τ_K1 τ_K2 : R) (k : ℕ) :

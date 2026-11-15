@@ -28,5 +28,5 @@ the optimum is standard convex duality.
 
 The Lean sibling encodes the data as `ConfinementSDPData` and states
 `confinement_sdp` conditional on `slaterStrictFeasible`; the conic-duality
-step is deferred there via `sorry` (`-- Ref: [manuscript]`), pending a
+step is deferred there via `sorry` (`-- Ref: [leitner2026]`), pending a
 Mathlib SDP strong-duality API. $\square$

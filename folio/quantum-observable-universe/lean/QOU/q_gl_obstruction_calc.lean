@@ -121,7 +121,7 @@ $\kappa_0 = e(\xi) \in H^2(\mathcal{S}, \mathbb{G}_m)$.  Then:
    arithmetic half `kummer_divisibility_criterion`;
 4. for `χ(A) ≠ 0` the obstruction persists at arbitrarily large Kummer
    levels — **proved** from `obstruction_cofinite_persistence` + (3). -/
--- Ref: [manuscript] quantum-observable-universe/q-geometric-langlands/q-gl-obstruction-calc.ts
+-- Ref: [leitner2026] quantum-observable-universe/q-geometric-langlands/q-gl-obstruction-calc.ts
 theorem q_gl_obstruction_calc (ctx : QGlObstructionCalcContext R) :
     (¬ ctx.kappa_zero → ctx.F_intr ≠ 0) ∧
     (ctx.q_flat ↔ ctx.R_connection = 0) ∧
@@ -144,12 +144,12 @@ theorem q_gl_obstruction_calc (ctx : QGlObstructionCalcContext R) :
   · -- Part 1: F^{intr}_q = HKR⁻¹(κ₀) ≠ 0 when κ₀ ≠ 0.  Geometric
     -- (Hochschild–Kostant–Rosenberg comparison); not covered by the
     -- arithmetic core.
-    -- Ref: [manuscript] prop:q-gl-obstruction-calc
+    -- Ref: [leitner2026] prop:q-gl-obstruction-calc
     exact ctx.intrinsic_curvature_nonzero
   · -- Part 2: q-flatness ↔ vanishing connection-dependent curvature.
     -- Geometric (def:q-flat-connection); not covered by the
     -- arithmetic core.
-    -- Ref: [manuscript] prop:q-gl-obstruction-calc
+    -- Ref: [leitner2026] prop:q-gl-obstruction-calc
     exact ctx.q_flatness_equiv
   · -- Part 4: PROVED from obstruction_cofinite_persistence + part 3.
     intro N

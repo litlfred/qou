@@ -20,7 +20,7 @@ theorem first_order_transition
     (h_borr : inv.milnor_mu borromean = 1)
     (h_hopf : inv.milnor_mu hopf_cfl = 0) :
     |inv.milnor_mu borromean - inv.milnor_mu hopf_cfl| = 1 := by
-  -- Ref: [manuscript] conj:color-superconductivity-borromean
+  -- Ref: [leitner2026] conj:color-superconductivity-borromean
   rw [h_borr, h_hopf]; decide
 
 end QOU.Archimedean

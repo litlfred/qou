@@ -15,7 +15,7 @@ LaTeX label: `ex:fiber-adjoint-su2`
 ## References
 
 - [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
-- [manuscript] §1 Example: Fiber–adjoint involution
+- [leitner2026] §1 Example: Fiber–adjoint involution
 
 **Ground ring**: `ℝ` (geometric/analytic realisation).
 Uses ℝ-specific analysis (trig, norms, real powers).
@@ -46,7 +46,7 @@ structure SU2FiberAdjointData where
   embedding_mono : orbitDim < adjointDim
 
 /-- The fiber–adjoint data for SU(2). -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 def su2FiberAdjoint : SU2FiberAdjointData where
   adjointDim := 3
   adj_dim := rfl

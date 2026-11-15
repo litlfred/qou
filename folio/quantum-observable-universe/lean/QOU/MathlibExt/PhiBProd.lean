@@ -33,7 +33,7 @@ shift) is proved unconditionally.  Route decision + follow-up:
 
 -- Ref: [faddeev1995] Faddeev, Lett. Math. Phys. 34 (1995) 249.
 --        https://doi.org/10.1007/BF01872779
--- Ref: [manuscript] docs/audits/2026-07-11-phib-lean-route-memo.md
+-- Ref: [leitner2026] docs/audits/2026-07-11-phib-lean-route-memo.md
 -/
 
 namespace QOU.MathlibExt.PhiBProd

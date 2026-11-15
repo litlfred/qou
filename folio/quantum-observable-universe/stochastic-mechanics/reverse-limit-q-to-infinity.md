@@ -23,7 +23,7 @@ The conjecture is that this is a true categorical duality. Every Kashiwara cryst
 
 ## Significance
 
-If matter is identified with Kashiwara crystal fixed points (at $q \to 0$), antimatter corresponds to reverse-crystal fixed points (at $q \to \infty$), and the bar involution swaps them. This gives a structural source for matter-antimatter conjugation orthogonal to the colour-tube charge-conjugation action of [`conj:c-from-color-flavor-swap`](c-from-color-flavor-swap.md).
+If matter is identified with Kashiwara crystal fixed points (at $q \to 0$), antimatter corresponds to reverse-crystal fixed points (at $q \to \infty$), and the bar involution swaps them. This gives a structural source for matter-antimatter conjugation orthogonal to the colour-tube charge-conjugation action of [`conj:c-from-color-flavor-swap`](../brings-surface/c-from-color-flavor-swap.md).
 
 ## Diagnostics
 

@@ -45,7 +45,7 @@ The converse (multiplicativity ⇒ weight identity) needs linear independence of
 products `χ_μ ⊗ χ_ν` and is not stated. Nothing here selects a word, an operator
 `K`, or a weight family; `c` is data, not derived.
 
--- Ref: [manuscript] prop:frobenius-pairing; def:markov-axioms-primitive;
+-- Ref: [leitner2026] prop:frobenius-pairing; def:markov-axioms-primitive;
    QOU/MassTheory/BlockMeasureFromFrobeniusPairing.lean
 -/
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic

@@ -28,7 +28,7 @@ make it available to typeclass inference.
 
 ## References
 
-- [manuscript] §q-deformed Aubin--Lions lemma: compactness of the solution family as q → 1, `conj:q-aubin-lions`
+- [leitner2026] §q-deformed Aubin--Lions lemma: compactness of the solution family as q → 1, `conj:q-aubin-lions`
 -/
 
 namespace QOU.FluidDynamics
@@ -66,7 +66,7 @@ namespace QOU.FluidDynamics
     along it; `energyLimit` and `energyInitial` are `‖v*‖²` and `‖v₀‖²`;
     `singularDim` is the Hausdorff dimension of the singular set of `v*`.
 
-    Ref: [manuscript] §q-deformed Aubin--Lions lemma: compactness of the
+    Ref: [leitner2026] §q-deformed Aubin--Lions lemma: compactness of the
     solution family as q → 1, `conj:q-aubin-lions` -/
 class QAubinLions (qSeq : ℕ → ℝ) (convergenceGap : ℕ → ℝ)
     (energyLimit energyInitial : ℝ) (singularDim : ℝ) : Prop where

@@ -2,7 +2,7 @@ The isotope $^{18}\mathrm{O}$ ($Z = 8$, $N = 10$, $A = 18$) is the canonical sin
 
 ## $Z$-block (saturated)
 
-The proton count $Z = 8$ is magic. By [`prop:categorical-neutrality-saturated-shells`](../braids-and-knots/categorical-neutrality-saturated-shells.md), the categorical mass at level $8$ is supported on a single self-conjugate partition. The relevant partition is
+The proton count $Z = 8$ is magic. By [`prop:categorical-neutrality-saturated-shells`](../mass-endomorphism/categorical-neutrality-saturated-shells.md), the categorical mass at level $8$ is supported on a single self-conjugate partition. The relevant partition is
 
 $$
   \lambda_{Z=8} \;=\; (3, 2, 2, 1) \;=\; \lambda_{Z=8}'.

@@ -30,7 +30,7 @@ LaTeX label: `lem:qou-exists-axiom-4`
 
 ## References
 
-- [manuscript] §1 Quantum Observable Universe, Axiom 4
+- [leitner2026] §1 Quantum Observable Universe, Axiom 4
 -/
 
 open scoped CategoryTheory CategoryTheory.MonoidalCategory
@@ -51,7 +51,7 @@ universe u v
     field — an isomorphism `Λ²V ≅ 𝟙` realising the non-degenerate
     epimorphism that pins the categorical determinant.  This is
     the categorical formulation of the `SL(2)` gauge restriction. -/
--- Ref: [manuscript] §1 Quantum Observable Universe, Axiom 4
+-- Ref: [leitner2026] §1 Quantum Observable Universe, Axiom 4
 -- NOTE: `def`, not `theorem` — a Hom-set `Q.exteriorSquare ⟶ (𝟙_ Q.C)`
 -- is a `Type _` (morphisms are data, not propositions).  Per Copilot
 -- review on PR #794.

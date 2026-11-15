@@ -19,7 +19,7 @@ export default corollary({
   authorNotes: [
     {
       kind: "status",
-      body: "The companion Lean `lr_tensor_character_bridge` currently records a placeholder conclusion (`1 = 1`) rather than the full Littlewood--Richardson character-bridge identity; the content above is the intended statement, deferred via `sorry` (`-- Ref: [manuscript]`).",
+      body: "The companion Lean `lr_tensor_character_bridge` currently records a placeholder conclusion (`1 = 1`) rather than the full Littlewood--Richardson character-bridge identity; the content above is the intended statement, deferred via `sorry` (`-- Ref: [leitner2026]`).",
     },
   ],
 });

@@ -1,4 +1,4 @@
--- Ref: [manuscript] Ch. 4, Borromean baryon section
+-- Ref: [leitner2026] Ch. 4, Borromean baryon section
 -- Substrate identity for the proton-neutron Skein difference.
 -- Conditional on conj:borromean-baryon-mass-formula via the
 -- BorromeanCommonScale class hypothesis
@@ -59,7 +59,7 @@ def deltaMassOverMe (q_beta m_e : ℝ) : ℝ :=
     to 1015 ppm vs the direct Kauffman-bracket evaluation of
     `skeinContribution(neutron) − skeinContribution(proton)` at q₀.
 
-    Ref: [manuscript] Borromean baryon mass formula, common-scale
+    Ref: [leitner2026] Borromean baryon mass formula, common-scale
     Skein-difference identity. -/
 -- Dropped the unused hypothesis `h_me : m_e ≠ 0` (2026-08-22; vacuity ledger,
 -- `proof-no-unused-hypothesis-rfl`).  The right-hand side is the definitional

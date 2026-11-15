@@ -23,7 +23,7 @@ namespace QOU
     `↥` is the subtype coercion: `U1OrbitSpace` is a `Type` whose
     elements are real numbers carrying a proof that they lie in
     `[0, π]`. -/
--- Ref: [manuscript] Chapter 3, §Varying Euler + mirror bundle
+-- Ref: [leitner2026] Chapter 3, §Varying Euler + mirror bundle
 abbrev U1OrbitSpace : Type := ↥(Set.Icc (0 : ℝ) Real.pi)
 
 /-- The polar fixed points of the U(1) action: φ = 0 and φ = π.
@@ -32,7 +32,7 @@ abbrev U1OrbitSpace : Type := ↥(Set.Icc (0 : ℝ) Real.pi)
 
     For `x : U1OrbitSpace`, `x.val : ℝ` is the underlying real number
     (the wrapper around a real carrying the Icc membership proof). -/
--- Ref: [manuscript] Chapter 3, §Varying Euler + mirror bundle
+-- Ref: [leitner2026] Chapter 3, §Varying Euler + mirror bundle
 def polarFixedPoints : Set U1OrbitSpace :=
   { x | x.val = 0 ∨ x.val = Real.pi }
 
@@ -51,13 +51,13 @@ def polarFixedPoints : Set U1OrbitSpace :=
     equalities (`x.val = 0 ∨ x.val = Real.pi`), which is not
     algorithmically decidable; the case split is justified classically,
     hence the `Classical` instance and `noncomputable`. -/
--- Ref: [manuscript] Chapter 3, §Varying Euler + mirror bundle
+-- Ref: [leitner2026] Chapter 3, §Varying Euler + mirror bundle
 noncomputable def PhaseFiber (φ : U1OrbitSpace) : Type :=
   open Classical in
   if φ ∈ polarFixedPoints then Unit else Unit  -- interior placeholder
 
 /-- The polar fixed-point fibre is `Unit` (collapsed). -/
--- Ref: [manuscript] Chapter 3, §Varying Euler + mirror bundle
+-- Ref: [leitner2026] Chapter 3, §Varying Euler + mirror bundle
 theorem phaseFiber_polar (φ : U1OrbitSpace) (h : φ ∈ polarFixedPoints) :
     PhaseFiber φ = Unit := by
   unfold PhaseFiber

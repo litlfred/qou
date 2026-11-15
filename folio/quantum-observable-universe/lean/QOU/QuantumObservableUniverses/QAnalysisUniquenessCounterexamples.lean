@@ -60,7 +60,7 @@ how these six arose.
 ## References
 
 - [kassel1995] Quantum Groups (Springer GTM 155), §III.3, §IV.3
-- [manuscript] docs/audits/2026-09-06-q-analysis-uniqueness-axioms-are-false.md
+- [leitner2026] docs/audits/2026-09-06-q-analysis-uniqueness-axioms-are-false.md
 -/
 
 namespace QOU.QAnalysisCounterexamples

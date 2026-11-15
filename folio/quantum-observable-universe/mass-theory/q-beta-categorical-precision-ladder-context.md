@@ -1,7 +1,7 @@
 The per-rung coefficients $c_k$ below are the Taylor coefficients of the
 finite Habiro sum $\sum_{m=0}^{M} a_m(u)\,(u;u)_m$ with $a_m \in \mathbb{Z}[u]$
 and $M = 8$ for the proton and neutron
-([Habiro–ladder equivalence](../../braids-and-knots/habiro-precision-ladder-equivalence.md)).
+([Habiro–ladder equivalence](habiro-precision-ladder-equivalence.md)).
 The exact evaluation uses that sum directly, with no rung-by-rung truncation;
 the ladder records how the per-rung structure arises.
 

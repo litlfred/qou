@@ -99,7 +99,7 @@ The closed-form identity itself is a `ℚ(q)` fact; it would state over any
 field of characteristic zero, and does so the moment `gramMatrixD` does.
 
 Ref: [halverson_ram_1998] Hoefsmit seminormal Gram on H_3(q)
-Ref: [manuscript] docs/coordination/trace-convention-registry.md
+Ref: [leitner2026] docs/coordination/trace-convention-registry.md
 Ref: bean `qou-cds2` ("S2 (SCIENCE): `pyhecke.gram.z` and the Gram
      singularity"), whose 2026-08-30 entry names this determinant as the last
      open Lean item; bean `qou-pmkh` (the four C-premised computation sites

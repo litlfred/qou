@@ -52,7 +52,7 @@ Linearity of the partial trace (`ptrTwistWith_sub`, `ptrTwistWith_smul`) needs
   needs a quantum-group or KZ category, which is bean `qou-zoyv`.
 * Base ring (§7c): a generic field `k`; nothing archimedean.
 
--- Ref: [manuscript] docs/audits/2026-10-11-drinfeld-kohno-sl2-via-emvz.md (Step 2)
+-- Ref: [leitner2026] docs/audits/2026-10-11-drinfeld-kohno-sl2-via-emvz.md (Step 2)
 -/
 
 namespace QOU.MathlibExt

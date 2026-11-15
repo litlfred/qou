@@ -25,7 +25,7 @@ reduction:
 
 Generic field-valued (`ℚ`); purely algebraic. Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-06-28-wlambda-identity-i-rescope-no-hlf.md
+-- Ref: [leitner2026] docs/audits/2026-06-28-wlambda-identity-i-rescope-no-hlf.md
 -/
 import Mathlib.Tactic
 

@@ -41,7 +41,7 @@ No `q₀`, no AME target, zero free parameters, nothing inverted.
 ## References
 - Ref: [yekutieli2015] https://doi.org/10.1142/9537 — non-abelian
   multiplicative integration and Stokes on surfaces.
-- Ref: [manuscript] germ-commutator-q-curvature (`F_q = [δq₁, δq₂]`).
+- Ref: [leitner2026] germ-commutator-q-curvature (`F_q = [δq₁, δq₂]`).
 - Companion discrete-holonomy (boundary / 1-form) layer:
   `QOU.MathlibExt.YekutieliIntegration`.
 

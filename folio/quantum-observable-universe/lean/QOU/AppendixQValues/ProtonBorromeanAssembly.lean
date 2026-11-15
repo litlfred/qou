@@ -31,7 +31,7 @@ theorem composes them into the observed linear factor. Generic `[CommRing R]`
 (§7c, no archimedean structure); sorry-free modulo the class instance.
 
 -- @conjecture: primary
--- Ref: [manuscript] quantum-observable-universe/appendix-qvalues/proton-borromean-assembly.md
+-- Ref: [leitner2026] quantum-observable-universe/appendix-qvalues/proton-borromean-assembly.md
 -/
 
 namespace QOU.AppendixQValues
@@ -69,7 +69,7 @@ Given the conjectural Borromean assembly, the proton mass equals the published
 flat form `2·m_μ·F_Bor − 12·m_e`; the concrete integers are DERIVED
 (`2 = multiplicity`, `12 = multiplicity · bindingCount = 2 · 6`), not assumed.
 Sorry-free modulo the single class instance. -/
--- Ref: [manuscript] quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.md
+-- Ref: [leitner2026] quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.md
 theorem proton_mass_substrate_identity (R : Type*) [CommRing R]
     [A : ProtonBorromeanAssembly R] :
     A.protonMass = 2 * A.mMu * A.fBor - 12 * A.mE := by

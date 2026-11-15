@@ -17,8 +17,8 @@
   (Macdonald, Stanley EC2, Ariki) supply the proof; QOU consumes
   the result as a hypothesis class.
 
-  Ref: [manuscript] prop:lr-coefficient-hecke
-       [manuscript] prop:crystal-r-matrix-sub-lemma
+  Ref: [leitner2026] prop:lr-coefficient-hecke
+       [leitner2026] prop:crystal-r-matrix-sub-lemma
        [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors",
        Invent. Math. 92 (1988) 349-383
        [ariki1996] Ariki, "Representations of quantum algebras",
@@ -99,7 +99,7 @@ theorem lr_coefficient_hecke_non_negative
 theorem lr_coefficient_hecke_trivial_case
     [hLR : LRCoefficientHecke] (mu : Partition) :
     hLR.coeff mu mu [] = 1 :=
-  -- Ref: [manuscript] prop:lr-coefficient-hecke
+  -- Ref: [leitner2026] prop:lr-coefficient-hecke
   hLR.coeff_trivial mu
 
 end QOU.BraidKnot

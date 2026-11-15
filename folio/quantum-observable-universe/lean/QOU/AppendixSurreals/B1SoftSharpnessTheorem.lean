@@ -32,7 +32,7 @@ class B1SoftSharpnessContext where
 /-- **Proposition (`prop:b1-soft-sharpness-theorem`).**
     `depth_Mikusinski ≤ depth_Goncharov` follows unconditionally
     from Borel + Lewin's polylog non-vanishing. -/
--- Ref: [manuscript] quantum-observable-universe/appendix-surreals/b1-soft-sharpness-theorem.md
+-- Ref: [leitner2026] quantum-observable-universe/appendix-surreals/b1-soft-sharpness-theorem.md
 theorem b1_soft_sharpness [ctx : B1SoftSharpnessContext] :
     ctx.depth_Mikusinski ≤ ctx.depth_Goncharov :=
   ctx.depth_bound_of_nonvanishing ctx.lewin_nonvanishing

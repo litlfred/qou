@@ -1,7 +1,7 @@
 /-
   Surreal squeeze — `δ² · ε⁻¹ > ε³`.
 
-  Ref: [manuscript] §Algebraic substrate / Surreal squeeze, lem:surreal-squeeze
+  Ref: [leitner2026] §Algebraic substrate / Surreal squeeze, lem:surreal-squeeze
 
   ## Rewritten 2026-08-10 — the previous version was a tautology, and it did
   ## not state the `.md`'s claim

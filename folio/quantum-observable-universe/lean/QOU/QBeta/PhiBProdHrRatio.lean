@@ -29,7 +29,7 @@ not impose it.
 Verified `lean`-direct against the Mathlib `Meromorphic.NormalForm` cone + merged `phiBProd`.
 Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-07-26-faddeev-keystone-7xvy-canonical-arc.md
+-- Ref: [leitner2026] docs/audits/2026-07-26-faddeev-keystone-7xvy-canonical-arc.md
 -/
 
 open Complex Filter Topology Set

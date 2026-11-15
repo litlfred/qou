@@ -32,7 +32,7 @@ move `γ` from above `β_𝔋` to below it.
   **not** a field of the context, so the projection-vacuity test is not
   triggered (§3b-cond item 5).
 
--- Ref: [manuscript] quantum-observable-universe/information-theory/photon-threading-mass.md
+-- Ref: [leitner2026] quantum-observable-universe/information-theory/photon-threading-mass.md
 -/
 
 namespace QOU.Information
@@ -69,7 +69,7 @@ class PhotonThreadingMassContext where
 
     `m_𝔋 = (q − 1)² · |q − q⁻¹| · Σ_w |c_w|`, *derived* by substituting
     the crossing-energy definition into mass–energy equivalence. -/
--- Ref: [manuscript] quantum-observable-universe/information-theory/photon-threading-mass.md
+-- Ref: [leitner2026] quantum-observable-universe/information-theory/photon-threading-mass.md
 theorem photon_threading_mass [ctx : PhotonThreadingMassContext] :
     ctx.m_H = (ctx.q - 1) ^ 2 * |ctx.q - ctx.q⁻¹| *
       (Finset.range ctx.n_steps).sum (fun i => ctx.c_w_abs i) := by

@@ -25,7 +25,7 @@ possible. Where convergence requires Mathlib's `Summable`
 infrastructure, we record the convergence as a hypothesis (the
 upstream-Mathlib gap).
 
--- Ref: [manuscript] rem:three-substantive-mathlib-fillers
+-- Ref: [leitner2026] rem:three-substantive-mathlib-fillers
 -- Ref: [zagier1986] DOI 10.1007/BFb0084581
 -- Ref: [bloch2000] AMS CRM Monograph 11
 -/

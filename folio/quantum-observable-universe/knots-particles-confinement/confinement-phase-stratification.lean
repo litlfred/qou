@@ -67,7 +67,7 @@ class ConfinementPhaseStratificationContext (P : ConfinedParticleTy) where
   mu_constant : ∀ (C : Set ℝ), IsConnected C → C ⊆ confinementLocus P →
     ∀ q₁ q₂, q₁ ∈ C → q₂ ∈ C → mu P q₁ = mu P q₂
 
--- Ref: [manuscript] prop:confinement-phase-stratification
+-- Ref: [leitner2026] prop:confinement-phase-stratification
 theorem ConfinementPhaseStratification_open (P : ConfinedParticleTy) [ctx : ConfinementPhaseStratificationContext P] :
     IsOpen (confinementLocus P) := ctx.isOpen
 
@@ -76,7 +76,7 @@ theorem ConfinementPhaseStratification_open (P : ConfinedParticleTy) [ctx : Conf
     
     This theorem requires massive infrastructure (Slater-strict SDP feasibility
     topology and continuity of constraint matrices) and is left as a sorry. -/
--- Ref: [manuscript] prop:confinement-phase-stratification
+-- Ref: [leitner2026] prop:confinement-phase-stratification
 theorem ConfinementPhaseStratification_mu_constant
     (P : ConfinedParticleTy) [ctx : ConfinementPhaseStratificationContext P] (C : Set ℝ)
     (h_comp : IsConnected C) (h_sub : C ⊆ confinementLocus P)
@@ -85,7 +85,7 @@ theorem ConfinementPhaseStratification_mu_constant
   ctx.mu_constant C h_comp h_sub q₁ q₂ h₁ h₂
 
 /-- **Phase stratification (headline).** -/
--- Ref: [manuscript] prop:confinement-phase-stratification
+-- Ref: [leitner2026] prop:confinement-phase-stratification
 theorem ConfinementPhaseStratification (P : ConfinedParticleTy) [ConfinementPhaseStratificationContext P] :
     IsOpen (confinementLocus P) ∧
     ∀ (C : Set ℝ), IsConnected C → C ⊆ confinementLocus P →

@@ -68,7 +68,7 @@ Three things are **not** formalised here, and none of them should be read into t
    spin–flavour–colour selection-rule argument the chapter does not derive; it is already
    recorded as an open item in `sec:eightfold-open-problems`, and nothing here closes it.
 
--- Ref: [manuscript] folio/quantum-observable-universe/eightfold-way/borromean-decuplet-derivation.md
+-- Ref: [leitner2026] folio/quantum-observable-universe/eightfold-way/borromean-decuplet-derivation.md
 -/
 
 namespace QOU.EightfoldWay.SymmetricChannelDimension

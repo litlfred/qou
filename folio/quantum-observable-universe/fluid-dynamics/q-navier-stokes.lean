@@ -1,7 +1,7 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Linarith
 
--- Ref: [manuscript] Ch. 7, §q-navier-stokes
+-- Ref: [leitner2026] Ch. 7, §q-navier-stokes
 -- q-deformed Navier-Stokes equation
 
 noncomputable section

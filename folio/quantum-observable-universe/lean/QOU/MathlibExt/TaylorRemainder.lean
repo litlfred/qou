@@ -24,7 +24,7 @@
   `b` is not required to be on either side of `a` — the bound carries `|b−a|³`
   and both orders are proved.
 
-  -- Ref: [manuscript] QOU/MathlibExt/TrapezoidRule.lean
+  -- Ref: [leitner2026] QOU/MathlibExt/TrapezoidRule.lean
 -/
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus

@@ -96,7 +96,7 @@ theorem variational_einstein {C : Type u} [CategoryTheory.Category.{v} C]
 /-- **Categorical Yang–Mills equation**: the gauge term is critical iff
     `∇ ★_q F + q[F, ★_q F] = J_ψ`.
     Encoded: at a critical point, the gauge term determines the state. -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 theorem variational_yang_mills {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     (fh : FrobeniusHopfData C)
@@ -110,7 +110,7 @@ theorem variational_yang_mills {C : Type u} [CategoryTheory.Category.{v} C]
     Named (§3b), not asserted: the previous
     `(h_critical : P) : P := h_critical` was self-assuming and stated
     nothing about the action. -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 def variational_transport {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     (fh : FrobeniusHopfData C)

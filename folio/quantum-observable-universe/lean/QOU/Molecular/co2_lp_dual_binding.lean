@@ -117,7 +117,7 @@ class Co2SymmetricSelection (ctx : Co2LpDualBindingContext R) : Prop where
     carbon's valence constraint: `k₁ + k₂ = 2 + 2 ≤ 4`.  The LP
     primal-feasibility check, computed from the definitional geometry
     inputs — not a projected hypothesis field. -/
--- Ref: [manuscript] quantum-observable-universe/molecular-construction/co2-lp-dual-binding.md
+-- Ref: [leitner2026] quantum-observable-universe/molecular-construction/co2-lp-dual-binding.md
 theorem co2_carbon_valence_feasible (ctx : Co2LpDualBindingContext R) :
     ctx.k1 + ctx.k2 ≤ 4 := by
   norm_num [ctx.k1_def, ctx.k2_def]
@@ -125,7 +125,7 @@ theorem co2_carbon_valence_feasible (ctx : Co2LpDualBindingContext R) :
 /-- **CO₂ strand count — derived sorry-free.**  The molecular braid
     uses `18 + 2·24 = 66` strands, evaluated from the per-atom
     composition inputs — not a projected definitional field. -/
--- Ref: [manuscript] quantum-observable-universe/molecular-construction/co2-lp-dual-binding.md
+-- Ref: [leitner2026] quantum-observable-universe/molecular-construction/co2-lp-dual-binding.md
 theorem co2_strand_count (ctx : Co2LpDualBindingContext R) :
     ctx.n_strands = 66 := by
   norm_num [ctx.n_strands_def, ctx.strands_C_def, ctx.strands_O_def]
@@ -138,7 +138,7 @@ theorem co2_strand_count (ctx : Co2LpDualBindingContext R) :
     at `c = asym31` and `c = asym13`.  New inequalities on `Φ₁` values,
     obtained by using the quantified hypothesis at two points. -/
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP duality, symmetric optimum)
--- Ref: [manuscript] quantum-observable-universe/molecular-construction/co2-lp-dual-binding.md
+-- Ref: [leitner2026] quantum-observable-universe/molecular-construction/co2-lp-dual-binding.md
 theorem co2_symmetric_beats_asymmetric (ctx : Co2LpDualBindingContext R)
     [hc : Co2SymmetricSelection ctx] :
     ctx.Phi1_config Co2Config.sym ≤ ctx.Phi1_config Co2Config.asym31 ∧
@@ -157,7 +157,7 @@ theorem co2_symmetric_beats_asymmetric (ctx : Co2LpDualBindingContext R)
     derived; the conjectural LP-dual selection enters only as the
     quantified `symmetric_minimises` hypothesis. -/
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP duality, symmetric optimum)
--- Ref: [manuscript] quantum-observable-universe/molecular-construction/co2-lp-dual-binding.md
+-- Ref: [leitner2026] quantum-observable-universe/molecular-construction/co2-lp-dual-binding.md
 theorem co2_lp_dual_binding (ctx : Co2LpDualBindingContext R)
     [hc : Co2SymmetricSelection ctx] :
     ctx.k1 + ctx.k2 ≤ 4 ∧

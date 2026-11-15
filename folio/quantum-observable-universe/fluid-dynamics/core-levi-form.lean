@@ -2,7 +2,7 @@
   Core Levi form, re-scoped onto the vorticity plane field (owner decision
   2026-10-13, "Q1 Θ = f·ξ♭").
 
-  Ref: [manuscript] §Fluid dynamics / Core Levi form, prop:core-levi-form
+  Ref: [leitner2026] §Fluid dynamics / Core Levi form, prop:core-levi-form
 
   ## Setting
 
@@ -115,7 +115,7 @@ For `Θ = f·ξ♭` with unit `ξ`, `C = curl ξ`, `g = ∇f` at a point:
 
 Both conjuncts are derived from `levi_restriction_rank_one` and
 `helicity_rescale`; neither is a hypothesis restated. -/
--- Ref: [manuscript] prop:core-levi-form
+-- Ref: [leitner2026] prop:core-levi-form
 theorem core_levi_form (f : R) (ξ C g v w : Fin 3 → R)
     (hunit : ξ ⬝ᵥ ξ = 1) (hv : ξ ⬝ᵥ v = 0) (hw : ξ ⬝ᵥ w = 0) :
     f * (C ⬝ᵥ (v ⨯₃ w)) = (f * leviScalar ξ C) * (ξ ⬝ᵥ (v ⨯₃ w)) ∧

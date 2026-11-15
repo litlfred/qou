@@ -47,7 +47,7 @@ class GradedBaerStarHq (Hq : Type*) [InvolutiveStar Hq] where
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Per AGENTS.md §3b-cond we provide NO global instance.
--- Ref: [manuscript] quantum-observable-universe/stochastic-mechanics/graded-baer-star-Hq.ts
+-- Ref: [leitner2026] quantum-observable-universe/stochastic-mechanics/graded-baer-star-Hq.ts
 -- noncomputable instance (Hq : Type*) [InvolutiveStar Hq] :
 --     GradedBaerStarHq Hq := sorry
 

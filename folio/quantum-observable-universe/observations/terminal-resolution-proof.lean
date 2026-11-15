@@ -21,7 +21,7 @@ topological prediction — Option E undershoots the deuteron by ≈ −82.9 %).
 The four `< 1e-3` bounds are genuine true numerical facts over `ℝ`.
 
 -- canonical decl: QOU.HadronicMass.terminal_resolution_hadronic_mass
--- Ref: [manuscript] Ch. 6, Table "Terminal Resolution of Hadronic Mass"
+-- Ref: [leitner2026] Ch. 6, Table "Terminal Resolution of Hadronic Mass"
 -/
 
 namespace QOU.HadronicMass

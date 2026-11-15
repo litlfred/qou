@@ -46,7 +46,7 @@ namespace QOU.FeynmanClassicalLimit.ConditionalAudit
     formalised in `QOU.FeynmanPathIntegrals.ClassicalLimitDegeneration`;
     this class carries the open conjectural input (existence of the
     standard-part map realising it) as a Prop. -/
--- Ref: [manuscript] conj:classical-limit-stpart
+-- Ref: [leitner2026] conj:classical-limit-stpart
 class ClassicalLimitStpart : Prop where
   /-- In the `q → 1` limit every knot's Jones value collapses to `1`:
       there is a knot-invariant evaluator that is constantly `1`. -/

@@ -33,7 +33,7 @@ only that the *discarded normalisation is extensive*, which is precisely the
 object both proved constraints — the intensive/extensive split and the pairwise
 cap `ρ_A ≤ C(A,2)` — say is the missing (non-2-body, volume) term. Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-08-07-l2-closure-attack-options-non-em-terms.md §3 (A1)
+-- Ref: [leitner2026] docs/audits/2026-08-07-l2-closure-attack-options-non-em-terms.md §3 (A1)
 -- Ref: [jones1987] V. Jones, "Hecke algebra representations of braid groups and
 --       link polynomials," Ann. of Math. 126 (1987)
 -/

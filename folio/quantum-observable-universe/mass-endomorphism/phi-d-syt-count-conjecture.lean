@@ -121,7 +121,7 @@ class PhiD4FConjecture (n : ℕ) (lam_syt_count : ℕ) (q : ℝ) : Type where
 
 /-! ## Verified instances at n = 3 -/
 
--- Ref: [manuscript] rem:phi-d-syt-count-conjecture §"n=3 verified"
+-- Ref: [leitner2026] rem:phi-d-syt-count-conjecture §"n=3 verified"
 /-- V_(3) instance: f_(3) = 1, d_(3) = 4 — verified via
     chi_V3_numerator_matches. -/
 instance phiDConj_V3 (q : ℝ) : PhiD4FConjecture 3 syt_count_3 q where
@@ -130,7 +130,7 @@ instance phiDConj_V3 (q : ℝ) : PhiD4FConjecture 3 syt_count_3 q where
   conjecture_residual := 0
   conjecture_residual_eq_zero := rfl
 
--- Ref: [manuscript] rem:phi-d-syt-count-conjecture §"n=3 verified"
+-- Ref: [leitner2026] rem:phi-d-syt-count-conjecture §"n=3 verified"
 /-- V_(2,1) instance: f_(2,1) = 2, d_(2,1) = 8 — verified via
     chi_V21_numerator_matches. -/
 instance phiDConj_V21 (q : ℝ) : PhiD4FConjecture 3 syt_count_21 q where
@@ -139,7 +139,7 @@ instance phiDConj_V21 (q : ℝ) : PhiD4FConjecture 3 syt_count_21 q where
   conjecture_residual := 0
   conjecture_residual_eq_zero := rfl
 
--- Ref: [manuscript] rem:phi-d-syt-count-conjecture §"n=3 verified"
+-- Ref: [leitner2026] rem:phi-d-syt-count-conjecture §"n=3 verified"
 /-- V_(1,1,1) instance: f_(1,1,1) = 1, d_(1,1,1) = 4 — verified via
     chi_V111_numerator_matches. -/
 instance phiDConj_V111 (q : ℝ) : PhiD4FConjecture 3 syt_count_111 q where
@@ -215,7 +215,7 @@ class GeneralPhiD4FConjecture : Type where
   /-- The conjectural identity: `d_lambda_map(f) = 4 · f`. -/
   d_lambda_map_eq : ∀ (f : ℕ), d_lambda_map f = 4 * f
 
--- Ref: [manuscript] rem:phi-d-syt-count-conjecture §"general-n"
+-- Ref: [leitner2026] rem:phi-d-syt-count-conjecture §"general-n"
 -- Ref: [mathas1999] Iwahori-Hecke Algebras and Schur Algebras
 -- Ref: [kassel1995] GTM 155 §V.5
 /-- Canonical instance of the general conjecture. Currently

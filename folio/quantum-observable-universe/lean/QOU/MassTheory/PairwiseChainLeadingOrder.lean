@@ -79,7 +79,7 @@ result in `docs/audits/2026-06-16-b-sym-linear-chain-closed-form.md` is about th
 **log** functor `α·ln(tr_free/tr_atom)` — a different object, not contradicted
 here, but easy to conflate.
 
--- Ref: [manuscript] beans qou-zrx2, qou-j1e5, qou-hu1f;
+-- Ref: [leitner2026] beans qou-zrx2, qou-j1e5, qou-hu1f;
 -- computations/probes/c1_letter_coefficients_are_ordering_dependent_probe.py
 -/
 

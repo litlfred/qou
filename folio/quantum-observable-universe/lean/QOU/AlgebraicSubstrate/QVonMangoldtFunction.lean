@@ -41,7 +41,7 @@ structure QVonMangoldtFunction where
 
 attribute [instance] QVonMangoldtFunction.decidableDefect
 
--- Ref: [manuscript] quantum-observable-universe/q-geometric-langlands/q-von-mangoldt-function.ts
+-- Ref: [leitner2026] quantum-observable-universe/q-geometric-langlands/q-von-mangoldt-function.ts
 
 /-- The q-von Mangoldt weight vanishes off the fundamental defects. -/
 theorem vanishes_off_defect

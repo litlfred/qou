@@ -45,8 +45,8 @@ pole/divisibility statement in `q`, and it wires no `c_k`.
 
 Generic field, no archimedean structure (§7c). No `c_k` wired.
 
--- Ref: [manuscript] docs/audits/2026-07-11-qbeta-c3-barodd-nz-deformation-gap.md
--- Ref: [manuscript] docs/audits/2026-07-04-zeta4-fibre-cyclotomic-refutation.md
+-- Ref: [leitner2026] docs/audits/2026-07-11-qbeta-c3-barodd-nz-deformation-gap.md
+-- Ref: [leitner2026] docs/audits/2026-07-04-zeta4-fibre-cyclotomic-refutation.md
 -/
 
 namespace QOU.QBeta.BarParityZeta4Swap

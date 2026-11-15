@@ -83,8 +83,8 @@ intermediate value ⇒ at least one preimage).
     well-posedness of the substrate's M_ratio function, NOT a
     missing proof of the uniqueness theorem below — which is a
     pure consequence of the class hypotheses. -/
--- Ref: [manuscript] def:q-substrate-pinning
--- Ref: [manuscript] prop:m-mu-m-e-pinning-equation
+-- Ref: [leitner2026] def:q-substrate-pinning
+-- Ref: [leitner2026] prop:m-mu-m-e-pinning-equation
 class MRatioInversionMonotone (M_ratio_codata : ℝ) where
   /-- The QOU-predicted m_μ/m_e ratio as a function of q. -/
   M_ratio_QOU : ℝ → ℝ
@@ -93,8 +93,8 @@ class MRatioInversionMonotone (M_ratio_codata : ℝ) where
   /-- Existence: some q ∈ (1, 2) hits the CODATA value. -/
   exists_q : ∃ q, 1 < q ∧ q < 2 ∧ M_ratio_QOU q = M_ratio_codata
 
--- Ref: [manuscript] def:q-substrate-pinning
--- Ref: [manuscript] prop:m-mu-m-e-pinning-equation
+-- Ref: [leitner2026] def:q-substrate-pinning
+-- Ref: [leitner2026] prop:m-mu-m-e-pinning-equation
 /-- The m_μ/m_e → q_0 inversion is uniquely solvable, conditional
     on the substrate's M_ratio function being strictly monotone on
     the window (1, 2) and hitting the CODATA target there. -/
@@ -102,7 +102,7 @@ theorem q_0_inversion_unique
     (M_ratio_codata : ℝ)
     [inst : MRatioInversionMonotone M_ratio_codata] :
     ∃! q : ℝ, 1 < q ∧ q < 2 ∧ inst.M_ratio_QOU q = M_ratio_codata := by
-  -- Ref: [manuscript] q-pinning-50-digit.witness.json
+  -- Ref: [leitner2026] q-pinning-50-digit.witness.json
   obtain ⟨q₀, hq₀_lo, hq₀_hi, hq₀_eq⟩ := inst.exists_q
   refine ⟨q₀, ⟨hq₀_lo, hq₀_hi, hq₀_eq⟩, ?_⟩
   -- Uniqueness: any other q' satisfying the same conditions must equal q₀
@@ -179,8 +179,8 @@ convention), σ^{-1} satisfies σ^{-1} = σ - H_A · 1, so dd → (1, -H_A)
 is forced. But the `c=1, d=-H_A/2` ud-average is a convention.
 -/
 
--- Ref: [manuscript] prop:typed-crossings-quark-content
--- Ref: [manuscript] §four-term-pair-nucleon
+-- Ref: [leitner2026] prop:typed-crossings-quark-content
+-- Ref: [leitner2026] §four-term-pair-nucleon
 --
 -- The theorem discharging this gap, `typed_crossings_encoding_unique`, is
 -- generic over `[Field A]` and so sits on the algebraic side of the §7c
@@ -235,11 +235,11 @@ an actual measurable closure condition (empirical match to AME
 binding within ε).
 -/
 
--- Ref: [manuscript] conj:brane-tower-z-habiro §"Level-selection rule"
+-- Ref: [leitner2026] conj:brane-tower-z-habiro §"Level-selection rule"
 /-- Stub: the conjectural recovers-binding predicate, non-tautological. -/
 def recoversBindingNonTrivial
     (ell k : ℕ) (B_target : ℝ) (eps : ℝ) : Prop :=
-  -- Ref: [manuscript] conj:brane-tower-z-habiro §"What this conjecture would buy"
+  -- Ref: [leitner2026] conj:brane-tower-z-habiro §"What this conjecture would buy"
   -- The cyclotomic projection π_{n_⋆}^{(z)}(Φ_q^trans) at the
   -- structurally-derived n_⋆ recovers B_target to relative error eps.
   ∃ (n_star : ℕ), n_star > 0 ∧
@@ -255,7 +255,7 @@ recovers the empirical binding to relative error `eps`
 (`recoversBindingNonTrivial`).  This honestly *names* the open
 conditional conjecture (no instance = open state) rather than
 asserting a vacuous `True`. -/
--- Ref: [manuscript] conj:brane-tower-z-habiro §"Status of n_⋆"
+-- Ref: [leitner2026] conj:brane-tower-z-habiro §"Status of n_⋆"
 -- Open R&D — candidates: Habiro m_max, Coxeter length, GB max grade,
 -- confinement level. None validated uniformly across atoms.
 def n_star_existence_conjecture : Prop :=
@@ -281,7 +281,7 @@ with #636 on naming if R1 (rename to `w̃_λ`) is adopted.
 -- See QOU/MathlibExt/QIntegerCanonical.lean.
 noncomputable abbrev qInt (q : ℝ) (n : ℕ) : ℝ := QOU.QInteger.qIntBal q n
 
--- Ref: [manuscript] prop:schur-weyl-mass-decomposition
+-- Ref: [leitner2026] prop:schur-weyl-mass-decomposition
 -- Ref: [wenzl1988] Hecke algebra Markov trace
 /-- **Wedderburn weights at H₃ (derived).**
 
@@ -299,7 +299,7 @@ genuine computations underlying gap 6:
 theorem wedderburn_weights_H3 (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
     qInt q 1 = 1 ∧
       qInt q 3 * qInt q 2 * qInt q 1 = qInt q 3 * qInt q 2 := by
-  -- Ref: [manuscript] prop:schur-weyl-mass-decomposition formulas
+  -- Ref: [leitner2026] prop:schur-weyl-mass-decomposition formulas
   have h1 : qInt q 1 = 1 := by
     simp only [qInt, QOU.Mass.QHookDimensionBalanced.qIntBal]; rw [pow_one, pow_one]; exact div_self hq
   exact ⟨h1, by rw [h1, mul_one]⟩
@@ -319,19 +319,19 @@ gives a valid braid in B_{3A}) and matches the empirical word for
 each atom in the atlas.
 -/
 
--- Ref: [manuscript] def:atom-knot-mass-derivation
--- Ref: [manuscript] §recursive-atom-knot-atlas
+-- Ref: [leitner2026] def:atom-knot-mass-derivation
+-- Ref: [leitner2026] §recursive-atom-knot-atlas
 /-- Well-definedness predicate for the canonical atom braid word at
     `H_{3A}` (A = Z + N).  A braid in `B_{3A}` is encoded as a finite
     list of `(generator_idx, sign)` pairs; well-definedness asks that
     every generator index is a valid `B_{3A}` generator
     (`1 ≤ idx ≤ 3A − 1`).  Content-bearing predicate (not `True`). -/
 def atomBraidWordWellDefined (Z N : ℕ) (word : List (ℕ × Bool)) : Prop :=
-  -- Ref: [manuscript] def:atom-knot-mass-derivation §"T_w construction"
+  -- Ref: [leitner2026] def:atom-knot-mass-derivation §"T_w construction"
   ∀ p ∈ word, 1 ≤ p.1 ∧ p.1 ≤ 3 * (Z + N) - 1
 
--- Ref: [manuscript] def:atom-knot-mass-derivation
--- Ref: [manuscript] §recursive-atom-knot-atlas
+-- Ref: [leitner2026] def:atom-knot-mass-derivation
+-- Ref: [leitner2026] §recursive-atom-knot-atlas
 /-- **Atom braid word well-definedness (named, pattern C).**
 
 For every atom `(Z, N)` with `A = Z + N ≥ 1`, the canonical
@@ -339,7 +339,7 @@ construction `atom_braid_word_3A(Z, N)` produces a well-defined braid
 word in `B_{3A}` (every generator index valid).  Names the open
 conjecture; empirically verified for `A ∈ {1, …, 7}`. -/
 def atom_braid_word_well_defined_all : Prop :=
-  -- Ref: [manuscript] §recursive-atom-knot-atlas — empirical verification
+  -- Ref: [leitner2026] §recursive-atom-knot-atlas — empirical verification
   -- for A ∈ {1, 2, 3, 4, 5, 6, 7} (proton, D, T, ³He, ⁴He, ⁵Li, ⁶Li, ⁷Li)
   ∀ (Z N : ℕ), Z + N ≥ 1 →
     ∃ word : List (ℕ × Bool), atomBraidWordWellDefined Z N word
@@ -358,7 +358,7 @@ extrapolates the formula to A=1 but is not in the empirical witness.
 /-- The shift exponent `shift(Z, N) = 18Z + 21N + 1`. -/
 def shiftExp (Z N : ℕ) : ℕ := 18 * Z + 21 * N + 1
 
--- Ref: [manuscript] prop:per-nucleon-shift-additive-linearity
+-- Ref: [leitner2026] prop:per-nucleon-shift-additive-linearity
 /-- **Per-nucleon shift additive linearity (derived).**
 
 With `shift(Z, N) = 18Z + 21N + 1`, adding a proton increments the
@@ -370,7 +370,7 @@ theorem per_nucleon_shift_additive (Z N : ℕ) :
     -- shift(Z, N+1) - shift(Z, N) = 21
     shiftExp (Z + 1) N = shiftExp Z N + 18 ∧
       shiftExp Z (N + 1) = shiftExp Z N + 21 := by
-  -- Ref: [manuscript] §per-nucleon-shift-derivation
+  -- Ref: [leitner2026] §per-nucleon-shift-derivation
   unfold shiftExp
   constructor <;> ring
 
@@ -380,7 +380,7 @@ The same formula `18Z + 21N + 1` extrapolated to `A = 1` gives
 `shift(1, 0) = 19` (proton) and `shift(0, 1) = 22` (neutron). -/
 theorem per_nucleon_shift_at_A1 :
     shiftExp 1 0 = 19 ∧ shiftExp 0 1 = 22 := by
-  -- Ref: [manuscript] prop:per-nucleon-shift-additive-linearity §"Extrapolation"
+  -- Ref: [leitner2026] prop:per-nucleon-shift-additive-linearity §"Extrapolation"
   unfold shiftExp
   constructor <;> rfl
 
@@ -396,7 +396,7 @@ for n = 8, ..., 12 needed for ⁴He at H_{12} (22 partitions, n=12 needs
 Lean stub: extend the n=7 proof pattern to n=8, ..., 12.
 -/
 
--- Ref: [manuscript] thm:frobenius-codim-universal
+-- Ref: [leitner2026] thm:frobenius-codim-universal
 /-- **Frobenius co-Casimir universality at high n (named, pattern C).**
 
 The co-Casimir Markov trace `tr_M(C_dim_q)` at `H_n` equals the
@@ -408,7 +408,7 @@ this names the open universality conjecture (no proof asserted; the
 dim).  Honest naming rather than a vacuous `True`. -/
 def frobenius_co_casimir_universal_high_n
     (coCasimirTrace : ℕ → ℝ) (m_e : ℝ) : Prop :=
-  -- Ref: [manuscript] thm:frobenius-codim-universal (n=8..12 open)
+  -- Ref: [leitner2026] thm:frobenius-codim-universal (n=8..12 open)
   ∀ n : ℕ, 8 ≤ n → n ≤ 12 → coCasimirTrace n = (5 / 2) * m_e
 
 /-! ## Gap 10: |tr_M(β_K)| at H_{3A} via Wenzl bridge
@@ -424,7 +424,7 @@ Lean stub: prove the Wenzl bridge gives a uniform algorithm for
 -/
 
 -- Ref: [wenzl1988] Hecke algebra Markov trace
--- Ref: [manuscript] prop:wenzl-bridge-applicability-qou (closed in PR #436)
+-- Ref: [leitner2026] prop:wenzl-bridge-applicability-qou (closed in PR #436)
 /-- **Wenzl-bridge atomic `tr_M` applicability (named, pattern C).**
 
 For every atom `(Z, N)` with `A = Z + N ≤ 4`, the Wenzl bridge yields
@@ -434,7 +434,7 @@ candidate trace map `trM : ℕ × ℕ → ℝ`, this names the open
 applicability conjecture (closed for `A ≤ 3`, PR #436; `A = 4` needs a
 Rust kernel).  Honest naming, not a vacuous `True`. -/
 def wenzl_bridge_atomic_tr_M (trM : ℕ × ℕ → ℝ) : Prop :=
-  -- Ref: [manuscript] prop:wenzl-bridge-applicability-qou
+  -- Ref: [leitner2026] prop:wenzl-bridge-applicability-qou
   -- Ref: [wenzl1988] §3 Markov trace via Wenzl projector
   ∀ (Z N : ℕ), Z + N ≤ 4 → ∃ v : ℝ, trM (Z, N) = v ∧ 0 ≤ |v|
 

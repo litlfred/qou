@@ -17,7 +17,7 @@
   Real construct), so everything is stated over a generic CommRing per
   the §7c base-ring convention.
 
-  -- Ref: [manuscript] predicted-spectra, breit-wheeler-pair-production
+  -- Ref: [leitner2026] predicted-spectra, breit-wheeler-pair-production
 -/
 import Mathlib.Algebra.Ring.Defs
 import Mathlib.Tactic

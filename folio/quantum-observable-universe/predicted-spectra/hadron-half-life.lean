@@ -34,7 +34,7 @@ checks the quoted `≈ 48`. Before this the ref named an alias for
 LaTeX label: `prop:hadron-half-life`
 
 ## References
-- [manuscript] §6/hadron-half-life
+- [leitner2026] §6/hadron-half-life
 
 **Ground ring**: `ℝ` (geometric/analytic realisation).
 Uses ℝ-specific analysis (trig, norms, real powers).
@@ -46,7 +46,7 @@ namespace QOU.Archimedean
 
 /-- Data for a beta-decay calculation in a Descartes universe.
     All quantities derived from q — no fitted parameters. -/
--- Ref: [manuscript] §6/hadron-half-life
+-- Ref: [leitner2026] §6/hadron-half-life
 structure BetaDecayData where
   /-- Substrate parameter q. -/
   q : ℝ
@@ -70,18 +70,18 @@ structure BetaDecayData where
   mu_d_pos : 0 < mu_d
 
 /-- Pair Skein mass: S_ab(q) = (q μ_a + q⁻¹ μ_b) / (q^½ + q^{-½}). -/
--- Ref: [manuscript] §6/hadron-half-life
+-- Ref: [leitner2026] §6/hadron-half-life
 noncomputable def pairSkeinMass (q mu_a mu_b : ℝ) : ℝ :=
   (q * mu_a + 1/q * mu_b) / (q ^ (1/2 : ℝ) + q ^ (-(1/2 : ℝ)))
 
 /-- The q-integer [2]_q = q + q⁻¹, categorical dimension of the
     SU_q(2) fundamental representation. -/
--- Ref: [manuscript] §6/hadron-half-life
+-- Ref: [leitner2026] §6/hadron-half-life
 noncomputable def BetaDecayData.q_integer_2 (d : BetaDecayData) : ℝ :=
   d.q + 1 / d.q
 
 /-- [2]_q > 2 when q > 1. -/
--- Ref: [manuscript] §6/hadron-half-life
+-- Ref: [leitner2026] §6/hadron-half-life
 theorem BetaDecayData.q_integer_2_gt_two (d : BetaDecayData) :
     2 < d.q_integer_2 := by
   unfold q_integer_2
@@ -94,18 +94,18 @@ theorem BetaDecayData.q_integer_2_gt_two (d : BetaDecayData) :
 
     This vanishes at q = 1 (no beta decay in classical limit)
     and is positive for q > 1. -/
--- Ref: [manuscript] §6/hadron-half-life
+-- Ref: [leitner2026] §6/hadron-half-life
 noncomputable def qPrefactor (q : ℝ) : ℝ :=
   (q + 1 / q) * (q - 1 / q) ^ 5
 
 /-- The q-prefactor vanishes at q = 1 (classical limit). -/
--- Ref: [manuscript] §6/hadron-half-life
+-- Ref: [leitner2026] §6/hadron-half-life
 theorem qPrefactor_classical : qPrefactor 1 = 0 := by
   unfold qPrefactor
   norm_num
 
 /-- The q-prefactor is positive for q > 1. -/
--- Ref: [manuscript] §6/hadron-half-life
+-- Ref: [leitner2026] §6/hadron-half-life
 theorem qPrefactor_pos {q : ℝ} (hq : 1 < q) : 0 < qPrefactor q := by
   unfold qPrefactor
   apply mul_pos
@@ -121,12 +121,12 @@ theorem qPrefactor_pos {q : ℝ} (hq : 1 < q) : 0 < qPrefactor q := by
     with `|𝒲|² μ₀/(2π³) · |ℳ_q|² · f(Q)` collapsed onto `(q − q⁻¹)^5`
     (`betaRate_eq_qPrefactor_iff`). The full statement is `hadron_half_life`
     below. Kept because `qSensitivity` is its logarithmic derivative. -/
--- Ref: [manuscript] §6/hadron-half-life
+-- Ref: [leitner2026] §6/hadron-half-life
 noncomputable def BetaDecayData.halfLife (d : BetaDecayData) : ℝ :=
   Real.log 2 / (qPrefactor d.q)
 
 /-- The half-life is positive. -/
--- Ref: [manuscript] §6/hadron-half-life
+-- Ref: [leitner2026] §6/hadron-half-life
 theorem BetaDecayData.halfLife_pos (d : BetaDecayData) : 0 < d.halfLife := by
   unfold halfLife
   exact div_pos (Real.log_pos (by norm_num : (1 : ℝ) < 2)) (qPrefactor_pos d.q_gt_one)
@@ -134,12 +134,12 @@ theorem BetaDecayData.halfLife_pos (d : BetaDecayData) : 0 < d.halfLife := by
 /-- Sensitivity: ∂ ln Γ / ∂ ln q = (q² - 1)/(q² + 1) + 5(q² + 1)/(q² - 1).
 
     At q = 1.1097 this evaluates to ≈ 48. -/
--- Ref: [manuscript] §6/hadron-half-life
+-- Ref: [leitner2026] §6/hadron-half-life
 noncomputable def qSensitivity (q : ℝ) : ℝ :=
   (q ^ 2 - 1) / (q ^ 2 + 1) + 5 * (q ^ 2 + 1) / (q ^ 2 - 1)
 
 /-- The sensitivity is positive for q > 1. -/
--- Ref: [manuscript] §6/hadron-half-life
+-- Ref: [leitner2026] §6/hadron-half-life
 theorem qSensitivity_pos {q : ℝ} (hq : 1 < q) : 0 < qSensitivity q := by
   unfold qSensitivity
   have hq2 : 0 < q ^ 2 - 1 := by nlinarith
@@ -147,17 +147,17 @@ theorem qSensitivity_pos {q : ℝ} (hq : 1 < q) : 0 < qSensitivity q := by
   positivity
 
 /-- Proton mass from pair Skein weights: m_p = S_uu + 2 S_ud. -/
--- Ref: [manuscript] §6/hadron-half-life
+-- Ref: [leitner2026] §6/hadron-half-life
 noncomputable def protonMass (q mu_u mu_d : ℝ) : ℝ :=
   pairSkeinMass q mu_u mu_u + 2 * pairSkeinMass q mu_u mu_d
 
 /-- Neutron mass from pair Skein weights: m_n = 2 S_ud + S_dd. -/
--- Ref: [manuscript] §6/hadron-half-life
+-- Ref: [leitner2026] §6/hadron-half-life
 noncomputable def neutronMass (q mu_u mu_d : ℝ) : ℝ :=
   2 * pairSkeinMass q mu_u mu_d + pairSkeinMass q mu_d mu_d
 
 /-- Mass splitting: m_n - m_p = S_dd - S_uu. -/
--- Ref: [manuscript] §6/hadron-half-life
+-- Ref: [leitner2026] §6/hadron-half-life
 theorem mass_splitting (q mu_u mu_d : ℝ) :
     neutronMass q mu_u mu_d - protonMass q mu_u mu_d =
     pairSkeinMass q mu_d mu_d - pairSkeinMass q mu_u mu_u := by
@@ -173,7 +173,7 @@ theorem mass_splitting (q mu_u mu_d : ℝ) :
     (`def:beta-decay-skein` carries only its 10-crossing budget), `|ℳ_q|²` is
     `s² · ∏ |V̂ᵢ^par / V̂ᵢ^dau|²` (`prop:trace-ratio-observable`), `f(Q)` is the
     Sargent integral `∝ Q⁵`, and `μ₀` is the unit choice. -/
--- Ref: [manuscript] §6/hadron-half-life
+-- Ref: [leitner2026] §6/hadron-half-life
 structure BetaRateData where
   /-- `|𝒲(q)|²`, the `T_{3,5}` weak-vertex form factor squared. -/
   W2 : ℝ
@@ -189,12 +189,12 @@ structure BetaRateData where
   fQ_pos : 0 < fQ
 
 /-- `Γ_β = |𝒲(q)|² μ₀ /(2π³) · [2]_q · |ℳ_q|² · f(Q)`. -/
--- Ref: [manuscript] §6/hadron-half-life
+-- Ref: [leitner2026] §6/hadron-half-life
 noncomputable def betaRate (d : BetaDecayData) (r : BetaRateData) : ℝ :=
   r.W2 * r.mu0 / (2 * Real.pi ^ 3) * d.q_integer_2 * r.M2 * r.fQ
 
 /-- The rate is positive: every factor is. -/
--- Ref: [manuscript] §6/hadron-half-life
+-- Ref: [leitner2026] §6/hadron-half-life
 theorem betaRate_pos (d : BetaDecayData) (r : BetaRateData) : 0 < betaRate d r := by
   unfold betaRate
   have h2 : 0 < d.q_integer_2 := by linarith [d.q_integer_2_gt_two]
@@ -203,12 +203,12 @@ theorem betaRate_pos (d : BetaDecayData) (r : BetaRateData) : 0 < betaRate d r :
 
 /-- **`prop:hadron-half-life`**: `t_{1/2} = ln 2 / Γ_β`. (Until 2026-09-04 this
     name was an alias for `BetaDecayData.halfLife`, the `q`-shape alone.) -/
--- Ref: [manuscript] §6/hadron-half-life
+-- Ref: [leitner2026] §6/hadron-half-life
 noncomputable def hadron_half_life (d : BetaDecayData) (r : BetaRateData) : ℝ :=
   Real.log 2 / betaRate d r
 
 /-- The half-life is positive. -/
--- Ref: [manuscript] §6/hadron-half-life
+-- Ref: [leitner2026] §6/hadron-half-life
 theorem hadron_half_life_pos (d : BetaDecayData) (r : BetaRateData) :
     0 < hadron_half_life d r :=
   div_pos (Real.log_pos (by norm_num : (1 : ℝ) < 2)) (betaRate_pos d r)
@@ -216,7 +216,7 @@ theorem hadron_half_life_pos (d : BetaDecayData) (r : BetaRateData) :
 /-- **What the legacy carrier was.** `Γ_β = qPrefactor q` exactly when the four
     non-`q`-integer factors collapse onto the Sargent shape:
     `|𝒲|² μ₀/(2π³) · |ℳ_q|² · f(Q) = (q − q⁻¹)^5`. -/
--- Ref: [manuscript] §6/hadron-half-life
+-- Ref: [leitner2026] §6/hadron-half-life
 theorem betaRate_eq_qPrefactor_iff (d : BetaDecayData) (r : BetaRateData) :
     betaRate d r = qPrefactor d.q ↔
       r.W2 * r.mu0 / (2 * Real.pi ^ 3) * r.M2 * r.fQ = (d.q - 1 / d.q) ^ 5 := by
@@ -232,7 +232,7 @@ theorem betaRate_eq_qPrefactor_iff (d : BetaDecayData) (r : BetaRateData) :
     linear_combination (d.q + 1 / d.q) * h
 
 /-- Under that collapse the two half-lives agree. -/
--- Ref: [manuscript] §6/hadron-half-life
+-- Ref: [leitner2026] §6/hadron-half-life
 theorem hadron_half_life_eq_halfLife (d : BetaDecayData) (r : BetaRateData)
     (h : r.W2 * r.mu0 / (2 * Real.pi ^ 3) * r.M2 * r.fQ = (d.q - 1 / d.q) ^ 5) :
     hadron_half_life d r = d.halfLife := by
@@ -240,7 +240,7 @@ theorem hadron_half_life_eq_halfLife (d : BetaDecayData) (r : BetaRateData)
   rw [(betaRate_eq_qPrefactor_iff d r).2 h]
 
 /-- The derivative of the `q`-shape `(q + q⁻¹)(q − q⁻¹)^5`, for `q ≠ 0`. -/
--- Ref: [manuscript] §6/hadron-half-life
+-- Ref: [leitner2026] §6/hadron-half-life
 theorem hasDerivAt_qPrefactor {q : ℝ} (hq : q ≠ 0) :
     HasDerivAt qPrefactor
       ((1 - (q ^ 2)⁻¹) * (q - 1 / q) ^ 5
@@ -264,7 +264,7 @@ theorem hasDerivAt_qPrefactor {q : ℝ} (hq : q ≠ 0) :
 
 /-- **The manuscript's sensitivity formula is the logarithmic derivative of the
     `q`-shape**: `∂ln Γ/∂ln q = q · Γ'/Γ` with `Γ = qPrefactor`. -/
--- Ref: [manuscript] §6/hadron-half-life
+-- Ref: [leitner2026] §6/hadron-half-life
 theorem qSensitivity_eq_logDeriv {q : ℝ} (hq : 1 < q) :
     qSensitivity q
       = q * ((1 - (q ^ 2)⁻¹) * (q - 1 / q) ^ 5
@@ -278,7 +278,7 @@ theorem qSensitivity_eq_logDeriv {q : ℝ} (hq : 1 < q) :
   field_simp
 
 /-- The quoted `≈ 48`: at `q = 1.1097` the sensitivity lies in `(48, 49)`. -/
--- Ref: [manuscript] §6/hadron-half-life
+-- Ref: [leitner2026] §6/hadron-half-life
 theorem qSensitivity_near_48 : 48 < qSensitivity 1.1097 ∧ qSensitivity 1.1097 < 49 := by
   unfold qSensitivity
   norm_num

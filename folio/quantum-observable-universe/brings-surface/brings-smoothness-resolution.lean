@@ -10,7 +10,7 @@ resolved intrinsically by the color coordinates.
 -/
 namespace QOU.BringsSurface
 
--- Ref: [manuscript] Ch. 6, §1
+-- Ref: [leitner2026] Ch. 6, §1
 -- Ref: [bring1786] Bring, "Meletemata quaedam mathematica circa transformationem aequationum algebraicarum," Lund 1786
 -- The Bring surface S is defined by three power-sum constraints in P^4.
 -- We encode the three transversality conditions as a structure.

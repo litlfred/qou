@@ -55,7 +55,7 @@ backbone: the coordinate identities, the fold, and the polynomial transfer
 Base ring (§7c): the polynomial content is stated over a generic `[CommRing R]`
 / `[Field K]`; only the `√`, ordering and IVT statements specialise to `ℝ`.
 
--- Ref: [manuscript] docs/audits/2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md
+-- Ref: [leitner2026] docs/audits/2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md
 -/
 
 namespace QOU.QBeta.DLadderRadiusAlgebraicity

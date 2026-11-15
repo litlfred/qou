@@ -66,7 +66,7 @@ wired; `free_parameters = 0` in production.
 Base ring (§7c): `ℝ` throughout — the whole content is archimedean (ordering `0 < m`,
 `Real.sqrt`, `Real.log`, `Real.exp`).
 
--- Ref: [manuscript] computations/probes/b4-slater-antisymmetrizer-exchange-sign.witness.json
+-- Ref: [leitner2026] computations/probes/b4-slater-antisymmetrizer-exchange-sign.witness.json
    (the derived spectrum `{±√5,±1}`, `det=(1−5m²)(1−m²)`, ceiling `1/√5`, `b₄` target; 0-fit).
 -- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors", Invent. Math. 92 (1988) 349-383.
 -/

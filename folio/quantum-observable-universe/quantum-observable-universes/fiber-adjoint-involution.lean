@@ -16,7 +16,7 @@ involution σ : P(V) ↪ Ad(A).
 ## References
 
 - [lusztig1993] Introduction to Quantum Groups
-- [manuscript] §1
+- [leitner2026] §1
 -/
 
 open scoped CategoryTheory CategoryTheory.MonoidalCategory
@@ -93,7 +93,7 @@ class FiberAdjointInvolutionContext (C : Type u) [CategoryTheory.Category.{v} C]
   exists_inv : ∃ inv : FiberAdjointInvolution C fh, inv.adjointObj = fh.obj
 
 -- Ref: [lusztig1993] Introduction to Quantum Groups
--- Ref: [manuscript] prop:fiber-adjoint-involution
+-- Ref: [leitner2026] prop:fiber-adjoint-involution
 theorem fiber_adjoint_involution_exists (C : Type u) [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C] (fh : FrobeniusHopfData C)
     [ctx : FiberAdjointInvolutionContext C fh] :

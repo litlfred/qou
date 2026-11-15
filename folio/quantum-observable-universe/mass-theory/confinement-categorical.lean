@@ -20,7 +20,7 @@ the Wedderburn projection `π_Z : A ↠ Z(A)`, and every observable
 The curvature 2-cocycle `F` encoding Hecke + Yang–Baxter relations
 plays the role of the string tension categorically.
 
--- Ref: [manuscript] prop:confinement-categorical
+-- Ref: [leitner2026] prop:confinement-categorical
 -/
 
 namespace QOU.WedderburnMass
@@ -44,7 +44,7 @@ class SemisimpleFrobeniusHeckeLike (R : Type*) [CommRing R]
       (Semisimplicity / Whitehead-lemma cohomology vanishing in positive
       degree is what makes `π_Z` well-defined as a centre projection.) -/
   piZ_fixes_centre : ∀ a : A, ∀ ha : a ∈ Z, (piZ a : A) = a
-  -- Ref: [manuscript] prop:spectral-sequence-collapse
+  -- Ref: [leitner2026] prop:spectral-sequence-collapse
 
 /-- **Theorem (clause 1 — survival).**
     Only `E_∞^{0,0} = Z(A)` survives the spectral sequence: the centre
@@ -57,7 +57,7 @@ theorem confinement_survives_only_centre
     ∀ a : A, a ∈ I.Z → (I.piZ a : A) = a := by
   -- Content: HH^k(A) = 0 for k ≥ 1, so E_∞^{p,q} = 0 whenever p+q ≥ 1;
   -- only E_∞^{0,0} = HH^0 = Z(A) survives, on which π_Z is the identity.
-  -- Ref: [manuscript] prop:spectral-sequence-collapse, Whitehead lemma
+  -- Ref: [leitner2026] prop:spectral-sequence-collapse, Whitehead lemma
   exact fun a ha => I.piZ_fixes_centre a ha
 
 /- **Theorem (clause 2 — trace factorization).**
@@ -70,7 +70,7 @@ theorem confinement_survives_only_centre
     or a structure-tightening refactor.
 
     See the theorem docstring below for the cited reference. -/
--- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443 (Frobenius integral factors through the Wedderburn centre); cf. [manuscript] prop:confinement-categorical
+-- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443 (Frobenius integral factors through the Wedderburn centre); cf. [leitner2026] prop:confinement-categorical
 axiom confinement_int_factors_through_centre_axiom {R : Type*} [CommRing R] {A : Type*} [Ring A] [Algebra R A]
     [I : SemisimpleFrobeniusHeckeLike R A] :
     ∃ μ : I.Z →ₗ[R] R, I.intA = μ.comp I.piZ
@@ -93,7 +93,7 @@ theorem observables_are_wedderburn_sum
     ∃ μ : I.Z →ₗ[R] R, I.intA = μ.comp I.piZ := by
   -- Content: A = ⊕_λ A_λ; Int_A a = Σ_λ Int_{A_λ} a factors through Z(A)
   -- by linearity of the integral on the Wedderburn-Artin decomposition.
-  -- Ref: [manuscript] prop:wedderburn-trace-identity
+  -- Ref: [leitner2026] prop:wedderburn-trace-identity
   exact confinement_int_factors_through_centre
 
 end QOU.WedderburnMass

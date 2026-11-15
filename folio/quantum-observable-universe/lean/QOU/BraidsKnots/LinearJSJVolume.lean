@@ -7,7 +7,7 @@ namespace QOU.BraidsKnots
 An opaque type representing the knot complement of an isotope `(Z, N)`.
 (Postulated — the construction lives in the categorical substrate.)
 -/
--- Ref: [manuscript] §brings-surface — the atomic knot complement of an
+-- Ref: [leitner2026] §brings-surface — the atomic knot complement of an
 -- isotope (Z,N) is a QOU substrate construction; this names it as an
 -- opaque input rather than re-deriving the categorical construction here.
 opaque AtomicKnot (Z N : ℕ) : Type
@@ -23,7 +23,7 @@ opaque Vol (K : Type) : ℝ
 /--
 The foundational topological volume quanta for the QOU nucleon blocks.
 -/
--- Ref: [manuscript] §mass-theory — Vol_p, Vol_n are the QOU proton/neutron
+-- Ref: [leitner2026] §mass-theory — Vol_p, Vol_n are the QOU proton/neutron
 -- block volume quanta (substrate-fixed constants), not external values.
 opaque Vol_p : ℝ
 opaque Vol_n : ℝ
@@ -67,7 +67,7 @@ rather than on a mislabelled axiom. -/
 
     This is the *open* part. It is a primary conjecture carrier: it takes no
     other conjecture class as a hypothesis, and **no instance is provided**. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/jsj-decomposition-linearity.md
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/jsj-decomposition-linearity.md
 class AtomicJSJDecomposition : Prop where
   /-- The linear volume law that the decomposition hypothesis delivers,
       via Thurston additivity over the `Z + N` pieces. -/

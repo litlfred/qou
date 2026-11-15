@@ -21,7 +21,7 @@ LaTeX label: `def:witt-vector-lift`
 
 - [hazewinkel1978] https://doi.org/10.1007/978-3-642-35190-6
 - [zink2002] https://doi.org/10.1007/978-3-642-51438-2
-- [manuscript] Chapter 6, §Witt vector lift
+- [leitner2026] Chapter 6, §Witt vector lift
 -/
 
 namespace QOU
@@ -91,7 +91,7 @@ theorem dist_algebra_generators (W : WittVectorLift) :
     formal group dimension is 2g = 8.
 
     This connects the Witt lift to the global Descartes structure. -/
--- Ref: [manuscript] Chapter 6, §Witt vector lift
+-- Ref: [leitner2026] Chapter 6, §Witt vector lift
 theorem witt_lift_descartes_dim (g : ℕ) (hg : g = 4) :
     2 * g = 8 := by
   subst hg; norm_num
@@ -99,7 +99,7 @@ theorem witt_lift_descartes_dim (g : ℕ) (hg : g = 4) :
 /-- For the QOU application, the relevant primes are p ≥ 5
     (so that 30 = 2 · 3 · 5 is invertible mod p for p > 5,
     or p = 5 which divides 30 but is handled separately). -/
--- Ref: [manuscript] Chapter 6, §Witt vector lift
+-- Ref: [leitner2026] Chapter 6, §Witt vector lift
 theorem relevant_primes_ge_five (p : ℕ) (hp : Nat.Prime p)
     (h : 5 ≤ p) : 2 ≤ p := by linarith
 

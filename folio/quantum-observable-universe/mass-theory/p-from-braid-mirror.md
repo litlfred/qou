@@ -30,7 +30,7 @@ $$
 
 On the writhe, this gives $w(P\beta) = -w(\beta)$ — a sign flip on
 the bar-anti-symmetric writhe quantity classified in
-[`bar-involution-table3-data`](bar-involution.md#tbl:bar-involution-table3-data).
+[`bar-involution-table3-data`](../braids-and-knots/bar-involution.md#tbl:bar-involution-table3-data).
 
 ## Disentangling parity from CPT
 
@@ -69,7 +69,7 @@ bar-involution.
   sub-action).
 
 Writhe $w(K)$ (the observable that P negates) is classified in
-[`bar-involution-table3-data`](bar-involution.md#tbl:bar-involution-table3-data)
+[`bar-involution-table3-data`](../braids-and-knots/bar-involution.md#tbl:bar-involution-table3-data)
 as bar-anti-symmetric, consistent: bar reverses writhe via the
 composite $P \cdot C \cdot T$, of which P is the writhe-acting
 factor.
@@ -115,7 +115,7 @@ class PFromBraidMirror (M : Type*) [BrCategory M] [Hecke M] where
 
 - The sibling $\mathbb{Z}/2$ factors of CPT — charge conjugation and time
   reversal, this conjecture supplying parity:
-  [`conj:c-from-color-flavor-swap`](c-from-color-flavor-swap.md),
-  [`conj:t-from-trace-cyclicity`](t-from-trace-cyclicity.md)
+  [`conj:c-from-color-flavor-swap`](../brings-surface/c-from-color-flavor-swap.md),
+  [`conj:t-from-trace-cyclicity`](../nuclear-interactions/t-from-trace-cyclicity.md)
 - Composite CPT: [`conj:cpt-orbit-closure-density`](#conj:cpt-orbit-closure-density)
-- Bar-involution: [`bar-involution.md`](bar-involution.md) Tables 1-4
+- Bar-involution: [`bar-involution.md`](../braids-and-knots/bar-involution.md) Tables 1-4

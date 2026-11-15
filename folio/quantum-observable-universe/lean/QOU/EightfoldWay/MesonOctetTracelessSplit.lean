@@ -42,7 +42,7 @@ needs the representation theory of `SU(3)`, which Mathlib does not currently car
 form. So this discharges the linear-algebraic core of the proposition and leaves the
 equivariance as narrative.
 
--- Ref: [manuscript] folio/quantum-observable-universe/eightfold-way/meson-octet-decomposition.md
+-- Ref: [leitner2026] folio/quantum-observable-universe/eightfold-way/meson-octet-decomposition.md
 -/
 
 namespace QOU.EightfoldWay.MesonOctetTracelessSplit

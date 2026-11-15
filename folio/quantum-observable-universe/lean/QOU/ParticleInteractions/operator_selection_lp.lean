@@ -730,7 +730,7 @@ end OperatorSelectionLpContext
 dual variable `y₀*` certifies optimality via strong duality
 `objective x* = n_target · y₀*`. -/
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP strong duality, feasible bounded programs)
--- Ref: [manuscript] quantum-observable-universe/mass-theory/operator-selection-lp.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/operator-selection-lp.md
 theorem operator_selection_lp {R : Type*} [CommRing R] [LinearOrder R]
     [IsStrictOrderedRing R] [ctx : OperatorSelectionLpContext R] :
     OperatorSelectionLpContext.IsFeasible ctx.x_star ∧

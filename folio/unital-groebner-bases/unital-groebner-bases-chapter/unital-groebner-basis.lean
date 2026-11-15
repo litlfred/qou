@@ -15,7 +15,7 @@ and S-polynomials.
 LaTeX label: `def:unital-groebner-basis`
 
 ## References
-- [manuscript] §1/unital-groebner-basis
+- [leitner2026] §1/unital-groebner-basis
 -/
 
 namespace QOU.UnitalGroebner
@@ -31,7 +31,7 @@ variable (A : Type u) [Ring A] [Algebra R A]
 
     G is a Gröbner basis if every h ∈ I has a representation
     h = Σ_k λ_k · u_k · g_{γ_k} · v_k with controlled leading monomials. -/
--- Ref: [manuscript] §1/unital-groebner-basis
+-- Ref: [leitner2026] §1/unital-groebner-basis
 structure GroebnerBasis (R : Type u) [CommRing R]
     (B : Type u) [LinearOrder B] [WellFoundedLT B]
     (A : Type u) [Ring A] [Algebra R A] where
@@ -49,7 +49,7 @@ structure GroebnerBasis (R : Type u) [CommRing R]
     2. All products α · g · β have leading coefficient in R× (when nonzero)
 
     Over a field, every Gröbner basis is automatically unital. -/
--- Ref: [manuscript] §1/unital-groebner-basis
+-- Ref: [leitner2026] §1/unital-groebner-basis
 structure IsUnital (G : GroebnerBasis R B A) where
   /-- Leading coefficients of generators are units. -/
   lc_units : ∀ g ∈ G.generators, True
@@ -62,7 +62,7 @@ structure IsUnital (G : GroebnerBasis R B A) where
     λ · LT(u · LT(f) · v) = λ' · LT(u' · LT(f') · v')
 
     The S-polynomial is then: S(f, f') = λu·f·v − λ'u'·f'·v' -/
--- Ref: [manuscript] §1/unital-groebner-basis
+-- Ref: [leitner2026] §1/unital-groebner-basis
 structure SPolynomial where
   /-- First element. -/
   f : A

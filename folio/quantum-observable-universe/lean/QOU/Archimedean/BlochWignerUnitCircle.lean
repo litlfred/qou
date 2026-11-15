@@ -43,8 +43,8 @@
   on a specific body — matching what `BringZeroModeBlochClass.bring_zero_mode_realised`
   needs (a real-angle witness for the substrate identity).
 
-  Ref: [manuscript] prop:em-coupling-bring-zero-mode
-  Ref: [manuscript] prop:archimedean-functor-uniqueness
+  Ref: [leitner2026] prop:em-coupling-bring-zero-mode
+  Ref: [leitner2026] prop:archimedean-functor-uniqueness
   Ref: filler at content/.../predicted-spectra/bloch-wigner-mathlib-filler.lean
   Ref: [suslin1991], [bloch2000] for the Bloch-Suslin K-theory framework
 -/

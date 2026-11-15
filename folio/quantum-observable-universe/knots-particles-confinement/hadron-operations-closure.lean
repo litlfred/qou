@@ -10,13 +10,13 @@ structure or produces a new hadron in Sym^{n₁+n₂}(K).
 
 ## References
 
-- [manuscript] Ch. 4, §10
+- [leitner2026] Ch. 4, §10
 - [kock2004] https://doi.org/10.1017/CBO9780511615443
 -/
 
 namespace QOU.Hadron
 
--- Ref: [manuscript] Ch. 4, §10
+-- Ref: [leitner2026] Ch. 4, §10
 -- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
 /-- The type of hadrons as elements of Sym^n(K). -/
 axiom Hadron : ℕ → Type
@@ -42,7 +42,7 @@ theorem hadron_operations_closure :
     -- (4) Fusion maps Sym^{n₁} × Sym^{n₂} → Sym^{n₁+n₂}
     (∀ n₁ n₂, ∀ h₁ : Hadron n₁, ∀ h₂ : Hadron n₂,
       ∃ h' : Hadron (n₁ + n₂), h' = fusionOp n₁ n₂ h₁ h₂) := by
-  -- Ref: [manuscript] Ch. 4, §10
+  -- Ref: [leitner2026] Ch. 4, §10
   -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
   exact ⟨fun n h => ⟨_, rfl⟩, fun n h => ⟨_, rfl⟩,
          fun n h => ⟨_, rfl⟩, fun n₁ n₂ h₁ h₂ => ⟨_, rfl⟩⟩

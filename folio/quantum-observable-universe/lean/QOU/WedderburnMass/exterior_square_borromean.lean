@@ -34,7 +34,7 @@ representation of $S_{10}$ (or its q-deformation $H_{10}(q)$
 acting via the standard projection).  Then the
 
     The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/exterior-square-borromean.ts
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/exterior-square-borromean.ts
 def exterior_square_borromean [ctx : ExteriorSquareBorromeanContext] :
     ctx.dim_ext_sq = 45 ∧ ctx.dim_V_9_1 = 9 ∧ ctx.dim_V_8_1_1 = 36 ∧
     ctx.dim_ext_sq = ctx.dim_V_9_1 + ctx.dim_V_8_1_1 := by

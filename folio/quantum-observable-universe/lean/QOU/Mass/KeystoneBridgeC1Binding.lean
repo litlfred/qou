@@ -49,7 +49,7 @@
   non-vanishing q-integers. Shifted indices `n+1,n+2,n+3` keep every `/k` and
   `(k−1)!` division-safe with no ℕ-subtraction.
 
-  -- Ref: [manuscript] mass-theory, conj:binding-manybody-eq-jet-filtration,
+  -- Ref: [leitner2026] mass-theory, conj:binding-manybody-eq-jet-filtration,
   --      conj:qdifference-kernel-prolongation-symbol, prop:sw-classical-jet-exactness;
   --      docs/audits/2026-07-20-keystone-bridge-c1-binding.md
 -/

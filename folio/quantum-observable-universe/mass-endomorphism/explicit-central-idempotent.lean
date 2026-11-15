@@ -60,7 +60,7 @@ theorem explicit_central_idempotent_via_murphy
   -- prop:jucys-murphy-central-elements-qou block establishing
   -- diagonal action of J_k on the Hoefsmit seminormal basis with
   -- eigenvalue c_T(k; q).
-  -- Ref: [manuscript] §conj:explicit-central-idempotent — the three class
+  -- Ref: [leitner2026] §conj:explicit-central-idempotent — the three class
   -- fields are what Lagrange interpolation in the commuting (J_1, ..., J_n)
   -- supplies; the idempotency below is DERIVED from them, not assumed.
   classical
@@ -90,7 +90,7 @@ theorem explicit_central_idempotent_two_two
     [ExplicitCentralIdempotentConjecture q] :
     centralIdempotent [2, 2] q * centralIdempotent [2, 2] q
       = centralIdempotent [2, 2] q :=
-  -- Ref: [manuscript] §prop:explicit-central-idempotent — concrete (2,2)
+  -- Ref: [leitner2026] §prop:explicit-central-idempotent — concrete (2,2)
   -- instance of `explicit_central_idempotent_via_murphy`; the e_{(2,2)}
   -- idempotency is the finite Lagrange computation witnessed in
   -- conj:bring-figure-eight-depth-2-witness. `centralIdempotent` is `opaque`,

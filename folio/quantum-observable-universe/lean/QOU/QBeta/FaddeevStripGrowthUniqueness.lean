@@ -27,7 +27,7 @@ Mathlib gap): discharge `hΦ₂_iso` from `meromorphicOrderAt (phiBProd b) ≠ �
 Verified `lean`-direct against the pinned Mathlib `Meromorphic` cone + the merged G4/G5-crux +
 `PhiBProd`. Sorry-free.
 
--- Ref: [manuscript] docs/workplans/2026-07-26-faddeev-growth-estimate-epic-scope.md
+-- Ref: [leitner2026] docs/workplans/2026-07-26-faddeev-growth-estimate-epic-scope.md
 -/
 
 open Complex Filter Topology

@@ -25,7 +25,7 @@ the gauge row `bwS0` actually agrees with the value map at those roots (WRT =
 modular-data), of which `KeystoneLRAmplitudeReal` (#4365) is the `Σ(2,3,5)` slice.
 No fit; nothing wired; L2 unchanged.
 
--- Ref: [manuscript] docs/coordination/s5-so3-keystone.md
+-- Ref: [leitner2026] docs/coordination/s5-so3-keystone.md
 -- Ref: [habiro2004] https://doi.org/10.1007/s00222-007-0071-0
 -/
 import QOU.BraidKnot.KeystoneHabiroRootFamily

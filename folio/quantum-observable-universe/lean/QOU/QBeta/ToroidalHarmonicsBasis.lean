@@ -141,7 +141,7 @@ theorem liouville_green_weber_limit
     (n m : ℝ) (A B C : ℝ) (hA : A = 2) (hC : C = -22) :
     ∃ (T : ℝ → ℝ), ∀ (_F : ℝ → ℝ),
       ∀ η, ToroidalHarmonicODE n m _F η ↔ WeberODE A B C (_F ∘ T) η := by
-  -- Ref: [manuscript] quantum-observable-universe/qbeta — the Liouville–Green
+  -- Ref: [leitner2026] quantum-observable-universe/qbeta — the Liouville–Green
   --   (WKB) reduction of the toroidal-harmonic ODE to the parabolic-cylinder
   --   (Weber) equation. `WeberODE` above is the opaque operator stub pending
   --   the Mathlib ODE-formalism bridge, so this asymptotic limit is stated,

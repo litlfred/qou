@@ -120,7 +120,7 @@ theorem shell_filling_pauli_bound [ctx : ShellFillingRuleContext R]
     electron in a partly filled inner shell reduces `Φ₁` more than any
     valence electron.  The `Φ₁`-monotonicity argument is not yet
     formalised. -/
--- Ref: [manuscript] quantum-observable-universe/molecular-construction/shell-filling-rule.md
+-- Ref: [leitner2026] quantum-observable-universe/molecular-construction/shell-filling-rule.md
 theorem shell_filling_inner_shells [ctx : ShellFillingRuleContext R] :
     ∀ n : ℕ, n < ctx.n_val → ctx.occupancy n = ctx.capacity n := by
   intro n hn
@@ -132,7 +132,7 @@ theorem shell_filling_inner_shells [ctx : ShellFillingRuleContext R] :
     antiparallel pairs, since the repulsive `ee` crossing (`σ`) is
     minimised on distinct spatial sites.  The `Φ₁` comparison is not
     yet formalised. -/
--- Ref: [manuscript] quantum-observable-universe/molecular-construction/shell-filling-rule.md
+-- Ref: [leitner2026] quantum-observable-universe/molecular-construction/shell-filling-rule.md
 theorem shell_filling_hund_rule [ctx : ShellFillingRuleContext R] :
     ∀ c : ctx.ValenceConfig, ctx.singly c ≤ ctx.singly ctx.ground := by
   intro c
@@ -145,7 +145,7 @@ theorem shell_filling_hund_rule [ctx : ShellFillingRuleContext R] :
     `y₀ + Σ_n G_{n,s}·y_{n,s} ≤ Φ₁^{(s)}` for all sites `s`).  Strong
     duality for this LP is not yet formalised. -/
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP strong duality)
--- Ref: [manuscript] quantum-observable-universe/molecular-construction/shell-filling-rule.md
+-- Ref: [leitner2026] quantum-observable-universe/molecular-construction/shell-filling-rule.md
 theorem shell_filling_lp_strong_duality [ctx : ShellFillingRuleContext R] :
     ctx.primal_obj = (ctx.Z : R) * ctx.y_0 := by
   rw [ctx.strong_duality, ctx.dual_obj_def]
@@ -161,7 +161,7 @@ theorem shell_filling_lp_strong_duality [ctx : ShellFillingRuleContext R] :
     the model data; the unproved ones carry honest `sorry`s in their
     named sub-theorems (see module docstring), not projected
     conclusion fields. -/
--- Ref: [manuscript] quantum-observable-universe/molecular-construction/shell-filling-rule.md
+-- Ref: [leitner2026] quantum-observable-universe/molecular-construction/shell-filling-rule.md
 theorem shell_filling_rule [ctx : ShellFillingRuleContext R] :
     (∀ n : ℕ, n < ctx.n_val → ctx.occupancy n = ctx.capacity n) ∧
     (∀ c : ctx.ValenceConfig, ctx.singly c ≤ ctx.singly ctx.ground) ∧

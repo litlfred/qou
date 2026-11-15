@@ -42,7 +42,7 @@ We prove that there is a **unique** `Φ` with `G₀(t) = G₁(t) Φ` for every `
 The asymptotic `Φ_KZ = lim_{ε→0} ε^{-B} G(1−ε)…` normalisation is not restated (it is built into
 `G₀`, `G₁`); hexagon and pentagon are later bricks. Base: complete normed `ℝ`-algebra. Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-10-11-drinfeld-kohno-sl2-via-emvz.md §2 Step 1, §5
+-- Ref: [leitner2026] docs/audits/2026-10-11-drinfeld-kohno-sl2-via-emvz.md §2 Step 1, §5
 -/
 
 namespace QOU.KZ.AssociatorKZ

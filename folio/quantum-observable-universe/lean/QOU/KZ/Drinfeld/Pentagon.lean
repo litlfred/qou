@@ -13,7 +13,7 @@ All reindexings are moved to the left (`reidx_ΦB`). Whiskering is handled by `k
 
 Sorry-free.
 
--- Ref: [manuscript] beans/defs/qou-zoyv (stage S2)
+-- Ref: [leitner2026] beans/defs/qou-zoyv (stage S2)
 -/
 
 noncomputable section

@@ -84,6 +84,6 @@ end QBirchSwinnertonDyer
 -- with the equalities between them, which is exactly the open conjecture.
 -- This is aspirational famous-open (q-BSD): stated honestly, NOT proved.
 -- Honest open state (§3b-tax): content-bearing class, no instance.
--- Ref: [manuscript] quantum-observable-universe/appendix-surreals/q-birch-swinnerton-dyer.ts
+-- Ref: [leitner2026] quantum-observable-universe/appendix-surreals/q-birch-swinnerton-dyer.ts
 
 end QOU.AppendixSurreals

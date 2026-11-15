@@ -21,7 +21,7 @@ LaTeX: `\label{prop:categorical-action-unique}`
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes/categorical-action-unique
+- [leitner2026] §2-quantum-observable-universes/categorical-action-unique
 - [kelly1982] Basic Concepts of Enriched Category Theory
 -/
 

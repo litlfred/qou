@@ -29,7 +29,7 @@ LaTeX label: `conj:quantum-langlands-dual`
 
 ## References
 
-- [manuscript] §"D19 quantum Langlands duality closure"
+- [leitner2026] §"D19 quantum Langlands duality closure"
 - Macdonald 1971; Lusztig 1989; Frenkel–Reshetikhin 2002
 -/
 

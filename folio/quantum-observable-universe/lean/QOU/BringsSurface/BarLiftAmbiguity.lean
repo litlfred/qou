@@ -69,7 +69,7 @@ This file does not choose.  It makes the choice visible and prices it.
 Generic over a `Field`; no anchor, no `ℝ`, per §7c.  `colourCurve27` carries
 the factor 27 rather than dividing by it, so nothing here needs `27 ≠ 0`.
 
--- Ref: [manuscript] beans `qou-ndt5` / `qou-fi93`;
+-- Ref: [leitner2026] beans `qou-ndt5` / `qou-fi93`;
 --      `QOU/Braiding/SkeinNormalisation.lean`,
 --      `QOU/BringsSurface/ColourCurveBarVsBranch.lean`
 -/

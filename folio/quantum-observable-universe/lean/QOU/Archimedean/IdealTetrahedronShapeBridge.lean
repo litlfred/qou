@@ -50,7 +50,7 @@
 
   Archimedean (ℝ, ℂ): `arg`, ordering — §7c.
 
-  -- Ref: [manuscript] beans qou-idvt (T1/T3), qou-krvm (iv)
+  -- Ref: [leitner2026] beans qou-idvt (T1/T3), qou-krvm (iv)
   -- Ref: [thurston1978] Ch. 7 (shape parameters and ideal simplices)
 -/
 

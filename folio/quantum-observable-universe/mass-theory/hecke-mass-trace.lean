@@ -30,7 +30,7 @@ LaTeX label: `prop:hecke-mass-trace`
 
 ## References
 
-- [manuscript] §4/hecke-mass-trace
+- [leitner2026] §4/hecke-mass-trace
 - [jones1987] https://doi.org/10.2307/1971403
 - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 -/
@@ -71,7 +71,7 @@ structure MarkovMassData (R : Type u) [Field R] where
     The categorical mass-squared equals the Frobenius pairing of
     `tr_M(Φ_mass)` with itself, valued in `R`.  Caller supplies
     the Frobenius pairing. -/
--- Ref: [manuscript] §4/hecke-mass-trace
+-- Ref: [leitner2026] §4/hecke-mass-trace
 def categoricalMassSquaredFromMarkov {R : Type u} [Field R]
     (frobeniusPairing : R → R → R)
     (d : MarkovMassData R) : R :=
@@ -119,7 +119,7 @@ structure MarkovMassData where
     2. τ sends the categorical trace to the Markov trace (Jones)
     3. τ sends the mass integrand to the Hecke mass element (Schur–Weyl)
     4. The norm over ℝ is the absolute value -/
--- Ref: [manuscript] §4/hecke-mass-trace
+-- Ref: [leitner2026] §4/hecke-mass-trace
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
@@ -128,7 +128,7 @@ noncomputable def categoricalMassFromMarkov (d : MarkovMassData) : ℝ :=
   |d.markovTrace|
 
 /-- The mass decomposes via the triangle inequality. -/
--- Ref: [manuscript] §4/hecke-mass-trace
+-- Ref: [leitner2026] §4/hecke-mass-trace
 theorem mass_markov_upper_bound (d : MarkovMassData) :
     categoricalMassFromMarkov d ≤
     |d.descendedTrace| + |d.transientTrace| := by
@@ -139,7 +139,7 @@ theorem mass_markov_upper_bound (d : MarkovMassData) :
 /-- Exact decomposition when both trace components are non-negative
     (as guaranteed in the archimedean realisation, where trace values
     are norms of holonomies and quantum dilogarithms). -/
--- Ref: [manuscript] §4/hecke-mass-trace
+-- Ref: [leitner2026] §4/hecke-mass-trace
 -- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
 --      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
 --      DOI: 10.1007/978-1-4612-0783-2
@@ -162,7 +162,7 @@ theorem mass_markov_exact (d : MarkovMassData)
     This is the Kashaev/dilogarithm bridge: it explicitly applies
     the fibre functor τ and so lives strictly in the Archimedean
     tier (`conj:phi-q-tower-jsj-bridge`). -/
--- Ref: [manuscript] §4/hecke-mass-trace
+-- Ref: [leitner2026] §4/hecke-mass-trace
 theorem mass_markov_archimedean
     (d : MarkovMassData)
     (vol : ℝ) (hvol : 0 < vol)

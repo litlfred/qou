@@ -50,7 +50,7 @@ $$
 *matching the CODATA value $2.2246\,\text{MeV}$ to sub-keV precision.
 
     The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
--- Ref: [manuscript] quantum-observable-universe/observations/deuteron-binding-energy.ts
+-- Ref: [leitner2026] quantum-observable-universe/observations/deuteron-binding-energy.ts
 theorem deuteron_binding_energy [ctx : DeuteronBindingEnergyContext] :
     ctx.ΔE_exp = 2.2246 ∧ |ctx.ΔE_bind - ctx.ΔE_exp| < 0.001 :=
   ⟨ctx.h_ΔE_exp, ctx.h_ΔE_bind_precision⟩

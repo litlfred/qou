@@ -177,7 +177,7 @@ theorem parity_odd_card (A : ℕ) (hA : 1 ≤ A) :
 -- Ref: [hoefsmit1974] Representations of Hecke algebras of finite groups
 --      with BN-pairs of classical type (PhD thesis, UBC) — seminormal
 --      G-function factors whose signs drive the exclusion parity.
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/frobenius-positivity-filter.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/frobenius-positivity-filter.md
 theorem frobenius_positivity_filter
     {A : ℕ} (hA : 1 ≤ A)
     (excludedSign : (Fin A → ZMod 2) → Prop) [DecidablePred excludedSign]

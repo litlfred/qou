@@ -87,7 +87,7 @@ theorem classical_limit_eq_stpart [inst : ClassicalLimitStpart]
     contain.
 
     Callers name it: `letI := canonical`. -/
--- Ref: [manuscript] conj:classical-limit-stpart §"Skeleton"
+-- Ref: [leitner2026] conj:classical-limit-stpart §"Skeleton"
 def canonical : ClassicalLimitStpart where
   cl_value := fun _ => 0
   st_part := fun _ => 0

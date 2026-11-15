@@ -17,7 +17,7 @@ namespace QOU
 
     Maps to Mathlib: related to `CategoryTheory.Monoidal.Transport`
     but requires 2-categorical infrastructure not yet available. -/
--- Ref: [manuscript] Ch. 8 Glossary
+-- Ref: [leitner2026] Ch. 8 Glossary
 -- Ref: [baez1995] Baez, "Knots and quantum gravity: progress and prospects," J. Math. Phys. 36 (1995)
 structure QuantumFlatness (Ω : Type*) [AddCommGroup Ω] where
   /-- The curvature `F_∇`. -/

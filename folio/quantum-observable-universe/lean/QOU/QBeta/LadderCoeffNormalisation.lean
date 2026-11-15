@@ -36,7 +36,7 @@ decision rests on a theorem rather than on a symbolic run.
 Base ring `ℝ`, per §7c: `Real.cos` is genuinely archimedean, so this belongs
 on the real side of the substrate/archimedean wall.
 
--- Ref: [manuscript] bean `qou-f09n` (owner naming ruling, 2026-08-16);
+-- Ref: [leitner2026] bean `qou-f09n` (owner naming ruling, 2026-08-16);
 -- `computations/qbeta/qbeta_ck_cache.py` (the `c₂ = −1` factor);
 -- `computations/qbeta/qbeta_alpha_eff_ladder_reconciliation_probe.py`
 -- (which measured the `−9/8` and reported it as a discrepancy).

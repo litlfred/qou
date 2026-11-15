@@ -333,7 +333,7 @@ axiom beyond the `WedderburnDecomp` class. -/
 theorem frobPairing_block_orthogonal (lam mu : Partition n) (h : lam ≠ mu)
     (a b : A) :
     frobPairing n q (a * WD.pi_lambda lam) (b * WD.pi_lambda mu) = (0 : R) := by
-  -- Ref: [manuscript] def:frobenius-hopf-substrate; Mathas (1999) §3.43.
+  -- Ref: [leitner2026] def:frobenius-hopf-substrate; Mathas (1999) §3.43.
   unfold frobPairing
   rw [pi_mul_shift, pi_mul_pi, if_neg h, mul_zero, map_zero]
 
@@ -349,7 +349,7 @@ theorem frobPairing_block_decomp (a b : A) :
     frobPairing n q a b
       = WD.all_parts.sum (fun lam =>
           frobPairing n q (a * WD.pi_lambda lam) (b * WD.pi_lambda lam)) := by
-  -- Ref: [manuscript] def:frobenius-hopf-substrate; Mathas (1999) §3.43.
+  -- Ref: [leitner2026] def:frobenius-hopf-substrate; Mathas (1999) §3.43.
   unfold frobPairing
   have h : ∀ lam : Partition n,
       (a * WD.pi_lambda lam) * (b * WD.pi_lambda lam)

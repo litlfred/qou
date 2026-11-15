@@ -28,7 +28,7 @@
   (§7c — the bound is purely algebraic; the archimedean evaluation at q₀
   instantiates `R := ℝ` in the witness, downstream of this file).
 
-  -- Ref: [manuscript] docs/audits/2026-06-28-delta-lambda-l1-ceiling-sign-only-prune.md
+  -- Ref: [leitner2026] docs/audits/2026-06-28-delta-lambda-l1-ceiling-sign-only-prune.md
 -/
 import Mathlib.Algebra.Order.BigOperators.Group.Finset
 import Mathlib.Algebra.Order.Field.Basic

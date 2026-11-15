@@ -84,7 +84,7 @@ theorem markov_trace_via_wenzl_qmn
     (parts_nodup : parts.Nodup) :
     markovTrace q w =
       (parts.map (fun lam => yLambdaWenzl lam q * chi_qMN lam w q)).sum := by
-  -- Ref: [manuscript] prop:wenzl-qmn-synergy proof; central character expansion
+  -- Ref: [leitner2026] prop:wenzl-qmn-synergy proof; central character expansion
   -- of tr_M plus Wenzl-bridge identification of y_λ.
   -- Concrete model: both sides = 0.
   show (0 : ℝ) = (parts.map _).sum

@@ -29,7 +29,7 @@ namespace QOU.FluidDynamics
 /-- **Kummer root levels of the Descartes universe.** For `n ≥ 1`, `n` divides
 `χ = -6` exactly when `n ∈ {1, 2, 3, 6}`. This is the arithmetic content of
 item 2 of `thm:ns-singularity-descartes`. -/
--- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/ns-singularity-descartes.ts
+-- Ref: [leitner2026] quantum-observable-universe/fluid-dynamics/ns-singularity-descartes.ts
 theorem descartes_kummer_root_levels (n : ℕ) (hn : 0 < n) :
     (n : ℤ) ∣ -6 ↔ n = 1 ∨ n = 2 ∨ n = 3 ∨ n = 6 := by
   constructor

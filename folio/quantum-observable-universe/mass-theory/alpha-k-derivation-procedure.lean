@@ -31,7 +31,7 @@ LaTeX label: `prop:alpha-k-derivation-procedure`
 
 ## References
 
-- [manuscript] Ch. Braids and Knots, §α_k derivation procedure
+- [leitner2026] Ch. Braids and Knots, §α_k derivation procedure
 - [jones1987] https://doi.org/10.2307/1971403
 -/
 
@@ -47,7 +47,7 @@ open Matrix
     `y`.  This is the abstract content: for an invertible square matrix
     `A` over `ℝ` and any `b`, `A *ᵥ y = b` has a unique solution,
     namely `y = A⁻¹ *ᵥ b`. -/
--- Ref: [manuscript] Ch. Braids and Knots, §α_k derivation procedure
+-- Ref: [leitner2026] Ch. Braids and Knots, §α_k derivation procedure
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
@@ -65,7 +65,7 @@ theorem alpha_k_derivation_procedure {p : ℕ}
     rw [Matrix.mulVec_mulVec] at h1
     rw [Matrix.inv_mul_of_invertible] at h1
     rw [Matrix.one_mulVec] at h1
-    -- Ref: [manuscript] prop:alpha-k-derivation-procedure
+    -- Ref: [leitner2026] prop:alpha-k-derivation-procedure
     exact h1
 
 end QOU.BraidKnot

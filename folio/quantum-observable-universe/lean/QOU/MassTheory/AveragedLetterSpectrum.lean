@@ -48,7 +48,7 @@ no archimedean construct. The one statement needing an order —
 `second_parameter_is_one`, which upgrades `Q² = 1` to `Q = 1` — lives in
 `AveragedLetterSpectrumOrdered.lean` so this file stays order-free.
 
-`-- Ref: [manuscript] docs/audits/2026-08-25-vol-trm-division-of-labour-is-sound.md`
+`-- Ref: [leitner2026] docs/audits/2026-08-25-vol-trm-division-of-labour-is-sound.md`
 -/
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Algebra.CharZero.Defs

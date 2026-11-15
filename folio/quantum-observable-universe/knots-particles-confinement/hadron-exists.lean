@@ -12,7 +12,7 @@ LaTeX: `\label{prop:hadron-exists}`
 
 ## References
 
-- [manuscript] §4-braids-and-knots/hadron-exists
+- [leitner2026] §4-braids-and-knots/hadron-exists
 - [atiyah1990] Geometry and Physics of Knots
 -/
 
