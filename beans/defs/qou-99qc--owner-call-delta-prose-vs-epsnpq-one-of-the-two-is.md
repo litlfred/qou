@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-15T22:47:08Z
+updated_at: 2026-11-15T23:06:51Z
 parent: qou-10v9
 ---
 
@@ -3462,3 +3462,12 @@ So the size of the asymmetry depends on the free state choice.
 - T23 (Ř² on strands 2,3) raises |ε| in both directions. The n→p over p→n ratio stays near 1.05.
 - J23 (the involution P₊−P₋ on strands 2,3), T³ sums: ε_np = −0.198078 (V³), −0.198057 (V⁶); ε_pn = −0.219804, −0.219591. Exact series: ε_pn/ε_np = q − 22(q−1)⁵ + … (V³) and q − 92(q−1)⁵ + … (V⁶). It matches q through order (q−1)⁴, but it is NOT equal to q, and the deviation coefficient grows with word length. At q₀ the ratio is 1.10968 (V³) and 1.10873 (V⁶), against q₀ = 1.10998.
 - Q values at q₀ are display only; none is selected.
+
+
+### PRE-REGISTRATION ε-N1 and ε-J1 (2026-11-15 23:05Z; owner 'go' via coordinator; PR #8068 holds ε-W1/NP1/TW1)
+**ε-N1: which T³ = −½ vector is the neutron?** Rule: the vector must be fixed by a corpus construction (U_q(sl₂) isospin, Schur–Weyl, γγ pair creation), never by matching data.
+Step 1 (forced): the nucleon has isospin ½, so it lies in the (2,1) isotypic part of V^⊗3 at T³ = −½, which has dimension 2. NOTE: the 'T3 sum' state used in ε-W1/NP1/TW1, |udd⟩+|dud⟩+|ddu⟩, is the classical symmetric vector. At q = 1 it is pure isospin 3/2 (the Δ⁰), and at q ≠ 1 it is not even a U_q weight-space eigenvector of the Casimir. So those rows are NOT neutron rows.
+Step 2: compute the T = ½ subspace at T³ = −½ exactly, as the kernel of the U_q(sl₂) raising operator E restricted to that weight (the coproduct convention matching Ř 'std'). Report ε_np for a general vector in that 2-dim space, as a rational function of the multiplicity coordinate.
+Step 3: grep the corpus for a construction that fixes the multiplicity vector (γγ pair creation; seminormal basis; diquark channel). If one is found, cite it and evaluate. If none is found, report the family and say the choice is open.
+Prediction: ε_np depends on the multiplicity coordinate (it is not constant on the 2-dim space).
+**ε-J1: why does J give ε_pn/ε_np ≈ q?** Compute the J23-dressed ratio for words V⁰ (none), V¹ and V² as well as V³ and V⁶, on the same (pre-registered, |udd⟩/|uud⟩ and sum) states. Prediction: with no word (V⁰) the ratio is exactly q, and the (q−1)⁵ deviation comes from the word. If V⁰ is not exactly q, report as found.
