@@ -60,6 +60,11 @@
 //!
 //! Usage:
 //!   two-row-tower-trace <Z> <N> [--prec BITS] [--threads T] [--out FILE]
+//!                       [--checkpoint FILE] [--chunk COLS]
+//!
+//! With `--checkpoint`, the columns run in chunks of `COLS` (default 2000) and
+//! each finished chunk's exact sum is appended to FILE; rerunning the same
+//! command resumes after the last finished chunk.
 
 use rayon::prelude::*;
 use rug::ops::Pow;
@@ -270,6 +275,7 @@ fn trace_of_word(
     factors: &[(usize, Float, Float)],
     prec: u32,
     progress: bool,
+    ckpt: Option<&Checkpoint>,
 ) -> Float {
     let tabs = tableaux(nlev);
     let reps: Vec<Irrep> = tabs.iter().enumerate().map(|(k, t)| Irrep::new(nlev, k, t)).collect();
@@ -293,36 +299,106 @@ fn trace_of_word(
             total_work = total_work as f64 // display only
         );
     }
-    let sum = jobs
-        .par_iter()
-        .map(|&(k, j)| {
-            let rep = &reps[k];
-            let mut v: Vec<Float> = (0..rep.dim).map(|_| Float::with_val(prec, 0)).collect();
-            v[j].assign(1);
-            let mut t1 = Float::with_val(prec, 0);
-            let mut t2 = Float::with_val(prec, 0);
-            for (fi, (i, _, _)) in factors.iter().enumerate().rev() {
-                apply(rep, *i, &coeffs[fi], &mut v, &mut t1, &mut t2);
+    // Chunks run in order; each finished chunk's exact sum is appended to the
+    // checkpoint, so a killed run resumes at the first unfinished chunk.
+    let chunk = ckpt.map_or(jobs.len().max(1), |c| c.chunk);
+    let done_chunks = ckpt.map_or_else(Vec::new, |c| c.load(prec));
+    let mut sum = Float::with_val(prec, 0);
+    let mut resumed_work: u64 = 0;
+    for (ci, part) in jobs.chunks(chunk).enumerate() {
+        if let Some(s) = done_chunks.get(ci) {
+            sum += s;
+            let c = done_cols.fetch_add(part.len() as u64, Ordering::Relaxed);
+            let w: u64 = part.iter().map(|&(k, _)| work_per_col[k]).sum();
+            done_work.fetch_add(w, Ordering::Relaxed);
+            resumed_work += w;
+            if progress && ci + 1 == done_chunks.len() {
+                eprintln!("  resumed: {} chunks ({} cols) from checkpoint", ci + 1, c + part.len() as u64);
             }
-            let c = done_cols.fetch_add(1, Ordering::Relaxed) + 1;
-            let w = done_work.fetch_add(work_per_col[k], Ordering::Relaxed) + work_per_col[k];
-            if progress {
-                let mut l = last.lock().unwrap();
-                if l.elapsed().as_secs() >= 10 || c == total {
-                    *l = Instant::now();
-                    let el = t0.elapsed().as_secs_f64();
-                    let frac = w as f64 / total_work as f64; // display only
-                    let eta = if frac > 0.0 { el / frac - el } else { 0.0 };
-                    eprintln!(
-                        "  [{c}/{total} cols, {:.1}% work] elapsed {el:.0}s eta {eta:.0}s",
-                        100.0 * frac
-                    );
+            continue;
+        }
+        let part_sum = part
+            .par_iter()
+            .map(|&(k, j)| {
+                let rep = &reps[k];
+                let mut v: Vec<Float> = (0..rep.dim).map(|_| Float::with_val(prec, 0)).collect();
+                v[j].assign(1);
+                let mut t1 = Float::with_val(prec, 0);
+                let mut t2 = Float::with_val(prec, 0);
+                for (fi, (i, _, _)) in factors.iter().enumerate().rev() {
+                    apply(rep, *i, &coeffs[fi], &mut v, &mut t1, &mut t2);
                 }
-            }
-            Float::with_val(prec, &v[j] * &weights[k])
-        })
-        .reduce(|| Float::with_val(prec, 0), |a, b| Float::with_val(prec, a + b));
+                let c = done_cols.fetch_add(1, Ordering::Relaxed) + 1;
+                let w = done_work.fetch_add(work_per_col[k], Ordering::Relaxed) + work_per_col[k];
+                if progress {
+                    let mut l = last.lock().unwrap();
+                    if l.elapsed().as_secs() >= 10 || c == total {
+                        *l = Instant::now();
+                        let el = t0.elapsed().as_secs_f64();
+                        let frac = w as f64 / total_work as f64; // display only
+                        // ETA from the work done in THIS process, not the resumed part.
+                        let fresh = (w - resumed_work) as f64 / (total_work - resumed_work) as f64;
+                        let eta = if fresh > 0.0 { el / fresh - el } else { 0.0 };
+                        eprintln!(
+                            "  [{c}/{total} cols, {:.1}% work] elapsed {el:.0}s eta {eta:.0}s",
+                            100.0 * frac
+                        );
+                    }
+                }
+                Float::with_val(prec, &v[j] * &weights[k])
+            })
+            .reduce(|| Float::with_val(prec, 0), |a, b| Float::with_val(prec, a + b));
+        if let Some(c) = ckpt {
+            c.append(ci, &part_sum);
+        }
+        sum += &part_sum;
+    }
     sum
+}
+
+/// Append-only checkpoint: a header line fixing the run, then one line per
+/// finished chunk, `<index> <exact base-16 MPFR value> end`.
+struct Checkpoint {
+    path: String,
+    header: String,
+    chunk: usize,
+}
+
+impl Checkpoint {
+    fn load(&self, prec: u32) -> Vec<Float> {
+        let Ok(text) = std::fs::read_to_string(&self.path) else {
+            std::fs::write(&self.path, format!("{}\n", self.header)).unwrap();
+            return Vec::new();
+        };
+        let mut lines = text.lines();
+        let head = lines.next().unwrap_or("");
+        assert!(head == self.header, "checkpoint {} is for a different run: {head:?}", self.path);
+        let mut out = Vec::new();
+        let mut kept = vec![head.to_string()];
+        for l in lines {
+            // Every complete line ends in " end"; a torn line (killed mid-write)
+            // can still parse as a shorter hex number, so the marker, not the
+            // parse, decides completeness. Torn and later lines are dropped.
+            let Some(body) = l.strip_suffix(" end") else { break };
+            let Some((i, v)) = body.split_once(' ') else { break };
+            let (Ok(i), Ok(v)) = (i.parse::<usize>(), Float::parse_radix(v, 16)) else { break };
+            if i != out.len() {
+                break;
+            }
+            out.push(Float::with_val(prec, v));
+            kept.push(l.to_string());
+        }
+        // Rewrite with only the complete lines, so appends start on a clean line.
+        std::fs::write(&self.path, kept.join("\n") + "\n").unwrap();
+        out
+    }
+
+    fn append(&self, ci: usize, v: &Float) {
+        use std::io::Write;
+        let mut f = std::fs::OpenOptions::new().append(true).open(&self.path).unwrap();
+        writeln!(f, "{ci} {} end", v.to_string_radix(16, None)).unwrap();
+        f.sync_all().unwrap();
+    }
 }
 
 // ------------------------------------------------------------- self-checks
@@ -381,17 +457,17 @@ fn self_check(q: &Float, prec: u32) -> Float {
             }
         }
         // tr(1) = 1
-        let tr1 = trace_of_word(q, n, &[], prec, false);
+        let tr1 = trace_of_word(q, n, &[], prec, false, None);
         upd(Float::with_val(prec, &tr1 - 1));
         // tr(sigma_1 ... sigma_{n-1}) = z^{n-1}  (indices 0..n-2)
         let chain: Vec<(usize, Float, Float)> =
             (0..n - 1).map(|i| (i, zero.clone(), one.clone())).collect();
-        let trc = trace_of_word(q, n, &chain, prec, false);
+        let trc = trace_of_word(q, n, &chain, prec, false, None);
         upd(Float::with_val(prec, &trc - Float::with_val(prec, zd.clone().pow((n - 1) as i32))));
         if n >= 3 {
             let w: Vec<(usize, Float, Float)> =
                 [0usize, 1, 0].iter().map(|&i| (i, zero.clone(), one.clone())).collect();
-            let t3 = trace_of_word(q, n, &w, prec, false);
+            let t3 = trace_of_word(q, n, &w, prec, false, None);
             let rhs = Float::with_val(
                 prec,
                 Float::with_val(prec, &h * Float::with_val(prec, zd.clone().pow(2))) + &zd,
@@ -408,17 +484,21 @@ fn main() {
     let mut prec: u32 = 300;
     let mut threads: usize = 4;
     let mut out: Option<String> = None;
+    let mut ckpt_path: Option<String> = None;
+    let mut chunk: usize = 2000;
     let mut it = args.iter().skip(1);
     while let Some(a) = it.next() {
         match a.as_str() {
             "--prec" => prec = it.next().unwrap().parse().unwrap(),
             "--threads" => threads = it.next().unwrap().parse().unwrap(),
             "--out" => out = Some(it.next().unwrap().clone()),
+            "--checkpoint" => ckpt_path = Some(it.next().unwrap().clone()),
+            "--chunk" => chunk = it.next().unwrap().parse().unwrap(),
             _ => pos.push(a.clone()),
         }
     }
     if pos.len() != 2 {
-        eprintln!("usage: two-row-tower-trace <Z> <N> [--prec BITS] [--threads T] [--out FILE]");
+        eprintln!("usage: two-row-tower-trace <Z> <N> [--prec BITS] [--threads T] [--out FILE] [--checkpoint FILE] [--chunk COLS]");
         std::process::exit(2);
     }
     let z: usize = pos[0].parse().unwrap();
@@ -446,7 +526,12 @@ fn main() {
         .collect();
     eprintln!("Z={z} N={n} A={a}: {} factors, pn={pn}, prec={prec} bits, threads={threads}",
         factors.len());
-    let tr = trace_of_word(&q, a, &factors, prec, true);
+    let ck = ckpt_path.map(|path| Checkpoint {
+        path,
+        header: format!("two-row-tower-trace Z={z} N={n} prec={prec} chunk={chunk} q0={Q0_STR}"),
+        chunk,
+    });
+    let tr = trace_of_word(&q, a, &factors, prec, true, ck.as_ref());
     let two_pn = Float::with_val(prec, Float::with_val(prec, 2).clone().pow(pn as i32));
     let val = Float::with_val(prec, &tr / &two_pn);
     let s = val.to_string_radix(10, Some(60));

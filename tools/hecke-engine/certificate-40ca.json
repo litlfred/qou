@@ -19406,7 +19406,7 @@
   "net_f64": -3.598551238999938e+113,
   "tr_markov_d": {
     "computed": false,
-    "reason": "A > 16: beyond the two-row tower probe so far, and v9's build was stripped mid-construction",
+    "reason": "A > 20: beyond the two-row tower computations so far, and v9's build was stripped mid-construction",
     "z": "q^3/(q^2+1)",
     "q0": "1.1099785827513808075916690956107688798744991218736",
     "normalisation": "divided by 2^pn_count, like the *_f64 fields"

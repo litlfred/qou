@@ -22,6 +22,17 @@ import closure. Measured: 2540 fresh / 190 changed / 253 no-olean of 2983;
 dirty closure 628; only **76** fell in the blocks' cone (rebuilt green in 3.5 min).
 Driver: `scripts/lean-blocks-baseline/` (L3, bean `qou-1f1w`).
 
+## TRAP — after a cache restore, `lean-direct-cone.sh` WITHOUT `-B` calls stale oleans "up-to-date" (2026-10-12)
+
+Measured: on a fresh `lake-cache/qou-v4-24-0` restore, the cone tool reported all 21 modules of
+#7612 `up-to-date` (313/313), yet `lean` on `QOU/Hecke/MarkovBondLetterColimit.lean` failed with
+7 type errors — the restored `SchurWeyl/MarkovTraceInstance.olean` predated `e0adbb6c347`
+(`ocneanuMarkovTrace` generalised from ℝ to any field). `scripts/lean_freshness.py` trusts the
+restored olean. **Verify a PR against current main with `-B`** (forced rebuild of the QOU cone;
+187 modules, 643 s, 4 jobs) or at least compile each changed file directly — a green
+"up-to-date" after a restore is evidence about the cache, not the source. A PR (#7750) merged on
+the unforced check before this was caught; the `-B` rebuild later confirmed it. (Stream 4, #7735.)
+
 ## TRAP — cache tarball stores `content/…` paths; the tree is `folio/…` (2026-10-05)
 
 Extract with `tar xzf - --transform 's,^content/,folio/,'`, or the 2703 QOU oleans
