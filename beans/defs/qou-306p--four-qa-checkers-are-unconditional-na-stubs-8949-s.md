@@ -248,3 +248,64 @@ are not qou's:
 2. **`3t8p`'s remedy** is still inert and that bean still says `todo` — correctly,
    since its criteria remain unscored; only the *route* changed.
 3. The two `detangler` stubs have no qou consumer and need nothing here.
+
+## Generalisation swept 2026-09-27 (post-merge): M5 was the ONLY diluted aggregate in the Python surface
+
+With the M5 fix on `main` (`18e1ba553e`), the obvious follow-on question is whether
+any **other** qou consumer aggregates QA criteria verdicts without filtering
+`n/a` — the same defect one file over. Measured rather than assumed.
+
+### Surface searched, and the result
+
+Every `.py` under `computations/`, `scripts/` and `content/` that reads
+`.qa.json` **and** mentions `result`/`verdict` — **17 files**. Classified by
+what each does with a verdict:
+
+| class | count | verdict |
+|---|---:|---|
+| aggregates a **pass rate** over criteria | **1** | `ab_methodology_metrics.py` — M5, now fixed |
+| counts **failures only** | 1 | `lean-qa-progress-table.py` — **immune by construction** |
+| acts **per entry**, no aggregation | 15 | not susceptible |
+
+**Counting failures is the shape that cannot have this bug.** A stub returns
+`n/a`, which is not `fail`, so it contributes nothing to a failure count — the
+progress table is correct as written and needs no filter. That is worth stating
+because the naive reading ("it reads verdicts, so check it") would have flagged
+it.
+
+**One consumer already handles `n/a` explicitly and correctly**:
+`scripts/qa-evidence-provenance-gate.py:153` — `is_live = result not in ("n/a",
+"pass")`. So the corpus was not uniformly blind to this; M5 was the outlier.
+
+All four files carrying a single pass-comparison
+(`reaudit-proof-deterministic.py`, `expire-unhashed-agent-verdicts.py`,
+`qa-evidence-provenance-gate.py`, `reaudit_verdict.py`) were checked for
+aggregate operations — `sum(` / `mean` / `/ len(` / `pct` / `percent` — and all
+four return **zero**. They are per-entry tools, not metrics.
+
+### 🛑 What was NOT swept, and what would separate "found none" from "there are none"
+
+Two surfaces are untouched, and the negative above is scoped to exclude them:
+
+1. **The TypeScript side.** 18 files under `content/pipeline/` read `.qa.json`
+   or `criteria` and carry aggregate operations (`definition-clarity-audit.ts`
+   62, `lean-vacuity-axiom-audit.ts` 78, `trace-convention-audit.ts` 44). **Most
+   are verdict PRODUCERS, not consumers** — they count their own findings, which
+   is why they mention `pass`/`n/a` at all — so a raw count of aggregate ops is
+   not evidence of the defect. Separating producer from consumer needs per-file
+   reading, which is a larger job than this follow-on and is not claimed here.
+2. **The derived `proof-objects.json` route** — closed cheaply: `grep -rln
+   proof-objects` over `computations/`, `scripts/` and `content/` returns
+   **zero** consumers, so nothing aggregates through it.
+
+So: **decisive for Python, open for TypeScript.** What would settle the TS side
+is classifying each of the 18 as producer or consumer and checking the
+consumers' rate arithmetic — worth doing if anyone touches that surface, not
+worth a sweep on its own.
+
+### Status
+
+`qou-306p` stays **todo**: the owner's decision is implemented and merged, but
+the four checkers are still stubs and that fix is upstream
+(`folio-assistant-89wq`). This entry closes the qou-side blast-radius question
+and leaves the TS surface explicitly unmeasured rather than implicitly clean.
