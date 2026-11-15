@@ -84,4 +84,19 @@ theorem splitting_value :
   unfold massSplitting quarkPhi
   norm_num [show ("udd" = "uud") = False by decide, show ("udd" = "udd") = True by decide]
 
+/-- **Hypothesis (H_α), not derived.** The model neutron–proton mass difference `Δm`
+    equals the binding scale `α` times the change of the quark-ordering traced volume.
+    This is the one underived step of `prop:neutron-proton-mass-splitting`
+    (owner ruling 2026-11-15: state it as a named hypothesis). It is a
+    content-bearing class with **no instance**: nothing in the corpus derives it.
+    Audit: `docs/audits/2026-11-15-np-splitting-error-budget.md` §15–§19. -/
+class ScaleHypothesis (α Δm : ℝ) : Prop where
+  conversion : Δm = α * abs (quarkPhi "udd" - quarkPhi "uud")
+
+/-- Conditional on (H_α) at `α = 3.7445`, the model splitting is `≈ 1.0541` MeV. -/
+theorem splitting_of_scaleHypothesis (Δm : ℝ) [h : ScaleHypothesis 3.7445 Δm] :
+    abs (Δm - 1.0541) < 0.001 := by
+  rw [h.conversion]
+  exact splitting_value
+
 end QOU.NeutronProtonSplitting
