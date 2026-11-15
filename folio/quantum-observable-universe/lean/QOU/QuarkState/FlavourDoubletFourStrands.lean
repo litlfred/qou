@@ -264,6 +264,8 @@ theorem Ja_idem : Ja q * Ja q = Ja q := by have := D_ne' hD; have := D_ne'' hD; 
 theorem Jb_idem : Jb q * Jb q = Jb q := by have := D_ne' hD; have := D_ne'' hD; unfold Jb; mat3
 theorem Ja_Jb : Ja q * Jb q = 0 := by have := D_ne' hD; have := D_ne'' hD; unfold Ja Jb; mat3
 
+theorem Jb_Ja : Jb q * Ja q = 0 := by have := D_ne' hD; have := D_ne'' hD; unfold Ja Jb; mat3
+
 /-- **No word commuting with `J₄` mixes the `J₄` flavour.** -/
 theorem J4_no_mix (h2 : q ^ 2 ≠ 1) {w : Matrix (Fin 3) (Fin 3) K} (hw : Commute w (J4 q)) :
     Ja q * w * Jb q = 0 := by
