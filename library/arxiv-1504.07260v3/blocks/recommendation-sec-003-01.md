@@ -1,0 +1,1 @@
+The basic conjecture of Conway-Norton, later proven by Borcherds, was that the McKay-Thompson series $T_g(\tau)$ should be invariant under a certain genus zero subgroup $\Gamma_g\subset SL(2,\mathbb{R})$.

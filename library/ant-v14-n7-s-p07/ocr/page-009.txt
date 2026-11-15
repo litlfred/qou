@@ -1,0 +1,42 @@
+Nonvanishing of hyperelliptic zeta functions over finite fields 1903
+
+Proof. Write 5 for the quantity Onl! | owt to be bounded.
+Since m,(f) is the number of nonzero elements of a vector space over Z/€Z, it is at least ¢ — 1 if it is
+
+greater than 0. In particular,
+IQngl | Y2 ma(f) = Ong DIO = = Ds
+LEQng
+By Proposition 2.1, we now have
+(€—1)8 <14+Cyq7!/?
+for all sufficiently large n, g, which yields the desired result by taking C; = C¢/(€— 1). oO
+
+So far, we have used the results of [Ellenberg et al. 2016] as they appear in that paper. However, for
+the present application, it is useful to compute explicit values Cz, Q¢ for which Corollary 2.6 holds. We
+do so by going back to the main body of [loc. cit.] and working out explicit bounds for quantities that are
+given in [loc. cit., (7.8.1)] only as unspecified constants.
+
+Proposition 2.7. Corollary 2.6 holds with Ci, = 2(€ — 1)~!(4¢)!38 and Qe =4- (4156)'*.
+
+Proof. By the proof of Corollary 2.6, we may take C; to be Ce/(¢—1), where Cy is the constant appearing
+in the statement of Proposition 2.1. Moreover, we may take Cy to be 2K¢Be and Q, to be 4B>, where
+Bc, Ke are the constants appearing in the proof of Proposition 2.1 controlling the exponential growth of
+the Betti numbers of the relevant Hurwitz space. We now explain how to bound By explicitly.
+
+In [Ellenberg et al. 2016, 7.8.1], the bound
+
+dim Hg (Xj), 3 Qa) < Ke(Bo)!
+arises from two facts. First, there is a stability theorem [loc. cit., 6.2], which tells us in this context that
+dim Hg((Xq)z, 3 Q,) = dim Hi, ((Xi4.p)e, 3 Qa) (2.8)
+
+for all n > Ai+ B, where A, B, and D are constants we shall specify. Second, there is an absolute bound
+[loc. cit., 2.5] which tells us that
+
+dim Hi((X4)p,; Q;) < 40)".
+These two facts together imply that
+dim Hé,((Xp)p, 3; Qi) < 4eyr8 +?
+so we may take By = (4€)4 and Ky = (40)8+”. It remains to compute A, B, and D.
+The key object of computation is the ring R defined in [Ellenberg et al. 2016, Section 3]. This ring is
+defined for any finite group G and any conjugacy-closed subset of G; we will consider here just the case
+
+relevant to us, which is that where G is the dihedral group of order 2¢ and c is the class of involutions
+in G. The set of n-tuples of involutions (11, ..., t,) € G” carries a natural action of the n-strand braid

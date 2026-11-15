@@ -217,7 +217,7 @@ Verlinde weight of the `S²×S¹` Hilbert space
 
 ## 5. The literature already says all of this, in a paper §2 cites
 
-[`library/arxiv-1001.2180v2/sections/sec-023-61-decomposition-of-tensor-representations.md`](../../library/arxiv-1001.2180v2/sections/sec-023-61-decomposition-of-tensor-representations.md)
+[`library/arxiv-1001.2180v2/sections/sec-026-61-decomposition-of-tensor-representations.md`](../../library/arxiv-1001.2180v2/sections/sec-026-61-decomposition-of-tensor-representations.md)
 — Féray–Méliot §6.1, the same paper the Φ_k audit uses for its §2
 identification, in a section it did not open:
 

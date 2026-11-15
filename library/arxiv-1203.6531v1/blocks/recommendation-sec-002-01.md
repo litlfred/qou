@@ -1,0 +1,1 @@
+::: proof *Proof.* Since we identify each word $\widehat{w}$ with a sequence of connected basic partitions, we must find a correspondence between sequences of connected partitions and the partitions fit into a box of size $n \times n$.

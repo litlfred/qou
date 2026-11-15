@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-hep-ph-0702179v1",
  "source_sha256": "4d78ee89f0e67fbb",
- "brief": "Instituto de F ´ ısica Corpuscular, IFIC, CSIC-Universitat de Val`encia — 4 sections: Introduction; The role of Resonance Chiral Theor; Resonance contributions to the O(p",
- "extended": "**Instituto de F ´ ısica Corpuscular, IFIC, CSIC-Universitat de Val`encia**\n\n*Apt. Correus 22085, E-46071 Val` encia, Spain*\n\n8 pp, 4 sections.\n\n**Outline.** Introduction; The role of Resonance Chiral Theory; Resonance contributions to the O(p6) LECs; Perspective",
+ "brief": "Large-NC estimate of the chiral low-energy constants ∗ — 6 sections: Front matter; Introduction; The role of Resonance Chiral Theor",
+ "extended": "**Large-NC estimate of the chiral low-energy constants ∗**\n\n*J. Portolés*\n\n8 pp, 6 sections.\n\n**Outline.** Front matter; Introduction; The role of Resonance Chiral Theory; Resonance contributions to the O(p6) LECs; K3 decays : determination of f+K0 -(0); Perspective",
  "tokens": {
-  "brief": 42,
-  "extended": 65
+  "brief": 32,
+  "extended": 66
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-introduction",
    "title": "Introduction",
@@ -22,10 +27,15 @@
   {
    "id": "sec-002-resonance-contributions-to-the-op6-lecs",
    "title": "Resonance contributions to the O(p6) LECs",
-   "pages": "4-7"
+   "pages": "4-5"
   },
   {
-   "id": "sec-003-perspective",
+   "id": "sec-003-k3-decays-determination-of-fk0--0",
+   "title": "K3 decays : determination of f+K0 -(0)",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-004-perspective",
    "title": "Perspective",
    "pages": "7-8"
   }

@@ -1,0 +1,77 @@
+174 S. Blanes et al. / Physics Reports 470 (2009) 151-238
+
+This is nothing but the Magnus expansion. Alternatively, one may correct with Y;(t) in the Lie group 3,
+Y(t) = exp(Fi(t))¥i(t). (96)
+
+This is precisely the approach pursued by Fer, i.e. representing the solution of (30) in the factorized form (96), where
+(hopefully) Y; will be closer to the identity matrix than Y, at least for small t.
+The question now is to find the differential equation satisfied by Y,. Substituting (96) into Eq. (30) we have
+
+aye (Ser) Yreoy = Aelly,, (97)
+
+dt dt dt
+
+so that, taking into account the expression for the derivative of the exponential map (Lemma 2), one arrives easily at
+Y,=A(t)Y, —-¥,(0) = 1, (98)
+
+where
+
+1
+Aj(t) = e'AeM -[ dx e**1fe*h, (99)
+0
+
+The above procedure can be repeated to yield a sequence of iterated matrices Ay. After n steps we have the following recursive
+scheme, known as the Fer expansion:
+
+Y=elte®... ery, (100)
+Yi =An(t)Yn  Yn(0)=1, n=1,2,...
+
+with F,(t) and A,(t) given by
+t
+Fryi(t) = i] An(s)ds — Ao(t) = A(t), n=0,1,2,...
+0
+
+1
+Anyi = eft Apel -[ dx e*fn+1 A, ene
+0
+
+(101)
+
+1 x
+| ax | due~O-Fntt (A, Fy]
+0 0
+
+(Yi
+= De Gr Ditte - n=0,1,2....
+=
+
+When, after n steps we impose Y, = I, we are left with an approximation to the exact solution Y(t).
+
+Inspection of the expression of A,; in (101) reveals an interesting feature of the Fer expansion. If we assume that a
+perturbation parameter ¢ is introduced in A (i.e. if we substitute A by eA in the formalism), since F,+, is of the same order in
+€ as A, then an elementary recursion shows that the matrix A, starts with a term of order e (correspondingly the operator
+F, contains terms of order 2" and higher). This should greatly enhance the rate of convergence of the product in Eq. (100)
+to the exact solution.
+
+It is possible to derive a bound on the convergence domain in time of the expansion [30]. The idea is just to look for
+conditions on A(t) which ensure F, — 0Oasn — oo. As in the case of the Magnus expansion, we take A(t) to be a
+bounded matrix with ||A(t) || < k(t) = ko(t). Fer’s algorithm, Eqs. (100) and (101), then provides a recursive relation among
+corresponding bounds kn(t) for ||An(t)||. If we denote Kn(t) = ty kn(s)ds, we can write this relation in the generic form
+Kn41 =f (Kn, Kn), which, after integration, gives
+
+Kny1 = M(Kn). (102)
+
+The question now is: when is K, — 0asn — oo? This is certainly so if 0 is a stable fixed point for the iteration of the
+mapping M and K, is within its basin of attraction. To see when this is the case, we have to solve the equation € = M(é)
+to find where the next fixed point lies. Let us do it explicitly. By taking norms in the recursive scheme (101) we have
+
+1 x
+nll < | dx | duu 20-6 ILA, Fysalll
+0 0
+
+which can be written as ||An+1|| << Kn41, with
+
+1 —e2%(1 — 2K,) dKy
+
+k =
+mt 2Kn dt

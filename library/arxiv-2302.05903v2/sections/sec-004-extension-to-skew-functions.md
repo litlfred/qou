@@ -7,10 +7,11 @@ section_number: null
 pages: 5-6
 source_pdf: 2302.05903v2.pdf
 source_sha256: 9a17abd36cc8a317
-doc_brief: "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials — We elaborate on the recent suggestion to consider averaging of Cauchy identities"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.985
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.985
+doc_brief: "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials — We elaborate on the recent suggestion to consider averaging of Cauchy identities"
 ---
 Now, one can easily obtain similar formulas for sums of the skew Schur functions $S_{R/P}$. To this end, one needs a slight generalization of the Cauchy identity ([\[Cauchy\]](#Cauchy){reference-type="ref" reference="Cauchy"}): $$\begin{aligned}
 \label{C2}

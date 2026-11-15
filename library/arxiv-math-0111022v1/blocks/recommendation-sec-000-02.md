@@ -1,0 +1,1 @@
+So, at least if we treat the quantum field theories on $S^{4,\theta }$ perturbatively, starting from a system of free $q$-oscillators, we should, again, be led to expressions in terms of $q$-special functions.

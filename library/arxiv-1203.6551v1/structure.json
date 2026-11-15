@@ -6,10 +6,18 @@
   "sha256": "a8e84f8ed63dbccaa746be61f166bedf3f49ac9e57743dbea492c5cfdd606b9f",
   "bytes": 729727,
   "pages": 25,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 9,
+    "reason": "12 of 490 words are a stray single letter: the text layer splits words"
+   }
+  ],
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,17 +29,28 @@
   "doi": null,
   "title": "On the number of hyperbolic 3-manifolds of a given volume",
   "authors_raw": "Craig Hodgson and Hidetoshi Masai",
-  "abstract": "The work of J\u00f8rgensen and Thurston shows that there is a \ufb01nite number N (v) of orientable hyperbolic 3-manifolds with any given volum e v. W e show that there is an in\ufb01nite sequence of closed orientabl e hyperbolic 3- manifolds, obtained by Dehn \ufb01lling on the \ufb01gure eight knot co mplement, that are uniquely determined by their volumes. This gives a seque nce of distinct volumes xi converging to the volume of the \ufb01gure eight knot complement w ith N (xi) = 1 for each i. W e also give an in\ufb01nite sequence of 1-cusped hyper- bolic 3-manifolds, obtained by Dehn \ufb01lling one cusp of the ( \u2212 2, 3, 8)-pretzel link complement, that are uniquely determined by their volu mes amongst ori- entable cusped hyperbolic 3-manifolds. Finally, we descri be examples showing that the number of hyperbolic link complements with a given v olume v can grow at least exponentially fast with v.",
-  "docinfo": {
-   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20180802184722-04'00'",
-   "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  },
   "title_lines": [
    "On the number of hyperbolic 3-manifolds of a given volume"
-  ]
+  ],
+  "abstract": "The work of Jørgensen and Thurston shows that there is a ﬁnite number N(v) of orientable hyperbolic 3-manifolds with any given volume v. We show that there is an inﬁnite sequence of closed orientable hyperbolic 3- manifolds, obtained by Dehn ﬁlling on the ﬁgure eight knot complement, that are uniquely determined by their volumes. This gives a sequence of distinct volumes xi converging to the volume of the ﬁgure eight knot complement with N(xi) = 1 for each i. We also give an inﬁnite sequence of 1-cusped hyper- bolic 3-manifolds, obtained by Dehn ﬁlling one cusp of the (−2, 3, 8)-pretzel link complement, that are uniquely determined by their volumes amongst ori- entable cusped hyperbolic 3-manifolds. Finally, we describe examples showing that the number of hyperbolic link complements with a given volume v can grow at least exponentially fast with v.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20180802184722-04'00'"
+  },
+  "title_raw": "On the number of hyperbolic 3-manifolds of a given volume",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "On the number of hyperbolic 3 -manifolds of a given volume Craig Hodgson and Hidetoshi Masai",
+   "outline": "1. Introduction",
+   "text": "On the number of hyperbolic 3-manifolds of a given volume",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "On the number of hyperbolic 3 -manifolds of a given volume Craig Hodgson and Hidetoshi Masai"
  },
  "toc": [
   {
@@ -39,146 +58,630 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Hyperbolic Dehn fillings determined by their volumes",
    "page": 5,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Dehn filling on the figure eight knot complement and its sister",
    "page": 8,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Dehn filling on the Whitehead link complement and its sister",
    "page": 10,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Higher order terms in the Neumann-Zagier asymptotic formula",
    "page": 13,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Hyperbolic graphs with parabolic meridians",
    "page": 15,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Associated circle packings and cusp moduli",
    "page": 18,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Construction of different manifolds sharing the same volume",
    "page": 21,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Some Open Questions",
    "page": 23,
    "source": "outline",
-   "number": "9"
+   "number": "9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 24,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The ﬁgure eight knot and its sister, with complements denoted m004 and m003 respectively in SnapPea notation",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The Whitehead link and the (−2, 3, 8)-pretzel link,",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Frequencies of volumes of hyperbolic 3-manifolds in the closed and cusped censuses",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Frequencies of volumes of hyperbolic 3-manifolds in the cusped census",
+   "page": 3,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Volume preserving moves on hyperbolic graphs",
+   "page": 16,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Gluing by a homeomorphism This is illustrated in Figure 6. Here we regard S3 as B3 ∪B3 where one ball",
+   "page": 16,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Polyhedral decomposition of a graph complement We shade the faces coming from the thrice punctured sphere boundaries of NP and leave the faces on Π white as in [20], [39]. Note that every shaded face is an ideal triangle, and since reﬂection φ about Π leaves each thrice punctured sphere boundary inv",
+   "page": 17,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Graph Wn with 2n + 2 vertices The two isometric polyhedra in the decomposition of the complement of Wn described in section 6 are obtained by gluing together n regular ideal octahedra (see Figure 9 (right))",
+   "page": 18,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "A circle packing obtained from the graph Wn (left) and a (topological) polyhedral decomposition (right) Recall from Remark 2.1 that each torus cusp of a hyperbolic 3-manifold has a",
+   "page": 18,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "Cusp modulus for ideal vertices of type 1",
+   "page": 19,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "Cusp modulus for ideal vertices of type 2",
+   "page": 19,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "Cusp modulus for ideal vertices of type 3",
+   "page": 19,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "13",
+   "title": "A graph Gn,k obtained from Wn (top) and vertices corresponding to the knot component cusp (bottom) In Figure 14, we depict the shapes of the torus cusps. The left diagram shows the shape of a crossing circle cusp without a half twist below, the middle shows the shape of a crossing circle cusp with a",
+   "page": 20,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "14",
+   "title": "Shapes of the torus cusps for the graph Gn,k in Figure 13 The shape of the torus cusp of the knot component in Figure 13 is obtained by arranging 2 × 2(k + 1) copies of the 1 × 2 rectangle in Figure 11 to form a",
+   "page": 20,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "15",
+   "title": "Starting point: graph with 2n vertices (represented by circles) First, we label every remaining pair of thrice punctured spheres by an element of {0, 1}. For each such pair we apply Lemma 6.1 as follows. We glue the pair of",
+   "page": 21,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1004,
+   "n_words": 162,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 13,
-   "n_chars": 30539,
-   "n_words": 6058
+   "page_end": 5,
+   "n_chars": 9849,
+   "n_words": 1655,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-5-higher-order-terms-in-the-neumann-zagier-asymp",
+   "id": "sec-001-2-hyperbolic-dehn-fillings-determined-by-their-v",
+   "number": "2",
+   "title": "Hyperbolic Dehn fillings determined by their volumes",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 8,
+   "n_chars": 6282,
+   "n_words": 1197,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-3-dehn-filling-on-the-figure-eight-knot-compleme",
+   "number": "3",
+   "title": "Dehn filling on the figure eight knot complement and its sister",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 6529,
+   "n_words": 1258,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-4-dehn-filling-on-the-whitehead-link-complement",
+   "number": "4",
+   "title": "Dehn filling on the Whitehead link complement and its sister",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 13,
+   "n_chars": 7201,
+   "n_words": 1416,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-5-higher-order-terms-in-the-neumann-zagier-asymp",
    "number": "5",
    "title": "Higher order terms in the Neumann-Zagier asymptotic formula",
    "level": 1,
    "page_start": 13,
    "page_end": 15,
-   "n_chars": 5174,
-   "n_words": 1183
+   "n_chars": 5068,
+   "n_words": 1077,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-6-hyperbolic-graphs-with-parabolic-meridians",
+   "id": "sec-005-6-hyperbolic-graphs-with-parabolic-meridians",
    "number": "6",
    "title": "Hyperbolic graphs with parabolic meridians",
    "level": 1,
    "page_start": 15,
    "page_end": 18,
-   "n_chars": 5229,
-   "n_words": 960
+   "n_chars": 5186,
+   "n_words": 918,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-7-associated-circle-packings-and-cusp-moduli",
+   "id": "sec-006-7-associated-circle-packings-and-cusp-moduli",
    "number": "7",
    "title": "Associated circle packings and cusp moduli",
    "level": 1,
    "page_start": 18,
-   "page_end": 23,
-   "n_chars": 9964,
-   "n_words": 1936
+   "page_end": 21,
+   "n_chars": 4038,
+   "n_words": 748,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-9-some-open-questions",
+   "id": "sec-007-8-construction-of-different-manifolds-sharing-th",
+   "number": "8",
+   "title": "Construction of different manifolds sharing the same volume",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 23,
+   "n_chars": 5764,
+   "n_words": 1091,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-008-9-some-open-questions",
    "number": "9",
    "title": "Some Open Questions",
    "level": 1,
    "page_start": 23,
    "page_end": 24,
-   "n_chars": 2584,
-   "n_words": 470
+   "n_chars": 2560,
+   "n_words": 446,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-005-references",
+   "id": "sec-009-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 24,
    "page_end": 25,
-   "n_chars": 6888,
-   "n_words": 1085
+   "n_chars": 6821,
+   "n_words": 1018,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 10,
-  "sections": 6,
-  "chars_total": 60378,
+  "toc_inferred_entries": 0,
+  "figure_entries": 15,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 11,
+  "chars_total": 60302,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "hyamfest_arxiv.tex",
    "tex_sections": 10,
-   "overlaid": 4,
+   "overlaid": 9,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -186,45 +689,84 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.673,
-     "coverage_ratio": 0.982,
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-5-higher-order-terms-in-the-neumann-zagier-asymp",
+     "id": "sec-001-2-hyperbolic-dehn-fillings-determined-by-their-v",
+     "title": "Hyperbolic Dehn fillings determined by their volumes",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-3-dehn-filling-on-the-figure-eight-knot-compleme",
+     "title": "Dehn filling on the figure eight knot complement and its sister",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-4-dehn-filling-on-the-whitehead-link-complement",
+     "title": "Dehn filling on the Whitehead link complement and its sister",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-5-higher-order-terms-in-the-neumann-zagier-asymp",
      "title": "Higher order terms in the Neumann-Zagier asymptotic formula",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.981,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-002-6-hyperbolic-graphs-with-parabolic-meridians",
-     "title": "Hyperbolic graphs with parabolic meridians",
-     "prose_ratio": 0.99,
-     "coverage_ratio": 0.972,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-003-7-associated-circle-packings-and-cusp-moduli",
-     "title": "Associated circle packings and cusp moduli",
-     "prose_ratio": 0.577,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-004-9-some-open-questions",
-     "title": "Some Open Questions",
      "prose_ratio": 0.993,
-     "coverage_ratio": 0.987,
+     "coverage_ratio": 0.973,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-references",
+     "id": "sec-005-6-hyperbolic-graphs-with-parabolic-meridians",
+     "title": "Hyperbolic graphs with parabolic meridians",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-7-associated-circle-packings-and-cusp-moduli",
+     "title": "Associated circle packings and cusp moduli",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-8-construction-of-different-manifolds-sharing-th",
+     "title": "Construction of different manifolds sharing the same volume",
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-9-some-open-questions",
+     "title": "Some Open Questions",
+     "prose_ratio": 0.89,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-references",
      "title": "References",
      "result": "no matching \\section"
     }

@@ -1,0 +1,1 @@
+Any theory intended to predict what is actually reported by the experiment must include $K_{\rm phys}$ at the point where the operator $\hat Y(t)$ is converted into the measured complex amplitude $\hat u_0$.

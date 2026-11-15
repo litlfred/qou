@@ -7,10 +7,11 @@ section_number: 3.2.1
 pages: 18-21
 source_pdf: 1003.4808v2.pdf
 source_sha256: 72301d4bee491f86
-doc_brief: "Quantum Field Theory and the Volume Conjecture — 14 sections: Preliminaries; The many dimensions of the volume ; Parametrized VC"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.955
-latex_coverage_ratio: 0.948
+latex_coverage_ratio: 0.971
+doc_brief: "Quantum Field Theory and the Volume Conjecture — 15 sections: Front matter; Preliminaries; The many dimensions of the volume"
 ---
 The problem of quantization can be approached in many different ways. Each approach has its advantages and disadvantages, but in the end all methods are expected to yield the same result. The classic approach of *geometric quantization* (*cf.* [@woodhouse-1992]) starts by defining a prequantum line bundle $L \to {\cal M}$ with a unitary connection of curvature $\frac{1}{\hbar}\omega$. Note that such a line bundle only exists for
 

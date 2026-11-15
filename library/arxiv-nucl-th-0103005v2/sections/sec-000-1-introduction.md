@@ -4,13 +4,14 @@ doc_title: "arXiv:nucl-th/0103005v2 6 Mar 2001"
 section_id: sec-000-1-introduction
 section_title: "INTRODUCTION"
 section_number: 1
-pages: 1-4
+pages: 2-4
 source_pdf: 0103005v2.pdf
 source_sha256: c2aaa21b51d7bc10
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.981
-latex_coverage_ratio: 0.98
+latex_coverage_ratio: 0.989
+doc_brief: "arXiv:nucl-th/0103005v2 6 Mar 2001 — Accurate quantum Monte Carlo calculations of ground and low-lying excited states of light p-shell nuclei are now possible for realistic nuclear Hamiltonians that"
 ---
 A major goal of nuclear physics is to understand the stability, structure, and reactions of nuclei as a consequence of the interactions between individual nucleons. This is an extremely challenging many-body problem, exacerbated by the fact that we do not know in detail what the interactions are. Quantum chromodynamics, the fundamental theory for strong interactions, is so difficult to solve in the nonperturbative regime of low-energy nuclear physics that no one is currently able to quantitatively describe the interactions between two nucleons from first principles. However, we do have a tremendous amount of experimental data on nucleon-nucleon ($N\!N$) scattering and we can construct accurate representations of $N\!N$ interactions by means of two-body potentials. These potentials are complicated, depending on the relative positions, spins, isospins, and momenta of the nucleons, which makes the problem of finding accurate quantum-mechanical solutions of many-nucleon bound and scattering states a demanding task. Nevertheless, a variety of precise calculations have been carried out for the three- and four-nucleon systems which reveal an additional complication: two-nucleon forces alone are inadequate to quantitatively explain either the bound-state properties or a variety of $Nd$ and $Nt$ scattering data. This is not surprising, because meson-exchange theory and the composite nature of nucleons indicate that many-nucleon forces, at least three-nucleon forces, are important. However, these are even more difficult to construct from first principles. In like manner, meson-exchange introduces two-body charge and current operators, and calculations of electroweak transitions show that these are also necessary to achieve agreement with data.
 

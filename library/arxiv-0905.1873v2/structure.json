@@ -7,8 +7,8 @@
   "bytes": 142399,
   "pages": 4,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -21,7 +21,7 @@
   },
   "doi": null,
   "title": "Evolution of Nuclear Many-Body Forces with the Similarity Renormalization Group",
-  "authors_raw": "E.D. Jurgenson, 1 P. Navr\u00e1til,2 and R.J. Furnstahl 1",
+  "authors_raw": "E.D. Jurgenson,1 P. Navrátil,2 and R.J. Furnstahl1",
   "title_lines": [
    "Evolution of Nuclear Many-Body Forces",
    "with the Similarity Renormalization Group"
@@ -29,66 +29,195 @@
   "abstract": null,
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181004000335-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20181004000335-04'00'"
+  },
+  "title_raw": "Evolution of Nuclear Many-Body Forces with the Similarity Renormalization Group",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Evolution of Nuclear Many-Body Forces with the Similarity Renormalization Group",
+   "text": "Evolution of Nuclear Many-Body Forces with the Similarity Renormalization Group",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
  },
- "toc": [
+ "toc": [],
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "6 inferred entries, 67% of them starting on page(s) 2, 3 of 4 — a list found ON a page, not the document's structure",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (6 inferred entries, 67% of them starting on page(s) 2, 3 of 4 — a list found ON a page, not the document's structure): one section per page.",
+ "figures": [
   {
-   "level": 1,
-   "title": "MeV are compared with SRG at \u210f\u2126 = 20 MeV evolved",
-   "page": 3,
-   "source": "inferred",
-   "number": "28"
+   "kind": "figure",
+   "number": "1",
+   "title": "(Color online) Ground-state energy of 3H as a func-",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "2"
   },
   {
-   "level": 1,
-   "title": "Acknowledgments",
+   "kind": "figure",
+   "number": "2",
+   "title": "(Color online) Ground-state energy of 4He as a func-",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "2"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "(Color online) Ground-state energy of 3H as a func-",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "(Color online) Ground-state energy of 4He as a func-",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "(Color online) Binding energy of the alpha particle vs. the binding energy of the triton. The Tjon line from phenomenological NN potentials (dotted) is compared with the trajectory of SRG energies when only the NN interaction is kept (circles)",
    "page": 4,
-   "source": "inferred",
-   "number": null
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
   }
  ],
- "toc_source": "inferred",
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-front-matter",
+   "id": "page-001",
    "number": null,
-   "title": "Front matter",
+   "title": "Page 1",
    "level": 1,
    "page_start": 1,
-   "page_end": 3,
-   "n_chars": 10982,
-   "n_words": 1952
+   "page_end": 1,
+   "n_chars": 5095,
+   "n_words": 842,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-000-28-mev-are-compared-with-srg-at-\u210f\u03c9-20-mev-evolve",
-   "number": "28",
-   "title": "MeV are compared with SRG at \u210f\u2126 = 20 MeV evolved",
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 4308,
+   "n_words": 770,
+   "label_start": "2",
+   "label_end": "2"
+  },
+  {
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
    "level": 1,
    "page_start": 3,
-   "page_end": 4,
-   "n_chars": 4881,
-   "n_words": 859
+   "page_end": 3,
+   "n_chars": 3831,
+   "n_words": 680,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
-   "id": "sec-001-acknowledgments",
+   "id": "page-004",
    "number": null,
-   "title": "Acknowledgments",
+   "title": "Page 4",
    "level": 1,
    "page_start": 4,
    "page_end": 4,
-   "n_chars": 1908,
-   "n_words": 345
+   "n_chars": 4501,
+   "n_words": 777,
+   "label_start": "4",
+   "label_end": "4"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 2,
-  "sections": 3,
-  "chars_total": 17771
+  "toc_entries": 0,
+  "toc_inferred_entries": 6,
+  "toc_inferred_mean_confidence": 0.6,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 5,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 4,
+  "chars_total": 17735,
+  "furniture_lines_stripped": 3
  }
 }

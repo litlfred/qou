@@ -1,0 +1,71 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1107.5322v1",
+ "source_sha256": "6438edaa3a65c31f",
+ "brief": "Probing the Origin of Neutrino Mass: from GUT to LHC — Ever since the Majorana classic work, the nature of neutrino has been one of the central",
+ "extended": "**Probing the Origin of Neutrino Mass: from GUT to LHC**\n\n*Goran Senjanović*\n\n10 pp, 10 sections.\n\n**Abstract.** Ever since the Majorana classic work, the nature of neutrino has been one of the central questions of the weak interaction physics. If neutrino is its own antiparticle, the immediate consequence is lepton number violation through the neutrinoless double beta decay. However, colliders such as the LHC oﬀer a hope of seeing directly the same phenomenon, and moreover the Majorana nature of new particles needed to complete the Standard Model. I review here the salient features of these phenomena, and then turn to grand uniﬁcation as a way of probing the scale of the relevant new physics. The minimal supersymmetric SO(10) theory basically eliminates the LHC physics, but leads naturally to the large atmospheric mixing angle and furthermore predicts θ13 ≃10◦without any additional symmetries, in agreement with new T2K and MINOS data.\n\n**Outline.** Front matter; 1 Introduction: from Majorana to see-saw; 2 Large scale see-saw: GUT; 2.1 SO(10); 2.2 SU(5); 3 Low scale seesaw: LHC; 3.1 Left-Right Symmetry; 3.2 More SU(5); 4 Summary and Outlook; 5 Acknowledgements",
+ "tokens": {
+  "brief": 47,
+  "extended": 306
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction-from-majorana-to-see-saw",
+   "title": "Introduction: from Majorana to see-saw",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-2-large-scale-see-saw-gut",
+   "title": "Large scale see-saw: GUT",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-002-21-so10",
+   "title": "SO(10)",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-003-22-su5",
+   "title": "SU(5)",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-004-3-low-scale-seesaw-lhc",
+   "title": "Low scale seesaw: LHC",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-005-31-left-right-symmetry",
+   "title": "Left-Right Symmetry",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-006-32-more-su5",
+   "title": "More SU(5)",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-007-4-summary-and-outlook",
+   "title": "Summary and Outlook",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-008-5-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "8-10"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

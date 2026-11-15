@@ -10,7 +10,8 @@ source_sha256: 87885f4d03661f26
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.956
-latex_coverage_ratio: 0.981
+latex_coverage_ratio: 0.974
+doc_brief: "arXiv:hep-th/9609174v2 23 Sep 1996 — We prove the universality of correlation functions of chiral unitary and unitary ensembles of ran- dom matrices in the microscopic limit."
 ---
 In this section we consider the chiral unitary ensemble:
 \begin{equation}

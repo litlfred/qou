@@ -1,0 +1,211 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2603.25236v1",
+ "source": {
+  "structure_sha256": "fba6853d6e544e19d5dc4cade32ee0be0dc5ac6b7b70f23e937909b85e96159c",
+  "file": "2603.25236v1.pdf"
+ },
+ "provenance": {
+  "title": "A Concentration of Measure Phenomenon in Lattice Yang-Mills",
+  "authors": "Lattice Yang-Mills",
+  "arxiv": {
+   "id": "2603.25236",
+   "version": "1",
+   "primary_class": "math-ph",
+   "stamp_date": "26 Mar 2026"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 12,
+  "by_kind": {
+   "recommendation": 12
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall see below that while this phenomenon does indeed manifest in this setting, it does not allow us to go beyond what is already known by using other methods.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall deal with the Euclidean, lattice Yang-Mills theory in D dimensions with periodic boundary conditions.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall do so by pushing forward the product of Haar measures to R via the function arXiv:2603.25236v1 [math-ph] 26 Mar 2026 t(Ux,\u00b5) = 1 K X {\u00b5,\u03bd} 1 N \u211c \u0010 Tr \u0000U \u2020 x,\u03bdU \u2020 x+\u03bd,\u00b5Ux+\u00b5,\u03bdUx,\u00b5 \u0001\u0011 .",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall deal with integrals of polynomials in the matrix entries (as well as their conjugates) with respect to the Haar measure.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Also note that the two plaquettes from which these four half-edges came must actually be the same plaquette, as two of their edges coincide.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "It should be clear that it would only happen if we can group the plaquettes into pairs, with one copy in the pair oriented one way, while the other the opposite way, and then couple the half-edges as indicated in Figure 4 because any other scenario would produce cases (b) or (c).",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "It follows that the other two half-edges coming from the bottom edge must be coupled together as well.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Following them around the bottom right corner, we conclude that the corresponding two half-edges coming from the right edge must also be coupled together, for otherwise, we would have either case (b) or (c) at the bottom right corner.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Proceeding like this around the plaquette, we conclude that the two half-edges coming from these two plaquettes must only couple among themselves, giving the picture on the right.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In other words, we must determine the total number of ways we can group l plaquettes into oppositely oriented pairs.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "To do so, we should note that strictly speaking, (5) does not follow from the theorem.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "This is because the equation t(U) = constant becomes a homogeneous one of order 2 if one only keeps the terms up to the quadratic order.2 Now, if we count the degrees of freedom, taking into account gauge invariance, we see that d\u03c1N[t] should scale as t (D\u22121)(N2\u22121)K 2 in the neighbourhood of t = \u0000D 2 \u0001 .",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

@@ -42,7 +42,7 @@ verified in exact rational arithmetic for every partition of $n = 1,\dots,9$ ([`
 
 **The exponent $\kappa_\lambda$ is forced, not chosen.** Substituting $Q = q^2$ into the display above leaves $q^{2n(\lambda) - \sum_\square h(\square) + n}$, which collapses to $q^{-\kappa_\lambda}$ by two identities — $\sum_\square h(\square) = n(\lambda) + n(\lambda') + n$ and $\kappa_\lambda = n(\lambda') - n(\lambda)$ — each verified independently over all partitions of $n \leq 10$ in the same probe. Without them the identity would be an agreement at $96$ sample points; with them it is a derivation.
 
-This also explains a coincidence the corpus carried without comment: `molienSum_eq_qFactorial` (Lean, sorry-free) says $\sum_\lambda f^\lambda q^{-\kappa_\lambda}\dim_q(\lambda) = [n]_q!$, and $\mathbb{M}_{n,q}$ is a probability measure by construction. Those are the same theorem.
+This also explains a coincidence the corpus carried without comment: `molienSum_eq_qFactorial` (Lean) says $\sum_\lambda f^\lambda q^{-\kappa_\lambda}\dim_q(\lambda) = [n]_q!$, and $\mathbb{M}_{n,q}$ is a probability measure by construction. Those are the same theorem.
 
 ## The substrate sits at $q > 1$, and that costs an orientation, not the theorem
 
@@ -50,8 +50,6 @@ This also explains a coincidence the corpus carried without comment: `molienSum_
 
 ## What is still open
 
-**The transfer to $w_\lambda^{(n)}(q) = \dim_q^2/[n]_q!$ is unestablished, and that family is still in production.** Restating *this* block does not migrate [`plancherel-term-7-formulation`](../mass-theory/plancherel-term-7-formulation.md), whose $\Phi_k$ functional is defined against a $\dim_q^2$ family. Which numerator that functional requires — $\dim_q^2$, the Molien weight $f^\lambda \dim_q(\lambda)$, or the Markov weights $y_\lambda$ of the canonical Frobenius pairing — is open, and the choice is not cosmetic: the same harness ranks three different distinguished knots at $k = 3$ under three of those families. Bean `qou-oots`.
-
-**Two citation defects were found in the course of this and are only partly repaired.** The block cited `feray2010`, which is Féray, *Stanley's formula for characters of the symmetric group* (Ann. Comb. 13(4)) — a different paper by one of the two authors, not the $q$-Plancherel one. That is corrected here to `feray-meliot2012`. Separately, the previous text stated clause 2 as a variance bound $O(1/\sqrt{n-3})$; that expression does not occur anywhere in [`feray-meliot2012`] (all 27 sections searched), whose fluctuation result is a central limit theorem at scale $\sqrt{n}$. Clause 2 is restated above as what that paper proves. Where the $O(1/\sqrt{n-3})$ form came from is **not** established — a Féray–Śniady-style character upper bound is the plausible family and the corpus holds one (`arxiv-math-0701051v4`), but it has not been checked there, and the honest status is "unsourced" rather than "wrong".
+**The transfer to $w_\lambda^{(n)}(q) = \dim_q^2/[n]_q!$ is unestablished, and that family is still in production.** Restating *this* block does not migrate [`plancherel-term-7-formulation`](../mass-theory/plancherel-term-7-formulation.md), whose $\Phi_k$ functional is defined against a $\dim_q^2$ family. Which numerator that functional requires — $\dim_q^2$, the Molien weight $f^\lambda \dim_q(\lambda)$, or the Markov weights $y_\lambda$ of the canonical Frobenius pairing — is open, and the choice is not cosmetic: the same harness ranks three different distinguished knots at $k = 3$ under three of those families.
 
 **Clause 3 remains conjectural**, isolating two open problems: $q$-deformed Kerov–Vershik convergence, and the operator-algebra realisation of the limit.

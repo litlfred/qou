@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-0806.3105v3
-doc_title: "Knots and preons"
+doc_title: "KNOTS AND PREONS"
 section_id: sec-004-preons-as-physical-particles
 section_title: "Preons as Physical Particles"
 section_number: null
 pages: 13-14
 source_pdf: 0806.3105v3.pdf
 source_sha256: a37b4f2e96365d30
-doc_brief: "Knots and preons — It is shown that the four quantum trefoil solitons that are describ ed by the irreducible representations D3/ 2 mm′ of the quantum algebra SLq(2) (and that may be identiﬁed with"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
+latex_prose_ratio: 0.993
 latex_coverage_ratio: 1.0
+doc_brief: "KNOTS AND PREONS — It is shown that the four quantum trefoil solitons that are described by the irreducible representations D3/2 mm′ of the quantum algebra SLq(2) (and that may be identiﬁed with the"
 ---
 We have so far viewed the preons only as a simple way to describe
 the algebraic structure of the knot polynomials.  If these preons

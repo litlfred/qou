@@ -1,15 +1,13 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2111.06645",
- "document_class": "math",
- "validated": true,
  "source": {
   "structure_sha256": "76ae6c6058f4a9f9433feed2ef84207fb352b90102f6a49337e6f8ab95a591f1",
   "file": "2304.09377v2.pdf"
  },
  "provenance": {
-  "title": null,
-  "authors": null,
+  "title": "Symmetry, Integrability and Geometry: Methods and Applications",
+  "authors": "SIGMA 19 (2023), 082, 39 pages",
   "arxiv": {
    "id": "2111.06645",
    "version": null,
@@ -18,108 +16,106 @@
   },
   "doi": "10.3842/SIGMA.2023.082"
  },
- "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "aspects": [
+  "requirements"
+ ],
  "summary": {
-  "candidates": 7,
+  "candidates": 6,
   "by_kind": {
-   "corollary": 1,
-   "theorem": 4,
-   "lemma": 1,
-   "remark": 1
+   "recommendation": 6
   },
-  "formalization_candidates": 6
+  "formalization_candidates": 0
  },
  "candidates": [
   {
-   "kind": "corollary",
-   "source_kind": "corollary",
-   "number": "3.2",
-   "name": null,
-   "statement": "Let C = V/2\u03c0 = 0.3230659... and \u03a6(x)\u2208 R[[x]] be given by (2.3). Each of",
-   "section_file": "sections/sec-006-32-from-divergent-to-convergent-power-series.md",
-   "section_title": "From divergent to convergent power series",
-   "pages": "10-12",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": null,
-   "name": "[23]",
-   "statement": "The matrix wm(q) is a fundamental solution of the linear q-difference equation",
-   "section_file": "sections/sec-010-41-descendant-q-series.md",
-   "section_title": "Descendant q-series",
-   "pages": "18-19",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": null,
-   "name": "[23]",
-   "statement": "The function wm(q) defined by (4.6) is a fundamental solution of the linear",
-   "section_file": "sections/sec-011-42-the-asymptotics-of-the-descendants.md",
-   "section_title": "The asymptotics of the descendants",
-   "pages": "19-21",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "5.2",
-   "name": null,
-   "statement": "The cocycles W R and W Hab coincide.",
-   "section_file": "sections/sec-015-53-the-two-cocycles-agree.md",
-   "section_title": "The two cocycles agree",
-   "pages": "23-24",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
    "number": null,
    "name": null,
-   "statement": "A.1. Up to a prefactor, for every \u03b1\u2208 Q with \u03b1> 0, we have",
-   "section_file": "sections/sec-021-a3-the-two-matrix-valued-cocycles-for-the-4-1-kn.md",
-   "section_title": "A.3 The two matrix-valued cocycles for the 4_1 knot agree",
-   "pages": "28-37",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": null,
-   "name": null,
-   "statement": "A.3 ([27]). For\u03c4\u2208 C\\ R, we have",
-   "section_file": "sections/sec-021-a3-the-two-matrix-valued-cocycles-for-the-4-1-kn.md",
-   "section_title": "A.3 The two matrix-valued cocycles for the 4_1 knot agree",
-   "pages": "28-37",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": null,
-   "name": null,
-   "statement": "A.5. Despite appearances, H+",
-   "section_file": "sections/sec-021-a3-the-two-matrix-valued-cocycles-for-the-4-1-kn.md",
-   "section_title": "A.3 The two matrix-valued cocycles for the 4_1 knot agree",
-   "pages": "28-37",
+   "statement": "An illegitimate (i.e., formal, but divergent) computation of the total 3D-index suggested that the latter should equal to G0(q)2, but a computation showed that it did not agree.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-3",
    "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Although the latter is an analytic function of \u03c4 in the cut plane C\u2032 = C \\ (\u2212\u221e, 0], it was well known in the physics literature (see [5]) that it should factorize into a finite sum of products of q-series times \u02dcq-series, where q = e2\u03c0i\u03c4 and \u02dcq = e\u22122\u03c0i/\u03c4.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-3",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "This suggested that suitable linear combination of the vector (G0(q), G1(q)) should be simply asymptotic to one of the two b\u03a6(\u03c3j)(2\u03c0i\u03c4) series above.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-3",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The knot 41 was amphicheiral and hence special: in general one should expect an r-tuple of pairs of q-series, one on each half-plane, hence a total of 2r q-series.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-010-34-the-quadratic-relation.md",
+   "section_title": "The quadratic relation",
+   "pages": "12-15",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The 6 pairs of q-series involve power series in integer powers of q1/2, meaning level N = 2, and so we should introduce the level of a knot, presumably the same as the one coming from the periodicity of the degree of the colored Jones polynomial [18, 19].",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-011-35-higher-level-and-weight-spaces.md",
+   "section_title": "Higher level and weight spaces",
+   "pages": "15-18",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "For the (\u22122, 3, 7)-pretzel knot, only a part of the story, concerning what should be the upper left-hand of the matrix WS(\u03c4) for this knot, was given in Section 3.5.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-020-54-matrix-valued-holomorphic-quantum-modular-for.md",
+   "section_title": "Matrix-valued holomorphic quantum modular forms",
+   "pages": "24-26",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   }
  ]
 }

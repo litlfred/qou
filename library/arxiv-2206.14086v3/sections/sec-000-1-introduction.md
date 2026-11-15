@@ -1,14 +1,16 @@
 ---
 doc_id: arxiv-2206.14086v3
-doc_title: "KPZ limit theorems Jinho Baik∗"
+doc_title: "KPZ limit theorems"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-2
 source_pdf: 2206.14086v3.pdf
 source_sha256: b6c27f820f963079
-doc_brief: "KPZ limit theorems Jinho Baik∗ — One-dimensional interacting particle systems, 1+1 random growth models, and two-dimensional di- rected polymers deﬁne 2d height ﬁelds."
+toc_source: outline
+doc_brief: "KPZ limit theorems — One-dimensional interacting particle systems, 1+1 random growth models, and two-dimensional di- rected polymers deﬁne 2d height ﬁelds."
 ---
+Introduction
 The KPZ universality is concerned with, among others, one-dimensional interacting particle systems, 1+1
 random growth, and two-dimensional directed polymers. These models deﬁne height functions h(x, t), two-
 dimensional random ﬁelds, where x represents the one-dimensional spatial position and t the time.

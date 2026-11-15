@@ -1,0 +1,2136 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-2507.13873v1",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "†",
+   "text": "thomas.mertens@ugent.be",
+   "marks": [
+    {
+     "page": 1,
+     "context": "AndreasBelaey,∗ThomasG.Mertens,"
+    }
+   ],
+   "block": "library/arxiv-2507.13873v1/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p001-2",
+   "page": 1,
+   "mark": "‡",
+   "text": "jacopo.papalini@ugent.be",
+   "marks": [
+    {
+     "page": 1,
+     "context": "AndreasBelaey,∗ThomasG.Mertens,†JacopoPapalini,"
+    }
+   ],
+   "block": "library/arxiv-2507.13873v1/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p003-1",
+   "page": 3,
+   "mark": "1",
+   "text": "Sinedilatongravityhasbeendefinedandstudiedin[62]inadifferentquantizationscheme,leadingto a continuum model instead which was utilized as a toy model for cosmology in [63].",
+   "marks": [
+    {
+     "page": 3,
+     "context": "holographic dual in [59, 60, 61]."
+    }
+   ],
+   "block": "library/arxiv-2507.13873v1/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p006-1",
+   "page": 6,
+   "mark": "2",
+   "text": "Whenwesaya“compatible”coproduct,wemeanthatatthelevelofthecommutationrelations,we have −q2L0 −q−2L0 \u0012 \u0013 ∆(q2L0L±1) = q±2∆(L±1q2L0), [∆(L+1), ∆(L−1)] = ∆ , (2.8) q −q−1 where by definition of the coproduct, we have ∆(AB) = ∆(A)∆(B).",
+   "marks": [
+    {
+     "page": 5,
+     "context": "L+1= z"
+    },
+    {
+     "page": 6,
+     "context": "wenowredefineK→q"
+    },
+    {
+     "page": 6,
+     "context": "Rq"
+    },
+    {
+     "page": 6,
+     "context": "[L+1, L−1] = −q"
+    },
+    {
+     "page": 6,
+     "context": "Notethatintermsofq"
+    },
+    {
+     "page": 6,
+     "context": "Notethatintermsofq2L0,thefirstrelationsarealsoequivalenttoq"
+    },
+    {
+     "page": 6,
+     "context": "msofq2L0,thefirstrelationsarealsoequivalenttoq2L0L±1=q±2L±1q"
+    },
+    {
+     "page": 6,
+     "context": "commutationrelations(2.7)."
+    },
+    {
+     "page": 6,
+     "context": "∆(q"
+    },
+    {
+     "page": 6,
+     "context": "∆(q2L0) = q"
+    },
+    {
+     "page": 6,
+     "context": "∆(q2L0) = q2L0⊗q"
+    },
+    {
+     "page": 6,
+     "context": "∆(L−1) = q"
+    },
+    {
+     "page": 6,
+     "context": "m ◦⟨(∆(q"
+    },
+    {
+     "page": 6,
+     "context": "0 = ⟨O(z1)O(z2)⟩−q4∆⟨O(q"
+    },
+    {
+     "page": 6,
+     "context": "0 = ⟨O(z1)O(z2)⟩−q4∆⟨O(q2z1)O(q"
+    },
+    {
+     "page": 6,
+     "context": "⟨O(q"
+    },
+    {
+     "page": 6,
+     "context": "⟨O(q"
+    },
+    {
+     "page": 6,
+     "context": "⟨O(q2z1)O(q"
+    },
+    {
+     "page": 6,
+     "context": "⟨O(q2z1)O(q2z2)⟩−⟨O(q"
+    }
+   ],
+   "block": "library/arxiv-2507.13873v1/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p007-1",
+   "page": 7,
+   "mark": "2",
+   "text": "πb",
+   "marks": [
+    {
+     "page": 7,
+     "context": "−b∆+ln(z1/z"
+    },
+    {
+     "page": 7,
+     "context": "b∆+ln(z1/z"
+    },
+    {
+     "page": 7,
+     "context": "whenq=eiπb"
+    },
+    {
+     "page": 7,
+     "context": "b∆+ln(z1/z"
+    },
+    {
+     "page": 7,
+     "context": "−b∆+ln(z1/z"
+    },
+    {
+     "page": 7,
+     "context": "−b∆+ln(z1/z"
+    },
+    {
+     "page": 7,
+     "context": "b∆+ln(z1/z"
+    },
+    {
+     "page": 7,
+     "context": "Usingq= eπib"
+    },
+    {
+     "page": 7,
+     "context": "b"
+    },
+    {
+     "page": 7,
+     "context": "b2π∆−iln(z1/z"
+    },
+    {
+     "page": 7,
+     "context": "−π∆+ iln(z1/z"
+    },
+    {
+     "page": 7,
+     "context": "−b∆± iln(z1/z"
+    },
+    {
+     "page": 7,
+     "context": "2b"
+    },
+    {
+     "page": 7,
+     "context": "limb→0 Sb(bx ± iα/πb)∼sinh(α)"
+    },
+    {
+     "page": 7,
+     "context": "limb→0 Sb(bx ± iα/πb)∼sinh(α)2x−1e−α/b"
+    }
+   ],
+   "block": "library/arxiv-2507.13873v1/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p008-1",
+   "page": 8,
+   "mark": "2",
+   "text": "πi",
+   "marks": [
+    {
+     "page": 8,
+     "context": "φ →φ +πb"
+    },
+    {
+     "page": 8,
+     "context": "θ→θ −πb"
+    },
+    {
+     "page": 8,
+     "context": "πb"
+    },
+    {
+     "page": 8,
+     "context": "βτ; q"
+    },
+    {
+     "page": 8,
+     "context": "βτ; q"
+    },
+    {
+     "page": 8,
+     "context": "ities is then unique depending on the range of q.For q= eiπb"
+    }
+   ],
+   "block": "library/arxiv-2507.13873v1/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p010-1",
+   "page": 10,
+   "mark": "3",
+   "text": "WefindK(z∗)=q−2z∗,E+(z∗)=−q1/2andE−(z∗)=−q−3/2z∗2. By successively using the coproduct to find the action on z∗n, one deduces (2.34) - (2.36).",
+   "marks": [
+    {
+     "page": 10,
+     "context": "ustobootstraptheactionofK, E+andE−onarbitrarymonomialsf(z∗)."
+    }
+   ],
+   "block": "library/arxiv-2507.13873v1/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p011-1",
+   "page": 11,
+   "mark": "4",
+   "text": "The coordinate φ is periodic with period 2π, which implies the conjugate variable r/2|log q| is discretized ∈N. This is identical to the DSSYK discrete chord number.",
+   "marks": [
+    {
+     "page": 11,
+     "context": "2|log q|(seeFig.2)."
+    }
+   ],
+   "block": "library/arxiv-2507.13873v1/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p012-1",
+   "page": 12,
+   "mark": "5",
+   "text": "When introducing a boundary, they use a different boundary term than us, and hence their amplitudes (e.g. the disk partition function) would differ from ours.",
+   "marks": [
+    {
+     "page": 12,
+     "context": "theframeworkoftopologicalrecursionandrandommatrixtheory,"
+    }
+   ],
+   "block": "library/arxiv-2507.13873v1/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p013-1",
+   "page": 13,
+   "mark": "4",
+   "text": "π2b4",
+   "marks": [
+    {
+     "page": 12,
+     "context": "2π2b"
+    },
+    {
+     "page": 13,
+     "context": "2π2b"
+    },
+    {
+     "page": 13,
+     "context": "2π2b"
+    },
+    {
+     "page": 13,
+     "context": "4π2b"
+    }
+   ],
+   "block": "library/arxiv-2507.13873v1/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p014-1",
+   "page": 14,
+   "mark": "6",
+   "text": "Oneshouldmakeadistinctionbetweenphysicalquantizationandq-deformed“quantization”. Re- instating the quantum mechanical ℏparameter, relating the classical Poisson brackets and the quantum commutation relations, is equivalent to setting b2 →ℏb2. Taking the semiclassical limit ℏ→0 in units where ℏ= 1 is equivalent to taking b →0 in rescaled coordinates of the dilaton, see appendix B.2.",
+   "marks": [
+    {
+     "page": 14,
+     "context": "h is a good semi-classical approximation in the b →0 regime,"
+    }
+   ],
+   "block": "library/arxiv-2507.13873v1/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p019-1",
+   "page": 19,
+   "mark": "7",
+   "text": "Asatechnicalaside,theparticularratioofSb-functionsin(3.24)hasappearedbeforeintheliterature and has nice structural properties. In [84], it would be denoted as D−iβM (i τ bβ + i 1",
+   "marks": [
+    {
+     "page": 19,
+     "context": "yonditsdomainofvalidity.Underthisextrapolation,wewouldobtain"
+    }
+   ],
+   "block": "library/arxiv-2507.13873v1/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p019-2",
+   "page": 19,
+   "mark": "2",
+   "text": "b),andwasidentifiedas the kernel of the intertwiner Rα : Pα →PQ−α, mapping Virasoro representations α into their conjugate Q−α. This same function was then identified as the building block of the 3j-symbols of the modular double [84].",
+   "marks": [
+    {
+     "page": 18,
+     "context": "b"
+    },
+    {
+     "page": 18,
+     "context": "2b"
+    },
+    {
+     "page": 19,
+     "context": "β+πb"
+    },
+    {
+     "page": 19,
+     "context": "2+ πb"
+    }
+   ],
+   "block": "library/arxiv-2507.13873v1/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p026-1",
+   "page": 26,
+   "mark": "8",
+   "text": "Theclassicalanalogueofthispropertyisthefamiliarfactorizationpropertyϕ(g1 · g2) = ϕ(g1)ϕ(g2).",
+   "marks": [
+    {
+     "page": 26,
+     "context": "alinearmapϕ : V→V⊗SLq(2)suchthat"
+    }
+   ],
+   "block": "library/arxiv-2507.13873v1/blocks/prose-sec-008"
+  },
+  {
+   "id": "fn-p026-2",
+   "page": 26,
+   "mark": "9",
+   "text": "Note that a corepresentation has the opposite arrow in the commutative diagram compared to a normal representation.",
+   "marks": [
+    {
+     "page": 26,
+     "context": "alinearmapϕ : V→V⊗SLq(2)suchthat8,"
+    }
+   ],
+   "block": "library/arxiv-2507.13873v1/blocks/prose-sec-008"
+  },
+  {
+   "id": "fn-p028-1",
+   "page": 28,
+   "mark": "10",
+   "text": "ThecalculationwasdoneexplicitlyinappendixAof[97]forthesymmetricversionoftheprincipal series representation, but can easily be extended to the case at hand.",
+   "marks": [
+    {
+     "page": 28,
+     "context": "fromtheabovepairingsbetweenthegeneratorsandcoordinatesas:"
+    }
+   ],
+   "block": "library/arxiv-2507.13873v1/blocks/prose-sec-008"
+  },
+  {
+   "id": "fn-p028-2",
+   "page": 28,
+   "mark": "11",
+   "text": "Intheasymptoticregion,thegeneralclassicalsolutionisactuallyΦ(r)≈ar.Theprefactoraishere set to 1. Note that there is physics contained in a, since the slope with which the dilaton diverges at the boundary is part of the definition of the boundary conditions, just like in JT gravity where this prefactor is essentially the Schwarzian coupling coefficient, usually denoted by C [100].",
+   "marks": [
+    {
+     "page": 28,
+     "context": "Onemaygauge-fixtheclassicalsolutionstobeoftheform"
+    }
+   ],
+   "block": "library/arxiv-2507.13873v1/blocks/prose-sec-008"
+  },
+  {
+   "id": "fn-p029-1",
+   "page": 29,
+   "mark": "12",
+   "text": "Thisspecificboundarytermwasusedinthecaseofsinhdilatongravityin[36]andforsinedilaton gravity in [59]. Here we compile the more general story. The argument follows largely the computation presented in [101] for the case of (deformations of) JT gravity.",
+   "marks": [
+    {
+     "page": 29,
+     "context": "energyoffset."
+    }
+   ],
+   "block": "library/arxiv-2507.13873v1/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p030-1",
+   "page": 30,
+   "mark": "13",
+   "text": "Thereisanorderoflimitsissuehere,sincetofindJTwehavetotakeb →0beforetakingΦ∂→+∞, corresponding to the near-boundary UV region of sinh dilaton gravity deviating from the JT AdS2 spacetime as discussed in subsection 3.1.",
+   "marks": [
+    {
+     "page": 30,
+     "context": "reproduceJTgravityintheb →0limit."
+    }
+   ],
+   "block": "library/arxiv-2507.13873v1/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p033-1",
+   "page": 33,
+   "mark": "14",
+   "text": "Forcompleteness,thesolutionisgivenby[91,25,27] Z dξ Sb(−iξ)Sb(−iξ −2is)e−πi(ξ2+2sξ)e−iξL/b, ψs(L/2) = e−isL/b (B.26) C where C denotes an appropriate integration contour.",
+   "marks": [
+    {
+     "page": 33,
+     "context": "dualequationobtainedbythetransformationb →1/b."
+    }
+   ],
+   "block": "library/arxiv-2507.13873v1/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p033-2",
+   "page": 33,
+   "mark": "15",
+   "text": "Liouvillegravityhasaquantumgrouptheoreticdescriptionintermsofthemodulardouble Uq(sl(2, R)) ⊗U˜q(sl(2, R)) Hopf algebra [27, 103], building on the same structure present in 2d Liouville CFT [98, 99].",
+   "marks": [
+    {
+     "page": 33,
+     "context": "ure of the quantum amplitudes of Liouville gravity [25, 27]."
+    }
+   ],
+   "block": "library/arxiv-2507.13873v1/blocks/prose-sec-011"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p007-2",
+   "page": 7,
+   "mark": "2",
+   "text": "πb βb",
+   "block": "library/arxiv-2507.13873v1/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p008-2",
+   "page": 8,
+   "mark": "2",
+   "text": "πi",
+   "block": "library/arxiv-2507.13873v1/blocks/prose-sec-002"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "wenowredefineK→q2L"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": "L+1= −q−1/2+∆z"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": "L+1= −q−1/2+∆zq−4∆R"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "[L+1, L−1] = −q2L"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "[L+1, L−1] = −q2L0−q−2L"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "Notethatintermsofq2L"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "otethatintermsofq2L0,thefirstrelationsarealsoequivalenttoq2L"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "ofq2L0,thefirstrelationsarealsoequivalenttoq2L0L±1=q±2L±1q2L"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "∆(q2L"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "∆(q2L0) = q2L"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "∆(q2L0) = q2L0⊗q2L"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "∆(L−1) = q2L"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "∆(L+1) = 1 ⊗L+1 + L+1 ⊗q−2L"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "m ◦⟨(∆(q2L"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "−b∆+ln(z"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "b∆+ln(z"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "b∆+ln(z"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "−b∆+ln(z"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "−b∆+ln(z"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "b∆+ln(z"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "bS"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "b2π∆−iln(z"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "−π∆+ iln(z"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "−b∆± iln(z"
+  },
+  {
+   "page": 7,
+   "mark": "x",
+   "context": "limb→0 Sb(bx ± iα/πb)∼sinh(α)2"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "⟨O(φ)O(θ)⟩=S"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "n=0(1−aq"
+  },
+  {
+   "page": 9,
+   "mark": "b",
+   "context": "dτe−2πβτeπ(Q−α)τ S"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "b"
+  },
+  {
+   "page": 9,
+   "mark": "b",
+   "context": "b2S"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "2b"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "ωn,m= −i"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "q2L"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "Kf(z) = f(q"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "f(q"
+  },
+  {
+   "page": 10,
+   "mark": "f",
+   "context": "E+f(z) = −q−1/2z"
+  },
+  {
+   "page": 10,
+   "mark": "z",
+   "context": "E+f(z) = −q−1/2zf(q−2"
+  },
+  {
+   "page": 10,
+   "mark": "z",
+   "context": "E−f(z∗) = q−1/2z∗f(q−2"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "f(q"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "z∗z= q"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "z∗z= q2zz∗+ 1 −q"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "z∗y= q"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "+∞(theboundary),andz∗−1z= e"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "ΦR +sinh 2πb"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "d"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "cosh(2πb"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "πb"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "2π"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "gravityviacφ=1+6Q"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "parameterasq= eiπb"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "2π"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "2π2b4dr"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "ds"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "dt"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "cosh 2πb"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "cosh 2πb2r −cosh 2πb"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "[cosh 2πb"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "[cosh 2πb2r −cosh 2πb"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "2π"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "EADM=cosh(2πb"
+  },
+  {
+   "page": 13,
+   "mark": "h",
+   "context": "EADM=cosh(2πb2Φ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "4π"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "βBH= 4π"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "βBH= 4π2b"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "2πb"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "R = −2 cosh 2πb"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "dssinh 2πbs sinh"
+  },
+  {
+   "page": 13,
+   "mark": "e",
+   "context": "b"
+  },
+  {
+   "page": 14,
+   "mark": "4",
+   "context": "ood semi-classical approximation in the b →0 regime,6where b"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "l approximation in the b →0 regime,6where b4E= cosh(2πbs)/4π"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "andβ/b"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "4π"
+  },
+  {
+   "page": 14,
+   "mark": "4",
+   "context": "4π2b"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "4π"
+  },
+  {
+   "page": 14,
+   "mark": "4",
+   "context": "4π2b"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "holefirstlawEJT=2π"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "b"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "b2arccosh(4π"
+  },
+  {
+   "page": 14,
+   "mark": "b",
+   "context": "b2arccosh(4π2"
+  },
+  {
+   "page": 14,
+   "mark": "4",
+   "context": "b2arccosh(4π2b"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "cally, the model has a slower power-law ∼E"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "cally, the model has a slower power-law ∼E1/b"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "thantheJTCardygrowth∼e"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "ds1ds2ρ(s1)ρ(s2)e−E(s"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "ds1ds2ρ(s1)ρ(s2)e−E(s1)τe−E(s"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "ds1ds2ρ(s1)ρ(s2)e−E(s1)τe−E(s2)(β−τ) S"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "ds1ds2ρ(s1)ρ(s2)e−E(s1)τe−E(s2)(β−τ) Sb (βM± is"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "ds1ds2ρ(s1)ρ(s2)e−E(s1)τe−E(s2)(β−τ) Sb (βM± is1 ± is"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "4π"
+  },
+  {
+   "page": 15,
+   "mark": "4",
+   "context": "4π2b"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "taking ℏ→0 (or equivalently b →0 upon rescaling the field πb"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "2π"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "2π2b"
+  },
+  {
+   "page": 15,
+   "mark": "s",
+   "context": "eff≡d"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "eff≡ds"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "eff≡ds2"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "eff≡ds2 e−2πb"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "ds"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "E + ω/b"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "4π"
+  },
+  {
+   "page": 16,
+   "mark": "4",
+   "context": "4π2b"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "4π2b4cosh(2πbs"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "4π"
+  },
+  {
+   "page": 16,
+   "mark": "4",
+   "context": "4π2b"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "4π2b4cosh(2πbs"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "(κ−E)b"
+  },
+  {
+   "page": 16,
+   "mark": "d",
+   "context": "(κ−E)b2"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "b"
+  },
+  {
+   "page": 16,
+   "mark": "b",
+   "context": "b2 ω S"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "b2 ω Sb (βM± is"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "b2 ω Sb (βM± is1(E, ω) ± is"
+  },
+  {
+   "page": 16,
+   "mark": "s",
+   "context": "b"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "bs"
+  },
+  {
+   "page": 16,
+   "mark": "s",
+   "context": "b"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "bs"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "4π"
+  },
+  {
+   "page": 16,
+   "mark": "4",
+   "context": "4π2b"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "2πbarccosh(4π"
+  },
+  {
+   "page": 17,
+   "mark": "b",
+   "context": "2πbarccosh(4π2"
+  },
+  {
+   "page": 17,
+   "mark": "4",
+   "context": "2πbarccosh(4π2b"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "4π"
+  },
+  {
+   "page": 17,
+   "mark": "4",
+   "context": "4π2b"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "4π2b4(E + ω/b"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "2πbarccosh(4π"
+  },
+  {
+   "page": 17,
+   "mark": "b",
+   "context": "2πbarccosh(4π2"
+  },
+  {
+   "page": 17,
+   "mark": "4",
+   "context": "2πbarccosh(4π2b"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "(4π"
+  },
+  {
+   "page": 17,
+   "mark": "4",
+   "context": "(4π2b"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "(4π2b4E)"
+  },
+  {
+   "page": 17,
+   "mark": "x",
+   "context": "2"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "Sb(βM± i(s1 + s2))→e"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "Sb(βM± i(s1 + s2))→e2πβM(s"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "Sb(βM± i(s1 + s2))→e2πβM(s1+s"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "Sb(βM± i(s1 + s2))→e2πβM(s1+s2)−πQ(s"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "Sb(βM± i(s1 + s2))→e2πβM(s1+s2)−πQ(s1+s"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "b"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "b2 arccosh(4π"
+  },
+  {
+   "page": 17,
+   "mark": "b",
+   "context": "b2 arccosh(4π2"
+  },
+  {
+   "page": 17,
+   "mark": "4",
+   "context": "b2 arccosh(4π2b"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "arccosh(4π"
+  },
+  {
+   "page": 17,
+   "mark": "b",
+   "context": "arccosh(4π2"
+  },
+  {
+   "page": 17,
+   "mark": "4",
+   "context": "arccosh(4π2b"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "arccosh(4π2b4E)−arccosh(4π"
+  },
+  {
+   "page": 17,
+   "mark": "b",
+   "context": "arccosh(4π2b4E)−arccosh(4π2"
+  },
+  {
+   "page": 17,
+   "mark": "4",
+   "context": "arccosh(4π2b4E)−arccosh(4π2b"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "4π"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "2π"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "2π"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "2π2b"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "(4π"
+  },
+  {
+   "page": 17,
+   "mark": "4",
+   "context": "(4π2b"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "(4π2b4E)"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "(4π"
+  },
+  {
+   "page": 17,
+   "mark": "4",
+   "context": "(4π2b"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "(4π2b4E)"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "b"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "(4π"
+  },
+  {
+   "page": 17,
+   "mark": "4",
+   "context": "(4π2b"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "(4π2b4E)"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "(4π"
+  },
+  {
+   "page": 17,
+   "mark": "4",
+   "context": "(4π2b"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "(4π2b4E)"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "−1 ≪1/b"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "(4π"
+  },
+  {
+   "page": 17,
+   "mark": "4",
+   "context": "(4π2b"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "(4π2b4E)"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "(4π2b4E)2−1 =4π"
+  },
+  {
+   "page": 17,
+   "mark": "b",
+   "context": "(4π2b4E)2−1 =4π2"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "(4π2b4E)2−1 =4π2b"
+  },
+  {
+   "page": 18,
+   "mark": "b",
+   "context": "b2S"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "2+ πb2"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "τpole= βb"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "τpole= βb2∆,βb"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "τpole= βb2∆,βb2(∆−1),. . . ,0,. . . ,−βb"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "hethreethatweexhibitedinourconstructioninSection2.Hereq=eπib"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "and˜q=eπi/b"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "2 ln"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "2 ln"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "2ln qHe−βH"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "O(τ1)K−1/2O(τ2)e−˜βH"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "2ln qHO(τ1)e"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "where˜β≡β−i ln q=β+ πb"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "dinggeneratorsundertheinfinitesimaltransformationf(z)=z + ϵz"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "givenbyLn=∆(n+1)z"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "givenbyLn=∆(n+1)zn+z"
+  },
+  {
+   "page": 24,
+   "mark": "g",
+   "context": "bz+dwith"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "L+1= z"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "g= eβE−e"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "z11z21= q"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "z12z22= q"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "z12z21= q"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "Nz21= q"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "q"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "0K ⊗E−+ E−⊗K"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "Introducing a scaling operator Rq"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "Introducing a scaling operator Rq2f(z) ≡f(q"
+  },
+  {
+   "page": 28,
+   "mark": "q",
+   "context": "E+= −q−1/2+∆z"
+  },
+  {
+   "page": 28,
+   "mark": "q",
+   "context": "E+= −q−1/2+∆zq−4∆R"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "Rq"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "K= q2∆Rq"
+  },
+  {
+   "page": 28,
+   "mark": "q",
+   "context": "x(q−1)and a"
+  },
+  {
+   "page": 28,
+   "mark": "x",
+   "context": "x(q−1)and a q-number [x]q=q"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "E+= q−3/2−3∆z"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "K= q2∆Rq"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "E−= q"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "E−= q1/2+∆Dq"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "ofthenon-deformedCFT(A.3)withtheidentificationK≡q"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "d"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "ds"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "ds2= F(r)dτ"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "ds2= F(r)dτ2+dr"
+  },
+  {
+   "page": 28,
+   "mark": "r",
+   "context": "Z"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "d"
+  },
+  {
+   "page": 29,
+   "mark": "r",
+   "context": "R"
+  },
+  {
+   "page": 29,
+   "mark": "r",
+   "context": "Z"
+  },
+  {
+   "page": 29,
+   "mark": "h",
+   "context": "2 [−r∂V (r∂) + 2F(r∂) + r"
+  },
+  {
+   "page": 29,
+   "mark": "h",
+   "context": "2 [−r∂V (r∂) + 2F(r∂) + rhV (r"
+  },
+  {
+   "page": 30,
+   "mark": "h",
+   "context": "ZΦ"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "cosh(2πb"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "cosh(2πb"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "hexp(πb"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "2π"
+  },
+  {
+   "page": 30,
+   "mark": "4",
+   "context": "2π2b"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "2π"
+  },
+  {
+   "page": 30,
+   "mark": "4",
+   "context": "2π2b"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "2πb"
+  },
+  {
+   "page": 30,
+   "mark": "h",
+   "context": "ZΦ"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "Φ"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "0+ Φ"
+  },
+  {
+   "page": 31,
+   "mark": "h",
+   "context": "ZΦ"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "b →0.Here it is convenient to rescale πb"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "the whole action is multiplied by 1/b"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "asℏ∼b"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "d"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "πb"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "ThisleadstoaneffectiverescaleddilatonpotentialV (Φ)→πb"
+  },
+  {
+   "page": 31,
+   "mark": "h",
+   "context": "E=cosh(2Φ"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "4πb"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "measuredinaWeyl-rescaledgeometryds"
+  },
+  {
+   "page": 31,
+   "mark": "s",
+   "context": "eff=d"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "eff=ds"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "eff=ds2"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "gaugeasds"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "gaugeasds2= ds"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "flat"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "flate"
+  },
+  {
+   "page": 31,
+   "mark": "s",
+   "context": "eff= d"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "eff= ds"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "eff= ds2"
+  },
+  {
+   "page": 31,
+   "mark": "s",
+   "context": "eff= ds2e−2Φ= d"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "eff= ds2e−2Φ= ds"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "flat"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "flate"
+  },
+  {
+   "page": 31,
+   "mark": "s",
+   "context": "flate2ρ−2Φ= d"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "flate2ρ−2Φ= ds"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "ds"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "flat"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "flate"
+  },
+  {
+   "page": 32,
+   "mark": "h",
+   "context": "ω= dT∧dEADM=sinh(2Φ"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "2πb"
+  },
+  {
+   "page": 32,
+   "mark": "d",
+   "context": "2πb2"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "2πb"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "such that after quantization, πb"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "4πb"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "4πb2HADM= cosh(P) +e−L"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "form(B.22),theassociatedPoissonbrackets{L, P}=2πb"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "[L, P] = 2πib"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "[L, P] = 2πib2ℏ.Settingℏ≡1byabsorbingitinthedefinitionπb"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "L, P] = 2πib2ℏ.Settingℏ≡1byabsorbingitinthedefinitionπb2ℏ→πb"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "2ℏ.Settingℏ≡1byabsorbingitinthedefinitionπb2ℏ→πb2,weseethatb"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "by setting P= −2πib"
+  },
+  {
+   "page": 33,
+   "mark": "d",
+   "context": "by setting P= −2πib2"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "1 + eiπb"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "ψs(L/2 + iπb"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "ψs(L/2 −iπb"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "factore"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "factore2πib"
+  },
+  {
+   "page": 33,
+   "mark": "e",
+   "context": "s2(ϕ)"
+  },
+  {
+   "page": 33,
+   "mark": "b",
+   "context": "s2(ϕ) e−2∆ϕ=S"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "s2(ϕ) e−2∆ϕ=Sb(b∆± is"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "s2(ϕ) e−2∆ϕ=Sb(b∆± is1 ± is"
+  },
+  {
+   "page": 34,
+   "mark": "b",
+   "context": "2α(Q−α)eiπαβSb(iτ+ α)Sb(−iτ) =S"
+  },
+  {
+   "page": 34,
+   "mark": "b",
+   "context": "2α(Q−α)eiπαβSb(iτ+ α)Sb(−iτ) =Sb(α)S"
+  },
+  {
+   "page": 34,
+   "mark": "b",
+   "context": "dτe−2πβτeπ(Q−α)τ S"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "dpe"
+  },
+  {
+   "page": 34,
+   "mark": "b",
+   "context": "dpe2πipxS"
+  },
+  {
+   "page": 34,
+   "mark": "b",
+   "context": "Sb(ip + Q/2 + βM)=S"
+  },
+  {
+   "page": 34,
+   "mark": "b",
+   "context": "dqS"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "q2−(p −i)"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "b"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "b2 (1+i(p+q))(κτ)K"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "b"
+  },
+  {
+   "page": 35,
+   "mark": "4",
+   "context": "b"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "b4(πb"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "b4(πb2)"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "b4(πb2)2κ"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "j=1cosh (πp ± iπb"
+  },
+  {
+   "page": 35,
+   "mark": "j",
+   "context": "j=1cosh (πp ± iπb2"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "k=0cosh (πp ± iπb"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "Sb(ip/b + Q/2 + βM)×cos (πip/b"
+  },
+  {
+   "page": 35,
+   "mark": "b",
+   "context": "Sb(ip/b + Q/2 + βM)×cos (πip/b2 + π/2"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "Sb(ip/b + Q/2 + βM)×cos (πip/b2 + π/2b"
+  },
+  {
+   "page": 35,
+   "mark": "b",
+   "context": "Sb(ip/b + Q/2 + βM)→S"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "cos (πip/b"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "cos (πip/b2+ π/2b"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "1 + 4q"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "cosh (πq)K"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "2+iq)(κτ)K"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "b"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "b"
+  },
+  {
+   "page": 35,
+   "mark": "4",
+   "context": "b"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "(8πb"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "(8πb2)"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "(8πb2)2κ"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "α"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "α2+ β"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "dxsech"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "4q"
+  },
+  {
+   "page": 36,
+   "mark": "x",
+   "context": "\u0012τe"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "2b"
+  },
+  {
+   "page": 36,
+   "mark": "3",
+   "context": "cosh"
+  },
+  {
+   "page": 36,
+   "mark": "4",
+   "context": "b"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "(8πb"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "(8πb2)"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "(8πb2)2κ"
+  },
+  {
+   "page": 36,
+   "mark": "x",
+   "context": "τ+ (β −τ)e"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "2b"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "τ"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "τ2+ (β −τ)"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "b"
+  },
+  {
+   "page": 43,
+   "mark": "19",
+   "context": "q(2, R),”SelectaMathematicaNewSeriesVol"
+  }
+ ]
+}

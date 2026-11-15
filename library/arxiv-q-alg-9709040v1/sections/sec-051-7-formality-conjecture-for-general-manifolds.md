@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-q-alg-9709040v1
-doc_title: "arXiv:q-alg/9709040v1 29 Sep 1997"
+doc_title: "Deformation quantization of Poisson manifolds"
 section_id: sec-051-7-formality-conjecture-for-general-manifolds
 section_title: "Formality conjecture for general manifolds"
 section_number: 7
@@ -8,6 +8,7 @@ pages: 30-31
 source_pdf: 9709040v1.pdf
 source_sha256: 8baf650d86c5b8ab
 toc_source: inferred
+doc_brief: "Deformation quantization of Poisson manifolds — 75 sections: Front matter; Plans; Star-products"
 ---
 In this section we establish the formality conjecture for general manifolds, not only for open domains in
 Rd. It turns out that that essentially all work is already done. The only new analytic result is vanishing of

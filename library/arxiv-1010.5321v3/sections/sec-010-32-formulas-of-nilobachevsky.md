@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1010.5321v3
-doc_title: "Formulas on hyperbolic volume"
+doc_title: "Formulas on hyperbolic volume ∗"
 section_id: sec-010-32-formulas-of-nilobachevsky
 section_title: "Formulas of N.I.Lobachevsky"
 section_number: 3.2
 pages: 8-9
 source_pdf: 1010.5321v3.pdf
 source_sha256: c6bb20926b1f291f
-doc_brief: "Formulas on hyperbolic volume — This paper collects some important formulas on hyperbolic volume."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.95
 latex_coverage_ratio: 1.0
+doc_brief: "Formulas on hyperbolic volume ∗ — This paper collects some important formulas on hyperbolic volume."
 ---
 The formulas of this subsection can be found in [@lobacsevszkij] or [@molnar].
 

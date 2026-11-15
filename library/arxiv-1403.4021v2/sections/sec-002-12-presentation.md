@@ -7,10 +7,11 @@ section_number: 1.2
 pages: 3-4
 source_pdf: 1403.4021v2.pdf
 source_sha256: 046d02411e0dc086
-doc_brief: "MARKOV TRACES ON THE BIRMAN-WENZL-MURAKAMI ALGEBRAS — We classify the Markov traces factoring through the Birman-Wenzl-Murakami (BMW) algebras."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.946
-latex_coverage_ratio: 0.969
+latex_coverage_ratio: 0.973
+doc_brief: "MARKOV TRACES ON THE BIRMAN-WENZL-MURAKAMI ALGEBRAS — We classify the Markov traces factoring through the Birman-Wenzl-Murakami (BMW) algebras."
 ---
 The origin of this work was the apparently innocent question to determine whether the `Kauffman trace', that is the
 Markov trace affording the Kauffman polynomial, was indeed the only Markov

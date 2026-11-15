@@ -1,33 +1,52 @@
-Arrangements of hyperplanes and Lie algebra homology 151
-Let  be arbitrary, O a framing of . Denote by F [p(O) the set of all flags
-(L - ... = LP) with LieOn -i (see 1.6).
-2.9.2 Theorem. The set F [p(O) forms the base of the free abelian group gp().
+Arrangements of hyperplanes and Lie algebra homology 154
+Let @ be arbitrary, © a framing of @. Denote by F/?(@) the set of all flags
+
+(DP >...> LP) with Lie Oy _ ; (see 1.6).
+
+2.9.2 Theorem. The set F l?(©) forms the base of the free abelian group F(@).
+
 Proof. This is deduced from 2.8.1 in the same way as 1.6.5 from 1.5.2.
+
 3 Contravariant form
-We save the assumptions of ss 1, 2
+
+We save the assumptions of §§ 1, 2.
+
 3.0 From now on up to the end of the paper we'll change slightly notations:
-'(), g'() will be denoted by α'()z, g'()z, and α'(), g'() will denote
-the complexifications α ()c =α ()z zC, g()c = g()z zC.
-3.1 Let & be an arrangement. Suppose that a map a: & -→C is given. We'll
-call such a map a collection of exponents for 6. For an edge L put
-(3.1.1) a(L)=  a(H).
-H- L,
-3H
+A (€), F (€) will be denoted by L"(@)z, F (@)z, and L(G), F (@) will denote
+the complexifications /°(@)¢= I (@)z @z€, F (@)e=F (G)z @z€.
+
+3.1 Let @ be an arrangement. Suppose that a map a: @->C is given. We'll
+call such a map a collection of exponents for @. For an edge L put
+
+(3.1.1) a(L)= > a(H).
+H>L,
+He€
 Put
-(3.1.2) W=w(a)= Z a(H)Heα1().
-Define differentials d = dp = dp(a): P() -→ p+ 1 () by the rule
-(3.1.3) d(x) = w(a) x.
-It is clear that d2  0
+(3.1.2) w=a(a)= ¥ a(H)Hesl'(@).
+He€
+
+Define differentials d=d? =d?(a): of?(@) > *'(@) by the rule
+(3.1.3) d(x)=a(a)-x.
+It is clear that d? =0.
 3.2 Define maps
-(3.2.1) S= SP= SP(a): gP() -→αP()
-as follows. For LeGi put
-(3.2.2) S(L) = Z a(H)Heα();
-H - L,
-for a flag F =(L - LI  ...  LP)eF [P() put
-(3.2.3) S(F) = S(L) . S(L2). ... - S(LP)
-In other words.
-(3.2.4) S(F) = Za(Hi)a(H2)... a(H) H ° ... · Hp
-the sum is taken over all p-tuples (Hi, ..., H,) such that H;- Li, H;e%, 1 ≤i≤p.
+(3.2.1) S=S?=S"(a): F?(€)> I*()
+as follows. For Le@' put
+
+(3.2.2) S(L)= Y a(H)Hes'(@);
+H>L,
+He€
+
+for a flag F=(D>L'3...>1?)eFl?(@) put
+
+(3.2.3) S(F)=S(L')-S(L2)-...-S(L?).
+
+In other words,
+
+(3.2.4) S(F)=S.a(H,) a(H,)...a(H,) Hy -...-Hps
+
+the sum is taken over all p-tuples (H,, ..., H,) such that H;,> L, H,e@, 1SiSp.
 One easily verifies that (3.2.4) correctly defines maps (3.2.1).
-3.2.5 Lemma. s' defines the map of complexes S' S'(a): (g'(), d) -→(αl'(6),
-d(a).
+
+3.2.5 Lemma. S° defines the map of complexes S’=S'(a): (F'(@), d)>(#(®),
+
+d(a)).

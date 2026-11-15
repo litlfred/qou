@@ -1,0 +1,123 @@
+{
+  "$schema": "folio-document-images/v1",
+  "doc_id": "1-s20-s000187089891800x-main",
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.003198,
+        "imagesOnPage": 1,
+        "page": 1
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      }
+    },
+    {
+      "id": "img-p006-1",
+      "file": "images/img-p006-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.000573,
+        "imagesOnPage": 10,
+        "page": 6
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      },
+      "placements": [
+        {
+          "page": 6,
+          "coverage": 0.000573,
+          "imagesOnPage": 10
+        },
+        {
+          "page": 6,
+          "coverage": 0.000573,
+          "imagesOnPage": 10
+        },
+        {
+          "page": 6,
+          "coverage": 0.000573,
+          "imagesOnPage": 10
+        },
+        {
+          "page": 6,
+          "coverage": 0.000573,
+          "imagesOnPage": 10
+        },
+        {
+          "page": 6,
+          "coverage": 0.000573,
+          "imagesOnPage": 10
+        },
+        {
+          "page": 6,
+          "coverage": 0.000573,
+          "imagesOnPage": 10
+        },
+        {
+          "page": 6,
+          "coverage": 0.000573,
+          "imagesOnPage": 10
+        },
+        {
+          "page": 6,
+          "coverage": 0.000573,
+          "imagesOnPage": 10
+        },
+        {
+          "page": 6,
+          "coverage": 0.000573,
+          "imagesOnPage": 10
+        },
+        {
+          "page": 6,
+          "coverage": 0.000573,
+          "imagesOnPage": 10
+        },
+        {
+          "page": 7,
+          "coverage": 0.000573,
+          "imagesOnPage": 2
+        },
+        {
+          "page": 7,
+          "coverage": 0.000573,
+          "imagesOnPage": 2
+        },
+        {
+          "page": 10,
+          "coverage": 0.000573,
+          "imagesOnPage": 2
+        },
+        {
+          "page": 10,
+          "coverage": 0.000573,
+          "imagesOnPage": 2
+        }
+      ]
+    },
+    {
+      "id": "img-p011-1",
+      "file": "images/img-p011-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.089581,
+        "imagesOnPage": 1,
+        "page": 11
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      }
+    }
+  ]
+}

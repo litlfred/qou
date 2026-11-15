@@ -1,0 +1,78 @@
+S. Blanes et al. / Physics Reports 470 (2009) 151-238 185
+
+y =w"(T,y), y(0) = Xo, (162)
+
+since y(1) = exp(Lwr,x9))Xo = X(T).
+
+Although this is arguably the most direct way to construct a Magnus expansion for arbitrary time dependent nonlinear
+differential equations, it is by no means the only one. In particular, Agrachev and Gamkrelidze [107,108] obtain a similar
+expansion by transforming (160) into the integral equation
+
+t
+p= i+ [ &°X,ds (163)
+0
+
+which is subsequently solved by successive approximations. Here, for clarity, we have denoted x = Ls,xq)- Then one gets
+the formal series
+
+t . t 4 a
+Id + | dtX, + | dt, il dt)XipX, +++
+0 0 0
+
+00 t t tm—1 . .
+w+) [ a, [ ay f tin Xt + Xey- (164)
+mai /0 0 0
+
+An object with this shape is called a formal chronological series [107], and the set of all formal chronological series can be
+endowed with a real associative algebra structure. It is then possible to show that there exists an absolutely continuous
+formal chronological series
+
+. 00 t 4 tm—1 . .
+vicky = | an [ at f tin Gin(Xeys «++» Xt) (165)
+ma1/0 0 0
+
+such that
+
+og
+
+@ = exp(V;(X;)).
+
+Here Gn (Xr ee Xin) are Lie polynomials, homogeneous of the first grade in each variable, which can be algorithmically
+constructed. In particular,
+
+G(X) = Xy
+
+- 3 1- -
+G, (Xr, > Xp) = 7 Xe , Xe]
+
+ss 3 15 5s s > 2.3
+G3(Xr, > Xp, Xt) = glx: [X,, Xt, ]] + [[X:,, Xt], X,,])-
+
+The series (165) in general diverges, even if the Lie operator xX is analytic [106]. Nevertheless, in certain cases convergence
+holds. For instance, if X, belongs to a Banach Lie algebra & for all t € IR, where one has a norm satisfying ||[X, Y]|| < ||X|I|lY |
+for allX, Y € Band to IX \|ds = to || Le(s,xo) lds < 0.44, then V; (X) converges absolutely in B [107]. As a matter of fact, an
+argument analogous to that used in [30,70] may allow us to improve this bound and get convergence for
+
+t. 1 2% 1
+il IXsllds < al — a ik = 1.08686870....
+0 2Jo 2+5(1—cot5)
+
+3.4.1. Treatment of Hamiltonian systems
+
+We have seen how the algebraic setting we have developed for linear systems of differential equations may be extended
+formally to nonlinear systems. We will next review how it can be adapted to the important class of Hamiltonian systems. In
+this context, the role of a Lie bracket of vector fields (156) is played by the classical Poisson bracket [113].
+
+The Lie algebraic presentation of Hamiltonian systems in Classical Mechanics has been approached in different ways, and
+the Magnus expansion invoked in this context by diverse authors [114-116]. More explicit use of the Magnus expansion is
+done in [109] where the evolution operator for a classical system is constructed and its differential equation analyzed.
+
+To particularize to this situation the preceding general treatment, let us consider a system with | degrees of freedom
+and phase space variables x = (q, p) = (q1,.--, 41, Pi, ---, Pi), where (qi, pi), i= 1,..., | are the usual pairs of canonical
+conjugate coordinate and momentum, respectively. By defining the Poisson bracket of two scalar functions F(q, p) and
+G(q, p) of phase space variables in the conventional way [113]
+
+!\(9F 0G OF OG
+Fa =o( sae ase ).
+
+<i \0qi Opi Op; Gi

@@ -1,0 +1,1 @@
+A neighborhood Nϵ of γϵ is a Geometry & Topology 10 (2006) Stabilization in the braid groups I: MTWS 465 normal neighborhood (Figure 37, which gives an example, should be helpful) if the following conditions hold: (1) Nϵ ⊃γϵ.

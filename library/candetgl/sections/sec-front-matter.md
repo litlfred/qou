@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: candetgl.pdf
 source_sha256: d788af715428b8b2
 toc_source: inferred
+doc_brief: "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics — 27 sections: Front matter; INTRODUCTION; PRELIMINARIES"
 ---
 The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma
 physics
@@ -35,8 +36,6 @@ Knots and physics: Old wine in new bottles
 Am. J. Phys. 66, 1060 (1998); 10.1119/1.19046 
  
  
- This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to  IP:
-129.215.149.98 On: Sat, 10 May 2014 06:24:42
 The Biot–Savart operator for application to knot theory,
 ﬂuid dynamics, and plasma physics
 Jason Cantarellaa)

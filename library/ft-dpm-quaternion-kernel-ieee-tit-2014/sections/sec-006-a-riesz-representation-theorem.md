@@ -8,6 +8,7 @@ pages: 3-4
 source_pdf: FT_DPM_Quaternion_Kernel_IEEE_TIT_2014.pdf
 source_sha256: aa2f1eb73610a81b
 toc_source: inferred
+doc_brief: "Quaternion Reproducing Kernel Hilbert Spaces: Existence and Uniqueness Conditions — The existence and uniqueness conditions of quater- nion reproducing kernel Hilbert spaces (QRKHS) are established"
 ---
 We can now introduce the following theorem in order to
 guarantee the existence of a reproducing kernel for any given
@@ -109,8 +110,6 @@ Ky, Kx
 We have therefore shown, through the quaternion Riesz
 representation theorem, that for an arbitrary QRKHS there
 exists a unique reproducing kernel. This makes it possible to
-TOBAR AND MANDIC: QUATERNION REPRODUCING KERNEL HILBERT SPACES
-5739
 compute inner products in a quaternion-valued feature space
 using the kernel trick.
 Observe that although Theorem 1 gives theoretical support

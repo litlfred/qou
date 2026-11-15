@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9408113v2
-doc_title: "arXiv:hep-th/9408113v2 25 Aug 1994"
+doc_title: "Dilogarithm identities"
 section_id: sec-011-references
 section_title: "References*"
 section_number: null
@@ -8,7 +8,9 @@ pages: 89-95
 source_pdf: 9408113v2.pdf
 source_sha256: dadd96e1155e820f
 toc_source: inferred
+doc_brief: "Dilogarithm identities — We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view."
 ---
+References*
 [A] K. Aomoto. Addition theorem of Abel type for hyper-logarithms. Nagoya Math. J.,
 1982, v.88, 55-71.
 [AL] D. Acreman and J.H. Loxton. Asymptotic analysis of Ramanujan pairs. Aequat. Math.,

@@ -1,0 +1,44 @@
+1402 S.G. Bobkov and F. Gétze
+
+Similarly, u{é < —r} <e-"’/. Therefore, ufan'/3|F,(x) — F(x)| =r} < 2e-"/3. Changing
+the variable, we are finished.
+Recall that we use the quantity
+
+(Mo)2/3
+p= ne”
+
+Proposition 6.3. Assume that F has a density, bounded by a number M. Under LS\(o?), for
+any x € Randr > 0,
+
+P{|Fu(x) — F(x)| > Br) < 207777. (6.3)
+In particular, with some absolute constant C, we have
+
+El Fn(x) — F@)| < CB. (6.4)
+
+Note that (6.4) is consistent with the estimate of Theorem 1.1. To derive similar bounds on the
+uniform (Kolmogorov) distance || F, — F'|| = sup, |Fn(x) — F(x)| (which we discuss in the next
+section), it is better to split the bound (6.3) into the two parts,
+
+P{F,(x) — F(x) = Br} < e777, (65)
+P{F(x) — Fr(x) = Br} < e777, (6.6)
+
+which were obtained in the last step of the proof of (6.3).
+
+However, since one might not know whether F is Lipschitz or how it behaves locally, and
+since one might want to approximate this measure itself by some canonical distribution G, it is
+reasonable to provide a more general statement. By Proposition 6.1, for any t > 0,
+
+log Ee!“ ©-GO)) <1 (F(x +h) — G(x)
+<1(G(x +h) — G(x)) + t|| F - Gl
+
+and, similarly,
+log Be'(CO—F#) < ¢(G(x) — Ge —h)) +t F — GI.
+
+Repeating the preceding argument with the random variable
+§ =an'?(F,(x) — G(x) — || F — Gl)
+and then interchanging F,, and G, we get a more general version of Proposition 6.3.
+
+Proposition 6.4. Under LSI(o?), for any distribution function G with finite Lipschitz seminorm
+M =||Glluip, for any x € Randr > 0,
+
+P(| F(x) — G(x)| > Br + ||F — Gl} < 202777,

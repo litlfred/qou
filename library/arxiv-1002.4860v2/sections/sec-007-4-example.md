@@ -7,10 +7,11 @@ section_number: 4
 pages: 7-7
 source_pdf: 1002.4860v2.pdf
 source_sha256: a2cfe924f7a9f5a0
-doc_brief: "A STATE-SUM FORMULA FOR THE ALEXANDER POLYNOMIAL — We develop a diagrammatic formalism for calculating the Alexander polynomial of the closure of a braid as a state-sum."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.864
-latex_coverage_ratio: 0.917
+latex_prose_ratio: 0.818
+latex_coverage_ratio: 1.0
+doc_brief: "A STATE-SUM FORMULA FOR THE ALEXANDER POLYNOMIAL — We develop a diagrammatic formalism for calculating the Alexander polynomial of the closure of a braid as a state-sum."
 ---
 []{#sec ex label="sec ex"}
 

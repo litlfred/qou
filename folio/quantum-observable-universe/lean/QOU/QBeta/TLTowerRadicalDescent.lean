@@ -40,6 +40,15 @@ the tower's injectivity; what remains is assembling that with brick 2's
 presentation descent into the class, and — untouched by any of bricks 1–3 —
 `HeckeGramFactorial`'s open input, the general `T_w`-basis determinant.
 
+🛑 Measured 2026-09-27: **nothing in the corpus consumes `WenzlTowerStep`** — 27
+occurrences, of which 1 class definition, 2 discharge targets and 24 prose mentions,
+and **zero** instance-hypothesis positions. So an instance unblocks no consumer, and
+at a Hecke carrier its conclusion is free outright
+(`isSemisimpleRing_hecke_generic`; see
+`QOU.Machinery.HeckeRank.wenzlTowerStep_vacuous_of_isSemisimpleRing`). The sentence
+above is kept as the record of what this file did not do; read it as naming an open
+question, not a live blocker. Bean `qou-s7z2`.
+
 Note also that `HeckeConditionalExpectation` is itself an OPEN §3b conjecture
 class with no instance. Everything here is therefore conditional on it, in the
 §3b-cond sense: the implication is proved, the premise is not established.

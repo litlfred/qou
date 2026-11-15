@@ -1,0 +1,1 @@
+We shall denote them by mn(ω) = Z R xn mω(dx) The measure corresponding to a diagram in CY has bounded support, it is centered (i.e. m1 = 0), and its second moment is equal to half the area of the set {(u, v) ∈R2| |u| ≤v ≤ω(u)} Besides moments of measures we shall also consider their free cumulants.

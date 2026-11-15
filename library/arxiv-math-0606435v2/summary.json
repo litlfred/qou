@@ -2,365 +2,229 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-0606435v2",
  "source_sha256": "6dddaf838a19f0f5",
- "brief": "PROPERTIES OF CLOSED 3-BRAIDS — We show that 3-braid links with given (non-zero) Alexander o r Jones polynomial are ﬁnitely many, and can be effectively determined.",
- "extended": "**PROPERTIES OF CLOSED 3-BRAIDS**\n\n*AND OTHER LINK BRAID REPRESENTATIONS*\n\n68 pp, 69 sections.\n\n**Abstract.** We show that 3-braid links with given (non-zero) Alexander o r Jones polynomial are ﬁnitely many, and can be effectively determined. We classify among closed 3-b raids strongly quasi-positive and ﬁbered ones, and show that 3-braid links have a unique incompressible Seifert surface. We also classify the positive braid words with Morton-Williams-Franks bound 3 and show that closed positive braids of braid index 3 are closed positive 3-braids. For closed braids on more strings, we study the alternating l inks occurring. In particular we classify those of braid index 4, and show that their Morton-Williams-Franks inequality is exact. Finally, we use the Burau representation to obtain new braid index criteria, including an efﬁcient 4-braid test.\n\n**Outline.** 1 Introduction 2; 2 Preliminaries, basic deﬁnitions and conventi; 3 Xu’s form and Seifert surfaces 11; 4 Polynomial invariants 15; 5 Positivity of 3-braid links 26; 6 Studying alternating links by braid index 38; 7 Applications of the representation theory 42; 2 Preliminaries, basic deﬁnitions and conventi; 2.1 Links and link diagrams; 2.2 Polynomial link invariants; 2.3 Semiadequacy 7; 2.4 Braids and braid words; 2.5 Braid representations of links 9; 2.6 Gauß sum invariants; 3 Xu’s form and Seifert surfaces; 3.1 Strongly quasi-positive links among links ; 3.2 Uniqueness of minimal genus Seifert surfac; 1 (σ−1\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: If L is a strongly quasi-positive link, and has braid index 3, the n L is has a strongly quasi-positive\n- Theorem 1.2: Any 3-braid link has a unique (non-closed) incompressible surface.\n- Theorem 1.3: If L is a positive braid link, and has braid index 3, then L is a positive 3-braid link.\n- Theorem 2.1: Assume that D is a connected A-adequate diagram. Then V0V1 = χ(G(A)) − 1 and\n- Theorem 1.1: follows relatively easily from the work in [St2], but it is a good starting point for the later more substantial\n- Theorem 3.1: Every 3-braid link has a weakly unique minimal genus Seifert surface.",
+ "brief": "arXiv:math/0606435v2 [math.GT] 10 Oct 2007 — We show that 3-braid links with given (non-zero) Alexander or Jones polynomial are ﬁnitely many, and can be effectively determined.",
+ "extended": "**arXiv:math/0606435v2 [math.GT] 10 Oct 2007**\n\n*AND OTHER LINK BRAID REPRESENTATIONS*\n\n68 pp, 42 sections.\n\n**Abstract.** We show that 3-braid links with given (non-zero) Alexander or Jones polynomial are ﬁnitely many, and can be effectively determined. We classify among closed 3-braids strongly quasi-positive and ﬁbered ones, and show that 3-braid links have a unique incompressible Seifert surface. We also classify the positive braid words with Morton-Williams-Franks bound 3 and show that closed positive braids of braid index 3 are closed positive 3-braids. For closed braids on more strings, we study the alternating links occurring. In particular we classify those of braid index 4, and show that their Morton-Williams-Franks inequality is exact. Finally, we use the Burau representation to obtain new braid index criteria, including an efﬁcient 4-braid test.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries, basic definitions and convent; 2.1 Links and link diagrams; 2.2 Polynomial link invariants; 2.3 Semiadequacy; 2.4 Braids and braid words; 2.5 Braid representations of links; 2.6 Gau sum invariants; 3 Xu's form and Seifert surfaces; 3.1 Strongly quasi-positive links among links ; 3.2 Uniqueness of minimal genus Seifert surfac; 3.3 Fiberedness; 4 Polynomial invariants; 4.1 Alexander polynomial; 4.2 Jones polynomial; 4.3 Q polynomial; 5 Positivity of 3-braid links",
  "tokens": {
-  "brief": 41,
-  "extended": 537
+  "brief": 44,
+  "extended": 349
  },
  "sections": [
   {
-   "id": "sec-000-1-introduction-2",
-   "title": "Introduction 2",
-   "pages": "1-1"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-4"
   },
   {
-   "id": "sec-001-2-preliminaries-basic-deﬁnitions-and-conventions",
-   "title": "Preliminaries, basic deﬁnitions and conventions 5",
-   "pages": "1-1"
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "4-5"
   },
   {
-   "id": "sec-002-3-xus-form-and-seifert-surfaces-11",
-   "title": "Xu’s form and Seifert surfaces 11",
-   "pages": "1-2"
-  },
-  {
-   "id": "sec-003-4-polynomial-invariants-15",
-   "title": "Polynomial invariants 15",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-004-5-positivity-of-3-braid-links-26",
-   "title": "Positivity of 3-braid links 26",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-005-6-studying-alternating-links-by-braid-index-38",
-   "title": "Studying alternating links by braid index 38",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-006-7-applications-of-the-representation-theory-42",
-   "title": "Applications of the representation theory 42",
-   "pages": "2-5"
-  },
-  {
-   "id": "sec-007-2-preliminaries-basic-deﬁnitions-and-conventions",
-   "title": "Preliminaries, basic deﬁnitions and conventions",
+   "id": "sec-001-2-preliminaries-basic-definitions-and-convention",
+   "title": "Preliminaries, basic definitions and conventions",
    "pages": "5-5"
   },
   {
-   "id": "sec-008-21-links-and-link-diagrams",
+   "id": "sec-002-21-links-and-link-diagrams",
    "title": "Links and link diagrams",
    "pages": "5-6"
   },
   {
-   "id": "sec-009-22-polynomial-link-invariants",
+   "id": "sec-003-22-polynomial-link-invariants",
    "title": "Polynomial link invariants",
    "pages": "6-7"
   },
   {
-   "id": "sec-010-23-semiadequacy-7",
-   "title": "Semiadequacy 7",
+   "id": "sec-004-23-semiadequacy",
+   "title": "Semiadequacy",
    "pages": "7-8"
   },
   {
-   "id": "sec-011-24-braids-and-braid-words",
+   "id": "sec-005-24-braids-and-braid-words",
    "title": "Braids and braid words",
    "pages": "8-9"
   },
   {
-   "id": "sec-012-25-braid-representations-of-links-9",
-   "title": "Braid representations of links 9",
+   "id": "sec-006-25-braid-representations-of-links",
+   "title": "Braid representations of links",
    "pages": "9-10"
   },
   {
-   "id": "sec-013-26-gauß-sum-invariants",
-   "title": "Gauß sum invariants",
+   "id": "sec-007-26-gau-sum-invariants",
+   "title": "Gau sum invariants",
    "pages": "10-11"
   },
   {
-   "id": "sec-014-3-xus-form-and-seifert-surfaces",
-   "title": "Xu’s form and Seifert surfaces",
+   "id": "sec-008-3-xus-form-and-seifert-surfaces",
+   "title": "Xu's form and Seifert surfaces",
    "pages": "11-11"
   },
   {
-   "id": "sec-015-31-strongly-quasi-positive-links-among-links-of",
-   "title": "Strongly quasi-positive links among links of braid ind ex 3",
+   "id": "sec-009-31-strongly-quasi-positive-links-among-links-of",
+   "title": "Strongly quasi-positive links among links of braid index 3",
    "pages": "11-12"
   },
   {
-   "id": "sec-016-32-uniqueness-of-minimal-genus-seifert-surfaces",
+   "id": "sec-010-32-uniqueness-of-minimal-genus-seifert-surfaces",
    "title": "Uniqueness of minimal genus Seifert surfaces",
-   "pages": "12-12"
-  },
-  {
-   "id": "sec-017-1-σ1",
-   "title": "(σ−1",
    "pages": "12-13"
   },
   {
-   "id": "sec-018-33-fiberedness-13",
-   "title": "Fiberedness 13",
-   "pages": "13-13"
+   "id": "sec-011-33-fiberedness",
+   "title": "Fiberedness",
+   "pages": "13-15"
   },
   {
-   "id": "sec-019-2-σ2σ1",
-   "title": "(σ2σ−1",
-   "pages": "13-13"
-  },
-  {
-   "id": "sec-020-3-if-q-1-resp-σ1σ2σ1",
-   "title": "(if q = 1) resp. σ1σ2σ−1",
-   "pages": "13-13"
-  },
-  {
-   "id": "sec-021-3-if-q-1-which-are-the-ﬁbers-of",
-   "title": "(if q > 1), which are the ﬁbers of",
-   "pages": "13-13"
-  },
-  {
-   "id": "sec-022-2-if-p-1-or-σ1",
-   "title": "(if p = 1) or σ−1",
-   "pages": "13-13"
-  },
-  {
-   "id": "sec-023-2-if-p-1-which-are-the-annulus-for-the",
-   "title": "(if p > 1), which are the annulus for the",
-   "pages": "13-14"
-  },
-  {
-   "id": "sec-024-41-alexander-polynomial",
-   "title": "Alexander polynomial",
-   "pages": "14-15"
-  },
-  {
-   "id": "sec-025-4-polynomial-invariants",
+   "id": "sec-012-4-polynomial-invariants",
    "title": "Polynomial invariants",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-013-41-alexander-polynomial",
+   "title": "Alexander polynomial",
    "pages": "15-17"
   },
   {
-   "id": "sec-026-42-jones-polynomial-17",
-   "title": "Jones polynomial 17",
-   "pages": "17-19"
+   "id": "sec-014-42-jones-polynomial",
+   "title": "Jones polynomial",
+   "pages": "17-20"
   },
   {
-   "id": "sec-027-42-jones-polynomial-19",
-   "title": "Jones polynomial 19",
-   "pages": "19-20"
-  },
-  {
-   "id": "sec-028-43-q-polynomial",
+   "id": "sec-015-43-q-polynomial",
    "title": "Q polynomial",
-   "pages": "20-21"
+   "pages": "20-26"
   },
   {
-   "id": "sec-029-43-q-polynomial-21",
-   "title": "Q polynomial 21",
-   "pages": "21-23"
-  },
-  {
-   "id": "sec-030-43-q-polynomial-23",
-   "title": "Q polynomial 23",
-   "pages": "23-25"
-  },
-  {
-   "id": "sec-031-43-q-polynomial-25",
-   "title": "Q polynomial 25",
-   "pages": "25-26"
-  },
-  {
-   "id": "sec-032-5-positivity-of-3-braid-links",
+   "id": "sec-016-5-positivity-of-3-braid-links",
    "title": "Positivity of 3-braid links",
    "pages": "26-26"
   },
   {
-   "id": "sec-033-51-positive-braid-links",
+   "id": "sec-017-51-positive-braid-links",
    "title": "Positive braid links",
    "pages": "26-26"
   },
   {
-   "id": "sec-034-511-the-morton-williams-franks-bound",
+   "id": "sec-018-511-the-morton-williams-franks-bound",
    "title": "The Morton-Williams-Franks bound",
    "pages": "26-27"
   },
   {
-   "id": "sec-035-51-positive-braid-links-27",
-   "title": "Positive braid links 27",
-   "pages": "27-27"
-  },
-  {
-   "id": "sec-036-512-maximal-subwords",
+   "id": "sec-019-512-maximal-subwords",
    "title": "Maximal subwords",
    "pages": "27-28"
   },
   {
-   "id": "sec-037-513-the-proof-of-theorem-51-initial-simpliﬁcatio",
-   "title": "The proof of Theorem 5.1: Initial simpliﬁcations",
+   "id": "sec-020-513-the-proof-of-theorem-thmwf-initial-simplific",
+   "title": "The proof of Theorem thmwf: Initial simplifications",
    "pages": "28-29"
   },
   {
-   "id": "sec-038-51-positive-braid-links-29",
-   "title": "Positive braid links 29",
-   "pages": "29-29"
-  },
-  {
-   "id": "sec-039-514-two-mountains",
+   "id": "sec-021-514-two-mountains",
    "title": "Two mountains",
    "pages": "29-31"
   },
   {
-   "id": "sec-040-51-positive-braid-links-31",
-   "title": "Positive braid links 31",
-   "pages": "31-31"
-  },
-  {
-   "id": "sec-041-515-more-than-two-mountains",
+   "id": "sec-022-515-more-than-two-mountains",
    "title": "More than two mountains",
    "pages": "31-33"
   },
   {
-   "id": "sec-042-51-positive-braid-links-33",
-   "title": "Positive braid links 33",
+   "id": "sec-023-516-4-braids",
+   "title": "4-braids",
    "pages": "33-35"
   },
   {
-   "id": "sec-043-52-positive-links-35",
-   "title": "Positive links 35",
-   "pages": "35-37"
+   "id": "sec-024-52-positive-links",
+   "title": "Positive links",
+   "pages": "35-38"
   },
   {
-   "id": "sec-044-52-positive-links-37",
-   "title": "Positive links 37",
-   "pages": "37-38"
-  },
-  {
-   "id": "sec-045-6-studying-alternating-links-by-braid-index",
+   "id": "sec-025-6-studying-alternating-links-by-braid-index",
    "title": "Studying alternating links by braid index",
-   "pages": "38-39"
+   "pages": "38-42"
   },
   {
-   "id": "sec-046-1-mwf-l-4",
-   "title": "MWF (L) = 4",
-   "pages": "39-42"
-  },
-  {
-   "id": "sec-047-7-applications-of-the-representation-theory",
+   "id": "sec-026-7-applications-of-the-representation-theory",
    "title": "Applications of the representation theory",
    "pages": "42-42"
   },
   {
-   "id": "sec-048-71-the-jones-conjecture",
+   "id": "sec-027-71-the-jones-conjecture",
    "title": "The Jones conjecture",
-   "pages": "42-43"
+   "pages": "42-48"
   },
   {
-   "id": "sec-049-71-the-jones-conjecture-43",
-   "title": "The Jones conjecture 43",
-   "pages": "43-45"
-  },
-  {
-   "id": "sec-050-71-the-jones-conjecture-45",
-   "title": "The Jones conjecture 45",
-   "pages": "45-46"
-  },
-  {
-   "id": "sec-051-6-this-was",
-   "title": "This was,",
-   "pages": "46-47"
-  },
-  {
-   "id": "sec-052-71-the-jones-conjecture-47",
-   "title": "The Jones conjecture 47",
-   "pages": "47-48"
-  },
-  {
-   "id": "sec-053-72-unitarity-of-the-burau-representation",
+   "id": "sec-028-72-unitarity-of-the-burau-representation",
    "title": "Unitarity of the Burau representation",
-   "pages": "48-49"
+   "pages": "48-50"
   },
   {
-   "id": "sec-054-72-unitarity-of-the-burau-representation-49",
-   "title": "Unitarity of the Burau representation 49",
-   "pages": "49-50"
-  },
-  {
-   "id": "sec-055-73-norm-estimates",
+   "id": "sec-029-73-norm-estimates",
    "title": "Norm estimates",
-   "pages": "50-51"
+   "pages": "50-52"
   },
   {
-   "id": "sec-056-73-norm-estimates-51",
-   "title": "Norm estimates 51",
-   "pages": "51-52"
-  },
-  {
-   "id": "sec-057-74-skein-polynomial",
+   "id": "sec-030-74-skein-polynomial",
    "title": "Skein polynomial",
    "pages": "52-53"
   },
   {
-   "id": "sec-058-75-recovering-the-burau-trace-53",
-   "title": "Recovering the Burau trace 53",
+   "id": "sec-031-75-recovering-the-burau-trace",
+   "title": "Recovering the Burau trace",
    "pages": "53-53"
   },
   {
-   "id": "sec-059-751-conditions-on-the-eigenvalues",
+   "id": "sec-032-751-conditions-on-the-eigenvalues",
    "title": "Conditions on the eigenvalues",
    "pages": "53-55"
   },
   {
-   "id": "sec-060-75-recovering-the-burau-trace-55",
-   "title": "Recovering the Burau trace 55",
-   "pages": "55-55"
-  },
-  {
-   "id": "sec-061-27-a2b2-4b3-4a3c-18abc-27c2-62",
-   "title": "(−a2b2 + 4b3 + 4a3c − 18abc + 27c2) .(62)",
-   "pages": "55-55"
-  },
-  {
-   "id": "sec-062-752-applications-and-examples",
+   "id": "sec-033-752-applications-and-examples",
    "title": "Applications and examples",
    "pages": "55-56"
   },
   {
-   "id": "sec-063-76-mahler-measures",
+   "id": "sec-034-76-mahler-measures",
    "title": "Mahler measures",
-   "pages": "56-57"
+   "pages": "56-56"
   },
   {
-   "id": "sec-064-76-mahler-measures-57",
-   "title": "Mahler measures 57",
-   "pages": "57-58"
+   "id": "sec-035-761-3-braids",
+   "title": "3-braids",
+   "pages": "56-58"
   },
   {
-   "id": "sec-065-762-skein-polynomial-and-generalized-twisting",
+   "id": "sec-036-762-skein-polynomial-and-generalized-twisting",
    "title": "Skein polynomial and generalized twisting",
-   "pages": "58-59"
+   "pages": "58-60"
   },
   {
-   "id": "sec-066-76-mahler-measures-59",
-   "title": "Mahler measures 59",
-   "pages": "59-60"
-  },
-  {
-   "id": "sec-067-77-knots-with-unsharp-mwf-inequality",
+   "id": "sec-037-77-knots-with-unsharp-mwf-inequality",
    "title": "Knots with unsharp MWF inequality",
-   "pages": "60-64"
+   "pages": "60-61"
   },
   {
-   "id": "sec-068-references",
-   "title": "References",
-   "pages": "64-68"
+   "id": "sec-038-8-postliminaries",
+   "title": "Postliminaries",
+   "pages": "61-61"
+  },
+  {
+   "id": "sec-039-81-fibered-dean-knots-hirasawa-murasugi",
+   "title": "Fibered Dean knots (Hirasawa-Murasugi)",
+   "pages": "61-63"
+  },
+  {
+   "id": "sec-040-82-a-decomposition-joint-with-hirasawa-ishiwata",
+   "title": "$A$-decomposition (joint with Hirasawa-Ishiwata)",
+   "pages": "63-68"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

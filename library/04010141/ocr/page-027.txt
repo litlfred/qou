@@ -1,0 +1,47 @@
+Cellular algebras and diagram algebras 167
+
+where N} is the i-block of N’, regarded as an element of 6; =Lie GL,,(C).
+
+Thus for the decomposition of M,,n, it suffices to consider the case
+when all eigenvalues of s are in the same g?-orbit, and hence after mul-
+tiplication by a scalar, one may assume that they are powers of g?. The
+relation (7.5) then shows that the pair (s, N) defines a representation
+of the cyclic or linear quiver, and this is a convenient context for an
+explicit discussion of the combinatorial geometric interpretation of our
+result (6.9)(i).
+
+We shall therefore formulate our result in the language of quiver
+representations. We start by recalling some elementary facts concerning
+quiver representations, most of which may be found in [40].
+
+Fix an element e € Zo, and let Q. be the cyclic quiver of type
+Ae-1. For e = 0, this is interpreted as the linear quiver Ay. If we
+write I = Z/eZ, Q. has vertex set J and an arrow from i toi—1
+for each i € I. A representation of Q. is a pair (V,E), where V =
+@ierV;i is an I-graded C-vector space, and E = @ie7E; € Ey, where
+Ey = ®icrHomies(V;, Vi-1) C End(V). The dimension vector of (V, E)
+is denoted d = (dj,...,d-), where d; =dimVj, and its total dimension is
+written n = A d;. We have a notion of equivalence for representations
+of Q., which is defined in the obvious way. For a fixed graded vector
+space V, the set of all representations (V, F) is identified with the affine
+space Ey in the obvious way, and the group Gy := J],<;GL(V;) acts
+on this space by conjugation. The representation E € Ey (and its Gy-
+orbit) is said to be nilpotent if E is nilpotent as an endomorphism of V;
+the set of nilpotent representations of Q, on V is clearly (Zariski)-closed
+in Ey, and we denote this variety by Ny.
+
+Suppose henceforth that q? has multiplicative order e, where e = 0 if
+q is not a root of unity. Let (s, N) be a pair with N € N,,q4, and suppose
+all eigenvalues of s are powers of qg?, and hence are parametrised by
+I (we have seen that the general case may be reduced to this one).
+Then by (7.5), the s-eigenspace decomposition V = @je1V; of V = C”
+defines, together with N, a nilpotent representation of the quiver Q..
+Conversely, given such a representation, V = @icrVi, with a nilpotent
+endomorphism E : V; > V;_1 (j € I), define s € GL(V) as the linear
+transformation which acts on V; as multiplication by g~”*. Then E €
+Ns,q- The following statement is now clear.
+
+Proposition 7.9. (i) There is a bijection between GLn(C)-
+conjugacy classes of pairs (s, N) such that the eigenvalues of s are powers
+of q and s- N =q?N, and isomorphism classes of nilpotent representa-
+tions (V, E) of the quiver Q., with total dimension n.

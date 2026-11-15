@@ -7,10 +7,11 @@
   "bytes": 679159,
   "pages": 20,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,21 +21,28 @@
    "stamp_date": "30 Jan 2021"
   },
   "doi": null,
-  "title": "RIGIDITY, RESIDUES AND DUALITY: OVERVIEW AND RECENT PROGRESS AMNON YEKUTIELI A/b.sc/s.sc/t.sc/r.sc/a.sc/c.sc/t.sc.In this article we explain the theory ofrigid residue complexes in commutative",
-  "authors_raw": null,
+  "title": "RIGIDITY, RESIDUES AND DUALITY: OVERVIEW AND RECENT PROGRESS",
+  "authors_raw": "AMNON YEKUTIELI",
   "title_lines": [
-   "RIGIDITY, RESIDUES AND DUALITY: OVERVIEW AND RECENT PROGRESS",
-   "AMNON YEKUTIELI",
-   "A/b.sc/s.sc/t.sc/r.sc/a.sc/c.sc/t.sc.In this article we explain the theory ofrigid residue complexes in commutative"
+   "RIGIDITY, RESIDUES AND DUALITY: OVERVIEW AND RECENT PROGRESS"
   ],
-  "abstract": null,
+  "abstract": "In this article we explain the theory of rigid residue complexes in commutative algebra and algebraic geometry, summarizing the background, recent results and antic- ipated future results. Unlike all previous approaches to Grothendieck Duality, the rigid approach concentrates on the construction of rigid residue complexes over rings, and their intricate yet robust properties. The geometrization, i.e. the passage to rigid residue complexes on schemes and Deligne-Mumford (DM) stacks, by gluing, is fairly easy. In the geometric part of the theory, the main results are the Rigid Residue Theorem and the Rigid Duality Theorem for proper maps between schemes, and for tame proper maps between DM stacks.",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20210202020839Z",
-   "Creator": "LaTeX with hyperref",
    "Producer": "pdfTeX-1.40.21",
-   "Title": ""
-  }
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20210202020839Z"
+  },
+  "title_raw": "RIGIDITY, RESIDUES AND DUALITY: OVERVIEW AND RECENT PROGRESS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "RIGIDITY, RESIDUES AND DUALITY: OVERVIEW AND RECENT PROGRESS Contents Introduction The Squaring Operation and Rigid Complexes over Rings Rigid Dualizing Complexes over Rings Rigid Residue Complexes over Rings Rigidity, Residues and Duality for Schemes Rigidity, Residues and Duality for DM Stacks Ref",
+   "outline": "0. Introduction",
+   "text": "RIGIDITY, RESIDUES AND DUALITY: OVERVIEW AND RECENT PROGRESS",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "RIGIDITY, RESIDUES AND DUALITY: OVERVIEW AND RECENT PROGRESS AMNON YEKUTIELI A/b.sc/s.sc/t.sc/r.sc/a.sc/c.sc/t.sc.In this article we explain the theory ofrigid residue complexes in commutative"
  },
  "toc": [
   {
@@ -42,75 +50,334 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "0"
+   "number": "0",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The Squaring Operation and Rigid Complexes over Rings",
    "page": 3,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Rigid Dualizing Complexes over Rings",
    "page": 6,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Rigid Residue Complexes over Rings",
    "page": 9,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Rigidity, Residues and Duality for Schemes",
    "page": 11,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Rigidity, Residues and Duality for DM Stacks",
    "page": 14,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 19,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 800,
+   "n_words": 118,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-0-introduction",
    "number": "0",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
+   "page_end": 3,
+   "n_chars": 6248,
+   "n_words": 1042,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-1-the-squaring-operation-and-rigid-complexes-ove",
+   "number": "1",
+   "title": "The Squaring Operation and Rigid Complexes over Rings",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 6,
+   "n_chars": 7484,
+   "n_words": 1295,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-2-rigid-dualizing-complexes-over-rings",
+   "number": "2",
+   "title": "Rigid Dualizing Complexes over Rings",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 9,
+   "n_chars": 7774,
+   "n_words": 1309,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-3-rigid-residue-complexes-over-rings",
+   "number": "3",
+   "title": "Rigid Residue Complexes over Rings",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 7435,
+   "n_words": 1247,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-4-rigidity-residues-and-duality-for-schemes",
+   "number": "4",
+   "title": "Rigidity, Residues and Duality for Schemes",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 14,
+   "n_chars": 8167,
+   "n_words": 1377,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-005-5-rigidity-residues-and-duality-for-dm-stacks",
+   "number": "5",
+   "title": "Rigidity, Residues and Duality for DM Stacks",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 19,
+   "n_chars": 16012,
+   "n_words": 2850,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-006-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 19,
    "page_end": 20,
-   "n_chars": 57391,
-   "n_words": 9526
+   "n_chars": 3388,
+   "n_words": 447,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 7,
-  "sections": 1,
-  "chars_total": 57391,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 8,
+  "chars_total": 57308,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 6,
-   "overlaid": 1,
+   "overlaid": 6,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -118,12 +385,62 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-0-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.956,
-     "coverage_ratio": 0.903,
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.926,
      "result": "overlaid",
      "converter": "latex"
+    },
+    {
+     "id": "sec-001-1-the-squaring-operation-and-rigid-complexes-ove",
+     "title": "The Squaring Operation and Rigid Complexes over Rings",
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-2-rigid-dualizing-complexes-over-rings",
+     "title": "Rigid Dualizing Complexes over Rings",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-3-rigid-residue-complexes-over-rings",
+     "title": "Rigid Residue Complexes over Rings",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-4-rigidity-residues-and-duality-for-schemes",
+     "title": "Rigidity, Residues and Duality for Schemes",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-5-rigidity-residues-and-duality-for-dm-stacks",
+     "title": "Rigidity, Residues and Duality for DM Stacks",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-references",
+     "title": "References",
+     "result": "no matching \\section"
     }
    ]
   }

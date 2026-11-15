@@ -1,0 +1,54 @@
+Spiders for Rank 2 Lie Algebras 121
+
+Thus, the relation f(w) = (w1,w2) defines the desired map /f. It is routine to check
+that f is both injective and surjective. O
+
+Note that minimal cut paths are also useful in practice for generating the basis
+of a clasped web space.
+
+Exercise 2.5. List the elements of B(2,2,2,2,2).
+
+3. Precise Definition of a Spider
+
+In this section, we give a precise definition of a spider. The main way in which
+the general notion of a spider is more complicated than the example is that strands
+may be oriented and there may be more than one type of strand. Indeed, even in
+the 4; case, we may consider 7 parallel strands as equivalent to one strand labelled
+with n, as is already suggested by the notation.
+
+A spider has a strand set S which is a unital semigroup with unit 0. In most
+of the examples in the paper, S is a free, non-abelian semigroup. The strand set
+has an anti-involution *:S — S called duality or orientation reversal. For each
+s ES, there is a web space W(s), which may be just a set. For each a, there is
+a distinguished web B, € W(aa*), called a bare strand, and 1 = Bg is called the
+empty web. Finally, there are three operations that exist for every a and b:
+
+1. Join bg,4: W(a) x W(b) — W(ab).
+2. Rotation pay : W(ab) — W(ba).
+3. Stitch og,, : W(aa*b) > W(b).
+
+The subscripts of the operations may be dropped when they are clear from context.
+A spider may in addition be defined in a (symmetric tensor) category other than
+the category of sets. For example, an additive spider is one in which web spaces
+are abelian groups, rotation and stitch are additive, and join is additive, while in
+a linear spider, the web spaces are vector spaces and the operations are linear or
+bilinear.
+
+The three spider operations must satisfy the following axioms, which are
+divided into groups according to which operations they involve. We define 04,4,¢ =
+Pc,bFa,cbPb,aaxc for brevity in the last three axioms.
+
+e Rotation only:
+lL. Pad = P0,a = id.
+2. Pa,bePc,abPb,ca = id.
+3. Pa,ax(Ba) = Bar
+e Join only:
+4. (uriv) hw) =ur(veXw)
+5S.uml=u
+e Join and rotation:
+6. Pavol Pas, V) = Pa,b() PXpa,g 0
+7. Bab = Pat ,abo* (Bar OI Bs)
+8. Pa,b(U Xa,5 V) = V PXp.g U
+e Rotation and stitch:
+9. Ga,bdFaa*b,c,d = Fb,c,dFa,bec*d
+10. 64,9 = Far,0Pa,ar-

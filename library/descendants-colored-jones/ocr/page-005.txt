@@ -1,0 +1,57 @@
+The descendant colored Jones polynomials 2311
+
+where H;(q) € Z[q*] for all k > 0 and en,4(q) is the cyclotomic kernel which
+is independent of the knot and vanishes when k > n > 1. Equation (2) can
+be inverted [Hab08, Lem. 6.1]
+
+k+1
+
+= ren(DIn(Q);
+(3) n=1
+
+—n14
+en(g) = (-De"
+
+ke(k+3)-+n(n—3)
+Aer +1
+
+(i= a"). a")
+(4; Q)ktnti(G Dk—n41
+
+where Y¢,n(q) = 0 forn > k+2 and k > 0. There are three important features
+in Habiro’s expansion (2) of the colored Jones polynomials.
+
+(i) The Habiro polynomials H;,(q) which a priori lie in Q(q) (as follows
+from (3)), actually lie in Z[q*].
+
+(ii) Setting n = 0 in the right hand side of (2) gives a well-defined element
+of the Habiro ring Ziq = lim, Z[q)/((4 an).
+
+(ii) The dependence on the color comes only through the cyclotomic kernel
+Cn,¢(q). Thus, one can replace g” by a variable a and define an element
+J(x, q) of the colored Habiro ring A = Jim | Zlq*][x +2~!—2]/(en(x,q)),
+so that J(q”",¢q) = Jn(q) for n > 1, where
+
+co
+(4) S(a,q) = So ee(w, He(q), x(x, q) = 2 * (qe: gage; ')e-
+k=0
+
+We now have all the ingredients to define the descendant colored Jones
+function.
+
+Definition 2.1. For an integer m and for n > 0, we define
+
+oo
+(5) DIO” (q = ena @)Hx(q) 4 gh”, bg! ‘m) (a, 7) = Veal a, q)Hx( aq gh
+k=0 k=0
+
+and
+oo
+
+(6) ™(g) = (aaa sg )aHe(a) a.
+k=0
+
+2.3. Properties of the descendants
+
+From their very definition, the 0-th descendants DIO (q) and DIO (q) are
+nothing but the colored Jones polynomial J,,(q) and the Kashaev invariant of

@@ -7,10 +7,11 @@ section_number: 3
 pages: 8-8
 source_pdf: 2305.07425v1.pdf
 source_sha256: 2f7d2ac5818b6af4
-doc_brief: "LARGEST HYPERBOLIC ACTIONS OF 3–MANIFOLD GROUPS — The set of equivalence classes of cobounded actions of a grou p G on diﬀerent hyperbolic metric spaces carries a natural partial order."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.951
+latex_coverage_ratio: 1.0
+doc_brief: "LARGEST HYPERBOLIC ACTIONS OF 3–MANIFOLD GROUPS — The set of equivalence classes of cobounded actions of a group G on diﬀerent hyperbolic metric spaces carries a natural partial order."
 ---
 []{#CKA:finiteindex label="CKA:finiteindex"}
 

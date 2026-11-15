@@ -14,4 +14,10 @@ export default remark({
     "substrate-anchor",
     "mu-p-tension",
   ],
+  authorNotes: [
+    {
+      kind: "refined-framing",
+      body: "An earlier version of this remark claimed q* was an independent third determination of q₀.",
+    },
+  ],
 });

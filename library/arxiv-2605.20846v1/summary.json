@@ -2,27 +2,32 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2605.20846v1",
  "source_sha256": "db27cb6d01c4f2fb",
- "brief": "Topological Field Theories and the Algebraic Structures of the Two-Sphere Chris Li — We give two presentations for bordisms ofS 2 in the 3-dimensional oriented bor- dism category Cob(3), encoding the",
- "extended": "**Topological Field Theories and the Algebraic Structures of the Two-Sphere Chris Li**\n\n*May 21, 2026*\n\n99 pp, 17 sections.\n\n**Abstract.** We give two presentations for bordisms ofS 2 in the 3-dimensional oriented bor- dism category Cob(3), encoding the algebraic structures onS 2. After passing through topological field theories, we define two kinds of monoids which we call P-monoids and L-monoids. In addition to both being commutative Frobenius monoids, P-monoids are equipped with a class of endomorphisms while L-monoids are equipped with a class of unit morphisms, all of which are labelled by closed oriented irreducible prime 3- manifolds. They turn out to be equivalent.\n\n**Outline.** Introduction; Generators; Commutative Frobenius Relations; Outline of Strategy; Existence and Spherical Morse Functions; Spherical Morse Functions; Local Models of Excellent Morse Failures; Prime Relations; No Internal Relations; External Prime Relations; Sufficiency of External Relations; Necessity of Legs Relations; Passing through TFTs; P and L Monoids; Relations to J-Algebras; Presentations of a Category; Towards\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.0.3: The 2-dimensional oriented bordism categoryCob(2)is the free sym-\n- Theorem 1.0.5: Cob(3) S2 has a presentation withG 2 generators under commutative\n- Theorem 1.0.6: Cob(3) S2 has a presentation withG 1 generators and commutative\n- Theorem 1.0.7: (Kneser-Milnor Prime Decomposition Theorem)\n- Theorem 1.0.8: There is a canonical isomorphismS: Cob(2) ∼→Cob(3) S2,CF\n- Theorem 3.3.6: shows that the silly functor is an isomorphism.",
+ "brief": "Topological Field Theories and the Algebraic Structures of the Two-Sphere — We give two presentations for bordisms of S2 in the 3-dimensional oriented bor- dism category Cob(3), encoding the",
+ "extended": "**Topological Field Theories and the Algebraic Structures of the Two-Sphere**\n\n*May 21, 2026*\n\n99 pp, 21 sections.\n\n**Abstract.** We give two presentations for bordisms of S2 in the 3-dimensional oriented bor- dism category Cob(3), encoding the algebraic structures on S2. After passing through topological field theories, we define two kinds of monoids which we call P-monoids and L-monoids. In addition to both being commutative Frobenius monoids, P-monoids are equipped with a class of endomorphisms while L-monoids are equipped with a class of unit morphisms, all of which are labelled by closed oriented irreducible prime 3- manifolds. They turn out to be equivalent.\n\n**Outline.** Front matter; Introduction; Generators; Commutative Frobenius Relations; Outline of Strategy; Existence and Spherical Morse Functions; Spherical Morse Functions; Local Models of Excellent Morse Failures; Sufficiency of Commutative Frobenius Relations; Prime Relations; No Internal Relations; External Prime Relations; Sufficiency of External Relations; Necessity of Legs Relations; Passing through TFTs; P and L Monoids; Relations to J-Algebras; The -operad L",
  "tokens": {
-  "brief": 49,
-  "extended": 403
+  "brief": 47,
+  "extended": 286
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-3"
+  },
+  {
    "id": "sec-000-introduction",
    "title": "Introduction",
-   "pages": "2-13"
+   "pages": "3-13"
   },
   {
    "id": "sec-001-generators",
    "title": "Generators",
-   "pages": "13-21"
+   "pages": "13-22"
   },
   {
    "id": "sec-002-commutative-frobenius-relations",
    "title": "Commutative Frobenius Relations",
-   "pages": "21-22"
+   "pages": "22-22"
   },
   {
    "id": "sec-003-outline-of-strategy",
@@ -42,55 +47,70 @@
   {
    "id": "sec-006-local-models-of-excellent-morse-failures",
    "title": "Local Models of Excellent Morse Failures",
-   "pages": "38-46"
+   "pages": "38-41"
   },
   {
-   "id": "sec-007-prime-relations",
+   "id": "sec-007-sufficiency-of-commutative-frobenius-relations-a",
+   "title": "Sufficiency of Commutative Frobenius Relations Among CF Generators",
+   "pages": "41-46"
+  },
+  {
+   "id": "sec-008-prime-relations",
    "title": "Prime Relations",
    "pages": "46-46"
   },
   {
-   "id": "sec-008-no-internal-relations",
+   "id": "sec-009-no-internal-relations",
    "title": "No Internal Relations",
    "pages": "46-49"
   },
   {
-   "id": "sec-009-external-prime-relations",
+   "id": "sec-010-external-prime-relations",
    "title": "External Prime Relations",
    "pages": "49-54"
   },
   {
-   "id": "sec-010-sufficiency-of-external-relations",
+   "id": "sec-011-sufficiency-of-external-relations",
    "title": "Sufficiency of External Relations",
    "pages": "54-60"
   },
   {
-   "id": "sec-011-necessity-of-legs-relations",
+   "id": "sec-012-necessity-of-legs-relations",
    "title": "Necessity of Legs Relations",
    "pages": "60-70"
   },
   {
-   "id": "sec-012-passing-through-tfts",
+   "id": "sec-013-passing-through-tfts",
    "title": "Passing through TFTs",
    "pages": "70-70"
   },
   {
-   "id": "sec-013-p-and-l-monoids",
+   "id": "sec-014-p-and-l-monoids",
    "title": "P and L Monoids",
    "pages": "70-74"
   },
   {
-   "id": "sec-014-relations-to-j-algebras",
+   "id": "sec-015-relations-to-j-algebras",
    "title": "Relations to J-Algebras",
-   "pages": "74-90"
+   "pages": "74-78"
   },
   {
-   "id": "sec-015-presentations-of-a-category",
+   "id": "sec-016-the--operad-l",
+   "title": "The -operad L",
+   "pages": "78-90"
+  },
+  {
+   "id": "sec-017-appendix-definitions-and-common-results",
+   "title": "Appendix: Definitions and Common Results",
+   "pages": "90-90"
+  },
+  {
+   "id": "sec-018-presentations-of-a-category",
    "title": "Presentations of a Category",
    "pages": "90-92"
   },
   {
-   "id": "sec-016-towards",
+   "id": "sec-019-towards",
    "title": "Towards",
    "pages": "92-99"
   }
@@ -99,8 +119,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

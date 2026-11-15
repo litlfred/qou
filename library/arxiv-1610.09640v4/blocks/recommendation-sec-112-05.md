@@ -1,0 +1,1 @@
+If we want to transfer this to the connected graded setting of the current section, where the module category is M(A, gr), then we should take A to be a commutative con- nected graded K-ring, and a is a sequence of homogeneous elements that generates the augmentation ideal m.

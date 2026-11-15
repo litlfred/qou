@@ -1,15 +1,13 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2407.04744v2",
- "document_class": "math",
- "validated": true,
  "source": {
   "structure_sha256": "fc6fda3138296fb1f0c693652d26ced7fd279b09f4742b9b1a8ef6459b5c63a2",
   "file": "2407.04744v2.pdf"
  },
  "provenance": {
-  "title": "Magnetic structure of A\u2264 10 nuclei using the Norfolk nuclear models with quantum Monte Carlo methods G. Chambers-Wall 1,\u2217 A. Gnech 2,3,\u2020 G. B. King 1,\u2021 S",
-  "authors": "Pastore1,4,\u00a7 M. Piarulli 1,4,\u00b6 R. Schiavilla 2,3,\u2217\u2217 and R. B. Wiringa 5\u2020\u2020",
+  "title": "Magnetic structure of A \u2264 10 nuclei using the Norfolk nuclear models with quantum Monte Carlo methods",
+  "authors": "Pastore1,4,\u00a7 M. Piarulli1,4,\u00b6 R. Schiavilla2,3,\u2217\u2217and R. B. Wiringa5\u2020\u2020",
   "arxiv": {
    "id": "2407.04744",
    "version": "2",
@@ -18,11 +16,76 @@
   },
   "doi": null
  },
- "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "aspects": [
+  "requirements"
+ ],
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
+  "candidates": 4,
+  "by_kind": {
+   "recommendation": 4
+  },
   "formalization_candidates": 0
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Further, the authors of Ref. [@Valderrama:2015] previously argued, on the basis of the wave function anomalous dimension, that the contact operator contributing to the magnetic moment should have a power counting that places it roughly between N2LO and NLO, consistent with the enhancement observed here and in Refs. [@Gnech:2022vwr; @Martin:2023dhl]; however, such an effect could also be due to the implementation of cutoffs that are too soft, causing an uncontrolled sensitivity to the short-range physics [@Hammer:2019poc].",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-009-vmc-magnetic-moments-of-a3-7-nuclei.md",
+   "section_title": "VMC magnetic moments of A=3-7 nuclei",
+   "pages": "6-9",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Further, the authors of Ref. [@Valderrama:2015] previously argued, on the basis of the wave function anomalous dimension, that the contact operator contributing to the magnetic moment should have a power counting that places it roughly between N2LO and NLO, consistent with the enhancement observed here and in Refs. [@Gnech:2022vwr; @Martin:2023dhl]; however, such an effect could also be due to the implementation of cutoffs that are too soft, causing an uncontrolled sensitivity to the short-range physics [@Hammer:2019poc].",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-010-vmc-magnetic-moments-of-a8-10-nuclei.md",
+   "section_title": "VMC magnetic moments of A=8-10 nuclei",
+   "pages": "9-11",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Should advancements in electron scattering on radioisotopes progress enough to measure these form factors, they would also provide interesting cases to better understand two-body currents.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-018-lithium-8-and-boron-8.md",
+   "section_title": "Lithium-8 and Boron-8",
+   "pages": "17-17",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Tay- lor, CODATA recommended values of the fundamental physical constants: 2018*, Rev.",
+   "strength": null,
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-025-references.md",
+   "section_title": "References",
+   "pages": "25-29",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
 }

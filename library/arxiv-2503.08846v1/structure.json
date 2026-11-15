@@ -8,7 +8,7 @@
   "pages": 51,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T16:28:27Z",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -25,7 +25,7 @@
   "title_lines": [
    "A Tutorial on Knots and Quantum Mechanics"
   ],
-  "abstract": "These notes review a description of quantum mechanics in terms of the topology of spaces, basing on the axioms of Topological Quantum Field Theory and path integral formalism. In this description quantum states and operators are encoded by the topology of spaces that are used as modules to build the quantum mechanical model, while expectation values and probabilities are given by topological in- variants of spaces, knots and links. The notes focus on the specific way the topology encodes quantum mechanical features, or, equivalently, on how these features can be controlled through the topology. A topological classification of entanglement is discussed, as well as properties of entanglement entropy and basic quantum protocols. The primary aim is to build a less conventional diagrammatic intuition about quantum mechanics, expanding the paradigm of \u201cQuantum Picturalism\u201d.",
+  "abstract": "These notes review a description of quantum mechanics in terms of the topology of spaces, basing on the axioms of Topological Quantum Field Theory and path integral formalism. In this description quantum states and operators are encoded by the topology of spaces that are used as modules to build the quantum mechanical model, while expectation values and probabilities are given by topological in- variants of spaces, knots and links. The notes focus on the specific way the topology encodes quantum mechanical features, or, equivalently, on how these features can be controlled through the topology. A topological classification of entanglement is discussed, as well as properties of entanglement entropy and basic quantum protocols. The primary aim is to build a less conventional diagrammatic intuition about quantum mechanics, expanding the paradigm of “Quantum Picturalism”.",
   "docinfo": {
    "Producer": "pdfTeX-1.40.25",
    "Creator": "LaTeX with hyperref",
@@ -50,158 +50,792 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Basics of knot theory",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Topological invariants from matrix traces",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Skein relation",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Bracket and Jones polynomials",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Matrix representation",
    "page": 11,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 1,
    "title": "Topological bits",
    "page": 13,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "Topological Quantum Field Theory",
    "page": 13,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "Topological Quantum Mechanics",
    "page": 16,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "Chern-Simons theory",
    "page": 19,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 2,
    "title": "TQFT in the Semiclassical Limit",
    "page": 23,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 1,
    "title": "Quantum Entanglement",
    "page": 24,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
   },
   {
    "level": 2,
    "title": "Topological Tangling and Quantum Entanglement",
    "page": 24,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
   },
   {
    "level": 2,
    "title": "SLOCC Classification",
    "page": 26,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 2,
    "title": "Entropy of Entanglement",
    "page": 33,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
   },
   {
    "level": 2,
    "title": "Inequalities for the Entanglement entropy",
    "page": 36,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "36"
   },
   {
    "level": 1,
    "title": "Quantum Algorithms",
    "page": 38,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "38"
   },
   {
    "level": 2,
    "title": "Quantum Teleportation",
    "page": 38,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "38"
   },
   {
    "level": 2,
    "title": "Dense Coding",
    "page": 40,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "40"
   },
   {
    "level": 1,
    "title": "Outlook",
    "page": 42,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "42"
   },
   {
    "level": 2,
    "title": "Multipartite Entanglement",
    "page": 43,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "43"
   },
   {
    "level": 2,
    "title": "Quantum Gravity",
    "page": 44,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "44"
   }
  ],
  "toc_source": "outline",
  "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Calculation of the bracket polynomial of the trefoil knot 31 using skein relations (25)",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "A schematic depiction of a category (objects and morphisms)",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "14"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Topological presentation of correlations can be used to illustrate subadditivity (left) and strong subadditivity (right)",
+   "page": 37,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "37"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The quantum circuit diagrams of quantum teleportation protocol (left) and dense coding (right) algorithms",
+   "page": 38,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "38"
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "The exponents of the operators in the sequence ZaXb for different measurement outcomes",
+   "page": 39,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "39"
+  },
+  {
+   "kind": "table",
+   "number": "2",
+   "title": "Braids used for encoding classical bits",
+   "page": 41,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "41"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Topological operators acting on tensor products of two Hilbert spaces are in general nonunitary. Contracting an operator with its unitary conjugate creates a topological defect, preventing the result to be an identity matrix",
+   "page": 42,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "42"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
    "id": "sec-front-matter",
@@ -209,19 +843,23 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 1,
-   "n_chars": 1099,
-   "n_words": 162
+   "page_end": 2,
+   "n_chars": 2922,
+   "n_words": 827,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
    "id": "sec-000-introduction",
    "number": null,
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 4,
-   "n_chars": 11572,
-   "n_words": 2152
+   "n_chars": 9758,
+   "n_words": 1486,
+   "label_start": "2",
+   "label_end": "4"
   },
   {
    "id": "sec-001-basics-of-knot-theory",
@@ -230,8 +868,10 @@
    "level": 1,
    "page_start": 4,
    "page_end": 6,
-   "n_chars": 5031,
-   "n_words": 874
+   "n_chars": 5049,
+   "n_words": 877,
+   "label_start": "4",
+   "label_end": "6"
   },
   {
    "id": "sec-002-topological-invariants-from-matrix-traces",
@@ -240,8 +880,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 2886,
-   "n_words": 544
+   "n_chars": 2924,
+   "n_words": 548,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
    "id": "sec-003-skein-relation",
@@ -250,8 +892,10 @@
    "level": 2,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 3055,
-   "n_words": 586
+   "n_chars": 3066,
+   "n_words": 587,
+   "label_start": "7",
+   "label_end": "8"
   },
   {
    "id": "sec-004-bracket-and-jones-polynomials",
@@ -260,8 +904,10 @@
    "level": 2,
    "page_start": 8,
    "page_end": 11,
-   "n_chars": 5120,
-   "n_words": 895
+   "n_chars": 5146,
+   "n_words": 898,
+   "label_start": "8",
+   "label_end": "11"
   },
   {
    "id": "sec-005-matrix-representation",
@@ -270,8 +916,10 @@
    "level": 2,
    "page_start": 11,
    "page_end": 13,
-   "n_chars": 4736,
-   "n_words": 951
+   "n_chars": 4756,
+   "n_words": 952,
+   "label_start": "11",
+   "label_end": "13"
   },
   {
    "id": "sec-006-topological-bits",
@@ -280,8 +928,10 @@
    "level": 1,
    "page_start": 13,
    "page_end": 13,
-   "n_chars": 771,
-   "n_words": 129
+   "n_chars": 784,
+   "n_words": 130,
+   "label_start": "13",
+   "label_end": "13"
   },
   {
    "id": "sec-007-topological-quantum-field-theory",
@@ -290,8 +940,10 @@
    "level": 2,
    "page_start": 13,
    "page_end": 16,
-   "n_chars": 7807,
-   "n_words": 1376
+   "n_chars": 7836,
+   "n_words": 1379,
+   "label_start": "13",
+   "label_end": "16"
   },
   {
    "id": "sec-008-topological-quantum-mechanics",
@@ -300,8 +952,10 @@
    "level": 2,
    "page_start": 16,
    "page_end": 19,
-   "n_chars": 6149,
-   "n_words": 1032
+   "n_chars": 6175,
+   "n_words": 1034,
+   "label_start": "16",
+   "label_end": "19"
   },
   {
    "id": "sec-009-chern-simons-theory",
@@ -310,8 +964,10 @@
    "level": 2,
    "page_start": 19,
    "page_end": 23,
-   "n_chars": 13639,
-   "n_words": 2330
+   "n_chars": 13655,
+   "n_words": 2331,
+   "label_start": "19",
+   "label_end": "23"
   },
   {
    "id": "sec-010-tqft-in-the-semiclassical-limit",
@@ -320,8 +976,10 @@
    "level": 2,
    "page_start": 23,
    "page_end": 24,
-   "n_chars": 2403,
-   "n_words": 410
+   "n_chars": 2433,
+   "n_words": 414,
+   "label_start": "23",
+   "label_end": "24"
   },
   {
    "id": "sec-011-quantum-entanglement",
@@ -330,8 +988,10 @@
    "level": 1,
    "page_start": 24,
    "page_end": 24,
-   "n_chars": 1300,
-   "n_words": 201
+   "n_chars": 1317,
+   "n_words": 202,
+   "label_start": "24",
+   "label_end": "24"
   },
   {
    "id": "sec-012-topological-tangling-and-quantum-entanglement",
@@ -340,8 +1000,10 @@
    "level": 2,
    "page_start": 24,
    "page_end": 26,
-   "n_chars": 4367,
-   "n_words": 747
+   "n_chars": 4409,
+   "n_words": 751,
+   "label_start": "24",
+   "label_end": "26"
   },
   {
    "id": "sec-013-slocc-classification",
@@ -350,8 +1012,10 @@
    "level": 2,
    "page_start": 26,
    "page_end": 33,
-   "n_chars": 19148,
-   "n_words": 3272
+   "n_chars": 19165,
+   "n_words": 3273,
+   "label_start": "26",
+   "label_end": "33"
   },
   {
    "id": "sec-014-entropy-of-entanglement",
@@ -360,8 +1024,10 @@
    "level": 2,
    "page_start": 33,
    "page_end": 36,
-   "n_chars": 9857,
-   "n_words": 1784
+   "n_chars": 9877,
+   "n_words": 1786,
+   "label_start": "33",
+   "label_end": "36"
   },
   {
    "id": "sec-015-inequalities-for-the-entanglement-entropy",
@@ -370,8 +1036,10 @@
    "level": 2,
    "page_start": 36,
    "page_end": 38,
-   "n_chars": 3301,
-   "n_words": 607
+   "n_chars": 3343,
+   "n_words": 612,
+   "label_start": "36",
+   "label_end": "38"
   },
   {
    "id": "sec-016-quantum-teleportation",
@@ -380,8 +1048,10 @@
    "level": 2,
    "page_start": 38,
    "page_end": 38,
-   "n_chars": 795,
-   "n_words": 142
+   "n_chars": 793,
+   "n_words": 141,
+   "label_start": "38",
+   "label_end": "38"
   },
   {
    "id": "sec-017-quantum-algorithms",
@@ -390,8 +1060,10 @@
    "level": 1,
    "page_start": 38,
    "page_end": 40,
-   "n_chars": 5811,
-   "n_words": 991
+   "n_chars": 5826,
+   "n_words": 992,
+   "label_start": "38",
+   "label_end": "40"
   },
   {
    "id": "sec-018-dense-coding",
@@ -400,8 +1072,10 @@
    "level": 2,
    "page_start": 40,
    "page_end": 42,
-   "n_chars": 5949,
-   "n_words": 1048
+   "n_chars": 5960,
+   "n_words": 1049,
+   "label_start": "40",
+   "label_end": "42"
   },
   {
    "id": "sec-019-outlook",
@@ -410,8 +1084,10 @@
    "level": 1,
    "page_start": 42,
    "page_end": 43,
-   "n_chars": 2530,
-   "n_words": 391
+   "n_chars": 2534,
+   "n_words": 391,
+   "label_start": "42",
+   "label_end": "43"
   },
   {
    "id": "sec-020-multipartite-entanglement",
@@ -420,8 +1096,10 @@
    "level": 2,
    "page_start": 43,
    "page_end": 44,
-   "n_chars": 2909,
-   "n_words": 481
+   "n_chars": 2931,
+   "n_words": 482,
+   "label_start": "43",
+   "label_end": "44"
   },
   {
    "id": "sec-021-quantum-gravity",
@@ -430,8 +1108,10 @@
    "level": 2,
    "page_start": 44,
    "page_end": 51,
-   "n_chars": 21563,
-   "n_words": 3326
+   "n_chars": 21579,
+   "n_words": 3328,
+   "label_start": "44",
+   "label_end": "51"
   }
  ],
  "diagnostics": {
@@ -439,7 +1119,33 @@
   "likely_scanned": false,
   "toc_entries": 22,
   "toc_inferred_entries": 0,
+  "figure_entries": 7,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 0,
+    "items": []
+   },
+   "found_not_listed": {
+    "count": 4,
+    "items": [
+     "6 Outlook",
+     "6 Outlook",
+     "6.1 Multipartite Entanglement",
+     "6.2 Quantum Gravity"
+    ]
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
   "sections": 23,
-  "chars_total": 141798
+  "chars_total": 142238,
+  "furniture_lines_stripped": 0
  }
 }

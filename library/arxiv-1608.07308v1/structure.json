@@ -7,10 +7,11 @@
   "bytes": 1234603,
   "pages": 77,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +21,28 @@
    "stamp_date": "25 Aug 2016"
   },
   "doi": null,
-  "title": "FLAG HILBERT SCHEMES, COLORED PROJECTORS AND KHOV ANOV-ROZANSKY HOMOLOGY",
-  "authors_raw": "EUGENE GORSKY, ANDREI NEGUT, , AND JACOB RASMUSSEN",
+  "title": "Flag Hilbert schemes, colored projectors and Khovanov–Rozansky homology",
+  "authors_raw": "KHOVANOV-ROZANSKY HOMOLOGY",
   "title_lines": [
-   "FLAG HILBERT SCHEMES, COLORED PROJECTORS AND",
-   "KHOV ANOV-ROZANSKY HOMOLOGY"
+   "FLAG HILBERT SCHEMES, COLORED PROJECTORS AND"
   ],
-  "abstract": "We construct a categori\ufb01cation of the maximal commutative subalgebra of the type A Hecke algebra. Speci\ufb01cally, we propose a monoidal functor from the (symmetric) monoidal category of coherent sheaves on the \ufb02ag Hilbert scheme to the (non-symmetric) monoidal cat- egory of Soergel bimodules. The adjoint of this functor allows one to match the Hochschild homology of any braid with the Euler characteristic of a sheaf on the \ufb02ag Hilbert scheme. The categori\ufb01ed Jones-Wenzl projectors studied by Abel, Elias and Hogancamp are idempotents in the category of Soergel bimodules, and they correspond to the renormalized Koszul complexes of the torus \ufb01xed points on the \ufb02ag Hilbert scheme. As a consequence, we conjecture that the endomorphism algebras of the categori\ufb01ed projectors correspond to the dg algebras of functions on af\ufb01ne charts of the \ufb02ag Hilbert schemes. We de\ufb01ne a family of differentials dN on these dg algebras and conjecture that their homology matches that of the glN projectors, generalizing earlier conjectures of the \ufb01rst and third authors with Oblomkov and Shende. 1. I NTRODUCTION 1.1. It has been slightly more than ten years since Khovanov and Rozansky de\ufb01ned a triply- graded homology theory HHH categorifying the HOMFLY-PT polynomial [41]. We have learned a lot about the structure of this invariant in the intervening time, but there is much that remains mysterious. In [27], the third author conjectured a relation between HHH of the (n,n + 1) torus knot and the q,t -Catalan numbers studied by Haiman and Garsia [26, 34]. A key feature of this conjecture is that it relates HHH(T (n,n + 1)) to the cohomology of a particular sheaf on the Hilbert scheme of n points in C2. This idea was developed further in [32], and later in [30], which identi\ufb01ed the sheaves which should correspond to arbitrary torus knotsT (m,n ). This paper grew out of our attempts to understand whether HHH of any closed n-strand braid in the solid torus can be described as the cohomology of some elem",
+  "abstract": "We construct a categoriﬁcation of the maximal commutative subalgebra of the type A Hecke algebra. Speciﬁcally, we propose a monoidal functor from the (symmetric) monoidal category of coherent sheaves on the ﬂag Hilbert scheme to the (non-symmetric) monoidal cat- egory of Soergel bimodules. The adjoint of this functor allows one to match the Hochschild homology of any braid with the Euler characteristic of a sheaf on the ﬂag Hilbert scheme. The categoriﬁed Jones-Wenzl projectors studied by Abel, Elias and Hogancamp are idempotents in the category of Soergel bimodules, and they correspond to the renormalized Koszul complexes of the torus ﬁxed points on the ﬂag Hilbert scheme. As a consequence, we conjecture that the endomorphism algebras of the categoriﬁed projectors correspond to the dg algebras of functions on afﬁne charts of the ﬂag Hilbert schemes. We deﬁne a family of differentials dN on these dg algebras and conjecture that their homology matches that of the glN projectors, generalizing earlier conjectures of the ﬁrst and third authors with Oblomkov and Shende.",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20160829001521Z",
-   "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.12",
-   "Title": ""
-  }
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20160829001521Z"
+  },
+  "title_raw": "FLAG HILBERT SCHEMES, COLORED PROJECTORS AND",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "FLAG HILBERT SCHEMES, COLORED PROJECTORS AND KHOVANOV-ROZANSKY HOMOLOGY 1. I NTRODUCTION It has been slightly more than ten years since Khovanov and Rozansky deﬁned a triplygraded homology theory HHH categorifying the HOMFLY-PT polynomial [41]. We have learned a lot about the structure of this invar",
+   "outline": "1. Introduction",
+   "text": "FLAG HILBERT SCHEMES, COLORED PROJECTORS AND",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "FLAG HILBERT SCHEMES, COLORED PROJECTORS AND"
  },
  "toc": [
   {
@@ -41,1153 +50,2591 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "1.1.",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "1.2.",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "1.3.",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "1.4.",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "1.5.",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "1.6.",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "1.7.",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "1.8.",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "1.9.",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "1.10.",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "1.11.",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 1,
    "title": "Acknowledgments",
    "page": 10,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 1,
    "title": "The flag Hilbert scheme",
    "page": 10,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Definition",
    "page": 10,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "The matrix presentation",
    "page": 11,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "DG schemes",
    "page": 12,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Explicit matrices",
    "page": 13,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "Projective tower construction",
    "page": 15,
    "source": "outline",
-   "number": "2.5"
+   "number": "2.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Proving Theorem ??",
    "page": 17,
    "source": "outline",
-   "number": "2.6"
+   "number": "2.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "The dg scheme",
    "page": 18,
    "source": "outline",
-   "number": "2.7"
+   "number": "2.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 2,
    "title": "Serre duality",
    "page": 19,
    "source": "outline",
-   "number": "2.8"
+   "number": "2.8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 1,
    "title": "The Hecke algebra and Soergel category",
    "page": 19,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 2,
    "title": "The Hecke algebra",
    "page": 19,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 2,
    "title": "The braid group",
    "page": 20,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 2,
    "title": "Soergel bimodules",
    "page": 21,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 2,
    "title": "From Rouquier complexes to Khovanov-Rozansky homology",
    "page": 22,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "The trace functor",
    "page": 23,
    "source": "outline",
-   "number": "3.5"
+   "number": "3.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 2,
    "title": "The main conjectures",
    "page": 24,
    "source": "outline",
-   "number": "3.6"
+   "number": "3.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
   },
   {
    "level": 2,
    "title": "3.7.",
    "page": 26,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 2,
    "title": "En as an explicit braid",
    "page": 26,
    "source": "outline",
-   "number": "3.8"
+   "number": "3.8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 2,
    "title": "Geometric Markov invariance",
    "page": 27,
    "source": "outline",
-   "number": "3.9"
+   "number": "3.9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
    "level": 2,
    "title": "Correspondences",
    "page": 30,
    "source": "outline",
-   "number": "3.10"
+   "number": "3.10",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "30"
   },
   {
    "level": 2,
    "title": "Mirror braids",
    "page": 30,
    "source": "outline",
-   "number": "3.11"
+   "number": "3.11",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "30"
   },
   {
    "level": 2,
    "title": "Some remarks on support",
    "page": 31,
    "source": "outline",
-   "number": "3.12"
+   "number": "3.12",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "31"
   },
   {
    "level": 1,
    "title": "Categories and schemes",
    "page": 32,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "32"
   },
   {
    "level": 2,
    "title": "Motivation: maps to projective space",
    "page": 32,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "32"
   },
   {
    "level": 2,
    "title": "Notations for categories",
    "page": 34,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "34"
   },
   {
    "level": 2,
    "title": "Categories over schemes",
    "page": 35,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "35"
   },
   {
    "level": 2,
    "title": "The affine case",
    "page": 36,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "36"
   },
   {
    "level": 2,
    "title": "The projective case",
    "page": 37,
    "source": "outline",
-   "number": "4.5"
+   "number": "4.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "37"
   },
   {
    "level": 2,
    "title": "The relative case",
    "page": 38,
    "source": "outline",
-   "number": "4.6"
+   "number": "4.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "38"
   },
   {
    "level": 2,
    "title": "Projective dimension one",
    "page": 40,
    "source": "outline",
-   "number": "4.7"
+   "number": "4.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "40"
   },
   {
    "level": 2,
    "title": "Deducing Conjecture ?? from Conjecture ??",
    "page": 41,
    "source": "outline",
-   "number": "4.8"
+   "number": "4.8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "41"
   },
   {
    "level": 2,
    "title": "Invertible objects in monoidal categories",
    "page": 42,
    "source": "outline",
-   "number": "4.9"
+   "number": "4.9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "42"
   },
   {
    "level": 1,
    "title": "Example: the case of two strands",
    "page": 42,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "42"
   },
   {
    "level": 2,
    "title": "The geometry of FHilb2",
    "page": 42,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "42"
   },
   {
    "level": 2,
    "title": "Cohomology of sheaves on FHilb2",
    "page": 43,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "43"
   },
   {
    "level": 2,
    "title": "Soergel bimodules for n=2",
    "page": 44,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "44"
   },
   {
    "level": 2,
    "title": "Proj construction",
    "page": 45,
    "source": "outline",
-   "number": "5.4"
+   "number": "5.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "45"
   },
   {
    "level": 2,
    "title": "Sheaves for two-strand braids",
    "page": 47,
    "source": "outline",
-   "number": "5.5"
+   "number": "5.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "47"
   },
   {
    "level": 1,
    "title": "Example: the case of three strands",
    "page": 48,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "48"
   },
   {
    "level": 2,
    "title": "The geometry of FHilb3",
    "page": 48,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "48"
   },
   {
    "level": 2,
    "title": "Torus braids",
    "page": 49,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "49"
   },
   {
    "level": 2,
    "title": "The longest word",
    "page": 50,
    "source": "outline",
-   "number": "6.3"
+   "number": "6.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "50"
   },
   {
    "level": 2,
    "title": "The figure eight knot",
    "page": 50,
    "source": "outline",
-   "number": "6.4"
+   "number": "6.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "50"
   },
   {
    "level": 1,
    "title": "Categorical idempotents and equivariant localization",
    "page": 52,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "52"
   },
   {
    "level": 2,
    "title": "Categories over equivariant schemes",
    "page": 52,
    "source": "outline",
-   "number": "7.1"
+   "number": "7.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "52"
   },
   {
    "level": 2,
    "title": "Categorical diagonalization",
    "page": 53,
    "source": "outline",
-   "number": "7.2"
+   "number": "7.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "53"
   },
   {
    "level": 2,
    "title": "Eigenobjects",
    "page": 53,
    "source": "outline",
-   "number": "7.3"
+   "number": "7.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "53"
   },
   {
    "level": 2,
    "title": "The geometric realization over a fixed base",
    "page": 54,
    "source": "outline",
-   "number": "7.4"
+   "number": "7.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "54"
   },
   {
    "level": 2,
    "title": "The relative case",
    "page": 57,
    "source": "outline",
-   "number": "7.5"
+   "number": "7.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "57"
   },
   {
    "level": 1,
    "title": "Local charts and fixed points of FHilbn",
    "page": 58,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "58"
   },
   {
    "level": 2,
    "title": "Affine charts for Hilbert schemes",
    "page": 58,
    "source": "outline",
-   "number": "8.1"
+   "number": "8.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "58"
   },
   {
    "level": 2,
    "title": "Affine charts for flag Hilbert schemes",
    "page": 59,
    "source": "outline",
-   "number": "8.2"
+   "number": "8.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "59"
   },
   {
    "level": 2,
    "title": "Defining the charts",
    "page": 59,
    "source": "outline",
-   "number": "8.3"
+   "number": "8.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "59"
   },
   {
    "level": 2,
    "title": "The special coefficients",
    "page": 61,
    "source": "outline",
-   "number": "8.4"
+   "number": "8.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "61"
   },
   {
    "level": 2,
    "title": "Explicit local coordinates",
    "page": 62,
    "source": "outline",
-   "number": "8.5"
+   "number": "8.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "62"
   },
   {
    "level": 2,
    "title": "Examples",
    "page": 64,
    "source": "outline",
-   "number": "8.6"
+   "number": "8.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "64"
   },
   {
    "level": 2,
    "title": "Poincare series",
    "page": 66,
    "source": "outline",
-   "number": "8.7"
+   "number": "8.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "66"
   },
   {
    "level": 1,
    "title": "Differentials and glN homology",
    "page": 67,
    "source": "outline",
-   "number": "9"
+   "number": "9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "67"
   },
   {
    "level": 2,
    "title": "Spectral sequence for glN homology",
    "page": 67,
    "source": "outline",
-   "number": "9.1"
+   "number": "9.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "67"
   },
   {
    "level": 2,
    "title": "Sections and schemes",
    "page": 68,
    "source": "outline",
-   "number": "9.2"
+   "number": "9.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "68"
   },
   {
    "level": 2,
    "title": "The commutative tower",
    "page": 69,
    "source": "outline",
-   "number": "9.3"
+   "number": "9.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "69"
   },
   {
    "level": 2,
    "title": "Differentials in affine charts",
    "page": 70,
    "source": "outline",
-   "number": "9.4"
+   "number": "9.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "70"
   },
   {
    "level": 1,
    "title": "Appendix",
    "page": 71,
    "source": "outline",
-   "number": "10"
+   "number": "10",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "71"
   },
   {
    "level": 2,
    "title": "Dg algebras",
    "page": 71,
    "source": "outline",
-   "number": "10.1"
+   "number": "10.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "71"
   },
   {
    "level": 2,
    "title": "Symmetric and exterior algebras",
    "page": 72,
    "source": "outline",
-   "number": "10.2"
+   "number": "10.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "72"
   },
   {
    "level": 2,
    "title": "Affine dg schemes",
    "page": 73,
    "source": "outline",
-   "number": "10.3"
+   "number": "10.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "73"
   },
   {
    "level": 2,
    "title": "Projective dg bundles",
    "page": 74,
    "source": "outline",
-   "number": "10.4"
+   "number": "10.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "74"
   },
   {
    "level": 1,
    "title": "References",
    "page": 75,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "75"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The full twist FT4 which are easily seen to be given by the formula: Lk = σk−1...σ2σ1σ2...σk−1",
+   "page": 21,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "21"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The braid L4 algebra of the braid group, and hence also of the Hecke algebra, which we will denote by: Cn ⊂Hn",
+   "page": 21,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "21"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Markov move in SBimn[xn+1]",
+   "page": 24,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "24"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The braid L4 and its partial trace E3",
+   "page": 26,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "26"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Skein relation The relation between the tangle En and the complex En is expected to categorify the classical",
+   "page": 27,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "27"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Skein relation for Ln+1 last strand in Figure 6 and applies a Markov move, one gets the following formula in the Grothendieck group of SBimn (which is isomorphic to the Hecke algebra): (3.30)",
+   "page": 27,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "27"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "",
+   "page": 34,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "34"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Flag Hilbert scheme of two points",
+   "page": 43,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "43"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "58",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "59",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "60",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "61",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "62",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "63",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "64",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "65",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "66",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": "67",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 68,
+   "label": "68",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 69,
+   "label": "69",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 70,
+   "label": "70",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 71,
+   "label": "71",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 72,
+   "label": "72",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 73,
+   "label": "73",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 74,
+   "label": "74",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 75,
+   "label": "75",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 76,
+   "label": "76",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 77,
+   "label": "77",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-11",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1214,
+   "n_words": 186,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "sec-001-11",
    "number": null,
    "title": "1.1.",
    "level": 2,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1807,
-   "n_words": 307
+   "n_chars": 1894,
+   "n_words": 323,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
-   "id": "sec-001-12",
+   "id": "sec-002-12",
    "number": null,
    "title": "1.2.",
    "level": 2,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 1603,
-   "n_words": 285
+   "n_chars": 1716,
+   "n_words": 331,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
-   "id": "sec-002-13",
+   "id": "sec-003-13",
    "number": null,
    "title": "1.3.",
    "level": 2,
    "page_start": 2,
    "page_end": 4,
-   "n_chars": 3157,
-   "n_words": 522
+   "n_chars": 3274,
+   "n_words": 565,
+   "label_start": "2",
+   "label_end": "4"
   },
   {
-   "id": "sec-003-14",
+   "id": "sec-004-14",
    "number": null,
    "title": "1.4.",
    "level": 2,
    "page_start": 4,
    "page_end": 4,
-   "n_chars": 2189,
-   "n_words": 397
+   "n_chars": 2269,
+   "n_words": 429,
+   "label_start": "4",
+   "label_end": "4"
   },
   {
-   "id": "sec-004-15",
+   "id": "sec-005-15",
    "number": null,
    "title": "1.5.",
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 1734,
-   "n_words": 280
+   "n_chars": 1829,
+   "n_words": 307,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
-   "id": "sec-005-16",
+   "id": "sec-006-16",
    "number": null,
    "title": "1.6.",
    "level": 2,
    "page_start": 5,
    "page_end": 7,
-   "n_chars": 3429,
-   "n_words": 560
+   "n_chars": 3551,
+   "n_words": 614,
+   "label_start": "5",
+   "label_end": "7"
   },
   {
-   "id": "sec-006-17",
+   "id": "sec-007-17",
    "number": null,
    "title": "1.7.",
    "level": 2,
    "page_start": 7,
    "page_end": 7,
-   "n_chars": 162,
-   "n_words": 24
+   "n_chars": 260,
+   "n_words": 43,
+   "label_start": "7",
+   "label_end": "7"
   },
   {
-   "id": "sec-007-18",
+   "id": "sec-008-18",
    "number": null,
    "title": "1.8.",
    "level": 2,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 2015,
-   "n_words": 339
+   "n_chars": 2031,
+   "n_words": 355,
+   "label_start": "7",
+   "label_end": "8"
   },
   {
-   "id": "sec-008-19",
+   "id": "sec-009-19",
    "number": null,
    "title": "1.9.",
    "level": 2,
    "page_start": 8,
-   "page_end": 8,
-   "n_chars": 489,
-   "n_words": 86
+   "page_end": 9,
+   "n_chars": 2515,
+   "n_words": 484,
+   "label_start": "8",
+   "label_end": "9"
   },
   {
-   "id": "sec-009-110",
+   "id": "sec-010-110",
    "number": null,
    "title": "1.10.",
    "level": 2,
-   "page_start": 8,
-   "page_end": 8,
-   "n_chars": 380,
-   "n_words": 52
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 2260,
+   "n_words": 384,
+   "label_start": "9",
+   "label_end": "9"
   },
   {
-   "id": "sec-010-111",
+   "id": "sec-011-111",
    "number": null,
    "title": "1.11.",
    "level": 2,
-   "page_start": 8,
+   "page_start": 9,
    "page_end": 10,
-   "n_chars": 5400,
-   "n_words": 920
+   "n_chars": 1749,
+   "n_words": 297,
+   "label_start": "9",
+   "label_end": "10"
   },
   {
-   "id": "sec-011-acknowledgments",
+   "id": "sec-012-acknowledgments",
    "number": null,
    "title": "Acknowledgments",
    "level": 1,
    "page_start": 10,
-   "page_end": 11,
-   "n_chars": 2965,
-   "n_words": 516
+   "page_end": 10,
+   "n_chars": 775,
+   "n_words": 128,
+   "label_start": "10",
+   "label_end": "10"
   },
   {
-   "id": "sec-012-22-the-matrix-presentation",
+   "id": "sec-013-2-the-flag-hilbert-scheme",
+   "number": "2",
+   "title": "The flag Hilbert scheme",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "10",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-014-21-definition",
+   "number": "2.1",
+   "title": "Definition",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 2141,
+   "n_words": 422,
+   "label_start": "10",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-015-22-the-matrix-presentation",
    "number": "2.2",
    "title": "The matrix presentation",
    "level": 2,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 3055,
-   "n_words": 530
+   "n_chars": 3123,
+   "n_words": 598,
+   "label_start": "11",
+   "label_end": "12"
   },
   {
-   "id": "sec-013-23-dg-schemes",
+   "id": "sec-016-23-dg-schemes",
    "number": "2.3",
    "title": "DG schemes",
    "level": 2,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 1917,
-   "n_words": 340
+   "n_chars": 1935,
+   "n_words": 358,
+   "label_start": "12",
+   "label_end": "13"
   },
   {
-   "id": "sec-014-24-explicit-matrices",
+   "id": "sec-017-24-explicit-matrices",
    "number": "2.4",
    "title": "Explicit matrices",
    "level": 2,
    "page_start": 13,
    "page_end": 15,
-   "n_chars": 3863,
-   "n_words": 800
+   "n_chars": 3950,
+   "n_words": 887,
+   "label_start": "13",
+   "label_end": "15"
   },
   {
-   "id": "sec-015-25-projective-tower-construction",
+   "id": "sec-018-25-projective-tower-construction",
    "number": "2.5",
    "title": "Projective tower construction",
    "level": 2,
    "page_start": 15,
    "page_end": 18,
-   "n_chars": 6050,
-   "n_words": 1122
+   "n_chars": 6146,
+   "n_words": 1218,
+   "label_start": "15",
+   "label_end": "18"
   },
   {
-   "id": "sec-016-27-the-dg-scheme",
+   "id": "sec-019-27-the-dg-scheme",
    "number": "2.7",
    "title": "The dg scheme",
    "level": 2,
    "page_start": 18,
    "page_end": 19,
-   "n_chars": 2262,
-   "n_words": 381
+   "n_chars": 2284,
+   "n_words": 405,
+   "label_start": "18",
+   "label_end": "19"
   },
   {
-   "id": "sec-017-28-serre-duality",
+   "id": "sec-020-28-serre-duality",
    "number": "2.8",
    "title": "Serre duality",
    "level": 2,
    "page_start": 19,
    "page_end": 19,
-   "n_chars": 1158,
-   "n_words": 193
+   "n_chars": 1213,
+   "n_words": 210,
+   "label_start": "19",
+   "label_end": "19"
   },
   {
-   "id": "sec-018-31-the-hecke-algebra",
-   "number": "3.1",
-   "title": "The Hecke algebra",
-   "level": 2,
+   "id": "sec-021-3-the-hecke-algebra-and-soergel-category",
+   "number": "3",
+   "title": "The Hecke algebra and Soergel category",
+   "level": 1,
    "page_start": 19,
    "page_end": 20,
-   "n_chars": 2247,
-   "n_words": 399
+   "n_chars": 2378,
+   "n_words": 460,
+   "label_start": "19",
+   "label_end": "20"
   },
   {
-   "id": "sec-019-32-the-braid-group",
+   "id": "sec-022-32-the-braid-group",
    "number": "3.2",
    "title": "The braid group",
    "level": 2,
    "page_start": 20,
    "page_end": 21,
-   "n_chars": 2079,
-   "n_words": 347
+   "n_chars": 2105,
+   "n_words": 373,
+   "label_start": "20",
+   "label_end": "21"
   },
   {
-   "id": "sec-020-33-soergel-bimodules",
+   "id": "sec-023-33-soergel-bimodules",
    "number": "3.3",
    "title": "Soergel bimodules",
    "level": 2,
    "page_start": 21,
    "page_end": 22,
-   "n_chars": 1580,
-   "n_words": 250
+   "n_chars": 1615,
+   "n_words": 285,
+   "label_start": "21",
+   "label_end": "22"
   },
   {
-   "id": "sec-021-34-from-rouquier-complexes-to-khovanov-rozansky",
+   "id": "sec-024-34-from-rouquier-complexes-to-khovanov-rozansky",
    "number": "3.4",
    "title": "From Rouquier complexes to Khovanov-Rozansky homology",
    "level": 2,
    "page_start": 22,
    "page_end": 23,
-   "n_chars": 2653,
-   "n_words": 421
+   "n_chars": 2709,
+   "n_words": 477,
+   "label_start": "22",
+   "label_end": "23"
   },
   {
-   "id": "sec-022-35-the-trace-functor",
+   "id": "sec-025-35-the-trace-functor",
    "number": "3.5",
    "title": "The trace functor",
    "level": 2,
    "page_start": 23,
    "page_end": 24,
-   "n_chars": 1793,
-   "n_words": 288
+   "n_chars": 1807,
+   "n_words": 302,
+   "label_start": "23",
+   "label_end": "24"
   },
   {
-   "id": "sec-023-36-the-main-conjectures",
+   "id": "sec-026-36-the-main-conjectures",
    "number": "3.6",
    "title": "The main conjectures",
    "level": 2,
    "page_start": 24,
    "page_end": 26,
-   "n_chars": 2910,
-   "n_words": 501
+   "n_chars": 2961,
+   "n_words": 550,
+   "label_start": "24",
+   "label_end": "26"
   },
   {
-   "id": "sec-024-37",
+   "id": "sec-027-37",
    "number": null,
    "title": "3.7.",
    "level": 2,
    "page_start": 26,
    "page_end": 26,
-   "n_chars": 1138,
-   "n_words": 176
+   "n_chars": 1245,
+   "n_words": 206,
+   "label_start": "26",
+   "label_end": "26"
   },
   {
-   "id": "sec-025-38-en-as-an-explicit-braid",
+   "id": "sec-028-38-en-as-an-explicit-braid",
    "number": "3.8",
    "title": "En as an explicit braid",
    "level": 2,
    "page_start": 26,
    "page_end": 27,
-   "n_chars": 1410,
-   "n_words": 229
+   "n_chars": 1420,
+   "n_words": 239,
+   "label_start": "26",
+   "label_end": "27"
   },
   {
-   "id": "sec-026-39-geometric-markov-invariance",
+   "id": "sec-029-39-geometric-markov-invariance",
    "number": "3.9",
    "title": "Geometric Markov invariance",
    "level": 2,
    "page_start": 27,
    "page_end": 30,
-   "n_chars": 4574,
-   "n_words": 820
+   "n_chars": 4740,
+   "n_words": 985,
+   "label_start": "27",
+   "label_end": "30"
   },
   {
-   "id": "sec-027-310-correspondences",
+   "id": "sec-030-310-correspondences",
    "number": "3.10",
    "title": "Correspondences",
    "level": 2,
    "page_start": 30,
    "page_end": 30,
-   "n_chars": 905,
-   "n_words": 132
+   "n_chars": 916,
+   "n_words": 143,
+   "label_start": "30",
+   "label_end": "30"
   },
   {
-   "id": "sec-028-311-mirror-braids",
+   "id": "sec-031-311-mirror-braids",
    "number": "3.11",
    "title": "Mirror braids",
    "level": 2,
    "page_start": 30,
    "page_end": 31,
-   "n_chars": 1234,
-   "n_words": 197
+   "n_chars": 1246,
+   "n_words": 209,
+   "label_start": "30",
+   "label_end": "31"
   },
   {
-   "id": "sec-029-312-some-remarks-on-support",
+   "id": "sec-032-312-some-remarks-on-support",
    "number": "3.12",
    "title": "Some remarks on support",
    "level": 2,
    "page_start": 31,
    "page_end": 32,
-   "n_chars": 4507,
-   "n_words": 754
+   "n_chars": 4581,
+   "n_words": 848,
+   "label_start": "31",
+   "label_end": "32"
   },
   {
-   "id": "sec-030-41-motivation-maps-to-projective-space",
+   "id": "sec-033-4-categories-and-schemes",
+   "number": "4",
+   "title": "Categories and schemes",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 32,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "32",
+   "label_end": "32"
+  },
+  {
+   "id": "sec-034-41-motivation-maps-to-projective-space",
    "number": "4.1",
    "title": "Motivation: maps to projective space",
    "level": 2,
    "page_start": 32,
    "page_end": 34,
-   "n_chars": 2389,
-   "n_words": 424
+   "n_chars": 2415,
+   "n_words": 450,
+   "label_start": "32",
+   "label_end": "34"
   },
   {
-   "id": "sec-031-42-notations-for-categories",
+   "id": "sec-035-42-notations-for-categories",
    "number": "4.2",
    "title": "Notations for categories",
    "level": 2,
    "page_start": 34,
    "page_end": 35,
-   "n_chars": 2848,
-   "n_words": 481
+   "n_chars": 2891,
+   "n_words": 524,
+   "label_start": "34",
+   "label_end": "35"
   },
   {
-   "id": "sec-032-43-categories-over-schemes",
+   "id": "sec-036-43-categories-over-schemes",
    "number": "4.3",
    "title": "Categories over schemes",
    "level": 2,
    "page_start": 35,
-   "page_end": 37,
-   "n_chars": 3475,
-   "n_words": 615
+   "page_end": 36,
+   "n_chars": 1591,
+   "n_words": 302,
+   "label_start": "35",
+   "label_end": "36"
   },
   {
-   "id": "sec-033-45-the-projective-case",
+   "id": "sec-037-44-the-affine-case",
+   "number": "4.4",
+   "title": "The affine case",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 37,
+   "n_chars": 1849,
+   "n_words": 351,
+   "label_start": "36",
+   "label_end": "37"
+  },
+  {
+   "id": "sec-038-45-the-projective-case",
    "number": "4.5",
    "title": "The projective case",
    "level": 2,
    "page_start": 37,
    "page_end": 38,
-   "n_chars": 3001,
-   "n_words": 527
+   "n_chars": 3044,
+   "n_words": 569,
+   "label_start": "37",
+   "label_end": "38"
   },
   {
-   "id": "sec-034-46-the-relative-case",
+   "id": "sec-039-46-the-relative-case",
    "number": "4.6",
    "title": "The relative case",
    "level": 2,
    "page_start": 38,
    "page_end": 40,
-   "n_chars": 2883,
-   "n_words": 512
+   "n_chars": 2926,
+   "n_words": 554,
+   "label_start": "38",
+   "label_end": "40"
   },
   {
-   "id": "sec-035-47-projective-dimension-one",
+   "id": "sec-040-47-projective-dimension-one",
    "number": "4.7",
    "title": "Projective dimension one",
    "level": 2,
    "page_start": 40,
-   "page_end": 42,
-   "n_chars": 4577,
-   "n_words": 793
+   "page_end": 41,
+   "n_chars": 3223,
+   "n_words": 601,
+   "label_start": "40",
+   "label_end": "41"
   },
   {
-   "id": "sec-036-49-invertible-objects-in-monoidal-categories",
+   "id": "sec-041-48-deducing-conjecture-from-conjecture",
+   "number": "4.8",
+   "title": "Deducing Conjecture ?? from Conjecture ??",
+   "level": 2,
+   "page_start": 41,
+   "page_end": 42,
+   "n_chars": 1311,
+   "n_words": 227,
+   "label_start": "41",
+   "label_end": "42"
+  },
+  {
+   "id": "sec-042-49-invertible-objects-in-monoidal-categories",
    "number": "4.9",
    "title": "Invertible objects in monoidal categories",
    "level": 2,
    "page_start": 42,
    "page_end": 42,
-   "n_chars": 644,
-   "n_words": 92
+   "n_chars": 632,
+   "n_words": 109,
+   "label_start": "42",
+   "label_end": "42"
   },
   {
-   "id": "sec-037-51-the-geometry-of-fhilb2",
+   "id": "sec-043-5-example-the-case-of-two-strands",
+   "number": "5",
+   "title": "Example: the case of two strands",
+   "level": 1,
+   "page_start": 42,
+   "page_end": 42,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "42",
+   "label_end": "42"
+  },
+  {
+   "id": "sec-044-51-the-geometry-of-fhilb2",
    "number": "5.1",
    "title": "The geometry of FHilb2",
    "level": 2,
    "page_start": 42,
    "page_end": 43,
-   "n_chars": 1670,
-   "n_words": 309
+   "n_chars": 1709,
+   "n_words": 348,
+   "label_start": "42",
+   "label_end": "43"
   },
   {
-   "id": "sec-038-52-cohomology-of-sheaves-on-fhilb2",
+   "id": "sec-045-52-cohomology-of-sheaves-on-fhilb2",
    "number": "5.2",
    "title": "Cohomology of sheaves on FHilb2",
    "level": 2,
    "page_start": 43,
-   "page_end": 45,
-   "n_chars": 3968,
-   "n_words": 746
+   "page_end": 44,
+   "n_chars": 1472,
+   "n_words": 318,
+   "label_start": "43",
+   "label_end": "44"
   },
   {
-   "id": "sec-039-54-proj-construction",
+   "id": "sec-046-53-soergel-bimodules-for-n2",
+   "number": "5.3",
+   "title": "Soergel bimodules for n=2",
+   "level": 2,
+   "page_start": 44,
+   "page_end": 45,
+   "n_chars": 2507,
+   "n_words": 516,
+   "label_start": "44",
+   "label_end": "45"
+  },
+  {
+   "id": "sec-047-54-proj-construction",
    "number": "5.4",
    "title": "Proj construction",
    "level": 2,
    "page_start": 45,
    "page_end": 47,
-   "n_chars": 2474,
-   "n_words": 488
+   "n_chars": 2472,
+   "n_words": 486,
+   "label_start": "45",
+   "label_end": "47"
   },
   {
-   "id": "sec-040-55-sheaves-for-two-strand-braids",
+   "id": "sec-048-55-sheaves-for-two-strand-braids",
    "number": "5.5",
    "title": "Sheaves for two-strand braids",
    "level": 2,
    "page_start": 47,
-   "page_end": 49,
-   "n_chars": 4713,
-   "n_words": 913
+   "page_end": 48,
+   "n_chars": 2519,
+   "n_words": 500,
+   "label_start": "47",
+   "label_end": "48"
   },
   {
-   "id": "sec-041-62-torus-braids",
+   "id": "sec-049-6-example-the-case-of-three-strands",
+   "number": "6",
+   "title": "Example: the case of three strands",
+   "level": 1,
+   "page_start": 48,
+   "page_end": 48,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "48",
+   "label_end": "48"
+  },
+  {
+   "id": "sec-050-61-the-geometry-of-fhilb3",
+   "number": "6.1",
+   "title": "The geometry of FHilb3",
+   "level": 2,
+   "page_start": 48,
+   "page_end": 49,
+   "n_chars": 2147,
+   "n_words": 471,
+   "label_start": "48",
+   "label_end": "49"
+  },
+  {
+   "id": "sec-051-62-torus-braids",
    "number": "6.2",
    "title": "Torus braids",
    "level": 2,
    "page_start": 49,
    "page_end": 50,
-   "n_chars": 2977,
-   "n_words": 534
+   "n_chars": 3032,
+   "n_words": 587,
+   "label_start": "49",
+   "label_end": "50"
   },
   {
-   "id": "sec-042-63-the-longest-word",
+   "id": "sec-052-63-the-longest-word",
    "number": "6.3",
    "title": "The longest word",
    "level": 2,
    "page_start": 50,
-   "page_end": 52,
-   "n_chars": 3195,
-   "n_words": 561
+   "page_end": 50,
+   "n_chars": 750,
+   "n_words": 141,
+   "label_start": "50",
+   "label_end": "50"
   },
   {
-   "id": "sec-043-71-categories-over-equivariant-schemes",
+   "id": "sec-053-64-the-figure-eight-knot",
+   "number": "6.4",
+   "title": "The figure eight knot",
+   "level": 2,
+   "page_start": 50,
+   "page_end": 52,
+   "n_chars": 2364,
+   "n_words": 459,
+   "label_start": "50",
+   "label_end": "52"
+  },
+  {
+   "id": "sec-054-7-categorical-idempotents-and-equivariant-locali",
+   "number": "7",
+   "title": "Categorical idempotents and equivariant localization",
+   "level": 1,
+   "page_start": 52,
+   "page_end": 52,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "52",
+   "label_end": "52"
+  },
+  {
+   "id": "sec-055-71-categories-over-equivariant-schemes",
    "number": "7.1",
    "title": "Categories over equivariant schemes",
    "level": 2,
    "page_start": 52,
    "page_end": 53,
-   "n_chars": 2024,
-   "n_words": 367
+   "n_chars": 2047,
+   "n_words": 392,
+   "label_start": "52",
+   "label_end": "53"
   },
   {
-   "id": "sec-044-72-categorical-diagonalization",
+   "id": "sec-056-72-categorical-diagonalization",
    "number": "7.2",
    "title": "Categorical diagonalization",
    "level": 2,
    "page_start": 53,
    "page_end": 53,
-   "n_chars": 1465,
-   "n_words": 254
+   "n_chars": 1580,
+   "n_words": 292,
+   "label_start": "53",
+   "label_end": "53"
   },
   {
-   "id": "sec-045-73-eigenobjects",
+   "id": "sec-057-73-eigenobjects",
    "number": "7.3",
    "title": "Eigenobjects",
    "level": 2,
    "page_start": 53,
-   "page_end": 57,
-   "n_chars": 7454,
-   "n_words": 1326
+   "page_end": 54,
+   "n_chars": 2171,
+   "n_words": 410,
+   "label_start": "53",
+   "label_end": "54"
   },
   {
-   "id": "sec-046-75-the-relative-case",
+   "id": "sec-058-74-the-geometric-realization-over-a-fixed-base",
+   "number": "7.4",
+   "title": "The geometric realization over a fixed base",
+   "level": 2,
+   "page_start": 54,
+   "page_end": 57,
+   "n_chars": 5287,
+   "n_words": 994,
+   "label_start": "54",
+   "label_end": "57"
+  },
+  {
+   "id": "sec-059-75-the-relative-case",
    "number": "7.5",
    "title": "The relative case",
    "level": 2,
    "page_start": 57,
-   "page_end": 62,
-   "n_chars": 9752,
-   "n_words": 1785
+   "page_end": 58,
+   "n_chars": 1075,
+   "n_words": 216,
+   "label_start": "57",
+   "label_end": "58"
   },
   {
-   "id": "sec-047-85-explicit-local-coordinates",
+   "id": "sec-060-8-local-charts-and-fixed-points-of-fhilbn",
+   "number": "8",
+   "title": "Local charts and fixed points of FHilbn",
+   "level": 1,
+   "page_start": 58,
+   "page_end": 58,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "58",
+   "label_end": "58"
+  },
+  {
+   "id": "sec-061-81-affine-charts-for-hilbert-schemes",
+   "number": "8.1",
+   "title": "Affine charts for Hilbert schemes",
+   "level": 2,
+   "page_start": 58,
+   "page_end": 59,
+   "n_chars": 1099,
+   "n_words": 207,
+   "label_start": "58",
+   "label_end": "59"
+  },
+  {
+   "id": "sec-062-82-affine-charts-for-flag-hilbert-schemes",
+   "number": "8.2",
+   "title": "Affine charts for flag Hilbert schemes",
+   "level": 2,
+   "page_start": 59,
+   "page_end": 59,
+   "n_chars": 2056,
+   "n_words": 396,
+   "label_start": "59",
+   "label_end": "59"
+  },
+  {
+   "id": "sec-063-83-defining-the-charts",
+   "number": "8.3",
+   "title": "Defining the charts",
+   "level": 2,
+   "page_start": 59,
+   "page_end": 61,
+   "n_chars": 2525,
+   "n_words": 485,
+   "label_start": "59",
+   "label_end": "61"
+  },
+  {
+   "id": "sec-064-84-the-special-coefficients",
+   "number": "8.4",
+   "title": "The special coefficients",
+   "level": 2,
+   "page_start": 61,
+   "page_end": 62,
+   "n_chars": 2928,
+   "n_words": 598,
+   "label_start": "61",
+   "label_end": "62"
+  },
+  {
+   "id": "sec-065-85-explicit-local-coordinates",
    "number": "8.5",
    "title": "Explicit local coordinates",
    "level": 2,
    "page_start": 62,
    "page_end": 64,
-   "n_chars": 4878,
-   "n_words": 926
+   "n_chars": 4961,
+   "n_words": 1009,
+   "label_start": "62",
+   "label_end": "64"
   },
   {
-   "id": "sec-048-86-examples",
+   "id": "sec-066-86-examples",
    "number": "8.6",
    "title": "Examples",
    "level": 2,
    "page_start": 64,
    "page_end": 66,
-   "n_chars": 2378,
-   "n_words": 502
+   "n_chars": 2352,
+   "n_words": 544,
+   "label_start": "64",
+   "label_end": "66"
   },
   {
-   "id": "sec-049-87-poincare-series",
+   "id": "sec-067-87-poincare-series",
    "number": "8.7",
    "title": "Poincare series",
    "level": 2,
    "page_start": 66,
    "page_end": 67,
-   "n_chars": 3697,
-   "n_words": 668
+   "n_chars": 3865,
+   "n_words": 767,
+   "label_start": "66",
+   "label_end": "67"
   },
   {
-   "id": "sec-050-91-spectral-sequence-for-gln-homology",
+   "id": "sec-068-9-differentials-and-gln-homology",
+   "number": "9",
+   "title": "Differentials and glN homology",
+   "level": 1,
+   "page_start": 67,
+   "page_end": 67,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "67",
+   "label_end": "67"
+  },
+  {
+   "id": "sec-069-91-spectral-sequence-for-gln-homology",
    "number": "9.1",
    "title": "Spectral sequence for glN homology",
    "level": 2,
    "page_start": 67,
    "page_end": 68,
-   "n_chars": 2241,
-   "n_words": 355
+   "n_chars": 2270,
+   "n_words": 384,
+   "label_start": "67",
+   "label_end": "68"
   },
   {
-   "id": "sec-051-92-sections-and-schemes",
+   "id": "sec-070-92-sections-and-schemes",
    "number": "9.2",
    "title": "Sections and schemes",
    "level": 2,
    "page_start": 68,
    "page_end": 69,
-   "n_chars": 1772,
-   "n_words": 305
+   "n_chars": 1800,
+   "n_words": 333,
+   "label_start": "68",
+   "label_end": "69"
   },
   {
-   "id": "sec-052-93-the-commutative-tower",
+   "id": "sec-071-93-the-commutative-tower",
    "number": "9.3",
    "title": "The commutative tower",
    "level": 2,
    "page_start": 69,
-   "page_end": 71,
-   "n_chars": 4562,
-   "n_words": 793
+   "page_end": 70,
+   "n_chars": 1184,
+   "n_words": 215,
+   "label_start": "69",
+   "label_end": "70"
   },
   {
-   "id": "sec-053-101-dg-algebras",
+   "id": "sec-072-94-differentials-in-affine-charts",
+   "number": "9.4",
+   "title": "Differentials in affine charts",
+   "level": 2,
+   "page_start": 70,
+   "page_end": 71,
+   "n_chars": 3355,
+   "n_words": 643,
+   "label_start": "70",
+   "label_end": "71"
+  },
+  {
+   "id": "sec-073-10-appendix",
+   "number": "10",
+   "title": "Appendix",
+   "level": 1,
+   "page_start": 71,
+   "page_end": 71,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "71",
+   "label_end": "71"
+  },
+  {
+   "id": "sec-074-101-dg-algebras",
    "number": "10.1",
    "title": "Dg algebras",
    "level": 2,
    "page_start": 71,
    "page_end": 72,
-   "n_chars": 2653,
-   "n_words": 443
+   "n_chars": 2731,
+   "n_words": 521,
+   "label_start": "71",
+   "label_end": "72"
   },
   {
-   "id": "sec-054-102-symmetric-and-exterior-algebras",
+   "id": "sec-075-102-symmetric-and-exterior-algebras",
    "number": "10.2",
    "title": "Symmetric and exterior algebras",
    "level": 2,
    "page_start": 72,
-   "page_end": 74,
-   "n_chars": 4554,
-   "n_words": 775
+   "page_end": 73,
+   "n_chars": 1604,
+   "n_words": 316,
+   "label_start": "72",
+   "label_end": "73"
   },
   {
-   "id": "sec-055-104-projective-dg-bundles",
+   "id": "sec-076-103-affine-dg-schemes",
+   "number": "10.3",
+   "title": "Affine dg schemes",
+   "level": 2,
+   "page_start": 73,
+   "page_end": 74,
+   "n_chars": 2967,
+   "n_words": 551,
+   "label_start": "73",
+   "label_end": "74"
+  },
+  {
+   "id": "sec-077-104-projective-dg-bundles",
    "number": "10.4",
    "title": "Projective dg bundles",
    "level": 2,
    "page_start": 74,
    "page_end": 75,
-   "n_chars": 2603,
-   "n_words": 465
+   "n_chars": 2608,
+   "n_words": 470,
+   "label_start": "74",
+   "label_end": "75"
   },
   {
-   "id": "sec-056-references",
+   "id": "sec-078-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 75,
    "page_end": 77,
-   "n_chars": 6647,
-   "n_words": 1005
+   "n_chars": 6639,
+   "n_words": 997,
+   "label_start": "75",
+   "label_end": "77"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 81,
-  "sections": 57,
-  "chars_total": 166159,
+  "toc_inferred_entries": 0,
+  "figure_entries": 8,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 80,
+  "chars_total": 169810,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Categorical_projectors.tex",
    "tex_sections": 80,
-   "overlaid": 40,
+   "overlaid": 52,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1195,409 +2642,568 @@
    },
    "sections": [
     {
-     "id": "sec-000-11",
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11",
      "title": "1.1.",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-001-12",
+     "id": "sec-002-12",
      "title": "1.2.",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-002-13",
+     "id": "sec-003-13",
      "title": "1.3.",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-003-14",
+     "id": "sec-004-14",
      "title": "1.4.",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-004-15",
+     "id": "sec-005-15",
      "title": "1.5.",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-005-16",
+     "id": "sec-006-16",
      "title": "1.6.",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-006-17",
+     "id": "sec-007-17",
      "title": "1.7.",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-007-18",
+     "id": "sec-008-18",
      "title": "1.8.",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-008-19",
+     "id": "sec-009-19",
      "title": "1.9.",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-009-110",
+     "id": "sec-010-110",
      "title": "1.10.",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-010-111",
+     "id": "sec-011-111",
      "title": "1.11.",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-011-acknowledgments",
+     "id": "sec-012-acknowledgments",
      "title": "Acknowledgments",
-     "prose_ratio": 0.967,
-     "coverage_ratio": 0.901,
+     "prose_ratio": 0.983,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-22-the-matrix-presentation",
+     "id": "sec-013-2-the-flag-hilbert-scheme",
+     "title": "The flag Hilbert scheme",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-014-21-definition",
+     "title": "Definition",
+     "prose_ratio": 0.936,
+     "coverage_ratio": 0.908,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-22-the-matrix-presentation",
      "title": "The matrix presentation",
      "prose_ratio": 0.974,
-     "coverage_ratio": 0.912,
+     "coverage_ratio": 0.945,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-23-dg-schemes",
+     "id": "sec-016-23-dg-schemes",
      "title": "DG schemes",
      "prose_ratio": 0.935,
-     "coverage_ratio": 0.845,
+     "coverage_ratio": 0.879,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-24-explicit-matrices",
+     "id": "sec-017-24-explicit-matrices",
      "title": "Explicit matrices",
      "prose_ratio": 0.972,
-     "coverage_ratio": 0.865,
+     "coverage_ratio": 0.916,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-015-25-projective-tower-construction",
+     "id": "sec-018-25-projective-tower-construction",
      "title": "Projective tower construction",
      "prose_ratio": 0.982,
-     "coverage_ratio": 0.863,
+     "coverage_ratio": 0.939,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-016-27-the-dg-scheme",
+     "id": "sec-019-27-the-dg-scheme",
      "title": "The dg scheme",
      "prose_ratio": 0.982,
-     "coverage_ratio": 0.828,
+     "coverage_ratio": 0.926,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-017-28-serre-duality",
+     "id": "sec-020-28-serre-duality",
      "title": "Serre duality",
-     "prose_ratio": 0.903,
-     "coverage_ratio": 0.915,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-018-31-the-hecke-algebra",
-     "title": "The Hecke algebra",
      "prose_ratio": 0.955,
-     "coverage_ratio": 0.871,
+     "coverage_ratio": 0.97,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-019-32-the-braid-group",
+     "id": "sec-021-3-the-hecke-algebra-and-soergel-category",
+     "title": "The Hecke algebra and Soergel category",
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.941,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-022-32-the-braid-group",
      "title": "The braid group",
      "prose_ratio": 0.906,
-     "coverage_ratio": 0.877,
+     "coverage_ratio": 0.937,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-020-33-soergel-bimodules",
+     "id": "sec-023-33-soergel-bimodules",
      "title": "Soergel bimodules",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.765,
+     "coverage_ratio": 0.889,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-021-34-from-rouquier-complexes-to-khovanov-rozansky",
+     "id": "sec-024-34-from-rouquier-complexes-to-khovanov-rozansky",
      "title": "From Rouquier complexes to Khovanov-Rozansky homology",
      "prose_ratio": 0.952,
-     "coverage_ratio": 0.897,
+     "coverage_ratio": 0.946,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-022-35-the-trace-functor",
+     "id": "sec-025-35-the-trace-functor",
      "title": "The trace functor",
      "prose_ratio": 0.896,
-     "coverage_ratio": 0.874,
+     "coverage_ratio": 0.924,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-023-36-the-main-conjectures",
+     "id": "sec-026-36-the-main-conjectures",
      "title": "The main conjectures",
      "prose_ratio": 0.724,
-     "coverage_ratio": 0.801,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-024-37",
-     "title": "3.7.",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-025-38-en-as-an-explicit-braid",
-     "title": "En as an explicit braid",
-     "prose_ratio": 0.843,
-     "coverage_ratio": 0.8,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-026-39-geometric-markov-invariance",
-     "title": "Geometric Markov invariance",
-     "prose_ratio": 0.939,
-     "coverage_ratio": 0.78,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-027-310-correspondences",
-     "title": "Correspondences",
-     "prose_ratio": 0.875,
-     "coverage_ratio": 0.909,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-028-311-mirror-braids",
-     "title": "Mirror braids",
-     "prose_ratio": 0.922,
-     "coverage_ratio": 0.775,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-029-312-some-remarks-on-support",
-     "title": "Some remarks on support",
-     "prose_ratio": 0.946,
-     "coverage_ratio": 0.843,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-030-41-motivation-maps-to-projective-space",
-     "title": "Motivation: maps to projective space",
-     "prose_ratio": 0.934,
-     "coverage_ratio": 0.82,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-031-42-notations-for-categories",
-     "title": "Notations for categories",
-     "prose_ratio": 0.979,
      "coverage_ratio": 0.861,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-032-43-categories-over-schemes",
-     "title": "Categories over schemes",
-     "prose_ratio": 0.967,
-     "coverage_ratio": 0.769,
+     "id": "sec-027-37",
+     "title": "3.7.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-38-en-as-an-explicit-braid",
+     "title": "En as an explicit braid",
+     "prose_ratio": 0.843,
+     "coverage_ratio": 0.882,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-033-45-the-projective-case",
+     "id": "sec-029-39-geometric-markov-invariance",
+     "title": "Geometric Markov invariance",
+     "prose_ratio": 0.939,
+     "coverage_ratio": 0.873,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-030-310-correspondences",
+     "title": "Correspondences",
+     "prose_ratio": 0.875,
+     "coverage_ratio": 0.926,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-031-311-mirror-braids",
+     "title": "Mirror braids",
+     "prose_ratio": 0.922,
+     "coverage_ratio": 0.827,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-032-312-some-remarks-on-support",
+     "title": "Some remarks on support",
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.926,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-033-4-categories-and-schemes",
+     "title": "Categories and schemes",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-034-41-motivation-maps-to-projective-space",
+     "title": "Motivation: maps to projective space",
+     "prose_ratio": 0.934,
+     "coverage_ratio": 0.885,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-035-42-notations-for-categories",
+     "title": "Notations for categories",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.952,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-036-43-categories-over-schemes",
+     "title": "Categories over schemes",
+     "prose_ratio": 0.911,
+     "coverage_ratio": 0.909,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-037-44-the-affine-case",
+     "title": "The affine case",
+     "prose_ratio": 0.927,
+     "coverage_ratio": 0.857,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-038-45-the-projective-case",
      "title": "The projective case",
      "prose_ratio": 0.951,
-     "coverage_ratio": 0.872,
+     "coverage_ratio": 0.944,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-034-46-the-relative-case",
+     "id": "sec-039-46-the-relative-case",
      "title": "The relative case",
      "prose_ratio": 0.934,
-     "coverage_ratio": 0.805,
+     "coverage_ratio": 0.894,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-035-47-projective-dimension-one",
+     "id": "sec-040-47-projective-dimension-one",
      "title": "Projective dimension one",
-     "prose_ratio": 0.943,
-     "coverage_ratio": 0.83,
+     "prose_ratio": 0.72,
+     "coverage_ratio": 0.946,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-036-49-invertible-objects-in-monoidal-categories",
-     "title": "Invertible objects in monoidal categories",
-     "prose_ratio": 0.291,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-041-48-deducing-conjecture-from-conjecture",
+     "title": "Deducing Conjecture ?? from Conjecture ??",
+     "result": "no matching \\section"
     },
     {
-     "id": "sec-037-51-the-geometry-of-fhilb2",
+     "id": "sec-042-49-invertible-objects-in-monoidal-categories",
+     "title": "Invertible objects in monoidal categories",
+     "prose_ratio": 0.871,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-043-5-example-the-case-of-two-strands",
+     "title": "Example: the case of two strands",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-044-51-the-geometry-of-fhilb2",
      "title": "The geometry of FHilb2",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-038-52-cohomology-of-sheaves-on-fhilb2",
+     "id": "sec-045-52-cohomology-of-sheaves-on-fhilb2",
      "title": "Cohomology of sheaves on FHilb2",
-     "prose_ratio": 0.7,
-     "coverage_ratio": 0.836,
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.887,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-039-54-proj-construction",
+     "id": "sec-046-53-soergel-bimodules-for-n2",
+     "title": "Soergel bimodules for n=2",
+     "prose_ratio": 0.609,
+     "coverage_ratio": 0.932,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-047-54-proj-construction",
      "title": "Proj construction",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-040-55-sheaves-for-two-strand-braids",
+     "id": "sec-048-55-sheaves-for-two-strand-braids",
      "title": "Sheaves for two-strand braids",
-     "prose_ratio": 0.977,
-     "coverage_ratio": 0.81,
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.922,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-041-62-torus-braids",
+     "id": "sec-049-6-example-the-case-of-three-strands",
+     "title": "Example: the case of three strands",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-050-61-the-geometry-of-fhilb3",
+     "title": "The geometry of FHilb3",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-051-62-torus-braids",
      "title": "Torus braids",
      "prose_ratio": 0.959,
+     "coverage_ratio": 0.936,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-052-63-the-longest-word",
+     "title": "The longest word",
+     "prose_ratio": 0.851,
+     "coverage_ratio": 0.952,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-053-64-the-figure-eight-knot",
+     "title": "The figure eight knot",
+     "prose_ratio": 0.901,
+     "coverage_ratio": 0.783,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-054-7-categorical-idempotents-and-equivariant-locali",
+     "title": "Categorical idempotents and equivariant localization",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-055-71-categories-over-equivariant-schemes",
+     "title": "Categories over equivariant schemes",
+     "prose_ratio": 0.927,
+     "coverage_ratio": 0.898,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-056-72-categorical-diagonalization",
+     "title": "Categorical diagonalization",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-057-73-eigenobjects",
+     "title": "Eigenobjects",
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.933,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-058-74-the-geometric-realization-over-a-fixed-base",
+     "title": "The geometric realization over a fixed base",
+     "prose_ratio": 0.871,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-059-75-the-relative-case",
+     "title": "The relative case",
+     "prose_ratio": 0.117,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-060-8-local-charts-and-fixed-points-of-fhilbn",
+     "title": "Local charts and fixed points of FHilbn",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-061-81-affine-charts-for-hilbert-schemes",
+     "title": "Affine charts for Hilbert schemes",
+     "prose_ratio": 0.969,
      "coverage_ratio": 0.878,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-042-63-the-longest-word",
-     "title": "The longest word",
-     "prose_ratio": 0.925,
-     "coverage_ratio": 0.772,
+     "id": "sec-062-82-affine-charts-for-flag-hilbert-schemes",
+     "title": "Affine charts for flag Hilbert schemes",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.953,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-043-71-categories-over-equivariant-schemes",
-     "title": "Categories over equivariant schemes",
-     "prose_ratio": 0.927,
-     "coverage_ratio": 0.78,
+     "id": "sec-063-83-defining-the-charts",
+     "title": "Defining the charts",
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.893,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-044-72-categorical-diagonalization",
-     "title": "Categorical diagonalization",
-     "prose_ratio": 0.933,
-     "coverage_ratio": 0.91,
+     "id": "sec-064-84-the-special-coefficients",
+     "title": "The special coefficients",
+     "prose_ratio": 0.922,
+     "coverage_ratio": 0.926,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-045-73-eigenobjects",
-     "title": "Eigenobjects",
-     "prose_ratio": 0.608,
-     "coverage_ratio": 0.872,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-046-75-the-relative-case",
-     "title": "The relative case",
-     "prose_ratio": 0.438,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-047-85-explicit-local-coordinates",
+     "id": "sec-065-85-explicit-local-coordinates",
      "title": "Explicit local coordinates",
      "prose_ratio": 0.949,
-     "coverage_ratio": 0.836,
+     "coverage_ratio": 0.909,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-048-86-examples",
+     "id": "sec-066-86-examples",
      "title": "Examples",
      "prose_ratio": 0.872,
-     "coverage_ratio": 0.741,
+     "coverage_ratio": 0.796,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-049-87-poincare-series",
+     "id": "sec-067-87-poincare-series",
      "title": "Poincare series",
-     "prose_ratio": 0.95,
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.938,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-068-9-differentials-and-gln-homology",
+     "title": "Differentials and glN homology",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-069-91-spectral-sequence-for-gln-homology",
+     "title": "Spectral sequence for glN homology",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.928,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-070-92-sections-and-schemes",
+     "title": "Sections and schemes",
+     "prose_ratio": 0.911,
      "coverage_ratio": 0.871,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-050-91-spectral-sequence-for-gln-homology",
-     "title": "Spectral sequence for glN homology",
-     "prose_ratio": 0.957,
-     "coverage_ratio": 0.832,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-051-92-sections-and-schemes",
-     "title": "Sections and schemes",
-     "prose_ratio": 0.911,
-     "coverage_ratio": 0.831,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-052-93-the-commutative-tower",
+     "id": "sec-071-93-the-commutative-tower",
      "title": "The commutative tower",
-     "prose_ratio": 0.964,
-     "coverage_ratio": 0.822,
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.855,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-053-101-dg-algebras",
+     "id": "sec-072-94-differentials-in-affine-charts",
+     "title": "Differentials in affine charts",
+     "prose_ratio": 0.93,
+     "coverage_ratio": 0.923,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-073-10-appendix",
+     "title": "Appendix",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-074-101-dg-algebras",
      "title": "Dg algebras",
      "prose_ratio": 0.991,
-     "coverage_ratio": 0.833,
+     "coverage_ratio": 0.942,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-054-102-symmetric-and-exterior-algebras",
+     "id": "sec-075-102-symmetric-and-exterior-algebras",
      "title": "Symmetric and exterior algebras",
-     "prose_ratio": 0.987,
-     "coverage_ratio": 0.81,
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.873,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-055-104-projective-dg-bundles",
+     "id": "sec-076-103-affine-dg-schemes",
+     "title": "Affine dg schemes",
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.947,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-077-104-projective-dg-bundles",
      "title": "Projective dg bundles",
      "prose_ratio": 0.967,
-     "coverage_ratio": 0.823,
+     "coverage_ratio": 0.917,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-056-references",
+     "id": "sec-078-references",
      "title": "References",
      "result": "no matching \\section"
     }

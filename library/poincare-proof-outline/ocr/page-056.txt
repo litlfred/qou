@@ -1,0 +1,74 @@
+For each real number d there is exactly one point on the positive x-axis such that h-distance between 0 and
+that point is d.
+
+lemma unique-x-avis-poincare-distance-negative:
+assumes d > 0
+shows 3! z. is-realz \ Rez <0 A Rez>-1A
+poincare-distance On (of-complex z) = d (is 5! z. ?P z)
+proof—
+let ?z = (1 — exp d) / (1 + exp d)
+
+have ?P ?z
+using ex-z-axis-poincare-distance-negative'|OF assms]
+unfolding Let-def
+by blast
+
+moreover
+
+have V z’. ?P.z' —+ z'= ?z
+proof—
+let ?g = A 2’. |In (Re ((1 — 2’) / (1 + 2’)))|
+let ?A = {z. is-realx \ Rex > —1 A Rex < O}
+have inj-on (poincare-distance 0;, 0 of-compler) ?A
+proof (rule comp-inj-on)
+show inj-on of-complex ?A
+using of-complez-inj
+unfolding inj-on-def
+by blast
+next
+show inj-on (poincare-distance 0) (of-complex ‘ ?A) (is inj-on ?f (of-complex ‘ ?A))
+proof (subst inj-on-cong)
+have *: of-compler ‘ ?A =
+{z. z € unit-disc \ z € circline-set x-axis \ Re (to-complex z) < 0} (is - = ?B)
+by (auto simp add: cmod-eq-Re circline-set-a-azis)
+
+fix «
+
+assume z € of-complex ‘ ?A
+
+hence x € ?B
+using *
+by simp
+
+thus poincare-distance 0; = (?g 0 to-complex) x
+using poincare-distance-zero-x-axis
+by (simp add: Let-def)
+
+next
+
+have x: to-complex ‘ of-compler ‘ ?A = ?A
+
+by (auto simp add: image-iff)
+
+show inj-on (?g 0 to-complex) (of-complex ‘ ?A)
+proof (rule comp-inj-on)
+show inj-on to-complex (of-complex ‘ ?A)
+unfolding inj-on-def
+by auto
+next
+have inj-on ?g ?A
+unfolding inj-on-def
+proof (safe)
+fix ry
+assume hh: is-real x is-real y— 1 < Rex Rex < 0
+—1< Rey Rey < 0 |In (Re (1 — 2) / (1 + 2)))| = |In (Re (1 — y) / (1 + y)))|
+
+have is-real ((1 — x)/(1 + 2))
+using <is-real x» div-reals[of 1—x 1+<]
+by auto
+
+have is-real ((1 — y)/(1 + y))
+using <is-real y> div-reals[of 1—y 1+-y]
+by auto
+
+have Re (1 + x) > 0

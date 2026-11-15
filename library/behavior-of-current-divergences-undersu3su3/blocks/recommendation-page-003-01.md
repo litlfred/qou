@@ -1,0 +1,1 @@
+(This combination corre- sponds to zero mass for the conceptual fundamental isospin doublet and a finite mass for the isospin singlet.) Since, in fact, the pion is nearly massless, we should expect that in fact the value of ¢ is close to (—Vv2).

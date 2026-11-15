@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-0905.0228v4
-doc_title: "A CURIOUS q-ANALOGUE OF HERMITE POL YNOMIALS"
+doc_title: "A CURIOUS q-ANALOGUE OF HERMITE POLYNOMIALS"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
-pages: 1-7
+pages: 1-4
 source_pdf: 0905.0228v4.pdf
 source_sha256: 1744545d0f210949
-doc_brief: "A CURIOUS q-ANALOGUE OF HERMITE POLYNOMIALS — Two well-known q-Hermite polynomials are the continuous and discrete q-Hermite polynomials."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.709
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.916
+doc_brief: "A CURIOUS q-ANALOGUE OF HERMITE POLYNOMIALS — Two well-known q-Hermite polynomials are the continuous and discrete q-Hermite polynomials."
 ---
 There are many ways to construct Hermite polynomials. 
 For example, the normalized Hermite polynomials $H_n(x,s)=s^{n/2}H_n(x/\sqrt{s}, 1)$ ($n\geq 0$) may be defined by

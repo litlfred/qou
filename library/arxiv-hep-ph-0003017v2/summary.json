@@ -2,51 +2,241 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-hep-ph-0003017v2",
  "source_sha256": "1660907865346bdf",
- "brief": "Random Matrix Theory and Chiral Symmetry in QCD J.J.M. Verbaarschot — Random matrix theory is a powerful way to describe universal correlations of eigenvalues of complex systems.",
- "extended": "**Random Matrix Theory and Chiral Symmetry in QCD J.J.M. Verbaarschot**\n\n*Department of Physics and Astronomy, SUNY, Stony Brook, NY 11794-3800*\n\n61 pp, 8 sections.\n\n**Abstract.** Random matrix theory is a powerful way to describe universal correlations of eigenvalues of complex systems. It also may serve as a schematic model for disorder in quantum systems. In this review, we discuss both types of applications of chiral random matrix theory to the QCD partition function. We show that constraints imposed by chiral symmetry and its spontaneous breaking determine the structure of low-energy eﬀective partition functions for the Dirac spectrum. We thus derive exact results for the low-lying eigenvalues of the QCD Dirac operator. We argue that the statistical properties of these eigenvalues are universal and can be described by a random matrix theory with the global symmetries of the QCD partition function. The total number of such eigenvalues increases with the square root of the Euclidean four-volume.\n\n**Outline.** Introduction; 4 Tr v(W †W ) ,; 4 Str ∂µU∂µU−1−; 2 Str (MU+M†U−1); 2 Tr Ω(σ) ,; Conclusions; Acknowledgments; 4 C. DeTar, Quark-gluon plasma in numerical si",
+ "brief": "arXiv:hep-ph/0003017v2 26 Jun 2000 — Random matrix theory is a powerful way to describe universal correlations of eigenvalues of complex systems.",
+ "extended": "**arXiv:hep-ph/0003017v2 26 Jun 2000**\n\n*J.J.M. Verbaarschot*\n\n61 pp, 46 sections.\n\n**Abstract.** Random matrix theory is a powerful way to describe universal correlations of eigenvalues of complex systems. It also may serve as a schematic model for disorder in quantum systems. In this review, we discuss both types of applications of chiral random matrix theory to the QCD partition function. We show that constraints imposed by chiral symmetry and its spontaneous breaking determine the structure of low-energy eﬀective partition functions for the Dirac spectrum. We thus derive exact results for the low-lying eigenvalues of the QCD Dirac operator. We argue that the statistical properties of these eigenvalues are universal and can be described by a random matrix theory with the global symmetries of the QCD partition function. The total number of such eigenvalues increases with the square root of the Euclidean four-volume.\n\n**Outline.** Front matter; 2.3 Dirac Spectrum; 1.2 Random Matrix Theory; 3 CHIRAL RANDOM MATRIX THEORY; 1 INTRODUCTION; 2.2 Global Symmetries; 2.2.3 ANTI-UNITARY SYMMETRIES; 3.2 Sigma Model Representation of Chiral Rando; 3.4 Spectral Correlation Functions; 3.4.1 BULK CORRELATIONS; 3.4.2 MICROSCOPIC CORRELATIONS; 3.5 Universality Proofs; 4 EFFECTIVE THEORIES AT LOW ENERGIES; 4.1 Finite-Volume Partition Function; 4.2 Leutwyler-Smilga Sum Rules; 4.3 Spectral Mass and Partially Quenched Parti; 4.4 Domains of the Partially Quenched Effectiv; 4.5 QCD in Three Euclidean Dimensions",
  "tokens": {
-  "brief": 44,
-  "extended": 295
+  "brief": 36,
+  "extended": 378
  },
  "sections": [
   {
-   "id": "sec-000-introduction",
-   "title": "Introduction",
-   "pages": "1-15"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-14"
   },
   {
-   "id": "sec-001-4-tr-vw-w",
-   "title": "Tr v(W †W ) ,",
-   "pages": "15-27"
+   "id": "sec-000-23-dirac-spectrum",
+   "title": "Dirac Spectrum",
+   "pages": "14-15"
   },
   {
-   "id": "sec-002-4-str-µuµu1",
-   "title": "Str ∂µU∂µU−1−",
-   "pages": "27-27"
+   "id": "sec-001-12-random-matrix-theory",
+   "title": "Random Matrix Theory",
+   "pages": "15-15"
   },
   {
-   "id": "sec-003-2-str-mumu1",
-   "title": "Str (MU+M†U−1)",
-   "pages": "27-47"
+   "id": "sec-002-3-chiral-random-matrix-theory",
+   "title": "CHIRAL RANDOM MATRIX THEORY",
+   "pages": "15-15"
   },
   {
-   "id": "sec-004-2-tr-ωσ",
-   "title": "Tr Ω(σ) ,",
-   "pages": "47-54"
+   "id": "sec-003-1-introduction",
+   "title": "INTRODUCTION",
+   "pages": "15-15"
   },
   {
-   "id": "sec-005-conclusions",
-   "title": "Conclusions",
+   "id": "sec-004-22-global-symmetries",
+   "title": "Global Symmetries",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-005-223-anti-unitary-symmetries",
+   "title": "ANTI-UNITARY SYMMETRIES",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-006-32-sigma-model-representation-of-chiral-random-m",
+   "title": "Sigma Model Representation of Chiral Random Matrix Models",
+   "pages": "17-19"
+  },
+  {
+   "id": "sec-007-34-spectral-correlation-functions",
+   "title": "Spectral Correlation Functions",
+   "pages": "19-20"
+  },
+  {
+   "id": "sec-008-341-bulk-correlations",
+   "title": "BULK CORRELATIONS",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-009-342-microscopic-correlations",
+   "title": "MICROSCOPIC CORRELATIONS",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-010-35-universality-proofs",
+   "title": "Universality Proofs",
+   "pages": "22-23"
+  },
+  {
+   "id": "sec-011-4-effective-theories-at-low-energies",
+   "title": "EFFECTIVE THEORIES AT LOW ENERGIES",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-012-41-finite-volume-partition-function",
+   "title": "Finite-Volume Partition Function",
+   "pages": "23-25"
+  },
+  {
+   "id": "sec-013-42-leutwyler-smilga-sum-rules",
+   "title": "Leutwyler-Smilga Sum Rules",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-014-43-spectral-mass-and-partially-quenched-partitio",
+   "title": "Spectral Mass and Partially Quenched Partition Function",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-015-44-domains-of-the-partially-quenched-effective-t",
+   "title": "Domains of the Partially Quenched Effective Theory",
+   "pages": "27-31"
+  },
+  {
+   "id": "sec-016-45-qcd-in-three-euclidean-dimensions",
+   "title": "QCD in Three Euclidean Dimensions",
+   "pages": "31-31"
+  },
+  {
+   "id": "sec-017-5-universal-properties-of-the-lattice-qcd-dirac",
+   "title": "UNIVERSAL PROPERTIES OF THE LATTICE QCD DIRAC SPECTRUM",
+   "pages": "31-31"
+  },
+  {
+   "id": "sec-018-51-unfolding",
+   "title": "Unfolding",
+   "pages": "31-32"
+  },
+  {
+   "id": "sec-019-52-lattice-tests-of-chiral-random-matrix-theory",
+   "title": "Lattice Tests of Chiral Random Matrix Theory",
+   "pages": "32-32"
+  },
+  {
+   "id": "sec-020-521-brief-introduction-to-lattice-qcd",
+   "title": "BRIEF INTRODUCTION TO LATTICE QCD",
+   "pages": "32-33"
+  },
+  {
+   "id": "sec-021-522-bulk-correlations",
+   "title": "BULK CORRELATIONS",
+   "pages": "33-34"
+  },
+  {
+   "id": "sec-022-523-microscopic-correlations",
+   "title": "MICROSCOPIC CORRELATIONS",
+   "pages": "34-36"
+  },
+  {
+   "id": "sec-023-524-topology",
+   "title": "TOPOLOGY",
+   "pages": "36-37"
+  },
+  {
+   "id": "sec-024-525-chiral-phase-transition",
+   "title": "CHIRAL PHASE TRANSITION",
+   "pages": "37-37"
+  },
+  {
+   "id": "sec-025-53-the-thouless-energy-and-beyond",
+   "title": "The Thouless Energy and Beyond",
+   "pages": "37-38"
+  },
+  {
+   "id": "sec-026-6-schematic-models",
+   "title": "SCHEMATIC MODELS",
+   "pages": "38-39"
+  },
+  {
+   "id": "sec-027-61-chiral-random-matrix-models-for-the-chiral-ph",
+   "title": "Chiral Random Matrix Models for the Chiral Phase Transition at Nonzero Temperature",
+   "pages": "39-41"
+  },
+  {
+   "id": "sec-028-62-chiral-random-matrix-models-at-nonzero-chemic",
+   "title": "Chiral Random Matrix Models at Nonzero Chemical Potential",
+   "pages": "41-41"
+  },
+  {
+   "id": "sec-029-621-qcd-partition-function-at-nonzero-chemical-p",
+   "title": "QCD PARTITION FUNCTION AT NONZERO CHEMICAL POTENTIAL",
+   "pages": "41-41"
+  },
+  {
+   "id": "sec-030-622-a-random-matrix-model-for-qcd-at-finite-dens",
+   "title": "A RANDOM MATRIX MODEL FOR QCD AT FINITE DENSITY",
+   "pages": "41-42"
+  },
+  {
+   "id": "sec-031-623-zero-temperature-limit",
+   "title": "ZERO TEMPERATURE LIMIT",
+   "pages": "42-44"
+  },
+  {
+   "id": "sec-032-624-quenching-at-nonzero-chemical-potential",
+   "title": "QUENCHING AT NONZERO CHEMICAL POTENTIAL",
+   "pages": "44-44"
+  },
+  {
+   "id": "sec-033-625-quenched-dirac-spectra",
+   "title": "QUENCHED DIRAC SPECTRA",
+   "pages": "44-46"
+  },
+  {
+   "id": "sec-034-63-phase-diagram-for-the-qcd-partition-function",
+   "title": "Phase Diagram for the QCD Partition Function",
+   "pages": "46-48"
+  },
+  {
+   "id": "sec-035-64-random-matrix-triality-at-mu-ne-0",
+   "title": "Random Matrix Triality at $\\mu \\ne 0$",
+   "pages": "48-50"
+  },
+  {
+   "id": "sec-036-7-related-models-and-relations-to-other-fields",
+   "title": "RELATED MODELS AND RELATIONS TO OTHER FIELDS",
+   "pages": "50-50"
+  },
+  {
+   "id": "sec-037-71-one-plaquette-models-of-lattice-qcd",
+   "title": "One-Plaquette Models of Lattice QCD",
+   "pages": "50-51"
+  },
+  {
+   "id": "sec-038-72-universal-conductance-fluctuations-in-disorde",
+   "title": "Universal Conductance Fluctuations in Disordered Mesoscopic Systems",
+   "pages": "51-51"
+  },
+  {
+   "id": "sec-039-73-anderson-localization",
+   "title": "Anderson Localization",
+   "pages": "51-52"
+  },
+  {
+   "id": "sec-040-74-non-hermitian-models-with-disorder",
+   "title": "Non-Hermitian Models with Disorder",
+   "pages": "52-53"
+  },
+  {
+   "id": "sec-041-75-andreev-scattering",
+   "title": "Andreev Scattering",
+   "pages": "53-53"
+  },
+  {
+   "id": "sec-042-76-mathematical-physics-and-quantum-gravity",
+   "title": "Mathematical Physics and Quantum Gravity",
+   "pages": "53-54"
+  },
+  {
+   "id": "sec-043-8-conclusions",
+   "title": "CONCLUSIONS",
    "pages": "54-55"
   },
   {
-   "id": "sec-006-acknowledgments",
+   "id": "sec-044-acknowledgments",
    "title": "Acknowledgments",
-   "pages": "55-55"
-  },
-  {
-   "id": "sec-007-4-c-detar-quark-gluon-plasma-in-numerical-simula",
-   "title": "C. DeTar, Quark-gluon plasma in numerical simulations of QCD, in Quark gluon plasma",
    "pages": "55-61"
   }
  ],

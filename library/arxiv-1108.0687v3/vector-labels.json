@@ -1,0 +1,1684 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-1108.0687v3",
+  "pages": [
+    {
+      "page": 5,
+      "rotation": 0,
+      "drawings": 10,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1: relations among negative dependence properties"
+      ],
+      "labels": [
+        {
+          "text": "function deﬁned by N(ω) := Pn",
+          "bbox": [
+            68.4,
+            124.49,
+            214.44,
+            164.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "j=1 ωj. A measure ν on Bn is said to be k-homogeneous if ν is",
+          "bbox": [
+            209.52,
+            127.02,
+            500.36,
+            140.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "supported on the set of {ω : N(ω) = k}. The probability measure ν on Bn is said to be negatively",
+          "bbox": [
+            68.4,
+            141.42,
+            500.44,
+            153.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "R",
+          "bbox": [
+            131.64,
+            155.0,
+            136.34,
+            184.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "R",
+          "bbox": [
+            180.72,
+            155.0,
+            185.42,
+            184.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "R",
+          "bbox": [
+            215.04,
+            155.0,
+            219.74,
+            184.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "associated if",
+          "bbox": [
+            68.4,
+            155.7,
+            128.2,
+            165.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "fg dν ≤(",
+          "bbox": [
+            139.92,
+            155.97,
+            180.75,
+            165.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "f dν)(",
+          "bbox": [
+            189.12,
+            155.97,
+            215.07,
+            165.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "g dν) for every pair of nonnegative monotone functions f and g",
+          "bbox": [
+            223.44,
+            155.97,
+            499.98,
+            165.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "such that for some set S ⊆[n], the function f depends only on coordinates {ωj : j ∈S} while the",
+          "bbox": [
+            68.4,
+            170.37,
+            500.38,
+            181.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "function g depends only on coordinates {ωj : j ∈Sc}.",
+          "bbox": [
+            68.4,
+            183.29,
+            302.04,
+            196.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "The strong Rayleigh condition is said to hold for a measure P on Bn if the generating function",
+          "bbox": [
+            83.4,
+            206.28,
+            500.41,
+            220.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n",
+          "bbox": [
+            296.16,
+            226.49,
+            301.08,
+            233.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "zωj",
+          "bbox": [
+            307.2,
+            233.57,
+            320.33,
+            246.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "P(ω)",
+          "bbox": [
+            269.76,
+            234.24,
+            290.18,
+            246.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            250.44,
+            234.32,
+            264.82,
+            264.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Y",
+          "bbox": [
+            292.32,
+            234.32,
+            305.04,
+            264.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "j",
+          "bbox": [
+            311.88,
+            241.73,
+            315.17,
+            248.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "ω∈Bn",
+          "bbox": [
+            247.32,
+            250.71,
+            267.66,
+            258.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI7",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "j=1",
+          "bbox": [
+            291.84,
+            250.72,
+            305.53,
+            257.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "has no roots (z1, . . . , zn) all of whose coordinates lie in the (strict) upper half plane.",
+          "bbox": [
+            68.4,
+            267.93,
+            452.28,
+            278.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "This and",
+          "bbox": [
+            460.44,
+            267.93,
+            500.4,
+            277.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "many consequences are given in [BBL09], including (implicitly) the stochastic covering property",
+          "bbox": [
+            68.4,
+            282.06,
+            500.32,
+            292.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(see Proposition 2.2), which was conjectured [Pem00, Conjecture 9] to follow from something a little",
+          "bbox": [
+            68.4,
+            296.61,
+            500.26,
+            306.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "weaker. Some of the relevant implications are summarized in Figure 1 below.",
+          "bbox": [
+            68.4,
+            311.01,
+            405.12,
+            320.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The deﬁnition of the stochastic covering property requires a few preliminary deﬁnitions. Recall",
+          "bbox": [
+            83.4,
+            335.01,
+            500.4,
+            344.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "that a measure ν on a partially ordered set is said to stochastically dominate a measure ρ, denoted",
+          "bbox": [
+            68.4,
+            349.14,
+            500.41,
+            359.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ν ⪰ρ, if ν(A) ≥ρ(A) for every upwardly closed set A. An equivalent condition is that there exists",
+          "bbox": [
+            68.4,
+            363.69,
+            500.36,
+            373.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a coupling, that is a measure Q on Bn × Bn with respective marginals ν and ρ, supported on the",
+          "bbox": [
+            68.4,
+            378.09,
+            500.38,
+            389.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "set {(x, y) : x ≥y}. If P is a measure on Bn making the coordinate variables {Xi : 1 ≤i ≤n}",
+          "bbox": [
+            68.4,
+            389.88,
+            500.46,
+            403.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "negatively associated, an immediate consequence of negative association is that the conditional",
+          "bbox": [
+            68.4,
+            406.77,
+            500.52,
+            416.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "measure (P | Xn = 0) on Bn−1 stochastically dominates the conditional measure (P | Xn = 1).",
+          "bbox": [
+            68.4,
+            418.56,
+            473.28,
+            432.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Stochastic",
+          "bbox": [
+            311.13,
+            438.92,
+            349.98,
+            451.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.45
+          ]
+        },
+        {
+          "text": "Covering",
+          "bbox": [
+            311.13,
+            449.27,
+            346.3,
+            461.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.45
+          ]
+        },
+        {
+          "text": "Property",
+          "bbox": [
+            311.13,
+            459.62,
+            343.68,
+            472.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.45
+          ]
+        },
+        {
+          "text": "projected",
+          "bbox": [
+            212.13,
+            475.39,
+            245.62,
+            487.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.0
+          ]
+        },
+        {
+          "text": "Negative",
+          "bbox": [
+            392.13,
+            475.39,
+            424.62,
+            487.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.0
+          ]
+        },
+        {
+          "text": "Strong",
+          "bbox": [
+            155.88,
+            479.89,
+            179.88,
+            491.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.0
+          ]
+        },
+        {
+          "text": "homogeneous",
+          "bbox": [
+            212.13,
+            486.64,
+            262.13,
+            498.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.0
+          ]
+        },
+        {
+          "text": "Negative",
+          "bbox": [
+            308.88,
+            486.64,
+            341.37,
+            498.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.0
+          ]
+        },
+        {
+          "text": "Cylinder",
+          "bbox": [
+            392.13,
+            487.99,
+            423.63,
+            500.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.0
+          ]
+        },
+        {
+          "text": "Rayleigh",
+          "bbox": [
+            155.88,
+            490.24,
+            188.38,
+            502.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.0
+          ]
+        },
+        {
+          "text": "Association",
+          "bbox": [
+            306.63,
+            495.64,
+            349.13,
+            507.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.0
+          ]
+        },
+        {
+          "text": "Rayleigh",
+          "bbox": [
+            212.13,
+            496.99,
+            244.63,
+            509.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.0
+          ]
+        },
+        {
+          "text": "Dependence",
+          "bbox": [
+            392.13,
+            500.59,
+            436.61,
+            512.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.0
+          ]
+        },
+        {
+          "text": "Figure 1: relations among negative dependence properties",
+          "bbox": [
+            158.16,
+            529.29,
+            410.72,
+            539.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We say that the probability measure ν on Bn stochastically covers another probability measure",
+          "bbox": [
+            83.4,
+            554.22,
+            500.5,
+            565.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ρ if there is a measure on B2",
+          "bbox": [
+            68.4,
+            567.52,
+            188.41,
+            578.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n with ﬁrst marginal ν and second marginal ρ (in other words, a coupling)",
+          "bbox": [
+            184.08,
+            568.89,
+            500.42,
+            581.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "supported on the set of pairs (x, y) for which x = y or x covers y in the coordinatewise partial order;",
+          "bbox": [
+            68.4,
+            583.17,
+            500.52,
+            593.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "here x is said to cover y when x > y but there is no z such that x > z > y. We denote the covering",
+          "bbox": [
+            68.4,
+            597.57,
+            500.58,
+            607.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "relation in Bn by x ·> y, and one measure covering another by ν ⊲ρ. Stochastic covering is strictly",
+          "bbox": [
+            68.4,
+            611.85,
+            500.37,
+            623.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "stronger than stochastic domination, and may be thought of as “stochastic domination, but by at",
+          "bbox": [
+            68.4,
+            626.25,
+            500.42,
+            636.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "most 1”.",
+          "bbox": [
+            68.4,
+            640.65,
+            105.6,
+            650.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Stochastic covering combines stochastic ordering with closeness in the so-called L∞-transportation",
+          "bbox": [
+            83.4,
+            663.15,
+            502.69,
+            674.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "metric, deﬁned on probability measures on a given metric space as follows: d∞(µ, ν) is the least ρ",
+          "bbox": [
+            68.4,
+            678.93,
+            500.39,
+            689.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "such that there is a coupling of µ and ν supported on the set {(x, y) : |x−y| ≤ρ}. Thus µ⊲ν implies",
+          "bbox": [
+            68.4,
+            693.33,
+            500.37,
+            703.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            281.88,
+            723.21,
+            286.86,
+            733.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 14,
+      "rotation": 0,
+      "drawings": 11,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2: some classes of strong Rayleigh measures"
+      ],
+      "labels": [
+        {
+          "text": "5",
+          "bbox": [
+            68.4,
+            123.61,
+            76.46,
+            137.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "Applications",
+          "bbox": [
+            92.64,
+            123.61,
+            180.83,
+            137.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "In this section we discuss some classes of measures known to satisfy the hypotheses of our concen-",
+          "bbox": [
+            68.4,
+            161.37,
+            500.48,
+            171.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "tration results. The following Venn diagram gives a sense of how these classes intersect each other.",
+          "bbox": [
+            68.4,
+            175.77,
+            500.52,
+            185.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Zeros of the IID complex",
+          "bbox": [
+            195.87,
+            207.52,
+            264.5,
+            216.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica-Oblique"
+          ],
+          "sizes": [
+            6.3
+          ]
+        },
+        {
+          "text": "Gaussian random series",
+          "bbox": [
+            195.87,
+            219.22,
+            264.14,
+            227.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica-Oblique"
+          ],
+          "sizes": [
+            6.3
+          ]
+        },
+        {
+          "text": "homogeneous",
+          "bbox": [
+            380.37,
+            244.81,
+            429.57,
+            254.72
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica-Bold"
+          ],
+          "sizes": [
+            7.2
+          ]
+        },
+        {
+          "text": "measures",
+          "bbox": [
+            380.37,
+            256.51,
+            413.99,
+            266.42
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica-Bold"
+          ],
+          "sizes": [
+            7.2
+          ]
+        },
+        {
+          "text": "balanced",
+          "bbox": [
+            333.12,
+            269.56,
+            364.33,
+            279.47
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica-Bold"
+          ],
+          "sizes": [
+            7.2
+          ]
+        },
+        {
+          "text": "determinantal",
+          "bbox": [
+            162.12,
+            278.56,
+            209.33,
+            288.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica-Bold"
+          ],
+          "sizes": [
+            7.2
+          ]
+        },
+        {
+          "text": "matroids",
+          "bbox": [
+            333.12,
+            281.26,
+            363.53,
+            291.17
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica-Bold"
+          ],
+          "sizes": [
+            7.2
+          ]
+        },
+        {
+          "text": "measures",
+          "bbox": [
+            162.12,
+            292.06,
+            195.74,
+            301.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica-Bold"
+          ],
+          "sizes": [
+            7.2
+          ]
+        },
+        {
+          "text": "exclusion",
+          "bbox": [
+            384.87,
+            376.27,
+            411.13,
+            384.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica-Oblique"
+          ],
+          "sizes": [
+            6.3
+          ]
+        },
+        {
+          "text": "spanning",
+          "bbox": [
+            193.62,
+            378.52,
+            219.19,
+            387.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica-Oblique"
+          ],
+          "sizes": [
+            6.3
+          ]
+        },
+        {
+          "text": "Bernoullis conditioned",
+          "bbox": [
+            288.12,
+            378.52,
+            349.75,
+            387.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica-Oblique"
+          ],
+          "sizes": [
+            6.3
+          ]
+        },
+        {
+          "text": "trees",
+          "bbox": [
+            193.62,
+            387.52,
+            207.62,
+            396.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica-Oblique"
+          ],
+          "sizes": [
+            6.3
+          ]
+        },
+        {
+          "text": "measures",
+          "bbox": [
+            384.87,
+            387.97,
+            412.53,
+            396.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica-Oblique"
+          ],
+          "sizes": [
+            6.3
+          ]
+        },
+        {
+          "text": "on their sum",
+          "bbox": [
+            288.12,
+            390.22,
+            322.78,
+            398.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica-Oblique"
+          ],
+          "sizes": [
+            6.3
+          ]
+        },
+        {
+          "text": "Figure 2: some classes of strong Rayleigh measures",
+          "bbox": [
+            173.04,
+            413.73,
+            395.84,
+            423.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "5.1",
+          "bbox": [
+            68.4,
+            466.27,
+            85.56,
+            478.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Matroids",
+          "bbox": [
+            99.0,
+            466.27,
+            152.18,
+            478.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "A collection C of subsets of a ﬁnite set E, all of a given cardinality, k, is said to be the set of bases of",
+          "bbox": [
+            68.4,
+            498.69,
+            500.44,
+            508.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a matroid if it satisﬁes the base exchange axiom (see, e.g., [Tut71]): if A and B are distinct members",
+          "bbox": [
+            68.4,
+            513.09,
+            500.36,
+            523.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of C and a ∈A \\ B, then there exists b ∈B \\ A such that A ∪{b} \\ {a} ∈C. Given a matroid, it",
+          "bbox": [
+            68.4,
+            527.37,
+            500.42,
+            537.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "is natural to consider the uniform measure on C. More generally, the weighted random base is",
+          "bbox": [
+            68.4,
+            541.5,
+            500.36,
+            551.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "chosen from the probability measure",
+          "bbox": [
+            68.4,
+            556.17,
+            227.5,
+            566.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Y",
+          "bbox": [
+            291.48,
+            577.76,
+            304.2,
+            607.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "νw(B) := C",
+          "bbox": [
+            237.36,
+            580.17,
+            287.67,
+            590.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "w(e) ,",
+          "bbox": [
+            307.2,
+            580.17,
+            331.32,
+            590.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "e∈B",
+          "bbox": [
+            290.04,
+            594.15,
+            305.18,
+            601.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "where {w(e) : e ∈E} is a collection of nonnegative real numbers (weights) and C is a normalizing",
+          "bbox": [
+            68.4,
+            611.73,
+            500.46,
+            621.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "constant. Identifying E with the set {1, . . . , |E|}, the measure νw and the random variables Xe :=",
+          "bbox": [
+            68.4,
+            626.01,
+            500.34,
+            637.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1e∈B can be thought of as living on B|E|.",
+          "bbox": [
+            68.4,
+            640.41,
+            247.44,
+            651.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "For general matroids, EXeXf may be greater than (EXe)(EXf). Some speculation has been",
+          "bbox": [
+            83.4,
+            662.16,
+            500.41,
+            676.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "given to the most natural class of matroids for which negative correlation or negative association",
+          "bbox": [
+            68.4,
+            678.93,
+            500.65,
+            688.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "must hold. Feder and Mihail [FM92] deﬁne a balanced matroid to be a matroid all of whose minors",
+          "bbox": [
+            68.4,
+            693.33,
+            500.48,
+            703.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "13",
+          "bbox": [
+            279.36,
+            723.21,
+            289.38,
+            733.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

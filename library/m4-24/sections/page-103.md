@@ -1,0 +1,63 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-103
+section_title: "Page 103"
+section_number: null
+pages: 103-103
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+Problems on invariants of knots and 3-manifolds A475
+
+where the sum is over the gauge equivalence classes of flat connections A. Let
+us explain the quantities involved in this expression and in which cases one can
+make sense of this expression as it stands.
+
+For any flat connection A, we have the cohomology groups H'(M,d,) of the
+covariant derivative complex d4 : 0*(M;g) — 0*+1(M;g) given by daf =
+df + [A, f], and h', is the dimension of H*(M,d,4). Further associated to this
+
+complex we have the Reidemeister torsion T)7(A) € @i( det H*(M, da)) CY
+
+(det H®(M,da) ® (det H(M, da))")” (by Poincaré duality). If one now as-
+sumes that all the gauge equivalence classes of flat connections A are isolated,
+in fact Freed and Gompf assumed H 1M. ,da) = 0, so that the above sum is
+finite and such that the square root of the Reidemeister torsion tu (A)!/ 2 is
+a well-defined number (once a volume on H°(M,d,) has been fixed, but for
+irreducible connections H°(M, da) = 0).
+
+The quantity [4 € Z/8Z denotes the spectral flow of the operator
+
+xda, —da,*
+da,* 0
+
+on Q!(M;g) @ 03(M;g), where A; is a path of connections running from the
+trivial connection to A. They also looked at some examples where H!(M,d4) 4
+0 and checked the overall growth predicted by the above formula.
+
+Following this Jeffrey [184] proposed the following more general interpretation
+of the square root of Reidemeister torsion in the cases where the connections
+are not isolated: Assume that the moduli space of flat connections M on M is
+smooth and that the tangent space at each equivalence class of flat connection
+A equals H'(M,d,). Since H°(M,d,) C g the invariant inner product we have
+chosen on g induces a volume element on H°(M,d,). In total this means that
+the square root of the Reidemeister torsion induces a measure on the moduli
+space when we pair it with the induced volume element on H°(M,d,) divided
+by the order of the center of G and one arrives at (r =k +h")
+
+ZE(M) ~ eo tVv—T(dim G)(1+b!(M))/4
+
+roo
+
+x / 2 V~TrOS(A) (hg “P4)/2 9 22VT(La/A4(MY Hh 4)/8) py (A)?
+[Alem
+
+For some mapping tori of genus 1 surfaces and lens spaces, Jeffrey verified
+this form of the semi-classical approximation. Garoufalidis [134] independently
+proved the semi-classical approximation for lens spaces and studied in various
+examples the growth rate predicted by these approximations. Rozansky [352]
+
+Geometry & Topology Monographs, Volume 4 (2002)

@@ -1,0 +1,60 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-157
+section_title: "Page 157"
+section_number: null
+pages: 157-157
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+Problems on invariants of knots and 3-manifolds 529
+
+Remark The quantum SU(2) invariant of (//,c) satisfies that eeu )=
+
+>, UO, o) for r divisible by 4 (see [221]). The Z!M°(M,c) should be
+defined such that UO, ,) can be recovered from Z!™°(M,c) in an ap-
+propriate sense, and such that the coefficients of ZIMO(M. ,o) are “finite type
+
+invariants” of (/,c) under an appropriate definition of finite type invariants
+of (M,co).
+
+The set of spin structure is a torsor over H'(M;Z/2Z) in the sense that the
+difference of two spin structures is an element in H!(M;Z/2Z), and every
+element of H!(M;Z/2Z) is the difference of some spin structure and a fixed
+one. Similarly, the set of all spin structure is a torsor over H!(M,Z). In this
+sense the previous problem might be related to the following problem.
+
+Problem 11.8 (T.Le, V. Turaev) For every element € € H'(M,Z) construct
+an extension of Z'M°(M,€) of the LMO invariant such that when € = 0 one
+recovers the usual LMO invariant.
+
+The idea is that the usual LMO invariant corresponds only to the trivial coho-
+mology class, and for manifolds with high Betti number, it is equal to 0. K.
+Habiro has an extension of the LMO invariant that might be a solution to this
+problem.
+
+Remark For a finite abelian group A and € € H!(M, A), let T(M,€) be the
+invariant of (M,€), defined from a modular A-category, and let 7(M) be the
+invariant of M derived from a modular category forgetting A-grading. Then,
+T(M) = Se7(M,£). (For details, see [250].) The ZIMO(M,£) should be
+defined such that a suitable r(M,€) can be recovered from Z!M°(M,€) in an
+appropriate sense, and such that the coefficients of ZMO(M, ,€) are “finite type
+
+invariants” of (W,€) under an appropriate definition of finite type invariants
+of (M,€).
+
+11.6 Other problems
+
+Question 11.9 (1) Find a surgery formula for the Kuperberg-Thurston in-
+variant [237] in terms of the Chern-Simons series of Question 3.12
+
+(2) Compare the Kuperberg-Thurston invariant to the LMO invariant.
+
+Problem 11.10 (D. Thurston) Do configuration spaces of [237] have torsion
+in Z-homology? Does such torsion deduce a torsion invariant of homology
+3-spheres?
+
+Geometry & Topology Monographs, Volume 4 (2002)

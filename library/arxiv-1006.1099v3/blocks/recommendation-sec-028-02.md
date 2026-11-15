@@ -1,0 +1,1 @@
+Gromov compactness in the total space (W, L) implies that there is some limit stable disk u∞, but since the projections p ◦ut are constant maps, that limit disk must lie entirely in the zero ﬁbre of p.

@@ -1,0 +1,55 @@
+84 Chapter 4 — The Tannaka group of the theta divisor
+
+be controlled explicitly, indeed lemma 4.16 below gives an exact sequence
+of perverse sheaves
+
+0 — kK — Ae,[g—1] — de, — 0
+
+for the skyscraper sheaf
+
+Ke 5.(—852) if g is even,
+s \o if g is odd.
+
+Hence it follows that
+
+X(9,) = X(Ao,[8— 1]) — X( Ke) = {
+
+g!—2 if gis even,
+g!—1 if gis odd.
+
+On the other hand, by remark 4.7 we can assume that the nearby cycles
+for our degeneration coincide with the unipotent nearby cycles. Then from
+the formula for the specialization in corollary 4.10 one deduces that the
+semisimplification of the nearby cycles must have the form
+
+W(do,)" = 80,7
+
+for some perverse skyscraper sheaf y supported on the singular point e of
+the special fibre. Looking at the above Euler characteristics, one sees that
+this skyscraper sheaf y must have rank two if g is even, resp. rank one if g
+is odd. Now take a Levi splitting
+
+Gs = G(e,) + G(Y(de,));
+
+ul
+and let W be the irreducible representation of G; which corresponds to the
+simple perverse sheaf 5g,. In lemma 4.13 below we will see as a general
+fact about irreducible theta divisors that the restriction of W to the connected
+component H = G C G; remains irreducible, so our claim follows.
+
+For part (3) consider the locus J C .%,, of Jacobian varieties of smooth
+projective curves of genus g. If a stratum U; C U has codimension at most
+one in the open subset U, then the closure U; C %_» has codimension at
+most one in .%». In this case it has been observed in [83, cor. (0.7)] that
+the intersection J MU; is nonempty and hence of codimension at most one
+in J. We can then find a point t € U;(C) which corresponds to the Jacobian
+variety of a non-hyperelliptic smooth curve (indeed the hyperelliptic locus
+has codimension greater than one in J for g > 4). Now consider in the
+closure U; a curve which meets the Jacobian locus J in the chosen point t
+and is otherwise contained in the open dense subset U; C U;. Define
+
+Q: S —> Gyn
+
+to be the normalization of this curve, and choose s € S(C) to be any point
+with g(s) =t. Then Xs — S is a family of ppav’s whose geometric generic
+fibre Xp is a ppav in the stratum U; and whose special fibre X; is the Jacobian

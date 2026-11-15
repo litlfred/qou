@@ -8,6 +8,7 @@ pages: 15-17
 source_pdf: S0894-0347-08-00618-8.pdf
 source_sha256: 7c0b2ca41992b21c
 toc_source: outline
+doc_brief: "AMERICAN MATHEMATICAL SOCIETY S 0894-0347(08)00618-8 — 24 sections: Front matter; Introduction; A plethora of negative dependence"
 ---
 matrix A over C and S ⊆[n], denote by A[S] the principal submatrix of A with rows
 and columns indexed by S and let A⟨S⟩= det(A[S′]) be the principal minor of A

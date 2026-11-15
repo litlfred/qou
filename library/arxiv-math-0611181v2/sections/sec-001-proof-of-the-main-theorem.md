@@ -7,10 +7,11 @@ section_number: null
 pages: 3-6
 source_pdf: 0611181v2.pdf
 source_sha256: 6931e3ebca584de9
-doc_brief: "Proof of the volume conjecture for Whitehead chains — We prove the volume conjecture for an inﬁnite family of links called White- head chains that generalizes both the Whitehead link and the"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.988
+latex_coverage_ratio: 0.994
+doc_brief: "Proof of the volume conjecture for Whitehead chains — We prove the volume conjecture for an inﬁnite family of links called White- head chains that generalizes both the Whitehead link and the"
 ---
 In this section we give an overview of the proof of the main theorem, postponing the proofs of the more technical lemmas to the next section.
 

@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9811173v1
-doc_title: "arXiv:hep-th/9811173v1 19 Nov 1998"
+doc_title: "Determinations of rational Dedekind-zeta invariants of hyperbolic manifolds and Feynman knots and links"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.973
 latex_coverage_ratio: 1.0
+doc_brief: "Determinations of rational Dedekind-zeta invariants of hyperbolic manifolds and Feynman knots and links — We identify 998 closed hyperbolic 3-manifolds whose volumes are rationally related to"
 ---
 This paper began with a study of hyperbolic links whose complementary volumes result from evaluations of Feynman diagrams [@9806174]. For each of these volumes we found, by empirical means, a *closed--form* evaluation in terms of a few Clausen functions, evaluated at rational multiples of $\pi$. Then, thanks to generous advice from Don Zagier, we came to appreciate that these results form part of a much larger scaffold, whose unifying feature is the existence of rational relations between hyperbolic volumes and Dedekind zeta values. While the existence of such relations is understood [@DZ:Invent; @DZ:JMPS; @DZ:Texel], their precise forms appear to be unpredictable, thus far, by deductive mathematics. They are therefore ripe for the application of experimental mathematics. The work reported herein has involved a -- to the authors -- quite intoxicating mix of tools, allowing conjectures to be tested against known data and rapidly confirmed or rejected as the research progressed. We will return to these methodological issues in the conclusion.
 

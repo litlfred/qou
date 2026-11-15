@@ -22,4 +22,4 @@ $$
 
 $\square$
 
-**Witness.** The script `computations/sdp_cross_channel.py` implements `sdp_with_atom_observables(Z, N, partition_entries, pair_couplings)` using the `cvxpy` SDP solver. It falls back to a scalar LP if `cvxpy` is unavailable.
+The SDP is solved numerically, with a scalar-LP fallback.

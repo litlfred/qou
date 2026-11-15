@@ -7,10 +7,11 @@ section_number: 2.2
 pages: 12-14
 source_pdf: 2410.20973v1.pdf
 source_sha256: 852b7bbc81a62883
-doc_brief: "SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS — We prove conjectures of Garoufalidis-Gu-Mari˜ no [ 9] that perturbative series associated with the hyperbolic knots 4 1 and 5 2 are resurgent and"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.795
-latex_coverage_ratio: 0.933
+latex_coverage_ratio: 0.932
+doc_brief: "SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS — We prove conjectures of Garoufalidis-Gu-Mari˜no [9] that perturbative series associated with the hyperbolic knots 41 and 52 are resurgent and"
 ---
 In this section, we define the homology $H_\bullet(\Sigma,D_{\infty,\theta})$ relative to a region $D_{\infty,\theta}$. The first relative homology group $H_1(\Sigma,D_{\infty,\theta})$ contains lifts of the state integral contours $\calJ_{\ell,\tau}$ to $\Sigma$ and the thimbles $\calC_{p_0,\vartheta}$. First, we construct a finite dimensional homology $H_\bullet(X_{\epsilon,M},D_{\infty,\theta})$ defined for a compact surface $X_{\epsilon,M}\subset\Sigma$. Then, $H_\bullet(\Sigma,D_{\infty,\theta})$ will be defined via the limits $\epsilon\to0$ and $M\to\infty$.
 

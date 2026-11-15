@@ -8,57 +8,58 @@
   "pages": 35,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:24Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 23,
+    "reason": "17 of 559 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 26,
+    "reason": "12 of 597 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 31,
+    "reason": "12 of 564 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "Bull. Soc. math. France 130 (3), 2002, p. 457\u2013491 HYPERIDEAL POLYHEDRA IN HYPERBOLIC 3-SPACE by Xiliang Bao & Francis Bonahon",
+  "title": "Hyperideal polyhedra in hyperbolic 3-space",
   "authors_raw": null,
   "title_lines": [
    "Bull. Soc. math. France",
-   "130 (3), 2002, p. 457\u2013491",
+   "130 (3), 2002, p. 457–491",
    "HYPERIDEAL POLYHEDRA IN HYPERBOLIC 3-SPACE",
    "by Xiliang Bao & Francis Bonahon"
   ],
-  "abstract": "\u2014 A hyperideal polyhedron is a non-compact polyhedron in the hyperbolic 3-space 3 which, in the projective model for 3 \u2282 3, is just the intersection of 3 with a projective polyhedron whose vertices are all outside 3 and whose edges all meet 3 . We classify hyperideal polyhedra, up to isometries of 3, in terms of their combinatorial type and of their dihedral angles. R\u00b4esum\u00b4e (Poly`edres hyperid\u00b4eaux de l\u2019espace hyperbolique de dimension 3) Un poly`edre hyperid\u00b4eal est un poly`edre non-compact de l\u2019espace hyperbolique 3 de dimension 3 qui, dans le mod`ele projectif pour 3 \u2282 3, est simplement l\u2019intersection de 3 avec un poly`edre projectif dont les sommets sont tous en dehors de 3 et dont toutes les ar\u02c6etes rencontrent 3. Nous classi\ufb01ons ces poly`edres hyperid\u00b4eaux, `a isom\u00b4etrie de 3 pr`es, en fonction de leur type combinatoire et de leurs angles di\u00b4edraux. Consider a compact convex polyhedron P, intersection of \ufb01nitely many half- spaces in one of the three n-dimensional homogeneous spaces, namely the eu- clidean space En, the sphere Sn or the hyperbolic space Hn. The boundary of P inherits a natural cell decomposition, coming from the faces of the polyhedron. Texte re\u00b8cu le 26 juin 2001, accept\u00b4e le 8 d\u00b4ecembre 2001 Xiliang Bao, Department of Mathematics, University of Southern California, Los Angeles CA 90089-1113 (USA) \u2022 Computer Associates, 9740 Scranton Road # 200, San Diego, CA 92121-1745 (USA) \u2022 E-mail : xiliang.bao@ca.com Francis Bonahon, Department of Mathematics, University of Southern California, Los Angeles CA 90089-1113, (USA) \u2022 E-mail : fbonahon@math.usc.edu Url : http://math.usc.edu/~fbonahon",
+  "abstract": "— A hyperideal polyhedron is a non-compact polyhedron in the hyperbolic 3-space 3 which, in the projective model for 3 ⊂ 3, is just the intersection of 3 with a projective polyhedron whose vertices are all outside 3 and whose edges all meet 3 . We classify hyperideal polyhedra, up to isometries of 3, in terms of their combinatorial type and of their dihedral angles. R´esum´e (Poly`edres hyperid´eaux de l’espace hyperbolique de dimension 3) Un poly`edre hyperid´eal est un poly`edre non-compact de l’espace hyperbolique 3 de dimension 3 qui, dans le mod`ele projectif pour 3 ⊂ 3, est simplement l’intersection de 3 avec un poly`edre projectif dont les sommets sont tous en dehors de 3 et dont toutes les arˆetes rencontrent 3. Nous classiﬁons ces poly`edres hyperid´eaux, `a isom´etrie de 3 pr`es, en fonction de leur type combinatoire et de leurs angles di´edraux. Consider a compact convex polyhedron P, intersection of ﬁnitely many half- spaces in one of the three n-dimensional homogeneous spaces, namely the eu- clidean space En, the sphere Sn or the hyperbolic space Hn. The boundary of P inherits a natural cell decomposition, coming from the faces of the polyhedron. Texte re¸cu le 26 juin 2001, accept´e le 8 d´ecembre 2001 Xiliang Bao, Department of Mathematics, University of Southern California, Los Angeles CA 90089-1113 (USA) • Computer Associates, 9740 Scranton Road # 200, San Diego, CA 92121-1745 (USA) • E-mail : xiliang.bao@ca.com Francis Bonahon, Department of Mathematics, University of Southern California, Los Angeles CA 90089-1113, (USA) • E-mail : fbonahon@math.usc.edu Url : http://math.usc.edu/~fbonahon",
   "docinfo": {
    "Title": "smf_bull_130_17.dvi",
    "Producer": "Mac OS X 10.6.8 Quartz PDFContext",
    "Creator": "dvips(k) 5.86d Copyright 1999 Radical Eye Software",
    "CreationDate": "D:20130823142303Z00'00'"
   },
-  "title_raw": "Bull. Soc. math. France 130 (3), 2002, p. 457\u2013491 HYPERIDEAL POLYHEDRA IN HYPERBOLIC 3-SPACE by Xiliang Bao & Francis Bonahon",
+  "title_raw": "Bull. Soc. math. France 130 (3), 2002, p. 457–491 HYPERIDEAL POLYHEDRA IN HYPERBOLIC 3-SPACE by Xiliang Bao & Francis Bonahon",
   "title_source": "text",
   "title_verified": false,
   "title_evidence": {
    "metadata": "smf_bull_130_17.dvi",
-   "heading": "HYPERIDEAL POLYHEDRA IN HYPERBOLIC 3-SPACE by Xiliang Bao & Francis Bonahon Consider a compact convex polyhedron P , intersection of \ufb01nitely many halfspaces in one of the three n -dimensional homogeneous spaces, namely the euclidean space E n , the sphere S n or the hyperbolic space H n . The bounda",
-   "text": "Bull. Soc. math. France 130 (3), 2002, p. 457\u2013491 HYPERIDEAL POLYHEDRA IN HYPERBOLIC 3-SPACE by Xiliang Bao & Francis Bonahon",
+   "heading": "HYPERIDEAL POLYHEDRA IN HYPERBOLIC 3-SPACE by Xiliang Bao & Francis Bonahon Consider a compact convex polyhedron P , intersection of ﬁnitely many halfspaces in one of the three n -dimensional homogeneous spaces, namely the euclidean space E n , the sphere S n or the hyperbolic space H n . The bounda",
+   "text": "Bull. Soc. math. France 130 (3), 2002, p. 457–491 HYPERIDEAL POLYHEDRA IN HYPERBOLIC 3-SPACE by Xiliang Bao & Francis Bonahon",
    "corroborated_by": [],
    "browser_print": false
-  }
+  },
+  "title_prev": "Bull. Soc. math. France 130 (3), 2002, p. 457–491 HYPERIDEAL POLYHEDRA IN HYPERBOLIC 3-SPACE by Xiliang Bao & Francis Bonahon"
  },
  "toc": [
   {
    "level": 1,
-   "title": "For every closed curve \u03b3 embedded in \u0393 and passing through the edges e1,",
-   "page": 3,
-   "source": "inferred",
-   "number": "1",
-   "confidence": 0.75,
-   "evidence": [
-    "style",
-    "number",
-    "numbered-style"
-   ],
-   "page_label": null
-  },
-  {
-   "level": 1,
-   "title": "Proj is located on the sphere at in\ufb01nity \u2202\u221eH3 if and only if equality holds in",
+   "title": "Proj is located on the sphere at inﬁnity ∂∞H3 if and only if equality holds in",
    "page": 4,
    "source": "inferred",
    "number": "P",
@@ -86,7 +87,7 @@
   },
   {
    "level": 1,
-   "title": "Proj associated to the hyperideal polyhedron P, the line segment joining v to v\u2032",
+   "title": "Proj associated to the hyperideal polyhedron P, the line segment joining v to v′ in P Proj meets H3.",
    "page": 7,
    "source": "inferred",
    "number": "P",
@@ -128,7 +129,7 @@
   },
   {
    "level": 1,
-   "title": "The In\ufb01nitesimal Rigidity Lemma",
+   "title": "The Inﬁnitesimal Rigidity Lemma",
    "page": 15,
    "source": "inferred",
    "number": "4",
@@ -440,52 +441,40 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 3,
-   "n_chars": 7792,
-   "n_words": 1345,
-   "label_start": null,
-   "label_end": null
-  },
-  {
-   "id": "sec-000-1-for-every-closed-curve-\u03b3-embedded-in-\u03b3-and-pas",
-   "number": "1",
-   "title": "For every closed curve \u03b3 embedded in \u0393 and passing through the edges e1,",
-   "level": 1,
-   "page_start": 3,
    "page_end": 4,
-   "n_chars": 519,
-   "n_words": 112,
+   "n_chars": 8388,
+   "n_words": 1472,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-001-p-proj-is-located-on-the-sphere-at-in\ufb01nity-h3-if",
+   "id": "sec-000-p-proj-is-located-on-the-sphere-at-inﬁnity-h3-if",
    "number": "P",
-   "title": "Proj is located on the sphere at in\ufb01nity \u2202\u221eH3 if and only if equality holds in",
+   "title": "Proj is located on the sphere at inﬁnity ∂∞H3 if and only if equality holds in",
    "level": 1,
    "page_start": 4,
-   "page_end": 4,
-   "n_chars": 392,
-   "n_words": 70,
+   "page_end": 5,
+   "n_chars": 2614,
+   "n_words": 433,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-002-1-hyperideal-polyhedra",
+   "id": "sec-001-1-hyperideal-polyhedra",
    "number": "1",
    "title": "Hyperideal polyhedra",
    "level": 1,
-   "page_start": 4,
+   "page_start": 5,
    "page_end": 7,
-   "n_chars": 9197,
-   "n_words": 1617,
+   "n_chars": 7011,
+   "n_words": 1262,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-003-p-proj-associated-to-the-hyperideal-polyhedron-p",
+   "id": "sec-002-p-proj-associated-to-the-hyperideal-polyhedron-p",
    "number": "P",
-   "title": "Proj associated to the hyperideal polyhedron P, the line segment joining v to v\u2032",
+   "title": "Proj associated to the hyperideal polyhedron P, the line segment joining v to v′ in P Proj meets H3.",
    "level": 1,
    "page_start": 7,
    "page_end": 8,
@@ -495,55 +484,55 @@
    "label_end": null
   },
   {
-   "id": "sec-004-2-necessary-conditions",
+   "id": "sec-003-2-necessary-conditions",
    "number": "2",
    "title": "Necessary conditions",
    "level": 1,
    "page_start": 8,
    "page_end": 10,
-   "n_chars": 6144,
-   "n_words": 1273,
+   "n_chars": 6141,
+   "n_words": 1272,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-005-3-spaces-of-polyhedra",
+   "id": "sec-004-3-spaces-of-polyhedra",
    "number": "3",
    "title": "Spaces of polyhedra",
    "level": 1,
    "page_start": 10,
    "page_end": 15,
-   "n_chars": 12091,
-   "n_words": 2434,
+   "n_chars": 12114,
+   "n_words": 2438,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-006-4-the-in\ufb01nitesimal-rigidity-lemma",
+   "id": "sec-005-4-the-inﬁnitesimal-rigidity-lemma",
    "number": "4",
-   "title": "The In\ufb01nitesimal Rigidity Lemma",
+   "title": "The Inﬁnitesimal Rigidity Lemma",
    "level": 1,
    "page_start": 15,
    "page_end": 25,
-   "n_chars": 30146,
-   "n_words": 6356,
+   "n_chars": 30119,
+   "n_words": 6333,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-007-5-convergence-of-hyperideal-polyhedra",
+   "id": "sec-006-5-convergence-of-hyperideal-polyhedra",
    "number": "5",
    "title": "Convergence of hyperideal polyhedra",
    "level": 1,
    "page_start": 25,
    "page_end": 32,
-   "n_chars": 18623,
-   "n_words": 3825,
+   "n_chars": 18558,
+   "n_words": 3778,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-008-6-realizing-large-angles",
+   "id": "sec-007-6-realizing-large-angles",
    "number": "6",
    "title": "Realizing large angles",
    "level": 1,
@@ -555,7 +544,7 @@
    "label_end": null
   },
   {
-   "id": "sec-009-7-proof-of-theorems-1-and-2",
+   "id": "sec-008-7-proof-of-theorems-1-and-2",
    "number": "7",
    "title": "Proof of Theorems 1 and 2",
    "level": 1,
@@ -570,7 +559,7 @@
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 10,
+  "toc_entries": 9,
   "toc_inferred_entries": 10,
   "toc_inferred_mean_confidence": 0.75,
   "toc_inferred_empty_share": 0.0,
@@ -581,7 +570,16 @@
    "count": 0,
    "items": []
   },
-  "sections": 11,
-  "chars_total": 97869
+  "sections": 10,
+  "chars_total": 97910,
+  "furniture_lines_stripped": 0,
+  "headings_tidied": [
+   {
+    "title": "For every closed curve γ embedded in Γ and passing through the edges e1,",
+    "page": 3,
+    "action": "dropped",
+    "why": "ends with a comma"
+   }
+  ]
  }
 }

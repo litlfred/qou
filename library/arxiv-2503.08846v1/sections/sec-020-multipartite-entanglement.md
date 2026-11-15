@@ -10,6 +10,7 @@ source_sha256: 18321b615ffc968b
 toc_source: outline
 doc_brief: "A Tutorial on Knots and Quantum Mechanics — These notes review a description of quantum mechanics in terms of the topology of spaces, basing on the axioms of Topological Quantum Field Theory and path"
 ---
+Multipartite Entanglement
 In section 4.2 we reviewed classification of bipartite entanglement and showed that a classification similar
 to SLOCC is possible in terms of the number of connections (Wilson lines) held by the two subsystems.
 How does this classification works for multipartite systems?
@@ -52,4 +53,3 @@ connections indeed saturates this inequality.
 Are there quantum states that violate the connectome inequalities? As in the example of the W state,
 inaccessible to connectomes, such state would have to be “more quantum” then the semiclassical states
 satisfying the connectome inequalities.
-6.2

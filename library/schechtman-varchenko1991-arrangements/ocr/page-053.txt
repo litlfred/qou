@@ -1,39 +1,61 @@
 Arrangements of hyperplanes and Lie algebra homology 191
-7.8 Insertions. Given two  sequences of distinct symbols (ai, ..., ak);
-(bi, ..., bn-k), and 1≤m≤k, we'll denote by I(ai, .., ak; bi, ..., bn-k; m) the
-set of all insertions of the second sequence into the first one, i.e. the set of
-all sequences (c1, ..., Cn) such that
-(i) {c1, ..., Cnf ={ai, ..., ak] U{bi, ..., bn-k);
-(i) Cp,=a; for some 1≤pi<p2<... <pk= N; Cq,=b, for some 1≤qi<q2< ...
-<qn-k<N;
-(ii) q-k+1=pm.
-m--1+N-k)
-We have # I(ai,..., ak; b, .., bn-k; m) m-- 2 Put I(ai, ..., ak;
-bi, ..., bn-k)= U I(ai,..., ak; bi, ..., bn-k; m).
-m= 1
-Let us identify elements of En with sequences (ii, ..., in)e[NjN by the rule
-oE Zn←→(o(1), :.:, o(N). For 1 ≤k ≤ N denote by Ti(N) Z the subset consisting
-of sequences (ii, ..., in) such that ii <i2 < ... <ik-1 <i = N>ik+1 > ... >in. Put
-(N1)
-T(N)= U T(N). We have # T(N)= ; # T(N)=2N-1
+
+7.8 Insertions. Given two sequences of distinct symbols (a,,..., a);
+(by, ..., by—,), and 1SmSk, we'll denote by I(a,, ...,a,3 by, ..., by-,3 m) the
+set of all insertions of the second sequence into the first one, ie. the set of
+all sequences (c,, ..., Cy) such that
+
+(i) {cy, ..05 Cy} ={ay, 5 a} U (Dy, «5 by ahs
+
+(ii) c,,=a; for some 1Sp,<p.<...<py=N3 c,,=b, for some 1S$q,<q2<...
+<qu-K<N;
+
+(iii) dyv-e+1=Pm-
+
+—1 _
+
+We have #1 (a,,...,4,3 b,..., by—43 m=(" ms ‘) Put I(a,,..., a,3
+k
+
+by, ..., by-= U T(dy, +115 Ay3 Dy, .--5 Dy—_ sm).
+m=
+
+Let us identify elements of Sy with sequences (i,,..., iy)E[N]™ by the rule
+oeSyo(a(1), ..., 0(N)). For 1Sk<N denote by T,(N)cZy the subset consisting
+of sequences (i,, ..., iy) such that i, <i,<...<i,- <i =N>i,4,>...>iy. Put
+
+N -1 :
+T(N)= (J 7,(N). We have + T=(h 1): # T(N)=2"7 1.
 k=1
-We have the identity in U n:
-(7.8.1) [fi...]= Z (- 1)N- k
-k= 1 (i1, ...,in)e Tk(N)
-Set Sk(N)= I(1, 2, ..., k; N, N - 1, ..., k+1)
-7.8.2 Example. N=3. T : ((3 2 1)); T2: ((1 3 2), (2 3 1)); T: ((1 2 3)). Si :
-((3 2 1); S2 : (1 3 2), (3 1 2)); S3 : {1 2 3).
-7.8.3 Lemma. St(N)= Ti(N)- 1, i.e. ceSt(N)>α-1 e Ti(N).
-Proof. Left to the reader.
-Note that if (i, ..., in)eSk(N) then in -- k.
-7.9 Let us return to the assumptions of 7.7. The base of (M  M2)a constitute
-all monomials (fi..,  @fi ..i 2 . Let (oi...i, @ Ooi ...in) be the dual base.
-of (M+ @ M*)2:
-b=[n]
-p+1
-7.9.1 Lemma. Z  Z Zoji.jp+.@o
-m= 1 k= 1 aeTk(q)
-dij where the internal summation is taken over all
+We have the identity in Un:
+N
+(7.8.1) Thwl= XY (-D** > Jiycin’
+k=1 (it, ---,in)e TKN)
+
+Set S,(N)=I(1, 2, ....k; N,N—1,...,k +0)
+
+7.8.2 Example. N=3. T,: {32 UD}; Tr: (132), 23D}; Ty: (123}. Sy:
+{B21}; Sp: {13.2}, 1 ps Sy: {1 23)}.
+
+7.8.3 Lemma. S,(N)=T,(N)~', i.e. c€S,(N)<o ‘eT, (N).
+Proof. Left to the reader. (1
+Note that if (i,, ..., iy)e€S,(N) then iy=k.
+
+7.9 Let us return to the assumptions of 7.7. The base of (M, @ M,), constitute
+all monomials {f;,_..;, 01 @fig ¢1...in V2} Let {5i,...i, ® 5i,.....iy be the dual base
+of (M* @ M¥),.
+
+SetQr= ¥ Qy.
+
+lul=a
+
+pt+l @
+THA Lemma. § 27+ (5;,..5, @5ip ni = DL LL LO jr ning @ Sip vg renin
+m=1k=1 ¢eTx(q@)
+P
+9PM, A-y *) where the internal summation is taken over all
 j=m
-i, .., jp+q)el(i, ..., ip; ip+.-I(1), ..., ip+g-(q); m).
-Proof. This follows from 7.6.3 and 7.7.1.
+
+(its sees dp+ Ql (its «+5 ips ipto- (ys +9 ipte-t(qs m).
+
+Proof. This follows from 7.6.3 and 7.7.1. 0

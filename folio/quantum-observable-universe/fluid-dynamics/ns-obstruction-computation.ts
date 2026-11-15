@@ -18,4 +18,12 @@ export default proposition({
     "euler-characteristic",
     "brings-surface",
   ],
+  authorNotes: [
+    {
+      kind: "refined-framing",
+      date: "2026-11-15",
+      body:
+        "Re-scoped 2026-11-15 (owner decision, PR #7747, bean qou-lx8f): the previous text read: \"(governed by the perpetual obstruction mechanism, [QU-to-QOU](#thm:qu-to-qou) item 3).\"",
+    },
+  ],
 });

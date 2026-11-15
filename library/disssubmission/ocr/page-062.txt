@@ -1,0 +1,54 @@
+54 Chapter 3 — Perverse sheaves on semiabelian varieties
+
+but then the fibre functor is only defined over a large extension field of A,
+and the descent to A again involves non-canonical choices.
+
+REMARK 3.11. If P € P(X) is a semisimple perverse sheaf, then G(P)
+is a reductive algebraic group, and over k = C this group coincides with the
+one that has been defined in corollary 2.14.
+
+Proof. The group G(P) acts faithfully on the representation V = w(P)
+which in the case at hand is semisimple, whereas the unipotent radical of
+an algebraic group acts trivially on every irreducible representation. So
+the unipotent radical must be trivial, i.e. G(P) is reductive. The remaining
+statement follows easily from the universal property of the localization D
+together with the last statement of corollary 2.9. oO
+
+3.5. Nearby cycles
+
+To describe the behaviour of the above Tannaka groups with respect to
+degenerations, we work over the spectrum S of a strictly Henselian discrete
+valuation ring with closed point s and generic point 71. We assume that the
+prime / is invertible on S. Fix a geometric point 7 over 7, and denote by S
+the normalization of S in the residue field of 7).
+
+Let X — S be a semiabelian scheme, i.e. a smooth commutative group
+scheme over S whose fibres X, and Xp are semiabelian varieties. In what
+follows we always assume the generic fibre Xp is an abelian variety. We
+put X =X xsS and write X; = X, and Xj for its geometric fibres.
+
+i J
+
+x XA
+
+Ali 1; “|
+Xx
+
+n
+
+Xp
+
+aA <=
+
+[2 >
+
+Degenerations of constructible sheaves can in this setting be studied via the
+functor of nearby cycles [32, exp. XIII-XIV]
+
+WY: D(Xq) —> D(X), W(K) = 7 (R7,(K)).
+
+By [60, th. 4.2 and cor. 4.5] this functor commutes with Verdier duality and
+restricts to an exact functor between the abelian categories P(X; ) and P(X;)
+of perverse sheaves. However, the following example illustrates that unlike
+for abelian schemes, in the case of semiabelian schemes the functor V in
+general does not preserve the Euler characteristic.

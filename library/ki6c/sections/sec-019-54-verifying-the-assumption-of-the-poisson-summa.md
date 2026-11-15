@@ -1,6 +1,6 @@
 ---
 doc_id: ki6c
-doc_title: "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings Tomotada Ohtsuki and Yoshiyuki Yokota Introduction"
+doc_title: "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings"
 section_id: sec-019-54-verifying-the-assumption-of-the-poisson-summa
 section_title: "Verifying the assumption of the Poisson summation formula"
 section_number: 5.4
@@ -8,7 +8,9 @@ pages: 52-53
 source_pdf: ki6c.pdf
 source_sha256: b13a73517b349654
 toc_source: inferred
+doc_brief: "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings — We give presentations of the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings."
 ---
+Verifying the assumption of the Poisson summation formula
 In this section, we verify the assumption of the Poisson summation formula in Lemma 5.2,
 which is used in the proof of Theorem 1.1 for the 63 knot in Section 5.1. As we mentioned
 in Remark 2.5, we verify the assumption for ˆV (t, s, u) instead of V (t, s, u), since V (t, s, u)
@@ -180,4 +182,3 @@ As for (19) and (20), similarly as above, it is suﬃcient to show that
 )
 < 2π −ε′
 for some ε′ > 0. We obtain this formula from (89) by the symmetry (87).
-5.5

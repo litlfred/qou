@@ -1,0 +1,1 @@
+The modules $\rep{\hat \chi}$ form a nontrivial vector bundle over $\mathop{\mathrm{Spec}}\Wcharhat$; to describe the matrices $R$ we need to choose concrete $\mathcal{W}_{\xi}$-module structures on them, i.e. we must locally trivialize.

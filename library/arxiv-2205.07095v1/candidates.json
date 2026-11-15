@@ -1,15 +1,13 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2205.07095v1",
- "document_class": "math",
- "validated": true,
  "source": {
   "structure_sha256": "2ec6916399150e2d1cf3e406b98e7cc316a40d790eb048fe5659774482ff0354",
   "file": "2205.07095v1.pdf"
  },
  "provenance": {
-  "title": "Virial Expansions for Correlation Functions in Canonical Ensemble A. L. Rebenko",
-  "authors": "Institute of Mathematics, Ukrainian National Academy of Sciences , Kyiv, Ukraine",
+  "title": "Virial Expansions for Correlation Functions in Canonical Ensemble",
+  "authors": "Institute of Mathematics, Ukrainian National Academy of Sciences, Kyiv, Ukraine",
   "arxiv": {
    "id": "2205.07095",
    "version": "1",
@@ -18,81 +16,46 @@
   },
   "doi": null
  },
- "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "aspects": [
+  "requirements"
+ ],
  "summary": {
-  "candidates": 5,
+  "candidates": 2,
   "by_kind": {
-   "lemma": 1,
-   "proposition": 2,
-   "remark": 2
+   "recommendation": 2
   },
-  "formalization_candidates": 3
+  "formalization_candidates": 0
  },
  "candidates": [
   {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "2.1",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
    "name": null,
-   "statement": "For all measurable functions G : \u0393 0 \u21a6\u2192R and H : \u0393 0 \u00d7 \u0393 0 \u21a6\u2192",
-   "section_file": "sections/sec-001-2-on-some-mathematical-concepts.md",
-   "section_title": "On some mathematical concepts",
-   "pages": "3-4",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "proposition",
-   "source_kind": "proposition",
-   "number": "4.1",
-   "name": null,
-   "statement": "From initial conditions (4.48)-(4.49) it follows that",
-   "section_file": "sections/sec-008-42-graphic-interpretation-of-solutions.md",
-   "section_title": "Graphic interpretation of solutions.",
-   "pages": "10-13",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "4.1",
-   "name": null,
-   "statement": "The set D(\u03b7;\u03b3) is the set of rooted graph, connected compo-",
-   "section_file": "sections/sec-008-42-graphic-interpretation-of-solutions.md",
+   "statement": "$$\\label{kern2} \\widehat{T}(\\eta|n):=\\int_{\\Gamma^{(n)}} T(\\eta|\\gamma)d\\gamma =\\int_{\\Bbb R^{dn}} (dy)^nT(\\eta|\\{y\\}_1^n),$$ especially since this is the value that must be substituted into the formula for the solution [\\[SSCA-2\\]](#SSCA-2){reference-type=\"eqref\" reference=\"SSCA-2\"}. $$\\begin{aligned} \\label{final2} \\widehat{T}(\\eta|n)&=\\varrho e^{-\\beta W(x_1; \\eta^{(\\hat{x}_1)})}\\sum_{k=0}^n {n \\choose k} \\int (dy)^k K(x_1;\\{y\\}_1^k)\\widehat{T}(\\eta^{(\\hat{x}_1)}\\cup\\{y\\}_1^k)|n-k)-\\notag \\\\ &-\\sum_{k=1}^n {n \\choose k}\\sum_{l=1}^k {k \\choose l}\\int (dy)^l K(x_1;\\{y\\}_1^l)\\widehat{T}(\\eta|n-k)\\widehat{T}(\\{y\\}_1^l|k-l). \\end{aligned}$$ For $k=0$ in the first line of formula [\\[final2\\]](#final2){reference-type=\"eqref\" reference=\"final2\"}, the term $\\widehat{T}(\\eta^{(\\hat{x}_1)}|n)$ corresponds to the analytical contribution of all graphs $\\mathcal{D}(\\eta; \\gamma)$, in which the vertex $x_1$ has no edges.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-009-42-graphic-interpretation-of-solutions.md",
    "section_title": "Graphic interpretation of solutions.",
    "pages": "10-13",
    "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   },
   {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "4.2",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
    "name": null,
-   "statement": "According to (4.34), integration is performed at the points of",
-   "section_file": "sections/sec-008-42-graphic-interpretation-of-solutions.md",
+   "statement": "If the vertex did not have edges, then operation $\\int (dy)^l K(x_1;\\{y\\}_1^l)$ does not ensure that it belongs to the set $\\mathcal{D}(\\eta; \\gamma)$, and such a diagram should be reduced.This is ensured by the presence of a similar contribution in the second line of the formula [\\[final2\\]](#final2){reference-type=\"eqref\" reference=\"final2\"}.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-009-42-graphic-interpretation-of-solutions.md",
    "section_title": "Graphic interpretation of solutions.",
    "pages": "10-13",
    "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "proposition",
-   "source_kind": "proposition",
-   "number": "4.2",
-   "name": null,
-   "statement": "The solution of the recurrence relation (4.47) can be",
-   "section_file": "sections/sec-008-42-graphic-interpretation-of-solutions.md",
-   "section_title": "Graphic interpretation of solutions.",
-   "pages": "10-13",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   }
  ]
 }

@@ -1,0 +1,52 @@
+3.5. Nearby cycles 55
+
+EXAMPLE 3.12. Forn € N consider the kernel X(n] of the multiplication
+morphism [n| : X —+ X. This kernel is a quasi-finite group scheme over S
+and decomposes as a disjoint union
+
+X[n] = YIIZ
+
+where Y is finite over S and where ZX; = @. In general Z # ©, but the
+perverse skyscraper sheaf
+
+oz, € P(Xq) satisfies Y(6z,) =0
+since the support of the nearby cycles must be contained in Z Xs = ©.
+
+For the rest of this section we will always assume that for all geometric
+points t of S the fibre X; satisfies the generic vanishing assumption GV (X;)
+from section 3.1. We can then consider the quotient categories
+
+D(X,) = D(X,)/T(X,) and P(X,) = P(X;)/S(X;)
+
+as defined in section 3.4. Note that the Euler characteristic is well-defined
+on objects of these quotient categories.
+
+LEMMA 3.13. The functor W descends to a functor ¥ : P(X,) > P(X),
+for all P,Q € P(X) we have
+
+@ 0 < x(¥(P)) < x(P),
+) 0 < x(¥(P)*¥(Q)) < x(P(P*Q)),
+and ¥(P) * ¥(Q) is a direct summand of ¥(P * Q) in the category P(X,).
+
+4
+4
+
+Proof. We begin with some preliminary remarks. Let f: Y + Z be a
+homomorphism of semiabelian S-schemes. By abuse of notation we again
+write f for any base change of it. Consider for Y = Y xs S and Z=Zxs5S
+the commutative diagram
+
+J
+Y; . Y Ya
+s| s| |
+i = /
+Zs . Z Zi
+
+over S. For K € D(Y) this gives a commutative diagram
+
+be
+
+7 (RA(K)) Rf (K))
+| -
+i (Rf.(K)) — Rf.(7 (K))
+

@@ -105,6 +105,8 @@ export default chapter({
         "unmapped-torus-knots",
         "torus-knot-prime-powers",
         "force-knot-identification",
+        "weak-vertex-left-projector",
+        "weak-vertex-left-projector-proof",
         "torus-knot-genus-four-unique",
         "torus-knot-genus-four-unique-proof",
         "force-carrier-bring-uniqueness",

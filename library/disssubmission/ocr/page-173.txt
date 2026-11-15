@@ -1,0 +1,47 @@
+APPENDIX D
+
+Doubly transitive permutation groups
+
+In this appendix we verify the fact about 2-transitive permutation groups
+that has been used in the proof of theorem 5.2. For n € N consider the set of
+all n-element subsets of {1,2,...,2n}. The symmetric group G2, permutes
+these VN = (7”) subsets transitively, so we have an embedding
+
+Q: Gan > Gn
+
+as a transitive subgroup. Consider the stabilizer of {1,2,...,n}, ie. the
+subgroup G, x Gn C Grn. This stabilizer fixes precisely two n-element
+subsets, viz. {1,2,...,n} and {n+1,n+2,...,2n}. The same holds for the
+subgroup A = 2%, x {1} C Gn x Gn.
+
+LEMMA D.1. Let G be a 2-transitive subgroup of Gy containing (A).
+Then either G = Ay or G= Gy.
+
+Proof. By [19, prop. 5.2] the 2-transitive permutation group G has a
+unique minimal normal subgroup H which is either elementary abelian or
+simple. In the elementary abelian case the degree N of the permutation
+representation would be a prime power by theorem 4.1 of loc. cit., which is
+not the case for N = 7”) with n > 1. So H is simple, and by loc. cit.
+
+n
+HC GC Aut(H)
+
+where H is one of the finite simple groups in the following list.
+
+H N
+a) Qy arbitrary
+b) — PSla(q) (¢1-1)/(q-1)
+c) — PSU3(q) gol
+d) Sz(q) Gti
+e) R(q) grt
+Ff) SPoa@) 24-1(24 +1)
+
+g) furthercases 11,12,15,22,23,24, 176,276
+
+We must show that under the assumptions of our lemma, the only possible
+case is a). Let us assume first that n > 4. Clearly f) and g) cannot occur
+since in these cases N is not a binomial coefficient ?"), see remark D.2
+below. To exclude the remaining cases we use that the group @(A) = Yn is
+simple for n > 4. Since the outer automorphism group Out(H) = Aut(H)/H
+
+165

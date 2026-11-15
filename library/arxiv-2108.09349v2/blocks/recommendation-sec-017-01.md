@@ -1,0 +1,1 @@
+\begin{property}\label{property:1} If $\alpha$ is maximal and assigns an angle in $\{0,\pi\}$ to a tetrahedron, then the tetrahedron must be flat, i.e., its angles are $0$, $0$, $\pi$ in some order. \end{property}

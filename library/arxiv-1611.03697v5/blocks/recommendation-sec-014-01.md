@@ -1,0 +1,1 @@
+The gist of condition (a) is that the function $\Phi$ should be holomorphic in the complement of the active rays, and for each active ray $\ell \subset \bC^*$ the analytic continuations of the two functions on either side should differ by composition with the corresponding automorphism $\bS(\ell)$.

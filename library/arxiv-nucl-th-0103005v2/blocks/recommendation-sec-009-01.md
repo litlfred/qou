@@ -1,0 +1,1 @@
+Initial calculations of $A$=9,10 nuclei have been made by the authors, and studies of $A$=11,12 nuclei should be feasible in the next few years by variational and Green's function Monte Carlo methods.

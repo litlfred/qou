@@ -106,7 +106,10 @@ private lemma one_div_mul_eq_div_of_ne {a b : ℝ} (ha : a ≠ 0) (hb : b ≠ 0)
     NOT depend on the specific Frobenius pairing τ used to construct
     `C_{dim_q}`.  In particular, on `H_n(q)` the two natural choices
 
-      - **Plancherel-A**:  `τ_P(p_λ) = dim_q(λ)·d_λ / [n]_q!`
+      - **unweighted Plancherel functional**:  `τ_P(p_λ) = dim_q(λ)·d_λ / [n]_q!`
+        (no `q^{-κ_λ}` factor, so it is NOT the canonical trace
+        `τ(σ_w) = δ_{w,1}`, which carries that factor — see
+        `QOU.MathlibExt.MolienFakeDegree`)
       - **Wenzl-Schur**:   `τ_W(p_λ) = y_λ`
 
     give different `C_{dim_q}` elements but the **same** trace value
@@ -117,7 +120,7 @@ private lemma one_div_mul_eq_div_of_ne {a b : ℝ} (ha : a ≠ 0) (hb : b ≠ 0)
     Computational verification:
     `computations/probe_term4_conventions.py`.
 
-    Consequence: the Plancherel-vs-Wenzl-Schur convention disagreement
+    Consequence: the unweighted-Plancherel-vs-Wenzl-Schur convention disagreement
     affecting `tr_M(T_w)` (Term 1 of the unified mass formula) does
     NOT propagate into Term 4.  Term 4 is convention-rigid.
 

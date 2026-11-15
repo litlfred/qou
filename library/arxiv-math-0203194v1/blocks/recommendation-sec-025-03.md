@@ -1,0 +1,1 @@
+Similarly, we shall write $\mathrm{H}^1_{\mathrm{B}}(A_{\C_p}, F)$ for the $F$-subspace described \ref{betti-la} (well-defined up to a homothety in $\sqrt{F^\times}$), and $ \mathrm{H}_{1,\mathrm{B}}(A_{\C_p},F) $ for its $F$-dual.

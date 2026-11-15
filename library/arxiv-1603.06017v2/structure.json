@@ -8,10 +8,10 @@
   "pages": 34,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "math_source": "latex",
-  "mtime": null,
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,19 +21,31 @@
    "stamp_date": "25 May 2021"
   },
   "doi": null,
-  "title": "Automatic Theorem Proving in Walnut Hamoon Mousavi",
-  "authors_raw": "May 27, 2021",
+  "title": "Automatic Theorem Proving in Walnut",
+  "authors_raw": "Hamoon Mousavi",
   "title_lines": [
    "Automatic Theorem Proving in",
-   "Walnut",
-   "Hamoon Mousavi"
+   "Walnut"
   ],
   "abstract": null,
   "docinfo": {
    "Producer": "pdfTeX-1.40.21",
    "Creator": "LaTeX with hyperref",
    "CreationDate": "D:20210527005151Z"
-  }
+  },
+  "title_raw": "Automatic Theorem Proving in Walnut",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Automatic Theorem Proving in Walnut",
+   "outline": "1 Introduction",
+   "text": "Automatic Theorem Proving in Walnut",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Automatic Theorem Proving in Walnut Hamoon Mousavi"
  },
  "toc": [
   {
@@ -41,300 +53,1260 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Basics",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Words and Automata",
    "page": 3,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Number Systems",
    "page": 4,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Automatic Words",
    "page": 6,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Automata accepting Predicates",
    "page": 7,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Syntax and Semantic of Predicates in Walnut",
    "page": 9,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Alphabets",
    "page": 9,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Arithmetic and Alphabetic Constants",
    "page": 9,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Variables",
    "page": 9,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Operators",
    "page": 9,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Arithmetic Expressions",
    "page": 10,
    "source": "outline",
-   "number": "3.5"
+   "number": "3.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Indexing Expressions and Their Semantic Rules",
    "page": 11,
    "source": "outline",
-   "number": "3.6"
+   "number": "3.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "Calling Expressions and Their Semantic Rules",
    "page": 11,
    "source": "outline",
-   "number": "3.7"
+   "number": "3.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "Relative Expressions",
    "page": 11,
    "source": "outline",
-   "number": "3.8"
+   "number": "3.8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "Predicates",
    "page": 12,
    "source": "outline",
-   "number": "3.9"
+   "number": "3.9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 1,
    "title": "Decision Procedure: Walnut's Implementation",
    "page": 12,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Cross Product",
    "page": 12,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Quantification",
    "page": 14,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 2,
    "title": "Complement and Reverse",
    "page": 15,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Arithmetic and Comparison Operators",
    "page": 16,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "Calling an Automaton",
    "page": 17,
    "source": "outline",
-   "number": "4.5"
+   "number": "4.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Indexing an Automatic Word",
    "page": 18,
    "source": "outline",
-   "number": "4.6"
+   "number": "4.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 1,
    "title": "Special Automata in Walnut",
    "page": 19,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 2,
    "title": "True and False Automata",
    "page": 19,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 2,
    "title": "Non-arithmetic Automata",
    "page": 19,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 1,
    "title": "Installation",
    "page": 20,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 2,
    "title": "Eclipse",
    "page": 20,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 1,
    "title": "Commands",
    "page": 20,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 2,
    "title": "eval: eval <name> <predicate>",
    "page": 22,
    "source": "outline",
-   "number": "7.1"
+   "number": "7.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "def: def <name> <predicate>",
    "page": 26,
    "source": "outline",
-   "number": "7.2"
+   "number": "7.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 2,
    "title": "macro: macro <name> <template>",
    "page": 27,
    "source": "outline",
-   "number": "7.3"
+   "number": "7.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
    "level": 2,
    "title": "Matrices with eval and def",
    "page": 29,
    "source": "outline",
-   "number": "7.4"
+   "number": "7.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
   },
   {
    "level": 2,
    "title": "reg",
    "page": 29,
    "source": "outline",
-   "number": "7.5"
+   "number": "7.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
   },
   {
    "level": 2,
    "title": "load: load <file name>",
    "page": 31,
    "source": "outline",
-   "number": "7.6"
+   "number": "7.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "31"
   },
   {
    "level": 1,
    "title": "Working with Input/Output",
    "page": 32,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "32"
   },
   {
    "level": 2,
    "title": "Defining Automata in Text Files",
    "page": 32,
    "source": "outline",
-   "number": "8.1"
+   "number": "8.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "32"
   },
   {
    "level": 2,
    "title": "Defining New Automatic Words",
    "page": 33,
    "source": "outline",
-   "number": "8.2"
+   "number": "8.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
   },
   {
    "level": 2,
    "title": "Defining New Number Systems",
    "page": 33,
    "source": "outline",
-   "number": "8.3"
+   "number": "8.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
   },
   {
    "level": 2,
    "title": "Converting .gv files to .jpeg",
    "page": 34,
    "source": "outline",
-   "number": "8.4"
+   "number": "8.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "34"
   },
   {
    "level": 1,
    "title": "References",
    "page": 34,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "34"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "2.1",
+   "title": "Automaton accepting tuples of same length representations of 4 and 5 in binary In other words, the automaton accepts tuples t = (w1,w2) ∈{0,1}∗×{0,1}∗where w1 and w2 are representations of the the same length, in the most-signiﬁcant-digit-ﬁrst binary system, of natural numbers 4 and 5 respectively",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "2.2",
+   "title": "Automaton computing Rmsd_2",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "2.3",
+   "title": "Automaton computing +msd_2",
+   "page": 5,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "2.4",
+   "title": "Automaton computing =msd_2",
+   "page": 5,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "2.5",
+   "title": "Automaton computing <msd_2",
+   "page": 5,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "2.6",
+   "title": "Automaton computing Rmsd_ﬁb",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "figure",
+   "number": "2.7",
+   "title": "The Thue-Morse word",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "2.8",
+   "title": "The automaton accepting a = 4&b = 13, does not accept all representations of 4",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "2.9",
+   "title": "Automaton accepting a = 1&(?lsd_2 b = 1)",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "table",
+   "number": "3.1",
+   "title": "List of operators in Walnut",
+   "page": 10,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "figure",
+   "number": "4.1",
+   "title": "Automaton (a) : a = 1",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "13"
+  },
+  {
+   "kind": "figure",
+   "number": "4.2",
+   "title": "Automaton (b) : b = 2",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "13"
+  },
+  {
+   "kind": "figure",
+   "number": "4.3",
+   "title": "Cross product (a) : a = 1×(b) : b = 2",
+   "page": 13,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "13"
+  },
+  {
+   "kind": "figure",
+   "number": "4.4",
+   "title": "Automaton (a,b) : a = 1&b = 2",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "13"
+  },
+  {
+   "kind": "figure",
+   "number": "4.5",
+   "title": "Non-deterministic automaton E(M,2)",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "14"
+  },
+  {
+   "kind": "figure",
+   "number": "4.6",
+   "title": "Non-deterministic automaton accepting Eb a = 1&b = 2",
+   "page": 15,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "15"
+  },
+  {
+   "kind": "figure",
+   "number": "4.7",
+   "title": "(a) : Eb a = 1&b = 2",
+   "page": 15,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "15"
+  },
+  {
+   "kind": "figure",
+   "number": "4.8",
+   "title": "Number 1 in Fibonacci",
+   "page": 16,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "16"
+  },
+  {
+   "kind": "figure",
+   "number": "4.9",
+   "title": "Totalized automaton",
+   "page": 16,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "16"
+  },
+  {
+   "kind": "figure",
+   "number": "4.10",
+   "title": "Switching ﬁnal and non-ﬁnal states",
+   "page": 16,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "16"
+  },
+  {
+   "kind": "figure",
+   "number": "4.11",
+   "title": "Automata accepting all numbers in Fibonacci except 1",
+   "page": 16,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "16"
+  },
+  {
+   "kind": "figure",
+   "number": "4.12",
+   "title": "Automaton for 0<=a −1+1 does not accept 0∗",
+   "page": 17,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "17"
+  },
+  {
+   "kind": "figure",
+   "number": "4.13",
+   "title": "Automata for 0<=a +1−1 accepts 0∗",
+   "page": 17,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "17"
+  },
+  {
+   "kind": "figure",
+   "number": "4.14",
+   "title": "Automaton accepting Q",
+   "page": 18,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "18"
+  },
+  {
+   "kind": "figure",
+   "number": "5.1",
+   "title": "True automaton",
+   "page": 19,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "19"
+  },
+  {
+   "kind": "figure",
+   "number": "5.2",
+   "title": "False automaton",
+   "page": 19,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "19"
+  },
+  {
+   "kind": "figure",
+   "number": "7.1",
+   "title": "Content of the ﬁle four.gv",
+   "page": 22,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "22"
+  },
+  {
+   "kind": "figure",
+   "number": "7.2",
+   "title": "lsd_four.gv",
+   "page": 23,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "23"
+  },
+  {
+   "kind": "figure",
+   "number": "7.3",
+   "title": "ternary_example.gv",
+   "page": 23,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "23"
+  },
+  {
+   "kind": "figure",
+   "number": "7.4",
+   "title": "two_inputs.gv",
+   "page": 23,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "23"
+  },
+  {
+   "kind": "figure",
+   "number": "7.5",
+   "title": "order_of_squares_in_thue_morse_word.gv",
+   "page": 24,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "24"
+  },
+  {
+   "kind": "figure",
+   "number": "7.6",
+   "title": "thue_morse_does_not_have_overlaps.gv",
+   "page": 25,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "25"
+  },
+  {
+   "kind": "figure",
+   "number": "7.7",
+   "title": "lessThanThree.gv",
+   "page": 26,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "26"
+  },
+  {
+   "kind": "figure",
+   "number": "7.8",
+   "title": "ﬁve.gv",
+   "page": 26,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "26"
+  },
+  {
+   "kind": "figure",
+   "number": "7.9",
+   "title": "three.gv",
+   "page": 26,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "26"
+  },
+  {
+   "kind": "figure",
+   "number": "7.10",
+   "title": "another_nonsense.gv",
+   "page": 27,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "27"
+  },
+  {
+   "kind": "figure",
+   "number": "7.11",
+   "title": "power2LessThan20.gv",
+   "page": 30,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "30"
+  },
+  {
+   "kind": "figure",
+   "number": "7.12",
+   "title": "note_the_intersection.gv",
+   "page": 31,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "31"
+  },
+  {
+   "kind": "table",
+   "number": "7.1",
+   "title": "syntax summary for regular expressions",
+   "page": 31,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "31"
+  },
+  {
+   "kind": "figure",
+   "number": "8.1",
+   "title": "Automata for paperfolding words",
+   "page": 32,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "32"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 4573,
+   "n_words": 1853,
+   "label_start": "1",
+   "label_end": "2"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 3,
-   "n_chars": 8530,
-   "n_words": 2480
+   "n_chars": 4040,
+   "n_words": 638,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
    "id": "sec-001-2-basics",
@@ -343,8 +1315,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 3,
-   "n_words": 1
+   "n_chars": 6,
+   "n_words": 1,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
    "id": "sec-002-21-words-and-automata",
@@ -353,8 +1327,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 5111,
-   "n_words": 933
+   "n_chars": 5130,
+   "n_words": 936,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
    "id": "sec-003-22-number-systems",
@@ -363,8 +1339,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 6,
-   "n_chars": 5760,
-   "n_words": 1025
+   "n_chars": 5756,
+   "n_words": 1024,
+   "label_start": "4",
+   "label_end": "6"
   },
   {
    "id": "sec-004-23-automatic-words",
@@ -373,8 +1351,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 2917,
-   "n_words": 542
+   "n_chars": 2929,
+   "n_words": 543,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
    "id": "sec-005-24-automata-accepting-predicates",
@@ -382,69 +1362,83 @@
    "title": "Automata accepting Predicates",
    "level": 2,
    "page_start": 7,
-   "page_end": 8,
-   "n_chars": 2689,
-   "n_words": 456
-  },
-  {
-   "id": "sec-006-33-variables",
-   "number": "3.3",
-   "title": "Variables",
-   "level": 2,
-   "page_start": 8,
-   "page_end": 8,
-   "n_chars": 1941,
-   "n_words": 342
-  },
-  {
-   "id": "sec-007-34-operators",
-   "number": "3.4",
-   "title": "Operators",
-   "level": 2,
-   "page_start": 8,
    "page_end": 9,
-   "n_chars": 1822,
-   "n_words": 331
+   "n_chars": 6670,
+   "n_words": 1161,
+   "label_start": "7",
+   "label_end": "9"
   },
   {
-   "id": "sec-008-3-syntax-and-semantic-of-predicates-in-walnut",
+   "id": "sec-006-3-syntax-and-semantic-of-predicates-in-walnut",
    "number": "3",
    "title": "Syntax and Semantic of Predicates in Walnut",
    "level": 1,
    "page_start": 9,
    "page_end": 9,
-   "n_chars": 3,
-   "n_words": 1
+   "n_chars": 43,
+   "n_words": 7,
+   "label_start": "9",
+   "label_end": "9"
   },
   {
-   "id": "sec-009-31-alphabets",
+   "id": "sec-007-31-alphabets",
    "number": "3.1",
    "title": "Alphabets",
    "level": 2,
    "page_start": 9,
    "page_end": 9,
-   "n_chars": 193,
-   "n_words": 35
+   "n_chars": 199,
+   "n_words": 35,
+   "label_start": "9",
+   "label_end": "9"
   },
   {
-   "id": "sec-010-32-arithmetic-and-alphabetic-constants",
+   "id": "sec-008-32-arithmetic-and-alphabetic-constants",
    "number": "3.2",
    "title": "Arithmetic and Alphabetic Constants",
    "level": 2,
    "page_start": 9,
    "page_end": 9,
-   "n_chars": 1194,
-   "n_words": 196
+   "n_chars": 1289,
+   "n_words": 207,
+   "label_start": "9",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-009-33-variables",
+   "number": "3.3",
+   "title": "Variables",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 157,
+   "n_words": 26,
+   "label_start": "9",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-010-34-operators",
+   "number": "3.4",
+   "title": "Operators",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1219,
+   "n_words": 222,
+   "label_start": "9",
+   "label_end": "10"
   },
   {
    "id": "sec-011-35-arithmetic-expressions",
    "number": "3.5",
    "title": "Arithmetic Expressions",
    "level": 2,
-   "page_start": 9,
+   "page_start": 10,
    "page_end": 11,
-   "n_chars": 2883,
-   "n_words": 499
+   "n_chars": 1489,
+   "n_words": 247,
+   "label_start": "10",
+   "label_end": "11"
   },
   {
    "id": "sec-012-36-indexing-expressions-and-their-semantic-rules",
@@ -453,231 +1447,393 @@
    "level": 2,
    "page_start": 11,
    "page_end": 11,
-   "n_chars": 118,
-   "n_words": 19
+   "n_chars": 1640,
+   "n_words": 265,
+   "label_start": "11",
+   "label_end": "11"
   },
   {
-   "id": "sec-013-39-predicates",
-   "number": "3.9",
-   "title": "Predicates",
-   "level": 2,
-   "page_start": 11,
-   "page_end": 11,
-   "n_chars": 1429,
-   "n_words": 234
-  },
-  {
-   "id": "sec-014-37-calling-expressions-and-their-semantic-rules",
+   "id": "sec-013-37-calling-expressions-and-their-semantic-rules",
    "number": "3.7",
    "title": "Calling Expressions and Their Semantic Rules",
    "level": 2,
    "page_start": 11,
    "page_end": 11,
-   "n_chars": 1035,
-   "n_words": 190
+   "n_chars": 1076,
+   "n_words": 195,
+   "label_start": "11",
+   "label_end": "11"
   },
   {
-   "id": "sec-015-38-relative-expressions",
+   "id": "sec-014-38-relative-expressions",
    "number": "3.8",
    "title": "Relative Expressions",
    "level": 2,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 2108,
-   "n_words": 340
+   "n_chars": 698,
+   "n_words": 117,
+   "label_start": "11",
+   "label_end": "12"
   },
   {
-   "id": "sec-016-41-cross-product",
+   "id": "sec-015-39-predicates",
+   "number": "3.9",
+   "title": "Predicates",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 793,
+   "n_words": 133,
+   "label_start": "12",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-016-4-decision-procedure-walnuts-implementation",
+   "number": "4",
+   "title": "Decision Procedure: Walnut's Implementation",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 588,
+   "n_words": 87,
+   "label_start": "12",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-017-41-cross-product",
    "number": "4.1",
    "title": "Cross Product",
    "level": 2,
    "page_start": 12,
-   "page_end": 15,
-   "n_chars": 8692,
-   "n_words": 1660
+   "page_end": 14,
+   "n_chars": 3504,
+   "n_words": 710,
+   "label_start": "12",
+   "label_end": "14"
   },
   {
-   "id": "sec-017-43-complement-and-reverse",
+   "id": "sec-018-42-quantification",
+   "number": "4.2",
+   "title": "Quantification",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 5179,
+   "n_words": 948,
+   "label_start": "14",
+   "label_end": "15"
+  },
+  {
+   "id": "sec-019-43-complement-and-reverse",
    "number": "4.3",
    "title": "Complement and Reverse",
    "level": 2,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 1890,
-   "n_words": 317
+   "n_chars": 1909,
+   "n_words": 319,
+   "label_start": "15",
+   "label_end": "16"
   },
   {
-   "id": "sec-018-44-arithmetic-and-comparison-operators",
+   "id": "sec-020-44-arithmetic-and-comparison-operators",
    "number": "4.4",
    "title": "Arithmetic and Comparison Operators",
    "level": 2,
    "page_start": 16,
    "page_end": 17,
-   "n_chars": 3044,
-   "n_words": 580
+   "n_chars": 3076,
+   "n_words": 583,
+   "label_start": "16",
+   "label_end": "17"
   },
   {
-   "id": "sec-019-45-calling-an-automaton",
+   "id": "sec-021-45-calling-an-automaton",
    "number": "4.5",
    "title": "Calling an Automaton",
    "level": 2,
    "page_start": 17,
    "page_end": 18,
-   "n_chars": 2237,
-   "n_words": 406
+   "n_chars": 2254,
+   "n_words": 408,
+   "label_start": "17",
+   "label_end": "18"
   },
   {
-   "id": "sec-020-46-indexing-an-automatic-word",
+   "id": "sec-022-46-indexing-an-automatic-word",
    "number": "4.6",
    "title": "Indexing an Automatic Word",
    "level": 2,
    "page_start": 18,
    "page_end": 19,
-   "n_chars": 1090,
-   "n_words": 177
+   "n_chars": 1115,
+   "n_words": 180,
+   "label_start": "18",
+   "label_end": "19"
   },
   {
-   "id": "sec-021-5-special-automata-in-walnut",
+   "id": "sec-023-5-special-automata-in-walnut",
    "number": "5",
    "title": "Special Automata in Walnut",
    "level": 1,
    "page_start": 19,
    "page_end": 19,
-   "n_chars": 3,
-   "n_words": 1
+   "n_chars": 26,
+   "n_words": 4,
+   "label_start": "19",
+   "label_end": "19"
   },
   {
-   "id": "sec-022-51-true-and-false-automata",
+   "id": "sec-024-51-true-and-false-automata",
    "number": "5.1",
    "title": "True and False Automata",
    "level": 2,
    "page_start": 19,
    "page_end": 19,
-   "n_chars": 1548,
-   "n_words": 278
+   "n_chars": 1568,
+   "n_words": 281,
+   "label_start": "19",
+   "label_end": "19"
   },
   {
-   "id": "sec-023-52-non-arithmetic-automata",
+   "id": "sec-025-52-non-arithmetic-automata",
    "number": "5.2",
    "title": "Non-arithmetic Automata",
    "level": 2,
    "page_start": 19,
    "page_end": 20,
-   "n_chars": 1040,
-   "n_words": 173
+   "n_chars": 1062,
+   "n_words": 174,
+   "label_start": "19",
+   "label_end": "20"
   },
   {
-   "id": "sec-024-6-installation",
+   "id": "sec-026-6-installation",
    "number": "6",
    "title": "Installation",
    "level": 1,
    "page_start": 20,
    "page_end": 20,
-   "n_chars": 1184,
-   "n_words": 202
+   "n_chars": 1193,
+   "n_words": 202,
+   "label_start": "20",
+   "label_end": "20"
   },
   {
-   "id": "sec-025-61-eclipse",
+   "id": "sec-027-61-eclipse",
    "number": "6.1",
    "title": "Eclipse",
    "level": 2,
    "page_start": 20,
    "page_end": 20,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 7,
+   "n_words": 1,
+   "label_start": "20",
+   "label_end": "20"
   },
   {
-   "id": "sec-026-7-commands",
+   "id": "sec-028-7-commands",
    "number": "7",
    "title": "Commands",
    "level": 1,
    "page_start": 20,
    "page_end": 22,
-   "n_chars": 4084,
-   "n_words": 749
+   "n_chars": 4080,
+   "n_words": 748,
+   "label_start": "20",
+   "label_end": "22"
   },
   {
-   "id": "sec-027-71-eval-eval-name-predicate",
+   "id": "sec-029-71-eval-eval-name-predicate",
    "number": "7.1",
    "title": "eval: eval <name> <predicate>",
    "level": 2,
    "page_start": 22,
    "page_end": 26,
-   "n_chars": 8497,
-   "n_words": 1572
+   "n_chars": 8523,
+   "n_words": 1575,
+   "label_start": "22",
+   "label_end": "26"
   },
   {
-   "id": "sec-028-72-def-def-name-predicate",
+   "id": "sec-030-72-def-def-name-predicate",
    "number": "7.2",
    "title": "def: def <name> <predicate>",
    "level": 2,
    "page_start": 26,
    "page_end": 27,
-   "n_chars": 3058,
-   "n_words": 528
+   "n_chars": 3082,
+   "n_words": 531,
+   "label_start": "26",
+   "label_end": "27"
   },
   {
-   "id": "sec-029-73-macro-macro-name-template",
+   "id": "sec-031-73-macro-macro-name-template",
    "number": "7.3",
    "title": "macro: macro <name> <template>",
    "level": 2,
    "page_start": 27,
    "page_end": 29,
-   "n_chars": 3630,
-   "n_words": 656
+   "n_chars": 3657,
+   "n_words": 659,
+   "label_start": "27",
+   "label_end": "29"
   },
   {
-   "id": "sec-030-74-matrices-with-eval-and-def",
+   "id": "sec-032-74-matrices-with-eval-and-def",
    "number": "7.4",
    "title": "Matrices with eval and def",
    "level": 2,
    "page_start": 29,
    "page_end": 29,
-   "n_chars": 1888,
-   "n_words": 343
+   "n_chars": 1911,
+   "n_words": 347,
+   "label_start": "29",
+   "label_end": "29"
   },
   {
-   "id": "sec-031-75-reg",
+   "id": "sec-033-75-reg",
    "number": "7.5",
    "title": "reg",
    "level": 2,
    "page_start": 29,
-   "page_end": 32,
-   "n_chars": 5069,
-   "n_words": 891
+   "page_end": 31,
+   "n_chars": 4729,
+   "n_words": 829,
+   "label_start": "29",
+   "label_end": "31"
   },
   {
-   "id": "sec-032-8-working-with-inputoutput",
+   "id": "sec-034-76-load-load-file-name",
+   "number": "7.6",
+   "title": "load: load <file name>",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 32,
+   "n_chars": 337,
+   "n_words": 61,
+   "label_start": "31",
+   "label_end": "32"
+  },
+  {
+   "id": "sec-035-8-working-with-inputoutput",
    "number": "8",
    "title": "Working with Input/Output",
    "level": 1,
    "page_start": 32,
-   "page_end": 34,
-   "n_chars": 5563,
-   "n_words": 1053
+   "page_end": 32,
+   "n_chars": 150,
+   "n_words": 24,
+   "label_start": "32",
+   "label_end": "32"
   },
   {
-   "id": "sec-033-references",
+   "id": "sec-036-81-defining-automata-in-text-files",
+   "number": "8.1",
+   "title": "Defining Automata in Text Files",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 33,
+   "n_chars": 2713,
+   "n_words": 529,
+   "label_start": "32",
+   "label_end": "33"
+  },
+  {
+   "id": "sec-037-82-defining-new-automatic-words",
+   "number": "8.2",
+   "title": "Defining New Automatic Words",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 33,
+   "n_chars": 481,
+   "n_words": 90,
+   "label_start": "33",
+   "label_end": "33"
+  },
+  {
+   "id": "sec-038-83-defining-new-number-systems",
+   "number": "8.3",
+   "title": "Defining New Number Systems",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 34,
+   "n_chars": 1772,
+   "n_words": 328,
+   "label_start": "33",
+   "label_end": "34"
+  },
+  {
+   "id": "sec-039-84-converting-gv-files-to-jpeg",
+   "number": "8.4",
+   "title": "Converting .gv files to .jpeg",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 34,
+   "n_chars": 453,
+   "n_words": 81,
+   "label_start": "34",
+   "label_end": "34"
+  },
+  {
+   "id": "sec-040-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 34,
    "page_end": 34,
    "n_chars": 2492,
-   "n_words": 348
+   "n_words": 348,
+   "label_start": "34",
+   "label_end": "34"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 41,
-  "sections": 34,
-  "chars_total": 92745,
+  "toc_inferred_entries": 0,
+  "figure_entries": 40,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 1,
+    "items": [
+     "Hamoon Mousavi May 27,"
+    ]
+   },
+   "found_not_listed": {
+    "count": 9,
+    "items": [
+     "7 Commands",
+     "8 Working with Input/Output",
+     "7 Commands",
+     "7.4 Matrices with eval and def",
+     "8 Working with Input/Output",
+     "8.1 Deﬁning Automata in Text Files",
+     "8.2 Deﬁning New Automatic Words",
+     "8.3 Deﬁning New Number Systems",
+     "8.4 Converting .gv ﬁles to .jpeg"
+    ]
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 42,
+  "chars_total": 93568,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
    "tex_sections": 40,
-   "overlaid": 23,
+   "overlaid": 39,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -685,9 +1841,14 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
+     "prose_ratio": 0.925,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
@@ -695,8 +1856,10 @@
     {
      "id": "sec-001-2-basics",
      "title": "Basics",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-002-21-words-and-automata",
@@ -725,31 +1888,21 @@
     {
      "id": "sec-005-24-automata-accepting-predicates",
      "title": "Automata accepting Predicates",
-     "prose_ratio": 0.942,
-     "coverage_ratio": 0.992,
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-006-33-variables",
-     "title": "Variables",
-     "prose_ratio": 0.429,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-007-34-operators",
-     "title": "Operators",
-     "prose_ratio": 0.182,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-008-3-syntax-and-semantic-of-predicates-in-walnut",
+     "id": "sec-006-3-syntax-and-semantic-of-predicates-in-walnut",
      "title": "Syntax and Semantic of Predicates in Walnut",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.5,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-009-31-alphabets",
+     "id": "sec-007-31-alphabets",
      "title": "Alphabets",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
@@ -757,9 +1910,25 @@
      "converter": "latex"
     },
     {
-     "id": "sec-010-32-arithmetic-and-alphabetic-constants",
+     "id": "sec-008-32-arithmetic-and-alphabetic-constants",
      "title": "Arithmetic and Alphabetic Constants",
-     "prose_ratio": 0.97,
+     "prose_ratio": 0.985,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-33-variables",
+     "title": "Variables",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-34-operators",
+     "title": "Operators",
+     "prose_ratio": 0.977,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
@@ -768,54 +1937,76 @@
      "id": "sec-011-35-arithmetic-expressions",
      "title": "Arithmetic Expressions",
      "prose_ratio": 0.979,
-     "coverage_ratio": 0.434,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-012-36-indexing-expressions-and-their-semantic-rules",
      "title": "Indexing Expressions and Their Semantic Rules",
-     "prose_ratio": 0.111,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-013-39-predicates",
-     "title": "Predicates",
-     "prose_ratio": 0.276,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-014-37-calling-expressions-and-their-semantic-rules",
+     "id": "sec-013-37-calling-expressions-and-their-semantic-rules",
      "title": "Calling Expressions and Their Semantic Rules",
      "prose_ratio": 0.905,
-     "coverage_ratio": 0.974,
+     "coverage_ratio": 0.925,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-015-38-relative-expressions",
+     "id": "sec-014-38-relative-expressions",
      "title": "Relative Expressions",
      "prose_ratio": 0.964,
-     "coverage_ratio": 0.323,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-016-41-cross-product",
+     "id": "sec-015-39-predicates",
+     "title": "Predicates",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-016-4-decision-procedure-walnuts-implementation",
+     "title": "Decision Procedure: Walnut's Implementation",
+     "prose_ratio": 0.685,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-017-41-cross-product",
      "title": "Cross Product",
-     "prose_ratio": 0.949,
-     "coverage_ratio": 0.94,
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.84,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-017-43-complement-and-reverse",
+     "id": "sec-018-42-quantification",
+     "title": "Quantification",
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-019-43-complement-and-reverse",
      "title": "Complement and Reverse",
-     "prose_ratio": 0.833,
-     "coverage_ratio": 0.926,
+     "prose_ratio": 0.844,
+     "coverage_ratio": 0.927,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-018-44-arithmetic-and-comparison-operators",
+     "id": "sec-020-44-arithmetic-and-comparison-operators",
      "title": "Arithmetic and Comparison Operators",
      "prose_ratio": 0.95,
      "coverage_ratio": 0.927,
@@ -823,7 +2014,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-019-45-calling-an-automaton",
+     "id": "sec-021-45-calling-an-automaton",
      "title": "Calling an Automaton",
      "prose_ratio": 0.984,
      "coverage_ratio": 1.0,
@@ -831,21 +2022,23 @@
      "converter": "latex"
     },
     {
-     "id": "sec-020-46-indexing-an-automatic-word",
+     "id": "sec-022-46-indexing-an-automatic-word",
      "title": "Indexing an Automatic Word",
-     "prose_ratio": 0.981,
+     "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-021-5-special-automata-in-walnut",
+     "id": "sec-023-5-special-automata-in-walnut",
      "title": "Special Automata in Walnut",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.667,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-022-51-true-and-false-automata",
+     "id": "sec-024-51-true-and-false-automata",
      "title": "True and False Automata",
      "prose_ratio": 0.935,
      "coverage_ratio": 1.0,
@@ -853,7 +2046,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-023-52-non-arithmetic-automata",
+     "id": "sec-025-52-non-arithmetic-automata",
      "title": "Non-arithmetic Automata",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
@@ -861,21 +2054,21 @@
      "converter": "latex"
     },
     {
-     "id": "sec-024-6-installation",
+     "id": "sec-026-6-installation",
      "title": "Installation",
-     "prose_ratio": 0.936,
+     "prose_ratio": 0.949,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-025-61-eclipse",
+     "id": "sec-027-61-eclipse",
      "title": "Eclipse",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.01,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-026-7-commands",
+     "id": "sec-028-7-commands",
      "title": "Commands",
      "prose_ratio": 0.973,
      "coverage_ratio": 0.597,
@@ -883,7 +2076,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-027-71-eval-eval-name-predicate",
+     "id": "sec-029-71-eval-eval-name-predicate",
      "title": "eval: eval <name> <predicate>",
      "prose_ratio": 0.964,
      "coverage_ratio": 1.0,
@@ -891,7 +2084,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-028-72-def-def-name-predicate",
+     "id": "sec-030-72-def-def-name-predicate",
      "title": "def: def <name> <predicate>",
      "prose_ratio": 0.963,
      "coverage_ratio": 1.0,
@@ -899,15 +2092,15 @@
      "converter": "latex"
     },
     {
-     "id": "sec-029-73-macro-macro-name-template",
+     "id": "sec-031-73-macro-macro-name-template",
      "title": "macro: macro <name> <template>",
      "prose_ratio": 0.973,
-     "coverage_ratio": 0.975,
+     "coverage_ratio": 0.976,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-030-74-matrices-with-eval-and-def",
+     "id": "sec-032-74-matrices-with-eval-and-def",
      "title": "Matrices with eval and def",
      "prose_ratio": 0.942,
      "coverage_ratio": 1.0,
@@ -915,15 +2108,23 @@
      "converter": "latex"
     },
     {
-     "id": "sec-031-75-reg",
+     "id": "sec-033-75-reg",
      "title": "reg",
-     "prose_ratio": 0.927,
-     "coverage_ratio": 0.984,
+     "prose_ratio": 0.915,
+     "coverage_ratio": 0.982,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-032-8-working-with-inputoutput",
+     "id": "sec-034-76-load-load-file-name",
+     "title": "load: load <file name>",
+     "prose_ratio": 0.926,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-035-8-working-with-inputoutput",
      "title": "Working with Input/Output",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
@@ -931,7 +2132,39 @@
      "converter": "latex"
     },
     {
-     "id": "sec-033-references",
+     "id": "sec-036-81-defining-automata-in-text-files",
+     "title": "Defining Automata in Text Files",
+     "prose_ratio": 0.948,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-037-82-defining-new-automatic-words",
+     "title": "Defining New Automatic Words",
+     "prose_ratio": 0.879,
+     "coverage_ratio": 0.967,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-038-83-defining-new-number-systems",
+     "title": "Defining New Number Systems",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-039-84-converting-gv-files-to-jpeg",
+     "title": "Converting .gv files to .jpeg",
+     "prose_ratio": 0.842,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-040-references",
      "title": "References",
      "result": "no matching \\section"
     }

@@ -35,10 +35,10 @@ The regime necessity, the derivation of the $\rho_F$ prefactor, and
 the comparison witness are collected in
 [the doubly-magic binding context](#rem:magic-A-binding-formula-context).
 
-> **Status (owner ruling, 2026-09-05): retired as a knot-selection route.**
+> **Status: retired as a knot-selection route.**
 > Its atom-to-knot assignments are chosen from a census so the knot's volume
 > reproduces `B_AME/m_e` — the `A ∈ {5,6,7}` gap exists precisely because no
 > census knot has the right volume — and the $^4$He "magic" rule is $4\times$
 > the $^3$He prediction using the same $\mathrm{Vol}(L6a4) = 8G$, so it is not
 > an independent confirmation. Kept for the record, not as a live binding
-> route. See `docs/audits/2026-09-05-binding-route-consolidation-no-knot-selection.md`.
+> route.

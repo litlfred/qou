@@ -7,10 +7,11 @@ section_number: 5
 pages: 7-7
 source_pdf: 1303.6444v3.pdf
 source_sha256: 4f12ace2197f70ca
-doc_brief: "VIRIAL EXPANSION BOUNDS — In the 1960s, the technique of using cluster expansion bounds in order to achieve bounds on the virial expansion was developed by Lebowitz and Penrose (1964) and Ruelle"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.871
-latex_coverage_ratio: 0.931
+latex_coverage_ratio: 0.964
+doc_brief: "VIRIAL EXPANSION BOUNDS — In the 1960s, the technique of using cluster expansion bounds in order to achieve bounds on the virial expansion was developed by Lebowitz and Penrose (1964) and Ruelle"
 ---
 []{#sec: oldbounds label="sec: oldbounds"}
 

@@ -1,0 +1,107 @@
+{
+  "$schema": "folio-vector-figures/v1",
+  "doc_id": "arxiv-math-0401068v1",
+  "figures": [
+    {
+      "id": "vfig-p004",
+      "file": null,
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 4
+      },
+      "page": 4,
+      "rotation": 0,
+      "captionLabels": [
+        "1"
+      ],
+      "region": null,
+      "assembly": {
+        "drawings": 7,
+        "background": 0,
+        "groups": [],
+        "boxes": [],
+        "unlabelledClosedShapes": 0,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              295.16,
+              44.59,
+              386.63,
+              148.51
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              314.02,
+              73.78,
+              363.97,
+              121.55
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              298.92,
+              121.49,
+              303.87,
+              130.86
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              256.3,
+              55.98,
+              324.96,
+              149.68
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              233.65,
+              44.57,
+              305.76,
+              148.61
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              280.85,
+              120.28,
+              303.63,
+              148.55
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              314.97,
+              134.88,
+              341.63,
+              134.88
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 0
+      },
+      "unrendered_reason": "no drawing component on this page contains a text line, so there is no labelled region to render -- the caption candidates are recorded and nothing is claimed about what the page draws"
+    }
+  ]
+}

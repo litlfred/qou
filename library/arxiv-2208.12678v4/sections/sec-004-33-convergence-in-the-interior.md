@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.909
 latex_coverage_ratio: 0.942
+doc_brief: "STATIONARY CURVES UNDER THE MÖBIUS-PLATEAU ENERGY — Plateau problems with elastic boundary energies have been of recent theoretical and applied interest."
 ---
 Since $\mathrm{e}(u_k)$ is uniformly bounded, we have from compactness that after passing to a subsequence, $u_k\rightharpoonup u_*$ weakly in $W^{1,2}(D,\RR^3)$ for some $u_*$, not necessarily equal to $u_\infty$, and 
 \begin{align*}

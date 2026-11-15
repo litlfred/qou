@@ -1,0 +1,59 @@
+3.2 The reduced symmetry of SO(3, Z)
+
+respectively. As we see in Fig. 3.1 the continuum result and the continuum-regularized one are both
+attractive albeit the latter one vanishes for small lattice spacings. This is in line with effective field theory,
+where all short-range physics is absorbed in contact interaction terms. All lattice realizations show a very
+good agreement for distances larger than 3.5 fm, while the trigonometric ones show a repulsive behavior
+between 0 fm and 3 fm. This is partially compensated by some contributions which are very negative, e.g.
+at a distance of 2 fm for a lattice spacing of 0.98 fm. The exact discretization results are in a very good
+agreement with the continuum calculation. We see of course that for lattice spacings smaller than 1.0 fm,
+the exact discretization solution is far off from the continuum-regularized solution. This means that we
+can use the one-pion-exchange potential without extra regulator only in systems with lattice spacings
+larger than ~1 fm. Otherwise, the contact interaction contributions become unnaturally large, and may
+not be able to compensate the OPE contribution.
+
+T aT T T
+1
+4p : Vooto(”) 1
+a 1
+2 x Vopt(?) * fons-snge(?) —
+L . |
+x R
+OF - sah
+> i t*:
+o
+2 -2+ a J
+5
+©
+< x -4 4 J
+‘7 a = 1.97 fm, impr.0 x
+a = 1.97 fm, impr.1 fay
+-6 5 / = @=197 fm; exact : 4
+/ a = 1.32 fm, impr.0 x
+a = 1.32 fm, impr.1 o
+-8 b he x a = 1.32 fm, exact . a
+/ a = 0.98 fm, impr.0 x
+| a = 0.98 fm, impr.1 0
+10 L f a = 0.98 fm, exact, .
+0 1 2 3 4 5
+
+r [fm]
+
+Figure 3.1: 's 9 one-pion-exchange potential for various lattice discretization schemes and continuum solutions
+with and without position space regularization.
+
+3.2 The reduced symmetry of SO(3, Z)
+
+As argued in Subsec. 2.2.1, the continuum SO(3) symmetry has an infinite number of irreducible
+representations and each irreducible representation is identified with the angular momentum j. This makes
+the identification straightforward, as each partial wave is directly linked to an irreducible representation
+with quantum number j. In fact, this is not possible anymore in a cubic finite volume. Due to the cubic
+symmetry, rotations are only allowed for a discrete and finite number of values, namely multiplicities of
+m/2. E. g., the 2/2 rotation around the z-axes is given by the operator,
+
+a()-e0(%0) an
+
+Rotations around the x- and y-axes are defined accordingly with respect to j,, j,. From Eq. (3.7) it is
+clear that also the quantum number j, is not a good quantum number anymore, but only j, modulo 4.
+
+23

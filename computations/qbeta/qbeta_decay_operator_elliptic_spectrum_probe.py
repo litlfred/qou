@@ -8,7 +8,7 @@ THE CORRECTION (owner, and it is right)
 
 Step 21 concluded "no phase can hide in the jet tower" from the fact that every
 tower quantity it examined is REAL at real q: w_sym(k), w_alt(k), and the
-Plancherel traces Sum_lam W_lam chi^lam(O), since chi^lam(T_w) lies in Z[q,q^-1]
+W-weighted traces Sum_lam W_lam chi^lam(O), since chi^lam(T_w) lies in Z[q,q^-1]
 (Geck-Pfeiffer). True, and beside the point.
 
 What the ladder needs is an ELLIPTIC GENERATOR: traceless part with det > 0, i.e.

@@ -11,6 +11,7 @@
   ],
   "title": "stateintegralsqseries",
   "contains": [
+    "library/stateintegralsqseries/sections/sec-front-matter",
     "library/stateintegralsqseries/sections/sec-000",
     "library/stateintegralsqseries/sections/sec-001",
     "library/stateintegralsqseries/sections/sec-002",
@@ -25,10 +26,12 @@
     "library/stateintegralsqseries/sections/sec-011",
     "library/stateintegralsqseries/sections/sec-012",
     "library/stateintegralsqseries/sections/sec-013",
-    "library/stateintegralsqseries/sections/sec-014"
+    "library/stateintegralsqseries/sections/sec-014",
+    "library/stateintegralsqseries/sections/sec-015",
+    "library/stateintegralsqseries/sections/sec-016"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "stateintegralsqseries",
     "title_source": "slug",
@@ -37,8 +40,8 @@
     "pages": 16,
     "arxiv": null,
     "doi": null,
-    "document_class": "math",
-    "extractor_validated": true,
-    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
   }
 }

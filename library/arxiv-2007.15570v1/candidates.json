@@ -1,8 +1,6 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2007.15570v1",
- "document_class": "math",
- "validated": true,
  "source": {
   "structure_sha256": "6e46f4346a29fd83bf48e3ce2e5f10c6a3af97a0d3638c95a5f1acb58cb4fce5",
   "file": "2007.15570v1.pdf"
@@ -18,11 +16,46 @@
   },
   "doi": null
  },
- "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "aspects": [
+  "requirements"
+ ],
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
+  "candidates": 2,
+  "by_kind": {
+   "recommendation": 2
+  },
   "formalization_candidates": 0
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Final state particles do not propagate and are essentially the input that should be given to a detector simulation.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-007-e-exiting-the-nucleus.md",
+   "section_title": "E Exiting the nucleus",
+   "pages": "6-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Nevertheless, we do not expect such effects to change our results significantly, and thus $\\sigma_{\\rm MC}$ should be a good approximation of the reaction cross section.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-010-b-proton-carbon-scattering-data.md",
+   "section_title": "B Proton-carbon Scattering Data",
+   "pages": "7-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
 }

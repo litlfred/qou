@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-ph-9308276v1
-doc_title: "arXiv:hep-ph/9308276v1 14 Aug 1993"
+doc_title: "The Electroweak Chiral Lagrangian for the Standard Model with a heavy Higgs"
 section_id: sec-front-matter
 section_title: "Front matter"
 section_number: null
@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 9308276v1.pdf
 source_sha256: 498931b15afb3f65
 toc_source: inferred
+doc_brief: "The Electroweak Chiral Lagrangian for the Standard Model with a heavy Higgs — The most general chiral Lagrangian for electroweak interactions with the complete set of SU(2)L × U(1)Y invariant"
 ---
 arXiv:hep-ph/9308276v1  14 Aug 1993
 The Electroweak Chiral Lagrangian for the
@@ -37,5 +38,3 @@ FTUAM 93/24
 July 1993
 ∗e–mail:herrero@vm1.sdi.uam.es
 †e–mail: meruiz@vm1.sdi.uam.es, meruiz@slacvm.bitnet
-0
-1

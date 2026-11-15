@@ -1,0 +1,2411 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-2011.13340v1",
+ "status": "determined",
+ "body_size": 10.9,
+ "footnotes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "*",
+   "text": "ThispaperwassubmittedtoSTOC2020,duringtheprocessofwhichanotherpaper[ABY19]appearedwhich proves a slightly stronger result. This note is being released in its unedited form.",
+   "marks": [
+    {
+     "page": 1,
+     "context": "Distributions"
+    }
+   ],
+   "block": "library/arxiv-2011.13340v1/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p011-1",
+   "page": 11,
+   "mark": "2",
+   "text": "p",
+   "marks": [
+    {
+     "page": 11,
+     "context": "∥X −Y∥2pTr[e"
+    },
+    {
+     "page": 11,
+     "context": "∥X −Y∥2pTr[e2pX+ e"
+    },
+    {
+     "page": 11,
+     "context": "E[(eX−eY)"
+    },
+    {
+     "page": 11,
+     "context": "(eX−eY)"
+    },
+    {
+     "page": 11,
+     "context": "E[(eX−eY)"
+    },
+    {
+     "page": 11,
+     "context": "etX(X −Y)e(1−t)Yi"
+    },
+    {
+     "page": 11,
+     "context": "eX(X −Y) + (X −Y)eY"
+    },
+    {
+     "page": 11,
+     "context": "(X −Y)eY"
+    },
+    {
+     "page": 11,
+     "context": "2"
+    }
+   ],
+   "block": "library/arxiv-2011.13340v1/blocks/prose-sec-002"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p011-2",
+   "page": 11,
+   "mark": "2",
+   "text": "p",
+   "block": "library/arxiv-2011.13340v1/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p011-3",
+   "page": 11,
+   "mark": "2",
+   "text": "p",
+   "block": "library/arxiv-2011.13340v1/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p011-4",
+   "page": 11,
+   "mark": "2",
+   "text": "p",
+   "block": "library/arxiv-2011.13340v1/blocks/prose-sec-002"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "isahomegenouspolynomialofdegreek.Apolynomialp(z"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "isahomegenouspolynomialofdegreek.Apolynomialp(z1, . . . , z"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "megenouspolynomialofdegreek.Apolynomialp(z1, . . . , zn)∈C[z"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "nomialofdegreek.Apolynomialp(z1, . . . , zn)∈C[z1, . . . , z"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "stableifwhenever Im(z"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "stableifwhenever Im(zi)>0foralli∈[n],p(z"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "stableifwhenever Im(zi)>0foralli∈[n],p(z1, . . . , z"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "L-Lipshitz matrix valued function F : {0, 1}n→S"
+  },
+  {
+   "page": 3,
+   "mark": "x",
+   "context": "Lipshitz matrix valued function F : {0, 1}n→Sd and let µ = E"
+  },
+  {
+   "page": 3,
+   "mark": "x",
+   "context": "Pr"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "Prx∼π[∥F(x) −µ∥⩾t] ⩽2de−t"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "Prx∼π[∥F(x) −µ∥⩾t] ⩽2de−t2/32(kL"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "A matrix valued function F : Ω→S"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "Varµ[F] = Eµ[F"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "Varµ[F] = Eµ[F2] −(E(F(x))"
+  },
+  {
+   "page": 4,
+   "mark": "y",
+   "context": "x∈Ω,"
+  },
+  {
+   "page": 4,
+   "mark": "y",
+   "context": "x∈Ω,y∈Ωπ(x)Q(x,"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "x∈Ω,y∈Ωπ(x)Q(x, y)( f(x)−f(y))"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "x∈Ω,y∈Ωπ(x)Q(x, y)( f(x)−f(y))2.ItiseasytoseethatEQ[ f,"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "∈Ωπ(x)Q(x, y)( f(x)−f(y))2.ItiseasytoseethatEQ[ f, 1]=EP[ f,"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "trixvaluedfunctionsF, G:Ω→S"
+  },
+  {
+   "page": 4,
+   "mark": "y",
+   "context": "x∈Ω,"
+  },
+  {
+   "page": 4,
+   "mark": "y",
+   "context": "x∈Ω,y∈Ωπ(x)Q(x,"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "x∈Ω,y∈Ωπ(x)Q(x, y)(F(x) −F(y))"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "x∈Ω,y∈Ωπ(x)Q(x, y)(F(x) −F(y))2where S"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "x) −F(y))2where Sdis the space of symmetric matrices of size"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "{e"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "i=1bethecoordinatebasisofR"
+  },
+  {
+   "page": 4,
+   "mark": "x",
+   "context": "i=1bethecoordinatebasisofRn.For"
+  },
+  {
+   "page": 4,
+   "mark": "y",
+   "context": "i=1bethecoordinatebasisofRn.For x,"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "i=1bethecoordinatebasisofRn.For x, y∈{0,"
+  },
+  {
+   "page": 4,
+   "mark": "x",
+   "context": "i=1bethecoordinatebasisofRn.For x, y∈{0, 1}n,wewrite"
+  },
+  {
+   "page": 4,
+   "mark": "x",
+   "context": "i=1bethecoordinatebasisofRn.For x, y∈{0, 1}n,wewritex ⊲y if"
+  },
+  {
+   "page": 4,
+   "mark": "y",
+   "context": "atebasisofRn.For x, y∈{0, 1}n,wewritex ⊲y ifxcanbeobtainedby"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "x =yor∃i ∈[n],x =y + e"
+  },
+  {
+   "page": 4,
+   "mark": "c",
+   "context": "x ⊲y=⇒π(XS"
+  },
+  {
+   "page": 4,
+   "mark": "c",
+   "context": "x ⊲y=⇒π(XSc= ·|XS=y) ⊲π(XS"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "where x, y diﬀer by a ﬂip if x =y ± e"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "r by a ﬂip if x =y ± ei for some i and by a swap ify = x + e"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": " a ﬂip if x =y ± ei for some i and by a swap ify = x + ej −e"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "such that for any matrix valued function f : Ω→S"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "rkov chain whose state space is I and whose Markov generator"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "x∈Ω"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "x∈Ωi,y∈Ω"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "x∈Ω"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "robability distribution on I and that it is reversible under"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "bπ(i)"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "Q(i, j) = bπ(j)"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "We also have, that for each i ∈I, the restrictionchain on Ω"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "is Ω"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "is Ωi and whose Markov geneator Q"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "whose Markov geneator Qi is deﬁned as:for any states x, y ∈Ω"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "bπ"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "whichisreversibleunder Q"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "whichisreversibleunder Qi.Now suppose thatforeach(i, j)∈I"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "ichisreversibleunder Qi.Now suppose thatforeach(i, j)∈I2with"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "coupling κij: Ω"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "coupling κij: Ωi × Ω"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "upling κij: Ωi × Ωj→[0, 1] of the probability distribution π"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "κij: Ωi × Ωj→[0, 1] of the probability distribution πi and π"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "∀x ∈Ω"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "y∈Ω"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "∀y ∈Ω"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "x∈Ω"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "bπ(i)"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "Proposition 2.2.The functionf(X, Y) = (X −Y)"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "Proof.For any t ∈[0, 1], X"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "Proof.For any t ∈[0, 1], X1, X"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "Proof.For any t ∈[0, 1], X1, X2, Y"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "Proof.For any t ∈[0, 1], X1, X2, Y1, Y"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "(tX"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "(tX1 + (1 −t)X"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "(tX1 + (1 −t)X2) −(tY"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "(tX1 + (1 −t)X2) −(tY1 + (1 −t)Y"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "t(X"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "t(X1 −Y"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "t(X1 −Y1) + (1 −t)(X"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "t(X1 −Y1) + (1 −t)(X2 −Y"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "⪯t(X"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "⪯t(X1 −Y"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "⪯t(X1 −Y1)"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "⪯t(X1 −Y1)2+ (1 −t)(X"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "⪯t(X1 −Y1)2+ (1 −t)(X1 −Y"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "⪯t(X1 −Y1)2+ (1 −t)(X1 −Y1)"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "m the operator convexity of the square function applied to X"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "e operator convexity of the square function applied to X1 −Y"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "and X"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "and X2 −Y"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "i∈Iλ(Q"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "Proof.Let F : Ω→S"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "π(x)Q(x, y)(F(x) −F(y))"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "Wecanalsodeﬁnetheprojectionofafunction"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "WecanalsodeﬁnetheprojectionofafunctionbF:I→S"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "WecanalsodeﬁnetheprojectionofafunctionbF:I→Sdby"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "WecanalsodeﬁnetheprojectionofafunctionbF:I→SdbybF(i)=Eπ"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "bπ(i)Varπ"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "bπ(i)Varπi[F] + Var"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "bπ(i)Eπ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "π(x)Q(x, y)(F(x) −F(y))"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "x∈Ω"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "x∈Ωi,y∈Ω"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "equation by the Dirichlet form for E"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "equation by the Dirichlet form for Ebπ(bF,"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "(i, j) ∈I such that"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "x∈Ω"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "x∈Ωi,y∈Ω"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "x∈Ω"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "x∈Ωi,y∈Ω"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "κij(x, y)(F(x) −F(y))"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "x∈Ω"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "x∈Ωi,y∈Ω"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "Multiplying the above equation by χbπ(i)"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "π(x)Q(x, y)(F(x) −F(y))"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "π(x)Q(x, y)(F(x) −F(y))2⪰χbπ(i)"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "Q(i, j)(bF(i) −bF(j))"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "x∈Ω"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "x∈Ωi,y∈Ω"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "It is easy to see that the above equation also holds when"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "Q(i, j) = 0 rather than just when"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "π(x)Q(x, y)(F(x) −F(y))"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "π(x)Q(x, y)(F(x) −F(y))2⪰χE"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "π(x)Q(x, y)(F(x) −F(y))2⪰χEbπ[bF,"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "x∈Ω"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "x∈Ωi,y∈Ω"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "bπ(i)Eπ"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "bπ(i)Eπi[F, F] + χE"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "bπ(i)Eπi[F, F] + χEbπ[bF,"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "⪰bκVar"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "E"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "Ebπ[bF,"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "i∈Iκ"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "Eπ"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "⪰κ"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "⪰κiVarπ"
+  },
+  {
+   "page": 7,
+   "mark": "x",
+   "context": ",Q(y,"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "bπ(i)"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "Lemma 2.5.Given a generator"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "for a two state ({0, 1}) chain.We have for any F : {0, 1} →S"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "a + b· a(F(0) −F(1))"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Var[F] = E[F"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Var[F] = E[F2] −(E[F])"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "a + b(bF(0)"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "a + b(bF(0)2 + aF(1)"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "(a + b)"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "(a + b)2 (bF(0) + a[F](1))"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "(a + b)"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "(a + b)2 (F(0) −F(1))"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "{(x, y) ∈Ω"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "{(x, y) ∈Ω0 × Ω"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "wewillbedone.Asbefore,takeacoordinateℓ∈[n]anddeﬁnethesetsΩ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "andΩ"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "chains.Lettheirstationarydistributionsbe bπ, π"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "chains.Lettheirstationarydistributionsbe bπ, π0, π"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "arydistributionsbe bπ, π0, π1respectively.Wecanofcourseviewπ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "istributionsbe bπ, π0, π1respectively.Wecanofcourseviewπ0, π"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "1}n−1andboth distributions areSCP.If πisk-homogenous, then π"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "k-homogenouswhileπ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "π"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "π1supported on {x ∈Ω"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "π1supported on {x ∈Ω0, y ∈Ω"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "if (x, y) ∈Ω"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "if (x, y) ∈Ω0 × Ω"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "if (x, y) ∈Ω"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "if (x, y) ∈Ω1 × Ω"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "if (x, y) ∈Ω"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "if (x, y) ∈Ω0 × Ω"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "if (x, y) ∈Ω"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "if (x, y) ∈Ω1 × Ω"
+  },
+  {
+   "page": 9,
+   "mark": "b",
+   "context": "ng transpose of κ.We also have that the projection generator"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "from Lemma 2.5.We also have that for any x ∈Ω"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "from Lemma 2.5.We also have that for any x ∈Ω0, y ∈Ω"
+  },
+  {
+   "page": 9,
+   "mark": "b",
+   "context": "bπ(0)"
+  },
+  {
+   "page": 9,
+   "mark": "b",
+   "context": "bπ(1)"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "We just need to bound the diagonal of Q now.For x ∈Ω"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "Q"
+  },
+  {
+   "page": 9,
+   "mark": "b",
+   "context": "Q0(x, y) +bπ(0)"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "y∈Ω"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "y∈Ω"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "−Q(x, x) ⩽∆(Q"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "−Q(x, x) ⩽∆(Q0) + bπ(1) = ∆(Q"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Similarly, if x ∈Ω"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "−Q(x, x) ⩽∆(Q"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "−Q(x, x) ⩽∆(Q1) + bπ(0) ⩽∆(Q"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "as xℓ= 1.So using the induction hypothesis on ∆(Q"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "iK"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "iA"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "iAiK"
+  },
+  {
+   "page": 10,
+   "mark": "f",
+   "context": "i"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "if(A"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "if(Ai)K"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "iA"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "iAiK"
+  },
+  {
+   "page": 10,
+   "mark": "f",
+   "context": "i"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "if((A"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "if((Ai)K"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "A"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "AtXB"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "e"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "i"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "∥X −Y∥2"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "∥X −Y∥2pTr[e2"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "∥X −Y∥2pTr[e2pX+ e2"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "i"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "(eX−eY)2"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "(eX−eY)2p"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "e"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "etX(X −Y)e(1−t)Y"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "etX(X −Y)e(1−t)Yi2"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "etX(X −Y)e(1−t)Yi2p"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "e"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "\u00132"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "eX(X −Y) + (X −Y)eY2"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "\u00132"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "2"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "(X −Y)eY2"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "22"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "π ∈RΩ, any function F : Ω→S"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "i"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "ip⩽v(F)"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "ip⩽v(F)2"
+  },
+  {
+   "page": 12,
+   "mark": "x",
+   "context": "ip⩽v(F)2pTr[E"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "ip⩽v(F)2pTr[Ex∼π[e"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "ip⩽v(F)2pTr[Ex∼π[e2"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "i"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "eF(x)−eF(y)\u00112"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "eF(x)−eF(y)\u00112i"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "eF(x)−eF(y)\u00112"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "eF(x)−eF(y)\u00112i"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "e"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "e2"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "e2pF(x)+ e"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "e2pF(x)+ e2"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "∥F(x) −F(y)∥2"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "⩽v(F)"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "⩽v(F)2"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "πxPxyTr[e"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "πxPxyTr[e2"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "πxPxyTr[e2pF(x)+ e"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "πxPxyTr[e2pF(x)+ e2"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "⩽v(F)"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "⩽v(F)2"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "πxTr[e"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "πxTr[e2"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "= v(F)"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "= v(F)2"
+  },
+  {
+   "page": 12,
+   "mark": "x",
+   "context": "= v(F)2pTr[E"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "= v(F)2pTr[Ex∼π[e"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "= v(F)2pTr[Ex∼π[e2"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "sition 3.7.[Matrix Laplace Transform Method [Tro15]] Let X∈H"
+  },
+  {
+   "page": 12,
+   "mark": "e",
+   "context": "θ>0"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "θ>0e−θ"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "distribution π ∈RΩ, any function F : Ω→S"
+  },
+  {
+   "page": 12,
+   "mark": "x",
+   "context": "Pr"
+  },
+  {
+   "page": 12,
+   "mark": "y",
+   "context": "Prx∼π[∥F(x) −E"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "Prx∼π[∥F(x) −Ey∼π[F(y)]∥⩾t] ⩽2de−t"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "Prx∼π[∥F(x) −Ey∼π[F(y)]∥⩾t] ⩽2de−t2/4(v(F)"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "⩽Tr[E[eF(x)/2"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "⩽Tr[E[eF(x)/2k]]2"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "(1 −λv(F)"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "(1 −λv(F)2S"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "whereλv(F)"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "1/2"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "hypothesis, consider the RHS where n = 2"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "πx(1 + F(x)/n + (F(x)/n)"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "= Tr[(1 + E[F(x)]/n)"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "requirement of λv(θF)"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "requirement of λv(θF)2⩽1 translates to θ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "requirement of λv(θF)2⩽1 translates to θ2λv(F)"
+  },
+  {
+   "page": 13,
+   "mark": "x",
+   "context": "⩽Tr[eθE"
+  },
+  {
+   "page": 13,
+   "mark": "x",
+   "context": "E"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "1 −θ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "1 −θ2λv(F)"
+  },
+  {
+   "page": 13,
+   "mark": "x",
+   "context": "E"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "1 −θ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "1 −θ2λv(F)"
+  },
+  {
+   "page": 13,
+   "mark": "e",
+   "context": "θ>0"
+  },
+  {
+   "page": 13,
+   "mark": "t",
+   "context": "θ>0e−θ"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "θ>0e−θt+log"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "θ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "θ2λv(F)"
+  },
+  {
+   "page": 13,
+   "mark": "e",
+   "context": "θ2λv(F)2⩽1"
+  },
+  {
+   "page": 13,
+   "mark": "t",
+   "context": "θ2λv(F)2⩽1e−θ"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "θ2λv(F)2⩽1e−θt+log"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "θ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "θ2λv(F)"
+  },
+  {
+   "page": 13,
+   "mark": "e",
+   "context": "θ2λv(F)2⩽1"
+  },
+  {
+   "page": 13,
+   "mark": "t",
+   "context": "θ2λv(F)2⩽1e−θ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "θ2λv(F)2⩽1e−θt−log(1−θ"
+  },
+  {
+   "page": 13,
+   "mark": "v",
+   "context": "θ2λv(F)2⩽1e−θt−log(1−θ2λ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "θ2λv(F)2⩽1e−θt−log(1−θ2λv(F)"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "λ"
+  },
+  {
+   "page": 13,
+   "mark": "4",
+   "context": "λ2v(F)"
+  },
+  {
+   "page": 13,
+   "mark": "4",
+   "context": "λ2v(F)4θ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "−θt+λv(F)"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "−θt+λv(F)2θ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "2(1−λv(F)"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "2(1−λv(F)2θ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "θ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "θ2λv(F)"
+  },
+  {
+   "page": 13,
+   "mark": "e",
+   "context": "θ2λv(F)2⩽1"
+  },
+  {
+   "page": 13,
+   "mark": "v",
+   "context": "λ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "2de−t"
+  },
+  {
+   "page": 13,
+   "mark": "v",
+   "context": "2de−t2/4(λ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "2de−t2/4(λv(F)"
+  },
+  {
+   "page": 13,
+   "mark": "f",
+   "context": "inequality on e"
+  },
+  {
+   "page": 13,
+   "mark": "f",
+   "context": "Var(e"
+  },
+  {
+   "page": 13,
+   "mark": "f",
+   "context": "Var(ef) = λE(e"
+  },
+  {
+   "page": 13,
+   "mark": "f",
+   "context": "Var(ef) = λE(ef, e"
+  },
+  {
+   "page": 13,
+   "mark": "f",
+   "context": "=⇒E[e2f] ⪯(E[e"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "=⇒E[e2f] ⪯(E[ef])"
+  },
+  {
+   "page": 13,
+   "mark": "f",
+   "context": "=⇒E[e2f] ⪯(E[ef])2+ E(e"
+  },
+  {
+   "page": 13,
+   "mark": "f",
+   "context": "=⇒E[e2f] ⪯(E[ef])2+ E(ef, e"
+  },
+  {
+   "page": 13,
+   "mark": "f",
+   "context": "E[eF] ⪯(E[e"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "E[eF] ⪯(E[ef])"
+  },
+  {
+   "page": 13,
+   "mark": "f",
+   "context": "E[eF] ⪯(E[ef])2+ E(e"
+  },
+  {
+   "page": 13,
+   "mark": "f",
+   "context": "E[eF] ⪯(E[ef])2+ E(ef, e"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "Tr[E[eF]] ⩽Tr[(E[eF/2])"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "⩽Tr[(E[eF/2])"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "⩽Tr[(E[eF/2])2] + v(F/2)"
+  },
+  {
+   "page": 14,
+   "mark": "x",
+   "context": "⩽Tr[(E[eF/2])2] + v(F/2)2Tr[E"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "= Tr[(E[eF/2])"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "= Tr[(E[eF/2])2] +v(F)"
+  },
+  {
+   "page": 14,
+   "mark": "x",
+   "context": "Tr[E"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "⩽Tr[(E[eF/2])"
+  },
+  {
+   "page": 14,
+   "mark": "v",
+   "context": "⩽Tr[(E[eF/2])2] +λ"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "⩽Tr[(E[eF/2])2] +λv(F)"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "⩽Tr[(E[eF/2])2] +λv(F)2S"
+  },
+  {
+   "page": 14,
+   "mark": "x",
+   "context": "Tr[E"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "Tr[Ex∼π[eF]](using λ ⩾1 and S"
+  },
+  {
+   "page": 14,
+   "mark": "v",
+   "context": "1 −λ"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "1 −λv(F)"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "1 −λv(F)2S"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "Tr[E[eF]] ⩽Tr[(E[eF/2])"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "function f = F/2"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "function f = F/2k.Denote vk= v(F/2"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "function f = F/2k.Denote vk= v(F/2k) = v(F)/2"
+  },
+  {
+   "page": 14,
+   "mark": "f",
+   "context": "k) = v(F)/2kUsing the matrix valued Poincare inequality on e"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "and taking trace to the power p = 2"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "i"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "i2"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "i"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "i2"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "(E[eF/2"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "(E[eF/2k])"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "(E[eF/2k])2+ λE(eF/2"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "(E[eF/2k])2+ λE(eF/2k, eF/2"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "E[eF/2"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "i"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "i2"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "k)(E[eF/2"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "k)(E[eF/2k])"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "k)(E(eF/2"
+  },
+  {
+   "page": 14,
+   "mark": "e",
+   "context": "k)(E(eF/2k,"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "k)(E(eF/2k, eF/2"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "k)(E(eF/2k, eF/2k)/v"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "(1 −λv"
+  },
+  {
+   "page": 14,
+   "mark": "v",
+   "context": "k)+ λ"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "k)+ λv"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "(1 −λv"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "i"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "i2"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "E[eF/2"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "i"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "i2"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "(E(eF/2"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "(E(eF/2k, eF/2"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "(E(eF/2k, eF/2k)/v"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "(1 −λv"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "(1 −λvk)"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "(1 −λvk)2"
+  },
+  {
+   "page": 14,
+   "mark": "v",
+   "context": "(1 −λvk)2k−1−1+ λ"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "(1 −λvk)2k−1−1+ λv"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "(using Jensen’s inequality as λv"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "i"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "i2"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "E[eF/2"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "k)"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "k)2"
+  },
+  {
+   "page": 14,
+   "mark": "v",
+   "context": "k)2k−1−1+ λ"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "k)2k−1−1+ λv"
+  },
+  {
+   "page": 14,
+   "mark": "x",
+   "context": "kTr[E"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "(1 −λv"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "i"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "i2"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "E[eF/2"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "(1 −λv(F)"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "(1 −λv(F)2S"
+  },
+  {
+   "page": 14,
+   "mark": "x",
+   "context": "(1 −λv(F)2Sk−1)Tr[E"
+  },
+  {
+   "page": 14,
+   "mark": "x",
+   "context": "kTr[E"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "k)"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "k)2"
+  },
+  {
+   "page": 14,
+   "mark": "v",
+   "context": "k)2k−1−1+ λ"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "k)2k−1−1+ λv"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "(1 −λv"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "i"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "i2"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "E[eF/2"
+  },
+  {
+   "page": 14,
+   "mark": "x",
+   "context": "k)Tr[E"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "(1 −λv(F)"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "(1 −λv(F)2S"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "(1 −λv(F)2Sk−1 −λv"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "(1 −λv"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "k)"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "k)2"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "i"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "i2"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "E[eF/2"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "k)"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "k)2"
+  },
+  {
+   "page": 14,
+   "mark": "x",
+   "context": "k)2k−1−1Tr[E"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "⩾(1 −λv(F)"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "⩾(1 −λv(F)2S"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "⩾(1 −λv(F)2Sk−1 −λv"
+  },
+  {
+   "page": 14,
+   "mark": "v",
+   "context": "k)(1 −λ"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "k)(1 −λv"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "k)(1 −λ(2"
+  },
+  {
+   "page": 14,
+   "mark": "v",
+   "context": "k)(1 −λ(2k−1 −1)"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "k)(1 −λ(2k−1 −1)v"
+  },
+  {
+   "page": 14,
+   "mark": "x",
+   "context": "k)Tr[E"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "⩾(1 −λv(F)"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "⩾(1 −λv(F)2S"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "⩾(1 −λv(F)2Sk−1 −λv"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "⩾(1 −λv(F)"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "⩾(1 −λv(F)2S"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "⩾(1 −λv(F)2Sk−1 −λ2"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "⩾(1 −λv(F)2Sk−1 −λ2k−1v"
+  },
+  {
+   "page": 14,
+   "mark": "x",
+   "context": "k)Tr[E"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "⩾(1 −λv(F)"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "⩾(1 −λv(F)2S"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "⩾(1 −λv(F)2Sk−1 −λ2"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "⩾(1 −λv(F)2Sk−1 −λ2k−1v(F)"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "⩾(1 −λv(F)2Sk−1 −λ2k−1v(F)2/2"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "⩾(1 −λv(F)2Sk−1 −λ2k−1v(F)2/22"
+  },
+  {
+   "page": 14,
+   "mark": "x",
+   "context": "⩾(1 −λv(F)2Sk−1 −λ2k−1v(F)2/22k)Tr[E"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "⩾(1 −λv(F)"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "⩾(1 −λv(F)2S"
+  },
+  {
+   "page": 14,
+   "mark": "x",
+   "context": "⩾(1 −λv(F)2Sk)Tr[E"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "where the fourth inequality follows from (1 −x)"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": " follows from (1 −x)n⩾(1 −nx) and the last line follows as 2"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "ows from (1 −x)n⩾(1 −nx) and the last line follows as 2k−1/2"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "ws from (1 −x)n⩾(1 −nx) and the last line follows as 2k−1/22"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "1/2"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "1/2k+1⩽1/2"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "Theorem4.1.Suppose(x"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "Theorem4.1.Suppose(x1, . . . , x"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "ng Rayleigh distribution.Given a collectionof PSD matrices A"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "distribution.Given a collectionof PSD matrices A1, . . . , A"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "tribution.Given a collectionof PSD matrices A1, . . . , An∈R"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "have ∥A"
+  },
+  {
+   "page": 15,
+   "mark": "x",
+   "context": "e"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "ex"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "exeA"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "x"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "xeA"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "xeAe]∥⩾εµ] ⩽de−ε"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "xeAe]∥⩾εµ] ⩽de−ε2µ/(log"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "x"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "xeA"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "ε"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "ε"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "ε2µ"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "emultiplicativeChernoﬀboundin[KS18],thusimplyingthatlog(n)/ε"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "(log n)"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "(log n)2/ε"
+  }
+ ]
+}

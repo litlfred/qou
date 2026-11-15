@@ -2,427 +2,387 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-q-alg-9709040v1",
  "source_sha256": "8baf650d86c5b8ab",
- "brief": "DEFORMATION QUANTIZATION OF POISSON MANIFOLDS, I — 83 sections: Front matter; Introduction; Deformation quantization",
- "extended": "**DEFORMATION QUANTIZATION OF POISSON MANIFOLDS, I**\n\n*Maxim Kontsevich*\n\n46 pp, 83 sections.\n\n**Outline.** Front matter; 0 Introduction; 1 Deformation quantization; 0.1 Content of the paper; 0.2 Plans; 0.3 Acknowledgements; 1.1 Star-products; 1.2 First approximation: Poisson structures; 1 (f,g ) = B+; 1 (g,f ), B−; 1 (f,g ) =−B−; 1.3 Description of quantizations; 1.4 Examples; 1.4.1 Moyal product; 1.4.2 Deformation quantization up to the secon; 1.5 Remarks; 2 Explicit universal formula; 3 Deformation theory via diﬀerential graded Li",
+ "brief": "Deformation quantization of Poisson manifolds — 75 sections: Front matter; Plans; Star-products",
+ "extended": "**Deformation quantization of Poisson manifolds**\n\n*Maxim Kontsevich*\n\n46 pp, 75 sections.\n\n**Outline.** Front matter; 0.2 Plans; 1.1 Star-products; 0.3 Acknowledgements; 1 Deformation quantization; 1.2 First approximation: Poisson structures; 1.3 Description of quantizations; 1.4 Examples; 1.4.1 Moyal product; 1.4.2 Deformation quantization up to the secon; 1.5 Remarks; 2 Explicit universal formula; 3 Deformation theory via diﬀerential graded Li; 3.2 Maurer-Cartan equation in diﬀerential grad; 3.3 Remark; 3.4 Examples; 3.4.1 Tangent complex; 3.4.2 Hochschild complex",
  "tokens": {
-  "brief": 29,
-  "extended": 134
+  "brief": 23,
+  "extended": 143
  },
  "sections": [
   {
    "id": "sec-front-matter",
    "title": "Front matter",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-000-0-introduction",
-   "title": "Introduction",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-001-1-deformation-quantization",
-   "title": "Deformation quantization",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-002-01-content-of-the-paper",
-   "title": "Content of the paper",
    "pages": "1-2"
   },
   {
-   "id": "sec-003-02-plans",
+   "id": "sec-000-02-plans",
    "title": "Plans",
    "pages": "2-2"
   },
   {
-   "id": "sec-004-03-acknowledgements",
+   "id": "sec-001-11-star-products",
+   "title": "Star-products",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-002-03-acknowledgements",
    "title": "Acknowledgements",
    "pages": "2-2"
   },
   {
-   "id": "sec-005-11-star-products",
-   "title": "Star-products",
+   "id": "sec-003-1-deformation-quantization",
+   "title": "Deformation quantization",
    "pages": "2-3"
   },
   {
-   "id": "sec-006-12-first-approximation-poisson-structures",
+   "id": "sec-004-12-first-approximation-poisson-structures",
    "title": "First approximation: Poisson structures",
    "pages": "3-3"
   },
   {
-   "id": "sec-007-1-fg-b",
-   "title": "(f,g ) = B+",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-008-1-gf-b",
-   "title": "(g,f ), B−",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-009-1-fg-b",
-   "title": "(f,g ) =−B−",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-010-13-description-of-quantizations",
+   "id": "sec-005-13-description-of-quantizations",
    "title": "Description of quantizations",
    "pages": "3-4"
   },
   {
-   "id": "sec-011-14-examples",
+   "id": "sec-006-14-examples",
    "title": "Examples",
    "pages": "4-4"
   },
   {
-   "id": "sec-012-141-moyal-product",
+   "id": "sec-007-141-moyal-product",
    "title": "Moyal product",
    "pages": "4-4"
   },
   {
-   "id": "sec-013-142-deformation-quantization-up-to-the-second-or",
+   "id": "sec-008-142-deformation-quantization-up-to-the-second-or",
    "title": "Deformation quantization up to the second order",
    "pages": "4-4"
   },
   {
-   "id": "sec-014-15-remarks",
+   "id": "sec-009-15-remarks",
    "title": "Remarks",
    "pages": "4-4"
   },
   {
-   "id": "sec-015-2-explicit-universal-formula",
+   "id": "sec-010-2-explicit-universal-formula",
    "title": "Explicit universal formula",
    "pages": "4-7"
   },
   {
-   "id": "sec-016-3-deformation-theory-via-diﬀerential-graded-lie",
+   "id": "sec-011-3-deformation-theory-via-diﬀerential-graded-lie",
    "title": "Deformation theory via diﬀerential graded Lie algebras",
    "pages": "7-7"
   },
   {
-   "id": "sec-017-31-t-ensor-categories-super-and-graded",
-   "title": "T ensor categories Super and Graded",
-   "pages": "7-7"
-  },
-  {
-   "id": "sec-018-32-maurer-cartan-equation-in-diﬀerential-graded",
-   "title": "Maurer-Cartan equation in diﬀerential graded Lie alge bras",
+   "id": "sec-012-32-maurer-cartan-equation-in-diﬀerential-graded",
+   "title": "Maurer-Cartan equation in diﬀerential graded Lie algebras",
    "pages": "7-8"
   },
   {
-   "id": "sec-019-33-remark",
+   "id": "sec-013-33-remark",
    "title": "Remark",
    "pages": "8-8"
   },
   {
-   "id": "sec-020-342-hochschild-complex",
-   "title": "Hochschild complex",
-   "pages": "8-8"
-  },
-  {
-   "id": "sec-021-34-examples",
+   "id": "sec-014-34-examples",
    "title": "Examples",
    "pages": "8-8"
   },
   {
-   "id": "sec-022-341-t-angent-complex",
-   "title": "T angent complex",
-   "pages": "8-10"
+   "id": "sec-015-341-tangent-complex",
+   "title": "Tangent complex",
+   "pages": "8-9"
   },
   {
-   "id": "sec-023-4-homotopy-lie-algebras-and-quasi-isomorphisms",
+   "id": "sec-016-342-hochschild-complex",
+   "title": "Hochschild complex",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-017-4-homotopy-lie-algebras-and-quasi-isomorphisms",
    "title": "Homotopy Lie algebras and quasi-isomorphisms",
    "pages": "10-10"
   },
   {
-   "id": "sec-024-41-f-ormal-manifolds",
-   "title": "F ormal manifolds",
+   "id": "sec-018-41-formal-manifolds",
+   "title": "Formal manifolds",
    "pages": "10-11"
   },
   {
-   "id": "sec-025-42-pre-l-morphisms",
+   "id": "sec-019-42-pre-l-morphisms",
    "title": "Pre-L∞-morphisms",
    "pages": "11-11"
   },
   {
-   "id": "sec-026-43-l-algebras-and-l-morphisms",
+   "id": "sec-020-43-l-algebras-and-l-morphisms",
    "title": "L∞-algebras and L∞-morphisms",
    "pages": "11-13"
   },
   {
-   "id": "sec-027-44-quasi-isomorphisms",
+   "id": "sec-021-44-quasi-isomorphisms",
    "title": "Quasi-isomorphisms",
    "pages": "13-13"
   },
   {
-   "id": "sec-028-45-a-sketch-of-the-proof",
+   "id": "sec-022-45-a-sketch-of-the-proof",
    "title": "A sketch of the proof",
    "pages": "13-13"
   },
   {
-   "id": "sec-029-451-homotopy-classiﬁcation-of-l-algebras",
+   "id": "sec-023-451-homotopy-classiﬁcation-of-l-algebras",
    "title": "Homotopy classiﬁcation of L∞-algebras",
    "pages": "13-14"
   },
   {
-   "id": "sec-030-452-deformation-functors-at-ﬁxed-points-of-q",
+   "id": "sec-024-452-deformation-functors-at-ﬁxed-points-of-q",
    "title": "Deformation functors at ﬁxed points of Q",
    "pages": "14-15"
   },
   {
-   "id": "sec-031-46-f-ormality",
-   "title": "F ormality",
+   "id": "sec-025-46-formality",
+   "title": "Formality",
    "pages": "15-15"
   },
   {
-   "id": "sec-032-461-two-diﬀerential-graded-lie-algebras",
+   "id": "sec-026-461-two-diﬀerential-graded-lie-algebras",
    "title": "Two diﬀerential graded Lie algebras",
    "pages": "15-16"
   },
   {
-   "id": "sec-033-4611-it-is-a-quasi-isomorphism",
+   "id": "sec-027-4611-it-is-a-quasi-isomorphism",
    "title": "It is a quasi-isomorphism",
    "pages": "16-17"
   },
   {
-   "id": "sec-034-462-main-theorem",
+   "id": "sec-028-462-main-theorem",
    "title": "Main theorem",
    "pages": "17-18"
   },
   {
-   "id": "sec-035-463-non-uniqueness",
+   "id": "sec-029-463-non-uniqueness",
    "title": "Non-uniqueness",
    "pages": "18-18"
   },
   {
-   "id": "sec-036-51-deﬁnitions",
+   "id": "sec-030-51-deﬁnitions",
    "title": "Deﬁnitions",
    "pages": "18-18"
   },
   {
-   "id": "sec-037-5-conﬁguration-spaces-and-their-compactiﬁcations",
+   "id": "sec-031-5-conﬁguration-spaces-and-their-compactiﬁcations",
    "title": "Conﬁguration spaces and their compactiﬁcations",
    "pages": "18-19"
   },
   {
-   "id": "sec-038-52-looking-through-a-magnifying-glass",
+   "id": "sec-032-52-looking-through-a-magnifying-glass",
    "title": "Looking through a magnifying glass",
    "pages": "19-22"
   },
   {
-   "id": "sec-039-521-boundary-strata",
+   "id": "sec-033-521-boundary-strata",
    "title": "Boundary strata",
    "pages": "22-22"
   },
   {
-   "id": "sec-040-6-universal-formula",
+   "id": "sec-034-6-universal-formula",
    "title": "Universal formula",
    "pages": "22-22"
   },
   {
-   "id": "sec-041-61-admissible-graphs",
+   "id": "sec-035-61-admissible-graphs",
    "title": "Admissible graphs",
    "pages": "22-22"
   },
   {
-   "id": "sec-042-62-diﬀerential-forms-on-conﬁguration-spaces",
+   "id": "sec-036-62-diﬀerential-forms-on-conﬁguration-spaces",
    "title": "Diﬀerential forms on conﬁguration spaces",
    "pages": "22-23"
   },
   {
-   "id": "sec-043-63-pre-l-morphisms-associated-with-graphs",
+   "id": "sec-037-63-pre-l-morphisms-associated-with-graphs",
    "title": "Pre-L∞-morphisms associated with graphs",
    "pages": "23-24"
   },
   {
-   "id": "sec-044-64-main-theorem-for-x-rd-and-the-proof",
+   "id": "sec-038-64-main-theorem-for-x-rd-and-the-proof",
    "title": "Main Theorem for X = Rd, and the proof",
    "pages": "24-25"
   },
   {
-   "id": "sec-045-641-case-s1",
+   "id": "sec-039-641-case-s1",
    "title": "Case S1",
    "pages": "25-25"
   },
   {
-   "id": "sec-046-6411-first-subcase-of-s1-n2-2",
+   "id": "sec-040-6411-first-subcase-of-s1-n2-2",
    "title": "First subcase of S1: n2 = 2",
    "pages": "25-26"
   },
   {
-   "id": "sec-047-6412-second-subcase-of-s1-n2-3",
-   "title": "Second subcase of S1: n2≥ 3",
+   "id": "sec-041-6412-second-subcase-of-s1-n2-3",
+   "title": "Second subcase of S1: n2 ≥3",
    "pages": "26-26"
   },
   {
-   "id": "sec-048-642-case-s2",
+   "id": "sec-042-642-case-s2",
    "title": "Case S2",
    "pages": "26-26"
   },
   {
-   "id": "sec-049-6421-first-subcase-of-s2-no-bad-edges",
+   "id": "sec-043-6421-first-subcase-of-s2-no-bad-edges",
    "title": "First subcase of S2: no bad edges",
    "pages": "26-27"
   },
   {
-   "id": "sec-050-6422-second-subcase-of-s2-there-is-a-bad-edge",
+   "id": "sec-044-6422-second-subcase-of-s2-there-is-a-bad-edge",
    "title": "Second subcase of S2: there is a bad edge",
    "pages": "27-27"
   },
   {
-   "id": "sec-051-643-we-ﬁnish-the-proof-of-the-theorem-from-64",
+   "id": "sec-045-643-we-ﬁnish-the-proof-of-the-theorem-from-64",
    "title": "We ﬁnish the proof of the theorem from 6.4",
    "pages": "27-28"
   },
   {
-   "id": "sec-052-644-comparison-with-the-formula-from-section-2",
+   "id": "sec-046-644-comparison-with-the-formula-from-section-2",
    "title": "Comparison with the formula from section 2",
    "pages": "28-28"
   },
   {
-   "id": "sec-053-65-grading-orientations-factorials-signs",
+   "id": "sec-047-65-grading-orientations-factorials-signs",
    "title": "Grading, orientations, factorials, signs",
    "pages": "28-28"
   },
   {
-   "id": "sec-054-66-v-anishing-of-integrals",
-   "title": "V anishing of integrals",
+   "id": "sec-048-66-vanishing-of-integrals",
+   "title": "Vanishing of integrals",
    "pages": "28-29"
   },
   {
-   "id": "sec-055-661-a-trick-using-logarithms",
+   "id": "sec-049-661-a-trick-using-logarithms",
    "title": "A trick using logarithms",
    "pages": "29-30"
   },
   {
-   "id": "sec-056-662-remark",
+   "id": "sec-050-662-remark",
    "title": "Remark",
    "pages": "30-30"
   },
   {
-   "id": "sec-057-7-f-ormality-conjecture-for-general-manifolds",
-   "title": "F ormality conjecture for general manifolds",
+   "id": "sec-051-7-formality-conjecture-for-general-manifolds",
+   "title": "Formality conjecture for general manifolds",
    "pages": "30-31"
   },
   {
-   "id": "sec-058-71-f-ormal-geometry-in-the-sense-of-i-gelfand-an",
-   "title": "F ormal geometry (in the sense of I. Gelfand and D. Kazhda n)",
+   "id": "sec-052-71-formal-geometry-in-the-sense-of-i-gelfand-and",
+   "title": "Formal geometry (in the sense of I. Gelfand and D. Kazhdan)",
    "pages": "31-31"
   },
   {
-   "id": "sec-059-72-flat-connections-and-q-equivariant-maps",
+   "id": "sec-053-72-flat-connections-and-q-equivariant-maps",
    "title": "Flat connections and Q-equivariant maps",
    "pages": "31-32"
   },
   {
-   "id": "sec-060-73-flat-families-in-deformation-quantization",
+   "id": "sec-054-73-flat-families-in-deformation-quantization",
    "title": "Flat families in deformation quantization",
    "pages": "32-32"
   },
   {
-   "id": "sec-061-731-flat-families-over-w",
+   "id": "sec-055-731-flat-families-over-w",
    "title": "Flat families over W",
    "pages": "32-32"
   },
   {
-   "id": "sec-062-7311-proof-of-the-property-p4",
+   "id": "sec-056-7311-proof-of-the-property-p4",
    "title": "Proof of the property P4",
-   "pages": "32-33"
+   "pages": "32-34"
   },
   {
-   "id": "sec-063-732-flat-families-over-π-t-x-coor",
-   "title": "Flat families over Π T (X coor)",
-   "pages": "33-33"
-  },
-  {
-   "id": "sec-064-733-flat-families-over-π-t-x-af-f",
-   "title": "Flat families over Π T (X af f)",
-   "pages": "33-34"
-  },
-  {
-   "id": "sec-065-7331-property-p5",
+   "id": "sec-057-7331-property-p5",
    "title": "Property P5",
    "pages": "34-35"
   },
   {
-   "id": "sec-066-734-flat-families-over-x",
+   "id": "sec-058-734-flat-families-over-x",
    "title": "Flat families over X",
    "pages": "35-36"
   },
   {
-   "id": "sec-067-735-passing-to-global-sections",
+   "id": "sec-059-735-passing-to-global-sections",
    "title": "Passing to global sections",
    "pages": "36-36"
   },
   {
-   "id": "sec-068-8-cup-products",
+   "id": "sec-060-8-cup-products",
    "title": "Cup-products",
    "pages": "36-36"
   },
   {
-   "id": "sec-069-81-cup-products-on-tangent-cohomology",
+   "id": "sec-061-81-cup-products-on-tangent-cohomology",
    "title": "Cup-products on tangent cohomology",
    "pages": "36-37"
   },
   {
-   "id": "sec-070-82-compatibility-of-u-with-cup-products",
+   "id": "sec-062-82-compatibility-of-u-with-cup-products",
    "title": "Compatibility of U with cup-products",
    "pages": "37-37"
   },
   {
-   "id": "sec-071-821-pictures-for-the-cup-product-in-polyvector-ﬁ",
+   "id": "sec-063-821-pictures-for-the-cup-product-in-polyvector-ﬁ",
    "title": "Pictures for the cup-product in polyvector ﬁelds",
    "pages": "37-38"
   },
   {
-   "id": "sec-072-822-pictures-for-the-cup-product-in-the-hochschi",
-   "title": "Pictures for the cup-product in the Hochschild compl ex",
+   "id": "sec-064-822-pictures-for-the-cup-product-in-the-hochschi",
+   "title": "Pictures for the cup-product in the Hochschild complex",
    "pages": "38-38"
   },
   {
-   "id": "sec-073-823-homotopy-between-two-pictures",
+   "id": "sec-065-823-homotopy-between-two-pictures",
    "title": "Homotopy between two pictures",
    "pages": "38-39"
   },
   {
-   "id": "sec-074-83-first-application-duﬂo-kirillov-isomorphism",
+   "id": "sec-066-83-first-application-duﬂo-kirillov-isomorphism",
    "title": "First application: Duﬂo-Kirillov isomorphism",
    "pages": "39-39"
   },
   {
-   "id": "sec-075-831-quanization-of-the-kirillov-poisson-bracket",
+   "id": "sec-067-831-quanization-of-the-kirillov-poisson-bracket",
    "title": "Quanization of the Kirillov-Poisson bracket",
    "pages": "39-40"
   },
   {
-   "id": "sec-076-832-three-isomorphisms",
+   "id": "sec-068-832-three-isomorphisms",
    "title": "Three isomorphisms",
-   "pages": "40-40"
-  },
-  {
-   "id": "sec-077-833-automorphisms-of-sym-g",
-   "title": "Automorphisms of Sym (g)",
    "pages": "40-41"
   },
   {
-   "id": "sec-078-8331-isomorphism-it",
+   "id": "sec-069-8331-isomorphism-it",
    "title": "Isomorphism IT",
-   "pages": "41-42"
+   "pages": "41-43"
   },
   {
-   "id": "sec-079-8332-isomorphism-ialgip-bw",
-   "title": "Isomorphism Ialg◦IP BW",
-   "pages": "42-43"
-  },
-  {
-   "id": "sec-080-834-comparison-with-the-duﬂo-kirillov-isomorphis",
+   "id": "sec-070-834-comparison-with-the-duﬂo-kirillov-isomorphis",
    "title": "Comparison with the Duﬂo-Kirillov isomorphism",
    "pages": "43-44"
   },
   {
-   "id": "sec-081-835-results-in-rigid-tensor-categories",
+   "id": "sec-071-835-results-in-rigid-tensor-categories",
    "title": "Results in rigid tensor categories",
-   "pages": "44-46"
+   "pages": "44-44"
+  },
+  {
+   "id": "sec-072-84-second-application-algebras-of-ext-s",
+   "title": "Second application: algebras of Ext-s.",
+   "pages": "44-45"
+  },
+  {
+   "id": "sec-073-bibiliography",
+   "title": "Bibiliography",
+   "pages": "45-46"
   }
  ],
  "provenance": {

@@ -1,6 +1,6 @@
 ---
 doc_id: 0510388v1
-doc_title: "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE Dennis DeTurck and Herman Gluck"
+doc_title: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space"
 section_id: sec-005-4-left-invariant-vector-fields-on-s3
 section_title: "Left-invariant vector fields on S3 ."
 section_number: 4
@@ -8,6 +8,7 @@ pages: 12-15
 source_pdf: 0510388v1.pdf
 source_sha256: c83c0f6a2eaa74f3
 toc_source: inferred
+doc_brief: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space — 64 sections: Front matter; ORGANIZATION; STATEMENTS OF RESULTS"
 ---
 Left-invariant vector fields on  S3  play an important role in understanding formula (1) 
 for the Biot-Savart operator.  A vector field  V  on  S3  is said to be left-invariant if 
@@ -47,7 +48,6 @@ is enough to prove the result for one such field.
  
  
  
-13 
  
  
 For example, if 
@@ -96,7 +96,6 @@ As we let  α  →  0 ,  this approaches  — 2 .  Hence at the point  x  =  1 ,
 component of  ∇ × V  in the  i-direction is  — 2.  So far, so good, since  V(x)  =  i . 
  
  
-14 
  
  
  
@@ -131,7 +130,4 @@ roles played by the three integrals in formula (1) of Theorem 2 above.
 (c)  The third integral is zero if and only if  V  is divergence-free. 
  
 (d)  If  V  is a nonzero gradient field, then the first and third integrals are  
-       nonzero and cancel each other, while the second integral is zero. 
- 
- 
-15
+       nonzero and cancel each other, while the second integral is zero.

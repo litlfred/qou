@@ -1,1 +1,0 @@
-The following equality holds:

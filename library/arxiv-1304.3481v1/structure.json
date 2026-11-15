@@ -6,10 +6,12 @@
   "sha256": "d0840f2775c0f761c2e03dc01af6a4879456eccf53f70cd0e3e8da76b3b6d00d",
   "bytes": 886486,
   "pages": 78,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -19,19 +21,30 @@
    "stamp_date": "11 Apr 2013"
   },
   "doi": null,
-  "title": "Quadruply-graded colored homology of knots",
-  "authors_raw": "Eugene Gorsky, Sergei Gukov, and Marko Sto\u02c7 si\u0107",
-  "abstract": "W e conjecture the existence of four independent gradings in the colored HOMFLY homology. W e describe these gradings explic itly for the rectangular colored homology of torus knots and make qualit ative predictions of various interesting structures and symmetries in the col ored homology of general knots. W e also give a simple representation-theore tic model for the HOMFLY homology of the unknot colored by any representation . While some of these structures have a natural interpretation in the phy sical realization of knot homologies based on counting supersymmetric con\ufb01gu rations (BPS states, instantons, and vortices), others are completely n ew. They suggest new geometric and physical realizations of colored HOMFLY h omology as the Hochschild homology of the category of branes in a Landau-Gi nzburg B-model or, equivalently, in the mirror A-model. Supergroups and su permanifolds are surprisingly ubiquitous in all aspects of this work. CALT-68-2903",
-  "docinfo": {
-   "Producer": "GPL Ghostscript 10.01.2",
-   "CreationDate": "D:20241127010604-05'00'",
-   "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  },
+  "title": "Quadruply-Graded Colored Homology of Knots",
+  "authors_raw": "Eugene Gorsky, Sergei Gukov, and Marko Stoˇsić",
   "title_lines": [
    "Quadruply-graded colored homology of knots"
-  ]
+  ],
+  "abstract": "We conjecture the existence of four independent gradings in the colored HOMFLY homology. We describe these gradings explicitly for the rectangular colored homology of torus knots and make qualitative predictions of various interesting structures and symmetries in the colored homology of general knots. We also give a simple representation-theoretic model for the HOMFLY homology of the unknot colored by any representation. While some of these structures have a natural interpretation in the physical realization of knot homologies based on counting supersymmetric conﬁgurations (BPS states, instantons, and vortices), others are completely new. They suggest new geometric and physical realizations of colored HOMFLY homology as the Hochschild homology of the category of branes in a Landau-Ginzburg B-model or, equivalently, in the mirror A-model. Supergroups and supermanifolds are surprisingly ubiquitous in all aspects of this work. CALT-68-2903",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20241127010604-05'00'"
+  },
+  "title_raw": "Quadruply-graded colored homology of knots",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Quadruply-graded colored homology of knots Eugene Gorsky, Sergei Gukov, and Marko Stoˇsi´c",
+   "outline": "1. Introduction",
+   "text": "Quadruply-graded colored homology of knots",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Quadruply-graded colored homology of knots Eugene Gorsky, Sergei Gukov, and Marko Stoˇsi´c"
  },
  "toc": [
   {
@@ -39,136 +52,1124 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Bosonic and Fermionic generators",
    "page": 7,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Gradings, Differentials, Mirror Symmetry",
    "page": 19,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 1,
    "title": "Examples",
    "page": 35,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "35"
   },
   {
    "level": 1,
    "title": "Colored HOMFLY homology for torus knots",
    "page": 47,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "47"
   },
   {
    "level": 1,
    "title": "HOMFLY homology from A-model and B-model",
    "page": 55,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "55"
   },
   {
    "level": 1,
    "title": "``Bottom row'' of the colored HOMFLY homology",
    "page": 61,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "61"
   },
   {
    "level": 1,
    "title": "Appendix A. Rectangle-colored invariants of (2,m) torus knots",
    "page": 68,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "68"
   },
   {
    "level": 1,
    "title": "Appendix B. Unreduced colored HOMFLY homology",
    "page": 69,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "69"
   },
   {
    "level": 1,
    "title": "References",
    "page": 75,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "75"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "A real isotropic knot cobordism Σ ⊂R × S3 deﬁnes a",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Walls and chambers for the conifold X in (2.2). Note, that (2.9) is very similar — and, in fact, possibly related — to the",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The hook-length of x is deﬁned as h(x) = a(x)+l(x)+1, and the content of x is deﬁned as c(x) = a′(x) −l′(x)",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Mirror symmetry for uij (upper pair) and for ξij (lower pair)",
+   "page": 16,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Action of the diﬀerential dΛk→Λk−j and the q-degrees of the generators ux, ξx",
+   "page": 18,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Bosonic generators for Λ2 and 2Λ2",
+   "page": 18,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Fermionic generators for Λ2 and 2Λ2",
+   "page": 19,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "19"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Colored diﬀerential d2Λ2→2Λ1",
+   "page": 19,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "19"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "In the approach of [87], homological invariants of knots labeled by representations of sl(n|m) can be realized by a system of n semi-inﬁnite D4-branes ending on one side of the D6-brane and m semi-inﬁnite D4-branes ending on the other side of the D6brane",
+   "page": 25,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "Domain Ωcan be visualized as the complement of λt in a positive quadrant of the (n, m) plane. Integer points on its boundary correspond to diﬀerentials dn|m or, equivalently, dN with",
+   "page": 27,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "This diagram represents the case of the representation labeled by the Young diagram with R = 4 rows and S = 5 columns. An arrow labelled by dn|m going from Young diagram D1 to D2 means that there exists a diﬀerential dcol",
+   "page": 29,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "The uncolored homologies of the trefoil (left diagram) and ﬁgure-eight knot (right diagram)",
+   "page": 36,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "13",
+   "title": "The S2-colored homology of the trefoil knot",
+   "page": 37,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "14",
+   "title": "The tilde-version of the S2-colored homology of the trefoil knot (Q = q + tr −tc)",
+   "page": 38,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "15",
+   "title": "By comparing Figures 13 and 15 one can immediately see the mirror",
+   "page": 38,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "16",
+   "title": "The tilde-version of the Λ2-colored homology of the",
+   "page": 39,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "17",
+   "title": "The S2-colored homology of the ﬁgure-eight knot. degree 0, in accordance with the fact that 41 is a thin knot. The homology H",
+   "page": 40,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "18",
+   "title": "The tilde-version of S2-colored homology of the ﬁgureeight knot",
+   "page": 41,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "19",
+   "title": "Generators u(n)",
+   "page": 48,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "20",
+   "title": "Generators ξ(n)",
+   "page": 48,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "21",
+   "title": "Algebraic model for the S2 homology of the trefoil",
+   "page": 52,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "22",
+   "title": "Diagram µ is balanced if diagrams α and β ﬁll the rectangle",
+   "page": 69,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "69"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 43,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 45,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 46,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 47,
+   "label": "47",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 49,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 50,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 51,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 52,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 53,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 54,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 55,
+   "label": "55",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 57,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 58,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 59,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 60,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 61,
+   "label": "61",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 63,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 64,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 65,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 66,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 67,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 68,
+   "label": "68",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 69,
+   "label": "69",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 70,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 71,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 72,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 73,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 74,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 75,
+   "label": "75",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 76,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 77,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 78,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1102,
+   "n_words": 153,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 8,
-   "n_chars": 21564,
-   "n_words": 3687
+   "page_end": 7,
+   "n_chars": 20314,
+   "n_words": 3323,
+   "label_start": null,
+   "label_end": "7"
   },
   {
    "id": "sec-001-2-bosonic-and-fermionic-generators",
    "number": "2",
    "title": "Bosonic and Fermionic generators",
    "level": 1,
-   "page_start": 8,
-   "page_end": 35,
-   "n_chars": 65639,
-   "n_words": 12303
+   "page_start": 7,
+   "page_end": 19,
+   "n_chars": 25121,
+   "n_words": 4807,
+   "label_start": "7",
+   "label_end": "19"
   },
   {
-   "id": "sec-002-4-examples",
+   "id": "sec-002-3-gradings-differentials-mirror-symmetry",
+   "number": "3",
+   "title": "Gradings, Differentials, Mirror Symmetry",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 35,
+   "n_chars": 41034,
+   "n_words": 7110,
+   "label_start": "19",
+   "label_end": "35"
+  },
+  {
+   "id": "sec-003-4-examples",
    "number": "4",
    "title": "Examples",
    "level": 1,
    "page_start": 35,
-   "page_end": 68,
-   "n_chars": 75374,
-   "n_words": 14608
+   "page_end": 47,
+   "n_chars": 23365,
+   "n_words": 4346,
+   "label_start": "35",
+   "label_end": "47"
   },
   {
-   "id": "sec-003-appendix-a-rectangle-colored-invariants-of-2m-to",
+   "id": "sec-004-5-colored-homfly-homology-for-torus-knots",
+   "number": "5",
+   "title": "Colored HOMFLY homology for torus knots",
+   "level": 1,
+   "page_start": 47,
+   "page_end": 55,
+   "n_chars": 17937,
+   "n_words": 3544,
+   "label_start": "47",
+   "label_end": "55"
+  },
+  {
+   "id": "sec-005-6-homfly-homology-from-a-model-and-b-model",
+   "number": "6",
+   "title": "HOMFLY homology from A-model and B-model",
+   "level": 1,
+   "page_start": 55,
+   "page_end": 61,
+   "n_chars": 16503,
+   "n_words": 3012,
+   "label_start": "55",
+   "label_end": "61"
+  },
+  {
+   "id": "sec-006-7-bottom-row-of-the-colored-homfly-homology",
+   "number": "7",
+   "title": "``Bottom row'' of the colored HOMFLY homology",
+   "level": 1,
+   "page_start": 61,
+   "page_end": 68,
+   "n_chars": 16784,
+   "n_words": 3032,
+   "label_start": "61",
+   "label_end": "68"
+  },
+  {
+   "id": "sec-007-appendix-a-rectangle-colored-invariants-of-2m-to",
    "number": null,
    "title": "Appendix A. Rectangle-colored invariants of (2,m) torus knots",
    "level": 1,
    "page_start": 68,
-   "page_end": 75,
-   "n_chars": 14753,
-   "n_words": 2931
+   "page_end": 69,
+   "n_chars": 1862,
+   "n_words": 360,
+   "label_start": "68",
+   "label_end": "69"
   },
   {
-   "id": "sec-004-references",
+   "id": "sec-008-appendix-b-unreduced-colored-homfly-homology",
+   "number": null,
+   "title": "Appendix B. Unreduced colored HOMFLY homology",
+   "level": 1,
+   "page_start": 69,
+   "page_end": 75,
+   "n_chars": 12688,
+   "n_words": 2409,
+   "label_start": "69",
+   "label_end": "75"
+  },
+  {
+   "id": "sec-009-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 75,
    "page_end": 78,
-   "n_chars": 12103,
-   "n_words": 1757
+   "n_chars": 12043,
+   "n_words": 1697,
+   "label_start": "75",
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 10,
-  "sections": 5,
-  "chars_total": 189433,
+  "toc_inferred_entries": 0,
+  "figure_entries": 22,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 0,
+    "items": []
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 1,
+    "items": [
+     "Introduction: listed p1, found p19"
+    ]
+   }
+  },
+  "sections": 11,
+  "chars_total": 188753,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "higher_v17.tex",
    "tex_sections": 49,
-   "overlaid": 4,
+   "overlaid": 9,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -176,39 +1177,84 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-2-bosonic-and-fermionic-generators",
      "title": "Bosonic and Fermionic generators",
-     "prose_ratio": 0.67,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.937,
+     "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-002-4-examples",
+     "id": "sec-002-3-gradings-differentials-mirror-symmetry",
+     "title": "Gradings, Differentials, Mirror Symmetry",
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-4-examples",
      "title": "Examples",
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-5-colored-homfly-homology-for-torus-knots",
+     "title": "Colored HOMFLY homology for torus knots",
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-6-homfly-homology-from-a-model-and-b-model",
+     "title": "HOMFLY homology from A-model and B-model",
      "prose_ratio": 0.93,
-     "coverage_ratio": 0.976,
+     "coverage_ratio": 0.974,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-003-appendix-a-rectangle-colored-invariants-of-2m-to",
+     "id": "sec-006-7-bottom-row-of-the-colored-homfly-homology",
+     "title": "``Bottom row'' of the colored HOMFLY homology",
+     "prose_ratio": 0.941,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-appendix-a-rectangle-colored-invariants-of-2m-to",
      "title": "Appendix A. Rectangle-colored invariants of (2,m) torus knots",
-     "prose_ratio": 0.954,
-     "coverage_ratio": 0.947,
+     "prose_ratio": 0.917,
+     "coverage_ratio": 0.831,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-004-references",
+     "id": "sec-008-appendix-b-unreduced-colored-homfly-homology",
+     "title": "Appendix B. Unreduced colored HOMFLY homology",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-references",
      "title": "References",
      "result": "no matching \\section"
     }

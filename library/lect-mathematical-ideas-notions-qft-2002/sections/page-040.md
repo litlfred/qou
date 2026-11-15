@@ -1,0 +1,76 @@
+---
+doc_id: lect-mathematical-ideas-notions-qft-2002
+doc_title: "Mathematical ideas and notions of quantum field theory"
+section_id: page-040
+section_title: "Page 40"
+pages: 40-40
+pdf_page: 40
+source_pdf: lect-mathematical-ideas-notions-qft-2002.pdf
+source_sha256: 95cac1ccd6c80226
+text_source: ocr
+granularity: page
+doc_brief: "Mathematical ideas and notions of quantum field theory — 78 sections: Page 1; Page 2; Page 3"
+---
+40 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY
+
+The proposition says, essentially, that the integrand has a sufficiently sharp max-
+imum, so that the leading behavior of the integral can be computed by the steepest
+descent formula. We note that we cannot apply the steepest descent formula with-
+out explanations, since the integral is over a space whose dimension grows as the
+perturbation parameter 1/N goes to 0. In other words, it is necessary to do some
+estimates which we will omit. We will just mention that for g = 0, this result can be
+derived from the explicit evaluation of the integral using Hermite polynomials (see
+§4). For the general case, we refer the reader to the book of P.Deift “Orthogonal
+polynomials and random matrices: a Riemann-Hilbert approach”.
+
+The integrand K(A1,.... Av) = e7NCEN/2+9 EM) TT (A; — Ay)? has a unique
+maximum, because it is logarithmically concave (check it!). The maximum of the
+integrand is found by equating the partial derivatives to zero. This yields
+
+1 1 3
+(16) > you = N(5% + 291).
+j#i
+Let Ay < Ag <... < Aw be the unique (up to permutations) solution of this system
+of equations.
+
+Proposition 6.3. The normalized cownting measures x >, 6(a—X;) converge weakly
+to a measure u(x) = f(x,g)dxz, where f(x,g) is a continuous function, supported
+on a finite interval [—2a, 2a], and differentiable on this interval.
+
+For the proof we again refer the reader to the book of P.Deift (p.132 and later).
+We note that for g = 0, by Wigner’s semicircular law, a = 1 and f(z,0) =
+= 4— 27; so f(a,g) = v4 —2? + O(g).
+
+Now our job will be to find the function f(z, g). Passing to the limit in equation
+16 (which requires justification that we will omit), we get
+
+2a 1 1
+| —— f(z, g)dx = Sy + 2gy*, |y| < 2a
+2 Yo 2
+
+where the integral is understood in the sense of principal value.
+
+This is a linear integral equation on f(z, g), which can be solved in a standard
+way. Namely, one considers the analytic function F(y) = — sta! (x, g)dx for y
+in the complex plane but outside of the interval [—2a,2a]. For y € [—2a, 2a], let
+F,(y), F_(y) denote the limits of F(y) from above and below. Then by the Plemelj
+formula, the integral equation implies
+
+5(Fe(y) + F_(y)) = x + 2gy’.
+
+On the other hand, F.(y) = F_(y). Hence, ReF,.(y) = Re(F_(y)) = $y + 2gy°.
+
+Now set y = a(z + 27'). Then, as y runs through the exterior of [—2a, 2a],
+z runs through the exterior of the unit circle. So the function G(z) := F(y) is
+analytic on the outside of the unit circle, with decay at infinity, and ReG(z) =
+da(z+ 271) + 2ga3(z + 271)%, |z| = 1. This implies that G(z) is twice the sum of
+all negative degree terms of this Laurent polynomial. In other words, we have
+
+G(z) = 4ga?z~? + (a + 12ga*)27".
+
+z
+
+This yields
+
+1 1 - -
+Fly) = xut gy? — G + 4ga? + 2gy”)V/y? — 4a?.

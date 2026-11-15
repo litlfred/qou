@@ -1,0 +1,73 @@
+IOP Publishing
+
+J. Phys. Commun. 6 (2022) 015002 LDiCairano
+
+Another possible approach is the numerical one. In particular, under suitable condition on the kernel
+matrix, L(t — T),a GLE can be converted into a stochastic Volterra equation where several numerical integration
+schemes have been developed such as the Euler and Milstein scheme [35].
+
+We now show that adopting definitions (44), one naturally recover the FDR.
+
+Hence, let us consider the heat bath Hamiltonian from equation (33), namely:
+
+IITs 1
+
+Ag, Q = + 7 {2 — a(X), K(Q — a(X)))g. (46)
+
+The canonical probability density is given by:
+
+p(X (0)|Q(0), 1(0)) = se ites : 2 (Q—aXO),K(QW)—aXO))) ga (47)
+
+where Z is the canonical partition function
+Ze f e- 121 0).Q0)XO)1gQ (0) dI(0), (48)
+
+and where 3-! = kgT.
+Let us note that, since X is held fixed, we can introduce the following substitution:
+
+x(0) = Q(0) — a(X(0)), (49)
+which does not affect the integration measure, i.e. dx(0) = dQ(0), thereby, the canonical partition and density
+functions read:
+
+p(X(0)|x(0), 1(0)) += i ECL D)g3n — (x(0),Kxe(0)) 23 ),
+Z
+Zs f eb)» — (#0)5K())22®) dee (0) AT (0), (50)
+and the integration measure assumes manifestly a Gaussian form.
+By exploiting equation (49), the noise vector in equation (44) becomes:
+F(t) = A'(Gx(t)I() + Hx (t)x(0)), (1)
+and the computation of the second order correlation functions can be done easily [30]:
+
+lpn —1
+(Dp = (x)p = 0; (I@I)p = a (x ®@ x)p = (x @ I), =0. (52)
+
+B B >
+
+Furthermore, we notice that the noise, F, isa mean-zero vector, namely: (F(t)) p=0.In order to explicitly write
+the fluctuation-dissipation relation (noise autocorrelation function), we first expand the tensor product, i.e.:
+F(t) @ F(t) = M'(Gx (IO) + Hx()x(0) ® CO)GK(T) + XOHE TA
+= A(Gx(t)1 (0) @ (0) G(T) + Hg (t)x(0) @ x(0) Hk (7)
++ Hx (t)x(0) ® I(0) Gh(r) + Gx(t)I(0) @ x (0)He(r)A. (53)
+Thus, by exploiting equation (52), the average of the tensor product above becomes:
+(F(t) ® F(7))y = B-'ATK cos(K'/(t — 7) A, (54)
+
+where we used equation (40) and knowing that cos(K'/?t) and sin(K!/?t) commute with any polynomial of K.
+We obtained in equation (54), the fluctuation-dissipation relation; in fact, by comparing the operator on the
+right-hand side above with equation (44), we explicitly have:
+
+(F(t) @ F(t))) = GLU — 7). (55)
+
+As proof of consistence and show-case example, let us finally apply such a derivation to the Hamiltonian
+system in equation (12) proposed by Zwanzig. Thus, the equilibrium map is given by
+a}l(x) = “Ex, Vie f,NI
+w;
+
+whereas the interaction matrix K is
+
+N
+
+K=)\ wie; ® ei, (56)
+
+i=1
+In this setting, it consists in imposing f,(X) = X with n; = nj.) = 0; /w? and j= 0 for any I € [2, n]. This
+implies that the matrix A in equation (41) reduces to
+
+9

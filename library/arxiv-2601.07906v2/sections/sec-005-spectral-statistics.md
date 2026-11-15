@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2601.07906v2
-doc_title: "March 2026 A universal sum over topologies in 3d gravity"
+doc_title: "A universal sum over topologies in 3d gravity"
 section_id: sec-005-spectral-statistics
 section_title: "Spectral statistics"
 section_number: null
 pages: 21-22
 source_pdf: 2601.07906v2.pdf
 source_sha256: e69b1bf37f2c75b0
-doc_brief: "March 2026 A universal sum over topologies in 3d gravity — We explore the sum over topologies in AdS 3 quantum gravity and its relationship with the statistical interpretation of the boundary theory."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.942
-latex_coverage_ratio: 0.972
+latex_coverage_ratio: 0.992
+doc_brief: "A universal sum over topologies in 3d gravity — We explore the sum over topologies in AdS3 quantum gravity and its relationship with the statistical interpretation of the boundary theory."
 ---
 \label{sec:spectral_statistics}
 

@@ -1,0 +1,1 @@
+In the next sections, we shall contruct an exchangeable pair and check the hypothesis of Theorem [\[theo:MultivariateStein\]](#theo:MultivariateStein){reference-type="ref" reference="theo:MultivariateStein"}.

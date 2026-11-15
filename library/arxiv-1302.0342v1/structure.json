@@ -6,7 +6,9 @@
   "sha256": "ec2ca6ba7896456d896716824fe40854ea931f164b9a710f98f1cc9d8edb93ca",
   "bytes": 551164,
   "pages": 5,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -18,62 +20,205 @@
    "stamp_date": "2 Feb 2013"
   },
   "doi": null,
-  "title": "Tying knots in light fields",
-  "authors_raw": "Hridesh Kedia,1,∗ Iwo Bialynicki-Birula,2 Daniel Peralta-Salas,3 and William T.M. Irvine 1",
-  "abstract": null,
-  "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20241127050957Z",
-   "Creator": "LaTeX with hyperref package",
-   "Producer": "pdfTeX-1.40.12",
-   "Title": ""
-  },
-  "title_prev": "Tying knots in light ﬁelds",
+  "title": "Tying knots in light ﬁelds",
+  "authors_raw": "Hridesh Kedia,1, ∗Iwo Bialynicki-Birula,2 Daniel Peralta-Salas,3 and William T.M. Irvine1",
   "title_lines": [
    "Tying knots in light fields"
-  ]
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.12",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20241127050957Z"
+  },
+  "title_raw": "Tying knots in light fields",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Tying knots in light ﬁelds",
+   "outline": "Tying knots in light fields",
+   "text": "Tying knots in light fields",
+   "corroborated_by": [
+    "outline",
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Tying knots in light fields"
  },
- "toc": [
+ "toc": [],
+ "toc_source": "none",
+ "toc_undetermined_reason": null,
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted: one section per page.",
+ "figures": [
   {
-   "level": 1,
-   "title": "Tying knots in light fields",
+   "kind": "figure",
+   "number": "1",
+   "title": "Hopﬁon solution: ﬁeld line structure (a-c) and time evolution (d-e). a: Hopf link formed by the circle at the core (orange) of the nested tori, and one of the ﬁeld lines (blue). b: A torus (purple) enclosing the core (orange), ﬁlled by mutually linked ﬁeld lines. c: Nested tori (purple) enclosing th",
    "page": 1,
-   "source": "outline",
-   "number": null
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "1"
   },
   {
-   "level": 2,
-   "title": "Abstract",
-   "page": 1,
-   "source": "outline",
-   "number": null
+   "kind": "figure",
+   "number": "2",
+   "title": "Structure of magnetic ﬁeld lines, a-c:",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
   },
   {
-   "level": 2,
-   "title": "References",
-   "page": 5,
-   "source": "outline",
-   "number": null
+   "kind": "figure",
+   "number": "3",
+   "title": "Time evolution of magnetic ﬁeld lines and energy density for a: the trefoil knot (p = 2, q = 3), b: the cinquefoil knot (p = 2, q = 5) and c: the 4 Hopf-linked rings (p = 2, q = 2). Shown is the topology preserving, ﬂuid-like evolution of the core ﬁeld line(s) (orange), and ﬁeld line(s) (blue) lying",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
   }
  ],
- "toc_source": "outline",
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-document",
+   "id": "page-001",
    "number": null,
-   "title": "Document",
+   "title": "Page 1",
    "level": 1,
    "page_start": 1,
+   "page_end": 1,
+   "n_chars": 4360,
+   "n_words": 688,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 5458,
+   "n_words": 962,
+   "label_start": "2",
+   "label_end": "2"
+  },
+  {
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 4608,
+   "n_words": 901,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 2771,
+   "n_words": 566,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
+   "level": 1,
+   "page_start": 5,
    "page_end": 5,
-   "n_chars": 22065,
-   "n_words": 3881
+   "n_chars": 4786,
+   "n_words": 780,
+   "label_start": "5",
+   "label_end": "5"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 3,
-  "sections": 1,
-  "chars_total": 22065
+  "toc_entries": 0,
+  "toc_inferred_entries": 0,
+  "figure_entries": 3,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 5,
+  "chars_total": 21983,
+  "furniture_lines_stripped": 4,
+  "outline_rejected": "1 of 3 outline entries name a heading the pages print (< 50%), e.g. \"Tying knots in light fields\""
  }
 }

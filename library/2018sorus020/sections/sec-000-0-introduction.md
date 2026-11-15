@@ -8,6 +8,7 @@ pages: 6-16
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
 toc_source: inferred
+doc_brief: "Reidemeister torsion on character varieties — 52 sections: Front matter; Introduction; Character varieties and Reidemeist"
 ---
 The Reidemeister torsion has been introduced as a topological invariant of homo-
 logical complexes in 1935 by both Reidemeister (in [Rei35]) and Franz (in [Fra35])
@@ -198,40 +199,54 @@ compact curve obtained from X¯ by desingularizing and adding a ﬁnite number o
 points at inﬁnity : we call the latter points ideal points of Y and the others are ﬁnite
 points. We denote by v an element of Y that can be viewed as a valuation on the
 9
-function ﬁeld C(Y ) = C(X¯). Its local ring at v will be denoted by Ov. The torsion
-will be denoted by tor(M, Ad ◦ρ) and seen as an element of ΩC(Y )/C. The ﬁrst result
+function field C(Y) = C(X). Its local ring at v will be denoted by O,. The torsion
+will be denoted by tor(M, Ad op) and seen as an element of Qcyyy/c. The first result
+
 is the following theorem :
-Theorem (Theorem 2.0.1). Let v be a ﬁnite point of Y , then tor(M, Ad ◦ρ) has no
+
+Theorem (Theorem |2.0.1). Let v be a finite point of Y, then tor(M, Adop) has no
+
 pole at v. More precisely
-1. If v projects to an irreducible character in X(M), then the vanishing order of
-tor(M, Ad ◦ρ) at v is the length of the torsion part of the module ΩC[X]/C⊗Ov.
+
+1. Ifv projects to an irreducible character in X(M), then the vanishing order of
+tor(M, Ad op) at v is the length of the torsion part of the module Qeix\/c® Ov.
 This integer is an invariant of the local singularity which can be computed
 explicitly. In particular if v projects to a smooth point of X(M) then the
+
 torsion does not vanish at v.
+
 2. Suppose that M is a knot complement and m is a meridian. If v projects to
-a reducible character λ + λ−1 in X(M) then λ(m)2 is a root of the Alexander
-polynomial of M of order r ≥1. Under some technical hypothesis detailed
-in Section 2.3, tor(M, Ad ◦ρ) vanishes at v at order bounded by 2r −2. In
-particular it does not vanishes if λ2 is a simple root.
-If v is an ideal point of Y , then the Culler-Shalen theory associates to v an action
-of π1(M) on the Bass-Serre tree of SL2(Ov) which itself produces an incompressible
-surface Σ in M. We say that Σ is associated to the ideal point v.
-Theorem (Theorem 2.0.2). Let v be an ideal point of Y and Σ be an incompressible
-non-Seifert surface associated to v. We suppose that Σ is a union of parallel connec-
-ted copies Σ1 ∪. . . Σn and that both components of M \ Σi are handlebodies. Let us
+a reducible character \+A~! in X(M) then X(m)? is a root of the Alexander
+polynomial of M of order r > 1. Under some technical hypothesis detailed
+in Section [2.4 tor(M, Adop) vanishes at v at order bounded by 2r — 2. In
+
+particular it does not vanishes if ” is a simple root.
+
+If v is an ideal point of Y, then the Culler-Shalen theory associates to v an action
+of 7(/) on the Bass-Serre tree of SL2(O,) which itself produces an incompressible
+
+surface 4 in M. We say that © is associated to the ideal point v.
+
+Theorem (Theorem|2.0.2). Let v be an ideal point of Y and X be an incompressible
+non-Seifert surface associated to v. We suppose that & is a union of parallel connec-
+ted copies ©, U...Xn and that both components of M \ d; are handlebodies. Let us
 also assume that Y contains the character of a representation whose restriction to
-Σ is irreducible. Then the torsion tor(M, Ad ◦ρ) has vanishing order at v bounded
-by −n(χ(Σ)+1) if the ideal point does not correspond to the character of an abelian
-representation of π1(Σ), and by −nχ(Σ) −m else, where m depends only on the
-restriction of ρ to π1(Σ).
-We say that a surface S ⊂M is free if its complement is a union of handlebodies.
+X is irreducible. Then the torsion tor(M, Adop) has vanishing order at v bounded
+by —n(x(%) +1) if the ideal point does not correspond to the character of an abelian
+representation of 7(X), and by —nx(X) — m else, where m depends only on the
+
+restriction of p to ™(%).
+
+We say that a surface S C M is free if its complement is a union of handlebodies.
 Many natural constructions yield such surfaces. For example take a knot diagram
-and consider the checkerboard surfaces (on Figure 1 on the left is an example of
-such a surface). If one of them, say Σ, is an incompressible non orientable surface
-in M, then the boundary of a neighborhood of Σ is orientable, and does split M
+and consider the checkerboard surfaces (on Figure {1} on the left is an example of
+such a surface). If one of them, say ©, is an incompressible non orientable surface
+in M, then the boundary of a neighborhood of ¥ is orientable, and does split M
 into two handlebodies, as can be easily seen (both part of its complement retract
 onto a graph). In fact, it is the case for every incompressible surfaces as soon as
+
 M is small. On the other hand, every incompressible non Seifert surface will be
+
 10
 splitting M. The distinction with the abelian case at the end of the theorem comes
 from the fact that this situation appears naturally in basic examples as the ﬁgure

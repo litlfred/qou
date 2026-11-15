@@ -7,8 +7,8 @@
   "bytes": 1242737,
   "pages": 6,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -21,60 +21,218 @@
   },
   "doi": null,
   "title": "Universality and Kinematic Dependence of Hadronization Effects in DIS Global Event Shapes",
-  "authors_raw": "Radja Boughezal, 1,\u2217 Haotian Cao, 1, 2,\u2020 Zhong-Bo Kang, 3, 4, 2,\u2021",
+  "authors_raw": "Radja Boughezal,1, ∗Haotian Cao,1, 2, † Zhong-Bo Kang,3, 4, 2, ‡",
   "title_lines": [
    "Universality and Kinematic Dependence of Hadronization Effects",
    "in DIS Global Event Shapes"
   ],
   "abstract": null,
   "docinfo": {
+   "Title": "Universality and Kinematic Dependence of Hadronization Effects in DIS Global Event Shapes",
    "Author": "Radja Boughezal; Haotian Cao; Zhong-Bo Kang; Xiaohui Liu; Sonny Mantry; Frank Petriello",
-   "Creator": "arXiv GenPDF (tex2pdf:8def8d8)",
    "Producer": "pikepdf 8.15.1",
-   "Title": "Universality and Kinematic Dependence of Hadronization Effects in DIS Global Event Shapes"
+   "Creator": "arXiv GenPDF (tex2pdf:8def8d8)"
+  },
+  "title_raw": "Universality and Kinematic Dependence of Hadronization Effects in DIS Global Event Shapes",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Universality and Kinematic Dependence of Hadronization Effects in DIS Global Event Shapes",
+   "heading": "Universality and Kinematic Dependence of Hadronization Effects in DIS Global Event Shapes",
+   "outline": "Universality and Kinematic Dependence of Hadronization Effects in DIS Global Event Shapes",
+   "text": "Universality and Kinematic Dependence of Hadronization Effects in DIS Global Event Shapes",
+   "corroborated_by": [
+    "heading",
+    "outline",
+    "text",
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "Universality and Kinematic Dependence of Hadronization Effects  in DIS Global Event Shapes",
-   "page": 1,
-   "source": "outline",
-   "number": null
-  },
-  {
-   "level": 2,
-   "title": "Abstract",
-   "page": 1,
-   "source": "outline",
-   "number": null
-  },
-  {
-   "level": 2,
-   "title": "References",
-   "page": 5,
-   "source": "outline",
-   "number": null
+   "title": "s = 105 GeV",
+   "page": 3,
+   "source": "inferred",
+   "number": "2.00",
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "3"
   }
  ],
- "toc_source": "outline",
+ "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "1-Jettiness groups all final state hadrons into beam (B) or jet (J) regions. In the small 1-Jettiness region, shown above, energetic (red) hadrons are restricted to lie along the beam (⃗nB) or jet (⃗nJ) reference axes, with soft (brown) hadrons unrestricted",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "2"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Kinematic dependence of 2Ω1 for DIS thrust",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Normalized hadron-level N3LL τ1-distributions with (blue) and without (pink) kinematic effects in hadronization, compared to Pythia data (black dots)",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Normalized hadron-level N3LL τ1a-distributions (blue) compared to Pythia data (black dots)",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-universality-and-kinematic-dependence-of-hadroni",
+   "id": "sec-front-matter",
    "number": null,
-   "title": "Universality and Kinematic Dependence of Hadronization Effects  in DIS Global Event Shapes",
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
+   "page_end": 3,
+   "n_chars": 13113,
+   "n_words": 2221,
+   "label_start": "1",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-000-200-s-105-gev",
+   "number": "2.00",
+   "title": "s = 105 GeV",
+   "level": 1,
+   "page_start": 3,
    "page_end": 6,
-   "n_chars": 28015,
-   "n_words": 4697
+   "n_chars": 15053,
+   "n_words": 2585,
+   "label_start": "3",
+   "label_end": "6"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 3,
-  "sections": 1,
-  "chars_total": 28015
+  "toc_entries": 1,
+  "toc_inferred_entries": 1,
+  "toc_inferred_mean_confidence": 0.6,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 4,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 2,
+  "chars_total": 28166,
+  "furniture_lines_stripped": 5,
+  "outline_rejected": "1 of 3 outline entries name a heading the pages print (< 50%), e.g. \"Universality and Kinematic Dependence of Hadronization Effects in DIS Global Event Shapes\"",
+  "headings_tidied": [
+   {
+    "title": "s = 105 GeV",
+    "page": 3,
+    "action": "rejoined",
+    "as": "s = 105 GeV",
+    "why": "opens in lower case"
+   }
+  ]
  }
 }

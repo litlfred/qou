@@ -1,0 +1,1 @@
+The quantum consistency condition between the bulk and the horizon implies that the quantum degrees of freedom of the horizon should be described by a union of the Chern-Simons theories on arbitrarily punctured $S$.

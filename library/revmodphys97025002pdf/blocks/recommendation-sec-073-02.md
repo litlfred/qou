@@ -1,0 +1,1 @@
+However, because of the 4.2σ difference between the theoreti- cal and experimental values and questions about the hadronic contributions to the theory, especially those from lattice QCD, the TGFC decided that it should not be included in the CODATA 2022 adjustment.

@@ -1,0 +1,79 @@
+have poincare-distance-formula’ (i/2) ?« = poincare-distance-formula’ (—i/2) ?x
+using <poincare-distance ?a x = poincare-distance ?b x)
+using <x € unit-disc> (2a € unit-disc» «2b € unit-discy
+by (metis cosh-dist to-complez-of-complex)
+
+hence (cmod (i / 2 — ?x))? = (emod (—i/ 2 — ?z))?
+unfolding poincare-distance-formula’-def
+apply (simp add:field-simps)
+using <x € unit-disc) unit-disc-cmod-square-lt-1 by fastforce
+
+hence Im ?x = 0
+unfolding cmod-def
+by (simp add: power2-eq-iff )
+
+have 1 — (Re ?x)? £0
+using <x € unit-disc> unit-disc-cmod-square-lt-1
+using cmod-power2 by force
+
+hence 24 — 24 * (Re ?x)? # 0
+by simp
+
+have poincare-distance-formula’ (i/2) 2x = poincare-distance-formula’ (1/5) ?x
+using <poincare-distance ?a x = poincare-distance ?c x)
+using <x € unit-disc» (2a € unit-disc» (2c € unit-discy
+by (metis cosh-dist to-complez-of-complez)
+
+hence (2 + 8 * (Re ?x)*) /(3 — 3 * (Re ?x)*) = 2 * (1 — Re ?x * 5)” / (24 — 24 * (Re ?x)°) (is ?lhs = ?rhs)
+unfolding poincare-distance-formula’-def
+apply (simp add:field-simps)
+unfolding cmod-def
+using <Im ?x = 0>
+by (simp add:field-simps)
+
+hence +: ?lhs « (24 — 24 « (Re ?x)”) = ?rhs * (24 — 24 * (Re ?x)*)
+using «(24 — 24 * (Re ?x)*) 4 0
+by simp
+
+have ?lhs « (24 — 24 « (Re ?x)) = (2 + 8 « (Re ?x)”) * 8
+using «(24 — 24 * (Re ?x)) # 0» «1 — (Re ?x)? £ 0»
+by (simp add:field-simps)
+
+have ?rhs * (24 — 24 * (Re ?x)?) = 2 * (1 — Re ?a « 5)?
+using «(24 — 24 * (Re ?x)*) 4 0) «1 — (Re ?x)? 4 0»
+by (simp add:field-simps)
+
+hence (2 + 8 * (Re ?x)*) * 8 = 2% (1 — Re ?a * 5)?
+using « (?lhs * (24 — 24 * (Re ?x)?) = (2 + 8 * (Re ?x)”) * 8
+by simp
+
+hence 7 * (Re ?x)? + 10 * (Re x) + 7=0
+by (simp add:field-simps comm-ring-1-class.power2-diff )
+
+thus False
+using discriminant-iff[of 7 Re (to-complex x) 10 7| discrim-def|of 7 10 7)
+by auto
+
+qed
+
+ultimately show ?thesis
+apply (rule-tac r= ?a in ex!)
+apply (rule-tac 2b in ez!)
+apply (rule-tac c= ?c in ez)
+by auto
+qed
+
+11.7 Continuity axiom
+
+The set ¢ is on the left of the set
+
+abbreviation set-order where
+set-order A p W =V x€ unit-disc. V ye unit-disc. y x A wy y —> poincare-between A x y
+
+The point B is between the sets ¢@ and w
+abbreviation point-between-sets where
+
+point-between-sets p Bw = ae€ unit-disc. V ye unit-disc. yp x \ wy y —>+ poincare-between x By
+
+lemma _ continuity:
+assumes J A € unit-disc. set-order A yp w

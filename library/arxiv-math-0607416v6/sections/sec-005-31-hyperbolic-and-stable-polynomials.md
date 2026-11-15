@@ -4,13 +4,14 @@ doc_title: "PÓLYA-SCHUR MASTER THEOREMS FOR CIRCULAR DOMAINS AND THEIR BOUNDARI
 section_id: sec-005-31-hyperbolic-and-stable-polynomials
 section_title: "Hyperbolic and Stable Polynomials"
 section_number: 3.1
-pages: 9-16
+pages: 9-14
 source_pdf: 0607416v6.pdf
 source_sha256: 0705075947ce4a3d
-doc_brief: "PÓLYA-SCHUR MASTER THEOREMS FOR CIRCULAR DOMAINS AND THEIR BOUNDARIES — W e characterize all linear operators on ﬁnite or inﬁnite-di mensio- nal polynomial spaces that preserve the property of having"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.947
-latex_coverage_ratio: 0.863
+latex_coverage_ratio: 0.952
+doc_brief: "PÓLYA-SCHUR MASTER THEOREMS FOR CIRCULAR DOMAINS AND THEIR BOUNDARIES — We characterize all linear operators on ﬁnite or inﬁnite-dimensio- nal polynomial spaces that preserve the property of having"
 ---
 \label{ss31}
 

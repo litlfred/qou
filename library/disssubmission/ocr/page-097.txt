@@ -1,0 +1,45 @@
+4.6. Singularities of type Ax 89
+
+say that a point e in Y is a singularity of type A, if in a neighborhood of e
+the hypersurface Y is defined by an equation of the form
+
+(x) Ay taste +2 = 0
+
+in suitable local analytic coordinates (zo,...,Z,) on C”*! centered at e. So
+a singularity of type A, is just an ordinary double point for k = 1 whereas
+for k > 1 itis a double point of corank one.
+
+Working as usual with coefficients in A = C or A = Q; in the algebraic
+case, we want to describe the perverse intersection cohomology sheaf near
+a singularity of type Ax.
+
+LEMMA 4.16. Let Y c A"*!(C) be a complex analytic hypersurface
+whose only singular point e is a singularity of type Ax.
+(a) If k orn is even, then dy = Ay|n].
+(b) Otherwise we have an exact sequence of perverse sheaves
+
+0 — 6.(—"51) — Ayn] — dy — 0.
+
+Proof. We can assume Y is defined by an equation (x). To compute
+the blowup p : Y —> ¥ in the singular point e we choose z = (z0,.--;Zn)
+as coordinates on the affine space A”+! = A"*!(C). The corresponding
+coordinates on P” = P"(C) will be denoted wu = [ug : --+ : up]. Then the
+blowup
+
+YcAMM= {(z,u) eA™ yp [ze u}
+can be computed explicitly in the affine charts U; = {(z,u) € A”*! | u; 4 0}
+with the standard coordinates (uo, ... ,Wi—1,Zi,Ui+1,---,Un) by putting uj = 1
+and z = zu; for j Ai. Thus
+¥Uo = {cA +ut+---+u2 =0}
+whereas for i > 0 one obtains that
+
+PoY, = fu put+-- tue y+ +u3,, t+ +02 = 0}.
+
+In particular, for k = 1 it follows that the blowup Y is smooth. For k > 1 it
+has an isolated singularity é € ¥Y Up of type Ag_2, and we get by induction
+on k an exact sequence
+
+0 if 2| nk,
+
+05> + Ay|n] 3 6p 30) wh (=
+Knk y(n] 7 where — Knx {cag if 2{nk.

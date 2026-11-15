@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "aif-2009-59-1-347-0",
  "source_sha256": "35b8422990e24888",
- "brief": "On q-summation and confluence — 18 sections: Introduction; Part 1. Convergent q-Borel and q-L; Convergent q-Euler series",
- "extended": "**On q-summation and confluence**\n\n*Lucia DIVIZIO & Changgui ZHANG*\n\n47 pp, 18 sections.\n\n**Outline.** Introduction; Part 1. Convergent q-Borel and q-Laplace trans; 1 Convergent q-Euler series; 1.1 Integral representation; 1.2 Confluence; 2.2 Main result; 2.3 Applications; 2.4 Proof of Theorem 2.6; Appendix B. Expansion of Eq(x) at; B.2. Proof of Proposition 1.5; Part 2. Summation of divergent q-series and co; 3 The divergent q-Euler series; 3.2 q-integral and continuous integral; 3.4 Confluence; 4 Generic q-Gevrey series; 4.4 The functional space H in the Borel plane; 4.5 Proof of Theorem 4.14; Bibliography\n\n**Extracted claims (proposals, not verified).**\n- Theorem 0.1: — Letd ∈ [0, 2π) be such that φ(1,x ) is holomorphic on\n- Theorem 0.4: — Let ˆf ∈ C[[x]] be a generic q-Gevrey series. Then for\n- Theorem 1.4: — If q → 1−, the analytic continuation of Eq(x) con-\n- Theorem 3.3: — Eq(x) = Eq(x) and E [λ]\n- Theorem 3.10: — For any x ∈ C∗\\] − ∞, 0[ we have:\n- Theorem 3.13: — Forλ,µ ∈ C∗ \\ (1 −p)qZ we have:",
+ "brief": "On q-summation and confluence — 28 sections: Front matter; Introduction; Part 1. Convergent q-Borel and q-L",
+ "extended": "**On q-summation and confluence**\n\n*L’INSTITUT FOURIER*\n\n47 pp, 28 sections.\n\n**Outline.** Front matter; Introduction; Part 1. Convergent q-Borel and q-Laplace trans; 1 Convergent q-Euler series; 1.1 Integral representation; 1.2 Confluence; 2 Confluence of the convergent q-analogue of B; 2.1 Definition of the convergent q-Borel and q; 2.2 Main result; 2.3 Applications; 2.4 Proof of Theorem 2.6; Appendix A. Jackson's integral; Appendix B. Expansion of Eq(x) at; B.1. Degenerate cases of the Watson's formula; B.2. Proof of Proposition 1.5; Part 2. Summation of divergent q-series and co; 3 The divergent q-Euler series; 3.1 Definition of different sums of the q-Eule",
  "tokens": {
-  "brief": 30,
-  "extended": 254
+  "brief": 26,
+  "extended": 167
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
   {
    "id": "sec-000-introduction",
    "title": "Introduction",
@@ -32,70 +37,115 @@
   {
    "id": "sec-004-12-confluence",
    "title": "Confluence",
-   "pages": "10-16"
+   "pages": "10-14"
   },
   {
-   "id": "sec-005-22-main-result",
+   "id": "sec-005-2-confluence-of-the-convergent-q-analogue-of-bor",
+   "title": "Confluence of the convergent q-analogue of Borel-Laplace summation",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-006-21-definition-of-the-convergent-q-borel-and-q-la",
+   "title": "Definition of the convergent q-Borel and q-Laplace transform",
+   "pages": "14-16"
+  },
+  {
+   "id": "sec-007-22-main-result",
    "title": "Main result",
    "pages": "16-17"
   },
   {
-   "id": "sec-006-23-applications",
+   "id": "sec-008-23-applications",
    "title": "Applications",
    "pages": "17-19"
   },
   {
-   "id": "sec-007-24-proof-of-theorem-26",
+   "id": "sec-009-24-proof-of-theorem-26",
    "title": "Proof of Theorem 2.6",
-   "pages": "19-22"
+   "pages": "19-21"
   },
   {
-   "id": "sec-008-appendix-b-expansion-of-eqx-at",
+   "id": "sec-010-appendix-a-jacksons-integral",
+   "title": "Appendix A. Jackson's integral",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-011-appendix-b-expansion-of-eqx-at",
    "title": "Appendix B. Expansion of Eq(x) at",
-   "pages": "22-28"
+   "pages": "22-23"
   },
   {
-   "id": "sec-009-b2-proof-of-proposition-15",
+   "id": "sec-012-b1-degenerate-cases-of-the-watsons-formula",
+   "title": "B.1. Degenerate cases of the Watson's formula",
+   "pages": "23-28"
+  },
+  {
+   "id": "sec-013-b2-proof-of-proposition-15",
    "title": "B.2. Proof of Proposition 1.5",
    "pages": "28-28"
   },
   {
-   "id": "sec-010-part-2-summation-of-divergent-q-series-and-confl",
+   "id": "sec-014-part-2-summation-of-divergent-q-series-and-confl",
    "title": "Part 2. Summation of divergent q-series and confluence: the case q>1",
    "pages": "28-29"
   },
   {
-   "id": "sec-011-3-the-divergent-q-euler-series",
+   "id": "sec-015-3-the-divergent-q-euler-series",
    "title": "The divergent q-Euler series",
+   "pages": "29-29"
+  },
+  {
+   "id": "sec-016-31-definition-of-different-sums-of-the-q-euler-s",
+   "title": "Definition of different sums of the q-Euler series",
    "pages": "29-31"
   },
   {
-   "id": "sec-012-32-q-integral-and-continuous-integral",
+   "id": "sec-017-32-q-integral-and-continuous-integral",
    "title": "q-integral and continuous integral",
    "pages": "31-34"
   },
   {
-   "id": "sec-013-34-confluence",
+   "id": "sec-018-33-comparing-sums-along-different-spirals",
+   "title": "Comparing sums along different spirals",
+   "pages": "34-35"
+  },
+  {
+   "id": "sec-019-34-confluence",
    "title": "Confluence",
-   "pages": "34-36"
+   "pages": "35-36"
   },
   {
-   "id": "sec-014-4-generic-q-gevrey-series",
+   "id": "sec-020-4-generic-q-gevrey-series",
    "title": "Generic q-Gevrey series",
-   "pages": "36-42"
+   "pages": "36-36"
   },
   {
-   "id": "sec-015-44-the-functional-space-h-in-the-borel-plane",
+   "id": "sec-021-41-two-formal-q-borel-transforms",
+   "title": "Two formal q-Borel transforms",
+   "pages": "36-38"
+  },
+  {
+   "id": "sec-022-42-different-kinds-of-q-exponential-summation",
+   "title": "Different kinds of q-exponential summation",
+   "pages": "38-41"
+  },
+  {
+   "id": "sec-023-43-the-tschakaloff-series",
+   "title": "The Tschakaloff series",
+   "pages": "41-42"
+  },
+  {
+   "id": "sec-024-44-the-functional-space-h-in-the-borel-plane",
    "title": "The functional space H in the Borel plane",
    "pages": "42-45"
   },
   {
-   "id": "sec-016-45-proof-of-theorem-414",
+   "id": "sec-025-45-proof-of-theorem-414",
    "title": "Proof of Theorem 4.14",
    "pages": "45-46"
   },
   {
-   "id": "sec-017-bibliography",
+   "id": "sec-026-bibliography",
    "title": "Bibliography",
    "pages": "46-47"
   }
@@ -103,8 +153,7 @@
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

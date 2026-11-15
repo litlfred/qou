@@ -1,0 +1,1 @@
+Conjecture [\[Conj:SecondHighest\]](#Conj:SecondHighest){reference-type="ref" reference="Conj:SecondHighest"} should be seen in light of Witten's conjecture relating Seiberg-Witten and Donaldson invariants in low-dimensional topology.

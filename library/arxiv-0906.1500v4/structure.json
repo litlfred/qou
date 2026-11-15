@@ -8,7 +8,7 @@
   "pages": 29,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:18Z",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -21,30 +21,31 @@
    "stamp_date": "16 Jan 2012"
   },
   "doi": null,
-  "title": "TWISTED ALEXANDER INVARIANT AND NON\u2013ABELIAN REIDEMEISTER TORSION FOR HYPERBOLIC THREE\u2013DIMENSIONAL MANIFOLDS WITH CUSPS",
-  "authors_raw": "J\u00c9R \u00d4ME DUBOIS AND YOSHIKAZU YAMAGUCHI",
+  "title": "Twisted Alexander invariant and non-abelian Reidemeister torsion for hyperbolic three-manifolds",
+  "authors_raw": "JÉR ÔME DUBOIS AND YOSHIKAZU YAMAGUCHI",
   "title_lines": [
-   "TWISTED ALEXANDER INVARIANT AND NON\u2013ABELIAN",
+   "TWISTED ALEXANDER INVARIANT AND NON–ABELIAN",
    "REIDEMEISTER TORSION FOR HYPERBOLIC",
-   "THREE\u2013DIMENSIONAL MANIFOLDS WITH CUSPS"
+   "THREE–DIMENSIONAL MANIFOLDS WITH CUSPS"
   ],
-  "abstract": "We study a computational method of the hyperbolic Reidemeister torsion (also called in the literature the non\u2013abelian Reidemeister torsion) considered by J. Porti for complete hyperbolic three\u2013dimensional manifolds with cusps. The derivative of the twisted Alexander invariant for a hyperbolic knot exterior gives the hyperbolic torsion. We prove such a derivative formula of the twisted Alexander invariant for hyperbolic link exteriors like the Whitehead link exterior. We provide the framework for the derivative formula to work, which consists of assumptions on the topology of the manifold and on the representations involved in the de\ufb01nition of the twisted Alexander invariant, and prove derivative formula in that context. We also explore the symmetry properties (with sign) of the twisted Alexander invariant and prove that it is in fact a polynomial invariant, like the usual Alexander polynomial.",
+  "abstract": "We study a computational method of the hyperbolic Reidemeister torsion (also called in the literature the non–abelian Reidemeister torsion) considered by J. Porti for complete hyperbolic three–dimensional manifolds with cusps. The derivative of the twisted Alexander invariant for a hyperbolic knot exterior gives the hyperbolic torsion. We prove such a derivative formula of the twisted Alexander invariant for hyperbolic link exteriors like the Whitehead link exterior. We provide the framework for the derivative formula to work, which consists of assumptions on the topology of the manifold and on the representations involved in the deﬁnition of the twisted Alexander invariant, and prove derivative formula in that context. We also explore the symmetry properties (with sign) of the twisted Alexander invariant and prove that it is in fact a polynomial invariant, like the usual Alexander polynomial.",
   "docinfo": {
    "Title": "arXiv:0906.1500v4  [math.GT]  16 Jan 2012",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "dvips(k) 5.991 Copyright 2011 Radical Eye Software",
    "CreationDate": "D:20210806042511-04'00'"
   },
-  "title_raw": "TWISTED ALEXANDER INVARIANT AND NON\u2013ABELIAN REIDEMEISTER TORSION FOR HYPERBOLIC THREE\u2013DIMENSIONAL MANIFOLDS WITH CUSPS",
+  "title_raw": "TWISTED ALEXANDER INVARIANT AND NON–ABELIAN REIDEMEISTER TORSION FOR HYPERBOLIC THREE–DIMENSIONAL MANIFOLDS WITH CUSPS",
   "title_source": "text",
   "title_verified": false,
   "title_evidence": {
    "metadata": "arXiv:0906.1500v4 [math.GT] 16 Jan 2012",
-   "heading": "TWISTED ALEXANDER INVARIANT AND NON\u2013ABELIAN REIDEMEISTER TORSION FOR HYPERBOLIC THREE\u2013DIMENSIONAL MANIFOLDS WITH CUSPS 1. Introduction Hyperbolic Reidemeister torsion, i.e. the Reidemeister torsion twisted by the adjoint representation associated to an irreducible representation into SL 2 ( C ), was",
-   "text": "TWISTED ALEXANDER INVARIANT AND NON\u2013ABELIAN REIDEMEISTER TORSION FOR HYPERBOLIC THREE\u2013DIMENSIONAL MANIFOLDS WITH CUSPS",
+   "heading": "TWISTED ALEXANDER INVARIANT AND NON–ABELIAN REIDEMEISTER TORSION FOR HYPERBOLIC THREE–DIMENSIONAL MANIFOLDS WITH CUSPS 1. Introduction Hyperbolic Reidemeister torsion, i.e. the Reidemeister torsion twisted by the adjoint representation associated to an irreducible representation into SL 2 ( C ), was",
+   "text": "TWISTED ALEXANDER INVARIANT AND NON–ABELIAN REIDEMEISTER TORSION FOR HYPERBOLIC THREE–DIMENSIONAL MANIFOLDS WITH CUSPS",
    "corroborated_by": [],
    "browser_print": false
-  }
+  },
+  "title_prev": "TWISTED ALEXANDER INVARIANT AND NON–ABELIAN REIDEMEISTER TORSION FOR HYPERBOLIC THREE–DIMENSIONAL MANIFOLDS WITH CUSPS"
  },
  "toc": [
   {
@@ -557,7 +558,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "The Whitehead link 3.1.2. Assumption on \u03d5. We suppose that \u03d5: \u03c01(M) \u2192Zn = \u27e8t1, . . . , tn | titj = tjti, \u2200i, j \u27e9",
+   "title": "The Whitehead link 3.1.2. Assumption on ϕ. We suppose that ϕ: π1(M) →Zn = ⟨t1, . . . , tn | titj = tjti, ∀i, j ⟩",
    "page": 8,
    "confidence": 0.9,
    "evidence": [
@@ -570,7 +571,7 @@
   {
    "kind": "figure",
    "number": "2",
-   "title": "The \ufb01gure eight knot",
+   "title": "The ﬁgure eight knot",
    "page": 12,
    "confidence": 0.7,
    "evidence": [
@@ -582,7 +583,7 @@
   {
    "kind": "figure",
    "number": "3",
-   "title": "The Whitehead link with meridians Hilden, Lozano and Montesionos has shown an explicit description of the character variety of the Whitehead link group in [HLMA92]. Trace functions play the role of local coordinates in this description. We set x, y and v as x = Ia, y = Ib and v = Iab, where I\u03b3 : X(E",
+   "title": "The Whitehead link with meridians Hilden, Lozano and Montesionos has shown an explicit description of the character variety of the Whitehead link group in [HLMA92]. Trace functions play the role of local coordinates in this description. We set x, y and v as x = Ia, y = Ib and v = Iab, where Iγ : X(E",
    "page": 13,
    "confidence": 0.9,
    "evidence": [
@@ -1019,14 +1020,26 @@
    "title": "Examples of computations",
    "level": 1,
    "page_start": 12,
+   "page_end": 12,
+   "n_chars": 1380,
+   "n_words": 230,
+   "label_start": "12",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-013-41-the-figure-eight-knot-exterior",
+   "number": "4.1",
+   "title": "The figure eight knot exterior",
+   "level": 2,
+   "page_start": 12,
    "page_end": 13,
-   "n_chars": 2936,
-   "n_words": 555,
+   "n_chars": 1473,
+   "n_words": 309,
    "label_start": "12",
    "label_end": "13"
   },
   {
-   "id": "sec-013-42-the-whitehead-link-exterior",
+   "id": "sec-014-42-the-whitehead-link-exterior",
    "number": "4.2",
    "title": "The Whitehead link exterior",
    "level": 2,
@@ -1038,7 +1051,7 @@
    "label_end": "14"
   },
   {
-   "id": "sec-014-5-change-of-coefficients",
+   "id": "sec-015-5-change-of-coefficients",
    "number": "5",
    "title": "Change of coefficients",
    "level": 1,
@@ -1050,7 +1063,7 @@
    "label_end": "15"
   },
   {
-   "id": "sec-015-6-a-derivative-formula",
+   "id": "sec-016-6-a-derivative-formula",
    "number": "6",
    "title": "A derivative formula",
    "level": 1,
@@ -1062,7 +1075,7 @@
    "label_end": "15"
   },
   {
-   "id": "sec-016-61-bridge-from-the-polynomial-torsion-to-the-non",
+   "id": "sec-017-61-bridge-from-the-polynomial-torsion-to-the-non",
    "number": "6.1",
    "title": "Bridge from the polynomial torsion to the non--abelian Reidemeister torsion",
    "level": 2,
@@ -1074,7 +1087,7 @@
    "label_end": "16"
   },
   {
-   "id": "sec-017-62-proof-of-theorem",
+   "id": "sec-018-62-proof-of-theorem",
    "number": "6.2",
    "title": "Proof of Theorem",
    "level": 2,
@@ -1086,19 +1099,31 @@
    "label_end": "19"
   },
   {
-   "id": "sec-018-63-example-the-non-abelian-reidemeister-torsion",
+   "id": "sec-019-63-example-the-non-abelian-reidemeister-torsion",
    "number": "6.3",
    "title": "Example: the non-abelian Reidemeister torsion of the Whitehead link exterior",
    "level": 2,
    "page_start": 19,
-   "page_end": 21,
-   "n_chars": 4987,
-   "n_words": 900,
+   "page_end": 20,
+   "n_chars": 2826,
+   "n_words": 517,
    "label_start": "19",
+   "label_end": "20"
+  },
+  {
+   "id": "sec-020-72-a-sufficient-condition-to-be-a-polynomial",
+   "number": "7.2",
+   "title": "A sufficient condition to be a polynomial",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 2080,
+   "n_words": 371,
+   "label_start": "20",
    "label_end": "21"
   },
   {
-   "id": "sec-019-73-proof-of-theorem",
+   "id": "sec-021-73-proof-of-theorem",
    "number": "7.3",
    "title": "Proof of Theorem",
    "level": 2,
@@ -1110,7 +1135,7 @@
    "label_end": "21"
   },
   {
-   "id": "sec-020-731-proof-for-one-variable",
+   "id": "sec-022-731-proof-for-one-variable",
    "number": "7.3.1",
    "title": "Proof for one variable",
    "level": 3,
@@ -1122,7 +1147,7 @@
    "label_end": "22"
   },
   {
-   "id": "sec-021-732-proof-from-one-variable-to-two-variables",
+   "id": "sec-023-732-proof-from-one-variable-to-two-variables",
    "number": "7.3.2",
    "title": "Proof from one variable to two variables",
    "level": 3,
@@ -1134,7 +1159,7 @@
    "label_end": "23"
   },
   {
-   "id": "sec-022-8-reciprocality-of-the-polynomial-torsion-with-s",
+   "id": "sec-024-8-reciprocality-of-the-polynomial-torsion-with-s",
    "number": "8",
    "title": "Reciprocality of the polynomial torsion (with sign)",
    "level": 1,
@@ -1146,7 +1171,7 @@
    "label_end": "23"
   },
   {
-   "id": "sec-023-81-reciprocality-properties",
+   "id": "sec-025-81-reciprocality-properties",
    "number": "8.1",
    "title": "Reciprocality properties",
    "level": 2,
@@ -1158,7 +1183,7 @@
    "label_end": "23"
   },
   {
-   "id": "sec-024-82-proof-of-theorem",
+   "id": "sec-026-82-proof-of-theorem",
    "number": "8.2",
    "title": "Proof of Theorem",
    "level": 2,
@@ -1170,7 +1195,7 @@
    "label_end": "25"
   },
   {
-   "id": "sec-025-824-conclusion",
+   "id": "sec-027-824-conclusion",
    "number": "8.2.4",
    "title": "Conclusion",
    "level": 3,
@@ -1182,7 +1207,7 @@
    "label_end": "25"
   },
   {
-   "id": "sec-026-a-a-natural-homology-orientation-for-link-exteri",
+   "id": "sec-028-a-a-natural-homology-orientation-for-link-exteri",
    "number": "A",
    "title": "A natural homology orientation for link exterior",
    "level": 1,
@@ -1194,7 +1219,7 @@
    "label_end": "25"
   },
   {
-   "id": "sec-027-a1-homology-groups-and-homology-orientations",
+   "id": "sec-029-a1-homology-groups-and-homology-orientations",
    "number": "A.1",
    "title": "Homology groups and homology orientations",
    "level": 2,
@@ -1206,7 +1231,7 @@
    "label_end": "26"
   },
   {
-   "id": "sec-028-a2-a-sign-term",
+   "id": "sec-030-a2-a-sign-term",
    "number": "A.2",
    "title": "A sign term",
    "level": 2,
@@ -1224,7 +1249,7 @@
   "toc_entries": 39,
   "toc_inferred_entries": 39,
   "toc_inferred_mean_confidence": 0.949,
-  "toc_inferred_empty_share": 0.069,
+  "toc_inferred_empty_share": 0.065,
   "toc_inferred_method": "latex",
   "figure_entries": 3,
   "figure_sequence_gaps": [],
@@ -1232,13 +1257,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 30,
-  "chars_total": 79626,
+  "sections": 32,
+  "chars_total": 79462,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "limitformula.tex",
    "tex_sections": 36,
-   "overlaid": 20,
+   "overlaid": 22,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1278,7 +1304,7 @@
      "id": "sec-003-2-preliminaries",
      "title": "Preliminaries",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-004-21-the-reidemeister-torsion",
@@ -1347,13 +1373,21 @@
     {
      "id": "sec-012-4-examples-of-computations",
      "title": "Examples of computations",
-     "prose_ratio": 0.924,
-     "coverage_ratio": 0.991,
+     "prose_ratio": 0.915,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-013-42-the-whitehead-link-exterior",
+     "id": "sec-013-41-the-figure-eight-knot-exterior",
+     "title": "The figure eight knot exterior",
+     "prose_ratio": 0.915,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-014-42-the-whitehead-link-exterior",
      "title": "The Whitehead link exterior",
      "prose_ratio": 0.916,
      "coverage_ratio": 0.975,
@@ -1361,7 +1395,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-014-5-change-of-coefficients",
+     "id": "sec-015-5-change-of-coefficients",
      "title": "Change of coefficients",
      "prose_ratio": 0.932,
      "coverage_ratio": 0.965,
@@ -1369,7 +1403,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-015-6-a-derivative-formula",
+     "id": "sec-016-6-a-derivative-formula",
      "title": "A derivative formula",
      "prose_ratio": 0.929,
      "coverage_ratio": 1.0,
@@ -1377,31 +1411,39 @@
      "converter": "latex"
     },
     {
-     "id": "sec-016-61-bridge-from-the-polynomial-torsion-to-the-non",
+     "id": "sec-017-61-bridge-from-the-polynomial-torsion-to-the-non",
      "title": "Bridge from the polynomial torsion to the non--abelian Reidemeister torsion",
      "prose_ratio": 0.254,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-017-62-proof-of-theorem",
+     "id": "sec-018-62-proof-of-theorem",
      "title": "Proof of Theorem",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-018-63-example-the-non-abelian-reidemeister-torsion",
+     "id": "sec-019-63-example-the-non-abelian-reidemeister-torsion",
      "title": "Example: the non-abelian Reidemeister torsion of the Whitehead link exterior",
-     "prose_ratio": 0.855,
+     "prose_ratio": 0.953,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-019-73-proof-of-theorem",
+     "id": "sec-020-72-a-sufficient-condition-to-be-a-polynomial",
+     "title": "A sufficient condition to be a polynomial",
+     "prose_ratio": 0.726,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-021-73-proof-of-theorem",
      "title": "Proof of Theorem",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-020-731-proof-for-one-variable",
+     "id": "sec-022-731-proof-for-one-variable",
      "title": "Proof for one variable",
      "prose_ratio": 0.971,
      "coverage_ratio": 1.0,
@@ -1409,7 +1451,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-021-732-proof-from-one-variable-to-two-variables",
+     "id": "sec-023-732-proof-from-one-variable-to-two-variables",
      "title": "Proof from one variable to two variables",
      "prose_ratio": 0.991,
      "coverage_ratio": 1.0,
@@ -1417,13 +1459,13 @@
      "converter": "latex"
     },
     {
-     "id": "sec-022-8-reciprocality-of-the-polynomial-torsion-with-s",
+     "id": "sec-024-8-reciprocality-of-the-polynomial-torsion-with-s",
      "title": "Reciprocality of the polynomial torsion (with sign)",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-023-81-reciprocality-properties",
+     "id": "sec-025-81-reciprocality-properties",
      "title": "Reciprocality properties",
      "prose_ratio": 0.614,
      "coverage_ratio": 1.0,
@@ -1431,12 +1473,12 @@
      "converter": "latex"
     },
     {
-     "id": "sec-024-82-proof-of-theorem",
+     "id": "sec-026-82-proof-of-theorem",
      "title": "Proof of Theorem",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-025-824-conclusion",
+     "id": "sec-027-824-conclusion",
      "title": "Conclusion",
      "prose_ratio": 0.647,
      "coverage_ratio": 1.0,
@@ -1444,17 +1486,17 @@
      "converter": "latex"
     },
     {
-     "id": "sec-026-a-a-natural-homology-orientation-for-link-exteri",
+     "id": "sec-028-a-a-natural-homology-orientation-for-link-exteri",
      "title": "A natural homology orientation for link exterior",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-027-a1-homology-groups-and-homology-orientations",
+     "id": "sec-029-a1-homology-groups-and-homology-orientations",
      "title": "Homology groups and homology orientations",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-028-a2-a-sign-term",
+     "id": "sec-030-a2-a-sign-term",
      "title": "A sign term",
      "result": "no matching \\section"
     }

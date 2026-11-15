@@ -18,4 +18,10 @@ export default remark({
     "def:beta-decay-skein",
     "prop:torus-knot-generators",
   ],
+  authorNotes: [
+    {
+      kind: "refined-framing",
+      body: "An earlier version of this section asserted that the Skein module admits a natural ℤ-grading by the smoothing count.",
+    },
+  ],
 });

@@ -1,0 +1,46 @@
+12
+
+Lemma I1.2.4 (Ocneanu, [14]). For every y € C(u), there is a linear map 7 : [[ys, Ha > C(v)
+
+uniquely defined by
+
+(i) t(ab) = r(ba),
+
+(ii) t{i(a)Ha) =yr(a) for a€ Ha, and
+(iti) rI=1.,
+
+Such a linear function is often called a Markov trace because of the first condition. Al-
+though 7 does not give a link invariant directly (unless y = 1), it is a useful notion for the following
+two reasons. First of all, it behaves in a controlled manner with respect to the second Markov
+move, and so it defines an invariant of framed links and can, moreover, be rescaled to make an
+invariant of ordinary links. The second reason is that there are natural constructions of Markov
+traces that arise by studying representations of the braid group and their characters for which y
+is a non-trivial quantity.
+
+Here we how to construct a link invariant from a Markov trace. Following Jones, we
+choose an invertible x so that r(27~!Hi) = 7((271Hj)71) for each i = 1,...,n — 1. Noting that
+
+the quadratic relation in Ha gives H;! = H;—(v—v7!), we have 27ly = aly —(v—v!)), and
+
+finally
+vay
+yar (hts) : (II.8)
+Therefore, we have
+r(a7! Hj) =agy= vow (IL.9)
+a) = 2 y= oy .
+
+Now, let y : Bg > HY be the group homomorphism a; + H;. Recall that e : By -» Z is
+
+the exponent sum of a braid (often called the writhe).
+
+Theorem 11.2.5. The functions P, : Ba F given by
+
+aay det
+Py(a) = € == -) z~)r(o(a)) (II.10)
+
+rs
+define a link invariant P via the formula P(@) = Pia).
+
+Proof. Regarding the first Markov move, invariance of P follows from invariance of r and the fact,
+
+that the exponent sums match: e(a8) = e(Ga). It suffices to check invariance under the second

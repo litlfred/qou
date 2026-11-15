@@ -8,23 +8,23 @@
   "pages": 8,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:17Z",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": "10.1063/5.0013689",
-  "title": "Online \ue92d Export Citation RESEARCH ARTICLE | FEBRUARY 01 2021 Efficient algorithms for approximating quantum partition functions Ryan L. Mann \ue923 ; Tyler Helmuth",
+  "title": "Efficient algorithms for approximating quantum partition functions",
   "authors_raw": "J. Math. Phys. 62, 022201 (2021)",
   "title_lines": [
-   "Online \ue92d",
+   "Online ",
    "Export",
    "Citation",
    "RESEARCH ARTICLE | FEBRUARY 01 2021",
    "Efficient algorithms for approximating quantum partition",
    "functions",
-   "Ryan L. Mann \ue923",
+   "Ryan L. Mann ",
    "; Tyler Helmuth"
   ],
   "abstract": null,
@@ -33,15 +33,16 @@
    "Creator": "LaTeX with hyperref package",
    "CreationDate": "D:20211122152148+05'30'"
   },
-  "title_raw": "Online \ue92d Export Citation RESEARCH ARTICLE | FEBRUARY 01 2021 Efficient algorithms for approximating quantum partition functions Ryan L. Mann \ue923 ; Tyler Helmuth",
+  "title_raw": "Online  Export Citation RESEARCH ARTICLE | FEBRUARY 01 2021 Efficient algorithms for approximating quantum partition functions Ryan L. Mann  ; Tyler Helmuth",
   "title_source": "text",
   "title_verified": false,
   "title_evidence": {
-   "heading": "Online \ue92d",
-   "text": "Online \ue92d Export Citation RESEARCH ARTICLE | FEBRUARY 01 2021 Efficient algorithms for approximating quantum partition functions Ryan L. Mann \ue923 ; Tyler Helmuth",
+   "heading": "Online ",
+   "text": "Online  Export Citation RESEARCH ARTICLE | FEBRUARY 01 2021 Efficient algorithms for approximating quantum partition functions Ryan L. Mann  ; Tyler Helmuth",
    "corroborated_by": [],
    "browser_print": false
-  }
+  },
+  "title_prev": "Online  Export Citation RESEARCH ARTICLE | FEBRUARY 01 2021 Efficient algorithms for approximating quantum partition functions Ryan L. Mann  ; Tyler Helmuth"
  },
  "toc": [
   {
@@ -161,7 +162,7 @@
    "title": "PROOF OF LEMMA 2",
    "page": 5,
    "source": "inferred",
-   "number": "A",
+   "number": "Appendix A",
    "confidence": 0.75,
    "evidence": [
     "style",
@@ -175,7 +176,7 @@
    "title": "PROOF OF LEMMA 4 AND LEMMA 7",
    "page": 6,
    "source": "inferred",
-   "number": "B",
+   "number": "Appendix B",
    "confidence": 0.75,
    "evidence": [
     "style",
@@ -281,8 +282,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 998,
-   "n_words": 142,
+   "n_chars": 964,
+   "n_words": 140,
    "label_start": null,
    "label_end": null
   },
@@ -317,8 +318,8 @@
    "level": 1,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 4334,
-   "n_words": 696,
+   "n_chars": 4300,
+   "n_words": 694,
    "label_start": null,
    "label_end": null
   },
@@ -341,8 +342,8 @@
    "level": 1,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 2064,
-   "n_words": 343,
+   "n_chars": 2030,
+   "n_words": 341,
    "label_start": null,
    "label_end": null
   },
@@ -353,8 +354,8 @@
    "level": 1,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 2891,
-   "n_words": 507,
+   "n_chars": 2857,
+   "n_words": 505,
    "label_start": null,
    "label_end": null
   },
@@ -383,26 +384,26 @@
    "label_end": null
   },
   {
-   "id": "sec-008-a-proof-of-lemma-2",
-   "number": "A",
+   "id": "sec-008-appendix-a-proof-of-lemma-2",
+   "number": "Appendix A",
    "title": "PROOF OF LEMMA 2",
    "level": 1,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 2767,
-   "n_words": 505,
+   "n_chars": 2733,
+   "n_words": 503,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-009-b-proof-of-lemma-4-and-lemma-7",
-   "number": "B",
+   "id": "sec-009-appendix-b-proof-of-lemma-4-and-lemma-7",
+   "number": "Appendix B",
    "title": "PROOF OF LEMMA 4 AND LEMMA 7",
    "level": 1,
    "page_start": 6,
    "page_end": 8,
-   "n_chars": 3187,
-   "n_words": 596,
+   "n_chars": 3119,
+   "n_words": 592,
    "label_start": null,
    "label_end": null
   },
@@ -446,6 +447,7 @@
    "items": []
   },
   "sections": 13,
-  "chars_total": 24389
+  "chars_total": 24151,
+  "furniture_lines_stripped": 14
  }
 }

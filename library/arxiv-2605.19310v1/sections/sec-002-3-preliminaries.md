@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.898
+doc_brief: "A Fourier-Free Density-Increment Proof of Roth's Theorem — We give an elementary, Fourier-free proof of Roth’s theorem."
 ---
 Write $[N]=\{0,\ldots,N-1\}$ and choose a prime $m$ with $4N<m<8N$, which we may do by Bertrand's postulate. We embed $[N]$ in $\mathbb{Z}_m$ in the obvious way. The point of choosing $m>2N$ is that a three-term progression in $\mathbb{Z}_m$ whose terms all lie in $[N]$ is a genuine integer progression.
 

@@ -1,0 +1,5685 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "ki6c",
+  "pages": [
+    {
+      "page": 6,
+      "rotation": 0,
+      "drawings": 41,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1: The graph of Λ(t) for 0 ≤t ≤1"
+      ],
+      "labels": [
+        {
+          "text": "2.2",
+          "bbox": [
+            72.0,
+            95.31,
+            89.2,
+            107.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "Some behaviors of the dilogarithm function",
+          "bbox": [
+            102.65,
+            95.31,
+            358.62,
+            107.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "In this section, we show some behaviors of the dilogarithm function.",
+          "bbox": [
+            72.0,
+            116.98,
+            421.58,
+            128.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "We put",
+          "bbox": [
+            86.94,
+            134.51,
+            124.66,
+            146.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "(",
+          "bbox": [
+            268.18,
+            140.14,
+            275.32,
+            152.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": ")",
+          "bbox": [
+            379.79,
+            140.14,
+            386.93,
+            152.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "2π√−1 Li2(e2π√−1 t)",
+          "bbox": [
+            276.51,
+            145.47,
+            379.79,
+            174.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            292.6,
+            145.54,
+            298.46,
+            157.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "Λ(t) = Re",
+          "bbox": [
+            207.36,
+            153.63,
+            266.19,
+            165.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            386.93,
+            153.63,
+            390.18,
+            165.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "Since",
+          "bbox": [
+            72.0,
+            179.89,
+            98.66,
+            191.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "Λ′(t) = −log 2 sin πt,",
+          "bbox": [
+            184.14,
+            191.86,
+            299.1,
+            205.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "Λ′′(t) = −π cot πt,",
+          "bbox": [
+            312.8,
+            191.86,
+            413.4,
+            205.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "the behavior of Λ(t) is as follows.",
+          "bbox": [
+            72.0,
+            213.76,
+            242.59,
+            225.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            261.11,
+            233.88,
+            265.34,
+            241.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            316.11,
+            233.88,
+            320.34,
+            241.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            375.77,
+            233.88,
+            380.0,
+            241.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "· · ·",
+          "bbox": [
+            225.39,
+            237.25,
+            239.34,
+            249.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "· · ·",
+          "bbox": [
+            285.11,
+            237.25,
+            299.06,
+            249.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "· · ·",
+          "bbox": [
+            335.41,
+            237.25,
+            349.36,
+            249.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "· · ·",
+          "bbox": [
+            404.43,
+            237.25,
+            418.38,
+            249.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "t",
+          "bbox": [
+            176.42,
+            237.47,
+            180.65,
+            249.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            209.58,
+            237.47,
+            215.44,
+            249.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            430.33,
+            237.47,
+            436.19,
+            249.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            261.11,
+            242.71,
+            265.34,
+            250.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            316.11,
+            242.71,
+            320.34,
+            250.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            375.77,
+            242.71,
+            380.0,
+            250.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "→",
+          "bbox": [
+            224.5,
+            253.08,
+            240.83,
+            269.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "→",
+          "bbox": [
+            285.61,
+            253.08,
+            301.95,
+            269.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "→",
+          "bbox": [
+            335.91,
+            253.08,
+            352.25,
+            269.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "→",
+          "bbox": [
+            403.54,
+            253.08,
+            419.87,
+            269.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "Λ(1",
+          "bbox": [
+            251.3,
+            254.41,
+            269.4,
+            267.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "−Λ(1",
+          "bbox": [
+            361.31,
+            254.41,
+            388.71,
+            267.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "Λ(t)",
+          "bbox": [
+            167.81,
+            256.0,
+            189.26,
+            267.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            209.58,
+            256.0,
+            215.44,
+            267.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "6)",
+          "bbox": [
+            265.17,
+            256.0,
+            275.15,
+            271.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            315.3,
+            256.0,
+            321.16,
+            267.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "6)",
+          "bbox": [
+            384.48,
+            256.0,
+            394.46,
+            271.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            430.33,
+            256.0,
+            436.19,
+            267.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "Λ′(t)",
+          "bbox": [
+            166.41,
+            272.76,
+            190.66,
+            286.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "−",
+          "bbox": [
+            288.43,
+            273.92,
+            297.73,
+            285.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "−",
+          "bbox": [
+            313.58,
+            273.92,
+            322.88,
+            285.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "−",
+          "bbox": [
+            338.72,
+            273.92,
+            348.03,
+            285.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            228.81,
+            274.14,
+            237.92,
+            286.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            260.3,
+            274.14,
+            266.16,
+            286.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            374.96,
+            274.14,
+            380.82,
+            286.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            407.85,
+            274.14,
+            416.96,
+            286.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "Λ′′(t)",
+          "bbox": [
+            165.26,
+            290.89,
+            191.81,
+            304.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "−",
+          "bbox": [
+            228.71,
+            292.05,
+            238.01,
+            304.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "−",
+          "bbox": [
+            258.57,
+            292.05,
+            267.87,
+            304.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "−",
+          "bbox": [
+            288.44,
+            292.05,
+            297.74,
+            304.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            315.3,
+            292.27,
+            321.16,
+            304.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            338.83,
+            292.27,
+            347.94,
+            304.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            373.34,
+            292.27,
+            382.45,
+            304.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            407.86,
+            292.27,
+            416.97,
+            304.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "Here, Λ( 1",
+          "bbox": [
+            72.0,
+            315.66,
+            120.99,
+            329.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "6) = 0.161533... . For the graph of Λ(t), see Figure 1.",
+          "bbox": [
+            116.76,
+            317.25,
+            391.94,
+            332.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "0.15",
+          "bbox": [
+            219.63,
+            351.13,
+            231.85,
+            358.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "0.10",
+          "bbox": [
+            220.0,
+            363.53,
+            232.22,
+            370.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "0.05",
+          "bbox": [
+            219.75,
+            376.81,
+            231.97,
+            383.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "0.8",
+          "bbox": [
+            337.57,
+            383.5,
+            346.65,
+            390.5
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "0.2",
+          "bbox": [
+            256.96,
+            383.62,
+            266.04,
+            390.62
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "1.0",
+          "bbox": [
+            364.62,
+            383.68,
+            373.26,
+            390.68
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "0.4",
+          "bbox": [
+            283.52,
+            383.75,
+            292.6,
+            390.75
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "0.6",
+          "bbox": [
+            310.8,
+            383.87,
+            319.88,
+            390.87
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "−",
+          "bbox": [
+            214.09,
+            402.1,
+            217.93,
+            409.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "0.05",
+          "bbox": [
+            219.75,
+            402.44,
+            231.97,
+            409.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "−",
+          "bbox": [
+            214.09,
+            414.85,
+            217.93,
+            421.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "0.10",
+          "bbox": [
+            220.0,
+            415.53,
+            232.22,
+            422.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "−",
+          "bbox": [
+            214.09,
+            427.73,
+            217.93,
+            434.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "0.15",
+          "bbox": [
+            219.63,
+            428.26,
+            231.85,
+            435.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "Figure 1: The graph of Λ(t) for 0 ≤t ≤1",
+          "bbox": [
+            208.44,
+            453.26,
+            389.1,
+            463.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(",
+          "bbox": [
+            236.29,
+            468.66,
+            241.77,
+            480.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "e2π√−1 (t+X√−1))",
+          "bbox": [
+            241.77,
+            468.66,
+            323.54,
+            490.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI12",
+            "CMMI8",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "Further, the behavior of Li2",
+          "bbox": [
+            86.94,
+            478.57,
+            235.79,
+            491.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "ﬁxing t is presented by the following",
+          "bbox": [
+            329.11,
+            478.57,
+            525.56,
+            490.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "lemma.",
+          "bbox": [
+            72.0,
+            492.52,
+            109.07,
+            504.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "Lemma 2.2. Let t be a real number with 0 < t < 1. Then, there exists C > 0 such that",
+          "bbox": [
+            72.0,
+            514.43,
+            520.96,
+            526.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12",
+            "CMMI12",
+            "CMR12",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "({",
+          "bbox": [
+            96.91,
+            527.98,
+            116.01,
+            539.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": ")",
+          "bbox": [
+            228.97,
+            527.98,
+            238.44,
+            539.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "(",
+          "bbox": [
+            302.21,
+            535.15,
+            309.35,
+            547.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "e2π√−1 (t+X√−1)))",
+          "bbox": [
+            372.55,
+            535.15,
+            461.46,
+            560.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI12",
+            "CMMI8",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "(",
+          "bbox": [
+            367.07,
+            538.73,
+            372.55,
+            550.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "if X ≥0",
+          "bbox": [
+            183.97,
+            540.41,
+            227.79,
+            552.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            326.64,
+            540.55,
+            332.5,
+            552.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            116.0,
+            540.63,
+            121.86,
+            552.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "(",
+          "bbox": [
+            128.92,
+            547.46,
+            134.4,
+            559.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": ")",
+          "bbox": [
+            159.87,
+            547.46,
+            165.35,
+            559.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "2π√−1 Li2",
+          "bbox": [
+            310.54,
+            548.06,
+            366.56,
+            569.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "−C < Re",
+          "bbox": [
+            241.1,
+            548.42,
+            300.22,
+            560.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "t −1",
+          "bbox": [
+            134.4,
+            555.77,
+            158.67,
+            569.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "2π",
+          "bbox": [
+            116.0,
+            557.37,
+            128.49,
+            569.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "X if X < 0",
+          "bbox": [
+            165.35,
+            557.37,
+            227.59,
+            569.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            154.44,
+            564.6,
+            158.67,
+            572.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "({",
+          "bbox": [
+            310.31,
+            567.83,
+            329.41,
+            579.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": ")",
+          "bbox": [
+            442.38,
+            567.83,
+            451.85,
+            579.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "if X ≥0",
+          "bbox": [
+            397.38,
+            580.26,
+            441.19,
+            592.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            329.4,
+            580.48,
+            335.26,
+            592.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "(",
+          "bbox": [
+            342.33,
+            587.31,
+            347.81,
+            599.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": ")",
+          "bbox": [
+            373.27,
+            587.31,
+            378.75,
+            599.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "<",
+          "bbox": [
+            293.7,
+            588.49,
+            302.81,
+            600.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "+ C",
+          "bbox": [
+            454.5,
+            588.49,
+            474.64,
+            600.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "t −1",
+          "bbox": [
+            347.81,
+            595.62,
+            372.07,
+            609.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "2π",
+          "bbox": [
+            329.4,
+            597.22,
+            341.9,
+            609.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "X if X < 0",
+          "bbox": [
+            378.75,
+            597.22,
+            440.99,
+            609.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            367.84,
+            604.45,
+            372.07,
+            612.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "for any X ∈R.",
+          "bbox": [
+            72.0,
+            622.47,
+            150.59,
+            634.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMSY10",
+            "CMTI12",
+            "MSBM10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "Proof. Since",
+          "bbox": [
+            72.0,
+            644.61,
+            134.44,
+            656.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "(",
+          "bbox": [
+            162.49,
+            660.2,
+            169.63,
+            672.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "e2π√−1 (t+X√−1)))",
+          "bbox": [
+            232.82,
+            660.2,
+            321.73,
+            685.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI12",
+            "CMMI8",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "(",
+          "bbox": [
+            227.34,
+            663.78,
+            232.82,
+            675.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "(",
+          "bbox": [
+            361.09,
+            663.78,
+            366.57,
+            675.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": ")",
+          "bbox": [
+            439.25,
+            663.78,
+            444.73,
+            675.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            186.91,
+            665.6,
+            192.77,
+            677.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            383.86,
+            665.6,
+            389.72,
+            677.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "2π√−1 Li2",
+          "bbox": [
+            170.82,
+            673.11,
+            226.84,
+            694.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "2π√−1 Li2(1)",
+          "bbox": [
+            367.77,
+            673.11,
+            439.26,
+            694.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "X→∞Re",
+          "bbox": [
+            120.16,
+            673.69,
+            160.5,
+            692.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "lim",
+          "bbox": [
+            124.29,
+            673.69,
+            140.55,
+            685.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "= Re",
+          "bbox": [
+            328.96,
+            673.69,
+            359.1,
+            685.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "= 0,",
+          "bbox": [
+            451.95,
+            673.69,
+            477.38,
+            685.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "the “X ≥0” part of the lemma is satisﬁed.",
+          "bbox": [
+            72.0,
+            703.85,
+            292.94,
+            716.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            296.28,
+            740.41,
+            301.26,
+            750.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 31,
+      "rotation": 0,
+      "drawings": 38,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2: The domain (57)"
+      ],
+      "labels": [
+        {
+          "text": "0.5",
+          "bbox": [
+            229.03,
+            95.72,
+            238.11,
+            102.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "s ≤0.4",
+          "bbox": [
+            312.72,
+            115.41,
+            341.08,
+            124.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI9",
+            "CMR9",
+            "CMSY9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "0.4",
+          "bbox": [
+            229.03,
+            125.35,
+            238.11,
+            132.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "0.3 ≤t−s",
+          "bbox": [
+            245.97,
+            133.35,
+            285.84,
+            142.48
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI9",
+            "CMR9",
+            "CMSY9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "t ≤0.86",
+          "bbox": [
+            353.57,
+            151.28,
+            385.57,
+            160.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI9",
+            "CMR9",
+            "CMSY9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "0.3",
+          "bbox": [
+            229.03,
+            154.97,
+            238.11,
+            161.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "0.6≤t",
+          "bbox": [
+            243.98,
+            181.17,
+            268.3,
+            190.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI9",
+            "CMR9",
+            "CMSY9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "0.2",
+          "bbox": [
+            229.03,
+            184.35,
+            238.11,
+            191.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "t−s ≤0.67",
+          "bbox": [
+            356.55,
+            185.15,
+            401.04,
+            194.28
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI9",
+            "CMR9",
+            "CMSY9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "0.14 ≤s",
+          "bbox": [
+            282.83,
+            212.05,
+            315.79,
+            221.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI9",
+            "CMR9",
+            "CMSY9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "0.1",
+          "bbox": [
+            229.03,
+            213.97,
+            238.11,
+            220.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "0.7",
+          "bbox": [
+            295.24,
+            248.59,
+            304.07,
+            255.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "0.8",
+          "bbox": [
+            324.64,
+            248.59,
+            333.47,
+            255.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "0.9",
+          "bbox": [
+            354.04,
+            248.59,
+            362.87,
+            255.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "0.6",
+          "bbox": [
+            265.5,
+            248.69,
+            274.43,
+            255.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "Figure 2: The domain (57)",
+          "bbox": [
+            240.16,
+            265.23,
+            357.4,
+            275.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "∂2F",
+          "bbox": [
+            142.26,
+            294.34,
+            161.4,
+            307.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "∂t ∂s = −Λ′′(t −s) = π cot π(t −s),",
+          "bbox": [
+            139.95,
+            301.68,
+            340.05,
+            323.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "∂2F",
+          "bbox": [
+            139.95,
+            324.09,
+            159.09,
+            337.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "= 2 Λ′′(s) + Λ′′(t −s) = −2π cot πs −π cot π(t −s).",
+          "bbox": [
+            169.13,
+            331.43,
+            445.23,
+            345.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "∂s2",
+          "bbox": [
+            141.79,
+            341.26,
+            158.36,
+            353.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "We put a = −cot πt and b = cot πs, noting that they are positive since 0.5 < t < 1 and",
+          "bbox": [
+            72.0,
+            360.65,
+            525.55,
+            372.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "0 < s < 0.5. Further, noting that cot(α+β) = (cot α cot β −1)/(cot α + cot β), we have",
+          "bbox": [
+            72.0,
+            374.6,
+            525.55,
+            386.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "that",
+          "bbox": [
+            72.0,
+            388.76,
+            93.47,
+            400.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "π · ∂2F",
+          "bbox": [
+            76.43,
+            407.97,
+            113.67,
+            437.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "π · ∂2F",
+          "bbox": [
+            241.58,
+            407.97,
+            281.13,
+            437.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "π · ∂2F",
+          "bbox": [
+            384.93,
+            407.97,
+            422.17,
+            437.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "= −2a + ab −1",
+          "bbox": [
+            123.71,
+            408.98,
+            208.54,
+            429.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "∂t ∂s = −ab −1",
+          "bbox": [
+            259.67,
+            408.98,
+            351.9,
+            437.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "= −2b + ab −1",
+          "bbox": [
+            432.21,
+            408.98,
+            515.87,
+            429.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            77.04,
+            409.2,
+            82.9,
+            421.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            242.18,
+            409.2,
+            248.04,
+            421.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            385.54,
+            409.2,
+            391.4,
+            421.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "a + b ,",
+          "bbox": [
+            179.97,
+            417.29,
+            214.97,
+            437.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "a + b ,",
+          "bbox": [
+            323.33,
+            417.29,
+            358.33,
+            437.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "a + b .",
+          "bbox": [
+            487.3,
+            417.29,
+            522.3,
+            437.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "∂t2",
+          "bbox": [
+            97.02,
+            425.14,
+            112.3,
+            437.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "∂s2",
+          "bbox": [
+            404.87,
+            425.14,
+            421.44,
+            437.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "We put the Hesse matrix of F to be H. Then,",
+          "bbox": [
+            72.0,
+            445.66,
+            309.8,
+            457.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "(",
+          "bbox": [
+            272.39,
+            459.2,
+            277.87,
+            471.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": ")",
+          "bbox": [
+            359.26,
+            459.2,
+            364.74,
+            471.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "(",
+          "bbox": [
+            402.02,
+            459.2,
+            407.5,
+            471.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": ")",
+          "bbox": [
+            488.31,
+            459.2,
+            493.79,
+            471.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "(a+b)2 −ab + 1",
+          "bbox": [
+            277.87,
+            464.55,
+            359.27,
+            481.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "a2 + b2 + ab + 1",
+          "bbox": [
+            407.49,
+            464.77,
+            488.31,
+            481.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "a + b = −2",
+          "bbox": [
+            208.54,
+            469.11,
+            272.39,
+            498.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "= −2",
+          "bbox": [
+            371.25,
+            469.11,
+            402.02,
+            489.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "π ·trace H = −2a−2b+2·ab−1",
+          "bbox": [
+            73.2,
+            469.64,
+            235.12,
+            498.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            73.8,
+            469.86,
+            79.66,
+            481.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "< 0.",
+          "bbox": [
+            501.16,
+            477.95,
+            525.54,
+            489.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "a + b",
+          "bbox": [
+            302.87,
+            486.15,
+            328.4,
+            498.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "a + b",
+          "bbox": [
+            432.21,
+            486.15,
+            457.74,
+            498.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "Further,",
+          "bbox": [
+            72.0,
+            506.33,
+            113.79,
+            518.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "π2 · det H = 4ab −(2a + 2b) · ab −1",
+          "bbox": [
+            150.79,
+            517.73,
+            344.21,
+            546.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            153.76,
+            517.95,
+            159.62,
+            529.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "= 2(ab + 1) > 0.",
+          "bbox": [
+            352.62,
+            526.04,
+            447.95,
+            537.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "a + b",
+          "bbox": [
+            315.63,
+            534.24,
+            341.17,
+            546.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "Hence, the two eigenvalues of H are nagative, and H is negative deﬁnite. Therefore, F",
+          "bbox": [
+            72.0,
+            550.43,
+            523.92,
+            562.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "0.5 < t < 1, 0 < s < 0.5",
+          "bbox": [
+            241.6,
+            553.99,
+            393.17,
+            576.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "{",
+          "bbox": [
+            205.34,
+            554.47,
+            212.31,
+            566.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "}",
+          "bbox": [
+            393.16,
+            554.47,
+            400.13,
+            566.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "is a concave function on",
+          "bbox": [
+            72.0,
+            564.38,
+            200.16,
+            576.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "(t, s)",
+          "bbox": [
+            212.31,
+            564.38,
+            236.4,
+            576.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": ", whose Hesse matrix is",
+          "bbox": [
+            400.13,
+            564.38,
+            525.54,
+            576.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "negative deﬁnite. Hence, the domain (57) is a compact convex domain, and its boundary",
+          "bbox": [
+            72.0,
+            578.32,
+            525.61,
+            590.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "is a smooth closed curve whose curvature is non-zero everywhere (see Lemma B.1).",
+          "bbox": [
+            72.0,
+            592.27,
+            498.05,
+            604.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "We calculate the minimal value tmin and the maximal value tmax of t in the domain",
+          "bbox": [
+            86.94,
+            606.22,
+            525.54,
+            619.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "(57). We consider the line t = c in the (t, s) plane for a constant c. The values tmin and",
+          "bbox": [
+            72.0,
+            620.17,
+            525.55,
+            633.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "tmax are given when this line is tangent to the domain (57). The tangent points of such",
+          "bbox": [
+            72.0,
+            634.11,
+            525.62,
+            647.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "lines are given by the following equations,",
+          "bbox": [
+            72.0,
+            648.06,
+            286.44,
+            660.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            176.31,
+            661.13,
+            186.94,
+            673.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "(1",
+          "bbox": [
+            387.5,
+            664.01,
+            398.4,
+            680.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": ")",
+          "bbox": [
+            399.6,
+            664.01,
+            405.08,
+            675.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            176.31,
+            671.88,
+            186.94,
+            683.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "−2 Λ(t) + Λ(t −s) + 2 Λ(s) = ςR −Λ",
+          "bbox": [
+            190.84,
+            673.7,
+            387.5,
+            688.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.98,
+            11.95
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            405.08,
+            673.92,
+            408.33,
+            685.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            394.17,
+            681.15,
+            398.4,
+            689.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "(",
+          "bbox": [
+            205.57,
+            685.42,
+            211.05,
+            697.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": ")",
+          "bbox": [
+            355.97,
+            685.42,
+            361.45,
+            697.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "∂",
+          "bbox": [
+            194.79,
+            687.24,
+            200.97,
+            699.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            176.31,
+            693.4,
+            186.94,
+            705.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "−2 Λ(t) + Λ(t −s) + 2 Λ(s)",
+          "bbox": [
+            213.71,
+            695.11,
+            355.97,
+            707.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "= 0.",
+          "bbox": [
+            368.68,
+            695.33,
+            394.11,
+            707.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "∂s",
+          "bbox": [
+            192.03,
+            703.53,
+            204.37,
+            715.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "31",
+          "bbox": [
+            293.79,
+            740.41,
+            303.75,
+            750.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 37,
+      "rotation": 0,
+      "drawings": 5171,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3: Contour lines of Re ˆV (0.8 + X√−1, 0.18 + Y √−1, 0.1) −ςR"
+      ],
+      "labels": [
+        {
+          "text": "where z = e2π√−1 (u+Z√−1). Since 0.05 ≤u ≤0.4,",
+          "bbox": [
+            72.0,
+            89.03,
+            320.97,
+            108.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "(1",
+          "bbox": [
+            233.1,
+            115.15,
+            245.64,
+            128.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": ")",
+          "bbox": [
+            268.1,
+            115.15,
+            273.58,
+            127.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "−2π",
+          "bbox": [
+            210.88,
+            124.83,
+            232.67,
+            137.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "2 −u",
+          "bbox": [
+            239.78,
+            124.83,
+            268.1,
+            145.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "< Arg (1 −z) < 0.",
+          "bbox": [
+            280.8,
+            124.83,
+            386.66,
+            137.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "Therefore,",
+          "bbox": [
+            72.0,
+            151.9,
+            124.35,
+            163.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "( ∂",
+          "bbox": [
+            224.62,
+            158.12,
+            241.95,
+            175.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": ")",
+          "bbox": [
+            341.19,
+            158.12,
+            348.33,
+            170.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            311.52,
+            161.41,
+            321.48,
+            173.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "(1",
+          "bbox": [
+            384.8,
+            161.71,
+            397.33,
+            175.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": ")",
+          "bbox": [
+            439.92,
+            161.71,
+            445.4,
+            173.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "ˆV (t, s, u + δ",
+          "bbox": [
+            246.61,
+            168.59,
+            311.08,
+            183.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "−2π · s < Re",
+          "bbox": [
+            148.89,
+            171.39,
+            222.63,
+            183.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "−1)",
+          "bbox": [
+            321.48,
+            171.39,
+            341.19,
+            183.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "2 −s −u",
+          "bbox": [
+            391.47,
+            171.39,
+            439.92,
+            191.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "< 2π",
+          "bbox": [
+            355.55,
+            171.61,
+            384.36,
+            183.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            445.4,
+            171.61,
+            448.65,
+            183.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "∂δ",
+          "bbox": [
+            232.96,
+            179.81,
+            244.96,
+            191.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "Since s ≤0.4 and s + u ≥0.19,",
+          "bbox": [
+            72.0,
+            194.5,
+            232.25,
+            206.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "( ∂",
+          "bbox": [
+            244.92,
+            210.29,
+            262.25,
+            227.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": ")",
+          "bbox": [
+            361.49,
+            210.29,
+            368.63,
+            222.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            331.82,
+            213.58,
+            341.78,
+            225.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "ˆV (t, s, u + δ",
+          "bbox": [
+            266.91,
+            220.76,
+            331.38,
+            235.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "−2π · 0.4 < Re",
+          "bbox": [
+            159.75,
+            223.56,
+            242.93,
+            235.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "−1)",
+          "bbox": [
+            341.78,
+            223.56,
+            361.49,
+            235.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "< 2π · 0.31,",
+          "bbox": [
+            375.85,
+            223.56,
+            437.79,
+            235.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "∂δ",
+          "bbox": [
+            253.26,
+            231.98,
+            265.27,
+            243.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "and hence, (67) is satisﬁed.",
+          "bbox": [
+            72.0,
+            251.29,
+            211.37,
+            263.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "4.5",
+          "bbox": [
+            72.0,
+            289.69,
+            89.2,
+            301.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "Verifying the assumption of the saddle point method",
+          "bbox": [
+            102.65,
+            289.69,
+            414.57,
+            301.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "In this section, we verify the assumption of the saddle point method in Lemma 4.9. In",
+          "bbox": [
+            72.0,
+            311.36,
+            525.57,
+            323.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "order to show this lemma, we show Lemmas 4.4–4.8 in advance. As we mentioned in",
+          "bbox": [
+            72.0,
+            325.31,
+            525.58,
+            337.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "Remark 2.7, we verify the assumption for ˆV (t, s, u) instead of V (t, s, u), since V (t, s, u)",
+          "bbox": [
+            72.0,
+            336.23,
+            525.54,
+            351.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "converges uniformly to ˆV (t, s, u) on ∆′ in the form mentioned in Remark 2.7.",
+          "bbox": [
+            72.0,
+            350.22,
+            468.39,
+            366.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "10",
+          "bbox": [
+            210.19,
+            378.83,
+            218.81,
+            387.23
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.4
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            214.69,
+            418.73,
+            219.0,
+            427.13
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.4
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            214.69,
+            459.83,
+            219.0,
+            468.23
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.4
+          ]
+        },
+        {
+          "text": "−",
+          "bbox": [
+            208.47,
+            499.13,
+            213.08,
+            507.53
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            8.4
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            214.69,
+            500.03,
+            219.0,
+            508.43
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.4
+          ]
+        },
+        {
+          "text": "−",
+          "bbox": [
+            205.47,
+            540.83,
+            210.08,
+            549.23
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            8.4
+          ]
+        },
+        {
+          "text": "10",
+          "bbox": [
+            210.19,
+            541.13,
+            218.81,
+            549.53
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.4
+          ]
+        },
+        {
+          "text": "−5",
+          "bbox": [
+            259.47,
+            549.23,
+            270.0,
+            558.53
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "SymbolMT",
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.4
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            304.39,
+            549.83,
+            308.7,
+            558.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.4
+          ]
+        },
+        {
+          "text": "−10",
+          "bbox": [
+            215.97,
+            550.13,
+            229.31,
+            558.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT",
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.4
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            344.89,
+            550.13,
+            349.2,
+            558.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.4
+          ]
+        },
+        {
+          "text": "10",
+          "bbox": [
+            382.99,
+            550.43,
+            391.61,
+            558.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.4
+          ]
+        },
+        {
+          "text": "Figure 3: Contour lines of Re ˆV (0.8 + X√−1, 0.18 + Y √−1, 0.1) −ςR",
+          "bbox": [
+            145.43,
+            574.96,
+            451.11,
+            594.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            4.98,
+            9.96
+          ]
+        },
+        {
+          "text": "In the proof of Lemma 4.9, as mentioned at the beginning of Section 4.4, it is suﬃcient",
+          "bbox": [
+            86.94,
+            606.58,
+            525.6,
+            618.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "to decrease Re ˆV (t, s, u) by 0.06, by pushing t, s, u into the imaginary directions. In order",
+          "bbox": [
+            72.0,
+            617.51,
+            525.58,
+            632.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "to calculate this concretely, putting",
+          "bbox": [
+            72.0,
+            634.48,
+            253.52,
+            646.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            277.06,
+            647.58,
+            287.02,
+            659.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            338.74,
+            647.58,
+            348.7,
+            659.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            401.04,
+            647.58,
+            411.0,
+            659.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "f(X, Y, Z) = Re ˆV (t + X",
+          "bbox": [
+            141.46,
+            654.76,
+            276.12,
+            669.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "−1, s + Y",
+          "bbox": [
+            287.02,
+            657.56,
+            336.13,
+            669.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "−1, u + Z",
+          "bbox": [
+            348.7,
+            657.56,
+            400.18,
+            669.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "−1) −ςR",
+          "bbox": [
+            411.0,
+            657.56,
+            455.06,
+            671.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.98,
+            11.95
+          ]
+        },
+        {
+          "text": "as in Section 3.5, we consider the behavior of f at each ﬁber of the projection C3 →R3.",
+          "bbox": [
+            72.0,
+            676.52,
+            525.54,
+            693.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "Then, unlike Section 3.5, there are some (t, s, u) ∈R3 such that, ﬁxing X and Z, f has",
+          "bbox": [
+            72.0,
+            690.68,
+            525.55,
+            706.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "a maximal point as a function of Y ; for example, see Figure 3. We also note that the",
+          "bbox": [
+            72.0,
+            708.97,
+            525.57,
+            720.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "37",
+          "bbox": [
+            293.79,
+            740.41,
+            303.75,
+            750.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 48,
+      "rotation": 0,
+      "drawings": 24,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 4: The set of (t, s) satisfying that Re ˆV (t, s, u) ≥ς for some u"
+      ],
+      "labels": [
+        {
+          "text": "Estimate of the range of ∆′",
+          "bbox": [
+            102.65,
+            93.93,
+            262.19,
+            107.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12",
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "5.2",
+          "bbox": [
+            72.0,
+            95.31,
+            89.2,
+            107.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "In this section, we calculate the concrete values of the bounds of the inequalities in (79)",
+          "bbox": [
+            72.0,
+            116.98,
+            525.57,
+            128.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "so that they satisfy that ∆−∆′ ⊂(78).",
+          "bbox": [
+            72.0,
+            126.37,
+            276.92,
+            142.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "Putting Λ as in Section 2.2, we have that",
+          "bbox": [
+            86.94,
+            148.46,
+            298.88,
+            160.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "Re ˆV (t, s, u) = 2 Λ(t) + Λ(s −t) −2 Λ(s) + Λ(s −u) + 2 Λ(u).",
+          "bbox": [
+            137.21,
+            167.76,
+            460.33,
+            182.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "We consider the domain",
+          "bbox": [
+            72.0,
+            193.1,
+            195.63,
+            205.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "2 Λ(t) + Λ(s −t) −2 Λ(s) + Λ(s −u) + 2 Λ(u) ≥ς",
+          "bbox": [
+            186.08,
+            205.04,
+            453.22,
+            227.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "{",
+          "bbox": [
+            114.84,
+            205.52,
+            121.81,
+            217.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "}",
+          "bbox": [
+            454.18,
+            205.52,
+            461.15,
+            217.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "(t, s, u) ∈∆",
+          "bbox": [
+            121.81,
+            215.2,
+            182.18,
+            227.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            461.16,
+            215.42,
+            464.41,
+            227.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "(82)",
+          "bbox": [
+            504.73,
+            215.42,
+            525.56,
+            227.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "where we put ς = 0.906072... as in (86). We note that this domain is symmetric with",
+          "bbox": [
+            72.0,
+            237.74,
+            525.58,
+            249.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "respect to the exchange of t and u. The aim of this section is to show that this domain",
+          "bbox": [
+            72.0,
+            251.69,
+            525.57,
+            263.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "is included in the interior of the domain ∆′ of (79). We graphically show the set of (t, s)",
+          "bbox": [
+            72.0,
+            261.3,
+            525.54,
+            277.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "satisfying that Re ˆV (t, s, u) ≥ς for some u in Figure 4.",
+          "bbox": [
+            72.0,
+            277.93,
+            353.24,
+            292.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "s ≤0.7",
+          "bbox": [
+            313.72,
+            308.38,
+            342.07,
+            317.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI9",
+            "CMR9",
+            "CMSY9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "s−t ≤0.47",
+          "bbox": [
+            257.11,
+            312.02,
+            294.9,
+            349.82
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI9",
+            "CMR9",
+            "CMSY9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "t ≤0.3",
+          "bbox": [
+            353.57,
+            345.25,
+            380.96,
+            354.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI9",
+            "CMR9",
+            "CMSY9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "0.65",
+          "bbox": [
+            235.4,
+            347.38,
+            247.62,
+            354.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "0.18≤t",
+          "bbox": [
+            257.6,
+            372.3,
+            266.73,
+            401.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI9",
+            "CMR9",
+            "CMSY9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "0.60",
+          "bbox": [
+            235.4,
+            379.41,
+            247.62,
+            386.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "0.3 ≤s−t",
+          "bbox": [
+            333.64,
+            403.03,
+            373.52,
+            412.16
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI9",
+            "CMR9",
+            "CMSY9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "0.55",
+          "bbox": [
+            235.4,
+            411.44,
+            247.62,
+            418.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "0.54 ≤s",
+          "bbox": [
+            272.87,
+            429.93,
+            305.83,
+            439.06
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI9",
+            "CMR9",
+            "CMSY9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "0.20",
+          "bbox": [
+            277.34,
+            449.78,
+            289.56,
+            456.78
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "0.25",
+          "bbox": [
+            309.83,
+            449.78,
+            322.05,
+            456.78
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "0.30",
+          "bbox": [
+            342.09,
+            449.78,
+            354.31,
+            456.78
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "Figure 4: The set of (t, s) satisfying that Re ˆV (t, s, u) ≥ς for some u",
+          "bbox": [
+            148.93,
+            472.62,
+            448.62,
+            485.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We can show (see Lemma C.1) that the domain (82) is a compact convex domain and",
+          "bbox": [
+            86.94,
+            498.36,
+            525.62,
+            510.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "its boundary is a smooth closed surface whose Gaussian curvature is positive everywhere.",
+          "bbox": [
+            72.0,
+            512.3,
+            525.58,
+            524.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "We calculate the minimal value tmin and the maximal value tmax of t. We consider the",
+          "bbox": [
+            86.94,
+            526.25,
+            525.54,
+            539.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.95
+          ]
+        },
+        {
+          "text": "plane t = c for a constant c. The range of t is given as the range of c such that this plane",
+          "bbox": [
+            72.0,
+            540.2,
+            525.54,
+            552.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "and the domain (82) has non-empty intersection. Since the domain (82) is a compact",
+          "bbox": [
+            72.0,
+            554.15,
+            525.61,
+            566.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "convex domain whose boundary is a smooth closed surface, the maximal and minimal",
+          "bbox": [
+            72.0,
+            568.09,
+            525.6,
+            580.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "values are given by the planes tangent to this domain. The tangent points of such planes",
+          "bbox": [
+            72.0,
+            582.04,
+            525.6,
+            593.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "are given by solutions of the following equations,",
+          "bbox": [
+            72.0,
+            595.99,
+            321.97,
+            607.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            137.76,
+            609.69,
+            148.39,
+            621.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "2 Λ(t) + Λ(s −t) −2 Λ(s) + Λ(s −u) + 2 Λ(u) = ς,",
+          "bbox": [
+            152.29,
+            619.18,
+            419.37,
+            631.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            137.76,
+            620.45,
+            148.39,
+            632.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            137.76,
+            624.03,
+            148.39,
+            635.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            137.76,
+            627.62,
+            148.39,
+            639.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            137.76,
+            631.21,
+            148.39,
+            643.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "(",
+          "bbox": [
+            167.02,
+            632.45,
+            172.5,
+            644.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": ")",
+          "bbox": [
+            407.6,
+            632.45,
+            413.08,
+            644.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "∂",
+          "bbox": [
+            156.24,
+            634.27,
+            162.42,
+            646.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "2 Λ(t) + Λ(s −t) −2 Λ(s) + Λ(s −u) + 2 Λ(u)",
+          "bbox": [
+            172.5,
+            642.13,
+            407.6,
+            654.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "= 0,",
+          "bbox": [
+            420.3,
+            642.35,
+            445.73,
+            654.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "∂s",
+          "bbox": [
+            153.48,
+            650.55,
+            165.82,
+            662.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            137.76,
+            652.73,
+            148.39,
+            664.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            137.76,
+            656.31,
+            148.39,
+            668.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "(",
+          "bbox": [
+            168.17,
+            658.58,
+            173.65,
+            670.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": ")",
+          "bbox": [
+            408.75,
+            658.58,
+            414.23,
+            670.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            137.76,
+            659.9,
+            148.39,
+            671.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "∂",
+          "bbox": [
+            156.82,
+            660.4,
+            163.0,
+            672.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            137.76,
+            663.48,
+            148.39,
+            675.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "2 Λ(t) + Λ(s −t) −2 Λ(s) + Λ(s −u) + 2 Λ(u)",
+          "bbox": [
+            173.65,
+            668.27,
+            408.74,
+            680.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "= 0.",
+          "bbox": [
+            421.45,
+            668.49,
+            446.88,
+            680.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "∂u",
+          "bbox": [
+            153.48,
+            676.69,
+            166.97,
+            688.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "Since the boundary of the domain (82) is a smooth closed surface whose Gaussian cur-",
+          "bbox": [
+            72.0,
+            695.02,
+            525.58,
+            706.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "vature is positive everywhere, there are exactly two such tangent points, and the above",
+          "bbox": [
+            72.0,
+            708.97,
+            525.61,
+            720.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "48",
+          "bbox": [
+            293.79,
+            740.41,
+            303.75,
+            750.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

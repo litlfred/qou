@@ -1,0 +1,1 @@
+Because of its relatively small excitation energy, it is not clear from the outset if, in an EFT, the $\Delta$ should be taken into account explicitly or integrated out as a ``heavy'' degree of freedom.

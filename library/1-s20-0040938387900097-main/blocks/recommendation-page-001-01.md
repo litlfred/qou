@@ -1,0 +1,1 @@
+(In [6] a state model was constructed for the Conway polynomial.) As we shall see, this model for the Jones polynomial arises as a normalization of a regular isotopy invariant of unoriented knots and links, called here the bracket polynomial, and denoted (K) for a link projection K.

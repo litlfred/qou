@@ -8,7 +8,7 @@ set_option maxHeartbeats 8000000
 
 Bean `qou-s4xb` (epic `qou-8lxd`), stream 15. Formalises, sorry-free, the construction of
 Furey's thesis §6.6 (`furey2016`, arXiv:1611.09182, held at
-`library/arxiv-1611.09182v1/sections/sec-038-66-minimal-left-ideals.md`): the Witt
+`library/arxiv-1611.09182v1/sections/sec-048-66-minimal-left-ideals.md`): the Witt
 nilpotents `αⱼ`, the primitive idempotent `ωω† = α₁α₂α₃α₃†α₂†α₁†`, and the minimal left ideal
 `S_u = (ℂ⊗𝕆)_L · ωω†` of the algebra of octonionic left-multiplication operators.
 

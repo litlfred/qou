@@ -9,8 +9,9 @@ source_pdf: 0812.2426v1.pdf
 source_sha256: df1eb953bc2c6c63
 toc_source: inferred
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.877
+latex_prose_ratio: 0.98
+latex_coverage_ratio: 0.961
+doc_brief: "CATEGORICAL CENTERS AND RESHETIKHIN-TURAEV INVARIANTS — A theorem of M¨uger asserts that the center Z(C) of a spherical k-linear category C is a modular category if k is an algebraically closed ﬁeld"
 ---
 Let $T$ be a centralizable Hopf monad on an autonomous category $\mathcal{C}$. Denote $Z_T$ its centralizer, $i_{X,Y} \colon
 \leftidx{^\vee}{\!T(Y)}{} \otimes X \otimes Y \to Z_T(X)$ its associated universal dinatural transformation, and $\Omega\colon TZ_T \to

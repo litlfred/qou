@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1-s2.0-S0166864101002632-main.pdf
 source_sha256: bc5aa8a7663b2a9f
 toc_source: inferred
+doc_brief: "PII: S0166-8641(01)00263-2 — The Möbius energy of a knot is an energy functional for smooth curves based on an idea of self- repelling."
 ---
 Topology and its Applications 125 (2002) 97–109
 Möbius energy of thick knots

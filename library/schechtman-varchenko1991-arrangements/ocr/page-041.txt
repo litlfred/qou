@@ -1,38 +1,49 @@
 Arrangements of hyperplanes and Lie algebra homology 179
-Proof. For x = fi (i) is 6.14.1 (i). Suppose that we know (i) for x. We have v(Lfi,
-x])= fi.v(x)- x.(fi ^ hi)=[fi, x] ^(μ(2)+hi) -(hi, μ(2)fi ^x+ fi.v(x)- .
-This implies (i) for Lfi, x] and (ii). 
-6.14.3 Lemma. For every xEn
-[ S(x, [a, b]) if aen, beh
-S(v(x), a^b) :
-(S(x, [a, b]) if a, ben.
-S is defined on b ^ b by the rule
-(S(a, c) S(a, d)
-S(a ^ b, c ^ d)=det (cf. (6.4.2)
-(S(b, c)S(b, d)
+
+Proof. For x=f; (i) is 6.14.1 (i). Suppose that we know (i) for x. We have v(Lf;,
+XY=fi vO)—Fx-KAM=3Lh, x1 AUA+h)-Aj, UA)LAX+ Si V)_.
+This implies (i) for [f;, x] and (ii). O
+
+6.14.3 Lemma. For every xen
+
+4S(x,[a,b]) if aen, beh
+
+SG), a6) ~{50. [a,b]) if a,ben.
+
+S is defined on b ~ b by the rule
+
+_ S(a,c) S(a,d)
+S(aa b,c A d)=det (sc ) Sth, a) (cf. (6.4.2)).
+
 Proof. The first equality is the direct consequence of 6.14.2(i). Let us prove
-the second one. For x =fi the both sides are zero. Note that the form S on
-b ^ b has the property
-(6.14.4) S(x· y, z) = S(y, -t(x)·z)
-if t(x)·zeb. Suppose that we know 6.14.3 for xena. We have
-S(v([fi, xJ), a^ b) = S(fi. v(x) - x· v(f), a ^b)
-= S(v(x), e;(a ^b) - S( fi^[x, hil, a^b) if a, ben.
-Put 2 =(0, ..., O, 1, O, ..., O), so μ(20) = hi.
-1st case. aena?, bena. If a= a? then both sides of 6.14.3 for fi, x are zero.
-If ^+ a?, we have
-S(v([fi, x]), a ^b) = S(v(x), [ei, a] ^ b +a ^[ei, b]) -(hi, μ(2) S(fi, a) S(x, b)
-= S(x, [[ei, a], b])+S(x, [a, [ei, b]])+ S(x, [ei, [a, b]])
-= S(x, [ei, [a, b]])= S(Lfi, x], [a, b]).
-2nd case. aena", bena", 2', a" +a?. Then
-S(v([fi, xJ), a ^ b)= S(v(x), e;·(a ^b)
-= S(x, [ei, [a, b]])
-= S(Lfi, x], [a, b])
-So, the second equality 6.14.3 is proven for [fi, x].
-6.15 Comultiplication. Suppose that n weights A1, .., Aneh* are given. Put M;
-= M(Mi) with the generator vi; M=- Mi @...@ Mn, U=vi @... @un, 4= Z Ai.
-i= 1
-Let b act on b@ M by the rule a.(bm) = [a, b] @m+a@ b.m.
-For 1≤i≤n, c, beg, m=xi @...βxneM, put bli)m=xi ... @xi-1βbx;
-@ xi+ 1 @ ... β xn; b(i)(c?m) =[b, c] @m+c@ bli) m.
-6.15.1 Lemma-definition. There exists a unique C-linear map Vm: M -→b @ M
+the second one. For x=/f; the both sides are zero. Note that the form S on
+b Ab has the property
+
+(6.14.4) S(x-y, z)=S(y, —1(x)-z)
+if t(x)-zeb. Suppose that we know 6.14.3 for xen,. We have
+S(v(Lhi x]), aA b)=S(f,- v(x) —x-v(fi), aA B)
+=S(v(x), e(arnb))-SGAALx A,anb) if a,ben.
+Put A2=(0, ..., 0, 1, 0, ..., 0), so wAP)=h;.
+
+Ist case. aen,, ben,. If A=A? then both sides of 6.14.3 for f;, x are zero.
+If A+A°, we have
+
+S(v(Cis x]), 4.0 b)=S (v2), [e;, a] Ab +44 Le;, b])—3(h;, HA) SUF, a) S(x, b)
+=48(x, (Le, a], b])+S(x, La, Le, 6]]) +4 Sx, Le, (a, 51)
+=5(x, Le; [a, b]])=S(Lf. x], [a 5).
+
+2nd case. aen,,, ben,., 4’, A” =A. Then
+
+S(v(Lfi, x]), aA b)=S (v(x), e;-(aA b))
+=S(x, Le, Ca, 6]))
+=S(Lfi, x], [4 6).
+So, the second equality 6.14.3 is proven for [f;, x]. O
+6.15 Comultiplication. Suppose that n weights A,, ..., 4,€5* are given. Put M;
+= M(A) with the generator v;; M=M,@...@M,, v=0,@...@v,, A= x Aj.
+Let b act on b@ M by the rule a-(b@m)=[a, b]®@m+a@b-m. "
+
+For 1SiSn, c, beg, m=x,@...@x,€M, put bOm=x,@...®xX;-1 @bx;
+@Xj41@...@x,3 DP(c@m)=[b, c]@m+c@ bm.
+
+6.15.1 Lemma-definition. There exists a unique C-linear map vy: M>b@M
 such that

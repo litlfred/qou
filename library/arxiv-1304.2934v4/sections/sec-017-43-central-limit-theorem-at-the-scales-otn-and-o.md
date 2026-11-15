@@ -4,10 +4,11 @@ doc_title: "MOD-φ CONVERGENCE, I: NORMALITY ZONES AND PRECISE DEVIATIONS"
 section_id: sec-017-43-central-limit-theorem-at-the-scales-otn-and-o
 section_title: "Central limit theorem at the scales o(tn) and o(tn23)"
 section_number: 4.3
-pages: 30-36
+pages: 30-35
 source_pdf: 1304.2934v4.pdf
 source_sha256: b7ed2a9e85264568
 toc_source: outline
+doc_brief: "MOD-φ CONVERGENCE, I: NORMALITY ZONES AND PRECISE DEVIATIONS — In this paper, we use the framework of mod-φ convergence to prove pre- cise large or moderate deviations for quite general sequences of"
 ---
 one can also prove from the hypotheses of mod-convergence an extended central limit
 theorem:
@@ -403,85 +404,3 @@ Xn −tnη′(0)
 p
 2η′′(0) tn log n ≤1.
 □
-4.4. Normality zones for mod-φ and mod-Gaussian sequences. Let (Xn)n∈N be a se-
-quence of random variables that converges mod-φ (we do not assume φ non-lattice for
-the moment). Then we have seen that
-Yn = Xn −tnη′(0)
-p
-tnη′′(0)
-satisﬁes a central limit theorem: for all ﬁxed y,
-lim
-n→∞
-P[Yn ≥y]
-(2π)−1/2 R ∞
-y e−s2
-2 ds
-= 1.
-(20)
-The question that we address here is the question of the normality zone: we want to
-identify the maximal scale un such that Equation (20) holds for y = o(un). The results
-of the previous Sections allows to identify this scale and to describe what happens for
-y = O(un).
-Suppose that φ is a lattice distribution, or a non-lattice distribution that is absolutely
-continuous with respect to the Lebesgue measure. From Theorem 3.9 or Theorem 4.8,
-we get that if y = o((tn)1/6), then P[Yn ≥y] is given by the Gaussian distribution.
-Assume η′′′(0)̸ = 0. Then, the previous result is optimal, because of Equations (10)
-and (18): for y = c(tn)1/6 the second factor is different from 1 and the approximation
-by the Gaussian tail is no longer valid. Thus, if η′′′(0)̸ = 0, then the normality zone
-for the sequence (Yn)n∈N is o((tn)1/6). In particular, one has the same asymptotics and
-normality zone than in the case of the sum of tn i.i.d. variables of law φ; see [Cra38]
-and [Pet54].
-36
-VALENTIN FÉRAY, PIERRE-LOÏC MÉLIOT, AND ASHKAN NIKEGHBALI
-The only case where this comparison does not give us the normality zone is the case
-of mod-Gaussian convergence, that we shall discuss now.
-Proposition 4.14. Assume that (Xn)n∈N converges in the mod-Gaussian sense, with a non-
-trivial limiting function (i.e., ψ̸ ≡1). Then the normality zone for Yn = Xn/√tn is o(√tn).
-Proof.
-• Let y = o((tn)1/2). Set x = h = y/√tn as in Theorem 4.8 in the mod-
-Gaussian case. Then, the second part of Theorem 4.8 states that
-P[Yn ≥y] = P[Xn ≥tnx] =
-e−tnx2
-2
-h√2πtn
-(1 + o(1)) = e−y2
-2
-y
-√
-2π
-(1 + o(1)).
-Thus, the normality zone is at least o(√tn) in this case.
-• Set now y = x√tn for a ﬁxed x > 0. Then, Theorem 4.3 states that
-P[Yn ≥y] = P[Xn ≥tn x] = e−y2
-2
-y
-√
-2π
-ψ(x) (1 + o(1)).
-(21)
-Similarly, if y = −x√tn for a ﬁxed x > 0, we get (see Remark 4.4)
-P[Yn ≤y] = P[Xn ≤−tn x] =
-e−y2
-2
-|y|
-√
-2π
-ψ(−x) (1 + o(1)).
-(22)
-In particular, if ψ(x) is not identically equal to 1, then the approximation (20)
-of P[Yn ≥y] by the Gaussian tail breaks and the normality zone is exactly
-o(√tn).
-□
-As seen in the proof, from a simple application of Theorem 4.3, the residue ψ de-
-scribes how to correct the Gaussian tail to ﬁnd an equivalent for P[Yn ≥y]. A standard
-and interesting case is the case where the limiting function is ψ = exp(Lzv), where
-L̸ = 0 is a real number and v a positive integer (v ≥3). This might seem restrictive,
-but we will see in the examples that ψ is very often of this type — Examples 7.1, 7.2,
-2.2 and Theorems 11.4, 10.1, 8.1 and 9.19. If v is odd (v = 3 is a common case), com-
-paring Equations (21) and (22) shows the following phenomenon: the negative and
-positive deviations of Yn at order O(√tn) have different asymptotic behaviour, one be-
-ing larger than the other one depending on the sign of L. In other words, our results
-reveal a breaking of symmetry at the edge of the normality zone.
-Remark 4.15. This breaking of symmetry also occurs in multi-dimensional setting. In
-particular, in two dimensions, the residue allows to compute the distribution of the an-
-gle of a sum of i.i.d. random variables at the edge of the normality zone, see [FMN15b].

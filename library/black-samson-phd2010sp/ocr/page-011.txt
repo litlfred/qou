@@ -1,0 +1,33 @@
+4 ' (1.2)
+
+Figure 1.2: A (1, 1)-tangle and its associated endomorphism of W.
+
+1.2. Summary of Thesis
+
+In this dissertation, we consider a third alternative, indirectly related to the gl(1/1)-
+approach, but we work only with braids, which is Jones’ approach via Markov traces ({24]). There
+js essentially no loss of generality, as any link has a diagram presenting it as the closure of a braid.
+
+In Chapter II, we recall some of the basics regarding links, braids, and invariants. The
+HOMFLYPT polynomial is constructed from representations of the braid group, factoring through
+the Iwahori-Hecke algebra Hy (as in [24], although our notations are substantially different). Also,
+a converse is presented: an invariant of links defined on braids that satisfies a skein relation
+necessarily factors through the Hecke algebra. This latter perspective, namely that skein relations
+determine certain algebras, is a motivation for the results in Chapter III. The remainder of the
+chapter is devoted to a particular example: the Jones polynomial. We introduce the Temperley-
+Lieb algebra Ta, both as an explicit quotient of the Hecke algebra and as a diagrammatic algebra
+carrying a particularly elegant trace. There are no new results here beyond the considerable task
+of gathering this wealth of constructions and formulae into one consistent notational framework.
+The groundwork is laid for the following chapters where certain analogous results are derived for
+the Alexander polynomial.
+
+In Chapter III, we look at special cases of Schur-Weyl duality between Hy and U4,(gl(mjn))
+on tensor space. In particular, the representations of the Hecke algebra from Chapter II are
+explicitly connected to the Reshetikhin-Turaev intertwiners. The Temperley-Lieb algebra appears
+here as the centralizer algebra of U,,(g) in End(V ®---@V) for gl(2|0) = gl(2), or equivalently s1(2).
+Hence, using results of Jimbo ((21] and [22]), building on the classical work of Schur ([38]) and
+Weyl ((41, Chapter III]), [Za is presented as a product of matrix algebras indexed by partitions
+of at most. two rows. As the Wedderburn components for Young diagrams of more than two rows
+form a cellular ideal in Ha, the quotient TL, inherits the cellular structure from Hg. In fact, TLa
+
+has a natural diagram basis that is easy to express in terms of the standard basis for Hy; hence,

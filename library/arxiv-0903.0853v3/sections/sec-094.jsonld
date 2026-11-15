@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0903.0853v3/sections/sec-094",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Difference rings, difference operators",
+  "pageStart": 141,
+  "pageEnd": 142,
+  "contains": [
+    "library/arxiv-0903.0853v3/blocks/prose-sec-094",
+    "library/arxiv-0903.0853v3/blocks/recommendation-sec-094-01",
+    "library/arxiv-0903.0853v3/blocks/recommendation-sec-094-02",
+    "library/arxiv-0903.0853v3/blocks/recommendation-sec-094-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0903.0853v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0903.0853v3",
+  "provenance": "ingested"
+}

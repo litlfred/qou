@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-009",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Asymptotics of distances for a general scheme of approximation",
+  "pageStart": 23,
+  "pageEnd": 24,
+  "contains": [
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-009",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/recommendation-sec-009-01",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/recommendation-sec-009-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/mod-phi-convergence-approximation-of-discrete-measures-and-2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/mod-phi-convergence-approximation-of-discrete-measures-and-2",
+  "provenance": "ingested"
+}

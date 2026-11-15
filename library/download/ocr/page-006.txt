@@ -1,0 +1,52 @@
+1390 S.G. Bobkov and F. Gétze
+
+Recall that F = EF,, denotes the mean of the empirical measures. The inequality continues to
+hold for all locally Lipschitz functions with the modulus of the derivative, understood in the gen-
+eralized sense, that is, | f’(x)| = lim supy_, , etl, As longas [ f° dF is finite, f f° dF is
+also finite and (2.3) holds.
+
+The latter may be extended to all L?-spaces by applying the following general lemma.
+
+Lemma 2.2. Under PI(a7), any Lipschitz function g on R" has a finite exponential moment: if
+J dy =0 and \glluip <1, then
+
+2+t
+fer? aus O<1<2. (2.4)
+
+Moreover, for any locally Lipschitz g on R" with js-mean zero,
+IgllpSopllVsip, p22. (2.5)
+
+More precisely, if |V g| is in L? (x), then so is g and (2.5) holds true with the standard notation
+Iglp = (Cf lgl?du)!/? and ||Vellp = (f|Vegl? du)!/? for L?(1)-norms. The property of being
+locally Lipschitz means that the function g has a finite Lipschitz seminorm on every compact
+subset of R”.
+
+In the concentration context, a variant of the first part of the lemma was first established by
+Gromov and Milman in [23] and independently in dimension | by Borovkov and Utev [12].
+Here, we follow [10], Proposition 4.1, to state (2.4). The second inequality, (2.5), may be derived
+by similar arguments; see also [11], Theorem 4.1, for an extension to the case of Poincaré-type
+inequalities with weight.
+
+Now, for functions g = f f dF, as in (2.1), in view of (2.2), we may write
+
+1 pe
+Wwel=—a(f san) <a fis'rar,
+
+so that E,,|Vg|? < oH J \f'|? dF. Applying (2.5) and (2.4) with t = 1, we obtain the following
+proposition.
+
+Proposition 2.3. Under Pl(o?), for any smooth function f on R such that f’ belongs to
+
+L?(R, dF), p> 2,
+| P (op)? /
+| [ sar, — [ ror < firvrar:
+
+~ nel?
+In addition, if | f’| <1, for allh > 0,
+
+of| f rare f rar
+
+The empirical Poincaré-type inequality (2.3) can be rewritten equivalently if we integrate by
+parts the first integral as f f dF, — f f dF =— f f’(x)(Fn(x) — F(x)) dx. At this step, it is safe
+
+>a} <6e"/2,

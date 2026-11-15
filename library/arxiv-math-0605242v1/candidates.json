@@ -1,0 +1,46 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0605242v1",
+ "source": {
+  "structure_sha256": "65fac7285e4a77f43ca418f54b2047a5f635b056f595ac7e1a8ca12bc64e7eb6",
+  "file": "0605242v1.pdf"
+ },
+ "provenance": {
+  "title": "N-Fold Integer Programming",
+  "authors": null,
+  "arxiv": {
+   "id": "math/0605242",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "9 May 2006"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "recommendation": 1
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "For simplicity of exposition, we shall concentrate here only on $d$-way {\\em line-sum polytopes}, of the form $$T = \\left\\{\\,x\\in\\R_+^{m_1\\times\\cdots \\times m_d} \\, : \\, \\sum_{i_1} x_{i_1,\\dots,i_d}=u_{i_2,\\dots, i_d}\\,, \\ \\sum_{i_2} x_{i_1,\\dots,i_d}=u_{i_1,i_3,\\dots, i_d}\\,, \\ \\dots\\,,\\ \\sum_{i_d} x_{i_1,\\dots,i_d}=u_{i_1,\\dots,i_{d-1}}\\,\\right\\}\\,.$$ Transportation polytopes and their integer points (called contingency tables by statisticians), have been studied and used extensively in the operations research literature and in the context of secure statistical data disclosure by public agencies such as the census bureau and the national center for health statistics.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-high-dimensional-transportation-problems.md",
+   "section_title": "High dimensional transportation problems",
+   "pages": "3-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

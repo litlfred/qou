@@ -1,0 +1,46 @@
+1396 S.G. Bobkov and F. Gétze
+Thus, combining (4.2) with (4.3), we may conclude that under Pl(c?),
+aa(h) <18e"V"/", ah > 0.
+
+Now, in the setting of Theorem 1.1, consider on Z, the distance function g(H) = Wi(H, F).
+It is Lipschitz (with Lipschitz seminorm 1) and has the mean E, g = E,W (Fn, F) < a, where
+
+a= Co (Aten y1/3, Hence, m(g) < 2a under the measure A and for any h > 0,
+
+A{g = 2a +h} < A{g —m(g) = h} <ag(h) < 18e"V"/7,
+We can summarize as follows.
+
+Proposition 4.2. [f a random vector (X1,..., Xn) in R", n > 2, has distribution satisfying a
+Poincaré-type inequality with constant 07, then, for all h > 0,
+
+Atl 13
+P| Wi (Fa, F) > co( 2 ee =") + | <ce hve, (44)
+n
+
+where A= 4 max;.,j |EX; — EX | and where C is an absolute constant.
+
+Bounds such as (4.4) may be used to prove that the convergence holds almost surely at a certain
+rate. Here is a simple example, corresponding to non-varying values of the Poincaré constants.
+(One should properly modify the conclusion when applying this to the matrix scheme; see Sec-
+tion 7.) Let (X;),>1 be a random sequence such that for each n, (X,..., X,) has distribution
+on R" satisfying PI(o?) with some common o.
+
+Corollary 4.3. /f max;, <n |EX; — EX ;| = O(logn), then Wi (Fn, F) = o( 8821/3 with proba-
+bility 1.
+
+Note, however, that in the scheme of sequences such as in Corollary 4.3, the mean distribution
+function F = EF, might also depend on n.
+
+By a similar contraction argument, the upper bound (4.4) may be sharpened, when the distribu-
+tion of (X),..., X,) satisfies a logarithmic Sobolev inequality. We turn to this type of (stronger)
+hypothesis in the next section.
+
+Remarks. Let Q be a metric space and let d = d(u, u’) be a non-negative continuous function
+
+on the product space Q x Q. Given Borel probability measures G and G’ on Q, the generalized
+Kantorovich—Rubinstein or Wasserstein ‘distance’ with cost function d is defined by
+
+W(G,G') = int [ d(u,u’) dx(u,u’),
+
+where the infimum is taken over all probability measures 7 on Q x Q with marginal distribu-
+tions G and G’. In the case of the real line Q = R with cost function of the form d(u, u’) =

@@ -8,9 +8,47 @@
   "pages": 494,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:20Z",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 30,
+    "reason": "10 of 485 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 57,
+    "reason": "13 of 466 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 157,
+    "reason": "13 of 410 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 166,
+    "reason": "13 of 323 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 197,
+    "reason": "10 of 341 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 224,
+    "reason": "11 of 410 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 320,
+    "reason": "12 of 509 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 361,
+    "reason": "12 of 373 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 457,
+    "reason": "17 of 530 words are a stray single letter: the text layer splits words"
+   }
+  ],
   "math_source": "latex"
  },
  "metadata": {
@@ -21,7 +59,7 @@
    "stamp_date": "5 Apr 2022"
   },
   "doi": null,
-  "title": "An Introduction to Geometric Topology Bruno Martelli",
+  "title": "An Introduction to Geometric Topology",
   "authors_raw": "Bruno Martelli",
   "title_lines": [
    "An Introduction to Geometric Topology"
@@ -43,7 +81,8 @@
     "text"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "An Introduction to Geometric Topology Bruno Martelli"
  },
  "toc": [
   {
@@ -58,7 +97,7 @@
   },
   {
    "level": 1,
-   "title": "Part 1.  Hyperbolic geometry",
+   "title": "Part 1. Hyperbolic geometry",
    "page": 13,
    "source": "outline",
    "number": null,
@@ -348,7 +387,7 @@
   },
   {
    "level": 1,
-   "title": "Part 2.  Surfaces",
+   "title": "Part 2. Surfaces",
    "page": 159,
    "source": "outline",
    "number": null,
@@ -418,7 +457,7 @@
   },
   {
    "level": 2,
-   "title": "Chapter 7. Teichm\u00fcller space",
+   "title": "Chapter 7. Teichmüller space",
    "page": 199,
    "source": "outline",
    "number": null,
@@ -448,7 +487,7 @@
   },
   {
    "level": 3,
-   "title": "Fenchel\u2013Nielsen coordinates",
+   "title": "Fenchel–Nielsen coordinates",
    "page": 210,
    "source": "outline",
    "number": "7.3",
@@ -518,7 +557,7 @@
   },
   {
    "level": 1,
-   "title": "Part 3.  Three-manifolds",
+   "title": "Part 3. Three-manifolds",
    "page": 275,
    "source": "outline",
    "number": null,
@@ -946,7 +985,7 @@
   {
    "kind": "figure",
    "number": "1.2",
-   "title": "The tangent space in x may be de\ufb01ned as the set of all curves \u03b3 with \u03b3(0) = x seen up to an equivalent relation that identi\ufb01es two curves having (in some chart) the same tangent vector at x. This condition is chart-independent",
+   "title": "The tangent space in x may be deﬁned as the set of all curves γ with γ(0) = x seen up to an equivalent relation that identiﬁes two curves having (in some chart) the same tangent vector at x. This condition is chart-independent",
    "page": 17,
    "confidence": 0.7,
    "evidence": [
@@ -1022,7 +1061,7 @@
   {
    "kind": "figure",
    "number": "2.1",
-   "title": "The hyperboloid with two sheets de\ufb01ned by the equation",
+   "title": "The hyperboloid with two sheets deﬁned by the equation",
    "page": 54,
    "confidence": 0.7,
    "evidence": [
@@ -1034,7 +1073,7 @@
   {
    "kind": "figure",
    "number": "2.2",
-   "title": "The projection towards P = (0, . . . , 0, \u22121) induces a bijec-",
+   "title": "The projection towards P = (0, . . . , 0, −1) induces a bijec-",
    "page": 58,
    "confidence": 0.9,
    "evidence": [
@@ -1047,7 +1086,7 @@
   {
    "kind": "figure",
    "number": "2.3",
-   "title": "Three lines that determine a hyperbolic triangle in the Poincar\u00e9 disc. The inner angles \u03b1, \u03b2, and \u03b3 coincide with the Euclidean ones, and we have \u03b1 + \u03b2 + \u03b3 < \u03c0",
+   "title": "Three lines that determine a hyperbolic triangle in the Poincaré disc. The inner angles α, β, and γ coincide with the Euclidean ones, and we have α + β + γ < π",
    "page": 60,
    "confidence": 0.9,
    "evidence": [
@@ -1109,7 +1148,7 @@
   {
    "kind": "figure",
    "number": "2.9",
-   "title": "Two vertical lines \u03b31 and \u03b33 in the half-space model Hn at Euclidean distance d. The hyperbolic length of the horizontal segment between them at height xn is",
+   "title": "Two vertical lines γ1 and γ3 in the half-space model Hn at Euclidean distance d. The hyperbolic length of the horizontal segment between them at height xn is",
    "page": 67,
    "confidence": 0.8,
    "evidence": [
@@ -1121,7 +1160,7 @@
   {
    "kind": "figure",
    "number": "2.10",
-   "title": "An open neighbourhood U(\u03b3, V, r) of p \u2208\u2202Hn (in yellow). We use the Klein model here",
+   "title": "An open neighbourhood U(γ, V, r) of p ∈∂Hn (in yellow). We use the Klein model here",
    "page": 68,
    "confidence": 0.8,
    "evidence": [
@@ -1145,7 +1184,7 @@
   {
    "kind": "figure",
    "number": "2.12",
-   "title": "Two ultraparallel subspaces S, S\u2032 and a line \u03b3 orthogonal to both",
+   "title": "Two ultraparallel subspaces S, S′ and a line γ orthogonal to both",
    "page": 69,
    "confidence": 0.8,
    "evidence": [
@@ -1157,7 +1196,7 @@
   {
    "kind": "figure",
    "number": "2.13",
-   "title": "A horocycle in H2 centred in p \u2208\u2202H2 is a circle tangent to p. It is orthogonal to all the lines exiting from p",
+   "title": "A horocycle in H2 centred in p ∈∂H2 is a circle tangent to p. It is orthogonal to all the lines exiting from p",
    "page": 71,
    "confidence": 0.8,
    "evidence": [
@@ -1181,7 +1220,7 @@
   {
    "kind": "figure",
    "number": "3.1",
-   "title": "The cone C over a domain D \u2282O has volume proportional to the area of D (left). If the domain is compact, the cone has \ufb01nite volume: therefore a \ufb01nite polyhedron has \ufb01nite volume (right)",
+   "title": "The cone C over a domain D ⊂O has volume proportional to the area of D (left). If the domain is compact, the cone has ﬁnite volume: therefore a ﬁnite polyhedron has ﬁnite volume (right)",
    "page": 87,
    "confidence": 0.9,
    "evidence": [
@@ -1220,7 +1259,7 @@
   {
    "kind": "table",
    "number": "3.1",
-   "title": "The platonic solids with dihedral angle \u03b8 that divide 2\u03c0",
+   "title": "The platonic solids with dihedral angle θ that divide 2π",
    "page": 90,
    "confidence": 0.8,
    "evidence": [
@@ -1284,7 +1323,7 @@
   {
    "kind": "figure",
    "number": "3.8",
-   "title": "The Farey tessellation (\u221e, \u221e, \u221e) of the hyperbolic plane",
+   "title": "The Farey tessellation (∞, ∞, ∞) of the hyperbolic plane",
    "page": 93,
    "confidence": 0.9,
    "evidence": [
@@ -1310,7 +1349,7 @@
   {
    "kind": "figure",
    "number": "3.10",
-   "title": "The tessellation of H3 into ideal regular dodecahedra with dihedral angle \u03c0",
+   "title": "The tessellation of H3 into ideal regular dodecahedra with dihedral angle π",
    "page": 94,
    "confidence": 0.7,
    "evidence": [
@@ -1322,7 +1361,7 @@
   {
    "kind": "figure",
    "number": "3.11",
-   "title": "The tessellation of S3 into 120 regular dodecahedra with dihedral angle 2\u03c0",
+   "title": "The tessellation of S3 into 120 regular dodecahedra with dihedral angle 2π",
    "page": 94,
    "confidence": 0.7,
    "evidence": [
@@ -1334,7 +1373,7 @@
   {
    "kind": "figure",
    "number": "3.12",
-   "title": "The tessellations of H2 with Schl\u00e4\ufb02i symbols {4, \u221e}, {\u221e, 4}, and {\u221e, \u221e}",
+   "title": "The tessellations of H2 with Schläﬂi symbols {4, ∞}, {∞, 4}, and {∞, ∞}",
    "page": 95,
    "confidence": 0.9,
    "evidence": [
@@ -1347,7 +1386,7 @@
   {
    "kind": "figure",
    "number": "3.13",
-   "title": "In the tessellation {6, 3, 3} of H3 every polyhedron has in\ufb01nitely many hexagonal faces, whose vertices all lie in a single horosphere",
+   "title": "In the tessellation {6, 3, 3} of H3 every polyhedron has inﬁnitely many hexagonal faces, whose vertices all lie in a single horosphere",
    "page": 96,
    "confidence": 0.9,
    "evidence": [
@@ -1373,7 +1412,7 @@
   {
    "kind": "figure",
    "number": "3.15",
-   "title": "The shadowed triangle (with one ideal vertex) is a fundamental domain for \u0393 = PSL2(Z) acting on the half-space H2",
+   "title": "The shadowed triangle (with one ideal vertex) is a fundamental domain for Γ = PSL2(Z) acting on the half-space H2",
    "page": 98,
    "confidence": 0.9,
    "evidence": [
@@ -1386,7 +1425,7 @@
   {
    "kind": "figure",
    "number": "3.16",
-   "title": "A fundamental domain in R2 for the torus (left) and the Klein bottle (centre): opposite sides should be identi\ufb01ed as indicated by",
+   "title": "A fundamental domain in R2 for the torus (left) and the Klein bottle (centre): opposite sides should be identiﬁed as indicated by",
    "page": 103,
    "confidence": 0.9,
    "evidence": [
@@ -1399,7 +1438,7 @@
   {
    "kind": "figure",
    "number": "3.17",
-   "title": "An intersection of (possibly in\ufb01nitely many!) half-planes. The universal cover of a hyperbolic surface with boundary is isometric to such an object",
+   "title": "An intersection of (possibly inﬁnitely many!) half-planes. The universal cover of a hyperbolic surface with boundary is isometric to such an object",
    "page": 106,
    "confidence": 0.9,
    "evidence": [
@@ -1412,7 +1451,7 @@
   {
    "kind": "figure",
    "number": "3.18",
-   "title": "An orbifold O with three local models O = U1 \u2283U2 \u2283U3",
+   "title": "An orbifold O with three local models O = U1 ⊃U2 ⊃U3",
    "page": 110,
    "confidence": 0.9,
    "evidence": [
@@ -1438,7 +1477,7 @@
   {
    "kind": "figure",
    "number": "3.20",
-   "title": "The index-two orientation-preserving \u0393or(a, b, c)\u25c1\u0393(a, b, c) de\ufb01nes an index-two orbifold covering O \u2192\u2206, where O is a 2-sphere with three singular points and \u2206a triangle",
+   "title": "The index-two orientation-preserving Γor(a, b, c)◁Γ(a, b, c) deﬁnes an index-two orbifold covering O →∆, where O is a 2-sphere with three singular points and ∆a triangle",
    "page": 113,
    "confidence": 0.9,
    "evidence": [
@@ -1451,7 +1490,7 @@
   {
    "kind": "figure",
    "number": "3.21",
-   "title": "The elliptic involution quotients the torus to a sphere with four singular points. The \ufb01xed points and their images are drawn in red",
+   "title": "The elliptic involution quotients the torus to a sphere with four singular points. The ﬁxed points and their images are drawn in red",
    "page": 114,
    "confidence": 0.9,
    "evidence": [
@@ -1490,7 +1529,7 @@
   {
    "kind": "figure",
    "number": "4.2",
-   "title": "The pseudosphere is a surface in R3 isometric to the union of two truncated cusps, each with constant gaussian curvature \u22121",
+   "title": "The pseudosphere is a surface in R3 isometric to the union of two truncated cusps, each with constant gaussian curvature −1",
    "page": 120,
    "confidence": 0.9,
    "evidence": [
@@ -1503,7 +1542,7 @@
   {
    "kind": "figure",
    "number": "4.3",
-   "title": "The Margulis Lemma for Lie groups furnishes a nice neighbourhood U of e \u2208Isom(Hn), but here we need a nice neighbourhood W of the whole compact stabiliser O(n), drawn as a blue line",
+   "title": "The Margulis Lemma for Lie groups furnishes a nice neighbourhood U of e ∈Isom(Hn), but here we need a nice neighbourhood W of the whole compact stabiliser O(n), drawn as a blue line",
    "page": 126,
    "confidence": 0.9,
    "evidence": [
@@ -1555,7 +1594,7 @@
   {
    "kind": "figure",
    "number": "5.3",
-   "title": "The \u0393-invariant decomposition of the hyperbolic plane into ideal polygons obtained by projecting the Euclidean polygons of Figure 5.2 from \u2202C to I2. This is in fact the Farey tessellation of Figure 5.1",
+   "title": "The Γ-invariant decomposition of the hyperbolic plane into ideal polygons obtained by projecting the Euclidean polygons of Figure 5.2 from ∂C to I2. This is in fact the Farey tessellation of Figure 5.1",
    "page": 150,
    "confidence": 0.9,
    "evidence": [
@@ -1568,7 +1607,7 @@
   {
    "kind": "figure",
    "number": "5.4",
-   "title": "Di\ufb00erent choices of truncated cusps may lead to distinct decompositions into ideal polyhedra",
+   "title": "Diﬀerent choices of truncated cusps may lead to distinct decompositions into ideal polyhedra",
    "page": 151,
    "confidence": 0.9,
    "evidence": [
@@ -1581,7 +1620,7 @@
   {
    "kind": "figure",
    "number": "5.5",
-   "title": "We use the half-space model. The hyperbolic cosine of the distance between x and \u03c0(x) is the inverse of the cosine of \u03b8 (left). To determine the maximum dilatation we decompose the tangent space Tx orthogonally as U \u2295V (right)",
+   "title": "We use the half-space model. The hyperbolic cosine of the distance between x and π(x) is the inverse of the cosine of θ (left). To determine the maximum dilatation we decompose the tangent space Tx orthogonally as U ⊕V (right)",
    "page": 153,
    "confidence": 0.9,
    "evidence": [
@@ -1607,7 +1646,7 @@
   {
    "kind": "figure",
    "number": "5.7",
-   "title": "For every 0 < u < t, the point F(l(u)) is contained in the (yellow) R-neighbourhood of F(p)F(l(t)). If u is big, the blue segment F(p)F(l(u)) is long, while the red one is bounded by R: hence the angle \u03b1tu between vt and vu is small. Therefore vt is a Cauchy sequence",
+   "title": "For every 0 < u < t, the point F(l(u)) is contained in the (yellow) R-neighbourhood of F(p)F(l(t)). If u is big, the blue segment F(p)F(l(u)) is long, while the red one is bounded by R: hence the angle αtu between vt and vu is small. Therefore vt is a Cauchy sequence",
    "page": 155,
    "confidence": 0.7,
    "evidence": [
@@ -1619,7 +1658,7 @@
   {
    "kind": "figure",
    "number": "5.8",
-   "title": "Let l and H be a line and an orthogonal hyperplane. The orthogonal projection of H onto l is obviously a point l \u2229H; the pseudoisometry F mildly distorts this picture: the image F(H) projects to a bounded segment in l\u2032",
+   "title": "Let l and H be a line and an orthogonal hyperplane. The orthogonal projection of H onto l is obviously a point l ∩H; the pseudoisometry F mildly distorts this picture: the image F(H) projects to a bounded segment in l′",
    "page": 156,
    "confidence": 0.9,
    "evidence": [
@@ -1658,7 +1697,7 @@
   {
    "kind": "figure",
    "number": "6.2",
-   "title": "The 0-handle and k 1-handles form a subsurface S\u2032 \u2282S with connected boundary, to which the 2-handle is attached (left). A 0handle and two linked 1-handles (centre). If we attach a 2-handle to the centre \ufb01gure we get a handle decomposition of the torus (right)",
+   "title": "The 0-handle and k 1-handles form a subsurface S′ ⊂S with connected boundary, to which the 2-handle is attached (left). A 0handle and two linked 1-handles (centre). If we attach a 2-handle to the centre ﬁgure we get a handle decomposition of the torus (right)",
    "page": 163,
    "confidence": 0.9,
    "evidence": [
@@ -1684,7 +1723,7 @@
   {
    "kind": "figure",
    "number": "6.4",
-   "title": "The \ufb01nite type surface Sg,b,p",
+   "title": "The ﬁnite type surface Sg,b,p",
    "page": 164,
    "confidence": 0.9,
    "evidence": [
@@ -1710,7 +1749,7 @@
   {
    "kind": "figure",
    "number": "6.6",
-   "title": "A right-angled hexagon with alternate sides of length a, b and c (left) and its construction (right), which goes as follows: take a line l with two arbitrary points A and B in it (bottom black). Draw the perpendiculars from A and B (red). At distances a and b we \ufb01nd two",
+   "title": "A right-angled hexagon with alternate sides of length a, b and c (left) and its construction (right), which goes as follows: take a line l with two arbitrary points A and B in it (bottom black). Draw the perpendiculars from A and B (red). At distances a and b we ﬁnd two",
    "page": 166,
    "confidence": 0.9,
    "evidence": [
@@ -1723,7 +1762,7 @@
   {
    "kind": "figure",
    "number": "6.7",
-   "title": "A right-angled hexagon with parameters a, b, c \u2a7e0 degenerates to a pentagon, quadrilateral, or triangle with ideal vertices if one, two, or three parameters are zero",
+   "title": "A right-angled hexagon with parameters a, b, c ⩾0 degenerates to a pentagon, quadrilateral, or triangle with ideal vertices if one, two, or three parameters are zero",
    "page": 167,
    "confidence": 0.9,
    "evidence": [
@@ -1749,7 +1788,7 @@
   {
    "kind": "figure",
    "number": "6.9",
-   "title": "Every surface of \ufb01nite type with \u03c7 < 0 decomposes into pair-of-pants. We show here a decomposition of S3",
+   "title": "Every surface of ﬁnite type with χ < 0 decomposes into pair-of-pants. We show here a decomposition of S3",
    "page": 169,
    "confidence": 0.9,
    "evidence": [
@@ -1775,7 +1814,7 @@
   {
    "kind": "figure",
    "number": "6.11",
-   "title": "A mirror, a cone point, and a corner re\ufb02ector on a twodimensional orbifold",
+   "title": "A mirror, a cone point, and a corner reﬂector on a twodimensional orbifold",
    "page": 171,
    "confidence": 0.9,
    "evidence": [
@@ -1788,7 +1827,7 @@
   {
    "kind": "table",
    "number": "6.1",
-   "title": "Except the two bad cases, every locally orientable closed orbifold O with \u03c7(O) > 0 can be geometrised as O = S2/\u0393 for some discrete \u0393 < O(3). In all cases \u0393 < SO(3) and hence O is orientable,",
+   "title": "Except the two bad cases, every locally orientable closed orbifold O with χ(O) > 0 can be geometrised as O = S2/Γ for some discrete Γ < O(3). In all cases Γ < SO(3) and hence O is orientable,",
    "page": 172,
    "confidence": 0.8,
    "evidence": [
@@ -1800,7 +1839,7 @@
   {
    "kind": "figure",
    "number": "6.12",
-   "title": "For every angle \u03b1 \u2a7d",
+   "title": "For every angle α ⩽",
    "page": 173,
    "confidence": 0.9,
    "evidence": [
@@ -1813,7 +1852,7 @@
   {
    "kind": "figure",
    "number": "6.13",
-   "title": "If (m, n) are coprime the line generated by (m, n) \u2208R2 projects to a simple closed curve in T. Here (m, n) = (3, 2)",
+   "title": "If (m, n) are coprime the line generated by (m, n) ∈R2 projects to a simple closed curve in T. Here (m, n) = (3, 2)",
    "page": 178,
    "confidence": 0.9,
    "evidence": [
@@ -1826,7 +1865,7 @@
   {
    "kind": "figure",
    "number": "6.14",
-   "title": "Two homotopic simple closed curves in a torus are isotopic: put them in transverse position, cut the \ufb01rst to get an annulus, then remove bigons by isotopy to destroy intersections",
+   "title": "Two homotopic simple closed curves in a torus are isotopic: put them in transverse position, cut the ﬁrst to get an annulus, then remove bigons by isotopy to destroy intersections",
    "page": 178,
    "confidence": 0.9,
    "evidence": [
@@ -1839,7 +1878,7 @@
   {
    "kind": "figure",
    "number": "6.15",
-   "title": "There are in\ufb01nitely many non-separating simple closed curves in Sg up to isotopy when g \u2a7e1, but there is only one up to self-di\ufb00eomorphism of Sg. For instance, some di\ufb00eomorphism of S2 sends the blue simple closed curve to the red one (a self-di\ufb00eomorphism may be quite hard to visualise directly...)",
+   "title": "There are inﬁnitely many non-separating simple closed curves in Sg up to isotopy when g ⩾1, but there is only one up to self-diﬀeomorphism of Sg. For instance, some diﬀeomorphism of S2 sends the blue simple closed curve to the red one (a self-diﬀeomorphism may be quite hard to visualise directly...)",
    "page": 179,
    "confidence": 0.9,
    "evidence": [
@@ -1865,7 +1904,7 @@
   {
    "kind": "figure",
    "number": "6.17",
-   "title": "The lifts of \u03b3 (black arcs) and of its geodesic representative",
+   "title": "The lifts of γ (black arcs) and of its geodesic representative",
    "page": 181,
    "confidence": 0.9,
    "evidence": [
@@ -1878,7 +1917,7 @@
   {
    "kind": "figure",
    "number": "6.18",
-   "title": "Two curves \u03b31 and \u03b32 are in minimal position if and only if they do not create bigons, like this one",
+   "title": "Two curves γ1 and γ2 are in minimal position if and only if they do not create bigons, like this one",
    "page": 183,
    "confidence": 0.9,
    "evidence": [
@@ -1904,7 +1943,7 @@
   {
    "kind": "figure",
    "number": "6.20",
-   "title": "The lifts of \u03b3i and \u00af\u03b3i have distance bounded by R and hence have the same endpoints (left). Two curves that intersect in more than one point form a bigon (right)",
+   "title": "The lifts of γi and ¯γi have distance bounded by R and hence have the same endpoints (left). Two curves that intersect in more than one point form a bigon (right)",
    "page": 184,
    "confidence": 0.9,
    "evidence": [
@@ -1930,7 +1969,7 @@
   {
    "kind": "figure",
    "number": "6.22",
-   "title": "A bigon between \u03b7 and \u03b7\u2032 intersects \u00b5 in vertical arcs and can be removed via an ambient isotopy that preserves the support of \u00b5",
+   "title": "A bigon between η and η′ intersects µ in vertical arcs and can be removed via an ambient isotopy that preserves the support of µ",
    "page": 188,
    "confidence": 0.9,
    "evidence": [
@@ -1943,7 +1982,7 @@
   {
    "kind": "figure",
    "number": "6.23",
-   "title": "At a point p, after a local di\ufb00eomorphism we may suppose that the vector \ufb01eld is constantly vertical (1). If p is a limit point of an integral curve \u03b1 we may \ufb01nd a closed curve that bounds a disc (2). If such a disc existed, we could rotate it and inverse all arrows (3) and glue the two portions to",
+   "title": "At a point p, after a local diﬀeomorphism we may suppose that the vector ﬁeld is constantly vertical (1). If p is a limit point of an integral curve α we may ﬁnd a closed curve that bounds a disc (2). If such a disc existed, we could rotate it and inverse all arrows (3) and glue the two portions to",
    "page": 190,
    "confidence": 0.9,
    "evidence": [
@@ -1956,7 +1995,7 @@
   {
    "kind": "figure",
    "number": "6.24",
-   "title": "A self-di\ufb00eomorphism \u03d5 of D2 \ufb01xing \u2202D2 pointwise (left)",
+   "title": "A self-diﬀeomorphism ϕ of D2 ﬁxing ∂D2 pointwise (left)",
    "page": 190,
    "confidence": 0.9,
    "evidence": [
@@ -1982,7 +2021,7 @@
   {
    "kind": "figure",
    "number": "6.26",
-   "title": "A Dehn twist along a curve \u03b3 maps a transverse arc \u00b5 onto an arc which makes a complete left turn",
+   "title": "A Dehn twist along a curve γ maps a transverse arc µ onto an arc which makes a complete left turn",
    "page": 195,
    "confidence": 0.9,
    "evidence": [
@@ -1995,7 +2034,7 @@
   {
    "kind": "figure",
    "number": "6.27",
-   "title": "Two curves \u03b1 (red) and \u03b2 (green) intersecting in one point are related: we get \u03b1 = T\u03b2(T\u03b1(\u03b2))",
+   "title": "Two curves α (red) and β (green) intersecting in one point are related: we get α = Tβ(Tα(β))",
    "page": 196,
    "confidence": 0.9,
    "evidence": [
@@ -2008,7 +2047,7 @@
   {
    "kind": "figure",
    "number": "6.28",
-   "title": "Pick two consecutive points in \u03b1 (green) that intersect \u03b2 (red). We can \ufb01nd a third non-separating curve \u03b3 (blue) intersecting \u03b1 and \u03b2 in < k points. There are two cases (1) and (2): in (1) the curve \u03b3 intersects \u03b2 in one point and is hence non-separating, in (2) we have two possibilities \u03b31, \u03b32, an",
+   "title": "Pick two consecutive points in α (green) that intersect β (red). We can ﬁnd a third non-separating curve γ (blue) intersecting α and β in < k points. There are two cases (1) and (2): in (1) the curve γ intersects β in one point and is hence non-separating, in (2) we have two possibilities γ1, γ2, an",
    "page": 196,
    "confidence": 0.9,
    "evidence": [
@@ -2021,7 +2060,7 @@
   {
    "kind": "figure",
    "number": "6.29",
-   "title": "The arcs \u03b1 (red) and \u03b2 (green) intersect at their endpoints and maybe at some k interior points. If k = 0 and they are oriented as in (1), a Dehn twist along \u03b3 transforms \u03b2 into \u03b1. If they are oriented as in (2), a negative Dehn twist along \u03b3 transforms this con\ufb01guration into (1)",
+   "title": "The arcs α (red) and β (green) intersect at their endpoints and maybe at some k interior points. If k = 0 and they are oriented as in (1), a Dehn twist along γ transforms β into α. If they are oriented as in (2), a negative Dehn twist along γ transforms this conﬁguration into (1)",
    "page": 197,
    "confidence": 0.9,
    "evidence": [
@@ -2034,7 +2073,7 @@
   {
    "kind": "figure",
    "number": "7.1",
-   "title": "The \ufb02at metric on the torus T determined by z \u2208H2 may be constructed by identifying the opposite sides of the parallelogram with vertices 0, 1, z, z + 1",
+   "title": "The ﬂat metric on the torus T determined by z ∈H2 may be constructed by identifying the opposite sides of the parallelogram with vertices 0, 1, z, z + 1",
    "page": 200,
    "confidence": 0.9,
    "evidence": [
@@ -2047,7 +2086,7 @@
   {
    "kind": "figure",
    "number": "7.2",
-   "title": "A R-annulus around a simple closed geodesic \u03b3 on a hyperbolic surface is the quotient of a R-neighbourhood of a line l by a hyperbolic transformation. The orthogonal (green) geodesic segments are parametrized by arc length as [\u2212R, R], hence the R-annulus is naturally",
+   "title": "A R-annulus around a simple closed geodesic γ on a hyperbolic surface is the quotient of a R-neighbourhood of a line l by a hyperbolic transformation. The orthogonal (green) geodesic segments are parametrized by arc length as [−R, R], hence the R-annulus is naturally",
    "page": 202,
    "confidence": 0.9,
    "evidence": [
@@ -2060,7 +2099,7 @@
   {
    "kind": "figure",
    "number": "7.3",
-   "title": "To de\ufb01ne the earthquake we pick a di\ufb00eomorphism of the R-annulus that modi\ufb01es the orthogonal segments as shown here",
+   "title": "To deﬁne the earthquake we pick a diﬀeomorphism of the R-annulus that modiﬁes the orthogonal segments as shown here",
    "page": 203,
    "confidence": 0.9,
    "evidence": [
@@ -2073,7 +2112,7 @@
   {
    "kind": "figure",
    "number": "7.4",
-   "title": "A torus with metric z (left) twisted along the horizontal curve \u03b3 (right). The curve \u03b1 is a closed geodesic in the new metric",
+   "title": "A torus with metric z (left) twisted along the horizontal curve γ (right). The curve α is a closed geodesic in the new metric",
    "page": 205,
    "confidence": 0.9,
    "evidence": [
@@ -2086,7 +2125,7 @@
   {
    "kind": "figure",
    "number": "7.5",
-   "title": "A geodesic in m\u03b3",
+   "title": "A geodesic in mγ",
    "page": 207,
    "confidence": 0.9,
    "evidence": [
@@ -2099,7 +2138,7 @@
   {
    "kind": "figure",
    "number": "7.6",
-   "title": "The (blue) line l is a lift of \u00af\u03b7",
+   "title": "The (blue) line l is a lift of ¯η",
    "page": 208,
    "confidence": 0.9,
    "evidence": [
@@ -2112,7 +2151,7 @@
   {
    "kind": "figure",
    "number": "7.7",
-   "title": "Choose for each component \u03b3i of a pants decomposition \u00b5",
+   "title": "Choose for each component γi of a pants decomposition µ",
    "page": 209,
    "confidence": 0.9,
    "evidence": [
@@ -2125,7 +2164,7 @@
   {
    "kind": "figure",
    "number": "7.8",
-   "title": "A frame for the Fenchel-Nielsen coordinates consists of a (red) pants decomposition \u00b5 and a (blue) transverse multicurve \u03bd that cuts each pair of pants into two hexagons. The number of components of \u00b5 is 3g \u22123, that of \u03bd can vary",
+   "title": "A frame for the Fenchel-Nielsen coordinates consists of a (red) pants decomposition µ and a (blue) transverse multicurve ν that cuts each pair of pants into two hexagons. The number of components of µ is 3g −3, that of ν can vary",
    "page": 210,
    "confidence": 0.7,
    "evidence": [
@@ -2137,7 +2176,7 @@
   {
    "kind": "figure",
    "number": "7.9",
-   "title": "A closed geodesic \u00af\u03b31 and the two adjacent pairs-of-pants. The torsion parameter \u03b81 measures the distance (in the universal covering)",
+   "title": "A closed geodesic ¯γ1 and the two adjacent pairs-of-pants. The torsion parameter θ1 measures the distance (in the universal covering)",
    "page": 211,
    "confidence": 0.9,
    "evidence": [
@@ -2150,7 +2189,7 @@
   {
    "kind": "figure",
    "number": "7.10",
-   "title": "If we pick \u03bb\u2032 instead of \u03bb we \ufb01nd a segment of the same length s1. This holds because the two geodesic pairs-of-pants incident to \u03b31 decompose into two hexagons isometric to A and B as shown, and the",
+   "title": "If we pick λ′ instead of λ we ﬁnd a segment of the same length s1. This holds because the two geodesic pairs-of-pants incident to γ1 decompose into two hexagons isometric to A and B as shown, and the",
    "page": 212,
    "confidence": 0.9,
    "evidence": [
@@ -2163,7 +2202,7 @@
   {
    "kind": "figure",
    "number": "7.11",
-   "title": "The curves \u03b3 (red), \u03b3\u2032 (blue), and \u03b3\u2032\u2032 = T\u03b3(\u03b3\u2032) (green) on the torus",
+   "title": "The curves γ (red), γ′ (blue), and γ′′ = Tγ(γ′) (green) on the torus",
    "page": 213,
    "confidence": 0.9,
    "evidence": [
@@ -2176,7 +2215,7 @@
   {
    "kind": "figure",
    "number": "7.12",
-   "title": "The curves \u03b3i (red), \u03b3\u2032",
+   "title": "The curves γi (red), γ′",
    "page": 213,
    "confidence": 0.9,
    "evidence": [
@@ -2202,7 +2241,7 @@
   {
    "kind": "figure",
    "number": "7.14",
-   "title": "The standard representation of Sg by identifying the edges of a 4g-gon has only one vertex; if we triangulate the 4g-gon we get an ideal triangulation for Sg,0,1 (left). A move that modi\ufb01es a triangulation by adding a new vertex (right)",
+   "title": "The standard representation of Sg by identifying the edges of a 4g-gon has only one vertex; if we triangulate the 4g-gon we get an ideal triangulation for Sg,0,1 (left). A move that modiﬁes a triangulation by adding a new vertex (right)",
    "page": 219,
    "confidence": 0.9,
    "evidence": [
@@ -2215,7 +2254,7 @@
   {
    "kind": "figure",
    "number": "7.15",
-   "title": "On an ideal triangle every edge has a unique perpendicular which ends at the opposite vertex. The base of this perpendicular is the midpoint of the edge and the three perpendiculars intersect in a point called barycenter (left). There is a unique con\ufb01guration of three pairwise tangent horocycles cen",
+   "title": "On an ideal triangle every edge has a unique perpendicular which ends at the opposite vertex. The base of this perpendicular is the midpoint of the edge and the three perpendiculars intersect in a point called barycenter (left). There is a unique conﬁguration of three pairwise tangent horocycles cen",
    "page": 220,
    "confidence": 0.9,
    "evidence": [
@@ -2241,7 +2280,7 @@
   {
    "kind": "figure",
    "number": "7.17",
-   "title": "The universal covering of \u03a3 is isometric to the interior of a convex set delimited by some lines in H2, which is the intersection of (possibly in\ufb01nitely many) half-planes bounded by disjoint lines",
+   "title": "The universal covering of Σ is isometric to the interior of a convex set delimited by some lines in H2, which is the intersection of (possibly inﬁnitely many) half-planes bounded by disjoint lines",
    "page": 221,
    "confidence": 0.9,
    "evidence": [
@@ -2254,7 +2293,7 @@
   {
    "kind": "figure",
    "number": "7.18",
-   "title": "When d1 + . . . + dh\u0338 = 0, the isometry \u03d5 sending \u22061 to \u2206\u2032",
+   "title": "When d1 + . . . + dh̸ = 0, the isometry ϕ sending ∆1 to ∆′",
    "page": 222,
    "confidence": 0.9,
    "evidence": [
@@ -2267,7 +2306,7 @@
   {
    "kind": "figure",
    "number": "7.19",
-   "title": "Let s be a Euclidean line at hyperbolic distance R from l. If R is su\ufb03ciently small, the line s does not intersect the lower edges of \u22061, \u22062, \u22063. Let S be the region lying above s",
+   "title": "Let s be a Euclidean line at hyperbolic distance R from l. If R is suﬃciently small, the line s does not intersect the lower edges of ∆1, ∆2, ∆3. Let S be the region lying above s",
    "page": 224,
    "confidence": 0.9,
    "evidence": [
@@ -2306,7 +2345,7 @@
   {
    "kind": "figure",
    "number": "8.2",
-   "title": "The box B containing l and the sub-boxes B\u2032 and B\u2032\u2032 (left). A line l \u2208U\u03b3 parametrised by the pair (t, \u03b8) (right)",
+   "title": "The box B containing l and the sub-boxes B′ and B′′ (left). A line l ∈Uγ parametrised by the pair (t, θ) (right)",
    "page": 235,
    "confidence": 0.9,
    "evidence": [
@@ -2319,7 +2358,7 @@
   {
    "kind": "figure",
    "number": "8.3",
-   "title": "Up to isometries and reparametrisations we have \u03b3(t) = (0, et),",
+   "title": "Up to isometries and reparametrisations we have γ(t) = (0, et),",
    "page": 236,
    "confidence": 0.9,
    "evidence": [
@@ -2345,7 +2384,7 @@
   {
    "kind": "figure",
    "number": "8.5",
-   "title": "A switch contains a \u2a7e1 and b \u2a7e1 branches on each side: here a = 3 and b = 2 (1). The complementary regions of a train track contain no discs, annuli, monogons, or bigons (2)",
+   "title": "A switch contains a ⩾1 and b ⩾1 branches on each side: here a = 3 and b = 2 (1). The complementary regions of a train track contain no discs, annuli, monogons, or bigons (2)",
    "page": 252,
    "confidence": 0.9,
    "evidence": [
@@ -2384,7 +2423,7 @@
   {
    "kind": "figure",
    "number": "8.8",
-   "title": "Identify each pair of pants and annulus with one of these two \ufb01xed models",
+   "title": "Identify each pair of pants and annulus with one of these two ﬁxed models",
    "page": 253,
    "confidence": 0.9,
    "evidence": [
@@ -2397,7 +2436,7 @@
   {
    "kind": "figure",
    "number": "8.9",
-   "title": "The portion of weighted train track in a pair of pants P is determined by the point Q = [ai, aj, ak] \u2208RP2",
+   "title": "The portion of weighted train track in a pair of pants P is determined by the point Q = [ai, aj, ak] ∈RP2",
    "page": 255,
    "confidence": 0.9,
    "evidence": [
@@ -2410,7 +2449,7 @@
   {
    "kind": "figure",
    "number": "8.10",
-   "title": "The portion of weighted train track in each annulus A is determined by the point Q = [a, b, c] = [ai, bi, ci] \u2208RP2",
+   "title": "The portion of weighted train track in each annulus A is determined by the point Q = [a, b, c] = [ai, bi, ci] ∈RP2",
    "page": 256,
    "confidence": 0.9,
    "evidence": [
@@ -2449,7 +2488,7 @@
   {
    "kind": "figure",
    "number": "8.13",
-   "title": "A monotonic curve \u03b3 intersects the products L \u00d7 J in monotonic paths (left) and forms no bigons outside the products (right)",
+   "title": "A monotonic curve γ intersects the products L × J in monotonic paths (left) and forms no bigons outside the products (right)",
    "page": 259,
    "confidence": 0.9,
    "evidence": [
@@ -2462,7 +2501,7 @@
   {
    "kind": "figure",
    "number": "8.14",
-   "title": "If a monotonic curve \u03b3 forms a bigon with a leaf \u03b1, by cutting carefully \u03c4 along \u03b3 we construct a portion of train track on this bigon containing \u03b1 and with truncated edges exiting orthogonally from \u03b3 (left). We then simplify the triangles adjacent to \u03b3 (right)",
+   "title": "If a monotonic curve γ forms a bigon with a leaf α, by cutting carefully τ along γ we construct a portion of train track on this bigon containing α and with truncated edges exiting orthogonally from γ (left). We then simplify the triangles adjacent to γ (right)",
    "page": 260,
    "confidence": 0.9,
    "evidence": [
@@ -2475,7 +2514,7 @@
   {
    "kind": "figure",
    "number": "8.15",
-   "title": "Every geodesic pair of pants P has a natural partial foliation: the shape of the foliation is determined by the sub-triangle containing Q = [a1, a2, a3] in Figure 8.9, where a1, a2, a3 are the lengths of \u2202P; the two pictures shown here correspond to two cases",
+   "title": "Every geodesic pair of pants P has a natural partial foliation: the shape of the foliation is determined by the sub-triangle containing Q = [a1, a2, a3] in Figure 8.9, where a1, a2, a3 are the lengths of ∂P; the two pictures shown here correspond to two cases",
    "page": 263,
    "confidence": 0.9,
    "evidence": [
@@ -2488,7 +2527,7 @@
   {
    "kind": "figure",
    "number": "8.16",
-   "title": "The appropriate lift \u02dc\u03d5 acts on \u2202H2 with 2k \ufb01xed points that are alternatively attractive and repelling",
+   "title": "The appropriate lift ˜ϕ acts on ∂H2 with 2k ﬁxed points that are alternatively attractive and repelling",
    "page": 270,
    "confidence": 0.9,
    "evidence": [
@@ -2501,7 +2540,7 @@
   {
    "kind": "figure",
    "number": "8.17",
-   "title": "We smoothen \u03b1 \u222a\u03b2 to a bigon track that contains both \u03b1 and \u03b2 (left). The bigon track may have some bigons as complementary regions (right)",
+   "title": "We smoothen α ∪β to a bigon track that contains both α and β (left). The bigon track may have some bigons as complementary regions (right)",
    "page": 272,
    "confidence": 0.9,
    "evidence": [
@@ -2538,7 +2577,7 @@
   {
    "kind": "figure",
    "number": "9.3",
-   "title": "The plane P intersects S into circles. Starting from the innermost ones, we cut S along the circles and cap them o\ufb00by adding pairs of discs. The resulting surface does not intersect P anymore",
+   "title": "The plane P intersects S into circles. Starting from the innermost ones, we cut S along the circles and cap them oﬀby adding pairs of discs. The resulting surface does not intersect P anymore",
    "page": 283,
    "confidence": 0.9,
    "evidence": [
@@ -2551,7 +2590,7 @@
   {
    "kind": "figure",
    "number": "9.4",
-   "title": "After capping o\ufb00at each ui we end up with many spheres of these basic types, which clearly bound balls",
+   "title": "After capping oﬀat each ui we end up with many spheres of these basic types, which clearly bound balls",
    "page": 283,
    "confidence": 0.7,
    "evidence": [
@@ -2563,7 +2602,7 @@
   {
    "kind": "figure",
    "number": "9.5",
-   "title": "If S \u2282M is non-separating, there is a simple closed curve \u03b1 intersecting S transversely in one point: here S is drawn as a disc whose boundary should be collapsed to a point, and \u03b1 is a line whose endpoints should be identi\ufb01ed (left). Pick two tubular neighbourhoods of S and \u03b1 and consider their uni",
+   "title": "If S ⊂M is non-separating, there is a simple closed curve α intersecting S transversely in one point: here S is drawn as a disc whose boundary should be collapsed to a point, and α is a line whose endpoints should be identiﬁed (left). Pick two tubular neighbourhoods of S and α and consider their uni",
    "page": 284,
    "confidence": 0.9,
    "evidence": [
@@ -2602,7 +2641,7 @@
   {
    "kind": "figure",
    "number": "9.8",
-   "title": "We can surger a surface S along a disc D with \u2202D = D\u2229S. The operation consists of removing an annular tubular neighbourhood of \u2202D in S and adding two parallel copies of D. We get a new surface S\u2032",
+   "title": "We can surger a surface S along a disc D with ∂D = D∩S. The operation consists of removing an annular tubular neighbourhood of ∂D in S and adding two parallel copies of D. We get a new surface S′",
    "page": 287,
    "confidence": 0.9,
    "evidence": [
@@ -2615,7 +2654,7 @@
   {
    "kind": "figure",
    "number": "9.9",
-   "title": "We can also surger a surface S along a disc D touching the boundary in a segment. The result is a new properly embedded surface S\u2032",
+   "title": "We can also surger a surface S along a disc D touching the boundary in a segment. The result is a new properly embedded surface S′",
    "page": 288,
    "confidence": 0.9,
    "evidence": [
@@ -2628,7 +2667,7 @@
   {
    "kind": "figure",
    "number": "9.10",
-   "title": "Starting from the innermost curves in \u2202\u2206\u2229S we surger along discs so that S \u2229\u2206consists only of discs and closed components, which we then remove",
+   "title": "Starting from the innermost curves in ∂∆∩S we surger along discs so that S ∩∆consists only of discs and closed components, which we then remove",
    "page": 288,
    "confidence": 0.9,
    "evidence": [
@@ -2654,7 +2693,7 @@
   {
    "kind": "figure",
    "number": "9.12",
-   "title": "If the boundary of a (yellow) disc D intersects an edge e of \u2202\u2206twice, we pick two innermost intersections, that must be in opposite directions. There must be a red disc as shown here (exercise: use Alexander\u2019s theorem), which can be used to push S in the direction indicated by the arrow. The resulti",
+   "title": "If the boundary of a (yellow) disc D intersects an edge e of ∂∆twice, we pick two innermost intersections, that must be in opposite directions. There must be a red disc as shown here (exercise: use Alexander’s theorem), which can be used to push S in the direction indicated by the arrow. The resulti",
    "page": 289,
    "confidence": 0.9,
    "evidence": [
@@ -2667,7 +2706,7 @@
   {
    "kind": "figure",
    "number": "9.13",
-   "title": "If we cut a tetrahedron \u2206along triangles and squares we get arbitrarily many prisms with triangular or quadrilateral basis, and at most 6 other pieces (here we get 4 pyramids and two esahedra)",
+   "title": "If we cut a tetrahedron ∆along triangles and squares we get arbitrarily many prisms with triangular or quadrilateral basis, and at most 6 other pieces (here we get 4 pyramids and two esahedra)",
    "page": 290,
    "confidence": 0.9,
    "evidence": [
@@ -2680,7 +2719,7 @@
   {
    "kind": "figure",
    "number": "9.14",
-   "title": "A reducing set of spheres (red) for M = M1#M2#(S2 \u00d7 S1). Here B is a ball with four holes and Ni is Mi with one hole",
+   "title": "A reducing set of spheres (red) for M = M1#M2#(S2 × S1). Here B is a ball with four holes and Ni is Mi with one hole",
    "page": 291,
    "confidence": 0.9,
    "evidence": [
@@ -2693,7 +2732,7 @@
   {
    "kind": "figure",
    "number": "9.15",
-   "title": "The discs D and D\u2032 form a sphere which bounds a ball",
+   "title": "The discs D and D′ form a sphere which bounds a ball",
    "page": 295,
    "confidence": 0.9,
    "evidence": [
@@ -2706,7 +2745,7 @@
   {
    "kind": "figure",
    "number": "9.16",
-   "title": "A surface S is incompressible (\u2202-incompressible) if the existence of a disc D as in the top-left (bottom-left) picture implies the",
+   "title": "A surface S is incompressible (∂-incompressible) if the existence of a disc D as in the top-left (bottom-left) picture implies the",
    "page": 296,
    "confidence": 0.9,
    "evidence": [
@@ -2732,7 +2771,7 @@
   {
    "kind": "figure",
    "number": "9.18",
-   "title": "An annulus A in an irreducible and \u2202-irreducible 3-manifold is either incompressible and \u2202-incompressible, or is parallel to an annulus in \u2202M (left), or bounds a tube (centre), or is contained in a ball intersecting \u2202M in a disc (right)",
+   "title": "An annulus A in an irreducible and ∂-irreducible 3-manifold is either incompressible and ∂-incompressible, or is parallel to an annulus in ∂M (left), or bounds a tube (centre), or is contained in a ball intersecting ∂M in a disc (right)",
    "page": 298,
    "confidence": 0.9,
    "evidence": [
@@ -2758,7 +2797,7 @@
   {
    "kind": "figure",
    "number": "9.20",
-   "title": "The strata S0, S1, and S2 intersect in vertices (left). The boundary of each ball B \u2282M2 is tessellated into domains belonging to S0, S1, or S2. Three of them intersect at a 3-valent vertex (right)",
+   "title": "The strata S0, S1, and S2 intersect in vertices (left). The boundary of each ball B ⊂M2 is tessellated into domains belonging to S0, S1, or S2. Three of them intersect at a 3-valent vertex (right)",
    "page": 306,
    "confidence": 0.9,
    "evidence": [
@@ -2771,7 +2810,7 @@
   {
    "kind": "figure",
    "number": "9.21",
-   "title": "If \u03b3 intersects at most three domains, it bounds a disc D intersecting only these domains, as shown here",
+   "title": "If γ intersects at most three domains, it bounds a disc D intersecting only these domains, as shown here",
    "page": 306,
    "confidence": 0.9,
    "evidence": [
@@ -2784,7 +2823,7 @@
   {
    "kind": "figure",
    "number": "9.22",
-   "title": "By minimality the region in S2 is incident to a single vertex and we can slide \u03b3 through it. Then we resume to the k = 2 case",
+   "title": "By minimality the region in S2 is incident to a single vertex and we can slide γ through it. Then we resume to the k = 2 case",
    "page": 307,
    "confidence": 0.9,
    "evidence": [
@@ -2797,7 +2836,7 @@
   {
    "kind": "figure",
    "number": "9.23",
-   "title": "The counterimage of S0 \u222aS1 \u222aS2 along f . An edge with label i goes to Si (unlabelled edges go to S0)",
+   "title": "The counterimage of S0 ∪S1 ∪S2 along f . An edge with label i goes to Si (unlabelled edges go to S0)",
    "page": 308,
    "confidence": 0.9,
    "evidence": [
@@ -2810,7 +2849,7 @@
   {
    "kind": "figure",
    "number": "9.24",
-   "title": "The immersed curve \u03b1 intersects k \u2a7d3 regions and is hence of one of these types (because B is essential)",
+   "title": "The immersed curve α intersects k ⩽3 regions and is hence of one of these types (because B is essential)",
    "page": 309,
    "confidence": 0.7,
    "evidence": [
@@ -2822,7 +2861,7 @@
   {
    "kind": "figure",
    "number": "10.1",
-   "title": "The Dehn \ufb01lling M\ufb01ll of a 3-manifold M is determined by the unoriented simple closed curve \u03b3 \u2282T to which a meridian \u2202D of the solid torus is attached",
+   "title": "The Dehn ﬁlling Mﬁll of a 3-manifold M is determined by the unoriented simple closed curve γ ⊂T to which a meridian ∂D of the solid torus is attached",
    "page": 312,
    "confidence": 0.9,
    "evidence": [
@@ -2835,7 +2874,7 @@
   {
    "kind": "figure",
    "number": "10.2",
-   "title": "We require the p sheets of the spine \u2206to lie above every local maximum for f |\u03a3",
+   "title": "We require the p sheets of the spine ∆to lie above every local maximum for f |Σ",
    "page": 315,
    "confidence": 0.7,
    "evidence": [
@@ -2860,7 +2899,7 @@
   {
    "kind": "figure",
    "number": "10.4",
-   "title": "A singular leaf exiting from a singular point may be of one of these kinds. The dots in (e) indicate that there might be another halfsaddle at the other endpoint: this is because there are half-saddles at the same level (precisely p for every local maximum or minimum for f |\u03a3)",
+   "title": "A singular leaf exiting from a singular point may be of one of these kinds. The dots in (e) indicate that there might be another halfsaddle at the other endpoint: this is because there are half-saddles at the same level (precisely p for every local maximum or minimum for f |Σ)",
    "page": 316,
    "confidence": 0.9,
    "evidence": [
@@ -2873,7 +2912,7 @@
   {
    "kind": "figure",
    "number": "10.5",
-   "title": "The disc D\u2032 is a half-disc and \u03b1 is incident to two singular points",
+   "title": "The disc D′ is a half-disc and α is incident to two singular points",
    "page": 317,
    "confidence": 0.9,
    "evidence": [
@@ -2886,7 +2925,7 @@
   {
    "kind": "figure",
    "number": "10.6",
-   "title": "The disc D\u2032 is a half-disc and \u03b1 is incident to one singular point",
+   "title": "The disc D′ is a half-disc and α is incident to one singular point",
    "page": 317,
    "confidence": 0.9,
    "evidence": [
@@ -2899,7 +2938,7 @@
   {
    "kind": "figure",
    "number": "10.7",
-   "title": "The disc D\u2032 is a quarter disc",
+   "title": "The disc D′ is a quarter disc",
    "page": 317,
    "confidence": 0.9,
    "evidence": [
@@ -2912,7 +2951,7 @@
   {
    "kind": "figure",
    "number": "10.8",
-   "title": "A twist along a \ufb01bered annulus A modi\ufb01es a section S as shown",
+   "title": "A twist along a ﬁbered annulus A modiﬁes a section S as shown",
    "page": 319,
    "confidence": 0.9,
    "evidence": [
@@ -2925,7 +2964,7 @@
   {
    "kind": "figure",
    "number": "10.9",
-   "title": "The \ufb01bre of every point in the Hopf \ufb01bration S3 \u2192S2 is a",
+   "title": "The ﬁbre of every point in the Hopf ﬁbration S3 →S2 is a",
    "page": 322,
    "confidence": 0.9,
    "evidence": [
@@ -2938,7 +2977,7 @@
   {
    "kind": "figure",
    "number": "10.10",
-   "title": "A standard \ufb01bered solid torus. We identify the top and bottom discs by a 2\u03c0 q",
+   "title": "A standard ﬁbered solid torus. We identify the top and bottom discs by a 2π q",
    "page": 324,
    "confidence": 0.9,
    "evidence": [
@@ -2951,7 +2990,7 @@
   {
    "kind": "table",
    "number": "10.1",
-   "title": "There are 9 commensurability classes of Seifert manifolds: 6 closed and 3 with boundary. Every Seifert manifold M is commensurable with one (and only one) of these 9 manifolds. The commensurability class of M is easily detected by looking at its invariants \u03c7 and e (the latter only in the closed case",
+   "title": "There are 9 commensurability classes of Seifert manifolds: 6 closed and 3 with boundary. Every Seifert manifold M is commensurable with one (and only one) of these 9 manifolds. The commensurability class of M is easily detected by looking at its invariants χ and e (the latter only in the closed case",
    "page": 332,
    "confidence": 0.8,
    "evidence": [
@@ -2963,7 +3002,7 @@
   {
    "kind": "table",
    "number": "10.2",
-   "title": "There are \ufb01ve Seifert manifolds M with \u03c01(M) = Zh and they belong to distinct commensurability classes. The fundamental group \u03c01(N) of every other manifold N in these \ufb01ve classes is virtually abelian:",
+   "title": "There are ﬁve Seifert manifolds M with π1(M) = Zh and they belong to distinct commensurability classes. The fundamental group π1(N) of every other manifold N in these ﬁve classes is virtually abelian:",
    "page": 334,
    "confidence": 0.8,
    "evidence": [
@@ -2988,7 +3027,7 @@
   {
    "kind": "table",
    "number": "10.3",
-   "title": "The seven closed Seifert \ufb01brations with \u03c7 = 0 and e = 0. Two of these manifolds are actually di\ufb00eomorphic, so we get six closed Seifert manifolds up to di\ufb00eomorphism, distinguished by their homology",
+   "title": "The seven closed Seifert ﬁbrations with χ = 0 and e = 0. Two of these manifolds are actually diﬀeomorphic, so we get six closed Seifert manifolds up to diﬀeomorphism, distinguished by their homology",
    "page": 336,
    "confidence": 0.8,
    "evidence": [
@@ -3012,7 +3051,7 @@
   {
    "kind": "table",
    "number": "10.5",
-   "title": "The universal cover of a closed Seifert manifold depends on its invariants e and \u03c7",
+   "title": "The universal cover of a closed Seifert manifold depends on its invariants e and χ",
    "page": 337,
    "confidence": 0.8,
    "evidence": [
@@ -3024,7 +3063,7 @@
   {
    "kind": "figure",
    "number": "10.12",
-   "title": "We cut S along k (blue) arcs to get S = S0\u222aD1\u222a. . .\u222aDk with Di a disc containing the (red) cone point pi: here k = 3",
+   "title": "We cut S along k (blue) arcs to get S = S0∪D1∪. . .∪Dk with Di a disc containing the (red) cone point pi: here k = 3",
    "page": 342,
    "confidence": 0.9,
    "evidence": [
@@ -3037,7 +3076,7 @@
   {
    "kind": "figure",
    "number": "10.13",
-   "title": "A vertical torus or annulus is essential, unless its projection is: the boundary of a disc containing zero (1) or one (2) singular cone points, an arc parallel to the boundary (3), or a \u2202-parallel closed curve (4)",
+   "title": "A vertical torus or annulus is essential, unless its projection is: the boundary of a disc containing zero (1) or one (2) singular cone points, an arc parallel to the boundary (3), or a ∂-parallel closed curve (4)",
    "page": 343,
    "confidence": 0.9,
    "evidence": [
@@ -3050,7 +3089,7 @@
   {
    "kind": "figure",
    "number": "10.14",
-   "title": "Some essential vertical annuli and tori in a Seifert manifold \ufb01bering over a disc with 2 or 3 singular points",
+   "title": "Some essential vertical annuli and tori in a Seifert manifold ﬁbering over a disc with 2 or 3 singular points",
    "page": 344,
    "confidence": 0.9,
    "evidence": [
@@ -3063,7 +3102,7 @@
   {
    "kind": "table",
    "number": "10.6",
-   "title": "The non-lens Seifert manifolds M with \ufb01nite fundamental group. For each \ufb01xed base orbifold S, the \ufb01bration is determined by the order of H1(M, Z): when two di\ufb00erent parameters q give the same order of H1(M, Z), the \ufb01brations are actually the same (with opposite orientations and hence Euler numbers)",
+   "title": "The non-lens Seifert manifolds M with ﬁnite fundamental group. For each ﬁxed base orbifold S, the ﬁbration is determined by the order of H1(M, Z): when two diﬀerent parameters q give the same order of H1(M, Z), the ﬁbrations are actually the same (with opposite orientations and hence Euler numbers)",
    "page": 347,
    "confidence": 0.8,
    "evidence": [
@@ -3114,7 +3153,7 @@
   {
    "kind": "figure",
    "number": "11.4",
-   "title": "Prime knots in S3 with at most 7 crossings. The knots 31 and 41 are the trefoil and the \ufb01gure-eight knots respectively",
+   "title": "Prime knots in S3 with at most 7 crossings. The knots 31 and 41 are the trefoil and the ﬁgure-eight knots respectively",
    "page": 356,
    "confidence": 0.9,
    "evidence": [
@@ -3127,7 +3166,7 @@
   {
    "kind": "figure",
    "number": "11.5",
-   "title": "A connected sum produces a sphere (dotted in the \ufb01gure) intersecting the knot in two points",
+   "title": "A connected sum produces a sphere (dotted in the ﬁgure) intersecting the knot in two points",
    "page": 356,
    "confidence": 0.9,
    "evidence": [
@@ -3140,7 +3179,7 @@
   {
    "kind": "table",
    "number": "11.1",
-   "title": "The number n of prime knots with c crossings, for all c \u2a7d14",
+   "title": "The number n of prime knots with c crossings, for all c ⩽14",
    "page": 356,
    "confidence": 0.8,
    "evidence": [
@@ -3165,7 +3204,7 @@
   {
    "kind": "figure",
    "number": "11.7",
-   "title": "The torus knot (2, \u22127) and the torus link (2, \u22128)",
+   "title": "The torus knot (2, −7) and the torus link (2, −8)",
    "page": 357,
    "confidence": 0.9,
    "evidence": [
@@ -3217,7 +3256,7 @@
   {
    "kind": "figure",
    "number": "11.11",
-   "title": "Two Kirby diagrams describing the lens space L(p, q) and the Poincar\u00e9 homology sphere \u03a3(2, 3, 5)",
+   "title": "Two Kirby diagrams describing the lens space L(p, q) and the Poincaré homology sphere Σ(2, 3, 5)",
    "page": 363,
    "confidence": 0.9,
    "evidence": [
@@ -3230,7 +3269,7 @@
   {
    "kind": "figure",
    "number": "11.12",
-   "title": "We push \u03b3 inside a collar for \u2202H2 and drill a solid torus neighbourhood, represented here as a yellow parallelepiped",
+   "title": "We push γ inside a collar for ∂H2 and drill a solid torus neighbourhood, represented here as a yellow parallelepiped",
    "page": 365,
    "confidence": 0.7,
    "evidence": [
@@ -3242,7 +3281,7 @@
   {
    "kind": "table",
    "number": "12.1",
-   "title": "The closed manifolds modelled on six geometries are precisely the six commensurable classes of Seifert manifolds, distinguished by the numbers e and \u03c7",
+   "title": "The closed manifolds modelled on six geometries are precisely the six commensurable classes of Seifert manifolds, distinguished by the numbers e and χ",
    "page": 378,
    "confidence": 0.8,
    "evidence": [
@@ -3254,7 +3293,7 @@
   {
    "kind": "table",
    "number": "12.2",
-   "title": "Every \ufb01nite subgroup of S3 is conjugate to one of these groups",
+   "title": "Every ﬁnite subgroup of S3 is conjugate to one of these groups",
    "page": 381,
    "confidence": 0.8,
    "evidence": [
@@ -3266,7 +3305,7 @@
   {
    "kind": "figure",
    "number": "12.1",
-   "title": "A stereographic projection of the tessellation of S3 induced by the 24-cell. Its 24 vertices form the binary tetrahedral group T \u2217",
+   "title": "A stereographic projection of the tessellation of S3 induced by the 24-cell. Its 24 vertices form the binary tetrahedral group T ∗",
    "page": 382,
    "confidence": 0.9,
    "evidence": [
@@ -3279,7 +3318,7 @@
   {
    "kind": "table",
    "number": "12.3",
-   "title": "The six regular polytopes in dimension four, with their Schl\u00e4\ufb02i notation (see Section 3.3.3). The groups Q8, T \u2217",
+   "title": "The six regular polytopes in dimension four, with their Schläﬂi notation (see Section 3.3.3). The groups Q8, T ∗",
    "page": 382,
    "confidence": 0.8,
    "evidence": [
@@ -3291,7 +3330,7 @@
   {
    "kind": "table",
    "number": "12.4",
-   "title": "The \ufb01nite subgroups \u0393 < SO(4) that act freely on S3, up to conjugation in O(4). For each we show its centre Z and the quotient \u0393/Z",
+   "title": "The ﬁnite subgroups Γ < SO(4) that act freely on S3, up to conjugation in O(4). For each we show its centre Z and the quotient Γ/Z",
    "page": 384,
    "confidence": 0.8,
    "evidence": [
@@ -3303,7 +3342,7 @@
   {
    "kind": "table",
    "number": "12.5",
-   "title": "The non-lens elliptic manifolds, listed without repetitions. For each we show its Seifert \ufb01bration and fundamental group \u0393 < SO(4)",
+   "title": "The non-lens elliptic manifolds, listed without repetitions. For each we show its Seifert ﬁbration and fundamental group Γ < SO(4)",
    "page": 388,
    "confidence": 0.8,
    "evidence": [
@@ -3315,7 +3354,7 @@
   {
    "kind": "figure",
    "number": "12.2",
-   "title": "The six closed orientable \ufb02at 3-manifolds, up to di\ufb00eomorphism",
+   "title": "The six closed orientable ﬂat 3-manifolds, up to diﬀeomorphism",
    "page": 390,
    "confidence": 0.9,
    "evidence": [
@@ -3328,7 +3367,7 @@
   {
    "kind": "figure",
    "number": "12.3",
-   "title": "The Hantsche-Wendt manifold M = R3/\u0393. The group \u0393 is generated by three rototranslations along the three red axis shown, each of angle \u03c0 and with unit displacement (this is a unit cube). A fundamental domain for \u0393 is made of two unit cubes as in Figure 12.2-(bottom, right)",
+   "title": "The Hantsche-Wendt manifold M = R3/Γ. The group Γ is generated by three rototranslations along the three red axis shown, each of angle π and with unit displacement (this is a unit cube). A fundamental domain for Γ is made of two unit cubes as in Figure 12.2-(bottom, right)",
    "page": 391,
    "confidence": 0.9,
    "evidence": [
@@ -3354,7 +3393,7 @@
   {
    "kind": "figure",
    "number": "12.5",
-   "title": "The Nil manifold M = Nil/\u0393 is obtained by identifying the faces of this unit cube as follows: the triangular faces are glued via the a\ufb03ne maps as shown by the labels, and the pairs of unlabelled opposite square faces are identi\ufb01ed by translations",
+   "title": "The Nil manifold M = Nil/Γ is obtained by identifying the faces of this unit cube as follows: the triangular faces are glued via the aﬃne maps as shown by the labels, and the pairs of unlabelled opposite square faces are identiﬁed by translations",
    "page": 397,
    "confidence": 0.9,
    "evidence": [
@@ -3380,7 +3419,7 @@
   {
    "kind": "figure",
    "number": "13.2",
-   "title": "The dihedral angles \u03b1, \u03b2, \u03b3 of an ideal tetrahedron. Opposite edges have the same angle and \u03b1 + \u03b2 + \u03b3 = \u03c0 (left). To calculate the volume we use the half-space model, send a vertex to \u221e, and divide the tetrahedron in six sub-tetrahedra (right)",
+   "title": "The dihedral angles α, β, γ of an ideal tetrahedron. Opposite edges have the same angle and α + β + γ = π (left). To calculate the volume we use the half-space model, send a vertex to ∞, and divide the tetrahedron in six sub-tetrahedra (right)",
    "page": 416,
    "confidence": 0.9,
    "evidence": [
@@ -3393,7 +3432,7 @@
   {
    "kind": "figure",
    "number": "14.1",
-   "title": "An ideal tetrahedron with three vertices in 0, 1, \u221ein the half-space mode is determined by the position z \u2208C \u222a{\u221e} of the fourth vertex. A small horosphere centred at the ideal vertex intersects the tetrahedron in a Euclidean triangle uniquely determined up to similarities",
+   "title": "An ideal tetrahedron with three vertices in 0, 1, ∞in the half-space mode is determined by the position z ∈C ∪{∞} of the fourth vertex. A small horosphere centred at the ideal vertex intersects the tetrahedron in a Euclidean triangle uniquely determined up to similarities",
    "page": 430,
    "confidence": 0.9,
    "evidence": [
@@ -3406,7 +3445,7 @@
   {
    "kind": "figure",
    "number": "14.2",
-   "title": "At each ideal vertex we have a Euclidean triangle de\ufb01ned up to similarities: each vertex of the triangle has a well-de\ufb01ned complex angle (left). We can assign the complex angles directly to the edges of the tetrahedron. The argument is the dihedral angle of the edge (right)",
+   "title": "At each ideal vertex we have a Euclidean triangle deﬁned up to similarities: each vertex of the triangle has a well-deﬁned complex angle (left). We can assign the complex angles directly to the edges of the tetrahedron. The argument is the dihedral angle of the edge (right)",
    "page": 430,
    "confidence": 0.9,
    "evidence": [
@@ -3445,7 +3484,7 @@
   {
    "kind": "figure",
    "number": "14.5",
-   "title": "Every boundary torus T \u2282\u2202N is triangulated, and each triangle has a Euclidean structure well-de\ufb01ned up to similarities and inherits three complex moduli w1, w2, w3 at its vertices (left). At every vertex of the triangulation, the product of the adjacent moduli is 1, for instance here w12w15w16w19w23",
+   "title": "Every boundary torus T ⊂∂N is triangulated, and each triangle has a Euclidean structure well-deﬁned up to similarities and inherits three complex moduli w1, w2, w3 at its vertices (left). At every vertex of the triangulation, the product of the adjacent moduli is 1, for instance here w12w15w16w19w23",
    "page": 434,
    "confidence": 0.9,
    "evidence": [
@@ -3458,7 +3497,7 @@
   {
    "kind": "figure",
    "number": "14.6",
-   "title": "This move for \u03b3 does not a\ufb00ect \u00b5(\u03b3)",
+   "title": "This move for γ does not aﬀect µ(γ)",
    "page": 434,
    "confidence": 0.9,
    "evidence": [
@@ -3497,7 +3536,7 @@
   {
    "kind": "figure",
    "number": "14.9",
-   "title": "The \ufb01gure-eight knot and the Borromean rings are hyperbolic, that is their complements admit complete hyperbolic metrics",
+   "title": "The ﬁgure-eight knot and the Borromean rings are hyperbolic, that is their complements admit complete hyperbolic metrics",
    "page": 438,
    "confidence": 0.9,
    "evidence": [
@@ -3546,7 +3585,7 @@
   {
    "kind": "figure",
    "number": "14.10",
-   "title": "A remarkable sequence of hyperbolic links. These are the \ufb01gure eight knot, the Whitehead link, and some particular chain links with 3,4,5 components",
+   "title": "A remarkable sequence of hyperbolic links. These are the ﬁgure eight knot, the Whitehead link, and some particular chain links with 3,4,5 components",
    "page": 440,
    "confidence": 0.9,
    "evidence": [
@@ -3559,7 +3598,7 @@
   {
    "kind": "table",
    "number": "14.4",
-   "title": "The number of torus, satellite, and hyperbolic prime knots with c crossings, for all c \u2a7d14",
+   "title": "The number of torus, satellite, and hyperbolic prime knots with c crossings, for all c ⩽14",
    "page": 440,
    "confidence": 0.8,
    "evidence": [
@@ -3571,7 +3610,7 @@
   {
    "kind": "figure",
    "number": "14.11",
-   "title": "For su\ufb03ciently small R > 0 the cone neighbourhood",
+   "title": "For suﬃciently small R > 0 the cone neighbourhood",
    "page": 445,
    "confidence": 0.9,
    "evidence": [
@@ -3596,7 +3635,7 @@
   {
    "kind": "figure",
    "number": "15.1",
-   "title": "Hyperbolic Dehn \ufb01llings on the \ufb01gure-eight knot complement",
+   "title": "Hyperbolic Dehn ﬁllings on the ﬁgure-eight knot complement",
    "page": 453,
    "confidence": 0.9,
    "evidence": [
@@ -3609,7 +3648,7 @@
   {
    "kind": "table",
    "number": "15.1",
-   "title": "The non-hyperbolic Dehn surgeries of the \ufb01gure-eight knot. We get a torus bundle with Anosov monodromy and hence of Sol geometry, three Seifert manifolds of g",
+   "title": "The non-hyperbolic Dehn surgeries of the ﬁgure-eight knot. We get a torus bundle with Anosov monodromy and hence of Sol geometry, three Seifert manifolds of g",
    "page": 453,
    "confidence": 0.8,
    "evidence": [
@@ -3621,7 +3660,7 @@
   {
    "kind": "figure",
    "number": "15.2",
-   "title": "We truncate the tetrahedra and \ufb02atten their boundary. We assign a modulus z and w to them. The edge numbered i = 1, 2, 3 has modulus zi (on the left tetrahedron) or wi (on the right tetrahedron)",
+   "title": "We truncate the tetrahedra and ﬂatten their boundary. We assign a modulus z and w to them. The edge numbered i = 1, 2, 3 has modulus zi (on the left tetrahedron) or wi (on the right tetrahedron)",
    "page": 454,
    "confidence": 0.9,
    "evidence": [
@@ -3647,7 +3686,7 @@
   {
    "kind": "figure",
    "number": "15.4",
-   "title": "Every w \u2208R determines a hyperbolic structure for M (left). The Dehn \ufb01lling generalised invariants d map R onto a neighbourhood of \u221e(right)",
+   "title": "Every w ∈R determines a hyperbolic structure for M (left). The Dehn ﬁlling generalised invariants d map R onto a neighbourhood of ∞(right)",
    "page": 456,
    "confidence": 0.9,
    "evidence": [
@@ -3660,7 +3699,7 @@
   {
    "kind": "figure",
    "number": "15.5",
-   "title": "We label the edges of every oriented tetrahedron as shown: the labelling is determined once we chose arbitrarily a pair of opposite edges and label them with 1 (left). The vertices of every oriented triangle in the triangulated boundary inherit labels as in the \ufb01gure (right)",
+   "title": "We label the edges of every oriented tetrahedron as shown: the labelling is determined once we chose arbitrarily a pair of opposite edges and label them with 1 (left). The vertices of every oriented triangle in the triangulated boundary inherit labels as in the ﬁgure (right)",
    "page": 459,
    "confidence": 0.9,
    "evidence": [
@@ -3686,7 +3725,7 @@
   {
    "kind": "figure",
    "number": "15.7",
-   "title": "We mark with a dot all the interior angles that \u03b3 encounters on its right as in the picture: each dot determines an edge in some tetrahedron \u2206j and hence an edge pair (left). We also consider the \u201cdegenerate path\u201d consisting of a single point \u201crun counterclockwise\u201d, and recover the last n rows of A",
+   "title": "We mark with a dot all the interior angles that γ encounters on its right as in the picture: each dot determines an edge in some tetrahedron ∆j and hence an edge pair (left). We also consider the “degenerate path” consisting of a single point “run counterclockwise”, and recover the last n rows of A",
    "page": 465,
    "confidence": 0.9,
    "evidence": [
@@ -3699,7 +3738,7 @@
   {
    "kind": "figure",
    "number": "15.8",
-   "title": "We draw the paths \u03b3, \u03b3\u2032 and their dots in blue and red",
+   "title": "We draw the paths γ, γ′ and their dots in blue and red",
    "page": 466,
    "confidence": 0.9,
    "evidence": [
@@ -3712,7 +3751,7 @@
   {
    "kind": "figure",
    "number": "15.9",
-   "title": "Two dots in a triangle contribute to \u03c9(\u03b3, \u03b3\u2032) with +1, 0, or \u22121 according to their mutual position",
+   "title": "Two dots in a triangle contribute to ω(γ, γ′) with +1, 0, or −1 according to their mutual position",
    "page": 466,
    "confidence": 0.9,
    "evidence": [
@@ -3725,7 +3764,7 @@
   {
    "kind": "figure",
    "number": "15.10",
-   "title": "Two portions of blue and red paths that intersect the same triangle contribute to \u03c9(\u03b3, \u03b3\u2032) as shown here",
+   "title": "Two portions of blue and red paths that intersect the same triangle contribute to ω(γ, γ′) as shown here",
    "page": 466,
    "confidence": 0.9,
    "evidence": [
@@ -3738,7 +3777,7 @@
   {
    "kind": "figure",
    "number": "15.11",
-   "title": "When \u03b3 and \u03b3\u2032 encounter in di\ufb00erent truncated triangles of the same tetrahedron \u2206i, they also contribute to \u03c9(\u03b3, \u03b3\u2032)",
+   "title": "When γ and γ′ encounter in diﬀerent truncated triangles of the same tetrahedron ∆i, they also contribute to ω(γ, γ′)",
    "page": 467,
    "confidence": 0.9,
    "evidence": [
@@ -3751,7 +3790,7 @@
   {
    "kind": "figure",
    "number": "15.12",
-   "title": "The enlarged matrix \u00afA",
+   "title": "The enlarged matrix ¯A",
    "page": 468,
    "confidence": 0.9,
    "evidence": [
@@ -3777,7 +3816,7 @@
   {
    "kind": "figure",
    "number": "15.14",
-   "title": "The volumes of all the complete orientable hyperbolic three-manifolds form a well-ordered subset of R of type \u03c9\u03c9",
+   "title": "The volumes of all the complete orientable hyperbolic three-manifolds form a well-ordered subset of R of type ωω",
    "page": 485,
    "confidence": 0.9,
    "evidence": [
@@ -8328,14 +8367,38 @@
    "title": "Introduction",
    "level": 1,
    "page_start": 9,
-   "page_end": 15,
-   "n_chars": 9427,
-   "n_words": 1448,
+   "page_end": 13,
+   "n_chars": 9045,
+   "n_words": 1394,
    "label_start": "1",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-001-part-1-hyperbolic-geometry",
+   "number": null,
+   "title": "Part 1. Hyperbolic geometry",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 9,
+   "n_words": 2,
+   "label_start": "5",
    "label_end": "7"
   },
   {
-   "id": "sec-001-11-differential-topology",
+   "id": "sec-002-chapter-1-preliminaries",
+   "number": null,
+   "title": "Chapter 1. Preliminaries",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 337,
+   "n_words": 49,
+   "label_start": "7",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-003-11-differential-topology",
    "number": "1.1",
    "title": "Differential topology",
    "level": 3,
@@ -8347,19 +8410,19 @@
    "label_end": "15"
   },
   {
-   "id": "sec-002-12-riemannian-geometry",
+   "id": "sec-004-12-riemannian-geometry",
    "number": "1.2",
    "title": "Riemannian geometry",
    "level": 3,
    "page_start": 23,
    "page_end": 31,
-   "n_chars": 16880,
-   "n_words": 3146,
+   "n_chars": 16902,
+   "n_words": 3144,
    "label_start": "15",
    "label_end": "23"
   },
   {
-   "id": "sec-003-13-measure-theory",
+   "id": "sec-005-13-measure-theory",
    "number": "1.3",
    "title": "Measure theory",
    "level": 3,
@@ -8371,7 +8434,7 @@
    "label_end": "26"
   },
   {
-   "id": "sec-004-14-groups",
+   "id": "sec-006-14-groups",
    "number": "1.4",
    "title": "Groups",
    "level": 3,
@@ -8383,7 +8446,7 @@
    "label_end": "32"
   },
   {
-   "id": "sec-005-15-group-actions",
+   "id": "sec-007-15-group-actions",
    "number": "1.5",
    "title": "Group actions",
    "level": 3,
@@ -8395,7 +8458,7 @@
    "label_end": "34"
   },
   {
-   "id": "sec-006-16-homology",
+   "id": "sec-008-16-homology",
    "number": "1.6",
    "title": "Homology",
    "level": 3,
@@ -8407,31 +8470,43 @@
    "label_end": "37"
   },
   {
-   "id": "sec-007-17-cells-and-handle-decompositions",
+   "id": "sec-009-17-cells-and-handle-decompositions",
    "number": "1.7",
    "title": "Cells and handle decompositions",
    "level": 3,
    "page_start": 45,
    "page_end": 53,
-   "n_chars": 14951,
-   "n_words": 2671,
+   "n_chars": 14534,
+   "n_words": 2604,
    "label_start": "37",
    "label_end": "45"
   },
   {
-   "id": "sec-008-21-the-models-of-hyperbolic-space",
+   "id": "sec-010-chapter-2-hyperbolic-space",
+   "number": null,
+   "title": "Chapter 2. Hyperbolic space",
+   "level": 2,
+   "page_start": 53,
+   "page_end": 53,
+   "n_chars": 399,
+   "n_words": 65,
+   "label_start": "45",
+   "label_end": "45"
+  },
+  {
+   "id": "sec-011-21-the-models-of-hyperbolic-space",
    "number": "2.1",
    "title": "The models of hyperbolic space",
    "level": 3,
    "page_start": 53,
    "page_end": 66,
-   "n_chars": 22004,
-   "n_words": 4369,
+   "n_chars": 22027,
+   "n_words": 4366,
    "label_start": "45",
    "label_end": "58"
   },
   {
-   "id": "sec-009-22-compactification-and-isometries-of-hyperbolic",
+   "id": "sec-012-22-compactification-and-isometries-of-hyperbolic",
    "number": "2.2",
    "title": "Compactification and isometries of hyperbolic space",
    "level": 3,
@@ -8443,7 +8518,7 @@
    "label_end": "64"
   },
   {
-   "id": "sec-010-23-isometry-groups-in-dimensions-two-and-three",
+   "id": "sec-013-23-isometry-groups-in-dimensions-two-and-three",
    "number": "2.3",
    "title": "Isometry groups in dimensions two and three",
    "level": 3,
@@ -8455,19 +8530,31 @@
    "label_end": "68"
   },
   {
-   "id": "sec-011-24-geometry-of-hyperbolic-space",
+   "id": "sec-014-24-geometry-of-hyperbolic-space",
    "number": "2.4",
    "title": "Geometry of hyperbolic space",
    "level": 3,
    "page_start": 76,
    "page_end": 81,
-   "n_chars": 7158,
-   "n_words": 1400,
+   "n_chars": 6285,
+   "n_words": 1270,
    "label_start": "68",
    "label_end": "73"
   },
   {
-   "id": "sec-012-31-discrete-groups-of-isometries",
+   "id": "sec-015-chapter-3-hyperbolic-manifolds",
+   "number": null,
+   "title": "Chapter 3. Hyperbolic manifolds",
+   "level": 2,
+   "page_start": 81,
+   "page_end": 81,
+   "n_chars": 851,
+   "n_words": 128,
+   "label_start": "73",
+   "label_end": "73"
+  },
+  {
+   "id": "sec-016-31-discrete-groups-of-isometries",
    "number": "3.1",
    "title": "Discrete groups of isometries",
    "level": 3,
@@ -8479,7 +8566,7 @@
    "label_end": "78"
   },
   {
-   "id": "sec-013-32-polyhedra",
+   "id": "sec-017-32-polyhedra",
    "number": "3.2",
    "title": "Polyhedra",
    "level": 3,
@@ -8491,7 +8578,7 @@
    "label_end": "82"
   },
   {
-   "id": "sec-014-33-tessellations",
+   "id": "sec-018-33-tessellations",
    "number": "3.3",
    "title": "Tessellations",
    "level": 3,
@@ -8503,7 +8590,7 @@
    "label_end": "89"
   },
   {
-   "id": "sec-015-34-fundamental-domains",
+   "id": "sec-019-34-fundamental-domains",
    "number": "3.4",
    "title": "Fundamental domains",
    "level": 3,
@@ -8515,7 +8602,7 @@
    "label_end": "97"
   },
   {
-   "id": "sec-016-35-geodesic-boundary-non-complete-and-cone-manif",
+   "id": "sec-020-35-geodesic-boundary-non-complete-and-cone-manif",
    "number": "3.5",
    "title": "Geodesic boundary, non-complete, and cone manifolds",
    "level": 3,
@@ -8527,19 +8614,31 @@
    "label_end": "101"
   },
   {
-   "id": "sec-017-36-orbifolds",
+   "id": "sec-021-36-orbifolds",
    "number": "3.6",
    "title": "Orbifolds",
    "level": 3,
    "page_start": 109,
    "page_end": 117,
-   "n_chars": 15446,
-   "n_words": 2735,
+   "n_chars": 14174,
+   "n_words": 2533,
    "label_start": "101",
    "label_end": "109"
   },
   {
-   "id": "sec-018-41-tubes-and-cusps",
+   "id": "sec-022-chapter-4-thick-thin-decomposition",
+   "number": null,
+   "title": "Chapter 4. Thick-thin decomposition",
+   "level": 2,
+   "page_start": 117,
+   "page_end": 117,
+   "n_chars": 1246,
+   "n_words": 200,
+   "label_start": "109",
+   "label_end": "109"
+  },
+  {
+   "id": "sec-023-41-tubes-and-cusps",
    "number": "4.1",
    "title": "Tubes and cusps",
    "level": 3,
@@ -8551,7 +8650,7 @@
    "label_end": "115"
   },
   {
-   "id": "sec-019-42-the-margulis-lemma",
+   "id": "sec-024-42-the-margulis-lemma",
    "number": "4.2",
    "title": "The Margulis Lemma",
    "level": 3,
@@ -8563,7 +8662,7 @@
    "label_end": "123"
   },
   {
-   "id": "sec-020-43-geodesic-spectrum-isometry-groups-and-finite",
+   "id": "sec-025-43-geodesic-spectrum-isometry-groups-and-finite",
    "number": "4.3",
    "title": "Geodesic spectrum, isometry groups, and finite covers",
    "level": 3,
@@ -8575,19 +8674,31 @@
    "label_end": "128"
   },
   {
-   "id": "sec-021-44-the-bieberbach-theorem",
+   "id": "sec-026-44-the-bieberbach-theorem",
    "number": "4.4",
    "title": "The Bieberbach Theorem",
    "level": 3,
    "page_start": 136,
    "page_end": 143,
-   "n_chars": 9987,
-   "n_words": 1976,
+   "n_chars": 9440,
+   "n_words": 1879,
    "label_start": "128",
    "label_end": "135"
   },
   {
-   "id": "sec-022-51-limit-set",
+   "id": "sec-027-chapter-5-the-sphere-at-infinity",
+   "number": null,
+   "title": "Chapter 5. The sphere at infinity",
+   "level": 2,
+   "page_start": 143,
+   "page_end": 143,
+   "n_chars": 524,
+   "n_words": 93,
+   "label_start": "135",
+   "label_end": "135"
+  },
+  {
+   "id": "sec-028-51-limit-set",
    "number": "5.1",
    "title": "Limit set",
    "level": 3,
@@ -8599,19 +8710,19 @@
    "label_end": "143"
   },
   {
-   "id": "sec-023-52-extensions-of-homotopies",
+   "id": "sec-029-52-extensions-of-homotopies",
    "number": "5.2",
    "title": "Extensions of homotopies",
    "level": 3,
    "page_start": 151,
    "page_end": 161,
-   "n_chars": 13454,
-   "n_words": 2590,
+   "n_chars": 13416,
+   "n_words": 2567,
    "label_start": "143",
    "label_end": "153"
   },
   {
-   "id": "sec-024-61-topological-classification",
+   "id": "sec-030-61-topological-classification",
    "number": "6.1",
    "title": "Topological classification",
    "level": 3,
@@ -8623,19 +8734,19 @@
    "label_end": "157"
   },
   {
-   "id": "sec-025-62-geometrisation",
+   "id": "sec-031-62-geometrisation",
    "number": "6.2",
    "title": "Geometrisation",
    "level": 3,
    "page_start": 165,
    "page_end": 176,
-   "n_chars": 22772,
-   "n_words": 4323,
+   "n_chars": 22722,
+   "n_words": 4297,
    "label_start": "157",
    "label_end": "168"
   },
   {
-   "id": "sec-026-63-curves-on-surfaces",
+   "id": "sec-032-63-curves-on-surfaces",
    "number": "6.3",
    "title": "Curves on surfaces",
    "level": 3,
@@ -8647,7 +8758,7 @@
    "label_end": "181"
   },
   {
-   "id": "sec-027-64-homotopy-and-isotopy",
+   "id": "sec-033-64-homotopy-and-isotopy",
    "number": "6.4",
    "title": "Homotopy and isotopy",
    "level": 3,
@@ -8659,19 +8770,31 @@
    "label_end": "185"
   },
   {
-   "id": "sec-028-65-mapping-class-group",
+   "id": "sec-034-65-mapping-class-group",
    "number": "6.5",
    "title": "Mapping class group",
    "level": 3,
    "page_start": 193,
    "page_end": 199,
-   "n_chars": 12815,
-   "n_words": 2389,
+   "n_chars": 12043,
+   "n_words": 2261,
    "label_start": "185",
    "label_end": "191"
   },
   {
-   "id": "sec-029-71-introduction",
+   "id": "sec-035-chapter-7-teichmüller-space",
+   "number": null,
+   "title": "Chapter 7. Teichmüller space",
+   "level": 2,
+   "page_start": 199,
+   "page_end": 199,
+   "n_chars": 764,
+   "n_words": 125,
+   "label_start": "191",
+   "label_end": "191"
+  },
+  {
+   "id": "sec-036-71-introduction",
    "number": "7.1",
    "title": "Introduction",
    "level": 3,
@@ -8683,7 +8806,7 @@
    "label_end": "194"
   },
   {
-   "id": "sec-030-72-earthquakes-and-length-functions",
+   "id": "sec-037-72-earthquakes-and-length-functions",
    "number": "7.2",
    "title": "Earthquakes and length functions",
    "level": 3,
@@ -8695,9 +8818,9 @@
    "label_end": "202"
   },
   {
-   "id": "sec-031-73-fenchelnielsen-coordinates",
+   "id": "sec-038-73-fenchelnielsen-coordinates",
    "number": "7.3",
-   "title": "Fenchel\u2013Nielsen coordinates",
+   "title": "Fenchel–Nielsen coordinates",
    "level": 3,
    "page_start": 210,
    "page_end": 219,
@@ -8707,55 +8830,103 @@
    "label_end": "211"
   },
   {
-   "id": "sec-032-74-shear-coordinates",
+   "id": "sec-039-74-shear-coordinates",
    "number": "7.4",
    "title": "Shear coordinates",
    "level": 3,
    "page_start": 219,
-   "page_end": 230,
-   "n_chars": 21293,
-   "n_words": 3913,
+   "page_end": 227,
+   "n_chars": 14662,
+   "n_words": 2671,
    "label_start": "211",
-   "label_end": "222"
+   "label_end": "219"
   },
   {
-   "id": "sec-033-82-geodesic-currents",
+   "id": "sec-040-chapter-8-surface-diffeomorphisms",
+   "number": null,
+   "title": "Chapter 8. Surface diffeomorphisms",
+   "level": 2,
+   "page_start": 227,
+   "page_end": 227,
+   "n_chars": 1384,
+   "n_words": 239,
+   "label_start": "219",
+   "label_end": "219"
+  },
+  {
+   "id": "sec-041-81-thurstons-compactification",
+   "number": "8.1",
+   "title": "Thurston's compactification",
+   "level": 3,
+   "page_start": 227,
+   "page_end": 231,
+   "n_chars": 6696,
+   "n_words": 1273,
+   "label_start": "219",
+   "label_end": "223"
+  },
+  {
+   "id": "sec-042-82-geodesic-currents",
    "number": "8.2",
    "title": "Geodesic currents",
    "level": 3,
-   "page_start": 230,
-   "page_end": 246,
-   "n_chars": 37782,
-   "n_words": 7348,
-   "label_start": "222",
-   "label_end": "238"
+   "page_start": 231,
+   "page_end": 247,
+   "n_chars": 36279,
+   "n_words": 7042,
+   "label_start": "223",
+   "label_end": "239"
   },
   {
-   "id": "sec-034-83-laminations",
+   "id": "sec-043-83-laminations",
    "number": "8.3",
    "title": "Laminations",
    "level": 3,
-   "page_start": 246,
+   "page_start": 247,
    "page_end": 266,
-   "n_chars": 42430,
-   "n_words": 7771,
-   "label_start": "238",
+   "n_chars": 42409,
+   "n_words": 7768,
+   "label_start": "239",
    "label_end": "258"
   },
   {
-   "id": "sec-035-84-surface-diffeomorphisms",
+   "id": "sec-044-84-surface-diffeomorphisms",
    "number": "8.4",
    "title": "Surface diffeomorphisms",
    "level": 3,
    "page_start": 266,
-   "page_end": 277,
-   "n_chars": 19899,
-   "n_words": 3640,
+   "page_end": 275,
+   "n_chars": 18542,
+   "n_words": 3441,
    "label_start": "258",
+   "label_end": "267"
+  },
+  {
+   "id": "sec-045-part-3-three-manifolds",
+   "number": null,
+   "title": "Part 3. Three-manifolds",
+   "level": 1,
+   "page_start": 275,
+   "page_end": 277,
+   "n_chars": 9,
+   "n_words": 2,
+   "label_start": "267",
    "label_end": "269"
   },
   {
-   "id": "sec-036-91-algebraic-topology",
+   "id": "sec-046-chapter-9-topology-of-three-manifolds",
+   "number": null,
+   "title": "Chapter 9. Topology of three-manifolds",
+   "level": 2,
+   "page_start": 277,
+   "page_end": 277,
+   "n_chars": 1329,
+   "n_words": 196,
+   "label_start": "269",
+   "label_end": "269"
+  },
+  {
+   "id": "sec-047-91-algebraic-topology",
    "number": "9.1",
    "title": "Algebraic topology",
    "level": 3,
@@ -8767,7 +8938,7 @@
    "label_end": "272"
   },
   {
-   "id": "sec-037-92-prime-decomposition",
+   "id": "sec-048-92-prime-decomposition",
    "number": "9.2",
    "title": "Prime decomposition",
    "level": 3,
@@ -8779,7 +8950,7 @@
    "label_end": "287"
   },
   {
-   "id": "sec-038-93-incompressible-surfaces",
+   "id": "sec-049-93-incompressible-surfaces",
    "number": "9.3",
    "title": "Incompressible surfaces",
    "level": 3,
@@ -8791,19 +8962,31 @@
    "label_end": "294"
   },
   {
-   "id": "sec-039-94-haken-manifolds",
+   "id": "sec-050-94-haken-manifolds",
    "number": "9.4",
    "title": "Haken manifolds",
    "level": 3,
    "page_start": 302,
    "page_end": 311,
-   "n_chars": 18990,
-   "n_words": 3397,
+   "n_chars": 18259,
+   "n_words": 3278,
    "label_start": "294",
    "label_end": "303"
   },
   {
-   "id": "sec-040-101-lens-spaces",
+   "id": "sec-051-chapter-10-seifert-manifolds",
+   "number": null,
+   "title": "Chapter 10. Seifert manifolds",
+   "level": 2,
+   "page_start": 311,
+   "page_end": 311,
+   "n_chars": 712,
+   "n_words": 117,
+   "label_start": "303",
+   "label_end": "303"
+  },
+  {
+   "id": "sec-052-101-lens-spaces",
    "number": "10.1",
    "title": "Lens spaces",
    "level": 3,
@@ -8815,43 +8998,55 @@
    "label_end": "310"
   },
   {
-   "id": "sec-041-102-circle-bundles",
+   "id": "sec-053-102-circle-bundles",
    "number": "10.2",
    "title": "Circle bundles",
    "level": 3,
    "page_start": 318,
-   "page_end": 320,
-   "n_chars": 4258,
-   "n_words": 821,
+   "page_end": 321,
+   "n_chars": 6934,
+   "n_words": 1330,
    "label_start": "310",
-   "label_end": "312"
+   "label_end": "313"
   },
   {
-   "id": "sec-042-103-seifert-manifolds",
+   "id": "sec-054-103-seifert-manifolds",
    "number": "10.3",
    "title": "Seifert manifolds",
    "level": 3,
-   "page_start": 320,
+   "page_start": 321,
    "page_end": 339,
-   "n_chars": 40499,
-   "n_words": 7999,
-   "label_start": "312",
+   "n_chars": 37834,
+   "n_words": 7491,
+   "label_start": "313",
    "label_end": "331"
   },
   {
-   "id": "sec-043-104-classification",
+   "id": "sec-055-104-classification",
    "number": "10.4",
    "title": "Classification",
    "level": 3,
    "page_start": 339,
    "page_end": 351,
-   "n_chars": 25917,
-   "n_words": 4728,
+   "n_chars": 24935,
+   "n_words": 4581,
    "label_start": "331",
    "label_end": "343"
   },
   {
-   "id": "sec-044-111-heegaard-splittings",
+   "id": "sec-056-chapter-11-constructions-of-three-manifolds",
+   "number": null,
+   "title": "Chapter 11. Constructions of three-manifolds",
+   "level": 2,
+   "page_start": 351,
+   "page_end": 351,
+   "n_chars": 948,
+   "n_words": 144,
+   "label_start": "343",
+   "label_end": "343"
+  },
+  {
+   "id": "sec-057-111-heegaard-splittings",
    "number": "11.1",
    "title": "Heegaard splittings",
    "level": 3,
@@ -8863,7 +9058,7 @@
    "label_end": "345"
   },
   {
-   "id": "sec-045-112-knots-and-links",
+   "id": "sec-058-112-knots-and-links",
    "number": "11.2",
    "title": "Knots and links",
    "level": 3,
@@ -8875,19 +9070,19 @@
    "label_end": "352"
   },
   {
-   "id": "sec-046-113-dehn-surgery",
+   "id": "sec-059-113-dehn-surgery",
    "number": "11.3",
    "title": "Dehn surgery",
    "level": 3,
    "page_start": 360,
    "page_end": 367,
-   "n_chars": 13378,
-   "n_words": 2543,
+   "n_chars": 13393,
+   "n_words": 2542,
    "label_start": "352",
    "label_end": "359"
   },
   {
-   "id": "sec-047-114-surface-bundles",
+   "id": "sec-060-114-surface-bundles",
    "number": "11.4",
    "title": "Surface bundles",
    "level": 3,
@@ -8899,19 +9094,31 @@
    "label_end": "364"
   },
   {
-   "id": "sec-048-115-jsj-decomposition",
+   "id": "sec-061-115-jsj-decomposition",
    "number": "11.5",
    "title": "JSJ decomposition",
    "level": 3,
    "page_start": 372,
    "page_end": 377,
-   "n_chars": 9541,
-   "n_words": 1640,
+   "n_chars": 8645,
+   "n_words": 1502,
    "label_start": "364",
    "label_end": "369"
   },
   {
-   "id": "sec-049-121-introduction",
+   "id": "sec-062-chapter-12-the-eight-geometries",
+   "number": null,
+   "title": "Chapter 12. The eight geometries",
+   "level": 2,
+   "page_start": 377,
+   "page_end": 377,
+   "n_chars": 874,
+   "n_words": 135,
+   "label_start": "369",
+   "label_end": "369"
+  },
+  {
+   "id": "sec-063-121-introduction",
    "number": "12.1",
    "title": "Introduction",
    "level": 3,
@@ -8923,7 +9130,7 @@
    "label_end": "370"
   },
   {
-   "id": "sec-050-122-elliptic-three-manifolds",
+   "id": "sec-064-122-elliptic-three-manifolds",
    "number": "12.2",
    "title": "Elliptic three-manifolds",
    "level": 3,
@@ -8935,7 +9142,7 @@
    "label_end": "380"
   },
   {
-   "id": "sec-051-123-flat-three-manifolds",
+   "id": "sec-065-123-flat-three-manifolds",
    "number": "12.3",
    "title": "Flat three-manifolds",
    "level": 3,
@@ -8947,7 +9154,7 @@
    "label_end": "383"
   },
   {
-   "id": "sec-052-124-the-product-geometries",
+   "id": "sec-066-124-the-product-geometries",
    "number": "12.4",
    "title": "The product geometries",
    "level": 3,
@@ -8959,7 +9166,7 @@
    "label_end": "386"
   },
   {
-   "id": "sec-053-125-nil-geometry",
+   "id": "sec-067-125-nil-geometry",
    "number": "12.5",
    "title": "Nil geometry",
    "level": 3,
@@ -8971,7 +9178,7 @@
    "label_end": "396"
   },
   {
-   "id": "sec-054-127-sol-geometry",
+   "id": "sec-068-127-sol-geometry",
    "number": "12.7",
    "title": "Sol geometry",
    "level": 3,
@@ -8983,7 +9190,7 @@
    "label_end": "400"
   },
   {
-   "id": "sec-055-128-summary",
+   "id": "sec-069-128-summary",
    "number": "12.8",
    "title": "Summary",
    "level": 3,
@@ -8995,19 +9202,31 @@
    "label_end": "401"
   },
   {
-   "id": "sec-056-129-the-geometrisation-conjecture",
+   "id": "sec-070-129-the-geometrisation-conjecture",
    "number": "12.9",
    "title": "The geometrisation conjecture",
    "level": 3,
    "page_start": 409,
    "page_end": 413,
-   "n_chars": 7313,
-   "n_words": 1221,
+   "n_chars": 6052,
+   "n_words": 1019,
    "label_start": "401",
    "label_end": "405"
   },
   {
-   "id": "sec-057-131-volume-of-tetrahedra",
+   "id": "sec-071-chapter-13-mostow-rigidity-theorem",
+   "number": null,
+   "title": "Chapter 13. Mostow rigidity theorem",
+   "level": 2,
+   "page_start": 413,
+   "page_end": 413,
+   "n_chars": 1236,
+   "n_words": 199,
+   "label_start": "405",
+   "label_end": "405"
+  },
+  {
+   "id": "sec-072-131-volume-of-tetrahedra",
    "number": "13.1",
    "title": "Volume of tetrahedra",
    "level": 3,
@@ -9019,31 +9238,43 @@
    "label_end": "410"
   },
   {
-   "id": "sec-058-132-simplicial-volume",
+   "id": "sec-073-132-simplicial-volume",
    "number": "13.2",
    "title": "Simplicial volume",
    "level": 3,
    "page_start": 418,
-   "page_end": 424,
-   "n_chars": 12606,
-   "n_words": 2468,
+   "page_end": 425,
+   "n_chars": 14849,
+   "n_words": 2895,
    "label_start": "410",
-   "label_end": "416"
+   "label_end": "417"
   },
   {
-   "id": "sec-059-133-mostow-rigidity",
+   "id": "sec-074-133-mostow-rigidity",
    "number": "13.3",
    "title": "Mostow rigidity",
    "level": 3,
-   "page_start": 424,
+   "page_start": 425,
    "page_end": 429,
-   "n_chars": 11685,
-   "n_words": 2100,
-   "label_start": "416",
+   "n_chars": 8278,
+   "n_words": 1501,
+   "label_start": "417",
    "label_end": "421"
   },
   {
-   "id": "sec-060-141-cusped-three-manifolds",
+   "id": "sec-075-chapter-14-hyperbolic-three-manifolds",
+   "number": null,
+   "title": "Chapter 14. Hyperbolic three-manifolds",
+   "level": 2,
+   "page_start": 429,
+   "page_end": 429,
+   "n_chars": 1142,
+   "n_words": 171,
+   "label_start": "421",
+   "label_end": "421"
+  },
+  {
+   "id": "sec-076-141-cusped-three-manifolds",
    "number": "14.1",
    "title": "Cusped three-manifolds",
    "level": 3,
@@ -9055,31 +9286,43 @@
    "label_end": "433"
   },
   {
-   "id": "sec-061-142-closed-hyperbolic-three-manifolds",
+   "id": "sec-077-142-closed-hyperbolic-three-manifolds",
    "number": "14.2",
    "title": "Closed hyperbolic three-manifolds",
    "level": 3,
    "page_start": 441,
    "page_end": 451,
-   "n_chars": 20493,
-   "n_words": 3827,
+   "n_chars": 19522,
+   "n_words": 3676,
    "label_start": "433",
    "label_end": "443"
   },
   {
-   "id": "sec-062-151-introduction",
+   "id": "sec-078-chapter-15-hyperbolic-dehn-filling",
+   "number": null,
+   "title": "Chapter 15. Hyperbolic Dehn filling",
+   "level": 2,
+   "page_start": 451,
+   "page_end": 451,
+   "n_chars": 947,
+   "n_words": 148,
+   "label_start": "443",
+   "label_end": "443"
+  },
+  {
+   "id": "sec-079-151-introduction",
    "number": "15.1",
    "title": "Introduction",
    "level": 3,
    "page_start": 451,
    "page_end": 458,
-   "n_chars": 13108,
-   "n_words": 2604,
+   "n_chars": 13099,
+   "n_words": 2582,
    "label_start": "443",
    "label_end": "450"
   },
   {
-   "id": "sec-063-152-the-solution-space",
+   "id": "sec-080-152-the-solution-space",
    "number": "15.2",
    "title": "The solution space",
    "level": 3,
@@ -9091,7 +9334,7 @@
    "label_end": "461"
   },
   {
-   "id": "sec-064-153-proof-of-the-theorem",
+   "id": "sec-081-153-proof-of-the-theorem",
    "number": "15.3",
    "title": "Proof of the theorem",
    "level": 3,
@@ -9103,7 +9346,7 @@
    "label_end": "468"
   },
   {
-   "id": "sec-065-154-volumes",
+   "id": "sec-082-154-volumes",
    "number": "15.4",
    "title": "Volumes",
    "level": 3,
@@ -9115,7 +9358,7 @@
    "label_end": "479"
   },
   {
-   "id": "sec-066-bibliography",
+   "id": "sec-083-bibliography",
    "number": null,
    "title": "Bibliography",
    "level": 2,
@@ -9127,7 +9370,7 @@
    "label_end": "483"
   },
   {
-   "id": "sec-067-index",
+   "id": "sec-084-index",
    "number": null,
    "title": "Index",
    "level": 2,
@@ -9162,7 +9405,7 @@
    "found_not_listed": {
     "count": 1,
     "items": [
-     "0 \u2208Dn is the di\ufb00eomorphism:"
+     "0 ∈Dn is the diﬀeomorphism:"
     ]
    },
    "page_mismatch": {
@@ -9170,13 +9413,14 @@
     "items": []
    }
   },
-  "sections": 69,
-  "chars_total": 964271,
+  "sections": 86,
+  "chars_total": 963872,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Geometric_topology.tex",
    "tex_sections": 495,
-   "overlaid": 60,
+   "overlaid": 61,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -9191,11 +9435,21 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.385,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.381,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-001-11-differential-topology",
+     "id": "sec-001-part-1-hyperbolic-geometry",
+     "title": "Part 1. Hyperbolic geometry",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-chapter-1-preliminaries",
+     "title": "Chapter 1. Preliminaries",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-11-differential-topology",
      "title": "Differential topology",
      "prose_ratio": 0.963,
      "coverage_ratio": 0.932,
@@ -9203,7 +9457,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-002-12-riemannian-geometry",
+     "id": "sec-004-12-riemannian-geometry",
      "title": "Riemannian geometry",
      "prose_ratio": 0.925,
      "coverage_ratio": 0.965,
@@ -9211,7 +9465,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-003-13-measure-theory",
+     "id": "sec-005-13-measure-theory",
      "title": "Measure theory",
      "prose_ratio": 0.972,
      "coverage_ratio": 0.735,
@@ -9219,7 +9473,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-004-14-groups",
+     "id": "sec-006-14-groups",
      "title": "Groups",
      "prose_ratio": 0.988,
      "coverage_ratio": 0.988,
@@ -9227,7 +9481,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-005-15-group-actions",
+     "id": "sec-007-15-group-actions",
      "title": "Group actions",
      "prose_ratio": 0.973,
      "coverage_ratio": 0.984,
@@ -9235,7 +9489,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-006-16-homology",
+     "id": "sec-008-16-homology",
      "title": "Homology",
      "prose_ratio": 0.93,
      "coverage_ratio": 0.985,
@@ -9243,15 +9497,20 @@
      "converter": "latex"
     },
     {
-     "id": "sec-007-17-cells-and-handle-decompositions",
+     "id": "sec-009-17-cells-and-handle-decompositions",
      "title": "Cells and handle decompositions",
-     "prose_ratio": 0.98,
-     "coverage_ratio": 0.96,
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.959,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-008-21-the-models-of-hyperbolic-space",
+     "id": "sec-010-chapter-2-hyperbolic-space",
+     "title": "Chapter 2. Hyperbolic space",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-21-the-models-of-hyperbolic-space",
      "title": "The models of hyperbolic space",
      "prose_ratio": 0.958,
      "coverage_ratio": 0.989,
@@ -9259,7 +9518,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-009-22-compactification-and-isometries-of-hyperbolic",
+     "id": "sec-012-22-compactification-and-isometries-of-hyperbolic",
      "title": "Compactification and isometries of hyperbolic space",
      "prose_ratio": 0.953,
      "coverage_ratio": 0.982,
@@ -9267,7 +9526,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-010-23-isometry-groups-in-dimensions-two-and-three",
+     "id": "sec-013-23-isometry-groups-in-dimensions-two-and-three",
      "title": "Isometry groups in dimensions two and three",
      "prose_ratio": 0.979,
      "coverage_ratio": 0.99,
@@ -9275,15 +9534,20 @@
      "converter": "latex"
     },
     {
-     "id": "sec-011-24-geometry-of-hyperbolic-space",
+     "id": "sec-014-24-geometry-of-hyperbolic-space",
      "title": "Geometry of hyperbolic space",
-     "prose_ratio": 0.963,
-     "coverage_ratio": 0.976,
+     "prose_ratio": 0.804,
+     "coverage_ratio": 0.971,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-012-31-discrete-groups-of-isometries",
+     "id": "sec-015-chapter-3-hyperbolic-manifolds",
+     "title": "Chapter 3. Hyperbolic manifolds",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-31-discrete-groups-of-isometries",
      "title": "Discrete groups of isometries",
      "prose_ratio": 0.972,
      "coverage_ratio": 0.993,
@@ -9291,7 +9555,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-013-32-polyhedra",
+     "id": "sec-017-32-polyhedra",
      "title": "Polyhedra",
      "prose_ratio": 0.969,
      "coverage_ratio": 0.986,
@@ -9299,7 +9563,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-014-33-tessellations",
+     "id": "sec-018-33-tessellations",
      "title": "Tessellations",
      "prose_ratio": 0.825,
      "coverage_ratio": 1.0,
@@ -9307,7 +9571,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-015-34-fundamental-domains",
+     "id": "sec-019-34-fundamental-domains",
      "title": "Fundamental domains",
      "prose_ratio": 0.977,
      "coverage_ratio": 0.96,
@@ -9315,7 +9579,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-016-35-geodesic-boundary-non-complete-and-cone-manif",
+     "id": "sec-020-35-geodesic-boundary-non-complete-and-cone-manif",
      "title": "Geodesic boundary, non-complete, and cone manifolds",
      "prose_ratio": 0.84,
      "coverage_ratio": 0.939,
@@ -9323,15 +9587,20 @@
      "converter": "latex"
     },
     {
-     "id": "sec-017-36-orbifolds",
+     "id": "sec-021-36-orbifolds",
      "title": "Orbifolds",
-     "prose_ratio": 0.983,
-     "coverage_ratio": 0.93,
+     "prose_ratio": 0.898,
+     "coverage_ratio": 0.922,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-018-41-tubes-and-cusps",
+     "id": "sec-022-chapter-4-thick-thin-decomposition",
+     "title": "Chapter 4. Thick-thin decomposition",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-41-tubes-and-cusps",
      "title": "Tubes and cusps",
      "prose_ratio": 0.985,
      "coverage_ratio": 0.983,
@@ -9339,7 +9608,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-019-42-the-margulis-lemma",
+     "id": "sec-024-42-the-margulis-lemma",
      "title": "The Margulis Lemma",
      "prose_ratio": 0.951,
      "coverage_ratio": 0.995,
@@ -9347,7 +9616,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-020-43-geodesic-spectrum-isometry-groups-and-finite",
+     "id": "sec-025-43-geodesic-spectrum-isometry-groups-and-finite",
      "title": "Geodesic spectrum, isometry groups, and finite covers",
      "prose_ratio": 0.991,
      "coverage_ratio": 0.956,
@@ -9355,15 +9624,20 @@
      "converter": "latex"
     },
     {
-     "id": "sec-021-44-the-bieberbach-theorem",
+     "id": "sec-026-44-the-bieberbach-theorem",
      "title": "The Bieberbach Theorem",
-     "prose_ratio": 0.897,
-     "coverage_ratio": 0.993,
+     "prose_ratio": 0.826,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-022-51-limit-set",
+     "id": "sec-027-chapter-5-the-sphere-at-infinity",
+     "title": "Chapter 5. The sphere at infinity",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-51-limit-set",
      "title": "Limit set",
      "prose_ratio": 0.968,
      "coverage_ratio": 0.971,
@@ -9371,15 +9645,15 @@
      "converter": "latex"
     },
     {
-     "id": "sec-023-52-extensions-of-homotopies",
+     "id": "sec-029-52-extensions-of-homotopies",
      "title": "Extensions of homotopies",
      "prose_ratio": 0.921,
-     "coverage_ratio": 0.954,
+     "coverage_ratio": 0.952,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-024-61-topological-classification",
+     "id": "sec-030-61-topological-classification",
      "title": "Topological classification",
      "prose_ratio": 0.784,
      "coverage_ratio": 0.927,
@@ -9387,15 +9661,15 @@
      "converter": "latex"
     },
     {
-     "id": "sec-025-62-geometrisation",
+     "id": "sec-031-62-geometrisation",
      "title": "Geometrisation",
      "prose_ratio": 0.964,
-     "coverage_ratio": 0.932,
+     "coverage_ratio": 0.931,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-026-63-curves-on-surfaces",
+     "id": "sec-032-63-curves-on-surfaces",
      "title": "Curves on surfaces",
      "prose_ratio": 0.954,
      "coverage_ratio": 1.0,
@@ -9403,7 +9677,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-027-64-homotopy-and-isotopy",
+     "id": "sec-033-64-homotopy-and-isotopy",
      "title": "Homotopy and isotopy",
      "prose_ratio": 0.845,
      "coverage_ratio": 0.964,
@@ -9411,15 +9685,20 @@
      "converter": "latex"
     },
     {
-     "id": "sec-028-65-mapping-class-group",
+     "id": "sec-034-65-mapping-class-group",
      "title": "Mapping class group",
-     "prose_ratio": 0.974,
-     "coverage_ratio": 0.89,
+     "prose_ratio": 0.857,
+     "coverage_ratio": 0.875,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-029-71-introduction",
+     "id": "sec-035-chapter-7-teichmüller-space",
+     "title": "Chapter 7. Teichmüller space",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-036-71-introduction",
      "title": "Introduction",
      "prose_ratio": 0.942,
      "coverage_ratio": 0.957,
@@ -9427,7 +9706,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-030-72-earthquakes-and-length-functions",
+     "id": "sec-037-72-earthquakes-and-length-functions",
      "title": "Earthquakes and length functions",
      "prose_ratio": 0.945,
      "coverage_ratio": 0.983,
@@ -9435,31 +9714,44 @@
      "converter": "latex"
     },
     {
-     "id": "sec-031-73-fenchelnielsen-coordinates",
-     "title": "Fenchel\u2013Nielsen coordinates",
+     "id": "sec-038-73-fenchelnielsen-coordinates",
+     "title": "Fenchel–Nielsen coordinates",
      "prose_ratio": 0.948,
      "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-032-74-shear-coordinates",
+     "id": "sec-039-74-shear-coordinates",
      "title": "Shear coordinates",
-     "prose_ratio": 0.927,
+     "prose_ratio": 0.874,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-040-chapter-8-surface-diffeomorphisms",
+     "title": "Chapter 8. Surface diffeomorphisms",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-041-81-thurstons-compactification",
+     "title": "Thurston's compactification",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-042-82-geodesic-currents",
+     "title": "Geodesic currents",
+     "prose_ratio": 0.97,
      "coverage_ratio": 0.997,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-033-82-geodesic-currents",
-     "title": "Geodesic currents",
-     "prose_ratio": 0.968,
-     "coverage_ratio": 0.959,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-034-83-laminations",
+     "id": "sec-043-83-laminations",
      "title": "Laminations",
      "prose_ratio": 0.952,
      "coverage_ratio": 0.998,
@@ -9467,15 +9759,26 @@
      "converter": "latex"
     },
     {
-     "id": "sec-035-84-surface-diffeomorphisms",
+     "id": "sec-044-84-surface-diffeomorphisms",
      "title": "Surface diffeomorphisms",
-     "prose_ratio": 0.96,
-     "coverage_ratio": 0.957,
+     "prose_ratio": 0.871,
+     "coverage_ratio": 0.952,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-036-91-algebraic-topology",
+     "id": "sec-045-part-3-three-manifolds",
+     "title": "Part 3. Three-manifolds",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-046-chapter-9-topology-of-three-manifolds",
+     "title": "Chapter 9. Topology of three-manifolds",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-047-91-algebraic-topology",
      "title": "Algebraic topology",
      "prose_ratio": 0.985,
      "coverage_ratio": 0.943,
@@ -9483,7 +9786,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-037-92-prime-decomposition",
+     "id": "sec-048-92-prime-decomposition",
      "title": "Prime decomposition",
      "prose_ratio": 0.955,
      "coverage_ratio": 0.998,
@@ -9491,7 +9794,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-038-93-incompressible-surfaces",
+     "id": "sec-049-93-incompressible-surfaces",
      "title": "Incompressible surfaces",
      "prose_ratio": 0.988,
      "coverage_ratio": 0.913,
@@ -9499,52 +9802,62 @@
      "converter": "latex"
     },
     {
-     "id": "sec-039-94-haken-manifolds",
+     "id": "sec-050-94-haken-manifolds",
      "title": "Haken manifolds",
-     "prose_ratio": 0.673,
+     "prose_ratio": 0.645,
      "coverage_ratio": 0.998,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-040-101-lens-spaces",
+     "id": "sec-051-chapter-10-seifert-manifolds",
+     "title": "Chapter 10. Seifert manifolds",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-052-101-lens-spaces",
      "title": "Lens spaces",
      "prose_ratio": 0.681,
      "coverage_ratio": 0.092,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
-     "id": "sec-041-102-circle-bundles",
+     "id": "sec-053-102-circle-bundles",
      "title": "Circle bundles",
-     "prose_ratio": 0.611,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.788,
+     "coverage_ratio": 0.991,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-042-103-seifert-manifolds",
+     "id": "sec-054-103-seifert-manifolds",
      "title": "Seifert manifolds",
      "prose_ratio": 0.963,
-     "coverage_ratio": 0.919,
+     "coverage_ratio": 0.945,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-043-104-classification",
+     "id": "sec-055-104-classification",
      "title": "Classification",
      "prose_ratio": 0.97,
-     "coverage_ratio": 0.868,
+     "coverage_ratio": 0.929,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-044-111-heegaard-splittings",
-     "title": "Heegaard splittings",
-     "prose_ratio": 0.553,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-056-chapter-11-constructions-of-three-manifolds",
+     "title": "Chapter 11. Constructions of three-manifolds",
+     "result": "no matching \\section"
     },
     {
-     "id": "sec-045-112-knots-and-links",
+     "id": "sec-057-111-heegaard-splittings",
+     "title": "Heegaard splittings",
+     "prose_ratio": 0.553,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-058-112-knots-and-links",
      "title": "Knots and links",
      "prose_ratio": 0.953,
      "coverage_ratio": 0.825,
@@ -9552,15 +9865,15 @@
      "converter": "latex"
     },
     {
-     "id": "sec-046-113-dehn-surgery",
+     "id": "sec-059-113-dehn-surgery",
      "title": "Dehn surgery",
      "prose_ratio": 0.907,
-     "coverage_ratio": 0.981,
+     "coverage_ratio": 0.978,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-047-114-surface-bundles",
+     "id": "sec-060-114-surface-bundles",
      "title": "Surface bundles",
      "prose_ratio": 0.981,
      "coverage_ratio": 0.843,
@@ -9568,21 +9881,26 @@
      "converter": "latex"
     },
     {
-     "id": "sec-048-115-jsj-decomposition",
+     "id": "sec-061-115-jsj-decomposition",
      "title": "JSJ decomposition",
-     "prose_ratio": 0.838,
-     "coverage_ratio": 0.988,
+     "prose_ratio": 0.735,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-049-121-introduction",
-     "title": "Introduction",
-     "prose_ratio": 0.221,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-062-chapter-12-the-eight-geometries",
+     "title": "Chapter 12. The eight geometries",
+     "result": "no matching \\section"
     },
     {
-     "id": "sec-050-122-elliptic-three-manifolds",
+     "id": "sec-063-121-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.221,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-064-122-elliptic-three-manifolds",
      "title": "Elliptic three-manifolds",
      "prose_ratio": 0.981,
      "coverage_ratio": 0.995,
@@ -9590,7 +9908,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-051-123-flat-three-manifolds",
+     "id": "sec-065-123-flat-three-manifolds",
      "title": "Flat three-manifolds",
      "prose_ratio": 0.817,
      "coverage_ratio": 0.984,
@@ -9598,7 +9916,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-052-124-the-product-geometries",
+     "id": "sec-066-124-the-product-geometries",
      "title": "The product geometries",
      "prose_ratio": 0.986,
      "coverage_ratio": 0.851,
@@ -9606,7 +9924,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-053-125-nil-geometry",
+     "id": "sec-067-125-nil-geometry",
      "title": "Nil geometry",
      "prose_ratio": 0.981,
      "coverage_ratio": 0.979,
@@ -9614,7 +9932,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-054-127-sol-geometry",
+     "id": "sec-068-127-sol-geometry",
      "title": "Sol geometry",
      "prose_ratio": 0.803,
      "coverage_ratio": 0.996,
@@ -9622,21 +9940,26 @@
      "converter": "latex"
     },
     {
-     "id": "sec-055-128-summary",
+     "id": "sec-069-128-summary",
      "title": "Summary",
      "prose_ratio": 0.136,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-056-129-the-geometrisation-conjecture",
+     "id": "sec-070-129-the-geometrisation-conjecture",
      "title": "The geometrisation conjecture",
-     "prose_ratio": 0.968,
-     "coverage_ratio": 0.937,
+     "prose_ratio": 0.744,
+     "coverage_ratio": 0.917,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-057-131-volume-of-tetrahedra",
+     "id": "sec-071-chapter-13-mostow-rigidity-theorem",
+     "title": "Chapter 13. Mostow rigidity theorem",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-072-131-volume-of-tetrahedra",
      "title": "Volume of tetrahedra",
      "prose_ratio": 0.972,
      "coverage_ratio": 0.983,
@@ -9644,23 +9967,28 @@
      "converter": "latex"
     },
     {
-     "id": "sec-058-132-simplicial-volume",
+     "id": "sec-073-132-simplicial-volume",
      "title": "Simplicial volume",
-     "prose_ratio": 0.909,
+     "prose_ratio": 0.969,
      "coverage_ratio": 0.997,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-059-133-mostow-rigidity",
+     "id": "sec-074-133-mostow-rigidity",
      "title": "Mostow rigidity",
-     "prose_ratio": 0.978,
-     "coverage_ratio": 0.878,
+     "prose_ratio": 0.83,
+     "coverage_ratio": 0.971,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-060-141-cusped-three-manifolds",
+     "id": "sec-075-chapter-14-hyperbolic-three-manifolds",
+     "title": "Chapter 14. Hyperbolic three-manifolds",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-076-141-cusped-three-manifolds",
      "title": "Cusped three-manifolds",
      "prose_ratio": 0.963,
      "coverage_ratio": 0.998,
@@ -9668,21 +9996,26 @@
      "converter": "latex"
     },
     {
-     "id": "sec-061-142-closed-hyperbolic-three-manifolds",
+     "id": "sec-077-142-closed-hyperbolic-three-manifolds",
      "title": "Closed hyperbolic three-manifolds",
-     "prose_ratio": 0.774,
-     "coverage_ratio": 0.995,
+     "prose_ratio": 0.735,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-062-151-introduction",
-     "title": "Introduction",
-     "prose_ratio": 0.416,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-078-chapter-15-hyperbolic-dehn-filling",
+     "title": "Chapter 15. Hyperbolic Dehn filling",
+     "result": "no matching \\section"
     },
     {
-     "id": "sec-063-152-the-solution-space",
+     "id": "sec-079-151-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.416,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-080-152-the-solution-space",
      "title": "The solution space",
      "prose_ratio": 0.935,
      "coverage_ratio": 0.991,
@@ -9690,7 +10023,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-064-153-proof-of-the-theorem",
+     "id": "sec-081-153-proof-of-the-theorem",
      "title": "Proof of the theorem",
      "prose_ratio": 0.982,
      "coverage_ratio": 0.942,
@@ -9698,7 +10031,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-065-154-volumes",
+     "id": "sec-082-154-volumes",
      "title": "Volumes",
      "prose_ratio": 0.972,
      "coverage_ratio": 1.0,
@@ -9706,12 +10039,12 @@
      "converter": "latex"
     },
     {
-     "id": "sec-066-bibliography",
+     "id": "sec-083-bibliography",
      "title": "Bibliography",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-067-index",
+     "id": "sec-084-index",
      "title": "Index",
      "result": "no matching \\section"
     }

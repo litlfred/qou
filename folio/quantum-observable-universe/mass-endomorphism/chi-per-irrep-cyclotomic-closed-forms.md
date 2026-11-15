@@ -66,6 +66,6 @@ The canonical values are rigorously evaluated via formal trace definitions.
 
 ## Lean theorems exported
 
-All proved by `field_simp + ring` after unfolding (sorry-free):
+All proved by `field_simp + ring` after unfolding:
 
 See [Table 2](#tbl:chi-per-irrep-cyclotomic-closed-forms-table2-data).

@@ -8,9 +8,15 @@
   "pages": 31,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:24Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 24,
+    "reason": "13 of 563 words are a stray single letter: the text layer splits words"
+   }
+  ],
   "math_source": "latex"
  },
  "metadata": {
@@ -28,7 +34,7 @@
    "TWISTED HOCHSCHILD (CO)HOMOLOGY FOR",
    "NOETHERIAN HOPF ALGEBRAS"
   ],
-  "abstract": "We show that many noetherian Hopf algebras A have a rigid du- alising complex R with R \u223c = \u03bdA1[d]. Here, d is the injective dimension of the algebra and \u03bd is a certain k-algebra automorphism of A, unique up to an inner automorphism. In honour of the \ufb01nite dimensional theory which is hereby gen- eralised we call \u03bd the Nakayama automorphism of A. We prove that \u03bd = S2\u03be, where S is the antipode of A and \u03be is the left winding automorphism of A de- termined by the left integral of A. The Hochschild homology and cohomology groups with coe\ufb03cients in a suitably twisted free bimodule are shown to be non-zero in the top dimension d, when A is an Artin-Schelter regular noether- ian Hopf algebra of global dimension d. (Twisted) Poincar\u00b4e duality holds in this setting, as is deduced from a theorem of Van den Bergh. Calculating \u03bd for A using also the opposite coalgebra structure, we determine a formula for S4 generalising a 1976 formula of Radford for A \ufb01nite dimensional. Applications of the results to the cases where A is PI, an enveloping algebra, a quantum group, a quantised function algebra and a group algebra are outlined. 0. Introduction 0.1. The starting point for the work described in this paper was the observa- tion by Had\ufb01eld and Kr\u00a8ahmer [HK1] that, when calculating the Hochschild co- homology of the quantised function algebra Oq(SL(2)), twisting the coe\ufb03cient bimodule Oq(SL(2)) by a suitable algebra automorphism \u03bd, and so calculating H\u2217(Oq(SL(2)), \u03bdOq(SL(2))1), avoids the \u201cdimension drop\u201d which occurs if one works with untwisted coe\ufb03cients. Our initial aim was to understand why this happens, and to extend their result to other quantised function algebras and then to other classes of Hopf algebra A. 0.2. Rigid dualising complexes. It transpires that twisting enters the theory at the level of the rigid dualising complex R of A, de\ufb01ned in paragraph (4.2). Let A be a noetherian Hopf algebra over the base \ufb01eld k. (We will assume except where stated otherwise that k is algeb",
+  "abstract": "We show that many noetherian Hopf algebras A have a rigid du- alising complex R with R ∼ = νA1[d]. Here, d is the injective dimension of the algebra and ν is a certain k-algebra automorphism of A, unique up to an inner automorphism. In honour of the ﬁnite dimensional theory which is hereby gen- eralised we call ν the Nakayama automorphism of A. We prove that ν = S2ξ, where S is the antipode of A and ξ is the left winding automorphism of A de- termined by the left integral of A. The Hochschild homology and cohomology groups with coeﬃcients in a suitably twisted free bimodule are shown to be non-zero in the top dimension d, when A is an Artin-Schelter regular noether- ian Hopf algebra of global dimension d. (Twisted) Poincar´e duality holds in this setting, as is deduced from a theorem of Van den Bergh. Calculating ν for A using also the opposite coalgebra structure, we determine a formula for S4 generalising a 1976 formula of Radford for A ﬁnite dimensional. Applications of the results to the cases where A is PI, an enveloping algebra, a quantum group, a quantised function algebra and a group algebra are outlined. 0. Introduction 0.1. The starting point for the work described in this paper was the observa- tion by Hadﬁeld and Kr¨ahmer [HK1] that, when calculating the Hochschild co- homology of the quantised function algebra Oq(SL(2)), twisting the coeﬃcient bimodule Oq(SL(2)) by a suitable algebra automorphism ν, and so calculating H∗(Oq(SL(2)), νOq(SL(2))1), avoids the “dimension drop” which occurs if one works with untwisted coeﬃcients. Our initial aim was to understand why this happens, and to extend their result to other quantised function algebras and then to other classes of Hopf algebra A. 0.2. Rigid dualising complexes. It transpires that twisting enters the theory at the level of the rigid dualising complex R of A, deﬁned in paragraph (4.2). Let A be a noetherian Hopf algebra over the base ﬁeld k. (We will assume except where stated otherwise that k is algeb",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "LaTeX with hyperref package",
@@ -38,7 +44,7 @@
   "title_source": "text",
   "title_verified": false,
   "title_evidence": {
-   "heading": "DUALISING COMPLEXES AND TWISTED HOCHSCHILD (CO)HOMOLOGY FOR NOETHERIAN HOPF ALGEBRAS 0. Introduction The starting point for the work described in this paper was the observation by Had\ufb01eld and Kr\u00a8ahmer [HK1] that, when calculating the Hochschild cohomology of the quantised function algebra O q ( SL (",
+   "heading": "DUALISING COMPLEXES AND TWISTED HOCHSCHILD (CO)HOMOLOGY FOR NOETHERIAN HOPF ALGEBRAS 0. Introduction The starting point for the work described in this paper was the observation by Hadﬁeld and Kr¨ahmer [HK1] that, when calculating the Hochschild cohomology of the quantised function algebra O q ( SL (",
    "outline": "0. Introduction",
    "text": "DUALISING COMPLEXES AND TWISTED HOCHSCHILD (CO)HOMOLOGY FOR NOETHERIAN HOPF ALGEBRAS",
    "corroborated_by": [],
@@ -388,7 +394,7 @@
   },
   {
    "level": 2,
-   "title": "Poincar\u00e9 duality for Hopf algebras",
+   "title": "Poincaré duality for Hopf algebras",
    "page": 19,
    "source": "outline",
    "number": "5.2",
@@ -785,44 +791,44 @@
    "level": 2,
    "page_start": 2,
    "page_end": 2,
-   "n_chars": 332,
-   "n_words": 69,
+   "n_chars": 520,
+   "n_words": 107,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-004-06-the-antipode",
-   "number": "0.6",
-   "title": "The antipode",
-   "level": 2,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 107,
-   "n_words": 21,
-   "label_start": null,
-   "label_end": null
-  },
-  {
-   "id": "sec-005-04-twisted-hochschild-groups",
+   "id": "sec-004-04-twisted-hochschild-groups",
    "number": "0.4",
    "title": "Twisted Hochschild groups",
    "level": 2,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 1577,
-   "n_words": 282,
+   "n_chars": 1575,
+   "n_words": 281,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-006-05-classes-of-examples",
+   "id": "sec-005-05-classes-of-examples",
    "number": "0.5",
    "title": "Classes of examples",
    "level": 2,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 2428,
-   "n_words": 419,
+   "n_chars": 1280,
+   "n_words": 206,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-006-06-the-antipode",
+   "number": "0.6",
+   "title": "The antipode",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1147,
+   "n_words": 212,
    "label_start": null,
    "label_end": null
   },
@@ -964,9 +970,9 @@
    "title": "The right adjoint action",
    "level": 2,
    "page_start": 9,
-   "page_end": 9,
-   "n_chars": 0,
-   "n_words": 0,
+   "page_end": 10,
+   "n_chars": 1827,
+   "n_words": 350,
    "label_start": null,
    "label_end": null
   },
@@ -975,10 +981,10 @@
    "number": "3.1",
    "title": "Definition",
    "level": 2,
-   "page_start": 9,
+   "page_start": 10,
    "page_end": 10,
-   "n_chars": 2149,
-   "n_words": 419,
+   "n_chars": 343,
+   "n_words": 71,
    "label_start": null,
    "label_end": null
   },
@@ -1013,8 +1019,8 @@
    "level": 2,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 859,
-   "n_words": 167,
+   "n_chars": 856,
+   "n_words": 166,
    "label_start": null,
    "label_end": null
   },
@@ -1025,8 +1031,8 @@
    "level": 2,
    "page_start": 13,
    "page_end": 13,
-   "n_chars": 937,
-   "n_words": 154,
+   "n_chars": 1009,
+   "n_words": 168,
    "label_start": null,
    "label_end": null
   },
@@ -1073,8 +1079,8 @@
    "level": 2,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 1099,
-   "n_words": 195,
+   "n_chars": 1096,
+   "n_words": 194,
    "label_start": null,
    "label_end": null
   },
@@ -1085,8 +1091,8 @@
    "level": 2,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 3777,
-   "n_words": 744,
+   "n_chars": 3851,
+   "n_words": 754,
    "label_start": null,
    "label_end": null
   },
@@ -1127,14 +1133,14 @@
    "label_end": null
   },
   {
-   "id": "sec-032-52-poincar\u00e9-duality-for-hopf-algebras",
+   "id": "sec-032-52-poincaré-duality-for-hopf-algebras",
    "number": "5.2",
-   "title": "Poincar\u00e9 duality for Hopf algebras",
+   "title": "Poincaré duality for Hopf algebras",
    "level": 2,
    "page_start": 19,
    "page_end": 21,
-   "n_chars": 3398,
-   "n_words": 616,
+   "n_chars": 3395,
+   "n_words": 615,
    "label_start": null,
    "label_end": null
   },
@@ -1145,8 +1151,8 @@
    "level": 1,
    "page_start": 21,
    "page_end": 21,
-   "n_chars": 0,
-   "n_words": 0,
+   "n_chars": 11,
+   "n_words": 2,
    "label_start": null,
    "label_end": null
   },
@@ -1193,8 +1199,8 @@
    "level": 2,
    "page_start": 23,
    "page_end": 24,
-   "n_chars": 1387,
-   "n_words": 269,
+   "n_chars": 1379,
+   "n_words": 263,
    "label_start": null,
    "label_end": null
   },
@@ -1205,8 +1211,8 @@
    "level": 2,
    "page_start": 24,
    "page_end": 24,
-   "n_chars": 1051,
-   "n_words": 197,
+   "n_chars": 1040,
+   "n_words": 192,
    "label_start": null,
    "label_end": null
   },
@@ -1217,8 +1223,8 @@
    "level": 2,
    "page_start": 24,
    "page_end": 26,
-   "n_chars": 5184,
-   "n_words": 1000,
+   "n_chars": 5185,
+   "n_words": 998,
    "label_start": null,
    "label_end": null
   },
@@ -1271,12 +1277,13 @@
    "items": []
   },
   "sections": 44,
-  "chars_total": 75985,
+  "chars_total": 76214,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 45,
-   "overlaid": 29,
+   "overlaid": 31,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1292,7 +1299,7 @@
      "id": "sec-000-0-introduction",
      "title": "Introduction",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-001-01",
@@ -1310,19 +1317,13 @@
     {
      "id": "sec-003-03-nakayama-automorphisms",
      "title": "Nakayama automorphisms",
-     "prose_ratio": 0.655,
-     "coverage_ratio": 0.905,
+     "prose_ratio": 0.931,
+     "coverage_ratio": 0.931,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-06-the-antipode",
-     "title": "The antipode",
-     "prose_ratio": 0.067,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-005-04-twisted-hochschild-groups",
+     "id": "sec-004-04-twisted-hochschild-groups",
      "title": "Twisted Hochschild groups",
      "prose_ratio": 0.973,
      "coverage_ratio": 0.987,
@@ -1330,10 +1331,18 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-05-classes-of-examples",
+     "id": "sec-005-05-classes-of-examples",
      "title": "Classes of examples",
-     "prose_ratio": 0.951,
-     "coverage_ratio": 0.672,
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-06-the-antipode",
+     "title": "The antipode",
+     "prose_ratio": 0.72,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1346,7 +1355,7 @@
      "id": "sec-008-1-general-preparations",
      "title": "General preparations",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-009-11-standard-notation",
@@ -1376,7 +1385,7 @@
      "id": "sec-012-2-hopf-algebra-preparations",
      "title": "Hopf algebra Preparations",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-013-21-restriction-via",
@@ -1421,20 +1430,22 @@
     {
      "id": "sec-018-26-the-right-adjoint-action",
      "title": "The right adjoint action",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.852,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-019-31-definition",
      "title": "Definition",
-     "prose_ratio": 0.254,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.063,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-020-3-twisted-hochschild-homology",
      "title": "Twisted Hochschild homology",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-021-33-the-link-with-integrals",
@@ -1455,8 +1466,8 @@
     {
      "id": "sec-023-35-remarks",
      "title": "Remarks",
-     "prose_ratio": 0.938,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1472,7 +1483,7 @@
      "id": "sec-025-42-rigid-dualising-complexes",
      "title": "Rigid dualising complexes",
      "prose_ratio": 0.262,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-026-43-van-den-bergh-condition",
@@ -1494,13 +1505,13 @@
      "id": "sec-028-45-as-gorenstein-hopf-algebras-are-rigid-gorenst",
      "title": "AS-Gorenstein Hopf algebras are rigid Gorenstein",
      "prose_ratio": 0.556,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-029-46-the-antipode",
      "title": "The antipode",
      "prose_ratio": 0.587,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-030-5-twisted-hochschild-cohomology",
@@ -1519,8 +1530,8 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-032-52-poincar\u00e9-duality-for-hopf-algebras",
-     "title": "Poincar\u00e9 duality for Hopf algebras",
+     "id": "sec-032-52-poincaré-duality-for-hopf-algebras",
+     "title": "Poincaré duality for Hopf algebras",
      "prose_ratio": 0.973,
      "coverage_ratio": 0.94,
      "result": "overlaid",
@@ -1530,7 +1541,7 @@
      "id": "sec-033-6-examples",
      "title": "Examples",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-034-61-some-general-properties",
@@ -1568,7 +1579,7 @@
      "id": "sec-038-65-quantised-function-algebras",
      "title": "Quantised function algebras",
      "prose_ratio": 0.925,
-     "coverage_ratio": 0.981,
+     "coverage_ratio": 0.944,
      "result": "overlaid",
      "converter": "pandoc"
     },

@@ -10,6 +10,7 @@ source_sha256: 3499c40ea150a617
 toc_source: outline
 doc_brief: "Constructing equivalences between fusion categories of quantum groups and of vertex operator algebras via quantum gauge groups — This paper establishes connections between a problem posed by"
 ---
+Main tools to prove (d): cohomological reduction of a braided
 tensor structure of a category with a generating object V to braid
 group duality of V
 Theorem 8.13 and Theorem 8.19 show uniqueness of the associativity morphisms (and also
@@ -62,4 +63,3 @@ equation of associativity morphisms and the hexagonal equations of a braided sym
 in a semisimple tensor category with a generating object but, as anticipated, another im-
 portant property concerning the braid group representations in the category is needed, to
 determine the associativity morphisms uniquely.
-11.

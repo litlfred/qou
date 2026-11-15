@@ -2,22 +2,27 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1109.3255v2",
  "source_sha256": "dd4579be8e9b7e25",
- "brief": "FLOER COHOMOLOGY IN THE MIRROR OF THE PROJECTIVE — We construct a family of Lagrangian submanifolds in the Landau– Ginzburg mirror to the projective plane equipped with a binodal cubic curve as",
- "extended": "**FLOER COHOMOLOGY IN THE MIRROR OF THE PROJECTIVE**\n\n*PLANE AND A BINODAL CUBIC CURVE*\n\n72 pp, 24 sections.\n\n**Abstract.** We construct a family of Lagrangian submanifolds in the Landau– Ginzburg mirror to the projective plane equipped with a binodal cubic curve as anticanonical divisor. These objects correspond under mirror sy mmetry to the powers of the twisting sheaf O(1), and hence their Floer cohomology groups form an algebra isomorphic to the homogeneous coordinate ring. An inter esting feature is the presence of a singular torus ﬁbration on the mirror, of which t he Lagrangians are sections. This gives rise to a distinguished basis of the Floer coho mology and the homogeneous coordinate ring parametrized by fractional inte gral points in the singular aﬃne structure on the base of the torus ﬁbration. The alg ebra structure on the Floer cohomology is computed using the symplectic techniques of Lefschetz ﬁbrations and the TQFT counting sections of such ﬁbrations.\n\n**Outline.** 1 Introduction; 1.1 Summary of results; 1.2 Context and related work; 1.3 Acknowledgments; 2 The fiber of W and its tropicalization; 2.2 The topology of the map W; 3 Symplectic constructions; 3.1 Symplectic monodromy associated to a Hessi; 3.2 Focus-focus singularities and Lefschetz si; 4 A degeneration of holomorphic triangles; 4.1 Triangles as sections; 4.4 Horizontal sections over a disk with one c; 4.6 Signs; 5 A tropical count of triangles; 5.1 Tropical polygons; 6 Parallel monodromy–invariant directions; 6.1 Symplectic forms; 6.2 Lagrangian submanifolds\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: For each d ∈ Z and n ≥ 0, there is an isomorphism\n- Theorem 1.2: Ford ∈ Z and n ≥ 0, there is an isomorphism\n- Theorem 1.3: There is a bijection between the basis of intersection point s L(d) ∩\n- Proposition 2.1: The integral aﬃne manifold B is topologically a disk. It has one\n- Proposition 2.2: The following functions are aﬃne linear with respect to aﬃne\n- Proposition 2.2: determines the monodromy around the singular point (at η =ξ =",
+ "brief": "FLOER COHOMOLOGY IN THE MIRROR OF THE PROJECTIVE PLANE AND A BINODAL CUBIC CURVE — We construct a family of Lagrangian submanifolds in the Landau– Ginzburg mirror to the projective plane equipped",
+ "extended": "**FLOER COHOMOLOGY IN THE MIRROR OF THE PROJECTIVE PLANE AND A BINODAL CUBIC CURVE**\n\n*JAMES PASCALEFF*\n\n72 pp, 32 sections.\n\n**Abstract.** We construct a family of Lagrangian submanifolds in the Landau– Ginzburg mirror to the projective plane equipped with a binodal cubic curve as anticanonical divisor. These objects correspond under mirror symmetry to the powers of the twisting sheaf O(1), and hence their Floer cohomology groups form an algebra isomorphic to the homogeneous coordinate ring. An interesting feature is the presence of a singular torus ﬁbration on the mirror, of which the Lagrangians are sections. This gives rise to a distinguished basis of the Floer cohomology and the homogeneous coordinate ring parametrized by fractional integral points in the singular aﬃne structure on the base of the torus ﬁbration. The algebra structure on the Floer cohomology is computed using the symplectic techniques of Lefschetz ﬁbrations and the TQFT counting sections of such ﬁbrations.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Summary of results; 1.2 Context and related work; 1.3 Acknowledgments; 2 The fiber of W and its tropicalization; 2.1 Torus fibrations on CP2 D and its mirror; 2.2 The topology of the map W; 2.3 Tropicalization in a singular affine struc; 3 Symplectic constructions; 3.1 Symplectic monodromy associated to a Hessi; 3.2 Focus-focus singularities and Lefschetz si; 3.3 Lagrangians fibered over paths; 4 A degeneration of holomorphic triangles; 4.1 Triangles as sections; 4.2 Extending the fiber; 4.3 Degenerating the fibration; 4.4 Horizontal sections over a disk with one c",
  "tokens": {
   "brief": 48,
-  "extended": 516
+  "extended": 403
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-1"
+   "pages": "2-2"
   },
   {
    "id": "sec-001-11-summary-of-results",
    "title": "Summary of results",
-   "pages": "1-5"
+   "pages": "2-5"
   },
   {
    "id": "sec-002-12-context-and-related-work",
@@ -32,100 +37,135 @@
   {
    "id": "sec-004-2-the-fiber-of-w-and-its-tropicalization",
    "title": "The fiber of W and its tropicalization",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-005-21-torus-fibrations-on-cp2-d-and-its-mirror",
+   "title": "Torus fibrations on CP2 D and its mirror",
    "pages": "11-16"
   },
   {
-   "id": "sec-005-22-the-topology-of-the-map-w",
+   "id": "sec-006-22-the-topology-of-the-map-w",
    "title": "The topology of the map W",
-   "pages": "16-19"
+   "pages": "16-17"
   },
   {
-   "id": "sec-006-3-symplectic-constructions",
+   "id": "sec-007-23-tropicalization-in-a-singular-affine-structur",
+   "title": "Tropicalization in a singular affine structure",
+   "pages": "17-19"
+  },
+  {
+   "id": "sec-008-3-symplectic-constructions",
    "title": "Symplectic constructions",
    "pages": "19-20"
   },
   {
-   "id": "sec-007-31-symplectic-monodromy-associated-to-a-hessian",
+   "id": "sec-009-31-symplectic-monodromy-associated-to-a-hessian",
    "title": "Symplectic monodromy associated to a Hessian metric",
    "pages": "20-22"
   },
   {
-   "id": "sec-008-32-focus-focus-singularities-and-lefschetz-singu",
+   "id": "sec-010-32-focus-focus-singularities-and-lefschetz-singu",
    "title": "Focus-focus singularities and Lefschetz singularities",
-   "pages": "22-32"
+   "pages": "22-25"
   },
   {
-   "id": "sec-009-4-a-degeneration-of-holomorphic-triangles",
+   "id": "sec-011-33-lagrangians-fibered-over-paths",
+   "title": "Lagrangians fibered over paths",
+   "pages": "25-32"
+  },
+  {
+   "id": "sec-012-4-a-degeneration-of-holomorphic-triangles",
    "title": "A degeneration of holomorphic triangles",
    "pages": "32-32"
   },
   {
-   "id": "sec-010-41-triangles-as-sections",
+   "id": "sec-013-41-triangles-as-sections",
    "title": "Triangles as sections",
-   "pages": "32-40"
+   "pages": "32-37"
   },
   {
-   "id": "sec-011-44-horizontal-sections-over-a-disk-with-one-crit",
+   "id": "sec-014-42-extending-the-fiber",
+   "title": "Extending the fiber",
+   "pages": "37-38"
+  },
+  {
+   "id": "sec-015-43-degenerating-the-fibration",
+   "title": "Degenerating the fibration",
+   "pages": "38-40"
+  },
+  {
+   "id": "sec-016-44-horizontal-sections-over-a-disk-with-one-crit",
    "title": "Horizontal sections over a disk with one critical value",
-   "pages": "40-52"
+   "pages": "40-44"
   },
   {
-   "id": "sec-012-46-signs",
+   "id": "sec-017-45-polygons-with-fixed-conformal-structure",
+   "title": "Polygons with fixed conformal structure",
+   "pages": "44-52"
+  },
+  {
+   "id": "sec-018-46-signs",
    "title": "Signs",
    "pages": "52-54"
   },
   {
-   "id": "sec-013-5-a-tropical-count-of-triangles",
+   "id": "sec-019-5-a-tropical-count-of-triangles",
    "title": "A tropical count of triangles",
    "pages": "54-54"
   },
   {
-   "id": "sec-014-51-tropical-polygons",
+   "id": "sec-020-51-tropical-polygons",
    "title": "Tropical polygons",
-   "pages": "54-60"
+   "pages": "54-58"
   },
   {
-   "id": "sec-015-6-parallel-monodromyinvariant-directions",
+   "id": "sec-021-52-tropical-triangles-for-cp2-d",
+   "title": "Tropical triangles for (CP2, D)",
+   "pages": "58-60"
+  },
+  {
+   "id": "sec-022-6-parallel-monodromyinvariant-directions",
    "title": "Parallel monodromy–invariant directions",
    "pages": "60-60"
   },
   {
-   "id": "sec-016-61-symplectic-forms",
+   "id": "sec-023-61-symplectic-forms",
    "title": "Symplectic forms",
    "pages": "60-61"
   },
   {
-   "id": "sec-017-62-lagrangian-submanifolds",
+   "id": "sec-024-62-lagrangian-submanifolds",
    "title": "Lagrangian submanifolds",
    "pages": "61-62"
   },
   {
-   "id": "sec-018-63-holomorphic-and-tropical-triangles",
+   "id": "sec-025-63-holomorphic-and-tropical-triangles",
    "title": "Holomorphic and tropical triangles",
    "pages": "62-63"
   },
   {
-   "id": "sec-019-7-mirrors-to-divisor-complements",
+   "id": "sec-026-7-mirrors-to-divisor-complements",
    "title": "Mirrors to divisor complements",
    "pages": "63-64"
   },
   {
-   "id": "sec-020-71-algebraic-motivation",
+   "id": "sec-027-71-algebraic-motivation",
    "title": "Algebraic motivation",
    "pages": "64-64"
   },
   {
-   "id": "sec-021-72-wrapping",
+   "id": "sec-028-72-wrapping",
    "title": "Wrapping",
    "pages": "64-68"
   },
   {
-   "id": "sec-022-73-continuation-maps-and-products",
+   "id": "sec-029-73-continuation-maps-and-products",
    "title": "Continuation maps and products",
    "pages": "68-70"
   },
   {
-   "id": "sec-023-references",
+   "id": "sec-030-references",
    "title": "References",
    "pages": "70-72"
   }
@@ -134,8 +174,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

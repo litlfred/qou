@@ -1,0 +1,40 @@
+Section 3.1 Partition Function
+
+are assigned as triangle colors. The approach here is necessary and will become clear in
+Section|Z.9 where we prove the partition function does not depend on the ordering of the
+
+triangulation.
+
+Assume now a representative for each triangle has been chosen. For any T = (0123) €
+
+T° with the induced ordering on its vertices, consider the boundary map:
+
+(0123) = (123) — (023) + (013) — (012).
+
+We assign to (0123) two vector spaces:
+
+Vt (0123) := Hom(fo23 ® ** fora, fo1s ® firs),
+
+Vp (0123) := Hom(fors ® firs, fors ® “for ).-
+
+Note that by the properties of a coloring, the objects fg23 @ 7 forr and for3 ® fiz3 are
+
+both in the sector Cg,
+
+a — . +
+‘g02901912923- Lhis is necessary since otherwise the spaces V;} (0123) and
+
+V, (0123) would always be trivial.
+Recall that for any two objects X,Y € D, the pairing on Hom(X,Y) x Hom(Y, X) is
+
+defined as follows:
+
+(, ): Hom(X,Y) x Hom(Y, xX) — C
+
+(9,0) ++ Tr(dy)
+
+The pairing ( , ) is non-degenerate, and thus there is a natural isomorphism between
+V2 (0123) and V; (0123)*, Vp (0123) and V4 (0123)* induced by the pairing.
+
+Finally for any 4-simplex ¢ = (01234) € T* with the induced ordering on its vertices,
+35

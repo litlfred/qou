@@ -111,8 +111,7 @@ period theory:
   though **that proposition stratifies by the curvature rank of *words* and
   mentions no partition**; the max-hook statistic is
   `QOU.BraidKnot.gbDepth`, a definition, and the step joining them is
-  unestablished (see
-  [`docs/audits/2026-08-16-three-gb-filtrations-one-name.md`](../../../docs/audits/2026-08-16-three-gb-filtrations-one-name.md))
+  unestablished
   — (max hook of partition) is a **separate** filtration from the
   iterated-integral depth used here. Their precise relationship —
   e.g. whether amphichiral self-conjugate cells correspond to

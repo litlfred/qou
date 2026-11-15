@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0707.3682v2/sections/sec-004",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Computing K -groups in practice",
+  "pageStart": 23,
+  "pageEnd": 30,
+  "contains": [
+    "library/arxiv-0707.3682v2/blocks/prose-sec-004",
+    "library/arxiv-0707.3682v2/blocks/recommendation-sec-004-01",
+    "library/arxiv-0707.3682v2/blocks/recommendation-sec-004-02",
+    "library/arxiv-0707.3682v2/blocks/recommendation-sec-004-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0707.3682v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0707.3682v2",
+  "provenance": "ingested"
+}

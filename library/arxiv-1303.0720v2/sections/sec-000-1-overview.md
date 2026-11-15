@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.937
 latex_coverage_ratio: 1.0
+doc_brief: "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS — We consider the q-analytic functions on a given planar domain Ω, square integrable with respect to a weight."
 ---
 In Section [\[WPABSK\]](#WPABSK){reference-type="ref" reference="WPABSK"}, we define, in the one-variable context, the weighted Bergman spaces and their polyanalytic extensions, and in Section [\[musing-BM\]](#musing-BM){reference-type="ref" reference="musing-BM"}, we consider the various possible ramifications for Bergman metrics. It should be remarked that the polyanalytic Bergman spaces can be understood as vector-valued (analytic) Bergman spaces with singular local inner product matrix.
 

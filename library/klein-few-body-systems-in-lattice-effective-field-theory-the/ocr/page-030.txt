@@ -1,0 +1,54 @@
+Chapter 3 Nuclear Lattice Effective Field Theory
+
+The reduced symmetry group is SO(3, Z), which is a finite group consisting of the representations A,, T,,
+E, Ty, and A, [79]. The properties of the representation are summarized in Tab. 3.1.
+
+Rep | dimensionality de Example
+
+A, i Omod 4 Yoo
+
+T, 3 0,13 mod4 | {¥11.¥,0,¥%i 1}
+
+E 2 0,2 mod 4 (Yo; a 22)
+
+Ty 3 1,2,3 mod 4 | (¥), 22222, ¥)_}
+Ay 1 2 mod 4 a
+
+Table 3.1: Spherical harmonics for various representations [79].
+
+olu
+>
+
+E®T,
+A, @T, ®T>
+A, @E@T, @T,
+E®T,®T,®T>
+A, @A,® E®T, @T, 7,
+
+AnNkRWNe
+
+Table 3.2: Irreducible representations for angular momentum j < 6 [79].
+
+The mapping from SO(3) irreducible representations according to their angular momentum j to the
+irreducible representations of SO(3, Z) is shown in Tab. 3.2. There is a one-to-one mapping for systems
+with angular momenta zero and one. The situation becomes difficult by including higher angular momenta
+and as such higher partial waves. Firstly, the partial waves begin to decompose into parts belonging
+to different representations. Hence, a formalism must be used that puts together the different pieces of
+different representations to restore the rotational invariant state where the angular momentum is a good
+quantum number, see for example in [80, 81]. Additionaly, a representation like the 7, exist for j = 1 and
+j = 3, linking the coupled channels 31, 3 D, and 3D; 3 G;. Such a mixing is unphysical and should
+be removed from the data. This effect has been investigated in Refs. [82, 83] and it is removed by adding
+all possible rotational symmetry breaking operators in the theory.
+
+3.3 Bound states on the lattice
+
+The identification of bound states in the energy spectrum of a lattice calculation is quite important for
+the determination of deuteron, triton and helium properties as well as any other description of nuclei in
+the framework of NLEFT. Instead of neglecting finite-volume effects by using a box with large enough
+volume, one could also use these effects to extrapolate to the infinite volume. Therefore, it is necessary to
+know the finite-volume behaviour of the bound state.
+
+Firstly, we rederive Liischer’s finite volume formula for non-relativistic two-body bound states [84].
+The original approach takes into account only spinless pointlike particles for angular momentum / = 0.
+
+24

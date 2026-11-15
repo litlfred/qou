@@ -1,0 +1,1 @@
+{where the dot and prime denote derivative with respect to $t$ and $\theta$ respectively} \footnote{{At this point one should note that (\ref{eq:boundeq}) is in the standard from of an inviscid Burger's equation, which is a KdV type equation.

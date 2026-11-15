@@ -1,8 +1,6 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "centsim",
- "document_class": "math",
- "validated": true,
  "source": {
   "structure_sha256": "41eaa1d757e691973cd2908f0afde5007193bc5cd400bfc86ecb70167226a222",
   "file": "centsim.pdf"
@@ -13,11 +11,31 @@
   "arxiv": null,
   "doi": null
  },
- "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "aspects": [
+  "requirements"
+ ],
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
+  "candidates": 1,
+  "by_kind": {
+   "recommendation": 1
+  },
   "formalization_candidates": 0
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "So we must show that they generate Z(BH).",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-019.md",
+   "section_title": "Page 19",
+   "pages": "19-19",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
 }

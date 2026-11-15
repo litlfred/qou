@@ -1,0 +1,1 @@
+\begin{dfn} \label{dfn:875} We shall use the following abbreviations for the triangulated categories related to a DG ring $A$: $\cat{K}(A) := \til{\cat{K}}(\cat{DGMod} A)$ and $\cat{D}(A) := \til{\cat{D}}(\cat{DGMod} A)$. \end{dfn}

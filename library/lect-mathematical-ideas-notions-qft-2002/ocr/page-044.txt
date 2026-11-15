@@ -1,0 +1,59 @@
+44 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY
+
+did not make a Wick rotation, we would deal with the operator A’ = —d?/dt? —m?,
+whose spectrum is [—m?, +00), i.e. contains 0, so that the operator is not invertible
+in the naive sense.
+
+To make sense of the cubic and higher terms in the action as tensors, consider the
+decomposition of U in the (asymptotic) Taylor series at 2 = 0: U(x) = m?a2?/2+
+ye n>3 ane”"/n!. This shows that cubic and higher terms in the action have the form
+
+BGs = [awa
+
+Thus B,(q1,...,qr) is an element of (S"V)* given by the generalized function 6;,=...=t,
+(the delta function of the diagonal).
+
+Finally, the functionals @; are given by ¢;(q) = q(ti), so &; = 6(t — ti).
+
+This leads to the following Feynman rules of defining the amplitude of a diagram
+
+To the i-th external vertex of [ assign the number ¢;.
+
+To each internal vertex j of I’, assign a variable s;.
+
+For each internal edge connecting vertices j and j', write G(s; — s;).
+For each external edge connecting i and j write G(t; — s;).
+
+For each external edge connecting i and i’ write G(t; — ti).
+
+Let Gp(t,s) be the product of all these functions.
+
+. Let Fr(41, ln) = T](-auiy) f Gr(t,s)ds, where v(j) is the valency of j.
+We are finally able to give the following definition.
+
+Definition 7.2. The function Gn(t1,...,tn) is defined by the formula 17.
+
+Remark. Note that the integrals defining Fp are convergent since the integrand
+always decays exponentially at infinity. It is, however, crucial that we consider only
+graphs without components having no external vertices; for example, if [ has a
+single 4-valent vertex connected to itself by two loops (Fig.23) then the amplitude
+integral involves f, G(0)?ds, which is obviously divergent.
+
+{OR we N
+
+FIGURE 23
+
+With this definition, the function G,,(t1,...,t,) is a Laurent series in h, whose
+coefficients are symmetric functions of t),...,tn, given by linear combinations of
+explicit (and convergent) finite dimensional integrals. Furthermore, it is easy to
+see that these integrals are in fact computable in elementary functions, i.e. are (in
+the region t; >... > t,) linear combinations of products of functions of the form
+tre“i, This implies the existence of the analytic continuation required in the Wick
+rotation procedure.
+
+Remark. An alternative setting for making this definition is to assume that a;
+are formal parameters. In this case, h can be given a numerical value, e.g. h = 1,
+and the function G,, will be a well defined power series in a3, a4, ....
+
+Example 1. The free theory: U(q) = m?q?/2. In this case, there is no internal
+vertices, and hence we have

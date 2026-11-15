@@ -419,8 +419,12 @@ structure QuantumObservableUniverse (R : Type*) [CommRing R]
       is explicit that the trivial part is excluded: `Ad(A)` decomposes "with
       no spin-0 summand" (`brings-qou-axiom-map.md`) and is `≅ V₂`, the
       3-dimensional traceless part, for `SU_q(2)` (`brings-is-qou.lean`).
-      That reduced adjoint is the augmentation ideal `ker ε`, which the
-      adjoint action preserves because `ε` is an algebra map. -/
+      That reduced adjoint is taken to land in `ker ε`; this field is part of
+      the data and is not derived from a property of `ε`.  (An earlier
+      justification read "the adjoint action preserves `ker ε` because `ε` is
+      an algebra map".  A multiplicative counit is not available: it forces
+      `x = ε(x) • 1` for every `x`, see
+      `MultiplicativeCounitCollapse.eq_counit_smul_one`, bean `qou-aj49`.) -/
   adjoint_augmented : adjointIncl ≫ frobHopf.counit = 0
   /-- `Ad(A)` is not the zero object.  Together with the two fields above this
       is what `adjointObj := 0` fails: the only morphism out of the zero

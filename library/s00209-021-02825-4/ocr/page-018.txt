@@ -1,0 +1,56 @@
+1376 J. Leake
+
+The sets considered above intersect at 2 points (0 and 00), and this ends up being crucial
+to the proof. So, in order to extend to the full generality of Grace’s theorem, we will need
+to find such points even when the stability sets of two polynomials p and q do not a priori
+intersect at all. To this end, we give the following lemmas.
+
+Lemma 5.5 Fix 4 € No and any closed circular regions C,,..., Cm C CP!. Let p € V(A)
+be (Cy x +++ X Cm)-stable. There exist open circular regions U,,..., Um such that Cy. C Ux
+for allk € [m] and p is (U, x --+ x Um)-stable.
+
+Proof Follows from compactness of CP! and closedness of Cy x ... x Cm and of the zero
+set of p. ia
+
+For the next lemma, note that the boundary of any circular region C is topologically
+equivalent to the unit circle in C (i.e., the boundary of the unit disc). With this, we call a
+portion of the boundary of C open if it is open when considered as a subset of the unit circle.
+Further recall the characterization of projectively convex regions given by Proposition 4.5.
+
+Lemma 5.6 Fix n € No and any projectively convex C = C° Uy C CP!, where C° is
+an open circular region and y is a connected portion of its boundary. Let p € V(n) be
+C-stable. There is an open connected subset V of the boundary of C° such that y © T and
+p is (C° UP)-stable.
+
+Proof Let dC° denote the boundary of (the closure of) C°, and let S C CP" be the intersection
+of dC° and the zero set of p. Since the zero set of p is closed, we have that § is closed in
+aC°. And further, y MS = @ by assumption. Defining I to be the connected component of
+dC°\S containing y then gives the result. Oo
+
+Using these lemmas and the SL2(C)-invariance of the apolarity form, we obtain the
+following generalization of Grace’s theorem. Here, (ii) and (iii) give the multivariate Grace’s
+theorem proven in [2].
+
+Theorem 5.7 Form € No and Ci,..., Cn, By, Bm © CP!, we have that (Cy x «++ x
+Cn, By x +++ X By) is a Grace pair for the following regions.
+
+(i) For all k € [m], Cy and By are projectively convex, Cy U By = Ce!, and CeO By is
+exactly two points.
+(ii) For all k € [m], Cx is a closed circular region, By is an open circular region, and
+Cy U By = CP!.
+(iii) For all k € [m], Cy is an open circular region, By is a closed circular region, and
+Cy U Be = ce'.
+(iv) Form = 1, C, and B, are projectively convex and C, U By = ce!.
+
+Proof (i). By Proposition 4.5, every projectively convex region in CP! is the union of an
+open circular region and a portion of its boundary. Since C, U By = CP! and Cy By is
+exactly two points, we then must have that Cy = x - (H4 U Ry) and By = d- (H-U R_)
+for some ¢, € SL2(C). Since D* is (SL2(C))”-invariant, the result follows from Theorem
+5.1.
+
+(ii). Fix p,q € V(A). If pis (Ci x +--+ x C,)-stable and q is (By x --+ x By,)-stable, then
+Lemma 5.5 implies p is (U; x --- x U,,)-stable for some open circular regions U;,..., Um
+such that Cy C Ux for all k € [m]. Since Cy U By = CP!, we then have that Uz M By is open
+and nonempty. Since U, and B, are circular regions, their intersection in fact contains an open
+
+D Springer

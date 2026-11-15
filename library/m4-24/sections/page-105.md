@@ -1,0 +1,62 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-105
+section_title: "Page 105"
+section_number: null
+pages: 105-105
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+Problems on invariants of knots and 3-manifolds ATT
+
+integral, explained above in some cases. This leads us to the following somewhat
+vague conjecture.
+
+Conjecture 7.6 (The perturbative expansion conjecture) The asymptotic
+expansion of Zo(M ) of a closed oriented 3-manifold M is given by
+
+ZE(M) ~ e77V—1(dim G)(1+b1(M))/4
+
+k-00
+
+x | e2V=IrCS(A) (hy A )/2 pe 2"V—T(La/44(h +h 4)/8) 7 (A) 1/2
+[A
+
+JEM
+Ske! Zr(M, A)
+exXP > Dian Pa)
+
+. Vv . . . .
+putting r=k+h , where the right hand side can be given in the mathemat-
+ical viewpoint in certain cases, as mentioned above, but which needs further
+interpretation in general.
+
+Remark The semi-classical approximation stated above (the upper two lines
+in the above formula), has been confirmed for lens spaces (first partially [127])
+and then by [184, 134], for certain mapping tori of diffeomorphisms of a torus
+[184], and for all finite order mapping tori of automorphisms of any closed
+orientable surface of genus at least 2 [6]. For a large class of Seifert fibered
+manifolds [353] and [354] offered calculations which provided evidence that the
+phases in the semi-classical approximation is given by the Chern-Simons invari-
+ants and the measure is given by the square root of the Reidemeister torsion
+as explained above. Also, expressions for the higher loop corrections was of-
+fered. Later the necessary analytic estimates was provided in [168] so as to
+confirm this. See also the discussion below. For now, there are no examples of
+hyperbolic manifolds, where parts of the above conjecture has been confirmed.
+
+For other versions of Conjecture 7.6, see [220, Problem 3.108], [136].
+
+The formula in Conjecture 7.6 might not give an exact description of the asymp-
+totic behavior of Z(M) even in the semi-classical part, neither is it in all cases
+well-defined. Moreover, it might be difficult at present to calculate the concrete
+value of the higher loop corrections in the asymptotic expansion of Conjecture
+7.6 for given M, A, and [. Nor do we have definitions for these terms, which
+has been proven to be well defined topological invariants in all cases.
+
+The following conjecture offers a kind of reverse viewpoint on Conjecture 7.6,
+avoiding such ambiguities and difficulties.
+
+Geometry & Topology Monographs, Volume 4 (2002)

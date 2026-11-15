@@ -1,0 +1,46 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-9910019v1",
+ "source": {
+  "structure_sha256": "07dd7ab7068b1482af34a6f41e56f9ed1e9c55de89e9b46b624e6099ac253f33",
+  "file": "9910019v1.pdf"
+ },
+ "provenance": {
+  "title": "arXiv:math/9910019v1 [math.CO] 5 Oct 1999",
+  "authors": "Jinho Baik\u2217and",
+  "arxiv": {
+   "id": "math/9910019",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "5 Oct 1999"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "recommendation": 1
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "This result should be compared with the results on random permutation and random signed permutation where the limiting distribution was $F_2(x)$ and $F_2(x)^2$ under the same scaling of the above (see \\cite{BDJ}, \\cite{TW3}, \\cite{Bo} and Theorem \\ref{thm1} above).",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-004-41-random-involutions-and-random-signed-involuti.md",
+   "section_title": "Random involutions and random signed involutions",
+   "pages": "9-11",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

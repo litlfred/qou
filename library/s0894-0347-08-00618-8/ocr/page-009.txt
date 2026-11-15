@@ -1,0 +1,61 @@
+NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS 529
+
+CNA-4+ if each measure obtained from jz by imposing external fields and projections
+
+is CNA.
+
+Remark 2.3. It is clear from the definitions that each of the five properties h-NLC,
+Rayleigh/h-NLC+, NA, CNA, and CNA+ implies p-NC.
+
+Remark 2.4. As explained in [65], one has the following subordination relations:
+CNA => h-NLC and CNA+ => Rayleigh/h-NLC+. In §4.2]and {7 below we show
+that PHR > CNA+ and that this implication is strict.
+
+We note that NA can fail to imply NLC even for symmetric measures:
+
+Example 2.2. Let as before ex, 0 < k <n, be the k-th elementary symmetric
+function in n variables and consider the measure ju € Y%3 with generating polynomial
+
+1
+On (123, 22, 23) = B [3 + 2e1 (123, 22, 23) + 2e2(21, 22, 23)]-
+
+It is not difficult to check that y is NA but not NLC.
+
+Definition 2.8. The diagonal specialization of a polynomial f € C[z,..., Zn] is
+the univariate polynomial
+
+tr A(f)(t) = f(t,...,t).
+
+A real sequence {az}"_, is log-concave if a2 > ap—1ap41, 1 < k < n—1, and it is
+k=0 9 k +
+said to have no internal zeros if the indices of its non-zero terms form an interval
+(of non-negative integers). We say that a non-negative sequence {a;}f_o is
+e LC if it is log-concave with no internal zeros;
+e SLC (strongly log-concave) if the sequence {klaz}j_9 is LC;
+e ULC (ultra log-concave) if the sequence far/ (2) kro is LC.
+Clearly, ULC = SLC => LC. If p € $B, the sequence
+
+W&es-)} rh
+
+k=0
+is called the rank sequence of j as well as of its generating polynomial g, € Ph.
+A measure in $8, is then said to be ULC, SLC or LC if its rank sequence is ULC,
+SLC or LC, respectively.
+
+2.2. Strongly Rayleigh measures. Motivated by similar notions in the theory
+of multivariate entire functions studied by Levin [50], the following definition was
+
+made in [7] [8] [9] (see also [10} [11]).
+
+Definition 2.9. A polynomial f € C[z1,..., Zn] is called stable if f(z1,...,2n) #0
+whenever Jm(z;) > 0 for 1 < j <n. A stable polynomial with all real coefficients
+is called real stable.
+
+Multivariate stable polynomials are intimately connected with other fundamental
+objects such as hyperbolic polynomials, Lee-Yang polynomials and polynomials
+with the half-plane property. Polynomials of the aforementioned types are widely
+encountered in both mathematics and physics i ol
+(see also (4.1).
+
+Let us define a class of measures induced by stable polynomials.
+

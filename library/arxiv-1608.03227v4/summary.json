@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1608.03227v4",
  "source_sha256": "c71128e9a6c35343",
- "brief": "January 30, 2018 — For each braid β ∈ Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗ × C∗ - equivariant sheaves on the non-commutative nested Hilbert scheme Hilb f ree 1,n .",
- "extended": "**January 30, 2018**\n\n*KNOT HOMOLOGY AND SHEAVES ON THE HILBERT SCHEME OF POINTS ON*\n\n83 pp, 69 sections.\n\n**Abstract.** For each braid β ∈ Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗ × C∗ - equivariant sheaves on the non-commutative nested Hilbert scheme Hilb f ree 1,n . W e show that the triply graded vector space of the hypercohomology H(Sβ ⊗ ∧ • (B)) with B being tautological vector bundle, is an isotopy invariant of the knot obtained by the closure of β . W e also show that the support of cohomology of the complex Sβ is supported on the ordinary nested Hilbert scheme Hilb 1,n ⊂ Hilbf ree 1,n , that allows us to relate the triply graded knot homology to the sheaves on Hilb 1,n\n\n**Outline.** 1 Introduction; 1.1 Motivation; 1.2 Main result; 1.3 Sheaves on Hilbert schemes; 1.4 Braids and matrix factorizations; 1.5 Structure of the paper; 2 Basic space and Matrix factorizations; 2.1 Notations, conventions; 2.2 Matrix factorizations: three lemmas; 2.3 Koszul matrix factorizations; 3 Equivariant structure of matrix factorizatio; 3.2 Push forward; 3.3 Chevalley-Eilenberg complex; 3.4 Equivariant matrix factorizations; 3.5 Extension lemmas; 3.6 Lifting lemma for morphisms; 3.7 Equivariant push-forward; 4 Convolution algebra: definition\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: For any β∈ Brn the triply graded space:\n- Theorem 1.2: The bi-graded Euler characteristic of Hk(β) is equal to the HOMFLY-PT polynomial of the\n- Theorem 1.3: There is a spectral sequence with E2 term being\n- Theorem 1.6: [34] For any k∈ Z we have\n- Theorem 1.7: The homotopic category MFsc\n- Theorem 9.6: Inside convolution algebra (MFsc",
+ "brief": "Knot homology and sheaves on the Hilbert scheme of points on the plane — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on the",
+ "extended": "**Knot homology and sheaves on the Hilbert scheme of points on the plane**\n\n*ALEXEI OBLOMKOV AND LEV ROZANSKY*\n\n83 pp, 78 sections.\n\n**Abstract.** For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on the non-commutative nested Hilbert scheme Hilbfree 1,n . We show that the triply graded vector space of the hypercohomology H(Sβ ⊗∧•(B)) with B being tautological vector bundle, is an isotopy invariant of the knot obtained by the closure of β. We also show that the support of cohomology of the complex Sβ is supported on the ordinary nested Hilbert scheme Hilb1,n ⊂Hilbfree 1,n , that allows us to relate the triply graded knot homology to the sheaves on Hilb1,n\n\n**Outline.** Front matter; 1 Introduction; 1.1 Motivation; 1.2 Main result; 1.3 Sheaves on Hilbert schemes; 1.4 Braids and matrix factorizations; 1.5 Structure of the paper; 2 Basic space and Matrix factorizations; 2.1 Notations, conventions; 2.2 Matrix factorizations: three lemmas; 2.3 Koszul matrix factorizations; 3 Equivariant structure of matrix factorizatio; 3.1 Technical lemmas: non-equivariant version; 3.2 Push forward; 3.3 Chevalley-Eilenberg complex; 3.4 Equivariant matrix factorizations; 3.5 Extension lemmas; 3.6 Lifting lemma for morphisms",
  "tokens": {
-  "brief": 47,
-  "extended": 417
+  "brief": 46,
+  "extended": 319
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-3"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -62,295 +67,335 @@
   {
    "id": "sec-010-3-equivariant-structure-of-matrix-factorizations",
    "title": "Equivariant structure of matrix factorizations and their push-forwards",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-011-31-technical-lemmas-non-equivariant-version",
+   "title": "Technical lemmas: non-equivariant version",
    "pages": "12-14"
   },
   {
-   "id": "sec-011-32-push-forward",
+   "id": "sec-012-32-push-forward",
    "title": "Push forward",
    "pages": "14-14"
   },
   {
-   "id": "sec-012-33-chevalley-eilenberg-complex",
+   "id": "sec-013-33-chevalley-eilenberg-complex",
    "title": "Chevalley-Eilenberg complex",
    "pages": "14-15"
   },
   {
-   "id": "sec-013-34-equivariant-matrix-factorizations",
+   "id": "sec-014-34-equivariant-matrix-factorizations",
    "title": "Equivariant matrix factorizations",
    "pages": "15-16"
   },
   {
-   "id": "sec-014-35-extension-lemmas",
+   "id": "sec-015-35-extension-lemmas",
    "title": "Extension lemmas",
    "pages": "16-18"
   },
   {
-   "id": "sec-015-36-lifting-lemma-for-morphisms",
+   "id": "sec-016-36-lifting-lemma-for-morphisms",
    "title": "Lifting lemma for morphisms",
    "pages": "18-20"
   },
   {
-   "id": "sec-016-37-equivariant-push-forward",
+   "id": "sec-017-37-equivariant-push-forward",
    "title": "Equivariant push-forward",
    "pages": "20-20"
   },
   {
-   "id": "sec-017-4-convolution-algebra-definition",
+   "id": "sec-018-4-convolution-algebra-definition",
    "title": "Convolution algebra: definition",
    "pages": "20-20"
   },
   {
-   "id": "sec-018-41-category-of-b2-equivariant-matrix-factorizati",
+   "id": "sec-019-41-category-of-b2-equivariant-matrix-factorizati",
    "title": "Category of B2-equivariant matrix factorizations",
    "pages": "20-21"
   },
   {
-   "id": "sec-019-42-potential-and-main-category-of-matrix-factori",
+   "id": "sec-020-42-potential-and-main-category-of-matrix-factori",
    "title": "Potential and main category of matrix factorizations",
-   "pages": "21-21"
-  },
-  {
-   "id": "sec-020-43-convolution",
-   "title": "Convolution",
    "pages": "21-22"
   },
   {
-   "id": "sec-021-44-convolution-of-the-g-slice",
+   "id": "sec-021-43-convolution",
+   "title": "Convolution",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-022-44-convolution-of-the-g-slice",
    "title": "Convolution of the G-slice",
    "pages": "22-23"
   },
   {
-   "id": "sec-022-5-knorrer-reduction",
+   "id": "sec-023-5-knorrer-reduction",
    "title": "Knorrer reduction",
    "pages": "23-23"
   },
   {
-   "id": "sec-023-51-construction-of-the-knorrer-functor",
+   "id": "sec-024-51-construction-of-the-knorrer-functor",
    "title": "Construction of the Knorrer functor",
    "pages": "23-25"
   },
   {
-   "id": "sec-024-52-properties-of-the-knorrer-functor",
+   "id": "sec-025-52-properties-of-the-knorrer-functor",
    "title": "Properties of the Knorrer functor",
    "pages": "25-26"
   },
   {
-   "id": "sec-025-53-convolution-on-the-reduced-space",
+   "id": "sec-026-53-convolution-on-the-reduced-space",
    "title": "Convolution on the reduced space",
    "pages": "26-26"
   },
   {
-   "id": "sec-026-54-reduced-vs-non-reduced-convolution",
+   "id": "sec-027-54-reduced-vs-non-reduced-convolution",
    "title": "Reduced vs. non-reduced convolution",
    "pages": "26-29"
   },
   {
-   "id": "sec-027-55-row-operations-for-generalized-equivariant-ko",
+   "id": "sec-028-55-row-operations-for-generalized-equivariant-ko",
    "title": "Row operations for generalized equivariant Koszul matrix factorizations",
    "pages": "29-30"
   },
   {
-   "id": "sec-028-56-proof-of-proposition-54",
+   "id": "sec-029-56-proof-of-proposition-54",
    "title": "Proof of proposition 5.4",
    "pages": "30-31"
   },
   {
-   "id": "sec-029-6-induction-functors",
+   "id": "sec-030-6-induction-functors",
    "title": "Induction functors",
    "pages": "31-31"
   },
   {
-   "id": "sec-030-61-construction-of-the-induction-functor",
+   "id": "sec-031-61-construction-of-the-induction-functor",
    "title": "Construction of the induction functor",
    "pages": "31-32"
   },
   {
-   "id": "sec-031-62-computational-aspects-of-push-forward",
+   "id": "sec-032-62-computational-aspects-of-push-forward",
    "title": "Computational aspects of push-forward",
    "pages": "32-33"
   },
   {
-   "id": "sec-032-63-induction-functor-in-reduced-case",
+   "id": "sec-033-63-induction-functor-in-reduced-case",
    "title": "Induction functor in reduced case",
    "pages": "33-34"
   },
   {
-   "id": "sec-033-64-proof-of-proposition-61",
+   "id": "sec-034-64-proof-of-proposition-61",
    "title": "Proof of proposition 6.1",
    "pages": "34-35"
   },
   {
-   "id": "sec-034-65-proof-of-proposition-62",
+   "id": "sec-035-65-proof-of-proposition-62",
    "title": "Proof of proposition 6.2",
-   "pages": "35-38"
+   "pages": "35-37"
   },
   {
-   "id": "sec-035-7-inclusion-functor-and-the-generators-for-the-b",
+   "id": "sec-036-66-transitivity-of-induction",
+   "title": "Transitivity of induction",
+   "pages": "37-38"
+  },
+  {
+   "id": "sec-037-7-inclusion-functor-and-the-generators-for-the-b",
    "title": "Inclusion functor and the generators for the braid group",
    "pages": "38-38"
   },
   {
-   "id": "sec-036-71-unit-in-convolution-algebra",
+   "id": "sec-038-71-unit-in-convolution-algebra",
    "title": "Unit in convolution algebra",
    "pages": "38-40"
   },
   {
-   "id": "sec-037-72-inclusion-functor",
+   "id": "sec-039-72-inclusion-functor",
    "title": "Inclusion functor",
    "pages": "40-41"
   },
   {
-   "id": "sec-038-73-generators-of-the-braid-group",
+   "id": "sec-040-73-generators-of-the-braid-group",
    "title": "Generators of the braid group",
    "pages": "41-42"
   },
   {
-   "id": "sec-039-8-general-properties-of-convolution-algebra",
+   "id": "sec-041-8-general-properties-of-convolution-algebra",
    "title": "General properties of convolution algebra",
    "pages": "42-42"
   },
   {
-   "id": "sec-040-81-auxiliary-lemma",
+   "id": "sec-042-81-auxiliary-lemma",
    "title": "Auxiliary Lemma",
    "pages": "42-45"
   },
   {
-   "id": "sec-041-82-reduced-case-version-of-the-auxiliary-lemma",
+   "id": "sec-043-82-reduced-case-version-of-the-auxiliary-lemma",
    "title": "Reduced case version of the auxiliary lemma",
    "pages": "45-46"
   },
   {
-   "id": "sec-042-83-reduced-convolution-with-rank-1-matrix-factor",
+   "id": "sec-044-83-reduced-convolution-with-rank-1-matrix-factor",
    "title": "Reduced convolution with rank 1 matrix factorizations",
    "pages": "46-47"
   },
   {
-   "id": "sec-043-84-involution",
+   "id": "sec-045-84-involution",
    "title": "Involution",
    "pages": "47-47"
   },
   {
-   "id": "sec-044-9-two-strands",
+   "id": "sec-046-9-two-strands",
    "title": "Two strands",
    "pages": "47-47"
   },
   {
-   "id": "sec-045-91-general-method-of-the-proof",
+   "id": "sec-047-91-general-method-of-the-proof",
    "title": "General method of the proof",
    "pages": "47-50"
   },
   {
-   "id": "sec-046-92-equivariant-structure-for-the-generators",
+   "id": "sec-048-92-equivariant-structure-for-the-generators",
    "title": "Equivariant structure for the generators",
    "pages": "50-51"
   },
   {
-   "id": "sec-047-93-properties-of-the-basic-matrix-factorizations",
+   "id": "sec-049-93-properties-of-the-basic-matrix-factorizations",
    "title": "Properties of the basic matrix factorizations",
    "pages": "51-51"
   },
   {
-   "id": "sec-048-94-inversion-of-the-elementary-positive-braid",
+   "id": "sec-050-94-inversion-of-the-elementary-positive-braid",
    "title": "Inversion of the elementary positive braid",
    "pages": "51-52"
   },
   {
-   "id": "sec-049-95-proof-of-theorem-96",
+   "id": "sec-051-95-proof-of-theorem-96",
    "title": "Proof of theorem 9.6",
    "pages": "52-54"
   },
   {
-   "id": "sec-050-10-three-strands-and-two-crossings",
+   "id": "sec-052-10-three-strands-and-two-crossings",
    "title": "Three strands and two crossings",
    "pages": "54-54"
   },
   {
-   "id": "sec-051-101-a-geometric-interpretation-for-the-matrix-fa",
+   "id": "sec-053-101-a-geometric-interpretation-for-the-matrix-fa",
    "title": "A geometric interpretation for the matrix factorization",
    "pages": "54-56"
   },
   {
-   "id": "sec-052-102-proof-of-lemma-104",
+   "id": "sec-054-102-proof-of-lemma-104",
    "title": "Proof of Lemma 10.4",
    "pages": "56-59"
   },
   {
-   "id": "sec-053-11-three-strands-three-crossings",
+   "id": "sec-055-11-three-strands-three-crossings",
    "title": "Three strands three crossings",
    "pages": "59-59"
   },
   {
-   "id": "sec-054-112-resolution-for-i121",
+   "id": "sec-056-111-involution-d-and-the-ideals-i121-and-i212",
+   "title": "Involution D and the ideals I121 and I212",
+   "pages": "59-59"
+  },
+  {
+   "id": "sec-057-112-resolution-for-i121",
    "title": "Resolution for I121",
    "pages": "59-61"
   },
   {
-   "id": "sec-055-113-convolution",
+   "id": "sec-058-113-convolution",
    "title": "Convolution",
    "pages": "61-66"
   },
   {
-   "id": "sec-056-114-end-of-the-proof-of-the-theorem-76",
+   "id": "sec-059-114-end-of-the-proof-of-the-theorem-76",
    "title": "End of the proof of the theorem 7.6",
    "pages": "66-66"
   },
   {
-   "id": "sec-057-12-sheaves-on-the-hilbert-scheme",
+   "id": "sec-060-12-sheaves-on-the-hilbert-scheme",
    "title": "Sheaves on the Hilbert scheme",
    "pages": "66-67"
   },
   {
-   "id": "sec-058-122-braid-complex",
+   "id": "sec-061-121-nested-hilbert-scheme-definitions-and-notati",
+   "title": "Nested Hilbert scheme: definitions and notations",
+   "pages": "67-67"
+  },
+  {
+   "id": "sec-062-122-braid-complex",
    "title": "Braid complex",
    "pages": "67-68"
   },
   {
-   "id": "sec-059-123-geometry-of-the-critical-locus",
+   "id": "sec-063-123-geometry-of-the-critical-locus",
    "title": "Geometry of the critical locus",
    "pages": "68-69"
   },
   {
-   "id": "sec-060-124-stability-conditions-on-critical-locus",
+   "id": "sec-064-124-stability-conditions-on-critical-locus",
    "title": "Stability conditions on critical locus",
    "pages": "69-69"
   },
   {
-   "id": "sec-061-125-stability-conditions-for-the-matrix-factoriz",
+   "id": "sec-065-125-stability-conditions-for-the-matrix-factoriz",
    "title": "Stability conditions for the matrix factorizations.",
    "pages": "69-71"
   },
   {
-   "id": "sec-062-127-conjugacy-class-invariant",
+   "id": "sec-066-127-conjugacy-class-invariant",
    "title": "Conjugacy class invariant",
    "pages": "71-72"
   },
   {
-   "id": "sec-063-13-link-invariant",
+   "id": "sec-067-13-link-invariant",
    "title": "Link invariant",
-   "pages": "72-75"
+   "pages": "72-72"
   },
   {
-   "id": "sec-064-133-proof-of-theorem-133",
+   "id": "sec-068-131-geometry-of-hilbfree1n",
+   "title": "Geometry of Hilbfree1,n",
+   "pages": "72-74"
+  },
+  {
+   "id": "sec-069-132-braid-complex-on-hilbfree1n",
+   "title": "Braid complex on Hilbfree1,n",
+   "pages": "74-75"
+  },
+  {
+   "id": "sec-070-133-proof-of-theorem-133",
    "title": "Proof of theorem 13.3",
    "pages": "75-78"
   },
   {
-   "id": "sec-065-14-connections-with-other-knot-invariants",
+   "id": "sec-071-14-connections-with-other-knot-invariants",
    "title": "Connections with other knot invariants",
    "pages": "78-78"
   },
   {
-   "id": "sec-066-141-unknot",
+   "id": "sec-072-141-unknot",
    "title": "Unknot",
-   "pages": "78-81"
+   "pages": "78-78"
   },
   {
-   "id": "sec-067-list-of-symbols",
+   "id": "sec-073-142-homfly-pt-polynomial-specialization",
+   "title": "HOMFLY-PT polynomial specialization",
+   "pages": "78-80"
+  },
+  {
+   "id": "sec-074-143-glmn-homology-differential",
+   "title": "gl(m|n)-homology differential",
+   "pages": "80-81"
+  },
+  {
+   "id": "sec-075-list-of-symbols",
    "title": "List of Symbols",
    "pages": "81-82"
   },
   {
-   "id": "sec-068-references",
+   "id": "sec-076-references",
    "title": "References",
    "pages": "82-83"
   }
@@ -359,8 +404,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

@@ -1,0 +1,101 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "1104248094",
+ "source": {
+  "structure_sha256": "c1fdb4791afcad3b5faa41fdcd9bed0cd23c88123a851af0f17de9857bd9c7a2",
+  "file": "1104248094.pdf"
+ },
+ "provenance": {
+  "title": "Commun. Math. Phys. 140, 481-521 (1991) Mathematical Physics \u00a9 Springer-Verlag 1991 Hochschild and Cyclic Homology of Quantum Groups",
+  "authors": "Ping Feng1'* and Boris Tsygan2'**",
+  "arxiv": null,
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 5,
+  "by_kind": {
+   "recommendation": 5
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We should mention the work of S.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-4",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "This should also be obvious from the geometric interpretation of the actions \u03c3 and \u03c30.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-006-51-formal-functions.md",
+   "section_title": "Formal Functions",
+   "pages": "21-25",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In general one should write MA in the place of TA.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-006-51-formal-functions.md",
+   "section_title": "Formal Functions",
+   "pages": "21-25",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The Hochschild homology may be considered as the E 1 term of the spectral sequence associated with the double complex for the cyclic homology.",
+   "strength": "may",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-008-61-quantum-formal-groups.md",
+   "section_title": "Quantum Formal Groups",
+   "pages": "26-26",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "As the philosophy of quantization goes, everything should be determined by its quasiclassical limit, in other words, nothing new happens beyond the first term in the deformation.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-009-62-quantum-algebraic-groups.md",
+   "section_title": "Quantum Algebraic Groups",
+   "pages": "26-36",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

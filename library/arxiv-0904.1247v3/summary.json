@@ -2,125 +2,170 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-0904.1247v3",
  "source_sha256": "4a6f4dee6af66dac",
- "brief": "THE CHARACTER THEORY OF A COMPLEX GROUP — W e apply the ideas of derived algebraic geometry and topolog ical ﬁeld theory to the representation theory of reductive groups.",
- "extended": "**THE CHARACTER THEORY OF A COMPLEX GROUP**\n\n*DAVID BEN-ZVI AND DAVID NADLER*\n\n44 pp, 23 sections.\n\n**Abstract.** W e apply the ideas of derived algebraic geometry and topolog ical ﬁeld theory to the representation theory of reductive groups. Our focus is the Hecke category of Borel-equivariant D-modules on the ﬂag variety of a complex reductive group G (equivalently, the category of Harish Chandra bimodules of trivial central character) and its mon odromic variant. The Hecke category is a categoriﬁed analogue of the ﬁnite Hecke algebra, which i s a ﬁnite-dimensional semi-simple symmetric Frobenius algebra. W e establish parallel proper ties of the Hecke category, showing it is a two-dualizable Calabi-Yau monoidal category, so that in pa rticular, its monoidal (Drinfeld) center and trace coincide. W e calculate that they are identiﬁed thr ough the Springer correspondence with Lusztig’s unipotent character sheaves.\n\n**Outline.** 1 Introduction; 1.1 Homotopical algebra of Hecke categories; 1.5 Acknowledgements; 2.1 -category basics; 2.3 Centers and traces; 3 Rigidity and dualizability; 3.1 Semi-rigid categories; 3.2 Transposes; 3.3 Bar constructions; 3.4 Dualizability; 4 Preliminaries on D-modules; 4.1 D-modules on schemes; 4.3 D-modules on stacks; 5 Integral transforms for D-modules; 6 Hecke categories and character sheaves; 6.2 Loop spaces and horocycle correspondences; 6.3 Character sheaves; 7 Monodromic variant\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.8: 1) (Theorems 3.18, 6.2, 6.3) The Hecke categories HG and ~HG are semi-rigid, and\n- Theorem 1.14: LetX1→Y denote a Deligne-Mumford stack over a scheme, and\n- Theorem 1.15: LetX1→Y =BG be a relative Deligne-Mumford\n- Theorem 1.17: Any semi-rigid category A∈Alg(1)(StC) is 2-dualizable.\n- Theorem 3.18: LetA∈Alg(StC) be a semi-rigid category. Then A is 2-dualizable.\n- Theorem 5.1: For a diagram X1 → Y ← X2 where X1,X 2 are stacks and Y a scheme, the",
+ "brief": "THE CHARACTER THEORY OF A COMPLEX GROUP — We apply the ideas of derived algebraic geometry and topological ﬁeld theory to the representation theory of reductive groups.",
+ "extended": "**THE CHARACTER THEORY OF A COMPLEX GROUP**\n\n*DAVID BEN-ZVI AND DAVID NADLER*\n\n44 pp, 32 sections.\n\n**Abstract.** We apply the ideas of derived algebraic geometry and topological ﬁeld theory to the representation theory of reductive groups. Our focus is the Hecke category of Borel-equivariant D-modules on the ﬂag variety of a complex reductive group G (equivalently, the category of Harish Chandra bimodules of trivial central character) and its monodromic variant. The Hecke category is a categoriﬁed analogue of the ﬁnite Hecke algebra, which is a ﬁnite-dimensional semi-simple symmetric Frobenius algebra. We establish parallel properties of the Hecke category, showing it is a two-dualizable Calabi-Yau monoidal category, so that in particular, its monoidal (Drinfeld) center and trace coincide. We calculate that they are identiﬁed through the Springer correspondence with Lusztig’s unipotent character sheaves.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Homotopical algebra of Hecke categories; 1.2 Functional analysis of D-module categories; 1.3 Topological field theory; 1.4 Further discussion; 1.5 Acknowledgements; 2 Preliminaries on -categories; 2.1 -category basics; 2.3 Centers and traces; 3 Rigidity and dualizability; 3.1 Semi-rigid categories; 3.2 Transposes; 3.3 Bar constructions; 3.4 Dualizability; 4 Preliminaries on D-modules; 4.1 D-modules on schemes; 4.2 Coherence, tensor product, and Verdier dua",
  "tokens": {
   "brief": 42,
-  "extended": 487
+  "extended": 356
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-3"
+   "pages": "2-3"
   },
   {
    "id": "sec-001-11-homotopical-algebra-of-hecke-categories",
    "title": "Homotopical algebra of Hecke categories",
-   "pages": "3-13"
+   "pages": "3-7"
   },
   {
-   "id": "sec-002-15-acknowledgements",
+   "id": "sec-002-12-functional-analysis-of-d-module-categories",
+   "title": "Functional analysis of D-module categories",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-003-13-topological-field-theory",
+   "title": "Topological field theory",
+   "pages": "9-12"
+  },
+  {
+   "id": "sec-004-14-further-discussion",
+   "title": "Further discussion",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-005-15-acknowledgements",
    "title": "Acknowledgements",
    "pages": "13-14"
   },
   {
-   "id": "sec-003-21--category-basics",
+   "id": "sec-006-2-preliminaries-on--categories",
+   "title": "Preliminaries on -categories",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-007-21--category-basics",
    "title": "-category basics",
    "pages": "14-18"
   },
   {
-   "id": "sec-004-23-centers-and-traces",
+   "id": "sec-008-23-centers-and-traces",
    "title": "Centers and traces",
    "pages": "18-20"
   },
   {
-   "id": "sec-005-3-rigidity-and-dualizability",
+   "id": "sec-009-3-rigidity-and-dualizability",
    "title": "Rigidity and dualizability",
    "pages": "20-20"
   },
   {
-   "id": "sec-006-31-semi-rigid-categories",
+   "id": "sec-010-31-semi-rigid-categories",
    "title": "Semi-rigid categories",
    "pages": "20-22"
   },
   {
-   "id": "sec-007-32-transposes",
+   "id": "sec-011-32-transposes",
    "title": "Transposes",
    "pages": "22-24"
   },
   {
-   "id": "sec-008-33-bar-constructions",
+   "id": "sec-012-33-bar-constructions",
    "title": "Bar constructions",
    "pages": "24-25"
   },
   {
-   "id": "sec-009-34-dualizability",
+   "id": "sec-013-34-dualizability",
    "title": "Dualizability",
    "pages": "25-27"
   },
   {
-   "id": "sec-010-4-preliminaries-on-d-modules",
+   "id": "sec-014-4-preliminaries-on-d-modules",
    "title": "Preliminaries on D-modules",
    "pages": "27-27"
   },
   {
-   "id": "sec-011-41-d-modules-on-schemes",
+   "id": "sec-015-41-d-modules-on-schemes",
    "title": "D-modules on schemes",
-   "pages": "27-29"
+   "pages": "27-28"
   },
   {
-   "id": "sec-012-43-d-modules-on-stacks",
+   "id": "sec-016-42-coherence-tensor-product-and-verdier-duality",
+   "title": "Coherence, tensor product, and Verdier duality",
+   "pages": "28-29"
+  },
+  {
+   "id": "sec-017-43-d-modules-on-stacks",
    "title": "D-modules on stacks",
+   "pages": "29-29"
+  },
+  {
+   "id": "sec-018-44-more-on-coherence-tensor-product-and-verdier",
+   "title": "More on coherence, tensor product, and Verdier duality",
    "pages": "29-30"
   },
   {
-   "id": "sec-013-5-integral-transforms-for-d-modules",
+   "id": "sec-019-5-integral-transforms-for-d-modules",
    "title": "Integral transforms for D-modules",
-   "pages": "30-34"
+   "pages": "30-31"
   },
   {
-   "id": "sec-014-6-hecke-categories-and-character-sheaves",
+   "id": "sec-020-51-functoriality-over-schemes",
+   "title": "Functoriality over schemes",
+   "pages": "31-32"
+  },
+  {
+   "id": "sec-021-52-functoriality-over-classifying-stacks",
+   "title": "Functoriality over classifying stacks",
+   "pages": "32-34"
+  },
+  {
+   "id": "sec-022-6-hecke-categories-and-character-sheaves",
    "title": "Hecke categories and character sheaves",
    "pages": "34-38"
   },
   {
-   "id": "sec-015-62-loop-spaces-and-horocycle-correspondences",
+   "id": "sec-023-62-loop-spaces-and-horocycle-correspondences",
    "title": "Loop spaces and horocycle correspondences",
    "pages": "38-39"
   },
   {
-   "id": "sec-016-63-character-sheaves",
+   "id": "sec-024-63-character-sheaves",
    "title": "Character sheaves",
    "pages": "39-39"
   },
   {
-   "id": "sec-017-7-monodromic-variant",
+   "id": "sec-025-7-monodromic-variant",
    "title": "Monodromic variant",
-   "pages": "39-39"
-  },
-  {
-   "id": "sec-018-71-monodromic-d-modules",
-   "title": "Monodromic D-modules",
    "pages": "39-40"
   },
   {
-   "id": "sec-019-72-monodromic-hecke-categories",
+   "id": "sec-026-71-monodromic-d-modules",
+   "title": "Monodromic D-modules",
+   "pages": "40-40"
+  },
+  {
+   "id": "sec-027-72-monodromic-hecke-categories",
    "title": "Monodromic Hecke categories",
    "pages": "40-41"
   },
   {
-   "id": "sec-020-73-monodromic-hochschild-calculations",
+   "id": "sec-028-73-monodromic-hochschild-calculations",
    "title": "Monodromic Hochschild calculations",
    "pages": "41-42"
   },
   {
-   "id": "sec-021-74-character-sheaves-again",
+   "id": "sec-029-74-character-sheaves-again",
    "title": "Character sheaves again",
    "pages": "42-43"
   },
   {
-   "id": "sec-022-references",
+   "id": "sec-030-references",
    "title": "References",
    "pages": "43-44"
   }
@@ -129,8 +174,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

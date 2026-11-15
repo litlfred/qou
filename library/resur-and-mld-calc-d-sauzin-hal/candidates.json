@@ -1,66 +1,86 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "resur-and-mld-calc-d-sauzin-hal",
- "document_class": "math",
- "validated": true,
  "source": {
   "structure_sha256": "b33f24cc76102f330b4a4584b109dd290564aab1ceb7cd619b6ebcdfb5bd3e6e",
   "file": "Resur_and_Mld_Calc_D_SAUZIN_HAL.pdf"
  },
  "provenance": {
-  "title": "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not",
+  "title": "Resurgence and Mould Calculus",
   "authors": "The documents may come from teaching and research",
   "arxiv": null,
   "doi": null
  },
- "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "aspects": [
+  "requirements"
+ ],
  "summary": {
-  "candidates": 3,
+  "candidates": 4,
   "by_kind": {
-   "example": 2,
-   "theorem": 1
+   "recommendation": 4
   },
-  "formalization_candidates": 1
+  "formalization_candidates": 0
  },
  "candidates": [
   {
-   "kind": "example",
-   "source_kind": "example",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
    "number": null,
    "name": null,
-   "statement": "s of divergent simple \u2126-resurgent series. The",
-   "section_file": "sections/sec-000-introduction.md",
-   "section_title": "Introduction",
-   "pages": "2-4",
+   "statement": "We shall sometimes use the notations \u2018\u03c91\u2019 for a generator of \u2126and \u03c9k := k \u03c91, k \u2208Z (2) for the elements of \u2126.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-simple--resurgent-series.md",
+   "section_title": "Simple -resurgent series",
+   "pages": "3-4",
    "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   },
   {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "3",
-   "name": "[\u00b4Eca81]",
-   "statement": "For each\u03c9\u2208 \u2126+, the operator",
-   "section_file": "sections/sec-001-alien-operators-alien-derivations.md",
-   "section_title": "Alien operators. Alien derivations",
-   "pages": "4-6",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "example",
-   "source_kind": "example",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
    "number": null,
    "name": null,
-   "statement": "s are singular germs with a simple singularity,",
-   "section_file": "sections/sec-003-examples-from-mathematical-physics.md",
-   "section_title": "Examples from mathematical physics.",
+   "statement": "1), one must have cont\u03b3 b\u03d5(\u03c9 + \u03be) = a0 2\u03c0i \u03be + b\u03c7(\u03be)log \u03be 2\u03c0i + F(\u03be), (4) where a0 is a complex number and both functions b\u03c7 and F extend analytically through \u03be = 0.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-simple--resurgent-series.md",
+   "section_title": "Simple -resurgent series",
+   "pages": "3-4",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Thus, for \u03b3 and \u03c9 as above, we can use the formula A \u03b3 \u03c9 e\u03d5 := B\u22121(a0 \u03b4 + b\u03c7) (9) to de\ufb01ne a C-linear operator A \u03b3 \u03c9 , which clearly maps eRs \u2126to itself (because \u2126is an additive group and b\u03c7, being the di\ufb00erence of two branches of b\u03d5 translated by \u03c9, must belong to bRs \u2126).",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-004-alien-operators-alien-derivations.md",
+   "section_title": "Alien operators. Alien derivations",
+   "pages": "4-5",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Su\ufb03ce it to say that eR is an algebra containing monomials like eI\u03c3 := z\u2212\u03c3 or eJ\u03c3 := \u2212z\u2212\u03c3 log z, to be viewed as inverse Borel transforms of the singularities represented by \u2228I\u03c3 := g(\u03c3)\u03b6\u03c3\u22121, \u2228J\u03c3 := g(\u03c3)\u03b6\u03c3\u22121 log \u03b6 + g\u2032(\u03c3)\u03b6\u03c3\u22121, (51) where g(\u03c3) := 1 2\u03c0iei\u03c0\u03c3\u0393(1 \u2212\u03c3) for \u03c3 \u2208C \u2212Z>0 (the case \u03c3 \u2208Z>0 must be treated separately), as well as z\u2212\u03c3(log z)m for any m \u2208Z>0.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-011-relaxing-the-constraint-on-the-nature-of-singula.md",
+   "section_title": "Relaxing the constraint on the nature of singularities.",
    "pages": "9-11",
    "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   }
  ]
 }

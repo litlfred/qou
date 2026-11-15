@@ -8,7 +8,7 @@
   "pages": 14,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:25Z",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -195,22 +195,22 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 1,
-   "n_chars": 648,
-   "n_words": 93,
+   "page_end": 2,
+   "n_chars": 954,
+   "n_words": 133,
    "label_start": null,
-   "label_end": null
+   "label_end": "1"
   },
   {
    "id": "sec-000-on-the-monodromy-of-the-hitchin-connection",
    "number": null,
    "title": "ON THE MONODROMY OF THE HITCHIN CONNECTION",
    "level": 1,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 14,
-   "n_chars": 35706,
-   "n_words": 6667,
-   "label_start": null,
+   "n_chars": 35400,
+   "n_words": 6627,
+   "label_start": "1",
    "label_end": "13"
   }
  ],
@@ -229,6 +229,7 @@
    "items": []
   },
   "sections": 2,
-  "chars_total": 36354
+  "chars_total": 36354,
+  "furniture_lines_stripped": 0
  }
 }

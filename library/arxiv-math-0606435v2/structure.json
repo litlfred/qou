@@ -8,7 +8,7 @@
   "pages": 68,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:24Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -26,7 +26,7 @@
   "title_lines": [
    "PROPERTIES OF CLOSED 3-BRAIDS"
   ],
-  "abstract": "We show that 3-braid links with given (non-zero) Alexander or Jones polynomial are \ufb01nitely many, and can be effectively determined. We classify among closed 3-braids strongly quasi-positive and \ufb01bered ones, and show that 3-braid links have a unique incompressible Seifert surface. We also classify the positive braid words with Morton-Williams-Franks bound 3 and show that closed positive braids of braid index 3 are closed positive 3-braids. For closed braids on more strings, we study the alternating links occurring. In particular we classify those of braid index 4, and show that their Morton-Williams-Franks inequality is exact. Finally, we use the Burau representation to obtain new braid index criteria, including an ef\ufb01cient 4-braid test.",
+  "abstract": "We show that 3-braid links with given (non-zero) Alexander or Jones polynomial are ﬁnitely many, and can be effectively determined. We classify among closed 3-braids strongly quasi-positive and ﬁbered ones, and show that 3-braid links have a unique incompressible Seifert surface. We also classify the positive braid words with Morton-Williams-Franks bound 3 and show that closed positive braids of braid index 3 are closed positive 3-braids. For closed braids on more strings, we study the alternating links occurring. In particular we classify those of braid index 4, and show that their Morton-Williams-Franks inequality is exact. Finally, we use the Burau representation to obtain new braid index criteria, including an efﬁcient 4-braid test.",
   "docinfo": {
    "Title": "arXiv:math/0606435v2  [math.GT]  10 Oct 2007",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.08",
@@ -610,7 +610,7 @@
   {
    "kind": "figure",
    "number": "5",
-   "title": "The standard diagram of the knot 62 and its Gau\u00df diagram",
+   "title": "The standard diagram of the knot 62 and its Gauß diagram",
    "page": 10,
    "confidence": 0.6,
    "evidence": [
@@ -632,7 +632,7 @@
   {
    "kind": "table",
    "number": "3",
-   "title": "The weights of the traces contributing to the \u03bb-coef\ufb01cients of X for a 4-braid",
+   "title": "The weights of the traces contributing to the λ-coefﬁcients of X for a 4-braid",
    "page": 52,
    "confidence": 0.7,
    "evidence": [
@@ -1305,8 +1305,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 4,
-   "n_chars": 9910,
-   "n_words": 2430,
+   "n_chars": 9906,
+   "n_words": 2428,
    "label_start": "1",
    "label_end": "4"
   },
@@ -1317,429 +1317,489 @@
    "level": 1,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 6049,
-   "n_words": 963,
+   "n_chars": 5842,
+   "n_words": 935,
    "label_start": "4",
    "label_end": "5"
   },
   {
-   "id": "sec-001-21-links-and-link-diagrams",
+   "id": "sec-001-2-preliminaries-basic-definitions-and-convention",
+   "number": "2",
+   "title": "Preliminaries, basic definitions and conventions",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 211,
+   "n_words": 27,
+   "label_start": "5",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-002-21-links-and-link-diagrams",
    "number": "2.1",
    "title": "Links and link diagrams",
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 2476,
-   "n_words": 475,
+   "n_chars": 2495,
+   "n_words": 478,
    "label_start": "5",
    "label_end": "6"
   },
   {
-   "id": "sec-002-22-polynomial-link-invariants",
+   "id": "sec-003-22-polynomial-link-invariants",
    "number": "2.2",
    "title": "Polynomial link invariants",
    "level": 2,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 2455,
-   "n_words": 450,
+   "n_chars": 2478,
+   "n_words": 452,
    "label_start": "6",
    "label_end": "7"
   },
   {
-   "id": "sec-003-23-semiadequacy",
+   "id": "sec-004-23-semiadequacy",
    "number": "2.3",
    "title": "Semiadequacy",
    "level": 2,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 3366,
+   "n_chars": 3374,
    "n_words": 608,
    "label_start": "7",
    "label_end": "8"
   },
   {
-   "id": "sec-004-24-braids-and-braid-words",
+   "id": "sec-005-24-braids-and-braid-words",
    "number": "2.4",
    "title": "Braids and braid words",
    "level": 2,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 3292,
-   "n_words": 617,
+   "n_chars": 3311,
+   "n_words": 620,
    "label_start": "8",
    "label_end": "9"
   },
   {
-   "id": "sec-005-25-braid-representations-of-links",
+   "id": "sec-006-25-braid-representations-of-links",
    "number": "2.5",
    "title": "Braid representations of links",
    "level": 2,
    "page_start": 9,
-   "page_end": 11,
-   "n_chars": 6349,
-   "n_words": 1150,
+   "page_end": 10,
+   "n_chars": 4817,
+   "n_words": 868,
    "label_start": "9",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-007-26-gau-sum-invariants",
+   "number": "2.6",
+   "title": "Gau sum invariants",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 1325,
+   "n_words": 246,
+   "label_start": "10",
    "label_end": "11"
   },
   {
-   "id": "sec-006-31-strongly-quasi-positive-links-among-links-of",
+   "id": "sec-008-3-xus-form-and-seifert-surfaces",
+   "number": "3",
+   "title": "Xu's form and Seifert surfaces",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 180,
+   "n_words": 31,
+   "label_start": "11",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-009-31-strongly-quasi-positive-links-among-links-of",
    "number": "3.1",
    "title": "Strongly quasi-positive links among links of braid index 3",
    "level": 2,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 2745,
-   "n_words": 529,
+   "n_chars": 2799,
+   "n_words": 537,
    "label_start": "11",
    "label_end": "12"
   },
   {
-   "id": "sec-007-32-uniqueness-of-minimal-genus-seifert-surfaces",
+   "id": "sec-010-32-uniqueness-of-minimal-genus-seifert-surfaces",
    "number": "3.2",
    "title": "Uniqueness of minimal genus Seifert surfaces",
    "level": 2,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 4271,
-   "n_words": 739,
+   "n_chars": 4312,
+   "n_words": 744,
    "label_start": "12",
    "label_end": "13"
   },
   {
-   "id": "sec-008-33-fiberedness",
+   "id": "sec-011-33-fiberedness",
    "number": "3.3",
    "title": "Fiberedness",
    "level": 2,
    "page_start": 13,
-   "page_end": 14,
-   "n_chars": 5355,
-   "n_words": 1113,
-   "label_start": "13",
-   "label_end": "14"
-  },
-  {
-   "id": "sec-009-41-alexander-polynomial",
-   "number": "4.1",
-   "title": "Alexander polynomial",
-   "level": 2,
-   "page_start": 14,
    "page_end": 15,
-   "n_chars": 1388,
-   "n_words": 214,
-   "label_start": "14",
+   "n_chars": 6867,
+   "n_words": 1345,
+   "label_start": "13",
    "label_end": "15"
   },
   {
-   "id": "sec-010-4-polynomial-invariants",
+   "id": "sec-012-4-polynomial-invariants",
    "number": "4",
    "title": "Polynomial invariants",
    "level": 1,
    "page_start": 15,
+   "page_end": 15,
+   "n_chars": 21,
+   "n_words": 2,
+   "label_start": "15",
+   "label_end": "15"
+  },
+  {
+   "id": "sec-013-41-alexander-polynomial",
+   "number": "4.1",
+   "title": "Alexander polynomial",
+   "level": 2,
+   "page_start": 15,
    "page_end": 17,
-   "n_chars": 6960,
-   "n_words": 1246,
+   "n_chars": 6951,
+   "n_words": 1244,
    "label_start": "15",
    "label_end": "17"
   },
   {
-   "id": "sec-011-42-jones-polynomial",
+   "id": "sec-014-42-jones-polynomial",
    "number": "4.2",
    "title": "Jones polynomial",
    "level": 2,
    "page_start": 17,
    "page_end": 20,
-   "n_chars": 11691,
-   "n_words": 2054,
+   "n_chars": 11703,
+   "n_words": 2055,
    "label_start": "17",
    "label_end": "20"
   },
   {
-   "id": "sec-012-43-q-polynomial",
+   "id": "sec-015-43-q-polynomial",
    "number": "4.3",
    "title": "Q polynomial",
    "level": 2,
    "page_start": 20,
    "page_end": 26,
-   "n_chars": 17684,
-   "n_words": 3378,
+   "n_chars": 17687,
+   "n_words": 3375,
    "label_start": "20",
    "label_end": "26"
   },
   {
-   "id": "sec-013-5-positivity-of-3-braid-links",
+   "id": "sec-016-5-positivity-of-3-braid-links",
    "number": "5",
    "title": "Positivity of 3-braid links",
    "level": 1,
    "page_start": 26,
    "page_end": 26,
-   "n_chars": 35,
-   "n_words": 6,
+   "n_chars": 58,
+   "n_words": 9,
    "label_start": "26",
    "label_end": "26"
   },
   {
-   "id": "sec-014-51-positive-braid-links",
+   "id": "sec-017-51-positive-braid-links",
    "number": "5.1",
    "title": "Positive braid links",
    "level": 2,
    "page_start": 26,
    "page_end": 26,
-   "n_chars": 6,
-   "n_words": 1,
+   "n_chars": 20,
+   "n_words": 3,
    "label_start": "26",
    "label_end": "26"
   },
   {
-   "id": "sec-015-511-the-morton-williams-franks-bound",
+   "id": "sec-018-511-the-morton-williams-franks-bound",
    "number": "5.1.1",
    "title": "The Morton-Williams-Franks bound",
    "level": 3,
    "page_start": 26,
    "page_end": 27,
-   "n_chars": 4359,
-   "n_words": 761,
+   "n_chars": 4385,
+   "n_words": 763,
    "label_start": "26",
    "label_end": "27"
   },
   {
-   "id": "sec-016-512-maximal-subwords",
+   "id": "sec-019-512-maximal-subwords",
    "number": "5.1.2",
    "title": "Maximal subwords",
    "level": 3,
    "page_start": 27,
-   "page_end": 29,
-   "n_chars": 7257,
-   "n_words": 1295,
+   "page_end": 28,
+   "n_chars": 4489,
+   "n_words": 808,
    "label_start": "27",
+   "label_end": "28"
+  },
+  {
+   "id": "sec-020-513-the-proof-of-theorem-thmwf-initial-simplific",
+   "number": "5.1.3",
+   "title": "The proof of Theorem thmwf: Initial simplifications",
+   "level": 3,
+   "page_start": 28,
+   "page_end": 29,
+   "n_chars": 2735,
+   "n_words": 482,
+   "label_start": "28",
    "label_end": "29"
   },
   {
-   "id": "sec-017-514-two-mountains",
+   "id": "sec-021-514-two-mountains",
    "number": "5.1.4",
    "title": "Two mountains",
    "level": 3,
    "page_start": 29,
    "page_end": 31,
-   "n_chars": 7197,
-   "n_words": 1228,
+   "n_chars": 7185,
+   "n_words": 1226,
    "label_start": "29",
    "label_end": "31"
   },
   {
-   "id": "sec-018-515-more-than-two-mountains",
+   "id": "sec-022-515-more-than-two-mountains",
    "number": "5.1.5",
    "title": "More than two mountains",
    "level": 3,
    "page_start": 31,
    "page_end": 33,
-   "n_chars": 4808,
-   "n_words": 755,
+   "n_chars": 4825,
+   "n_words": 758,
    "label_start": "31",
    "label_end": "33"
   },
   {
-   "id": "sec-019-516-4-braids",
+   "id": "sec-023-516-4-braids",
    "number": "5.1.6",
    "title": "4-braids",
    "level": 3,
    "page_start": 33,
    "page_end": 35,
-   "n_chars": 5382,
+   "n_chars": 5387,
    "n_words": 900,
    "label_start": "33",
    "label_end": "35"
   },
   {
-   "id": "sec-020-52-positive-links",
+   "id": "sec-024-52-positive-links",
    "number": "5.2",
    "title": "Positive links",
    "level": 2,
    "page_start": 35,
    "page_end": 38,
-   "n_chars": 10705,
+   "n_chars": 10716,
    "n_words": 2088,
    "label_start": "35",
    "label_end": "38"
   },
   {
-   "id": "sec-021-6-studying-alternating-links-by-braid-index",
+   "id": "sec-025-6-studying-alternating-links-by-braid-index",
    "number": "6",
    "title": "Studying alternating links by braid index",
    "level": 1,
    "page_start": 38,
    "page_end": 42,
-   "n_chars": 14596,
-   "n_words": 2575,
+   "n_chars": 14636,
+   "n_words": 2580,
    "label_start": "38",
    "label_end": "42"
   },
   {
-   "id": "sec-022-7-applications-of-the-representation-theory",
+   "id": "sec-026-7-applications-of-the-representation-theory",
    "number": "7",
    "title": "Applications of the representation theory",
    "level": 1,
    "page_start": 42,
    "page_end": 42,
-   "n_chars": 285,
-   "n_words": 45,
+   "n_chars": 322,
+   "n_words": 49,
    "label_start": "42",
    "label_end": "42"
   },
   {
-   "id": "sec-023-71-the-jones-conjecture",
+   "id": "sec-027-71-the-jones-conjecture",
    "number": "7.1",
    "title": "The Jones conjecture",
    "level": 2,
    "page_start": 42,
    "page_end": 48,
-   "n_chars": 17732,
-   "n_words": 3466,
+   "n_chars": 17748,
+   "n_words": 3468,
    "label_start": "42",
    "label_end": "48"
   },
   {
-   "id": "sec-024-72-unitarity-of-the-burau-representation",
+   "id": "sec-028-72-unitarity-of-the-burau-representation",
    "number": "7.2",
    "title": "Unitarity of the Burau representation",
    "level": 2,
    "page_start": 48,
    "page_end": 50,
-   "n_chars": 3728,
-   "n_words": 688,
+   "n_chars": 3759,
+   "n_words": 691,
    "label_start": "48",
    "label_end": "50"
   },
   {
-   "id": "sec-025-73-norm-estimates",
+   "id": "sec-029-73-norm-estimates",
    "number": "7.3",
    "title": "Norm estimates",
    "level": 2,
    "page_start": 50,
    "page_end": 52,
-   "n_chars": 5661,
-   "n_words": 1098,
+   "n_chars": 5670,
+   "n_words": 1099,
    "label_start": "50",
    "label_end": "52"
   },
   {
-   "id": "sec-026-74-skein-polynomial",
+   "id": "sec-030-74-skein-polynomial",
    "number": "7.4",
    "title": "Skein polynomial",
    "level": 2,
    "page_start": 52,
    "page_end": 53,
-   "n_chars": 2091,
-   "n_words": 395,
+   "n_chars": 2087,
+   "n_words": 394,
    "label_start": "52",
    "label_end": "53"
   },
   {
-   "id": "sec-027-75-recovering-the-burau-trace",
+   "id": "sec-031-75-recovering-the-burau-trace",
    "number": "7.5",
    "title": "Recovering the Burau trace",
    "level": 2,
    "page_start": 53,
    "page_end": 53,
-   "n_chars": 2875,
-   "n_words": 504,
+   "n_chars": 2895,
+   "n_words": 507,
    "label_start": "53",
    "label_end": "53"
   },
   {
-   "id": "sec-028-751-conditions-on-the-eigenvalues",
+   "id": "sec-032-751-conditions-on-the-eigenvalues",
    "number": "7.5.1",
    "title": "Conditions on the eigenvalues",
    "level": 3,
    "page_start": 53,
    "page_end": 55,
-   "n_chars": 3181,
-   "n_words": 641,
+   "n_chars": 3204,
+   "n_words": 644,
    "label_start": "53",
    "label_end": "55"
   },
   {
-   "id": "sec-029-752-applications-and-examples",
+   "id": "sec-033-752-applications-and-examples",
    "number": "7.5.2",
    "title": "Applications and examples",
    "level": 3,
    "page_start": 55,
    "page_end": 56,
-   "n_chars": 3242,
-   "n_words": 565,
+   "n_chars": 3263,
+   "n_words": 567,
    "label_start": "55",
    "label_end": "56"
   },
   {
-   "id": "sec-030-76-mahler-measures",
+   "id": "sec-034-76-mahler-measures",
    "number": "7.6",
    "title": "Mahler measures",
    "level": 2,
    "page_start": 56,
    "page_end": 56,
-   "n_chars": 6,
-   "n_words": 1,
+   "n_chars": 15,
+   "n_words": 2,
    "label_start": "56",
    "label_end": "56"
   },
   {
-   "id": "sec-031-761-3-braids",
+   "id": "sec-035-761-3-braids",
    "number": "7.6.1",
    "title": "3-braids",
    "level": 3,
    "page_start": 56,
    "page_end": 58,
-   "n_chars": 6025,
+   "n_chars": 6027,
    "n_words": 1176,
    "label_start": "56",
    "label_end": "58"
   },
   {
-   "id": "sec-032-762-skein-polynomial-and-generalized-twisting",
+   "id": "sec-036-762-skein-polynomial-and-generalized-twisting",
    "number": "7.6.2",
    "title": "Skein polynomial and generalized twisting",
    "level": 3,
    "page_start": 58,
    "page_end": 60,
-   "n_chars": 4439,
-   "n_words": 835,
+   "n_chars": 4474,
+   "n_words": 838,
    "label_start": "58",
    "label_end": "60"
   },
   {
-   "id": "sec-033-77-knots-with-unsharp-mwf-inequality",
+   "id": "sec-037-77-knots-with-unsharp-mwf-inequality",
    "number": "7.7",
    "title": "Knots with unsharp MWF inequality",
    "level": 2,
    "page_start": 60,
    "page_end": 61,
-   "n_chars": 5807,
-   "n_words": 1025,
+   "n_chars": 5841,
+   "n_words": 1030,
    "label_start": "60",
    "label_end": "61"
   },
   {
-   "id": "sec-034-8-postliminaries",
+   "id": "sec-038-8-postliminaries",
    "number": "8",
    "title": "Postliminaries",
    "level": 1,
    "page_start": 61,
    "page_end": 61,
-   "n_chars": 4,
-   "n_words": 1,
+   "n_chars": 0,
+   "n_words": 0,
    "label_start": "61",
    "label_end": "61"
   },
   {
-   "id": "sec-035-81-fibered-dean-knots-hirasawa-murasugi",
+   "id": "sec-039-81-fibered-dean-knots-hirasawa-murasugi",
    "number": "8.1",
    "title": "Fibered Dean knots (Hirasawa-Murasugi)",
    "level": 2,
    "page_start": 61,
-   "page_end": 68,
-   "n_chars": 17927,
-   "n_words": 3044,
+   "page_end": 63,
+   "n_chars": 2366,
+   "n_words": 435,
    "label_start": "61",
+   "label_end": "63"
+  },
+  {
+   "id": "sec-040-82-a-decomposition-joint-with-hirasawa-ishiwata",
+   "number": "8.2",
+   "title": "$A$-decomposition (joint with Hirasawa-Ishiwata)",
+   "level": 2,
+   "page_start": 63,
+   "page_end": 68,
+   "n_chars": 15552,
+   "n_words": 2609,
+   "label_start": "63",
    "label_end": "68"
   }
  ],
@@ -1749,7 +1809,7 @@
   "toc_entries": 41,
   "toc_inferred_entries": 41,
   "toc_inferred_mean_confidence": 1.0,
-  "toc_inferred_empty_share": 0.111,
+  "toc_inferred_empty_share": 0.098,
   "toc_inferred_method": "latex",
   "figure_entries": 6,
   "figure_sequence_gaps": [
@@ -1784,13 +1844,30 @@
     ]
    }
   },
-  "sections": 37,
-  "chars_total": 211339,
+  "sections": 42,
+  "chars_total": 211938,
+  "furniture_lines_stripped": 9,
+  "headings_tidied": [
+   {
+    "title": "4-braids",
+    "page": 33,
+    "action": "rejoined",
+    "as": "4-braids",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "3-braids",
+    "page": 56,
+    "action": "rejoined",
+    "as": "3-braids",
+    "why": "opens in lower case"
+   }
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "mwf.tex",
    "tex_sections": 41,
-   "overlaid": 18,
+   "overlaid": 22,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1805,13 +1882,21 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.736,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.726,
+     "coverage_ratio": 0.997,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-001-21-links-and-link-diagrams",
+     "id": "sec-001-2-preliminaries-basic-definitions-and-convention",
+     "title": "Preliminaries, basic definitions and conventions",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.842,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-21-links-and-link-diagrams",
      "title": "Links and link diagrams",
      "prose_ratio": 0.951,
      "coverage_ratio": 0.961,
@@ -1819,18 +1904,18 @@
      "converter": "latex"
     },
     {
-     "id": "sec-002-22-polynomial-link-invariants",
+     "id": "sec-003-22-polynomial-link-invariants",
      "title": "Polynomial link invariants",
-     "prose_ratio": 0.465,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.47,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-003-23-semiadequacy",
+     "id": "sec-004-23-semiadequacy",
      "title": "Semiadequacy",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-004-24-braids-and-braid-words",
+     "id": "sec-005-24-braids-and-braid-words",
      "title": "Braids and braid words",
      "prose_ratio": 0.987,
      "coverage_ratio": 1.0,
@@ -1838,46 +1923,64 @@
      "converter": "latex"
     },
     {
-     "id": "sec-005-25-braid-representations-of-links",
+     "id": "sec-006-25-braid-representations-of-links",
      "title": "Braid representations of links",
-     "prose_ratio": 0.953,
-     "coverage_ratio": 0.97,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-006-31-strongly-quasi-positive-links-among-links-of",
-     "title": "Strongly quasi-positive links among links of braid index 3",
-     "prose_ratio": 0.93,
+     "prose_ratio": 0.951,
      "coverage_ratio": 0.961,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-007-32-uniqueness-of-minimal-genus-seifert-surfaces",
-     "title": "Uniqueness of minimal genus Seifert surfaces",
-     "prose_ratio": 0.558,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-007-26-gau-sum-invariants",
+     "title": "Gau sum invariants",
+     "prose_ratio": 0.964,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-008-33-fiberedness",
+     "id": "sec-008-3-xus-form-and-seifert-surfaces",
+     "title": "Xu's form and Seifert surfaces",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-31-strongly-quasi-positive-links-among-links-of",
+     "title": "Strongly quasi-positive links among links of braid index 3",
+     "prose_ratio": 0.93,
+     "coverage_ratio": 0.953,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-32-uniqueness-of-minimal-genus-seifert-surfaces",
+     "title": "Uniqueness of minimal genus Seifert surfaces",
+     "prose_ratio": 0.558,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-33-fiberedness",
      "title": "Fiberedness",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-009-41-alexander-polynomial",
-     "title": "Alexander polynomial",
-     "prose_ratio": 0.23,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-010-4-polynomial-invariants",
+     "id": "sec-012-4-polynomial-invariants",
      "title": "Polynomial invariants",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-011-42-jones-polynomial",
+     "id": "sec-013-41-alexander-polynomial",
+     "title": "Alexander polynomial",
+     "prose_ratio": 0.86,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-014-42-jones-polynomial",
      "title": "Jones polynomial",
      "prose_ratio": 0.964,
      "coverage_ratio": 0.863,
@@ -1885,7 +1988,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-012-43-q-polynomial",
+     "id": "sec-015-43-q-polynomial",
      "title": "Q polynomial",
      "prose_ratio": 0.988,
      "coverage_ratio": 0.984,
@@ -1893,19 +1996,19 @@
      "converter": "latex"
     },
     {
-     "id": "sec-013-5-positivity-of-3-braid-links",
+     "id": "sec-016-5-positivity-of-3-braid-links",
      "title": "Positivity of 3-braid links",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-014-51-positive-braid-links",
+     "id": "sec-017-51-positive-braid-links",
      "title": "Positive braid links",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-015-511-the-morton-williams-franks-bound",
+     "id": "sec-018-511-the-morton-williams-franks-bound",
      "title": "The Morton-Williams-Franks bound",
      "prose_ratio": 0.945,
      "coverage_ratio": 0.995,
@@ -1913,37 +2016,43 @@
      "converter": "latex"
     },
     {
-     "id": "sec-016-512-maximal-subwords",
+     "id": "sec-019-512-maximal-subwords",
      "title": "Maximal subwords",
-     "prose_ratio": 0.755,
-     "coverage_ratio": 0.99,
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-017-514-two-mountains",
+     "id": "sec-020-513-the-proof-of-theorem-thmwf-initial-simplific",
+     "title": "The proof of Theorem thmwf: Initial simplifications",
+     "prose_ratio": 0.578,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-021-514-two-mountains",
      "title": "Two mountains",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-018-515-more-than-two-mountains",
+     "id": "sec-022-515-more-than-two-mountains",
      "title": "More than two mountains",
      "prose_ratio": 0.335,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-019-516-4-braids",
+     "id": "sec-023-516-4-braids",
      "title": "4-braids",
-     "prose_ratio": 0.216,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.221,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-020-52-positive-links",
+     "id": "sec-024-52-positive-links",
      "title": "Positive links",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-021-6-studying-alternating-links-by-braid-index",
+     "id": "sec-025-6-studying-alternating-links-by-braid-index",
      "title": "Studying alternating links by braid index",
      "prose_ratio": 0.977,
      "coverage_ratio": 0.927,
@@ -1951,7 +2060,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-022-7-applications-of-the-representation-theory",
+     "id": "sec-026-7-applications-of-the-representation-theory",
      "title": "Applications of the representation theory",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
@@ -1959,7 +2068,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-023-71-the-jones-conjecture",
+     "id": "sec-027-71-the-jones-conjecture",
      "title": "The Jones conjecture",
      "prose_ratio": 0.983,
      "coverage_ratio": 0.996,
@@ -1967,30 +2076,30 @@
      "converter": "latex"
     },
     {
-     "id": "sec-024-72-unitarity-of-the-burau-representation",
+     "id": "sec-028-72-unitarity-of-the-burau-representation",
      "title": "Unitarity of the Burau representation",
      "prose_ratio": 0.516,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-025-73-norm-estimates",
+     "id": "sec-029-73-norm-estimates",
      "title": "Norm estimates",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-026-74-skein-polynomial",
+     "id": "sec-030-74-skein-polynomial",
      "title": "Skein polynomial",
      "prose_ratio": 0.422,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-027-75-recovering-the-burau-trace",
+     "id": "sec-031-75-recovering-the-burau-trace",
      "title": "Recovering the Burau trace",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-028-751-conditions-on-the-eigenvalues",
+     "id": "sec-032-751-conditions-on-the-eigenvalues",
      "title": "Conditions on the eigenvalues",
      "prose_ratio": 0.992,
      "coverage_ratio": 0.971,
@@ -1998,7 +2107,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-029-752-applications-and-examples",
+     "id": "sec-033-752-applications-and-examples",
      "title": "Applications and examples",
      "prose_ratio": 0.99,
      "coverage_ratio": 0.985,
@@ -2006,13 +2115,13 @@
      "converter": "latex"
     },
     {
-     "id": "sec-030-76-mahler-measures",
+     "id": "sec-034-76-mahler-measures",
      "title": "Mahler measures",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-031-761-3-braids",
+     "id": "sec-035-761-3-braids",
      "title": "3-braids",
      "prose_ratio": 0.995,
      "coverage_ratio": 0.963,
@@ -2020,15 +2129,15 @@
      "converter": "latex"
     },
     {
-     "id": "sec-032-762-skein-polynomial-and-generalized-twisting",
+     "id": "sec-036-762-skein-polynomial-and-generalized-twisting",
      "title": "Skein polynomial and generalized twisting",
      "prose_ratio": 0.995,
-     "coverage_ratio": 0.989,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-033-77-knots-with-unsharp-mwf-inequality",
+     "id": "sec-037-77-knots-with-unsharp-mwf-inequality",
      "title": "Knots with unsharp MWF inequality",
      "prose_ratio": 0.98,
      "coverage_ratio": 1.0,
@@ -2036,18 +2145,25 @@
      "converter": "latex"
     },
     {
-     "id": "sec-034-8-postliminaries",
+     "id": "sec-038-8-postliminaries",
      "title": "Postliminaries",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-035-81-fibered-dean-knots-hirasawa-murasugi",
+     "id": "sec-039-81-fibered-dean-knots-hirasawa-murasugi",
      "title": "Fibered Dean knots (Hirasawa-Murasugi)",
-     "prose_ratio": 0.958,
-     "coverage_ratio": 0.51,
+     "prose_ratio": 0.882,
+     "coverage_ratio": 0.961,
      "result": "overlaid",
      "converter": "latex"
+    },
+    {
+     "id": "sec-040-82-a-decomposition-joint-with-hirasawa-ishiwata",
+     "title": "$A$-decomposition (joint with Hirasawa-Ishiwata)",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.401,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

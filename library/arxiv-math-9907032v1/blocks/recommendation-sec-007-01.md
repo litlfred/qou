@@ -1,0 +1,1 @@
+It should be noted that the difference between the two arguments is largely superficial, since the proof of Theorem [\[maindual\]](#maindual){reference-type="ref" reference="maindual"} can be seen to essentially prove the Max Flow-Min Cut theorem.

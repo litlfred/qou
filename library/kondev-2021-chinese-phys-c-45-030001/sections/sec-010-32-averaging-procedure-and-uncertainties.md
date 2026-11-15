@@ -1,6 +1,6 @@
 ---
 doc_id: kondev-2021-chinese-phys-c-45-030001
-doc_title: "The NUBASE2020 evaluation of nuclear physics properties *"
+doc_title: "The NUBASE2020 evaluation of nuclear physics properties"
 section_id: sec-010-32-averaging-procedure-and-uncertainties
 section_title: "Averaging procedure and uncertainties"
 section_number: 3.2
@@ -8,7 +8,9 @@ pages: 13-14
 source_pdf: Kondev_2021_Chinese_Phys._C_45_030001.pdf
 source_sha256: 29b14ce8a7c0ecac
 toc_source: inferred
+doc_brief: "The NUBASE2020 evaluation of nuclear physics properties — 119 sections: Front matter; Introduction; Isomers"
 ---
+Averaging procedure and uncertainties
 It is a policy of NUBASE2020 to use one standard devi-
 ation as a representation of uncertainties associated with the
 recommended values. Unfortunately, authors of research ar-
@@ -114,4 +116,3 @@ for such discrepancies, and consequently, on rejecting (or cor-
 recting) the corresponding unreliable data prior to performing
 the statistical analysis. The reasons for such decisions are
 given as comments in Table I.
-3.3

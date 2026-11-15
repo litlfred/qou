@@ -8,6 +8,7 @@ pages: 12-13
 source_pdf: 9212088v1.pdf
 source_sha256: ecb2c02ec6fe11bd
 toc_source: inferred
+doc_brief: "arXiv:hep-th/9212088v1 14 Dec 1992 — We construct a random matrix model that, in the large N limit, reduces to the low energy limit of the QCD partition function put forward by Leutwyler and Smilga."
 ---
 The partition function (2.1) can be approximated semiclassically by a liquid of in-
 stantons. Instead of averaging over all gauge ﬁeld conﬁgurations, we average over the
@@ -27,7 +28,6 @@ row shows the smallest eigenvalue and its average level motion (between brackets
 condensate Σ (row 2) is obtained from an extrapolation of the spectral density to λ = 0.
 The results for the sum rule (4.12) (row 3) are compared to the analytical result (row 4).
 We ﬁnd complete agreement inside the error bars. The remaining rows involve numerical
-12
 and theoretical values for the quantities S1 and S2 deﬁned by
 S1 =
 < (P 1

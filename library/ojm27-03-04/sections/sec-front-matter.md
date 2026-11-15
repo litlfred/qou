@@ -1,6 +1,6 @@
 ---
 doc_id: ojm27-03-04
-doc_title: "Title Hyperbolic 3-manifolds with totally geodesic boundary Author(s)"
+doc_title: "Hyperbolic 3-manifolds with totally geodesic boundary"
 section_id: sec-front-matter
 section_title: "Front matter"
 section_number: null
@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: ojm27_03_04.pdf
 source_sha256: b357cc8378dae3fd
 toc_source: inferred
+doc_brief: "Fujii, Hyperbolic 3-manifolds with totally geodesic boundary (Osaka J. Math. 27(3), 1990, 539–553)."
 ---
 Title
 Hyperbolic 3-manifolds with totally geodesic

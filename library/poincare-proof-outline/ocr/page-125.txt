@@ -1,0 +1,72 @@
+x-axis is an example of an h-line
+
+lift-definition p-z-azis :: p-line is x-axis
+by simp
+
+Constructing the unique h-line from two h-points
+
+lift-definition p-line :: p-point > p-point = p-line is poincare-line
+proof—
+fix uv
+show is-poincare-line (poincare-line u v)
+proof (cases u # v)
+case True
+thus ?thesis
+by simp
+next
+
+This branch must work only for formal reasons.
+
+case False
+thus ?thesis
+by (transfer, transfer, auto simp add: hermitean-def mat-adj-def mat-cnj-def split: if-split-asm)
+qed
+qed
+
+Next we show how to lift some lemmas. This could be done for all the lemmas that we have proved earlier, but
+we do not do that.
+
+If points are different then the constructed line contains the starting points
+
+lemma p-on-line:
+assumes z 4 w
+shows p-incident (p-line zw) z
+p-incident (p-line zw) w
+using assms
+by (transfer, simp)+
+
+There is a unique h-line passing trough the two different given h-points
+
+lemma
+assumes u # v
+shows 4! I. {u, v} C p-points |
+using assms
+apply (rule-tac a=p-line u v in ex1I, auto simp add: p-points-def p-on-line)
+apply (transfer, simp add: unique-poincare-line)
+done
+
+The unique h-line trough zero and a non-zero h-point on the x-axis is the x-axis
+
+lemma
+assumes p-zero € p-points | u € p-points | u # p-zero u € p-points p-x-axis
+shows | = p-z-axis
+using assms
+unfolding p-points-def
+apply simp
+apply transfer
+using is-poincare-line-0-real-is-x-axis inf-notin-unit-disc
+unfolding circline-set-def
+by blast
+
+10.3. H-collinearity
+
+lift-definition p-collinear :: p-point set = bool is poincare-collinear
+done
+
+10.4 H-isometries
+
+H-isometries are functions that map the unit disc onto itself
+
+typedef p-isometry = {f. unit-disc-fix-f f}
+
+125

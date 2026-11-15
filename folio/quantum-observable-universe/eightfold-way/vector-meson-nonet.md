@@ -43,7 +43,7 @@ equal-spacing rule behind the $\Omega^-$ prediction is the same
 chapter).
 
 The mixing is the opposite case, and this too is a theorem
-(`QOU/Eightfold/NonetMixingUnconstrained.lean`, sorry-free).  Holding fixed the
+(`QOU/Eightfold/NonetMixingUnconstrained.lean`).  Holding fixed the
 octet member $m_8$ that Gell-Mann--Okubo determines, *every* pair of physical
 masses is realisable by choosing the singlet entry and the octet--singlet
 mixing:

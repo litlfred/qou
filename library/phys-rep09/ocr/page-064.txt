@@ -1,0 +1,70 @@
+214 S. Blanes et al. / Physics Reports 470 (2009) 151-238
+
+In [156], Celledoni and Iserles devised a splitting technique for obtaining an approximation to exp(C) in the Lie group 9
+based on a decomposition of C € g into low-rank matrices C; € g. Basically, given an x n matrix C € g, they proposed to
+split it in the form
+
+k
+C= > G,
+i=1
+
+such that
+
+(1) G €g,fori=1,...,k.
+(2) Each exp(C;) is easy to evaluate exactly.
+(3) Products of such exponentials are computationally cheap.
+
+For instance, for the Lie algebra so(n), the choice
+
+1 .T 1 T ;
+Gi= Scie; — 5eibi i=1,...,n,
+
+where cj, ..., Cn are the columns of C and e; is the i-th vector of the canonical basis of R", satisfies the above requirements
+(with k = n), whereas in the case of g = sI(n) other (more involved) alternatives are possible [156].
+Proceeding as in (280), with
+
+yl = exp(eCy) exp(eQ) -- - exp(eC.)
+we get an order one approximation in ¢ to exp(€C), whereas the symmetric composition
+
+yl = erika zeCk-1 os ere e378 bee e28Ck-1936Ck (282)
+provides an approximation of order two in ¢, and this can be subsequently combined with different techniques for increasing
+the order.
+
+With respect to the computational cost, the results reported in [156] show that, up to order four in ¢, this class of
+splitting schemes is competitive with the Matlab built-in function expm when machine accuracy is not required in the final
+approximation. Running expm on randomly generated matrices, it is possible to verify that computing exp(C) to machine
+accuracy requires about (20-30)n? floating point operations, depending on the eigenvalues of C, whereas the 4th-order
+method constructed from (282) involves (12-15)n? operations when C € so0(100) [156]. In the case of the approximation
+of exp(C)v and v € R", the cost of low-rank splitting methods drop down to Kn?, where K is a constant, and thus they are
+comparable to those achieved by polynomial approximants [153].
+
+Splitting methods of the above type are by no means the only way to express exp(C) as a product of exponentials of
+elements in g. For instance, the Wei-Norman approach (111) can also be implemented in this setting. Suppose that dim g = s
+and let {X;, X2,..., X;} be a basis of g. In that case, as we have seen (Section 2.10.3), it is possible to represent exp(tC) for
+C € gand sufficiently small |t| in canonical coordinates of the second kind,
+
+eS — p81 (OX1 Q2(OX2 , . , es (t)Xs
+
+where the scalar functions g, are analytic at t = 0. Although the g;s are implicitly defined, they can be approximated by
+Taylor series. The cost of the procedure can be greatly reduced by adequately choosing the basis and exploiting the Lie-
+algebraic structure [157].
+
+Yet another procedure to get approximations of exp(C) in a Lie-algebraic setting, which has received considerable
+attention during the last years, is based on generalized polar decompositions (GPD), an approach introduced in [158] and
+further elaborated in [159,160]. In particular, in [159], by bringing together GPD with techniques from numerical linear
+algebra, new algorithms are presented with complexity @(n?), both when the exponential is applied to a vector and to
+a matrix. This is certainly not competitive with Krylov subspace methods in the first case, but represents at least a 50%
+improvement on the execution time, depending on the Lie algebra considered, in the latter. Another difference with respect
+to Krylov methods is that the algorithms based on generalized polar decompositions approximate the exponential to a given
+order of accuracy and, thus, they are well suited to exponential approximations within numerical integrators for ODEs,
+since the error is subsumed in that of the integration method. For a complete description of the procedure and its practical
+implementation, we refer the reader to [159].
+
+5.7. Additional numerical examples
+
+The purpose of Section 5.5 was to illustrate the main features of the numerical schemes based on the Magnus expansion
+in comparison with other standard integrators (such as Runge-Kutta schemes) and other Lie-group methods (e.g., Fer and
+Cayley) on a solvable system. For larger systems the efficiency analysis is more challenging since the (exact or approximate)
+computation of exponential matrices play an important role on the performance of the methods. It makes sense, then, to
+analyze from this point of view, more realistic problems, where one necessarily has to approximate the exponential in a
+consistent way.

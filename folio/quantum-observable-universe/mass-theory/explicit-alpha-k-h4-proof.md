@@ -13,8 +13,7 @@ $\{T_{w_C}\}_C$.  At $H_4$ this is 5-dimensional.  The
 length-restricted (length-$k$ word) approach fails: at $H_4$ the 6
 length-3 reduced words collapse to just 2 conjugacy classes (3-cycle
 $+$ 4-cycle) — only a 2-dim space, insufficient to satisfy 4
-lower-depth orthogonality constraints (working note:
-`computations/r-k-wedderburn-orthogonal-derivation-notes.md`).
+lower-depth orthogonality constraints.
 
 **Linear system.**  Let
 $M \in \mathbb{R}^{4 \times 5}$ have entries

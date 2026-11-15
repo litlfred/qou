@@ -1,0 +1,2047 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-2308.16266v1",
+  "pages": [
+    {
+      "page": 4,
+      "rotation": 0,
+      "drawings": 71,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Fig. 2 illustrates the last two stages of the algorithm applied to 7Li, with a ground state of Jπ = 3/2+. Pan- els (a) and (b) show that, towards the end of the sec- ond stage, the magnetic field generates components in the NQS with J > 3/2, causing the expectation val- ues of J and Jz to exceed the target values. However, upon switching off the magnetic field, the SR algorithm projects out the excited-states contamination, leading both J and Jz to converge to the desired values. Panel (c) shows that the external magnetic field enhances the expectation value of the magnetic moment, stabilizing it to a converged value when Bz is set to zero."
+      ],
+      "labels": [
+        {
+          "text": "4",
+          "bbox": [
+            557.11,
+            28.35,
+            562.09,
+            38.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "hence J = Jz, provided that S and L be aligned.",
+          "bbox": [
+            54.0,
+            54.25,
+            267.02,
+            65.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Conclusions –",
+          "bbox": [
+            326.98,
+            54.25,
+            387.82,
+            64.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "With the overarching aim of elucidat-",
+          "bbox": [
+            397.77,
+            54.25,
+            562.12,
+            64.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ing the essential aspects of nuclear binding, we accurately",
+          "bbox": [
+            317.01,
+            66.21,
+            562.1,
+            76.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Fig. 2 illustrates the last two stages of the algorithm",
+          "bbox": [
+            63.96,
+            67.9,
+            299.09,
+            77.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "applied to 7Li, with a ground state of Jπ = 3/2+. Pan-",
+          "bbox": [
+            54.0,
+            76.24,
+            299.08,
+            89.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "computed ground-state properties of atomic nuclei con-",
+          "bbox": [
+            317.01,
+            78.16,
+            562.1,
+            88.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "taining up to A = 20 nucleons using as input the LO",
+          "bbox": [
+            317.01,
+            90.12,
+            562.12,
+            100.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "els (a) and (b) show that, towards the end of the sec-",
+          "bbox": [
+            54.0,
+            91.81,
+            299.09,
+            101.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "/πEFT Hamiltonian “o” of Ref. [30]. To achieve precise",
+          "bbox": [
+            317.01,
+            102.07,
+            562.11,
+            112.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ond stage, the magnetic field generates components in",
+          "bbox": [
+            54.0,
+            103.76,
+            299.08,
+            113.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "solutions to the many-body Schr¨odinger equation, we em-",
+          "bbox": [
+            317.01,
+            114.03,
+            562.12,
+            123.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the NQS with J > 3/2, causing the expectation val-",
+          "bbox": [
+            54.0,
+            115.72,
+            299.08,
+            125.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ployed a VMC method based on the versatile hidden-",
+          "bbox": [
+            317.01,
+            125.98,
+            562.12,
+            135.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ues of J and Jz to exceed the target values. However,",
+          "bbox": [
+            54.0,
+            127.67,
+            299.07,
+            139.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "nucleon NQS framework, introduced in Ref. [42]. Tak-",
+          "bbox": [
+            317.01,
+            137.94,
+            562.13,
+            147.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "upon switching off the magnetic field, the SR algorithm",
+          "bbox": [
+            54.0,
+            139.63,
+            299.11,
+            149.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ing inspiration from condensed-matter studies [44, 45],",
+          "bbox": [
+            317.01,
+            149.89,
+            562.12,
+            159.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "projects out the excited-states contamination, leading",
+          "bbox": [
+            54.0,
+            151.58,
+            299.09,
+            161.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "we significantly enhanced the convergence and expres-",
+          "bbox": [
+            317.01,
+            161.85,
+            562.1,
+            171.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "both J and Jz to converge to the desired values. Panel",
+          "bbox": [
+            54.0,
+            163.54,
+            299.09,
+            175.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "sive power of the original hidden-nucleon ansatz by em-",
+          "bbox": [
+            317.01,
+            173.8,
+            562.12,
+            183.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(c) shows that the external magnetic field enhances the",
+          "bbox": [
+            54.0,
+            175.49,
+            299.08,
+            185.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ploying equivariant backflow transformations based on",
+          "bbox": [
+            317.01,
+            185.76,
+            562.14,
+            195.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "expectation value of the magnetic moment, stabilizing it",
+          "bbox": [
+            54.0,
+            187.45,
+            299.1,
+            197.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "MPNN to preprocess the single-nucleon coordinates and",
+          "bbox": [
+            317.01,
+            197.71,
+            562.11,
+            207.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "to a converged value when Bz is set to zero.",
+          "bbox": [
+            54.0,
+            199.4,
+            246.18,
+            210.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "incorporate correlation effects.",
+          "bbox": [
+            317.01,
+            209.67,
+            449.47,
+            219.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "15O(Jπ",
+          "bbox": [
+            197.06,
+            211.77,
+            228.26,
+            223.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "= 1/2+) and",
+          "bbox": [
+            236.39,
+            211.77,
+            299.09,
+            223.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "The NQS wave function of",
+          "bbox": [
+            63.96,
+            213.05,
+            191.0,
+            223.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "15N(Jπ = 1/2+) are a superposition of J = 1/2 and",
+          "bbox": [
+            54.0,
+            221.39,
+            299.09,
+            234.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "In line with the findings of Ref. [25], which employed",
+          "bbox": [
+            326.98,
+            222.29,
+            562.13,
+            232.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a spin-isospin independent, non-local, SU(4)-symmetric",
+          "bbox": [
+            317.01,
+            234.24,
+            562.11,
+            244.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "3/2. To extract the physical value of the magnetic mo-",
+          "bbox": [
+            54.0,
+            236.96,
+            299.09,
+            246.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Hamiltonian, our computed binding energies typically",
+          "bbox": [
+            317.01,
+            246.2,
+            562.14,
+            256.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ment for nuclei with J < L+S, we first project the NQS",
+          "bbox": [
+            54.0,
+            248.92,
+            299.09,
+            258.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "exhibit deviations of only a few percent from experi-",
+          "bbox": [
+            317.01,
+            258.15,
+            562.12,
+            268.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "along all allowed Lz for a given L. In order to converge",
+          "bbox": [
+            54.0,
+            260.87,
+            299.09,
+            272.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "mental values. This level of precision is particularly re-",
+          "bbox": [
+            317.01,
+            270.11,
+            562.11,
+            280.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "|Lz| < L, we add",
+          "bbox": [
+            218.13,
+            272.7,
+            299.08,
+            283.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "to a non-maximal value of Lz, i.e.",
+          "bbox": [
+            54.0,
+            272.83,
+            209.85,
+            283.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "markable considering the simplicity of the input Hamil-",
+          "bbox": [
+            317.01,
+            282.06,
+            562.12,
+            292.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "to the Hamiltonian the term Bz|ˆLz −¯Lz|, where ¯Lz is",
+          "bbox": [
+            54.0,
+            282.26,
+            299.08,
+            296.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "tonian, especially when compared to the more sophis-",
+          "bbox": [
+            317.01,
+            294.02,
+            562.1,
+            303.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the target Lz. Once the corresponding matrix elements",
+          "bbox": [
+            54.0,
+            296.74,
+            299.08,
+            307.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ticated N2LO chiral-EFT interactions that struggle to",
+          "bbox": [
+            317.01,
+            304.69,
+            562.12,
+            315.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "⟨L, Lz, S, Sz|µz|L, Lz, S, Sz⟩are computed, we take ad-",
+          "bbox": [
+            54.0,
+            308.56,
+            299.07,
+            319.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "replicate ground-state energies with comparable accu-",
+          "bbox": [
+            317.01,
+            317.93,
+            562.09,
+            327.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "vantage of the Wigner-Eckart theorem to estimate the",
+          "bbox": [
+            54.0,
+            320.65,
+            299.09,
+            330.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "racy [36]. Furthermore, the /πEFT model “o” considered",
+          "bbox": [
+            317.01,
+            329.89,
+            562.1,
+            340.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "expectation value of the magnetic moment as defined in",
+          "bbox": [
+            54.0,
+            332.6,
+            299.09,
+            342.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "in this work — albeit with a slightly different value for",
+          "bbox": [
+            317.01,
+            341.84,
+            562.14,
+            351.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Eq. (3) [see supplemental materials for more details].",
+          "bbox": [
+            54.0,
+            344.56,
+            284.98,
+            354.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the three-body force regulator — yields a neutron-matter",
+          "bbox": [
+            317.01,
+            353.8,
+            562.12,
+            363.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "equation of state that closely resembles the one obtained",
+          "bbox": [
+            317.01,
+            365.75,
+            562.1,
+            375.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Exp",
+          "bbox": [
+            257.64,
+            373.29,
+            271.21,
+            385.67
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "DejaVuSans"
+          ],
+          "sizes": [
+            7.3
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            69.7,
+            376.47,
+            74.34,
+            388.85
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "DejaVuSans"
+          ],
+          "sizes": [
+            7.3
+          ]
+        },
+        {
+          "text": "from the highly-realistic Argonne v18 plus Urbana IX po-",
+          "bbox": [
+            317.01,
+            377.71,
+            562.11,
+            389.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "VMC-NQS",
+          "bbox": [
+            257.64,
+            384.0,
+            292.5,
+            396.38
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "DejaVuSans"
+          ],
+          "sizes": [
+            7.3
+          ]
+        },
+        {
+          "text": "tentials [31]. This contrasts with the ∆-full chiral-EFT",
+          "bbox": [
+            317.01,
+            389.66,
+            562.12,
+            399.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            69.7,
+            400.33,
+            74.34,
+            412.71
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "DejaVuSans"
+          ],
+          "sizes": [
+            7.3
+          ]
+        },
+        {
+          "text": "Hamiltonian “NV2+Ia,” which provides an accurate en-",
+          "bbox": [
+            317.01,
+            401.62,
+            562.11,
+            411.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ergy spectrum for A ≤12 nuclei [11], yet falters in accu-",
+          "bbox": [
+            317.01,
+            413.44,
+            562.11,
+            423.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            69.7,
+            424.18,
+            74.34,
+            436.56
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "DejaVuSans"
+          ],
+          "sizes": [
+            7.3
+          ]
+        },
+        {
+          "text": "rately modeling infinite neutron matter [24]. We ascribe",
+          "bbox": [
+            317.01,
+            425.53,
+            562.12,
+            435.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "N)",
+          "bbox": [
+            50.54,
+            431.37,
+            62.92,
+            438.24
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "DejaVuSans",
+            "DejaVuSans-Oblique"
+          ],
+          "sizes": [
+            5.11,
+            7.3
+          ]
+        },
+        {
+          "text": "the surprising accuracy of our “essential” Hamiltonian to",
+          "bbox": [
+            317.01,
+            437.48,
+            562.12,
+            447.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(",
+          "bbox": [
+            50.54,
+            442.89,
+            62.92,
+            445.73
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "DejaVuSans"
+          ],
+          "sizes": [
+            7.3
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            69.7,
+            448.04,
+            74.34,
+            460.42
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "DejaVuSans"
+          ],
+          "sizes": [
+            7.3
+          ]
+        },
+        {
+          "text": "a combination of two factors: i) the two-body potential",
+          "bbox": [
+            317.01,
+            449.44,
+            562.13,
+            459.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "reproduces peripheral, low-energy nucleon-nucleon scat-",
+          "bbox": [
+            317.01,
+            461.39,
+            562.11,
+            471.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            69.7,
+            471.89,
+            74.34,
+            484.27
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "DejaVuSans"
+          ],
+          "sizes": [
+            7.3
+          ]
+        },
+        {
+          "text": "tering, and ii) the three-body force prevents nucleons",
+          "bbox": [
+            317.01,
+            473.35,
+            562.12,
+            483.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "from packing too closely, making low-momentum observ-",
+          "bbox": [
+            317.01,
+            485.3,
+            562.1,
+            495.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            69.7,
+            495.75,
+            74.34,
+            508.13
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "DejaVuSans"
+          ],
+          "sizes": [
+            7.3
+          ]
+        },
+        {
+          "text": "ables, such as binding energies and radii, insensitive to",
+          "bbox": [
+            317.01,
+            497.26,
+            562.12,
+            507.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "short-range details of the nuclear force.",
+          "bbox": [
+            317.01,
+            509.21,
+            488.0,
+            519.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "7Li",
+          "bbox": [
+            183.36,
+            510.75,
+            192.91,
+            523.22
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "DejaVuSans"
+          ],
+          "sizes": [
+            5.11,
+            7.3
+          ]
+        },
+        {
+          "text": "15N",
+          "bbox": [
+            232.57,
+            510.75,
+            244.73,
+            523.22
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "DejaVuSans"
+          ],
+          "sizes": [
+            5.11,
+            7.3
+          ]
+        },
+        {
+          "text": "2H",
+          "bbox": [
+            83.12,
+            510.81,
+            92.06,
+            523.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "DejaVuSans"
+          ],
+          "sizes": [
+            5.11,
+            7.3
+          ]
+        },
+        {
+          "text": "3H",
+          "bbox": [
+            108.29,
+            510.81,
+            117.23,
+            523.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "DejaVuSans"
+          ],
+          "sizes": [
+            5.11,
+            7.3
+          ]
+        },
+        {
+          "text": "6Li",
+          "bbox": [
+            158.19,
+            510.81,
+            167.73,
+            523.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "DejaVuSans"
+          ],
+          "sizes": [
+            5.11,
+            7.3
+          ]
+        },
+        {
+          "text": "7Be",
+          "bbox": [
+            206.94,
+            510.98,
+            219.89,
+            523.46
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "DejaVuSans"
+          ],
+          "sizes": [
+            5.11,
+            7.3
+          ]
+        },
+        {
+          "text": "15O",
+          "bbox": [
+            257.52,
+            510.98,
+            269.96,
+            523.46
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "DejaVuSans"
+          ],
+          "sizes": [
+            5.11,
+            7.3
+          ]
+        },
+        {
+          "text": "17O",
+          "bbox": [
+            282.69,
+            510.98,
+            295.14,
+            523.46
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "DejaVuSans"
+          ],
+          "sizes": [
+            5.11,
+            7.3
+          ]
+        },
+        {
+          "text": "3He",
+          "bbox": [
+            131.19,
+            511.05,
+            144.62,
+            523.52
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "DejaVuSans"
+          ],
+          "sizes": [
+            5.11,
+            7.3
+          ]
+        },
+        {
+          "text": "Unlike quantum many-body methods based on single-",
+          "bbox": [
+            326.98,
+            521.83,
+            562.12,
+            531.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "particle basis expansion [12, 55], and akin to conventional",
+          "bbox": [
+            317.01,
+            533.79,
+            562.14,
+            543.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Magnetic moments of selected A ≤20 nuclei ob-",
+          "bbox": [
+            92.49,
+            535.22,
+            299.1,
+            544.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI9",
+            "CMR9",
+            "CMSY9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "FIG. 3.",
+          "bbox": [
+            54.0,
+            535.33,
+            84.64,
+            544.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "QMC methods, NQS have no difficulties in capturing the",
+          "bbox": [
+            317.01,
+            545.74,
+            562.13,
+            555.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "tained from VMC-NQS calculations compared with experi-",
+          "bbox": [
+            54.0,
+            545.8,
+            299.12,
+            554.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "mental data.",
+          "bbox": [
+            54.0,
+            556.26,
+            104.97,
+            565.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "slowly-decaying tails of nuclear wave functions, which",
+          "bbox": [
+            317.01,
+            557.7,
+            562.12,
+            567.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "play a crucial role in reproducing charge radii. Our the-",
+          "bbox": [
+            317.01,
+            569.65,
+            562.14,
+            579.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "oretical calculations align reasonably well with experi-",
+          "bbox": [
+            317.01,
+            581.61,
+            562.11,
+            591.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "As shown in Fig. 3, theoretical calculations reproduce",
+          "bbox": [
+            63.96,
+            582.27,
+            299.1,
+            592.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ments, although some discrepancies are present. Hence,",
+          "bbox": [
+            317.01,
+            593.56,
+            562.08,
+            603.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "experimental data very well, implying that the input LO",
+          "bbox": [
+            54.0,
+            594.23,
+            299.13,
+            604.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "similar to high-precision chiral-EFT forces [57], charge",
+          "bbox": [
+            317.01,
+            605.52,
+            562.11,
+            615.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "/πEFT Hamiltonian encapsulates the essential elements",
+          "bbox": [
+            54.0,
+            606.18,
+            299.07,
+            616.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "radii offer additional insights into nuclear dynamics not",
+          "bbox": [
+            317.01,
+            617.47,
+            562.14,
+            627.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of nuclear structure. This agreement also confirms the",
+          "bbox": [
+            54.0,
+            618.14,
+            299.09,
+            628.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "provided by binding energies alone [58, 59].",
+          "bbox": [
+            317.01,
+            629.43,
+            505.9,
+            639.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "correctness of the algorithm discussed for selecting the",
+          "bbox": [
+            54.0,
+            630.09,
+            299.08,
+            640.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "polarization of the nucleus.",
+          "bbox": [
+            54.0,
+            642.05,
+            177.72,
+            652.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Finally, it indicates that",
+          "bbox": [
+            187.58,
+            642.05,
+            299.13,
+            652.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Lastly, we introduced an innovative computational",
+          "bbox": [
+            326.98,
+            642.05,
+            562.13,
+            652.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "NSQ can learn the shell structure of the nucleus, which",
+          "bbox": [
+            54.0,
+            654.0,
+            299.11,
+            663.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "protocol to assess magnetic moments, amenable to NQS.",
+          "bbox": [
+            317.01,
+            654.0,
+            562.07,
+            663.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "is genuinely self-emerging as it was not encoded in the",
+          "bbox": [
+            54.0,
+            665.96,
+            299.09,
+            675.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "It involves adding to the nuclear Hamiltonian an exter-",
+          "bbox": [
+            317.01,
+            665.96,
+            562.13,
+            675.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "variational ansatz. The minor discrepancies observed in",
+          "bbox": [
+            54.0,
+            677.91,
+            299.1,
+            687.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "nal magnetic field, which projects the NQS onto a spec-",
+          "bbox": [
+            317.01,
+            677.91,
+            562.11,
+            687.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "3H, and 3He, are consistent with GFMC, AFDMC and",
+          "bbox": [
+            54.0,
+            688.59,
+            299.1,
+            699.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ified value of the orbital angular momentum along the",
+          "bbox": [
+            317.01,
+            689.87,
+            562.13,
+            699.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "HH results [35, 36, 56] and may well be resolved when",
+          "bbox": [
+            54.0,
+            701.82,
+            299.09,
+            711.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "z axis. Our computed magnetic dipole moments are in",
+          "bbox": [
+            317.01,
+            701.82,
+            562.1,
+            711.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "two-body currents are included in the calculation.",
+          "bbox": [
+            54.0,
+            713.78,
+            271.69,
+            723.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "good agreement with experimental data; the discrepan-",
+          "bbox": [
+            317.01,
+            713.78,
+            562.11,
+            723.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

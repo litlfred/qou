@@ -1,0 +1,63 @@
+NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS 543,
+
+(IV) Let Aj,...,Am be symmetric n x n matrices and let e = (e1,...,em) € R™
+be such that e1A1 +--+: +€mAm, is positive definite. Then the polynomial
+
+m
+
+P(Z1,+++;%m) = det > 2 Aj
+
+j=l
+is hyperbolic with respect to e, and the hyperbolicity cone is given by
+n
+C.(p) =< xe R™: So 254; is positive definite
+j=l
+
+Theorem 4.5. Suppose that all the coefficients of f € Rlz1,..-,2n] are non-
+negative. The following are equivalent:
+
+(1) fa is stable;
+
+(2) f is stable;
+
+(3) fr is hyperbolic with respect to some vector e with e; >0;1<i<n+1;
+(4) fr is hyperbolic with respect to any vector e withe; >0,1<i<n+l.
+
+Proof. By the fact that the stability property is closed under setting variables equal
+to real numbers (Proposition 3.1) and Proposition we have that (1) = (2) >
+(3). Now if (3) holds, then since f has all non-negative coefficients it follows from
+Proposition [4.4] (b) that C.(fr) contains the cone Ry, which by Proposition [4.4]
+(d) proves (4). Finally, (4) = (1) by Proposition B-I] Oo
+
+Let f € Cla,...,2n] be a polynomial of degree d; in z%, 1 <i <n. The
+polarization m(f) of f is the unique polynomial in )7j"_, d; variables z;;, 1 <i <n,
+1<j < dj, satisfying:
+
+(i) a(f) is multi-affine;
+
+(ii) «(f) is symmetric in the variables zj1,...zia, for 1 <i <n;
+
+(iii) if we let 2; = 2; for all i,j in m(f), we recover f.
+
+Recall that a circular region in C is either an open or closed affine half-plane or
+the open or closed interior or exterior of a circle. The famous Grace-Walsh-Szego
+coincidence theorem [66] [74] is stated next. For a proof of the following version
+we refer to Theorem 2.12].
+
+Theorem 4.6 (Grace-Walsh-Szeg6). Let f € C[z1,..., Zn] be symmetric and multi-
+affine and let C be a circular region containing the points ¢1,...,¢n. Suppose that
+either f has total degree n or C is convex (or both). Then there exists at least one
+
+point ¢ € C such that f(G,....6n) =f(G,.--,0).
+
+From the Grace-Walsh-Szeg6 coincidence theorem we deduce:
+Corollary 4.7. Let f € C[a,...,2n]. Then f is stable if and only if x(f) is stable.
+
+Proof. If x(f) is stable, then so is f since the latter is recovered from m(f) by
+setting variables equal as in (iii) above. Now suppose that 7(f) is not stable. Then
+there are numbers ¢,; € {z € C : Jm(z) > 0}, 1 <i<n,1< j < dij, such that
+m(f)(¢) = 0, where € = (G11,---,G1dy5++ +s Gnis+++sna,)- By successively applying
+the Grace-Walsh-Szegé coincidence theorem we see that there is a vector ¢/ =
+(Chass Ghayss++2Ghas+++>Sha,) With coordinates in {z € C : Im(z) > 0} for which
+Ci, = Gly whenever i = k and'r(f)(¢") = m(f)(6) = 0. Hence f(Ch4.6b1--+.6h1) =
+w(f)(¢’) = 0, so f is not stable either. o

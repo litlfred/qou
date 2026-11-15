@@ -1,0 +1,72 @@
+have calc-ideal-points H = {i1, i2}
+using assms
+using ideal-points-unique
+by auto
+
+have V il € calc-ideal-points H.
+V i2 € calc-ideal-points H.
+is-poincare-line H \ H # x-axis \ i1 # i2 —+ (Im (to-complex i1) * Im (to-complez i2) < 0 ++
+intersects-x-axis H)
+proof (transfer, transfer, (rule ballI)+, rule impI, (erule conjE)+, case-tac H, case-tac il, case-tac i2)
+fix i11 i112 i21 122 ABCD Hil i2
+assume H: H = (A, B, C, D) hermitean H H # mat-zero
+assume line: is-poincare-line-cmat H
+assume if: il = (i11, i12) il € calc-ideal-points-cmat-cvec H
+assume 72: i2 = (i21, i22) i2 € calc-ideal-points-cmat-cvec H
+assume different: 4 il Xv i2
+assume not-zx-azis: — circline-eq-cmat H x-axis-cmat
+
+have is-real A is-real D C = cnj B
+using H hermitean-elems
+by auto
+
+have (cmod A)? < (cmod B)? A= D
+using line H
+by auto
+
+let ?discr = sqrt ((emod B)? — (Re D)?)
+let ?den = (cmod B)?
+
+let 7:1 = Bx (— D —i x ?discr)
+
+let 712 = Bx (— D+i * ?discr)
+
+have i11 = ?i1 V i11 = 712 i12 = ?den
+i21 = 711 V i21 = ?i2 122 = ?den
+using i1 i2 H line
+by (auto split: if-split-asm)
+hence 7: i11 = ?i1 A i21 = ?i2 V ill = 712 A i21 = Pil
+using (7 il %y i2> il i2
+by auto
+
+have Im (i11 / i12) * Im (i21 / i22) = Im (?i1 / ?den) * Im (#2 / ?den)
+using i <i12 = ?den> (122 = ?den)
+by auto
+also have ... = Im (?i1) * Im (?i2) / ?den?
+by simp
+also have ... = (Im B * (Im B * (Re D * Re D)) — Re B * (Re B * ((cmod B)* — (Re D)”))) / cmod B ~ 4
+using <(cmod B)*? > (emod A)? «A = D»
+using <is-real D) cmod-eq-Re|of A]
+by (auto simp add: field-simps)
+also have ... = ((Im B)? * (Re D)? — (Re B)? * ((Re B)? + (Im B)? — (Re D)*)) / emod B~ 4
+proof —
+have cmod B * cmod B= Re B * Re B+ Im Bx ImB
+by (metis cmod-power2 power2-eq-square)
+thus ?thesis
+by (simp add: power2-eq-square)
+qed
+also have ... = (((Re D)? — (Re B)*) « ((Re B)? + (Im B)?)) / cmod B~ 4
+by (simp add: power2-eq-square field-simps)
+finally have Im-product: Im (i11 / i12) * Im (i21 / i22) = ((Re D)? — (Re B)*) « ((Re B)? + (Im B)?) / cmod
+Br4
+
+show Im (to-complez-cvec i1) * Im (to-complez-cvec i2) < 0 <—+ intersects-z-axis-cmat H
+proof safe
+
+assume opposite: Im (to-complex-cvec i1) * Im (to-complex-cvec i2) < 0
+
+show intersects-x-axis-cmat H
+
+proof—
+
+113

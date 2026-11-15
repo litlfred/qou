@@ -1,0 +1,1 @@
+Therefore, any orthogonal decomposition of ε into primitive idempotents must contain exactly one primitive idempotent corresponding to λ and all other idempotents corresponding to Young diagrams with smaller size than λ (see Remark 3.5).

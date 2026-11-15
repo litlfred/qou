@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1108.0687v3",
  "source_sha256": "66ba88e13a429a0a",
- "brief": "Concentration of Lipschitz functionals of determinantal a nd other strong Rayleigh measures — Let {X1,...,X n} be a collection of binary valued random variables and let f : {0, 1}n → R be a Lipschitz",
- "extended": "**Concentration of Lipschitz functionals of determinantal a nd other strong Rayleigh measures**\n\n*Robin Pemantle 1, 2 and Yuval Peres 3*\n\n23 pp, 11 sections.\n\n**Abstract.** Let {X1,...,X n} be a collection of binary valued random variables and let f : {0, 1}n → R be a Lipschitz function. Under a negative dependence hypothesis k nown as the strong Rayleigh con- dition, we show thatf −Ef satisﬁes a concentration inequality. The class of strong Rayleigh me asures includes determinantal measures, weighted uniform matroids and e xclusion measures; some familiar examples from these classes are generalized negative binomials and s panning tree measures. For instance, any Lipschitz-1 function of the edges of a uniform spann ing tree on vertex set V (e.g., the number of leaves) satisﬁes the Gaussian concentration inequality P(f − Ef ≥a) ≤ exp ( − a2 8 |V | ) . We also prove a continuous version for concentration of Lipschitz f unctionals of a determinantal point process.\n\n**Outline.** 1 Introduction; 1.1 Classical concentration inequalities; 1.2 Generalizations; 2 Strong Rayleigh property, stochastic coverin; 3 Results; 4 Proofs; 4.1 The classical proofs; 5 Applications; 5.1 Matroids; 5.2 Exclusion measures; 6 Determinantal point processes",
+ "brief": "Concentration of Lipschitz functionals of determinantal and other strong Rayleigh measures — Let {X1, . . .",
+ "extended": "**Concentration of Lipschitz functionals of determinantal and other strong Rayleigh measures**\n\n*Robin Pemantle1, 2 and Yuval Peres3*\n\n23 pp, 15 sections.\n\n**Abstract.** Let {X1, . . . , Xn} be a collection of binary valued random variables and let f : {0, 1}n → R be a Lipschitz function. Under a negative dependence hypothesis known as the strong Rayleigh con- dition, we show that f−Ef satisﬁes a concentration inequality. The class of strong Rayleigh measures includes determinantal measures, weighted uniform matroids and exclusion measures; some familiar examples from these classes are generalized negative binomials and spanning tree measures. For instance, any Lipschitz-1 function of the edges of a uniform spanning tree on vertex set V (e.g., the number of leaves) satisﬁes the Gaussian concentration inequality P(f −Ef ≥a) ≤exp \u0012 −a2 8 |V | \u0013 . We also prove a continuous version for concentration of Lipschitz functionals of a determinantal point process.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Classical concentration inequalities; 1.2 Generalizations; 2 Strong Rayleigh property, stochastic coverin; 3 Results; 4 Proofs; 4.1 The classical proofs; 4.2 Proof of Theorems ?? and ??; 4.3 Proof of Theorem ??; 5 Applications; 5.1 Matroids; 5.2 Exclusion measures; 5.3 Determinantal measures on a finite Boolean; 6 Determinantal point processes",
  "tokens": {
-  "brief": 49,
-  "extended": 312
+  "brief": 26,
+  "extended": 340
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -42,25 +47,40 @@
   {
    "id": "sec-006-41-the-classical-proofs",
    "title": "The classical proofs",
-   "pages": "9-14"
+   "pages": "9-10"
   },
   {
-   "id": "sec-007-5-applications",
+   "id": "sec-007-42-proof-of-theorems-and",
+   "title": "Proof of Theorems ?? and ??",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-008-43-proof-of-theorem",
+   "title": "Proof of Theorem ??",
+   "pages": "11-14"
+  },
+  {
+   "id": "sec-009-5-applications",
    "title": "Applications",
    "pages": "14-14"
   },
   {
-   "id": "sec-008-51-matroids",
+   "id": "sec-010-51-matroids",
    "title": "Matroids",
    "pages": "14-16"
   },
   {
-   "id": "sec-009-52-exclusion-measures",
+   "id": "sec-011-52-exclusion-measures",
    "title": "Exclusion measures",
-   "pages": "16-18"
+   "pages": "16-17"
   },
   {
-   "id": "sec-010-6-determinantal-point-processes",
+   "id": "sec-012-53-determinantal-measures-on-a-finite-boolean-la",
+   "title": "Determinantal measures on a finite Boolean lattice",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-013-6-determinantal-point-processes",
    "title": "Determinantal point processes",
    "pages": "18-23"
   }

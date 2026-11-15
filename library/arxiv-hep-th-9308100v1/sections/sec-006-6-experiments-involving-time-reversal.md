@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9308100v1
-doc_title: "arXiv:hep-th/9308100v1 20 Aug 1993"
+doc_title: "Gedanken Experiments Involving Black Holes"
 section_id: sec-006-6-experiments-involving-time-reversal
 section_title: "Experiments Involving Time Reversal"
 section_number: 6
@@ -8,6 +8,7 @@ pages: 19-20
 source_pdf: 9308100v1.pdf
 source_sha256: 032c25faa757b650
 toc_source: inferred
+doc_brief: "Gedanken Experiments Involving Black Holes — Analysis of several gedanken experiments indicates that black hole complementarity cannot be ruled out on the basis of known physical principles."
 ---
 The time reversal of the formation and evaporation of a black hole has been a subject
 of controversy. Confusion about white holes and CPT easily arises when one contemplates

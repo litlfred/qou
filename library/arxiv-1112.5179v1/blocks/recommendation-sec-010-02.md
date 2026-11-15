@@ -1,0 +1,1 @@
+It should then be clear that Equations [\[teteqs\]](#teteqs){reference-type="eqref" reference="teteqs"} are just two copies of [\[tetLag\]](#tetLag){reference-type="eqref" reference="tetLag"}, with opposite quantization parameters $\hbar$ and $-\hbar$.

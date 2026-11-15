@@ -1,0 +1,1 @@
+Thus, one must first regulate the loop integrals by dimensional regularization, then perform the renormalization operation with some fixed prescription and at the end take the large $\mh$ limit, with $\mh$ being the renormalized Higgs mass.

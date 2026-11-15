@@ -1,0 +1,105 @@
+Appendix D
+
+FreeFEM+-+ Code for Genus 3
+LT
+
+Similarly to Appendix C, here we give the FreeFEM++ codes for particular surfaces of
+genus 3. We start with the Klein quartic:
+
+int n=30;
+int nev=100;
+
+string fnm="klein_quartic—Eigenvalues—n30—nev100.txt"; //file name for saving
+
+real cx = 1.031969722;
+real r = 0.254875473;
+
+real s=0.7770942488589633;
+real x06=s*cos(5*pi/7);
+real y06=s*sin(5*pi/7);
+
+real x03=s*cos(2*pi/7);
+real y03=s*sin(2*pi/7);
+real x05=s*cos(4*pi/7);
+
+real y05=s*sin(4*pi/7);
+
+real s*cos(9*pi/7);
+real s*sin(9*pi/7);
+real x07=s*cos(6*pi/7);
+real x12=s*cos(11l*pi/7);
+11*pi/7);
+8*pi/7);
+8*pi/7);
+
+real
+real
+
+real
+
+real xl4=s*cos(13*pi/7);
+
+)
+13*pi/7);
+
+)
+
+)
+
+real yl4=s«sin
+
+real xll=s*cos(10*pi/7);
+
+(
+(
+(
+(
+(
+(
+(
+(
+real y07=s*sin(6*pi/7);
+(
+(
+(
+(
+(
+(
+(
+(
+
+real yll=s*sin(10*pi/7);
+real x02=s*cos(pi/7);
+
+real y02=s*sin(pi/7);
+
+real x13=s*cos(12*pi/7);
+(12* pi/7);
+real x04=s*cos(3*pi/7);
+(
+
+real yl3=sx*sin
+
+real y04=s*sin(3*pi/7);
+
+border Gl (t=9*pi/7,5*pi/7) { x=cx+rxcos(t); y=re*sin(t);label=1;};
+
+border G2 (t=9«pi/7,5*pi/7) { x=cos(pi/7)*(cx+r*cos(t))—sin(pi/7)*(r*sin(t));
+y=sin (pi/7)*(cx+r*cos(t))+cos(pi/7)*(r*sin(t));} label =2;;
+
+border G3 (t=9«pi/7,5*pi/7) { x=cos(2* pi/7)*(cx+r*cos(t))—sin(2*pi/7)*r*sin(t);
+
+2% pi/7)*r*sin(t);}label=3;;
+
+3% pi /7)*(cx+rxcos(t))—sin(3*pi/7)*r*sin(t);
+
+3*pi/7)*r*sin(t);label=4;};
+
+4x pi /7)*(cx+r*cos(t))—sin(4*pi/7)*r*sin(t);
+
+y=sin (2* pi /7)*(cx+r*cos(t))+cos
+border G4 (t=9«pi/7,5*pi/7) { x=cos
+y=sin (3% pi /7)*(cx+r*cos(t))+cos
+border G5 (t=9«pi/7,5*pi/7) { x=cos
+
+120

@@ -1,0 +1,75 @@
+IOP Publishing
+
+J. Phys. Commun. 6 (2022) 015002 LDiCairano
+
+Then, applying the inverse Laplace transform we get:
+
+. t
+Q(t) = cos(K'/24) Q(0) + K-!/? sin(K'/t) Q(0) + f K!/? sin(K'/2(t — 7))a(X (1) dr, (37)
+0
+where the matrix-valued function is defined through the series representation:
+SS (=1)" : SS (=1)"
+cos(K'/*t) = > ——_K"1?", sin(K'/7t) = S> ——_ kr"!
+& Qn)!  Qn+ Dd!
+
+In order to recover a GLE, in the convolution on the right-hand side the time derivative of the heavy particle
+variable has to appear. Therefore, we notice that the kernel matrix K!/? sin(K'/?(t — 7)) can be written as the
+derivative of cos(K'/?(t — )) andan integration by parts leads to:
+
+Q(t) = cos(K'/7t)Q(0) + K~!/? sin(K'/7t) Q(0) + a(X(r7)) — cos(K'/2(t))a(X(t))
+-f cos(K'/?(t — 7)) Vxinya(X (7) X (7) dr, (38)
+0
+
+where 4(X(7)) = Vx(ya(X(7))X (7).
+Now, we note that the heat bath variable enter equation (34) under a specific combination, i.e., K[Q(t) —
+a(X(t))], but this relation can be obtained in equation (38) that is:
+
+K[Q(t) — a(X(t))] = Gx (1) Q(0) + Hx (t)(Q(0) — a(X(0))) — f [Sk(t — 7) Vx a(X(7))]X (1) dr,
+(39)
+H(t) = K cos(K'’t), Gx(t) := sin(K'/2t), Sk (t) := K cos(K'/?(t)), (40)
+
+Finally, we introduce a further canonical basis {e;}/_ of R” which allows us to define, respectively, the parameter
+matrix and the equilibrium map vector:
+
+Non n
+A= myer Sep — g(X) = DOF, Ker (41)
+I=1
+
+i=1J=1
+such that
+Vxa(X) = AVyg(X). (42)
+Hence, we plug equation (39) into equation (34) and we obtain:
+
+MX(t) = Veg” XA’ (Gx (HI) + Hx (QO) — a(X(0))])
+-f Vn? (X(D)(A'SK (t= TIA) Vang (X(T) X (1) dr — Ve V(X). (43)
+
+In order to recover the common structure ofa GLE, we note that the mathematical structure of the equation
+obtained above allows to define the kernel matrix and the noise term as follows:
+
+L(t — 7) := A'Sx(t — T)A,
+F(t) := A'(Gx(t)1(0) + Hx(t)[Q(0) — a(X(0))]), (44)
+
+We wish to stress a significant difference between the current definitions of noise vector and kernel matrix in
+equation (44) and the previous ones in equation (8) and (9). In the latter, the noise and kernel terms do not
+contain any information about the strength of the interactions represented by the coefficients ¥;,, and all the
+parameters 7;,,are contained in the equilibrium map. In the former case, the parameters 77;,, have been
+completely absorbed into the noise term and kernel matrix.
+
+Therefore, we can recast equation (43) into a nonlinear GLE:
+
+MX(t) = Veg! (X())FO) — f Vag! (X(t) L(t — 7) Ve~g (XK (7) X (1) dr — Vx V (XO). (45)
+
+An important step forward in the investigation of stochastic behaviors arising from interacting Hamiltonian
+systems would be made if we could solve equation (45) which is a nonlinear stochastic differential equation.
+
+Two different approaches could be employed. From one side, one can attempt a semi-analytical approach
+exploiting the same method introduced in [34]. The authors showed that, even though we have a nonlinear
+differential equation, but we explicit know the time-dependence of the functions entering the equation’, we can
+still apply the Laplace transform method to equation (45). However, this approach cannot always provide an
+exact solution but a series representation of the solution is possible. So far, this approach has been applied just
+for investigating nonlinear differential equations which are not stochastic but it could be extended to address
+stochastic differential equation. A more detailed study will be done in a future paper.
+
+In our case, this translates in choosing a specific potential function so that the equilibrium map is well-defined.
+
+8

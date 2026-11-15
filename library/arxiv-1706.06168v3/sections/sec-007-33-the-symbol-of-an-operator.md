@@ -4,13 +4,13 @@ doc_title: "A Representation Theoretic Explanation of the Borcea-Brändén Chara
 section_id: sec-007-33-the-symbol-of-an-operator
 section_title: "The Symbol of an Operator"
 section_number: 3.3
-pages: 8-11
+pages: 9-11
 source_pdf: 1706.06168v3.pdf
 source_sha256: ab3383a95f369922
 toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.977
-latex_coverage_ratio: 0.751
+latex_prose_ratio: 0.97
+latex_coverage_ratio: 1.0
 doc_brief: "A Representation Theoretic Explanation of the Borcea-Brändén Characterization — In 2009, Borcea and Br¨and´en characterized all linear operators on multivariate polynomials which preserve the"
 ---
 []{#symb_subsect label="symb_subsect"}

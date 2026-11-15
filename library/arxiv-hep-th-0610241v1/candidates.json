@@ -1,0 +1,196 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-hep-th-0610241v1",
+ "source": {
+  "structure_sha256": "6a71ab6f6459c070b3de77c0ea8f5b660d7bea3547906baffa14c2aae0d0c687",
+  "file": "hep-th-0610241.pdf"
+ },
+ "provenance": {
+  "title": "arXiv:hep-th/0610241v1 23 Oct 2006",
+  "authors": "ALI H. CHAMSEDDINE, ALAIN CONNES, AND MATILDE MARCOLLI",
+  "arxiv": {
+   "id": "hep-th/0610241",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "23 Oct 2006"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 11,
+  "by_kind": {
+   "recommendation": 11
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "This must commute with operators of the form \u03c0(\u03bb, q, m) \u2297112 with \u03c0 as in (2.37), and 112 the unit matrix in a twelve dimensional space.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-006-26-the-classi\ufb01cation-of-dirac-operators.md",
+   "section_title": "The classi\ufb01cation of Dirac operators",
+   "pages": "12-15",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The o\ufb00diagonal terms P12 and P21 must intertwine the actions of (\u03bb, q, m) \u2208AF in Hf and H \u00aff.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-006-26-the-classi\ufb01cation-of-dirac-operators.md",
+   "section_title": "The classi\ufb01cation of Dirac operators",
+   "pages": "12-15",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "As explained there the number of fermion degrees of freedom when one simply writes the Euclidean action \u27e8\u00af\u03c8, D\u03c8\u27e9in our context is in fact 4 times what it should be.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-021-44-the-coupling-of-fermions.md",
+   "section_title": "The coupling of fermions",
+   "pages": "40-47",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall check below that the Einstein term (the scalar curvature) admits the correct physical sign and size for the functional integral in Euclidean signature.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-024-47-the-higgs-\ufb01eld-self-interaction.md",
+   "section_title": "The Higgs \ufb01eld self interaction",
+   "pages": "51-71",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "This indicates that the action functional (4.11) should be taken as the bare action at the uni\ufb01cation cuto\ufb00scale \u039b and we \ufb01rst brie\ufb02y recall how this scale is computed.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-024-47-the-higgs-\ufb01eld-self-interaction.md",
+   "section_title": "The Higgs \ufb01eld self interaction",
+   "pages": "51-71",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "How- ever, due to the see-saw mechanism discussed in \u00a75.3 below, one should expect that the Yukawa coupling for the tau neutrino is also large and of the same order as the one for the top quark.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-024-47-the-higgs-\ufb01eld-self-interaction.md",
+   "section_title": "The Higgs \ufb01eld self interaction",
+   "pages": "51-71",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Thus, the factor of 4/3 in (5.10) should be corrected to 1 as in (5.29) below.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-024-47-the-higgs-\ufb01eld-self-interaction.md",
+   "section_title": "The Higgs \ufb01eld self interaction",
+   "pages": "51-71",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The only known experimental constraints on the values of the coe\ufb03cients of the quadratic curvature terms R\u00b5\u03bdR\u00b5\u03bd and R2 at low energy are very weak and predict that their value should not exceed 1074 (cf. e.g. [21]).",
+   "strength": "should-not",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-024-47-the-higgs-\ufb01eld-self-interaction.md",
+   "section_title": "The Higgs \ufb01eld self interaction",
+   "pages": "51-71",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "One should expect that the Newton constant runs at higher energies (cf. e.g. [21], [40], [39]) and increases at high energy when one approaches the Planck scale.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-024-47-the-higgs-\ufb01eld-self-interaction.md",
+   "section_title": "The Higgs \ufb01eld self interaction",
+   "pages": "51-71",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Thus the ratio \u03c1 = \u03ba0(\u039b)/\u03ba0(MZ) (5.36) for \u039b \u223c1.1 \u00d7 1017 GeV, which measures the running at uni\ufb01cation scale, should be larger than 1.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-024-47-the-higgs-\ufb01eld-self-interaction.md",
+   "section_title": "The Higgs \ufb01eld self interaction",
+   "pages": "51-71",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall not attempt to address this problem here but make a few remarks.",
+   "strength": "must-not",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-024-47-the-higgs-\ufb01eld-self-interaction.md",
+   "section_title": "The Higgs \ufb01eld self interaction",
+   "pages": "51-71",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

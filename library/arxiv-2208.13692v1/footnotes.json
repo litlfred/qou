@@ -1,0 +1,4504 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-2208.13692v1",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p002-1",
+   "page": 2,
+   "mark": "1",
+   "text": "NotehereweusethenotationHkof[Bur83]forthesymmetricsum,whereas[Edg78]usesSk.",
+   "marks": [
+    {
+     "page": 2,
+     "context": "tion2.1.Bring’sCurveBisdeﬁnedinP4bythe(homogeneous)equations"
+    }
+   ],
+   "block": "library/arxiv-2208.13692v1/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p005-1",
+   "page": 5,
+   "mark": "2",
+   "text": "Forthepurposesofthisdeﬁnitionahexagonisasetof6pointsinP2,nothreeofwhicharecollinear, called the vertices. A Brianchon point of a hexagon is a non-vertex point through which 3 edges (the lines joining two distinct vertices) pass. A Clebsch hexagon is a hexagon with 10 Brianchon points [Dye91].",
+   "marks": [
+    {
+     "page": 4,
+     "context": "v4=y(x"
+    },
+    {
+     "page": 4,
+     "context": "v2=(y"
+    },
+    {
+     "page": 4,
+     "context": "v3=(y −x"
+    },
+    {
+     "page": 4,
+     "context": "−v"
+    },
+    {
+     "page": 4,
+     "context": "−v"
+    },
+    {
+     "page": 5,
+     "context": "Clebschhexagon"
+    },
+    {
+     "page": 5,
+     "context": "Explicitly,Dyeintroducesjasasolutiontoj"
+    },
+    {
+     "page": 5,
+     "context": "C(x, y, z) = x"
+    },
+    {
+     "page": 5,
+     "context": "C(x, y, z) = x2+ y"
+    },
+    {
+     "page": 5,
+     "context": "C(x, y, z) = x2+ y2+ z"
+    },
+    {
+     "page": 5,
+     "context": "(±j"
+    },
+    {
+     "page": 5,
+     "context": "(0, ±j"
+    },
+    {
+     "page": 5,
+     "context": "(1, 0, ±j"
+    },
+    {
+     "page": 5,
+     "context": "[L1: L2: L3: L4] ∈F⊂P3ifandonlyifthereexistsP′= [X: Y: Z] ∈P"
+    }
+   ],
+   "block": "library/arxiv-2208.13692v1/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p005-2",
+   "page": 5,
+   "mark": "3",
+   "text": "Weareusingthecoordinates[x, y, z]here,distinctfrom[X, Y, Z],tohighlightthatthesearenotthose of the HC-model.",
+   "marks": [
+    {
+     "page": 4,
+     "context": "v1=(y"
+    },
+    {
+     "page": 4,
+     "context": "Lemma2.8.ThecanonicalembeddingofBring’scurveinP"
+    },
+    {
+     "page": 4,
+     "context": "Whileallfull-rankquadricsinP"
+    },
+    {
+     "page": 4,
+     "context": "ϕ : P1× P1→P"
+    },
+    {
+     "page": 5,
+     "context": "curves"
+    },
+    {
+     "page": 5,
+     "context": "heoryfrom[SR49,pp.122-124],namelythatagenericcubicsurfaceinP"
+    },
+    {
+     "page": 5,
+     "context": "theverticesofthehexagonH.SuchagenericcubicsurfaceF⊂P"
+    },
+    {
+     "page": 5,
+     "context": "whereu1, . . . , w3arelinearhomogeneousfunctionsoftheP"
+    },
+    {
+     "page": 5,
+     "context": "P= [L1: L2: L3: L4] ∈F⊂P"
+    },
+    {
+     "page": 5,
+     "context": "[a : b : c : d] ∈P"
+    }
+   ],
+   "block": "library/arxiv-2208.13692v1/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p007-1",
+   "page": 7,
+   "mark": "4",
+   "text": "An Eckardtpoint of a surface is a point where three lines contained within the surface intersect [Hir86].",
+   "marks": [
+    {
+     "page": 6,
+     "context": "a0ζ3k+ a1ζ"
+    },
+    {
+     "page": 6,
+     "context": "a0ζ3k+ a1ζ4k+ a2ζ2k+ a3 + a4ζ3k+ a5ζk+ a6ζk+ a7ζ"
+    },
+    {
+     "page": 6,
+     "context": "1L"
+    },
+    {
+     "page": 6,
+     "context": "2−L1L3: L1L"
+    },
+    {
+     "page": 6,
+     "context": "2−L1L3: L1L4: L2L"
+    },
+    {
+     "page": 6,
+     "context": "=X"
+    },
+    {
+     "page": 6,
+     "context": "=X4Z2 −X2Y Z3 −X3Y3 + XY"
+    },
+    {
+     "page": 6,
+     "context": "X3Y Z2−XY2Z3−X2Y"
+    },
+    {
+     "page": 6,
+     "context": "canbewrittenasthesubsetofP"
+    },
+    {
+     "page": 6,
+     "context": "1x"
+    },
+    {
+     "page": 6,
+     "context": "2x"
+    },
+    {
+     "page": 6,
+     "context": "3x"
+    },
+    {
+     "page": 7,
+     "context": "Fromhere,onecanusethefactthatthe10Eckardtpoints"
+    },
+    {
+     "page": 7,
+     "context": "inP"
+    },
+    {
+     "page": 7,
+     "context": "L4 + (ζ2+ ζ + 1)L2 + (ζ"
+    },
+    {
+     "page": 7,
+     "context": "smoothcanonicalembedding.Taking[X: Y: Z] = [1 : t : t"
+    },
+    {
+     "page": 7,
+     "context": "wegetthepointinP"
+    },
+    {
+     "page": 7,
+     "context": "[x1: x2: x3: x4: x5] = [ζ3: 1 : ζ2: ζ: ζ"
+    },
+    {
+     "page": 7,
+     "context": "Repeatingtheprocesstaking[X:Y:Z]=[1:t"
+    },
+    {
+     "page": 7,
+     "context": "[x1: x2: x3: x4: x5] = [1 : ζ3: ζ: ζ2: ζ"
+    }
+   ],
+   "block": "library/arxiv-2208.13692v1/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p007-2",
+   "page": 7,
+   "mark": "5",
+   "text": "Adoublesixisacollectionof12linesa1, . . . , a6, b1, . . . , b6inP3,arrangedas a1 a2 a3 a4 a5 a6 b1 b2 b3 b4 b5 b6 so that each line is disjoint from those in the same row and column, but intersects the other 5 lines.",
+   "marks": [
+    {
+     "page": 6,
+     "context": "X3Y Z2−XY2Z3−X2Y4+ Y"
+    },
+    {
+     "page": 7,
+     "context": "adistinguisheddouble-six"
+    }
+   ],
+   "block": "library/arxiv-2208.13692v1/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p008-1",
+   "page": 8,
+   "mark": "6",
+   "text": "Notetheapproximationofτ0in[BN12]containsatypographicerror.",
+   "marks": [
+    {
+     "page": 7,
+     "context": "[L1: L2: L3: L4] = [1 : t3: t + t"
+    },
+    {
+     "page": 8,
+     "context": "swappedasﬁrstnoted"
+    }
+   ],
+   "block": "library/arxiv-2208.13692v1/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p010-1",
+   "page": 10,
+   "mark": "7",
+   "text": "AnEnglishtranslationofWiman’spaperhasbeenproduced[DHBD22].",
+   "marks": [
+    {
+     "page": 10,
+     "context": "hasorderstrictlylessthan84(g −1).In1895Wimanshowed"
+    }
+   ],
+   "block": "library/arxiv-2208.13692v1/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p011-1",
+   "page": 11,
+   "mark": "8",
+   "text": "AvariationonthispencilhasbeenusedtoexplainwhyBring’scurveisuniquelydeﬁnedasanA5- invariant curve of genus 4, but there is a 1-parameter family of dimension-4 A5-invariant principally polarised abelian varieties, deforming Jac B [Zi21, LZ21]. The paper [Mel03] gives further interesting representation theoretic perspectives on Bring’s curve.",
+   "marks": [
+    {
+     "page": 11,
+     "context": "λ[Dye95]."
+    }
+   ],
+   "block": "library/arxiv-2208.13692v1/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p011-2",
+   "page": 11,
+   "mark": "9",
+   "text": "Forλ = 17/180thecurveisofgenus0;forλ = 1/10thecurveisreducible.",
+   "marks": [
+    {
+     "page": 11,
+     "context": "λ[Dye95].8Thespecialvalueofλ = 13/100"
+    }
+   ],
+   "block": "library/arxiv-2208.13692v1/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p013-1",
+   "page": 13,
+   "mark": "10",
+   "text": "Beingageometricpointonacurveisapriorinotaninterestingstatementunlessweknowthecorre- sponding map is regular, as we have in this case.",
+   "marks": [
+    {
+     "page": 13,
+     "context": "the geometric points on the curve deﬁned in [SW97]."
+    }
+   ],
+   "block": "library/arxiv-2208.13692v1/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p015-1",
+   "page": 15,
+   "mark": "11",
+   "text": "A stall of a plane curve is a point where the osculating (hyper)plane has a 4-point intersection [Edg71].",
+   "marks": [
+    {
+     "page": 15,
+     "context": "showthattheseintersectionpointsarestalls"
+    }
+   ],
+   "block": "library/arxiv-2208.13692v1/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p015-2",
+   "page": 15,
+   "mark": "12",
+   "text": "InTheorem4of[Dye95],thesetranspositionsareassociatedwiththeBrianchonpointsoftheClebsch hexagon H from the proof of Proposition 2.11.",
+   "marks": [
+    {
+     "page": 15,
+     "context": " the intersection with Πijare preserved by the transposition"
+    }
+   ],
+   "block": "library/arxiv-2208.13692v1/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p017-1",
+   "page": 17,
+   "mark": "13",
+   "text": "TheosculatingplaneatapointPonacurveisthelimitingplanethroughP,P ′,P ′′asP ′, P ′′→P on the curve [Sal62].",
+   "marks": [
+    {
+     "page": 16,
+     "context": "+ 43056x16+ 831616x15+ 837856x14+ 992256x"
+    },
+    {
+     "page": 16,
+     "context": "+ 304736x16+ 431616x15+ 339456x14−1985664x"
+    },
+    {
+     "page": 17,
+     "context": "ijk.From[Edg78]weknowthatforBring’scurvetheosculatingplane"
+    }
+   ],
+   "block": "library/arxiv-2208.13692v1/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p020-1",
+   "page": 20,
+   "mark": "14",
+   "text": "NotethathereweareusingtheGAPconventionforthedihedralgroupthat|Dn|=n.Thisisthe opposite convention to Sage which uses |Dn| = 2n.",
+   "marks": [
+    {
+     "page": 20,
+     "context": "such.Therelevantconjugacyclassesofsubgroupsarethen"
+    }
+   ],
+   "block": "library/arxiv-2208.13692v1/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p021-1",
+   "page": 21,
+   "mark": "15",
+   "text": "The⟨(12)(34)⟩cosetsofthenormaliserare{e, (12)(34)},{(12), (34)},{(13)(24), (14)(23))},and {(1324), (1423)}.",
+   "marks": [
+    {
+     "page": 21,
+     "context": "roup.Oneoftheseinvolutions,whichwewilllaterseetobe(12)=(34),"
+    }
+   ],
+   "block": "library/arxiv-2208.13692v1/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p021-2",
+   "page": 21,
+   "mark": "16",
+   "text": "EquallyonemaysetX=1butwenotethatsettingV=1yieldsagenus4curveashereVisnotof weight 1.",
+   "marks": [
+    {
+     "page": 21,
+     "context": "InP1,1,2thisisourgenus-4curve.Setting"
+    }
+   ],
+   "block": "library/arxiv-2208.13692v1/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p022-1",
+   "page": 22,
+   "mark": "17",
+   "text": "ThereisatypointheconstanttermofR&R’sE2ifitistohavethestatedj-invariant.",
+   "marks": [
+    {
+     "page": 22,
+     "context": "E2tobeE2in[RR92]."
+    }
+   ],
+   "block": "library/arxiv-2208.13692v1/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p022-2",
+   "page": 22,
+   "mark": "18",
+   "text": "Noteonecouldhaveinsteadtakenv=s2",
+   "marks": [
+    {
+     "page": 22,
+     "context": "4] ∈P1,2,1,2."
+    }
+   ],
+   "block": "library/arxiv-2208.13692v1/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p022-3",
+   "page": 22,
+   "mark": "2",
+   "text": "forthelastinvariant,butthechoiceabovehappenstobe better around the vertices that are the ﬁxed points of the 4-cycle. Moreover, recognise that the invariants taken are deﬁned over the ﬁeld extension Q[i] and not Q.",
+   "marks": [
+    {
+     "page": 21,
+     "context": "correspondingtoU"
+    },
+    {
+     "page": 21,
+     "context": "U"
+    },
+    {
+     "page": 21,
+     "context": "ψ(U"
+    },
+    {
+     "page": 21,
+     "context": "U"
+    },
+    {
+     "page": 21,
+     "context": "U"
+    },
+    {
+     "page": 21,
+     "context": "intermsoftheinvariantsofU"
+    },
+    {
+     "page": 21,
+     "context": "0 = X(Y5+ Z5) + (XY Z)"
+    },
+    {
+     "page": 21,
+     "context": "= X(T5−5T3V+ 5TV"
+    },
+    {
+     "page": 21,
+     "context": "= X(T5−5T3V+ 5TV2) + X"
+    },
+    {
+     "page": 21,
+     "context": "= X(T5−5T3V+ 5TV2) + X2V"
+    },
+    {
+     "page": 21,
+     "context": "InP1,1,"
+    },
+    {
+     "page": 21,
+     "context": "0 = X(1 −5V+ 5V"
+    },
+    {
+     "page": 21,
+     "context": "0 = X(1 −5V+ 5V2) + X"
+    },
+    {
+     "page": 21,
+     "context": "0 = X(1 −5V+ 5V2) + X2V"
+    },
+    {
+     "page": 21,
+     "context": "C1:B"
+    },
+    {
+     "page": 21,
+     "context": "(B′)"
+    },
+    {
+     "page": 21,
+     "context": "(A′)6−5(A′)4−40(A′)"
+    },
+    {
+     "page": 22,
+     "context": "Quotientingby(B′, A′) →(B′, −A′)byintroducingA′′= −(A′)"
+    },
+    {
+     "page": 22,
+     "context": "(11)E1: (B′)"
+    },
+    {
+     "page": 22,
+     "context": "(11)E1: (B′)2= (A′′)3−5(A′′)"
+    },
+    {
+     "page": 22,
+     "context": "(B′)"
+    },
+    {
+     "page": 22,
+     "context": "(A′)6−5(A′)4C"
+    },
+    {
+     "page": 22,
+     "context": "(A′)6−5(A′)4C2−40(A′)"
+    },
+    {
+     "page": 22,
+     "context": "introducingC′= −C"
+    },
+    {
+     "page": 22,
+     "context": "(B′)"
+    },
+    {
+     "page": 22,
+     "context": "(B′)2(C′)"
+    },
+    {
+     "page": 22,
+     "context": "(B′)2(C′)2= (A′)6−5(A′)4(C′) −40(A′)"
+    },
+    {
+     "page": 22,
+     "context": "(B′)2(C′)2= (A′)6−5(A′)4(C′) −40(A′)2(C′)"
+    },
+    {
+     "page": 22,
+     "context": "E2: (B′′)"
+    },
+    {
+     "page": 22,
+     "context": "E2: (B′′)2= 1 −5(C′) −40(C′)"
+    },
+    {
+     "page": 22,
+     "context": "(x1, x"
+    },
+    {
+     "page": 22,
+     "context": "TheseareconstructedsuchthatU· sj=ij−1sj,andsowehaveU"
+    },
+    {
+     "page": 22,
+     "context": "4] ∈P1,"
+    },
+    {
+     "page": 22,
+     "context": "4] ∈P1,2,1,"
+    },
+    {
+     "page": 22,
+     "context": "v] := [s1: s2s4: s3: s"
+    },
+    {
+     "page": 22,
+     "context": "5s"
+    },
+    {
+     "page": 22,
+     "context": "5s2+ u"
+    },
+    {
+     "page": 22,
+     "context": "−5s3+ su"
+    },
+    {
+     "page": 22,
+     "context": "−5s3+ su2+t"
+    },
+    {
+     "page": 22,
+     "context": "C1:y"
+    },
+    {
+     "page": 22,
+     "context": "C1:y2= 100 −25x"
+    }
+   ],
+   "block": "library/arxiv-2208.13692v1/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p024-1",
+   "page": 24,
+   "mark": "19",
+   "text": "Thisisthecurve15-isogenoustoE2notedbySerre,see§2.2.",
+   "marks": [
+    {
+     "page": 24,
+     "context": "= j(3τ0)."
+    }
+   ],
+   "block": "library/arxiv-2208.13692v1/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p024-2",
+   "page": 24,
+   "mark": "20",
+   "text": "Thecosetsof⟨(345)⟩inthenormaliserarenow{e, (345), (354)}, {(12), (12)(345), (12)(354)}, {(34), (45), (35))}, and {(12)(34), (12)(45), (12)(35))}.",
+   "marks": [
+    {
+     "page": 24,
+     "context": "see to be (34),"
+    }
+   ],
+   "block": "library/arxiv-2208.13692v1/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p024-3",
+   "page": 24,
+   "mark": "21",
+   "text": "NoteinthiscasethattheinvariantvisnotdeﬁnedoverQ,butoverthecyclotomicextensionQ[ρ].",
+   "marks": [
+    {
+     "page": 24,
+     "context": "3]∈P1,1,2,3."
+    }
+   ],
+   "block": "library/arxiv-2208.13692v1/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p024-4",
+   "page": 24,
+   "mark": "22",
+   "text": "Thisistobeexpected,asitdoesnotsatisfytheconditionstobeincludedincurvesinvestigatedin [BSS+16]",
+   "marks": [
+    {
+     "page": 24,
+     "context": "existintheLMFDB"
+    }
+   ],
+   "block": "library/arxiv-2208.13692v1/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p025-1",
+   "page": 25,
+   "mark": "23",
+   "text": "The cosets of ⟨(12)⟩ in the normaliser are {e, (12)}, {(345), (12)(345)}, {(354), (12)(354)}, {(34), (12)(34)}, {(35), (12)(35)}, and {(45), (12)(45)}.",
+   "marks": [
+    {
+     "page": 25,
+     "context": "NS5(⟨(12)⟩)/ ⟨(12)⟩∼= S3."
+    }
+   ],
+   "block": "library/arxiv-2208.13692v1/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p029-1",
+   "page": 29,
+   "mark": "24",
+   "text": "Theisogenyclasses450band50bmergeoverQ[√−15].",
+   "marks": [
+    {
+     "page": 29,
+     "context": "mergeoverQ[ρ],whichisindeedthecase."
+    }
+   ],
+   "block": "library/arxiv-2208.13692v1/blocks/prose-sec-014"
+  },
+  {
+   "id": "fn-p034-2",
+   "page": 34,
+   "mark": "27",
+   "text": "Theﬁnalpartoftheproofinthatpaper,showinginvarianceundertheorder-2generatorofPSL2(F7), is in our opinion incomplete; Kallel (private correspondence) believes our reasoning correct. The theorem remains correct nevertheless, as one can check using their methodology that invariance under the order-7 generator is enough to specify the unique invariant spin structure, as the decompositions are 28 = 4 × 7 and",
+   "marks": [
+    {
+     "page": 34,
+     "context": "teristiconKlein’scurvein[KS06]."
+    }
+   ],
+   "block": "library/arxiv-2208.13692v1/blocks/prose-sec-018"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p030-1",
+   "page": 30,
+   "mark": "25",
+   "text": "TomakethereconstructionprocessofLombardomoreaccessible,werecreatedinSagesomeofthe functions implemented by Lombardo in Magma.",
+   "block": "library/arxiv-2208.13692v1/blocks/prose-sec-014"
+  },
+  {
+   "id": "fn-p034-1",
+   "page": 34,
+   "mark": "26",
+   "text": "UndertheactionofS,theorbitdecompositionsare120 = 24 × 5and136 = 1 + 27 × 5.",
+   "block": "library/arxiv-2208.13692v1/blocks/prose-sec-018"
+  },
+  {
+   "id": "fn-p034-3",
+   "page": 34,
+   "mark": "36",
+   "text": "= 1 + 5 × 7. It is a curious coincidence that in both cases it was a generator of order 2 for which the direct calculation was diﬃcult.",
+   "block": "library/arxiv-2208.13692v1/blocks/prose-sec-018"
+  },
+  {
+   "id": "fn-p036-1",
+   "page": 36,
+   "mark": "37",
+   "text": "(1978), no. 3, 233–241 (en). MR 511743 [GWW10] Grzegorz Gromadzki, Anthony Weaver, and Aaron Wootton, On gonality of Riemann surfaces, Geometriae Dedicata 149 (2010), no. 1, 1–14. [Har77] Robin Hartshorne, Algebraic geometry, Graduate Texts in Mathematics, No. 52, Springer- Verlag, New York-Heidelberg, 1977. [Hen13] M. Hendriks, Platonic maps of low genus, Ph.D. thesis, Mathematics and Computer Science, Technische Universiteit Eindhoven, 2013. [Hes02a] F. Hess, Computing Riemann-Roch spaces in algebraic function ﬁelds and related topics, Jour- nal of Symbolic Computation 33 (2002), no. 4, 425–445. [Hes02b] Florian Hess, An algorithm for computing Weierstrass points, Proceedings of the 5th Interna- tional Symposium on Algorithmic Number Theory, 2002, pp. 357–371. √ [Hir76] F. Hirzebruch, Hilbert’s modular group of the ﬁeld Q(",
+   "block": "library/arxiv-2208.13692v1/blocks/prose-sec-020"
+  },
+  {
+   "id": "fn-p036-2",
+   "page": 36,
+   "mark": "5",
+   "text": "and the cubic diagonal surface of Clebsch and Klein, Russian Mathematical Surveys 31 (1976), no. 5, 96–110. [Hir86] James W. P. Hirschfeld, Finite projective spaces of three dimensions, Oxford mathematical monographs, Clarendon, 1986.",
+   "block": "library/arxiv-2208.13692v1/blocks/prose-sec-020"
+  },
+  {
+   "id": "fn-p037-1",
+   "page": 37,
+   "mark": "18",
+   "text": "(1995), no. 2, 443–456. [Sin88] David Singerman, Universal tessellations, Revista Matem´atica de la Universidad Complutense de Madrid 1 (1988), no. 1-2-3, 111–123. [SR49] J. G. Semple and L. Roth, Introduction to algebraic geometry, Clarendon Press, Oxford, 1949. [Sta18] Giovanni Staglian`o, A Macaulay2 package for computations with rational maps, The journal of software for algebra and geometry 8 (2018), no. 1, 61–70. [SW97] D. Singerman and P. D. Watson, Weierstrass points and regular maps, Geometriae Dedicata",
+   "block": "library/arxiv-2208.13692v1/blocks/prose-sec-020"
+  },
+  {
+   "id": "fn-p037-2",
+   "page": 37,
+   "mark": "66",
+   "text": "(1997), no. 1, 69–88. [The21] The Sage Developers, Sagemath, the Sage Mathematics Software System (Version 9.4), 2021, https://www.sagemath.org. [TZ11] Hiromichi Takagi and Francesco Zucconi, Spin curves and Scorza quartics, Math. Ann. 349 (2011), no. 3, 623–645. [Vak10] Ravi Vakil, The Rising Sea: Foundations of Algebraic Geometry, http://math.stanford.edu/~vakil/216blog/FOAGnov1817public 2010. [VSA03] David J. Jeﬀrey Victor S. Adamchik, Polynomial transformations of Tschirnhaus, Bring and Jerrard, ACM SIGSAM Bulletin, 37 (2003), no. 3, 90–94.",
+   "block": "library/arxiv-2208.13692v1/blocks/prose-sec-020"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "4",
+   "context": "morphisms.We begin with two descriptions:one as a model in P"
+  },
+  {
+   "page": 2,
+   "mark": "4",
+   "context": "Deﬁnition2.1.Bring’sCurveBisdeﬁnedinP"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "x"
+  },
+  {
+   "page": 2,
+   "mark": "4",
+   "context": "wherewehavetakenthecoordinates[x1: x2: x3: x4: x5] ∈P"
+  },
+  {
+   "page": 2,
+   "mark": "4",
+   "context": "Wewillcall(1)theP"
+  },
+  {
+   "page": 2,
+   "mark": "5",
+   "context": "formx"
+  },
+  {
+   "page": 2,
+   "mark": "x",
+   "context": "i"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "ix"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "i=0for"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "i=0fork=1,"
+  },
+  {
+   "page": 2,
+   "mark": "4",
+   "context": "Remark 2.2.In the above deﬁnition we have implicitly taken P"
+  },
+  {
+   "page": 2,
+   "mark": "4",
+   "context": "k 2.2.In the above deﬁnition we have implicitly taken P4= CP"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "FormanycalculationsaplanemodelofacurveinP"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "curveinP"
+  },
+  {
+   "page": 3,
+   "mark": "5",
+   "context": "F(X, Y, Z) := X(Y"
+  },
+  {
+   "page": 3,
+   "mark": "5",
+   "context": "F(X, Y, Z) := X(Y5+ Z"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "F(X, Y, Z) := X(Y5+ Z5) + (XY Z)"
+  },
+  {
+   "page": 3,
+   "mark": "4",
+   "context": "F(X, Y, Z) := X(Y5+ Z5) + (XY Z)2−X"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "F(X, Y, Z) := X(Y5+ Z5) + (XY Z)2−X4Y Z −2(Y Z)"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "takinghomogeneouscoordinates[X: Y: Z] ∈P"
+  },
+  {
+   "page": 3,
+   "mark": "5",
+   "context": "AnotherplanemodelofBring’s curve is given by y"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "AnotherplanemodelofBring’s curve is given by y5−(x + 1)x"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "[Web05,Proposition3.1]byconsideringthecurveasacycliccoverofP"
+  },
+  {
+   "page": 3,
+   "mark": "4",
+   "context": "Resy(f(x, y), ∂yf(x, y)) = x"
+  },
+  {
+   "page": 3,
+   "mark": "5",
+   "context": "Resy(f(x, y), ∂yf(x, y)) = x4(x"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "Resy(f(x, y), ∂yf(x, y)) = x4(x5−1)"
+  },
+  {
+   "page": 3,
+   "mark": "10",
+   "context": "Resy(f(x, y), ∂yf(x, y)) = x4(x5−1)2(256x"
+  },
+  {
+   "page": 3,
+   "mark": "5",
+   "context": "Resy(f(x, y), ∂yf(x, y)) = x4(x5−1)2(256x10−837x"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "Vk= [ζ"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "Vk= [ζk: ζ"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "Vk= [ζk: ζ2"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "a := [0 : 0 : 1] ≃[2t"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "b := [0 : 1 : 0] ≃[2t"
+  },
+  {
+   "page": 3,
+   "mark": "4",
+   "context": "d := [1 : 0 : 0]1≃[1 : t"
+  },
+  {
+   "page": 3,
+   "mark": "4",
+   "context": "c := [1 : 0 : 0]2≃[1 : t : t"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "whereRFistheramiﬁcationdivisorcorrespondingtothemapx : B→P"
+  },
+  {
+   "page": 3,
+   "mark": "10",
+   "context": "rootsofthepolynomial256x"
+  },
+  {
+   "page": 3,
+   "mark": "5",
+   "context": "rootsofthepolynomial256x10−837x"
+  },
+  {
+   "page": 4,
+   "mark": "x",
+   "context": "v1=(y3 −x)d"
+  },
+  {
+   "page": 4,
+   "mark": "x",
+   "context": "v4=y(x2 −y)d"
+  },
+  {
+   "page": 4,
+   "mark": "x",
+   "context": "v2=(y2"
+  },
+  {
+   "page": 4,
+   "mark": "x",
+   "context": "v2=(y2x −1)d"
+  },
+  {
+   "page": 4,
+   "mark": "x",
+   "context": "v3=(y −x2)d"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "Whileallfull-rankquadricsinP3areisomorphictoP"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "Whileallfull-rankquadricsinP3areisomorphictoP1× P"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "Proposition2.9.Q ≃P"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "Proposition2.9.Q ≃P1× P"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "Proof.ConsiderthemapQ →P"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "Proof.ConsiderthemapQ →P1× P"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "ϕ : P"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "ϕ : P1× P"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "−v"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "andsocorrespondtothesamepointinP"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "andsocorrespondtothesamepointinP1× P"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "−v"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "Indeedwecanspottheinversemapϕ−1: Q →P"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "Indeedwecanspottheinversemapϕ−1: Q →P1× P"
+  },
+  {
+   "page": 5,
+   "mark": "6",
+   "context": "S(x, y, z) = (x + jy)"
+  },
+  {
+   "page": 5,
+   "mark": "6",
+   "context": "S(x, y, z) = (x + jy)6+ (x −jy)"
+  },
+  {
+   "page": 5,
+   "mark": "6",
+   "context": "S(x, y, z) = (x + jy)6+ (x −jy)6+ (y + jz)"
+  },
+  {
+   "page": 5,
+   "mark": "6",
+   "context": "S(x, y, z) = (x + jy)6+ (x −jy)6+ (y + jz)6+ (y −jz)"
+  },
+  {
+   "page": 5,
+   "mark": "6",
+   "context": ", y, z) = (x + jy)6+ (x −jy)6+ (y + jz)6+ (y −jz)6+ (z + jx)"
+  },
+  {
+   "page": 5,
+   "mark": "6",
+   "context": "(x + jy)6+ (x −jy)6+ (y + jz)6+ (y −jz)6+ (z + jx)6+ (z −jx)"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "AcubicinP"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "a0X"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "a0X3+ a1X"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "a0X3+ a1X2Y+ a2X"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "a0X3+ a1X2Y+ a2X2Z + a3XY"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "a0X3+ a1X2Y+ a2X2Z + a3XY2+ a4XY Z + a5XZ"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "a0X3+ a1X2Y+ a2X2Z + a3XY2+ a4XY Z + a5XZ2+ a6Y"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "a0X3+ a1X2Y+ a2X2Z + a3XY2+ a4XY Z + a5XZ2+ a6Y3+ a7Y"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "3+ a1X2Y+ a2X2Z + a3XY2+ a4XY Z + a5XZ2+ a6Y3+ a7Y2Z + a8Y Z"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "2Y+ a2X2Z + a3XY2+ a4XY Z + a5XZ2+ a6Y3+ a7Y2Z + a8Y Z2+ a9Z"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "a0ζ"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "a0ζ3"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "a0ζ3k+ a1ζ4"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "a0ζ3k+ a1ζ4k+ a2ζ"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "a0ζ3k+ a1ζ4k+ a2ζ2"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "a0ζ3k+ a1ζ4k+ a2ζ2k+ a3 + a4ζ"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "a0ζ3k+ a1ζ4k+ a2ζ2k+ a3 + a4ζ3"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "a0ζ3k+ a1ζ4k+ a2ζ2k+ a3 + a4ζ3k+ a5ζ"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "a0ζ3k+ a1ζ4k+ a2ζ2k+ a3 + a4ζ3k+ a5ζk+ a6ζ"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "a0ζ3k+ a1ζ4k+ a2ζ2k+ a3 + a4ζ3k+ a5ζk+ a6ζk+ a7ζ4"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "a0ζ3k+ a1ζ4k+ a2ζ2k+ a3 + a4ζ3k+ a5ζk+ a6ζk+ a7ζ4k+ a8ζ"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "a0ζ3k+ a1ζ4k+ a2ζ2k+ a3 + a4ζ3k+ a5ζk+ a6ζk+ a7ζ4k+ a8ζ2"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "0 = aX"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "0 = aX2Y+ bX"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "0 = aX2Y+ bX2Z + cXY"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "0 = aX2Y+ bX2Z + cXY2+ dXZ"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "0 = aX2Y+ bX2Z + cXY2+ dXZ2−dY"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "0 = aX2Y+ bX2Z + cXY2+ dXZ2−dY3−aY"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "0 = aX2Y+ bX2Z + cXY2+ dXZ2−dY3−aY2Z −bY Z"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "0 = aX2Y+ bX2Z + cXY2+ dXZ2−dY3−aY2Z −bY Z2−cZ"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "ComparingthecoeﬃcientsweseethatourmapintoP"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "L2L"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "4−L"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "1L4−L"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1L4−L1L"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "3+ L"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "2L"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "[X: Y: Z] = [L"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "2−L"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "2−L1L"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "2−L1L3: L"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "2−L1L3: L1L4: L"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "X"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "X2Z −Y Z"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "XY"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "XY2−Z"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "L"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "X"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "X2Y−Y"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "2−L"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "2−L1L"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "(X"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "(X2Y−Y"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "(X2Y−Y2Z) (XZ"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "(X2Y−Y2Z) (XZ2−Y"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "=X4Z"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "=X4Z2 −X"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "=X4Z2 −X2Y Z"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "=X4Z2 −X2Y Z3 −X"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "=X4Z2 −X2Y Z3 −X3Y"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "X"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "X3Y Z"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "X3Y Z2−XY"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "X3Y Z2−XY2Z"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "X3Y Z2−XY2Z3−X"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "=X"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "=X2Y−Y"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "X"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "X2Z −Y Z"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "X2Z −Y Z2=(X"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "X2Z −Y Z2=(X2Z −Y Z"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "=L"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "X"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "X2Z −Y Z"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "WenowhaveacubicsurfaceinP"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "surfaceinP"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "0 = x"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "1"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1x"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "1x2+ x"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "1x2+ x1"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1x2+ x1x"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "2+ x"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "1"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "1x"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1x3+ x"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "2"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "2x"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "2x3+ x"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "2x3+ x1"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "2x3+ x1x"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "3+ x"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "3+ x2"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "3+ x2x"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "3+ x"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "1"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1x4+ x"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "2"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "2x4+ x"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "3"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "3x4+ x"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "3x4+ x1"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "3x4+ x1x"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "4+ x"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "4+ x2"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "4+ x2x"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "4+ x"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "4+ x3"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "4+ x3x"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "L4 + (ζ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "L4 + (ζ2+ ζ + 1)L2 + (ζ4−ζ"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "L4 + (ζ2+ ζ + 1)L2 + (ζ4−ζ2−ζ)L1, L3 + (ζ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "L4 + (ζ2+ ζ + 1)L2 + (ζ4−ζ2−ζ)L1, L3 + (ζ3+ 2ζ"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "L4 + (ζ2+ ζ + 1)L2 + (ζ4−ζ2−ζ)L1, L3 + (ζ3+ 2ζ2+ ζ)L2 + (ζ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": " + (ζ2+ ζ + 1)L2 + (ζ4−ζ2−ζ)L1, L3 + (ζ3+ 2ζ2+ ζ)L2 + (ζ3+ ζ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "L4 + (−ζ"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "L4 + (−ζ2−ζ)L2 + (ζ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "L4 + (−ζ2−ζ)L2 + (ζ3+ 2ζ"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "L4 + (−ζ2−ζ)L2 + (ζ3+ 2ζ2+ ζ)L1, L3 + (ζ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "L4 + (−ζ2−ζ)L2 + (ζ3+ 2ζ2+ ζ)L1, L3 + (ζ3−ζ −1)L2 + (ζ"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "Ψ(V0V5)∩Ψ(V1V2)∩Ψ(V3V4) = [−ζ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "Ψ(V0V5)∩Ψ(V1V2)∩Ψ(V3V4) = [−ζ3−ζ"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "Ψ(V0V5)∩Ψ(V1V2)∩Ψ(V3V4) = [−ζ3−ζ2−1 : −ζ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "Ψ(V0V5)∩Ψ(V1V2)∩Ψ(V3V4) = [−ζ3−ζ2−1 : −ζ3−ζ"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "ζ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "−ζ"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "−ζ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "ζ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "ζ"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "ζ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "−ζ"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "−ζ"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "inP"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "[L1: L2: L3: L4] = [1 : t"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "[L1: L2: L3: L4] = [1 : t3: t + t6: −t"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "[x1: x2: x3: x4: x5] = [ζ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "[x1: x2: x3: x4: x5] = [ζ3: 1 : ζ"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "[x1: x2: x3: x4: x5] = [1 : ζ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "[x1: x2: x3: x4: x5] = [1 : ζ3: ζ: ζ"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "solutionstotheequationsdeﬁningBring’scurveintheP"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "j(τ0) = −29"
+  },
+  {
+   "page": 8,
+   "mark": "5",
+   "context": "2"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "ζ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "ζk(1 −ζ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "ζ"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "ζ2"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "ζ2k+3/2(1 −ζ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "ζ"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "ζ2"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "ζ2k+3/2(1 −ζ"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "ζ"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "ζ4"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "ζ4k+3(1 −ζ"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "ζ"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "ζ4"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "ζ4k+3(1 −ζ"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "ζ"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "ζ3"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "ζ"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "ζ3"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "ζ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "ζk(1 −ζ"
+  },
+  {
+   "page": 9,
+   "mark": "b",
+   "context": "Z"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "j(15τ0) = −5"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "j(15τ0) = −52 × 241"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "2"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "j(3τ0) =5 × 211"
+  },
+  {
+   "page": 9,
+   "mark": "15",
+   "context": "2"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "2.3.TheAutomorphismGroup.Aspreviouslynoted,theP"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "embeddingofthecurveinP"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "wehavethatitisisomorphictoP"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "wehavethatitisisomorphictoP1× P"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "subgroupofAut(P"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "subgroupofAut(P1× P"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "P"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "P1×P"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "ItisclearfromtheP"
+  },
+  {
+   "page": 10,
+   "mark": "5",
+   "context": "thepermutationrepresentationofS"
+  },
+  {
+   "page": 10,
+   "mark": "x",
+   "context": "i"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "ix"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "ζ"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": ",R"
+  },
+  {
+   "page": 11,
+   "mark": "5",
+   "context": ",S"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": ",S5= I,(RS)"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "ζ"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "ζintheabovewithζ"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "ζintheabovewithζ2orζ"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "2+ Y ζ"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "2X"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "2+ Y ζ"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "2+ Y ζ"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "Thereisapolynomialrelationbetweeni"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "15and"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "15andi"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "15andi2,"
+  },
+  {
+   "page": 11,
+   "mark": "6",
+   "context": "15andi2,i"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "15andi2,i6,"
+  },
+  {
+   "page": 11,
+   "mark": "10",
+   "context": "15andi2,i6,i"
+  },
+  {
+   "page": 11,
+   "mark": "5",
+   "context": "2gives us Dye’s one-parameter family of A"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "s us Dye’s one-parameter family of A5-invariant sextics in P"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "i6−λi"
+  },
+  {
+   "page": 11,
+   "mark": "5",
+   "context": "= X(Y"
+  },
+  {
+   "page": 11,
+   "mark": "5",
+   "context": "= X(Y5+ Z"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "= X(Y5+ Z5) + (XY Z)"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "= X(Y5+ Z5) + (XY Z)2−X"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "= X(Y5+ Z5) + (XY Z)2−X4Y Z −2(Y Z)"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "100i6 −13i"
+  },
+  {
+   "page": 11,
+   "mark": "5",
+   "context": "−y"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "−y5 + x"
+  },
+  {
+   "page": 11,
+   "mark": "y",
+   "context": "−y5 + x3"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "−y5 + x3y −3xy"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": ", −y"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": ", −y2"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "(y −x"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "(y −x2)(y"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "y"
+  },
+  {
+   "page": 12,
+   "mark": "4",
+   "context": "By ﬁxing a map from the HC-model to the P"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "thatwehaveU"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "thatwehaveU2([X: Y: Z]) = [X: Z: Y ].WeseeU"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "L3],andsoU"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "(suchasthelabellingofthecoordinatesinP"
+  },
+  {
+   "page": 12,
+   "mark": "4",
+   "context": "composing with any automorphism of the P"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": " the curve and a subgroup of Aut(Q).For Bring’s curve Q ∼= P"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "e curve and a subgroup of Aut(Q).For Bring’s curve Q ∼= P1×P"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "anisomorphismfromS5toasubgroupofAut(P"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "anisomorphismfromS5toasubgroupofAut(P1× P"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "now write down.Let ([u : v], [z: w]) be the coordinates on P"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": " write down.Let ([u : v], [z: w]) be the coordinates on P1×P"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "wherej=−ζ"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "wherej=−ζ3−ζ"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "wherej=−ζ3−ζ2satisﬁesj"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "showthat(34)hasthesameaction,wheretheotherrootj′=ζ"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "showthat(34)hasthesameaction,wheretheotherrootj′=ζ3+ ζ"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "cancheckthatAB=1∈PGL2(C),consistentwiththefactthat(12)"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "thetranspositioninterchangesthetwocopiesofP"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "ThisﬁxeseachcopyofP"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "−ζ"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "ζ"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "ζ"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "−ζ"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "−ζ"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "−ζ"
+  },
+  {
+   "page": 12,
+   "mark": "4",
+   "context": "ζ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "copiesofP"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "curvethroughadegree-3coveringB→P"
+  },
+  {
+   "page": 13,
+   "mark": "g",
+   "context": "curveXofgenusgwithcanonicalembeddingXc⊆P"
+  },
+  {
+   "page": 13,
+   "mark": "g",
+   "context": "(1)thereexistsahyperplaneH⊂P"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "d"
+  },
+  {
+   "page": 13,
+   "mark": "j",
+   "context": "i,j=0,...,g−1,where{ω"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "dz"
+  },
+  {
+   "page": 15,
+   "mark": "60",
+   "context": "have"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "transitively.Letting{α, β, γ}betherootsofthecubicx"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "transitively.Letting{α, β, γ}betherootsofthecubicx3+ 2x"
+  },
+  {
+   "page": 15,
+   "mark": "4",
+   "context": "theP"
+  },
+  {
+   "page": 15,
+   "mark": "4",
+   "context": "Proof.Edge, working in the P"
+  },
+  {
+   "page": 15,
+   "mark": "120",
+   "context": "(ij) only, so have orbits of size"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "em3.4([LS12],Theorem15).IfXisaRiemannsurfaceofgenusg> 2withg"
+  },
+  {
+   "page": 15,
+   "mark": "4",
+   "context": "modelusingEdge’sidentiﬁcationoftheWeierstrasspointsintheP"
+  },
+  {
+   "page": 16,
+   "mark": "12",
+   "context": "0 = x"
+  },
+  {
+   "page": 16,
+   "mark": "11",
+   "context": "0 = x12−32x"
+  },
+  {
+   "page": 16,
+   "mark": "10",
+   "context": "0 = x12−32x11−114x"
+  },
+  {
+   "page": 16,
+   "mark": "9",
+   "context": "0 = x12−32x11−114x10−200x"
+  },
+  {
+   "page": 16,
+   "mark": "8",
+   "context": "0 = x12−32x11−114x10−200x9+ 100x"
+  },
+  {
+   "page": 16,
+   "mark": "7",
+   "context": "0 = x12−32x11−114x10−200x9+ 100x8+ 48x"
+  },
+  {
+   "page": 16,
+   "mark": "6",
+   "context": "0 = x12−32x11−114x10−200x9+ 100x8+ 48x7−936x"
+  },
+  {
+   "page": 16,
+   "mark": "5",
+   "context": "0 = x12−32x11−114x10−200x9+ 100x8+ 48x7−936x6+ 1728x"
+  },
+  {
+   "page": 16,
+   "mark": "4",
+   "context": "0 = x12−32x11−114x10−200x9+ 100x8+ 48x7−936x6+ 1728x5−2000x"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "−32x11−114x10−200x9+ 100x8+ 48x7−936x6+ 1728x5−2000x4+ 3200x"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "−2624x"
+  },
+  {
+   "page": 16,
+   "mark": "24",
+   "context": "0 = x"
+  },
+  {
+   "page": 16,
+   "mark": "23",
+   "context": "0 = x24−24x"
+  },
+  {
+   "page": 16,
+   "mark": "22",
+   "context": "0 = x24−24x23+ 1306x"
+  },
+  {
+   "page": 16,
+   "mark": "21",
+   "context": "0 = x24−24x23+ 1306x22−2864x"
+  },
+  {
+   "page": 16,
+   "mark": "20",
+   "context": "0 = x24−24x23+ 1306x22−2864x21+ 10096x"
+  },
+  {
+   "page": 16,
+   "mark": "19",
+   "context": "0 = x24−24x23+ 1306x22−2864x21+ 10096x20−32704x"
+  },
+  {
+   "page": 16,
+   "mark": "18",
+   "context": "0 = x24−24x23+ 1306x22−2864x21+ 10096x20−32704x19−5704x"
+  },
+  {
+   "page": 16,
+   "mark": "17",
+   "context": "x24−24x23+ 1306x22−2864x21+ 10096x20−32704x19−5704x18−41824x"
+  },
+  {
+   "page": 16,
+   "mark": "16",
+   "context": "+ 43056x"
+  },
+  {
+   "page": 16,
+   "mark": "15",
+   "context": "+ 43056x16+ 831616x"
+  },
+  {
+   "page": 16,
+   "mark": "14",
+   "context": "+ 43056x16+ 831616x15+ 837856x"
+  },
+  {
+   "page": 16,
+   "mark": "12",
+   "context": "+ 43056x16+ 831616x15+ 837856x14+ 992256x13+ 2603136x"
+  },
+  {
+   "page": 16,
+   "mark": "11",
+   "context": "56x16+ 831616x15+ 837856x14+ 992256x13+ 2603136x12+ 1238016x"
+  },
+  {
+   "page": 16,
+   "mark": "10",
+   "context": "+ 1560576x"
+  },
+  {
+   "page": 16,
+   "mark": "9",
+   "context": "+ 1560576x10+ 5584896x"
+  },
+  {
+   "page": 16,
+   "mark": "8",
+   "context": "+ 1560576x10+ 5584896x9+ 3357696x"
+  },
+  {
+   "page": 16,
+   "mark": "7",
+   "context": "+ 1560576x10+ 5584896x9+ 3357696x8+ 3838976x"
+  },
+  {
+   "page": 16,
+   "mark": "6",
+   "context": "+ 1560576x10+ 5584896x9+ 3357696x8+ 3838976x7+ 5856256x"
+  },
+  {
+   "page": 16,
+   "mark": "5",
+   "context": "576x10+ 5584896x9+ 3357696x8+ 3838976x7+ 5856256x6+ 2543616x"
+  },
+  {
+   "page": 16,
+   "mark": "4",
+   "context": "+ 2200576x"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "+ 2200576x4+ 1355776x"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "+ 2200576x4+ 1355776x3+ 454656x"
+  },
+  {
+   "page": 16,
+   "mark": "24",
+   "context": "0 = x"
+  },
+  {
+   "page": 16,
+   "mark": "23",
+   "context": "0 = x24+ 56x"
+  },
+  {
+   "page": 16,
+   "mark": "22",
+   "context": "0 = x24+ 56x23+ 1176x"
+  },
+  {
+   "page": 16,
+   "mark": "21",
+   "context": "0 = x24+ 56x23+ 1176x22−1784x"
+  },
+  {
+   "page": 16,
+   "mark": "20",
+   "context": "0 = x24+ 56x23+ 1176x22−1784x21−3904x"
+  },
+  {
+   "page": 16,
+   "mark": "19",
+   "context": "0 = x24+ 56x23+ 1176x22−1784x21−3904x20+ 36096x"
+  },
+  {
+   "page": 16,
+   "mark": "18",
+   "context": "0 = x24+ 56x23+ 1176x22−1784x21−3904x20+ 36096x19+ 12776x"
+  },
+  {
+   "page": 16,
+   "mark": "17",
+   "context": "+ 56x23+ 1176x22−1784x21−3904x20+ 36096x19+ 12776x18−211904x"
+  },
+  {
+   "page": 16,
+   "mark": "16",
+   "context": "+ 304736x"
+  },
+  {
+   "page": 16,
+   "mark": "15",
+   "context": "+ 304736x16+ 431616x"
+  },
+  {
+   "page": 16,
+   "mark": "14",
+   "context": "+ 304736x16+ 431616x15+ 339456x"
+  },
+  {
+   "page": 16,
+   "mark": "12",
+   "context": "+ 304736x16+ 431616x15+ 339456x14−1985664x13−625344x"
+  },
+  {
+   "page": 16,
+   "mark": "11",
+   "context": "4736x16+ 431616x15+ 339456x14−1985664x13−625344x12+ 1034496x"
+  },
+  {
+   "page": 16,
+   "mark": "10",
+   "context": "+ 3512576x"
+  },
+  {
+   "page": 16,
+   "mark": "9",
+   "context": "+ 3512576x10−584704x"
+  },
+  {
+   "page": 16,
+   "mark": "8",
+   "context": "+ 3512576x10−584704x9−3572224x"
+  },
+  {
+   "page": 16,
+   "mark": "7",
+   "context": "+ 3512576x10−584704x9−3572224x8−2018304x"
+  },
+  {
+   "page": 16,
+   "mark": "6",
+   "context": "+ 3512576x10−584704x9−3572224x8−2018304x7+ 3303936x"
+  },
+  {
+   "page": 16,
+   "mark": "5",
+   "context": "3512576x10−584704x9−3572224x8−2018304x7+ 3303936x6+ 3055616x"
+  },
+  {
+   "page": 16,
+   "mark": "4",
+   "context": "+ 1099776x"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "+ 1099776x4+ 45056x"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "+ 1099776x4+ 45056x3+ 229376x"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "[RR92]thenmayinspireonetoadjointherealrootofthepolynomialx"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "92]thenmayinspireonetoadjointherealrootofthepolynomialx3+ 7x"
+  },
+  {
+   "page": 16,
+   "mark": "q",
+   "context": "3"
+  },
+  {
+   "page": 16,
+   "mark": "q",
+   "context": "3"
+  },
+  {
+   "page": 16,
+   "mark": "q",
+   "context": "3"
+  },
+  {
+   "page": 16,
+   "mark": "p",
+   "context": "3"
+  },
+  {
+   "page": 16,
+   "mark": "p",
+   "context": "3"
+  },
+  {
+   "page": 16,
+   "mark": "345",
+   "context": "345correspondingtotheWeierstrasspointW"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "P345= [δ′: δ: (−43α"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "−(13α"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "−(13α2−27α −20)/28 : (43α"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "−(13α2−27α −20)/28 : (43α2+ 25α −4)β/112 + (13α"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "345= [δ: δ′: (−43α"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "−(13α"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "−(13α2−27α −20)/28 : (43α"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "−(13α2−27α −20)/28 : (43α2+ 25α −4)β/112 + (13α"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 17,
+   "mark": "245",
+   "context": "145+ P"
+  },
+  {
+   "page": 17,
+   "mark": "345",
+   "context": "245−4W"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "WeknowthatforanyWeierstrasspointWthereisahyperplaneH⊂P"
+  },
+  {
+   "page": 17,
+   "mark": "145",
+   "context": "45α) = 2(W"
+  },
+  {
+   "page": 17,
+   "mark": "245",
+   "context": "45α) = 2(W145 + W"
+  },
+  {
+   "page": 17,
+   "mark": "345",
+   "context": "45α) = 2(W145 + W245 + W"
+  },
+  {
+   "page": 17,
+   "mark": "145",
+   "context": "ν"
+  },
+  {
+   "page": 17,
+   "mark": "245",
+   "context": "ν145ν"
+  },
+  {
+   "page": 17,
+   "mark": "145",
+   "context": "= P"
+  },
+  {
+   "page": 17,
+   "mark": "245",
+   "context": "145+ P"
+  },
+  {
+   "page": 17,
+   "mark": "345",
+   "context": "245−4W"
+  },
+  {
+   "page": 17,
+   "mark": "4",
+   "context": "ofthecurve.TheyaregivenintheP"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "fthecurve.TheyaregivenintheP4-modelbythepermutationsof[1:ζ:ζ"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "ecurve.TheyaregivenintheP4-modelbythepermutationsof[1:ζ:ζ2:ζ"
+  },
+  {
+   "page": 17,
+   "mark": "4",
+   "context": "rve.TheyaregivenintheP4-modelbythepermutationsof[1:ζ:ζ2:ζ3:ζ"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "(1)[−2ζ"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "(1)[−2ζ3−2ζ"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "(1)[−2ζ3−2ζ2: ζ"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "(1)[−2ζ3−2ζ2: ζ3+ ζ"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "(2)[−2ζ"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "(2)[−2ζ3−2 : −2ζ"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "(3)[−2ζ"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "(3)[−2ζ2−2ζ: −ζ"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "(4)[2ζ"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "(4)[2ζ3+ 2ζ"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "(4)[2ζ3+ 2ζ2+ 2ζ: ζ"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "(4)[2ζ3+ 2ζ2+ 2ζ: ζ3+ 2ζ"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "(5)[−2ζ"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "(5)[−2ζ2−2 : ζ"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "(5)[−2ζ2−2 : ζ3−ζ"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "(6)[2ζ"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "(6)[2ζ3+ 2ζ + 2 : ζ"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "(7)[−2ζ"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "(7)[−2ζ3−2ζ: 2ζ"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "(7)[−2ζ3−2ζ: 2ζ3+ ζ"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "(8)[2ζ"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "(8)[2ζ3+ 2ζ"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "(8)[2ζ3+ 2ζ2+ 2 : −ζ"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "(8)[2ζ3+ 2ζ2+ 2 : −ζ3−ζ"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "(9)[2ζ"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "(9)[2ζ2+ 2ζ + 2 : −ζ"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "(9)[2ζ2+ 2ζ + 2 : −ζ3−2ζ"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "(10)[−2ζ −2 : −ζ"
+  },
+  {
+   "page": 18,
+   "mark": "4",
+   "context": "thecurve.TheyaregivenintheP"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "[X: Y: Z] = [(3ζ"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "[X: Y: Z] = [(3ζ3−ζ"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "[X: Y: Z] = [(3ζ3−ζ2+ 2ζ + 1)i + 3ζ"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "[X: Y: Z] = [(3ζ3−ζ2+ 2ζ + 1)i + 3ζ3+ 3ζ"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "[X: Y: Z] = [(3ζ3−ζ2+ 2ζ + 1)i + 3ζ3+ 3ζ2+ 5 : (2ζ"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": " Z] = [(3ζ3−ζ2+ 2ζ + 1)i + 3ζ3+ 3ζ2+ 5 : (2ζ3+ 2ζ + 1)i + 2ζ"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": " [(3ζ3−ζ2+ 2ζ + 1)i + 3ζ3+ 3ζ2+ 5 : (2ζ3+ 2ζ + 1)i + 2ζ3+ 2ζ"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 19,
+   "mark": "x",
+   "context": "1+ 2"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "1+ 2x"
+  },
+  {
+   "page": 19,
+   "mark": "x",
+   "context": "2+ 2"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "2+ 2x"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "x"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "P ∈Fix(σ"
+  },
+  {
+   "page": 19,
+   "mark": "4",
+   "context": "andwegettheconstraintλ"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "x1 + x2(1 + λ + λ"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "x1 + x2(1 + λ + λ2+ λ"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "2(1 + λ"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "2(1 + λ2 + 1 + λ"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "1+ x"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "2(1 + λ"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "2(1 + λ3 + λ"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "x"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "1+ x"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "−1 : ∓i].Thesearealsotheonlyﬁxedpointsof(24)(35) = (2345)"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "metrygivesP"
+  },
+  {
+   "page": 21,
+   "mark": "4",
+   "context": "P"
+  },
+  {
+   "page": 21,
+   "mark": "5",
+   "context": "0 = X(Y"
+  },
+  {
+   "page": 21,
+   "mark": "5",
+   "context": "0 = X(Y5+ Z"
+  },
+  {
+   "page": 21,
+   "mark": "4",
+   "context": "0 = X(Y5+ Z5) + (XY Z)2−X"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "0 = X(Y5+ Z5) + (XY Z)2−X4Y Z −2(Y Z)"
+  },
+  {
+   "page": 21,
+   "mark": "5",
+   "context": "= X(T"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "= X(T5−5T"
+  },
+  {
+   "page": 21,
+   "mark": "4",
+   "context": "= X(T5−5T3V+ 5TV2) + X2V2−X"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "= X(T5−5T3V+ 5TV2) + X2V2−X4V−2V"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "InP"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "InP1,"
+  },
+  {
+   "page": 21,
+   "mark": "4",
+   "context": "0 = X(1 −5V+ 5V2) + X2V2−X"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "0 = X(1 −5V+ 5V2) + X2V2−X4V−2V"
+  },
+  {
+   "page": 21,
+   "mark": "6",
+   "context": "C1:B2= A"
+  },
+  {
+   "page": 21,
+   "mark": "5",
+   "context": "C1:B2= A6+ 4A"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "C1:B2= A6+ 4A5+ 10A"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "A = (2 + A′)/(2 −A′),B= 4B′/(2 −A′)"
+  },
+  {
+   "page": 21,
+   "mark": "6",
+   "context": "(A′)"
+  },
+  {
+   "page": 21,
+   "mark": "4",
+   "context": "(A′)6−5(A′)"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "(11)E"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "(11)E1: (B′)2= (A′′)"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "(B′)2= (A′′)3−5(A′′)2−40(A′′) −80withj-invariantjE1= −5 × 29"
+  },
+  {
+   "page": 22,
+   "mark": "5",
+   "context": "2"
+  },
+  {
+   "page": 22,
+   "mark": "4",
+   "context": "(B′)2C"
+  },
+  {
+   "page": 22,
+   "mark": "6",
+   "context": "(A′)"
+  },
+  {
+   "page": 22,
+   "mark": "4",
+   "context": "(A′)6−5(A′)"
+  },
+  {
+   "page": 22,
+   "mark": "4",
+   "context": "(A′)6−5(A′)4C2−40(A′)2C"
+  },
+  {
+   "page": 22,
+   "mark": "6",
+   "context": "(A′)6−5(A′)4C2−40(A′)2C4−80C"
+  },
+  {
+   "page": 22,
+   "mark": "6",
+   "context": "(B′)2(C′)2= (A′)"
+  },
+  {
+   "page": 22,
+   "mark": "4",
+   "context": "(B′)2(C′)2= (A′)6−5(A′)"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "(B′)2(C′)2= (A′)6−5(A′)4(C′) −40(A′)2(C′)2−80(C′)"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "E2: (B′′)2= 1 −5(C′) −40(C′)2−80(C′)"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "2= j(5τ"
+  },
+  {
+   "page": 22,
+   "mark": "4",
+   "context": "NextletusquotienttheP"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "(x"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "(x1, x2, x"
+  },
+  {
+   "page": 22,
+   "mark": "4",
+   "context": "(x1, x2, x3, x"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "TheseareconstructedsuchthatU· sj=i"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "4] ∈P"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "4] ∈P1,2,"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "−5s"
+  },
+  {
+   "page": 22,
+   "mark": "u",
+   "context": "−5s3+ su2+t2"
+  },
+  {
+   "page": 22,
+   "mark": "4",
+   "context": "C1:y2= 100 −25x2−10x"
+  },
+  {
+   "page": 22,
+   "mark": "6",
+   "context": "C1:y2= 100 −25x2−10x4−x"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "ﬁeldrequiredtohaveequivalenceoftheHulek-CraigandP"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": ", (1324)⟩/ ⟨(12)(34)⟩.Onecancheckthat(12):[s:t:u:v]→[s:t:u:t"
+  },
+  {
+   "page": 23,
+   "mark": "t",
+   "context": "y= −10 + 2uv7→−10 + 2"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "y= −10 + 2uv7→−10 + 2t"
+  },
+  {
+   "page": 23,
+   "mark": "u",
+   "context": "y= −10 + 2uv7→−10 + 2t2"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "−5 + u"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "−10 + uv + (5 + u"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "Nowifx=x"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "Nowifx=x2,theellipticcurvey"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "Nowifx=x2,theellipticcurvey2=100−25x−10x"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "Nowifx=x2,theellipticcurvey2=100−25x−10x2−x"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "(13)(24) : [s : t : u : v] →[s : t : −u : −t"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "T:y"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "T:y2= 4x"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "2= j(5τ"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "(andsonecessarilyunder(12)(34))givenbyu′=uv,v′=v"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "5s"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "5s2+(u′)"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "−5s"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "−5s3+s(u′)"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "+t"
+  },
+  {
+   "page": 23,
+   "mark": "u",
+   "context": "+t2"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "Q[x"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "Q[x1, . . . , x"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "Q[x1, . . . , xn]A"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "Q[x1, . . . , xn]Anisgeneratedbythesymmetricpolynomialss"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "Q[x1, . . . , xn]Anisgeneratedbythesymmetricpolynomialssk=P"
+  },
+  {
+   "page": 23,
+   "mark": "x",
+   "context": "i=1"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "i=1x"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "ifor"
+  },
+  {
+   "page": 23,
+   "mark": "j",
+   "context": "1≤i<j≤n(x"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "1≤i<j≤n(xj−x"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "algebraweknowthattheremustbearelationbetweenV"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "nowthattheremustbearelationbetweenV2andtheothergeneratorsasV"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "caseofBring’scurve,therelationsimposedfromthecurveares2 + s"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "1=0=s"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "1=0=s3−s"
+  },
+  {
+   "page": 23,
+   "mark": "s",
+   "context": "1"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "1s"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "1+ V"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "4s"
+  },
+  {
+   "page": 23,
+   "mark": "s",
+   "context": "16"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "16s"
+  },
+  {
+   "page": 23,
+   "mark": "s",
+   "context": "1"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "1s"
+  },
+  {
+   "page": 23,
+   "mark": "s",
+   "context": "8"
+  },
+  {
+   "page": 23,
+   "mark": "8",
+   "context": "8s"
+  },
+  {
+   "page": 23,
+   "mark": "s",
+   "context": "16"
+  },
+  {
+   "page": 23,
+   "mark": "12",
+   "context": "16s"
+  },
+  {
+   "page": 24,
+   "mark": "211",
+   "context": "n V→−V ,and for which we can calculate the j-invariant to be"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "→−V ,and for which we can calculate the j-invariant to be211"
+  },
+  {
+   "page": 24,
+   "mark": "15",
+   "context": "2"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "whichisP"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "symmetrygivesP"
+  },
+  {
+   "page": 24,
+   "mark": "4",
+   "context": "all now describe.As the quotients of both the HC-model and P"
+  },
+  {
+   "page": 24,
+   "mark": "4",
+   "context": "proceedanalogouslyweshallpresenthereonlytheP"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "(x"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "(x2, x"
+  },
+  {
+   "page": 24,
+   "mark": "4",
+   "context": "(x2, x3, x"
+  },
+  {
+   "page": 24,
+   "mark": "5",
+   "context": "(x2, x3, x4, x"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "ρ"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "ρ"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "3]∈P"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "3]∈P1,"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "3]∈P1,1,"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "3]∈P1,1,2,"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "Wecorrespondinglytakeinvariants[s:t:u:v]=[s1:s2:s3s4:s"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "3s"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "3s2+ 3st + 2t"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "−27s"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "−27s2t −27st"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "−27s2t −27st2−8t"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "−27s2t −27st2−8t3+ v + 6tu +u"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "C2: y"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "4 + 12x + 95x"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "4 + 12x + 95x2+ 170x"
+  },
+  {
+   "page": 24,
+   "mark": "4",
+   "context": "4 + 12x + 95x2+ 170x3+ 155x"
+  },
+  {
+   "page": 24,
+   "mark": "5",
+   "context": "4 + 12x + 95x2+ 170x3+ 155x4+ 72x"
+  },
+  {
+   "page": 24,
+   "mark": "6",
+   "context": "4 + 12x + 95x2+ 170x3+ 155x4+ 72x5+ 16x"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "wherex=tandy=−90t −90t"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "wherex=tandy=−90t −90t2−40t"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "2500.a.400000.1givenbyy"
+  },
+  {
+   "page": 24,
+   "mark": "6",
+   "context": "2500.a.400000.1givenbyy2= −7x"
+  },
+  {
+   "page": 24,
+   "mark": "5",
+   "context": "2500.a.400000.1givenbyy2= −7x6−8x"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "2500.a.400000.1givenbyy2= −7x6−8x5+ 10x"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "x = −2/(1 + x′),y= y′/(1 + x′)"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "(y′)"
+  },
+  {
+   "page": 24,
+   "mark": "6",
+   "context": "(x′)"
+  },
+  {
+   "page": 24,
+   "mark": "4",
+   "context": "(x′)6+ 80(x′)"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "(x′)6+ 80(x′)4+ 125(x′)"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "jE4= −5"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "jE4= −52 × 241"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "E4: (y′)"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "(x′′)"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "(x′′)3+ 80(x′′)"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "2"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "jE1= −5 × 29"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "E1: (y′′)"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "1 + 80z′+ 125(z′)"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "1 + 80z′+ 125(z′)2+ 50(z′)"
+  },
+  {
+   "page": 25,
+   "mark": "5",
+   "context": "2"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "s to x′→−x′, and that (34) : [s : t : u : v] →[s : t : u : u"
+  },
+  {
+   "page": 25,
+   "mark": "4",
+   "context": "ientsbyatransposition.The strategy of quotienting from the P"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "(x"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "(x1, x"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "(x1, x2, x"
+  },
+  {
+   "page": 25,
+   "mark": "4",
+   "context": "(x1, x2, x3, x"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "2(s"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "1+ s"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "2) + s"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "3+ s"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "4+ (s"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "4+ (s1+ s"
+  },
+  {
+   "page": 25,
+   "mark": "4",
+   "context": "4+ (s1+ s3+ s"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "4+ (s1+ s3+ s4)"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "4(s"
+  },
+  {
+   "page": 25,
+   "mark": "s",
+   "context": "1+ 3"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "1+ 3s"
+  },
+  {
+   "page": 25,
+   "mark": "s",
+   "context": "1+ 3s1"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "1+ 3s1s"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "2) + s"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "3+ s"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "4−(s"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "4−(s1+ s"
+  },
+  {
+   "page": 25,
+   "mark": "4",
+   "context": "4−(s1+ s3+ s"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "4−(s1+ s3+ s4)"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "Takinginvariants[s : t : u : v] = [s1: s"
+  },
+  {
+   "page": 25,
+   "mark": "s",
+   "context": "2:"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "2: s"
+  },
+  {
+   "page": 25,
+   "mark": "s",
+   "context": "2: s3:"
+  },
+  {
+   "page": 25,
+   "mark": "4",
+   "context": "2: s3: s"
+  },
+  {
+   "page": 25,
+   "mark": "t",
+   "context": "2: s3: s4]andeliminating"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "E2:4s"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "E2:4s3+ 8s"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "E2:4s3+ 8s2u + 7su"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "E2:4s3+ 8s2u + 7su2+ u"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "E2:4s3+ 8s2u + 7su2+ u3+ sv"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "E2:4s3+ 8s2u + 7su2+ u3+ sv2−uv"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "2= j(5τ"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "i}(i=1,"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "−s −u/2 −v/2 : s + 3u/2 −v/2].Inthes = 1aﬃnechart4 + 8u + 7u"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "u/2 −v/2 : s + 3u/2 −v/2].Inthes = 1aﬃnechart4 + 8u + 7u2+ u"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": " s + 3u/2 −v/2].Inthes = 1aﬃnechart4 + 8u + 7u2+ u3+ (1 −u)v"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "ZH"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "ZH"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "R H"
+  },
+  {
+   "page": 26,
+   "mark": "4",
+   "context": "ofellipticcurvesandwehavetheperiodofE"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "ofellipticcurvesandwehavetheperiodofE4tobe15τ"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "ofellipticcurvesandwehavetheperiodofE4tobe15τ0andjE4=j(15τ"
+  },
+  {
+   "page": 27,
+   "mark": "s",
+   "context": "u =−70"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "u =−70s"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "2(25s"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "25s"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "whichintheaﬃnepatchwheres=1giveE2asthecurvex"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "intheaﬃnepatchwheres=1giveE2asthecurvex3−25/3x + 2950/27 + y"
+  },
+  {
+   "page": 27,
+   "mark": "x",
+   "context": "x 7→5(275 −3"
+  },
+  {
+   "page": 27,
+   "mark": "y",
+   "context": "x 7→5(275 −3x + 15"
+  },
+  {
+   "page": 27,
+   "mark": "x",
+   "context": "y7→20(55 −15"
+  },
+  {
+   "page": 27,
+   "mark": "y",
+   "context": "y7→20(55 −15x −3"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "Indeedfortheprojectivecoordinates[X: Y: Z]ofourcurveX"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "ndeedfortheprojectivecoordinates[X: Y: Z]ofourcurveX3−25/3XZ"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "projectivecoordinates[X: Y: Z]ofourcurveX3−25/3XZ2+ 2950/27Z"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "Y"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "P"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "P"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "P"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "P"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "P"
+  },
+  {
+   "page": 29,
+   "mark": "4",
+   "context": "ofBring’scurveisE"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "Theresultfollowsas,usingthenotationofLange,XA4= E"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "sultfollowsas,usingthenotationofLange,XA4= E3,XD5= XZ5= Y= P"
+  },
+  {
+   "page": 29,
+   "mark": "4",
+   "context": "NotethatweareabletoconstructthequotientB/A4directlyfromtheP"
+  },
+  {
+   "page": 29,
+   "mark": "4",
+   "context": "P"
+  },
+  {
+   "page": 29,
+   "mark": "4",
+   "context": "P4-modelofBring’scurveis(50a)"
+  },
+  {
+   "page": 29,
+   "mark": "4",
+   "context": "sition we had to be careful to specify the Jacobian of the P"
+  },
+  {
+   "page": 30,
+   "mark": "5",
+   "context": "the characters IndS"
+  },
+  {
+   "page": 30,
+   "mark": "5",
+   "context": "H(1H), that is the characters of S"
+  },
+  {
+   "page": 30,
+   "mark": "3",
+   "context": "torustoE"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "2× E"
+  },
+  {
+   "page": 31,
+   "mark": "g",
+   "context": "ity.ThenonaRiemannsurfaceofgenusgthereare2"
+  },
+  {
+   "page": 31,
+   "mark": "g",
+   "context": "ity.ThenonaRiemannsurfaceofgenusgthereare2g−1(2"
+  },
+  {
+   "page": 31,
+   "mark": "g",
+   "context": "and2"
+  },
+  {
+   "page": 31,
+   "mark": "g",
+   "context": "and2g−1(2"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "ajω"
+  },
+  {
+   "page": 31,
+   "mark": "g",
+   "context": "canonical embedding of a curve in P"
+  },
+  {
+   "page": 31,
+   "mark": "3",
+   "context": "theintersectionofasmoothquadricandsmoothquarticinP"
+  },
+  {
+   "page": 32,
+   "mark": "k",
+   "context": "β−x"
+  },
+  {
+   "page": 32,
+   "mark": "x",
+   "context": "ijk:= {(α −1)(α + 4)"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "ijk:= {(α −1)(α + 4)x"
+  },
+  {
+   "page": 32,
+   "mark": "x",
+   "context": "ijk:= {(α −1)(α + 4)xi + (β −1)(β + 4)"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "ijk:= {(α −1)(α + 4)xi + (β −1)(β + 4)x"
+  },
+  {
+   "page": 32,
+   "mark": "x",
+   "context": "ijk:= {(α −1)(α + 4)xi + (β −1)(β + 4)xj+ (γ −1)(γ + 4)"
+  },
+  {
+   "page": 32,
+   "mark": "k",
+   "context": "ijk:= {(α −1)(α + 4)xi + (β −1)(β + 4)xj+ (γ −1)(γ + 4)x"
+  },
+  {
+   "page": 32,
+   "mark": "4",
+   "context": "where[xi] ∈P"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": ":"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": ": α"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": ": α2+ α + 1, β"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": ": α2+ α + 1, β2+ β + 1, γ"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "345isstabilisedbyS{1,"
+  },
+  {
+   "page": 32,
+   "mark": "g",
+   "context": "sworkbeyondg=3,whereinitbecomesacodimension-1hypersurfaceinP"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "inF"
+  },
+  {
+   "page": 33,
+   "mark": "g",
+   "context": "inF2"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "(2)Identifythetacharacteristicwiththe2"
+  },
+  {
+   "page": 33,
+   "mark": "g",
+   "context": "(2)Identifythetacharacteristicwiththe22"
+  },
+  {
+   "page": 33,
+   "mark": "3",
+   "context": "a := [0 : 0 : 1] ≃[2t"
+  },
+  {
+   "page": 33,
+   "mark": "3",
+   "context": "S−→[2t"
+  },
+  {
+   "page": 33,
+   "mark": "3",
+   "context": "S−→[2t3: ζt : ζ−1] = [2ζt"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "S−→[2t3: ζt : ζ−1] = [2ζt3: ζ"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "S−→[2t3: ζt : ζ−1] = [2ζt3: ζ2t : 1] = [2(ζ"
+  },
+  {
+   "page": 33,
+   "mark": "3",
+   "context": "S−→[2t3: ζt : ζ−1] = [2ζt3: ζ2t : 1] = [2(ζ2t)"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "S−→[2t3: ζt : ζ−1] = [2ζt3: ζ2t : 1] = [2(ζ2t)3: ζ"
+  },
+  {
+   "page": 33,
+   "mark": "3",
+   "context": "= [2ϵ"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "b := [0 : 1 : 0] ≃[2t"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "S−→[2t"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "S−→[2t2: ζ/t : ζ−1] = [2ζt"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "S−→[2t2: ζ/t : ζ−1] = [2ζt2: ζ"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "S−→[2t2: ζ/t : ζ−1] = [2ζt2: ζ2/t : 1] = [2(t/ζ"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "S−→[2t2: ζ/t : ζ−1] = [2ζt2: ζ2/t : 1] = [2(t/ζ2)"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "S−→[2t2: ζ/t : ζ−1] = [2ζt2: ζ2/t : 1] = [2(t/ζ2)2: ζ"
+  },
+  {
+   "page": 33,
+   "mark": "4",
+   "context": "S−→[1 : ζt : ζ−1t"
+  },
+  {
+   "page": 33,
+   "mark": "4",
+   "context": "S−→[1 : ζt : ζ−1t4] = [1 : ζt : (ζt)"
+  },
+  {
+   "page": 33,
+   "mark": "4",
+   "context": "c := [1 : 0 : 0]2≃[1 : t : t"
+  },
+  {
+   "page": 33,
+   "mark": "4",
+   "context": "d := [1 : 0 : 0]1≃[1 : t"
+  },
+  {
+   "page": 33,
+   "mark": "4",
+   "context": "S−→[1 : ζt"
+  },
+  {
+   "page": 33,
+   "mark": "4",
+   "context": "S−→[1 : ζt4: ζ−1t] = [1 : (ζ−1t)"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "Thisgivesustwodegree-3mapsf"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "Thisgivesustwodegree-3mapsfi:B→P"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "Thisgivesustwodegree-3mapsfi:B→P1,namelyf"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "Thisgivesustwodegree-3mapsfi:B→P1,namelyfi=π"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "B,"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "whereϕwastheisomorphismP"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "whereϕwastheisomorphismP1× P"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "P"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "P1× P"
+  },
+  {
+   "page": 34,
+   "mark": "0",
+   "context": "1([1:0])=2[0:"
+  },
+  {
+   "page": 34,
+   "mark": "0",
+   "context": "1([1:0])=2[0:0:"
+  },
+  {
+   "page": 34,
+   "mark": "0",
+   "context": "1([1:0])=2[0:0:0:1] + [1:"
+  },
+  {
+   "page": 34,
+   "mark": "0",
+   "context": "1([1:0])=2[0:0:0:1] + [1:0:"
+  },
+  {
+   "page": 34,
+   "mark": "b",
+   "context": "1([1:0])=2[0:0:0:1] + [1:0:0:0]=2"
+  },
+  {
+   "page": 34,
+   "mark": "d",
+   "context": "2([1 : 0]) = 2[0 : 1 : 0 : 0] + [0 : 0 : 0 : 1] = 2"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "10(3,"
+  },
+  {
+   "page": 34,
+   "mark": "0",
+   "context": "10(3, 2, −2, −3) + ℑ(τ"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "10(3, 2, −2, −3) + ℑ(τ0)(1, −2, −2, 1)"
+  },
+  {
+   "page": 34,
+   "mark": "a",
+   "context": "10(3, 2, −2, −3) + ℑ(τ0)(1, −2, −2, 1)i = A"
+  },
+  {
+   "page": 35,
+   "mark": "4",
+   "context": "Constructed an explicit birational map between the HC- and P"
+  }
+ ]
+}

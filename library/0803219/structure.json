@@ -8,21 +8,21 @@
   "pages": 35,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:17Z",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "ACTA MATHEMATICA VIETNAMICA AN INTRODUCTION TO THE VOLUME CONJECTURE AND ITS GENERALIZATIONS",
+  "title": "An introduction to the volume conjecture and its generalizations",
   "authors_raw": "HITOSHI MURAKAMI",
   "title_lines": [
    "ACTA MATHEMATICA VIETNAMICA",
    "AN INTRODUCTION TO THE VOLUME CONJECTURE",
    "AND ITS GENERALIZATIONS"
   ],
-  "abstract": "In this paper we give an introduction to the volume conjecture and its generalizations. Especially we discuss relations of the asymptotic be- haviors of the colored Jones polynomials of a knot with di\ufb00erent parameters to representations of the fundamental group of the knot complement at the special linear group over complex numbers by taking the \ufb01gure-eight knot and torus knots as examples. After V. Jones\u2019 discovery of his celebrated polynomial invariant V (K; t) in 1985 [22], Quantum Topology has been attracting many researchers; not only mathematicians but also physicists. The Jones polynomial was generalized to two kinds of two-variable polynomials, the HOMFLYpt polynomial [10, 52] and the Kau\ufb00man polynomial [27] (see also [21, 3] for another one-variable specialization). It turned out that these polynomial invariants are related to quantum groups introduced by V. Drinfel\u2032d and M. Jimbo (see for example [26, 55]) and their representations. For example the Jones polynomial comes from the quantum group Uq(sl2(C)) and its two-dimensional representation. We can also de\ufb01ne the quantum invariant associated with a quantum group and its representation. If we replace the quantum parameter q of a quantum invariant (t in V (K; t)) with eh we obtain a formal power series in the formal parameter h. Fixing a degree d of the parameter h, all the degree d coe\ufb03cients of quantum invariants share a \ufb01niteness property. By using this property, one can de\ufb01ne a notion of \ufb01nite type invariant [2, 1]. (See [57] for V. Vassiliev\u2019s original idea.) Via the Kontsevich integral [35] (see also [36]) we can recover a quantum invariant from the corresponding \u2018classical\u2019 data. (Note that a quantum group is a deformation of a \u2018classical\u2019 Lie algebra.) So for example one only needs to know the Lie algebra sl2(C) (easy!) and its fundamental two-dimensional representation (very easy!) to de\ufb01ne the Jones polynomial, provided that one knows the Kontsevich integral (unfortunately, this is very di\ufb03cult).",
+  "abstract": "In this paper we give an introduction to the volume conjecture and its generalizations. Especially we discuss relations of the asymptotic be- haviors of the colored Jones polynomials of a knot with diﬀerent parameters to representations of the fundamental group of the knot complement at the special linear group over complex numbers by taking the ﬁgure-eight knot and torus knots as examples. After V. Jones’ discovery of his celebrated polynomial invariant V (K; t) in 1985 [22], Quantum Topology has been attracting many researchers; not only mathematicians but also physicists. The Jones polynomial was generalized to two kinds of two-variable polynomials, the HOMFLYpt polynomial [10, 52] and the Kauﬀman polynomial [27] (see also [21, 3] for another one-variable specialization). It turned out that these polynomial invariants are related to quantum groups introduced by V. Drinfel′d and M. Jimbo (see for example [26, 55]) and their representations. For example the Jones polynomial comes from the quantum group Uq(sl2(C)) and its two-dimensional representation. We can also deﬁne the quantum invariant associated with a quantum group and its representation. If we replace the quantum parameter q of a quantum invariant (t in V (K; t)) with eh we obtain a formal power series in the formal parameter h. Fixing a degree d of the parameter h, all the degree d coeﬃcients of quantum invariants share a ﬁniteness property. By using this property, one can deﬁne a notion of ﬁnite type invariant [2, 1]. (See [57] for V. Vassiliev’s original idea.) Via the Kontsevich integral [35] (see also [36]) we can recover a quantum invariant from the corresponding ‘classical’ data. (Note that a quantum group is a deformation of a ‘classical’ Lie algebra.) So for example one only needs to know the Lie algebra sl2(C) (easy!) and its fundamental two-dimensional representation (very easy!) to deﬁne the Jones polynomial, provided that one knows the Kontsevich integral (unfortunately, this is very diﬃcult).",
   "docinfo": {
    "Title": "Bai2_Murakami.dvi",
    "Producer": "MiKTeX GPL Ghostscript 8.60",
@@ -34,16 +34,17 @@
   "title_verified": false,
   "title_evidence": {
    "metadata": "Bai2_Murakami.dvi",
-   "heading": "AN INTRODUCTION TO THE VOLUME CONJECTURE AND ITS GENERALIZATIONS After V. Jones\u2019 discovery of his celebrated polynomial invariant V ( K ; t ) in 1985 [22], Quantum Topology has been attracting many researchers; not only mathematicians but also physicists. The Jones polynomial was generalized to two",
+   "heading": "AN INTRODUCTION TO THE VOLUME CONJECTURE AND ITS GENERALIZATIONS After V. Jones’ discovery of his celebrated polynomial invariant V ( K ; t ) in 1985 [22], Quantum Topology has been attracting many researchers; not only mathematicians but also physicists. The Jones polynomial was generalized to two",
    "text": "ACTA MATHEMATICA VIETNAMICA AN INTRODUCTION TO THE VOLUME CONJECTURE AND ITS GENERALIZATIONS",
    "corroborated_by": [],
    "browser_print": false
-  }
+  },
+  "title_prev": "ACTA MATHEMATICA VIETNAMICA AN INTRODUCTION TO THE VOLUME CONJECTURE AND ITS GENERALIZATIONS"
  },
  "toc": [
   {
    "level": 1,
-   "title": "Volume and the Chern\u2013Simons invariant of a representation. For",
+   "title": "Volume and the Chern–Simons invariant of a representation. For",
    "page": 6,
    "source": "inferred",
    "number": "1.3",
@@ -85,7 +86,7 @@
   },
   {
    "level": 2,
-   "title": "Volume and the Chern\u2013Simons invariant of a representation \u2013 trefoil knot.",
+   "title": "Volume and the Chern–Simons invariant of a representation – trefoil knot.",
    "page": 31,
    "source": "inferred",
    "number": "4.5.1",
@@ -99,7 +100,7 @@
   },
   {
    "level": 2,
-   "title": "Volume and the Chern\u2013Simons invariant of a representation \u2013 cinquefoil",
+   "title": "Volume and the Chern–Simons invariant of a representation – cinquefoil",
    "page": 31,
    "source": "inferred",
    "number": "4.5.2",
@@ -113,7 +114,7 @@
   },
   {
    "level": 2,
-   "title": "Volume and the Chern\u2013Simons invariant of a representation \u2013 general",
+   "title": "Volume and the Chern–Simons invariant of a representation – general",
    "page": 32,
    "source": "inferred",
    "number": "4.5.3",
@@ -184,7 +185,7 @@
   {
    "kind": "figure",
    "number": "5",
-   "title": "The two generators of \u03c01(S3 \\ E)",
+   "title": "The two generators of π1(S3 \\ E)",
    "page": 13,
    "confidence": 0.9,
    "evidence": [
@@ -197,7 +198,7 @@
   {
    "kind": "figure",
    "number": "6",
-   "title": "The other elements of \u03c01(S3 \\ E)",
+   "title": "The other elements of π1(S3 \\ E)",
    "page": 13,
    "confidence": 0.9,
    "evidence": [
@@ -210,7 +211,7 @@
   {
    "kind": "figure",
    "number": "7",
-   "title": "Graph of Im H(u) for \u2212arccosh(3/2) \u2a7du \u2a7darccosh(3/2)",
+   "title": "Graph of Im H(u) for −arccosh(3/2) ⩽u ⩽arccosh(3/2)",
    "page": 21,
    "confidence": 0.9,
    "evidence": [
@@ -223,7 +224,7 @@
   {
    "kind": "figure",
    "number": "9",
-   "title": "Graph of the CS(Mu)/(2\u03c02) for \u2a7darccosh(3/2) < u < 10",
+   "title": "Graph of the CS(Mu)/(2π2) for ⩽arccosh(3/2) < u < 10",
    "page": 22,
    "confidence": 0.8,
    "evidence": [
@@ -235,7 +236,7 @@
   {
    "kind": "figure",
    "number": "10",
-   "title": "The two generators of \u03c01(S3 \\ T) element z (see Figure 11) can be expressed in terms of x and y as follows: (4.1)",
+   "title": "The two generators of π1(S3 \\ T) element z (see Figure 11) can be expressed in terms of x and y as follows: (4.1)",
    "page": 24,
    "confidence": 0.8,
    "evidence": [
@@ -247,7 +248,7 @@
   {
    "kind": "figure",
    "number": "11",
-   "title": "The other element of \u03c01(S3 \\ T) yzx\u22121z\u22121 = 1, yzy\u22121z\u22121 = 1",
+   "title": "The other element of π1(S3 \\ T) yzx−1z−1 = 1, yzy−1z−1 = 1",
    "page": 24,
    "confidence": 0.8,
    "evidence": [
@@ -259,7 +260,7 @@
   {
    "kind": "figure",
    "number": "12",
-   "title": "Cinquefoil knot and elements of \u03c01(S3 \\ C) of x and y: z = xyx\u22121, w = zxz\u22121 = xyxy\u22121x\u22121, v = wzw\u22121 = xyxyx\u22121y\u22121x\u22121",
+   "title": "Cinquefoil knot and elements of π1(S3 \\ C) of x and y: z = xyx−1, w = zxz−1 = xyxy−1x−1, v = wzw−1 = xyxyx−1y−1x−1",
    "page": 26,
    "confidence": 0.8,
    "evidence": [
@@ -532,7 +533,7 @@
   {
    "id": "sec-000-13-volume-and-the-chernsimons-invariant-of-a-rep",
    "number": "1.3",
-   "title": "Volume and the Chern\u2013Simons invariant of a representation. For",
+   "title": "Volume and the Chern–Simons invariant of a representation. For",
    "level": 1,
    "page_start": 6,
    "page_end": 24,
@@ -568,12 +569,24 @@
   {
    "id": "sec-003-451-volume-and-the-chernsimons-invariant-of-a-re",
    "number": "4.5.1",
-   "title": "Volume and the Chern\u2013Simons invariant of a representation \u2013 trefoil knot.",
+   "title": "Volume and the Chern–Simons invariant of a representation – trefoil knot.",
    "level": 2,
    "page_start": 31,
+   "page_end": 32,
+   "n_chars": 1071,
+   "n_words": 255,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-453-volume-and-the-chernsimons-invariant-of-a-re",
+   "number": "4.5.3",
+   "title": "Volume and the Chern–Simons invariant of a representation – general",
+   "level": 2,
+   "page_start": 32,
    "page_end": 35,
-   "n_chars": 10113,
-   "n_words": 1676,
+   "n_chars": 8966,
+   "n_words": 1410,
    "label_start": null,
    "label_end": null
   }
@@ -594,7 +607,8 @@
    "count": 0,
    "items": []
   },
-  "sections": 5,
-  "chars_total": 56437
+  "sections": 6,
+  "chars_total": 56361,
+  "furniture_lines_stripped": 0
  }
 }

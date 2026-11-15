@@ -1,0 +1,1 @@
+That for proton decay, as noted in the previous section, needs megaton-size deep-underground detectors, like HyperKamiokande and LBNF-DUNE and their successors (if need be), not only to search for this process as sensitively as possible, but also to study the branching ratios of diﬀerent decay modes, should proton decay be discovered.

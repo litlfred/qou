@@ -8,29 +8,29 @@
   "pages": 44,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:18Z",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": "10.2140/ant.2020.14.1747",
-  "title": "Nouvelles cohomologies de Weil en caract\u00e9ristique positive",
+  "title": "Nouvelles cohomologies de Weil en caractéristique positive",
   "authors_raw": "Joseph Ayoub",
   "title_lines": [
    "Nouvelles cohomologies de Weil",
-   "en caract\u00e9ristique positive"
+   "en caractéristique positive"
   ],
-  "abstract": "periods\u201d admitting an explicit description by generators and relations. We establish comparison theorems relating this new Weil cohomology to the classical ones: Berthelot\u2019s rigid cohomology and the \u2113-adic cohomologies, for \u2113\u0338 = p. We also state some conjectures on the ring AK. One of these conjectures implies the independence of \u2113in cohomology.",
+  "abstract": "periods” admitting an explicit description by generators and relations. We establish comparison theorems relating this new Weil cohomology to the classical ones: Berthelot’s rigid cohomology and the ℓ-adic cohomologies, for ℓ̸ = p. We also state some conjectures on the ring AK. One of these conjectures implies the independence of ℓin cohomology.",
   "docinfo": {
    "Producer": "pypdf"
   },
-  "title_raw": "Nouvelles cohomologies de Weil en caract\u00e9ristique positive",
+  "title_raw": "Nouvelles cohomologies de Weil en caractéristique positive",
   "title_source": "text",
   "title_verified": false,
   "title_evidence": {
    "heading": "msp",
-   "text": "Nouvelles cohomologies de Weil en caract\u00e9ristique positive",
+   "text": "Nouvelles cohomologies de Weil en caractéristique positive",
    "corroborated_by": [],
    "browser_print": false
   }
@@ -53,7 +53,7 @@
   },
   {
    "level": 1,
-   "title": "Motifs alg\u00e9briques et motifs rigides",
+   "title": "Motifs algébriques et motifs rigides",
    "page": 8,
    "source": "inferred",
    "number": "2",
@@ -67,7 +67,7 @@
   },
   {
    "level": 1,
-   "title": "Calcul du complexe des p\u00e9riodes abstraites AK et applications",
+   "title": "Calcul du complexe des périodes abstraites AK et applications",
    "page": 29,
    "source": "inferred",
    "number": "3",
@@ -95,7 +95,7 @@
   },
   {
    "level": 1,
-   "title": "\u2192HocoMod",
+   "title": "→HocoMod",
    "page": 40,
    "source": "inferred",
    "number": null,
@@ -529,8 +529,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1439,
-   "n_words": 222,
+   "n_chars": 1436,
+   "n_words": 221,
    "label_start": "1747",
    "label_end": "1747"
   },
@@ -541,15 +541,15 @@
    "level": 1,
    "page_start": 1,
    "page_end": 8,
-   "n_chars": 18178,
+   "n_chars": 18186,
    "n_words": 3102,
    "label_start": "1747",
    "label_end": "1754"
   },
   {
-   "id": "sec-001-2-motifs-alg\u00e9briques-et-motifs-rigides",
+   "id": "sec-001-2-motifs-algébriques-et-motifs-rigides",
    "number": "2",
-   "title": "Motifs alg\u00e9briques et motifs rigides",
+   "title": "Motifs algébriques et motifs rigides",
    "level": 1,
    "page_start": 8,
    "page_end": 29,
@@ -559,9 +559,9 @@
    "label_end": "1775"
   },
   {
-   "id": "sec-002-3-calcul-du-complexe-des-p\u00e9riodes-abstraites-ak",
+   "id": "sec-002-3-calcul-du-complexe-des-périodes-abstraites-ak",
    "number": "3",
-   "title": "Calcul du complexe des p\u00e9riodes abstraites AK et applications",
+   "title": "Calcul du complexe des périodes abstraites AK et applications",
    "level": 1,
    "page_start": 29,
    "page_end": 38,
@@ -576,22 +576,22 @@
    "title": "Action du groupe de Galois motivique",
    "level": 1,
    "page_start": 38,
-   "page_end": 39,
-   "n_chars": 4540,
-   "n_words": 736,
+   "page_end": 40,
+   "n_chars": 6031,
+   "n_words": 954,
    "label_start": "1784",
-   "label_end": "1785"
+   "label_end": "1786"
   },
   {
    "id": "sec-004-hocomod",
    "number": null,
-   "title": "\u2192HocoMod",
+   "title": "→HocoMod",
    "level": 1,
-   "page_start": 39,
+   "page_start": 40,
    "page_end": 43,
-   "n_chars": 7814,
-   "n_words": 1235,
-   "label_start": "1785",
+   "n_chars": 6319,
+   "n_words": 1017,
+   "label_start": "1786",
    "label_end": "1789"
   },
   {
@@ -622,6 +622,7 @@
    "items": []
   },
   "sections": 7,
-  "chars_total": 108146
+  "chars_total": 108147,
+  "furniture_lines_stripped": 1
  }
 }

@@ -7,10 +7,11 @@
   "bytes": 731517,
   "pages": 57,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -25,13 +26,28 @@
   "title_lines": [
    "Connections on Non-Abelian Gerbes and their Holonomy"
   ],
-  "abstract": "We introduce an axiomatic framework for the parallel transp ort of connections on gerbes. It incorporates parallel transport along curves and along sur faces, and is formulated in terms of gluing axioms and smoothness conditions. The smoothness co nditions are imposed with respect to a strict Lie 2-group, which plays the role of a band, or stru cture 2-group. Upon choosing certain examples of Lie 2-groups, our axiomatic framework r eproduces in a systematical way several known concepts of gerbes with connection: non-abelian di\ufb00e rential cocycles, Breen-Messing gerbes, abelian and non-abelian bundle gerbes. These relationship s convey a well-de\ufb01ned notion of surface holonomy from our axiomatic framework to each of these concr ete models. Till now, holonomy was only known for abelian gerbes; our approach reproduces t hat known concept and extends it to non-abelian gerbes. Several new features of surface holo nomy are exposed under its extension to non-abelian gerbes; for example, it carries an action of t he mapping class group of the surface.",
+  "abstract": "We introduce an axiomatic framework for the parallel transport of connections on gerbes. It incorporates parallel transport along curves and along surfaces, and is formulated in terms of gluing axioms and smoothness conditions. The smoothness conditions are imposed with respect to a strict Lie 2-group, which plays the role of a band, or structure 2-group. Upon choosing certain examples of Lie 2-groups, our axiomatic framework reproduces in a systematical way several known concepts of gerbes with connection: non-abelian diﬀerential cocycles, Breen-Messing gerbes, abelian and non-abelian bundle gerbes. These relationships convey a well-deﬁned notion of surface holonomy from our axiomatic framework to each of these concrete models. Till now, holonomy was only known for abelian gerbes; our approach reproduces that known concept and extends it to non-abelian gerbes. Several new features of surface holonomy are exposed under its extension to non-abelian gerbes; for example, it carries an action of the mapping class group of the surface.",
   "docinfo": {
-   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181022121033-04'00'",
-   "Creator": "LaTeX with hyperref package",
    "Title": "Connections on Non-Abelian Gerbes and their Holonomy",
-   "Author": "Urs Schreibera and Konrad Waldorfb"
+   "Author": "Urs Schreibera and Konrad Waldorfb",
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20181022121033-04'00'"
+  },
+  "title_raw": "Connections on Non-Abelian Gerbes and their Holonomy",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Connections on Non-Abelian Gerbes and their Holonomy",
+   "heading": "Connections on Non-Abelian Gerbes and their Holonomy",
+   "outline": "1 Introduction",
+   "text": "Connections on Non-Abelian Gerbes and their Holonomy",
+   "corroborated_by": [
+    "heading",
+    "text",
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -40,160 +56,780 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Foundations of the Transport Functor Formalism",
    "page": 6,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "The Path 2-Groupoid of a Smooth Manifold",
    "page": 6,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Local Trivializations and Descent Data",
    "page": 7,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Smooth 2-Functors",
    "page": 10,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Transport Functors",
    "page": 10,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 1,
    "title": "Transport 2-Functors",
    "page": 12,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Smooth Descent Data",
    "page": 12,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Transport 2-Functors",
    "page": 15,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Some Features of Transport 2-Functors",
    "page": 18,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 2,
    "title": "Curvature 2-Functors",
    "page": 22,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 1,
    "title": "Transport 2-Functors are Non-Abelian Gerbes",
    "page": 25,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 2,
    "title": "Differential Non-Abelian Cohomology",
    "page": 25,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 2,
    "title": "Abelian Bundle Gerbes with Connection",
    "page": 33,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
   },
   {
    "level": 2,
    "title": "Non-Abelian Bundle Gerbes with Connection",
    "page": 36,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "36"
   },
   {
    "level": 2,
    "title": "2-Bundles with Connections",
    "page": 41,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "41"
   },
   {
    "level": 1,
    "title": "Surface Holonomy",
    "page": 46,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "46"
   },
   {
    "level": 2,
    "title": "Markings and Fundamental Bigons",
    "page": 46,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "46"
   },
   {
    "level": 2,
    "title": "Reduced Surface Holonomy",
    "page": 49,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "49"
   },
   {
    "level": 2,
    "title": "Properties of Reduced Surface Holonomy",
    "page": 52,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "52"
   },
   {
    "level": 1,
    "title": "References",
    "page": 56,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "56"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Objects, morphisms and the composition of the category ΛiT (the diagram on the right hand side ignores the associators and the bracketing of 1-morphisms). Here, c is the compositor of the 2-functor i",
+   "page": 13,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "13"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 3083,
+   "n_words": 786,
+   "label_start": null,
+   "label_end": "2"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 6,
-   "n_chars": 14178,
-   "n_words": 2711
+   "n_chars": 12298,
+   "n_words": 2042,
+   "label_start": "2",
+   "label_end": "6"
   },
   {
    "id": "sec-001-2-foundations-of-the-transport-functor-formalism",
@@ -202,8 +838,10 @@
    "level": 1,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 408,
-   "n_words": 70
+   "n_chars": 452,
+   "n_words": 73,
+   "label_start": "6",
+   "label_end": "6"
   },
   {
    "id": "sec-002-21-the-path-2-groupoid-of-a-smooth-manifold",
@@ -212,8 +850,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 4120,
-   "n_words": 821
+   "n_chars": 3959,
+   "n_words": 802,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
    "id": "sec-003-22-local-trivializations-and-descent-data",
@@ -222,8 +862,10 @@
    "level": 2,
    "page_start": 7,
    "page_end": 10,
-   "n_chars": 6463,
-   "n_words": 1140
+   "n_chars": 6244,
+   "n_words": 1130,
+   "label_start": "7",
+   "label_end": "10"
   },
   {
    "id": "sec-004-23-smooth-2-functors",
@@ -232,8 +874,10 @@
    "level": 2,
    "page_start": 10,
    "page_end": 10,
-   "n_chars": 2215,
-   "n_words": 371
+   "n_chars": 2212,
+   "n_words": 359,
+   "label_start": "10",
+   "label_end": "10"
   },
   {
    "id": "sec-005-24-transport-functors",
@@ -241,29 +885,35 @@
    "title": "Transport Functors",
    "level": 2,
    "page_start": 10,
-   "page_end": 11,
-   "n_chars": 1690,
-   "n_words": 309
-  },
-  {
-   "id": "sec-006-31-smooth-descent-data",
-   "number": "3.1",
-   "title": "Smooth Descent Data",
-   "level": 2,
-   "page_start": 11,
    "page_end": 12,
-   "n_chars": 1608,
-   "n_words": 298
+   "n_chars": 3277,
+   "n_words": 617,
+   "label_start": "10",
+   "label_end": "12"
   },
   {
-   "id": "sec-007-3-transport-2-functors",
+   "id": "sec-006-3-transport-2-functors",
    "number": "3",
    "title": "Transport 2-Functors",
    "level": 1,
    "page_start": 12,
+   "page_end": 12,
+   "n_chars": 126,
+   "n_words": 18,
+   "label_start": "12",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-007-31-smooth-descent-data",
+   "number": "3.1",
+   "title": "Smooth Descent Data",
+   "level": 2,
+   "page_start": 12,
    "page_end": 15,
-   "n_chars": 9194,
-   "n_words": 1688
+   "n_chars": 8472,
+   "n_words": 1588,
+   "label_start": "12",
+   "label_end": "15"
   },
   {
    "id": "sec-008-32-transport-2-functors",
@@ -272,8 +922,10 @@
    "level": 2,
    "page_start": 15,
    "page_end": 18,
-   "n_chars": 7332,
-   "n_words": 1299
+   "n_chars": 7105,
+   "n_words": 1250,
+   "label_start": "15",
+   "label_end": "18"
   },
   {
    "id": "sec-009-33-some-features-of-transport-2-functors",
@@ -282,8 +934,10 @@
    "level": 2,
    "page_start": 18,
    "page_end": 22,
-   "n_chars": 11529,
-   "n_words": 2146
+   "n_chars": 10964,
+   "n_words": 2075,
+   "label_start": "18",
+   "label_end": "22"
   },
   {
    "id": "sec-010-34-curvature-2-functors",
@@ -292,8 +946,10 @@
    "level": 2,
    "page_start": 22,
    "page_end": 25,
-   "n_chars": 6459,
-   "n_words": 1146
+   "n_chars": 6202,
+   "n_words": 1118,
+   "label_start": "22",
+   "label_end": "25"
   },
   {
    "id": "sec-011-4-transport-2-functors-are-non-abelian-gerbes",
@@ -301,102 +957,154 @@
    "title": "Transport 2-Functors are Non-Abelian Gerbes",
    "level": 1,
    "page_start": 25,
-   "page_end": 33,
-   "n_chars": 19016,
-   "n_words": 3455
+   "page_end": 25,
+   "n_chars": 565,
+   "n_words": 76,
+   "label_start": "25",
+   "label_end": "25"
   },
   {
-   "id": "sec-012-42-abelian-bundle-gerbes-with-connection",
+   "id": "sec-012-41-differential-non-abelian-cohomology",
+   "number": "4.1",
+   "title": "Differential Non-Abelian Cohomology",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 33,
+   "n_chars": 17566,
+   "n_words": 3254,
+   "label_start": "25",
+   "label_end": "33"
+  },
+  {
+   "id": "sec-013-42-abelian-bundle-gerbes-with-connection",
    "number": "4.2",
    "title": "Abelian Bundle Gerbes with Connection",
    "level": 2,
    "page_start": 33,
    "page_end": 36,
-   "n_chars": 6799,
-   "n_words": 1207
+   "n_chars": 6576,
+   "n_words": 1185,
+   "label_start": "33",
+   "label_end": "36"
   },
   {
-   "id": "sec-013-43-non-abelian-bundle-gerbes-with-connection",
+   "id": "sec-014-43-non-abelian-bundle-gerbes-with-connection",
    "number": "4.3",
    "title": "Non-Abelian Bundle Gerbes with Connection",
    "level": 2,
    "page_start": 36,
    "page_end": 41,
-   "n_chars": 12263,
-   "n_words": 2151
+   "n_chars": 11942,
+   "n_words": 2090,
+   "label_start": "36",
+   "label_end": "41"
   },
   {
-   "id": "sec-014-44-2-bundles-with-connections",
+   "id": "sec-015-44-2-bundles-with-connections",
    "number": "4.4",
    "title": "2-Bundles with Connections",
    "level": 2,
    "page_start": 41,
    "page_end": 46,
-   "n_chars": 12864,
-   "n_words": 2243
+   "n_chars": 12379,
+   "n_words": 2111,
+   "label_start": "41",
+   "label_end": "46"
   },
   {
-   "id": "sec-015-5-surface-holonomy",
+   "id": "sec-016-5-surface-holonomy",
    "number": "5",
    "title": "Surface Holonomy",
    "level": 1,
    "page_start": 46,
    "page_end": 46,
-   "n_chars": 1439,
-   "n_words": 268
+   "n_chars": 1374,
+   "n_words": 259,
+   "label_start": "46",
+   "label_end": "46"
   },
   {
-   "id": "sec-016-51-markings-and-fundamental-bigons",
+   "id": "sec-017-51-markings-and-fundamental-bigons",
    "number": "5.1",
    "title": "Markings and Fundamental Bigons",
    "level": 2,
    "page_start": 46,
    "page_end": 49,
-   "n_chars": 9379,
-   "n_words": 1841
+   "n_chars": 9193,
+   "n_words": 1803,
+   "label_start": "46",
+   "label_end": "49"
   },
   {
-   "id": "sec-017-52-reduced-surface-holonomy",
+   "id": "sec-018-52-reduced-surface-holonomy",
    "number": "5.2",
    "title": "Reduced Surface Holonomy",
    "level": 2,
    "page_start": 49,
    "page_end": 52,
-   "n_chars": 6374,
-   "n_words": 1191
+   "n_chars": 6214,
+   "n_words": 1142,
+   "label_start": "49",
+   "label_end": "52"
   },
   {
-   "id": "sec-018-53-properties-of-reduced-surface-holonomy",
+   "id": "sec-019-53-properties-of-reduced-surface-holonomy",
    "number": "5.3",
    "title": "Properties of Reduced Surface Holonomy",
    "level": 2,
    "page_start": 52,
    "page_end": 56,
-   "n_chars": 10870,
-   "n_words": 2027
+   "n_chars": 10509,
+   "n_words": 1936,
+   "label_start": "52",
+   "label_end": "56"
   },
   {
-   "id": "sec-019-references",
+   "id": "sec-020-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 56,
    "page_end": 57,
-   "n_chars": 5680,
-   "n_words": 811
+   "n_chars": 5619,
+   "n_words": 750,
+   "label_start": "56",
+   "label_end": "57"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 21,
-  "sections": 20,
-  "chars_total": 149880,
+  "toc_inferred_entries": 0,
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 0,
+    "items": []
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 22,
+  "chars_total": 146331,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 34,
-   "overlaid": 15,
+   "overlaid": 17,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -404,10 +1112,15 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.983,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -415,7 +1128,7 @@
      "id": "sec-001-2-foundations-of-the-transport-functor-formalism",
      "title": "Foundations of the Transport Functor Formalism",
      "prose_ratio": 0.971,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.971,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -423,7 +1136,7 @@
      "id": "sec-002-21-the-path-2-groupoid-of-a-smooth-manifold",
      "title": "The Path 2-Groupoid of a Smooth Manifold",
      "prose_ratio": 0.985,
-     "coverage_ratio": 0.992,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -431,7 +1144,7 @@
      "id": "sec-003-22-local-trivializations-and-descent-data",
      "title": "Local Trivializations and Descent Data",
      "prose_ratio": 0.915,
-     "coverage_ratio": 0.985,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -446,36 +1159,37 @@
     {
      "id": "sec-005-24-transport-functors",
      "title": "Transport Functors",
-     "prose_ratio": 0.604,
-     "coverage_ratio": 0.977,
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.993,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-006-31-smooth-descent-data",
-     "title": "Smooth Descent Data",
-     "prose_ratio": 0.172,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-006-3-transport-2-functors",
+     "title": "Transport 2-Functors",
+     "prose_ratio": 0.281,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-007-3-transport-2-functors",
-     "title": "Transport 2-Functors",
-     "prose_ratio": 0.938,
-     "coverage_ratio": 0.157,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "id": "sec-007-31-smooth-descent-data",
+     "title": "Smooth Descent Data",
+     "prose_ratio": 0.655,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-008-32-transport-2-functors",
      "title": "Transport 2-Functors",
      "prose_ratio": 0.75,
-     "coverage_ratio": 0.129,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.104,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-009-33-some-features-of-transport-2-functors",
      "title": "Some Features of Transport 2-Functors",
      "prose_ratio": 0.983,
-     "coverage_ratio": 0.974,
+     "coverage_ratio": 0.98,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -483,74 +1197,82 @@
      "id": "sec-010-34-curvature-2-functors",
      "title": "Curvature 2-Functors",
      "prose_ratio": 0.878,
-     "coverage_ratio": 0.98,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-011-4-transport-2-functors-are-non-abelian-gerbes",
      "title": "Transport 2-Functors are Non-Abelian Gerbes",
-     "prose_ratio": 0.948,
-     "coverage_ratio": 0.963,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-012-42-abelian-bundle-gerbes-with-connection",
+     "id": "sec-012-41-differential-non-abelian-cohomology",
+     "title": "Differential Non-Abelian Cohomology",
+     "prose_ratio": 0.943,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-013-42-abelian-bundle-gerbes-with-connection",
      "title": "Abelian Bundle Gerbes with Connection",
      "prose_ratio": 0.974,
-     "coverage_ratio": 0.975,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-013-43-non-abelian-bundle-gerbes-with-connection",
+     "id": "sec-014-43-non-abelian-bundle-gerbes-with-connection",
      "title": "Non-Abelian Bundle Gerbes with Connection",
      "prose_ratio": 0.956,
-     "coverage_ratio": 0.976,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-014-44-2-bundles-with-connections",
+     "id": "sec-015-44-2-bundles-with-connections",
      "title": "2-Bundles with Connections",
      "prose_ratio": 0.979,
-     "coverage_ratio": 0.957,
+     "coverage_ratio": 0.973,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-015-5-surface-holonomy",
+     "id": "sec-016-5-surface-holonomy",
      "title": "Surface Holonomy",
      "prose_ratio": 0.331,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-016-51-markings-and-fundamental-bigons",
+     "id": "sec-017-51-markings-and-fundamental-bigons",
      "title": "Markings and Fundamental Bigons",
      "prose_ratio": 0.922,
-     "coverage_ratio": 0.976,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-017-52-reduced-surface-holonomy",
+     "id": "sec-018-52-reduced-surface-holonomy",
      "title": "Reduced Surface Holonomy",
      "prose_ratio": 0.948,
-     "coverage_ratio": 0.953,
+     "coverage_ratio": 0.947,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-018-53-properties-of-reduced-surface-holonomy",
+     "id": "sec-019-53-properties-of-reduced-surface-holonomy",
      "title": "Properties of Reduced Surface Holonomy",
      "prose_ratio": 0.956,
-     "coverage_ratio": 0.968,
+     "coverage_ratio": 0.969,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-019-references",
+     "id": "sec-020-references",
      "title": "References",
      "result": "no matching \\section"
     }

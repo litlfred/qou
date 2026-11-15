@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0203194v1/sections/sec-076",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Non-archimedean orbifold fundamental groups.",
+  "pageStart": 170,
+  "pageEnd": 179,
+  "contains": [
+    "library/arxiv-math-0203194v1/blocks/prose-sec-076",
+    "library/arxiv-math-0203194v1/blocks/recommendation-sec-076-01",
+    "library/arxiv-math-0203194v1/blocks/recommendation-sec-076-02",
+    "library/arxiv-math-0203194v1/blocks/recommendation-sec-076-03",
+    "library/arxiv-math-0203194v1/blocks/recommendation-sec-076-04"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203194v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203194v1",
+  "provenance": "ingested"
+}

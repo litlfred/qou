@@ -1,0 +1,1 @@
+Note that, in order to find a reducer for u, upon finding an element g € G with supp g* C supp vu’, in general, one must also check whether g* < u*, and backtrack to keep looking for a reducer in case this condition is not satisfied.

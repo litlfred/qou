@@ -1,0 +1,57 @@
+66 Chapter 3 — Perverse sheaves on semiabelian varieties
+
+the adjoint of the relative Ktinneth isomorphism).
+
+y
+
+RHom(Az, O*")
+
+RHAom(p*(As), p (W*"))
+
+p (RH om(As, W°"))
+
+As a candidate for the constructible subsheaf in part (c) we take the image of
+the induced morphism .#°(@) on the stalk cohomology sheaves in degree
+zero. After shrinking S we can by loc. cit. assume that the occuring R#om
+commute with base change. If we put
+
+K = (Ps@PY)*”
+
+and denote by 4; the restriction of the character x to the geometric fibre X;,
+then on stalks we obtain a commutative diagram
+
+Pall .
+H(X;, RAom(8y,Ky,)) ——
+
+H®(X;,Ky;)
+
+|
+
+Hom(d,"H(K) z)
+
+Diez Ext'(5p,"H"(K) z,)
+
+where the Ext and Hom in the lower row refer to the abelian category P(X;)
+and where the vertical identifications come from Gabber’s decomposition
+theorem by which Ky, © @jez?H'(K)y,[—i]. The fact that #°(@); factors
+over the projection in the lower row follows from the observation that by
+part (b) we have H°(X;,?H"(K)y,) = 0 for all i# 0. Hence (c) follows as
+well, and we are done. O
+
+In the above proof we have used that after a suitable quasi-finite étale
+base change there exist enough characters ¥ € II(X) so that we can apply
+
+the vanishing theorem from section 3.1 fibre by fibre. More precisely we
+have the following result.
+
+LEMMA 3.21. Let P € D(X) be a complex which restricts to a perverse
+sheaf on each geometric fibre of the abelian scheme X — S, and suppose
+that S is irreducible. Then there exists
+
+© a quasi-finite étale morphism f : S' > S,
+e acharacter x € T1(X') for the abelian scheme X' = X x35",
+
+such that the direct image of P' = (idx, f)*(P) € D(X") under the structure
+morphism p : X' — S' satisfies
+
+FE\(Rp.(P'@,Ly)) = 0 forall i#0.

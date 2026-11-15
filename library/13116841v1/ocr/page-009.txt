@@ -1,0 +1,51 @@
+For example, we can decompose a given tensor operator in terms of two other tensor operators, using the CG
+coefficients.
+
+t= > ch?) then, (26)
+my,,m2 mimem
+
+Two specific combinations will be especially relevant for us: “scalar product” and “vector product”.
+
+1. Scalar product
+
+We call “scalar product” of two tensor operators, the projection of these operators on the trivial representation.
+Indeed, considering two tensor operators t/? and t/?, we can combine them using the CG coefficients to build a tensor
+operator of rank 0, i.e. a scalar operator.
+
+tes V/Pn+l SOC hi ha th 8B, = dj. S(-I) a? th 2, (27)
+
+my -+m2=0 mym20 m
+In this sense, we can interpret these quantum Clebsch-Gordan coefficients as encoding a (non-degenerated) bilinear
+form BY) defining a scalar product.
+
+j - j j0 j—-m™ j
+BI (v,w) = = g20™ w’=v-u, g), = V[2i1 + Ug an = bmn (-1? "gq? # I). (28)
+
+To have a scalar product out from a bilinear form B, we usually demand that the bilinear form is symmetric B(v, w) =
+B(w(v, w)), where w is the permutation. However due to the non-cocommutativity of the coproduct, we have a non
+trivial tensor product structure. Thus we have to discuss the symmetry with respect to the deformed permutation
+WR =WwoR. We have then
+
+v-w = Biv, w) = (-1)% gD Biber (v,w)) = (Hg FY w ev. (29)
+
+We notice therefore that, modulo the factor q~J9+), if 7 is integer we have a (deformed) symmetric bilinear form,
+whereas in the half integer case, it is (deformed) antisymmetric. This is consistent with the construction when q —> 1.
+Unlike in the classical case there is an extra factor q~J%+ that comes into play. Since we have defined a bilinear form,
+we can introduce the contravariant and covariant notions. If |u) = )>,,, um|jm) is a vector (covariant object), then
+(ul = Xo, U-m(-1))-™q? (jm| will be the covector (contravariant object). This notion can be naturally extended
+to tensor operators. We vine defined earlier the covariant tensor operators since they transform as vectors. We can
+introduce the contravariant tensor operators as
+
+t™ = (-1)-"q (tt ms (30)
+
+where j is here the standard combination of transpose and complex conjugation. This contravariant notion of tensor
+operators was actually proposed by Quesne .
+
+Finally, given a bilinear form, we can construct the associated notion of adjoint tg of an operator A, from
+B(Ai8v,w)) = Biv, Aw). We recall that? gm» = bm, _n(-1))~™q® is antidiagonal and not symmetric, so that
+we need to be careful. We note g”" = (—1)-J-™q? 5 m,n its inverse. Following the adjoint definition, given a
+bilinear form gmn, we have, for a given operator A,
+
+(ats), = 9 ASagan = (a "F*) A. (31)
+
+3 We omit the j upper index for simplicity.

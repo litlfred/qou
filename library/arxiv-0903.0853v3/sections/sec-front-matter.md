@@ -1,13 +1,14 @@
 ---
 doc_id: arxiv-0903.0853v3
-doc_title: "Jean-Pierre Ramis"
+doc_title: "Local analytic classification of q-difference equations"
 section_id: sec-front-matter
 section_title: "Front matter"
 section_number: null
-pages: 1-6
+pages: 1-7
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
 toc_source: inferred
+doc_brief: "Local analytic classification of q-difference equations — 114 sections: Front matter; The problem; The generalized Riemann problem an"
 ---
 arXiv:0903.0853v3  [math.QA]  30 Jan 2012
 Jean-Pierre Ramis
@@ -109,3 +110,15 @@ CONTENTS
 7.3. From the Mock Theta functions to the q-Euler equation. . . . . . . . . . 123
 7.4. From class numbers of quadratic forms to the q-Euler equation. . . 127
 A. Classiﬁcation of isograded ﬁltered diﬀerence modules. . . . . . . . 131
+A.1. General setting of the problem. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 131
+A.2. Diﬀerence modules over diﬀerence rings. . . . . . . . . . . . . . . . . . . . . . . . . . 135
+A.3. Finitely ﬁltered diﬀerence modules. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 142
+A.4. Extensions of diﬀerence modules. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 145
+A.5. Extension of scalars. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 150
+A.6. Our moduli space. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 152
+A.7. Extension classes of diﬀerence modules. . . . . . . . . . . . . . . . . . . . . . . . . . . 155
+A.8. The cohomological equation. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 157
+Bibliography. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 161
+Index of notations. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 167
+CHAPTER 1
+INTRODUCTION

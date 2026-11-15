@@ -4,87 +4,12 @@ doc_title: "A Tutorial on Knots and Quantum Mechanics"
 section_id: sec-000-introduction
 section_title: "Introduction"
 section_number: null
-pages: 1-4
+pages: 2-4
 source_pdf: A_Tutorial_on_Knots_and_Quantum_Mechanics.pdf
 source_sha256: 18321b615ffc968b
 toc_source: outline
 doc_brief: "A Tutorial on Knots and Quantum Mechanics — These notes review a description of quantum mechanics in terms of the topology of spaces, basing on the axioms of Topological Quantum Field Theory and path"
 ---
-2
-2
-Basics of knot theory
-4
-2.1
-Topological invariants from matrix traces
-. . . . . . . . . . . . . . . . . . . . . . . . . . .
-6
-2.2
-Skein relation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-7
-2.3
-Bracket and Jones polynomials . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-8
-2.4
-Matrix representation
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-11
-3
-Topological bits
-13
-3.1
-Topological Quantum Field Theory . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-13
-3.2
-Topological Quantum Mechanics
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-16
-3.3
-Chern-Simons theory . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-19
-3.4
-TQFT in the Semiclassical Limit . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-23
-4
-Quantum Entanglement
-24
-4.1
-Topological Tangling and Quantum Entanglement
-. . . . . . . . . . . . . . . . . . . . . .
-24
-4.2
-SLOCC Classification
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-26
-4.3
-Entropy of Entanglement
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-33
-4.4
-Inequalities for the Entanglement entropy . . . . . . . . . . . . . . . . . . . . . . . . . . .
-36
-5
-Quantum Algorithms
-38
-5.1
-Quantum Teleportation
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-38
-5.2
-Dense Coding . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-40
-1
-arXiv:2503.08846v1  [quant-ph]  11 Mar 2025
-6
-Outlook
-42
-6.1
-Multipartite Entanglement
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-43
-6.2
-Quantum Gravity . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-44
-1
 Introduction
 Physics contributed to the birth of knot theory in the 19th century, when Lord Kelvin hypothesized that
 atoms are knotted vortices of aether [1]. Although the idea was doomed to fail,1 it is said to inspire the
@@ -192,4 +117,3 @@ section 5.1 and dense coding in section 5.2. The purpose is to illustrate the se
 is a resource for quantum tasks.
 We give concluding remarks in section 6, where we also review some open questions and possible
 applications, focusing on multipartite entanglement and quantum gravity.
-2

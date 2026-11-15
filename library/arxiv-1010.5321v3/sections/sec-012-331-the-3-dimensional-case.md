@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1010.5321v3
-doc_title: "Formulas on hyperbolic volume"
+doc_title: "Formulas on hyperbolic volume ∗"
 section_id: sec-012-331-the-3-dimensional-case
 section_title: "The 3-dimensional case"
 section_number: 3.3.1
 pages: 9-13
 source_pdf: 1010.5321v3.pdf
 source_sha256: c6bb20926b1f291f
-doc_brief: "Formulas on hyperbolic volume — This paper collects some important formulas on hyperbolic volume."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.984
-latex_coverage_ratio: 0.918
+latex_coverage_ratio: 0.765
+doc_brief: "Formulas on hyperbolic volume ∗ — This paper collects some important formulas on hyperbolic volume."
 ---
 We now follow another way for computation, we will determine the integral $$v(D)=\int\limits_{D}(\cosh z)^2(\cosh y)\mathrm{d}y\mathrm{d}z\mathrm{d}y= \int\limits_{0}^{a}\int\limits_{0}^{\phi(x)}\int\limits_{0}^{\psi (x,y)}(\cosh z)^2(\cosh y)\mathrm{d}y\mathrm{d}z\mathrm{d}x,$$ getting it from hyperbolic orthogonal coordinates using the parameter value $k=1$. The functions $\phi (x)$ and $\psi (x,y)$ can be determined as follows. Consider the orthosceme on Fig.7.
 

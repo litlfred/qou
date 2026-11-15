@@ -1,0 +1,52 @@
+Algorithmica (2026) 88:21
+https://doi.org/10.1007/s00453-026-01372-w
+
+®
+
+Check for
+updates.
+
+Concentration of Submodular Functions and Read-k
+Families Under Negative Dependence
+
+Sharmila Duppala’ - George Z. Li? - Juan Luque! - Aravind Srinivasan’ -
+Renata Valieva'
+
+Received: 8 May 2025 / Accepted: 21 January 2026 / Published online: 16 February 2026
+© The Author(s) 2026
+
+Abstract
+
+We study the question of whether submodular functions of random variables satisfying
+various notions of negative dependence satisfy Chernoff-like concentration inequal-
+ities. We prove such a concentration inequality for the lower tail when the random
+variables satisfy negative association or negative regression, partially resolving an
+open problem raised in ([1]). Previous work showed such concentration results for
+random variables that come from specific dependent-rounding algorithms ([2, 3]). We
+discuss some applications of our results to combinatorial optimization and beyond. We
+also show applications to the concentration of read-k families [4] under certain forms
+of negative dependence; we further show a simplified proof of the entropy-method
+approach of [4].
+
+Keywords Chernoff bounds - Submodular Functions - Negative Correlation -
+Negative Association
+
+1 Introduction
+
+Concentration inequalities are ubiquitous in discrete mathematics and theoretical com-
+puter science [5, 6]. The most canonical examples are the Chernoff-Hoeffding bounds,
+which show strong concentration for linear combinations of independent random vari-
+ables [7, 8]. In some applications, the condition of independence is too restrictive, so
+weaker notions have been considered [9-11]. Of interest to us is the setting where
+the random variables are negatively correlated, which arises naturally, for example, in
+
+This work was originally presented at ITCS 2025.
+
+& George Z. Li
+gzli929@ gmail.com
+GX Renata Valieva
+rvalieva@umd.edu
+1 University of Maryland, College Park, MD, USA
+2 Carnegie Mellon University, Pittsburgh, PA, USA
+
+cay Springer

@@ -8,7 +8,7 @@
   "pages": 26,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:26Z",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -16,12 +16,12 @@
   "arxiv": null,
   "doi": "10.4213/sm10137e",
   "title": "Rate of convergence in the central limit theorem for the determinantal point process with Bessel kernel",
-  "authors_raw": "Matematicheski\u02d8\u0131 Sbornik",
+  "authors_raw": "Matematicheski˘ı Sbornik",
   "title_lines": [
    "Sbornik: Mathematics",
-   "215:12 1607\u20131632"
+   "215:12 1607–1632"
   ],
-  "abstract": "We consider a family of linear operators diagonalized by the Hankel transform. We express explicitly the Fredholm determinants of these operators, as restricted to L2[0, R], so that the rate of their conver- gence as R \u2192\u221ecan be found. We use the link between these determinants and the distribution of additive functionals in a determinantal point process with Bessel kernel and estimate the distance in the Kolmogorov\u2013Smirnov metric between the distribution of these functionals and the Gaussian dis- tribution. Bibliography: 27 titles.",
+  "abstract": "We consider a family of linear operators diagonalized by the Hankel transform. We express explicitly the Fredholm determinants of these operators, as restricted to L2[0, R], so that the rate of their conver- gence as R →∞can be found. We use the link between these determinants and the distribution of additive functionals in a determinantal point process with Bessel kernel and estimate the distance in the Kolmogorov–Smirnov metric between the distribution of these functionals and the Gaussian dis- tribution. Bibliography: 27 titles.",
   "docinfo": {
    "Title": "Rate of convergence in the central limit theorem for the determinantal point process with Bessel kernel",
    "Author": "S.M. Gorbunov",
@@ -29,14 +29,14 @@
    "Creator": "LaTeX with hyperref",
    "CreationDate": "D:20250222191906+03'00'"
   },
-  "title_raw": "Sbornik: Mathematics 215:12 1607\u20131632",
+  "title_raw": "Sbornik: Mathematics 215:12 1607–1632",
   "title_source": "metadata",
   "title_verified": true,
   "title_evidence": {
    "metadata": "Rate of convergence in the central limit theorem for the determinantal point process with Bessel kernel",
    "heading": "Rate of convergence in the central limit theorem for the determinantal point process with Bessel kernel",
-   "outline": "\u00a71 Introduction",
-   "text": "Sbornik: Mathematics 215:12 1607\u20131632",
+   "outline": "§1 Introduction",
+   "text": "Sbornik: Mathematics 215:12 1607–1632",
    "corroborated_by": [
     "heading",
     "page"
@@ -47,7 +47,7 @@
  "toc": [
   {
    "level": 1,
-   "title": "\u00a71 Introduction",
+   "title": "§1 Introduction",
    "page": 1,
    "source": "outline",
    "number": null,
@@ -57,7 +57,7 @@
   },
   {
    "level": 1,
-   "title": "\u00a72 Statement of the result",
+   "title": "§2 Statement of the result",
    "page": 3,
    "source": "outline",
    "number": null,
@@ -67,7 +67,7 @@
   },
   {
    "level": 1,
-   "title": "\u00a73 Structure of the paper",
+   "title": "§3 Structure of the paper",
    "page": 5,
    "source": "outline",
    "number": null,
@@ -77,7 +77,7 @@
   },
   {
    "level": 1,
-   "title": "\u00a74 Trace class and Hilbert\u2013Schmidt operators",
+   "title": "§4 Trace class and Hilbert–Schmidt operators",
    "page": 6,
    "source": "outline",
    "number": null,
@@ -87,7 +87,7 @@
   },
   {
    "level": 1,
-   "title": "\u00a75 A link between the Bessel operator and the determinantal point process with Bessel kernel",
+   "title": "§5 A link between the Bessel operator and the determinantal point process with Bessel kernel",
    "page": 7,
    "source": "outline",
    "number": null,
@@ -97,7 +97,7 @@
   },
   {
    "level": 1,
-   "title": "\u00a76 Wiener\u2013Hopf factorization on $H_1(\\mathbb{R})$",
+   "title": "§6 Wiener–Hopf factorization on $H_1(\\mathbb{R})$",
    "page": 10,
    "source": "outline",
    "number": null,
@@ -107,7 +107,7 @@
   },
   {
    "level": 1,
-   "title": "\u00a77 Proof of Lemma 3",
+   "title": "§7 Proof of Lemma 3",
    "page": 12,
    "source": "outline",
    "number": null,
@@ -117,7 +117,7 @@
   },
   {
    "level": 1,
-   "title": "\u00a78 Proof of Theorems 1 and 2",
+   "title": "§8 Proof of Theorems 1 and 2",
    "page": 20,
    "source": "outline",
    "number": null,
@@ -407,21 +407,117 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 25,
-   "n_chars": 46655,
-   "n_words": 8492,
+   "page_end": 1,
+   "n_chars": 875,
+   "n_words": 122,
    "label_start": "1607",
+   "label_end": "1607"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": null,
+   "title": "§1 Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 5848,
+   "n_words": 964,
+   "label_start": "1607",
+   "label_end": "1609"
+  },
+  {
+   "id": "sec-001-2-statement-of-the-result",
+   "number": null,
+   "title": "§2 Statement of the result",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 2968,
+   "n_words": 578,
+   "label_start": "1609",
+   "label_end": "1611"
+  },
+  {
+   "id": "sec-002-3-structure-of-the-paper",
+   "number": null,
+   "title": "§3 Structure of the paper",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 3302,
+   "n_words": 559,
+   "label_start": "1611",
+   "label_end": "1612"
+  },
+  {
+   "id": "sec-003-4-trace-class-and-hilbertschmidt-operators",
+   "number": null,
+   "title": "§4 Trace class and Hilbert–Schmidt operators",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 2690,
+   "n_words": 499,
+   "label_start": "1612",
+   "label_end": "1613"
+  },
+  {
+   "id": "sec-004-5-a-link-between-the-bessel-operator-and-the-det",
+   "number": null,
+   "title": "§5 A link between the Bessel operator and the determinantal point process with Bessel kernel",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 10,
+   "n_chars": 5050,
+   "n_words": 848,
+   "label_start": "1613",
+   "label_end": "1616"
+  },
+  {
+   "id": "sec-005-6-wienerhopf-factorization-on-h-1mathbbr",
+   "number": null,
+   "title": "§6 Wiener–Hopf factorization on $H_1(\\mathbb{R})$",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 3513,
+   "n_words": 587,
+   "label_start": "1616",
+   "label_end": "1618"
+  },
+  {
+   "id": "sec-006-7-proof-of-lemma-3",
+   "number": null,
+   "title": "§7 Proof of Lemma 3",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 20,
+   "n_chars": 13087,
+   "n_words": 2620,
+   "label_start": "1618",
+   "label_end": "1626"
+  },
+  {
+   "id": "sec-007-8-proof-of-theorems-1-and-2",
+   "number": null,
+   "title": "§8 Proof of Theorems 1 and 2",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 25,
+   "n_chars": 8171,
+   "n_words": 1509,
+   "label_start": "1626",
    "label_end": "1631"
   },
   {
-   "id": "sec-000-bibliography",
+   "id": "sec-008-bibliography",
    "number": null,
    "title": "Bibliography",
    "level": 1,
    "page_start": 25,
    "page_end": 26,
-   "n_chars": 4138,
-   "n_words": 614,
+   "n_chars": 4118,
+   "n_words": 610,
    "label_start": "1631",
    "label_end": "1632"
   }
@@ -437,7 +533,8 @@
    "count": 0,
    "items": []
   },
-  "sections": 2,
-  "chars_total": 50793
+  "sections": 10,
+  "chars_total": 49622,
+  "furniture_lines_stripped": 50
  }
 }

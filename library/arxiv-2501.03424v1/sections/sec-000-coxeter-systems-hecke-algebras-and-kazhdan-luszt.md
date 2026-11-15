@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2501.03424v1
-doc_title: "Soergel bimodules and Kazhdan-Lusztig polynomials ethan eugene wynner"
+doc_title: "Soergel bimodules and Kazhdan-Lusztig polynomials"
 section_id: sec-000-coxeter-systems-hecke-algebras-and-kazhdan-luszt
 section_title: "Coxeter Systems, Hecke algebras, and Kazhdan-Lusztig preliminaries"
 section_number: null
 pages: 4-4
 source_pdf: 2501.03424v1.pdf
 source_sha256: 53e00a30fd850a5b
-doc_brief: "Soergel bimodules and Kazhdan-Lusztig polynomials ethan eugene wynner — This paper presents an exposition of Soergel bimodules, the categ oriﬁcation of Hecke alge- bras, and their applications to"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.974
-latex_coverage_ratio: 0.974
+latex_coverage_ratio: 0.881
+doc_brief: "Soergel bimodules and Kazhdan-Lusztig polynomials — This paper presents an exposition of Soergel bimodules, the categoriﬁcation of Hecke alge- bras, and their applications to various topics in"
 ---
 \end{center}
 

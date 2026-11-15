@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0008040v1
-doc_title: "arXiv:math/0008040v1 [math.QA] 4 Aug 2000"
+doc_title: "Rectangle diagrams for the Lusztig cones of quantized enveloping algebras of type A"
 section_id: sec-front-matter
 section_title: "Front matter"
 section_number: null
@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0008040v1.pdf
 source_sha256: a72319b55dbaf20b
 toc_source: inferred
+doc_brief: "Rectangle diagrams for the Lusztig cones of quantized enveloping algebras of type A — Let U be the quantum group associated to a Lie algebra g of type An."
 ---
 arXiv:math/0008040v1  [math.QA]  4 Aug 2000
 Rectangle diagrams for the Lusztig cones of quantized enveloping
@@ -28,4 +29,3 @@ regions of linearity of Lusztig’s piecewise-linear function [9, §2].
 Keywords:
 quantum group, canonical basis, Lusztig cone, longest word,
 piecewise-linear combinatorics.
-1

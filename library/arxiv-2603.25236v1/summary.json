@@ -2,30 +2,20 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2603.25236v1",
  "source_sha256": "fba6853d6e544e19",
- "brief": "A Concentration of Measure Phenomenon in — We demonstrate that the pushforward of the product of Haar measures by the lattice Yang-Mills action concentrates as a Gaussian.",
- "extended": "**A Concentration of Measure Phenomenon in**\n\n*Lattice Yang-Mills*\n\n8 pp, 4 sections.\n\n**Abstract.** We demonstrate that the pushforward of the product of Haar measures by the lattice Yang-Mills action concentrates as a Gaussian. It is also sketched how using this fact, one can recover the strong-coupling expan- sion. The aim of this note is to explore the concentration of measure phenomenon [1] in the context of lattice Yang-Mills theory. We shall see below that while this phenomenon does indeed manifest in this setting, it does not allow us to go beyond what is already known by using other methods. This is due to the fact that, in a certain sense which will become clear below, measure concentration and action minimization work against each other.\n\n**Outline.** Abstract; 3 To see this, suppose the half-edges are coup; 2 (coming from the real part), we get that for; References",
+ "brief": "A Concentration of Measure Phenomenon in Lattice Yang-Mills — We demonstrate that the pushforward of the product of Haar measures by the lattice Yang-Mills action concentrates as a Gaussian.",
+ "extended": "**A Concentration of Measure Phenomenon in Lattice Yang-Mills**\n\n*Lattice Yang-Mills*\n\n8 pp, 2 sections.\n\n**Abstract.** We demonstrate that the pushforward of the product of Haar measures by the lattice Yang-Mills action concentrates as a Gaussian. It is also sketched how using this fact, one can recover the strong-coupling expan- sion. The aim of this note is to explore the concentration of measure phenomenon [1] in the context of lattice Yang-Mills theory. We shall see below that while this phenomenon does indeed manifest in this setting, it does not allow us to go beyond what is already known by using other methods. This is due to the fact that, in a certain sense which will become clear below, measure concentration and action minimization work against each other.\n\n**Outline.** Front matter; References",
  "tokens": {
-  "brief": 42,
-  "extended": 222
+  "brief": 47,
+  "extended": 204
  },
  "sections": [
   {
-   "id": "sec-000-abstract",
-   "title": "Abstract",
-   "pages": "1-5"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-8"
   },
   {
-   "id": "sec-001-3-to-see-this-suppose-the-half-edges-are-coupled",
-   "title": "To see this, suppose the half-edges are coupled to produce case (a) for e.g.,",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-002-2-coming-from-the-real-part-we-get-that-for-even",
-   "title": "(coming from the real part), we get that for evenl, (4) is equal to",
-   "pages": "5-8"
-  },
-  {
-   "id": "sec-003-references",
+   "id": "sec-000-references",
    "title": "References",
    "pages": "8-8"
   }

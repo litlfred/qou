@@ -7,10 +7,11 @@ section_number: 7
 pages: 12-13
 source_pdf: 1303.6444v3.pdf
 source_sha256: 4f12ace2197f70ca
-doc_brief: "VIRIAL EXPANSION BOUNDS — In the 1960s, the technique of using cluster expansion bounds in order to achieve bounds on the virial expansion was developed by Lebowitz and Penrose (1964) and Ruelle"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.987
-latex_coverage_ratio: 0.867
+latex_prose_ratio: 0.974
+latex_coverage_ratio: 0.974
+doc_brief: "VIRIAL EXPANSION BOUNDS — In the 1960s, the technique of using cluster expansion bounds in order to achieve bounds on the virial expansion was developed by Lebowitz and Penrose (1964) and Ruelle"
 ---
 []{#sec: comparison label="sec: comparison"} This approach would be better for potentials where $\zeta R(\beta) < C(\beta)$, for some $\zeta$ representing the quotient of the coefficients $\frac{f_1}{f_2}$, where: $$\begin{aligned}
  f_1&:=e^{-4\beta B}\frac{\left(W\left(\frac{e}{1+e^{2\beta B}}\right)-1\right)^2}{W\left(\frac{e}{1+e^{2\beta B}}\right)} \label{f1} \\

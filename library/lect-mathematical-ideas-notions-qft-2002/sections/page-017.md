@@ -1,0 +1,73 @@
+---
+doc_id: lect-mathematical-ideas-notions-qft-2002
+doc_title: "Mathematical ideas and notions of quantum field theory"
+section_id: page-017
+section_title: "Page 17"
+pages: 17-17
+pdf_page: 17
+source_pdf: lect-mathematical-ideas-notions-qft-2002.pdf
+source_sha256: 95cac1ccd6c80226
+text_source: ocr
+granularity: page
+doc_brief: "Mathematical ideas and notions of quantum field theory — 78 sections: Page 1; Page 2; Page 3"
+---
+MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 17
+
+In other words, let f(z) be the function inverse to re~* near « = 0. Then we
+
+have % = f(g). Thus, let us find the Taylor expansion of f. This is given by the
+following classical result.
+
+Proposition 3.6. One has
+
+19=S a"
+
+n>1
+
+Proof. Let f(g) = Dndt ang”. Then
+=f Way bf Pe raee) =
+
+"Oni F grtl Oni we—)ntt
+1 cue! 2 nr-l 7 nn? _ nn?
+Qri an (n—D! (n—2)! (n—-1)!
+
+Now we find
+~S(z0) = -f(g)?/2 + gel.
+Thus
+
+= (a}g) S20) = = f()F(g) + gel” $C) + ell) = eli = AD.
+
+This means that 5
+° f(a) nn~
+- =| “da = S > 9".
+S(#0) [ a a a n! g
+This shows that
+
+n—-2
+
+1 n
+» jAut(r)| onl
+
+TeET(n)
+But each isomorphism class of unlabeled trees with n vertices has =e noniso-
+morphic labelings. Thus the latter formula implies
+
+Corollary 3.7. (A. Cayley) The number of labeled trees with n vertices is n”~?.
+
+3.9. Counting trees with conditions. In a similar way we can count labeled
+trees with conditions on vertices. For example, let us compute the number of
+labeled trivalent trees with m vertices (i.e. trees that have only 1-valent and 3-
+valent vertices). Clearly, m = 2k, otherwise there is no such trees. The relevant
+
+action functional is S(2) = 2 —g(z+2°/6). Then the critical point zo is obtained
+from the equation g(z*/2+ 1) — x = 0, which yields zo = eye Thus, the
+tree sum (In(Z/Z))o equals
+
+1— (1 = 2232)°?
+
+(In(Z/Zo))o = —S(xo) = ap -1.
+Expanding this in a Taylor series, we find
+_ a ee -(2n=1) onso
+(m(Z/2o =
+
+Hence, we get

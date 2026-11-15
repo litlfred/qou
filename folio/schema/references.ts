@@ -774,6 +774,43 @@ const ORDER: Array<FileSlot | Reference> = [
   // ── Nature Physics: Scheeler et al. 2014 ────────────────────────
   { id: "scheeler2014" },
 
+  // ── Adv. Math.: Enciso, Lucà & Peralta-Salas 2017 ───────────────
+  // Smooth NS solutions reconnecting vortex lines/tubes of any topology.
+  ref({
+    id: "enciso2017",
+    type: "article-journal",
+    title: "Vortex reconnection in the three dimensional Navier–Stokes equations",
+    author: [
+      { family: "Enciso", given: "Alberto" },
+      { family: "Lucà", given: "Renato" },
+      { family: "Peralta-Salas", given: "Daniel" },
+    ],
+    "container-title": "Advances in Mathematics",
+    volume: "309",
+    page: "452-486",
+    DOI: "10.1016/j.aim.2017.01.025",
+    issued: { "date-parts": [[2017]] },
+    URL: "https://arxiv.org/abs/1606.06176",
+  }),
+
+  // ── Ann. Math.: Ebin & Marsden 1970 ─────────────────────────────
+  // Incompressible flow on a compact Riemannian manifold; the
+  // deformation-tensor form of the viscous term.
+  ref({
+    id: "ebin-marsden1970",
+    type: "article-journal",
+    title: "Groups of diffeomorphisms and the motion of an incompressible fluid",
+    author: [
+      { family: "Ebin", given: "David G." },
+      { family: "Marsden", given: "Jerrold E." },
+    ],
+    "container-title": "Annals of Mathematics",
+    volume: "92",
+    issue: "1",
+    page: "102-163",
+    issued: { "date-parts": [[1970]] },
+  }),
+
   // ── PRL: Christenson et al. 1964 (CP violation in kaons) ────────
   { id: "christenson1964" },
 
@@ -1445,6 +1482,44 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "cardona2023" },
 
   { id: "tao2019" },
+
+  // ── Vorticity-direction regularity criteria (geometric depletion) ──
+  // Used by fluid-dynamics/core-levi-form.md and
+  //          fluid-dynamics/levi-degeneracy-conjecture.md (Q1 re-scope,
+  //          owner 2026-10-13). Bibliographic data confirmed via secondary
+  //          sources (docs/audits/2026-10-12-ns-v1-geometric-depletion.md §1);
+  //          primary texts not held in library/, DOI not verified, so omitted.
+  ref({
+    id: "constantin1993",
+    type: "article-journal",
+    title:
+      "Direction of vorticity and the problem of global regularity for the Navier-Stokes equations",
+    author: [
+      { family: "Constantin", given: "Peter" },
+      { family: "Fefferman", given: "Charles" },
+    ],
+    "container-title": "Indiana University Mathematics Journal",
+    issued: { "date-parts": [[1993]] },
+    volume: "42",
+    issue: "3",
+    page: "775-789",
+  }),
+
+  ref({
+    id: "beiraodaveiga2002",
+    type: "article-journal",
+    title:
+      "On the regularizing effect of the vorticity direction in incompressible viscous flows",
+    author: [
+      { family: "Beirão da Veiga", given: "Hugo" },
+      { family: "Berselli", given: "Luigi C." },
+    ],
+    "container-title": "Differential and Integral Equations",
+    issued: { "date-parts": [[2002]] },
+    volume: "15",
+    issue: "3",
+    page: "345-356",
+  }),
 
   // ── Townsend: viscous vortex-core strain dynamics ───────────────
   // Used by fluid-dynamics/townsend-biot-savart-strain.md and
@@ -2705,6 +2780,33 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "fukuda2012" },
   { id: "melnikov2025" },
   { id: "tarabunga2025" },
+  // 2026-11-15: held library document registered (bean qou-mzv5).
+  { id: "murakami2008-acta-vietnam" },
+  // 2026-11-15: owner uploads (commit 947381c) ingested into library/ (epic qou-s4ws).
+  { id: "grimus1993lr" },
+  { id: "czakon-gluza-hejczyk-2003" },
+  { id: "doty-giaquinto-2002" },
+  { id: "fileviezperez-ohmer-2017" },
+  { id: "alvarado-aranda-2018" },
+  { id: "crivellin-matias-2022" },
+  { id: "du1995weyl" },
+  { id: "du-fu-qschur-survey" },
+  { id: "lee-yang-1956" },
+  { id: "wu1957parity" },
+  { id: "kwiat2024" },
+  { id: "kuperberg1991g2" },
+  { id: "kuperberg1996spiders" },
+  { id: "erlijman-wenzl-2007" },
+  // 2026-11-15: arXiv sources ingested into library/ (epic qou-s4ws).
+  { id: "chamseddine-connes-2008-why-sm" },
+  { id: "chamseddine-connes-marcolli-2007" },
+  { id: "furey2018" },
+  { id: "li-zhou-zhou-2019" },
+  { id: "zhao-tang-wan-2021" },
+  { id: "zhao-wu-ababekri-2023" },
+  { id: "senjanovic2011" },
+  { id: "pati2017" },
+  { id: "rosso1988" },
 ];
 
 export const references: Reference[] = assemble(ORDER);

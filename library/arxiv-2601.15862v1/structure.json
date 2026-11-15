@@ -6,10 +6,12 @@
   "sha256": "e37fa9b4515f58d167754cb63ea6fc117e6394ae4b480dd9b9283b61922721b2",
   "bytes": 509880,
   "pages": 16,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -19,18 +21,33 @@
    "stamp_date": "22 Jan 2026"
   },
   "doi": null,
-  "title": "SYNTHETIC DIFFERENTIAL JET BUNDLES ARE REDUCED",
+  "title": "Synthetic Differential Jet Bundles are Reduced",
   "authors_raw": "GRIGORIOS GIOTOPOULOS, IGOR KHAVKINE, HISHAM SATI, AND URS SCHREIBER",
-  "abstract": "We have previously observed that the theory of solutions of par- tial differential equations, regarded asdiffietiesinside jet bundles, acquires a powerful comonadic formulation after passage from the category of Fr\u00b4 echet smooth manifolds to theCahiers toposofformal smooth sets(a well-adapted model for Synthetic Differential Geometry). However, the tacit assumption that this passage preserves the projective limits that define infinite jet bundles had remained unproven. Here we provide a detailed proof.",
-  "docinfo": {
-   "Author": "Grigorios Giotopoulos; Igor Khavkine; Hisham Sati; Urs Schreiber",
-   "Creator": "arXiv GenPDF (tex2pdf:57610bf)",
-   "Producer": "pikepdf 8.15.1",
-   "Title": "Synthetic Differential Jet Bundles are Reduced"
-  },
   "title_lines": [
    "SYNTHETIC DIFFERENTIAL JET BUNDLES ARE REDUCED"
-  ]
+  ],
+  "abstract": "We have previously observed that the theory of solutions of par- tial differential equations, regarded as diffieties inside jet bundles, acquires a powerful comonadic formulation after passage from the category of Fr´echet smooth manifolds to the Cahiers topos of formal smooth sets (a well-adapted model for Synthetic Differential Geometry). However, the tacit assumption that this passage preserves the projective limits that define infinite jet bundles had remained unproven. Here we provide a detailed proof.",
+  "docinfo": {
+   "Title": "Synthetic Differential Jet Bundles are Reduced",
+   "Author": "Grigorios Giotopoulos; Igor Khavkine; Hisham Sati; Urs Schreiber",
+   "Producer": "pikepdf 8.15.1",
+   "Creator": "arXiv GenPDF (tex2pdf:57610bf)"
+  },
+  "title_raw": "SYNTHETIC DIFFERENTIAL JET BUNDLES ARE REDUCED",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Synthetic Differential Jet Bundles are Reduced",
+   "heading": "SYNTHETIC DIFFERENTIAL JET BUNDLES ARE REDUCED Contents Introduction Statement and Proof Appendix A. Background References 1. Introduction The tenet of synthetic differential geometry (SDG, cf. [ Koc79 ; Lav96 ; Koc10 ]) is that concepts and results in differential geometry often find a more natural",
+   "outline": "1. Introduction",
+   "text": "SYNTHETIC DIFFERENTIAL JET BUNDLES ARE REDUCED",
+   "corroborated_by": [
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "SYNTHETIC DIFFERENTIAL JET BUNDLES ARE REDUCED"
  },
  "toc": [
   {
@@ -38,74 +55,240 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Statement and Proof",
    "page": 2,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Appendix A. Background",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 14,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 647,
+   "n_words": 91,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "page_end": 2,
+   "n_chars": 2893,
+   "n_words": 442,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-2-statement-and-proof",
    "number": "2",
    "title": "Statement and Proof",
    "level": 1,
-   "page_start": 1,
-   "page_end": 14,
-   "n_chars": 24083,
-   "n_words": 3896
+   "page_start": 2,
+   "page_end": 9,
+   "n_chars": 13361,
+   "n_words": 2777,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-references",
+   "id": "sec-002-appendix-a-background",
+   "number": null,
+   "title": "Appendix A. Background",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 14,
+   "n_chars": 8373,
+   "n_words": 1493,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 14,
    "page_end": 16,
-   "n_chars": 5614,
-   "n_words": 720
+   "n_chars": 5670,
+   "n_words": 776,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 4,
-  "sections": 3,
-  "chars_total": 29697,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 5,
+  "chars_total": 30944,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
    "tex_sections": 2,
-   "overlaid": 1,
+   "overlaid": 2,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -113,21 +296,33 @@
    },
    "sections": [
     {
-     "id": "sec-000-1-introduction",
-     "title": "Introduction",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
     },
     {
-     "id": "sec-001-2-statement-and-proof",
-     "title": "Statement and Proof",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.931,
+     "coverage_ratio": 0.806,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-002-references",
+     "id": "sec-001-2-statement-and-proof",
+     "title": "Statement and Proof",
+     "prose_ratio": 0.903,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-appendix-a-background",
+     "title": "Appendix A. Background",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-references",
      "title": "References",
      "result": "no matching \\section"
     }

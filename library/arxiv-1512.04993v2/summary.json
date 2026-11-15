@@ -3,12 +3,17 @@
  "doc_id": "arxiv-1512.04993v2",
  "source_sha256": "b8047bc3d3815406",
  "brief": "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a",
- "extended": "**Complexity, action, and black holes**\n\n*Adam R. Browna, Daniel A. Robertsb, Leonard Susskinda*\n\n70 pp, 41 sections.\n\n**Abstract.** Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a region in the bulk (the “Wheeler-DeWitt” patch). We provide calculations for the results quoted in that paper, explain how it ﬁts into a broader (tensor) network of ideas, and elaborate on the hypothesis that black holes are the fastest computers in nature. arXiv:1512.04993v2 [hep-th] 10 May 2016\n\n**Outline.** 1 Introduction; 1.1 Complexity equals action; 2 Bounds on information storage and processing; 2.2 Bounds on information scrambling or chaos; 2.3 Bounds on quantum evolution; 2.4 Complexity; 2.5 Conjectured complexity growth bound; 2.6 Bound on complexity growth with a conserve; 3 Action growth of black holes; 3.1 Action of an uncharged black hole; 3.2 Action of a charged black hole; 3.3 Action of a rotating BTZ black hole; 4.2 Rotating BTZ black holes; 4 Testing our conjectures with black holes; 4.3 Small charged black holes; 4.1 Neutral static black holes; 4.4 Intermediate and large charged black holes; 4.5 Discussion",
+ "extended": "**Complexity, action, and black holes**\n\n*Adam R. Browna, Daniel A. Robertsb, Leonard Susskinda*\n\n70 pp, 47 sections.\n\n**Abstract.** Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a region in the bulk (the “Wheeler-DeWitt” patch). We provide calculations for the results quoted in that paper, explain how it ﬁts into a broader (tensor) network of ideas, and elaborate on the hypothesis that black holes are the fastest computers in nature. arXiv:1512.04993v2 [hep-th] 10 May 2016\n\n**Outline.** Front matter; 1 Introduction; 1.1 Complexity equals action; 2 Bounds on information storage and processing; 2.2 Bounds on information scrambling or chaos; 2.3 Bounds on quantum evolution; 2.4 Complexity; 2.5 Conjectured complexity growth bound; 2.6 Bound on complexity growth with a conserve; 3 Action growth of black holes; 3.1 Action of an uncharged black hole; 3.2 Action of a charged black hole; 3.3 Action of a rotating BTZ black hole; 4 Testing our conjectures with black holes; 4.1 Neutral static black holes; 4.2 Rotating BTZ black holes; 4.3 Small charged black holes; 4.4 Intermediate and large charged black holes",
  "tokens": {
   "brief": 49,
   "extended": 307
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-4"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -32,12 +37,12 @@
   {
    "id": "sec-004-23-bounds-on-quantum-evolution",
    "title": "Bounds on quantum evolution",
-   "pages": "11-12"
+   "pages": "11-13"
   },
   {
    "id": "sec-005-24-complexity",
    "title": "Complexity",
-   "pages": "12-14"
+   "pages": "13-14"
   },
   {
    "id": "sec-006-25-conjectured-complexity-growth-bound",
@@ -70,24 +75,24 @@
    "pages": "21-22"
   },
   {
-   "id": "sec-012-42-rotating-btz-black-holes",
-   "title": "Rotating BTZ black holes",
-   "pages": "22-22"
-  },
-  {
-   "id": "sec-013-4-testing-our-conjectures-with-black-holes",
+   "id": "sec-012-4-testing-our-conjectures-with-black-holes",
    "title": "Testing our conjectures with black holes",
    "pages": "22-22"
   },
   {
-   "id": "sec-014-43-small-charged-black-holes",
-   "title": "Small charged black holes",
-   "pages": "22-22"
+   "id": "sec-013-41-neutral-static-black-holes",
+   "title": "Neutral static black holes",
+   "pages": "22-23"
   },
   {
-   "id": "sec-015-41-neutral-static-black-holes",
-   "title": "Neutral static black holes",
-   "pages": "22-24"
+   "id": "sec-014-42-rotating-btz-black-holes",
+   "title": "Rotating BTZ black holes",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-015-43-small-charged-black-holes",
+   "title": "Small charged black holes",
+   "pages": "23-24"
   },
   {
    "id": "sec-016-44-intermediate-and-large-charged-black-holes",
@@ -137,80 +142,105 @@
   {
    "id": "sec-025-65-comment-on-transparency",
    "title": "Comment on transparency",
-   "pages": "42-47"
+   "pages": "42-43"
   },
   {
-   "id": "sec-026-8-discussion",
+   "id": "sec-026-7-tensor-network-model-of-einstein-rosen-bridge",
+   "title": "Tensor network model of Einstein-Rosen bridge growth",
+   "pages": "43-47"
+  },
+  {
+   "id": "sec-027-8-discussion",
    "title": "Discussion",
    "pages": "47-48"
   },
   {
-   "id": "sec-027-82-open-questions",
-   "title": "Open questions",
-   "pages": "48-48"
-  },
-  {
    "id": "sec-028-81-comparing-ca-duality-and-cv-duality",
    "title": "Comparing CA-duality and CV-duality",
-   "pages": "48-50"
+   "pages": "48-49"
   },
   {
-   "id": "sec-029-822-ca-duality-as-a-diagnostic-tool",
+   "id": "sec-029-82-open-questions",
+   "title": "Open questions",
+   "pages": "49-49"
+  },
+  {
+   "id": "sec-030-821-the-definition-of-complexity",
+   "title": "The definition of complexity",
+   "pages": "49-50"
+  },
+  {
+   "id": "sec-031-822-ca-duality-as-a-diagnostic-tool",
    "title": "CA-duality as a diagnostic tool",
    "pages": "50-50"
   },
   {
-   "id": "sec-030-823-diagnosing-transparency-of-horizons",
+   "id": "sec-032-823-diagnosing-transparency-of-horizons",
    "title": "Diagnosing transparency of horizons",
    "pages": "50-50"
   },
   {
-   "id": "sec-031-824-weak-coupling-and-stringy-corrections",
+   "id": "sec-033-824-weak-coupling-and-stringy-corrections",
    "title": "Weak coupling and stringy corrections",
    "pages": "50-51"
   },
   {
-   "id": "sec-032-825-regularizing-the-action",
+   "id": "sec-034-825-regularizing-the-action",
    "title": "Regularizing the action",
    "pages": "51-52"
   },
   {
-   "id": "sec-033-826-action-from-near-the-singularity",
+   "id": "sec-035-826-action-from-near-the-singularity",
    "title": "Action from near the singularity",
    "pages": "52-52"
   },
   {
-   "id": "sec-034-827-boundary-terms",
+   "id": "sec-036-827-boundary-terms",
    "title": "Boundary terms",
    "pages": "52-53"
   },
   {
-   "id": "sec-035-828-theories-without-action-formulations",
+   "id": "sec-037-828-theories-without-action-formulations",
    "title": "Theories without action formulations",
    "pages": "53-53"
   },
   {
-   "id": "sec-036-829-very-early-times",
+   "id": "sec-038-829-very-early-times",
    "title": "Very early times",
    "pages": "53-55"
   },
   {
-   "id": "sec-037-8210-very-late-times",
+   "id": "sec-039-8210-very-late-times",
    "title": "Very late times",
    "pages": "55-55"
   },
   {
-   "id": "sec-038-8211-principle-of-least-computation",
+   "id": "sec-040-8211-principle-of-least-computation",
    "title": "Principle of least computation",
-   "pages": "55-57"
+   "pages": "55-56"
   },
   {
-   "id": "sec-039-a1-comments-on-hamiltonian-locality-and-gate-sim",
+   "id": "sec-041-a-further-comments-on-the-complexification-bound",
+   "title": "A Further comments on the complexification bound",
+   "pages": "56-57"
+  },
+  {
+   "id": "sec-042-a1-comments-on-hamiltonian-locality-and-gate-sim",
    "title": "A.1 Comments on Hamiltonian locality and gate simplicity",
-   "pages": "57-64"
+   "pages": "57-59"
   },
   {
-   "id": "sec-040-c-the-past-wedge",
+   "id": "sec-043-b-spherical-shock-waves-at-finite-time-and-energ",
+   "title": "B Spherical shock waves at finite time and energy",
+   "pages": "59-62"
+  },
+  {
+   "id": "sec-044-b1-precursor-at-finite-time-and-energy",
+   "title": "B.1 Precursor at finite time and energy",
+   "pages": "62-64"
+  },
+  {
+   "id": "sec-045-c-the-past-wedge",
    "title": "C The past wedge",
    "pages": "64-70"
   }

@@ -1,0 +1,58 @@
+1362 J. Leake
+
+tensor product) can viewed as a representation of G x G. If we further have a G-invariant
+bilinear form on W,, then we also have W; = Wy. This leads to the following identification:
+
+Hom(W,, W2) = Wi & W = W, & Wo
+
+If W, and W) are spaces of polynomials, each in m variables, then their tensor product
+W, & Wy) is isomorphic to a larger space of polynomials in 2m variables. That is, a linear
+operator between polynomial spaces W; and W2 can be associated to some polynomial in
+double the variables, via the above identification of representations. This is precisely the idea
+of the symbol of an operator.
+
+Let’s see how this works in the univariate case. Consider C”[x] as a representation of
+the group SL2(C), as described above. It is then a standard result that the classical bilinear
+apolarity form is invariant under the action of Mébius transformations. That is, the apolarity
+form is an SL2(C)-invariant bilinear form on C”[x]. This form, applied to f, g € C”[x] with
+coefficients f,, gx, is defined as follows:
+
+n
+
+-1
+gyi fy) (= 1)" fen
+(f.8) » ( k fig
+With this, we obtain the identification described above: Hom(C"[x], C”[x]) = C"[x] X
+C" [x] = C-"[x, z]. The final piece of the puzzle is then to find a way to transfer stability
+information through this identification of representations. The key result to this end is the
+classical Grace’s theorem:
+
+Theorem [8] Let f, g € C"[x] be polynomials of degree exactly n. Further, let C be some
+open or closed circular region such that f is C-stable and g is (C\C)-stable. Then, (f ,g)" #
+0.
+
+That is, the apolarity form not only provides the link between a linear operator and its
+symbol, but also captures stability information. So, whatever stability claims we can make
+about polynomials in C+”) [x, z] can then be seamlessly transferred to corresponding linear
+operators in Hom(C"[x], C”[x]). From this we are able to recover the Borcea—Brindén
+characterization. Additionally, all of the theory here relating stability and the representation
+theory of SL2(C) can be generalized to multivariate polynomials in a straightforward manner.
+The details will be discussed in Sect. 3.
+
+In a similar fashion, other important maps also have SL2(C)-invariance properties (e.g.,
+polarization and projection, as used in the Grace—Walsh—Szeg6 coincidence theorem, explic-
+itly give the isomorphisms of a classical representation theoretic result; see Appendix B). A
+main feature of our conceptual thesis is that it allows for a unification of many seemingly
+related results in polynomial stability theory. A crucial point to make then is that Grace’s
+theorem is at the heart of this unification. That said, a significant portion of this paper is
+devoted to discussing it.
+
+A generalized Grace's theorem and interval- and ray-rootedness
+
+In [2], Borcea and Brindén are able to prove a multivariate Grace’s theorem using their
+operator characterization. In this paper we will prove the multivariate version from scratch,
+and then use it to derive a new characterization of stability-preserving linear operators. In
+addition, we generalize it to projectively convex regions, which consist of an open circular
+region with a portion of its boundary (see Sect. 4.2). We state our new result as follows.
+
+D Springer

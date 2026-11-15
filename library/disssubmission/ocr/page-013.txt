@@ -1,0 +1,49 @@
+5
+
+perverse sheaves on abelian varieties, such degenerations naturally lead to
+non-semisimple perverse sheaves on semiabelian varieties. In chapter 3 we
+extend our Tannakian constructions to this more general case, combining
+the results of Gabber and Loeser for tori with our vanishing theorem for
+abelian varieties. We also give a Tannakian description for the functor of
+nearby cycles for a family of abelian varieties which degenerates into a
+semiabelian variety. Even though in the non-proper case the functor of
+nearby cycles does not preserve the Euler characteristic, we will show that
+the degenerate Tannaka group is a subgroup of the generic one whenever
+one can possibly expect this to hold (see theorem 3.15).
+
+In the remaining chapters we study in more detail the case where P = dg
+is the perverse intersection cohomology sheaf associated with a symmetric
+theta divisor of a principally polarized abelian variety X. In chapter 4 we
+use a degeneration argument to show that for a general principally polarized
+abelian variety (ppav) of dimension g one has
+
+_ J SOg(C) _ if g is odd,
+G(S0) = {sons if g is even,
+
+and that dg corresponds to the standard representation of this group, a result
+that was conjectured in [67]. As an application we deduce that for g = 4 the
+invariant G(dq) solves the Schottky problem in the sense that it detects the
+locus of Jacobian varieties inside the moduli space .% of ppav’s.
+
+Once we know the Tannaka group G(d), we can use representation
+theory to decompose arbitrary convolution powers of the perverse sheaf do
+into their simple constituents. This produces a plethora of interesting simple
+perverse sheaves which describe the Hodge theory of various subvarieties
+of X. For example, consider the translate ©, = © + x of the theta divisor by
+a point x € X(C). The geometry of the intersections
+
+Y, = ONO,
+
+is closely connected with the moduli of the underlying ppav and has been
+studied classically in relation with Torelli’s theorem [25], with the Schottky
+problem [27] and with the Prym map [61]. The involution o = —idy acts
+on these intersections, and if the theta divisor is smooth, then for a general
+point x € X(C) the quotient variety
+
+Y~ = ¥%/o
+
+will be smooth as well. We will see in chapter 5 that for varying x, the
+variable part of the cohomology H°(Y,*,Q) can be identified naturally with
+the stalk cohomology of the alternating resp. symmetric convolution square
+of the perverse sheaf dg, depending on whether the dimension g = dim(X)
+is even or odd. For a general ppav the Tannakian result of chapter 4 implies

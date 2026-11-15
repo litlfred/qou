@@ -8,7 +8,7 @@
   "pages": 15,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:24Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -22,7 +22,7 @@
   },
   "doi": null,
   "title": "Cluster Formation and The Virial Equation of State of Low-Density Nuclear Matter",
-  "authors_raw": "C.J. Horowitz\u2217and A. Schwenk\u2020",
+  "authors_raw": "C.J. Horowitz∗and A. Schwenk†",
   "title_lines": [
    "Cluster Formation and The Virial Equation of State of Low-Density Nuclear Matter"
   ],
@@ -234,7 +234,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "(Color online) The total phase shift \u03b4tot",
+   "title": "(Color online) The total phase shift δtot",
    "page": 6,
    "confidence": 0.9,
    "evidence": [
@@ -247,7 +247,7 @@
   {
    "kind": "figure",
    "number": "2",
-   "title": "(Color online) The phase shifts for elastic neutronalpha scattering \u03b4LJ (E) versus laboratory energy E",
+   "title": "(Color online) The phase shifts for elastic neutronalpha scattering δLJ (E) versus laboratory energy E",
    "page": 7,
    "confidence": 0.9,
    "evidence": [
@@ -260,7 +260,7 @@
   {
    "kind": "figure",
    "number": "3",
-   "title": "(Color online) The phase shifts for elastic \u03b1\u03b1 scattering \u03b4L(E) versus laboratory energy E. As discussed in the text, the phase shifts are taken from Afzal et al. [40] and from Bacher et al. [41]",
+   "title": "(Color online) The phase shifts for elastic αα scattering δL(E) versus laboratory energy E. As discussed in the text, the phase shifts are taken from Afzal et al. [40] and from Bacher et al. [41]",
    "page": 7,
    "confidence": 0.9,
    "evidence": [
@@ -273,7 +273,7 @@
   {
    "kind": "figure",
    "number": "4",
-   "title": "(Color online) The \u03b1 mass fraction x\u03b1 versus baryon density nb for T = 4 MeV, Yp = 1/2 and various values of the virial coe\ufb03cients, as explained in the text. The fugacities are small over this density range zn = zp < 0.05 and z\u03b1 < 0.004",
+   "title": "(Color online) The α mass fraction xα versus baryon density nb for T = 4 MeV, Yp = 1/2 and various values of the virial coeﬃcients, as explained in the text. The fugacities are small over this density range zn = zp < 0.05 and zα < 0.004",
    "page": 8,
    "confidence": 0.9,
    "evidence": [
@@ -286,7 +286,7 @@
   {
    "kind": "figure",
    "number": "5",
-   "title": "(Color online) The \u03b1 mass fraction x\u03b1 versus baryon density nb for T = 4 MeV and Yp = 1/2. The dotted error band for the virial equation of state is based on an estimate of a neglected third virial coe\ufb03cient b(3)",
+   "title": "(Color online) The α mass fraction xα versus baryon density nb for T = 4 MeV and Yp = 1/2. The dotted error band for the virial equation of state is based on an estimate of a neglected third virial coeﬃcient b(3)",
    "page": 9,
    "confidence": 0.9,
    "evidence": [
@@ -299,7 +299,7 @@
   {
    "kind": "figure",
    "number": "6",
-   "title": "(Color online) The \u03b1 mass fraction x\u03b1 versus baryon density nb for T = 4 MeV and proton fractions Yp = 0.1, 0.2, 0.3, 0.4 and 0.5. For the lowest proton fraction Yp = 0.1, the fugacities are zn < 0.2, zp < 0.005 and z\u03b1 < 0.001 over this density range",
+   "title": "(Color online) The α mass fraction xα versus baryon density nb for T = 4 MeV and proton fractions Yp = 0.1, 0.2, 0.3, 0.4 and 0.5. For the lowest proton fraction Yp = 0.1, the fugacities are zn < 0.2, zp < 0.005 and zα < 0.001 over this density range",
    "page": 9,
    "confidence": 0.9,
    "evidence": [
@@ -312,7 +312,7 @@
   {
    "kind": "figure",
    "number": "7",
-   "title": "(Color online) The \u03b1 mass fraction x\u03b1 versus baryon density nb for T = 2, 4 and 8 MeV and Yp = 1/2. The dotted error bands for the virial equation of state are based on an estimate of a neglected third virial coe\ufb03cient b(3)",
+   "title": "(Color online) The α mass fraction xα versus baryon density nb for T = 2, 4 and 8 MeV and Yp = 1/2. The dotted error bands for the virial equation of state are based on an estimate of a neglected third virial coeﬃcient b(3)",
    "page": 9,
    "confidence": 0.9,
    "evidence": [
@@ -325,7 +325,7 @@
   {
    "kind": "figure",
    "number": "8",
-   "title": "(Color online) The \u03b1 mass fraction x\u03b1 versus baryon density nb for T = 20 MeV and Yp = 1/2. The dotted error bands for the virial equation of state are based on an estimate of a neglected third virial coe\ufb03cient b(3)",
+   "title": "(Color online) The α mass fraction xα versus baryon density nb for T = 20 MeV and Yp = 1/2. The dotted error bands for the virial equation of state are based on an estimate of a neglected third virial coeﬃcient b(3)",
    "page": 9,
    "confidence": 0.9,
    "evidence": [
@@ -338,7 +338,7 @@
   {
    "kind": "figure",
    "number": "9",
-   "title": "(Color online) The threshold baryon density nb above which the Shen equation of state [27] predicts a heavy nuclei mass fraction larger than 10%. This \ufb01gure is for Yp = 1/2",
+   "title": "(Color online) The threshold baryon density nb above which the Shen equation of state [27] predicts a heavy nuclei mass fraction larger than 10%. This ﬁgure is for Yp = 1/2",
    "page": 10,
    "confidence": 0.9,
    "evidence": [
@@ -351,7 +351,7 @@
   {
    "kind": "figure",
    "number": "10",
-   "title": "(Color online) The pressure P of symmetric nuclear matter versus baryon density nb for T = 10 MeV. The dotted error band for the virial equation of state is based on an estimate of a neglected third virial coe\ufb03cient b(3)",
+   "title": "(Color online) The pressure P of symmetric nuclear matter versus baryon density nb for T = 10 MeV. The dotted error band for the virial equation of state is based on an estimate of a neglected third virial coeﬃcient b(3)",
    "page": 10,
    "confidence": 0.9,
    "evidence": [
@@ -390,7 +390,7 @@
   {
    "kind": "figure",
    "number": "13",
-   "title": "(Color online) The entropy per baryon S/A versus baryon density nb for T = 4 MeV and Yp = 1/2. As discussed in the text, these results include the contribution of an electron and photon gas. Also shown are results for the LS [26], Shen [27] and the Wol\ufb00[44] equations of state. The e\ufb00ects of interact",
+   "title": "(Color online) The entropy per baryon S/A versus baryon density nb for T = 4 MeV and Yp = 1/2. As discussed in the text, these results include the contribution of an electron and photon gas. Also shown are results for the LS [26], Shen [27] and the Wolﬀ[44] equations of state. The eﬀects of interact",
    "page": 11,
    "confidence": 0.9,
    "evidence": [
@@ -416,7 +416,7 @@
   {
    "kind": "figure",
    "number": "15",
-   "title": "(Color online) The energy per baryon E/A versus baryon density nb for T = 4 MeV (and also T = 2 MeV (dotted) for nuclear matter). In order to clearly show the interaction e\ufb00ects we have subtracted the free kinetic energy 3T/2 from all curves. The circle indicates where zn = 0.5 for pure neutron matt",
+   "title": "(Color online) The energy per baryon E/A versus baryon density nb for T = 4 MeV (and also T = 2 MeV (dotted) for nuclear matter). In order to clearly show the interaction eﬀects we have subtracted the free kinetic energy 3T/2 from all curves. The circle indicates where zn = 0.5 for pure neutron matt",
    "page": 12,
    "confidence": 0.9,
    "evidence": [
@@ -429,7 +429,7 @@
   {
    "kind": "figure",
    "number": "16",
-   "title": "(Color online) The symmetry energy SE and the symmetry free energy SF versus baryon density nb for T = 4 MeV. Also shown are virial results without \u03b1 particles (z\u03b1 = 0). Over this density range, the fugacities are zn = zp < 0.09 (< 0.37 without alphas) and z\u03b1 < 0.06",
+   "title": "(Color online) The symmetry energy SE and the symmetry free energy SF versus baryon density nb for T = 4 MeV. Also shown are virial results without α particles (zα = 0). Over this density range, the fugacities are zn = zp < 0.09 (< 0.37 without alphas) and zα < 0.06",
    "page": 13,
    "confidence": 0.9,
    "evidence": [
@@ -442,7 +442,7 @@
   {
    "kind": "figure",
    "number": "17",
-   "title": "(Color online) The symmetry energy SE versus baryon density nb for T = 2, 4 and 8 MeV. Over this density range, the fugacities are zn = zp < 0.02, 0.09, 0.13 and z\u03b1 < 0.18, 0.06, 0.01 for T = 2, 4, 8 MeV",
+   "title": "(Color online) The symmetry energy SE versus baryon density nb for T = 2, 4 and 8 MeV. Over this density range, the fugacities are zn = zp < 0.02, 0.09, 0.13 and zα < 0.18, 0.06, 0.01 for T = 2, 4, 8 MeV",
    "page": 13,
    "confidence": 0.9,
    "evidence": [
@@ -596,152 +596,176 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 826,
-   "n_words": 115,
+   "n_chars": 1546,
+   "n_words": 209,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-000-21-nuclear-statistical-equilibrium",
-   "number": "2.1",
-   "title": "Nuclear Statistical Equilibrium",
-   "level": 2,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 621,
-   "n_words": 83,
-   "label_start": null,
-   "label_end": null
-  },
-  {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 6008,
-   "n_words": 938,
+   "n_chars": 8421,
+   "n_words": 1333,
    "label_start": null,
    "label_end": "2"
   },
   {
-   "id": "sec-002-22-virial-equation-of-state",
-   "number": "2.2",
-   "title": "Virial Equation of State",
-   "level": 2,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 2342,
-   "n_words": 385,
-   "label_start": "2",
-   "label_end": "2"
-  },
-  {
-   "id": "sec-003-2-formalism",
+   "id": "sec-001-2-formalism",
    "number": "2",
    "title": "Formalism",
    "level": 1,
    "page_start": 2,
-   "page_end": 4,
-   "n_chars": 7574,
-   "n_words": 1440,
+   "page_end": 2,
+   "n_chars": 621,
+   "n_words": 101,
    "label_start": "2",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-002-21-nuclear-statistical-equilibrium",
+   "number": "2.1",
+   "title": "Nuclear Statistical Equilibrium",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 2606,
+   "n_words": 440,
+   "label_start": "2",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-003-22-virial-equation-of-state",
+   "number": "2.2",
+   "title": "Virial Equation of State",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2536,
+   "n_words": 525,
+   "label_start": "3",
    "label_end": "4"
   },
   {
-   "id": "sec-004-3-results",
-   "number": "3",
-   "title": "Results",
-   "level": 1,
+   "id": "sec-004-23-virial-coefficients",
+   "number": "2.3",
+   "title": "Virial Coefficients",
+   "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 3561,
-   "n_words": 705,
+   "n_chars": 4223,
+   "n_words": 831,
    "label_start": "4",
    "label_end": "5"
   },
   {
-   "id": "sec-005-24-entropy-and-energy",
+   "id": "sec-005-3-results",
+   "number": "3",
+   "title": "Results",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 822,
+   "n_words": 186,
+   "label_start": "5",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-006-31-virial-coefficients",
+   "number": "3.1",
+   "title": "Virial Coefficients",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 189,
+   "n_words": 32,
+   "label_start": "5",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-007-24-entropy-and-energy",
    "number": "2.4",
    "title": "Entropy and Energy",
    "level": 2,
    "page_start": 5,
    "page_end": 7,
-   "n_chars": 8061,
+   "n_chars": 8073,
    "n_words": 1491,
    "label_start": "5",
    "label_end": "7"
   },
   {
-   "id": "sec-006-32-composition",
+   "id": "sec-008-32-composition",
    "number": "3.2",
    "title": "Composition",
    "level": 2,
    "page_start": 7,
    "page_end": 10,
-   "n_chars": 9158,
-   "n_words": 1765,
+   "n_chars": 9160,
+   "n_words": 1762,
    "label_start": "7",
    "label_end": "10"
   },
   {
-   "id": "sec-007-33-pressure",
+   "id": "sec-009-33-pressure",
    "number": "3.3",
    "title": "Pressure",
    "level": 2,
    "page_start": 10,
    "page_end": 11,
-   "n_chars": 6189,
-   "n_words": 1143,
+   "n_chars": 6192,
+   "n_words": 1142,
    "label_start": "10",
    "label_end": "11"
   },
   {
-   "id": "sec-008-34-entropy-and-energy",
+   "id": "sec-010-34-entropy-and-energy",
    "number": "3.4",
    "title": "Entropy and Energy",
    "level": 2,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 3052,
-   "n_words": 566,
+   "n_chars": 3065,
+   "n_words": 567,
    "label_start": "11",
    "label_end": "12"
   },
   {
-   "id": "sec-009-35-symmetry-energy",
+   "id": "sec-011-35-symmetry-energy",
    "number": "3.5",
    "title": "Symmetry Energy",
    "level": 2,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 2632,
+   "n_chars": 2641,
    "n_words": 485,
    "label_start": "12",
    "label_end": "13"
   },
   {
-   "id": "sec-010-4-conclusions",
+   "id": "sec-012-4-conclusions",
    "number": "4",
    "title": "Conclusions",
    "level": 1,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 5391,
+   "n_chars": 5400,
    "n_words": 869,
    "label_start": "13",
    "label_end": "14"
   },
   {
-   "id": "sec-011-acknowledgements",
+   "id": "sec-013-acknowledgements",
    "number": null,
    "title": "Acknowledgements",
    "level": 1,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 4554,
-   "n_words": 774,
+   "n_chars": 4551,
+   "n_words": 773,
    "label_start": "14",
    "label_end": "15"
   }
@@ -760,13 +784,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 13,
-  "chars_total": 59969,
+  "sections": 15,
+  "chars_total": 60046,
+  "furniture_lines_stripped": 14,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "virial_nuc_rev2.tex",
    "tex_sections": 14,
-   "overlaid": 5,
+   "overlaid": 9,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -779,55 +804,74 @@
      "result": "no matching \\section"
     },
     {
-     "id": "sec-000-21-nuclear-statistical-equilibrium",
-     "title": "Nuclear Statistical Equilibrium",
-     "prose_ratio": 0.104,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-001-1-introduction",
+     "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.771,
+     "prose_ratio": 0.953,
      "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-22-virial-equation-of-state",
-     "title": "Virial Equation of State",
-     "prose_ratio": 0.309,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-003-2-formalism",
+     "id": "sec-001-2-formalism",
      "title": "Formalism",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.16,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.745,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-004-3-results",
+     "id": "sec-002-21-nuclear-statistical-equilibrium",
+     "title": "Nuclear Statistical Equilibrium",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-22-virial-equation-of-state",
+     "title": "Virial Equation of State",
+     "prose_ratio": 0.723,
+     "coverage_ratio": 0.939,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-23-virial-coefficients",
+     "title": "Virial Coefficients",
+     "prose_ratio": 0.844,
+     "coverage_ratio": 0.77,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-3-results",
      "title": "Results",
-     "prose_ratio": 0.299,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.143,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-005-24-entropy-and-energy",
+     "id": "sec-006-31-virial-coefficients",
+     "title": "Virial Coefficients",
+     "prose_ratio": 0.119,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-007-24-entropy-and-energy",
      "title": "Entropy and Energy",
      "prose_ratio": 0.973,
      "coverage_ratio": 0.215,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
-     "id": "sec-006-32-composition",
+     "id": "sec-008-32-composition",
      "title": "Composition",
      "prose_ratio": 0.945,
-     "coverage_ratio": 0.935,
+     "coverage_ratio": 0.932,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-007-33-pressure",
+     "id": "sec-009-33-pressure",
      "title": "Pressure",
      "prose_ratio": 0.791,
      "coverage_ratio": 0.995,
@@ -835,14 +879,14 @@
      "converter": "latex"
     },
     {
-     "id": "sec-008-34-entropy-and-energy",
+     "id": "sec-010-34-entropy-and-energy",
      "title": "Entropy and Energy",
      "prose_ratio": 0.622,
      "coverage_ratio": 0.191,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
-     "id": "sec-009-35-symmetry-energy",
+     "id": "sec-011-35-symmetry-energy",
      "title": "Symmetry Energy",
      "prose_ratio": 0.955,
      "coverage_ratio": 1.0,
@@ -850,19 +894,19 @@
      "converter": "latex"
     },
     {
-     "id": "sec-010-4-conclusions",
+     "id": "sec-012-4-conclusions",
      "title": "Conclusions",
-     "prose_ratio": 0.988,
+     "prose_ratio": 0.992,
      "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-acknowledgements",
+     "id": "sec-013-acknowledgements",
      "title": "Acknowledgements",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.129,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

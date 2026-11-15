@@ -1,0 +1,60 @@
+544 J. BORCEA, P. BRANDEN, AND T. M. LIGGETT
+
+We now have all the tools to prove Theorem [4.2]
+
+Proof of Theorem Let g be the generating polynomial of  € %,, and suppose
+that g is stable of degree d. Then so is the homogenization gy of g by Proposi-
+tion [4.3] Now straightforward computations show that the generating polynomial
+of the symmetric homogenization psn € Bon is given by a(zrytgn), so the theorem
+
+follows from Corollary [4.7] O
+
+4.2. Stability implies negative association. The main argument in the proof
+of the following theorem goes back to Feder-Mihail although the proof of the
+full theorem is scattered over the literature [2 [72].
+
+Theorem 4.8. Let S be a class of probability measures satisfying:
+
+(1) Each p € S is a measure on 2”, where E is a finite subset of {1,2,...}
+depending on ju.
+
+(2) S is closed under conditioning.
+
+(3) For each w € § the variables X., e € E, are pairwise negatively correlated.
+
+(4) Each p € S has a homogeneous generating polynomial.
+
+Then all measures in S are CNA (conditionally negatively associated).
+
+The homogeneity condition in (4) above is essential and ensures the existence of
+a variable of so-called “positive influence” (various notions of “influence” have
+been studied by Bourgain et al. in [14]).
+
+A sketch of the proof of Theorem [4.8]is as follows. Recall from §2.1] the defini-
+tion of an increasing event. Since any increasing function depending on a set Ep
+can be written as a positive linear combination of characteristic functions, x4, of
+increasing events A depending on £o, it is enough to prove the theorem for such
+characteristic functions. The proof of negative association in the case when F = y4
+and G = X, in Definition [2.7] are such that A does not depend on e is recovered
+from Feder-Mihail’s proof [29] [58]. The general case — when F = x4, and G= x4,
+in Definition are such that A; and A, depend on disjoint sets of variables —
+then follows from the proof of Theorem 6.5].
+
+Using Theorem [4.8] we can establish the following result.
+
+Theorem 4.9. If j1 € Bp, is strongly Rayleigh, then it is CNA+.
+
+Proof. Let S be the class of all probability measures ju such that
+e each ys € S is a measure on 2”, where E is a finite subset of {1,2,...}
+depending on p, and
+e «4 has a stable homogeneous generating polynomial.
+Since stable homogeneous polynomials are pairwise negatively correlated and are
+also closed under conditioning (cf. 2.1), the class S satisfies all the hypotheses
+required in Theorem[4.8] Therefore, all the measures in S are negatively associated.
+Further, let S be the class of all probability measures jz such that
+e each pp € S is a measure on 2”, where E is a finite subset of {1,2,...}
+depending on p, and
+e has a stable generating polynomial.
+Now by Theorem [4.2] every measure in S is the projection of a measure in S. Since
+negative association is closed under projections and the strongly Rayleigh property
+is closed under conditioning and external fields, the theorem follows. O

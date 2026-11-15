@@ -38,7 +38,7 @@ scope-(b) per AGENTS.md "Before declaring refuted"; see `verdict` in the witness
 Sources for the classical inputs, all held in `library/`:
   * Braden & Disney-Hogg, "Bring's curve: old and new", Prop. 3.3 and the
     paragraph after it -- 60 Weierstrass points, Aut(B) = S_5 transitive,
-    60 = 6 x 10.  `library/s40879-023-00706-0/sections/sec-006-31-weierstrass-points.md`
+    60 = 6 x 10.  `library/s40879-023-00706-0/sections/sec-008-31-weierstrass-points.md`
     (registered `[braden-disney-hogg-2022]`).
   * Laing & Singerman, "Transitivity on Weierstrass points", Ann. Acad. Sci.
     Fenn. Math. 37 (2012) Thm 15, quoted as Thm 3.4 of the above.

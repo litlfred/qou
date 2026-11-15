@@ -1,0 +1,72 @@
+is-real 7A A Re ?A ZO A ?AZOA cor?AFON
+
+Re ?B = ?ReB \
+
+?ReB / ?A = (sin V) / (2 * sin(y — ¥)) * (1/r +r) — (sin y) / (2 * sin (p — B)) * (1/ry + ry)
+using 12345
+by auto
+
+}
+
+note ** = this
+
+let ?Ayz = 2 * rz * ry * sin (p — V)
+let ?Byz =i * (rz * cis p * (1 + ry?) — ry * cis 0 * (1 + 12”))
+let ?ReByz = ry * (1 + rz”) * sin 0 — rz * (1 + ry?) * sing
+let ?Kz = (sin ¥) / (2 * sin(y — ¥)) * (1/rz + rz) — (sin y) / (2 * sin (p — ¥)) * (1/ry + ry)
+have yz: poincare-line-cvec-cmat (of-complex-cvec (cor ry * cis 9)) (of-complez-cvec (cor rz * cis y)) = (?Ayz,
+?Byz, cnj ?Byz, ?Ayz)
+is-real ?Ayz Re ?Ayz # 0 ?Ayz # 0 cor ?Ayz # O Re ?Byz = ?ReByz and Kz: ?ReByz / ?Ayz = ?Kz
+using **[OF <0 < rz>]
+by auto
+
+let ?Ayu = 2 * ru « ry * sin (p — ¥)
+let ?Byu =i * (ru « cis py * (1 + ry?) — ry * cis 0 * (1 + ru’))
+let ?ReByu = ry * (1 + ru?) * sin 0 — ru * (1 + ry’) * sing
+let ?Ku = (sin 0) / (2 * sin(y — ¥)) * (1/ru + ru) — (sin y) / (2 * sin (p — B)) * (1/ry + ry)
+have yu: poincare-line-cvec-cmat (of-complex-cvec (cor ry * cis 9)) (of-complex-cvec (cor ru * cis y)) = (?Ayu,
+?Byu, cnj ?Byu, ?Ayu)
+is-real ?Ayu Re ?Ayu # 0 ?Ayu # 0 cor ?Ayu # O Re ?Byu = ?ReByu and Ku: ?ReByu / ?Ayu = ?Ku
+using **[OF «0 < ru]
+by auto
+
+have ?Ayz # 0
+using ‘sin (p — 0) 4 0» (ry > 0» «rz > Or
+by auto
+
+have Re ?Byz / ?Ayz < -1
+using <intersects-x-axis-positive ?yz)
+« <y’ = cor ry * cis 9) <z' = cor rz * cis yy <u! = cor ru * cis y>
+apply simp
+apply (transfer fixing: ry rz ru 0 ~)
+apply (transfer fixing: ry rz ru 0 ~)
+proof—
+assume intersects-x-axis-positive-cmat (poincare-line-cvec-cmat (of-complez-cvec (cor ry * cis 0)) (of-complex-cvec
+(cor rz * cis y)))
+thus (ry * sin 0 * (1 + rz”) — rz * sine * (1 + ry”)) / (2 * rz * ry * sin(p — 9)) <-1
+using yz
+by simp
+qed
+
+have ?ReByz / ?Ayz > ?ReByu / ?Ayu
+proof (cases sin y > 0)
+case True
+hence sin J) < 0
+using ‘sin y * sin 0 < 0)
+by (smt mult-nonneg-nonneg)
+
+have ?ReByz < 0
+proof—
+have ry * (1 + 12?) * sind < 0
+using (ry > 0» (rz > 0»
+using <sin 0 < 0»
+by (smt mult-pos-neg mult-pos-pos zero-less-power)
+moreover
+have rz « (1 + ry’) * sing > 0
+using (ry > 0» (rz > 0»
+using (sin yp > 0>
+by (smt mult-pos-neg mult-pos-pos zero-less-power)
+ultimately
+show ?thesis
+
+133

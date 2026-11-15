@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/pjm-v161-n1-p02-p/sections/sec-024",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "(resp. b^ (page 54)",
+  "pageStart": 54,
+  "pageEnd": 54,
+  "contains": [
+    "library/pjm-v161-n1-p02-p/blocks/prose-sec-024"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/pjm-v161-n1-p02-p",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/pjm-v161-n1-p02-p",
+  "provenance": "ingested"
+}

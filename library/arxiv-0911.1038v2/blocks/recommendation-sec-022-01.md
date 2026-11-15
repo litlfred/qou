@@ -1,0 +1,1 @@
+It has a property that $\Sigma_\Pi=\Sigma_\pi$, where the right-hand side should be understood as in [\[eq:character\]](#eq:character){reference-type="eqref" reference="eq:character"} for some $\pi\in\mathfrak{S}(l)$, $l\geq 1$.

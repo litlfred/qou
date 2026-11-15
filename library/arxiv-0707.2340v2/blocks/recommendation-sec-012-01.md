@@ -1,0 +1,1 @@
+In order for a solution to Problem~\ref{p-see} to be useful in settling Conjecture~\ref{con-lig}, the negative dependence property should be satisfied by non-random/deterministic distributions and should imply NA.

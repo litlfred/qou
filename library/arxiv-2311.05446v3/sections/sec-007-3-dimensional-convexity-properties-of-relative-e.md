@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2311.05446v3
-doc_title: "NEW BRUNN–MINKOWSKI AND FUNCTIONAL INEQUALITIES VIA CONVEXITY OF ENTROPY"
+doc_title: "New Brunn--Minkowski and functional inequalities via convexity of entropy"
 section_id: sec-007-3-dimensional-convexity-properties-of-relative-e
 section_title: "Dimensional convexity properties of relative entropy for log-concave measures with homogeneous potential"
 section_number: 3
 pages: 13-18
 source_pdf: 2311.05446v3.pdf
 source_sha256: c5809730f598a56d
-doc_brief: "NEW BRUNN–MINKOWSKI AND FUNCTIONAL INEQUALITIES VIA CONVEXITY OF ENTROPY — We study the connection between the concavity properties of a measureνand the convexity properties of the associated"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.997
-latex_coverage_ratio: 0.983
+latex_prose_ratio: 0.941
+latex_coverage_ratio: 0.963
+doc_brief: "New Brunn--Minkowski and functional inequalities via convexity of entropy — We study the connection between the concavity properties of a measure ν and the convexity properties of the associated"
 ---
 []{#sec: dimconhomo label="sec: dimconhomo"} In this section, we fix a measure $\nu$ of the form $\textnormal{ d}\nu = e^{-V} \textnormal{ d}x$, where $V: \mathbb{R}^n \to \mathbb{R}\cup \{ + \infty \}$ is a convex function. We will break down the proof of the main result of this section into several lemmas, for the convenience of the reader who may wish to generalize our results.
 

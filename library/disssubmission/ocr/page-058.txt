@@ -1,0 +1,44 @@
+50 Chapter 3 — Perverse sheaves on semiabelian varieties
+
+morphisms (the vertical arrows will be discussed below).
+
+Hg (X x,X,K XL) Kea H°(X x;,X,K RL)
+| n |
+A(X x¢X,(j,/):(K BL)) H*(X x,X,R(j, j)+(K BL)
+| 2) t
+A(X x¢X, j(K) B j(L)) H*(X x, X,Rjx(K) BRjx(L))
+| @) t
+H*(X, j(K)) @H*(X, j(L)) H*(X,Rj.(K)) @H*(X,Rj.(L))
+| “ |
+H2(X,K) @H2(X,L) fe@fi——> H*(X,K)@H*(X,L)
+
+The horizontal arrow fx © f; on the bottom line is the tensor product of
+the forget support morphisms for K and L, hence by corollary 3.3 it is an
+isomorphism for generic 7. On the other hand, the horizontal arrow fxm
+on the top line is the forget support morphism we are interested in. So we
+will be finished if we can show that the above diagram commutes and that
+all the vertical arrows (to be defined yet) are isomorphisms.
+
+The squares (1) and (4) are commutative by the very definition of fxm
+and fx ® fr. The vertical arrows in (3) are the Kiinneth isomorphisms for
+the proper morphism X —+ Spec(k), and the commutativity of this square
+follows from the fact that the Kiinneth morphisms are natural in the involved
+complexes. Finally, the square (2) is induced by the square
+
+Gi, /)(K BL) —— RG, j)¥(KBL)
+
+Joar’ Ja
+
+Ji(K) Bl j(L) —> Rj.(K) BIR Je(L)
+
+where the morphisms
+ad}: (j,j)(KEIL) —> j(K)&j,(L)
+ad.: Rj.(K)ERj(L) — R(j,j)«(K BL)
+
+are the natural morphisms which correspond via adjunction to the identity
+morphism of
+
+KAL = (jf) (i(K) BAL) = G./)*(Ri(K) BR (L)).
+
+Note that ad; is an isomorphism and that over U = X xp X GX x,X all
+the morphisms in the above diagram restrict to the identity. In particular,

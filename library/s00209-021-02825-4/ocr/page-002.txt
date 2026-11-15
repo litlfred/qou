@@ -1,0 +1,59 @@
+1360 J. Leake
+
+In [1], Borcea and Brandén were able to solve these problems in many cases. In particular,
+they solved both problems for K = R and Q = H'!, where m = | corresponds to the case
+of preservation of real-rooted polynomials. For K = C, they were able to solve Problem |
+for Q that is any product of open circular regions in C.
+
+In this paper we will only be concerned with Problem 1, for which we now state the solution
+from [1]. Given a linear operator T : K4[x1,...,2%m] —& Klx1,....2m], a polynomial
+Symb, g(T) called the (Borcea—Bréndén) symbol is associated to T . Specifically, the symbol
+is a polynomial in K**[x1,...,.Xm,Z1, +++ Zm] (ie., of 2m variables), where 2. UA :=
+(At... Ans Al, »++s Am). The crucial feature of the symbol is that it shares certain stability
+properties with its associated linear operator, which yields the characterizations stated in the
+following results. (We will express these results in more detail in Sects. 6 and 7.)
+
+Theorem 1.1 (Borcea—Briindén) Fix a linear operatorT : C*[x1,..., Xm] > Clx1,---, Xml
+which has image of dimension greater than one. Then, T maps H'!-stable polynomials to
+weakly H'-stable polynomials if and only if Symb p 3 (T) is H3"-stable.
+
+Theorem 1.2 (Borcea—Briindén) Fixa linear operatorT : R*[x,..., Xm] > REx, .--, Xm]
+which has image of dimension greater than two. Then, T maps real stable polynomials to
+weakly real stable polynomials if and only if either Symbz,(T) or Symbz,(T~) is real
+stable, where T~(p) := T(p(—*1,..-, —Xm))-
+
+To deal with other products of circular regions, one then conjugates T by certain MGbius
+transformations and applies Theorem 1.1 to the conjugated operator. Unfortunately though,
+this is a tedious process which has to be done each time a new stability region is to be
+considered. Additionally, the image dimension restrictions give rise to degeneracy cases
+which have to be dealt with separately. Both of these issues obscure the connection between
+an operator and its symbol.
+
+In this paper, we present a new conceptual approach to the Borcea—Brandén characteriza-
+tion via the representation theory of SL2(C). In particular, we derive a new symbol (denoted
+Symb) in a natural way, and our definition eliminates the issues discussed above. This is seen
+in the following results, which are our simplified and generalized versions of the Borcea—
+Brandén characterizations. Note that for the sake of simplicity, we have omitted a few details
+here regarding non-convex circular regions. Specifically, circular regions of C should be
+thought of as lying in the Riemann sphere, so that complements of discs contain the point at
+oo.
+
+Theorem 6.2 Fix a linear operator T : C*[x,...,Xm] > C%Lx1,...,x)], a product of
+all open or all closed circular regions Qo = C, x +++ X Cm, and a product of sets Qy :=
+S} x +++ xX Sm. Further, denote Qo := (C\C\) x --- x (C\Cyn). Up to certain degree
+and convexity (of Cx) restrictions, we have that T maps Qo-stable polynomials to nonzero
+Q-stable polynomials if and only if Symb(T) is (Qo x Q))-stable.
+
+Theorem 7.2 Fix a linear operator T : R*[x,..., Xm] > R[x1,..., x,]. Up to certain
+degree restrictions, T maps real stable polynomials to nonzero real stable polynomials if and
+only if Symb(T) is either (H_" x H!, )-stable or (H" x H!_)-stable.
+
+We summarize the specific improvements that this and our other related results give over
+the Borcea—Brandén characterization as follows.
+
+1. Different stability regions can be considered using the same symbol. The symbol we
+define in this paper is universal: for example, it gives stability-preservation information
+for any product of open circular regions. The Borcea—Brandén symbol, on the other hand,
+required the application of Mébius transformations. In addition, our symbol also allows
+
+D Springer

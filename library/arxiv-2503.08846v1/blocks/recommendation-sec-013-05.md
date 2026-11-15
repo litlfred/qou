@@ -1,0 +1,1 @@
+(122) In the 3D formulation of this topological quantum mechanics model this means that one should be able to draw a 2-sphere which cuts the space into two halves (interior and exterior) and is crossed by only two lines.

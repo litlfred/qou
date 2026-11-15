@@ -1,0 +1,52 @@
+Nonvanishing of hyperelliptic zeta functions over finite fields 1907
+
+l-cycle. In either case, when 4{ deg f we can apply Theorem 1.5 to conclude that Zc, does not vanish at
+5 and so behaves L(s, xf).
+
+For any X = q78+?
+
+, the set of irreducible polynomials of odd degree at most 2g + 1 gives quadratic
+characters with bounded conductor whose L-function does not vanish at the central point s = ; By the
+prime number theorem for function fields, the number of irreducible polynomials in F,[x] of degree at
+
+most n is > q"/n. This gives the lower bound in statement. Oo
+
+The proof of Theorem 1.7 is very similar to that of Theorem 1.5, but we treat it separately in order to
+make the hyperelliptic case above more readable.
+
+Proof of Theorem 1.7. Let x1, ..., Xm be the ramification points of the (Z/£Z)-cover of P! in S, where
+m =k, +---+k,. The Jacobian J(C) of C carries an action of Z[(Z/€Z)]; write 4 € Z[(Z/€Z)] for
+fc — 1, where ¢ is a generator of (Z/£Z). A Riemann—Hurwitz computation shows that the genus of C is
+(m — 2)(€— 1)/2, so the Tate module T;J(C) is a free Ze[¢¢]-module of rank m — 2, and J(C)[A] has
+dimension m — 2.
+
+The A-torsion subgroup of J(C) is spanned by the degree-0 A-torsion divisors x; — x;. That is, the
+group of divisors of the form }° ajx; with }° a; = 0 surjects onto J(C)[A]. This surjection is not an
+isomorphism; there is a 1-dimensional kernel, which we can describe as follows. Over Fa, the curve C
+has an affine model of the form y = f(x) with f a rational function with no zeroes or poles at oo. Then
+the principal divisor associated to y is }° ajx; where a; = ord,, f. We have now expressed J(C)[A] as
+an explicit subquotient of F7’.
+
+This identification is equivariant for the Frobenius action on both sides, so it allows us to describe the
+mod ¢ Galois representation afforded by J(C) in terms of the permutation z which Frobenius induces on
+X15 2225 Xm-
+
+The action of z splits x1,..., Xm into cycles of length k,,...,k,, which by hypothesis are prime to €.
+So the eigenvalues of 7 in its action on F/’ are the union (as multisets) Uj=1 Hx,- Now the composition
+factors of F{’ as a representation of the cyclic group (7) are J(C)[A], Fediv(y), and the z-trivial one-
+dimensional representation onto which F7' maps by summing coordinates. But z acts trivially on the latter
+two factors. We conclude that the eigenvalues of z in its action on J(C)[A] are the multiset Uj=1 Me;
+together with r — 2 copies of 1, where jx’, denotes the nontrivial n’th roots of unity.°
+
+If the zeta function Zc had a zero at 7 then ,/q would be a Frobenius eigenvalue of C, which would
+mean that ./g modulo ¢ was an eigenvalue of the action of 7 on J(C)[A]. If g is congruent to 1 modulo
+£ and r = 2, this is ruled out by the fact that r — 2 = 0 and Uj= My, contains no copy of 1. If g is not
+congruent to | mod @, then ,/q cannot be contained in Uj=1 Me, because of our hypothesis on g“'. Thus
+
+1
+
+we have proved that s = z is not a root of Zc.
+
+3What if r = 1? This isn’t possible. If 2 is an m-cycle, then the coefficients of the Fg-rational divisor D must all be equal to
+the same constant a, which means am is congruent to 0 mod £, which means m is a multiple of €; but by hypothesis no cycle has
+length a multiple of ¢.

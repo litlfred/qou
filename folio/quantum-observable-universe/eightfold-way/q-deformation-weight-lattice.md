@@ -27,7 +27,7 @@ at $q = 1$: one is a binomial coefficient, the other is a normalization
 constant.
 
 **What is $q$-independent — machine-checked.**
-The following are proved sorry-free in
+The following are proved in
 `QOU/Eightfold/WeylInvarianceQDeformation.lean`:
 
 - The off-diagonal entry $a_{12} = -1$ and the Serre exponent

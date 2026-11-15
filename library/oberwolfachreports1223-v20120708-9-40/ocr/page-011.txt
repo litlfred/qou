@@ -1,0 +1,50 @@
+Invariants in Low-Dimensional Topology and Knot Theory 11
+
+a— 1 and the left outgoing arc is labeled b+ 1 as shown in Figure 1. We then
+define
+
+Wi(c) =a-(b+1)
+and
+W_(c) =b-(a+1).
+Note that
+W_(c) = —W4(c)
+
+in all cases.
+
+Given a crossing c in a diagram K, we let sgn(c) denote the sign of the crossing.
+The sign of the crossing is plus or minus one according to the standard convention.
+The writhe, wr(K), of the diagram K is the sum of the signs of all its crossings.
+For a virtual link diagram, labeled in the integers according to the scheme above,
+and a crossing c in the diagram, define W(c) by the equation
+
+W(c) = Wegn(e)(e)
+
+so that W(c) is Wz(c) according as the sign of the crossing is plus or minus.
+
+Let K be a virtual knot diagram. Define
+PR = > sgn(c)t™© — wr(K).
+
+c
+We shall prove that the Laurent polynomial Px is a highly non-trivial invariant
+of virtual knots.
+
+In Figure 1 we show the computation of the weights for a given flat diagram
+and the computation of the polynomial for a virtual knot AK with this underlying
+diagram. The knot & is an example of a virtual knot with unit Jones polynomial.
+The polynomial Px for this knot has the value
+
+Pe=t?+t—-2,
+
+showing that this knot is not isotopic to a classical knot.
+
+REFERENCES
+
+[1] Zhiyun Cheng, A polynomial invariant of virtual knots, arXiv: 1202.3850.
+
+[2] M. Goussarov, M. Polyak and O. Viro, Finite type invariants of classical and virtual knots,
+Topology 39 (2000), 1045-1068.
+
+[3] L. H. Kauffman, Virtual Knot Theory, European J. Comb. 20 (1999), 663-690.
+
+[4] G. Kuperberg, What is a virtual link?, Algebraic and Geometric Topology 8 (2003), 587-
+591.

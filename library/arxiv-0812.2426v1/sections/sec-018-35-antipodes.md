@@ -8,6 +8,7 @@ pages: 12-13
 source_pdf: 0812.2426v1.pdf
 source_sha256: df1eb953bc2c6c63
 toc_source: inferred
+doc_brief: "CATEGORICAL CENTERS AND RESHETIKHIN-TURAEV INVARIANTS — A theorem of M¨uger asserts that the center Z(C) of a spherical k-linear category C is a modular category if k is an algebraically closed ﬁeld"
 ---
 If C is left autonomous, then a left antipode for T is a natural transformation
 sl = {sl
@@ -46,4 +47,3 @@ term ‘algebra’ would be awkward in this context.
 However, by analogy with the notions of bialgebra and Hopf algebra, we prefer to
 reserve the term ‘Hopf monad’ for bimonads with antipodes (see Section 3.6)
 CATEGORICAL CENTERS AND RESHETIKHIN-TURAEV INVARIANTS
-13

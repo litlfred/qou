@@ -1,0 +1,1 @@
+for any $X, Y, Z\in\C, M\in\Mo$, as well as \begin{equation}\label{left-modulecat2} (\id_{X}\triangleright \ell_M)m_{X,{\bf 1} ,M}=\id. \end{equation} Sometimes we shall also say that $\Mo$ is a $\ca$-\emph{module category} or a representation of $\ca$.

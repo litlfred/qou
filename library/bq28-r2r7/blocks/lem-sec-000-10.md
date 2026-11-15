@@ -1,1 +1,0 @@
-The noncommuting complete symmetric

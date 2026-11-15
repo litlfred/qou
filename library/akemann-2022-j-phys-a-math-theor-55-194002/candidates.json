@@ -1,0 +1,146 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "akemann-2022-j-phys-a-math-theor-55-194002",
+ "source": {
+  "structure_sha256": "3753499c4b23f18946ced7e3f79366f0e62f9d9d106abea5eb58386cbaa368fc",
+  "file": "Akemann_2022_J._Phys._A__Math._Theor._55_194002.pdf"
+ },
+ "provenance": {
+  "title": "Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk",
+  "authors": null,
+  "arxiv": null,
+  "doi": "10.1088/1751-8121/ac5f16"
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 8,
+  "by_kind": {
+   "recommendation": 8
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Keywords: level spacing distribution, chiral Gaussian unitary ensemble, hard and soft edge \u2217Author to whom any correspondence should be addressed.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-consecutive-level-spacings-in-the-chiral-gaussia.md",
+   "section_title": "Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk",
+   "pages": "2-3",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Original content from this work may be used under the terms of the Creative Commons Attribution 4.0 licence.",
+   "strength": "may",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-consecutive-level-spacings-in-the-chiral-gaussia.md",
+   "section_title": "Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk",
+   "pages": "2-3",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Any further distribution of this work must maintain attribution to the author(s) and the title of the work, journal citation and DOI.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-consecutive-level-spacings-in-the-chiral-gaussia.md",
+   "section_title": "Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk",
+   "pages": "2-3",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In the present case of the \u03c7GUE also called complex Wishart\u2013Laguerre ensemble, deviations should show up at the hard edge because there the k-point correlation functions differ from the ones in the bulk of the spectrum.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-2-transition-from-bessel--and-airy--to-the-sine.md",
+   "section_title": "Transition from Bessel- and Airy- to the sine-kernel",
+   "pages": "5-11",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "As already mentioned at the end of section 2, the case k = 1 and \u03bd = Nf = 0 will be the one that should show the strongest deviations.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-010-52-comparison-to-the-bulk-spacing-distribution.md",
+   "section_title": "Comparison to the bulk spacing distribution",
+   "pages": "24-27",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "It can be seen, that for the transition fromthe hard edgeto the bulk region of the spectrum,the deviation between the level spacing and the bulk spacing decreases, as it should, and increases again when reaching the upper edge at k = n \u22121 = 49 which is a soft edge and, thence, has to follow the Airy statistics.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-010-52-comparison-to-the-bulk-spacing-distribution.md",
+   "section_title": "Comparison to the bulk spacing distribution",
+   "pages": "24-27",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Another limit is the large-\u03bd limit which should approach the level spacing distributions at the soft edge.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-011-53-asymptotics-to-the-airy-statistics.md",
+   "section_title": "Asymptotics to the Airy statistics",
+   "pages": "27-30",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "This is expected as a stiffer level spacing, as it is the case for the hard edge, should have a maximum closer to 1.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-011-53-asymptotics-to-the-airy-statistics.md",
+   "section_title": "Asymptotics to the Airy statistics",
+   "pages": "27-30",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

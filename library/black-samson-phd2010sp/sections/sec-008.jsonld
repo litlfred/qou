@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/black-samson-phd2010sp/sections/sec-008",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "IlIA. The Quantum Supergroup Uv (g[(111))",
+  "pageStart": 36,
+  "pageEnd": 42,
+  "contains": [
+    "library/black-samson-phd2010sp/blocks/prose-sec-008",
+    "library/black-samson-phd2010sp/blocks/recommendation-sec-008-01",
+    "library/black-samson-phd2010sp/blocks/figure-img-p040-1",
+    "library/black-samson-phd2010sp/blocks/figure-img-p041-1"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/black-samson-phd2010sp",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/black-samson-phd2010sp",
+  "provenance": "ingested"
+}

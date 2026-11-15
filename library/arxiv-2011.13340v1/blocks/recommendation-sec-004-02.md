@@ -1,0 +1,1 @@
+We also believe our techniques should be extendible to prove similar concentration for strong log-concave polynomials \cite{ALGV19,CGM19} and would hence imply matrix concentration for uniform distributions on any matroid.

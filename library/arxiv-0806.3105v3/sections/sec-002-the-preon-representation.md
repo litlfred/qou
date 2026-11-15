@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-0806.3105v3
-doc_title: "Knots and preons"
+doc_title: "KNOTS AND PREONS"
 section_id: sec-002-the-preon-representation
 section_title: "The Preon Representation"
 section_number: null
 pages: 7-12
 source_pdf: 0806.3105v3.pdf
 source_sha256: a37b4f2e96365d30
-doc_brief: "Knots and preons — It is shown that the four quantum trefoil solitons that are describ ed by the irreducible representations D3/ 2 mm′ of the quantum algebra SLq(2) (and that may be identiﬁed with"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
+latex_prose_ratio: 0.975
 latex_coverage_ratio: 1.0
+doc_brief: "KNOTS AND PREONS — It is shown that the four quantum trefoil solitons that are described by the irreducible representations D3/2 mm′ of the quantum algebra SLq(2) (and that may be identiﬁed with the"
 ---
 Ignoring numerical normalization one finds by (2.1) that the
 four fermionic knots are represented by four monomials in the knot

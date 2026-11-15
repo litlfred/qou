@@ -1,1 +1,0 @@
-Two homeomorphismsϕ, ψ :Dn→

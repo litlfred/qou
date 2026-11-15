@@ -8,7 +8,9 @@ pages: 1-4
 source_pdf: 0110009v3.pdf
 source_sha256: bb0c97f2de33b0dd
 toc_source: inferred
+doc_brief: "arXiv:math/0110009v3 [math.MG] 3 Sep 2003 — We develop an analogue for sphere packing of the linear programming bounds for error-correcting codes, and use it to prove upper bounds for the density of"
 ---
+Introduction
 2.
 Lattices, Fourier transforms, and Poisson summation
 3.

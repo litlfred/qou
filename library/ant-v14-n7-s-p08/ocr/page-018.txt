@@ -1,0 +1,45 @@
+1928 Lillian B. Pierce and Junyan Xu
+
+Fix a prime q and let x be a multiplicative Dirichlet character of order A modulo q. Suppose
+F €Z[x,...,X,] has the property that its reduction modulo q is (A, q)-admissible and define F\x\(X)
+accordingly as in (2-6). Then for every 1 < j <n, for every tuple k = (ki,...,kn) € Z" with
+l<ki<k<---<kn <q,
+
+# (2,2?) € Ok | Yo xin) = cg) CRI By is B (4-7)
+m (mod q)
+
+in which By, (j; k) is defined as in (4-5).
+
+Remark. Note that the trivial upper bound in (4-7) is ||k |’. The fundamental consequence of Theorem 4.4
+is that it shows that generically among {x} € (0, k]?", square-root cancellation holds, as soon as r is
+sufficiently large relative to n. Precisely, as soon as r > n, so that the exponent | (r — 1)/(n— 1)] appearing
+in B,,(1; k) is strictly positive, the number of {x} € (0, k] 2r such that square-root cancellation is violated
+is OKI?" ), which suffices for our claim, as long as ky is at least a positive power of ||k|l.
+
+Also, to aid in understanding the role of the function B,,-(j; k) in this result, we note that the
+bound (4-7) is in the format of (2-11) with the choice R = 2nr and with the R-dimensional box being
+
+(0, ki] x +++ x (0, ky] x +++ x (0, kn] x +++ x (0, kn],
+
+in which each factor (0, k;] appears 2r times. Thus when 0; < 2r (this holds for j < n — 1), we only
+save factors of k,. In the final case 7 = n when 6, = nr, we save some factors of k; for 1 <i < [n/2] as
+well. This leads to the definition of B,(j; k). Finally, we remark for later reference that by construction,
+under the hypotheses of the theorem, we always have
+
+WRI” Bar (isk)! > 1. (4-8)
+
+Remark. Conjecturally, one might hope to improve the result of Theorem 4.4 by proving that one can take
+larger values for the codimension 6; used to define the savings factor By, (j; k)!. (Precise implications
+may be found in Section A.2, where we show that even the conjecturally best possible values for the
+codimension do not significantly change our main result.) For comparison, in the most extreme case, it is
+not hard to see that we must have 6, < nr, and hence certainly must also have 6; < nr for all j <n. For
+recall from Theorem A that X,, is a subscheme of A2"" such that for all (x, ..., x2”) € A2""\ Xn(k),
+[S(x™, bees x2)| <C(#«)"—!/2. In fact, Xu’s paper shows the stronger result that for all finite extensions
+k/« and (x™,...,x@) © Az" \ X,,(k), it holds that |Sx(x, ...,x2)| < C(#k)"""/?; here S, is
+defined analogously to S but summing over m € k” and with x; replaced by x;(Nx/,(-)). That is, all
+
+(x, ..., x29) such that |S(x,...,x°°)| > C@k)"—!/? must lie in X,(k). Then we claim that
+dim X,, > nr (and consequently 6, < nr). To see this, we consider any tuple (x)... , x2") for which
+x = xJ+" for 7 =1,...,r. There are (#k)”” such tuples, and each of them has the property that
+
+Sex, ..., x)| = HK)". This is > C(#k)"~!/? if #k is sufficiently large (which we can choose it to be).

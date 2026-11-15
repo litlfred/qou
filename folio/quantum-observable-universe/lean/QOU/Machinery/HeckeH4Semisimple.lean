@@ -121,7 +121,17 @@ set_option maxHeartbeats 1600000 in
     the dual elementary matrix in a block where `y`'s image is nonzero.
     This is the trace-nondegeneracy half of the Wenzl hypothesis pair at
     the 3→4 tower rung — what a future genuine `WenzlTowerStep` instance
-    consumes. -/
+    consumes.
+
+    🛑 Measured 2026-09-27: **nothing in the corpus consumes `WenzlTowerStep`** — 27
+    occurrences, of which 1 class definition, 2 discharge targets and 24 prose mentions,
+    and **zero** instance-hypothesis positions. So an instance unblocks no consumer, and
+    at a Hecke carrier its conclusion is free outright
+    (`isSemisimpleRing_hecke_generic`; see
+    `QOU.Machinery.HeckeRank.wenzlTowerStep_vacuous_of_isSemisimpleRing`). The sentence
+    above is kept as the record of what this file did not do; read it as naming an open
+    question, not a live blocker. Bean `qou-s7z2`.
+    -/
 theorem exists_pairing_ne_zero₄ (q z : K) (hq : q ≠ 0) (h2 : q ^ 2 + 1 ≠ 0)
     (h3 : q ^ 4 + q ^ 2 + 1 ≠ 0) (h4 : q ^ 4 + 1 ≠ 0)
     (hWp : markovWeightPlus q z ≠ 0) (hWm : markovWeightMinus q z ≠ 0)

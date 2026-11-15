@@ -1,0 +1,69 @@
+next
+fix Muv
+assume *: unit-disc-fix M u € unit-disc v € unit-disc u # v and
+ax: ?P (moebius-pt M v) (moebius-pt M u)
+show ?P vu
+proof (rule alll, rule imp!)
+fix w
+assume w € unit-disc
+hence moebius-pt M w € unit-disc
+using (unit-disc-fir My
+by auto
+thus ?P’ vuw
+using <u € unit-discy «v € unit-discy (w € unit-disc» <unit-disc-fix M»>
+using **[rule-format, of moebius-pt M wv]
+by auto
+qed
+qed
+thus ?thesis
+using assms
+by simp
+qed
+
+7.4 Some more properties of h-betweenness.
+
+Some lemmas proved earlier are proved almost directly using the sum of distances characterization.
+
+lemma unit-disc-fix-moebius-preserve-poincare-between’:
+assumes unit-disc-fix M and u € unit-disc and v € unit-disc and w € unit-disc
+shows poincare-between (moebius-pt M u) (moebius-pt M v) (moebius-pt M w) <>
+poincare-between uv w
+using assms
+using poincare-between-sum-distances
+by simp
+
+lemma conjugate-preserve-poincare-between':
+assumes u € unit-disc v € unit-disc w € unit-disc
+shows poincare-between (conjugate u) (conjugate v) (conjugate w) — poincare-between uv w
+using assms
+using poincare-between-sum-distances
+by simp
+
+There is a unique point on a ray on the given distance from the given starting point
+
+lemma unique-poincare-distance-on-ray:
+assumes d > 0 u # v u € unit-disc v € unit-disc
+assumes y € unit-disc poincare-distance u y = d poincare-between u v y
+assumes z € unit-disc poincare-distance u z = d poincare-between u v z
+shows y = z
+proof—
+have V dyz.d>0A
+y € unit-disc \ poincare-distance uy = d A poincare-between uv y A
+z € unit-dise \ poincare-distance u z = d A poincare-between uv z —> y = z (is ?P uv)
+proof (rule wlog-positive-x-azis[;where P=?P])
+fix x
+assume 2: is-real tr 0 < Rex Rex < 1
+hence z 4 0
+using complez.expand[of x 0]
+by auto
+hence *: poincare-line 0; (of-complex x) = x-axis
+using 2 poincare-line-0-real-is-x-axis|of of-complex «|
+unfolding circline-set-x-axis
+by auto
+have of-complex x € unit-disc
+using x
+by (auto simp add: cmod-eq-Re)
+have Arg x = 0
+using x
+
+94

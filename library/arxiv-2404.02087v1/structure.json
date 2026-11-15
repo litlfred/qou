@@ -7,11 +7,11 @@
   "bytes": 6805898,
   "pages": 10,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,22 +21,33 @@
    "stamp_date": "2 Apr 2024"
   },
   "doi": null,
-  "title": "Extreme plasmons Aakash A. Sahai 1 1Department of Electrical Engineering, University of Colorado Denver, Denver, CO 80204 \u2217 Nanosciences largely rely on plasmons which are quasiparticles constituted by collective oscilla-",
+  "title": "Extreme plasmons",
   "authors_raw": null,
   "title_lines": [
    "Extreme plasmons",
-   "Aakash A. Sahai 1",
-   "1Department of Electrical Engineering, University of Colorado Denver, Denver, CO 80204 \u2217",
+   "Aakash A. Sahai1",
+   "1Department of Electrical Engineering, University of Colorado Denver, Denver, CO 80204∗",
    "Nanosciences largely rely on plasmons which are quasiparticles constituted by collective oscilla-"
   ],
   "abstract": null,
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20240403014920Z",
-   "Creator": "LaTeX with hyperref",
    "Producer": "pdfTeX-1.40.25",
-   "Title": ""
-  }
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20240403014920Z"
+  },
+  "title_raw": "Extreme plasmons Aakash A. Sahai1 1Department of Electrical Engineering, University of Colorado Denver, Denver, CO 80204∗ Nanosciences largely rely on plasmons which are quasiparticles constituted by collective oscilla-",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Extreme plasmons",
+   "outline": "Extreme plasmons",
+   "text": "Extreme plasmons Aakash A. Sahai1 1Department of Electrical Engineering, University of Colorado Denver, Denver, CO 80204∗ Nanosciences largely rely on plasmons which are quasiparticles constituted by collective oscilla-",
+   "corroborated_by": [
+    "outline"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Extreme plasmons Aakash A. Sahai 1 1Department of Electrical Engineering, University of Colorado Denver, Denver, CO 80204 ∗ Nanosciences largely rely on plasmons which are quasiparticles constituted by collective oscilla-"
  },
  "toc": [
   {
@@ -44,122 +55,316 @@
    "title": "Extreme plasmons",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Abstract",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Quantum framework",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 3,
    "title": "Quantum system: Degeneracy and Correlation",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 3,
    "title": "Wigner quantum phase-space",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 3,
    "title": "Modified independent electron approximation",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 3,
    "title": "Small-amplitude plasmons: Quantum model",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 3,
    "title": "Quantum coherence limit",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 3,
    "title": "Relativistic quantum dynamics",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Controlled excitation",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Surface crunch-in plasmon",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 3,
    "title": "Quantum kinetic equation using FQ(k,p)",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Fields of the extreme plasmon",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Conclusion",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Acknowledgments",
    "page": 10,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "References",
    "page": 10,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Extreme plasmon excited in a conductive tube by an electron bunch (green envelope) launched inside it, illustrated in 3D using particle-tracking simulation. The conduction electrons in a tube with core radius: rt = 100nm, wall thickness:",
+   "page": 1,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "1"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Cross-section of the surface crunch-in plasmon in a conductive tube from 3D particle-tracking simulation same as in Fig.1 using [31, 32]",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Notations in our surface crunch-in plasmon kinetic model. Here, rt is the tube radius, rm is the maximum radial amplitude of plasmon and ∆w is the wall thickness of the tube.This is zoomed-in version of Fig.2",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
   {
    "id": "sec-000-extreme-plasmons",
@@ -168,8 +373,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1066,
-   "n_words": 143
+   "n_chars": 1064,
+   "n_words": 141,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
    "id": "sec-001-introduction",
@@ -178,48 +385,58 @@
    "level": 2,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 4967,
-   "n_words": 721
+   "n_chars": 5501,
+   "n_words": 803,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
-   "id": "sec-002-modified-independent-electron-approximation",
-   "number": null,
-   "title": "Modified independent electron approximation",
-   "level": 3,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 461,
-   "n_words": 70
-  },
-  {
-   "id": "sec-003-quantum-framework",
+   "id": "sec-002-quantum-framework",
    "number": null,
    "title": "Quantum framework",
    "level": 2,
    "page_start": 2,
    "page_end": 2,
-   "n_chars": 696,
-   "n_words": 103
+   "n_chars": 714,
+   "n_words": 105,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
-   "id": "sec-004-quantum-system-degeneracy-and-correlation",
+   "id": "sec-003-quantum-system-degeneracy-and-correlation",
    "number": null,
    "title": "Quantum system: Degeneracy and Correlation",
    "level": 3,
    "page_start": 2,
    "page_end": 2,
-   "n_chars": 1311,
-   "n_words": 200
+   "n_chars": 1355,
+   "n_words": 206,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
-   "id": "sec-005-wigner-quantum-phase-space",
+   "id": "sec-004-wigner-quantum-phase-space",
    "number": null,
    "title": "Wigner quantum phase-space",
    "level": 3,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 4786,
-   "n_words": 726
+   "n_chars": 3488,
+   "n_words": 540,
+   "label_start": "2",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-005-modified-independent-electron-approximation",
+   "number": null,
+   "title": "Modified independent electron approximation",
+   "level": 3,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1319,
+   "n_words": 187,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
    "id": "sec-006-small-amplitude-plasmons-quantum-model",
@@ -228,8 +445,10 @@
    "level": 3,
    "page_start": 3,
    "page_end": 5,
-   "n_chars": 6322,
-   "n_words": 966
+   "n_chars": 6365,
+   "n_words": 975,
+   "label_start": "3",
+   "label_end": "5"
   },
   {
    "id": "sec-007-quantum-coherence-limit",
@@ -238,8 +457,10 @@
    "level": 3,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 3810,
-   "n_words": 584
+   "n_chars": 3838,
+   "n_words": 591,
+   "label_start": "5",
+   "label_end": "5"
   },
   {
    "id": "sec-008-relativistic-quantum-dynamics",
@@ -248,8 +469,10 @@
    "level": 3,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 1219,
-   "n_words": 175
+   "n_chars": 1249,
+   "n_words": 178,
+   "label_start": "5",
+   "label_end": "5"
   },
   {
    "id": "sec-009-controlled-excitation",
@@ -258,8 +481,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 197,
-   "n_words": 30
+   "n_chars": 217,
+   "n_words": 31,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
    "id": "sec-010-surface-crunch-in-plasmon",
@@ -268,51 +493,82 @@
    "level": 2,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 7791,
-   "n_words": 1234
+   "n_chars": 6422,
+   "n_words": 975,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
-   "id": "sec-011-fields-of-the-extreme-plasmon",
+   "id": "sec-011-quantum-kinetic-equation-using-fqkp",
+   "number": null,
+   "title": "Quantum kinetic equation using FQ(k,p)",
+   "level": 3,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 8653,
+   "n_words": 1524,
+   "label_start": "7",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-012-fields-of-the-extreme-plasmon",
    "number": null,
    "title": "Fields of the extreme plasmon",
    "level": 2,
-   "page_start": 7,
+   "page_start": 8,
    "page_end": 9,
-   "n_chars": 11893,
-   "n_words": 2031
+   "n_chars": 4671,
+   "n_words": 827,
+   "label_start": "8",
+   "label_end": "9"
   },
   {
-   "id": "sec-012-conclusion",
+   "id": "sec-013-conclusion",
    "number": null,
    "title": "Conclusion",
    "level": 2,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 760,
-   "n_words": 103
+   "n_chars": 769,
+   "n_words": 104,
+   "label_start": "9",
+   "label_end": "10"
   },
   {
-   "id": "sec-013-acknowledgments",
+   "id": "sec-014-acknowledgments",
    "number": null,
    "title": "Acknowledgments",
    "level": 2,
    "page_start": 10,
    "page_end": 10,
-   "n_chars": 4969,
-   "n_words": 754
+   "n_chars": 4956,
+   "n_words": 741,
+   "label_start": "10",
+   "label_end": "10"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 17,
-  "sections": 14,
-  "chars_total": 50248,
+  "toc_inferred_entries": 0,
+  "figure_entries": 3,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 15,
+  "chars_total": 50581,
+  "furniture_lines_stripped": 9,
+  "pages_read_in_print_order": [
+   7
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Extreme_plasmons.tex",
    "tex_sections": 13,
-   "overlaid": 9,
+   "overlaid": 12,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -327,19 +583,13 @@
     {
      "id": "sec-001-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.93,
+     "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-002-modified-independent-electron-approximation",
-     "title": "Modified independent electron approximation",
-     "prose_ratio": 0.129,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-003-quantum-framework",
+     "id": "sec-002-quantum-framework",
      "title": "Quantum framework",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
@@ -347,7 +597,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-004-quantum-system-degeneracy-and-correlation",
+     "id": "sec-003-quantum-system-degeneracy-and-correlation",
      "title": "Quantum system: Degeneracy and Correlation",
      "prose_ratio": 0.985,
      "coverage_ratio": 1.0,
@@ -355,10 +605,18 @@
      "converter": "latex"
     },
     {
-     "id": "sec-005-wigner-quantum-phase-space",
+     "id": "sec-004-wigner-quantum-phase-space",
      "title": "Wigner quantum phase-space",
      "prose_ratio": 0.923,
-     "coverage_ratio": 0.848,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-modified-independent-electron-approximation",
+     "title": "Modified independent electron approximation",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -366,7 +624,7 @@
      "id": "sec-006-small-amplitude-plasmons-quantum-model",
      "title": "Small-amplitude plasmons: Quantum model",
      "prose_ratio": 0.978,
-     "coverage_ratio": 0.983,
+     "coverage_ratio": 0.993,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -374,7 +632,7 @@
      "id": "sec-007-quantum-coherence-limit",
      "title": "Quantum coherence limit",
      "prose_ratio": 0.959,
-     "coverage_ratio": 0.996,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -382,40 +640,50 @@
      "id": "sec-008-relativistic-quantum-dynamics",
      "title": "Relativistic quantum dynamics",
      "prose_ratio": 0.976,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-009-controlled-excitation",
      "title": "Controlled excitation",
-     "prose_ratio": 0.085,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.093,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-010-surface-crunch-in-plasmon",
      "title": "Surface crunch-in plasmon",
-     "prose_ratio": 0.587,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.814,
+     "coverage_ratio": 0.58,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-011-fields-of-the-extreme-plasmon",
+     "id": "sec-011-quantum-kinetic-equation-using-fqkp",
+     "title": "Quantum kinetic equation using FQ(k,p)",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.904,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-fields-of-the-extreme-plasmon",
      "title": "Fields of the extreme plasmon",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-012-conclusion",
+     "id": "sec-013-conclusion",
      "title": "Conclusion",
-     "prose_ratio": 1.0,
+     "prose_ratio": 0.684,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-013-acknowledgments",
+     "id": "sec-014-acknowledgments",
      "title": "Acknowledgments",
      "result": "no matching \\section"
     }

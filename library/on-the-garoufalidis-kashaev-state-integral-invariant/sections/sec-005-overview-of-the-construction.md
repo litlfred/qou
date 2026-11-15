@@ -1,24 +1,28 @@
 ---
 doc_id: on-the-garoufalidis-kashaev-state-integral-invariant
-doc_title: "On the Garoufalidis-Kashaev state-integral invariant"
+doc_title: "ON THE GAROUFALIDIS-KASHAEV STATE-INTEGRAL INVARIANT"
 section_id: sec-005-overview-of-the-construction
 section_title: "Overview of the Construction"
 section_number: null
 pages: 12-12
 source_pdf: On the Garoufalidis-Kashaev State-Integral Invariant.pdf
 source_sha256: eda230da2a596783
-doc_brief: "On the Garoufalidis-Kashaev state-integral invariant — 61 sections: ACKNOWLEDGMENTS; ABSTRACT; LIST OF TABLES"
+toc_source: outline
+doc_brief: "ON THE GAROUFALIDIS-KASHAEV STATE-INTEGRAL INVARIANT — 67 sections: Front matter; ACKNOWLEDGMENTS; ABSTRACT"
 ---
+Overview of the Construction
 The construction proceeds by associating combinatorial and algebraic data to a
-triangulated 3-manifold M: In the following F denotes a local field (see 2.4), F× =
-F\{ 0} and ˆF× denotes the Pontryagin dual of F×.
+triangulated 3-manifold M: In the following F denotes a local field (see 2.4), F × =
+F \ {0} and ˆ
+F × denotes the Pontryagin dual of F ×.
 • An ideal triangulation X is fixed (specifying the tetrahedra and their face
-pairings), equipped with an angle structure taking values in R×F× (see 3.3.1).
+pairings), equipped with an angle structure taking values in R×F × (see 3.3.1).
 • State variables and dynamical variables are assigned to faces and tetrahedra,
-respectively, with values in cF××F× for F .
+respectively, with values in c
+F × × F × for F.
 • Each tetrahedron is equipped with angle data that deforms a primitive quantum
-dilogarithm φ into a family Ψ a,c, depending on additive and multiplicative
-parameters a,c∈ R×F×.
+dilogarithm φ into a family Ψa,c, depending on additive and multiplicative
+parameters a, c ∈R × F ×.
 • A kinematical kernel enforces gluing constraints implied by the triangulation,
 and a dynamical weight encodes the quantum amplitude for each tetrahedron.
 • The state-integral is defined as the integral of the product of these factors over

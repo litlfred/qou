@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1905.02045v3
-doc_title: "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM"
+doc_title: "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM INVARIANTS OF HYPERBOLIC KNOTS"
 section_id: sec-001-11-outline-of-the-paper-and-sketch-of-the-proofs
 section_title: "Outline of the paper and sketch of the proofs"
 section_number: 1.1
 pages: 6-7
 source_pdf: 1905.02045v3.pdf
 source_sha256: 8e7eb17c7d1f4f4e
-doc_brief: "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM — We obtain an exact modularity relation for the q-Pochhammer symbol."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.952
-latex_coverage_ratio: 0.968
+latex_coverage_ratio: 0.992
+doc_brief: "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM INVARIANTS OF HYPERBOLIC KNOTS — We obtain an exact modularity relation for the q-Pochhammer symbol."
 ---
 Theorem [\[th:1\]](#th:1){reference-type="ref" reference="th:1"} and Theorem [\[th:2\]](#th:2){reference-type="ref" reference="th:2"} are both based on two new relations for the $q$-Pochhammer symbol, given in Theorems [\[th:Ir\]](#th:Ir){reference-type="ref" reference="th:Ir"} (cf. [\[eq:mro\]](#eq:mro){reference-type="eqref" reference="eq:mro"}) and [\[thp\]](#thp){reference-type="ref" reference="thp"}. These relations are proved in Section [\[repsec\]](#repsec){reference-type="ref" reference="repsec"} and both make use of the Abel-Plana summation formula [@Abel1992 p.23], [@Plana1820 p.408], [@Olver1997 Chapter 8.3.1], which is a form of Euler-Maclaurin summation with an explicit form of the error term.
 

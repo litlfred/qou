@@ -10,6 +10,7 @@ source_sha256: 18321b615ffc968b
 toc_source: outline
 doc_brief: "A Tutorial on Knots and Quantum Mechanics — These notes review a description of quantum mechanics in terms of the topology of spaces, basing on the axioms of Topological Quantum Field Theory and path"
 ---
+Skein relation
 To construct an explicit example of a Markov trace it is convenient to introduce another structure, the
 Temperley-Lieb algebra TLn [48]. Similarly the to the braid group, it can be introduced via generators
 as follows:
@@ -96,4 +97,3 @@ which can also be cast as quadratic relation on the group generators:
 (bk)2 = (A −A−3)bk + A−2I .
 (28)
 With this additional relation bk are said to generate the Hecke algebra.
-2.3

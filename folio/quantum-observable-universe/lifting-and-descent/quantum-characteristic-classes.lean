@@ -72,7 +72,15 @@ instance (qcs : QuantumCharacteristicSequence) : AddCommGroup qcs.ObstructionSpa
 /-- If κ₀ ≠ 0 and corrections are complementary, then κₙ ≠ 0 for all n.
 
     This is the perpetual obstruction property: the Euler class cannot
-    be cancelled by jet corrections at any level. -/
+    be cancelled by jet corrections at any level.
+
+    **Re-scoped 2026-11-15 (owner decision, PR #7747, bean `qou-lx8f`).**
+    This is a valid conditional: the conclusion holds whenever the
+    persistence hypothesis does. It does not apply to the Kummer tower of
+    Bring's surface, where the obstruction vanishes for `n ∣ χ = -6` and
+    persists only for `n ∤ 6`; the "complementary subgroups" argument for
+    persistence there is withdrawn (item 3 of `thm:qu-to-qou` is now the
+    degree condition). -/
 -- Ref: [manuscript] §3
 theorem QuantumCharacteristicSequence.perpetual
     (qcs : QuantumCharacteristicSequence)

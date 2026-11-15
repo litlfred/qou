@@ -88,6 +88,7 @@ export default conjecture({
       see: "docs/audits/2026-07-20-qlift-doorV-stokes.md",
     },
   ],
+  cites: ["pugliese2023", "garoufalidis-wheeler-modular"],
   uses: [
     "prop:binding-genfun-qdifference",
     "prop:mi-sw-abelianisation",

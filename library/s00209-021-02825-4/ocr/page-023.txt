@@ -1,0 +1,58 @@
+A representation theoretic explanation... 1381
+
+Let C c CP"! be any projectively convex region, and define S := U; (z;-C). If we order the
+input variables of Symb(T,) as (z, w, x, y), itis then straightforward to show that Symb(T7,) is
+Cx (CP!\S)-stable. (As above, first deal with possible (x : y) = (1: 0) or (z : w) = (1: 0)
+cases, and then assume y = w = | to simplify the remaining cases.) Applying the previous
+theorem, this implies 7, maps polynomials with roots in C to polynomials with roots in S.
+(This is Theorem 3.4.1din [15].) Picking C = UR, and q with only positive roots implies
+Tz maps (H4 U R_)-stable polynomials to (H4 U R_)-stable polynomials. Restricting to
+p € Vg(n) then shows that T, preserves positive-rootedness.
+
+In order to prove the above theorem, we need an operator-theoretic corollary to Grace’s
+theorem. The following result is the main motivation for the symbol lemma (Lemma 3.7), and
+demonstrates just how closely Grace’s theorem relates to stability properties of linear opera-
+tors. Further, it gives a slightly stronger result in one direction of the above characterization,
+as Grace pair disjointness is not a required premise.
+
+Proposition 6.5 Fix A ¢ Nj, a € Ni. a linear operator T € Hom(V (A), V(a@)), any Grace
+pair (Cy X +++ X Cn, By x +++ X Bm), and any sets S\,...,S1 ce!. If Symb(T) is
+(By x +++ x By) x (S) x +++ x S))-stable, then T maps (C, x +++ X Cm)-stable polynomials
+to nonzero (S\ x «++ x S,)-stable polynomials.
+
+Proof Fix any (C; x --- x Cy,)-stable g € V(A) and any (c,d) = (c1, d,..., c1, dy) € Cc
+such that (cj : dj) € Sj for all j € [/]. Let kag t= (-1)"(a!)2(a!)?. The evaluation
+symbol lemma (Lemma 5.10) and the symbol lemma (Lemma 3.7) then give us the following
+expression of T(q) evaluated at (c,d) = (cj, d1,..., c,d):
+
+ky aT (g)(c, d) = ky,oD*(T(q) ® (dx — cy)*)
+= D*(Symb(T) @ q - (dx — cy)”)
+= ko,qD* (Symb(T)(z, w, c,d) ® q(z, w))
+
+In the last expression above, D* acts on the variables (z, w) = (z1, W1..--, Zm, Wm). Since
+r(z, w) = Symb(T)(z, w, c,d) is (By x «++ x By,)-stable and q(z, w) is (Cy x +++ x Cin)-
+stable, we have that the last expression above is nonzero by definition of Grace pair (Definition
+5.2). This implies T(q) is (S| x --- x S))-stable. oO
+
+With this, we now give the proof of Theorem 6.2.
+
+Proof of Theorem 6.2 The statement of this result, as well as its proof, is quite similar to that
+of the evaluation symbol version of Grace’s theorem given in Corollary 5.11. We explicitly
+give the proof anyway, as it is rather short and straightforward.
+
+(i) => (ii). Immediate.
+
+(ii) > (iii). Fix (a,b) = (a1, 1,..., dm. bm) € C2 such that (aj : bj) € B; for all
+j € Im], and fix (c,d) = (c1,d1,..., c1, di) € C~ such that (c; : dj) € S; forall j € [U.
+Let ky g t= (-1*a!)2(@!). Since B; and C; are disjoint, we have that (a; : bj) ¢ C; for
+all j, and therefore Symb(ev(a,»)) = (bx — ay)* € V(A) is an evaluation symbol which is
+(C, x +--+ x C,,)-stable. Using the evaluation symbol lemma (Lemma 5.10) and the symbol
+lemma (Lemma 3.7), we compute:
+
+(—1)*ky,q Symb(T)(a, b, c,d) = D**(Symb(T)
+
+@(bx — ay)’ (dx — cy)*) = kia T Ubx — ayy (c,d)
+By (ii) the last expression is nonzero, and thus Symb(T)(a, b,c,d) 4 0. This implies
+Symb(T) is (By x --- x Bm) x (S} x +++ x S))-stable.
+
+D Springer

@@ -1,0 +1,47 @@
+1964 Noelia Rizo, A. A. Schaeffer Fry and Carolina Vallejo
+
+in [Broué and Michel 1989]) and that each such block intersects €(G, 1) nontrivially. Such blocks are
+called unipotent blocks.
+
+3A1. A general set-up. We will often be interested in the following situation: Let S be a simple group
+such that there exist G a simple, simply connected algebraic group over F, and F a Steinberg morphism
+satisfying S = G/Z(G) with G:= Gf perfect. Let (G*, F*) be dual to (G, F).
+
+If Z(G) is trivial, we define G:=G. Otherwise, we further let 1: G <> Gbea regular embedding as
+in [Cabanes and Enguehard 2004, 15.1] and let c*: G* > G* be the corresponding surjection of dual
+groups. Write G:= G?, G* := (G*)"", and G* := (G*)"". We may then find F-stable maximally split
+tori T and T for G and G, respectively, such that T < T. Write T:=T* and T:=T". Then Z(G) is
+connected, GG, and Z(G)NG = Z(G). We will write § := G/Z(G), and note that Aut(S) is generated
+by S and the graph-field automorphisms. Further, the (linear) characters of G/G are in bijection with
+elements of Z(G*), and we have ¥; ® Z = Xsz, where z € Z(G*) corresponds to Z € Inr(G/G) and for
+semisimple s € G*, %, denotes the semisimple character of G corresponding to s. (See [Digne and Michel
+1991, 13.30].) It will also be useful in what follows to note that if s € [G*, G*] is semisimple, then the
+semisimple character of G corresponding to s is trivial on Z(G) by [Navarro and Tiep 2013, Lemma 4.4].
+
+When gq is a power of p, we note that Irrp/(Bo(S)) = Irr,(S), which can be seen using [Cabanes and
+Enguehard 2004, 6.14, 6.15, and 6.18] and the facts that p{|Z(G)| and S is a group with a strongly split
+BN pair as in [loc. cit., 2.20].
+
+In the case of types An; and 7A,_1, we have S is PSL},(q) with e € {+1}; G = SL} (q); G= GL}, (q);
+and § = PGL;,(q). Here € = 1 means S = PSL, (q), € = —1 means S = PSU,,(q), and similarly for G
+and G. We use similar notation for other twisted types. For example, E¢(q) will denote E¢(q) for ¢ = +
+and 7E,(q) for € = —.
+
+3B. The case p =2. Here we prove Theorem C in the case p = 2. The following, found in [Navarro
+et al. 2018, Lemma 3.1], will be useful in what follows.
+
+Lemma 3.2 (Navarro, Sambale and Tiep). Let G be a finite group. If x € Irrz(G) is real-valued, then x
+belongs to Bo(G).
+
+In particular, note that an odd character degree of G with multiplicity one must necessarily come from a
+character fixed by all automorphisms and G, which is therefore an X-invariant member of Irrz(Bo(G))”!.
+
+Lemma 3.3. Let S be a simple sporadic group, alternating group A, with n > 5, or one of the simple
+groups PSL(4), PSL3(2), PSL3(4), PSU4(2), PSU4(3), PSL§(2), *B2(8), B3(2), B3(3), D4(2), F4(2),
+2F4(2)', E6(2), 7E6(2), G2(2)’, G2(3), or G2(4). Then Theorem C holds for S and the prime p = 2.
+
+Proof. For n > 7, the automorphism group of 2L,, is the symmetric group G,,. Recall that every irreducible
+character of G,, is rational-valued and that an odd-degree character of G,, must restrict irreducibly to 2,
+since it has index 2. In this case, if n = 2"!+---+2” with ny <ng <--- <n, is the 2-adic decomposition
+of n, then [Macdonald 1971, Corollary 1.3] yields that there are 2”! ++" > 8 odd-degree characters of G,,
+whose restrictions therefore yield at least 3 nontrivial members of Irry (Bo (2l,,))! invariant under Aut(2l,).

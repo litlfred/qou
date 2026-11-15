@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2512.18642v1
-doc_title: "A Hidden Quantum Markov model framework for"
+doc_title: "A Hidden Quantum Markov model framework for Entanglement and Topological Order in the AKLT Chain"
 section_id: sec-000-introduction
 section_title: "Introduction"
 section_number: null
 pages: 1-3
 source_pdf: 2512.18642v1.pdf
 source_sha256: c4c7f8b0a719aa2d
-doc_brief: "A Hidden Quantum Markov model framework for — This paper introduces a hidden quantum Markov models (HQMMs) framework to the Af- fleck–Kennedy–Lieb–Tasaki (AKLT) state—a cornerstone example of a"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.997
+latex_prose_ratio: 0.942
+latex_coverage_ratio: 0.994
+doc_brief: "A Hidden Quantum Markov model framework for Entanglement and Topological Order in the AKLT Chain — This paper introduces a hidden quantum Markov models (HQMMs) framework to the Af"
 ---
 Hidden Markov models [@Rab2002] are recognized as powerful stochastic processes due to their ability to capture complex correlations, with broad applications across various domains [@Mor2021]---especially in machine learning tasks [@Li17], where algorithmic implementations [@V03; @FV05] have achieved significant success. Several proposals have been made to generalize hidden Markov models into the quantum setting [@Monras11; @Srin2017; @MRDFS22]. Namely, with the rising interest in quantum computing and quantum machine learning [@Li2024] but a suitable generalized probabilistic picture is remained missing [@FLW24]. Recently, an algebraic approach to HQMM within the framework of quantum probability has been suggested [@AGLS24Q], offering promising features such as entanglement [@Abd23] and the ability to represent an important class of matrix product states as observations [@Sou25]. This approach defines a HQMM as a hidden system---described by a Quantum Markov Chain (QMC) [@accardi1974; @ASS20], and an observation system strongly correlated with it. Information is encoded through sequences of hidden transitions and emission transition expectations, whose dual maps are quantum channels [@AccOhy99], these represent the fundamental building blocks of the HQMMs framework. It is worth noting that QMCs serve as the quantum generalization of classical Markov chains and offer a powerful framework for describing the dynamics of quantum systems. They play a particularly foundational role in the theory of finitely correlated states on quantum spin chains [@FNW92; @fannes2; @fannes3]. Beyond this core application, QMCs find broad use in diverse areas such as quantum control [@ticozzi2008], quantum information theory [@guan2024], quantum software development [@ying2016], and quantum communication systems [@wolf2012]. A particularly important subclass, quantum walks, has proven instrumental in developing novel quantum algorithms [@ambainis2003].
 

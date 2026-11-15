@@ -7,11 +7,11 @@
   "bytes": 1280353,
   "pages": 22,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,20 +21,35 @@
    "stamp_date": "25 Aug 2026"
   },
   "doi": null,
-  "title": "ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples C\u00e9sar Jes\u00fas-Valls1,\u2217 1European Organization for Nuclear Research (CERN), 1211 Geneva 23, Switzerland",
-  "authors_raw": "Neutrino interaction generators are central to precision oscillation analyses, but conventional imple-",
+  "title": "ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples",
+  "authors_raw": "César Jesús-Valls1, ∗",
   "title_lines": [
-   "ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples",
-   "C\u00e9sar Jes\u00fas-Valls1,\u2217",
-   "1European Organization for Nuclear Research (CERN), 1211 Geneva 23, Switzerland"
+   "ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples"
   ],
   "abstract": null,
   "docinfo": {
-   "Author": "C\u00e9sar Jes\u00fas-Valls",
-   "Creator": "arXiv GenPDF (tex2pdf:4af3385)",
+   "Title": "ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples",
+   "Author": "César Jesús-Valls",
    "Producer": "pikepdf 8.15.1",
-   "Title": "ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples"
-  }
+   "Creator": "arXiv GenPDF (tex2pdf:4af3385)"
+  },
+  "title_raw": "ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples",
+   "heading": "ADoNIS : A D ifferentiable generat O r of N eutrino I nteraction S amples",
+   "outline": "ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples",
+   "text": "ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples",
+   "corroborated_by": [
+    "heading",
+    "outline",
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples César Jesús-Valls1,∗ 1European Organization for Nuclear Research (CERN), 1211 Geneva 23, Switzerland"
  },
  "toc": [
   {
@@ -42,150 +57,644 @@
    "title": "ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Abstract",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 3,
    "title": "Differentiable programming in particle physics",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "A Differentiable Neutrino Event Generator",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 3,
    "title": "Differentiability by reweighting",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 3,
    "title": "Nuclear ground-state reweighting",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 3,
    "title": "Hard-scattering amplitudes",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 3,
    "title": "Intranuclear cascade",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 3,
    "title": "Channel normalisations",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 3,
    "title": "Differentiable events and observables",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 3,
    "title": "Gradients and higher-order derivatives",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Validation",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Gradient information",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Parameter Inference and Uncertainty Quantification",
    "page": 10,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 3,
    "title": "Computational cost",
    "page": 14,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 2,
    "title": "Unfolding",
    "page": 15,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Conclusions",
    "page": 17,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Acknowledgments",
    "page": 17,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "References",
    "page": 17,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Additional validation distributions",
    "page": 22,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "ADoNIS (solid) vs. ACHILLES (dashed). MINERvA CC0π on 12C at ⟨Eν⟩≈3 GeV, with the signal definition of Ref. [138]: the TKI variables δαT , pn, δpT and δϕT , and the proton and muon kinematics",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "ADoNIS (solid) vs. ACHILLES (dashed)",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "ADoNIS (solid) vs. ACHILLES (dashed). Inclusive",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "ADoNIS (solid) vs. ACHILLES (dashed). π+–nucleus absorption and reaction cross sections on carbon and argon as a function of pion momentum [145–147], testing the intranuclear cascade in isolation",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Signed per-bin parameter response δθkJik/σi, with each row normalised to its own peak, for the 17 parameters retained for inference and highlighted in Fig. 6, across the samples and fitted bins shown in Fig. 7",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Marginalised parameter constraints σpost/σprior for samples aggregated by probe type and for all samples combined. Cells with σpost/σprior < 0.5 are highlighted in orange",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Every observable entering the fit, before and after it. Points are the Asimov data with the per-bin uncertainty used in the fit; hollow points are the bins removed by the Monte Carlo error mask. The pre-fit curve is the prediction at nominal and the post-fit curve the prediction at the recovered par",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "(a) Recovery of the 17 fitted parameters, in units of the reference width δθk defined in Sec. IV. Every parameter returns to its injected truth",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "12"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "Four parameters of the fit in two dimensions. Below the diagonal, the parameter pairs are shown over a wide range",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "13"
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "Unfolded T2K CC0π double-differential cross section in two of the nine cos θµ slices, for a closure test and for a dataset in which the true signal is increased by 20%",
+   "page": 16,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "16"
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "Uncertainty on the 58 unfolded templates as statistical and systematic contributions are successively included",
+   "page": 16,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "16"
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "Post-fit correlation matrix of the 196 fitted parameters: 58 signal templates c, 10 flux parameters f, 12 crosssection parameters θ and 116 detector parameters d",
+   "page": 16,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "16"
+  },
+  {
+   "kind": "figure",
+   "number": "13",
+   "title": "ADoNIS (solid) vs. ACHILLES (dashed)",
+   "page": 22,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "22"
+  },
+  {
+   "kind": "figure",
+   "number": "14",
+   "title": "ADoNIS (solid) vs. ACHILLES (dashed)",
+   "page": 22,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "22"
+  },
+  {
+   "kind": "figure",
+   "number": "15",
+   "title": "ADoNIS (solid) vs. ACHILLES (dashed). Micro- BooNE CC1p0π on 40Ar [142]: δpT in slices of δαT",
+   "page": 22,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "22"
+  },
+  {
+   "kind": "figure",
+   "number": "16",
+   "title": "ADoNIS (solid) vs. ACHILLES (dashed). e4ν ob-",
+   "page": 22,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "22"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
   {
    "id": "sec-000-adonis-a-differentiable-generator-of-neutrino-in",
@@ -194,8 +703,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1671,
-   "n_words": 220
+   "n_chars": 1673,
+   "n_words": 222,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
    "id": "sec-001-introduction",
@@ -204,8 +715,10 @@
    "level": 2,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 7292,
-   "n_words": 1040
+   "n_chars": 7307,
+   "n_words": 1044,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
    "id": "sec-002-differentiable-programming-in-particle-physics",
@@ -213,162 +726,224 @@
    "title": "Differentiable programming in particle physics",
    "level": 3,
    "page_start": 2,
-   "page_end": 3,
-   "n_chars": 5306,
-   "n_words": 768
+   "page_end": 2,
+   "n_chars": 1393,
+   "n_words": 202,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
-   "id": "sec-003-differentiability-by-reweighting",
+   "id": "sec-003-a-differentiable-neutrino-event-generator",
+   "number": null,
+   "title": "A Differentiable Neutrino Event Generator",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 3944,
+   "n_words": 585,
+   "label_start": "2",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-004-differentiability-by-reweighting",
    "number": null,
    "title": "Differentiability by reweighting",
    "level": 3,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 3178,
-   "n_words": 507
+   "n_chars": 3226,
+   "n_words": 526,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
-   "id": "sec-004-nuclear-ground-state-reweighting",
+   "id": "sec-005-nuclear-ground-state-reweighting",
    "number": null,
    "title": "Nuclear ground-state reweighting",
    "level": 3,
    "page_start": 4,
    "page_end": 4,
-   "n_chars": 2410,
-   "n_words": 383
+   "n_chars": 2463,
+   "n_words": 406,
+   "label_start": "4",
+   "label_end": "4"
   },
   {
-   "id": "sec-005-hard-scattering-amplitudes",
+   "id": "sec-006-hard-scattering-amplitudes",
    "number": null,
    "title": "Hard-scattering amplitudes",
    "level": 3,
    "page_start": 4,
    "page_end": 6,
-   "n_chars": 7629,
-   "n_words": 1218
+   "n_chars": 7735,
+   "n_words": 1301,
+   "label_start": "4",
+   "label_end": "6"
   },
   {
-   "id": "sec-006-intranuclear-cascade",
+   "id": "sec-007-intranuclear-cascade",
    "number": null,
    "title": "Intranuclear cascade",
    "level": 3,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 4700,
-   "n_words": 738
+   "n_chars": 4768,
+   "n_words": 787,
+   "label_start": "6",
+   "label_end": "6"
   },
   {
-   "id": "sec-007-channel-normalisations",
+   "id": "sec-008-channel-normalisations",
    "number": null,
    "title": "Channel normalisations",
    "level": 3,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 238,
-   "n_words": 38
+   "n_chars": 259,
+   "n_words": 39,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
-   "id": "sec-008-differentiable-events-and-observables",
+   "id": "sec-009-differentiable-events-and-observables",
    "number": null,
    "title": "Differentiable events and observables",
    "level": 3,
    "page_start": 7,
    "page_end": 7,
-   "n_chars": 1876,
-   "n_words": 316
+   "n_chars": 1919,
+   "n_words": 325,
+   "label_start": "7",
+   "label_end": "7"
   },
   {
-   "id": "sec-009-gradients-and-higher-order-derivatives",
+   "id": "sec-010-gradients-and-higher-order-derivatives",
    "number": null,
    "title": "Gradients and higher-order derivatives",
    "level": 3,
    "page_start": 7,
    "page_end": 7,
-   "n_chars": 969,
-   "n_words": 155
+   "n_chars": 1013,
+   "n_words": 164,
+   "label_start": "7",
+   "label_end": "7"
   },
   {
-   "id": "sec-010-validation",
+   "id": "sec-011-validation",
    "number": null,
    "title": "Validation",
    "level": 2,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 4158,
-   "n_words": 749
+   "n_chars": 4179,
+   "n_words": 765,
+   "label_start": "7",
+   "label_end": "8"
   },
   {
-   "id": "sec-011-gradient-information",
+   "id": "sec-012-gradient-information",
    "number": null,
    "title": "Gradient information",
    "level": 2,
    "page_start": 8,
-   "page_end": 14,
-   "n_chars": 21623,
-   "n_words": 3570
+   "page_end": 10,
+   "n_chars": 8323,
+   "n_words": 1385,
+   "label_start": "8",
+   "label_end": "10"
   },
   {
-   "id": "sec-012-computational-cost",
+   "id": "sec-013-parameter-inference-and-uncertainty-quantificati",
+   "number": null,
+   "title": "Parameter Inference and Uncertainty Quantification",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 14,
+   "n_chars": 13286,
+   "n_words": 2215,
+   "label_start": "10",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-014-computational-cost",
    "number": null,
    "title": "Computational cost",
    "level": 3,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 6422,
-   "n_words": 952
+   "n_chars": 6453,
+   "n_words": 968,
+   "label_start": "14",
+   "label_end": "15"
   },
   {
-   "id": "sec-013-unfolding",
+   "id": "sec-015-unfolding",
    "number": null,
    "title": "Unfolding",
    "level": 2,
    "page_start": 15,
    "page_end": 17,
-   "n_chars": 7525,
-   "n_words": 1159
+   "n_chars": 7564,
+   "n_words": 1193,
+   "label_start": "15",
+   "label_end": "17"
   },
   {
-   "id": "sec-014-conclusions",
+   "id": "sec-016-conclusions",
    "number": null,
    "title": "Conclusions",
    "level": 2,
    "page_start": 17,
    "page_end": 17,
-   "n_chars": 2929,
-   "n_words": 404
+   "n_chars": 2950,
+   "n_words": 414,
+   "label_start": "17",
+   "label_end": "17"
   },
   {
-   "id": "sec-015-acknowledgments",
+   "id": "sec-017-acknowledgments",
    "number": null,
    "title": "Acknowledgments",
    "level": 2,
    "page_start": 17,
    "page_end": 22,
-   "n_chars": 22031,
-   "n_words": 3215
+   "n_chars": 22250,
+   "n_words": 3444,
+   "label_start": "17",
+   "label_end": "22"
   },
   {
-   "id": "sec-016-additional-validation-distributions",
+   "id": "sec-018-additional-validation-distributions",
    "number": null,
    "title": "Additional validation distributions",
    "level": 2,
    "page_start": 22,
    "page_end": 22,
-   "n_chars": 1776,
-   "n_words": 393
+   "n_chars": 1788,
+   "n_words": 405,
+   "label_start": "22",
+   "label_end": "22"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 21,
-  "sections": 17,
-  "chars_total": 101733,
+  "toc_inferred_entries": 0,
+  "figure_entries": 16,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 19,
+  "chars_total": 102493,
+  "furniture_lines_stripped": 21,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
    "tex_sections": 17,
-   "overlaid": 13,
+   "overlaid": 16,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -383,122 +958,140 @@
     {
      "id": "sec-001-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.85,
+     "prose_ratio": 0.836,
+     "coverage_ratio": 0.991,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-differentiable-programming-in-particle-physics",
      "title": "Differentiable programming in particle physics",
-     "prose_ratio": 0.905,
-     "coverage_ratio": 0.979,
+     "prose_ratio": 0.798,
+     "coverage_ratio": 0.991,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-differentiability-by-reweighting",
+     "id": "sec-003-a-differentiable-neutrino-event-generator",
+     "title": "A Differentiable Neutrino Event Generator",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-differentiability-by-reweighting",
      "title": "Differentiability by reweighting",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.958,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-nuclear-ground-state-reweighting",
+     "id": "sec-005-nuclear-ground-state-reweighting",
      "title": "Nuclear ground-state reweighting",
      "prose_ratio": 0.981,
-     "coverage_ratio": 0.945,
+     "coverage_ratio": 0.97,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-hard-scattering-amplitudes",
+     "id": "sec-006-hard-scattering-amplitudes",
      "title": "Hard-scattering amplitudes",
      "prose_ratio": 0.987,
-     "coverage_ratio": 0.909,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-006-intranuclear-cascade",
-     "title": "Intranuclear cascade",
-     "prose_ratio": 0.98,
-     "coverage_ratio": 0.916,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-007-channel-normalisations",
-     "title": "Channel normalisations",
-     "prose_ratio": 0.87,
-     "coverage_ratio": 0.957,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-008-differentiable-events-and-observables",
-     "title": "Differentiable events and observables",
-     "prose_ratio": 0.974,
-     "coverage_ratio": 0.983,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-009-gradients-and-higher-order-derivatives",
-     "title": "Gradients and higher-order derivatives",
-     "prose_ratio": 0.959,
-     "coverage_ratio": 0.972,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-010-validation",
-     "title": "Validation",
-     "prose_ratio": 0.994,
-     "coverage_ratio": 0.931,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-011-gradient-information",
-     "title": "Gradient information",
-     "prose_ratio": 0.544,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-012-computational-cost",
-     "title": "Computational cost",
-     "prose_ratio": 0.969,
-     "coverage_ratio": 0.982,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-013-unfolding",
-     "title": "Unfolding",
-     "prose_ratio": 1.0,
      "coverage_ratio": 0.974,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-conclusions",
-     "title": "Conclusions",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.99,
+     "id": "sec-007-intranuclear-cascade",
+     "title": "Intranuclear cascade",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.962,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-015-acknowledgments",
-     "title": "Acknowledgments",
-     "prose_ratio": 0.944,
-     "coverage_ratio": 0.04,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "id": "sec-008-channel-normalisations",
+     "title": "Channel normalisations",
+     "prose_ratio": 0.913,
+     "coverage_ratio": 0.917,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-016-additional-validation-distributions",
+     "id": "sec-009-differentiable-events-and-observables",
+     "title": "Differentiable events and observables",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-gradients-and-higher-order-derivatives",
+     "title": "Gradients and higher-order derivatives",
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-validation",
+     "title": "Validation",
+     "prose_ratio": 0.906,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-gradient-information",
+     "title": "Gradient information",
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-parameter-inference-and-uncertainty-quantificati",
+     "title": "Parameter Inference and Uncertainty Quantification",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-computational-cost",
+     "title": "Computational cost",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.997,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-unfolding",
+     "title": "Unfolding",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-conclusions",
+     "title": "Conclusions",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-acknowledgments",
+     "title": "Acknowledgments",
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.041,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-018-additional-validation-distributions",
      "title": "Additional validation distributions",
      "result": "no matching \\section"
     }

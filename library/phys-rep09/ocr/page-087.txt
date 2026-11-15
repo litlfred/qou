@@ -1,0 +1,151 @@
+S. Blanes et al. / Physics Reports 470 (2009) 151-238 237
+
+[137] A. Marthinsen, B. Owren, Quadrature methods based on the Cayley transform, Appl. Numer. Math. 39 (2001) 403-413.
+
+[138] C.B. Moler, C.F. Van Loan, Nineteen dubious ways to compute the exponential of a matrix, SIAM Review 20 (1978) 801-836.
+
+[139] C.B. Moler, C.F. Van Loan, Nineteen dubious ways to compute the exponential of a matrix, twenty-five years later, SIAM Review 45 (2003) 3-49.
+
+[140] R.B. Sidje, Expokit software, http://www.maths.uq.edu.au/expokit.
+
+[141] R.B. Sidje, Expokit: Software package for computing matrix exponentials, ACM Trans. Math. Software 24 (1998) 130-156.
+
+[142] AJ. Dragt, Computation of maps for particle and light optics by scaling, splitting, and squaring, Phys. Rev. Lett. 75 (1995) 1946-1948.
+
+[143] 1. Najfeld, T.F. Havel, Derivatives of the matrix exponential and their computation, Adv. Appl. Math. 16 (1995) 321-375.
+
+[144] H. Tal-Ezer, R. Kosloff, An accurate and efficient scheme for propagating the time dependent Schrédinger equation, J. Chem. Phys. 81 (1984)
+3967-3971.
+
+[145] E. Siili, D. Mayers, An Introduction to Numerical Analysis, Cambridge University Press, 2003.
+
+[146] P. Nettesheim, Mixed quantum-classical dynamics: A unified approach to mathematical modelling and numerical simulation, Ph.D. Thesis, Freie
+Universitat Berlin, 2000.
+
+[147] C. Leforestier, R.H. Bisseling, C. Cerjan, M.D. Feit, R. Friesner, A. Guldberg, A. Hammerich, G. Jolicard, W. Karrlein, H.-D. Meyer, N. Lipkin, O. Roncero,
+R. Kosloff, A comparison of different propagation schemes for the time dependent Schrédinger equation, J. Comput. Phys. 94 (1991) 59-80.
+
+[148] V.L. Druskin, L.A. Knizhnerman, Krylov subspace approximation of eigenpairs and matrix functions in exact and computer arithmetics, Numer. Linear
+Algebra 2 (1995) 205-217.
+
+[149] TJ. Park, J.C. Light, Unitary quantum time evolution by iterative lanczos reduction, J. Chem. Phys. 85 (1986) 5870-5876.
+
+[150] D.S. Watkins, Fundamentals of Matrix Computations, 2nd ed., John Wiley & Sons, 2002.
+
+[151] M. Hochbruck, C. Lubich, Exponential integrators for quantum-classical molecular dynamics, BIT 39 (1999) 620-645.
+
+[152] M. Hochbruck, C. Lubich, H. Selhofer, Exponential integrators for large systems of differential equations, SIAM J. Sci. Comput. 19 (1998) 1552-1574.
+
+[153] M. Hochbruck, Ch. Lubich, On Krylov subspace approximations to the matrix exponential operator, SIAM J. Numer. Anal. 34 (1997) 1911-1925.
+
+[154] S. Blanes, P.C. Moan, Practical symplectic partitioned Runge-Kutta and Runge-Kutta-Nystrém methods, J. Comput. Appl. Math 142 (2002) 313-330.
+
+[155] K. Feng, Z.-J. Shang, Volume-preserving algorithms for source-free dynamical systems, Numer. Math. 71 (1995) 451-463.
+
+[156] E. Celledoni, A. Iserles, Approximating the exponential from a Lie algebra to a Lie group, Math. Comput. 69 (2000) 1457-1480.
+
+[157] E. Celledoni, A. Iserles, Methods for the approximation of the matrix exponential in a Lie-algebraic setting, IMA J. Numer. Anal. 21 (2001) 463-488.
+
+[158] H. Munthe-Kaas, R.G.W. Quispel, A. Zanna, Generalized polar decompositions on Lie groups with involutive automorphisms, Found. Comput. Math.
+1 (2001) 297-324.
+
+[159] A. Iserles, A. Zanna, Efficient computation of the matrix exponential by generalized polar decomposition, SIAM J. Numer. Anal. 42 (2005) 2218-2256.
+
+[160] A. Zanna, H.Z. Munthe-Kaas, Generalized polar decompositions for the approximation of the matrix exponential, SIAM J. Matrix Anal. Appl. 23 (2001)
+840-862.
+
+[161] A. Iserles, On the global error of discretization methods for highly-oscillatory ordinary differential equations, BIT 42 (2002) 561-599.
+
+[162] A. Iserles, Think globally, act locally: Solving highly-oscillatory ordinary differential equations, Appl. Numer. Math. 43 (2002) 145-160.
+
+[163] A. Iserles, On the numerical quadrature of highly-oscillating integrals I: Fourier transform, IMA J. Numer. Anal. 24 (2004) 365-391.
+
+[164] A. Iserles, S.P. Norsett, On quadrature methods for highly oscillatory integrals and their implementation, BIT 44 (2004) 755-772.
+
+[165] I. Degani, J. Schiff, RCMS: Right correction Magnus series approach for oscillatory ODEs, J. Comput. Appl. Math 193 (2006) 413-436.
+
+[166] T. Jahnke, Long-time-step integrators for almost-adiabatic quantum dynamics, SIAM J. Sci. Comput. 25 (2004) 2145-2164.
+
+[167] T. Jahnke, C. Lubich, Numerical integrators for quantum dynamics close to the adiabatic limit, Numer. Math. 94 (2003) 289-314.
+
+[168] K. Lorenz, T. Jahnke, C. Lubich, Adiabatic integrators for highly oscillatory second-order linear differential equations with time-varying
+eigendecomposition, BIT 45 (2005) 91-115.
+
+[169] N.D. Aparicio, $J.A. Malham, M. Oliver, Numerical evaluation of the Evans function by Magnus integration, BIT 45 (2005) 219-258.
+
+[170] SJ.A. Malham, J. Niesen, Evaluating the Evans function: Order reduction in numerical methods, Math. Comput. 77 (2008) 159-179.
+
+[171] S. Blanes, P.C. Moan, Splitting methods for the time-dependent Schrédinger equation, Phys. Lett. A 265 (2000) 35-42.
+
+[172] D. Baye, G. Goldstein, P. Capel, Fourth-order factorization of the evolution operator for time-dependent potentials, Phys. Lett. A 317 (2003) 337-342.
+
+[173] Y.Y. Lu, Fourth order conservative exponential methods for linear evolution equations, BIT 40 (2000) 762-774.
+
+[174] M. Thalhammer, A fourth-order commutator-free exponential integrator for nonautonomous differential equations, SIAM J. Numer. Anal. 44 (2006)
+851-864.
+
+[175] S. Blanes, P.C. Moan, Fourth- and sixth-order commutator-free Magnus integrators for linear and non-linear dynamical systems, Appl. Numer. Math.
+56 (2006) 1519-1537.
+
+[176] J.M. Sanz-Serna, A. Portillo, Classical numerical integrators for wave-packet dynamics, J. Chem. Phys. 104 (1996) 2349-2355.
+
+[177] S. Blanes, F. Casas, Splitting methods for non-autonomous separable dynamical systems, J. Phys. A: Math. Gen. 39 (2006) 5405-5423.
+
+[178] S. Blanes, F. Casas, A. Murua, Splitting methods for non-autonomous linear systems, Int. J. Comput. Math. 6 (2007) 713-727.
+
+[179] H. Munthe-Kaas, Runge-Kutta methods on Lie groups, BIT 38 (1998) 92-111.
+
+[180] H. Munthe-Kaas, High order Runge-Kutta methods on manifolds, Appl. Numer. Math. 29 (1999) 115-127.
+
+[181] A. Zanna, Collocation and relaxed collocation for the Fer and the Magnus expansions, SIAM J. Numer. Anal. 36 (1999) 1145-1182.
+
+[182] C. Lubich, Integrators for quantum dynamics: A numerical analyst’s brief review, in: J. Grotendorst, D. Marx, A. Muramatsu (Eds.), Quantum
+Simulations of Many-Body Systems: From Theory to Algorithms, in: NIC Series, vol. 10, Jiilich, 2002, pp. 459-466.
+
+[183] M. Hochbruck, C. Lubich, On Magnus integrators for time-dependent Schrédinger equations, SIAM J. Numer. Anal. 41 (2003) 945-963.
+
+[184] S. Gray, J.M. Verosky, Classical Hamiltonian structures in wave packet dynamics, J. Chem. Phys. 100 (1994) 5011-5022.
+
+[185] L. Jédar, M. Marletta, Solving ODEs arising from non-selfadjoint Hamiltonian eigenproblems, Adv. Comput. Math. 13 (2000) 231-256.
+
+[186] J.D. Pryce, Numerical Solution of Sturm-Liouville Problems, Oxford University Press, 1993.
+
+[187] A. Zettl, Sturm-Liouville Theory, American Mathematical Society, 2005.
+
+[188] P.B. Bailey, M.K. Gordon, L.F. Shampine, Automatic solution of the Sturm-Liouville problem, ACM Trans. Math. Software 4 (1978) 193-208.
+
+[189] L. Greenberg, M. Marletta, Oscillation theory and numerical solution of sixth order Sturm-Liouville problems, SIAM J. Numer. Anal. 35 (1998)
+2070-2098.
+
+[190] M.A. Naimark, Linear Differential Operators, Part I, Ungar, 1968.
+
+[191] L. Dieci, Numerical integration of the differential Riccati equation and some related issues, SIAM J. Numer. Anal. 29 (1992) 781-815.
+
+[192] L. Dieci, M.R. Osborne, R.D. Russell, A Riccati transformation method for solving linear BVP I: Theoretical aspects, II: Computational aspects, SIAM J.
+Numer. Anal. 25 (1988) 1055-1092.
+
+[193] S. Bittanti, AJ. Laub, J.C. Willems (Eds.), The Riccati Equation, Springer, 1991.
+
+[194] W.T. Reid, Riccati Differential Equations, Academic Press, 1972.
+
+[195] C.S. Kenney, R.B. Leipnik, Numerical integration of the differential Riccati equation, IEEE Trans. Automat. Control AC-30 (1985) 962-970.
+
+[196] J. Schiff, S. Shnider, A natural approach to the numerical integration of Riccati differential equations, SIAM J. Numer. Anal. 36 (1999) 1392-1413.
+
+[197] K. Burrage, P.M. Burrage, T. Tian, Numerical methods for strong solutions of stochastic differential equations: An overview, Proc. Roy. Soc. Lond. Ser.
+A 460 (2004) 373-402.
+
+[198] P.E. Kloeden, E. Platen, Numerical Solution of Stochastic Differential Equations, Springer Verlag, 1992.
+
+[199] E. Platen, An introduction to numerical methods for stochastic differential equations, Acta Numer. 8 (1999) 197-246.
+
+[200] G. Maruyama, Continuous Markov processes and stochastic equations, Rend. Circ. Mat. Palermo 4 (1955) 48-90.
+
+[201] G. Lord, S.A. Malham, A. Wiese, Efficient strong integrators for linear stochastic systems, SIAM J. Numer. Anal. (2006).
+
+[202] SJ.A. Malham, A. Wiese, Stochastic Lie group integrators, SIAM J. Sci. Comput. 30 (2008) 597-617.
+
+[203] T. Misawa, A Lie algebraic approach to numerical integration of stochastic differential equations, SIAM J. Sci. Comput. 23 (2001) 866-890.
+
+[204] J. Eichler, Magnus approximation for K-shell ionization by heavy-ion impact, Phys. Rev. A 15 (1977) 1856-1862.
+

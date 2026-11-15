@@ -1,0 +1,1 @@
+The proof of the proposition is very similar to the work of Ghate [1999], but our conventions are a little different, so we shall give a proof using our conventions in the Appendix; see Corollary A.10.

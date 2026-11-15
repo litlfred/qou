@@ -1,23 +1,41 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "squier-burau-unitary-1984",
- "document_class": "math",
- "validated": true,
  "source": {
   "structure_sha256": "5087ee3cb48679d1b4a879274d17d3eae09d0dcc90e4cfd5af18c6152a873796",
   "file": "squier-burau-unitary-1984.pdf"
  },
  "provenance": {
-  "title": "PROCEEDINGS OF THE AMERICAN MATHEMATICAL SOCIETY",
-  "authors": "Volume 90. Number 2, February 1984",
+  "title": "AMERICAN MATHEMATICAL SOCIETY THE BURAU REPRESENTATION IS UNITARY",
+  "authors": "CRAIG C. SQUIEr'",
   "arxiv": null,
   "doi": null
  },
- "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "aspects": [
+  "requirements"
+ ],
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
+  "candidates": 1,
+  "by_kind": {
+   "recommendation": 1
+  },
   "formalization_candidates": 0
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "These conjectures would clearly imply that the Burau representation is faithful and the theorem presented here should help to answer (Cl). sz+ 1 202 C.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-j5-gl-zm.md",
+   "section_title": "/J:5\u201e-GL\u201e_,(Z[M-'])",
+   "pages": "1-4",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
 }

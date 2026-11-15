@@ -1,0 +1,61 @@
+into
+
+(4 (1
+—60000 Lis (csv) + 160000 Lis Go) .
+
+Our problem is now reduced to finding upper bounds for Lis (<-#) and Lis (cm),
+and lower bounds for Li; (<-#) and ¢(3). For the upper bounds, note that e-= and
+e~100 are both less than 1. The power series for the polylogarithm has a positive integer
+
+in the denominator that is greater than or equal to 1, so
+
+5903
+e235
+
+The term on the right is a geometric series, minus the first term, so the sum of the
+
+geometric series gives us
+
+g 9
+l-e 3 E25
+
+Lig (<-*) <—_t_-i-_} 5 © 0.0248858,
+
+The same trick with Li; (e-it) does not give such a close bound, however we can make it
+as strong as we like by choosing where we start approximating with the geometric series,
+that is, we subtract the first k +1 terms of the geometric series and add the first k terms
+
+of the trilogarithm series. With k = 8, we get
+
+. (93 1 511 342 215 124
+Lig (c i) < _ _ _ _ :
+93/100 — J 5] 2e186/25 —- 3.436651/100 216 6279/50 1 25e93/20
+63 26 7
+~~ 6493/25 27¢e279/100 3693/50
+= 0.417148.
+
+For our lower bounds, we can simply truncate the power series at a point where a
+suitable degree of accuracy has been achieved. For Lis (e*), truncating after 5 terms
+
+gives us
+
+. _ 93 1 1 1 1 1
+Lig (c *) > 125693/10 + 64e!86/25 + 276279/50 + 8e93/25 + 93/50 © 0.158852,
+
+and for ¢(3) summing the first 30 terms yields
+
+¢(3) > 15180616603702475646118887931489459603 __ 1.20152
+12634514775682409397575348713152000000 ,
+
+Our precise upper bound for F is
+
+- 200 ( 1 7
+P= i | 252+ las 7 )- 60000 (ssc
+74805201 \/2 + V2 V2+v2 ez —1 [125 e93/10
+
+1 1
++ 64 e186/5 + 27.¢279/50 tame t —
+
++ 160000 (sj my
+
+80

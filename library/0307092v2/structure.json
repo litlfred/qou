@@ -6,30 +6,40 @@
   "sha256": "de2f7ddec49b2ce6ccafd5a9a0be350972ffcf2014a6a3601a6d650df0018650",
   "bytes": 519702,
   "pages": 62,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "Extended Bloch group and the Cheeger-Chern-Simons class",
-  "authors_raw": "Extended Bloch group and the",
-  "abstract": "We deﬁne an extended Bloch group and show it is naturally isom orphic to H3(PSL(2, C)δ; Z). Using the Rogers dilogarithm function this leads to an ex- act simplicial formula for the universal Cheeger–Chern–Si mons class on this homology group. It also leads to an independent proof of the a nalytic relation- ship between volume and Chern–Simons invariant of hyperbol ic 3–manifolds conjectured in [16] and proved in [24], as well as eﬀective for mulae for the Chern–Simons invariant of a hyperbolic 3–manifold.",
+  "title": "Extended Bloch group and the Cheeger–Chern–Simons class",
+  "authors_raw": "Walter D Neumann",
+  "title_lines": [
+   "Extended Bloch group and the",
+   "Cheeger–Chern–Simons class"
+  ],
+  "abstract": "We deﬁne an extended Bloch group and show it is naturally isomorphic to H3(PSL(2, C)δ; Z). Using the Rogers dilogarithm function this leads to an ex- act simplicial formula for the universal Cheeger–Chern–Simons class on this homology group. It also leads to an independent proof of the analytic relation- ship between volume and Chern–Simons invariant of hyperbolic 3–manifolds conjectured in [16] and proved in [24], as well as eﬀective formulae for the Chern–Simons invariant of a hyperbolic 3–manifold.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181026023526-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20181026023526-04'00'"
   },
-  "title_lines": [
-   "Geometry & Topology GGGGG",
-   "GGGGG GGG",
-   "T T TTT",
-   "TTTTTTTT"
-  ],
-  "title_prev": "Extended Bloch group and the Cheeger–Chern–Simons class Walter D Neumann"
+  "title_raw": "Extended Bloch group and the Cheeger–Chern–Simons class",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Extended Bloch group and the Cheeger–Chern–Simons class",
+   "outline": "1 Introduction",
+   "text": "Extended Bloch group and the Cheeger–Chern–Simons class",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Extended Bloch group and the Cheeger-Chern-Simons class"
  },
  "toc": [
   {
@@ -37,151 +47,737 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The extended Bloch group",
    "page": 4,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Parameters for ideal hyperbolic simplices",
    "page": 8,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Definition of",
    "page": 13,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Representing elements of Hn(G;Z)",
    "page": 13,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Algebraic description",
    "page": 14,
    "source": "outline",
-   "number": "4.1.1"
+   "number": "4.1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Topological description",
    "page": 15,
    "source": "outline",
-   "number": "4.1.2"
+   "number": "4.1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Definition of 2mu-:6muplus1muH3(G;Z)P\"0362P(C)",
    "page": 16,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Developing map",
    "page": 19,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The cycle relation",
    "page": 23,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Computation of B\"0362B(C)",
    "page": 26,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The more extended Bloch group",
    "page": 30,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Proof of Theorem ??",
    "page": 32,
    "source": "outline",
-   "number": "9"
+   "number": "9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Start of the proof of Theorem ??",
    "page": 36,
    "source": "outline",
-   "number": "10"
+   "number": "10",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Completion of proof of Theorem ??",
    "page": 41,
    "source": "outline",
-   "number": "11"
+   "number": "11",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Cheeger--Chern--Simons class",
    "page": 47,
    "source": "outline",
-   "number": "12"
+   "number": "12",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Unordered simplices",
    "page": 49,
    "source": "outline",
-   "number": "13"
+   "number": "13",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Invariants of 3--manifolds",
    "page": 52,
    "source": "outline",
-   "number": "14"
+   "number": "14",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Example",
    "page": 58,
    "source": "outline",
-   "number": "15"
+   "number": "15",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Other fields",
    "page": 60,
    "source": "outline",
-   "number": "16"
+   "number": "16",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Bibliography",
    "page": 61,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Three triangles in developing image of N in C showing rotation levels of edges and resulting adjusted angles. One triangle is from a “folded” simplex",
+   "page": 21,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Conﬁguration for the cycle relation",
+   "page": 24,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Double cone on a disc",
+   "page": 41,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Left and right sides are identiﬁed to form an annulus. Signs indicate change of ﬂattening by ±πi and 0 signiﬁes that ﬂattening has been changed by both πi and −πi so total change is zero. The log-parameters aﬀected by applying the cycle relation about a single ei are bold",
+   "page": 45,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "A quasi-simplicial ordered 3–cycle",
+   "page": 46,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "Fundamental domain of the cusp torus, triangulated as the link of the 0– simplex of the ideal triangulation of m004",
+   "page": 59,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 43,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 45,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 46,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 47,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 48,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 49,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 50,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 51,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 52,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 53,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 54,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 55,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 56,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 57,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 58,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 59,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 60,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 61,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 62,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1194,
+   "n_words": 181,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -189,8 +785,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 4,
-   "n_chars": 6010,
-   "n_words": 1133
+   "n_chars": 5924,
+   "n_words": 1035,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-2-the-extended-bloch-group",
@@ -199,8 +797,10 @@
    "level": 1,
    "page_start": 4,
    "page_end": 8,
-   "n_chars": 7079,
-   "n_words": 1642
+   "n_chars": 6903,
+   "n_words": 1466,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-3-parameters-for-ideal-hyperbolic-simplices",
@@ -208,76 +808,222 @@
    "title": "Parameters for ideal hyperbolic simplices",
    "level": 1,
    "page_start": 8,
-   "page_end": 14,
-   "n_chars": 11526,
-   "n_words": 2420
+   "page_end": 13,
+   "n_chars": 8554,
+   "n_words": 1729,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-411-algebraic-description",
+   "id": "sec-003-4-definition-of",
+   "number": "4",
+   "title": "Definition of",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 1355,
+   "n_words": 245,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-41-representing-elements-of-hngz",
+   "number": "4.1",
+   "title": "Representing elements of Hn(G;Z)",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 1433,
+   "n_words": 267,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-005-411-algebraic-description",
    "number": "4.1.1",
    "title": "Algebraic description",
    "level": 3,
    "page_start": 14,
-   "page_end": 18,
-   "n_chars": 8757,
-   "n_words": 1789
+   "page_end": 15,
+   "n_chars": 2199,
+   "n_words": 428,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-5-developing-map",
+   "id": "sec-006-412-topological-description",
+   "number": "4.1.2",
+   "title": "Topological description",
+   "level": 3,
+   "page_start": 15,
+   "page_end": 19,
+   "n_chars": 9435,
+   "n_words": 1760,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-007-5-developing-map",
    "number": "5",
    "title": "Developing map",
    "level": 1,
-   "page_start": 18,
+   "page_start": 19,
    "page_end": 23,
-   "n_chars": 11501,
-   "n_words": 2217
+   "n_chars": 8427,
+   "n_words": 1591,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-005-6-the-cycle-relation",
+   "id": "sec-008-6-the-cycle-relation",
    "number": "6",
    "title": "The cycle relation",
    "level": 1,
    "page_start": 23,
-   "page_end": 30,
-   "n_chars": 13739,
-   "n_words": 3123
+   "page_end": 26,
+   "n_chars": 6947,
+   "n_words": 1396,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-006-8-the-more-extended-bloch-group",
+   "id": "sec-009-7-computation-of-b0362bc",
+   "number": "7",
+   "title": "Computation of B\"0362B(C)",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 30,
+   "n_chars": 6397,
+   "n_words": 1353,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-010-8-the-more-extended-bloch-group",
    "number": "8",
    "title": "The more extended Bloch group",
    "level": 1,
    "page_start": 30,
-   "page_end": 49,
-   "n_chars": 42890,
-   "n_words": 8620
+   "page_end": 32,
+   "n_chars": 2351,
+   "n_words": 461,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-007-13-unordered-simplices",
+   "id": "sec-011-9-proof-of-theorem",
+   "number": "9",
+   "title": "Proof of Theorem ??",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 36,
+   "n_chars": 7487,
+   "n_words": 1470,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-012-10-start-of-the-proof-of-theorem",
+   "number": "10",
+   "title": "Start of the proof of Theorem ??",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 41,
+   "n_chars": 12037,
+   "n_words": 2242,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-013-11-completion-of-proof-of-theorem",
+   "number": "11",
+   "title": "Completion of proof of Theorem ??",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 47,
+   "n_chars": 16415,
+   "n_words": 2980,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-014-12-cheeger--chern--simons-class",
+   "number": "12",
+   "title": "Cheeger--Chern--Simons class",
+   "level": 1,
+   "page_start": 47,
+   "page_end": 49,
+   "n_chars": 3752,
+   "n_words": 714,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-015-13-unordered-simplices",
    "number": "13",
    "title": "Unordered simplices",
    "level": 1,
    "page_start": 49,
-   "page_end": 58,
-   "n_chars": 21041,
-   "n_words": 4337
+   "page_end": 52,
+   "n_chars": 5824,
+   "n_words": 1233,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-008-15-example",
+   "id": "sec-016-14-invariants-of-3--manifolds",
+   "number": "14",
+   "title": "Invariants of 3--manifolds",
+   "level": 1,
+   "page_start": 52,
+   "page_end": 58,
+   "n_chars": 14839,
+   "n_words": 2734,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-017-15-example",
    "number": "15",
    "title": "Example",
    "level": 1,
    "page_start": 58,
+   "page_end": 60,
+   "n_chars": 3180,
+   "n_words": 678,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-018-16-other-fields",
+   "number": "16",
+   "title": "Other fields",
+   "level": 1,
+   "page_start": 60,
    "page_end": 62,
-   "n_chars": 7374,
-   "n_words": 1438
+   "n_chars": 4067,
+   "n_words": 634,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 21,
-  "sections": 9,
-  "chars_total": 129917
+  "toc_inferred_entries": 0,
+  "figure_entries": 6,
+  "figure_sequence_gaps": [
+   "figure 1",
+   "figure 2",
+   "figure 5"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 20,
+  "chars_total": 128720,
+  "furniture_lines_stripped": 0
  }
 }

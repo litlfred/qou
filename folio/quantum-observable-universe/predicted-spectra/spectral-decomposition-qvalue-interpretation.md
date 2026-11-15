@@ -90,7 +90,7 @@ The bare term and the combined formula, evaluated at the proton pin $q_0$ with $
 | ${}^{137}\mathrm{Cs}$ | $82$ | $6$ | $\approx 0.15314$ | $-70.2\%$ | $0$ | $-100\%$ | $0.51400$ |
 | ${}^{210}\mathrm{Bi}$ | $127$ | $8$ | $\approx 0.52314$ | $-55.0\%$ | $\approx 1.92747$ | $+65.8\%$ | $1.16270$ |
 
-The bare term misses by $8$–$98\%$ and the combined formula by $1$–$100\%$. The single close entry (${}^{60}\mathrm{Co}$) sits among misses of tens of percent on both sides and is not evidence for the formula. Values are from the producer `computations/spectral_decomposition_qvalue_d.py` and its witness `spectral-decomposition-qvalue-d.witness.json`, which also reproduce Table 1 and the values of $J$ and $F_{\mathrm{deg2}}$ above.
+The bare term misses by $8$–$98\%$ and the combined formula by $1$–$100\%$. The single close entry (${}^{60}\mathrm{Co}$) sits among misses of tens of percent on both sides and is not evidence for the formula. The same computation reproduces Table 1 and the values of $J$ and $F_{\mathrm{deg2}}$ above.
 
 ### Error structure
 

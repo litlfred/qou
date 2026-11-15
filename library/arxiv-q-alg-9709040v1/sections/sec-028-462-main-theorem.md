@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-q-alg-9709040v1
-doc_title: "arXiv:q-alg/9709040v1 29 Sep 1997"
+doc_title: "Deformation quantization of Poisson manifolds"
 section_id: sec-028-462-main-theorem
 section_title: "Main theorem"
 section_number: 4.6.2
@@ -8,7 +8,9 @@ pages: 17-18
 source_pdf: 9709040v1.pdf
 source_sha256: 8baf650d86c5b8ab
 toc_source: inferred
+doc_brief: "Deformation quantization of Poisson manifolds — 75 sections: Front matter; Plans; Star-products"
 ---
+4.6.2. Main theorem
 Unfortunately, the map U(0)
 1
 does not commute with Lie brackets, the Schouten-Nijenhuis bracket does

@@ -1,0 +1,1160 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "motivicperiodsandp1minus3pointsv3",
+  "pages": [
+    {
+      "page": 11,
+      "rotation": 0,
+      "drawings": 18,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1. The groupoid xΠy for x, y ∈{0, 1}. The diagram only represents the groupoid structure; the paths shown do not accurately depict the tangential base points."
+      ],
+      "labels": [
+        {
+          "text": "Motivic periods and P1\\{0, 1, ∞}",
+          "bbox": [
+            109.92,
+            91.64,
+            244.13,
+            102.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI9",
+            "CMR6",
+            "CMR9",
+            "CMSY9",
+            "MSBM10"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "11",
+          "bbox": [
+            452.52,
+            92.37,
+            462.54,
+            102.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The ﬁrst property holds because the constant path is trivial, the second follows",
+          "bbox": [
+            106.92,
+            127.29,
+            462.69,
+            137.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "from the antipode formula and because dch◦dch−1, or dch−1◦dch, is homotopic to",
+          "bbox": [
+            106.92,
+            136.95,
+            462.55,
+            149.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "a constant path. Finally, replacing multiple zeta values with their motivic versions,",
+          "bbox": [
+            106.92,
+            151.17,
+            462.74,
+            161.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "we can deﬁne a motivic version of the Drinfeld associator",
+          "bbox": [
+            106.92,
+            163.17,
+            357.08,
+            173.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            228.12,
+            173.66,
+            242.51,
+            209.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Zm =",
+          "bbox": [
+            182.28,
+            178.29,
+            207.43,
+            192.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "EUFM7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "xi1 . . . xinIm(0; i1, . . . , in; 1) .",
+          "bbox": [
+            261.96,
+            179.15,
+            387.13,
+            194.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7",
+            "EUFM7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(2.10)",
+          "bbox": [
+            437.04,
+            182.49,
+            462.64,
+            192.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "i1,...,in∈{0,1}",
+          "bbox": [
+            210.24,
+            196.95,
+            260.4,
+            204.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI7",
+            "CMR5",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "It satisﬁes the associator equations deﬁned by Drinfeld [15], on replacing 2πi by",
+          "bbox": [
+            106.92,
+            213.33,
+            462.58,
+            223.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Lm (using the fact that ζm(2) = −(Lm)2",
+          "bbox": [
+            106.92,
+            222.7,
+            277.35,
+            237.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR5",
+            "CMR7",
+            "CMSY7",
+            "EUFM5",
+            "EUFM7",
+            "MSBM10",
+            "MSBM7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "), and the double shuﬄe equations of [34].",
+          "bbox": [
+            279.0,
+            227.85,
+            462.53,
+            237.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "24",
+          "bbox": [
+            260.28,
+            233.56,
+            268.21,
+            240.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "2.3. Action of the motivic Galois group. The category MT (Z) is",
+          "bbox": [
+            106.92,
+            250.39,
+            462.57,
+            262.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96,
+            11.96
+          ]
+        },
+        {
+          "text": "a Tannakian category with respect to the de Rham ﬁber functor. Therefore the",
+          "bbox": [
+            106.92,
+            264.21,
+            462.47,
+            274.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "motivic Galois group acts on the aﬃne ring O(0Π1) of the de Rham realisation of",
+          "bbox": [
+            106.92,
+            275.99,
+            462.66,
+            286.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the motivic fundamental torsor of path (2.3). A slight generalisation of theorem",
+          "bbox": [
+            106.92,
+            288.09,
+            462.64,
+            298.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2.1 shows that GdR acts on the de Rham fundamental schemes",
+          "bbox": [
+            106.92,
+            296.49,
+            381.56,
+            310.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "for all x, y ∈{0, 1}",
+          "bbox": [
+            264.48,
+            319.19,
+            345.66,
+            329.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "xΠy",
+          "bbox": [
+            223.92,
+            319.41,
+            240.44,
+            329.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "and furthermore, is compatible with the following structures:",
+          "bbox": [
+            106.92,
+            338.73,
+            373.2,
+            348.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "• (Groupoid structure). The multiplication maps",
+          "bbox": [
+            121.8,
+            356.27,
+            338.05,
+            366.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "xΠy × yΠz −→xΠz",
+          "bbox": [
+            254.64,
+            375.59,
+            338.85,
+            387.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "for all x, y, z ∈{0, 1}.",
+          "bbox": [
+            131.76,
+            394.91,
+            225.25,
+            405.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "• (Inertia). The action of U dR ﬁxes the elements",
+          "bbox": [
+            121.8,
+            410.37,
+            336.44,
+            423.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "exp(x0) in 0Π0(Q)",
+          "bbox": [
+            185.04,
+            432.82,
+            265.12,
+            443.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "exp(x1) in 1Π1(Q)",
+          "bbox": [
+            329.29,
+            432.82,
+            409.24,
+            443.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "and",
+          "bbox": [
+            288.36,
+            433.29,
+            304.47,
+            443.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The groupoid structure is depicted in ﬁgure 1.",
+          "bbox": [
+            121.8,
+            455.97,
+            323.93,
+            465.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "0Π1",
+          "bbox": [
+            275.64,
+            475.68,
+            290.45,
+            484.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR6",
+            "CMR9"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "0Π0",
+          "bbox": [
+            209.88,
+            490.68,
+            224.69,
+            499.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR6",
+            "CMR9"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "1Π1",
+          "bbox": [
+            343.44,
+            490.68,
+            358.13,
+            499.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR6",
+            "CMR9"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            248.76,
+            499.89,
+            253.74,
+            509.85
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            314.52,
+            499.89,
+            319.5,
+            509.85
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1Π0",
+          "bbox": [
+            275.64,
+            505.56,
+            290.45,
+            514.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR6",
+            "CMR9"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "Figure 1. The groupoid xΠy for x, y ∈{0, 1}. The diagram only represents the groupoid",
+          "bbox": [
+            106.92,
+            524.28,
+            462.41,
+            534.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI9",
+            "CMR9",
+            "CMSY9"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "structure; the paths shown do not accurately depict the tangential base points.",
+          "bbox": [
+            106.92,
+            535.2,
+            425.9,
+            544.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "→",
+          "bbox": [
+            287.04,
+            563.91,
+            294.98,
+            571.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "→",
+          "bbox": [
+            353.76,
+            563.91,
+            361.7,
+            571.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "The local monodromy map πtop",
+          "bbox": [
+            121.8,
+            567.53,
+            262.83,
+            580.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "10) →πtop",
+          "bbox": [
+            288.48,
+            567.53,
+            336.39,
+            580.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(Gm,",
+          "bbox": [
+            263.4,
+            569.74,
+            285.37,
+            580.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "10) (where we write Gm",
+          "bbox": [
+            355.2,
+            569.74,
+            462.11,
+            580.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(X,",
+          "bbox": [
+            336.96,
+            570.21,
+            352.08,
+            580.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            251.4,
+            575.08,
+            255.37,
+            582.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            324.96,
+            575.08,
+            328.93,
+            582.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "for P1\\{0, ∞}), corresponding to monodromy around 0, has a motivic analogue",
+          "bbox": [
+            106.92,
+            580.72,
+            462.71,
+            592.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "which gives rise to the inertial condition. Its de Rham realisation is the map",
+          "bbox": [
+            106.92,
+            594.09,
+            441.14,
+            604.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "→",
+          "bbox": [
+            250.92,
+            610.11,
+            258.86,
+            617.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "→",
+          "bbox": [
+            314.52,
+            610.11,
+            322.46,
+            617.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "πdR",
+          "bbox": [
+            210.6,
+            614.45,
+            226.81,
+            626.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "10) →πdR",
+          "bbox": [
+            252.36,
+            614.45,
+            297.25,
+            627.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1 (Gm,",
+          "bbox": [
+            216.24,
+            615.94,
+            249.25,
+            628.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1 (X,",
+          "bbox": [
+            286.68,
+            616.41,
+            312.84,
+            628.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "10) = 0Π0",
+          "bbox": [
+            315.96,
+            616.41,
+            358.33,
+            627.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "→",
+          "bbox": [
+            425.76,
+            633.03,
+            433.7,
+            640.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "and is respected by GdR. One shows that U dR acts trivially on πdR",
+          "bbox": [
+            106.92,
+            635.73,
+            401.65,
+            649.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1 (Gm,",
+          "bbox": [
+            391.08,
+            638.86,
+            424.09,
+            651.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "10), and",
+          "bbox": [
+            427.2,
+            639.33,
+            462.63,
+            649.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "furthermore that the element exp(x0) ∈0Π0(Q) is in the image of the previous",
+          "bbox": [
+            106.92,
+            650.86,
+            462.7,
+            661.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "map. This gives the ﬁrst inertial condition.",
+          "bbox": [
+            106.92,
+            663.33,
+            295.36,
+            673.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

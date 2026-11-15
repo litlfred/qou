@@ -1,0 +1,211 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-0911.1038v2",
+ "source": {
+  "structure_sha256": "3bc566efaefd44c65b2a9536bde79ff211e9facffa8e7387762583d9a986378c",
+  "file": "0911.1038v2.pdf"
+ },
+ "provenance": {
+  "title": "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS: STRUCTURE OF KEROV CHARACTER POLYNOMIALS",
+  "authors": "MACIEJ DO\u0141 \u02dbEGA AND PIOTR \u015aNIADY",
+  "arxiv": {
+   "id": "0911.1038",
+   "version": "2",
+   "primary_class": "math.CO",
+   "stamp_date": "12 Mar 2012"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 12,
+  "by_kind": {
+   "recommendation": 12
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Such a dilated Young diagram is usually no longer a Young diagram but is a *generalized Young diagram* and we should not regard it as a combinatorial object but rather as a geometric one.",
+   "strength": "should-not",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-12-asymptotic-shape-of-young-diagrams.md",
+   "section_title": "Asymptotic shape of Young diagrams",
+   "pages": "1-2",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "*How should we normalize the characters of the symmetric groups in order to obtain some meaningful asymptotic quantities?* The answer for this question was given by [@Biane2003] who gave the following definition.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-13-how-to-normalize-the-characters.md",
+   "section_title": "How to normalize the characters?",
+   "pages": "2-3",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "For any permutation $\\pi\\in \\mathfrak{S}(k)$ and an irreducible representation $\\rho^\\lambda$ of the symmetric group $\\mathfrak{S}(n)$ corresponding to the Young diagram $\\lambda$ we define the *normalized character* $$\\label{eq:character} \\Sigma^\\lambda_\\pi =\\begin{cases} \\underbrace{n(n-1)\\cdots (n-k+1)}_{k \\text{ factors}} \\frac{\\mathop{\\mathrm{Tr}}\\rho^\\lambda(\\pi)}{\\text{dimension of $\\rho^\\lambda$}} & \\text{if } k\\leq n, \\\\ 0 & \\text{otherwise.} \\end{cases}$$ An interesting feature of this definition is that we do not require that $k$, the index of the symmetric group to which $\\pi$ belongs, must be equal to $n$, the number of boxes of $\\lambda$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-13-how-to-normalize-the-characters.md",
+   "section_title": "How to normalize the characters?",
+   "pages": "2-3",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Explicit but rather complicated formulas for the general genus $K_{k,k+1-2g}$ were found by Goulden and Rattan [@GouldenRattan2007] (for a more elementary proof we refer to the work of Biane [@Biane2005/07]) and we shall discuss their result in Section [\\[sec:Goulden-Rattan\\]](#sec:Goulden-Rattan){reference-type=\"ref\" reference=\"sec:Goulden-Rattan\"}.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-007-17-genus-expansion.md",
+   "section_title": "Genus expansion",
+   "pages": "5-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall explain precisely what this divisibility means and show in Section [\\[sec:divisibility\\]](#sec:divisibility){reference-type=\"ref\" reference=\"sec:divisibility\"} that it holds indeed by studying the arithmetic properties of Kerov polynomials and their divisibility by prime numbers.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-009-19-general-idea-of-the-proof.md",
+   "section_title": "General idea of the proof",
+   "pages": "7-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall do it in Section [\\[sec:existence\\]](#sec:existence){reference-type=\"ref\" reference=\"sec:existence\"} by analysis of the Goulden-Rattan formula.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-009-19-general-idea-of-the-proof.md",
+   "section_title": "General idea of the proof",
+   "pages": "7-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "It has a property that $\\Sigma_\\Pi=\\Sigma_\\pi$, where the right-hand side should be understood as in [\\[eq:character\\]](#eq:character){reference-type=\"eqref\" reference=\"eq:character\"} for some $\\pi\\in\\mathfrak{S}(l)$, $l\\geq 1$.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-022-43-arithmetic-properties-of-kerov-polynomials.md",
+   "section_title": "Arithmetic properties of Kerov polynomials",
+   "pages": "21-25",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "::: proof *Proof of Lemma [\\[lem:div\\]](#lem:div){reference-type=\"ref\" reference=\"lem:div\"}.* In the following we shall prove that the coefficients are integer numbers.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-022-43-arithmetic-properties-of-kerov-polynomials.md",
+   "section_title": "Arithmetic properties of Kerov polynomials",
+   "pages": "21-25",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In the following we shall use the notations and results presented in the paper of Biane [@Biane2003].",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-022-43-arithmetic-properties-of-kerov-polynomials.md",
+   "section_title": "Arithmetic properties of Kerov polynomials",
+   "pages": "21-25",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The coefficient of $z^{-1}$ in [\\[eq:iloczynn2\\]](#eq:iloczynn2){reference-type=\"eqref\" reference=\"eq:iloczynn2\"} can be viewed as a polynomial in $a$; we shall denote it by $P(a)$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-022-43-arithmetic-properties-of-kerov-polynomials.md",
+   "section_title": "Arithmetic properties of Kerov polynomials",
+   "pages": "21-25",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "It follows that $P-\\widetilde{P}$ has degree at most $p-2$ which takes the same value for all $a\\in\\{1,\\dots,p-1\\}$ hence it must be equal to the constant.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-022-43-arithmetic-properties-of-kerov-polynomials.md",
+   "section_title": "Arithmetic properties of Kerov polynomials",
+   "pages": "21-25",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "It follows that P \u2212eP has degree at most p \u22122 which takes the same value for all a \u2208{1, . . . , p \u22121} hence it must be equal to the constant.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-024-references.md",
+   "section_title": "References",
+   "pages": "25-26",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

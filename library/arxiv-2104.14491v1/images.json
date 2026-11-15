@@ -1,0 +1,96 @@
+{
+  "$schema": "folio-document-images/v1",
+  "doc_id": "arxiv-2104.14491v1",
+  "images": [
+    {
+      "id": "img-p003-1",
+      "file": "images/img-p003-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.025234,
+        "imagesOnPage": 4,
+        "page": 3
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      }
+    },
+    {
+      "id": "img-p003-2",
+      "file": "images/img-p003-2.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.028814,
+        "imagesOnPage": 4,
+        "page": 3
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      }
+    },
+    {
+      "id": "img-p003-3",
+      "file": "images/img-p003-3.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.004387,
+        "imagesOnPage": 4,
+        "page": 3
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      }
+    },
+    {
+      "id": "img-p003-4",
+      "file": "images/img-p003-4.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.004847,
+        "imagesOnPage": 4,
+        "page": 3
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      }
+    },
+    {
+      "id": "img-p011-1",
+      "file": "images/img-p011-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.027031,
+        "imagesOnPage": 2,
+        "page": 11
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      }
+    },
+    {
+      "id": "img-p011-2",
+      "file": "images/img-p011-2.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.02641,
+        "imagesOnPage": 2,
+        "page": 11
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      }
+    }
+  ]
+}

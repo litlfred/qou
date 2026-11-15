@@ -7,10 +7,11 @@
   "bytes": 554216,
   "pages": 13,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +21,28 @@
    "stamp_date": "1 May 2014"
   },
   "doi": null,
-  "title": "COMBINATORIAL DESCENT DATA FOR GERBES AMNON YEKUTIELI",
-  "authors_raw": null,
+  "title": "COMBINATORIAL DESCENT DATA FOR GERBES",
+  "authors_raw": "AMNON YEKUTIELI",
   "title_lines": [
-   "COMBINATORIAL DESCENT DATA FOR GERBES",
-   "AMNON YEKUTIELI"
+   "COMBINATORIAL DESCENT DATA FOR GERBES"
   ],
-  "abstract": "We consider descent data in cosimplicial crossed groupoids. This is a combinatorial abstraction of the descent data for gerbes in algebraic geom- etry. The main result is this: a weak equivalence between cosimplicial crossed groupoids induces a bijection on gauge equivalence classes of descent data. 0. Introduction For a cosimplicial crossed groupoidG ={Gp}p\u2208N we denote byDesc(G) the set of gauge equivalence classes of descent data. The purpose of this note is to prove: Theorem 0.1(Equivalence). Let \u03a6 : G\u2192H be a weak equivalence between cosim- plicial crossed groupoids. Then the function Desc(\u03a6) : Desc(G)\u2192Desc(H) is bijective. The various notions involved are recalled or de\ufb01ned in Section 1. The theorem is repeated as Theorem 2.4 in Section 2, and proved there. Connections with other papers, and several remarks, are in Section 3. Theorem 0.1 plays a crucial role in the new version of our paper [Ye1] on twisted deformation quantization of algebraic varieties. This is explained in Remark 3.2. Acknowledgments. I wish to thank Matan Prezma, Ronald Brown, Sharon Hol- lander, Vladimir Hinich, Behrang Noohi and Lawrence Breen for useful discussions. 1. Combinatorial Descent Data We begin with a quick review of cosimplicial theory. Let\u2206 denote the simplex category. The set of objects of\u2206 is the setN of natural numbers. Givenp,q\u2208N, the morphisms\u03b1:p\u2192q in \u2206 are order preserving functions \u03b1:{0,...,p}\u2192{0,...,q}. We denote this set of morphisms by\u2206 q p. An element of \u2206 q p may be thought of as a sequencei = (i0,...,i p) of integers with 0\u2264i0 \u2264\u00b7\u00b7\u00b7\u2264ip \u2264q. We call \u2206 q :={\u2206 q p}p\u2208N the q-dimensional combinatorial simplex, and an elementi\u2208\u2206 q p is ap-dimensional face of\u2206 q. Let C be some category. A cosimplicial object in C is a functorC : \u2206 \u2192C. We shall usually writeC p := C(p) \u2208Ob(C), and leave the morphisms C(\u03b1) : C(p)\u2192C(q), for\u03b1\u2208\u2206 q p, implicit. Thus we shall refer to the cosimplicial object C as{C p}p\u2208N. The category of cosimplicial objects inC, where the morphisms are natural tr",
+  "abstract": "We consider descent data in cosimplicial crossed groupoids. This is a combinatorial abstraction of the descent data for gerbes in algebraic geom- etry. The main result is this: a weak equivalence between cosimplicial crossed groupoids induces a bijection on gauge equivalence classes of descent data. 0. Introduction For a cosimplicial crossed groupoid G = {Gp}p∈N we denote by Desc(G) the set of gauge equivalence classes of descent data. The purpose of this note is to prove: Theorem 0.1 (Equivalence). Let Φ : G →H be a weak equivalence between cosim- plicial crossed groupoids. Then the function Desc(Φ) : Desc(G) →Desc(H) is bijective. The various notions involved are recalled or deﬁned in Section 1. The theorem is repeated as Theorem 2.4 in Section 2, and proved there. Connections with other papers, and several remarks, are in Section 3. Theorem 0.1 plays a crucial role in the new version of our paper [Ye1] on twisted deformation quantization of algebraic varieties. This is explained in Remark 3.2. Acknowledgments. I wish to thank Matan Prezma, Ronald Brown, Sharon Hol- lander, Vladimir Hinich, Behrang Noohi and Lawrence Breen for useful discussions. 1. Combinatorial Descent Data We begin with a quick review of cosimplicial theory. Let ∆denote the simplex category. The set of objects of ∆is the set N of natural numbers. Given p, q ∈N, the morphisms α : p →q in ∆are order preserving functions α : {0, . . . , p} →{0, . . . , q}. We denote this set of morphisms by ∆q p. An element of ∆q p may be thought of as a sequence i = (i0, . . . , ip) of integers with 0 ≤i0 ≤· · · ≤ip ≤q. We call ∆q := {∆q p}p∈N the q-dimensional combinatorial simplex, and an element i ∈∆q p is a p-dimensional face of ∆q. Let C be some category. A cosimplicial object in C is a functor C : ∆→C. We shall usually write Cp := C(p) ∈Ob(C), and leave the morphisms C(α) : C(p) →C(q), for α ∈∆q p, implicit. Thus we shall refer to the cosimplicial object C as {Cp}p∈N. The category of cosimplicial objects in",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20181020091836Z",
-   "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.12",
-   "Title": ""
-  }
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20181020091836Z"
+  },
+  "title_raw": "COMBINATORIAL DESCENT DATA FOR GERBES",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "COMBINATORIAL DESCENT DATA FOR GERBES 0. Introduction For a cosimplicial crossed groupoid G = { G p } p ∈ N we denote by Desc( G ) the set of gauge equivalence classes of descent data. The purpose of this note is to prove: Theorem 0.1 (Equivalence) . Let Φ : G → H be a weak equivalence between cosim",
+   "outline": "0. Introduction",
+   "text": "COMBINATORIAL DESCENT DATA FOR GERBES",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "COMBINATORIAL DESCENT DATA FOR GERBES AMNON YEKUTIELI"
  },
  "toc": [
   {
@@ -41,38 +50,162 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "0"
+   "number": "0",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Combinatorial Descent Data",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The Main Theorem",
    "page": 5,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Some Remarks",
    "page": 10,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Illustration of a combinatorial descent datum (x, g, a) in the cosimplicial crossed groupoid G = {Gp}p∈N",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
    "id": "sec-000-1-combinatorial-descent-data",
@@ -82,7 +215,9 @@
    "page_start": 1,
    "page_end": 1,
    "n_chars": 326,
-   "n_words": 48
+   "n_words": 48,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-0-introduction",
@@ -91,8 +226,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 5,
-   "n_chars": 7996,
-   "n_words": 1278
+   "n_chars": 8237,
+   "n_words": 1519,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-2-the-main-theorem",
@@ -101,8 +238,10 @@
    "level": 1,
    "page_start": 5,
    "page_end": 10,
-   "n_chars": 10223,
-   "n_words": 1616
+   "n_chars": 10605,
+   "n_words": 1998,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-3-some-remarks",
@@ -111,8 +250,10 @@
    "level": 1,
    "page_start": 10,
    "page_end": 12,
-   "n_chars": 7817,
-   "n_words": 1225
+   "n_chars": 7933,
+   "n_words": 1344,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-references",
@@ -121,16 +262,26 @@
    "level": 1,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 2814,
-   "n_words": 381
+   "n_chars": 2832,
+   "n_words": 399,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 5,
+  "toc_inferred_entries": 0,
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
   "sections": 5,
-  "chars_total": 29176,
+  "chars_total": 29933,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "paper.tex",
@@ -146,20 +297,20 @@
      "id": "sec-000-1-combinatorial-descent-data",
      "title": "Combinatorial Descent Data",
      "prose_ratio": 0.097,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-001-0-introduction",
      "title": "Introduction",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.268,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.311,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-002-2-the-main-theorem",
      "title": "The Main Theorem",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.979,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -167,7 +318,7 @@
      "id": "sec-003-3-some-remarks",
      "title": "Some Remarks",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "latex"
     },

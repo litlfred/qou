@@ -8,7 +8,7 @@
   "pages": 21,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -21,13 +21,13 @@
    "stamp_date": "4 Aug 2000"
   },
   "doi": null,
-  "title": "arXiv:math/0008040v1 [math.QA] 4 Aug 2000",
+  "title": "Rectangle diagrams for the Lusztig cones of quantized enveloping algebras of type A",
   "authors_raw": "Robert Marsh",
   "title_lines": [
    "Rectangle diagrams for the Lusztig cones of quantized enveloping",
    "algebras of type A"
   ],
-  "abstract": "Let U be the quantum group associated to a Lie algebra g of type An. The negative part U \u2212of U has a canonical basis B de\ufb01ned by Lusztig and Kashi- wara, with favourable properties. We show how the spanning vectors of the cones de\ufb01ned by Lusztig [12], when regarded as monomials in Kashiwara\u2019s root operators, can be described using a remarkable rectangle combinatorics. We use this to calculate the Lusztig parameters of the corresponding canonical basis elements, conjecturing that translates of these vectors span the simplicial regions of linearity of Lusztig\u2019s piecewise-linear function [9, \u00a72].",
+  "abstract": "Let U be the quantum group associated to a Lie algebra g of type An. The negative part U −of U has a canonical basis B deﬁned by Lusztig and Kashi- wara, with favourable properties. We show how the spanning vectors of the cones deﬁned by Lusztig [12], when regarded as monomials in Kashiwara’s root operators, can be described using a remarkable rectangle combinatorics. We use this to calculate the Lusztig parameters of the corresponding canonical basis elements, conjecturing that translates of these vectors span the simplicial regions of linearity of Lusztig’s piecewise-linear function [9, §2].",
   "docinfo": {
    "Title": "arXiv:math/0008040v1  [math.QA]  4 Aug 2000",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
@@ -45,7 +45,8 @@
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:math/0008040v1 [math.QA] 4 Aug 2000"
  },
  "toc": [
   {
@@ -157,7 +158,7 @@
   {
    "kind": "figure",
    "number": "3",
-   "title": "The rectangles \u03c1(Y )",
+   "title": "The rectangles ρ(Y )",
    "page": 9,
    "confidence": 0.8,
    "evidence": [
@@ -169,7 +170,7 @@
   {
    "kind": "figure",
    "number": "4",
-   "title": "Examples of the rectangles \u03c1(Y )",
+   "title": "Examples of the rectangles ρ(Y )",
    "page": 10,
    "confidence": 0.8,
    "evidence": [
@@ -181,7 +182,7 @@
   {
    "kind": "figure",
    "number": "5",
-   "title": "The diagram D(LRL\u2212)",
+   "title": "The diagram D(LRL−)",
    "page": 10,
    "confidence": 0.8,
    "evidence": [
@@ -193,7 +194,7 @@
   {
    "kind": "figure",
    "number": "6",
-   "title": "Example: Q = RRLLRL, Y = \u2212\u2212LL \u2212\u2212",
+   "title": "Example: Q = RRLLRL, Y = −−LL −−",
    "page": 11,
    "confidence": 0.8,
    "evidence": [
@@ -205,7 +206,7 @@
   {
    "kind": "figure",
    "number": "7",
-   "title": "The central line in D(LRL\u2212)",
+   "title": "The central line in D(LRL−)",
    "page": 13,
    "confidence": 0.8,
    "evidence": [
@@ -217,7 +218,7 @@
   {
    "kind": "figure",
    "number": "8",
-   "title": "The rectangles \u03c1(Y ) and \u03c1(Z)",
+   "title": "The rectangles ρ(Y ) and ρ(Z)",
    "page": 16,
    "confidence": 0.8,
    "evidence": [
@@ -438,8 +439,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1000,
-   "n_words": 146,
+   "n_chars": 998,
+   "n_words": 145,
    "label_start": "1",
    "label_end": "1"
   },
@@ -450,8 +451,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 6558,
-   "n_words": 1323,
+   "n_chars": 6554,
+   "n_words": 1321,
    "label_start": "1",
    "label_end": "3"
   },
@@ -462,8 +463,8 @@
    "level": 1,
    "page_start": 3,
    "page_end": 5,
-   "n_chars": 5577,
-   "n_words": 987,
+   "n_chars": 5611,
+   "n_words": 989,
    "label_start": "3",
    "label_end": "5"
   },
@@ -474,8 +475,8 @@
    "level": 1,
    "page_start": 5,
    "page_end": 8,
-   "n_chars": 9449,
-   "n_words": 1678,
+   "n_chars": 9486,
+   "n_words": 1681,
    "label_start": "5",
    "label_end": "8"
   },
@@ -486,8 +487,8 @@
    "level": 1,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 4239,
-   "n_words": 757,
+   "n_chars": 4296,
+   "n_words": 763,
    "label_start": "8",
    "label_end": "9"
   },
@@ -498,8 +499,8 @@
    "level": 1,
    "page_start": 9,
    "page_end": 13,
-   "n_chars": 14778,
-   "n_words": 2055,
+   "n_chars": 14765,
+   "n_words": 2050,
    "label_start": "9",
    "label_end": "13"
   },
@@ -510,8 +511,8 @@
    "level": 1,
    "page_start": 13,
    "page_end": 21,
-   "n_chars": 28731,
-   "n_words": 5870,
+   "n_chars": 28724,
+   "n_words": 5863,
    "label_start": "13",
    "label_end": "21"
   }
@@ -531,7 +532,8 @@
    "items": []
   },
   "sections": 7,
-  "chars_total": 70332,
+  "chars_total": 70434,
+  "furniture_lines_stripped": 21,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
@@ -568,14 +570,14 @@
      "id": "sec-002-3-the-lusztig-cones-and-their-spanning-vectors",
      "title": "The Lusztig cones and their spanning vectors",
      "prose_ratio": 0.992,
-     "coverage_ratio": 0.992,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-4-canonical-basis-elements-corresponding-to-span",
      "title": "Canonical basis elements corresponding to spanning vectors",
-     "prose_ratio": 0.81,
+     "prose_ratio": 0.84,
      "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "pandoc"
@@ -592,7 +594,7 @@
      "id": "sec-005-6-a-reparametrization",
      "title": "A Reparametrization",
      "prose_ratio": 0.982,
-     "coverage_ratio": 0.866,
+     "coverage_ratio": 0.864,
      "result": "overlaid",
      "converter": "pandoc"
     }

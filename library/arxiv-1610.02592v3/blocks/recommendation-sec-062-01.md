@@ -1,0 +1,1 @@
+The reason for using this terminology is the famous geometrisation conjecture, proposed by Thurston in 1982 and proved by Perelman in 2003, which states that each of the blocks of the decomposition should be geometric, in the sense that it may be equipped with a nice Riemannian metric.

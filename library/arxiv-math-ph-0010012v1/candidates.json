@@ -1,0 +1,106 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-ph-0010012v1",
+ "source": {
+  "structure_sha256": "cd6eca5ccb81ff90b6fa939571e87119d442d754e67f12c8a0e1b5326431b8d2",
+  "file": "0010012v1.pdf"
+ },
+ "provenance": {
+  "title": "arXiv:math-ph/0010012v1 10 Oct 2000",
+  "authors": "Steve Zelditch",
+  "arxiv": {
+   "id": "math-ph/0010012",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "10 Oct 2000"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 5,
+  "by_kind": {
+   "recommendation": 5
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "It should be mentioned that the 'real case' has many other meanings in the literature on random polynomials (e.g. real polynomials and their real zeros).",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-2",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Similar results should hold in the real case.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-009-31-statement-of-results.md",
+   "section_title": "Statement of results",
+   "pages": "4-4",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In the case of $S^m$, such density results are obvious since they must be rotationally invariant.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-009-31-statement-of-results.md",
+   "section_title": "Statement of results",
+   "pages": "4-4",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The result for zeros in dimension one agrees with the formula of Hanny [@Ha] on ${\\mathbb C}{\\mathbb P}^1$, as it must since the result is universal.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-011-33-universality-and-scaling-of-correlations.md",
+   "section_title": "Universality and scaling of correlations",
+   "pages": "5-5",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The intutitive idea that quantum chaotic eigenfunctions should resemble \u2018Gaussian random waves\u2019 seems to have been \ufb01rst suggested by M.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-015-4-quantum-ergodicity-and-random-waves.md",
+   "section_title": "Quantum ergodicity and random waves",
+   "pages": "6-7",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

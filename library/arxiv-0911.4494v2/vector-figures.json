@@ -1,0 +1,216 @@
+{
+  "$schema": "folio-vector-figures/v1",
+  "doc_id": "arxiv-0911.4494v2",
+  "figures": [
+    {
+      "id": "vfig-p004",
+      "file": "figures/vfig-p004.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 4
+      },
+      "page": 4,
+      "rotation": 0,
+      "captionLabels": [
+        "1"
+      ],
+      "region": [
+        375.3,
+        87.34,
+        412.1,
+        124.14
+      ],
+      "assembly": {
+        "drawings": 16,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              375.3,
+              87.34,
+              412.1,
+              124.14
+            ],
+            "drawings": 5,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "3"
+            ]
+          }
+        ],
+        "boxes": [],
+        "unlabelledClosedShapes": 0,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              142.85,
+              103.33,
+              151.31,
+              111.78
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              171.2,
+              103.33,
+              179.65,
+              111.78
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              227.89,
+              103.33,
+              236.35,
+              111.78
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              151.24,
+              106.04,
+              171.26,
+              106.04
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              151.24,
+              109.07,
+              171.26,
+              109.07
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              179.85,
+              107.55,
+              191.19,
+              107.55
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              216.36,
+              107.55,
+              227.69,
+              107.55
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              158.42,
+              101.89,
+              164.09,
+              113.22
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              375.3,
+              87.34,
+              383.75,
+              95.79
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              375.3,
+              115.68,
+              383.75,
+              124.14
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              403.65,
+              101.51,
+              412.1,
+              109.97
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              460.34,
+              101.51,
+              468.79,
+              109.97
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              383.5,
+              93.55,
+              403.91,
+              103.76
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              383.5,
+              107.72,
+              403.91,
+              117.92
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              412.3,
+              105.74,
+              423.64,
+              105.74
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              448.8,
+              105.74,
+              460.14,
+              105.74
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 85
+      }
+    }
+  ]
+}

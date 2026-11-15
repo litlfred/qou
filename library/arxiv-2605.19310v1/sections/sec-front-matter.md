@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 2605.19310v1.pdf
 source_sha256: 047d492babc63d2f
 toc_source: inferred
+doc_brief: "A Fourier-Free Density-Increment Proof of Roth's Theorem — We give an elementary, Fourier-free proof of Roth’s theorem."
 ---
 A FOURIER-FREE DENSITY-INCREMENT PROOF OF
 ROTH’S THEOREM

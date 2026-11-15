@@ -6,4 +6,4 @@ We develop calculations using shell structure in half-lives (${}^3\mathrm{H}$ an
 
 We identify the half-life ratio with a ratio of Markov-trace volumes. We capture the LR-fusion rigidity that pins double-magic isotopes. We record the homological shortcut that analytically bypasses the $k \geq 12$ matrix-evaluation barrier. We derive magic numbers directly from the per-partition nuclear character at $q_0$.
 
-We close with complementary examples and the Strutinsky reformulation. We demonstrate that the empirical Bethe–Weizsäcker terms are entirely superseded by the macroscopic $q$-CLT and JSJ volume evaluations. Finally, we formulate Strutinsky's shell correction as the categorical residue sum.
+We close with complementary examples and the Strutinsky reformulation. We demonstrate that the empirical Bethe–Weizsäcker terms are replaced by the macroscopic $q$-CLT and JSJ volume evaluations. Finally, we formulate Strutinsky's shell correction as the categorical residue sum.

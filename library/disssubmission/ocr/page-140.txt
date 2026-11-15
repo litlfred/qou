@@ -1,0 +1,48 @@
+132 Chapter 5 — A family of surfaces
+
+interested in the composite morphism
+f: Ys = Os Xs @3s ——~> Xs Xs5Xs —*. Xz
+
+where a denotes the group law of the abelian scheme. For each s € S(C)
+the restriction fly, : f~!(X,) —> X, is the family of the intersections of
+translates of the theta divisor for the corresponding ppav X; as in the proof
+of the Bertini-type lemma 5.3.
+
+LEMMA 5.28. There exists a smooth quasi-projective curve S C Wan
+with the following properties.
+
+(a) For some so € S(C) the fibre Xs, is the Jacobian variety of a general
+curve, whereas for all other points s # so the theta divisor ®, C Xs
+is smooth.
+
+(b) The family f : Ys —> S of intersecting theta divisors restricts to a
+smooth proper morphism
+
+flus: f- (Us) — Us
+over some Zariski-open subset Us C Xs which surjects onto S.
+
+Proof. The locus of all ppav’s with a singular theta divisor is itself
+a divisor in the moduli space 2%, and it contains the locus of Jacobian
+varieties as a component [4]. Hence if we take S + %,, to be a smooth
+quasi-projective complex curve which meets the locus of Jacobian varieties
+in a general point so € S(C) and is otherwise contained in the Zariski-open
+dense locus of ppav’s with a smooth theta divisor, then (a) holds.
+
+Consider then the corresponding morphism f : Ys; —> Xs. By the generic
+flatness theorem in the form of lemma 5.29 below, we find a Zariski-open
+dense subset Us C Xs which maps surjectively onto S and furthermore has
+the property that the restriction
+
+flus: f-'(Us) — Us
+
+is a flat morphism. Now recall from lemma 4.5 that the theta divisor of the
+non-hyperelliptic Jacobian variety X,, has only isolated singularities, so by
+the Bertini-type lemma 5.3 we can find a point u in Us, = Us Xs, such
+that the fibre ¥, = f—!(u) is smooth. Furthermore, for any proper and flat
+morphism of varieties over a field which has at least one smooth fibre, there
+exists by [55, ex. III.10.2] a non-empty Zariski-open subset of the target
+over which the morphism is smooth. In our case therefore f restricts to
+a smooth morphism over some Zariski-open neighborhood of the point wu
+in Us. We can replace Us by such a neighborhood and accordingly shrink
+the curve S in such a way that the special point so still lies in S(C) but that
+now also the properties in claim (b) are satisfied. Oo

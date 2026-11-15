@@ -21,6 +21,10 @@ export default proposition({
   tags: ["binding", "level-selection", "logarithmic", "gap-a-3", "brane-tower"],
   authorNotes: [
     {
+      kind: "refined-framing",
+      body: "This paragraph previously justified the A ≥ 1 restriction by saying the tower bound forces w(0) ≥ c > 0 while M·0 = 0. That reading was backwards: w_std(0) = 0, and the A = 0 case exhibited a false antecedent.",
+    },
+    {
       kind: "note",
       date: "2026-08-09",
       body:

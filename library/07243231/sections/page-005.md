@@ -8,6 +8,7 @@ pages: 5-5
 source_pdf: 07243231.pdf
 source_sha256: e3880af88c7d91a3
 toc_source: none
+doc_brief: "Elias, Ben; Makisumi, Shotaro; Thiel, Ulrich; Williamson, Geordie — 5 sections: Page 1; Page 2; Page 3"
 ---
 of the Kazhdan-Lusztig basis. This chapter deﬁnes the p-canonical basis, describing how it is computed
 in practice by use of the local intersection form. The chapter presents examples that demonstrate how
@@ -27,5 +28,3 @@ Cited in 1 Review
 Cited in 6 Documents
 Full Text: DOI
 Edited by FIZ Karlsruhe, the European Mathematical Society and the Heidelberg Academy of Sciences and Humanities
-© 2023 FIZ Karlsruhe GmbH
-Page 5

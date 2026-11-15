@@ -3,11 +3,13 @@ doc_id: yanagihara-1980-meromorphic-solutions-difference-equations
 doc_title: "Meromorphic Solutions of Some Difference Equations"
 section_id: page-004
 section_title: "Page 4"
-section_number: null
 pages: 4-4
+pdf_page: 4
 source_pdf: yanagihara-1980-meromorphic-solutions-difference-equations.pdf
 source_sha256: c5e4a39ec3d43d8f
-toc_source: undetermined
+text_source: ocr
+granularity: page
+doc_brief: "Meromorphic Solutions of Some Difference Equations — 18 sections: Page 1; Page 2; Page 3"
 ---
 312 N. YANAGIHARA
 

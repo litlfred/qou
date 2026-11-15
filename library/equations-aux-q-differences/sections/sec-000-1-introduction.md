@@ -8,6 +8,7 @@ pages: 1-5
 source_pdf: Equations_aux_q-differences.pdf
 source_sha256: 357d4e0b546b27e6
 toc_source: inferred
+doc_brief: "Équations aux q-différences — 14 sections: Front matter; Introduction; Br´eviaire"
 ---
 Une ´equation diﬀ´erentielle ordinaire est une relation G(x; f, . . . , f (n)) = 0
 entre une fonction inconnue f et ses transform´ees par it´eration de « l’automor-

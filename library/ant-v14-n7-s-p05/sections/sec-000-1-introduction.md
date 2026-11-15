@@ -8,8 +8,9 @@ pages: 1-1
 source_pdf: ant-v14-n7-s-p05.pdf
 source_sha256: 1c8e94ff62a8d920
 toc_source: inferred
+doc_brief: "Motivic Gauss–Bonnet formulas — 12 sections: Front matter; Introduction; X+ ∈SH(k) is dualizable. In partic"
 ---
-1801
+Introduction
 2.
 Duality and Euler characteristics
 1804

@@ -1,0 +1,48 @@
+50 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY
+
+Proposition 7.7. The Fourier transform of the function Fp (6t,,.-.; 5t, ) is Fr(F1, wy En).
+Hence, the Fourier transform of the connected Green’s functions is
+18 J. (Bh, E, nw Fr(E E
+(18) Ge (E,, «5. En) = > JA] r(Zy,...,En).
+TEG$,(n)
+
+The proof of the proposition is straightforward.
+To illustrate the proposition, consider an example.
+Example 1. The connected 4-point function for the quartic potential, modulo
+
+g’, in momentum space, looks like:
+
+Gi (Ei, B2, Es, Es) = Wate 54(>_ Ei) + O(9?).
+
+FIGURE 26
+
+Example 2. Let us compute the 1PI 4-point function in the same problem,
+modulo g?. Thus, in addition to the above, we need to compute the g? coefficient,
+which comes from 1-loop diagrams. There are three such diagrams, differing by
+permutation of external edges. One of these diagrams is as follows: it has external
+vertices 1,2,3,4 and internal ones 5,6 such that 1,2 are connected to 5, 3,4 to 6,
+and 5 and 6 are connected by two edges (Fig.26). This diagram has the symmetry
+group Z/2, so its contribution is
+
+2
+g dQ 1 <
+> ; z ; =6 Ej).
+2 (f (Q? + m?)((E, + Ey - Q)? may I E? +m? os i)
+The integral inside is easy to compute for example by residues. This yields
+Gi. (E1, Bo, Es, Es) =
+
+1 T.
+Tpit 2 a 5(S- Ei) + O(9°).
+
+i=1
+7.9. The Wick rotation in momentum space. To obtain the correlation func-
+tions of quantum mechanics, we should, after computing them in the Euclidean
+setting, Wick rotate them back to the Minkowski setting. Let us do it at the
+level of Feynman integrals in momentum space. (We could do it in position space
+as well, but it is instructive for the future to do it in momentum space, since in
+higher dimensional field theory which we will discuss later, the momentum space
+representation is more convenient).
+Consider the Euclidean propagator
+
+1 it
+Pane = [awe dt,

@@ -4,10 +4,11 @@ doc_title: "DERIVED HIGHER HOCHSCHILD HOMOLOGY, TOPOLOGICAL CHIRAL HOMOLOGY AND 
 section_id: sec-front-matter
 section_title: "Front matter"
 section_number: null
-pages: 1-1
+pages: 1-2
 source_pdf: 1011.6483v3.pdf
 source_sha256: 7a425e51860c37a4
 toc_source: outline
+doc_brief: "DERIVED HIGHER HOCHSCHILD HOMOLOGY, TOPOLOGICAL CHIRAL HOMOLOGY AND FACTORIZATION ALGEBRAS — We study the higher Hochschild chain functor, factorization alge- bras and their relationship with"
 ---
 arXiv:1011.6483v3  [math.QA]  31 May 2012
 DERIVED HIGHER HOCHSCHILD HOMOLOGY,
@@ -38,3 +39,64 @@ chiral homology satisﬁes an exponential law, i.e., a Fubini type Theorem to
 compute them on products of manifolds.
 Contents
 1.
+Introduction
+2
+2.
+Preliminary deﬁnitions and notation
+6
+2.1.
+Simplicial sets
+7
+2.2.
+Commutative Diﬀerential Graded Algebras
+8
+2.3.
+Dwyer-Kan localization and (∞, 1)-categories
+8
+3.
+Derived higher Hochschild functor
+10
+3.1.
+Naive axiomatic approach to higher Hochschild homology
+10
+3.2.
+Higher Hochschild as an (∞, 1)-functor
+15
+3.3.
+Pointed simplicial sets and modules
+22
+4.
+Factorization algebras and derived Hochschild functor over spaces
+25
+4.1.
+The Hochschild (∞, 1)-functor in T op
+25
+4.2.
+(Pre)Factorization algebras
+28
+4.3.
+Locally constant factorization algebras and En-algebras
+37
+5.
+Relationship with topological chiral homology
+40
+5.1.
+Review of topological chiral homology `a la Lurie
+40
+1
+2
+G. GINOT, T. TRADLER, AND M. ZEINALIAN
+5.2.
+Locality axiom and the equivalence of topological chiral homology
+with higher Hochschild functor for CDGAs
+43
+5.3.
+Relation with the Blob complex
+47
+5.4.
+Topological chiral homology as a factorization algebra
+49
+5.5.
+Some applications
+55
+References

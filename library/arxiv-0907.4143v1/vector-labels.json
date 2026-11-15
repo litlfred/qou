@@ -1,0 +1,1441 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-0907.4143v1",
+  "pages": [
+    {
+      "page": 9,
+      "rotation": 0,
+      "drawings": 1781,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Fig. 1. Number distributions of X-ray sources in the Galactic SySs as a function of orbital periods (all numbers are normalized to 1). The solid, dashed and dotted lines represent SSs, SSSs from weak symbiotic novae and from steady hydrogen burning ‘ordinary’ SySs, respectively.",
+        "Figure 1 gives the distributions of X-ray sources in the Galactic SySs over orbital periods. As we can see from case 1, SSSs have periods between 100 and 100000 days. SSSs from steady hydrogen burning ‘ordinary’ SySs and from weak symbiotic novae have strong peaks at 7000 days and 11000 days, respectively. While SSs have orbital periods from 10 to 1000000 days, with a typical peak at 36000 days. According to Yungelson et al. (1995) and L¨u et al. (2006), SySs via channel I have short orbital periods, while they via channel III have long orbital periods. As Table 2 shows, SSs can be produced via channels I, II and III, but SSSs can be done via channels II and III (except case 2). Therefore, SSs span wider range of orbital periods than SSSs.",
+        "Figure 2 shows the distributions of numbers of the modeled X-ray sources in SySs each as a function of WD mass. The distribution for case 2 is wider than that in other cases. The main reason is that γ algorithm for common envelope can form SySs with low-mass WD accretors (L¨u et al., 2006). For"
+      ],
+      "labels": [
+        {
+          "text": "Fig. 1. Number distributions of X-ray sources in the Galactic SySs as a function of",
+          "bbox": [
+            91.92,
+            325.9,
+            486.33,
+            336.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "orbital periods (all numbers are normalized to 1). The solid, dashed and dotted lines",
+          "bbox": [
+            91.92,
+            339.46,
+            486.34,
+            350.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "represent SSs, SSSs from weak symbiotic novae and from steady hydrogen burning",
+          "bbox": [
+            91.92,
+            353.02,
+            486.65,
+            363.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "‘ordinary’ SySs, respectively.",
+          "bbox": [
+            91.92,
+            366.58,
+            228.62,
+            377.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "interstellar medium is very diﬃcult and beyond the scope of this work.",
+          "bbox": [
+            91.92,
+            385.95,
+            455.28,
+            397.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "3.2",
+          "bbox": [
+            91.92,
+            426.69,
+            107.5,
+            438.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Properties of X-ray sources",
+          "bbox": [
+            119.4,
+            426.69,
+            258.34,
+            438.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "In this subsection, we describe potentially observable physical quantities of",
+          "bbox": [
+            91.92,
+            467.91,
+            486.45,
+            479.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "SSSs and SSs in SySs.",
+          "bbox": [
+            91.92,
+            482.43,
+            204.72,
+            494.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 1 gives the distributions of X-ray sources in the Galactic SySs over",
+          "bbox": [
+            91.92,
+            508.83,
+            486.34,
+            520.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "orbital periods. As we can see from case 1, SSSs have periods between 100",
+          "bbox": [
+            91.92,
+            523.23,
+            486.45,
+            535.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "and 100000 days. SSSs from steady hydrogen burning ‘ordinary’ SySs and",
+          "bbox": [
+            91.92,
+            537.75,
+            486.49,
+            549.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "from weak symbiotic novae have strong peaks at 7000 days and 11000 days,",
+          "bbox": [
+            91.92,
+            552.15,
+            486.24,
+            564.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "respectively. While SSs have orbital periods from 10 to 1000000 days, with",
+          "bbox": [
+            91.92,
+            566.55,
+            486.37,
+            578.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "a typical peak at 36000 days. According to Yungelson et al. (1995) and L¨u",
+          "bbox": [
+            91.92,
+            581.07,
+            486.61,
+            593.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "et al. (2006), SySs via channel I have short orbital periods, while they via",
+          "bbox": [
+            91.92,
+            595.47,
+            486.33,
+            607.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "channel III have long orbital periods. As Table 2 shows, SSs can be produced",
+          "bbox": [
+            91.92,
+            609.99,
+            486.37,
+            621.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "via channels I, II and III, but SSSs can be done via channels II and III (except",
+          "bbox": [
+            91.92,
+            624.39,
+            486.22,
+            636.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "case 2). Therefore, SSs span wider range of orbital periods than SSSs.",
+          "bbox": [
+            91.92,
+            638.79,
+            449.76,
+            650.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 2 shows the distributions of numbers of the modeled X-ray sources",
+          "bbox": [
+            91.92,
+            665.31,
+            486.3,
+            677.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "in SySs each as a function of WD mass. The distribution for case 2 is wider",
+          "bbox": [
+            91.92,
+            679.71,
+            486.34,
+            691.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "than that in other cases. The main reason is that γ algorithm for common",
+          "bbox": [
+            91.92,
+            694.11,
+            486.37,
+            706.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "envelope can form SySs with low-mass WD accretors (L¨u et al., 2006). For",
+          "bbox": [
+            91.92,
+            708.63,
+            486.46,
+            720.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "9",
+          "bbox": [
+            284.28,
+            748.47,
+            290.13,
+            760.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 10,
+      "rotation": 0,
+      "drawings": 1582,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Fig. 2. Number distributions of X-ray sources in the Galactic SySs as a function of WD mass (all numbers are normalized to 1). The solid, dashed and dotted lines rep- resent SSs, SSSs from weak symbiotic novae and steady hydrogen burning ‘ordinary’ SySs, respectively."
+      ],
+      "labels": [
+        {
+          "text": "Fig. 2. Number distributions of X-ray sources in the Galactic SySs as a function of",
+          "bbox": [
+            91.92,
+            496.3,
+            486.33,
+            507.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "WD mass (all numbers are normalized to 1). The solid, dashed and dotted lines rep-",
+          "bbox": [
+            91.92,
+            509.86,
+            486.51,
+            520.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "resent SSs, SSSs from weak symbiotic novae and steady hydrogen burning ‘ordinary’",
+          "bbox": [
+            91.92,
+            523.42,
+            486.5,
+            534.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "SySs, respectively.",
+          "bbox": [
+            91.92,
+            536.98,
+            178.46,
+            547.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "10",
+          "bbox": [
+            281.4,
+            748.47,
+            293.13,
+            760.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 11,
+      "rotation": 0,
+      "drawings": 2256,
+      "rasterImagesOnPage": 3,
+      "captionCandidates": [
+        "Fig. 3. Gray-scale maps of WD’s mass vs. orbital period distributions for SSs and SSSs in SySs for case 1. The gradations of gray-scale correspond to the regions where the number density of systems is, respectively, within 1 – 1/2, 1/2 – 1/4, 1/4 – 1/8, 1/8 – 0 of the maximum of ∂2N",
+        "Figure 3 shows the distributions of SSs and SSSs in case 1, in the “ WD’s mass – orbital period” plane. The ranges of orbital periods and WD’s masses in SSs are wider than those in SSSs. The main reason is that producing SSSs needs higher mass accretion rates and the critical ignition mass ∆MWD"
+      ],
+      "labels": [
+        {
+          "text": "Fig. 3. Gray-scale maps of WD’s mass vs. orbital period distributions for SSs and",
+          "bbox": [
+            91.92,
+            383.5,
+            486.41,
+            394.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "SSSs in SySs for case 1. The gradations of gray-scale correspond to the regions",
+          "bbox": [
+            91.92,
+            397.06,
+            486.34,
+            407.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "where the number density of systems is, respectively, within 1 – 1/2, 1/2 – 1/4, 1/4",
+          "bbox": [
+            91.92,
+            410.62,
+            486.3,
+            421.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "∂2N",
+          "bbox": [
+            270.36,
+            420.56,
+            286.08,
+            429.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "– 1/8, 1/8 – 0 of the maximum of",
+          "bbox": [
+            91.92,
+            425.38,
+            249.21,
+            436.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "∂log P ∂MWD, and blank regions do not contain any",
+          "bbox": [
+            253.56,
+            425.38,
+            486.35,
+            439.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR10",
+            "CMR6",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "stars.",
+          "bbox": [
+            91.92,
+            438.82,
+            117.5,
+            449.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "all models, the distributions have typical masses in the 0.5-0.8M⊙range, but",
+          "bbox": [
+            91.92,
+            463.59,
+            486.34,
+            475.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "the peaks of the distributions are diﬀerent from each type of X-ray sources.",
+          "bbox": [
+            91.92,
+            478.11,
+            486.24,
+            490.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "For example, in case 1, SSs have a peak at about 0.7M⊙. While, SSSs have",
+          "bbox": [
+            91.92,
+            492.51,
+            486.28,
+            504.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "a peak at about 0.6M⊙, which is in agreement with the results in Yungelson",
+          "bbox": [
+            91.92,
+            506.91,
+            486.37,
+            518.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "et al. (1996). According to L¨u et al. (2006) and Yaron et al. (2005), massive",
+          "bbox": [
+            91.92,
+            521.43,
+            486.16,
+            533.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "WD favors to produce strong thermonuclear outburst. Miko lajewska (2003)",
+          "bbox": [
+            91.92,
+            535.83,
+            486.58,
+            547.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "gave the distribution of the measured masses of the WD in SySs. The peak",
+          "bbox": [
+            91.92,
+            550.35,
+            486.41,
+            562.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "is at about 0.5 M⊙regardless of Miko lajewska (2003) estimating low limits",
+          "bbox": [
+            91.92,
+            564.75,
+            486.41,
+            576.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(L¨u et al., 2006). Iben (2003) showed average mass of WD in symbiotic novae",
+          "bbox": [
+            91.92,
+            579.15,
+            486.4,
+            591.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "systems which are SSs is 0.73M⊙. It looks likely that WD accretors in SSs have",
+          "bbox": [
+            91.92,
+            593.67,
+            486.28,
+            605.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "masses slightly larger than those in SSSs. Our results are compatible with the",
+          "bbox": [
+            91.92,
+            608.07,
+            486.4,
+            620.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "observations.",
+          "bbox": [
+            91.92,
+            622.47,
+            157.92,
+            634.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 3 shows the distributions of SSs and SSSs in case 1, in the “ WD’s",
+          "bbox": [
+            91.92,
+            650.79,
+            486.42,
+            662.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "mass – orbital period” plane. The ranges of orbital periods and WD’s masses",
+          "bbox": [
+            91.92,
+            665.31,
+            486.29,
+            677.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "in SSs are wider than those in SSSs. The main reason is that producing SSSs",
+          "bbox": [
+            91.92,
+            679.71,
+            486.41,
+            691.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "needs higher mass accretion rates and the critical ignition mass ∆MWD",
+          "bbox": [
+            91.92,
+            692.63,
+            458.38,
+            706.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "crit than",
+          "bbox": [
+            442.08,
+            694.11,
+            486.49,
+            709.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "producing SSs. As the top panel in Figure 3 shows, the distribution in SSs is",
+          "bbox": [
+            91.92,
+            708.63,
+            486.41,
+            720.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "11",
+          "bbox": [
+            281.4,
+            748.47,
+            293.13,
+            760.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 12,
+      "rotation": 0,
+      "drawings": 1721,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Fig. 4. Number distributions of X-ray sources in the Galactic SySs as a function of the mass accretion rate of WD (all numbers are normalized to 1). The solid, dashed and dotted lines represent SSs, SSSs from weak symbiotic novae and from steady hydrogen burning ‘ordinary’ SySs, respectively."
+      ],
+      "labels": [
+        {
+          "text": "Fig. 4. Number distributions of X-ray sources in the Galactic SySs as a function of",
+          "bbox": [
+            91.92,
+            325.9,
+            486.33,
+            336.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the mass accretion rate of WD (all numbers are normalized to 1). The solid, dashed",
+          "bbox": [
+            91.92,
+            339.46,
+            486.42,
+            350.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "and dotted lines represent SSs, SSSs from weak symbiotic novae and from steady",
+          "bbox": [
+            91.92,
+            353.02,
+            486.35,
+            363.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "hydrogen burning ‘ordinary’ SySs, respectively.",
+          "bbox": [
+            91.92,
+            366.58,
+            316.46,
+            377.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "cut into two regions. The low region represents these SSs which have undergone",
+          "bbox": [
+            91.92,
+            387.51,
+            486.4,
+            399.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "channel I, while the top region is for SSs which have undergone channels II",
+          "bbox": [
+            91.92,
+            401.91,
+            486.5,
+            413.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "and III.",
+          "bbox": [
+            91.92,
+            416.31,
+            131.28,
+            428.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The distributions of numbers of X-ray sources in the Galactic SySs over the",
+          "bbox": [
+            91.92,
+            443.19,
+            486.4,
+            455.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "mass accretion rate of WD, ˙Macc, is given in Figure 4. According to our model,",
+          "bbox": [
+            91.92,
+            454.59,
+            486.36,
+            470.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "˙Macc determines the strength of the hydrogen burning. For low",
+          "bbox": [
+            91.92,
+            468.99,
+            431.69,
+            485.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "˙Macc, the",
+          "bbox": [
+            437.52,
+            468.99,
+            486.4,
+            484.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "accreting WD experiences the strong thermonuclear outburst which results in",
+          "bbox": [
+            91.92,
+            486.51,
+            486.37,
+            498.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "˙Macc, the accreting WD can undergo stable hydrogen burning.",
+          "bbox": [
+            164.52,
+            497.91,
+            486.36,
+            513.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "SSs. For high",
+          "bbox": [
+            91.92,
+            500.91,
+            160.33,
+            512.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "˙Macc in Figure 4 are 10−9, 10−8 and",
+          "bbox": [
+            293.64,
+            511.11,
+            486.49,
+            529.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Therefore, the peaks of magnitude of",
+          "bbox": [
+            91.92,
+            515.43,
+            288.45,
+            527.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "10−7M⊙yr−1 for SSs, SSSs from weak symbiotic novae and from ‘ordinary’",
+          "bbox": [
+            91.92,
+            525.51,
+            486.36,
+            541.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "˙Macc of ﬁve SSs is",
+          "bbox": [
+            393.24,
+            541.23,
+            486.41,
+            558.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "SySs, respectively. In Iben (2003), theoretically estimated",
+          "bbox": [
+            91.92,
+            544.23,
+            388.81,
+            556.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "between 10−9 and 10−8M⊙yr−1, which is in good agreement with our results.",
+          "bbox": [
+            91.92,
+            554.43,
+            485.04,
+            570.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            91.92,
+            609.3,
+            98.64,
+            621.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Conclusions",
+          "bbox": [
+            112.08,
+            609.3,
+            181.58,
+            621.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Assuming that SSs in SySs result from the violent collisions of the stellar",
+          "bbox": [
+            91.92,
+            650.79,
+            486.34,
+            662.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "winds during strong symbiotic novae, and SSSs from weak symbiotic novae or",
+          "bbox": [
+            91.92,
+            665.31,
+            486.46,
+            677.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "steady hydrogen burning SySs, we investigate the Galactic population of SSs",
+          "bbox": [
+            91.92,
+            679.71,
+            486.41,
+            691.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "and SSSs in SySs. The Galactic occurrence rates of SSs and SSSs are from ∼",
+          "bbox": [
+            91.92,
+            693.24,
+            486.41,
+            706.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2 to 20 yr−1, and ∼2 to 17 yr−1, respectively. The numbers of X-ray sources",
+          "bbox": [
+            91.92,
+            706.48,
+            486.3,
+            720.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "12",
+          "bbox": [
+            281.4,
+            748.47,
+            293.13,
+            760.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+52 Don Zagier
+
+where H,,p( -> h,(A, B) e” is a power series in € satisfying H4,5(0) = 1,
+n=0
+
+Hapo(e) =1. aot H4,p(e) is tantamount to knowing c;(A, B) — c;(A,0)
+
+for all 7 > 1. The functional equation
+
+Pp Pp oe quan’ +Bn LALB p .
+4,B(9) ~ Fa,p4i(q = a = @ 4,B+A(Q) (37)
+
+of F.4,8(q) gives a functional equation
+Haple) = QHapsi(e) + (1- Q)e "F448 Ha py ale)
+
+for Ha.p(e). Write Ha p(e) = Day hn(A, B)e” where ho = 1 and h,,(A, B) is
+
+a polynomial of degree 2n in B ‘without constant term for n > 1. Substituting
+this into the functional equation and replacing B by B — A, we obtain
+
+hy(A, B—A) = Qha(A,B+1—A) + a-q y Geer per  hn_s(A,B),
+
+and this equation gives the coefficient hn m of B” in h,(A, B) recursively in
+terms of earlier coefficients hy jm: with n’ <n or with n’ =n, m! < m.
+
+Remark. The functional equation (37) remains true formally if one re-
+places F'4,5(q) by Fip(@) = q? PAF a pja(q-'), so the formal power se-
+ries H4,p(€) satisfies a second functional equation Hy/4,3/4(—¢) = 6B? /2A
+Ha,p(e). (Note that the change (A, B) +> (1/A, B/A) changes Q to 1- Q =
+Q4 and does not change B?/A or Q“.) It follows that the coefficients c;(A, B)
+in (35) satisfy the functional equations
+
+¢)(A,B) — (-1)/¢(1/A,B/A) = (A) + {" 2A HIST,
+
+0 otherwise
+
+for some constants 7; = 7;(A) independent of B. Using the explicit formulas
+for c; which will be computed below, we find that y_1 = L(1), yo = -3 log A,
+n= -+. 2 = 73 = Ya = 0. This suggests the conjecture that 7; = 0 for
+all j > 2. Assuming this, we have the formal functional equation
+
+Fip(e*) = VA exp(—= + = + O(e%)) Faz(e*) (WN >0). (38)
+
+(b) The second method is based on the asymptotics of the individual terms
+
+in the series (34). Denote the nth term in this series by un. Then the ratio
+Un/Un—1 = q4"*8-A4/? /(1 —q") is small for g small and large for q very near 1,
+and becomes equal to 1 when q" is near to the unique root Q € (0,1) of the
+equation Q + Q4 = 1. The terms that contribute are therefore those of the

@@ -1,0 +1,59 @@
+Chapter 2 Theory
+
+form in the center-of-mass frame,
+1
+[za +v |e = 280). (2.24)
+qu
+
+ris the reduced mass, V(7) is the interaction potential and E is the eigenenergy for the eigenfunction
+Y(7?). The dispersion relation between scattering energy and scattering momentum reads E = ¢ 2 /(Qu).
+In the standard approach, one assumes an incoming wave function Y;, in z-direction while the outgoing
+wave function 'P,,,, is a scattered spherical wave function. In the long-range limit, the potential vanishes
+or its absolute value has to fall off faster than the centrifugal potential, namely r-? with r = |?|. Then the
+asymptotic wave function can be described by the superposition,
+
+Y (7) 3 exp (igz) + F(6,4) pt
+
+(2.25)
+(6, ¢) is the scattering amplitude depending only on the angles @ and ¢. Due to the particular choice of
+the incoming wave function, the momentum @ is given by g = (0,0, g) which simplifies the calculations
+and particularly the partial wave decomposition. But it is also possible to investigate the more general
+case, where ‘¥(7’) must be replaced by ‘P(¢, 7). Although it is theoretically possible to solve Eq. (2.24)
+and impose the asymptotic boundary conditions of Eq. (2.25), one can also rewrite the first equation
+using Green’s function. The free Green’s function is given by
+
+m exp (igi? - 7’)
+
+G(7,7’) = “on FP (2.26)
+
+and fulfills the following equation
+
+Rarer G(F- 7’) = 6(7- 7’). (2.27)
+
+Using the Green’s function one transforms the differential equation in Eq. (2.24) into an integral equation
+for the wave function, the so-called Lippmann-Schwinger equation,
+
+(7?) = exp (igz) + f dG (#7) V (7) ¥ (7). (2.28)
+
+While in the latter equation one still uses the explicit wave function, one can also rewrite the problem in
+terms of operators only. Therefore, we define the general T-matrix
+
+T(E’, E) = (¥(E’.B)| Vin
+
+Y(E.@)), (2.29)
+
+n, the interaction potential and ¥o(E”, 8) is a solution
+of the free system with energy E’ and quantum number £. Furthermore, is a solution of the Lippmann-
+Schwinger equation according to Eq. (2.28) with energy E and quantum number a. Using the definition
+of the Green’s function, we write the equivalent Lippmann-Schwinger equation for the T-matrix,
+
+where a, 8 are quantum numbers of the system, V;
+
+T(E) = Voy + Vin G(E)T (E), (2.30)
+
+nt
+
+whereas T(E) is the on-shell version of Eq. (2.29) and G(E) the on-shell version of the Green’s function
+in momentum space with E = E’.
+
+14

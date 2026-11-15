@@ -1,0 +1,1 @@
+This is because, as mentioned before, B-L should survive at least up to the uni- ﬁcation scale MU so as to protect the RH neutrinos from acquiring Majorana masses of the string or Planck scale.17 Furthermore, the full SU(4)-color symmetry, that contains B-L, is needed to ensure the two Dirac mass-relations given in Eqs.

@@ -1,0 +1,1434 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "equations-aux-q-differences",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p012-1",
+   "page": 12,
+   "mark": "0",
+   "text": "introduiteplusbas. SMF – Gazette – 96, Avril 2003",
+   "marks": [
+    {
+     "page": 12,
+     "context": "0= e−2ıπτ"
+    },
+    {
+     "page": 12,
+     "context": "0= e−2ıπτ0R,o`uq"
+    },
+    {
+     "page": 12,
+     "context": "0= e−2ıπτ0R,o`uq0= e−2ıπτ"
+    },
+    {
+     "page": 12,
+     "context": "0= e−2ıπτ0R,o`uq0= e−2ıπτ0,Im(τ"
+    }
+   ],
+   "block": "library/equations-aux-q-differences/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p026-1",
+   "page": 26,
+   "mark": "1",
+   "text": "∩qZ",
+   "marks": [
+    {
+     "page": 25,
+     "context": "Ici,Aq;1,"
+    },
+    {
+     "page": 26,
+     "context": "Celasigniﬁequepourtousm1, m2∈Ztelsqueqm"
+    }
+   ],
+   "block": "library/equations-aux-q-differences/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p026-2",
+   "page": 26,
+   "mark": "2",
+   "text": "=1etq1, q2nonracinesdel’unit´e. SMF – Gazette – 96, Avril 2003",
+   "marks": [
+    {
+     "page": 25,
+     "context": "n≥0qn(n−1)/2xn)"
+    },
+    {
+     "page": 25,
+     "context": "Parcons´equent,las´erie(y)"
+    },
+    {
+     "page": 25,
+     "context": "lle-mˆeme.Ceph´enom`eneestli´eaufaitsuivant:l’´equationde(y)"
+    },
+    {
+     "page": 25,
+     "context": "l’´equation(4.0.2),onpeut´ecrireσqY–quin’estautreque(σqy)"
+    },
+    {
+     "page": 25,
+     "context": "∆= q"
+    },
+    {
+     "page": 25,
+     "context": "∆= q2x3σ"
+    },
+    {
+     "page": 25,
+     "context": "Th´eor`eme4.13.Dans(4.12.1),ona∆= (xσq−1)(x"
+    },
+    {
+     "page": 26,
+     "context": "=qm"
+    }
+   ],
+   "block": "library/equations-aux-q-differences/blocks/prose-sec-011"
+  }
+ ],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "†",
+   "context": "L.DiVizio,J-P.Ramis,J.Sauloy∗,C.Zhang"
+  },
+  {
+   "page": 1,
+   "mark": "f",
+   "context": "dx"
+  },
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "e.Onobtientalorsdes´equationsfonctionnellesG(x; f, . . . , σ"
+  },
+  {
+   "page": 1,
+   "mark": "q",
+   "context": "δq=σ"
+  },
+  {
+   "page": 1,
+   "mark": "d",
+   "context": "−→x"
+  },
+  {
+   "page": 1,
+   "mark": "q",
+   "context": "dx,lorsque"
+  },
+  {
+   "page": 2,
+   "mark": "e",
+   "context": "L’´etude des ´equations aux q-diﬀ´erences commence au xviii"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "n!x"
+  },
+  {
+   "page": 2,
+   "mark": "x",
+   "context": "1F0(α; −;"
+  },
+  {
+   "page": 2,
+   "mark": "x",
+   "context": "1F0(α; −;"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "x"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "(1 −aq"
+  },
+  {
+   "page": 2,
+   "mark": "q",
+   "context": "1F0lorsque"
+  },
+  {
+   "page": 2,
+   "mark": "q",
+   "context": "lorsque q→1.Par ailleurs, elleest solution del’´equation aux"
+  },
+  {
+   "page": 2,
+   "mark": "q",
+   "context": "1Φ0(a; −; q, x) =(ax;"
+  },
+  {
+   "page": 3,
+   "mark": "e",
+   "context": "diﬀ´erentiellesordinairesauxx"
+  },
+  {
+   "page": 3,
+   "mark": "e",
+   "context": "tr`esimportantsfaits`alaﬁnduxx"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "(1 −q)(1 −q"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "(1 −q)(1 −q2) . . . (1 −q"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "(1 + q) . . . (1 + q"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "def"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "defa"
+  },
+  {
+   "page": 5,
+   "mark": "f",
+   "context": "defa0(x)"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "defa0(x)f(q"
+  },
+  {
+   "page": 5,
+   "mark": "x",
+   "context": "defa0(x)f(qn"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "defa0(x)f(qnx) + a"
+  },
+  {
+   "page": 5,
+   "mark": "f",
+   "context": "defa0(x)f(qnx) + a1(x)"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "defa0(x)f(qnx) + a1(x)f(q"
+  },
+  {
+   "page": 5,
+   "mark": "x",
+   "context": "defa0(x)f(qnx) + a1(x)f(qn−1"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "defa0(x)f(qnx) + a1(x)f(qn−1x) + · · · + a"
+  },
+  {
+   "page": 5,
+   "mark": "f",
+   "context": "defa0(x)f(qnx) + a1(x)f(qn−1x) + · · · + an(x)"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "aiσ"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "formentunsous-anneauKσ"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "Kestuncorps,Kσ"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "auraalorsKσ"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "desconstanteslecorpsM(C∗)σ"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "Kσ"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "x"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "λ =(a + b)"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "σ"
+  },
+  {
+   "page": 6,
+   "mark": "f",
+   "context": "q"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": "qf−λσ"
+  },
+  {
+   "page": 6,
+   "mark": "f",
+   "context": "qf−λσq"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "x"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "2F1(α, β, γ;"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "δqversδ=x"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "λ =(α + β)"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "δ"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "(2.3.1) est ainsi mod´elis´e par le module (K"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "obtientunmodulebanal,c’est-`a-direunmodule(isomorphe`a)(K"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "laq-spiralediscr`ete{λq"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "P.f(x) = a0(x)f(q"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "P.f(x) = a0(x)f(qnx) + a1(x)f(q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "R"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "´equivalencerationnellepr`es,queA(0)∈GLn(C)"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "q−n(n−1)/2x"
+  },
+  {
+   "page": 10,
+   "mark": "x",
+   "context": "i"
+  },
+  {
+   "page": 10,
+   "mark": "l",
+   "context": "U"
+  },
+  {
+   "page": 10,
+   "mark": "q",
+   "context": "Ul"
+  },
+  {
+   "page": 10,
+   "mark": "q",
+   "context": "lesyst`eme`acoeﬃcientsconstantsσqX=AXenposantX=xlog"
+  },
+  {
+   "page": 10,
+   "mark": "q",
+   "context": "logq Aest unematriceconstante telleque qlog"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "x;"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "n⩾0(1 −q−n"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "n⩾0(1 −q−na),touslesz´erosdeθ"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "en quotientant C∗×C"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "dx».Cetteid´ee"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "δqX= BqX,avecBq=A"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "δqX= BqX,avecBq=Aq −I"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "x"
+  },
+  {
+   "page": 12,
+   "mark": "e",
+   "context": "M(−x)"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "parlath´eoriedeFuchs-Frobenius"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "0= e−2ıπτ0R,o`u"
+  },
+  {
+   "page": 13,
+   "mark": "l",
+   "context": "ε→0+(q −1)"
+  },
+  {
+   "page": 13,
+   "mark": "q",
+   "context": "ε→0+(q −1)l"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "Θ(τ, z) = θe−2ıπτ (e"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "e(iπ/τ)(z−(τ+1)/2)"
+  },
+  {
+   "page": 13,
+   "mark": "e",
+   "context": "(−x)"
+  },
+  {
+   "page": 13,
+   "mark": "x",
+   "context": "λ =(α + β)"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "δ"
+  },
+  {
+   "page": 14,
+   "mark": "x",
+   "context": "2F1(α, β, γ;"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "x"
+  },
+  {
+   "page": 15,
+   "mark": "x",
+   "context": "λ =(a + b)"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "σ"
+  },
+  {
+   "page": 15,
+   "mark": "f",
+   "context": "q"
+  },
+  {
+   "page": 15,
+   "mark": "q",
+   "context": "qf−λσ"
+  },
+  {
+   "page": 15,
+   "mark": "f",
+   "context": "qf−λσq"
+  },
+  {
+   "page": 15,
+   "mark": "q",
+   "context": "c;"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "c; q"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 15,
+   "mark": "c",
+   "context": "b, a;"
+  },
+  {
+   "page": 15,
+   "mark": "q",
+   "context": "c;"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "c; q"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 15,
+   "mark": "c",
+   "context": "a, b;"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "0,o`ul’on"
+  },
+  {
+   "page": 16,
+   "mark": "x",
+   "context": "0,o`ul’onapos´e"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "0,o`ul’onapos´ex"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "0.Commeindiqu´eci-dessus,PestconstantesurU"
+  },
+  {
+   "page": 17,
+   "mark": "x",
+   "context": "0etde"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "0etdex"
+  },
+  {
+   "page": 17,
+   "mark": "q",
+   "context": "0etdexi+1"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "P.f(x) = a0(x)f(q"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "P.f(x) = a0(x)f(qnx) + a1(x)f(q"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "mˆemeexigerqueAisoitdelaformexµ"
+  },
+  {
+   "page": 18,
+   "mark": "x",
+   "context": "log qpourtout"
+  },
+  {
+   "page": 18,
+   "mark": "x",
+   "context": "lad´eterminationprincipaledecelui-ci,etlogq x=log"
+  },
+  {
+   "page": 18,
+   "mark": "q",
+   "context": "Onnoteraqα= eα log"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "n! x"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "n≥0"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "n≥0a"
+  },
+  {
+   "page": 19,
+   "mark": "x",
+   "context": "n≥0an"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "n≥0anx"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "ilest Gevrey :| an|≤A"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "qn(n−1)/2x"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "La suite {q"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "la forme {A"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "n≥0"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "n≥0a"
+  },
+  {
+   "page": 19,
+   "mark": "x",
+   "context": "n≥0an"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "n≥0anx"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "anq−sn(n−1)/2x"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "n≥1"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "n≥1a"
+  },
+  {
+   "page": 20,
+   "mark": "x",
+   "context": "n≥1an"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "n≥1anx"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "(n −1)!ξ"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "n≥0"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "n≥0a"
+  },
+  {
+   "page": 20,
+   "mark": "x",
+   "context": "n≥0an"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "n≥0anx"
+  },
+  {
+   "page": 20,
+   "mark": "q",
+   "context": "n≥0anxn, on appelera transform´ee de"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "anq−n(n−1)/2ξ"
+  },
+  {
+   "page": 20,
+   "mark": "q",
+   "context": "(q−1;"
+  },
+  {
+   "page": 20,
+   "mark": "q",
+   "context": "(q−1;q−1)n, on aB"
+  },
+  {
+   "page": 20,
+   "mark": "f",
+   "context": "(q−1;q−1)n, on aBq;1"
+  },
+  {
+   "page": 20,
+   "mark": "q",
+   "context": "(q−1;q−1)n, on aBq;1f= (ξ;"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "x"
+  },
+  {
+   "page": 20,
+   "mark": "q",
+   "context": "dx.L’ambigu¨ıt´edesprocessusde"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "Nouspasseronsensuite`al’´etudedelasommabilit´educarr´ey"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "(4.0.3).L`aunph´enom`enenouveauapparaˆıt:y"
+  },
+  {
+   "page": 20,
+   "mark": "q",
+   "context": "pourlamultiplicationestessentiellementdˆuaufaitqueσ"
+  },
+  {
+   "page": 20,
+   "mark": "q",
+   "context": "=σ"
+  },
+  {
+   "page": 20,
+   "mark": "f",
+   "context": "=σq"
+  },
+  {
+   "page": 20,
+   "mark": "q",
+   "context": "×σ"
+  },
+  {
+   "page": 20,
+   "mark": "g",
+   "context": "×σq"
+  },
+  {
+   "page": 21,
+   "mark": "q",
+   "context": "Nousallonsregarderlescassuivants:λ=1ety1=q−(log"
+  },
+  {
+   "page": 21,
+   "mark": "x",
+   "context": "Nousallonsregarderlescassuivants:λ=1ety1=q−(logq"
+  },
+  {
+   "page": 21,
+   "mark": "q",
+   "context": "Nousallonsregarderlescassuivants:λ=1ety1=q−(logqx)(log"
+  },
+  {
+   "page": 21,
+   "mark": "x",
+   "context": "Nousallonsregarderlescassuivants:λ=1ety1=q−(logqx)(logq"
+  },
+  {
+   "page": 21,
+   "mark": "q",
+   "context": "4.6.Caso`uλ = 1ety1= q−(log"
+  },
+  {
+   "page": 21,
+   "mark": "x",
+   "context": "4.6.Caso`uλ = 1ety1= q−(logq"
+  },
+  {
+   "page": 21,
+   "mark": "q",
+   "context": "4.6.Caso`uλ = 1ety1= q−(logq x)(log"
+  },
+  {
+   "page": 21,
+   "mark": "x",
+   "context": "4.6.Caso`uλ = 1ety1= q−(logq x)(logq"
+  },
+  {
+   "page": 21,
+   "mark": "t",
+   "context": "Sit = logq xetz(t) = C(q"
+  },
+  {
+   "page": 21,
+   "mark": "q",
+   "context": "2(χ/log"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "2(χ/log q+1/2)"
+  },
+  {
+   "page": 21,
+   "mark": "q",
+   "context": "2(log"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "2(logq(ξ/x)+1/2)"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "2[n"
+  },
+  {
+   "page": 21,
+   "mark": "q",
+   "context": "2[n2+(arg"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "2[n2+(argq(xe−iε))"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "|yα(x) −yn(x)| < CA"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "n∈ZC"
+  },
+  {
+   "page": 21,
+   "mark": "x",
+   "context": "n∈ZCn"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "n∈ZCnx"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "n∈ZCnxndansl’´equation(4.5.1) ;on"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "n∈ZCnxndansl’´equation(4.5.1) ;onaC"
+  },
+  {
+   "page": 21,
+   "mark": "q",
+   "context": "n∈ZCnxndansl’´equation(4.5.1) ;onaCn=λ−n"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "1−λq"
+  },
+  {
+   "page": 21,
+   "mark": "q",
+   "context": "y[λ;"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "[1; q].Lafonctiony[λ;"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "|y[λ;"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "ρ A"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "x| ≥ρet"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "alorsladiﬀ´erencey′(x) −y[λ;"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "θq(q"
+  },
+  {
+   "page": 22,
+   "mark": "h",
+   "context": "θq(qmλ/x),avec"
+  },
+  {
+   "page": 22,
+   "mark": "e",
+   "context": "d"
+  },
+  {
+   "page": 22,
+   "mark": "d",
+   "context": "ξ,est(sousr´eserved’existence)L"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "(n −1)!ξ"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "anx"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "anx"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "anq−n(n−1)/2ξ"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "2(log"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "2(logq(ξ/x)+1/2)"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "anx"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "anq−n(n−1)/2ξ"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "L[λ;"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "f[λ;"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "(ln |ξ|)"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "f[λ;"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "n≥0"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "n≥0a"
+  },
+  {
+   "page": 23,
+   "mark": "x",
+   "context": "n≥0an"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "n≥0anx"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "|an| < CA"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "(q−1;"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "(q−1;q−1)n"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "(q−1;q−1)nq−n(n−1)/2ξ"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "qn(n−1)/2(−x)"
+  },
+  {
+   "page": 24,
+   "mark": "c",
+   "context": "2Φ1(a, b;"
+  },
+  {
+   "page": 24,
+   "mark": "z",
+   "context": "2Φ1(a, b; c; q, x)etson ´equationfonctionnelle.Posons"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "(c −abqx)σq"
+  },
+  {
+   "page": 24,
+   "mark": "q",
+   "context": "n≥0"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "n≥0q"
+  },
+  {
+   "page": 24,
+   "mark": "x",
+   "context": "n≥0qn(n−1)/2"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "n≥0qn(n−1)/2x"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "n≥0qn(n−1)/2xn)"
+  },
+  {
+   "page": 24,
+   "mark": "q",
+   "context": "n≥0"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "n≥0q"
+  },
+  {
+   "page": 24,
+   "mark": "x",
+   "context": "n≥0qn(n−1)/2"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "n≥0qn(n−1)/2x"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "n≥0qn(n−1)/2xn)"
+  },
+  {
+   "page": 24,
+   "mark": "q",
+   "context": "n≥0qn(n−1)/2xn)2etconsid´eronssatransform´eede"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "n≥0"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "n≥0a"
+  },
+  {
+   "page": 24,
+   "mark": "x",
+   "context": "n≥0an"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "n≥0anx"
+  },
+  {
+   "page": 24,
+   "mark": "g",
+   "context": "n≥0anxnet"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "anq−n(n−1)/2ξ"
+  },
+  {
+   "page": 24,
+   "mark": "m",
+   "context": "P(q"
+  },
+  {
+   "page": 24,
+   "mark": "m",
+   "context": "P(qm) = (−1)"
+  },
+  {
+   "page": 24,
+   "mark": "m",
+   "context": "P(qm) = (−1)mq"
+  },
+  {
+   "page": 24,
+   "mark": "m",
+   "context": "P(qm) = (−1)mqm(3"
+  },
+  {
+   "page": 25,
+   "mark": "q",
+   "context": "n≥0"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "n≥0q"
+  },
+  {
+   "page": 25,
+   "mark": "x",
+   "context": "n≥0qn(n−1)/2"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "n≥0qn(n−1)/2x"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "∆= q2x"
+  },
+  {
+   "page": 25,
+   "mark": "q",
+   "context": "q−x(1 + x)σ"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "anx"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "anq−n(n−1)/2ξ"
+  },
+  {
+   "page": 25,
+   "mark": "q",
+   "context": "Ici,A"
+  },
+  {
+   "page": 25,
+   "mark": "q",
+   "context": "2 ;1= L"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "ind´ependants"
+  },
+  {
+   "page": 26,
+   "mark": "m",
+   "context": "Celasigniﬁequepourtousm1, m2∈Ztelsqueq"
+  },
+  {
+   "page": 26,
+   "mark": "m",
+   "context": "=q"
+  },
+  {
+   "page": 27,
+   "mark": "d",
+   "context": "dxµ (x) + aµ−1(x)"
+  },
+  {
+   "page": 27,
+   "mark": "y",
+   "context": "dxµ (x) + aµ−1(x)dµ−1"
+  },
+  {
+   "page": 27,
+   "mark": "d",
+   "context": "aµ(x)"
+  },
+  {
+   "page": 27,
+   "mark": "y",
+   "context": "aµ(x)dµ"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "dxµ−1 (x) + · · · + a"
+  },
+  {
+   "page": 27,
+   "mark": "y",
+   "context": "dxµ−1 (x) + · · · + a0(x)"
+  },
+  {
+   "page": 27,
+   "mark": "4",
+   "context": "`acoeﬃcientsai(x)dansQ(x)"
+  },
+  {
+   "page": 27,
+   "mark": "p",
+   "context": "positifmaximalℓpetdeuxentiersg, htelsque1 −qκ"
+  },
+  {
+   "page": 27,
+   "mark": "p",
+   "context": "positifmaximalℓpetdeuxentiersg, htelsque1 −qκp=pℓ"
+  },
+  {
+   "page": 27,
+   "mark": "g",
+   "context": "positifmaximalℓpetdeuxentiersg, htelsque1 −qκp=pℓp"
+  },
+  {
+   "page": 27,
+   "mark": "p",
+   "context": "hetque"
+  },
+  {
+   "page": 27,
+   "mark": "p",
+   "context": "etonpeutconsid´ererlar´eductionLpy=0deLy=0modulopℓ"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "P (q"
+  },
+  {
+   "page": 27,
+   "mark": "p",
+   "context": "dansA ⊗Z Z/pℓ"
+  },
+  {
+   "page": 27,
+   "mark": "p",
+   "context": "r´eductionmodulopℓ"
+  },
+  {
+   "page": 28,
+   "mark": "p",
+   "context": "mentsipourpresquetoutnombrepremierpl’op´erateurΦκ"
+  },
+  {
+   "page": 28,
+   "mark": "p",
+   "context": "M⊗Z Z/pℓ"
+  },
+  {
+   "page": 28,
+   "mark": "p",
+   "context": "Mpermet d´eﬁnir la r´eduction modulo pℓ"
+  },
+  {
+   "page": 28,
+   "mark": "p",
+   "context": "alg´ebriquedeGL(M),dontlar´eductionmodulopℓ"
+  },
+  {
+   "page": 28,
+   "mark": "p",
+   "context": "Φκ"
+  },
+  {
+   "page": 28,
+   "mark": "p",
+   "context": "Φκpmodulopℓ"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "lesop´erateursΦ"
+  },
+  {
+   "page": 28,
+   "mark": "o",
+   "context": "Pr´epublicationsdel’InstitutdeMath´ematiquesdeJussieun"
+  },
+  {
+   "page": 28,
+   "mark": "o",
+   "context": "deDwork.Pr´epublicationsn"
+  },
+  {
+   "page": 29,
+   "mark": "o",
+   "context": "dtransfertheorems).Pr´epublicationduLaboratoire´EmilePicardn"
+  },
+  {
+   "page": 30,
+   "mark": "o",
+   "context": "Pr´epublication du Laboratoire´Emile Picard n"
+  },
+  {
+   "page": 30,
+   "mark": "o",
+   "context": "ratoire´Emile Picard n"
+  }
+ ]
+}

@@ -11,6 +11,7 @@
   ],
   "title": "Decompositions of derived categories of gerbes and families of Brauer–Severi varieties",
   "contains": [
+    "library/arxiv-1901.08945v2/sections/sec-front-matter",
     "library/arxiv-1901.08945v2/sections/sec-000",
     "library/arxiv-1901.08945v2/sections/sec-001",
     "library/arxiv-1901.08945v2/sections/sec-002",
@@ -20,7 +21,7 @@
     "library/arxiv-1901.08945v2/sections/sec-006"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -42,8 +43,8 @@
       "stamp_date": "19 Feb 2019"
     },
     "doi": null,
-    "document_class": "math",
-    "extractor_validated": true,
-    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
   }
 }

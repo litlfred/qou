@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1603.06017v2
-doc_title: "Automatic Theorem Proving in Walnut Hamoon Mousavi"
+doc_title: "Automatic Theorem Proving in Walnut"
 section_id: sec-005-24-automata-accepting-predicates
 section_title: "Automata accepting Predicates"
 section_number: 2.4
-pages: 7-8
+pages: 7-9
 source_pdf: 1603.06017v2.pdf
 source_sha256: 3ff091e40573a5dd
-doc_brief: "Automatic Theorem Proving in Walnut Hamoon Mousavi — 34 sections: Introduction; Basics; Words and Automata"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.942
-latex_coverage_ratio: 0.992
+latex_prose_ratio: 0.952
+latex_coverage_ratio: 0.996
+doc_brief: "Automatic Theorem Proving in Walnut — 42 sections: Front matter; Introduction; Basics"
 ---
 \label{sec:automata accepting predicates}
 In Walnut, we are interested in automaton $M$ accepting same-length

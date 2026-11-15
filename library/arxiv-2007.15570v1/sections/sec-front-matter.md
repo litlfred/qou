@@ -7,6 +7,7 @@ section_number: null
 pages: 1-1
 source_pdf: 2007.15570v1.pdf
 source_sha256: 6e46f4346a29fd83
-doc_brief: "A quantum Monte Carlo based approach to intranuclear cascades — 2 sections: Front matter; A quantum Monte Carlo based approa"
+toc_source: outline
+doc_brief: "A quantum Monte Carlo based approach to intranuclear cascades — 16 sections: Front matter; A quantum Monte Carlo based approa; I Introduction"
 ---
 FERMILAB-PUB-20-368-T

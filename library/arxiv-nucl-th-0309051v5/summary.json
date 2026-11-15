@@ -2,41 +2,26 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-nucl-th-0309051v5",
  "source_sha256": "f7ede32125662908",
- "brief": "Reinterpretation of Faddeev-Niemi Knot in Skyrme Theory Y. M. Cho ∗ — 6 sections: (∂µ ˆn)2 − α; (∂µ ˆn × ∂ν ˆn)2, (3); (∂µξ†∂νξ − ∂νξ†∂µξ)2, (ξ†ξ = 1). (",
- "extended": "**Reinterpretation of Faddeev-Niemi Knot in Skyrme Theory Y. M. Cho ∗**\n\n*School of Physics, College of Natural Sciences*\n\n4 pp, 6 sections.\n\n**Outline.** 2 (∂µ ˆn)2 − α; 4 (∂µ ˆn × ∂ν ˆn)2, (3); 4 (∂µξ†∂νξ − ∂νξ†∂µξ)2, (ξ†ξ = 1). (9); 1 In this paper we have clariﬁed the physical ; 2 Our anslysis tells that the Lagrangian (3) c; 3 In our analysis we have outlined how one can",
+ "brief": "Reinterpretation of Faddeev-Niemi Knot in Skyrme Theory — 3 sections: Front matter; Reinterpretation of Faddeev-Niemi ; ACKNOWLEDGEMENT",
+ "extended": "**Reinterpretation of Faddeev-Niemi Knot in Skyrme Theory**\n\n*Y. M. Cho∗*\n\n4 pp, 3 sections.\n\n**Outline.** Front matter; Reinterpretation of Faddeev-Niemi Knot in Skyr; ACKNOWLEDGEMENT",
  "tokens": {
-  "brief": 38,
-  "extended": 94
+  "brief": 33,
+  "extended": 46
  },
  "sections": [
   {
-   "id": "sec-000-2-µ-ˆn2-α",
-   "title": "(∂µ ˆn)2 − α",
-   "pages": "2-2"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
   },
   {
-   "id": "sec-001-4-µ-ˆn-ν-ˆn2-3",
-   "title": "(∂µ ˆn × ∂ν ˆn)2, (3)",
-   "pages": "2-2"
+   "id": "sec-000-reinterpretation-of-faddeev-niemi-knot-in-skyrme",
+   "title": "Reinterpretation of Faddeev-Niemi Knot in Skyrme Theory",
+   "pages": "1-4"
   },
   {
-   "id": "sec-002-4-µξνξ-νξµξ2-ξξ-1-9",
-   "title": "(∂µξ†∂νξ − ∂νξ†∂µξ)2, (ξ†ξ = 1). (9)",
-   "pages": "2-4"
-  },
-  {
-   "id": "sec-003-1-in-this-paper-we-have-clariﬁed-the-physical-me",
-   "title": "In this paper we have clariﬁed the physical meaning of",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-004-2-our-anslysis-tells-that-the-lagrangian-3-could",
-   "title": "Our anslysis tells that the Lagrangian (3) could also",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-005-3-in-our-analysis-we-have-outlined-how-one-can-a",
-   "title": "In our analysis we have outlined how one can actually",
+   "id": "sec-001-acknowledgement",
+   "title": "ACKNOWLEDGEMENT",
    "pages": "4-4"
   }
  ],

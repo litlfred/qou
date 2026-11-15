@@ -1,0 +1,84 @@
+158 S. Blanes et al. / Physics Reports 470 (2009) 151-238
+
+where GL(n) is the group of all n x n nonsingular real matrices and J is some constant matrix in GL(n). Thus, one recovers
+the orthogonal group when J = I, the symplectic group Sp(n) when J is the basic symplectic matrix given in (20), and the
+Lorentz group SO(3, 1) whenJ = diag(1, —1, —1, —1). The corresponding Lie algebra is the set
+
+oj(n) = {B € gl,(R) : BJ + JB = 0}, (22)
+
+where gl, (RR) is the Lie algebra of all n x n real matrices. If B € 0,(n), then its Cayley transform
+
+A= (I —a@B)~'(I + aB) (23)
+
+is J-orthogonal.
+
+Another important matrix Lie group not included in the previous characterization, is the special linear group SL(n),
+formed by all n x nreal matrices with unit determinant. The corresponding Lie algebra s{(n) comprises all traceless matrices.
+For real 2 x 2 matrices in s{(2) one has
+
+(24)
+
+b
+cosh(7) + 4 sinh(n) — sinh(n)
+a b n n
+exp |. a)=
+
+© sinh) cosh(n) — = sinh(n)
+ri 7
+
+with n = Ja’ + be.
+When dealing with convergence problems it is necessary to use some type of norm for a matrix. By such we mean a
+non-negative real number ||A|| associated with each matrix A € C’*" and satisfying
+
+(a) ||Al| = 0 for all A and ||Al| = 0 iffA = O,.
+(b) ||oAl| = || ||Al], for all scalars a.
+(c) ||A+ Bl] < |All + IIBI).
+
+Quite often, one adds the sub-multiplicative property
+ABI] < All IIBIl, (25)
+
+but not all matrix norms satisfy this condition [42].
+There exist different families of matrix norms. Among the more popular ones, we have the p-norm ||Al|, and the Frobenius
+norm ||All-. For a matrix A with elements aj, i,j = 1...n, they are defined as
+
+Ally = max |AX|lp (26)
+
+[x\|p=1
+
+YY tail? = Vtraia), (27)
+
+i=1 j=1
+
+Alle =
+
+respectively, where ||x||) = (er Ixj[P)? and tr(A) is the trace of the matrix A. Although both verify (25), the p-norms have
+the important property that for every matrix A and x € R" one has ||Ax||p < ||Allp ||X/lp. The most used p-norms correspond
+top=1,p=2andp=o.
+
+Of paramount importance in numerical linear algebra is the case p = 2. The resulting 2-norm of a vector is nothing but
+the Euclidean norm, whereas in the matrix case it is also called the spectral norm of A and can be characterized as the square
+root of the largest eigenvalue of AtA. A frequently used inequality relating to Frobenius and spectral norms is the following:
+
+IIAll2 < llAlle < Vn [lAll2. (28)
+In fact, this last inequality can be made more stringent [43]:
+
+|Alle < yrank(A) [[All2- (29)
+
+Considering in a matrix Lie algebra g a norm satisfying property (25), it is clear that ||[A, B]|| < 2\|Al|||B|], and the ad
+operator defined by (11) is bounded, since
+
+lladal] < 2||Al|
+
+for any matrix A.
+
+A matrix norm is said to be unitarily invariant if || UAV|| = ||A|| whenever U, V are unitary matrices. Frobenius and
+p-norms are both unitarily invariant [44].
+
+In some of the most basic formulas for the Magnus expansion, there will appear the so-called Bernoulli numbers B,,
+which are defined through the generating function [45]
+
+teZ! ic2] t"
+= DEBS. Itl < 2
+n=0 .
+
+et

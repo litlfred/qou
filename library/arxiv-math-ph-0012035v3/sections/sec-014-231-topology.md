@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-ph-0012035v3
-doc_title: "arXiv:math-ph/0012035v3 16 Jan 2002"
+doc_title: "Non-Abelian Stokes theorem in action"
 section_id: sec-014-231-topology
 section_title: "Topology"
 section_number: 2.3.1
@@ -10,7 +10,8 @@ source_sha256: 06a4c8096c8ebb10
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.993
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.993
+doc_brief: "Non-Abelian Stokes theorem in action — In this short review main issues related to the non-Abelian Stokes theorem have been addressed."
 ---
 Up to now we have investigated the non-Abelian Stokes theorem for topologically trivial situation. The term *topologically trivial situation* means, in this context, that the loop we are integrating along in the non-Abelian Stokes theorem is unknotted in the sense of theory of knots \[Rol76\]. It appears that in contradistinction to the Abelian case, the non-Abelian one is qualitatively different. If the loop $C$ is topologically non-trivial and the bounded surface $S$ ($\partial S=C$) is not simply connected, the parameter space given in the form of a unit square (as in the proof of the non-Abelian Stokes theorem) is not appropriate. The non-Abelian Stokes theorem presented in the original form applies only to a surface $S$ homeomorphic to a disk (square). But still, of course, the standard (topologically trivial) version of the non-Abelian Stokes theorem makes sense locally. What means *locally* will appear clear in the due course. The non-Abelian Stokes theorem for knots (and also for links---multicomponent loops) has been formulated by Hirayama, Kanno, Ueno and Yamokoshi in 1998 \[HKUY98\]. Interestingly, it follows from this new version of the non-Abelian Stokes theorem that the value of the line integral along $C$ can be non-trivial (different from 1 even for the field strenght $F_{\mu\nu}(x)$ vanishing everywhere on the surface $S$. It is an interesting result which could have some applications in physics. One can speculate that it could give rise to a new version of the Aharonov-Bohm effect.
 

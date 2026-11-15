@@ -7,10 +7,17 @@
   "bytes": 684846,
   "pages": 32,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 13,
+    "reason": "12 of 424 words are a stray single letter: the text layer splits words"
+   }
+  ],
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,18 +27,33 @@
    "stamp_date": "4 Jul 2026"
   },
   "doi": null,
-  "title": "AFFINE CELLULAR ALGEBRAS AND ASYMPTOTIC ALGEBRAS",
+  "title": "Affine cellular algebras and asymptotic algebras",
   "authors_raw": "PAULA A.A.B. CARVALHO, STEFFEN KOENIG, AND CHRISTIAN LOMP",
   "title_lines": [
    "AFFINE CELLULAR ALGEBRAS AND ASYMPTOTIC ALGEBRAS"
   ],
-  "abstract": "The theory of affine cellular algebrasAis extended to incorporate their asymptotic algebras \u02c6A, clarifying unexpected differences between classical and affine situations and comparing with Lusztig\u2019s asymptotic Hecke algebras. The main new results are about a double centraliser property betweenA and \u02c6A, about constructing \u02c6Afrom cell modules ofA, about existence of an embeddingA\u2192 \u02c6Aand about a faithful functor from torsionless\u02c6A-modules toA-modules as well as about the embedding being weakly spectrum preserving (in the sense of Baum and Nistor) and about non-zero endomorphisms of cell modules being injective, while there are no non-zero homomorphisms between non-isomorphic cell modules.",
+  "abstract": "The theory of affine cellular algebras A is extended to incorporate their asymptotic algebras ˆA, clarifying unexpected differences between classical and affine situations and comparing with Lusztig’s asymptotic Hecke algebras. The main new results are about a double centraliser property between A and ˆA, about constructing ˆA from cell modules of A, about existence of an embedding A →ˆA and about a faithful functor from torsionless ˆA-modules to A-modules as well as about the embedding being weakly spectrum preserving (in the sense of Baum and Nistor) and about non-zero endomorphisms of cell modules being injective, while there are no non-zero homomorphisms between non-isomorphic cell modules.",
   "docinfo": {
+   "Title": "Affine cellular algebras and asymptotic algebras",
    "Author": "Paula A. A. B. Carvalho; Steffen Koenig; Christian Lomp",
-   "Creator": "arXiv GenPDF (tex2pdf:a6404ea)",
    "Producer": "pikepdf 8.15.1",
-   "Title": "Affine cellular algebras and asymptotic algebras"
-  }
+   "Creator": "arXiv GenPDF (tex2pdf:a6404ea)"
+  },
+  "title_raw": "AFFINE CELLULAR ALGEBRAS AND ASYMPTOTIC ALGEBRAS",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Affine cellular algebras and asymptotic algebras",
+   "heading": "AFFINE CELLULAR ALGEBRAS AND ASYMPTOTIC ALGEBRAS Contents Introduction Determinants for affine Cellular Algebras Homomorphisms between affine cell ideals. The asymptotic algebra of an affine cellular algebra Properties of the embedding into the asymptotic algebra Examples and methods An explicit exa",
+   "outline": "1. Introduction",
+   "text": "AFFINE CELLULAR ALGEBRAS AND ASYMPTOTIC ALGEBRAS",
+   "corroborated_by": [
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "AFFINE CELLULAR ALGEBRAS AND ASYMPTOTIC ALGEBRAS"
  },
  "toc": [
   {
@@ -39,74 +61,372 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Determinants for affine Cellular Algebras",
    "page": 5,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "Homomorphisms between affine cell ideals.",
    "page": 7,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The asymptotic algebra of an affine cellular algebra",
    "page": 13,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 1,
    "title": "Properties of the embedding into the asymptotic algebra",
    "page": 17,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 1,
    "title": "Examples and methods",
    "page": 22,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "An explicit example",
    "page": 22,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "Extended affine Hecke algebra of type A",
    "page": 26,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 2,
    "title": "Gram determinants and Jucys Murphy elements",
    "page": 29,
    "source": "outline",
-   "number": "6.3"
+   "number": "6.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
   },
   {
    "level": 1,
    "title": "References",
    "page": 31,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "31"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Multiplication table for the KL-basis element of the Hecke algebra of Σ3",
+   "page": 23,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 829,
+   "n_words": 121,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -114,8 +434,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 5,
-   "n_chars": 10585,
-   "n_words": 1587
+   "n_chars": 10732,
+   "n_words": 1721,
+   "label_start": null,
+   "label_end": "5"
   },
   {
    "id": "sec-001-2-determinants-for-affine-cellular-algebras",
@@ -124,8 +446,10 @@
    "level": 1,
    "page_start": 5,
    "page_end": 7,
-   "n_chars": 6088,
-   "n_words": 907
+   "n_chars": 6545,
+   "n_words": 1364,
+   "label_start": "5",
+   "label_end": null
   },
   {
    "id": "sec-002-3-homomorphisms-between-affine-cell-ideals",
@@ -134,8 +458,10 @@
    "level": 1,
    "page_start": 7,
    "page_end": 13,
-   "n_chars": 13349,
-   "n_words": 2173
+   "n_chars": 13926,
+   "n_words": 2793,
+   "label_start": null,
+   "label_end": "13"
   },
   {
    "id": "sec-003-4-the-asymptotic-algebra-of-an-affine-cellular-a",
@@ -144,8 +470,10 @@
    "level": 1,
    "page_start": 13,
    "page_end": 17,
-   "n_chars": 7125,
-   "n_words": 1081
+   "n_chars": 7492,
+   "n_words": 1474,
+   "label_start": "13",
+   "label_end": "17"
   },
   {
    "id": "sec-004-5-properties-of-the-embedding-into-the-asymptoti",
@@ -154,8 +482,10 @@
    "level": 1,
    "page_start": 17,
    "page_end": 22,
-   "n_chars": 13288,
-   "n_words": 1926
+   "n_chars": 14184,
+   "n_words": 2772,
+   "label_start": "17",
+   "label_end": "22"
   },
   {
    "id": "sec-005-6-examples-and-methods",
@@ -165,7 +495,9 @@
    "page_start": 22,
    "page_end": 22,
    "n_chars": 203,
-   "n_words": 31
+   "n_words": 31,
+   "label_start": "22",
+   "label_end": "22"
   },
   {
    "id": "sec-006-61-an-explicit-example",
@@ -173,42 +505,84 @@
    "title": "An explicit example",
    "level": 2,
    "page_start": 22,
-   "page_end": 29,
-   "n_chars": 13418,
-   "n_words": 2195
+   "page_end": 26,
+   "n_chars": 6560,
+   "n_words": 1299,
+   "label_start": "22",
+   "label_end": "26"
   },
   {
-   "id": "sec-007-63-gram-determinants-and-jucys-murphy-elements",
+   "id": "sec-007-62-extended-affine-hecke-algebra-of-type-a",
+   "number": "6.2",
+   "title": "Extended affine Hecke algebra of type A",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 29,
+   "n_chars": 7457,
+   "n_words": 1498,
+   "label_start": "26",
+   "label_end": "29"
+  },
+  {
+   "id": "sec-008-63-gram-determinants-and-jucys-murphy-elements",
    "number": "6.3",
    "title": "Gram determinants and Jucys Murphy elements",
    "level": 2,
    "page_start": 29,
    "page_end": 31,
-   "n_chars": 5469,
-   "n_words": 790
+   "n_chars": 5641,
+   "n_words": 962,
+   "label_start": "29",
+   "label_end": "31"
   },
   {
-   "id": "sec-008-references",
+   "id": "sec-009-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 31,
    "page_end": 32,
-   "n_chars": 3924,
-   "n_words": 515
+   "n_chars": 3988,
+   "n_words": 579,
+   "label_start": "31",
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 10,
-  "sections": 9,
-  "chars_total": 73449,
+  "toc_inferred_entries": 0,
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 1,
+    "items": [
+     "Introduction"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 11,
+  "chars_total": 77557,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "CKL-2026Juli04.tex",
    "tex_sections": 9,
-   "overlaid": 7,
+   "overlaid": 8,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -216,42 +590,47 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-2-determinants-for-affine-cellular-algebras",
      "title": "Determinants for affine Cellular Algebras",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.961,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-002-3-homomorphisms-between-affine-cell-ideals",
      "title": "Homomorphisms between affine cell ideals.",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.917,
+     "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-003-4-the-asymptotic-algebra-of-an-affine-cellular-a",
      "title": "The asymptotic algebra of an affine cellular algebra",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.848,
+     "coverage_ratio": 0.961,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-004-5-properties-of-the-embedding-into-the-asymptoti",
      "title": "Properties of the embedding into the asymptotic algebra",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.953,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -259,26 +638,34 @@
      "id": "sec-005-6-examples-and-methods",
      "title": "Examples and methods",
      "prose_ratio": 0.308,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-006-61-an-explicit-example",
      "title": "An explicit example",
-     "prose_ratio": 0.954,
-     "coverage_ratio": 0.625,
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.833,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-007-63-gram-determinants-and-jucys-murphy-elements",
+     "id": "sec-007-62-extended-affine-hecke-algebra-of-type-a",
+     "title": "Extended affine Hecke algebra of type A",
+     "prose_ratio": 0.938,
+     "coverage_ratio": 0.943,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-63-gram-determinants-and-jucys-murphy-elements",
      "title": "Gram determinants and Jucys Murphy elements",
      "prose_ratio": 0.629,
-     "coverage_ratio": 0.848,
+     "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-008-references",
+     "id": "sec-009-references",
      "title": "References",
      "result": "no matching \\section"
     }

@@ -8,6 +8,7 @@ pages: 7-10
 source_pdf: 1172-3.pdf
 source_sha256: e9c32f59e9db7970
 toc_source: inferred
+doc_brief: "ON THE COLORED JONES POLYNOMIALS OF SOME SIMPLE LINKS — 4 sections: Front matter; RESULTS; THE KAUFFMAN BRACKET SKEIN MODULE"
 ---
 Let
 $k=\mathrm{Q}(A)$ denote the quotient ﬁeld of
@@ -52,7 +53,6 @@ $\omega^{-1}=\sum_{n=0}^{\infty}a-\frac{1}{2}n(n+3)R_{n};$ .
 We have for every
 $x\in B^{\mathrm{e}\mathrm{v}\mathrm{e}\mathrm{n}}$
 $\langle\omega^{\pm 1}, x\rangle=\langle t^{\pm 1}(_{X})\rangle$.
-40
 KAZUO HABIRO
 Proposition 6.2 may be rephrased that the element
 $\omega$ gives a positive
@@ -99,7 +99,6 @@ $\mathrm{f}\mathrm{r}\mathrm{a}\mathrm{m}\mathrm{i}\mathrm{n}\mathrm{g}\pm 1$ ,
 $L_{0}$ of surgery on
 $J$ is ambient isotopic to
 $L$.
-41
 ON THE COLORED JONES POLYNOMIALS OF SOME SIMPLE LINKS
 Proposition 8.2. Let
 $L$ be an
@@ -137,7 +136,6 @@ $=(a-a^{-1})n[n]!
 $=(a-a^{-1})n[n]!a^{n}(n+3)$ .
 $(a-a^{-1})^{n} \frac{[2n+1]!}{[n]!}$
 $=a^{n(n+3)}(a-a-1)^{2}n[2n+1]$ !.
-42
 KAZUO HABIRO
 By Proposition 5.1, we have
 $\langle e_{n}\rangle_{3_{1}}=\sum_{i=0}^{n}(-1)i$〈瓦〉亀
@@ -160,4 +158,3 @@ GRADUATE SCHOOL OF MATHEMATICAL SCIENCES, UNIVERSITY OF TOKYO
 $E$-mail address: habiro@ms.
 $\mathrm{u}$-tokyo.
 $\mathrm{a}\mathrm{c}$ . jp
-43

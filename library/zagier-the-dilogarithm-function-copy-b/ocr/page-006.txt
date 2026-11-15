@@ -1,0 +1,60 @@
+8 Don Zagier
+
+The quantitative interpretation turned out as follows [9]: The difference
+
+between the left and right sides of Ramanujan’s equation is O(exp( =) for
+x =1,q-—>1. (The proof of this used the identities
+
+2 +3r
+! 1 (1—qr)® D(-pe
+a —q") 5 ee?
+12; n=1 “(-l)'a =
+123, a
+1
+tT
+
+which are consequences of the Rogers-Ramanujan identities and are surely
+among the most beautiful formulas in mathematics.) For x — 0 and q > 1
+
+2
+the difference in question is O(exp(E4)), and for 0 < « < land gq — 1 it
+
+is ofesn(S))) where c/(x) = -* argsinh 5 = -* log(/1 + 22/4 + 7/2).
+
+For these three formulas to be compatible, one needs
+
+2 2 2
+
+t | a nS
+[ * log( VI+a/A + 2/2) dx = o(0) — (1) = = =>.
+
+5 20
+Using integration by parts and formula A.3.1 (6) of [4] one finds
+|; 1 vai + 02/4 + 0/2) dx = ~5Lie((Vi + 22/4 — x/2)”)
+—= 5 log? (/J1 + 22/4 + 2/2) + (log x) log(\/1 + 22/4 + 2/2) +
+
+so
+1 ;
+1 1 1 -—¥V5 1 5
+
+| 7 les(V1 + 22/4 + 2/2) dx = 3 Lia(1) — 5(Lia(? 5) + tos*( +¥5))
+9 2
+
+a
+
+—_— —- _ —!
+
+~ 12 30 20°
+
+2 Functional equations
+
+In contrast to the paucity of special values, the dilogarithm function satisfies
+a plethora of functional equations. To begin with, there are the two reflection
+properties
+
+wl . 1 1,
+Lie(=) = —Lig(z) - ra 5 o8"(-2),
+2
+7
+
+Lig(1 — z) = —Lig(z) + ra log(z) log(1 — z).

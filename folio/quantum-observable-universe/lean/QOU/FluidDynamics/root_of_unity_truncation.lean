@@ -35,9 +35,13 @@ class RootOfUnityTruncationContext where
   /-- Statement that the Navier-Stokes system blows up at the
       collision of two vortex filaments. -/
   nsBlowsUp : Prop
-  /-- Statement that the Levi form (contact form of the brane) stays
-      non-degenerate at the collision point. -/
-  leviNonDeg : Prop
+  /-- Statement that the core aspect ratio stays bounded, `κ(t) = O(1)`.
+      Replaces the withdrawn field `leviNonDeg` ("the Levi form stays
+      non-degenerate at the collision point"), 2026-11-15, owner decision
+      (PR #7747, bean `qou-fm7s`): in dimension 3 the Levi datum is the
+      single scalar `ξ·curl ξ` and branch (A) of `conj:levi-degeneracy` is
+      refuted by a Beltrami solution. -/
+  coreBounded : Prop
   /-- Proposition: root of unity truncation. -/
   root_unity_truncated : Prop
   /-- Hypothesis that root of unity truncation is active. -/
@@ -50,8 +54,8 @@ class RootOfUnityTruncationContext where
   impl_classical_limit : root_unity_truncated → 2 * j_max + 2 ≤ κ
   /-- (iv) Bernstein bound at root of unity -/
   impl_bernstein_bound : root_unity_truncated → κ_t ≤ 1 + C * (κ - 1 : ℝ)
-  /-- (v) Blowup iff Levi -/
-  impl_blowup_iff_levi_iff_kappa : root_unity_truncated → (nsBlowsUp ↔ leviNonDeg)
+  /-- (v) Blow-up iff bounded core aspect ratio -/
+  impl_blowup_iff_kappa : root_unity_truncated → (nsBlowsUp ↔ coreBounded)
 
 /-- **Content statement** (from manuscript):
 
@@ -70,11 +74,11 @@ theorem root_of_unity_truncation [ctx : RootOfUnityTruncationContext] :
     1 < ctx.q ∧ 2 ≤ ctx.κ ∧
     2 * ctx.j_max + 2 ≤ ctx.κ ∧
     ctx.κ_t ≤ 1 + ctx.C * (ctx.κ - 1 : ℝ) ∧
-    (ctx.nsBlowsUp ↔ ctx.leviNonDeg) :=
+    (ctx.nsBlowsUp ↔ ctx.coreBounded) :=
   ⟨ctx.impl_generic_qou_regime ctx.truncation_active,
    ctx.impl_root_unity ctx.truncation_active,
    ctx.impl_classical_limit ctx.truncation_active,
    ctx.impl_bernstein_bound ctx.truncation_active,
-   ctx.impl_blowup_iff_levi_iff_kappa ctx.truncation_active⟩
+   ctx.impl_blowup_iff_kappa ctx.truncation_active⟩
 
 end QOU.FluidDynamics

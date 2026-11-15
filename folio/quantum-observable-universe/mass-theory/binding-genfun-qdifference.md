@@ -41,8 +41,8 @@ the binding series.
 >
 > The **raw** carrier — the ordinary generating function of the raw body terms
 > $B_n = I(n)/n$ — was excluded by the confluent/Gevrey growth argument
-> ([`QOU.Mass.QDifferenceConfluentObstruction.no_bounded_depth_first_order_kernel`](../lean/QOU/Mass/QDifferenceConfluentObstruction.lean),
-> sorry-free). That exclusion explicitly re-targeted the conjecture at the
+> ([`QOU.Mass.QDifferenceConfluentObstruction.no_bounded_depth_first_order_kernel`](../lean/QOU/Mass/QDifferenceConfluentObstruction.lean)).
+> That exclusion explicitly re-targeted the conjecture at the
 > **$q$-Borel / Gevrey-normalized** carrier $b_n = f_n/[n]_q!$, predicting depth
 > $d = 2$. The normalized carrier provably satisfies
 > $[m+2]_q\,b_{m+2} = b_{m+1} + b_m$, i.e. the operator
@@ -61,7 +61,7 @@ the binding series.
 > $L_{\mathcal{K}}$ obeys any scalar relation $G(qx) = R(q,x)G(x)$ with
 > $R \in K(x)$** — a fortiori none with $R\in\mathbb{Q}(q)[x,x^{-1}]$ of any
 > depth $d$; the depth never enters the argument, only the degrees do.
-> Sorry-free in
+> Formalized in
 > [`QOU.Mass.BindingScalarKernelParityExclusion`](../lean/QOU/Mass/BindingScalarKernelParityExclusion.lean).
 >
 > **Scope (b), structural exclusion, invariant cited.** The parity is the

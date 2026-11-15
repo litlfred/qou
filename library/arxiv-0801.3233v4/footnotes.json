@@ -1,0 +1,576 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-0801.3233v4",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p017-1",
+   "page": 17,
+   "mark": "2",
+   "text": "In the version of [Ye5] dated August 2009, this is called “additive descent data”, and denoted by ADD(g[[ℏ]]+).",
+   "marks": [
+    {
+     "page": 17,
+     "context": "ofLiedescentdata"
+    }
+   ],
+   "block": "library/arxiv-0801.3233v4/blocks/prose-sec-010"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "18",
+   "text": "D05. This research was supported by the US-Israel Binational Science Foundation and by the Israel Science Foundation. ⃝0000 (copyright holder) c",
+   "block": "library/arxiv-0801.3233v4/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p016-1",
+   "page": 16,
+   "mark": "1",
+   "text": "Thisistheproofinthenewversionof[Ye5],stillinpreparationasofJuly2011.",
+   "block": "library/arxiv-0801.3233v4/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p018-1",
+   "page": 18,
+   "mark": "358",
+   "text": "(2006) no. 12, 5441 - 5483. Mo. I. Moerdijk, Introduction to the Language of Stacks and Gerbes, eprint math.AG/0212266 at http://arxiv.org.",
+   "block": "library/arxiv-0801.3233v4/blocks/prose-sec-010"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "j",
+   "context": "ωj(f, g)ℏ"
+  },
+  {
+   "page": 3,
+   "mark": "b",
+   "context": "InsteadofC[[ℏ]]wetakethecompletetensorproductR"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "group H"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "suﬃcientconditionforthatisthevanishingofthecohomologygroupH"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "admitsanétalecoordinatesystem,namelyanétalemorphismU→A"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "R= R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "meantanopensetinthemanifoldA"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "gi,j: A"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "gi,j: Ai|Ui,j→A"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "withnonzerocohomologyclassc∈H"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "esults on pronilpotent gerbes from [Ye6] tell us that when H"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "andH"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Corollary6.2.Assume the cohomology groups H"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Corollary6.2.Assume the cohomology groups H1(X, OX) and H"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Aswealreadymentioned,ifH"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "tionsaresheaftheoreticallytrivial.Likewise,ifH"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "H"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "H"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "H"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "H1(X, TX)andH"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "TheconditionsofCorollary6.3aresatisﬁed,forinstance,whenX=P"
+  },
+  {
+   "page": 10,
+   "mark": "g",
+   "context": "i∈Z"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "i∈Zg"
+  },
+  {
+   "page": 10,
+   "mark": "g",
+   "context": "i∈Z"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "i∈Zg"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "g"
+  },
+  {
+   "page": 10,
+   "mark": "p",
+   "context": "ℏg"
+  },
+  {
+   "page": 10,
+   "mark": "p",
+   "context": "g"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "ωjℏ"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "ωjℏj∈g"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "Letexp(g"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "algebrag"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "algebrag0[[ℏ]]+.Thereisanactionofthegroupexp(g"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "algebrag0[[ℏ]]+.Thereisanactionofthegroupexp(g0[[ℏ]]+)ong"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "exp(g"
+  },
+  {
+   "page": 10,
+   "mark": "p",
+   "context": "T"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "poly(C) = V"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "poly(C) = C,T"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "poly(C) = TCandT"
+  },
+  {
+   "page": 10,
+   "mark": "p",
+   "context": "T"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "ωjℏ"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "ωjℏj∈T"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "ωj(f, g)ℏ"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "T"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "ators.Afunctionφ:C"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "suchoperatorsisdenotedbyD"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "poly(C) = CandD"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "D"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "j=1ω"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "j=1ωjℏ"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "ωj(f, g)ℏ"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "D"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "poly(C)→Dpoly(C)is"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "σ∈Sksgn(σ)∂σ(1)(f"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "σ∈Sksgn(σ)∂σ(1)(f1) · · · ∂σ(k)(f"
+  },
+  {
+   "page": 13,
+   "mark": "b",
+   "context": "wherek(x)istheresidueﬁeld,and"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "lim←Coor"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "lim←CooriX,whereeachCoor"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "∇: PX→Ω"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "standardconnectiond:OX→Ω"
+  },
+  {
+   "page": 13,
+   "mark": "b",
+   "context": "Letusdenotebyπ∗PXthepullbackoftheleftOX-modulePX;andletπ"
+  },
+  {
+   "page": 13,
+   "mark": "b",
+   "context": "OCoor X"
+  },
+  {
+   "page": 13,
+   "mark": "b",
+   "context": "OCoor Xb⊗K K[[t]]∼= π"
+  },
+  {
+   "page": 13,
+   "mark": "b",
+   "context": "OCoor X"
+  },
+  {
+   "page": 13,
+   "mark": "b",
+   "context": "OCoor Xb⊗K Tpoly(K[[t]])∼= π"
+  },
+  {
+   "page": 13,
+   "mark": "b",
+   "context": "OCoor X"
+  },
+  {
+   "page": 13,
+   "mark": "b",
+   "context": "OCoor Xb⊗K Dpoly(K[[t]])∼= π"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "tialformsonCoor X;soinparticularA"
+  },
+  {
+   "page": 14,
+   "mark": "b",
+   "context": "tialformsonCoor X;soinparticularA0= OCoor X.Then,byapplyingA"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "lformsonCoor X;soinparticularA0= OCoor X.Then,byapplyingAb⊗A"
+  },
+  {
+   "page": 14,
+   "mark": "b",
+   "context": "A"
+  },
+  {
+   "page": 14,
+   "mark": "b",
+   "context": "Ab⊗K Tpoly(K[[t]])∼= A"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "Ab⊗K Tpoly(K[[t]])∼= Ab⊗A"
+  },
+  {
+   "page": 14,
+   "mark": "b",
+   "context": "Ab⊗K Tpoly(K[[t]])∼= Ab⊗A0 π"
+  },
+  {
+   "page": 14,
+   "mark": "b",
+   "context": "A"
+  },
+  {
+   "page": 14,
+   "mark": "b",
+   "context": "Ab⊗K Dpoly(K[[t]])∼= A"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "Ab⊗K Dpoly(K[[t]])∼= Ab⊗A"
+  },
+  {
+   "page": 14,
+   "mark": "b",
+   "context": "Ab⊗K Dpoly(K[[t]])∼= Ab⊗A0 π"
+  },
+  {
+   "page": 14,
+   "mark": "a",
+   "context": "poly(K[[t]])is"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "side,whereω∈A"
+  },
+  {
+   "page": 14,
+   "mark": "b",
+   "context": "side,whereω∈A1"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "side,whereω∈A1b⊗K T"
+  },
+  {
+   "page": 14,
+   "mark": "b",
+   "context": "Υ : A"
+  },
+  {
+   "page": 14,
+   "mark": "b",
+   "context": "Υ : Ab⊗K Tpoly(K[[t]]) →A"
+  },
+  {
+   "page": 14,
+   "mark": "b",
+   "context": "Υω: A"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "Υω: Ab⊗A"
+  },
+  {
+   "page": 14,
+   "mark": "b",
+   "context": "Υω: Ab⊗A0 π"
+  },
+  {
+   "page": 14,
+   "mark": "b",
+   "context": "Υω: Ab⊗A0 πb∗(PX⊗OXTpoly,X) →A"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "Υω: Ab⊗A0 πb∗(PX⊗OXTpoly,X) →Ab⊗A"
+  },
+  {
+   "page": 14,
+   "mark": "b",
+   "context": "Υω: Ab⊗A0 πb∗(PX⊗OXTpoly,X) →Ab⊗A0 π"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "whereNisthesubgroupofelementsthatacttriviallymodulo(t)"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "Kisthe"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "K× (U"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "K× (Ui0∩· · · ∩U"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "isanétalemorphismUi→A"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "K.Given"
+  },
+  {
+   "page": 16,
+   "mark": "p",
+   "context": "ČechconstructiongivesacosimplicialDGLiealgebraC(U, G)={C"
+  },
+  {
+   "page": 16,
+   "mark": "p",
+   "context": "C"
+  },
+  {
+   "page": 16,
+   "mark": "p",
+   "context": "C"
+  },
+  {
+   "page": 16,
+   "mark": "p",
+   "context": "C"
+  },
+  {
+   "page": 16,
+   "mark": "p",
+   "context": "Cp(U,Ψσ) / C"
+  },
+  {
+   "page": 16,
+   "mark": "p",
+   "context": "C"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "quantumtypeDGLiealgebrag = {g"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "Del(g"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "Next let G = {G"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "So for a cosimplicial quantum type DG Lie algebra g = {g"
+  }
+ ]
+}

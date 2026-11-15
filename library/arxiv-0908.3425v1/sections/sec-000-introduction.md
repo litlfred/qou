@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-0908.3425v1
-doc_title: "Chiral Perturbation Theory: Introduction and Recent Resul ts in the One-Nucleon Sector S. Scherer"
+doc_title: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector"
 section_id: sec-000-introduction
 section_title: "Introduction"
 section_number: null
-pages: 1-3
+pages: 2-4
 source_pdf: 0908.3425v1.pdf
 source_sha256: 5e88d45bbc1c1b9b
-doc_brief: "Chiral Perturbation Theory: Introduction and Recent Resul ts in the One-Nucleon Sector S. Scherer — We provide an introduction to the basic concepts of chiral pe rturbation theory and discuss some"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.994
+latex_prose_ratio: 0.986
 latex_coverage_ratio: 0.994
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 Effective field theory (EFT) is a powerful tool in the description of the strong interactions at low energies. The central idea is due to Weinberg [@Weinberg:1978kz]:
 

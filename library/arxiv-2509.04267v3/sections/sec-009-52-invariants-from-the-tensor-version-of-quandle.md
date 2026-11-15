@@ -9,8 +9,9 @@ source_pdf: 2509.04267v3.pdf
 source_sha256: 9843b9dd71d1ec74
 toc_source: inferred
 text_source: latex
-latex_prose_ratio: 0.963
+latex_prose_ratio: 0.966
 latex_coverage_ratio: 0.969
+doc_brief: "Quantum Cocycle Invariants of Knots from Yang-Baxter Cohomology — Yang-Baxter operators (YBOs) have been employed to construct quantum knot invari- ants."
 ---
 []{#subsec:Q label="subsec:Q"}
 

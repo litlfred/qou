@@ -10,6 +10,7 @@ source_sha256: 18321b615ffc968b
 toc_source: outline
 doc_brief: "A Tutorial on Knots and Quantum Mechanics — These notes review a description of quantum mechanics in terms of the topology of spaces, basing on the axioms of Topological Quantum Field Theory and path"
 ---
+Bracket and Jones polynomials
 Skein relation and Hecke algebras allow to compute Markov traces diagrammatically, without explicitly
 defining matrix representations [45]. Recall that we agreed to substitute any disconnected circle by the
 8
@@ -119,4 +120,3 @@ with the crossing modified according to skein relation (25);
 are nothing but a collection of nested nonintersecting circles;
 • replace each circle by factor d = −A2 −A−2.
 10
-2.4

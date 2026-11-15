@@ -7,11 +7,12 @@ section_number: null
 pages: 1-2
 source_pdf: 0804.0917v1.pdf
 source_sha256: 887fbd8be47a2781
-doc_brief: "Czechoslovak Mathematical Journal — 9 sections: Front matter; Introduction; Composition-Diamond lemma for left"
-duplicate_of: "czechmathj-60-2010-1-4"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.633
+latex_coverage_ratio: 0.88
+doc_brief: "Czechoslovak Mathematical Journal — 19 sections: Page 1; Page 2; Page 3"
+duplicate_of: "czechmathj-60-2010-1-4"
 ---
 Composition-Diamond lemma for modules was first formulated and proved by S.-J. Kang and K.-H. Lee in [@kl1] and [@kl3]. According to their approach, a Gröbner-Shirshov basis of a cyclic module $M$ over an algebra $A$ is a pair $(S,T)$, where $S$ is the set of the defining relations of $A, \ A=k\langle X|S\rangle$ and $T$ is the defining relations for the $A$-module $_A M=
 mod_A\!\langle e|T\rangle$. Then Kang-Lee's Lemma says that $(S,T)$ is a Gröbner-Shirshov pair for $A$-module $_A M=mod_A \langle

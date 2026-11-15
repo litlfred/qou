@@ -1,0 +1,51 @@
+14 Chapter 1 — Vanishing theorems on abelian varieties
+
+Then 2 = f*(.@) = Oy @c f*(Ly). Since all the occuring local systems
+are unitary, Hodge theory says that
+
+QD APY, QE @cL)) = H(Y,E @e f* (Ly).
+p+qak
+
+Putting K = Rf,.E[2d — w(Y)] we can identify the cohomology group on the
+right hand side with the group HIM) (X Ky). Since the direct image
+complex Ky is semi-perverse, theorem 1.1 shows that for k > 2d — w(Y)
+and most characters 7 the above group vanishes. The theorem now follows
+by an application of Serre duality. Oo
+
+For a similar result in this direction, consider for n € No the closed
+analytic subsets
+
+Xn ={xeX|dim(f-!(x)) =n} and Yn=f7!(Xn),
+
+and put d, = dim(Y,) with the convention that d, = —°9 for Y, = 0. Then
+our vanishing theorem implies the following
+
+THEOREM 1.5. Suppose that p+ q=d-—n for some n > 1. Then for
+most line bundles ¥ € Pic®(Y),
+
+H?(Y,O8(L)) = 0 unless d—dy< p,q <dy—n.
+
+Proof. By Serre duality the claim is equivalent to the statement that
+if p+q=d-+n for some n > 1, then H?(Y,Q4(L)) =0 for most Z unless
+the Hodge types satisfy the estimates
+
+d+n—dn < p,q < dn.
+
+In fact it will suffice to establish the upper estimate p,q < dn, the lower
+estimate is then automatic since p+ gq = d +n by assumption.
+
+The decomposition theorem for compact Kahler manifolds [90, th. 0.6]
+says that Rf,Cy [d] & ®,, Mn[—m] where each M,, is a pure Hodge module
+on X of weight m-+d in the sense of [89]. Furthermore, for any unitary
+character ¥ with complex conjugate 7 the local system Ly © Lz of rank two
+has an underlying real structure and hence can be viewed as a real Hodge
+module of weight zero in a natural way. So for any real Hodge module M
+on X also My 7 = My © Mj is a real Hodge module. This being said, by
+theorem 1.1 we have
+
+HOY, f*(Ly@Lz)) = H"(X,(RfeCy(d])zz) = H(X,(Mn)x7)
+
+for most unitary characters 7. The formalism of Hodge modules equips the
+cohomology group on the right hand side with a pure R-Hodge structure of
+weight n+ d compatible with the natural one on the left hand side. We are
+looking for bounds on the types (p,q) in this Hodge structure.

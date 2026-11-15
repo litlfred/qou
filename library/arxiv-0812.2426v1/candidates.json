@@ -1,0 +1,46 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-0812.2426v1",
+ "source": {
+  "structure_sha256": "df1eb953bc2c6c6362957715c74150736e41354b93e6d84166e669f4693ea198",
+  "file": "0812.2426v1.pdf"
+ },
+ "provenance": {
+  "title": "CATEGORICAL CENTERS AND RESHETIKHIN-TURAEV INVARIANTS",
+  "authors": "ALAIN BRUGUI\u00c8RES AND ALEXIS VIRELIZIER",
+  "arxiv": {
+   "id": "0812.2426",
+   "version": "1",
+   "primary_class": "math.QA",
+   "stamp_date": "12 Dec 2008"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "recommendation": 1
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "What we need is a di\ufb00erent algorithm for computing RTZ(C)(M), which one should be able to perform inside C, without reference to the simple objects of Z(C).",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-1-conventions-and-notations.md",
+   "section_title": "Conventions and notations",
+   "pages": "1-3",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

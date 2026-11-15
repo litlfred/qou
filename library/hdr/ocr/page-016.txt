@@ -1,0 +1,48 @@
+Chapter 1
+
+Algebras of Finite Type
+
+Let R be a commutative integral domain and let A be an R-algebra, free and finitely generated as an
+R-module. If R’ is a commutative integral domain containing R, we will write R’A for R’ @p A and we
+will denote by Irr(R’A) the set of irreducible representations of R’A.
+
+1.1. Blocks
+
+We define the block-idempotents of A to be the primitive idempotents of the centre Z(A) of A. Let K be
+a field containing R such that the algebra KA is semisimple. Then K A is isomorphic to a direct product
+of simple algebras,
+KA= JI My,
+Velr(K A)
+
+where My is a simple K-algebra. For all V € Irr( A), we denote by my : KA -» My the projection
+onto the V-factor and by ey the element of KA such that
+
+lny if V=V",
+mi(ev) = { 0 eveVe
+
+We have that the elements {ev }veem(4A) are the block-idempotents of KA. Further, there exists a
+unique partition BI(A) of Irr( A) that is the finest with respect to the property:
+
+VB EBA), ep = Deve A.
+VeEB
+
+The elements {e8} Bepia) are the block-idempotents of A. We have A ~ Isenya) Aeg. From now on,
+we will refer to the parts of Bl(A) as the blocks of the algebra A.
+
+Example 1.1 Let G be a finite group. The group algebra Z[G] has only one block, which contains all
+the irreducible representations of C[G].
+
+1.2 Symmetrising forms and Schur elements
+
+A symmetrising form on the algebra A is a linear map 7 : A > R such that
+
+(a) r(ab) = r(ba) for all a,b € A, that is, 7 is a trace function, and
+
+(b) the map 7: A + Homa(A, R), a (x ++ 7(ax)) is an isomorphism of A-bimodules.
+
+If there exists a symmetrising form on A, we say that A is a symmetric algebra.
+
+Example 1.2 Let G be a finite group. The linear map r : Z[G] > Z defined by r(1) = 1 and r(g) = 0
+for all g € G\ {1} is a symmetrising form on Z[G]; it is called the canonical symmetrising form on Z[G].
+
+13

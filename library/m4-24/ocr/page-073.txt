@@ -1,0 +1,49 @@
+Problems on invariants of knots and 3-manifolds 445
+
+4 Skein modules
+
+Skein module is an algebraic object associated to a manifold, usually con-
+structed as a formal linear combination of embedded (or immersed) subman-
+ifolds, modulo locally defined relations. In a more restricted setting a skein
+module!” is a module associated to a 3-dimensional manifold, by considering
+linear combinations of links in the manifold, modulo properly chosen (skein)
+relations. It is a main object of the algebraic topology based on knots. In the
+choice of relations one takes into account several factors:
+
+(i) Is the module we obtain accessible (computable)?
+
+(ii) How precise are our modules in distinguishing 3-manifolds and links in
+them?
+
+(iii) Does the module reflect topology/geometry of a 3-manifold (e.g. surfaces
+in a manifold, geometric decomposition of a manifold)?
+
+(iv) Does the module admit some additional structure (e.g. filtration, grada-
+tion, multiplication, Hopf algebra structure)? Is it leading to a Topo-
+logical Quantum Field Theory (TQFT) by taking a finite dimensional
+quotient?
+
+One of the simplest skein modules is a q-deformation of the first homology
+group of an oriented 3-manifold M, denoted by S2(M;q). It is based on the
+skein relation (between oriented framed links in M): «K =¢ » ¢ ; it also
+satisfies the framing relation et =q | , where the diagrams in each formula
+
+imply framed links, which are identical except in a ball, where they differ as
+shown in the diagrams. Already this simply defined skein module “sees” non-
+separating surfaces in M. These surfaces are responsible for torsion part of the
+skein module [338].
+
+There is more general pattern: most of analyzed skein modules reflect various
+surfaces in a manifold.
+
+The best studied skein modules use skein relations which worked successfully in
+the classical knot theory (when defining polynomial invariants of links in R?).
+
+The original version of Chapter 4 was written by J. H. Przytycki. It was revised by T.
+Ohtsuki following suggestions given by the referee. Based on it, Przytycki wrote this chapter.
+17 Alexander first wrote down the skein relation for his polynomial. Conway rediscovered the
+relation and placed in the abstract setting of linear skein”. He predicted the corresponding
+skein module for a tangle. General skein modules of 3-manifolds were first considered in 1987
+by Przytycki and Turaev independently [333], [386].
+
+Geometry & Topology Monographs, Volume 4 (2002)

@@ -1,0 +1,39 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-007
+section_title: "Page 7"
+section_number: null
+pages: 7-7
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+Problems on invariants of knots and 3-manifolds 379
+
+cisely those which can, and therefore must, be studied with the aid of three-
+dimensional pictures and a topological viewpoint; the whole theory should
+therefore be considered as a new kind of algebraic topology specific to three
+dimensions.
+
+Perhaps the most important overall goal is simply to really understand the
+topology underlying quantum invariants in three dimensions: to relate the “new
+algebraic topology” to more classical notions and obtain good intrinsic topologi-
+cal definitions of the invariants, with a view to applications in three-dimensional
+topology and beyond.
+
+The problem list which follows contains detailed problems in all areas of the
+theory, and their division into sections is really only for convenience, as there are
+very many interrelationships between them. Some address unresolved matters
+or extensions arising from existing work; some introduce specific new conjec-
+tures; some describe evidence which hints at the existence of new patterns or
+structures; some are surveys on major and long-standing questions in the field;
+some are purely speculative.
+
+Compiling a problem list is a very good way to stimulate research inside a
+subject, but it also provides a great opportunity to “take stock” of the overall
+state and direction of a subject, and to try to demonstrate its vitality and worth
+to those outside the area. We hope that this list will do both.
+
+Geometry & Topology Monographs, Volume 4 (2002)

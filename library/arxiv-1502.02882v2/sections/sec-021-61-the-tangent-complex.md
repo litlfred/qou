@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1502.02882v2
-doc_title: "Fusion categories via string diagrams Bruce Bartlett"
+doc_title: "Fusion categories via string diagrams"
 section_id: sec-021-61-the-tangent-complex
 section_title: "The tangent complex"
 section_number: 6.1
 pages: 30-32
 source_pdf: 1502.02882v2.pdf
 source_sha256: 43641c6f3aed63dd
-doc_brief: "Fusion categories via string diagrams Bruce Bartlett — We use the string diagram calculus to give graphical proofs of the basic results of Etingof, Nikshych and Ostrik [9] on fusion categories."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.959
-latex_coverage_ratio: 0.939
+latex_coverage_ratio: 0.979
+doc_brief: "Fusion categories via string diagrams — We use the string diagram calculus to give graphical proofs of the basic results of Etingof, Nikshych and Ostrik [9] on fusion categories."
 ---
 In this subsection we recall the definition of the Yetter-Davydov cohomology of a fusion category $\cat{C}$ \cite{yetter1998-braided, yetter2003-abelian, davydov1997-twisting}. Define the functor 
 \[

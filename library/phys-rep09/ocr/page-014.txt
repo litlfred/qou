@@ -1,0 +1,75 @@
+164 S. Blanes et al. / Physics Reports 470 (2009) 151-238
+2.5. Graph theoretical analysis of Magnus expansion
+
+The previous recursions allow us, in principle, to express any 2; in the Magnus series in terms of 21, ..., 2,—1. In fact,
+this procedure has some advantages from a computational point of view. On the other hand, as we have mentioned before,
+when the recursions are solved explicitly, 82, can be expanded as a linear combination of terms that are composed from
+integrals and commutators acting iteratively on A. The actual expression, however, becomes increasingly complex with k, as
+it should be evident from the first terms (42)-(46). An alternative form of the Magnus expansion, amenable also for recursive
+derivation by using graphical tools, can be obtained by associating each term in the expansion with a binary rooted tree, an
+approach worked out by Iserles and Norsett [37]. For completeness, in the sequel, we show the equivalence of the recurrence
+(49)-(50) with this graph theoretical approach.
+
+In essence, the idea of Iserles and Norsett is to associate each term in 2, with a rooted tree, according to the following
+prescription.
+
+Let J be the set consisting of the single rooted tree with one vertex, then Jo = { ©}, establish the relationship between
+this tree and A through the map
+
+e@ ~ A(t)
+and define recursively
+
+at
+m= |\ 8 TE Ty, t € Ty kit ky =m—1
+
+Next, given two expansion terms H,, and H,,, which have been associated previously with t; € J, and tz € Jj,, respectively
+(ky + ky =m — 1), we associate
+
+™%
+7)
+
+t
+no =| [ Hy @)de, Ha with =\/7
+0
+
+Thus, each H; for t € Tm involves exactly m integrals and m commutators.
+
+These composition rules establish a one-to-one relationship between a rooted tree tT € T = Um=>o Tm, and a matrix
+function H, (t) involving A, multivariate integrals and commutators.
+
+From here it is easy to deduce that every tT € Tm, m > 1, can be written in a unique way as
+
+Ts
+
+T3
+T2
+
+qT%
+T=
+Or T = a(t}, T2, ..., Ts). Then the Magnus expansion can be expressed in the form [37,59]
+oO t
+20=yVy ae) [ H, (é)dé, (61)
+0
+
+m=0 TETin
+
+with the scalar a( © ) = 1 and, in general,
+s
+
+Bs
+a(t) = 7 Il a(t).
+
+* [=1
+Let us illustrate this procedure by writing down, explicitly, the first terms in the expansion in a tree formalism. In 7; we
+only have k; = kp = 0, so that a single tree is possible,
+
+™W=°, H=°e, => mo
+
+with w(t) = —1/2. In J, there are two possibilities, namely k; = 0, kz = 1 and k; = 1, kp = O, and thus one gets
+
+WS °, ws > T= ; a(t) =
+cal J‘ m=e > T= a(t) =
+
+Sl-
+
+rie

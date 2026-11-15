@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: xi.pdf
 source_sha256: 5e5c057e2e6e1dfc
 toc_source: inferred
+doc_brief: "Cellular algebras — This is a series of 4 lectures on cellular algebras."
 ---
 Advanced school and conference on representation
 theory and related topics. ICTP, Trieste. Jan. 9-28, 2005

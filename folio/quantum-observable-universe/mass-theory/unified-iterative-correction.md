@@ -23,9 +23,9 @@ Only multi-dimensional mixing partitions carry a non-zero $u_\lambda$: the subtr
 
 The formulation bypasses special-case branching entirely. Each atomic step computes an independent energy increment from the transition trace difference, and the increments telescope, so the per-partition total depends on the running product only through its final trace. The process extracts the binding increment via identical algebraic mechanisms across all values of $A$.
 
-## The selection rule that was removed
+## No sign selection on blocks
 
-The sum above is unrestricted. Earlier formulations restricted it to those $\lambda$ with $\mathrm{tr}\, \mathbf{M}_\lambda^{(0..A)} \le 0$. That restriction was **asserted, not derived** — it was what the accumulator computed rather than a consequence of the constraint it was named for — and it has been removed on that ground. Its status is fixed by the following.
+The sum above is unrestricted. Restricting it to those $\lambda$ with $\mathrm{tr}\, \mathbf{M}_\lambda^{(0..A)} \le 0$ is not a consequence of the Frobenius positivity constraint, as the following shows.
 
 Complementary slackness for a Frobenius positivity constraint $\langle \Phi, \pi_\lambda \rangle \ge 0$ makes *tight* mean $\mathrm{tr} = 0$, not $\mathrm{tr} \le 0$. Under that reading every selected block contributes the same constant and the total reads nothing about the nucleus; the selected set also meets the domain of $\ln|\cdot|$ nowhere. Both are recorded in `QOU.MassTheory.UICFunctionalSelection` (`uicGated_cs_eq`, `cs_selection_excludes_log_domain`).
 
