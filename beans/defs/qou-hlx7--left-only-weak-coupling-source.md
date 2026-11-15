@@ -10,7 +10,7 @@ tags:
     - weak
 parent: qou-qs0e
 created_at: 2026-11-15T09:00:00Z
-updated_at: 2026-11-15T10:30:00Z
+updated_at: 2026-11-15T18:10:00Z
 ---
 
 Follow-up from qou-hlx6 (PR #7836). Corpus-grepped 2026-11-15 (beans, docs/audits,
@@ -150,3 +150,7 @@ docs/audits/2026-11-15-weak-vertex-left-projector.md.
   x·P_R (needs [3]_q ≠ 0); n=3 torus right part is period 3 (Lean). (4)
   torus_word_right_line_share_probe.py, n ≤ 7 exact: share O(q^(−2N)), [3]_q:1 at N=0,
   −1/(q²(q²+1)) at N=1 for every n; twist eigenvalue cited, checked n ≤ 7. Audit §6–§7.
+
+## 2026-11-15 weak vertex = scalar times the symmetric crossing
+
+`QOU/QuarkState/WeakVertexMidpoint.lean` (PR #7948, sorry-free): for 1 < |q|, W = (2/(q²+1))·½(σ+σ⁻¹); for |q| ≤ 1 the scalar is 2q²/(q²+1). So the corpus hand-set u–d crossing ½(σ+σ⁻¹) (HeckeRational.crossing) is the weak vertex up to scale. Identity only, not a derivation of the strong crossing; D-H3 stays open. Asked for by the n–p splitting thread, which reports the scalar cancels in ΔΦ.
