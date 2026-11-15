@@ -221,3 +221,21 @@ Pre-registered probe: `np_level2_weight_space_probe.py`; output: `probe_output_l
 - **Scale α.** α = m_e·8G is defined as the nuclear *binding* scale (prop:binding-scale-catalan). The n–p proof applies it to a log-trace difference with one sentence, "the scale … governing nuclear binding also dictates the quark-level confinement splitting". No corpus artifact derives that step. Matching CODATA would need |ΔΦ| = 0.3454, which is 1.655 × 2 ln q. For comparison: feeding the weight ratio q^{±1} or q^{±2} into the canonical nucleon-mass route m_p = 2(m_μF − 6m_e) gives 103.9 MeV or 219.2 MeV. So the weight cannot enter at the level of the nucleon mass, and the 0.7814 MeV figure is conditional on the asserted α. No alternative scale is tried here, because choosing one would be a fit.
 - **Higher level.** Pre-registered probe `np_level3_weight_space_probe.py`: Jimbo R on (C³)^{⊗3}, K = q^{2ρ}. Adjacent (u,d), on (e₁,e₂) or on (e₂,e₃), gives n/p = q^{−2} for the half twist, the full twist and σ₁σ₂, the same as level 2. The reason holds at any level: weight spaces of permuted weights are isomorphic Hecke modules (permutation modules M^μ), so the plain traces agree and only K^{⊗3} = q^{2⟨μ,ρ⟩} differs. Weights one simple root apart differ by q². Non-adjacent placement (e₁,e₃) gives q^{−4} (+20.8 %), but that placement is a choice. In u,d,s ordering u and d are adjacent. **Higher levels do not change the result.**
 - **Which quark is on e₁.** The corpus already fixes the knot side: u = T(2,3), d = its mirror, T₃ = ½ sgn κ (knot-notation-convention, Lean `MesonOperatorSelectionT3.T3`). The missing link is from a strand's knot to a weight vector. Tested the proposed link "positive crossing ↔ K = q": tr₂((1⊗K)Ř) and tr₂((1⊗K)Ř⁻¹) are both scalars for K = diag(q, 1/q) (q²·1 and q⁻²·1), and neither is a scalar for diag(1/q, q). **So the crossing sign does not select the vector.** The ribbon twist is a scalar on the irreducible V, so framing and writhe cannot separate e₁ from e₂ either. Only K does. "u on e₁" therefore reduces to identifying the writhe isospin T₃ with the Cartan weight in K = q^{2T³}. That identification is natural but not derived. If adopted it gives the neutron heavier, which is a check and is not used to select it.
+
+## §15 Deriving the scale; Lean for the orientation (bean qou-q1a4)
+Pre-registered probe `np_scale_candidates_probe.py`. Each candidate scale was taken from a corpus mass formula and fixed before running. None is selected by its residual.
+
+| route | Δm (MeV) | vs CODATA |
+|---|---|---|
+| S0 asserted α·2 ln q, α = m_e·8G | 0.7814 | −39.58 % |
+| S1 canonical facade, F_Bor scaled by q^{2} | 219.15 | +16845 % |
+| S1 canonical facade, F_Bor scaled by q^{−2} | 177.87 | +13653 % |
+| S2 linearised facade, 2m_μF·2 ln q | 197.08 | +15138 % |
+| S3 unified formula m_e·8G·ρ/ℏ_q², ρ ratio q² | 88.51 | +6744 % |
+
+**Reading (scope a).** Every route that puts the weight-space ratio into a corpus nucleon-mass formula gives a splitting of 89–219 MeV. So the restricted trace is not how those formulas see flavour: their canonical trace is the unrestricted one, which is the same for p and n. The only route at the MeV scale is S0, and S0's scale is asserted, not derived. **No corpus formula derives a MeV-scale multiplier for this ratio.** The −39.58 % stands as a conditional figure, and the scale is the open object.
+
+**Lean** (`QOU/BraidsAndKnots/MarkovOrientationForced.lean`, generic `[Field R]`, lean-direct `-DautoImplicit=false` exit 0, no sorry, standard axioms only):
+- `positive_crossing_markov_iff`, `negative_crossing_markov_iff`: tr₂((1⊗K)Ř) and tr₂((1⊗K)Ř⁻¹) are scalars iff a = b q², the same condition for both crossing signs (`same_condition_both_signs`).
+- `markov_normalised`: with ab = 1 this gives a² = q².
+- `adjacent_weight_ratio`: the K-weights of adjacent basis vectors differ by q² at every level. The equality of the plain traces on permuted weight spaces (the permutation-module half) is **not** formalised.
