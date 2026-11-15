@@ -60,6 +60,21 @@ Content finding, reported and not edited: type-b-folding-cpt.md realises P as th
 mirror, which is chirality-blind at letter level (scope a). Owner decision D-H4 is framed in
 audit §9.
 
+## 2026-11-15 D-H5 (A vs B for P), audit §10
+
+The three letter maps flip σ↦σ⁻¹ (A), swap σ↦−σ⁻¹ (B) and neg σ↦−σ form a Klein four-group
+(flip_neg, flip_swap, each an involution). Profiles:
+- flip keeps helicity and sends e⁻ ↦ e⁺. It is not K-linear (no_linear_flip).
+- swap exchanges helicity, sends e⁻ ↦ −e⁺, and is linear on the generators.
+- neg exchanges helicity, sends e⁻ ↦ −e⁻, and is not K-linear (no_linear_neg).
+
+Verdict: (A) has the C (or CT) profile and (B) has the CP profile. Neither is P. The P profile
+is neg, under the reading that q↦q⁻¹ is non-physical, and neg does not exist at real q₀.
+
+Tension reported (scope a): σ↦σ⁻¹ is the positron in the BW block and the d-flavour in 6a; it
+cannot be C in both. No numbers used. Recommendation (judgement): D-H5 (D) now, (C) as a
+separate bean.
+
 ## 2026-11-15 mechanism: the one-sided vertex is a non-letter, forced up to one bit
 
 Session: https://claude.ai/code/session_01Qmmkt6YA78a79y4cG3D5Pk (sibling of coordinator
