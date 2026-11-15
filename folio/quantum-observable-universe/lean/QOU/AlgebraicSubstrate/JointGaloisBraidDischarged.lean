@@ -111,6 +111,6 @@ theorem joint_action_discharged [ctx : JointGaloisBraidDecomposition] :
 -- §3b-tax it is represented by the ABSENCE of an instance (open
 -- primary), not by a fabricated `sorry` (which would assert a false
 -- unconditional claim).
--- Ref: [manuscript] quantum-observable-universe/stochastic-mechanics/joint-galois-braid-discharged.md
+-- Ref: [leitner2026] quantum-observable-universe/stochastic-mechanics/joint-galois-braid-discharged.md
 
 end QOU.AlgebraicSubstrate.JointGaloisBraidDischarged

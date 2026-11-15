@@ -38,7 +38,7 @@ choice itself is stated in `QOU.Mass.MarkovBondRuleForcesPairwise.bindingOfTrace
 (`B = −α · ln (tr_atom / tr_free)`) and in `QOU.Mass.ChainTraceFactor.L_pp/L_nn/L_pn`;
 this file says what that choice does to the type-two shape.
 
-Ref: [manuscript] docs/audits/2026-09-12-graded-binding-sign-convention.md
+Ref: [leitner2026] docs/audits/2026-09-12-graded-binding-sign-convention.md
 -/
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Tactic

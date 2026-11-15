@@ -28,7 +28,7 @@ noncomputable def seifertEuler (n : ℕ) : R :=
 
 /-- Seifert volume ratio V_S(T(2,7)) / V_S(T(2,3)) = 15/7, over any field
     in which 2, 3, 7 are invertible. -/
--- Ref: [manuscript] prop:gen3-meson-phi-hecke-seifert §2
+-- Ref: [leitner2026] prop:gen3-meson-phi-hecke-seifert §2
 theorem seifert_ratio_T27_T23
     (h2 : (2 : R) ≠ 0) (h3 : (3 : R) ≠ 0) (h7 : (7 : R) ≠ 0) :
     (seifertEuler 7 : R) / seifertEuler 3 = 15 / 7 := by

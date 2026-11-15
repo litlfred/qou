@@ -34,9 +34,9 @@
   VALUE, about the width of the peak, or about the sum.  `hc` and `hτ` need the
   Hessian too — that is the rest of `qou-fybg`.
 
-  -- Ref: [manuscript] QOU/Knot/KashaevProdEndpoint.lean
-  -- Ref: [manuscript] QOU/Knot/FigureEightVolumeSaddle.lean
-  -- Ref: [manuscript] QOU/OneLoopPrefactorInvariance.lean
+  -- Ref: [leitner2026] QOU/Knot/KashaevProdEndpoint.lean
+  -- Ref: [leitner2026] QOU/Knot/FigureEightVolumeSaddle.lean
+  -- Ref: [leitner2026] QOU/OneLoopPrefactorInvariance.lean
 -/
 import QOU.Knot.KashaevProdEndpoint
 

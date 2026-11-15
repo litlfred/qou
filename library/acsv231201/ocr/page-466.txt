@@ -1,0 +1,51 @@
+448 Integration on manifolds
+
+calculus on manifolds requires the extra complexity introduced by dualizing.
+Roughly speaking, when there is no canonical parametrization for a manifold
+then the infinitesimal elements such as dx, dA, and dV that arise in integra-
+tion must be defined in a way that is independent of parametrization. Cotan-
+gent vectors act functorially on tangent vectors, which in turn act functorially
+on smooth functions, to produce numerical results invariant under changes of
+parametrization. We recommend the reader work through the examples in the
+section on integration below, when they come to it, to help understand how to
+do computations.
+
+Definition A.14 (Cotangent vectors). Let M be an m-manifold. The cotan-
+gent space to M at p is the dual space T? M to T,M. In other words, T?>M
+is the space of linear maps from T,M to R. If (U,¢) is a chart of M con-
+taining p then the standard basis for T? M with respect to (U, @) is the basis
+{dd1|p,---,d¢mlp} dual to the standard basis for T,M with respect to (U, ¢).
+In other words, the standard basis for the dual is defined by setting
+
+_ fl ifi=j
+p ~ \0. otherwise
+
+and extending linearly. As we did for tangent vectors, we often drop the base-
+point p from our notation when it is understood.
+
+a
+Ob;
+
+«in|
+
+Analogously to our construction of the tangent bundle of an m-manifold M,
+we define the cotangent bundle T*M whose ground set is the disjoint union
+of the cotangent spaces at each point,
+
+T’M=|JT?M,
+peM
+and whose projection map z : TM — M sends all of T?(M) to p. If (U, ¢)
+is a chart on M then any cotangent vector v with (v) € U is an R-linear
+combination v = )); cx(v)ddxlav). Analogously to the tangent bundle TM, a
+smooth structure can be put on T*M using maps of the form
+
+v4 (GoM), c1(Y),-...¢n(v)) EGU) XR" CR™,
+
+where v ranges over v € T*M with a(v) € U. Under this structure the map
+vb (AV), C1 (UV), ...,Cm(v)) is a local diffeomorphism when restricted to the
+bundle T*U over chart neighborhoods. Changing charts preserves the vector
+space structure, so T*M is a bundle.
+
+We can use the differential on tangent spaces to define a dual map on cotan-
+gent spaces. Let M and M’ be manifolds with p € M, let f: M— M’ bea
+smooth map, and let € € T/?)M’ be a cotangent vector. Then é maps tangent

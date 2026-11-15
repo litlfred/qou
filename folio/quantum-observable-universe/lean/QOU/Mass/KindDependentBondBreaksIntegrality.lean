@@ -51,7 +51,7 @@ real negative about the bond model.  Either is a result; inverting is not.
 §7c: everything here is `ℚ` arithmetic on ratios and counts — no archimedean
 construct, no `ℝ`.  Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-09-05-binding-gap-groupoids-derived-categories-full-tower.md
+-- Ref: [leitner2026] docs/audits/2026-09-05-binding-gap-groupoids-derived-categories-full-tower.md
 -/
 import QOU.Mass.BrunnianTripleExhaustion
 

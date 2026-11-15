@@ -1,0 +1,190 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-10-12T19:39:16.279333+00:00",
+  "commitSha": "4b67f92626234f870b3e788ee49f0c42d721a316",
+  "assertions": [
+    {
+      "name": "fixed_points_of_(12)_lie_on_curve",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "exact substitution"
+    },
+    {
+      "name": "fixed_points_of_(12)(34)_lie_on_curve",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "exact substitution"
+    },
+    {
+      "name": "fixed_points_of_(123)_lie_on_curve",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "exact substitution"
+    },
+    {
+      "name": "fixed_points_of_(1234)_lie_on_curve",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "exact substitution"
+    },
+    {
+      "name": "fixed_points_of_(12345)_lie_on_curve",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "exact substitution"
+    },
+    {
+      "name": "fixed_points_of_(123)(45)_lie_on_curve",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "exact substitution"
+    },
+    {
+      "name": "only_3_cycles_and_order_6_are_fixed_point_free",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean threeCycle_* / *_fixed_point"
+    },
+    {
+      "name": "5_cycle_has_4_fixed_points",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "BringConjugationChirality rotExp"
+    },
+    {
+      "name": "quotient_genus_by_(12)_is_a_nonnegative_integer",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Riemann–Hurwitz"
+    },
+    {
+      "name": "quotient_genus_by_(12)(34)_is_a_nonnegative_integer",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Riemann–Hurwitz"
+    },
+    {
+      "name": "quotient_genus_by_(123)_is_a_nonnegative_integer",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Riemann–Hurwitz"
+    },
+    {
+      "name": "quotient_genus_by_(1234)_is_a_nonnegative_integer",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Riemann–Hurwitz"
+    },
+    {
+      "name": "quotient_genus_by_(12345)_is_a_nonnegative_integer",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Riemann–Hurwitz"
+    },
+    {
+      "name": "quotient_genus_by_(123)(45)_is_a_nonnegative_integer",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Riemann–Hurwitz"
+    },
+    {
+      "name": "B_mod_C3_is_unramified_of_genus_2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean free_quotient_genus; BDH24 §4 genus-2 curve C₂"
+    },
+    {
+      "name": "order_6_subgroup_is_ramified_(contains_a_transposition)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "power (45)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 15,
+  "computation": "bring-descending-tower",
+  "scriptFile": "bring_descending_tower_probe.py",
+  "scriptHash": "70cb94e8f9e8",
+  "scriptCommitSha": "4b67f92626234f870b3e788ee49f0c42d721a316",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "cd378682bfd642d0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/bring_descending_tower_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/bring_descending_tower_probe.py"
+  },
+  "q0Anchor": "independent",
+  "q0_anchor_reason": "pure algebraic geometry of Bring curve; no q",
+  "q0AnchorReason": "pure algebraic geometry of Bring curve (S5 action on Sigma x = Sigma x^2 = Sigma x^3 = 0); imports only sympy and the witness builder, never q",
+  "description": "PROBE (bean qou-6082): exact fixed-point counts of each S5 conjugacy class on Bring's curve and Riemann–Hurwitz for the cyclic quotients. Only 3-cycles generate a free subgroup; B/C3 is an unramified genus-2 curve; the descending unramified tower is Σ4 → C2 and stops.",
+  "fixed_point_counts": {
+    "(12)": 6,
+    "(12)(34)": 2,
+    "(123)": 0,
+    "(1234)": 2,
+    "(12345)": 4,
+    "(123)(45)": 0
+  },
+  "cyclic_quotients": {
+    "(12)": {
+      "order": 2,
+      "ramification": 6,
+      "quotient_genus": "1"
+    },
+    "(12)(34)": {
+      "order": 2,
+      "ramification": 2,
+      "quotient_genus": "2"
+    },
+    "(123)": {
+      "order": 3,
+      "ramification": 0,
+      "quotient_genus": "2"
+    },
+    "(1234)": {
+      "order": 4,
+      "ramification": 6,
+      "quotient_genus": "1"
+    },
+    "(12345)": {
+      "order": 5,
+      "ramification": 16,
+      "quotient_genus": "0"
+    },
+    "(123)(45)": {
+      "order": 6,
+      "ramification": 6,
+      "quotient_genus": "1"
+    }
+  }
+}

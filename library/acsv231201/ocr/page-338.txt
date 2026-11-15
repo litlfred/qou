@@ -1,0 +1,47 @@
+320 Multiple point asymptotics
+
+are determined by their values in a neighborhood, all functions in such an
+equivalence class are analytic continuations of each other, making the situa-
+tion somewhat simpler than for germs of smooth functions: O, is isomorphic
+to the ring C,,{z} of power series centered at p that converge in some neighbor-
+hood of p. The ring O, is a local ring whose unique maximal ideal is the germs
+of functions vanishing at p, and we consider the local ring as lying between
+the polynomial ring and the formal power series ring: C[z] C Op C Cp[[z]].
+
+Example 10.43 (lemniscate, continued). Let Q be the polynomial from Exam-
+ple 10.4, whose zero set in R? has the shape of a figure eight. The polynomial
+Q is irreducible in C[x, y] but according to its geometry it must factor in O(1,1).
+A computer algebra system computes parametrizations (x, y|(x)) and (x, y2(x))
+for V near (1, 1) with
+
+x? = (x- 1) V-492 +8x4+5-7x4+10
+
+yiQ)-1= ooeas (10.18)
+2
+=-2e- D+F Vtes (10.19)
+x? + (x- 1) V-492 +8x45-7x4+10
+
+yo(x) - 1 = ooeas (10.20)
+= *( 1) 1 I+ (10.21)
+
+= 3 x ayn x . .
+The two branches have slopes —2 and —1/2 at the point (1, 1). 4
+
+The decomposition of a function near an arrangement point is facilitated by
+the following result.
+
+Lemma 10.44. Let p be an arrangement point of F(z) where V is locally the
+union of smooth sets V\,...,Vn defined by the vanishing of analytic functions
+Qi,..., Qn. If w is a circuit in the matroid defined by the tangent hyperplanes
+of the varieties V,,...,V, at 2 = p then there is a collection {gi(z) : i € w}
+of invertible elements of Op such that > jew 8i(Z)Oi(Z) = 0 in Op.
+
+Our proof of Lemma 10.44 relies on the following result, whose proof is
+outlined in Exercise 10.16. Recall from (10.2) that for a set T indexing some
+divisors Q; the symbol T denotes the set of all j such that Vj; contains ()je7 Vi.
+
+Lemma 10.45. Suppose p is a multiple point with local irreducible factors
+Q1,...,Q, and for an index set T C [n] let Jp denote the ideal in Op generated
+by {Q; : i € T}. If p is an arrangement point then for all T C [n] the ideal Jr
+is radical. It follows that Jp = Jy for all T, and that the codimension of this
+ideal is equal to the codimension of Lr.

@@ -11,7 +11,7 @@ LaTeX: `\label{prop:categorical-neutron-exists}`
 
 ## References
 
-- [manuscript] §6-archimedean-universe/categorical-neutron-exists
+- [leitner2026] §6-archimedean-universe/categorical-neutron-exists
 - [jones1987] Hecke Algebra Representations of Braid Groups
 -/
 

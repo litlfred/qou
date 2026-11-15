@@ -220,7 +220,7 @@ end QTurbulence
     (`QTurbulence.ΔE_gap_pos`) via monotonicity of the symmetric
     q-integer and of `x ↦ x^{−5/3}`.  No conjunct projects a class
     field; the only assumed content is the named cutoff hypothesis. -/
--- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.md (prop:q-turbulence-spectrum)
+-- Ref: [leitner2026] quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.md (prop:q-turbulence-spectrum)
 theorem q_turbulence_spectrum [cm : QTurbulenceCascadeModel] :
     (∀ k : ℕ, 1 ≤ k →
       QTurbulence.E_q k = cm.C_q * cm.ε ^ ((2 : ℝ) / 3) *

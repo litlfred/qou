@@ -52,7 +52,7 @@ LaTeX: `\label{prop:quantum-observable-universe-exists}`
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes/quantum-observable-universe-exists
+- [leitner2026] §2-quantum-observable-universes/quantum-observable-universe-exists
 - [kassel1995] Quantum Groups (Springer GTM 155), §IX (quantum SU(2))
 - [wenzl1988] https://doi.org/10.1007/BF01404457
 -/

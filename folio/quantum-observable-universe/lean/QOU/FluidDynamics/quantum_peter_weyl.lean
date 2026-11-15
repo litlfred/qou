@@ -35,7 +35,7 @@ $\mathrm{SU}_q(2)$ using the categorical infrastructure already
 available.
 
     The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
--- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/quantum-peter-weyl.ts
+-- Ref: [leitner2026] quantum-observable-universe/fluid-dynamics/quantum-peter-weyl.ts
 theorem quantum_peter_weyl [ctx : QuantumPeterWeylContext] :
     ∀ n : ℕ, ctx.dim_V n = n + 1 :=
   ctx.impl_quantum_peter_weyl ctx.peter_weyl_active

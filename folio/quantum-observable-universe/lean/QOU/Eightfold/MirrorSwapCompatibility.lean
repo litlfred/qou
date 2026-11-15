@@ -72,7 +72,7 @@ archimedean content.
 
 -- Ref: [milnor1957] (μ̄ invariants; cyclic symmetry and antisymmetry in the
 -- length-three case).
--- Ref: [manuscript] `observations/time-reversal-energy-barrier.md` §1;
+-- Ref: [leitner2026] `observations/time-reversal-energy-barrier.md` §1;
 -- `docs/audits/2026-09-05-route-e-the-induced-pgl3-rep-is-real-type.md` §3.
 -/
 

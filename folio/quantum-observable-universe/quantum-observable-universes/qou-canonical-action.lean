@@ -20,7 +20,7 @@ LaTeX label: `prop:qou-canonical-action`
 ## References
 
 - [kock2004] https://doi.org/10.1017/CBO9780511615443
-- [manuscript] §2 Quantum Geometry
+- [leitner2026] §2 Quantum Geometry
 -/
 
 open scoped CategoryTheory CategoryTheory.MonoidalCategory
@@ -92,7 +92,7 @@ structure QOUCanonicalAction (C : Type u) [CategoryTheory.Category.{v} C]
     two terms that are already endomorphisms of `𝟙_ C` the two sides agree in
     any case, since `End(𝟙_C)` is commutative in a monoidal category, though
     nothing here needs or asserts that. -/
--- Ref: [manuscript] §2, Proposition: Canonical action
+-- Ref: [leitner2026] §2, Proposition: Canonical action
 -- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
 def qou_canonical_action_unique_up_to_scalar
     {C : Type u} [CategoryTheory.Category.{v} C]

@@ -13,7 +13,7 @@ coordinate vector to a componentwise-nonnegative vector.
 LaTeX label: `def:lp-stable`
 
 ## References
-- [manuscript] §2/lp-dual-stability
+- [leitner2026] §2/lp-dual-stability
 -/
 
 namespace QOU.ParticleInteractions
@@ -25,7 +25,7 @@ abbrev H3Vector := Fin 6 → ℝ
 abbrev GramMatrix := Matrix (Fin 6) (Fin 6) ℝ
 
 /-- `x` is **LP-stable** for Gram matrix `G` iff `G x ≥ 0` componentwise. -/
--- Ref: [manuscript] §2/lp-dual-stability
+-- Ref: [leitner2026] §2/lp-dual-stability
 def LPStable (G : GramMatrix) (x : H3Vector) : Prop :=
   ∀ i, 0 ≤ (G.mulVec x) i
 

@@ -111,7 +111,7 @@ end BringTrilogDepth3Witness
 -- to these components.  The `sorry` represents the **open conjecture** per
 -- §3b — not a missing proof.
 -- Per AGENTS.md §3b-cond we provide NO global instance.
--- Ref: [manuscript] quantum-observable-universe/mass-theory/bring-trilog-depth-3-witness.ts
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/bring-trilog-depth-3-witness.ts
 -- noncomputable instance : BringTrilogDepth3Witness := sorry
 
 end QOU.BraidKnot

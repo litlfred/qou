@@ -1,0 +1,45 @@
+B.2 Tools for homology 469
+
+Remark B.7. When X, Y, and Z are finite dimensional complex vector spaces
+of dimensions k, £, and m, respectively, then a short exact sequence 0 — X >
+Y > Z > O implies € = k+ mand Y = X ®Z as a direct sum. However,
+this splitting is not natural: X embeds naturally into Y but there is no canonical
+choice of coset representatives for Y/Z.
+
+A short exact sequence of chain complexes is a map of chain complexes
+which is a short exact sequence on the n-chains for all n. One very useful fact
+about short exact sequences of chain complexes is that they give rise to long
+exact homology sequences.
+
+Theorem B.8 (Zig-Zag Lemma). Let 0 > A SB 4S C > 0 be a short exact
+sequence of chain complexes. Then there is an exact sequence
+
+On a e On
++ Ansi(C) > Ay fA) = H,(B) a H,(C) > Hy-\(A) > ..., (B.2.1)
+where a, and B, are the homology maps induced by the chain maps a and B.
+Proof See [Mun84, Lemma 24.1]. oO
+
+The exact sequence (B.2.1) in Theorem B.8 is known as the long exact se-
+quence on homology. The homology map 0, has a natural but unwieldy defi-
+nition; instead of defining it in general we describe it explicitly in the situation
+most relevant to us in Corollary B.11 below.
+
+Relative homology and excision
+Our goal is to apply Theorem B.8 to a short exact sequence of chain complexes
+related to embedding a subspace A into a space X and then taking the quotient
+to map into X/A. In fact, we consider a slightly more general setting which is
+also useful for our asymptotic calculations.
+
+A pair of spaces (X, A) is any pair of topological spaces with A a subspace
+of X. A pair map f : (X,A) — (X’,A’) between pairs of spaces is any (topo-
+logical) map f : X — X’ such that f(A) Cc A’. The inclusion A — X induces
+an inclusion of chain complexes C(A) <> C(X), and we let C(X, A) denote the
+pair complex whose n-chains are the quotient group C,(X)/C,(A). The rela-
+tive homology of the pair (X,A) is the homology H.(X,A) = H,(C(X, A)) of
+the pair complex.
+
+One may think of relative homology roughly as the homology of X if the
+subspace A were to be shrunk to a point: H,,(X,A) contains relative cycles
+y € C,(X) with dy € C,-1(A) modulo relative boundaries B = d¢ + a, where
+ € Crsi(X) and a € C,,(A). We thus search for cycles that do not bound, but
+are willing to count a chain as a cycle if its boundary is in A; see Figure B.2.

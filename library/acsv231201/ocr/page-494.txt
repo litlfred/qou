@@ -1,0 +1,48 @@
+476 Algebraic topology
+
+The functor taking a topological space to its singular or smooth chain com-
+plex is covariant, as is the functor from a chain complex to its homology
+groups. Hence, as noted above, any map f : X — Y of topological spaces
+induces maps f, : C(X) — C(Y) and f, : H,(X) > H,(Y). Conversely, the
+singular or smooth cochain complex of a space is a contravariant functor, so a
+map f : X —> Y induces a map f* : H*(Y) > H*(X).
+
+On a manifold we may identify a p-form w with the smooth p-cochain de-
+fined by a fe. Using the definition of the coboundary 6 and Stokes’s
+Theorem,
+
+6w(C) = w(AC) = f
+
+oC
+
+w= [du = duc),
+(o
+
+In other words, 5w = dw, so cocycles correspond to closed forms and we have
+the following.
+
+Theorem B.18 (integral depends only on homology class). Let w be a closed
+p-form holomorphic on an embedded complex manifold M ¢ C" (if p =n then
+w is always closed). Let C be a singular p-cycle on M. Then fe depends
+on C only via the homology class [C] of C in H,(M) and on w only via the
+cohomology class [w] of w in H?(M). a
+
+This theorem is one reason for our detour into topology. Another is the de
+Rham Theorem. Let be the map that takes the smooth p-form w and maps it
+to the p-cochain C > L w as C varies over p-chains. This map is in general
+not a bijection: there may be linear maps on chains that are not represented by
+integrals of smooth forms. Nevertheless, the induced map z, will be an isomor-
+phism from the singular cohomology of M with coefficients in R or C to the
+cohomology Hh, of the de Rham complex of smooth p-forms with cobound-
+ary given by the differential operator d.
+
+Theorem B.19 (de Rham Theorem). Let X be a real manifold. The identifica-
+tion of p-forms with cochains induces an isomorphism H},(X) = H*(X).
+
+Proof See [Lee03, Theorem 18.7]. oO
+
+Remark. A product called the cup product may be defined on cochains, sat-
+isfying a product rule with respect to the d operator. The cup product endows
+cohomology with the structure of a graded C-algebra, and the isomorphism
+in the de Rham Theorem is in fact a ring isomorphism, mapping the wedge
+product to the cup product.

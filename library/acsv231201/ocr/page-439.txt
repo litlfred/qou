@@ -1,0 +1,50 @@
+12.8 Limit laws from probability theory 421
+
+Example 12.38. Recalling nonnegative Riordan arrays from Section 12.2, ob-
+serve that setting x = 1 gives
+
+vd)
+v(1)
+
+BW; 1) =
+
+and
+
+v()v"(1) = v1)? + vv)
+w(1)? :
+
+Thus, when the hypotheses of Theorem 12.33 are satisfied, a WLLN holds with
+mean m = y(v; 1). Here p(v; 1) is simply the mean of the renormalized distri-
+bution on the nonnegative integers with probability generating function v, and
+o°(v; 1) is the variance of the renormalized distribution. The quadratic form in
+the exponent of (12.24) in Theorem 12.36 is given by (s—p(v; 1)r)?/(2ko?(v; 1),
+meaning a local central limit theorem holds with variance o?(v; 1). 4
+
+ov; l=
+
+Exercise 12.4. Large deviation theory is used to provide bounds on p{|r —
+km| > Ck}, which are exponentially small in k. What bounds on this kind of
+event follow from Theorem 12.37?
+
+Notes
+
+The material in Sections 12.2 and 12.3 is largely taken from [PW08, Sec-
+tion 4.3], as is the message passing example in Section 12.4. The idea for
+Exercise 12.6 comes from [Nob10], and Exercise 12.8 comes from [PW02, Ex-
+ample 3.4]. Exercise 12.9 is suggested by a line of work on rook walks, see for
+example [KZ11]. The results of Exercise 12.10 are generalized in [Wil15] to
+diagonal asymptotics of products of combinatorial classes. Elementary deriva-
+tions of some of the limit theorems presented here are given in Melczer [Mel21,
+Section 5.3.3].
+
+Riordan arrays have been widely studied. In addition to enumerating a great
+number of combinatorial classes, Riordan arrays also behave in an interest-
+ing way under matrix multiplication (note that the condition v(0) = 0 implies
+ay = 0 for k <n, and, by triangularity of the infinite array, that multiplication
+in the Riordan group is well defined). Surveys of the Riordan group and its
+combinatorial applications may be found in [Spr94; Sha+91].
+
+There are many multivariate generalizations of the Lagrange Inversion For-
+mula, but we know of none that are useful for our purposes. Proposition 12.8
+was given in [Wil05]. The asymptotic behavior of univariate QRWs is derived
+in several papers, of which [CIRO3] is perhaps the most complete. Some of

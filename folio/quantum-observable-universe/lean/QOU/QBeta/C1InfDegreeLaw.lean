@@ -28,7 +28,7 @@ Base ring is `ℤ` (per §7c: this is pure algebra over a domain — no ordering
 no `Real.sqrt`, nothing archimedean; the substrate/archimedean wall is not
 crossed here).
 
--- Ref: [manuscript] docs/audits/2026-08-08-c1-inf-degree-law-proved.md
+-- Ref: [leitner2026] docs/audits/2026-08-08-c1-inf-degree-law-proved.md
 -/
 import Mathlib.Algebra.Polynomial.Degree.Lemmas
 import Mathlib.Tactic.ComputeDegree

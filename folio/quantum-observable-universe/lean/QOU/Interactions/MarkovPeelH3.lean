@@ -158,7 +158,7 @@ theorem trH3_unit
     (φ : R_q →+* R) (z h : R) :
     trH3 φ z h (fun i => if i = 0 then (1 : R_q) else 0) = 1 := by
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
-  -- Ref: [manuscript] markov-axiom-recursive-ascent (QOU narrative)
+  -- Ref: [leitner2026] markov-axiom-recursive-ascent (QOU narrative)
   simp [trH3]
 
 /-- Reference: tr_M(σ_0) = z.  Single Markov peel from the unit. -/
@@ -177,7 +177,7 @@ theorem trH3_L_plus
     (φ : R_q →+* R) (z h : R) :
     trH3 φ z h (fun i => if i = 3 then (1 : R_q) else 0) = z * z := by
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
-  -- Ref: [manuscript] prop:markov-pair-z2 (QOU narrative)
+  -- Ref: [leitner2026] prop:markov-pair-z2 (QOU narrative)
   simp [trH3, sq]
 
 /-- Reference: tr_M(σ_0 σ_1 σ_0) = h·z² + z.  Hecke quadratic +

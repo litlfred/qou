@@ -1,0 +1,56 @@
+12.2 Powers, quasi-powers, and Riordan arrays 387
+
+Define the functions
+
+px) = (12.5)
+V(x)
+2 .
+032) =O gory porn? = 242, ar.)
+v(x) dx
+
+whose symbols are motivated by probability theory (see Section 12.8 below).
+
+Theorem 12.2. Let (v(x), @(x)) determine a Riordan array with generating
+function (12.4). Suppose that v(x) has radius of convergence R € (0, 00] and is
+aperiodic with nonnegative coefficients. If 6 has radius of convergence at least
+R then
+
+(i) the function (v; x) is strictly increasing for x € (0,R), and its range
+contains the interval J = (A, B), where A = j(v;0) and B = ju(v; R) are
+defined as one-sided limits;
+
+(ii) there is an asymptotic expansion of the form
+
+Ops & XT V(x) 571? » b(r/s)s* (12.7)
+k=0
+
+uniformly as r/s varies over compact subsets of J, where x is the unique
+positive real solution to j1(v; x) = r/s. The leading term in this expansion
+is
+
+269)
+V2rso7(v; x)
+
+Proof Writing P(x, y) = ¢(x) and Q(x, y) = 1—yv(x), we see that V is smooth
+because Q and Q, never simultaneously vanish. Furthermore, the smooth crit-
+
+(12.8)
+
+ars ~ X"V(x)"
+
+ical point equations simplify to show that (x, 1/v(x)) is critical in the direction
+(r, s) if and only if u(v; x) = r/s. Lemma 6.41 shows that all points of the form
+(x, 1/v(x)) for x € (0, R) are strictly minimal points. The Hessian determinant
+appearing in the asymptotic expansion (9.2) simplifies to o?(v; x), so the result
+follows from an application of Theorem 9.4 after we show that y is strictly
+increasing for x € (0, R). The latter result follows from (12.6). Oo
+
+Remark 12.3. If v has coefficients of mixed sign, more complicated behavior
+can occur — see Exercise 12.8.
+
+Remark 12.4. Riordan arrays are often specified by a recursion of the form
+
+oo
+n+ k+l = » Cjank+j >
+
+j=0

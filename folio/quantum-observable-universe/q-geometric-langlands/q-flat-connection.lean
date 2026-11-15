@@ -16,7 +16,7 @@ namespace QOU
 
 /-- $q$-Flat connection -/
 def QFlatConnection   :=
-  -- Ref: [manuscript] def:q-flat-connection
+  -- Ref: [leitner2026] def:q-flat-connection
   trivial
 
 end QOU

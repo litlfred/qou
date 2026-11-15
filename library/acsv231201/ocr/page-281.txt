@@ -1,0 +1,48 @@
+9.3 Smooth bivariate functions 263
+
+Fix a direction f = (7, §) with * and § positive (otherwise all series coef-
+ficients in this direction are zero, or given by a univariate rational function,
+since we consider the power series expansion of F’). Because Q does not van-
+ish at the origin, there exists some ¢ > 0 such that V = Vg does not in-
+tersect the set {(x,y): |x| < e,lyl < e&}. Now, for any c € R if the height
+A(x, y) = —Flog |x| — Slog |y| of a point (x, y) is at least c then either |x| < e~¢
+or |y| < e*. Taking c > log(1/e) thus shows that no connected component of
+‘V*© contains both points with |x| < € and points with |y| < e.
+
+On the other hand, for sufficiently large c every connected component of
+‘V* contains points with arbitrarily large height, and hence points with either
+|x| < € or ly| < e. Thus, we may decompose ‘V** for sufficiently large c into
+a disjoint union X*° U Y?*, where X*° is the union of connected components
+containing points with arbitrarily small x-coordinates and Y*° is the union of
+connected components containing points with arbitrarily small y-coordinates.
+Puiseux’s Theorem states that in a sufficiently small neighborhood of the origin
+in x, with a ray from the origin removed to account for branch cuts, every
+branch y(x) of Q(x, y) = 0 has a representation
+
+yx) = Sep!
+J2io
+
+for a fixed branch of the kth root, where jo € Z and k is a positive integer (and
+analogous representations for the branches of x in terms of y also hold). By
+Rouché’s Theorem, projection of such a connected component to its x-value
+is diffeomorphic as a covering to the projection of the graph of y* = Cx/ for
+some constant C, such a covering space being diffeomorphic to a punctured
+disk. Thus, for any sufficiently large c, the connected components of X*° and
+Y*° are diffeomorphic to disjoint open disks with their origins removed. The
+values of c such that this decomposition holds form an interval [c,y,0o) for
+some cy, € R.
+
+Critical points at infinity
+Puiseux’s Theorem also helps characterize critical points at infinity. In partic-
+ular, any branch y(x) of Q(x, y) = 0 near the origin x = 0 satisfies
+y(x) = Cx*(1 + 0(1))
+for some C € C and a € Q, and any branch x(y) near the origin y = 0 satisfies
+xy) = CPCI + 01)
+for some C’ € C and € Q. If F(x, y) has a CPAI in the direction 7 then either
+z 4
+
+a = —% for some branch y(x) or 8 = —2 for some branch x(y). We thus make
+
+s a
+
+the following assumption to rule out the existence of CPAI.

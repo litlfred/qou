@@ -1,4 +1,4 @@
--- Ref: [manuscript] Ch. 10, §covalent-bond-shared-trefoil
+-- Ref: [leitner2026] Ch. 10, §covalent-bond-shared-trefoil
 -- Covalent bond as shared electron trefoil
 
 namespace QOU.Molecular

@@ -106,7 +106,7 @@ Refs:
 - [geckpfeiffer2000] §4.4, Hecke algebras of type A
 - [bourbaki1968] Ch IV §1.4, Coxeter systems
 - [matsumoto1964] Matsumoto's theorem (reduced expressions)
-- [manuscript] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md
+- [leitner2026] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md
 -/
 
 

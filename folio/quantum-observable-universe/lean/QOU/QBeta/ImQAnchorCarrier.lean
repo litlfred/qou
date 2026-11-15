@@ -57,10 +57,10 @@ phase). The `Im(q)` that would unfreeze the phase lives at the *fibre* level whe
 is free — which the observable anchor comparison cannot access (AGENTS.md "Im(q) at
 fibre vs observable level").
 
--- Ref: [manuscript] docs/audits/2026-07-26-q0-varies-imq-c3.md
--- Ref: [manuscript] docs/audits/2026-07-25-c3-categorical-exclusion-capstone.md
--- Ref: [manuscript] conj:algebraic-geometric-dilog-equivalence
--- Ref: [manuscript] conj:im-q-physical-role
+-- Ref: [leitner2026] docs/audits/2026-07-26-q0-varies-imq-c3.md
+-- Ref: [leitner2026] docs/audits/2026-07-25-c3-categorical-exclusion-capstone.md
+-- Ref: [leitner2026] conj:algebraic-geometric-dilog-equivalence
+-- Ref: [leitner2026] conj:im-q-physical-role
 -/
 
 namespace QOU.QBeta.ImQAnchorCarrier

@@ -25,7 +25,7 @@ LaTeX label: `prop:cosimplicial-crossed-groupoid`
 
 - [yekutieli2010] Central Extensions of Gerbes, §3–4
 - [yekutieli2015] Nonabelian Multiplicative Integration on Surfaces
-- [manuscript] §3 Lifting and Descent
+- [leitner2026] §3 Lifting and Descent
 -/
 
 namespace QOU.LiftingDescent
@@ -75,7 +75,7 @@ structure CrossedModule where
 attribute [instance] CrossedModule.grpN CrossedModule.grpG
 
 /-- **Cosimplicial crossed groupoid** for the brane tower. -/
--- Ref: [yekutieli2010] §4, [manuscript] §3
+-- Ref: [yekutieli2010] §4, [leitner2026] §3
 structure CosimplicialCrossedGroupoid (M : Type*) where
   tripleAt : (n : ℕ) → YekutieliTriple M
   coface : (n : ℕ) → YekutieliTriple M → YekutieliTriple M
@@ -92,7 +92,7 @@ structure CosimplicialCrossedGroupoid (M : Type*) where
 
 /-- The assignment `[n] ↦ 𝔊ₙ` extends to a cosimplicial crossed groupoid. -/
 -- Ref: [yekutieli2010] §4, Theorem 4.2
--- Ref: [manuscript] §3, Proposition: Cosimplicial crossed groupoid
+-- Ref: [leitner2026] §3, Proposition: Cosimplicial crossed groupoid
 theorem cosimplicial_crossed_groupoid_exists (M : Type*)
     [inst : Nonempty M] :
     Nonempty (CosimplicialCrossedGroupoid M) := by

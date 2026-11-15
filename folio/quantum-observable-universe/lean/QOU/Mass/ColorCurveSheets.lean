@@ -31,7 +31,7 @@ it asserts **no** single-valued selection and **no** `symbol = C1` (anti-launder
 **Scope.** Exact symmetric-function frame. Sorry-free, §7c generic `CommRing`. No fit;
 nothing wired.
 
--- Ref: [manuscript] docs/audits/2026-07-20-zgeometric-prolongation-symbol-scoping.md (W1/G1)
+-- Ref: [leitner2026] docs/audits/2026-07-20-zgeometric-prolongation-symbol-scoping.md (W1/G1)
 -/
 import QOU.Mass.ColorCurveQPartials
 

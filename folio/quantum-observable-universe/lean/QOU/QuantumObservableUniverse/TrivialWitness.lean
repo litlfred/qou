@@ -27,7 +27,7 @@ trivial witness would have satisfied the observability axiom via
 `adjointObj := 0`.  QOU existence still requires a non-trivial `A`, which is what
 its `[kassel1995]` §IX citation was always about.
 
--- Ref: [manuscript] §1-quantum-universes/quantum-universe-exists
+-- Ref: [leitner2026] §1-quantum-universes/quantum-universe-exists
 -/
 
 open CategoryTheory MonoidalCategory
@@ -124,7 +124,7 @@ noncomputable def trivialQU : QOU.QuantumUniverse.{w + 1, w, w, w, w} R where
 
 /-- **`QuantumUniverse` is inhabited** — the claim `quantum-universe-exists.lean`
     carries as an `axiom`, now a theorem. -/
--- Ref: [manuscript] §1-quantum-universes/quantum-universe-exists
+-- Ref: [leitner2026] §1-quantum-universes/quantum-universe-exists
 theorem nonempty_quantumUniverse :
     Nonempty (QOU.QuantumUniverse.{w + 1, w, w, w, w} R) :=
   ⟨trivialQU R⟩

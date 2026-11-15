@@ -68,7 +68,7 @@ class TwoFiltrationBridge where
 
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
--- Ref: [manuscript] quantum-observable-universe/mass-theory/two-filtration-bridge.ts
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/two-filtration-bridge.ts
 
 -- **No instance is provided — the honest open state** (AGENTS.md §3b-tax).
 -- Previously: `axiom twoFiltrationBridge_conjecture` plus a global instance discharging `TwoFiltrationBridge` with it.

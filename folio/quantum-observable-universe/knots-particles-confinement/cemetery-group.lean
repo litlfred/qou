@@ -46,7 +46,7 @@ structure CemeteryGroup (R : Type u) [CommRing R] where
       group: it is the unit of the algebra. Carried as a field since
       2026-11-15; it was previously an axiom quantified over every
       `CemeteryGroup`, which made it false (see below). -/
-  -- Ref: [manuscript] Ch. particle-interactions, def:cemetery-group (unit/zero-index state excluded from cemetery group)
+  -- Ref: [leitner2026] Ch. particle-interactions, def:cemetery-group (unit/zero-index state excluded from cemetery group)
   zero_not_in_cemetery : ¬ inCemetery 0
 
 namespace CemeteryGroup

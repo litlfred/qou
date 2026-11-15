@@ -133,7 +133,7 @@ The $Q$-value has three factors:
     three-part claim (formula, weights sum to one, weights non-negative)
     is recorded as the conditional conjecture over the context rather than
     discharged by a fake projection. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/gram-weighted-qvalue.ts
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/gram-weighted-qvalue.ts
 def gram_weighted_qvalue (ctx : GramWeightedQvalueContext) : Prop :=
   ctx.Q
       = (Finset.univ.sum (fun k : Fin ctx.N => ctx.w k * ctx.Δ k))

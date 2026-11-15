@@ -34,10 +34,12 @@
     "library/arxiv-2406.05311v1/sections/sec-019",
     "library/arxiv-2406.05311v1/sections/sec-020",
     "library/arxiv-2406.05311v1/sections/sec-021",
-    "library/arxiv-2406.05311v1/sections/sec-022"
+    "library/arxiv-2406.05311v1/sections/sec-022",
+    "library/arxiv-2406.05311v1/sections/sec-023",
+    "library/arxiv-2406.05311v1/sections/sec-024"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
   "licenceRecord": {
     "status": "stated",
@@ -58,8 +60,8 @@
       "stamp_date": "8 Jun 2024"
     },
     "doi": null,
-    "document_class": "math",
-    "extractor_validated": true,
-    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
   }
 }

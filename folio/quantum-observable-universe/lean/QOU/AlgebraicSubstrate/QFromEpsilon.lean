@@ -22,7 +22,7 @@ LaTeX label: `def:q-from-epsilon`.
 - [conway1976] Conway, *On Numbers and Games*.
 - [gonshor1986] Gonshor, *An Introduction to the Theory of Surreal
   Numbers*.  DOI:10.1017/CBO9780511629143.
-- [manuscript] Chapter 8 §5 (Classical Limit).
+- [leitner2026] Chapter 8 §5 (Classical Limit).
 -/
 
 namespace QOU.AlgebraicSubstrate

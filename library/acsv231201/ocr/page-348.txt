@@ -1,0 +1,56 @@
+330 Multiple point asymptotics
+
+are not all distinct, and for z° ¢ A define
+
+R(2*) =~) Res (“=). (10.27)
+
+tauj(ze)\_ pret
+
+j=1
+
+Because (10.26) is absolutely integrable, it follows from the univariate residue
+theorem that
+1 dz°
+= ——— | R(z°)——— 10.28
+X* Oni {, (z Gara ( )
+
+when A has measure zero.
+
+If R had the form A(z?)e~“*"), which it does in the smooth case, then we
+could asymptotically approximate (10.28) as a Fourier—Laplace integral using
+the results of Chapter 5. Unfortunately, the n summands defining R have this
+form, but each on its own is not integrable when there is more than one sheet
+meeting at p. To work around this difficulty, we introduce a new integral ex-
+pression representing R as a symmetric rational sum.
+
+Let A,_; denote the standard (n — 1)-simplex
+
+n
+Ant = {rem iy i.
+j=l
+
+which is parametrized by its projection
+
+n-1
+TAn1 = [ RS): Dts ;
+
+j=l
+
+onto its first n — 1 coordinates. We write « for the map c(t) = (41,...,tn-1, 1 -—
+wn t;) that inverts the projection, so that c(t) - v is a convex combination:
+
+n=l
+Ut). v= ty tee + tp-1Vn-1 a - » | Vn +
+j=l
+
+Lemma 10.58. Let f be an analytic function of one complex variable and let
+V1,--+;Vn € C be distinct. Then
+
+wes: . fO-DU(t)-v) dt. (10.29)
+fay Ldrej i — Yr Ay
+
+Applying this with f(v) = v'@*""'W(z°, 1/v) to the inverse roots v;(z°) yields
+
+R(z°) =- f°") (W(t) - v(z°)) dt. (10.30)
+
+mAn-1

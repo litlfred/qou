@@ -1,0 +1,70 @@
+---
+doc_id: 9710022v2
+doc_title: "Harmonic Analysis on the quantum Lorentz group"
+section_id: page-016
+section_title: "Page 16"
+pages: 16-16
+pdf_page: 16
+source_pdf: 9710022v2.pdf
+source_sha256: e5ff373a1ec6884a
+text_source: ocr
+granularity: page
+doc_brief: "Harmonic Analysis on the quantum Lorentz group — This w ork b egins with a review of complexi cation and reali cation of Hopf algebras."
+---
+subspaces or the pointwise convergence. Unfortunately, because the notion of point looses its
+meaning in the quantum case, the generalization of weaker convergences cannot be directly
+generalized. So, contrary to the compact case, we cannot construct the algebra of continuous
+functions from a completion of the polynomial algebra. This is the major obstacle to define
+noncompact quantum group, the algebra of polynomials on the quantum group is not sufficient
+to reconstruct the space of continuous functions.
+
+There are situations where we can go round this major hurdle, which is handled using the
+concept of multiplier. The philosophy is to revert the basic objects: the given space is a C*
+algebra which can be thought of as being a quantization of the space of continuous functions
+vanishing at infinity. From this algebra, we can derive from pure algebraic constructions the
+set of multipliers of A which plays the role of the algebra of bounded functions and the set of
+affiliated elements of A which plays the role of continuous functions. The polynomial algebra
+is a derived set consisting of particular affiliated elements. At this point we have to stress that
+if we are given a quantization of the polynomial algebra of some non compact group there is
+no theorem which garanty that there exists a C* algebra A such that this polynomial algebra
+would be a certain set of affiliated elements of A. Woronowicz has even shown that SU,(1, 1)
+(with g € R can be defined as a star Hopf algebra but there exists no C* algebra for which the
+elements of SU,(1,1) are affiliated [50].
+
+3.2.2 Multipliers: the algebraic theory
+
+This section is taken from the article of Van Daele [43], its aim is to recall notions that are not
+so well known and to recall definitions and notations that will be used all throughout our work.
+
+Let A be an associative algebra with or without a unit element (we will see that the con-
+struction of multipliers is really interesting in the case where A admits no unit element). An
+element p € End(A) is a left (resp. right) multiplier if
+
+Va,b€ A p(ab)=p(a)b (resp. p(ab) = ap(b)). (70)
+A multiplier p is a couple p = (p1, p2) with p; left multiplier, p2 right multiplier satisfying:
+Va,b€ A api(b) = po(a)b. (71)
+
+We will denote by R(A) (resp. L(A)) the set of right (resp. left) multipliers, and by M(A)
+the set of multipliers. R(A), L(A) are subalgebras of End(A), M(A) is also a subalgebra of
+End(A) x End(A).
+
+To each element of A we can associate a left multiplier p;(a), a right multiplier p,(a) and a
+multiplier p(a) defined by:
+
+pr(a)(b) = ab ,  pr(a)(b) = ba and pla) = (pi(a), pr(a)) (72)
+
+It is easy to show that if the algebra law on A is non degenerate, ie Vb € A ab=O0>a=0
+and Vb € A ba = 0 > a=0 then the maps A “+ L(A), A £ R(A), A + M(A) are monomor-
+phisms of algebras.
+
+If A admits a unit element then all these maps are trivially isomorphisms. The notion of multi-
+plier is therefore interesting only in the case where A does not have a unit element.
+
+In the rest of this chapter we will always assume that the multiplication law on A is non
+degenerate. From the last proposition it will be convenient to identify A as a subspace of L(A)
+and of R(A).
+
+We will use a nice convention which has to be carefully used: if p; € L(A) and p2 € R(A) we
+will use the notation p:b = pi(b) and bp2 = p2(b).
+
+16

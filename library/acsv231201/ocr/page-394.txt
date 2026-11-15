@@ -1,0 +1,45 @@
+376 Cone point asymptotics
+
+well as the outside, being supported entirely on ON. In the optics literature, this
+phenomenon is called a /acuna. For directions # interior to N the asymptotic
+development in Theorem 11.40, which has decreasing scales |r|~*z~" for inte-
+gers k going to infinity, is everywhere zero, and the result only states that the
+asymptotics inside the cone are smaller in magnitude than any such term.
+
+While Theorem 11.40 relies on Assumption (11.7) which does not hold for
+this example, topological analysis [BMP19, Theorem 2.3] gives us everything
+we need. It shows that for 7 € N° and a € B, where B is the component of the
+amoeba complement corresponding to ordinary power series, the torus T.(x)
+is homologous to a cycle whose maximum height is less than the height of the
+cone point. This, together with a computation ruling out CPAI and a Morse
+theoretic analysis along the lines of Theorem 7.35, shows that asymptotics are
+characterized by critical points of lower height. We include such an example
+here, pulling together many of the methods developed thus far to exhibit a
+minimal point p for which np = 0 even when # is interior to the normal cone
+N at p, and illustrating non-zero coefficients not in {+1, 0}.
+
+Example 11.50. Gillis, Reznick, and Zeilberger [GRZ83] consider a family of
+4-variable generating functions F(z) = 1/(1 — z) — z2 — 23 — 4 + Az 227324)
+with J a real parameter, having origins in the earlier work [AG72; Sze33].
+The behavior of the function and its coefficient array differs in the cases A <
+27 and A > 27. At the critical parameter value 2 = 27 the denominator Q
+fails to be smooth, having instead a singularity at the diagonal point p =
+(1/3, 1/3, 1/3, 1/3) diffeomorphic to a Lorentzian quadratic. For a direction
+# in the interior of N(p), one would normally expect B(?) = — Diet r;log(1/3).
+In other words, if np # 0, then log|a,.s;u| ~ (r + s + t + u)log3 inside the
+normal cone and n7! log dnnnn > log 81.
+
+However, the number of variables d is 4, the minimum for d/2 — 1 to be a
+positive integer. The coefficients of F27(z) = Q(z)'~4/? = Q(z)! exhibit a
+lacuna, and the exponential rate is in fact given by log |a,s ul ~ (7 +5 ++
+u)(log 3)/2 so that n! log dnnnn — log 9. The bulk of [BMP19] is devoted to
+showing that the contour for the Cauchy integral for the main diagonal of the
+ordinary power series expansion is homologous to a cycle I supported at height
+less than log 81. This is not achieved by a deformation but rather by an explicit
+cobordism which is the limit of deformations in perturbed varieties. Informally,
+one might say there is a deformation that passes through the singularity at the
+cone point. Assuming this as a black box result, we complete the analysis as
+follows.
+
+A quick Groébner basis computation shows that the critical points in the di-
+agonal direction are precisely p = (1/3, 1/3, 1/3,1/3), w = (€,0,0,0), and

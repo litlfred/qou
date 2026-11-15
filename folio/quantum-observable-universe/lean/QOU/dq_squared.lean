@@ -20,7 +20,7 @@ The Lean encoding records the formula against an abstract
 `(α, dΘ ∧ 𝓛_ξ α)` and the substrate parameter `q`.  Concretising
 to a real `Ω^k(M)` exterior algebra is downstream work.
 
--- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/dq-squared.md
+-- Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes/dq-squared.md
 -/
 
 namespace QOU
@@ -47,7 +47,7 @@ class DqSquaredContext where
 /-- **Archimedean `d_q² α` formula** ([`prop:categorical-dq-squared`]).
 
     `d_q² α = q⁻¹ · (1 − q⁻¹) · (dΘ ∧ 𝓛_ξ α)`. -/
--- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/dq-squared.md
+-- Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes/dq-squared.md
 theorem dq_squared [ctx : DqSquaredContext] (α : ctx.ΩK) :
     ctx.d_q_squared α
       = ctx.smul (ctx.q⁻¹ * (1 - ctx.q⁻¹)) (ctx.dTheta_wedge_lieXi α) :=
@@ -56,7 +56,7 @@ theorem dq_squared [ctx : DqSquaredContext] (α : ctx.ΩK) :
 /-- **Classical-limit corollary** (`q = 1`): the formula's scalar factor
     `q⁻¹·(1 − q⁻¹)` vanishes, so `d_q²` is the zero operator,
     recovering classical de Rham `d² = 0`. -/
--- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/dq-squared.md
+-- Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes/dq-squared.md
 theorem dq_squared_at_q_eq_one [ctx : DqSquaredContext] (α : ctx.ΩK)
     (h_q : ctx.q = 1) :
     ctx.d_q_squared α = ctx.smul 0 (ctx.dTheta_wedge_lieXi α) := by

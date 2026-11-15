@@ -126,7 +126,7 @@ def CategoricalMassInvariantFinite (T_w : Type*) : Prop := Nonempty T_w
     Ref: \cite{yekutieli2015} (non-abelian Stokes),
     \cite{wenzl1988} (Markov-trace formula on Hecke),
     \cite{jones1987} (Markov integrality);
-    [manuscript] prop:gb-spectral-sequence,
+    [leitner2026] prop:gb-spectral-sequence,
     prop:spectral-sequence-collapse,
     prop:e-infinity-page-identifications.
 
@@ -195,7 +195,7 @@ def MassIdentity (cert : MassDerivationCertificate) : Prop :=
 -- (symmetric Li_2^q per 2026-05-03 paper canon, replacing the
 -- retired compact q-dilog Φ_q form).
 --
--- Ref: [manuscript] prop:atom-knot-mass-derivation §"Mass identity";
+-- Ref: [leitner2026] prop:atom-knot-mass-derivation §"Mass identity";
 -- prop:archimedean-realization-functor;
 -- prop:wedderburn-trace-identity (ν_SDP-multiplicity);
 -- thm:knot-mass-formula-unified (multi-term M(𝔥)).
@@ -256,7 +256,7 @@ theorem atom_knot_mass_derivation [h : AtomKnotMassDerivationConjecture]
     YekutieliFiniteSliceMultiplicativeTrace T_w →
     GbSpectralSequenceCollapseAtE2 →
     MassIdentity cert :=
-  -- Ref: [manuscript] prop:atom-knot-mass-derivation
+  -- Ref: [leitner2026] prop:atom-knot-mass-derivation
   fun _ _ => ⟨h.pred_nonneg cert hcert, h.residual_bound cert hcert⟩
 
 /-- The GB-collapse hypothesis is discharged by `rfl`: `gbSpectralCollapsePage`

@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/acsv231201/sections/sec-092",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Whitney stratified spaces",
+  "pageStart": 531,
+  "pageEnd": 536,
+  "contains": [
+    "library/acsv231201/blocks/prose-sec-092",
+    "library/acsv231201/blocks/recommendation-sec-092-01",
+    "library/acsv231201/blocks/figure-img-p532-1",
+    "library/acsv231201/blocks/figure-img-p534-1",
+    "library/acsv231201/blocks/figure-img-p534-2"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/acsv231201",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/acsv231201",
+  "provenance": "ingested"
+}

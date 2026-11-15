@@ -1,0 +1,48 @@
+228 Effective computations and ACSV
+
+smooth manifold or can be expressed as the union of smooth manifolds in-
+tersecting transversely. However, even in applications with more complicated
+singularities, such as the isolated quartic singularity of Example 11.47, a Whit-
+ney stratification is obvious from inspection.
+
+Example 8.9. Recall the generating function
+
+xy(1 — x)
+(1 - x4 - xy(1 -— x - x2 +3 + x? y)
+
+F(x,y) = » Asx =
+
+1,820
+from Example 12.23. The singular variety V admits a Whitney stratification
+with strata {p} and V \ {p} where p = (1,0). 4
+
+8.2.2 Critical point equations
+
+From now on we assume that we have the canonical Whitney stratification (8.2)
+of V, computed either by a computer algebra system or by hand. For each
+1<k<mlet i denote the set
+
+i ={f € Klz]: f(z) = 0 for z € Fi}.
+Exercise 8.3. Prove that, for each k, the set J; is an ideal with k = Vk.
+
+Fixing a value of k € {0,...,m— 1}, our goal is to compute polynomial
+equalities and inequalities characterizing the critical points on each connected
+component of Fx \ Fri = VU) \VUk+1). First, we use a Grobner basis based
+algorithm to compute the prime decomposition J, = P} N---M Pe. Because all
+points in an intersection V(P;) M V(P;) with i # j are non-smooth points of
+F,, they are contained in F;.4;. This means we can compute the critical points
+on the zero set V(P;) of each prime ideal in the decomposition of J, remove
+the points of ¥;,,1, then take the union of these sets.
+
+The dimension 6 of the prime ideal P; can be computed using a Grébner
+basis algorithm, from which we can compute the codimension c = d—6. If P; =
+(P1,--+, Ps) then, after translation to the origin, the tangent space to V(P;) at
+each smooth point p € V(P;) is the codimension c linear subspace of ct
+normal to all of the gradients (V p;)(p),...,(V ps)(p); see Mumford [Mum95,
+Section 1.A].
+
+Recall the logarithmic gradient Viog f = (Zi fz,, + +++ 2afz,). Because the height
+function hy is the real part of h,(z) = —r - log(z), the point p is a critical point
+lying in V(P;) \ Fxs1 if and only if the gradient vector —(71/p1,...,1a/Pa) of
+hy at z = p is normal to the tangent space of V(P;) at p. Since the tangent
+space is a linear subspace of codimension c, and we consider only points with

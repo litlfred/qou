@@ -21,7 +21,7 @@ The Lean library file [`QOU/Archimedean/ClausenFunctionMathlibFiller.lean`](../l
 
 See [Table 1](#tbl:clausen-function-mathlib-filler-table1-data).
 
-This construction unconditionalizes the Bloch-Wigner values in the $\alpha_{\text{EM}}$ chain. Explicit Lean carriers replace opaque references. The framework references $\mathrm{Cl}_2$, $\mathrm{Vol}(4_1)$, and $\mathrm{Vol}(\mathcal{B}_3)$ via these carriers in [`em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode), [`figure-8-archimedean-illustration`](../braids-and-knots/figure-8-archimedean-illustration.md), [`bring-hyperbolic-knot-bloch-decomposition`](#conj:bring-hyperbolic-knot-bloch-decomposition), and [`binding-scale-catalan`](../braids-and-knots/binding-scale-catalan.md).
+This construction unconditionalizes the Bloch-Wigner values in the $\alpha_{\text{EM}}$ chain. Explicit Lean carriers replace opaque references. The framework references $\mathrm{Cl}_2$, $\mathrm{Vol}(4_1)$, and $\mathrm{Vol}(\mathcal{B}_3)$ via these carriers in [`em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode), [`figure-8-archimedean-illustration`](../mass-theory/figure-8-archimedean-illustration.md), [`bring-hyperbolic-knot-bloch-decomposition`](#conj:bring-hyperbolic-knot-bloch-decomposition), and [`binding-scale-catalan`](../mass-theory/binding-scale-catalan.md).
 
 ## Mathlib gaps
 

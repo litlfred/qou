@@ -23,7 +23,7 @@ LaTeX label: `prop:pieri-photon-shift`
 - [fulton1997] Young Tableaux (Cambridge University Press, 1997),
   Chapter 2.
 - [kassel1995] Quantum Groups (Springer GTM 155, 1995), Chapter XI.
-- [manuscript] braids-and-knots / pieri-photon-shift
+- [leitner2026] braids-and-knots / pieri-photon-shift
 -/
 
 namespace QOU.Photon
@@ -61,7 +61,7 @@ class IsPieriShift (P : PieriInterface) where
     Re-export of the `IsPieriShift` field. Intended use: callers
     quantify over `[IsPieriShift P]` and obtain the support
     containment for free. -/
--- Ref: [manuscript] prop:pieri-photon-shift
+-- Ref: [leitner2026] prop:pieri-photon-shift
 -- Ref: [fulton1997] Young Tableaux, Ch. 2
 -- Ref: [kassel1995] Quantum Groups, Ch. XI
 theorem pieri_one_box_shift
@@ -70,7 +70,7 @@ theorem pieri_one_box_shift
   S.support_subset lam
 
 /-- The source partition `λ` is always reachable (identity term in `γ`). -/
--- Ref: [manuscript] prop:pieri-photon-shift
+-- Ref: [leitner2026] prop:pieri-photon-shift
 theorem pieri_self_in_shift (P : PieriInterface) (lam : P.spectrum) :
     lam ∈ P.oneBoxShift lam :=
   P.shift_self lam

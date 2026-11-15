@@ -1,0 +1,47 @@
+12.2 Powers, quasi-powers, and Riordan arrays 385
+
+Exception Examples
+Degenerate contributing points 9.39
+Non-transverse intersection 10.69
+Boundary directions 10.66
+Vanishing numerator 12.18, 12.20
+
+Table 12.4 Guide to non-generic examples.
+
+in our asymptotic expansions typically do not vanish. Table 12.4 collects ex-
+amples where the above assumptions fail to hold.
+
+Non-transverse intersections may be arbitrarily complicated, and we cover
+only a simple example. Similarly, we discuss one example with a degener-
+ate contributing point. From the point of view of Fourier—Laplace integrals,
+asymptotics in directions on boundaries of the cones dictating uniform behav-
+ior are half of what they would be if the direction was interior to the cone. The
+first-order term in our asymptotic expansions of a sequence with generating
+function F vanishes when the numerator of F is zero at its contributing singu-
+larities. In this case, we can usually determine dominant asymptotic behavior
+by computing higher order coefficients in the expansion.
+
+12.2 Powers, quasi-powers, and Riordan arrays
+
+Let v(z) be a power series (or polynomial) and suppose that we want to esti-
+mate the coefficient [z” ]v(z)* of a large power of v. This coefficient equals the
+coefficient of z”w* in the power series expansion
+
+1
+
+FW) = Tay’
+
+(12.1)
+so we can determine asymptotics using the tools of ACSV. The combinatorial
+constructions discussed in Section 2.2 of Chapter 2 show some ways in which
+generating functions of this form arise. Another common application comes
+from probability: if viz) = ),,a,r2", where a, = Pr(X; = r) for a family
+{X;} of independent, identically distributed random variables taking values in
+N¢ then v(z)" is the probability generating function for the partial sum S,, =
+Dj-1 Xj, and hence
+
+P(Sn = 1) = [2"v(z)".
+It has long been known that, under suitable hypotheses, such large powers
+
+lead to Gaussian behavior. An early work on multivariate analytic combina-
+torics [BR83] observed that this behavior is robust enough to hold not only

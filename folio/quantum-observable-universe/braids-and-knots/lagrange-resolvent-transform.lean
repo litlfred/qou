@@ -18,13 +18,13 @@ and the cyclic permutation σ acts diagonally: σ(w_k) = ζ^{-k} w_k.
 -/
 namespace QOU.BringsSurface
 
--- Ref: [manuscript] Ch. 6, §1
+-- Ref: [leitner2026] Ch. 6, §1
 -- Ref: [bring1786] Bring, "Meletemata quaedam mathematica circa transformationem aequationum algebraicarum," Lund 1786
 noncomputable def ζ : ℂ := Complex.exp (2 * Real.pi * Complex.I / 5)
 
 /-- ζ is a primitive 5th root of unity: ζ^5 = 1.
     Since ζ = exp(2πi/5), we have ζ^5 = exp(5 · 2πi/5) = exp(2πi) = 1. -/
--- Ref: [manuscript] Ch. 6, §1
+-- Ref: [leitner2026] Ch. 6, §1
 lemma ζ_pow_five : ζ ^ 5 = 1 := by
   unfold ζ
   rw [← Complex.exp_nat_mul]
@@ -73,7 +73,7 @@ def cyclicPerm (x : Fin 5 → ℂ) : Fin 5 → ℂ :=
 
 /-- Part (1): w_0 = 0 from the constraint Σx_i = 0.
     At k=0, ζ^0 = 1, so w_0 = (1/√5) Σ x_j = 0. -/
--- Ref: [manuscript] Ch. 6, §1
+-- Ref: [leitner2026] Ch. 6, §1
 theorem lagrange_resolvent_w0_vanishes
     (x : Fin 5 → ℂ)
     (h_sum : ∑ i, x i = 0) :
@@ -86,7 +86,7 @@ theorem lagrange_resolvent_w0_vanishes
     σ(w_k) = ζ^{-k} · w_k for all k.
     Proof: case-split on k ∈ {0,1,2,3,4}, expand the Fin 5 sums,
     reduce powers of ζ modulo 5 using ζ^5 = 1, and close by ring. -/
--- Ref: [manuscript] Ch. 6, §1
+-- Ref: [leitner2026] Ch. 6, §1
 -- Ref: [bring1786] Bring, "Meletemata quaedam mathematica circa transformationem aequationum algebraicarum," Lund 1786
 theorem lagrange_resolvent_diagonal_action
     (x : Fin 5 → ℂ) :

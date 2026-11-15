@@ -92,6 +92,6 @@ noncomputable def matrixModel (n : ℕ) (R : Type*) [Field R] :
 
 end FrobeniusSelfDualityForcesLPDualExtraction
 
--- Ref: [manuscript] quantum-observable-universe/mass-theory/frobenius-self-duality-forces-lp-dual-extraction.ts
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/frobenius-self-duality-forces-lp-dual-extraction.ts
 
 end QOU.BraidKnot

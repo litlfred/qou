@@ -156,7 +156,7 @@ nothing mathematical turns on it.
 Numerically all of the above is checked in the witness
 `computations/qbeta/c3-w2-c1-connection-matrix.witness.json` (7/7).
 
--- Ref: [manuscript] computations/qbeta/c3_w2_c1_connection_matrix.py
+-- Ref: [leitner2026] computations/qbeta/c3_w2_c1_connection_matrix.py
 -- Ref: [ramis-sauloy-zhang2013] Astérisque 355 §3.3 (Ramis–Sauloy–Zhang)
 -/
 

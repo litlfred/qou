@@ -1,0 +1,35 @@
+INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS 4009
+
+FIGURE 6
+
+Definition 3.7. For each triple of labels, (a,b,c), and each permutation ot or o~
+there are linear isomorphisms
+
+Oot) oy
+V(a,b,c) ——> Vot (a,b,c),
+
+* ONMot) vn
+V* (a,b,c) ———— V*ot (a,b,c),
+
+if o+ is even, and
+
+Cam >
+V (a,b,c) “. v*o~ (a, 6,6),
+7 or No") -~a pa
+V* (a, b,c) ———> Vo (4, 6, é),
+if o~ is odd. The maps 6(07 ) are defined using the pairings.
+Lemma 3.8. These linear maps determine an action of the group S3 on this vector
+bundle, or, in other words, this is an S3-equivariant vector bundle. Furthermore,
+
+the action of any permutation on elements of V*(a, b,c) is the adjoint of the inverse
+of the action on V(a,b,c).
+
+Proof. These are equivalent to the conditions in Lemma 3.6.
+
+Theorem 3.9. Let f: M — N be a combinatorial isomorphism of labelled mani-
+folds. Then the simplicial invariants are equal, Z(M) = Z(N).
+
+Proof. Let V(M) and V(N) be the vector spaces described in Definition 1.6. For
+each triangle in M, consider the restriction of f to this triangle. There is a element
+o € S3 defined by the unique decomposition of this map into a permutation followed
+by the simplicial map of the triangle to its image in N.

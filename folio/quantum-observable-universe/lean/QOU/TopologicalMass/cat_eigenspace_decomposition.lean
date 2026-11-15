@@ -71,7 +71,7 @@ the descent involution `τ̂_n`, the Frobenius trace, or the `*`-involution.
 
 Bean `qou-z9ws`.
 
--- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-cat-eigenspace.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-endomorphism/topological-mass-cat-eigenspace.md
 -/
 
 namespace QOU.TopologicalMass
@@ -93,7 +93,7 @@ the lemma's name, derived.
 If the descent map is additive on differences and involutive, then
 `τ̂(α − τ̂α) = −(α − τ̂α)`: the transient part lies in the `−1` eigenspace of
 `τ̂`. Sorry-free, and independent of any norm or pairing. -/
--- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-cat-eigenspace.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-endomorphism/topological-mass-cat-eigenspace.md
 theorem transient_antiInvariant {tau_hat : ℝ → ℝ}
     (hsub : ∀ x y, tau_hat (x - y) = tau_hat x - tau_hat y)
     (hinv : ∀ x, tau_hat (tau_hat x) = x) (α : ℝ) :
@@ -109,7 +109,7 @@ caller-supplied data:
 **Named, not asserted.** Read the module docstring first: with `nrm` and `tr`
 arbitrary functions this is not yet a statement about norms or traces, and
 the norm-additivity that is the lemma's actual content is open. -/
--- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-cat-eigenspace.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-endomorphism/topological-mass-cat-eigenspace.md
 def cat_eigenspace_decomposition (m_rho α : ℝ) (tau_hat tr nrm : ℝ → ℝ) : Prop :=
   m_rho = nrm (tr (tau_hat α)) + nrm (tr (α - tau_hat α))
 

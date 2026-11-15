@@ -201,7 +201,7 @@ theorem observation_energy_classical_sign
     the one honest `sorry`, see
     `observation_energy_remainder_quadratic`); (iii) the classical
     energy is unconstrained in sign (derived from the witnesses). -/
--- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/observation-energy.md
+-- Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes/observation-energy.md
 theorem observation_energy [ctx : ObservationEnergyContext] :
     (ctx.hbar (ctx.q + ctx.δq) - ctx.hbar ctx.q =
        ctx.δq / (ctx.q * (ctx.q + ctx.δq)) ∧

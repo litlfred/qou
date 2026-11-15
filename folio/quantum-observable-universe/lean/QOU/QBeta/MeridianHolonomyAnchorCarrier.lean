@@ -78,8 +78,8 @@ two inequality corollaries specialise to `‚Ñù` (they are genuinely archimedean ‚
 they order magnitudes), which is the correct wall placement.
 
 -- Ref: [neumann-zagier1985] https://doi.org/10.1016/0040-9383(85)90004-7
--- Ref: [manuscript] docs/audits/2026-07-25-meridian-holonomy-c3-anchor.md
--- Ref: [manuscript] docs/audits/2026-07-12-c3-meridian-boost-smooth-negative.md
+-- Ref: [leitner2026] docs/audits/2026-07-25-meridian-holonomy-c3-anchor.md
+-- Ref: [leitner2026] docs/audits/2026-07-12-c3-meridian-boost-smooth-negative.md
 -/
 
 namespace QOU.QBeta.MeridianHolonomyAnchorCarrier

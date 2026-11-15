@@ -33,8 +33,8 @@ not enough to close the substantive content unconditionally
 hooks below are the §3b-cond surrogates downstream blocks already
 use.
 
--- Ref: [manuscript] rem:mass-tower-deeper-fillers
--- Ref: [manuscript] prop:archimedean-functor-uniqueness
+-- Ref: [leitner2026] rem:mass-tower-deeper-fillers
+-- Ref: [leitner2026] prop:archimedean-functor-uniqueness
 -- Ref: [bloch2000] AMS CRM Monograph 11
 -- Ref: [suslin1991] Trudy Mat. Inst. Steklova 183
 -- Ref: [zagier1986] DOI 10.1007/BFb0084581
@@ -215,7 +215,7 @@ class HasAllSubstantiveFillers
     `: True` marker, was removed 2026-11-15) are all
     "Mathlib-pending" but **structurally connected** via this
     synthesis. -/
--- Ref: [manuscript] rem:mass-tower-deeper-fillers
+-- Ref: [leitner2026] rem:mass-tower-deeper-fillers
 theorem three_substantive_fillers_synthesis_consistent
     (F : Type*) [Zero F] [One F] [DecidableEq F]
     [HasAllSubstantiveFillers F] :

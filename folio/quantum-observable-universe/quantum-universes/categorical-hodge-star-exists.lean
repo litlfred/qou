@@ -11,7 +11,7 @@ LaTeX: `\label{prop:categorical-hodge-star-exists}`
 
 ## References
 
-- [manuscript] §1-quantum-universes/categorical-hodge-star-exists
+- [leitner2026] §1-quantum-universes/categorical-hodge-star-exists
 - [kock2004] Frobenius Algebras and 2D TQFT, Ch 2
 -/
 

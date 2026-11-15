@@ -2,55 +2,65 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1904.12095v2",
  "source_sha256": "7006b250f0d3c991",
- "brief": "Verified computations for closed hyperbolic 3-manifolds Matthias Goerner — Extending methods ﬁrst used by Casson, we show how to verify a hyper- bolic structure on a ﬁnite triangulation of a closed",
- "extended": "**Verified computations for closed hyperbolic 3-manifolds Matthias Goerner**\n\n28 pp, 9 sections.\n\n**Abstract.** Extending methods ﬁrst used by Casson, we show how to verify a hyper- bolic structure on a ﬁnite triangulation of a closed 3-manifold using interval arith- metic methods. A key ingredient is a new theoretical result (akin to a theorem by Neumann-Zagier and Moser for ideal triangulations upon which HIKMOT is based) showing that there is a redundancy among the edge equations if the edges avoid “gim- bal lock” . We successfully test the algorithm on known examples such as the ori- entable closed manifolds in the Hodgson-Weeks census and the bundle census by Bell. We also tackle a previously unsolved problem and determine all knots and links with up to 14 crossings that have a hyperbolic branched double cover.\n\n**Outline.** 1 Introduction; 3 Cocycles; 4 Extending cocycles on genus 0 surfaces; 5 Extending cocycles on triangulations; 6 Examples of (non-)gimbal lock; 7 Algorithm; 8 Results; 9 Discussion; 10 Appendix: The uncited theorem HIKMOT relies",
+ "brief": "Verified computations for closed hyperbolic 3-manifolds — Extending methods ﬁrst used by Casson, we show how to verify a hyper- bolic structure on a ﬁnite triangulation of a closed 3-manifold using",
+ "extended": "**Verified computations for closed hyperbolic 3-manifolds**\n\n*Matthias Goerner*\n\n28 pp, 11 sections.\n\n**Abstract.** Extending methods ﬁrst used by Casson, we show how to verify a hyper- bolic structure on a ﬁnite triangulation of a closed 3-manifold using interval arith- metic methods. A key ingredient is a new theoretical result (akin to a theorem by Neumann-Zagier and Moser for ideal triangulations upon which HIKMOT is based) showing that there is a redundancy among the edge equations if the edges avoid “gim- bal lock”. We successfully test the algorithm on known examples such as the ori- entable closed manifolds in the Hodgson-Weeks census and the bundle census by Bell. We also tackle a previously unsolved problem and determine all knots and links with up to 14 crossings that have a hyperbolic branched double cover.\n\n**Outline.** Front matter; 1 Introduction; 2 Hyperbolic structures on finite triangulatio; 3 Cocycles; 4 Extending cocycles on genus 0 surfaces; 5 Extending cocycles on triangulations; 6 Examples of (non-)gimbal lock; 7 Algorithm; 8 Results; 9 Discussion; 10 Appendix: The uncited theorem HIKMOT relies",
  "tokens": {
   "brief": 49,
-  "extended": 267
+  "extended": 283
  },
  "sections": [
   {
-   "id": "sec-000-1-introduction",
-   "title": "Introduction",
-   "pages": "1-6"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
   },
   {
-   "id": "sec-001-3-cocycles",
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-001-2-hyperbolic-structures-on-finite-triangulations",
+   "title": "Hyperbolic structures on finite triangulations",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-002-3-cocycles",
    "title": "Cocycles",
    "pages": "6-9"
   },
   {
-   "id": "sec-002-4-extending-cocycles-on-genus-0-surfaces",
+   "id": "sec-003-4-extending-cocycles-on-genus-0-surfaces",
    "title": "Extending cocycles on genus 0 surfaces",
    "pages": "9-12"
   },
   {
-   "id": "sec-003-5-extending-cocycles-on-triangulations",
+   "id": "sec-004-5-extending-cocycles-on-triangulations",
    "title": "Extending cocycles on triangulations",
    "pages": "12-14"
   },
   {
-   "id": "sec-004-6-examples-of-non-gimbal-lock",
+   "id": "sec-005-6-examples-of-non-gimbal-lock",
    "title": "Examples of (non-)gimbal lock",
    "pages": "14-15"
   },
   {
-   "id": "sec-005-7-algorithm",
+   "id": "sec-006-7-algorithm",
    "title": "Algorithm",
    "pages": "15-20"
   },
   {
-   "id": "sec-006-8-results",
+   "id": "sec-007-8-results",
    "title": "Results",
    "pages": "20-21"
   },
   {
-   "id": "sec-007-9-discussion",
+   "id": "sec-008-9-discussion",
    "title": "Discussion",
    "pages": "21-25"
   },
   {
-   "id": "sec-008-10-appendix-the-uncited-theorem-hikmot-relies-on",
+   "id": "sec-009-10-appendix-the-uncited-theorem-hikmot-relies-on",
    "title": "Appendix: The uncited theorem HIKMOT relies on",
    "pages": "25-28"
   }

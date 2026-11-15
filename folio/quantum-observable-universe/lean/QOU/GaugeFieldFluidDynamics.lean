@@ -373,7 +373,7 @@ theorem q_bounded_cond_finite (L : QBoundedLeviForm) :
     - If cond = O(1): blowup (counter-example established)
     - If cond ~ κ: regularity (Levi form degenerates)
 
-    Ref: [manuscript] Ch 5 §8 Root-of-unity truncation -/
+    Ref: [leitner2026] Ch 5 §8 Root-of-unity truncation -/
 structure LeviDegeneracyConjecture where
   /-- Truncation level (κ in q = e^{iπ/κ}). -/
   κ : ℕ
@@ -447,7 +447,7 @@ theorem eigenspace_dim_pos (twice_j : ℕ) : eigenspace_dim twice_j > 0 := by
     which is spanned by the matrix coefficients.
 
     Ref: [woronowicz1987] https://doi.org/10.1007/BF01219077
-    Ref: [manuscript] Ch 5 §8 Quantum Peter-Weyl theorem -/
+    Ref: [leitner2026] Ch 5 §8 Quantum Peter-Weyl theorem -/
 theorem quantum_peter_weyl_completeness :
     ∀ (twice_j : ℕ), eigenspace_dim twice_j = (twice_j + 1) ^ 2 := by
   intro twice_j; rfl
@@ -549,7 +549,7 @@ theorem descartes_euler_ne_zero : descartes_euler ≠ 0 := by
 
 /-- For κ ≥ 4, 2κ does not divide -6.
     This is the key arithmetic: |2κ| ≥ 8 > 6 = |-6|.
-    Ref: [manuscript] Ch 5 §8 Kummer specialisation -/
+    Ref: [leitner2026] Ch 5 §8 Kummer specialisation -/
 theorem obstruction_persists (κ : ℕ) (hκ : κ ≥ 4) :
     ¬ ((2 * (κ : ℤ)) ∣ (-6 : ℤ)) := by
   intro ⟨c, hc⟩
@@ -605,7 +605,7 @@ export QOU.FluidDynamics (ObservabilityData)
     survives Kummer specialisation (2κ ∤ -6 for κ ≥ 4).
 
     LaTeX: `\label{thm:ns-singularity-descartes}` -/
--- Ref: [manuscript] Ch 5 §8 NS-singularity of the Descartes universe
+-- Ref: [leitner2026] Ch 5 §8 NS-singularity of the Descartes universe
 structure NSSingularityDescartes (C : Type*) where
   /-- Euler characteristic. -/
   chi : ℤ := -6

@@ -44,5 +44,5 @@
 -- version, which states the conjecture as a per-row `axiom` over opaque
 -- propositions and DERIVES the count.
 --
--- Ref: [manuscript] conj:b1-hyperbolic-rows-theorem
+-- Ref: [leitner2026] conj:b1-hyperbolic-rows-theorem
 -- Bean: qou-t7zg (the original repair), qou-prop3b (this one).

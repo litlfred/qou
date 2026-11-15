@@ -70,7 +70,7 @@ variable {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     The conclusion is a **concrete conjunction over `AlgElement`** (an
     existential `ReducesToNF` plus a `∀`-uniqueness clause), not a bare
     `Prop` field. -/
--- Ref: [manuscript] unital-groebner-bases/introduction/ugb-main-theorem-statement.ts
+-- Ref: [leitner2026] unital-groebner-bases/introduction/ugb-main-theorem-statement.ts
 theorem main_theorem_statement
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)

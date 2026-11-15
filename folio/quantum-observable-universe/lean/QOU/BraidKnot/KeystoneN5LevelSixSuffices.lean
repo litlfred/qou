@@ -59,7 +59,7 @@ Nothing here proves the gauge row `bwS0` agrees with the value map at any root. 
 than six at level 7, or none at all if the all-levels family is available instead. No
 fit; nothing wired; L2 unchanged.
 
--- Ref: [manuscript] docs/coordination/s5-so3-keystone.md
+-- Ref: [leitner2026] docs/coordination/s5-so3-keystone.md
 -- Ref: [habiro2004] https://doi.org/10.1007/s00222-007-0071-0
 -/
 

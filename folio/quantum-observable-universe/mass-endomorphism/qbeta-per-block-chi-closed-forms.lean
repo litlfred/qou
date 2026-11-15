@@ -362,7 +362,7 @@ formalisation of the same fact in the tree, and a content-block sibling cannot
 declaration (measured: zero occurrences outside this file). Bean `qou-z9ws`;
 `docs/audits/2026-08-30-the-remainder-is-vacuous-not-open.md`.
 
-Ref: [manuscript] qbeta-c3-multiblock-recursion-attack.witness.json (order-2) -/
+Ref: [leitner2026] qbeta-c3-multiblock-recursion-attack.witness.json (order-2) -/
 
 /-! The order-2..7 Taylor coefficients in the canonical borromean frame
 (`5/6`, `-23/9`, `77/18`, `1349/108`, `-191/4`, `26285/162`) are **all proved

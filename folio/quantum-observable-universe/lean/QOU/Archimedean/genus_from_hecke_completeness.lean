@@ -41,7 +41,7 @@ bound `2 + 2 = 4 < 5` independently of `q`.  The exact symbolic rank over
 `ℚ(q)` is in `computations/audits/genus_completeness_rank_probe.py`; the
 scope statement is `rem:torus-evaluation-block-rank`.
 
--- Ref: [manuscript] quantum-observable-universe/brings-surface/genus-from-hecke-completeness.md
+-- Ref: [leitner2026] quantum-observable-universe/brings-surface/genus-from-hecke-completeness.md
 -/
 
 namespace QOU.Archimedean
@@ -70,7 +70,7 @@ theorem torusKnotEmbeddingCount_four : torusKnotEmbeddingCount 4 = 6 := by
     This is the half of `lem:genus-from-hecke-completeness` that is true.
     Stated as an inequality, because the count at `g = 4` is 6; an earlier
     version stated `= 5` and understated the count to match. -/
--- Ref: [manuscript] quantum-observable-universe/brings-surface/genus-from-hecke-completeness.md
+-- Ref: [leitner2026] quantum-observable-universe/brings-surface/genus-from-hecke-completeness.md
 theorem genus_from_hecke_completeness :
     5 ≤ torusKnotEmbeddingCount 4 ∧
     (∀ g < 4, torusKnotEmbeddingCount g < 5) := by

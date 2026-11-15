@@ -53,7 +53,7 @@ Accordingly this file provides the two *honest* pieces:
 Everything is over `ℝ` (archimedean — `LiTwo`, `Real.log`, and the boundary
 limits live past the substrate→archimedean wall).
 
--- Ref: [manuscript] conj:dilogarithm-archimedean-limit; bean qou-jplv
+-- Ref: [leitner2026] conj:dilogarithm-archimedean-limit; bean qou-jplv
 -- Ref: [faddeev1994] https://doi.org/10.1142/S0217732394002793
 -/
 

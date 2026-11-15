@@ -1,0 +1,47 @@
+13.1 Contributing singularities and diagonals 425
+
+to unknown complex numbers that can be rigorously approximated. The com-
+bination of these two representations was used in Example 11.50 to determine
+asymptotics for a multivariate generating function with cone singularities, and
+it is natural to ask how far this combined method can be pushed — both to
+characterize the behavior of multivariate rational diagonals, and to attack the
+connection problem for the asymptotics of sequences with D-finite generating
+functions.
+
+Problem 13.1. Classify the types of rational functions for which this hybrid
+ACSV and D-finite numeric method applies.
+
+Remark 13.1. The diagonal of any bivariate rational function is algebraic,
+so asymptotics in any fixed direction can always be decided by computing the
+minimal polynomial for the diagonal and applying univariate techniques. How-
+ever, the complexity of the computation to reduce to the one-dimensional case
+can increase with the size of the integers representing a direction of interest,
+and does not work for general direction. Thus, it is interesting to study even
+bivariate rational diagonals using multivariate methods.
+
+Example 13.2. The (a, b)-diagonal of the bivariate generating function
+F(x,y) = os
+for the Delannoy numbers has the representation
+G(x) = [P| F (x!/4/0', 1°)
+Lp F(xtleye, st)
+
+=— ——_———dt
+2ni Jy, t
+
+1 pl at
+~ Oni sy pb — xlla — path — yl Jaya
+
+for x sufficiently close to the origin and y, a circle around the origin that ap-
+proaches the origin as x — 0. This integrand has a single pole tf = s(x) satisfy-
+ing lim,_,9 s(x) = 0, which is a pole of order b, so
+
+G(x) = Res F (x\/4j0, 1°) /t
+t=s(x)
+= Siwy GD!
+The product rule gives this limit as an algebraic expression in s(x), which can
+be combined with the defining algebraic equation for s(x) to give an algebraic
+
+equation satisfied by G, however this expression is extremely unwieldy for
+large a and b, and the complexity of the operations grows with a and b. In
+
+AP" (t= s(yyPF (x70, #°) /1).

@@ -50,7 +50,7 @@ inputs mirror-invariant, so the derived frame's sign information — the one
 thing #6985 adds beyond the recalled table — is invisible to Route A by
 construction.
 
--- Ref: [manuscript] docs/audits/2026-08-11-aomega-internal-derivation-attack-options.md (Route A)
+-- Ref: [leitner2026] docs/audits/2026-08-11-aomega-internal-derivation-attack-options.md (Route A)
 -/
 
 namespace QOU.QBeta.RouteANewtonPolygonDT

@@ -6,7 +6,7 @@ export default remark({
   title: "Proton: NF construction, mass, charge, and computational backing",
   tags: ["proton", "hadron", "baryon", "color-tube", "knot", "categorical"],
   uses: ["def:categorical-proton", "conj:borromean-quark"],
-  cites: ["manuscript"],
+  cites: ["leitner2026"],
   computation: {
     engine: "python",
     script: "computations/codata_masses.py",

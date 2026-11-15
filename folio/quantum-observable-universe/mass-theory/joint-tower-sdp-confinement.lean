@@ -106,7 +106,7 @@ def JointTowerSdpFeasible (sdp : JointTowerSdp) : Prop :=
 theorem joint_tower_sdp_feasible (sdp : JointTowerSdp)
     (h_nonempty : sdp.registry ≠ []) :
     JointTowerSdpFeasible sdp :=
-  -- Ref: [manuscript] prop:confinement-sdp + prop:wedderburn-trace-identity.
+  -- Ref: [leitner2026] prop:confinement-sdp + prop:wedderburn-trace-identity.
   -- The canonical embedding π : H_m(q_0) ↪ H_n(q_0) sends each
   -- Wedderburn block of H_m to a positive-semidefinite sum of
   -- compatible blocks of H_n; this is enough to lift per-atom

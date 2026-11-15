@@ -29,7 +29,7 @@ quotient is the open structure refactor.
 
 ## References
 
-- [manuscript] §5-lifting-and-descent/quantum-characteristic-classes-unique
+- [leitner2026] §5-lifting-and-descent/quantum-characteristic-classes-unique
 - [yekutieli2010] https://doi.org/10.1016/j.aim.2010.07.008
 -/
 

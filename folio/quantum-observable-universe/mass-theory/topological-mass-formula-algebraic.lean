@@ -51,7 +51,7 @@ structure AlgebraicMassData (R : Type*) [CommRing R] where
     form `mass_alg = phi1 / hbar_sq`.  The Archimedean version
     `prop:topological-mass-formula` is the specialisation under
     `τ_arch` at `q = q₀`. -/
--- Ref: [manuscript] prop:topological-mass-formula-algebraic
+-- Ref: [leitner2026] prop:topological-mass-formula-algebraic
 theorem AlgebraicMassFormula
     {R : Type*} [CommRing R] (D : AlgebraicMassData R)
     (u : Rˣ) (hu : (u : R) = D.hbar_sq)

@@ -145,9 +145,9 @@ theorem matrix_algebra_baer_right
     the Hoefsmit seminormal construction and discharging it is the open
     Mathlib-formalisation step.
 
-    Ref: [manuscript] §prop:explicit-central-idempotent "Cross-checks" §3-4;
+    Ref: [leitner2026] §prop:explicit-central-idempotent "Cross-checks" §3-4;
     [murphy1981] Murphy elements and centre structure of symmetric-group /
-    Hecke algebras; [manuscript] §rem:chirality-period-pairing. -/
+    Hecke algebras; [leitner2026] §rem:chirality-period-pairing. -/
 def bar_idempotent_transposition_partition
     {A : Type*} [Ring A] [StarRing A]
     (e : List ℕ → A) (transpose : List ℕ → List ℕ) : Prop :=

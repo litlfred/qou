@@ -32,9 +32,9 @@
   follow-ups), and the resolvent form is proved sorry-free as a
   consumer of the class instance.
 
-  Ref: [manuscript] prop:bring-residue-resolvent
-       [manuscript] prop:alpha-shift-torus-knot
-       [manuscript] prop:em-coupling-bring-zero-mode
+  Ref: [leitner2026] prop:bring-residue-resolvent
+       [leitner2026] prop:alpha-shift-torus-knot
+       [leitner2026] prop:em-coupling-bring-zero-mode
        [suslin1991] Bloch-Suslin K-theory
        [thurston1978] residues on hyperbolic surfaces
 -/

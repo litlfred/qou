@@ -16,7 +16,7 @@ LaTeX label: `def:q-heat-equation`
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes/q-heat-equation
+- [leitner2026] §2-quantum-observable-universes/q-heat-equation
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]`.  The operator equation is
 purely algebraic and holds in `End(S)` over `R_q`.  Convergent
@@ -35,7 +35,7 @@ abbrev R_q := LaurentPolynomial ℤ
     Encoded abstractly as a predicate on the pair (time-derivative,
     q-Laplacian-value) — this is the algebraic shadow of the PDE,
     independent of any analytic choice of differentiability. -/
--- Ref: [manuscript] §2
+-- Ref: [leitner2026] §2
 structure QHeatEquation (S : Type*) where
   /-- Time-dependent section `u : ℝ → S → R_q`. -/
   u : ℝ → S → R_q
@@ -50,7 +50,7 @@ structure QHeatEquation (S : Type*) where
     `R_q = ℤ[T; T⁻¹]`, evaluating at `q = 1` sends each monomial
     `T^n ↦ 1`, so the value is the sum of all Laurent coefficients
     (`LaurentPolynomial ℤ = ℤ →₀ ℤ`). -/
--- Ref: [manuscript] §2
+-- Ref: [leitner2026] §2
 def QHeatEquation.classicalLimit {S : Type*} (H : QHeatEquation S)
     (t : ℝ) (x : S) : ℤ :=
   (H.u t x).sum (fun _ c => c)

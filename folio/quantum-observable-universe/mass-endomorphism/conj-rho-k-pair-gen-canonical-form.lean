@@ -16,11 +16,11 @@ Kashaev-limit form `-z² · Li₂^q(-|V_i V_j|_Wedderburn)` (matching the
 six-term theorem's `T_3`), but its derivation as a leading-order
 expansion in `ℏ_q` is open.
 
-Ref: [manuscript] conj:rho-k-pair-gen-canonical-form
-Ref: [manuscript] prop:rho-k-graded-expansion
-Ref: [manuscript] def:q-dilogarithm
-Ref: [manuscript] thm:knot-mass-formula-unified
-Ref: [manuscript] docs/audits/2026-05-25-rho-k-dependent-conjectures-status.md
+Ref: [leitner2026] conj:rho-k-pair-gen-canonical-form
+Ref: [leitner2026] prop:rho-k-graded-expansion
+Ref: [leitner2026] def:q-dilogarithm
+Ref: [leitner2026] thm:knot-mass-formula-unified
+Ref: [leitner2026] docs/audits/2026-05-25-rho-k-dependent-conjectures-status.md
 
 **Base ring (§7c).** This is the *archimedean recovery* layer: the
 per-generator Wedderburn volumes and the CODATA target masses are real,
@@ -52,7 +52,7 @@ structure AtomicBraid where
     of the braid's Markov data (a *function*, so the same braid has a single
     measured mass; this is what keeps the recovery claim below refutation-
     free rather than trivially false). -/
--- Ref: [manuscript] conj:rho-k-pair-gen-canonical-form (CODATA masses)
+-- Ref: [leitner2026] conj:rho-k-pair-gen-canonical-form (CODATA masses)
 -- Converted `axiom` -> `opaque` 2026-09-04: this declares a SYMBOL, not a claim.
 -- `axiom f : T` and `opaque f : T := <witness>` are equally opaque, but only the
 -- first is a global axiom contaminating `#print axioms` downstream.  No

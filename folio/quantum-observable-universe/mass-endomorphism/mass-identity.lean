@@ -31,7 +31,7 @@ declarations:
 
 ## References
 
-- [manuscript] §3 Lifting and Descent
+- [leitner2026] §3 Lifting and Descent
 -/
 
 open CategoryTheory MonoidalCategory
@@ -70,7 +70,7 @@ universe u v
 
     For the Archimedean evaluation of `‖·‖_F` at `q = q₀`, see
     `scalarMass` below. -/
--- Ref: [manuscript] §3, Definition: Mass (categorical trace)
+-- Ref: [leitner2026] §3, Definition: Mass (categorical trace)
 def frobeniusMass {R : Type*} [CommRing R]
     (frobenius_form : R → R → R)
     (trace_of_frobenius_of_comult : R) : R :=
@@ -88,7 +88,7 @@ def frobeniusMass {R : Type*} [CommRing R]
     Per `QOU.GroundRingAnnotations`, this declaration is **not**
     part of the formal pre-Arch chain — it is the Archimedean
     bridge. -/
--- Ref: [manuscript] §3, Archimedean specialisation
+-- Ref: [leitner2026] §3, Archimedean specialisation
 noncomputable def scalarMass {R : Type*} [NormedCommRing R]
     (trace_of_frobenius_of_comult : R) : ℝ :=
   ‖trace_of_frobenius_of_comult‖
@@ -103,7 +103,7 @@ theorem scalarMass_nonneg {R : Type*} [NormedCommRing R]
 
     This uses the canonical `FrobeniusHopfData` from quantum-universe.lean
     to maintain type consistency with the foundational definitions. -/
--- Ref: [manuscript] §3, Definition: Mass (categorical trace)
+-- Ref: [leitner2026] §3, Definition: Mass (categorical trace)
 def massComposite {C : Type u} [Category.{v} C] [MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     (fh : FrobeniusHopfData C) : fh.obj ⟶ (𝟙_ C) ⊗ fh.obj :=
   fh.comul ≫ (fh.frobeniusForm ▷ fh.obj)

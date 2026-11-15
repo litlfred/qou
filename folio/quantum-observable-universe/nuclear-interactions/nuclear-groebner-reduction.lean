@@ -22,5 +22,5 @@ algebraic core belongs over the generic ground ring `R_q = ℤ[q,q⁻¹]`
 with an archimedean specialisation in a separate file.  Refactor to the
 generic R_q form remains open work.
 
-Ref: [manuscript] §particle-interactions
+Ref: [leitner2026] §particle-interactions
 -/

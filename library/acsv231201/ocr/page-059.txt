@@ -1,0 +1,39 @@
+2.4 D-finite generating functions and diagonals 41
+
+are easy to work with because they are specified by the finite data of their
+numerator and denominator polynomials.
+
+We have seen that some common and very natural combinatorial operations
+take us from the class of rational functions to the larger class of algebraic gen-
+erating functions. Algebraic functions also have canonical representations: if
+f is algebraic then there is a minimal polynomial P for which P(f(z), z) = 0
+and the series f may be specified by writing down the coefficients of P, which
+are themselves polynomials and therefore finitely specified, and enough initial
+terms to uniquely determine f among all roots of P. In Chapter 8 we discuss
+techniques in computational algebra that allow one to manipulate algebraic
+quantities implicitly using symbolic methods, making the class of algebraic
+generating functions reasonably nice to work with. There are, however, com-
+mon combinatorial operations that take us out of the class of algebraic func-
+tions, and this drives us to consider a more general class of generating functions
+involving differential equations. A more complete discussion of the hierarchy
+for univariate generating functions may be found in [Mel21, Chapter 2] and
+[Sta99, Chapter 6].
+
+a oe
+—
+
+(=
+
+\
+
+\
+\
+
+Rational |
+
+| \ \ ] Algebraic |
+| _ 7 D-finite /
+
+/
+
+Figure 2.4 Common classes of generating functions.

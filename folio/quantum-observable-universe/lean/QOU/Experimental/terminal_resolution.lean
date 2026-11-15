@@ -47,7 +47,7 @@ C): `TerminalResolution ctx` is the proposition the manuscript
 conjectures for the physical data `ctx`; the open state is honestly
 represented by the absence of an instance.  It is *not* a self-assuming
 projection. -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/terminal-resolution.ts
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/terminal-resolution.ts
 def TerminalResolution (ctx : TerminalResolutionContext) : Prop :=
     ctx.mass = ctx.m_nu_drag + ctx.E_strong ∧
     |ctx.mass - ctx.mass_codata| ≤ ctx.tol

@@ -10,7 +10,7 @@ The tower A₀ ↪ A₁ ↪ A₂ ↪ ⋯ carries the ascent/descent structure.
 
 ## References
 
-- [manuscript] §3 Lifting and Descent
+- [leitner2026] §3 Lifting and Descent
 -/
 
 namespace QOU
@@ -23,7 +23,7 @@ namespace QOU
     unit section, and the descent maps are the retractions.
 
     LaTeX: `\label{def:recursive-brane-tower}` -/
--- Ref: [manuscript] §3, Definition: Recursive brane tower
+-- Ref: [leitner2026] §3, Definition: Recursive brane tower
 structure RecursiveBraneTower (R : Type*) [CommRing R] where
   /-- The module at level n (representing End_𝒞(Aₙ)). -/
   level : ℕ → Type*

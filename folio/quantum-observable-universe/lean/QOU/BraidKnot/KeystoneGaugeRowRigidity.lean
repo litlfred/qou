@@ -32,7 +32,7 @@ L2 unchanged.
 Base ring: generic integral domain for the rigidity engine (the interpolation is
 pure algebra); the physical statement specialises to `ℝ`.
 
--- Ref: [manuscript] docs/coordination/s5-so3-keystone.md
+-- Ref: [leitner2026] docs/coordination/s5-so3-keystone.md
 -- Ref: [habiro2004] https://doi.org/10.1007/s00222-007-0071-0
 -/
 import Mathlib.Algebra.Polynomial.Roots

@@ -1,0 +1,48 @@
+9.4 Additional formulae for asymptotics 285
+Using # - y, = 0 and # - # = 1, we obtain
+
+diy + h(iy)) = 6(G.) + hy)
+= $(6.) + nliy) + O(lyl’)
+= $(6.) — ny) + Oyl’).
+
+We know, by our assumptions, that ¢ is a smooth phase function whose real
+part has a minimum on & at ¢,, which is y = 0 in the parametrization (9.27).
+Applying Theorem 5.3 to (9.26) using the evaluation (9.25) then gives (9.23),
+where the square-root of the curvature is taken to be the reciprocal of the prod-
+uct of the principal square-roots of the eigenvalues of —7 in the positive f-
+direction, all of which have nonnegative real parts. The eigenvalues of —7 in
+direction # are the same as the eigenvalues of 7) in direction —7, which finishes
+the proof of the theorem. ia)
+
+Again, minor modifications to proof extend to include the case where there
+are finitely many critical points on a minimizing torus.
+
+Corollary 9.46. Let F(z) = P(z)/Q(z) be the ratio of coprime polynomials
+with convergent Laurent series expansion F(Z) = Yipeza dp2" corresponding
+to the amoeba complement component B C amoeba(Q)°. Suppose there exists
+a compact set R ¢ R¢ of directions such that for each ® € R the function
+# + a is uniquely maximized at Xmin € B, and that the set W of critical points
+in T.(&min) is finite, nonempty, and consists of smooth nondegenerate points
+where some partial derivative of Q does not vanish. For each z € W(?) write
+Z = exp(@min + ty). Then
+
+(a-1)/2
+
+1 = ire PZ) -1/2 =I
+
+a, = {|—— e ) e'ry___~"___  (z) + O(\r|~")
+(sam) >, I Viog QI
+
+uniformly as |r| > co with F ER. a
+
+Example 9.47 (Quantum walk). A quantum walk or quantum random walk
+(QRW) is a model for a particle moving in Z“ under a quantum evolution in
+which the randomness is provided by a unitary evolution operator on a hidden
+variable taking k states. States and position are simultaneously measurable, but
+one must not measure either until the final time n or the quantum interference
+is destroyed. A one-dimensional quantum walk was briefly presented in Ex-
+ercise 9.8 as an example of torality. Here we illuminate the general form of
+asymptotics for a QRW, using Theorem 9.45 and Corollary 9.46 to qualita-
+tively describe the probability profile of the particle at large time n. Further
+examples of QRWs are given in Chapter 12.
+A QRW is defined by a kxk unitary matrix U along with k vectors v, ...,0

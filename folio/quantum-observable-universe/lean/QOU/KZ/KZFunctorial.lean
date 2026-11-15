@@ -14,7 +14,7 @@ it commutes with `∑ tᵏ Hₖ` (continuity) and with `t^A = exp(log t · A)` (
 So `f` carries the connection relation `G₀ = G₁ Φ` to the one for `f A, f B`, and uniqueness in
 `kz_associator` concludes. Sorry-free.
 
--- Ref: [manuscript] beans/defs/qou-zoyv (stage S2)
+-- Ref: [leitner2026] beans/defs/qou-zoyv (stage S2)
 -/
 
 namespace QOU.KZ.KZFunctorial

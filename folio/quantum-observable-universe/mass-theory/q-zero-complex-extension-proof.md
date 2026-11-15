@@ -4,9 +4,9 @@ Each substrate identity is stated in the cited literature
 (Wenzl 1988; Jones 1987) over a commutative ring with $q$ a unit;
 the QOU formalisation enforces the same generic typing. The relevant Lean files
 ([`hq-bi-filtration.lean`](hq-bi-filtration.lean),
-[`explicit-central-idempotent.lean`](explicit-central-idempotent.lean),
+[`explicit-central-idempotent.lean`](../mass-endomorphism/explicit-central-idempotent.lean),
 [`categorical-q-lie-bracket.lean`](../quantum-observable-universes/categorical-q-lie-bracket.lean),
-[`bar-involution.lean`](bar-involution.lean)) all carry
+[`bar-involution.lean`](../braids-and-knots/bar-involution.lean)) all carry
 `{R : Type*} [CommRing R]` (or stronger) and `{q : R}` without an
 ordering predicate.
 

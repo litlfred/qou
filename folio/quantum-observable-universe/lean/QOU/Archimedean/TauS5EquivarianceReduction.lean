@@ -42,7 +42,7 @@ the actual τ is registered; sub-piece (ii) is honestly OPEN — the remaining i
 is the existence of the Tits-transported S₅ symmetry with `T = τ` (the archimedean
 functor). `1/(8π)` stays a phase-4 identification; nothing wired.
 
--- Ref: [manuscript] prop:em-coupling-bring-zero-mode
+-- Ref: [leitner2026] prop:em-coupling-bring-zero-mode
 -- Ref: [serre1977] Linear Representations of Finite Groups (Schur; Tits deformation)
 -/
 import QOU.Archimedean.SchurInvariantFormProportional

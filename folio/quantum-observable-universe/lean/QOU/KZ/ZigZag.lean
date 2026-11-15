@@ -29,7 +29,7 @@ comparison (not used in any proof) the framework pin `q₀ ≈ 1.10998` correspo
 `|ℏ₀| = log q₀ / π ≈ 0.0332 < 1/12`. Non-resonance of the residues is automatic for
 `|ℏ| < 1/2` (`nonResonant_of_norm_lt`), so no arithmetic condition on `ℏ` is needed. Sorry-free.
 
--- Ref: [manuscript] beans/defs/qou-zoyv (stage S4)
+-- Ref: [leitner2026] beans/defs/qou-zoyv (stage S4)
 -/
 
 noncomputable section

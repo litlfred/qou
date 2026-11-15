@@ -22,7 +22,7 @@ definition and the crossing energy is a separate quantity. Open question:
 bean `qou-078y`.
 
 ## References
-- [manuscript] Ch. 9, §mass-energy
+- [leitner2026] Ch. 9, §mass-energy
 
 **Ground ring**: `ℝ` (archimedean realisation; the speed of light needs
 `q ≠ 1` and the classical limit uses the real order).
@@ -31,22 +31,22 @@ bean `qou-078y`.
 namespace QOU.Information
 
 /-- The speed of light squared: c_q² = 1/(q-1)². -/
--- Ref: [manuscript] Ch. 9, §mass-energy-equivalence
+-- Ref: [leitner2026] Ch. 9, §mass-energy-equivalence
 noncomputable def speedOfLightSq (q : ℝ) : ℝ :=
   1 / (q - 1) ^ 2
 
 /-- **Energy** of a braid class with mass `m`: 𝔈 = m · c_q². -/
--- Ref: [manuscript] Ch. 9, §mass-energy
+-- Ref: [leitner2026] Ch. 9, §mass-energy
 noncomputable def energy (q m : ℝ) : ℝ :=
   m * speedOfLightSq q
 
 /-- At q = 1 the speed of light diverges, recovering the classical
     limit where c → ∞ (Galilean regime). -/
--- Ref: [manuscript] Ch. 9, §mass-energy-equivalence
+-- Ref: [leitner2026] Ch. 9, §mass-energy-equivalence
 theorem massEnergy_classical_limit :
     ∀ ε > 0, ∃ δ > 0, ∀ q : ℝ, 0 < |q - 1| → |q - 1| < δ →
     1 / ε < speedOfLightSq q := by
-  -- Ref: [manuscript] Ch. 9, §mass-energy-equivalence
+  -- Ref: [leitner2026] Ch. 9, §mass-energy-equivalence
   -- As q → 1, (q-1)² → 0, so 1/(q-1)² → ∞.
   -- For any ε > 0, choose δ = √(ε). Then |q-1| < δ implies
   -- (q-1)² < ε, so 1/(q-1)² > 1/ε.

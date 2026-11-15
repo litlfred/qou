@@ -19,7 +19,7 @@ This direct form supersedes the equivalent factorisation $\mathfrak{m}(K) = \rho
 
 ### Calibrated form
 
-We present the calibrated form, where $\rho_K^{\mathrm{LO}}$ consumes CODATA $m_p$ and $m_n$ as upstream inputs. This violates the [three-calibration discipline](three-calibration-inputs.md) by injecting $m_p$ and $m_n$ as extraneous calibration constants. The proton and neutron rows are tautological by construction.
+We present the calibrated form, where $\rho_K^{\mathrm{LO}}$ consumes CODATA $m_p$ and $m_n$ as upstream inputs. This violates the [three-calibration discipline](../mass-theory/three-calibration-inputs.md) by injecting $m_p$ and $m_n$ as extraneous calibration constants. The proton and neutron rows are tautological by construction.
 
 Witness: [`atomic-mass-via-rho-k.witness.json`](../../../computations/atomic-mass-via-rho-k.witness.json).
 
@@ -29,27 +29,29 @@ See [Table 2](#tbl:recomputed-low-isotope-mass-table-table2-data).
 
 ### Full $\mathfrak{Q}_\beta$ prediction
 
-The framework predicts the $\beta$-decay $Q$-value using only the electron mass (CAL-1) and the substrate parameter $q_0$ (CAL-2) ([`prop:neutron-qvalue-symbolic`](../particle-interactions/neutron-qvalue-symbolic.md)). We inject no CODATA nucleon masses and do not use $\mathfrak{Q}_\beta$ as an input. Rather, $\mathfrak{Q}_\beta$ becomes an output.
+The framework predicts the $\beta$-decay $Q$-value using only the electron mass (CAL-1) and the substrate parameter $q_0$ (CAL-2) ([`prop:neutron-qvalue-symbolic`](../nuclear-interactions/neutron-qvalue-symbolic.md)). We inject no CODATA nucleon masses and do not use $\mathfrak{Q}_\beta$ as an input. Rather, $\mathfrak{Q}_\beta$ becomes an output.
 
-The canonical closed form at single wrap is:
+The ruled convention-D base at single wrap (owner ruling 2026-09-08: $\varepsilon$ is the Markov trace at $z_D = q_0^3/(q_0^2+1)$) is:
 
 $$
 \boxed{
-\mathfrak{Q}_\beta^{\text{pred}} =
-\frac{m_e |q_0^2 - 2q_0 - 1| (q_0 + 1)}{2 q_0^3}
-\approx 0.7836 \text{ MeV}
+\mathfrak{Q}_\beta^{\text{pred}} = \mathfrak{Q}_\beta^{z_D} =
+\Bigl|\tfrac{h^2}{2} - h\,z_D\Bigr|\,E_0
+\approx 0.4447 \text{ MeV}
 }
 $$
 
-This yields a $+0.168\%$ error ($+1.31$ keV) against the CODATA value of $0.7823$ MeV.
+This yields a $-43.16\%$ error ($-337.6$ keV) against the CODATA value of $0.7823$ MeV. The convention-D $c_k$ ladder that would correct this base is not yet derived, so the miss is reported as it stands.
 
-The closed form derives from the symbolic normal-form difference between the single-wrap proton ($L_+ - \tfrac{h}{2}\sigma_0$) and neutron ($L_+ - h\sigma_0 - \tfrac{h}{2}\sigma_1 + \tfrac{h^2}{2}\gamma$), yielding $\Delta(\mathrm{net}) = h(h-2)/2$ with $h = q_0 - q_0^{-1}$. This difference is multiplied by the energy scale $E_0 = m_e/(q_0(q_0-1))$. At single wrap, the $L_+$, $L_-$, and $e^-$ contributions cancel exactly. The $Q$-value is carried entirely by the $\gamma$, $\sigma_0$, and $\sigma_1$ channels.
+The base comes from the symbolic normal-form difference between the single-wrap proton ($L_+ - \tfrac{h}{2}\sigma_0$) and neutron ($L_+ - h\sigma_0 - \tfrac{h}{2}\sigma_1 + \tfrac{h^2}{2}\gamma$), namely $\Delta = \tfrac{h^2}{2}\gamma - \tfrac{h}{2}\sigma_0 - \tfrac{h}{2}\sigma_1$ with $h = q_0 - q_0^{-1}$. The Markov trace at $z_D$ sends $\gamma \mapsto 1$ and each $\sigma_i \mapsto z_D$, which gives $h^2/2 - h z_D$. This is multiplied by the energy scale $E_0 = m_e/(q_0(q_0-1))$. At single wrap, the $L_+$, $L_-$, and $e^-$ contributions cancel exactly.
+
+*Retired Form A (historical cross-check only).* Weighting every basis element by $1$ instead gives $\Delta(\mathrm{net}) = h(h-2)/2$ and the closed form $m_e |q_0^2 - 2q_0 - 1| (q_0 + 1)/(2 q_0^3) \approx 0.7836$ MeV ($+0.168\%$). That weighting is the Markov trace at $z = 1$, which is not admissible under convention D. It is kept for comparison and is not the prediction.
 
 See [Table 3](#tbl:recomputed-low-isotope-mass-table-table3-data).
 
 #### Single-wrap symbolic versus typed-crossings 6-term form
 
-The typed-crossings 6-term decomposition ([`beta-decay-energy-scale.md`](../particle-interactions/beta-decay-energy-scale.md)) has $|\Delta(\mathrm{net})| = 0.18829$ and yields $\mathfrak{Q}_\beta^{(\text{6-term})} = 0.7882$ MeV ($+0.747\%$). The single-wrap form is tighter by a factor of 4.46. The $L_\pm$ and $e^-$ contributions vanish exactly in the symbolic single-wrap difference, but pick up small asymmetric finite-size contributions in the typed-crossings basis. The single-wrap form stands as the canonical prediction; the typed-crossings form remains in the witness solely for cross-checking.
+The typed-crossings 6-term decomposition ([`beta-decay-energy-scale.md`](../nuclear-interactions/beta-decay-energy-scale.md)) has $|\Delta(\mathrm{net})| = 0.18829$ and yields $\mathfrak{Q}_\beta^{(\text{6-term})} = 0.7882$ MeV ($+0.747\%$). The single-wrap form is tighter by a factor of 4.46. The $L_\pm$ and $e^-$ contributions vanish exactly in the symbolic single-wrap difference, but pick up small asymmetric finite-size contributions in the typed-crossings basis. Both of these are Form A (weight-$1$) evaluations and are retired with it; the typed-crossings form remains in the witness solely for cross-checking.
 
 #### Basis dependence
 
@@ -88,4 +90,4 @@ These orders are rigorously exact, as lower-order poles cannot cancel a strict m
 - [`prop:atomic-mass-gb-nf`](atomic-mass-gb-nf.md): The master mass formula $\mathfrak{m}(K) = \rho_K m_e |\mathrm{tr}_M|$.
 - [`prop:q-hecke-seminormal-character-closure`](q-hecke-seminormal-character-closure.md): Partition-sum and canonical-reducer agreement.
 - [`prop:hecke-branching-trace-decomposition`](hecke-branching-trace-decomposition.md): Operator-valued Littlewood-Richardson block formula.
-- [`prop:per-nucleon-shift-additive-linearity`](per-nucleon-shift-additive-linearity.md): the categorical verification.
+- [`prop:per-nucleon-shift-additive-linearity`](../mass-theory/per-nucleon-shift-additive-linearity.md): the categorical verification.

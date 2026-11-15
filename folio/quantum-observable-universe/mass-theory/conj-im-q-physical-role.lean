@@ -9,8 +9,8 @@ Conjectural physical role of `Im(q)`: a substrate moduli parameter with no
 current observable, and three candidate roles (chirality, phase-dual-to-CAL-2,
 non-Hermitian deformation).
 
-Ref: [manuscript] conj:im-q-physical-role
-Ref: [manuscript] rem:im-q-vs-p-skew
+Ref: [leitner2026] conj:im-q-physical-role
+Ref: [leitner2026] rem:im-q-vs-p-skew
 
 ## What is asserted, and what is derived
 
@@ -50,7 +50,7 @@ noncomputable def default_q_real (q_real : ℝ) : ℂ := (q_real : ℂ)
     `m(q) = |F(q)|` is invariant under `q ↦ q̄` for any conjugation-equivariant
     `F` — in particular for a real-coefficient polynomial (e.g. the Markov
     trace), where `F(q̄) = F(q)‾` holds and is supplied as the hypothesis `hF`. -/
--- Ref: [manuscript] conj:im-q-physical-role
+-- Ref: [leitner2026] conj:im-q-physical-role
 theorem mass_observable_conj_invariance
     {F : ℂ → ℂ} (q : ℂ)
     (hF : F (starRingEnd ℂ q) = starRingEnd ℂ (F q)) :

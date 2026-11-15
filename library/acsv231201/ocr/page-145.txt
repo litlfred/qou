@@ -1,0 +1,43 @@
+5.4 General nondegenerate phase with finite critical set 127
+
+Step 2: Extending analytic maps
+Proposition 5.13. Let 6 : X — C be an analytic map on an analytic stratified
+space X, and let {% and WW be chart maps whose ranges are overlapping do-
+mains N, and N> in X. As y takes values in the intersection of the ranges of
+Ww @ Cand W ®C, the function $ = 6; defined by
+
+bly) = 7) 0 (Wi BC) '(y) (5.12)
+
+is independent of j, where t; represents analytic continuation of the map $0;
+from the real parameter space to a complex neighborhood of it. This common
+value defines an analytic extension of 6 on a neighborhood of X in C4.
+
+Proof The maps @, and ¢ agree when y € Nj NN2MX. Being analytic, they
+must agree in a neighborhood of X in X @ C. a
+
+Step 3: Constructing the vector flow
+Lemma 5.14. Under the assumptions of Theorem 5.3, there is a vector field v
+on a neighborhood U of X in C4, tangent to each complexified stratum S ® C
+of X ® C and vanishing only on G, with the property that (Redd, v) > 0 at
+every point of U \ G. For sufficiently small s, there is a well-defined differential
+flow © : [0,1] x |C| > C? satisfying (d/dt)¥(t, x) = s v(W(t, x)), and the map
+ah We, x) is a local diffeomorphism for sufficiently small e > 0.
+
+Proof As described in Proposition D.14 of Appendix D, there is a diffeo-
+morphic local product structure under the assumptions of Theorem 5.3. The
+argument discussed in Step 2 of the proof of Proposition D.13 in Appendix D
+implies that there is a Lipschitz vector flow v on a neighborhood U of X in C4
+defined by (D.2.1). This vector field v is tangent to each complexified stratum,
+vanishes precisely on G, and satisfies (Re d¢, v) > 0 on U\ G.
+
+The map « +» ‘(e,x) is a local diffeomorphism for sufficiently small
+eé > 0 because v is smooth and bounded (see, for example, [Lee03, Propo-
+sition 9.12]). oO
+
+Step 4: Deforming the contour
+Composing the flow from Lemma 5.14 with the simplex a; gives a homotopy
+from each oj to a new analytic simplex a, and summing the o’, defines a new
+chain C’. Because v is tangent to S @ C for each stratum S, the flow preserves
+each complexified stratum S @ C, and because OC is contained in the union of
+strata of dimensions at most p + d—k-— 1, it follows that ‘¥(0C) is contained in
+the union of complexified strata of dimensions at most p+d—k-1.

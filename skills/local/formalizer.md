@@ -195,7 +195,7 @@ lemma torsion_lifts_jet (A : FrobeniusHopfAlgebra) :
 **Rule**: Every `sorry` must have a `-- Ref:` annotation.  The `key`
 must match a citation key in `folio/schema/references.ts` exactly (case-sensitive).
 (`references.bib` is auto-generated from this file — never edit `.bib` directly.)  If no
-published reference exists, use `[manuscript]` and cite the chapter/section.
+published reference exists, use `[leitner2026]` and cite the chapter/section.
 This is enforced by the axiom report's Theoretical Gap Report (§8).
 
 **§3b-cond carve-out.** Class-body sorries are NOT missing proofs — they

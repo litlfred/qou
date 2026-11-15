@@ -37,7 +37,7 @@ inspection — and `ζ ≡ 1 (mod 𝔭)` gives `u₄ ≡ 4 (mod 𝔭)`. Verified
 So `Frob_p ≡ 4 (mod 𝔭)` is *compatible with `Frob_p` being a unit*, and cannot
 on its own establish the perpetual obstruction.
 
-Ref: [manuscript] bean `qou-lrnd`
+Ref: [leitner2026] bean `qou-lrnd`
 -/
 
 namespace QOU.LiftingDescent

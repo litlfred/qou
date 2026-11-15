@@ -19,7 +19,7 @@ same abstract monoidal functor evaluated at imaginary vs real s.
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes/categorical-fourier
+- [leitner2026] §2-quantum-observable-universes/categorical-fourier
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]`.  The algebraic Fourier transform
 (as Peter-Weyl projection) works over any base ring; the integral
@@ -34,7 +34,7 @@ abbrev R_q := LaurentPolynomial ℤ
 /-- **Categorical Fourier transform data**: a monoidal functor
     intertwining q-convolution with pointwise product, given
     abstractly as the family of Peter-Weyl projections. -/
--- Ref: [manuscript] §2
+-- Ref: [leitner2026] §2
 structure CategoricalFourier (A : Type*) (Irreps : Type*) where
   /-- The Fourier-image family: one projection per irreducible. -/
   project : Irreps → (A → A) → (A → A)
@@ -45,7 +45,7 @@ structure CategoricalFourier (A : Type*) (Irreps : Type*) where
       project j (q_conv f g) = fun x => project j f (project j g x)
 
 /-- Wick rotation: Fourier is Laplace at imaginary spectral parameter. -/
--- Ref: [manuscript] §2
+-- Ref: [leitner2026] §2
 def CategoricalFourier.fromLaplace
     {A Irreps : Type*}
     (L : (A → A) → ℂ → (A → A))

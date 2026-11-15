@@ -6,7 +6,7 @@ A multiple bond is not one braid chain made "tighter" by stacking shared pairs i
 
 ## Failure of a single chain
 
-Modelling the shared pairs as one interleaved $(2k{+}2)$-strand chain is computationally refuted. Only the first ($\sigma$) pair binds. The second and third pairs anti-bind because forcing every bonding electron into one orbital accumulates $e$–$e$ repulsion — the braid-model expression of orbital exclusion. The bond-selection LP on that single-chain model has an active set of cardinality $1$, not $3$ ([witness `co-bond-order-active-set`](computations/co-bond-order-active-set.witness.json)). The triple bond requires the orthogonal decomposition. A "decreasing-but-positive marginal in one chain" does not occur.
+Modelling the shared pairs as one interleaved $(2k{+}2)$-strand chain is computationally refuted. Only the first ($\sigma$) pair binds. The second and third pairs anti-bind because forcing every bonding electron into one orbital accumulates $e$–$e$ repulsion — the braid-model expression of orbital exclusion. The bond-selection LP on that single-chain model has an active set of cardinality $1$, not $3$ ([witness `co-bond-order-active-set`](../../../computations/co-bond-order-active-set.witness.json)). The triple bond requires the orthogonal decomposition. A "decreasing-but-positive marginal in one chain" does not occur.
 
 ## Bond order is occupied orthogonal channels
 

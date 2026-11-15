@@ -1,0 +1,47 @@
+128 Multivariate Fourier—Laplace integrals
+
+Lemma 5.15. Using the above notation,
+
+fens f en. (5.13)
+Cc Cc
+
+Proof The homotopy Y defined by Lemma 5.14 is a chain with boundary
+C-C’-[0, 1]x dC. Since etn is a holomorphic p+d—k-form, it is annihilated
+by the differential, and Stokes’s Theorem implies
+
+0= f d(e~**n)
+y
+-[ en
+ov
+-[ ae ae
+Cc (7 D
+
+where D is a chain representing [0, 1] x dC. Because e~*77 is a holomorphic
+
+(p + d — k)-form, its integral vanishes over any p + d — k-chain supported
+on a (p + d — k — 1)-dimensional complex manifold (see Exercise A.15 of
+Appendix A), finishing the proof. ia)
+
+Exercise 5.10. A simpler version of the deformation argument can be illus-
+trated in two real variables. Suppose that V(x, y) is a smooth function on R? and
+7 = V;(x, y)dx + V(x, y)dy. Assume that a homotopy H : [0, T] x [0, 1] carries
+the path a : [0,7] — R? to the path B : [0,7] > R?, meaning H(t, 0) = a(t)
+and H(t, 1) = A(t) for all t € [0,7]. If f(uw) = H(O,u) and g(u) = H(T, u) then
+what conditions on df and dg guarantee that f n= i 7 by implying that the
+integrals over the paths traced out by the endpoints of the path as it moves from
+a to B are everywhere zero?
+
+Step 5: Evaluating the integral on C’
+
+From the construction of v we see that C’ = Dy o's where each simplex
+o’, contains the same critical point q in its interior as 7 ;. By Lemma 5.14 we
+know that Re o(o'(x)) > Re g(a j(x)) > 0 for all j < mand a € A?, where
+the first inequality is strict unless o ;(x) is a critical point. Thus, the image |C’|
+is a Stratified space represented analytically by (p + d — k)-simplices a for
+1 < j < mand the function Re ¢ is nonnegative and vanishes precisely on G’.
+
+If a contains no point of G’ then the modulus of f - e~4®) n is bounded
+above by Me~**, where M = max{|A(a)| : « € A%} and K = min{Re (a) :
+zx € A“}. If o’, contains q € G’ then translating the preimage of q to the origin
+turns A?*4~* into a neighborhood N of the origin on which A and = go oa,
+are analytic and Re J(z) > 0, with equality only at the origin. Theorem 5.2

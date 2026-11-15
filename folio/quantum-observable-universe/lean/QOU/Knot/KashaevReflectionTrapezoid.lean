@@ -38,9 +38,9 @@
   `−½log N`.  The reflection cannot reach it: it pairs `k` with `N−1−k` and both
   endpoints sit outside that pairing.
 
-  -- Ref: [manuscript] QOU/Knot/KashaevProdEndpoint.lean
-  -- Ref: [manuscript] QOU/Archimedean/LobachevskyDerivative.lean
-  -- Ref: [manuscript] computations/probes/kashaev_reflection_probe.py
+  -- Ref: [leitner2026] QOU/Knot/KashaevProdEndpoint.lean
+  -- Ref: [leitner2026] QOU/Archimedean/LobachevskyDerivative.lean
+  -- Ref: [leitner2026] computations/probes/kashaev_reflection_probe.py
 -/
 import QOU.Knot.KashaevProdEndpoint
 import QOU.Archimedean.LobachevskyDerivative

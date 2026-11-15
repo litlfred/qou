@@ -1,0 +1,52 @@
+250 Smooth point asymptotics
+
+Example 9.10 (binomial coefficients continued). If F(x, y) = 1/(1-—x-—y) then
+the coefficient of x”y* in the power series expansion of F is (**). Solving the
+
+smooth critical point equations yields the unique critical point
+
+w =| r Ss )=@.9,
+
+rts rts
+
+which is strictly minimal by Lemma 6.41. We obtain
+
+rts) (r+s/** [r+s
+Ss r'ss 2ars
+as r,s — oo with r/s bounded away from zero and infinity. For example, the
+
+central binomial coefficients given by r = s = n satisfy (") ~ 4" / an. 4
+
+Example 9.11 (Delannoy numbers continued). If F(x, y) = 1/(1 - x- y- xy)
+then we have the critical points
+
+Vr? +s2- 5 me or [eee
+, ;
+r
+
+Ss r S
+
+the first of which is strictly minimal by Lemma 6.41. Writing d = Vr? + s?,
+we directly compute
+
+( r J( s ) rs (d2 + (r—s))
+rs ~ as) \d=r 2n (r+s-—d) (d2+d(r-5))
+
+as r,s — oo with r/s bounded away from zero and infinity. 4
+
+We give a proof of Theorem 9.5 in Section 9.1 using the surgery method for
+ACSV, which works in the presence of smooth finitely minimal contributing
+points. Although the requirement of finite minimality makes proofs simpler, it
+is computationally difficult to check, and rules out cases that can be handled by
+our other results. In Section 9.2 we use more advanced techniques (including
+the theory of hyperbolic polynomials developed in Chapter 11) to prove an
+extension of Theorem 9.5 that ignores non-critical points and only requires
+that the torus T(w) contains a finite number of critical points. This gives a
+large computational advantage, because generically there are a finite number
+of critical points described by a zero-dimensional algebraic set.
+
+Theorem 9.12 (Main Theorem of Smooth ACSV (Minimal Point Version)).
+Let F(z) = P(z)/Q(z) be the ratio of coprime polynomials with convergent
+Laurent expansion F(Z) = Ynez Ap Z". Suppose there exists a compact set R C
+R¢ of non-zero directions such that F has a smooth minimal nondegenerate
+contributing point w = w(?) € C4 whenever ? € R. If the set W(#) of solutions

@@ -13,7 +13,7 @@ LaTeX: `\label{prop:categorical-q-ext-deriv-exists}`
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes/categorical-q-ext-deriv-exists
+- [leitner2026] §2-quantum-observable-universes/categorical-q-ext-deriv-exists
 - [majid2002] A Quantum Groups Primer (Cambridge UP), §5
 -/
 

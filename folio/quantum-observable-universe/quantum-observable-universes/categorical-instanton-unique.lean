@@ -29,7 +29,7 @@ quotient-level classification is the open structure refactor.
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes/categorical-instanton-unique
+- [leitner2026] §2-quantum-observable-universes/categorical-instanton-unique
 - [atiyah1978] https://doi.org/10.1098/rspa.1978.0143
 -/
 

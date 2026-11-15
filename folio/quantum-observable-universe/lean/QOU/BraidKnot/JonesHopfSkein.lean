@@ -25,7 +25,7 @@ a new fit. Everything is stated over a generic `CommRing` in the cleared
 (division-free) form of the axioms — multiply the skein by `s²` and the unlink
 value by `s` — so the derivation is a single `linear_combination`. Sorry-free.
 
--- Ref: [manuscript] def:jones-polynomial; §7a Hecke–Skein convention
+-- Ref: [leitner2026] def:jones-polynomial; §7a Hecke–Skein convention
 -- Ref: [jones1987] V. Jones, "Hecke algebra representations of braid groups and
 --       link polynomials," Ann. of Math. 126 (1987)
 -/

@@ -39,7 +39,7 @@ The [acoustic metric](#rem:madelung-fluid) $g_{\mathrm{ac}}$ admits
 horizons wherever $|v| = c_s$.
 
     The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
--- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/acoustic-horizon-conditions.ts
+-- Ref: [leitner2026] quantum-observable-universe/fluid-dynamics/acoustic-horizon-conditions.ts
 theorem acoustic_horizon_conditions [ctx : AcousticHorizonConditionsContext] :
     ctx.mach = 1 ∧ 0 < ctx.grad_mach_sq_norm ∧ 0 ≤ ctx.null_energy :=
   ⟨ctx.impl_transonic ctx.horizon_active,

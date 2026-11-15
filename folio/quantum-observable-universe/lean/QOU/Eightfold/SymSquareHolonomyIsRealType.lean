@@ -58,7 +58,7 @@ No ring and no archimedean content: an abstract duality and an equivalence.
 
 -- Ref: [fulton-harris1991] §11 (Frobenius–Schur; `Sym²` of the standard `SL(2)`
 -- representation is the adjoint, and is orthogonal).
--- Ref: [manuscript] `docs/audits/2026-09-04-route-e-screened-against-the-trichotomy.md`.
+-- Ref: [leitner2026] `docs/audits/2026-09-04-route-e-screened-against-the-trichotomy.md`.
 -/
 
 namespace QOU.Eightfold.SymSquareHolonomyIsRealType

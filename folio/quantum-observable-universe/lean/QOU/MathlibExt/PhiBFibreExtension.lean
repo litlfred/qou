@@ -29,7 +29,7 @@ of a genuine extension is strictly off-axis, matching the known analytic
 structure of the Faddeev integral.
 
 -- Ref: [faddeev1995] Faddeev, Lett. Math. Phys. 34 (1995) 249. https://doi.org/10.1007/BF01872779
--- Ref: [manuscript] conj:algebraic-geometric-dilog-equivalence; docs/audits/2026-07-13-phib-proof-status-and-monodromy-datum-gap-audit.md §G1
+-- Ref: [leitner2026] conj:algebraic-geometric-dilog-equivalence; docs/audits/2026-07-13-phib-proof-status-and-monodromy-datum-gap-audit.md §G1
 -/
 
 namespace QOU.MathlibExt
@@ -43,7 +43,7 @@ open QOU.MathlibExt.FaddeevPhiBRealIntegral
     the real axis and (ii) satisfies the two modular-double shift equations.
     The open content is the analytic continuation; no instance is fabricated.
     (`0 < b` puts the real `b` in `FaddeevPhi`'s `Re b > 0` scope.) -/
--- Ref: [manuscript] docs/audits/2026-07-13-phib-proof-status-and-monodromy-datum-gap-audit.md §G1
+-- Ref: [leitner2026] docs/audits/2026-07-13-phib-proof-status-and-monodromy-datum-gap-audit.md §G1
 class PhiBFibreExtension (b : ℝ) where
   /-- The extension. -/
   Φ : ℂ → ℂ

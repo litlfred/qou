@@ -34,7 +34,7 @@ so it is carried here rather than specialised.
 
 - [yekutieli2010] Central Extensions of Gerbes, §3 (Čech 1-cocycle
   deviation and the twisted-cocycle condition)
-- [manuscript] §3 Lifting and Descent, definition of the
+- [leitner2026] §3 Lifting and Descent, definition of the
   Yekutieli triple
 -/
 
@@ -52,7 +52,7 @@ open QOU.Torsion in
     where `a(p) = triple.twoMorphisms p`.  This is exactly the
     `twisted_condition` field of the structure. -/
 -- Ref: [yekutieli2010] §3, twisted-cocycle condition
--- Ref: [manuscript] §3 Lifting and Descent
+-- Ref: [leitner2026] §3 Lifting and Descent
 theorem descent_cocycle_deviation
     {R : Type*} [GroupWithZero R] {M : Type*}
     (tc : QOU.Torsion.TwistedTwoCocycle R M) :

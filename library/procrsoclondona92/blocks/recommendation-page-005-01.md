@@ -1,0 +1,1 @@
+In this derivation, it is essential that each flux tube should by itself have zero helicity and this is ensured by the above assumption that the B-lines within either tube on its own are unlinked closed curves.

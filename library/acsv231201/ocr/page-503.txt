@@ -1,0 +1,44 @@
+C.2 Residue forms and the residue integral theorem 485
+
+Corollary C.4. Let Y be a closed subspace of C4 and let a and B be relative
+cycles in the pair (M, MN Y) that are homologous in (C4, Y). There is a well-
+defined intersection class INT[a,B;Vly € Hg_\(V., Y) such that if H. is any
+(d + 1)-chain in Cc with OH =a’ — f’ + y, where [a’] = [a] and [f’] = [B] in
+Hy(M, Mn Y) andy € Y, and if H. intersects V transversely, then H 1 V is
+a relative cycle in the class INT[a, B; Vy. oO
+
+By the excision property of homology, the pair (M, M1 Y) is homotopy
+equivalent to the pair (M \ Y°, Y). This allows us to extend Corollary C.4 to
+the case where a and can intersect ‘V, but only in the interior of Y.
+
+Corollary C.5. Let Y be a closed subspace of C4 and let a and B be relative
+cycles homologous in (C4, Y) intersecting V only in the interior of Y. There is a
+well-defined intersection class INT[a,B;V]y € Ha-1(Vx, Vx Y), depending
+only on the class of a — 8B in Hy(M, Mn Y), such that if H is a (d + 1)-chain
+in C4 with OH = a-£+y, where y is supported on the interior of Y, and if
+the intersection of H with V is transverse away from the interior of Y, then
+H 9 Vis a relative cycle representing the class INT[a,B; Vy. oO
+
+In the special case of Corollary C.5, where 8 = 0 and Y is the set of points
+at height c or less, we denote the relative intersection class by INT[a;V]<c .
+
+C.2 Residue forms and the residue integral theorem
+
+Integrating a differential form over a difference of chains can often be reduced
+to integrating a residue form over an intersection cycle. Because residues de-
+pend on local behavior, we work with subsets of C4 that are locally defined
+by analytic functions. An analytic hypersurface (or simply hypersurface) is
+a set V Cc C@ such that for any w € V and any sufficiently small neigh-
+borhood D of w in C? there is an analytic function Qp on VOD such that
+VOD ={zeD: Qo(z) = 0}. If the function Qp can be chosen to have
+nonvanishing gradient on VM D then we say VV is a smooth analytic hyper-
+surface at w, and we call V a smooth analytic hypersurface if it is a smooth
+analytic hypersurface at every point.
+
+Although the theory of multivariate residues is much more involved than its
+univariate counterpart, we require it only for differential forms whose singu-
+larities lie on unions of smooth analytic hypersurfaces. We build our results in
+four degrees of generality, starting with forms having smooth simple poles,
+then forms with smooth higher order poles, followed by forms with trans-
+versely intersecting smooth sheets of simple poles, and concluding with forms
+having transversely intersecting smooth sheets with higher order poles.

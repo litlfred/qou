@@ -15,7 +15,7 @@ is the unique S-anti-invariant channel; the commutative limit
 makes the antipode trivial (S = id), so any S-odd quantity must
 vanish.
 
--- Ref: [manuscript] cor:commutative-chirality-vanishes
+-- Ref: [leitner2026] cor:commutative-chirality-vanishes
 -/
 
 namespace QOU.WedderburnMass

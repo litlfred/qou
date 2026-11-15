@@ -1,0 +1,44 @@
+C.3 Classical Morse theory 501
+
+h = c for constants c € [a,b]. This is accomplished using a downward gradient
+flow constructed locally using the gradient of h(a) (which never vanishes when
+h(a) € [a, b] due to the absence of critical points). oO
+
+Exercise C.3. Let X be the torus embedded in R* and let f be the distance
+from points on X to a fixed point not on X. Use the Morse Lemma to prove that
+f has a critical point on X that is either degenerate or is neither a maximum
+nor a minimum.
+
+Attachment at critical points
+
+Suppose now that there is precisely one critical point p with h(p) € [a, b]. The
+Hessian of / at p is a real symmetric matrix and therefore has real eigenvalues.
+We define the Morse index of h at p to be the number of negative eigenvalues
+of the Hessian. The Morse index can range from 0 at a local minimum to
+the dimension d of X at a local maximum. We now describe the topology of
+X<, as an attachment of a space Y to X<a, where Y and the attaching map
+depend on the Morse index of h at p. Following standard terminology in Morse
+theory, a k-cell (more properly a topological k-cell) is a ball of dimension k (in
+Appendix A we used this term for k-simplices, but topologically a k-ball and
+k-simplex are equivalent).
+
+Theorem C.28. Suppose that h-'([a,b]) is compact and contains precisely
+one critical point p, with critical value h(p) strictly between a and b. Then
+the space X<p has the homotopy type of X<q with a A-cell attached along its
+boundary, where A is the Morse index of the critical point p (a 0-cell is a point
+with empty boundary).
+
+Proof See [Mil63, Theorem 3.2]. oO
+
+Example C.29. Suppose X is the unit sphere in R? and consider the height
+function h(x,y,z) = z (when working in R3, we often set h(x, y,z) = z so
+that the “height” function measures actual height). There are only two critical
+points of h, namely its minimum (0,0, —1) at height —1 and maximum (0, 0, 1)
+at height 1.
+
+Let us follow X<,q as a increases from —co to +00. For a < —1, the set X<q
+is empty. As a passes —1, Theorem C.28 states that a 0-cell is added with no
+identification, making X<,, homotopically, a point. Geometrically, X<q with
+a € (-1,1) is a small dish, which is contractible to a point. The only other
+attachment occurs at the top of the sphere. For a < | < b, the set X<p \ X<q is
+a polar cap. Thus, geometrically as well as homotopically, a 2-cell is attached

@@ -32,7 +32,7 @@ explicit `[Instance]` hypothesis to retain
 
 ## References
 
-- [manuscript] §Plancherel completeness for the EW/Higgs {T(2,4), T(2,6), T(2,8)} idempotent decomposition, `conj:weak-spectral-completeness`
+- [leitner2026] §Plancherel completeness for the EW/Higgs {T(2,4), T(2,6), T(2,8)} idempotent decomposition, `conj:weak-spectral-completeness`
 -/
 
 namespace QOU.BraidKnot
@@ -55,7 +55,7 @@ class WeakSpectralCompleteness where
   /-- **The conjecture itself.**  The completeness index is exactly
       $1$: the weak-sector spectrum is fully spanned by the Hoefsmit
       basis. -/
-  -- Ref: [manuscript] braids-and-knots/weak-spectral-completeness
+  -- Ref: [leitner2026] braids-and-knots/weak-spectral-completeness
   weak_spectral_completeness_holds : completenessIndex = 1
 
 /-- **Structural skeleton** of `conj:weak-spectral-completeness`

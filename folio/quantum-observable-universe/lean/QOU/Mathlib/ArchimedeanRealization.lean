@@ -38,7 +38,7 @@ checkout's Mathlib does not contain in any form (deferred).
 
 **References**:
 - Mathlib `Polynomial.eval` — the underlying primitive.
-- [manuscript] `prop:archimedean-realization-functor`.
+- [leitner2026] `prop:archimedean-realization-functor`.
 -/
 
 namespace QOU.Mathlib.ArchimedeanRealization
@@ -56,7 +56,7 @@ namespace QOU.Mathlib.ArchimedeanRealization
     landed in PR #1978). -/
 -- Ref: full-twist-delta-n2-verification.witness.json::q_0 (the literal source — proton-anchor re-pin, 2026-05-28)
 -- Ref: q-pinning-50-digit.witness.json (companion witness with the same q_0; canonical record of the pin)
--- Ref: [manuscript] def:m-mu-over-m-e-calibration
+-- Ref: [leitner2026] def:m-mu-over-m-e-calibration
 noncomputable def q_zero : ℝ :=
   1.10997858275138080759166909561076887987449912187357763605672
 

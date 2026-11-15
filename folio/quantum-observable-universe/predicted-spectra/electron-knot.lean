@@ -14,7 +14,7 @@ LaTeX label: `def:electron-knot`
 
 ## References
 - [jones1987] https://doi.org/10.2307/1971403
-- [manuscript] Ch. 5, §electron-knot
+- [leitner2026] Ch. 5, §electron-knot
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
 Part of the formal proof chain. The parameter `q` is the canonical
@@ -41,7 +41,7 @@ theorem electron_is_torus_knot :
 theorem electron_crossing_number : ({} : Electron).crossing_number = 3 := rfl
 
 /-- Torus knots are non-hyperbolic: Vol(T_{2,3}) = 0. -/
--- Ref: [manuscript] Ch. 5, §electron-knot
+-- Ref: [leitner2026] Ch. 5, §electron-knot
 theorem electron_nonhyperbolic : ({} : Electron).volume = (0 : R_q) := rfl
 
 end

@@ -31,13 +31,13 @@ noncomputable def informationTheoreticTime
   (1 - τ.q⁻¹) * (τ.stepCount : ℝ)
 
 /-- Reeb time preserves ordering: more steps means later time. -/
--- Ref: [manuscript] Ch 8, Definition: Information-Theoretic Time
+-- Ref: [leitner2026] Ch 8, Definition: Information-Theoretic Time
 theorem reeb_time_monotone
     (q : ℝ) (hq0 : q ≠ 0) (hq1 : q ≠ 1) (hq_pos : 1 < q)
     (n m : ℕ) (hnm : n < m) :
     informationTheoreticTime ⟨q, hq0, hq1, n⟩ <
     informationTheoreticTime ⟨q, hq0, hq1, m⟩ := by
-  -- Ref: [manuscript] Ch 8, Definition: Information-Theoretic Time
+  -- Ref: [leitner2026] Ch 8, Definition: Information-Theoretic Time
   -- Since q > 1, the coefficient (1 - q⁻¹) is positive,
   -- so (1 - q⁻¹)·n < (1 - q⁻¹)·m when n < m.
   simp only [informationTheoreticTime]

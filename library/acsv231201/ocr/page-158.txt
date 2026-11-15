@@ -1,0 +1,58 @@
+140 Laurent series, amoebas, and convex geometry
+
+then for any 2 € [0, 1]
+
+A Are) , 1-a(l-ayr-y)
+
+sup laple”C**-Y < sup lap sup lap|
+rez reZa rez
+
+is finite, so Ax + (1 — A)y € S and S is convex. Since B is the interior of S, it
+is also convex. oO
+
+Proposition 6.9 (uniqueness of expansion). Let )},<za pz" be a Laurent se-
+ries converging uniformly to zero on the torus Relog"'(a). Then ay = 0 for all
+re Zi.
+
+Proof Assume without loss of generality that 2 = 0, so that Y pez dpe"™Y
+0 uniformly for y € [-2,7)4. For any fixed r € Z4, uniform convergence
+implies
+
+1 .
+= —_ (s—T)-Y gy
+&r (2ni)¢ Sow ase y
+
+seZd
+
+1 -
+
+seZd
+1
+
+>
+(2ri)! Jp(a)
+
+=0,
+
+Ody
+
+as desired. ia)
+
+We have now proven most of Theorem 6.4: part (1) is Proposition 6.8, while
+part (2) follows from Proposition 6.5 because (fF) is the uniform limit of the
+series of partial sums. Uniqueness in part (3) is given by Proposition 6.9, so it
+remains only to prove that (6.1) defines a Laurent series F(z) = ined ApZ”
+converging uniformly to f.
+
+By analyticity, the integral (6.1) defining a,. is independent of the value of
+a € B defining the chain of integration T.(a). Following an argument anal-
+ogous to the proof of Proposition 6.8 above, for ¢ > 0 sufficiently small
+there exists a neighborhood N(x) of x in R¢ and constant C > 0 such that
+|apz"| < Cexp(—elr|) for any z € T.(x’) with v2’ € N(x). If K C Bis any
+compact set, covering it with finitely many neighborhoods N(a) shows that
+such a bound holds for all z € Relog™!(K). In particular, the series F converges
+uniformly on compact subsets of D, so it is sufficient to prove that uF’) = f on
+a collection of sets with nonempty interior covering D.
+
+Let B’ = Tier [log a;, log bj] be a product of closed rectangles with nonempty
+interior strictly contained in B. Proposition A.29 in Appendix A gives a repre-

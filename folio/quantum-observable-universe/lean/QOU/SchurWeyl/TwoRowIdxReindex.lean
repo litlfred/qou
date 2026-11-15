@@ -27,7 +27,7 @@ one; after it there is one, and it is named.
 prove `finrank_traceQuot = catalan (n+1)`, and the sum it produces is still over
 `Fintype.card (StandardYoungTableau …)`, not over `dimHLF`.
 
--- Ref: [manuscript] beans qou-7vht, qou-7wf6, qou-8iru.
+-- Ref: [leitner2026] beans qou-7vht, qou-7wf6, qou-8iru.
 -/
 
 namespace QOU.SchurWeyl.TwoRowIdxReindex

@@ -1,4 +1,4 @@
--- Ref: [manuscript] Ch. 7, §ns-obstruction
+-- Ref: [leitner2026] Ch. 7, §ns-obstruction
 -- NS obstruction class NS(A) ∈ H³_loc(A, θ)
 
 /-- The **NS obstruction class** of a Frobenius-Hopf object A.

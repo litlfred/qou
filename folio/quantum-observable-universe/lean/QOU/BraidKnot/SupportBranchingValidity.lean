@@ -47,7 +47,7 @@ that does.  For the coupled `G` it would need an *exchange* property of `G` itse
 `Gamma_j`'s antitonicity does not supply (fact 2).  Nothing here is about `G`'s numbers: every
 statement is over an arbitrary real function, and the probe's figures enter nowhere.
 
--- Ref: [manuscript] computations/deltalambda/rev_e_infinity_hessian_budget_probe.py
+-- Ref: [leitner2026] computations/deltalambda/rev_e_infinity_hessian_budget_probe.py
 -/
 
 namespace QOU.BraidKnot.SupportBranchingValidity

@@ -1,0 +1,48 @@
+412 Combinatorial applications
+
+arising both in the study of chiral operators in four-dimensional quiver gauge
+theories [RWZ20] and in the enumeration of Littlewood-Richardson coeffi-
+
+. lia
+cients Cj, Since
+
+F(x,y) = »y (i, actly
+
+Ney
+
+(see Harris and Willenbring [HW 14] for a derivation and more on Littlewood—
+Richardson coefficients). Although F is meromorphic and not rational, its anal-
+ysis is surprisingly simple. Write
+F(ny) = PY
+
+=x-y
+where P(x,y) = [125 (1 -xi- yy. It is easy to compute that for a direction
+(r,s) with positive coordinates the unique critical point on Vj_,-y occurs at
+w= (4. x). Because the coordinates of w lie in (0,1), the polynomial
+1 — x' — y' does not vanish at (x,y) = w when i > | and w is a smooth
+strictly minimal singularity of F where P does not vanish. Theorem 9.5 and
+Equation (9.7) thus imply that
+
+s 1
+a) (r+ sytt2
+
+12.8 Limit laws from probability theory
+
+We now show how to use the techniques of ACSV to derive limit laws. Al-
+though probabilistic interpretations and limit laws can hold for series with neg-
+ative coefficients, to simplify our presentation we restrict to the most common
+case of a series F with nonnegative coefficients. Suppose the array {a,} en-
+codes some combinatorial structure, and that the size of an object is given by
+amap y(7r) into the integers —- most commonly y(r) = rg or y(r) = |r|.
+
+To discuss typical behavior, we define a grand measure yz on Z as a sum of
+point mass measures
+
+H= Yi andy,
+
+rezt
+where 6,(s) = 1 if s = r and 0 otherwise, and normalize its slices
+
+u Ly(r)=k Gr Or
+k = >
+Lylr)=k ar

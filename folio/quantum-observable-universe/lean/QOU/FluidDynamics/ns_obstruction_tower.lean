@@ -42,7 +42,7 @@ class NsObstructionTowerContext (R : Type*) [CommRing R] where
     The QOU is NS-singular **iff** some restricted Yekutieli obstruction is
     non-zero.  *Derived* from the two directional hypotheses of
     `NsObstructionTowerContext`. -/
--- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts
+-- Ref: [leitner2026] quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts
 theorem ns_obstruction_tower {R : Type*} [CommRing R]
     [ctx : NsObstructionTowerContext R] :
     ctx.is_NS_singular ↔ ∃ n : ℕ, ctx.res_sigma n ≠ 0 :=

@@ -1,0 +1,22 @@
+7.2 The smooth case 195
+
+discuss both of these questions in Chapter 9, where we derive explicit asymp-
+totic formulae for a, in terms of the generating function F(z). Readers who
+are interested only in smooth asymptotics (and do not need to see the technical
+discussion of critical points at infinity) may go directly to Chapters 8 and 9,
+after a brief discussion about removing our simplifying hypotheses.
+
+The requirement of no critical value at infinity is essential: when there are
+critical points at infinity, asymptotics are in principle affected. Classifying
+these cases and computing the asymptotics remains an open problem discussed
+further in Chapter 13. Removing the smoothness assumption involves the ap-
+paratus of stratified Morse theory, which we make use of in the next section.
+The assumption that hp is nondegenerate is not essential, however in its ab-
+sence there is no longer a unique cycle y; for each j. We handle this case, for
+now, by two examples.
+
+Example 7.21 (cubic degeneracy). The simplest degeneracy at a critical point,
+a so-called monkey saddle, leads to two independent homology generators as
+in Figure 7.13. 4
+
+Figure 7.13 Two homology generators associated with a monkey saddle.

@@ -41,7 +41,7 @@ The machinery itself is sound and sorry-free
 *binding-magnitude* claim falls — and a Lean proof of that is just arithmetic on
 the witnessed numbers, not an impossibility theorem.
 
--- Ref: [manuscript] computations/qbeta/qbessel_reeb_yweighted_gap.py ;
+-- Ref: [leitner2026] computations/qbeta/qbessel_reeb_yweighted_gap.py ;
    docs/audits/2026-06-20-qbessel-yweighted-gap-deflation.md
 -/
 import Mathlib.Tactic
@@ -66,7 +66,7 @@ def quadraticActionTermFormA : ℚ := 56 / 1000
     at least 15× too small to *be* the binding. This kills the quadratic-action
     functional under the forced `y_λ` measure; the kernel and the log-free-energy
     functional are untouched (see file header).
-    -- Ref: [manuscript] qbessel-reeb-yweighted-gap (forced `y_λ` deflation, 2026-06-20). -/
+    -- Ref: [leitner2026] qbessel-reeb-yweighted-gap (forced `y_λ` deflation, 2026-06-20). -/
 theorem quadratic_action_term_too_small_for_deuteron :
     15 * quadraticActionTermMe < deuteronTargetMe := by
   unfold quadraticActionTermMe deuteronTargetMe

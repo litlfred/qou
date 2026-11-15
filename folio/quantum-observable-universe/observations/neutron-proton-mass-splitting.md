@@ -1,30 +1,33 @@
-*The neutron--proton mass difference is*
+*Assume $(\mathrm{H}_\alpha)$: a change of the quark-ordering traced volume $\Phi$ is converted to energy by the nuclear binding scale $\alpha = m_e \times 8G$, as $\alpha\,\lvert\Delta\Phi\rvert$. Under $(\mathrm{H}_\alpha)$, the model neutron--proton mass difference is*
 
 $$
   \Delta m
-  = m_{\mathfrak{n}} - m_{\mathfrak{p}}
-  = \alpha \cdot
+  := \alpha \cdot
     \bigl\lvert
       \Phi(\mathfrak{u}\mathfrak{d}\mathfrak{d}) -
       \Phi(\mathfrak{u}\mathfrak{u}\mathfrak{d})
     \bigr\rvert
-  \approx 1.302 \;\mathrm{MeV}
+  \approx 1.054 \;\mathrm{MeV}
 $$
 
 *where $\alpha = m_e \times 8G$ is the binding scale and $\Phi$
 is the quantum dilogarithm volume.*
 
-**Proposition (in the convention-C trace frame).** The traced-volume closed
-form behind $\Phi$ folds the Markov parameter into its integer coefficients as
-$z = 4993/10000$, the rounded $z_C = \sqrt{q}/(q+1) = 0.4993203342$ at $q_0$.
-The canonical frame is $z_D = q^3/(q^2+1) = 0.6126880371$, and carrying $z_D$
-through the same closed form moves $\lvert\Delta\Phi\rvert$ by $-19.01\%$,
-giving $\Delta m \approx 1.054$ MeV against CODATA $1.29333217$ MeV — a
-residual of $-18.5\%$ where the $z_C$ value above sits at $+0.64\%$. The figure
-$1.302$ MeV is therefore a statement in the $z_C$ frame.
+The volumes are the traced-volume closed forms evaluated at the canonical
+Markov parameter $z_D = q^3/(q^2+1) = 0.6126880371$ at $q_0$, pairing each
+strand with every later strand. This gives
+$\Phi(\mathfrak{u}\mathfrak{u}\mathfrak{d}) \approx -0.614886$,
+$\Phi(\mathfrak{u}\mathfrak{d}\mathfrak{d}) \approx -0.896395$ and
+$\lvert\Delta\Phi\rvert \approx 0.281509$, so with $\alpha = 3.7445$ the model
+value is $\Delta m \approx 1.0541$ MeV.
 
-That is a claim about this construction in this frame, and not an exclusion:
-nothing here shows a quark-ordering volume cannot carry the splitting. Nor is
-the closer $z_C$ agreement evidence for $z_C$, since it was obtained in the
-frame the framework does not use, and a trace convention is not something a
-residual may select.
+**Comparison with measurement.** The CODATA splitting is
+$m_{\mathfrak{n}} - m_{\mathfrak{p}} \approx 1.29333$ MeV, so the model value
+is about $18.5\%$ below it. This comparison is the empirical claim of the
+block. For historical comparison only: the earlier value used the retired
+convention-C parameter $z = 4993/10000$ (the rounded $\sqrt{q}/(q+1)$) and gave
+$1.302$ MeV, about $0.64\%$ above the measured value. That figure is not the
+model's value, and a closer residual is not evidence for a convention.
+
+That is a claim about this construction, and not an exclusion: nothing here
+shows a quark-ordering volume cannot carry the splitting.

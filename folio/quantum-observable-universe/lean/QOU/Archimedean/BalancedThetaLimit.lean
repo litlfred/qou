@@ -47,7 +47,7 @@ Base ring (§7c): everything algebraic is stated over a generic `[CommRing K]`
 or `[Field K]` (the content is rational q-shift bookkeeping).  Only the class
 arithmetic is archimedean and lives over `ℝ`.
 
--- Ref: [manuscript] docs/audits/2026-08-01-balanced-theta-limit.md;
+-- Ref: [leitner2026] docs/audits/2026-08-01-balanced-theta-limit.md;
 --      docs/audits/2026-08-01-awzero-asymptotics.md;
 --      docs/audits/2026-08-01-ksel2id-tropical-transport.md §3;
 --      docs/audits/2026-08-01-ksel2id-friedrichs-sw-identification.md §1;

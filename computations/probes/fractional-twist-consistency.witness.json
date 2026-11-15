@@ -1,0 +1,137 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-10-12T21:02:03.497165+00:00",
+  "commitSha": "4d6330eebb47f85e3ec69e7ee14a3ad4de8188f1",
+  "assertions": [
+    {
+      "name": "group_law_and_six_pairs_eq_negative_full_twist_all_H3_blocks",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "spectral calculus of one generator"
+    },
+    {
+      "name": "braid_relation_holds_at_t_1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "validation: the Hecke braid relation"
+    },
+    {
+      "name": "braid_relation_FAILS_for_fractional_t_on_the_2dim_block",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "σ_i^t do not generate a braid-group action: the non-abelian continuation is a one-generator object"
+    },
+    {
+      "name": "far_commutativity_of_fractional_twists_H6",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "polynomials in commuting generators"
+    },
+    {
+      "name": "fractional_bridge_markov_property_trace_level",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Part A with σ^t ∈ span{1, σ}"
+    },
+    {
+      "name": "real_part_equals_mu",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "BringResidueEnergy.mu"
+    },
+    {
+      "name": "no_corpus_angle_within_1_degree_(cross_check_recorded_not_fitted)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "nearest T1"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "fractional-twist-consistency",
+  "scriptFile": "fractional_twist_consistency_probe.py",
+  "scriptHash": "3df2cded0483",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "cd378682bfd642d0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/fractional_twist_consistency_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/fractional_twist_consistency_probe.py"
+  },
+  "q0Anchor": "proton",
+  "q0AnchorReason": "q0 read from the committed y-lambda-at-q0 witness string via composition_feasibility_a2_probe",
+  "description": "PROBE (bean qou-jfx8): consistency of the fractional twist σ^{2ℓ}. Group law and six-pairs = σ^{−2} hold; far commutativity holds; trace-level fractional Markov property holds; the braid relation FAILS for fractional t on the 2-dim H3 block. Turning angle 63.92° compared with corpus Reeb angles: no match within 1°. Nothing fitted.",
+  "weight_family": "markov_y_lambda_convention_D",
+  "matrix_checks": {
+    "H3 (3,) braid t=1": "0.0",
+    "H3 (3,) braid t=2l=-1/3": "0.0",
+    "H3 (3,) braid t=1/3": "0.0",
+    "H3 (3,) braid t=1/2": "0.0",
+    "H3 (3,) group law": "5.83258e-61",
+    "H3 (2, 1) braid t=1": "1.55575e-61",
+    "H3 (2, 1) braid t=2l=-1/3": "0.568827",
+    "H3 (2, 1) braid t=1/3": "0.568827",
+    "H3 (2, 1) braid t=1/2": "0.542272",
+    "H3 (2, 1) group law": "9.75639e-61",
+    "H3 (1, 1, 1) braid t=1": "0.0",
+    "H3 (1, 1, 1) braid t=2l=-1/3": "0.0",
+    "H3 (1, 1, 1) braid t=1/3": "0.0",
+    "H3 (1, 1, 1) braid t=1/2": "0.0",
+    "H3 (1, 1, 1) group law": "9.75639e-61"
+  },
+  "far_commutativity_dev": "0.0",
+  "fractional_bridge_markov": {
+    "measured": "(0.854998124182554535874847506908 - 0.221746055520518408839560748876j)",
+    "predicted": "(0.854998124182554535874847506908 - 0.221746055520518408839560748876j)"
+  },
+  "block_values_complex": {
+    "(6,)": "(1.4982791534603610842193763128 + 1.07617817386948828732397145935e-61j)",
+    "(5, 1)": "(0.383657527044198703446181233987 - 0.628059874312585616286889000752j)",
+    "(4, 2)": "(0.686451235262130830491727233847 - 0.223879208754009178329086958044j)",
+    "(3, 3)": "(1.3871819737736173944676213014 - 0.424000818274301458439324713271j)"
+  },
+  "corpus_angles_deg": {
+    "A": "0",
+    "T1": "57.36096165178586179",
+    "T2": "101.88870772273149225",
+    "G": "104.47751218592992388",
+    "H": "90.0",
+    "C5 rot 1": "72.0",
+    "C5 rot 2": "144.0"
+  },
+  "turning_minus_corpus_deg": {
+    "A": "63.923",
+    "T1": "6.56203",
+    "T2": "-37.9657",
+    "G": "-40.5545",
+    "H": "-26.077",
+    "C5 rot 1": "-8.07701",
+    "C5 rot 2": "-80.077"
+  },
+  "turning_angle_split": {
+    "residue_part_deg": "60.0",
+    "t_star_part_deg": "3.9229894574"
+  }
+}

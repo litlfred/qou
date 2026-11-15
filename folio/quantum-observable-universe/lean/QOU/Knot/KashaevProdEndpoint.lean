@@ -36,9 +36,9 @@
   the identity below, and fixes the additive constant that would otherwise be
   free.
 
-  -- Ref: [manuscript] QOU/MathlibExt/RootsOfUnityProduct.lean
-  -- Ref: [manuscript] QOU/Knot/Clausen.lean          (the O(log N) estimate)
-  -- Ref: [manuscript] computations/probes/one_loop_c_sigma_tetrahedral_probe.py
+  -- Ref: [leitner2026] QOU/MathlibExt/RootsOfUnityProduct.lean
+  -- Ref: [leitner2026] QOU/Knot/Clausen.lean          (the O(log N) estimate)
+  -- Ref: [leitner2026] computations/probes/one_loop_c_sigma_tetrahedral_probe.py
 -/
 import QOU.Knot.FigureEightVolume
 import QOU.MathlibExt.RootsOfUnityProduct

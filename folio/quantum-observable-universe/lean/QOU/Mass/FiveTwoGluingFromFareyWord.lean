@@ -23,7 +23,7 @@ denominators cleared. Nothing geometric is asserted here (that `Im θ > 0` for t
 picks the orientation is the probe's `Im z > 0` check); these are the exact identities the
 geometry rests on, in the sense of the formalize-first rule.
 
--- Ref: [manuscript] computations/probes/two_bridge_layered_nz_probe.py
+-- Ref: [leitner2026] computations/probes/two_bridge_layered_nz_probe.py
 -- Ref: library/arxiv-0808.2716v4 §2.4 (Futer–Kalfagianni–Purcell) — two-bridge layering.
 -/
 

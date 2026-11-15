@@ -107,7 +107,7 @@ noncomputable def habiro_expansion_const (c : ℤ) : HabiroExpansion (C c) where
 
 /-- **Factor theorem at `u = 1`.** Was an axiom; proved 2026-11-15 from
     `Polynomial.X_sub_C_dvd_sub_C_eval`, with `a₀ := p.eval 1`. -/
--- Ref: [manuscript] `prop:habiro-expansion-atomic` Step 2
+-- Ref: [leitner2026] `prop:habiro-expansion-atomic` Step 2
 theorem habiro_step_zero (p : ℤ[X]) :
     ∃ (a₀ : ℤ) (p₁ : ℤ[X]), p = C a₀ + (1 - X) * p₁ := by
   obtain ⟨r, hr⟩ := Polynomial.X_sub_C_dvd_sub_C_eval (p := p) (a := (1 : ℤ))
@@ -334,7 +334,7 @@ theorem habiro_bound_aux (b : ℕ → ℤ[X]) (hb : ∀ m, (b m).natDegree ≤ m
 /-- **Termination bound.** If `M - 1` is the last nonzero index then
     `M (M - 1) ≤ 2 deg p`, i.e. `m_max (m_max + 1)/2 ≤ deg p`. Proved
     2026-11-15. -/
--- Ref: [manuscript] `prop:habiro-expansion-atomic` Step 3
+-- Ref: [leitner2026] `prop:habiro-expansion-atomic` Step 3
 theorem habiro_termination_bound (p : ℤ[X]) (E : HabiroExpansion p) :
     ∃ M, (∀ m ≥ M, E.coeff m = 0) ∧ M * (M - 1) ≤ 2 * p.natDegree := by
   obtain ⟨M, hM, hor⟩ := habiro_bound_aux E.coeff E.deg_bound E.supportBound E.coeff_vanish

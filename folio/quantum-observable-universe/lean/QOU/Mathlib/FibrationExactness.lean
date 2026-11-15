@@ -70,7 +70,7 @@ Consequently this does **not** yet feed `QOU.Mathlib.LongExactSequence`: that
 structure wants `R`-modules and `ℤ`-indexed maps exact at every spot, and what
 is proved here is one spot of a sequence of (generally non-abelian) groups.
 
--- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes
+-- Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes
 -/
 
 namespace QOU.Mathlib.FibrationExactness

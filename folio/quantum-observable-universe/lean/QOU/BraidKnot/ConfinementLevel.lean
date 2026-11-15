@@ -65,7 +65,7 @@ structure ConfinementLevel {R : Type u} [CommRing R]
 
     Two confinement levels for the same braid datum agree, by antisymmetry of
     `≤` against the two minimality witnesses. -/
--- Ref: [manuscript] braids-and-knots/confinement-level
+-- Ref: [leitner2026] braids-and-knots/confinement-level
 theorem ConfinementLevel.unique {R : Type u} [CommRing R]
     {valid : BraidDatum R → ℕ → Prop} {d : BraidDatum R}
     (L₁ L₂ : ConfinementLevel valid d) : L₁.level = L₂.level :=
@@ -75,7 +75,7 @@ theorem ConfinementLevel.unique {R : Type u} [CommRing R]
 
     The set `{ ℓ : T_w ∈ J^ℓ(q) }` is nonempty (it contains `m`, since
     `J^m = H_n`), so it has a least element. -/
--- Ref: [manuscript] braids-and-knots/confinement-level
+-- Ref: [leitner2026] braids-and-knots/confinement-level
 noncomputable def ConfinementLevel.ofExists {R : Type u} [CommRing R]
     {valid : BraidDatum R → ℕ → Prop} {d : BraidDatum R}
     [DecidablePred (valid d)] (h : ∃ ℓ, valid d ℓ) : ConfinementLevel valid d :=
@@ -86,7 +86,7 @@ noncomputable def ConfinementLevel.ofExists {R : Type u} [CommRing R]
     Replaces a pre-2026-09-06 `nonempty` that constructed the junk record
     `⟨0, 1, 0, 0⟩`: that proved the *type* was inhabited, not that any braid has
     a level, so `prop:confinement-level-exists` was vacuously backed. -/
--- Ref: [manuscript] braids-and-knots/confinement-level
+-- Ref: [leitner2026] braids-and-knots/confinement-level
 theorem ConfinementLevel.nonempty {R : Type u} [CommRing R]
     {valid : BraidDatum R → ℕ → Prop} {d : BraidDatum R}
     [DecidablePred (valid d)] (h : ∃ ℓ, valid d ℓ) :

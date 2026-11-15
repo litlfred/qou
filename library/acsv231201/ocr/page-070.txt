@@ -1,0 +1,45 @@
+52 Generating functions
+
+is simply the class whose set of objects is the disjoint union of the elements in
+A and 8. The exponential generating function of the labeled disjoint union is
+
+C(z) = » Aal + Bol - Bol on A(z) + Bz),
+n=O nm
+where A and B are the exponential generating functions of A and 8.
+
+Creating a product for labeled classes is harder: when building tuples of
+objects, relabeling must occur in order to achieve uniqueness of labels. The
+labeled product A x 8 of labeled classes A and 8 is formed by first taking the
+product of the underlying unlabeled classes, and then labeling in all possible
+ways that are consistent with the order of labels on the component pieces. More
+formally, if w € A and £ € B then we say that the pair (a, 8) is pair labeled if
+the sizes of a and £ sum to n and the atoms appearing in both elements of the
+pair are together given distinct labels from [n]. If p is the reduction map that
+takes an object of size k whose atoms have distinct labels from any subset of
+N and reduces the labels to lie in [A], then the labeled product of A and 8 is
+
+AxB = {(a',B'):@€A, BE B, pla’) =a, pf’) = B; (a’, B’) is pair labeled}.
+
+As in the unlabeled case, the size of a labeled pair is the sum of the sizes of its
+elements.
+
+Example 2.45 (Labeled product). The labeled product of the atomic class with
+itself is the labeled class
+
+Z=ZxZ=((0.@), (@O)}=-(O-© O-G)
+
+containing two elements of size two, where we draw elements of a tuple sepa-
+rated by dashes to simplify notation. If A = {c} is the labeled class containing
+a single object, which is the set 7 = {®, Q), then the labeled class Z? x A
+contains the six elements
+
+(©-@{@.@)).(O- ©.{@.@)}).(O- @,{@.@)).
+(@-@{O.@)). (©- ©.{O.@)).(©- ©. {O.@)) .
+
+coming from pair labelings (@’, 8’) whose components reduce to p(a’) = O) -
+@ and p(6’) = o, together with another six elements whose first component
+reduces to @ - ©. 4
+
+If a € A has size k and B € B has size n — k then there are () elements
+(a’,B’) € A * B with p(a’) = a and p(~’) = B, since choosing the k labels
+from [n] to give to the elements of @’ uniquely determines (a’, 6’). Thus, the

@@ -21,8 +21,8 @@
   since that whole region contributes `O(1)·g_{k*}` against a main term of
   `Θ(√N)·g_{k*}`.
 
-  -- Ref: [manuscript] QOU/Knot/KashaevTailBound.lean
-  -- Ref: [manuscript] QOU/Knot/KashaevSaddleWindow.lean
+  -- Ref: [leitner2026] QOU/Knot/KashaevTailBound.lean
+  -- Ref: [leitner2026] QOU/Knot/KashaevSaddleWindow.lean
 -/
 import QOU.Knot.KashaevSaddleWindow
 import QOU.Knot.KashaevTailBound

@@ -31,7 +31,7 @@ the substrate assigns; the open link `u(q₀)` is untouched.
 
 - [neumann-zagier1985] Neumann & Zagier, "Volumes of hyperbolic
   three-manifolds," Topology 24 (1985). https://doi.org/10.1016/0040-9383(85)90004-7
-- [manuscript] docs/audits/2026-07-11-qbeta-c3-pole-cusp-phase-tractability.md
+- [leitner2026] docs/audits/2026-07-11-qbeta-c3-pole-cusp-phase-tractability.md
 -/
 
 namespace QOU.QBeta.NewtonRealityInvariance

@@ -48,7 +48,7 @@ $$
 *Consequence: the
 
     The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/curvature-rank-gb-stratification.ts
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/curvature-rank-gb-stratification.ts
 def curvature_rank_gb_stratification [ctx : CurvatureRankGbStratificationContext] :
     ∀ r : ℕ, ctx.quotient_set r = {T_w : ctx.A | ctx.rank_T_w T_w = r} := by
   intro r

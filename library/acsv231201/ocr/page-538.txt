@@ -1,0 +1,48 @@
+520 Stratification and stratified Morse theory
+
+Proof sketch of Theorem D.13 (assuming diffeomorphic product structure)
+Step 1: Each stratum S is a smooth manifold. The nonvanishing of the gradient
+of h|.s implies the existence of a nonvanishing downward gradient vector field
+vg parallel to S. More specifically, there is a smooth nonvanishing section of
+the tangent bundle (i.e., a map vs : S > TS) such that dh(vg) < 0.
+
+Step 2: By assumption of diffeomorphic local product structure, for each
+point p in each k-dimensional stratum S of X there is a C4-neighborhood N
+of p and a smooth change of coordinates in N under which SN N = {z €
+N : 7 = Oforj > kh} and XN N = {2 © N : (Zjat,---,Za) € N’}, where
+N’ is the normal slice consisting of all (d — j)-tuples (zj41,...,Za) such that
+(0,...,0,Zjs1,..-,Z¢) € X. Strata in this neighborhood are the products of
+strata of N’ in the first k coordinates with R‘~*. Vectors v tangent to S in
+this neighborhood have v; = 0 for j > & and are therefore tangent to all strata
+in the neighborhood.
+
+The within-stratum downward gradient flows vs can be stitched together
+via a partition of unity to form a single gradient-like flow v with Lipschitz
+constant 1. More specifically, each point p in a stratum has a neighborhood
+Up in C@ that intersects only strata whose closure contains S(p), the stratum
+containing p, and on which dh(vsqp)) < 0. If (Wu, : p € E} is a partition of
+unity subordinate to a finite subcover of ho'fa, b] by these neighborhoods, then
+
+va » WUpVS(p) (D.2.1)
+
+peE
+
+defines the required flow. It is gradient-like because dh(v) is a convex combi-
+nation of values dh(vs(p)), which are all negative. It is tangent to each stratum
+because v(p’) is a convex combination of vectors v(S(p)) tangent to strata
+S(p) whose tangent spaces are contained in the tangent space to p’. Choosing
+Up small enough that some constant multiple of each vgip) can be chosen to
+have Lipschitz constant 1 on Up, convexity implies that v globally has Lips-
+chitz constant 1.
+
+Figure D.4 shows a picture of this. The left-hand picture shows that the
+vector field w(p) = vs(p)(p) is gradient-like but not continuous. It changes
+direction sharply when approaching a substratum, because S(p) changes dis-
+continuously from one stratum to a substratum. The right-hand picture shows
+these blended by a partition of unity, so as to become smooth while remaining
+gradient-like.
+
+Step 3: Let c > 0 be the infimum value of |dh(v)| on X, and let Y :
+X x [0,00] — X be the flow defined by (d/dt)¥(x,1t) = v(¥(x,t)), stopped
+when it hits h~'(c). Such a flow exists and is unique because v is Lipschitz,
+being a convex combination of locally constant vector fields (in the natural

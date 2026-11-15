@@ -267,15 +267,17 @@ not a binding prediction.
 
 | Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding $B_{\text{AME}}$ (MeV) | Binding Error | $M_{\text{atom}}$ (MeV) | $M_{\text{atom}}$ Error |
 |---|---|---|---|---|---|---|---|
-| D | 2 | 1 | 2.2488 | 2.2246 | +1.09 ± 0.0000 % | — | — |
-| T | 3 | 2 | 8.4686 | 8.4818 | -0.16 ± 0.0000 % | — | — |
-| ${}^3$He | 3 | 1 | 7.4889 | 7.7180 | -2.97 ± 0.0000 % | — | — |
-| ${}^4$He | 4 | 2 | 29.9557 | 28.2957 | +5.87 ± 0.0000 % | — | — |
+| $\mathfrak{p}$ | 1 | 0 | — | — | — | 938.2721 | -0.00 $\pm$ 0.01 ppb |
+| $\mathfrak{n}$ | 1 | 1 | — | — | — | 939.5659 | +501.43 $\pm$ 0.47 ppb |
+| D | 2 | 1 | 2.2488 | 2.2246 | +1.09 $\pm$ 0.0000 % | — | — |
+| T | 3 | 2 | 8.4686 | 8.4818 | -0.16 $\pm$ 0.0000 % | — | — |
+| ${}^3$He | 3 | 1 | 7.4889 | 7.7180 | -2.97 $\pm$ 0.0000 % | — | — |
+| ${}^4$He | 4 | 2 | 29.9557 | 28.2957 | +5.87 $\pm$ 0.0000 % | — | — |
 | ${}^5$Li | 5 | 2 | — | 26.3280 | — | — | — |
 | ${}^6$Li | 6 | 3 | — | 31.9940 | — | — | — |
 | ${}^7$Li | 7 | 4 | — | 39.2452 | — | — | — |
 
-_Computed via [`canonical_mass_table_extended.py`](https://github.com/litlfred/qou/blob/main/computations/canonical_mass_table_extended.py) (method=`branching`). Witness: [`canonical-mass-table-extended.witness.json`](https://github.com/litlfred/qou/blob/main/computations/canonical-mass-table-extended.witness.json). Nucleon masses (m_p, m_n) via [`m-p-borromean-verification-50dps.witness.json`](https://github.com/litlfred/qou/blob/main/computations/m-p-borromean-verification-50dps.witness.json). Paper hard floor (CAL-2 propagation): ~780 ppb._
+_Computed via [`canonical_mass_table_extended.py`](https://github.com/litlfred/qou/blob/main/computations/canonical_mass_table_extended.py) (method=`auto`). Witness: [`canonical-mass-table-extended.witness.json`](https://github.com/litlfred/qou/blob/main/computations/canonical-mass-table-extended.witness.json). Nucleon masses (m_p, m_n) via [`canonical_mass.nucleon_mass_mev()`](https://github.com/litlfred/qou/blob/main/computations/canonical_mass.py). Paper hard floor (CAL-2 propagation): ~780 ppb._
 
 <!-- AUTO:canonical-tr-m-table END -->
 

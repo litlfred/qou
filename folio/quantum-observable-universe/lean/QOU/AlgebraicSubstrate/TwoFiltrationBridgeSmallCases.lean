@@ -34,7 +34,7 @@ class TwoFiltrationBridgeSmallCasesContext where
     The bridge map sends self-conjugate cells to depth 2 and
     chiral pairs to depth 3 for every partition `λ ⊢ n` with
     `n ≤ 4`. -/
--- Ref: [manuscript] quantum-observable-universe/algebraic-substrate/two-filtration-bridge-small-cases.md
+-- Ref: [leitner2026] quantum-observable-universe/algebraic-substrate/two-filtration-bridge-small-cases.md
 theorem bridge_small_cases [ctx : TwoFiltrationBridgeSmallCasesContext] :
     ∀ lam : ctx.PartitionIdx, ctx.size lam ≤ 4 →
       ((ctx.conj lam = lam → ctx.depth lam = 2) ∧

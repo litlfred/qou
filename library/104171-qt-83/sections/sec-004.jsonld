@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/104171-qt-83/sections/sec-004",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Proof of Theorem 1.1",
+  "pageStart": 36,
+  "pageEnd": 55,
+  "contains": [
+    "library/104171-qt-83/blocks/prose-sec-004"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/104171-qt-83",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/104171-qt-83",
+  "provenance": "ingested"
+}

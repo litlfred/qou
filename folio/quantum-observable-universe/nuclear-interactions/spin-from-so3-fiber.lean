@@ -95,7 +95,7 @@ this carrier was merged; it appeared when the sidecar was refreshed. The earlier
 was a `pass` recorded against a *previous version of this file*, and a stale sidecar is
 indistinguishable from a clean one.
 
--- Ref: [manuscript] quantum-observable-universe/nuclear-interactions/spin-from-so3-fiber.ts
+-- Ref: [leitner2026] quantum-observable-universe/nuclear-interactions/spin-from-so3-fiber.ts
 -/
 
 namespace QOU.BraidsAndKnots
@@ -124,7 +124,7 @@ is false for maps that do not take the block's values (see the refutability theo
 **No instance is provided.** Downstream results consume this as `[SpinFromSo3Fiber f]` and
 are genuinely conditional on it.
 
--- Ref: [manuscript] conj:spin-from-so3-fiber -/
+-- Ref: [leitner2026] conj:spin-from-so3-fiber -/
 class SpinFromSo3Fiber {R : Type*} [Field R] (levelCoeff : ℕ → R) : Prop where
   /-- The Borromean Markov trace's exact closed form has **`h² = 0`** — the `ℓ = 1` level
   contributes nothing, which is why the `S₃`-truncated Family A weight (ending at `h²`)

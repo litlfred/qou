@@ -49,7 +49,7 @@ Mathlib, and is not proved here; without it a Markov-invariant functional is a f
 braids, not on links.
 
 -- Ref: [jones1987] Hecke algebra representations of braid groups and link polynomials
--- Ref: [manuscript] bean qou-k4oq
+-- Ref: [leitner2026] bean qou-k4oq
 -/
 
 namespace QOU.IwahoriHecke.BraidGroup

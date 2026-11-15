@@ -59,7 +59,7 @@ both reduce to the same four-index normal form
 (`embedPair_mul_apply_of_disjoint`), which is symmetric in the two pairs because the base
 ring is commutative.
 
--- Ref: [jimbo1986]; [manuscript] bean qou-k4oq
+-- Ref: [jimbo1986]; [leitner2026] bean qou-k4oq
 -/
 
 namespace QOU.IwahoriHecke.TensorEmbed

@@ -46,7 +46,7 @@ terms `T2`/`T3`, `τ(C_dim_q)` (`T4`), the cyclotomic residue sum `T6`, the
 chirality coefficient `a_K`, or the Borromean–Catalan scale `α = m_e·8G`;
 they are reals the caller supplies.  So this states which quantities are
 combined and how, not why they are the ones that appear. -/
--- Ref: [manuscript] quantum-observable-universe/mass-theory/six-term-per-derivation-weights.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/six-term-per-derivation-weights.md
 def binding_assembly (B E_0_β α m_e a_K T1_free T1_atom
     T23_free T23_atom T4_free T4_atom T6_free T6_atom : ℝ) : Prop :=
   B = E_0_β * (T1_free - T1_atom)
@@ -65,7 +65,7 @@ fourth through its `(a_K − 1)` factor.
 The sanity check the assembly must pass to be a *binding* energy at all, and
 the reason the shape is worth naming: it is a hypothesis something is proved
 from. -/
--- Ref: [manuscript] quantum-observable-universe/mass-theory/six-term-per-derivation-weights.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/six-term-per-derivation-weights.md
 theorem binding_assembly_eq_zero_of_no_separation
     {B E_0_β α m_e T1 T23 T4 T6 : ℝ}
     (h : binding_assembly B E_0_β α m_e 1 T1 T1 T23 T23 T4 T4 T6 T6) :
@@ -128,7 +128,7 @@ the open empirical claim (none = honest open state).
 
 Ref: paper_six_term_isotope_sweep.py (assemble_per_derivation_weights)
 Ref: docs/audits/2026-05-04-per-derivation-weights-result.md -/
--- Ref: [manuscript] prop:six-term-per-derivation-weights
+-- Ref: [leitner2026] prop:six-term-per-derivation-weights
 def binding_assembly_subpercent [data : SixTermAssemblyData]
     (Z N : Nat) (_hA : Z + N ≤ 9) : Prop :=
     |data.assembled_mass Z N - data.measured_mass Z N| / data.measured_mass Z N ≤ 0.0053

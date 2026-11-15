@@ -12,9 +12,12 @@ The QOU framework requires exactly three calibration inputs from experiment: the
 > $\beta$-decay Q-value $\mathfrak{Q}_\beta(n) = \hbar/P_{\mathrm{skew}}^{\beta}
 > = 0.78233341 \pm 0.00000061$ MeV is the **proxy for CAL-2**. The
 > hadronic energy scale $\mathfrak{E}_0$ is framework-derived from
-> $(m_e, q_0)$; $\mathfrak{Q}_\beta$ reproduced from $q_0$ then validates
-> it to $0.17\%$ (subject to the net-ansatz caveat below). It is a
-> cross-check, not a fourth calibration.
+> $(m_e, q_0)$; $\mathfrak{Q}_\beta$ computed from $q_0$ by the ruled
+> convention-D base (the Markov trace at $z_D$) gives $0.4447$ MeV, a
+> $-43.16\%$ miss, pending the convention-D $c_k$ ladder. The retired
+> Form A gave $0.17\%$ (subject to the net-ansatz caveat below) and is kept
+> only as a historical cross-check. Either way it is a cross-check, not a
+> fourth calibration.
 
 The first input is a **dimensionless ratio** — it fixes $q_0$
 via the **leading-order substrate-truncation** of the canonical
@@ -62,7 +65,7 @@ framework-derived hadronic scale in two forms — the single-Planck-tick value
 $\mathfrak{E}_0^{(N=0)} = m_e/(q_0(q_0-1)) \approx 4.186$ MeV
 ([energy scale](#rem:energy-scale-planck)) and the tower-summed
 $\mathfrak{E}_0^{\text{full}} = \mathfrak{E}_0^{(N=0)}/(1-\hbar_q^2)
-\approx 4.228$ MeV ([beta-decay energy scale](../particle-interactions/beta-decay-energy-scale.md)
+\approx 4.228$ MeV ([beta-decay energy scale](../nuclear-interactions/beta-decay-energy-scale.md)
 §"tower-summed form"). The free neutron $\beta$-decay Q-value
 calibrates $\mathfrak{E}_0$:
 
@@ -76,7 +79,7 @@ $$
 $$
 
 (The typed-crossings 6-term decomposition yields $\lvert\Delta(\text{net,typed})\rvert \approx 0.18829$ and a slightly smaller $\mathfrak{E}_0 \approx 4.155$ MeV; the 0.6% gap is finite-size noise in the typed decomposition — see
-[`beta-decay-energy-scale`](../particle-interactions/beta-decay-energy-scale.md) §"three values".)
+[`beta-decay-energy-scale`](../nuclear-interactions/beta-decay-energy-scale.md) §"three values".)
 
 where $\Delta(\mathrm{net}) = h(h-2)/2$ is the symbolic NF
 difference between neutron and proton

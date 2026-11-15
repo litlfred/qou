@@ -92,7 +92,7 @@
   Archimedean (ℝ): Lebesgue measure, ordering -- §7c.
 
   -- Ref: [thurston1978] Ch. 1 (the upper half-space model)
-  -- Ref: [manuscript] beans qou-5gai (H1), qou-idvt (T2), qou-7y3g
+  -- Ref: [leitner2026] beans qou-5gai (H1), qou-idvt (T2), qou-7y3g
 -/
 
 import Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar

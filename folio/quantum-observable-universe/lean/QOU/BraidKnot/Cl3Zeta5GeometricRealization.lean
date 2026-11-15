@@ -95,7 +95,7 @@ end Cl3Zeta5GeometricRealization
 -- represents the **open conjecture** per §3b — not a missing proof.
 -- Per AGENTS.md §3b-cond we provide NO global instance.
 -- Residual: a closed Clausen `Cl₃(2π/5)` value (Mathlib gap).
--- Ref: [manuscript] quantum-observable-universe/mass-theory/cl3-zeta5-geometric-realization.ts
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/cl3-zeta5-geometric-realization.ts
 -- noncomputable instance [W : BringTrilogDepth3Witness] :
 --     Cl3Zeta5GeometricRealization (W := W) := sorry
 

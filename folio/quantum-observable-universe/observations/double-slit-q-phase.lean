@@ -24,7 +24,7 @@ namespace QOU.Experimental
     Φ_q = q⁻¹ · Φ_geom + (1 − q⁻¹) · Φ_Reeb.
 
     LaTeX: `\label{def:double-slit-q-phase}`
-    Ref: [manuscript] Chapter 6, §Double-slit experiment -/
+    Ref: [leitner2026] Chapter 6, §Double-slit experiment -/
 noncomputable def double_slit_q_phase (q : ℝ) (hq : q ≠ 0)
     (Phi_geom Phi_Reeb : ℝ) : ℝ :=
   q⁻¹ * Phi_geom + (1 - q⁻¹) * Phi_Reeb

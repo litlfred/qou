@@ -1,0 +1,58 @@
+378 Cone point asymptotics
+
+and another basis of solutions whose expansions around + begin
+
+13 Sve > , (8165 9433 V2 3
+st “ie ‘= (ee “Ni ~OY +
+
+13, 365 | 3 (7071 1041
+m= Vee oF Sai)! (Ta Bibi i.
+
+bile) = (¢- C4) + (7 ie aye (107123. 1803562
+
+nio=1+{
+
+(- y+
+
+In the {a;} basis, the diagonal generating function f(z) is a3(z), because this
+is the only element of the span that is continuous in a neighborhood of the
+origin and has constant coefficient 1. A change of basis matrix between the
+{aj} and {b;} bases can be computed numerically, in this case giving
+
+F(Z) = a3(z) = Cy bi (z) + Crb2(z) + C3b3(z)
+
+where C;, C2, and C3 are constants which can be rigorously approximated to
+arbitrary precision. As b2(z) is the only element of the {b;} basis that is singular
+at z = w, the dominant singular term in the expansion of f(z) near z = w is
+
+Cy Vz— 64 where
+
+C2 = —((3.5933098558743233 ...) + i(0.38132214909311386...)) .
+
+Thus, f(z) has a singularity at z = ¢4 and the asymptotic contribution of this
+singularity to dyn 1S
+
+(4i-v2 - 7)’ ( (0.543449606382202....) + i(0.259547320313100...))
+
+n3l2 Vn
++00"n>),
+
+¥i(n) =
+
+Repeating the same analysis at the point z = a gives an asymptotic contribu-
+
+tion
+
+(4i-v2 +7)" ( (0.543449606382202....) - i(0.259547320313100...))
+nl Vit
+
++09"n),
+
+¥o(n) =
+
+so that dyn. has the asymptotic expansion ayy, = Yi(n) + Y2(n).
+Comparing this expansion to (11.18) gives two expressions for asymptotics:
+one with complex coefficients numerically determined to arbitrary precision
+and another with undetermined coefficients that are known to be integers. Since
+one needs only | decimal digit to identify an unknown integer, combining these
+expansions proves that the unknown integer x = 3. 4

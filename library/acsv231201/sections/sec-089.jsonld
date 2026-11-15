@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/acsv231201/sections/sec-089",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Residue forms and the residue integral theorem",
+  "pageStart": 503,
+  "pageEnd": 517,
+  "contains": [
+    "library/acsv231201/blocks/prose-sec-089",
+    "library/acsv231201/blocks/recommendation-sec-089-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/acsv231201",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/acsv231201",
+  "provenance": "ingested"
+}

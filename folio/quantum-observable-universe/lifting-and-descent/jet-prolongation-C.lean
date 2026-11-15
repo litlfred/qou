@@ -15,14 +15,14 @@ LaTeX label: `cor:jet-prolongation-C`
 
 ## References
 
-- [manuscript] §3-lifting-of-quantum-torsion/jet-prolongation-C
+- [leitner2026] §3-lifting-of-quantum-torsion/jet-prolongation-C
 -/
 
 namespace QOU.Torsion
 
 /-- **Archimedean QOU data**: the differential-geometric data of
     `(C, θ, G, S)` in the archimedean realisation. -/
--- Ref: [manuscript] §3, §12
+-- Ref: [leitner2026] §3, §12
 structure ArchimedeanQOUData where
   /-- The base manifold M. -/
   ManifoldType : Type*
@@ -48,7 +48,7 @@ attribute [instance] ArchimedeanQOUData.gaugeGroup
     - `P'` is the frame bundle of `J¹S`
     - `E'` is the bundle of orthonormal frames
     - `A'` is the unique connection determined by `A` and `g` -/
--- Ref: [manuscript] §3, §12
+-- Ref: [leitner2026] §3, §12
 structure JetProlongationC where
   /-- The input archimedean QOU data. -/
   input : ArchimedeanQOUData
@@ -64,7 +64,7 @@ structure JetProlongationC where
 
 /-- The jet prolongation can be iterated: if jp₂.input = jp₁.output,
     the composite yields valid QOU data at the second brane level. -/
--- Ref: [manuscript] §3
+-- Ref: [leitner2026] §3
 theorem jet_prolongation_C_iterable
     (jp₁ jp₂ : JetProlongationC)
     (h : jp₂.input = jp₁.output) :
@@ -75,7 +75,7 @@ theorem jet_prolongation_C_iterable
 
 /-- For SU(2) on a 4-manifold with 3-dimensional fibres:
     dim(level 1) = 4 + 3 + 12 = 19. -/
--- Ref: [manuscript] §3, Example 3.1
+-- Ref: [leitner2026] §3, Example 3.1
 example : 4 + 3 + 4 * 3 = 19 := by norm_num
 
 end QOU.Torsion

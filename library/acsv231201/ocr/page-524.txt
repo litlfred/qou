@@ -1,0 +1,45 @@
+506 Residue forms and classical Morse theory
+
+H,,(B) from knowledge of the homology of A and the boundary map 0,: starting
+with a basis for H,,(A) we identify basis elements differing by elements in the
+image of 0,,,; and then add new basis elements indexed by a basis for the kernel
+of 6,,. These new basis elements have an explicit geometric description. The
+group H,,(B, A) consists of equivalence classes of chains in B whose boundaries
+lie in A. If C is a chain in the kernel of 0, then the image 0,([C]) is the class
+of 6C € H,_\(A), which bounds some n-chain D in A. The inverse image of
+the class [C] by 7. is the class of the chain C — D, which is a cycle because
+OC = OD. Heuristically, we write
+
+m(IC]) = C- 6;'(AC) (C.4.1)
+
+and view mC }) as the relative cycle C in Z,,(B,A), completed to an actual
+cycle in a way that stays within A.
+
+Remark C.35. The choice of D in this construction is not natural (see Re-
+mark B.7). A particular composition of a space B as a subspace A attached to
+C = B\ Acomes with an explicit inclusion map from dC to A, and this induces
+the 0. operator. There may, however, be more than one way to reassemble A, C,
+and 0, into B, giving homotopy equivalent spaces with different homology
+bases.
+
+One further remark on notation: when attaching a space Y along Yo, the pair
+(Y, Yo) is commonly referred to as the attachment data or, in the case of Morse
+theory, the Morse data for the attachment. This data should really include the
+homotopy type of the attachment map, or else the homotopy type of X and
+the attachment data do not determine the homotopy type of the new space. On
+the level of homology what we need to know is the relative homology of the
+pair (Y, Yo), which is the homology of the new space relative to the old space,
+together with the 0, map.
+
+Filtered spaces
+
+A filtered space X,, is the end of a nested sequence Xp € X; C -:: C X, of
+topological spaces. We use the terminology of filtered spaces to describe how
+homology changes among sublevel sets X; = X<q,, and our first result concerns
+the homology of a chain that is successively pushed toward lower heights.
+
+Lemma C.36 (Pushing Down Lemma). Let Xo C --: C X, be a filtered space
+and let C be a non-zero homology class in Hy(X,, Xo) for some k. Then there is
+a unique positive j < n such that for some C, € Hy(Xj,Xj-1),
+
+UC.) = (C) #0 in Hy(Xn, Xj-1), (C.4.2)

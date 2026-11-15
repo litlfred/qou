@@ -14,7 +14,7 @@ Stage S2 of bean `qou-zoyv`.
 
 Sorry-free.
 
--- Ref: [manuscript] beans/defs/qou-zoyv (stage S2)
+-- Ref: [leitner2026] beans/defs/qou-zoyv (stage S2)
 -/
 
 noncomputable section

@@ -19,7 +19,7 @@ LaTeX label: `prop:q-exponential-taylor`
 
 ## References
 
-- [manuscript] §9-information-theory/q-exponential-taylor
+- [leitner2026] §9-information-theory/q-exponential-taylor
 
 **Char 0 only.**  The series has denominators [n]_q!, which can vanish
 in characteristic p.  The categorical `QExponential` structure is
@@ -34,7 +34,7 @@ open scoped Classical
 
 /-- Jackson integer [n]_q = (1 - q^n) / (1 - q) over a characteristic-zero
     field where q ≠ 1. -/
--- Ref: [manuscript] §9
+-- Ref: [leitner2026] §9
 def jacksonInt (q : ℝ) (n : ℕ) : ℝ :=
   if q = 1 then (n : ℝ)
   else (1 - q^n) / (1 - q)
@@ -56,13 +56,13 @@ theorem jacksonInt_eq_canonical (q : ℝ) (n : ℕ) :
       neg_div_neg_eq]
 
 /-- Jackson factorial [n]_q! = ∏_{k=1}^n [k]_q. -/
--- Ref: [manuscript] §9
+-- Ref: [leitner2026] §9
 def jacksonFactorial (q : ℝ) : ℕ → ℝ
   | 0 => 1
   | n + 1 => jacksonInt q (n + 1) * jacksonFactorial q n
 
 /-- Formal Taylor series of the q-exponential. -/
--- Ref: [manuscript] §9
+-- Ref: [leitner2026] §9
 noncomputable def qExpSeries (q : ℝ) (x : ℝ) : ℕ → ℝ :=
   fun n => x^n / jacksonFactorial q n
 
@@ -85,14 +85,14 @@ noncomputable def qExpSeries (q : ℝ) (x : ℝ) : ℕ → ℝ :=
     `q`-analysis API.  Proved below directly: the Jackson-integer
     divergence `[n+1]_q = (q^{n+1}−1)/(q−1) → ∞` (from `q^n → ∞` for
     `q > 1`) drives the ratio test. -/
--- Ref: [manuscript] §9-information-theory/q-exponential-taylor
+-- Ref: [leitner2026] §9-information-theory/q-exponential-taylor
 theorem qExponentialTaylor (q : ℝ) (x : ℝ) (hq : 1 < q) :
     Summable (qExpSeries q x) := by
   -- Ratio test: `qExpSeries q x (n+1) = (x / [n+1]_q) · qExpSeries q x n`,
   -- and `[n+1]_q = (q^{n+1}−1)/(q−1) → ∞` for `q > 1`, so the term ratio
   -- `|x|/[n+1]_q ≤ 1/2` eventually and `summable_of_ratio_norm_eventually_le`
   -- applies.
-  -- Ref: [manuscript] §9-information-theory/q-exponential-taylor
+  -- Ref: [leitner2026] §9-information-theory/q-exponential-taylor
   -- Jackson-integer divergence: `[n+1]_q → ∞`.
   have hji : Filter.Tendsto (fun n : ℕ => jacksonInt q (n + 1))
       Filter.atTop Filter.atTop := by
@@ -124,7 +124,7 @@ theorem qExponentialTaylor (q : ℝ) (x : ℝ) (hq : 1 < q) :
 
 /-- At q = 1, the q-exponential Taylor series recovers the ordinary
     exponential. -/
--- Ref: [manuscript] §9
+-- Ref: [leitner2026] §9
 theorem qExpSeries_classical_limit :
     jacksonFactorial 1 = fun n => (n.factorial : ℝ) := by
   funext n

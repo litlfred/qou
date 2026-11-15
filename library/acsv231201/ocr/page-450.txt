@@ -1,0 +1,49 @@
+432 Challenges and extensions
+
+small circle about the origin in C!. The smooth surface Vp has precisely one
+critical point p = (1/4, 2) in the direction (1,0), defined by the simultaneous
+vanishing of P and P,. There is a critical point at infinity because the value
+of P, goes to zero as x — 0, however the height function goes to infinity as
+x — 0 so Morse theory tells us that the initial curve C can be deformed in
+YY, to a smooth contour y in P passing through p so that the minimum of
+log |x| on y occurs at p. A standard stationary phase integral for f xl lydx
+leads to an asymptotic series for the Catalan numbers. Because the amplitude
+y is stationary at p, there will be one more negative power of n than the usual
+n-'? obtained from a univariate saddle point integral. This recovers without
+computation the fact that the nth Catalan number is © (n-¥/ 24"), 4
+
+Exercise 13.6 below explores what happens when (0, c) is not a simple pole
+of P. We conclude with an exercise illustrating a multivariate algebraic func-
+tion.
+
+Exercise 13.2. Let
+
+flsy) = l+xy-l- yl = 22 +1)+x2(y- 1)?
+
+be the Narayana bivariate generating function from Example 2.37, defined by
+the minimal polynomial
+
+P(x,y,w) = w? —w[l +x(y— 1D] + xy
+and the fact that f(0,0) = 0.
+
+(a) Show that P is smooth.
+
+(b) Find c = f(0,0) and determine whether (0, 0, c) is a simple zero of P.
+
+(c) Find the critical points for P in the direction (2, 1, 0).
+
+(d) Among the critical points, which have finite height?
+
+(e) Are there critical points at infinity in the direction (2, 1,0)?
+
+(f) What asymptotics for a2,, do you get from integrating f wx "lyn! dxdy
+over an appropriate contour y?
+
+13.6 Asymptotic formulae
+
+In Section 9.4.2 we presented a geometric interpretation, in terms of Gaussian
+curvature, of the first term in our basic smooth point formula.
+
+Problem 13.6. Give a coordinate-free formula for the next term in the basic
+smooth point asymptotic expansion. Give similar formulae for arrangement
+points.

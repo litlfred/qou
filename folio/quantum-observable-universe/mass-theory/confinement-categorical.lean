@@ -20,7 +20,7 @@ the Wedderburn projection `π_Z : A ↠ Z(A)`, and every observable
 The curvature 2-cocycle `F` encoding Hecke + Yang–Baxter relations
 plays the role of the string tension categorically.
 
--- Ref: [manuscript] prop:confinement-categorical
+-- Ref: [leitner2026] prop:confinement-categorical
 -/
 
 namespace QOU.WedderburnMass
@@ -44,7 +44,7 @@ class SemisimpleFrobeniusHeckeLike (R : Type*) [CommRing R]
       (Semisimplicity / Whitehead-lemma cohomology vanishing in positive
       degree is what makes `π_Z` well-defined as a centre projection.) -/
   piZ_fixes_centre : ∀ a : A, ∀ ha : a ∈ Z, (piZ a : A) = a
-  -- Ref: [manuscript] prop:spectral-sequence-collapse
+  -- Ref: [leitner2026] prop:spectral-sequence-collapse
 
 /-- **Theorem (clause 1 — survival).**
     Only `E_∞^{0,0} = Z(A)` survives the spectral sequence: the centre
@@ -57,7 +57,7 @@ theorem confinement_survives_only_centre
     ∀ a : A, a ∈ I.Z → (I.piZ a : A) = a := by
   -- Content: HH^k(A) = 0 for k ≥ 1, so E_∞^{p,q} = 0 whenever p+q ≥ 1;
   -- only E_∞^{0,0} = HH^0 = Z(A) survives, on which π_Z is the identity.
-  -- Ref: [manuscript] prop:spectral-sequence-collapse, Whitehead lemma
+  -- Ref: [leitner2026] prop:spectral-sequence-collapse, Whitehead lemma
   exact fun a ha => I.piZ_fixes_centre a ha
 
 /-! **The former axiom `confinement_int_factors_through_centre_axiom`

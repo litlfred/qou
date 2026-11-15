@@ -122,7 +122,7 @@ Wedderburn blocks).
     satisfy strong duality `⟨T, Φ*⟩ = n_target · y₀*`. By
     Slater + Boyd–Vandenberghe Thm 5.5, this follows from the
     Slater-strict hypothesis once Mathlib SDP duality lands. -/
--- Ref: [manuscript] particle-interactions/confinement-sdp
+-- Ref: [leitner2026] particle-interactions/confinement-sdp
 -- Ref: [boyd-vandenberghe-2004] §5.2.3 (Slater's condition) + §5.3
 --      (strong duality for convex problems)
 class HasConfinementSDPStrongDuality (n : ℕ) [HasConfinementSDPData n]
@@ -201,7 +201,7 @@ instance hasConfinementSDPStrongDuality_of_fact (n : ℕ)
 
     Cf. `markovTraceNF` in `ConfinementLP` for the scalar-LP
     projection recovered when every Wedderburn block decouples. -/
--- Ref: [manuscript] particle-interactions/confinement-sdp
+-- Ref: [leitner2026] particle-interactions/confinement-sdp
 -- Ref: [boyd-vandenberghe-2004] §5.2.3 (Slater's condition) + §5.3
 --      (strong duality for convex problems)
 theorem ConfinementSDP (n : ℕ) [HasConfinementSDPData n] (h : slaterStrict n)
@@ -215,7 +215,7 @@ theorem ConfinementSDP (n : ℕ) [HasConfinementSDPData n] (h : slaterStrict n)
   -- conditional input a caller with a solver-verified identity can supply.
   -- Ref: [boyd-vandenberghe-2004] §5.2.3 (Slater) + §5.3 (strong duality for convex
   --      programs) — the conic-duality step, which Mathlib has no SDP API for.
-  -- Ref: [manuscript] particle-interactions/confinement-sdp
+  -- Ref: [leitner2026] particle-interactions/confinement-sdp
   exact hi.strong_duality
 
 /-- **The Slater hypothesis of `ConfinementSDP` is still freely
@@ -256,7 +256,7 @@ theorem slaterStrict_is_freely_dischargeable (n : ℕ) :
 /-- Binding multiplicity data — class-supplied evaluation of `μ(n)`
     (cardinality of the active dual support at optimum). `μ = 1`
     recovers the scalar LP; `μ ≥ 2` is the multi-operator regime. -/
--- Ref: [manuscript] braids-and-knots/electron-shell
+-- Ref: [leitner2026] braids-and-knots/electron-shell
 class HasSDPBindingMultiplicity (n : ℕ) where
   /-- Active-dual-support cardinality `μ(n)`. -/
   mu : ℕ
@@ -269,8 +269,8 @@ def bindingMultiplicity (n : ℕ) [h : HasSDPBindingMultiplicity n] : ℕ := h.m
     `QOU.Interactions.ConfinementLP`. The full proof requires an
     explicit isomorphism between the diag-LP feasible polytope and
     the rank-1 diagonal slice of the SDP feasible spectrahedron. -/
--- Ref: [manuscript] particle-interactions/confinement-sdp
--- Ref: [manuscript] particle-interactions/confinement-lp
+-- Ref: [leitner2026] particle-interactions/confinement-sdp
+-- Ref: [leitner2026] particle-interactions/confinement-lp
 -- Ref: [boyd-vandenberghe-2004] §5.2.3 (Slater's condition) + §5.3
 --      (strong duality for convex problems)
 class ScalarLPProjection (n : ℕ) [HasSDPBindingMultiplicity n]

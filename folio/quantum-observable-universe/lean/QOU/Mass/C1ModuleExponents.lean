@@ -20,8 +20,8 @@ discriminant, and the root reduction. §7c: generic `CommRing`; the matrix trace
 witness-computed scalars, so no `Matrix` dependency is needed. Sorry-free. No fit; nothing
 wired; no `symbol=C1` claim.
 
--- Ref: [manuscript] docs/audits/2026-07-20-qlift-routeA-rsz-invariants.md (C1 = L1)
--- Ref: [manuscript] library/equations-aux-q-differences/Equations_aux_q-differences.pdf (DRSZ Birkhoff recipe)
+-- Ref: [leitner2026] docs/audits/2026-07-20-qlift-routeA-rsz-invariants.md (C1 = L1)
+-- Ref: [leitner2026] library/equations-aux-q-differences/Equations_aux_q-differences.pdf (DRSZ Birkhoff recipe)
 -/
 import Mathlib.Algebra.Ring.Basic
 import Mathlib.Tactic.Ring

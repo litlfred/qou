@@ -26,7 +26,7 @@ LaTeX label: `ex:maximal-torus-su2`
 ## References
 
 - [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
-- [manuscript] §1 Example: Maximal torus for SU(2)
+- [leitner2026] §1 Example: Maximal torus for SU(2)
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
 Part of the formal proof chain. The parameter `q` is the canonical
@@ -104,7 +104,7 @@ structure SU2MaximalTorusData where
     `rank` is populated by `su2ComplexifiedRank = rank 𝔰𝔩₂(ℂ)` and its `= 1`
     proof by `su2ComplexifiedRank_eq_one` — so the rank-one datum bottoms out at
     the proved `QOU.Atomicity.sl2_rank_eq_one`, not at `rfl`. -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 def su2MaximalTorus : SU2MaximalTorusData where
   numWeightSpaces := 2
   weight_decomp := rfl

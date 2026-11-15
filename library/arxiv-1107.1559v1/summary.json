@@ -2,25 +2,45 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1107.1559v1",
  "source_sha256": "b9f867ae7120eda6",
- "brief": "Quaternion-Octonion SU (3) Flavor Symmetry — Starting with the quaternionic formulation of isospin SU (2) group, we have derived the relations for diﬀerent components of isospin with quark sta tes.",
- "extended": "**Quaternion-Octonion SU (3) Flavor Symmetry**\n\n*Pushpa(1), P. S. Bisht (1,2), Tianjun Li (2) and O. P. S. Negi (1)*\n\n12 pp, 3 sections.\n\n**Abstract.** Starting with the quaternionic formulation of isospin SU (2) group, we have derived the relations for diﬀerent components of isospin with quark sta tes. Extending this formalism to the case of SU (3) group we have considered the theory of octonion variables. A ccordingly, the octonion splitting of SU (3) group have been reconsidered and various commutation relat ions for SU (3) group and its shift operators are also derived and veriﬁed fo r diﬀerent iso-spin multiplets i.e. I, U and V - spins.\n\n**Outline.** 1 Introduction; 5 Commutation relations for Octonion Valued Sh; 6 Discussion and Conclusion",
+ "brief": "Quaternion-Octonion SU (3) Flavor Symmetry — Starting with the quaternionic formulation of isospin SU(2) group, we have derived the relations for diﬀerent components of isospin with quark states.",
+ "extended": "**Quaternion-Octonion SU (3) Flavor Symmetry**\n\n*Pushpa(1), P. S. Bisht(1,2), Tianjun Li(2) and O. P. S. Negi(1)*\n\n12 pp, 7 sections.\n\n**Abstract.** Starting with the quaternionic formulation of isospin SU(2) group, we have derived the relations for diﬀerent components of isospin with quark states. Extending this formalism to the case of SU(3) group we have considered the theory of octonion variables. Accordingly, the octonion splitting of SU(3) group have been reconsidered and various commutation relations for SU(3) group and its shift operators are also derived and veriﬁed for diﬀerent iso-spin multiplets i.e. I, U and V - spins.\n\n**Outline.** Front matter; 1 Introduction; 2 Quaternionic representation of isospin SU(2); 3 Octonions and Gelmann Matrices; 4 Octonion Formulation of SU(3) Flavor Group; 5 Commutation relations for Octonion Valued Sh; 6 Discussion and Conclusion",
  "tokens": {
-  "brief": 49,
-  "extended": 189
+  "brief": 48,
+  "extended": 221
  },
  "sections": [
   {
-   "id": "sec-000-1-introduction",
-   "title": "Introduction",
-   "pages": "2-9"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
   },
   {
-   "id": "sec-001-5-commutation-relations-for-octonion-valued-shif",
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-001-2-quaternionic-representation-of-isospin-su2-gro",
+   "title": "Quaternionic representation of isospin SU(2) group",
+   "pages": "2-6"
+  },
+  {
+   "id": "sec-002-3-octonions-and-gelmann-matrices",
+   "title": "Octonions and Gelmann Matrices",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-003-4-octonion-formulation-of-su3-flavor-group",
+   "title": "Octonion Formulation of SU(3) Flavor Group",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-004-5-commutation-relations-for-octonion-valued-shif",
    "title": "Commutation relations for Octonion Valued Shift Operators",
    "pages": "9-11"
   },
   {
-   "id": "sec-002-6-discussion-and-conclusion",
+   "id": "sec-005-6-discussion-and-conclusion",
    "title": "Discussion and Conclusion",
    "pages": "11-12"
   }

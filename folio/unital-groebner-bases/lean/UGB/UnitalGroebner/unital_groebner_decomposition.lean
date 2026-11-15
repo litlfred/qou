@@ -67,7 +67,7 @@ variable {G : Type u} {k : Type v}
     removed (2026-11-15); see the module docstring. `hgs` is kept so the
     signature still names the GS-basis hypothesis of the manuscript
     theorem, though this half does not use it. -/
--- Ref: [manuscript] unital-groebner-bases/unital-groebner-bases-chapter/main-theorem.ts
+-- Ref: [leitner2026] unital-groebner-bases/unital-groebner-bases-chapter/main-theorem.ts
 theorem unital_groebner_decomposition [Field k] [DecidableEq G]
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)

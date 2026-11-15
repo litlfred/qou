@@ -55,7 +55,7 @@ packaging of `Stab(B) ↪ S₆`, both flagged where they occur.
 §7c: generic `[Field K]` and a generic finite index type; no archimedean construct.
 Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-09-12-w1-route3-spectral-curve-not-a-q-gauge-invariant.md
+-- Ref: [leitner2026] docs/audits/2026-09-12-w1-route3-spectral-curve-not-a-q-gauge-invariant.md
 -/
 import Mathlib.Tactic
 import Mathlib.LinearAlgebra.Matrix.NonsingularInverse

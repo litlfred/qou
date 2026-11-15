@@ -1,0 +1,62 @@
+3. SPECHT MODULES AND JUCYS-MURPHY ELEMENTS 29
+
+Let i be the first number in row r of * and let ¢ be the standard \-tableau
+Psn_1.. .Si¢1. Then the second last row of ¢ contains the numbers 7,7 + 2,.... n
+and the last row of t consists of the single entry 7+ 1.
+
+So far we have shown that mp Ly = [resp (k)]gmpa for 1 < k <n. We also
+know that mp (L1+---+L,) = amy for some a € R by Lemma 3.26; consequently,
+MpLy = rpm for some rn € R. Therefore, mL; = [resp (i)]gme+ Voy ¢dsMs
+and mLigi = Pnme+ Dap bss by Lemma 3.27.
+
+The key point now is that ts; is a Garnir tableau; because of this we can find
+elements c, in R such that mT; = =m + Voape esmg by Corollary 3.19. This allows
+us to compute m,L;41 in another way; namely, by Corollary 3.8 and Lemma 3.12
+there exist a, and d, € R, respectively, such that
+
+mLigi = qo m(T LT; + Ti)
+= —o7t{m +0 cams }(LiT; +1)
+sD t
+—¢q7'm<([resy (a)]qT + 1) + > amsTj
+spt
+= 497" ([rese (]q — Ym + D7 deme
+spt
+
+= [res,a(n)]gme + Ss dsms.
+SDL
+
+Consequently, rn = [resy(7)]q as required. Oo
+
+3.31 For the remainder of this section we assume that R is a field and that e > n
+(see (3.28)). Let t be a standard \-tableau and define
+
+z Lx — [ress (lq
+
+Fo= a
+
+TT Reha tet
+[ress (k)]a#[resi(F lq
+
+and let fy = mF.
+
+Note that all of the factors in Fy commute so there is no need to specify an
+ordering in the product. In practice many of the factors in the definition of f, are
+redundant; however, the above definition is convenient. The elements F are defined
+whether or not e <n; it is the next Lemma where we need this assumption.
+
+If \ is a partition then a node x € [A] is removable if [A] \ {2} is the diagram of
+a partition.
+
+3.32 Lemma Suppose that R is a field, e > n and let \ be a partition of n. Let s
+and t be standard -tableauz.
+
+(i) Suppose that [res,(k)], = [resi(k)], for k= 1,...,n. Then s =t.
+(ii) Suppose that [ress(k)]q = [resi(k)]q for 1 <k<nandk #i,i+1 for some i.
+
+Then ethers =t ors =t(i,i4+ 1).
+
+Proof. Note that because e > n the nodes with the same e-residue occur in
+diagonal lines in the diagram of A; consequently, distinct removable nodes have
+distinct e-residues. Therefore, by successively removing n,n —1,...,1 from s we
+see that t is completely determined by the sequence [res;(1)]q...- 5 [resi(7)]g. Both
+parts of the Lemma now follow. oO

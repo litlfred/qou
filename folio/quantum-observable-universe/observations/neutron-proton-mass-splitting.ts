@@ -20,6 +20,27 @@ export default proposition({
         "`10000·(q² − z q − 1)` at `z = z_C`; do **not** substitute $z_D$ into them to improve the " +
         "residual, which would pick a convention by its miss.",
     },
+    {
+      kind: "status",
+      date: "2026-11-15",
+      body:
+        "**Switched to convention D (owner ruling 2026-11-15: replace convention-C values with " +
+        "convention D even if worse).** This supersedes the 2026-10-10 caveat's instruction not to " +
+        "substitute $z_D$. The Lean closed form is now written in `z` and evaluated at " +
+        "`zD = q0^3/(q0^2+1)`; the pins are Phi(uud) = -0.614886, Phi(udd) = -0.896395 (50 dps), " +
+        "model value 1.0541 MeV, -18.5 % vs CODATA. The convention-C 1.302 MeV (+0.64 %) stays in " +
+        "the prose only as a labelled historical comparison.",
+    },
+    {
+      kind: "caveat",
+      date: "2026-11-15",
+      body:
+        "**The scale step (H_α) is not derived** (owner ruling 2026-11-15: state it as a named hypothesis). " +
+        "Two further points are open, recorded in `docs/audits/2026-11-15-np-splitting-error-budget.md` (PR #7966). " +
+        "§11: the traced product ∏ᵢ∏_{j>i}(σᵢ+dᵢⱼ) equals the half-twist trace for uud but not for udd. " +
+        "§13–§18: the first derived u/d difference is the level-2 weight q^{∓2}; its sign is derived (u = e₁), its MeV scale is not. " +
+        "The tautological Lean def `same_scale_both_levels` (`m_e·volB3 = m_e·volB3 := rfl`), which stood in for (H_α), is removed.",
+    },
   ],
   label: "prop:neutron-proton-mass-splitting",
   title: "Neutron--proton mass splitting from quark crossing change",

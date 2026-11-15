@@ -37,8 +37,8 @@ Stated over a generic ordered field `[Field R] [LinearOrder R] [IsStrictOrderedR
 no archimedean construct — a pure ordered-field inequality); the substrate
 specialisation `R := ℝ`, `c_k := |d_k|`, `x := ũ₀` is what the probe evaluates.
 
--- Ref: [manuscript] docs/audits/2026-08-01-qborel-ecalle-resum-barodd.md
--- Ref: [manuscript] docs/audits/2026-07-18-dladder-fibre-branch-stokes-ambiguity.md
+-- Ref: [leitner2026] docs/audits/2026-08-01-qborel-ecalle-resum-barodd.md
+-- Ref: [leitner2026] docs/audits/2026-07-18-dladder-fibre-branch-stokes-ambiguity.md
 -/
 
 namespace QOU.QBeta

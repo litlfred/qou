@@ -1,0 +1,58 @@
+4010 JOHN W. BARRETT AND BRUCE W. WESTBURY
+
+There is a map
+V(M) @V*(M) > V(N) @®V*(N)
+which is defined by taking the tensor product over the set of triangles of the maps
+O(c) @ O*-1(c)
+
+for each triangle, followed by an iteration of the standard twist P which rearranges
+the factors in the range of this map to coincide with V(N)®V*(N), as in Definition
+1.6. Since the action of ¢ on V*(ey, e2,€3) is the inverse of the adjoint of the action
+on V(e1, €2,e3), it follows that the diagram
+
+V(M) @V*(M) ——> V(N) @V*(N)
+
+| |
+
+F —— F
+in which the vertical maps are the canonical pairings, commutes.
+
+To complete the proof of the theorem, it remains to show that the map V(M) >
+V(M) whose trace is Z(M) is preserved under this mapping. That is, that this
+element of V(M) ® V*(M) is mapped to the corresponding element of V(N) ®
+V*(N). According to Definition 1.6, each of these elements is the tensor product
+of partition functions for each tetrahedron. Thus it is sufficient to show that the
+partition function of the standard tetrahedron is preserved under a combinatorial
+mapping. This is demonstrated by the next lemma.
+
+Definition 3.10. Let T be an oriented labelled simplicial surface. Then the state
+space of T is defined to be the tensor product over the set of triangles of the state
+space for each oriented triangle.
+
+Let T — U be an orientation-preserving combinatorial isomorphism of oriented
+labelled simplicial surfaces which is compatible with the labellings. Then there is
+a linear isomorphism from the state space of T’ to the state space of U. On each
+triangle in T an element of $3 is determined such that the combinatorial map is
+a permutation followed by a simplicial map. The linear isomorphism is defined by
+taking the tensor product over triangles of the linear isomorphisms of Definition
+3.7. This tensor product is composed with the unique iterate of the twist map P
+which has its range the state space of U.
+
+Lemma 3.11. The partition function of the standard labelled tetrahedra A and
+—A are elements of the state spaces of their boundary. Let % € S4 be an even
+permutation. The element © determines combinatorial maps A — A’ and —A —
+—A', where A’ is labelled by a compatible labelling {e;}. Under the linear map of
+
+state spaces,
+a , 4t
+fo1 €02 120 | Jeo1 €02 12
+ul ul ul
+€23, €13 €03) 4 €23, 13, 03) 4
+
+Ul Ul Ul
+€01 €02 €12 rw» Jor S02 12
+
+Ul Ul J
+€23 €13, €03) _ €23 13. €03) _
+
+and

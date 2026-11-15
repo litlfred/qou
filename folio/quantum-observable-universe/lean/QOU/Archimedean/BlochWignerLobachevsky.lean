@@ -103,7 +103,7 @@ case the corpus already trusts.
 
 -- Ref: [thurston1978] The geometry and topology of three-manifolds
 -- Ref: [zagier1986] DOI 10.1007/BFb0084581
--- Ref: [manuscript] computations/probes/qbeta_5two_saddle_sum_rule_and_provenance_probe.py
+-- Ref: [leitner2026] computations/probes/qbeta_5two_saddle_sum_rule_and_provenance_probe.py
 -/
 
 namespace QOU.Archimedean

@@ -48,7 +48,7 @@
   What they do is fix which half of the empirical work was load-bearing.
 
   -- Ref: [dimofte-gukov-lenells-zagier-2009] arXiv:0903.2472, eq (2.1)-(2.3), (4.5)
-  -- Ref: [manuscript] docs/audits/2026-08-08-prefactor-form-what-is-actually-assumed.md
+  -- Ref: [leitner2026] docs/audits/2026-08-08-prefactor-form-what-is-actually-assumed.md
 -/
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Analysis.SpecialFunctions.Sqrt
@@ -157,7 +157,7 @@ the closed form and the law, the value of `τ` is forced, so computing it in
 SnapPy is a genuine test that could have failed.
 
 -- Ref: [vanderveen2008] arXiv:math/0611181, Lemma 1-4 and Main theorem
--- Ref: [manuscript] docs/audits/2026-08-08-vdv-constant-closed-form-and-the-open-bridge.md
+-- Ref: [leitner2026] docs/audits/2026-08-08-vdv-constant-closed-form-and-the-open-bridge.md
 -/
 
 /-- The corpus's 1-loop law in the form it is actually used: `c = √(1/(2τ))`. -/
@@ -238,8 +238,8 @@ the 2:1 fold `D²_{Ê₈} = 2 D²_MTC` proved below. They share `ℚ(√5)` by c
 not by mechanism.
 
 -- Ref: [hikami2005brieskorn] math-ph/0405028, library/arxiv-math-ph-0405028v2/0405028v2.pdf
--- Ref: [manuscript] computations/lr_modulus_identification_sigma235.py
--- Ref: [manuscript] computations/probes/bring_golden_jones_probe.py
+-- Ref: [leitner2026] computations/lr_modulus_identification_sigma235.py
+-- Ref: [leitner2026] computations/probes/bring_golden_jones_probe.py
 -/
 
 /-- Quantum dimensions at `r = 5`, on the affine `Ê₈` McKay marks. -/
@@ -307,7 +307,7 @@ integrality below is why those came out as integers rather than as numerical
 near-misses, and the `m²` is why the Borromean row is symmetric under `a ↦ −a`.
 
 -- Ref: [vanderveen2008] arXiv:math/0611181
--- Ref: [manuscript] computations/probes/one_loop_twisted_framing_probe.py
+-- Ref: [leitner2026] computations/probes/one_loop_twisted_framing_probe.py
 -/
 
 /-- **`τ² = 16^{n−1}(n² + m²)`** — no radical survives the squaring. -/
@@ -386,8 +386,8 @@ What is proved here is the algebra, which is where the whole surprise lives:
     trace field, or on which manifold this is.  The corpus calibrated `k` on
     `4₁` for a long time; it was forced by the shape of the saddle.
 
--- Ref: [manuscript] computations/probes/one_loop_c_sigma_tetrahedral_probe.py
--- Ref: [manuscript] docs/audits/2026-08-08-vdv-constant-closed-form-and-the-open-bridge.md
+-- Ref: [leitner2026] computations/probes/one_loop_c_sigma_tetrahedral_probe.py
+-- Ref: [leitner2026] docs/audits/2026-08-08-vdv-constant-closed-form-and-the-open-bridge.md
 -/
 
 /-- **The saddle condition pins the cotangent.**  On `(π/2, π)`, the only

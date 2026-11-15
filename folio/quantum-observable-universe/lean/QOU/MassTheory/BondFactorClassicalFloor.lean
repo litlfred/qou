@@ -40,7 +40,7 @@ another parameter. The `d_kind` series are the probe's measured coefficients, ca
 here as truncations at second order and used only through their vanishing at
 `ε = 0`. Generic field of characteristic zero (§7c); no numerics; no `sorry`.
 
--- Ref: [manuscript] bean qou-olxi; computations/probes/bond_factors_are_z_plus_d_probe.py
+-- Ref: [leitner2026] bean qou-olxi; computations/probes/bond_factors_are_z_plus_d_probe.py
 -/
 
 namespace QOU.MassTheory

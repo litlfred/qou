@@ -1,0 +1,40 @@
+194 Overview of analytic methods for multivariate GFs
+
+3
+
+Figure 7.12 Amoeba for the Delannoy generating function Q(x, y) = 1—x-y—xy.
+Each point interior to the amoeba is the image of precisely two points of V under
+Relog.
+
+Result: a saddle point integral decomposition in the smooth case
+
+Theorem 7.15 and Corollary 7.17 give a basis of Ha_1(V.) consisting of cycles
+that attain their maximum values at critical points. Vanishing of dha|y at z
+is equivalent to z~” being in stationary phase at z for any (d — 1)-chain y;
+supported on V,. Thus, combining Theorem 7.15 and Corollary 7.17 with the
+integral representation in Proposition 7.13 gives the following, our ultimate
+goal for generating functions with smooth singular varieties.
+
+Theorem 7.20 (smooth saddle point integral decomposition). Assume that V
+is smooth, hp is a Morse height function, and that there are no critical values
+at infinity (see Definition 7.43 below). Assume further that the critical values
+cj = hp(zj) for 1 < j < mare listed in descending order. Then there exist
+integers kj € Z and smooth chains of integration yj; with heights uniquely
+maximized at zj, such that
+
+m
+
+Kj f -r-1
+dp = z Res(F(z) dz). (7.11)
+Loar J,
+
+= (2ni)4-!
+
+The integral in the jth summand is in stationary phase at z;. The least j such
+that x; # 0, and the homology class Yipee kyyy for all j’ such that zj has
+height cj, are uniquely defined. Oo
+
+There are two important tasks remaining: computing asymptotics of the sad-
+dle point integrals and determining the integers x;. While integral asymptotics
+(in this smooth case) follow in a straightforward manner from the results of
+Chapter 5, it can be very difficult to determine these unknown integers. We

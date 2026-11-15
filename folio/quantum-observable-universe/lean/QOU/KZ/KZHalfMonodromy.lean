@@ -19,7 +19,7 @@ Step 1 of `docs/audits/2026-10-11-drinfeld-kohno-sl2-via-emvz.md` (hexagon groun
   at `1/(1 − z) = ρ(ρ(z))`, equals `G₀^{AB}(z) e^{−iπA}` on
   `T = {Im z > 0, |z| < 1, Re z < 1/2}`.
 
--- Ref: [manuscript] docs/audits/2026-10-11-drinfeld-kohno-sl2-via-emvz.md §2 Step 1
+-- Ref: [leitner2026] docs/audits/2026-10-11-drinfeld-kohno-sl2-via-emvz.md §2 Step 1
 -/
 
 namespace QOU.KZ.KZHalfMonodromy

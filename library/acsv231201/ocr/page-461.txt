@@ -1,0 +1,44 @@
+A.2 Vector fields and differential forms 443
+
+M such that E is locally a product MxR*. More precisely, this means that there
+is a collection of open sets U C M covering M and maps dy : U x Rk = E
+satisfying the following conditions.
+
+1. Each gy is a diffeomorphism between U x Ré and x7!(U).
+
+2. n(du(p, v)) = p for all U and pe U.
+
+3. If U and V are two of the open sets covering M and p € U2 V then
+there is an invertible linear transformation g = gu,yp : Ré > R* such that
+¢u(p, v) = dy(p, g(v)). In other words, the vector space structure on each
+fiber 27! (p) is well defined.
+
+The point p is said to be the basepoint of any element of x~!(p). A section of a
+bundle E is a smooth map s : M > E with s(p) € 27'(p), which is equivalent
+to the statement that 7 0 s is the identity on M.
+
+Example A.7 (tangent bundle of S?, intuitively). Before we define tangent
+vectors formally, here is an example to help with intuition. Let M be the sphere
+S? ¢ R°. The tangent bundle of M is the set of vectors tangent to S? begin-
+ning at basepoints p € S7, with the projection operator a taking any such
+vector to its basepoint. The Hairy Ball Theorem, first proved by Poincaré in
+1885 [Poi85], states that this tangent bundle has no section that is everywhere
+non-zero. Thus, although the tangent bundle is locally diffeomorphic to S? xR?
+there is no such global diffeomorphism. 4
+
+We will see that the tangent bundle is functorial: a map f : M > M’
+induces a map f, between tangent bundles. As you might expect, f, maps tan-
+gent vectors over the basepoint p to those over f(p) and preserves the notion
+of tangency to a curve. Conversely, we will see that the cotangent bundle of a
+manifold is a contravariant functor: if f : M— M’ then the induced map f*
+sends differential forms on M’ to differential forms on M. The formal defini-
+tions of such objects are full of symbols, but building intuition on key examples
+helps greatly with understanding why the constructions are necessary and use-
+ful. The reader is encouraged to have a favorite running example that they use
+to illustrate the definitions and constructions as they go through this appendix.
+
+A.2 Vector fields and differential forms
+
+In this section we construct the objects necessary to do calculus on manifolds,
+including the tools to integrate functions and residues over contours that are
+piecewise submanifolds of algebraic varieties. This involves the use of tangent

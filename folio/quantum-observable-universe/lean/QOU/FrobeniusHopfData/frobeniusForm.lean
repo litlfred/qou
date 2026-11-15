@@ -91,7 +91,7 @@ the instance chooses `is_iso`.  Measured, `lean`-direct exit 0:
 So the old `FrobeniusForm` held for **every** pairing datum and asserted
 nothing.  The `example` below shows the replacement is refutable, which
 is the property the old form could not offer. -/
--- Ref: [manuscript] quantum-observable-universe/quantum-universes/frobenius-pairing.ts
+-- Ref: [leitner2026] quantum-observable-universe/quantum-universes/frobenius-pairing.ts
 def FrobeniusForm (ctx : FrobeniusFormContext) : Prop :=
     Function.Bijective ctx.pairing
 

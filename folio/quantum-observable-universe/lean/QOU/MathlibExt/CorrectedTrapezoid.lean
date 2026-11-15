@@ -45,9 +45,9 @@
   MATHLIB HAS NEITHER RULE, nor any quadrature at all.  See the header of
   `TrapezoidRule.lean`.
 
-  -- Ref: [manuscript] QOU/MathlibExt/TrapezoidRule.lean        (the order-1 case)
-  -- Ref: [manuscript] QOU/Knot/KashaevEndpointSplit.lean       (what consumes this)
-  -- Ref: [manuscript] computations/probes/kashaev_endpoint_split_probe.py
+  -- Ref: [leitner2026] QOU/MathlibExt/TrapezoidRule.lean        (the order-1 case)
+  -- Ref: [leitner2026] QOU/Knot/KashaevEndpointSplit.lean       (what consumes this)
+  -- Ref: [leitner2026] computations/probes/kashaev_endpoint_split_probe.py
 -/
 import QOU.MathlibExt.TrapezoidRule
 

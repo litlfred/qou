@@ -11,7 +11,7 @@ the Skein binding Lagrangian under beta variation.
 LaTeX label: `prop:beta-stability`
 
 ## References
-- [manuscript] §4/beta-stability
+- [leitner2026] §4/beta-stability
 
 **Ground ring (Lean sibling): archimedean specialisation over `ℝ`**
 (AGENTS.md §7c) — the stability line uses `rpow` (`A^{2/3}`), division,
@@ -25,13 +25,13 @@ namespace QOU.Braiding
 open Real
 
 /-- Beta-stability line: p*(A) = A / (2 + a_C·A^{2/3}/(2·a_A)). -/
--- Ref: [manuscript] §4/beta-stability
+-- Ref: [leitner2026] §4/beta-stability
 noncomputable def betaStabilityLine (A a_C a_A : ℝ) : ℝ :=
   A / (2 + a_C * A ^ ((2 : ℝ) / 3) / (2 * a_A))
 
 /-- At a_C = 0 (no Coulomb repulsion), all nuclei have p = A/2:
     symmetric nuclear matter. -/
--- Ref: [manuscript] §4/beta-stability
+-- Ref: [leitner2026] §4/beta-stability
 theorem classical_limit_symmetric (A a_A : ℝ) :
     betaStabilityLine A 0 a_A = A / 2 := by
   unfold betaStabilityLine
@@ -39,7 +39,7 @@ theorem classical_limit_symmetric (A a_A : ℝ) :
 
 /-- The denominator of the stability line is > 2 when a_C > 0 and A > 0,
     so p*(A) < A/2: heavy nuclei have more neutrons than protons. -/
--- Ref: [manuscript] §4/beta-stability
+-- Ref: [leitner2026] §4/beta-stability
 theorem neutron_excess (A a_C a_A : ℝ) (hA : 0 < A) (hC : 0 < a_C) (haA : 0 < a_A) :
     betaStabilityLine A a_C a_A < A / 2 := by
   unfold betaStabilityLine
@@ -52,13 +52,13 @@ theorem neutron_excess (A a_C a_A : ℝ) (hA : 0 < A) (hC : 0 < a_C) (haA : 0 < 
 
 /-- Stable neutron number: n*(p) = A*(p) - p where A*(p) is the
     fixed point of A = p·(2 + a_C·A^{2/3}/(2·a_A)). -/
--- Ref: [manuscript] §4/beta-stability
+-- Ref: [leitner2026] §4/beta-stability
 noncomputable def stableNeutronNumber (p : ℕ) (A_stable : ℝ) : ℝ :=
   A_stable - p
 
 /-- The n/p ratio is 1 when the stable mass number is 2p (the
     symmetric a_C = 0 fixed point). -/
--- Ref: [manuscript] §4/beta-stability
+-- Ref: [leitner2026] §4/beta-stability
 theorem nOverP_classical (p : ℕ) (hp : 0 < p) :
     stableNeutronNumber p (2 * p) / p = 1 := by
   unfold stableNeutronNumber

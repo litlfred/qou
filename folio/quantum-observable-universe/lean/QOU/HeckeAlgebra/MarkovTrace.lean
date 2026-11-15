@@ -111,7 +111,7 @@ theorem jonesMarkovCoefficient_eq_wenzlClosedForm
     proposition, not a `Finset`.  CLOSED: Mathlib provides
     `Fintype (Nat.Partition n)` in `Combinatorics.Enumerative.Partition`,
     so we can use `Finset.univ`. -/
--- Ref: [manuscript] Ch. Mass-theory, prop:markov-trace-axioms (Finset enumeration of Nat.Partition n; closed via Mathlib Fintype)
+-- Ref: [leitner2026] Ch. Mass-theory, prop:markov-trace-axioms (Finset enumeration of Nat.Partition n; closed via Mathlib Fintype)
 def partitions_as_finset (n : ℕ) : Finset (Nat.Partition n) := Finset.univ
 
 /-! ### `Σ_λ y_λ(q) = 1` — REMOVED (it was false)

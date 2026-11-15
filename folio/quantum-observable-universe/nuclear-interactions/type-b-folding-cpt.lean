@@ -137,7 +137,7 @@ type `V` is an arbitrary type, and the chirality grading is `Bool`-valued. Nothi
 archimedean is needed to say what the fold does, so per §7c this stays over type variables
 rather than specialising to `ℝ`. Bar-involution and crystal combinatorics are algebraic.
 
--- Ref: [manuscript] quantum-observable-universe/nuclear-interactions/type-b-folding-cpt.ts
+-- Ref: [leitner2026] quantum-observable-universe/nuclear-interactions/type-b-folding-cpt.ts
 -/
 
 namespace QOU.BraidsAndKnots
@@ -192,7 +192,7 @@ module docstring for what must grow first in each case.
 
 -- Ref: [kashiwara1991] Kashiwara, "On crystal bases of the q-analogue of universal enveloping algebras," Duke Math. J. 63 (1991)
 -- Ref: [lecouvey2007] Lecouvey, "Combinatorics of crystal graphs for the root systems of types A_n, B_n, C_n, D_n and G_2," MSJ Memoirs 17 (2007)
--- Ref: [manuscript] conj:type-b-folding-cpt -/
+-- Ref: [leitner2026] conj:type-b-folding-cpt -/
 class TypeBFoldingCpt {V : Type*} (n : ℕ) (fold : ℕ → ℕ)
     (foldAct : V → V) (stable anti : V → Prop) : Prop where
   /-- The fold is the **diagram reversal** `αᵢ ↔ α_{n-i}` on the `A_{n-1}` simple-root

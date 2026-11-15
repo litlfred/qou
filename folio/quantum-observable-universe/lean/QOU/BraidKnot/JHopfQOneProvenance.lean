@@ -55,8 +55,8 @@ of the `−2` at the classical point: it is the loop/component-count invariant
 Base ring (§7c): archimedean (`Real.sqrt`, Jones-variable evaluation), so `ℝ`.
 
 Ref: [jones1987] https://www.jstor.org/stable/1971403
-Ref: [manuscript] quantum-observable-universe/mass-theory/jet-filtered-knot-factor.md
-Ref: [manuscript] computations/qbeta/qbeta_c3_jhopf_q0_vs_q1_comparison.py (numerical witness)
+Ref: [leitner2026] quantum-observable-universe/mass-theory/jet-filtered-knot-factor.md
+Ref: [leitner2026] computations/qbeta/qbeta_c3_jhopf_q0_vs_q1_comparison.py (numerical witness)
 -/
 
 namespace QOU.BraidKnot.JHopfQOneProvenance

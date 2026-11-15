@@ -21,8 +21,8 @@
   window must fit between `w` and `N`.  A caller picks `w ≈ 2N/3` and
   `W ≈ N^{0.6}`.
 
-  -- Ref: [manuscript] QOU/Knot/KashaevSaddleWindow.lean
-  -- Ref: [manuscript] QOU/Knot/KashaevBeyondWindow.lean
+  -- Ref: [leitner2026] QOU/Knot/KashaevSaddleWindow.lean
+  -- Ref: [leitner2026] QOU/Knot/KashaevBeyondWindow.lean
 -/
 import QOU.Knot.KashaevBeyondWindow
 

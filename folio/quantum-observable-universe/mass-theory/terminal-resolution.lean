@@ -25,7 +25,7 @@ LaTeX label: `prop:terminal-resolution`
 ## References
 
 - CODATA 2018 recommended values
-- [manuscript] §11-experimental-evidence/terminal-resolution
+- [leitner2026] §11-experimental-evidence/terminal-resolution
 
 **Ground ring**: `ℝ` (archimedean realisation).
 Evaluates formal results at q₀ ≈ 1.1098 for comparison with
@@ -77,7 +77,7 @@ follow-up — do NOT fabricate a derivation by editing the literals. -/
 /-- **Placeholder** (CODATA-pinned): QOU-predicted proton mass (MeV).
     Stands in for the topological mass formula at q ≈ 1.1097 pending the
     `Real.rpow` Skein evaluation; see the honesty note above. -/
--- Ref: [manuscript] §11, CODATA 2018
+-- Ref: [leitner2026] §11, CODATA 2018
 -- Ref: [kronheimer2004] Kronheimer & Mrowka, "Witten's conjecture and Property P," arXiv:math/0311489
 noncomputable def qou_proton_MeV : ℝ := 938.272
 
@@ -91,7 +91,7 @@ theorem predicted_proton_MeV_val :
 
 /-- **Placeholder** (CODATA-pinned): QOU-predicted neutron mass (MeV).
     See the honesty note above. -/
--- Ref: [manuscript] §11, CODATA 2018
+-- Ref: [leitner2026] §11, CODATA 2018
 noncomputable def qou_neutron_MeV : ℝ := 939.565
 
 theorem qou_neutron_bound :
@@ -104,7 +104,7 @@ theorem predicted_neutron_MeV_val :
 
 /-- **Placeholder** (CODATA-pinned): QOU-predicted deuteron mass (MeV).
     See the honesty note above. -/
--- Ref: [manuscript] §11, CODATA 2018
+-- Ref: [leitner2026] §11, CODATA 2018
 noncomputable def qou_deuteron_MeV : ℝ := 1875.613
 
 theorem qou_deuteron_bound :
@@ -117,7 +117,7 @@ theorem predicted_deuteron_MeV_val :
 
 /-- **Placeholder** (CODATA-pinned): QOU-predicted deuteron binding
     energy (MeV).  See the honesty note above. -/
--- Ref: [manuscript] §11, CODATA 2018
+-- Ref: [leitner2026] §11, CODATA 2018
 noncomputable def qou_binding_MeV : ℝ := 2.2245
 
 theorem qou_binding_bound :
@@ -133,7 +133,7 @@ theorem predicted_binding_MeV_val :
 /-- **Mass prediction**: a QOU prediction compared with CODATA.
     The `predicted` value comes from the topological mass formula;
     the `codata` value is an independent experimental measurement. -/
--- Ref: CODATA 2018, [manuscript] §11
+-- Ref: CODATA 2018, [leitner2026] §11
 structure MassPrediction where
   /-- Name of the particle/structure. -/
   name : String
@@ -150,7 +150,7 @@ structure MassPrediction where
 
 /-- **Terminal resolution**: the full set of hadronic mass predictions
     from the QOU at q ≈ 1.1097, showing they match CODATA. -/
--- Ref: CODATA 2018, [manuscript] §11
+-- Ref: CODATA 2018, [leitner2026] §11
 structure TerminalResolution where
   /-- The substrate parameter used. -/
   q : ℝ
@@ -167,7 +167,7 @@ structure TerminalResolution where
 
 /-- The derivation chain is connected: q determines ℏ_q, and ℏ_q
     determines the mass scale via m(K) = Vol(K) / ℏ_q². -/
--- Ref: [manuscript] §11
+-- Ref: [leitner2026] §11
 theorem mass_scale_from_q (q : ℝ) (hq : 1 < q) :
     let hbar := 1 - q⁻¹
     0 < hbar ∧ 0 < hbar ^ 2 := by
@@ -179,7 +179,7 @@ theorem mass_scale_from_q (q : ℝ) (hq : 1 < q) :
     linarith
 
 /-- substrate_q > 1. -/
--- Ref: [manuscript] §11
+-- Ref: [leitner2026] §11
 theorem substrate_q_gt_one : 1 < substrate_q := by
   unfold substrate_q; norm_num
 

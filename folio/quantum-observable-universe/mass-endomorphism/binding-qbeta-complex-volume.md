@@ -193,8 +193,8 @@ $c_2$.
 Conditional on the unification, the framework's mass/binding chapter and
 its $\beta$-decay chapter form **one derivation**: compute the complex
 defect $\mathfrak{V}(K)$ once. Its real part yields every binding energy. Its
-imaginary part yields every $Q$-value. The "$0.17\%$ $\mathfrak{Q}_\beta$
-residual" and the binding $\Delta_\lambda$ gap become the *same* unclosed
+imaginary part yields every $Q$-value. The $\mathfrak{Q}_\beta$ residual
+($-43.16\%$ at the ruled convention-D base; $+0.17\%$ under the retired Form A) and the binding $\Delta_\lambda$ gap become the *same* unclosed
 object — the imaginary and real parts of one defect — rather than two
 independent open problems.
 

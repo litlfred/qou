@@ -21,7 +21,7 @@ Builds on: genus_filtration_ideal (Chebyshev overflow at degree 5)
 LaTeX label: `rem:t211-ideal-annihilation`
 
 ## References
-- [manuscript] §4/t211-ideal-annihilation
+- [leitner2026] §4/t211-ideal-annihilation
 - [jones1987] https://doi.org/10.2307/1971403
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
@@ -49,23 +49,23 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- Seifert genus of T_{2,p} is (p-1)/2. -/
--- Ref: [manuscript] §4/t211-ideal-annihilation
+-- Ref: [leitner2026] §4/t211-ideal-annihilation
 def seifertGenus_T2 (p : ℕ) : ℕ := (p - 1) / 2
 
 /-- Seifert genus of T_{2,11} is 5. -/
--- Ref: [manuscript] §4/t211-ideal-annihilation
+-- Ref: [leitner2026] §4/t211-ideal-annihilation
 theorem t2_11_genus : seifertGenus_T2 11 = 5 := by decide
 
 /-- T_{2,11} does not embed in genus 4. -/
--- Ref: [manuscript] §4/t211-ideal-annihilation
+-- Ref: [leitner2026] §4/t211-ideal-annihilation
 theorem t2_11_not_embeddable : ¬ (seifertGenus_T2 11 ≤ 4) := by decide
 
 /-- T_{2,9} saturates genus 4. -/
--- Ref: [manuscript] §4/t211-ideal-annihilation
+-- Ref: [leitner2026] §4/t211-ideal-annihilation
 theorem t2_9_saturates : seifertGenus_T2 9 = 4 := by decide
 
 /-- T_{2,11} is the first excluded: T_{2,9} fits, T_{2,11} does not. -/
--- Ref: [manuscript] §4/t211-ideal-annihilation
+-- Ref: [leitner2026] §4/t211-ideal-annihilation
 theorem t2_11_is_first_excluded :
     seifertGenus_T2 9 ≤ 4 ∧ ¬ (seifertGenus_T2 11 ≤ 4) := by decide
 
@@ -74,15 +74,15 @@ theorem t2_11_is_first_excluded :
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- Order of the dihedral group D_p = Z_p ⋊ Z_2. -/
--- Ref: [manuscript] §4/t211-ideal-annihilation
+-- Ref: [leitner2026] §4/t211-ideal-annihilation
 def dihedralOrder (p : ℕ) : ℕ := 2 * p
 
 /-- |D₁₁| = 22. -/
--- Ref: [manuscript] §4/t211-ideal-annihilation
+-- Ref: [leitner2026] §4/t211-ideal-annihilation
 theorem t2_11_symmetry_order : dihedralOrder 11 = 22 := by rfl
 
 /-- D₁₁ is much smaller than S₁₁. -/
--- Ref: [manuscript] §4/t211-ideal-annihilation
+-- Ref: [leitner2026] §4/t211-ideal-annihilation
 theorem dihedral_vs_symmetric : dihedralOrder 11 < Nat.factorial 11 := by
   decide
 
@@ -91,7 +91,7 @@ theorem dihedral_vs_symmetric : dihedralOrder 11 < Nat.factorial 11 := by
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- 11 does not divide 5! = 120. -/
--- Ref: [manuscript] §4/t211-ideal-annihilation
+-- Ref: [leitner2026] §4/t211-ideal-annihilation
 theorem eleven_not_dvd_factorial_5 : ¬ (11 ∣ Nat.factorial 5) := by decide
 
 /-- The order of any element of a finite group divides the group order.
@@ -100,7 +100,7 @@ theorem eleven_not_dvd_factorial_5 : ¬ (11 ∣ Nat.factorial 5) := by decide
     **Proof**: from Mathlib's `orderOf_dvd_card` (Lagrange) combined
     with `Fintype.card_perm` (which gives `|Perm (Fin n)| = n!`). -/
 -- See Mathlib stdlib Mathlib.GroupTheory.OrderOfElement
--- Ref: [manuscript] §4/t211-ideal-annihilation
+-- Ref: [leitner2026] §4/t211-ideal-annihilation
 theorem orderOf_perm_dvd_factorial (n : ℕ) (σ : Equiv.Perm (Fin n)) :
     (orderOf σ : ℕ) ∣ Nat.factorial n := by
   have h_card : Fintype.card (Equiv.Perm (Fin n)) = Nat.factorial n := by
@@ -112,7 +112,7 @@ theorem orderOf_perm_dvd_factorial (n : ℕ) (σ : Equiv.Perm (Fin n)) :
 
 /-- Z₁₁ cannot embed in S₅: no element of S₅ has order 11,
     because 11 ∤ 120. -/
--- Ref: [manuscript] §4/t211-ideal-annihilation
+-- Ref: [leitner2026] §4/t211-ideal-annihilation
 theorem z11_not_in_s5 : ¬ ∃ (σ : Equiv.Perm (Fin 5)), orderOf σ = 11 := by
   intro ⟨σ, hσ⟩
   have hdvd := orderOf_perm_dvd_factorial 5 σ
@@ -120,7 +120,7 @@ theorem z11_not_in_s5 : ¬ ∃ (σ : Equiv.Perm (Fin 5)), orderOf σ = 11 := by
   exact eleven_not_dvd_factorial_5 hdvd
 
 /-- The 3-cycle (0 1 2) in S₅. -/
--- Ref: [manuscript] §4/t211-ideal-annihilation
+-- Ref: [leitner2026] §4/t211-ideal-annihilation
 private def theCycle3 : Equiv.Perm (Fin 5) where
   toFun | 0 => 1 | 1 => 2 | 2 => 0 | 3 => 3 | 4 => 4
   invFun | 0 => 2 | 1 => 0 | 2 => 1 | 3 => 3 | 4 => 4
@@ -128,7 +128,7 @@ private def theCycle3 : Equiv.Perm (Fin 5) where
   right_inv i := by fin_cases i <;> rfl
 
 /-- The 5-cycle (0 1 2 3 4) in S₅. -/
--- Ref: [manuscript] §4/t211-ideal-annihilation
+-- Ref: [leitner2026] §4/t211-ideal-annihilation
 private def theCycle5 : Equiv.Perm (Fin 5) where
   toFun | 0 => 1 | 1 => 2 | 2 => 3 | 3 => 4 | 4 => 0
   invFun | 0 => 4 | 1 => 0 | 2 => 1 | 3 => 2 | 4 => 3
@@ -137,13 +137,13 @@ private def theCycle5 : Equiv.Perm (Fin 5) where
 
 /-- Z₃ embeds in S₅ via the 3-cycle (0 1 2): it has prime order 3
     (`theCycle3 ^ 3 = 1` and `theCycle3 ≠ 1`). -/
--- Ref: [manuscript] §4/t211-ideal-annihilation
+-- Ref: [leitner2026] §4/t211-ideal-annihilation
 theorem z3_in_s5 : ∃ (σ : Equiv.Perm (Fin 5)), orderOf σ = 3 :=
   ⟨theCycle3, orderOf_eq_prime (by decide) (by decide)⟩
 
 /-- Z₅ embeds in S₅ via the 5-cycle (0 1 2 3 4): it has prime order 5
     (`theCycle5 ^ 5 = 1` and `theCycle5 ≠ 1`). -/
--- Ref: [manuscript] §4/t211-ideal-annihilation
+-- Ref: [leitner2026] §4/t211-ideal-annihilation
 theorem z5_in_s5 : ∃ (σ : Equiv.Perm (Fin 5)), orderOf σ = 5 :=
   haveI : Fact (Nat.Prime 5) := ⟨by norm_num⟩
   ⟨theCycle5, orderOf_eq_prime (by decide) (by decide)⟩
@@ -153,18 +153,18 @@ theorem z5_in_s5 : ∃ (σ : Equiv.Perm (Fin 5)), orderOf σ = 5 :=
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- Non-embeddability condition for T_{m,n} on Σ_g. -/
--- Ref: [manuscript] §4/t211-ideal-annihilation
+-- Ref: [leitner2026] §4/t211-ideal-annihilation
 def notEmbeddable (m n g : ℕ) : Prop := (m - 1) * (n - 1) > 2 * g
 
 /-- T_{2,11} does not embed on Σ₄. -/
--- Ref: [manuscript] §4/t211-ideal-annihilation
+-- Ref: [leitner2026] §4/t211-ideal-annihilation
 theorem t2_11_not_embeddable' : notEmbeddable 2 11 4 := by
   unfold notEmbeddable; omega
 
 /-- The trivial eigenvalue equation: 1^k = 1 for all k.
     This is the Chebyshev recurrence at eigenvalues (1,1):
     V̂(n) = 1 for all n — no shell structure. -/
--- Ref: [manuscript] §4/t211-ideal-annihilation
+-- Ref: [leitner2026] §4/t211-ideal-annihilation
 theorem trivial_eigenvalue_flat (k : ℕ) : (1 : R_q) ^ k = 1 := one_pow k
 
 /-- The knot operator F(T_{m,n}, N) = 1 for non-embeddable torus knots.
@@ -190,7 +190,7 @@ theorem non_embeddable_eigenvalues_trivial (m n : ℕ) (hne : notEmbeddable m n 
 
 /-- T_{2,11} is in the spectral ideal at every brane level.
     The genus depends only on the winding number p, not the level. -/
--- Ref: [manuscript] §4/t211-ideal-annihilation
+-- Ref: [leitner2026] §4/t211-ideal-annihilation
 theorem t2_11_in_ideal_all_levels (n : ℕ) : seifertGenus_T2 11 > 4 := by
   decide
 

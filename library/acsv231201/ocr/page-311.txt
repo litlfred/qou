@@ -1,0 +1,48 @@
+10.1 A taxonomy of multiple points 293
+
+no critical values at infinity) we can write
+
+a= > oan [ F(z)z" dz (10.1)
+wecritical(?) Cw
+
+where critical(f) is the set of critical points of the generating function F in
+the direction 7, each x,, is an integer, and each Cy, is a chain of integration
+defined by tangential and normal Morse data at critical points of F. Roughly
+speaking, the normal Morse data describes an integral that can be simplified
+using residues, while the tangential data results in a saddle point integral that
+can be asymptotically approximated.
+
+Throughout this chapter we make various assumptions that simplify both
+the determination of contributing critical points and the computation of in-
+tegrals over tangential and normal Morse data. This was not necessary for
+smooth points because all smooth points look the same topologically, but mul-
+tiple points can vary substantially in their local topology and geometry. We
+thus begin in Section 10.1 by introducing the types of multiple points we con-
+sider, before Section 10.2 derives asymptotics for the integrals that arise and
+Section 10.3 gives our main results on coefficient asymptotics. Section 10.4
+discusses the algebraic techniques used to identify multiple points in more de-
+tail, and we conclude in Section 10.5 by examining asymptotics in non-generic
+directions and the difficult issue of tangential intersections.
+
+10.1 A taxonomy of multiple points
+
+Figure 10.2 displays the taxonomy we describe in this section. Effective clas-
+sification within this taxonomy is discussed in Section 10.4.
+
+The simplest multiple point case occurs when VV is a hyperplane arrange-
+ment, meaning a finite union of hyperplanes (a simple example is shown in
+Figure 10.3). If V is the union of transversely intersecting hyperplanes then
+the normal data of a critical point on a stratum of codimension k is a k-torus,
+both the normal and tangential Morse data can be described explicitly, and the
+critical points describing asymptotics can be determined algorithmically (see
+Theorem 10.23 below).
+
+Example 10.3. Figure 10.4 shows the pole set of the generating function
+
+16
+(4-2x-y-2)(4-x-2y-2)’
+
+F(x, y,2) =
+
+whose divisors are two planes meeting at the complex line S = {(1,1,1) +
+A(-1,-1,3): A€ C}.

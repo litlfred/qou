@@ -79,7 +79,7 @@ noncomputable def hoefsmit_sigma1 (q : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
 `ρ_(2,1)(σ_0)^2 = (q - q⁻¹) · ρ_(2,1)(σ_0) + 1`, since the diagonal
 entries are q and -q⁻¹, both eigenvalues of the Hecke quadratic. -/
 
--- Ref: [manuscript] prop:hoefsmit-V21-cos-symmetrization §"Hoefsmit ρ_(2,1)(σ_0)"
+-- Ref: [leitner2026] prop:hoefsmit-V21-cos-symmetrization §"Hoefsmit ρ_(2,1)(σ_0)"
 -- Ref: [hoefsmit1974] (Hoefsmit's PhD thesis, seminormal form)
 /-- σ_0's diagonal action squares to the Hecke quadratic identity at the
     matrix level: `M^2 = (q - q⁻¹) M + I`. -/
@@ -127,7 +127,7 @@ lemma hoefsmit_b_sq_nonneg (q : ℝ) (hq : q ≠ 0) :
   exact div_nonneg h_num (le_of_lt h_den)
 
 /-- Trace of σ_1: `tr(σ_1) = d_1 + d_2 = q − q⁻¹`. -/
--- Ref: [manuscript] prop:hoefsmit-V21-cos-symmetrization §"σ_1 trace"
+-- Ref: [leitner2026] prop:hoefsmit-V21-cos-symmetrization §"σ_1 trace"
 -- Ref: [hoefsmit1974] (Hoefsmit's PhD thesis, seminormal form)
 theorem hoefsmit_sigma1_trace_eq (q : ℝ) (hq : q ≠ 0) :
     Matrix.trace (hoefsmit_sigma1_legacy q) = q - q⁻¹ := by
@@ -138,7 +138,7 @@ theorem hoefsmit_sigma1_trace_eq (q : ℝ) (hq : q ≠ 0) :
   ring
 
 /-- Determinant of σ_1: `det(σ_1) = d_1·d_2 − b² = −1`. -/
--- Ref: [manuscript] prop:hoefsmit-V21-cos-symmetrization §"σ_1 determinant"
+-- Ref: [leitner2026] prop:hoefsmit-V21-cos-symmetrization §"σ_1 determinant"
 -- Ref: [hoefsmit1974] (Hoefsmit's PhD thesis, seminormal form)
 theorem hoefsmit_sigma1_det_eq (q : ℝ) (hq : q ≠ 0) :
     Matrix.det (hoefsmit_sigma1_legacy q) = -1 := by
@@ -153,7 +153,7 @@ theorem hoefsmit_sigma1_det_eq (q : ℝ) (hq : q ≠ 0) :
 
 /-- σ_1's off-diagonal action squares to the Hecke quadratic identity at the
     matrix level: `M² = (q − q⁻¹) · M + I`. -/
--- Ref: [manuscript] prop:hoefsmit-V21-cos-symmetrization §"σ_1 Hecke quadratic"
+-- Ref: [leitner2026] prop:hoefsmit-V21-cos-symmetrization §"σ_1 Hecke quadratic"
 -- Ref: [hoefsmit1974] (Hoefsmit's PhD thesis, seminormal form)
 theorem hoefsmit_sigma1_hecke_quadratic (q : ℝ) (hq : q ≠ 0) :
     hoefsmit_sigma1_legacy q * hoefsmit_sigma1_legacy q
@@ -243,7 +243,7 @@ class V21Eigenphase (q : ℝ) : Prop where
 Per `prop:q-beta-cos-resummation`, the Markov cyclic property forces
 the symmetrization of the two ± eigenphases to the cosine. -/
 
--- Ref: [manuscript] prop:hoefsmit-V21-cos-symmetrization §"Markov symmetrization"
+-- Ref: [leitner2026] prop:hoefsmit-V21-cos-symmetrization §"Markov symmetrization"
 -- Ref: [jones1985] doi:10.2307/1971403
 /-- The Markov-symmetrized V_(2,1) character of a typed braid is
     obtained by multiplying its unsymmetrized matrix-trace character
@@ -252,7 +252,7 @@ the symmetrization of the two ± eigenphases to the cosine. -/
 noncomputable def markovSymmetrizedV21Character (q : ℝ) (trace_unsym : ℝ) : ℝ :=
   trace_unsym * Real.cos (eigenphase q)
 
--- Ref: [manuscript] prop:hoefsmit-V21-cos-symmetrization §"Markov symmetrization"
+-- Ref: [leitner2026] prop:hoefsmit-V21-cos-symmetrization §"Markov symmetrization"
 -- Ref: [jones1985] doi:10.2307/1971403
 /-- **Markov-symmetrized V_(2,1) character (closed form).** Under the
     eigenphase axiomatisation, the symmetrized character equals the
@@ -272,7 +272,7 @@ theorem hoefsmit_V21_symmetrization_even (q : ℝ) (trace_unsym : ℝ) :
 
 /-! ## Top-level export -/
 
--- Ref: [manuscript] prop:hoefsmit-V21-cos-symmetrization
+-- Ref: [leitner2026] prop:hoefsmit-V21-cos-symmetrization
 /-- **Hoefsmit V_(2,1) cos symmetrization (canonical export).** Bundles the
     Hoefsmit matrix definitions, the Hecke quadratic identity on BOTH
     σ_0 (diagonal) and σ_1 (off-diagonal), the trace + determinant

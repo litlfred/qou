@@ -14,7 +14,7 @@ distribution (`J² = -Id`).  The two limiting regimes — classical (`q → 1`,
 LaTeX label: `def:q-deformed-commutator`
 
 ## References
-- [manuscript] Ch. 2, §heisenberg-commutator
+- [leitner2026] Ch. 2, §heisenberg-commutator
 - [heisenberg1958]
 
 **Ground ring** (§7c): a commutative ring `K` with the deformation parameter

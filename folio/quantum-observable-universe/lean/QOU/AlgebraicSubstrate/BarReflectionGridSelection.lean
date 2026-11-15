@@ -36,7 +36,7 @@ group theory, so the core is stated over a generic `CommGroup G`; the
 archimedean instantiation at `G = {x : ℝ // 0 < x}` lives in
 `QOU.Archimedean.BarReflectionGridSelectionReal`.
 
--- Ref: [manuscript] predicted-spectra, conj:schwinger-measure-computational-time
+-- Ref: [leitner2026] predicted-spectra, conj:schwinger-measure-computational-time
 --      (State after the representability and kernel-selection campaigns, 2026-08-01);
 --      docs/audits/2026-08-01-ksel2-gns-favard-canonicity.md;
 --      docs/audits/2026-08-01-ksel1-singularity-selection.md.

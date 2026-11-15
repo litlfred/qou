@@ -85,7 +85,7 @@ formula `B(K) = m_e · Σ_λ y_λ · χ^λ(β_K) · (1 + Δ_λ(K))`.
   — scope doc.
 -/
 
--- Ref: [manuscript] docs/audits/2026-06-02-option-e-phase1-gram-h6-scope.md
+-- Ref: [leitner2026] docs/audits/2026-06-02-option-e-phase1-gram-h6-scope.md
 -- Ref: [hoefsmit1974] Hoefsmit-Murphy seminormal representation construction
 
 namespace QOU.BraidKnot.GramSeminormalBlock

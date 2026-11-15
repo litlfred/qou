@@ -1,0 +1,47 @@
+352 Cone point asymptotics
+
+Proof Suppose that q is strongly hyperbolic at a + iy in direction 6 with
+radius ¢ and choose y’ and 6’ with max{|y’ — y|,|6’ — d|} = 6 < «. It follows
+from the definition that g is strongly hyperbolic at y’ in direction 6’ with radius
+at least e — 6. Hence the radius function R(y, 6) for g over x is Lipschitz in
+both arguments with constant at most 1. In particular, g is continuous in both
+arguments and the set of (y, v) for which q is strongly hyperbolic is open. O
+
+As mentioned in the end of chapter notes, the next two propositions correct
+the statement of [BP11, Proposition 2.11] and the proof of [BP11, Proposi-
+tion 2.12].
+
+Proposition 11.25. Let g = Q 0 exp with Q a Laurent polynomial, fix z =
+a+iy, and let A = hom(q, z) be the leading homogeneous term of q(z + w) in
+w. Then each of the following properties implies the next.
+
+(i) Strong hyperbolicity of q at z in the direction 6.
+(ii) Hyperbolicity of A in the direction 6.
+(iii) Weak hyperbolicity of q at z in the direction 6.
+
+Proof Assume without loss of generality that z = 0.
+
+For the contrapositive of the first implication, suppose that A is not hyper-
+bolic in direction 6. Then there is u € R¢ such that A(@ + iw) = 0. Because
+the tangent cone is the limiting secant cone, by Lemma 6.48 there are two
+Un, Wn Sequences of vectors going to zero in R¢ such that qn + iWn) = 0,
+with v,,/|v,| > 6 and w,/|v,| > u. This contradicts the definition of strong
+hyperbolicity.
+
+For the second implication, suppose that g is not weakly hyperbolic at the
+origin in direction 6. This means there is some M > 0 such that for any ¢ > 0
+there are t € (0,€) and u € R¢ with |u| < M such that g(t(é + iu)) = 0.
+By compactness of the ball of radius M, this is equivalent to the existence of
+sequences of real numbers ¢, and vectors u, such that t, > 0, u, > u and
+q(t,(6 +iu,)) = 0. Again, because the tangent cone is the limiting secant cone,
+this implies A(é + iw) = 0, meaning A is not hyperbolic in direction 0. oO
+
+Proposition 11.26. Let Q be a Laurent polynomial, let B be a component of
+amoeba(Q), and let x € OB, so that q = Qo exp vanishes at some point
+z=a+iy. Fix u € tan,(B) and let g = hom(q, x + iy) denote the leading
+homogeneous part of q(a + iy + w) with respect to w. Then
+
+(i) q is strongly hyperbolic at z in direction u;
+(ii) Gis hyperbolic in direction u;
+(iii) K“(@) contains tanz(B);
+(iv) some complex scalar multiple of g is real.

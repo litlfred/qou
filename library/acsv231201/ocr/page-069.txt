@@ -1,0 +1,46 @@
+2.5 Labeled classes 51
+
+Proof idea The basic idea is to apply a sequence of blowups to a polynomial
+annihilating f(z) to resolve any singularities it has at the origin, until we arrive
+at a case where Proposition 2.36 applies. These changes of variable are mono-
+mial substitutions of the form z; +> zz;, which yields the unimodular matrix.
+Full details can be found in [Saf00, Theorem 1]. oO
+
+Example 2.42. If f(x,y) = yl -—x-—y is the function from Example 2.38
+then Safonov’s algorithm implies that f is the M-diagonal of
+
+2wx(w? + w) ;
+F(xy,w) = wx+ = = "a xyw"
+(x, y,W) Dewextay Oy Ms! yw,
+
+where M = ( I 9). In particular, f(x,y) = Disps0 s4rs+10°Y"- 4
+
+2.5 Labeled classes
+
+We end this chapter with additional constructions that produce a large variety
+of combinatorial classes. Each combinatorial class that we have seen so far is
+ultimately constructed from atomic pieces via constructions such as the disjoint
+union and product, and we can enrich the objects in a class by adding labels
+to their atoms. More formally, let the atomic class Z be the class containing a
+single object of size 1 and no objects of other sizes, and let the neutral class &
+be the class containing a single object of size 0 and no objects of other sizes. A
+labeled combinatorial class is a univariate combinatorial class A constructed
+from copies of the atomic and neutral classes, where the size of an object is the
+number of atoms it contains and for any n € N and a € A, the atoms in @ are
+given unique labels from the set [n]. The exponential generating function A(z)
+of the labeled class A is the formal power series A(z) = D1 n>0 alone C[[z]].
+
+n!
+
+Example 2.43 (Basic labeled classes). The labeled atomic class Z = {®}
+is obtained from the atomic class by giving its single element of size one the
+label 1. The labeled neutral class is the same as the neutral class, as an object
+of size zero has no atoms. 4
+
+Example 2.44. By viewing a permutation of [7] in one-line notation, the class
+of permutations can be constructed as the labeled class consisting of all finite
+sequences of labeled atoms. 4
+
+We can construct labeled classes iteratively using labeled versions of the
+constructions discussed above. If A and 8 are two labeled combinatorial classes
+then, just like in the unlabeled case, the labeled disjoint union class C = AUB

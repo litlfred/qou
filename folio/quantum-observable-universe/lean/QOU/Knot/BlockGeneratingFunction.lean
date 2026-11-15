@@ -40,7 +40,7 @@ does not prove the decomposition into the two factors.
 
 ## References
 
-- [manuscript] §mass-theory/bond-order-eq-jet-degree
+- [leitner2026] §mass-theory/bond-order-eq-jet-degree
 -/
 import QOU.Knot.BodyOrderExpansion
 import QOU.Knot.BlockLengthAdditive

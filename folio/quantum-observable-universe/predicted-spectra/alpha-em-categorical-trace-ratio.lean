@@ -159,9 +159,9 @@ All of that is the single division-free identity
 `delta_mul_delta_eq_h_sq_mul_q_int`; only the final division into a
 quotient needs the field.
 
--- Ref: [manuscript] §round-12, §round-14 of conj:e-hartree-categorical-derivation
--- Ref: [manuscript] prop:em-coupling-projection (the bare 1/α formula)
--- Ref: [manuscript] def:delta-q-decoration
+-- Ref: [leitner2026] §round-12, §round-14 of conj:e-hartree-categorical-derivation
+-- Ref: [leitner2026] prop:em-coupling-projection (the bare 1/α formula)
+-- Ref: [leitner2026] def:delta-q-decoration
 -/
 theorem alpha_em_categorical_trace_ratio (q : Kˣ)
     (hq9 : delta_q_T_2_n q 9 ≠ 0)

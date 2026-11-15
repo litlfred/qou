@@ -45,7 +45,7 @@ LaTeX label: `conj:categorical-neutrality-saturated-shells`
   construction of Young's seminormal representation
 - [hoefsmit1974] — Hoefsmit, Representations of Hecke algebras of
   finite groups with BN-pairs of classical type (PhD thesis)
-- [manuscript] braids-and-knots / categorical-neutrality-saturated-shells
+- [leitner2026] braids-and-knots / categorical-neutrality-saturated-shells
 -/
 
 namespace QOU.BraidKnot.ShellNeutrality
@@ -110,7 +110,7 @@ theorem conjugate_involution (lam : YoungDiagram) :
     zero global Jucys–Murphy charge. Proof: `κ_λ = κ_{λ'} = -κ_λ`,
     so `2 κ_λ = 0`, hence `κ_λ = 0` over `ℤ`. This is pure
     multiset arithmetic — no Hecke / Young-lattice structure needed. -/
--- Ref: [manuscript] conj:categorical-neutrality-saturated-shells
+-- Ref: [leitner2026] conj:categorical-neutrality-saturated-shells
 theorem kappa_zero_of_self_conjugate
     (lam : YoungDiagram) (h : isSelfConjugate lam) :
     kappa lam = 0 := by
@@ -158,7 +158,7 @@ def unionDiagram (lam μ : YoungDiagram) : YoungDiagram where
     abstract version of the LR content-additivity claim used in
     `LRFusion.ContentAdditive`. Provable directly from
     `Multiset.sum_add`. -/
--- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion
+-- Ref: [leitner2026] conj:diagrammatic-double-magic-lr-fusion
 theorem kappa_unionDiagram (lam μ : YoungDiagram) :
     kappa (unionDiagram lam μ) = kappa lam + kappa μ := by
   simp [kappa, unionDiagram, Multiset.sum_add]
@@ -180,7 +180,7 @@ theorem kappa_unionDiagram_empty_right (lam : YoungDiagram) :
 
     This is the abstract analogue of the LR-rigidity claim for the
     trivial union composite. -/
--- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion
+-- Ref: [leitner2026] conj:diagrammatic-double-magic-lr-fusion
 theorem unionDiagram_isSelfConjugate
     {lam μ : YoungDiagram}
     (hlam : isSelfConjugate lam) (hμ : isSelfConjugate μ) :
@@ -320,7 +320,7 @@ theorem not_kappaZeroImpliesSelfConjugate : ¬ KappaZeroImpliesSelfConjugate := 
 
 /-- Convenience iff packaging both directions: forward is the
     proved theorem, reverse is the typeclass field. -/
--- Ref: [manuscript] conj:categorical-neutrality-saturated-shells
+-- Ref: [leitner2026] conj:categorical-neutrality-saturated-shells
 theorem kappa_zero_iff_self_conjugate
     [KappaZeroImpliesSelfConjugate]
     (lam : YoungDiagram) [Saturated lam] :
@@ -355,7 +355,7 @@ def StableCompletedShell (lam : YoungDiagram) : Prop := isSelfConjugate lam
     and the algebraic neutrality condition — is the conjectural
     framework claim. The remaining equivalences are derived from the
     Hecke and partition-combinatorics typeclass fields. -/
--- Ref: [manuscript] conj:categorical-neutrality-saturated-shells
+-- Ref: [leitner2026] conj:categorical-neutrality-saturated-shells
 -- Ref: [mathas1999] Mathas, "Iwahori–Hecke Algebras and Schur Algebras of the Symmetric Group," AMS Univ. Lect. Series 15, 1999
 class SaturatedShellConjecture (lam : YoungDiagram) [Saturated lam] (q : ℝ)
     extends FullTwistContentFormula q,
@@ -365,7 +365,7 @@ class SaturatedShellConjecture (lam : YoungDiagram) [Saturated lam] (q : ℝ)
     StableCompletedShell lam ↔ fullTwistTrivial lam q
 
 /-- Re-export 1: shell ↔ `κ_λ = 0`. -/
--- Ref: [manuscript] conj:categorical-neutrality-saturated-shells
+-- Ref: [leitner2026] conj:categorical-neutrality-saturated-shells
 theorem shell_iff_kappa_zero
     (lam : YoungDiagram) [Saturated lam] (q : ℝ)
     [C : SaturatedShellConjecture lam q] :
@@ -374,7 +374,7 @@ theorem shell_iff_kappa_zero
       C.trivial_iff_kappa_zero lam]
 
 /-- Re-export 2: shell ↔ `λ` self-conjugate. -/
--- Ref: [manuscript] conj:categorical-neutrality-saturated-shells
+-- Ref: [leitner2026] conj:categorical-neutrality-saturated-shells
 theorem shell_iff_self_conjugate
     (lam : YoungDiagram) [Saturated lam] (q : ℝ)
     [C : SaturatedShellConjecture lam q] :

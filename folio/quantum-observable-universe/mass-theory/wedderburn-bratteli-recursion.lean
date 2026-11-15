@@ -196,7 +196,7 @@ theorem wedderburn_bratteli_apply
     because it did nothing; using the recursion brings in `bratteliFactor`,
     whose q-integer quotient is exactly why the rest of this file needs a
     field. -/
--- Ref: [manuscript] thm:jones-markov-trace base case;
+-- Ref: [leitner2026] thm:jones-markov-trace base case;
 -- H_1(R, q) = R, tr_M = identity character on V_(1).
 theorem y_base_case_singleton {R : Type u} [Field R] (q : R)
     (y : Partition → R)
