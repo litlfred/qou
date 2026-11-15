@@ -8,7 +8,7 @@ tags:
     - needs-owner
     - convention-d
 created_at: 2026-11-15T18:54:18Z
-updated_at: 2026-11-15T20:13:56Z
+updated_at: 2026-11-15T21:05:43Z
 parent: qou-avtq
 ---
 
@@ -68,3 +68,6 @@ A grep of folio/ content and Lean for an isospin orientation convention (e₁ = 
 
 
 2026-11-15 §22: FE/EF (sibling thread, folded into #7966). FE alone or EF alone gives a larger |ln r|, but the two have opposite signs and the choice between them is an ordering choice. The omega-symmetric insertion gives exactly q^-2. The extra factor A -> 2 at q=1 is the isospin 3/2-vs-1/2 weight. No derived u/d term beyond q^-2 on the U_q side. H_alpha still open.
+
+
+2026-11-15: PR #7966 merged (rebase, b2b349f3607) on owner's tap. Landed: audit §1–§22, H_alpha wording in the block, ScaleHypothesis class, Lean NucleonWeightSpaceSecondOrder. Bean STAYS OPEN: H_alpha (the n-p MeV scale) is an open conjecture; the bridge-B thread is working on the 1/hbar_q^2 hierarchy.
