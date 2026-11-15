@@ -1,7 +1,7 @@
 ---
 # qou-sm2c
 title: folio.config.json carries a live-broken feedbackDir at the pinned platform
-status: todo
+status: in-progress
 type: bug
 priority: high
 tags:
@@ -9,7 +9,7 @@ tags:
     - config
     - reorg-2026-10-04
 created_at: 2026-09-26T10:31:54Z
-updated_at: 2026-10-04T15:14:36Z
+updated_at: 2026-11-15T22:26:00Z
 parent: qou-n4r9
 ---
 
@@ -81,3 +81,11 @@ untracked directory belonging to another repo.
 is the value the corpus already chose, and it makes the live config agree with
 the migrated one instead of silently disagreeing on the single value that
 matters. Option 2 is defensible only if the bump is imminent.
+
+## Resolution recorded 2026-11-15 (`Q-10V9-3 = 1`)
+
+Option 1 and Option 2 have both landed on `main`:
+
+1. Commit `dad33d9790184b9a5c4bc1f7d9c63ba318c8f145` (`qou-yf1y: qou.json + qou.config.json, and the feedbackDir defect that was live at the pin`) changed `"feedbackDir"` from `"folio-assistant/feedback"` to `".folio-feedback"` in `folio.config.json` (Option 1) and renamed `harness.config.json` to `qou.config.json` (which also carries `"feedbackDir": ".folio-feedback"`).
+2. Commit `5369ef849cdafec3ffb960d7fee999d6047c986f` (`S1: bump the platform pin to folio-assistant main and declare qou's stack`) subsequently bumped `.folio-assistant-pin` past `26c5d37` so the platform reads `qou.config.json` (`"feedbackDir": ".folio-feedback"`) directly and removed the retired `folio.config.json`.
+3. Verified on `main` (`b8a698e518f74a1c7fd4d053438c71042ec323a5`): `qou.config.json` sets `"feedbackDir": ".folio-feedback"` and no `folio.config.json` or `harness.config.json` remains. Kept `status: in-progress` per owner rule (no unilateral bean closure).

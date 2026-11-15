@@ -1,13 +1,13 @@
 ---
 # qou-j1e5
 title: 'c1: the six values are GROUPED-word — re-derive under Borromean, or scope them (blocks the probe going green)'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T03:58:42Z
-updated_at: 2026-10-04T15:10:51Z
+updated_at: 2026-11-15T22:26:00Z
 parent: qou-10v9
 ---
 
@@ -163,3 +163,24 @@ classical floor is untouched.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-06 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Completed and synced 2026-11-15 (`Q-10V9-3 = 1`) — PR #6931 (`fb13d307c7`) + PR #8047 (`6d9ff92721`)
+
+1. **Merged SHA of PR #6931 recorded:** `fb13d307c7df16eb4103fb0f577d119512c7f8a5` (including `26f09881914bf9823275cacc8e97e5b1ef8df2b5`, `20197f1e7510948092d55faed81fc543500609b7`, `f4188f3facb3ad33679de82f773bb57d2a20ba28`), which updated `folio/quantum-observable-universe/lean/QOU/MassTheory/PairwiseChainLeadingOrder.lean` to the Borromean `c₁` definitions (`pp 1/8, pn 1/16, nn 0, T 1/64, ³He 1/8, ⁴He 7/128`), `c1Closed 3 (-2)`, `chain_over_atom_He4_of_letters` (`24/7`), and `chain_ratios_T_He3_not_invariant`.
+2. **Higher-order Borromean measurements (`c₂`, `c₃`, `c₄`, via `qou-yaig` / `2026-09-06-c3-under-borromean-the-second-order-is-the-only-bad-one.md` and `c2_diagonal_insertion_expansion_probe.py`):**
+   - Exact `[ε^k]` coefficients `a₀..a₄` of `Δtr(1+ε)` under Borromean:
+     - `pp (2,0)`: `a₀ = 1/8, a₁ = 1/8, a₂ = 29/32, a₃ = 105/32, a₄ = -1005/128`
+     - `pn (1,1)`: `a₀ = 1/8, a₁ = 1/16, a₂ = 23/32, a₃ = 149/32, a₄ = -785/192`
+     - `nn (0,2)`: `a₀ = 1/8, a₁ = 0, a₂ = 1/16, a₃ = 107/16, a₄ = -187/32`
+     - `T (1,2)`: `a₀ = 3/32, a₁ = 1/64, a₂ = 97/128, a₃ = 711/128, a₄ = -1391/384`
+     - `³He (2,1)`: `a₀ = 3/32, a₁ = 1/8, a₂ = 141/128, a₃ = 349/64, a₄ = 1613/1536`
+     - `⁴He (2,2)`: `a₀ = 7/128, a₁ = 7/128, a₂ = 411/512, a₃ = 2247/512, a₄ = 16115/6144`
+   - `c₂ = a₁ + a₂` (all six Borromean, including `⁴He` at `P = 4`):
+     `pp 33/32, pn 25/32, nn 1/16, T 99/128, ³He 157/128, ⁴He 439/512` (with `c₂·ℏ² / c₁·ℏ` at `⁴He` = `1.5535` vs `1.4639` grouped, and second-order chain/atom ratios `T 12/11`, `³He 232/157`, `⁴He 960/439`).
+   - `c₃ = a₂ + a₃` (all six Borromean, `P = 5`):
+     `pp 67/16, pn 43/8, nn 27/4, T 101/16, ³He 839/128, ⁴He 1329/256` (or in full binomial `ℏ_q³` convention `a₁ + 2a₂ + a₃`: `pp 167/32, pn 197/32, nn 109/16, T 907/128, ³He 249/32, ⁴He 3097/512`); ratios `c₃·ℏ³ / c₂·ℏ²` = `0.4023, 0.6817, 10.7008, 0.8087, 0.5295, 0.5999`, confirming #6607's conclusion that order 3 shrinks relative to order 2.
+   - `c₄ = a₃ + a₄` (`P = 6`):
+     `pp -585/128, pn 109/192, nn 27/32, T 371/192, ³He 9989/1536, ⁴He 43079/6144`.
+3. **Probe & witness repair in PR `#8047` (`6d9ff92721d94595fab26f3d397f766c7e38044d`):**
+   - PR `#6931` step 1 (`26f0988191`) had regenerated `c1-leading-coefficient-derived-probe.witness.json` before `RECORDED` and `closed_form` in `c1_leading_coefficient_derived_probe.py` were updated to Borromean, leaving `c1-leading-coefficient-derived-probe.witness.json` on `main` with `allPassed: false`, and had not re-run `binding_chain_floor_corrected_probe.py`.
+   - PR `#8047` updates `c1_leading_coefficient_derived_probe.py` (`RECORDED` = Borromean `c₁`, `closed_form` = `(3Z - 2N)`, `EXACT_C2_BORROMEAN`, `EXACT_C3_BORROMEAN`, `EXACT_C4_BORROMEAN`) and `c1-leading-coefficient-derived-probe.witness.json` (`allPassed: true`, 8/8 assertions passing), updates `binding_chain_floor_corrected_probe.py` and `binding-chain-floor-corrected-probe.witness.json` to the canonical Borromean word (`allPassed: true`, 3/3 assertions passing), fills in the `⁴He` `439/512` (`1.5535`) row and `c₃` cross-reference in `docs/audits/2026-09-06-the-c1-c2-crossover-is-grouped-specific.md`, and syncs the `[★]` docstrings in `LeadingOrderTraceCoefficient.lean`. Kept `status: in-progress` per owner rule (no unilateral bean closure).
