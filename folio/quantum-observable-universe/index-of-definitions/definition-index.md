@@ -948,7 +948,7 @@
 | [prop:variational-equations](#prop:variational-equations) | Variational equations of the categorical action | Ch 2 | `qou:QOU.variational_equations` |
 | [prop:vertex-is-exceptional-divisor](#prop:vertex-is-exceptional-divisor) | Vertex operators factor through the exceptional divisor | Ch 12 | `qou:QOU.vertex_is_exceptional_divisor` |
 | [prop:volume-perturbation-formula](#prop:volume-perturbation-formula) | Volume perturbation: $\delta\Phi_k = z^2 \cdot \mathrm{Vol}(4_1) \cdot [k{-}3]_q$ | Ch 12 | `qou:QOU.BraidKnot.volume_perturbation` |
-| [prop:vorticity-lower-bound](#prop:vorticity-lower-bound) | Vorticity lower bound for anti-parallel filament collision as $q \to 1$ | Ch 18 | `qou:QOU.FluidDynamics.vorticity_lower_bound_conditional` |
+| [conj:vorticity-lower-bound](#conj:vorticity-lower-bound) | Vorticity lower bound for anti-parallel filament collision as $q \to 1$ | Ch 18 | `qou:QOU.FluidDynamics.vorticity_lower_bound_conditional` |
 | [prop:weak-equiv-invariance](#prop:weak-equiv-invariance) | Weak equivalence invariance of physical states | Ch 4 | `qou:QOU.Torsion.weak_equiv_invariance` |
 | [prop:weak-symmetric-normalization](#prop:weak-symmetric-normalization) | Weak-sector symmetric-channel Plancherel normalization $\mathcal{N}_{\rm sym}(q)$ | Ch 12 | `qou:QOU.BraidsAndKnots.weak_symmetric_normalization` |
 | [prop:wedderburn-bratteli-recursion](#prop:wedderburn-bratteli-recursion) | Wedderburn--Bratteli recursion for Jones--Markov weights $y_\lambda$ at $H_n(R, q)$ | Ch 12 | `qou:QOU.BraidsAndKnots.wedderburn_bratteli_recursion` |
