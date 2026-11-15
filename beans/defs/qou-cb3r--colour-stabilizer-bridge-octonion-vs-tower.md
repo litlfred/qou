@@ -29,3 +29,6 @@ paragraph in authorNotes). Neither is started, because a stand-down from session
 
 ## 2026-11-15: check D over ℚ(q) (taken over by the project thread "Map SM and eightfold way, probe option C")
 Over ℚ(q), every U_q(g₂)-endomorphism of V₇⊗V₇ that preserves 3⊗3 is a scalar on it (W-preserving subspace dim 2 of 4). So no quantum-G₂ braiding restricts to Jimbo's Ř on the colour triplet at generic q. The triplet is forced by its weights. Audit §8.1. A and B are still to do.
+
+## 2026-11-15: A and B done (PR #7866, 4e669e4b0 and 27b552af9)
+B: a calibration note on the conjecture block. A: `ColourBridge K g q` in `QOU/StandardModel/ColourBridge.lean`; the conjecture's lean.ref now points to it. Proved: E01 in the image forces q = 1; the class is satisfiable at q = 1 by gl3. Still open: the intended instance g = su3 e (x) Q(i), which needs complexification to be formalised. The bean stays open.
