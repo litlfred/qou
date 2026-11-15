@@ -1225,6 +1225,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "646af6bd397d",
+          "ts": "637b1f2591f9",
+          "lean": "2e90367ee349",
+          "lean_statement": "47261fa52f14"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:56:01.396Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "Lean is a toy: `List ℝ` plus integers, with operations *defined* to have the claimed properties (braiding := reverse and negate amplitude; mass formula := `hadronMass`). The claimed values are taken as definitions. The statement's setting (a rigid braided monoidal category) is absent. Narrative issues: (1) braiding is not involutive in a braided (non-symmetric) category, and β\\ | alt = −1 is a symmetric-category fact (Hecke eigenvalues are q, −q⁻¹). (4) The additive mass under fusion conflicts with (3) when fusion \"constructs the Hopf link\". The Lean mass term is `hopfLinkCount·Q·M`, not the statement's Q·M"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2459,6 +2477,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-11-15T21:56:01.396Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
