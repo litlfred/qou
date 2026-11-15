@@ -1,13 +1,13 @@
 ---
 # qou-1inh
 title: 64 authored blocks cannot enter the KG — 63 have no label, 1 is in a nested subdir
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-27T05:11:12Z
-updated_at: 2026-10-04T15:16:06Z
+updated_at: 2026-11-15T20:55:00Z
 parent: qou-n4r9
 ---
 
@@ -77,3 +77,12 @@ than a comment in the workflow.
 
 Under the KG-as-authority ruling these 64 are blocks a reader sees in the paper
 and a graph consumer cannot find at all.
+
+## Owner ruling & PR (2026-11-15, `Q-N4R9-1 = 2`)
+
+- **Owner ruling (`Q-N4R9-1 = 2`, 2026-11-15):** Mint deterministic `prose:<stem>` labels for the unlabeled `prose(...)` blocks and generate their `.jsonld` companions alongside the nested `nuclear-interactions/audit/wigner-su4-alpha-cluster-probe` block.
+- **Measured on `origin/main` (`05005d77682`) and implemented in `litlfred/qou#7999` (`7f54f30e7e9f44d6b242c3421ddba5ee7a464904`):**
+  - Added deterministic collision-free `label: "prose:<stem>"` to all **67** unlabeled `prose(...)` `.ts` manifests under `folio/quantum-observable-universe/` (using `label: "prose:stochastic-mechanics-outro-braids-and-knots"` on `stochastic-mechanics/outro-braids-and-knots.ts` to disambiguate from `braids-and-knots/outro-braids-and-knots.ts`).
+  - Generated `.jsonld` companions for all 67 newly-labeled `prose` blocks plus `folio/quantum-observable-universe/nuclear-interactions/audit/wigner-su4-alpha-cluster-probe.jsonld` (`rem:wigner-su4-alpha-cluster-probe`) at the pinned platform (`82b389982a73701b77f723d34d42c77acf41b5b4`).
+  - Verified zero `.md` or `.lean` changes and unchanged `scripts/run-validate.ts` baseline (14 issues, 0 new issues).
+  - Kept `status: in-progress` pending merge of `litlfred/qou#7999`.
