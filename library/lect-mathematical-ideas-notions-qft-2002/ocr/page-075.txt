@@ -1,0 +1,64 @@
+MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 75
+
+these functions are elementary for odd d). There exists a unique up to scaling
+solution, which decays at infinity, namely,
+
+g = Cr* (Jaca (imr) + i4J_sa(imr)), (dF 2).
+
+For d = 2, this expression is zero, and one should instead take the limit of the right
+hand side divided by d— 2 as d > 2 (which will generate a logarithmic factor Inr).
+The normalizing constant C can be found from the condition that AG = 6.
+
+Remark. It is easy to check that for d = 1 this function equals the familiar
+Green’s function for quantum mechanics, e~"” /2m.
+
+If m = 0 (massless case), the basis of solutions is: 1,r for d= 1, 1, nr for d= 2,
+and 1,r?~¢ for d > 2. Thus, if d < 2, we don’t have a decaying solution and thus
+the corresponding quantum theory will be deficient: it will not satisfy the clustering
+property. On the other hand, for d > 2 we have a unique up to scaling decaying
+solution g = Cr'~¢. The constant C is found as in the massive case.
+
+The higher correlation founctions are found from the 2-point function via the
+Wick formula, as usual.
+
+We should now note a fundamental difference between quantum mechanics and
+quantum field theory in d > 1 dimensions. This difference comes from the fact that
+while for d = 1, the Green’s function G(x) is continuous at z = 0, for d > 1 it is
+singular at z = 0. Namely, G(x) behaves like C'|a|?~¢ as x > 0 for d > 2, and as
+Cln|2| as d = 2. Thus for d > 1, unlike the case d = 1, the path integral
+
+[ e2eo(ene SDE
+
+(as defined above) makes sense only if «; # x;. In other words, this path integral
+should be regarded not as a function but rather as a distribution. Luckily, there is
+a canonical way to do it, since the Green’s function G(z) is locally L.
+
+Now we can Wick rotate this theory back into the Minkowski space. It is clear
+that the Green’s function will then turn into Gy(x) = g(\/|2/? + ie), The higher
+correlation functions, as before, are determined from this by the Wick formula.
+
+Actually, it is more convenient to describe this theory “in momentum space”,
+where the Green’s function can be written more explicitly. Namely, the Fourier
+transform G(p) of the distribution G(2) is a solution of the equation
+
+pa +m2G = 1,
+obtained by Fourier transforming the differential equation for G. Thus,
+
+A 1
+G(») = ———
+(p) Pam
+
+as in the quantum mechanics case. Therefore, like in quantum mechanics, the Wick
+rotation produces the distribution
+
+G =——_——_
+u(P) Pm +e’
+
+a
+
+which is the Fourier transform of Gy4(2).
+
+11.3. Spinors. To consider field theory for fermions, we must generalize to the
+case of d > 1 the basic fermionic Lagrangian dy. To do this, we must replace
+a by some differential operator on V. This operator should be of first order, since
+in fermionic quantum mechanics it was important that the equations of motion are

@@ -1,0 +1,1 @@
+From the mathematical perspective, the braiding and fusion rules must satisfy certain consistency conditions known as the Seiberg-Moore Polynomial Equations (also known as the pentagon and hexagon equations).

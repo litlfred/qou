@@ -1,0 +1,1 @@
+This paper is based on the assumption that black hole evolution can be reconciled with quantum theory, a viewpoint which has been most strongly advocated by ’t Hooft [3].§ We shall introduce three postulates upon which we believe a phenomenological description of black holes should be based.

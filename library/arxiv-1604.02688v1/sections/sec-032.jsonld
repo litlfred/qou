@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1604.02688v1/sections/sec-032",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "A.1. Euler characteristic from generalised angle structures",
+  "pageStart": 51,
+  "pageEnd": 55,
+  "contains": [
+    "library/arxiv-1604.02688v1/blocks/prose-sec-032"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1604.02688v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1604.02688v1",
+  "provenance": "ingested"
+}

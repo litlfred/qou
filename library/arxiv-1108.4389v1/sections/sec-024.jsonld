@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1108.4389v1/sections/sec-024",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Gluing and bipyramids",
+  "pageStart": 48,
+  "pageEnd": 50,
+  "contains": [
+    "library/arxiv-1108.4389v1/blocks/prose-sec-024",
+    "library/arxiv-1108.4389v1/blocks/recommendation-sec-024-01",
+    "library/arxiv-1108.4389v1/blocks/recommendation-sec-024-02",
+    "library/arxiv-1108.4389v1/blocks/recommendation-sec-024-03",
+    "library/arxiv-1108.4389v1/blocks/recommendation-sec-024-04",
+    "library/arxiv-1108.4389v1/blocks/recommendation-sec-024-05"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1108.4389v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1108.4389v1",
+  "provenance": "ingested"
+}

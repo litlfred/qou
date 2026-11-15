@@ -1,0 +1,68 @@
+using real-less-rsqrt by blast
+thus ?thesis
+using (Re xz < 0»
+by (simp add: field-simps)
+qed
+hence —1 < ?a ?a < 1
+by linarith+
+moreover
+have (Re r) * 2a * ?a — 2* 2a + Rex=0
+using (Re « # 0) «1 — (Rex)? > 0»
+by (simp add: field-simps power2-eq-square)
+ultimately
+show —1 < Re (cor ?a) A Re (cor ?a) < 1 A is-real ?a A poincare-distance (of-complex ?a) (of-complex x) =
+poincare-distance (of-complex ?a) On
+using *
+by auto
+
+fix z
+assume **: — 1 < Rez A Rez < 1 A is-real z A
+poincare-distance (of-complex z) (of-compler x) = poincare-distance (of-complez z) On
+hence Re x * Rez * Rez— 2% Rez+ Rex =0
+using *[rule-format, of Re z| x
+by auto
+moreover
+have sqrt (4 — 4 * Rex * Rex) = 2 * sqrt(1 — Rex * Rez)
+proof—
+have sqrt (4 — 4 * Rex * Re x) = sqrt(4 * (1 — Rex * Re z))
+by simp
+thus ?thesis
+by (simp only: real-sqrt-mult, simp)
+qed
+moreover
+have (2 — 2 * sqrt (1 — Rex * Re x)) / (2 * Rex) = ?a
+proof—
+have (2 — 2 * sqrt (1 — Rex * Rex)) / (2 * Rex) =
+(2 * (1 — sqrt (1 — Rex * Re x))) / (2 * Rex)
+by simp
+thus ?thesis
+by (subst (asm) mult-divide-mult-cancel-left) (auto simp add: power2-eq-square)
+qed
+moreover
+have (2 + 2 * sqrt (1 — Rex * Re x)) / (2 * Rex) = ?b
+proof—
+have (2 + 2 * sqrt (1 — Rex * Rex)) / (2 * Rex) =
+(2 * (1 + sqrt (1 — Rea * Re x))) / (2 * Re x)
+by simp
+thus ?thesis
+by (subst (asm) mult-divide-mult-cancel-left) (auto simp add: power2-eq-square)
+qed
+ultimately
+have Re z = ?a V Rez = ?b
+using discriminant-nonneg|of Re x —2 Re x Re 2] discrim-def|of Re x —2 Re x]
+using «Re x # 0) (-1 < Rea ‘Rex < 1) «1 — (Rex)? > 0»
+by (auto simp add:power2-eq-square)
+have | ?b| > 1
+proof (cases Re « > 0)
+case True
+have (Re x — 1)? < 1 — (Rex)?
+using (Rex > 0) x
+by (simp add: power2-eq-square field-simps)
+hence Re x — 1 < sqrt (1 — (Re 2)”)
+using real-less-rsqrt
+by simp
+thus ?thesis
+using «1 — (Re x)? > 0) ‘Rex > 0»
+by simp
+
+62

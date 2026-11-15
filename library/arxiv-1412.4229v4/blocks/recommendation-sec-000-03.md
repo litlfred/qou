@@ -1,0 +1,1 @@
+Even though our motivation is the squaring operation for commutative rings, we develop the squaring operation more generally for commutative DG rings, and this is the way we shall present the results in the Introduction.

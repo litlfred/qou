@@ -1,1 +1,0 @@
-If one restricts to Z⁄=t for some t⁄∈χ, there is another description of this sphere.

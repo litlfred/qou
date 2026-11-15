@@ -8,5 +8,6 @@ pages: 11-11
 source_pdf: 0806.4741v1.pdf
 source_sha256: 5e7ad85a99fb3552
 toc_source: outline
+doc_brief: "The deformation quantizations of the hyperbolic plane — We describe the space of (all) invariant deformation quantizations on the hyperbolic plane D as solutions of the evolution of a second order"
 ---
-3.1
+Deformation Quantization

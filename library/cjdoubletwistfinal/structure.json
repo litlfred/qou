@@ -6,7 +6,9 @@
   "sha256": "a1e18db5232b39f4c76cb6dc74cc3f06cf2683f9a39b652a66ec7e880e4771de",
   "bytes": 353282,
   "pages": 24,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -15,352 +17,523 @@
   "doi": null,
   "title": "THE COLORED JONES POLYNOMIAL AND KONTSEVICH-ZAGIER SERIES FOR DOUBLE TWIST KNOTS",
   "authors_raw": "JEREMY LOVEJOY AND ROBERT OSBURN",
-  "abstract": "Using a result of Takata, we prove a formula for the colored Jones polynomial of the double twist knots K(−m,−p) and K(−m,p) where m and p are positive integers. In the ( −m, −p) case, this leads to new families of q-hypergeometric series generalizing the Kontsevich-Zagier series. Comparing with the cyclotomic expansion of the colored Jones polynomials of K(m,p) gives a generalization of a duality at roots of unity between the Kontsevich-Zagier function and the generating function for strongly unimodal sequences.",
+  "title_lines": [
+   "THE COLORED JONES POLYNOMIAL AND KONTSEVICH-ZAGIER",
+   "SERIES FOR DOUBLE TWIST KNOTS"
+  ],
+  "abstract": "Using a result of Takata, we prove a formula for the colored Jones polynomial of the double twist knots K(−m,−p) and K(−m,p) where m and p are positive integers. In the (−m, −p) case, this leads to new families of q-hypergeometric series generalizing the Kontsevich-Zagier series. Comparing with the cyclotomic expansion of the colored Jones polynomials of K(m,p) gives a generalization of a duality at roots of unity between the Kontsevich-Zagier function and the generating function for strongly unimodal sequences.",
   "docinfo": {
    "Producer": "pdfTeX-1.40.17",
    "Creator": "TeX",
    "CreationDate": "D:20210413064034+01'00'"
   },
-  "title_prev": "THE COLORED JONES POL YNOMIAL AND KONTSEVICH-ZAGIER SERIES FOR DOUBLE TWIST KNOTS",
-  "title_lines": [
-   "THE COLORED JONES POLYNOMIAL AND KONTSEVICH-ZAGIER",
-   "SERIES FOR DOUBLE TWIST KNOTS"
-  ]
+  "title_raw": "THE COLORED JONES POLYNOMIAL AND KONTSEVICH-ZAGIER SERIES FOR DOUBLE TWIST KNOTS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "THE COLORED JONES POLYNOMIAL AND KONTSEVICH-ZAGIER SERIES FOR DOUBLE TWIST KNOTS 1. Introduction Let K be a knot and J N ( K ; q ) be the usual N th colored Jones polynomial, normalized to be 1 for the unknot. It is often useful to determine a q -hypergeometric expression for J N ( K ; q ), and such",
+   "text": "THE COLORED JONES POLYNOMIAL AND KONTSEVICH-ZAGIER SERIES FOR DOUBLE TWIST KNOTS",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
- "toc": [
+ "toc": [],
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "6 inferred entries with mean confidence 0.00, below the 0.6 floor — too little evidence agreed",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (6 inferred entries with mean confidence 0.00, below the 0.6 floor — too little evidence agreed): one section per page.",
+ "figures": [
   {
-   "level": 1,
-   "title": "Introduction",
-   "page": 1,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "JEREMY LOVEJOY AND ROBERT OSBURN",
+   "kind": "figure",
+   "number": "1",
+   "title": "Double twist knots",
    "page": 2,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "JEREMY LOVEJOY AND ROBERT OSBURN",
-   "page": 4,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "JEREMY LOVEJOY AND ROBERT OSBURN",
-   "page": 6,
-   "source": "inferred",
-   "number": "6"
-  },
-  {
-   "level": 1,
-   "title": "Preliminaries",
-   "page": 6,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(σik−σik′)(nik−nik−1)(nik′−nik′−1)",
-   "page": 7,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "JEREMY LOVEJOY AND ROBERT OSBURN",
-   "page": 8,
-   "source": "inferred",
-   "number": "8"
-  },
-  {
-   "level": 1,
-   "title": "JEREMY LOVEJOY AND ROBERT OSBURN",
-   "page": 10,
-   "source": "inferred",
-   "number": "10"
-  },
-  {
-   "level": 1,
-   "title": "JEREMY LOVEJOY AND ROBERT OSBURN",
-   "page": 12,
-   "source": "inferred",
-   "number": "12"
-  },
-  {
-   "level": 1,
-   "title": "Proofs of Theorems 1.1 and 1.2",
-   "page": 12,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "JEREMY LOVEJOY AND ROBERT OSBURN",
-   "page": 14,
-   "source": "inferred",
-   "number": "14"
-  },
-  {
-   "level": 1,
-   "title": "JEREMY LOVEJOY AND ROBERT OSBURN",
-   "page": 16,
-   "source": "inferred",
-   "number": "16"
-  },
-  {
-   "level": 1,
-   "title": "JEREMY LOVEJOY AND ROBERT OSBURN",
-   "page": 18,
-   "source": "inferred",
-   "number": "18"
-  },
-  {
-   "level": 1,
-   "title": "JEREMY LOVEJOY AND ROBERT OSBURN",
-   "page": 20,
-   "source": "inferred",
-   "number": "20"
-  },
-  {
-   "level": 1,
-   "title": "JEREMY LOVEJOY AND ROBERT OSBURN",
-   "page": 22,
-   "source": "inferred",
-   "number": "22"
-  },
-  {
-   "level": 1,
-   "title": "Concluding remarks and questions",
-   "page": 22,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "Acknowledgements",
-   "page": 23,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 23,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "JEREMY LOVEJOY AND ROBERT OSBURN",
-   "page": 24,
-   "source": "inferred",
-   "number": "24"
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
   }
  ],
- "toc_source": "inferred",
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-2-jeremy-lovejoy-and-robert-osburn",
-   "number": "2",
-   "title": "JEREMY LOVEJOY AND ROBERT OSBURN",
+   "id": "page-001",
+   "number": null,
+   "title": "Page 1",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 555,
-   "n_words": 87
+   "n_chars": 1952,
+   "n_words": 318,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-1-introduction",
-   "number": "1",
-   "title": "Introduction",
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
    "level": 1,
-   "page_start": 1,
-   "page_end": 4,
-   "n_chars": 3725,
-   "n_words": 650
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 1062,
+   "n_words": 207,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-4-jeremy-lovejoy-and-robert-osburn",
-   "number": "4",
-   "title": "JEREMY LOVEJOY AND ROBERT OSBURN",
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1445,
+   "n_words": 280,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
    "level": 1,
    "page_start": 4,
-   "page_end": 6,
-   "n_chars": 3129,
-   "n_words": 538
+   "page_end": 4,
+   "n_chars": 1365,
+   "n_words": 271,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-6-jeremy-lovejoy-and-robert-osburn",
-   "number": "6",
-   "title": "JEREMY LOVEJOY AND ROBERT OSBURN",
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1859,
+   "n_words": 334,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
    "level": 1,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 1228,
-   "n_words": 194
+   "n_chars": 2084,
+   "n_words": 388,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-2-preliminaries",
-   "number": "2",
-   "title": "Preliminaries",
-   "level": 1,
-   "page_start": 6,
-   "page_end": 7,
-   "n_chars": 1305,
-   "n_words": 273
-  },
-  {
-   "id": "sec-005-2-σikσikniknik1niknik1",
-   "number": "2",
-   "title": "(σik−σik′)(nik−nik−1)(nik′−nik′−1)",
+   "id": "page-007",
+   "number": null,
+   "title": "Page 7",
    "level": 1,
    "page_start": 7,
-   "page_end": 8,
-   "n_chars": 878,
-   "n_words": 173
+   "page_end": 7,
+   "n_chars": 1556,
+   "n_words": 337,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-006-8-jeremy-lovejoy-and-robert-osburn",
-   "number": "8",
-   "title": "JEREMY LOVEJOY AND ROBERT OSBURN",
+   "id": "page-008",
+   "number": null,
+   "title": "Page 8",
    "level": 1,
    "page_start": 8,
-   "page_end": 10,
-   "n_chars": 3188,
-   "n_words": 713
+   "page_end": 8,
+   "n_chars": 2085,
+   "n_words": 501,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-007-10-jeremy-lovejoy-and-robert-osburn",
-   "number": "10",
-   "title": "JEREMY LOVEJOY AND ROBERT OSBURN",
+   "id": "page-009",
+   "number": null,
+   "title": "Page 9",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 1235,
+   "n_words": 314,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-010",
+   "number": null,
+   "title": "Page 10",
    "level": 1,
    "page_start": 10,
-   "page_end": 12,
-   "n_chars": 2674,
-   "n_words": 524
+   "page_end": 10,
+   "n_chars": 1588,
+   "n_words": 392,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-008-12-jeremy-lovejoy-and-robert-osburn",
-   "number": "12",
-   "title": "JEREMY LOVEJOY AND ROBERT OSBURN",
+   "id": "page-011",
+   "number": null,
+   "title": "Page 11",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 1239,
+   "n_words": 252,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-012",
+   "number": null,
+   "title": "Page 12",
    "level": 1,
    "page_start": 12,
    "page_end": 12,
-   "n_chars": 456,
-   "n_words": 72
+   "n_chars": 1164,
+   "n_words": 247,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-009-3-proofs-of-theorems-11-and-12",
-   "number": "3",
-   "title": "Proofs of Theorems 1.1 and 1.2",
+   "id": "page-013",
+   "number": null,
+   "title": "Page 13",
    "level": 1,
-   "page_start": 12,
-   "page_end": 14,
-   "n_chars": 1571,
-   "n_words": 246
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 1037,
+   "n_words": 180,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-010-14-jeremy-lovejoy-and-robert-osburn",
-   "number": "14",
-   "title": "JEREMY LOVEJOY AND ROBERT OSBURN",
+   "id": "page-014",
+   "number": null,
+   "title": "Page 14",
    "level": 1,
    "page_start": 14,
-   "page_end": 16,
-   "n_chars": 2269,
-   "n_words": 395
+   "page_end": 14,
+   "n_chars": 1071,
+   "n_words": 221,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-011-16-jeremy-lovejoy-and-robert-osburn",
-   "number": "16",
-   "title": "JEREMY LOVEJOY AND ROBERT OSBURN",
+   "id": "page-015",
+   "number": null,
+   "title": "Page 15",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 1325,
+   "n_words": 271,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-016",
+   "number": null,
+   "title": "Page 16",
    "level": 1,
    "page_start": 16,
-   "page_end": 18,
-   "n_chars": 3215,
-   "n_words": 600
+   "page_end": 16,
+   "n_chars": 1670,
+   "n_words": 363,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-012-18-jeremy-lovejoy-and-robert-osburn",
-   "number": "18",
-   "title": "JEREMY LOVEJOY AND ROBERT OSBURN",
+   "id": "page-017",
+   "number": null,
+   "title": "Page 17",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 1706,
+   "n_words": 369,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-018",
+   "number": null,
+   "title": "Page 18",
    "level": 1,
    "page_start": 18,
-   "page_end": 20,
-   "n_chars": 2431,
-   "n_words": 412
+   "page_end": 18,
+   "n_chars": 1482,
+   "n_words": 312,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-013-20-jeremy-lovejoy-and-robert-osburn",
-   "number": "20",
-   "title": "JEREMY LOVEJOY AND ROBERT OSBURN",
+   "id": "page-019",
+   "number": null,
+   "title": "Page 19",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 1074,
+   "n_words": 191,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-020",
+   "number": null,
+   "title": "Page 20",
    "level": 1,
    "page_start": 20,
-   "page_end": 22,
-   "n_chars": 2632,
-   "n_words": 480
+   "page_end": 20,
+   "n_chars": 1373,
+   "n_words": 278,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-014-22-jeremy-lovejoy-and-robert-osburn",
-   "number": "22",
-   "title": "JEREMY LOVEJOY AND ROBERT OSBURN",
+   "id": "page-021",
+   "number": null,
+   "title": "Page 21",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 1394,
+   "n_words": 308,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-022",
+   "number": null,
+   "title": "Page 22",
    "level": 1,
    "page_start": 22,
    "page_end": 22,
-   "n_chars": 1208,
-   "n_words": 238
+   "n_chars": 1974,
+   "n_words": 410,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-015-4-concluding-remarks-and-questions",
-   "number": "4",
-   "title": "Concluding remarks and questions",
-   "level": 1,
-   "page_start": 22,
-   "page_end": 23,
-   "n_chars": 1865,
-   "n_words": 297
-  },
-  {
-   "id": "sec-016-acknowledgements",
+   "id": "page-023",
    "number": null,
-   "title": "Acknowledgements",
+   "title": "Page 23",
    "level": 1,
    "page_start": 23,
    "page_end": 23,
-   "n_chars": 339,
-   "n_words": 55
+   "n_chars": 3618,
+   "n_words": 571,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-017-references",
+   "id": "page-024",
    "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 23,
-   "page_end": 24,
-   "n_chars": 2029,
-   "n_words": 329
-  },
-  {
-   "id": "sec-018-24-jeremy-lovejoy-and-robert-osburn",
-   "number": "24",
-   "title": "JEREMY LOVEJOY AND ROBERT OSBURN",
+   "title": "Page 24",
    "level": 1,
    "page_start": 24,
    "page_end": 24,
-   "n_chars": 2489,
-   "n_words": 382
+   "n_chars": 2512,
+   "n_words": 375,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 19,
-  "sections": 19,
-  "chars_total": 37186
+  "toc_entries": 0,
+  "toc_inferred_entries": 6,
+  "toc_inferred_mean_confidence": 0.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "regex",
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 24,
+  "chars_total": 38870,
+  "furniture_lines_stripped": 0
  },
  "duplicate_copies": [
   "arxiv-1710.04865v2"

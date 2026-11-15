@@ -1,0 +1,30 @@
+55. Proof of Theorem 1, formula (1).
+
+Let K,; = {x(s)} and Ky = {y(t)} be disjoint oriented smooth closed curves
+in the unit 3-sphere S*>. We must show that in left-translation format, we have
+
+Lk(Ki, Ko) = 1/(4m) Jk. Lyx-1 dx/ds Xdy/dt ¢ Vy o(x, y) ds dt
+— 1(4n’) Jxv«, Ly dx/ds © dy/dt ds dt ,
+where o(a) = (t-—a) cota.
+For the moment, we assume that the curve K, is simple, and that its parametri-
+zation x = x(s) is by arc-length, so that V(x) = dx/ds is a unit tangent vector
+field along K,.
+Then we take Theorem 2, formula (1) for the Biot-Savart operator in left-translation
+format and, given the discussion in the preceding section, apply it to the current
+flow V along the loop K, to get
+BS(V)(y) = Jk: Lyt V(X) XVyo(x, y) ds
+— 142? Sx, Lyx-1 V(x) ds
++ 2Vy Sx, Lyct V(x) © Vyoilx, y) ds,
+where (a) = (—1/4n”) (t-—a)cota and (a) = (—1/16s°) a (2m—-«).
+Note that
+Lyx-1 V(x) ¢ Vybi(x, y) = — V(x) ¢ Vihi(x, y)
+= —dx/ds ¢ V,1(x(s), y)
+= — (d/ds) > ;(x(S), y) ,
+
+whose integral around the loop K, is zero. So we can drop the third integral
+and are left with
+
+BS(V)(y) = Jk: Lyct V(x) X Vy bo0(x, y) ds
+— Wn? fxr Lyt V(x) ds.
+
+104

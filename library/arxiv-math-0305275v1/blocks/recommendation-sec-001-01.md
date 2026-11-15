@@ -1,0 +1,1 @@
+It follows that, using Definition [\[d pd\]](#d pd){reference-type="ref" reference="d pd"}, in order for a pseudo-developing map to exist, $\rho($Stab$(p))$ must have a fixed point in $\partial \ensuremath{\mathbb H}^3$.

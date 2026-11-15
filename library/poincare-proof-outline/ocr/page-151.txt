@@ -1,0 +1,66 @@
+shows 4d B € unit-disc. point-between-sets p Bw
+proof (cases (4 20 € unit-disc. p 20) \ (A yO € unit-disc. w y0))
+case False
+thus ?thesis
+using assms by blast
+next
+case True
+then obtain YO where ~ YO YO € unit-disc
+by auto
+obtain A where *: A € unit-disc set-order A p
+using assms
+by auto
+show ?thesis
+proof(cases V x € unit-disc. p © —+ « = A)
+case True
+thus ?thesis
+using <A € unit-discy
+using poincare-between-nonstrict(1) by blast
+next
+case False
+then obtain X0 where y X0 X0 4 A XO € unit-disc
+by auto
+have YOA A
+proof (rule ccontr)
+assume — YO # A
+hence V z € unit-disc. ~ « —> poincare-between A « A
+using * «W YO»
+by (cases A) force
+hence V z € unit-disc. pt —7 r= A
+using * poincare-between-sandwich by blast
+thus False
+using False by auto
+qed
+
+show ?thesis
+proof (cases 3 B € unit-disc. p B A w B)
+case True
+then obtain B where B € unit-disc p By B
+by auto
+hence V z € unit-disc. ~ « —>+ poincare-between A x B
+using * by auto
+have V y € unit-disc. y) y —> poincare-between A B y
+using * <B € unit-disc) «p By
+by auto
+
+show ?thesis
+proof (rule+)
+show B € unit-disc
+by fact
+next
+fix vy
+assume z € unit-disc y € unit-disc p x A Wy
+hence poincare-between A x B poincare-between A B y
+using <V x € unit-disc. y x —+ poincare-between A x By
+using <V y € unit-disc. 7) y —> poincare-between A B y»
+by simp+
+thus poincare-between x B y
+using ‘x € unit-disc) ‘y € unit-disc) «B € unit-discy «A € unit-discy
+using poincare-between-transitivity[of A x B y|
+by simp
+qed
+next
+case False
+have poincare-between A X0 YO
+using «yp X0> «Wy YO» * «YO € unit-discy «XO € unit-discy
+by auto

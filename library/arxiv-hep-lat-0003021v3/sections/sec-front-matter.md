@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 0003021v3.pdf
 source_sha256: b35dfd9ab88b71d8
 toc_source: inferred
+doc_brief: "arXiv:hep-lat/0003021v3 19 May 2000 — We compute the low-lying spectrum of the staggered Dirac operator above and below the ﬁnite temperature phase transition in both quenched QCD and in dynamical"
 ---
 arXiv:hep-lat/0003021v3  19 May 2000
 Low-lying Eigenvalues of the QCD Dirac Operator
@@ -35,4 +36,3 @@ location of the chiral phase transition, as ﬁrst suggested by Jackson and Verb
 NBI-HE-00-12
 NORDITA-2000/30 HE
 hep-lat/0003021
-1

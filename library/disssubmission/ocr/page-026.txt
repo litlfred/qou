@@ -1,0 +1,56 @@
+18 Chapter 1 — Vanishing theorems on abelian varieties
+
+geometric origin each of the occuring translations can be taken to be torsion
+points of II(X), see lemma 1.11 below. More generally, for semisimple
+sheaf complexes K = @,cz’H "(K)|[n] we define
+
+S(K) = U APH "(R)).
+neZ
+The definitions imply that (Ky) = a-!-S(K) for all x € T1(X), and for
+all semisimple K;, Kz we have
+
+S (Ky * Ky) Cc S(Ki)U-S(K2) = S (Ky @K),
+
+where Kj * K> denotes the convolution of K; and K> as defined in section 2.1
+below. Note that the equality displayed on the right hand side reduces the
+computation of the spectrum of semisimple sheaf complexes to the case
+of simple perverse sheaves. Of course the spectrum .7(P) may be empty,
+for example if P is a skyscraper sheaf or, more interestingly, if P = i,£[1]
+where i: C <+ X is the embedding of a smooth curve in X and where E is
+an irreducible local system on C of rank at least two.
+
+Since 7(X,0) © Z8, the character group II(X) © C7 is a complex
+algebraic torus of rank 2g. Furthermore II is a contravariant functor: For
+any homomorphism h: X —+ B of complex abelian varieties, the pull-back
+of characters gives rise to a homomorphism IT1(/) : T1(B) —> II(X) between
+the corresponding algebraic tori.
+
+REMARK 1.10. The functor II has the following properties.
+
+(a) Leth: X — B be an isogeny with kernel F. Then we have an exact
+sequence
+0 —~ Hom(F,C*) TI(B)
+For P € Perv(X,C) we have h.(P) € Perv(B,C), and II(h) induces
+a surjection
+
+T(h)
+
+TI(X) 0.
+
+S (hi(P)) > S(P).
+
+(b) Let i: A—> X be an embedding of abelian varieties with quotient
+morphism q : X — B =X/A. Then we have an exact sequence
+
+Tl (i
+0 m(B) 2 nx)
+
+In this situation we denote by K(A) C TI(X) the image of TI(q).
+
+TI(A) 0.
+
+Proof. The exactness of the considered sequences can be seen from the
+description of a complex abelian variety as the quotient of a complex vector
+space modulo a lattice. For the surjectivity .7(g.(P)) -» (P) in part (a)
+one can use that H'(X, Pp) = H'(B,g.(P)y) for the pull-back p = II(g)(x)
+and that II(g) is surjective. Oo

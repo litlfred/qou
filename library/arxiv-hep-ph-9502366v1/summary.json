@@ -2,345 +2,135 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-hep-ph-9502366v1",
  "source_sha256": "56df064956ca03f8",
- "brief": "An introduction to the basic ideas and methods of Chiral Perturbation Theory is presented.",
- "extended": "**arxiv-hep-ph-9502366v1**\n\n57 pp, 67 sections.\n\n**Abstract.** An introduction to the basic ideas and methods of Chiral Perturbation Theory is presented. Several phenomenologic al applica- tions of the eﬀective Lagrangian technique to strong, elect romagnetic and weak interactions are discussed. To be published in Reports on Progress in Physics February 1995 1\n\n**Outline.** 2 A Pich; 1 Introduction; 4 Ga; 4 F µνFµν + a; 4 A Pich; 2 Chiral symmetry; 3 Eﬀective chiral Lagrangian at lowest order; 6 A Pich; 0 Vud Vus; 8 A Pich; 2 B0 U (φ)ij,; 2 B0 U (φ)†ij,; 2 (mu + md) , ε = B0; 10 A Pich; 4 ChPT at O(p4); 1 The most general eﬀective chiral Lagrangian ; 4.1 O(p4) Lagrangian; 4.2 Chiral loops",
+ "brief": "Chiral Perturbation Theory — An introduction to the basic ideas and methods of Chiral Perturbation Theory is presented.",
+ "extended": "**Chiral Perturbation Theory**\n\n*Departament de F´ısica Teòrica and Institut de F´ısica Corpuscular*\n\n57 pp, 25 sections.\n\n**Abstract.** An introduction to the basic ideas and methods of Chiral Perturbation Theory is presented. Several phenomenological applica- tions of the eﬀective Lagrangian technique to strong, electromagnetic and weak interactions are discussed. To be published in Reports on Progress in Physics February 1995\n\n**Outline.** Front matter; 1 Introduction; 2 Chiral symmetry; 3 Eﬀective chiral Lagrangian at lowest order; 4.2 Chiral loops; 4.3 The chiral anomaly; 5.1 Decay constants; 5.2 Electromagnetic form factors; 5.4 Meson and quark masses; 6 The role of resonances in ChPT; 7 Short-distance estimates of ChPT parameters; 8 ∆S = 1 non-leptonic weak interactions; 8.2 Radiative K Decays; 8.3 The chiral anomaly in non-leptonic K decay; 9 Baryons; 9.1 Loops; 9.2 Heavy baryon ChPT; 9.3 Non-leptonic hyperon decays",
  "tokens": {
-  "brief": 22,
-  "extended": 174
+  "brief": 29,
+  "extended": 234
  },
  "sections": [
   {
-   "id": "sec-000-2-a-pich",
-   "title": "A Pich",
-   "pages": "1-1"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-3"
+   "pages": "2-4"
   },
   {
-   "id": "sec-002-4-ga",
-   "title": "Ga",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-003-4-f-µνfµν-a",
-   "title": "F µνFµν + a",
-   "pages": "3-4"
-  },
-  {
-   "id": "sec-004-4-a-pich",
-   "title": "A Pich",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-005-2-chiral-symmetry",
+   "id": "sec-001-2-chiral-symmetry",
    "title": "Chiral symmetry",
    "pages": "4-5"
   },
   {
-   "id": "sec-006-3-eﬀective-chiral-lagrangian-at-lowest-order",
+   "id": "sec-002-3-eﬀective-chiral-lagrangian-at-lowest-order",
    "title": "Eﬀective chiral Lagrangian at lowest order",
-   "pages": "5-6"
+   "pages": "5-11"
   },
   {
-   "id": "sec-007-6-a-pich",
-   "title": "A Pich",
-   "pages": "6-7"
-  },
-  {
-   "id": "sec-008-0-vud-vus",
-   "title": "Vud Vus",
-   "pages": "7-8"
-  },
-  {
-   "id": "sec-009-8-a-pich",
-   "title": "A Pich",
-   "pages": "8-9"
-  },
-  {
-   "id": "sec-010-2-b0-u-φij",
-   "title": "B0 U (φ)ij,",
-   "pages": "9-9"
-  },
-  {
-   "id": "sec-011-2-b0-u-φij",
-   "title": "B0 U (φ)†ij,",
-   "pages": "9-9"
-  },
-  {
-   "id": "sec-012-2-mu-md-ε-b0",
-   "title": "(mu + md) , ε = B0",
-   "pages": "9-10"
-  },
-  {
-   "id": "sec-013-10-a-pich",
-   "title": "A Pich",
-   "pages": "10-10"
-  },
-  {
-   "id": "sec-014-4-chpt-at-op4",
-   "title": "ChPT at O(p4)",
-   "pages": "10-11"
-  },
-  {
-   "id": "sec-015-1-the-most-general-eﬀective-chiral-lagrangian-of",
-   "title": "The most general eﬀective chiral Lagrangian of O(p4), L4, to be considered at tree",
-   "pages": "11-11"
-  },
-  {
-   "id": "sec-016-41-op4-lagrangian",
-   "title": "O(p4) Lagrangian",
-   "pages": "11-11"
-  },
-  {
-   "id": "sec-017-42-chiral-loops",
+   "id": "sec-003-42-chiral-loops",
    "title": "Chiral loops",
-   "pages": "11-12"
+   "pages": "11-13"
   },
   {
-   "id": "sec-018-12-a-pich",
-   "title": "A Pich",
-   "pages": "12-13"
-  },
-  {
-   "id": "sec-019-43-the-chiral-anomaly",
+   "id": "sec-004-43-the-chiral-anomaly",
    "title": "The chiral anomaly",
-   "pages": "13-14"
+   "pages": "13-16"
   },
   {
-   "id": "sec-020-14-a-pich",
-   "title": "A Pich",
-   "pages": "14-14"
-  },
-  {
-   "id": "sec-021-4-u-ℓµu-rνu-ℓαu-rβ-iu-µℓνℓαu-rβ",
-   "title": "U ℓµU †rνU ℓαU †rβ + iU ∂µℓνℓαU †rβ",
-   "pages": "14-14"
-  },
-  {
-   "id": "sec-022-5-low-energy-phenomenology-at-op4",
-   "title": "Low-energy phenomenology at O(p4)",
-   "pages": "14-15"
-  },
-  {
-   "id": "sec-023-51-decay-constants",
+   "id": "sec-005-51-decay-constants",
    "title": "Decay constants",
-   "pages": "15-16"
-  },
-  {
-   "id": "sec-024-16-a-pich",
-   "title": "A Pich",
    "pages": "16-16"
   },
   {
-   "id": "sec-025-52-electromagnetic-form-factors",
+   "id": "sec-006-52-electromagnetic-form-factors",
    "title": "Electromagnetic form factors",
-   "pages": "16-17"
+   "pages": "16-18"
   },
   {
-   "id": "sec-026-53-kl3-decays",
-   "title": "Kl3 decays",
-   "pages": "17-18"
-  },
-  {
-   "id": "sec-027-18-a-pich",
-   "title": "A Pich",
-   "pages": "18-18"
-  },
-  {
-   "id": "sec-028-0-t-f-kπ",
-   "title": "(t) = f Kπ",
-   "pages": "18-18"
-  },
-  {
-   "id": "sec-029-54-meson-and-quark-masses",
+   "id": "sec-007-54-meson-and-quark-masses",
    "title": "Meson and quark masses",
-   "pages": "18-20"
+   "pages": "18-21"
   },
   {
-   "id": "sec-030-20-a-pich",
-   "title": "A Pich",
-   "pages": "20-20"
-  },
-  {
-   "id": "sec-031-l-the-matrix-m-transforms-in-the-same-manner",
-   "title": "The matrix M′ transforms in the same manner;",
-   "pages": "20-21"
-  },
-  {
-   "id": "sec-032-6-the-role-of-resonances-in-chpt",
+   "id": "sec-008-6-the-role-of-resonances-in-chpt",
    "title": "The role of resonances in ChPT",
-   "pages": "21-22"
+   "pages": "21-25"
   },
   {
-   "id": "sec-033-22-a-pich",
-   "title": "A Pich",
-   "pages": "22-22"
-  },
-  {
-   "id": "sec-034-2-rµνrµν-1",
-   "title": "RµνRµν⟩ −1",
-   "pages": "22-22"
-  },
-  {
-   "id": "sec-035-4-r1µνrµν",
-   "title": "R1,µνRµν",
-   "pages": "22-23"
-  },
-  {
-   "id": "sec-036-notation",
-   "title": "Notation",
-   "pages": "23-24"
-  },
-  {
-   "id": "sec-037-24-a-pich",
-   "title": "A Pich",
-   "pages": "24-25"
-  },
-  {
-   "id": "sec-038-7-short-distance-estimates-of-chpt-parameters",
+   "id": "sec-009-7-short-distance-estimates-of-chpt-parameters",
    "title": "Short-distance estimates of ChPT parameters",
-   "pages": "25-26"
+   "pages": "25-27"
   },
   {
-   "id": "sec-039-26-a-pich",
-   "title": "A Pich",
-   "pages": "26-27"
+   "id": "sec-010-8-s-1-non-leptonic-weak-interactions",
+   "title": "∆S = 1 non-leptonic weak interactions",
+   "pages": "27-30"
   },
   {
-   "id": "sec-040-2-vudv",
-   "title": "VudV ∗",
-   "pages": "27-28"
-  },
-  {
-   "id": "sec-041-28-a-pich",
-   "title": "A Pich",
-   "pages": "28-28"
-  },
-  {
-   "id": "sec-042-3-lµ21lµ",
-   "title": "Lµ21Lµ",
-   "pages": "28-29"
-  },
-  {
-   "id": "sec-043-81-k-2π-3π-decays",
-   "title": "K → 2π, 3π decays",
-   "pages": "29-30"
-  },
-  {
-   "id": "sec-044-30-a-pich",
-   "title": "A Pich",
-   "pages": "30-30"
-  },
-  {
-   "id": "sec-045-82-radiative-k-decays",
+   "id": "sec-011-82-radiative-k-decays",
    "title": "Radiative K Decays",
-   "pages": "30-34"
+   "pages": "30-36"
   },
   {
-   "id": "sec-046-3-4π2wr",
-   "title": "(4π)2[wr",
-   "pages": "34-36"
-  },
-  {
-   "id": "sec-047-83-the-chiral-anomaly-in-non-leptonic-k-decays",
+   "id": "sec-012-83-the-chiral-anomaly-in-non-leptonic-k-decays",
    "title": "The chiral anomaly in non-leptonic K decays",
    "pages": "36-36"
   },
   {
-   "id": "sec-048-9-baryons",
+   "id": "sec-013-9-baryons",
    "title": "Baryons",
    "pages": "36-38"
   },
   {
-   "id": "sec-049-91-loops",
+   "id": "sec-014-91-loops",
    "title": "Loops",
    "pages": "38-39"
   },
   {
-   "id": "sec-050-92-heavy-baryon-chpt",
+   "id": "sec-015-92-heavy-baryon-chpt",
    "title": "Heavy baryon ChPT",
-   "pages": "39-40"
+   "pages": "39-41"
   },
   {
-   "id": "sec-051-4-bv-916",
-   "title": "Bv , (9.16)",
-   "pages": "40-41"
-  },
-  {
-   "id": "sec-052-93-non-leptonic-hyperon-decays",
+   "id": "sec-016-93-non-leptonic-hyperon-decays",
    "title": "Non-leptonic hyperon decays",
-   "pages": "41-41"
-  },
-  {
-   "id": "sec-053-2-as",
-   "title": "A(S)",
    "pages": "41-42"
   },
   {
-   "id": "sec-054-10-large--nc-limit-u-1a-anomaly-and-strong-cp-vi",
-   "title": "Large- NC limit, U (1)A anomaly and strong CP violation",
-   "pages": "42-44"
+   "id": "sec-017-10-large-nc-limit-u1a-anomaly-and-strong-cp-viol",
+   "title": "Large-NC limit, U(1)A anomaly and strong CP violation",
+   "pages": "42-45"
   },
   {
-   "id": "sec-055-2-m-2",
-   "title": "M 2",
-   "pages": "44-45"
-  },
-  {
-   "id": "sec-056-101-baryon-electric-dipole-moments",
+   "id": "sec-018-101-baryon-electric-dipole-moments",
    "title": "Baryon electric dipole moments",
    "pages": "45-46"
   },
   {
-   "id": "sec-057-11-interactions-of-a-light-higgs",
+   "id": "sec-019-11-interactions-of-a-light-higgs",
    "title": "Interactions of a light Higgs",
    "pages": "46-47"
   },
   {
-   "id": "sec-058-12-eﬀective-theory-at-the-electroweak-scale",
+   "id": "sec-020-12-eﬀective-theory-at-the-electroweak-scale",
    "title": "Eﬀective theory at the electroweak scale",
-   "pages": "47-47"
+   "pages": "47-49"
   },
   {
-   "id": "sec-059-2-bµ-123",
-   "title": "Bµ . (12.3)",
-   "pages": "47-48"
-  },
-  {
-   "id": "sec-060-2-v-hx-u-φx-u-φx-exp",
-   "title": "(v + H(x)) U (φ(x)) , U (φ(x)) = exp",
-   "pages": "48-49"
-  },
-  {
-   "id": "sec-061-13-summary",
+   "id": "sec-021-13-summary",
    "title": "Summary",
    "pages": "49-49"
   },
   {
-   "id": "sec-062-1-chpt-is-not-a-model-the-eﬀective-lagrangian-ge",
-   "title": "ChPT is not a model. The eﬀective Lagrangian generates the most general",
-   "pages": "49-49"
-  },
-  {
-   "id": "sec-063-2-the-experimental-veriﬁcation-of-the-chpt-predi",
-   "title": "The experimental veriﬁcation of the ChPT predictions doe s not provide a test",
-   "pages": "49-49"
-  },
-  {
-   "id": "sec-064-3-the-dynamical-information-on-the-underlying-fu",
-   "title": "The dynamical information on the underlying fundamental Lagrangian is encoded",
-   "pages": "49-49"
-  },
-  {
-   "id": "sec-065-acknowledgments",
+   "id": "sec-022-acknowledgments",
    "title": "Acknowledgments",
    "pages": "49-50"
   },
   {
-   "id": "sec-066-references",
+   "id": "sec-023-references",
    "title": "References",
    "pages": "50-57"
   }

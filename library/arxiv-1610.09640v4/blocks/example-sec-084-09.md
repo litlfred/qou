@@ -1,1 +1,0 @@
-Assume A is a commutative noetherian ring and a =

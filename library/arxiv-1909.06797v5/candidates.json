@@ -1,0 +1,61 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1909.06797v5",
+ "source": {
+  "structure_sha256": "87095d7e46ebe286a2d65cc1c9dc6ddf386c8bfb65e20dc34c0fe23ce14e5e64",
+  "file": "1909.06797v5.pdf"
+ },
+ "provenance": {
+  "title": "Quantum Mechanics of Plancherel Growth",
+  "authors": "Arghya Chattopadhyaya,b, Suvankar Duttac, Debangshu Mukherjeec,d, Neetuc",
+  "arxiv": {
+   "id": "1909.06797",
+   "version": "5",
+   "primary_class": "hep-th",
+   "stamp_date": "14 Apr 2021"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 2,
+  "by_kind": {
+   "recommendation": 2
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Therefore the large $N$ solution of (\\ref{eq:saddeq2}) must be invariant under transposition.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-009-51-large-n-solutions-and-automodel-diagrams.md",
+   "section_title": "Large N solutions and automodel diagrams",
+   "pages": "16-18",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "{where the dot and prime denote derivative with respect to $t$ and $\\theta$ respectively} \\footnote{{At this point one should note that (\\ref{eq:boundeq}) is in the standard from of an inviscid Burger's equation, which is a KdV type equation.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-012-61-droplet-quantisation.md",
+   "section_title": "Droplet quantisation",
+   "pages": "19-25",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

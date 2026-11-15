@@ -1,0 +1,52 @@
+64 Chapter 3 — Perverse sheaves on semiabelian varieties
+
+Proof. Lemma B.1 and B.2 in the appendix show that up to conjugation
+there are only finitely many possibilities for the Tannaka group G = G(P)
+as a subgroup of Glq(A). Oo
+
+Let us now return to the case of an abelian scheme p : X —> S whose
+base scheme is an arbitrary variety S over the algebraically closed field k
+of characteristic zero. For any sheaf complex P € D(X) and any geometric
+point § of S we will denote by
+
+Ps = i;(P) € D(Xs)
+
+the restriction to the geometric fibre i; : X; —+ X. Then the constructibility
+result we are interested in can be formulated as follows.
+
+PROPOSITION 3.20. Letn € N, and consider a complex P € D(X) such
+that for each geometric point § of S, the restriction P; is a simple perverse
+sheaf with
+
+det(@(P;))°" = 1.
+Then there are reductive algebraic groups G,,...,Gm and a stratification
+into locally closed subsets
+
+m
+S= [| S; such that G(P;) = G; for all geometric points § in S;.
+i=0
+
+Proof. Recall from [29, prop. 3.1(c)] that if V is a finite-dimensional
+vector space over A, then any reductive algebraic subgroup of GI/(V) is
+determined uniquely by its subspaces of invariants in the tensor powers W°"
+of W=V @VY with r € N. Furthermore, if we only want to distinguish
+between finitely many given reductive subgroups up to conjugacy, then it
+suffices to look at exponents r < ro for some fixed rg € N.
+
+Hence in view of lemma 3.19 our claim will follow if we can show that
+in a suitable sense, the tensor functor @ : (P;) —> Rep, (G(P;)) in the proof
+of corollary 3.10 varies in a constructible way with the geometric point 5
+and that the subspaces of invariants — corresponding to the direct sum of
+all direct summands 1 = 6p in the convolution powers of P;® PY — also
+vary in a constructible way. More precisely, we would be done if we could
+show that there exist
+
+(a) a complex PY € D(X) which on each geometric fibre X; restricts
+to the adjoint dual
+
+Py = (-id)*D(P)),
+
+(b) acharacter x € II(X) such that for the twist Q = Py OP; the direct
+image complex
+
+W = Rpx (Q)

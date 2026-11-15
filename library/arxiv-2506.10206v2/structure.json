@@ -8,7 +8,7 @@
   "pages": 40,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:22Z",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -26,7 +26,7 @@
   "title_lines": [
    "Analytic dilogarithm identities"
   ],
-  "abstract": "We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured dilogarithm relations, solving open problems given by both Bytsko and Campbell, and that we further apply to construct and prove new ladder relations with quartic and sextic bases. We also apply our method to introduce and prove two-term Li2-relations and ladder-like identities with arguments in algebraic number fields such as Q( \u221a 2), Q( \u221a 3), Q( \u221a 5), and Q(\u221a\u22127). Moreover, single-term dilogarithm evaluations are introduced and derived.",
+  "abstract": "We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured dilogarithm relations, solving open problems given by both Bytsko and Campbell, and that we further apply to construct and prove new ladder relations with quartic and sextic bases. We also apply our method to introduce and prove two-term Li2-relations and ladder-like identities with arguments in algebraic number fields such as Q( √ 2), Q( √ 3), Q( √ 5), and Q(√−7). Moreover, single-term dilogarithm evaluations are introduced and derived.",
   "docinfo": {
    "Title": "Analytic Dilogarithm Identities",
    "Author": "Cetin Hakimoglu-Brown",
@@ -839,8 +839,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 818,
-   "n_words": 114,
+   "n_chars": 816,
+   "n_words": 113,
    "label_start": "1",
    "label_end": "1"
   },
@@ -851,7 +851,7 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 3030,
+   "n_chars": 3039,
    "n_words": 548,
    "label_start": "1",
    "label_end": "2"
@@ -863,7 +863,7 @@
    "level": 2,
    "page_start": 2,
    "page_end": 4,
-   "n_chars": 3161,
+   "n_chars": 3173,
    "n_words": 634,
    "label_start": "2",
    "label_end": "4"
@@ -875,8 +875,8 @@
    "level": 1,
    "page_start": 4,
    "page_end": 7,
-   "n_chars": 6177,
-   "n_words": 1533,
+   "n_chars": 6219,
+   "n_words": 1537,
    "label_start": "4",
    "label_end": "7"
   },
@@ -887,7 +887,7 @@
    "level": 1,
    "page_start": 7,
    "page_end": 7,
-   "n_chars": 107,
+   "n_chars": 116,
    "n_words": 15,
    "label_start": "7",
    "label_end": "7"
@@ -899,8 +899,8 @@
    "level": 2,
    "page_start": 7,
    "page_end": 9,
-   "n_chars": 1959,
-   "n_words": 508,
+   "n_chars": 1995,
+   "n_words": 516,
    "label_start": "7",
    "label_end": "9"
   },
@@ -910,170 +910,290 @@
    "title": "On an identity attributed to Lima",
    "level": 2,
    "page_start": 9,
+   "page_end": 9,
+   "n_chars": 975,
+   "n_words": 235,
+   "label_start": "9",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-006-33-zagiers-four-term-identity",
+   "number": "3.3",
+   "title": "Zagier's four-term identity",
+   "level": 2,
+   "page_start": 9,
    "page_end": 12,
-   "n_chars": 4550,
-   "n_words": 1180,
+   "n_chars": 3576,
+   "n_words": 947,
    "label_start": "9",
    "label_end": "12"
   },
   {
-   "id": "sec-006-34-identities-related-of-an-evaluation-for-the-i",
+   "id": "sec-007-34-identities-related-of-an-evaluation-for-the-i",
    "number": "3.4",
    "title": "Identities related of an evaluation for the inverse tangent integral",
    "level": 2,
    "page_start": 12,
-   "page_end": 18,
-   "n_chars": 9468,
-   "n_words": 2440,
+   "page_end": 13,
+   "n_chars": 2012,
+   "n_words": 553,
    "label_start": "12",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-008-35-a-series-of-convergence-rate-frac1243",
+   "number": "3.5",
+   "title": "A series of convergence rate $\\frac{1}{243}$",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 382,
+   "n_words": 100,
+   "label_start": "13",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-009-4-elliptic-4f-3-series",
+   "number": "4",
+   "title": "Elliptic ${}_{4}F_{3}$-series",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 1809,
+   "n_words": 472,
+   "label_start": "13",
+   "label_end": "15"
+  },
+  {
+   "id": "sec-010-5-hypergeometric-series-for-pi2",
+   "number": "5",
+   "title": "Hypergeometric series for $\\pi^2$",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 2597,
+   "n_words": 663,
+   "label_start": "15",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-011-6-a-proof-of-campbells-conjecture",
+   "number": "6",
+   "title": "A proof of Campbell's conjecture",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 2613,
+   "n_words": 645,
+   "label_start": "16",
    "label_end": "18"
   },
   {
-   "id": "sec-007-61-related-dilogarithm-identities",
+   "id": "sec-012-61-related-dilogarithm-identities",
    "number": "6.1",
    "title": "Related dilogarithm identities",
    "level": 2,
    "page_start": 18,
    "page_end": 21,
-   "n_chars": 3281,
-   "n_words": 829,
+   "n_chars": 3310,
+   "n_words": 831,
    "label_start": "18",
    "label_end": "21"
   },
   {
-   "id": "sec-008-7-higher-order-fields",
+   "id": "sec-013-7-higher-order-fields",
    "number": "7",
    "title": "Higher-order fields",
    "level": 1,
    "page_start": 21,
    "page_end": 21,
-   "n_chars": 1044,
-   "n_words": 218,
+   "n_chars": 1060,
+   "n_words": 219,
    "label_start": "21",
    "label_end": "21"
   },
   {
-   "id": "sec-009-71-a-two-term-ladder-identity-for-the-plastic-ra",
+   "id": "sec-014-71-a-two-term-ladder-identity-for-the-plastic-ra",
    "number": "7.1",
    "title": "A two-term ladder identity for the Plastic Ratio/Constant",
    "level": 2,
    "page_start": 21,
-   "page_end": 29,
-   "n_chars": 12202,
-   "n_words": 2869,
+   "page_end": 23,
+   "n_chars": 2664,
+   "n_words": 627,
    "label_start": "21",
+   "label_end": "23"
+  },
+  {
+   "id": "sec-015-8-applications-of-rogers-identity",
+   "number": "8",
+   "title": "Applications of Roger's identity",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 26,
+   "n_chars": 3135,
+   "n_words": 850,
+   "label_start": "23",
+   "label_end": "26"
+  },
+  {
+   "id": "sec-016-9-derivation-of-the-loxton--lewin-fracpi9-identi",
+   "number": "9",
+   "title": "Derivation of the Loxton--Lewin $\\frac{\\pi}{9}$-identities",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 1804,
+   "n_words": 393,
+   "label_start": "26",
+   "label_end": "27"
+  },
+  {
+   "id": "sec-017-91-derivation-of-the-loxton-lewin-four-term-frac",
+   "number": "9.1",
+   "title": "Derivation of the Loxton-Lewin four-term $\\frac{\\pi}{9}$-identities",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 29,
+   "n_chars": 4542,
+   "n_words": 991,
+   "label_start": "27",
    "label_end": "29"
   },
   {
-   "id": "sec-010-10-two-term-complex-identities-of-the-imaginary",
+   "id": "sec-018-10-two-term-complex-identities-of-the-imaginary",
    "number": "10",
    "title": "Two-term complex identities of the imaginary part",
    "level": 1,
    "page_start": 29,
    "page_end": 31,
-   "n_chars": 1970,
-   "n_words": 442,
+   "n_chars": 2017,
+   "n_words": 448,
    "label_start": "29",
    "label_end": "31"
   },
   {
-   "id": "sec-011-11-miscellaneous-results",
+   "id": "sec-019-11-miscellaneous-results",
    "number": "11",
    "title": "Miscellaneous results",
    "level": 1,
    "page_start": 31,
    "page_end": 31,
-   "n_chars": 413,
-   "n_words": 87,
+   "n_chars": 430,
+   "n_words": 88,
    "label_start": "31",
    "label_end": "31"
   },
   {
-   "id": "sec-012-111-a-cubic-single-term-identity",
+   "id": "sec-020-111-a-cubic-single-term-identity",
    "number": "11.1",
    "title": "A cubic single-term identity",
    "level": 2,
    "page_start": 31,
    "page_end": 31,
-   "n_chars": 647,
-   "n_words": 165,
+   "n_chars": 671,
+   "n_words": 168,
    "label_start": "31",
    "label_end": "31"
   },
   {
-   "id": "sec-013-112-a-sextic-two-term-identity",
+   "id": "sec-021-112-a-sextic-two-term-identity",
    "number": "11.2",
    "title": "A sextic two-term identity",
    "level": 2,
    "page_start": 31,
    "page_end": 33,
-   "n_chars": 2703,
-   "n_words": 593,
+   "n_chars": 2293,
+   "n_words": 519,
    "label_start": "31",
    "label_end": "33"
   },
   {
-   "id": "sec-014-116-8th-degree-single-term-identity",
+   "id": "sec-022-115-a-modified-watson-fracpi7-dilogarithm-identi",
+   "number": "11.5",
+   "title": "A modified Watson $\\frac{\\pi}{7}$-dilogarithm identity",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 33,
+   "n_chars": 411,
+   "n_words": 73,
+   "label_start": "33",
+   "label_end": "33"
+  },
+  {
+   "id": "sec-023-116-8th-degree-single-term-identity",
    "number": "11.6",
    "title": "8th-degree single-term identity",
    "level": 2,
    "page_start": 33,
    "page_end": 33,
-   "n_chars": 1433,
-   "n_words": 291,
+   "n_chars": 1462,
+   "n_words": 293,
    "label_start": "33",
    "label_end": "33"
   },
   {
-   "id": "sec-015-12-new-ladders",
+   "id": "sec-024-12-new-ladders",
    "number": "12",
    "title": "New Ladders",
    "level": 1,
    "page_start": 33,
    "page_end": 34,
-   "n_chars": 430,
-   "n_words": 70,
+   "n_chars": 437,
+   "n_words": 71,
    "label_start": "33",
    "label_end": "34"
   },
   {
-   "id": "sec-016-121-a-three-term-ladder-relation",
+   "id": "sec-025-121-a-three-term-ladder-relation",
    "number": "12.1",
    "title": "A three-term ladder relation",
    "level": 2,
    "page_start": 34,
    "page_end": 34,
-   "n_chars": 851,
-   "n_words": 205,
+   "n_chars": 875,
+   "n_words": 208,
    "label_start": "34",
    "label_end": "34"
   },
   {
-   "id": "sec-017-122-five-term-ladder-relations-part-1",
+   "id": "sec-026-122-five-term-ladder-relations-part-1",
    "number": "12.2",
    "title": "Five-term ladder relations, part 1",
    "level": 2,
    "page_start": 34,
    "page_end": 35,
-   "n_chars": 1703,
-   "n_words": 376,
+   "n_chars": 1733,
+   "n_words": 380,
    "label_start": "34",
    "label_end": "35"
   },
   {
-   "id": "sec-018-123-a-six-term-ladder-relation",
+   "id": "sec-027-123-a-six-term-ladder-relation",
    "number": "12.3",
    "title": "A six-term ladder relation",
    "level": 2,
    "page_start": 35,
-   "page_end": 38,
-   "n_chars": 3918,
-   "n_words": 871,
+   "page_end": 37,
+   "n_chars": 1877,
+   "n_words": 409,
    "label_start": "35",
+   "label_end": "37"
+  },
+  {
+   "id": "sec-028-124-using-the-radius-method-to-derive-new-ladder",
+   "number": "12.4",
+   "title": "Using the ``radius method'' to derive new ladders",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 38,
+   "n_chars": 2019,
+   "n_words": 458,
+   "label_start": "37",
    "label_end": "38"
   },
   {
-   "id": "sec-019-acknowledgements",
+   "id": "sec-029-acknowledgements",
    "number": null,
    "title": "Acknowledgements",
    "level": 2,
@@ -1099,13 +1219,23 @@
    "count": 0,
    "items": []
   },
-  "sections": 21,
-  "chars_total": 65584,
+  "sections": 31,
+  "chars_total": 65781,
+  "furniture_lines_stripped": 0,
+  "headings_tidied": [
+   {
+    "title": "8th-degree single-term identity",
+    "page": 33,
+    "action": "rejoined",
+    "as": "8th-degree single-term identity",
+    "why": "opens in lower case"
+   }
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
    "tex_sections": 32,
-   "overlaid": 19,
+   "overlaid": 29,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1121,7 +1251,7 @@
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 0.924,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.993,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1129,7 +1259,7 @@
      "id": "sec-001-11-preliminaries",
      "title": "Preliminaries",
      "prose_ratio": 0.921,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1145,7 +1275,7 @@
      "id": "sec-003-3-applications",
      "title": "Applications",
      "prose_ratio": 0.9,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.9,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1160,21 +1290,61 @@
     {
      "id": "sec-005-32-on-an-identity-attributed-to-lima",
      "title": "On an identity attributed to Lima",
-     "prose_ratio": 0.939,
+     "prose_ratio": 0.935,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-34-identities-related-of-an-evaluation-for-the-i",
+     "id": "sec-006-33-zagiers-four-term-identity",
+     "title": "Zagier's four-term identity",
+     "prose_ratio": 0.941,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-34-identities-related-of-an-evaluation-for-the-i",
      "title": "Identities related of an evaluation for the inverse tangent integral",
-     "prose_ratio": 0.945,
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.908,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-35-a-series-of-convergence-rate-frac1243",
+     "title": "A series of convergence rate $\\frac{1}{243}$",
+     "prose_ratio": 0.913,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-61-related-dilogarithm-identities",
+     "id": "sec-009-4-elliptic-4f-3-series",
+     "title": "Elliptic ${}_{4}F_{3}$-series",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-5-hypergeometric-series-for-pi2",
+     "title": "Hypergeometric series for $\\pi^2$",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-6-a-proof-of-campbells-conjecture",
+     "title": "A proof of Campbell's conjecture",
+     "prose_ratio": 0.951,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-61-related-dilogarithm-identities",
      "title": "Related dilogarithm identities",
      "prose_ratio": 0.972,
      "coverage_ratio": 1.0,
@@ -1182,7 +1352,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-7-higher-order-fields",
+     "id": "sec-013-7-higher-order-fields",
      "title": "Higher-order fields",
      "prose_ratio": 0.966,
      "coverage_ratio": 1.0,
@@ -1190,15 +1360,39 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-71-a-two-term-ladder-identity-for-the-plastic-ra",
+     "id": "sec-014-71-a-two-term-ladder-identity-for-the-plastic-ra",
      "title": "A two-term ladder identity for the Plastic Ratio/Constant",
-     "prose_ratio": 0.981,
+     "prose_ratio": 0.988,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-10-two-term-complex-identities-of-the-imaginary",
+     "id": "sec-015-8-applications-of-rogers-identity",
+     "title": "Applications of Roger's identity",
+     "prose_ratio": 0.923,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-9-derivation-of-the-loxton--lewin-fracpi9-identi",
+     "title": "Derivation of the Loxton--Lewin $\\frac{\\pi}{9}$-identities",
+     "prose_ratio": 0.959,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-91-derivation-of-the-loxton-lewin-four-term-frac",
+     "title": "Derivation of the Loxton-Lewin four-term $\\frac{\\pi}{9}$-identities",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-018-10-two-term-complex-identities-of-the-imaginary",
      "title": "Two-term complex identities of the imaginary part",
      "prose_ratio": 0.97,
      "coverage_ratio": 1.0,
@@ -1206,39 +1400,47 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-11-miscellaneous-results",
+     "id": "sec-019-11-miscellaneous-results",
      "title": "Miscellaneous results",
      "prose_ratio": 0.958,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.92,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-111-a-cubic-single-term-identity",
+     "id": "sec-020-111-a-cubic-single-term-identity",
      "title": "A cubic single-term identity",
      "prose_ratio": 0.958,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.923,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-112-a-sextic-two-term-identity",
+     "id": "sec-021-112-a-sextic-two-term-identity",
      "title": "A sextic two-term identity",
-     "prose_ratio": 0.989,
+     "prose_ratio": 0.986,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-116-8th-degree-single-term-identity",
+     "id": "sec-022-115-a-modified-watson-fracpi7-dilogarithm-identi",
+     "title": "A modified Watson $\\frac{\\pi}{7}$-dilogarithm identity",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-023-116-8th-degree-single-term-identity",
      "title": "8th-degree single-term identity",
      "prose_ratio": 0.974,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-015-12-new-ladders",
+     "id": "sec-024-12-new-ladders",
      "title": "New Ladders",
      "prose_ratio": 0.974,
      "coverage_ratio": 1.0,
@@ -1246,35 +1448,43 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-016-121-a-three-term-ladder-relation",
+     "id": "sec-025-121-a-three-term-ladder-relation",
      "title": "A three-term ladder relation",
      "prose_ratio": 0.943,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.971,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-017-122-five-term-ladder-relations-part-1",
+     "id": "sec-026-122-five-term-ladder-relations-part-1",
      "title": "Five-term ladder relations, part 1",
      "prose_ratio": 0.918,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.957,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-018-123-a-six-term-ladder-relation",
+     "id": "sec-027-123-a-six-term-ladder-relation",
      "title": "A six-term ladder relation",
-     "prose_ratio": 0.966,
+     "prose_ratio": 0.964,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-019-acknowledgements",
+     "id": "sec-028-124-using-the-radius-method-to-derive-new-ladder",
+     "title": "Using the ``radius method'' to derive new ladders",
+     "prose_ratio": 0.964,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-029-acknowledgements",
      "title": "Acknowledgements",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.062,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

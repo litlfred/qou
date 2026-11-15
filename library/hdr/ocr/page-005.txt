@@ -1,0 +1,62 @@
+de H,(W, L). Elles permettent aussi une deuxiéme définition équivalente, plus combinatoire, des familles
+de caractéres de Lusztig.
+
+Lorsque q se spécialise en un nombre complexe 77 différent de zéro, et plus spécifiquement en une racine
+de Vunité, l'algebre de Iwahori-Hecke spécialisée H,,(W, L) n’est pas nécessairement semisimple et nous
+n’avons plus une bijection entre ses représentations irréductibles et Irr(W). Nous obtenons donc une
+matrice de décomposition qui décrit comment les représentations irréductibles de l’algébre semisimple
+se décomposent aprés la spécialisation. Un ensemble basique canonique est un sous-ensemble de Irr(W)
+en bijection avec les représentations irréductibles de H,,(W, L) (et ainsi un ensemble qui paramétre les
+colonnes de la matrice de décomposition) avec de bonnes propriétés. Ces bonnes propriétés impliquent
+que la matrice de décomposition a une forme unitriangulaire inférieure alors que la fonction a croit (au
+sens large) le long des colonnes. Les ensembles basiques canoniques ont été définis par Geck et Rouquier
+[GeRo], qui ont prouvé leur existence dans quelques cas en utilisant la théorie de Kazhdan-—Lusztig.
+Grace 4 un travail collectif, il est maintenant prouvé que des ensembles basiques canoniques existent et
+sont explicitement décrits pour tous les groupes de Coxeter finis et tout choix de L (en caractéristique
+0).
+
+Les groupes de Coxeter finis sont des cas particuliers de groupes de réflexions complexes, c’est-a-dire
+des groupes finis de matrices complexes engendrés par des “pseudo-réflexions”. La classification des
+groupes de réflexions complexes est due 4 Shephard et Todd : si W est un groupe de réflexions
+complexe (irréductible), alors soit W appartient @ la série infinie G(I,p,n) soit W est un des 34 groupes
+exceptionnels G4,...,G37 (voir Théoreéme . D’importants développements durant les deux derniéres
+décennies ont suggéré que les groupes de réflexions complexes jouent un réle crucial, mais seulement
+partiellement compris, en théorie de représentations, et pourraient méme devenir aussi importants que
+les groupes de Coxeter finis dans |’étude d’autres structures mathématiques. En effet, ils se comportent
+de fagon tellement analogue aux groupes de réflexions réels que Broué, Malle et Michel ont
+conjecturé qu’ils pourraient jouer le rdle de groupes de Weyl pour des objets, toujours mystérieux, qui
+généralisent les groupes réductifs finis. Ces objets s’appellent “Spetses”.
+
+Broué, Malle et Rouquier ont défini des algébres de Hecke pour les groupes de réflexions
+complexes comme déformations de leurs algébres de groupe. Dans le cas des groupes de réflexions
+complexes de type G(I,1,n), elle coincident avec les algebres de Ariki-Koike, déja définies par Ariki
+et Koike comme généralisations des algebres de Iwahori-Hecke de types A et B. Une théorie
+des cellules de Kazhdan—Lusztig généralisée pour ces algebres, connues sous le nom d’algébres de Hecke
+cyclotomiques, permettrait de se diriger vers une définition des Spetses. Malheureusement, nous n’avons
+pas de base de Kazhdan—Lusztig pour les groupes de réflexions complexes. Néanmoins, nous pouvons
+définir des familles de caractéres en utilisant la définition de Rouquier : dans [Rol], Rouquier a donné
+une définition alternative pour les familles de caractéres de Lusztig en prouvant que, dans le cas des
+groupes de Wey], elles coincident avec les blocs de l’algébre de Iwahori—Hecke sur un certain anneau,
+qui s’appelle l’anneau de Rouquier. Cette définition se généralise naturellement au cas des groupes de
+réflexions complexes et leurs algébres de Hecke cyclotomiques, en produisant les familles de Rouquier.
+Ces familles sont maintenant déterminées pour toutes les algebres de Hecke cyclotomiques de tous les
+groupes de réflexions complexes, voir (Ch5]. Un réle-clef dans cette détermination est joué
+par la structure d’algébre symétrique (toujours conjecturée dans certains cas) des algébres de Hecke
+cyclotomiques et les éléments de Schur correspondants.
+
+En utilisant les éléments de Schur, nous pouvons aussi définir une fonction a et des ensembles basiques
+canoniques pour les algebres de Hecke cyclotomiques. Méme s’il n’existe pas de théorie de Kazhdan—
+Lusztig dans le cas complexe, il est maintenant prouvé que des ensembles basiques existent pour les
+groupes de la série infinie G(I, p,n) et pour quelques groupes exceptionnels. Afin d’obtenir des ensembles
+basiques canoniques pour les algébres de Ariki-Koike, Geck et Jacon ont utilisé le théoréme d’ Ariki sur la
+catégorification des représentations des algebres de Hecke et le travail de Uglov sur les bases canoniques
+pour des espaces de Fock de plus haut niveau J: [GeJa2]. Le résultat pour G(I,p,n) est
+déduit du résultat pour G(I,1,n) avec l'utilisation de la théorie de Clifford (ChJa2].
+
+Les algébres de réflexions symplectiques ont été introduites par Etingof et Ginzburg pour
+Pétude des résolutions symplectiques de l’espace d’orbites V/G, ot V est un espace vectoriel complexe
+symplectique et G est un groupe de réflexions symplectique agissant sur V, i.e., G est un groupe fini
+engendré par des réflexions symplectiques. Un groupe de réflexions complexe W C GL(h), ot 6 est
+un espace vectoriel complexe, peut étre vu comme un groupe de réflexions symplectique agissant sur
+V =5b © b*. Les algébres de réflexions symplectiques associées aux groupes de réflexions complexes
+

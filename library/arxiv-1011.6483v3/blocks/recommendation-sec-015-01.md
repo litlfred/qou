@@ -1,0 +1,1 @@
+The Blob complex $\mathcal{B}_*(M,\mathcal{C}^{C_{\scriptstyle\bullet}(\Omega^{n} Y)})$ for non-necessarily closed manifolds shall not be mistaken with the Blob complex associated to the $A_\infty$-$n$-category associated to the fundamental groupoid of the space $Y$ in [@MW § 6] (though the construction share some similarities).

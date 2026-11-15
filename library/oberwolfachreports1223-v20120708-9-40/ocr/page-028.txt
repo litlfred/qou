@@ -1,0 +1,54 @@
+28 Oberwolfach Report 28/2012
+
+The 2-variable Jones polynomial and the invariants from the
+Yokonuma—Hecke algebras
+
+SOFIA LAMBROPOULOU
+(joint work with Maria Chlouveraki)
+
+We compare the knot invariant defined using the Juyumaya trace on the
+Yokonuma-Hecke algebras with the 2-variable Jones polynomial, and we show that
+they do not coincide except in a few trivial cases.
+
+1. THE 2-VARIABLE JONES OR HOMFLYPT POLYNOMIAL
+
+Let B,, denote the Artin braid group of type A. Closing a geometric braid
+(6 with simple arcs gives rise to an oriented knot or link B and, by the classical
+Markov theorem, oriented knot or link types are in bijective correspondence with
+equivalence classes of braids in U,B, under the moves:
+
+(i) Conjugation in each By: a8 ~ Ba;
+
+(ii) Positive and negative stabilization: « ~ aon*!, a € Bn.
+
+Let g € C \ {0}. The Iwahori-Hecke algebra Hn (q) of type A is a C-associative
+algebra with generators G1, Go, ..., Gn—1, which can be defined as the quotient
+of the algebra CB,, over the quadratic relations G? = (¢—1)G;+q for all i. The
+algebras H,,(q) support the Ocneanu trace with parameter ¢ [3, Theorem 5.1], a
+unique linear Markov trace t : U9 Hn(q) —> C[¢]. Another characterization of
+the Ocneanu trace can be given by its values on the basis elements Gu,» T(Gu,) =
+Ch), where w, is a minimal length representative of the conjugacy class of G,
+parametrized by the partition 1 of n [2], and ¢(w,,) denotes the length of w,,. After
+re-scaling and normalizing the Ocneanu trace according to the Markov theorem,
+Jones constructed the 2-variable Jones or HOMFLYPT polynomial [3], an isotopy
+invariant of oriented links:
+
+P(@) = (Dy) (VX) (7 07) (a)
+where a € By, for any n € N, 7 : CB, — H,(q) is the natural algebra epi-
+morphism that maps the braid generator o; to the algebra generator Gi, €(a) is
+
+the algebraic sum of the exponents of the braid generators in the braid word a,
+
+w— 640-9) , we te Ang
+An = Go and Da = — Tag = WT
+
+2. LINK INVARIANTS FROM THE YOKONUMA-HECKE ALGEBRAS
+
+The Yokonuma-Hecke algebra [7], Yan(u), for d € N and u € C\{0}, is a C-
+associative algebra with generators gi,...,gn—1,t1,...,tn, satisfying: the braid
+relations for the g,’s, the relations t;t; = tj; for all che modular relations
+id = 1 for all j, the mixed relations tj 9; = git.,(j) for all 1,7, where s; denotes the
+transposition (i,i + 1), and the quadratic relations:
+
+g@ = 14+(u-let+(u-leg for all i
+where e; := ty} Bt, idempotents in Ya,n(u).

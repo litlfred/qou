@@ -1,0 +1,54 @@
+Vh ul, u2;
+real sigma = 0.001;
+
+varf op(ul,u2)= int2d(Th)(dx(ul)*dx(u2)+ dy(ul)*dy(u2)— sigma+(4*ul*u2) /(1—x*2—-y*2)*2);
+//naturally, this gives Neumann boundary conditions on all three sides.
+//To change one or more sides to a Dirichlet condition, add the phrase
+//‘+on(G1,ul=0)’ after the closed parenthesis.
+//This will give a Dirichlet condition on G1.
+
+varf b([ul] ,[u2]) = int2d (Th) ((4*ul*u2)/(1—x*2-y~2)*2);
+
+matrix OP= op(Vh,Vh, solver=Crout , factorize=1);
+matrix B=b(Vh,Vh, solver=CG, eps=le —20);
+
+real[int] ev(nev);
+Vh[int] eV(nev);
+
+int k-EigenValue(OP,B,sym-true , sigma=sigma , value=ev , vector=eV, tol=le—10,maxit=0,ncv=0);
+for (int i=0;i<k;i++) {
+
+ul=eV [i];
+
+real gg = int2d(Th)(dx(ul)*dx(ul) + dy(ul)*dy(ul)); real mm int2d(Th)(ulxul) ;
+
+ofstream Eva(fnm, append);
+
+Eva << ev[i] << "\n";
+
+Also of interest is the spectrunk-of-the-sigdlt angled pentagon of area 5 with mixed
+boundary conditions, studied in Section 3.4. All of the multiplicity 4 eigenvalues of B ap-
+pear in this spectrum with simple multiplicity. Recall the discussion about isospectrality
+in the introduction to this work - one can see for oneself that swapping the Dirichlet and
+Neumann conditions in the code below (sde_the coments in the code for the (2, 3, 8)
+triangle) produces the same spectrum! |Table C.2| shows the eigenvalues of this problem __|
+up to 200; one can compare this to Table C.1, where all of the eigenvalues in Table C.2
+appear with multiplicity 4.
+int n=30;
+int nev=100;
+real r=0.643594;
+
+string fmm = "pentagon _30n_100nev.txt"; //file name for saving
+
+border Gl (t=0.5,1) { x=r«2*cos(pi/8)+r*cos((9—2*t)*pi/8); y=r*sin((9—2*t)*pi/8);};
+border G2 (t=-1,0) { x=cos(pi/4)*r#2*cos(pi/8)+r*cos((9—2*t)*pi/8);
+
+y=sin (pi/4)*r*2«cos(pi/8)+r*sin ((9—2«t)*pi/8);}5
+border G3 (t=1,0.5) { x=rxsin((9—2*t)*pi/8); y=rx2*cos(pi/8)+r*cos((9—2*t)* pi /8);};
+border G4 (t=0.545613,0) { x=0; y=t;};
+border G5 (t=0,0.545613) { x=t; y=0;};
+plot (G1(n)+G2(n)+G3(n)+G4(n)+G5(n));
+
+mesh Th=buildmesh (G1(n)+G2(n)+G3(n)+G4(n)+G5(n));
+
+110

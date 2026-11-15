@@ -1,0 +1,55 @@
+5.1. Intersections of theta divisors 101
+
+Proof. The last row follows from the Hodge decomposition for a ppav
+of dimension g = 4 and has only been included for reference. Similarly,
+the last column is clear because H!(Y,Q) = H!(Y,Q)~ = H!(X,Q) by the
+weak Lefschetz theorem. It remains to compute the Hodge numbers of the
+smooth surfaces Y and Y* in cohomology degree two. Corollary 5.6 gives
+the topological Euler characteristic y(Y) = 72, which implies h?(Y) = 86
+because h(Y) = h*(Y) = 1 and h!(Y) = h3(Y) = 8. In the same way, via
+lemma 5.5 the Hirzebruch-Riemann-Roch theorem gives the holomorphic
+Euler characteristic
+
+x (Ov) = degy(c}(Y) + e2(¥))/12 = degy ((-22)? +367) /12 = 14.
+
+Plugging in the values h°(Y) = 1 and h°! (Y) = 4 we get h°?(Y) = 17, and
+then h!:!(Y) = 52 because the Hodge numbers in degree two must sum up
+to the second Betti number h?(Y) = 86.
+
+To obtain from these numbers also the Hodge numbers of the quotient
+surface Y* = Y/o we use that the quotient morphism q : Y + Y* is an étale
+double covering. In particular we have a commutative diagram
+
+degy+
+
+H(Y*,Q) x H7(¥*,Q) H*(Y+,Q) ——+ Q
+
+| “| 2.
+2 2 4 degy
+H’(Y,Q) x H°(Y,Q) AY(Y,Q) Q
+where the vertical arrow on the right hand side is multiplication with the
+degree deg(q) = 2, and the Chern classes satisfy c;(Y) = q*(c;(Y¥*)) for
+
+all i. This being said, the Gauss-Bonnet and Hirzebruch-Riemann-Roch
+theorem show
+
+XY") = x(¥)/2 = 36 and x(Oy+) = x(@y)/2 = 7.
+
+Hence it follows that h7(Y+) = 36—1—1=34 and h°*(Y+) =7-1=6
+by similar computations as above, and we are done. Oo
+
+U
+
+As an immediate corollary we obtain that the intersection form has the
+following signatures on the various occuring subspaces of H?(Y,Q), where
+we denote by s+ and s_ the dimension of maximal subspaces on which the
+form is positive resp. negative definite.
+
+COROLLARY 5.9. For g = 4 the intersection form has the following
+signatures on the various subspaces of H?(Y,Q).
+
+|H?(Y,Q) H?(¥*,Q) H7(X,Q) Ve Vy
+
+Sy 35 13 13 22 0
+se 51 21 15 30 6
+

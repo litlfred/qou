@@ -7,7 +7,8 @@
   "bytes": 542007,
   "pages": 24,
   "text_source": "embedded",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -20,13 +21,21 @@
    "DOI 10.4171/RMI/1408",
    "© 2023 Real Sociedad Matemática Española"
   ],
-  "abstract": "The nontrivial unital composition superalgebras, of dimension 3 and6, which exist only in characteristic 3, are obtained from the split Cayley algebra and its order3 automorphisms, by means of the process of semisimplification of the sym- metric tensor category of representations of the cyclic group of order3. Connections with the extended Freudenthal magic square in characteristic 3, that contains some exceptional Lie superalgebras specific of this characteristic are discussed too. In the process, precise recipes to go from (nonassociative) algebras in this tensor category to the corresponding superalgebras are given.",
+  "abstract": "The nontrivial unital composition superalgebras, of dimension 3 and 6, which exist only in characteristic 3, are obtained from the split Cayley algebra and its order 3 automorphisms, by means of the process of semisimplification of the sym- metric tensor category of representations of the cyclic group of order 3. Connections with the extended Freudenthal magic square in characteristic 3, that contains some exceptional Lie superalgebras specific of this characteristic are discussed too. In the process, precise recipes to go from (nonassociative) algebras in this tensor category to the corresponding superalgebras are given.",
   "docinfo": {
    "Producer": "MiKTeX pdfTeX-1.40.25",
-   "Author": "",
-   "Title": "",
    "Creator": "LaTeX with hyperref",
    "CreationDate": "D:20240206104424+01'00'"
+  },
+  "title_raw": "DOI 10.4171/RMI/1408 © 2023 Real Sociedad Matemática Española",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "From octonions to composition superalgebras via tensor categories",
+   "outline": "1. Introduction",
+   "text": "DOI 10.4171/RMI/1408 © 2023 Real Sociedad Matemática Española",
+   "corroborated_by": [],
+   "browser_print": false
   },
   "title_prev": "DOI 10.4171/RMI/1408 © 2023 Real Sociedad Matemática Española"
  },
@@ -36,46 +45,332 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "129"
   },
   {
    "level": 1,
    "title": "From algebras to superalgebras",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "131"
   },
   {
    "level": 1,
    "title": "From octonions to composition superalgebras",
    "page": 10,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "138"
   },
   {
    "level": 1,
    "title": "Semisimplification: skew transformations, derivations",
    "page": 15,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "143"
   },
   {
    "level": 1,
    "title": "The extended Freudenthal magic square",
    "page": 19,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "147"
   },
   {
    "level": 1,
    "title": "References",
    "page": 23,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "151"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Multiplication table of the split Cayley algebra",
+   "page": 12,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "140"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "129",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "130",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "131",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "132",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "133",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "134",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "135",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "136",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "137",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "138",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "139",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "140",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "141",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "142",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "143",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "144",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "145",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "146",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "147",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "148",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "149",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "150",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "151",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "152",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 926,
+   "n_words": 137,
+   "label_start": "129",
+   "label_end": "129"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -83,8 +378,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 5616,
-   "n_words": 917
+   "n_chars": 5711,
+   "n_words": 1011,
+   "label_start": "129",
+   "label_end": "131"
   },
   {
    "id": "sec-001-2-from-algebras-to-superalgebras",
@@ -92,19 +389,23 @@
    "title": "From algebras to superalgebras",
    "level": 1,
    "page_start": 3,
-   "page_end": 9,
-   "n_chars": 11441,
-   "n_words": 1770
+   "page_end": 10,
+   "n_chars": 14646,
+   "n_words": 3249,
+   "label_start": "131",
+   "label_end": "138"
   },
   {
    "id": "sec-002-3-from-octonions-to-composition-superalgebras",
    "number": "3",
    "title": "From octonions to composition superalgebras",
    "level": 1,
-   "page_start": 9,
+   "page_start": 10,
    "page_end": 15,
-   "n_chars": 12014,
-   "n_words": 2003
+   "n_chars": 10558,
+   "n_words": 2218,
+   "label_start": "138",
+   "label_end": "143"
   },
   {
    "id": "sec-003-4-semisimplification-skew-transformations-deriva",
@@ -113,8 +414,10 @@
    "level": 1,
    "page_start": 15,
    "page_end": 19,
-   "n_chars": 10195,
-   "n_words": 1688
+   "n_chars": 10680,
+   "n_words": 2117,
+   "label_start": "143",
+   "label_end": "147"
   },
   {
    "id": "sec-004-5-the-extended-freudenthal-magic-square",
@@ -123,8 +426,10 @@
    "level": 1,
    "page_start": 19,
    "page_end": 23,
-   "n_chars": 9207,
-   "n_words": 1430
+   "n_chars": 9607,
+   "n_words": 1830,
+   "label_start": "147",
+   "label_end": "151"
   },
   {
    "id": "sec-005-references",
@@ -133,15 +438,25 @@
    "level": 1,
    "page_start": 23,
    "page_end": 24,
-   "n_chars": 3723,
-   "n_words": 534
+   "n_chars": 3719,
+   "n_words": 530,
+   "label_start": "151",
+   "label_end": "152"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 6,
-  "sections": 6,
-  "chars_total": 52196
+  "toc_inferred_entries": 0,
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 7,
+  "chars_total": 55847,
+  "furniture_lines_stripped": 0
  }
 }

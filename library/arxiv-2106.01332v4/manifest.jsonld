@@ -12,10 +12,22 @@
   "title": "Braided matter interactions in quantum gravity via 1 -handle attachment",
   "contains": [
     "library/arxiv-2106.01332v4/sections/sec-front-matter",
-    "library/arxiv-2106.01332v4/sections/sec-000"
+    "library/arxiv-2106.01332v4/sections/sec-000",
+    "library/arxiv-2106.01332v4/sections/sec-001",
+    "library/arxiv-2106.01332v4/sections/sec-002",
+    "library/arxiv-2106.01332v4/sections/sec-003",
+    "library/arxiv-2106.01332v4/sections/sec-004",
+    "library/arxiv-2106.01332v4/sections/sec-005",
+    "library/arxiv-2106.01332v4/sections/sec-006",
+    "library/arxiv-2106.01332v4/sections/sec-007",
+    "library/arxiv-2106.01332v4/sections/sec-008",
+    "library/arxiv-2106.01332v4/sections/sec-009",
+    "library/arxiv-2106.01332v4/sections/sec-010",
+    "library/arxiv-2106.01332v4/sections/sec-011",
+    "library/arxiv-2106.01332v4/sections/sec-012"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by/4.0/",
   "licenceRecord": {
     "status": "stated",
@@ -38,8 +50,8 @@
       "stamp_date": "11 Sep 2021"
     },
     "doi": null,
-    "document_class": "math",
-    "extractor_validated": true,
-    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
   }
 }

@@ -1,0 +1,1 @@
+Indeed, as we shall see in section [\[AStringyDeformation\]](#AStringyDeformation){reference-type="ref" reference="AStringyDeformation"}, whether the deformation parameters are large or small is determined by their value relative to the string coupling.

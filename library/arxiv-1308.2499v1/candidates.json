@@ -1,0 +1,76 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1308.2499v1",
+ "source": {
+  "structure_sha256": "3b20abdc0e1b0ba9efe4819ac385e38fa76fa0f0714465753cb931a49666c5bb",
+  "file": "1308.2499v1.pdf"
+ },
+ "provenance": {
+  "title": "Towards a regularity theory for integral Menger curvature",
+  "authors": "Simon Blatt\u2217",
+  "arxiv": {
+   "id": "1308.2499",
+   "version": "1",
+   "primary_class": "math.AP",
+   "stamp_date": "12 Aug 2013"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 3,
+  "by_kind": {
+   "recommendation": 3
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Such a deformation process could be defined by the gradient flow of a suitable functional which should prevent the curve from leaving the ambient knot class, preserving the bi-Lipschitz property.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-introduction.md",
+   "section_title": "Introduction",
+   "pages": "2-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "For the former we recall that a closed arc-length parametrized $C^2$-curve must have positive curvature $\\abs{\\g''}$ at some point $u_{0}$ and by continuity there are $c,\\delta>0$ with $\\abs{\\g''}\\ge c>0$ on $[u_{0}-\\delta,u_{0}+\\delta]$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-introduction.md",
+   "section_title": "Introduction",
+   "pages": "2-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "For the former we recall that a closed arc-length parametrized C2-curve must have positive curvature |\u03b3\u2032\u2032| at some point u0 and by continuity there are c, \u03b4 > 0 with |\u03b3\u2032\u2032| \u2265c > 0 on [u0\u2212\u03b4, u0+\u03b4].",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-1-classification-of-finite-energy-curves.md",
+   "section_title": "Classification of finite-energy curves",
+   "pages": "6-11",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

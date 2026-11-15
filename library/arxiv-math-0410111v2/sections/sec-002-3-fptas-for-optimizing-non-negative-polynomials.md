@@ -10,7 +10,8 @@ source_sha256: 0ccaeeabd8de6b5f
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.985
-latex_coverage_ratio: 0.966
+latex_coverage_ratio: 0.936
+doc_brief: "Integer Polynomial Optimization in Fixed Dimension — 5 sections: Front matter; Introduction; Computational Complexity Bounds"
 ---
 []{#algo label="algo"}
 

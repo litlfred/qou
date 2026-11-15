@@ -1,0 +1,62 @@
+20
+
+coproduct:
+Ei, = Na; + No,, (93)
+7 Np, HOP Nog Nbitp —Nag t2(DPIy Nay p+ Naigy
+Eiitp = A Gitpq 4 +q ‘ i Ditp
+-1 , — 7 Ny N, k-1 yy N,
+_ 3 g Nagy nt2Cfoees Nag t+ Naigp + Not? 1a Nog + Nop t
++(q#-—q?*) q q AjGitk| a bi:ebitp }. (94)
+k=1
+_ P—l yn, _N; J P-ly 0
++ No; ~2(Z ia Nosy) Nbipp Naz ~2L jay Nagy) tNaity +
+Eitpi = Uidizn 7 +q 7 bidlsy
+-1 w-1y ; 1 y :
+1 _3 g Nay ETT Nagy) Naign + Noi gy TPP Noi Nbity + .
++(q? —q°*) q z ip pith | 7 bis ndi | - (95)
+k=1
+
+Using the definition of the €;; in terms of the g-harmonic oscillators (a;,b;) deduced from the expression of the spinor
+operators, we can identify a non linear relationship between these €;; and the &;;.
+
+1 Sig ign ity ei ipa ity ~ DPT} Cig nigit isp itp
+Ei = 7207 (Ex), Exsri=aq 7? Cian, Eure =? Garg 7? , Exitp=q a Exitp,
+26 GtEP Sip itt fitpitp .
+Eitpi =4 4 Eispig” 7. (96)
+
+To have a non-linear redefinition of the generators is something common when dealing with quantum groups. For
+example, there exists different realizations of U,(su(2)), all related with a non-linear redefinition of the generators [45].
+Biedenharn recalls also different definitions of the generators of U,(u(m)) related by nonlinear transformations in [37].
+For some choice of generators, the commutation relation might take a simpler shape but the coproduct would be more
+complicated, and vice-versa. The key point is here that we have found that the intertwiner carries a representation
+of U,(u(n)), and this generalizes the results of
+
+In the classical case, when g = 1, it was shown that the intertwiner carries an irreducible u(n) representation [28].
+We can wonder whether a similar result also holds here. The answer is positive. A cumbersome proof can probably
+be obtained by looking at the Casimirs of U/,(u(n)). We do not want to follow this route. Instead we would like to
+recall the seminal results by Jimbo, Rosso and Lustzig which essentially state that all the finite dimensional
+representations of the deformation U,(g) of the enveloping algebra U/(g), where g is any complex simple Lie algebra,
+are completely reducible. The irreducible representations can be classified in terms of highest weights and in particular
+they are deformations of the irreducible representations of U(g), when q is not root of unity. We can extend this
+result to the semi-simple case and to U,(u(n)) in particular (see Section 2.5 of for example). Now we know
+that when gq = 1, the intertwiner is an irreducible representation of u(n), hence by deforming the enveloping algebra,
+the representation of U,(u(m)) carried by the U,(su(2)) intertwiner must stay an irreducible representation. As a
+consequence, the U4,(su(2)) intertwiner must carry an irreducible representation of U,(u(n)), just as in the classical
+case.
+
+Finally, we can discuss the hermiticity property of the scalar operators we have constructed. Indeed, we expect an
+observable to be self-adjoint. The operators €;; are not self-adjoint, but this should not come as a surprise. Indeed
+the classical operators Ej; are not hermitian either. However, the adjoint (Ei)! = Ej; is still a generator. This means
+that we can do a linear change of basis Ej; — Ej + (Ey)! in the u(n) basis to construct self-adjoint generators.
+This is actually how the formalism was initially introduced in [27]. The Cartan Weyl generators €;; when expressed
+in terms of the harmonic oscillators satisfy a similar property, namely el, = €;; [37]. As a consequence, from the
+€;;, we can do a (non-linear) change of basis and construct the relevant hermitian U,(u(n)) generators which will be
+U,(su(2)) invariant, using the maps (96).
+
+V. GEOMETRIC INTERPRETATION OF SOME OBSERVABLES IN THE LQG CONTEXT
+
+In LQG with A = 0, the intertwiner is understood as the fundamental chunk of quantum space. For a 2d space, it is
+dual to a face, whereas in 3d it is dual to a polyhedron. The intertwiner is invariant under the action of su(2), hence
+the observables should be invariant under the adjoint action of su(2). We see that the use of tensor operators allows
+to construct in a direct manner such observables: we need to construct operators which transform as a scalar under
+the adjoint action of su(2). We have seen in the previous section how this formalism can be extended to the quantum

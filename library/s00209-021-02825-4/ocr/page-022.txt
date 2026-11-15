@@ -1,0 +1,61 @@
+1380 J. Leake
+
+6.2 Strong stability preservation
+
+We now state one of our main characterization results, the strong stability preservation char-
+acterization. We then derive the Borcea—Briindén characterization as a corollary.
+
+Theorem 6.2 Fix i ¢ Nj, a € Ni, a linear operator T € Hom(V(A), V(q@)), any disjoint
+Grace pair (Ci X +++ X Cm, By X +++ X Bm), and any sets S\,..., S, < CP!. The following
+are equivalent.
+(i) T maps (C, x- ++ Cm)-stable polynomials to nonzero (S\ x - ++ x S;)-stable polynomials.
+(ii) T maps (Cy x +++ X Cm)-stable evaluation symbols to nonzero (S\ x «++ x S))-stable
+polynomials.
+(iii) Symb(T) is (By x --- x Bm) x (Sx +++ x S;)-stable.
+
+One should notice the generality of this result in terms of stability regions. First note that
+any disjoint Grace pair can be considered, without altering the symbol in any way (e.g., via
+conjugation by Mobius transformations). And further, the output sets that can be considered
+have no restrictions whatsoever. The power of these extra features can be seen in the following
+examples, which demonstrate classical results regarding polynomial convolutions in a very
+symbol-oriented way.
+
+Example 6.3 Fix p,q € V(n), so that (z; : 1) are the roots in ce! of g for j € [n]. So, g
+has no roots at oo. The additive (Walsh) convolution of p and q is defined via:
+
+Le -
+pag = diary Or “4)O,1)
+" k=0
+
+With this, T7(p) = p a q is a linear operator in Hom(V (n), V(n)), and we have:
+
+Symb(T,) = [] @w — @ + zjw)y) = Hmgy, | [J @ — & +2)))
+j=! j=l
+
+Let C c CP! be any projectively convex region, and define S := Uj(C+z;). If we order the
+input variables of Symb(T;) as (z, w, x, y), itis then straightforward to show that Symb(T,)
+is C x (CP!\S$)-stable. (First deal with possible (x : y) = (1: 0) or (zg: w) = (1: 0)
+cases, and then assume y = w = | to simplify the remaining cases.) Applying the previous
+theorem, this implies 7, maps polynomials with roots in C to polynomials with roots in
+S. (This is Theorem 5.3.1 in [15].) Picking C = H_ and real-rooted q implies Tz maps
+H4-stable polynomials to 1,-stable polynomials. Restricting to p € Vg(n) then shows that
+
+Ty preserves real-rootedness.
+
+Example 6.4 Fix p,q € V(n), so that (z; : 1) # Oare the roots of g for j € [n]. So, g has no
+roots at 0 or oo. The multiplicative (Grace—Szeg6) convolution of p and g (with coefficients
+Pk and qx, respectively) is defined via:
+
+n -1
+
+n k kyn—k
+
+peqg= >) (;) (-D* pegux*y"
+k=0
+
+With this, T7(p) := p *. q is a linear operator in Hom(V (n), V(n)), and we have:
+
+Symb(T,) = [] ew — zjzy) = Hmgy,, | []@ — 272)
+j=l j=l
+
+D Springer

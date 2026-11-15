@@ -2,22 +2,27 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1908.07065v3",
  "source_sha256": "c43e413aed71aef1",
- "brief": "Non-perturbative approaches to the quantum Seiberg–Witten curve — We study various non-perturbative approaches to the quantization of the Seiberg– Witten curve ofN = 2, SU (2) super Yang–Mills",
- "extended": "**Non-perturbative approaches to the quantum Seiberg–Witten curve**\n\n*Alba Grassia, Jie Gu b and Marcos Mariñob*\n\n47 pp, 14 sections.\n\n**Abstract.** We study various non-perturbative approaches to the quantization of the Seiberg– Witten curve ofN = 2, SU (2) super Yang–Mills theory, which is closely related to the modiﬁed Mathieu operator. The ﬁrst approach is based on the quantum WKB periods and their resurgent properties. We show that these properties are encoded in the TBA equations of Gaiotto–Moore– Neitzke determined by the BPS spectrum of the theory, and we relate the Borel-resummed quantum periods to instanton calculus. In addition, we use the TS/ST correspondence to obtain a closed formula for the Fredholm determinant of the modiﬁed Mathieu operator. Finally, by using blowup equations, we explain the connection between this operator and the τ function of Painlev´ e III. arXiv:1908.07065v3 [hep-th] 20 Jul 2020\n\n**Outline.** 1 Introduction; 2 The all-orders WKB method; 3 Quantum periods from TBA equations; 3.1 Review of the TBA equations of Gaiotto–Moo; 3.2.1 Strong coupling region; 3.2.2 Weak coupling region; 3.3 Solving the TBA equations in the strong co; 4 Quantum periods from instanton calculus; 4.1 Review of instanton calculus; 4.2 Comparison to Borel resummation; 5 The Fredholm determinant from topological st; 5.1 A closed formula and its derivation; 5.2 Tests of our formula; 7 Conclusions",
+ "brief": "Non-perturbative approaches to the quantum Seiberg–Witten curve — We study various non-perturbative approaches to the quantization of the Seiberg– Witten curve of N = 2, SU(2) super Yang–Mills",
+ "extended": "**Non-perturbative approaches to the quantum Seiberg–Witten curve**\n\n*Alba Grassia, Jie Gub and Marcos Mariñob*\n\n47 pp, 20 sections.\n\n**Abstract.** We study various non-perturbative approaches to the quantization of the Seiberg– Witten curve of N = 2, SU(2) super Yang–Mills theory, which is closely related to the modiﬁed Mathieu operator. The ﬁrst approach is based on the quantum WKB periods and their resurgent properties. We show that these properties are encoded in the TBA equations of Gaiotto–Moore– Neitzke determined by the BPS spectrum of the theory, and we relate the Borel-resummed quantum periods to instanton calculus. In addition, we use the TS/ST correspondence to obtain a closed formula for the Fredholm determinant of the modiﬁed Mathieu operator. Finally, by using blowup equations, we explain the connection between this operator and the τ function of Painlev´e III. arXiv:1908.07065v3 [hep-th] 20 Jul 2020\n\n**Outline.** Front matter; 1 Introduction; 2 The all-orders WKB method; 3 Quantum periods from TBA equations; 3.1 Review of the TBA equations of Gaiotto–Moo; 3.2 TBA equations for the modified Mathieu equ; 3.2.1 Strong coupling region; 3.2.2 Weak coupling region; 3.3 Solving the TBA equations in the strong co; 4 Quantum periods from instanton calculus; 4.1 Review of instanton calculus; 4.2 Comparison to Borel resummation; 5 The Fredholm determinant from topological st; 5.1 A closed formula and its derivation; 5.2 Tests of our formula; 5.3 Comparison to Zamolodchikov's TBA equation; 6 On the modified Mathieu operator and Painlev; 7 Conclusions",
  "tokens": {
   "brief": 48,
-  "extended": 356
+  "extended": 395
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "2-3"
+   "pages": "2-4"
   },
   {
    "id": "sec-001-2-the-all-orders-wkb-method",
    "title": "The all-orders WKB method",
-   "pages": "3-8"
+   "pages": "4-8"
   },
   {
    "id": "sec-002-3-quantum-periods-from-tba-equations",
@@ -27,57 +32,82 @@
   {
    "id": "sec-003-31-review-of-the-tba-equations-of-gaiottomoorene",
    "title": "Review of the TBA equations of Gaiotto–Moore–Neitzke",
-   "pages": "9-11"
+   "pages": "9-10"
   },
   {
-   "id": "sec-004-321-strong-coupling-region",
+   "id": "sec-004-32-tba-equations-for-the-modified-mathieu-equati",
+   "title": "TBA equations for the modified Mathieu equation",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-005-321-strong-coupling-region",
    "title": "Strong coupling region",
    "pages": "11-15"
   },
   {
-   "id": "sec-005-322-weak-coupling-region",
+   "id": "sec-006-322-weak-coupling-region",
    "title": "Weak coupling region",
    "pages": "15-18"
   },
   {
-   "id": "sec-006-33-solving-the-tba-equations-in-the-strong-coupl",
+   "id": "sec-007-33-solving-the-tba-equations-in-the-strong-coupl",
    "title": "Solving the TBA equations in the strong coupling region",
    "pages": "18-20"
   },
   {
-   "id": "sec-007-4-quantum-periods-from-instanton-calculus",
+   "id": "sec-008-4-quantum-periods-from-instanton-calculus",
    "title": "Quantum periods from instanton calculus",
    "pages": "20-21"
   },
   {
-   "id": "sec-008-41-review-of-instanton-calculus",
+   "id": "sec-009-41-review-of-instanton-calculus",
    "title": "Review of instanton calculus",
    "pages": "21-25"
   },
   {
-   "id": "sec-009-42-comparison-to-borel-resummation",
+   "id": "sec-010-42-comparison-to-borel-resummation",
    "title": "Comparison to Borel resummation",
    "pages": "25-29"
   },
   {
-   "id": "sec-010-5-the-fredholm-determinant-from-topological-stri",
+   "id": "sec-011-5-the-fredholm-determinant-from-topological-stri",
    "title": "The Fredholm determinant from topological string theory",
    "pages": "29-30"
   },
   {
-   "id": "sec-011-51-a-closed-formula-and-its-derivation",
+   "id": "sec-012-51-a-closed-formula-and-its-derivation",
    "title": "A closed formula and its derivation",
    "pages": "30-31"
   },
   {
-   "id": "sec-012-52-tests-of-our-formula",
+   "id": "sec-013-52-tests-of-our-formula",
    "title": "Tests of our formula",
-   "pages": "31-37"
+   "pages": "31-33"
   },
   {
-   "id": "sec-013-7-conclusions",
+   "id": "sec-014-53-comparison-to-zamolodchikovs-tba-equation",
+   "title": "Comparison to Zamolodchikov's TBA equation",
+   "pages": "33-36"
+  },
+  {
+   "id": "sec-015-6-on-the-modified-mathieu-operator-and-painlevé",
+   "title": "On the modified Mathieu operator and Painlevé III3",
+   "pages": "36-37"
+  },
+  {
+   "id": "sec-016-7-conclusions",
    "title": "Conclusions",
-   "pages": "37-47"
+   "pages": "37-38"
+  },
+  {
+   "id": "sec-017-a-the-four-dimensional-sun-spectral-determinant",
+   "title": "A The four dimensional SU(N) spectral determinant",
+   "pages": "38-40"
+  },
+  {
+   "id": "sec-018-b-zamolodchikovs-tba-equation-for-the-modified-m",
+   "title": "B Zamolodchikov's TBA equation for the modified Mathieu equation",
+   "pages": "40-47"
   }
  ],
  "provenance": {

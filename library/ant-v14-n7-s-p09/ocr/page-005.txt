@@ -1,0 +1,45 @@
+Galois action on the principal block and cyclic Sylow subgroups 1957
+
+Lemma 1.2. Let G be a finite group and let p be a prime. Suppose that B is a block of G with a normal
+defect group D. Let b be a root of B with canonical character 0. Then
+
+Im(B"= (J) inGla),
+Aelir(D/(D))
+where ®(D) is the Frattini subgroup of D. Moreover, if c € B\(G, | D) is the Fong—Reynolds correspon-
+dent of B, then
+[Irro(B)*"| = |Irro(c)”"|.
+
+Proof. First notice that as a p-group, D has a unique block, the principal one, and Irro(Bo(D)) =
+Irr,(D) = Inr(D/D’). Then Inr,(D)*! = Inr(D/®(D)). Since D/®(D) is p-elementary abelian, one
+inclusion is straight-forward. To see that Irr,,(D)°' ¢ Irr(D/®(D)) notice that if A € Inr(D/D’) is
+o1-fixed, then A7! = 4?+! =), and hence |D/ker | < p, implying ®(D) C kerA.
+
+Write A = (01) and let Goa be as in Lemma 1.1. By (2), we know that
+
+In(B)= |) In(G| 4).
+elrr(D/D’)
+If x € Irrp(B)”! lies over 6,, then (6,)7! = (@,), for some g € G. In particular, g € Gga = Gg, = Gg NG)
+by Lemma 1.1. Then A°! = A8 = 2. Hence ®(D) C kerd and 4 € Inr(D/®(D)). :
+
+Conversely, let x € Irr(G | 6,,), where 1 € Irr(D/®(D)). Then 47! =i. As b®! = b, we see oj fixes 6
+too. Then (6,)7! = @,. Let w € Irr(Go,) be the Clifford correspondent of x over 0,. Since Gg, C Go,
+we know that p does not divide the order of Gg, /CD. By [Navarro and Tiep 2019, Lemma 5.1], w is
+o,-invariant and so is x.
+
+To prove the last part of the statement, recall that the Fong—Reynolds correspondence states that the
+induction map yf bh we provides a bijection Irro(c) — Irro(B). In particular, |Irro(c)*'| < |Irro(B)™|.
+Now let x € Irro(B)”! lie over 6,, for some 4 € Irr(D/®(D)) by the first part of this proof. Then
+(0,,)"! = (0,)8 for some g € G. In particular, g € Goa. Since Goa = Go, by Lemma 1.1, 6, is o1-fixed.
+Let & € Irr(Go, | 6.) be the Clifford correspondent of x. Since both x and 6, are o1-fixed then so is &.
+We have that &%* is the Fong—Reynolds correspondent of x by the transitivity of block induction (see
+[Navarro 1998, Problem 4.2]), which is o1-fixed. O
+
+The Alperin-McKay—Navarro conjecture holds for blocks with cyclic defect groups by [Navarro 2004,
+Theorem 3.4]. We obtain the following as a consequence of this fact.
+
+Lemma 1.3. Let G be a finite group and let B be a block of G with cyclic defect group D. Then
+1 <|Irr9(B)™| < p.
+
+The set Irto(B)"! has minimal size | if, and only if, D is trivial. Furthermore, if p € {2,3} and D is
+nontrivial, then
+|Irro(B)°"| = p.

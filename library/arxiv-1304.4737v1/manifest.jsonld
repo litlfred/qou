@@ -9,13 +9,16 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1304.4737v1",
+  "title": "Toroidal domain walls as Hopﬁons Abstract",
   "contains": [
     "library/arxiv-1304.4737v1/sections/sec-front-matter",
-    "library/arxiv-1304.4737v1/sections/sec-000"
+    "library/arxiv-1304.4737v1/sections/sec-000",
+    "library/arxiv-1304.4737v1/sections/sec-001",
+    "library/arxiv-1304.4737v1/sections/sec-002",
+    "library/arxiv-1304.4737v1/sections/sec-003"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -25,7 +28,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1304.4737v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1304.4737v1.pdf",
     "source_sha256": "7dcfb1a25bfc0cdafa16049319fbccad7733d6347c0e83ff698d5d78ee4cc369",
     "pages": 18,

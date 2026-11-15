@@ -6,10 +6,12 @@
   "sha256": "3ff2f5358b25586e10469081d9b0a6e07671cced9d3f3a5074e55f5f6c749c74",
   "bytes": 366905,
   "pages": 8,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -19,20 +21,30 @@
    "stamp_date": "22 Oct 2012"
   },
   "doi": null,
-  "title": "Controlled double-slit electron diffraction",
-  "authors_raw": "Roger Bach 1, Damian Pope 2, Sy-Hwang Liou 1 and",
-  "abstract": "Double-slit di\ufb00raction is a corner stone of quantum mechanics. It illustrates key features of quantum mechanics: interference and the particle-wave duality of matter. In 1965, Richard Feynman presented a thought experiment to show these features. Here we demonstrate the full realization of his famous thought experiment. By placing a movable mask in front of a double-slit to cont rol the transmission through the individual slits, probability distributions fo r single- and double-slit arrangements were observed. Also, by recording single electron detection events di\ufb00racting through a double-slit, a di\ufb00raction pattern was b uilt up from individual events. PACS numbers: 03.65.-w, 03.75.-b, 41.75.Fr, 41.85.-p, 42.25.Fx",
-  "docinfo": {
-   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.08",
-   "CreationDate": "D:20150311214318-04'00'",
-   "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  },
-  "title_prev": "Controlled double-slit electron di\ufb00raction",
+  "title": "Controlled double-slit electron diﬀraction",
+  "authors_raw": "Roger Bach1, Damian Pope2, Sy-Hwang Liou1 and",
   "title_lines": [
    "Controlled double-slit electron diffraction"
-  ]
+  ],
+  "abstract": "Double-slit diﬀraction is a corner stone of quantum mechanics. It illustrates key features of quantum mechanics: interference and the particle-wave duality of matter. In 1965, Richard Feynman presented a thought experiment to show these features. Here we demonstrate the full realization of his famous thought experiment. By placing a movable mask in front of a double-slit to control the transmission through the individual slits, probability distributions for single- and double-slit arrangements were observed. Also, by recording single electron detection events diﬀracting through a double-slit, a diﬀraction pattern was built up from individual events. PACS numbers: 03.65.-w, 03.75.-b, 41.75.Fr, 41.85.-p, 42.25.Fx",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.08",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20150311214318-04'00'"
+  },
+  "title_raw": "Controlled double-slit electron diffraction",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Controlled double-slit electron diﬀraction",
+   "outline": "1 Introduction",
+   "text": "Controlled double-slit electron diffraction",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Controlled double-slit electron diffraction"
  },
  "toc": [
   {
@@ -40,32 +52,167 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Experimental Setup",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "Results",
    "page": 3,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "Conclusion",
    "page": 4,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Simpliﬁed setup. a, An electron beam passes through a wall with two slits in it. A movable mask is positioned to block the electrons, only allowing the ones traversing through slit 1 (P1), slit 2 (P2), or both (P12) to reach the backstop and detector. b,c, Probability distributions are shown, (Exper",
+   "page": 6,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Mask movement",
+   "page": 7,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Buildup of electron diﬀraction. “Blobs” indicate the locations of detected electrons. Shown are intermediate build-up patterns from the central ﬁve orders of the diﬀraction pattern (P12) magniﬁed from ﬁgure 2, with 2, 7, 209, 1004, and 6235 electrons (a-e). A full movie of the electron build-up is i",
+   "page": 8,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1169,
+   "n_words": 156,
+   "label_start": null,
+   "label_end": "2"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -73,8 +220,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 3439,
-   "n_words": 540
+   "n_chars": 3425,
+   "n_words": 512,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
    "id": "sec-001-2-experimental-setup",
@@ -83,8 +232,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 1800,
-   "n_words": 310
+   "n_chars": 1785,
+   "n_words": 295,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
    "id": "sec-002-3-results",
@@ -93,8 +244,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 2557,
-   "n_words": 448
+   "n_chars": 2532,
+   "n_words": 423,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
    "id": "sec-003-4-conclusion",
@@ -103,16 +256,26 @@
    "level": 1,
    "page_start": 4,
    "page_end": 8,
-   "n_chars": 4532,
-   "n_words": 777
+   "n_chars": 4484,
+   "n_words": 729,
+   "label_start": "4",
+   "label_end": "8"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 4,
-  "sections": 4,
-  "chars_total": 12328,
+  "toc_inferred_entries": 0,
+  "figure_entries": 3,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 5,
+  "chars_total": 13395,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Controlled_double_slit_diffraction_archive.tex",
@@ -125,9 +288,14 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
+     "prose_ratio": 0.981,
      "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "pandoc"
@@ -135,8 +303,8 @@
     {
      "id": "sec-001-2-experimental-setup",
      "title": "Experimental Setup",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.984,
+     "prose_ratio": 0.992,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -144,7 +312,7 @@
      "id": "sec-002-3-results",
      "title": "Results",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.985,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -152,8 +320,8 @@
      "id": "sec-003-4-conclusion",
      "title": "Conclusion",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.403,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.374,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

@@ -1,0 +1,94 @@
+IOP Publishing
+
+Qa
+
+OPEN ACCESS
+
+RECEIVED
+11 November 2021
+
+REVISED
+13 December 2021
+
+ACCEPTED FOR PUBLICATION
+15 December 2021
+
+PUBLISHED
+10 January 2022
+
+Original content from this
+work may be used under
+the terms of the Creative
+Commons Attribution 4.0
+licence.
+
+Any further distribution of
+this work must maintain
+attribution to the
+author(s) and the title of
+the work, journal citation
+and DOI.
+
+J. Phys. Commun. 6 (2022) 015002 https://doi.org/10.1088/2399-6528/ac438d
+
+Journal of Physics Communications
+
+PAPER
+On the derivation of a Nonlinear Generalized Langevin Equation
+
+Loris Di Cairano®
+
+Department of Physics, Faculty of Mathematics, Computer Science and Natural Sciences, Aachen University, 52062 Aachen, Germany
+Computational Biomedicine, Institute of Neuroscience and Medicine INM-9 and Institute for Advanced Simulations IAS-5,
+Forschungszentrum Jiilich, 52428 Jiilich, Germany
+
+E-mail: |.di.cairano@fz-juelich.de and l.di.cairano.92@gmail.com
+
+Keywords: generalized langevin equation, nonlinearity, hamiltonian systems, diffusive processes
+
+Abstract
+
+We recast the Zwanzig’s derivation of a nonlinear generalized Langevin equation (GLE) for a heavy
+particle interacting with a heat bath in a more general framework. We show that it is necessary to
+readjust the Zwanzig’s definitions of the kernel matrix and noise vector in the GLE in order to recover
+the correct definition of fluctuation-dissipation theorem and to be able performing consistently the
+continuum limit. As shown by Zwanzig, the nonlinear feature of the resulting GLE is due to the
+nonlinear dependence of the equilibrium map by the heavy particle variables. Such an equilibrium
+map represents the global equilibrium configuration of the heat bath particles for a fixed
+(instantaneous) configuration of the system. Following the same derivation of the GLE, we show that a
+deeper investigation of the equilibrium map, considered in the Zwanzig’s Hamiltonian, is necessary.
+Moreover, we discuss how to get an equilibrium map given a general interaction potential. Finally, we
+provide a renormalization procedure which allows to divide the dependence of the equilibrium map
+by coupling coefficient from the dependence by the system variables yielding a more rigorous
+mathematical structure of the nonlinear GLE.
+
+1. Introduction
+
+1.1. State-of-art
+
+The generalized Langevin equation (GLE) is an important mathematical tool for investigating a wide class of
+both quantum and classical diffusive phenomena [1] and it is an extension of the Langevin equation [2]. The
+major advantage of GLE-based approaches is the reduction of the number of degrees of freedom which describe
+the system-environment interactions. For example, in case ofa particle moving in a given environment, instead
+of solving the Newton’s equations of motions for the system and for each particles of the environment, one can
+just focus on the velocity vector, U, of the diffusing particle, that is, the GLE reads:
+
+dU t
+“(0 = -f ¥(t — U(r) dr + FO), a
+
+where 7(t — 7) is the friction function and, finally, F(t) isa zero mean, stochastic, Gaussian colored noise and
+they are related through the fluctuation-dissipation relation (FDR) [3]:
+
+(F(t)F(7)) = kpT y(t — 7)s (2)
+
+where kg is the Boltzmann constant and T the temperature. Despite the drastic reduction of the degrees of
+freedom, the GLE has shown to provide a reliable description of the physical diffusive processes. In fact, it has
+been employed in many fields of research, for instance, in Biophysics, for studying anomalous diffusion of
+proteins in lipid membrane [4—7], in Hydrodynamics, for studying how probe particles diffuse in viscoelastic
+materials [8—12], in Quantum Mechanics, for explaining the dissipation in quantum system on a more
+fundamental and general level [13-17] as well as in case of specific system such as the Caldeira-Leggett model
+[18, 19] and, in Chemistry, as a diffusion model for the chemical reactions [20, 21]. Nevertheless, the accuracy of
+the physical description provided by the GLE strictly depends on how one models the parameters and the time-
+dependence of the friction function. Its parametrization, in fact, is an open field of research which involves both
+
+© 2022 The Author(s). Published by IOP Publishing Ltd

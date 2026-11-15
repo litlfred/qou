@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/pjm-v161-n1-p02-p/sections/sec-037",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "(resp. b^ (page 67)",
+  "pageStart": 67,
+  "pageEnd": 67,
+  "contains": [
+    "library/pjm-v161-n1-p02-p/blocks/prose-sec-037",
+    "library/pjm-v161-n1-p02-p/blocks/recommendation-sec-037-01",
+    "library/pjm-v161-n1-p02-p/blocks/recommendation-sec-037-02",
+    "library/pjm-v161-n1-p02-p/blocks/recommendation-sec-037-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/pjm-v161-n1-p02-p",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/pjm-v161-n1-p02-p",
+  "provenance": "ingested"
+}

@@ -1,0 +1,1 @@
+In the following $\Delta$ shall denote the base of diamonds generating the topology of $M$ (see [@GLRV01 §2.1] or, more shortly, [@BR08 §3.1]), thus the abstract results of the previous section apply.

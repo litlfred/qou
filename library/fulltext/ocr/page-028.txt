@@ -1,0 +1,71 @@
+30 Don Zagier
+
+Proof. All three of these identities can be proved in essentially the same way.
+To emphasize this, we present the three proofs simultaneously. Since (2). is
+obviously a power series in x with constant term 1, we can write
+
+oo
+
+ce 1
+(ro = Deena BIA
+
+oo
+bya”, —los(2)m0 = Joona”
+
+n=0 n=l
+
+for some coefficients an, bn and c, depending on q, do = bo = 1. Combining
+
+each of these expansions with the functional equation (1).. = (1 — 2) (q)oo
+
+and comparing the coefficients of x” on both sides, we find
+
+1
+(L= 4") an = —g" hana, (L-a")bn = bra, =a" en = =
+from which the desired formulas
+
+(-1)" q(2) 1
+ay = ——*— , = Cr =
+" (Qn ""@n
+follow immediately or by induction. Note that the third identity of the propo-
+sition can also be proved directly, without using the functional equation of
+()oo, by the calculation
+
+1 1
+n 1l—q"
+
+(10)
+
+ce wo my on
+—log(#)o0 = })—log(l—ag'r) = YTDI gia" = ade’
+i=0 i=0 n=1 n=1 q
+
+ie., Lig(a;q) = P29 Lin(q'z).
+
+The second surprise is the discovery by Faddeev and Kashaev [15] that the
+q-dilogarithm satisfies a non-commutative 5-term functional equation which
+degenerates in the limit g — 1 to the classical 5-term functional equation
+of the classical dilogarithm. We content ourselves with stating and proving
+the first statement only, referring the reader for the second statement (which
+involves the use of the Baker-Campbell-Hausdorff formula) to the original
+paper, or to the more recent survey paper by Zudilin [48].
+
+Proposition 3 ({38], [15], [22]). Let u and v be non-commuting variables
+satisfying the commutation relation
+
+uv = quu. (11)
+Then
+(voc (U)oo = (U)oo (—VU)oo (U)oo « (12)
+
+(2)
+
+%)oo in (12) by equation (7) and observing that
+“ep
+
+Proof. Expanding each factor
+
+NM —mn,,m,\n
+
+vtu™ = q "uv" and (vu)* = ¢ usv*, we find that (12) is equivalent
+
+to the generating series identity

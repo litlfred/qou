@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2103.00651v1
-doc_title: "On Concentration Inequalities for Vector-Valued Lipschit z Functions Dimitrios Katselis katselis@illinois.edu"
+doc_title: "On Concentration Inequalities for Vector-Valued Lipschitz Functions"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-2
 source_pdf: 2103.00651v1.pdf
 source_sha256: c5505d3e4891168e
-doc_brief: "On Concentration Inequalities for Vector-Valued Lipschit z Functions Dimitrios Katselis katselis@illinois.edu — We derive two upper bounds for the probability of deviation of a vect or-valued"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.958
+doc_brief: "On Concentration Inequalities for Vector-Valued Lipschitz Functions — We derive two upper bounds for the probability of deviation of a vector-valued Lipschitz function of a collection of random"
 ---
 In many statistical settings, vector-valued estimators naturally arise and determining their statistical rates is essential. As an example, assume that $X=(X_1,\ldots, X_n)$ corresponds to a random sample drawn from a product measure $\nu_{\theta}^{\otimes n}$, denoted by $X\sim \nu_{\theta}^{\otimes n}$, where $\theta$ is a parameter vector taking values in a compact set $\Theta \subset \mathbb{R}^k$ with a fixed dimension $k$ independent of $n$. In this case, $\hat{\theta}_n=f(X)$ is a candidate vector-valued estimator of $\theta$, where $f$ is a measurable function with respect to $X$. In such settings, we are interested in knowing how close $f(X)$ is to its expectation $E_{\nu}[f(X)]$. Concentration inequalities for $f(X)$ when the deviation from $E_{\nu}[f(X)]$ is measured in terms of a metric, often norm-induced, are important.
 

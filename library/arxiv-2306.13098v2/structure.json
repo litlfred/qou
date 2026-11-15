@@ -7,10 +7,11 @@
   "bytes": 473467,
   "pages": 18,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +21,31 @@
    "stamp_date": "15 Feb 2024"
   },
   "doi": null,
-  "title": "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions",
-  "authors_raw": "Niels G. Gresnigt 1\u22c6, Liam Gourlay 1 and Abhinav Varma1",
+  "title": "Three generations of colored fermions with S 3 family symmetry from Cayley-Dickson sedenions",
+  "authors_raw": "Niels G. Gresnigt1⋆, Liam Gourlay1 and Abhinav Varma1",
   "title_lines": [
    "Three generations of colored fermions with S3 family symmetry",
    "from Cayley-Dickson sedenions"
   ],
-  "abstract": "An algebraic representation of three generations of fermions with SU (3)C color symmetry based on the Cayley-Dickson algebra of sedenions S is constructed. Recent constructions based on division algebras convincingly describe a single generation of leptons and quarks with Standard Model gauge symmetries. Nonetheless, an algebraic origin for the existence of exactly three generations has proven difficult to sub- stantiate. We motivate S as a natural algebraic candidate to describe three generations with SU (3)C gauge symmetry. We initially represent one generation of leptons and quarks in terms of two minimal left ideals of C\u2113(6), generated from a subset of all left actions of the complex sedenions on themselves. Subsequently we employ the finite group S3, which are automorphisms of S but not of O to generate two additional generations. Given the relative obscurity of sedenions, efforts have been made to present the material in a self-contained manner.",
+  "abstract": "An algebraic representation of three generations of fermions with SU(3)C color symmetry based on the Cayley-Dickson algebra of sedenions S is constructed. Recent constructions based on division algebras convincingly describe a single generation of leptons and quarks with Standard Model gauge symmetries. Nonetheless, an algebraic origin for the existence of exactly three generations has proven difficult to sub- stantiate. We motivate S as a natural algebraic candidate to describe three generations with SU(3)C gauge symmetry. We initially represent one generation of leptons and quarks in terms of two minimal left ideals of Cℓ(6), generated from a subset of all left actions of the complex sedenions on themselves. Subsequently we employ the finite group S3, which are automorphisms of S but not of O to generate two additional generations. Given the relative obscurity of sedenions, efforts have been made to present the material in a self-contained manner.",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20240216021025Z",
-   "Creator": "LaTeX with hyperref",
    "Producer": "pdfTeX-1.40.25",
-   "Title": ""
-  }
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20240216021025Z"
+  },
+  "title_raw": "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Three generations of colored fermions with S 3 family symmetry from Cayley-Dickson sedenions",
+   "outline": "Introduction",
+   "text": "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions"
  },
  "toc": [
   {
@@ -41,109 +53,357 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Normed division algebras",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "One generation of electrocolor states from CO",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "The Cayley-Dickson construction and the algebra of sedenions",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Octonion subalgebras inside the sedenions",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "The left multiplication algebra of CS",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Automorphisms of sedenions",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "Three generations of color states from CS",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Why not sedenions?",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "One generation of electrocolor states from CS",
    "page": 10,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Generating two additional generations from S3 automorphisms",
    "page": 11,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "SU(3)C color symmetries of three generations",
    "page": 13,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "Linear dependence of minimal ideal states",
    "page": 13,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 1,
    "title": "Outlook",
    "page": 13,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 1,
    "title": "Discussion",
    "page": 14,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The Fano plane, encoding the multiplicative structure of our octonions, where a ≡ia, a = 1, ..., 7. Note that each line is cyclic, representing a quaternionic triple",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Sedenion multiplication table, generated from e1, e2, e4 and e8 corresponding to the new C, H, O",
+   "page": 15,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "15"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1259,
+   "n_words": 183,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -151,8 +411,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 7918,
-   "n_words": 1281
+   "n_chars": 7925,
+   "n_words": 1276,
+   "label_start": "1",
+   "label_end": "3"
   },
   {
    "id": "sec-001-normed-division-algebras",
@@ -161,8 +423,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 5,
-   "n_chars": 6724,
-   "n_words": 1141
+   "n_chars": 6776,
+   "n_words": 1193,
+   "label_start": "3",
+   "label_end": "5"
   },
   {
    "id": "sec-002-one-generation-of-electrocolor-states-from-co",
@@ -171,8 +435,10 @@
    "level": 1,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 2689,
-   "n_words": 469
+   "n_chars": 2776,
+   "n_words": 516,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
    "id": "sec-003-the-cayley-dickson-construction-and-the-algebra",
@@ -181,8 +447,10 @@
    "level": 1,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 1953,
-   "n_words": 332
+   "n_chars": 2043,
+   "n_words": 369,
+   "label_start": "6",
+   "label_end": "6"
   },
   {
    "id": "sec-004-octonion-subalgebras-inside-the-sedenions",
@@ -190,92 +458,152 @@
    "title": "Octonion subalgebras inside the sedenions",
    "level": 2,
    "page_start": 6,
-   "page_end": 8,
-   "n_chars": 6041,
-   "n_words": 1047
+   "page_end": 7,
+   "n_chars": 2946,
+   "n_words": 578,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
-   "id": "sec-005-automorphisms-of-sedenions",
+   "id": "sec-005-the-left-multiplication-algebra-of-cs",
+   "number": null,
+   "title": "The left multiplication algebra of CS",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 3177,
+   "n_words": 548,
+   "label_start": "7",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-006-automorphisms-of-sedenions",
    "number": null,
    "title": "Automorphisms of sedenions",
    "level": 2,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 2729,
-   "n_words": 529
+   "n_chars": 2760,
+   "n_words": 572,
+   "label_start": "8",
+   "label_end": "9"
   },
   {
-   "id": "sec-006-why-not-sedenions",
+   "id": "sec-007-three-generations-of-color-states-from-cs",
+   "number": null,
+   "title": "Three generations of color states from CS",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "9",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-008-why-not-sedenions",
    "number": null,
    "title": "Why not sedenions?",
    "level": 2,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 3066,
-   "n_words": 486
+   "n_chars": 3092,
+   "n_words": 496,
+   "label_start": "9",
+   "label_end": "10"
   },
   {
-   "id": "sec-007-one-generation-of-electrocolor-states-from-cs",
+   "id": "sec-009-one-generation-of-electrocolor-states-from-cs",
    "number": null,
    "title": "One generation of electrocolor states from CS",
    "level": 2,
    "page_start": 10,
    "page_end": 11,
-   "n_chars": 2079,
-   "n_words": 403
+   "n_chars": 2178,
+   "n_words": 462,
+   "label_start": "10",
+   "label_end": "11"
   },
   {
-   "id": "sec-008-generating-two-additional-generations-from-s3-au",
+   "id": "sec-010-generating-two-additional-generations-from-s3-au",
    "number": null,
    "title": "Generating two additional generations from S3 automorphisms",
    "level": 2,
    "page_start": 11,
    "page_end": 13,
-   "n_chars": 5451,
-   "n_words": 933
+   "n_chars": 3767,
+   "n_words": 706,
+   "label_start": "11",
+   "label_end": "13"
   },
   {
-   "id": "sec-009-linear-dependence-of-minimal-ideal-states",
+   "id": "sec-011-su3c-color-symmetries-of-three-generations",
+   "number": null,
+   "title": "SU(3)C color symmetries of three generations",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 1817,
+   "n_words": 311,
+   "label_start": "13",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-012-linear-dependence-of-minimal-ideal-states",
    "number": null,
    "title": "Linear dependence of minimal ideal states",
    "level": 2,
    "page_start": 13,
    "page_end": 13,
-   "n_chars": 1331,
-   "n_words": 224
+   "n_chars": 1377,
+   "n_words": 234,
+   "label_start": "13",
+   "label_end": "13"
   },
   {
-   "id": "sec-010-outlook",
+   "id": "sec-013-outlook",
    "number": null,
    "title": "Outlook",
    "level": 1,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 3498,
-   "n_words": 583
+   "n_chars": 3510,
+   "n_words": 588,
+   "label_start": "13",
+   "label_end": "14"
   },
   {
-   "id": "sec-011-discussion",
+   "id": "sec-014-discussion",
    "number": null,
    "title": "Discussion",
    "level": 1,
    "page_start": 14,
    "page_end": 18,
-   "n_chars": 11632,
-   "n_words": 1873
+   "n_chars": 11612,
+   "n_words": 1843,
+   "label_start": "14",
+   "label_end": "18"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 15,
-  "sections": 12,
-  "chars_total": 55111,
+  "toc_inferred_entries": 0,
+  "figure_entries": 2,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 16,
+  "chars_total": 57015,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Article.tex",
    "tex_sections": 18,
-   "overlaid": 10,
+   "overlaid": 12,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -283,26 +611,31 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.993,
+     "prose_ratio": 0.905,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-normed-division-algebras",
      "title": "Normed division algebras",
-     "prose_ratio": 0.996,
-     "coverage_ratio": 0.965,
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.891,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-one-generation-of-electrocolor-states-from-co",
      "title": "One generation of electrocolor states from CO",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.993,
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.974,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -317,63 +650,85 @@
     {
      "id": "sec-004-octonion-subalgebras-inside-the-sedenions",
      "title": "Octonion subalgebras inside the sedenions",
-     "prose_ratio": 0.989,
-     "coverage_ratio": 0.968,
+     "prose_ratio": 0.854,
+     "coverage_ratio": 0.978,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-automorphisms-of-sedenions",
+     "id": "sec-005-the-left-multiplication-algebra-of-cs",
+     "title": "The left multiplication algebra of CS",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.81,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-automorphisms-of-sedenions",
      "title": "Automorphisms of sedenions",
-     "prose_ratio": 0.981,
-     "coverage_ratio": 0.972,
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-why-not-sedenions",
+     "id": "sec-007-three-generations-of-color-states-from-cs",
+     "title": "Three generations of color states from CS",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-why-not-sedenions",
      "title": "Why not sedenions?",
-     "prose_ratio": 0.763,
-     "coverage_ratio": 0.958,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-007-one-generation-of-electrocolor-states-from-cs",
-     "title": "One generation of electrocolor states from CS",
-     "prose_ratio": 0.383,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-008-generating-two-additional-generations-from-s3-au",
-     "title": "Generating two additional generations from S3 automorphisms",
-     "prose_ratio": 0.974,
-     "coverage_ratio": 0.974,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-009-linear-dependence-of-minimal-ideal-states",
-     "title": "Linear dependence of minimal ideal states",
-     "prose_ratio": 0.957,
+     "prose_ratio": 0.768,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-outlook",
-     "title": "Outlook",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.995,
+     "id": "sec-009-one-generation-of-electrocolor-states-from-cs",
+     "title": "One generation of electrocolor states from CS",
+     "prose_ratio": 0.391,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-010-generating-two-additional-generations-from-s3-au",
+     "title": "Generating two additional generations from S3 automorphisms",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.975,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-discussion",
+     "id": "sec-011-su3c-color-symmetries-of-three-generations",
+     "title": "SU(3)C color symmetries of three generations",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-linear-dependence-of-minimal-ideal-states",
+     "title": "Linear dependence of minimal ideal states",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-outlook",
+     "title": "Outlook",
+     "prose_ratio": 0.924,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-discussion",
      "title": "Discussion",
      "prose_ratio": 0.989,
-     "coverage_ratio": 0.408,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.411,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-0709.3157v1",
  "source_sha256": "22a0d9a93c9dcb8d",
- "brief": "V . Mateu — The implementation of tensor sources in Chiral Lagrangians allows the computation of Green functions and form factors involving tensor currents , that is, quark bilinears of the form ¯qi",
- "extended": "**V . Mateu**\n\n*Departament de Física Teòrica, IFIC, Universitat de València-CSIC*\n\n7 pp, 7 sections.\n\n**Abstract.** The implementation of tensor sources in Chiral Lagrangians allows the computation of Green functions and form factors involving tensor currents , that is, quark bilinears of the form ¯qi σ μν q j. Whereas only four new terms show up at O(p4), we ﬁnd around a hundred of them at O(p6). So it becomes essential to ensure that this set o operators i s indeed minimal and non– redundant (i.e., it is a basis). We discuss two phenomenological applications in the context of vector meson resonances and the radiative pion decay.\n\n**Outline.** Introduction; QCD in the presence of external sources; Chiral building blocks; The chiral Lagrangian; Two comments on tensor sources; Tensor sources in the Resonance chiral theory ; Conclusions",
+ "brief": "Chiral Lagrangians with tensor sources — The implementation of tensor sources in Chiral Lagrangians allows the computation of Green functions and form factors involving tensor currents, that is",
+ "extended": "**Chiral Lagrangians with tensor sources**\n\n*V. Mateu*\n\n7 pp, 8 sections.\n\n**Abstract.** The implementation of tensor sources in Chiral Lagrangians allows the computation of Green functions and form factors involving tensor currents, that is, quark bilinears of the form ¯qi σ µν q j. Whereas only four new terms show up at O(p4), we ﬁnd around a hundred of them at O(p6). So it becomes essential to ensure that this set o operators is indeed minimal and non– redundant (i.e., it is a basis). We discuss two phenomenological applications in the context of vector meson resonances and the radiative pion decay.\n\n**Outline.** Front matter; Introduction; QCD in the presence of external sources; Chiral building blocks; The chiral Lagrangian; Two comments on tensor sources; Tensor sources in the Resonance chiral theory ; Conclusions",
  "tokens": {
-  "brief": 49,
-  "extended": 211
+  "brief": 48,
+  "extended": 207
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-introduction",
    "title": "Introduction",

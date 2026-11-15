@@ -10,6 +10,7 @@ source_sha256: 18321b615ffc968b
 toc_source: outline
 doc_brief: "A Tutorial on Knots and Quantum Mechanics — These notes review a description of quantum mechanics in terms of the topology of spaces, basing on the axioms of Topological Quantum Field Theory and path"
 ---
+Entropy of Entanglement
 So far we avoided working with a precise quantitative measure of entanglement. In this section we will
 discuss the von Neumann entropy, which provides one of the most common measures, and try to explain
 why it is natural for the topological formulation of quantum mechanics.
@@ -263,4 +264,3 @@ find a surface that encloses one of the spheres and cuts the minimal number of l
 The above definition only works for states of the connectome type (150) and more, importantly in the
 limit of large k and large number of lines. The reason to introduce such a definition will be explained in
 section 6.2 when we will mention connections with quantum gravity and Ryu-Takayanagi formula [103].
-4.4

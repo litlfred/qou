@@ -8,7 +8,7 @@
   "pages": 10,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:24Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -21,12 +21,12 @@
    "stamp_date": "24 Apr 1995"
   },
   "doi": null,
-  "title": "arXiv:q-alg/9504020v1 24 Apr 1995",
-  "authors_raw": "R.M. Kashaev\u2217",
+  "title": "A link invariant from quantum dilogarithm",
+  "authors_raw": "R.M. Kashaev∗",
   "title_lines": [
    "A Link Invariant from Quantum Dilogarithm"
   ],
-  "abstract": "The link invariant, arising from the cyclic quantum dilogarithm via the particular R-matrix construction, is proved to coincide with the invariant of triangulated links in S3 introduced in [14]. The obtained invariant, like Alexander-Conway polynomial, vanishes on disjoint union of links. The R-matrix can be considered as the cyclic analog of the universal R-matrix associated with Uq(sl(2)) algebra. ENSLAPP-L-517/95 \u2217On leave from St. Petersburg Branch of the Steklov Mathematical Institute, Fontanka 27, St. Petersburg 191011, RUSSIA \u2020URA 14-36 du CNRS, associ\u00b4ee `a l\u2019E.N.S. de Lyon, et `a l\u2019Universit`e de Savoie 0",
+  "abstract": "The link invariant, arising from the cyclic quantum dilogarithm via the particular R-matrix construction, is proved to coincide with the invariant of triangulated links in S3 introduced in [14]. The obtained invariant, like Alexander-Conway polynomial, vanishes on disjoint union of links. The R-matrix can be considered as the cyclic analog of the universal R-matrix associated with Uq(sl(2)) algebra. ENSLAPP-L-517/95 ∗On leave from St. Petersburg Branch of the Steklov Mathematical Institute, Fontanka 27, St. Petersburg 191011, RUSSIA †URA 14-36 du CNRS, associ´ee `a l’E.N.S. de Lyon, et `a l’Universit`e de Savoie",
   "docinfo": {
    "Title": "arXiv:q-alg/9504020v1  24 Apr 1995",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
@@ -44,7 +44,8 @@
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:q-alg/9504020v1 24 Apr 1995"
  },
  "toc": [
   {
@@ -214,8 +215,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 863,
-   "n_words": 121,
+   "n_chars": 859,
+   "n_words": 119,
    "label_start": null,
    "label_end": "1"
   },
@@ -225,45 +226,57 @@
    "title": "Introduction",
    "level": 1,
    "page_start": 2,
+   "page_end": 2,
+   "n_chars": 1248,
+   "n_words": 190,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "sec-001-2-the-r-matrix",
+   "number": "2",
+   "title": "The $R$-Matrix",
+   "level": 1,
+   "page_start": 2,
    "page_end": 4,
-   "n_chars": 5108,
-   "n_words": 903,
+   "n_chars": 3842,
+   "n_words": 709,
    "label_start": "1",
    "label_end": "3"
   },
   {
-   "id": "sec-001-3-invariants-of-links-in-three-sphere",
+   "id": "sec-002-3-invariants-of-links-in-three-sphere",
    "number": "3",
    "title": "Invariants of Links in Three-Sphere",
    "level": 1,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 2560,
-   "n_words": 479,
+   "n_chars": 2558,
+   "n_words": 478,
    "label_start": "3",
    "label_end": "4"
   },
   {
-   "id": "sec-002-4-three-dimensional-description",
+   "id": "sec-003-4-three-dimensional-description",
    "number": "4",
    "title": "Three-Dimensional Description",
    "level": 1,
    "page_start": 5,
    "page_end": 9,
-   "n_chars": 8695,
-   "n_words": 1520,
+   "n_chars": 8687,
+   "n_words": 1516,
    "label_start": "4",
    "label_end": "8"
   },
   {
-   "id": "sec-003-5-summary",
+   "id": "sec-004-5-summary",
    "number": "5",
    "title": "Summary",
    "level": 1,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 2631,
-   "n_words": 413,
+   "n_chars": 2635,
+   "n_words": 412,
    "label_start": "8",
    "label_end": "9"
   }
@@ -282,13 +295,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 5,
-  "chars_total": 19857,
+  "sections": 6,
+  "chars_total": 19829,
+  "furniture_lines_stripped": 10,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 5,
-   "overlaid": 4,
+   "overlaid": 5,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -309,7 +323,15 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-3-invariants-of-links-in-three-sphere",
+     "id": "sec-001-2-the-r-matrix",
+     "title": "The $R$-Matrix",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-3-invariants-of-links-in-three-sphere",
      "title": "Invariants of Links in Three-Sphere",
      "prose_ratio": 0.987,
      "coverage_ratio": 1.0,
@@ -317,7 +339,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-4-three-dimensional-description",
+     "id": "sec-003-4-three-dimensional-description",
      "title": "Three-Dimensional Description",
      "prose_ratio": 0.978,
      "coverage_ratio": 0.99,
@@ -325,10 +347,10 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-5-summary",
+     "id": "sec-004-5-summary",
      "title": "Summary",
      "prose_ratio": 0.97,
-     "coverage_ratio": 0.527,
+     "coverage_ratio": 0.523,
      "result": "overlaid",
      "converter": "pandoc"
     }

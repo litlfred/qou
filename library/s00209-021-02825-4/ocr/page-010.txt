@@ -1,0 +1,57 @@
+1368 J. Leake
+
+and covariants of forms. In particular, the invariance of the Jacobian (1st transvectant map
+applied to p ® q) and the Hessian (2nd transvectant map applied to p ® p) can be determined
+in this way.
+
+Additionally, the nth transvectant of p,q € V(n) is used to define a notion of apolarity
+(see, e.g., [5] and [4]), and this notion corresponds to the classical one used in Grace’s
+theorem. In fact, one of the original formulations of Grace’s theorem can be found in Grace
+and Young’s 1903 book, The Algebra of Invariants [9]. This suggests a connection between
+invariant theory and the analytic consequences of apolarity theory via the D map, and we
+will indeed see this map play a crucial role in the proof of Grace’s theorem (Theorem 5.1).
+
+We are now ready to define the homogeneous apolarity form via the D map. This form
+and its SL2(C)-invariance are then the next main step toward the definition of the symbol
+of an operator. In the next section, we will use this bilinear form to define an important
+construction called the dual of a representation. This will serve as the link to viewing spaces
+of linear operators as representations themselves.
+
+Definition 3.3 We call the nth transvectant
+Vin) @ Vin) 25 VCO) @V(O) EC
+
+the apolarity form of V (n). This is the unique (up to scalar) nondegenerate SL (C)-invariant
+bilinear form on V (1), and therefore it is the homogenization of the classical apolarity form.
+
+We now want to extend this definition to act on V(A) ® V(A) for 4 € NG. Note that for
+p € V(A), we have m pairs of variables given by p(x1, 1, -.-, Xm, Ym), Which allows us to
+naturally define:
+
+:
+DP =] Qs, @ a, — a, @ 4,”
+i=l
+
+With this, we can define the apolarity form for V (A) as follows.
+
+Definition 3.4 We call the map
+
+V(A) @ VA) can VO") @ VO") =C
+
+the apolarity form of V(A). This is the unique (up to scalar) nondegenerate (SL2(C))"-
+invariant bilinear form on V(A), and therefore it is the homogenization of the multivariate
+apolarity form defined by Borcea and Brandén in [2].
+
+Since V(O) ® V(O) = C and V(0") @ V(O") = C, we will often consider the maps
+D" and D* to output a element of C. And as a final note, we do not justify here the claims
+of uniqueness and nondegeneracy stated above. Proving these claims involves decomposing
+V(n) ® V(n) and V(A) @ V(A) into their irreducible components, and we leave this work to
+Appendix A for the interested reader (see Corollaries A.9 and A.12 specifically).
+
+3.3 The symbol of an operator
+
+Given representations V(A) and V(a) (for 4 € Ng and a@ ¢€ Ni) of (SL2(C))” and
+(SL2(C))! respectively, the space of linear maps between V(A) and V(q) can be viewed
+as a representation of (SL2 (cyt! in a standard way. This space of linear maps is denoted
+Hom(V (A), V(@)). As discussed previously, we will now use the apolarity form defined
+
+D Springer

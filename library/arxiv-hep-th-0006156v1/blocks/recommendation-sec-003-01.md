@@ -1,0 +1,1 @@
+They will attract our attention in the next couple of (sub)sections where we shall try to treat the Magri bracket and the "chiral Hamiltonian" $L_0$ as a stand-alone dynamical system, not for the first time of course.

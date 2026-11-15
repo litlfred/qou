@@ -1,0 +1,211 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0203060v10",
+ "source": {
+  "structure_sha256": "2ccb480f4bd4a9705501d60deb89508cb733705a09c779e58db9030c2aa99f94",
+  "file": "0203060v10.pdf"
+ },
+ "provenance": {
+  "title": "ON FUSION CATEGORIES",
+  "authors": "PAVEL ETINGOF, DMITRI NIKSHYCH, AND VIKTOR OSTRIK",
+  "arxiv": {
+   "id": "math/0203060",
+   "version": "10",
+   "primary_class": null,
+   "stamp_date": "1 Feb 2011"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 12,
+  "by_kind": {
+   "recommendation": 12
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We also recommend the reader the expository paper [@CE], where much of the content of this paper is discussed in detail.",
+   "strength": null,
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-3",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "So to be more precise we should say that by a modular category we mean the underlying ribbon category together with a choice of this sign.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-22-results-on-pivotal-spherical-and-modular-cate.md",
+   "section_title": "Results on pivotal, spherical, and modular categories",
+   "pages": "5-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "But the deformation of F must also be trivial, by Theorem 2.31.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-037-73-proof-of-theorem-227-and-theorem-230.md",
+   "section_title": "Proof of Theorem 2.27 and Theorem 2.30",
+   "pages": "28-29",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Then $[b_j]\\mathbf f$ must be a multiple of $\\mathbf f$, since $\\mathbf f$ has positive entries and $[z][b_j]=[b_j][z]$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-039-81-definition-of-the-frobenius-perron-dimensions.md",
+   "section_title": "Definition of the Frobenius-Perron dimensions",
+   "pages": "29-31",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "By Proposition [\\[subdivi\\]](#subdivi){reference-type=\"ref\" reference=\"subdivi\"}, $x^2/m$ should be an algebraic integer. :::",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-040-82-frobenius-perron-dimension-of-a-fusion-catego.md",
+   "section_title": "Frobenius-Perron dimension of a fusion category",
+   "pages": "31-34",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "One may wonder if a fusion category ${\\mathcal C}$ with integer ${\\rm FPdim}({\\mathcal C})$ must have integer Frobenius-Perron dimensions of simple objects.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-043-85-fusion-categories-with-integer-frobenius-perr.md",
+   "section_title": "Fusion categories with integer Frobenius-Perron dimension",
+   "pages": "35-36",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "By Proposition [\\[subdivi\\]](#subdivi){reference-type=\"ref\" reference=\"subdivi\"}, the order of this group must divide $p^{2n}$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-044-86-fusion-categories-of-frobenius-perron-dimensi.md",
+   "section_title": "Fusion categories of Frobenius-Perron dimension pn",
+   "pages": "36-37",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Further, any object $X$ in ${\\mathcal C}_j$, $j\\ne 0$, must be invariant under tensoring (on either side) with invertibles from ${\\mathcal C}_0$, since otherwise the dimension of ${\\mathcal C}_j$ would be greater than $p$ (as the dimension of $X$ is greater than $1$).",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-044-86-fusion-categories-of-frobenius-perron-dimensi.md",
+   "section_title": "Fusion categories of Frobenius-Perron dimension pn",
+   "pages": "36-37",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The result is that $G$ must be abelian, and for each $G$ the categories are parametrized by pairs $(q,r)$ where $q$ is a nondegenerate symmetric bilinear form on $G$ with coefficients in ${\\mathbb{C}}^*$, and $r$ is a choice of $\\sqrt{|G|}$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-047-89-a-question.md",
+   "section_title": "A question",
+   "pages": "40-41",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Hence, $d$ must divide ${\\rm FPdim}({\\mathcal C})$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-049-811-module-categories-over-products.md",
+   "section_title": "Module categories over products",
+   "pages": "42-43",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The only change in Section 5 is that one should always choose nonzero block sizes for the algebra $R$ (except subsections 5.8,5.9 where the characteristic should be zero).",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-051-91-list-of-modifications.md",
+   "section_title": "List of modifications",
+   "pages": "43-44",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Points of $Z'$ represent fusion categories over $k$, all of which are nondegenerate Indeed, the global dimension is a regular (in fact, locally constant) function on $Z$, and it is nonzero on ${\\mathcal C}_1/I$, so it must be nonzero for all points of $Z'$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-053-93-faithfulness-of-lifting.md",
+   "section_title": "Faithfulness of lifting",
+   "pages": "45-47",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

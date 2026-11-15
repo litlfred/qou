@@ -1,0 +1,51 @@
+Burgess bounds for short character sums evaluated at forms 1935
+
+6. Stratification and a Menshov—Rademacher argument
+
+6A. Application of the stratification for character sums. We now come to a critical novel step, which
+is to estimate how often we obtain a certain quality of upper bound for the complete character sum
+Yo x(Fay(m)).
+m (mod q)
+
+For this, we call upon the stratification of complete character sums stated in Theorem 4.4. Let us suppose
+that k; <...<k, <q. For each | < j <n, define
+
+Y; = [tr 0.42” | > x (Fix (m)) > cgnsnrl,
+m (mod q)
+
+in which C = C(n,r, D) is the constant provided by Theorem 4.4. Then by Theorem 4.4, we have
+(0, KP" =: Yo DY) D ¥2D +++ D Yn D Yng1 = @, and #Y; < C”||k|/""B,,-(j; k)~!. Upon employing the
+decomposition (0, k] or Lj-0 Y; \ Yj41 in (5-10) we have
+
+” | |
+Yo S(F:m, bP <> YS | do x(Fxy(m)) (6-1)
+
+m (mod q) j=0 {x}e¥;\Yj41 ‘m (mod q)
+
+n
+< Sra@ryeger yey ve
+j=0
+
+n
+SCC RI PP Bn Gs
+j=0
+
+To summarize, we have proved:
+Lemma 6.1. Fix n,r, D, A > 1, a prime q, and a multiplicative Dirichlet character x of order A
+
+modulo q. Then for every form F € Z[X1,..., Xn] of degree D such that its reduction modulo q is
+(A, q)-admissible, the following holds. For every k = (ky, ...,kn) with 1 <ky <ky <-+++<ky <q, then
+
+n
+So (SCF m1 Kn. WEI” Sgt B Gk (6-2)
+m (mod q) j=0
+with By+(j; k) as defined in (4-5), and with the implicit constant dependent onn,r, D, A but independent
+Of a: xX. Fok
+
+However recall that the actual quantity we must bound in (5-9) is a moment of |S(F; m, k)| that
+includes a maximum over k < 2H/P. To do so, we will employ a Menshov-Rademacher argument.
+
+6B. A Menshov-Rademacher argument with permutations. The Menshov-Rademacher argument
+[Menshov 1923; Rademacher 1922] may be employed in a wide variety of circumstances; in general
+it allows one to replace a supremum of a function | f(w;)| over an index set of size U by a sum of
+differences | f(u;) — f(uj—1)| over an index set of size O(log U). In our present setting, these differences

@@ -1,0 +1,2929 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-2512.18642v1",
+  "pages": [
+    {
+      "page": 4,
+      "rotation": 0,
+      "drawings": 10,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1 illustrates how pairs of spin-½ particles can be combined to form an effective spin-1 degree of freedom. At the lower level, the red circles grouped in ellipses represent the tensor product space H 1"
+      ],
+      "labels": [
+        {
+          "text": "The conventional HQMM follows quantum causality where measurement precedes state evo-",
+          "bbox": [
+            67.96,
+            49.19,
+            544.9,
+            61.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "lution. For sequences X = Nn",
+          "bbox": [
+            50.4,
+            62.16,
+            205.49,
+            82.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula",
+            "LMMathItalic12-Regular",
+            "LMMathItalic8-Regular",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            7.97,
+            9.96,
+            11.96
+          ]
+        },
+        {
+          "text": "m=0 Xm and Y = Nn",
+          "bbox": [
+            200.35,
+            62.16,
+            306.86,
+            82.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula",
+            "LMMathItalic12-Regular",
+            "LMMathItalic8-Regular",
+            "LMRoman12-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            7.97,
+            9.96,
+            11.96
+          ]
+        },
+        {
+          "text": "m=0 Ym, the state is:",
+          "bbox": [
+            301.72,
+            63.64,
+            404.42,
+            78.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathItalic8-Regular",
+            "LMRoman12-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "φH,O(X ⊗Y ) = ϕ0 ◦EX0,Y0 ◦EX1,Y1 ◦· · · ◦EXn,Yn(h),",
+          "bbox": [
+            162.32,
+            89.4,
+            432.96,
+            104.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathItalic6-Regular",
+            "LMMathItalic8-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular",
+            "LMRoman6-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(1)",
+          "bbox": [
+            529.93,
+            89.4,
+            544.9,
+            101.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "where the forward transition map is defined as:",
+          "bbox": [
+            50.4,
+            115.17,
+            292.54,
+            127.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0010",
+          "bbox": [
+            283.13,
+            138.32,
+            289.08,
+            148.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0011",
+          "bbox": [
+            374.17,
+            138.32,
+            380.12,
+            148.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "EX,Y (·) := EH",
+          "bbox": [
+            211.91,
+            140.94,
+            282.02,
+            154.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathItalic8-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "EO,H(X ⊗Y ) ⊗·",
+          "bbox": [
+            289.08,
+            140.94,
+            374.18,
+            154.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathItalic8-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(2)",
+          "bbox": [
+            529.92,
+            140.94,
+            544.88,
+            152.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            380.12,
+            141.16,
+            383.37,
+            153.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "This structure implements the causal sequence: at each step m, the emission map EO,H first",
+          "bbox": [
+            50.4,
+            166.71,
+            544.88,
+            180.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathItalic8-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "processes the observable Ym with the current hidden state, followed by hidden state propagation",
+          "bbox": [
+            50.4,
+            181.15,
+            544.91,
+            194.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathItalic8-Regular",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "via EH.",
+          "bbox": [
+            50.4,
+            195.6,
+            87.21,
+            208.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic8-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2.2",
+          "bbox": [
+            50.4,
+            228.48,
+            71.04,
+            242.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Bold"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "The AKLT State and its SPT Order",
+          "bbox": [
+            87.18,
+            228.48,
+            343.94,
+            242.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Bold"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "The seminal work of Affleck, Kennedy, Lieb, and Tasaki [27] marked a watershed moment in",
+          "bbox": [
+            50.4,
+            252.33,
+            544.91,
+            264.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "quantum magnetism by furnishing an exactly solvable model that provided rigorous foundation",
+          "bbox": [
+            50.4,
+            266.78,
+            544.96,
+            278.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "for Haldane’s conjecture regarding the existence of a spectral gap in antiferromagnetic spin-1",
+          "bbox": [
+            50.4,
+            281.23,
+            544.93,
+            293.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "chains.",
+          "bbox": [
+            50.4,
+            295.67,
+            85.26,
+            307.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The AKLT Hamiltonian, defined on a one-dimensional lattice with spin-1 degrees of",
+          "bbox": [
+            95.42,
+            295.67,
+            544.89,
+            307.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "freedom, embodies profound physical insights through its elegantly simple form:",
+          "bbox": [
+            50.4,
+            310.12,
+            460.21,
+            322.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Si ·⃗Sj + 1",
+          "bbox": [
+            279.6,
+            332.29,
+            331.87,
+            354.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathItalic8-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "\u0014",
+          "bbox": [
+            274.34,
+            334.77,
+            279.6,
+            344.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0015",
+          "bbox": [
+            377.69,
+            334.77,
+            382.95,
+            344.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ˆHAKLT =",
+          "bbox": [
+            207.08,
+            337.35,
+            253.33,
+            354.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMRoman12-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "3(⃗Si ·⃗Sj)2",
+          "bbox": [
+            326.01,
+            338.79,
+            377.19,
+            360.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathItalic8-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            257.3,
+            339.35,
+            271.7,
+            349.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            384.94,
+            340.6,
+            388.19,
+            352.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "⟨i,j⟩",
+          "bbox": [
+            256.64,
+            356.23,
+            272.35,
+            364.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic8-Regular",
+            "LMMathSymbols8-Regular"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "i , Sy",
+          "bbox": [
+            122.3,
+            377.51,
+            145.58,
+            394.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathItalic8-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "where⃗Si = (Sx",
+          "bbox": [
+            50.4,
+            378.84,
+            127.76,
+            393.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathItalic8-Regular",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "i , Sz",
+          "bbox": [
+            140.7,
+            378.84,
+            163.44,
+            394.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathItalic8-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "i ) are spin-1 operators satisfying su(2) commutation relations",
+          "bbox": [
+            158.81,
+            379.85,
+            475.95,
+            394.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "EUFM10",
+            "LMMathItalic8-Regular",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "[Sx, Sy] = iSz,",
+          "bbox": [
+            175.31,
+            404.01,
+            248.81,
+            417.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathItalic8-Regular",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "[Sy, Sz] = iSx,",
+          "bbox": [
+            262.51,
+            404.01,
+            336.01,
+            417.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathItalic8-Regular",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "[Sz, Sx] = iSy",
+          "bbox": [
+            349.72,
+            404.01,
+            419.18,
+            417.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathItalic8-Regular",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "The AKLT state is defined on a spin-1 chain, where the physical Hilbert space at each site",
+          "bbox": [
+            67.96,
+            431.38,
+            544.88,
+            443.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "is H1 ∼= C3, spanned by the Sz-eigenbasis {|+⟩, |0⟩, |−⟩}. Its construction relies on an auxiliary,",
+          "bbox": [
+            50.4,
+            442.39,
+            544.92,
+            459.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathItalic8-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular",
+            "LMRoman8-Regular",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "∼= C2 with the orthonormal basis {| ↑⟩, | ↓⟩}, which is projectively",
+          "bbox": [
+            186.03,
+            455.93,
+            544.91,
+            472.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular",
+            "LMRoman8-Regular",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "virtual spin-½ space H 1",
+          "bbox": [
+            50.4,
+            460.27,
+            178.11,
+            472.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular",
+            "LMRoman6-Regular"
+          ],
+          "sizes": [
+            5.98,
+            11.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            174.46,
+            471.29,
+            178.11,
+            477.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman6-Regular"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "embedded into the physical spin-1 space.",
+          "bbox": [
+            50.4,
+            475.74,
+            259.68,
+            487.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The AKLT state admits a canonical MPS representation that exactly captures its entanglement",
+          "bbox": [
+            67.96,
+            490.18,
+            544.92,
+            502.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "structure. The fundamental objects are three local matrices {A+, A0, A−} ∈M2(C) that mediate",
+          "bbox": [
+            50.4,
+            502.24,
+            544.9,
+            517.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols8-Regular",
+            "LMRoman12-Regular",
+            "LMRoman8-Regular",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "between the physical spin-1 space and the auxiliary spin-½ space:",
+          "bbox": [
+            50.4,
+            519.08,
+            387.18,
+            531.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "s",
+          "bbox": [
+            153.36,
+            555.58,
+            163.32,
+            565.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "s",
+          "bbox": [
+            291.59,
+            555.58,
+            301.55,
+            565.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "s",
+          "bbox": [
+            439.15,
+            555.58,
+            449.12,
+            565.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            164.52,
+            557.84,
+            170.38,
+            569.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            302.75,
+            557.84,
+            308.6,
+            569.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            450.31,
+            557.84,
+            456.17,
+            569.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "3 σ−",
+          "bbox": [
+            450.31,
+            564.23,
+            473.02,
+            586.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathSymbols8-Regular",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "3 σz,",
+          "bbox": [
+            302.75,
+            564.33,
+            326.89,
+            586.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathItalic8-Regular",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "3 σ+,",
+          "bbox": [
+            164.52,
+            564.34,
+            190.98,
+            586.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMRoman12-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "A+ =",
+          "bbox": [
+            121.75,
+            565.93,
+            150.04,
+            579.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMRoman12-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "A0 =",
+          "bbox": [
+            262.34,
+            565.93,
+            288.27,
+            579.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMRoman12-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "A−= −",
+          "bbox": [
+            398.26,
+            565.93,
+            439.16,
+            578.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols8-Regular",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(3)",
+          "bbox": [
+            529.92,
+            565.93,
+            544.89,
+            577.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Here, the operators σ+, σ−, and σz act on the virtual space C2, which is spanned by the",
+          "bbox": [
+            67.96,
+            593.58,
+            544.87,
+            610.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathItalic8-Regular",
+            "LMMathSymbols8-Regular",
+            "LMRoman12-Regular",
+            "LMRoman8-Regular",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "!",
+          "bbox": [
+            168.09,
+            610.58,
+            175.98,
+            620.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "!",
+          "bbox": [
+            251.85,
+            610.58,
+            259.74,
+            620.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            162.24,
+            611.85,
+            168.1,
+            623.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            246.0,
+            611.85,
+            251.86,
+            623.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "basis vectors | ↑⟩=",
+          "bbox": [
+            50.4,
+            619.17,
+            150.45,
+            631.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "and | ↓⟩=",
+          "bbox": [
+            180.23,
+            619.17,
+            234.21,
+            631.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": ". Their explicit action is defined by the following outer",
+          "bbox": [
+            259.74,
+            619.17,
+            544.89,
+            631.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            162.24,
+            626.3,
+            168.1,
+            638.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            246.0,
+            626.3,
+            251.86,
+            638.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "products:",
+          "bbox": [
+            50.4,
+            640.48,
+            98.27,
+            652.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "!",
+          "bbox": [
+            213.63,
+            653.14,
+            221.52,
+            663.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "!",
+          "bbox": [
+            318.27,
+            653.14,
+            326.17,
+            663.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "!",
+          "bbox": [
+            423.27,
+            653.14,
+            431.16,
+            663.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            191.96,
+            654.41,
+            197.82,
+            666.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            207.78,
+            654.41,
+            213.63,
+            666.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            296.61,
+            654.41,
+            302.46,
+            666.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            312.42,
+            654.41,
+            318.28,
+            666.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            392.3,
+            654.41,
+            398.16,
+            666.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            412.77,
+            654.41,
+            418.63,
+            666.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "σ+ =",
+          "bbox": [
+            154.16,
+            656.8,
+            180.76,
+            673.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMRoman12-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "σz =",
+          "bbox": [
+            356.81,
+            656.8,
+            381.1,
+            673.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathItalic8-Regular",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "σ−",
+          "bbox": [
+            252.16,
+            660.03,
+            265.83,
+            673.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathSymbols8-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            276.29,
+            661.73,
+            285.4,
+            673.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            223.51,
+            661.95,
+            226.76,
+            673.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            328.15,
+            661.95,
+            331.41,
+            673.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            191.96,
+            668.85,
+            197.82,
+            680.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            207.78,
+            668.85,
+            213.63,
+            680.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            296.61,
+            668.85,
+            302.46,
+            680.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            312.42,
+            668.85,
+            318.28,
+            680.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            392.3,
+            668.85,
+            398.16,
+            680.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            408.12,
+            668.85,
+            423.28,
+            680.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "For an n-site periodic chain, the AKLT state is constructed as the uniform MPS:",
+          "bbox": [
+            67.96,
+            689.24,
+            483.84,
+            701.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "|ψ(n)",
+          "bbox": [
+            157.5,
+            715.36,
+            180.59,
+            730.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathItalic8-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            238.78,
+            717.11,
+            253.18,
+            727.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "AKLT⟩=",
+          "bbox": [
+            168.44,
+            718.13,
+            209.64,
+            732.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Tr (Ak1Ak2 · · · Akn) |k1k2 · · · kn⟩",
+          "bbox": [
+            281.0,
+            718.13,
+            437.77,
+            733.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathItalic6-Regular",
+            "LMMathItalic8-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular",
+            "LMRoman6-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(4)",
+          "bbox": [
+            529.92,
+            718.13,
+            544.89,
+            730.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "k1,...,kn∈{+,0,−}",
+          "bbox": [
+            212.95,
+            733.98,
+            278.99,
+            742.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic6-Regular",
+            "LMMathItalic8-Regular",
+            "LMMathSymbols8-Regular",
+            "LMRoman6-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "Figure 1 illustrates how pairs of spin-½ particles can be combined to form an effective spin-1",
+          "bbox": [
+            67.96,
+            749.29,
+            544.91,
+            761.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "degree of freedom. At the lower level, the red circles grouped in ellipses represent the tensor",
+          "bbox": [
+            50.4,
+            763.74,
+            544.88,
+            775.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "product space H 1",
+          "bbox": [
+            50.4,
+            778.18,
+            139.35,
+            790.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular",
+            "LMRoman6-Regular"
+          ],
+          "sizes": [
+            5.98,
+            11.96
+          ]
+        },
+        {
+          "text": "2, which naturally decomposes into a three-dimensional triplet sector and a",
+          "bbox": [
+            164.56,
+            778.18,
+            544.92,
+            795.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular",
+            "LMRoman6-Regular"
+          ],
+          "sizes": [
+            5.98,
+            11.96
+          ]
+        },
+        {
+          "text": "2 ⊗H 1",
+          "bbox": [
+            135.7,
+            778.25,
+            168.21,
+            796.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols10-Regular",
+            "LMRoman6-Regular"
+          ],
+          "sizes": [
+            5.98,
+            11.96
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            294.71,
+            796.33,
+            300.57,
+            808.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 5,
+      "rotation": 0,
+      "drawings": 50,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1: Schematic diagram with eight qubits on the top row, grouped pairwise into singlet states (dashed ellipses), and projected downward into three spin-1 triplet nodes on the lower row. The increased vertical spacing highlights the correspondence between the two levels."
+      ],
+      "labels": [
+        {
+          "text": "|ψ−⟩",
+          "bbox": [
+            142.6,
+            49.66,
+            170.31,
+            65.6
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols8-Regular"
+          ],
+          "sizes": [
+            9.56,
+            14.35
+          ]
+        },
+        {
+          "text": "|ψ−⟩",
+          "bbox": [
+            227.64,
+            49.66,
+            255.35,
+            65.6
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols8-Regular"
+          ],
+          "sizes": [
+            9.56,
+            14.35
+          ]
+        },
+        {
+          "text": "|ψ−⟩",
+          "bbox": [
+            316.93,
+            49.66,
+            344.65,
+            65.6
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols8-Regular"
+          ],
+          "sizes": [
+            9.56,
+            14.35
+          ]
+        },
+        {
+          "text": "|ψ−⟩",
+          "bbox": [
+            397.72,
+            49.66,
+            425.43,
+            65.6
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols8-Regular"
+          ],
+          "sizes": [
+            9.56,
+            14.35
+          ]
+        },
+        {
+          "text": ": qubit (spin 1/2) {| ↑⟩, | ↓⟩}",
+          "bbox": [
+            157.12,
+            216.7,
+            332.87,
+            231.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            272.61,
+            239.34,
+            277.69,
+            248.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": ": singlet |ψ−⟩=",
+          "bbox": [
+            165.63,
+            239.64,
+            262.97,
+            255.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols8-Regular",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            9.56,
+            14.35
+          ]
+        },
+        {
+          "text": "2(| ↑↓⟩−| ↓↑⟩)",
+          "bbox": [
+            276.85,
+            240.97,
+            367.63,
+            260.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            9.56,
+            14.35
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            268.38,
+            242.84,
+            276.84,
+            252.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols8-Regular"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": ": projection |+⟩⟨↑↑| + |0⟩1",
+          "bbox": [
+            165.63,
+            264.85,
+            335.13,
+            280.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            9.56,
+            14.35
+          ]
+        },
+        {
+          "text": "2(⟨↑↓| + ⟨↓↑|) + |−⟩⟨↓↓|",
+          "bbox": [
+            334.29,
+            266.48,
+            490.78,
+            286.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            9.56,
+            14.35
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            325.82,
+            268.35,
+            334.28,
+            277.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols8-Regular"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": ": triplet (spin 1)",
+          "bbox": [
+            165.63,
+            293.24,
+            266.4,
+            307.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "Figure 1: Schematic diagram with eight qubits on the top row, grouped pairwise into singlet",
+          "bbox": [
+            50.4,
+            327.83,
+            544.95,
+            339.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "states (dashed ellipses), and projected downward into three spin-1 triplet nodes on the lower row.",
+          "bbox": [
+            50.4,
+            342.27,
+            544.9,
+            354.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The increased vertical spacing highlights the correspondence between the two levels.",
+          "bbox": [
+            50.4,
+            356.72,
+            482.23,
+            368.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "one-dimensional singlet sector. The upper blue circles correspond to the symmetric triplet space,",
+          "bbox": [
+            50.4,
+            390.92,
+            544.89,
+            402.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "which carries the spin-1 representation.",
+          "bbox": [
+            50.4,
+            405.37,
+            251.56,
+            417.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2 →H1 implements the Clebsch-Gordan decomposition 1",
+          "bbox": [
+            201.0,
+            418.45,
+            487.74,
+            437.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular",
+            "LMRoman6-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2⊗1",
+          "bbox": [
+            483.51,
+            418.46,
+            503.67,
+            435.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols10-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "The projection P : H 1",
+          "bbox": [
+            67.96,
+            419.82,
+            178.71,
+            431.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular",
+            "LMRoman6-Regular"
+          ],
+          "sizes": [
+            5.98,
+            11.96
+          ]
+        },
+        {
+          "text": "2 = 1⊕0:",
+          "bbox": [
+            499.44,
+            419.82,
+            544.89,
+            435.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2⊗H 1",
+          "bbox": [
+            175.06,
+            419.88,
+            204.65,
+            436.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols10-Regular",
+            "LMRoman6-Regular"
+          ],
+          "sizes": [
+            5.98,
+            11.96
+          ]
+        },
+        {
+          "text": "P = |+⟩⟨↑↑| + |−⟩⟨↓↓| + |0⟩1",
+          "bbox": [
+            175.7,
+            446.41,
+            336.15,
+            466.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            325.31,
+            453.93,
+            335.27,
+            465.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols10-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2 (⟨↑↓| + ⟨↓↑|) .",
+          "bbox": [
+            335.27,
+            454.5,
+            419.6,
+            475.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(5)",
+          "bbox": [
+            529.93,
+            454.5,
+            544.9,
+            466.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "This projection satisfies P †P = Πsym and PP † = 1IH1, establishing an isometric embedding that",
+          "bbox": [
+            50.4,
+            483.83,
+            544.89,
+            501.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathSymbols8-Regular",
+            "LMRoman12-Bold",
+            "LMRoman12-Regular",
+            "LMRoman6-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "encodes the Haldane phase through its entanglement structure.",
+          "bbox": [
+            50.4,
+            502.61,
+            387.54,
+            514.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Quantum channels channels",
+          "bbox": [
+            398.31,
+            502.61,
+            544.91,
+            514.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "are fundamental objects in the analysis of the AKLT model. The AKLT channel is defined on",
+          "bbox": [
+            50.4,
+            517.06,
+            544.89,
+            529.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2) ≡M2(C) as:",
+          "bbox": [
+            74.46,
+            529.11,
+            151.69,
+            548.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular",
+            "LMRoman6-Regular",
+            "LMRoman8-Regular",
+            "MSBM10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "B(H 1",
+          "bbox": [
+            50.4,
+            531.5,
+            78.11,
+            543.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular",
+            "LMRoman6-Regular"
+          ],
+          "sizes": [
+            5.98,
+            11.96
+          ]
+        },
+        {
+          "text": "AkZA†",
+          "bbox": [
+            332.25,
+            547.39,
+            367.55,
+            562.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathItalic8-Regular",
+            "LMMathSymbols8-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            302.64,
+            548.8,
+            317.03,
+            558.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ΦAKLT(Z) =",
+          "bbox": [
+            223.11,
+            549.82,
+            286.1,
+            562.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMRoman12-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(6)",
+          "bbox": [
+            529.92,
+            549.82,
+            544.89,
+            561.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "k.",
+          "bbox": [
+            363.79,
+            550.04,
+            372.16,
+            564.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathItalic8-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "k∈{+,0,−}",
+          "bbox": [
+            289.41,
+            565.67,
+            330.24,
+            573.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic8-Regular",
+            "LMMathSymbols8-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "The quantum channel ΦAKLT is bi-stochastic: it is both trace-preserving Tr(ΦAKLT(Z)) =",
+          "bbox": [
+            67.96,
+            581.87,
+            544.89,
+            595.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMRoman12-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Tr(Z) and identity-preserving ΦAKLT(1IH1/2) = 1IH1/2.",
+          "bbox": [
+            50.4,
+            596.31,
+            330.52,
+            610.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathItalic6-Regular",
+            "LMMathSymbols8-Regular",
+            "LMRoman12-Bold",
+            "LMRoman12-Regular",
+            "LMRoman6-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "When interpreted as a transfer matrix",
+          "bbox": [
+            340.71,
+            596.31,
+            544.9,
+            608.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "within the valence-bond-solid formalism, its spectral structure dictates the system’s correlation",
+          "bbox": [
+            50.4,
+            610.76,
+            544.9,
+            622.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "functions: the largest eigenvalue is unity, while the second largest eigenvalue in magnitude, λ2,",
+          "bbox": [
+            50.4,
+            625.21,
+            544.88,
+            638.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMRoman12-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "sets the dominant correlation length via ξ−1 = −ln |λ2| [30]. The contractive nature of the channel",
+          "bbox": [
+            50.4,
+            635.31,
+            544.9,
+            652.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols8-Regular",
+            "LMRoman12-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "upon iteration, a direct consequence of this spectral gap, underpins the mixing behavior and the",
+          "bbox": [
+            50.4,
+            654.1,
+            544.93,
+            666.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "exponential decay of correlations characteristic of the gapped phase of the AKLT state [52].",
+          "bbox": [
+            50.4,
+            668.54,
+            521.06,
+            680.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Let G be a subgroup of the special orthogonal group in three dimensions G = SO(3), which",
+          "bbox": [
+            67.96,
+            682.99,
+            544.94,
+            695.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "constitutes our symmetry group. This group acts on the physical and virtual spaces of our sys-",
+          "bbox": [
+            50.4,
+            697.43,
+            544.94,
+            709.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "tem via distinct unitary representations. The physical Hilbert space is H1, on which G acts via",
+          "bbox": [
+            50.4,
+            711.88,
+            544.88,
+            724.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "the fundamental, integer-spin representation ρ : G →U(H 1",
+          "bbox": [
+            50.4,
+            726.33,
+            358.78,
+            738.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular",
+            "LMRoman6-Regular"
+          ],
+          "sizes": [
+            5.98,
+            11.96
+          ]
+        },
+        {
+          "text": "2), which is isomorphic to the spin-1",
+          "bbox": [
+            355.13,
+            726.33,
+            544.89,
+            743.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular",
+            "LMRoman6-Regular"
+          ],
+          "sizes": [
+            5.98,
+            11.96
+          ]
+        },
+        {
+          "text": "representation. The virtual, or auxiliary, Hilbert space is H 1",
+          "bbox": [
+            50.4,
+            741.79,
+            369.91,
+            753.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular",
+            "LMRoman6-Regular"
+          ],
+          "sizes": [
+            5.98,
+            11.96
+          ]
+        },
+        {
+          "text": "2, where G acts via the projective",
+          "bbox": [
+            366.25,
+            741.79,
+            544.88,
+            758.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMRoman12-Regular",
+            "LMRoman6-Regular"
+          ],
+          "sizes": [
+            5.98,
+            11.96
+          ]
+        },
+        {
+          "text": "spin-½ representation π : G →U(H 1",
+          "bbox": [
+            50.4,
+            757.87,
+            243.29,
+            770.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular",
+            "LMRoman6-Regular"
+          ],
+          "sizes": [
+            5.98,
+            11.96
+          ]
+        },
+        {
+          "text": "2). This representation π is projective, meaning it satisfies",
+          "bbox": [
+            239.64,
+            757.87,
+            544.88,
+            774.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMRoman12-Regular",
+            "LMRoman6-Regular"
+          ],
+          "sizes": [
+            5.98,
+            11.96
+          ]
+        },
+        {
+          "text": "the composition rule π(g1)π(g2) = ω(g1, g2)π(g1g2) for all g1, g2 ∈G, with a non-trivial cocycle",
+          "bbox": [
+            50.4,
+            773.96,
+            544.88,
+            787.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            294.71,
+            796.33,
+            300.57,
+            808.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    }
+  ]
+}

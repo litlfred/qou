@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.951
 latex_coverage_ratio: 0.987
+doc_brief: "Fock–Goncharov Coordinates for Semisimple Lie Groups — Fock and Goncharov [FG06b] introduced cluster ensembles, providing a framework for coordi- nates on varieties of surface representations into"
 ---
 We view higher Teichmüller spaces as collections of representations \[
     \Set{ \rho : \pi_1(\Sigma) \to G \text{ discrete and faithful}} / G,

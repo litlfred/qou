@@ -1,0 +1,1 @@
+One an formulate an $\oo$-categorical analogue of the Eilenberg--Steenrod axioms for a functor from spaces or manifolds to the $\oo$-category of chain complexes or spectra: the functor should take certain gluing diagrams to pushout squares, and it should preserve sequential colimits.

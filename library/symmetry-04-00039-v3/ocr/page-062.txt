@@ -1,0 +1,53 @@
+Symmetry 2012, 4 100
+
+Table 3-2. Half of contingency-enhanced permutaions; second-order fusion.
+
+AA*A (x)(2x*) BA*A (2x)(2x*)
+
+AA*B (x)(4x*) BA*B (2x)(4x*)
+
+AA#*C (x)(2x*) BA*C (2x)(2x*)
+
+[AA*D] [BA*D]
+
+AB*A (2x)(x*) BB*A {(4x)(x*) + ()(4x*}
+AB*B (2x)(2x* + y*) BB*B {(4x)(2x* +y*) + (y)(4x*}
+AB*C (2x)(x* + 2y*) BB*C {(4x)(x* + 2y*) + (—\(2y*)}
+
+AB*D (2x)(y*) BB*D (4x)(Q*)
+
+[AC*A] BC*A (2y)(x*)
+
+AC*B (x)(2y*) BC*B {(2x)(2y*) + (2y)(2x* + y*)}
+
+ACC (x)(4y*) BC#C {(2x)(x* + 2y*) + (2y)(x* + 2y*)}
+
+AC*D (x)(2y*) BC*D {(2x)(2y*) + (2y)0*)}
+
+[AD*A] [BD*A]
+[AD*B] BD*B (y)(2y*)
+[AD*C] BD*C (y)(4y*)
+[AD*D] BD*D (y)(2y*)
+9 “7 5 3 =]
+2AA*A 4AA*B 6AB*B 6AB*C 4AC*C
+2AB*A 8BA*B 4CA*B 2CA*C
+4BA*A 6BB*A 2BC*¥A 4CC*A
+6CB*A
+
+2AA*C 2AC*B 2AB*D
+2CA*A 4BA*C 2DB*A
+16BB*B 14BB*C
+10BC*B
+14CBB*
+
+sum= [2 10 24 40 52
+
+The situation here is similar to the case of first order fusion except that the coefficients associated
+with the constituents of the input columns are the available antiquirks—that is, those left over from the
+first order fusion process, because they did not form junctions. With that in mind, we have reproduced
+in Table B1, below, the list of first order fusion words with the junctions that can be formed and added
+a column with the corresponding available antiquirks. The genesis of the added column will also be
+formalized but first we discuss it informally. For example, in the case of BB*, if an x junction is
+formed, the B* FMS has both a d* and a u* antiquirk left over and since four x junctions can form, we
+have the term 4(d* + u*). On the other hand, if a y junction forms, two d* antiquirks are left over so
+we have the term 2d*. Summing we have the term 4(d* + u*) + 2d* as shown in the figure.

@@ -1,1 +1,0 @@
-Suppose M∈M(A, gr) is an m-torsion module. Consider its

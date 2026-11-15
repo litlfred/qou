@@ -1,0 +1,1 @@
+This means that we must use quanta of exponentially low energy to send any messages; the absorption probability [\[Pabs\]](#Pabs){reference-type="eqref" reference="Pabs"} will thus be exponentially small.

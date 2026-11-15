@@ -1,6 +1,6 @@
 ---
 doc_id: disssubmission
-doc_title: "I NAUGURAL -D ISSERTATION T ANNAKIAN C ATEGORIES OF P ERVERSE S HEAVES ON A BELIAN V ARIETIES"
+doc_title: "Tannakian categories of perverse sheaves on abelian varieties"
 section_id: sec-018-32-some-properties-of-convolution
 section_title: "Some properties of convolution"
 section_number: 3.2
@@ -8,6 +8,7 @@ pages: 54-55
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
 toc_source: inferred
+doc_brief: "Tannakian categories of perverse sheaves on abelian varieties — 52 sections: Front matter; Introduction; Some commonly used notations"
 ---
 Before proceeding further, it will be convenient to collect some basic
 properties of convolution for later reference. As in [106, sect. 2.1] one sees

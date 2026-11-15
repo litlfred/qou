@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/pjm-v161-n1-p02-p/sections/sec-054",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "i f p > 4 , (σισ2)",
+  "pageStart": 82,
+  "pageEnd": 92,
+  "contains": [
+    "library/pjm-v161-n1-p02-p/blocks/prose-sec-054",
+    "library/pjm-v161-n1-p02-p/blocks/recommendation-sec-054-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/pjm-v161-n1-p02-p",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/pjm-v161-n1-p02-p",
+  "provenance": "ingested"
+}

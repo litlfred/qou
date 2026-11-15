@@ -8,7 +8,7 @@
   "pages": 31,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:22Z",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -26,7 +26,7 @@
   "title_lines": [
    "Edge universality in Floquet sideband spectra"
   ],
-  "abstract": "We show that, for non-interacting fermions under a monochromatic phase drive (Tien\u2013 Gordon regime), the outgoing sideband occupations at a sharp Fermi edge are governed by the discrete Bessel kernel\u2014an exact result at any drive amplitude A. In the large-amplitude regime the edge of this kernel converges, on the A1/3 scale, to the Airy kernel of random matrix theory. This universality has a direct transport consequence: the deficit of the photo-assisted shot-noise slope from its high-bias plateau collapses onto the Airy-kernel diagonal. The deriva- tion rests on a bridge between the linear detection chain and the Floquet scattering matrix: commensurate gating isolates a single coherence-order block of the one-body correlator. We identify the crossover temperature below which the Airy scaling is sharp, extend the analysis to biased two-terminal occupations, and argue that multi-tone drives make Pearcey-kernel cusps accessible in Floquet\u2013Sambe space.",
+  "abstract": "We show that, for non-interacting fermions under a monochromatic phase drive (Tien– Gordon regime), the outgoing sideband occupations at a sharp Fermi edge are governed by the discrete Bessel kernel—an exact result at any drive amplitude A. In the large-amplitude regime the edge of this kernel converges, on the A1/3 scale, to the Airy kernel of random matrix theory. This universality has a direct transport consequence: the deficit of the photo-assisted shot-noise slope from its high-bias plateau collapses onto the Airy-kernel diagonal. The deriva- tion rests on a bridge between the linear detection chain and the Floquet scattering matrix: commensurate gating isolates a single coherence-order block of the one-body correlator. We identify the crossover temperature below which the Airy scaling is sharp, extend the analysis to biased two-terminal occupations, and argue that multi-tone drives make Pearcey-kernel cusps accessible in Floquet–Sambe space.",
   "docinfo": {
    "Title": "Edge universality in Floquet sideband spectra",
    "Author": "Miguel Tierz",
@@ -92,7 +92,7 @@
   },
   {
    "level": 1,
-   "title": "Input\u2013output Floquet scattering and outgoing correlators",
+   "title": "Input–output Floquet scattering and outgoing correlators",
    "page": 6,
    "source": "outline",
    "number": null,
@@ -302,7 +302,7 @@
   },
   {
    "level": 2,
-   "title": "Christoffel\u2013Darboux identity for the discrete Bessel kernel",
+   "title": "Christoffel–Darboux identity for the discrete Bessel kernel",
    "page": 27,
    "source": "outline",
    "number": null,
@@ -401,7 +401,7 @@
   {
    "kind": "figure",
    "number": "6",
-   "title": "Comparison of Ai2(s) (dashed) and the Airy-kernel diagonal KAi(s, s) = Ai\u2032(s)2\u2212s Ai(s)2",
+   "title": "Comparison of Ai2(s) (dashed) and the Airy-kernel diagonal KAi(s, s) = Ai′(s)2−s Ai(s)2",
    "page": 22,
    "confidence": 0.9,
    "evidence": [
@@ -714,8 +714,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1191,
-   "n_words": 171,
+   "n_chars": 1189,
+   "n_words": 170,
    "label_start": "1",
    "label_end": "1"
   },
@@ -726,7 +726,7 @@
    "level": 1,
    "page_start": 1,
    "page_end": 4,
-   "n_chars": 10272,
+   "n_chars": 10283,
    "n_words": 1600,
    "label_start": "1",
    "label_end": "4"
@@ -738,8 +738,8 @@
    "level": 1,
    "page_start": 4,
    "page_end": 4,
-   "n_chars": 279,
-   "n_words": 47,
+   "n_chars": 336,
+   "n_words": 52,
    "label_start": "4",
    "label_end": "4"
   },
@@ -750,8 +750,8 @@
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 2326,
-   "n_words": 383,
+   "n_chars": 2350,
+   "n_words": 386,
    "label_start": "4",
    "label_end": "5"
   },
@@ -762,20 +762,20 @@
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 1127,
-   "n_words": 177,
+   "n_chars": 1176,
+   "n_words": 185,
    "label_start": "5",
    "label_end": "6"
   },
   {
    "id": "sec-004-inputoutput-floquet-scattering-and-outgoing-corr",
    "number": null,
-   "title": "Input\u2013output Floquet scattering and outgoing correlators",
+   "title": "Input–output Floquet scattering and outgoing correlators",
    "level": 1,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 353,
-   "n_words": 55,
+   "n_chars": 406,
+   "n_words": 60,
    "label_start": "6",
    "label_end": "6"
   },
@@ -786,8 +786,8 @@
    "level": 2,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 1839,
-   "n_words": 311,
+   "n_chars": 1888,
+   "n_words": 317,
    "label_start": "6",
    "label_end": "7"
   },
@@ -798,8 +798,8 @@
    "level": 2,
    "page_start": 7,
    "page_end": 9,
-   "n_chars": 5965,
-   "n_words": 965,
+   "n_chars": 6008,
+   "n_words": 970,
    "label_start": "7",
    "label_end": "9"
   },
@@ -810,8 +810,8 @@
    "level": 1,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 3350,
-   "n_words": 562,
+   "n_chars": 3406,
+   "n_words": 568,
    "label_start": "9",
    "label_end": "10"
   },
@@ -822,8 +822,8 @@
    "level": 1,
    "page_start": 10,
    "page_end": 11,
-   "n_chars": 4805,
-   "n_words": 825,
+   "n_chars": 4846,
+   "n_words": 831,
    "label_start": "10",
    "label_end": "11"
   },
@@ -834,8 +834,8 @@
    "level": 2,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 2418,
-   "n_words": 461,
+   "n_chars": 2475,
+   "n_words": 466,
    "label_start": "11",
    "label_end": "12"
   },
@@ -846,8 +846,8 @@
    "level": 1,
    "page_start": 12,
    "page_end": 14,
-   "n_chars": 5507,
-   "n_words": 971,
+   "n_chars": 5535,
+   "n_words": 976,
    "label_start": "12",
    "label_end": "14"
   },
@@ -858,8 +858,8 @@
    "level": 1,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 1850,
-   "n_words": 327,
+   "n_chars": 1912,
+   "n_words": 336,
    "label_start": "14",
    "label_end": "15"
   },
@@ -870,8 +870,8 @@
    "level": 2,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 1360,
-   "n_words": 238,
+   "n_chars": 1396,
+   "n_words": 244,
    "label_start": "15",
    "label_end": "16"
   },
@@ -882,8 +882,8 @@
    "level": 2,
    "page_start": 16,
    "page_end": 16,
-   "n_chars": 623,
-   "n_words": 127,
+   "n_chars": 638,
+   "n_words": 129,
    "label_start": "16",
    "label_end": "16"
   },
@@ -894,8 +894,8 @@
    "level": 2,
    "page_start": 16,
    "page_end": 16,
-   "n_chars": 1530,
-   "n_words": 267,
+   "n_chars": 1575,
+   "n_words": 272,
    "label_start": "16",
    "label_end": "16"
   },
@@ -906,8 +906,8 @@
    "level": 2,
    "page_start": 16,
    "page_end": 18,
-   "n_chars": 5482,
-   "n_words": 874,
+   "n_chars": 5533,
+   "n_words": 882,
    "label_start": "16",
    "label_end": "18"
   },
@@ -918,8 +918,8 @@
    "level": 1,
    "page_start": 18,
    "page_end": 20,
-   "n_chars": 7193,
-   "n_words": 1182,
+   "n_chars": 7234,
+   "n_words": 1189,
    "label_start": "18",
    "label_end": "20"
   },
@@ -930,8 +930,8 @@
    "level": 1,
    "page_start": 20,
    "page_end": 20,
-   "n_chars": 1087,
-   "n_words": 170,
+   "n_chars": 1126,
+   "n_words": 176,
    "label_start": "20",
    "label_end": "20"
   },
@@ -942,8 +942,8 @@
    "level": 2,
    "page_start": 20,
    "page_end": 23,
-   "n_chars": 7564,
-   "n_words": 1386,
+   "n_chars": 7580,
+   "n_words": 1388,
    "label_start": "20",
    "label_end": "23"
   },
@@ -954,8 +954,8 @@
    "level": 2,
    "page_start": 23,
    "page_end": 24,
-   "n_chars": 2215,
-   "n_words": 377,
+   "n_chars": 2255,
+   "n_words": 382,
    "label_start": "23",
    "label_end": "24"
   },
@@ -966,8 +966,8 @@
    "level": 1,
    "page_start": 24,
    "page_end": 24,
-   "n_chars": 0,
-   "n_words": 0,
+   "n_chars": 22,
+   "n_words": 3,
    "label_start": "24",
    "label_end": "24"
   },
@@ -978,8 +978,8 @@
    "level": 2,
    "page_start": 24,
    "page_end": 25,
-   "n_chars": 2737,
-   "n_words": 431,
+   "n_chars": 2732,
+   "n_words": 430,
    "label_start": "24",
    "label_end": "25"
   },
@@ -990,8 +990,8 @@
    "level": 2,
    "page_start": 25,
    "page_end": 26,
-   "n_chars": 2959,
-   "n_words": 448,
+   "n_chars": 2977,
+   "n_words": 449,
    "label_start": "25",
    "label_end": "26"
   },
@@ -1002,8 +1002,8 @@
    "level": 2,
    "page_start": 26,
    "page_end": 27,
-   "n_chars": 3431,
-   "n_words": 483,
+   "n_chars": 3445,
+   "n_words": 484,
    "label_start": "26",
    "label_end": "27"
   },
@@ -1014,20 +1014,20 @@
    "level": 1,
    "page_start": 27,
    "page_end": 27,
-   "n_chars": 314,
-   "n_words": 47,
+   "n_chars": 327,
+   "n_words": 48,
    "label_start": "27",
    "label_end": "27"
   },
   {
    "id": "sec-025-christoffeldarboux-identity-for-the-discrete-bes",
    "number": null,
-   "title": "Christoffel\u2013Darboux identity for the discrete Bessel kernel",
+   "title": "Christoffel–Darboux identity for the discrete Bessel kernel",
    "level": 2,
    "page_start": 27,
    "page_end": 27,
-   "n_chars": 623,
-   "n_words": 110,
+   "n_chars": 679,
+   "n_words": 116,
    "label_start": "27",
    "label_end": "27"
   },
@@ -1038,8 +1038,8 @@
    "level": 2,
    "page_start": 27,
    "page_end": 28,
-   "n_chars": 1593,
-   "n_words": 310,
+   "n_chars": 1637,
+   "n_words": 317,
    "label_start": "27",
    "label_end": "28"
   },
@@ -1050,8 +1050,8 @@
    "level": 2,
    "page_start": 28,
    "page_end": 31,
-   "n_chars": 9145,
-   "n_words": 1288,
+   "n_chars": 9205,
+   "n_words": 1295,
    "label_start": "28",
    "label_end": "31"
   }
@@ -1068,7 +1068,8 @@
    "items": []
   },
   "sections": 29,
-  "chars_total": 89138,
+  "chars_total": 90171,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
@@ -1089,15 +1090,15 @@
      "id": "sec-000-introduction",
      "title": "Introduction",
      "prose_ratio": 0.933,
-     "coverage_ratio": 0.982,
+     "coverage_ratio": 0.98,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-measurement-side-viewpoint-windowing-demodulatio",
      "title": "Measurement-side viewpoint: windowing, demodulation, and the detection kernel",
-     "prose_ratio": 0.923,
-     "coverage_ratio": 0.96,
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.862,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1105,7 +1106,7 @@
      "id": "sec-002-a-linear-readout-functional",
      "title": "A linear readout functional",
      "prose_ratio": 0.967,
-     "coverage_ratio": 0.876,
+     "coverage_ratio": 0.87,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1113,15 +1114,15 @@
      "id": "sec-003-why-the-detection-kernel-must-appear-in-the-theo",
      "title": "Why the detection kernel must appear in the theory",
      "prose_ratio": 0.969,
-     "coverage_ratio": 0.989,
+     "coverage_ratio": 0.979,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-inputoutput-floquet-scattering-and-outgoing-corr",
-     "title": "Input\u2013output Floquet scattering and outgoing correlators",
+     "title": "Input–output Floquet scattering and outgoing correlators",
      "prose_ratio": 0.931,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.9,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1137,7 +1138,7 @@
      "id": "sec-006-connecting-the-measurement-to-the-correlator",
      "title": "Connecting the measurement to the correlator",
      "prose_ratio": 0.968,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1160,8 +1161,8 @@
     {
      "id": "sec-009-extension-two-terminal-devices-and-multi-step-oc",
      "title": "Extension: two-terminal devices and multi-step occupations",
-     "prose_ratio": 0.96,
-     "coverage_ratio": 0.992,
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.976,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1177,7 +1178,7 @@
      "id": "sec-011-beyond-the-fold-cusps-multi-tone-drives-and-the",
      "title": "Beyond the fold: cusps, multi-tone drives, and the Pearcey kernel",
      "prose_ratio": 0.976,
-     "coverage_ratio": 0.709,
+     "coverage_ratio": 0.703,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1185,7 +1186,7 @@
      "id": "sec-012-how-a-cusp-arises-in-floquet-scattering",
      "title": "How a cusp arises in Floquet scattering",
      "prose_ratio": 0.979,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1201,7 +1202,7 @@
      "id": "sec-014-expected-diagnostic-signatures-fold-versus-cusp",
      "title": "Expected diagnostic signatures: fold versus cusp",
      "prose_ratio": 0.977,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.967,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1209,7 +1210,7 @@
      "id": "sec-015-why-floquet-edges-are-richer-than-standard-rmt-e",
      "title": "Why Floquet edges are richer than standard RMT edges",
      "prose_ratio": 0.958,
-     "coverage_ratio": 0.996,
+     "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1217,7 +1218,7 @@
      "id": "sec-016-what-the-measurement-sees-at-the-soft-edge",
      "title": "What the measurement sees at the soft edge",
      "prose_ratio": 0.978,
-     "coverage_ratio": 0.989,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1225,7 +1226,7 @@
      "id": "sec-017-photo-assisted-shot-noise-at-the-airy-edge",
      "title": "Photo-assisted shot noise at the Airy edge",
      "prose_ratio": 0.975,
-     "coverage_ratio": 0.988,
+     "coverage_ratio": 0.975,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1241,7 +1242,7 @@
      "id": "sec-019-finite-temperature-and-the-crossover-scale",
      "title": "Finite temperature and the crossover scale",
      "prose_ratio": 0.971,
-     "coverage_ratio": 0.971,
+     "coverage_ratio": 0.962,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1249,7 +1250,7 @@
      "id": "sec-020-conclusion-and-outlook",
      "title": "Conclusion and outlook",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-021-summary",
@@ -1263,7 +1264,7 @@
      "id": "sec-022-experimental-platforms",
      "title": "Experimental platforms",
      "prose_ratio": 0.966,
-     "coverage_ratio": 0.985,
+     "coverage_ratio": 0.98,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1271,7 +1272,7 @@
      "id": "sec-023-open-directions",
      "title": "Open directions",
      "prose_ratio": 0.962,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1282,7 +1283,7 @@
     },
     {
      "id": "sec-025-christoffeldarboux-identity-for-the-discrete-bes",
-     "title": "Christoffel\u2013Darboux identity for the discrete Bessel kernel",
+     "title": "Christoffel–Darboux identity for the discrete Bessel kernel",
      "result": "no matching \\section"
     },
     {

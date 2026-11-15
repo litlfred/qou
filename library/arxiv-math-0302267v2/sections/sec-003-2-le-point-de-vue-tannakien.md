@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0302267v2
-doc_title: "arXiv:math/0302267v2 [math.NT] 27 Feb 2003"
+doc_title: "Groupes fondamentaux motiviques de Tate mixte"
 section_id: sec-003-2-le-point-de-vue-tannakien
 section_title: "Le point de vue tannakien"
 section_number: 2
@@ -8,6 +8,7 @@ pages: 15-28
 source_pdf: 0302267v2.pdf
 source_sha256: c09c8cabd5f9d8e6
 toc_source: inferred
+doc_brief: "Groupes fondamentaux motiviques de Tate mixte — We deﬁne the category of mixed Tate motives over the ring of S-integers of a number ﬁeld."
 ---
 2.1. Soient k un corps de nombres et S un ensemble ﬁni de places ﬁnies de k. Le foncteur
 ω, d´eduit du foncteur gradu´e ω∗de 1.1 par oubli de la graduation, est un foncteur ﬁbre de la

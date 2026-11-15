@@ -1,0 +1,2234 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-2007.13108v1",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "†",
+   "text": "Weizmann Institute of Science. Supported by the European Research Council.",
+   "marks": [
+    {
+     "page": 1,
+     "context": "Ronen Eldan∗and Omer Shamir"
+    }
+   ],
+   "block": "library/arxiv-2007.13108v1/blocks/prose-sec-front-matter"
+  }
+ ],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "convexpotentialonR"
+  },
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "linear extension fsatisﬁes log ∇2f(x) ⪯βI"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "any Hamming Lipchitz test function ϕ satisﬁes Varν[ϕ]≤n"
+  },
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "IntheEuclideanspaceR"
+  },
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "ties.Forinstance,ifγisthestandardGaussianmeasureonR"
+  },
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "V: R"
+  },
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "∇2V⪯(1 −δ)I"
+  },
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "t analogous concentration inequalities are attained. Deﬁne C"
+  },
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "We say that a function ϕ : C"
+  },
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "|ϕ(x) −ϕ(y)| ≤∥x −y∥1,∀x, y∈C"
+  },
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "Let µ be the uniform measure onC"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "ϕ,itisatrivialfactthatVarν[ϕ]≤n"
+  },
+  {
+   "page": 2,
+   "mark": "x",
+   "context": "i"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "ix"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "ixiandνwhichassignsmass"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "It is clear that any potential V:C"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "ntial V:Cn→R is the restriction of some convex function on R"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "to C"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "e⟨x,y⟩dν(y),∀x ∈R"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "ﬁnition 1.(Semi log-concave measures).Given a measure ν on C"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "∇2L[ν](x) ⪯βI"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "∇2L[ν](x) ⪯βIn,∀x ∈R"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "heorem2.Letβ≥1.Ifνisaβ-semi-log-concaveprobabilitymeasureonC"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "Varν[ϕ] ≤Cβn"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "β-semi-log-concave measures on C"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "to the usual notion of log concavity in R"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "nto the continuous hypercube, [−1, 1]n.Given a function f: C"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "extension of f. Since the two coincide on C"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "dµ(x) ⪯βI"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "tion ϕ satisﬁes Varν[ϕ] ≤C(β + 3)n"
+  },
+  {
+   "page": 3,
+   "mark": "f",
+   "context": "dµ.Since"
+  },
+  {
+   "page": 3,
+   "mark": "f",
+   "context": "dµ.Since fis harmonic and since ∇log"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "f"
+  },
+  {
+   "page": 3,
+   "mark": "f",
+   "context": "f2,weseethatinorderfor"
+  },
+  {
+   "page": 3,
+   "mark": "f",
+   "context": "f2,weseethatinorderforftobelog-concave,the Hessianof"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "Given a measure νon C"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "H(π"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "Theorem5.Letνbe aprobability measure onC"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": ",∀x ∈R"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "diag (∇2L[ν](x)) ⪯I"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "conditionthatE[X"
+  },
+  {
+   "page": 3,
+   "mark": "j",
+   "context": "conditionthatE[XiX"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "conditionthatE[XiXj]≤EX"
+  },
+  {
+   "page": 3,
+   "mark": "j",
+   "context": "conditionthatE[XiXj]≤EXiEX"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "Var[ϕ(X1, . . . , Xn)] = Ω(n"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "X"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "X1, ..., X"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "every θ∈R"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "iθ"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "iθiX"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "iθ"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "iθiX"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "iθ"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "iθiX"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "iθ"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "iθiX"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "Var[ϕ(X"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "Var[ϕ(X1, . . . , X"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "Var[ϕ(X1, . . . , Xn)] ≤Cn"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "H(X"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "H(Xi) ≤2H(X"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "H(Xi) ≤2H(X1, ..., X"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "Proof of corollary 8.Let νbe the law of (2X"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "Proof of corollary 8.Let νbe the law of (2X1 −1, . . . , 2X"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "diagonalentriesforallx∈R"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "diagonalentriesforallx∈Rn.Letu∈R"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "diagonalentriesforallx∈Rn.Letu∈Rn.Deﬁneu=u++u−whereu+∈R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "u−∈R"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": ") is positive semi-deﬁnite and that (∇2L[ν](x))i,i≤1 for all"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "iX"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "random subset A ⊂[n] by X"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "random subset A ⊂[n] by Xi= 21"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "iX"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "iXi is supported on one point), then the law of X"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "iXi is supported on one point), then the law of X1, ...X"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "∇2L[ν](x) ⪯2 (diag (∇L[ν](x)) + I"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "∇2L[ν](x) ⪯2 (diag (∇L[ν](x)) + In) ,∀x ∈R"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "Throughoutthissection,weﬁxaprobabilitymeasureνonC"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "ϕ : C"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "For a vector w∈R"
+  },
+  {
+   "page": 6,
+   "mark": "w",
+   "context": "(x −aν(w))⊗2dτ"
+  },
+  {
+   "page": 6,
+   "mark": "w",
+   "context": "(x −aν(w))⊗2dτwν(x) = Cov(τ"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "∇aν(w) = ∇2L[ν](w) ⪯βI"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "properties for log-concave measures on R"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "Let B"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Let Bt be a standard Brownian motion on R"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": " be a standard Brownian motion on Rnadapted to a ﬁltration F"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "F"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "F0(x) = 0,dF"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "F0(x) = 0,dFt(x) = F"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "F0(x) = 0,dFt(x) = Ft(x)⟨x −a"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "F0(x) = 0,dFt(x) = Ft(x)⟨x −at, dB"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "F0(x) = 0,dFt(x) = Ft(x)⟨x −at, dBt⟩,∀x ∈C"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "We think of this process (ν"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "We think of this process (νt)"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "think of this process (νt)t as an evolution of measures on C"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "2.For all A ⊂C"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "2.For all A ⊂Cn, the process ν"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "3.Theprocessa"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "3.TheprocessatalmostsurelyconvergestoapointinC"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "3.TheprocessatalmostsurelyconvergestoapointinCn,anda∞:=lim"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "TheprocessatalmostsurelyconvergestoapointinCn,anda∞:=limt→∞a"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "dν"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "dνt(C"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "(x −a"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "(x −at)dν"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "(x −at)dνt(x)dB"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "x ⊗(x −a"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "x ⊗(x −at)ν"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "R"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "Rd(x −a"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "Rd(x −at)⊗2ν"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "Cov(νt)"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "i,j≥Cov(ν"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "i,j≥Cov(νt)"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "i,i= (1 −⟨a"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "i,i= (1 −⟨at, e"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "i,i= (1 −⟨at, ei⟩2)"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "d[⟨a"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "d[⟨at, e"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "implying that ⟨a"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "implying that ⟨at, e"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "ying that ⟨at, ei⟩converges to {±1} almost surely and that ν"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "es to {±1} almost surely and that νtconverges weakly to to δ"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "t→∞a"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "t→∞ν"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "for all A ⊂C"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "for all A ⊂Cn.Since ν"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "t→∞Eν"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "t→∞a"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Next, we have by Itˆo’s formula, for all x ∈C"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "d log Ft(x) =dF"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "F"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "2Ft(x)"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "= ⟨x −a"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "= ⟨x −at, dB"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "2|x −a"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "= ⟨x, dB"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "= ⟨x, dBt + a"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "= ⟨x, dBt + atdt⟩+ dZ"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "where Z"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "on C"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "log F"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "log Ft(x) = ⟨x, w"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "log Ft(x) = ⟨x, wt⟩+ c"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "R"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "0"
+  },
+  {
+   "page": 8,
+   "mark": "s",
+   "context": "0a"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "0asds.The above display and the fact that ν"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Proposition 10.Given a measure νand a vector v∈R"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "Then X= lim"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "Then X= limt→∞aν(u"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Then X= limt→∞aν(ut) exists and is a point in C"
+  },
+  {
+   "page": 8,
+   "mark": "v",
+   "context": "exists and is a point in Cn almost surely, and has the law τ"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "a˜ν(x) = aν(x + v),∀x ∈R"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "and has the law ϕ⋆ν.Consequently, Varν[ϕ|F"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "and has the law ϕ⋆ν.Consequently, Varν[ϕ|Ft] = Var[M∞|F"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "Varν[ϕ] = E[M]t + EVar[M∞|F"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "Varν[ϕ] = E[M]t + EVar[M∞|Ft] = E[M]t + EVarν"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "ϕ(x)⟨x −a"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "ϕ(x)⟨x −at, dB"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "ϕ(x)⟨x −at, dBt⟩ν"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "ϕ(x)(x −a"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "ϕ(x)(x −at)dν"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "˜ϕ(x)⟨x −a"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "˜ϕ(x)⟨x −at, θ⟩dν"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "⟨x −a"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "⟨x −at, θ⟩dν"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "ε(exp (⟨x −a"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "ε(exp (⟨x −at, εθ⟩) −1) dν"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "exp (⟨x, εθ⟩) dν"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "εZν"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "Zν"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "˜ϕdτεθν"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "εW"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "V arν"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "V arνt[ϕ] ≤nTr(A"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "So, if X∼ν"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "V arν"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "ϕ(X) −ϕ(E[X]))"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "E[Tr(A"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "E[Tr(At+r)|F"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "S"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "St:= (A"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "St:= (At)i,i,Q"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "St:= (At)i,i,Qt= ⟨a"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "St:= (At)i,i,Qt= ⟨at, e"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "By part 3 of Proposition 9, we have that a∞|F"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "By part 3 of Proposition 9, we have that a∞|Ft has the law ν"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": " 9, we have that a∞|Ft has the law νt, meaning that Q∞:= lim"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "we have that a∞|Ft has the law νt, meaning that Q∞:= limt→∞Q"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "S"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "St= Var[Q∞|F"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "S"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "St= Var[Q∞|F"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "St= Var[Q∞|Ft] = E[Q"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "∞|F"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "∞|Ft] −Q"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "t= 1 −Q"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "d[Q]t≥S"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "dS"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "dSt= −2Q"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "dSt= −2QtdQ"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "S"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "St=−2Q"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "St=−2QtdQ"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "≤−Q"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "≤−QtdQ"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "S"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "St+r|F"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "S"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "St+r|F"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "S"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "E[S"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "E[St+r|F"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "S"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "St+r|F"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "(where we used the fact that S"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "dt + n"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "εW"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "εW1(ν"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "εW1(νt, τεθν"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "dt + n"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "εW"
+  },
+  {
+   "page": 11,
+   "mark": "w",
+   "context": "εW1(τ"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "εW1(τw"
+  },
+  {
+   "page": 11,
+   "mark": "w",
+   "context": "εW1(τwtν, τ"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "εW1(τwtν, τw"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "Proposition 13.Let νbe a β-semi-log-concave measure on C"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "sition 13.Let νbe a β-semi-log-concave measure on Cn.Let v∈R"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "t νbe a β-semi-log-concave measure on Cn.Let v∈Rnand let θ∈S"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "W"
+  },
+  {
+   "page": 11,
+   "mark": "v",
+   "context": "W1(τ"
+  },
+  {
+   "page": 11,
+   "mark": "v",
+   "context": "W1(τvν, τ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "W1(τvν, τv+εθν) ≤4εβn"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "Var[ϕ] ≤4Tβn"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "Var[ϕ] ≤4Tβn2−1/(16β)+ n"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "Var[ϕ] ≤4Tβn2−1/(16β)+ n2e−2 log"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "Var[ϕ] ≤4Tβn2−1/(16β)+ n2e−2 log n≤Cβn"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "ll be proven via a coupling argument laid out below. Let v∈R"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "According to Proposition 10, we have that lim"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "According to Proposition 10, we have that limt→∞aν(w"
+  },
+  {
+   "page": 11,
+   "mark": "v",
+   "context": "According to Proposition 10, we have that limt→∞aν(wt) ∼τ"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "ing coupling. Let U"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "ing coupling. Let Ut be process adapted to F"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "ling. Let Ut be process adapted to Ft such that for all t, U"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "ε > 0 and θ∈S"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "Similarly to the above, we have lim"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "Similarly to the above, we have limt→∞aν(w"
+  },
+  {
+   "page": 11,
+   "mark": "v",
+   "context": "Similarly to the above, we have limt→∞aν(wt) ∼τ"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "t→∞aν(w"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "t→∞aν(u"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "t→∞aν(w"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "t→∞aν(u"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "t→∞aν(w"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "t→∞aν(u"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "τ:= inf{t;u"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "τ:= inf{t;ut= w"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "and the event E:={τ≤1}.By setting U=I"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "event E:={τ≤1}.By setting U=Infor all t ≥τ, we get that aν(w"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": ":={τ≤1}.By setting U=Infor all t ≥τ, we get that aν(wt)=aν(u"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "t→∞|aν(w"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "t→∞|aν(wt) −aν(u"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "\u0014\f\f\faν(w"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "2 F"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "h\f\f\faν(w"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "F"
+  },
+  {
+   "page": 12,
+   "mark": "s",
+   "context": "s→∞aν(w"
+  },
+  {
+   "page": 12,
+   "mark": "s",
+   "context": "s→∞aν(w"
+  },
+  {
+   "page": 12,
+   "mark": "s",
+   "context": "wheretheﬁrstequalityusesthefactthatlim"
+  },
+  {
+   "page": 12,
+   "mark": "s",
+   "context": "wheretheﬁrstequalityusesthefactthatlims→∞aν(w"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "wheretheﬁrstequalityusesthefactthatlims→∞aν(ws)|F"
+  },
+  {
+   "page": 12,
+   "mark": "w",
+   "context": "wheretheﬁrstequalityusesthefactthatlims→∞aν(ws)|Fthasthelawτ"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "heretheﬁrstequalityusesthefactthatlims→∞aν(ws)|Fthasthelawτw"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "W"
+  },
+  {
+   "page": 12,
+   "mark": "v",
+   "context": "W1(τ"
+  },
+  {
+   "page": 12,
+   "mark": "v",
+   "context": "W1(τvν, τ"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "t→∞aν(w"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "t→∞aν(u"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "|aν(w"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "|aν(wt) −aν(u"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "|aν(u"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "|aν(ut) −aν(w"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "|aν(ut) −aν(wt)| ≤β|u"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "|aν(ut) −aν(wt)| ≤β|ut −w"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "d|u"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "d|ut −w"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "d|ut −wt|2= 2⟨u"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "d|ut −wt|2= 2⟨ut −w"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "d|ut −wt|2= 2⟨ut −wt, du"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "d|ut −wt|2= 2⟨ut −wt, dut −dw"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "(U"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "(Ut −I"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "(Ut −In)"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "= 2⟨u"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "= 2⟨ut −w"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "= 2⟨ut −wt, (U"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "= 2⟨ut −wt, (Ut −I"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "= 2⟨ut −wt, (Ut −In)dB"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "= 2⟨ut −wt, (Ut −In)dBt⟩+ 2⟨u"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "= 2⟨ut −wt, (Ut −In)dBt⟩+ 2⟨ut −w"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "= 2⟨ut −wt, (Ut −In)dBt⟩+ 2⟨ut −wt, aν(u"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "= 2⟨ut −wt, (Ut −In)dBt⟩+ 2⟨ut −wt, aν(ut) −aν(w"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "(U"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "(Ut −I"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "(Ut −In)"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "u"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "ut −w"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "Z"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "|u"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "|ut −w"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "|ut −wt|, dB"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "\u0012w"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "\u0012wt −u"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "U"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "Ut= I"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "|w"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "|wt −u"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "The reﬂection about the axis spanned by w"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "The reﬂection about the axis spanned by wt −u"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "⟨w"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "⟨wt −u"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "⟨wt −ut, (I"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "⟨wt −ut, (In −U"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "⟨wt −ut, (In −Ut)dB"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "⟨wt −ut, (In −Ut)dBt⟩= 2|u"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "⟨wt −ut, (In −Ut)dBt⟩= 2|ut −w"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "⟨wt −ut, (In −Ut)dBt⟩= 2|ut −wt|dW"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "d|u"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "d|ut −w"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "d|ut −wt|2= 4|u"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "d|ut −wt|2= 4|ut −w"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "d|ut −wt|2= 4|ut −wt|dW"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "d|ut −wt|2= 4|ut −wt|dWt + 4dt + S"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "≤2β|u"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "≤2β|ut −w"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "S"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "St= 2⟨u"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "St= 2⟨ut −w"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "St= 2⟨ut −wt, aν(u"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "St= 2⟨ut −wt, aν(ut) −aν(w"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "Now deﬁne Y"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "Now deﬁne Yt= |u"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "Now deﬁne Yt= |ut −w"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "dYt=d (|u"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "dYt=d (|ut −w"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "−d [|u"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "−d [|ut −w"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "2|u"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "2|ut −w"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "8|u"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "8|ut −w"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "2|u"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "2|ut −w"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "2|ut −wt|dt −16|u"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "2|ut −wt|dt −16|ut −w"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "8|u"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "8|ut −w"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "2|u"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "2|ut −w"
+  },
+  {
+   "page": 13,
+   "mark": "t",
+   "context": "such that Z"
+  },
+  {
+   "page": 13,
+   "mark": "t",
+   "context": "such that Zt≤βY"
+  },
+  {
+   "page": 13,
+   "mark": "t",
+   "context": "d(e−βtY"
+  },
+  {
+   "page": 13,
+   "mark": "t",
+   "context": "d(e−βtYt) = e−βtdY"
+  },
+  {
+   "page": 13,
+   "mark": "t",
+   "context": "d(e−βtYt) = e−βtdYt −βe−βtY"
+  },
+  {
+   "page": 13,
+   "mark": "t",
+   "context": "d(e−βtYt) = e−βtdYt −βe−βtYtdt = 2e−βtdW"
+  },
+  {
+   "page": 13,
+   "mark": "t",
+   "context": "d(e−βtYt) = e−βtdYt −βe−βtYtdt = 2e−βtdWt + e−βt(Z"
+  },
+  {
+   "page": 13,
+   "mark": "t",
+   "context": "d(e−βtYt) = e−βtdYt −βe−βtYtdt = 2e−βtdWt + e−βt(Zt −βY"
+  },
+  {
+   "page": 13,
+   "mark": "t",
+   "context": "E [Y"
+  },
+  {
+   "page": 13,
+   "mark": "t",
+   "context": "|aν(w"
+  },
+  {
+   "page": 13,
+   "mark": "t",
+   "context": "|aν(wt) −aν(u"
+  },
+  {
+   "page": 13,
+   "mark": "t",
+   "context": "|w"
+  },
+  {
+   "page": 13,
+   "mark": "t",
+   "context": "|wt −u"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "Eis F"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "w"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "v∈R"
+  },
+  {
+   "page": 13,
+   "mark": "t",
+   "context": "Z"
+  },
+  {
+   "page": 13,
+   "mark": "t",
+   "context": "and such that Z"
+  },
+  {
+   "page": 13,
+   "mark": "t",
+   "context": "and such that Zt≤0, almost surely for all t.Let τ= inf{t;X"
+  },
+  {
+   "page": 13,
+   "mark": "t",
+   "context": "t∈[0,s]X"
+  },
+  {
+   "page": 13,
+   "mark": "t",
+   "context": "t∈[0,s]|W"
+  },
+  {
+   "page": 13,
+   "mark": "s",
+   "context": "= 2P(W"
+  },
+  {
+   "page": 13,
+   "mark": "s",
+   "context": "= 1 −2(P(W"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "R"
+  },
+  {
+   "page": 14,
+   "mark": "e",
+   "context": "0"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "Finally, that by Equation (18) we have for all v∈R"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "w"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "W"
+  },
+  {
+   "page": 14,
+   "mark": "v",
+   "context": "W1(τ"
+  },
+  {
+   "page": 14,
+   "mark": "v",
+   "context": "W1(τvν, τ"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "Choosing t =log(2"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "W"
+  },
+  {
+   "page": 14,
+   "mark": "v",
+   "context": "W1(τ"
+  },
+  {
+   "page": 14,
+   "mark": "v",
+   "context": "W1(τvν, τ"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "W1(τvν, τv+εθν) ≤4εβn"
+  },
+  {
+   "page": 14,
+   "mark": "g",
+   "context": "dµ.A calculation gives and write"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "log cosh(x"
+  },
+  {
+   "page": 14,
+   "mark": "x",
+   "context": "Cov(τ"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "cosh"
+  },
+  {
+   "page": 14,
+   "mark": "g",
+   "context": "i,j"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "cosh"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "cosh2(x"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "cosh2(xi) cosh"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "cosh2(xi) cosh2(x"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "cosh"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "\u00122 tanh(x"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "cosh"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "cosh2(x"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "cosh2(xi) cosh"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "cosh2(xi) cosh2(x"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "cosh"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "cosh"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "x"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "cosh"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "Finally, since 1/ cosh(x) ≤1 and by assumption ∇2log ρ ⪯βI"
+  },
+  {
+   "page": 15,
+   "mark": "x",
+   "context": "Cov(τ"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "Cov(τx[ν]) ⪯(β + 3)I"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "Fix a measure ν on C"
+  },
+  {
+   "page": 15,
+   "mark": "t",
+   "context": "Fix a measure ν on Cn and consider the process ν"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "Deﬁne h : C"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "+1 −x"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "log"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "log 1 −x"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "log 1 + x"
+  },
+  {
+   "page": 15,
+   "mark": "t",
+   "context": "dh(a"
+  },
+  {
+   "page": 15,
+   "mark": "t",
+   "context": "dh(at) = ⟨∇h(a"
+  },
+  {
+   "page": 15,
+   "mark": "t",
+   "context": "dh(at) = ⟨∇h(at), da"
+  },
+  {
+   "page": 15,
+   "mark": "t",
+   "context": "Cov(ν"
+  },
+  {
+   "page": 15,
+   "mark": "t",
+   "context": "Cov(νt)∇2h(a"
+  },
+  {
+   "page": 15,
+   "mark": "t",
+   "context": "Cov(νt)∇2h(at)Cov(ν"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "1 −x"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "1 −x"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "Observe also that since νis supported on C"
+  },
+  {
+   "page": 15,
+   "mark": "t",
+   "context": "diag (Cov(ν"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "diag (Cov(νt)) = I"
+  },
+  {
+   "page": 15,
+   "mark": "t",
+   "context": "diag (Cov(νt)) = In −diag(a"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "diag (Cov(νt)) = In −diag(at)"
+  },
+  {
+   "page": 15,
+   "mark": "t",
+   "context": "sing(8),thecondition(5)impliesthat,almostsurelyforallt,Cov(ν"
+  },
+  {
+   "page": 15,
+   "mark": "t",
+   "context": "ition(5)impliesthat,almostsurelyforallt,Cov(νt)⪯βdiag (Cov(ν"
+  },
+  {
+   "page": 15,
+   "mark": "t",
+   "context": "≤βTr(Cov(ν"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "= h(a"
+  }
+ ]
+}

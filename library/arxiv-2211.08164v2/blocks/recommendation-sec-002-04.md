@@ -1,0 +1,1 @@
+It then follows from the preceding discussion that $R$ must be fixed by an involution conjugate to $b$ and therefore the surface possesses, in addition to $P$ and its whole $G$-orbit, 12 \we points of weight 2.

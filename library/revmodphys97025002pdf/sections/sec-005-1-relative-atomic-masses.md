@@ -1,13 +1,14 @@
 ---
 doc_id: revmodphys97025002pdf
-doc_title: "CONTENTS I. Introduction 2 A. Background 2 B. Overview of the 2022 adjustment 2 1. Relative atomic masses 3 2. Ionization and binding energies 3 3. Hydrogen and deuterium transitio"
+doc_title: "CODATA recommended values of the fundamental physical constants: 2022*"
 section_id: sec-005-1-relative-atomic-masses
 section_title: "Relative atomic masses"
 section_number: 1
 pages: 3-3
 source_pdf: RevModPhys.97.025002.pdf.pdf
 source_sha256: e7fa786c5b666407
-doc_brief: "CODATA recommended values of the fundamental physical constants: 2022 * — 73 sections: CODATA recommended values of the f; Contents; I. Introduction"
+toc_source: outline
+doc_brief: "CODATA recommended values of the fundamental physical constants: 2022* — 85 sections: CODATA recommended values of the f; Contents; I. Introduction"
 ---
 1. Relative atomic masses
 The required relative atomic masses Arð28SiÞ, Arð87RbÞ, and
@@ -18,20 +19,22 @@ an input datum as in the past but is based on the original
 capture gamma-ray measurement reported in 1999 (Sec. II.A;
 Table I; Sec. II.B; and Tables XXV and XXXI, D5, D6,
 D11, D14).
-Experimental measurements of transition frequencies
-between rovibrational states in HD
-þ and the theory of the
+Experimental
+measurements
+of
+transition
+frequencies
+between rovibrational states in HDþ and the theory of the
 transitions have achieved an uncertainty that allows the
 measured frequencies to be included as input data and
-contribute to the determination of A
-rðpÞ, ArðdÞ, and especially
-ArðeÞ (Sec. II.D; Tables II and III; and Tables XXV and XXXI,
+contribute to the determination of ArðpÞ, ArðdÞ, and especially
+ArðeÞ (Sec. II.D; Tables II and III; and Tables XXVand XXXI,
 D27–D32).
 Four new experimentally determined cyclotron frequency
 ratios that also contribute to the determination of ArðeÞ, ArðpÞ,
 and ArðdÞ have become available for inclusion as input
 data: ωcð12C6þÞ=ωcðpÞ, which is a 2017 result included in
-CODA TA 2018 but revised in 2019; ωcð12C6þÞ=ωcðdÞ;
+CODATA 2018 but revised in 2019; ωcð12C6þÞ=ωcðdÞ;
 ωcðHþ
 2 Þ=ωcðdÞ; and ωcð12C4þÞ=ωcðHDþÞ (Sec. II.C and
-Tables XXV and XXXI, D15 –D18).
+Tables XXV and XXXI, D15–D18).

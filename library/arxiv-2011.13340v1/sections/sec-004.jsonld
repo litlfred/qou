@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2011.13340v1/sections/sec-004",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Conclusion and Open Questions",
+  "pageStart": 15,
+  "pageEnd": 16,
+  "contains": [
+    "library/arxiv-2011.13340v1/blocks/prose-sec-004",
+    "library/arxiv-2011.13340v1/blocks/recommendation-sec-004-01",
+    "library/arxiv-2011.13340v1/blocks/recommendation-sec-004-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2011.13340v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2011.13340v1",
+  "provenance": "ingested"
+}

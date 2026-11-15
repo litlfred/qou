@@ -1,0 +1,106 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1905.02045v3",
+ "source": {
+  "structure_sha256": "8e7eb17c7d1f4f4e49a7c58e4254973b873e12900a6af4e58908aa0e9c1d89dd",
+  "file": "1905.02045v3.pdf"
+ },
+ "provenance": {
+  "title": "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM INVARIANTS OF HYPERBOLIC KNOTS",
+  "authors": "S. BETTIN AND S. DRAPPEAU",
+  "arxiv": {
+   "id": "1905.02045",
+   "version": "3",
+   "primary_class": "math.NT",
+   "stamp_date": "4 Mar 2020"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 5,
+  "by_kind": {
+   "recommendation": 5
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In any case, we want to stress again that the scope of our work is more general and suggests that any proof of the arithmeticity conjecture should be adaptable into a proof of the modularity conjecture via the use of the reciprocity relation [\\[eq:mro\\]](#eq:mro){reference-type=\"eqref\" reference=\"eq:mro\"}.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "For all the knots we consider the first difference is easily treated since, as shown in Lemma [\\[extra_terms\\]](#extra_terms){reference-type=\"ref\" reference=\"extra_terms\"}, the neglected terms are much smaller than the main terms (for other knots, such as $7_2$, a treatment as in [@Ohtsuki7 Section 8] should be possible).",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-11-outline-of-the-paper-and-sketch-of-the-proofs.md",
+   "section_title": "Outline of the paper and sketch of the proofs",
+   "pages": "6-7",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In the context of the modularity conjecture it is natural to always take $\\upsilon=0$, which we shall do in the following.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-008-3-proof-of-theorem.md",
+   "section_title": "Proof of Theorem ??",
+   "pages": "21-31",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Thus, we shall frequently refer to [@Ohtsuki52; @OhtsukiYokota6; @Ohtsuki7] where this asymptotic expansion was proven for hyperbolic knots with $5,6$ and $7$ crossings.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-008-3-proof-of-theorem.md",
+   "section_title": "Proof of Theorem ??",
+   "pages": "21-31",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Thus, we shall frequently refer to [32, 34, 33] where this asymptotic expansion was proven for hyperbolic knots with 5, 6 and 7 crossings.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-009-32-proof-of-lemma.md",
+   "section_title": "Proof of Lemma ??",
+   "pages": "31-34",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

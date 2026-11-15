@@ -1,0 +1,60 @@
+2.2.1 The upper half plane
+As a model for hyperbolic geometry, we consider the upper half plane
+
+H={z€C|Sz> 0},
+with metric
+
+ds =y (da? + dy’) .
+The Laplacian with this metric takes the form
+
+on on
+Aw =-y’(—>+=>).
+
+H y ( Ox2 22)
+
+The distance function is
+
+p(z,w) = log (
+
+Geodesics in H are semicircles and half lines perpendicular to the real line. The isometries
+
+|z —@| + |z— wv
+|jz-@l| -—|z-w|
+
+of hyperbolic space are given by Mobius transformations
+az+b
+cz+¢d’
+such that a, b, c, d€ R and ad—bc = 1. With these conditions, a Mobius transformation
+
+(" i):
+
+up to a sign. Since the identity transformation can be given by a = d = +1 (and
+
+tizhe
+
+t determines a matrix of the form
+
+b =c=0), the group of orientation preserving isometries Isom* (H) is
+PSLo(R) = SLo(R)/(+1).
+
+In this thesis, we will be working with the full group of isometries Isom(H); this is given
+
+by the Mobius transformations and the reflection z+ —Z. The function
+cosh(p(z, w)) = 1+ 2u(z, w),
+
+where
+|z—w?
+yk
+u(2,w) = AS 2Sw’
+
+defines a point pair invariant, that is, for t € Isom(H),
+cosh (p(tz, tw)) = cosh(p(z, w)).
+
+Any element in Isom*(H), not equal to the identity, is conjugate to a unique matrix of
+
+one of the following forms:
+
+7 0 cos(#) —sin(6) or 11
+0 1)’ sin(0) cos(0) }’ 1 0)’
+
+33

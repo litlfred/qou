@@ -1,0 +1,57 @@
+Introduction
+
+Background: There are different proposals to understand the nature of the cosmological constant A. It can be
+interpreted as encoding some type of vacuum energy (see and references therein) or as a coupling constant just
+like the Newton’s constant G. The loop quantum gravity and spinfoam frameworks use the latter interpretation which
+is motivated by the seminal works of Witten [4], and later of Fock and Rosly and Alekseev, Grosse, Schomerus
+(6) [7]. Indeed, in a 3d space-time, one can rewrite General Relativity with a (possibly zero) cosmological constant as
+a Chern-Simons gauge theory. The general phase space structure of the theory for any metric signature and sign of
+A can be treated in a nice unified way [8], using Poisson-Lie groups [9], the classical counterparts of quantum groups.
+The quantization procedure leads ezplicitly to a quantum group structure. The full construction, from phase space
+to quantum group is usually called combinatorial quantization [5}7].
+
+We can also quantize 3d gravity using the spinfoam approach. In this approach, 3d gravity is formulated as a
+BF theory. When A = 0, this is the well-known Ponzano-Regge model (both Euclidian or Lorentzian), based on
+the irreducible unitary representations of the relevant gauge group. When A ¥ 0, the quantum group structure is
+introduced by hand. The Ponzano-Regge model is deformed, using irreducible unitary representations of the relevant
+quantum deformation of the gauge group. This is then called the Turaev-Viro model [10]. The argument consolidating
+the incorporation of the cosmological constant into a spinfoam model through a quantum group comes from the semi-
+classical limit. Indeed, the asymptotics of the deformed {6j}, symbol, entering into the definition of the Turaev-Viro
+model, goes to the Regge action with a cosmological constant in the regime ¢, < 4« R.
+
+The third approach to quantize gravity is the canonical approach, i.e. the loop quantum gravity approach (LQG). In
+this case, performing the classical hamiltonian analysis to General Relativity, the cosmological constant only appears
+in the Hamiltonian constraint. This means that the kinematical space is the same whether A = 0 or not. In particular
+this kinematical space (where the Gauss constraint has been solved) is based on the classical relevant gauge group.
+
+Therefore at this stage, quantum groups naturally appear only in the combinatorial quantization of Chern-Simons.
+Different quantum groups are revealed according to the metric signature and the sign of the cosmological constant.
+When A # 0, we obtain g-deformed version of the gauge group U,(g), where g is the Lie algebra of the gauge group
+G = SL(2,R) in the Lorentzian case, SU(2) in the Euclidean case, with g function of the Planck scale and the
+cosmological radius R = VAT. The deformation parameter qg can be real or complex. A nice way to recall what is q
+
+hGVK
+
+according to the sign of A and the signature is to consider gq = exp (- ) and posing c” > 0 in the Lorentzian case
+
+and c? < 0 in the Euclidian case . Note that this trick gives q or q~!. The full relevant quantum group arising from
+the combinatorial quantization is D(U,(g)), the Drinfeld double of U,(g). When A = 0, we get the Drinfeld double
+D(U(g)) with a non-commutative parameter given by « = ¢, in units h = 1 = c. A list of the different quantum
+groups relevant for 3d gravity is given in the first table below.
+
+Since classically, the Chern-Simons formulation and the standard formulation of General Relativity are equivalent
+(modulo the degenerated metrics), we can wonder whether the Chern-Simons combinatorial quantization formalism,
+LQG and the spinfoam framework are related in some ways. It can be shown explicitly in the Euclidian case, with
+A > 0, that the Chern-Simons quantum model and the Turaev-Viro model are related, more precisely, the Turaev
+Viro amplitude is the square of the Chern-Simons amplitude [11]. On the other hand, it seems difficult to relate the
+LQG formalism, when A # 0, to a spin foam model based on a quantum group if we assume that the LQG kinematical
+space is based on a classical group such as SU(2).
+
+When A = 0, it is also possible to relate the Chern-Simons amplitude and the Ponzano Regge amplitude [12], which
+allows to identify a hidden symmetry given by the Drinfeld double D(U(g)) in the Ponzano-Regge model. Still when
+A = 0, explicit links between LQG and the spinfoam framework [16] or between the Chern Simons combinatorial
+quantization and LQG have been identified. Note also that we can identify a hidden quantum group structure
+(the Drinfeld double) in LQG when A = 0 [12}{14], which is consistent with the other approaches. The different cases
+for 3d gravity are summarized in the first table. For more details, we refer to the excellent review [15].
+
+1 This is actually an extension of General Relativity since degenerated metrics are allowed.

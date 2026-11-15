@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2607.29018v1/sections/sec-007",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Normal Cayley graphs on $S_n$ that are line graphs",
+  "pageStart": 12,
+  "pageEnd": 17,
+  "contains": [
+    "library/arxiv-2607.29018v1/blocks/prose-sec-007",
+    "library/arxiv-2607.29018v1/blocks/recommendation-sec-007-01",
+    "library/arxiv-2607.29018v1/blocks/recommendation-sec-007-02",
+    "library/arxiv-2607.29018v1/blocks/recommendation-sec-007-03",
+    "library/arxiv-2607.29018v1/blocks/recommendation-sec-007-04"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2607.29018v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2607.29018v1",
+  "provenance": "ingested"
+}

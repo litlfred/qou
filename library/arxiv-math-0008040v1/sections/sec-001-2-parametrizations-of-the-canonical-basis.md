@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0008040v1
-doc_title: "arXiv:math/0008040v1 [math.QA] 4 Aug 2000"
+doc_title: "Rectangle diagrams for the Lusztig cones of quantized enveloping algebras of type A"
 section_id: sec-001-2-parametrizations-of-the-canonical-basis
 section_title: "Parametrizations of the canonical basis"
 section_number: 2
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.938
+doc_brief: "Rectangle diagrams for the Lusztig cones of quantized enveloping algebras of type A — Let U be the quantum group associated to a Lie algebra g of type An."
 ---
 For positive integers $p<q$ we denote by $[p,q]$ the set $\{p,p+1,\ldots ,q\}$, and for a rational number $x$ we denote by $\lceil x \rceil$ the smallest element of $\{y\in \mathbb{Z}\,:\,x\leq y\}$.
 

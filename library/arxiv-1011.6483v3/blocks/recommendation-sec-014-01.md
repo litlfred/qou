@@ -1,0 +1,1 @@
+Building upon the last remark, we see that the topological chiral homology of an $(m+k)$-framed manifold $M$ with value in a CDGA should be equivalent (up to neglect of structure) to the topological chiral homology of $M$ equipped with the stable normal framing so that we get

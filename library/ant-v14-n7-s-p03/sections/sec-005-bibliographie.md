@@ -8,6 +8,7 @@ pages: 43-44
 source_pdf: ant-v14-n7-s-p03.pdf
 source_sha256: e32fde16c3ce0940
 toc_source: inferred
+doc_brief: "Nouvelles cohomologies de Weil en caractéristique positive — periods” admitting an explicit description by generators and relations."
 ---
 [Ayoub 2007] J. Ayoub, Les six opérations de Grothendieck et le formalisme des cycles évanescents dans le monde motivique, II,
 Astérisque 315, Soc. Math. France, Paris, 2007. MR Zbl

@@ -1,0 +1,1 @@
+(Again, anyone who has not seen the proof should prove this right now!) Since the definition of product is obtained simply by turning all the arrows around, the same arguments show the commutativity and associativity of the product.

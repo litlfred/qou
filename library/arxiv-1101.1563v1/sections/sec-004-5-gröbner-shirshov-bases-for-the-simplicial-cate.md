@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-1101.1563v1
-doc_title: "Gröbner-Shirshov bases for categories∗ L. A. Bokut†"
+doc_title: "Gröbner-Shirshov bases for categories"
 section_id: sec-004-5-gröbner-shirshov-bases-for-the-simplicial-cate
 section_title: "Gröbner-Shirshov bases for the simplicial category and the cyclic category"
 section_number: 5
@@ -8,7 +8,9 @@ pages: 11-20
 source_pdf: 1101.1563v1.pdf
 source_sha256: 0c45b250fc4a2a49
 toc_source: outline
+doc_brief: "Gröbner-Shirshov bases for categories — In this paper we establish Composition-Diamond lemma for small categories. We give Gr¨obner-Shirshov bases for simplicial category and cyclic category."
 ---
+Gr¨obner-Shirshov bases for the simplicial category
 and the cyclic category
 In this section, we give Gr¨obner-Shirshov bases for the simplicial category and the cyclic
 category respectively.

@@ -1,0 +1,26 @@
+The divergence of a vector field W is defined by
+Vew=*dlw,
+
+where * is the Hodge star operator which converts the 3-form f d(vol) to the
+function f. Thus the divergence of the vector field W is calculated by converting
+it to the 2-form ¥ W, taking its exterior derivative to get the 3-form d/' W,
+and then converting this to the function *d UJ W.
+For example, suppose W is the vector field E; = P,,X;. Then
+
+Ve£E, = *qd UE, = *d (O82 A 03)
+
+= * (dO. A 03 _ 02 A d63)
+
+* (2 yi/C1 + yo)) 91 A 82 A 93
+= —2yi/(1+ yo),
+using the formulas for d@. and d®; appearing in the previous section.
+
+The above example can be viewed as a special instance of the formula given in
+Proposition 18.2, since
+
+<y,V>=<y,X>=y, andl + <x,y>=1+ yo.
+
+And just as in the case of the curl formula of Proposition 18.1, this single
+verification of Proposition 18.2 also serves as its proof.
+
+45

@@ -1,0 +1,151 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0508291v1",
+ "source": {
+  "structure_sha256": "d2d541426aaec7427cd52ca09445c2bab7d1521cb56f8e55a969aa1d2d1cfce8",
+  "file": "0508291v1.pdf"
+ },
+ "provenance": {
+  "title": "Stein\u2019s Method and Random Character Ratios Running head: Stein\u2019s Method and Random Character Ratios Version of 8/13/05",
+  "authors": "By Jason Fulman",
+  "arxiv": {
+   "id": "math/0508291",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "16 Aug 2005"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 8,
+  "by_kind": {
+   "recommendation": 8
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "All of these results, it should be emphasized, were only for the case $i=2$.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-5",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Before proceeding further, it should be mentioned that familiarity with Stein's method is not necessary to read this paper.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-5",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "As is evident from these papers, there are many interesting statistics under these measures, and the method of constructing exchangeable pairs in this paper should be useful for studying them by Stein's method.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-5",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "To close the introduction, some deficiencies with this work should be noted.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-5",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "To apply Theorem \\ref{steinbound}, one needs the exchangeable pair arising from $K$ to satisfy $\\ee(W'|W) = (1-a)W$, and also one must obtain useful bounds on $Var(\\ee[(W'-W)^2|W])$ and $\\ee|W-W'|^3$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-2-steins-method-for-normal-approximation.md",
+   "section_title": "Stein's Method for Normal Approximation",
+   "pages": "5-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "This gives a Markov chain $L_{\\tau}$ by defining the probability of transitioning from $\\lambda$ to $\\rho$ as \\[ L_{\\tau}(\\rho,\\lambda) := \\frac{dim(\\rho)}{dim(\\lambda) dim(\\tau)} \\frac{1}{|G|} \\sum_{g} \\chi^{\\lambda}(g) \\chi^{\\tau}(g) \\overline{\\chi^{\\rho}(g)}. \\] It is worth remarking that since Stein's method is in the spirit of Taylor approximation, $\\tau$ should typically be chosen to be as close as possible to the trivial representation.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-004-32-central-limit-theorems-for-character-ratios.md",
+   "section_title": "Central limit theorems for character ratios",
+   "pages": "9-14",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "It should however be noted that many of the lemmas resemble those of earlier sections, and the calculations are organized in a way which should generalize to other examples.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-011-5-twisted-gelfand-pairs.md",
+   "section_title": "Twisted Gelfand Pairs",
+   "pages": "27-29",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Due to the signs in the definition of $\\tilde{K}_{\\nu}$, these numbers are not probabilities so care must be taken in working with them.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-014-53-central-limit-theorem-for-shifted-plancherel.md",
+   "section_title": "Central limit theorem for shifted Plancherel measure",
+   "pages": "34-42",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

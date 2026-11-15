@@ -1,0 +1,1 @@
+Moreover, when $C$ is a trivial groupoid - i.e., a set - the definition of a strict action of $G$ on $C$ is identical to the usual definition of a group action on a set, but when there are nontrivial morphisms, it carries more information because $A(g)$ must be functorial.

@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1905.11619v2",
  "source_sha256": "f634f9ec4357d5f3",
- "brief": "L2-COHOMOLOGY, DERIVATIONS AND QUANTUM MARKOV SEMI-GROUPS ON q-GAUSSIAN ALGEBRAS — We study (quasi-)cohomological properties through an anal ysis of quantum Markov semi-groups.",
- "extended": "**L2-COHOMOLOGY, DERIVATIONS AND QUANTUM MARKOV SEMI-GROUPS ON q-GAUSSIAN ALGEBRAS**\n\n*MARTIJN CASPERS, YUSUKE ISONO, AND MATEUSZ WASILEWSKI*\n\n24 pp, 14 sections.\n\n**Abstract.** We study (quasi-)cohomological properties through an anal ysis of quantum Markov semi-groups. We construct higher order Hochschild cocycle s using gradient forms associated with a quantum Markov semi-group. By using Schatten- Sp estimates we analyze when these cocycles take values in the coarse bimodule. For the 1-cocycles (the d erivations) we show that under natural conditions we obtain the Akemann-Ostrand property. We appl y this to q-Gaussian algebras Γ q(HR). As a result q-Gaussians satisfy AO + for |q|⩽ dim(HR)− 1/ 2. This includes a new range of q in low dimensions compared to Shlyakhtenko [Shl04].\n\n**Outline.** 1 Introduction; 2 Preliminaries; 2.1 General conventions and notation; 2.2 Containment of bimodules; 2.3 Hochschild cohomology; 3 Gradient tensoring, n-cocycles and gradient-; 3.2 Construction of n-cocycles.; 4.1 q-Gaussian algebras; 3.3 The Haagerup averaging technique; 4.2 Gradient-Sp estimates; 4.3 Consequences for Cartan rigidity; 5 Derivations and the Akemann-Ostrand property; 5.1 Group algebras; References",
+ "brief": "L2-COHOMOLOGY, DERIVATIONS AND QUANTUM MARKOV SEMI-GROUPS ON q-GAUSSIAN ALGEBRAS — We study (quasi-)cohomological properties through an analysis of quantum Markov semi-groups.",
+ "extended": "**L2-COHOMOLOGY, DERIVATIONS AND QUANTUM MARKOV SEMI-GROUPS ON q-GAUSSIAN ALGEBRAS**\n\n*MARTIJN CASPERS, YUSUKE ISONO, AND MATEUSZ WASILEWSKI*\n\n24 pp, 17 sections.\n\n**Abstract.** We study (quasi-)cohomological properties through an analysis of quantum Markov semi-groups. We construct higher order Hochschild cocycles using gradient forms associated with a quantum Markov semi-group. By using Schatten-Sp estimates we analyze when these cocycles take values in the coarse bimodule. For the 1-cocycles (the derivations) we show that under natural conditions we obtain the Akemann-Ostrand property. We apply this to q-Gaussian algebras Γq(HR). As a result q-Gaussians satisfy AO+ for |q| ⩽dim(HR)−1/2. This includes a new range of q in low dimensions compared to Shlyakhtenko [Shl04].\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries; 2.1 General conventions and notation; 2.2 Containment of bimodules; 2.3 Hochschild cohomology; 3 Gradient tensoring, n-cocycles and gradient-; 3.2 Construction of n-cocycles.; 3.3 The Haagerup averaging technique; 4 Schatten Sp-estimates for the Ornstein-Uhlen; 4.1 q-Gaussian algebras; 4.2 Gradient-Sp estimates; 4.3 Consequences for Cartan rigidity; 5 Derivations and the Akemann-Ostrand property; 5.1 Group algebras; 5.2 Von Neumann algebras with filtration; References",
  "tokens": {
-  "brief": 44,
-  "extended": 305
+  "brief": 43,
+  "extended": 328
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -45,37 +50,47 @@
    "pages": "8-9"
   },
   {
-   "id": "sec-007-41-q-gaussian-algebras",
-   "title": "q-Gaussian algebras",
-   "pages": "9-9"
-  },
-  {
-   "id": "sec-008-33-the-haagerup-averaging-technique",
+   "id": "sec-007-33-the-haagerup-averaging-technique",
    "title": "The Haagerup averaging technique",
-   "pages": "9-11"
+   "pages": "9-10"
   },
   {
-   "id": "sec-009-42-gradient-sp-estimates",
+   "id": "sec-008-4-schatten-sp-estimates-for-the-ornstein-uhlenbe",
+   "title": "Schatten Sp-estimates for the Ornstein-Uhlenbeck semi-group on q-Gaussians",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-009-41-q-gaussian-algebras",
+   "title": "q-Gaussian algebras",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-010-42-gradient-sp-estimates",
    "title": "Gradient-Sp estimates",
    "pages": "11-16"
   },
   {
-   "id": "sec-010-43-consequences-for-cartan-rigidity",
+   "id": "sec-011-43-consequences-for-cartan-rigidity",
    "title": "Consequences for Cartan rigidity",
    "pages": "16-17"
   },
   {
-   "id": "sec-011-5-derivations-and-the-akemann-ostrand-property",
+   "id": "sec-012-5-derivations-and-the-akemann-ostrand-property",
    "title": "Derivations and the Akemann-Ostrand property",
    "pages": "17-18"
   },
   {
-   "id": "sec-012-51-group-algebras",
+   "id": "sec-013-51-group-algebras",
    "title": "Group algebras",
-   "pages": "18-23"
+   "pages": "18-19"
   },
   {
-   "id": "sec-013-references",
+   "id": "sec-014-52-von-neumann-algebras-with-filtration",
+   "title": "Von Neumann algebras with filtration",
+   "pages": "19-23"
+  },
+  {
+   "id": "sec-015-references",
    "title": "References",
    "pages": "23-24"
   }

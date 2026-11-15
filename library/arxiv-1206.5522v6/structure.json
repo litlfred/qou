@@ -8,7 +8,7 @@
   "pages": 37,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:19Z",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -26,7 +26,7 @@
   "title_lines": [
    "FACTORIZATION HOMOLOGY OF TOPOLOGICAL MANIFOLDS"
   ],
-  "abstract": "Factorization homology theories of topological manifolds, after Beilinson, Drinfeld and Lurie, are homology-type theories for topological n-manifolds whose coe\ufb03cient systems are n-disk algebras or n-disk stacks. In this work we prove a precise formulation of this idea, giving an axiomatic characterization of factorization homology with coe\ufb03cients in n-disk algebras in terms of a generalization of the Eilenberg\u2013Steenrod axioms for singular homology. Each such theory gives rise to a kind of topological quantum \ufb01eld theory, for which observables can be de\ufb01ned on general n-manifolds and not only closed n-manifolds. For n-disk algebra coe\ufb03cients, these \ufb01eld theories are characterized by the condition that global observables are determined by local observables in a strong sense. Our axiomatic point of view has a number of applications. In particular, we give a concise proof of the nonabelian Poincar\u00b4e duality of Salvatore, Segal, and Lurie. We present some essential classes of calculations of factorization homology, such as for free n-disk algebras and enveloping algebras of Lie algebras, several of which have a conceptual meaning in terms of Koszul duality.",
+  "abstract": "Factorization homology theories of topological manifolds, after Beilinson, Drinfeld and Lurie, are homology-type theories for topological n-manifolds whose coeﬃcient systems are n-disk algebras or n-disk stacks. In this work we prove a precise formulation of this idea, giving an axiomatic characterization of factorization homology with coeﬃcients in n-disk algebras in terms of a generalization of the Eilenberg–Steenrod axioms for singular homology. Each such theory gives rise to a kind of topological quantum ﬁeld theory, for which observables can be deﬁned on general n-manifolds and not only closed n-manifolds. For n-disk algebra coeﬃcients, these ﬁeld theories are characterized by the condition that global observables are determined by local observables in a strong sense. Our axiomatic point of view has a number of applications. In particular, we give a concise proof of the nonabelian Poincar´e duality of Salvatore, Segal, and Lurie. We present some essential classes of calculations of factorization homology, such as for free n-disk algebras and enveloping algebras of Lie algebras, several of which have a conceptual meaning in terms of Koszul duality.",
   "docinfo": {
    "Producer": "GPL Ghostscript 10.01.2",
    "Creator": "LaTeX with hyperref",
@@ -166,7 +166,7 @@
   },
   {
    "level": 1,
-   "title": "Nonabelian Poincar\u00e9 duality",
+   "title": "Nonabelian Poincaré duality",
    "page": 26,
    "source": "outline",
    "number": "4",
@@ -583,22 +583,22 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 1,
-   "n_chars": 1309,
-   "n_words": 191,
+   "page_end": 2,
+   "n_chars": 2648,
+   "n_words": 383,
    "label_start": "1",
-   "label_end": "1"
+   "label_end": "2"
   },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 6,
-   "n_chars": 20043,
-   "n_words": 3166,
-   "label_start": "1",
+   "n_chars": 18701,
+   "n_words": 2973,
+   "label_start": "2",
    "label_end": "6"
   },
   {
@@ -734,9 +734,9 @@
    "label_end": "26"
   },
   {
-   "id": "sec-012-4-nonabelian-poincar\u00e9-duality",
+   "id": "sec-012-4-nonabelian-poincaré-duality",
    "number": "4",
-   "title": "Nonabelian Poincar\u00e9 duality",
+   "title": "Nonabelian Poincaré duality",
    "level": 1,
    "page_start": 26,
    "page_end": 28,
@@ -836,7 +836,8 @@
    }
   },
   "sections": 19,
-  "chars_total": 111933,
+  "chars_total": 111930,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
@@ -856,8 +857,8 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.981,
-     "coverage_ratio": 0.936,
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.975,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -937,17 +938,17 @@
      "id": "sec-010-34-pushforward",
      "title": "Pushforward",
      "prose_ratio": 0.548,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-011-35-homology-theories",
      "title": "Homology theories",
      "prose_ratio": 0.577,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-012-4-nonabelian-poincar\u00e9-duality",
-     "title": "Nonabelian Poincar\u00e9 duality",
+     "id": "sec-012-4-nonabelian-poincaré-duality",
+     "title": "Nonabelian Poincaré duality",
      "prose_ratio": 0.984,
      "coverage_ratio": 0.98,
      "result": "overlaid",

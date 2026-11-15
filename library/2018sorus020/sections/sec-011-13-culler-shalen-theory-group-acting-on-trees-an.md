@@ -8,7 +8,9 @@ pages: 30-30
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
 toc_source: inferred
+doc_brief: "Reidemeister torsion on character varieties — 52 sections: Front matter; Introduction; Character varieties and Reidemeist"
 ---
+Culler-Shalen theory, group acting on trees and
 incompressible surfaces
 In this section we partially describe the so-called Culler-Shalen theory. In seminal
 articles [CS83, CS84], Marc Culler and Peter Shalen managed to use both tree-
@@ -16,4 +18,3 @@ theoretical techniques introduced by Hyman Bass and Jean-Pierre Serre in [SB77]
 and character varieties to study the topology of 3-manifolds. In Subsections 1,2,3
 we describe the Bass-Serre tree together with its natural SL2 action, in Subsection
 4 we explain how to use this theory in the context of character varieties.
-1.3.1

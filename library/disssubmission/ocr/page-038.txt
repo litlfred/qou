@@ -1,0 +1,54 @@
+30 Chapter 2 — Proof of the vanishing theorem(s)
+
+COROLLARY 2.2. For K € D?(X,A) the Euler characteristic of Ky, does
+not depend on the character x.
+
+Proof. In [106, lemma 8 on p. 28] it has been deduced from the Ktinneth
+formula that hypercohomology defines a tensor functor ACU
+
+H°(X,—): (DP(X,A),*) —> (Vecty,®")
+where the right hand side denotes the rigid symmetric monoidal category
+of super vector spaces over A, i.e. Z/2Z-graded vector spaces where the
+symmetry constraint is twisted by the usual sign rule. Hence the Euler
+characteristic of K is equal, as an element of End pox a) (1) = A, to the
+composite morphism
+
+coevK SkKV evK
+
+Kx KY —— KY «K
+
+1,
+
+and as such it is invariant under character twists by proposition 2.1. Oo
+
+2.3. An axiomatic framework
+
+Since the Tannakian constructions to be given below are of independent
+interest also in more general situations than in the proof of theorem 1.1, for
+the rest of this chapter we work in the following axiomatic setting. Consider
+a A-linear rigid symmetric monoidal category (D,*) whose unit object 1
+satisfies Endp(1) = A, and let
+
+rat: (D,*) —> (DP(X,A),*)
+be a faithful A-linear tensor functor ACU. The notation rat is motivated by
+the case where k = C, A = Q and where D = D?(MHM(X)) is the bounded
+
+derived category of the category MHM(X) of mixed Hodge modules [89],
+but our formulation also applies to other situations.
+
+For K € D we denote by H°(X,K) resp. by 7(K) the hypercohomology
+resp. the Euler characteristic of the sheaf complex rat(K). Similarly we use
+the notation H*(X, Ky) = H*(X, rat(K)z) for twists by characters 7. Notice
+however that we do not assume the twisting functor lifts to the category D,
+so the formal token Ky does not refer to an object in D. Depending on the
+context, we require the first four or all of the following axioms.
+
+(D1) Degree shifts. We have an auto-equivalence K ++ K[1] on D which
+induces the usual shift functor on D?(X,A).
+
+(D2) Perverse truncations. For n € Z we have endofunctors ’T<n, ’T>n
+on D and natural morphisms
+
+t<n(K) —> K and K —>+ ?ts,(K) for KED
+
+which induce on D(X, A) the usual perverse truncations.

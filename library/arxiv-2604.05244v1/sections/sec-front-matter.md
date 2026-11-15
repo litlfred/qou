@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 2604.05244v1.pdf
 source_sha256: a5097e763dd89d06
 toc_source: outline
+doc_brief: "Edge universality in Floquet sideband spectra — We show that, for non-interacting fermions under a monochromatic phase drive (Tien– Gordon regime), the outgoing sideband occupations at a sharp Fermi"
 ---
 Edge universality in Floquet sideband spectra
 Miguel Tierz
@@ -26,4 +27,3 @@ commensurate gating isolates a single coherence-order block of the one-body corr
 identify the crossover temperature below which the Airy scaling is sharp, extend the analysis to
 biased two-terminal occupations, and argue that multi-tone drives make Pearcey-kernel cusps
 accessible in Floquet–Sambe space.
-1

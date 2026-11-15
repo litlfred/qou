@@ -1,0 +1,1551 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1507.03238v3",
+ "status": "determined",
+ "body_size": 10.9,
+ "footnotes": [
+  {
+   "id": "fn-p002-1",
+   "page": 2,
+   "mark": "1",
+   "text": "Asanexample,m004(10,11)andm004(-10,-11)inSnapPygivethesamegeometricrepresentationbut diﬀerent shapes corresponding to diﬀerent decorations.",
+   "marks": [
+    {
+     "page": 1,
+     "context": "hsimplex,andanequationforeachedge.Thesetofsolutionswithzi∈CP"
+    },
+    {
+     "page": 2,
+     "context": "ion ρ:π1(M) →G may be thought of as a choice of a point inCP"
+    },
+    {
+     "page": 2,
+     "context": "M)).Inparticular,arepresentationgenericallyhastwodecorations"
+    },
+    {
+     "page": 2,
+     "context": "SinceCP"
+    }
+   ],
+   "block": "library/arxiv-1507.03238v3/blocks/prose-sec-001"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p009-1",
+   "page": 9,
+   "mark": "0",
+   "text": "z−1",
+   "block": "library/arxiv-1507.03238v3/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p009-2",
+   "page": 9,
+   "mark": "0",
+   "text": "d−1",
+   "block": "library/arxiv-1507.03238v3/blocks/prose-sec-012"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "•A Ptolemy variety Pσ(T ), with σ∈H"
+  },
+  {
+   "page": 2,
+   "mark": "c",
+   "context": "thequotientofP(T )bya(C∗)"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "H"
+  },
+  {
+   "page": 4,
+   "mark": "c",
+   "context": "magecontainingallirreduciblerepresentations.Itisgenerically2"
+  },
+  {
+   "page": 5,
+   "mark": "f",
+   "context": "tMbeacompact,orientable3-manifoldwithnon-emptyboundaryandlet"
+  },
+  {
+   "page": 5,
+   "mark": "c",
+   "context": "universalcoverofM.Let"
+  },
+  {
+   "page": 5,
+   "mark": "c",
+   "context": "Mand"
+  },
+  {
+   "page": 5,
+   "mark": "f",
+   "context": "MdenotethespacesobtainedfromMand"
+  },
+  {
+   "page": 6,
+   "mark": "f",
+   "context": "M)denotethesetofidealverticesof"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "M,i.e.verticesof"
+  },
+  {
+   "page": 6,
+   "mark": "f",
+   "context": "byT .Notethateachidealpointcorrespondstoaboundarycomponentof"
+  },
+  {
+   "page": 6,
+   "mark": "f",
+   "context": "i.e.anequivariantassignmentofH-cosetstotheidealpointsof"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "2.2.1.Freedominthechoiceofdecoration.If we choose points e"
+  },
+  {
+   "page": 7,
+   "mark": "c",
+   "context": "Aboundary-nondegenerate(G, B)-representationgenericallyhas2"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "(ii)Shortedgesarelabeledbyelementsβ"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "theorientationreplacesalabelingbyitsinverse,i.e.αijαji= I= β"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "ijβ"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "ngissuchthatαijisthelabelingofthelongedgefromvertexitoj,andβ"
+  },
+  {
+   "page": 7,
+   "mark": "c",
+   "context": "subgroupofdiagonalmatrices,thetorusT"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "\u0010 d"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "jβ"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "ik"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "ikx"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "β"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "iαik"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "iαikx"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "β"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "β"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "β"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "toexistenceofaboundary-unipotentliftisaclassσ∈H"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "M; Z/2Z)beacellularcocyclerepresentingaclassinH"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Letσ∈C"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "C"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "theclassofσinH"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "where zis the order of Z"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Remark3.3.AcoboundaryinZ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "H"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "0"
+  },
+  {
+   "page": 10,
+   "mark": "e",
+   "context": "equivariantassignmentofP-cosetstoeachtriangularfaceof"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "or(1"
+  },
+  {
+   "page": 11,
+   "mark": "b",
+   "context": "01)and"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "01)andb"
+  },
+  {
+   "page": 11,
+   "mark": "f",
+   "context": "construction(since"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "longedgeeofT ,andalift˜eofe.Eachvertexof"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "longedgeeofT ,andalift˜eofe.EachvertexofeTisthenintheπ"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "Proposition4.9.Letαijandβ"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "ijbethelabelingsoflongandshortedgesof"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "β"
+  },
+  {
+   "page": 12,
+   "mark": "c",
+   "context": "ik"
+  },
+  {
+   "page": 12,
+   "mark": "c",
+   "context": "ikckj)if"
+  },
+  {
+   "page": 12,
+   "mark": "c",
+   "context": "ikckj)ifcij= 0and"
+  },
+  {
+   "page": 12,
+   "mark": "c",
+   "context": "ikckj)ifcij= 0andcik"
+  },
+  {
+   "page": 12,
+   "mark": "x",
+   "context": "Remark4.10.IdentifyingPwithCvia(1"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "β"
+  },
+  {
+   "page": 12,
+   "mark": "x",
+   "context": "ki"
+  },
+  {
+   "page": 12,
+   "mark": "g",
+   "context": "ij"
+  },
+  {
+   "page": 12,
+   "mark": "g",
+   "context": "i"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "ig"
+  },
+  {
+   "page": 12,
+   "mark": "x",
+   "context": "igj"
+  },
+  {
+   "page": 13,
+   "mark": "e",
+   "context": "facesof"
+  },
+  {
+   "page": 13,
+   "mark": "03",
+   "context": "\u0010c"
+  },
+  {
+   "page": 13,
+   "mark": "03",
+   "context": "−c"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "3"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "b"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "x(d0)"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "x(d0)d(t"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 15,
+   "mark": "a",
+   "context": "0).Hence,"
+  },
+  {
+   "page": 15,
+   "mark": "c",
+   "context": "0).Hence,aPtolemycoordinate"
+  },
+  {
+   "page": 16,
+   "mark": "f",
+   "context": "mycoordinatesarezero,thedecorationmusttakeallidealverticesof"
+  },
+  {
+   "page": 16,
+   "mark": "02",
+   "context": "g2= g1x(c"
+  },
+  {
+   "page": 16,
+   "mark": "13",
+   "context": "g3= g2x(c"
+  },
+  {
+   "page": 16,
+   "mark": "j",
+   "context": "0) , g"
+  },
+  {
+   "page": 16,
+   "mark": "c",
+   "context": "Thelinkofeachzero-edgeisacomplexKasinSection5(embeddedin"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "β"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "β"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "β"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "β"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "β"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "β"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "β"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "β"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "β"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "β"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "β"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "Deﬁnition7.5.Forσ∈H"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "inZ"
+  },
+  {
+   "page": 18,
+   "mark": "f",
+   "context": "ofpairsofidealpointsin"
+  },
+  {
+   "page": 18,
+   "mark": "e",
+   "context": "1) , B"
+  },
+  {
+   "page": 18,
+   "mark": "e",
+   "context": "dingsintoanaﬃnespacegeneratedbypairsoftriangularfacesof"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "thenEhas2"
+  },
+  {
+   "page": 21,
+   "mark": "c",
+   "context": "m9.1([8,Prop.1.16]).LetGbeaconnectedgraphintheone-skeletonof"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "obstructioncocycleσ"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "z"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "z2−x"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "−y"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "−y2+ x"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "−y2+ x2= −z"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "z"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "z2−x"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "H"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "σ"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "σi∈C"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "M; Z/2Z)whoserestrictionsσ"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "ktothe"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "σ"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "σ"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "σ"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "σ"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "σ"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "σ"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "σ"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "σ"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "σ"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "i∈C"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "i∈C2(∆; Z/2Z)denotesthecochaintakingtheface"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i∈C2(∆; Z/2Z)denotesthecochaintakingthefacef"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i∈C2(∆; Z/2Z)denotesthecochaintakingthefacefioppositevertex"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "otherfacesto1.Thecocycleσ"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "Oneeasilychecksthatσ"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "k= δ(η"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "k),whereη"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "η"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "η"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "η"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "η"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "η"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "η"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "η"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "η"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "η"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "ij∈C"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "ij∈C1(∆; Z/2Z)isthecochaintakingεijto−1andallotheredgesto"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "11.2.1.Ptolemyvarietyforσ"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "z"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "z2−x"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "−y"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "−y2−x"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "−y2−x2= −z"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "z"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "z2−x"
+  },
+  {
+   "page": 23,
+   "mark": "x",
+   "context": "−zz=−2"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "z"
+  },
+  {
+   "page": 23,
+   "mark": "y",
+   "context": "z(−x)=2"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "whichisnotsatisﬁed.Hence,thereducedPtolemyvarietyforσ"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "11.2.2.Ptolemyvarietyforσ"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "z"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "z2+ x"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "y"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "y2+ x"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "y2+ x2= −z"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "z"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "z2+ x"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "σ"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "11.2.3.Ptolemyvarietyforσ"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "z"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "z2+ x"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "y"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "y2+ x"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "y2+ x2= −z"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "z"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "z2+ x"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "y"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "σ"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "Q(w),wherew"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "Q(w),wherew4+ w"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "Q(w),wherew4+ w2+ 2 = 0,andisgivenbyx = w,y= −w"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "t"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "t2= −m"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "c= −m"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "d= m"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "t"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "mz"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "mz2−lx"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "mz2−lx2−m"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "m"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "m2ly"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "m2ly2−lx"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "m2ly2−lx2−m"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "m2ly2−lx2−m3z"
+  },
+  {
+   "page": 24,
+   "mark": "5",
+   "context": "m"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "m5z"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "m5z2−lx"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "m5z2−lx2+ m"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "zx= 0⇐⇒m"
+  },
+  {
+   "page": 24,
+   "mark": "z",
+   "context": "zx= 0⇐⇒m2"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "zx= 0⇐⇒m2z + m"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 24,
+   "mark": "8",
+   "context": "x2+ yl −m"
+  },
+  {
+   "page": 24,
+   "mark": "6",
+   "context": "x2+ yl −m8+ 3m"
+  },
+  {
+   "page": 24,
+   "mark": "5",
+   "context": "x2+ yl −m8+ 3m6+ m"
+  },
+  {
+   "page": 24,
+   "mark": "4",
+   "context": "x2+ yl −m8+ 3m6+ m5l + m"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "x2+ yl −m8+ 3m6+ m5l + m4−m"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "x2+ yl −m8+ 3m6+ m5l + m4−m3l −3m"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "y"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "y2l + yl"
+  },
+  {
+   "page": 24,
+   "mark": "4",
+   "context": "y2l + yl2+ m"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "y2l + yl2+ m4l −m"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "y2l + yl2+ m4l −m3−m"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "y2l + yl2+ m4l −m3−m2l −ml"
+  },
+  {
+   "page": 24,
+   "mark": "4",
+   "context": "ym + yl + m"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "ym + yl + m4−m"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "yl"
+  },
+  {
+   "page": 24,
+   "mark": "5",
+   "context": "yl3−yl −m"
+  },
+  {
+   "page": 24,
+   "mark": "4",
+   "context": "yl3−yl −m5l + m"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "yl3−yl −m5l + m4l"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "yl3−yl −m5l + m4l2+ m"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "yl3−yl −m5l + m4l2+ m3l + m"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "yl3−yl −m5l + m4l2+ m3l + m2−ml"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "yl3−yl −m5l + m4l2+ m3l + m2−ml3+ 2ml −l"
+  },
+  {
+   "page": 24,
+   "mark": "6",
+   "context": "m"
+  },
+  {
+   "page": 24,
+   "mark": "4",
+   "context": "m6l −2m"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "m6l −2m4l −m"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "m6l −2m4l −m3l"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "m6l −2m4l −m3l2−m"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "m6l −2m4l −m3l2−m3−2m"
+  },
+  {
+   "page": 24,
+   "mark": "6",
+   "context": "A(m, l) = m"
+  },
+  {
+   "page": 24,
+   "mark": "4",
+   "context": "A(m, l) = m6l −2m"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "A(m, l) = m6l −2m4l −m"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "A(m, l) = m6l −2m4l −m3l"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "A(m, l) = m6l −2m4l −m3l2−m"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "A(m, l) = m6l −2m4l −m3l2−m3−2m"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 24,
+   "mark": "4",
+   "context": "x2= −−m"
+  },
+  {
+   "page": 24,
+   "mark": "m",
+   "context": "x2= −−m4 −2"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "x2= −−m4 −2m"
+  },
+  {
+   "page": 24,
+   "mark": "l",
+   "context": "x2= −−m4 −2m3"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "y= −m"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "m"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "l"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "l2(m"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "Notethatyandx"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "a = β"
+  },
+  {
+   "page": 25,
+   "mark": "03",
+   "context": "23,0α"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "23,0α03,"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "23,0α03,0β"
+  },
+  {
+   "page": 25,
+   "mark": "03",
+   "context": "23,1α"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "23,1α03,"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "23,1α03,1β"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "01,1(β"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "b = α02,0β"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "12,0(β"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "c = β"
+  },
+  {
+   "page": 25,
+   "mark": "03",
+   "context": "23,0α"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "23,0α03,"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "23,0α03,0β"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "12,1(β"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "d = α02,0β"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "omputetherepresentationsexplicitlyusingtheformulasforαijandβ"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "11.4.1.Therepresentationwithobstructionclassσ"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "11.4.2.Therepresentationswithobstructionclassσ"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "w"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "w"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "w"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "w"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "2w"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "OneeasilychecksthatH"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "a = β"
+  },
+  {
+   "page": 25,
+   "mark": "03",
+   "context": "23,0α"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "23,0α03,"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "23,0α03,0β"
+  },
+  {
+   "page": 25,
+   "mark": "03",
+   "context": "23,1α"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "23,1α03,"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "23,1α03,1β"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "01,1(β"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "b = α02,0β"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "12,0M−1L−1(β"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "c = β"
+  },
+  {
+   "page": 25,
+   "mark": "03",
+   "context": "23,0α"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "23,0α03,"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "23,0α03,0β"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "12,1(β"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "d = α02,0β"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "l"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "l"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "l"
+  },
+  {
+   "page": 26,
+   "mark": "4",
+   "context": "m"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "m4−m"
+  },
+  {
+   "page": 26,
+   "mark": "4",
+   "context": "m"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "m4−m"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "m"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "m"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "m"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "m"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "l"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "l2(m"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "m"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "m"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "m"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "(−l"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "−l"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "m"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "m"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "riantonlydependsontheimageofσinthecokernelofthecanonicalmapH"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "H"
+  }
+ ]
+}

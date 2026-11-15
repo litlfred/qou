@@ -1,0 +1,61 @@
+30 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY
+
+where y; = i A; (x)2e-®" da are the squared norms of the Hermite polynomials.
+Applying this for m = 0 and awing Jm by Jo, we find
+
+Info =2" > 4 ~ | 2?" H;(2)?e~* dx
+
+j=o 1d
+
+Using Theorem 4.10 (iii) and (v), we find: 7; = 2¢i!\/7, and hence
+
+N-1 domo
+_ y= ™ Hog(@) _ 2
+Inf Jo ale ee DREG—mI°
+
+=0 k=0
+
+Now, using (iv), we get
+
+Im| J 2nd! 5 2k jl
+mm/-Jo = | La AIRE (G — kL
+yas .
+ks
+mae ee (2) (i):
+j=0 k=0
+
+The sum over k can be represented as a constant term of a polynomial:
+
+(i ) (; )) = C.T.((A+ 2)™(1+ 2271)*).
+
+Therefore, summation over j (using the formula for the sum of the geometric pro-
+gression) yields
+
+(anit p Qt 227 N = 1) _ 2m)! SS oy (m) (IN
+Im Jo = Fagg oF A + 2)” dz )= aml 2° (7) (,°5)
+
+We are done.
+
+5. THE EULER CHARACTERISTIC OF THE MODULI SPACE OF CURVES
+
+Matrix integrals (in particular, computation of the polynomial P,,(z)) can be
+used to calculate the orbifold Euler characteristic of the moduli space of curves.
+This was done by Harer and Zagier in 1986. Here we will give a review of this
+result (with some omissions).
+
+5.1. Euler charactristics of groups. We start with recalling some basic notions
+from algebraic topology.
+
+Let [ be a discrete group, and Y be a contractible finite dimensional CW com-
+plex, on which T acts cellularly. This means that [ acts by homeomorphisms of
+Y that map each cell homeomorphically to another cell. We will assume that the
+stabilizer of each cell is a finite group (i.e. Y is a proper [-complex).
+
+Suppose first that the action of T is free (i.e. the stabilizers of cells are trivial).
+This is equivalent to saying that T is torsion free (i.e has no nontrivial finite sub-
+groups), since a finite group cannot act without fixed points on a contractible finite
+dimensional cell complex (as it has infinite cohomological dimension).
+
+In this case we can define a cell complex Y/T (a classifying space for T), and
+we have H‘(Y/T, A) = Hi(I, A) for any coefficient group A. In particular, if Y/T
+is finite then T has finite cohomological dimension, and the Euler characteristic

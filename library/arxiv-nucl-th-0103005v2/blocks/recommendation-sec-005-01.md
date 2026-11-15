@@ -1,0 +1,1 @@
+Unlike the one-body densities, these distributions are not sensitive to center of mass effects, and thus if the alpha core of $^{6,8}$He is not distorted by the surrounding neutrons, all three $\rho_{pp}$ distributions in the figure should be the same.

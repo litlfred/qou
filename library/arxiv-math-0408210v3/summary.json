@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-0408210v3",
  "source_sha256": "16d5ccb83a86954f",
- "brief": "A SIMPLE ALGEBRAIC PROOF OF THE ALGEBRAIC INDEX THEOREM — In math.QA/0311303 B. Feigin, G. Felder, and B.",
- "extended": "**A SIMPLE ALGEBRAIC PROOF OF THE ALGEBRAIC INDEX THEOREM**\n\n*PoNing Chen and Vasiliy Dolgushev 1*\n\n17 pp, 12 sections.\n\n**Abstract.** In math.QA/0311303 B. Feigin, G. Felder, and B. Shoikhet pro posed an explicit formula for the trace density map from the quantum algebra of functions on an arbitrary symplectic manifold M to the top degree cohomology of M. They also evaluated this map on the trivial element of K-theory of the algebra of quantum functions. In our paper we evaluate the map on an arbitrary element of K-theory, and show that the result is expressed in terms of the ˆA-genus of M, the Deligne-Fedosov class of the quantum algebra, and the Chern character of the principal sy mbol of the element. For a smooth (real) symplectic manifold (without a boundary ), this result implies the Fedosov-Nest-Tsygan algebraic index theorem.\n\n**Outline.** Front matter; Abstract; 1 Introduction; 2 Preliminaries; 2.1 The Feigin-Felder-Shoikhet cocycles; 2 (2ub−2uc+1)Bbcπ2n(a0 ⊗α )du1 ∧... ∧du2n; 2.2 The Chern-Weil homomorphism; 1 One can construct a nilpotent derivation D =; 2 Given a Fedosov connection (17) one can cons; 3 Two Fedosov connections D and ~D whose Fedos; 3 The local version of the algebraic index the; References",
+ "brief": "A simple algebraic proof of the algebraic index theorem — In math.QA/0311303 B. Feigin, G. Felder, and B.",
+ "extended": "**A simple algebraic proof of the algebraic index theorem**\n\n*PoNing Chen and Vasiliy Dolgushev1*\n\n17 pp, 9 sections.\n\n**Abstract.** In math.QA/0311303 B. Feigin, G. Felder, and B. Shoikhet proposed an explicit formula for the trace density map from the quantum algebra of functions on an arbitrary symplectic manifold M to the top degree cohomology of M. They also evaluated this map on the trivial element of K-theory of the algebra of quantum functions. In our paper we evaluate the map on an arbitrary element of K-theory, and show that the result is expressed in terms of the ˆA-genus of M, the Deligne-Fedosov class of the quantum algebra, and the Chern character of the principal symbol of the element. For a smooth (real) symplectic manifold (without a boundary), this result implies the Fedosov-Nest-Tsygan algebraic index theorem.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries; 2.1 The Feigin-Felder-Shoikhet cocycles; 2.2 The Chern-Weil homomorphism; 2.3 Fedosov deformation quantization with twis; 2.4 The Feigin-Felder-Shoikhet trace density m; 3 The local version of the algebraic index the; 4 Concluding remarks.",
  "tokens": {
   "brief": 26,
-  "extended": 309
+  "extended": 285
  },
  "sections": [
   {
@@ -15,59 +15,44 @@
    "pages": "1-1"
   },
   {
-   "id": "sec-000-abstract",
-   "title": "Abstract",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "title": "Introduction",
    "pages": "1-3"
   },
   {
-   "id": "sec-002-2-preliminaries",
+   "id": "sec-001-2-preliminaries",
    "title": "Preliminaries",
    "pages": "3-3"
   },
   {
-   "id": "sec-003-21-the-feigin-felder-shoikhet-cocycles",
+   "id": "sec-002-21-the-feigin-felder-shoikhet-cocycles",
    "title": "The Feigin-Felder-Shoikhet cocycles",
-   "pages": "3-4"
+   "pages": "3-5"
   },
   {
-   "id": "sec-004-2-2ub2uc1bbcπ2na0-α-du1-du2n",
-   "title": "(2ub−2uc+1)Bbcπ2n(a0 ⊗α )du1 ∧... ∧du2n",
-   "pages": "4-5"
-  },
-  {
-   "id": "sec-005-22-the-chern-weil-homomorphism",
+   "id": "sec-003-22-the-chern-weil-homomorphism",
    "title": "The Chern-Weil homomorphism",
-   "pages": "5-9"
+   "pages": "5-6"
   },
   {
-   "id": "sec-006-1-one-can-construct-a-nilpotent-derivation-d-ℏ1r",
-   "title": "One can construct a nilpotent derivation D = ∇+ℏ−1[r−dxiω ij(x)yj, · ] whose Fedosov-",
-   "pages": "9-9"
+   "id": "sec-004-23-fedosov-deformation-quantization-with-twisted",
+   "title": "Fedosov deformation quantization with twisted coefficients.",
+   "pages": "6-11"
   },
   {
-   "id": "sec-007-2-given-a-fedosov-connection-17-one-can-construc",
-   "title": "Given a Fedosov connection (17) one can construct a vector space isomorphism λ",
-   "pages": "9-9"
+   "id": "sec-005-24-the-feigin-felder-shoikhet-trace-density-map",
+   "title": "The Feigin-Felder-Shoikhet trace density map.",
+   "pages": "11-12"
   },
   {
-   "id": "sec-008-3-two-fedosov-connections-d-and-d-whose-fedosov",
-   "title": "Two Fedosov connections D and ~D whose Fedosov-Weyl curvatures represent the same",
-   "pages": "9-12"
-  },
-  {
-   "id": "sec-009-3-the-local-version-of-the-algebraic-index-theor",
+   "id": "sec-006-3-the-local-version-of-the-algebraic-index-theor",
    "title": "The local version of the algebraic index theorem",
-   "pages": "12-16"
+   "pages": "12-15"
   },
   {
-   "id": "sec-010-references",
-   "title": "References",
-   "pages": "16-17"
+   "id": "sec-007-4-concluding-remarks",
+   "title": "Concluding remarks.",
+   "pages": "15-17"
   }
  ],
  "provenance": {

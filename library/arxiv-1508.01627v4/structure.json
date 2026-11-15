@@ -8,7 +8,7 @@
   "pages": 23,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": null,
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -21,29 +21,29 @@
    "stamp_date": "25 Oct 2016"
   },
   "doi": null,
-  "title": "REPRESENTATION THEORY An Electronic Journal of the American Mathematical Society (Xxxx XX, XXXX) S 1088-4165(XX)0000-0 A MURNAGHAN\u2013NAKAYAMA RULE FOR VALUES OF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS",
+  "title": "REPRESENTATION THEORY An Electronic Journal of the American Mathematical Society (Xxxx XX, XXXX) S 1088-4165(XX)0000-0 A MURNAGHAN–NAKAYAMA RULE FOR VALUES OF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS",
   "authors_raw": null,
   "title_lines": [
    "REPRESENTATION THEORY",
    "An Electronic Journal of the American Mathematical Society",
    "(Xxxx XX, XXXX)",
    "S 1088-4165(XX)0000-0",
-   "A MURNAGHAN\u2013NAKAYAMA RULE FOR VALUES",
+   "A MURNAGHAN–NAKAYAMA RULE FOR VALUES",
    "OF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS"
   ],
-  "abstract": "We derive a Murnaghan\u2013Nakayama type formula for the values of unipotent characters of \ufb01nite classical groups on regular semisimple elements. This relies on Asai\u2019s explicit decomposition of Lusztig restriction. We use our formula to show that most complex irreducible characters vanish on some \u2113-singular element for certain primes \u2113. As an application we classify the simple endotrivial modules of the \ufb01nite quasi-simple classical groups. As a further application we show that for \ufb01nite simple classical groups and primes \u2113\u22653 the \ufb01rst Cartan invariant in the principal \u2113-block is larger than 2 unless Sylow \u2113-subgroups are cyclic.",
+  "abstract": "We derive a Murnaghan–Nakayama type formula for the values of unipotent characters of ﬁnite classical groups on regular semisimple elements. This relies on Asai’s explicit decomposition of Lusztig restriction. We use our formula to show that most complex irreducible characters vanish on some ℓ-singular element for certain primes ℓ. As an application we classify the simple endotrivial modules of the ﬁnite quasi-simple classical groups. As a further application we show that for ﬁnite simple classical groups and primes ℓ≥3 the ﬁrst Cartan invariant in the principal ℓ-block is larger than 2 unless Sylow ℓ-subgroups are cyclic.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "LaTeX with hyperref package",
    "CreationDate": "D:20180919181236-04'00'"
   },
-  "title_raw": "REPRESENTATION THEORY An Electronic Journal of the American Mathematical Society (Xxxx XX, XXXX) S 1088-4165(XX)0000-0 A MURNAGHAN\u2013NAKAYAMA RULE FOR VALUES OF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS",
+  "title_raw": "REPRESENTATION THEORY An Electronic Journal of the American Mathematical Society (Xxxx XX, XXXX) S 1088-4165(XX)0000-0 A MURNAGHAN–NAKAYAMA RULE FOR VALUES OF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS",
   "title_source": "text",
   "title_verified": false,
   "title_evidence": {
-   "heading": "A MURNAGHAN\u2013NAKAYAMA RULE FOR VALUES OF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS 1. Introduction The classical Murnaghan\u2013Nakayama rule provides an e\ufb03cient recursive method to compute the values of irreducible characters of symmetric groups. This method can be adapted to the \ufb01nite general linear and",
+   "heading": "A MURNAGHAN–NAKAYAMA RULE FOR VALUES OF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS 1. Introduction The classical Murnaghan–Nakayama rule provides an eﬃcient recursive method to compute the values of irreducible characters of symmetric groups. This method can be adapted to the ﬁnite general linear and",
    "outline": "1. Introduction",
-   "text": "REPRESENTATION THEORY An Electronic Journal of the American Mathematical Society (Xxxx XX, XXXX) S 1088-4165(XX)0000-0 A MURNAGHAN\u2013NAKAYAMA RULE FOR VALUES OF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS",
+   "text": "REPRESENTATION THEORY An Electronic Journal of the American Mathematical Society (Xxxx XX, XXXX) S 1088-4165(XX)0000-0 A MURNAGHAN–NAKAYAMA RULE FOR VALUES OF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS",
    "corroborated_by": [],
    "browser_print": false
   }
@@ -101,7 +101,7 @@
   },
   {
    "level": 1,
-   "title": "A Murnaghan\u2013Nakayama rule",
+   "title": "A Murnaghan–Nakayama rule",
    "page": 5,
    "source": "outline",
    "number": "3",
@@ -449,25 +449,13 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 2391,
-   "n_words": 387,
+   "n_chars": 4625,
+   "n_words": 759,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-001-22-regular-semisimple-elements",
-   "number": "2.2",
-   "title": "Regular semisimple elements",
-   "level": 2,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 2130,
-   "n_words": 357,
-   "label_start": null,
-   "label_end": null
-  },
-  {
-   "id": "sec-002-2-maximal-tori-in-classical-groups",
+   "id": "sec-001-2-maximal-tori-in-classical-groups",
    "number": "2",
    "title": "Maximal tori in classical groups",
    "level": 1,
@@ -479,14 +467,26 @@
    "label_end": null
   },
   {
-   "id": "sec-003-21-weyl-groups-and-maximal-tori-in-symplectic-an",
+   "id": "sec-002-21-weyl-groups-and-maximal-tori-in-symplectic-an",
    "number": "2.1",
    "title": "Weyl groups and maximal tori in symplectic and orthogonal groups",
    "level": 2,
    "page_start": 2,
+   "page_end": 3,
+   "n_chars": 2915,
+   "n_words": 603,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-22-regular-semisimple-elements",
+   "number": "2.2",
+   "title": "Regular semisimple elements",
+   "level": 2,
+   "page_start": 3,
    "page_end": 5,
-   "n_chars": 9521,
-   "n_words": 2140,
+   "n_chars": 6508,
+   "n_words": 1522,
    "label_start": null,
    "label_end": null
   },
@@ -505,12 +505,12 @@
   {
    "id": "sec-005-3-a-murnaghannakayama-rule",
    "number": "3",
-   "title": "A Murnaghan\u2013Nakayama rule",
+   "title": "A Murnaghan–Nakayama rule",
    "level": 1,
    "page_start": 5,
-   "page_end": 5,
-   "n_chars": 199,
-   "n_words": 34,
+   "page_end": 6,
+   "n_chars": 270,
+   "n_words": 44,
    "label_start": null,
    "label_end": null
   },
@@ -519,10 +519,10 @@
    "number": "3.1",
    "title": "Lusztig restriction",
    "level": 2,
-   "page_start": 5,
+   "page_start": 6,
    "page_end": 6,
-   "n_chars": 1458,
-   "n_words": 272,
+   "n_chars": 1323,
+   "n_words": 251,
    "label_start": null,
    "label_end": null
   },
@@ -557,25 +557,13 @@
    "level": 2,
    "page_start": 7,
    "page_end": 9,
-   "n_chars": 4842,
-   "n_words": 962,
+   "n_chars": 4891,
+   "n_words": 967,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-010-42-unipotent-characters",
-   "number": "4.2",
-   "title": "Unipotent characters",
-   "level": 2,
-   "page_start": 9,
-   "page_end": 9,
-   "n_chars": 0,
-   "n_words": 0,
-   "label_start": null,
-   "label_end": null
-  },
-  {
-   "id": "sec-011-4-vanishing-of-characters",
+   "id": "sec-010-4-vanishing-of-characters",
    "number": "4",
    "title": "Vanishing of characters",
    "level": 1,
@@ -587,14 +575,26 @@
    "label_end": null
   },
   {
-   "id": "sec-012-41-non-unipotent-characters",
+   "id": "sec-011-41-non-unipotent-characters",
    "number": "4.1",
    "title": "Non-unipotent characters",
    "level": 2,
    "page_start": 9,
+   "page_end": 10,
+   "n_chars": 6292,
+   "n_words": 1334,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-012-42-unipotent-characters",
+   "number": "4.2",
+   "title": "Unipotent characters",
+   "level": 2,
+   "page_start": 10,
    "page_end": 14,
-   "n_chars": 16167,
-   "n_words": 3654,
+   "n_chars": 9774,
+   "n_words": 2306,
    "label_start": null,
    "label_end": null
   },
@@ -683,12 +683,13 @@
    "items": []
   },
   "sections": 20,
-  "chars_total": 73977,
+  "chars_total": 73867,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "MurNak.tex",
    "tex_sections": 18,
-   "overlaid": 14,
+   "overlaid": 17,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -703,17 +704,13 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.559,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.868,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-001-22-regular-semisimple-elements",
-     "title": "Regular semisimple elements",
-     "prose_ratio": 0.256,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-002-2-maximal-tori-in-classical-groups",
+     "id": "sec-001-2-maximal-tori-in-classical-groups",
      "title": "Maximal tori in classical groups",
      "prose_ratio": 0.912,
      "coverage_ratio": 1.0,
@@ -721,10 +718,18 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-21-weyl-groups-and-maximal-tori-in-symplectic-an",
+     "id": "sec-002-21-weyl-groups-and-maximal-tori-in-symplectic-an",
      "title": "Weyl groups and maximal tori in symplectic and orthogonal groups",
-     "prose_ratio": 0.983,
-     "coverage_ratio": 0.502,
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-22-regular-semisimple-elements",
+     "title": "Regular semisimple elements",
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.933,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -738,17 +743,17 @@
     },
     {
      "id": "sec-005-3-a-murnaghannakayama-rule",
-     "title": "A Murnaghan\u2013Nakayama rule",
-     "prose_ratio": 0.818,
-     "coverage_ratio": 1.0,
+     "title": "A Murnaghan–Nakayama rule",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.84,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-006-31-lusztig-restriction",
      "title": "Lusztig restriction",
-     "prose_ratio": 0.987,
-     "coverage_ratio": 0.927,
+     "prose_ratio": 0.936,
+     "coverage_ratio": 0.973,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -772,18 +777,12 @@
      "id": "sec-009-34-values-of-unipotent-characters-at-regular-sem",
      "title": "Values of unipotent characters at regular semisimple elements",
      "prose_ratio": 0.969,
-     "coverage_ratio": 0.975,
+     "coverage_ratio": 0.969,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-42-unipotent-characters",
-     "title": "Unipotent characters",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-011-4-vanishing-of-characters",
+     "id": "sec-010-4-vanishing-of-characters",
      "title": "Vanishing of characters",
      "prose_ratio": 0.935,
      "coverage_ratio": 0.983,
@@ -791,10 +790,18 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-41-non-unipotent-characters",
+     "id": "sec-011-41-non-unipotent-characters",
      "title": "Non-unipotent characters",
      "prose_ratio": 0.951,
-     "coverage_ratio": 0.615,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-42-unipotent-characters",
+     "title": "Unipotent characters",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -835,7 +842,7 @@
      "title": "An application to small 1-PIMs",
      "prose_ratio": 0.985,
      "coverage_ratio": 0.426,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-018-references",

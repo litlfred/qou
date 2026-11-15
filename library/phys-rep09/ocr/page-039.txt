@@ -1,0 +1,75 @@
+S. Blanes et al. / Physics Reports 470 (2009) 151-238 189
+
+For simplicity in the computations we choose wp) = 1.In accordance with the prescriptions in Section 2.9, the Hamiltonian
+in the Interaction Picture is given by (92) and reads
+
+Hy(t) = eo v(tye Hot = Fcty(e“a, +e-"a_). (181)
+Accordingly, the evolution operator is factorized as
+
+U(t, 0) = exp(—iHot)U;(t, 0), (182)
+where the new evolution operator U, is obtained from U; = Ay(t)U; = —iH,(t)U).
+
+The infinite Magnus series terminates in the present example. It happens because the second order Magnus approximant,
+which involves the computation of
+
+(A(t), Hi(t)) = Ff b) (fay, a] + eM fa_, a)
+= 2if (tf (t2) sin(t2 — t) (183)
+
+reduces to a scalar function. Thus the Magnus series in the Interaction Picture furnishes the exact evolution operator
+irrespective of f(t):
+
+ae ire t 7 7
+exp (/ dt,H,(t,) — al arf dt2[H;(t1), fit)
+0 0 0
+
+= exp (—i(aa, + a*a_) — ip)
+
+Ui(t, 0)
+
+= exp(—iaa,) exp(—ia*a_) exp(—if — |a|?/2), (184)
+where we have defined
+t
+a= i] dtsf (te, (185)
+0
+t fay
+p= | arf dtof (t1)f (t2) sin(tz — ty). (186)
+0 0
+
+Eqs. (184) and (182) yield the exact time-evolution operator for the linearly forced harmonic oscillator Hamiltonian
+(179) [120].
+To compute transition probabilities between free harmonic oscillator states of quantum numbers n and m,
+Pam = [(m|U;|n) |, (187)
+
+the last form in (184) is most convenient. Specifically, assuming that the oscillator was initially in its ground state |0), we
+get in particular the familiar Poisson distribution for the transition probabilities
+
+1
+Poon = |a|?" exp(—|a|”). (188)
+
+4.1.2. Two-level quantum systems
+The generic Hamiltonian for a two-level quantum system can be written down in the form
+
+no=(2 2) ow
+
+where E;(t), E2(t) are real functions and C(t) is, in general, a complex function of t. We define the solvable piece of the
+Hamiltonian as the diagonal matrix
+
+Holt) = (0° Eo) (190)
+
+and all the time-dependent interaction described by the function C(t) is considered as a perturbation. In the Interaction
+Picture, the new Hamiltonian reads (see (92))
+
+t
+
+0 C(t) exp (if
+0
+
+C*(t) exp (-i[ av'ott)) 0
+0
+
+with w = (E; — E2)/h. Suppose now that Hp is time-independent. Then U(t) = exp(Hot)U; (t). Without loss of generality,
+the Ho may be rendered traceless, so that E,) = —E, = E. Thus +E denote the eigenenergies associated to the eigenvectors
+
+av'wtt))
+
+A(t) = (191)

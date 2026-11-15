@@ -1,0 +1,1 @@
+I.e.\ $\tan$ and $\cot$ should be approximated by $\pm \I$ depending on the signs of $\ima(y)$ and $\ima(x)$ and $\tilde{f}_{p,q,r}(x,y)$ by an appropriate expression involving the dilogarithm for some deformation of the relevant part of $C_r\times C_r$.

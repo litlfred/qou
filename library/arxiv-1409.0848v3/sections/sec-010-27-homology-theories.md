@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.952
 latex_coverage_ratio: 0.978
+doc_brief: "FACTORIZATION HOMOLOGY OF STRATIFIED SPACES — This work forms a foundational study of factorization homology, or topological chiral homology, at the generality of stratiﬁed spaces with tangential"
 ---
 One an formulate an $\oo$-categorical analogue of the Eilenberg--Steenrod axioms for a functor from spaces or manifolds to the $\oo$-category of chain complexes or spectra: the functor should take certain gluing diagrams to pushout squares, and it should preserve sequential colimits. From these conditions, one recovers usual generalized homology theories. These axioms admit a generalization when one replaces chain complexes or spectra with a symmetric monoidal $\oo$-category $\cV$. 
 The formulation is complicated slightly by the fact that the monoidal structure on $\cV$ is not required to be coCartesian. 

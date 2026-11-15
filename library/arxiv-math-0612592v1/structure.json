@@ -7,10 +7,11 @@
   "bytes": 173905,
   "pages": 16,
   "text_source": "embedded",
-  "math_source": "text-layer",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +21,30 @@
    "stamp_date": "20 Dec 2006"
   },
   "doi": null,
-  "title": "Analytic q-difference equations Marius van der Put",
-  "authors_raw": "Department of Mathematics, University of Groningen, P.O.Box 800",
+  "title": "Analytic q -diﬀerence equations",
+  "authors_raw": "Marius van der Put",
   "title_lines": [
-   "Analytic q-difference equations",
-   "Marius van der Put"
+   "Analytic q-difference equations"
   ],
   "abstract": null,
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20211102165638-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20211102165638-04'00'"
+  },
+  "title_raw": "Analytic q-difference equations",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Analytic q -diﬀerence equations",
+   "outline": "Difference equations in general",
+   "text": "Analytic q-difference equations",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Analytic q-difference equations Marius van der Put"
  },
  "toc": [
   {
@@ -41,68 +52,284 @@
    "title": "Difference equations in general",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "First examples of q-difference equations",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Towards a classification of modules",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Moduli spaces for difference modules",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Difference Galois groups",
    "page": 10,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "Universal Picard-Vessiot rings and  universal difference Galois groups",
+   "title": "Universal Picard-Vessiot rings and universal difference Galois groups",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-document",
+   "id": "sec-front-matter",
    "number": null,
-   "title": "Document",
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1701,
+   "n_words": 280,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-difference-equations-in-general",
+   "number": null,
+   "title": "Difference equations in general",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 3841,
+   "n_words": 747,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-first-examples-of-q-difference-equations",
+   "number": null,
+   "title": "First examples of q-difference equations",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 2929,
+   "n_words": 611,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-towards-a-classification-of-modules",
+   "number": null,
+   "title": "Towards a classification of modules",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 9,
+   "n_chars": 8131,
+   "n_words": 1552,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-moduli-spaces-for-difference-modules",
+   "number": null,
+   "title": "Moduli spaces for difference modules",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 2988,
+   "n_words": 578,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-difference-galois-groups",
+   "number": null,
+   "title": "Difference Galois groups",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 3056,
+   "n_words": 578,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-005-universal-picard-vessiot-rings-and-universal-dif",
+   "number": null,
+   "title": "Universal Picard-Vessiot rings and universal difference Galois groups",
+   "level": 1,
+   "page_start": 12,
    "page_end": 16,
-   "n_chars": 32970,
-   "n_words": 6632
+   "n_chars": 9735,
+   "n_words": 1739,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 6,
-  "sections": 1,
-  "chars_total": 32970,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 7,
+  "chars_total": 32381,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 7,
-   "overlaid": 0,
+   "overlaid": 6,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -110,9 +337,57 @@
    },
    "sections": [
     {
-     "id": "sec-000-document",
-     "title": "Document",
+     "id": "sec-front-matter",
+     "title": "Front matter",
      "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-difference-equations-in-general",
+     "title": "Difference equations in general",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-first-examples-of-q-difference-equations",
+     "title": "First examples of q-difference equations",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-towards-a-classification-of-modules",
+     "title": "Towards a classification of modules",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-moduli-spaces-for-difference-modules",
+     "title": "Moduli spaces for difference modules",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-difference-galois-groups",
+     "title": "Difference Galois groups",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-universal-picard-vessiot-rings-and-universal-dif",
+     "title": "Universal Picard-Vessiot rings and universal difference Galois groups",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
     }
    ]
   }

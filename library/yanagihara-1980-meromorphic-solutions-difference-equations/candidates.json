@@ -1,8 +1,6 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "yanagihara-1980-meromorphic-solutions-difference-equations",
- "document_class": "math",
- "validated": true,
  "source": {
   "structure_sha256": "c5e4a39ec3d43d8fb515eaeb693846a1c003bb01b9091c62e29ff1ac038c7872",
   "file": "yanagihara-1980-meromorphic-solutions-difference-equations.pdf"
@@ -13,11 +11,106 @@
   "arxiv": null,
   "doi": null
  },
- "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "aspects": [
+  "requirements"
+ ],
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
+  "candidates": 6,
+  "by_kind": {
+   "recommendation": 6
+  },
   "formalization_candidates": 0
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Hence Y(x) must be a constant 2, which satisfies 2= R(A).",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-008.md",
+   "section_title": "Page 8",
+   "pages": "8-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Hence }(x) must tend to the same root 2 of z= R(z), as x\u00bb \u2014 00 on the real axis.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-009.md",
+   "section_title": "Page 9",
+   "pages": "9-9",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "D@+)D\u2014a/ly@)\u2014\u20194}e RQ) as Re x-+\u201400, we must have, obviously, | R\u2019(4)|= 1.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-009.md",
+   "section_title": "Page 9",
+   "pages": "9-9",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Hence Y(x) must be a constant 4 which satisfies (4.6), as in the proof of theorem 8.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-009.md",
+   "section_title": "Page 9",
+   "pages": "9-9",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "But this can not be the case, since, if x* is a pole of zs(x), then v,(x-+2(x))=o(x) must have an essential singularity at x*, which contradicts the meromorphy of y(x).",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-015.md",
+   "section_title": "Page 15",
+   "pages": "15-15",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "C+D \u20141 as Re x>\u20140oo, w(x) while we must have, from (5.3.1), OAD tere] as Rex>\u2014oo, w(x)",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-016.md",
+   "section_title": "Page 16",
+   "pages": "16-16",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
 }

@@ -7,11 +7,11 @@
   "bytes": 745336,
   "pages": 32,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,19 +21,33 @@
    "stamp_date": "2 Dec 2025"
   },
   "doi": null,
-  "title": "STABILITY OFKNOT EQUIVALENCE AT LOW REGULARITY, AND SYMMETRIC CRITICAL KNOTS FOR THEM\u00d6BIUS ENERGY",
+  "title": "Stability of knot equivalence at low regularity, and symmetric critical knots for the M\\\"obius energy",
   "authors_raw": "SIMON BLATT, ALEXANDRA GILSBACH, PHILIPP REITER, AND HEIKO VON DER MOSEL",
   "title_lines": [
-   "STABILITY OFKNOT EQUIVALENCE AT LOW REGULARITY, AND",
-   "SYMMETRIC CRITICAL KNOTS FOR THEM\u00d6BIUS ENERGY"
+   "STABILITY OF KNOT EQUIVALENCE AT LOW REGULARITY, AND",
+   "SYMMETRIC CRITICAL KNOTS FOR THE MÖBIUS ENERGY"
   ],
-  "abstract": "We present sufficient criteria for the equivalence of tame knots at low regularity. To this end, we introduce a localized version of Gromov\u2019s distortion for any closed path-connected subset ofR n. If two such sets have local Gromov distortion below a universal dimension- dependent constantg n at some scale, and if their Hausdorff-distance is less than one quarter of that scale, we can show that the fundamental groups of their complements are isomorphic. In addition, we construct this isomorphism so that it restricts to the corresponding peripheral subgroups as an isomorphism as well. Applied to the images of one-dimensional knots it follows that two knots are equivalent if their Hausdorff-distance is bounded in terms of the scale under which their local Gromov distortion is controlled. From that we deduce novel stability results for knot equivalence in the Lipschitz category, and in the setting of fractional Sobolev regularity belowC 1. Moreover, we prove a compactness theorem of knot equivalence classes with respect to weakW 3/2,2-convergence. As an application we show that the M\u00a8 obius energy introduced by O\u2019Hara [32] can be mini- mized within arbitrary prime knot classes under a symmetry constraint, and that these mini- mizers are in fact critical points and therefore smooth and even real analytic. In particular, in every torus knot class there are at least two distinct critical knots for the M\u00a8 obius energy.",
+  "abstract": "We present sufficient criteria for the equivalence of tame knots at low regularity. To this end, we introduce a localized version of Gromov’s distortion for any closed path-connected subset of Rn. If two such sets have local Gromov distortion below a universal dimension- dependent constant gn at some scale, and if their Hausdorff-distance is less than one quarter of that scale, we can show that the fundamental groups of their complements are isomorphic. In addition, we construct this isomorphism so that it restricts to the corresponding peripheral subgroups as an isomorphism as well. Applied to the images of one-dimensional knots it follows that two knots are equivalent if their Hausdorff-distance is bounded in terms of the scale under which their local Gromov distortion is controlled. From that we deduce novel stability results for knot equivalence in the Lipschitz category, and in the setting of fractional Sobolev regularity below C1. Moreover, we prove a compactness theorem of knot equivalence classes with respect to weak W 3/2,2-convergence. As an application we show that the M¨obius energy introduced by O’Hara [32] can be mini- mized within arbitrary prime knot classes under a symmetry constraint, and that these mini- mizers are in fact critical points and therefore smooth and even real analytic. In particular, in every torus knot class there are at least two distinct critical knots for the M¨obius energy.",
   "docinfo": {
+   "Title": "Stability of knot equivalence at low regularity, and symmetric critical knots for the M\\\"obius energy",
    "Author": "Simon Blatt; Alexandra Gilsbach; Philipp Reiter; Heiko von der Mosel",
-   "Creator": "arXiv GenPDF (tex2pdf:4177c2c)",
    "Producer": "pikepdf 8.15.1",
-   "Title": "Stability of knot equivalence at low regularity, and symmetric critical knots for the M\\\"obius energy"
-  }
+   "Creator": "arXiv GenPDF (tex2pdf:4177c2c)"
+  },
+  "title_raw": "STABILITY OF KNOT EQUIVALENCE AT LOW REGULARITY, AND SYMMETRIC CRITICAL KNOTS FOR THE MÖBIUS ENERGY",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Stability of knot equivalence at low regularity, and symmetric critical knots for the M\\\"obius energy",
+   "heading": "STABILITY OF KNOT EQUIVALENCE AT LOW REGULARITY, AND SYMMETRIC CRITICAL KNOTS FOR THE M ¨ OBIUS ENERGY Contents Introduction Motivation Isomorphic fundamental groups via localized distortion Stability of knot equivalence Symmetric critical points for scale-invariant knot energies Strategy and outlin",
+   "outline": "1. Introduction",
+   "text": "STABILITY OF KNOT EQUIVALENCE AT LOW REGULARITY, AND SYMMETRIC CRITICAL KNOTS FOR THE MÖBIUS ENERGY",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "STABILITY OFKNOT EQUIVALENCE AT LOW REGULARITY, AND SYMMETRIC CRITICAL KNOTS FOR THEMÖBIUS ENERGY"
  },
  "toc": [
   {
@@ -41,108 +55,455 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Motivation",
    "page": 1,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Isomorphic fundamental groups via localized distortion",
    "page": 2,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Stability of knot equivalence",
    "page": 3,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Symmetric critical points for scale-invariant knot energies",
    "page": 4,
    "source": "outline",
-   "number": "1.4"
+   "number": "1.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Strategy and outline of the paper",
    "page": 5,
    "source": "outline",
-   "number": "1.5"
+   "number": "1.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "Sets with local distortion below a quarter circle",
    "page": 6,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 1,
    "title": "Pseudo-gradient flow for the distance function",
    "page": 9,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 1,
    "title": "Isomorphisms of fundamental groups",
    "page": 12,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 1,
    "title": "Stability of knot equivalence",
    "page": 15,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 1,
    "title": "Harmonic substitution",
    "page": 17,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 1,
    "title": "Weak fractional compactness",
    "page": 23,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 1,
    "title": "Symmetric critical knots",
    "page": 29,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
   },
   {
    "level": 2,
    "title": "Acknowledgements",
    "page": 31,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "31"
   },
   {
    "level": 1,
    "title": "References",
    "page": 31,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "31"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
    "id": "sec-front-matter",
@@ -151,8 +512,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1628,
-   "n_words": 256
+   "n_chars": 1627,
+   "n_words": 255,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
    "id": "sec-000-1-introduction",
@@ -161,8 +524,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 14,
+   "n_words": 2,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
    "id": "sec-001-11-motivation",
@@ -170,19 +535,23 @@
    "title": "Motivation",
    "level": 2,
    "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "page_end": 2,
+   "n_chars": 4654,
+   "n_words": 778,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
    "id": "sec-002-12-isomorphic-fundamental-groups-via-localized-d",
    "number": "1.2",
    "title": "Isomorphic fundamental groups via localized distortion",
    "level": 2,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 3,
-   "n_chars": 7720,
-   "n_words": 1223
+   "n_chars": 3126,
+   "n_words": 564,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
    "id": "sec-003-13-stability-of-knot-equivalence",
@@ -191,8 +560,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 2273,
-   "n_words": 337
+   "n_chars": 2333,
+   "n_words": 397,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
    "id": "sec-004-14-symmetric-critical-points-for-scale-invariant",
@@ -201,8 +572,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 3874,
-   "n_words": 612
+   "n_chars": 3882,
+   "n_words": 672,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
    "id": "sec-005-15-strategy-and-outline-of-the-paper",
@@ -211,8 +584,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 3918,
-   "n_words": 628
+   "n_chars": 3952,
+   "n_words": 662,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
    "id": "sec-006-2-sets-with-local-distortion-below-a-quarter-cir",
@@ -221,8 +596,10 @@
    "level": 1,
    "page_start": 6,
    "page_end": 9,
-   "n_chars": 7010,
-   "n_words": 1187
+   "n_chars": 7221,
+   "n_words": 1500,
+   "label_start": "6",
+   "label_end": "9"
   },
   {
    "id": "sec-007-3-pseudo-gradient-flow-for-the-distance-function",
@@ -231,8 +608,10 @@
    "level": 1,
    "page_start": 9,
    "page_end": 12,
-   "n_chars": 9732,
-   "n_words": 1629
+   "n_chars": 10248,
+   "n_words": 2198,
+   "label_start": "9",
+   "label_end": "12"
   },
   {
    "id": "sec-008-4-isomorphisms-of-fundamental-groups",
@@ -241,8 +620,10 @@
    "level": 1,
    "page_start": 12,
    "page_end": 15,
-   "n_chars": 9526,
-   "n_words": 1599
+   "n_chars": 9787,
+   "n_words": 1966,
+   "label_start": "12",
+   "label_end": "15"
   },
   {
    "id": "sec-009-5-stability-of-knot-equivalence",
@@ -251,8 +632,10 @@
    "level": 1,
    "page_start": 15,
    "page_end": 17,
-   "n_chars": 6358,
-   "n_words": 1050
+   "n_chars": 6536,
+   "n_words": 1280,
+   "label_start": "15",
+   "label_end": "17"
   },
   {
    "id": "sec-010-6-harmonic-substitution",
@@ -261,8 +644,10 @@
    "level": 1,
    "page_start": 17,
    "page_end": 23,
-   "n_chars": 12970,
-   "n_words": 2192
+   "n_chars": 13458,
+   "n_words": 2836,
+   "label_start": "17",
+   "label_end": "23"
   },
   {
    "id": "sec-011-7-weak-fractional-compactness",
@@ -271,8 +656,10 @@
    "level": 1,
    "page_start": 23,
    "page_end": 29,
-   "n_chars": 16156,
-   "n_words": 2827
+   "n_chars": 17760,
+   "n_words": 3694,
+   "label_start": "23",
+   "label_end": "29"
   },
   {
    "id": "sec-012-8-symmetric-critical-knots",
@@ -281,8 +668,10 @@
    "level": 1,
    "page_start": 29,
    "page_end": 31,
-   "n_chars": 6045,
-   "n_words": 1084
+   "n_chars": 5003,
+   "n_words": 961,
+   "label_start": "29",
+   "label_end": "31"
   },
   {
    "id": "sec-013-acknowledgements",
@@ -292,7 +681,9 @@
    "page_start": 31,
    "page_end": 31,
    "n_chars": 792,
-   "n_words": 117
+   "n_words": 117,
+   "label_start": "31",
+   "label_end": "31"
   },
   {
    "id": "sec-014-references",
@@ -301,21 +692,48 @@
    "level": 1,
    "page_start": 31,
    "page_end": 32,
-   "n_chars": 6986,
-   "n_words": 986
+   "n_chars": 7026,
+   "n_words": 1026,
+   "label_start": "31",
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 15,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 2,
+    "items": [
+     "Introduction",
+     "Motivation"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
   "sections": 16,
-  "chars_total": 94988,
+  "chars_total": 97419,
+  "furniture_lines_stripped": 30,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main_vdM.tex",
    "tex_sections": 14,
-   "overlaid": 10,
+   "overlaid": 12,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -331,26 +749,29 @@
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-001-11-motivation",
      "title": "Motivation",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.909,
+     "coverage_ratio": 0.861,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-002-12-isomorphic-fundamental-groups-via-localized-d",
      "title": "Isomorphic fundamental groups via localized distortion",
-     "prose_ratio": 0.975,
-     "coverage_ratio": 0.441,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.913,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-13-stability-of-knot-equivalence",
      "title": "Stability of knot equivalence",
      "prose_ratio": 0.955,
-     "coverage_ratio": 0.844,
+     "coverage_ratio": 0.914,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -358,7 +779,7 @@
      "id": "sec-004-14-symmetric-critical-points-for-scale-invariant",
      "title": "Symmetric critical points for scale-invariant knot energies",
      "prose_ratio": 0.97,
-     "coverage_ratio": 0.883,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -366,61 +787,61 @@
      "id": "sec-005-15-strategy-and-outline-of-the-paper",
      "title": "Strategy and outline of the paper",
      "prose_ratio": 0.908,
-     "coverage_ratio": 0.92,
+     "coverage_ratio": 0.969,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-006-2-sets-with-local-distortion-below-a-quarter-cir",
      "title": "Sets with local distortion below a quarter circle",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.844,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-007-3-pseudo-gradient-flow-for-the-distance-function",
      "title": "Pseudo-gradient flow for the distance function",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.947,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-008-4-isomorphisms-of-fundamental-groups",
      "title": "Isomorphisms of fundamental groups",
-     "prose_ratio": 0.663,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.638,
+     "coverage_ratio": 0.956,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-009-5-stability-of-knot-equivalence",
      "title": "Stability of knot equivalence",
-     "prose_ratio": 0.532,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.514,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-010-6-harmonic-substitution",
      "title": "Harmonic substitution",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.968,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-011-7-weak-fractional-compactness",
      "title": "Weak fractional compactness",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.941,
+     "coverage_ratio": 0.968,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-012-8-symmetric-critical-knots",
      "title": "Symmetric critical knots",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.779,
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.954,
      "result": "overlaid",
      "converter": "latex"
     },

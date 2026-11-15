@@ -1,0 +1,1 @@
+Thus the ﬁnite subgroups of SU(2) of even order must correspond to the preimages under π of the ﬁnite subgroups of SO(3) and any ﬁnite subgroup of odd order must be isomorphic to an odd order subgroup of SO(3).

@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-0705.1468v1
-doc_title: "Knots in the Skyrme-Faddeev model Paul Sutcliffe"
+doc_title: "Knots in the Skyrme-Faddeev model"
 section_id: sec-004-conclusion
 section_title: "Conclusion"
 section_number: null
 pages: 19-21
 source_pdf: 0705.1468v1.pdf
 source_sha256: 4ff578cb3657e4a4
-doc_brief: "Knots in the Skyrme-Faddeev model Paul Sutcliffe — The Skyrme-Faddeev model is a modiﬁed sigma model in three-d imensional space, which has string-like topological solitons classiﬁed by th e"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.906
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.707
+doc_brief: "Knots in the Skyrme-Faddeev model — The Skyrme-Faddeev model is a modiﬁed sigma model in three-dimensional space, which has string-like topological solitons classiﬁed by the integer-valued Hopf"
 ---
 The results presented in this paper reveal that there are many low-energy knot solitons of various types, for a range of Hopf charges, together with increasingly complicated linked solitons. The qualitative features of these solutions can be replicated using an ansatz involving rational maps from the three-sphere to the complex projective line, and futhermore this provides a good supply of initial conditions for numerical relaxation simulations. The complicated nature of the problem means that it is difficult to be certain that the global minimal energy solitons have been found, but certainly some good candidates have been presented, whose energies agree well with the expected values based on an earlier conjectured bound.
 

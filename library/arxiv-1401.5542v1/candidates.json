@@ -1,0 +1,106 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1401.5542v1",
+ "source": {
+  "structure_sha256": "f7cd278a274f37c545e9dda9a4b2553f1b718e65b9ad96edbc0d61e09a5a9d82",
+  "file": "1401.5542v1.pdf"
+ },
+ "provenance": {
+  "title": "THE PTOLEMY FIELD OF 3-MANIFOLD-REPRESENTATIONS",
+  "authors": "STAVROS GAROUFALIDIS, MATTHIAS GOERNER, AND CHRISTIAN K. ZICKERT",
+  "arxiv": {
+   "id": "1401.5542",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "22 Jan 2014"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 5,
+  "by_kind": {
+   "recommendation": 5
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Unless otherwise specified we shall assume that our triangulations are oriented. \\end{remark}",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-006-21-triangulations.md",
+   "section_title": "Triangulations",
+   "pages": "6-7",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "By only considering i < j, we shall always eliminate the edge orientation relations.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-009-31-the-sl2c-ptolemy-variety.md",
+   "section_title": "The SL(2,C)-Ptolemy variety",
+   "pages": "7-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "\\begin{proposition}\\label{prop:Basic} The map $\\alpha^*\\colon C_1\\to C_0$ is basic.\\qed \\end{proposition} The proof will be relegated to Section~\\ref{sec:AlphaStarBasic}, where we shall also give explicit basic generators. \\begin{proposition}\\label{prop:ReducedPtolemyVariety} Let $\\varepsilon_{i_1},\\dots,\\varepsilon_{i_v}$ be basic generators for $\\alpha^*$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-012-41-the-reduced-ptolemy-varieties.md",
+   "section_title": "The reduced Ptolemy varieties",
+   "pages": "9-11",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall thus consider graphs in the $1$-skeleton of $\\widehat M$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-013-42-shapes-and-gluing-equations.md",
+   "section_title": "Shapes and gluing equations",
+   "pages": "11-12",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall here refer to such loops as \\emph{non-trivial}.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-016-52-the-setup-of-the-proof.md",
+   "section_title": "The setup of the proof",
+   "pages": "12-13",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

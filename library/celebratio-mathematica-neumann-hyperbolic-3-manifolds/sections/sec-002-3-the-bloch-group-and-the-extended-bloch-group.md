@@ -8,6 +8,8 @@ pages: 9-12
 source_pdf: Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds.pdf
 source_sha256: 9e541693c60cbd3f
 toc_source: inferred
+doc_brief: "Garoufalidis & Zagier, Hyperbolic 3-manifolds, the Bloch group, and the work of Walter Neumann — survey of gluing equations, volumes, the extended Bloch group, symplectic properties and quantization."
+duplicate_of: "arxiv-2304.12545v1"
 ---
 The Bloch group of a field is an analogue of its multiplicative group, but with the
 relation 
@@ -50,10 +52,6 @@ for
  is a sequence of complex numbers satisfying
  for all  (which implies by a short calculation that they have
 ⇧
-8/8/26, 4:27 AM
-Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds
-https://celebratio.org/Neumann_WD/article/1106/
-9/27
 period 5). Yet another, with a clear interpretation in terms of 3-dimensional hy‐
 perbolic geometry, says that the signed sum of 
  is  0 if 
@@ -110,10 +108,6 @@ tion we see that the value of
 . Al‐
 though we will not use it, we mention that by a result of Suslin the Bloch group
 ⇧
-8/8/26, 4:27 AM
-Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds
-https://celebratio.org/Neumann_WD/article/1106/
-10/27
  of any field  is isomorphic up to torsion to the algebraic 
 -group 
 ,
@@ -179,10 +173,6 @@ ifolds lets one understand the full Bloch group of 
 ment of 
  occur as a rational linear combination of the Bloch group invariants
 ⇧
-8/8/26, 4:27 AM
-Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds
-https://celebratio.org/Neumann_WD/article/1106/
-11/27
 of some hyperbolic 3-manifolds? Even more basically, does every number field
 with at least one nonreal embedding occur as the trace field of some hyperbolic 3-
 manifold? The latter question was posed explicitly by Walter in [3].

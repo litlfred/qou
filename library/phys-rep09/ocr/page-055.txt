@@ -1,0 +1,74 @@
+S. Blanes et al. / Physics Reports 470 (2009) 151-238 205
+
+respectively, so that the corresponding expression of q; in terms of A” or A; is given by
+
+s
+
+k
+a; = > (R), Am? = hy (RQ) Ay (250)
+j=l
+
+jl
+
+Thus, by virtue of (250) we can write $2(h) in terms of the univariate integrals (245) or in terms of any desired quadrature
+tule. In this way, one gets the final numerical approximations to 2. Fourth and sixth-order methods can be obtained
+by substituting in (243) and (244), respectively. The algorithm then provides an approximation for Y(t,,1) starting from
+Yn © Y (tn), With tha. = th +h.
+
+The observant reader surely has noticed that, up to order h°, there are more terms involved in (242) than those considered
+in (243) or (244): specifically, 5% in (243) and wos and — alo. ot4] in (244). The reason is that 2'*! can be approximated
+by A®, A, A® up to order h® and then, these omitted terms are automatically reproduced when either A®, A , A? are
+evaluated analytically or are approximated by any symmetric quadrature rule of order six or higher.
+
+Another important issue involved in any approximation based on the Magnus expansion is the number of commutators
+appearing in £2. As is already evident from (242), this number rapidly increases with the order, and so it might constitute
+a major factor in the overall computational cost of the resulting numerical methods. It is possible, however, to design an
+optimization procedure aimed at reducing this number to a minimum [40]. For instance, a straightforward counting of
+the number of commutators in (244) suggests that it seems necessary to compute seven commutators up to order six in h,
+whereas the general analysis carried out in [40] shows that this can be done with only three commutators. More specifically,
+the scheme
+
+Ci = [1, a],
+1
+
+C= —Foler, 203 + Ci] (251)
+
+1 1
+Ql =a —a —[—-20a, — a: Cy, @& QQ],
+nD at sal 1 3 +C1, a2 + G]
+
+verifies that 2'°1 = 2 + @(h’). Three is, in fact, the minimum number of commutators required to get a sixth-order
+approximation to 2.
+
+This technique to reduce the number of commutators is, indeed, valid for any element in a graded free Lie algebra. It has
+been used, in particular, to obtain approximations to the Baker-Campbell-Hausdorff formula up to a given order, with the
+minimum number of commutators [132].
+
+As an illustration, next we provide the relevant expressions for integration schemes of order 4 and 6, which readily follow
+from the previous analysis.
+
+Order 4. Choosing the Gauss—Legendre quadrature rule, one has to evaluate
+
+1 V3 1. J3
+w=a(ne(3-2)0), maa(ns ($2163), (252)
+
+and thus, taking Q,° in (247), R® in (249) and substituting in (250) we find
+
+h hV/3
+a) = =(A, + Ap), 2 = ——(A2 — Aj). (253)
+2 12
+Then, by replacing in (243) we obtain
+h V3
+Qh) = (Ay + Az) — hb? Ai, A
+(h) 36 1+ Aa) 1D! 1 Aa] (254)
+Yn41 = exp(2!)(h)) Yn.
+Alternatively, evaluating A at equispaced points, with k = 3 andc; = 0,c. = 1/2,c3 = 1; by = b3 = 1/6, b2 = 2/3
+(i.e., using the Simpson rule to approximate , han A(s)ds),
+
+h
+A, =A(tn), A(t ;): A3 = A(t, + h)
+
+we have instead a; = BAL + 4A) + A3), @2 = h(A3 — A), and then
+
+h rn
+24h) = am + 4A + A3) — wh + 4Ay + A3, Az — Ail. (255)

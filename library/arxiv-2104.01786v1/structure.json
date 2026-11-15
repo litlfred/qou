@@ -7,10 +7,11 @@
   "bytes": 311885,
   "pages": 27,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,20 +22,29 @@
   },
   "doi": null,
   "title": "Spin(11, 3), particles and octonions",
-  "authors_raw": "School of Mathematical Sciences, University of Nottingham , NG7 2RD, UK",
+  "authors_raw": "Kirill Krasnov",
   "title_lines": [
-   "Spin(11, 3), particles and octonions",
-   "Kirill Krasnov"
+   "Spin(11, 3), particles and octonions"
   ],
-  "abstract": "The fermionic \ufb01elds of one generation of the Standard Model, including the Lorentz spinor degrees of freedom, can be identi\ufb01ed with components of a sin gle real 64-dimensional semi- spinor representation S+ of the group Spin(11 ,3). We describe an octonionic model for Spin(11,3) in which the semi-spinor representation gets identi\ufb01ed w ith S+ = O\u2297 \u02dcO, where O,\u02dcO are the usual and split octonions respectively. It is then we ll-known that choosing a unit imaginary octonion u \u2208 Im(O) equips O with a complex structure J. Similarly, choosing a unit imaginary split octonion \u02dc u \u2208 Im( \u02dcO) equips \u02dcO with a complex structure \u02dcJ, except that there are now two inequivalent complex structu res, one parametrised by a choice of a timelike and the other of a spacelike unit \u02dc u. In either case, the identi\ufb01cation S+ = O \u2297 \u02dcO implies that there are two natural commuting complex struct ures J, \u02dcJ on S+. Our main new observation is that the subgroup of Spin(11 ,3) that commutes with both J, \u02dcJ on S+ is the direct product Spin(6) \u00d7 Spin(4) \u00d7 Spin(1,3) of the Pati-Salam and Lorentz groups, when \u02dcu is chosen to be timelike. The splitting of S+ into eigenspaces of J corresponds to splitting into particles and anti-particle s. The splitting of S+ into eigenspaces of \u02dcJ corresponds to splitting of Lorentz Dirac spinors into two d i\ufb00erent chiral- ities. We also study the simplest possible symmetry breakin g scenario with the \u201dHiggs\u201d \ufb01eld taking values in the representation that corresponds t o 3-forms in R11, 3. We show that this Higgs can be designed to transform as the bi-double t of the left/right symmetric extension of the SM, and thus breaks Spin(11 ,3) down to the product of the SM, Lorentz and U(1) B\u2212L groups, with the last one remaining unbroken. This 3-form Hi ggs \ufb01eld also produces the Dirac mass terms for all the particles.",
+  "abstract": "The fermionic ﬁelds of one generation of the Standard Model, including the Lorentz spinor degrees of freedom, can be identiﬁed with components of a single real 64-dimensional semi- spinor representation S+ of the group Spin(11, 3). We describe an octonionic model for Spin(11, 3) in which the semi-spinor representation gets identiﬁed with S+ = O⊗˜O, where O, ˜O are the usual and split octonions respectively. It is then well-known that choosing a unit imaginary octonion u ∈Im(O) equips O with a complex structure J. Similarly, choosing a unit imaginary split octonion ˜u ∈Im(˜O) equips ˜O with a complex structure ˜J, except that there are now two inequivalent complex structures, one parametrised by a choice of a timelike and the other of a spacelike unit ˜u. In either case, the identiﬁcation S+ = O ⊗˜O implies that there are two natural commuting complex structures J, ˜J on S+. Our main new observation is that the subgroup of Spin(11, 3) that commutes with both J, ˜J on S+ is the direct product Spin(6) × Spin(4) × Spin(1, 3) of the Pati-Salam and Lorentz groups, when ˜u is chosen to be timelike. The splitting of S+ into eigenspaces of J corresponds to splitting into particles and anti-particles. The splitting of S+ into eigenspaces of ˜J corresponds to splitting of Lorentz Dirac spinors into two diﬀerent chiral- ities. We also study the simplest possible symmetry breaking scenario with the ”Higgs” ﬁeld taking values in the representation that corresponds to 3-forms in R11,3. We show that this Higgs can be designed to transform as the bi-doublet of the left/right symmetric extension of the SM, and thus breaks Spin(11, 3) down to the product of the SM, Lorentz and U(1)B−L groups, with the last one remaining unbroken. This 3-form Higgs ﬁeld also produces the Dirac mass terms for all the particles.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20210405205335-04'00'",
    "Creator": "LaTeX with hyperref",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20210405205335-04'00'"
   },
-  "title_prev": "Spin(11, 3), particles and octonions Kirill Krasnov"
+  "title_raw": "Spin(11, 3), particles and octonions",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Spin(11 , 3), particles and octonions",
+   "outline": "1 Introduction",
+   "text": "Spin(11, 3), particles and octonions",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Spin(11 , 3), particles and octonions"
  },
  "toc": [
   {
@@ -42,282 +52,656 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Spin(7) and octonions",
    "page": 6,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Octonions",
    "page": 6,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Clifford algebra Cliff7",
    "page": 7,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Lie algebra so(7)",
    "page": 8,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Complex structure",
    "page": 8,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "A different complex structure",
    "page": 8,
    "source": "outline",
-   "number": "2.5"
+   "number": "2.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Parametrisation",
    "page": 9,
    "source": "outline",
-   "number": "2.6"
+   "number": "2.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "The group of automorphisms of the octonions",
    "page": 9,
    "source": "outline",
-   "number": "2.7"
+   "number": "2.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "The group SU(3)",
    "page": 10,
    "source": "outline",
-   "number": "2.8"
+   "number": "2.8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 1,
    "title": "Spin(4,3) and the split octonions",
    "page": 10,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Split octonions",
    "page": 10,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "The Clifford algebra Cliff4,3",
    "page": 11,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "Lie algebra so(4,3)",
    "page": 12,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Complex structures",
    "page": 12,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
-   "title": "Decomposition of  under so(3)so(1,3)",
+   "title": "Decomposition of under so(3)so(1,3)",
    "page": 13,
    "source": "outline",
-   "number": "3.5"
+   "number": "3.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "Parametrisation",
    "page": 14,
    "source": "outline",
-   "number": "3.6"
+   "number": "3.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 2,
    "title": "Some useful formulas",
    "page": 15,
    "source": "outline",
-   "number": "3.7"
+   "number": "3.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "The split 2",
    "page": 16,
    "source": "outline",
-   "number": "3.8"
+   "number": "3.8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 1,
    "title": "The octonionic model for Spin(11,3)",
    "page": 16,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "Yet another magic square",
    "page": 16,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "Lie algebra",
    "page": 17,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Invariant pairing",
    "page": 17,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 1,
    "title": "The left/right symmetric models",
    "page": 18,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 2,
    "title": "Spinor fields",
    "page": 18,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 2,
    "title": "Bi-doublet Higgs field",
    "page": 18,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 2,
    "title": "Two Higgs in the adjoint",
    "page": 19,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 2,
    "title": "Two Higgs fields in the fundamental",
    "page": 20,
    "source": "outline",
-   "number": "5.4"
+   "number": "5.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 2,
    "title": "A model with only fundamental Higgs fields",
    "page": 20,
    "source": "outline",
-   "number": "5.5"
+   "number": "5.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 1,
    "title": "Dictionary",
    "page": 20,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 2,
    "title": "Two commuting complex structures on O",
    "page": 21,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 2,
    "title": "Identification with particles",
    "page": 21,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 1,
    "title": "Mass terms",
    "page": 22,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "Projection onto 3 R11,3",
    "page": 22,
    "source": "outline",
-   "number": "7.1"
+   "number": "7.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "SU(3)U(1) and Lorentz invariant pairing",
    "page": 23,
    "source": "outline",
-   "number": "7.2"
+   "number": "7.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 2,
    "title": "Evaluating the mass terms",
    "page": 23,
    "source": "outline",
-   "number": "7.3"
+   "number": "7.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 1,
    "title": "Discussion",
    "page": 24,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 2005,
+   "n_words": 330,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 5,
-   "n_chars": 13849,
-   "n_words": 2495
+   "page_end": 6,
+   "n_chars": 16710,
+   "n_words": 2869,
+   "label_start": "1",
+   "label_end": "6"
   },
   {
    "id": "sec-001-21-octonions",
    "number": "2.1",
    "title": "Octonions",
    "level": 2,
-   "page_start": 5,
+   "page_start": 6,
    "page_end": 6,
-   "n_chars": 4366,
-   "n_words": 793
+   "n_chars": 1320,
+   "n_words": 226,
+   "label_start": "6",
+   "label_end": "6"
   },
   {
    "id": "sec-002-2-spin7-and-octonions",
@@ -325,212 +709,416 @@
    "title": "Spin(7) and octonions",
    "level": 1,
    "page_start": 6,
-   "page_end": 8,
-   "n_chars": 2735,
-   "n_words": 508
+   "page_end": 7,
+   "n_chars": 1758,
+   "n_words": 340,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
-   "id": "sec-003-23-lie-algebra-so7",
+   "id": "sec-003-22-clifford-algebra-cliff7",
+   "number": "2.2",
+   "title": "Clifford algebra Cliff7",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1021,
+   "n_words": 197,
+   "label_start": "7",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-004-23-lie-algebra-so7",
    "number": "2.3",
    "title": "Lie algebra so(7)",
    "level": 2,
    "page_start": 8,
    "page_end": 8,
-   "n_chars": 599,
-   "n_words": 105
+   "n_chars": 611,
+   "n_words": 102,
+   "label_start": "8",
+   "label_end": "8"
   },
   {
-   "id": "sec-004-24-complex-structure",
+   "id": "sec-005-24-complex-structure",
    "number": "2.4",
    "title": "Complex structure",
    "level": 2,
    "page_start": 8,
-   "page_end": 9,
-   "n_chars": 2658,
-   "n_words": 497
+   "page_end": 8,
+   "n_chars": 1101,
+   "n_words": 202,
+   "label_start": "8",
+   "label_end": "8"
   },
   {
-   "id": "sec-005-26-parametrisation",
+   "id": "sec-006-25-a-different-complex-structure",
+   "number": "2.5",
+   "title": "A different complex structure",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1556,
+   "n_words": 282,
+   "label_start": "8",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-007-26-parametrisation",
    "number": "2.6",
    "title": "Parametrisation",
    "level": 2,
    "page_start": 9,
    "page_end": 9,
-   "n_chars": 1321,
-   "n_words": 284
+   "n_chars": 1318,
+   "n_words": 266,
+   "label_start": "9",
+   "label_end": "9"
   },
   {
-   "id": "sec-006-27-the-group-of-automorphisms-of-the-octonions",
+   "id": "sec-008-27-the-group-of-automorphisms-of-the-octonions",
    "number": "2.7",
    "title": "The group of automorphisms of the octonions",
    "level": 2,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 725,
-   "n_words": 146
+   "n_chars": 771,
+   "n_words": 155,
+   "label_start": "9",
+   "label_end": "10"
   },
   {
-   "id": "sec-007-28-the-group-su3",
+   "id": "sec-009-28-the-group-su3",
    "number": "2.8",
    "title": "The group SU(3)",
    "level": 2,
    "page_start": 10,
    "page_end": 10,
-   "n_chars": 1731,
-   "n_words": 320
+   "n_chars": 1743,
+   "n_words": 319,
+   "label_start": "10",
+   "label_end": "10"
   },
   {
-   "id": "sec-008-31-split-octonions",
-   "number": "3.1",
-   "title": "Split octonions",
-   "level": 2,
+   "id": "sec-010-3-spin43-and-the-split-octonions",
+   "number": "3",
+   "title": "Spin(4,3) and the split octonions",
+   "level": 1,
    "page_start": 10,
-   "page_end": 12,
-   "n_chars": 3065,
-   "n_words": 606
+   "page_end": 11,
+   "n_chars": 1553,
+   "n_words": 289,
+   "label_start": "10",
+   "label_end": "11"
   },
   {
-   "id": "sec-009-34-complex-structures",
+   "id": "sec-011-32-the-clifford-algebra-cliff43",
+   "number": "3.2",
+   "title": "The Clifford algebra Cliff4,3",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 1104,
+   "n_words": 222,
+   "label_start": "11",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-012-33-lie-algebra-so43",
+   "number": "3.3",
+   "title": "Lie algebra so(4,3)",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 410,
+   "n_words": 76,
+   "label_start": "12",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-013-34-complex-structures",
    "number": "3.4",
    "title": "Complex structures",
    "level": 2,
    "page_start": 12,
-   "page_end": 14,
-   "n_chars": 4337,
-   "n_words": 887
+   "page_end": 13,
+   "n_chars": 2025,
+   "n_words": 359,
+   "label_start": "12",
+   "label_end": "13"
   },
   {
-   "id": "sec-010-36-parametrisation",
+   "id": "sec-014-35-decomposition-of-under-so3so13",
+   "number": "3.5",
+   "title": "Decomposition of under so(3)so(1,3)",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 2259,
+   "n_words": 494,
+   "label_start": "13",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-015-36-parametrisation",
    "number": "3.6",
    "title": "Parametrisation",
    "level": 2,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 2543,
-   "n_words": 536
+   "n_chars": 2561,
+   "n_words": 539,
+   "label_start": "14",
+   "label_end": "15"
   },
   {
-   "id": "sec-011-37-some-useful-formulas",
+   "id": "sec-016-37-some-useful-formulas",
    "number": "3.7",
    "title": "Some useful formulas",
    "level": 2,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 895,
-   "n_words": 209
+   "n_chars": 2136,
+   "n_words": 409,
+   "label_start": "15",
+   "label_end": "16"
   },
   {
-   "id": "sec-012-42-lie-algebra",
-   "number": "4.2",
-   "title": "Lie algebra",
-   "level": 2,
+   "id": "sec-017-4-the-octonionic-model-for-spin113",
+   "number": "4",
+   "title": "The octonionic model for Spin(11,3)",
+   "level": 1,
    "page_start": 16,
    "page_end": 16,
-   "n_chars": 1428,
-   "n_words": 250
+   "n_chars": 278,
+   "n_words": 49,
+   "label_start": "16",
+   "label_end": "16"
   },
   {
-   "id": "sec-013-41-yet-another-magic-square",
+   "id": "sec-018-41-yet-another-magic-square",
    "number": "4.1",
    "title": "Yet another magic square",
    "level": 2,
    "page_start": 16,
    "page_end": 17,
-   "n_chars": 3154,
-   "n_words": 615
+   "n_chars": 1912,
+   "n_words": 350,
+   "label_start": "16",
+   "label_end": "17"
   },
   {
-   "id": "sec-014-43-invariant-pairing",
+   "id": "sec-019-42-lie-algebra",
+   "number": "4.2",
+   "title": "Lie algebra",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 1136,
+   "n_words": 219,
+   "label_start": "17",
+   "label_end": "17"
+  },
+  {
+   "id": "sec-020-43-invariant-pairing",
    "number": "4.3",
    "title": "Invariant pairing",
    "level": 2,
    "page_start": 17,
    "page_end": 18,
-   "n_chars": 1353,
-   "n_words": 286
+   "n_chars": 1336,
+   "n_words": 253,
+   "label_start": "17",
+   "label_end": "18"
   },
   {
-   "id": "sec-015-5-the-leftright-symmetric-models",
+   "id": "sec-021-5-the-leftright-symmetric-models",
    "number": "5",
    "title": "The left/right symmetric models",
    "level": 1,
    "page_start": 18,
-   "page_end": 19,
-   "n_chars": 1962,
-   "n_words": 407
+   "page_end": 18,
+   "n_chars": 246,
+   "n_words": 37,
+   "label_start": "18",
+   "label_end": "18"
   },
   {
-   "id": "sec-016-53-two-higgs-in-the-adjoint",
+   "id": "sec-022-51-spinor-fields",
+   "number": "5.1",
+   "title": "Spinor fields",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 509,
+   "n_words": 112,
+   "label_start": "18",
+   "label_end": "18"
+  },
+  {
+   "id": "sec-023-52-bi-doublet-higgs-field",
+   "number": "5.2",
+   "title": "Bi-doublet Higgs field",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 1206,
+   "n_words": 237,
+   "label_start": "18",
+   "label_end": "19"
+  },
+  {
+   "id": "sec-024-53-two-higgs-in-the-adjoint",
    "number": "5.3",
    "title": "Two Higgs in the adjoint",
    "level": 2,
    "page_start": 19,
    "page_end": 20,
-   "n_chars": 2801,
-   "n_words": 553
+   "n_chars": 1576,
+   "n_words": 293,
+   "label_start": "19",
+   "label_end": "20"
   },
   {
-   "id": "sec-017-6-dictionary",
+   "id": "sec-025-54-two-higgs-fields-in-the-fundamental",
+   "number": "5.4",
+   "title": "Two Higgs fields in the fundamental",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 698,
+   "n_words": 131,
+   "label_start": "20",
+   "label_end": "20"
+  },
+  {
+   "id": "sec-026-55-a-model-with-only-fundamental-higgs-fields",
+   "number": "5.5",
+   "title": "A model with only fundamental Higgs fields",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 494,
+   "n_words": 84,
+   "label_start": "20",
+   "label_end": "20"
+  },
+  {
+   "id": "sec-027-6-dictionary",
    "number": "6",
    "title": "Dictionary",
    "level": 1,
    "page_start": 20,
    "page_end": 21,
-   "n_chars": 130,
-   "n_words": 24
+   "n_chars": 140,
+   "n_words": 24,
+   "label_start": "20",
+   "label_end": "21"
   },
   {
-   "id": "sec-018-61-two-commuting-complex-structures-on-o",
+   "id": "sec-028-61-two-commuting-complex-structures-on-o",
    "number": "6.1",
    "title": "Two commuting complex structures on O",
    "level": 2,
    "page_start": 21,
-   "page_end": 22,
-   "n_chars": 4245,
-   "n_words": 845
+   "page_end": 21,
+   "n_chars": 1305,
+   "n_words": 254,
+   "label_start": "21",
+   "label_end": "21"
   },
   {
-   "id": "sec-019-7-mass-terms",
+   "id": "sec-029-62-identification-with-particles",
+   "number": "6.2",
+   "title": "Identification with particles",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 2933,
+   "n_words": 553,
+   "label_start": "21",
+   "label_end": "22"
+  },
+  {
+   "id": "sec-030-7-mass-terms",
    "number": "7",
    "title": "Mass terms",
    "level": 1,
    "page_start": 22,
-   "page_end": 23,
-   "n_chars": 3196,
-   "n_words": 657
+   "page_end": 22,
+   "n_chars": 1034,
+   "n_words": 182,
+   "label_start": "22",
+   "label_end": "22"
   },
   {
-   "id": "sec-020-73-evaluating-the-mass-terms",
+   "id": "sec-031-71-projection-onto-3-r113",
+   "number": "7.1",
+   "title": "Projection onto 3 R11,3",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 523,
+   "n_words": 79,
+   "label_start": "22",
+   "label_end": "23"
+  },
+  {
+   "id": "sec-032-72-su3u1-and-lorentz-invariant-pairing",
+   "number": "7.2",
+   "title": "SU(3)U(1) and Lorentz invariant pairing",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 1454,
+   "n_words": 270,
+   "label_start": "23",
+   "label_end": "23"
+  },
+  {
+   "id": "sec-033-73-evaluating-the-mass-terms",
    "number": "7.3",
    "title": "Evaluating the mass terms",
    "level": 2,
    "page_start": 23,
    "page_end": 24,
-   "n_chars": 1781,
-   "n_words": 355
+   "n_chars": 1793,
+   "n_words": 345,
+   "label_start": "23",
+   "label_end": "24"
   },
   {
-   "id": "sec-021-8-discussion",
+   "id": "sec-034-8-discussion",
    "number": "8",
    "title": "Discussion",
    "level": 1,
    "page_start": 24,
    "page_end": 27,
-   "n_chars": 11724,
-   "n_words": 1891
+   "n_chars": 11641,
+   "n_words": 1798,
+   "label_start": "24",
+   "label_end": "27"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 37,
-  "sections": 22,
-  "chars_total": 70598,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 36,
+  "chars_total": 72176,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 37,
-   "overlaid": 14,
+   "overlaid": 20,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -538,9 +1126,14 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
+     "prose_ratio": 0.935,
      "coverage_ratio": 0.998,
      "result": "overlaid",
      "converter": "pandoc"
@@ -548,8 +1141,8 @@
     {
      "id": "sec-001-21-octonions",
      "title": "Octonions",
-     "prose_ratio": 0.364,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.215,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-002-2-spin7-and-octonions",
@@ -557,20 +1150,33 @@
      "result": "no matching \\section"
     },
     {
-     "id": "sec-003-23-lie-algebra-so7",
+     "id": "sec-003-22-clifford-algebra-cliff7",
+     "title": "Clifford algebra Cliff7",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-23-lie-algebra-so7",
      "title": "Lie algebra so(7)",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-004-24-complex-structure",
+     "id": "sec-005-24-complex-structure",
      "title": "Complex structure",
-     "prose_ratio": 0.991,
-     "coverage_ratio": 0.992,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-26-parametrisation",
+     "id": "sec-006-25-a-different-complex-structure",
+     "title": "A different complex structure",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-26-parametrisation",
      "title": "Parametrisation",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.984,
@@ -578,84 +1184,133 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-27-the-group-of-automorphisms-of-the-octonions",
+     "id": "sec-008-27-the-group-of-automorphisms-of-the-octonions",
      "title": "The group of automorphisms of the octonions",
-     "prose_ratio": 0.309,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.176,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-007-28-the-group-su3",
+     "id": "sec-009-28-the-group-su3",
      "title": "The group SU(3)",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-008-31-split-octonions",
-     "title": "Split octonions",
-     "prose_ratio": 0.983,
-     "coverage_ratio": 0.992,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "id": "sec-010-3-spin43-and-the-split-octonions",
+     "title": "Spin(4,3) and the split octonions",
+     "result": "no matching \\section"
     },
     {
-     "id": "sec-009-34-complex-structures",
+     "id": "sec-011-32-the-clifford-algebra-cliff43",
+     "title": "The Clifford algebra Cliff4,3",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-33-lie-algebra-so43",
+     "title": "Lie algebra so(4,3)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-34-complex-structures",
      "title": "Complex structures",
-     "prose_ratio": 0.759,
+     "prose_ratio": 0.468,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-014-35-decomposition-of-under-so3so13",
+     "title": "Decomposition of under so(3)so(1,3)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-36-parametrisation",
+     "title": "Parametrisation",
+     "prose_ratio": 0.491,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-016-37-some-useful-formulas",
+     "title": "Some useful formulas",
+     "prose_ratio": 0.885,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-36-parametrisation",
-     "title": "Parametrisation",
-     "prose_ratio": 0.491,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-017-4-the-octonionic-model-for-spin113",
+     "title": "The octonionic model for Spin(11,3)",
+     "result": "no matching \\section"
     },
     {
-     "id": "sec-011-37-some-useful-formulas",
-     "title": "Some useful formulas",
-     "prose_ratio": 0.418,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-012-42-lie-algebra",
-     "title": "Lie algebra",
-     "prose_ratio": 0.2,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-013-41-yet-another-magic-square",
+     "id": "sec-018-41-yet-another-magic-square",
      "title": "Yet another magic square",
-     "prose_ratio": 0.969,
+     "prose_ratio": 0.725,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-019-42-lie-algebra",
+     "title": "Lie algebra",
+     "prose_ratio": 0.375,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-020-43-invariant-pairing",
+     "title": "Invariant pairing",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-021-5-the-leftright-symmetric-models",
+     "title": "The left/right symmetric models",
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.944,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-022-51-spinor-fields",
+     "title": "Spinor fields",
+     "prose_ratio": 0.864,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-023-52-bi-doublet-higgs-field",
+     "title": "Bi-doublet Higgs field",
+     "prose_ratio": 0.972,
      "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-43-invariant-pairing",
-     "title": "Invariant pairing",
-     "prose_ratio": 0.985,
-     "coverage_ratio": 0.957,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-015-5-the-leftright-symmetric-models",
-     "title": "The left/right symmetric models",
-     "prose_ratio": 0.949,
-     "coverage_ratio": 0.979,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-016-53-two-higgs-in-the-adjoint",
+     "id": "sec-024-53-two-higgs-in-the-adjoint",
      "title": "Two Higgs in the adjoint",
-     "prose_ratio": 0.969,
+     "prose_ratio": 0.978,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-017-6-dictionary",
+     "id": "sec-025-54-two-higgs-fields-in-the-fundamental",
+     "title": "Two Higgs fields in the fundamental",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-026-55-a-model-with-only-fundamental-higgs-fields",
+     "title": "A model with only fundamental Higgs fields",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.939,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-027-6-dictionary",
      "title": "Dictionary",
      "prose_ratio": 0.9,
      "coverage_ratio": 1.0,
@@ -663,34 +1318,55 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-018-61-two-commuting-complex-structures-on-o",
+     "id": "sec-028-61-two-commuting-complex-structures-on-o",
      "title": "Two commuting complex structures on O",
-     "prose_ratio": 0.939,
+     "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-019-7-mass-terms",
-     "title": "Mass terms",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.646,
+     "id": "sec-029-62-identification-with-particles",
+     "title": "Identification with particles",
+     "prose_ratio": 0.899,
+     "coverage_ratio": 0.991,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-020-73-evaluating-the-mass-terms",
+     "id": "sec-030-7-mass-terms",
+     "title": "Mass terms",
+     "prose_ratio": 0.821,
+     "coverage_ratio": 0.918,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-031-71-projection-onto-3-r113",
+     "title": "Projection onto 3 R11,3",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-032-72-su3u1-and-lorentz-invariant-pairing",
+     "title": "SU(3)U(1) and Lorentz invariant pairing",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-033-73-evaluating-the-mass-terms",
      "title": "Evaluating the mass terms",
      "prose_ratio": 0.98,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-021-8-discussion",
+     "id": "sec-034-8-discussion",
      "title": "Discussion",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.982,
+     "coverage_ratio": 0.792,
      "result": "overlaid",
      "converter": "pandoc"
     }

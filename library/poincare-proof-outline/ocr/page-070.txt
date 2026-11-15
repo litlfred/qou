@@ -1,0 +1,68 @@
+let ?R = (cosh r — 1) / 2
+obtain R where R: R = ?R
+by blast
+
+let ?cx = 1 — (cmod x)? and ?cz = 1 — (cmod z')?
+
+and ?czr = (cmod (z' — 2))?
+let 2k = 1+ R* ?cz
+obtain k where k: k = ?k
+by blast
+have R > 0
+using R cosh-gt-1[OF «r > 0]
+by simp
+
+hence k > 1
+using assms z' k x[of z’]
+by auto
+
+hence «*: cork 4 0
+by (smt of-real-eq-0-iff)
+
+have of-complex x € poincare-circle z r <—+ cmod « < 1 A poincare-distance z (of-complex x) = r
+unfolding poincare-circle-def
+by auto
+also have ... <—> cmod x < 1 A poincare-distance-formula’ ?z x = cosh r
+using poincare-distance-formula|of z of-complex x| cosh-dist{of z of-complex x]
+unfolding poincare-distance-formula-def
+using assms
+using arcosh-cosh-real
+by auto
+also have ... + cmod a < 1 A ?czu / (?cz * cx) = ?R
+using z’
+by (simp add: field-simps)
+also have ... <—+ cmod x < 1 A ?czx = ?R * ?cau * ?cz
+using assms z' «lof z'] *[of z]
+using nonzero-divide-eq-eqlof (1 — (emod «)”) * (1 — (emod z')?) (emod (z' — x))? ?R]
+by (auto, simp add: field-simps)
+also have ... ~—> cmod x < 1 A (2' — &) * (enjz' — enjx) = R * ?cz * (1 — x * cnj a) (is - <> - A 21 = 2r)
+proof —
+let 71 = (z' — x) * (enj z' — enj x) and ?r = R * (1 — Re (z' * enj z’)) * (1 — & * cnj x)
+have is-real ?1
+using eq-cnj-iff-real[of 71]
+by simp
+moreover
+have is-real ?r
+using eq-cnj-iff-real[of 1 — x * cnj x]
+using Im-complez-of-reallof R « (1 — Re (z' * cnj z'))]
+by simp
+ultimately
+show ?thesis
+apply (subst R[symmetric])
+apply (subst cmod-square)+
+apply (subst complex-eq-if-Re-eq, simp-all add: field-simps)
+done
+qed
+also have ... + cmod x < 1 A 2’ * enjz'— 2 * cnjz'— cnjxxz'+a*cenjx=Rx* ?cx— Rx Pez * x * CNT
+unfolding right-diff-distrib left-diff-distrib
+by (simp add: field-simps)
+also have ... <> cmodz < 1 A k * ( * cnj x) — & * cnj 2’ — enj a * 2’ + 2’ * cnj z'= R * ?cz (is - +9 - A
+?lhs = rhs)
+by (subst k) (auto simp add: field-simps)
+also have ... + cmodz < 1 A (kx a * enjz — 2 * cenjz’— enja*2z'+2'% cnjz')/k=(R* ?cz) /k
+using **
+by (auto simp add: Groups.mult-ac(1))
+also have ... + cmoda < 1 Ax* cenjx—axcnjz'/k—enjxxz'/k+2'* enjz'’/k=(R* ?cz)/k
+using **
+
+70

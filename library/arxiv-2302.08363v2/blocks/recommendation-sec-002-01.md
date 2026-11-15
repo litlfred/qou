@@ -1,0 +1,1 @@
+According to the strong version, all the non-perturbative corrections appearing in the trans-series should be obtained from the analysis of the Borel singularities of the perturbative series, perhaps up to overall multiplicative constants.

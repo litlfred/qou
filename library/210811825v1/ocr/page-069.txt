@@ -1,0 +1,63 @@
+Total |Table |
+4 h[i], {i, (27(1/4) — 1)/90,
+89 (27(1/4) — 1)/90, (27(1/4) — 1)/45}])}]
+Once again, we do not display the output due to its length. It is approximately equal
+to 0.0280905. This gives ||p1||? correct to within 106°. Since we divide by |
+Rayleigh quotient, and want an upper bound on the first eigenvalue, we want a lower
+
+bound on ||y,||?. We take
+
+ill? in the
+
+28089 iP
+
+Tananaan <
+Too0000 ~ |#
+Now we need to bound the ||/V¢i||?, this time from above. This time, since we are
+
+working with the gradient, we must analyze
+
+27-1 peo(a) (Vy. V
+ive? = ff SAP aya.
+cx (x) q
+
+Note that we have the following formula for taking the scalar product of a vector X =
+
+x no of dimension n with itself, with respect to the Riemannian metric:
+(X, X) = gi X*X!,
+
+where we use the Einstein summation convention. We also have that for the gradient of
+a function f(x1,..., 2n),
+n
+(2) f <7
+V, gg
+
+For a function f(x, y) in H, we have
+
+(Vf, VS) = ough arf)? + 922(9°0,f)?
+= 9" (Oef P + 9? (Of)?
+=y (Arf) + (Oyf)’) -
+
+Therefore, when we integrate with respect to the hyperbolic metric, the y? term cancels.
+We are essentially integrating the Euclidean gradient of a function of two variable with
+respect to the Euclidean metric. As before, we can integrate explicitly with respect to
+
+the y variable to define a function in x:
+
+c2 (a) 2
+
+g(x) = | ((-vi=2ae - Y= + 2y 1)
+ci (x)
+
+2
+
+o(-vi= me +y-1) | Be(y- VP=#)
+VP -—x? V1 = 22x?
+
+dy.
+
+This can be evaluated using the following in Mathematica; again we suppress the
+
+lengthy output.
+
+59

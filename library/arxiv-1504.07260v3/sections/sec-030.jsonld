@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1504.07260v3/sections/sec-030",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "B Heterotic T-duality",
+  "pageStart": 47,
+  "pageEnd": 50,
+  "contains": [
+    "library/arxiv-1504.07260v3/blocks/prose-sec-030",
+    "library/arxiv-1504.07260v3/blocks/recommendation-sec-030-01",
+    "library/arxiv-1504.07260v3/blocks/recommendation-sec-030-02",
+    "library/arxiv-1504.07260v3/blocks/recommendation-sec-030-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1504.07260v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1504.07260v3",
+  "provenance": "ingested"
+}

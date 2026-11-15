@@ -1,0 +1,633 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-math-0410111v2",
+ "status": "determined",
+ "pages_unread": [
+  5
+ ],
+ "body_size": 10.0,
+ "footnotes": [],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "d",
+   "context": "maximizef(x1, . . . , xd)subjecttogi(x1, . . . , xd) ≥0,x ∈Z"
+  },
+  {
+   "page": 2,
+   "mark": "d",
+   "context": "f∗= maximizef(x1, x2, . . . , xd)subjecttox ∈P∩Z"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "totaldegreeDandtheysatisfytheinequalityU"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "totaldegreeDandtheysatisfytheinequalityUk −L"
+  },
+  {
+   "page": 2,
+   "mark": "p",
+   "context": "totaldegreeDandtheysatisfytheinequalityUk −Lk≤f∗· (k"
+  },
+  {
+   "page": 2,
+   "mark": "d",
+   "context": "|P∩Z"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "x<csuchthatx"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "theminimumofthequarticpolynomialfunction(x"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "theminimumofthequarticpolynomialfunction(x2−a −by)"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "≤y≤(c−1)"
+  },
+  {
+   "page": 2,
+   "mark": "10",
+   "context": "(1 −y)f(x1, x2, . . . , x9) = 0,(y, x1, . . . , x9) ∈Z"
+  },
+  {
+   "page": 2,
+   "mark": "d",
+   "context": "maximizef(x1, . . . , xd)subjectto(x1, . . . , xd) ∈P∩Z"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "vectors of monomials.Forexample,z"
+  },
+  {
+   "page": 3,
+   "mark": "z",
+   "context": "1"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "α∈P ∩Z"
+  },
+  {
+   "page": 3,
+   "mark": "z",
+   "context": "α∈P ∩Zd"
+  },
+  {
+   "page": 3,
+   "mark": "u",
+   "context": "z"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "zu"
+  },
+  {
+   "page": 3,
+   "mark": "v",
+   "context": "(1 −z"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "isapolynomial-sizeindexingset,andwhereEi∈{1, −1}andui, vij∈Z"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "a∈P ∩Z"
+  },
+  {
+   "page": 3,
+   "mark": "f",
+   "context": "a∈P ∩Zd"
+  },
+  {
+   "page": 3,
+   "mark": "z",
+   "context": "a∈P ∩Zd f(a)"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "a∈P ∩Zd f(a)z"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "a∈P ∩Z"
+  },
+  {
+   "page": 3,
+   "mark": "f",
+   "context": "a∈P ∩Zd"
+  },
+  {
+   "page": 3,
+   "mark": "z",
+   "context": "a∈P ∩Zd f(a)"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "a∈P ∩Zd f(a)z"
+  },
+  {
+   "page": 3,
+   "mark": "g",
+   "context": "∂zrinthegeneratingfunction"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "α∈P ∩Z"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "α∈P ∩Z"
+  },
+  {
+   "page": 3,
+   "mark": "u",
+   "context": "z"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "zu"
+  },
+  {
+   "page": 3,
+   "mark": "v",
+   "context": "(1 −z"
+  },
+  {
+   "page": 3,
+   "mark": "r",
+   "context": "∂z"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "∂zr) Q"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "Q"
+  },
+  {
+   "page": 3,
+   "mark": "v",
+   "context": "j=1(1 −z"
+  },
+  {
+   "page": 3,
+   "mark": "u",
+   "context": "j=1(1 −zvij) −z"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "j=1(1 −zvij) −zu"
+  },
+  {
+   "page": 3,
+   "mark": "v",
+   "context": "j=1(1 −z"
+  },
+  {
+   "page": 3,
+   "mark": "u",
+   "context": "z"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "zu"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "Q"
+  },
+  {
+   "page": 3,
+   "mark": "v",
+   "context": "j=1(1 −z"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "j=1(1 −zvij)"
+  },
+  {
+   "page": 3,
+   "mark": "v",
+   "context": "(1 −z"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "Wecanexpandthenumeratorasasumofnomorethan2"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "Forthecasewhenf(z) isageneralmonomial,i.e.f(z) = c · zβ"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "1· . . . · zβ"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "\u0013β"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "\u0013β"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "α∈P ∩Z"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "ThuswerequirenomorethanO(D"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "α∈P ∩Z"
+  },
+  {
+   "page": 4,
+   "mark": "f",
+   "context": "α∈P ∩Zd"
+  },
+  {
+   "page": 4,
+   "mark": "z",
+   "context": "α∈P ∩Zd f(α)"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "ﬁxeddwewilldonomorethanO(D"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "k"
+  },
+  {
+   "page": 4,
+   "mark": "r",
+   "context": "P"
+  },
+  {
+   "page": 4,
+   "mark": "s",
+   "context": "j=1"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "j=1s"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "Input:ArationalconvexpolytopeP⊂R"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "α∈P ∩Z"
+  },
+  {
+   "page": 4,
+   "mark": "z",
+   "context": "α∈P ∩Zd"
+  },
+  {
+   "page": 4,
+   "mark": "g",
+   "context": "α∈P ∩Zd zα.From"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "α∈P ∩Zd zα.FromgP (z)computethenumber|P∩Z"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "α∈P ∩Z"
+  },
+  {
+   "page": 4,
+   "mark": "z",
+   "context": "α∈P ∩Zd"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "α∈P ∩Z"
+  },
+  {
+   "page": 4,
+   "mark": "f",
+   "context": "α∈P ∩Zd"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "α∈P ∩Zd f"
+  },
+  {
+   "page": 4,
+   "mark": "z",
+   "context": "α∈P ∩Zd f k(α)"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "therationalfunctionrepresentationofgP,f"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "k"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "k"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "gP,f k(1)/gP,f"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "α∈P ∩Z"
+  },
+  {
+   "page": 4,
+   "mark": "f",
+   "context": "α∈P ∩Zd"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "α∈P ∩Zd f(α)"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "≤max{f(α) : α ∈P∩Z"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "f(α)"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "|P∩Z"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "α∈P ∩Z"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "than1,wehavedeterminedthevaluemax{f(x):x∈P∩Z"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "maximizingthevalueofthemonomialx"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 6,
+   "mark": "999",
+   "context": "(1 −(xy"
+  },
+  {
+   "page": 6,
+   "mark": "999",
+   "context": "(1 −xy"
+  },
+  {
+   "page": 6,
+   "mark": "999",
+   "context": "(1 −xy"
+  },
+  {
+   "page": 6,
+   "mark": "999",
+   "context": "(1 −(xy"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "2+ i"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "5+ i"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "5−i"
+  },
+  {
+   "page": 6,
+   "mark": "9",
+   "context": "Usingtheboundsoni1andi2weobtainanupperboundof 165 · 10"
+  },
+  {
+   "page": 6,
+   "mark": "z",
+   "context": "5"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "5z"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "1−z"
+  },
+  {
+   "page": 6,
+   "mark": "201",
+   "context": "1−z1−z"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1−z"
+  },
+  {
+   "page": 6,
+   "mark": "201",
+   "context": "1−z2−z"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "Inthisexample,thenumberoflatticepointsis|P∩Z"
+  },
+  {
+   "page": 6,
+   "mark": "y",
+   "context": "esequenceofintegerpolynomialoptimizationproblemsoptimizef(x,"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "n)≤b,with"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "n)≤b,withx"
+  },
+  {
+   "page": 6,
+   "mark": "y",
+   "context": "n)≤b,withxi∈Zand"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "n)≤b,withxi∈Zandy"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "f"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "α∈(nP )∩Z"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "n"
+  },
+  {
+   "page": 7,
+   "mark": "f",
+   "context": "nd"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "nd f"
+  },
+  {
+   "page": 7,
+   "mark": "z",
+   "context": "nd f q(α)"
+  },
+  {
+   "page": 7,
+   "mark": "f",
+   "context": "d f q(α)zαisessentiallyanapproximationtotheRiemannintegralof"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": " f q(α)zαisessentiallyanapproximationtotheRiemannintegraloff"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "α∈(nP )∩Z"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "n→∞r(q, n)/n"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "f"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "q"
+  },
+  {
+   "page": 7,
+   "mark": "p",
+   "context": "q"
+  },
+  {
+   "page": 7,
+   "mark": "f",
+   "context": "P"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "Pf"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "Pf q(¯x)"
+  }
+ ]
+}

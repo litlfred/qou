@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2605.20846v1
-doc_title: "Topological Field Theories and the Algebraic Structures of the Two-Sphere Chris Li"
+doc_title: "Topological Field Theories and the Algebraic Structures of the Two-Sphere"
 section_id: sec-004-existence-and-spherical-morse-functions
 section_title: "Existence and Spherical Morse Functions"
 section_number: null
 pages: 26-32
 source_pdf: 2605.20846v1.pdf
 source_sha256: db27cb6d01c4f2fb
-doc_brief: "Topological Field Theories and the Algebraic Structures of the Two-Sphere Chris Li — We give two presentations for bordisms ofS 2 in the 3-dimensional oriented bor- dism category Cob(3), encoding the"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.967
+latex_coverage_ratio: 0.995
+doc_brief: "Topological Field Theories and the Algebraic Structures of the Two-Sphere — We give two presentations for bordisms of S2 in the 3-dimensional oriented bor- dism category Cob(3), encoding the"
 ---
 \label{sec:existenceandsphericalMorse}
 \begin{defn} \label{defn:good}

@@ -1,0 +1,998 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-2210.09583v1",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p005-1",
+   "page": 5,
+   "mark": "1",
+   "text": "Thisnewdeﬁnitionb J(−) of the osp(1|2)-polynomial is designed to agree with the uncolored osp(1|2)-polynomial Jl −given in [10, Example 3.10]. The main diﬀerence between the two deﬁnitions is the type of skein relation used as mentioned in the introduction. The skein relation he uses can be derived from the skein relation I use, but not the other way around.",
+   "marks": [
+    {
+     "page": 4,
+     "context": "fz(q, τ) = ±τz0qz"
+    },
+    {
+     "page": 5,
+     "context": "polynomial"
+    }
+   ],
+   "block": "library/arxiv-2210.09583v1/blocks/prose-sec-003"
+  }
+ ],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "saknownconnectionbetweentheosp(1|2n)polynomialknotinvariantJ"
+  },
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "theso(2n+1)knotinvariantsoJ"
+  },
+  {
+   "page": 1,
+   "mark": "q",
+   "context": "theuncoloredU"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "theuncoloredUq(osp(1|2))linkinvariantisequaltotheUt−1q(sl"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "(1|2))linkinvariantisequaltotheUt−1q(sl2)linkinvariantwheret"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "tumenvelopingalgebras,dependingonanadditionalparameterπwithπ"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "atwistor,whichsendsπ→−πandq→t−1qwheret"
+  },
+  {
+   "page": 2,
+   "mark": "q",
+   "context": "K(t−1"
+  },
+  {
+   "page": 2,
+   "mark": "q",
+   "context": "T−= (τq−1 −τ−1"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "T−= (τq−1 −τ−1q)J"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "(τ−1q)−2J"
+  },
+  {
+   "page": 2,
+   "mark": "q",
+   "context": "T+−(τ −1"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "T+−(τ −1q)"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "T+−(τ −1q)2J"
+  },
+  {
+   "page": 2,
+   "mark": "b",
+   "context": "1.1.Results.In this paper, we also construct an invariant"
+  },
+  {
+   "page": 2,
+   "mark": "b",
+   "context": "Then"
+  },
+  {
+   "page": 2,
+   "mark": "b",
+   "context": "ivenbyarenormalization ofthebracket,andsatisﬁes1.1.Therefore"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "osp(1|2) invariant J"
+  },
+  {
+   "page": 3,
+   "mark": "4",
+   "context": "Inthispaper,τisanindeterminantsuchthatτ"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "Inthispaper,τisanindeterminantsuchthatτ4= 1,andπ:= τ"
+  },
+  {
+   "page": 3,
+   "mark": "4",
+   "context": "Rτ= R[τ]/(τ"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "Rπ= R[π]/(π"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "(3)E"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "i= dE"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "τ"
+  },
+  {
+   "page": 4,
+   "mark": "z",
+   "context": "w)trtoeachedge"
+  },
+  {
+   "page": 4,
+   "mark": "z",
+   "context": "fz(q, τ) = ±τ"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "fz(q, τ) = ±τz"
+  },
+  {
+   "page": 4,
+   "mark": "z",
+   "context": "fz(q, τ) = ±τz0q"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "fz(q, τ) = ±τz0qz1d"
+  },
+  {
+   "page": 4,
+   "mark": "z",
+   "context": "z⟩:= ⟨(B"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "Deﬁnition2.10.Theuncoloredosp(1|2)-polynomial"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "bJ(T ) = (τ"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "thesametraceclosure,so"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "braidT ,then"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "Wesaythat"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "M1"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "n) =bJ(T )forallT∈B"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "M2"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "M2bJ(AB) =bJ(BA)forallA, B∈B"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "If"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "reservestheMarkovmovesasabove,thenMarkov’stheoremtellsusthat"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "that"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "Lemma2.11."
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Proof.AssumeforthedurationoftheproofthatT∈B"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "roof.AssumeforthedurationoftheproofthatT∈Bn.Weneedtoshowthat"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "−πq"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "Hence,"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Hence,bJ(T σ"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "Hence,bJ(T σn) = (τ"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "Hence,bJ(T σn) = (τ3q(τ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "Hence,bJ(T σn) = (τ3q(τ3q + τq−1) −τ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "Hence,bJ(T σn) = (τ3q(τ3q + τq−1) −τ2q"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "Hence,bJ(T σn) = (τ3q(τ3q + τq−1) −τ2q2)"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "Lemma2.12."
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "Proof.ForA, B∈B"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "Proof.ForA, B∈Bnweneedtoshowthat"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "Proof.ForA, B∈BnweneedtoshowthatbJ(AB) =bJ(BA)foranyA, B∈B"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "(see[1,Deﬁnition2.12]).Then,⟨(AxBy)tr⟩=d"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "Theorem2.13."
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "representation-theoreticdeﬁnitionofourinvariant"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "Lett∈Csuchthatt"
+  },
+  {
+   "page": 6,
+   "mark": "4",
+   "context": "τ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "τ4=1,anddeﬁneπ:=τ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "τ4=1,anddeﬁneπ:=τ2.RecallthenotationRπ=R[π]/(π"
+  },
+  {
+   "page": 6,
+   "mark": "4",
+   "context": "1,anddeﬁneπ:=τ2.RecallthenotationRπ=R[π]/(π2−1)andRτ=R[τ]/(τ"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "εt"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "εtk=1 + (t"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "εtk=1 + (tkτ) + (t"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "εtk=1 + (tkτ) + (tkτ)"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "εtk=1 + (tkτ) + (tkτ)2 + (t"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "εtk=1 + (tkτ) + (tkτ)2 + (tkτ)"
+  },
+  {
+   "page": 6,
+   "mark": "4",
+   "context": "k∈Z"
+  },
+  {
+   "page": 6,
+   "mark": "t",
+   "context": "k∈Z4Q(q, t)ε"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "k∈Z4Q(q, t)εt"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "J"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "KE= q"
+  },
+  {
+   "page": 7,
+   "mark": "p",
+   "context": "f superalgebra[7, 8, 10] but with braiding replaced by x⊗y→π"
+  },
+  {
+   "page": 7,
+   "mark": "p",
+   "context": "peralgebra[7, 8, 10] but with braiding replaced by x⊗y→πp(x)"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "Evm−2k= π"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "Kvm−2k= q"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "Kvm−2k= qm−2"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "Jvm−2k= π"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "Jvm−2k= πm−2"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "−}as"
+  },
+  {
+   "page": 7,
+   "mark": "v",
+   "context": "±= q±1"
+  },
+  {
+   "page": 7,
+   "mark": "v",
+   "context": "±= π±1"
+  },
+  {
+   "page": 8,
+   "mark": "p",
+   "context": "xf(v) = π"
+  },
+  {
+   "page": 8,
+   "mark": "p",
+   "context": "xf(v) = πp(f)"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "m−2k||=(2"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "m−2k= −(πq−1)"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "m−2k= −(πq−1)m−2"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "m−2k= −π"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "m−2k= −πk"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "m−2k= −πkq"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "m−2k= −πkqm−2"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "m−2k(vα) = π"
+  },
+  {
+   "page": 8,
+   "mark": "v",
+   "context": "m−2k(vα) = πk"
+  },
+  {
+   "page": 8,
+   "mark": "v",
+   "context": "m−2k(S(F)"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "m−2k(S(F)vα) = π"
+  },
+  {
+   "page": 8,
+   "mark": "v",
+   "context": "m−2k(S(F)vα) = πk"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "= −π"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "m−2k(Fvα) = −δα−2,m−2"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "m−2k(Fvα) = −δα−2,m−2kπ"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "m−2k(Fvα) = −δα−2,m−2kπk"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "m−2k(Fvα) = −δα−2,m−2kπkq"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "m−2k(Fvα) = −δα−2,m−2kπkqm−2"
+  },
+  {
+   "page": 8,
+   "mark": "v",
+   "context": "m−2k(Fvα) = −δα−2,m−2kπkqm−2k+2"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "= −δα−2,m−2kπ"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "= −δα−2,m−2kπkq"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "= −δα−2,m−2kπkqm−2"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "m−2k(vα−2) = −π"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "m−2k(vα−2) = −πk"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "m−2k(vα−2) = −πkq"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "m−2k(vα−2) = −πkqm−2"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "thereisanevenUq,π-moduleisomorphismΠ"
+  },
+  {
+   "page": 8,
+   "mark": "p",
+   "context": "•qtr:V (1) ⊗V (1)∗→Q(q, t)τisthemapv⊗w∗→π"
+  },
+  {
+   "page": 8,
+   "mark": "p",
+   "context": "•qtr:V (1) ⊗V (1)∗→Q(q, t)τisthemapv⊗w∗→πp(v)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "1 −πq"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "the maps using π= τ"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "1,1pick upa factor of τ"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "τ"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "= τ"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "τ"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "τ"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "τ"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "= τ"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "τ"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "τ−τ"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "τ−τ3q"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "τ"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "τ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "by(πq)wr(T ).Inparticular,Lisanorientedlink,thenJ"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "−q"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "(τ−τ"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "(τ−τ3q"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "ThisshowsthatJ"
+  },
+  {
+   "page": 9,
+   "mark": "b",
+   "context": "3.5.Representationtheoreticdeﬁnitonof"
+  },
+  {
+   "page": 9,
+   "mark": "b",
+   "context": "deﬁnetheinvariant"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "v+ ⊗v−→−τ"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "v−⊗v+→τ"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "−τ"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "τ"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "Thennu = τq−1+ τ"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "−τ"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "τ"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "−τ"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "τ"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "τ"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "τ−τ"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "τ−τ3q"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "−τ"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "τ"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "τ"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "τ"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "= τ"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "= τ"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "τ"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "−τ"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "τ"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "τ"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "= τq−1 + τ"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "= τq−1 + τ3"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "−τ"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "τ"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "v±= v± ⊗1 →π"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "v±= v± ⊗1 →πp(v±)v± ⊗u(1) = π"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "→−τ"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "→−τ"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "= −τ"
+  },
+  {
+   "page": 12,
+   "mark": "b",
+   "context": "Therefore,"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "Deﬁnition3.11.Letd := τ"
+  },
+  {
+   "page": 12,
+   "mark": "b",
+   "context": " from [10,4],theosp(1|2) polynomial (and hence our invariant"
+  },
+  {
+   "page": 12,
+   "mark": "b",
+   "context": "espolynomial.NowthatwehavethisKauﬀman-brackettypedeﬁnitionof"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "m,n"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "m,nq"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "m,nqmτ"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "setW{(a, b)}(m,n)= W(m−a,n−b)sothatdimq,τW{(a, b)} = q"
+  },
+  {
+   "page": 12,
+   "mark": "b",
+   "context": "setW{(a, b)}(m,n)= W(m−a,n−b)sothatdimq,τW{(a, b)} = qaτ"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "Let2Cobdenotethecategoryof2D-cobordismsCob"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "crossing; then Dα= DXj.Then Kh(L)"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "i{n+ −2"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "LetA=R[X]/(X"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "4.2.2.Categoriﬁcationof"
+  },
+  {
+   "page": 15,
+   "mark": "r",
+   "context": "LetCbeachaincomplexanddenotethetermincohomologicaldegreerbyC"
+  },
+  {
+   "page": 15,
+   "mark": "r",
+   "context": "(−1)"
+  },
+  {
+   "page": 15,
+   "mark": "r",
+   "context": "(−1)rdimq,τ(C"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "Theorem4.10."
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "(τ−1q + τq−1)"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "whichmatcheswith"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "ThisshowsthatH(C(L))isacategoriﬁcationofthelinkinvariant"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "Z[X, Y, Z]/(X"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "Z[X, Y, Z]/(X2= Y"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "Deﬁnition4.12.LetA=R[X]/(X"
+  }
+ ]
+}

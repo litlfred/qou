@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.952
 latex_coverage_ratio: 0.99
+doc_brief: "Edge universality in Floquet sideband spectra — We show that, for non-interacting fermions under a monochromatic phase drive (Tien– Gordon regime), the outgoing sideband occupations at a sharp Fermi"
 ---
 Let $E\in[0,\hbar\Omega)$ denote a central energy in a Floquet Brillouin zone [@Sambe1973]. For each lead or channel $\alpha$ we introduce fermionic annihilation operators $$a_{\alpha m}(E),\qquad b_{\alpha n}(E),\qquad m,n\in\mathbb Z,$$ which remove incoming and outgoing particles at energies $$E_m = E + m\hbar\Omega,\qquad E_n = E + n\hbar\Omega.$$ They satisfy the canonical anti-commutation relations $$\{a_{\alpha m}(E),a^\dagger_{\beta m'}(E')\}
   = 2\pi\,\delta(E-E')\,\delta_{\alpha\beta}\,\delta_{mm'},

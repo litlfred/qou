@@ -1,0 +1,1 @@
+$E$ should be an additive functor with $E(X_i) = V_i$, where $V_i$ is the $k$-tuple of vector spaces having the zero vector space in every position except the $i^{th}$, which has a copy of $\mathbb{C}$.

@@ -1,0 +1,56 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "funaba-2014-j-phys-conf-ser-544-012019",
+ "source": {
+  "structure_sha256": "c95b283a122d67e4eacd7738754dacb964bf62fbfb6c7df1f0c58c77d7d3cd75",
+  "file": "Funaba_2014_J._Phys.__Conf._Ser._544_012019.pdf"
+ },
+ "provenance": {
+  "title": "Conference Series",
+  "authors": "OPEN ACCESS",
+  "arxiv": null,
+  "doi": "10.1088/1742-6596/544/1/012019"
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 2,
+  "by_kind": {
+   "recommendation": 2
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Energy of knots was introduced in (5) motivated to give a functional on the space of knots that can produce a representative con\ufb01guration of a knot for each knot type as an embedding 1 To show it, it su\ufb03ce to show that the Cli\ufb00ord torus gives the minimum energy among all the embedded tori, since the energy blows up if a torus has a double point Flux in QCS IOP Publishing Journal of Physics: Conference Series 544 (2014) 012019 doi:10.1088/1742-6596/544/1/012019 Content from this work may be used under the terms of the Creative Commons Attribution 3.0 licence.",
+   "strength": "may",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-002.md",
+   "section_title": "Page 2",
+   "pages": "2-2",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Any further distribution of this work must maintain attribution to the author(s) and the title of the work, journal citation and DOI.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-002.md",
+   "section_title": "Page 2",
+   "pages": "2-2",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

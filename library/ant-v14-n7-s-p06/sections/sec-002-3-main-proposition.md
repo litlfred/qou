@@ -8,6 +8,7 @@ pages: 11-18
 source_pdf: ant-v14-n7-s-p06.pdf
 source_sha256: 4881141ef679dd5a
 toc_source: inferred
+doc_brief: "Moments of quadratic twists of elliptic curve L-functions over function fields — 15 sections: Front matter; Introduction and statement of resu; Some useful lemmas"
 ---
 For N | 1∞, let
 SE1,E2(N, X, Y; α, β) :=
@@ -128,7 +129,6 @@ E1 ⊗χC1R,
 u
 q1/2+α
 
-L
 
 E2 ⊗χC1R,
 v
@@ -139,8 +139,6 @@ where D1(A, B, C1R; u, v, α, β) is some Euler product which is uniformly conve
 |u|, |v| ≤q−1/g, and satisﬁes
 D1(A, B, C1R; u, v, α, β) ≪τ(AB)
 uniformly in this region. Moving the u and v contours to |u| = |v| = q−1/g and using the bound
-
-L
 
 E1 ⊗χC1R,
 u

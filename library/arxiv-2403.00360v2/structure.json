@@ -7,10 +7,11 @@
   "bytes": 696313,
   "pages": 36,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,17 +22,25 @@
   },
   "doi": null,
   "title": "CAUSAL FERMION SYSTEMS AND OCTONIONS",
-  "authors_raw": "FELIX FINSTER, NIELS G. GRESNIGT, JOS \u00c9 M. ISIDRO, ANTONINO MARCIAN\u00d2",
+  "authors_raw": "FELIX FINSTER, NIELS G. GRESNIGT, JOSÉ M. ISIDRO, ANTONINO MARCIANÒ",
   "title_lines": [
    "CAUSAL FERMION SYSTEMS AND OCTONIONS"
   ],
   "abstract": "We compare the structures and methods in the theory of causal fermion systems with approaches to fundamental physics based on division algebras, in par- ticular the octonions. We find that octonions and, more generally, tensor products of division algebras come up naturally to describe the symmetries of the vacuum configuration of a causal fermion system. This is achieved by associating the real and imaginary octonion basis elements with the neutrino and charged sectors of the vacuum fermionic projector, respectively. Conversely, causal fermion systems pro- vide octonionic theories with spacetime structures and dynamical equations via the causal action principle. In this way, octonionic theories and causal fermion systems complement each other.",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20240917005851Z",
-   "Creator": "LaTeX with hyperref",
    "Producer": "pdfTeX-1.40.25",
-   "Title": ""
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20240917005851Z"
+  },
+  "title_raw": "CAUSAL FERMION SYSTEMS AND OCTONIONS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "CAUSAL FERMION SYSTEMS AND OCTONIONS Contents Introduction Division Algebras and the Standard Model Motivation Historical Overview The Normed Division Algebras The Associative Multiplication Algebras of O Connection to the Standard Model Causal Fermion Systems Causal Fermion Systems and the Reduced",
+   "outline": "1. Introduction",
+   "text": "CAUSAL FERMION SYSTEMS AND OCTONIONS",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
@@ -40,174 +49,614 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Division Algebras and the Standard Model",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Motivation",
    "page": 3,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Historical Overview",
    "page": 4,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "The Normed Division Algebras",
    "page": 6,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "The Associative Multiplication Algebras of O",
    "page": 7,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Connection to the Standard Model",
    "page": 8,
    "source": "outline",
-   "number": "2.5"
+   "number": "2.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "Causal Fermion Systems",
    "page": 10,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Causal Fermion Systems and the Reduced Causal Action Principle",
    "page": 10,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Spacetime Structures",
    "page": 11,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "Dynamical Equations in Spacetime",
    "page": 12,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Connection to the Standard Model",
    "page": 12,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Connection to Quantum Field Theory",
    "page": 15,
    "source": "outline",
-   "number": "3.5"
+   "number": "3.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Connection to Quantum Geometry and Quantum Gravity",
    "page": 16,
    "source": "outline",
-   "number": "3.6"
+   "number": "3.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 1,
    "title": "Comparison",
    "page": 16,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "Foundations of the Approaches",
    "page": 16,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "Connection to the Gauge Group of the Standard Model",
    "page": 18,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 2,
    "title": "Describing the Three Generations in the Standard Model",
    "page": 19,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 1,
    "title": "Outlook and Directions of Future Research",
    "page": 21,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 2,
    "title": "Connection with the Exceptional Lie Groups and Jordan Algebras",
    "page": 21,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 2,
    "title": "Chiral Symmetry Breaking",
    "page": 22,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 1,
    "title": "Appendix A. Description of Majorana Spinors in Causal Fermion Systems",
    "page": 30,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "30"
   },
   {
    "level": 1,
    "title": "References",
    "page": 31,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "31"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The Fano plane, encoding the multiplicative structure of our octonions, where a ≡ea, a = 1, ..., 7. Note that each line is cyclic, representing a quaternionic triple",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2033,
+   "n_words": 311,
+   "label_start": "1",
+   "label_end": "2"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 3,
-   "n_chars": 8417,
-   "n_words": 1327
+   "n_chars": 7320,
+   "n_words": 1152,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
    "id": "sec-001-2-division-algebras-and-the-standard-model",
@@ -217,7 +666,9 @@
    "page_start": 3,
    "page_end": 3,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
    "id": "sec-002-21-motivation",
@@ -226,8 +677,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 2690,
-   "n_words": 420
+   "n_chars": 2686,
+   "n_words": 416,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
    "id": "sec-003-22-historical-overview",
@@ -236,8 +689,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 6,
-   "n_chars": 4747,
-   "n_words": 746
+   "n_chars": 4742,
+   "n_words": 741,
+   "label_start": "4",
+   "label_end": "6"
   },
   {
    "id": "sec-004-23-the-normed-division-algebras",
@@ -246,8 +701,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 4276,
-   "n_words": 712
+   "n_chars": 4314,
+   "n_words": 750,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
    "id": "sec-005-24-the-associative-multiplication-algebras-of-o",
@@ -256,8 +713,10 @@
    "level": 2,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 2660,
-   "n_words": 436
+   "n_chars": 2682,
+   "n_words": 458,
+   "label_start": "7",
+   "label_end": "8"
   },
   {
    "id": "sec-006-25-connection-to-the-standard-model",
@@ -265,19 +724,23 @@
    "title": "Connection to the Standard Model",
    "level": 2,
    "page_start": 8,
-   "page_end": 9,
-   "n_chars": 832,
-   "n_words": 146
+   "page_end": 10,
+   "n_chars": 3470,
+   "n_words": 640,
+   "label_start": "8",
+   "label_end": "10"
   },
   {
    "id": "sec-007-3-causal-fermion-systems",
    "number": "3",
    "title": "Causal Fermion Systems",
    "level": 1,
-   "page_start": 9,
+   "page_start": 10,
    "page_end": 10,
-   "n_chars": 2960,
-   "n_words": 501
+   "n_chars": 391,
+   "n_words": 65,
+   "label_start": "10",
+   "label_end": "10"
   },
   {
    "id": "sec-008-31-causal-fermion-systems-and-the-reduced-causal",
@@ -286,8 +749,10 @@
    "level": 2,
    "page_start": 10,
    "page_end": 11,
-   "n_chars": 2386,
-   "n_words": 414
+   "n_chars": 2399,
+   "n_words": 428,
+   "label_start": "10",
+   "label_end": "11"
   },
   {
    "id": "sec-009-32-spacetime-structures",
@@ -296,8 +761,10 @@
    "level": 2,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 4311,
-   "n_words": 767
+   "n_chars": 4419,
+   "n_words": 804,
+   "label_start": "11",
+   "label_end": "12"
   },
   {
    "id": "sec-010-33-dynamical-equations-in-spacetime",
@@ -306,8 +773,10 @@
    "level": 2,
    "page_start": 12,
    "page_end": 12,
-   "n_chars": 1158,
-   "n_words": 192
+   "n_chars": 1159,
+   "n_words": 193,
+   "label_start": "12",
+   "label_end": "12"
   },
   {
    "id": "sec-011-34-connection-to-the-standard-model",
@@ -316,8 +785,10 @@
    "level": 2,
    "page_start": 12,
    "page_end": 15,
-   "n_chars": 9066,
-   "n_words": 1558
+   "n_chars": 9115,
+   "n_words": 1607,
+   "label_start": "12",
+   "label_end": "15"
   },
   {
    "id": "sec-012-35-connection-to-quantum-field-theory",
@@ -326,8 +797,10 @@
    "level": 2,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 1054,
-   "n_words": 177
+   "n_chars": 1053,
+   "n_words": 176,
+   "label_start": "15",
+   "label_end": "16"
   },
   {
    "id": "sec-013-36-connection-to-quantum-geometry-and-quantum-gr",
@@ -336,8 +809,10 @@
    "level": 2,
    "page_start": 16,
    "page_end": 16,
-   "n_chars": 1507,
-   "n_words": 246
+   "n_chars": 1520,
+   "n_words": 259,
+   "label_start": "16",
+   "label_end": "16"
   },
   {
    "id": "sec-014-4-comparison",
@@ -347,7 +822,9 @@
    "page_start": 16,
    "page_end": 16,
    "n_chars": 291,
-   "n_words": 44
+   "n_words": 44,
+   "label_start": "16",
+   "label_end": "16"
   },
   {
    "id": "sec-015-41-foundations-of-the-approaches",
@@ -356,8 +833,10 @@
    "level": 2,
    "page_start": 16,
    "page_end": 18,
-   "n_chars": 5757,
-   "n_words": 939
+   "n_chars": 5766,
+   "n_words": 948,
+   "label_start": "16",
+   "label_end": "18"
   },
   {
    "id": "sec-016-42-connection-to-the-gauge-group-of-the-standard",
@@ -366,8 +845,10 @@
    "level": 2,
    "page_start": 18,
    "page_end": 19,
-   "n_chars": 3876,
-   "n_words": 630
+   "n_chars": 3884,
+   "n_words": 638,
+   "label_start": "18",
+   "label_end": "19"
   },
   {
    "id": "sec-017-43-describing-the-three-generations-in-the-stand",
@@ -376,8 +857,10 @@
    "level": 2,
    "page_start": 19,
    "page_end": 21,
-   "n_chars": 6591,
-   "n_words": 1070
+   "n_chars": 6599,
+   "n_words": 1078,
+   "label_start": "19",
+   "label_end": "21"
   },
   {
    "id": "sec-018-5-outlook-and-directions-of-future-research",
@@ -387,7 +870,9 @@
    "page_start": 21,
    "page_end": 21,
    "n_chars": 79,
-   "n_words": 13
+   "n_words": 13,
+   "label_start": "21",
+   "label_end": "21"
   },
   {
    "id": "sec-019-51-connection-with-the-exceptional-lie-groups-an",
@@ -396,8 +881,10 @@
    "level": 2,
    "page_start": 21,
    "page_end": 22,
-   "n_chars": 3438,
-   "n_words": 547
+   "n_chars": 3441,
+   "n_words": 550,
+   "label_start": "21",
+   "label_end": "22"
   },
   {
    "id": "sec-020-52-chiral-symmetry-breaking",
@@ -406,8 +893,10 @@
    "level": 2,
    "page_start": 22,
    "page_end": 30,
-   "n_chars": 19665,
-   "n_words": 3338
+   "n_chars": 19807,
+   "n_words": 3480,
+   "label_start": "22",
+   "label_end": "30"
   },
   {
    "id": "sec-021-appendix-a-description-of-majorana-spinors-in-ca",
@@ -416,8 +905,10 @@
    "level": 1,
    "page_start": 30,
    "page_end": 31,
-   "n_chars": 4621,
-   "n_words": 774
+   "n_chars": 4625,
+   "n_words": 778,
+   "label_start": "30",
+   "label_end": "31"
   },
   {
    "id": "sec-022-references",
@@ -426,21 +917,47 @@
    "level": 1,
    "page_start": 31,
    "page_end": 36,
-   "n_chars": 17427,
-   "n_words": 2540
+   "n_chars": 17353,
+   "n_words": 2466,
+   "label_start": "31",
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 23,
-  "sections": 23,
-  "chars_total": 107809,
+  "toc_inferred_entries": 0,
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 1,
+    "items": [
+     "Motivation"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 24,
+  "chars_total": 109148,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "octonions.tex",
    "tex_sections": 31,
-   "overlaid": 16,
+   "overlaid": 18,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -448,10 +965,15 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.995,
-     "coverage_ratio": 0.984,
+     "prose_ratio": 0.93,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -459,7 +981,7 @@
      "id": "sec-001-2-division-algebras-and-the-standard-model",
      "title": "Division Algebras and the Standard Model",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-002-21-motivation",
@@ -473,7 +995,7 @@
      "id": "sec-003-22-historical-overview",
      "title": "Historical Overview",
      "prose_ratio": 0.951,
-     "coverage_ratio": 0.971,
+     "coverage_ratio": 0.975,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -481,7 +1003,7 @@
      "id": "sec-004-23-the-normed-division-algebras",
      "title": "The Normed Division Algebras",
      "prose_ratio": 0.925,
-     "coverage_ratio": 0.964,
+     "coverage_ratio": 0.974,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -496,29 +1018,32 @@
     {
      "id": "sec-006-25-connection-to-the-standard-model",
      "title": "Connection to the Standard Model",
-     "prose_ratio": 0.31,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.903,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-007-3-causal-fermion-systems",
      "title": "Causal Fermion Systems",
      "prose_ratio": 0.917,
-     "coverage_ratio": 0.235,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-008-31-causal-fermion-systems-and-the-reduced-causal",
      "title": "Causal Fermion Systems and the Reduced Causal Action Principle",
      "prose_ratio": 0.992,
-     "coverage_ratio": 0.983,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-009-32-spacetime-structures",
      "title": "Spacetime Structures",
-     "prose_ratio": 0.958,
-     "coverage_ratio": 0.939,
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.959,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -526,13 +1051,13 @@
      "id": "sec-010-33-dynamical-equations-in-spacetime",
      "title": "Dynamical Equations in Spacetime",
      "prose_ratio": 0.21,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-011-34-connection-to-the-standard-model",
      "title": "Connection to the Standard Model",
      "prose_ratio": 0.388,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-012-35-connection-to-quantum-field-theory",
@@ -546,7 +1071,7 @@
      "id": "sec-013-36-connection-to-quantum-geometry-and-quantum-gr",
      "title": "Connection to Quantum Geometry and Quantum Gravity",
      "prose_ratio": 0.935,
-     "coverage_ratio": 0.962,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -562,7 +1087,7 @@
      "id": "sec-015-41-foundations-of-the-approaches",
      "title": "Foundations of the Approaches",
      "prose_ratio": 0.963,
-     "coverage_ratio": 0.974,
+     "coverage_ratio": 0.98,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -570,7 +1095,7 @@
      "id": "sec-016-42-connection-to-the-gauge-group-of-the-standard",
      "title": "Connection to the Gauge Group of the Standard Model",
      "prose_ratio": 0.974,
-     "coverage_ratio": 0.995,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -578,7 +1103,7 @@
      "id": "sec-017-43-describing-the-three-generations-in-the-stand",
      "title": "Describing the Three Generations in the Standard Model",
      "prose_ratio": 0.956,
-     "coverage_ratio": 0.984,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -594,7 +1119,7 @@
      "id": "sec-019-51-connection-with-the-exceptional-lie-groups-an",
      "title": "Connection with the Exceptional Lie Groups and Jordan Algebras",
      "prose_ratio": 0.976,
-     "coverage_ratio": 0.966,
+     "coverage_ratio": 0.972,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -602,7 +1127,7 @@
      "id": "sec-020-52-chiral-symmetry-breaking",
      "title": "Chiral Symmetry Breaking",
      "prose_ratio": 0.968,
-     "coverage_ratio": 0.961,
+     "coverage_ratio": 0.976,
      "result": "overlaid",
      "converter": "pandoc"
     },

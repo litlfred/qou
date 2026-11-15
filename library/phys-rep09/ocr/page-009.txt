@@ -1,0 +1,73 @@
+S. Blanes et al. / Physics Reports 470 (2009) 151-238 159
+
+as B, = B,(0). Equivalently,
+
+°0
+
+whereas the formula
+e-1 << 1
+
+x “= (n+ 1)!
+
+n
+
+x
+
+will be also useful in the sequel. The first few nonzero Bernoulli numbers are Bp = 1, By; = — 1B= Z. Ba=— + In general
+one has Bym;1 = 0 form > 1.
+
+2. The Magnus expansion (ME)
+
+Magnus’ proposal with respect to the linear evolution equation
+
+Y(t) = A(H)YO) (30)
+with initial condition Y (0) = I, was to express the solution as the exponential of a certain function,
+Y(t) = exp 2(t). (31)
+
+This is in contrast to the representation
+
+Y(t)h=T (cx [ oc)
+0
+
+in terms of the time-ordering operator J introduced by Dyson [13].
+
+It turns out that 2(t) in (31) can be obtained explicitly in a number of ways. The crucial point is to derive a differential
+equation for the operator @ that replaces (30). Here we reproduce the result first established by Magnus as Theorem III
+in [4]:
+
+Theorem 1 (Magnus 1954). Let A(t) be a known function of t (in general, in an associative ring), and let Y(t) be an unknown
+function satisfying (30) with Y(0) = I. Then, if certain unspecified conditions of convergence are satisfied, Y(t) can be written in
+the form
+
+Y(t) = exp 2(t),
+where
+
+dQ By
+
+— = ad3 A, (32)
+dt > n!
+
+and B, are the Bernoulli numbers. Integration of (32), by iteration, leads to an infinite series for 92, the first terms of which are
+t 1 fay
+QH= [ A(ty)dt; — al [/ cava, ace) dty +--+.
+0 2 0 0
+
+2.1. A proof of Magnus’ Theorem
+
+The proof of this theorem is largely based on the derivative of the matrix exponential map, which we discuss next. Given
+a scalar function w(t) € R, the derivative of the exponential is given by d exp(w(t))/dt = w'(t) exp(w(t)). One could think
+of a similar formula for a matrix §2(t). However, this is not the case, since in general [§2, 2’] # 0. Instead, one has the
+following result.
+
+Lemma 2. The derivative of a matrix exponential can be written alternatively as
+
+d
+
+(a) a exp(2(t)) = d expe (2’(t)) exp(2(t)), (33)
+d
+
+(b) a exp(2(t)) = exp(2(t))d exp_an(2'(0)), (34)
+
+d 1
+(©) 4, exp(2(t) = | XO 2! (tet 2 dx, (35)
+0

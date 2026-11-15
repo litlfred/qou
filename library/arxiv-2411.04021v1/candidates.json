@@ -1,0 +1,91 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2411.04021v1",
+ "source": {
+  "structure_sha256": "f5b6980f08d253942633da8703e6c669c2dfcf4f7efaf1b6a643991eefd6ee7b",
+  "file": "2411.04021v1.pdf"
+ },
+ "provenance": {
+  "title": "On the Gram determinants of the Specht modules",
+  "authors": "Linda Hoyer",
+  "arxiv": {
+   "id": "2411.04021",
+   "version": "1",
+   "primary_class": "math.CO",
+   "stamp_date": "6 Nov 2024"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 4,
+  "by_kind": {
+   "recommendation": 4
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall need a criterion on the parity of f\u03bb.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-preliminaries.md",
+   "section_title": "Preliminaries",
+   "pages": "3-7",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We now define a distance function for the set of partitions, where the distance between two partitions is the minimum number of hooks that must be removed and added to transform one Young diagram into the other.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-preliminaries.md",
+   "section_title": "Preliminaries",
+   "pages": "3-7",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Moreover, for all \u00b5 \u2208M \u2032, it holds that D(\u00b5) is not an odd branch of D(\u03bb) and so by Corollary 3.17, the set (\u00b5)\u223cis odd; it follows that the whole set M \u2032 must be odd, and so Podd \u03bb is odd.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-proof-of-theorem-11.md",
+   "section_title": "Proof of Theorem 1.1",
+   "pages": "7-19",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "So if there is a partition \u00b5 such that a(2) \u00b5 is odd, then \u00b5 must necessarily be odd as well.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-proof-of-theorem-11.md",
+   "section_title": "Proof of Theorem 1.1",
+   "pages": "7-19",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

@@ -6,10 +6,12 @@
   "sha256": "209af6ae25439050acd32974f2c6eeb4d407661c14b064472346b33807ae019f",
   "bytes": 714906,
   "pages": 53,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,18 +22,26 @@
   },
   "doi": null,
   "title": "THE QUANTUM CONTENT OF THE GLUING EQUATIONS",
-  "authors_raw": "TUDOR DIMOFTE AND STA VROS GAROUF ALIDIS",
-  "abstract": "The gluing equations of a cusped hyperbolic 3-manifold M are a system of polynomial equations in the shapes of an ideal triangulation T of M that describe the complete hyperbolic structure of M and its deformations. Given a Neumann-Zagier datum (comprising the shapes together with the gluing equations in a partic ular canonical form) we de\ufb01ne a formal power series with coe\ufb03cients in the invariant trace \ufb01 eld of M that should (a) agree with the asymptotic expansion of the Kashaev invariant to all orders, and (b) contain the nonabelian Reidemeister-Ray-Singer torsion of M as its \ufb01rst subleading \u201c1-loop\u201d term. As a case study, we prove topological invariance of the 1-loop part of the constructed series and extend it into a formal power series of rational functions on th e PSL(2 , C) character variety of M . We provide a computer implementation of the \ufb01rst three terms of t he series using the standard SnapPy toolbox and check numerically the agreement of our torsion with the Reidemeister-Ray-Singer for all 59924 hyperbolic knots wit h at most 14 crossings. Finally, we explain how the de\ufb01nition of our series follows from the quan tization of 3d hyperbolic geometry, using principles of Topological Quantum Field Th eory. Our results have a straightforward extension to any 3-manifold M with torus boundary components (not necessarily hyperbolic) that admits a regular ideal triangulatio n with respect to some PSL(2, C) representation.",
-  "docinfo": {
-   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20180625120028-04'00'",
-   "Title": "",
-   "Creator": "LaTeX with hyperref package",
-   "Author": ""
-  },
+  "authors_raw": "TUDOR DIMOFTE AND STAVROS GAROUFALIDIS",
   "title_lines": [
    "THE QUANTUM CONTENT OF THE GLUING EQUATIONS"
-  ]
+  ],
+  "abstract": "The gluing equations of a cusped hyperbolic 3-manifold M are a system of polynomial equations in the shapes of an ideal triangulation T of M that describe the complete hyperbolic structure of M and its deformations. Given a Neumann-Zagier datum (comprising the shapes together with the gluing equations in a particular canonical form) we deﬁne a formal power series with coeﬃcients in the invariant trace ﬁeld of M that should (a) agree with the asymptotic expansion of the Kashaev invariant to all orders, and (b) contain the nonabelian Reidemeister-Ray-Singer torsion of M as its ﬁrst subleading “1-loop” term. As a case study, we prove topological invariance of the 1-loop part of the constructed series and extend it into a formal power series of rational functions on the PSL(2, C) character variety of M. We provide a computer implementation of the ﬁrst three terms of the series using the standard SnapPy toolbox and check numerically the agreement of our torsion with the Reidemeister-Ray-Singer for all 59924 hyperbolic knots with at most 14 crossings. Finally, we explain how the deﬁnition of our series follows from the quantization of 3d hyperbolic geometry, using principles of Topological Quantum Field Theory. Our results have a straightforward extension to any 3-manifold M with torus boundary components (not necessarily hyperbolic) that admits a regular ideal triangulation with respect to some PSL(2, C) representation.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20180625120028-04'00'"
+  },
+  "title_raw": "THE QUANTUM CONTENT OF THE GLUING EQUATIONS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "THE QUANTUM CONTENT OF THE GLUING EQUATIONS Contents Introduction The Kashaev invariant and perturbative Chern-Simons theory The Neumann-Zagier datum The 1-loop invariant Expectations The higher-loop invariants Feynman diagrams The 2-loop invariant The 3-loop invariant Generalizations",
+   "outline": "1. Introduction",
+   "text": "THE QUANTUM CONTENT OF THE GLUING EQUATIONS",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -39,366 +49,1154 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "The Kashaev invariant and perturbative Chern-Simons theory",
    "page": 2,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "The Neumann-Zagier datum",
    "page": 4,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "The 1-loop invariant",
    "page": 5,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Expectations",
    "page": 6,
    "source": "outline",
-   "number": "1.4"
+   "number": "1.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "The higher-loop invariants",
    "page": 6,
    "source": "outline",
-   "number": "1.5"
+   "number": "1.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Feynman diagrams",
    "page": 8,
    "source": "outline",
-   "number": "1.6"
+   "number": "1.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "The 2-loop invariant",
    "page": 8,
    "source": "outline",
-   "number": "1.7"
+   "number": "1.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "The 3-loop invariant",
    "page": 9,
    "source": "outline",
-   "number": "1.8"
+   "number": "1.8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Generalizations",
    "page": 10,
    "source": "outline",
-   "number": "1.9"
+   "number": "1.9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Acknowledgment",
    "page": 10,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 1,
    "title": "Mechanics of triangulations",
    "page": 10,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Ideal tetrahedra",
    "page": 11,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "The gluing matrices",
    "page": 11,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "The Neumann-Zagier matrices",
    "page": 12,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Combinatorial flattenings",
    "page": 13,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "The shape solutions to the gluing equations",
    "page": 14,
    "source": "outline",
-   "number": "2.5"
+   "number": "2.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 2,
    "title": "Example: 41",
    "page": 14,
    "source": "outline",
-   "number": "2.6"
+   "number": "2.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 1,
    "title": "Topological invariance of our torsion",
    "page": 15,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Example: 41 continued",
    "page": 16,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "Independence of a choice of quad type",
    "page": 16,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "Independence of a choice of edge",
    "page": 17,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Independence of a choice of meridian path",
    "page": 18,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 2,
    "title": "Independence of a choice of flattening",
    "page": 19,
    "source": "outline",
-   "number": "3.5"
+   "number": "3.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 2,
-   "title": "Invariance under 2\u20133 moves",
+   "title": "Invariance under 2–3 moves",
    "page": 19,
    "source": "outline",
-   "number": "3.6"
+   "number": "3.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 1,
    "title": "Torsion on the character variety",
    "page": 22,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "A review of -regular ideal triangulations",
    "page": 23,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 2,
    "title": "The Epstein-Penner cell decomposition and its triangulations",
    "page": 23,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 2,
    "title": "Neumann-Zagier datum and the geometric component",
    "page": 24,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
   },
   {
    "level": 2,
    "title": "Flattening compatible with a longitude",
    "page": 25,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 2,
    "title": "Invariance of the generalized torsion",
    "page": 26,
    "source": "outline",
-   "number": "4.5"
+   "number": "4.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 2,
    "title": "Example: 41 continued",
    "page": 27,
    "source": "outline",
-   "number": "4.6"
+   "number": "4.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
    "level": 1,
    "title": "The state integral and higher loops",
    "page": 29,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
   },
   {
    "level": 2,
    "title": "Critical points",
    "page": 30,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "30"
   },
   {
    "level": 2,
    "title": "Volume",
    "page": 32,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "32"
   },
   {
    "level": 2,
    "title": "Torsion revisited",
    "page": 33,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
   },
   {
    "level": 2,
    "title": "Feynman diagrams and higher loops",
    "page": 33,
    "source": "outline",
-   "number": "5.4"
+   "number": "5.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
   },
   {
    "level": 2,
    "title": "n-loop invariants on the character variety",
    "page": 35,
    "source": "outline",
-   "number": "5.5"
+   "number": "5.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "35"
   },
   {
    "level": 2,
    "title": "Example: 41 completed",
    "page": 37,
    "source": "outline",
-   "number": "5.6"
+   "number": "5.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "37"
   },
   {
    "level": 1,
    "title": "Appendix A. Symplectic properties of A and B",
    "page": 37,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "37"
   },
   {
    "level": 1,
    "title": "Appendix B. The shape parameters are rational functions on the character variety",
    "page": 39,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "39"
   },
   {
    "level": 1,
    "title": "Appendix C. Deriving the state integral",
    "page": 40,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "40"
   },
   {
    "level": 2,
    "title": "C.1. Symplectic gluing",
    "page": 40,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "40"
   },
   {
    "level": 2,
    "title": "C.2. Quantization",
    "page": 41,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "41"
   },
   {
    "level": 2,
    "title": "C.3. Quantum reduction",
    "page": 42,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "42"
   },
   {
    "level": 2,
    "title": "C.4. Introducing a flattening",
    "page": 44,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "44"
   },
   {
    "level": 2,
    "title": "C.5. Normalization and invariance",
    "page": 44,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "44"
   },
   {
    "level": 1,
    "title": "Appendix D. Computer implementation and computations",
    "page": 46,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "46"
   },
   {
    "level": 1,
    "title": "References",
    "page": 47,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "47"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Diagrams contributing to SM,2 with symmetry factors. The top row of diagrams have exactly two loops, while the bottom row have fewer loops and additional 1-vertices and 2-vertices",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Diagrams with three loops contributing to S3",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Diagrams with 1-vertices and 2-vertices contributing to S3",
+   "page": 10,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "An ideal tetrahedron Borrowing common terminology from the theory of normal surfaces, cf. [Bur, Kan05, KR04, Til08], we deﬁne the quadrilateral type (in short, quad type) of ∆to be the distinguished pair of opposite edges labelled by z. Clearly, there is a three-fold choice of quad type for any orie",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "The boundary of the cusp neighborhood for the ﬁgure-eight knot. A map of the boundary of the cusp neighborhood is shown in Figure 5. We have chosen",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "14"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "The fundamental move for changing a meridian path. Here, we deform through an edge EI with gluing constraint XI = Z + W + R1 + ... +",
+   "page": 18,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "18"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "The geometry of the 2–3 move: a bipyramid split into two tetra-",
+   "page": 20,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "20"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Longitude path for the ﬁgure-eight knot complement. We may consider the same triangulation as in Section 2.6. The edge and meridian equations (2.14) are deformed to (4.16)",
+   "page": 27,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "27"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "Rotating the standard branch cuts of Li2(e−Z) and Li1(e−Z) to",
+   "page": 31,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "31"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 52,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 53,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-1-introduction",
-   "number": "1",
-   "title": "Introduction",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 1600,
+   "n_words": 248,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
-   "id": "sec-001-11-the-kashaev-invariant-and-perturbative-chern",
+   "id": "sec-000-11-the-kashaev-invariant-and-perturbative-chern",
    "number": "1.1",
    "title": "The Kashaev invariant and perturbative Chern-Simons theory",
    "level": 2,
    "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2399,
+   "n_words": 364,
+   "label_start": "1",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
    "page_end": 4,
-   "n_chars": 5940,
-   "n_words": 990
+   "n_chars": 3557,
+   "n_words": 592,
+   "label_start": "2",
+   "label_end": "4"
   },
   {
    "id": "sec-002-12-the-neumann-zagier-datum",
@@ -407,8 +1205,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 2854,
-   "n_words": 538
+   "n_chars": 2865,
+   "n_words": 549,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
    "id": "sec-003-13-the-1-loop-invariant",
@@ -417,8 +1217,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 1288,
-   "n_words": 248
+   "n_chars": 1276,
+   "n_words": 236,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
    "id": "sec-004-14-expectations",
@@ -427,8 +1229,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 2256,
-   "n_words": 405
+   "n_chars": 2249,
+   "n_words": 398,
+   "label_start": "6",
+   "label_end": "6"
   },
   {
    "id": "sec-005-15-the-higher-loop-invariants",
@@ -436,19 +1240,23 @@
    "title": "The higher-loop invariants",
    "level": 2,
    "page_start": 6,
-   "page_end": 7,
-   "n_chars": 2041,
-   "n_words": 399
+   "page_end": 8,
+   "n_chars": 2463,
+   "n_words": 473,
+   "label_start": "6",
+   "label_end": "8"
   },
   {
    "id": "sec-006-16-feynman-diagrams",
    "number": "1.6",
    "title": "Feynman diagrams",
    "level": 2,
-   "page_start": 7,
+   "page_start": 8,
    "page_end": 8,
-   "n_chars": 1671,
-   "n_words": 340
+   "n_chars": 1230,
+   "n_words": 247,
+   "label_start": "8",
+   "label_end": "8"
   },
   {
    "id": "sec-007-17-the-2-loop-invariant",
@@ -457,8 +1265,10 @@
    "level": 2,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 1158,
-   "n_words": 271
+   "n_chars": 1121,
+   "n_words": 235,
+   "label_start": "8",
+   "label_end": "9"
   },
   {
    "id": "sec-008-18-the-3-loop-invariant",
@@ -467,8 +1277,10 @@
    "level": 2,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 1093,
-   "n_words": 231
+   "n_chars": 1069,
+   "n_words": 222,
+   "label_start": "9",
+   "label_end": "10"
   },
   {
    "id": "sec-009-19-generalizations",
@@ -477,8 +1289,10 @@
    "level": 2,
    "page_start": 10,
    "page_end": 10,
-   "n_chars": 1237,
-   "n_words": 203
+   "n_chars": 1234,
+   "n_words": 200,
+   "label_start": "10",
+   "label_end": "10"
   },
   {
    "id": "sec-010-acknowledgment",
@@ -487,8 +1301,10 @@
    "level": 2,
    "page_start": 10,
    "page_end": 10,
-   "n_chars": 71,
-   "n_words": 11
+   "n_chars": 70,
+   "n_words": 10,
+   "label_start": "10",
+   "label_end": "10"
   },
   {
    "id": "sec-011-2-mechanics-of-triangulations",
@@ -497,8 +1313,10 @@
    "level": 1,
    "page_start": 10,
    "page_end": 11,
-   "n_chars": 408,
-   "n_words": 64
+   "n_chars": 402,
+   "n_words": 60,
+   "label_start": "10",
+   "label_end": "11"
   },
   {
    "id": "sec-012-21-ideal-tetrahedra",
@@ -507,8 +1325,10 @@
    "level": 2,
    "page_start": 11,
    "page_end": 11,
-   "n_chars": 1466,
-   "n_words": 258
+   "n_chars": 1549,
+   "n_words": 269,
+   "label_start": "11",
+   "label_end": "11"
   },
   {
    "id": "sec-013-22-the-gluing-matrices",
@@ -517,8 +1337,10 @@
    "level": 2,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 2574,
-   "n_words": 501
+   "n_chars": 2558,
+   "n_words": 485,
+   "label_start": "11",
+   "label_end": "12"
   },
   {
    "id": "sec-014-23-the-neumann-zagier-matrices",
@@ -526,282 +1348,460 @@
    "title": "The Neumann-Zagier matrices",
    "level": 2,
    "page_start": 12,
-   "page_end": 14,
-   "n_chars": 2693,
-   "n_words": 540
+   "page_end": 13,
+   "n_chars": 1477,
+   "n_words": 306,
+   "label_start": "12",
+   "label_end": "13"
   },
   {
-   "id": "sec-015-25-the-shape-solutions-to-the-gluing-equations",
+   "id": "sec-015-24-combinatorial-flattenings",
+   "number": "2.4",
+   "title": "Combinatorial flattenings",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 1136,
+   "n_words": 226,
+   "label_start": "13",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-016-25-the-shape-solutions-to-the-gluing-equations",
    "number": "2.5",
    "title": "The shape solutions to the gluing equations",
    "level": 2,
    "page_start": 14,
-   "page_end": 15,
-   "n_chars": 2555,
-   "n_words": 598
+   "page_end": 14,
+   "n_chars": 609,
+   "n_words": 112,
+   "label_start": "14",
+   "label_end": "14"
   },
   {
-   "id": "sec-016-3-topological-invariance-of-our-torsion",
+   "id": "sec-017-26-example-41",
+   "number": "2.6",
+   "title": "Example: 41",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 1862,
+   "n_words": 478,
+   "label_start": "14",
+   "label_end": "15"
+  },
+  {
+   "id": "sec-018-3-topological-invariance-of-our-torsion",
    "number": "3",
    "title": "Topological invariance of our torsion",
    "level": 1,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 2293,
-   "n_words": 457
+   "n_chars": 1527,
+   "n_words": 282,
+   "label_start": "15",
+   "label_end": "16"
   },
   {
-   "id": "sec-017-32-independence-of-a-choice-of-quad-type",
+   "id": "sec-019-31-example-41-continued",
+   "number": "3.1",
+   "title": "Example: 41 continued",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 674,
+   "n_words": 158,
+   "label_start": "16",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-020-32-independence-of-a-choice-of-quad-type",
    "number": "3.2",
    "title": "Independence of a choice of quad type",
    "level": 2,
    "page_start": 16,
    "page_end": 17,
-   "n_chars": 2157,
-   "n_words": 495
+   "n_chars": 2186,
+   "n_words": 524,
+   "label_start": "16",
+   "label_end": "17"
   },
   {
-   "id": "sec-018-33-independence-of-a-choice-of-edge",
+   "id": "sec-021-33-independence-of-a-choice-of-edge",
    "number": "3.3",
    "title": "Independence of a choice of edge",
    "level": 2,
    "page_start": 17,
    "page_end": 18,
-   "n_chars": 1060,
-   "n_words": 246
+   "n_chars": 1050,
+   "n_words": 236,
+   "label_start": "17",
+   "label_end": "18"
   },
   {
-   "id": "sec-019-34-independence-of-a-choice-of-meridian-path",
+   "id": "sec-022-34-independence-of-a-choice-of-meridian-path",
    "number": "3.4",
    "title": "Independence of a choice of meridian path",
    "level": 2,
    "page_start": 18,
    "page_end": 19,
-   "n_chars": 3902,
-   "n_words": 806
+   "n_chars": 2627,
+   "n_words": 531,
+   "label_start": "18",
+   "label_end": "19"
   },
   {
-   "id": "sec-020-36-invariance-under-23-moves",
+   "id": "sec-023-35-independence-of-a-choice-of-flattening",
+   "number": "3.5",
+   "title": "Independence of a choice of flattening",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 1191,
+   "n_words": 268,
+   "label_start": "19",
+   "label_end": "19"
+  },
+  {
+   "id": "sec-024-36-invariance-under-23-moves",
    "number": "3.6",
-   "title": "Invariance under 2\u20133 moves",
+   "title": "Invariance under 2–3 moves",
    "level": 2,
    "page_start": 19,
    "page_end": 22,
-   "n_chars": 4903,
-   "n_words": 1158
+   "n_chars": 4871,
+   "n_words": 1136,
+   "label_start": "19",
+   "label_end": "22"
   },
   {
-   "id": "sec-021-4-torsion-on-the-character-variety",
+   "id": "sec-025-4-torsion-on-the-character-variety",
    "number": "4",
    "title": "Torsion on the character variety",
    "level": 1,
    "page_start": 22,
    "page_end": 23,
-   "n_chars": 4855,
-   "n_words": 871
+   "n_chars": 2700,
+   "n_words": 469,
+   "label_start": "22",
+   "label_end": "23"
   },
   {
-   "id": "sec-022-42-the-epstein-penner-cell-decomposition-and-its",
+   "id": "sec-026-41-a-review-of--regular-ideal-triangulations",
+   "number": "4.1",
+   "title": "A review of -regular ideal triangulations",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 2046,
+   "n_words": 370,
+   "label_start": "23",
+   "label_end": "23"
+  },
+  {
+   "id": "sec-027-42-the-epstein-penner-cell-decomposition-and-its",
    "number": "4.2",
    "title": "The Epstein-Penner cell decomposition and its triangulations",
    "level": 2,
    "page_start": 23,
    "page_end": 24,
-   "n_chars": 2353,
-   "n_words": 434
+   "n_chars": 2333,
+   "n_words": 414,
+   "label_start": "23",
+   "label_end": "24"
   },
   {
-   "id": "sec-023-43-neumann-zagier-datum-and-the-geometric-compon",
+   "id": "sec-028-43-neumann-zagier-datum-and-the-geometric-compon",
    "number": "4.3",
    "title": "Neumann-Zagier datum and the geometric component",
    "level": 2,
    "page_start": 24,
    "page_end": 25,
-   "n_chars": 2204,
-   "n_words": 395
+   "n_chars": 2205,
+   "n_words": 396,
+   "label_start": "24",
+   "label_end": "25"
   },
   {
-   "id": "sec-024-44-flattening-compatible-with-a-longitude",
+   "id": "sec-029-44-flattening-compatible-with-a-longitude",
    "number": "4.4",
    "title": "Flattening compatible with a longitude",
    "level": 2,
    "page_start": 25,
    "page_end": 26,
-   "n_chars": 2552,
-   "n_words": 513
+   "n_chars": 2531,
+   "n_words": 492,
+   "label_start": "25",
+   "label_end": "26"
   },
   {
-   "id": "sec-025-45-invariance-of-the-generalized-torsion",
+   "id": "sec-030-45-invariance-of-the-generalized-torsion",
    "number": "4.5",
    "title": "Invariance of the generalized torsion",
    "level": 2,
    "page_start": 26,
-   "page_end": 29,
-   "n_chars": 5428,
-   "n_words": 1079
+   "page_end": 27,
+   "n_chars": 2942,
+   "n_words": 590,
+   "label_start": "26",
+   "label_end": "27"
   },
   {
-   "id": "sec-026-5-the-state-integral-and-higher-loops",
+   "id": "sec-031-46-example-41-continued",
+   "number": "4.6",
+   "title": "Example: 41 continued",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 29,
+   "n_chars": 2468,
+   "n_words": 492,
+   "label_start": "27",
+   "label_end": "29"
+  },
+  {
+   "id": "sec-032-5-the-state-integral-and-higher-loops",
    "number": "5",
    "title": "The state integral and higher loops",
    "level": 1,
    "page_start": 29,
    "page_end": 30,
-   "n_chars": 3398,
-   "n_words": 604
+   "n_chars": 3377,
+   "n_words": 570,
+   "label_start": "29",
+   "label_end": "30"
   },
   {
-   "id": "sec-027-51-critical-points",
+   "id": "sec-033-51-critical-points",
    "number": "5.1",
    "title": "Critical points",
    "level": 2,
    "page_start": 30,
    "page_end": 32,
-   "n_chars": 4993,
-   "n_words": 922
+   "n_chars": 4945,
+   "n_words": 884,
+   "label_start": "30",
+   "label_end": "32"
   },
   {
-   "id": "sec-028-52-volume",
+   "id": "sec-034-52-volume",
    "number": "5.2",
    "title": "Volume",
    "level": 2,
    "page_start": 32,
    "page_end": 33,
    "n_chars": 1524,
-   "n_words": 289
+   "n_words": 291,
+   "label_start": "32",
+   "label_end": "33"
   },
   {
-   "id": "sec-029-53-torsion-revisited",
+   "id": "sec-035-53-torsion-revisited",
    "number": "5.3",
    "title": "Torsion revisited",
    "level": 2,
    "page_start": 33,
    "page_end": 33,
-   "n_chars": 1438,
-   "n_words": 308
+   "n_chars": 1512,
+   "n_words": 307,
+   "label_start": "33",
+   "label_end": "33"
   },
   {
-   "id": "sec-030-54-feynman-diagrams-and-higher-loops",
+   "id": "sec-036-54-feynman-diagrams-and-higher-loops",
    "number": "5.4",
    "title": "Feynman diagrams and higher loops",
    "level": 2,
    "page_start": 33,
    "page_end": 35,
-   "n_chars": 3568,
-   "n_words": 689
+   "n_chars": 3543,
+   "n_words": 664,
+   "label_start": "33",
+   "label_end": "35"
   },
   {
-   "id": "sec-031-55-n-loop-invariants-on-the-character-variety",
+   "id": "sec-037-55-n-loop-invariants-on-the-character-variety",
    "number": "5.5",
    "title": "n-loop invariants on the character variety",
    "level": 2,
    "page_start": 35,
    "page_end": 37,
-   "n_chars": 6306,
-   "n_words": 1204
+   "n_chars": 4619,
+   "n_words": 850,
+   "label_start": "35",
+   "label_end": "37"
   },
   {
-   "id": "sec-032-appendix-a-symplectic-properties-of-a-and-b",
+   "id": "sec-038-56-example-41-completed",
+   "number": "5.6",
+   "title": "Example: 41 completed",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 37,
+   "n_chars": 1564,
+   "n_words": 300,
+   "label_start": "37",
+   "label_end": "37"
+  },
+  {
+   "id": "sec-039-appendix-a-symplectic-properties-of-a-and-b",
    "number": null,
    "title": "Appendix A. Symplectic properties of A and B",
    "level": 1,
    "page_start": 37,
    "page_end": 39,
-   "n_chars": 2954,
-   "n_words": 602
+   "n_chars": 2945,
+   "n_words": 595,
+   "label_start": "37",
+   "label_end": "39"
   },
   {
-   "id": "sec-033-appendix-b-the-shape-parameters-are-rational-fun",
+   "id": "sec-040-appendix-b-the-shape-parameters-are-rational-fun",
    "number": null,
    "title": "Appendix B. The shape parameters are rational functions on the character variety",
    "level": 1,
    "page_start": 39,
    "page_end": 40,
-   "n_chars": 3473,
-   "n_words": 634
+   "n_chars": 3442,
+   "n_words": 578,
+   "label_start": "39",
+   "label_end": "40"
   },
   {
-   "id": "sec-034-appendix-c-deriving-the-state-integral",
+   "id": "sec-041-appendix-c-deriving-the-state-integral",
    "number": null,
    "title": "Appendix C. Deriving the state integral",
    "level": 1,
    "page_start": 40,
    "page_end": 40,
-   "n_chars": 462,
-   "n_words": 80
+   "n_chars": 455,
+   "n_words": 73,
+   "label_start": "40",
+   "label_end": "40"
   },
   {
-   "id": "sec-035-c1-symplectic-gluing",
+   "id": "sec-042-c1-symplectic-gluing",
    "number": null,
    "title": "C.1. Symplectic gluing",
    "level": 2,
    "page_start": 40,
    "page_end": 41,
-   "n_chars": 1782,
-   "n_words": 344
+   "n_chars": 1767,
+   "n_words": 329,
+   "label_start": "40",
+   "label_end": "41"
   },
   {
-   "id": "sec-036-c2-quantization",
+   "id": "sec-043-c2-quantization",
    "number": null,
    "title": "C.2. Quantization",
    "level": 2,
    "page_start": 41,
    "page_end": 42,
-   "n_chars": 3442,
-   "n_words": 698
+   "n_chars": 3409,
+   "n_words": 665,
+   "label_start": "41",
+   "label_end": "42"
   },
   {
-   "id": "sec-037-c3-quantum-reduction",
+   "id": "sec-044-c3-quantum-reduction",
    "number": null,
    "title": "C.3. Quantum reduction",
    "level": 2,
    "page_start": 42,
    "page_end": 44,
-   "n_chars": 4481,
-   "n_words": 952
+   "n_chars": 3202,
+   "n_words": 651,
+   "label_start": "42",
+   "label_end": "44"
   },
   {
-   "id": "sec-038-c5-normalization-and-invariance",
+   "id": "sec-045-c4-introducing-a-flattening",
+   "number": null,
+   "title": "C.4. Introducing a flattening",
+   "level": 2,
+   "page_start": 44,
+   "page_end": 44,
+   "n_chars": 1168,
+   "n_words": 265,
+   "label_start": "44",
+   "label_end": "44"
+  },
+  {
+   "id": "sec-046-c5-normalization-and-invariance",
    "number": null,
    "title": "C.5. Normalization and invariance",
    "level": 2,
    "page_start": 44,
    "page_end": 46,
-   "n_chars": 3244,
-   "n_words": 632
+   "n_chars": 3193,
+   "n_words": 582,
+   "label_start": "44",
+   "label_end": "46"
   },
   {
-   "id": "sec-039-appendix-d-computer-implementation-and-computati",
+   "id": "sec-047-appendix-d-computer-implementation-and-computati",
    "number": null,
    "title": "Appendix D. Computer implementation and computations",
    "level": 1,
    "page_start": 46,
    "page_end": 47,
-   "n_chars": 3675,
-   "n_words": 578
+   "n_chars": 3687,
+   "n_words": 590,
+   "label_start": "46",
+   "label_end": "47"
   },
   {
-   "id": "sec-040-references",
+   "id": "sec-048-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 47,
    "page_end": 53,
-   "n_chars": 11288,
-   "n_words": 1743
+   "n_chars": 11160,
+   "n_words": 1635,
+   "label_start": "47",
+   "label_end": null
   }
  ],
  "diagnostics": {
-  "pages_without_text": 0,
+  "pages_without_text": 1,
   "likely_scanned": false,
   "toc_entries": 49,
-  "sections": 41,
-  "chars_total": 117040,
+  "toc_inferred_entries": 0,
+  "figure_entries": 9,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 2,
+    "items": [
+     "A review of ρ-regular ideal triangulations",
+     "Volume"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 2,
+    "items": [
+     "Introduction: listed p2, found p33",
+     "Example: 41 continued: listed p27, found p16"
+    ]
+   }
+  },
+  "sections": 50,
+  "chars_total": 117589,
+  "furniture_lines_stripped": 8,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "torsion.tex",
    "tex_sections": 39,
-   "overlaid": 27,
+   "overlaid": 30,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -809,24 +1809,28 @@
    },
    "sections": [
     {
-     "id": "sec-000-1-introduction",
-     "title": "Introduction",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
     },
     {
-     "id": "sec-001-11-the-kashaev-invariant-and-perturbative-chern",
+     "id": "sec-000-11-the-kashaev-invariant-and-perturbative-chern",
      "title": "The Kashaev invariant and perturbative Chern-Simons theory",
-     "prose_ratio": 0.945,
-     "coverage_ratio": 0.661,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.233,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.0,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-002-12-the-neumann-zagier-datum",
      "title": "The Neumann-Zagier datum",
      "prose_ratio": 0.943,
-     "coverage_ratio": 0.96,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -834,7 +1838,7 @@
      "id": "sec-003-13-the-1-loop-invariant",
      "title": "The 1-loop invariant",
      "prose_ratio": 0.915,
-     "coverage_ratio": 0.915,
+     "coverage_ratio": 0.929,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -842,41 +1846,41 @@
      "id": "sec-004-14-expectations",
      "title": "Expectations",
      "prose_ratio": 0.951,
-     "coverage_ratio": 0.986,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-005-15-the-higher-loop-invariants",
      "title": "The higher-loop invariants",
-     "prose_ratio": 0.778,
-     "coverage_ratio": 0.908,
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.944,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-006-16-feynman-diagrams",
      "title": "Feynman diagrams",
-     "prose_ratio": 0.47,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.433,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-007-17-the-2-loop-invariant",
      "title": "The 2-loop invariant",
      "prose_ratio": 0.141,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-008-18-the-3-loop-invariant",
      "title": "The 3-loop invariant",
      "prose_ratio": 0.296,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-009-19-generalizations",
      "title": "Generalizations",
      "prose_ratio": 0.905,
-     "coverage_ratio": 0.99,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -884,7 +1888,7 @@
      "id": "sec-010-acknowledgment",
      "title": "Acknowledgment",
      "prose_ratio": 0.429,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-011-2-mechanics-of-triangulations",
@@ -897,8 +1901,8 @@
     {
      "id": "sec-012-21-ideal-tetrahedra",
      "title": "Ideal tetrahedra",
-     "prose_ratio": 0.911,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.931,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -906,196 +1910,250 @@
      "id": "sec-013-22-the-gluing-matrices",
      "title": "The gluing matrices",
      "prose_ratio": 0.964,
-     "coverage_ratio": 0.95,
+     "coverage_ratio": 0.964,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-014-23-the-neumann-zagier-matrices",
      "title": "The Neumann-Zagier matrices",
-     "prose_ratio": 0.898,
-     "coverage_ratio": 0.926,
+     "prose_ratio": 0.897,
+     "coverage_ratio": 0.939,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-015-25-the-shape-solutions-to-the-gluing-equations",
+     "id": "sec-015-24-combinatorial-flattenings",
+     "title": "Combinatorial flattenings",
+     "prose_ratio": 0.839,
+     "coverage_ratio": 0.915,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-25-the-shape-solutions-to-the-gluing-equations",
      "title": "The shape solutions to the gluing equations",
-     "prose_ratio": 0.919,
-     "coverage_ratio": 0.97,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.342,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-016-3-topological-invariance-of-our-torsion",
+     "id": "sec-017-26-example-41",
+     "title": "Example: 41",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-3-topological-invariance-of-our-torsion",
      "title": "Topological invariance of our torsion",
-     "prose_ratio": 0.975,
-     "coverage_ratio": 0.959,
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.957,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-017-32-independence-of-a-choice-of-quad-type",
+     "id": "sec-019-31-example-41-continued",
+     "title": "Example: 41 continued",
+     "prose_ratio": 0.85,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-020-32-independence-of-a-choice-of-quad-type",
      "title": "Independence of a choice of quad type",
-     "prose_ratio": 0.945,
-     "coverage_ratio": 0.932,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-018-33-independence-of-a-choice-of-edge",
-     "title": "Independence of a choice of edge",
-     "prose_ratio": 0.947,
-     "coverage_ratio": 0.918,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-019-34-independence-of-a-choice-of-meridian-path",
-     "title": "Independence of a choice of meridian path",
-     "prose_ratio": 0.946,
-     "coverage_ratio": 0.982,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-020-36-invariance-under-23-moves",
-     "title": "Invariance under 2\u20133 moves",
-     "prose_ratio": 0.968,
-     "coverage_ratio": 0.94,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-021-4-torsion-on-the-character-variety",
-     "title": "Torsion on the character variety",
-     "prose_ratio": 0.915,
-     "coverage_ratio": 0.967,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-022-42-the-epstein-penner-cell-decomposition-and-its",
-     "title": "The Epstein-Penner cell decomposition and its triangulations",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.85,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-023-43-neumann-zagier-datum-and-the-geometric-compon",
-     "title": "Neumann-Zagier datum and the geometric component",
      "prose_ratio": 0.945,
      "coverage_ratio": 0.946,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-024-44-flattening-compatible-with-a-longitude",
+     "id": "sec-021-33-independence-of-a-choice-of-edge",
+     "title": "Independence of a choice of edge",
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.931,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-022-34-independence-of-a-choice-of-meridian-path",
+     "title": "Independence of a choice of meridian path",
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-023-35-independence-of-a-choice-of-flattening",
+     "title": "Independence of a choice of flattening",
+     "prose_ratio": 0.895,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-024-36-invariance-under-23-moves",
+     "title": "Invariance under 2–3 moves",
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-025-4-torsion-on-the-character-variety",
+     "title": "Torsion on the character variety",
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-026-41-a-review-of--regular-ideal-triangulations",
+     "title": "A review of -regular ideal triangulations",
+     "prose_ratio": 0.851,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-027-42-the-epstein-penner-cell-decomposition-and-its",
+     "title": "The Epstein-Penner cell decomposition and its triangulations",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.848,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-028-43-neumann-zagier-datum-and-the-geometric-compon",
+     "title": "Neumann-Zagier datum and the geometric component",
+     "prose_ratio": 0.945,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-029-44-flattening-compatible-with-a-longitude",
      "title": "Flattening compatible with a longitude",
      "prose_ratio": 0.892,
-     "coverage_ratio": 0.955,
+     "coverage_ratio": 0.963,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-025-45-invariance-of-the-generalized-torsion",
+     "id": "sec-030-45-invariance-of-the-generalized-torsion",
      "title": "Invariance of the generalized torsion",
-     "prose_ratio": 0.926,
-     "coverage_ratio": 0.955,
+     "prose_ratio": 0.644,
+     "coverage_ratio": 0.976,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-026-5-the-state-integral-and-higher-loops",
+     "id": "sec-031-46-example-41-continued",
+     "title": "Example: 41 continued",
+     "prose_ratio": 0.425,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-032-5-the-state-integral-and-higher-loops",
      "title": "The state integral and higher loops",
      "prose_ratio": 0.714,
-     "coverage_ratio": 0.959,
+     "coverage_ratio": 0.973,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-027-51-critical-points",
+     "id": "sec-033-51-critical-points",
      "title": "Critical points",
      "prose_ratio": 0.907,
-     "coverage_ratio": 0.585,
+     "coverage_ratio": 0.582,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-028-52-volume",
+     "id": "sec-034-52-volume",
      "title": "Volume",
      "prose_ratio": 0.873,
-     "coverage_ratio": 0.791,
+     "coverage_ratio": 0.8,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-029-53-torsion-revisited",
+     "id": "sec-035-53-torsion-revisited",
      "title": "Torsion revisited",
-     "prose_ratio": 0.922,
+     "prose_ratio": 0.969,
      "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-030-54-feynman-diagrams-and-higher-loops",
+     "id": "sec-036-54-feynman-diagrams-and-higher-loops",
      "title": "Feynman diagrams and higher loops",
      "prose_ratio": 0.941,
-     "coverage_ratio": 0.948,
+     "coverage_ratio": 0.964,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-031-55-n-loop-invariants-on-the-character-variety",
+     "id": "sec-037-55-n-loop-invariants-on-the-character-variety",
      "title": "n-loop invariants on the character variety",
      "prose_ratio": 0.946,
-     "coverage_ratio": 0.955,
+     "coverage_ratio": 0.956,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-032-appendix-a-symplectic-properties-of-a-and-b",
+     "id": "sec-038-56-example-41-completed",
+     "title": "Example: 41 completed",
+     "prose_ratio": 0.927,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-039-appendix-a-symplectic-properties-of-a-and-b",
      "title": "Appendix A. Symplectic properties of A and B",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-033-appendix-b-the-shape-parameters-are-rational-fun",
+     "id": "sec-040-appendix-b-the-shape-parameters-are-rational-fun",
      "title": "Appendix B. The shape parameters are rational functions on the character variety",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-034-appendix-c-deriving-the-state-integral",
+     "id": "sec-041-appendix-c-deriving-the-state-integral",
      "title": "Appendix C. Deriving the state integral",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-035-c1-symplectic-gluing",
+     "id": "sec-042-c1-symplectic-gluing",
      "title": "C.1. Symplectic gluing",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-036-c2-quantization",
+     "id": "sec-043-c2-quantization",
      "title": "C.2. Quantization",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-037-c3-quantum-reduction",
+     "id": "sec-044-c3-quantum-reduction",
      "title": "C.3. Quantum reduction",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-038-c5-normalization-and-invariance",
+     "id": "sec-045-c4-introducing-a-flattening",
+     "title": "C.4. Introducing a flattening",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-046-c5-normalization-and-invariance",
      "title": "C.5. Normalization and invariance",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-039-appendix-d-computer-implementation-and-computati",
+     "id": "sec-047-appendix-d-computer-implementation-and-computati",
      "title": "Appendix D. Computer implementation and computations",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-040-references",
+     "id": "sec-048-references",
      "title": "References",
      "result": "no matching \\section"
     }

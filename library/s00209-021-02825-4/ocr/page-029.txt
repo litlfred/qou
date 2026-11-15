@@ -1,0 +1,59 @@
+A representation theoretic explanation... 1387
+
+7.3 Deriving the real Borcea-Brandén characterization
+
+As in the complex case, we now obtain the Borcea—Brandén weak real stability character-
+ization as a corollary to our strong real stability characterization given in Theorem 7.2. To
+this end, we start by giving a sort of real stability version of Lemma 6.11. The proof of this
+lemma is similar in spirit to that of the strong real stability characterization given above.
+
+Lemma 7.3 Fix A,a@ € Nj and a linear operator T € Hom(V(A), V(a)) such that T
+restricts to a real linear operator from Vz(A) to Vg(a). The following are equivalent.
+
+(i) T preserves weak real stability.
+(ii) One of the following holds:
+
+(a) T maps H,” -stable polynomials to nonzero H'-stable polynomials.
+(b) T maps H," -stable polynomials to nonzero H -stable polynomials.
+(c) T has image of dimension at most two, and is of the form
+
+T:prrqg-Wilp) +r: yop)
+
+where q,r € Viz(@) are weakly real stable such that q « r, and Wy, W2 are real
+linear functionals.
+
+Proof (i) => (ii). By the complex characterization (Theorem 6.2), we only need to consider
+evaluation symbols when demonstrating (a) or (b). For any (zo : wo) € H”, Lemma 4.10
+then implies T[(wox — zoy)*] is either H't-stable, HH" -stable, or identically zero. We now
+show that (c) holds if (a) and (b) do not.
+
+Tf neither (a) nor (b) holds for evaluation symbols, then there exist (zo : wo), (zo : wo) €
+H™ such that T[(wox — zoy)*] is H'i-stable or zero and T[(wox — zy] is H’-stable or
+zero. As in the proof of the strong real stability characterization (Theorem 7.2), a homotopy
+argument implies there exists (zj : wy) € H™ such that T[(wgx — gy") is (HU H")-
+stable or zero. Lemma 4.11 then implies T[co(wox _ yyy") is real stable or zero, for some
+complex scalar co # 0.
+
+For the sake of simplicity, we denote go(x, y) = qo(X1, YI. +-+sXms Ym) (= co(wox _
+ziy)*. Since the set of Hj.”"-stable polynomials is open in V(A), let B(O) be some open
+ball centered at 0 such that go + iB(0) consists of nonzero 7,""-stable polynomials. So,
+for any ro € B(O), Lemma 4.10 implies T (qo) + iT (ro) is either #1"'-stable, 1”-stable, or
+zero. Hermite-Biehler then implies T (ro) is real stable or zero whenever rp € B(O)N Vig(A).
+Therefore, T[ Vig (A)] consists of real stable polynomials, and (c) follows from Lemma 4.12.
+
+(ii) = (i). If (c) holds, then (i) follows from Hermite-Biehler. Otherwise, suppose WLOG
+that (a) holds. We can then use an argument similar in spirit to that of Lemma 6.11 to show
+that T maps 11"-stable polynomials to weakly 111!-stable polynomials. Since T restricts to
+a real operator, this implies (i). Oo
+
+As in Lemma 6.11, we use the previous lemma to link the characterizations of weak and
+strong stability preserving operators as follows. Applying the necessary maps to convert
+Symb(T) to Symb; g(T) below gives essentially the characterization of weak real stability
+preserving operators given in Theorem 1.2.
+
+Corollary 7.4 Fix 4, € Ng and a linear operator T € Hom(V(A), V(a)) such that T
+restricts to a real linear operator from Vz(A) to Vg(a). The following are equivalent.
+
+(i) T preserves weak real stability.
+
+D Springer

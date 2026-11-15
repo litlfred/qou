@@ -1,0 +1,51 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-043
+section_title: "Page 43"
+section_number: null
+pages: 43-43
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+Problems on invariants of knots and 3-manifolds 415
+
+The surgery on is defined to be the surgery along
+
+Figure 11: Definition of the surgery on a Y graph. Dotted lines imply strands possibly
+knotting and linking. Three circles (partially dotted) in the left picture are called
+leaves.
+
+(Y. Ohyama) In the case all arcs in a A move are contained in the same
+component, it is called a self A move. If two links can be transformed into
+each other by a finite sequence of self A moves, they are said to be A link
+homotopic.
+
+Problem 2.19 (Y. Ohyama) Find necessary and sufficient conditions for two
+js-component links (> 2) to be A link homotopic.
+
+Remark (Y. Ohyama) For a p-component link K = K,UK2U...U Ky, let
+6, = ay-1(K) and 63 = ay41(K) — ay,-1(K) x (OL, a2(K;) for the coefficient
+a;(K) of the term z’ in the Conway polynomial of K.
+
+It is known [278, 298] that two knots (or links) can be transformed into each
+other by a finite sequence of A moves if and only if they have the same number
+of components, and, for properly chosen orders and orientations, they have the
+same linking numbers between the corresponding components. In particular, if
+two links are A link homotopic, then their 6, coincide. Further, it is known
+[306] that if two ys component links are A link homotopic, then their 62 coincide.
+These are necessary conditions of this problem.
+
+Moreover, for 2-component links, a pair of 6, and 6d is a faithful invariant of A
+link homotopy. Namely, for two 2-component links, they are A link homotopic
+if and only if their 6; and 6» coincide [307]. This gives a required condition of
+this problem for 2-components links.
+
+2.9 Loop finite type invariants
+
+The loop-degree of a Jacobi diagram on S! is defined to be half of the number
+given by the number of trivalent vertices minus the number of univalent vertices
+
+Geometry & Topology Monographs, Volume 4 (2002)

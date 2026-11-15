@@ -1,0 +1,46 @@
+Section 2.1 Ribbon Fusion Categories
+
+identity. Another theorem of Mac Lane shows that every monoidal category is monoidal
+equivalent to a strict monoidal category. The concept of ‘monoidal equivalence ’ is defined
+below.
+
+Let C,,C2 be two monoidal categories, and we use the same symbols {®, 1, a,/,7} for
+C1,C2. A monoidal functor from C; to C, is a triple (F,®,w), where F : C; —> Cy is
+a functor, ® is a natural isomorphism F'o (- @ -) —> F(-) x F(-), ie., ® is a family of
+isomorphisms {®4 2 : F(A @ B) —> F(A) ® F(B) | A, B € C°}, and w : F(1) => 1 is
+
+an isomorphism such that the following diagrams hold:
+
+Oa, ,A, 21
+
+6
+F((A; ® Az) ® As) BOONE (Ay ®@ Ag) @ F(A3) > (F(A1) ® F(A2)) ® F(A3)
+F(a@A,,A9,A3 | [orcn.eaa.ea
+
+F(A, ® (Az ® A3)), —> F(A1) @ F(A2 ® A3), ——> F(A)) ® (F(A2) ® F(A3))
+
+PA, ,Ag@Ag I1@@Ay,A3
+(2.3)
+
+F(1@ A) 4 F(1) @ F(A) “25 1 F(A)
+Fla) [ten (2.4)
+F(A) F(A)
+
+I
+
+F(A@1) ~**s F(A) @ F(1) 22%5 F(A) @1
+Fra) | [re (2.5)
+F(A)
+
+T
+Roughly speaking, a monoidal functor is a functor which preserves the monoidal
+
+structure.
+
+Definition 2.1.2 Two monoidal categories C,,C2 are monoidal equivalent if there there
+are monoidal functors F :C; —> Cy, G:C. —+ Ci, such that FoG is equivalent to Ide,
+
+and G'o F is equivalent to Ide,.
+
+Theorem 2.1.3 Every monoidal category C is monoidal equivalent to a strict monoidal
+10

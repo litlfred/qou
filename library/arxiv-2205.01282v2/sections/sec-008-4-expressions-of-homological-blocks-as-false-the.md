@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2205.01282v2
-doc_title: "Witten-Reshetikhin-Turaev invariants and homological blocks for plumbed homology spheres"
+doc_title: "WITTEN–RESHETIKHIN–TURAEV INVARIANTS AND HOMOLOGICAL BLOCKS FOR PLUMBED HOMOLOGY SPHERES"
 section_id: sec-008-4-expressions-of-homological-blocks-as-false-the
 section_title: "Expressions of homological blocks as false theta functions"
 section_number: 4
 pages: 9-11
 source_pdf: 2205.01282v2.pdf
 source_sha256: 00f656afa60db838
-doc_brief: "Witten-Reshetikhin-Turaev invariants and homological blocks for plumbed homology spheres — In this paper, we prove a conjecture by Gukov–Pei–Putrov–Vafa for a wide class of plumbed 3-manifolds."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.949
-latex_coverage_ratio: 0.977
+latex_prose_ratio: 0.898
+latex_coverage_ratio: 0.946
+doc_brief: "WITTEN–RESHETIKHIN–TURAEV INVARIANTS AND HOMOLOGICAL BLOCKS FOR PLUMBED HOMOLOGY SPHERES — In this paper, we prove a conjecture by Gukov–Pei–Putrov–Vafa for a wide class of plumbed 3-manifolds."
 ---
 []{#sec:HB_false label="sec:HB_false"}
 

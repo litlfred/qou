@@ -7,10 +7,11 @@ section_number: 1
 pages: 1-4
 source_pdf: 0805.1447v2.pdf
 source_sha256: b7ee20b0a7f5f3da
-doc_brief: "Braid ordering and the geometry of closed braid — The relationships between braid ordering and the ge- ometry of its closure is studied."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.996
-latex_coverage_ratio: 0.96
+latex_prose_ratio: 0.983
+latex_coverage_ratio: 0.964
+doc_brief: "Braid ordering and the geometry of closed braid — The relationships between braid ordering and the ge- ometry of its closure is studied."
 ---
 In this paper we study an application of left-invariant total ordering of braid group $B_{n}$ to knot theory. An left-invariant total ordering, called Dehornoy ordering is an interesting structure of braid groups found in 1990's by Dehornoy ([@d]). Today the ordering is interpreted in both algebraic and geometric way and these interpretation shows the Dehornoy ordering is a quite natural structure of braid groups.
 

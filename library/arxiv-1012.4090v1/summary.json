@@ -3,12 +3,17 @@
  "doc_id": "arxiv-1012.4090v1",
  "source_sha256": "02fe4a5eb36ff0ed",
  "brief": "Generalized Skyrme Crystals — This letter deals with triply-periodic (crystalline) solutions in a family of Skyrme systems, namely where the ﬁeld takes values in the squashed 3-sphere.",
- "extended": "**Generalized Skyrme Crystals**\n\n*J. Silva Lobo a,∗, R. S. Ward a*\n\n5 pp, 3 sections.\n\n**Abstract.** This letter deals with triply-periodic (crystalline) solutions in a family of Skyrme systems, namely where the ﬁeld takes values in the squashed 3-sphere. The family includes the standard Skyrme model (round 3-sphere), and the Skyrme- Faddeev case (maximal squashing). In the round case, the lowest-energy crystal is the well-known cubic lattice of half-skyrmions; but in the squashed case the minimal-energy crystal structures turn out to be diﬀerent. We describe some of the solutions that arise, including arrays of vortices and multi-sheeted structures.\n\n**Outline.** 1 Introduction; 2 The Generalized Skyrme System; 4 Conclusions",
+ "extended": "**Generalized Skyrme Crystals**\n\n*J. Silva Loboa,∗, R. S. Warda*\n\n5 pp, 5 sections.\n\n**Abstract.** This letter deals with triply-periodic (crystalline) solutions in a family of Skyrme systems, namely where the ﬁeld takes values in the squashed 3-sphere. The family includes the standard Skyrme model (round 3-sphere), and the Skyrme- Faddeev case (maximal squashing). In the round case, the lowest-energy crystal is the well-known cubic lattice of half-skyrmions; but in the squashed case the minimal-energy crystal structures turn out to be diﬀerent. We describe some of the solutions that arise, including arrays of vortices and multi-sheeted structures.\n\n**Outline.** Front matter; 1 Introduction; 2 The Generalized Skyrme System; 3 Crystals in the Generalized Skyrme Family; 4 Conclusions",
  "tokens": {
   "brief": 46,
-  "extended": 183
+  "extended": 198
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -17,10 +22,15 @@
   {
    "id": "sec-001-2-the-generalized-skyrme-system",
    "title": "The Generalized Skyrme System",
-   "pages": "1-5"
+   "pages": "1-2"
   },
   {
-   "id": "sec-002-4-conclusions",
+   "id": "sec-002-3-crystals-in-the-generalized-skyrme-family",
+   "title": "Crystals in the Generalized Skyrme Family",
+   "pages": "2-5"
+  },
+  {
+   "id": "sec-003-4-conclusions",
    "title": "Conclusions",
    "pages": "5-5"
   }

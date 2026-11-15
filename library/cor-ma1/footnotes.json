@@ -1,0 +1,2227 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "cor-ma1",
+ "status": "determined",
+ "pages_unread": [
+  24
+ ],
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p018-1",
+   "page": 18,
+   "mark": "2",
+   "text": "+···n2",
+   "marks": [
+    {
+     "page": 18,
+     "context": "2)+n"
+    },
+    {
+     "page": 18,
+     "context": "2+···+n"
+    }
+   ],
+   "block": "library/cor-ma1/blocks/prose-page-018"
+  },
+  {
+   "id": "fn-p019-1",
+   "page": 19,
+   "mark": "2",
+   "text": "+···+n2",
+   "marks": [
+    {
+     "page": 19,
+     "context": "2)+n"
+    },
+    {
+     "page": 19,
+     "context": "2+···+n"
+    },
+    {
+     "page": 19,
+     "context": "q(k+1)n"
+    },
+    {
+     "page": 19,
+     "context": "q(k+1)n"
+    },
+    {
+     "page": 19,
+     "context": "q(k+1)n"
+    },
+    {
+     "page": 19,
+     "context": "q(k+1)n"
+    }
+   ],
+   "block": "library/cor-ma1/blocks/prose-page-019"
+  },
+  {
+   "id": "fn-p019-3",
+   "page": 19,
+   "mark": "1",
+   "text": "+n2",
+   "marks": [
+    {
+     "page": 18,
+     "context": "k−1+ni+···+nk−1(−1/a)n1an"
+    },
+    {
+     "page": 19,
+     "context": "k+ni+1+···+nk(−1/a)n1an"
+    }
+   ],
+   "block": "library/cor-ma1/blocks/prose-page-019"
+  },
+  {
+   "id": "fn-p019-5",
+   "page": 19,
+   "mark": "k",
+   "text": "−1+ni+···+nk−1",
+   "marks": [
+    {
+     "page": 18,
+     "context": "k−1+ni+···+n"
+    },
+    {
+     "page": 19,
+     "context": "k+ni+1+···+n"
+    }
+   ],
+   "block": "library/cor-ma1/blocks/prose-page-019"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p019-2",
+   "page": 19,
+   "mark": "2",
+   "text": "+···+n2",
+   "block": "library/cor-ma1/blocks/prose-page-019"
+  },
+  {
+   "id": "fn-p019-4",
+   "page": 19,
+   "mark": "2",
+   "text": "+···+n2",
+   "block": "library/cor-ma1/blocks/prose-page-019"
+  },
+  {
+   "id": "fn-p020-1",
+   "page": 20,
+   "mark": "1",
+   "text": "1 1 1",
+   "block": "library/cor-ma1/blocks/prose-page-020"
+  },
+  {
+   "id": "fn-p026-1",
+   "page": 26,
+   "mark": "105",
+   "text": "(2004), 63–77. LRI, CNRS et Universit´e Paris-Sud, Bˆat 490, F-91405 Orsay France E-mail address: corteel@lri.fr LIAFA, Universit´e Denis Diderot et CNRS, 2 place Jussieu, Case 7014, F-75251 Paris Cedex 05 E-mail address: mallet@liafa.jussieu.fr",
+   "block": "library/cor-ma1/blocks/prose-page-026"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "Ek,i(n, j)q"
+  },
+  {
+   "page": 3,
+   "mark": "j",
+   "context": "Ek,i(n, j)qna"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "(−1)na"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "(−1)nanqkn"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "(−1)nanqkn2+(k−i+1)"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "(−1)nanqkn2+(k−i+1)n (−1/a)"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "(1 −aq"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "(a)∞/(aq"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "z"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "(q"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "(qi, q"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "(qi, q2"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "(qi, q2k+1−i, q"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "(qi, q2k+1−i, q2"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "(qi, q2k+1−i, q2k+1; q"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "(qi, q2k+1−i, q2k+1; q2"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "(q"
+  },
+  {
+   "page": 4,
+   "mark": "4",
+   "context": "(q2; q"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "(q2; q4)∞(q"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "(q2; q4)∞(q2"
+  },
+  {
+   "page": 4,
+   "mark": "4",
+   "context": "(q2; q4)∞(q2i−1, q"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "(q2; q4)∞(q2i−1, q4"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "(q2; q4)∞(q2i−1, q4k+1−2"
+  },
+  {
+   "page": 4,
+   "mark": "4",
+   "context": "(q2; q4)∞(q2i−1, q4k+1−2i, q"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "(q2; q4)∞(q2i−1, q4k+1−2i, q4"
+  },
+  {
+   "page": 4,
+   "mark": "4",
+   "context": "(q2; q4)∞(q2i−1, q4k+1−2i, q4k; q"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "(q2; q4)∞(q2i−1, q4k+1−2i, q4k; q4"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "Ek,i(1/q, q"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "(−1)"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "(−1)j(q"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "(−1)j(qi+j, q"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "(−1)j(qi+j, q2"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "(−1)j(qi+j, q2k−i−j, q"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "(−1)j(qi+j, q2k−i−j, q2"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "(−1)j(qi+j, q2k−i−j, q2k; q"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "(−1)j(qi+j, q2k−i−j, q2k; q2"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "((q"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "((qi, q"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "((qi, q2"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "((qi, q2k−i, q"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "((qi, q2k−i, q2"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "((qi, q2k−i, q2k; q"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "((qi, q2k−i, q2k; q2"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "+(q"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "+(qi−1, q"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "+(qi−1, q2"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "+(qi−1, q2k+1−i, q"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "+(qi−1, q2k+1−i, q2"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "+(qi−1, q2k+1−i, q2k; q"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "+(qi−1, q2k+1−i, q2k; q2"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "\u0012a"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "tivepartswheretheﬁrstoccurrenceofapartcanbeoverlinedandN+P(a"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "artswheretheﬁrstoccurrenceofapartcanbeoverlinedandN+P(ai + b"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "\u0012a"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "2)+ni+...+nk−1(−1/a)"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "2)+ni+...+nk−1(−1/a)n1"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "2)+ni+...+nk−1(−1/a)n1a"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "2)+ni+...+nk−1(−1/a)n1an"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "(q)"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "\u0014n"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "\u0014n"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "\u0014n"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "qn"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "qn"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "qn"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "Ek,i(n, j, N)a"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Ek,i(n, j, N)ajq"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "(−1)n"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "(−1)n qkn"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "(−1)n"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "(−1)n qkn"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "(−1)n"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "(−1)n qkn"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "(−1)n"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "(−1)n qkn"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "(−1)n"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "(−1)n qkn"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "(−1)n"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "(−1)n qkn"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "(−1)n"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "(−1)n qkn"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "2)(−1/a)N(−1)N"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "2)(−1/a)N(−1)N qkN"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "(−1)n"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "(−1)n qkn"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "(−1)n"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "(−1)nqkn"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "(−1)n"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "(−1)n qkn"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "(−1)n"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "(−1)n qkn"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "2)(−1/a)N(−1)−N"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "2)(−1/a)N(−1)−N qkN"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "(−1)n"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "(−1)n qkn"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "qkn"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "(−1)−p"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "(−1)−p q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "(−1)−p qk(−p)"
+  },
+  {
+   "page": 10,
+   "mark": "p",
+   "context": "(−1)"
+  },
+  {
+   "page": 10,
+   "mark": "q",
+   "context": "(−1)p"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(−1)p qkp"
+  },
+  {
+   "page": 10,
+   "mark": "p",
+   "context": "(−1)"
+  },
+  {
+   "page": 10,
+   "mark": "q",
+   "context": "(−1)p"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(−1)p qkp"
+  },
+  {
+   "page": 10,
+   "mark": "p",
+   "context": "(−1)"
+  },
+  {
+   "page": 10,
+   "mark": "q",
+   "context": "(−1)p"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(−1)pqkp"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "qkp"
+  },
+  {
+   "page": 10,
+   "mark": "p",
+   "context": "(−1)"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 10,
+   "mark": "q",
+   "context": "(−1)n"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(−1)nqkn"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 10,
+   "mark": "q",
+   "context": "(−1)n"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(−1)nqkn"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 10,
+   "mark": "q",
+   "context": "(−1)n"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(−1)nqkn"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 10,
+   "mark": "q",
+   "context": "(−1)n"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(−1)nqkn"
+  },
+  {
+   "page": 10,
+   "mark": "q",
+   "context": "(−1)−1−p"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "(−1)−1−p q"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(−1)−1−p qk(−1−p)"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "(−1)−1−p qk(−1−p)2+(−1−p)"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 10,
+   "mark": "q",
+   "context": "(−1)n"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(−1)nqkn"
+  },
+  {
+   "page": 10,
+   "mark": "p",
+   "context": "(−1)"
+  },
+  {
+   "page": 10,
+   "mark": "q",
+   "context": "(−1)p"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(−1)pqkp"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "(−aq)n(−q"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "of.Weonlyprovethecasen≥0.Thecasen<0isidenticalas(a)−n=(−1/a)"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "(−aq)n(−q"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "=(−aq)−n(−q−n/a)N+n"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "(−aq)n(−q"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "(−aq)n(−q"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "2)(−q"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "=(−aq)"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "(q)N(q"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "(q)N(q2"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "Wenowapplytheq-Gausssummation(Corollary2.4of[3]withn→N,a→−q"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "c →q"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "c →q2"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "(−aq"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "=(−aq)"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "(q"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "(q2"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "(−aq)n(−q"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "nandN−1(correspondingtothefactor(−q"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "(−1)n"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "(−1)n qkn"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "2)(−1/a)N(−1)"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "2)(−1/a)N(−1)n"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "2)(−1/a)N(−1)n qkn"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "2)(−1/a)N(−1)"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "2)(−1/a)N(−1)n"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "2)(−1/a)N(−1)n qkn"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "(−1)na"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "(−1)nanqkn"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "(−1)nanqkn2+(k−i+1)"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "(−1)nanqkn2+(k−i+1)n (−1/a)"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "(−aq)n(−q"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "a)N−n"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "(−1)na"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "(−1)nanqkn"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "(−1)nanqkn2+(k−i+1)"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "(−1)nanqkn2+(k−i+1)n (−1/a)"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "(−1)na"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "(−1)nanqkn"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "(−1)nanqkn2+(k−i+1)"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "(−1)nanqkn2+(k−i+1)n (−1/a)"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "2(x"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "2(xi −x"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "2(xi −xi+1 −y"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "2(xi −xi+1 −yi −y"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "2(xi −xi+1 −yi −yi+1 +u"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "2(xi −xi+1 −yi −yi+1 +ui −u"
+  },
+  {
+   "page": 13,
+   "mark": "u",
+   "context": "2(xi −xi+1 −yi −yi+1 +ui −ui+1 +1).Since"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "2(xi −xi+1 −yi −yi+1 +ui −ui+1 +1).Sinceu"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "2(xi −xi+1 −yi −yi+1 +ui −ui+1 +1).Sinceui≥u"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "\u0012s"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "Bk,i(n, j)a"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "Bk,i(n, j)ajq"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "xknqkn"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "xknqkn2+n−ina"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "xknqkn2+n−inan(1 −x"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "xknqkn2+n−inan(1 −xiq"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "xknqkn2+n−inan(1 −xiq2ni)(axq"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "(q)n(xq"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "x"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "(xq)"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "(xq)"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "Bk,i(n, j, p)a"
+  },
+  {
+   "page": 15,
+   "mark": "p",
+   "context": "Bk,i(n, j, p)ajx"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "Bk,i(n, j, p)ajxpq"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "+1, f2< i and f1= 0.Therefore (xq)"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "+1, f1= i−1 and 1 is not overlined and a(xq)"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "Bk,i−1(a, x, q)=(xq)"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "(−1)na"
+  },
+  {
+   "page": 16,
+   "mark": "q",
+   "context": "(−1)nan"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "(−1)nan qkn"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "(−1)nan qkn2+n(k−i+1)(−1/a)"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "(−1)nan qkn2+n(k−i+1)(−1/a)n(1 −q(2"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "(−1)nan qkn2+n(k−i+1)(−1/a)n(1 −q(2n+1)"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "(−1)na"
+  },
+  {
+   "page": 16,
+   "mark": "q",
+   "context": "(−1)nan"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "(−1)nan qkn"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "(−1)nan qkn2+n(k−i+2)(−1/a)"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "(−1)nan qkn2+n(k−i+2)(−1/a)n(1 −q(2"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "(−1)na"
+  },
+  {
+   "page": 16,
+   "mark": "q",
+   "context": "(−1)nan"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "(−1)nan qkn"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "(−1)nan qkn2+n(k+1)(−1/a)"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "(−1)nan qkn2+n(k+1)(−1/a)n(q−in + aq"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "(−1)nan qkn2+n(k+1)(−1/a)n(q−in + aq1−(i−1)"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "(−1)na"
+  },
+  {
+   "page": 16,
+   "mark": "q",
+   "context": "(−1)nan"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "(−1)nan qkn"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "(−1)nan qkn2+n(k+1)(−1/a)"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "(−1)nan qkn2+n(k+1)(−1/a)n(q(n+1)"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "(−1)na"
+  },
+  {
+   "page": 16,
+   "mark": "q",
+   "context": "(−1)nan"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "(−1)nan qkn"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "(−1)nan qkn2+n(k+1−i)(−1/a)"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "(−1)na"
+  },
+  {
+   "page": 16,
+   "mark": "q",
+   "context": "(−1)nan+1"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "(−1)nan+1 qkn"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "(−1)nan+1 qkn2+n(k+i)+i(−1/a)"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "(−1)na"
+  },
+  {
+   "page": 16,
+   "mark": "q",
+   "context": "(−1)nan"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "(−1)nan qkn"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "(−1)nan qkn2+n(k+1−i)(−1/a)"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 16,
+   "mark": "q",
+   "context": "(−1)na−n"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "(−1)na−n qkn"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "(−1)na"
+  },
+  {
+   "page": 16,
+   "mark": "q",
+   "context": "(−1)nan"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "(−1)nan qkn"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "(−1)nan qkn2+n(k+1−i)(−1/a)"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "Thelengthofamultuple(f"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "Thelengthofamultuple(fm, . . . , f"
+  },
+  {
+   "page": 16,
+   "mark": "f",
+   "context": "i=0(m + i)"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "i=0(m + i)f"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "i=0(m + i)fm+i.Wedivide"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "Bk,i(n, j, N)q"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "Bk,i(n, j, N)qna"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "k−1+n"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "k−1+ni+···+nk−1(−1/a)n1a"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "(q)"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "(q)n1−n2 · · · (q)"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "(q)n1−n2 · · · (q)nk−2−nk−1(q)"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "k+n"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "k+ni+1+···+nk(−1/a)n1a"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "(q)"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "(q)n1−n2 · · · (q)"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "(q)n1−n2 · · · (q)nk−1−nk(q)"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "q(k+1)"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "q(k+1)n2+(k−i+1)"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "q(k+1)n2+(k−i+1)n+(−a)"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "q(k+1)"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "q(k+1)n2−(k−i)"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "q(k+1)n2−(k−i)n(−a)"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "q(k+1)"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "q(k+1)n2+(k−i+1)"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "q(k+1)n2+(k−i+1)n(−a)"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "q(k+1)"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "q(k+1)n2+(k−i+1)"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "q(k+1)n2+(k−i+1)n(−a)"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "Proposition6.3.Thecoeﬃcientofq"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "qn"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "2+···+n"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "k−1+n"
+  },
+  {
+   "page": 20,
+   "mark": "k",
+   "context": "k−1+ni+···+n"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "(q)"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "(q)n2−n3 · · · (q)"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "(q)n2−n3 · · · (q)nk−2−nk−1(q)"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "\u0012n"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "eightofeachpeakbyone.Moreover,then2NESpeaksintroduceafactora"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "ightofeachpeakbyone.Moreover,then2NESpeaksintroduceafactoran"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "\u0000n"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "\u0000n1−n"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "heoldpeaksbyn1 −n2.SincetheyareNESpeaks,theyalsogiveafactora"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "eoldpeaksbyn1 −n2.SincetheyareNESpeaks,theyalsogiveafactoran"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "dpeaksbyn1 −n2.SincetheyareNESpeaks,theyalsogiveafactoran1−n"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "2)a"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "2)an"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": ")+n"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": ")+n2(n"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": ")+n2(n1−n"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": ")+n2(n1−n2)a"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": ")+n2(n1−n2)an"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": ")+n2(n1−n2)an1−n"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "2)a"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "2)an"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "anextraSEstepatthebeginningofthepath,whichintroducesafactorq"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "nextraSEstepatthebeginningofthepath,whichintroducesafactorqn"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "(q)"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "z"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "2)−n(i−1) (−1/a)"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "(−1)na"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "(−1)nanq"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "(−1)nanq2"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "(−1)nq(2"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "Wesubstituteq→q"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "Wesubstituteq→q2"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "Ek,i(0, q) =(q"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "Ek,i(0, q) =(qi, q"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "Ek,i(0, q) =(qi, q2"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "Ek,i(0, q) =(qi, q2k+1−i, q"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "Ek,i(0, q) =(qi, q2k+1−i, q2"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "Ek,i(0, q) =(qi, q2k+1−i, q2k+1;"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "Ek,i(0, q) =(qi, q2k+1−i, q2k+1; q"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "Ek,i(0, q) =(qi, q2k+1−i, q2k+1; q2"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "Ek,i(1/q, q"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "Ek,i(1/q, q2) =(−q;"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "Ek,i(1/q, q2) =(−q; q"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "(−1)nq"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "(−1)nq4"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "2)−n(2"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "(q"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "(q2; q"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "Wesubstituteq→q"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "Wesubstituteq→q4"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "Wesubstituteq→q4k,z→−q−2"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "Ek,i(1/q, q"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "Ek,i(1/q, q2) =(q"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "Ek,i(1/q, q2) =(q2;"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "Ek,i(1/q, q2) =(q2; q"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "Ek,i(1/q, q2) =(q2; q4)∞(q"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "Ek,i(1/q, q2) =(q2; q4)∞(q2"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "Ek,i(1/q, q2) =(q2; q4)∞(q2i−1, q"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "Ek,i(1/q, q2) =(q2; q4)∞(q2i−1, q4"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "Ek,i(1/q, q2) =(q2; q4)∞(q2i−1, q4k+1−2"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "Ek,i(1/q, q2) =(q2; q4)∞(q2i−1, q4k+1−2i, q"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "Ek,i(1/q, q2) =(q2; q4)∞(q2i−1, q4k+1−2i, q4"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "Ek,i(1/q, q2) =(q2; q4)∞(q2i−1, q4k+1−2i, q4k;"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "Ek,i(1/q, q2) =(q2; q4)∞(q2i−1, q4k+1−2i, q4k; q"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "Ek,i(1/q, q2) =(q2; q4)∞(q2i−1, q4k+1−2i, q4k; q4"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "(−1)nq"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "(−1)nq2"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "1 + q"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "Bk,i+1(n)isthecoeﬃcientofq"
+  },
+  {
+   "page": 25,
+   "mark": "j",
+   "context": "(−1)"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "(−1)j(q"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "(−1)j(qi+j, q"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "(−1)j(qi+j, q2"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "(−1)j(qi+j, q2k−i−j, q"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "(−1)j(qi+j, q2k−i−j, q2"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "(−1)j(qi+j, q2k−i−j, q2k; q"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "(−1)j(qi+j, q2k−i−j, q2k; q2"
+  },
+  {
+   "page": 25,
+   "mark": "j",
+   "context": "(−1)"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "(−1)j(q"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "(−1)j(qi+1+j, q"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "(−1)j(qi+1+j, q2"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "(−1)j(qi+1+j, q2k−i−1−j, q"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "(−1)j(qi+1+j, q2k−i−1−j, q2"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "(−1)j(qi+1+j, q2k−i−1−j, q2k; q"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "(−1)j(qi+1+j, q2k−i−1−j, q2k; q2"
+  },
+  {
+   "page": 25,
+   "mark": "j",
+   "context": "(−1)"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "(−1)j(q"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "(−1)j(qi+j, q"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "(−1)j(qi+j, q2"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "(−1)j(qi+j, q2k−i−j, q"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "(−1)j(qi+j, q2k−i−j, q2"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "(−1)j(qi+j, q2k−i−j, q2k; q"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "(−1)j(qi+j, q2k−i−j, q2k; q2"
+  },
+  {
+   "page": 25,
+   "mark": "j",
+   "context": "(−1)"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "(−1)j(q"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "(−1)j(qi+j, q"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "(−1)j(qi+j, q2"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "(−1)j(qi+j, q2k−i−j, q"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "(−1)j(qi+j, q2k−i−j, q2"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "(−1)j(qi+j, q2k−i−j, q2k; q"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "(−1)j(qi+j, q2k−i−j, q2k; q2"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "(q)∞(q"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "(q)∞(qi, q"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "(q)∞(qi, q2"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "(q)∞(qi, q2k−i, q"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "(q)∞(qi, q2k−i, q2"
+  },
+  {
+   "page": 25,
+   "mark": "q",
+   "context": "(q)∞(qi, q2k−i, q2k;"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "(q)∞(qi, q2k−i, q2k; q"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "(q)∞(qi, q2k−i, q2k; q2"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "Thecoeﬃcientofq"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "Proof.Weinterpretcombinatoriallythecoeﬃcientofq"
+  }
+ ]
+}

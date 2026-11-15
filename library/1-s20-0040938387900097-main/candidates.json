@@ -1,23 +1,56 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "1-s20-0040938387900097-main",
- "document_class": "math",
- "validated": true,
  "source": {
   "structure_sha256": "dae76f3434834382d426c0bfd0b0e4f78255a837e2bf3193888a2ab054701a2e",
   "file": "1-s2.0-0040938387900097-main.pdf"
  },
  "provenance": {
-  "title": "STATE MODELS AND THE JONES POLYNOMIAL (f&riced in recisrdfirm I Srpremher 1986) $1. INTRODIJ\u2019CTION IN THIS PAPER I construct a state model for the (original) Jones polynomial [5]. (In [6] a state",
-  "authors": null,
+  "title": "STATE MODELS AND THE JONES POLYNOMIAL",
+  "authors": "AND THE JONES",
   "arxiv": null,
   "doi": null
  },
- "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "aspects": [
+  "requirements"
+ ],
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
+  "candidates": 2,
+  "by_kind": {
+   "recommendation": 2
+  },
   "formalization_candidates": 0
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "(In [6] a state model was constructed for the Conway polynomial.) As we shall see, this model for the Jones polynomial arises as a normalization of a regular isotopy invariant of unoriented knots and links, called here the bracket polynomial, and denoted (K) for a link projection K.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-001.md",
+   "section_title": "Page 1",
+   "pages": "1-1",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall call a diagram satisfying these hypotheses (connected, reduced) a simple diagram.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-007.md",
+   "section_title": "Page 7",
+   "pages": "7-7",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
 }

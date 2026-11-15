@@ -8,7 +8,9 @@ pages: 13-13
 source_pdf: IHPMay2025.pdf
 source_sha256: 0440a39721552a9e
 toc_source: outline
+doc_brief: "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS — These notes are designed to accompany my mini-course on hyperbolic 3-manifolds at IHP in May 2025."
 ---
+1.3. Other characterizations
 Beardon and Maskit [6] showed that a Kleinian group is convex cocompact if and only every
 point in the limit set is a conical limit point. We say that z ∈Λ(ρ) is a conical limit point if
 whenever −→

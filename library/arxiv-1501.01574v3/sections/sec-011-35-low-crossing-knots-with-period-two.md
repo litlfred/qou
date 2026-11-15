@@ -7,10 +7,11 @@ section_number: 3.5
 pages: 17-18
 source_pdf: 1501.01574v3.pdf
 source_sha256: 8af5d6264a0ad5e0
-doc_brief: "KNOT CABLING AND THE DEGREE OF THE COLORED JONES POLYNOMIAL — We study the behavior of the degree of the colored Jones polyn omial and the boundary slopes of knots under the operation of cabling."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.923
-latex_coverage_ratio: 0.969
+latex_coverage_ratio: 0.968
+doc_brief: "KNOT CABLING AND THE DEGREE OF THE COLORED JONES POLYNOMIAL — We study the behavior of the degree of the colored Jones polynomial and the boundary slopes of knots under the operation of cabling."
 ---
 Theorem \ref{thm-quasi} applies to several non-alternating knots with 8 and 9 crossings.  The Jones slopes of all non-alternating prime knots with up to nine crossings were calculated by Garoufalidis in Section 4 of \cite{Ga-slope}.
 According to \cite{Ga-slope} the knots of 

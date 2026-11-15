@@ -10,7 +10,8 @@ source_sha256: 371611f719e6f53c
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.993
-latex_coverage_ratio: 0.975
+latex_coverage_ratio: 0.972
+doc_brief: "arXiv:math/0203206v1 [math.QA] 20 Mar 2002 — We give a pedagogical survey of those aspects of the abstract representation theory of quantum groups which are related to the Tannaka-Krein"
 ---
 ::: defin
 []{#d-intrins label="d-intrins"} Let $(A,\Delta)$ be an aqg. The intrinsic group $G$ of $(A,\Delta)$ is the following subgroup of the unitaries in the multiplier algebra $M(A)$: $$G=\{g\in M(A)\ |\ \Delta g=g\otimes g,\ g^* g =gg^* =1\}.$$

@@ -1,0 +1,2736 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "0504116v2",
+  "pages": [
+    {
+      "page": 3,
+      "rotation": 0,
+      "drawings": 20,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1: A geometric tetrahedron with one ideal vertex"
+      ],
+      "labels": [
+        {
+          "text": "Deforming hyperbolic 3–manifolds with boundary",
+          "bbox": [
+            114.46,
+            132.58,
+            314.82,
+            142.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "437",
+          "bbox": [
+            473.92,
+            132.66,
+            488.86,
+            142.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Medi"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "triangle the intersection of ∆∗respectively with a face of ∆and with the link in ∆of a",
+          "bbox": [
+            114.46,
+            163.89,
+            488.86,
+            176.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY8",
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            7.97,
+            10.8
+          ]
+        },
+        {
+          "text": "non-ideal vertex. The edges of the truncation triangles, which also belong to the lateral",
+          "bbox": [
+            114.46,
+            179.93,
+            488.86,
+            190.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            10.82
+          ]
+        },
+        {
+          "text": "hexagons, are called boundary edges, and the other edges of ∆∗are called internal",
+          "bbox": [
+            114.46,
+            191.8,
+            488.86,
+            204.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY8",
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            7.97,
+            11.02
+          ]
+        },
+        {
+          "text": "edges. If ∆has ideal vertices, a lateral hexagon of ∆∗may not be a hexagon, because",
+          "bbox": [
+            114.46,
+            205.76,
+            488.86,
+            218.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY8",
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            7.97,
+            10.87
+          ]
+        },
+        {
+          "text": "some of its closed edges may be missing.",
+          "bbox": [
+            114.46,
+            221.73,
+            294.45,
+            232.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "A geometric realization of ∆is an identiﬁcation of ∆∗with a convex polyhedron in H3",
+          "bbox": [
+            114.07,
+            240.82,
+            488.36,
+            254.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY8",
+            "MSBM10",
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "such that the truncation triangles are geodesic triangles, the lateral hexagons are geodesic",
+          "bbox": [
+            114.46,
+            257.49,
+            488.86,
+            268.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            10.8
+          ]
+        },
+        {
+          "text": "polygons with ideal vertices corresponding to missing edges, and truncation triangles",
+          "bbox": [
+            114.46,
+            271.33,
+            488.86,
+            282.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            10.95
+          ]
+        },
+        {
+          "text": "and lateral hexagons lie at right angles to each other. An example of a geometric",
+          "bbox": [
+            114.46,
+            285.24,
+            488.86,
+            296.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.02
+          ]
+        },
+        {
+          "text": "realization is shown in Figure 1, where truncation triangles are shadowed.",
+          "bbox": [
+            114.46,
+            299.27,
+            436.28,
+            310.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "v",
+          "bbox": [
+            333.1,
+            323.36,
+            337.52,
+            333.32
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "v ∈I",
+          "bbox": [
+            149.76,
+            351.52,
+            171.79,
+            361.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 1: A geometric tetrahedron with one ideal vertex",
+          "bbox": [
+            190.03,
+            489.12,
+            413.29,
+            499.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1.2",
+          "bbox": [
+            114.46,
+            542.82,
+            129.4,
+            554.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Medi"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Triangulations",
+          "bbox": [
+            141.36,
+            542.82,
+            216.21,
+            554.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Medi"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Let ¯N be a compact orientable manifold and let N be obtained from ¯N by removing",
+          "bbox": [
+            114.46,
+            571.1,
+            488.85,
+            584.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "the toric components of ∂¯N. We deﬁne a partially truncated triangulation of N to",
+          "bbox": [
+            114.46,
+            585.06,
+            488.86,
+            598.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "be a realization of N as a gluing of some ∆∗’s along a pairing of the lateral hexagons",
+          "bbox": [
+            114.46,
+            599.06,
+            488.86,
+            611.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY8",
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            7.97,
+            10.95
+          ]
+        },
+        {
+          "text": "induced by a simplicial pairing of the faces of the ∆’s. When N is endowed with a",
+          "bbox": [
+            114.46,
+            614.69,
+            488.85,
+            625.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            11.02
+          ]
+        },
+        {
+          "text": "hyperbolic structure, a partially truncated triangulation of N is called geometric if, for",
+          "bbox": [
+            114.46,
+            628.81,
+            489.04,
+            639.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            10.89
+          ]
+        },
+        {
+          "text": "each tetrahedron ∆of the triangulation, the pull-back to ∆∗of the Riemannian metric",
+          "bbox": [
+            114.46,
+            640.92,
+            488.86,
+            653.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY8",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            7.97,
+            10.87
+          ]
+        },
+        {
+          "text": "of N deﬁnes a geometric realization of ∆. Equivalently, the hyperbolic structure of N",
+          "bbox": [
+            114.46,
+            656.68,
+            488.21,
+            667.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            10.87
+          ]
+        },
+        {
+          "text": "should be obtained by gluing geometric realizations of the ∆’s along isometries of their",
+          "bbox": [
+            114.46,
+            670.68,
+            489.04,
+            681.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            10.8
+          ]
+        },
+        {
+          "text": "lateral hexagons.",
+          "bbox": [
+            114.46,
+            684.81,
+            188.22,
+            695.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Algebraic & Geometric Topology 6 (2006)",
+          "bbox": [
+            114.46,
+            730.18,
+            283.64,
+            740.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 5,
+      "rotation": 0,
+      "drawings": 41,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2: A triangle, a right-angled hexagon and a pentagon with four right angles and an ideal vertex",
+        "Figure 3: Notation for edges and dihedral angles of a truncated tetrahedron"
+      ],
+      "labels": [
+        {
+          "text": "Deforming hyperbolic 3–manifolds with boundary",
+          "bbox": [
+            114.46,
+            132.58,
+            314.82,
+            142.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "439",
+          "bbox": [
+            473.92,
+            132.66,
+            488.86,
+            142.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Medi"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "c1 = 0",
+          "bbox": [
+            422.84,
+            163.63,
+            449.51,
+            175.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "c1",
+          "bbox": [
+            285.49,
+            170.61,
+            293.4,
+            181.52
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "a3",
+          "bbox": [
+            170.19,
+            178.8,
+            178.66,
+            189.71
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "α2",
+          "bbox": [
+            148.77,
+            188.83,
+            158.63,
+            199.79
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "α1",
+          "bbox": [
+            177.12,
+            197.65,
+            186.98,
+            208.62
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "b2",
+          "bbox": [
+            316.99,
+            197.7,
+            325.46,
+            208.62
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "b3",
+          "bbox": [
+            253.36,
+            198.33,
+            261.82,
+            209.25
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "b3",
+          "bbox": [
+            407.09,
+            198.33,
+            415.55,
+            209.25
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "b2",
+          "bbox": [
+            451.19,
+            198.34,
+            459.66,
+            209.25
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "a1",
+          "bbox": [
+            133.65,
+            206.53,
+            142.12,
+            217.44
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "α3",
+          "bbox": [
+            153.81,
+            216.55,
+            163.67,
+            227.52
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "a2",
+          "bbox": [
+            175.86,
+            217.87,
+            184.33,
+            228.78
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "c2",
+          "bbox": [
+            390.07,
+            232.36,
+            397.99,
+            243.27
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "c3",
+          "bbox": [
+            463.79,
+            235.51,
+            471.7,
+            246.42
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "c2",
+          "bbox": [
+            247.06,
+            236.14,
+            254.97,
+            247.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "c3",
+          "bbox": [
+            331.48,
+            236.77,
+            339.39,
+            247.68
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "b1",
+          "bbox": [
+            286.75,
+            247.48,
+            295.22,
+            258.39
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "b1",
+          "bbox": [
+            426.62,
+            248.11,
+            435.09,
+            259.02
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 2: A triangle, a right-angled hexagon and a pentagon with four right angles and an ideal",
+          "bbox": [
+            114.46,
+            270.61,
+            488.86,
+            280.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.9
+          ]
+        },
+        {
+          "text": "vertex",
+          "bbox": [
+            114.21,
+            282.87,
+            138.81,
+            292.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Let now ∆be a partially truncated tetrahedron with edges e1, . . . , e6 as in Figure 3.",
+          "bbox": [
+            114.46,
+            321.74,
+            490.76,
+            334.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "We ﬁx a geometric realization θ of ∆determined by the dihedral angles θi = θ(ei)",
+          "bbox": [
+            113.95,
+            335.69,
+            489.59,
+            348.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "for i = 1, . . . , 6 and we denote by Lθ the length with respect to this realization.",
+          "bbox": [
+            114.46,
+            345.94,
+            490.77,
+            360.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "The boundary edges of the lateral hexagons of ∆correspond to the pairs of distinct",
+          "bbox": [
+            114.12,
+            363.6,
+            488.86,
+            374.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.02
+          ]
+        },
+        {
+          "text": "non-opposite edges {ei, ej}, and will be denoted by eij. Note that eij disappears towards",
+          "bbox": [
+            114.46,
+            377.5,
+            488.86,
+            390.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "inﬁnity, so it has length 0, when the common vertex of ei and ej is ideal. Lemma 1.4",
+          "bbox": [
+            114.46,
+            391.62,
+            488.85,
+            404.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            7.97,
+            10.95
+          ]
+        },
+        {
+          "text": "readily implies",
+          "bbox": [
+            114.46,
+            405.81,
+            179.61,
+            416.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "cosh Lθ(e12) = (cos θ1 · cos θ2 + cos θ3)/(sin θ1 · sin θ2).",
+          "bbox": [
+            179.55,
+            433.65,
+            425.58,
+            448.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(1)",
+          "bbox": [
+            114.46,
+            436.11,
+            127.18,
+            447.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Note that this result is correct also when the common end of e1 and e2 is ideal.",
+          "bbox": [
+            114.46,
+            466.21,
+            459.59,
+            478.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "θ3",
+          "bbox": [
+            404.39,
+            504.49,
+            412.55,
+            515.46
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "e3",
+          "bbox": [
+            182.84,
+            528.85,
+            190.75,
+            539.76
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "θ2",
+          "bbox": [
+            378.07,
+            534.87,
+            386.23,
+            545.83
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "θ1",
+          "bbox": [
+            332.3,
+            540.13,
+            340.47,
+            551.1
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "e2",
+          "bbox": [
+            192.56,
+            548.28,
+            200.47,
+            559.2
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "e4",
+          "bbox": [
+            226.58,
+            558.0,
+            234.49,
+            568.92
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "e1",
+          "bbox": [
+            156.92,
+            566.91,
+            164.83,
+            577.82
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "θ5",
+          "bbox": [
+            381.71,
+            567.26,
+            389.87,
+            578.23
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "e5",
+          "bbox": [
+            197.01,
+            572.58,
+            204.92,
+            583.49
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "θ4",
+          "bbox": [
+            442.86,
+            573.34,
+            451.02,
+            584.3
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "e6",
+          "bbox": [
+            203.09,
+            592.02,
+            211.0,
+            602.93
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "θ6",
+          "bbox": [
+            378.07,
+            609.79,
+            386.23,
+            620.75
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 3: Notation for edges and dihedral angles of a truncated tetrahedron",
+          "bbox": [
+            152.12,
+            632.4,
+            451.2,
+            642.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Turning to the length of an internal edge, we note that the edge is an inﬁnite half-line or",
+          "bbox": [
+            114.12,
+            667.12,
+            489.04,
+            677.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            10.8
+          ]
+        },
+        {
+          "text": "an inﬁnite line when one or both its ends are ideal, respectively. Otherwise the length",
+          "bbox": [
+            114.46,
+            680.96,
+            488.86,
+            691.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            10.95
+          ]
+        },
+        {
+          "text": "is computed using Lemma 1.4. With notation as in Figure 3, and deﬁning vijk as the",
+          "bbox": [
+            114.46,
+            694.67,
+            488.86,
+            707.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            7.97,
+            11.02
+          ]
+        },
+        {
+          "text": "Algebraic & Geometric Topology 6 (2006)",
+          "bbox": [
+            114.46,
+            730.18,
+            283.64,
+            740.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 7,
+      "rotation": 0,
+      "drawings": 10,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 4: An exceptional hexagon"
+      ],
+      "labels": [
+        {
+          "text": "Deforming hyperbolic 3–manifolds with boundary",
+          "bbox": [
+            114.46,
+            132.58,
+            314.82,
+            142.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "441",
+          "bbox": [
+            473.92,
+            132.66,
+            488.86,
+            142.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Medi"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "e12",
+          "bbox": [
+            204.2,
+            163.68,
+            215.59,
+            174.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "v123 ∈I",
+          "bbox": [
+            398.11,
+            198.59,
+            431.1,
+            210.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "e1",
+          "bbox": [
+            186.38,
+            213.4,
+            194.29,
+            224.31
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "e2",
+          "bbox": [
+            222.06,
+            213.4,
+            229.96,
+            224.31
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "e3",
+          "bbox": [
+            437.29,
+            229.77,
+            445.2,
+            240.68
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "e1",
+          "bbox": [
+            375.3,
+            235.04,
+            383.21,
+            245.95
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "e2",
+          "bbox": [
+            423.84,
+            247.9,
+            431.75,
+            258.82
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "F∗",
+          "bbox": [
+            205.09,
+            249.99,
+            215.6,
+            261.38
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY7",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "126",
+          "bbox": [
+            211.18,
+            256.53,
+            221.64,
+            263.5
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "e16",
+          "bbox": [
+            158.89,
+            272.47,
+            170.28,
+            283.38
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "e5",
+          "bbox": [
+            435.54,
+            277.73,
+            443.45,
+            288.64
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "e26",
+          "bbox": [
+            236.68,
+            281.24,
+            248.07,
+            292.15
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "e4",
+          "bbox": [
+            453.67,
+            288.26,
+            461.58,
+            299.17
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "e6",
+          "bbox": [
+            197.49,
+            290.6,
+            205.4,
+            301.51
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "e6",
+          "bbox": [
+            385.24,
+            308.15,
+            393.15,
+            319.06
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 4: An exceptional hexagon",
+          "bbox": [
+            233.47,
+            333.21,
+            369.85,
+            343.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "tetrahedron and the second face of the last tetrahedron may overlap without coinciding.",
+          "bbox": [
+            114.46,
+            369.02,
+            490.77,
+            379.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            10.84
+          ]
+        },
+        {
+          "text": "Namely, the isometry which pairs these two faces may be a translation along e instead of",
+          "bbox": [
+            114.46,
+            382.82,
+            488.86,
+            393.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            10.8
+          ]
+        },
+        {
+          "text": "being the identity. Of course the isometry has to be the identity if at least one endpoint",
+          "bbox": [
+            114.46,
+            396.93,
+            488.86,
+            407.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            10.84
+          ]
+        },
+        {
+          "text": "of e is not ideal.",
+          "bbox": [
+            114.46,
+            410.65,
+            186.05,
+            421.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "1.5",
+          "bbox": [
+            114.46,
+            448.61,
+            129.4,
+            460.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Medi"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Exceptional hexagons",
+          "bbox": [
+            141.36,
+            448.61,
+            251.96,
+            460.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Medi"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "It is easily seen that gluings match ideal vertices to each other, because these notions",
+          "bbox": [
+            114.46,
+            478.26,
+            488.85,
+            489.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.0
+          ]
+        },
+        {
+          "text": "are part of the initial topological information about a triangulation. When a pairing",
+          "bbox": [
+            114.46,
+            492.2,
+            488.86,
+            503.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.02
+          ]
+        },
+        {
+          "text": "glues two compact lateral hexagons, to be sure that the gluing is an isometric one we",
+          "bbox": [
+            114.46,
+            505.98,
+            488.86,
+            517.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            11.0
+          ]
+        },
+        {
+          "text": "may equivalently require the lengths of the internal edges or those of the boundary",
+          "bbox": [
+            114.46,
+            520.11,
+            489.24,
+            531.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.02
+          ]
+        },
+        {
+          "text": "edges to match under the gluing. On the other hand, since T is a good triangulation, a",
+          "bbox": [
+            114.46,
+            533.76,
+            488.85,
+            545.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            10.87,
+            10.91
+          ]
+        },
+        {
+          "text": "non-compact lateral hexagon F is actually a pentagon with four right angles and an ideal",
+          "bbox": [
+            114.46,
+            548.0,
+            488.86,
+            558.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            10.8
+          ]
+        },
+        {
+          "text": "vertex: we shall say in this case that F is an exceptional lateral hexagon. By Lemma 1.4,",
+          "bbox": [
+            114.19,
+            561.95,
+            490.22,
+            572.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            10.8
+          ]
+        },
+        {
+          "text": "the isometry class of an exceptional lateral hexagon is determined by the lengths of its",
+          "bbox": [
+            114.46,
+            576.03,
+            488.86,
+            586.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            10.89
+          ]
+        },
+        {
+          "text": "boundary edges. However, in order to end up with a non-redundant set of consistency",
+          "bbox": [
+            114.46,
+            589.96,
+            489.24,
+            600.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            10.93
+          ]
+        },
+        {
+          "text": "equations, it is convenient to ﬁnd an alternative approach to moduli for exceptional",
+          "bbox": [
+            114.46,
+            603.85,
+            488.86,
+            614.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.02
+          ]
+        },
+        {
+          "text": "hexagons. To this aim we need now to be slightly more careful about orientation than",
+          "bbox": [
+            114.46,
+            617.87,
+            488.86,
+            628.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            10.93
+          ]
+        },
+        {
+          "text": "we have been so far. Namely, we choose on the tetrahedra an orientation compatible",
+          "bbox": [
+            114.07,
+            631.76,
+            488.86,
+            642.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.02
+          ]
+        },
+        {
+          "text": "with a global orientation of the manifold. As a result also the lateral hexagons have a",
+          "bbox": [
+            114.07,
+            645.75,
+            488.86,
+            656.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            10.97
+          ]
+        },
+        {
+          "text": "ﬁxed orientation, and the gluing maps reverse the orientation of the hexagons.",
+          "bbox": [
+            114.46,
+            659.75,
+            453.95,
+            670.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "So, let us consider an exceptional hexagon F∗",
+          "bbox": [
+            114.46,
+            678.98,
+            324.64,
+            691.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY8",
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            7.97,
+            11.02
+          ]
+        },
+        {
+          "text": "126 as in Figure 4, and recall that the",
+          "bbox": [
+            320.04,
+            680.91,
+            488.86,
+            695.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            7.97,
+            11.02
+          ]
+        },
+        {
+          "text": "hexagon is oriented and embedded in H3 by θ. We consider the horospheres O1 and",
+          "bbox": [
+            114.46,
+            690.94,
+            488.86,
+            707.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "MSBM10",
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            10.97
+          ]
+        },
+        {
+          "text": "Algebraic & Geometric Topology 6 (2006)",
+          "bbox": [
+            114.46,
+            730.18,
+            283.64,
+            740.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 8,
+      "rotation": 0,
+      "drawings": 20,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 5: Notation for the proof of Proposition 1.8"
+      ],
+      "labels": [
+        {
+          "text": "Roberto Frigerio",
+          "bbox": [
+            421.15,
+            132.58,
+            488.86,
+            142.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "442",
+          "bbox": [
+            114.46,
+            132.66,
+            129.4,
+            142.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Medi"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "e6",
+          "bbox": [
+            288.67,
+            259.6,
+            296.58,
+            270.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "e26",
+          "bbox": [
+            363.19,
+            274.72,
+            374.59,
+            285.63
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "e16",
+          "bbox": [
+            219.02,
+            290.92,
+            230.41,
+            301.83
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "R",
+          "bbox": [
+            321.61,
+            310.89,
+            327.7,
+            320.86
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "R",
+          "bbox": [
+            258.44,
+            315.21,
+            264.52,
+            325.18
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "R2",
+          "bbox": [
+            395.59,
+            315.75,
+            405.16,
+            326.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "R1",
+          "bbox": [
+            197.42,
+            317.37,
+            206.99,
+            328.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "α1",
+          "bbox": [
+            220.64,
+            334.06,
+            230.5,
+            345.02
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "α2",
+          "bbox": [
+            371.83,
+            334.06,
+            381.69,
+            345.02
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 5: Notation for the proof of Proposition 1.8",
+          "bbox": [
+            200.79,
+            362.43,
+            402.53,
+            372.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "O2 centred at e12 and passing through the non-ideal ends of e1 and e2 respectively. We",
+          "bbox": [
+            114.07,
+            405.36,
+            488.86,
+            417.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            7.97,
+            10.8
+          ]
+        },
+        {
+          "text": "deﬁne σθ(F126) to be ±dist(O1, O2), the sign being positive if e2, e12, e1 are arranged",
+          "bbox": [
+            114.46,
+            417.51,
+            488.86,
+            431.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMSY10",
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "positively on ∂F∗",
+          "bbox": [
+            114.46,
+            431.36,
+            190.42,
+            444.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY8",
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "126 and O1 is contained in the horoball bounded by O2, or if e2, e12, e1",
+          "bbox": [
+            185.82,
+            433.13,
+            488.96,
+            447.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "are arranged negatively on ∂F∗",
+          "bbox": [
+            114.46,
+            445.32,
+            251.28,
+            458.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY8",
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            10.93
+          ]
+        },
+        {
+          "text": "126 and O2 is contained in the horoball bounded by O1,",
+          "bbox": [
+            246.68,
+            447.12,
+            490.22,
+            461.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            7.97,
+            10.93
+          ]
+        },
+        {
+          "text": "and negative otherwise. Together with equation 1, the following proposition allows to",
+          "bbox": [
+            114.46,
+            461.29,
+            488.86,
+            472.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "compute σ in terms of the dihedral angles.",
+          "bbox": [
+            114.46,
+            474.99,
+            300.83,
+            486.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Proposition 1.8 We have",
+          "bbox": [
+            114.46,
+            505.98,
+            229.96,
+            516.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Medi",
+            "NimbusRomNo9L-Regu-Slant"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "σθ(F126) = ln(sinh Lθ(e16)/ sinh Lθ(e26)).",
+          "bbox": [
+            211.15,
+            526.02,
+            392.17,
+            540.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(3)",
+          "bbox": [
+            114.46,
+            528.48,
+            127.18,
+            539.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Proof Let α1, α2 and R, R1, R2 be the angles and lengths shown in Figure 5. An easy",
+          "bbox": [
+            114.46,
+            562.62,
+            489.24,
+            575.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Medi",
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            7.97,
+            10.84,
+            10.91
+          ]
+        },
+        {
+          "text": "computation in the upper half-plane model of H2 shows that Lθ(ei6) = ln cot(αi/2)",
+          "bbox": [
+            114.46,
+            572.78,
+            489.59,
+            588.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "MSBM10",
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "for i = 1, 2. Moreover we have R = R1 · tan α1 = R2 · tan α2, so exp σθ(F126) =",
+          "bbox": [
+            114.46,
+            588.87,
+            488.86,
+            603.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "R1/R2 = tan α2/ tan α1. Now for i = 1, 2 we have tan αi = 2 cot(αi/2)/(cot2(αi/2) −",
+          "bbox": [
+            114.12,
+            603.01,
+            488.86,
+            617.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "1) = 2 exp Lθ(ei6)/(exp(2Lθ(ei6)) −1). Combining these equations we ﬁnally get",
+          "bbox": [
+            113.64,
+            616.78,
+            488.86,
+            630.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "exp σθ(F126) = sinh Lθ(e16)/ sinh Lθ(e26).",
+          "bbox": [
+            114.46,
+            630.73,
+            297.63,
+            644.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "We now deﬁne ℓθ(F126) to be the length of e6. The next proposition shows that",
+          "bbox": [
+            113.95,
+            665.13,
+            488.86,
+            678.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "the functions σ and ℓprovide a parameterization of isometry classes of exceptional",
+          "bbox": [
+            114.46,
+            680.74,
+            488.86,
+            691.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "hexagons.",
+          "bbox": [
+            114.46,
+            694.95,
+            158.23,
+            705.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Algebraic & Geometric Topology 6 (2006)",
+          "bbox": [
+            114.46,
+            730.18,
+            283.64,
+            740.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

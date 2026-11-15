@@ -8,6 +8,7 @@ pages: 2-3
 source_pdf: 1909.06744v1.pdf
 source_sha256: 82e3980da78c07da
 toc_source: inferred
+doc_brief: "Springer correspondence for symmetric spaces — This is a survey on the Springer correspondence for symmetric spaces."
 ---
 Throughout the paper, we assume that k is an algebraically closed ﬁeld of char-
 acteristic p ≥0, and we consider ¯Ql-sheaves, where ¯Ql is an algebraic closure of the

@@ -1,0 +1,46 @@
+w(63) = 0.416927... .
+
+We note that the values of (63) and w(63) are real, since the 63 knot is amphicheiral.
+It is shown [22] that 2/—Iw?(K) for these knots is equal to the twisted Reidemeister
+torsion associated with the action on sl, of the holonomy representation of the hyperbolic
+structure. We also remark that Dimofte and Garoufalidis [2] define a formal power series
+from an ideal tetrahedral decomposition of a knot complement, which is expected to be
+equal to the asymptotic expansion of the Kashaev invariant of the knot.
+
+We show proofs of the theorem for the 61, 62, 63 knots in Sections 3.1, 4.1, 5.1 respec-
+tively. An outline of the proofs is as follows. From the definition of the Kashaev invariant,
+the Kashaev invariant of kX is presented by a sum. We rewrite the sum by an integral by
+the Poisson summation formula (Proposition 2.3). When we apply the Poisson summation
+formula, the right-hand side of the Poisson summation formula consists of infinitely many
+summands, and we show that we can ignore them except for the one at 0 in the sense
+that they are of sufficiently small order at N — oo. Further, by the saddle point method
+(Proposition 2.6), we calculate the asymptotic expansion of the integral, and obtain the
+presentation of the theorem.
+
+A non-trivial part of the proof is to apply the saddle point method, whose concrete
+procedure is quite different from the proof for the 52 knot in [20]. In this part, we need
+to calculate the asymptotic behavior of an integral of the following form as N — oo,
+
+[x (v(vie, $,u) — s)) dt ds du,
+
+for a certain function V(t, s, uv) which depends on N, where V(t, s, u) converges to V(t, 5,U)
+as N — oo, and ¢ is a critical value of Vit, s,u). Here, Vit, s,u) is the potential function
+of the hyperbolic structure of the knot complement. As we mention in Remark 2.7, the
+above calculation is reduced to the calculation of the following case,
+
+[x (v(Vie, $,u) — s)) dt ds du.
+
+The domain A’ of the integral is a compact domain in R*, and its boundary is included
+in the following domain
+
+{(t,s,u) €C? | Re (V(t, s8,u)—s) < Oh. (3)
+
+The critical value ¢ is given by a critical point (to, $0, uo), and it is located near A’ in
+C%. In order to apply the saddle point method, we need to show that we can move A’
+into imaginary direction by a homotopy in such a way that the new domain Aj contains
+(to, $0, Uo), and Aj — {(to, 50, uo) } is included in (3), and the boundary of A’ always stays
+in (3) when we apply the homotopy. We note that, when we restrict the domain (3) to a
+sufficiently small neighborhood of (to, 50, uo), the resulting space is homotopy equivalent
+to a 2-sphere. The existence of the above homotopy means that the boundary of A’ is
+homotopic to this 2-sphere in the domain (3). It is a non-trivial task to see that they are
+homotopic in the domain (3), since it is not easy to see the topological type of the domain

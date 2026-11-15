@@ -7,10 +7,11 @@ section_number: 1
 pages: 1-2
 source_pdf: 0911.3569v1.pdf
 source_sha256: 4e7c15c9724fb453
-doc_brief: "MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS — Univariate polynomials with only real roots – while special – do occur often enough that their properties can lead to interesting"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.699
+latex_coverage_ratio: 0.911
+doc_brief: "MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS — Univariate polynomials with only real roots – while special – do occur often enough that their properties can lead to interesting"
 ---
 I have been asked by the AMS to survey the recent work of Julius Borcea
 and Petter Br\"and\'en on their multivariate generalization of the theory

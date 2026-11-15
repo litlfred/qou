@@ -7,10 +7,11 @@
   "bytes": 453697,
   "pages": 12,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -25,12 +26,27 @@
   "title_lines": [
    "Generalized Markov traces and Jucys-Murphy elements"
   ],
-  "abstract": "WegiveasimpleconstructionofMarkovtracesforIwahori-Heckealgebrasassociated with infinite series of crystallographic Coxeter groups. In typesB and D it is new, and generalizes a known construction in typeA employing symmetric polynomials in multiplicative Jucys-Murphy elements.",
+  "abstract": "We give a simple construction of Markov traces for Iwahori-Hecke algebras associated with infinite series of crystallographic Coxeter groups. In types B and D it is new, and generalizes a known construction in type A employing symmetric polynomials in multiplicative Jucys-Murphy elements.",
   "docinfo": {
+   "Title": "Generalized Markov traces and Jucys-Murphy elements",
    "Author": "Kostiantyn Tolmachov; Heorhii Zhylinskyi",
-   "Creator": "arXiv GenPDF (genpdf:f9e7567)",
    "Producer": "pikepdf 8.15.1",
-   "Title": "Generalized Markov traces and Jucys-Murphy elements"
+   "Creator": "arXiv GenPDF (genpdf:f9e7567)"
+  },
+  "title_raw": "Generalized Markov traces and Jucys-Murphy elements",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Generalized Markov traces and Jucys-Murphy elements",
+   "heading": "Generalized Markov traces and Jucys-Murphy elements",
+   "outline": "Introduction",
+   "text": "Generalized Markov traces and Jucys-Murphy elements",
+   "corroborated_by": [
+    "heading",
+    "text",
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -39,190 +55,388 @@
    "title": "Introduction.",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Acknowledgments.",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Iwahori-Hecke algebras and multiplicative Jucys-Murphy elements.",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Coxeter groups.",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Iwahori-Hecke algebras.",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Trace functional and a pairing on H(W,S).",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "``Full twist'' and Jucys-Murphy elements.",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Some central elements in the classical Iwahori-Hecke algebras.",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Markov traces.",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Markov traces via Jucys-Murphy elements.",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "General Markov traces in types B, D.",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Geometric Markov traces.",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
- "sections": [
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
   {
-   "id": "sec-000-coxeter-groups",
-   "number": null,
-   "title": "Coxeter groups.",
-   "level": 2,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 118,
-   "n_words": 14
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "id": "sec-001-introduction",
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 391,
+   "n_words": 53,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-introduction",
    "number": null,
    "title": "Introduction.",
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 2594,
-   "n_words": 388
+   "n_chars": 3404,
+   "n_words": 545,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-iwahori-hecke-algebras",
-   "number": null,
-   "title": "Iwahori-Hecke algebras.",
-   "level": 2,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 682,
-   "n_words": 113
-  },
-  {
-   "id": "sec-003-acknowledgments",
+   "id": "sec-001-acknowledgments",
    "number": null,
    "title": "Acknowledgments.",
    "level": 2,
    "page_start": 2,
    "page_end": 2,
-   "n_chars": 460,
-   "n_words": 60
+   "n_chars": 544,
+   "n_words": 80,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-iwahori-hecke-algebras-and-multiplicative-jucys",
+   "id": "sec-002-iwahori-hecke-algebras-and-multiplicative-jucys",
    "number": null,
    "title": "Iwahori-Hecke algebras and multiplicative Jucys-Murphy elements.",
    "level": 1,
    "page_start": 2,
-   "page_end": 4,
-   "n_chars": 5779,
-   "n_words": 999
+   "page_end": 2,
+   "n_chars": 64,
+   "n_words": 6,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-005-some-central-elements-in-the-classical-iwahori-h",
+   "id": "sec-003-coxeter-groups",
+   "number": null,
+   "title": "Coxeter groups.",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 1409,
+   "n_words": 303,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-iwahori-hecke-algebras",
+   "number": null,
+   "title": "Iwahori-Hecke algebras.",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1176,
+   "n_words": 247,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-005-trace-functional-and-a-pairing-on-hws",
+   "number": null,
+   "title": "Trace functional and a pairing on H(W,S).",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 1268,
+   "n_words": 243,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-006-full-twist-and-jucys-murphy-elements",
+   "number": null,
+   "title": "``Full twist'' and Jucys-Murphy elements.",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1976,
+   "n_words": 380,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-007-some-central-elements-in-the-classical-iwahori-h",
    "number": null,
    "title": "Some central elements in the classical Iwahori-Hecke algebras.",
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 2013,
-   "n_words": 360
+   "n_chars": 2193,
+   "n_words": 479,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-006-markov-traces",
+   "id": "sec-008-markov-traces",
    "number": null,
    "title": "Markov traces.",
    "level": 1,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 14,
+   "n_words": 2,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-007-markov-traces-via-jucys-murphy-elements",
+   "id": "sec-009-markov-traces-via-jucys-murphy-elements",
    "number": null,
    "title": "Markov traces via Jucys-Murphy elements.",
    "level": 2,
    "page_start": 5,
-   "page_end": 9,
-   "n_chars": 7303,
-   "n_words": 1245
+   "page_end": 7,
+   "n_chars": 2732,
+   "n_words": 517,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-008-geometric-markov-traces",
+   "id": "sec-010-general-markov-traces-in-types-b-d",
+   "number": null,
+   "title": "General Markov traces in types B, D.",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 4825,
+   "n_words": 950,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-011-geometric-markov-traces",
    "number": null,
    "title": "Geometric Markov traces.",
    "level": 2,
    "page_start": 9,
    "page_end": 12,
-   "n_chars": 6610,
-   "n_words": 986
+   "n_chars": 6732,
+   "n_words": 1071,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 12,
-  "sections": 9,
-  "chars_total": 25559,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 13,
+  "chars_total": 26728,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "paper.tex",
    "tex_sections": 12,
-   "overlaid": 5,
+   "overlaid": 11,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -230,67 +444,102 @@
    },
    "sections": [
     {
-     "id": "sec-000-coxeter-groups",
-     "title": "Coxeter groups.",
-     "prose_ratio": 0.015,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
     },
     {
-     "id": "sec-001-introduction",
+     "id": "sec-000-introduction",
      "title": "Introduction.",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.821,
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.978,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-002-iwahori-hecke-algebras",
-     "title": "Iwahori-Hecke algebras.",
-     "prose_ratio": 0.158,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-003-acknowledgments",
+     "id": "sec-001-acknowledgments",
      "title": "Acknowledgments.",
-     "prose_ratio": 0.778,
-     "coverage_ratio": 0.897,
+     "prose_ratio": 0.889,
+     "coverage_ratio": 0.902,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-004-iwahori-hecke-algebras-and-multiplicative-jucys",
+     "id": "sec-002-iwahori-hecke-algebras-and-multiplicative-jucys",
      "title": "Iwahori-Hecke algebras and multiplicative Jucys-Murphy elements.",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.015,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.143,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
-     "id": "sec-005-some-central-elements-in-the-classical-iwahori-h",
+     "id": "sec-003-coxeter-groups",
+     "title": "Coxeter groups.",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-iwahori-hecke-algebras",
+     "title": "Iwahori-Hecke algebras.",
+     "prose_ratio": 0.941,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-trace-functional-and-a-pairing-on-hws",
+     "title": "Trace functional and a pairing on H(W,S).",
+     "prose_ratio": 0.882,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-full-twist-and-jucys-murphy-elements",
+     "title": "``Full twist'' and Jucys-Murphy elements.",
+     "prose_ratio": 0.918,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-some-central-elements-in-the-classical-iwahori-h",
      "title": "Some central elements in the classical Iwahori-Hecke algebras.",
-     "prose_ratio": 0.909,
-     "coverage_ratio": 0.788,
+     "prose_ratio": 0.922,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-006-markov-traces",
+     "id": "sec-008-markov-traces",
      "title": "Markov traces.",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-007-markov-traces-via-jucys-murphy-elements",
-     "title": "Markov traces via Jucys-Murphy elements.",
-     "prose_ratio": 0.946,
-     "coverage_ratio": 0.847,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-008-geometric-markov-traces",
+     "id": "sec-009-markov-traces-via-jucys-murphy-elements",
+     "title": "Markov traces via Jucys-Murphy elements.",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-general-markov-traces-in-types-b-d",
+     "title": "General Markov traces in types B, D.",
+     "prose_ratio": 0.914,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-geometric-markov-traces",
      "title": "Geometric Markov traces.",
      "prose_ratio": 0.946,
-     "coverage_ratio": 0.508,
+     "coverage_ratio": 0.532,
      "result": "overlaid",
      "converter": "latex"
     }

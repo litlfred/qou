@@ -1,0 +1,46 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-q-alg-9712055v2",
+ "source": {
+  "structure_sha256": "eccb15d2c3dc7346a6f116a854aba7cf6a2cfbb5df975cf5d35597cecfa85968",
+  "file": "9712055v2.pdf"
+ },
+ "provenance": {
+  "title": "arXiv:q-alg/9712055v2 12 Jan 1998",
+  "authors": "ITEP, 117259, Moscow",
+  "arxiv": {
+   "id": "q-alg/9712055",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "12 Jan 1998"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "recommendation": 1
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We begin with \\begin{lem}\\label{l5.1} $$ \\int d_{q^2}ze_{q^2}(-i(1-q^2)z)\\bg= \\left\\{ \\begin{array}{lcl} \\frac2{1-q^2}\\Theta_0 & for & s=1\\\\ 0 & for & s\\ne 1.\\\\ \\end{array} \\right. $$ where $\\Theta_0$ is determined by (\\ref{2.17}). \\end{lem} {\\bf Proof.} In according with our definition of $q^2$-integrals all integrands must by ordered.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-5-the-q2-fourier-transform.md",
+   "section_title": "The $q^2$-Fourier transform",
+   "pages": "10-13",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

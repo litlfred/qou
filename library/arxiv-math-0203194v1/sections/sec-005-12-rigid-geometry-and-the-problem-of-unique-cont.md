@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0203194v1
-doc_title: "Period mappings and differential equations. From C to Cp Tôhoku-Hokkaidô lectures in Arithmetic Geometry"
+doc_title: "Period mappings and differential equations. From C to Cp"
 section_id: sec-005-12-rigid-geometry-and-the-problem-of-unique-cont
 section_title: "Rigid geometry and the problem of unique continuation."
 section_number: 1.2
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.965
 latex_coverage_ratio: 0.992
+doc_brief: "Period mappings and differential equations. From C to Cp — 101 sections: Front matter; Purpose of this book.; Contents of this book."
 ---
 \label{subsection-rigid-and-unique-cont}
 \begin{para}

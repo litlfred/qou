@@ -1,0 +1,56 @@
+3.7 Hybrid Monte Carlo algorithm for Nuclear Lattice Effective Field Theory
+
+3.7 Hybrid Monte Carlo algorithm for Nuclear Lattice Effective Field
+Theory
+
+While there are a lot of different algorithms to calculate Eq. (3.41), we choose the Hybrid Monte Carlo
+(HMC) algorithm in this thesis [102]. In this algorithm we update the whole field and auxiliary field
+configuration at the same time making it very efficient and exact. In the following we give a detailed
+description of the method. Starting point is the path integral with auxiliary fields according to Eq. (3.49),
+where the path integral over the Grassmann fields is substituted by the transfer matrix formulation,
+
+Z(t) = fox Ds Ds, Ds, Ds, exp [-S 27 — S ss] (UI Mt: (71), 5, 55.57, Ss) |¥). (3.56)
+
+Here, |‘P) is the trial wave function and Mr), s, 87) is the transfer matrix including all auxiliary
+field-nucleon interactions,
+
+Ja® > *
+M") (),8,85, Sp 85)) =1 EXP [Hs - oF » Agi, (,.,) ps (i)
+7 SI
+
++ V=C00% >) 8(ii, 74) p (it) + =e, >' D' 85 (i.,) bs (it) (3.57)
+it S oat
+
++ V=Gi@, >) >! 8; (ii,m,) p1 (Rt) + V=eum >) >) 851 Gem) psy ()|  -
+Il i Slot
+
+The free Hamiltonian is used in the discretized version of the upper line of Eq. (3.44), while the density
+operators are defined in App. B. The auxiliary fields s,s;,s, and ss, correspond to the respective contact
+interaction. The pion and auxiliary field actions read
+
+2
+us
+
+Sonn -o,(% + 23 Yin (it) n; (it) - a, Ym (it) x, (it +2), (3.58)
+Toit aa
+
+I
+
+8.655 d) sGi.n) f (t= 7) s(a")+5 D) 55 (tm) 1 (#71) 55 (7)
+
+My Aa’ nS
+
+1 1 (3.59)
++5 sin) fo (=i) 5; (a) + 5 Dd) ssn) | (t= 7’) ss,(7’),
+Af’ sn, AA’ sn, ST
+with f lit — it’) is the inverse smearing function,
+-l(s 2) 1 1 of 29
+f \a-at = pd zqeelat7 ). (3.60)
+
+A natural choice for the trial wave function is an antiymmetric combination of plane single-nucleon
+wave functions, |"). As a time evolution of such a state through the complete LO transfer matrix is
+too expensive, we split the calculation into two parts. Firstly, we evolve this configuration through an
+SU(4) symmetric Hamiltonian L, times. Such a simplified Hamiltonian does not suffer from the sign
+problem and it is already a good approximation to the full Hamiltonian [33, 103, 104]. Then the trial
+
+33

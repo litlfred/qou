@@ -1,0 +1,42 @@
+5.9. A smooth global family 131
+
+by its pull-back under this base change. In particular, since étale-locally
+any smooth morphism admits a section, we can assume that there exists a
+section o : S —+ U of our family f : U —> S. Since by assumption L has
+finite monodromy, we can after passing to a further branched cover assume
+that the local system o*(L) is trivial. Now recall from [102, cor. 5.1] that
+for any (not necessarily proper) morphism f : U —> S of complex algebraic
+varieties, there exists a Zariski-open dense subset S’ C S over which the
+restriction U’ —+ S$’ is a topologically locally trivial fibration in the analytic
+topology. We then in particular have the exact fibration sequence
+Ox
+aT
+» — > m(Us,u) —> m(U',u) —~ m(S,s) —>--:
+
+for s € S’(C) and u = o(s). Hence the triviality of o*(L) implies that the
+monodromy group
+
+G(u) = Im(a(Us,u) —> Autc(Lu))
+is mapped isomorphically onto the group
+Gy = Im((U’,u) —_— Aut¢ (Ly)
+
+via the homomorphism i in the diagram from the beginning of the proof,
+and hence the lemma follows. oO
+
+5.9. A smooth global family
+
+To complete the proof of theorem 5.1 it remains to construct an abelian
+scheme Xs —+ S with the properties discussed in section 5.2, which will
+allow to relate the monodromy group of the local system V, for a general
+ppav of dimension g = 4 to the corresponding monodromy group for the
+Jacobian variety of a smooth non-hyperelliptic curve. To this end we fix an
+integer n > 3 and work as in section 4.1 over the moduli space .% ,, of ppav’s
+of dimension 4 with a full level n structure, which by [80, chapt. 7.3] is
+represented by a smooth quasi-projective variety. For subvarieties S > % y
+we denote by
+
+Os ——~ Xs
+Ss
+
+the corresponding abelian scheme with its relatively ample divisor which
+on the universal covering is defined by the Riemann theta function. We are

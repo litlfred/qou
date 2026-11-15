@@ -6,7 +6,9 @@
   "sha256": "12a83d647032306e24776887b6ccc3b05827eb0782367d319d7af235c251dedd",
   "bytes": 104723,
   "pages": 7,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -14,117 +16,219 @@
   "arxiv": null,
   "doi": null,
   "title": "Singular Euclidean Structures on a Simplicial Complex with Weighted Edges",
-  "authors_raw": "Graduate School of Mathematical Sciences, The University of Tokyo",
-  "abstract": null,
-  "docinfo": {
-   "CreationDate": "D:20030409131754",
-   "Producer": "Acrobat Distiller 4.05 for Windows",
-   "Author": "KAMEI Satoshi",
-   "Title": "Singular Euclidean Structures on a Simplicial Complex with Weighted Edges",
-   "Creator": "3B2 Total Publishing System 7.51e/W"
-  },
+  "authors_raw": "KAMEI Satoshi",
   "title_lines": [
    "Singular Euclidean Structures on a Simplicial Complex",
-   "with Weighted Edges",
-   "KAMEISatoshi"
+   "with Weighted Edges"
   ],
-  "title_prev": "Singular Euclidean Structures on a Simplicial Complex with Weighted Edges KAMEISatoshi"
+  "abstract": null,
+  "docinfo": {
+   "Title": "Singular Euclidean Structures on a Simplicial Complex with Weighted Edges",
+   "Author": "KAMEI Satoshi",
+   "Producer": "Acrobat Distiller 4.05 for Windows",
+   "Creator": "3B2 Total Publishing System 7.51e/W",
+   "CreationDate": "D:20030409131754"
+  },
+  "title_raw": "Singular Euclidean Structures on a Simplicial Complex with Weighted Edges",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Singular Euclidean Structures on a Simplicial Complex with Weighted Edges",
+   "heading": "Singular Euclidean Structures on a Simplicial Complex with Weighted Edges",
+   "text": "Singular Euclidean Structures on a Simplicial Complex with Weighted Edges",
+   "corroborated_by": [
+    "heading",
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  }
  },
- "toc": [
+ "toc": [],
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "2 inferred entries with mean confidence 0.00, below the 0.6 floor — too little evidence agreed",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (2 inferred entries with mean confidence 0.00, below the 0.6 floor — too little evidence agreed): one section per page.",
+ "figures": [
   {
-   "level": 1,
-   "title": "Introduction",
-   "page": 1,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "Locally Euclidean Structures",
+   "kind": "figure",
+   "number": "1",
+   "title": "",
    "page": 2,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Singular Euclidean Structures",
-   "page": 5,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "Three Dimensional Simplicial Complexes",
-   "page": 6,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 7,
-   "source": "inferred",
-   "number": null
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "82"
   }
  ],
- "toc_source": "inferred",
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "82",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "83",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "84",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "85",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "86",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "87",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-1-introduction",
-   "number": "1",
-   "title": "Introduction",
+   "id": "page-001",
+   "number": null,
+   "title": "Page 1",
    "level": 1,
    "page_start": 1,
-   "page_end": 2,
-   "n_chars": 4708,
-   "n_words": 439
+   "page_end": 1,
+   "n_chars": 4513,
+   "n_words": 812,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-2-locally-euclidean-structures",
-   "number": "2",
-   "title": "Locally Euclidean Structures",
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
    "level": 1,
    "page_start": 2,
-   "page_end": 5,
-   "n_chars": 6972,
-   "n_words": 934
+   "page_end": 2,
+   "n_chars": 2509,
+   "n_words": 461,
+   "label_start": "82",
+   "label_end": "82"
   },
   {
-   "id": "sec-002-3-singular-euclidean-structures",
-   "number": "3",
-   "title": "Singular Euclidean Structures",
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 3362,
+   "n_words": 809,
+   "label_start": "83",
+   "label_end": "83"
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 3127,
+   "n_words": 763,
+   "label_start": "84",
+   "label_end": "84"
+  },
+  {
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
    "level": 1,
    "page_start": 5,
-   "page_end": 6,
-   "n_chars": 6457,
-   "n_words": 718
+   "page_end": 5,
+   "n_chars": 3509,
+   "n_words": 787,
+   "label_start": "85",
+   "label_end": "85"
   },
   {
-   "id": "sec-003-4-three-dimensional-simplicial-complexes",
-   "number": "4",
-   "title": "Three Dimensional Simplicial Complexes",
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
    "level": 1,
    "page_start": 6,
-   "page_end": 7,
-   "n_chars": 1765,
-   "n_words": 192
+   "page_end": 6,
+   "n_chars": 3325,
+   "n_words": 691,
+   "label_start": "86",
+   "label_end": "86"
   },
   {
-   "id": "sec-004-references",
+   "id": "page-007",
    "number": null,
-   "title": "References",
+   "title": "Page 7",
    "level": 1,
    "page_start": 7,
    "page_end": 7,
-   "n_chars": 598,
-   "n_words": 28
+   "n_chars": 2476,
+   "n_words": 455,
+   "label_start": "87",
+   "label_end": "87"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 5,
-  "sections": 5,
-  "chars_total": 20500
+  "toc_entries": 0,
+  "toc_inferred_entries": 2,
+  "toc_inferred_mean_confidence": 0.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "regex",
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 7,
+  "chars_total": 22821,
+  "furniture_lines_stripped": 12
  }
 }

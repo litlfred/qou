@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: ant-v14-n7-s-p09.pdf
 source_sha256: c8fe963200a79d25
 toc_source: inferred
+doc_brief: "Galois action on the principal block and cyclic Sylow subgroups — 7 sections: Front matter; Introduction; Blocks with normal defect group"
 ---
 msp
 ALGEBRA AND NUMBER THEORY 14:7 (2020)

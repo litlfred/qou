@@ -8,7 +8,9 @@ pages: 24-25
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
 toc_source: inferred
+doc_brief: "Reidemeister torsion on character varieties — 52 sections: Front matter; Introduction; Character varieties and Reidemeist"
 ---
+The augmented variety
 In this subsection we deﬁne a two-fold cover of the character variety when Γ is the
 fundamental group of a 3-manifold with boundary a single torus, which has been
 previously considered by several authors, see for instance [DG16]. Both the deﬁnition
@@ -48,4 +50,3 @@ augmented character variety as the ﬁbered product :
 ¯X(M) = X(M) ×X(∂M) H1(∂M, k∗)
 that is, ¯X(M) = Spec ¯B[Γ].
 23
-1.1.7

@@ -1,0 +1,52 @@
+Invariants in Low-Dimensional Topology and Knot Theory 31
+
+Seiberg-Witten maps and stable homotopy
+STEFAN BAUER
+
+Consider the space of all compact non-linear perturbations of a fixed linear Fred-
+holm operator L satisfying a boundedness condition: Preimages of bounded sets
+are supposed to be bounded. Suitably topologized, this space will have the weak
+homotopy type of the infinite loop space
+
+arse (grind),
+
+The Seiberg-Witten map for a closed four-manifold satisfies the necessary bound-
+edness conditions and thus defines a map of spectra: From the Thom spectrum
+of the virtual index bundle of the Dirac operator over the Picard group of the
+manifold to the sphere spectrum. In this way one obtains a lift of what is known
+as the Bauer-Furuta invariant [1] from the homotopy category of spectra to the
+category of spectra. An extension of this construction to compact four-manifolds
+with boundary a finite union of rational homotopy three-spheres was announced.
+From this extension one can conclude that the 11/8 conjecture holds for spin
+four-manifolds with finite fundamental group.
+
+REFERENCES
+
+[1] S. Bauer, M. Furuta A stable cohomotopy refinement of Seiberg-Witten invariants. I, Invent.
+Math. 155 (2004), 1-19.
+
+Recognizing trivial links in polynomial time
+CHAD Musick
+
+We let a link be a family of circles disjointly embedded in R*U{oo}. Trivial links
+are those links embedded such that the 3-dimensional space may be continuously
+deformed so that the resultant link is embedded as a subset of R?. We give a
+method to decide, for any link ZL, whether or not L is trivial. This method is
+polynomial in complexity.
+
+We proceed by developing two new measures of complexity, the crumple and
+the sentence length. To define these, we restrict our attention to links embedded
+in a restricted fashion as described below.
+
+Let L be a link. If we may find a finite set S of concentric spheres of positive
+integer radius such that the closure of the portion of L lying in (R° — S$) U {oo} is
+a set of disjoint line segments each lying along a line through the common center
+of the members of S, we say that the link is a tar link.
+
+Given a tar link LZ with a set S of spheres as described above, we let the crumple
+of L be the sum of the lengths of the portions of L lying in the complement of S.
+By choosing a tar link in which all of the members of the intersection of Z and
+the complement of S$ lie in the plane R?, we may write a descriptive sentence of
+the embedding of L. The length of this sentence will depend upon the number of
+line segments in the complement of S and on the number of mutual intersections
+between S, L, and R?.

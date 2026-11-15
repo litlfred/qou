@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.955
 latex_coverage_ratio: 0.975
+doc_brief: "The Polyanalytic Ginibre Ensembles — For integers n, q = 1, 2, 3, . . ., let Poln,q denote the C-linear space of polynomials in z and ¯z, of degree ≤n −1 in z and of degree ≤q −1 in ¯z."
 ---
 We show that the Berezin measures have the convergence ${\mathrm d}B^{\langle z\rangle}_{m,n,q}\to{\mathrm d}\omega_z$ for $z\in{\mathbb D}^e$ as $m,n\to+\infty$ while $n=m+\mathrm{O}(1)$. Here, $\omega_z$ is harmonic measure with respect to the point $z$ and the exterior disk $\mathbb{D}^e$.
 

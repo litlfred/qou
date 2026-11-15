@@ -1,0 +1,68 @@
+let ?M = moebius-pt (moebius-rotation )
+assume *: u € unit-disc u # Op, and **: ?R'(?M u) On
+have uf: unit-disc-fix (moebius-rotation ~)
+by simp
+have ?M 0n = On
+by auto
+hence «+: ?R’ (?M u) (2M 0n)
+using **
+by simp
+show ?R’ u 0;
+proof (rule alll)+
+fix a’ al a2 rl x2 il i2
+have if: il € unit-circle-set —+ moebius-pt (mocbius-rotation p) (of-complex (to-complez il / 2))
+of-complex (to-complex (moebius-pt (moebius-rotation y) i1) / 2)
+using wunit-circle-set-def by force
+
+have i2: i2 € unit-circle-set —+ moebius-pt (mocbius-rotation p) (of-complex (to-complez i2 / 2))
+of-complex (to-complex (moebius-pt (moebius-rotation y) i2) / 2)
+using wunit-circle-set-def by force
+
+show ?R 0; a’ al a2 21 72 il i2u
+using **[rule-format, of ?M a’ ?M x1 ?M x2 ?M il ?M i2 2M al ?M a2] uf *
+apply (auto simp del: moebius-pt-mocbius-rotation-zero moebius-pt-moebius-rotation)
+using i1 i2
+by simp
+qed
+qed
+thus ?thesis
+using ‘a’ € unit-discy (tl € unit-discy (22 € unit-disc> «x1 4 22>
+using (7- poincare-collinear {0;,, x1, 22}» <ideal-points ?lx = {i1, i2}» «il # i2>
+using <?a1 # ?a2> <poincare-collinear {0n, ?a1, i1}) «poincare-collinear {0;, ?a2, i2}>
+using <?a1 € unit-discy «?a2 € unit-discy <i1 € unit-circle-sety «i2 € unit-circle-sety
+using <poincare-on-ray a' 0; a> <a’ A On» <poincare-between ?al a ?a2> 1a A Pal» <a A 2a2>
+by blast
+qed
+qed
+
+moreover
+
+have — poincare-on-line 0; ?a1 ?a2
+proof
+assume *: poincare-on-line 0; ?al ?a2
+hence poincare-collinear {0;, ?a1, ?a2}
+unfolding poincare-on-line-def
+by simp
+hence poincare-line On ?a1 = poincare-line 0; ?a2
+using poincare-collinear3-poincare-lines-equal-general[of 0, ?a1 ?a2]
+using <?al € unit-disc» «?al # On» «?a2 € unit-disc» «?a2 # On»
+by (metis inversion-noteg-unit-disc zero-in-unit-disc)
+
+have il € circline-set (poincare-line 0, ?a1)
+using <poincare-collinear {On, ?a1, i1}>
+using poincare-collinear3-poincare-line-general|of i1 On ?a1]
+using (?al € unit-disc) «?al # On»
+by (metis insert-commute inversion-noteg-unit-disc zero-in-unit-disc)
+moreover
+have i2 € circline-set (poincare-line 0, ?a1)
+using <poincare-collinear {On, ?a2, i2}>
+using poincare-collinear3-poincare-line-general|of i2 On ?a2]
+using <?a2 € unit-disc) «?a2 4 On» <poincare-line 0, ?a1 = poincare-line On ?a2>
+by (metis insert-commute inversion-noteg-unit-disc zero-in-unit-disc)
+
+ultimately
+have poincare-collinear {On, i1, i2}
+
+using <?al € unit-disc) «?a1 # On» <poincare-collinear {On, ?a1, i1}>
+
+169

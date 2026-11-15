@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-gr-qc-0407051v2
-doc_title: "arXiv:gr-qc/0407051v2 23 Aug 2004"
+doc_title: "Black hole entropy from quantum geometry"
 section_id: sec-002-3-the-combinatoric-formulation-of-the-problem
 section_title: "The combinatoric formulation of the problem"
 section_number: 3
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.964
 latex_coverage_ratio: 1.0
+doc_brief: "Black hole entropy from quantum geometry — Quantum Geometry (the modern Loop Quantum Gravity using graphs and spin-networks instead of the loops) provides microscopic degrees of freedom that account"
 ---
 From now our treatment starts to differ from that of [@abk]. Our aim is to define the number of the quantum states of the horizon which contribute to the entropy in a form of a clear and precise combinatoric formula.
 

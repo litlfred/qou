@@ -7,10 +7,11 @@
   "bytes": 167619,
   "pages": 17,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +21,31 @@
    "stamp_date": "26 Nov 2020"
   },
   "doi": null,
-  "title": "A Matrix Bernstein Inequality for Strong Rayleigh Distributions*",
+  "title": "A Matrix Bernstein Inequality for Strong Rayleigh Distributions *",
   "authors_raw": "Tarun Kathuria",
   "title_lines": [
    "A Matrix Bernstein Inequality for Strong Rayleigh",
    "Distributions*"
   ],
-  "abstract": "The Entropy method provides a powerful framework for provin g scalar concentration in- equalities by establishing functional inequalities like P oincare and log-Sobolev inequalities. These inequalities are especially useful for deriving conc entration for dependent distributions coming from stationary distributions of Markov chains. In c ontrast to the scalar case, the study of matrix concentration inequalities is fairly recent and t here does not seem to be a general framework for proving matrix concentration inequalities u sing the Entropy method. In this paper, we initiate the study of Matrix valued functional ine qualities and show how matrix valued functional inequalities can be used to establish a ki nd of iterative variance comparison argument to prove Matrix Bernstein like inequalities. Stro ng Rayleigh distributions are a class of distributions which satisfy a strong form of negative dep endence properties. W e show that scalar Poincare inequalities recently established for a \ufb02i p-swap markov chain considered in the work of Hermon and Salez [ HS19] can be lifted to prove matrix valued Poincare inequalities. This can then be combined with the iterative variance argume nt to prove a version of matrix Bernstein inequality for Lipshitz matrix-valued function s for Strong Rayleigh measures.",
+  "abstract": "The Entropy method provides a powerful framework for proving scalar concentration in- equalities by establishing functional inequalities like Poincare and log-Sobolev inequalities. These inequalities are especially useful for deriving concentration for dependent distributions coming from stationary distributions of Markov chains. In contrast to the scalar case, the study of matrix concentration inequalities is fairly recent and there does not seem to be a general framework for proving matrix concentration inequalities using the Entropy method. In this paper, we initiate the study of Matrix valued functional inequalities and show how matrix valued functional inequalities can be used to establish a kind of iterative variance comparison argument to prove Matrix Bernstein like inequalities. Strong Rayleigh distributions are a class of distributions which satisfy a strong form of negative dependence properties. We show that scalar Poincare inequalities recently established for a ﬂip-swap markov chain considered in the work of Hermon and Salez [HS19] can be lifted to prove matrix valued Poincare inequalities. This can then be combined with the iterative variance argument to prove a version of matrix Bernstein inequality for Lipshitz matrix-valued functions for Strong Rayleigh measures.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20201129210529-05'00'",
    "Creator": "LaTeX with hyperref",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20201129210529-05'00'"
+  },
+  "title_raw": "A Matrix Bernstein Inequality for Strong Rayleigh Distributions*",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "A Matrix Bernstein Inequality for Strong Rayleigh Distributions *",
+   "outline": "1 Introduction",
+   "text": "A Matrix Bernstein Inequality for Strong Rayleigh Distributions*",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "A Matrix Bernstein Inequality for Strong Rayleigh Distributions*"
  },
  "toc": [
   {
@@ -41,98 +53,323 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Matrix Valued Poincare Inequality for Strong Rayleigh measures",
    "page": 4,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "A Bernstein Inequality from Matrix valued Poincare inequalities",
    "page": 10,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 1,
    "title": "Comparison with KyngSong18",
    "page": 15,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 1,
    "title": "Conclusion and Open Questions",
    "page": 15,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 1,
    "title": "References",
    "page": 16,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1477,
+   "n_words": 205,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 10,
-   "n_chars": 20751,
-   "n_words": 3854
+   "page_end": 4,
+   "n_chars": 9041,
+   "n_words": 1437,
+   "label_start": null,
+   "label_end": "4"
   },
   {
-   "id": "sec-001-3-a-bernstein-inequality-from-matrix-valued-poin",
+   "id": "sec-001-2-matrix-valued-poincare-inequality-for-strong-r",
+   "number": "2",
+   "title": "Matrix Valued Poincare Inequality for Strong Rayleigh measures",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 10,
+   "n_chars": 11182,
+   "n_words": 2171,
+   "label_start": "4",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-002-3-a-bernstein-inequality-from-matrix-valued-poin",
    "number": "3",
    "title": "A Bernstein Inequality from Matrix valued Poincare inequalities",
    "level": 1,
    "page_start": 10,
    "page_end": 15,
-   "n_chars": 9315,
-   "n_words": 1861
+   "n_chars": 6952,
+   "n_words": 1272,
+   "label_start": "10",
+   "label_end": "15"
   },
   {
-   "id": "sec-002-5-conclusion-and-open-questions",
+   "id": "sec-003-4-comparison-with-kyngsong18",
+   "number": "4",
+   "title": "Comparison with KyngSong18",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 1876,
+   "n_words": 349,
+   "label_start": "15",
+   "label_end": "15"
+  },
+  {
+   "id": "sec-004-5-conclusion-and-open-questions",
    "number": "5",
    "title": "Conclusion and Open Questions",
    "level": 1,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 1350,
-   "n_words": 215
+   "n_chars": 1369,
+   "n_words": 208,
+   "label_start": "15",
+   "label_end": "16"
   },
   {
-   "id": "sec-003-references",
+   "id": "sec-005-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 16,
    "page_end": 17,
-   "n_chars": 3758,
-   "n_words": 536
+   "n_chars": 3732,
+   "n_words": 510,
+   "label_start": "16",
+   "label_end": "17"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 6,
-  "sections": 4,
-  "chars_total": 35174,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 7,
+  "chars_total": 35629,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "pc.tex",
    "tex_sections": 6,
-   "overlaid": 3,
+   "overlaid": 5,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -140,31 +377,52 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.738,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-001-3-a-bernstein-inequality-from-matrix-valued-poin",
+     "id": "sec-001-2-matrix-valued-poincare-inequality-for-strong-r",
+     "title": "Matrix Valued Poincare Inequality for Strong Rayleigh measures",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-3-a-bernstein-inequality-from-matrix-valued-poin",
      "title": "A Bernstein Inequality from Matrix valued Poincare inequalities",
-     "prose_ratio": 0.737,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.982,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-002-5-conclusion-and-open-questions",
+     "id": "sec-003-4-comparison-with-kyngsong18",
+     "title": "Comparison with KyngSong18",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-5-conclusion-and-open-questions",
      "title": "Conclusion and Open Questions",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-003-references",
+     "id": "sec-005-references",
      "title": "References",
      "result": "no matching \\section"
     }

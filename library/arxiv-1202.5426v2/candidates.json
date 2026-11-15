@@ -1,0 +1,61 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1202.5426v2",
+ "source": {
+  "structure_sha256": "6c7668ad72e33b4b7c03629d765b9014d4c1e6474d867ece48d1d2eeb7a997d6",
+  "file": "1202.5426v2.pdf"
+ },
+ "provenance": {
+  "title": "Hard analysis meets critical knots",
+  "authors": "S. Blatt\u2217",
+  "arxiv": {
+   "id": "1202.5426",
+   "version": "2",
+   "primary_class": "math.AP",
+   "stamp_date": "23 Jul 2012"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 2,
+  "by_kind": {
+   "recommendation": 2
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Let us conclude this introduction by remarking that, in contrast to stationary points of E(\u03b1,1), for p > 1 we do not expect stationary points of E(\u03b1,p) to be C\u221e-smooth: The resulting Euler- Lagrange equation should be in some sense a nonlocal degenerate elliptic equation.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "2-5",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "One should see this as a generalized version of De Giorgi\u2019s Iteration Lemma, cf., e.g., [Gia83].",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-4-bootstrapping-proof-of-theorem-iv.md",
+   "section_title": "Bootstrapping: Proof of Theorem IV",
+   "pages": "32-49",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

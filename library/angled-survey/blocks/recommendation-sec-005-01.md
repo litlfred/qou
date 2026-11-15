@@ -1,0 +1,1 @@
+Conjecturally, the special hypotheses of all these papers are not needed: all that should be necessary is that N is irreducible and contains no incompressible tori, and that the angle assignments satisfy (∗).

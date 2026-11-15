@@ -20,10 +20,13 @@
     "library/arxiv-physics-0203048v1/sections/sec-005",
     "library/arxiv-physics-0203048v1/sections/sec-006",
     "library/arxiv-physics-0203048v1/sections/sec-007",
-    "library/arxiv-physics-0203048v1/sections/sec-008"
+    "library/arxiv-physics-0203048v1/sections/sec-008",
+    "library/arxiv-physics-0203048v1/sections/sec-009",
+    "library/arxiv-physics-0203048v1/sections/sec-010",
+    "library/arxiv-physics-0203048v1/sections/sec-011"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
     "status": "stated",
@@ -44,8 +47,8 @@
       "stamp_date": "15 Mar 2002"
     },
     "doi": null,
-    "document_class": "math",
-    "extractor_validated": true,
-    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
   }
 }

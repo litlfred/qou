@@ -1,0 +1,136 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2211.12836v2",
+ "source": {
+  "structure_sha256": "4ffbb8b21f8b175d26656de27bd686c6c544330f5a9daf63e6ad631e57e5f362",
+  "file": "2211.12836v2.pdf"
+ },
+ "provenance": {
+  "title": "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY",
+  "authors": "DYSON BROWNIAN MOTION",
+  "arxiv": {
+   "id": "2211.12836",
+   "version": "2",
+   "primary_class": "math.PR",
+   "stamp_date": "12 May 2023"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 7,
+  "by_kind": {
+   "recommendation": 7
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "From the geometric interpretation of the quantum cohomology, an informal description of this asymptotic formula says the following (the reader should refer to Corollary [\\[cor:cohomology\\]](#cor:cohomology){reference-type=\"ref\" reference=\"cor:cohomology\"} for an exact result):",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-3",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The quantitative convergence theorem can then be written in the following simple form (the reader should refer to Theorem [\\[thm:Berry-Esseen\\]](#thm:Berry-Esseen){reference-type=\"ref\" reference=\"thm:Berry-Esseen\"} for a more precise and more general result), where we recall that $\\xi_n$ is the embedding of $B_{k,n}$ in $T_{k}$ defined in Section [\\[subsec:intro_model\\]](#subsec:intro_model){reference-type=\"ref\" reference=\"subsec:intro_model\"} and we identify a random variable with its distribution.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-005-24-main-probabilistic-theorems.md",
+   "section_title": "Main probabilistic theorems",
+   "pages": "7-11",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In general, the minimal order of moment which is required to be finite to get a central limit theorem should depend on the geometry of the domain, and may be much higher than $3$, see [@DeWa15].",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-005-24-main-probabilistic-theorems.md",
+   "section_title": "Main probabilistic theorems",
+   "pages": "7-11",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Since this is mainly a one-dimensional issue, one may expect that a more general local limit theorem should hold and a Berry-Esseen theorem without the $\\log n$ factor in the error term.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-005-24-main-probabilistic-theorems.md",
+   "section_title": "Main probabilistic theorems",
+   "pages": "7-11",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We define the degree $\\deg f$ of $f\\in Hol(G_{k,n})$ as $$\\deg f=\\#\\{z\\in \\mathbb{P}^1(\\mathbb{C}), f(z)\\cap H\\not=\\emptyset, \\quad H\\in G_{n-k-1,n} \\text{ generic}\\}.$$ We should understand $\\deg f$ as the number of singular points of $f$ (as the number of poles of a rational function, which actually corresponds to the special case $k=1$, $n=2$, see Appendix [\\[sec:quantum_cohomology\\]](#sec:quantum_cohomology){reference-type=\"ref\" reference=\"sec:quantum_cohomology\"}).",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-006-25-a-geometric-corollary-on-quantum-cohomology-o.md",
+   "section_title": "A geometric corollary on quantum cohomology of the Grassmannian",
+   "pages": "11-13",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The reader should refer to Appendix [\\[sec:quantum_cohomology\\]](#sec:quantum_cohomology){reference-type=\"ref\" reference=\"sec:quantum_cohomology\"} for any background on $QH(G_{k,n})$.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-013-41-the-graph-bkn-as-an-integrable-pm-graph.md",
+   "section_title": "The graph Bk,n as an integrable PM-graph",
+   "pages": "22-25",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We will use the same method on $T_k$, taking advantage of the Fourier transform which has been defined in Section [\\[Sec:Fourier_continuous\\]](#Sec:Fourier_continuous){reference-type=\"ref\" reference=\"Sec:Fourier_continuous\"} (the reader should refer to this section for the notation used in this paragraph).",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-019-61-wasserstein-distance-on-tk.md",
+   "section_title": "Wasserstein distance on Tk",
+   "pages": "47-50",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

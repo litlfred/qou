@@ -1,13 +1,15 @@
 ---
 doc_id: yuasa-rims-kokyuroku-2163-05
-doc_title: "Twist formulas for one-row colored A» webs and sl; tails of (2, 2m)-torus links"
+doc_title: "Twist formulas for one-row colored A_2 webs and sl_3 tails of (2,2m)-torus links"
 section_id: page-005
 section_title: "Page 5"
-section_number: null
 pages: 5-5
+pdf_page: 5
 source_pdf: yuasa-rims-kokyuroku-2163-05.pdf
 source_sha256: fa2a585b45c2185d
-toc_source: undetermined
+text_source: ocr
+granularity: page
+doc_brief: "Twist formulas for one-row colored A_2 webs and sl_3 tails of (2,2m)-torus links — 11 sections: Page 1; Page 2; Page 3"
 ---
 Lemma 2.3.
 

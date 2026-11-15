@@ -1,104 +1,101 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "kirbycal",
- "document_class": "math",
- "validated": true,
  "source": {
   "structure_sha256": "8dae9487ed32a3bdbfb8cb00b72b0a6e4f38b301089b45c8fdd32eb45a12311b",
   "file": "kirbycal.pdf"
  },
  "provenance": {
-  "title": "Inventiones math. 45, 35- 56 (1978) mathematicae \u000e9 by Springer-Verlag 197 A Calculus for Framed Links in S 3 Robion Kirby*",
-  "authors": "University of California, Department of Mathematics, Berkeley, Ca. 94720, USA",
+  "title": "mathematicae",
+  "authors": "Robion Kirby*",
   "arxiv": null,
   "doi": null
  },
- "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "aspects": [
+  "requirements"
+ ],
  "summary": {
-  "candidates": 6,
+  "candidates": 5,
   "by_kind": {
-   "remark": 6
+   "recommendation": 5
   },
   "formalization_candidates": 0
  },
  "candidates": [
   {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "2",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
    "name": null,
-   "statement": "Looking back over the proof of the theorem, we see that we can perform",
-   "section_file": "sections/sec-000-1-a-and-1-b-we-can-change-the-left-end-of-a-to.md",
-   "section_title": "A and 1 B, we can change the left end of A to",
-   "pages": "15-20",
+   "statement": "But we shall see, Proposition 2, w 4, that connected summing with either S 2 x S 2 or S 2 ~S 2 can be achieved by a sequence of operations one and two.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-003.md",
+   "section_title": "Page 3",
+   "pages": "3-3",
    "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   },
   {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "3",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
    "name": null,
-   "statement": "A framed link L is called even if all the framings are even integers, or",
-   "section_file": "sections/sec-000-1-a-and-1-b-we-can-change-the-left-end-of-a-to.md",
-   "section_title": "A and 1 B, we can change the left end of A to",
-   "pages": "15-20",
+   "statement": "Next we must eliminate the 1 and 3-handles.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-009.md",
+   "section_title": "Page 9",
+   "pages": "9-9",
    "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   },
   {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "4",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
    "name": null,
-   "statement": "What happens to the calculus if we consider links in an arbitrary 3-",
-   "section_file": "sections/sec-000-1-a-and-1-b-we-can-change-the-left-end-of-a-to.md",
-   "section_title": "A and 1 B, we can change the left end of A to",
-   "pages": "15-20",
+   "statement": "Note that the same comments hold if we are dealing with the ascending one- manifold of an index 3 critical point, as we shall be after applying Figures 3.12-15, inverted, to the index 3 critical points.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-011.md",
+   "section_title": "Page 11",
+   "pages": "11-11",
    "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   },
   {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "5",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
    "name": null,
-   "statement": "The greatest value of the theorem is not in its corollaries (of which I know",
-   "section_file": "sections/sec-000-1-a-and-1-b-we-can-change-the-left-end-of-a-to.md",
-   "section_title": "A and 1 B, we can change the left end of A to",
-   "pages": "15-20",
+   "statement": "This surgery must be continuous with respect to t, which means that we must choose Et continuously.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-011.md",
+   "section_title": "Page 11",
+   "pages": "11-11",
    "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   },
   {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "6",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
    "name": null,
-   "statement": "There is a description in [Rolfsen], Chapter 10, of a related calculus for",
-   "section_file": "sections/sec-000-1-a-and-1-b-we-can-change-the-left-end-of-a-to.md",
-   "section_title": "A and 1 B, we can change the left end of A to",
-   "pages": "15-20",
+   "statement": "4.7 Proof The proof should be clear from the sequence in Figure 4.8.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-014.md",
+   "section_title": "Page 14",
+   "pages": "14-14",
    "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "7",
-   "name": null,
-   "statement": "R.A. Fenn and C.P. Rourke have shown [F-R] that the operation in",
-   "section_file": "sections/sec-000-1-a-and-1-b-we-can-change-the-left-end-of-a-to.md",
-   "section_title": "A and 1 B, we can change the left end of A to",
-   "pages": "15-20",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   }
  ]
 }

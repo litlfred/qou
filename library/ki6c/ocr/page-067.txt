@@ -1,0 +1,65 @@
+which is independent of N and n (but might be dependent on 5). Hence, there exists
+C > 0 such that
+
+1 an+1 log N
+Jy esl@al + AA)| < 0-78
+
+for sufficiently large N and any integer n such that 6 < antl <1-—0. The aim of Lemma
+
+D.2 is to extend this estimate to the case where 6 = 0.
+Before we show Lemma D.2, we show the following lemma.
+
+Lemma D.1. There exist C,,C2 > 0 such that
+
+log N
+NO
+
+1
+A(x)| < G-
+| (W)) SO
+for any sufficiently large N. That is,
+
+Mx) = OPES), AGR) = OF).
+
+Proof. Since A‘(t) = — log 2sin xt, we have that
+
+t
+A(t) = i ( — log 2sin 7s)ds.
+0
+
+Let t be sufficiently small. Since sina > x — a? =x(1- aa ?) for sufficiently small 2,
+
+‘ 1 ‘ 1
+A(t) < | (= log 27s (1— 6 ms’))ds = i ( — log 27s — log(1 — 5 ms))ds
+0 0
+
+t
+
+2.
+
+< | ( — log 27s — 2s”)ds = —t log2at+t+ 3 t,
+0
+
+where we obtain the second inequality, since — log(1 — ens”) = ans? + O(s*) < 2s? for
+
+sufficiently small s. Hence,
+
+1 2rd 2 log N
+A(—) < -=1 =
+(x) S xlsx t wt ays > OC):
+Since A(t) is non-negative for sufficiently small t, we obtain the first formula of the lemma.
+We obtain the second formula of the lemma from the first formula by replacing N with
+2N. O
+
+Lemma D.2. There exists C > 0 such that
+
+a2n+1 log N
+< .
+lz log |(a)n| + A( | < © N
+for any sufficiently large N and any integer n such thatO0 <n< N. That is,
+1 2n+1 log N
+w lel @al = —A( oN ) + O( N )
+
+as N - oo fixing a value of n/N.
+
+67

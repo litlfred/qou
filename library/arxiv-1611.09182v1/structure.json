@@ -6,10 +6,22 @@
   "sha256": "6b40549b96d40ac7045dc59e5086ba8375fb5da7a96375c55a8fc50372d4d4ed",
   "bytes": 911148,
   "pages": 97,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 78,
+    "reason": "12 of 166 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 85,
+    "reason": "28 of 245 words are a stray single letter: the text layer splits words"
+   }
+  ],
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,27 +32,31 @@
   },
   "doi": null,
   "title": "Standard model physics from an algebra?",
-  "authors_raw": null,
-  "abstract": null,
-  "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20161129012210Z",
-   "Creator": "LaTeX with hyperref package",
-   "Producer": "pdfTeX-1.40.12",
-   "Title": "uWaterloo LaTeX Thesis Template"
-  },
+  "authors_raw": "C. Furey",
   "title_lines": [
    "Standard model physics from an",
-   "algebra?",
-   "C. Furey",
-   "A thesis",
-   "presented to the University of Waterloo",
-   "in fulfillment of the",
-   "thesis requirement for the degree of",
-   "Doctor of Philosophy",
-   "Physics"
+   "algebra?"
   ],
-  "title_prev": "Standard model physics from an algebra? C. Furey A thesis presented to the University of Waterloo in fulfillment of the thesis requirement for the degree of Doctor of Philosophy Physics"
+  "abstract": null,
+  "docinfo": {
+   "Title": "uWaterloo LaTeX Thesis Template",
+   "Producer": "pdfTeX-1.40.12",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20161129012210Z"
+  },
+  "title_raw": "Standard model physics from an algebra?",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "uWaterloo LaTeX Thesis Template",
+   "heading": "Standard model physics from an algebra?",
+   "outline": "0.1 Abstract",
+   "text": "Standard model physics from an algebra?",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -48,536 +64,1877 @@
    "title": "Abstract",
    "page": 2,
    "source": "outline",
-   "number": "0.1"
+   "number": "0.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "ii"
   },
   {
    "level": 1,
    "title": "Acknowledgements",
    "page": 3,
    "source": "outline",
-   "number": "0.2"
+   "number": "0.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "iii"
   },
   {
    "level": 1,
    "title": "Introduction",
    "page": 9,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Towards conceptual parsimony",
    "page": 9,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Outline",
    "page": 10,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "What lies in an algebra?",
    "page": 11,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Causality",
    "page": 11,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Irreversible time",
    "page": 13,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Particles",
    "page": 14,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Summary and outlook",
    "page": 15,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Complex quaternions",
    "page": 16,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Preamble",
    "page": 16,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Introduction to CH",
    "page": 16,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Conjugation",
    "page": 17,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Generalized ideals",
    "page": 18,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Complex invariant-action, mc",
    "page": 19,
    "source": "outline",
-   "number": "3.5"
+   "number": "3.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 3,
    "title": "Preliminaries",
    "page": 19,
    "source": "outline",
-   "number": "3.5.1"
+   "number": "3.5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 3,
    "title": "Weyl and Dirac spinors as generalized ideals",
    "page": 20,
    "source": "outline",
-   "number": "3.5.2"
+   "number": "3.5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 3,
    "title": "A seamless new way to conjugate Weyl spinors",
    "page": 21,
    "source": "outline",
-   "number": "3.5.3"
+   "number": "3.5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 3,
    "title": "Majorana spinors as generalized ideals",
    "page": 22,
    "source": "outline",
-   "number": "3.5.4"
+   "number": "3.5.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 2,
    "title": "Hermitian invariant-action, mh",
    "page": 23,
    "source": "outline",
-   "number": "3.6"
+   "number": "3.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Quaternionic invariant-action, mq",
    "page": 24,
    "source": "outline",
-   "number": "3.7"
+   "number": "3.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "Bilinears",
    "page": 25,
    "source": "outline",
-   "number": "3.8"
+   "number": "3.8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Summary",
    "page": 25,
    "source": "outline",
-   "number": "3.9"
+   "number": "3.9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Outlook",
    "page": 26,
    "source": "outline",
-   "number": "3.10"
+   "number": "3.10",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 1,
    "title": "Clifford algebras",
    "page": 27,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 2,
    "title": "Motivation",
    "page": 27,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 2,
    "title": "Definition",
    "page": 27,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 2,
    "title": "Examples of Clifford algebras from CH",
    "page": 29,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 2,
    "title": "Minimal left ideals",
    "page": 30,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "How to identify minimal left ideals",
    "page": 31,
    "source": "outline",
-   "number": "4.5"
+   "number": "4.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 3,
    "title": "Some definitions",
    "page": 31,
    "source": "outline",
-   "number": "4.5.1"
+   "number": "4.5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 3,
    "title": "Procedure",
    "page": 32,
    "source": "outline",
-   "number": "4.5.2"
+   "number": "4.5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
   },
   {
    "level": 2,
    "title": "Minimal left ideals in CH",
    "page": 33,
    "source": "outline",
-   "number": "4.6"
+   "number": "4.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 3,
    "title": "Fock space structure",
    "page": 33,
    "source": "outline",
-   "number": "4.6.1"
+   "number": "4.6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 2,
    "title": "The Dirac algebra",
    "page": 34,
    "source": "outline",
-   "number": "4.7"
+   "number": "4.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 2,
    "title": "Right action required",
    "page": 36,
    "source": "outline",
-   "number": "4.8"
+   "number": "4.8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "28"
   },
   {
    "level": 2,
    "title": "Parity and the field strength tensor",
    "page": 36,
    "source": "outline",
-   "number": "4.9"
+   "number": "4.9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "28"
   },
   {
    "level": 1,
    "title": "Standard model of particle physics",
    "page": 40,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "32"
   },
   {
    "level": 2,
    "title": "What it is",
    "page": 40,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "32"
   },
   {
    "level": 2,
    "title": "What it is not",
    "page": 43,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "35"
   },
   {
    "level": 2,
    "title": "What it should be",
    "page": 43,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "35"
   },
   {
    "level": 1,
    "title": "One generation of quarks and leptons from CO",
    "page": 45,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "37"
   },
   {
    "level": 2,
    "title": "A summary of the results to come",
    "page": 46,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "38"
   },
   {
    "level": 2,
    "title": "Introduction to CO",
    "page": 48,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "40"
   },
   {
    "level": 2,
    "title": "Octonionic chain algebra",
    "page": 50,
    "source": "outline",
-   "number": "6.3"
+   "number": "6.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "42"
   },
   {
    "level": 2,
    "title": "A system of ladder operators",
    "page": 53,
    "source": "outline",
-   "number": "6.4"
+   "number": "6.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "45"
   },
   {
    "level": 2,
    "title": "Complex conjugation's analogue",
    "page": 54,
    "source": "outline",
-   "number": "6.5"
+   "number": "6.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "46"
   },
   {
    "level": 2,
    "title": "Minimal left ideals",
    "page": 55,
    "source": "outline",
-   "number": "6.6"
+   "number": "6.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "47"
   },
   {
    "level": 2,
    "title": "MTIS symmetries: su(3)c and u(1)em",
    "page": 57,
    "source": "outline",
-   "number": "6.7"
+   "number": "6.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "49"
   },
   {
    "level": 2,
    "title": "Ladders to su(3)c and u(1)em",
    "page": 58,
    "source": "outline",
-   "number": "6.8"
+   "number": "6.8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "50"
   },
   {
    "level": 2,
    "title": "Towards the weak force",
    "page": 61,
    "source": "outline",
-   "number": "6.9"
+   "number": "6.9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "53"
   },
   {
    "level": 2,
    "title": "Summary",
    "page": 62,
    "source": "outline",
-   "number": "6.10"
+   "number": "6.10",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "54"
   },
   {
    "level": 1,
    "title": "Why does SU(2)L act on only left-handed fermions?",
    "page": 63,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "55"
   },
   {
    "level": 2,
    "title": "A spotlight on right multiplication",
    "page": 63,
    "source": "outline",
-   "number": "7.1"
+   "number": "7.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "55"
   },
   {
    "level": 2,
    "title": "Leptonic subspace of Cl(4)",
    "page": 64,
    "source": "outline",
-   "number": "7.2"
+   "number": "7.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "56"
   },
   {
    "level": 2,
    "title": "MTIS symmetries: su(2)L and u(1)Y",
    "page": 65,
    "source": "outline",
-   "number": "7.3"
+   "number": "7.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "57"
   },
   {
    "level": 2,
    "title": "Summary and outlook",
    "page": 66,
    "source": "outline",
-   "number": "7.4"
+   "number": "7.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "58"
   },
   {
    "level": 1,
    "title": "Group representation structure of some grand unified theories",
    "page": 67,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "59"
   },
   {
    "level": 2,
    "title": "SU(5) unification",
    "page": 67,
    "source": "outline",
-   "number": "8.1"
+   "number": "8.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "59"
   },
   {
    "level": 3,
    "title": "Introduction",
    "page": 67,
    "source": "outline",
-   "number": "8.1.1"
+   "number": "8.1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "59"
   },
   {
    "level": 3,
    "title": "GSM inside SU(5)",
    "page": 68,
    "source": "outline",
-   "number": "8.1.2"
+   "number": "8.1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "60"
   },
   {
    "level": 3,
    "title": "Some notes on symmetry breaking",
    "page": 70,
    "source": "outline",
-   "number": "8.1.3"
+   "number": "8.1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "62"
   },
   {
    "level": 2,
    "title": "A fermionic binary code",
    "page": 71,
    "source": "outline",
-   "number": "8.2"
+   "number": "8.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "63"
   },
   {
    "level": 2,
    "title": "Spin(10) unification",
    "page": 73,
    "source": "outline",
-   "number": "8.3"
+   "number": "8.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "65"
   },
   {
    "level": 2,
    "title": "Pati-Salam model",
    "page": 76,
    "source": "outline",
-   "number": "8.4"
+   "number": "8.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "68"
   },
   {
    "level": 1,
    "title": "Towards a three-generation model",
    "page": 79,
    "source": "outline",
-   "number": "9"
+   "number": "9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "71"
   },
   {
    "level": 2,
    "title": "Introduction",
    "page": 79,
    "source": "outline",
-   "number": "9.1"
+   "number": "9.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "71"
   },
   {
    "level": 2,
    "title": "Generators of SU(3)c",
    "page": 80,
    "source": "outline",
-   "number": "9.2"
+   "number": "9.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "72"
   },
   {
    "level": 2,
    "title": "Three generations under SU(3)c",
    "page": 81,
    "source": "outline",
-   "number": "9.3"
+   "number": "9.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "73"
   },
   {
    "level": 2,
    "title": "A sample calculation",
    "page": 84,
    "source": "outline",
-   "number": "9.4"
+   "number": "9.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "76"
   },
   {
    "level": 2,
    "title": "Summary for SU(3)c",
    "page": 85,
    "source": "outline",
-   "number": "9.5"
+   "number": "9.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "77"
   },
   {
    "level": 2,
    "title": "Three generations under SU(3)c and U(1)em",
    "page": 86,
    "source": "outline",
-   "number": "9.6"
+   "number": "9.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "78"
   },
   {
    "level": 2,
    "title": "Outlook: From one generation to three",
    "page": 89,
    "source": "outline",
-   "number": "9.7"
+   "number": "9.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "81"
   },
   {
    "level": 1,
    "title": "Conclusion",
    "page": 91,
    "source": "outline",
-   "number": "10"
+   "number": "10",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "83"
   },
   {
    "level": 1,
    "title": "References",
    "page": 93,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "85"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "2.1",
+   "title": "The unevaluated algebraic expression, f · (e · (d · c + b · a)), gives a causal set",
+   "page": 12,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "4.1",
+   "title": "The algebra C ⊗H written so as to show its Cl(3, 0) structure. Here, the Cliﬀord algebra’s zero-vector is 1, its generating vectors are iϵx, iϵy, iϵz, its bivectors are iϵyiϵz = −ϵx,",
+   "page": 29,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "21"
+  },
+  {
+   "kind": "figure",
+   "number": "4.2",
+   "title": "The algebra C⊗H written so as to show its Cl(2) structure. Here, the Cliﬀord algebra’s zero-vector is 1, its generating vectors are iϵx and iϵy, its bivector is iϵxiϵy = −ϵz",
+   "page": 30,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "22"
+  },
+  {
+   "kind": "figure",
+   "number": "6.1",
+   "title": "Multiplication of octonionic imaginary units",
+   "page": 48,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "40"
+  },
+  {
+   "kind": "figure",
+   "number": "6.2",
+   "title": "The 64-complex-dimensional octonionic chain algebra gives a representation of",
+   "page": 52,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "44"
+  },
+  {
+   "kind": "figure",
+   "number": "6.3",
+   "title": "States behaving as a full generation of standard model fermions, represented",
+   "page": 61,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "53"
+  },
+  {
+   "kind": "figure",
+   "number": "7.1",
+   "title": "This ﬁgure may be thought of as the analogue of Figure 6.3. A minimal",
+   "page": 66,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "58"
+  },
+  {
+   "kind": "figure",
+   "number": "8.1",
+   "title": "",
+   "page": 72,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "64"
+  },
+  {
+   "kind": "figure",
+   "number": "8.2",
+   "title": "The exterior algebra ΛC5, representing a fermionic binary code, broken down into irreps of SU(5). Here, basis elements which are part of the same irreducible representations are connected by red lines",
+   "page": 73,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "65"
+  },
+  {
+   "kind": "figure",
+   "number": "8.3",
+   "title": "The exterior algebra ΛC5, representing a fermionic binary code, with the corresponding standard model particles written underneath. Here, basis elements which are part of the same irreps under GSM are connected by blue lines",
+   "page": 74,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "66"
+  },
+  {
+   "kind": "figure",
+   "number": "8.4",
+   "title": "Readers may recognize that this same pattern has appeared more than once in this thesis. That is, minimal left ideals, such as ΨL and Su, have been built using raising",
+   "page": 75,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "67"
+  },
+  {
+   "kind": "figure",
+   "number": "8.5",
+   "title": "The tensor product of the exterior algebras ΛC2 and ΛC3, arranged so as",
+   "page": 78,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "70"
+  },
+  {
+   "kind": "figure",
+   "number": "9.1",
+   "title": "The 64-dimensional octonionic chain algebra splits into two sets of SU(3) generators of the form iΛν and −iΛ∗ν∗, six SU(3) singlets ℓj, six triplets qk, and their complex conjugates. These objects are sectioned oﬀabove into four quadrants according to their forms: νaν, ν∗aν, νaν∗and ν∗aν∗for a in th",
+   "page": 85,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "77"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "i",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "ii",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "iii",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "iv",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "v",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "vi",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "vii",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "viii",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "2",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "3",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "4",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "5",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "6",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "7",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "8",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "9",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "10",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "11",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "12",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "13",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "14",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "15",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "16",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "17",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "18",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "19",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "20",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "21",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "22",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "23",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "24",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "25",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "26",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "27",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "28",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "29",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "30",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "31",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "32",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "33",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "34",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "35",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "36",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "37",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "38",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "39",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "40",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "41",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "42",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "43",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "44",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "45",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "46",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "47",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "48",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "49",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "50",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "51",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "52",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "53",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "54",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "55",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "56",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "57",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "58",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": "59",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 68,
+   "label": "60",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 69,
+   "label": "61",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 70,
+   "label": "62",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 71,
+   "label": "63",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 72,
+   "label": "64",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 73,
+   "label": "65",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 74,
+   "label": "66",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 75,
+   "label": "67",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 76,
+   "label": "68",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 77,
+   "label": "69",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 78,
+   "label": "70",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 79,
+   "label": "71",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 80,
+   "label": "72",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 81,
+   "label": "73",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 82,
+   "label": "74",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 83,
+   "label": "75",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 84,
+   "label": "76",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 85,
+   "label": "77",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 86,
+   "label": "78",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 87,
+   "label": "79",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 88,
+   "label": "80",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 89,
+   "label": "81",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 90,
+   "label": "82",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 91,
+   "label": "83",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 92,
+   "label": "84",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 93,
+   "label": "85",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 94,
+   "label": "86",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 95,
+   "label": "87",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 96,
+   "label": "88",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 97,
+   "label": "89",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 280,
+   "n_words": 44,
+   "label_start": "i",
+   "label_end": "ii"
+  },
   {
    "id": "sec-000-01-abstract",
    "number": "0.1",
@@ -585,8 +1942,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 2006,
-   "n_words": 341
+   "n_chars": 2013,
+   "n_words": 340,
+   "label_start": "ii",
+   "label_end": "iii"
   },
   {
    "id": "sec-001-02-acknowledgements",
@@ -594,19 +1953,23 @@
    "title": "Acknowledgements",
    "level": 1,
    "page_start": 3,
-   "page_end": 8,
-   "n_chars": 6461,
-   "n_words": 2210
+   "page_end": 9,
+   "n_chars": 7121,
+   "n_words": 2439,
+   "label_start": "iii",
+   "label_end": "1"
   },
   {
    "id": "sec-002-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 8,
+   "page_start": 9,
    "page_end": 9,
-   "n_chars": 574,
-   "n_words": 199
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
    "id": "sec-003-11-towards-conceptual-parsimony",
@@ -615,8 +1978,10 @@
    "level": 2,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 1750,
-   "n_words": 296
+   "n_chars": 1779,
+   "n_words": 299,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
    "id": "sec-004-12-outline",
@@ -625,8 +1990,10 @@
    "level": 2,
    "page_start": 10,
    "page_end": 11,
-   "n_chars": 1474,
-   "n_words": 247
+   "n_chars": 1480,
+   "n_words": 246,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
    "id": "sec-005-2-what-lies-in-an-algebra",
@@ -636,7 +2003,9 @@
    "page_start": 11,
    "page_end": 11,
    "n_chars": 713,
-   "n_words": 115
+   "n_words": 115,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
    "id": "sec-006-21-causality",
@@ -645,28 +2014,34 @@
    "level": 2,
    "page_start": 11,
    "page_end": 13,
-   "n_chars": 1791,
-   "n_words": 310
+   "n_chars": 4073,
+   "n_words": 699,
+   "label_start": "3",
+   "label_end": "5"
   },
   {
-   "id": "sec-007-23-particles",
-   "number": "2.3",
-   "title": "Particles",
-   "level": 2,
-   "page_start": 13,
-   "page_end": 13,
-   "n_chars": 2146,
-   "n_words": 340
-  },
-  {
-   "id": "sec-008-22-irreversible-time",
+   "id": "sec-007-22-irreversible-time",
    "number": "2.2",
    "title": "Irreversible time",
    "level": 2,
    "page_start": 13,
+   "page_end": 14,
+   "n_chars": 1018,
+   "n_words": 179,
+   "label_start": "5",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-008-23-particles",
+   "number": "2.3",
+   "title": "Particles",
+   "level": 2,
+   "page_start": 14,
    "page_end": 15,
-   "n_chars": 3397,
-   "n_words": 585
+   "n_chars": 2393,
+   "n_words": 408,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
    "id": "sec-009-24-summary-and-outlook",
@@ -675,8 +2050,10 @@
    "level": 2,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 1146,
-   "n_words": 195
+   "n_chars": 1166,
+   "n_words": 198,
+   "label_start": "7",
+   "label_end": "8"
   },
   {
    "id": "sec-010-3-complex-quaternions",
@@ -686,7 +2063,9 @@
    "page_start": 16,
    "page_end": 16,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "8",
+   "label_end": "8"
   },
   {
    "id": "sec-011-31-preamble",
@@ -694,109 +2073,131 @@
    "title": "Preamble",
    "level": 2,
    "page_start": 16,
-   "page_end": 17,
-   "n_chars": 1556,
-   "n_words": 284
+   "page_end": 16,
+   "n_chars": 697,
+   "n_words": 120,
+   "label_start": "8",
+   "label_end": "8"
   },
   {
-   "id": "sec-012-33-conjugation",
+   "id": "sec-012-32-introduction-to-ch",
+   "number": "3.2",
+   "title": "Introduction to CH",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 869,
+   "n_words": 184,
+   "label_start": "8",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-013-33-conjugation",
    "number": "3.3",
    "title": "Conjugation",
    "level": 2,
    "page_start": 17,
    "page_end": 18,
-   "n_chars": 1208,
-   "n_words": 202
+   "n_chars": 1237,
+   "n_words": 231,
+   "label_start": "9",
+   "label_end": "10"
   },
   {
-   "id": "sec-013-34-generalized-ideals",
+   "id": "sec-014-34-generalized-ideals",
    "number": "3.4",
    "title": "Generalized ideals",
    "level": 2,
    "page_start": 18,
-   "page_end": 18,
-   "n_chars": 593,
-   "n_words": 100
+   "page_end": 19,
+   "n_chars": 1709,
+   "n_words": 287,
+   "label_start": "10",
+   "label_end": "11"
   },
   {
-   "id": "sec-014-35-complex-invariant-action-mc",
+   "id": "sec-015-35-complex-invariant-action-mc",
    "number": "3.5",
    "title": "Complex invariant-action, mc",
    "level": 2,
-   "page_start": 18,
+   "page_start": 19,
    "page_end": 19,
-   "n_chars": 1068,
-   "n_words": 173
+   "n_chars": 28,
+   "n_words": 3,
+   "label_start": "11",
+   "label_end": "11"
   },
   {
-   "id": "sec-015-351-preliminaries",
+   "id": "sec-016-351-preliminaries",
    "number": "3.5.1",
    "title": "Preliminaries",
    "level": 3,
    "page_start": 19,
    "page_end": 20,
-   "n_chars": 1112,
-   "n_words": 213
+   "n_chars": 1155,
+   "n_words": 243,
+   "label_start": "11",
+   "label_end": "12"
   },
   {
-   "id": "sec-016-352-weyl-and-dirac-spinors-as-generalized-ideals",
+   "id": "sec-017-352-weyl-and-dirac-spinors-as-generalized-ideals",
    "number": "3.5.2",
    "title": "Weyl and Dirac spinors as generalized ideals",
    "level": 3,
    "page_start": 20,
    "page_end": 21,
-   "n_chars": 2015,
-   "n_words": 390
+   "n_chars": 2072,
+   "n_words": 409,
+   "label_start": "12",
+   "label_end": "13"
   },
   {
-   "id": "sec-017-353-a-seamless-new-way-to-conjugate-weyl-spinors",
+   "id": "sec-018-353-a-seamless-new-way-to-conjugate-weyl-spinors",
    "number": "3.5.3",
    "title": "A seamless new way to conjugate Weyl spinors",
    "level": 3,
    "page_start": 21,
    "page_end": 22,
-   "n_chars": 2337,
-   "n_words": 430
+   "n_chars": 2378,
+   "n_words": 434,
+   "label_start": "13",
+   "label_end": "14"
   },
   {
-   "id": "sec-018-354-majorana-spinors-as-generalized-ideals",
+   "id": "sec-019-354-majorana-spinors-as-generalized-ideals",
    "number": "3.5.4",
    "title": "Majorana spinors as generalized ideals",
    "level": 3,
    "page_start": 22,
    "page_end": 23,
-   "n_chars": 765,
-   "n_words": 137
+   "n_chars": 799,
+   "n_words": 137,
+   "label_start": "14",
+   "label_end": "15"
   },
   {
-   "id": "sec-019-36-hermitian-invariant-action-mh",
+   "id": "sec-020-36-hermitian-invariant-action-mh",
    "number": "3.6",
    "title": "Hermitian invariant-action, mh",
    "level": 2,
    "page_start": 23,
    "page_end": 24,
-   "n_chars": 2337,
-   "n_words": 415
+   "n_chars": 2397,
+   "n_words": 447,
+   "label_start": "15",
+   "label_end": "16"
   },
   {
-   "id": "sec-020-37-quaternionic-invariant-action-mq",
+   "id": "sec-021-37-quaternionic-invariant-action-mq",
    "number": "3.7",
    "title": "Quaternionic invariant-action, mq",
    "level": 2,
    "page_start": 24,
-   "page_end": 24,
-   "n_chars": 1254,
-   "n_words": 239
-  },
-  {
-   "id": "sec-021-39-summary",
-   "number": "3.9",
-   "title": "Summary",
-   "level": 2,
-   "page_start": 24,
    "page_end": 25,
-   "n_chars": 213,
-   "n_words": 35
+   "n_chars": 1618,
+   "n_words": 321,
+   "label_start": "16",
+   "label_end": "17"
   },
   {
    "id": "sec-022-38-bilinears",
@@ -804,362 +2205,682 @@
    "title": "Bilinears",
    "level": 2,
    "page_start": 25,
-   "page_end": 26,
-   "n_chars": 2029,
-   "n_words": 345
+   "page_end": 25,
+   "n_chars": 653,
+   "n_words": 126,
+   "label_start": "17",
+   "label_end": "17"
   },
   {
-   "id": "sec-023-310-outlook",
+   "id": "sec-023-39-summary",
+   "number": "3.9",
+   "title": "Summary",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 1386,
+   "n_words": 224,
+   "label_start": "17",
+   "label_end": "18"
+  },
+  {
+   "id": "sec-024-310-outlook",
    "number": "3.10",
    "title": "Outlook",
    "level": 2,
    "page_start": 26,
    "page_end": 27,
-   "n_chars": 1411,
-   "n_words": 214
+   "n_chars": 1408,
+   "n_words": 219,
+   "label_start": "18",
+   "label_end": "19"
   },
   {
-   "id": "sec-024-41-motivation",
+   "id": "sec-025-4-clifford-algebras",
+   "number": "4",
+   "title": "Clifford algebras",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "19",
+   "label_end": "19"
+  },
+  {
+   "id": "sec-026-41-motivation",
    "number": "4.1",
    "title": "Motivation",
    "level": 2,
    "page_start": 27,
-   "page_end": 30,
-   "n_chars": 4888,
-   "n_words": 832
+   "page_end": 27,
+   "n_chars": 1076,
+   "n_words": 173,
+   "label_start": "19",
+   "label_end": "19"
   },
   {
-   "id": "sec-025-44-minimal-left-ideals",
+   "id": "sec-027-42-definition",
+   "number": "4.2",
+   "title": "Definition",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 29,
+   "n_chars": 1939,
+   "n_words": 385,
+   "label_start": "19",
+   "label_end": "21"
+  },
+  {
+   "id": "sec-028-43-examples-of-clifford-algebras-from-ch",
+   "number": "4.3",
+   "title": "Examples of Clifford algebras from CH",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 30,
+   "n_chars": 1866,
+   "n_words": 294,
+   "label_start": "21",
+   "label_end": "22"
+  },
+  {
+   "id": "sec-029-44-minimal-left-ideals",
    "number": "4.4",
    "title": "Minimal left ideals",
    "level": 2,
    "page_start": 30,
    "page_end": 31,
-   "n_chars": 1314,
-   "n_words": 224
+   "n_chars": 1335,
+   "n_words": 228,
+   "label_start": "22",
+   "label_end": "23"
   },
   {
-   "id": "sec-026-45-how-to-identify-minimal-left-ideals",
+   "id": "sec-030-45-how-to-identify-minimal-left-ideals",
    "number": "4.5",
    "title": "How to identify minimal left ideals",
    "level": 2,
    "page_start": 31,
    "page_end": 31,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 589,
+   "n_words": 107,
+   "label_start": "23",
+   "label_end": "23"
   },
   {
-   "id": "sec-027-452-procedure",
+   "id": "sec-031-451-some-definitions",
+   "number": "4.5.1",
+   "title": "Some definitions",
+   "level": 3,
+   "page_start": 31,
+   "page_end": 32,
+   "n_chars": 1523,
+   "n_words": 289,
+   "label_start": "23",
+   "label_end": "24"
+  },
+  {
+   "id": "sec-032-452-procedure",
    "number": "4.5.2",
    "title": "Procedure",
    "level": 3,
-   "page_start": 31,
+   "page_start": 32,
    "page_end": 33,
-   "n_chars": 4238,
-   "n_words": 773
+   "n_chars": 1177,
+   "n_words": 223,
+   "label_start": "24",
+   "label_end": "25"
   },
   {
-   "id": "sec-028-461-fock-space-structure",
+   "id": "sec-033-46-minimal-left-ideals-in-ch",
+   "number": "4.6",
+   "title": "Minimal left ideals in CH",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 33,
+   "n_chars": 1070,
+   "n_words": 208,
+   "label_start": "25",
+   "label_end": "25"
+  },
+  {
+   "id": "sec-034-461-fock-space-structure",
    "number": "4.6.1",
    "title": "Fock space structure",
    "level": 3,
    "page_start": 33,
    "page_end": 34,
-   "n_chars": 938,
-   "n_words": 186
+   "n_chars": 962,
+   "n_words": 192,
+   "label_start": "25",
+   "label_end": "26"
   },
   {
-   "id": "sec-029-47-the-dirac-algebra",
+   "id": "sec-035-47-the-dirac-algebra",
    "number": "4.7",
    "title": "The Dirac algebra",
    "level": 2,
    "page_start": 34,
    "page_end": 36,
-   "n_chars": 2767,
-   "n_words": 549
+   "n_chars": 2806,
+   "n_words": 573,
+   "label_start": "26",
+   "label_end": "28"
   },
   {
-   "id": "sec-030-48-right-action-required",
+   "id": "sec-036-48-right-action-required",
    "number": "4.8",
    "title": "Right action required",
    "level": 2,
    "page_start": 36,
-   "page_end": 40,
-   "n_chars": 4855,
-   "n_words": 907
+   "page_end": 36,
+   "n_chars": 452,
+   "n_words": 81,
+   "label_start": "28",
+   "label_end": "28"
   },
   {
-   "id": "sec-031-5-standard-model-of-particle-physics",
+   "id": "sec-037-49-parity-and-the-field-strength-tensor",
+   "number": "4.9",
+   "title": "Parity and the field strength tensor",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 40,
+   "n_chars": 4493,
+   "n_words": 901,
+   "label_start": "28",
+   "label_end": "32"
+  },
+  {
+   "id": "sec-038-5-standard-model-of-particle-physics",
    "number": "5",
    "title": "Standard model of particle physics",
    "level": 1,
    "page_start": 40,
    "page_end": 40,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "32",
+   "label_end": "32"
   },
   {
-   "id": "sec-032-51-what-it-is",
+   "id": "sec-039-51-what-it-is",
    "number": "5.1",
    "title": "What it is",
    "level": 2,
    "page_start": 40,
    "page_end": 43,
-   "n_chars": 4111,
-   "n_words": 734
+   "n_chars": 4109,
+   "n_words": 724,
+   "label_start": "32",
+   "label_end": "35"
   },
   {
-   "id": "sec-033-52-what-it-is-not",
+   "id": "sec-040-52-what-it-is-not",
    "number": "5.2",
    "title": "What it is not",
    "level": 2,
    "page_start": 43,
    "page_end": 43,
-   "n_chars": 790,
-   "n_words": 125
+   "n_chars": 805,
+   "n_words": 129,
+   "label_start": "35",
+   "label_end": "35"
   },
   {
-   "id": "sec-034-53-what-it-should-be",
+   "id": "sec-041-53-what-it-should-be",
    "number": "5.3",
    "title": "What it should be",
    "level": 2,
    "page_start": 43,
-   "page_end": 46,
-   "n_chars": 4002,
-   "n_words": 659
+   "page_end": 45,
+   "n_chars": 1309,
+   "n_words": 215,
+   "label_start": "35",
+   "label_end": "37"
   },
   {
-   "id": "sec-035-61-a-summary-of-the-results-to-come",
+   "id": "sec-042-6-one-generation-of-quarks-and-leptons-from-co",
+   "number": "6",
+   "title": "One generation of quarks and leptons from CO",
+   "level": 1,
+   "page_start": 45,
+   "page_end": 46,
+   "n_chars": 2669,
+   "n_words": 438,
+   "label_start": "37",
+   "label_end": "38"
+  },
+  {
+   "id": "sec-043-61-a-summary-of-the-results-to-come",
    "number": "6.1",
    "title": "A summary of the results to come",
    "level": 2,
    "page_start": 46,
-   "page_end": 50,
-   "n_chars": 6919,
-   "n_words": 1339
+   "page_end": 48,
+   "n_chars": 3909,
+   "n_words": 666,
+   "label_start": "38",
+   "label_end": "40"
   },
   {
-   "id": "sec-036-63-octonionic-chain-algebra",
+   "id": "sec-044-62-introduction-to-co",
+   "number": "6.2",
+   "title": "Introduction to CO",
+   "level": 2,
+   "page_start": 48,
+   "page_end": 50,
+   "n_chars": 3042,
+   "n_words": 697,
+   "label_start": "40",
+   "label_end": "42"
+  },
+  {
+   "id": "sec-045-63-octonionic-chain-algebra",
    "number": "6.3",
    "title": "Octonionic chain algebra",
    "level": 2,
    "page_start": 50,
    "page_end": 53,
-   "n_chars": 6646,
-   "n_words": 1187
+   "n_chars": 6827,
+   "n_words": 1346,
+   "label_start": "42",
+   "label_end": "45"
   },
   {
-   "id": "sec-037-64-a-system-of-ladder-operators",
+   "id": "sec-046-64-a-system-of-ladder-operators",
    "number": "6.4",
    "title": "A system of ladder operators",
    "level": 2,
    "page_start": 53,
-   "page_end": 55,
-   "n_chars": 2484,
-   "n_words": 485
+   "page_end": 54,
+   "n_chars": 2031,
+   "n_words": 410,
+   "label_start": "45",
+   "label_end": "46"
   },
   {
-   "id": "sec-038-66-minimal-left-ideals",
+   "id": "sec-047-65-complex-conjugations-analogue",
+   "number": "6.5",
+   "title": "Complex conjugation's analogue",
+   "level": 2,
+   "page_start": 54,
+   "page_end": 55,
+   "n_chars": 491,
+   "n_words": 118,
+   "label_start": "46",
+   "label_end": "47"
+  },
+  {
+   "id": "sec-048-66-minimal-left-ideals",
    "number": "6.6",
    "title": "Minimal left ideals",
    "level": 2,
    "page_start": 55,
    "page_end": 57,
-   "n_chars": 3413,
-   "n_words": 609
+   "n_chars": 3444,
+   "n_words": 640,
+   "label_start": "47",
+   "label_end": "49"
   },
   {
-   "id": "sec-039-67-mtis-symmetries-su3c-and-u1em",
+   "id": "sec-049-67-mtis-symmetries-su3c-and-u1em",
    "number": "6.7",
    "title": "MTIS symmetries: su(3)c and u(1)em",
    "level": 2,
    "page_start": 57,
    "page_end": 58,
-   "n_chars": 2837,
-   "n_words": 469
+   "n_chars": 2886,
+   "n_words": 488,
+   "label_start": "49",
+   "label_end": "50"
   },
   {
-   "id": "sec-040-68-ladders-to-su3c-and-u1em",
+   "id": "sec-050-68-ladders-to-su3c-and-u1em",
    "number": "6.8",
    "title": "Ladders to su(3)c and u(1)em",
    "level": 2,
    "page_start": 58,
    "page_end": 61,
-   "n_chars": 3325,
-   "n_words": 686
+   "n_chars": 3393,
+   "n_words": 730,
+   "label_start": "50",
+   "label_end": "53"
   },
   {
-   "id": "sec-041-69-towards-the-weak-force",
+   "id": "sec-051-69-towards-the-weak-force",
    "number": "6.9",
    "title": "Towards the weak force",
    "level": 2,
    "page_start": 61,
    "page_end": 62,
-   "n_chars": 1278,
-   "n_words": 214
+   "n_chars": 1303,
+   "n_words": 220,
+   "label_start": "53",
+   "label_end": "54"
   },
   {
-   "id": "sec-042-610-summary",
+   "id": "sec-052-610-summary",
    "number": "6.10",
    "title": "Summary",
    "level": 2,
    "page_start": 62,
    "page_end": 63,
-   "n_chars": 913,
-   "n_words": 150
+   "n_chars": 869,
+   "n_words": 141,
+   "label_start": "54",
+   "label_end": "55"
   },
   {
-   "id": "sec-043-71-a-spotlight-on-right-multiplication",
+   "id": "sec-053-7-why-does-su2l-act-on-only-left-handed-fermions",
+   "number": "7",
+   "title": "Why does SU(2)L act on only left-handed fermions?",
+   "level": 1,
+   "page_start": 63,
+   "page_end": 63,
+   "n_chars": 21,
+   "n_words": 2,
+   "label_start": "55",
+   "label_end": "55"
+  },
+  {
+   "id": "sec-054-71-a-spotlight-on-right-multiplication",
    "number": "7.1",
    "title": "A spotlight on right multiplication",
    "level": 2,
    "page_start": 63,
    "page_end": 64,
-   "n_chars": 1766,
-   "n_words": 291
+   "n_chars": 1809,
+   "n_words": 303,
+   "label_start": "55",
+   "label_end": "56"
   },
   {
-   "id": "sec-044-72-leptonic-subspace-of-cl4",
+   "id": "sec-055-72-leptonic-subspace-of-cl4",
    "number": "7.2",
    "title": "Leptonic subspace of Cl(4)",
    "level": 2,
    "page_start": 64,
    "page_end": 65,
-   "n_chars": 1836,
-   "n_words": 314
+   "n_chars": 1880,
+   "n_words": 335,
+   "label_start": "56",
+   "label_end": "57"
   },
   {
-   "id": "sec-045-73-mtis-symmetries-su2l-and-u1y",
+   "id": "sec-056-73-mtis-symmetries-su2l-and-u1y",
    "number": "7.3",
    "title": "MTIS symmetries: su(2)L and u(1)Y",
    "level": 2,
    "page_start": 65,
    "page_end": 66,
-   "n_chars": 1695,
-   "n_words": 305
+   "n_chars": 1741,
+   "n_words": 322,
+   "label_start": "57",
+   "label_end": "58"
   },
   {
-   "id": "sec-046-74-summary-and-outlook",
+   "id": "sec-057-74-summary-and-outlook",
    "number": "7.4",
    "title": "Summary and outlook",
    "level": 2,
    "page_start": 66,
    "page_end": 67,
-   "n_chars": 1623,
-   "n_words": 260
+   "n_chars": 844,
+   "n_words": 130,
+   "label_start": "58",
+   "label_end": "59"
   },
   {
-   "id": "sec-047-811-introduction",
+   "id": "sec-058-8-group-representation-structure-of-some-grand-u",
+   "number": "8",
+   "title": "Group representation structure of some grand unified theories",
+   "level": 1,
+   "page_start": 67,
+   "page_end": 67,
+   "n_chars": 747,
+   "n_words": 130,
+   "label_start": "59",
+   "label_end": "59"
+  },
+  {
+   "id": "sec-059-81-su5-unification",
+   "number": "8.1",
+   "title": "SU(5) unification",
+   "level": 2,
+   "page_start": 67,
+   "page_end": 67,
+   "n_chars": 16,
+   "n_words": 2,
+   "label_start": "59",
+   "label_end": "59"
+  },
+  {
+   "id": "sec-060-811-introduction",
    "number": "8.1.1",
    "title": "Introduction",
    "level": 3,
    "page_start": 67,
-   "page_end": 70,
-   "n_chars": 4337,
-   "n_words": 822
+   "page_end": 68,
+   "n_chars": 1565,
+   "n_words": 271,
+   "label_start": "59",
+   "label_end": "60"
   },
   {
-   "id": "sec-048-813-some-notes-on-symmetry-breaking",
+   "id": "sec-061-812-gsm-inside-su5",
+   "number": "8.1.2",
+   "title": "GSM inside SU(5)",
+   "level": 3,
+   "page_start": 68,
+   "page_end": 70,
+   "n_chars": 2767,
+   "n_words": 540,
+   "label_start": "60",
+   "label_end": "62"
+  },
+  {
+   "id": "sec-062-813-some-notes-on-symmetry-breaking",
    "number": "8.1.3",
    "title": "Some notes on symmetry breaking",
    "level": 3,
    "page_start": 70,
    "page_end": 71,
-   "n_chars": 1600,
-   "n_words": 363
+   "n_chars": 1611,
+   "n_words": 347,
+   "label_start": "62",
+   "label_end": "63"
   },
   {
-   "id": "sec-049-82-a-fermionic-binary-code",
+   "id": "sec-063-82-a-fermionic-binary-code",
    "number": "8.2",
    "title": "A fermionic binary code",
    "level": 2,
    "page_start": 71,
-   "page_end": 76,
-   "n_chars": 6924,
-   "n_words": 1582
+   "page_end": 73,
+   "n_chars": 2897,
+   "n_words": 613,
+   "label_start": "63",
+   "label_end": "65"
   },
   {
-   "id": "sec-050-84-pati-salam-model",
+   "id": "sec-064-83-spin10-unification",
+   "number": "8.3",
+   "title": "Spin(10) unification",
+   "level": 2,
+   "page_start": 73,
+   "page_end": 76,
+   "n_chars": 3901,
+   "n_words": 827,
+   "label_start": "65",
+   "label_end": "68"
+  },
+  {
+   "id": "sec-065-84-pati-salam-model",
    "number": "8.4",
    "title": "Pati-Salam model",
    "level": 2,
    "page_start": 76,
    "page_end": 79,
-   "n_chars": 3716,
-   "n_words": 753
+   "n_chars": 3654,
+   "n_words": 659,
+   "label_start": "68",
+   "label_end": "71"
   },
   {
-   "id": "sec-051-9-towards-a-three-generation-model",
+   "id": "sec-066-9-towards-a-three-generation-model",
    "number": "9",
    "title": "Towards a three-generation model",
    "level": 1,
    "page_start": 79,
    "page_end": 79,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "71",
+   "label_end": "71"
   },
   {
-   "id": "sec-052-91-introduction",
+   "id": "sec-067-91-introduction",
    "number": "9.1",
    "title": "Introduction",
    "level": 2,
    "page_start": 79,
-   "page_end": 84,
-   "n_chars": 6046,
-   "n_words": 1133
+   "page_end": 80,
+   "n_chars": 1751,
+   "n_words": 277,
+   "label_start": "71",
+   "label_end": "72"
   },
   {
-   "id": "sec-053-94-a-sample-calculation",
+   "id": "sec-068-92-generators-of-su3c",
+   "number": "9.2",
+   "title": "Generators of SU(3)c",
+   "level": 2,
+   "page_start": 80,
+   "page_end": 81,
+   "n_chars": 1869,
+   "n_words": 439,
+   "label_start": "72",
+   "label_end": "73"
+  },
+  {
+   "id": "sec-069-93-three-generations-under-su3c",
+   "number": "9.3",
+   "title": "Three generations under SU(3)c",
+   "level": 2,
+   "page_start": 81,
+   "page_end": 84,
+   "n_chars": 2565,
+   "n_words": 552,
+   "label_start": "73",
+   "label_end": "76"
+  },
+  {
+   "id": "sec-070-94-a-sample-calculation",
    "number": "9.4",
    "title": "A sample calculation",
    "level": 2,
    "page_start": 84,
-   "page_end": 89,
-   "n_chars": 7028,
-   "n_words": 1389
+   "page_end": 85,
+   "n_chars": 1039,
+   "n_words": 228,
+   "label_start": "76",
+   "label_end": "77"
   },
   {
-   "id": "sec-054-97-outlook-from-one-generation-to-three",
+   "id": "sec-071-95-summary-for-su3c",
+   "number": "9.5",
+   "title": "Summary for SU(3)c",
+   "level": 2,
+   "page_start": 85,
+   "page_end": 86,
+   "n_chars": 1371,
+   "n_words": 229,
+   "label_start": "77",
+   "label_end": "78"
+  },
+  {
+   "id": "sec-072-96-three-generations-under-su3c-and-u1em",
+   "number": "9.6",
+   "title": "Three generations under SU(3)c and U(1)em",
+   "level": 2,
+   "page_start": 86,
+   "page_end": 89,
+   "n_chars": 4746,
+   "n_words": 1082,
+   "label_start": "78",
+   "label_end": "81"
+  },
+  {
+   "id": "sec-073-97-outlook-from-one-generation-to-three",
    "number": "9.7",
    "title": "Outlook: From one generation to three",
    "level": 2,
    "page_start": 89,
    "page_end": 91,
-   "n_chars": 902,
-   "n_words": 152
+   "n_chars": 940,
+   "n_words": 158,
+   "label_start": "81",
+   "label_end": "83"
   },
   {
-   "id": "sec-055-10-conclusion",
+   "id": "sec-074-10-conclusion",
    "number": "10",
    "title": "Conclusion",
    "level": 1,
    "page_start": 91,
    "page_end": 93,
-   "n_chars": 2107,
-   "n_words": 344
+   "n_chars": 2100,
+   "n_words": 337,
+   "label_start": "83",
+   "label_end": "85"
   },
   {
-   "id": "sec-056-references",
+   "id": "sec-075-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 93,
    "page_end": 97,
-   "n_chars": 7976,
-   "n_words": 1213
+   "n_chars": 7940,
+   "n_words": 1177,
+   "label_start": "85",
+   "label_end": "89"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 76,
-  "sections": 57,
-  "chars_total": 142630,
+  "toc_inferred_entries": 0,
+  "figure_entries": 13,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 0,
+    "items": []
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 77,
+  "chars_total": 144591,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Furey_thesis_arxiv_20161115.tex",
    "tex_sections": 65,
-   "overlaid": 30,
+   "overlaid": 36,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1167,39 +2888,43 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-01-abstract",
      "title": "Abstract",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-02-acknowledgements",
      "title": "Acknowledgements",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
-     "result": "overlaid",
-     "converter": "latex"
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.483,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-002-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.021,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-003-11-towards-conceptual-parsimony",
      "title": "Towards conceptual parsimony",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-004-12-outline",
      "title": "Outline",
-     "prose_ratio": 1.0,
+     "prose_ratio": 0.659,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
@@ -1212,27 +2937,32 @@
     {
      "id": "sec-006-21-causality",
      "title": "Causality",
-     "prose_ratio": 0.433,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.943,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-007-23-particles",
-     "title": "Particles",
-     "prose_ratio": 0.196,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-008-22-irreversible-time",
+     "id": "sec-007-22-irreversible-time",
      "title": "Irreversible time",
      "prose_ratio": 0.985,
-     "coverage_ratio": 0.337,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-23-particles",
+     "title": "Particles",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-009-24-summary-and-outlook",
      "title": "Summary and outlook",
      "prose_ratio": 0.978,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.978,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -1245,53 +2975,62 @@
      "id": "sec-011-31-preamble",
      "title": "Preamble",
      "prose_ratio": 0.46,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-012-33-conjugation",
+     "id": "sec-012-32-introduction-to-ch",
+     "title": "Introduction to CH",
+     "prose_ratio": 0.22,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-013-33-conjugation",
      "title": "Conjugation",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.477,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.5,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-013-34-generalized-ideals",
+     "id": "sec-014-34-generalized-ideals",
      "title": "Generalized ideals",
-     "prose_ratio": 0.461,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-014-35-complex-invariant-action-mc",
+     "id": "sec-015-35-complex-invariant-action-mc",
      "title": "Complex invariant-action, mc",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-015-351-preliminaries",
+     "id": "sec-016-351-preliminaries",
      "title": "Preliminaries",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-016-352-weyl-and-dirac-spinors-as-generalized-ideals",
+     "id": "sec-017-352-weyl-and-dirac-spinors-as-generalized-ideals",
      "title": "Weyl and Dirac spinors as generalized ideals",
      "prose_ratio": 0.99,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-017-353-a-seamless-new-way-to-conjugate-weyl-spinors",
+     "id": "sec-018-353-a-seamless-new-way-to-conjugate-weyl-spinors",
      "title": "A seamless new way to conjugate Weyl spinors",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-018-354-majorana-spinors-as-generalized-ideals",
+     "id": "sec-019-354-majorana-spinors-as-generalized-ideals",
      "title": "Majorana spinors as generalized ideals",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
@@ -1299,7 +3038,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-019-36-hermitian-invariant-action-mh",
+     "id": "sec-020-36-hermitian-invariant-action-mh",
      "title": "Hermitian invariant-action, mh",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
@@ -1307,64 +3046,96 @@
      "converter": "latex"
     },
     {
-     "id": "sec-020-37-quaternionic-invariant-action-mq",
+     "id": "sec-021-37-quaternionic-invariant-action-mq",
      "title": "Quaternionic invariant-action, mq",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "latex"
-    },
-    {
-     "id": "sec-021-39-summary",
-     "title": "Summary",
-     "prose_ratio": 0.061,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-022-38-bilinears",
      "title": "Bilinears",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
-     "result": "overlaid",
-     "converter": "latex"
+     "prose_ratio": 0.393,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-023-310-outlook",
+     "id": "sec-023-39-summary",
+     "title": "Summary",
+     "prose_ratio": 0.333,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-024-310-outlook",
      "title": "Outlook",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-024-41-motivation",
+     "id": "sec-025-4-clifford-algebras",
+     "title": "Clifford algebras",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-41-motivation",
      "title": "Motivation",
-     "prose_ratio": 0.932,
-     "coverage_ratio": 0.984,
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-025-44-minimal-left-ideals",
-     "title": "Minimal left ideals",
-     "prose_ratio": 1.0,
+     "id": "sec-027-42-definition",
+     "title": "Definition",
+     "prose_ratio": 0.932,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-028-43-examples-of-clifford-algebras-from-ch",
+     "title": "Examples of Clifford algebras from CH",
+     "prose_ratio": 0.944,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-026-45-how-to-identify-minimal-left-ideals",
-     "title": "How to identify minimal left ideals",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-029-44-minimal-left-ideals",
+     "title": "Minimal left ideals",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-027-452-procedure",
+     "id": "sec-030-45-how-to-identify-minimal-left-ideals",
+     "title": "How to identify minimal left ideals",
+     "prose_ratio": 0.375,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-031-451-some-definitions",
+     "title": "Some definitions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-032-452-procedure",
      "title": "Procedure",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-028-461-fock-space-structure",
+     "id": "sec-033-46-minimal-left-ideals-in-ch",
+     "title": "Minimal left ideals in CH",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-034-461-fock-space-structure",
      "title": "Fock space structure",
      "prose_ratio": 0.983,
      "coverage_ratio": 0.983,
@@ -1372,191 +3143,260 @@
      "converter": "latex"
     },
     {
-     "id": "sec-029-47-the-dirac-algebra",
+     "id": "sec-035-47-the-dirac-algebra",
      "title": "The Dirac algebra",
-     "prose_ratio": 1.0,
+     "prose_ratio": 0.993,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-030-48-right-action-required",
+     "id": "sec-036-48-right-action-required",
      "title": "Right action required",
-     "prose_ratio": 0.964,
-     "coverage_ratio": 0.994,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.973,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-031-5-standard-model-of-particle-physics",
+     "id": "sec-037-49-parity-and-the-field-strength-tensor",
+     "title": "Parity and the field strength tensor",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-038-5-standard-model-of-particle-physics",
      "title": "Standard model of particle physics",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-032-51-what-it-is",
+     "id": "sec-039-51-what-it-is",
      "title": "What it is",
-     "prose_ratio": 1.0,
+     "prose_ratio": 0.972,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-033-52-what-it-is-not",
+     "id": "sec-040-52-what-it-is-not",
      "title": "What it is not",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-034-53-what-it-should-be",
+     "id": "sec-041-53-what-it-should-be",
      "title": "What it should be",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
-     "result": "overlaid",
-     "converter": "latex"
+     "prose_ratio": 0.401,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-035-61-a-summary-of-the-results-to-come",
+     "id": "sec-042-6-one-generation-of-quarks-and-leptons-from-co",
+     "title": "One generation of quarks and leptons from CO",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-043-61-a-summary-of-the-results-to-come",
      "title": "A summary of the results to come",
-     "prose_ratio": 0.744,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-036-63-octonionic-chain-algebra",
+     "id": "sec-044-62-introduction-to-co",
+     "title": "Introduction to CO",
+     "prose_ratio": 0.935,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-045-63-octonionic-chain-algebra",
      "title": "Octonionic chain algebra",
-     "prose_ratio": 1.0,
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-046-64-a-system-of-ladder-operators",
+     "title": "A system of ladder operators",
+     "prose_ratio": 0.97,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-037-64-a-system-of-ladder-operators",
-     "title": "A system of ladder operators",
-     "prose_ratio": 0.297,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-047-65-complex-conjugations-analogue",
+     "title": "Complex conjugation's analogue",
+     "prose_ratio": 0.078,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-038-66-minimal-left-ideals",
+     "id": "sec-048-66-minimal-left-ideals",
      "title": "Minimal left ideals",
      "prose_ratio": 0.42,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-039-67-mtis-symmetries-su3c-and-u1em",
+     "id": "sec-049-67-mtis-symmetries-su3c-and-u1em",
      "title": "MTIS symmetries: su(3)c and u(1)em",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-040-68-ladders-to-su3c-and-u1em",
+     "id": "sec-050-68-ladders-to-su3c-and-u1em",
      "title": "Ladders to su(3)c and u(1)em",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-041-69-towards-the-weak-force",
+     "id": "sec-051-69-towards-the-weak-force",
      "title": "Towards the weak force",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.963,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-042-610-summary",
+     "id": "sec-052-610-summary",
      "title": "Summary",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-043-71-a-spotlight-on-right-multiplication",
+     "id": "sec-053-7-why-does-su2l-act-on-only-left-handed-fermions",
+     "title": "Why does SU(2)L act on only left-handed fermions?",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-054-71-a-spotlight-on-right-multiplication",
      "title": "A spotlight on right multiplication",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-044-72-leptonic-subspace-of-cl4",
+     "id": "sec-055-72-leptonic-subspace-of-cl4",
      "title": "Leptonic subspace of Cl(4)",
-     "prose_ratio": 0.487,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.469,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-045-73-mtis-symmetries-su2l-and-u1y",
+     "id": "sec-056-73-mtis-symmetries-su2l-and-u1y",
      "title": "MTIS symmetries: su(2)L and u(1)Y",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-046-74-summary-and-outlook",
+     "id": "sec-057-74-summary-and-outlook",
      "title": "Summary and outlook",
-     "prose_ratio": 0.211,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.133,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-047-811-introduction",
+     "id": "sec-058-8-group-representation-structure-of-some-grand-u",
+     "title": "Group representation structure of some grand unified theories",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-059-81-su5-unification",
+     "title": "SU(5) unification",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-060-811-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.979,
-     "coverage_ratio": 0.979,
-     "result": "overlaid",
-     "converter": "latex"
+     "prose_ratio": 0.513,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-048-813-some-notes-on-symmetry-breaking",
+     "id": "sec-061-812-gsm-inside-su5",
+     "title": "GSM inside SU(5)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-062-813-some-notes-on-symmetry-breaking",
      "title": "Some notes on symmetry breaking",
      "prose_ratio": 0.975,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.976,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-049-82-a-fermionic-binary-code",
+     "id": "sec-063-82-a-fermionic-binary-code",
      "title": "A fermionic binary code",
-     "prose_ratio": 0.609,
-     "coverage_ratio": 1.0,
-     "result": "overlaid",
-     "converter": "latex"
+     "prose_ratio": 0.562,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-050-84-pati-salam-model",
+     "id": "sec-064-83-spin10-unification",
+     "title": "Spin(10) unification",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-065-84-pati-salam-model",
      "title": "Pati-Salam model",
-     "prose_ratio": 0.515,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.538,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-051-9-towards-a-three-generation-model",
+     "id": "sec-066-9-towards-a-three-generation-model",
      "title": "Towards a three-generation model",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-052-91-introduction",
+     "id": "sec-067-91-introduction",
      "title": "Introduction",
      "prose_ratio": 0.222,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-053-94-a-sample-calculation",
-     "title": "A sample calculation",
-     "prose_ratio": 0.941,
-     "coverage_ratio": 0.96,
+     "id": "sec-068-92-generators-of-su3c",
+     "title": "Generators of SU(3)c",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-069-93-three-generations-under-su3c",
+     "title": "Three generations under SU(3)c",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.976,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-054-97-outlook-from-one-generation-to-three",
-     "title": "Outlook: From one generation to three",
-     "prose_ratio": 0.28,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-070-94-a-sample-calculation",
+     "title": "A sample calculation",
+     "prose_ratio": 0.191,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-055-10-conclusion",
+     "id": "sec-071-95-summary-for-su3c",
+     "title": "Summary for SU(3)c",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-072-96-three-generations-under-su3c-and-u1em",
+     "title": "Three generations under SU(3)c and U(1)em",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-073-97-outlook-from-one-generation-to-three",
+     "title": "Outlook: From one generation to three",
+     "prose_ratio": 0.28,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-074-10-conclusion",
      "title": "Conclusion",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-056-references",
+     "id": "sec-075-references",
      "title": "References",
      "result": "no matching \\section"
     }

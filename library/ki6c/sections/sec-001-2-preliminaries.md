@@ -1,6 +1,6 @@
 ---
 doc_id: ki6c
-doc_title: "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings Tomotada Ohtsuki and Yoshiyuki Yokota Introduction"
+doc_title: "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings"
 section_id: sec-001-2-preliminaries
 section_title: "Preliminaries"
 section_number: 2
@@ -8,7 +8,9 @@ pages: 4-6
 source_pdf: ki6c.pdf
 source_sha256: b13a73517b349654
 toc_source: inferred
+doc_brief: "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings — We give presentations of the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings."
 ---
+Preliminaries
 In this section, we review deﬁnitions and basic properties of the notation used in this
 paper.
 2.1
@@ -179,4 +181,3 @@ N
 12N .
 (11)
 5
-2.2

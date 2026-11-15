@@ -6,7 +6,9 @@
   "sha256": "640303a68dd7545347b94932242213e84d9d2dc61108478938372a2de176a84b",
   "bytes": 693117,
   "pages": 66,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -15,17 +17,25 @@
   "doi": null,
   "title": "MODULAR q-HOLONOMIC MODULES",
   "authors_raw": "STAVROS GAROUFALIDIS AND CAMPBELL WHEELER",
-  "abstract": "We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and show that the generalised q-hypergeometric equation, as well as three key q-holonomic modules of complex Chern– Simons theory are modular. This notion explains conceptually recent structural properties of quantum invariants of knots and 3-manifolds, and of exact and perturbative Chern– Simons theory [26, 27, 28, 37], and in addition provides an eﬀective method to solve the corresponding linear q-diﬀerence equations. An alternative title of our paper, emphasising the equations rather than the modules, is: Modular linear q-diﬀerence equations",
-  "docinfo": {
-   "Author": "",
-   "Title": "",
-   "Creator": "LaTeX with hyperref",
-   "Producer": "pdfTeX-1.40.19",
-   "CreationDate": "D:20230525102831+08'00'"
-  },
   "title_lines": [
    "MODULAR q-HOLONOMIC MODULES"
-  ]
+  ],
+  "abstract": "We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and show that the generalised q-hypergeometric equation, as well as three key q-holonomic modules of complex Chern– Simons theory are modular. This notion explains conceptually recent structural properties of quantum invariants of knots and 3-manifolds, and of exact and perturbative Chern– Simons theory [26, 27, 28, 37], and in addition provides an eﬀective method to solve the corresponding linear q-diﬀerence equations. An alternative title of our paper, emphasising the equations rather than the modules, is: Modular linear q-diﬀerence equations",
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.19",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20230525102831+08'00'"
+  },
+  "title_raw": "MODULAR q-HOLONOMIC MODULES",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "MODULAR q -HOLONOMIC MODULES",
+   "outline": "1. Introduction",
+   "text": "MODULAR q-HOLONOMIC MODULES",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -33,254 +43,1046 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Summary",
    "page": 2,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Motivation",
    "page": 3,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Definition and properties",
    "page": 3,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "The generalised q-hypergeometric equation is modular",
    "page": 6,
    "source": "outline",
-   "number": "1.4"
+   "number": "1.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Modular q-holonomic modules in Chern–Simons theory",
    "page": 7,
    "source": "outline",
-   "number": "1.5"
+   "number": "1.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "A review of linear q-difference equations",
    "page": 12,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Preliminaries",
    "page": 12,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "An algorithm for a fundamental matrix",
    "page": 13,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "The q-Borel and the q-Laplace transforms",
    "page": 14,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 2,
    "title": "The slash operator and proof of Theorem 1.2",
    "page": 17,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Duality",
    "page": 20,
    "source": "outline",
-   "number": "2.5"
+   "number": "2.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 2,
    "title": "Categorical aspects",
    "page": 23,
    "source": "outline",
-   "number": "2.6"
+   "number": "2.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 1,
    "title": "Heine's q-hypergeometric functions",
    "page": 24,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
   },
   {
    "level": 2,
    "title": "Solutions",
    "page": 24,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
   },
   {
    "level": 2,
    "title": "Self duality",
    "page": 25,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 2,
    "title": "State integral",
    "page": 28,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "28"
   },
   {
    "level": 2,
    "title": "Resonance",
    "page": 29,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
   },
   {
    "level": 1,
    "title": "Proof of Theorems 1.5 and 1.6",
    "page": 31,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "31"
   },
   {
    "level": 2,
    "title": "The q-Pochhammer symbol",
    "page": 31,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "31"
   },
   {
    "level": 2,
    "title": "The Appell-Lerch sums",
    "page": 33,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
   },
   {
    "level": 1,
    "title": "A q-difference equation of the 41 knot",
    "page": 37,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "37"
   },
   {
    "level": 2,
    "title": "Solutions",
    "page": 37,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "37"
   },
   {
    "level": 2,
    "title": "Monodromy",
    "page": 40,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "40"
   },
   {
    "level": 2,
    "title": "Residues",
    "page": 43,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "43"
   },
   {
    "level": 2,
    "title": "Determinants",
    "page": 45,
    "source": "outline",
-   "number": "5.4"
+   "number": "5.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "45"
   },
   {
    "level": 2,
    "title": "State integral",
    "page": 46,
    "source": "outline",
-   "number": "5.5"
+   "number": "5.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "46"
   },
   {
    "level": 2,
    "title": "The inhomogeneous equation",
    "page": 47,
    "source": "outline",
-   "number": "5.6"
+   "number": "5.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "47"
   },
   {
    "level": 2,
    "title": "The x-deformation",
    "page": 52,
    "source": "outline",
-   "number": "5.7"
+   "number": "5.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "52"
   },
   {
    "level": 2,
    "title": "An analytic lift of the colored Jones polynomial",
    "page": 62,
    "source": "outline",
-   "number": "5.8"
+   "number": "5.8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "62"
   },
   {
    "level": 2,
    "title": "Specialisation t=qm",
    "page": 62,
    "source": "outline",
-   "number": "5.9"
+   "number": "5.9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "62"
   },
   {
    "level": 2,
    "title": "Acknowledgements",
    "page": 63,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "63"
   },
   {
    "level": 1,
    "title": "References",
    "page": 63,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "63"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The Newton polygon of the ﬁrst Equation (111)",
+   "page": 24,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "24"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The Newton polygon of Equation (19)",
+   "page": 31,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "31"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The Newton polygon of Equation (22)",
+   "page": 33,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "33"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The Newton polygon of Equation (28)",
+   "page": 38,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "38"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "The Newton polygon of Equation (35). Now from the general theory the solutions f (±1) and g(0,0) and g(0,1) are the same as the solutions in Section 5.1. We do ﬁnd two additional solutions which are in fact solutions to the inhomogeneous equation, namely ˆf (0)(t, q) =",
+   "page": 47,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "47"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "58",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "59",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "60",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "61",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "62",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "63",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "64",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "65",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "66",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2382,
+   "n_words": 340,
+   "label_start": "1",
+   "label_end": "2"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 15,
+   "n_words": 2,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
    "id": "sec-001-11-summary",
    "number": "1.1",
    "title": "Summary",
    "level": 2,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 3,
-   "n_chars": 3622,
-   "n_words": 516
+   "n_chars": 1963,
+   "n_words": 296,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
    "id": "sec-002-12-motivation",
@@ -288,287 +1090,408 @@
    "title": "Motivation",
    "level": 2,
    "page_start": 3,
-   "page_end": 6,
-   "n_chars": 8432,
-   "n_words": 1536
+   "page_end": 3,
+   "n_chars": 1599,
+   "n_words": 258,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
-   "id": "sec-003-14-the-generalised-q-hypergeometric-equation-is",
+   "id": "sec-003-13-definition-and-properties",
+   "number": "1.3",
+   "title": "Definition and properties",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 6,
+   "n_chars": 6749,
+   "n_words": 1273,
+   "label_start": "3",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-004-14-the-generalised-q-hypergeometric-equation-is",
    "number": "1.4",
    "title": "The generalised q-hypergeometric equation is modular",
    "level": 2,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 4288,
-   "n_words": 651
+   "n_chars": 4433,
+   "n_words": 796,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
-   "id": "sec-004-15-modular-q-holonomic-modules-in-chernsimons-th",
+   "id": "sec-005-15-modular-q-holonomic-modules-in-chernsimons-th",
    "number": "1.5",
    "title": "Modular q-holonomic modules in Chern–Simons theory",
    "level": 2,
    "page_start": 7,
    "page_end": 12,
-   "n_chars": 13145,
-   "n_words": 2254
+   "n_chars": 13296,
+   "n_words": 2405,
+   "label_start": "7",
+   "label_end": "12"
   },
   {
-   "id": "sec-005-2-a-review-of-linear-q-difference-equations",
+   "id": "sec-006-2-a-review-of-linear-q-difference-equations",
    "number": "2",
    "title": "A review of linear q-difference equations",
    "level": 1,
    "page_start": 12,
    "page_end": 12,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "12",
+   "label_end": "12"
   },
   {
-   "id": "sec-006-21-preliminaries",
+   "id": "sec-007-21-preliminaries",
    "number": "2.1",
    "title": "Preliminaries",
    "level": 2,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 1774,
-   "n_words": 297
+   "n_chars": 1790,
+   "n_words": 315,
+   "label_start": "12",
+   "label_end": "13"
   },
   {
-   "id": "sec-007-22-an-algorithm-for-a-fundamental-matrix",
+   "id": "sec-008-22-an-algorithm-for-a-fundamental-matrix",
    "number": "2.2",
    "title": "An algorithm for a fundamental matrix",
    "level": 2,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 2563,
-   "n_words": 443
+   "n_chars": 2581,
+   "n_words": 461,
+   "label_start": "13",
+   "label_end": "14"
   },
   {
-   "id": "sec-008-23-the-q-borel-and-the-q-laplace-transforms",
+   "id": "sec-009-23-the-q-borel-and-the-q-laplace-transforms",
    "number": "2.3",
    "title": "The q-Borel and the q-Laplace transforms",
    "level": 2,
    "page_start": 14,
    "page_end": 17,
-   "n_chars": 4549,
-   "n_words": 758
+   "n_chars": 4647,
+   "n_words": 856,
+   "label_start": "14",
+   "label_end": "17"
   },
   {
-   "id": "sec-009-24-the-slash-operator-and-proof-of-theorem-12",
+   "id": "sec-010-24-the-slash-operator-and-proof-of-theorem-12",
    "number": "2.4",
    "title": "The slash operator and proof of Theorem 1.2",
    "level": 2,
    "page_start": 17,
    "page_end": 20,
-   "n_chars": 7057,
-   "n_words": 1459
+   "n_chars": 7204,
+   "n_words": 1606,
+   "label_start": "17",
+   "label_end": "20"
   },
   {
-   "id": "sec-010-25-duality",
+   "id": "sec-011-25-duality",
    "number": "2.5",
    "title": "Duality",
    "level": 2,
    "page_start": 20,
    "page_end": 23,
-   "n_chars": 6022,
-   "n_words": 1139
+   "n_chars": 6295,
+   "n_words": 1412,
+   "label_start": "20",
+   "label_end": "23"
   },
   {
-   "id": "sec-011-26-categorical-aspects",
+   "id": "sec-012-26-categorical-aspects",
    "number": "2.6",
    "title": "Categorical aspects",
    "level": 2,
    "page_start": 23,
    "page_end": 24,
-   "n_chars": 2207,
-   "n_words": 408
+   "n_chars": 2141,
+   "n_words": 419,
+   "label_start": "23",
+   "label_end": "24"
   },
   {
-   "id": "sec-012-31-solutions",
+   "id": "sec-013-3-heines-q-hypergeometric-functions",
+   "number": "3",
+   "title": "Heine's q-hypergeometric functions",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 52,
+   "n_words": 10,
+   "label_start": "24",
+   "label_end": "24"
+  },
+  {
+   "id": "sec-014-31-solutions",
    "number": "3.1",
    "title": "Solutions",
    "level": 2,
    "page_start": 24,
    "page_end": 25,
-   "n_chars": 1629,
-   "n_words": 285
+   "n_chars": 1680,
+   "n_words": 336,
+   "label_start": "24",
+   "label_end": "25"
   },
   {
-   "id": "sec-013-32-self-duality",
+   "id": "sec-015-32-self-duality",
    "number": "3.2",
    "title": "Self duality",
    "level": 2,
    "page_start": 25,
    "page_end": 28,
-   "n_chars": 5069,
-   "n_words": 883
+   "n_chars": 5415,
+   "n_words": 1229,
+   "label_start": "25",
+   "label_end": "28"
   },
   {
-   "id": "sec-014-33-state-integral",
+   "id": "sec-016-33-state-integral",
    "number": "3.3",
    "title": "State integral",
    "level": 2,
    "page_start": 28,
    "page_end": 29,
-   "n_chars": 2572,
-   "n_words": 483
+   "n_chars": 2658,
+   "n_words": 569,
+   "label_start": "28",
+   "label_end": "29"
   },
   {
-   "id": "sec-015-34-resonance",
+   "id": "sec-017-34-resonance",
    "number": "3.4",
    "title": "Resonance",
    "level": 2,
    "page_start": 29,
    "page_end": 31,
-   "n_chars": 3055,
-   "n_words": 519
+   "n_chars": 3193,
+   "n_words": 659,
+   "label_start": "29",
+   "label_end": "31"
   },
   {
-   "id": "sec-016-4-proof-of-theorems-15-and-16",
+   "id": "sec-018-4-proof-of-theorems-15-and-16",
    "number": "4",
    "title": "Proof of Theorems 1.5 and 1.6",
    "level": 1,
    "page_start": 31,
    "page_end": 31,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 32,
+   "n_words": 7,
+   "label_start": "31",
+   "label_end": "31"
   },
   {
-   "id": "sec-017-41-the-q-pochhammer-symbol",
+   "id": "sec-019-41-the-q-pochhammer-symbol",
    "number": "4.1",
    "title": "The q-Pochhammer symbol",
    "level": 2,
    "page_start": 31,
    "page_end": 33,
-   "n_chars": 2179,
-   "n_words": 411
+   "n_chars": 2215,
+   "n_words": 449,
+   "label_start": "31",
+   "label_end": "33"
   },
   {
-   "id": "sec-018-42-the-appell-lerch-sums",
+   "id": "sec-020-42-the-appell-lerch-sums",
    "number": "4.2",
    "title": "The Appell-Lerch sums",
    "level": 2,
    "page_start": 33,
    "page_end": 37,
-   "n_chars": 6713,
-   "n_words": 1186
+   "n_chars": 6984,
+   "n_words": 1387,
+   "label_start": "33",
+   "label_end": "37"
   },
   {
-   "id": "sec-019-51-solutions",
+   "id": "sec-021-51-solutions",
    "number": "5.1",
    "title": "Solutions",
    "level": 2,
    "page_start": 37,
    "page_end": 37,
-   "n_chars": 334,
-   "n_words": 61
+   "n_chars": 332,
+   "n_words": 59,
+   "label_start": "37",
+   "label_end": "37"
   },
   {
-   "id": "sec-020-5-a-q-difference-equation-of-the-41-knot",
+   "id": "sec-022-5-a-q-difference-equation-of-the-41-knot",
    "number": "5",
    "title": "A q-difference equation of the 41 knot",
    "level": 1,
    "page_start": 37,
    "page_end": 40,
-   "n_chars": 3430,
-   "n_words": 621
+   "n_chars": 3516,
+   "n_words": 705,
+   "label_start": "37",
+   "label_end": "40"
   },
   {
-   "id": "sec-021-52-monodromy",
+   "id": "sec-023-52-monodromy",
    "number": "5.2",
    "title": "Monodromy",
    "level": 2,
    "page_start": 40,
    "page_end": 43,
-   "n_chars": 4603,
-   "n_words": 733
+   "n_chars": 4740,
+   "n_words": 870,
+   "label_start": "40",
+   "label_end": "43"
   },
   {
-   "id": "sec-022-53-residues",
+   "id": "sec-024-53-residues",
    "number": "5.3",
    "title": "Residues",
    "level": 2,
    "page_start": 43,
    "page_end": 45,
-   "n_chars": 2945,
-   "n_words": 440
+   "n_chars": 3032,
+   "n_words": 529,
+   "label_start": "43",
+   "label_end": "45"
   },
   {
-   "id": "sec-023-54-determinants",
+   "id": "sec-025-54-determinants",
    "number": "5.4",
    "title": "Determinants",
    "level": 2,
    "page_start": 45,
    "page_end": 46,
-   "n_chars": 3185,
-   "n_words": 546
+   "n_chars": 3323,
+   "n_words": 612,
+   "label_start": "45",
+   "label_end": "46"
   },
   {
-   "id": "sec-024-55-state-integral",
+   "id": "sec-026-55-state-integral",
    "number": "5.5",
    "title": "State integral",
    "level": 2,
    "page_start": 46,
    "page_end": 47,
-   "n_chars": 1554,
-   "n_words": 273
+   "n_chars": 1570,
+   "n_words": 289,
+   "label_start": "46",
+   "label_end": "47"
   },
   {
-   "id": "sec-025-56-the-inhomogeneous-equation",
+   "id": "sec-027-56-the-inhomogeneous-equation",
    "number": "5.6",
    "title": "The inhomogeneous equation",
    "level": 2,
    "page_start": 47,
    "page_end": 52,
-   "n_chars": 8690,
-   "n_words": 1635
+   "n_chars": 8882,
+   "n_words": 1821,
+   "label_start": "47",
+   "label_end": "52"
   },
   {
-   "id": "sec-026-57-the-x-deformation",
+   "id": "sec-028-57-the-x-deformation",
    "number": "5.7",
    "title": "The x-deformation",
    "level": 2,
    "page_start": 52,
    "page_end": 62,
-   "n_chars": 18568,
-   "n_words": 2769
+   "n_chars": 19312,
+   "n_words": 3509,
+   "label_start": "52",
+   "label_end": "62"
   },
   {
-   "id": "sec-027-58-an-analytic-lift-of-the-colored-jones-polynom",
+   "id": "sec-029-58-an-analytic-lift-of-the-colored-jones-polynom",
    "number": "5.8",
    "title": "An analytic lift of the colored Jones polynomial",
    "level": 2,
    "page_start": 62,
-   "page_end": 63,
-   "n_chars": 1886,
-   "n_words": 298
+   "page_end": 62,
+   "n_chars": 428,
+   "n_words": 78,
+   "label_start": "62",
+   "label_end": "62"
   },
   {
-   "id": "sec-028-acknowledgements",
+   "id": "sec-030-59-specialisation-tqm",
+   "number": "5.9",
+   "title": "Specialisation t=qm",
+   "level": 2,
+   "page_start": 62,
+   "page_end": 63,
+   "n_chars": 1405,
+   "n_words": 245,
+   "label_start": "62",
+   "label_end": "63"
+  },
+  {
+   "id": "sec-031-acknowledgements",
    "number": null,
    "title": "Acknowledgements",
    "level": 2,
    "page_start": 63,
    "page_end": 63,
-   "n_chars": 168,
-   "n_words": 24
+   "n_chars": 167,
+   "n_words": 23,
+   "label_start": "63",
+   "label_end": "63"
   },
   {
-   "id": "sec-029-references",
+   "id": "sec-032-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 63,
    "page_end": 66,
-   "n_chars": 12063,
-   "n_words": 1690
+   "n_chars": 12008,
+   "n_words": 1635,
+   "label_start": "63",
+   "label_end": "66"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 33,
-  "sections": 30,
-  "chars_total": 132302
+  "toc_inferred_entries": 0,
+  "figure_entries": 5,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 4,
+    "items": [
+     "Summary",
+     "Motivation",
+     "Duality",
+     "Resonance"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 1,
+    "items": [
+     "Solutions: listed p24, found p2"
+    ]
+   }
+  },
+  "sections": 34,
+  "chars_total": 136039,
+  "furniture_lines_stripped": 0
  },
  "duplicate_copies": [
   "arxiv-2203.17029v1"

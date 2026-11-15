@@ -1,6 +1,6 @@
 ---
 doc_id: agt-v3-n1-p17-p
-doc_title: "Skein-theoretical derivation of some formulas of Habiro Introduction"
+doc_title: "Skein-theoretical derivation of some formulas of Habiro"
 section_id: sec-002-2-a-proof-using-orthogonal-polynomials
 section_title: "A proof using orthogonal polynomials"
 section_number: 2
@@ -8,7 +8,9 @@ pages: 5-9
 source_pdf: agt-v3-n1-p17-p.pdf
 source_sha256: df196f0a732ad6b9
 toc_source: inferred
+doc_brief: "Skein-theoretical derivation of some formulas of Habiro — We use skein theory to compute the coeﬃcients of certain power series considered by Habiro in his theory of sl2 invariants of integral homol"
 ---
+A proof using orthogonal polynomials
 Habiro’s proof of Theorem 1.1 uses the relationship with the quantum group
 Uqsl2. Here is another proof, using the method of orthogonal polynomials as in
 [BHMV1].
@@ -264,4 +266,3 @@ which is a straightforward computation.
 Algebraic & Geometric Topology, Volume 3 (2003)
 Skein-theoretical derivation of some formulas of Habiro
 545
-3

@@ -1,0 +1,56 @@
+33 Page 8 of 47 S. Jansen, L. Kolesnikov
+
+for some yu satisfying (2.9). Let s be the selection rule that always selects the first entry—so
+that x; = x; and xt = x; fori > 2. For locally stable pair potentials, we have
+
+T[a + f (x1, Xi))En¢k-1 02, «+, Ans Vis eens Yk)
+
+i=2
+
+= [] d+fei.x)) T] G+ soi. vy [fa + rev. wr TacaT men
+
+l<i<j<n l<i<j<k i=2 j=l i=2
+<( T] a+ sous []uon)( J] (+ fony PLmon)eZi1or, (2.10)
+I<i<j<n i=2 I<i<j<k j=l
+
+where we used the local stability to estimate
+
+n
+
+k kon k
++ fei») =[] [Ja + Fei. y) < [p26 = e260?
+
+i=2 j=1 jali=2 j=l
+
+We plug our choice of & into the left-hand side of (2.5) and use the estimate (2.10) together
+with the assumption (2.9) to find that condition (i) of Theorem 2.1 is satisfied. o
+
+Remark 2.4 We see that Theorem 2.1 provides a mechanism to prove sufficient conditions for
+absolute convergence—by constructing a sequence of ansatz functions € tailored to satisfy the
+Kirkwood-Salsburg inequalities under the given condition. Conversely, given an appropriate
+sequence of ansatz functions &, obtained, for example, as an approximation of p, one can try
+to determine the corresponding sufficient condition for convergence.
+
+We now proceed to demonstrate the usefulness of that approach by deriving a sufficient
+condition that improves on the classical examples above.
+
+2.2 Abstract Polymer Models
+
+In the following we want to consider the setup of abstract polymers [1, 8], in which the
+two classical conditions above—Kotecky—Preiss and Fernandez—Procacci—were first intro-
+duced.
+
+Let X be a countable set (the set of polymers), let Y be the powerset of X and let
+simply be given by the counting measure. Moreover, let R C X x X be a symmetric and
+reflexive relation. We write x ~ y for (x, y) € R (and say that x and y are incompatible)
+and x ~ y for (x, y) ¢ R (and say that x and y are compatible). Moreover, we call a subset
+X C Xcompatible if x ~ y for all x # y € X and write X ~ z for z € Xif z ~ x for
+all x € X. We set (x) := {y € X| y ~ x} for any x € X and extend this notation to
+T(X) := Urex{y € X| y ~ x} for any X C X. Notice that we do not require (x) to be
+finite sets and that x € I(x) for every x € X. Finally, we consider hard-core interactions
+corresponding to Mayer’s f function given by f(x, y) := —Ix~y)-
+
+In this setting we prove a new, improved sufficient condition for absolute convergence of
+the activity expansions p.
+
+D Springer

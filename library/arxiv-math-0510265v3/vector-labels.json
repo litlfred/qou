@@ -1,0 +1,2089 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-math-0510265v3",
+  "pages": [
+    {
+      "page": 3,
+      "rotation": 0,
+      "drawings": 17,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1: From left to right: R-bimodules R, M, N ⊗R M; Hochschild homol- ogy of M."
+      ],
+      "labels": [
+        {
+          "text": "for any bimodule M. This property, which can be explained by the self-",
+          "bbox": [
+            110.88,
+            128.79,
+            499.27,
+            140.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "duality of the Koszul resolution of R, does not extend to arbitrary algebras. It",
+          "bbox": [
+            110.88,
+            142.71,
+            499.49,
+            154.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "implies that in all constructions described below we can substitute Hochschild",
+          "bbox": [
+            110.88,
+            156.63,
+            499.11,
+            168.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "cohomology for Hochschild homology without any gain or loss.",
+          "bbox": [
+            110.88,
+            170.67,
+            431.89,
+            182.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Hochschild cohomology of R-bimodules M, for any R, are covariant (rather",
+          "bbox": [
+            128.4,
+            184.59,
+            501.51,
+            196.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "than contravariant) in M, just like Hochschild homology. For a thorough",
+          "bbox": [
+            110.88,
+            198.51,
+            499.52,
+            210.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "treatment of Hochschild (co)homology we refer the reader to Loday’s book",
+          "bbox": [
+            110.88,
+            212.43,
+            499.52,
+            224.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "[L], and to Kassel [Ka] for a very brief introduction.",
+          "bbox": [
+            110.88,
+            226.47,
+            377.46,
+            238.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "M",
+          "bbox": [
+            313.18,
+            280.15,
+            325.18,
+            297.73
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            14.4
+          ]
+        },
+        {
+          "text": "R",
+          "bbox": [
+            173.68,
+            298.15,
+            182.48,
+            315.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            14.4
+          ]
+        },
+        {
+          "text": "M",
+          "bbox": [
+            232.18,
+            302.65,
+            244.18,
+            320.23
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            14.4
+          ]
+        },
+        {
+          "text": "M",
+          "bbox": [
+            394.18,
+            302.65,
+            406.18,
+            320.23
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            14.4
+          ]
+        },
+        {
+          "text": "N",
+          "bbox": [
+            313.18,
+            325.15,
+            322.78,
+            342.73
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            14.4
+          ]
+        },
+        {
+          "text": "Figure 1: From left to right: R-bimodules R, M, N ⊗R M; Hochschild homol-",
+          "bbox": [
+            110.88,
+            399.51,
+            499.39,
+            413.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "ogy of M.",
+          "bbox": [
+            110.88,
+            413.91,
+            161.05,
+            425.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "For our purposes the ﬁgure 1 diagrammatical calculus will come in handy.",
+          "bbox": [
+            128.4,
+            448.11,
+            499.34,
+            460.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Depict the R-bimodule R by an oriented line, an R-bimodule M by a box",
+          "bbox": [
+            110.88,
+            462.03,
+            499.39,
+            474.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "extended by two lines symbolizing the left and right actions of R. Concate-",
+          "bbox": [
+            110.88,
+            475.95,
+            499.26,
+            487.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "nation of boxes is interpreted as the tensor product N ⊗R M, and the closure",
+          "bbox": [
+            110.88,
+            489.87,
+            499.25,
+            503.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "of two ends of boxed M as taking the Hochschild homology of M.",
+          "bbox": [
+            110.88,
+            503.91,
+            448.33,
+            515.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Soergel bimodules.",
+          "bbox": [
+            128.4,
+            532.23,
+            238.85,
+            544.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Let R′ = Q[x1, . . . , xm] and R′",
+          "bbox": [
+            110.88,
+            541.83,
+            261.49,
+            558.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "i = Q[x1, . . . , xi−1, xi+xi+1, xixi+1, xi+2, . . . , xm].",
+          "bbox": [
+            259.08,
+            545.59,
+            504.01,
+            561.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "i is a subring of R′ of polynomials which are symmetric in xi and",
+          "bbox": [
+            167.52,
+            555.75,
+            499.35,
+            575.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "The ring R′",
+          "bbox": [
+            110.88,
+            558.74,
+            169.94,
+            572.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "xi+1. Equivalently, R′",
+          "bbox": [
+            110.88,
+            572.66,
+            221.54,
+            586.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "i consists of polynomials invariant under the action of",
+          "bbox": [
+            219.12,
+            573.99,
+            499.47,
+            588.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "the symmetric group S2 which exchanges xi and xi+1. The ring R′ is a free",
+          "bbox": [
+            110.88,
+            583.71,
+            499.36,
+            601.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "R′",
+          "bbox": [
+            110.88,
+            600.62,
+            122.18,
+            613.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "i-module of rank 2.",
+          "bbox": [
+            119.76,
+            601.95,
+            217.81,
+            615.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Introduce a grading on R′ and R′",
+          "bbox": [
+            128.4,
+            611.55,
+            297.14,
+            627.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "i by placing each xi in degree two. Then",
+          "bbox": [
+            294.72,
+            615.87,
+            499.23,
+            630.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "R′ ∼= R′",
+          "bbox": [
+            110.88,
+            625.47,
+            151.46,
+            642.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "i{2} ⊕R′",
+          "bbox": [
+            149.04,
+            628.46,
+            196.82,
+            643.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "i as a graded R′",
+          "bbox": [
+            194.4,
+            628.46,
+            277.46,
+            644.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "i-module, where {2} is the grading shift up",
+          "bbox": [
+            275.04,
+            629.79,
+            499.36,
+            643.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "by two.",
+          "bbox": [
+            110.88,
+            643.83,
+            148.46,
+            655.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "i = R′ ⊗R′",
+          "bbox": [
+            158.4,
+            653.43,
+            210.39,
+            672.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10",
+            "CMSY6",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Let B′",
+          "bbox": [
+            128.4,
+            656.42,
+            161.3,
+            669.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "i R′. It’s a graded R′-bimodule, free of rank two as a left",
+          "bbox": [
+            208.2,
+            656.42,
+            499.33,
+            674.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "R′-module and as a right R′-module.",
+          "bbox": [
+            110.88,
+            670.34,
+            299.41,
+            683.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "We will call B′",
+          "bbox": [
+            128.4,
+            691.46,
+            201.01,
+            704.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "i, their tensor products, and other related bimodules Soergel",
+          "bbox": [
+            198.12,
+            692.79,
+            499.43,
+            706.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMTI12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            302.16,
+            722.67,
+            308.02,
+            734.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 6,
+      "rotation": 0,
+      "drawings": 59,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2: To left and right pictures we assign R-bimodules R and Bi, respec- tively.",
+        "Figure 3: To the left picture we assign R3-bimodule B2 ⊗B1 ⊗B2; to the right picture–the Hochschild homology of this bimodule."
+      ],
+      "labels": [
+        {
+          "text": "1",
+          "bbox": [
+            154.68,
+            173.57,
+            160.08,
+            186.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            10.8
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            181.68,
+            173.57,
+            187.08,
+            186.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            10.8
+          ]
+        },
+        {
+          "text": "m",
+          "bbox": [
+            267.18,
+            173.57,
+            274.98,
+            186.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            10.8
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            339.18,
+            173.57,
+            344.58,
+            186.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            10.8
+          ]
+        },
+        {
+          "text": "i",
+          "bbox": [
+            393.18,
+            173.57,
+            396.18,
+            186.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            10.8
+          ]
+        },
+        {
+          "text": "i+1",
+          "bbox": [
+            415.68,
+            173.57,
+            431.37,
+            186.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            10.8
+          ]
+        },
+        {
+          "text": "m",
+          "bbox": [
+            447.18,
+            173.57,
+            454.98,
+            186.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            10.8
+          ]
+        },
+        {
+          "text": "Figure 2: To left and right pictures we assign R-bimodules R and Bi, respec-",
+          "bbox": [
+            110.88,
+            212.19,
+            499.25,
+            224.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "tively.",
+          "bbox": [
+            110.88,
+            226.59,
+            141.26,
+            238.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 3: To the left picture we assign R3-bimodule B2 ⊗B1 ⊗B2; to the",
+          "bbox": [
+            110.88,
+            408.87,
+            499.37,
+            422.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "right picture–the Hochschild homology of this bimodule.",
+          "bbox": [
+            110.88,
+            423.27,
+            399.66,
+            435.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Graphical presentation.",
+          "bbox": [
+            128.4,
+            457.11,
+            266.68,
+            469.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "We now reﬁne the ﬁgure 1 diagrammatics to ﬁt our situation. To m parallel",
+          "bbox": [
+            110.88,
+            471.03,
+            499.34,
+            483.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "oriented vertical lines we assign the R′-bimodule R′. The lines symbolize",
+          "bbox": [
+            110.88,
+            483.62,
+            499.24,
+            497.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "generators x1, . . . , xm of R′. The same notation will be used to depict R.",
+          "bbox": [
+            110.88,
+            497.66,
+            499.33,
+            512.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Bimodules B′",
+          "bbox": [
+            110.88,
+            511.58,
+            180.61,
+            524.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "i and Bi will be assigned to a diagram with a wide edge as in",
+          "bbox": [
+            177.72,
+            512.91,
+            499.38,
+            527.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "[KR2] bounded by four oriented lines with endpoints in the i-th an (i + 1)-st",
+          "bbox": [
+            110.88,
+            526.83,
+            499.44,
+            538.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "positions, the rest of the diagram consisting of oriented lines, see ﬁgure 2",
+          "bbox": [
+            110.88,
+            540.75,
+            499.41,
+            552.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "right.",
+          "bbox": [
+            110.88,
+            554.79,
+            138.5,
+            566.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "To a composition of diagrams with wide edges we assign the tensor prod-",
+          "bbox": [
+            128.4,
+            568.71,
+            499.39,
+            580.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "uct of corresponding bimodules, and to the closure of a composition – the",
+          "bbox": [
+            110.88,
+            582.63,
+            499.37,
+            594.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Hochschild homology of the tensor product, see ﬁgure 3.",
+          "bbox": [
+            110.88,
+            596.55,
+            399.54,
+            608.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Link homology.",
+          "bbox": [
+            128.4,
+            624.99,
+            218.23,
+            636.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Let σ be a braid word (see formula (1)). The Rouquier complex F(σ):",
+          "bbox": [
+            110.88,
+            638.91,
+            471.49,
+            650.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "∂",
+          "bbox": [
+            240.72,
+            663.64,
+            245.18,
+            671.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "∂",
+          "bbox": [
+            296.4,
+            663.64,
+            300.86,
+            671.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "∂",
+          "bbox": [
+            362.88,
+            663.64,
+            367.34,
+            671.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "−→F j(σ)",
+          "bbox": [
+            233.52,
+            665.44,
+            285.84,
+            679.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "−→F j+1(σ)",
+          "bbox": [
+            289.2,
+            665.44,
+            352.44,
+            679.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "· · ·",
+          "bbox": [
+            216.24,
+            667.59,
+            230.37,
+            679.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "−→. . .",
+          "bbox": [
+            355.68,
+            667.59,
+            392.05,
+            679.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "has n + 1 nontrivial terms, where n is the length of σ. Each term F j(σ) is a",
+          "bbox": [
+            110.88,
+            691.24,
+            499.42,
+            704.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            302.16,
+            722.67,
+            308.02,
+            734.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 9,
+      "rotation": 0,
+      "drawings": 84,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 4: A resolution D of a braid’s closure"
+      ],
+      "labels": [
+        {
+          "text": "r,m",
+          "bbox": [
+            318.18,
+            151.46,
+            327.98,
+            161.06
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.2
+          ]
+        },
+        {
+          "text": "r,1",
+          "bbox": [
+            232.68,
+            155.96,
+            240.48,
+            165.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.2
+          ]
+        },
+        {
+          "text": "r,2",
+          "bbox": [
+            259.68,
+            155.96,
+            267.48,
+            165.56
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.2
+          ]
+        },
+        {
+          "text": "1,1",
+          "bbox": [
+            232.68,
+            259.46,
+            241.68,
+            269.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.2
+          ]
+        },
+        {
+          "text": "1,2",
+          "bbox": [
+            255.18,
+            259.46,
+            264.18,
+            269.06
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.2
+          ]
+        },
+        {
+          "text": "1,m",
+          "bbox": [
+            313.68,
+            259.46,
+            324.68,
+            269.06
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.2
+          ]
+        },
+        {
+          "text": "0,1",
+          "bbox": [
+            232.68,
+            299.96,
+            241.68,
+            309.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.2
+          ]
+        },
+        {
+          "text": "0,2",
+          "bbox": [
+            255.18,
+            299.96,
+            264.18,
+            309.56
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.2
+          ]
+        },
+        {
+          "text": "0,m",
+          "bbox": [
+            313.68,
+            299.96,
+            324.68,
+            309.56
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.2
+          ]
+        },
+        {
+          "text": "Figure 4: A resolution D of a braid’s closure",
+          "bbox": [
+            190.8,
+            371.19,
+            419.34,
+            383.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Soergel bimodule B′(D) assigned to D, the tensor product of r bimodules",
+          "bbox": [
+            110.88,
+            404.06,
+            499.26,
+            417.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "B′",
+          "bbox": [
+            110.88,
+            417.98,
+            122.66,
+            431.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "s (s is as before, and depends on the layer of the diagram). The Koszul",
+          "bbox": [
+            119.76,
+            419.31,
+            499.33,
+            434.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "complex of D is quasiisomorphic to the Koszul complex of the quotient ring",
+          "bbox": [
+            110.88,
+            433.23,
+            499.42,
+            445.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "B′(D) assigned to the sequence of the remaining m elements x0,j −xr,j,",
+          "bbox": [
+            110.88,
+            445.94,
+            499.45,
+            461.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "for 1 ≤j ≤m. The latter complex computes the Hochschild homology of",
+          "bbox": [
+            110.88,
+            461.19,
+            499.46,
+            473.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "B′(D). Thus, the Hochschild homology of B′(D) is naturally isomorphic to",
+          "bbox": [
+            110.88,
+            473.78,
+            499.45,
+            487.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "the homology of the Koszul complex of D, the latter isomorphic to the direct",
+          "bbox": [
+            110.88,
+            489.03,
+            499.35,
+            501.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "sum of two copies of CH(D).",
+          "bbox": [
+            110.88,
+            503.07,
+            261.25,
+            515.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Downsizing from m variables xi,1, . . . , xi,m to their diﬀerences gives us",
+          "bbox": [
+            128.4,
+            516.99,
+            499.38,
+            530.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "an isomorphism between the reduced homology",
+          "bbox": [
+            110.88,
+            530.91,
+            356.61,
+            542.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "CH(D) and the Hochchild",
+          "bbox": [
+            361.08,
+            530.91,
+            499.24,
+            542.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "homology of B(D). These isomorphisms, over all D, respect the diﬀeren-",
+          "bbox": [
+            110.88,
+            544.83,
+            499.25,
+            556.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "tials in the complexes computing",
+          "bbox": [
+            110.88,
+            558.87,
+            280.31,
+            570.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "H(σ) and HHH(σ), leading to the desired",
+          "bbox": [
+            284.52,
+            558.87,
+            499.24,
+            570.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "isomorphism",
+          "bbox": [
+            110.88,
+            572.79,
+            175.24,
+            584.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "HHH(σ) ∼=",
+          "bbox": [
+            260.88,
+            583.35,
+            316.02,
+            599.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "H(σ).",
+          "bbox": [
+            319.32,
+            586.71,
+            349.45,
+            598.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "It was shown in [KR2] that",
+          "bbox": [
+            110.88,
+            607.11,
+            253.33,
+            619.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "H(σ) is a link invariant, up to a grading shift.",
+          "bbox": [
+            257.76,
+            607.11,
+            499.39,
+            619.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Therefore, the same is true of HHH(σ).",
+          "bbox": [
+            110.88,
+            621.03,
+            312.13,
+            633.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "□",
+          "bbox": [
+            128.4,
+            632.08,
+            137.7,
+            644.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSAM10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The isomorphism between",
+          "bbox": [
+            128.4,
+            659.79,
+            261.51,
+            671.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "H and HHH is nontrivial on their trigradings.",
+          "bbox": [
+            265.44,
+            659.79,
+            499.39,
+            671.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "First of all, a not so natural shift by (−1, 1, 0) was built into the deﬁnition",
+          "bbox": [
+            110.88,
+            673.71,
+            499.37,
+            685.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "of",
+          "bbox": [
+            110.88,
+            687.63,
+            120.34,
+            699.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "H due to the presence of a. After shifting",
+          "bbox": [
+            125.76,
+            687.63,
+            351.94,
+            699.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "H back by (1, −1, 0), both",
+          "bbox": [
+            357.48,
+            687.63,
+            499.47,
+            699.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "9",
+          "bbox": [
+            302.16,
+            722.67,
+            308.02,
+            734.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2205.01282v2
-doc_title: "Witten-Reshetikhin-Turaev invariants and homological blocks for plumbed homology spheres"
+doc_title: "WITTEN–RESHETIKHIN–TURAEV INVARIANTS AND HOMOLOGICAL BLOCKS FOR PLUMBED HOMOLOGY SPHERES"
 section_id: sec-006-24-rational-functions-determined-by-the-linking
 section_title: "Rational functions determined by the linking matrix"
 section_number: 2.4
 pages: 6-8
 source_pdf: 2205.01282v2.pdf
 source_sha256: 00f656afa60db838
-doc_brief: "Witten-Reshetikhin-Turaev invariants and homological blocks for plumbed homology spheres — In this paper, we prove a conjecture by Gukov–Pei–Putrov–Vafa for a wide class of plumbed 3-manifolds."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.877
-latex_coverage_ratio: 0.82
+latex_coverage_ratio: 0.962
+doc_brief: "WITTEN–RESHETIKHIN–TURAEV INVARIANTS AND HOMOLOGICAL BLOCKS FOR PLUMBED HOMOLOGY SPHERES — In this paper, we prove a conjecture by Gukov–Pei–Putrov–Vafa for a wide class of plumbed 3-manifolds."
 ---
 []{#subsec:rat_func label="subsec:rat_func"}
 

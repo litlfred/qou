@@ -2782,6 +2782,8 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "fukuda2012" },
   { id: "melnikov2025" },
   { id: "tarabunga2025" },
+  // 2026-11-15: held library document registered (bean qou-mzv5).
+  { id: "murakami2008-acta-vietnam" },
   // 2026-11-15: owner uploads (commit 947381c) ingested into library/ (epic qou-s4ws).
   { id: "grimus1993lr" },
   { id: "czakon-gluza-hejczyk-2003" },

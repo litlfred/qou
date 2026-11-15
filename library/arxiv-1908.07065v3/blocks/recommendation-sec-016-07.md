@@ -1,0 +1,1 @@
+Nevertheless, it should be possible to connect the NS limit to the selfdual limit of the $\Omega$ background also in these theories, since the $H_i$ theories can be derived from $SU(2)$ gauge theories with $N_f=1,2,3$ upon a suitable limiting procedure \cite{ad,Argyres:1995xn}.

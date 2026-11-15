@@ -8,9 +8,15 @@
   "pages": 15,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 11,
+    "reason": "13 of 310 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": {
@@ -20,13 +26,13 @@
    "stamp_date": "8 Aug 1994"
   },
   "doi": null,
-  "title": "arXiv:hep-th/9408045v1 8 Aug 1994",
-  "authors_raw": "J. Barcelos-Neto \u2217and T.G. Dargam",
+  "title": "Constrained analysis of topologically massive gravity",
+  "authors_raw": "J. Barcelos-Neto ∗and T.G. Dargam",
   "title_lines": [
    "Constrained analysis",
    "of topologically massive gravity"
   ],
-  "abstract": "We quantize the Einstein gravity in the formalism of weak gravitational \ufb01elds by using the constrained Hamiltonian method. Special emphasis is given to the 2+1 spacetime dimensional case where a (topological) Chern-Simons term is added to the Lagrangian. PACS: 03.70.+k; 04.20.Fy; 11.30.-j (\u2217) Electronic mails: ift03001 @ ufrj and barcelos @ vms1.nce.ufrj.br 1",
+  "abstract": "We quantize the Einstein gravity in the formalism of weak gravitational ﬁelds by using the constrained Hamiltonian method. Special emphasis is given to the 2+1 spacetime dimensional case where a (topological) Chern-Simons term is added to the Lagrangian. PACS: 03.70.+k; 04.20.Fy; 11.30.-j (∗) Electronic mails: ift03001 @ ufrj and barcelos @ vms1.nce.ufrj.br 1",
   "docinfo": {
    "Title": "arXiv:hep-th/9408045v1  8 Aug 1994",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
@@ -44,7 +50,8 @@
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:hep-th/9408045v1 8 Aug 1994"
  },
  "toc": [
   {
@@ -78,7 +85,7 @@
   },
   {
    "level": 1,
-   "title": "Hilbert-Einstein theory in a weak gravitational \ufb01eld",
+   "title": "Hilbert-Einstein theory in a weak gravitational ﬁeld",
    "page": 3,
    "source": "inferred",
    "number": "II",
@@ -328,7 +335,7 @@
   {
    "id": "sec-002-ii-hilbert-einstein-theory-in-a-weak-gravitation",
    "number": "II",
-   "title": "Hilbert-Einstein theory in a weak gravitational \ufb01eld",
+   "title": "Hilbert-Einstein theory in a weak gravitational ﬁeld",
    "level": 1,
    "page_start": 3,
    "page_end": 7,
@@ -344,8 +351,8 @@
    "level": 1,
    "page_start": 7,
    "page_end": 14,
-   "n_chars": 7160,
-   "n_words": 1616,
+   "n_chars": 6751,
+   "n_words": 1491,
    "label_start": "7",
    "label_end": "14"
   },
@@ -401,6 +408,7 @@
    "items": []
   },
   "sections": 8,
-  "chars_total": 17351
+  "chars_total": 16942,
+  "furniture_lines_stripped": 0
  }
 }

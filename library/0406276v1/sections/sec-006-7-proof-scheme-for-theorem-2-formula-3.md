@@ -8,6 +8,7 @@ pages: 18-20
 source_pdf: 0406276v1.pdf
 source_sha256: 8fdf4b5950e8b5f5
 toc_source: inferred
+doc_brief: "The GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE — 16 sections: Front matter; Linking integrals in S3 and H3 .; Historical background."
 ---
 We replace  R4   by Minkowski space  R1,3  with the indefinite inner product 
  
@@ -37,7 +38,6 @@ cos α  has been replaced by  cosh α  on the left-hand side, and  ∆ϕ  —  �
 replaced by  ∆ϕ  +  ϕ  on the right-hand side. 
  
  
-19
  
  
 After proving the Key Lemma for  H3 ,  we apply it using the kernel function 
@@ -71,8 +71,4 @@ equation
  
 ∇ × B  =  J  +  ∂E/∂t , 
  
-and learn that  BS(V)  satisfies the four properties required of it in section 4. 
- 
- 
- 
-20
+and learn that  BS(V)  satisfies the four properties required of it in section 4.

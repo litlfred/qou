@@ -1,0 +1,50 @@
+144 Chapter 6 — The generic rank of Brill-Noether sheaves
+
+Finally, for c1,...,¢n € No with cj +---+cn = g there are precisely wear
+partitions of {1,...,g} into n disjoint subsets of size c),...,Cn, so there are
+precisely as many corresponding choices of kj,...,kg. Oo
+
+6.5. Betti polynomials
+
+To finish the proof of theorem 6.1 it remains to compute the contribution
+of the negligible complex °S5% from the end of section 6.2. Recall that this
+complex is a direct sum of degree shifts of 6x, which will allow to control it
+in terms of hypercohomology. More specifically, for any K € D?(X,C) we
+have the Betti polynomial
+
+A(K,t) = ¥ dime (H'(X,K))-t! € C[e,171).
+ieZ
+If K = D(K) is isomorphic to its Verdier dual, then the polynomial h(K,1)
+is invariant under the coordinate transformation ¢ ++ 1/t and hence can be
+written as a polynomial p(K,&) € C[&] in the new variable
+
+Ear l/2 4p?
+
+where of course only even powers of € occur. Note that p(dy,é) = €78 so
+that this new variable is particularly useful for the detection of the direct
+summands dy we are interested in.
+
+LEMMA 6.7. For any d € No we have
+d
+
+e—-1—
+p58) = YOM) 6
+c=0
+Proof. By definition dg = Rhgs(6c,) = Rha«(Cc, [d]) is the direct image
+of the constant perverse sheaf under the Abel-Jacobi morphism hy : Cg > X,
+so its hypercohomology is
+
+HY(X, 51) = H°*4(Cy,C).
+Now the cohomology of symmetric products of a curve has been computed
+in [72, eq. 4.2]. For the Betti polynomial this gives
+
+h(dg,t) = yx (7%,)Pn(t) where P(t) = y rem,
+
+m=0 c=0
+Hence it will suffice to check that
+
+@ Pn = ¥(-1y"* (mr tre) . Ee for all m> 0,
+c>0
+a PBK) =P eayre(2s) ME) tora eS.
+
+m>0

@@ -8,6 +8,7 @@ pages: 13-14
 source_pdf: 9212088v1.pdf
 source_sha256: ecb2c02ec6fe11bd
 toc_source: inferred
+doc_brief: "arXiv:hep-th/9212088v1 14 Dec 1992 — We construct a random matrix model that, in the large N limit, reduces to the low energy limit of the QCD partition function put forward by Leutwyler and Smilga."
 ---
 The main conclusion of this work is that the low energy chiral limit of the QCD
 partition function as derived by Leutwyler and Smilga coincides with a large N limit of a
@@ -28,7 +29,6 @@ depend on the number of ﬂavors and, for example, diverge in the quenched appro
 This conclusion has been conﬁrmed by simulations of an instanton liquid with overlap
 matrix elements that diﬀer strongly from those of a gaussian random matrix ensemble.
 Inside the statistical uncertainty of the calculations all sum rules were reproduced. The
-13
 physical interpretation is that the way the thermodynamic limit of the spectral density
 near zero is approached is universal. However, its value, i.e. the chiral condensate, depends
 on the details of the theory.

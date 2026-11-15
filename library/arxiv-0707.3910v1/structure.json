@@ -8,10 +8,16 @@
   "pages": 20,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "math_source": "latex",
-  "mtime": null,
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 13,
+    "reason": "49 of 205 words repeat the word before: overprinted (fake bold) text"
+   }
+  ],
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -32,6 +38,16 @@
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "LaTeX with hyperref package",
    "CreationDate": "D:20210811023211-04'00'"
+  },
+  "title_raw": "LANDEN TRANSFORMATIONS AND THE INTEGRATION OF RATIONAL FUNCTIONS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "LANDEN TRANSFORMATIONS AND THE INTEGRATION OF RATIONAL FUNCTIONS 1. Introduction We consider the space of even rational functions of degree 2 p b k z 2( p − 1 − k ) and Q ( z ) := with positive real coeﬃcients a k , b k ∈ R + normalized by the condition a 0 = a p = 1, the space of normalized even ra",
+   "outline": "1. Introduction",
+   "text": "LANDEN TRANSFORMATIONS AND THE INTEGRATION OF RATIONAL FUNCTIONS",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
@@ -40,67 +56,250 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The reduction formula",
    "page": 4,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The quartic case",
    "page": 5,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The symmetric case of degree 8",
    "page": 7,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "A sequence of Landen transformations",
    "page": 8,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The sixth degree case",
    "page": 10,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Examples",
    "page": 11,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Appendix A. Two binomial sums",
    "page": 17,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 19,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 437,
+   "n_words": 64,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -109,7 +308,9 @@
    "page_start": 1,
    "page_end": 4,
    "n_chars": 7076,
-   "n_words": 1339
+   "n_words": 1339,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-2-the-reduction-formula",
@@ -119,7 +320,9 @@
    "page_start": 4,
    "page_end": 5,
    "n_chars": 2644,
-   "n_words": 579
+   "n_words": 579,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-3-the-quartic-case",
@@ -129,7 +332,9 @@
    "page_start": 5,
    "page_end": 7,
    "n_chars": 2352,
-   "n_words": 575
+   "n_words": 575,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-4-the-symmetric-case-of-degree-8",
@@ -139,7 +344,9 @@
    "page_start": 7,
    "page_end": 8,
    "n_chars": 1271,
-   "n_words": 308
+   "n_words": 308,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-5-a-sequence-of-landen-transformations",
@@ -149,7 +356,9 @@
    "page_start": 8,
    "page_end": 10,
    "n_chars": 3653,
-   "n_words": 809
+   "n_words": 809,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-6-the-sixth-degree-case",
@@ -159,7 +368,9 @@
    "page_start": 10,
    "page_end": 11,
    "n_chars": 2869,
-   "n_words": 622
+   "n_words": 622,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-006-7-examples",
@@ -168,8 +379,10 @@
    "level": 1,
    "page_start": 11,
    "page_end": 17,
-   "n_chars": 8419,
-   "n_words": 1974
+   "n_chars": 8282,
+   "n_words": 1889,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-007-appendix-a-two-binomial-sums",
@@ -179,7 +392,9 @@
    "page_start": 17,
    "page_end": 19,
    "n_chars": 3115,
-   "n_words": 778
+   "n_words": 778,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-008-references",
@@ -189,15 +404,25 @@
    "page_start": 19,
    "page_end": 20,
    "n_chars": 2736,
-   "n_words": 385
+   "n_words": 385,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 9,
-  "sections": 9,
-  "chars_total": 34135,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 10,
+  "chars_total": 34435,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
@@ -210,58 +435,63 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.943,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-2-the-reduction-formula",
      "title": "The reduction formula",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.921,
+     "coverage_ratio": 0.972,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-002-3-the-quartic-case",
      "title": "The quartic case",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.907,
+     "coverage_ratio": 0.86,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-003-4-the-symmetric-case-of-degree-8",
      "title": "The symmetric case of degree 8",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.9,
+     "coverage_ratio": 0.878,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-004-5-a-sequence-of-landen-transformations",
      "title": "A sequence of Landen transformations",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.89,
+     "coverage_ratio": 0.949,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-005-6-the-sixth-degree-case",
      "title": "The sixth degree case",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.991,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-006-7-examples",
      "title": "Examples",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.919,
      "result": "overlaid",
      "converter": "latex"
     },

@@ -2,97 +2,87 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2509.04267v3",
  "source_sha256": "9843b9dd71d1ec74",
- "brief": "QUANTUM COCYCLE INVARIANTS OF KNOTS FROM YANG-BAXTER COHOMOLOGY — Yang-Baxter operators (YBOs) have been employed to construct quantum knot invari- ants.",
- "extended": "**QUANTUM COCYCLE INVARIANTS OF KNOTS FROM YANG-BAXTER COHOMOLOGY**\n\n*MASAHICO SAITO AND EMANUELE ZAPPALA*\n\n33 pp, 17 sections.\n\n**Abstract.** Yang-Baxter operators (YBOs) have been employed to construct quantum knot invari- ants. More recently, cohomology theories for YBOs have been independently developed, drawing inspiration from analogous theories for quandles and other discrete algebraic structures. Quandle cohomology, in particular, gives rise to cocycle invariants for knots via 2-cocycles, which are closely related to quandle extensions, and knotted surfaces via 3-cocycles. These quandle cocycle knot invariants have also been shown to admit interpretations as quantum invariants. Similarly, 2-cocycles in Yang-Baxter cohomology can be interpreted in terms of deformations of YBOs. Building on these parallels, we introduce quantum cocycle invariants of knots using 2- cocycles of Yang–Baxter cohomology, from the perspective of deformation theory.\n\n**Outline.** 2 MASAHICO SAITO AND EMANUELE ZAPPALA; 4 MASAHICO SAITO AND EMANUELE ZAPPALA; 6 MASAHICO SAITO AND EMANUELE ZAPPALA; 8 MASAHICO SAITO AND EMANUELE ZAPPALA; 1 Then there exists an; 10 MASAHICO SAITO AND EMANUELE ZAPPALA; 12 MASAHICO SAITO AND EMANUELE ZAPPALA; 14 MASAHICO SAITO AND EMANUELE ZAPPALA; 16 MASAHICO SAITO AND EMANUELE ZAPPALA; 18 MASAHICO SAITO AND EMANUELE ZAPPALA; 20 MASAHICO SAITO AND EMANUELE ZAPPALA; 22 MASAHICO SAITO AND EMANUELE ZAPPALA; 24 MASAHICO SAITO AND EMANUELE ZAPPALA; 26 MASAHICO SAITO AND EMANUELE ZAPPALA; 28 MASAHICO SAITO AND EMANUELE ZAPPALA; 30 MASAHICO SAITO AND EMANUELE ZAPPALA; References",
+ "brief": "Quantum Cocycle Invariants of Knots from Yang-Baxter Cohomology — Yang-Baxter operators (YBOs) have been employed to construct quantum knot invari- ants.",
+ "extended": "**Quantum Cocycle Invariants of Knots from Yang-Baxter Cohomology**\n\n*MASAHICO SAITO AND EMANUELE ZAPPALA*\n\n33 pp, 15 sections.\n\n**Abstract.** Yang-Baxter operators (YBOs) have been employed to construct quantum knot invari- ants. More recently, cohomology theories for YBOs have been independently developed, drawing inspiration from analogous theories for quandles and other discrete algebraic structures. Quandle cohomology, in particular, gives rise to cocycle invariants for knots via 2-cocycles, which are closely related to quandle extensions, and knotted surfaces via 3-cocycles. These quandle cocycle knot invariants have also been shown to admit interpretations as quantum invariants. Similarly, 2-cocycles in Yang-Baxter cohomology can be interpreted in terms of deformations of YBOs. Building on these parallels, we introduce quantum cocycle invariants of knots using 2- cocycles of Yang–Baxter cohomology, from the perspective of deformation theory.\n\n**Outline.** Front matter; 2 Preliminaries; 2.1 Knot invariants from closed braids and tra; 2.2 Knot invariants using maxima/minima; 3 Yang-Baxter cohomology; 3.1 YB cohomology in low dimensions; 3.2 YB cohomology in higher dimensions; 4 Quantum cocycle invariants via traces; 5 Examples via traces; 5.1 Invariants from deformations of the transp; 5.2 Invariants from the tensor version of quan; 6 Quantum cocycle invariants via maxima/minima; 7 Examples via maxima/minima; 8 Higher order invariants; 9 The Jones and Alexander polynomials as highe",
  "tokens": {
   "brief": 38,
-  "extended": 401
+  "extended": 377
  },
  "sections": [
   {
-   "id": "sec-000-2-masahico-saito-and-emanuele-zappala",
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
-   "pages": "1-4"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-3"
   },
   {
-   "id": "sec-001-4-masahico-saito-and-emanuele-zappala",
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
-   "pages": "4-6"
+   "id": "sec-000-2-preliminaries",
+   "title": "Preliminaries",
+   "pages": "3-4"
   },
   {
-   "id": "sec-002-6-masahico-saito-and-emanuele-zappala",
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+   "id": "sec-001-21-knot-invariants-from-closed-braids-and-traces",
+   "title": "Knot invariants from closed braids and traces",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-002-22-knot-invariants-using-maximaminima",
+   "title": "Knot invariants using maxima/minima",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-003-3-yang-baxter-cohomology",
+   "title": "Yang-Baxter cohomology",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-004-31-yb-cohomology-in-low-dimensions",
+   "title": "YB cohomology in low dimensions",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-005-32-yb-cohomology-in-higher-dimensions",
+   "title": "YB cohomology in higher dimensions",
    "pages": "6-8"
   },
   {
-   "id": "sec-003-8-masahico-saito-and-emanuele-zappala",
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
-   "pages": "8-8"
+   "id": "sec-006-4-quantum-cocycle-invariants-via-traces",
+   "title": "Quantum cocycle invariants via traces",
+   "pages": "8-12"
   },
   {
-   "id": "sec-004-1-then-there-exists-an",
-   "title": "Then there exists an",
-   "pages": "8-10"
+   "id": "sec-007-5-examples-via-traces",
+   "title": "Examples via traces",
+   "pages": "12-12"
   },
   {
-   "id": "sec-005-10-masahico-saito-and-emanuele-zappala",
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
-   "pages": "10-12"
+   "id": "sec-008-51-invariants-from-deformations-of-the-transposi",
+   "title": "Invariants from deformations of the transposition",
+   "pages": "12-15"
   },
   {
-   "id": "sec-006-12-masahico-saito-and-emanuele-zappala",
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
-   "pages": "12-14"
+   "id": "sec-009-52-invariants-from-the-tensor-version-of-quandle",
+   "title": "Invariants from the tensor version of quandle 2-cocycle invariants",
+   "pages": "15-19"
   },
   {
-   "id": "sec-007-14-masahico-saito-and-emanuele-zappala",
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
-   "pages": "14-16"
+   "id": "sec-010-6-quantum-cocycle-invariants-via-maximaminima",
+   "title": "Quantum cocycle invariants via maxima/minima",
+   "pages": "19-21"
   },
   {
-   "id": "sec-008-16-masahico-saito-and-emanuele-zappala",
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
-   "pages": "16-18"
+   "id": "sec-011-7-examples-via-maximaminima",
+   "title": "Examples via maxima/minima",
+   "pages": "21-26"
   },
   {
-   "id": "sec-009-18-masahico-saito-and-emanuele-zappala",
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
-   "pages": "18-20"
+   "id": "sec-012-8-higher-order-invariants",
+   "title": "Higher order invariants",
+   "pages": "26-29"
   },
   {
-   "id": "sec-010-20-masahico-saito-and-emanuele-zappala",
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
-   "pages": "20-22"
-  },
-  {
-   "id": "sec-011-22-masahico-saito-and-emanuele-zappala",
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
-   "pages": "22-24"
-  },
-  {
-   "id": "sec-012-24-masahico-saito-and-emanuele-zappala",
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
-   "pages": "24-26"
-  },
-  {
-   "id": "sec-013-26-masahico-saito-and-emanuele-zappala",
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
-   "pages": "26-28"
-  },
-  {
-   "id": "sec-014-28-masahico-saito-and-emanuele-zappala",
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
-   "pages": "28-30"
-  },
-  {
-   "id": "sec-015-30-masahico-saito-and-emanuele-zappala",
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
-   "pages": "30-33"
-  },
-  {
-   "id": "sec-016-references",
-   "title": "References",
-   "pages": "33-33"
+   "id": "sec-013-9-the-jones-and-alexander-polynomials-as-higher",
+   "title": "The Jones and Alexander polynomials as higher order invariants",
+   "pages": "29-33"
   }
  ],
  "provenance": {

@@ -1,0 +1,57 @@
+ul=eV[i];
+real gg = int2d(Th)(dx(ul)*dx(ul) + dy(ul)*dy(ul)); real mm= int2d(Th)(ul*ul) ;
+
+ofstream Eva(fnm, append);
+
+Eva << ev[i] << "\n";
+
+Side associations:
+1—4,3-—6,5-—8,7-10,9-2
+
+Figure C.1: Fundamental polygon for the surface with automorphism group Zj9
+
+Next, we have the surface that has a semi-regular 12-gon aslita fundamental domain,
+
+and has automorphism group (4, 6| 2, 2) of order 24 (see [20] for a classification of this
+
+group):
+int n = 50;
+int nev = 50;
+
+string fnm="12gon—Higenvalues—n50—nev50.txt"; //file name for saving
+
+real cx = 1.0206207261596574;
+real cy = 0.3535533905932733;
+real r = 0.4082482904638626;
+
+real s=0.6835992463050957;
+real theta —0.22037122071230927;
+real x01=s*cos(theta);
+theta);
+pi/3—theta);
+pi/3—theta);
+pi/3+theta);
+pi/3+theta);
+2 pi/3—theta);
+2 pi/3—theta);
+2x pi/3+theta);
+2x pi/3+theta);
+3% pi/3—theta);
+
+real yOl=s*sin
+real x02=s*cos
+real y02=s*sin
+real x03=s*cos
+
+real y03=s*sin
+
+real x04=s*cos
+
+real y04=s*sin
+
+real x05=s*cos
+real y05=s*sin
+
+real x06=s*cos
+
+113

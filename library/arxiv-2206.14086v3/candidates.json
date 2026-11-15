@@ -1,0 +1,121 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2206.14086v3",
+ "source": {
+  "structure_sha256": "b6c27f820f9630793309e2afa2b53067a2f3d5c142b3f7c3952aa91617686604",
+  "file": "2206.14086v3.pdf"
+ },
+ "provenance": {
+  "title": "KPZ limit theorems",
+  "authors": "Jinho Baik\u2217",
+  "arxiv": {
+   "id": "2206.14086",
+   "version": "3",
+   "primary_class": "math.PR",
+   "stamp_date": "20 Jul 2022"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 6,
+  "by_kind": {
+   "recommendation": 6
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "However, it remained unknown, even on a conjectural level, what the limit should be.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-2",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "If we do not set $x=0$, then we should consider $\\mathbf{h}(xT+ \\gamma T^{2/3}, \\tau T)- \\bar{\\mathbf{h}}(x,\\tau)T$ in the numerator.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-005-24-hydrodynamic-limit-and-kpz-limit.md",
+   "section_title": "Hydrodynamic limit and KPZ limit",
+   "pages": "4-5",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "This result shows that the one-point marginal of the KPZ \ufb01xed point (for the narrow wedge initial condition) must be distributed as the Tracy-Widom distribution.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-007-3-one-point-distribution.md",
+   "section_title": "One-point distribution",
+   "pages": "5-5",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The function $F^{\\mathrm{pKPZ}}_m$ should be the $m$-point distribution of this conjectured periodic KPZ fixed point with the (periodic) narrow wedge initial condition.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-013-6-ring-domain.md",
+   "section_title": "Ring domain",
+   "pages": "8-9",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Thus, the transition probability should remain the same if we replace $(x_1, \\cdots, x_N)$ and $(y_1, \\cdots, y_N)$ by $(x_2, \\cdots, x_N, x_1+L)$ and $(y_2, \\cdots, y_N, y_1+L)$, respectively.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-017-73-transition-probabilities.md",
+   "section_title": "Transition probabilities",
+   "pages": "10-11",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "9.1 Thin DLPP The universality should hold for the last passage time L(n, k) as n, k \u2192\u221e.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-020-9-comments-on-universality.md",
+   "section_title": "Comments on universality",
+   "pages": "12-13",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

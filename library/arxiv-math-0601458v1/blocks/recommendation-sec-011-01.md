@@ -1,0 +1,1 @@
+The space of formal power series should be the Hilbert space of states of the quantum oscillator: so composition of stuff types, which we have explored, will not enter into this picture, though the linear structure will.

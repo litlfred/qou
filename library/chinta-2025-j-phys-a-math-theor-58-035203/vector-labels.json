@@ -1,0 +1,1382 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "chinta-2025-j-phys-a-math-theor-58-035203",
+  "pages": [
+    {
+      "page": 4,
+      "rotation": 0,
+      "drawings": 3,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 1. The dots show the discrete Gaussian at t = 1 as a function of integers x and the curve is the ordinary Gaussian with t = 1 as a function of real numbers x ."
+      ],
+      "labels": [
+        {
+          "text": "J. Phys. A: Math. Theor. 58 (2025) 035203",
+          "bbox": [
+            96.38,
+            72.02,
+            228.95,
+            79.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Bold",
+            "HelveticaLTStd-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "G Chinta et al",
+          "bbox": [
+            425.59,
+            72.02,
+            468.32,
+            79.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Obl",
+            "HelveticaLTStd-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "Figure 1. The dots show the discrete Gaussian at t = 1 as a function of integers x and",
+          "bbox": [
+            156.15,
+            297.52,
+            468.42,
+            307.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9",
+            "HelveticaLTStd-Bold",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.0,
+            9.0
+          ]
+        },
+        {
+          "text": "the curve is the ordinary Gaussian with t = 1 as a function of real numbers x .",
+          "bbox": [
+            156.15,
+            307.52,
+            434.35,
+            317.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.0
+          ]
+        },
+        {
+          "text": "see, for example, [CKS22]. (The constant (7) is known as a Thetanullwerte θ(0,i/2t) and is an",
+          "bbox": [
+            96.38,
+            339.19,
+            468.42,
+            350.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "object of extensive mathematical significance; see, for example, [Mu83].) On the other hand,",
+          "bbox": [
+            96.38,
+            352.18,
+            468.42,
+            362.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "in [CKS22], (6) is recognized as a discretized Gaussian; see the discussion before Definition",
+          "bbox": [
+            96.38,
+            364.18,
+            468.42,
+            374.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "1.1 in [CKS22]. Other authors, such as [Li24], distinguish between (6), which they refer to as",
+          "bbox": [
+            96.38,
+            376.18,
+            468.42,
+            386.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "the sampled Gaussian, and (3), which [Li24] calls the discrete analogue of the Gaussian; see",
+          "bbox": [
+            96.38,
+            388.18,
+            468.42,
+            398.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "section 2.6 of [Li24]. See also [GK24], where the discretized Gaussian denotes a (continuous)",
+          "bbox": [
+            96.38,
+            400.18,
+            468.42,
+            410.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Gaussian quantized on a lattice.",
+          "bbox": [
+            96.38,
+            412.18,
+            223.3,
+            422.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Throughout this article, we will refer to (3) as the discrete Gaussian and to (6) either as the",
+          "bbox": [
+            96.38,
+            424.18,
+            468.42,
+            434.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "discretized or sampled Gaussian.",
+          "bbox": [
+            96.38,
+            436.18,
+            228.02,
+            446.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "We now turn to discussing the many ways the discrete Gaussian satisfies structural results",
+          "bbox": [
+            108.33,
+            448.18,
+            468.42,
+            458.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "which are analogous to those which are fulfilled by (1).",
+          "bbox": [
+            96.38,
+            460.18,
+            317.45,
+            470.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "One immediate justification for calling (3) the discrete Gaussian is that it is the fundamental",
+          "bbox": [
+            108.33,
+            472.18,
+            468.42,
+            482.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "solution to the heat equation on Z. More precisely, for x ∈Z and t ∈R+, we have that",
+          "bbox": [
+            96.38,
+            481.91,
+            439.73,
+            494.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7",
+            "CMSY10",
+            "MSBM10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "\u0012",
+          "bbox": [
+            156.15,
+            498.57,
+            163.51,
+            508.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            199.18,
+            498.57,
+            206.54,
+            508.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "∆Z + ∂",
+          "bbox": [
+            163.51,
+            506.09,
+            196.04,
+            524.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "MSBM7"
+          ],
+          "sizes": [
+            7.03,
+            10.0
+          ]
+        },
+        {
+          "text": "KZ (t,x) = 0 with KZ (0,x) = δ0 (x)",
+          "bbox": [
+            207.65,
+            512.85,
+            353.69,
+            524.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "MSBM7",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            7.03,
+            10.0
+          ]
+        },
+        {
+          "text": "(8)",
+          "bbox": [
+            456.77,
+            513.84,
+            468.42,
+            523.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "∂t",
+          "bbox": [
+            189.34,
+            519.71,
+            197.98,
+            530.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "TimesLTStd-Italic"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "and where",
+          "bbox": [
+            96.38,
+            543.15,
+            137.75,
+            553.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "∆Zf(x) = 2f(x) −f(x + 1) −f(x −1).",
+          "bbox": [
+            156.15,
+            565.96,
+            309.66,
+            577.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM7",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            7.03,
+            10.0
+          ]
+        },
+        {
+          "text": "As far as we know, (6) does not satisfy such an elementary differential or difference equation.",
+          "bbox": [
+            96.38,
+            591.12,
+            468.42,
+            601.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "We note that operator ∆Z appears in various physics contexts, such as the study of discrete",
+          "bbox": [
+            96.38,
+            602.13,
+            468.42,
+            614.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM7",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            7.03,
+            10.0
+          ]
+        },
+        {
+          "text": "random Schrödinger operators and Anderson localization [An58]. We call the operator ∆Z",
+          "bbox": [
+            96.38,
+            614.13,
+            467.93,
+            625.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM7",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            7.03,
+            10.0
+          ]
+        },
+        {
+          "text": "a discrete, or combinatorial, Laplacian because it can be defined in analogy with the usual",
+          "bbox": [
+            96.38,
+            627.12,
+            468.42,
+            637.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Laplacian",
+          "bbox": [
+            96.38,
+            639.12,
+            135.81,
+            649.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "∆R = −∂2",
+          "bbox": [
+            156.15,
+            661.05,
+            202.85,
+            679.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "TimesLTStd-Bold",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            7.03,
+            10.0
+          ]
+        },
+        {
+          "text": "∂x2",
+          "bbox": [
+            191.25,
+            675.28,
+            205.07,
+            686.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            7.03,
+            10.0
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            280.6,
+            700.26,
+            284.21,
+            706.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Roman"
+          ],
+          "sizes": [
+            6.5
+          ]
+        }
+      ]
+    },
+    {
+      "page": 16,
+      "rotation": 0,
+      "drawings": 3,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 2. Spectral asymptotics of a discretized torus as the mesh goes to zero."
+      ],
+      "labels": [
+        {
+          "text": "J. Phys. A: Math. Theor. 58 (2025) 035203",
+          "bbox": [
+            96.38,
+            72.02,
+            228.95,
+            79.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Bold",
+            "HelveticaLTStd-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "G Chinta et al",
+          "bbox": [
+            425.59,
+            72.02,
+            468.32,
+            79.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Obl",
+            "HelveticaLTStd-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "Figure 2. Spectral asymptotics of a discretized torus as the mesh goes to zero.",
+          "bbox": [
+            156.15,
+            204.38,
+            437.59,
+            213.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Bold",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.0,
+            9.0
+          ]
+        },
+        {
+          "text": "In the above theorem, ∆Zd/AnZd is the Laplacian on the discrete torus; ∆Zd is the Laplacian on",
+          "bbox": [
+            96.38,
+            233.5,
+            468.42,
+            245.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "MSBM7",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            5.02,
+            7.0,
+            7.03,
+            10.0
+          ]
+        },
+        {
+          "text": "the lattice Zd and ∆Rd/AZd is the Laplacian on the (continuous) torus Rd/AZd. The determinant",
+          "bbox": [
+            96.38,
+            244.02,
+            468.42,
+            258.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "MSBM10",
+            "MSBM7",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            5.02,
+            7.0,
+            7.03,
+            10.0
+          ]
+        },
+        {
+          "text": "of the Laplacian on the discrete torus is a finite determinant, in the sense of linear algebra.",
+          "bbox": [
+            96.38,
+            259.64,
+            468.42,
+            269.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "However, the determinant of the Laplacian on the continuous torus is obtained through zeta",
+          "bbox": [
+            96.38,
+            271.64,
+            468.42,
+            281.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "regularization, which adds an entirely new level of complexity to the matter.",
+          "bbox": [
+            96.38,
+            283.64,
+            400.66,
+            293.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Let us briefly explain how the discrete Gaussian comes into play in this setting. Following",
+          "bbox": [
+            108.33,
+            295.64,
+            468.43,
+            305.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "the usual formalism, logdet∆Zd/AnZd is related to the Mellin transform of the trace of the heat",
+          "bbox": [
+            96.38,
+            306.66,
+            468.42,
+            319.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "MSBM7",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            5.02,
+            7.0,
+            7.03,
+            10.0
+          ]
+        },
+        {
+          "text": "kernel. The trace of the heat kernel is the theta function, which in our discrete setting involves",
+          "bbox": [
+            96.38,
+            319.64,
+            468.43,
+            329.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "dQ",
+          "bbox": [
+            257.96,
+            329.45,
+            267.4,
+            339.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "TimesLTStd-Italic"
+          ],
+          "sizes": [
+            7.03,
+            10.0
+          ]
+        },
+        {
+          "text": "e−2tInjkj(2t). A careful analysis of the asymptotics",
+          "bbox": [
+            270.06,
+            335.72,
+            468.42,
+            349.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY7",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            5.02,
+            7.0,
+            7.03,
+            10.0
+          ]
+        },
+        {
+          "text": "a sum of products of discrete Gaussians",
+          "bbox": [
+            96.38,
+            338.12,
+            254.12,
+            348.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "j=1",
+          "bbox": [
+            256.43,
+            348.39,
+            268.95,
+            356.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            7.0,
+            7.03
+          ]
+        },
+        {
+          "text": "of the discrete Gaussian is the key ingredient in the proof of theorem 7.",
+          "bbox": [
+            96.38,
+            357.32,
+            381.07,
+            367.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Theorem 7 is of interest in combinatorics, statistical physics and quantum field theory",
+          "bbox": [
+            108.33,
+            369.32,
+            468.42,
+            379.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "(QFT). Several recent papers in mathematical physics, notably [HK20, IK22, Gr23], have",
+          "bbox": [
+            96.38,
+            381.32,
+            468.43,
+            391.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "extended theorem 7. A problem is raised in [RV15] in connection with their approach to a",
+          "bbox": [
+            96.38,
+            393.32,
+            468.42,
+            403.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "combinatorial QFT which theorem 7 addresses just a part, aside from the 2D case that was",
+          "bbox": [
+            96.38,
+            405.32,
+            468.43,
+            415.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "already known as just mentioned.",
+          "bbox": [
+            96.38,
+            417.32,
+            230.28,
+            427.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "We point out that in higher dimensions d > 2 the lead terms in the asymptotics of theorem 7",
+          "bbox": [
+            108.33,
+            428.33,
+            468.42,
+            439.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "were established in [SW00, SS01, Ly05]; see also their bibliographies for further references.",
+          "bbox": [
+            96.38,
+            441.32,
+            468.42,
+            451.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "In particular, the formula of Sokal-Starinets involves the I-Bessel function in the same way",
+          "bbox": [
+            96.38,
+            453.32,
+            468.43,
+            463.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "as in [CJK10], but Sokal-Starinets have another way of interpreting the appearance of the I-",
+          "bbox": [
+            96.38,
+            465.32,
+            468.42,
+            475.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Bessel, presumably not as a discrete Gaussian. Detailed asymptotics for more general lattice",
+          "bbox": [
+            96.38,
+            477.32,
+            468.42,
+            487.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "domains in 2D are obtained in the work of Kenyon, see [Ke00].",
+          "bbox": [
+            96.38,
+            489.32,
+            350.29,
+            499.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "For other contexts in physics where recent similar considerations of discrete heat kernels",
+          "bbox": [
+            108.33,
+            501.32,
+            468.43,
+            511.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "appear, see [KS18, KS23].",
+          "bbox": [
+            96.38,
+            513.32,
+            202.62,
+            523.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "7. Spectral zeta functions",
+          "bbox": [
+            96.38,
+            542.1,
+            217.19,
+            552.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Bold"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "7.1. Spectral zeta function of Z",
+          "bbox": [
+            96.38,
+            566.07,
+            217.9,
+            575.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Obl",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.0
+          ]
+        },
+        {
+          "text": "The zeta function regularization method in physics started in the 1970 s with papers by",
+          "bbox": [
+            96.38,
+            585.44,
+            468.42,
+            595.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Dowker-Critchley and by Hawking. For a survey of applications to mathematical physics of",
+          "bbox": [
+            96.38,
+            597.44,
+            468.42,
+            607.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "this procedure, see [V03, El12, DEK12]. The zeta function in question is defined by a integral",
+          "bbox": [
+            96.38,
+            609.44,
+            468.43,
+            619.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "transform, specifically the Mellin transform, of the heat kernel. The case of the circle essen-",
+          "bbox": [
+            96.38,
+            621.44,
+            468.42,
+            631.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "tially gives rise to the Riemann zeta function. It is much less standard is to take the Mellin",
+          "bbox": [
+            96.38,
+            633.44,
+            468.42,
+            643.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "integral transform of e−2tIn(2t), such as",
+          "bbox": [
+            96.38,
+            643.04,
+            255.2,
+            656.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY7",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            7.0,
+            7.03,
+            10.0
+          ]
+        },
+        {
+          "text": "ˆ ∞",
+          "bbox": [
+            213.24,
+            657.22,
+            231.21,
+            669.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY7",
+            "esint10"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "e−2tI0 (2t)ts dt",
+          "bbox": [
+            232.82,
+            665.23,
+            289.59,
+            682.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY7",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            7.0,
+            7.03,
+            10.0
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            198.92,
+            665.24,
+            203.92,
+            675.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "ζZ (s) =",
+          "bbox": [
+            156.15,
+            671.01,
+            188.49,
+            682.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "MSBM7",
+            "TimesLTStd-Italic"
+          ],
+          "sizes": [
+            7.03,
+            10.0
+          ]
+        },
+        {
+          "text": "t ,",
+          "bbox": [
+            284.31,
+            671.01,
+            293.56,
+            688.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "TimesLTStd-Italic"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Γ(s)",
+          "bbox": [
+            191.91,
+            677.87,
+            210.94,
+            688.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "TimesLTStd-Italic"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            218.8,
+            683.14,
+            222.31,
+            690.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            7.03
+          ]
+        },
+        {
+          "text": "15",
+          "bbox": [
+            278.92,
+            700.26,
+            285.89,
+            706.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Roman"
+          ],
+          "sizes": [
+            6.5
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2481 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1111.6782v2",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p003-1",
+   "page": 3,
+   "mark": "1",
+   "text": "If γ belongstoHα+1one can use partialintegrationto obtaina formula for theL2gradientlikein [19, Thm. 2.24].",
+   "marks": [
+    {
+     "page": 2,
+     "context": "energies E(α): C0,"
+    },
+    {
+     "page": 2,
+     "context": "Z"
+    },
+    {
+     "page": 2,
+     "context": "R"
+    },
+    {
+     "page": 3,
+     "context": "2, −ε] ∪[ε,"
+    },
+    {
+     "page": 3,
+     "context": "Theorem 1.1.Let α ∈(2, 3). The energies E(α)are C"
+    },
+    {
+     "page": 3,
+     "context": "the derivative at γ in direction h is given by"
+    },
+    {
+     "page": 3,
+     "context": "Theorem 1.2.Letα∈(2, 3) and γ∈C0,"
+    },
+    {
+     "page": 3,
+     "context": "Z"
+    }
+   ],
+   "block": "library/arxiv-1111.6782v2/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p015-1",
+   "page": 15,
+   "mark": "2",
+   "text": ", 1",
+   "marks": [
+    {
+     "page": 14,
+     "context": "H3/2+ε,"
+    },
+    {
+     "page": 14,
+     "context": "H3/2−ˆσ,"
+    },
+    {
+     "page": 14,
+     "context": "γ′(u + s1w), h′(u + s"
+    },
+    {
+     "page": 14,
+     "context": "= w"
+    },
+    {
+     "page": 14,
+     "context": "w"
+    },
+    {
+     "page": 14,
+     "context": "! |γ′(u + τ1w) −γ′(u + τ"
+    },
+    {
+     "page": 14,
+     "context": "! |γ′(u + τ1w) −γ′(u + τ"
+    },
+    {
+     "page": 14,
+     "context": "s1,τ1,τ2(u, w), h′(u + s"
+    },
+    {
+     "page": 14,
+     "context": "≤C∥h∥H3/2+ε,"
+    },
+    {
+     "page": 15,
+     "context": "du ≤C ∥h∥H3/2−˜σ+ε,"
+    },
+    {
+     "page": 15,
+     "context": "≤C ∥h∥H3/2−˜σ+ε,"
+    },
+    {
+     "page": 15,
+     "context": "≤C ∥h∥H3/2−ˆσ,"
+    },
+    {
+     "page": 15,
+     "context": "Lemma 3.3.Let γ ∈H(α+1)/2+σ,"
+    }
+   ],
+   "block": "library/arxiv-1111.6782v2/blocks/prose-sec-002"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p015-2",
+   "page": 15,
+   "mark": "2",
+   "text": "),Rn)",
+   "block": "library/arxiv-1111.6782v2/blocks/prose-sec-002"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "step we prove thatE(α)is C"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "to H(α+1)/2,"
+  },
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "to H(α+1)/2,2(R/Z, R"
+  },
+  {
+   "page": 2,
+   "mark": "0",
+   "context": "energies E(α): C"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "energies E(α): C0,1(R/Z, R"
+  },
+  {
+   "page": 2,
+   "mark": "u",
+   "context": "cisely, dγ(u + w, u):=min\u0000L (γ|[u,"
+  },
+  {
+   "page": 2,
+   "mark": "u",
+   "context": "cisely, dγ(u + w, u):=min\u0000L (γ|[u,u+w]), L (γ) −L (γ|[u,"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "α=2whoinitiallyassumingH"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "α=2whoinitiallyassumingH2,"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "shown that stationary points in Hα,"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "shown that stationary points in Hα,2∩H"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "shown that stationary points in Hα,2∩H2,"
+  },
+  {
+   "page": 2,
+   "mark": "s",
+   "context": "e length functional and λ>0 is a constant, are smooth.Here H"
+  },
+  {
+   "page": 2,
+   "mark": "p",
+   "context": "length functional and λ>0 is a constant, are smooth.Here Hs,"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "belong toHα,"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "belong toHα,2∩H"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "belong toHα,2∩H2,"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "only if it belongs to the fractional Sobolev space H(α+1)/2,"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "that γ∈H"
+  },
+  {
+   "page": 3,
+   "mark": "h",
+   "context": "(α −2)⟨γ′(u),"
+  },
+  {
+   "page": 3,
+   "mark": "h",
+   "context": "−α⟨γ(u + w) −γ(u),"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "Theorem 1.2.Letα∈(2, 3) and γ∈C"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "Theorem 1.2.Letα∈(2, 3) and γ∈C0,1(R/Z, R"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "∀h ∈H(1+α)/2(R/Z, R"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "then γ ∈C∞(R/Z, R"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "was proven for all intial data in C"
+  },
+  {
+   "page": 3,
+   "mark": "p",
+   "context": "Eα,"
+  },
+  {
+   "page": 3,
+   "mark": "s",
+   "context": "s ∈R and p ∈[1, ∞] let H"
+  },
+  {
+   "page": 3,
+   "mark": "p",
+   "context": "s ∈R and p ∈[1, ∞] let Hs,"
+  },
+  {
+   "page": 3,
+   "mark": "p",
+   "context": "s ∈R and p ∈[1, ∞] let Hs,p:= (id−∆)−s/2L"
+  },
+  {
+   "page": 3,
+   "mark": "s",
+   "context": "ives rise to the following fundamental characterization of H"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "es rise to the following fundamental characterization of Hs,"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "Letf∈L"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "Letf∈L2(R/Z, R"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 4,
+   "mark": "s",
+   "context": "H"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "Hs,"
+  },
+  {
+   "page": 4,
+   "mark": "s",
+   "context": "|w|1+2"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "ThentheSobolevspaceH"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "ThentheSobolevspaceHk+s,"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "ThentheSobolevspaceHk+s,2(R/Z, R"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "H"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "Hk,"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "Hk,2(R/Z, R"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "f(k)"
+  },
+  {
+   "page": 4,
+   "mark": "s",
+   "context": "∥f∥H"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "∥f∥Hs+k,"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "∥f∥Hs+k,2:= ∥f∥H"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "∥f∥Hs+k,2:= ∥f∥Hk,"
+  },
+  {
+   "page": 4,
+   "mark": "s",
+   "context": "H"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "Hs,"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "H"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "Hk+s,"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "Hk+s,2(R/Z, R"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "Hk+s,2(R/Z, Rn)֒→C"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "Hk+s,2(R/Z, Rn)֒→Ck+s−1/2(R/Z, R"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "For some space X⊂C"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "For some space X⊂C1(R/Z, R"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "The standard scalar product in R"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "oduct in Rnis denoted by ⟨·, ·⟩, for complex vectors a, b ∈C"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "deﬁne⟨a, b⟩C"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "deﬁne⟨a, b⟩Cn:=P"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "bk.TheL"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "bk.TheL2-scalarproduct is,asusual,givenby⟨f, g⟩L"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "k=1"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "k=1a"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "R"
+  },
+  {
+   "page": 4,
+   "mark": "u",
+   "context": "0⟨f(u), g(u)⟩d"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": ".The derivative of E(α)at γ∈H(α+1)/2,"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "in direction h ∈H(α+1)/2,"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "H(α+1)/2,"
+  },
+  {
+   "page": 4,
+   "mark": "h",
+   "context": "|γ′(u)|2 ,"
+  },
+  {
+   "page": 4,
+   "mark": "h",
+   "context": "τ=0 dγ+τ"
+  },
+  {
+   "page": 5,
+   "mark": "h",
+   "context": "τ=0 dγ+τ"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "Note that since γ∈C"
+  },
+  {
+   "page": 5,
+   "mark": "u",
+   "context": "dγ(u + w, u) = min\bL (γ|[u,"
+  },
+  {
+   "page": 5,
+   "mark": "u",
+   "context": "dγ(u + w, u) = min\bL (γ|[u,u+w]), L (γ) −L (γ|[u,"
+  },
+  {
+   "page": 5,
+   "mark": "h",
+   "context": "τ=0 dγ+τ"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "R"
+  },
+  {
+   "page": 5,
+   "mark": "h",
+   "context": "|γ′(u+σw)|,"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "R"
+  },
+  {
+   "page": 5,
+   "mark": "h",
+   "context": "|γ′(u+σw)|,"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "is C"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "curves of class C"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "diﬀerentiability on H(α+1)/2,"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "the integrand deﬁnes a continuously diﬀerentiable map from C"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "ir(R/Z, R"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "L"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "jectiveregularcurvesinC"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "jectiveregularcurvesinC1(R/Z, R"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "h ∈C"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "h ∈C1(R/Z, R"
+  },
+  {
+   "page": 5,
+   "mark": "h",
+   "context": "ε(γ;"
+  },
+  {
+   "page": 5,
+   "mark": "h",
+   "context": "|γ′(u)|2 ,"
+  },
+  {
+   "page": 5,
+   "mark": "h",
+   "context": "τ=0 dγ+τ"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "Proof.Let γ0∈C"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Proof.Let γ0∈C1(R/Z, R"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "Proof.Let γ0∈C1(R/Z, Rn) be injective and regular and U⊂C"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": ".Let γ0∈C1(R/Z, Rn) be injective and regular and U⊂C1(R/Z, R"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "deﬁnes acontinuously diﬀerentiable operator from UintoL"
+  },
+  {
+   "page": 6,
+   "mark": "h",
+   "context": "dτ(I(γ + τ"
+  },
+  {
+   "page": 6,
+   "mark": "h",
+   "context": "|γ′(u)|,"
+  },
+  {
+   "page": 6,
+   "mark": "h",
+   "context": "|γ′(u + w)|,"
+  },
+  {
+   "page": 6,
+   "mark": "h",
+   "context": "τ=0 dγ+τ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "L"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "ε.Obviously"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "ε.Obviously dγ(u, w) deﬁnes a continuous operator from C"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "viously dγ(u, w) deﬁnes a continuous operator from C1(R/Z, R"
+  },
+  {
+   "page": 6,
+   "mark": "u",
+   "context": "dγ(u + w, u) = min\bL (γ|[u,"
+  },
+  {
+   "page": 6,
+   "mark": "u",
+   "context": "dγ(u + w, u) = min\bL (γ|[u,u+w]), L (γ) −L (γ|[u,"
+  },
+  {
+   "page": 6,
+   "mark": "h",
+   "context": "τ=0 dγ+τ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "for all u, w with L (γ|[u,u+w]) ,"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "R"
+  },
+  {
+   "page": 6,
+   "mark": "h",
+   "context": "|γ′(u+σw)|,"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "R"
+  },
+  {
+   "page": 6,
+   "mark": "h",
+   "context": "|γ′(u+σw)|,"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "2L (γ) is a compact C"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "Obviously, D deﬁnes a continuous operator from the space C"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "ir(R/Z, R"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "ir(R/Z, Rn) ×C"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "ir(R/Z, Rn) ×C1(R/Z, R"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "to L"
+  },
+  {
+   "page": 6,
+   "mark": "h",
+   "context": "dτI(γ + τ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "deﬁnes an operator C"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "deﬁnes an operator C1(R/Z, R"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "deﬁnes an operator C1(R/Z, Rn) →L"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "a continuously diﬀerentiable operator from Uto L"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "donotformaCauchysequenceinC"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "donotformaCauchysequenceinC1(H(α+1)/2,"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "actuallynoteveninC"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "actuallynoteveninC0(H(α+1)/2,"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "inL"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "isnearlyaCauchysequenceinC"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "certainsubsetsXδ⊂H(α+1)/2,"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "rtainsubsetsXδ⊂H(α+1)/2,2,δ≥0.WewillallowsubsetsXδ⊂H(α+1)/2,"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "Lemma 2.3.Let γ0∈H(α+1)/2,"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": ".Then there is an open neighborhood U⊂H(α+1)/2,"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "for all subsets Xδ⊂H(α+1)/2,"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "and h ∈H(α+1)/2,"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "For ﬁxed γ0∈H(α+1)/2,"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "Xδ:= {γ∈H(α+1)/2,"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "Xδ:= {γ∈H(α+1)/2,2: ∥γ −γ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "Xδ:= {γ∈H(α+1)/2,2: ∥γ −γ0∥H(α+1)/2,"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Proof.Using thatH(α+1)/2,"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "Proof.Using thatH(α+1)/2,2continuously embeds into C"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "curve,wecanﬁndanopenneighborhood U⊂H(α+1)/2,"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "η"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "η2−ζ"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "whichisLipschitzcontinuousandpositiveon[˜c, ∞)"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "γ′(u + θ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "dθ"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "\u0012R"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "R"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "0γ′(u + θ"
+  },
+  {
+   "page": 8,
+   "mark": "w",
+   "context": "0γ′(u + θ1"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "0γ′(u + θ1w) dθ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "0|γ′(u + θ"
+  },
+  {
+   "page": 8,
+   "mark": "w",
+   "context": "0|γ′(u + θ2"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "0|γ′(u + θ2w)|dθ"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "\u0012R"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "R"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "0|γ′(u + θ"
+  },
+  {
+   "page": 8,
+   "mark": "w",
+   "context": "0|γ′(u + θ2"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "0|γ′(u + θ2w)|dθ"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "0γ′(u + θ"
+  },
+  {
+   "page": 8,
+   "mark": "w",
+   "context": "0γ′(u + θ1"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "0γ′(u + θ1w) dθ"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "[0,1]2 (|γ′(u + θ"
+  },
+  {
+   "page": 8,
+   "mark": "w",
+   "context": "[0,1]2 (|γ′(u + θ1"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "[0,1]2 (|γ′(u + θ1w)| |γ′(u + θ"
+  },
+  {
+   "page": 8,
+   "mark": "w",
+   "context": "[0,1]2 (|γ′(u + θ1w)| |γ′(u + θ2"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "[0,1]2 (|γ′(u + θ1w)| |γ′(u + θ2w)| −⟨γ′(u + θ"
+  },
+  {
+   "page": 8,
+   "mark": "w",
+   "context": "[0,1]2 (|γ′(u + θ1w)| |γ′(u + θ2w)| −⟨γ′(u + θ1"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "[0,1]2 (|γ′(u + θ1w)| |γ′(u + θ2w)| −⟨γ′(u + θ1w), γ′(u + θ"
+  },
+  {
+   "page": 8,
+   "mark": "w",
+   "context": "[0,1]2 (|γ′(u + θ1w)| |γ′(u + θ2w)| −⟨γ′(u + θ1w), γ′(u + θ2"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "]2 (|γ′(u + θ1w)| |γ′(u + θ2w)| −⟨γ′(u + θ1w), γ′(u + θ2w)⟩)"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": " (|γ′(u + θ1w)| |γ′(u + θ2w)| −⟨γ′(u + θ1w), γ′(u + θ2w)⟩)dθ"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "(|γ′(u + θ1w)| |γ′(u + θ2w)| −⟨γ′(u + θ1w), γ′(u + θ2w)⟩)dθ1"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "′(u + θ1w)| |γ′(u + θ2w)| −⟨γ′(u + θ1w), γ′(u + θ2w)⟩)dθ1 dθ"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Using 2 |a| |b| −2 ⟨a, b⟩= |a −b|2−||a| −|b||2for a, b ∈R"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "[0,1]2 |γ′(u + θ"
+  },
+  {
+   "page": 8,
+   "mark": "w",
+   "context": "[0,1]2 |γ′(u + θ1"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "[0,1]2 |γ′(u + θ1w) −γ′(u + θ"
+  },
+  {
+   "page": 8,
+   "mark": "w",
+   "context": "[0,1]2 |γ′(u + θ1w) −γ′(u + θ2"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "[0,1]2 |γ′(u + θ1w) −γ′(u + θ2w)|2"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "[0,1]2 |γ′(u + θ1w) −γ′(u + θ2w)|2dθ"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "[0,1]2 |γ′(u + θ1w) −γ′(u + θ2w)|2dθ1"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "[0,1]2 |γ′(u + θ1w) −γ′(u + θ2w)|2dθ1 dθ"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "[0,1]2 (|γ′(u + θ"
+  },
+  {
+   "page": 8,
+   "mark": "w",
+   "context": "[0,1]2 (|γ′(u + θ1"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "[0,1]2 (|γ′(u + θ1w)| −|γ′(u + θ"
+  },
+  {
+   "page": 8,
+   "mark": "w",
+   "context": "[0,1]2 (|γ′(u + θ1w)| −|γ′(u + θ2"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "[0,1]2 (|γ′(u + θ1w)| −|γ′(u + θ2w)|)"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "[0,1]2 (|γ′(u + θ1w)| −|γ′(u + θ2w)|)2"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "[0,1]2 (|γ′(u + θ1w)| −|γ′(u + θ2w)|)2dθ"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "[0,1]2 (|γ′(u + θ1w)| −|γ′(u + θ2w)|)2dθ1"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "[0,1]2 (|γ′(u + θ1w)| −|γ′(u + θ2w)|)2dθ1 dθ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "[0,1]2 |γ′(u + θ"
+  },
+  {
+   "page": 9,
+   "mark": "w",
+   "context": "[0,1]2 |γ′(u + θ1"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "[0,1]2 |γ′(u + θ1w) −γ′(u + θ"
+  },
+  {
+   "page": 9,
+   "mark": "w",
+   "context": "[0,1]2 |γ′(u + θ1w) −γ′(u + θ2"
+  },
+  {
+   "page": 9,
+   "mark": "d",
+   "context": "[0,1]2 |γ′(u + θ1w) −γ′(u + θ2w)|2"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "[0,1]2 |γ′(u + θ1w) −γ′(u + θ2w)|2dθ"
+  },
+  {
+   "page": 9,
+   "mark": "d",
+   "context": "[0,1]2 |γ′(u + θ1w) −γ′(u + θ2w)|2dθ1"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "[0,1]2 |γ′(u + θ1w) −γ′(u + θ2w)|2dθ1 dθ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "[0,1]2 (|γ′(u + θ"
+  },
+  {
+   "page": 9,
+   "mark": "w",
+   "context": "[0,1]2 (|γ′(u + θ1"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "[0,1]2 (|γ′(u + θ1w)| −|γ′(u + θ"
+  },
+  {
+   "page": 9,
+   "mark": "w",
+   "context": "[0,1]2 (|γ′(u + θ1w)| −|γ′(u + θ2"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "[0,1]2 (|γ′(u + θ1w)| −|γ′(u + θ2w)|)"
+  },
+  {
+   "page": 9,
+   "mark": "d",
+   "context": "[0,1]2 (|γ′(u + θ1w)| −|γ′(u + θ2w)|)2"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "[0,1]2 (|γ′(u + θ1w)| −|γ′(u + θ2w)|)2dθ"
+  },
+  {
+   "page": 9,
+   "mark": "d",
+   "context": "[0,1]2 (|γ′(u + θ1w)| −|γ′(u + θ2w)|)2dθ1"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "[0,1]2 (|γ′(u + θ1w)| −|γ′(u + θ2w)|)2dθ1 dθ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "=:"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "[0,1]2 |˜γ′(u + θ"
+  },
+  {
+   "page": 9,
+   "mark": "w",
+   "context": "[0,1]2 |˜γ′(u + θ1"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "[0,1]2 |˜γ′(u + θ1w) −˜γ′(u + θ"
+  },
+  {
+   "page": 9,
+   "mark": "w",
+   "context": "[0,1]2 |˜γ′(u + θ1w) −˜γ′(u + θ2"
+  },
+  {
+   "page": 9,
+   "mark": "d",
+   "context": "[0,1]2 |˜γ′(u + θ1w) −˜γ′(u + θ2w)|2"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "[0,1]2 |˜γ′(u + θ1w) −˜γ′(u + θ2w)|2dθ"
+  },
+  {
+   "page": 9,
+   "mark": "d",
+   "context": "[0,1]2 |˜γ′(u + θ1w) −˜γ′(u + θ2w)|2dθ1"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "[0,1]2 |˜γ′(u + θ1w) −˜γ′(u + θ2w)|2dθ1 dθ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "|˜γ′(u + θ"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "|˜γ′(u + θ1w) −˜γ′(u + θ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "|˜γ′(u + θ1w) −˜γ′(u + θ2w)|2 −|γ′(u + θ"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "|˜γ′(u + θ1w) −˜γ′(u + θ2w)|2 −|γ′(u + θ1w) −γ′(u + θ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "|˜γ′(u + θ1w) −˜γ′(u + θ2w)|2 −|γ′(u + θ1w) −γ′(u + θ2w)|2dθ"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "(u + θ1w) −˜γ′(u + θ2w)|2 −|γ′(u + θ1w) −γ′(u + θ2w)|2dθ1 dθ"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "2,"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "[0,1]2(|˜γ′(u + θ"
+  },
+  {
+   "page": 10,
+   "mark": "w",
+   "context": "[0,1]2(|˜γ′(u + θ1"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "[0,1]2(|˜γ′(u + θ1w)| −|˜γ′(u + θ"
+  },
+  {
+   "page": 10,
+   "mark": "w",
+   "context": "[0,1]2(|˜γ′(u + θ1w)| −|˜γ′(u + θ2"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "[0,1]2(|˜γ′(u + θ1w)| −|˜γ′(u + θ2w)|)"
+  },
+  {
+   "page": 10,
+   "mark": "d",
+   "context": "[0,1]2(|˜γ′(u + θ1w)| −|˜γ′(u + θ2w)|)2"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "[0,1]2(|˜γ′(u + θ1w)| −|˜γ′(u + θ2w)|)2dθ"
+  },
+  {
+   "page": 10,
+   "mark": "d",
+   "context": "[0,1]2(|˜γ′(u + θ1w)| −|˜γ′(u + θ2w)|)2dθ1"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "[0,1]2(|˜γ′(u + θ1w)| −|˜γ′(u + θ2w)|)2dθ1 dθ"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "(|˜γ′(u + θ"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(|˜γ′(u + θ1w)| −|˜γ′(u + θ"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(|˜γ′(u + θ1w)| −|˜γ′(u + θ2w)|)"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "(|˜γ′(u + θ1w)| −|˜γ′(u + θ2w)|)2 −(|γ′(u + θ"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(|˜γ′(u + θ1w)| −|˜γ′(u + θ2w)|)2 −(|γ′(u + θ1w)| −|γ′(u + θ"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(u + θ1w)| −|˜γ′(u + θ2w)|)2 −(|γ′(u + θ1w)| −|γ′(u + θ2w)|)"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "+ θ1w)| −|˜γ′(u + θ2w)|)2 −(|γ′(u + θ1w)| −|γ′(u + θ2w)|)2dθ"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "w)| −|˜γ′(u + θ2w)|)2 −(|γ′(u + θ1w)| −|γ′(u + θ2w)|)2dθ1 dθ"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "·|(|˜γ′(u + θ"
+  },
+  {
+   "page": 10,
+   "mark": "w",
+   "context": "·|(|˜γ′(u + θ1"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "·|(|˜γ′(u + θ1w)| −|˜γ′(u + θ"
+  },
+  {
+   "page": 10,
+   "mark": "w",
+   "context": "·|(|˜γ′(u + θ1w)| −|˜γ′(u + θ2"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "·|(|˜γ′(u + θ1w)| −|˜γ′(u + θ2w)|) −(|γ′(u + θ"
+  },
+  {
+   "page": 10,
+   "mark": "w",
+   "context": "·|(|˜γ′(u + θ1w)| −|˜γ′(u + θ2w)|) −(|γ′(u + θ1"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "|(|˜γ′(u + θ1w)| −|˜γ′(u + θ2w)|) −(|γ′(u + θ1w)| −|γ′(u + θ"
+  },
+  {
+   "page": 10,
+   "mark": "w",
+   "context": "(|˜γ′(u + θ1w)| −|˜γ′(u + θ2w)|) −(|γ′(u + θ1w)| −|γ′(u + θ2"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "H(α−1)/2,"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "˜γ′ −γ′H(α−1)/2,2(R/Z,R"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "∥˜γ′−γ′∥H(α−1)/2,2(R/Z,R"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "niteenergy in[3]wegetE(α)(γ0)<∞forallγ0∈H(α+1)/2,"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "directional derivatives exist for all directions h∈H(α+1)/2,"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "Letusﬁxγ0∈H(α+1)/2,"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "andletU⊂H(α+1)/2,"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "ε(γ"
+  },
+  {
+   "page": 11,
+   "mark": "h",
+   "context": "ε(γ0+ τ"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "ε1(γ"
+  },
+  {
+   "page": 11,
+   "mark": "h",
+   "context": "ε1(γ0 + τ"
+  },
+  {
+   "page": 11,
+   "mark": "h",
+   "context": "ε1(γ0 + τh;"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "ε2(γ"
+  },
+  {
+   "page": 11,
+   "mark": "h",
+   "context": "ε2(γ0 + τ"
+  },
+  {
+   "page": 11,
+   "mark": "h",
+   "context": "ε2(γ0 + τh;"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "ε1(γ"
+  },
+  {
+   "page": 11,
+   "mark": "h",
+   "context": "ε1(γ0+ (τ + θ)"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "ε2(γ"
+  },
+  {
+   "page": 11,
+   "mark": "h",
+   "context": "ε2(γ0+ (τ + θ)"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "ε1(γ"
+  },
+  {
+   "page": 11,
+   "mark": "h",
+   "context": "ε1(γ0+ τ"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "ε2(γ"
+  },
+  {
+   "page": 11,
+   "mark": "h",
+   "context": "ε2(γ0+ τ"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "∥h∥H(α+1)/2,"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "pointwise this proves that (fε)ε>0 is a Cauchy sequence in C"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "wise this proves that (fε)ε>0 is a Cauchy sequence in C1((−τ"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": " this proves that (fε)ε>0 is a Cauchy sequence in C1((−τ0, τ"
+  },
+  {
+   "page": 11,
+   "mark": "h",
+   "context": "ε(γ0+ τ"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "ε(γ"
+  },
+  {
+   "page": 11,
+   "mark": "h",
+   "context": "ε(γ0;"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "for all γ0∈H(α+1)/2,"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": ", h ∈H(α+1)/2,"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "H(α+1)/2,"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "H(α+1)/2,2\u0011∗forγ"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "H(α+1)/2,2\u0011∗forγ0∈H(α+1)/2,"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "Xδ:= {γ∈H(α+1)/2,"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "ε(γ"
+  },
+  {
+   "page": 11,
+   "mark": "h",
+   "context": "ε(γ0;"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "ε(γ0; h) + δE(α)(γ"
+  },
+  {
+   "page": 11,
+   "mark": "h",
+   "context": "ε(γ0; h) + δE(α)(γ0;"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "ε(γ"
+  },
+  {
+   "page": 11,
+   "mark": "h",
+   "context": "ε(γ0;"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "ε1(γ"
+  },
+  {
+   "page": 11,
+   "mark": "h",
+   "context": "ε1(γ0;"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "ε(γ"
+  },
+  {
+   "page": 11,
+   "mark": "h",
+   "context": "ε(γ0;"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "ε(γ"
+  },
+  {
+   "page": 11,
+   "mark": "h",
+   "context": "ε(γ0;"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "H(α+1)/2,"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "ε(γ"
+  },
+  {
+   "page": 11,
+   "mark": "h",
+   "context": "ε(γ0;"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "∥h∥H(α+1)/2,"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "≤C∥h∥H(α+1)/2,"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "and h∈H(α+1)/2,"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "for all γ0∈H(α+1)/2,"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "E(α)\u0011′(γ"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "E(α)\u0011′(γ0) ∈(H(α+1)/2,"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "E(α)\u0011′(γ"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "E(α)\u0011′(γ0) = δE(α)(γ"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "for all γ0∈H(α+1)/2,"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": ", h ∈H(α+1)/2,"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": " all ε1, ε2< ε.Then we have for γ ∈Xδ ∩Uand any h ∈H(α+1)/2,"
+  },
+  {
+   "page": 12,
+   "mark": "h",
+   "context": "ε(γ;"
+  },
+  {
+   "page": 12,
+   "mark": "h",
+   "context": "ε(γ;"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "ε(γ"
+  },
+  {
+   "page": 12,
+   "mark": "h",
+   "context": "ε(γ0;"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "ε(γ"
+  },
+  {
+   "page": 12,
+   "mark": "h",
+   "context": "ε(γ0;"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "ε(γ0; h) −δE(α)(γ"
+  },
+  {
+   "page": 12,
+   "mark": "h",
+   "context": "ε(γ0; h) −δE(α)(γ0;"
+  },
+  {
+   "page": 12,
+   "mark": "h",
+   "context": "ε(γ;"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "ε(γ"
+  },
+  {
+   "page": 12,
+   "mark": "h",
+   "context": "ε(γ0;"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "3σ∥h∥H(α+1)/2,"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "is C"
+  },
+  {
+   "page": 12,
+   "mark": "h",
+   "context": "ε(γ;"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "ε(γ"
+  },
+  {
+   "page": 12,
+   "mark": "h",
+   "context": "ε(γ0;"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "3σ∥h∥H(α+1)/2,"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "|δE(α)(γ; h) −δE(α)(γ"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "|δE(α)(γ; h) −δE(α)(γ0; h)| ≤σ∥h∥H(α+1)/2,"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "E(α)\u0011′is continuous from H(α+1)/2,"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "H(α+1)/2,"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "is C"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "is C1(H(α+1)/2,"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "nly thing left to do is to show that for curves γ ∈H(α+1)/2,"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "parametrized by arc-length and h∈H(α+1)/2,"
+  },
+  {
+   "page": 12,
+   "mark": "h",
+   "context": "−D(γ,"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "R"
+  },
+  {
+   "page": 12,
+   "mark": "h",
+   "context": "0⟨γ′(u + θw),"
+  },
+  {
+   "page": 12,
+   "mark": "h",
+   "context": "−⟨γ′(u),"
+  },
+  {
+   "page": 12,
+   "mark": "h",
+   "context": "(α −2)⟨γ′(u),"
+  },
+  {
+   "page": 12,
+   "mark": "h",
+   "context": "−α⟨γ(u + w) −γ(u),"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "∀h ∈H(1+α)/2(R/Z, R"
+  },
+  {
+   "page": 13,
+   "mark": "h",
+   "context": "(α −2)⟨γ′(u),"
+  },
+  {
+   "page": 13,
+   "mark": "h",
+   "context": "−α⟨γ(u + w) −γ(u),"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "To prove that γ ∈C∞(R/Z, R"
+  },
+  {
+   "page": 13,
+   "mark": "h",
+   "context": "−⟨γ(u + w) −γ(u),"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "lower order perturbation of the L"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "mplex valued functions by exchanging the scalar product on R"
+  },
+  {
+   "page": 13,
+   "mark": "f",
+   "context": "R/Z"
+  },
+  {
+   "page": 13,
+   "mark": "e",
+   "context": "R/Zf(u)"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "R/Zf(u)e−2πiku"
+  },
+  {
+   "page": 13,
+   "mark": "u",
+   "context": "R/Zf(u)e−2πiku d"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "R/Zf(u)e−2πiku du the"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "tothe scalarproduct on C"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "γ, h ∈H(1+α)/2,"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "γ, h ∈H(1+α)/2,2(R/Z, R"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "H"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "H"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "γ′(u + s"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "! |γ′(u + τ"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "! |γ′(u + τ"
+  },
+  {
+   "page": 14,
+   "mark": "h",
+   "context": "0,τ1,τ2(u, w),"
+  },
+  {
+   "page": 14,
+   "mark": "h",
+   "context": "s1,τ1,τ2(u, w),"
+  },
+  {
+   "page": 14,
+   "mark": "w",
+   "context": "s1,τ1,τ2(u, w), h′(u + s2"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "L"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "L"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "≤C∥h∥H"
+  },
+  {
+   "page": 15,
+   "mark": "h",
+   "context": "s1,τ1,τ2(u, w), D−˜σ"
+  },
+  {
+   "page": 15,
+   "mark": "w",
+   "context": "s1,τ1,τ2(u, w), D−˜σh′(u + s2"
+  },
+  {
+   "page": 15,
+   "mark": "h",
+   "context": "s1,τ1,τ2(u, w),"
+  },
+  {
+   "page": 15,
+   "mark": "w",
+   "context": "s1,τ1,τ2(u, w), h′(u + s2"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "du ≤C ∥h∥H"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "H ˜σ,"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "≤C ∥h∥H"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "H ˜σ,"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "≤C ∥h∥H"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "Lemma 3.3.Let γ ∈H(α+1)/2+σ,2(R/Z, R"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "s1,τ1,τ2∈L"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "2,"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "2), R"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "L"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "s1,τ1,τ2,·,·∈L"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "2,"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "2), H ˜σ,"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "2), H ˜σ,1(R/Z, R"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "H ˜σ,"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "s1,τ1,τ2∥L"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 16,
+   "mark": "q",
+   "context": "!H ˜σ,"
+  },
+  {
+   "page": 16,
+   "mark": "q",
+   "context": "≤C∥γ∥H ˜σ+1,"
+  },
+  {
+   "page": 16,
+   "mark": "p",
+   "context": "s1,τ1,τ2(·, w)∥H˜σ,"
+  },
+  {
+   "page": 16,
+   "mark": "q",
+   "context": "!H ˜σ,"
+  },
+  {
+   "page": 16,
+   "mark": "q",
+   "context": "∥γ′∥H ˜σ,"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "We now choose˜p > 1 so small that Hσ,"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "Hσ,"
+  },
+  {
+   "page": 16,
+   "mark": "p",
+   "context": "s1,τ1,τ2(·, w)∥H˜σ,"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "L"
+  },
+  {
+   "page": 16,
+   "mark": "p",
+   "context": "s1,τ1,τ2(·, w)∥H˜σ,"
+  },
+  {
+   "page": 16,
+   "mark": "d",
+   "context": "s1,τ1,τ2(·, w)∥H˜σ,p"
+  },
+  {
+   "page": 16,
+   "mark": "w",
+   "context": "s1,τ1,τ2(·, w)∥H˜σ,pd"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "L"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "L"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "L"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "L"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "L"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "H(α−1)/2,"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "H(α−1)/2,"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": " 1.2.Recall that any ﬁnite-energy curve belongs to H(α+1)/2,"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "2+σ,"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "2+σ,2(R/Z, R"
+  },
+  {
+   "page": 17,
+   "mark": "h",
+   "context": "λ(γ,"
+  },
+  {
+   "page": 17,
+   "mark": "h",
+   "context": "λ(γ, h) := αQ(α)(γ,"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "H"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "H3/2+ε,"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "(qk|k|α+1−3/2−εˆγ(k))k∈Z∈ℓ"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "k∈Z∈ℓ"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "2−ε,"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "2−ε,2(R/Z, R"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "2,"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "2,2(R/Z, R"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "2,"
+  },
+  {
+   "page": 17,
+   "mark": "s",
+   "context": "γ ∈H"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "γ ∈Hs,"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "γ ∈Hs,2(R/Z, R"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "for all s ∈R and thus γ ∈C∞(R/Z, R"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "1 (Leibniz Rule, cf. [9]).Letpi, qi, r ∈(1, ∞), be such that"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "∥f· g∥Hs,"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "∥f· g∥Hs,r≤C (∥f∥Lp"
+  },
+  {
+   "page": 17,
+   "mark": "q",
+   "context": "∥f· g∥Hs,r≤C (∥f∥Lp1 ∥g∥Hs,"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "∥f· g∥Hs,r≤C (∥f∥Lp1 ∥g∥Hs,q"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "∥f· g∥Hs,r≤C (∥f∥Lp1 ∥g∥Hs,q1+ ∥f∥Hs,"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "∥f· g∥Hs,r≤C (∥f∥Lp1 ∥g∥Hs,q1+ ∥f∥Hs,p"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "∥f· g∥Hs,r≤C (∥f∥Lp1 ∥g∥Hs,q1+ ∥f∥Hs,p2 ∥g∥Lq"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "(D"
+  },
+  {
+   "page": 18,
+   "mark": "p",
+   "context": "Hσ,"
+  },
+  {
+   "page": 18,
+   "mark": "s",
+   "context": "Lemma A.2 (Chain rule, cf. [9]).Letf∈H"
+  },
+  {
+   "page": 18,
+   "mark": "p",
+   "context": "Lemma A.2 (Chain rule, cf. [9]).Letf∈Hs,"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "Lemma A.2 (Chain rule, cf. [9]).Letf∈Hs,p(R/Z, R"
+  },
+  {
+   "page": 18,
+   "mark": "s",
+   "context": " such that ψ and all its derivatives vanish at 0 then ψ ◦f∈H"
+  },
+  {
+   "page": 18,
+   "mark": "p",
+   "context": "uch that ψ and all its derivatives vanish at 0 then ψ ◦f∈Hs,"
+  },
+  {
+   "page": 18,
+   "mark": "p",
+   "context": "∥ψ ◦f∥Hs,"
+  },
+  {
+   "page": 18,
+   "mark": "p",
+   "context": "∥ψ ◦f∥Hs,p≤C∥ψ∥Ck∥f∥Hs,"
+  }
+ ]
+}

@@ -1,0 +1,61 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1108.3035v2",
+ "source": {
+  "structure_sha256": "935bf1bd3e13821bced6a5f488f30e5d70554a99d189637bc3755aee8eb0f9ce",
+  "file": "1108.3035v2.pdf"
+ },
+ "provenance": {
+  "title": "Random Matrix Theory for the Hermitian Wilson Dirac Operator and the chGUE \u2013 GUE Transition",
+  "authors": "Gernot Akemann1 and Taro Nagao2",
+  "arxiv": {
+   "id": "1108.3035",
+   "version": "2",
+   "primary_class": "math-ph",
+   "stamp_date": "2 Nov 2011"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 2,
+  "by_kind": {
+   "recommendation": 2
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "After reducing to eigenvalues the same result should come out.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-009-b1-the-gue-limit-a1-for-0.md",
+   "section_title": "B.1 The GUE limit a1 for =0",
+   "pages": "20-21",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "However, we should remember that due to rescaling the original variables $t_j$ are all of the order ${\\cal O}(a)$.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-010-b2-the-chgue-limit-a0-and-factorisation.md",
+   "section_title": "B.2 The chGUE limit a0 and factorisation",
+   "pages": "21-22",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

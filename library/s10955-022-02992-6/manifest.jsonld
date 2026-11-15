@@ -11,6 +11,7 @@
   ],
   "title": "Cluster Expansions: Necessary and Sufficient Convergence Conditions",
   "contains": [
+    "library/s10955-022-02992-6/sections/sec-front-matter",
     "library/s10955-022-02992-6/sections/sec-000",
     "library/s10955-022-02992-6/sections/sec-001",
     "library/s10955-022-02992-6/sections/sec-002",
@@ -25,10 +26,14 @@
     "library/s10955-022-02992-6/sections/sec-011",
     "library/s10955-022-02992-6/sections/sec-012",
     "library/s10955-022-02992-6/sections/sec-013",
-    "library/s10955-022-02992-6/sections/sec-014"
+    "library/s10955-022-02992-6/sections/sec-014",
+    "library/s10955-022-02992-6/sections/sec-015",
+    "library/s10955-022-02992-6/sections/sec-016",
+    "library/s10955-022-02992-6/sections/sec-017",
+    "library/s10955-022-02992-6/sections/sec-018"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "s10955-022-02992-6",
     "title_source": "pdf-info",
@@ -38,8 +43,8 @@
     "pages": 47,
     "arxiv": null,
     "doi": "10.1007/s10955-022-02992-6",
-    "document_class": "math",
-    "extractor_validated": true,
-    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
   }
 }

@@ -1,0 +1,135 @@
+---
+doc_id: drinfeld1991-quasitriangular
+doc_title: "On quasitriangular quasi-Hopf algebras and a group closely connected with Gal(Q̄/Q)"
+section_id: page-013
+section_title: "Page 13"
+pages: 13-13
+pdf_page: 13
+source_pdf: drinfeld1991-quasitriangular.pdf
+source_sha256: 1a1d279e92445fdc
+text_source: ocr
+granularity: page
+doc_brief: "On quasitriangular quasi-Hopf algebras and a group closely connected with Gal(Q̄/Q) — 17 sections: Page 1; Page 2; Page 3"
+---
+852 V. G. DRINFEL'D
+
+REMARKS. 1) gt,(k) has the filtration whose nth term is {(0
+y= Omod degn}. We can use it to construct a complete ended Dis ai
+srgt,(*). It will be shown (see Proposition 5.6) that Bigt, (k) = grt,(k). This
+is the reason for the notations grt, GRT. It is not hard to prove the inclusion
+Gist, (k) C get, (Kk): (5.19) follows from the fact that y(a, B)-eP w(a, Bye? +
+e’w(a, ye” — w(a, y) = 0, where (0, y) € gt,(k), e*efe” = 1. This in turn
+follows from the analogues fact about GT,(k): if (1, f) € GT,(k), then
+
+-1 -
+Xyf(Kys XXX, X)- (XX) X F(X, X)
+= X\ F(X; X)XAS(X;, X)XGA(X, > X;)
+= SX, X)S(Xy, X)I(X,, X,) = 1
+for X,X,X, = 1, where ¥, = X,X,X7! = x7! it i
+147%, : 9 = X, X,X,. However it
+necessary for (5.19) to be verified (see Proposition 5.7). > mus net
+_ 2) The connection between GT,(k) and GRT,(k) can also be explained
+in the following way: if {g,} is a family of elements of Fr,(A, B) such that
+(1, f,) € GT,(k) for e #0, where f(X, Y) = ge (en Xx, e7!
+me BRE (X,Y) = g,( nX,e InY), then
+3) GRT,(k), as well as GT(k), has a categorical interpretation. Let C be
+a tensored category, and suppose given automorphisms Ty w € Aut(V @W),
+functorial in V, We C, with cy yty y = Ty vey y and
+
+Intygy yw =idy@lnty y +(cy yp @id)(id, @lnty y(cy » Bid),
+
+where c is the commutativity isomorphism (of course, one mu
+
+co! , st first have
+formulated conditions on C and 7 sufficient for the latter equality to be
+meaningful; typical example: C is the category of h-adically complete Ug-
+modules, and Ty w is the operator in V@W corresponding to e"eU g@Ug,
+where g and t are as in §1). Suppose meaningful all expresions of the form
+g(Inty » @idy, id, @Int, y), where g(A, B) € Fr,(A, B). Then if g ¢
+GRT (k) and we take g(Int, » @idy, id, @In Ty yw) as a new associativity
+isomorphism (U@V)@W 5 U®(V ®W) without changing c and 1, we
+obtain a structure of the same type as the original.
+
+The formula 9(4, B) = 9(g(A, B)Ag(A, B)7!, B)
+’ »8 , , B)- g(A, B), where g €
+
+M,(k) and gé GRT  (k) , defines a right action of GRT,(k) on M,(k). This
+gives GRT (x) a right action on M(k) = {(u, 9) |ge€ M,,(k)}. The formulas
+~ = -1 ~ ~
+(A, B) = (cA, c'B) and fi =c™'y, where c € k* , define an action of
+k* on M (k). As a result, we obtain a right action of GRT(k) on M(k). It
+commutes with the left action of GT(k). —
+
+PROPOSITION 5.5. The action of GRT(k) on M(k) is free and transiti
+> nsitive. TI
+same is true for the action of GRT,(k) on M,(k). isn sive, The
+
+PRooF. It suffices to prove the second statement. If 9, 7 € M,(k) then there
+exists exactly one gé€Fr,(A,B) such that 9(A, B) = A,B)A a
+
+x e( B); aameke ) = 9(g(A, B)Ag(A,B)™, B)
+
+g(A, B) = x(G(A, B)AG(A, B)”', B)-(A, B), (5.22)
+
+where x € Fr,(4, B) is inverse to g with respect to the operation (5.16)
+
+. -1 ;
+
+ie, 4(9(A, B)Ap(A, B)”, B)- o(A, B) = 1. Arguing as in the proof of
+
+QUASITRIANGULAR QUASI-HOPF ALGEBRAS 853
+
+Proposition 5.1, we find that (0, f) € GI(k), where f(X, Y) = z(InX, InY).
+Equation (5.22) says that g is the result of the action of (0, f) on @, and
+therefore g € M,(k), ie. g satisfies (5.12), (5.13), and (5.15). We now use
+the equality
+
+inX, + Xi? f(x, X,)7' WX, ((X,, XX,”
++ f(X,, Xj) nX,- f(X,, X5) =0, (5.23)
+
+where X,X,X, = 1, proved by the substitution (5.4). Finally, making a substi-
+tution like (5.4) in (5.23) with g replaced by @, and using (5.22), we obtain
+(5.14). @
+
+From Propositions 5.1 and 5.5 follows
+
+PROPOSITION 5.6. Every 9 € M(k) determines an isomorphism s,: GRT(k)
+
+“ GT(k), which is characterized by the fact that say » € GRT(k) acts on g on
+the right the same way s,(y) acts on the left. The diagram
+
+GRT(k) 3 GT(k)
+\ L
+kt
+is commutative, so that 5,(GRT, (é)) = GT,(k). The splitting of the sequence
+(5.8) that corresponds to g €M,(k) is defined by the homomorphism 8,01: k* 5
+
+GT(k), where i is the canonical imbedding k* = GRT(k). Finally, gigt,(k) =
+gtt,(k), and if 9 € M,(k), then s, induces the identity mapping gtt,(k) +
+
+argt, (Kk).
+PROPOSITION 5.7. (5.17), (5.18), and (5.20) imply (5.19).
+
+Proor. Denote the left-hand side of (5.19) by s(B, C). Then s(B, C) =
+s(C, B). Furthermore,
+
+s(¥%,.%) =9(¥,, ¥, + ¥3) +5(¥, + Ys %) - 9%, ¥) =0, (5.24)
+
+where the Y, are generators of the free Lie algebra. Indeed, denote the left-hand
+side of (5.24) by u(Y,, ¥,, ¥,). Then it follows from (5.17) and (5.18) that
+u(x", x4, x34) = pity x2 34) 4x4, wy ipyl4 p23),
+where j1!7* = {left-hand side of (5.20)} — {right-hand side of (5.20)}. There-
+fore (5.17), (5.18), and (5.20) imply (5.24). It remains to prove that if a sym-
+metric Lie polynomial s(B, C) satisfies (5.24), then s = 0. It is well known
+that if s(x, y) is an ordinary (commutative) polynomial in two sets of variables
+x= (x), x) and p=, y) such that s(y, x)= s(x, y) and
+(5.24) holds, then s is of the form f(x+y)—/f(x)—f(y) . This can be seen (see
+the proof of Proposition 2.2 of [1]) by representing the space of homogeneous
+polynomials s(x, y) of degree n in the form V,, @s W,,, where V,, is the
+
+space of polynomials in x, = (xi, bees x), wa My = (x, sees xl), lin-
+
+ear in each x,, and W,, is an appropriate S$, -module. The same argument goes
+through in the Lie case (for .V,, we must take the space of all Lie polynomials
+in m variables, linear in each variable); but now f(x) is a Lie polynomial in
+x,ie, f(x) =cx, cek. Therefore s=0. @

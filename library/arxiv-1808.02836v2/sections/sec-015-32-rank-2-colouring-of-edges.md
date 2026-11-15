@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1808.02836v2
-doc_title: "On minimal ideal triangulations of cusped hyperbolic 3–manifolds"
+doc_title: "On minimal ideal triangulations of cusped hyperbolic 3–manifolds Introduction"
 section_id: sec-015-32-rank-2-colouring-of-edges
 section_title: "Rank-2 colouring of edges"
 section_number: 3.2
 pages: 18-18
 source_pdf: 1808.02836v2.pdf
 source_sha256: 0224a296253122a2
-doc_brief: "On minimal ideal triangulations of cusped hyperbolic 3–manifolds — Previous work of the authors studies minimal triangulations of closed 3–manifolds using a characterisation of low degree edges"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.9
+latex_prose_ratio: 0.914
 latex_coverage_ratio: 1.0
+doc_brief: "On minimal ideal triangulations of cusped hyperbolic 3–manifolds Introduction — Previous work of the authors studies minimal triangulations of closed 3–manifolds using a characterisation of low"
 ---
 []{#subsec:rank-2 colouring label="subsec:rank-2 colouring"}
 

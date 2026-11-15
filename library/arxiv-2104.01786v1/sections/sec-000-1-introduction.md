@@ -4,13 +4,14 @@ doc_title: "Spin(11, 3), particles and octonions"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
-pages: 1-5
+pages: 1-6
 source_pdf: 2104.01786v1.pdf
 source_sha256: 34087d5063ef5507
-doc_brief: "Spin(11, 3), particles and octonions — The fermionic ﬁelds of one generation of the Standard Model, including the Lorentz spinor degrees of freedom, can be identiﬁed with components of a sin gle real"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
+latex_prose_ratio: 0.935
 latex_coverage_ratio: 0.998
+doc_brief: "Spin(11, 3), particles and octonions — The fermionic ﬁelds of one generation of the Standard Model, including the Lorentz spinor degrees of freedom, can be identiﬁed with components of a single real"
 ---
 The suggestion that octonions may provide a useful language for describing elementary particles is almost as old as the Standard Model (SM) itself, see [@Gunaydin:1973rs] and references therein.[^1] Thus, it was observed early on that the 8-dimensional space of octonions, after a complex structure is chosen, splits as ${\mathbb O}={\mathbb C}\oplus{\mathbb C}^3$, with the first factor naturally corresponding to leptons and the second one describing quarks. The subgroup of the group of automorphisms of the octonions $G_2$ preserving this split is precisely the strong gauge group ${\rm SU}(3)$.
 

@@ -6,10 +6,12 @@
   "sha256": "bda867f7b84f69c35e3171477939743ca4a9b1a8426106b168e40cbc91dc9767",
   "bytes": 1986072,
   "pages": 43,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -19,20 +21,30 @@
    "stamp_date": "1 Dec 2023"
   },
   "doi": null,
-  "title": "On the structure of wave functions in complex Chern\u2013Simons theory",
-  "authors_raw": "Marcos Mari\u00f1o and Claudia Rella",
-  "abstract": "We study the structure of wave functions in complex Chern\u2013Simons theory on the complement of a hyperbolic knot, emphasizing the similarities with the topological string/spectral theory correspondence. We first conjecture a hidden integrality structure in the holomorphic blocks and show that this structure guarantees the cancellation of potential singularities in the full non- perturbative wave function at rational values of the coupling constant. We then develop various techniques to determine the wave function at such rational points. Finally, we illustrate our conjec- tures and obtain explicit results in the examples of the figure-eight and the three-twist knots. In the case of the figure-eight knot, we also perform a direct evaluation of the state integral in the rational case and observe that the resulting wave function has the features of the ground state for a quantum mirror curve. arXiv:2312.00624v1 [hep-th] 1 Dec 2023",
-  "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20231204014717Z",
-   "Creator": "LaTeX with hyperref",
-   "Producer": "medialab",
-   "Title": ""
-  },
+  "title": "On the structure of wave functions in complex Chern–Simons theory",
+  "authors_raw": "Marcos Mariño and Claudia Rella",
   "title_lines": [
    "On the structure of wave functions in",
-   "complex Chern\u2013Simons theory"
-  ]
+   "complex Chern–Simons theory"
+  ],
+  "abstract": "We study the structure of wave functions in complex Chern–Simons theory on the complement of a hyperbolic knot, emphasizing the similarities with the topological string/spectral theory correspondence. We first conjecture a hidden integrality structure in the holomorphic blocks and show that this structure guarantees the cancellation of potential singularities in the full non- perturbative wave function at rational values of the coupling constant. We then develop various techniques to determine the wave function at such rational points. Finally, we illustrate our conjec- tures and obtain explicit results in the examples of the figure-eight and the three-twist knots. In the case of the figure-eight knot, we also perform a direct evaluation of the state integral in the rational case and observe that the resulting wave function has the features of the ground state for a quantum mirror curve. arXiv:2312.00624v1 [hep-th] 1 Dec 2023",
+  "docinfo": {
+   "Producer": "medialab",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20231204014717Z"
+  },
+  "title_raw": "On the structure of wave functions in complex Chern–Simons theory",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "On the structure of wave functions in complex Chern–Simons theory",
+   "outline": "Introduction",
+   "text": "On the structure of wave functions in complex Chern–Simons theory",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -40,151 +52,715 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
-   "title": "Complex Chern\u2013Simons theory and the A-polynomial",
+   "title": "Complex Chern–Simons theory and the A-polynomial",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Classical and quantum A-polynomials",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "The case of SL(2,C) gauge group",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "The structure of the wave function",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "General conjectures",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Cancellation of singularities",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "The wave function in the rational case, I",
    "page": 14,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "The wave function in the rational case, II",
    "page": 17,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 3,
    "title": "Solving a second-order q-difference equation",
    "page": 17,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 3,
    "title": "Solving a third-order q-difference equation",
    "page": 20,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 1,
    "title": "Examples",
    "page": 23,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "The figure-eight knot",
    "page": 23,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "The three-twist knot",
    "page": 26,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 1,
    "title": "The wave function from the state integral",
    "page": 29,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "28"
   },
   {
    "level": 2,
    "title": "Evaluation at rational points",
    "page": 30,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
   },
   {
    "level": 2,
    "title": "Factorization and two special subcases",
    "page": 34,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
   },
   {
    "level": 1,
    "title": "Conclusions",
    "page": 36,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "35"
   },
   {
    "level": 1,
    "title": "Computing the -expansions",
    "page": 37,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "36"
   },
   {
    "level": 1,
    "title": "An alternative way of obtaining the integer sequences",
    "page": 38,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "37"
   },
   {
    "level": 1,
    "title": "Faddeev's quantum dilogarithm and other special functions",
    "page": 39,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "38"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The hyperbolic knots known as the figure-eight knot (41), on the left side, and the three-twist knot (52), on the right side",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The state integral χ41(u; ℏ) in the closed form of Eq. (5.18) as a function of x ∈R, at the bottom,",
+   "page": 32,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "31"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The real part of the state integral χ41(u; ℏ) in the closed form of Eq. (5.18) as a function of x ∈R",
+   "page": 33,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "32"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "0",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "3",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "5",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "8",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "11",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "13",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "16",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "19",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "22",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "25",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "28",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "29",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "33",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "35",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "36",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "37",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "38",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1233,
+   "n_words": 176,
+   "label_start": "0",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -192,18 +768,22 @@
    "level": 1,
    "page_start": 2,
    "page_end": 4,
-   "n_chars": 6536,
-   "n_words": 1039
+   "n_chars": 6548,
+   "n_words": 1038,
+   "label_start": "1",
+   "label_end": "3"
   },
   {
    "id": "sec-001-complex-chernsimons-theory-and-the-a-polynomial",
    "number": null,
-   "title": "Complex Chern\u2013Simons theory and the A-polynomial",
+   "title": "Complex Chern–Simons theory and the A-polynomial",
    "level": 1,
    "page_start": 4,
    "page_end": 4,
-   "n_chars": 656,
-   "n_words": 110
+   "n_chars": 147,
+   "n_words": 22,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
    "id": "sec-002-classical-and-quantum-a-polynomials",
@@ -211,167 +791,259 @@
    "title": "Classical and quantum A-polynomials",
    "level": 2,
    "page_start": 4,
-   "page_end": 9,
-   "n_chars": 12293,
-   "n_words": 2123
+   "page_end": 6,
+   "n_chars": 6911,
+   "n_words": 1308,
+   "label_start": "3",
+   "label_end": "5"
   },
   {
-   "id": "sec-003-the-structure-of-the-wave-function",
+   "id": "sec-003-the-case-of-sl2c-gauge-group",
+   "number": null,
+   "title": "The case of SL(2,C) gauge group",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 9,
+   "n_chars": 5305,
+   "n_words": 1068,
+   "label_start": "5",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-004-the-structure-of-the-wave-function",
    "number": null,
    "title": "The structure of the wave function",
    "level": 1,
    "page_start": 9,
    "page_end": 9,
-   "n_chars": 501,
-   "n_words": 81
+   "n_chars": 536,
+   "n_words": 87,
+   "label_start": "8",
+   "label_end": "8"
   },
   {
-   "id": "sec-004-general-conjectures",
+   "id": "sec-005-general-conjectures",
    "number": null,
    "title": "General conjectures",
    "level": 2,
    "page_start": 9,
    "page_end": 12,
-   "n_chars": 6284,
-   "n_words": 1118
+   "n_chars": 6334,
+   "n_words": 1150,
+   "label_start": "8",
+   "label_end": "11"
   },
   {
-   "id": "sec-005-cancellation-of-singularities",
+   "id": "sec-006-cancellation-of-singularities",
    "number": null,
    "title": "Cancellation of singularities",
    "level": 2,
    "page_start": 12,
    "page_end": 14,
-   "n_chars": 4394,
-   "n_words": 834
+   "n_chars": 4480,
+   "n_words": 893,
+   "label_start": "11",
+   "label_end": "13"
   },
   {
-   "id": "sec-006-the-wave-function-in-the-rational-case-i",
+   "id": "sec-007-the-wave-function-in-the-rational-case-i",
    "number": null,
    "title": "The wave function in the rational case, I",
    "level": 2,
    "page_start": 14,
    "page_end": 17,
-   "n_chars": 5822,
-   "n_words": 1137
+   "n_chars": 5986,
+   "n_words": 1267,
+   "label_start": "13",
+   "label_end": "16"
   },
   {
-   "id": "sec-007-the-wave-function-in-the-rational-case-ii",
+   "id": "sec-008-the-wave-function-in-the-rational-case-ii",
    "number": null,
    "title": "The wave function in the rational case, II",
    "level": 2,
    "page_start": 17,
    "page_end": 17,
-   "n_chars": 674,
-   "n_words": 115
+   "n_chars": 715,
+   "n_words": 121,
+   "label_start": "16",
+   "label_end": "16"
   },
   {
-   "id": "sec-008-solving-a-second-order-q-difference-equation",
+   "id": "sec-009-solving-a-second-order-q-difference-equation",
    "number": null,
    "title": "Solving a second-order q-difference equation",
    "level": 3,
    "page_start": 17,
    "page_end": 20,
-   "n_chars": 4744,
-   "n_words": 840
+   "n_chars": 4867,
+   "n_words": 923,
+   "label_start": "16",
+   "label_end": "19"
   },
   {
-   "id": "sec-009-solving-a-third-order-q-difference-equation",
+   "id": "sec-010-solving-a-third-order-q-difference-equation",
    "number": null,
    "title": "Solving a third-order q-difference equation",
    "level": 3,
    "page_start": 20,
    "page_end": 23,
-   "n_chars": 5047,
-   "n_words": 921
+   "n_chars": 5190,
+   "n_words": 1025,
+   "label_start": "19",
+   "label_end": "22"
   },
   {
-   "id": "sec-010-examples",
+   "id": "sec-011-examples",
    "number": null,
    "title": "Examples",
    "level": 1,
    "page_start": 23,
    "page_end": 23,
-   "n_chars": 486,
-   "n_words": 75
+   "n_chars": 494,
+   "n_words": 75,
+   "label_start": "22",
+   "label_end": "22"
   },
   {
-   "id": "sec-011-the-figure-eight-knot",
+   "id": "sec-012-the-figure-eight-knot",
    "number": null,
    "title": "The figure-eight knot",
    "level": 2,
    "page_start": 23,
    "page_end": 26,
-   "n_chars": 7159,
-   "n_words": 1297
+   "n_chars": 7286,
+   "n_words": 1405,
+   "label_start": "22",
+   "label_end": "25"
   },
   {
-   "id": "sec-012-the-three-twist-knot",
+   "id": "sec-013-the-three-twist-knot",
    "number": null,
    "title": "The three-twist knot",
    "level": 2,
    "page_start": 26,
    "page_end": 29,
-   "n_chars": 8757,
-   "n_words": 1587
+   "n_chars": 8915,
+   "n_words": 1727,
+   "label_start": "25",
+   "label_end": "28"
   },
   {
-   "id": "sec-013-the-wave-function-from-the-state-integral",
+   "id": "sec-014-the-wave-function-from-the-state-integral",
    "number": null,
    "title": "The wave function from the state integral",
    "level": 1,
    "page_start": 29,
    "page_end": 30,
-   "n_chars": 634,
-   "n_words": 107
+   "n_chars": 676,
+   "n_words": 114,
+   "label_start": "28",
+   "label_end": "29"
   },
   {
-   "id": "sec-014-evaluation-at-rational-points",
+   "id": "sec-015-evaluation-at-rational-points",
    "number": null,
    "title": "Evaluation at rational points",
    "level": 2,
    "page_start": 30,
    "page_end": 34,
-   "n_chars": 9618,
-   "n_words": 1831
+   "n_chars": 9704,
+   "n_words": 1891,
+   "label_start": "29",
+   "label_end": "33"
   },
   {
-   "id": "sec-015-factorization-and-two-special-subcases",
+   "id": "sec-016-factorization-and-two-special-subcases",
    "number": null,
    "title": "Factorization and two special subcases",
    "level": 2,
    "page_start": 34,
    "page_end": 36,
-   "n_chars": 3916,
-   "n_words": 714
+   "n_chars": 3982,
+   "n_words": 746,
+   "label_start": "33",
+   "label_end": "35"
   },
   {
-   "id": "sec-016-conclusions",
+   "id": "sec-017-conclusions",
    "number": null,
    "title": "Conclusions",
    "level": 1,
    "page_start": 36,
-   "page_end": 38,
-   "n_chars": 5271,
-   "n_words": 921
+   "page_end": 37,
+   "n_chars": 3550,
+   "n_words": 538,
+   "label_start": "35",
+   "label_end": "36"
   },
   {
-   "id": "sec-017-an-alternative-way-of-obtaining-the-integer-sequ",
+   "id": "sec-018-computing-the--expansions",
+   "number": null,
+   "title": "Computing the -expansions",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 38,
+   "n_chars": 1748,
+   "n_words": 424,
+   "label_start": "36",
+   "label_end": "37"
+  },
+  {
+   "id": "sec-019-an-alternative-way-of-obtaining-the-integer-sequ",
    "number": null,
    "title": "An alternative way of obtaining the integer sequences",
    "level": 1,
    "page_start": 38,
+   "page_end": 39,
+   "n_chars": 2670,
+   "n_words": 561,
+   "label_start": "37",
+   "label_end": "38"
+  },
+  {
+   "id": "sec-020-faddeevs-quantum-dilogarithm-and-other-special-f",
+   "number": null,
+   "title": "Faddeev's quantum dilogarithm and other special functions",
+   "level": 1,
+   "page_start": 39,
    "page_end": 43,
-   "n_chars": 11470,
-   "n_words": 2038
+   "n_chars": 8796,
+   "n_words": 1479,
+   "label_start": "38",
+   "label_end": "42"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 21,
-  "sections": 18,
-  "chars_total": 94262,
+  "toc_inferred_entries": 0,
+  "figure_entries": 3,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 1,
+    "items": [
+     "Introduction"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 22,
+  "chars_total": 96073,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "draft-v4.tex",
@@ -384,28 +1056,39 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction",
      "result": "no matching \\section"
     },
     {
      "id": "sec-001-complex-chernsimons-theory-and-the-a-polynomial",
-     "title": "Complex Chern\u2013Simons theory and the A-polynomial",
-     "prose_ratio": 0.942,
-     "coverage_ratio": 0.98,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "title": "Complex Chern–Simons theory and the A-polynomial",
+     "prose_ratio": 0.192,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-002-classical-and-quantum-a-polynomials",
      "title": "Classical and quantum A-polynomials",
-     "prose_ratio": 0.955,
+     "prose_ratio": 0.963,
      "coverage_ratio": 0.94,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-the-structure-of-the-wave-function",
+     "id": "sec-003-the-case-of-sl2c-gauge-group",
+     "title": "The case of SL(2,C) gauge group",
+     "prose_ratio": 0.934,
+     "coverage_ratio": 0.961,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-the-structure-of-the-wave-function",
      "title": "The structure of the wave function",
      "prose_ratio": 0.925,
      "coverage_ratio": 1.0,
@@ -413,31 +1096,31 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-general-conjectures",
+     "id": "sec-005-general-conjectures",
      "title": "General conjectures",
      "prose_ratio": 0.904,
-     "coverage_ratio": 0.988,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-cancellation-of-singularities",
+     "id": "sec-006-cancellation-of-singularities",
      "title": "Cancellation of singularities",
      "prose_ratio": 0.918,
-     "coverage_ratio": 0.888,
+     "coverage_ratio": 0.897,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-the-wave-function-in-the-rational-case-i",
+     "id": "sec-007-the-wave-function-in-the-rational-case-i",
      "title": "The wave function in the rational case, I",
      "prose_ratio": 0.904,
-     "coverage_ratio": 0.982,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-the-wave-function-in-the-rational-case-ii",
+     "id": "sec-008-the-wave-function-in-the-rational-case-ii",
      "title": "The wave function in the rational case, II",
      "prose_ratio": 0.941,
      "coverage_ratio": 1.0,
@@ -445,75 +1128,85 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-solving-a-second-order-q-difference-equation",
+     "id": "sec-009-solving-a-second-order-q-difference-equation",
      "title": "Solving a second-order q-difference equation",
      "prose_ratio": 0.917,
-     "coverage_ratio": 0.968,
+     "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-solving-a-third-order-q-difference-equation",
+     "id": "sec-010-solving-a-third-order-q-difference-equation",
      "title": "Solving a third-order q-difference equation",
      "prose_ratio": 0.937,
-     "coverage_ratio": 0.974,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-010-examples",
-     "title": "Examples",
-     "prose_ratio": 0.932,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-the-figure-eight-knot",
+     "id": "sec-011-examples",
+     "title": "Examples",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-the-figure-eight-knot",
      "title": "The figure-eight knot",
      "prose_ratio": 0.918,
-     "coverage_ratio": 0.955,
+     "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-the-three-twist-knot",
+     "id": "sec-013-the-three-twist-knot",
      "title": "The three-twist knot",
      "prose_ratio": 0.938,
-     "coverage_ratio": 0.966,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-the-wave-function-from-the-state-integral",
+     "id": "sec-014-the-wave-function-from-the-state-integral",
      "title": "The wave function from the state integral",
      "prose_ratio": 0.948,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.982,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-evaluation-at-rational-points",
+     "id": "sec-015-evaluation-at-rational-points",
      "title": "Evaluation at rational points",
      "prose_ratio": 0.952,
-     "coverage_ratio": 0.985,
+     "coverage_ratio": 0.997,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-015-factorization-and-two-special-subcases",
+     "id": "sec-016-factorization-and-two-special-subcases",
      "title": "Factorization and two special subcases",
      "prose_ratio": 0.401,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-016-conclusions",
+     "id": "sec-017-conclusions",
      "title": "Conclusions",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-017-an-alternative-way-of-obtaining-the-integer-sequ",
+     "id": "sec-018-computing-the--expansions",
+     "title": "Computing the -expansions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-an-alternative-way-of-obtaining-the-integer-sequ",
      "title": "An alternative way of obtaining the integer sequences",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-faddeevs-quantum-dilogarithm-and-other-special-f",
+     "title": "Faddeev's quantum dilogarithm and other special functions",
      "result": "no matching \\section"
     }
    ]

@@ -1,0 +1,84 @@
+S. Blanes et al. / Physics Reports 470 (2009) 151-238 219
+
+Table 1
+Splitting methods of order 4 for separable non-autonomous systems. GS¢-4 is intended for general separable problems, whereas MN¢-4 can be applied
+when [B(t;), [B(t)), [B(tx), A(t1)]]] = 0. All the coefficients are given in terms of b11, 411, b21, d21, bs; for each method.
+
+55-4 MNg-4
+by; = 0.0792036964311957 by; = 0.0829844064174052
+
+@y, = 0.209515106613362 dy; = 0.245298957 184271
+
+bz, = 0.353172906049774 bz; = 0.396309801498368
+
+21; = —0.143851773179818 dy, = 0.6048726657 11080
+
+b3; = —0.0420650803577195 b3; = —0.0390563049223486
+
+a3, = 1/2 — (ay + a1) bay = 1 — 2(b11 + bot + 31)
+
+aq) = 431 bs1 = by
+
+5) = 421 be = bar
+
+61 = an bn =bu
+
+Qy2 = (2441 + 2491 + G31 — 2by1, — 2bp1)/c biz = (2411 + 2a91 — 2by1 — bai)/d
+a2 =0 by = (—2a11 + bu1)/d
+
+32 = —a11/C b32 = bag = 0
+
+4 = —432 bs2 = —bs2
+
+62 = —422 be2 = —b22
+
+52 = —412 biz = —bia
+
+¢ = 12(ay1 + 2a) + a3 — 2611 + 2arbi — 2b21 + 2ariba1)
+d = 12(2a9) — by: + 2a11b1) — 2a21b11 — boy + 2aib21)
+
+where the matrices Ai and Bi are
+
+k k
+Di pid, B= bY? 0B). (300)
+j=l j=l
+
+with appropriately chosen real parameters ;, 0; depending on the coefficients of the chosen quadrature rule. Notice that
+e“i can be seen as the solution of the initial value problem Y’ = AjY, Y (ty) = I at t)41, where Ai = hA;. Of course, the same
+considerations apply to e®,
+
+In many cases it is convenient to write the coefficients oj, oj explicitly in terms of the coefficients c;. Following [177]
+they can be written as
+
+;
+pi = Sais (RQE”) y= Yb. (RPQE”) (301)
+l=1 l=1
+
+where the coefficients for the matrices R®, s = 2,3 are given in (249) and for ae” (whose elements depend on the
+
+coefficients b;, c; for the quadrature rule) as shown in (246).
+
+In this way, the coefficients aj and bj are independent of the quadrature choice and can be obtained by solving some
+order conditions (see [177] for more details).
+
+This procedure allows us to separately analyze particular cases for the matrices A, B in order to build efficient methods.
+For instance, in [177] the following particular cases are considered: (i) when the matrices A(t), B(t) have a general structure;
+(ii) when they satisfy the additional constraint [B(t;), [B(t)), [B(t,), A(ti)]]] = 0 as it happens, for instance, if A corresponds
+to the kinetic energy and B to the potential energy (both in classical or quantum mechanics).
+
+As an illustration, we consider the following 4th-order 6-stage BAB composition
+
+4 — eb eds obs... edt obi (302)
+
+In Table 1 we collect the coefficients aj, bj to be used in (301) to obtain the coefficients ;, oj to be used in the scheme (302)
+for two methods, denoted by GS,-4 in the general case (whose coefficients a;1, bj, correspond to Sg in [154]) and MNg-4 when
+[B(ti), [B(G), [B(t.), A(t) ]]] = 0 (the coefficients aj, bj; correspond to SRKN? in [154]).
+
+Finally, one has to write the scheme in terms of the matrices Aj, B;. For instance, the composition (302) with the 4th-order
+Gauss-Legendre quadrature (i.e. taking Q*) in (247) and R® in (249) to obtain the coefficients ;;, oj in (301)) gives
+
+~ 1 1
+A= (Jas - V300) nA, + (Jas + V300) nA
+
+- 1 1
+Bj = (121, - Vaz) By + (Jo, + V3ba) MBy. (303)

@@ -1,0 +1,45 @@
+7. Classical electrodynamics and Maxwell's equations on S* and H°.
+
+As mentioned in section 2, our route to the Gauss linking integral begins by
+developing a steady-state version of classical electrodynamics.
+
+Maxwell's equations, so familiar to us in Euclidean 3-space R3 , can also be shown
+to hold on S* and H’, with the appropriate definitions, as follows.
+
+Let p bea smooth real-valued function, which we think of as a charge density.
+
+On R? and H’, we ask that p have compact support, while on S* we ask that
+
+it have average value zero.
+
+In each case, we define the corresponding electric field E = E(p) by the formula
+E(py) = Vy J pC) box y) dx,
+
+where ¢o is the fundamental solution of the Laplacian.
+
+Let V bea smooth vector field, which we think of as a steady-state (i.e., time-
+
+independent) current distribution. On R* and H’, weask that V have compact
+
+support, while on S* we impose no restriction on V .
+
+In each case, we define the corresponding magnetic field B = BS(V) by one of
+
+the formulas in Theorem 2. Since V is steady-state, so is B, and therefore
+
+OB/ot = 0.
+
+THEOREM 4. MAXWELL'S EQUATIONS in S? and H’.
+
+With these definitions, Maxwell's equations,
+
+VeE=0 V XE = 0
+
+VeB=0 VXB=V + oE/ct,
+
+hold on S? and in H’, just as they doin R°.
+
+Additionally, as in R’ , Ampere's Law follows immediately from the last of the
+Maxwell equations and the curl theorem.
+
+21

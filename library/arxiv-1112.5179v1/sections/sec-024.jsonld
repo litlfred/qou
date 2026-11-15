@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1112.5179v1/sections/sec-024",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Quantization at k=0",
+  "pageStart": 58,
+  "pageEnd": 62,
+  "contains": [
+    "library/arxiv-1112.5179v1/blocks/prose-sec-024",
+    "library/arxiv-1112.5179v1/blocks/recommendation-sec-024-01",
+    "library/arxiv-1112.5179v1/blocks/recommendation-sec-024-02",
+    "library/arxiv-1112.5179v1/blocks/recommendation-sec-024-03",
+    "library/arxiv-1112.5179v1/blocks/recommendation-sec-024-04"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1112.5179v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1112.5179v1",
+  "provenance": "ingested"
+}

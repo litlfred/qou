@@ -8,7 +8,9 @@ pages: 34-36
 source_pdf: 0003017v2.pdf
 source_sha256: 1660907865346bdf
 toc_source: inferred
+doc_brief: "arXiv:hep-ph/0003017v2 26 Jun 2000 — Random matrix theory is a powerful way to describe universal correlations of eigenvalues of complex systems."
 ---
+MICROSCOPIC CORRELATIONS
 Because only the lowest eigenvalues contribute to the microscopic spectral cor-
 relations, a large number of statistically independent spectra are necessary. In
 contrast to the bulk correlations, the microscopic correlations are sensitive to the
@@ -65,4 +67,3 @@ RMT can be used to determine the inﬁnite-volume chiral condensate Σ [166].
 This is most easily done by ﬁtting the numerically determined distribution of the
 smallest eigenvalue to the RMT result. Since the lattice volume is known, this
 immediately yields Σ.
-5.2.4

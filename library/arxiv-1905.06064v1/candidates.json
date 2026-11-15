@@ -1,0 +1,91 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1905.06064v1",
+ "source": {
+  "structure_sha256": "3ffe25c8ee62779d40203906e4599ed5a0bb40406a17c34d128774a90aee37d6",
+  "file": "1905.06064v1.pdf"
+ },
+ "provenance": {
+  "title": "ON O\u2019HARA KNOT ENERGIES I: REGULARITY FOR CRITICAL KNOTS",
+  "authors": "SIMON BLATT, PHILIPP REITER, AND ARMIN SCHIKORRA",
+  "arxiv": {
+   "id": "1905.06064",
+   "version": "1",
+   "primary_class": "math.AP",
+   "stamp_date": "15 May 2019"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 4,
+  "by_kind": {
+   "recommendation": 4
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Knot energies can help to model repulsive forces of fibres, whenever self-interaction of strands should be avoided.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-4",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "\\begin{proof}[Proof of Theorem~\\ref{th:criticalpointchar}: (1) $\\Rightarrow$ (2)] Observe for any $c > 0$, \\[ \\mathcal{E}^{\\alpha,p}(c^{-1}\\sol') = c^{\\alpha p-2}\\mathcal{E}^{\\alpha,p}(\\sol'), \\] and \\[ \\tilde{\\mathcal{E}}^{\\alpha,p}(c^{-1}\\sol') = c^{\\alpha p-2}\\tilde{\\mathcal{E}}^{\\alpha,p}(\\sol'). \\] Thus, we shall assume w.l.o.g. $\\sol' = u$ (i.e. $c \\equiv 1$) without changing anything about the criticality.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-2-a-new-energy-e.md",
+   "section_title": "A new energy E",
+   "pages": "4-10",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "\\begin{remark} We shall see that $\\mathcal{R}_i(\\solu,\\cdot)$ are lower order terms which belong to $(L^1)^\\ast$, see Proposition~\\ref{pr:loterms}.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-3-regularity-theory-for-e-critical-maps-proof-of.md",
+   "section_title": "Regularity theory for E-critical maps: Proof of Theorem I",
+   "pages": "10-17",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Rather than providing a rigorous proof of the preceding statement by suitably decomposing the integration domain and carefully estimating based on techniques from~\\cite{blatt-reiter-2008}, we illustrate the situation by providing a numerical experiment that supports the latter conjecture (and which we believe should be possible to be made rigorous with a careful, lengthy computation).",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-4-extremal-cases-p1-and-pinfty-and-no-m\u00f6bius-inv.md",
+   "section_title": "Extremal cases p=1 and p=infty, and no M\u00f6bius invariance for p=2",
+   "pages": "17-22",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

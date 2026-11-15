@@ -1,0 +1,1 @@
+These equations tell us the way one must fix the wave functions and coupling constants renormalizations in the effective theory, once a particular prescription for the standard model counterterms has been assumed.

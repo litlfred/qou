@@ -8,7 +8,9 @@ pages: 36-37
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
 toc_source: inferred
+doc_brief: "Reidemeister torsion on character varieties — 52 sections: Front matter; Introduction; Character varieties and Reidemeist"
 ---
+The split case.
 Let Σ be an incompressible surface associated to an ideal point v ∈ˆX. In this section
 we suppose that Σ is a union of n parallel copies Σi, i = 1, . . . , n and that each copy
 35
@@ -57,4 +59,3 @@ n ρ2 · s2 = U −1
 n · s2 = s1 and we have proved that
 the representation ρ′
 2 converges.
-1.3.7

@@ -1,0 +1,621 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-1910.09966v1",
+  "pages": [
+    {
+      "page": 25,
+      "rotation": 0,
+      "drawings": 1,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 8: Dehn twist represented by a braid."
+      ],
+      "labels": [
+        {
+          "text": "Figure 8: Dehn twist represented by a braid.",
+          "bbox": [
+            207.96,
+            252.56,
+            403.32,
+            262.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the braid as a branching set of the knot complement (see Figure 8). We obtain",
+          "bbox": [
+            133.77,
+            283.29,
+            477.52,
+            293.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "again the quantization of the electric charge as the number of Dehn twists.",
+          "bbox": [
+            133.77,
+            295.25,
+            460.74,
+            305.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "However, more is true: the isotopy classes of the boundary determine the",
+          "bbox": [
+            148.71,
+            307.2,
+            477.49,
+            317.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "isotopy classes of the hyperbolic knot complement up to a ﬁnite subgroup [59].",
+          "bbox": [
+            133.77,
+            319.16,
+            477.52,
+            329.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The mapping class group MCG(C(K)) consists of a disjoint union of isotopy",
+          "bbox": [
+            133.77,
+            331.11,
+            477.51,
+            341.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "classes of framings, i.e., trivializations of the tangent bundle TC(K) seen as",
+          "bbox": [
+            133.77,
+            343.07,
+            477.47,
+            353.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "sections of the frame bundle (SO(3) principal bundle) up to homotopy. There-",
+          "bbox": [
+            133.77,
+            355.02,
+            477.52,
+            364.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "fore, the change of the number of Dehn twists at the boundary induces a change",
+          "bbox": [
+            133.77,
+            366.98,
+            477.53,
+            376.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of the framing for the knot complement. However, there is also a direct way",
+          "bbox": [
+            133.77,
+            378.93,
+            477.5,
+            388.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "using obstruction theory. In [62], we described the quantization of the electric",
+          "bbox": [
+            133.77,
+            390.89,
+            477.52,
+            400.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "charge by using exotic smoothness as a substitute for a magnetic monopole. A",
+          "bbox": [
+            133.77,
+            402.84,
+            477.49,
+            412.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "magnetic monopole is a substitute for an element in the cohomology H2(S2, Z)",
+          "bbox": [
+            133.77,
+            412.62,
+            477.48,
+            424.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "leading to the quantization of the electric charge",
+          "bbox": [
+            133.77,
+            426.75,
+            345.83,
+            436.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Qm · Qe = cℏ",
+          "bbox": [
+            253.24,
+            442.97,
+            312.2,
+            463.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2 · n, n ∈Z",
+          "bbox": [
+            304.86,
+            449.71,
+            358.02,
+            468.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "for the magnetic charge Qm and for the electric charge Qe. Using the canonical",
+          "bbox": [
+            133.77,
+            475.23,
+            477.49,
+            486.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "isomorphism",
+          "bbox": [
+            133.77,
+            487.19,
+            188.7,
+            497.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "H2(S2, Z) ≃H3(S3, Z),",
+          "bbox": [
+            254.07,
+            496.97,
+            357.18,
+            509.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "we can transform the monopole class (as ﬁrst Chern class of a complex line",
+          "bbox": [
+            133.77,
+            516.26,
+            477.48,
+            526.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "bundle) into a class in H3(S3, Z).",
+          "bbox": [
+            133.77,
+            526.04,
+            286.21,
+            538.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Now, let P be a principal SO(3) bundle",
+          "bbox": [
+            294.31,
+            528.21,
+            477.49,
+            538.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "over S3, called the frame bundle. The obstruction for a section in this bun-",
+          "bbox": [
+            133.77,
+            538.89,
+            477.53,
+            550.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "dle lies at H4(S3, π3(SO(3))) = 0, where the vanishing of the cocycle guar-",
+          "bbox": [
+            133.77,
+            550.84,
+            477.5,
+            562.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "antees the existence.",
+          "bbox": [
+            133.77,
+            564.08,
+            227.08,
+            574.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The number of sections is given by the elements in",
+          "bbox": [
+            237.65,
+            564.08,
+            477.47,
+            574.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "H3(S3, π3(SO(3))) = H3(S3, Z) using π3(SO(3)) = Z. By Hodge duality, we",
+          "bbox": [
+            133.77,
+            573.86,
+            477.5,
+            586.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "obtain the same line of argumentation for the class ∗F getting the electric charge",
+          "bbox": [
+            133.77,
+            587.86,
+            477.48,
+            597.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(using also the quantization condition). The class in H3(S3, Z) can be related",
+          "bbox": [
+            133.77,
+            597.77,
+            477.48,
+            609.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "to a relative class in the 4-manifold S3 × [0, 1], i.e.,",
+          "bbox": [
+            133.77,
+            608.16,
+            356.22,
+            621.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "H3(S3, Z) ≃H4(S3 × [0, 1], S3 × ∂[0, 1], Z)",
+          "bbox": [
+            212.64,
+            628.21,
+            398.61,
+            642.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "called the relative Pontrjagin class p1. Now, we extend the whole discussion to",
+          "bbox": [
+            133.77,
+            653.01,
+            477.48,
+            663.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "an arbitrary 3-manifold Σ, which we identify with Σ = C(K)∪(D2 ×S1). Using",
+          "bbox": [
+            133.77,
+            661.22,
+            477.48,
+            674.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "25",
+          "bbox": [
+            300.64,
+            694.85,
+            310.61,
+            704.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

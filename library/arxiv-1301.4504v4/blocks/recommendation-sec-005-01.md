@@ -1,0 +1,1 @@
+We will phrase the discussion in terms of Charlie's Hilbert space, since for the moment we are following AMPS and granting that Charlie and Alice must agree on the density matrix of $\mathcal{H}_B\otimes \mathcal{H}_R$.

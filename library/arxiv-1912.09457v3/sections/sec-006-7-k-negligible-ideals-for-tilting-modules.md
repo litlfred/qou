@@ -7,10 +7,11 @@ section_number: 7
 pages: 17-22
 source_pdf: 1912.09457v3.pdf
 source_sha256: c00b3801060fc3cc
-doc_brief: "GENERALIZED NEGLIGIBLE MORPHISMS AND THEIR TENSOR IDEALS — We introduce a generalization of the notion of a negligible morphism and study the associated tensor ideals and thick id eals."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.994
-latex_coverage_ratio: 0.989
+latex_prose_ratio: 0.953
+latex_coverage_ratio: 0.974
+doc_brief: "GENERALIZED NEGLIGIBLE MORPHISMS AND THEIR TENSOR IDEALS — We introduce a generalization of the notion of a negligible morphism and study the associated tensor ideals and thick ideals."
 ---
 []{#sec:tilting-eval label="sec:tilting-eval"}
 

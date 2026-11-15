@@ -1,0 +1,1 @@
+(Strictly speaking the conjectures are formulated only for motives with coefﬁcients in Q, but the extension to general E is immediate.) We shall apply the conjectures of [Coates 1989] to the motive M = MAs(5)(1).

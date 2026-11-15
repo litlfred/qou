@@ -2,25 +2,40 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-0409393v1",
  "source_sha256": "2107d961f6065539",
- "brief": "ALGEBRAIC CONSTRUCTION OF THE STOKES SHEAF FOR IRREGULAR LINEAR q-DIFFERENCE EQUATIONS Jacques Sauloy — — The local analytic classiﬁcation of irregular linear q-diﬀerence equa- tions has recently",
- "extended": "**ALGEBRAIC CONSTRUCTION OF THE STOKES SHEAF FOR IRREGULAR LINEAR q-DIFFERENCE EQUATIONS Jacques Sauloy**\n\n26 pp, 3 sections.\n\n**Abstract.** — The local analytic classiﬁcation of irregular linear q-diﬀerence equa- tions has recently been obtained by J.-P. Ramis, J. Sauloy an d C. Zhang. Their description involves a q-analog of the Stokes sheaf and theorems of Malgrange-Sibuy a type and is based on a discrete summation process due to C. Zha ng. W e show here another road to some of these results by algebraic means and w e describe the q-Gevrey devissage of the q-Stokes sheaf by holomorphic vector bundles over an ellipti c curve. R´ esum´ e(Construction alg´ ebrique du faisceau de Stokes pour les ´ equations aux q-diﬀ´ erences lin´ eaires irr´ eguli` eres) La classiﬁcation analytique locale des ´ equations aux q-diﬀ´ erences lin´ eaires irr´ eguli` eres a ´ et´ e r´ ecemment r´ ealis´ ee par J.-P. Ramis, J. Sauloy et C. Zhang.\n\n**Outline.** 1 Introduction and general conventions; 3 Algebraic summation; References",
+ "brief": "ALGEBRAIC CONSTRUCTION OF THE STOKES SHEAF FOR IRREGULAR LINEAR q-DIFFERENCE EQUATIONS — — The local analytic classiﬁcation of irregular linear q-diﬀerence equa- tions has recently been obtained by",
+ "extended": "**ALGEBRAIC CONSTRUCTION OF THE STOKES SHEAF FOR IRREGULAR LINEAR q-DIFFERENCE EQUATIONS**\n\n*Jacques Sauloy*\n\n26 pp, 6 sections.\n\n**Abstract.** — The local analytic classiﬁcation of irregular linear q-diﬀerence equa- tions has recently been obtained by J.-P. Ramis, J. Sauloy and C. Zhang. Their description involves a q-analog of the Stokes sheaf and theorems of Malgrange-Sibuya type and is based on a discrete summation process due to C. Zhang. We show here another road to some of these results by algebraic means and we describe the q-Gevrey devissage of the q-Stokes sheaf by holomorphic vector bundles over an elliptic curve. R´esum´e (Construction alg´ebrique du faisceau de Stokes pour les ´equations aux q-diﬀ´erences lin´eaires irr´eguli`eres) La classiﬁcation analytique locale des ´equations aux q-diﬀ´erences lin´eaires irr´eguli`eres a ´et´e r´ecemment r´ealis´ee par J.-P. Ramis, J. Sauloy et C. Zhang.\n\n**Outline.** Front matter; 1 Introduction and general conventions; 2 Local analytic classification; 3 Algebraic summation; 4 The q-Gevrey filtration on the Stokes sheaf; References",
  "tokens": {
-  "brief": 48,
-  "extended": 256
+  "brief": 49,
+  "extended": 275
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
    "id": "sec-000-1-introduction-and-general-conventions",
    "title": "Introduction and general conventions",
-   "pages": "1-15"
+   "pages": "2-6"
   },
   {
-   "id": "sec-001-3-algebraic-summation",
+   "id": "sec-001-2-local-analytic-classification",
+   "title": "Local analytic classification",
+   "pages": "6-15"
+  },
+  {
+   "id": "sec-002-3-algebraic-summation",
    "title": "Algebraic summation",
-   "pages": "15-25"
+   "pages": "15-22"
   },
   {
-   "id": "sec-002-references",
+   "id": "sec-003-4-the-q-gevrey-filtration-on-the-stokes-sheaf",
+   "title": "The q-Gevrey filtration on the Stokes sheaf",
+   "pages": "22-25"
+  },
+  {
+   "id": "sec-004-references",
    "title": "References",
    "pages": "25-26"
   }

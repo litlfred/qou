@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1608.03227v4
-doc_title: "January 30, 2018"
+doc_title: "Knot homology and sheaves on the Hilbert scheme of points on the plane"
 section_id: sec-009-23-koszul-matrix-factorizations
 section_title: "Koszul matrix factorizations"
 section_number: 2.3
 pages: 11-12
 source_pdf: 1608.03227v4.pdf
 source_sha256: c71128e9a6c35343
-doc_brief: "January 30, 2018 — For each braid β ∈ Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗ × C∗ - equivariant sheaves on the non-commutative nested Hilbert scheme Hilb f ree 1,n ."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.963
-latex_coverage_ratio: 0.972
+latex_coverage_ratio: 0.981
+doc_brief: "Knot homology and sheaves on the Hilbert scheme of points on the plane — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on the"
 ---
 []{#ssec: str eq Kosz label="ssec: str eq Kosz"} In this subsection we set notations for a particular type of matrix factorization that is ubiquitous in our work and in the previous work that relates matrix factorizations to knot invariants [@KR]. We need slightly more general setting than the one from [@KR] because we work with equivariant matrix factorizations. We state some simple properties of these factorizations that are used later in the paper.
 

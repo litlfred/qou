@@ -1,0 +1,45 @@
+we focus on the standard torsion function, and prove that under mild hypothesis on
+
+M the torsion is not constant.
+
+The adjoint torsion
+
+In Chapter 2, we focus on the adjoint torsion, and present the results of the article
+[Ben 16}.
+The Reidemeister adjoint torsion is a topological invariant tor(M, Adop) that we
+
+may interpret as a volume element in the twisted cohomology, that is an element in
+
+3
+Det(H*(M, Ad op)) = QQ) Det(H'(M, Adop))~".
+i=0
+
+Moreover as soon as p and p’ are conjugated representations, there is a natural
+isomorphism Det(H*(M, Adop)) ~ Det(H*(M, Adop’)) that preserves the torsion.
+Hence it is natural to define the Reidemeister adjoint torsion as a section of some
+line bundle over the character variety.
+
+In his Phd thesis [Por97], Joan Porti defined the torsion as an analytic function
+on a Zariski open subset of the character variety depending on a choice of a boun-
+dary curve. Many computations have been performed by J. Dubois and al. [Dub06],
+and the torsion has been extended to the whole character variety in [DG16].
+We will follow in this article the approach of [Mar15], where the Reidemeister tor-
+sion of any 3-manifold with boundary is interpreted as a rational volume form on
+the character variety. More precisely, if the boundary of M is a torus, the torsion
+is a rational volume form on the augmented character variety which is the following
+
+2-fold covering of the character variety :
+
+X(M) = {(p:m(M) - SLo(C), A: (OM) > C*), Trp
+
+m(aM) = A+A7*} // SLo(C).
+
+In this thesis we assume that X(/) is 1-dimensional and reduced, in the sense of
+schemes. The first assumption is guaranteed by the assumption that M is small,
+that is without closed incompressible oriented surfaces not parallel to the boundary.
+Let X be an irreducible component of X(M) containing the character of an irre-
+ducible representation and let Y be its smooth projective model. It is a smooth
+compact curve obtained from X by desingularizing and adding a finite number of
+points at infinity : we call the latter points ideal points of Y and the others are finite
+
+points. We denote by v an element of Y that can be viewed as a valuation on the

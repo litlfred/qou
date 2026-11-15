@@ -1,0 +1,69 @@
+S. Blanes et al. / Physics Reports 470 (2009) 151-238 213
+
+This technique is frequently used in numerical quantum dynamics to compute exp(—itH) Wo over very long times. This can
+be done with m matrix-vector products if the approximation (278) is considered with a sufficiently large truncation index m.
+In fact, the degree m necessary for achieving a specific accuracy depends linearly on the step size t and the spectral radius of
+H [146], and thus an increase of the step size reduces the computational work per unit step. In a practical implementation,
+m can be chosen such that the accuracy is dominated by the round-off error [147]. This approach has two main drawbacks:
+(i) it is not unitary, and therefore the norm is not conserved (although the deviation from unitarity is really small due to its
+extreme accuracy), and (ii) intermediate results are not obtained, since, typically, t is very large.
+
+5.6.3. Krylov space methods
+
+As we have already pointed out, very often what is really required, rather than the exponential of the matrix C itself,
+is the computation of exp(C) applied to a vector. In this situation, evaluating e° is somehow analogous to computing C~!
+to get the solution of the linear system of equations Cx = b for many different b’s: other procedures are clearly far more
+desirable. The computation of e“v can be efficiently done with Krylov subspace methods, in which approximations to the
+solution are obtained from the Krylov spaces spanned by the vectors {v, Cv, C?v, ..., Civ} for some j that is typically small
+compared to the dimension of C [148,149]. The Lanczos method for solving iteratively symmetric eigenvalue problems is of
+this form [150]. If, as before, we let C = —itH, the symmetric Lanczos process recursively generates an orthonormal basis
+
+‘im = [V1 +++ Um] of the mth Krylov subspace K,,(H, u) = span(u, Hu, ..., H™~'u) such that
+
+HVm = Vinkm + [0-+-0 Bm Um41],
+
+where the symmetric tridiagonal m x m matrix Ly» = VIAVin is the orthogonal projection of H onto K,,(H, u). Finally,
+exp(—itH)u © Vin exp(—itLm)VnU
+
+and the matrix exponential exp(—itL) can be computed by diagonalizing Ly, Lm = QnDnQ, as
+
+exp(—itLm) = Qn exp(—itDm)Qn.
+with D,, a diagonal matrix. This iterative process is stopped when
+
+Bm ||(eXP(-itLm))mml]_ < tol
+
+for a fixed tolerance. Very good approximations are often obtained with relatively small values of m, and computable
+error bounds exist for the approximation. This class of schemes generally require @(N) floating point operations in the
+computation of e“v. More details are contained in the references [151-153].
+
+5.6.4. Splitting methods
+
+Frequently, one has to exponentiate a matrix which can be split into several parts which are either solvable or easy to
+deal with. Let us assume for simplicity that C = A+ B, where the computation e‘ is very expensive, but e“ and e® are cheap
+and easy to evaluate. In such circumstances, it makes sense to approximate e®¢ with ¢, a small parameter, by the following
+scheme:
+
+ye = etbmBgeamA .., gebiByraA —_ g&(A+8) 4 @(gPt1) (279)
+
+with appropriate parameters aj, bj. This can be seen as the approximations to the solution at t = e of the equation
+Y’ = (A+ B)Y by a composition of the exact solutions of the equations Y’ = AY and Y’ = BY at timest = aje and
+t = bje, respectively. Two instances of this kind of approximation are given by the well known Lie-Trotter formula
+
+whl! = ee (280)
+and the second order symmetric composition
+ye = @A/2 928 QeA/2 (281)
+
+referred to as Strang splitting, Stormer, Verlet and leap-frog, depending on the particular area where it is used.
+
+Splitting methods have been considered in different contexts: in designing symplectic integrators, for constructing
+volume-preserving algorithms, in the numerical integration of partial differential equations etc. An extensive survey of the
+theory and practice of splitting methods can be found in [154,79,127-129] and references therein.
+
+Splitting methods are particularly useful in geometric numerical integration. Suppose that the matrix C = A+ B resides
+in a Lie algebra g. Then, obviously, exp(C) belongs to the corresponding Lie group , and one is naturally interested in also
+getting approximations in g. In this respect, notice that if A, B € g, then the scheme (279) also provides an approximation
+in g. It is worth noticing that other methods for the approximation of the matrix exponential (e.g., Padé approximants and
+Krylov subspace techniques) are not guaranteed to map elements from g to ¢. Although diagonal Padé approximants map
+the Lie algebra o, to the underlying group, it is possible to show that the only analytic function that maps sl(n) into the
+special linear group SL(n) approximating the exponential function up to a given order, is the exponential itself [155]. In
+consequence, diagonal Padé approximants only provide results in SL(n) if the computation is accurate to machine precision.

@@ -10,7 +10,8 @@ source_sha256: a5097e763dd89d06
 toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.967
-latex_coverage_ratio: 0.876
+latex_coverage_ratio: 0.87
+doc_brief: "Edge universality in Floquet sideband spectra — We show that, for non-interacting fermions under a monochromatic phase drive (Tien– Gordon regime), the outgoing sideband occupations at a sharp Fermi"
 ---
 Let $\hat Y(t)$ denote the Heisenberg operator associated with the measured output signal. Depending on the implementation, $\hat Y(t)$ could be a photocurrent, a microwave voltage, a filtered current, or any other linear transducer output. The simplest (and most common) readout consists of two operations: a rectangular time gate $W(t)=\mathbf{1}_{[t_0-L,\,t_0]}(t)$ that selects the acquisition interval, and multiplication by $e^{-i\omega_0 t}$ to demodulate at the analysis frequency $\omega_0$. The measured complex number is then $$\hat u_0(\omega_0;t_0)
   := \int_{t_0-L}^{t_0} dt\; e^{-i\omega_0 t}\,\hat Y(t).

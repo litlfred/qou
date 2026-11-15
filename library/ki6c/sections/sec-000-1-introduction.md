@@ -1,6 +1,6 @@
 ---
 doc_id: ki6c
-doc_title: "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings Tomotada Ohtsuki and Yoshiyuki Yokota Introduction"
+doc_title: "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
@@ -8,7 +8,9 @@ pages: 1-4
 source_pdf: ki6c.pdf
 source_sha256: b13a73517b349654
 toc_source: inferred
+doc_brief: "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings — We give presentations of the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings."
 ---
+Introduction
 In [12, 13] Kashaev deﬁned the Kashaev invariant ⟨L ⟩N ∈C of a link L for N = 2, 3, · · ·
 by using the quantum dilogarithm. In [14] he conjectured that, for any hyperbolic link L,
 2π
@@ -178,4 +180,3 @@ erties of the notation used in this paper. In Sections 3, 4, 5, we show proofs o
 some lemmas used in Sections 3, 4, 5.
 The authors would like to thank Tudor Dimofte, Kazuo Habiro, Hitoshi Murakami,
 Toshie Takata and Dylan Thurston for helpful comments.
-2

@@ -1,6 +1,6 @@
 ---
 doc_id: ki6c
-doc_title: "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings Tomotada Ohtsuki and Yoshiyuki Yokota Introduction"
+doc_title: "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings"
 section_id: sec-012-42-estimate-of-the-range-of
 section_title: "Estimate of the range of ∆′"
 section_number: 4.2
@@ -8,7 +8,9 @@ pages: 30-33
 source_pdf: ki6c.pdf
 source_sha256: b13a73517b349654
 toc_source: inferred
+doc_brief: "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings — We give presentations of the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings."
 ---
+Estimate of the range of ∆′
 In this section, we calculate the concrete values of the bounds of the inequalities in (53)
 so that they satisfy that ∆−∆′ ⊂(52).
 Putting Λ as in Section 2.2, we have that
@@ -296,4 +298,3 @@ not estimate the error term of the numerical solution of Newton’s method, thou
 above argument is practically useful, since we can guess that such an error term would
 be suﬃciently small for the above purpose. In order to complete the above argument, we
 give a rigorous proof of an estimate of a solution of (58) in Lemma A.3.
-4.3

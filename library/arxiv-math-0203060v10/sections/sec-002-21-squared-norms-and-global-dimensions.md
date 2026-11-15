@@ -7,10 +7,11 @@ section_number: 2.1
 pages: 4-5
 source_pdf: 0203060v10.pdf
 source_sha256: 2ccb480f4bd4a970
-doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in pa rtic- ular, the theory of weak Hopf algebras), we prove a number of g eneral results about fusion categories in"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.981
-latex_coverage_ratio: 0.981
+latex_coverage_ratio: 0.987
+doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in"
 ---
 Let us introduce the notion of the global dimension of a fusion category. First of all, we have the following known result (see e.g., [@O]).
 

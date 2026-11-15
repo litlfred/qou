@@ -1,0 +1,1 @@
+As we shall see when giving a realization of the vector operators, this vector product is related to the commutation relations of the su(2) algebra (when q = 1) and to Witten’s proposal describing the q-deformation of the su(2) algebra [44].

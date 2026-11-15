@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2510.04782v2/sections/sec-015",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Habiro descent for q-de Rham complexes",
+  "pageStart": 48,
+  "pageEnd": 50,
+  "contains": [
+    "library/arxiv-2510.04782v2/blocks/prose-sec-015",
+    "library/arxiv-2510.04782v2/blocks/recommendation-sec-015-01",
+    "library/arxiv-2510.04782v2/blocks/recommendation-sec-015-02",
+    "library/arxiv-2510.04782v2/blocks/recommendation-sec-015-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2510.04782v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2510.04782v2",
+  "provenance": "ingested"
+}

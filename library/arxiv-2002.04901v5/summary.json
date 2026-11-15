@@ -2,29 +2,69 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2002.04901v5",
  "source_sha256": "f1320c4b87229215",
- "brief": "WEAK PROREGULARITY, DERIVED COMPLETION, ADIC FLATNESS — 2 sections: Introduction; Idealistic Derived Completion and",
- "extended": "**WEAK PROREGULARITY, DERIVED COMPLETION, ADIC FLATNESS**\n\n*AND PRISMS*\n\n20 pp, 2 sections.\n\n**Outline.** 0 Introduction; 1 Idealistic Derived Completion and Torsion\n\n**Extracted claims (proposals, not verified).**\n- Theorem 0.2: Let𝐴 be a commutative ring, let𝒂 be a ﬁnite sequence in𝐴, and leta\u0012 𝐴\n- Theorem 0.3: Let 𝐴 be a commutative ring, leta be a weakly proregular ideal in𝐴, and\n- Theorem 0.4: If 𝐴 is a commutative noetherian ring,a is an ideal in𝐴, and b𝑀 is an\n- Theorem 0.5: Let𝐴 be a commutative ring, and let𝑎𝑏 2 𝐴. Assume that𝑎 is a regular\n- Theorem 0.6: Let𝐴 be a commutative ring and leta\u0012 𝐴 be an ideal. The following two\n- Theorem 0.7: Suppose„𝐴𝐼”isabounded 𝑝-adicprism. Thentheideal a :=𝐼‚„𝑝”\u0012𝐴",
+ "brief": "Weak Proregularity, Derived Completion, Adic Flatness, and Prisms — We begin by recalling the role that weak proregularity of an ideal in a commu- tative ring has in derived completion and adic",
+ "extended": "**Weak Proregularity, Derived Completion, Adic Flatness, and Prisms**\n\n*AND PRISMS*\n\n20 pp, 10 sections.\n\n**Abstract.** We begin by recalling the role that weak proregularity of an ideal in a commu- tative ring has in derived completion and adic ﬂatness. We also introduce the new concepts of idealistic and sequential derived completion, and prove a few results about them, includ- ing the fact that these two concepts agree iﬀthe ideal is weakly proregular. Next we study the local nature of weak proregularity, and its behavior w.r.t. ring quotients. These results allow us to prove our main theorem, which states that weak proregularity occurs in the context of bounded prisms. Prisms belong to the new groundbreaking theory of perfectoid rings, developed by Scholze and his collaborators. Since perfectoid ring theory makes heavy use of derived completion and adic ﬂatness, we anticipate that our results shall help simplify and improve some of the more technical aspects of this theory.\n\n**Outline.** Front matter; 0 Introduction; 1 Idealistic Derived Completion and Torsion; 2 Sequential Derived Completion and Torsion; 3 Weak Proregularity: When Idealistic and Sequ; 4 Weak Proregularity and Adic Flatness; 5 Weak Proregularity and Quotient Rings; 6 The Local Nature of Weak Proregularity; 7 Weak Proregularity and Prisms; References",
  "tokens": {
-  "brief": 28,
-  "extended": 179
+  "brief": 48,
+  "extended": 335
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
    "id": "sec-000-0-introduction",
    "title": "Introduction",
-   "pages": "1-5"
+   "pages": "1-4"
   },
   {
    "id": "sec-001-1-idealistic-derived-completion-and-torsion",
    "title": "Idealistic Derived Completion and Torsion",
-   "pages": "5-20"
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-002-2-sequential-derived-completion-and-torsion",
+   "title": "Sequential Derived Completion and Torsion",
+   "pages": "6-10"
+  },
+  {
+   "id": "sec-003-3-weak-proregularity-when-idealistic-and-sequent",
+   "title": "Weak Proregularity: When Idealistic and Sequential Agree",
+   "pages": "10-13"
+  },
+  {
+   "id": "sec-004-4-weak-proregularity-and-adic-flatness",
+   "title": "Weak Proregularity and Adic Flatness",
+   "pages": "13-15"
+  },
+  {
+   "id": "sec-005-5-weak-proregularity-and-quotient-rings",
+   "title": "Weak Proregularity and Quotient Rings",
+   "pages": "15-18"
+  },
+  {
+   "id": "sec-006-6-the-local-nature-of-weak-proregularity",
+   "title": "The Local Nature of Weak Proregularity",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-007-7-weak-proregularity-and-prisms",
+   "title": "Weak Proregularity and Prisms",
+   "pages": "19-20"
+  },
+  {
+   "id": "sec-008-references",
+   "title": "References",
+   "pages": "20-20"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles",
-   "candidates"
+   "abstract",
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

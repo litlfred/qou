@@ -1,0 +1,45 @@
+Section 3.1 Partition Function
+
+Definition 3.1.3 Given a G-BSFC D and an ordered triangulation T of a closed ori-
+ented 4-manifold M, the partition function Zp(M;T) of the pair (M,T) is defined by:
+
+(D/\G\)IT( TL dy) Te @ Ze” (e))
+geT? oeT!
+
+Dyn :
+
+Zp(M;T) = >>
+
+F=(9,f)
+
+(3.1)
+where F' runs through all D-colorings of T.
+
+Theorem 3.1.4 (Main Theorem) The partition function Zp(M;T) is an invariant
+
+of closed oriented 4-manifolds.
+
+To prove the Main Theorem, we need to show that Zp(M;7T) is independent on:
+1. the choice of representatives for each triangle color,
+
+2. the ordering of vertices of a triangulation,
+
+3. the choice of a triangulation.
+
+These will be proved in Section [4-1] Section [4-2] and Section [4-4] respectively.
+
+Below we derive two other formulas for the partition function, which will be used in
+the invariance proof.
+
+For any two objects X,Y, the non-degenerate pairing ( , )x,y induces canonical
+isomorphisms Hom(X, Y) ~ Hom(Y, X)* and Hom(Y, X) ~ Hom(X,Y)*. Define (, )xy
+
+to be the dual map of (, )xy:
+
+(, ky: C —> Hom(X,Y)* ® Hom(Y, X)* ~ Hom(Y, X) ® Hom(X,Y),
+
+and let xy =(, )xy(1).
+If {uj}ier and {w;}jer are a basis of Hom(X,Y) and Hom(Y,X), respectively, such
+
+that (v;,w,;) = dj; for some non-zero numbers dj, then it is direct to check that dx, =
+38

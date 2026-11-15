@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9408099v1
-doc_title: "arXiv:hep-th/9408099v1 17 Aug 1994"
+doc_title: "Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD"
 section_id: sec-012-11-preliminaries-for-determining-the-metric
 section_title: "Preliminaries for determining the metric"
 section_number: 11
@@ -8,6 +8,7 @@ pages: 37-39
 source_pdf: 9408099v1.pdf
 source_sha256: b534faddd2e3aa71
 toc_source: inferred
+doc_brief: "Seiberg–Witten, Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD (1994) — exact metric on the moduli space of quantum vacua and exact stable-state spectrum for SU(2) with…"
 ---
 In the remainder of this paper we will ﬁnd the exact solution for the low energy eﬀective
 action, metric on moduli space, and particle masses for the various theories. The basic

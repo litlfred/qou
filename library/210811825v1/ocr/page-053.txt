@@ -1,0 +1,46 @@
+In Chapter 3 and Chapter 4, we look at the irreducible representations of the isometry
+groups of specific surfaces. We use these to investigate the rthpnormal basis of eigen-
+functions of L?([ \ H); our first step towards achieving this is the Peter-Weyl theorem.
+
+Theorem 2.41 (Peter-Weyl Theorem, taken from [49]) Let H be the Hilbert space
+of square integrable functions over G, that is L?(G). Let p be a unitary representation of
+G that acts on H. as
+
+lh) f(g) = f(h~*g).
+
+Then L?(G) decomposes as an orthogonal direct sum of unitary irreducible representations
+
+of G, where the multiplicity of a representation is equal to its degree. We have
+
+L(G) _ @ ee tin),
+
+p
+
+where the sum runs over the total spaces E, of the representations p.
+Next, we have the following property of the Laplacian:
+
+Lemma 2.42 The Laplace operator commutes with the group of isometries of the surface
+(see, for example, [14]).
+
+For a isometry ¢: S > S of a compact Riemann surface S, and an eigenfunction of
+
+the Laplacian f : S > R with eigenvalue A, this means
+A(fod) = (Af)oo=(OAf)oo=A(fo 4).
+Consider the eigenspaces of the Laplacian
+&; = E(S) = {$) € L?(8)| Ad; = didi}
+
+We can use the Peter-Weyl theorem along with the invariance of the Laplacian under
+isometries to decompose the eigenspace €; as a direct sum of eigenspaces of irreducible
+representations (these can appear more than once). Huber showed that for every irre-
+ducible reprefentation, there are infinitely many eigenspaces in which this representation
+
+is involved [35].
+
+2.5 Selberg’s trace formula
+
+We start by following the basic presentation of the trace formula given in [10, s¢s4 IL
+Recall that a hyperbolic surface S can be represented as a quotient of the hyperbolic
+
+plane by a Fuchsian group that only has hyperbolic elements (with the exception of the
+
+43

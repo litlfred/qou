@@ -1,0 +1,49 @@
+110 Chapter 5 — A family of surfaces
+
+between the basis vectors. The discriminant of a lattice is defined as the
+determinant of its Gram matrix with respect to any chosen basis, and the
+lattice is called unimodular if its discriminant is +1. In what follows we
+consider the lattice
+
+O11
+A = Z* with Gram matrix (| ol ')
+1110
+
+and the standard hyperbolic lattice U = Z? with Gram matrix (? b). Note
+that both A and U are even lattices and that U is unimodular whereas a direct
+calculation shows that A has discriminant —3. This being said, consider the
+even lattices
+
+K=U"@A and L = UP @Eg(-1).
+
+In terms of these two lattices, the main result of the present section can be
+formulated as follows.
+
+PROPOSITION 5.12. There exists an isomorphism H?(Y,Z) ~ L? @U°
+of lattices which gives a commutative diagram
+
+H?(X,Z) ———> H?(Y,Z)+ ———~ H?(Y,Z)
+
+|= | ls |=
+
+(diag,0) R ® y9
+
+for some lattice embedding i: K > L with orthocomplement kis E6(—1).
+
+To complete the picture, we remark that with the above identifications
+it follows that on the lattice L? @ U? the involution o : Y —> Y acts by the
+formula
+
+0(Ay,A2,u) = (Ao, 1, —u) for uéU? and Ay, A. EL.
+
+Indeed, looking at the eigenspace decomposition over the rational numbers
+one sees that the involution o must act by —1 on the orthocomplement of
+the o-invariant part H?(Y,Z)+ inside H?(Y,Z).
+
+The proof of proposition 5.12 will occupy the rest of this section and
+will also involve a study of the intersection form on H?(Y+,Z). Note that
+since this latter cohomology group contains torsion, it is not a lattice in the
+above sense. So let us introduce the following notations. For any smooth
+complex projective surface S let
+
+Ls = H?(S,Z)/Torsion

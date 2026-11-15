@@ -10,7 +10,8 @@ source_sha256: 0ccaeeabd8de6b5f
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.98
-latex_coverage_ratio: 0.596
+latex_coverage_ratio: 0.602
+doc_brief: "Integer Polynomial Optimization in Fixed Dimension — 5 sections: Front matter; Introduction; Computational Complexity Bounds"
 ---
 Now, we wish to discuss extensions of Theorem [\[main\]](#main){reference-type="ref" reference="main"} to the mixed integer scenario. If some of the variables are allowed to be continuous then we can describe the task as $$\hbox{maximize} \ f(x,y) \ \hbox{subject to} \ \{ (x,y) | Ax+By \leq
 b, \ \hbox{with} \ x_i \in \mathbb Z\ \hbox{and} \ y_i \in \mathbb R\}.$$ Consider the sequence of integer polynomial optimization problems $\hbox{optimize} \ f(x,\frac{y}{n}) \ \hbox{subject to}\ (x,y) \in

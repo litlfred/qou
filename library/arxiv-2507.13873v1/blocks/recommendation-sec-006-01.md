@@ -1,0 +1,1 @@
+For the probe approximation to be successful, the matter operator should be light enough not to disturb the saddle of the background geometry [\[firstlaw\]](#firstlaw){reference-type="eqref" reference="firstlaw"}.

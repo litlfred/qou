@@ -1,0 +1,1 @@
+(For details, see [250].) The ZIMO(M,£) should be defined such that a suitable r(M,€) can be recovered from Z!M°(M,€) in an appropriate sense, and such that the coefficients of ZMO(M, ,€) are “finite type

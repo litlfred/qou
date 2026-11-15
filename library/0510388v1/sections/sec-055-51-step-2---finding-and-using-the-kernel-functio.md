@@ -1,6 +1,6 @@
 ---
 doc_id: 0510388v1
-doc_title: "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE Dennis DeTurck and Herman Gluck"
+doc_title: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space"
 section_id: sec-055-51-step-2---finding-and-using-the-kernel-functio
 section_title: "Step 2 - Finding and using the kernel function ϕ3 ."
 section_number: 51
@@ -8,6 +8,7 @@ pages: 95-98
 source_pdf: 0510388v1.pdf
 source_sha256: c83c0f6a2eaa74f3
 toc_source: inferred
+doc_brief: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space — 64 sections: Front matter; ORGANIZATION; STATEMENTS OF RESULTS"
 ---
 Continuing our calculation of the Laplacian of  A(V, ϕ2)(y) ,  we have 
        
@@ -44,7 +45,6 @@ and hence
                               =  V(y) . 
  
  
-96 
  
  
  
@@ -83,7 +83,6 @@ and then add these solutions together to get
  
  
  
-97 
  
  
  
@@ -127,8 +126,4 @@ Putting this all together, we have that
  
 thanks to one cancellation. 
  
-This completes the proof of Theorem 3, formula (3) for the Green's operator in  H3 . 
-  
- 
- 
-98
+This completes the proof of Theorem 3, formula (3) for the Green's operator in  H3 .

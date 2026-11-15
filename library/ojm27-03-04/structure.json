@@ -8,14 +8,14 @@
   "pages": 17,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:26Z",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": "10.18910/11468",
-  "title": "Title Hyperbolic 3-manifolds with totally geodesic boundary Author(s)",
+  "title": "Hyperbolic 3-manifolds with totally geodesic boundary",
   "authors_raw": "Fujii, Michihiko",
   "title_lines": [
    "Title",
@@ -36,7 +36,8 @@
    "text": "Title Hyperbolic 3-manifolds with totally geodesic boundary Author(s)",
    "corroborated_by": [],
    "browser_print": false
-  }
+  },
+  "title_prev": "Title Hyperbolic 3-manifolds with totally geodesic boundary Author(s)"
  },
  "toc": [
   {
@@ -167,7 +168,7 @@
   {
    "kind": "figure",
    "number": "2.2",
-   "title": "Glue B* to M', G' to N* and E' to L* so that arrows are matched (\u03b9'=l, 3, 5, \u2022\u2022\u2022)",
+   "title": "Glue B* to M', G' to N* and E' to L* so that arrows are matched (ι'=l, 3, 5, •••)",
    "page": 8,
    "confidence": 0.9,
    "evidence": [
@@ -180,7 +181,7 @@
   {
    "kind": "figure",
    "number": "2.3",
-   "title": "Glue B> to M>, G' to JV' and E' to V so that arrows are matched (i=2,4, 6, \u2022\u2022\u2022)\u2022",
+   "title": "Glue B> to M>, G' to JV' and E' to V so that arrows are matched (i=2,4, 6, •••)•",
    "page": 8,
    "confidence": 0.9,
    "evidence": [
@@ -232,7 +233,7 @@
   {
    "kind": "figure",
    "number": "3.2",
-   "title": "Glue # to M' G' to N' and \u00ab< to I\u03bb",
+   "title": "Glue # to M' G' to N' and «< to Iλ",
    "page": 12,
    "confidence": 0.9,
    "evidence": [
@@ -493,6 +494,7 @@
    "items": []
   },
   "sections": 5,
-  "chars_total": 17785
+  "chars_total": 17785,
+  "furniture_lines_stripped": 0
  }
 }

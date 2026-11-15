@@ -1,0 +1,712 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-1611.03697v5",
+  "pages": [
+    {
+      "page": 6,
+      "rotation": 0,
+      "drawings": 19,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1. The ray diagram associated to a BPS structure."
+      ],
+      "labels": [
+        {
+          "text": "6",
+          "bbox": [
+            56.64,
+            34.02,
+            61.24,
+            42.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "TOM BRIDGELAND",
+          "bbox": [
+            261.48,
+            34.02,
+            350.72,
+            42.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "Z(γ3)",
+          "bbox": [
+            283.31,
+            60.58,
+            304.72,
+            69.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR6",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "Z(γ2)",
+          "bbox": [
+            260.06,
+            83.26,
+            281.47,
+            91.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR6",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "Z(γ1)",
+          "bbox": [
+            346.8,
+            83.26,
+            368.21,
+            91.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR6",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "−Z(γ1)",
+          "bbox": [
+            243.73,
+            128.61,
+            271.74,
+            137.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR6",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "−Z(γ2)",
+          "bbox": [
+            330.47,
+            128.61,
+            358.48,
+            137.16
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI8",
+            "CMR6",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "−Z(γ3)",
+          "bbox": [
+            307.23,
+            151.29,
+            335.24,
+            159.84
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI8",
+            "CMR6",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "Figure 1. The ray diagram associated to a BPS structure.",
+          "bbox": [
+            149.64,
+            175.03,
+            456.96,
+            187.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "rays form a picture as in Figure 1, which we call the ray diagram of the BPS structure. In general",
+          "bbox": [
+            56.64,
+            206.07,
+            555.24,
+            218.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "there will be countably many active rays. We deﬁne the height of an active ray ℓ⊂C∗to be",
+          "bbox": [
+            56.64,
+            225.74,
+            531.28,
+            247.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "\b",
+          "bbox": [
+            204.48,
+            255.72,
+            211.45,
+            291.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "H(ℓ) = inf",
+          "bbox": [
+            147.96,
+            256.95,
+            201.69,
+            268.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "|Z(γ)| : γ ∈Γ such that Z(γ) ∈ℓand Ω(γ)̸ = 0",
+          "bbox": [
+            211.44,
+            256.95,
+            453.81,
+            277.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            460.8,
+            256.95,
+            464.04,
+            268.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Non-active rays are considered to have inﬁnite height. The support property ensures that for any",
+          "bbox": [
+            56.64,
+            286.83,
+            555.65,
+            298.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "H > 0 there are only ﬁnitely many rays of height < H.",
+          "bbox": [
+            56.64,
+            307.71,
+            339.0,
+            319.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Associated to any ray ℓ⊂C∗is a formal sum of twisted characters",
+          "bbox": [
+            68.64,
+            327.38,
+            410.69,
+            349.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            293.4,
+            358.08,
+            310.66,
+            393.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "DT(ℓ) = −",
+          "bbox": [
+            230.4,
+            360.99,
+            286.85,
+            381.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "DT(γ) · xγ.",
+          "bbox": [
+            326.52,
+            360.99,
+            383.52,
+            381.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(8)",
+          "bbox": [
+            540.36,
+            360.99,
+            555.34,
+            372.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "γ∈Γ:Z(γ)∈ℓ",
+          "bbox": [
+            279.48,
+            378.5,
+            324.34,
+            386.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Naively, we would like to view DT(ℓ) as a well-deﬁned holomorphic function on the twisted torus",
+          "bbox": [
+            56.64,
+            405.03,
+            555.29,
+            417.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "T, and consider the associated time 1 Hamiltonian ﬂow as a Poisson automorphism",
+          "bbox": [
+            56.64,
+            426.07,
+            483.98,
+            438.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "MSBM10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "S(ℓ) ∈Aut(T).",
+          "bbox": [
+            268.32,
+            454.75,
+            343.68,
+            475.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "We refer to this as the BPS automorphism associated to the ray ℓ; making good sense of it is one",
+          "bbox": [
+            56.04,
+            483.99,
+            555.28,
+            495.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "of the main technical problems we shall need to deal with.",
+          "bbox": [
+            56.64,
+            504.99,
+            355.56,
+            516.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2.6. Further terminology. In this section we gather some terminology for describing BPS struc-",
+          "bbox": [
+            56.64,
+            536.83,
+            557.1,
+            549.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "tures of various special kinds.",
+          "bbox": [
+            56.64,
+            558.03,
+            207.6,
+            570.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Deﬁnition 2.2. We say that a BPS structure (Z, Γ, Ω) is",
+          "bbox": [
+            56.64,
+            587.59,
+            352.97,
+            599.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12",
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(a) ﬁnite, if there are only ﬁnitely many active classes γ ∈Γ;",
+          "bbox": [
+            74.52,
+            613.71,
+            387.6,
+            634.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(b) ray-ﬁnite, if for any ray ℓ⊂C∗there are only ﬁnitely many active classes γ ∈Γ for which",
+          "bbox": [
+            73.8,
+            634.7,
+            555.13,
+            656.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Z(γ) ∈ℓ;",
+          "bbox": [
+            94.44,
+            658.35,
+            141.96,
+            678.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(c) convergent, if for some R > 0",
+          "bbox": [
+            75.12,
+            680.67,
+            244.77,
+            692.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "|Ω(γ)| · e−R|Z(γ)| < ∞.",
+          "bbox": [
+            260.64,
+            708.63,
+            372.6,
+            734.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            241.44,
+            710.64,
+            258.7,
+            746.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(9)",
+          "bbox": [
+            540.36,
+            713.55,
+            555.34,
+            725.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "γ∈Γ",
+          "bbox": [
+            242.16,
+            730.58,
+            257.88,
+            738.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        }
+      ]
+    }
+  ]
+}

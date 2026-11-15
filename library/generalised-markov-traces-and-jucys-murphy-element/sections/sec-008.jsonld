@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/generalised-markov-traces-and-jucys-murphy-element/sections/sec-008",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Markov traces via Jucys-Murphy elements",
+  "pageStart": 5,
+  "pageEnd": 6,
+  "contains": [
+    "library/generalised-markov-traces-and-jucys-murphy-element/blocks/prose-sec-008",
+    "library/generalised-markov-traces-and-jucys-murphy-element/blocks/recommendation-sec-008-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/generalised-markov-traces-and-jucys-murphy-element",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/generalised-markov-traces-and-jucys-murphy-element",
+  "provenance": "ingested"
+}

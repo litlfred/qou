@@ -10,7 +10,8 @@ source_sha256: d53fc4eefa070ba3
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.963
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.997
+doc_brief: "Poisson - Random Matrix transition in the QCD Dirac spectrum — 12 sections: Front matter; Introduction; Simulation details"
 ---
 The spectrum of the QCD quark Dirac operator is a quantity not directly accessible by experiments but it contains essential physical information concerning the behavior of strongly interacting systems. The most well-known example of that is the Banks-Casher relation implying that a non-vanishing Dirac spectral density at zero indicates the spontaneous breaking of chiral symmetry [@Banks:1979yr]. Another prominent example is that in the intermediate volume so called "epsilon-regime" the lowest part of the Dirac spectrum is described by Random Matrix Theory (RMT) which makes it possible to extract the low-energy constants of chiral perturbation theory from the eigenvalues of the Dirac operator (see e.g. [@Verbaarschot:2000dy] and references therein). More recently the Dirac spectrum has also been used to determine the mass anomalous dimension of QCD-like theories with many fermions [@DeGrand:2009et]-[@Cheng:2011ic].
 

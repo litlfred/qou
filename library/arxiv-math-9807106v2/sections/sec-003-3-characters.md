@@ -8,6 +8,7 @@ pages: 10-17
 source_pdf: 9807106v2.pdf
 source_sha256: e3cd089e3df5d71f
 toc_source: inferred
+doc_brief: "An Extension of the Character Ring of sl(3) and Its Quantisation P. Furlan∗,† — We construct a commutative ring with identity which extends the ring of characters of ﬁnite dimensional representations"
 ---
 Let us start by recalling the supports and characters of ordinary Verma and ﬁnite
 dimensional modules of g. The latter characters are elements of the group ring Z[tP ] of

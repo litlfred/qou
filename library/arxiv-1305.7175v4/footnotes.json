@@ -1,0 +1,726 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1305.7175v4",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p003-1",
+   "page": 3,
+   "mark": "1",
+   "text": "We will also need from [DG] the constructionof continuouspushforward functors for all maps of QCA stacks (such as the non-representable projection πX : X →pt from a stack) and their base-change property.",
+   "marks": [
+    {
+     "page": 3,
+     "context": "GivenaderivedstackπX:X→Spec k,wedenotebyπLX:LX=Map(S"
+    },
+    {
+     "page": 3,
+     "context": "thesheaftheory."
+    }
+   ],
+   "block": "library/arxiv-1305.7175v4/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p005-1",
+   "page": 5,
+   "mark": "2",
+   "text": "i.e.,weliftftoanidentiﬁcationZ≃X×YWofcorrespondencesfromXtoY",
+   "marks": [
+    {
+     "page": 5,
+     "context": "•Foramapf:(X, Z)→(Y, W)ofstackswithself-correspondences"
+    }
+   ],
+   "block": "library/arxiv-1305.7175v4/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p010-1",
+   "page": 10,
+   "mark": "3",
+   "text": "Likewise,ifwewishtomakeaspacen-dualizableforanynwemaysimplyconsideritasanobjectof a higher correspondence category as in Remark 2.9, since En-(co)algebras are n + 1-dualizable objects of the corresponding Morita category. In other words, a space X deﬁnes a topological ﬁeld theory of any dimension valued in the appropriate correspondence category.",
+   "marks": [
+    {
+     "page": 10,
+     "context": "correspondence."
+    }
+   ],
+   "block": "library/arxiv-1305.7175v4/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p012-1",
+   "page": 12,
+   "mark": "4",
+   "text": "Indeedatypicalmechanismtoconstruct“Lagrangian”ﬁeldtheoriesisasthecompositionofasheaftheory with a “classical ﬁeld theory” as in [FHLT, H1], a symmetric monoidal functor from a cobordism category to a correspondence category.",
+   "marks": [
+    {
+     "page": 12,
+     "context": "topologicalﬁeldtheoryisarepresentationofacobordismcategory."
+    }
+   ],
+   "block": "library/arxiv-1305.7175v4/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p016-1",
+   "page": 16,
+   "mark": "5",
+   "text": "Onecanunderstandtheabovetwooperationsasforminganadjointpair(i, f).",
+   "marks": [
+    {
+     "page": 16,
+     "context": "noidal (∞, 2)-category i(C) with all 2-morphisms invertible."
+    }
+   ],
+   "block": "library/arxiv-1305.7175v4/blocks/prose-sec-007"
+  },
+  {
+   "id": "fn-p031-1",
+   "page": 31,
+   "mark": "6",
+   "text": "OnecanalsocheckdirectlythatthecyclicstructureonthecyclicbarconstructionofthedgcategoryS(X) is induced by the cyclic structure of the loop space LX under the identiﬁcation ω(LX) ≃dim(S(X)).",
+   "marks": [
+    {
+     "page": 31,
+     "context": "er, weidentiﬁedtheS1-actiononthedimensionLXwithlooprotation."
+    }
+   ],
+   "block": "library/arxiv-1305.7175v4/blocks/prose-sec-020"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p035-1",
+   "page": 35,
+   "mark": "7",
+   "text": "WenotethatforQ!the“renormalized”pushforwardisthestandardpushforwardfunctor,whileforDit diﬀers for non-safe objects from the more familiar, but discontinuous, de Rham pushforward.",
+   "block": "library/arxiv-1305.7175v4/blocks/prose-sec-022"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 3,
+   "mark": "g",
+   "context": "ﬁxedpointlocusX"
+  },
+  {
+   "page": 3,
+   "mark": "g",
+   "context": "ﬁxedpointlocusXg⊂XispreciselythederivedﬁberX"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "XOSpec"
+  },
+  {
+   "page": 4,
+   "mark": "g",
+   "context": "[M]|X"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "pothesis[L3]istheexistenceofanS"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "themorphismdim(f∗)isS"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "emorphismdim(f∗)isS1-equivariant,andhencethecharacter[V ]isS"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "istheHochschildchaincomplexdim(A) = HH∗(A).TheS"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": " structure on HH∗(A), so that in particular, the localized S"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "1dgCatk= dgV ect"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "LX= XS"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "emark2.11.AlloftheobjectsandmapsofthepropositionhavenaturalS"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "ensions.OnecancheckthattheidentiﬁcationsofthepropositionareS"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "isthetotalspaceoftheshiftedtangentcomplex.TheactionmapoftheS"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": " inertia stack IX= {x ∈X, γ∈Aut(x)}. The action map of the S"
+  },
+  {
+   "page": 11,
+   "mark": "g",
+   "context": "actingonX.Foranyself-mapg:X→X,letuswriteX"
+  },
+  {
+   "page": 11,
+   "mark": "g",
+   "context": "X"
+  },
+  {
+   "page": 11,
+   "mark": "g",
+   "context": "{g∈G, x ∈X"
+  },
+  {
+   "page": 11,
+   "mark": "g",
+   "context": "equivariantﬁxedpointlocusX"
+  },
+  {
+   "page": 11,
+   "mark": "g",
+   "context": "G= X"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "G= Xg/ZG(g),orinotherwordswehave"
+  },
+  {
+   "page": 11,
+   "mark": "g",
+   "context": "X"
+  },
+  {
+   "page": 12,
+   "mark": "g",
+   "context": "K/K≃{g∈G, x ∈(G/K)"
+  },
+  {
+   "page": 12,
+   "mark": "g",
+   "context": "B/B≃{g∈G, x ∈(G/B)"
+  },
+  {
+   "page": 12,
+   "mark": "f",
+   "context": "Tr(Γg) ≃X"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "kofpresentable"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "(1)TheS-dimensiondim(S(X))=HH∗(S(X))ofanyX∈CorrkisS"
+  },
+  {
+   "page": 14,
+   "mark": "f",
+   "context": "Tr(f∗) ≃ω(X"
+  },
+  {
+   "page": 15,
+   "mark": "f",
+   "context": "or moregenerally, Q-global volumeforms onX"
+  },
+  {
+   "page": 15,
+   "mark": "f",
+   "context": "lly, Q-global volumeforms onXfare thecoherent cohomology O(X"
+  },
+  {
+   "page": 15,
+   "mark": "f",
+   "context": "dR(X),ormoregenerally,D-globalvolumeformsonX"
+  },
+  {
+   "page": 15,
+   "mark": "f",
+   "context": "dR(X"
+  },
+  {
+   "page": 15,
+   "mark": "f",
+   "context": "R(Xf),orequivalentlythoseof theunderlyingunderived schemeofX"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "isidentiﬁed(S"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "ase, the general formalism of this paper should provide an S"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "identiﬁedS"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "nothingmorethantheidentityid"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "k,the(∞, 2)-categoryof"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "k,viathefunctorassigningto"
+  },
+  {
+   "page": 19,
+   "mark": "r",
+   "context": "isamorphismΦ"
+  },
+  {
+   "page": 19,
+   "mark": "r",
+   "context": "Φ"
+  },
+  {
+   "page": 19,
+   "mark": "r",
+   "context": "ǫΦ: Φ ◦Φ"
+  },
+  {
+   "page": 19,
+   "mark": "r",
+   "context": "adjoint(Φ"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "Theorem3.14([L3]).ThereisacanonicalS"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "Remark3.28),andtheexampleisthelowestlevelstructureoftheS"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "ition3.19.LetΨ : A →BdenoteamorphisminAcontwithrightadjointΨ"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "m(Ψ"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "Tr(Ψ"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "Tr(Ψ ◦Ψ"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "Ψ"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "Tr(Ψ"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "Tr(ΨrΨ)≃Tr(ΨΨ"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "idB∨⊗Ψ"
+  },
+  {
+   "page": 22,
+   "mark": "r",
+   "context": "zig-zagisgivenbytheconstructionm(Ψ"
+  },
+  {
+   "page": 22,
+   "mark": "r",
+   "context": "Tr(Ψ"
+  },
+  {
+   "page": 22,
+   "mark": "r",
+   "context": "Tr(Ψr∨◦Ψ∨) ≃Tr((Ψ ◦Ψ"
+  },
+  {
+   "page": 22,
+   "mark": "r",
+   "context": "Tr(Ψr∨◦Ψ∨) ≃Tr((Ψ ◦Ψr)∨) ≃Tr(Ψ ◦Ψ"
+  },
+  {
+   "page": 22,
+   "mark": "r",
+   "context": "Tr(Φ"
+  },
+  {
+   "page": 22,
+   "mark": "r",
+   "context": "Tr(ΦΦ"
+  },
+  {
+   "page": 22,
+   "mark": "r",
+   "context": "Tr(Φ"
+  },
+  {
+   "page": 22,
+   "mark": "r",
+   "context": "Tr(ΦrΨ"
+  },
+  {
+   "page": 22,
+   "mark": "r",
+   "context": "Tr(Ψ"
+  },
+  {
+   "page": 22,
+   "mark": "r",
+   "context": "Tr(ΨrΨΦΦ"
+  },
+  {
+   "page": 22,
+   "mark": "r",
+   "context": "Tr(Ψ"
+  },
+  {
+   "page": 22,
+   "mark": "r",
+   "context": "Tr(ΨΦΦ"
+  },
+  {
+   "page": 22,
+   "mark": "r",
+   "context": "Tr(ΨΦΦrΨ"
+  },
+  {
+   "page": 22,
+   "mark": "r",
+   "context": "Tr(ΨΨ"
+  },
+  {
+   "page": 22,
+   "mark": "r",
+   "context": "ΦΦ"
+  },
+  {
+   "page": 22,
+   "mark": "r",
+   "context": "ΦΦ"
+  },
+  {
+   "page": 22,
+   "mark": "r",
+   "context": "ΦΦr⊗(Ψ"
+  },
+  {
+   "page": 22,
+   "mark": "r",
+   "context": "IdB ⊗(Ψ"
+  },
+  {
+   "page": 22,
+   "mark": "r",
+   "context": "rotateTr(Φ"
+  },
+  {
+   "page": 22,
+   "mark": "r",
+   "context": "rotateTr(Φr◦(IdA ◦Φ))andthenapplytheunitηΨ:IdA→Ψ"
+  },
+  {
+   "page": 23,
+   "mark": "r",
+   "context": "m(Ψ"
+  },
+  {
+   "page": 23,
+   "mark": "r",
+   "context": "Tr(Ψ"
+  },
+  {
+   "page": 23,
+   "mark": "r",
+   "context": "Tr(Ψ"
+  },
+  {
+   "page": 23,
+   "mark": "r",
+   "context": "Tr(ΦBΨΨ"
+  },
+  {
+   "page": 23,
+   "mark": "r",
+   "context": "Ψ"
+  },
+  {
+   "page": 23,
+   "mark": "r",
+   "context": "Ψ"
+  },
+  {
+   "page": 23,
+   "mark": "r",
+   "context": "Tr(Ψ"
+  },
+  {
+   "page": 23,
+   "mark": "r",
+   "context": "Tr(Ψ"
+  },
+  {
+   "page": 23,
+   "mark": "r",
+   "context": "Tr(ΨrΦBΨ)≃Tr(ΦBΨΨ"
+  },
+  {
+   "page": 23,
+   "mark": "r",
+   "context": "idB∨⊗Ψ"
+  },
+  {
+   "page": 23,
+   "mark": "r",
+   "context": "idB∨⊗Ψ"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "LX= XS"
+  },
+  {
+   "page": 25,
+   "mark": "f",
+   "context": "Tr(f) ≃Γ"
+  },
+  {
+   "page": 25,
+   "mark": "f",
+   "context": "Tr(f) ≃Γf|∆X= Γ"
+  },
+  {
+   "page": 25,
+   "mark": "f",
+   "context": "Tr(f) ≃Γf|∆X= Γf×X×XX≃X"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "ic version).The identiﬁcation dim(X) ≃LXabove is naturally S"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "S"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "S1 X= XS"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "for a ﬁxed circle but over themodulispace of circles BDiff(S"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "BS"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "4.2.2]thattheS"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "icstructureontheHochschildchaincomplex)isgivenbytherotationS"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "S"
+  },
+  {
+   "page": 27,
+   "mark": "r",
+   "context": ",withrightadjointF"
+  },
+  {
+   "page": 27,
+   "mark": "r",
+   "context": "F"
+  },
+  {
+   "page": 27,
+   "mark": "r",
+   "context": "Theunitηf: idX= X→F"
+  },
+  {
+   "page": 27,
+   "mark": "r",
+   "context": "Thecounitǫf: FF"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "dim(Y )iscanonicallyidentiﬁedwiththeS"
+  },
+  {
+   "page": 28,
+   "mark": "r",
+   "context": "Proof.DenotebyF"
+  },
+  {
+   "page": 28,
+   "mark": "r",
+   "context": "m(F"
+  },
+  {
+   "page": 28,
+   "mark": "r",
+   "context": "Tr(F"
+  },
+  {
+   "page": 28,
+   "mark": "r",
+   "context": "Tr(FF"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "phismdim(F) : dim(X) →dim(Y )withacanonicalS"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "withthecanonicalgeometricS"
+  },
+  {
+   "page": 29,
+   "mark": "r",
+   "context": "F"
+  },
+  {
+   "page": 29,
+   "mark": "r",
+   "context": "m(F"
+  },
+  {
+   "page": 29,
+   "mark": "r",
+   "context": "Tr(F"
+  },
+  {
+   "page": 29,
+   "mark": "r",
+   "context": "Tr(F"
+  },
+  {
+   "page": 29,
+   "mark": "r",
+   "context": "Tr(FW FF"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "1(−) ≃π"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "1(−)) ≃π"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "(1)TheS-dimensiondim(S(X))=HH∗(S(X))ofanyX∈CorrkisS"
+  },
+  {
+   "page": 31,
+   "mark": "f",
+   "context": "Tr(f∗) ≃ω(X"
+  },
+  {
+   "page": 31,
+   "mark": "k",
+   "context": "1π!≃Lπ∗Lπ!: dgV ect"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "dim(S(X))≃Lπ∗Lπ!(k)≃ω(LX).Furthermore,theS"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "X∈Corrk.Moreover, weidentiﬁedtheS"
+  },
+  {
+   "page": 32,
+   "mark": "q",
+   "context": "f:"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "isidentiﬁed(S"
+  },
+  {
+   "page": 33,
+   "mark": "f",
+   "context": "f:"
+  },
+  {
+   "page": 33,
+   "mark": "k",
+   "context": "kof"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "X"
+  },
+  {
+   "page": 35,
+   "mark": "g",
+   "context": "[M]|X"
+  }
+ ]
+}

@@ -1,0 +1,70 @@
+Invariants in Low-Dimensional Topology and Knot Theory 15
+
+and handlebody techniques, except for our use of the 4-dimensional topological
+Poincaré conjecture.
+‘We also extend some of our results to links.
+
+REFERENCES
+
+{1] Selman Akbulut and Robion Kirby, Mazur manifolds, Michigan Math. J. 26 (1979), no. 3,
+
+259-284.
+
+Selman Akbulut and Kouichi Yasui, Corks, plugs and exotic structures, J. Gékova Geom.
+
+Topol. GGT 2 (2008), 40-82.
+
+(3] Tim D. Cochran, Bridget D. Franklin, Matthew Hedden, and Peter D. Horn, Knot concor-
+dance and homology cobordism, Proceedings of the American Mathematical Society, in press,
+preprint available at arXiv:1102.5730.
+
+(4] Tim D. Cochran, Shelly Harvey, and Constance Leidy, Primary decomposition and the fractal
+
+nature of knot concordance, Math. Annalen (2010) (electronic), DOI:10.1007/s00208-010-
+
+0604-5.
+
+Shelly L. Harvey, Homology cobordism invariants and the Cochran-Orr-Teichner filtration
+
+of the link concordance group, Geom. Topol. 12 (2008), no. 1, 387-430.
+
+Matthew Hedden and Paul Kirk, Instantons, concordance, and Whitehead doubling, arXiv:
+
+1009.5361.
+
+[7] Rob Kirby, Problems in low-dimensional topology, Geometric topology (Athens, GA),
+AMS/IP Stud. Adv. Math., 2 (1993), 35-473, Amer. Math. Soc., Providence, RI, 1997.
+
+(2!
+
+[5
+
+(6
+
+A new construction of the Fukaya—Seidel category
+ANDRIY Haybys
+
+Inspired by Seidel’s construction [2], I present a new construction of the Fukaya
+Seidel category, which is associated to a symplectic Lefschetz fibration.
+
+Let (M,w = dX, J) be an exact symplectic manifold equipped with an al-
+most complex structure. A symplectic Lefschetz fibration in our setting is a J
+holomorphic function f: M7 — C with finitely many non-degenerate critical points
+m4,..., Mz. Then one can conjecturally associate to f an A.-category A; as fol-
+lows (see [1] for details). The objects of Ay are critical points of f. To define
+the morphism spaces choose a pair of critical points m4 € {m4,...,m,} and de-
+note by '(m_,m4) a suitably chosen subspace of {y: R + M | y(400) = ms}.
+Consider the functional
+
+F:T(m_,m,) —>R, F(y) = | A+ | Im (cf ° 1) dt,
+R R
+
+where 9 = @O(t) is a suitably chosen function. Then, roughly speaking,
+hom(m_,m4+) is the Morse-Witten complex of F. Let us describe some details.
+The critical points of F are solutions of the problem
+
+y a i y(t) =m,
+(1) ytu=0, lim y(t) = mz,
+where v' = cos@(t) gradRef + sin@(t) gradImf. These freely generate
+
+hom(m_,m4) as a Z/2Z-vector space.

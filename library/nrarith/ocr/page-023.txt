@@ -1,0 +1,53 @@
+Arithmetic of Hyperbolic Manifolds 295
+
+holonomy of the meridians and longitudes m,, 1, mg, ly, at the two cusps. They are
+uy = logy” + log z’ + log z” + logw! — mi
+v1 = logy” + logy + logx + logx’ + logw” + log 2’ + logx”
++logx + logy + logy’ + log z” + logw’ — 47
+ug = log 2” + logy’ + logy” + logw’ — ni
+v2 = log 2” + logz + logx + log ax’ + logw” + logy’ + log 2”
++logx + logz + log z' + logy” + log w’ — 477i
+
+which, written in terms of x,y, z,w and simplified by (6.1), becomes
+
+uy, = log(w — 1) + logx + logy — log(y — 1) — mi (6.2a)
+v1 = 2logx + 2logy — 2ni (6.2b)
+uz = log(w — 1) + log x + log z — log(z — 1) — wi (6.2c)
+vg = 2logx + 2log z — 27%. (6.2d)
+
+(u1, u2) can be taken as the “analytic Dehn surgery parameter,” as discussed in [T]
+and [NZ], in which case w, x, y, z, constrained by equations (6.1), become complex
+analytic functions of this parameter.
+
+The real Dehn surgery parameters (p;,qi) and (p2,q2) are determined by the equa-
+tions
+
+Pili + G11 oni (6.3)
+pou + qov2 = 277.
+
+For the complete structure on W we have uj = v1 = U2 = v2 = 0, which, with
+(6.1) and (6.2), easily implies = y = z = w = i (this is also clear from the regularity
+of the octahedron for the complete structure). We shall thus deform from these values of
+x,Y, Z,w, maintaining the consistency relations (6.1).
+
+6.2. We are only interested in generalized Dehn surgeries on one cusp of W, so we
+always have (pi,q1) = co. The requirement that the first cusp is complete means
+uy = v1 =0. From v; = 0 and equation (6.2b) we deduce x = —y~!. Equation (6.1a)
+then gives z = —w~! and (6.1b) then gives y = w, so
+
+1
+
+(a,y,2,w) = (x, -a7!,2,-a71).
+
+Conversely, (a, y,2,w) = (x,-a~1,x,—a~") satisfies the consistency relations (6.1)
+
+and the cusp relations uv; = v; = 0 and thus gives a structure on W which is complete
+at the first cusp. We thus just have the one complex parameter x, in the upper half plane,
+describing our deformations.
+
+We abbreviate (w2,v2) = (u,v) and (p2,q2) = (p,q), and we shall write W (p, q)
+for W (oo; p,q). The formulae (6.2) simplify to
+
+u = logx + log(x + 1) — log(x — 1) (6.4)
+
+v = 4logx — 2ni

@@ -1,0 +1,142 @@
+{
+  "$schema": "folio-vector-figures/v1",
+  "doc_id": "arxiv-1508.05448v1",
+  "figures": [
+    {
+      "id": "vfig-p058",
+      "file": "figures/vfig-p058.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 58
+      },
+      "page": 58,
+      "rotation": 0,
+      "captionLabels": [
+        "4.1"
+      ],
+      "region": [
+        90.2,
+        269.63,
+        547.29,
+        344.04
+      ],
+      "assembly": {
+        "drawings": 1,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              90.2,
+              269.63,
+              547.29,
+              344.04
+            ],
+            "drawings": 1,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "Random Matrices",
+              "Spin Glasses",
+              "expectations of moments",
+              "expectations of products of overlaps",
+              "recurrence relation for moments",
+              "stochastic stability equations: Ghirlanda-Guerra identities",
+              "formula for Stieltjes transform of limiting law",
+              "proof of Parisi’s ultrametric ansatz"
+            ]
+          }
+        ],
+        "boxes": [],
+        "unlabelledClosedShapes": 0,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              90.2,
+              269.63,
+              547.29,
+              344.04
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 23
+      }
+    },
+    {
+      "id": "vfig-p117",
+      "file": "figures/vfig-p117.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 117
+      },
+      "page": 117,
+      "rotation": 0,
+      "captionLabels": [
+        "5.4"
+      ],
+      "region": [
+        249.31,
+        103.15,
+        362.69,
+        216.54
+      ],
+      "assembly": {
+        "drawings": 3,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              249.31,
+              103.15,
+              362.69,
+              216.54
+            ],
+            "drawings": 3,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "R11",
+              "R21",
+              "R12",
+              "R22"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              249.31,
+              103.15,
+              362.69,
+              216.54
+            ],
+            "parent": null,
+            "labels": [
+              "R11",
+              "R21",
+              "R12",
+              "R22"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 0,
+        "connectors": [],
+        "between": [],
+        "outside": 21
+      }
+    }
+  ]
+}

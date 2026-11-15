@@ -1,0 +1,41 @@
+CHAPTER 2
+
+Proof of the vanishing theorem(s)
+
+In this chapter we give an abstract Tannakian proof of theorem 1.1 based
+on joint work with R. Weissauer [68]. As a geometric input we only require
+the classification of perverse sheaves with Euler characteristic zero from
+section 1.4. For this classification we have used the theory of Z-modules,
+and at present we do not know whether it also holds over a ground field
+of positive characteristic. However, since this is the only reason why for
+the time being the proof only applies to complex abelian varietes, in what
+follows we formulate our arguments in a uniform way including also the
+case of /-adic perverse sheaves in positive characteristic.
+
+2.1. The setting
+
+Let X be an abelian variety over an algebraically closed field k which
+has characteristic zero or is the algebraic closure of a finite field. As in [10]
+we consider the derived category D?(X, A) of complexes of A-sheaves with
+bounded constructible cohomology sheaves, where A is either a subfield
+of Q; for some fixed prime number / 4 char(k) or a subfield of C if we are
+working over the base field k = C. We denote by Perv(X,A) c D(X, A)
+the full abelian subcategory of perverse sheaves as defined in loc. cit., and
+we write 7(X,0) for the étale fundamental group, resp. for the topological
+fundamental group in the complex case. By a character y : 1(X,0) —> A*
+we mean in the étale setting a continuous character with image in a finite
+extension field of Q,. Any such character defines a local system Ly, and as
+in the previous chapter we denote by Ky = K ®, Ly the corresponding twist
+of a complex K € D?(X, A).
+
+Our Tannakian proof of theorem 1.1 relies on the notion of convolution
+of sheaf complexes. Let a: X x X —+ X denote the group law, and consider
+the convolution product
+
+%:  DP(X,A) x DP(X,A) —> DP(X,A), K,*K2 = Ra.(K,&K).
+
+It has been shown in [106, sect. 2.1] that the category D>(X,A) equipped
+with this convolution product is a symmetric monoidal category in the sense
+of [73, sect. VIL7]. In other words, there exists a unit object 1 in D?(X, A)
+
+23

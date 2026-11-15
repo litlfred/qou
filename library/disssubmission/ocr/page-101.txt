@@ -1,0 +1,44 @@
+CHAPTER 5
+
+A family of surfaces with monodromy W (Eg)
+
+Let X be a complex principally polarized abelian variety (ppav for short)
+of dimension g > 2, and fix a theta divisor © C X which defines the given
+polarization and which is symmetric in the sense that it is stable under the
+inversion morphism —idy : X —+ X. For points x € X(C) let O, =O+x
+denote the corresponding translate of the theta divisor. The geometry of the
+intersections
+
+XY = ONO,
+
+is closely connected with the moduli of the given ppav and has been studied
+in relation with Torelli’s theorem [25], with the Schottky problem [27] and
+with the Prym map [61]; these intersections are also among the few concrete
+examples for varieties with ample cotangent bundle [24]. One of our goals
+is to understand how their cohomology varies with the point x. As we will
+see later on, this is closely related to the convolution square of the theta
+divisor (in the sense of the previous chapters).
+
+To set the stage for what follows, in section 5.1 we discuss some general
+features of the intersections Y,. If the theta divisor is smooth or has at most
+isolated singularities, then for general x € X(C) a Bertini-type argument
+will show that Y,. is smooth and that the involution o, : ¥, — Y,, yWex-y
+is étale so that the quotient
+
+Y,* = Y,/O%
+
+is again a smooth variety. After a survey of the cases g < 3 where a close
+connection with the moduli of Prym varieties emerges, we focus on the
+dimension g = 4. Here we are dealing with a family of smooth surfaces of
+general type with a beautiful explicit geometry. We will see that the varying
+part of the cohomology of these surfaces defines over a Zariski-open dense
+subset U C X a variation of Hodge structures V of rank six whose fibres
+are of pure Hodge type (1,1). One of the main results of this chapter will
+be the proof of the following conjecture of R. Weissauer.
+
+THEOREM 5.1. For a general complex ppav X of dimension g = 4, the
+monodromy group G of the local system underlying VY. is either the Weyl
+group W(E¢) or its unique simple subgroup of index two which is the kernel
+of the sign homomorphism sgn : W (Eo) —> {+1}.
+
+93

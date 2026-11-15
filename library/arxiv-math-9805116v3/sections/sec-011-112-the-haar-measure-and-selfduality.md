@@ -1,0 +1,168 @@
+---
+doc_id: arxiv-math-9805116v3
+doc_title: "Weak Hopf Algebras I: Integral Theory and C*-structure"
+section_id: sec-011-112-the-haar-measure-and-selfduality
+section_title: "The Haar measure and selfduality"
+section_number: 1.12
+pages: 33-35
+source_pdf: 9805116v3.pdf
+source_sha256: 65ce47d232d61de4
+toc_source: inferred
+text_source: latex
+latex_prose_ratio: 0.962
+latex_coverage_ratio: 0.987
+doc_brief: "Weak Hopf Algebras I: Integral Theory and C*-structure — We give an introduction to the theory of weak Hopf algebras proposed recently as a coassociative alternative of weak quasi-Hopf algebras."
+---
+Recall that the Haar measure in a WHA $A$ has been defined in
+Definition \ref{def: Haar} as the unique element $h\in A$ making
+the integral $\int\varphi:=\bra\varphi,\,h\ket$ of a function
+$\varphi\colon A\to\C$ to be a non-degenerate functional invariant
+under left and right translations and normalized according to
+$\int\varphi^L=\dueps(\varphi^L)$ for $\varphi^L\in\duA^L$. The
+sufficient conditions for its existence given by Theorem \ref{thm:
+Haar} will be used here to prove the next Theorem.
+\begin{thm}             \label{thm: C^* Haar}
+In a $C^*$-WHA $A$ Haar measure $h\in A$ exists. It is
+selfadjoint, $h^*=h$, and such that
+\beq
+(\varphi,\psi)\ :=\ \bra\varphi^*\psi,\ h\ket\ ,
+\qquad \varphi,\psi\in\duA\ ,
+\eeq
+is a scalar product on $\duA$ making $\duA$ a Hilbert space and
+making the left regular module $_\duA\duA$ a faithful
+$^*$-representation of the $^*$-WHA $\duA$. Thus $\duA$ is a
+$C^*$-WHA, too.
+\end{thm}
+\Proof $A$ being a finite dimensional $C^*$-algebra is semisimple.
+By Proposition \ref{pro: g} there exists a $g$ implementing
+$S^2$. This $g$ was shown to be positive and invertible, hence
+$\tr D_r(g^{-1})>0$ for all $r\in\Sec A$. Therefore all the
+conditions of Theorem \ref{thm: Haar} are satisfied and Haar
+measure $h$ exists.
+ 
+Since $h$ is non-degenerate, $(\ ,\ )$ is a non-degenerate
+sesquilinear form on $\duA$. So it remains to show positivity.
+By the equality
+\beq
+(\psi,\psi)=\bra\psi^*\psi,\,h\ket=\overline{\bra\psi,S(h\c)^*\ket}
+\ \bra\psi,h\cc\ket
+\eeq
+positivity of $(\ ,\ )$ follows if we can show that
+$(S\o\id)\circ\cop(h)$ belongs to the positive cone
+\beq  \label{Pcone}
+{\cal P}\ =\ \left\{\sum_k a_k^*\o a_k\ |\ a_k\in A\ \right\}\
+\subset A\o A\
+. \eeq
+Therefore the next Lemma will complete the proof. \qed
+\begin{lem}                    \label{lem: coph}
+Choose matrix units $\{e_q^{\alpha\beta}\}$ for $A$ and let
+$g$ denote the element determined in Proposition \ref{pro: g}. If
+furthermore $\sum_i x_i\o y_i$ is the quasibasis of the trace
+$\tau\colon A\to\C$ with trace vector $\tau_q=\tr_q(g^{-1})$
+then
+\bea                \label{eq: cophR}
+S(h\c)\o h\cc&=&\sum_i x_i\o g^{-1}y_i\ =\
+\sum_{q\in\Sec A}\ {1\over\tau_q}\sum_{\alpha\beta}
+e_q^{\alpha\beta}g^{-1/2}\o g^{-1/2}e_q^{\beta\alpha}\\
+h\c\o S(h\cc)&=&\sum_i x_ig\o y_i\ =\ \sum_{q\in\Sec A}
+\ {1\over\tau_q}\sum_{\alpha\beta}  \label{eq: cophL}
+e_q^{\alpha\beta}g^{1/2}\o g^{1/2}e_q^{\beta\alpha}
+\eea
+\end{lem}
+\Proof The quasibasis of $\chi=g\la\tau$ is $\sum x_ig^{-1}\o y_i$
+and since $\chi$ is the dual left integral of $h$,
+this quasibasis is equal to $h\cc\o S^{-1}(h\c)$. This implies the
+first row. By property {\bf iii)} of Proposition \ref{pro: g}
+$\tau$ is an $S$-invariant trace, therefore its quasibasis
+can also be written as $\sum_i y_i\o x_i=\sum_i S^{-1}(x_i)\o
+S^{-1}(y_i)$. Thus the second row follows from the first. \qed
+ 
+ From now on $h\in A$ will always denote the Haar measure of $A$
+and $\hat h\in\duA$ that of $\duA$.
+\begin{lem}
+In a $C^*$-WHA $A$ the counit is a positive linear functional,
+$\eps(x^*x)\geq 0$, $x\in A$.
+\end{lem}
+\Proof
+\[
+\eps(x^*x)=\eps(x^*\1\c)\eps(\1\cc\1_{(2')})\eps(\1_{(1')}x)=
+\eps(\PL(x)^*\PL(x))=\bra\hat h,\,\PL(x)^*\PL(x)\ket
+\geq 0\,,
+\]
+where we have used $\hat h|_{A^L}=\eps|_{A^L}$, which follows
+from $\bra\hat h,\,x^L\ket=\bra\duPL(\hat h),\,x^L\ket
+=\bra\du1,\,x^L\ket$ for all $x^L\in A^L$.
+\qed
+ 
+$A$ being semisimple the trivial representation $\V$ decomposes
+into irreducibles $V_q$ each of them with multiplicity 1 by
+Proposition \ref{prop: End trivi}.
+The sectors $q\in\Sec A$ occuring in $\V$ with non-zero
+multiplicity will be called {\em vacuum sectors}.
+\beq
+\V\ \cong\ \bigoplus_{q\in\Vac A}\ V_q\ .
+\eeq
+By Proposition \ref{prop: End trivi} there is a bijection
+$q\mapsto z^L_q$
+from the set $\Vac A$ of vacuum sectors to the set of minimal
+projections in $Z^L$ such that, with $z^R_q:=S(z^L_q)$, we have
+\bea
+\triv(z^L_q)\ =&\triv(e_q)&=\ \triv(z^R_q)\\
+z^L_q=\PL(e_q)&\quad&\PR(e_q)=z^R_q
+\eea
+where $e_q$ denotes the minimal central projection in $A$
+supporting the irreducible vacuum representation $D_q$.
+\begin{lem}
+$D_r(h)$ is a 1-dimensional projection for $r\in\Vac A$ and
+$D_r(h)=0$ if $r$ is not a vacuum sector. The algebra of 2-sided
+integrals is generated by minimal projections $h_q$
+\beq
+\I(A)\ =\ hAh\ =\ \Span\{h_q\,|\,q\in\Vac A\,\}\,,\qquad h_q=he_q
+\ .
+\eeq
+The non-degenerate 2-sided integrals are presisely the invertible
+elements: $\I_*(A)=\I(A)_\x$.
+\end{lem}
+\Proof If $D_r(h)\neq 0$ then pick up a non-zero vector $v_r$ from
+the subspace $D_r(h)V_r$ of the irreducible $A$-module $V_r$ and
+define
+\beq
+T\colon A^L\to V_r\ ,\qquad Tx^L:=D_r(x^L)v_r\ .
+\eeq
+This map is a non-zero left $A$-module map if we equip $A^L$ with
+the structure of the trivial $A$-module $_AA^L$ introduced in
+Lemma \ref{lem: trivials}. Indeed,
+\beq
+D_r(x)Tx^L=D_r(xx^Lh)v_r=D_r(\PL(xx^L)h)v_r=T\PL(xx^L)\ .
+\eeq
+Therefore $r\in\Vac A$.  This proves that $D_r(h)=0$ for
+$r\not\in\Vac A$.
+ 
+Now let the Haar integral act on the trivial left $A$-module
+$_A\duA^R$.
+\beq
+\triv(h)\varphi^R\ =\ h\la \varphi^R\ \in\
+\duA^L\cap\duA^R\ \equiv\ \hat Z\ .
+\eeq
+Thus $\triv(h)\colon\duA^R\to\hat Z$ is a projection, onto.
+If $z^L$ is a minimal projection in $Z^L$ then $z^L\la\du1$ is a
+minimal projection in $\hat Z$ by Lemma \ref{Z}. Hence
+$\triv(z^Lh)$
+maps $\duA^R$ onto $(z^L\la\du1)\hat Z\cong\C$. This proves that
+$\triv(z^Lh)$, the restriction of which is precisely $D_q(h)$ for
+some $q\in\Vac A$, is a 1-dimensional projection.
+If $i\in\I$ then by the 2-sided normalization of $h$ one can write
+$i=hih$. Conversely, $hxh$ is a 2-sided integral for all $x\in A$.
+This proves the remaining assertions. \qed
+ 
+The Haar measure provides conditional expectations
+\bea   \label{eq: E^LR}
+E^L\colon A\to A^L\,,&\quad&E^L(x)=\hat h\la x\\
+E^R\colon A\to A^R\,,&\quad&E^R(x)=x\ra \hat h
+\eea
+As a matter of fact by Lemma \ref{scho: IL}.c) the image of $E^L$
+is in $A^L$
+since $\hat h$ is a left integral. $E^L$ is unit preserving since
+$\hat h$
+is normalized. Finally, $E^L$ is positive since $\hat h$ is
+positive and $\cop$ is a $^*$-algebra map.

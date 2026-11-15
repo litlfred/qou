@@ -7,10 +7,11 @@ section_number: 2
 pages: 5-11
 source_pdf: 1908.11677v1.pdf
 source_sha256: c53663eeb457daf9
-doc_brief: "Variational formulae and estimates of O’Hara’s knot energies — O’Hara’s energies, introduced by Jun O’Hara, were proposedto answer the question of what is the canonical shape in a given knot typ e"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.989
+latex_prose_ratio: 0.968
 latex_coverage_ratio: 1.0
+doc_brief: "Variational formulae and estimates of O’Hara’s knot energies — O’Hara’s energies, introduced by Jun O’Hara, were proposed to answer the question of what is the canonical shape in a given knot type"
 ---
 \label{Sect. variational formulae}
 
@@ -774,12 +775,3 @@ we obtain the first and second variational formulae of the
 $(\alpha,p)$-O'Hara energies.
 Since the expressions are rather lengthy,
 we omit their explicit formulae here.
-
-
-
-
-
-
-
-
-\section{Estimates of the first and second variational formulae}\label{estimates}

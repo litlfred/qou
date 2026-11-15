@@ -1,0 +1,1 @@
+However, any transversal isotopy of L1⊔L2 must preserve the β–invariants of the components, so no such transversal isotopy exists, a contradiction of our assumption that TX+ and TX−are transversally isotopic.

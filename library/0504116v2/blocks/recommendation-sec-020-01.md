@@ -1,0 +1,1 @@
+Under this identiﬁcation the module B1(Γ; g; ρ0) should represent the tangent space to trivial deformations of ρ0, so H1(Γ; g; ρ0) should give the tangent space of R(Γ, G)/G at [ρ0] (however, this holds true only in the setting of algebraic schemes).

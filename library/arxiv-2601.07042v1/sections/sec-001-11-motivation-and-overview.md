@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2601.07042v1
-doc_title: "A TANNAKIAN DESCRIPTION OF THE LOCAL KALETHA GERBE"
+doc_title: "A Tannakian description of the local Kaletha gerbe"
 section_id: sec-001-11-motivation-and-overview
 section_title: "Motivation and overview"
 section_number: 1.1
 pages: 1-3
 source_pdf: 2601.07042v1.pdf
 source_sha256: c2f3e302624e7abb
-doc_brief: "A TANNAKIAN DESCRIPTION OF THE LOCAL KALETHA GERBE — We construct, for ap-adic fieldF, an explicit semisimple Tannakian categoryRigIsoc F whose category of fiber functors recovers Kaletha’s Galois"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.979
-latex_coverage_ratio: 0.741
+latex_coverage_ratio: 0.928
+doc_brief: "A Tannakian description of the local Kaletha gerbe — We construct, for a p-adic field F, an explicit semisimple Tannakian category RigIsocF whose category of fiber functors recovers Kaletha’s Galois"
 ---
 The refined local Langlands correspondence for a $p$-adic field $F$ posits an injection from irreducible smooth representations of $G(F)$, for $G$ reductive and quasi-split, to enhanced $L$-parameters $(\phi, \rho)$ where $\phi: \mathop{\mathrm{WD}}_{F} \rightarrow \prescript{L}{}{G}$ (here $\mathop{\mathrm{WD}}_{F} = W_{F} \times \mathrm{SL}_{2}(\mathbb{C})$ is the $\mathop{\mathrm{SL}}_2$ form of the Weil--Deligne group) and $\rho$ is an algebraic irreducible representation of the centralizer group $S_{\phi}$ of the image of $\phi$. The image of the refined correspondence map should be contained in the set of pairs $(\phi, \rho)$ such that $\rho \in \mathop{\mathrm{Irr}}(\pi_0(S_{\phi}/Z(\widehat{G})^{\Gamma_F}))$. Vogan ([@VoganLLC]) proposed that in order to upgrade the correspondence to contain $\mathop{\mathrm{Irr}}(\pi_0(S_{\phi})) \subset \mathop{\mathrm{Irr}}(S_{\phi})$ in its image, one should enlarge the domain by adding in irreducible representations of inner forms of $G$. In [@BMO], Oi and the first named author showed that if a refined local Langlands correspondence exists for $G$ and its Levi subgroups, one can upgrade it to a bijection with the entire target $\mathop{\mathrm{Irr}}(S_{\phi})$ if one further allows irreducible representations of Levi subgroups of $G$ on the automorphic side. The question of exactly how to parametrize inner forms of $G$ (and possibly its Levi subgroups) in this context is a subtle one because the cohomology group $H^1(F, G_{\mathop{\mathrm{ad}}})$ is not sufficiently rigid, in the sense that translating by $G_{\mathop{\mathrm{ad}}}$-coboundaries identifies non-isomorphic representations of $G(F)$. However, there are many options for sufficiently rigid cohomology sets including the 'pure inner forms' given by $H^1(F, G)$, the 'extended pure inner forms' classified by the Kottwitz set $B(G)_{\mathop{\mathrm{bas}}}$, and finally 'rigid inner forms' defined by Kaletha in [@Kalannals] and corresponding to basic classes $H_{\mathop{\mathrm{bas}}}^1(\mathcal{E}_{\mathop{\mathrm{Kal}}}, G)$ of the rigid gerbe denoted $\mathcal{E}_{\mathop{\mathrm{Kal}}}$ in this paper. This last set has the advantage that it surjects onto $H^1(F, G_{\mathop{\mathrm{ad}}})$, whereas the others do not in general. For a nice discussion of this topic, we recommend the survey article [@KalSurvey].
 

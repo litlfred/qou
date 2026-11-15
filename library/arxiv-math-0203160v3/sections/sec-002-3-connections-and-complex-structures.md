@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.979
 latex_coverage_ratio: 1.0
+doc_brief: "arXiv:math/0203160v3 [math.QA] 28 Oct 2002 — We analyze in detail projective modules over two-dimensional noncom- mutative tori and complex structures on these modules.We concentrate our attention on"
 ---
 One can define a connection on a right $T_{\theta }^{d}$-module $E$ as a set of ${\mathbb C}$-linear operators $\nabla
 _{1},...,\nabla _{d}$ obeying Leibniz rule: $$\nabla _{\alpha }(ea)=\nabla _{\alpha }e\cdot a+e\cdot \delta _{\alpha }a\label{con}$$

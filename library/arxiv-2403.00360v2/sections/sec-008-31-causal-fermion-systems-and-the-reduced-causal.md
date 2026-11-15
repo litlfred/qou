@@ -7,10 +7,11 @@ section_number: 3.1
 pages: 10-11
 source_pdf: 2403.00360v2.pdf
 source_sha256: b0764ca18a83a84f
-doc_brief: "CAUSAL FERMION SYSTEMS AND OCTONIONS — We compare the structures and methods in the theory of causal fermion systems with approaches to fundamental physics based on division algebras, in par- ticular"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.992
-latex_coverage_ratio: 0.983
+latex_coverage_ratio: 0.992
+doc_brief: "CAUSAL FERMION SYSTEMS AND OCTONIONS — We compare the structures and methods in the theory of causal fermion systems with approaches to fundamental physics based on division algebras, in par- ticular"
 ---
 We begin with the general definition of a causal fermion system.
 
