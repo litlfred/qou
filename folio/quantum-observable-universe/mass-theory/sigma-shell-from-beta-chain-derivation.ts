@@ -35,7 +35,9 @@ export default conjecture({
         "every staircase $\\lambda_{\\mathrm{shell}} \\vdash 3A_{\\mathrm{magic}}$ with " +
         "$A_{\\mathrm{magic}} \\ge 2$ has at least three rows, and the Ocneanu weight of every " +
         "such partition vanishes at that $z$ " +
-        "(`QOU.SchurWeyl.ocneanuWeight_conventionD_eq_zero_of_three_rows`, sorry-free, general $n$). " +
+        "(`QOU.SchurWeyl.ocneanuWeight_conventionD_eq_zero_of_three_rows`, sorry-free, general $n$; " +
+        "stated for this closed form over any field as " +
+        "`QOU.BraidKnot.sigma_shell_staircase_vanishes_conventionD` in the Lean sibling). " +
         "So $y_{(3,2,1)}(q_0) = 0$ and $y_{\\mathrm{target}}(2) = 0$ against the benchmark " +
         "$B(D)/(2m_p) \\approx 0.0012$ (witness `sigma-shell-from-beta-chain`, re-run 2026-11-15 " +
         "on the canonical deuteron trace). This is a **scope-(b) exclusion** of the staircase " +
