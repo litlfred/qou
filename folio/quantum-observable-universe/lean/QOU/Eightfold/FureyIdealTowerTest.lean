@@ -38,8 +38,11 @@ action on the ideal is this one (left multiplication by `[D, ·]` with `D Ω = 0
 * levels 1 and 2 are exchanged by the Galois substitution `i ↦ −i` (definitional:
   `levelSpace (−i) s = levelSpace i (−s)`), the `3 ↔ 3̄` exchange.
 
-NOT proven here: irreducibility of the two triplets (the classical `3`, `3̄`); only
-invariance, the absence of invariant vectors, and the dimensions via the Fock basis.
+* each level is spanned by its three Fock vectors (`level1_decomp`, `level2_decomp`) and is
+  IRREDUCIBLE: a nonzero `su(3)`-stable subspace meeting it contains the whole level
+  (`level1_irreducible`, `level2_irreducible`), via the weight argument `triplet_core` with
+  five explicit members of `su3 e₁` (`octDer 6, 7, 10, 11` and the Fock action table
+  `octDer_fock_action`).
 
 ## Part C — the forced-embedding test (the stream-15 question)
 
@@ -438,6 +441,165 @@ theorem su3_invariant_iff (x : Fin 8 → K) :
       funext m
       fin_cases m <;> simp [eOne] <;> exact h _ (by decide) (by decide)
     rw [hx, map_add, map_smul, map_smul, extD_one D.2, extD_eOne hD]; simp
+
+/-! ### B′. Irreducibility of the two triplets
+
+Each level space is spanned by its three Fock vectors (`level1_decomp`, `level2_decomp`), and
+every nonzero `su(3)`-stable subspace of it contains all three (`level1_irreducible`,
+`level2_irreducible`). The argument is the classical weight argument written out with five
+explicit members of `su3 e₁` from the corpus `𝔤₂` basis: two Cartan elements (`octDer 7`,
+`octDer 10`) act diagonally with eigenvalues `0, ±i`, so `x + H(H x)` projects onto a single
+weight line; two root elements (`octDer 6`, `octDer 11`) then move between the three lines. -/
+
+/-- **Abstract weight argument.** Let `W` be stable under `H₁ H₂ E F`, where the `Hⱼ` square to
+`−1` or vanish on the lines `u₁ u₂ u₃` as stated and `E`, `F` connect `u₁ ↔ u₂ ↔ u₃`. Then any
+nonzero `a u₁ + b u₂ + c u₃ ∈ W` forces `u₁, u₂, u₃ ∈ W`. -/
+theorem triplet_core {V : Type*} [AddCommGroup V] [Module K V] (W : Submodule K V)
+    (H₁ H₂ E F : V →ₗ[K] V) (hH₁ : ∀ w ∈ W, H₁ w ∈ W) (hH₂ : ∀ w ∈ W, H₂ w ∈ W)
+    (hE : ∀ w ∈ W, E w ∈ W) (hF : ∀ w ∈ W, F w ∈ W) (u₁ u₂ u₃ : V)
+    (h11 : H₁ (H₁ u₁) = -u₁) (h12 : H₁ (H₁ u₂) = -u₂) (h13 : H₁ u₃ = 0)
+    (h21 : H₂ u₁ = 0) (h22 : H₂ (H₂ u₂) = -u₂) (h23 : H₂ (H₂ u₃) = -u₃)
+    (hE1 : E u₁ = -u₂) (hE2 : E u₂ = u₁) (hF2 : F u₂ = u₃) (hF3 : F u₃ = -u₂)
+    (a b c : K) (hx : a • u₁ + b • u₂ + c • u₃ ∈ W) (h0 : a ≠ 0 ∨ b ≠ 0 ∨ c ≠ 0) :
+    u₁ ∈ W ∧ u₂ ∈ W ∧ u₃ ∈ W := by
+  set x := a • u₁ + b • u₂ + c • u₃ with hxdef
+  have hc : c • u₃ ∈ W := by
+    have e : x + H₁ (H₁ x) = c • u₃ := by
+      simp only [hxdef, map_add, map_smul, h11, h12, h13, map_zero, smul_zero, add_zero]
+      module
+    rw [← e]; exact W.add_mem hx (hH₁ _ (hH₁ _ hx))
+  have ha : a • u₁ ∈ W := by
+    have e : x + H₂ (H₂ x) = a • u₁ := by
+      simp only [hxdef, map_add, map_smul, h21, h22, h23, map_zero, smul_zero, zero_add]
+      module
+    rw [← e]; exact W.add_mem hx (hH₂ _ (hH₂ _ hx))
+  have hb : b • u₂ ∈ W := by
+    have e : x - a • u₁ - c • u₃ = b • u₂ := by rw [hxdef]; module
+    rw [← e]; exact W.sub_mem (W.sub_mem hx ha) hc
+  have from2 : u₂ ∈ W → u₁ ∈ W ∧ u₂ ∈ W ∧ u₃ ∈ W := fun h2 =>
+    ⟨hE2 ▸ hE _ h2, h2, hF2 ▸ hF _ h2⟩
+  rcases h0 with h | h | h
+  · have h1 : u₁ ∈ W := (W.smul_mem_iff h).mp ha
+    apply from2
+    have := W.neg_mem (hE _ h1); rwa [hE1, neg_neg] at this
+  · exact from2 ((W.smul_mem_iff h).mp hb)
+  · have h3 : u₃ ∈ W := (W.smul_mem_iff h).mp hc
+    apply from2
+    have := W.neg_mem (hF _ h3); rwa [hF3, neg_neg] at this
+
+theorem octDer7_mem : octDer 7 ∈ su3 stdIm := by
+  rw [mem_su3_iff]; funext k
+  fin_cases k <;> simp [octDer, octDerMat, stdIm, Matrix.mulVec, dotProduct, Fin.sum_univ_eight]
+
+theorem octDer10_mem : octDer 10 ∈ su3 stdIm := by
+  rw [mem_su3_iff]; funext k
+  fin_cases k <;> simp [octDer, octDerMat, stdIm, Matrix.mulVec, dotProduct, Fin.sum_univ_eight]
+
+theorem octDer11_mem : octDer 11 ∈ su3 stdIm := by
+  rw [mem_su3_iff]; funext k
+  fin_cases k <;> simp [octDer, octDerMat, stdIm, Matrix.mulVec, dotProduct, Fin.sum_univ_eight]
+
+/-- The action of the five chosen colour derivations on the six quark Fock vectors. -/
+theorem octDer_fock_action (hi : i * i = -1) :
+    extD (K := K) (octDer 7).1 (fock i 1) = i • fock i 1 ∧
+    extD (K := K) (octDer 7).1 (fock i 2) = (-i) • fock i 2 ∧
+    extD (K := K) (octDer 7).1 (fock i 3) = 0 ∧
+    extD (K := K) (octDer 10).1 (fock i 1) = 0 ∧
+    extD (K := K) (octDer 10).1 (fock i 2) = (-i) • fock i 2 ∧
+    extD (K := K) (octDer 10).1 (fock i 3) = i • fock i 3 ∧
+    extD (K := K) (octDer 6).1 (fock i 1) = -fock i 2 ∧
+    extD (K := K) (octDer 6).1 (fock i 2) = fock i 1 ∧
+    extD (K := K) (octDer 11).1 (fock i 2) = fock i 3 ∧
+    extD (K := K) (octDer 11).1 (fock i 3) = -fock i 2 ∧
+    extD (K := K) (octDer 7).1 (fock i 4) = (-i) • fock i 4 ∧
+    extD (K := K) (octDer 7).1 (fock i 5) = i • fock i 5 ∧
+    extD (K := K) (octDer 7).1 (fock i 6) = 0 ∧
+    extD (K := K) (octDer 10).1 (fock i 4) = 0 ∧
+    extD (K := K) (octDer 10).1 (fock i 5) = i • fock i 5 ∧
+    extD (K := K) (octDer 10).1 (fock i 6) = (-i) • fock i 6 ∧
+    extD (K := K) (octDer 6).1 (fock i 4) = -fock i 5 ∧
+    extD (K := K) (octDer 6).1 (fock i 5) = fock i 4 ∧
+    extD (K := K) (octDer 11).1 (fock i 5) = fock i 6 ∧
+    extD (K := K) (octDer 11).1 (fock i 6) = -fock i 5 := by
+  have h2 : i ^ 2 = -1 := by rw [sq]; exact hi
+  simp only [extD_octDer]
+  refine ⟨?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_⟩ <;>
+    funext m <;> fin_cases m <;>
+    simp [octDerMat, Matrix.mulVec, dotProduct, Fin.sum_univ_eight, fock] <;>
+    (try ring_nf) <;> (try simp only [h2]) <;> (try ring_nf)
+
+theorem sq_smul_self (hi : i * i = -1) (s : K) (hs : s = i ∨ s = -i) (v : Fin 8 → K) :
+    s • s • v = -v := by
+  rw [smul_smul]
+  have : s * s = -1 := by rcases hs with rfl | rfl <;> simp [hi]
+  rw [this, neg_one_smul]
+
+/-- **Level 1 is spanned by `d̄ʳ, d̄ᵍ, d̄ᵇ`** (Fock vectors 1–3). -/
+theorem level1_decomp (hi : i * i = -1) {x : Fin 8 → K} (hx : x ∈ levelSpace i) :
+    x = (x 6 / 2) • fock i 1 + (x 4 / 2) • fock i 2 + (x 7 / 2) • fock i 3 := by
+  obtain ⟨h0, h1, hL⟩ := hx
+  have e2 := congrFun hL 2; have e3 := congrFun hL 3; have e5 := congrFun hL 5
+  simp [omul, eOne] at e2 e3 e5
+  have r2 : x 2 = i * x 4 := by linear_combination i * e2 + x 2 * hi
+  have r3 : x 3 = i * x 7 := by linear_combination i * e3 + x 3 * hi
+  have r5 : x 5 = i * x 6 := by linear_combination i * e5 + x 5 * hi
+  funext m
+  fin_cases m <;> simp [fock, h0, h1] <;>
+    first | ring1 | linear_combination r2 | linear_combination r3 | linear_combination r5
+
+/-- **Level 2 is spanned by `uʳ, uᵍ, uᵇ`** (Fock vectors 4–6). -/
+theorem level2_decomp (hi : i * i = -1) {x : Fin 8 → K} (hx : x ∈ levelSpace (-i)) :
+    x = (x 5 / 4) • fock i 4 + (x 2 / 4) • fock i 5 + (x 3 / 4) • fock i 6 := by
+  obtain ⟨h0, h1, hL⟩ := hx
+  have e4 := congrFun hL 4; have e6 := congrFun hL 6; have e7 := congrFun hL 7
+  simp [omul, eOne] at e4 e6 e7
+  have r4 : x 4 = i * x 2 := by linear_combination (-i) * e4 + x 4 * hi
+  have r6 : x 6 = i * x 5 := by linear_combination (-i) * e6 + x 6 * hi
+  have r7 : x 7 = i * x 3 := by linear_combination (-i) * e7 + x 7 * hi
+  funext m
+  fin_cases m <;> simp [fock, h0, h1] <;>
+    first | ring1 | linear_combination r4 | linear_combination r6 | linear_combination r7
+
+/-- An `su(3)`-stable subspace, as a hypothesis. -/
+def Su3Stable (W : Submodule K (Fin 8 → K)) : Prop :=
+  ∀ D : Der𝕆, D ∈ su3 stdIm → ∀ w ∈ W, extD D.1 w ∈ W
+
+/-- **The triplet `3` (level 1) is irreducible**: every `su(3)`-stable subspace containing a
+nonzero vector of level 1 contains all of `d̄ʳ, d̄ᵍ, d̄ᵇ`, hence (`level1_decomp`) the whole
+level. -/
+theorem level1_irreducible (hi : i * i = -1) (W : Submodule K (Fin 8 → K)) (hW : Su3Stable W)
+    {x : Fin 8 → K} (hxW : x ∈ W) (hxL : x ∈ levelSpace i) (hx0 : x ≠ 0) :
+    fock i 1 ∈ W ∧ fock i 2 ∈ W ∧ fock i 3 ∈ W := by
+  obtain ⟨a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, -⟩ := octDer_fock_action (K := K) hi
+  have hd := level1_decomp hi hxL
+  refine triplet_core W _ _ _ _ (hW _ octDer7_mem) (hW _ octDer10_mem) (hW _ octDer6_mem)
+    (hW _ octDer11_mem) _ _ _ ?_ ?_ a3 a4 ?_ ?_ a7 a8 a9 a10 (x 6 / 2) (x 4 / 2) (x 7 / 2) (by rw [← hd]; exact hxW) ?_
+  · rw [a1, map_smul, a1]; exact sq_smul_self hi _ (Or.inl rfl) _
+  · rw [a2, map_smul, a2]; exact sq_smul_self hi _ (Or.inr rfl) _
+  · rw [a5, map_smul, a5]; exact sq_smul_self hi _ (Or.inr rfl) _
+  · rw [a6, map_smul, a6]; exact sq_smul_self hi _ (Or.inl rfl) _
+  · by_contra h
+    push_neg at h
+    apply hx0
+    rw [hd, h.1, h.2.1, h.2.2]; simp
+
+/-- **The triplet `3̄` (level 2) is irreducible**, likewise, for `uʳ, uᵍ, uᵇ`. -/
+theorem level2_irreducible (hi : i * i = -1) (W : Submodule K (Fin 8 → K)) (hW : Su3Stable W)
+    {x : Fin 8 → K} (hxW : x ∈ W) (hxL : x ∈ levelSpace (-i)) (hx0 : x ≠ 0) :
+    fock i 4 ∈ W ∧ fock i 5 ∈ W ∧ fock i 6 ∈ W := by
+  obtain ⟨-, -, -, -, -, -, -, -, -, -, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10⟩ :=
+    octDer_fock_action (K := K) hi
+  have hd := level2_decomp hi hxL
+  refine triplet_core W _ _ _ _ (hW _ octDer7_mem) (hW _ octDer10_mem) (hW _ octDer6_mem)
+    (hW _ octDer11_mem) _ _ _ ?_ ?_ a3 a4 ?_ ?_ a7 a8 a9 a10 (x 5 / 4) (x 2 / 4) (x 3 / 4) (by rw [← hd]; exact hxW) ?_
+  · rw [a1, map_smul, a1]; exact sq_smul_self hi _ (Or.inr rfl) _
+  · rw [a2, map_smul, a2]; exact sq_smul_self hi _ (Or.inl rfl) _
+  · rw [a5, map_smul, a5]; exact sq_smul_self hi _ (Or.inl rfl) _
+  · rw [a6, map_smul, a6]; exact sq_smul_self hi _ (Or.inr rfl) _
+  · by_contra h
+    push_neg at h
+    apply hx0
+    rw [hd, h.1, h.2.1, h.2.2]; simp
 
 /-! ## C. The forced-embedding test -/
 

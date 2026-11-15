@@ -51,11 +51,17 @@ a generic `Field`, `CharZero`, with such an `i`; the minimal case is `ℚ(i)`. `
 | corpus `su3 e₁` acts on `𝕆_K` by derivations | `extD_leibniz` |
 | `su3` kills `ν`, `e⁺`; preserves levels 1 and 2 | `extD_su3_kills_fock0/7`, `extD_su3_mem_levelSpace` |
 | the `su3`-invariant vectors are exactly `span(ν, e⁺)` | `su3_invariant_iff` |
+| each level is spanned by its three Fock vectors | `level1_decomp`, `level2_decomp` |
+| each triplet is irreducible under `su3 e₁` | `level1_irreducible`, `level2_irreducible` |
 
 So the decomposition is `1 ⊕ 3̄ ⊕ 3 ⊕ 1` by level (Furey's `ν`, `d̄`, `u`, `e⁺`). The two
-triplets are exchanged by `i ↦ −i`. **Not proved:** that each triplet is irreducible. That
-is the classical fact (`3`, `3̄`); here only invariance, the absence of invariant vectors,
-and the dimensions from the Fock basis are proved.
+triplets are exchanged by `i ↦ −i`, and each is irreducible: any nonzero `su3`-stable
+subspace that meets a level contains all three of its Fock vectors (added 2026-11-15).
+The proof is the weight argument (`triplet_core`). Two Cartan elements, `octDer 7` and
+`octDer 10`, act diagonally on the Fock vectors with eigenvalues `0, ±i`, so `x + H(Hx)`
+picks out one weight line. Two root elements, `octDer 6` and `octDer 11`, then move between
+the lines. The action table is `octDer_fock_action`. Irreducibility holds over every
+characteristic-0 field containing `i`, not only over its algebraic closure.
 
 ## 3. The embedding test (Step 2)
 
