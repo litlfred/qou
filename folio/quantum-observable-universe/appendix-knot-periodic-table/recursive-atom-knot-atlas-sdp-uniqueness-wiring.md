@@ -14,7 +14,7 @@ demonstration level is certified by the single parameterised
 statement
 
 $$
-\texttt{nucleus\_uniqueness\_closed}\ (3A)\ : \ \text{(sorry-free, axiom-free)}
+\texttt{nucleus\_uniqueness\_closed}\ (3A)\ : \ \text{(axiom-free)}
 $$
 
 instantiated at $3A = 12$. The same statement, supplied by the

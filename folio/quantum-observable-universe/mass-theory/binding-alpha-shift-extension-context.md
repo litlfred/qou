@@ -82,7 +82,7 @@ This is the $A\ge3$ analogue of:
   the per-A pole order $\alpha_{\text{shift}}(A)$ is realised by
   the proved formula $k(A) \cdot (p(A) - 1)$ at a substrate-identified
   torus knot.
-- `theorem binding_unique_via_alpha_shift` — sorry-free conditional
+- `theorem binding_unique_via_alpha_shift` — conditional
   on the two classes: two binding evaluators sharing $(m_e, \rho_0,
   \alpha_{\text{shift}})$ agree pointwise.
 - `theorem binding_subsingleton` — Subsingleton companion.

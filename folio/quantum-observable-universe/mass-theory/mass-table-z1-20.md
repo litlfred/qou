@@ -88,8 +88,7 @@ and both are **convention-independent** — neither involves the Markov
 parameter $z$, so neither moved when $C \to D$. Both reproduce all nineteen
 non-hydrogen values of the superseded table exactly. The per-crossing
 determinants and ratios they rest on are proved in Lean
-(`QOU.BraidKnot.detT_*`, `symAltRatio_*`, `chiralityCount_collapse`,
-sorry-free).
+(`QOU.BraidKnot.detT_*`, `symAltRatio_*`, `chiralityCount_collapse`).
 
 $\Phi_{1}$ is the only invariant that uses $z$, and it is the only one the
 convention change moves. It is recomputed here rather than carried.

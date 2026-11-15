@@ -191,8 +191,7 @@ parameters).
 The identity $q_0^{-k} = z_k$ is excluded twice over, and neither
 exclusion needs the distances above.
 
-**It is already a theorem.** `seed_is_not_the_cusp_shape` (sorry-free,
-conditional on the class below) gives $z_k \neq r$ for every real $r$,
+**It is already a theorem.** `seed_is_not_the_cusp_shape` (conditional on the class below) gives $z_k \neq r$ for every real $r$,
 because `im_pos` excludes every real shape and the seeds $q_0^{-k}$ are
 real. So the identity fails for a reason internal to the conjecture.
 

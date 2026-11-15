@@ -48,15 +48,15 @@ ratio $V_S(T(2,5))/V_S(T(2,3)) = 9/5$ exactly.
 
 ## Lean structure — what is proved vs. the remaining gap
 
-The Lean sibling separates the **two algebraic identities** (provable,
-sorry-free) from the **physical / empirical content** of the mass-ratio
+The Lean sibling separates the **two algebraic identities** (proved)
+from the **physical / empirical content** of the mass-ratio
 claim (not a Lean theorem). This makes precise what remains "to be
 proved" downstream.
 
 | Lean declaration | content | status |
 |---|---|---|
 | `chi_21_odd` | $\chi^{(2,1)}(\sigma_1^n)=q^n+(-q^{-1})^n=q^n-q^{-n}$ for odd $n$ | **proved** |
-| `seifert_ratio_T25_T23` | $V_S(T(2,5))/V_S(T(2,3))=9/5$ | **proved** (sorry-free; needs char $\neq 2,3,5$) |
+| `seifert_ratio_T25_T23` | $V_S(T(2,5))/V_S(T(2,3))=9/5$ | **proved** (needs char $\neq 2,3,5$) |
 | `meson_squaring_exponent` | the exponent record $n_q=2$ | **proved** (`rfl`) |
 | `mesonMassRatio` | the assembled formula $\chi^{(2,1)}(\sigma_1^5)\cdot(9/5)^2$ | **definition** |
 

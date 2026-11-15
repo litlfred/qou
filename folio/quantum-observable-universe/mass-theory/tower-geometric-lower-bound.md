@@ -11,6 +11,6 @@ $$
 
 ## Lean structure
 
-[`QOU.Mass.WStd.wStd_geometric_from_three`](../lean/QOU/Mass/WStdSuperExponential.lean) proves the displayed bound **sorry-free**, and [`QOU.Mass.WStd.wStd_eq_zero_of_lt_three`](../lean/QOU/Mass/WStdSuperExponential.lean) the vanishing below it. Both route through the skew branching rule and the up-operator identity of Young's lattice — finite combinatorics on `YoungDiagram`, with no appeal to the Robinson–Schensted correspondence or to the hook-length formula as a general theorem.
+[`QOU.Mass.WStd.wStd_geometric_from_three`](../lean/QOU/Mass/WStdSuperExponential.lean) proves the displayed bound, and [`QOU.Mass.WStd.wStd_eq_zero_of_lt_three`](../lean/QOU/Mass/WStdSuperExponential.lean) the vanishing below it. Both route through the skew branching rule and the up-operator identity of Young's lattice — finite combinatorics on `YoungDiagram`, with no appeal to the Robinson–Schensted correspondence or to the hook-length formula as a general theorem.
 
 The hypothesis-carrying class `QOU.Mass.LevelSelection.TowerGeometricLowerBound` takes the threshold as a parameter $k_{0}$, and [`QOU.Mass.WStd.towerGeometricLowerBound_wStd`](../lean/QOU/Mass/WStdSuperExponential.lean) inhabits it at $k_{0} = 3$. That the threshold is necessary is itself proved: [`QOU.Mass.WStd.not_towerGeometricLowerBound_wStd_of_lt_three`](../lean/QOU/Mass/WStdSuperExponential.lean) refutes every $k_{0} < 3$, for all $r$ and $c$. `#print axioms` on each reports only `propext / Classical.choice / Quot.sound`.

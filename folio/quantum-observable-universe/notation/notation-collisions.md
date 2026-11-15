@@ -318,7 +318,7 @@ unless the text says otherwise.
 **Never say "bar-even" unqualified of a channel.** Under the full involution
 both crossing-energy channels are negated, and both Hecke idempotents are
 fixed, so the words separate nothing there. They are informative only relative
-to a named half. Proved sorry-free over a general field in
+to a named half. Proved over a general field in
 [`QOU.BraidKnot.CrossingEnergyBarParity`](../lean/QOU/BraidKnot/CrossingEnergyBarParity.lean)
 (`eSym_coef`, `eSym_mirror`, `bar_neg_of_both`); the full atlas including
 gradings B and D is

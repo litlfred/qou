@@ -73,7 +73,7 @@ No claim of LP-instability is made, and none is available: the condition as stat
 | $W_{\mathrm{std}} > 0$ and $P_{7,7}W_{\mathrm{std}} > 0$ | `wStd_pos`, `toffoliDiagonal_mul_wStd_pos` |
 | $\mathrm{sign}\,P_{7,6} = -\mathrm{sign}\,\hbar_\times$ | `toffoliFlip_mul_coneCoord_nonpos` |
 
-All sorry-free, axioms `[propext, Classical.choice, Quot.sound]`. The antisymmetry defect is exact and vanishes only at $q = 1$, so "reversing the crossing negates it" fails everywhere except the classical limit. Symbolic cross-check: [`toffoli_amplitude_sign_claims.py`](https://github.com/litlfred/qou/blob/main/computations/probes/toffoli_amplitude_sign_claims.py), 9/9.
+All use only the axioms `propext`, `Classical.choice` and `Quot.sound`. The antisymmetry defect is exact and vanishes only at $q = 1$, so "reversing the crossing negates it" fails everywhere except the classical limit. Symbolic cross-check: [`toffoli_amplitude_sign_claims.py`](https://github.com/litlfred/qou/blob/main/computations/probes/toffoli_amplitude_sign_claims.py), 9/9.
 
 **The reduction is refuted by a zero-set argument.** The proof reduces the cone condition to $P_{7,7}W_{\mathrm{std}}$ *"with the appropriate sign from"* $P_{7,6}$. A product vanishes exactly where a factor does, so such a reduction forces the cone condition's zero set into the union of the factors'. With the symbolic Gram — validated against the production `gram_matrix_mp` at five values of $q$ — the cone condition is a **single** constraint, the one indexed by the longest word $\sigma_0\sigma_1\sigma_0$:
 

@@ -113,7 +113,7 @@ saddle asymptotic (a theorem for $4_1$ by Ohtsuki / Andersen–Hansen), and the
 matched-cusp volume identification supplied by
 ([shared-denominator cusp holonomy](#conj:shared-denominator-cusp-holonomy)) —
 and the statement bundle `QOU.QPochhammer.algebraic_geometric_equivalence`
-*derives* both halves: item 1 (pole side) unconditionally, as the sorry-free
+*derives* both halves: item 1 (pole side) unconditionally, as the
 theorem `denomPolyLocal_roots_explicit` (each $x = q^{-k}$ is a genuine root of
 $(x;q)_n$), and item 2 (Bloch–Wigner asymptotic) from the class fields.
 The class asserts nothing provable-outright; no instance is fabricated. This
