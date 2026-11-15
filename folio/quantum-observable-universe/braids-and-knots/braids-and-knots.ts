@@ -67,6 +67,7 @@ export default chapter({
             "trace-locality-gs-reconciliation",
             "trace-locality-meets-gs-nonlocality-proof",
             "trace-locality-nc-probability-reading",
+            "trace-locality-product-factorisation-check",
             "jones-markov-trace",
             "jones-markov-trace-stabilisation",
             "jones-markov-trace-formalization-note",
