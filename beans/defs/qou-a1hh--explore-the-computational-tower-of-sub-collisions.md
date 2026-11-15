@@ -116,3 +116,6 @@ D-H2 = no stays for single letters (flip_ne_swap). Added: on γγ pairs the swap
 
 ## 2026-11-15 — 4-strand γγ grammar (branch claude/gg-four-strand-2026-11-15, 1d8f88a737c)
 Reading 3 on H₄, vertices V/V̄ at sites 0,1, m=1..6. Pass counts 0/4, 0/16, 16/64, 32/256, 0/1024, 518/4096. Passing is fixed by the SITE PATTERN (000,111; 0101,1010; rotations of 000111) and is nearly blind to V/V̄ orientation; six mixed-site m=6 words are the exception. Site pattern is a new binary label beyond the pair bit; its relation to the σ₃-eigenline flavour (qou-wkcd) is untested. Scope (a).
+
+## 2026-11-15 — J₄-projected reading 3 (8f8c472b110, PR #7950)
+454 m=6 passing words with a site-1 vertex, (3,1) rep from PR #7957. 448 pass in every J₄ sector (all 111111 and 000111-rotation words). The six mixed-site words fail: tr(Jb w Jb) ∈ [−0.40, −0.20]. Two rotation words (V1.B0.V0.B0.B1.V1, B1.V0.B0.V0.V1.B1) give d_a = 1 and flip = 0 (identity on Ja). Scope (a).
