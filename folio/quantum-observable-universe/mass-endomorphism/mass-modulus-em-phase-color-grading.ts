@@ -8,6 +8,7 @@ export default remark({
   uses: [
     "prop:color-spacetime-s5-factorization",
     "conj:binding-qbeta-complex-volume",
+    "conj:bar-parity-split",
   ],
   tags: [
     "color",
