@@ -1,13 +1,13 @@
 ---
 # qou-0z4i
 title: 'GAP: AGENTS.md L1 row states 65/50 dps; live default is 70/60'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T14:21:27Z
-updated_at: 2026-10-04T15:19:41Z
+updated_at: 2026-11-15T13:40:00Z
 parent: qou-9nnz
 ---
 
@@ -80,3 +80,7 @@ not have reached them.
 Each site now carries the measuring command rather than only a number, and the
 AGENTS.md row names the retired figures explicitly so the next agent who finds
 65/50 in a dated audit doc does not 'correct' it back.
+
+## Closed 2026-11-15 (owner tap, precision epic triage)
+
+AGENTS.md §L1 row now states 70 dps compute / 60 dps serialization, names 65/50 as retired, and carries the measuring command (AGENTS.md line 2587 at 0d4e4a005). The four sites this bean named are fixed.
