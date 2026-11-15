@@ -3394,3 +3394,21 @@ Asked in the six-part frame on PR #7718 (comment 6130340849). The four options w
 ### Cross-link (2026-10-11)
 
 the p-n interface convention R3 made canonical is the one the corpus's uniqueness theorem does NOT cover (it fails `BarInvariant`), so "canonical" there is not proved canonicity. Record: [`2026-10-11-atom-word-provenance.md`](../../docs/audits/2026-10-11-atom-word-provenance.md).
+
+
+## 2026-11-15 — gluon segment by the γγ rule (PR #7876, child bean qou-ggls)
+
+**What the γγ rule gives.** On three strands the rule gives the unit V = σ0σ1⁻¹, which is the corpus gluonUnit. It does not fix how many units the gluon segment carries. The output is therefore the family {V^k}.
+
+**What was enumerated.** CORE·TAIL·V^k for k = 0..3, pre-registered, with the census quark tail held fixed.
+- g_odd = 0 for every k, so the qou-z08b obstruction belongs to σ0².
+- Whole-word reading 3 admits **k = 1 only**, for both nucleons: χ_(2,1) = +0.2170 (p) and +0.4294 (n).
+- Q_β at z_D for that element is 0.229517 MeV (−70.66 %). This is reported only and played no part in any choice.
+
+Nothing is selected or re-scored.
+
+**Owner decisions still open:**
+1. Does the γγ rule or the H2-parity rule (σ0², owner 2026-08-30) govern the gluon segment?
+2. Does the survivor replace nuc11_interleaved?
+
+This bean stays open (rule 13a).
