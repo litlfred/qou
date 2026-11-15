@@ -20,6 +20,17 @@ export default proposition({
         "`10000·(q² − z q − 1)` at `z = z_C`; do **not** substitute $z_D$ into them to improve the " +
         "residual, which would pick a convention by its miss.",
     },
+    {
+      kind: "status",
+      date: "2026-11-15",
+      body:
+        "**Switched to convention D (owner ruling 2026-11-15: replace convention-C values with " +
+        "convention D even if worse).** This supersedes the 2026-10-10 caveat's instruction not to " +
+        "substitute $z_D$. The Lean closed form is now written in `z` and evaluated at " +
+        "`zD = q0^3/(q0^2+1)`; the pins are Phi(uud) = -0.614886, Phi(udd) = -0.896395 (50 dps), " +
+        "model value 1.0541 MeV, -18.5 % vs CODATA. The convention-C 1.302 MeV (+0.64 %) stays in " +
+        "the prose only as a labelled historical comparison.",
+    },
   ],
   label: "prop:neutron-proton-mass-splitting",
   title: "Neutron--proton mass splitting from quark crossing change",
