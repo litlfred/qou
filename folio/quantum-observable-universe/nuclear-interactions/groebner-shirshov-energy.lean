@@ -139,4 +139,74 @@ theorem beta_decay_energy_negative (_q : ℝ) (_hq : 1 < _q)
 noncomputable def groebner_shirshov_energy (q : ℝ) (coeffs : List ℝ) : ℝ :=
   totalEnergyChange q coeffs
 
+/-! ## Repaired form (option B, 2026-11-15)
+
+The `.md` defines the energy on an element of `H_A(q)` written in the word
+basis: `E(ξ) = Σ_w |c_w| · ℓ(w)`. With that definition:
+
+* **Path independence is telescoping.** Along any reduction path
+  `ξ₀ → ξ₁ → … → ξₘ` the step changes sum to `E(ξₘ) − E(ξ₀)`. By confluence
+  every path ends at the same normal form, so the total change depends only on
+  `ξ₀` (`energyPath_telescopes`).
+* **The per-step formula in the `.md` is wrong.** A Hecke step on an isolated
+  monomial `c·w`, with `w = u σᵢσᵢ v` of length `ℓ`, changes the energy by
+  `|c|·(|h|(ℓ − 1) − 2)`, with `h = q − q⁻¹` (`heckeStep_energy_change`).
+  The `.md` says `|c|·|h|`. At `ℓ = 2` and `|h| < 2` (true near `q₀ ≈ 1.11`,
+  where `h ≈ 0.21`) the step *lowers* the energy, contradicting "every Hecke
+  step increases the total weight". -/
+
+/-- Energy of a linear combination of braid words: `Σ_w |c_w| · ℓ(w)`. -/
+noncomputable def wordEnergy (x : List ℕ →₀ ℝ) : ℝ :=
+  x.sum fun w c => |c| * w.length
+
+/-- **Path independence (telescoping).** For any path of states, the sum of
+    the step changes is the energy of the last state minus that of the first. -/
+theorem energyPath_telescopes (x : List ℕ →₀ ℝ) :
+    ∀ (path : List (List ℕ →₀ ℝ)),
+      (((x :: path).zip path).map fun p => wordEnergy p.2 - wordEnergy p.1).sum
+        = wordEnergy ((x :: path).getLast (List.cons_ne_nil _ _)) - wordEnergy x := by
+  intro path
+  induction path generalizing x with
+  | nil => simp
+  | cons y ys ih =>
+    simp only [List.zip_cons_cons, List.map_cons, List.sum_cons]
+    rw [ih y, List.getLast_cons (List.cons_ne_nil _ _)]
+    ring
+
+theorem wordEnergy_single (w : List ℕ) (c : ℝ) :
+    wordEnergy (Finsupp.single w c) = |c| * w.length := by
+  simp [wordEnergy, Finsupp.sum_single_index]
+
+/-- **Energy change of one Hecke step** on an isolated monomial
+    `c · u σᵢσᵢ v ↦ c h · u σᵢ v + c · u v`. -/
+theorem heckeStep_energy_change (u v : List ℕ) (i : ℕ) (c h : ℝ) :
+    wordEnergy (Finsupp.single (u ++ [i] ++ v) (c * h) + Finsupp.single (u ++ v) c)
+      - wordEnergy (Finsupp.single (u ++ [i, i] ++ v) c)
+      = |c| * (|h| * ((u ++ [i, i] ++ v).length - 1) - 2) := by
+  have hne : u ++ [i] ++ v ≠ u ++ v := by
+    intro he; have := congrArg List.length he; simp at this
+  have hdisj : Disjoint (Finsupp.single (u ++ [i] ++ v) (c * h)).support
+      (Finsupp.single (u ++ v) c).support := by
+    rw [Finset.disjoint_left]
+    intro a ha hb
+    have h1 := Finsupp.support_single_subset ha
+    have h2 := Finsupp.support_single_subset hb
+    simp only [Finset.mem_singleton] at h1 h2
+    exact hne (h1.symm.trans h2)
+  rw [wordEnergy, Finsupp.sum_add_index_of_disjoint hdisj, ← wordEnergy,
+    ← wordEnergy, wordEnergy_single, wordEnergy_single, wordEnergy_single, abs_mul]
+  simp only [List.length_append, List.length_cons, List.length_nil]
+  push_cast
+  ring
+
+/-- **The `.md` claim "every Hecke step increases the energy" is false.**
+    On `σ₁σ₁` with `h = 1/5` the energy drops. -/
+theorem heckeStep_can_lower_energy :
+    wordEnergy (Finsupp.single [1] (1 * (1/5 : ℝ)) + Finsupp.single [] 1)
+      < wordEnergy (Finsupp.single [1, 1] 1) := by
+  have := heckeStep_energy_change [] [] 1 1 (1/5)
+  simp only [List.nil_append, List.append_nil] at this
+  norm_num at this
+  linarith
+
 end QOU.Archimedean
