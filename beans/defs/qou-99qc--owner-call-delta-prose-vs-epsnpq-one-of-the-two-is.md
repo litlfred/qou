@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-15T23:09:58Z
+updated_at: 2026-11-15T23:11:03Z
 parent: qou-10v9
 ---
 
@@ -3494,3 +3494,10 @@ The emission projections are taken over isospin-½ states.
 - p→n is the mirror: start p_j; final projection onto the T=½ part at T³ = −½ along F₃²·uuu, in the basis n_A, n_B; pair (u on 4, d on 5).
 Words V⁰, V³, V⁶; X = none and J23.
 Questions: is ε_tr stable across words, and what is ε_tr,pn/ε_tr,np? No numerical prediction. Nothing compared to data.
+
+
+### RESULT ε-TR1 (2026-11-15 23:45Z), multiplicity_trace_epsilon_probe.py
+With the neutron-vector choice traced out over the isospin-½ multiplicity space, **ε_tr,pn = ε_tr,np EXACTLY**, as rational functions in q, for V⁰, V³ and V⁶, with and without J23. Tr M(1) is also identical in both directions.
+- V⁰: ε_tr = (q−1)(q+1)(q²+1)/(2(q⁴+1)) = 0.10285 at q₀; with J23 it is −(q²−1)/(2(q²+1)) = −0.05198.
+- V³ gives 0.11369, V⁶ gives 0.12406 (with J23: −0.04651, −0.04126). So ε_tr is word-dependent, not −h, and not stable in k.
+Reading: every n↔p asymmetry seen in ε-NP1, ε-TW1 and ε-N1 came from states that are not U_q-isospin-covariant, or from a choice of multiplicity vector. On canonically traced isospin-½ states, Δ_S plus this emission is n↔p symmetric. That is consistent with a Wigner–Eckart reduction, but the symmetry is not proved here. So this route does not break the n–p asymmetry. A source of asymmetry has to be non-U_q-covariant (e.g. electric charge or the external field), scope (a).
