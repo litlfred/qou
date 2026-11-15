@@ -249,6 +249,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "3be9c7912fc0",
+          "ts": "fbe267c73a70"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:55:09.347Z",
+        "reviewed_sha": "9eadb3469d2a5f65d0a3a82e57e332a81ca29d22",
+        "severity": "major",
+        "evidence": "\"Proof sketch\". Forward: TM → polynomial braid encoding asserted; \"each multiplication costs O(1) Planck steps\" ignores growing matrix size. Converse: \"if the factored form needs ω(poly) factors, the information exceeds the budget\" is not an argument",
+        "notes": "Hand review 2026-11-15 (statement vs narrative proof); issue #8020. "
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1165,7 +1182,7 @@
           "in_degree": 0,
           "cone_size": 98,
           "depth": 28,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1714,6 +1731,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-11-15T21:55:09.347Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

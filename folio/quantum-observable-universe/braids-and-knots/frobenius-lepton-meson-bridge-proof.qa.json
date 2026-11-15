@@ -249,6 +249,38 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "28deedcb75f6",
+          "ts": "b13763c01bd6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:27:35.016Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "The proof establishes only the branching rule. The statement also asserts that m_mu/m_e and m_K/m_pi \"measure\" transitions, that b is the binding amplitude, and that C aligns with the bar involution at H_2 but diverges at H_3. None of this is argued."
+      },
+      {
+        "field_hash": {
+          "md": "28deedcb75f6",
+          "ts": "b13763c01bd6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T22:57:14.132Z",
+        "reviewed_sha": "f84776ece33e7b2ccfa5cfa386fc4c0238ec4a2d",
+        "severity": "minor",
+        "evidence": "Re-review after 93cc4bbea. Physical claims are gone. The proof establishes only the branching rule (box removal). The reciprocity value 1 follows from it but is not written out, and the coupling claims ('coupled inside the Hoefsmit block', 'decouple exactly when b=0', i.e. [3]_q=0) are not addressed."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1152,7 +1184,7 @@
           "in_degree": 0,
           "cone_size": 5,
           "depth": 5,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1701,6 +1733,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-11-15T22:57:14.132Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

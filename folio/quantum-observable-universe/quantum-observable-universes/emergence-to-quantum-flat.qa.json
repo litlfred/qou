@@ -1224,6 +1224,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "9092bcb18ccc",
+          "ts": "d78f7b3c97db",
+          "lean": "4a43444e282f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:55:13.770Z",
+        "reviewed_sha": "2ddd93430a21609842c768a1e983ab7fda5cf639",
+        "severity": "major",
+        "evidence": "Lean encodes only F⁻ = B⁻, B⁻ = 0 ⇒ F⁻ = 0. G_q ≅ SU_q(2) and the INN statement are missing. The direction is reversed: the statement says flatness follows from the instanton axiom, but the proof derives the instanton equation from flatness plus simplicity.",
+        "notes": "Hand review 2026-11-15 (statement vs Lean); issue #8020. "
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2390,6 +2408,6 @@
       }
     ]
   },
-  "updated_at": "2026-10-10T12:00:00.000Z",
+  "updated_at": "2026-11-15T21:55:13.770Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

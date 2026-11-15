@@ -52,6 +52,19 @@ This anchors the Hoefsmit character values.
 **Solving the system.**  $\mathbf{c} = (-0.3056, +1.4541, -0.6127,
 -1.5593, +1.0000)$.
 
+**Exact check of the table.**  The numerical solve above fixes only the
+$(1^4)$ row at $q_0$. The statement's table is exact: computing the five
+Hoefsmit characters on the class representatives $e$, $T_{s_1}$,
+$T_{s_1 s_3}$, $T_{s_1 s_2}$, $T_{s_1 s_2 s_3}$ symbolically over
+$\mathbb{Q}(q)$, every row $r_\lambda$ of the table satisfies
+$\chi_\mu(r_\lambda) = 0$ for all $\mu \ne \lambda$ and
+$\chi_\lambda(r_\lambda) \ne 0$, as identities of rational functions in
+$q$. So the five rows are the basis of class functions dual to the
+irreducible characters, normalised by $c_{(1234)} = 1$ (for $(2,2)$, where
+$c_{(1234)} = 0$, by $c_{(123)} = 1$). The $(1^4)$ row is the $r_3$ of this
+proof; at $q_0$ it reproduces the numerical solution. The check is
+`computations/probes/explicit_alpha_k_h4_exact_check.py`.
+
 **Markov pairing on $r_3$.**  Markov-trace values on the 5 class
 representatives are universal (Markov reduction):
 $\mathrm{tr}_M(T_{w_C}) \in \{1, z, z^2, z^2, z^3\}$ for the five

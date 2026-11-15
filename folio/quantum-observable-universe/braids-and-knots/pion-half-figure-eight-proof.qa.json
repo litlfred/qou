@@ -249,6 +249,37 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "34b5be02401d",
+          "ts": "62f6afc5a330"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:27:35.085Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "minor",
+        "evidence": "The traces are correct (sympy: both -(q^4-q^2+1)/q^2), so the equal-phase statement holds. But the proof says the eigenvalues are \"complex conjugates on the unit circle\" unconditionally; that needs (h^2+1) < 2, i.e. q < phi."
+      },
+      {
+        "field_hash": {
+          "md": "067f37dd487e",
+          "ts": "62f6afc5a330"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T22:57:01.225Z",
+        "reviewed_sha": "f84776ece33e7b2ccfa5cfa386fc4c0238ec4a2d",
+        "evidence": "Re-review after 13f8f3506. The proof now splits h²<1 (unit circle, φ⁻¹<q<φ) from h²≥1 (real negative, phase π). Traces −(h²+1) for both operators were checked earlier with sympy; det +1 from four Hecke letters each det −1. The statement (equal phases) follows on both ranges."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1152,7 +1183,7 @@
           "in_degree": 0,
           "cone_size": 25,
           "depth": 15,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 0,
           "edge_span_mean": 0,
           "worst_target": ""
@@ -1696,6 +1727,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-11-15T22:57:01.225Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -624,7 +624,7 @@
           "in_degree": 0,
           "cone_size": 39,
           "depth": 21,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -934,6 +934,23 @@
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/quantum-observable-universes/q-logarithm-exists-proof.ts:1",
         "notes": "The argument flow in 'By Milnor--Moore, \\mathrm{Prim}(\\mathcal{H}_q) is the Lie algebra' is logically sound, mapping onto the cited dependencies."
+      },
+      {
+        "field_hash": {
+          "md": "6841ed09a2a4",
+          "ts": "520f6835c27c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:55:12.612Z",
+        "reviewed_sha": "2ddd93430a21609842c768a1e983ab7fda5cf639",
+        "severity": "critical",
+        "evidence": "The Lean witness is trivial. The proof's series Σ(−1)^{n−1}xⁿ/[n]_q is not inverse to exp_q: at q = 2 the x³ coefficient of log_q(exp_q x) is −2/63 (checked with exact `Fraction`). It is also not primitive, because only multiples of x are primitive under the q-binomial coproduct.",
+        "notes": "Hand review 2026-11-15 (statement vs narrative proof); issue #8020. "
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1065,7 +1082,7 @@
         "reviewed_at": "2026-06-28T11:19:33.342Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/q-logarithm-exists-proof.md:1 \u2014 By Milnor--Moore, \\mathrm{Prim}(\\mathcal{H}_q) is the Lie algebra",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/q-logarithm-exists-proof.md:1 — By Milnor--Moore, \\mathrm{Prim}(\\mathcal{H}_q) is the Lie algebra",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'By Milnor--Moore, \\mathrm{Prim}(\\mathcal{H}_q) is the Lie algebra' are consistent."
@@ -1577,6 +1594,6 @@
       }
     ]
   },
-  "updated_at": "2026-10-10T12:00:00.000Z",
+  "updated_at": "2026-11-15T21:55:12.612Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
