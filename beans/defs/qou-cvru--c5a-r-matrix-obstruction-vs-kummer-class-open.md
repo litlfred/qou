@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-15T17:35:00Z
-updated_at: 2026-11-15T17:35:00Z
+updated_at: 2026-11-15T18:10:00Z
 parent: qou-lx8f
 ---
 
@@ -35,3 +35,8 @@ strand tower. With the relations as written, κ_n ≡ 0.
 - R1: done on #7936.
 - R2: define a non-jet-image Ř⁽ⁿ⁾, fixed BEFORE computing (anti-fit).
 - R3: the gerbe layer, qou-skn4 G1–G2, plus Ȟ²(S, μ_n) ≅ ℤ/n.
+
+## 2026-11-15 (session 01Qmmkt7): G1 started, R3 scoped
+- PR #7945 (issue #7944): `QOU/MathlibExt/CechColimit.lean`, sorry-free. Refinement map on Čech H², a colimit `CechH2` over admissible covers, and the T2b lifting obstruction as a cover-independent class (`cechObstruction`, `_indep_lift`, `_pull`, `_eq_one_of_lift`).
+- Still open: the converse (trivial in colimit ⇒ lift on a refinement) needs filtered covers (G1b). The scope note's degree-2 injectivity claim was not claimed.
+- R3 plan: /mnt/project-files/qou-leftovers/r3-cohomology-route.md. The Kummer class is δ(T_S) for 1→μ_n→𝒪*→𝒪*→1, and δ(L) = deg L mod n. Missing pieces: H²(S,μ_n)≅ℤ/n (no Čech–singular comparison in Mathlib) and the Kummer sequence on a Riemann surface.

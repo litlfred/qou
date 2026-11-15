@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-10-12T19:48:14Z
-updated_at: 2026-10-12T19:48:14Z
+updated_at: 2026-11-15T18:10:00Z
 parent: qou-533l
 ---
 
@@ -36,3 +36,8 @@ Tier T3 of qou-533l.
 Lean-direct exits 0; standard axioms.
 
 **Not done.** The CONVERSE, that vanishing on a refinement implies vanishing on the coarser cover, needs 𝓔 (or 𝒜) to be a SHEAF so that lifts glue. That is the real content of the colimit over covers, and the presheaf framework cannot supply it. Next: add the sheaf condition (Mathlib `Presheaf.IsSheaf` over a Grothendieck topology), then gerbes. The design goes to the owner first.
+
+## 2026-11-15 (session 01Qmmkt7): G1 started, R3 scoped
+- PR #7945 (issue #7944): `QOU/MathlibExt/CechColimit.lean`, sorry-free. Refinement map on Čech H², a colimit `CechH2` over admissible covers, and the T2b lifting obstruction as a cover-independent class (`cechObstruction`, `_indep_lift`, `_pull`, `_eq_one_of_lift`).
+- Still open: the converse (trivial in colimit ⇒ lift on a refinement) needs filtered covers (G1b). The scope note's degree-2 injectivity claim was not claimed.
+- R3 plan: /mnt/project-files/qou-leftovers/r3-cohomology-route.md. The Kummer class is δ(T_S) for 1→μ_n→𝒪*→𝒪*→1, and δ(L) = deg L mod n. Missing pieces: H²(S,μ_n)≅ℤ/n (no Čech–singular comparison in Mathlib) and the Kummer sequence on a Riemann surface.
