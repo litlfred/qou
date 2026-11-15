@@ -87,3 +87,24 @@ because the earlier verdicts recorded the old text.
 | meson-qcg-fusion-identity | pass | pass (was warn) | Mass reading moved out |
 | knot-eigenbasis-complete | fail | warn (was fail) | TL quotient and the inclusions are fixed. The Lean is still self-assuming. "Knot types label summands" is not shown |
 | trace-locality-meets-gs-nonlocality | fail | warn (was fail) | Part (3) moved out. **New:** the Lean class still carries `productFactorisation` (false for the Markov trace) and a convention-C docstring on z |
+
+## Second re-review, after PR #8075 (2026-11-15, 23:30Z)
+
+PR #8075 fixed the items left from the first re-review and moved two more readings into remarks. These are the new verdicts.
+
+**Statement vs proof (`da-non-sequitur`):** all six blocks now pass:
+- figure-eight-reeb-rotation
+- hoefsmit-binding-amplitude
+- meson-em-sinh-closed-form
+- knot-eigenbasis-complete
+- trace-locality-meets-gs-nonlocality
+- three-strand-color-winding-rigidity. This one was already a pass; only its statement's a₋₂ label was fixed.
+
+**Statement vs Lean (`proof-narrative-lean-equiv`):**
+- **Pass:** meson-em-sinh-closed-form and three-strand-color-winding-rigidity.
+- **Fail, because the Lean is unchanged on main:**
+  - figure-eight-reeb-rotation
+  - hoefsmit-binding-amplitude
+  - knot-eigenbasis-complete
+  - trace-locality-meets-gs-nonlocality. Its fix is on #7915 and has not landed.
+- **n/a:** composite-crossing-parity and boltzmann-constant. Owner rulings made them a conjecture and a definition, and the criterion only applies to theorems, lemmas, propositions and corollaries.
