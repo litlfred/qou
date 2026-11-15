@@ -72,13 +72,20 @@ theorem normal_form_exists_of_unit_lc
     - **Inclusion**: `g₁ - g₂` is an inclusion S-polynomial, which reduces to zero
       by `hgs.inclusion_resolves`.
 
-    Reference: Bergman 1978, §3, proof of Theorem 1.2 (the Diamond Lemma). -/
+    Reference: Bergman 1978, §3, proof of Theorem 1.2 (the Diamond Lemma).
+
+    **`hlc` added 2026-11-15.** Without unit leading coefficients the
+    statement is false: `LocalConfluenceRefutation.local_confluence_false`
+    gives a one-rule GS basis over `ℤ` (relation `2K + 1`) and an element
+    `2·K E₊ K` whose two reducts `−E₊K` and `−K E₊` are both stuck. Bergman's
+    theorem is for monic (unit-lc) rules, which is what `hlc` records. -/
 -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5 §3 Thm 1.2 (local confluence from S-polynomial resolution)
 axiom local_confluence
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
     (hgs : IsGrobnerShirshovBasis G k ord sys)
     (hnqz : NoQuasiZerosFree G k)
+    (hlc : ∀ r ∈ sys.rules, IsUnit (r.lc ord))
     (f g₁ g₂ : AlgElement G k)
     (h₁ : SingleStepReduction ord sys f g₁)
     (h₂ : SingleStepReduction ord sys f g₂) :
@@ -152,13 +159,14 @@ theorem confluence
     (sys : RewritingSystem G k)
     (hgs : IsGrobnerShirshovBasis G k ord sys)
     (hnqz : NoQuasiZerosFree G k)
+    (hlc : ∀ r ∈ sys.rules, IsUnit (r.lc ord))
     (f g₁ g₂ : AlgElement G k)
     (h₁ : MultiStepReduction ord sys f g₁)
     (h₂ : MultiStepReduction ord sys f g₂) :
     ∃ (h : AlgElement G k),
       MultiStepReduction ord sys g₁ h ∧
       MultiStepReduction ord sys g₂ h :=
-  newman ord sys (fun _ _ _ s₁ s₂ => local_confluence ord sys hgs hnqz _ _ _ s₁ s₂)
+  newman ord sys (fun _ _ _ s₁ s₂ => local_confluence ord sys hgs hnqz hlc _ _ _ s₁ s₂)
     f (reduction_well_founded ord sys f) g₁ g₂ h₁ h₂
 
 /-! ## §4  Uniqueness of Normal Forms -/
@@ -184,12 +192,13 @@ theorem normal_form_unique
     (sys : RewritingSystem G k)
     (hgs : IsGrobnerShirshovBasis G k ord sys)
     (hnqz : NoQuasiZerosFree G k)
+    (hlc : ∀ r ∈ sys.rules, IsUnit (r.lc ord))
     (f nf₁ nf₂ : AlgElement G k)
     (hred₁ : ReducesToNF ord sys f nf₁)
     (hred₂ : ReducesToNF ord sys f nf₂)
     : nf₁ = nf₂ := by
   obtain ⟨h, hh₁, hh₂⟩ :=
-    confluence ord sys hgs hnqz f nf₁ nf₂ hred₁.reduces hred₂.reduces
+    confluence ord sys hgs hnqz hlc f nf₁ nf₂ hred₁.reduces hred₂.reduces
   exact (MultiStepReduction.eq_of_isNormalForm hred₁.is_normal hh₁).symm.trans
     (MultiStepReduction.eq_of_isNormalForm hred₂.is_normal hh₂)
 
@@ -233,7 +242,7 @@ theorem composition_lemma
   have h_nf'_red : ReducesToNF ord sys nf nf' :=
     ⟨reduce_reduces ord sys hlc nf, h_nf'_normal⟩
   -- By uniqueness: nf' = nf
-  exact normal_form_unique ord sys hgs hnqz nf nf' nf h_nf'_red h_nf_self
+  exact normal_form_unique ord sys hgs hnqz hlc nf nf' nf h_nf'_red h_nf_self
 
 /-! ## §6  Retraction Property (Bridge to FormalGroups.lean) -/
 

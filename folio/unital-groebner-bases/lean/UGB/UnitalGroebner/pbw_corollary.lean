@@ -80,6 +80,6 @@ theorem pbw_corollary
     exact normal_form_exists ord sys hlc f
   · -- Uniqueness of the PBW representative: proved via normal_form_unique.
     intro nf₁ nf₂ h₁ h₂
-    exact normal_form_unique ord sys hgs hnqz f nf₁ nf₂ h₁ h₂
+    exact normal_form_unique ord sys hgs hnqz hlc f nf₁ nf₂ h₁ h₂
 
 end UGB.UnitalGroebner

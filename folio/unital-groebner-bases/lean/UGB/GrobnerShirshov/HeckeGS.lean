@@ -805,12 +805,13 @@ theorem heckeCost_well_defined (n : ℕ) (hn : 0 < n) (hp : HeckeParams)
     (hgs : IsGrobnerShirshovBasis (HeckeGen n) ℝ (heckeOrder n)
       (heckeRewritingSystem n hn hp))
     (hnqz : NoQuasiZerosFree (HeckeGen n) ℝ)
+    (hlc : ∀ r ∈ (heckeRewritingSystem n hn hp).rules, IsUnit (r.lc (heckeOrder n)))
     (f : AlgElement (HeckeGen n) ℝ)
     (nf₁ nf₂ : AlgElement (HeckeGen n) ℝ)
     (hred₁ : ReducesToNF (heckeOrder n) (heckeRewritingSystem n hn hp) f nf₁)
     (hred₂ : ReducesToNF (heckeOrder n) (heckeRewritingSystem n hn hp) f nf₂) :
     nf₁ = nf₂ :=
-  normal_form_unique (heckeOrder n) (heckeRewritingSystem n hn hp) hgs hnqz
+  normal_form_unique (heckeOrder n) (heckeRewritingSystem n hn hp) hgs hnqz hlc
     f nf₁ nf₂ hred₁ hred₂
 
 /-- Threading cost uniqueness: two reductions of the same augmented braid
@@ -823,6 +824,8 @@ theorem heckeCost_well_defined (n : ℕ) (hn : 0 < n) (hp : HeckeParams)
 theorem threading_cost_unique (n : ℕ) (hp : HeckeParams)
     (hgs : IsGrobnerShirshovBasis (HeckeGen (n + 1)) ℝ (heckeOrder (n + 1))
       (heckeRewritingSystem (n + 1) (Nat.succ_pos n) hp))
+    (hlc : ∀ r ∈ (heckeRewritingSystem (n + 1) (Nat.succ_pos n) hp).rules,
+      IsUnit (r.lc (heckeOrder (n + 1))))
     (hadron : List ℤ) :
     ∀ (nf₁ nf₂ : AlgElement (HeckeGen (n + 1)) ℝ),
       ReducesToNF (heckeOrder (n + 1)) (heckeRewritingSystem (n + 1) (Nat.succ_pos n) hp)
@@ -832,7 +835,7 @@ theorem threading_cost_unique (n : ℕ) (hp : HeckeParams)
       nf₁ = nf₂ := by
   intro nf₁ nf₂ h₁ h₂
   exact heckeCost_well_defined (n + 1) (Nat.succ_pos n) hp hgs
-    (noQuasiZerosFree_of_generator ⟨0, Nat.succ_pos n⟩)
+    (noQuasiZerosFree_of_generator ⟨0, Nat.succ_pos n⟩) hlc
     (augmentedBraidElement hp hadron) nf₁ nf₂ h₁ h₂
 
 end UGB.GrobnerShirshov.Hecke

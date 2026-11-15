@@ -90,6 +90,6 @@ theorem main_theorem_statement
   · -- Uniqueness: fully discharged by the proved composition-lemma
     -- corollary `normal_form_unique` (confluence of a GS basis).
     intro nf₁ nf₂ h₁ h₂
-    exact normal_form_unique ord sys hgs hnqz f nf₁ nf₂ h₁ h₂
+    exact normal_form_unique ord sys hgs hnqz hlc f nf₁ nf₂ h₁ h₂
 
 end UGB.Introduction
