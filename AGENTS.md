@@ -5591,13 +5591,24 @@ and **SEED the cache branch afterwards**. Full slug/seed rules:
 ROOT=$(git rev-parse --show-toplevel); TGZ=$(mktemp)
 trap 'rm -f "$TGZ"' EXIT INT TERM   # ~2.4G scratch tarball; NOTHING else reaps it
 SLUG=$(cut -d: -f2 "$ROOT/lean-toolchain" | tr -d '\r' | tr . -)   # v4.24.0 -> v4-24-0
-git fetch --depth=1 origin "lake-cache/qou-$SLUG" \
+. "$ROOT/scripts/lib/lake-cache-family.sh"   # branch name comes from qou.json
+BR=$(lake_cache_read_branch "qou-$SLUG")     # cat/folio-assistant-sci/lake-cache/qou-v4-24-0
+git fetch --depth=1 origin "$BR" \
   && C=$(git rev-parse FETCH_HEAD) \
   && git ls-tree --name-only "$C" | grep '^lake-oleans\.tgz\.part' | sort \
      | while read -r p; do git show "$C:$p"; done > "$TGZ" \
   && tar xzf "$TGZ" -C "$ROOT" --transform 's,^content/,folio/,' \
   && bash "$ROOT/scripts/lake-restore-trace-check.sh" "$ROOT" \
-  && echo "restored from lake-cache/qou-$SLUG — skip Steps 1–3"
+  && echo "restored from $BR — skip Steps 1–3"
+
+# 🛑 The branch NAME is declared, not written here (corrected 2026-11-15). The
+# family moved to `cat/folio-assistant-sci/lake-cache/<member>` (bean `qou-hb5v`,
+# declared in qou.json `storage.branchPrefix`), and the legacy
+# `refs/heads/lake-cache/*` refs no longer exist on origin — measured with
+# `git ls-remote origin 'refs/heads/lake-cache/*'`, which returns nothing. This
+# recipe hardcoded `lake-cache/qou-$SLUG` and so failed at the fetch. Every
+# literal `lake-cache/qou-...` branch name elsewhere in this file is now the
+# member name under that prefix; resolve it with `lake_cache_read_branch`.
 
 # 🛑 The `--transform` is load-bearing too, and it is NOT cosmetic. The seeded
 # tarball stores PAPER paths as `content/<paper>/lean/...` — MEASURED 2026-10-10 by
@@ -5652,7 +5663,7 @@ git fetch --depth=1 origin "lake-cache/qou-$SLUG" \
 # Fetch into a THROWAWAY repo so `rm -rf` reclaims it with no gc:
 #   T=/tmp/cachecheck; rm -rf $T; git init -q $T
 #   git -C $T remote add origin https://github.com/litlfred/qou
-#   git -C $T fetch --depth=1 -q origin lake-cache/qou-v4-24-0
+#   git -C $T fetch --depth=1 -q origin cat/folio-assistant-sci/lake-cache/qou-v4-24-0
 #   C=$(git -C $T rev-parse FETCH_HEAD)
 #   git -C $T ls-tree --name-only $C | grep '^lake-oleans\.tgz\.part' | sort \
 #     | while read -r p; do git -C $T show "$C:$p"; done | tar tzf - > /tmp/listing.txt

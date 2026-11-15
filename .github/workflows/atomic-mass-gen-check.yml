@@ -1,0 +1,47 @@
+# bpmn: folio-assistant-sci/processes/content/atomic-mass-drift-check.bpmn
+# Generated-file drift gate for QOU/AtomicMass.lean.
+#
+# AtomicMass.lean is generated from a canonical data table
+# (scripts/atomic_mass_data.json — CODATA 2022 / AME2020 constants + the
+# 118-element binding-energy table) by scripts/gen_atomic_mass.py.  This
+# gate regenerates the file and fails if the committed .lean has drifted
+# (e.g. a hand-edit that the data table no longer reproduces).  Edit the
+# data/template + regenerate; never hand-edit the generated .lean.
+#
+# Fast + Python-only (no Lean build). Moved here from litlfred/folio-assistant
+# on 2026-11-10; the platform carries no folio, so it could not check anything
+# there.
+
+name: Atomic-mass generated-file drift
+
+on:
+  # CI auto-triggers disabled (owner directive 2026-06-30: Actions billing).
+  # Run by hand, or locally:
+  #   python3 folio/quantum-observable-universe/lean/scripts/gen_atomic_mass.py --check
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# One run per ref; a newer run supersedes the older one.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  drift-check:
+    # bpmn-node: Start_Change
+    name: AtomicMass.lean in sync with data table
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
+        with:
+          python-version: "3.12"
+
+      # HARD GATE: regenerate from the data table and diff against the
+      # committed .lean. Exit 1 (with a unified diff) on any divergence.
+      - name: Regenerate and check for drift
+        run: |
+          python3 folio/quantum-observable-universe/lean/scripts/gen_atomic_mass.py --check

@@ -1,4 +1,4 @@
-import { readHumanReviews, writeHumanReviews } from '../folio-assistant/cat-harness/schemas/bib-attestations';
+import { readHumanReviews, writeHumanReviews } from '../folio-assistant/cat-harness-tools/schemas/library/bib-attestations';
 import { createHash } from 'crypto';
 import { references } from '../folio/schema/references.js';
 

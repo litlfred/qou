@@ -360,7 +360,7 @@ def rewrite_refs(mapping: dict[str, str], apply: bool,
     if held_back:
         print(f"source-ledger rows with no reference id naming a moved file: {len(held_back)} "
               "(NOT rewritten: such a row is filed by its path; re-file it with the platform "
-              "ledger writer, writeSourceLedger in folio-assistant/cat-harness/schemas/bib-attestations.ts)")
+              "ledger writer, writeSourceLedger in folio-assistant/cat-harness-tools/schemas/library/bib-attestations.ts)")
         for rel in held_back[:5]:
             print(f"    {rel}")
     return files_changed, subs

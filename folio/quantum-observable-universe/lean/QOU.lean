@@ -555,6 +555,10 @@ import QOU.Brings.S5CharactersOnBringDeformations
 import QOU.Brings.WignerTargetEquivariance
 import QOU.Brings.BringConeLinkEulerNumber
 import QOU.BringCone
+import QOU.BringConeIcosahedral
+import QOU.BringConeGauge
+import QOU.BringConeSplitChirality
+import QOU.StandardModel.Gen1QuarkRays
 import QOU.QuaternionicElectroweak
 import QOU.ArchimedeanUniverse
 import QOU.PAdicQuantumGroups

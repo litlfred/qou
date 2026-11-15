@@ -1,5 +1,5 @@
 import { readFileSync, existsSync } from 'fs';
-import { readHumanReviews } from '../folio-assistant/cat-harness/schemas/bib-attestations';
+import { readHumanReviews } from '../folio-assistant/cat-harness-tools/schemas/library/bib-attestations';
 import { join } from 'path';
 import { processIngestion } from '../pipeline/bib-photo-ingestion-watcher.js';
 

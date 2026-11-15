@@ -7,7 +7,7 @@
     "noEmit": true,
     "types": ["bun-types"],
     "paths": {
-      "@schemas/*": ["../folio-assistant/cat-harness/schemas/*"]
+      "@schemas/*": ["../folio-assistant/cat-harness-tools/schemas/*"]
     }
   },
   "include": ["**/*.ts"],
