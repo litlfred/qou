@@ -32,6 +32,7 @@ No `sorry`, no axiom, no `native_decide`, no class.
 -- Ref: [humphreys1990] §7.4 (index and sign representations of the Hecke algebra)
 -/
 import QOU.IwahoriHecke.BalancedGenerators
+import Mathlib.Algebra.Order.BigOperators.GroupWithZero.List
 
 namespace QOU.QuarkState.BalancedIndex
 
@@ -138,7 +139,7 @@ theorem wordImage_ne_neg_negCrossing (hM : ∀ i j, M i j = M j i) (hqi : q * qi
     · exact hq
     · exact hqi_pos
   rw [h, map_neg, index_negCrossing hM hqi] at hpos
-  linarith
+  exact absurd hpos (not_lt.mpr (neg_nonpos.mpr hqi_pos.le))
 
 /-- **The sign character cannot replace the index character.** The two-letter word
 `σ_i σ_i` and `−σ_j⁻¹` both have positive sign value. -/
@@ -152,7 +153,7 @@ theorem sign_cannot_separate (hM : ∀ i j, M i j = M j i) (hqi : q * qi = 1) (h
   refine ⟨?_, ?_⟩
   · rw [sign_wordImage hM]
     simp only [List.map_cons, List.map_nil, List.prod_cons, List.prod_nil, if_true, mul_one]
-    nlinarith [hqi_pos]
+    exact mul_pos_of_neg_of_neg (neg_neg_of_pos hqi_pos) (neg_neg_of_pos hqi_pos)
   · rw [map_neg, sign_negCrossing hM]; simp; exact hq
 
 end Ordered
