@@ -60,15 +60,20 @@ from witness_base import WitnessBuilder
 from _precision import set_compute_dps, fmt  # noqa: E402
 set_compute_dps()
 
-# Substrate parameter at 50 dps
-VOL_FIGURE_EIGHT = mp.mpf("2.029883212819307")
-# CAL-2: m_μ/m_e from q_parameter registry (P31-triage Phase A).
-from q_parameter import MASS_RATIO_MU_E_STR as _MU_E_STR  # noqa: E402
+# Substrate parameter: the q_parameter pin (PROTON — this producer is not in
+# `ideal_muon`, and is listed `physical_proton` in q0_anchor_manifest.json).
+#
+# Until 2026-11-15 this block DERIVED its own q_0 from the muon ratio
+# (Vol(4_1)/(m_mu/m_e)) and recorded that as `q_0_mpf50` -- while every number
+# it actually computed came from the proton pin: `tr_M_at_q0` reads
+# `q_parameter.Q`, `term4_frobenius_codim` likewise, and the Habiro witness it
+# loads is stamped at the proton q_0. The local muon q_0 was used for nothing
+# but the printout and the witness field, so the witness declared one layer
+# and computed in the other (the straddle AGENTS.md §q0 anchor convention
+# forbids). It now records the pin it uses.
+from q_parameter import q_at as _q_at  # noqa: E402
 from codata_constants import AME_B_DEUTERON_MEV_VALIDATION
-MASS_RATIO_MU_E  = mp.mpf(_MU_E_STR)
-HBAR_Q_SQ        = VOL_FIGURE_EIGHT / MASS_RATIO_MU_E
-HBAR_Q           = mp.sqrt(HBAR_Q_SQ)
-Q0               = mp.mpf(1) / (mp.mpf(1) - HBAR_Q)
+Q0               = mp.mpf(_q_at(70))
 QI0              = mp.mpf(1) / Q0
 HA               = Q0 - QI0
 TWO_Q            = Q0 + QI0  # [2]_q
@@ -242,7 +247,7 @@ def main():
         .add_parameter("q_0_mpf50", mp.nstr(Q0, 50))
         .add_parameter("m_e_MeV", M_E_MEV)
         .add_parameter("Q_beta_n_MeV", Q_NEUTRON_MEV)
-        .add_parameter("E_0_MeV_per_cat", float(E_0))
+        .add_parameter("E_0_MeV_per_cat", fmt(E_0))
         .add_data("tr_M_habiro_50dps", {
             "proton":  mp.nstr(tr_M_p_habiro, 50),
             "neutron": mp.nstr(tr_M_n_habiro, 50),
@@ -259,8 +264,8 @@ def main():
             "delta_m_shell_MeV":   mp.nstr(Dm_shell, 30),
             "B_pred_MeV":          mp.nstr(B_pred, 30),
             "B_AME_MeV":           mp.nstr(B_AME, 30),
-            "err_pct":             float(err_pct),
-            "err_ppb":             float(err_ppb),
+            "err_pct":             fmt(err_pct),
+            "err_ppb":             fmt(err_ppb),
         })
         .add_caveat(
             "Free-nucleon Markov trace tr_M(D, include_inter=False) is "
