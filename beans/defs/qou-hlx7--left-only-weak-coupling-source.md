@@ -10,7 +10,7 @@ tags:
     - weak
 parent: qou-qs0e
 created_at: 2026-11-15T09:00:00Z
-updated_at: 2026-11-15T10:30:00Z
+updated_at: 2026-11-15T11:05:00Z
 ---
 
 Follow-up from qou-hlx6 (PR #7836). Corpus-grepped 2026-11-15 (beans, docs/audits,
@@ -127,3 +127,34 @@ defines P as σᵢ ↦ σᵢ⁻¹ with q held FIXED. no_linear_flip proves no K-
 H_n(q) does that unless q² = 1. So that P is well defined on the braid group B_n but does not
 descend to H_n(q) at fixed q. The block also calls the bar involution "composite CPT", whereas
 §10 finds the C/CT profile for the mirror.
+
+## 2026-11-15 HANDOFF (stream 9a standing down on owner instruction)
+
+send_message to the requesting coordinator (session_01Qmmkt6dCyH72NJwcLGW2sF) failed with
+"resource not found", so the handoff is recorded here.
+
+Merged: #7836, #7847 (HelicityCommonSource.lean plus audit §1-10), #7852 (force-knot §III
+fix), #7863 (type-b-folding-cpt fixed-q scoping; beans qou-hlxp, qou-hlxt).
+OPEN: #7865 (draft, claude/p-braid-mirror-scope-2026-11-15) scopes conj:p-from-braid-mirror.
+It also flags that item 1 under "What remains open" is false: σ⁻¹ satisfies the Hecke
+relation at 1/q. run-validate was NOT run, because main needs platform pin 82b389982 and
+that fetch exhausted the container disk. It needs validation plus the owner's merge go.
+
+Unanswered, for the owner:
+- D-H3: adopt "weak vertex ∝ h·[2]_q·P₊ (the q-weighted skein difference)" as a working
+  hypothesis to derive?
+  - YES = a child bean derives the charged-current vertex from it composed with the flavour
+    flip in the (2,1) block. Cost: hours of Lean plus one probe. Risk: L/R may reduce to the
+    weighting convention.
+  - NO = nothing changes. Default NO.
+  - Recommendation (judgement): YES. May belong to sibling 9c (#7844), which owns the vertex
+    mechanism.
+- qou-hlxt: which reading of σ↦σ⁻¹ is derivable (positron vs d flavour)? Default: nothing
+  changes. Recommendation (judgement): test option (4), against
+  conj:c-from-color-flavor-swap, first.
+- Merge go for #7865.
+
+Next steps: validate and merge #7865; D-H3; qou-hlxt option (4); qou-hlxp research.
+
+Container note: the root .lake Mathlib cache was deleted to free disk. Restore it via the
+AGENTS.md Step 0 recipe before any Lean work.
