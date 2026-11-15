@@ -510,6 +510,7 @@ import QOU.SchurWeyl.HoefsmitRep
 import QOU.SchurWeyl.SeminormalParamAnchorReal
 import QOU.SchurWeyl.HoefsmitRepGeneral
 import QOU.SchurWeyl.QJucysMurphy
+import QOU.SchurWeyl.ContentCasimir
 import QOU.SchurWeyl.QJucysMurphyEigen
 import QOU.SchurWeyl.AxialDistanceBound
 import QOU.SchurWeyl.MatRepEquiv
