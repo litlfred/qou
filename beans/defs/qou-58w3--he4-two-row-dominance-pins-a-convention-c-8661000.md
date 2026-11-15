@@ -1,7 +1,7 @@
 ---
 # qou-58w3
 title: he4-two-row-dominance pins a convention-C 866/1000 that D makes exactly 1
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -21,3 +21,12 @@ Also: dominant_block_positive_share : (1:Q)/77 <= 866/1000 is a norm_num numeral
 
 FIX: retire class HasHe4TwoRowDominance, restate as a corollary of the cap with share = 1, re-derive or retire the C-frame top-5 table.
 NOT done in #5242: needs qa-sweep, and folio-assistant is not set up in that sandbox (disk 1.3G free).
+
+## 2026-11-15 — Convention-D upgrade (`litlfred/qou#7986`)
+
+- Updated `folio/quantum-observable-universe/mass-theory/he4-two-row-dominance.{lean,ts}` per owner ruling `Q-CDX1-1 = 1`:
+  - Imported `QOU.MassTheory.TwoRowCap` and specialized `he4_twoRow_share_eq_one_of_wenzl` and `he4_threeRowPart_eq_zero_of_wenzl` directly from `QOU.MassTheory.TwoRowCap.twoRow_share_eq_one_of_wenzl` and `threeRowPart_eq_zero_of_wenzl`.
+  - Updated `HasHe4TwoRowDominance` to `ratio := 1` (`ratio_eq_one : ratio = 1`, retiring the Convention-C `866 / 1000` pin and `dominant_block_positive_share`).
+  - Kept `HasHe4DominantBlock` (`[9, 3]` vs `[12]`).
+  - Verified with `lean -DautoImplicit=false -s 65536` (`EXIT: 0`, `0` warnings, `0` `sorry`).
+- PR: [`litlfred/qou#7986`](https://github.com/litlfred/qou/pull/7986) (commit `fd12a6522e45d32a4855f0b4dd0db7ac856c2986`, signed `ready:` comment [`#issuecomment-6900782211`](https://github.com/litlfred/qou/pull/7986#issuecomment-6900782211)).

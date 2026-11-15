@@ -1,7 +1,7 @@
 ---
 # qou-5wuz
 title: 'DEFECT: neither qbeta-decay-sdp-extended-ck.witness.json nor qbeta-closed-form-wiring-n4-to-n10.witness.json records q0Anchor or any q0 value, violating AGENTS.md q0-anchor rule 4 (a witness must record its pin). So an anchor mismatch can be neither blamed nor excluded for the c_k divergence. Sibling qbeta-ck-recursion-kernel-constraint-probe does record q0Anchor: muon'
-status: todo
+status: in-progress
 type: bug
 priority: normal
 tags:
@@ -30,3 +30,8 @@ Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap 
 **Open step (needs owner OK):** pin or retire `qbeta_closed_form_wiring_n4_to_n10.py`; then this bean can close.
 
 Checked read-only against qou `main` at `aa914b606a`, mpmath 1.3.0. Full write-up: `qou-review/avtq-reopened-beans-2026-10-10.md` (project files). Status unchanged.
+
+## 2026-11-15 — `straddleNote` added per owner ruling `Q-AVTQ-1 = 1` (`litlfred/qou#7995`)
+
+- Added top-level `straddleNote` to `computations/qbeta/qbeta-decay-sdp-extended-ck.witness.json` documenting the anchor straddle: top-level `q0Anchor: "muon"`, `q0Value`, and `parameters.q_0_50dps` (`1.109978595642739046681795129380001752700065561029`) are the CODATA-2022 muon pin while `parameters.hbar_q_sq_50dps` (`0.0098171864542750738105690571795642528890492845754014`) and `parameters.hoefsmit_b_50dps` were read from the proton-pinned `q-beta-operator-valued-N3.witness.json` (`q = 1.1099785827513808074799915684402849658272397296993`), keeping the witness file in place.
+- PR: [`litlfred/qou#7995`](https://github.com/litlfred/qou/pull/7995) (commit `4552d3620d0f14bf058a5a7031606034f7a2a6be`, signed `ready:` comment [`#issuecomment-6901100726`](https://github.com/litlfred/qou/pull/7995#issuecomment-6901100726)).

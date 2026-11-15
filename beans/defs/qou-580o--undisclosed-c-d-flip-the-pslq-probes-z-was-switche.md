@@ -236,3 +236,29 @@ full chain differentiated at both pins, which I did not do.
 artifact now states its own frame; what stays open is the `3.38e-7`
 discrepancy above and, upstream of everything here, `qou-cds1`'s re-derivation
 of the ladder under D. Neither is a labelling job.
+
+## 2026-11-15 — 50-dps resolution of the `3.38e-7` shift: 100% explained to all 30 printed digits by `fca08de7d2`
+
+Evaluated the full extraction chain `ladder_chain(q)` in
+`computations/probes/qbeta_ck_basis_constrained_pslq.py` (`mp.mp.dps = 60`,
+`c_3 = (Q_BETA_CODATA_MEV / Q_N2(q) − 1) / u(q)³` under convention D,
+`z = q³/(q² + 1)`) at both the **pre-`fca08de7d2` retired self-certified muon
+pin A** (`q_mu_old`) and the **post-`fca08de7d2` live CODATA-2022 muon pin**
+(`q_mu_new = q_muon_at(50)`):
+
+| quantity | pre-`fca08de7d2` muon pin (`q_mu_old`, 2026-08-18 run) | post-`fca08de7d2` CODATA-2022 muon pin (`q_mu_new`, 2026-09-15 witness) | difference / ratio |
+|---|---|---|---|
+| `q₀` (50 dps) | `1.1099785955573347198997632204832250266562084087801` | `1.1099785956427390466817951293800017527000655610290` | `Δq/q = +7.6942318639171e-11` (`+0.07694 ppb`) |
+| `c3_reproduced_canonical` (computed) | `-974.38247660769785163095027582608578` | `-974.38214707953618494527747731514523` | `Δc₃ = +0.0003295281616666856728` (`-3.38191797962064e-7` rel) |
+| bean / witness recorded (30 dps) | `-974.382476607697851630950275826` (bean 2026-08-18) | `-974.382147079536184945277477315` (`main` witness) | **0 residual across all 30 printed digits on both** |
+| denominator `u³` shift | — | — | `Δ(u³)/u³ = +4.20555490308842e-9` |
+| numerator `(Q_codata/Q_N2 − 1)` shift | — | — | `Δnum/num = -3.33986244481259e-7` (**79.4× larger than `u³` shift**) |
+| chain derivative `dc₃/dq` | — | — | `+3.85844809136783e6` |
+
+**Conclusion.** The `3.3819e-7` relative (`+3.29528e-4` absolute) discrepancy is
+**100% accounted for, to all 30 printed digits**, by the `fca08de7d2` muon
+CODATA-2022 re-pin (`+0.07694 ppb` on `q₀`), driven by the near-cancellation in
+the numerator `Q_codata/Q_N2(q₀) − 1 ≈ −6.0176e-4` (`dc₃/dq = +3.85845e6`).
+Bean remains `todo`, blocked upstream on `qou-cds1` / `qou-wxhi` for the
+convention-D `c_k` ladder derivation.
+

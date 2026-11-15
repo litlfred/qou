@@ -1,7 +1,7 @@
 ---
 # qou-4tui
 title: Pass the 50-digit q into the branching route; the D row is 16 digits, not 50
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -71,13 +71,13 @@ reproduce exactly (`+1.090306...`, `-0.155601...`, `-2.968654...`,
 
 ## Left open, deliberately, for a decision
 
-- [ ] **`canonical_mass_table_extended.py:492`, `float(nucleon_mass_mev(species))`**
+- [x] **`canonical_mass_table_extended.py:492`, `float(nucleon_mass_mev(species))`**
       — a genuine pre-existing float64 leak landing in `prediction_MeV_50dps`
       for the p/n rows (hence `938.2720894273243`, 16 digits, in a 50dps
       column). It feeds the L2 dashboard and the p/n route has an open
       adjudication (`qou-khue`). NOT silenced with a false `float64-ok`; the
       gate still reports it.
-- [ ] Truncating the emitted `tr_M` digits to what is real (D publishes 60 from
+- [x] Truncating the emitted `tr_M` digits to what is real (D publishes 60 from
       a 14-digit computation). Witness/schema change, one code consumer, no
       content pin — editorial, not a precision fix.
 - [ ] **`± 0.0000 %` in the rendered table is the AME EXPERIMENTAL uncertainty,
@@ -85,7 +85,15 @@ reproduce exactly (`+1.090306...`, `-0.155601...`, `-2.968654...`,
       but a reader can take "+5.87 ± 0.0000 %" as a four-decimal claim about the
       framework's miss. The 5.87 % carries no model or compute uncertainty at
       all. Worth rewording.
-- [ ] `atlas_render_canonical_table.py` targets `recursive-atom-knot-atlas.md`,
+- [x] `atlas_render_canonical_table.py` targets `recursive-atom-knot-atlas.md`,
       which has no markers; the live AUTO block is in
       `recursive-atom-knot-atlas-registry.md`. Its dry-run footer also disagrees
       with the committed .md on method and link prefix.
+
+## 2026-11-15 — 50-dps D-row transfer routing, p/n 50-dps lift, and atlas renderer fix (`litlfred/qou#7995`)
+
+- Per owner ruling `Q-AVTQ-1 = 1`:
+  - Routed the `D` (`A = 2`) row in `computations/canonical_mass_table_extended.py` through the 50-dps transfer-matrix path `tr_m_atom_zn` (matching `A >= 3`), lifting `tr_M_q0_canonical_50dps` on the `D` row from 16-digit `complex128` (`0.1519683392042316303185...`) to 50+ dps (`0.151968339204231607592665697751066141271240964655247542840855`).
+  - Removed the `float(...)` truncation on `nucleon_mass_mev(species)` (eliminating the I8 float64 leak in `canonical_mass_table_extended.py`) and formatted `prediction_MeV_50dps` on `p, n` at 50 dps via `fmt(pred, dps=50)`.
+  - Repointed `ATLAS_MD` in `computations/atlas_render_canonical_table.py` to `recursive-atom-knot-atlas-registry.md`, stripped the obsolete `/folio-assistant/` URL prefix, updated the nucleon mass footer attribution to `canonical_mass.nucleon_mass_mev()`, and re-rendered the table.
+- PR: [`litlfred/qou#7995`](https://github.com/litlfred/qou/pull/7995) (commit `4552d3620d0f14bf058a5a7031606034f7a2a6be`, signed `ready:` comment [`#issuecomment-6901100726`](https://github.com/litlfred/qou/pull/7995#issuecomment-6901100726)).
