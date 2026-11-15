@@ -264,7 +264,7 @@ Consequence here: p = uud carries K^{⊗3} = q, n = udd carries q⁻¹. So **n/p
 
 t_n/t_p = q⁻² exactly for both words, as proved in Lean (§17).
 
-**Reading (scope a).** The only derived scale in the corpus, used in the corpus's own linear form on the ruled element, gives −74.8 %. That is robust: V³ and V⁶ agree to 0.6 %. D2 is closer, but the log form has no corpus support, so ranking it higher would be selecting by residual. The sign under the linear form is not settled either. t_p is negative here, so whether the neutron is heavier depends on whether the mass reads t or |t|. **The derivation does not close.** Following the owner's card, the next step is a proposed conjecture wording for the n–p block, put up for review and not applied.
+**Reading (scope a).** The only derived scale in the corpus, used in the corpus's own linear form on the ruled element, gives −74.8 %. That is robust: V³ and V⁶ agree to 0.6 %. D2 is closer, but the log form has no corpus support, so ranking it higher would be selecting by residual. ~~The sign under the linear form is not settled either. t_p is negative here, so whether the neutron is heavier depends on whether the mass reads t or |t|.~~ **[Corrected 2026-11-15, see §21: t_p is positive at q₀ (+0.40872), and t_n = q⁻²·t_p = +0.33174. So under the linear form the neutron comes out LIGHTER, which is the wrong sign.]** **The derivation does not close.** Following the owner's card, the next step is a proposed conjecture wording for the n–p block, put up for review and not applied.
 
 ## §19 Route 1: is Φ a volume? Route 4: H_α in Lean
 **Route 1 (corpus, structural; conditional on the Kashaev volume conjecture).** The corpus's volume statement (`vol-through-tau`, conditional on conj:kashaev-volume-conjecture) assigns volume only to **braids**, through their closure. It states explicitly that the atomic words c σ_g + d·1 "are general Hecke elements, not braids, and their volume is 0". The traced product ∏ᵢ∏_{j>i}(σᵢ+dᵢⱼ), whose log is Φ, is a product of exactly those atomic words. So Φ is not a volume in the corpus's sense. The Kashaev limit itself is a limit over coloured Jones at roots of unity, and a single level-3 trace at real q₀ is not that limit.
@@ -292,3 +292,22 @@ The production witness value of 1.2938 MeV (+0.04 %) comes from `q_beta_kashiwar
 **Result (scope (a)):** route 2 gives no derived n − p closer than −26 %. The admissible derived cells sit at −26 %. The one cell nearer to measurement uses an element that the confinement SDP rejects. Route 2 does not supply a derivation of H_α either. The Q_β route uses the linear E₀·|Δtrace| form, and H_α is the log form α·ΔΦ. These are different functionals, so neither route validates the other.
 
 Route 2 depends on the open Q_β ladder under D (`qou-cds1`) and on the element choice (`qou-99qc`). It cannot close before they do. No number here is selected by residual.
+
+## 21. Correction to §18, and Bridge B (derivation-chain thread)
+
+**What §18 asserted, and what is true.** §18 said "t_p is negative here". That was wrong. The closed form is t_p = −(q¹² − 3q¹⁰ + 3q⁸ − 5q⁶ + 3q⁴ − 3q² + 1)/(q²(q²+1)³). The bracket is negative at q₀, so t_p is positive. Recomputed with mpmath at 30 dps at the proton q₀:
+
+- t_p = +0.408718
+- t_n = q⁻²·t_p = +0.331738
+- t_p − t_n = 0.076981, the same as §18's |t_n − t_p|
+
+The magnitudes in §18 (−74.8 %) are unchanged. The sign verdict changes. Under the linear reading m ∝ t, **the neutron comes out lighter**. That is a scope-(a) negative for the linear map on this trace. Under the log reading with the proof's convention (§16), the neutron is heavier.
+
+The derivation-chain thread found this independently (`/mnt/project-files/qou-derivation-chain/bridge-b/`). What else repeated "sign unsettled": the §18 bean append on qou-q1a4 and the PR #7966 comment for e7e9b93deb2. Both are corrected by appends. No content block and no Lean file used the §18 sign.
+
+**Bridge B (their measurement, not re-run here except t_p and t_n).**
+
+- Normalising by an electron word in the same restricted D trace gives m_p/m_e ≈ 1, not 1836. Every tr_M here is 1 + O(h²). So a linear trace-to-MeV map with one scalar is excluded (scope a).
+- (T_n − T_p)/T_full = −7.7 %, against the measured +0.14 %. A weight-space route therefore needs a derived suppression of about 55× **and** a sign flip.
+
+**Consequence for the FE/EF test (to be pre-registered by the sibling).** It must state its order in h in advance. The level-2 weight is O(h); FE/EF per crossing is O(h/[2]); h ≈ 0.209 at q₀. Both the suppression and the sign have to come out of the derivation; neither may be chosen.
