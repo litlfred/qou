@@ -2,19 +2,23 @@ import Mathlib.Algebra.Module.LinearMap.Basic
 import Mathlib.Tactic.Abel
 
 /-!
-# QOU.Mass.bar_parity_split — one Habiro element, two parities
+# QOU.Mass — even/odd decomposition under a linear involution
 
-The keystone trace `τ = tr B` (binding, cosh, bar-EVEN) and the `Q_β`
-residue-A / `c_k` ladder (bar-ODD Habiro dual of α_EM, sinh) are the two
-parities of a SINGLE element under the bar-involution `σ` (`q ↦ q⁻¹`,
-`σ² = id`). This file proves the elementary decomposition that makes that
-precise: under any linear involution `σ`, every `x` splits as a `σ`-fixed
-(even) part plus a `σ`-anti (odd) part, and `evenPart + oddPart = 2·x`.
+Under any linear involution `σ` (`σ² = id`) of an `R`-module `V`, every `x`
+splits as a `σ`-fixed (even) part plus a `σ`-anti (odd) part, and
+`evenPart + oddPart = 2·x`. This is the bar-parity decomposition used with the
+bar-involution `q ↦ q⁻¹` of `def:bar-involution`.
 
-So: `F = F_even + F_odd`, with `τ` read off `F_even` (cosh, binding) and the
-`Q_β` residue read off `F_odd` (sinh, β-decay) — one object, two observables.
+LaTeX label: `lem:bar-involution-parity-decomposition`.
 
-LaTeX label: `prop:bar-parity-split`.
+**Scope.** These are generic facts, true of every element of every module with
+an involution. They do NOT establish that the binding trace and the `Q_β`
+residue are the even and odd parts of one fibre element. That claim is the
+conjecture `conj:bar-parity-split`, which uses this lemma but is not proved by
+it. Until 2026-11-15 this file carried the label `prop:bar-parity-split` and a
+docstring stating the identification as if proved; it was demoted because the
+Lean is generic and no `Q_β` functional on record is bar-odd
+(`docs/audits/2026-11-15-one-sided-weak-vertex.md` §4).
 
 **Ground ring**: generic `[CommRing R]`. See `GroundRingAnnotations.lean`.
 -/
@@ -34,12 +38,12 @@ theorem evenPart_add_oddPart (σ : V →ₗ[R] V) (x : V) :
     evenPart σ x + oddPart σ x = (2 : ℕ) • x := by
   simp only [evenPart, oddPart]; abel
 
-/-- The even part is `σ`-fixed (bar-even, cosh sector). -/
+/-- The even part is `σ`-fixed. -/
 theorem evenPart_fixed (σ : V →ₗ[R] V) (hσ : ∀ y, σ (σ y) = y) (x : V) :
     σ (evenPart σ x) = evenPart σ x := by
   simp only [evenPart, map_add, hσ]; abel
 
-/-- The odd part is `σ`-anti (bar-odd, sinh sector). -/
+/-- The odd part is `σ`-anti. -/
 theorem oddPart_anti (σ : V →ₗ[R] V) (hσ : ∀ y, σ (σ y) = y) (x : V) :
     σ (oddPart σ x) = - oddPart σ x := by
   simp only [oddPart, map_sub, hσ]; abel
