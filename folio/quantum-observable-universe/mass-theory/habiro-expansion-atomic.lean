@@ -105,15 +105,16 @@ noncomputable def habiro_expansion_const (c : ℤ) : HabiroExpansion (C c) where
     `Polynomial.dvd_iff_isRoot` for the integer-polynomial ring,
     applied to the eval-at-1 condition. -/
 
-/-- **External axiom (factor theorem):** for any `p ∈ ℤ[X]`, there
-    exist `a₀ ∈ ℤ, p₁ ∈ ℤ[X]` with `p = C a₀ + (1 - X) * p₁`. -/
+/-- **Factor theorem at `u = 1`.** Was an axiom; proved 2026-11-15 from
+    `Polynomial.X_sub_C_dvd_sub_C_eval`, with `a₀ := p.eval 1`. -/
 -- Ref: [manuscript] `prop:habiro-expansion-atomic` Step 2
-axiom habiro_step_zero_axiom :
-    ∀ (p : ℤ[X]), ∃ (a₀ : ℤ) (p₁ : ℤ[X]), p = C a₀ + (1 - X) * p₁
-
 theorem habiro_step_zero (p : ℤ[X]) :
-    ∃ (a₀ : ℤ) (p₁ : ℤ[X]), p = C a₀ + (1 - X) * p₁ :=
-  habiro_step_zero_axiom p
+    ∃ (a₀ : ℤ) (p₁ : ℤ[X]), p = C a₀ + (1 - X) * p₁ := by
+  obtain ⟨r, hr⟩ := Polynomial.X_sub_C_dvd_sub_C_eval (p := p) (a := (1 : ℤ))
+  refine ⟨p.eval 1, -r, ?_⟩
+  have h : p = C (p.eval 1) + (X - C 1) * r := by rw [← hr]; ring
+  conv_lhs => rw [h]
+  simp only [map_one]; ring
 
 /-- **External axiom (Habiro 2002):** Habiro expansion exists for
     every integer polynomial. -/

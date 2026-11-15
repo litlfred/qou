@@ -61,20 +61,17 @@ noncomputable def unified_curvature_rank_mass
     Term-7 conventions, the legacy "Term 6 + Term 7" combination
     equals the partial sum Σ_{k=3}^{n-1} α_k · Φ_k.
 
-    **External lemma (List/Mathlib): list-fold split + filter identity.**
-
-    Pure list algebra: `List.range n = List.range 3 ++ ...` for n ≥ 4
-    combined with `(List.range n).filter (· ≥ 3) = (List.range (n-3)).map (· + 3)`.
-    Routine Mathlib completion; axiomatised pending the exact
-    `List.foldl_append + List.filter_range` lemma forms. -/
+    Pure list algebra. This was an axiom
+    (`term_6_plus_term_7_eq_high_strata_axiom`) "pending the exact lemma
+    forms"; proved 2026-11-15 from `foldl_add_eq` by induction on `n`.
+    It holds for `3 ≤ n`; the old `4 ≤ n` hypothesis is kept for callers. -/
 -- Ref: [manuscript] prop:unified-curvature-rank-mass-formula
-axiom term_6_plus_term_7_eq_high_strata_axiom :
-    ∀ (alphas : ℕ → ℝ) (blocks : List StratumBlock) (n : ℕ) (_h_n : 4 ≤ n),
-      unified_curvature_rank_mass alphas blocks n
-        - ((List.range 3).foldl
-            (fun acc k => acc + alphas k * Phi_at_depth k blocks) 0)
-      = ((List.range n).filter (· ≥ 3)).foldl
-          (fun acc k => acc + alphas k * Phi_at_depth k blocks) 0
+theorem foldl_add_eq (f : ℕ → ℝ) : ∀ (l : List ℕ) (init : ℝ),
+    l.foldl (fun acc k => acc + f k) init = init + (l.map f).sum := by
+  intro l
+  induction l with
+  | nil => intro init; simp
+  | cons a t ih => intro init; simp [List.foldl, ih]; ring
 
 theorem term_6_plus_term_7_eq_high_strata
     (alphas : ℕ → ℝ) (blocks : List StratumBlock) (n : ℕ) (h_n : 4 ≤ n) :
@@ -82,8 +79,19 @@ theorem term_6_plus_term_7_eq_high_strata
       - ((List.range 3).foldl
           (fun acc k => acc + alphas k * Phi_at_depth k blocks) 0)
     = ((List.range n).filter (· ≥ 3)).foldl
-        (fun acc k => acc + alphas k * Phi_at_depth k blocks) 0 :=
-  term_6_plus_term_7_eq_high_strata_axiom alphas blocks n h_n
+        (fun acc k => acc + alphas k * Phi_at_depth k blocks) 0 := by
+  unfold unified_curvature_rank_mass
+  simp only [foldl_add_eq, zero_add]
+  have h3 : 3 ≤ n := by omega
+  clear h_n
+  induction n, h3 using Nat.le_induction with
+  | base => simp [List.range_succ]
+  | succ m hm ih =>
+    rw [List.range_succ, List.filter_append, List.map_append, List.map_append,
+      List.sum_append, List.sum_append, ← ih]
+    have : decide (m ≥ 3) = true := by simpa using hm
+    simp [List.filter, this]
+    ring
 
 /-- **Corollary (paper terminology mapping).**
     The historical "six terms + Term 7" decomposes uniformly:

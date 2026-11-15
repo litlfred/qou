@@ -67,25 +67,41 @@ noncomputable def j_invariant (p r : ℝ) : ℝ :=
     cubic X³ + (z+1)X² + (z²+z+1)X + (z³+z²+z+1) = 0, applying the
     standard Weierstrass shift X = x - (z+1)/3, and simplifying. -/
 -- Ref: [manuscript] §5/descartes-elliptic-curve
-/-- **External axiom (manuscript §5): color-cubic ↦ Weierstrass
-    substitution.**  Verified symbolically via sympy; full Lean
-    proof needs Mathlib's `Real.rpow` arithmetic. -/
--- Ref: [manuscript] §5/descartes-elliptic-curve
-axiom descartes_elliptic_curve_axiom :
-    ∀ (q : ℝ), 0 < q →
-      let s := q ^ (1/2 : ℝ)
-      let z := s - s⁻¹
-      let p_z := 2/3 * z ^ 2 + 1/3 * z + 2/3
-      let r_z := 20/27 * z ^ 3 + 5/9 * z ^ 2 + 5/9 * z + 20/27
-      p_z = weierstrass_p q ∧ r_z = weierstrass_r q
+/-- **Color-cubic ↦ Weierstrass substitution.**
 
+    **Was an axiom; proved 2026-11-15.** With `s = q^{1/2} > 0` we have
+    `s² = q`, `q^{3/2} = q·s` and `q^{-1/2} = s⁻¹`; after that the two
+    identities are rational-function identities in `s`, closed by
+    `field_simp; ring`. -/
+-- Ref: [manuscript] §5/descartes-elliptic-curve
 theorem descartes_elliptic_curve (q : ℝ) (hq : 0 < q) :
     let s := q ^ (1/2 : ℝ)
     let z := s - s⁻¹
     let p_z := 2/3 * z ^ 2 + 1/3 * z + 2/3
     let r_z := 20/27 * z ^ 3 + 5/9 * z ^ 2 + 5/9 * z + 20/27
-    p_z = weierstrass_p q ∧ r_z = weierstrass_r q :=
-  descartes_elliptic_curve_axiom q hq
+    p_z = weierstrass_p q ∧ r_z = weierstrass_r q := by
+  intro s z p_z r_z
+  have hspos : 0 < s := Real.rpow_pos_of_pos hq _
+  have hsne : s ≠ 0 := ne_of_gt hspos
+  have hs2 : s ^ 2 = q := by
+    show (q ^ (1/2 : ℝ)) ^ 2 = q
+    rw [← Real.sqrt_eq_rpow]; exact Real.sq_sqrt hq.le
+  have h12 : q ^ (1/2 : ℝ) = s := rfl
+  have h32 : q ^ (3/2 : ℝ) = q * s := by
+    rw [show (3/2:ℝ) = 1 + 1/2 by norm_num, Real.rpow_add hq, Real.rpow_one]
+  have hneg : q ^ (-(1/2 : ℝ)) = s⁻¹ := Real.rpow_neg hq.le _
+  refine ⟨?_, ?_⟩
+  · simp only [p_z, z, weierstrass_p]
+    rw [h12]
+    clear_value s
+    subst hs2
+    field_simp
+    ring
+  · simp only [r_z, z, weierstrass_r]
+    rw [h32, hneg, h12]
+    clear_value s
+    subst hs2
+    field_simp
 
 /-- At the classical limit q = 1, the curve degenerates to
     y² = x³ + (2/3)x + 20/27. -/
