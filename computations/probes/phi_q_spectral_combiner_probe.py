@@ -167,7 +167,7 @@ def main() -> int:
 
     # Empirical c_3 targets (per qbeta_ck_truncation_order_analysis.py docstring)
     EMPIRICAL_C3_PROTON = mpf("-2.0693")   # m_p-pin anchor
-    EMPIRICAL_C3_MUON = mpf("-2.0097")    # muon-pin anchor
+    EMPIRICAL_C3_MUON = mpf("-2.01986031187401")    # muon-pin anchor
 
     # Load per-block data via WitnessBuilder so the drift detector
     # (computations/witness_dependency_drift.py) sees
