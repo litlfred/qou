@@ -7,7 +7,7 @@ priority: normal
 tags:
     - quark-state
 created_at: 2026-11-15T08:45:00Z
-updated_at: 2026-11-15T08:45:00Z
+updated_at: 2026-11-15T17:25:00Z
 parent: qou-usxh
 ---
 
@@ -43,3 +43,8 @@ Open:
 - **Still open:**
   - what fixes the photon letter orientation;
   - which placement is canonical (qou-ales).
+
+
+## 2026-11-15 — γγ-built nucleon (PR #7741, `h2_gg_atom/`, `h2_gg_electron/`; owner decision C)
+
+On three strands every γγ word is a power of V = σ₀σ₁⁻¹, so a γγ-built nucleon is V^m. Pre-registered and measured: only V³ and V⁶ pass reading 3 at every level (m = 3…7); proton and neutron are then the same word, so there is no flavour on three strands. With a γγ electron (V³ or V⁶) H₂ passes every level and the only passing bond is V³. Every γγ word has χ_(1³) = 1 (#7896). Scope (a). Bearing on this bean: a three-strand γγ word cannot carry a flavour bit; per-letter readout needs letters outside V or more strands.

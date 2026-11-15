@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-16T05:49:42Z
-updated_at: 2026-11-15T17:10:00Z
+updated_at: 2026-11-15T17:25:00Z
 parent: qou-v2om
 ---
 
@@ -25,3 +25,7 @@ Was in-progress with no bean update since 2026-09-16 and no main commit naming i
 ## 2026-11-15 — re-scoped by the γγ rule
 
 The owner ruled that the γγ selection rule also covers the nuclear bond letters. Any number in this bean computed on the single-crossing interface letters of `atom_braid_word_3A` (`d_k`, `μ_e`, the chain law `∏(z_D + d_k)`, the `b₃` magnitudes −1.2277 / −0.7973 MeV, or a sign map on that word) is now a record of a superseded word, not a current result. Lean results stated for generic bond weights are unaffected. The redo waits on a γγ-selected word per nucleus (PR #7876). Record: `docs/audits/2026-11-15-gg-rule-rescopes-old-letter-binding.md`. The bean stays open.
+
+
+## 2026-10-12 — SCOPE CORRECTION of the A = 2 parity finding (convolution flow)
+'Every odd power fails on (5,1)' was measured for |m| ≤ 3 only, and is FALSE beyond it. Exact split (ConvolutionFlowParity.lean, exit 0; probe convolution_flow_parity_probe.py 5/5): χ(Wσ^m) = q^m a_S + (−q⁻¹)^m a_A with (5,1) a_S = 0.021792, a_A = 0.700431. Odd m infeasible iff q^{2m} < a_A/a_S ≈ 32.1, i.e. m < 16.63: odd m ≤ 15 fail, odd m ≥ 17 feasible (checked directly at m = 17). Even m ≥ 0 all feasible; negative odd m fail. Feasible power letters for m ∈ [−8, 20]: −8,−6,−4,−2, 0..16 even, 17..20. The parity is the cos(πt) of the convolution flow σ^t = q^t P_S + q^{−t} e^{±iπt} P_A, and it holds only until the Sym channel's q^{2m} overtakes a_A/a_S. Not fitted; no letter selected.

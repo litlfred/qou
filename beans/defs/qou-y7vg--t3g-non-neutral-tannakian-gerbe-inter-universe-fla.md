@@ -1,7 +1,7 @@
 ---
 # qou-y7vg
 title: 'T3g: non-neutral Tannakian / gerbe -- inter-universe flavour'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
@@ -381,3 +381,7 @@ non-symmetric answer is that the fibre functor is the wrong knob. Audit:
 docs/audits/2026-09-03-fibre-functors-do-not-change-the-category.md. Status
 left for the author; recommendation: close as answered-negative, successor is
 the axiom-5 question in the audit's §4.
+
+## 2026-11-15 — closed (owner card "Close three, keep qs5m")
+
+Evidence: answered negative 2026-09-03 (PR #6458): fibre functors preserve fusion rules, so a 3-dim fibre functor cannot carry flavour (FibreFunctorDimensionNotCategorical.lean). The open successor is the axiom-5 question (docs/audits/2026-09-03-fibre-functors-do-not-change-the-category.md §4).

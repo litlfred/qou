@@ -1,7 +1,7 @@
 ---
 # qou-ed8a
 title: Eightfold RED on main was two missing tactic imports -- and the library root's red is a container segfault, not a defect
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
@@ -147,3 +147,7 @@ path rather than the corpus.
 
 Full write-up:
 `docs/audits/2026-09-13-library-root-compiles-1451-modules-zero-red.md`.
+
+## 2026-11-15 — closed (owner card "Close three, keep qs5m")
+
+Evidence: fix PR #7039 merged; library root measured 1451 ok / 0 RED on main c9fd78b0a (section above). The title's SIGSEGV diagnosis is retracted in the body; the 79-olean gap carrier is scripts/lean-restore-gap-oleans.sh.
