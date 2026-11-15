@@ -815,6 +815,8 @@ import QOU.ParticleInteractions.delta_pre_archimedean
 import QOU.ParticleInteractions.even_tower_continuant_harmonics
 import QOU.FluidDynamics.q_bkm_criterion
 import QOU.FluidDynamics.TwoVortexChannelAlgebra
+import QOU.FluidDynamics.LambCalculus
+import QOU.FluidDynamics.LambCalculusArchimedean
 import QOU.QBeta.BarOddLadderShape
 -- Anchor-followups cluster (beans qou-o3ta / qou-4g4a): the interface scalar,
 -- the Markov-Gram signature, and the Temperley-Lieb tower. Added to the root
