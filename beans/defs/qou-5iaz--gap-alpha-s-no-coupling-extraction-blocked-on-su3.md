@@ -21,7 +21,7 @@ blocked_by:
 α_EM is derived (to 3 sig figs, no free parameters) as a **Plancherel /
 spectral ratio** of the force-carrier knot pair:
 $1/\alpha_{EM} = q\,[9]_q[10]_q \approx 136.82$ at $q_0$
-([`alpha-em-derivation-open-problems`](https://github.com/litlfred/qou/blob/claude/agent-task-662242-vag458/content/quantum-observable-universe/predicted-spectra/alpha-em-derivation-open-problems.md)).
+([`alpha-em-derivation-open-problems`](https://github.com/litlfred/qou/blob/claude/agent-task-662242-vag458/folio/quantum-observable-universe/predicted-spectra/alpha-em-derivation-open-problems.md)).
 The analogous target: derive the **strong** coupling $\alpha_s$ (or
 $\Lambda_{QCD}$) as a spectral/Markov-trace object of the **color** knot
 $T(2,9)$ (the gluon = 3-fold cover of $T(2,3)$).

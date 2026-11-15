@@ -5,7 +5,8 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-12T20:16:18Z
-updated_at: 2026-09-12T20:16:53Z
+updated_at: 2026-11-15T13:30:00Z
+parent: qou-9nnz
 ---
 
 Found while verifying a sibling's convention claim against `binding_energy`'s
@@ -65,3 +66,7 @@ on a PR whose scope is a fallback warning and a timing probe.
    first.
 
 Do not "fix" this by thresholding the residue to zero. That hides the input.
+
+## Parented 2026-11-15 (owner-approved bean triage)
+
+Parent `(none)` → `qou-9nnz`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.

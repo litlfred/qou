@@ -54,7 +54,7 @@ A sibling report put this at 9; measured on `main` it is 8. Two further hits
 are NOT defects and must be left alone: `2026-09-03-ramified-shift-calculus-w1-prune.md`
 QUOTES the claim and immediately scopes it, and `qou-4g01` records the build.
 
-1. `content/quantum-observable-universe/lean/QOU/Brings/RamificationParityMonodromy.lean:54` — the origin
+1. `folio/quantum-observable-universe/lean/QOU/Brings/RamificationParityMonodromy.lean:54` — the origin
 2. `docs/audits/2026-09-03-enclosed-pole-set-E-is-not-identifiable.md:124`
 3. `docs/audits/2026-09-06-resurgence-arc-convention-d-reanalysis.md:223` — MINE, merged 2026-09-06
 4. `docs/audits/2026-07-20-zgeometric-prolongation-symbol-scoping.md:97` — the original scoping doc; TRUE when written, so it gets a dated update note, not a rewrite

@@ -1,13 +1,13 @@
 ---
 # qou-fl9i
 title: Raise 838 sub-canonical mp.dps sites to set_compute_dps() — producers serialize 10 digits past what they compute
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T08:04:50Z
-updated_at: 2026-10-04T15:13:42Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-9nnz
 ---
 
@@ -327,3 +327,7 @@ witnesses those sites wrote are stale-at-lower-precision until regenerated, and
 they will keep reading as reproducible failures to anyone who re-runs them. I
 did **not** regenerate them here — that is a value change on 4+ committed
 witnesses and belongs to this bean, with whatever batch discipline it chooses.
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

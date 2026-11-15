@@ -440,7 +440,7 @@ and carried it into a title and a body without resolving it against the blocks.
 That is the AGENTS.md §"Grep the claim SHAPE, not only the topic" failure: I
 grepped the topic and never checked what proposition was actually asserted.
 
-**What the blocks say, with line numbers** (`content/quantum-observable-universe/mass-theory/`):
+**What the blocks say, with line numbers** (`folio/quantum-observable-universe/mass-theory/`):
 
 | file:line | text |
 |---|---|

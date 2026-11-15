@@ -1,13 +1,13 @@
 ---
 # qou-d5eg
 title: 'q0 re-pin staleness on alpha-k-per-force-assembly.witness.json: committed witness is MUON-pinned, q_at() now returns PROTON - every delta_q_value_at_q0 digit moves'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-11T00:51:30Z
-updated_at: 2026-10-04T15:22:54Z
+updated_at: 2026-11-15T13:40:00Z
 parent: qou-2002
 blocked_by:
     - qou-7vm4
@@ -47,3 +47,7 @@ this avoids the provenance-degradation trap recorded in bean qou-5380. Blocking 
 This bean's specific claim (committed witness is MUON-pinned) is resolved — measured proton to
 1.9e-50. The sibling bean qou-7vm4 stays OPEN for the remaining q_parameter BYPASS, which is latent
 rather than active; see its correction note.
+
+## Closed 2026-11-15 (owner tap, precision epic triage)
+
+This bean's own 2026-08-22 scope note records the claim resolved: the witness is proton-pinned to 1.9e-50. The remaining q_parameter bypass is carried by qou-7vm4, which stays open.

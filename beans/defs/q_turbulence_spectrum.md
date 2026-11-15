@@ -11,7 +11,7 @@ updated_at: 2026-10-04T15:26:49Z
 parent: qou-uot9
 ---
 
-File: `content/quantum-observable-universe/lean/QOU/FluidDynamics/q_turbulence_spectrum.lean`
+File: `folio/quantum-observable-universe/lean/QOU/FluidDynamics/q_turbulence_spectrum.lean`
 The `q_turbulence_spectrum` theorem is unprovable. Its class lacks constraints on the data fields and has `*_unconstrained_false` lemmas proving that the conclusion is independent and refutable from the provided data alone.
 
 

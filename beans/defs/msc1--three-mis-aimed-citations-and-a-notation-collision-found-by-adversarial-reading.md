@@ -104,7 +104,7 @@ statement of the limit, but as written the step does not support it.
 The arithmetic in the filing is right: at $\delta = 0$ the squeeze fails
 strictly rather than degenerating. But the cause is not a mis-described limit.
 
-[`lem:surreal-squeeze`](../content/quantum-observable-universe/appendix-surreals/surreal-squeeze.md)
+[`lem:surreal-squeeze`](../folio/quantum-observable-universe/appendix-surreals/surreal-squeeze.md)
 is stated for *"$\delta > 0$ a **standard real** number"*. That hypothesis is
 the whole content — a standard real beats any infinitesimal. The Yang–Mills
 block invokes it at **two values that are not standard reals**: $\delta = 0$,
@@ -167,7 +167,7 @@ Citing a `prf:` label directly is precedented
 **Item 2 was filed wrongly, and the corpus-grep checklist is what caught it.**
 The scope note asked whether `depth_GB(λ) = max_□ h(□)` is stated anywhere. It
 is — as a **definition**: `QOU.BraidKnot.gbDepth` in
-[`TwoFiltrationBridge.lean`](../content/quantum-observable-universe/lean/QOU/BraidKnot/TwoFiltrationBridge.lean)
+[`TwoFiltrationBridge.lean`](../folio/quantum-observable-universe/lean/QOU/BraidKnot/TwoFiltrationBridge.lean)
 is `μ.cells.sup fun c => hookLength μ c`, a concrete `def`, not a class field.
 So it is definitional, not an unproved claim. I had drafted this up as "a proof
 block leaning on a conjecture" and the checklist stopped it — the exact

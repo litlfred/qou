@@ -39,7 +39,7 @@ The producer diff is **provably docstring-only**: `ast.unparse` after stripping 
 
 Trying to refresh the one sidecar my prose edit made stale, and failing, exposed this. **`qa-sweep` enumerates blocks by label**; a block whose `.ts` declares no `label:` is silently skipped and its `.qa.json` can never be refreshed by any chapter sweep.
 
-Measured on `content/quantum-observable-universe`: **3527** labelled blocks, **63** unlabelled, **all 63** carrying a sidecar that cannot be refreshed, **23 already stale**.
+Measured on `folio/quantum-observable-universe`: **3527** labelled blocks, **63** unlabelled, **all 63** carrying a sidecar that cannot be refreshed, **23 already stale**.
 
 The mechanism is measured, not inferred — the notation chapter registers 13 blocks, 11 are labelled, and the sweep reports `blocks: 11`, the two skipped being exactly the two unlabelled.
 

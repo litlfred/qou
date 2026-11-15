@@ -17,7 +17,7 @@ parent: qou-l2vh
 ---
 
 **File:** `QOU/ParticleInteractions/confinement_frobenius_reciprocity.lean` (QOU)  ·  1 cited sorry(s)
-**GitHub:** https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/content/quantum-observable-universe/lean/QOU/ParticleInteractions/confinement_frobenius_reciprocity.lean
+**GitHub:** https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/folio/quantum-observable-universe/lean/QOU/ParticleInteractions/confinement_frobenius_reciprocity.lean
 
 ### `confinement_frobenius_reciprocity`  —  line 107  ·  tier **B** (infra-blocked / open-conjecture)
 - **Proposition:** `theorem confinement_frobenius_reciprocity [ctx : ConfinementFrobeniusReciprocityContext] : (∀ O : ctx.Observable, ctx.physExp O = ∑ i ∈ ctx.A_star, ∑ j ∈ ctx.A_star, ctx.u_star i * ctx.Ginv i j * ctx.pairing O j) ∧ (∃ i : Fin ctx.d, ctx.x_star i ≠ 0) ∧ 0 < ctx.y_0_star ∧ ctx.A_star.Nonempty ∧ (∀ i :`

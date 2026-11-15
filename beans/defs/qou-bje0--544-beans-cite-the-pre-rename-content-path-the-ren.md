@@ -19,7 +19,7 @@ Found 2026-10-11 while closing `qou-cxon`, whose own Lean citation was dead.
 correctly, for the tree. It closed without sweeping the work-plan's own
 citations, so the beans directory now points at a directory that is gone.
 
-    beans naming `content/quantum-observable-universe` : 544 files
+    beans naming `folio/quantum-observable-universe` : 544 files
 
 That matters more than a doc typo: `beans/defs/` is the agent work-plan and
 AGENTS.md §path-6 makes it a corpus-grep path. A dead path in a bean sends the
@@ -28,7 +28,7 @@ artifact was deleted rather than moved.
 
 ## MEASURED — and a text match is NOT a verdict here, which cost me a wrong figure
 
-Extracting with `git grep -oh 'content/quantum-observable-universe/[A-Za-z0-9_./-]*'`
+Extracting with `git grep -oh 'folio/quantum-observable-universe/[A-Za-z0-9_./-]*'`
 gives **1700** distinct matches. My first pass judged all 1700 and reported
 *"48 % resolve under folio/, 52 % resolve nowhere"*. **That was wrong**, and the
 error was in the extraction, not the tree: **835 of the 1700 are artifacts** —

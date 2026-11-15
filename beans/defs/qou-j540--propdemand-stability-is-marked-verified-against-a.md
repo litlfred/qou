@@ -13,7 +13,7 @@ parent: qou-9nnz
 
 ## The decision
 
-`content/quantum-observable-universe/nuclear-interactions/demand-stability.ts`
+`folio/quantum-observable-universe/nuclear-interactions/demand-stability.ts`
 (the proposition **`prop:demand-stability`** — the block stating when a derived
 atom is beta-stable, shell-closed, or doubly magic) carries
 

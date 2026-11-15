@@ -1,0 +1,438 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1107.5322v1",
+ "source": {
+  "file": "1107.5322v1.pdf",
+  "sha256": "6438edaa3a65c31fc8e6c46ea4454d44b6ce6d1da57100d04ce324cfc629a6ca",
+  "bytes": 1686088,
+  "pages": 10,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T10:30:43Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1107.5322",
+   "version": "1",
+   "primary_class": "hep-ph",
+   "stamp_date": "26 Jul 2011"
+  },
+  "doi": null,
+  "title": "Probing the Origin of Neutrino Mass: from GUT to LHC Contents Introduction: from Majorana to see-saw",
+  "authors_raw": "Goran Senjanović",
+  "title_lines": [
+   "Probing the Origin of Neutrino Mass: from GUT to LHC"
+  ],
+  "abstract": "Ever since the Majorana classic work, the nature of neutrino has been one of the central questions of the weak interaction physics. If neutrino is its own antiparticle, the immediate consequence is lepton number violation through the neutrinoless double beta decay. However, colliders such as the LHC oﬀer a hope of seeing directly the same phenomenon, and moreover the Majorana nature of new particles needed to complete the Standard Model. I review here the salient features of these phenomena, and then turn to grand uniﬁcation as a way of probing the scale of the relevant new physics. The minimal supersymmetric SO(10) theory basically eliminates the LHC physics, but leads naturally to the large atmospheric mixing angle and furthermore predicts θ13 ≃10◦without any additional symmetries, in agreement with new T2K and MINOS data. It also assures that the R-parity is exact and thus leads to the stable LSP as a natural Dark Matter candidate. The minimal realistic SU(5) theory, on the other hand, predicts the light fermion triplet, below TeV, as a source of neutrino Majorana mass.",
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.10",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20180531132911Z"
+  },
+  "title_raw": "Probing the Origin of Neutrino Mass: from GUT to LHC",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Probing the Origin of Neutrino Mass: from GUT to LHC Contents Introduction: from Majorana to see-saw",
+   "outline": "1 Introduction: from Majorana to see-saw",
+   "text": "Probing the Origin of Neutrino Mass: from GUT to LHC",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_correction": {
+   "title": "Probing the Origin of Neutrino Mass: from GUT to LHC",
+   "basis": "arXiv API record 1107.5322v1 (G. Senjanovic); the extracted title ran into the table of contents",
+   "corrected_on": "2026-11-15"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction: from Majorana to see-saw",
+   "page": 1,
+   "source": "outline",
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
+  },
+  {
+   "level": 1,
+   "title": "Large scale see-saw: GUT",
+   "page": 2,
+   "source": "outline",
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
+  },
+  {
+   "level": 2,
+   "title": "SO(10)",
+   "page": 3,
+   "source": "outline",
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
+  },
+  {
+   "level": 2,
+   "title": "SU(5)",
+   "page": 4,
+   "source": "outline",
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
+  },
+  {
+   "level": 1,
+   "title": "Low scale seesaw: LHC",
+   "page": 4,
+   "source": "outline",
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
+  },
+  {
+   "level": 2,
+   "title": "Left-Right Symmetry",
+   "page": 5,
+   "source": "outline",
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
+  },
+  {
+   "level": 2,
+   "title": "More SU(5)",
+   "page": 7,
+   "source": "outline",
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
+  },
+  {
+   "level": 1,
+   "title": "Summary and Outlook",
+   "page": 7,
+   "source": "outline",
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 8,
+   "source": "outline",
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Neutrinoless double beta decay through the neutrino Majorana mass (left), and canonical contribution from light neutrino mass (right). The mixing angles are ﬁxed at {θ12, θ23, θ13} = {35◦, 45◦, 7◦}, while the Dirac and Majorana phases vary in",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Neutrinoless double beta decay induced by the right-handed gauge boson and right-handed neutrino (left) and new physics contribution, taken from [23] (right)",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The production of WR and the subsequent decay into same sign leptons and two jets through the Majorana character of the right-handed neutrino (left) and",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1199,
+   "n_words": 193,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "sec-000-1-introduction-from-majorana-to-see-saw",
+   "number": "1",
+   "title": "Introduction: from Majorana to see-saw",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2516,
+   "n_words": 534,
+   "label_start": "1",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-001-2-large-scale-see-saw-gut",
+   "number": "2",
+   "title": "Large scale see-saw: GUT",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 613,
+   "n_words": 113,
+   "label_start": "2",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-002-21-so10",
+   "number": "2.1",
+   "title": "SO(10)",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 1760,
+   "n_words": 283,
+   "label_start": "3",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-003-22-su5",
+   "number": "2.2",
+   "title": "SU(5)",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1133,
+   "n_words": 191,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-004-3-low-scale-seesaw-lhc",
+   "number": "3",
+   "title": "Low scale seesaw: LHC",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 702,
+   "n_words": 114,
+   "label_start": "4",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-005-31-left-right-symmetry",
+   "number": "3.1",
+   "title": "Left-Right Symmetry",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 4473,
+   "n_words": 806,
+   "label_start": "5",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-006-32-more-su5",
+   "number": "3.2",
+   "title": "More SU(5)",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 658,
+   "n_words": 137,
+   "label_start": "7",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-007-4-summary-and-outlook",
+   "number": "4",
+   "title": "Summary and Outlook",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1949,
+   "n_words": 323,
+   "label_start": "7",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-008-5-acknowledgements",
+   "number": "5",
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 5340,
+   "n_words": 844,
+   "label_start": "8",
+   "label_end": "10"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 9,
+  "toc_inferred_entries": 0,
+  "figure_entries": 3,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 1,
+    "items": [
+     "Introduction: from Majorana to see-saw"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 10,
+  "chars_total": 20343,
+  "furniture_lines_stripped": 0
+ }
+}

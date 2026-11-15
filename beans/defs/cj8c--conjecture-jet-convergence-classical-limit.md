@@ -11,7 +11,7 @@ updated_at: 2026-10-04T15:14:30Z
 parent: qou-j5ch
 ---
 
-§3b conjecture-class Lean carrier `instance : jet_convergence_classical_limit := sorry` at content/quantum-observable-universe/lean/QOU/BraidKnot/jet_convergence_classical_limit.lean:44. The sorry IS the conjecture (per AGENTS.md §3b) — do NOT fabricate an instance (audit-dodge). Category: framework/substrate §3b carrier. Track backing/derivation status; advance only via genuine derivation or owner-directed reframing. Parent: b9cj.
+§3b conjecture-class Lean carrier `instance : jet_convergence_classical_limit := sorry` at folio/quantum-observable-universe/lean/QOU/BraidKnot/jet_convergence_classical_limit.lean:44. The sorry IS the conjecture (per AGENTS.md §3b) — do NOT fabricate an instance (audit-dodge). Category: framework/substrate §3b carrier. Track backing/derivation status; advance only via genuine derivation or owner-directed reframing. Parent: b9cj.
 
 
 

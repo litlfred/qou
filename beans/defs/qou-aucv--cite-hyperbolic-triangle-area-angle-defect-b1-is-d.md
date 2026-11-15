@@ -25,7 +25,7 @@ assumed in a docstring:
 - **(B1)** that a hyperbolic triangle's area equals its angle defect
   (Gauss–Bonnet for `ℍ²`) — docstring at `:88-89`, proved nowhere.
 - The narrative twin says it outright:
-  `content/quantum-observable-universe/predicted-spectra/em-coupling-bring-zero-mode.md:20`
+  `folio/quantum-observable-universe/predicted-spectra/em-coupling-bring-zero-mode.md:20`
   — *"The area evaluates under constant negative curvature −1 as
   `Area = −2πχ = 4π(g−1) = 12π`."* Block kind **`proposition`**.
 

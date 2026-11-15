@@ -38,7 +38,7 @@ FORMALIZE-FIRST PRUNE LANDED (2026-08-21, PR #5363, commit a32906af4a).
 
 The scope-(b) arity exclusion in the adjudication (§2/§3 Ground 1) no longer rests on enumerating the 32 resolutions of the mass word. It is now a sorry-free theorem:
 
-  content/quantum-observable-universe/lean/QOU/BraidsAndKnots/ClosureComponentsSignInvariant.lean
+  folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/ClosureComponentsSignInvariant.lean
 
 Content: wordPerm_eq_of_indices_eq -- the permutation a signed braid word induces depends only on its index sequence, never on the crossing signs. Specialises through resolve (position-indexed, so distinct averaged crossings may resolve differently) to closureComponents_resolve, and to the exclusion form closureComponents_ne_of_perm_ne. Braid words are List (i x Bool), which is QOU.Archimedean.BraidWord n definitionally.
 

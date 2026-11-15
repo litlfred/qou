@@ -17,7 +17,7 @@ qou-301d after #7079: TowerSpan reduces to the local rule g·c·g (SandwichReduc
 
 **2026-09-07 — CLOSED on the symmetric-group tower (PR #7131, branch `claude/symmetric-group-tower-sandwich-2026-09-07`, commit `7fcd686a7a`).**
 
-New module `content/quantum-observable-universe/lean/QOU/MathlibExt/SymmetricGroupTowerWitness.lean` (705 lines, 55 decls, 0 sorry).
+New module `folio/quantum-observable-universe/lean/QOU/MathlibExt/SymmetricGroupTowerWitness.lean` (705 lines, 55 decls, 0 sorry).
 
 Tower: `A = MonoidAlgebra R (Equiv.Perm ℕ)`, `t m = of (swap m (m+1))`, `g = ginv = t`, `H n = adjoin {t m | m < n}` (mirrors InvolutionTowerWitness — subalgebras of one big algebra, inclusions by `adjoin_mono`). Trace = coefficient of the identity, `tr x = x 1`. MarkovTrace axioms: ALL hold with `z = zinv = 0` — `tr (a * t n) = a (s n)` (`idCoeff_mul_t`, via `MonoidAlgebra.mul_single_apply_aux`) and `a (s n) = 0` on `H n` because `s n` moves `n+1` and nothing in `H n` does. Quadratic `t² = 1` (h = 0) so `zinv = z − h = 0` is consistent. No axiom obstructs the identity-coefficient functional.
 

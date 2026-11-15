@@ -13,7 +13,7 @@ parent: qou-9nnz
 
 Reproduced on origin/main (not a branch artifact): 12 issues, 2 of them ERRORS.
 
-    bun run scripts/run-validate.ts content/quantum-observable-universe
+    bun run scripts/run-validate.ts folio/quantum-observable-universe
     -> ✗ Invalid — 12 issue(s)
 
 ## The two errors
@@ -29,7 +29,7 @@ so anything using it has an unresolved ref.
 
 ## Cause — one line
 
-content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-sidecar-delta-lambda-closure.ts:6
+folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-sidecar-delta-lambda-closure.ts:6
 
     uses: [
       "rem:term6-binding-density",     <-- a REMARK, not a provable
@@ -60,7 +60,7 @@ provable that the closure actually rests on to uses[], keeping the remark.
 Do NOT satisfy the checker by citing an arbitrary nearby provable — the point
 of the rule is that the cited provable is the math the algorithm implements.
 Candidate to check first: prop:toroidal-harmonics-delta-lambda
-(content/quantum-observable-universe/mass-theory/toroidal-harmonics-delta-lambda.ts),
+(folio/quantum-observable-universe/mass-theory/toroidal-harmonics-delta-lambda.ts),
 but verify it is the right upstream before wiring; the Δ_λ value theorem's own
 content block is the better target if one exists.
 

@@ -23,12 +23,26 @@ From qou-qs1d exploration (PR #7827, audit §4c; all statements below are proved
   produced by the collision.
 
 Open:
-- [ ] Per-letter readout from a WORD of letters. The h¹ part of a word is Σₖ cₖ·(word with letter k
+- [x] Per-letter readout from a WORD of letters. DONE 2026-11-15, see the result below. The h¹ part of a word is Σₖ cₖ·(word with letter k
       deleted), so the bits are recoverable iff those deleted words are linearly independent in NF. Test
       this on the nucleon word, exactly, before claiming anything.
 - [ ] What fixes a photon's letter orientation (σ vs σ⁻¹)? Not derived. Check against qou-qs2u
       (u = polarization). Do not choose it.
 
+
+## Result 2026-11-15: word readout (audit §4d; probe flavour_readout_word_probe.py; Lean sorry-free)
+
+- **The bits are readable per letter except inside runs of same-generator letters**, which commute
+  (`sameGen_letters_commute`). There, only the multiset is readable.
+- **The h¹ part carries all the readable information:**
+  - alternating word: (c₂,0,0,c₁,c₃,0), so all 8 assignments are distinct;
+  - builder word σ₀σ₀σ₁: (c₃,0,0,0,c₁+c₂+1,0), so 6 are distinct.
+- **At the builder placement:** the proton uud is unique; the neutron udd ≡ dud.
+- **The (2,1) channel also merges uuu ≡ ddd on Δ**, because ρ(Δ⁻¹) = ρ(Δ) (the full twist is trivial on
+  (2,1)): `rho_delta_inv`, `rho_delta_sq`.
+- **Still open:**
+  - what fixes the photon letter orientation;
+  - which placement is canonical (qou-ales).
 
 ## 2026-11-15 — γγ-built nucleon (PR #7741, `h2_gg_atom/`, `h2_gg_electron/`; owner decision C)
 

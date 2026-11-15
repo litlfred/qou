@@ -1,6 +1,6 @@
 ---
 # qou-oyul
-title: Remark interpreting Equations_aux_q-differences.pdf at content/quantum-observable-universe/lean/Q…
+title: Remark interpreting Equations_aux_q-differences.pdf at folio/quantum-observable-universe/lean/Q…
 status: todo
 type: task
 priority: normal

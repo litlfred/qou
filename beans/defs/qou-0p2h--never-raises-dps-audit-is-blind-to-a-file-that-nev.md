@@ -5,7 +5,8 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-14T15:57:17Z
-updated_at: 2026-09-14T18:17:10Z
+updated_at: 2026-11-15T13:30:00Z
+parent: qou-9nnz
 ---
 
 ## The blind spot, measured on the same file at two revisions
@@ -227,3 +228,7 @@ Baseline established anyway, so the next agent does not pay for it again:
 ~6 min wall (25.8 s on the first atom rising to 166.8 s on the last). Note its
 current output is already `Δ = -100.0000%` against observed mass; that is
 pre-existing and not a precision artefact.
+
+## Parented 2026-11-15 (owner-approved bean triage)
+
+Parent `(none)` → `qou-9nnz`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.

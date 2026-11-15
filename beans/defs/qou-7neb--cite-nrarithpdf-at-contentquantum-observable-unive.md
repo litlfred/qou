@@ -1,6 +1,6 @@
 ---
 # qou-7neb
-title: Cite nrarith.pdf at content/quantum-observable-universe/braids-and-knots/cusp-shape-bar-parity.md
+title: Cite nrarith.pdf at folio/quantum-observable-universe/braids-and-knots/cusp-shape-bar-parity.md
 status: todo
 type: task
 priority: normal

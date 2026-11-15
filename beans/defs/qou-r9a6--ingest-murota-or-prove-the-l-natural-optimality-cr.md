@@ -1,11 +1,11 @@
 ---
 # qou-r9a6
 title: 'Ingest Murota (or prove the L-natural optimality criterion): the Xbot arc''s one load-bearing citation resolves to nothing in the corpus'
-status: in-progress
+status: todo
 type: task
 priority: normal
 created_at: 2026-10-11T08:35:32Z
-updated_at: 2026-10-12T20:30:00Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-3e6w
 ---
 
@@ -98,3 +98,7 @@ improving `±χ_S` (the probe's M4 checks its min-cut move against brute force).
 termination is not proved here and is not needed for the certificate.
 
 Status `in-progress` (not closed): the owner may still want (1).
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

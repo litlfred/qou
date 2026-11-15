@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-31T03:46:30Z
-updated_at: 2026-10-04T15:12:20Z
+updated_at: 2026-11-15T11:48:07Z
 parent: qou-10v9
 ---
 
@@ -937,3 +937,103 @@ keeping.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-05 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+<!-- ported 2026-11-15 from PR #6359 (branch predates the beans/defs and folio/ moves) -->
+
+## ROUTE 3 CLOSED 2026-08-31 — the DEFINED triples are exactly the TRIVIAL ones
+
+This supersedes the "partially available from A=4" conclusion recorded above,
+and it did not need the Magnus expansion the next-step entry called for.
+
+### The cheap decisive measurement
+
+Between non-adjacent components the closure has **ZERO crossings** -- not merely
+a zero signed sum, which is all the previous probe established. Only the `mu-1`
+consecutive pairs carry any crossing at all.
+
+Stronger, and checked structurally rather than argued from the diagrammatic
+"no inter-component crossings implies split":
+
+  * every component occupies a **contiguous block** of strand positions;
+  * for every minimal-span triple `{i, i+2, i+4}`, the three blocks are
+    **pairwise disjoint intervals** and **zero letters act on two members**.
+
+So the sublink is the closure of a braid on three disjoint, non-interacting
+contiguous blocks -- each closes in its own annulus. **Split by construction.**
+
+### The collapse
+
+    Delta(ijk) = 0  =>  the triple is split  =>  mubar(ijk) = 0.
+
+Combined with the indeterminacy split: triples touching a linked pair are
+indeterminate (`Delta` 1 or 2), and triples that are well defined are zero.
+**No non-trivial well-defined Milnor triple invariant exists in this closure at
+any A.** The Magnus expansion would return zero on exactly the triples where it
+is meaningful, so it is not worth running.
+
+Definedness and triviality coincide **because the linking graph is a path**: on
+a path, "not linked" and "never interacts" are one condition. A Brunnian link
+separates them -- it interacts *without* linking, which is exactly what `L6a4`
+does and this word cannot.
+
+### Consequence for any future assignment
+
+The requirement is now sharp and checkable: a nucleus->link map whose closure
+supports a nonzero well-defined Milnor invariant must have a pair that
+**interacts without linking**. The path structure of the canonical word forbids
+it, so this is a requirement on the ASSIGNMENT, not on the invariant.
+
+### Lean
+
+`QOU/Mass/MilnorDefinedTriplesVanish.lean` -- sorry-free, lean-direct exit 0,
+`#print axioms` = **[propext]** only on all four. `PathLinkingStructure` carries
+the two measured facts and the classical "split implies vanishing" as
+hypotheses; the theorems derive the collapse (`Delta = 0 -> mubar = 0` is NOT a
+field). §3b-cond used honestly.
+
+### The minimal-span subfamily entry above is superseded too
+
+It named `{i, i+2, i+4}` as a canonical bounded-degree family with the right
+scaling. The family is still canonical and still correctly scaling -- and its
+invariants are all zero. Recorded rather than deleted: the counting was right
+and the conclusion it was heading toward was not.
+
+
+## The path is a CONVENTION, not a derived fact (2026-08-31)
+
+Every route closed today died on the same structure -- the linking/interaction
+graph of the atom word is a **path**. Read at the construction rather than
+inferred: `mass_at_3A_proper.atom_braid_word_3A`'s own docstring says
+
+  > for each nucleon k, apply intra g0, intra g1, then (if include_inter) the
+  > appropriate pp/nn/pn crossing at **gen 3k+2**
+
+matching "the **chain-walk convention** of
+`hecke_core.atom_per_generator_volumes`". So the atom is emitted as a LINEAR
+CHAIN of nucleon triples with exactly one interface per consecutive pair. The
+path is the emission loop's shape, named as a convention. It is not derived
+from anything, and C6 of the A>=5 constraint table already flagged the sibling
+ordering choice the same way.
+
+**Consequence.** Route 1 fails on parity (`mu = A+1` odd only for even A) and
+route 3 fails because a path cannot be Brunnian. Both failures trace to the
+chain walk, so the open question is no longer "which invariant" but **"is the
+chain walk load-bearing, or a free choice?"** -- a much smaller question than
+the one this bean opened with.
+
+## A PRECISION FIX to my own route-3 output, before it was merged
+
+`atom_braid_word_3A` is emphatic that it returns a **Hecke element**, not a
+braid word; that there is **no single link behind it** (a weighted sum over
+`2^(2A+1)` branches); and that **no topological quantity may be read off it**.
+
+My probe and Lean said "the closure" throughout, implying an object the corpus
+says does not exist. **The results survive at full strength** -- what is
+measured is which strand pairs each letter acts on, and an `averaged` letter
+`sigma_g - (h/2)*1` and both its resolutions project to the SAME transposition,
+so the component partition, the non-interaction, and the strand blocks are
+identical in every branch. The conclusion is therefore about **every one of the
+`2^(2A+1)` branch closures separately**. Phrasing corrected in the probe, the
+Lean docstring and the PR body rather than left to be quoted as a single-link
+claim. Linking NUMBERS are genuinely branch-dependent (-1 vs -2 per bond) and
+are not load-bearing for the vanishing result.

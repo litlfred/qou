@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-10-10T07:57:44Z
-updated_at: 2026-10-10T08:13:42Z
+updated_at: 2026-11-15T13:05:00Z
 parent: qou-5vkl
 ---
 
@@ -217,3 +217,26 @@ after the merge is the way to confirm the count moved 4 → 3 rather than taking
 it from this note. The recommendation above (option 3: wire it into
 `scripts/precision-gates.sh` so the class cannot recur) is unaffected by any of
 the four being fixed — a gate is about the next rename, not this one.
+
+
+## 2026-11-15 — #7584 ported onto main (branch `claude/qou2cz1-port-2026-11-15`)
+
+#7584 conflicted with main, which had already fixed the HA literal its own way
+(889cb04f4: HA derived from `Q_50_DIGIT_STR` at 60 dps, chi via
+`chi_lambda_braid_mpf`, errors recorded instead of swallowed). What landed on top:
+
+1. `atom_braid_active_partitions.py`: the identity branch imports `specht_dim`
+   (`hecke/hecke_characters.py:874`), not the absent `hook_length_dim_lambda`.
+   The branch is dead on the committed witness (0 chi errors), so no number moves.
+2. Same file: `match` now also requires zero chi errors. **Found while porting,
+   not in #7584**: without `pyhecke_native` every partition raises
+   `NotImplementedError` (mpfr_60dps needs the Rust kernel), observed = 0, and
+   the headline assertion still PASSED. Recording the errors was half the fix;
+   the bound itself was still vacuous.
+3. `probes/qbeta_g3_annihilator_certification.py`: reduced to
+   `trefoil_calibrate()` per the 2026-10-10 relayed ruling, taken verbatim from
+   #7584 (ac520bba3b). Witness regenerated: 1 assertion, passes; the two
+   retired FAILs are gone.
+
+`local_import_resolution_audit.py` on this branch: **UNRESOLVED: 0** (5998
+bindings checked). Stays `todo` until merged.

@@ -5,7 +5,8 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-13T17:29:26Z
-updated_at: 2026-09-14T06:24:46Z
+updated_at: 2026-11-15T13:30:00Z
+parent: qou-9nnz
 ---
 
 ## The defect, measured
@@ -295,3 +296,7 @@ drain: baseline the unmodified producer BEFORE editing. That step has now
 produced four separate findings it was not looking for (`adjacent-vs-full`'s
 270-field drift, `deltalambda_extensivity`'s 4×, this one's 24×, and this
 crash). **It is the highest-yield step in the screen and it costs one run.**
+
+## Parented 2026-11-15 (owner-approved bean triage)
+
+Parent `(none)` → `qou-9nnz`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.

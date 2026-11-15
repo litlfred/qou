@@ -1,6 +1,6 @@
 ---
 # qou-ylh9
-title: Cite [garoufalidis2004] at content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-mach…
+title: Cite [garoufalidis2004] at folio/quantum-observable-universe/stochastic-mechanics/phi-q-aj-mach…
 status: todo
 type: task
 priority: normal

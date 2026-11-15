@@ -1,6 +1,6 @@
 ---
 # qou-6vo0
-title: Cite 1404.0331v1.pdf at content/quantum-observable-universe/lean/QOU/BraidKnot/AJTrefoil.lean (cl…
+title: Cite 1404.0331v1.pdf at folio/quantum-observable-universe/lean/QOU/BraidKnot/AJTrefoil.lean (cl…
 status: todo
 type: task
 priority: normal

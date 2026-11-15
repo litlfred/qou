@@ -1,13 +1,13 @@
 ---
 # qou-gwe9
 title: 'MEASURED: Copilot review does not arrive — AGENTS.md rule 10''s last surviving Phase-4 gate'
-status: in-progress
+status: todo
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T00:39:14Z
-updated_at: 2026-10-04T15:11:37Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-5vkl
 ---
 
@@ -1049,3 +1049,7 @@ been superstition.
 **no external review gate at all** — CI is dispatch-only, Gemini is sunset, Copilot did not
 respond to two requests. The agent's own verification tabled in each PR body is not the last
 gate standing, it is the only one, which is what AGENTS.md's corrected text already says.
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
