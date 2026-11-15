@@ -581,10 +581,13 @@ user's last message, not the most recently mentioned file.
 > re-confirmed 2026-11-15; issue #7642).** `beans/` (`beans.json` + `defs/`)
 > lives on the branch `cat/cat-harness/beans`, declared in `qou.json` as
 > `source: {kind: branch, keyedBy: tip}`, and is gitignored on main. The
-> SessionStart hook (`scripts/mount-fsh-guts.sh`) installs the platform if it
-> is absent and mounts `beans/` with `state:mount`. There is **no read-only
+> SessionStart hook (`scripts/mount-fsh-guts.sh`) installs a light subset of
+> the platform if it is absent (`scripts/mount-platform-lite.sh`: about 20 s,
+> 165 MB, against 1.7 GB for the full setup) and mounts `beans/` with
+> `state:mount`. Note `branch-store.ts push` has no `--dry-run`: an unknown
+> flag is ignored and the push happens. There is **no read-only
 > fallback** (owner, 2026-11-15). By hand:
-> `./scripts/setup-folio-assistant.sh && bun folio-assistant/cat-harness-tools/scripts/state-mount.ts`.
+> `./scripts/mount-platform-lite.sh && bun folio-assistant/cat-harness-tools/scripts/state-mount.ts`.
 > The `beans` CLI works on the mount unchanged, because `.beans.yml` still says
 > `path: beans/defs`. **A bean edit is no longer a commit in your PR.** Push it
 > back with `bun folio-assistant/cat-harness-tools/scripts/branch-store.ts push
