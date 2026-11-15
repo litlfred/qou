@@ -7,7 +7,7 @@ tags:
     - lean-foundations
     - devacuify
 created_at: 2026-11-15T14:05:00Z
-updated_at: 2026-11-15T20:53:34Z
+updated_at: 2026-11-15T21:07:47Z
 parent: qou-6qbv
 ---
 
@@ -83,3 +83,5 @@ Next: CategoricalQExtDeriv.exists_axiom and frobeniusForm_unique.
 - int_factors_through_centre_of_invariant is proved. Its content sits in the hypothesis intA ∘ π_Z = intA, which is still open for the concrete H_n(q).
 - matrix_algebra_baer_right_axiom is removed and proved (projection onto a complement of the column span).
 - energy_path_independent repair is NOT attempted. It is unclear that the Hecke-step count is invariant across reduction paths even when the system is confluent, since the Hecke rule branches into a sum. This needs a definition of "energy of a path" before a claim can be stated.
+- jonesMarkov_H3 is proved: the Jones–Markov repair at n = 3 on the concrete NF model of H₃(q). Second defect found: the removed markov_pos quantified over all of H_n, which forces z² − hz − 1 = 0.
+- q-Casimir repair is deferred. It needs a constructed 𝒰_q(sl₂) in Lean (a presented algebra), which is a large build and not a patch.
