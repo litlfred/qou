@@ -139,6 +139,7 @@ import QOU.MathlibExt.QPlancherel
 import QOU.MathlibExt.MonoidalCalcVar
 import QOU.MathlibExt.QGaussianBinomialPascal
 import QOU.MathlibExt.DerivationRankNullity
+import QOU.MathlibExt.Dolbeault
 import QOU.MathlibExt.OctonionDerivations
 import QOU.MathlibExt.OctonionDerivationsBound
 import QOU.MathlibExt.OctonionDerivationsUpperBound
@@ -581,6 +582,7 @@ import QOU.Information.PolyGrowthAlgebra
 import QOU.Information.MagnitudeTraceCommutator
 import QOU.Information.CocenterTraceFactor
 import QOU.Information.OuterDerivationResidue
+import QOU.Information.WeylCentre
 import QOU.Information.HochschildH1
 import QOU.Information.SkeinGradeConnective
 import QOU.Information.SkeinShadowConjInvariance
@@ -1049,6 +1051,7 @@ import QOU.Machinery.HeckeH4Wedderburn
 import QOU.Machinery.HeckeH4Semisimple
 import QOU.Machinery.HeckeTowerBasicConstruction
 import QOU.Machinery.QuantumTorus
+import QOU.Machinery.QuantumTorusQDifference
 import QOU.Machinery.QuantumTorusAJ
 import QOU.Machinery.QuantumTorusDivision
 import QOU.Machinery.QuantumTorusSymbol
@@ -1060,6 +1063,24 @@ import QOU.HyperellipticQuintic.zeta5_residue_monodromy
 
 import QOU.Archimedean.BorromeanQuark
 import QOU.Archimedean.EmCouplingBringZeroMode
+import QOU.Archimedean.BringZeroModeClausenWitness
+import QOU.Archimedean.ArchimedeanLimitDomain
+import QOU.Archimedean.BlochSuslinComplex
+import QOU.Archimedean.BlochWignerFiveTermInstance
+import QOU.Archimedean.BlochRigidity.Algebra
+import QOU.Archimedean.BlochRigidity.Abstract
+import QOU.Archimedean.BlochRigidity.ComplexAlgebra
+import QOU.Archimedean.BlochRigidity.Derivative
+import QOU.Archimedean.BlochRigidity.Growth
+import QOU.Archimedean.BlochRigidity.Holomorphic
+import QOU.Archimedean.BlochRigidity.Instance
+import QOU.Archimedean.BlochRigidity.IntegrationBridge
+import QOU.Archimedean.BlochRigidity.LinearSections
+import QOU.Archimedean.BlochRigidity.ReebPlane
+import QOU.Archimedean.BlochRigidity.Regularity
+import QOU.Archimedean.BlochRigidity.Rigidity
+import QOU.Archimedean.BlochRigidity.Smooth
+import QOU.Archimedean.BlochRigidity.Vanishing
 import QOU.Archimedean.BringEllipticFactor
 import QOU.Archimedean.SigmaJGeometricCarrier
 import QOU.Archimedean.HodgeWeilRealStructure
