@@ -151,3 +151,90 @@ transverse to the Euler field, `1` on the Euler (Reeb) direction. On `𝒟²`, t
 terms carry `q⁻²`, Reeb–Reeb terms `1`, mixed terms `q⁻¹`. This is a candidate origin for the
 dressing ratios in `h1_hierarchy_origin.md`; it is **not** checked here, and it is stated only as
 a lead.
+
+## Follow-up: the three inputs (2026-11-15, later the same day)
+
+Lean: `folio/quantum-observable-universe/lean/QOU/Mass/LagrangianKZInputs.lean`
+(sorry-free; axioms only `propext`, `Classical.choice`, `Quot.sound`).
+
+| input | status after this follow-up |
+|---|---|
+| 3. permutation symmetry | **derived** from P1 (Lean) |
+| 1. Reeb invariance `L_ξ∇ = 0` | **reduced to a gauge choice**; one analytic gap left (log poles) |
+| 2. regular residues at triple collisions | **derived in rank one** (written); matrix case `n ≥ 4` **still open** |
+
+### Input 3 is the descent to unordered configurations
+
+P1 already makes the `n`-body sector a local system on `Conf_n / S_n`. Pulled back to `Conf_n`
+with factor `k` at point `z_k`, its descent datum is `ω(σ·z)(σ·u) = P_σ ω(z)(u) P_σ⁻¹`, where
+`P_σ` permutes tensor factors. In Lean:
+
+* `residue_covariant`: that equivariance forces `M_{σa,σb} = P_σ M_{ab} P_σ⁻¹` for every pair.
+* `residue_uniform`: if one pair residue is `α + β P_{(i₀j₀)}` (what `schurWeyl_two` gives for
+  one pair), every pair residue is `α + β P_{(ij)}`, with the same `α, β`.
+* `arnoldForm_eq_abelian_add_kz`: the form is `α·(abelian) + KZ(ℏ = β, Ω_{ij} = P_{(ij)})`.
+
+The only convention is the labelling "factor `k` at point `z_k`". So input 3 is not a new physical
+assumption. Note that `Ω_{ij}` comes out as the transposition `P_{(ij)}` itself. On the fundamental
+of `𝔤𝔩_N` that is the split Casimir, which is the expected KZ datum.
+
+### Input 1 is a choice of gauge
+
+`Conf_n ≅ ℂ × ℂ^× × M_{0,n+1}` by `z ↦ (z_0, z_1 − z_0, affineNormalize z)`. In Lean,
+`affineNormalize` is invariant under all dilations and translations, and a function is invariant
+under both iff it factors through it (`affineInvariant_iff`).
+
+* The `ℂ` factor is contractible. The loop in the `ℂ^×` factor is the Euler loop, i.e. the full
+  twist `Δ²`, which is central in `B_n`.
+* So a local system `L` on `Conf_n` is a local system `L_M` on `M_{0,n+1}`, plus the automorphism
+  `ρ(Δ²)`, which commutes with the monodromy of `L_M`.
+* Take a connection `ω_M` for `L_M` (Riemann–Hilbert on `M_{0,n+1}`, the isolated Part IV). Let `B`
+  be a logarithm of `ρ(Δ²)` chosen in the algebra it generates, transported to a `∇_M`-parallel
+  section of `End(L_M)`. Since `ρ(Δ²)` commutes with the monodromy, that section is single-valued.
+* Then `ω = ω_M + B · d log(z_1 − z_0)` is flat. The curvature reduces to `(∇_M B) ∧ d log t = 0`.
+  It has the monodromy of `L`, and it is invariant under dilations and translations.
+
+So `L_ξ∇ = 0` holds after a gauge transformation. Since the identification with KZ is only
+claimed up to gauge, it is not a new axiom.
+
+**The gap that remains.** P2 also needs Saito's condition (a), log poles along every diagonal.
+`B` is a parallel section of a regular-singular connection, so it has moderate growth, but its pole
+order along the boundary of `M_{0,n+1}` is not controlled here. If `B` has a pole, the invariant
+representative leaves the log class.
+
+### Input 2: rank one is derived; the matrix case is open
+
+**Rank one (scalar coefficients).** Suppose `ω` is a scalar 1-form that is closed, logarithmic
+along the braid arrangement, and homogeneous of degree 0. Then `ω = Σ c_{ij} d log(z_i − z_j)`
+with constant `c_{ij}`. In particular its residues are constant, so condition (c) holds.
+
+Proof (written):
+1. Brieskorn–Arnold: the classes of the `d log(z_i − z_j)` span `H¹` of the complement. So
+   `ω − Σ c_{ij} d log(z_i − z_j) = dg` with `g` single-valued.
+2. Log poles bound the growth of `g` to logarithmic, so `g` is rational.
+3. A pole of order `k ≥ 1` in `g` gives `dg` a pole of order `k + 1 ≥ 2`, which is impossible for a
+   log form. So `g` is a polynomial.
+4. `dg` is homogeneous of degree 0 with `deg dz = 1`, so `g` is constant.
+
+**Consequence for the matrix case.** Flatness gives `d tr ω = −tr(ω ∧ ω) = 0`. So the trace of
+every residue is constant, and the same holds for any one-dimensional quotient. On each diagonal
+the residue is also a flat section of `End` for the induced connection, so its eigenvalues are
+constant.
+
+**Open.** It is not settled whether a flat, degree-0, log matrix connection on `Conf_n` with
+`n ≥ 4` can have a residue that is non-constant along its diagonal. That would mean a rational
+residue that is conjugate to a constant but not equal to one. The room for this exists:
+- For `n = 4`, after quotienting by translations, the braid arrangement is free with exponents
+  `1, 2, 3`.
+- So its degree-0 log 1-forms form a space of dimension `1 + 3 + 6 = 10`, against the 6 forms
+  `d log(z_i − z_j)`.
+- In rank one, closedness removes the extra 4 dimensions. In the matrix case, flatness has not been
+  shown to remove them.
+
+### What is left
+
+1. The log-pole order of the parallel twist logarithm `B` along the boundary of `M_{0,n+1}`
+   (for input 1).
+2. Regular residues at triple collisions for matrix connections, `n ≥ 4` (input 2).
+
+Input 3 is closed.
