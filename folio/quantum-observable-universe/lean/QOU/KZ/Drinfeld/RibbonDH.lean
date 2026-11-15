@@ -31,7 +31,7 @@ noncomputable section
 
 namespace QOU.KZ.Drinfeld
 
-open CategoryTheory MonoidalCategory Finset QOU.KZ.FuchsianFormal QOU.KZ.BlockResidues Obj
+open QOU.KZ.DrinfeldAssociator CategoryTheory MonoidalCategory Finset QOU.KZ.FuchsianFormal QOU.KZ.BlockResidues Obj
 
 attribute [local instance] Matrix.linftyOpNormedRing Matrix.linftyOpNormedAlgebra
 
@@ -147,7 +147,7 @@ omit hc in
 theorem θmat_mul_θinv (X : Obj) : θmat c X * θinv c X = 1 := expi_mul_expi_neg _
 
 /-- **`D_ℏ` is balanced**: `θ_X = exp(iπℏ Ω_X)`. -/
-instance balanced : QOU.MathlibExt.BalancedCategory (DH c) where
+instance balanced : QOU.MathlibExt.BalancedCategory (DH kz c) where
   twist X := ⟨θmat c X, equivariant_θmat c X⟩
   twist_isIso X := ⟨⟨⟨θinv c X, equivariant_θinv c X⟩, hom_ext (θinv_mul_θmat c X),
     hom_ext (θmat_mul_θinv c X)⟩⟩
@@ -159,7 +159,7 @@ instance balanced : QOU.MathlibExt.BalancedCategory (DH c) where
     rw [θmat_tensor]
     rfl)
 
-theorem twist_val (X : DH c) : (QOU.MathlibExt.BalancedCategory.twist X).1 = θmat c X := rfl
+theorem twist_val (X : DH kz c) : (QOU.MathlibExt.BalancedCategory.twist X).1 = θmat c X := rfl
 
 end Balanced
 
@@ -168,7 +168,7 @@ section Ribbon
 variable (c : ℂ) [hc : Fact (Transcendental ℚ c)] [hsm : Fact (‖c‖ ≤ 1 / 12)]
 
 /-- **`D_ℏ` is ribbon** (`ℏ` transcendental, `‖ℏ‖ ≤ 1/12`). -/
-instance ribbon : QOU.MathlibExt.RibbonCategory (DH c) where
+instance ribbon : QOU.MathlibExt.RibbonCategory (DH kz c) where
   twist_dual X := by
     apply eq_of_whiskerRight_comp_evaluation (X := X)
     rw [rightAdjointMate_comp_evaluation]
@@ -397,7 +397,7 @@ theorem qV_sub_inv_ne_zero (hc : Transcendental ℚ c) : qV c - (qV c)⁻¹ ≠ 
   exact hc (hcn ▸ isAlgebraic_int (R := ℚ) (A := ℂ) n)
 
 /-- `V` as an object of `D_ℏ`. -/
-def Vd (c : ℂ) : DH c := Obj.V
+def Vd (c : ℂ) : DH kz c := Obj.V
 
 variable [hc : Fact (Transcendental ℚ c)]
 
@@ -413,8 +413,8 @@ theorem twist_V : BalancedCategory.twist (Vd c) = aV c • 𝟙 (Vd c) :=
   hom_ext (θmat_V c)
 
 /-- `End(𝟙) = ℂ`. -/
-theorem end_unit_eq (f : (𝟙_ (DH c)) ⟶ 𝟙_ (DH c)) :
-    f = (f.1 default default) • 𝟙 (𝟙_ (DH c)) := by
+theorem end_unit_eq (f : (𝟙_ (DH kz c)) ⟶ 𝟙_ (DH kz c)) :
+    f = (f.1 default default) • 𝟙 (𝟙_ (DH kz c)) := by
   apply hom_ext
   ext y x
   have hy : y = default := Subsingleton.elim _ _
@@ -435,7 +435,7 @@ variable [hsm : Fact (‖c‖ ≤ 1 / 12)]
 /-- **S6: `dim_q V = [2]_q` in `D_ℏ`.** For `ℏ` transcendental with `‖ℏ‖ ≤ 1/12`, the ribbon
 quantum dimension of `V = ℂ²` in the Drinfeld category is `q + q⁻¹` with `q = e^{iπℏ}`. -/
 theorem qDim_V_eq_qint_two :
-    qDimTwistedWith (Vd c) (Vd c)ᘁ = (qV c + (qV c)⁻¹) • 𝟙 (𝟙_ (DH c)) := by
+    qDimTwistedWith (Vd c) (Vd c)ᘁ = (qV c + (qV c)⁻¹) • 𝟙 (𝟙_ (DH kz c)) := by
   have hd := end_unit_eq c (qDimTwistedWith (Vd c) (Vd c)ᘁ)
   set d := (qDimTwistedWith (Vd c) (Vd c)ᘁ).1 default default
   have hs := sV_ne_zero c
