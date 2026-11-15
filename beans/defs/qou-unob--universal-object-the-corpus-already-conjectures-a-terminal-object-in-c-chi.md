@@ -12,7 +12,7 @@ updated_at: 2026-10-04T15:25:17Z
 parent: qou-gwte
 ---
 
-content/quantum-observable-universe/brings-surface/universality-general.md:
+folio/quantum-observable-universe/brings-surface/universality-general.md:
   "For any admissible Euler characteristic chi, the category C_chi of C quantum
    observable universes with chi(S) = chi should admit a TERMINAL OBJECT
    determined by the unique maximally symmetric Riemann surface of the

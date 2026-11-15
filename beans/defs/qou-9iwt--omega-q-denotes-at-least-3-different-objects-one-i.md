@@ -69,7 +69,7 @@ and need distinct glyphs; the Plancherel space is unrelated and should not be
 
 **The disposition this bean recommends has been carried out.** The notation
 register now rules on `Ω_q` explicitly
-([`notation-collisions.md`](../content/quantum-observable-universe/notation/notation-collisions.md)):
+([`notation-collisions.md`](../folio/quantum-observable-universe/notation/notation-collisions.md)):
 
 > **$\Omega_q$** = the **Reeb period** only. … the $q$-deformed **Kerov
 > limit-shape space** — the target of the Plancherel pushforwards $\iota_n$ —

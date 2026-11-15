@@ -64,7 +64,7 @@ is missing. And resumming does not rescue it at any exponent or coefficient:
 
 ## Formalised
 
-`content/quantum-observable-universe/lean/QOU/Hecke/GeometricTailBound.lean`,
+`folio/quantum-observable-universe/lean/QOU/Hecke/GeometricTailBound.lean`,
 5 declarations, sorry-free, registered in `QOU.lean`:
 
 - `tail_eq` — `(1-x)⁻¹ - (1+x) = x²/(1-x)` for `x ≠ 1`;

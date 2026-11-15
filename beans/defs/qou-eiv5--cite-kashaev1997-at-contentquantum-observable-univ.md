@@ -1,6 +1,6 @@
 ---
 # qou-eiv5
-title: Cite [kashaev1997] at content/quantum-observable-universe/lean/QOU/LiftingDescent/tm_dilogarithm_…
+title: Cite [kashaev1997] at folio/quantum-observable-universe/lean/QOU/LiftingDescent/tm_dilogarithm_…
 status: todo
 type: task
 priority: normal

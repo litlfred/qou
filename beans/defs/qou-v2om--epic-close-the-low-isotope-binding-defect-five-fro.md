@@ -1,11 +1,11 @@
 ---
 # qou-v2om
 title: 'EPIC: close the low-isotope binding defect — five fronts, formalize-first'
-status: in-progress
+status: todo
 type: epic
 priority: normal
 created_at: 2026-08-26T03:37:39Z
-updated_at: 2026-10-04T15:09:57Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-10v9
 ---
 
@@ -65,3 +65,7 @@ therefore logically prior to F2/F3/F4, not merely cheapest.
 ## Reorganisation 2026-10-04
 
 Now the epic for P1.BIND under PROGRAM: L2 at 1 ppQ (mass and binding accuracy).
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

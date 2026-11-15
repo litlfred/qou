@@ -1,7 +1,7 @@
 ---
 # qou-trns
 title: 'Route 8 transport: branch integer now PINNED by the base point; envelope theorem still open'
-status: in-progress
+status: todo
 type: task
 priority: high
 tags:
@@ -11,7 +11,7 @@ tags:
     - 5two
     - analysis
 created_at: 2026-08-07T21:15:00Z
-updated_at: 2026-10-04T15:11:06Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-n4nr
 ---
 
@@ -1380,3 +1380,7 @@ plus one argument. Recorded as a separate lane, and as a source of an
 independent check — which this branch's record argues for.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

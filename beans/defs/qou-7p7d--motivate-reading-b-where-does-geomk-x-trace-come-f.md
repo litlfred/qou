@@ -8,7 +8,8 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T03:16:39Z
-updated_at: 2026-10-04T15:21:38Z
+updated_at: 2026-11-15T13:30:00Z
+parent: qou-v2om
 ---
 
 ANSWERED 2026-08-26. (B) has NO motivation; do not declare it.
@@ -47,3 +48,7 @@ supported. Corrected in the audit.
 2026-08-26: Lean-proved the per-letter spectral fact (AveragedLetterSpectrum.lean, 6 decls, sorry-free, axiom-clean) — averaged letter is ([2]_q/2)*eps with eps^2=1; a scaled generator matches +/-t only at Q=1. Addendum 12 unpacks the satellite vocabulary and audits my 'one move gives three things' claim: closed-braid SURVIVES (pure topology), satellite carrier is a TARGET not a construction, bar-invariance-by-construction WITHDRAWN (rested on the type-B fold that 11b falsified). Open: a pattern that is a closed braid, has Z+N JSJ pieces, AND is bar-invariant structurally. No candidate mechanism for the third.
 
 2026-08-26 addendum 13: COLOUR averaging splits the 2A+1 letters into 2A symmetric (Q=1) + exactly ONE colour-weighted p-n interface (Q=1.0000715145). 11b's count objection is wrong; type B has one T_0 and there is one such letter. Route still pruned, now by a sorry-free invariant: exteriorSquareDim N = 1 <-> N = 2 (VolumeConstraintForcesFibreTwo.lean, on main) pins the fibre dimension, so no single-algebra fold reaches a third row. weak_volume_reading_admits_three shows N=3 IS admitted by the weak reading. deuteron-real-sdp's indefinite Gram is convention C (11 nonzero entries; D gives 4 positive + 7 zero, no negatives at n=3,6,9,12) -> singularity not indefiniteness, qou-cds2. Third channel = third ROW; bar-fixed sector leaves the D support exactly at A=2 (deuteron), which is also the first isotope with a colour letter. Groupoid reading is the corpus's own open item (su5-hypercharge-n3-gate, conj:sm-gauge-truncation). No route claimed.
+
+## Parented 2026-11-15 (owner-approved bean triage)
+
+Parent `(none)` → `qou-v2om`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.

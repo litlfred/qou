@@ -1,6 +1,6 @@
 ---
 # qou-8j99
-title: Remark interpreting [finster2022] at content/quantum-observable-universe/observations/cfs-compari…
+title: Remark interpreting [finster2022] at folio/quantum-observable-universe/observations/cfs-compari…
 status: todo
 type: task
 priority: normal

@@ -1,6 +1,6 @@
 ---
 # qou-cjkt
-title: Cite 9504015v2.pdf at content/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneRTSurgeryCon…
+title: Cite 9504015v2.pdf at folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneRTSurgeryCon…
 status: todo
 type: task
 priority: normal

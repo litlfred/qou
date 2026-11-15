@@ -22,7 +22,7 @@ is an open Lean-formalization research target, not a session deliverable.
 ## Progress (2026-08-02, branch claude/rttg-tangle-scaffold-2026-08-02)
 
 SCAFFOLD landed (sorry-free, lean-direct exit 0):
-`content/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneFramedTangleScaffold.lean`.
+`folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneFramedTangleScaffold.lean`.
 
 Note: the RT-2 prompt referenced `KeystoneBalancedRibbon.lean` / `QOU.BraidKnot.Balanced.BalancedCategory`,
 which does NOT exist in the corpus. The nearest existing infra is `KeystoneRibbonMTCInput.lean`

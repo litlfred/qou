@@ -1,10 +1,10 @@
 ---
 # qou-9634
 title: 'GAP: Lean n-strand Drinfeld–Kohno (KZ holonomy on Conf_n = Jimbo R-matrix)'
-status: in-progress
+status: todo
 type: task
 created_at: 2026-10-11T06:39:25Z
-updated_at: 2026-10-11T10:35:00Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-ywyq
 ---
 
@@ -33,3 +33,7 @@ Still open:
 1. the KZ Hecke quadratic for n ≥ 3 (local monodromy at collisions);
 2. continuity in q of the Wedderburn isomorphism;
 3. a base point other than coupling 0, where q = 1.
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

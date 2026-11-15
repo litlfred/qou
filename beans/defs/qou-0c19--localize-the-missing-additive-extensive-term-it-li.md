@@ -146,7 +146,7 @@ construction question with a definite answer rather than an open assumption.
 
 `computations/qbeta/qbeta_layout_conflict_probe.py` (5/5), exhaustive — not
 sampled — over all `(3A)!` orderings, plus
-`content/quantum-observable-universe/lean/QOU/Hecke/LayoutConflict.lean` for
+`folio/quantum-observable-universe/lean/QOU/Hecke/LayoutConflict.lean` for
 general `A`.
 
     A   strands   contiguous   tube-realising   BOTH   max matched under (1)

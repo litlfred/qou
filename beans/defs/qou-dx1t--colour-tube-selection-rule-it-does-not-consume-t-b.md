@@ -21,7 +21,7 @@ conclusion SURVIVED both. Numbers below are the ones that survived refutation.
 
 I briefed the workflow with "no Lean file mentions the colour-tube selection
 rule". FALSE. It is
-content/quantum-observable-universe/lean/QOU/BraidsAndKnots/ColorFlavorIsospinSelection.lean
+folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/ColorFlavorIsospinSelection.lean
 128 lines, added by b86ae520, imported at QOU.lean:399, in the build graph.
 
 ## WHAT IS ACTUALLY IN LEAN

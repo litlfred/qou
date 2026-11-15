@@ -8,7 +8,8 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-09-12T20:27:08Z
-updated_at: 2026-10-04T15:15:00Z
+updated_at: 2026-11-15T13:30:00Z
+parent: qou-v2om
 ---
 
 **Owner decision, not agent work.** Successor to `qou-y3bm`, whose own task
@@ -85,3 +86,7 @@ framework eventually needs.
 
 Audit doc §6c:
 [`2026-09-12-zd-gap-anatomy-and-three-undone-migrations.md`](../docs/audits/2026-09-12-zd-gap-anatomy-and-three-undone-migrations.md).
+
+## Parented 2026-11-15 (owner-approved bean triage)
+
+Parent `(none)` → `qou-v2om`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.

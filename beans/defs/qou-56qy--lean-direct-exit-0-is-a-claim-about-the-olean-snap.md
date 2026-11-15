@@ -87,7 +87,7 @@ The `lake-cache/qou-<slug>` restore that AGENTS.md prescribes seeds the **root**
 workspace. Measured on a correctly-restored container this session:
 
     /home/user/qou/.lake/build/lib/lean/QOU                          2442 oleans
-    content/quantum-observable-universe/lean/.lake/build/lib/lean    no QOU dir, 0
+    folio/quantum-observable-universe/lean/.lake/build/lib/lean    no QOU dir, 0
 
 So the guard `[ -d "\$OLEANS/QOU" ]` fired and the script exited 2 on exactly the
 tree it exists to verify against. Fixed: it now probes the per-paper path, then

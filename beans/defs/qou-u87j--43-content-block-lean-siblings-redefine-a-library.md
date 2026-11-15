@@ -29,7 +29,7 @@ library never had. That looked like a one-off. It is not.
 
 ### The population
 
-Over `content/quantum-observable-universe/**/*.lean`, comparing every
+Over `folio/quantum-observable-universe/**/*.lean`, comparing every
 `structure`/`class` declared in a co-located sibling against a library
 declaration of the **same name under the same namespace**:
 
@@ -236,7 +236,7 @@ Option 2 was written as one thing ("reorder `lean.ref` resolution so the Lake
 tree wins"). Measured, it is two, and only one of them is viable.
 
 Classification of every block `walkBlocks` yields under
-`content/quantum-observable-universe`, with candidates 2–3 resolved through the
+`folio/quantum-observable-universe`, with candidates 2–3 resolved through the
 **canonical resolver** (`resolveCanonicalLean`, with a `LakeTreeCache`) rather
 than a hand-rolled matcher — the `qou-2u26` lesson:
 

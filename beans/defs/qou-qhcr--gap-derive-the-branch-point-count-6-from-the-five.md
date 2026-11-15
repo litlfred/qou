@@ -22,7 +22,7 @@ icosahedral case, not toward it.**
 
 Artifacts, both on the branch:
 
-- `content/quantum-observable-universe/lean/QOU/BringsSurface/BranchPointSixNotForced.lean`
+- `folio/quantum-observable-universe/lean/QOU/BringsSurface/BranchPointSixNotForced.lean`
   — sorry-free (`#print axioms`: `propext`, `Quot.sound` only; several
   theorems depend on no axioms at all), import-free, `lean`-direct
   `-DautoImplicit=false -s 65536` exit 0 in 0.9 s.
@@ -226,7 +226,7 @@ session tested the assigned route and reported a negative; it did not
 derive the 6.
 
 One more negative, scoped so it is not mistaken for a stronger claim.
-**Surface searched: every `content/quantum-observable-universe/*/*.ts`
+**Surface searched: every `folio/quantum-observable-universe/*/*.ts`
 block manifest.** Of the fifteen carrying an order-5 group structure,
 **all** are in `brings-surface/` or downstream of it
 (`mass-endomorphism/color-spacetime-s5-factorization`,
@@ -385,7 +385,7 @@ selection of mine.
 
 ### 7. Q2 — the unsearched surfaces, searched. Same answer, wider.
 
-The prior session's negative covered `content/quantum-observable-universe/*/*.ts`
+The prior session's negative covered `folio/quantum-observable-universe/*/*.ts`
 only. Searched this session: **`computations/`, `docs/`, `.beans/`, and the
 `library/*/ocr/` tier** (26 directories) that a `sections/` grep misses.
 
@@ -417,7 +417,7 @@ searched.** Still not searched: the knowledge graph (`corpus_search` / MCP
 
 ### Artifacts, both on the branch
 
-- **`content/quantum-observable-universe/lean/QOU/BringsSurface/WeierstrassTransitivityNotForced.lean`**
+- **`folio/quantum-observable-universe/lean/QOU/BringsSurface/WeierstrassTransitivityNotForced.lean`**
   — sorry-free, **import-free**, `lean -DautoImplicit=false -s 65536` exit 0.
   12 declarations; `#print axioms` kernel-checked: no `sorryAx`, no custom
   axiom — `[propext, Quot.sound]` on seven, **nothing at all** on the other

@@ -14,7 +14,7 @@ parent: b9cj
 
 ## The sorry
 
-`content/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe-exists.lean:34`
+`folio/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe-exists.lean:34`
 
 ```lean
 theorem QuantumObservableUniverse.exists_instance (k : Type*) [Field k] :
@@ -496,7 +496,7 @@ Given the go-ahead to attempt the Drinfeld–Jimbo representation category, I ra
 the **formalize-first** step first: look for the invariant that prunes the
 search before running it. There is one, and it is decisive.
 
-[`QOU/QuantumObservableUniverse/WitnessObstruction.lean`](../content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/WitnessObstruction.lean),
+[`QOU/QuantumObservableUniverse/WitnessObstruction.lean`](../folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/WitnessObstruction.lean),
 `lean`-direct **exit 0**:
 
 ```lean

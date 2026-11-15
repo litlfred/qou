@@ -55,7 +55,7 @@ narrowing of the picture, not a structural exclusion.
 ## Update 2026-08-02 (#4583 — archimedean leg ANSWERED; fibre leg remains open)
 
 Probe [`saddle_offset_zero_location_probe.py`](../computations/probes/saddle_offset_zero_location_probe.py)
-+ Lean [`SaddleOffsetBarGrade.lean`](../content/quantum-observable-universe/lean/QOU/QBeta/SaddleOffsetBarGrade.lean)
++ Lean [`SaddleOffsetBarGrade.lean`](../folio/quantum-observable-universe/lean/QOU/QBeta/SaddleOffsetBarGrade.lean)
 (sorry-free) + audit [`2026-08-02-saddle-offset-zero-location-qou-q86o.md`](../docs/audits/2026-08-02-saddle-offset-zero-location-qou-q86o.md).
 
 - **What is q≈0.08?** q\* = **0.08931**, truncation-STABLE (converges by N=6,

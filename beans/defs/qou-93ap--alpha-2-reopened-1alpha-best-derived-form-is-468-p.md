@@ -59,7 +59,7 @@ supporting audits already deprecated.
 
 ## The block's open question is now answered — it is κ, not the truncation
 
-[`em-coupling-chern-simons`](../content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.md)
+[`em-coupling-chern-simons`](../folio/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.md)
 states the residual honestly and names two candidate causes: *"Either the
 Gram-determinant identification of κ is wrong, or the order-$\delta_{CS}^2$
 truncation omits higher-order contributions."*

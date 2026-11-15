@@ -18,7 +18,7 @@ parent: qou-wp6m
 ---
 
 **File:** `QOU/Molecular/shell_filling_rule.lean` (QOU)  ·  3 cited sorry(s)
-**GitHub:** https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/content/quantum-observable-universe/lean/QOU/Molecular/shell_filling_rule.lean
+**GitHub:** https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/folio/quantum-observable-universe/lean/QOU/Molecular/shell_filling_rule.lean
 
 ### `shell_filling_inner_shells`  —  line 93  ·  tier **P** (repo-infra-dependent)
 - **Proposition:** `theorem shell_filling_inner_shells [ctx : ShellFillingRuleContext] : ∀ n : ℕ, n < ctx.n_val → ctx.occupancy n = ctx.capacity n `

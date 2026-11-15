@@ -211,7 +211,7 @@ names. That is the checklist's own point, missed twice in one session.
 
 ### 2. `HabiroFlowSolution` is still broken and has NO ledger entry at all
 
-`content/quantum-observable-universe/lean/QOU/Habiro/FlowSolution.lean` still carries three
+`folio/quantum-observable-universe/lean/QOU/Habiro/FlowSolution.lean` still carries three
 bare `: Prop` fields plus the `all_hold` conjunction — the exact shape
 `propUniverseWithConjunction_inhabited` now covers. Searching the ledger for
 `Habiro`/`FlowSolution` returns **one** entry, an unrelated `borrowed-name` in a different

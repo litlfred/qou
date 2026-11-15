@@ -777,7 +777,7 @@ the binding constraint, so
 
     σ₀^k is PSD  ⇔  k is even.
 
-`content/quantum-observable-universe/lean/QOU/QBeta/GluonVertexPsdParity.lean`
+`folio/quantum-observable-universe/lean/QOU/QBeta/GluonVertexPsdParity.lean`
 — seven declarations, `lean`-direct exit 0, `#print axioms` shows only
 `propext / Classical.choice / Quot.sound` on all seven. Stated over a generic
 ordered field (`[Field R] [LinearOrder R] [IsStrictOrderedRing R]` — this

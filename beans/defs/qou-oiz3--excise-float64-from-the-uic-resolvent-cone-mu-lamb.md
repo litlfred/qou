@@ -1,13 +1,13 @@
 ---
 # qou-oiz3
 title: excise float64 from the UIC resolvent cone (mu_lambda, s_*) -- owner directive 2026-09-12
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-12T20:47:33Z
-updated_at: 2026-10-04T15:12:30Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-9nnz
 ---
 
@@ -97,3 +97,7 @@ commits exist as objects (`git cat-file -t` = commit) and GitHub reports the PR
 at **7 commits / 11 files / +1238 -107**. Nothing was lost; a local
 `merge-base` / `log` result is simply not evidence about the branch here.
 Verify against the API, not the walk.
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

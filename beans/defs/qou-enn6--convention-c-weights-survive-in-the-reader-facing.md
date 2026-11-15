@@ -18,7 +18,7 @@ Found 2026-08-30 draining `qou-58zw`'s tolerance-floor audit. The producer
 ## What is wrong
 
 The reader-facing block
-[`observations/atom-mass-full-hecke.md`](https://github.com/litlfred/qou/blob/claude/convention-c-migration-tranche-1-2026-08-30/content/quantum-observable-universe/observations/atom-mass-full-hecke.md)
+[`observations/atom-mass-full-hecke.md`](https://github.com/litlfred/qou/blob/claude/convention-c-migration-tranche-1-2026-08-30/folio/quantum-observable-universe/observations/atom-mass-full-hecke.md)
 states, in prose:
 
 > At $q \approx 1.11$, $\hat y_{\mathrm{sym}} \approx 0.42$,

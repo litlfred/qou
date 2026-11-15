@@ -1,11 +1,11 @@
 ---
 # qou-k4oq
 title: Build the Hecke algebra foundation in Lean from scratch — Mathlib has NONE
-status: in-progress
+status: todo
 type: epic
 priority: normal
 created_at: 2026-09-05T07:53:31Z
-updated_at: 2026-10-04T15:10:07Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-rtxm
 ---
 
@@ -280,3 +280,7 @@ moves. `MarkovTrace.markovTrace` accordingly stays `noncomputable opaque`.
 ## Reorganisation 2026-10-04
 
 Now the epic for P3.HECKE under Lean / Mathlib foundations.
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

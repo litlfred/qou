@@ -5,7 +5,8 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-04T21:07:51Z
-updated_at: 2026-09-04T23:40:09Z
+updated_at: 2026-11-15T13:30:00Z
+parent: qou-5vkl
 ---
 
 Split out of `qou-tmmt` on 2026-09-04. Measured, not proposed.
@@ -125,3 +126,7 @@ the receiver is an **instance-binder name** — that is what actually separates
 
 +23 CRITICAL, all hand-verified as genuine. Needs its own PR; do not land it
 alongside unrelated work.
+
+## Parented 2026-11-15 (owner-approved bean triage)
+
+Parent `(none)` → `qou-5vkl`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.

@@ -119,7 +119,7 @@ This bean said twice that "Type-B folding (AGENTS.md §7b) remains untried". The
 corpus-grep checklist says to check before declaring an item open, and doing so
 here changes the answer. Type-B folding is already in the corpus:
 
-    content/quantum-observable-universe/nuclear-interactions/type-b-folding-cpt.md
+    folio/quantum-observable-universe/nuclear-interactions/type-b-folding-cpt.md
     (+ .ts, .lean, .qa.json)
 
 `conj:type-b-folding-closure` states the folding with the involution

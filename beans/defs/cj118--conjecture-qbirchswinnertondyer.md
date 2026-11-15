@@ -11,7 +11,7 @@ updated_at: 2026-10-04T15:14:30Z
 parent: qou-d1td
 ---
 
-§3b conjecture-class Lean carrier `instance : QBirchSwinnertonDyer := sorry` at content/quantum-observable-universe/lean/QOU/AppendixSurreals/QBirchSwinnertonDyer.lean:49. The sorry IS the conjecture (per AGENTS.md §3b) — do NOT fabricate an instance (audit-dodge). Category: famous-open (aspirational §3b encoding). Track backing/derivation status; advance only via genuine derivation or owner-directed reframing. Parent: b9cj.
+§3b conjecture-class Lean carrier `instance : QBirchSwinnertonDyer := sorry` at folio/quantum-observable-universe/lean/QOU/AppendixSurreals/QBirchSwinnertonDyer.lean:49. The sorry IS the conjecture (per AGENTS.md §3b) — do NOT fabricate an instance (audit-dodge). Category: famous-open (aspirational §3b encoding). Track backing/derivation status; advance only via genuine derivation or owner-directed reframing. Parent: b9cj.
 
 
 

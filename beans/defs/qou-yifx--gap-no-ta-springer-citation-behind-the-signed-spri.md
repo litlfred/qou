@@ -29,7 +29,7 @@ The corpus itself says the missing input is external Springer geometry:
 
 - [`STATUS.md:17`](../STATUS.md) — open item (b) is "the **geometric
   concentration**, which needs an external **Springer-geometry input**".
-- [`DeltaLambdaTopDegreeConcentration.lean:16`](../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/DeltaLambdaTopDegreeConcentration.lean)
+- [`DeltaLambdaTopDegreeConcentration.lean:16`](../folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/DeltaLambdaTopDegreeConcentration.lean)
   — "the Springer dimension `n(λ)` must enter from an [external input]".
 
 So an open leg of a PROVED result is named after a body of work the
@@ -38,8 +38,8 @@ source.
 
 ## Sites using the term
 
-- `content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-sidecar-delta-lambda-closure.md:14`
-- `content/quantum-observable-universe/lean/QOU/BraidsAndKnots/DeltaLambdaTopDegreeConcentration.lean:16`
+- `folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-sidecar-delta-lambda-closure.md:14`
+- `folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/DeltaLambdaTopDegreeConcentration.lean:16`
 - `STATUS.md:17`
 - `AGENTS.md:1008`
 - `docs/audits/2026-08-02-deltalambda-value-proved-downstream-and-additive-term.md:16,51`

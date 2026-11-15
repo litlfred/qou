@@ -17,7 +17,7 @@ Each Hoefsmit rep is irreducible and ρ_λ ≇ ρ_μ for λ≠μ (distinct centr
 
 ## ✅ Concrete (2,1) case PROVED (2026-08-10) — sorry-free, axiom-clean
 
-[`QOU/SchurWeyl/Irreducibility.lean`](https://github.com/litlfred/qou/blob/claude/agent-task-662242-vag458/content/quantum-observable-universe/lean/QOU/SchurWeyl/Irreducibility.lean):
+[`QOU/SchurWeyl/Irreducibility.lean`](https://github.com/litlfred/qou/blob/claude/agent-task-662242-vag458/folio/quantum-observable-universe/lean/QOU/SchurWeyl/Irreducibility.lean):
 `seminormal21_no_common_eigenvector` (q≠0) — S0, S1 have no common eigenvector,
 hence no common 1-dim invariant subspace, hence the 2-dim shape-(2,1) rep is
 IRREDUCIBLE. Proof: an S0-eigenvector is axis-aligned (distinct eigenvalues

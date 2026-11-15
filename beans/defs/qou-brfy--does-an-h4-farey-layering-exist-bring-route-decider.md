@@ -135,7 +135,7 @@ maps-and-dessins paper end to end.
 ### Artifacts
 
   computations/probes/h4_universal_map_is_4gonal_probe.py          17/17, exit 0
-  content/quantum-observable-universe/lean/QOU/Brings/HeckeMapFaceSize.lean
+  folio/quantum-observable-universe/lean/QOU/Brings/HeckeMapFaceSize.lean
       6 declarations, sorry-free, #print axioms clean
   PR #6975 (draft), issue #6974
 

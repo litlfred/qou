@@ -1,6 +1,6 @@
 ---
 # qou-njry
-title: Cite nrarith.pdf at content/quantum-observable-universe/braids-and-knots/self-dual-higgs-real-vol…
+title: Cite nrarith.pdf at folio/quantum-observable-universe/braids-and-knots/self-dual-higgs-real-vol…
 status: todo
 type: task
 priority: normal

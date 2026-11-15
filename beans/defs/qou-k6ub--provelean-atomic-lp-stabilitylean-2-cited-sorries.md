@@ -18,7 +18,7 @@ parent: qou-l2vh
 ---
 
 **File:** `QOU/ParticleInteractions/atomic_lp_stability.lean` (QOU)  ·  2 cited sorry(s)
-**GitHub:** https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/content/quantum-observable-universe/lean/QOU/ParticleInteractions/atomic_lp_stability.lean
+**GitHub:** https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/folio/quantum-observable-universe/lean/QOU/ParticleInteractions/atomic_lp_stability.lean
 
 ### `bare_is_lp_unstable`  —  line 99  ·  tier **P** (repo-infra-dependent)
 - **Proposition:** `theorem bare_is_lp_unstable [ctx : AtomicLPStabilityContext] : ∃ X : ctx.Candidate, ctx.normalised X ∧ ctx.bareVolume X = 0 `

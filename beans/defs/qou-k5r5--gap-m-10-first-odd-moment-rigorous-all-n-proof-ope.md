@@ -1530,7 +1530,7 @@ Owner asked, of PRs #7120/#7126: *"all assertions proved in lean?"* **The answer
 NO** — both were Python probes whose controls are arithmetic self-checks, not theorems.
 This entry records the promotion of the one assertion that warranted it.
 
-**`content/quantum-observable-universe/lean/QOU/MassTheory/TiltDerivativeCovariance.lean`**,
+**`folio/quantum-observable-universe/lean/QOU/MassTheory/TiltDerivativeCovariance.lean`**,
 for an ARBITRARY finite family over an ARBITRARY field (not for `n <= 22`):
 
 | declaration | statement | base ring |
@@ -1733,7 +1733,7 @@ So the honest status is stronger than before, not weaker: the Poincaré/Dirichle
 
 ## 2026-09-12 — Poincare degeneracy worry REMOVED; gap still OPEN
 
-`content/quantum-observable-universe/lean/QOU/MassTheory/WeightedDirichletPoincare.lean`
+`folio/quantum-observable-universe/lean/QOU/MassTheory/WeightedDirichletPoincare.lean`
 (8 declarations, sorry-free, `lean -DautoImplicit=false -s 65536` exit 0, zero
 warnings, `#print axioms` sorryAx 0).
 

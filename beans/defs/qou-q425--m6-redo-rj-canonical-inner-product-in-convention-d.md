@@ -1,11 +1,11 @@
 ---
 # qou-q425
 title: 'M6: redo rj-canonical-inner-product in convention D'
-status: in-progress
+status: todo
 type: task
 priority: normal
 created_at: 2026-10-10T08:58:07Z
-updated_at: 2026-10-12T20:14:03Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-d8c7
 ---
 
@@ -175,3 +175,7 @@ A session was sent to prove the torus-link Rosso–Jones formula on the premise 
 - fixCount_full_twist: for p = (n+1)k, fix(j) = C(n+1, j).
 Verification: lean -DautoImplicit=false -s 65536, exit 0, against a private shadow (the RossoJonesTorusLink cone was rebuilt there because its oleans are missing from the restored cache). #print axioms gives at most [propext, Classical.choice, Quot.sound]. Scratch probes re-run: rjlinks_probe.py reports ALL OK (N ≤ 6, p ≤ 8, every m), and rjlinks_plethysm.py reports bad 0 (N ≤ 7, p ≤ 12; the ratio to Rosso–Jones with ψ^e is a monomial framing factor).
 Still open: the Adams-operation form of Rosso–Jones (Σ_k c_k [k+1] θ_k^{p/r} with ψ^e) is checked only by the probe and is not stated in Lean. The plethysm cross-check also leaves the framing monomial unidentified.
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
