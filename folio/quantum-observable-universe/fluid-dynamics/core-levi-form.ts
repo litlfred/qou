@@ -37,7 +37,8 @@ export default proposition({
         "(step (d) as a class field), `qou_ns_in_qou.lean` " +
         "(`QOUFluidUniverseLevi`, branch A), `ns-singularity-descartes-proof` " +
         "(lists the core-Levi equivalence as an input) and " +
-        "`ns-singularity-descartes-interpretation`. Bean `qou-fm7s`.",
+        "`ns-singularity-descartes-interpretation`. Bean `qou-fm7s`." +
+        " Update 2026-11-15 (owner option 1, PR #7747): all of these are now re-scoped; see bean qou-fm7s.",
     },
     {
       kind: "caveat",
