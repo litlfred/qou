@@ -409,6 +409,19 @@ theorem monodromy_hwVec (m m' j : ℕ) (hjm : j ≤ m) (hjm' : j ≤ m')
       congr 1
       unfold wt; push_cast; ring
 
+include hq2 in
+/-- **The monodromy is scalar on each `F`-string:** `Ř′Ř (Δ(F)^i w_j) = μ_j Δ(F)^i w_j`. -/
+theorem monodromy_deltaF_pow_hwVec (m m' j i : ℕ) (hjm : j ≤ m) (hjm' : j ≤ m')
+    (hint : ∀ k < rOrder m m', qint (s ^ 2) (k + 1) ≠ 0)
+    (hint1 : ∀ p < j, qint (s ^ 2) (m - p) ≠ 0) (hint2 : ∀ p < j, qint (s ^ 2) (m' - p) ≠ 0) :
+    (rCheckMat s hs m' m * rCheckMat s hs m m') *ᵥ (deltaF (s ^ 2) m m' ^ i *ᵥ hwVec (s ^ 2) m m' j)
+      = (s ^ 2) ^ ((m : ℤ) * m' - 2 * j * (m + m') + 2 * j * ((j : ℤ) - 1))
+          • (deltaF (s ^ 2) m m' ^ i *ᵥ hwVec (s ^ 2) m m' j) := by
+  have hc : Commute (rCheckMat s hs m' m * rCheckMat s hs m m') (deltaF (s ^ 2) m m' ^ i) :=
+    (Commute.pow_right (monodromy_deltaF s hs hq2 m m' hint) i)
+  rw [mulVec_mulVec, hc.eq, ← mulVec_mulVec,
+    monodromy_hwVec s hs hq2 m m' j hjm hjm' hint hint1 hint2, mulVec_smul]
+
 end Monodromy
 
 end QOU.Mass.QuantumSl2
