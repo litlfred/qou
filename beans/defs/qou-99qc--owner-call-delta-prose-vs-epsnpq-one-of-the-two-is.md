@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-15T23:11:03Z
+updated_at: 2026-11-15T23:30:39Z
 parent: qou-10v9
 ---
 
@@ -3501,3 +3501,13 @@ With the neutron-vector choice traced out over the isospin-½ multiplicity space
 - V⁰: ε_tr = (q−1)(q+1)(q²+1)/(2(q⁴+1)) = 0.10285 at q₀; with J23 it is −(q²−1)/(2(q²+1)) = −0.05198.
 - V³ gives 0.11369, V⁶ gives 0.12406 (with J23: −0.04651, −0.04126). So ε_tr is word-dependent, not −h, and not stable in k.
 Reading: every n↔p asymmetry seen in ε-NP1, ε-TW1 and ε-N1 came from states that are not U_q-isospin-covariant, or from a choice of multiplicity vector. On canonically traced isospin-½ states, Δ_S plus this emission is n↔p symmetric. That is consistent with a Wigner–Eckart reduction, but the symmetry is not proved here. So this route does not break the n–p asymmetry. A source of asymmetry has to be non-U_q-covariant (e.g. electric charge or the external field), scope (a).
+
+
+### PRE-REGISTRATION ε-EM1 (2026-11-15 23:40Z; owner 'keep pushing', coordinator: n–p break via a non-U_q-covariant ingredient)
+Corpus status, checked first:
+- Hypercharge Y is OPEN (eightfold-open-problems; strand-twist-datum is a free label).
+- The derivation-chain thread's EM1 (/mnt/project-files/qou-derivation-chain/bridge-b/em1_result.md) did static photon exchange inside the nucleon, with Y = 1/3 imported. Result: the classical −2/3 plus an O(h⁴) braid correction.
+- My distinct angle: Coulomb exchange in the DECAY's intermediate state, before the emission crossing, where the created pair is still a superposition, so the charge operator does not reduce to a scalar. Y is kept as a SYMBOL, not imported.
+Setup: as in ε-TR1, with the trace over the isospin-½ multiplicity space. Charge per strand: Q = T³ + Y/2 on V (strands 1–4), and Q = −(T³ + Y/2) of the index on the V* strand 5. X = Σ_{a<b≤5} Q_a Q_b (diagonal), inserted after Δ_S and before Ř₃₄. Report the first-order shift δε = d/dg [Tr M(Δ_S then 1+gX) / Tr M(1)] at g=0 for n→p and p→n, as exact functions of (q, Y), for words V⁰, V³ and V⁶.
+Questions: (i) is δε_np ≠ δε_pn? (ii) Which part is Y-independent? (iii) Does the asymmetry survive at q = 1 (classical) or vanish there?
+Prediction: the asymmetry is nonzero. At q = 1 it reduces to classical charge algebra (as in EM1), and the braid adds corrections. No coupling value is chosen and nothing is compared to data.
