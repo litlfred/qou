@@ -142,18 +142,13 @@ structure JetProlongation where
   /-- Jet projection to the base. -/
   proj : fibre → base
 
-/-- **Kähler Differentials**: `Ω¹(A) = ker(m : A ⊗ A → A)`, the universal
-    first-order differential calculus.
-
-    LaTeX: `\label{def:kahler-differentials}` -/
--- Ref: [lurie2009] Lurie, "On the Classification of Topological Field Theories," arXiv:0905.0465
-structure KahlerDifferentials where
-  /-- The algebra `A`. -/
-  algebra : Type*
-  /-- The module of differentials `Ω¹(A)`. -/
-  differentials : Type*
-  /-- The universal derivation `d : A → Ω¹(A)`. -/
-  derivation : algebra → differentials
+/- **Kähler Differentials** — moved (2026-11-15).  `Ω¹(A) = ker(m : A ⊗ A → A)`, the
+    universal first-order differential calculus (`\label{def:kahler-differentials}`), is now
+    a real construction in `QOU.MathlibExt.UniversalDifferentials` (file
+    `QOU/MathlibExt/UniversalDifferentials.lean`): the bimodule `Ω1 R A`, the derivation `d`,
+    the Leibniz rule, the universal property, and the identification with Mathlib's
+    `KaehlerDifferential` when `A` is commutative.  The three-field stub that stood here
+    carried no axioms and had no consumers, so it was removed rather than aliased. -/
 
 /-! ## Braid and Knot Theory -/
 
