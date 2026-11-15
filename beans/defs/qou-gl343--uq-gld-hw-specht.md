@@ -8,7 +8,7 @@ tags:
     - quark-state
     - schur-weyl
 created_at: 2026-11-15T10:20:00Z
-updated_at: 2026-11-15T11:10:00Z
+updated_at: 2026-11-15T11:00:00Z
 parent: qou-gl34
 ---
 
@@ -24,3 +24,8 @@ Owner ruling via coordinator 2026-11-15: "work G3.4, dispatch siblings". Direct 
 - Open: the bridge `rowDiagram μ = partitionShape λ` (sorted nonzero parts), so the bound reads
   with the `Fintype.card (StandardYoungTableau (partitionShape λ))` used in `finrank_range_jimbo`.
 - Open (the "=" and HW_λ ≅ S_λ halves): follow from G3.4 itself once the sandwich closes.
+
+## Merged 2026-11-15 (#7873)
+`hstar_occWeights` (the summed (★)) and the rowDiagram → partitionShape bridge are on main.
+STILL OPEN: the equality dim HW_λ = f^λ and HW_λ ≅ S_λ (expected corollary of G3.4, after
+stream 14's G3.4d `qou-gl344` lands). Bean stays in-progress until then.
