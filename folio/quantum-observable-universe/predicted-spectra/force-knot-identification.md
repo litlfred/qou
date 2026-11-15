@@ -60,9 +60,29 @@ The knot $T_{3,5}$ carries the weak interaction. It is the cross-family generato
 
 The torus knot $T_{3,5}$ uniquely combines winding numbers from both families: $m = 3$ from the quark sector, and $n = 5$ from the $T_{2,5}$ column. This cross-link drives flavor-changing processes. The weak interaction transmutes quarks between generations and converts quarks to leptons because $T_{3,5}$ topologically connects both sectors.
 
-Parity violation follows from the Skein asymmetry at $q \neq 1$. The Skein relation $q[L_+] - q^{-1}[L_-] = (q^{1/2} - q^{-1/2})[L_0]$ distinguishes positive and negative crossings. The weak force maximizes this asymmetry because $T_{3,5}$ has the highest crossing count ($10$) among generators. The $q$-vs-$q^{-1}$ imbalance accumulates over these crossings.
+Parity violation follows from the Skein asymmetry at $q \neq 1$. In the Hecke algebra $H_n(q)$ a positive crossing is the generator $\sigma_i = L_+$, a negative crossing is $\sigma_i^{-1} = L_-$, and the smoothing is $1 = L_0$. The Skein relation is the Hecke relation multiplied by $\sigma_i^{-1}$:
 
-Unlike the massless $T_{2,9}$, $T_{3,5}$ gives nonzero mass to the weak bosons. Its hyperbolic volume is zero, but its $10$ crossings generate crossing energy via the mass formula. The $10$ crossings of $T_{3,5}$ do not cancel. This yields the massive $W$ and $Z$.
+$$
+  L_+ - L_- = (q - q^{-1})\,L_0 .
+$$
+
+Weighting the two crossings unequally separates the two eigenlines of $\sigma_i$. Let $P_+$ and $P_-$ be the idempotents of $\sigma_i$ for its eigenvalues $q$ and $-q^{-1}$; these are the left and right circular channels of the Breit–Wheeler vertex. With $[2]_q = q + q^{-1}$,
+
+$$
+  q\,\sigma_i - q^{-1}\sigma_i^{-1} = (q - q^{-1})\,[2]_q\,P_+ .
+$$
+
+The $q$-weighted crossing difference therefore acts on one eigenline only, and it vanishes at $q = 1$. Let $W_L = P_+\sigma_i^{-1}P_+ + P_-\sigma_i P_-$ be the element that inverts $\sigma_i$ on the $P_+$ line and leaves the $P_-$ line unchanged. It is the generator minus this difference:
+
+$$
+  [2]_q\,W_L = [2]_q\,\sigma_i - \bigl(q\,\sigma_i - q^{-1}\sigma_i^{-1}\bigr).
+$$
+
+Both identities hold for every $q$ with $q \neq 0$ and $q + q^{-1} \neq 0$. Which eigenline is singled out is fixed by which crossing carries the weight $q$: the mirror weighting $q^{-1}\sigma_i - q\,\sigma_i^{-1}$ gives $(q - q^{-1})\,[2]_q\,P_-$ instead. That choice is a convention, not a derivation.
+
+The following is a model statement without derivation. The weak force maximizes this asymmetry because $T_{3,5}$ has the highest crossing count ($10$) among generators, and the $q$-vs-$q^{-1}$ imbalance accumulates over these crossings. No computation here relates the crossing count to the size of the asymmetry.
+
+Unlike the massless $T_{2,9}$, $T_{3,5}$ gives nonzero mass to the weak bosons. Its hyperbolic volume is zero, but its $10$ crossings generate crossing energy via the mass formula. The $10$ crossings of $T_{3,5}$ do not cancel. This yields the massive $W$ and $Z$. This too is a model statement without derivation: the crossing energy of $T_{3,5}$ is not computed here, and no $W$ or $Z$ mass is derived from it.
 
 **Summary.**
 
