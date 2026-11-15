@@ -7,7 +7,7 @@ tags:
     - mass-energy
     - research
 created_at: 2026-11-15T20:26:03Z
-updated_at: 2026-11-15T20:26:23Z
+updated_at: 2026-11-15T20:32:23Z
 parent: qou-6qbv
 ---
 
@@ -53,3 +53,11 @@ Question to settle: is E_cross (or a weighted crossing count) the reduction cost
 Gröbner–Shirshov rewriting, and does the framed-trace energy 𝔈 = m·c_q² bound or equal
 a cost functional? Each Hecke rewrite σ² → (q−q⁻¹)σ + 1 is one crossing step, which is the
 natural link.
+
+## Related claim found 2026-11-15: prop:photon-threading-mass
+`prop:photon-threading-mass` states 𝔪 = (q−1)² Σ_{Hecke steps} |c_w|·|q−q⁻¹|, i.e. 𝔈 equals
+the photon threading cost. With the mass of `def:mass-identity` the trivial braid refutes it
+as stated: threading through no crossings takes 0 Hecke steps, while 𝔪 ≠ 0. Not changed
+yet (owner decision). Its Lean is a context class (`PhotonThreadingMassContext`).
+This is the cleanest form of the owner's "crossing energy ~ computational cost" lead:
+the cost side is well defined (confluent GS reduction), the open part is its relation to 𝔈.
