@@ -1,0 +1,67 @@
+2. THE JANTZEN SUM FORMULA 57
+
+to zero unless (a,c) € [A] since 9, — h>, = 8. — hr, if (a,c) € [A]. On the hand, if
+e¢ <b then (a,c) € [A]. Combining these facts proves the Theorem. Oo
+
+By Lemma 5.26 the exponent d,(%1,...,S + Rd... Be — WAL, ... Bn) has
+a combinatorial interpretation which makes Theorem 5.27 easy to apply. Namely,
+suppose that the partition v is obtained by unwrapping the (a,c)th rim hook RA,
+from [A] and then wrapping it back on in such a way that its lowest node is in
+column b; then, dy (91, ... Bp + Ddy..-. Be — Rdg... Ba) = (- Mle te |To(v, y)].
+5.28 Example Suppose that \ = (3,2). In the diagrams below, using the notation
+of Theorem 5.27, we label the nodes (a,b) and (a,c) by 6 and ¢ respectively and
+we mark the other nodes in the various rim hooks with a cross; in the right hand
+
+column we give the contribution of each pair of nodes to Ge.
+
+contributing 1
+
+ITo((2?,1).40)|
+Je)
+
+contributing ( Ty
+a
+
+5
+contributing (@) 7" vol
+
+i
+5
+
+Ke] kkk T+) KT
+LI a
+
+1To((3.17), 2]
+contributing (Fe) ‘
+
+Therefore. a = [opi 19 091 pay ToC rT egg To(22.) HI-1Fo((*) wl. agreeing with
+the answer obtained in Example 5.25.
+
+2. The Jantzen sum formula
+
+So far this Chapter has been devoted to calculating determinants. Using a
+technique due to Jantzen we now transform these results into strong statements
+about the structure of Weyl modules and Specht modules.
+
+Throughout this section R will be a principal ideal domain and a prime in R.
+Let F = R/pR be the residue field of (R,p) and vy: RX —4N the p-adic valuation
+map: that is, if r € R and r # 0 then v,(r) = 7 if é is the largest integer such that r
+is an element of p'R.
+
+Suppose that M is a free finite dimensional R-module which is equipped with
+a symmetric bilinear form ( . ):M x Mf —> R. For each integer k > | let
+
+M(k) ={e EM |{e, f) ep*R forall fe M},
+
+and let Mp(k) = M@pF be the reduction of M(k) modulo p. Because Mp = MRF
+is a finite dimensional F-module, there exists an integer z > 1 such that My(k) = 0
+whenever k > z. The filtration
+
+My = Mp(0) > Mp(1) >--- > Mp(z) > 0
+
+is so-called Jantzen filtration of Mp. Observe that Mp(1) = rad My.
+
+Let ¢1,...,¢4 be a basis for M and let G = det({e;,¢;)) be the Gram determi-
+nant of the bilinear form with respect to this basis. Note that G belongs to R.
+5.29 Lemma (Jantzen) Let R be a principal ideal domain and suppose that the
+bilinear form ( , ) is non-degenerate. Then vy(G) = 0,59 dimp Mp(?).

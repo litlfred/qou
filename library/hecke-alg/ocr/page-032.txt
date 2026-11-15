@@ -1,0 +1,67 @@
+3. SPECHT MODULES AND JUCYS-MURPHY ELEMENTS 27
+
+to distinguish between the blocks and irreducible representations of #, much like
+the Cartan subalgebra of a Lie algebra.
+
+In the Lemma below we write $} to indicate that the Specht module is defined
+over R. Recall that K = C(q) and Z = Z[q, qq").
+
+3.26 Lemma Let \ be a partition of n. Then there exists a € R such that
+m(L,+++-+ Dn) = am
+
+for all standard -tableau t.
+
+Proof. First suppose that # = # . By Corollary 3.25, the symmetric poly-
+
+nomial 2; +---+ EL, is central in # and Se is an irreducible %—module by
+
+Corollary 3.22. Therefore, by Schur’s Lemma L; +---+ 2 acts as a scalar, say a,
+
+on SR. In particular, if t is a standard \-tableau then m(L£,+---+L,) = am,. By
+
+Corollary 3.4 the left, hand side of this equation is contained in #2; consequently,
+
+ae Zz.
+
+Now suppose that R is an arbitrary ring. Then, as in Corollary 1.12, we can
+consider R as a Z—module by specifying that ¢ acts as multiplication by g on R.
+Then S4 = S% @ Ras R-modules and the Murphy basis of S% is mapped to the
+Murphy basis of $4 by the specialization homomorphism. It follows that if @ acts
+on R as multiplication by a € R then m(L£,) +...+ L,) = am, for all t € Std(A).
+
+Oo
+
+The precise value of a can be computed from Theorem 3.30 below; the next
+Lemma is the inductive step in proving this result.
+
+3.27 Lemma Let \ be a partition of n and lets and t be standard \-tableaur such
+thats > t andt = s(i,i+1) for somei with 1 <i<n. Fork =1,2,...,n, suppose
+that there exist r,(k) € R such that
+
+mL; = 75(k)m, + S dyMy
+
+veStd(r)
+obs
+
+for some a, € R. Then, fork =1,2,...,n, there exist bs € R such that
+mL, = r(k)me + S bymy
+
+vestd(r)
+wDt
+
+where ri(k) =rs(k) ifk #a,¢ 41, re) = rs(¢4+1) and rit 1) =7, (4).
+Proof. First we note that m, = m,7; by Theorem 1.11 because 5 p t. Therefore,
+by Proposition 3.24(i), if k #7,i+ 1 then
+mL = MT Ly = MyLeT; = ro(kMsT + SD agmyT,
+vesta(r)
+obs
+and the result follows by Corollary 3.8. If k =i+ 1 then, using Proposition 3.24 (ii)
+and Corollary 3.8,
+mLiga = ms Lig, = ms{LiT; + 1+ (q— 1 Ligs}
+= ry(i)myT; + {1 t (q—Urs(it 1) }my + So bom,
+
+wbs
+
+= ra(t)me + So bdyme.
+
+bt

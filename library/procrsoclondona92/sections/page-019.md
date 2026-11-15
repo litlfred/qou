@@ -1,13 +1,15 @@
 ---
 doc_id: procrsoclondona92
-doc_title: "Helicity and the Calugareanu invariant} By H. K. Morrarr anv Renzo L. Riccat"
+doc_title: "Helicity and the Calugareanu invariant"
 section_id: page-019
 section_title: "Page 19"
-section_number: null
 pages: 19-19
+pdf_page: 19
 source_pdf: procrsoclondona92.pdf
 source_sha256: 3d48c956e2e5408d
-toc_source: undetermined
+text_source: ocr
+granularity: page
+doc_brief: "Helicity and the Calugareanu invariant — 19 sections: Page 1; Page 2; Page 3"
 ---
 Downloaded from http://rspa.royalsocietypublishing.org/ on January 19, 2015
 Helicity and the Calugdéreanu invariant 429

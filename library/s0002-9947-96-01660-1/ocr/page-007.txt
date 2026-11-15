@@ -1,0 +1,39 @@
+INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS 4003
+
+FIGURE 1
+
+Theorem 2.9. Let C be an additive spherical category. Define the additive subcat-
+egory J to have the same set of objects and morphisms defined by
+
+Hom (ci, ¢2) = {f € Home(c1, cz) : trn(fg) = 0 for all g € Home (cz, c1)}.
+Then C/J is a non-degenerate additive spherical category.
+
+Proof. It is clear that 7 is closed under composition on either side by arbitrary
+morphisms in C. Hence the quotient is an additive category. It is also clear that
+f © J if and only if f € J, and so the functor ~ is well-defined on the quotient.
+The functor ® is well-defined on the quotient, since f € J implies f ® gi € J and
+g2® f € J for arbitrary morphisms in C. This follows from the observation that
+tr, (f ® g) = trz(f).trz(g), which uses the spherical condition.
+
+The morphisms ¢(a) are taken to be the images in the quotient of the given
+morphisms in C. The conditions on this structure which imply that this quotient
+is spherical follow from the same conditions in C.
+
+Each pairing © is non-degenerate by construction.
+
+An extra condition on the spherical category is required for the piecewise-linear
+invariance of the partition function of a natural simplicial field theory. Similar
+conditions have been considered by [17], [27], [26], [23] and [28]. An object a is
+called non-zero if the ring End(a) 4 0.
+
+Definition 2.10. A semisimple spherical category is an additive, non-degenerate,
+spherical category such that there exists a set of inequivalent non-zero objects, J,
+such that for any two objects x and y, the natural map given by composition,
+i) Hom(x, a) ® Hom(a, y) > Hom(z, y),
+acJ
+is an isomorphism.
+An object a is called simple if End(a) = F.
+The following lemma shows that the set J is essentially fixed by the category.
+
+Lemma 2.11. Every simple object is isomorphic to a unique element of J, and
+every element of J is simple.

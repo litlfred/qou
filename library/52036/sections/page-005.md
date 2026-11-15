@@ -1,0 +1,109 @@
+---
+doc_id: 52036
+doc_title: "Torus Knots Extremizing the Möbius Energy"
+section_id: page-005
+section_title: "Page 5"
+pages: 5-5
+pdf_page: 5
+source_pdf: 52036.pdf
+source_sha256: ab02866e1f7191b7
+text_source: ocr
+granularity: page
+doc_brief: "Torus Knots Extremizing the Möbius Energy — 9 sections: Page 1; Page 2; Page 3"
+---
+, §6], but its linearity is the only property we
+need here.)
+
+Suppose that [ is not critical, so there exists a
+field V such that dE(V) 4 0. Since T is an orbit of
+the S1-action a = a»,4, we can average the push-
+forward (a(e")). V over $1 to obtain an a-invariant
+vector field V for which dE(V) # 0 as well.
+
+Now V induces a variation through a-orbits, so
+we can view V as tangent to the orbit space § =
+8p,q at TP. But
+
+dE\s = OF dn at = oF ar,
+because knots with same ¢ have the same energy.
+Thus dE|s(V) = dE(V) 4 0 implies 0E/r 4 0,
+as required. Oo
+
+We come next to our main result.
+
+Theorem 1. For each relatively prime pair of inte-
+gers p and q greater than 1, there is a (p,q)-torus
+knot Tq C S® that is critical for the Mébius en-
+ergy E. The knot Tpq is a principal orbit of the
+S1-action Gp defined above.
+
+Proof. As already mentioned, E(r) is a smooth
+function of r. Because I,,,(r) converges to either
+a p- or q-fold covering of a round circle as r ap-
+proaches oo or 0, and because p,q > 2, we have
+
+lim E(r) = lim E(r) =
+lim E(r) = lim E(r)
+
+Thus there is a finite value r,, > 0 minimizing
+E(r). By the previous lemma, the principal orbit
+Dyq = pq(p,q) is critical for E. im
+
+In fact, in all the examples we examined, there
+appears to be exactly one minimum (see Figure 1).
+
+4. TORUS LINKS
+
+In [Freedman et al.] the Mobius energy of a k-
+component link (T;,...,I°;,) is defined as a natural
+extension of the Mobius energy of a knot:
+
+S> #1),
+
+1S<i,j<k
+
+E(t,,...,T
+
+Kim and Kusner: Torus Knots Extremizing the Mébius Energy 5
+
+0.03 O01 0.3 Ir34 3 10 30
+
+FIGURE1. Graph of E(r) versus r, for (3, 4)-torus
+
+knots, from the formula on page 4. Other values
+of p and q yield a very similar shape.
+
+where E(T;,T;) =
+terms (i # j) are
+
+Ti(x)I C4(
+E(T;,T;) -/| ee ul a de dy.
+i(y
+
+Ssixst
+
+E(T;) is as before, and the cross-
+
+If we consider links composed of orbits of the $?-
+action a,,,, the principle of symmetric criticality
+applies: a k-component orbital link is critical for
+E among all links if and only if it corresponds to an
+E-critical configuration of k distinct regular points
+in the orbit space 8 = 8,,, that is, to a critical
+point of E restricted to 8* \D, where D is the big
+diagonal of $* union the singular orbits. But E is
+a positive proper function on 8* \ D, so it has a
+minimum.
+
+In fact, it is easy to find some critical links ex-
+plicitly. If k > 1, denote by Pxp,4q(7) the link con-
+sisting of k copies of the knot T',4(r), arranged
+symmetrically around the torus T;.. In other words,
+Txp,kq(1) is the union of the a,,,-orbits with param-
+eters (r,t), with t = 0,27/k,...,2(k—1)/k. (See
+the beginning of Section 3, and especially (3.1),
+for the (r,t) parametrization of the orbit space.)
+We call Vipig(r) a (kp, kq)-torus link. Applying
+the principle of symmetric criticality with respect
+to the obvious action of St x C,, where C;, is the
+cyclic group of order k, we conclude:

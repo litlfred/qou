@@ -1,0 +1,65 @@
+56 5. THE JANTZEN-SCHAPER THEOREM
+
+Similarly, the (a, b)th rim hook R, is the collection of nodes along the rim of [A]
+from row a to column 6. This is best illustrated by an example; let A = (6,4, 3)
+then
+
+n rE IEE 5 ed
+AY, = CRC and Rtg = xr
+x xb
+
+Thus, there is a one-to-one correspondence between hooks and rim hooks and
+|R2,| = hd,. Importantly, if A is a partition of n then [A] \ R24, is the diagram of a
+partition of n — h,. For example, when \ = (6,4, 3) then [A] \ Rts = [(8, 2, 1)].
+
+If [A] \ RA, = [v] we say that \ can be obtained from v by wrapping on the rim
+hook Rr: alternatively, vy can be obtained from \ by unwrapping R,.
+
+5.26 Lemma Let 3 = (/31,...,8n) be the sequence of beta numbers for X and let b
+and h be integers with 1 <b <n andh> 1. Then there exists a composition T
+such that d;(81,..., 8% —h,...,8n) #0 only if h = h2, for some (a,b) € [A]. In
+
+this case,
+
+dy (1,-2.8 —h,... Bn) = (-1)"7 Rode(ay yee Qn)
+
+where (a1,..., Qn) is the sequence of beta numbers for the partition v which is
+obtained by unwrapping the rim hook R, from X.
+
+Proof. There exists a composition r such that d-(J1,....8) —h,..., Pn) #9
+only if @ —h # £8. for all integers ¢ such that b < ¢ < n and 3 —h > 0.
+Suppose that 4, —h > 0 and that there exists an integer ¢ such that b<e¢ <n
+and 2 > 9, —h > B.41 (setting 8,41 = —1 if necessary). Then we can remove h
+nodes from along the rim of \, starting with the last node in column 6 and ending in
+column c so as the leave the diagram of a partition v. If the last node is in row a then
+h = h?, and [v] = [A] \ R2,. Finally, the sign attached to d;(f1,...,8—h,-.- , Bn)
+is (—1)’~¢ = (-1)"-! where l=). oO
+
+5.27 Theorem (James—Mathas) Suppose that R is an integral domain and let
+B= (f,..., Bn) be the sequence of beta numbers for X. Then
+
+Gh = ” Il (ta nye BoM Ay Bemhdys Pn)
+
+(a,b)e[] hacla
+(a,c)e[A]
+bee
+
+Proof. By Corollary 5.19, Gh = a gn; thus, by Proposition 5.24 and Lemma 5.26,
+
+Gh = qh Ul Ul [jg Bot y Bem dy Bn)
+
+a,bje[X cen
+(an) PY Aceh,
+
+=~" J] IT ware Bethany Be“hay sn Bn)
+
+(a.bye[\]  b<cen
+By>Sco—hd,
+
+Ul Ul [n> Ja’ (Bry Body BoFAA, Bn)
+
+(a.b)e[\]  b>cen
+Bo>Be-hd,
+
+Now ife > b and §, > 8. — hr, then —dy(H1,... Be — hry... Bo thayy. Bn) =
+dy(B,--. Bp + hd,,... Be — b,,..., Bn); moreover, by Lemma 5.26 this is equal

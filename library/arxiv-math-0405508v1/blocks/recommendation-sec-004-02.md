@@ -1,0 +1,1 @@
+We shall now show how to interprete the above in terms of knot diagrams, and how to calculate alternatively the above solid torus knot invariants using {\it initial conditions} and applying {\it skein relations} on the mixed link diagrams.

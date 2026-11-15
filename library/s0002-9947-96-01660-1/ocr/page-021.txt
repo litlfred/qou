@@ -1,0 +1,67 @@
+INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS 4017
+
+where the linear map
+
+. €01 €02 €
+
+o= i) aing(ers) { or 02 | .
+
+€23 €13 €03
+
+eo2€ J +
+e13€J
+
+Also, the linear map
+
+F €01 €02 €12
+V= i) dim,(eo2)
+€23 €13 €03J _
+eo2ET
+e13ES
+
+is the inverse of ®.
+
+Proof. The semisimple condition implies that the vertical arrows are isomorphisms.
+Consider an element a ® ( in the top left-hand space. Taking the trace of the two
+images of this element in the bottom right-hand space with (y @ 1)6 for arbitrary
+7 € Hom(e23 @ e12, €13) and 6 € Hom(e13 ® €o1, €03) yields two elements of F which
+are equal. This shows that the diagram commutes. Replacing the map ® with the
+inverse of WV also yields a commutative diagram, by a similar argument. Combining
+these two diagrams shows that 6 = U~1,
+
+Proof of Proposition 5.2. The proof of the orthogonality relation is a direct conse-
+quence of Lemma 5.4. The Biedenharn-Elliot identity follows from the fact that
+the following diagram commutes (in this diagram the shorthand notation (012) is
+used for the state space of this triangle, Hom(eo2, e12 ® €o1)):
+
+@ (034) @ (023) @ (012) 2°", GD (034) @ (123013) @ (013)
+€02,e03 ES €03,e13E I
+
+| enaezorss)
+
+z2sio1 | i) (123) @ (134) @ (014)
+€13,€14EF
+
+[ pzazsae1
+
+@ (234) @ (024) @ (012) 2°", GD (234) @ (124) @ (014)
+
+€02,€24ES e14,e24€J
+
+Applying Lemma 5.4 five times shows that this diagram commutes.
+
+Remarks . The idea of using a state sum model to construct manifold invariants
+is due to [25], where an invariant is constructed from the 6j-symbols of Uysl2,
+for q a root of unity. Every state space H(a,b,c) is 0 or C and every map
+O(c): Vo(a,b,c) — V(a,b,c) is the identity. Hence the partition function of a
+labelled tetrahedron is simply a number, and these numbers are equal under permu-
+tations of the labels. These numbers are the quantum analogues of the 6j-symbols.
+The identities of Proposition 5.2 are the quantum analogues of the well-known
+Biedenharn-Elliot and orthogonality identities, as proved in [18].
+
+This example satisifies some extra conditions, which entail firstly that the in-
+variant is defined for unoriented manifolds, and secondly that there is a topological
+quantum field theory associated to the invariant.
+
+The first condition is that each space H(a, b,c) is an inner product space and
+that the partition function of —A is the adjoint of the partition function of A with

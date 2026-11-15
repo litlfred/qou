@@ -1,0 +1,50 @@
+CHAPTER 5
+
+The Jantzen—Schaper theorem
+
+In this chapter we prove an analogue of the Jantzen sum formula for the g—
+Schur algebra. This is a strong result describing the structure of Weyl modules;
+however, its proof follows from the calculation of Gram determinants. As our main
+application of this result we classify the blocks of #.
+
+1. The Gram determinant of W*
+
+Throughout this section we fix a partition A € At+(d,n) and a composition pt €
+A(d,n). The p-weight space of the Weyl module W? is we = Wen; it is the free
+R-submodule of .(d,n) with basis { yr | T € Jo(A, 4) } and, by Proposition 4.15,
+Ww = Homy (M#,S*). The aim of this section is to compute the Gram determinant
+Gh = det ((gs. ¢1)) of we, where and $ and T run over 7o(A, 1) in some fixed order.
+
+Suppose that & is an integer with | < k < d and let x,x+1,...,y be the
+entries in row k of t". Proposition 3.24(iii) shows that
+
+51 (Ly + Logi +++: Ly)mp = my (Le + Legit +++ Ly).
+Hence, we can define amap Li: M! —+ M¥ by specifying that
+LE (mh) = (Le + Logi +++ + Ly)myh,
+
+for allh € #. Note that L is just left multiplication by £,, so these elements
+are a generalization of the Jucys-Murphy elements of Chapter 2. Furthermore, Lf
+and Et commute for all j and k by Proposition 3.24(iv).
+
+Let T € 7o(A, ). As in (3.5), if & is an integer let TL k be the tableau obtained
+from T by deleting all entries greater than k. Then, extending the dominance
+ordering on tableaux of type w we write S > T if Shape($|&) & Shape(T|&) for
+k = 1,2,...,n. It follows from Proposition 3.3 and Proposition 4.5 that S > T if
+and only if d(first(S)) & d(first(T).
+
+Finally, let [resq(k)]q = [resr(a)]g, where the sum is over those nodes x
+
+re€[A]
+such that T(x) = k (see (3.28)).
+5.2 Example Suppose that e = 3 and let \ = (3,2) and p = (27,1). Then
+To, w) = {S,T} where $§ = and T= EEE], From the definitions, $ > T,
+[ress(1)]q = [0]o + a, [ress(2)]q = [2]q + [2]q and [ress(3)]q = [0)q-
+5.3 Theorem (James—Mathas) Suppose that T € To(A, px) and let k be an integer
+with 1<k<d. Then
+
+gr Li = [resr(k)]q¢r + So rses,
+SDT
+
+for some rs € R.
+
+46

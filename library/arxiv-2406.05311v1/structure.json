@@ -8,9 +8,27 @@
   "pages": 34,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": null,
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 17,
+    "reason": "15 of 702 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 22,
+    "reason": "15 of 624 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 24,
+    "reason": "13 of 587 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 29,
+    "reason": "11 of 507 words are a stray single letter: the text layer splits words"
+   }
+  ],
   "math_source": "latex"
  },
  "metadata": {
@@ -21,29 +39,30 @@
    "stamp_date": "8 Jun 2024"
   },
   "doi": null,
-  "title": "Draft of June 11, 2024 A QUANTUM MURNAGHAN\u2013NAKAYAMA RULE FOR THE FLAG MANIFOLD",
+  "title": "A quantum Murnaghan–Nakayama rule for the flag manifold",
   "authors_raw": "C. BENEDETTI, N. BERGERON, L. COLMENAREJO, F. SALIOLA, AND F. SOTTILE",
   "title_lines": [
    "Draft of June 11, 2024",
-   "A QUANTUM MURNAGHAN\u2013NAKAYAMA RULE",
+   "A QUANTUM MURNAGHAN–NAKAYAMA RULE",
    "FOR THE FLAG MANIFOLD"
   ],
-  "abstract": "In this paper, we give a rule for the multiplication of a Schubert class by a tautological class in the (small) quantum cohomology ring of the \ufb02ag manifold. As an inter- mediate step, we establish a formula for the multiplication of a Schubert class by a quantum Schur polynomial indexed by a hook partition. This entails a detailed analysis of chains and intervals in the quantum Bruhat order. This analysis allows us to use results of Leung\u2013Li and of Postnikov to reduce quantum products by hook Schur polynomials to the (known) classical product.",
+  "abstract": "In this paper, we give a rule for the multiplication of a Schubert class by a tautological class in the (small) quantum cohomology ring of the ﬂag manifold. As an inter- mediate step, we establish a formula for the multiplication of a Schubert class by a quantum Schur polynomial indexed by a hook partition. This entails a detailed analysis of chains and intervals in the quantum Bruhat order. This analysis allows us to use results of Leung–Li and of Postnikov to reduce quantum products by hook Schur polynomials to the (known) classical product.",
   "docinfo": {
    "Producer": "GPL Ghostscript 10.01.2",
    "Creator": "LaTeX with hyperref",
    "CreationDate": "D:20240610201318-04'00'"
   },
-  "title_raw": "Draft of June 11, 2024 A QUANTUM MURNAGHAN\u2013NAKAYAMA RULE FOR THE FLAG MANIFOLD",
+  "title_raw": "Draft of June 11, 2024 A QUANTUM MURNAGHAN–NAKAYAMA RULE FOR THE FLAG MANIFOLD",
   "title_source": "text",
   "title_verified": false,
   "title_evidence": {
-   "heading": "A QUANTUM MURNAGHAN\u2013NAKAYAMA RULE FOR THE FLAG MANIFOLD 1. Introduction The Murnaghan\u2013Nakayama rule is a method for computing values of the irreducible characters of symmetric groups [29, 30, 31]. Under the identi\ufb01cation of the character ring with the ring of symmetric functions, it translates into",
+   "heading": "A QUANTUM MURNAGHAN–NAKAYAMA RULE FOR THE FLAG MANIFOLD 1. Introduction The Murnaghan–Nakayama rule is a method for computing values of the irreducible characters of symmetric groups [29, 30, 31]. Under the identiﬁcation of the character ring with the ring of symmetric functions, it translates into",
    "outline": "1. Introduction",
-   "text": "Draft of June 11, 2024 A QUANTUM MURNAGHAN\u2013NAKAYAMA RULE FOR THE FLAG MANIFOLD",
+   "text": "Draft of June 11, 2024 A QUANTUM MURNAGHAN–NAKAYAMA RULE FOR THE FLAG MANIFOLD",
    "corroborated_by": [],
    "browser_print": false
-  }
+  },
+  "title_prev": "Draft of June 11, 2024 A QUANTUM MURNAGHAN–NAKAYAMA RULE FOR THE FLAG MANIFOLD"
  },
  "toc": [
   {
@@ -58,7 +77,7 @@
   },
   {
    "level": 1,
-   "title": "A Murnaghan\u2013Nakayama rule for (classic) cohomology",
+   "title": "A Murnaghan–Nakayama rule for (classic) cohomology",
    "page": 2,
    "source": "outline",
    "number": "2",
@@ -88,7 +107,7 @@
   },
   {
    "level": 2,
-   "title": "Grassmannian\u2013Bruhat order",
+   "title": "Grassmannian–Bruhat order",
    "page": 4,
    "source": "outline",
    "number": "2.3",
@@ -108,7 +127,7 @@
   },
   {
    "level": 2,
-   "title": "A Murnaghan\u2013Nakayama rule for H*Fn",
+   "title": "A Murnaghan–Nakayama rule for H*Fn",
    "page": 7,
    "source": "outline",
    "number": "2.5",
@@ -118,7 +137,7 @@
   },
   {
    "level": 1,
-   "title": "A Murnaghan\u2013Nakayama rule for quantum cohomology",
+   "title": "A Murnaghan–Nakayama rule for quantum cohomology",
    "page": 8,
    "source": "outline",
    "number": "3",
@@ -158,7 +177,7 @@
   },
   {
    "level": 2,
-   "title": "The Murnaghan\u2013Nakayama rule for qH*Fn",
+   "title": "The Murnaghan–Nakayama rule for qH*Fn",
    "page": 10,
    "source": "outline",
    "number": "3.4",
@@ -323,7 +342,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "Two intervals in k-Bruhat orders on Sn. the 3-Bruhat order on S7. The interval on the left has a peakless chain (colored in blue); its \u2018middle\u2019 chain has labels 5, 3, 2, 4, so it is peakless of height 3, but the other interval has no peakless chains",
+   "title": "Two intervals in k-Bruhat orders on Sn. the 3-Bruhat order on S7. The interval on the left has a peakless chain (colored in blue); its ‘middle’ chain has labels 5, 3, 2, 4, so it is peakless of height 3, but the other interval has no peakless chains",
    "page": 4,
    "confidence": 0.9,
    "evidence": [
@@ -336,7 +355,7 @@
   {
    "kind": "figure",
    "number": "2",
-   "title": "Intervals in the Grassmannian\u2013Bruhat order. 2.4. Minimal permutations. A permutation \u03b6 is minimal if L(\u03b6) = # supp(\u03b6) \u2212s(\u03b6), where s(\u03b6) is the number of (nontrivial) cycles in the factorization of \u03b6 into disjoint cycles",
+   "title": "Intervals in the Grassmannian–Bruhat order. 2.4. Minimal permutations. A permutation ζ is minimal if L(ζ) = # supp(ζ) −s(ζ), where s(ζ) is the number of (nontrivial) cycles in the factorization of ζ into disjoint cycles",
    "page": 5,
    "confidence": 0.9,
    "evidence": [
@@ -349,7 +368,7 @@
   {
    "kind": "figure",
    "number": "3",
-   "title": "If \u03b6 \u00b7 \u03b7 is a noncrossing product, then the interval [e, \u03b6 \u00b7 \u03b7]\u2aafis isomorphic to the product of the intervals [e, \u03b6]\u2aafand [e, \u03b7]\u2aaf, and the chains in [e, \u03b6 \u00b7 \u03b7]\u2aafare shu\ufb04es of chains in each of the factors",
+   "title": "If ζ · η is a noncrossing product, then the interval [e, ζ · η]⪯is isomorphic to the product of the intervals [e, ζ]⪯and [e, η]⪯, and the chains in [e, ζ · η]⪯are shuﬄes of chains in each of the factors",
    "page": 6,
    "confidence": 0.9,
    "evidence": [
@@ -413,7 +432,7 @@
   {
    "kind": "figure",
    "number": "8",
-   "title": "Actions of o, \u03c90, and \u03c1 on the rightmost interval of Figure 5. These operators act on each chain in the respective orders. Each row in Figure 9 shows the",
+   "title": "Actions of o, ω0, and ρ on the rightmost interval of Figure 5. These operators act on each chain in the respective orders. Each row in Figure 9 shows the",
    "page": 23,
    "confidence": 0.9,
    "evidence": [
@@ -426,7 +445,7 @@
   {
    "kind": "figure",
    "number": "9",
-   "title": "Actions of o, \u03c90, and \u03c1 on chains from rightmost interval of Figure 5. diagrams for all \ufb01ve chains in one of the four intervals, with the \ufb01rst row from the rightmost interval of Figure 5 and subsequent rows for the indicated interval in Figure 8",
+   "title": "Actions of o, ω0, and ρ on chains from rightmost interval of Figure 5. diagrams for all ﬁve chains in one of the four intervals, with the ﬁrst row from the rightmost interval of Figure 5 and subsequent rows for the indicated interval in Figure 8",
    "page": 23,
    "confidence": 0.9,
    "evidence": [
@@ -439,7 +458,7 @@
   {
    "kind": "figure",
    "number": "10",
-   "title": "Crossing compositions of (1)(i). They all are equivalent to 0. (in the \ufb01rst column) are zero by (5.1)(ii). Lemma 5.12 implies the rest are zero",
+   "title": "Crossing compositions of (1)(i). They all are equivalent to 0. (in the ﬁrst column) are zero by (5.1)(ii). Lemma 5.12 implies the rest are zero",
    "page": 24,
    "confidence": 0.9,
    "evidence": [
@@ -452,7 +471,7 @@
   {
    "kind": "figure",
    "number": "11",
-   "title": "Relations of Lemma 5.16(1)(iii). the \ufb01rst row are mapped to each other by o, the four in the remaining rows form an orbit",
+   "title": "Relations of Lemma 5.16(1)(iii). the ﬁrst row are mapped to each other by o, the four in the remaining rows form an orbit",
    "page": 25,
    "confidence": 0.9,
    "evidence": [
@@ -465,7 +484,7 @@
   {
    "kind": "figure",
    "number": "12",
-   "title": "The six compositions in (2)(i) are all equivalent to 0. o and \u03c1. Consider the leftmost operator in Figure 12. Writing a < b < c for its support, let u \u2208",
+   "title": "The six compositions in (2)(i) are all equivalent to 0. o and ρ. Consider the leftmost operator in Figure 12. Writing a < b < c for its support, let u ∈",
    "page": 25,
    "confidence": 0.9,
    "evidence": [
@@ -478,7 +497,7 @@
   {
    "kind": "figure",
    "number": "13",
-   "title": "The twelve compositions of (2)(ii) are all equivalent to 0. the joint action of o, w0, and \u03c1. As the classical compositions (\ufb01rst and fourth in each row) among them are zero by (5.1)(ii), all twelve are zero by Lemma 5.12",
+   "title": "The twelve compositions of (2)(ii) are all equivalent to 0. the joint action of o, w0, and ρ. As the classical compositions (ﬁrst and fourth in each row) among them are zero by (5.1)(ii), all twelve are zero by Lemma 5.12",
    "page": 25,
    "confidence": 0.9,
    "evidence": [
@@ -491,7 +510,7 @@
   {
    "kind": "figure",
    "number": "14",
-   "title": "Remaining compositions of two operators. under the joint action of o and \u03c1. It su\ufb03ces to show that one is nonzero and inequivalent",
+   "title": "Remaining compositions of two operators. under the joint action of o and ρ. It suﬃces to show that one is nonzero and inequivalent",
    "page": 25,
    "confidence": 0.9,
    "evidence": [
@@ -504,7 +523,7 @@
   {
    "kind": "figure",
    "number": "15",
-   "title": "Some nonzero paths. Rows are on the left and columns are on the right. A composition v = varbr \u00b7 \u00b7 \u00b7va1b1 of classical operators is a connected classical row if",
+   "title": "Some nonzero paths. Rows are on the left and columns are on the right. A composition v = varbr · · ·va1b1 of classical operators is a connected classical row if",
    "page": 27,
    "confidence": 0.9,
    "evidence": [
@@ -517,7 +536,7 @@
   {
    "kind": "figure",
    "number": "16",
-   "title": "A connected row is a particular instance of a path. Similarly, a composition v = varbr \u00b7 \u00b7 \u00b7 va1b1 of classical operators is a connected classical",
+   "title": "A connected row is a particular instance of a path. Similarly, a composition v = varbr · · · va1b1 of classical operators is a connected classical",
    "page": 27,
    "confidence": 0.9,
    "evidence": [
@@ -869,27 +888,15 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 4550,
-   "n_words": 711,
+   "n_chars": 5729,
+   "n_words": 906,
    "label_start": "1",
    "label_end": "2"
   },
   {
-   "id": "sec-001-22-k-bruhat-order",
-   "number": "2.2",
-   "title": "k-Bruhat order",
-   "level": 2,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 1091,
-   "n_words": 178,
-   "label_start": "2",
-   "label_end": "2"
-  },
-  {
-   "id": "sec-002-2-a-murnaghannakayama-rule-for-classic-cohomolog",
+   "id": "sec-001-2-a-murnaghannakayama-rule-for-classic-cohomolog",
    "number": "2",
-   "title": "A Murnaghan\u2013Nakayama rule for (classic) cohomology",
+   "title": "A Murnaghan–Nakayama rule for (classic) cohomology",
    "level": 1,
    "page_start": 2,
    "page_end": 3,
@@ -899,21 +906,33 @@
    "label_end": "3"
   },
   {
-   "id": "sec-003-21-cohomology-of-the-flag-manifold",
+   "id": "sec-002-21-cohomology-of-the-flag-manifold",
    "number": "2.1",
    "title": "Cohomology of the flag manifold",
    "level": 2,
    "page_start": 3,
+   "page_end": 3,
+   "n_chars": 2326,
+   "n_words": 438,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-003-22-k-bruhat-order",
+   "number": "2.2",
+   "title": "k-Bruhat order",
+   "level": 2,
+   "page_start": 3,
    "page_end": 4,
-   "n_chars": 4301,
-   "n_words": 886,
+   "n_chars": 1876,
+   "n_words": 428,
    "label_start": "3",
    "label_end": "4"
   },
   {
    "id": "sec-004-23-grassmannianbruhat-order",
    "number": "2.3",
-   "title": "Grassmannian\u2013Bruhat order",
+   "title": "Grassmannian–Bruhat order",
    "level": 2,
    "page_start": 4,
    "page_end": 5,
@@ -928,16 +947,28 @@
    "title": "Minimal permutations",
    "level": 2,
    "page_start": 5,
-   "page_end": 8,
-   "n_chars": 8625,
-   "n_words": 1695,
+   "page_end": 7,
+   "n_chars": 7014,
+   "n_words": 1362,
    "label_start": "5",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-006-25-a-murnaghannakayama-rule-for-hfn",
+   "number": "2.5",
+   "title": "A Murnaghan–Nakayama rule for H*Fn",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1528,
+   "n_words": 320,
+   "label_start": "7",
    "label_end": "8"
   },
   {
-   "id": "sec-006-3-a-murnaghannakayama-rule-for-quantum-cohomolog",
+   "id": "sec-007-3-a-murnaghannakayama-rule-for-quantum-cohomolog",
    "number": "3",
-   "title": "A Murnaghan\u2013Nakayama rule for quantum cohomology",
+   "title": "A Murnaghan–Nakayama rule for quantum cohomology",
    "level": 1,
    "page_start": 8,
    "page_end": 8,
@@ -947,7 +978,7 @@
    "label_end": "8"
   },
   {
-   "id": "sec-007-31-quantum-cohomology-ring-of-the-flag-manifold",
+   "id": "sec-008-31-quantum-cohomology-ring-of-the-flag-manifold",
    "number": "3.1",
    "title": "Quantum cohomology ring of the flag manifold",
    "level": 2,
@@ -959,7 +990,7 @@
    "label_end": "9"
   },
   {
-   "id": "sec-008-32-quantum-k-bruhat-order",
+   "id": "sec-009-32-quantum-k-bruhat-order",
    "number": "3.2",
    "title": "Quantum k-Bruhat order",
    "level": 2,
@@ -971,19 +1002,31 @@
    "label_end": "10"
   },
   {
-   "id": "sec-009-33-minimal-intervals",
+   "id": "sec-010-33-minimal-intervals",
    "number": "3.3",
    "title": "Minimal intervals",
    "level": 2,
    "page_start": 10,
+   "page_end": 10,
+   "n_chars": 1271,
+   "n_words": 243,
+   "label_start": "10",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-011-34-the-murnaghannakayama-rule-for-qhfn",
+   "number": "3.4",
+   "title": "The Murnaghan–Nakayama rule for qH*Fn",
+   "level": 2,
+   "page_start": 10,
    "page_end": 12,
-   "n_chars": 6197,
-   "n_words": 1119,
+   "n_chars": 4844,
+   "n_words": 863,
    "label_start": "10",
    "label_end": "12"
   },
   {
-   "id": "sec-010-4-quantum-equals-classical",
+   "id": "sec-012-4-quantum-equals-classical",
    "number": "4",
    "title": "Quantum equals classical",
    "level": 1,
@@ -995,7 +1038,7 @@
    "label_end": "15"
   },
   {
-   "id": "sec-011-5-left-operators",
+   "id": "sec-013-5-left-operators",
    "number": "5",
    "title": "Left operators",
    "level": 1,
@@ -1007,19 +1050,19 @@
    "label_end": "15"
   },
   {
-   "id": "sec-012-51-definition-of-the-left-operators",
+   "id": "sec-014-51-definition-of-the-left-operators",
    "number": "5.1",
    "title": "Definition of the left operators",
    "level": 2,
    "page_start": 15,
    "page_end": 19,
-   "n_chars": 11869,
-   "n_words": 2517,
+   "n_chars": 11726,
+   "n_words": 2433,
    "label_start": "15",
    "label_end": "19"
   },
   {
-   "id": "sec-013-53-diagrammatic-notation",
+   "id": "sec-015-53-diagrammatic-notation",
    "number": "5.3",
    "title": "Diagrammatic notation",
    "level": 2,
@@ -1031,67 +1074,67 @@
    "label_end": "20"
   },
   {
-   "id": "sec-014-54-symmetries-of-the-quantum-k-bruhat-order",
+   "id": "sec-016-54-symmetries-of-the-quantum-k-bruhat-order",
    "number": "5.4",
    "title": "Symmetries of the quantum k-Bruhat order",
    "level": 2,
    "page_start": 20,
    "page_end": 23,
-   "n_chars": 8413,
-   "n_words": 1719,
+   "n_chars": 8262,
+   "n_words": 1695,
    "label_start": "20",
    "label_end": "23"
   },
   {
-   "id": "sec-015-55-degree-two-relations",
+   "id": "sec-017-55-degree-two-relations",
    "number": "5.5",
    "title": "Degree two relations",
    "level": 2,
    "page_start": 23,
    "page_end": 26,
-   "n_chars": 6012,
-   "n_words": 1215,
+   "n_chars": 6111,
+   "n_words": 1177,
    "label_start": "23",
    "label_end": "26"
   },
   {
-   "id": "sec-016-56-crossing-products",
+   "id": "sec-018-56-crossing-products",
    "number": "5.6",
    "title": "Crossing products",
    "level": 2,
    "page_start": 26,
-   "page_end": 26,
-   "n_chars": 720,
-   "n_words": 137,
+   "page_end": 27,
+   "n_chars": 3942,
+   "n_words": 827,
    "label_start": "26",
-   "label_end": "26"
+   "label_end": "27"
   },
   {
-   "id": "sec-017-57-paths",
+   "id": "sec-019-57-paths",
    "number": "5.7",
    "title": "Paths",
    "level": 2,
-   "page_start": 26,
+   "page_start": 27,
    "page_end": 29,
-   "n_chars": 9419,
-   "n_words": 1975,
-   "label_start": "26",
+   "n_chars": 6146,
+   "n_words": 1241,
+   "label_start": "27",
    "label_end": "29"
   },
   {
-   "id": "sec-018-58-products-of-trees",
+   "id": "sec-020-58-products-of-trees",
    "number": "5.8",
    "title": "Products of trees",
    "level": 2,
    "page_start": 29,
    "page_end": 30,
-   "n_chars": 2051,
-   "n_words": 386,
+   "n_chars": 2050,
+   "n_words": 385,
    "label_start": "29",
    "label_end": "30"
   },
   {
-   "id": "sec-019-example",
+   "id": "sec-021-example",
    "number": null,
    "title": "Example",
    "level": 2,
@@ -1103,7 +1146,7 @@
    "label_end": "31"
   },
   {
-   "id": "sec-020-59-proof-of-theorem-51",
+   "id": "sec-022-59-proof-of-theorem-51",
    "number": "5.9",
    "title": "Proof of Theorem 5.1",
    "level": 2,
@@ -1115,7 +1158,7 @@
    "label_end": "32"
   },
   {
-   "id": "sec-021-acknowledgments",
+   "id": "sec-023-acknowledgments",
    "number": null,
    "title": "Acknowledgments",
    "level": 2,
@@ -1127,7 +1170,7 @@
    "label_end": "32"
   },
   {
-   "id": "sec-022-references",
+   "id": "sec-024-references",
    "number": null,
    "title": "References",
    "level": 1,
@@ -1150,13 +1193,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 24,
-  "chars_total": 93787,
+  "sections": 26,
+  "chars_total": 93364,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "quantum-mn-rule.tex",
    "tex_sections": 30,
-   "overlaid": 19,
+   "overlaid": 23,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1171,36 +1215,38 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.77,
-     "coverage_ratio": 0.964,
+     "prose_ratio": 0.942,
+     "coverage_ratio": 0.971,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-22-k-bruhat-order",
-     "title": "k-Bruhat order",
-     "prose_ratio": 0.154,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-002-2-a-murnaghannakayama-rule-for-classic-cohomolog",
-     "title": "A Murnaghan\u2013Nakayama rule for (classic) cohomology",
+     "id": "sec-001-2-a-murnaghannakayama-rule-for-classic-cohomolog",
+     "title": "A Murnaghan–Nakayama rule for (classic) cohomology",
      "prose_ratio": 0.952,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-21-cohomology-of-the-flag-manifold",
+     "id": "sec-002-21-cohomology-of-the-flag-manifold",
      "title": "Cohomology of the flag manifold",
-     "prose_ratio": 0.95,
-     "coverage_ratio": 0.73,
+     "prose_ratio": 0.899,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-22-k-bruhat-order",
+     "title": "k-Bruhat order",
+     "prose_ratio": 0.908,
+     "coverage_ratio": 0.857,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-23-grassmannianbruhat-order",
-     "title": "Grassmannian\u2013Bruhat order",
+     "title": "Grassmannian–Bruhat order",
      "prose_ratio": 0.915,
      "coverage_ratio": 0.951,
      "result": "overlaid",
@@ -1209,21 +1255,29 @@
     {
      "id": "sec-005-24-minimal-permutations",
      "title": "Minimal permutations",
-     "prose_ratio": 0.934,
-     "coverage_ratio": 0.99,
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.976,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-3-a-murnaghannakayama-rule-for-quantum-cohomolog",
-     "title": "A Murnaghan\u2013Nakayama rule for quantum cohomology",
+     "id": "sec-006-25-a-murnaghannakayama-rule-for-hfn",
+     "title": "A Murnaghan–Nakayama rule for H*Fn",
+     "prose_ratio": 0.779,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-3-a-murnaghannakayama-rule-for-quantum-cohomolog",
+     "title": "A Murnaghan–Nakayama rule for quantum cohomology",
      "prose_ratio": 0.889,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-31-quantum-cohomology-ring-of-the-flag-manifold",
+     "id": "sec-008-31-quantum-cohomology-ring-of-the-flag-manifold",
      "title": "Quantum cohomology ring of the flag manifold",
      "prose_ratio": 0.905,
      "coverage_ratio": 0.937,
@@ -1231,7 +1285,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-32-quantum-k-bruhat-order",
+     "id": "sec-009-32-quantum-k-bruhat-order",
      "title": "Quantum k-Bruhat order",
      "prose_ratio": 0.833,
      "coverage_ratio": 0.964,
@@ -1239,15 +1293,23 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-33-minimal-intervals",
+     "id": "sec-010-33-minimal-intervals",
      "title": "Minimal intervals",
-     "prose_ratio": 0.934,
+     "prose_ratio": 0.878,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-4-quantum-equals-classical",
+     "id": "sec-011-34-the-murnaghannakayama-rule-for-qhfn",
+     "title": "The Murnaghan–Nakayama rule for qH*Fn",
+     "prose_ratio": 0.938,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-4-quantum-equals-classical",
      "title": "Quantum equals classical",
      "prose_ratio": 0.951,
      "coverage_ratio": 0.97,
@@ -1255,7 +1317,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-5-left-operators",
+     "id": "sec-013-5-left-operators",
      "title": "Left operators",
      "prose_ratio": 0.876,
      "coverage_ratio": 1.0,
@@ -1263,15 +1325,15 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-51-definition-of-the-left-operators",
+     "id": "sec-014-51-definition-of-the-left-operators",
      "title": "Definition of the left operators",
      "prose_ratio": 0.955,
-     "coverage_ratio": 0.936,
+     "coverage_ratio": 0.922,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-53-diagrammatic-notation",
+     "id": "sec-015-53-diagrammatic-notation",
      "title": "Diagrammatic notation",
      "prose_ratio": 0.912,
      "coverage_ratio": 0.948,
@@ -1279,37 +1341,39 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-54-symmetries-of-the-quantum-k-bruhat-order",
+     "id": "sec-016-54-symmetries-of-the-quantum-k-bruhat-order",
      "title": "Symmetries of the quantum k-Bruhat order",
      "prose_ratio": 0.946,
-     "coverage_ratio": 0.965,
+     "coverage_ratio": 0.902,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-015-55-degree-two-relations",
+     "id": "sec-017-55-degree-two-relations",
      "title": "Degree two relations",
      "prose_ratio": 0.9,
-     "coverage_ratio": 0.905,
+     "coverage_ratio": 0.823,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-016-56-crossing-products",
+     "id": "sec-018-56-crossing-products",
      "title": "Crossing products",
-     "prose_ratio": 0.324,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-017-57-paths",
-     "title": "Paths",
-     "prose_ratio": 0.932,
-     "coverage_ratio": 0.728,
+     "prose_ratio": 0.91,
+     "coverage_ratio": 0.918,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-018-58-products-of-trees",
+     "id": "sec-019-57-paths",
+     "title": "Paths",
+     "prose_ratio": 0.91,
+     "coverage_ratio": 0.859,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-020-58-products-of-trees",
      "title": "Products of trees",
      "prose_ratio": 0.965,
      "coverage_ratio": 0.955,
@@ -1317,7 +1381,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-019-example",
+     "id": "sec-021-example",
      "title": "Example",
      "prose_ratio": 0.703,
      "coverage_ratio": 0.932,
@@ -1325,12 +1389,12 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-020-59-proof-of-theorem-51",
+     "id": "sec-022-59-proof-of-theorem-51",
      "title": "Proof of Theorem 5.1",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-021-acknowledgments",
+     "id": "sec-023-acknowledgments",
      "title": "Acknowledgments",
      "prose_ratio": 0.821,
      "coverage_ratio": 1.0,
@@ -1338,7 +1402,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-022-references",
+     "id": "sec-024-references",
      "title": "References",
      "result": "no matching \\section"
     }

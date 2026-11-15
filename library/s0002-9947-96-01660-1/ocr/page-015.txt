@@ -1,0 +1,62 @@
+INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS 4011
+
+If is an odd permutation, then
+
+/ / ul
+€01 €02 €12 1» 201 02 ©12
+
+Ul ul /
+€23 €13, 03 J €23° €13 €03) _
+
+(a €02 cl _ {2 2 ei .
+
+€23, €13— €03) _ €23 €13 «03 +
+
+Proof. The first statement follows from the isomorphism Hom(X,Y) = X* @Y for
+vector spaces X,Y.
+
+In the definition of the partition function of the tetrahedron, each factor
+Hom(6, a®c) in the tensor product is identified with Hom*(a®c, 6), using the non-
+degenerate symmetric pairing (a, 3) +> trz(a@@) in the spherical category. Using
+these isomorphisms, the action of the odd and even permutations can be computed
+by the following commutative diagrams:
+
+mn a(o+)
+Hom(b,a ®@c) ——>
+
+and
+
+Hom(é, b @ a)
+astru(a-) | [onten(e-)
+
+Hom* (a ® ¢, b) ~~, Hom*(b @ a, é)
+in which ¢: Br o(o+)3, and
+Hom(},a@c) “22. Hom*(b,é@ a)
+oni |
+
+Hom*(a ® c,b) ———> Hom*(b,é@ 4).
+C)
+
+The map (~ )* is the adjoint of the linear map ~ .
+
+From these diagrams, the action of the elements of $4 on the linear functionals
+in the definition of the partition function can be computed. The maps ¢ and 6(o+)
+correspond, as diagrams, to rotations by one third of a turn, and ~ corresponds
+to one half of a turn. For even permutations in $4, the symmetry property of the
+partition function follows from the fact that any even permutation of the vertices
+of a tetrahedron can be extended to an isotopy of the sphere. The definition of
+spherical category was constructed to give invariants of isotopy classes of graphs
+on the sphere. For odd elements of $4, the symmetry property follows from the
+fact that any odd permutation of the vertices of a tetrahedron can be extended to
+an isotopy of the sphere which takes the tetrahedron to its image under some fixed
+reflection in a diameter. The diagrams corresponding to A and —A differ by such
+a reflection.
+
+Alternatively, the symmetry property can be checked algebraically. As an ex-
+ample, consider the odd permutation (0,1, 2,3) +> (3,1,2,0). The state space of A
+is
+
+H (e293, €13, €12) ® H*(e23, e093, €02) ® H(e13, €03, €01) ® H*(e12, e02, €01)
+and the state space of A’ is
+
+H*(€53, €13, €12) ® H(€33, €03; €02) @ H*(e43, 03, €01) ® H(er2, 02; €01)-

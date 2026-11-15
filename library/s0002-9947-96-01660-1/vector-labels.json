@@ -1,0 +1,4160 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "s0002-9947-96-01660-1",
+  "pages": [
+    {
+      "page": 7,
+      "rotation": 0,
+      "drawings": 8,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1"
+      ],
+      "labels": [
+        {
+          "text": "INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS",
+          "bbox": [
+            201.6,
+            93.96,
+            406.78,
+            100.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "4003",
+          "bbox": [
+            469.33,
+            93.96,
+            485.2,
+            100.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            301.55,
+            178.6,
+            309.32,
+            188.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "M",
+          "bbox": [
+            258.57,
+            180.1,
+            267.73,
+            190.09
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "M",
+          "bbox": [
+            343.54,
+            180.1,
+            352.69,
+            190.09
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Figure 1",
+          "bbox": [
+            284.28,
+            270.1,
+            327.71,
+            280.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Theorem 2.9. Let C be an additive spherical category. Deﬁne the additive subcat-",
+          "bbox": [
+            126.72,
+            301.13,
+            485.41,
+            311.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "egory J to have the same set of objects and morphisms deﬁned by",
+          "bbox": [
+            126.72,
+            313.13,
+            414.54,
+            323.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "HomJ (c1, c2) = {f ∈HomC(c1, c2) : trL(fg) = 0 for all g ∈HomC(c2, c1)}.",
+          "bbox": [
+            150.72,
+            331.49,
+            474.13,
+            343.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "Then C/J is a non-degenerate additive spherical category.",
+          "bbox": [
+            126.72,
+            350.57,
+            380.56,
+            360.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Proof. It is clear that J is closed under composition on either side by arbitrary",
+          "bbox": [
+            126.72,
+            369.77,
+            485.73,
+            380.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "morphisms in C. Hence the quotient is an additive category. It is also clear that",
+          "bbox": [
+            126.72,
+            381.77,
+            485.38,
+            392.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "ˆf ∈J if and only if f ∈J , and so the functor b is well-deﬁned on the quotient.",
+          "bbox": [
+            126.72,
+            391.89,
+            485.46,
+            404.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "The functor ⊗is well-deﬁned on the quotient, since f ∈J implies f ⊗g1 ∈J and",
+          "bbox": [
+            126.72,
+            406.13,
+            485.43,
+            417.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "g2 ⊗f ∈J for arbitrary morphisms in C. This follows from the observation that",
+          "bbox": [
+            126.72,
+            418.13,
+            485.37,
+            429.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "trL(f ⊗g) = trL(f). trL(g), which uses the spherical condition.",
+          "bbox": [
+            126.72,
+            430.13,
+            400.74,
+            441.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "The morphisms ϵ(a) are taken to be the images in the quotient of the given",
+          "bbox": [
+            138.6,
+            442.28,
+            485.48,
+            452.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "morphisms in C. The conditions on this structure which imply that this quotient",
+          "bbox": [
+            126.72,
+            454.01,
+            485.52,
+            464.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "is spherical follow from the same conditions in C.",
+          "bbox": [
+            126.72,
+            466.01,
+            340.69,
+            476.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Each pairing Θ is non-degenerate by construction.",
+          "bbox": [
+            138.6,
+            478.17,
+            358.08,
+            488.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "An extra condition on the spherical category is required for the piecewise-linear",
+          "bbox": [
+            138.6,
+            499.41,
+            485.38,
+            509.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "invariance of the partition function of a natural simplicial ﬁeld theory.",
+          "bbox": [
+            126.72,
+            511.29,
+            446.15,
+            521.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Similar",
+          "bbox": [
+            454.3,
+            511.29,
+            485.37,
+            521.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "conditions have been considered by [17], [27], [26], [23] and [28]. An object a is",
+          "bbox": [
+            126.72,
+            523.28,
+            485.38,
+            533.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "called non-zero if the ring End(a)̸ = 0.",
+          "bbox": [
+            126.72,
+            535.01,
+            294.13,
+            545.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Deﬁnition 2.10. A semisimple spherical category is an additive, non-degenerate,",
+          "bbox": [
+            126.72,
+            554.45,
+            485.57,
+            564.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "spherical category such that there exists a set of inequivalent non-zero objects, J,",
+          "bbox": [
+            126.72,
+            566.48,
+            485.29,
+            576.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "such that for any two objects x and y, the natural map given by composition,",
+          "bbox": [
+            126.72,
+            578.36,
+            466.71,
+            588.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "M",
+          "bbox": [
+            216.0,
+            588.53,
+            231.11,
+            598.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Hom(x, a) ⊗Hom(a, y) →Hom(x, y),",
+          "bbox": [
+            232.68,
+            598.01,
+            394.33,
+            608.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "a∈J",
+          "bbox": [
+            216.12,
+            612.29,
+            230.26,
+            619.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMSY7"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "is an isomorphism.",
+          "bbox": [
+            126.72,
+            626.13,
+            208.3,
+            636.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "An object a is called simple if End(a) ∼= F.",
+          "bbox": [
+            138.6,
+            642.41,
+            325.21,
+            655.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "The following lemma shows that the set J is essentially ﬁxed by the category.",
+          "bbox": [
+            138.6,
+            657.2,
+            477.82,
+            667.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Lemma 2.11. Every simple object is isomorphic to a unique element of J, and",
+          "bbox": [
+            126.72,
+            676.49,
+            485.35,
+            686.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "every element of J is simple.",
+          "bbox": [
+            126.72,
+            688.4,
+            252.78,
+            698.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        }
+      ]
+    },
+    {
+      "page": 9,
+      "rotation": 0,
+      "drawings": 20,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2",
+        "Figure 3"
+      ],
+      "labels": [
+        {
+          "text": "INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS",
+          "bbox": [
+            201.6,
+            93.96,
+            406.78,
+            100.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "4005",
+          "bbox": [
+            469.33,
+            93.96,
+            485.2,
+            100.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "b",
+          "bbox": [
+            297.75,
+            122.2,
+            303.3,
+            132.2
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            265.0,
+            137.95,
+            270.0,
+            147.95
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            340.75,
+            137.95,
+            345.75,
+            147.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "c",
+          "bbox": [
+            347.25,
+            180.7,
+            351.69,
+            190.7
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "a",
+          "bbox": [
+            272.75,
+            190.7,
+            277.75,
+            200.7
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            303.0,
+            202.2,
+            308.0,
+            212.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Figure 2",
+          "bbox": [
+            284.28,
+            224.86,
+            327.71,
+            234.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "b",
+          "bbox": [
+            316.95,
+            287.66,
+            322.5,
+            297.66
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "d",
+          "bbox": [
+            276.28,
+            294.33,
+            281.83,
+            304.33
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "f",
+          "bbox": [
+            343.62,
+            325.99,
+            346.67,
+            335.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "c",
+          "bbox": [
+            288.95,
+            328.66,
+            293.39,
+            338.66
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "a",
+          "bbox": [
+            307.95,
+            345.66,
+            312.95,
+            355.66
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "e",
+          "bbox": [
+            265.95,
+            354.33,
+            270.39,
+            364.33
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Figure 3",
+          "bbox": [
+            284.28,
+            429.34,
+            327.71,
+            439.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "using the non-degenerate pairings",
+          "bbox": [
+            126.72,
+            459.1,
+            273.7,
+            469.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Hom∗(d ⊗c, e) ∼= Hom(e, d ⊗c)",
+          "bbox": [
+            154.32,
+            473.81,
+            290.68,
+            487.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "Hom∗(e ⊗a, f) ∼= Hom(f, e ⊗a).",
+          "bbox": [
+            328.32,
+            473.81,
+            470.29,
+            487.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "and",
+          "bbox": [
+            300.72,
+            476.73,
+            316.83,
+            486.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "For the partition function of −A labelled in the same way, the linear functional",
+          "bbox": [
+            138.6,
+            494.21,
+            485.2,
+            504.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "on",
+          "bbox": [
+            126.72,
+            506.49,
+            137.31,
+            516.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Hom(e, d ⊗c) ⊗Hom(d ⊗b, f) ⊗Hom(f, e ⊗a) ⊗Hom(c ⊗a, b)",
+          "bbox": [
+            168.12,
+            523.85,
+            443.92,
+            534.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "deﬁned by",
+          "bbox": [
+            126.72,
+            541.77,
+            171.58,
+            551.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "α ⊗β ⊗γ ⊗δ 7→trL(γ(α ⊗1)(1 ⊗δ)β).",
+          "bbox": [
+            219.84,
+            559.13,
+            392.05,
+            570.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "likewise determines a unique linear map",
+          "bbox": [
+            126.72,
+            577.17,
+            300.97,
+            587.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "\u001a",
+          "bbox": [
+            132.84,
+            597.77,
+            140.34,
+            607.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "\u001b",
+          "bbox": [
+            176.04,
+            597.77,
+            183.54,
+            607.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "a",
+          "bbox": [
+            140.28,
+            606.08,
+            145.56,
+            616.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "b",
+          "bbox": [
+            155.64,
+            606.08,
+            159.93,
+            616.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "c",
+          "bbox": [
+            170.88,
+            606.08,
+            175.2,
+            616.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": ": Hom(e, d ⊗c) ⊗Hom(f, e ⊗a) →Hom(f, d ⊗b) ⊗Hom(b, c ⊗a)",
+          "bbox": [
+            192.96,
+            611.81,
+            479.2,
+            622.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "d",
+          "bbox": [
+            140.28,
+            617.96,
+            145.48,
+            627.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "e",
+          "bbox": [
+            155.5,
+            617.96,
+            160.15,
+            627.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "f",
+          "bbox": [
+            170.17,
+            617.96,
+            175.06,
+            627.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "−",
+          "bbox": [
+            183.48,
+            624.17,
+            189.72,
+            631.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY7"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "Deﬁnition 3.1. Given isomorphisms φa : a →a′, φb : b →b′ and φc : c →c′, there",
+          "bbox": [
+            126.72,
+            634.65,
+            485.4,
+            649.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "is an induced isomorphism",
+          "bbox": [
+            126.72,
+            650.25,
+            242.73,
+            660.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Hom(b, a ⊗c) →Hom(b′, a′ ⊗c′)",
+          "bbox": [
+            235.08,
+            663.41,
+            376.96,
+            677.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "given by α 7→φ−1",
+          "bbox": [
+            126.72,
+            685.25,
+            204.5,
+            697.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "b α(φa ⊗φc).",
+          "bbox": [
+            194.28,
+            687.17,
+            254.89,
+            700.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        }
+      ]
+    },
+    {
+      "page": 11,
+      "rotation": 0,
+      "drawings": 6,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 4"
+      ],
+      "labels": [
+        {
+          "text": "INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS",
+          "bbox": [
+            201.6,
+            93.96,
+            406.78,
+            100.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "4007",
+          "bbox": [
+            469.33,
+            93.96,
+            485.2,
+            100.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "b",
+          "bbox": [
+            249.69,
+            167.26,
+            255.24,
+            177.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "c",
+          "bbox": [
+            351.69,
+            170.59,
+            356.13,
+            180.59
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "a",
+          "bbox": [
+            296.69,
+            198.59,
+            301.69,
+            208.59
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Figure 4",
+          "bbox": [
+            284.28,
+            237.93,
+            327.71,
+            247.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Note that, given f and a labelling of M, there is a unique compatible labelling",
+          "bbox": [
+            138.6,
+            265.16,
+            485.38,
+            275.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "of N.",
+          "bbox": [
+            126.72,
+            277.04,
+            149.89,
+            287.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Now the properties of the state space of a triangle under combinatorial isomor-",
+          "bbox": [
+            138.6,
+            289.05,
+            485.56,
+            299.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "phisms are described. The combinatorial isomorphisms are just permutations in",
+          "bbox": [
+            126.72,
+            301.05,
+            485.26,
+            311.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "S3. For the standard triangle T(a,ˆb, c), labelled by ∂0T 7→a, ∂1T 7→ˆb, ∂2T 7→c,",
+          "bbox": [
+            126.72,
+            310.89,
+            485.29,
+            324.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "the labelling is permuted by (a, b, c) 7→σ+(a, b, c) for an even permutation σ+,",
+          "bbox": [
+            126.72,
+            324.12,
+            485.29,
+            335.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "and (a, b, c) 7→σ−(ˆa,ˆb, ˆc) for an odd permutation σ−. For this reason, it is more",
+          "bbox": [
+            126.72,
+            335.85,
+            485.4,
+            348.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "convenient to use the notation V (a, b, c)=H(a,ˆb, c) for the state space of a labelled",
+          "bbox": [
+            126.72,
+            348.93,
+            485.33,
+            361.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "triangle when the symmetry properties are considered.",
+          "bbox": [
+            126.72,
+            363.45,
+            364.82,
+            373.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "There is a canonical map V (a, b, c) →V (b, c, a), i.e.,",
+          "bbox": [
+            138.6,
+            375.17,
+            365.62,
+            385.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Hom(ˆb, a ⊗c) →Hom(ˆc, b ⊗a),",
+          "bbox": [
+            237.12,
+            390.21,
+            373.21,
+            402.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "deﬁned by mapping f : ˆb →a ⊗c to the following composite:",
+          "bbox": [
+            126.72,
+            409.05,
+            391.43,
+            421.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "ϵ(b)⊗1",
+          "bbox": [
+            187.32,
+            430.25,
+            210.62,
+            437.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "1⊗1⊗ˆϵ(c)",
+          "bbox": [
+            353.4,
+            430.25,
+            387.01,
+            437.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "1⊗f⊗1",
+          "bbox": [
+            260.64,
+            430.73,
+            285.74,
+            437.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            147.24,
+            431.4,
+            153.37,
+            438.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            438.36,
+            431.4,
+            444.49,
+            438.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "−−−−→b ⊗ˆb ⊗ˆc",
+          "bbox": [
+            183.84,
+            432.09,
+            255.2,
+            444.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "−→e ⊗ˆc",
+          "bbox": [
+            143.88,
+            434.45,
+            181.88,
+            444.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "−−−−→b ⊗a ⊗c ⊗ˆc",
+          "bbox": [
+            257.28,
+            434.45,
+            347.96,
+            444.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "−−−−−−→b ⊗a ⊗e",
+          "bbox": [
+            350.04,
+            434.45,
+            431.97,
+            444.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "−→b ⊗a.",
+          "bbox": [
+            434.88,
+            434.45,
+            475.33,
+            444.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "ˆc",
+          "bbox": [
+            136.68,
+            434.72,
+            141.8,
+            444.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "This corresponds to the graph in Figure 4.",
+          "bbox": [
+            126.72,
+            451.05,
+            312.67,
+            461.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "There is also a canonical pairing V (a, b, c) × V (ˆc,ˆb, ˆa) →F, i.e.,",
+          "bbox": [
+            138.6,
+            460.89,
+            415.56,
+            473.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Hom(ˆb, a ⊗c) × Hom(b, ˆc ⊗ˆa) →F.",
+          "bbox": [
+            228.72,
+            478.17,
+            383.29,
+            490.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Let f : ˆb →a ⊗c and g: b →ˆc ⊗ˆa. Then the pairing is deﬁned by",
+          "bbox": [
+            138.6,
+            497.13,
+            426.69,
+            509.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "⟨f, g⟩= trL(fˆg).",
+          "bbox": [
+            270.36,
+            515.81,
+            341.65,
+            526.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "Equivalently, it is determined by the closed tangle in Figure 5.",
+          "bbox": [
+            138.6,
+            532.41,
+            411.52,
+            542.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Deﬁnition 3.5. For every ordered triple, (a, b, c), of elements of I and every even",
+          "bbox": [
+            126.72,
+            550.37,
+            485.42,
+            560.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "permutation σ+ ∈S3, there is an isomorphism",
+          "bbox": [
+            126.72,
+            558.41,
+            329.72,
+            573.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "θ(σ+): V (a, b, c) →V σ+(a, b, c).",
+          "bbox": [
+            235.8,
+            576.84,
+            376.21,
+            588.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "For (a, b, c) 7→(b, c, a), this is the canonical map just deﬁned. Repeating this gives",
+          "bbox": [
+            126.72,
+            595.13,
+            485.56,
+            605.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "the isomorphism for (a, b, c) 7→(c, a, b). The identity is associated to the identity.",
+          "bbox": [
+            126.72,
+            607.13,
+            480.36,
+            617.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "For every ordered triple, (a, b, c), of elements of I, and every odd permutation",
+          "bbox": [
+            138.6,
+            619.4,
+            485.43,
+            629.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "σ−∈S3, there is a non-degenerate pairing, ⟨−, −⟩σ−,",
+          "bbox": [
+            126.72,
+            629.81,
+            359.53,
+            643.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY5",
+            "CMSY7"
+          ],
+          "sizes": [
+            5.0,
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "V (a, b, c) ⊗V σ−(ˆa,ˆb, ˆc) →F.",
+          "bbox": [
+            242.88,
+            646.53,
+            369.13,
+            659.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "For σ−the odd permutation (a, b, c) 7→(c, b, a), this is the pairing deﬁned above.",
+          "bbox": [
+            126.72,
+            664.97,
+            485.59,
+            676.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "The pairings for the other two odd permutations can be deﬁned by the formula",
+          "bbox": [
+            126.72,
+            678.45,
+            485.46,
+            688.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "⟨v1, v2⟩σ−= ⟨v1, θ(σ+)v2⟩σ−σ+.",
+          "bbox": [
+            126.72,
+            689.04,
+            262.69,
+            702.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7",
+            "CMSY10",
+            "CMSY5"
+          ],
+          "sizes": [
+            5.0,
+            7.0,
+            10.0
+          ]
+        }
+      ]
+    },
+    {
+      "page": 12,
+      "rotation": 0,
+      "drawings": 7,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 5"
+      ],
+      "labels": [
+        {
+          "text": "4008",
+          "bbox": [
+            126.72,
+            93.96,
+            142.59,
+            100.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "JOHN W. BARRETT AND BRUCE W. WESTBURY",
+          "bbox": [
+            208.56,
+            93.96,
+            403.49,
+            100.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "b",
+          "bbox": [
+            259.37,
+            145.99,
+            264.92,
+            155.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "a",
+          "bbox": [
+            303.35,
+            177.98,
+            308.35,
+            187.97
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "c",
+          "bbox": [
+            347.84,
+            178.48,
+            352.28,
+            188.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Figure 5",
+          "bbox": [
+            284.28,
+            280.78,
+            327.71,
+            290.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Lemma 3.6. For all even permutations σ+",
+          "bbox": [
+            126.72,
+            311.28,
+            318.97,
+            323.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR7",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "1 , σ+",
+          "bbox": [
+            312.48,
+            311.28,
+            336.13,
+            325.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "2 , odd permutations σ−, labels a, b",
+          "bbox": [
+            329.64,
+            311.69,
+            485.37,
+            325.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "CMSY7",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "and c and all v1 ∈V (a, b, c) and v2 ∈V σ−(ˆa,ˆb, ˆc) :",
+          "bbox": [
+            126.72,
+            323.73,
+            348.61,
+            337.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "θ(σ+",
+          "bbox": [
+            239.52,
+            343.56,
+            260.41,
+            355.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "1 σ+",
+          "bbox": [
+            253.92,
+            343.56,
+            273.13,
+            358.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "2 ) = θ(σ+",
+          "bbox": [
+            266.64,
+            343.56,
+            311.77,
+            358.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "1 )θ(σ+",
+          "bbox": [
+            305.28,
+            343.56,
+            337.09,
+            358.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "2 ),",
+          "bbox": [
+            330.6,
+            345.44,
+            344.29,
+            358.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "v1, θ(σ+)v2",
+          "bbox": [
+            295.56,
+            360.24,
+            343.34,
+            372.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "⟨v1, v2⟩σ−=",
+          "bbox": [
+            235.56,
+            361.73,
+            288.09,
+            374.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY5"
+          ],
+          "sizes": [
+            5.0,
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "σ−σ+ ,",
+          "bbox": [
+            348.6,
+            362.0,
+            374.77,
+            375.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR5",
+            "CMSY5"
+          ],
+          "sizes": [
+            5.0,
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "⟨v1, v2⟩σ−= ⟨v2, v1⟩σ−.",
+          "bbox": [
+            235.56,
+            377.33,
+            337.33,
+            389.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY5"
+          ],
+          "sizes": [
+            5.0,
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "Also, the pairings are non-degenerate bilinear forms.",
+          "bbox": [
+            126.72,
+            396.56,
+            355.32,
+            406.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Proof. The ﬁrst two relations follow from the fact that the following composite is",
+          "bbox": [
+            126.72,
+            416.12,
+            485.27,
+            426.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "the identity map:",
+          "bbox": [
+            126.72,
+            428.13,
+            202.22,
+            438.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "V (a, b, c) →V (b, c, a) →V (c, a, b) →V (a, b, c).",
+          "bbox": [
+            204.36,
+            446.81,
+            407.65,
+            457.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "This condition is the relation shown in Figure 6, which is satisﬁed in any pivotal",
+          "bbox": [
+            126.72,
+            466.17,
+            485.34,
+            476.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "category, by Lemma 2.3.",
+          "bbox": [
+            126.72,
+            478.17,
+            233.74,
+            488.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "The pairings are non-degenerate since the spherical category is non-degenerate",
+          "bbox": [
+            138.6,
+            490.05,
+            485.38,
+            500.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "and b is an isomorphism on spaces of morphisms. The pairing trL(fˆg) is symmetric",
+          "bbox": [
+            126.72,
+            501.77,
+            485.4,
+            512.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "since",
+          "bbox": [
+            126.72,
+            513.93,
+            147.82,
+            523.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "trL(g ˆf) = trL(c",
+          "bbox": [
+            242.52,
+            529.25,
+            316.48,
+            545.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "g ˆf) = trL(fˆg).",
+          "bbox": [
+            305.88,
+            532.17,
+            369.49,
+            545.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "The symmetry of the other pairings is equivalent to the relations",
+          "bbox": [
+            126.72,
+            553.77,
+            410.03,
+            563.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "trL((θ(σ+)v2)ˆv1) = trL((θ(σ+)v1)ˆv2).",
+          "bbox": [
+            224.76,
+            570.96,
+            387.25,
+            583.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "This follows from the relations in a spherical category, as can be seen by the isotopy",
+          "bbox": [
+            126.72,
+            591.81,
+            485.58,
+            601.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "equivalence of the corresponding diagrams.",
+          "bbox": [
+            126.72,
+            603.81,
+            314.19,
+            613.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "The union of the spaces {V (a, b, c) ` V ∗(a, b, c) | (a, b, c) ∈I × I × I} forms a",
+          "bbox": [
+            138.6,
+            618.05,
+            485.36,
+            635.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "vector bundle over I × I × I × {±}. The permutation group, S3, acts on the base",
+          "bbox": [
+            126.72,
+            637.49,
+            485.38,
+            648.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "space by",
+          "bbox": [
+            126.72,
+            649.65,
+            163.8,
+            659.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "σ+ : (a, b, c, ±) 7→(σ+(a, b, c), ±),",
+          "bbox": [
+            233.28,
+            664.53,
+            377.17,
+            678.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "σ−: (a, b, c, ±) 7→(σ−(ˆa,ˆb, ˆc), ∓).",
+          "bbox": [
+            233.16,
+            683.73,
+            377.29,
+            696.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        }
+      ]
+    },
+    {
+      "page": 13,
+      "rotation": 0,
+      "drawings": 11,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 6"
+      ],
+      "labels": [
+        {
+          "text": "INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS",
+          "bbox": [
+            201.6,
+            93.96,
+            406.78,
+            100.96
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "4009",
+          "bbox": [
+            469.33,
+            93.96,
+            485.2,
+            100.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "b",
+          "bbox": [
+            404.0,
+            210.73,
+            409.55,
+            220.73
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "b",
+          "bbox": [
+            223.0,
+            226.73,
+            228.55,
+            236.73
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            363.0,
+            231.23,
+            370.77,
+            241.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "c",
+          "bbox": [
+            285.0,
+            234.23,
+            289.44,
+            244.23
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "a",
+          "bbox": [
+            239.0,
+            245.23,
+            244.0,
+            255.23
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "a",
+          "bbox": [
+            387.5,
+            247.23,
+            392.5,
+            257.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "c",
+          "bbox": [
+            424.0,
+            247.23,
+            428.44,
+            257.23
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Figure 6",
+          "bbox": [
+            284.28,
+            366.1,
+            327.71,
+            376.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Deﬁnition 3.7. For each triple of labels, (a, b, c), and each permutation σ+ or σ−",
+          "bbox": [
+            126.72,
+            391.53,
+            484.8,
+            405.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "there are linear isomorphisms",
+          "bbox": [
+            126.72,
+            407.13,
+            255.44,
+            417.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "θ(σ+)",
+          "bbox": [
+            281.4,
+            423.47,
+            302.16,
+            431.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR5",
+            "CMR7"
+          ],
+          "sizes": [
+            5.0,
+            7.0
+          ]
+        },
+        {
+          "text": "−−−→V σ+(a, b, c),",
+          "bbox": [
+            278.04,
+            427.32,
+            362.29,
+            439.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "V (a, b, c)",
+          "bbox": [
+            236.76,
+            429.08,
+            275.32,
+            439.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "θ∗−1(σ+)",
+          "bbox": [
+            281.4,
+            445.29,
+            315.12,
+            453.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR5",
+            "CMR7",
+            "CMSY5"
+          ],
+          "sizes": [
+            5.0,
+            7.0
+          ]
+        },
+        {
+          "text": "V ∗(a, b, c)",
+          "bbox": [
+            232.2,
+            449.09,
+            275.32,
+            461.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "−−−−−−→V ∗σ+(a, b, c),",
+          "bbox": [
+            278.04,
+            449.09,
+            379.81,
+            461.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "if σ+ is even, and",
+          "bbox": [
+            126.72,
+            465.69,
+            203.45,
+            479.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "θ(σ−)",
+          "bbox": [
+            283.56,
+            485.61,
+            304.56,
+            494.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "CMSY5"
+          ],
+          "sizes": [
+            5.0,
+            7.0
+          ]
+        },
+        {
+          "text": "−−−−→V ∗σ−(ˆa,ˆb, ˆc),",
+          "bbox": [
+            280.2,
+            488.73,
+            369.25,
+            501.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "V (a, b, c)",
+          "bbox": [
+            238.92,
+            491.36,
+            277.48,
+            501.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "θ∗−1(σ−)",
+          "bbox": [
+            283.56,
+            507.45,
+            317.52,
+            516.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR5",
+            "CMR7",
+            "CMSY5"
+          ],
+          "sizes": [
+            5.0,
+            7.0
+          ]
+        },
+        {
+          "text": "−−−−−−→V σ−(ˆa,ˆb, ˆc),",
+          "bbox": [
+            280.2,
+            510.69,
+            377.65,
+            523.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "V ∗(a, b, c)",
+          "bbox": [
+            234.36,
+            511.25,
+            277.48,
+            523.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "if σ−is odd. The maps θ(σ−) are deﬁned using the pairings.",
+          "bbox": [
+            126.72,
+            530.09,
+            392.24,
+            541.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "Lemma 3.8. These linear maps determine an action of the group S3 on this vector",
+          "bbox": [
+            126.72,
+            550.13,
+            485.27,
+            561.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR7",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "bundle, or, in other words, this is an S3-equivariant vector bundle. Furthermore,",
+          "bbox": [
+            126.72,
+            562.04,
+            485.4,
+            572.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "the action of any permutation on elements of V ∗(a, b, c) is the adjoint of the inverse",
+          "bbox": [
+            126.72,
+            572.57,
+            485.32,
+            584.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "of the action on V (a, b, c).",
+          "bbox": [
+            126.72,
+            585.92,
+            241.02,
+            595.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Proof. These are equivalent to the conditions in Lemma 3.6.",
+          "bbox": [
+            126.72,
+            604.52,
+            390.53,
+            614.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Theorem 3.9. Let f : M →N be a combinatorial isomorphism of labelled mani-",
+          "bbox": [
+            126.72,
+            623.69,
+            485.28,
+            633.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "folds. Then the simplicial invariants are equal, Z(M) = Z(N).",
+          "bbox": [
+            126.72,
+            635.96,
+            400.62,
+            645.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Proof. Let V (M) and V (N) be the vector spaces described in Deﬁnition 1.6. For",
+          "bbox": [
+            126.72,
+            654.56,
+            485.4,
+            664.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "each triangle in M, consider the restriction of f to this triangle. There is a element",
+          "bbox": [
+            126.72,
+            666.44,
+            485.19,
+            676.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "σ ∈S3 deﬁned by the unique decomposition of this map into a permutation followed",
+          "bbox": [
+            126.72,
+            678.17,
+            485.56,
+            689.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "by the simplicial map of the triangle to its image in N.",
+          "bbox": [
+            126.72,
+            690.44,
+            367.57,
+            700.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        }
+      ]
+    },
+    {
+      "page": 17,
+      "rotation": 0,
+      "drawings": 21,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 7",
+        "Figure 8"
+      ],
+      "labels": [
+        {
+          "text": "INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS",
+          "bbox": [
+            201.6,
+            93.96,
+            406.78,
+            100.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "4013",
+          "bbox": [
+            469.33,
+            93.96,
+            485.2,
+            100.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "Figure 7",
+          "bbox": [
+            284.28,
+            218.86,
+            327.71,
+            228.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Figure 8",
+          "bbox": [
+            284.28,
+            322.9,
+            327.71,
+            332.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "The result is based on the reduction of Alexander’s stellar moves to bistellar",
+          "bbox": [
+            138.6,
+            348.93,
+            485.49,
+            358.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "The theorem for stellar moves is given in [8, Chapter II, §D, Theorem",
+          "bbox": [
+            164.17,
+            360.65,
+            485.47,
+            370.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "moves.",
+          "bbox": [
+            126.72,
+            360.93,
+            156.02,
+            370.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "II.17].",
+          "bbox": [
+            126.72,
+            372.93,
+            152.53,
+            382.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Theorem 4.5. Two ﬁnite simplicial complexes are piecewise-linear homeomorphic",
+          "bbox": [
+            126.72,
+            390.29,
+            484.87,
+            400.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "if and only if they are related by a ﬁnite sequence of stellar moves.",
+          "bbox": [
+            126.72,
+            402.32,
+            416.76,
+            412.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Our generalisation of Pachner’s result is the following theorem.",
+          "bbox": [
+            138.6,
+            419.85,
+            413.91,
+            429.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Theorem 4.6. Two triangulated singular 3-manifolds are piecewise-linearly home-",
+          "bbox": [
+            126.72,
+            437.33,
+            485.14,
+            447.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "omorphic if and only if they are related by a ﬁnite sequence of bistellar moves.",
+          "bbox": [
+            126.72,
+            449.24,
+            468.45,
+            459.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Proof. It is suﬃcient to show that each stellar move can be obtained as a ﬁnite",
+          "bbox": [
+            126.72,
+            466.76,
+            485.47,
+            476.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "sequence of bistellar moves. In dimension three, this can be done explicitly. The",
+          "bbox": [
+            126.72,
+            478.77,
+            485.51,
+            488.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "stellar move on a 3-simplex is a bistellar move. The stellar move on a triangle is a",
+          "bbox": [
+            126.72,
+            490.65,
+            485.5,
+            500.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "composite of two bistellar moves, using the condition that the link of the triangle is",
+          "bbox": [
+            126.72,
+            502.65,
+            485.28,
+            512.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "S0. Finally, the stellar move on an edge is a composite of bistellar moves, using the",
+          "bbox": [
+            126.72,
+            513.36,
+            485.05,
+            524.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "condition that the link of an edge is a triangulation of S1. This later construction",
+          "bbox": [
+            126.72,
+            525.24,
+            485.38,
+            536.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "is done explicitly as follows.",
+          "bbox": [
+            126.72,
+            538.53,
+            248.09,
+            548.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Let NS be the vertices of an edge which is in p tetrahedra. Label the vertices",
+          "bbox": [
+            138.6,
+            550.52,
+            485.49,
+            560.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "of these p tetrahedra so that the vertices of these tetrahedra are",
+          "bbox": [
+            126.72,
+            562.4,
+            406.71,
+            572.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "for 1 ⩽i ⩽p.",
+          "bbox": [
+            310.56,
+            578.33,
+            368.53,
+            588.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "MSAM10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "NSEiEi+1",
+          "bbox": [
+            243.48,
+            578.6,
+            290.06,
+            589.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "This gives a triangulation of the 3-ball which looks like an orange with p segments.",
+          "bbox": [
+            126.72,
+            594.8,
+            485.42,
+            604.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Doing stellar subdivision on the edge NS gives a triangulation of the 3-ball with",
+          "bbox": [
+            126.72,
+            606.68,
+            485.34,
+            616.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "2p tetrahedra. This is like slicing the orange in half, cutting each segment in half.",
+          "bbox": [
+            126.72,
+            618.68,
+            483.42,
+            628.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "In order to obtain this complex from the original one by bistellar moves, ﬁrst do a",
+          "bbox": [
+            138.6,
+            630.57,
+            485.31,
+            640.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "bistellar move of order 4 on the tetrahedron NSE1E2. This introduces a new vertex",
+          "bbox": [
+            126.72,
+            642.56,
+            485.43,
+            653.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "which we label O. This gives the right number of vertices but only p+3 tetrahedra.",
+          "bbox": [
+            126.72,
+            654.56,
+            485.49,
+            664.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Now for j = 2, 3, . . . , n do a bistellar move of order 3 on the two tetrahedra ONSEj",
+          "bbox": [
+            126.72,
+            666.44,
+            484.38,
+            677.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "and NSEjEj+1. This has the eﬀect of introducing the edge OEj+1 and replaces",
+          "bbox": [
+            126.72,
+            678.44,
+            485.49,
+            689.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        },
+        {
+          "text": "the two tetrahedra by the three tetrahedra ONEjEj+1, OSEjEj+1 and ONSEj+1.",
+          "bbox": [
+            126.72,
+            690.44,
+            485.29,
+            701.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            7.0,
+            10.0
+          ]
+        }
+      ]
+    }
+  ]
+}

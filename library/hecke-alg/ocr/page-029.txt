@@ -1,0 +1,59 @@
+24 3. THE MODULAR REPRESENTATION THEORY OF #
+
+Suppose that 7 and 7+ 1 are in the same column of u. Then, by Corollary 3.15
+and our choice of (u, 0),
+
+The= (h*T)* = —TuvMay + Se asemst
+
+for some as, € R such that whenever u & s and vb & t then ag, = 0. However,
+Tim, = qm, by Lemma 3.2, so Tjh = gh and this forces ry» = 0, a contradiction.
+Consequently, i and i+ 1 do not belong to the same column of u.
+
+Next let wo =u(z,i+ 1). If bu then Tymyy = Myy SO Mwy Is involved in h
+since q~'T;h = h; however, this contradicts our assumption (ii) so, in fact, uD u’.
+Therefore, Myy + Mwy = Mp,Myy is an clement of M§ and h! = h—=?ryy(Muy + Muy)
+is an element of M£ which does not involve my. Applying the same argument to h!
+it follows that 7 and 7+ 1 are never in the same column of s if mg, is involved in h.
+This completes the proof when # = #2.
+
+Now suppose that R is an arbitrary ring. By Corollary 3.4, {m,Ti | dé 4, }
+is a basis of M/". By what we have shown, inside #2 we can write each row
+standard basis element m, Ty as a Z—linear combination of Murphy basis elements
+of the required form. The specialization homomorphism from .#2 to # maps the
+Murphy basis of #2 to the Murphy basis of #. It also maps the row standard
+basis of M£ to that of M“. Hence, in # each basis element m,7Ty can be written
+as an R-linear combination of Murphy basis elements of the required form. oO
+
+As in the last chapter, we define .# to be the R-module with basis
+
+{ Maup
+
+Similarly, we define .#* to be the R-module with basis ms, where 5 and t¢ are
+standard p-tableaux and pe > A.
+
+u,b € Std() for some partition }
+poof n such that p> 2 .
+
+3.17 Corollary Suppose that is a partition. Then 2 and XH are two-sided
+ideals of #.
+
+Proof. Let s and t be standard p-tableaux and w € Gp. Because #* =
+yp, 2", it is enough to show that ms:Tw € %¢*. We prove this by induction
+on A, the case 4 = (n) being a consequence of Lemma 3.2.
+
+First note that by Lemma 3.14 there exist run € R such that mp,Ty =
+SY PuvMuy Where the sum is over pairs (u,b) of standard p-tableaux with pe > A.
+Suppose that ry, # 0 for some p-tableaux u and v. By Proposition 3.16, if 7 and
+i+ 1 are in the same row of t* then they cannot be in the same column of u. It
+follows that 1,2... ,; must all be in the first row of u; so ty > A. Consideration
+of the second row shows that pi + fg > Ay + A2, and so on. Hence, pp & A whenever
+Tur #0.
+
+Because m5, = Tis) Mov the general case follows by induction on using the
+left handed version of Lemma 3.14, together with Corollary 3.4. Oo
+
+We can now prove the main result of this section. Let A be the set of partitions
+of n ordered by dominance. Recall that *:.# —+.# is the unique R-linear anti-
+isomorphism of # such that T% = T,_, for all w € Gy.
+
+w
