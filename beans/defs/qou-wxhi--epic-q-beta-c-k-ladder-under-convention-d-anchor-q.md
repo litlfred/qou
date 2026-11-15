@@ -5,7 +5,7 @@ status: todo
 type: epic
 priority: high
 created_at: 2026-11-15T17:33:01Z
-updated_at: 2026-11-15T17:33:23Z
+updated_at: 2026-11-15T17:33:56Z
 parent: qou-10v9
 ---
 
@@ -37,3 +37,7 @@ beans listed as "blocked on cds1" in the 2026-11-15 Q_beta verification CSV.
 
 
 **Baseline (from the Q_beta thread, 2026-11-15, not re-measured here):** n-p splitting alpha*|Phi(udd)-Phi(uud)| is +0.65% under convention C (z = 4993/10000) and 1.054 MeV (-18.5%) under convention D. This is a diagnostic to report against, NOT a target to tune toward (no-fitting rule).
+
+
+
+Tracking issue: litlfred/qou#7939.
