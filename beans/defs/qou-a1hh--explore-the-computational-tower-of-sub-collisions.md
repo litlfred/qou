@@ -130,3 +130,6 @@ At m ≤ 6 on 4 strands: every pure γγ word passes reading 3 (560/560); the on
 
 ## 2026-11-15 — amendment 4: pure ⟺ pass FAILS at q₀ for long words (c0e1d67e816, branch claude/gg-pure-long-words-q0-2026-11-15)
 At q₀ (proton, conv D, 40 dps). Exhaustive m = 7, 8: every pure word passes (min level char 0.50999), but 208 non-pure words pass at m = 8. Powers u^k of the 560 pure u (|u| = 3..6, k ≤ 10): 18 have a failing power, earliest at length 24 (u = V0.B0.V0.V0.B0.B0, k = 4). Seeded samples: pure fails 1/2000 at m = 24, 6/2000 at m = 30; non-pure passers 9 → 80 from m = 10 to 30. So pure ⟺ pass is false at q₀ in both directions. Still open: the shortest failing pure length (9..23 only sampled), and the sharp constant. Scope (a).
+
+## 2026-11-15 — amendment 5: shortest failing pure word at q₀ (dbdcdebf265, branch claude/gg-shortest-failing-pure-2026-11-15)
+Every pure word of length ≤ 11 passes reading 3 at q₀ (exhaustive; min level char 0.3200 at m = 11). Squares of pure words of length 9, 10, 11 fail 3, 10, 34 times, so the shortest failing pure word found has length 18, e.g. (B0.B0.V0.V0.B0.B0.V0.V0.B0)². Open: lengths 12–17 (only powers tested). Scope (a).
