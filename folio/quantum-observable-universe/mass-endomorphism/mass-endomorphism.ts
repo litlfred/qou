@@ -195,6 +195,7 @@ export default chapter({
         "chi-v21-hoefsmit-matrix-derivation",
         "phi-d-syt-count-conjecture",
         "categorical-chain-convergence-mechanisms",
+        "categorical-chain-convergence-mechanisms-neutron-truncation",
         "categorical-chain-convergence-mechanisms-table-data",
         "tau-M-asymptotic-rep-theory",
         "tau-M-asymptotic-rep-theory-proof",
