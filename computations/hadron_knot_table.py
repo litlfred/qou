@@ -23,51 +23,182 @@ Content block: rem:hadron-level-knot-table
 """
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
-import math
 import sys
+import time
 from pathlib import Path
-from mpmath import mp  # noqa: F401
+from mpmath import mp
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from q_parameter import Q, Q_INV, HA, HBAR_Q_SQ
-from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
-from hecke_core import (
-    build_nucleon_nf,
-    check_frobenius,
-)
-from hecke_core_legacy import (
+from _precision import set_compute_dps, fmt, COMPUTE_DPS  # noqa: E402
+
+# Set the working precision BEFORE any module-level mpf is built: an mpf
+# rounds to the AMBIENT dps, which is mpmath's default 15 until this runs.
+set_compute_dps()
+
+# `q_at` is anchor-aware: `q_parameter` selects the pin from this script's
+# stem via `q0_anchor_manifest.json`. `hadron_knot_table` is listed under
+# `physical_proton` (moved from `ideal_muon` 2026-11-15): it tabulates
+# mass / binding / Q-value observables, which is neither an explicit
+# proton-vs-muon comparison (E1) nor the CAL-1/2/3 calibration as
+# mathematics (E2), so the owner's proton default applies.
+from q_parameter import q_at  # noqa: E402
+from experimental_constants import M_E_MEV  # noqa: E402
+from hecke_core_legacy import (  # noqa: E402
     binding_energy,
     classify_nuclear_knot,
 )
-from pyhecke.gram import (
+from pyhecke.gram import (  # noqa: E402
     build_atom_nf,
-    nf_tr,
-    nf_net,
+    gram_matrix_mp,
     NF_NAMES,
 )
-from hecke_engine import HeckeEngine, HeckeRational
-from witness_base import WitnessBuilder
-from _precision import set_compute_dps  # noqa: E402
+from pyhecke.atom import build_nucleon_nf  # noqa: E402
+from pyhecke.constants import pn_interface_offset  # noqa: E402
+from hecke_engine import HeckeEngine  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
 
-# Markov parameter z = 1/(q^{1/2} + q^{-1/2}) for cross-channel weight
-_z = Q**3 / (Q**2 + 1)
-_Z2 = _z * _z
-
-# ── q0 canonical per-generator volumes (mpmath, true substrate) ──────────
-# Use the TRUE substrate q0, not the legacy 111/100 (~2e-4 off). The
-# exact-Fraction HeckeEngine cannot run at q0 (q0^k denominators 10^7k blow
-# up the Fractions; the table never terminates), so this mpmath port mirrors
-# HeckeRational.V_full at q0 — verified vs the rational engine to ~2e-4 (the
-# genuine q-gap). _HE is retained ONLY for the q-independent ground-state
-# ordering. See docs/audits/2026-06-16-gram-q-approximation-audit.md.
-set_compute_dps()
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
-_Q0 = mp.mpf(Q_50_DIGIT_STR)
+# ── Substrate constants at the working precision (NO float64) ────────────
+# Everything below is mpf at COMPUTE_DPS from the 70-digit anchor-aware
+# `q_at`. This replaces (2026-11-15) the float64 `q_parameter.Q` that fed
+# `parameters.q` / `z_markov` / `z_squared` and the 50-digit
+# `Q_50_DIGIT_STR` that fed the volume port — 50 digits is BELOW the
+# 60-digit OUTPUT_DPS, so `fmt` of anything built from it padded.
+_Q0 = q_at(COMPUTE_DPS)
 _QI0 = 1 / _Q0
 _HA0 = _Q0 - _QI0
+# Markov parameter, convention D: z = q³/(q² + 1).
 _z_q0 = _Q0**3 / (_Q0**2 + 1)
+_Z2 = _z_q0 * _z_q0
+# Canonical p-n interface offset (bring_color_weighted, owner ruling R3),
+# the same `D_PN` `pyhecke.atom.build_atom_nf` binds, but at the mpf q.
+_D_PN0 = pn_interface_offset(_Q0)
+# Markov trace on the NF basis {γ, σ₀, σ₁, L₊, L₋, e⁻}.
+_TR_M0 = [mp.mpf(1), _z_q0, _z_q0, _Z2, _Z2, _HA0 * _Z2 + _z_q0]
+# Gram matrix G_ij = tr_M(b_i b_j) at the same q, for Frobenius positivity.
+_G0 = gram_matrix_mp(COMPUTE_DPS, q=_Q0)
+# Frobenius-positivity tolerance: the value the float64 `check_frobenius`
+# used, kept so a verdict is not changed by the arithmetic change alone.
+_FROB_TOL = mp.mpf("1e-10")
+# Cross-check bound between this mp NF and the float64 builder. The float64
+# builder carries ~16 digits, compounded over up to ~1000 multiplications
+# for fe56; 1e-9 relative is loose enough not to fire on that and tight
+# enough to catch a CONSTRUCTION drift (a missing crossing moves a
+# component by O(1), see `build_nucleon_nf_mp`'s 2288 % episode).
+_XCHECK_REL = mp.mpf("1e-9")
+
 _HE = HeckeEngine(111, 100)  # ground-state ordering only (q-independent)
+
+
+def _hm0(nf, c, d, gen):
+    """NF × (c·σ_gen + d·I) in H₃(q) at the mpf q — same structure
+    constants as `pyhecke.gram.hm`, no float64, no small-coefficient skip."""
+    h = _HA0
+    r = [mp.mpf(0)] * 6
+    if gen == 0:
+        tables = [
+            (0, [(1, c), (0, d)]),
+            (1, [(1, c * h), (0, c), (1, d)]),
+            (2, [(3, c), (2, d)]),
+            (3, [(3, c * h), (2, c), (3, d)]),
+            (4, [(5, c), (4, d)]),
+            (5, [(5, c * h), (4, c), (5, d)]),
+        ]
+    else:
+        tables = [
+            (0, [(2, c), (0, d)]),
+            (1, [(4, c), (1, d)]),
+            (2, [(2, c * h), (0, c), (2, d)]),
+            (3, [(5, c), (3, d)]),
+            (4, [(4, c * h), (1, c), (4, d)]),
+            (5, [(5, c * h), (3, c), (5, d)]),
+        ]
+    for si, tgts in tables:
+        if nf[si] == 0:
+            continue
+        for ti, co in tgts:
+            r[ti] += nf[si] * co
+    return r
+
+
+_ONE, _ZERO = mp.mpf(1), mp.mpf(0)
+
+
+def _nucleon_block0(nf, kind):
+    """One nucleon's 11 crossings, in the order of
+    `pyhecke.atom.build_atom_nf` / `build_nucleon_nf`."""
+    h, half_h = _HA0, _HA0 / 2
+    for _ in range(3):                      # B₃ = (σ₀ σ₁⁻¹)³
+        nf = _hm0(nf, _ONE, _ZERO, 0)
+        nf = _hm0(nf, _ONE, -h, 1)
+    if kind == "uud":                       # proton quark crossings
+        nf = _hm0(nf, _ONE, _ZERO, 0)       # (0,1) uu
+        nf = _hm0(nf, _ONE, -half_h, 0)     # (0,2) ud
+        nf = _hm0(nf, _ONE, -half_h, 1)     # (1,2) ud
+    elif kind == "udd":                     # neutron quark crossings
+        nf = _hm0(nf, _ONE, -half_h, 0)     # (0,1) ud
+        nf = _hm0(nf, _ONE, -half_h, 0)     # (0,2) ud
+        nf = _hm0(nf, _ONE, -h, 1)          # (1,2) dd
+    else:
+        raise ValueError(f"unknown nucleon quark content {kind!r}")
+    nf = _hm0(nf, _ONE, _ZERO, 0)           # gluon 1
+    nf = _hm0(nf, _ONE, _ZERO, 0)           # gluon 2
+    return nf
+
+
+def _build_nucleon_nf0(quarks):
+    return _nucleon_block0([_ONE] + [_ZERO] * 5, quarks)
+
+
+def _build_atom_nf0(Z, N):
+    """mpf twin of `pyhecke.atom.build_atom_nf` (interleaved ground state,
+    all-pairs inter-nucleon crossings with the colour-weighted p-n offset,
+    one σ₁⁻¹ per electron)."""
+    A = Z + N
+    nf = [_ONE] + [_ZERO] * 5
+    if A == 0:
+        return nf
+    ordering, pc, nc = [], 0, 0
+    for k in range(A):
+        if (k % 2 == 0 and pc < Z) or nc >= N:
+            ordering.append("p")
+            pc += 1
+        else:
+            ordering.append("n")
+            nc += 1
+    for k in range(A):
+        nf = _nucleon_block0(nf, "uud" if ordering[k] == "p" else "udd")
+        for prev in range(k):
+            ti, tj = ordering[prev], ordering[k]
+            if ti == "p" and tj == "p":
+                nf = _hm0(nf, _ONE, _ZERO, 0)      # pp: σ₀
+            elif ti == "n" and tj == "n":
+                nf = _hm0(nf, _ONE, -_HA0, 0)      # nn: σ₀⁻¹
+            else:
+                nf = _hm0(nf, _ONE, _D_PN0, 0)     # pn: colour-weighted
+    for _ in range(Z):
+        nf = _hm0(nf, _ONE, -_HA0, 1)              # pe: σ₁⁻¹
+    return nf
+
+
+def _xcheck_vs_float_builder(nf_mp, nf_f64, what):
+    """Refuse to publish if the mp twin and the float64 builder disagree
+    beyond float64 accumulation — a construction drift, not rounding."""
+    scale = max(abs(mp.mpf(v)) for v in nf_mp) or _ONE
+    worst = max(abs(a - mp.mpf(float(b))) for a, b in zip(nf_mp, nf_f64))
+    if worst / scale > _XCHECK_REL:
+        raise RuntimeError(
+            f"{what}: mpf NF twin disagrees with the float64 builder by "
+            f"{mp.nstr(worst / scale, 5)} relative (> {_XCHECK_REL}); the "
+            f"two constructions have drifted apart — fix before publishing")
+    return worst / scale
+
+
+def _check_frobenius0(nf):
+    """Frobenius positivity G·x ≥ 0 at the mpf q. (stable, Gx, violations)."""
+    Gx = [mp.fsum(_G0[i][j] * nf[j] for j in range(6)) for i in range(6)]
+    violations = [(NF_NAMES[i], Gx[i]) for i in range(6) if Gx[i] < -_FROB_TOL]
+    return len(violations) == 0, Gx, violations
 
 
 def _crossing_q0(ti, tj):
@@ -159,55 +290,64 @@ def compute_per_generator_volumes(Z, N):
 
     Uses the CANONICAL paper formula (wedderburn-mass-formula.md):
         V̂_i^full = w_sym·λ_sym + w_std·V_std + w_alt·λ_alt
-    via HeckeRational.V_full (central utility).
 
     Cross-channel (mass-endomorphism-tower formula sum 3):
         δ_xchan = z² × Σ_{|i-j|=1} ln|V̂_i^full · V̂_j^full| × m_e
+
+    All mpf at COMPUTE_DPS.
 
     Returns:
         ordering, V_full_list, cross_sum, delta_xchan_MeV
     """
     A = Z + N
     if A < 2:
-        return [], [], 0.0, 0.0
+        return [], [], mp.mpf(0), mp.mpf(0)
 
     ordering, method = _HE.ground_state_ordering(Z, N)
-    # V_full at the true substrate q0 (mpmath), not the legacy 111/100.
     V_list = _v_full_all_q0(ordering)
 
-    cross_sum = 0.0
+    cross_sum = mp.mpf(0)
     for i in range(len(V_list) - 1):
         prod = abs(V_list[i] * V_list[i + 1])
-        if prod > 1e-300:
+        if prod != 0:
             cross_sum += mp.log(prod)
 
-    delta_xchan = _Z2 * cross_sum * M_E_MEV
+    delta_xchan = _Z2 * cross_sum * mp.mpf(M_E_MEV)
     return ordering, V_list, cross_sum, delta_xchan
 
 
 def compute_atom(name, Z, N, quarks=None):
-    """Compute hadron-level NF for one atom."""
-    if quarks:
-        quark_list = list(quarks.replace("u", "u").replace("d", "d"))
-        nf = build_nucleon_nf(quark_list)
-    else:
-        nf = build_atom_nf(Z, N)
+    """Compute hadron-level NF for one atom.
 
-    tr = nf_tr(nf)
-    net = nf_net(nf)
-    stable, Gx, violations = check_frobenius(nf)
+    Every published number is computed in mpf at COMPUTE_DPS and serialized
+    with `fmt` (2026-11-15). The float64 builders are still called, but ONLY
+    as a cross-check of the mpf twin's construction (`_xcheck_vs_float_builder`).
+    The one float64 value left is `B_MeV`: `binding_energy` returns `float`
+    by contract and its SDP leg is a float64 conic solve — see
+    `B_MeV_precision_note` in the witness.
+    """
+    if quarks:
+        nf = _build_nucleon_nf0(quarks)
+        nf_f64 = build_nucleon_nf(list(quarks))
+    else:
+        nf = _build_atom_nf0(Z, N)
+        nf_f64 = build_atom_nf(Z, N)
+    xcheck = _xcheck_vs_float_builder(nf, nf_f64, name)
+
+    tr = mp.fsum(nf[i] * _TR_M0[i] for i in range(6))
+    net = mp.fsum(nf)
+    stable, Gx, violations = _check_frobenius0(nf)
     alpha_knot, knot_name, is_hyp = classify_nuclear_knot(Z, N)
     B = binding_energy(Z, N)
 
-    # Compact NF: only non-zero coefficients with basis names
-    nf_compact = {}
-    for i, (bname, val) in enumerate(zip(NF_NAMES, nf)):
-        if abs(val) > 1e-15:
-            nf_compact[bname] = round(val, 12)
+    # Compact NF: the non-zero coefficients with basis names (exact zero
+    # test — the coefficients are mpf, so there is no float64 noise floor
+    # to threshold against).
+    nf_compact = {bname: fmt(val) for bname, val in zip(NF_NAMES, nf)
+                  if val != 0}
 
     # Per-generator traced volumes + cross-channel (mass-tower sum 3)
     ordering, V_list, cross_sum, delta_xchan = compute_per_generator_volumes(Z, N)
-    V_rounded = [round(float(v), 12) for v in V_list]  # compute mpf@q0; serialize float
 
     return {
         "name": name,
@@ -216,17 +356,19 @@ def compute_atom(name, Z, N, quarks=None):
         "A": Z + N,
         "nf": nf_compact,
         "n_terms": len(nf_compact),
-        "tr_M": round(float(tr), 12),
-        "net": round(float(net), 12),
-        "ln_abs_tr": round(mp.log(abs(tr)), 12) if abs(tr) > 1e-300 else None,
+        "tr_M": fmt(tr),
+        "net": fmt(net),
+        "ln_abs_tr": fmt(mp.log(abs(tr))) if tr != 0 else None,
         "frobenius_stable": stable,
+        "frobenius_min_Gx": fmt(min(Gx)),
+        "nf_float64_builder_max_rel_dev": mp.nstr(xcheck, 3),
         "knot_type": knot_name,
-        "B_MeV": round(B, 4),
+        "B_MeV": float(B),
         # Per-generator traced volumes (mass-tower formula, sum 1 + 3)
         "ordering": ordering,
-        "V_per_gen": V_rounded,
-        "cross_channel_sum": round(cross_sum, 12),
-        "delta_xchan_MeV": round(delta_xchan, 6),
+        "V_per_gen": [fmt(v) for v in V_list],
+        "cross_channel_sum": fmt(cross_sum),
+        "delta_xchan_MeV": fmt(delta_xchan),
     }
 
 
@@ -289,10 +431,13 @@ def _save_witness(results):
            f"fully computed; nothing is extrapolated.")
     )
     w.set_content_block("rem:hadron-level-knot-table")
-    w.add_parameter("q", Q)
+    w.add_parameter("q", fmt(_Q0))
     w.add_parameter("basis", NF_NAMES)
-    w.add_parameter("z_markov", _z)
-    w.add_parameter("z_squared", _Z2)
+    w.add_parameter("z_markov", fmt(_z_q0))
+    w.add_parameter("z_markov_convention", "D: z = q^3/(q^2+1)")
+    w.add_parameter("z_squared", fmt(_Z2))
+    w.add_parameter("pn_interface_offset", fmt(_D_PN0))
+    w.add_parameter("frobenius_tolerance", mp.nstr(_FROB_TOL, 3))
     w.add_parameter("n_atoms_expected", len(ATOMS))
     w.add_parameter("n_atoms_computed", len(results))
     w.add_parameter("total_nf_entries", total_terms)
@@ -337,28 +482,41 @@ def _save_witness(results):
         "computed": computed_names,
         "missing": missing,
     })
+    w.add_data("B_MeV_precision_note", (
+        "B_MeV is the only float64 field per atom. "
+        "hecke_core_legacy.binding_energy returns float by public contract "
+        "(bean qou-sv7h) and its sdp_cross_channel_contribution leg is a "
+        "float64 conic solve, so no exact source exists to carry; it is "
+        "left a float rather than padded. It also depends on whether cvxpy "
+        "is installed (the SDP leg is 0.0 without it), which the "
+        "environment block does not record."))
     w.add_data("atoms", results)
     w.save()
 
 
 results = []
 print(f"Hadron-level knot table ({len(ATOMS)} atoms)")
-print(f"q = {Q:.10f}, basis = {{γ, σ₀, σ₁, L₊, L₋, e⁻}}")
+print(f"q = {mp.nstr(_Q0, 20)}, basis = {{γ, σ₀, σ₁, L₊, L₋, e⁻}}")
 print()
 print(f"{'Atom':>12} {'A':>3} {'tr_M':>14} {'B(MeV)':>10} {'cross_sum':>11} {'δ_xchan':>10} {'Frob':>5}")
 print("-" * 80)
 
+_t_run = time.monotonic()
 for name, Z, N, quarks in ATOMS:
+    _t_atom = time.monotonic()
     r = compute_atom(name, Z, N, quarks)
     results.append(r)
     print(
         f"{name:>12} {r['A']:>3} "
-        f"{r['tr_M']:>14.6f} "
+        f"{mp.nstr(mp.mpf(r['tr_M']), 8):>14} "
         f"{r['B_MeV']:>10.4f} "
-        f"{r['cross_channel_sum']:>+11.6f} "
-        f"{r['delta_xchan_MeV']:>+10.4f} "
+        f"{mp.nstr(mp.mpf(r['cross_channel_sum']), 7):>11} "
+        f"{mp.nstr(mp.mpf(r['delta_xchan_MeV']), 6):>10} "
         f"{'OK' if r['frobenius_stable'] else 'FAIL':>5}"
     )
+    print(f"    [{name}: {time.monotonic() - _t_atom:.1f} s, "
+          f"run {time.monotonic() - _t_run:.1f} s, "
+          f"{len(results)}/{len(ATOMS)} atoms]", flush=True)
     # Checkpoint: a killed run keeps the rows it reached (bean `qou-i7ju`).
     _save_witness(results)
 
