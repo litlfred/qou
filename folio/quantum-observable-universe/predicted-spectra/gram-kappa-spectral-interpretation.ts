@@ -3,9 +3,9 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:gram-kappa-spectral-interpretation",
   title:
-    "Plancherel form of $\\kappa$ replaces the 2-jet hand calculation",
-  interprets: "prop:gram-determinant-plancherel-ratio",
-  uses: ["prop:gram-determinant-plancherel-ratio"],
+    "Conjectural Plancherel form of $\\kappa$",
+  interprets: "conj:gram-determinant-plancherel-ratio",
+  uses: ["conj:gram-determinant-plancherel-ratio", "def:cs-gram-determinant-ratio"],
   tags: [
     "interpretation",
     "kappa",

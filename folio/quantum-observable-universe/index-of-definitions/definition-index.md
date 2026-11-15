@@ -608,7 +608,8 @@
 | [prop:graded-hecke-energy-truncation-bound](#prop:graded-hecke-energy-truncation-bound) | Graded Hecke energy truncation bound: $P_K(q)$ has at most $\ell(K, q_0) + 1$ nonzero grades | Ch 12 | `qou:QOU.BraidsAndKnots.graded_hecke_energy_truncation_bound` |
 | [prop:graded-markov-trace-from-gs-filtration](#prop:graded-markov-trace-from-gs-filtration) | Graded Markov trace as the induced trace on $J^\ell / J^{\ell+1}$ | Ch 12 | `qou:QOU.BraidKnot.GradedMarkovTraceFromGSFiltration` |
 | [prop:graded-trace-residue-split](#prop:graded-trace-residue-split) | Graded-trace residue split on the confinement filtration | Ch 12 | `qou:QOU.BraidKnot.graded_trace_residue_split` |
-| [prop:gram-determinant-plancherel-ratio](#prop:gram-determinant-plancherel-ratio) | Gram-determinant ratio $\kappa$ as a Plancherel-weighted character product | Ch 12 | `qou:QOU.Archimedean.gram_determinant_plancherel_ratio` |
+| [def:cs-gram-determinant-ratio](#def:cs-gram-determinant-ratio) | Chern--Simons Gram-determinant ratio $\kappa$ | Ch 12 | `qou:QOU.Archimedean.csGramDetRatio` |
+| [conj:gram-determinant-plancherel-ratio](#conj:gram-determinant-plancherel-ratio) | Gram-determinant ratio $\kappa$ as a Plancherel-weighted character product | Ch 12 | — |
 | [prop:gram-weighted-qvalue](#prop:gram-weighted-qvalue) | Gram-weighted $\mathcal{Q}_q$-value from Frobenius norm of conversion channels | Ch 10 | `qou:QOU.Archimedean.gram_weighted_qvalue` |
 | [prop:gb-residue-spectral-sum](#prop:gb-residue-spectral-sum) | Gröbner–Shirshov residue spectral sum for the mass trace | Ch 12 | `qou:QOU.BraidKnot.gb_residue_spectral_sum` |
 | [prop:habiro-residue-sum-equivalence](#prop:habiro-residue-sum-equivalence) | Habiro completion ≡ Gröbner–Shirshov residue spectral sum (equivalence) | Ch 12 | `qou:QOU.BraidKnot.HabiroResidueSumEquivalence` |
