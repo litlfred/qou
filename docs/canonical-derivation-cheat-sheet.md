@@ -205,7 +205,7 @@ Every arrow lives in $\mathbb{Q}(q)$ until the Archimedean functor in step 9. No
 ### §3a — what step 3's closure does (cups, caps, and two separate steps)
 
 *Added 2026-11-16 (issue #8133). The math below is classical or already in the
-corpus; the Lean for the commutator statement is in progress on the same branch and is
+corpus; the Lean (`QOU/BraidsAndKnots/ClosureUnseen.lean`, sorry-free) is on the same branch and is
 **not** yet merged. Exact checks: `/mnt/project-files/qou-braid-closure/closure_probe.py`.*
 
 Step 3 writes "knot ⇄ braid closure, unique trace `tr_M`". Closure adds **no crossing**. It
@@ -242,8 +242,11 @@ close the vortex strands. The classical counterpart is Arnold's asymptotic linki
 orbit segments of a volume-preserving field are closed by **short paths**, and the closing arcs
 drop out of the helicity in the limit `T → ∞` (stated with proof references in
 `[komendarczyk2008]` §2, held at `library/arxiv-0808.1533v3/`). This is the fluid version of
-"the return arcs are unseen". It is **not yet explicit** in the fluid chapter; those two blocks
-are where it belongs. Reading the periodic direction of a periodic-box flow as the closure axis
+"the return arcs are unseen". Both blocks now say so explicitly, and the Lean twin of
+`prop:helicity-conservation` encodes md part (3): under conjugation dynamics the annular class is
+conserved (`QOU.FluidDynamics.annular_class_conserved`), hence every closure invariant
+(`closure_invariants_conserved`). The conjugation hypothesis is where the Euler flow would enter
+and is not proved; a reconnection changes the word and is outside it. Reading the periodic direction of a periodic-box flow as the closure axis
 (so that step 1 survives there) is an interpretation, not a derivation.
 
 ---

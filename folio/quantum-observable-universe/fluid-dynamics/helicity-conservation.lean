@@ -1,6 +1,7 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.BigOperators.Group.List.Basic
 import Mathlib.Analysis.SpecialFunctions.Sqrt
+import QOU.BraidsAndKnots.ClosureUnseen
 
 /-!
 # QOU.FluidDynamics.helicity_conservation — categorical helicity conservation
@@ -51,8 +52,14 @@ neither is a field of anything.
   every `t` — is where the quantum Euler equation would enter.  That the
   flow preserves the linking numbers and quantised circulations is the
   physical content of md part (1) and is **not** established here.
-- md parts (3) (Jones-polynomial refinement) and (4) (the `q → 1` classical
-  Moffatt limit) have **no encoding at all** in this file.
+- md part (3) (Jones-polynomial refinement) is encoded as `annular_class_conserved` and
+  `closure_invariants_conserved` below (added 2026-11-16, issue #8133): the closure of the
+  tangle's braid word is a trace, so under conjugation dynamics the whole annular class in
+  `HH₀` is conserved, and with it every closure invariant (each sector character, and the
+  Markov trace that gives `J_L`). The hypothesis that the flow acts on the word by conjugation
+  is where the Euler equation would enter, exactly as `hdef` does for part (1); it is **not**
+  established here, and a reconnection event (which changes the word) is outside it.
+- md part (4) (the `q → 1` classical Moffatt limit) has **no encoding** in this file.
 
 ## References
 - [leitner2026] §Fluid dynamics / Categorical helicity conservation,
@@ -180,5 +187,39 @@ theorem reeb_linking_magnitude_bound (q : ℝ) (hq : q > 1) :
     apply Real.sqrt_lt_sqrt (by norm_num)
     linarith
   exact one_div_lt_one_div_of_lt (Real.sqrt_pos.mpr (by norm_num)) h_denom
+
+section Closure
+
+open QOU.BraidsAndKnots.ClosureUnseen
+
+variable {R : Type*} [CommRing R] {A : Type*} [Ring A] [Algebra R A]
+
+/-- **md part (3), the closure step made explicit: the annular class is conserved.**
+
+Record the vortex tangle at discrete times by an element `β s` of the braid (Hecke) algebra `A`,
+and suppose the flow acts on it by conjugation, `β (s+1) = g s * β s * (g s)⁻¹` (hypothesis
+`hstep`, where the Euler flow would enter). Then the class of `β s` in
+`HH₀(A) = A ⧸ [A, A]` — the annular closure, which keeps every sector character separately — is
+the same at every time. -/
+-- Ref: [leitner2026] prop:helicity-conservation; prop:closure-unseen-subword
+theorem annular_class_conserved (β : ℕ → A) (g : ℕ → Aˣ)
+    (hstep : ∀ s, β (s + 1) = (g s : A) * β s * (↑(g s)⁻¹ : A)) :
+    ∀ s, univTrace (R := R) (β s) = univTrace (R := R) (β 0) :=
+  trace_conserved_of_conj univTrace_isTrace β g hstep
+
+/-- **md part (3): every closure invariant is conserved.** Under the same conjugation dynamics,
+any trace `t` on `A` — a sector character, or the Markov trace whose value on the tangle's word
+is `J_L` — takes the same value at every time. It is read off the conserved annular class
+through the factorisation `t = f ∘ univTrace` (`trace_factors`). -/
+-- Ref: [leitner2026] prop:helicity-conservation; prop:closure-unseen-subword
+theorem closure_invariants_conserved {M : Type*} [AddCommGroup M] [Module R M]
+    {t : A →ₗ[R] M} (ht : IsTrace t) (β : ℕ → A) (g : ℕ → Aˣ)
+    (hstep : ∀ s, β (s + 1) = (g s : A) * β s * (↑(g s)⁻¹ : A)) :
+    ∀ s, t (β s) = t (β 0) := by
+  intro s
+  rw [trace_factors ht, LinearMap.comp_apply, LinearMap.comp_apply,
+    annular_class_conserved (R := R) β g hstep s]
+
+end Closure
 
 end QOU.FluidDynamics

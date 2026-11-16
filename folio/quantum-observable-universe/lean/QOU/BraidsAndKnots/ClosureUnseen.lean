@@ -8,6 +8,9 @@ algebra through a *trace*: a linear map `t` with `t (x * y) = t (y * x)`. This f
   difference lies in the commutator span `[A, A]`. The universal trace is the quotient map
   `A → A ⧸ [A, A]` (the zeroth Hochschild homology `HH₀`).
 * `unseen_conj`: an emitted-and-reabsorbed subword `u * w * u⁻¹` is unseen against `w`.
+* `trace_factors`: every trace factors through `HH₀` (closure = annular step, then read-out).
+* `isTrace_sum`: a weighted average of traces is a trace (the Markov step averages sectors).
+* `trace_conserved_of_conj`: under conjugation dynamics every closure invariant is conserved.
 * `kron_one_mulVec_bell`, `ricochet`, `bell_pairing`: with the maximally entangled vector
   `Ω = Σᵢ eᵢ ⊗ eᵢ` (the coevaluation), `(X ⊗ 1) Ω = (1 ⊗ Xᵀ) Ω` and `⟨Ω, (X ⊗ 1) Ω⟩ = tr X`.
   So a closure is "prepare pairs, act on one half, project back onto the pairs".
@@ -82,6 +85,40 @@ trace. -/
 theorem unseen_conj (u : Aˣ) (w : A) :
     Unseen (R := R) ((u : A) * w * (↑u⁻¹ : A)) w :=
   (unseen_iff _ _).2 (conj_sub_mem u w)
+
+/-- **Every closure factors through the annular step.** A trace `t` is the universal trace
+`A → A ⧸ [A, A]` followed by a unique linear map: closure = annular closure (`HH₀`), then a
+read-out. -/
+theorem trace_factors {M : Type*} [AddCommGroup M] [Module R M] {t : A →ₗ[R] M}
+    (ht : IsTrace t) :
+    t = ((commSpan R A).liftQ t
+        (fun _ hz => (LinearMap.mem_ker).2 (trace_vanishes_on_commSpan ht hz)))
+      ∘ₗ univTrace := by
+  ext x
+  rfl
+
+/-- **Averaging traces gives a trace.** A weighted sum `Σᵢ cᵢ • tᵢ` of traces (for example the
+Markov trace as a weighted sum of sector characters) is again a trace. -/
+theorem isTrace_sum {ι : Type*} (s : Finset ι) (c : ι → R) (tr : ι → A →ₗ[R] R)
+    (h : ∀ i ∈ s, IsTrace (tr i)) : IsTrace (∑ i ∈ s, c i • tr i) := by
+  intro x y
+  simp only [LinearMap.coeFn_sum, Finset.sum_apply, LinearMap.smul_apply]
+  exact Finset.sum_congr rfl (fun i hi => by rw [h i hi x y])
+
+/-- **A closure invariant is conserved along conjugation dynamics.** If a word evolves in
+discrete time by conjugation by units, `β (s+1) = g s * β s * (g s)⁻¹`, then every trace takes
+the same value at every time. -/
+theorem trace_conserved_of_conj {M : Type*} [AddCommGroup M] [Module R M]
+    {t : A →ₗ[R] M} (ht : IsTrace t) (β : ℕ → A) (g : ℕ → Aˣ)
+    (hstep : ∀ s, β (s + 1) = (g s : A) * β s * (↑(g s)⁻¹ : A)) :
+    ∀ s, t (β s) = t (β 0) := by
+  intro s
+  induction s with
+  | zero => rfl
+  | succ s ih =>
+      rw [hstep s, ← ih]
+      have h0 := trace_vanishes_on_commSpan ht (conj_sub_mem (g s) (β s))
+      rwa [map_sub, sub_eq_zero] at h0
 
 end Trace
 
