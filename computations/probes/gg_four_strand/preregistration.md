@@ -108,3 +108,20 @@ Readouts:
   "no failing pure word of length ≤ 11, and none among the powers tested", and 12..23 stays open.
 
 No hypothesis preferred. Nothing selected or fitted. Scope (a).
+
+## Amendment 6 (2026-11-16, before any run): pure γγ words of length 12 to 17 at q₀
+
+Amendment 5: every pure word of length ≤ 11 passes; the shortest failing pure word found has length 18
+(a square). Lengths 12..17 were tested only through powers.
+
+Object and convention as in amendments 4-5 (q₀ proton, convention D, 40 dps, pass iff every level character ≥ −1e-30).
+
+Readouts:
+- G1 (exhaustive): every pure word of length 12. Report pure pass/fail counts, the smallest level character,
+  and up to 200 failing words.
+- G2 (sample): for m = 13, 14, 15, 16, 17, a seeded uniform sample of 20000 distinct pure words
+  (random.Random(6000 + m), rejection sampling). Report fail counts, the smallest level character and its word.
+- Stated answer: the smallest length with a failure found. A sample with no failure does not show that
+  length is clean; that is reported as "none found in 20000".
+
+No hypothesis preferred. Nothing selected or fitted. Scope (a).
