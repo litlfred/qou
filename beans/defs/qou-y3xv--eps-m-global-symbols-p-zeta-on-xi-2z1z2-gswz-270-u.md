@@ -1,7 +1,8 @@
 ---
 # qou-y3xv
 title: 'eps_m GLOBAL symbols: P_zeta on xi = 2[z1]+[z2] (GSWZ 270) — unramified mu_{624m} fields, d=ord_5(624m); z1=1-a^2, z2=z1^2-z1+2 verified 5-units both components; z3=z1; extend gswz_epsm_kummer_level machinery'
-status: todo
+status: in-progress
+pr: 8217
 type: task
 priority: normal
 tags:
@@ -51,3 +52,8 @@ gswz_psi_section_division.witness.json).
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-11 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## Progress Update (2026-11-16T22:04:01Z)
+- Implemented machine-checked Lean 4 theorem in `folio/quantum-observable-universe/lean/QOU/QBeta/SteepestDescentEulerMaclaurinAndFrobeniusDiagonal.lean` and 80-dps `mpmath` / exact rational witness `computations/probes/steepest-descent-euler-maclaurin-and-frobenius-diagonal.witness.json`.
+- Opened PR https://github.com/litlfred/qou/pull/8217 (`f4d145a08828886b4eba631166b3e61717adc12d`); keeping `status: in-progress` until PR merges.
