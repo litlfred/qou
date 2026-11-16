@@ -26,3 +26,4 @@ import QOU.Torsion.brane_boundary_structure
 -- the QOU.Braiding namespace (module path ≠ namespace), so the block's
 -- lean.ref qou:QOU.Braiding.HeckeMassElement is unchanged. COMPILE-PENDING.
 import QOU.Torsion.HeckeMassElement
+import QOU.Torsion.MultiplicativeIntegralCurvature

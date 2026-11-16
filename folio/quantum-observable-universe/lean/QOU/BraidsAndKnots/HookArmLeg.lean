@@ -237,4 +237,173 @@ theorem carrier_mem_three (l : List ℕ) (hs : l.Sorted (· ≥ ·)) (p : ℕ ×
       have hcontra : (0 : ℕ) = 1 := congrArg Prod.fst (hA.trans hB.symm)
       omega
 
+/-! ## Depth-1 converse (bean `qou-ev3a`, D2): each of the three shapes achieves `hookLen = n − 1`
+
+`carrier_mem_three` confines any cell with `hookLen l p + 1 = l.sum` to `(0,0)`, `(0,1)` or `(1,0)`.
+Conversely, each of the three depth-1 carrier shapes of the second-instance audit
+(`docs/audits/2026-07-26-covariance-kernel-A2-tail-second-instance.md`) achieves `hookLen = n − 1`
+at its stated cell:
+
+1. **Single row `[n]` (`2 ≤ n`) at `(0, 1)`**: `hookLen [n] (0, 1) = n − 1`.
+2. **Single column `List.replicate n 1` (`2 ≤ n`) at `(1, 0)`**:
+   `hookLen (List.replicate n 1) (1, 0) = n − 1`.
+3. **Two-corner shape `a :: 2 :: List.replicate c 1` (`2 ≤ a`, size `n = a + c + 2`) at `(0, 0)`**:
+   `hookLen (a :: 2 :: List.replicate c 1) (0, 0) = a + c + 1 = n − 1`. -/
+
+/-- Every entry of `List.replicate c 1` is positive, so `countP (0 < ·)` equals `c`. -/
+theorem countP_pos_replicate_one :
+    ∀ c : ℕ, (List.replicate c 1).countP (fun x => decide (0 < x)) = c := by
+  intro c
+  induction c with
+  | zero => rfl
+  | succ c ih =>
+      rw [List.replicate_succ, List.countP_cons, ih]
+      rfl
+
+/-- The single-row partition `[n]` (`1 ≤ n`) is weakly decreasing. -/
+theorem sorted_singleRow (n : ℕ) (hn : 1 ≤ n) : ([n] : List ℕ).Sorted (· ≥ ·) :=
+  sorted_hookShape n 0 hn
+
+/-- The single-column partition `List.replicate n 1` is weakly decreasing. -/
+theorem sorted_singleCol (n : ℕ) : (List.replicate n 1).Sorted (· ≥ ·) := by
+  cases n with
+  | zero => exact List.sorted_nil
+  | succ m => exact sorted_hookShape 1 m (Nat.le_refl 1)
+
+/-- A two-corner partition `a :: 2 :: List.replicate c 1` with `2 ≤ a` is weakly decreasing. -/
+theorem sorted_twoCorner (a c : ℕ) (ha : 2 ≤ a) :
+    (a :: 2 :: List.replicate c 1).Sorted (· ≥ ·) := by
+  rw [List.sorted_cons]
+  refine ⟨?_, sorted_hookShape 2 c (by omega)⟩
+  intro b hb
+  rcases List.mem_cons.mp hb with rfl | hbc
+  · exact ha
+  · have hb1 : b = 1 := List.eq_of_mem_replicate hbc
+    omega
+
+/-- **Shape 1 (single row `[n]`), cell membership**: `(0, 1) ∈ cells [n]` for `2 ≤ n`. -/
+theorem zero_one_mem_cells_singleRow (n : ℕ) (hn : 2 ≤ n) :
+    ((0 : ℕ), (1 : ℕ)) ∈ cells [n] := by
+  rw [mem_cells]
+  exact hn
+
+/-- **Shape 1 (single row `[n]`), hook length**: `hookLen [n] (0, 1) = n − 1` for `2 ≤ n`. -/
+theorem hookLen_singleRow_zero_one (n : ℕ) (hn : 2 ≤ n) :
+    hookLen [n] (0, 1) = n - 1 := by
+  have hs : ([n] : List ℕ).Sorted (· ≥ ·) := sorted_singleRow n (by omega)
+  unfold hookLen
+  dsimp only
+  rw [conj_getD [n] hs 1]
+  have h1 : ([n] : List ℕ).getD 0 0 = n := rfl
+  have h1lt : 1 < n := by omega
+  have h2 : ([n] : List ℕ).countP (fun x => decide (1 < x)) = 1 := by
+    simp [h1lt]
+  rw [h1, h2]
+  omega
+
+/-- **Shape 1 (single row `[n]`), depth-1 sum form**: `hookLen [n] (0, 1) + 1 = [n].sum`. -/
+theorem hookLen_singleRow_zero_one_add_one (n : ℕ) (hn : 2 ≤ n) :
+    hookLen [n] (0, 1) + 1 = [n].sum := by
+  rw [hookLen_singleRow_zero_one n hn, List.sum_cons, List.sum_nil]
+  omega
+
+/-- **Shape 2 (single column `1^n`), cell membership**: `(1, 0) ∈ cells (List.replicate n 1)`
+for `2 ≤ n`. -/
+theorem one_zero_mem_cells_singleCol (n : ℕ) (hn : 2 ≤ n) :
+    ((1 : ℕ), (0 : ℕ)) ∈ cells (List.replicate n 1) := by
+  obtain ⟨m, rfl⟩ : ∃ m, n = m + 2 := ⟨n - 2, by omega⟩
+  rw [mem_cells]
+  dsimp only
+  simp [List.replicate_succ]
+
+/-- **Shape 2 (single column `1^n`), hook length**:
+`hookLen (List.replicate n 1) (1, 0) = n − 1` for `2 ≤ n`. -/
+theorem hookLen_singleCol_one_zero (n : ℕ) (hn : 2 ≤ n) :
+    hookLen (List.replicate n 1) (1, 0) = n - 1 := by
+  obtain ⟨m, rfl⟩ : ∃ m, n = m + 2 := ⟨n - 2, by omega⟩
+  have hs : (List.replicate (m + 2) 1).Sorted (· ≥ ·) := sorted_singleCol (m + 2)
+  unfold hookLen
+  dsimp only
+  rw [conj_getD (List.replicate (m + 2) 1) hs 0]
+  have h1 : (List.replicate (m + 2) 1).getD 1 0 = 1 := by
+    simp [List.replicate_succ]
+  have h2 : (List.replicate (m + 2) 1).countP (fun x => decide (0 < x)) = m + 2 :=
+    countP_pos_replicate_one (m + 2)
+  rw [h1, h2]
+  omega
+
+/-- **Shape 2 (single column `1^n`), depth-1 sum form**:
+`hookLen (List.replicate n 1) (1, 0) + 1 = (List.replicate n 1).sum`. -/
+theorem hookLen_singleCol_one_zero_add_one (n : ℕ) (hn : 2 ≤ n) :
+    hookLen (List.replicate n 1) (1, 0) + 1 = (List.replicate n 1).sum := by
+  rw [hookLen_singleCol_one_zero n hn, sum_replicate_one n]
+  omega
+
+/-- Size of a two-corner diagram `(a, 2, 1^c)`: `sum = a + c + 2`. -/
+theorem sum_twoCorner (a c : ℕ) :
+    (a :: 2 :: List.replicate c 1).sum = a + c + 2 := by
+  rw [List.sum_cons, List.sum_cons, sum_replicate_one c]
+  omega
+
+/-- **Shape 3 (two-corner `(a, 2, 1^c)`), cell membership**:
+`(0, 0) ∈ cells (a :: 2 :: List.replicate c 1)` for `2 ≤ a`. -/
+theorem zero_zero_mem_cells_twoCorner (a c : ℕ) (ha : 2 ≤ a) :
+    ((0 : ℕ), (0 : ℕ)) ∈ cells (a :: 2 :: List.replicate c 1) := by
+  rw [mem_cells]
+  dsimp only
+  rw [List.getD_cons_zero]
+  omega
+
+/-- **Shape 3 (two-corner `(a, 2, 1^c)`), hook length**:
+`hookLen (a :: 2 :: List.replicate c 1) (0, 0) = a + c + 1` for `2 ≤ a`. -/
+theorem hookLen_twoCorner_zero_zero (a c : ℕ) (ha : 2 ≤ a) :
+    hookLen (a :: 2 :: List.replicate c 1) (0, 0) = a + c + 1 := by
+  have hs : (a :: 2 :: List.replicate c 1).Sorted (· ≥ ·) := sorted_twoCorner a c ha
+  unfold hookLen
+  dsimp only
+  rw [conj_getD (a :: 2 :: List.replicate c 1) hs 0]
+  have h1 : (a :: 2 :: List.replicate c 1).getD 0 0 = a := rfl
+  have h2 : (a :: 2 :: List.replicate c 1).countP (fun x => decide (0 < x)) = c + 2 := by
+    have ha0 : (0 : ℕ) < a := by omega
+    simp [ha0, countP_pos_replicate_one c]
+  rw [h1, h2]
+  omega
+
+/-- **Shape 3 (two-corner `(a, 2, 1^c)`), `sum − 1` form**:
+`hookLen (a :: 2 :: List.replicate c 1) (0, 0) = (a :: 2 :: List.replicate c 1).sum − 1`. -/
+theorem hookLen_twoCorner_zero_zero_eq_sum_sub_one (a c : ℕ) (ha : 2 ≤ a) :
+    hookLen (a :: 2 :: List.replicate c 1) (0, 0) = (a :: 2 :: List.replicate c 1).sum - 1 := by
+  rw [hookLen_twoCorner_zero_zero a c ha, sum_twoCorner a c]
+  omega
+
+/-- **Shape 3 (two-corner `(a, 2, 1^c)`), depth-1 sum form**:
+`hookLen (a :: 2 :: List.replicate c 1) (0, 0) + 1 = (a :: 2 :: List.replicate c 1).sum`. -/
+theorem hookLen_twoCorner_zero_zero_add_one (a c : ℕ) (ha : 2 ≤ a) :
+    hookLen (a :: 2 :: List.replicate c 1) (0, 0) + 1 = (a :: 2 :: List.replicate c 1).sum := by
+  rw [hookLen_twoCorner_zero_zero a c ha, sum_twoCorner a c]
+
+/-- **D2 converse (`qou-ev3a`)**: each of the three depth-1 carrier shapes — single row `[n]` at
+`(0, 1)`, single column `List.replicate n 1` at `(1, 0)`, and two-corner `a :: 2 :: List.replicate c 1`
+at `(0, 0)` — contains its stated carrier cell and achieves `hookLen = sum − 1` (`hookLen + 1 = sum`). -/
+theorem depth1_three_shapes_achieve_hookLen_eq_sum_sub_one
+    (n a c : ℕ) (hn : 2 ≤ n) (ha : 2 ≤ a) :
+    (((0 : ℕ), (1 : ℕ)) ∈ cells [n] ∧
+      hookLen [n] (0, 1) + 1 = [n].sum ∧
+      hookLen [n] (0, 1) = n - 1) ∧
+    (((1 : ℕ), (0 : ℕ)) ∈ cells (List.replicate n 1) ∧
+      hookLen (List.replicate n 1) (1, 0) + 1 = (List.replicate n 1).sum ∧
+      hookLen (List.replicate n 1) (1, 0) = n - 1) ∧
+    (((0 : ℕ), (0 : ℕ)) ∈ cells (a :: 2 :: List.replicate c 1) ∧
+      hookLen (a :: 2 :: List.replicate c 1) (0, 0) + 1 = (a :: 2 :: List.replicate c 1).sum ∧
+      hookLen (a :: 2 :: List.replicate c 1) (0, 0) = (a :: 2 :: List.replicate c 1).sum - 1) :=
+  ⟨⟨zero_one_mem_cells_singleRow n hn,
+    hookLen_singleRow_zero_one_add_one n hn,
+    hookLen_singleRow_zero_one n hn⟩,
+   ⟨one_zero_mem_cells_singleCol n hn,
+    hookLen_singleCol_one_zero_add_one n hn,
+    hookLen_singleCol_one_zero n hn⟩,
+   ⟨zero_zero_mem_cells_twoCorner a c ha,
+    hookLen_twoCorner_zero_zero_add_one a c ha,
+    hookLen_twoCorner_zero_zero_eq_sum_sub_one a c ha⟩⟩
+
 end QOU.BraidsAndKnots.HookArmLeg

@@ -633,6 +633,8 @@ import QOU.Archimedean.DilogPartBWindowMeasure
 import QOU.Archimedean.DilogPartBAEAssembly
 import QOU.Archimedean.DilogPartBAEFinal
 import QOU.Archimedean.DilogNaStokesOrdering
+import QOU.Archimedean.DilogNaStokesHolonomyOrdering
+import QOU.Torsion.MultiplicativeIntegralCurvature
 import QOU.Interactions
 import QOU.Encounter
 import QOU.BraidKnot
