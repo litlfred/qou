@@ -1,0 +1,180 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-16T19:53:04.329867+00:00",
+  "commitSha": "cf283b8e199f4643fb9e0259ec0a2702096bdd9b",
+  "assertions": [
+    {
+      "name": "zeta4_cyclic_denom_collapse_and_periodicity",
+      "computed": "2.319660021626264212453869088130527100643665594804694719e-71",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1e-50"
+    },
+    {
+      "name": "pure_cyclic_carrier_orbit_sum_eq_four_mul",
+      "computed": "1.630022234188808226151641472359802520522855615665044874e-70",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1e-50"
+    },
+    {
+      "name": "bridged_vModel_mul_cyclicDenomFour_faithful_and_partner",
+      "computed": "4.586641999798553651345267150401683977987067845200572123e-70",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1e-50"
+    },
+    {
+      "name": "t35_supertrace_collapses_to_h_times_qint10",
+      "computed": "2.486620733165098499023862223672432009639190308674340629",
+      "expected": "2.486620733165098499023862223672432009639190308674340629",
+      "passed": true,
+      "tolerance": "1e-50"
+    },
+    {
+      "name": "t35_jones_vs_binomial_gap_exact",
+      "computed": "-4.743998894858505923404381017239652742051324306168315518",
+      "expected": "-4.743998894858505923404381017239652742051324306168315518",
+      "passed": true,
+      "tolerance": "1e-50"
+    },
+    {
+      "name": "force_carrier_vs_meson_generation_genus_separation",
+      "computed": "4",
+      "expected": "4",
+      "passed": true,
+      "tolerance": "1e-50"
+    },
+    {
+      "name": "meson_ratio_bare_vs_codata_alpha_em_shift_ppb",
+      "computed": "157.9662642207817913371257016940623275439040917215984855",
+      "expected": "157.9662642207817913371257016940623275439040917215984855",
+      "passed": true,
+      "tolerance": "1e-50"
+    },
+    {
+      "name": "meson_em_factor_trunc_exceeds_full_log",
+      "computed": "0.004174183789511302598026122444590828005008049002021083988",
+      "expected": "0.004174183789511302598026122444590828005008049002021083988",
+      "passed": true,
+      "tolerance": "1e-50"
+    },
+    {
+      "name": "cs_tower_order2_and_order3_tail_identities",
+      "computed": "9.556298971118164953773752449997082719122231190862372382e-75",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1e-50"
+    },
+    {
+      "name": "cs_tower_resummed_residual_vs_codata_ppb",
+      "computed": "-467.6364224014564052249364739961931990988929812850340163",
+      "expected": "-467.6364224014564052249364739961931990988929812850340163",
+      "passed": true,
+      "tolerance": "1e-50"
+    },
+    {
+      "name": "unique_kappa_star_exact_closure",
+      "computed": "137.035999177",
+      "expected": "137.035999177",
+      "passed": true,
+      "tolerance": "1e-50"
+    },
+    {
+      "name": "qgram_16_readings_zero_hits_in_100ppb_window",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-50"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "round50-zeta4-bridge-and-alpha-em-cs-tower",
+  "scriptFile": "round50_zeta4_bridge_and_alpha_em_cs_tower_probe.py",
+  "scriptHash": "e7bf4a93b887",
+  "scriptCommitSha": "cf283b8e199f4643fb9e0259ec0a2702096bdd9b",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/round50_zeta4_bridge_and_alpha_em_cs_tower_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/round50_zeta4_bridge_and_alpha_em_cs_tower_probe.py"
+  },
+  "description": "50-dps verification of the N=4 CyclicFaddeevPhi <-> zeta4 analytic model bridge (qou-ztod) and the alpha_EM Chern-Simons tower / T(3,5) [10]_q linchpin / m_K/m_pi sensitivity / 16-reading q-Gram exclusion theorems (qou-15sj, qou-5ipv, qou-gwio, qou-gbsa).",
+  "parameters": {
+    "working_dps": 65,
+    "q0_proton": "1.109978582751380807591669095610768879874499121873578736"
+  },
+  "data": {
+    "summary": {
+      "qou_ztod": {
+        "d4_prod_re": "0.449957868995255051796698416939",
+        "d4_prod_im": "-1.41479175950167194463659211772",
+        "bridged_orbit_sum_abs": "2.54889618472830170961865834463e-70",
+        "bridged_sign_isotype_abs": "1.55008257227023378537824207803e-70"
+      },
+      "qou_15sj": {
+        "supertrace_t35": "2.48662073316509849902386222367",
+        "jones_t35_at_q2": "-2.25737816169340742438051879357",
+        "twice_g_carriers": 16,
+        "twice_g_mesons": 12
+      },
+      "qou_5ipv": {
+        "ratio_codata": "3.5371185217232111490200399504",
+        "ratio_bare": "3.53711908046861013176991064202",
+        "shift_ppb": "157.96626422078179134",
+        "trunc_minus_full_log": "0.00417418378951130259802612244459"
+      },
+      "qou_gwio": {
+        "alpha_inv_resummed": "137.035935093975604658795689994",
+        "residual_ppb": "-467.63642240145640522",
+        "order2_tail_ppb": "11.062641048899344847",
+        "order3_tail_ppb": "0.029532147885569750794"
+      },
+      "qou_gbsa": {
+        "kappa_shipped": "1.72161420170878821304705424054",
+        "kappa_star": "1.91531429605969128113548588556",
+        "kappa_window_100ppb": [
+          "1.8739030153240805447",
+          "1.9567202434035308727"
+        ],
+        "readings_count": 16,
+        "readings_kappas": [
+          "1.72161420170878821304705424054",
+          "144.612830821852145517306679938",
+          "0.457662214361047592329350214308",
+          "0.600654951497144383409695053685",
+          "-0.209396196303375972584842860598",
+          "-0.186930872100291279307165147088",
+          "1.14800623602885534756744966351",
+          "2.84975682843936931171091402671",
+          "2.11548671957346988573530273756",
+          "-10.9204781833552893217623915631",
+          "0.468284926832206871923029546574",
+          "0.617199638788320331916376214314",
+          "-0.204759356582690688915795961602",
+          "-0.183551668972399552521658232595",
+          "1.21727089076823570737283802114",
+          "3.26499597686590083288162420872"
+        ]
+      }
+    }
+  }
+}
