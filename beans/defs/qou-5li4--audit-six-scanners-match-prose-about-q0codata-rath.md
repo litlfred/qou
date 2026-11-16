@@ -1,13 +1,13 @@
 ---
 # qou-5li4
 title: 'AUDIT: six scanners match prose ABOUT q0/CODATA rather than code USING it — 3 are gates, 1 under-reports this epic''s own counts'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-26T03:58:32Z
-updated_at: 2026-10-04T15:16:29Z
+updated_at: 2026-11-16T18:12:00Z
 parent: qou-2002
 ---
 
@@ -243,3 +243,17 @@ the ratchet direction.
 witnesses I committed in the #5797 arc match `origin/main` exactly today —
 `Q0_OK 972`, `Q0_ANCHOR_MISSING 1649`, `proton-pin 1682`. The revert was right
 even though half my reasoning for it was wrong.
+
+
+## 2026-11-16 — all six scanners wired to `_source_normalise` with self-tests (PR #8146)
+
+Extended `computations/audits/_source_normalise.py` with two line/column-preserving passes (`code_and_numeric_strings_only(src)`, which blanks comments, docstrings, and non-numeric prose strings / `FSTRING_MIDDLE` tokens while keeping numeric string constants like `mp.mpf("0.78233341")` intact, and `identifiers_only(src)`, which blanks all comments and string literals) and wired all six scanners:
+
+1. **`computations/audits/hardcoded_literal_audit.py`**: Replaced `re.sub(r'\"\"\".*?\"\"\"', "", text, flags=re.DOTALL)` with `code_and_numeric_strings_only(text)`, fixed `has_banner` to use `ast.get_docstring` (so shebang-prefixed files like `canonical_tower.py` have their `CLASS-A` banner recognised), and skipped `codata_2022_source.py`. Live `i9_violation` count drops `338 → 293` (`349 → 325` scripts, removing 24 prose-only false-positive files including `canonical_tower.py`). Added `--self-test`.
+2. **`computations/audits/canonical_script_input_audit.py`**: Matched identifier markers against `identifiers_only(text)` (removing 208 prose-only `Q_β-only-hadronic` false positives) and added AST import inspection (`_imports_q0_from_q_parameter`) so importing only non-`q₀` symbols (`MASS_RATIO_MU_E` in `knot-volumes.py`, `vol_4_1_at` in `hyperbolic_volumes.py`, etc.) does not set `uses_canonical_q0_source: True`. Added `--self-test`.
+3. **`computations/audits/q0_consistency_audit.py`**: Wired `code_and_numeric_strings_only` so prose-string mentions (`q0AnchorReason`) classify as `stale-docstring` and separated pin recognizers (`PROTON_PREFIX`, `_PROTON_SIG`) and anti-straddle guards (`if not q.startswith("1.10997858275")`) into `pin-recognizer-or-guard` instead of `production-hardcode`. Added `--self-test`.
+4. **`scripts/convention-c-taint.py`**: Applied `code_only` in `_read_source`, `_module_sources`, and `_read_context_refs`, removing 282 phantom comment/docstring read-edges (`2496 → 2214` edges) and adding an 8th self-test case (`selftest: 8/8`).
+5. **`computations/audits/derived_alpha_em_usage_audit.py`**: Wired `code_and_numeric_strings_only` into `classify()` and `scan()`, removing 11 prose-only false-positive `INPUT` flags (`64 → 53`, including `coulomb_mirror_killswitch_probe.py:195` and f-string prose in `wlambda_binding_a3_mirror_selection.py:129`). Extended `--self-test` (`12/12 PASS`).
+6. **`computations/audits/q0_muon_population_partition.py`**: Evaluated `direct_pinners()` against `code_only(text)`, recovering `derived_masses.py` (previously exempted by its own docstring mentioning `q_parameter`) and dropping 2 audit scripts (`mech5_pin_bind_taint_audit.py`, `proton_pin_assertion_check.py`) that quoted `d["derived_50_digit"]["q"]` in comments/docstrings. Added `--self-test`.
+- Note on `q0_producer_pin_classifier.py`: measured replacing `_code_only_text` (which strips all `STRING` tokens) with `code_only` (which keeps single-quoted strings); keeping single-quoted strings caused 23 false `BOTH` flips where `"ANCHOR"` appeared in a string literal alongside `"ideal"`/`"muon"`, so `_code_only_text`'s all-string strip in `q0_producer_pin_classifier.py` is intentionally retained (`--selftest` passes).
+- Kept at `status: in-progress` for owner review. PR #8146 (`5c6c5fb610a38f0405e9d280b16b0999a8124c8f`).

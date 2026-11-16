@@ -1,13 +1,13 @@
 ---
 # qou-wn1w
 title: 'GAP: the CODATA stale-edition scan was a gate nobody ran'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-22T16:00:32Z
-updated_at: 2026-10-04T15:13:01Z
+updated_at: 2026-11-16T18:12:00Z
 parent: qou-2002
 ---
 
@@ -65,3 +65,10 @@ back and re-open the hole.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-22 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-11-16 — live verification on `origin/main` (PR #8146)
+
+Verified on `origin/main` (`dc12b128cc`) and PR #8146 (`5c6c5fb610a38f0405e9d280b16b0999a8124c8f`):
+
+- `scripts/precision-gates.sh` carries `"CODATA stale-edition|computations/codata_corpus_literal_scan.py|--strict --quiet --no-witness|yes|yes"` as a blocking gate with self-test enabled (`--changed` predicate includes `^folio/.*\.(lean|ts)$`).
+- Re-ran `python3 computations/codata_corpus_literal_scan.py --self-test`: 30/30 assertions pass (`self-test passed`, exit 0). Kept at `status: in-progress` for owner review.
