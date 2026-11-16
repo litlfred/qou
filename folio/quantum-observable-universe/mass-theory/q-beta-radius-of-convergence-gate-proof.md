@@ -78,7 +78,7 @@ The operational threshold
 $|\tilde u_0 - u_0|/u_0 > 10^{-6}$ is a chosen value. It sits about
 $5\times$ above the measured proton–muon shift of $u_0$, so anchor
 choice alone does not trip the test, and it is much sharper than the
-few-percent band used by the $\S 4(d)$
+one-decade window used by the $\S 4(d)$
 [direction-sanity gate](q-beta-direction-sanity-gate.md). A candidate
 that fails it is inconsistent with this conjecture, which is a
 scope-limited negative, not a structural refutation.
