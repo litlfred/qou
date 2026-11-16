@@ -1,0 +1,333 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-16T18:29:50.962906+00:00",
+  "commitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
+  "assertions": [
+    {
+      "name": "g2_su3_isotropy_j_square_and_commutant",
+      "computed": 8,
+      "expected": 8,
+      "passed": true,
+      "source": "G2IsotropyComplexThreefold.lean (qou-uq5x)"
+    },
+    {
+      "name": "bring_klein_s4_fano_bridge",
+      "computed": 24,
+      "expected": 24,
+      "passed": true,
+      "source": "G2IsotropyComplexThreefold.lean (qou-ys29)"
+    },
+    {
+      "name": "baez_huerta_z6_hypercharge_spectrum_check_c",
+      "computed": 8,
+      "expected": 8,
+      "passed": true,
+      "source": "RibbonTwistZ6Hypercharge.lean (qou-qvpl, qou-kebu)"
+    },
+    {
+      "name": "hirzebruch_knot_signature_parity_obstruction_check_b",
+      "computed": 4,
+      "expected": 4,
+      "passed": true,
+      "source": "RibbonTwistZ6Hypercharge.lean (qou-qvpl)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "ribbon-twist-z6-hypercharge-hirzebruch",
+  "scriptFile": "ribbon_twist_z6_hypercharge_hirzebruch_probe.py",
+  "scriptHash": "5ca17d17428a",
+  "scriptCommitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/ribbon_twist_z6_hypercharge_hirzebruch_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/ribbon_twist_z6_hypercharge_hirzebruch_probe.py"
+  },
+  "description": "Verifies G_2/SU(3) isotropy complex threefold W = span(e_2..e_7) ~= C^3 under J = L_{e_1} with Lambda^3_C W = 1 (qou-uq5x), the Bring-Klein S_4 local Fano bridge gcd(120,168)=24 (qou-ys29), the Baez-Huerta Z_6 hypercharge congruence 2*tau + 3*w + 3*Y_t == 0 (mod 6) from 3*Y_t = 2*T - 6*I_3 across all 8 chiral states and 4 battery survivors (qou-qvpl Check C, qou-kebu), and the classical knot signature even-parity obstruction sigma(K) in 2Z vs 3-strand ribbon twist T(t) in {-3,-1,0,2} (qou-qvpl Check B).",
+  "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
+  "parameters": {
+    "fanoTriplesThroughE1": [
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        1,
+        4,
+        5
+      ],
+      [
+        1,
+        6,
+        7
+      ]
+    ],
+    "strandTwistSet": [
+      -1,
+      0,
+      1
+    ],
+    "torusKnotOddP": [
+      1,
+      3,
+      5,
+      7
+    ]
+  },
+  "data": {
+    "workItems": [
+      "qou-uq5x",
+      "qou-qvpl",
+      "qou-kebu",
+      "qou-ys29"
+    ],
+    "epic": "qou-8lxd",
+    "g2Su3Isotropy": {
+      "dimRealW": 6,
+      "dimComplexW": 3,
+      "jSquaredEqualsMinusIdentity": true,
+      "su3GeneratorCount": 8,
+      "allGeneratorsCommuteWithJ": true,
+      "allGeneratorsComplexTraceless": true,
+      "lambda3ComplexWeight": [
+        0,
+        0
+      ]
+    },
+    "bringKleinS4Bridge": {
+      "s5Order": 120,
+      "psl2F7Order": 168,
+      "gcdOrderS4": 24,
+      "psl2F7EmbedsInS5": false,
+      "localFanoLinesThroughE1": [
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          5
+        ],
+        [
+          1,
+          6,
+          7
+        ]
+      ],
+      "nonlocalFanoLines": [
+        [
+          2,
+          4,
+          6
+        ],
+        [
+          2,
+          5,
+          7
+        ],
+        [
+          3,
+          4,
+          7
+        ],
+        [
+          3,
+          5,
+          6
+        ]
+      ]
+    },
+    "checkCZ6Hypercharge": {
+      "chiralStates": [
+        {
+          "state": "u_L",
+          "tau": 1,
+          "w": 1,
+          "T": 2,
+          "twoI3": 1,
+          "threeY": 1,
+          "Y": "1/3",
+          "z6Numerator": 6,
+          "matchesExpected3Y": true,
+          "decompMatches": true,
+          "trialityCongruenceMod3": true,
+          "weakParityCongruenceMod2": true,
+          "z6CongruenceMod6": true
+        },
+        {
+          "state": "d_L",
+          "tau": 1,
+          "w": 1,
+          "T": -1,
+          "twoI3": -1,
+          "threeY": 1,
+          "Y": "1/3",
+          "z6Numerator": 6,
+          "matchesExpected3Y": true,
+          "decompMatches": true,
+          "trialityCongruenceMod3": true,
+          "weakParityCongruenceMod2": true,
+          "z6CongruenceMod6": true
+        },
+        {
+          "state": "nu_L",
+          "tau": 0,
+          "w": 1,
+          "T": 0,
+          "twoI3": 1,
+          "threeY": -3,
+          "Y": "-1",
+          "z6Numerator": 0,
+          "matchesExpected3Y": true,
+          "decompMatches": true,
+          "trialityCongruenceMod3": true,
+          "weakParityCongruenceMod2": true,
+          "z6CongruenceMod6": true
+        },
+        {
+          "state": "e_L",
+          "tau": 0,
+          "w": 1,
+          "T": -3,
+          "twoI3": -1,
+          "threeY": -3,
+          "Y": "-1",
+          "z6Numerator": 0,
+          "matchesExpected3Y": true,
+          "decompMatches": true,
+          "trialityCongruenceMod3": true,
+          "weakParityCongruenceMod2": true,
+          "z6CongruenceMod6": true
+        },
+        {
+          "state": "u_R",
+          "tau": 1,
+          "w": 0,
+          "T": 2,
+          "twoI3": 0,
+          "threeY": 4,
+          "Y": "4/3",
+          "z6Numerator": 6,
+          "matchesExpected3Y": true,
+          "decompMatches": true,
+          "trialityCongruenceMod3": true,
+          "weakParityCongruenceMod2": true,
+          "z6CongruenceMod6": true
+        },
+        {
+          "state": "d_R",
+          "tau": 1,
+          "w": 0,
+          "T": -1,
+          "twoI3": 0,
+          "threeY": -2,
+          "Y": "-2/3",
+          "z6Numerator": 0,
+          "matchesExpected3Y": true,
+          "decompMatches": true,
+          "trialityCongruenceMod3": true,
+          "weakParityCongruenceMod2": true,
+          "z6CongruenceMod6": true
+        },
+        {
+          "state": "nu_R",
+          "tau": 0,
+          "w": 0,
+          "T": 0,
+          "twoI3": 0,
+          "threeY": 0,
+          "Y": "0",
+          "z6Numerator": 0,
+          "matchesExpected3Y": true,
+          "decompMatches": true,
+          "trialityCongruenceMod3": true,
+          "weakParityCongruenceMod2": true,
+          "z6CongruenceMod6": true
+        },
+        {
+          "state": "e_R",
+          "tau": 0,
+          "w": 0,
+          "T": -3,
+          "twoI3": 0,
+          "threeY": -6,
+          "Y": "-2",
+          "z6Numerator": -6,
+          "matchesExpected3Y": true,
+          "decompMatches": true,
+          "trialityCongruenceMod3": true,
+          "weakParityCongruenceMod2": true,
+          "z6CongruenceMod6": true
+        }
+      ],
+      "allFourBatterySurvivorsVerified": true
+    },
+    "checkBHirzebruchSignature": {
+      "torusKnotCarriers": [
+        {
+          "knot": "T(2,1)",
+          "p": 1,
+          "fermion": "nu_e",
+          "sigma": 0,
+          "sigmaDiv3": "0",
+          "sigmaIsEven": true
+        },
+        {
+          "knot": "T(2,3)",
+          "p": 3,
+          "fermion": "e^-",
+          "sigma": -2,
+          "sigmaDiv3": "-2/3",
+          "sigmaIsEven": true
+        },
+        {
+          "knot": "T(2,5)",
+          "p": 5,
+          "fermion": "u / d",
+          "sigma": -4,
+          "sigmaDiv3": "-4/3",
+          "sigmaIsEven": true
+        },
+        {
+          "knot": "T(2,7)",
+          "p": 7,
+          "fermion": "c / s / tau",
+          "sigma": -6,
+          "sigmaDiv3": "-2",
+          "sigmaIsEven": true
+        }
+      ],
+      "allKnotSignaturesEven": true,
+      "evenSignatureCannotHitOddThreeQ": true,
+      "threeStrandTwistNumerators": [
+        -3,
+        -1,
+        0,
+        2
+      ]
+    }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Pure discrete algebra, representation-theoretic trace identities on W ~= C^3, group-order divisibility on S_5 vs PSL_2(F_7), and exact Z_6 / knot-signature congruences with no Q_0 dependence."
+}
