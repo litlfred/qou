@@ -1735,5 +1735,6 @@ import QOU.Mass.KZPullbackHypothesis
 import QOU.Mass.KohnoTwoPoint
 import QOU.KZ.Drinfeld.HeckeStrands
 import QOU.Mass.LagrangianKZInputs
+import QOU.Mass.BridgeADeligneGauge
 import QOU.QBeta.BorromeanThreeCuspNZHessian
 import QOU.QBeta.McPhailSnyderBridgeExclusion
