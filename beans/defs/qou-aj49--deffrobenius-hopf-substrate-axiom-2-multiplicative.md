@@ -1,11 +1,11 @@
 ---
 # qou-aj49
 title: def:frobenius-hopf-substrate axiom 2 (multiplicative counit) + Frobenius relation + counit law forces A = k·1
-status: todo
+status: in-progress
 type: bug
 priority: high
 created_at: 2026-10-12T20:13:17Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-16T19:05:00Z
 parent: qou-rtxm
 ---
 
@@ -23,3 +23,7 @@ Parent `qou-xhci` → `qou-rtxm`. The old parent was missing or absent, so the b
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+## 2026-11-16 — Two-Counit Frobenius–Hopf Separation & Non-Collapse Witness (PR #8157)
+- Added `QOU.Foundations.FrobeniusHopfMarkovBridge` (`folio/quantum-observable-universe/lean/QOU/Foundations/FrobeniusHopfMarkovBridge.lean`, wired into `QOU.lean`, 0 `sorry`, generic `CommRingOps R` per §7c) proving `frobenius_multiplicative_counit_collapses` (`x = ε(x) • 1_A` when the Frobenius counit is multiplicative) and the explicit rank-2 group-algebra non-collapse witness `c2_two_counit_noncollapse` on `R[C₂] ≅ R × R` (`c2_frobenius_right_counit_law` for `ε_F(a·1 + b·g) = b`, `c2_hopf_counit_multiplicative` for `ε_H(a·1 + b·g) = a + b`, `ε_F(g²) = 0 ≠ 1 = ε_F(g)²`, and `∀ c : ℤ, g ≠ c • 1`).
+- PR: https://github.com/litlfred/qou/pull/8157 (commit `16f8c01498462170d1ad98f5b5426233d3feea7d`). Status kept `in-progress`.

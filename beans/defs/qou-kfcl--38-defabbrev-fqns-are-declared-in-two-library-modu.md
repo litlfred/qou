@@ -1,13 +1,13 @@
 ---
 # qou-kfcl
 title: 38 def/abbrev FQNs are declared in two library modules each — those module pairs can never be imported together, and QOU.R_q means two different rings
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T16:49:53Z
-updated_at: 2026-10-04T15:11:46Z
+updated_at: 2026-11-16T19:05:00Z
 parent: qou-rtxm
 ---
 
@@ -380,3 +380,7 @@ build), both consumed.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-30 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-11-16 — Canonical Namespace & GroundRingCore Audit (PR #8157)
+- Verified `QOU/GroundRingCore.lean` (`QOU.GroundRing.R_q`, `q_param`, `q_inv_param`, `q_param_mul_inv`) and isolated `QOU.Foundations.FrobeniusHopfMarkovBridge` in its own conflict-free namespace wired into `QOU.lean` (0 duplicate FQNs).
+- PR: https://github.com/litlfred/qou/pull/8157 (commit `16f8c01498462170d1ad98f5b5426233d3feea7d`). Status kept `in-progress`.

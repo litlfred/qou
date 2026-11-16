@@ -1,13 +1,13 @@
 ---
 # qou-wapd
 title: beta_ew_delta_I_321_and_wedderburn labels a Plancherel-weighted sum a 'Markov trace' — it sends the identity to 11.139, not 1
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T12:23:07Z
-updated_at: 2026-10-04T15:12:00Z
+updated_at: 2026-11-16T19:05:00Z
 parent: qou-rtxm
 ---
 
@@ -149,3 +149,7 @@ one.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-05 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-11-16 — Row-Capped Ocneanu/Markov vs Uncapped Plancherel Obstruction in Lean (PR #8157)
+- Formalized `row_capped_contribution_vanishes`, `no_uniform_rescale_between_uncapped_and_row_capped`, and the concrete `n = 6, λ = (3,2,1)` witness `n6_partition_321_row_cap_obstruction` (`ℓ(3,2,1) = 3 > 2`, `f^{(3,2,1)} = 16`, `(f^{(3,2,1)})² = 256 ≠ 0`, full Burnside sum `720 = 6!`, `ℓ(λ) ≤ 2` row-capped sum `132`, killed `ℓ(λ) ≥ 3` sector `588`) in `folio/quantum-observable-universe/lean/QOU/Foundations/FrobeniusHopfMarkovBridge.lean` (wired into `QOU.lean`, 0 `sorry`, generic `CommRingOps R` per §7c).
+- PR: https://github.com/litlfred/qou/pull/8157 (commit `16f8c01498462170d1ad98f5b5426233d3feea7d`). Status kept `in-progress`.
