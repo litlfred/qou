@@ -5,3 +5,5 @@ $$
 $$
 
 *The depth $k_\star(T_w)$ is exactly the maximum GB-depth among the support partitions. Truncation at any deeper level $k \geq k_\star$ yields the identical categorical value.*
+
+The GB-depth in this statement has no fixed definition in the corpus. Of the three readings in use, the ideal-power filtration vanishes above degree $0$, the Coxeter-length filtration fails a dimension count at $n \le 3$, and the rewrite-depth filtration is identically zero on the normal-form basis $T_w$. Until one reading is fixed, $k_\star(T_w)$ is not determined and the statement is not a theorem.
