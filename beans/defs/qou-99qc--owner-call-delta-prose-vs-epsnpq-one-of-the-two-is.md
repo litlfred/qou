@@ -3643,3 +3643,12 @@ Yes, there is a mismatch inside the corpus.
 - Prediction for (i): NO breaking. Every Ř word commutes with the U_q(sl₂) action, so on canonically traced isospin-½ states n↔p symmetry should hold whatever the writhe, exactly as in ε-TR1.
 - Prediction for (ii): yes by construction (writhe ±2 per unit).
 - Nothing is compared to data, and no element is picked by residual.
+
+
+### RESULT ε-L1 (2026-11-16 07:40Z), gg_twist_channel_np_probe.py (exact over Q(q))
+- (i) NO breaking, as predicted. For L₊, L₋, L₊V³, V³L₊, L₊L₋ and the electron-type σ₁σ₂σ₁ (writhe 2, −2, 2, 2, 0, 3), ε_tr,pn = ε_tr,np exactly, and Tr M(1) is identical in both directions.
+- Reading: the twist channel changes ε's value (L₊: −(q²−1)(q⁴+1)/(2q⁶) = −0.156 at q₀; L₋: −0.292; the e-type word: +0.106) but not its n↔p symmetry. Every Ř word is U_q(sl₂)-covariant, so adding writhe does not help.
+- Conclusion, scope (a) on these six words: L± does NOT break u↔d. The break still needs a non-U_q-covariant ingredient, which so far is the hypercharge (ε-EM1: asymmetry 2Y).
+- (ii) L± supplies twist ±1 per photon, so one photon per strand gives |t| ≤ 1 and hence Y = ±1/3 (ε-Y3/Y7). This is the only place the twist channel matters for n–p: through Y, not through the braid. L₊ being "inherently positive" (trivial-knot-photon-interpretation) would also fix the SIGN of Y, if that statement is derived. It is currently prose.
+- (iii) Reading 3 on L± nucleon words: NOT run here. It belongs to the γγ-grammar owner (colour/gluon thread).
+- No mass or compute change. The element choice is unaffected.
