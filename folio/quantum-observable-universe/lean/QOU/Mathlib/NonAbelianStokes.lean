@@ -40,6 +40,8 @@ proof) is the upstream target.
 
 namespace QOU.Mathlib.NonAbelianStokes
 
+set_option linter.dupNamespace false
+
 universe u
 
 /-- Abstract carrier for a Lie-algebra-valued 1-form on a
@@ -464,6 +466,109 @@ def LieValuedStokes_canonical (M : Type u) (𝔤 : Type u)
   surfaceIntegral _ _ := 0
   boundary σ := fun m => σ m m
   stokes_identity _ := rfl
+
+/-! ### Non-degenerate models of `NonAbelianStokes` and `LieValuedStokes` (`qou-ewc4`)
+
+To resolve the inhabitation-discriminator gap recorded in bean `qou-ewc4`
+(where `punitInstance` had constantly-`1` integrals with `slice _ = []` and
+`LieValuedStokes_canonical` had constantly-`0` forms and integrals), we
+construct:
+
+1. `finiteSliceHolonomyModel`: a group-valued `NonAbelianStokes M G` model
+   parameterised by a basepoint `m₀ : M` and a path-holonomy map
+   `stepHolonomy : (M → M) → G` with `slice γ = [stepHolonomy γ]`.  Its proof
+   of `finite_slice` uses `one_mul` and its proof of `stokes` uses group
+   inversion `mul_inv_cancel`; for any `g₀ ≠ 1`, the model's line integral is
+   `g₀ ≠ 1` (`finiteSliceHolonomyModel_nondegenerate`).
+2. `constantCurvatureLieValuedStokes`: a `LieValuedStokes M 𝔤` model over any
+   `[AddCommGroup 𝔤] [L : LieAlgebraStructure 𝔤]` with constant non-zero forms
+   `α = v₀`, `β = v₀` and evaluation functionals
+   `lineIntegral ω γ = ω.eval (γ m₀)`,
+   `surfaceIntegral Ω σ = Ω.eval m₀ (σ m₀ m₀)`.  Its proof of `stokes_identity`
+   genuinely invokes the Lie-algebra axiom `L.bracket_self v₀` (`[v₀, v₀] = 0`)
+   together with `add_zero`; for any `v₀ ≠ 0`, the line and surface integrals
+   evaluate to `v₀ ≠ 0` (`constantCurvatureLieValuedStokes_nondegenerate`). -/
+
+/-- **Non-degenerate finite-slice model of `NonAbelianStokes`** (`qou-ewc4`).
+    Given a basepoint `m₀ : M` and a path-holonomy functional
+    `stepHolonomy : (M → M) → G`, slices every path `γ` to the single-step word
+    `[stepHolonomy γ]` and pairs `covariantD α β` with its inverse at `m₀`
+    on the surface side. -/
+def finiteSliceHolonomyModel {M G : Type u} [Group G]
+    (m₀ : M) (stepHolonomy : (M → M) → G) : NonAbelianStokes M G where
+  lineIntegral := { integrate := fun _ γ => stepHolonomy γ }
+  surfaceIntegral :=
+    { integrate := fun _ Ω σ =>
+        (Ω.eval m₀ m₀ m₀ * (Ω.eval m₀ m₀ m₀)⁻¹) *
+          stepHolonomy (fun m => σ m m) }
+  boundary σ := fun m => σ m m
+  covariantD α β := { eval := fun p q r => α.eval p q * β.eval p q r }
+  slice γ := [stepHolonomy γ]
+  stokes _ _ _ := by
+    dsimp
+    rw [mul_inv_cancel, one_mul]
+  finite_slice _ γ := by
+    show stepHolonomy γ = 1 * stepHolonomy γ
+    exact (one_mul (stepHolonomy γ)).symm
+
+/-- **Non-degeneracy of `finiteSliceHolonomyModel`**: for any `g₀ : G` with
+    `g₀ ≠ 1`, the model's line integral evaluates to `g₀ ≠ 1` and its slice
+    is non-empty. -/
+theorem finiteSliceHolonomyModel_nondegenerate {M G : Type u} [Group G]
+    (m₀ : M) {g₀ : G} (hg : g₀ ≠ 1) (α : LieValuedOneForm M G) (γ : M → M) :
+    (finiteSliceHolonomyModel m₀ (fun _ => g₀)).lineIntegral.integrate α γ ≠ 1 ∧
+    (finiteSliceHolonomyModel m₀ (fun _ => g₀)).slice γ ≠ [] := by
+  refine ⟨hg, ?_⟩
+  simp [finiteSliceHolonomyModel]
+
+/-- **Non-degenerate constant-curvature model of `LieValuedStokes`** (`qou-ewc4`).
+    Evaluates forms at a basepoint `m₀ : M` with constant value `v₀ : 𝔤`.
+    Because `d_α β = β + [α, β] = v₀ + [v₀, v₀] = v₀` by `L.bracket_self v₀`,
+    both sides of `stokes_identity` evaluate to `v₀`. -/
+def constantCurvatureLieValuedStokes {M 𝔤 : Type u}
+    [AddCommGroup 𝔤] [L : LieAlgebraStructure 𝔤]
+    (m₀ : M) (v₀ : 𝔤) : LieValuedStokes M 𝔤 where
+  alpha := { eval := fun _ => v₀ }
+  beta := { eval := fun _ _ => v₀ }
+  lineIntegral ω γ := ω.eval (γ m₀)
+  surfaceIntegral Ω σ := Ω.eval m₀ (σ m₀ m₀)
+  boundary σ := fun m => σ m m
+  stokes_identity σ := by
+    show v₀ = v₀ + L.bracket v₀ v₀
+    rw [L.bracket_self v₀, add_zero]
+
+/-- **Non-degeneracy of `constantCurvatureLieValuedStokes`**: whenever `v₀ ≠ 0`,
+    both the boundary line integral and the gauge-covariant surface integral
+    evaluate to `v₀ ≠ 0`. -/
+theorem constantCurvatureLieValuedStokes_nondegenerate {M 𝔤 : Type u}
+    [AddCommGroup 𝔤] [LieAlgebraStructure 𝔤]
+    (m₀ : M) {v₀ : 𝔤} (hv : v₀ ≠ 0) (σ : M → M → M) :
+    let S := constantCurvatureLieValuedStokes m₀ v₀
+    S.lineIntegral S.alpha (S.boundary σ) ≠ 0 ∧
+    S.surfaceIntegral (gaugeCovariantDerivative S.alpha S.beta) σ ≠ 0 := by
+  intro S
+  have hline : S.lineIntegral S.alpha (S.boundary σ) = v₀ := rfl
+  have hsurf :
+      S.surfaceIntegral (gaugeCovariantDerivative S.alpha S.beta) σ = v₀ := by
+    rw [← S.stokes_identity σ, hline]
+  rw [hline, hsurf]
+  exact ⟨hv, hv⟩
+
+/-- Concrete abelian `LieAlgebraStructure` on any `AddCommGroup` (`[x, y] = 0`),
+    providing an explicit non-zero `ℤ`-valued witness for
+    `constantCurvatureLieValuedStokes`. -/
+def abelianLieAlgebraStructure (𝔤 : Type u) [AddCommGroup 𝔤] :
+    LieAlgebraStructure 𝔤 where
+  bracket _ _ := 0
+  bracket_self _ := rfl
+  bracket_add_left _ _ _ := (add_zero 0).symm
+  bracket_add_right _ _ _ := (add_zero 0).symm
+  jacobi _ _ _ := by simp
+
+/-- Explicit `ℤ`-valued non-zero `LieValuedStokes` witness at `v₀ = 1 ≠ 0`. -/
+def intNonZeroLieValuedStokes :
+    @LieValuedStokes ℤ ℤ _ (abelianLieAlgebraStructure ℤ) :=
+  @constantCurvatureLieValuedStokes ℤ ℤ _ (abelianLieAlgebraStructure ℤ) 0 1
 
 /-! ### Closed-path holonomy
 
