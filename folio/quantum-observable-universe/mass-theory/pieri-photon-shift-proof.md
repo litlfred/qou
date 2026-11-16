@@ -16,9 +16,10 @@ $\lambda$-isotypic component of the $\mathrm{SU}_q(2)$ action
 in the $V_\lambda$-isotypic component.
 
 **Support convention.** The element $\gamma \beta_m$ is of mixed
-degree: the identity term of $\gamma$ leaves $\beta_m$ at level $n$
-of the tower, while each generator term couples one further strand
-and lands at level $n + 1$. Support is therefore tracked in the
+degree: the identity term of $\gamma$ and the generator terms $\sigma_i$ with
+$i \leq n - 1$ leave $\beta_m$ at level $n$ of the tower, while a
+$\sigma_n$ term, read in $H_{n+1}(q)$, couples one further strand and
+lands at level $n + 1$. Support is therefore tracked in the
 Wedderburn labels of the tower algebra $\bigoplus_m H_m(q)$, one
 label set per level. At level $n + 1$ we write
 $\lambda + \square := (\lambda_1 + 1, \lambda_2) \vdash n+1$ and
@@ -34,13 +35,19 @@ Since $\gamma \beta_m = \beta_m + \sum_i \phi_i \, (\sigma_i \beta_m)$
 and $\mathrm{supp}(x + y) \subseteq \mathrm{supp}(x) \cup \mathrm{supp}(y)$,
 it suffices to bound the support of each summand. The identity term
 contributes the level-$n$ component $\mathrm{supp}(\beta_m) = \{\lambda\}$,
-unchanged. It remains to show, at level $n+1$,
-$\mathrm{supp}(\sigma_i \beta_m) \subseteq \{\lambda + \square\} \cup \{\lambda - \square\}$
-for each generator term.
+unchanged. A generator $\sigma_i$ with $i \leq n - 1$ lies in $H_n(q)$
+and commutes with the central idempotent $e_\lambda$; since
+$\beta_m = e_\lambda \beta_m$, also $\sigma_i \beta_m = e_\lambda \sigma_i \beta_m$,
+so these terms stay at level $n$ with support in $\{\lambda\}$. For
+$\gamma$ as written, with the sum running to $i = n - 1$, this already
+gives the containment. Only a term in $\sigma_n$, which adds a strand and
+is present when $\gamma$ is taken in $H_{n+1}(q)$, can leave level $n$.
+It remains to show, at level $n+1$,
+$\mathrm{supp}(\sigma_n \beta_m) \subseteq \{\lambda + \square\} \cup \{\lambda - \square\}$.
 
 **Step 2: a single crossing couples one fundamental factor.**
-Each generator term couples the degree-one strand to the state
-through exactly one crossing $\sigma_i$. In the Schur–Weyl picture
+The $\sigma_n$ term couples the degree-one strand to the state
+through exactly one crossing. In the Schur–Weyl picture
 the coupled object lives in
 
 $$
@@ -73,7 +80,7 @@ $\lambda - \square = (\lambda_1, \lambda_2 + 1)$ of the support
 convention (when $(\lambda_1, \lambda_2 + 1)$ is a valid two-row
 shape; otherwise only $\lambda + \square$ occurs, and the
 containment below holds a fortiori). Hence
-$\mathrm{supp}(\sigma_i \beta_m) \subseteq \{\lambda + \square\} \cup \{\lambda - \square\}$
+$\mathrm{supp}(\sigma_n \beta_m) \subseteq \{\lambda + \square\} \cup \{\lambda - \square\}$
 at level $n+1$.
 
 **Step 4: assembly.**
