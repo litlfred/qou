@@ -54,3 +54,13 @@ The failure is q-independent (exact, from the Hecke relation σ² = hσ + 1, h =
 - 3 strands, block (2,1): tr(σ₀σ₁) = −1, tr σ₁ = h, σ₀³ = (h²+1)σ₀ + h, so tr(σ₀³σ₁) = −1; and tr((σ₀σ₁)²) = −1.
 Readings 1 and 2 (block PSD, symmetric part PSD) imply a nonnegative trace, so they fail too. The only escape is
 a Markov parameter giving these blocks zero weight (the one-row truncation z = q), which is not convention D.
+
+### Complex q (owner card 2026-11-16)
+
+`trefoil_complex_q_check.py` (sympy, formal q): every 3-strand trefoil braid has (2,1) trace exactly −1 as a
+rational function of q, so at every complex q that block's trace is the negative real number −1. Any positivity
+notion on ℂ that contains the positive reals and excludes −1 (Re ≥ 0, a sector, the real cone) fails it; only
+the modulus passes it, and the modulus passes every word.
+On 2 strands χ_(2)(σ³) = q³, χ_(1,1)(σ³) = −q⁻³: both real parts ≥ 0 only when cos(arg q³) = 0, where both are
+exactly 0 (e.g. q = e^{iπ/6}, a 12th root of unity) — a boundary point, not a pass with positive weight, and
+it is not q₀.
