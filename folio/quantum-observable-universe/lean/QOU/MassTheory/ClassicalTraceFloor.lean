@@ -23,8 +23,13 @@ and so does the Plancherel block sum. **`Δtr` does not.** Measured along
     A = 4  →  7/128        A = 5  →  15/512
 
 so `Δtr = c₀(A) + c₁·ℏ_q + O(ℏ_q²)`, and at `q₀` the classical part is
-**22.46 %** of it for the deuteron, 4.88 % for `⁴He`. That fraction of any
-binding read off this observable is present with the braiding switched off.
+**85.01 %** of it for the deuteron and **9.61 %** for `⁴He` on the canonical
+Borromean word (`intra_order="borromean"`, owner ruling `qou-92u9`; **22.46 %**
+and **4.88 %** on the historical pre-2026-09-05 `grouped` word). That fraction
+of any binding read off this observable is present with the braiding switched off.
+For the general interface-parity formula `c₀(A, O) = 2^{-A}(1 - 2^{-O})` with `O`
+odd-multiplicity inter-nucleon interfaces (vanishing at `O = 0`), see
+`QOU.MassTheory.ClassicalTraceFloorParity`.
 
 This file records the **arithmetic core of the derivation** of `c₀(A)` — the
 part that is genuinely proved rather than computed.
@@ -98,7 +103,9 @@ theorem classicalTraceFloor_chain (A : ℤ) :
     classicalTraceFloor (2 * A) (A + 1) (3 * A)
       = (2 : ℚ) ^ (-A) - (2 : ℚ) ^ (1 - 2 * A) := by
   unfold classicalTraceFloor
-  congr 2 <;> ring
+  have hexp1 : 2 * A - 3 * A = -A := by omega
+  have hexp2 : (A + 1) - 3 * A = 1 - 2 * A := by omega
+  rw [hexp1, hexp2]
 
 /-- **The floor, end to end.**
 
