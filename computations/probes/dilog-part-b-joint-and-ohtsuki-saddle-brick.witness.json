@@ -1,0 +1,47 @@
+{
+  "probe": "dilog-part-b-joint-and-ohtsuki-saddle-brick",
+  "beans": [
+    "qou-a0li",
+    "qou-cqup",
+    "qou-vlow",
+    "qou-ylma",
+    "qou-zuuz"
+  ],
+  "precisionDps": "80",
+  "scriptHash": "b4721fda00d6",
+  "scriptCommitSha": "15442a8d1a92fd2c2023220414943eceef98c3bb",
+  "generatedAt": "2026-11-16T22:11:01.833194+00:00",
+  "allPassed": true,
+  "checks": {
+    "qou_a0li_periodic_measure_window": {
+      "passed": true,
+      "totalWindowMeasure": "0.05251679345567837710354221285673058938105",
+      "seriesResidual": "0.0"
+    },
+    "qou_cqup_faddeev_moving_target": {
+      "passed": true,
+      "movingTargetXq": "999/1000",
+      "cuspGap": "1/1000",
+      "wp1AtMovingTarget": "-0.007911461572108693776616561666524577588346",
+      "eulerReflectionResidual": "2.273161431509081570250161279805097848537e-81"
+    },
+    "qou_vlow_ohtsuki_saddle_brick": {
+      "passed": true,
+      "eq1Residual": "0.0",
+      "eq2Residual": "2.108439588646104644869714810254003801542e-81",
+      "cubicEliminationResidual": "2.635549485807630806087143512817504751927e-82",
+      "complexGaussianQuadResidual": "5.433324455763587594493330466753504913095e-82"
+    },
+    "qou_ylma_part_b_joint_route": {
+      "passed": true,
+      "wp1Error": "-1/200",
+      "wp2Error": "-17/400",
+      "totalJointError": "-19/400"
+    },
+    "qou_zuuz_borel_cantelli_telescoping": {
+      "passed": true,
+      "partialSumTo50": "50/51",
+      "tailSum10To20": "11/210"
+    }
+  }
+}
