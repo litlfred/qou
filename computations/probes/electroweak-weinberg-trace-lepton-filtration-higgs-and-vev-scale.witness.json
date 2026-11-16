@@ -1,0 +1,103 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-16T21:40:28.392620+00:00",
+  "commitSha": "3b80fd1107094cf9bcff90912d5a02af871f8f87",
+  "assertions": [
+    {
+      "name": "qou-ghwy-reflection-det-minus-one-50dps",
+      "computed": "-1.0",
+      "expected": "-1.0",
+      "passed": true,
+      "tolerance": "1e-48"
+    },
+    {
+      "name": "qou-ghwy-reflection-det-sq-plus-one-50dps",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "1e-48"
+    },
+    {
+      "name": "qou-kl39-generation-baryon-minus-lepton-anomaly-zero",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1e-48"
+    },
+    {
+      "name": "qou-kl39-scaled-quark-b-minus-l",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "1e-48"
+    },
+    {
+      "name": "qou-ukqh-electroweak-polarization-conservation",
+      "computed": "12.0",
+      "expected": "12.0",
+      "passed": true,
+      "tolerance": "1e-48"
+    },
+    {
+      "name": "qou-z3x8-weinberg-cos2-plus-sin2-eq-one",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "1e-48"
+    },
+    {
+      "name": "qou-z3x8-neutral-minus-charged-coupling-sq",
+      "computed": "0.12",
+      "expected": "0.12",
+      "passed": true,
+      "tolerance": "1e-48"
+    },
+    {
+      "name": "qou-zd6l-rotated-neutral-trace-invariance",
+      "computed": "5.8598744820488384738229308546321653819544164930751",
+      "expected": "5.8598744820488384738229308546321653819544164930751",
+      "passed": true,
+      "tolerance": "1e-48"
+    },
+    {
+      "name": "qou-zd6l-rotated-neutral-det-invariance",
+      "computed": "8.5397342226735670654635508695465744950348885357651",
+      "expected": "8.5397342226735670654635508695465744950348885357651",
+      "passed": true,
+      "tolerance": "1e-48"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "electroweak-weinberg-trace-lepton-filtration-higgs-and-vev-scale",
+  "scriptFile": "electroweak_weinberg_trace_lepton_filtration_higgs_and_vev_scale_probe.py",
+  "scriptHash": "f6006da25e32",
+  "scriptCommitSha": "3b80fd1107094cf9bcff90912d5a02af871f8f87",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/electroweak_weinberg_trace_lepton_filtration_higgs_and_vev_scale_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/electroweak_weinberg_trace_lepton_filtration_higgs_and_vev_scale_probe.py"
+  },
+  "description": "50-dps mpmath verification of exact signed-unit determinant products without float64 floor drift (qou-ghwy), decreasing skein filtration step and colour-weighted 3(B-L) anomaly cancellation (qou-kl39), pre- and post-breaking electroweak gauge-scalar polarization conservation 2*4 + 4 = 3*3 + 2*1 + 1 = 12 (qou-ukqh), vacuum crossing scale and neutral-to-charged squared coupling ratio (g_2^2 + g_1^2)/g_2^2 = 1/cos^2(theta_W) (qou-z3x8), and 2x2 neutral-plane orthogonal rotation trace and determinant preservation (qou-zd6l).",
+  "parameters": {
+    "dps": "50"
+  }
+}
