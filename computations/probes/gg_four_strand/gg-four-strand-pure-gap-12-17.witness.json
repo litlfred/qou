@@ -1,0 +1,94 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-16T07:35:45.695530+00:00",
+  "commitSha": "d39d3fa677e7ec8e9743da91296973a07994eac1",
+  "assertions": [
+    {
+      "name": "H4_relations_at_q0_below_1e-30",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "a3.check_relations"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "gg-four-strand-pure-gap-12-17",
+  "scriptFile": "gg_four_strand_pure_gap_12_17_probe.py",
+  "scriptHash": "9bae5a8942e2",
+  "scriptCommitSha": "d39d3fa677e7ec8e9743da91296973a07994eac1",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/gg_four_strand/gg_four_strand_pure_gap_12_17_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/gg_four_strand/gg_four_strand_pure_gap_12_17_probe.py"
+  },
+  "q0Anchor": "proton",
+  "q0AnchorReason": "via h2_one_rule (cf.Q, proton pin)",
+  "description": "PROBE (bean qou-a1hh, amendment 6): pure gg words of length 12-17 at q0 on 4 strands. Scope (a); nothing wired.",
+  "weight_family": "markov_y_lambda_convention_D",
+  "relations_err_q0": "9.7575e-41",
+  "shortest_failing_length_found_12_17": null,
+  "results": {
+    "G1": {
+      "12": {
+        "n_pure": 1351680,
+        "pure_fail": 0,
+        "pure_fail_words": [],
+        "min_char_pure": "0.0231552794059589",
+        "argmin": "B0.B0.V0.V0.B0.V0.V0.B0.B0.V0.V0.B0"
+      }
+    },
+    "G2": {
+      "13": {
+        "n": 20000,
+        "fail": 0,
+        "fail_words": [],
+        "min_char": "0.214579404076",
+        "argmin": "B0.B0.V0.V0.B0.V0.V0.B0.B0.V0.B1.B0.V1"
+      },
+      "14": {
+        "n": 20000,
+        "fail": 0,
+        "fail_words": [],
+        "min_char": "0.158036624242",
+        "argmin": "V0.B1.V0.V1.V0.B1.V0.V1.V0.B0.V0.V0.B0.V0"
+      },
+      "15": {
+        "n": 20000,
+        "fail": 0,
+        "fail_words": [],
+        "min_char": "0.156563389347",
+        "argmin": "V0.B1.B0.B0.V1.B1.V1.V1.B1.B1.V1.V0.V0.V1.V0"
+      },
+      "16": {
+        "n": 20000,
+        "fail": 0,
+        "fail_words": [],
+        "min_char": "0.173527086553",
+        "argmin": "V0.V1.B1.V1.B0.V1.B1.V0.B1.V0.B1.B1.V1.B1.V1.B0"
+      },
+      "17": {
+        "n": 20000,
+        "fail": 0,
+        "fail_words": [],
+        "min_char": "0.0695167107789",
+        "argmin": "V1.B0.V1.B0.V0.B0.V0.V0.B0.V1.V0.V0.B0.B0.V1.B0.V0"
+      }
+    }
+  }
+}
