@@ -1,0 +1,116 @@
+{
+  "engine": "mpmath+sympy",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-16T19:27:22.911916+00:00",
+  "commitSha": "49daebf3d69cf356a4ff9cc6c54739140d3ecaad",
+  "assertions": [
+    {
+      "name": "qou_24w9_wenzl_reconstructs_borromean_trM_and_qschur_matches_fbor",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "qou_r0dn_vol_6_2_matches_census_and_scales_linearly",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "qou_hgm6_saddle_quad_root_and_berezinian_lift_50dps_exact",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "qou_cuur_linking_weight_family_a_bar_symmetric_and_gt_five_halves",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "qou_zufe_me_relative_uncertainty_floor_and_ratio_cancellation",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "plancherel-normalisation-and-scale-bounds-probe",
+  "scriptFile": "plancherel_normalisation_and_scale_bounds_probe.py",
+  "scriptHash": "2493cc5e4089",
+  "scriptCommitSha": "49daebf3d69cf356a4ff9cc6c54739140d3ecaad",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/plancherel_normalisation_and_scale_bounds_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/plancherel_normalisation_and_scale_bounds_probe.py"
+  },
+  "description": "50-dps mpmath + symbolic SymPy verification of q-Schur vs Wenzl Plancherel normalisation of F_Bor (qou-24w9), Vol(6_2) SnapPy census agreement and volume scaling (qou-r0dn), 50-dps Stokes quadratic root and super-Berezinian lift (qou-hgm6), algebraic bar-symmetry and lower bound of linking_weight_family_a (qou-cuur), and CODATA m_e relative uncertainty floor vs dimensionless ratio cancellation (qou-zufe).",
+  "parameters": {
+    "dps": 50,
+    "q0_proton_pin": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "data": {
+    "qou_24w9_plancherel_normalisation": {
+      "symbolic_identities_all_zero": true,
+      "trM_borromean_q0": "0.99856216383678726595121313514665020209402588005941",
+      "wenzl_reconstructed_trM_q0": "0.99856216383678726595121313514665020209402588005941",
+      "wenzl_trM_abs_err": "9.05567907883e-72",
+      "inv_y_schur_3_q0": "4.4755738777400674460286906063644311344243994918184",
+      "inv_y_wenzl_3_q0": "1.9786142409559419401386848895040833565484903708370",
+      "inv_y_wenzl_21_eq_two_bracket_sq_q0": "4.0437062085325219894020193356773883097682139607135",
+      "bar_asymmetry_identity_abs_err": "1.43731738339e-67"
+    },
+    "qou_r0dn_vol_6_2_census": {
+      "vol_6_2_snappy_census": "4.40083251612304610144120386564",
+      "m_tau_table_rel_err_vs_census": "9.36274341026e-21",
+      "deuteron_probe_rel_err_vs_census": "0.0",
+      "retired_mtau_literal_rel_shift": "-0.0775003409504053",
+      "retired_deut_literal_rel_shift": "1.05530578723688e-7",
+      "retired_mtau_vs_2_vol_4_1_abs_diff": "7.00192656589e-8",
+      "volume_scaling_law_abs_err": "1.13195988485e-72"
+    },
+    "qou_hgm6_fifty_dps_probes": {
+      "q_quad_50dps": "0.087365071240175080507724054304081329094953452898709",
+      "q_quad_polynomial_residual": "1.35835186182e-71",
+      "q_quad_in_0p087_0p088": true,
+      "r_star_50dps": "1.5851851851851851851851851851851851851851851851852",
+      "rho_needed_50dps": "-0.58518518518518518518518518518518518518518518518519",
+      "natural_substrate_readings_landing_rstar": 0,
+      "berezinian_surjectivity_fit_abs_err": "0.0"
+    },
+    "qou_cuur_linking_weight_family_a": {
+      "lambda_A_q0_50dps": "2.5081726500303417248143689835688971119169305613631",
+      "bar_symmetry_abs_err": "0.0",
+      "excess_over_five_halves_abs_err": "1.83943481289e-72",
+      "strictly_exceeds_five_halves_and_codata_target": true
+    },
+    "qou_zufe_me_scale_floor": {
+      "me_codata_MeV": "0.510998950690000",
+      "me_sigma_MeV": "1.60000000000000e-10",
+      "me_relative_uncertainty_floor": "3.13112188946675e-10",
+      "me_effective_decimal_digits": "9.50430002568",
+      "dimensionless_ratio_me_cancellation_abs_err": "0.0"
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
