@@ -1,0 +1,117 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-16T18:43:00.911205+00:00",
+  "commitSha": "b917956a3b8ee4c47f959094d7d4da81c1fa3226",
+  "assertions": [
+    {
+      "name": "qou_zrx2_interface_parity_formula_A2_to_6",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "c_0(A, O) = 2^{-A}(1 - 2^{-O}) verified for A=2..6, O=0..A-1"
+    },
+    {
+      "name": "qou_zrx2_deuteron_borromean_floor_share_gt_85pct",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "Canonical Borromean deuteron classical floor share c_0(2)/Delta_tr(D) = 85.007%"
+    },
+    {
+      "name": "qou_zrx2_deuteron_grouped_floor_share_22_46pct",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "Historical grouped deuteron classical floor share c_0(2)/Delta_tr(D) = 22.458%"
+    },
+    {
+      "name": "qou_9yt9_all_12_modules_sorry_and_axiom_free",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "0 sorry / admit / axiom across all 12 arc Lean modules"
+    },
+    {
+      "name": "qou_9yt9_all_12_modules_wired_in_QOU_umbrella",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "All 12 arc Lean modules reachable from QOU.lean"
+    },
+    {
+      "name": "qou_ndsa_markov_cost_orthogonal_to_radical",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "<t_M, v> = 0 in Q(q), forcing y_0 = 0 for any Gram annihilating v"
+    },
+    {
+      "name": "qou_ndsa_converse_radical_coupled_cost_gives_nonzero_y0",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "<t^alpha, v> = 1 != 0 forces unique non-zero y_0 = 1/<1,v> in Q(q)"
+    },
+    {
+      "name": "qou_s7ld_all_binding_producer_words_level_local_A1_to_6",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "All 32 (order, include_inter, isotope) binding producer words across A=1..6 are level-local"
+    },
+    {
+      "name": "qou_brfy_bring_quadrangulation_and_triangulation_invariants",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "Bring {5,4} map (V=24, E=60, F=30) -> 2^30=1073741824 triangulations (V'=24, E'=90, F'=60)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 89,
+  "computation": "low-isotope-binding-substrate-probe",
+  "scriptFile": "low_isotope_binding_substrate_probe.py",
+  "scriptHash": "677d5777f6c4",
+  "scriptCommitSha": "b917956a3b8ee4c47f959094d7d4da81c1fa3226",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/low_isotope_binding_substrate_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/low_isotope_binding_substrate_probe.py"
+  },
+  "description": "Joint exact verification across qou-zrx2 (interface-parity classical floor & 85.01% Borromean deuteron share), qou-9yt9 (ConfinementLevel / DressedParticle / filtration canonicity), qou-ndsa (confinement-LP homogeneity & radical-pairing converse), qou-s7ld (level-locality of all binding producer words), and qou-brfy (H_4 4-gonal Bring map triangulation split count).",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "Deuteron Markov trace differences evaluated at the canonical proton pin Q_50_DIGIT_STR; symbolic Q(q) and integer combinatorics assertions hold identically for all q.",
+  "beans": [
+    "qou-zrx2",
+    "qou-9yt9",
+    "qou-ndsa",
+    "qou-s7ld",
+    "qou-brfy"
+  ],
+  "deuteron_borromean_delta_tr": "0.14704667798040846910949472902",
+  "deuteron_borromean_floor_share": "0.850070207071622",
+  "deuteron_grouped_delta_tr": "0.55654466040443821190477222413",
+  "deuteron_grouped_floor_share": "0.224600124470089",
+  "ndsa_one_dot_v": "-1*q^3 + 2*q^2 - 2*q + 1",
+  "ndsa_perturbed_y0": "(-1)/(q^3 - 2*q^2 + 2*q - 1)",
+  "bring_refinement_count": 1073741824
+}
