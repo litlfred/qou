@@ -88,4 +88,11 @@ export default proposition({
     "structural-theorem",
     "generic-framework",
   ],
+  authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-16",
+      body: "The QOU-instance corollary (mirror nuclei have equal LP-dual shadow prices) is withdrawn as unproved. Its proof assumed the Markov trace is invariant under the antipode $\\sigma_i \\mapsto \\sigma_i^{-1}$; under convention D, $\\tau(\\sigma_i) = q^3/(q^2+1)$ and $\\tau(\\sigma_i^{-1}) = 1/(q(q^2+1))$ (0.6127 vs 0.4036 at $q_0$), so the hypothesis $\\tau\\circ\\sigma = \\tau$ fails. The equality $y_0^*(T) = y_0^*({}^3\\mathrm{He})$ recorded in the witness is therefore unexplained by this proposition. The pair-knot corollary's conclusion still holds, by shift-invariance of the trace rather than by $S$. The generic theorem is unaffected.",
+    },
+  ],
 });
