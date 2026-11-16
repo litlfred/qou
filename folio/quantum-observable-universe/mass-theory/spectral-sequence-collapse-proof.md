@@ -76,7 +76,7 @@ $\geq 2$) is self-dual under combined S-reversal and rank inversion.*
 > the filtration of $A$ itself, which is a different claim and is
 > untouched here; and the *Practical consequence* below, which uses the
 > Wedderburn sum and not this duality. Same defect as
-> [`prf:quantum-dilogarithm-stratified`](#prf:quantum-dilogarithm-stratified)
+> [`rem:quantum-dilogarithm-stratified-partial-argument`](#rem:quantum-dilogarithm-stratified-partial-argument)
 > Step 1.
 
 **Practical consequence.**

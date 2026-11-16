@@ -1,8 +1,9 @@
-import { proof } from "../../schema/builders";
+import { remark } from "../../schema/builders";
 
-export default proof({
-  label: "prf:quantum-dilogarithm-stratified",
-  of: "prop:quantum-dilogarithm-stratified",
+export default remark({
+  label: "rem:quantum-dilogarithm-stratified-partial-argument",
+  interprets: "conj:quantum-dilogarithm-stratified",
+  title: "Partial argument for the stratified quantum dilogarithm",
   authorNotes: [
     {
       kind: "refined-framing",
@@ -16,7 +17,7 @@ export default proof({
     },
   ],
   uses: [
-    "prop:quantum-dilogarithm-stratified",
+    "conj:quantum-dilogarithm-stratified",
     "cor:quantum-dilogarithm",
     "prop:categorical-mass-markov",
   ],

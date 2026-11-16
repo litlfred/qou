@@ -63,7 +63,7 @@ the transient trace contribution at $p_i$ evaluates to $\Phi_q(z_i)$.
 That identity is **unstratified** — it equates the whole transient
 trace with the whole dilogarithm and says nothing about levels. The
 level-by-level refinement this step needs is
-[partition-depth stratification of $\Phi_q$](#prop:quantum-dilogarithm-stratified),
+[partition-depth stratification of $\Phi_q$](#conj:quantum-dilogarithm-stratified),
 and with it the analytic representation of the curvature-rank-$k$
 stratum on the $i$-th exceptional divisor is
 
@@ -108,7 +108,7 @@ contribution. $\square$
 **Proof gap closure (partial).**
 The structural bridge for Step 4 — identifying the level-$k$ factor of
 $\Phi_q$ with the depth-$k$ centre stratum — is now provided by
-[partition-depth stratification of $\Phi_q$](#prop:quantum-dilogarithm-stratified).
+[partition-depth stratification of $\Phi_q$](#conj:quantum-dilogarithm-stratified).
 That proposition gives the depth-$k$ Frobenius-dual coefficients
 $\phi_q^{(k)}(z_i) \in Z^{(k)}(A)$ such that the partial product
 $\Phi_q^{[\leq k]}(z_i) = \sum_{j \leq k} \phi_q^{(j)}(z_i)$ on the
@@ -144,7 +144,7 @@ $k_\star(T_w)$ structurally determined by NF support, and the analytic
 $\Phi_q$ infinite product is a faithful Frobenius-pairing
 representation up to the depth-$k_\star$ truncation — is closed
 modulo the depth-stratified version of $\Phi_q$
-([prop:quantum-dilogarithm-stratified](#prop:quantum-dilogarithm-stratified)).
+([conj:quantum-dilogarithm-stratified](#conj:quantum-dilogarithm-stratified)).
 The remaining gap is between the categorical equality and its
 real-valued canonical evaluation at $|\hat{V}|\approx 1$.
 
