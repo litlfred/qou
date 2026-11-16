@@ -3614,3 +3614,15 @@ Y = ±1/3 for the quark doublet is recorded as a LABELLED CONDITIONAL INPUT. Its
 - So ONE full twist gives t ∈ {+1 (sym), −1 (antisym)}, and no twist gives 0: exactly the helon set {UU, EE, UE}. As a bonus, the twist SIGN is tied to the symmetry channel.
 - But Ř^{2k} gives ±k, and nothing in the braiding bounds k.
 - Verdict: like the γγ route, this moves the bound onto a minimality statement ("at most one full twist per helon"); it does not derive it. Scope (a). Y stays a labelled conditional input.
+
+
+### FINDING ε-Y7 (2026-11-16 07:25Z; owner asked: "are we missing ribbon twist in γγ setup? does it come from 3rd term in photon?")
+Yes, there is a mismatch inside the corpus.
+- The Lean γγ grammar (GammaGammaWordSelection.vertex i = [σ_i, σ_{i+1}⁻¹]) keeps only writhe-0 vertices, so every γγ word has writhe 0.
+- The corpus's own photon blocks give the photon a twist channel:
+  - trivial-knot-photon-interpretation says "the photon's internal twist is inherently positive (L₊)" and "electrons cannot emerge from photons lacking twist content";
+  - breit-wheeler-vertex says σ₀·σ₁ = L₊ (the Hopf link, writhe +2), then L₊·σ₀ = e⁻ (writhe 3), with the mirror L₋ for e⁺.
+- So the photon has two linear channels (σ₀, σ₁) and a third, twist-carrying Hopf channel L± (writhe ±2 = one full twist). The Lean γγ vertex omits that third channel.
+- Consequence for Y: if each photon carries twist content in {L₊, none, L₋} = {+1, 0, −1} full twists, and a strand's twist datum is supplied by ONE photon, then |t_i| ≤ 1 follows. That is the helon bound, with each photon playing the tweedle pair.
+- It still rests on "one photon per strand", but that is how pair production naturally counts, not a free minimality choice.
+- Caveat: adding L± to the γγ rule changes an owner-ruled grammar (qou-ales). The writhe-0, reading-3 and element results (V³, V⁶; the trefoil electron as the non-γγ blocker) would all need re-checking. Owner decision.
