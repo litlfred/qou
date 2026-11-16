@@ -1,7 +1,7 @@
 ---
 # qou-t0hl
 title: 'V1: close writhe-independence — w(B_3)=0 is DERIVABLE from the gluon unit'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -9,7 +9,7 @@ tags:
     - 8f-open
     - reorg-2026-10-04
 created_at: 2026-08-10T18:23:24Z
-updated_at: 2026-10-10T12:23:31Z
+updated_at: 2026-11-16T19:05:33Z
 parent: qou-8lxd
 ---
 
@@ -102,3 +102,13 @@ p/n argument is a non-sequitur (`pn_test_admits_writhe_only_map`: `Y = w²/4`
 returns `+1` on both), with the general criterion deliberately **not** restated
 there — its own closing comment points at `factors_through_iff` in
 `sm-hypercharge-invariant.lean`. Read that comment before adding anything here.
+
+
+## Progress Update — 2026-11-16 (`litlfred/qou#8159`, `4a5bd83fa5c08b2011cfb42b8d918e41431e6d96`)
+
+- **Resolved the `μ̄₁₂₃` formalization blocker on `BraidWord` in Lean 4 (`folio/quantum-observable-universe/lean/QOU/Eightfold/MagnusTripleLinkingAndFlavourGradings.lean`, `0` `sorry`, wired into `QOU.lean`)**:
+  - Defines the Artin representation `artinBraid : BraidWord → FreeWord3 → FreeWord3` of $B_3$ on the free group $F_3 = \langle x_1, x_2, x_3 \rangle$ with free reduction (`freeReduce`), and proves `borromean_x2_commutator_conjugate`: under `borromean = [1, -2, 1, -2, 1, -2]`, $x_2$ maps to the exact commutator conjugate $[x_1, x_3] x_2 [x_1, x_3]^{-1} = [1, 3, -1, -3, 2, 3, 1, -3, -1]$ (pure commutator 2nd longitude $\ell_2 = [x_1, x_3]$), whereas under `gluonUnit = [1, -2]`, $x_2$ maps to `[1]`.
+  - Defines the multilinear truncated Magnus expansion `evalMagnus` in $\mathbb{Z}\langle X_1, X_2, X_3 \rangle / I^4$ and the computable Milnor triple-linking invariant `magnusMuBar123 (β : BraidWord) : Int := (evalMagnus (artinBraid β [2])).c132`.
+  - Proves by `decide` (`magnusMuBar123_gluon_and_borromean`): `magnusMuBar123 gluonUnit = 0`, `magnusMuBar123 borromean = 1`, and all degree-2 Magnus coefficients (`c12`, `c23`, `c13`) of `borromean(x_2)` vanish.
+  - Proves **unconditionally** (`0` assumed hypotheses) `borromean_gluon_unconditional_separating_pair` (`writhe borromean = writhe gluonUnit ∧ magnusMuBar123 borromean ≠ magnusMuBar123 gluonUnit`) and `magnusMuBar123_not_factoring_through_writhe` (`¬ ∃ f : Int → Int, ∀ β : BraidWord, magnusMuBar123 β = f (writhe β)`).
+- **Probe & Witness (`computations/probes/magnus_triple_linking_and_flavour_gradings_probe.py` + `magnus-triple-linking-and-flavour-gradings.witness.json`)**: `allPassed: true` (`q0Anchor: "independent"`).

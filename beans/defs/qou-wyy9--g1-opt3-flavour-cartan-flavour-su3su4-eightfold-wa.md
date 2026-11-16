@@ -1,14 +1,14 @@
 ---
 # qou-wyy9
 title: 'G1-opt3 (flavour Cartan): flavour SU(3)/SU(4) eightfold-way weight lattice from the Bring/icosahedral SUBSTRATE geometry (qou-d7h1 #4600; Elliott SU(3) q=1 corner). S,C = weights in the framework''s own geometry. Framework-native, harder.'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - 8f-flavour
 created_at: 2026-08-02T20:19:12Z
-updated_at: 2026-10-10T07:18:33Z
+updated_at: 2026-11-16T19:05:33Z
 parent: qou-8lxd
 blocked_by:
     - qou-8pl3
@@ -34,3 +34,13 @@ on condition 5) picks which route.
 is reachable; this asks what the lattice looks like once it is. Kept so the
 dependency is recorded rather than rediscovered. Siblings on the same option
 fan: `qou-yw3v` (opt1), `qou-n6ls` (opt2), `qou-10zv` (opt4).
+
+
+## Progress Update — 2026-11-16 (`litlfred/qou#8159`, `4a5bd83fa5c08b2011cfb42b8d918e41431e6d96`)
+
+- **Lean 4 formalization (`folio/quantum-observable-universe/lean/QOU/Eightfold/MagnusTripleLinkingAndFlavourGradings.lean`, `0` `sorry`, wired into `QOU.lean`)**:
+  - Proves `su4_flavour_cube_and_charm_branching`: formalizes the root counts $|R(A_2)| = 6$ ($\mathrm{SU}(3)_f$) and $|R(A_3)| = 12$ ($\mathrm{SU}(4)_f$), the $N = 4$ Schur–Weyl cube identity $20 \times 1 + 20 \times 2 + 4 \times 1 = 64 = 4^3$, and the exact charm-stratum branching under $\mathrm{SU}(3)_f \times \mathrm{U}(1)_C \subset \mathrm{SU}(4)_f$:
+    * $\mathbf{20}_S = 10_{C=0} + 6_{C=1} + 3_{C=2} + 1_{C=3} = 20$ ($J = 3/2$ charmed baryon tower),
+    * $\mathbf{20}_M = 8_{C=0} + (6 + \bar{3})_{C=1} + 3_{C=2} = 8 + 9 + 3 = 20$ ($J = 1/2$ charmed baryon tower),
+    * $\mathbf{4}_A = 1_{C=0} + 3_{C=1} = 4$.
+- **Witness (`computations/probes/magnus-triple-linking-and-flavour-gradings.witness.json`)**: `allPassed: true` (`q0Anchor: "independent"`).
