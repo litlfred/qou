@@ -3602,3 +3602,7 @@ Remaining assumption: "one γγ unit per strand". This is a minimality statement
 - A fractional quark charge needs T ≠ 0, so the twist datum of a charged strand cannot come from γγ letters at all. Scope (b), invariant: writhe_eq_zero.
 - This agrees with def:strand-twist-datum, which calls the datum "an independent label, not the ambient twist".
 - Status: the bound |t_i| ≤ 1 is NOT derivable on this route. Y = ±1/3 stays conditional on the imported helon bound (two ±π tweedles per strand). Y stays OPEN.
+
+
+### LABEL (owner tap 2026-11-16 07:06Z "Label Y, switch to element")
+Y = ±1/3 for the quark doublet is recorded as a LABELLED CONDITIONAL INPUT. Its conditions: the triality principle (ε-Y2) and the helon twist bound |t_i| ≤ 1 (arxiv-hep-ph-0503213v2). The sign is a C-convention. Y is not derived. Work moves to the nucleon element choice.
