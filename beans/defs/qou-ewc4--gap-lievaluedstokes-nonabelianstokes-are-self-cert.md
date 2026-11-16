@@ -1,7 +1,8 @@
 ---
 # qou-ewc4
 title: 'GAP: LieValuedStokes + NonAbelianStokes are self-certifying carriers (Prop field + its own witness)'
-status: todo
+status: in-progress
+pr: 8218
 type: task
 priority: normal
 tags:
@@ -98,3 +99,7 @@ a finite/combinatorial model on the braid surface where the integrals are
 literal finite products. The same gap applies to `NonAbelianStokes`, whose
 only model is likewise `punitInstance`. Related: `qou-ghc6` (build
 Lie-algebra-valued 1-forms on a normed space).
+
+
+## Progress (Round 52 — PR #8218)
+- Resolved in PR `litlfred/qou#8218` (`claude/round52-devacuify-6qbv-uot9`, HEAD `31f749976663905d17c11fe898c73116da2e8d1b`) with 80-dps mpmath witness `computations/probes/round52-devacuify-6qbv-uot9.witness.json` (`scriptCommitSha = 5355a18ce7a60c5cabb79019663bff82e103d505`).

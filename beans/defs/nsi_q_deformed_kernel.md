@@ -1,7 +1,8 @@
 ---
 # nsi_q_deformed_kernel
 title: nsi q deformed kernel missing hypotheses
-status: todo
+status: in-progress
+pr: 8218
 type: task
 priority: normal
 tags:
@@ -17,3 +18,7 @@ The `nsi_q_deformed_kernel` theorem is unprovable. Its class lacks constraints o
 
 
 Also known as `nqdk` (its former front-matter header id; the beans CLI uses the filename id `nsi_q_deformed_kernel`). Recorded 2026-10-04.
+
+
+## Progress (Round 52 — PR #8218)
+- Resolved in PR `litlfred/qou#8218` (`claude/round52-devacuify-6qbv-uot9`, HEAD `31f749976663905d17c11fe898c73116da2e8d1b`) with 80-dps mpmath witness `computations/probes/round52-devacuify-6qbv-uot9.witness.json` (`scriptCommitSha = 5355a18ce7a60c5cabb79019663bff82e103d505`).
