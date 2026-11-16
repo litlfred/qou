@@ -52,3 +52,29 @@ Control: P empty (the free atom).
 
 **Prediction.** None on the sign. Expect at least one P to give a passing atom; if no atom with a
 pair passes, the entangled-pair reading fails as stated (scope a) and the backups come up.
+
+## Stage 5 — coarse-grained carbon ring (owner card 2026-11-16 "Both"; pre-registered, not yet run)
+
+**Assumption, stated up front.** One carbon atom = one strand. QOU's carbon atom is not one strand
+(it is a 3A-strand nucleus plus electrons), so this is a coarse-graining and any result is a
+statement about the coarse-grained word only.
+
+**Words (6 strands).** Bonds are Birman–Ko–Lee band generators a_{i,i+1}, i ∈ Z/6, with
+a_{6,1} = ρ σ₅ ρ⁻¹, ρ = σ₁σ₂⋯σ₅, so the closing bond is a genuine crossing of strands 6 and 1 and
+no bond is privileged by the strand order. Bond exponent e ∈ {±1, ±2}.
+- Ring, symmetric: all six exponents equal.
+- Ring, alternating (Kekulé): exponents (2,1,2,1,2,1) and its cyclic shift.
+- Chain controls: the same with the closing bond removed (5 bonds).
+- Sign controls: all exponents negated.
+
+**Measured, reported, not selected on.** Reading 3 at levels 1..6 (convention D, proton pin,
+mpmath 40 dps); components of the closure; writhe; χ₍₆₎ = q^{writhe}; the connected part φ(T) of
+`log(δ·V)` on every 3-strand sublink of the ring vs the chain (exact, as in the Borromean probe).
+
+**Questions, with no predicted answer.**
+1. Does closing the chain into a ring change the reading-3 pass/fail of the same exponent pattern?
+2. Does the symmetric ring differ from the alternating ring?
+3. Is any three-party connected part nonzero on a ring whose pair parts are zero?
+
+**What does not count.** Choosing e or the pattern because it passes. Any energy or CODATA/AME
+comparison is out of scope for this stage.
