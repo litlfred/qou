@@ -3581,3 +3581,15 @@ No data, and no lepton charges as input.
 - So k = 0 is equivalent to the helon bound |t_i| ≤ 1, which is imported (bilson-thompson2005). The datum itself is t: {1..n} → ℤ and is unbounded.
 - Also, Q_twist = Q is the defining equation (TwistBatteryVacuity), not a test.
 - Status: Y = ±1/3 is CONDITIONAL on the helon twist bound. The sign is a convention (C). Y stays OPEN until the bound |t_i| ≤ 1 is derived, e.g. from a ribbon-twist eigenvalue constraint.
+
+
+### NOTE ε-Y4 (2026-11-16 07:10Z), where the helon twist bound comes from (owner: "try derive twist bound")
+Source (held in the library: arxiv-hep-ph-0503213v2, §2):
+- A helon is a PAIR of tweedles, each a ±π half-twist ("Unordered pairing").
+- So the helon twist is +2π, 0 or −2π, i.e. |t_i| ≤ 1. The bound is a consequence of "a strand carries exactly two half-twists". It is not an independent axiom.
+Categorical translation (proposal, not proved):
+- a half-twist ±π corresponds to one Hecke letter σ^{±1} (two eigen-channels only);
+- a helon corresponds to a two-letter unit;
+- the corpus γγ rule already gives words of even length (gammaGamma_length_even), and the gluon unit is V = σ₀σ₁⁻¹.
+- If each strand's twist datum = the exponent sum of ONE γγ two-letter unit, then t_i ∈ {−2, 0, 2}/2 = {−1, 0, 1}, and ε-Y3 gives Y = ±1/3.
+Remaining assumption: "one γγ unit per strand". This is a minimality statement, the same kind of choice as k = 0. So the bound is MOVED onto the γγ construction, not yet derived. A derivation would need the γγ pair-production construction to put exactly one pair on each strand.
