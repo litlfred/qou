@@ -1,0 +1,139 @@
+{
+  "probe": "steepest-descent-euler-maclaurin-and-frobenius-diagonal",
+  "beans": [
+    "qou-i9xj",
+    "qou-r4ya",
+    "qou-xsv8",
+    "qou-xzlt",
+    "qou-y3xv"
+  ],
+  "precisionDps": "80",
+  "scriptHash": "73f75f472515",
+  "scriptCommitSha": "448e3c7829655d9e348b3c44874110f9ddb3e709",
+  "generatedAt": "2026-11-16T22:02:39.317239+00:00",
+  "allPassed": true,
+  "checks": {
+    "qou_i9xj_fantini_wheeler_eq14_shift": {
+      "passed": true,
+      "sampleShifts": [
+        {
+          "m": "0",
+          "l": "0",
+          "quadraticShift": "5/2"
+        },
+        {
+          "m": "0",
+          "l": "1",
+          "quadraticShift": "11/2"
+        },
+        {
+          "m": "1",
+          "l": "0",
+          "quadraticShift": "9/2"
+        },
+        {
+          "m": "1",
+          "l": "1",
+          "quadraticShift": "15/2"
+        }
+      ]
+    },
+    "qou_r4ya_balanced_theta_coset": {
+      "passed": true,
+      "cosetSamples": [
+        {
+          "j": "-1",
+          "friedrichsPoint": "-11/7",
+          "kreinPoint": "-4/7",
+          "cosetRepresentative": "3/7"
+        },
+        {
+          "j": "0",
+          "friedrichsPoint": "3/7",
+          "kreinPoint": "10/7",
+          "cosetRepresentative": "3/7"
+        },
+        {
+          "j": "1",
+          "friedrichsPoint": "17/7",
+          "kreinPoint": "24/7",
+          "cosetRepresentative": "3/7"
+        }
+      ]
+    },
+    "qou_xsv8_center_frobenius_diagonal": {
+      "passed": true,
+      "w0AtThreeHalves": "64/1729",
+      "w1AtThreeHalves": "72/133",
+      "w2AtThreeHalves": "729/1729",
+      "weightSum": "1/1",
+      "offDiagonalEntries": [
+        "0/1",
+        "0/1",
+        "0/1"
+      ]
+    },
+    "qou_xzlt_euler_maclaurin_second_order": {
+      "passed": true,
+      "cubicTrapezoidDefect": "-7/12288",
+      "cubicEM2Defect": "-1/81920",
+      "logSineTrapezoidCellError": "0.0000009636521015947019956403162738807181915099",
+      "logSineEM2CellError": "0.00000000004802856845553470075276171634751506153416"
+    },
+    "qou_y3xv_gswz_global_symbol_norm_obstruction": {
+      "passed": true,
+      "z2IdentityResidual": "0/1",
+      "ord5Table": [
+        {
+          "m": "2",
+          "modulus624m": "1248",
+          "ord5": "8",
+          "relDegreeOverQ25": "4",
+          "twoM": "4"
+        },
+        {
+          "m": "3",
+          "modulus624m": "1872",
+          "ord5": "12",
+          "relDegreeOverQ25": "6",
+          "twoM": "6"
+        },
+        {
+          "m": "4",
+          "modulus624m": "2496",
+          "ord5": "16",
+          "relDegreeOverQ25": "8",
+          "twoM": "8"
+        },
+        {
+          "m": "6",
+          "modulus624m": "3744",
+          "ord5": "24",
+          "relDegreeOverQ25": "12",
+          "twoM": "12"
+        },
+        {
+          "m": "8",
+          "modulus624m": "4992",
+          "ord5": "32",
+          "relDegreeOverQ25": "16",
+          "twoM": "16"
+        },
+        {
+          "m": "12",
+          "modulus624m": "7488",
+          "ord5": "48",
+          "relDegreeOverQ25": "24",
+          "twoM": "24"
+        },
+        {
+          "m": "24",
+          "modulus624m": "14976",
+          "ord5": "96",
+          "relDegreeOverQ25": "48",
+          "twoM": "48"
+        }
+      ]
+    }
+  }
+}
