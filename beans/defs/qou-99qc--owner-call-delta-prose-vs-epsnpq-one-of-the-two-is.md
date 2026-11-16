@@ -3710,3 +3710,7 @@ Owner tapped "Add L± to γγ" (card in thread "Find the n–p break and nucleon
 - n–p break: unaffected (every L± word is F₃-covariant, ε-L1 ratio 1).
 - Canonical word reselection over the new alphabet is required. Any selection rule will be PRE-REGISTERED here before computing; no element picked by residual; any m_n move flagged in project chat.
 Bean stays OPEN.
+
+### CORRECTION 2026-11-16 19:50Z — the L± recommendation was wrong (agent's own error)
+The agent recommended "keep the rule as is" on the grounds that "nothing in the corpus derives L± as a γγ letter". False: prop:gamma-gamma-generates-particles (predicted-spectra/gamma-gamma-generates-particles.md) reduces the product of two three-term photons γ = 1 + φ₀σ₀ + φ₁σ₁ with the Hecke relation, and the normal form already contains L₊ = σ₀σ₁ (coefficient φ₀ψ₁) and L₋ = σ₁σ₀ (coefficient φ₁ψ₀). So L± follows from the photon definition applied to γγ; the owner's ruling restores what the definition gives, and the earlier {V, V⁻¹} rule was a truncation of it. Search gap: the agent read the bean history and the trivial-knot remark tables but not this proposition.
+Open discrepancy to check: in that proposition L₋ = σ₁σ₀ (writhe +2, opposite ORDER), while the ε-L1 probe (#8104) and the gluon-thread stages used L₋ = σ₀⁻¹σ₁⁻¹ (writhe −2, the INVERSE). ε-L1's conclusion (p/n ratio 1) holds for every Ř word, so it is unaffected; the reading-3 stage results that used L₋ as an inverse need re-checking against L₋ = σ₁σ₀.
