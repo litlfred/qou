@@ -1,0 +1,86 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "computedAt": "2026-11-16T19:54:34Z",
+  "commitSha": "f87b601a1fa1aff32eae2de2310d57570f222be9",
+  "assertions": [
+    {
+      "id": "A1_tail_depth1_nu_nm1_closed_form_and_n1_eq_8_onset",
+      "name": "A1_tail_depth1_nu_nm1_closed_form_and_n1_eq_8_onset",
+      "passed": true,
+      "maxResidual": "0",
+      "details": "Exact Fraction verification of nu_{n-1} closed form on n=4..25 and onset n_1=8"
+    },
+    {
+      "id": "A2_operator_selection_lp_dual_certificate_cone_n2_n3",
+      "name": "A2_operator_selection_lp_dual_certificate_cone_n2_n3",
+      "passed": true,
+      "maxResidual": "5.949569145045545197e-82",
+      "details": "Verification of DualCertificateExists inverse reconstruction and strong-duality reduction"
+    },
+    {
+      "id": "A3_four_letter_colour_weighted_altchar_sextic_and_sandwich",
+      "name": "A3_four_letter_colour_weighted_altchar_sextic_and_sandwich",
+      "passed": true,
+      "maxResidual": "7.9066484574228924183e-82",
+      "details": "Verification of sextic closed form, ud < cw < uu < 0 sandwich, and non-unit pairings at q_0"
+    },
+    {
+      "id": "A4_v_level_passage_and_1_over_g_vs_5g_resummed_identity",
+      "name": "A4_v_level_passage_and_1_over_g_vs_5g_resummed_identity",
+      "passed": true,
+      "maxResidual": "4.8181139037420750674e-81",
+      "details": "Verification of (q-q^-1)=(v-v^-1)[2]_v and 1/g = 5g(1 + x/5) at v_0 = sqrt(q_0)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "tail-d6-lp-dual-altchar-vlevel",
+  "scriptFile": "computations/probes/tail_d6_lp_dual_altchar_vlevel_probe.py",
+  "scriptHash": "ac25c5de64e2",
+  "scriptCommitSha": "f87b601a1fa1aff32eae2de2310d57570f222be9",
+  "precisionMetadata": {
+    "library": "mpmath",
+    "dps": 80,
+    "float64Used": false
+  },
+  "environment": {
+    "python": "3.13.12",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O"
+  },
+  "invocation": "python3 computations/probes/tail_d6_lp_dual_altchar_vlevel_probe.py",
+  "description": "80-dps and exact-Fraction verification for qou-1a69, qou-ec5z, qou-k4f8, qou-efqx, and qou-xajh: depth-1 nu_{n-1} closed form and n_1=8 sign onset, operator-selection LP dual certificate reduction, 4-letter colour-weighted alternating character sextic sandwich, and v-level passage 1/g = 5g(1 + x/5).",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785828025967874472514871817667698552525052686212266813825243177207988664011",
+  "data": {
+    "nu_nm1_values": {
+      "n4": "0",
+      "n5": "-4/3",
+      "n6": "-5/3",
+      "n7": "-1/6",
+      "n8": "119/60"
+    },
+    "lp_dual_n2": {
+      "det_G_n2": "0.752702113254337993569101386856",
+      "s_at_y0_quarter": [
+        "0.82881650725212333865628153044",
+        "-0.128640519263780970487011805843"
+      ]
+    },
+    "altchar_cw_q0": {
+      "delta_q0": "0.00137571080879862286370421508223",
+      "alt_ud": "-1.00544843335838431863834398419",
+      "alt_cw": "-1.00537653173016644941150331245",
+      "alt_uu": "-0.900918283914171849829436481191",
+      "min_dist_from_one": "0.0107819705537783854569914273838"
+    },
+    "v_level_passage_q0": {
+      "v0": "1.05355521108416372705889827079",
+      "x0": "0.0108968667167686372766879683725",
+      "g0": "0.446727067905231389255411304033",
+      "five_g0": "2.23363533952615694627705652017",
+      "inv_g0": "2.2385032648438931051218097298",
+      "ratio_inv_g_over_5g": "1.00217937334335372745533759367"
+    }
+  }
+}
