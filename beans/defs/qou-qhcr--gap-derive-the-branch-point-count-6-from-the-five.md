@@ -1,13 +1,13 @@
 ---
 # qou-qhcr
 title: 'GAP: derive the branch-point count 6 from the five QOU axioms (the ONE missing step in the chi = -6 chain)'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-15T06:16:39Z
-updated_at: 2026-10-04T15:14:52Z
+updated_at: 2026-11-16T18:28:22Z
 parent: qou-6qbv
 ---
 
@@ -469,3 +469,15 @@ No content block was edited. Correcting `ex:chi-minus-six-derivation`'s
 `{−4, −6}` to `{−2, −4, −6}`, and re-describing Step 5's narrowing as
 carried by simplicity rather than transitivity, are both readings of the chain —
 the owner's call, the same disposition `qou-51l1` and the prior session took.
+
+## Progress Update (2026-11-16 — Round 47, PR #8147)
+
+- Extended `folio/quantum-observable-universe/lean/QOU/BringsSurface/BranchPointSixNotForced.lean` (`0` `sorry`, import-free, `lean -DautoImplicit=false -s 65536` exit 0, PR `litlfred/qou#8147`, commit `94984f6696056c5cbe6d700149fbb37894d29ad5`) with §6.5 (`Hyperelliptic vs. trigonal Riemann–Hurwitz ramification at genus g = 4`):
+  - `totalRamificationOverP1 (d g : Nat) : Nat := 2 * g - 2 + 2 * d`
+  - `chiOverP1_totalRamification (d g : Nat) (hg : 1 ≤ g) : chiOverP1 d (totalRamificationOverP1 d g) = eulerChar g`
+  - `hyperelliptic_ramification_genus_four : totalRamificationOverP1 2 4 = 10 ∧ totalRamificationOverP1 2 4 ≠ 6`
+  - `trigonal_ramification_genus_four : totalRamificationOverP1 3 4 = 12`
+  - `trigonal_simple_branch_count (g : Nat) (hg : 1 ≤ g) : totalRamificationOverP1 3 g = 2 * g + 4`
+  - `trigonal_genus_four_six_branch_points_iff_index_two (rPerPoint : Nat) : 6 * rPerPoint = totalRamificationOverP1 3 4 ↔ rPerPoint = 2`
+  - `uniform_six_branch_points_minimal_degree_is_trigonal`: proves that for $2 \le d \le 5$, a uniform-ramification cover of $\mathbb{P}^1$ of genus $4$ with $b = 6$ branch points has unique minimal-degree solution $(d, r_{\text{per}}) = (3, 2)$.
+- Kept at `status: in-progress` per owner rule.

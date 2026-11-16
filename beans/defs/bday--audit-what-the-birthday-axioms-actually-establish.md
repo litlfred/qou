@@ -1,7 +1,7 @@
 ---
 # bday
 title: Audit what the birthday axioms actually establish — they admit a two-valued model
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -11,7 +11,7 @@ tags:
     - stale-claim-corrected
     - reorg-2026-10-04
 created_at: 2026-08-10T01:35:00Z
-updated_at: 2026-10-04T15:10:49Z
+updated_at: 2026-11-16T18:28:22Z
 parent: qou-6qbv
 ---
 
@@ -949,3 +949,12 @@ Audit: docs/audits/2026-09-03-sibling-lean-compile-sweep.md §"Precedent check".
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-04 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Progress Update (2026-11-16 — Round 47, PR #8147)
+
+- Extended `folio/quantum-observable-universe/lean/QOU/AppendixSurreals/BirthdayFaithful.lean` (`0` `sorry`, PR `litlfred/qou#8147`, commit `94984f6696056c5cbe6d700149fbb37894d29ad5`) with §4 (`StrictBirthdayHierarchy`):
+  - `StrictBirthdayHierarchy (K : Type u) [SurrealField K] := BirthdayFaithful K`
+  - `birthday_natCast_strictMono [BirthdayFaithful K] {m n : ℕ} (hmn : m < n) : birthday ((m : ℕ) : K) < birthday ((n : ℕ) : K)`
+  - `birthday_unbounded_of_faithful [BirthdayFaithful K] (N : ℕ) : ∃ x : K, (N : Ordinal) ≤ birthday x`
+  - `no_finite_birthday_bound_of_faithful [BirthdayFaithful K] (B : ℕ) : ¬ (∀ x : K, birthday x ≤ (B : Ordinal))` (proving that `[BirthdayFaithful K]` rules out not only the 2-valued `flatBirthday ≤ 1` model, but every finite `B`-bounded birthday model).
+- Kept at `status: in-progress` pending PR #8147 merge and owner verification.

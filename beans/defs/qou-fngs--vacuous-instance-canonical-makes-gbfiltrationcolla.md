@@ -1,13 +1,13 @@
 ---
 # qou-fngs
 title: 'Vacuous: instance canonical makes GBFiltrationCollapsesAtE2 free for every R'
-status: todo
+status: in-progress
 type: bug
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T14:13:08Z
-updated_at: 2026-10-04T15:10:45Z
+updated_at: 2026-11-16T18:28:22Z
 parent: qou-6qbv
 ---
 
@@ -352,3 +352,10 @@ Both sentences read the page/column index and the GB-depth as one index. They ar
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-03 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Verification & Audit Note (2026-11-16 — Round 47, PR #8147)
+
+- Verified on `main` (`folio/quantum-observable-universe/lean/QOU/Mathlib/`) that:
+  1. All 7 vacuous `instance` declarations in `QOU/Mathlib/SpectralSequence.lean` were demoted to `def` in commit `b61f6a4fd3` (`0` `instance` declarations remain in `SpectralSequence.lean`).
+  2. `QOU/Mathlib/PagedSpectralSequence.lean` (`571147350c`) and `QOU/Mathlib/ConcentratedColumnCollapse.lean` (`1949f25d71`, `gbCollapsesOfConcentrated`, `concentrated_collapses`) are landed (`0` `sorry`) and wired into `QOU.lean`.
+- Kept at `status: in-progress` per owner rule (no unilateral bean closure).

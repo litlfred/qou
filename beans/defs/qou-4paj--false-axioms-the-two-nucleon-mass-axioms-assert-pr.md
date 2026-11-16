@@ -1,14 +1,14 @@
 ---
 # qou-4paj
 title: 'FALSE AXIOMS: the two nucleon-mass axioms assert propositions whose negations are provable'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-09-04T02:40:09Z
-updated_at: 2026-10-04T15:19:07Z
+updated_at: 2026-11-16T18:28:22Z
 parent: qou-wp3h
 ---
 
@@ -74,3 +74,11 @@ Full write-up with the reproduction snippet:
 Found by fixing an unrelated scope bug: the audit walked only the Lake library
 tree, so 944 content-block siblings and 148 of the corpus's 182 axioms were
 invisible. Nothing was looking for false axioms.
+
+## Progress Update (2026-11-16 — Round 47, PR #8147)
+
+- Removed both inconsistent `axiom` declarations (`proton_mass_from_substrate_axiom` and `neutron_mass_from_substrate_axiom`) in PR `litlfred/qou#8147` (commit `94984f6696056c5cbe6d700149fbb37894d29ad5`):
+  1. `folio/quantum-observable-universe/knots-particles-confinement/categorical-proton.lean`: replaced `proton_mass_from_substrate_axiom` with sorry-free theorems `proton_mass_from_substrate : proton_mass q₀ = 7.32772475341775 / (1 - q₀⁻¹) ^ 2` (`rfl`) and `bare_borromean_carrier_not_938 : ¬ (|proton_mass q₀ - 938.272| < 1)` (`by unfold proton_mass q₀; norm_num [abs_lt]`), documenting the 2026-06-24 and 2026-08-11 owner rulings.
+  2. `folio/quantum-observable-universe/knots-particles-confinement/categorical-neutron.lean`: replaced `neutron_mass_from_substrate_axiom` with sorry-free theorems `neutron_mass_from_substrate : neutron_mass q₀ = 7.32772475341775 / (1 - q₀⁻¹) ^ 2 + (1 / 2) * (q₀ - q₀⁻¹)` (`rfl`) and `bare_neutron_carrier_not_939 : ¬ (|neutron_mass q₀ - 939.565| < 1)` (`by unfold neutron_mass q₀; norm_num [abs_lt]`).
+  3. Updated `docs/audits/2026-09-04-two-false-nucleon-mass-axioms.md` with the resolution record.
+- Kept at `status: in-progress` pending PR #8147 merge and owner verification.
