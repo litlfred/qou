@@ -129,3 +129,10 @@ Owner choice 2026-11-15: record (this note) + Lean the exclusion (PR) + then the
 2. Optional Lean: n = 2 positivity criterion; sector formula 𝔪(β) = q^{−2w} Σ [n−2k+1] χ_k; mirror = bar, 𝔪(β̄)(q) = 𝔪(β)(q⁻¹); long-transposition trace tr T_(1n) = z_D·r^{n−2}.
 3. Characterise positivity for n ≥ 3.
 4. Check max |tr T_w| at n = 6.
+
+## 2026-11-16: F₃ (#8111) vs bar — done, pre-registered, all checks pass
+Project file qou-crossing-energy/probes/f3-bar/ (preregistration, probe, output, result). Linear bar
+X ↦ S^⊗3 X(q⁻¹) S^⊗3 is the mirror σᵢ ↦ σᵢ⁻¹ composed with u↔d (S⊗S Ř(q⁻¹) S⊗S = Ř⁻¹). It does not fix F₃ but
+keeps every signed word (340, length ≤ 4) in the F₃ commutant, fixes the pivot, swaps p/n spaces:
+Tr_p(β̄)(q) = Tr_n(β)(q⁻¹) = Tr_p(β)(q⁻¹); T_p/T_n = q² on mirrors. Verdict scope (a): bar adds no u↔d
+breaker; the γγ-walk p/n χ₂₁ difference is element choice (qou-99qc). Lean candidate `mirror_trace_bar` not written (awaits owner).
