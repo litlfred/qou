@@ -3,12 +3,12 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:partition-sum-proton-residual",
   title:
-    "Proton tower residual = $m_e \\cdot \\mathrm{tr}_M(C_{\\mathrm{Frob}}) = m_e(2 + 1/[2]_q)$",
+    "Proton tower residual compared with $m_e\\sum_{\\lambda\\vdash3}1/\\dim_q\\lambda = m_e(2 + 1/[2]_q)$",
   lean: {
     ref: "qou:QOU.BraidKnot.proton_tower_residual_frobenius",
     validation: "not_checked",
   },
-  uses: ["prop:schur-weyl-mass-decomposition"],
+  uses: ["prop:schur-weyl-mass-decomposition", "prop:h3-frobenius-casimir-markov-trace"],
   computation: {
     engine: "python",
     script: "computations/proton_residual_rootcause.py",
@@ -30,6 +30,7 @@ export default conjecture({
     "gb-filtration",
   ],
   authorNotes: [
+    { kind: "status", date: "2026-11-16", body: "Restated (issue #8094): the claim tr_M(C_Frob) = 2 + 1/[2]_q is false for the Frobenius Casimir of H_3(q) (prop:h3-frobenius-casimir-markov-trace); the conjecture now compares the residual with the formal sum. Residual sign recorded for both tower values on record. Tables 1 and 4 relabelled; no number changed." },
     { kind: "status", date: "2026-11-16", body: "Demoted from proposition on owner ruling 2026-11-16 (card \"Demote all six\"): the claim is not proved from established results, so it is stated as a conjecture. Label renamed conj:partition-sum-proton-residual -> conj:partition-sum-proton-residual." },
     {
       kind: "caveat",
