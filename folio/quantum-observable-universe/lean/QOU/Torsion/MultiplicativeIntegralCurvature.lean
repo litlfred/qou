@@ -69,7 +69,9 @@ theorem iteratedHolonomy_eq_commutatorDefect_mul {G : Type*} [Group G] (g_ρ g_q
 theorem commutatorHolonomyDefect_eq_one_iff {G : Type*} [Group G] (g_ρ g_q : G) :
     commutatorHolonomyDefect g_ρ g_q = 1 ↔ g_ρ * g_q = g_q * g_ρ := by
   unfold commutatorHolonomyDefect
-  exact mul_inv_eq_one
+  constructor
+  · exact mul_inv_eq_one.mp
+  · exact mul_inv_eq_one.mpr
 
 /-- **MQ1 ordering dichotomy (`qou-zbcj`)**: the two iterated 2-step holonomies coincide if and
 only if the `ρ`-step and `q`-step transports commute. -/
@@ -78,6 +80,9 @@ theorem iteratedHolonomy_eq_iff_commute {G : Type*} [Group G] (g_ρ g_q : G) :
       g_ρ * g_q = g_q * g_ρ := by
   unfold iteratedHolonomyRhoThenQ iteratedHolonomyQThenRho holonomy
   simp only [List.prod_cons, List.prod_nil, mul_one]
+  constructor
+  · intro h; exact h
+  · intro h; exact h
 
 /-- **First-order BCH / Lie commutator defect** over any non-commutative ring `R`:
 the difference of the two ordered 1-step expansions `(1 + A_ρ)(1 + B_q)` and
@@ -107,6 +112,8 @@ noncomputable def surfaceOrderingShift : ℝ :=
 theorem surfaceOrderingShift_eq_neg_pi_sq_div_three :
     surfaceOrderingShift = -Real.pi ^ 2 / 3 := by
   unfold surfaceOrderingShift
+  have h : -(Real.pi ^ 2 / 6) - (Real.pi ^ 2 / 6) = -2 * (Real.pi ^ 2 / 6) := by ring
+  rw [h]
   ring
 
 /-- **Basel / dilogarithmic series representation of `−π²/3` (`qou-tw5z`)**:
