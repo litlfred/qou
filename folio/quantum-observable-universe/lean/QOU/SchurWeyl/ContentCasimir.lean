@@ -31,9 +31,12 @@ assumed.
 ## What is NOT proved, and why it matters
 
 1. **That every `V_λ` has such a weight vector** with `a_k² = q^{2 c_k}` is the seminormal form
-   ([ram1997] Thm 4.1).  The corpus proves it for the trivial, sign and `(2,1)` representations only
-   (`QJucysMurphy` § EigenvalueGrounding); the theorem below takes the weight vector as a hypothesis.
-   The trivial-representation instance is checked in `contentCasimir_rhoTriv`.
+   ([ram1997] Thm 4.1).  The theorem below takes the weight vector as a hypothesis.  *Update
+   2026-11-16:* that hypothesis is now discharged for every shape.  `QJucysMurphyEigen.seminormalRep_qJM`
+   proves Ram 4.1 on every seminormal block, and `SeminormalContentCasimir` combines it with this file:
+   `seminormalRep_contentCasimir` (every `ρ_λ`) and `heckeWedderburn_contentCasimir` (every Wedderburn
+   block of `H_{n+1}(q)`, char 0, `q` not a root of unity).  The trivial-representation instance is
+   still checked independently in `contentCasimir_rhoTriv`.
 2. **That `Δ_ξ` acts through `C_n` at all.**  `Δ_ξ` is defined geometrically, from the contact form
    and the Reeb field, with no `q` in it; nothing in the corpus puts an `H_n(q)`-action on the space
    it acts on.  This file says nothing about `Δ_ξ`.
