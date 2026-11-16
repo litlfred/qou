@@ -3672,3 +3672,6 @@ Setting: H₃, convention D, exact.
   - in (2,1) both bar-even parts are 0, and the bar-odd parts differ by exactly −h/2.
 - So the element asymmetry sits only in the (2,1) sector, as a −h/2 shift, and lies in the 5 non-γγ letters.
 - Relevance to the element choice: any rule fixing the quark block decides the (2,1) shift. Since χ₍₂,₁₎(Δ_S) = 0 (ε thread), the short element Δ_S does not see it, while nuc9 and nuc11 do. bar is semilinear, so F₃-commutation (Bridge B) does not apply to it directly.
+
+### NOTE 2026-11-16 — gluon thread stage 1 (L± in the reading-3 re-check), relayed
+Over 5,460 words of length 1–6 in {V, V⁻¹, L₊, L₋}: a word passes reading 3 iff it is a pure braid (1,778 pass, 3,682 knots fail). Adding L± changes character SIZES (L₊³ lowest char 1, L₋³ 0.5347), not pass/fail; no knot passes, so the trefoil electron is still not γγ-reachable. For this bean: L± is F₃-covariant (ε-L1), so it cannot be the n–p break, and it does not rescue nuc11's (2,1) failure. Stage 2 (H₂, V³/V⁶ + length-2 chiral electrons) pending. Adding L± to the rule stays the user's ruling.
