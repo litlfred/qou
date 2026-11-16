@@ -1,7 +1,8 @@
 ---
 # qou-f2pf
 title: lp_shadow_price leaves float64 residue on 6 of 20 blocks its docstring says it zeroes
-status: todo
+status: in-progress
+pr: 8186
 type: task
 priority: normal
 created_at: 2026-09-12T20:16:18Z
@@ -70,3 +71,7 @@ Do not "fix" this by thresholding the residue to zero. That hides the input.
 ## Parented 2026-11-15 (owner-approved bean triage)
 
 Parent `(none)` → `qou-9nnz`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.
+
+
+## Round 51 Progress
+- [x] PR https://github.com/litlfred/qou/pull/8186 (`fb4f6926d3f96fd99209ef3cb58128ff0ce2701b`): updated `lp_shadow_price(partition)` in `computations/hecke_core_legacy.py` to return exact `_mp.mpf(0)` whenever `k == 0 or d == 1` (covering all 20 of 20 one-dimensional blocks `(k,)` and `(1^k)` for k=2..11).

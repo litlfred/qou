@@ -1,7 +1,8 @@
 ---
 # qou-5k8x
 title: witnesses that read upstreams with bare json.load have no drift edge — and pad float64 to 50 digits
-status: todo
+status: in-progress
+pr: 8186
 type: task
 priority: normal
 tags:
@@ -132,3 +133,7 @@ question worth deciding: it would go red on 56% of the relevant corpus today.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-30 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## Round 51 Progress
+- [x] PR https://github.com/litlfred/qou/pull/8186 (`fb4f6926d3f96fd99209ef3cb58128ff0ce2701b`): replaced bare `json.load(open(...))` in `computations/qbeta/qbeta_markov_trace_steps_4_5.py` with `record_upstream` + `wb.add_upstream_records`, removed false-precision `sp.Float(..., 50)` padding on `tau_M_at_q0`, and regenerated `qbeta-markov-trace-steps-4-5.witness.json`.

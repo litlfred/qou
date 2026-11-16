@@ -1,7 +1,8 @@
 ---
 # qou-ah1m
 title: main regressed 2 witnesses on the raw-float64 ratchet (phase-transition-q-ideal-gas, seifert-volume-meson-n7-extension)
-status: todo
+status: in-progress
+pr: 8186
 type: task
 priority: normal
 tags:
@@ -110,3 +111,7 @@ baseline and the auditor are untouched, and the drift is main's.
    answers from the two before noticing. **Test ancestry against the BRANCH TIP,
    or use `git merge-base A B` explicitly** -- never against the API-reported
    base.sha.
+
+
+## Round 51 Progress
+- [x] PR https://github.com/litlfred/qou/pull/8186 (`fb4f6926d3f96fd99209ef3cb58128ff0ce2701b`): updated `computations/phase_transition_q_ideal_gas.py` and `computations/seifert_volume_meson_n7_extension.py` to use `set_compute_dps()`, explicit `_precision.fmt` serialization, and `mpf` `R_gas`, and regenerated both witnesses (0 raw float64).

@@ -1,7 +1,8 @@
 ---
 # qou-4pmk
 title: 'REGRESSION on main: fcc65c1380 doubled raw float64 in he-nu-sdp-saturation-obstruction (5->11) and the ratchet cannot see it'
-status: todo
+status: in-progress
+pr: 8186
 type: bug
 priority: normal
 tags:
@@ -71,3 +72,7 @@ local regeneration rather than commit it.
 3. Re-run the producer AND regenerate witness-raw-float64-audit.witness.json in
    the same commit, naming the count that moved — both the regression closing
    and the 157 drained files.
+
+
+## Round 51 Progress
+- [x] PR https://github.com/litlfred/qou/pull/8186 (`fb4f6926d3f96fd99209ef3cb58128ff0ce2701b`): serialized `q0` via `Q_50_DIGIT_STR` and LP support weights as strings in `computations/probes/he_nu_sdp_saturation_obstruction.py`, wrapped witness emission via `WitnessBuilder.wrap_legacy` with checkable assertions, and regenerated `he-nu-sdp-saturation-obstruction.witness.json` (0 raw float64).
