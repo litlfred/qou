@@ -128,7 +128,15 @@ instance shellClosureMonotone_refl
   ⟨le_refl _⟩
 
 /-- **Shell-closure stability, claim (1) — monotone non-decrease.**
-    Per-instance form backed by `ShellClosureMonotone`. -/
+    Per-instance form backed by `ShellClosureMonotone`.
+
+    **Assumed, not derived here** — the body projects
+    `ShellClosureMonotone.monotone`, so the stability inequality is carried as
+    a context-class hypothesis (§3b-conditional, derivation pending), not
+    established below. Boyd–Vandenberghe is cited for the perturbation and
+    sensitivity-analysis background, not for a proof performed here; because
+    `D_prev`, `D`, and `q` are arbitrary, this projection may not be converted
+    to a global `axiom`. -/
 -- Ref: [leitner2026] particle-interactions/shell-closure-stability
 -- Ref: [boyd-vandenberghe-2004] §5.6 (Perturbation and sensitivity
 --      analysis — value-function monotonicity under domain expansion)
