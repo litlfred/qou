@@ -1,7 +1,7 @@
 ---
 # qou-k4f8
 title: 'Dual certificate existence for the operator-selection LP: formalize first, then symbolic'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -312,3 +312,8 @@ capability as absent, check whether it is merely unrouted.**
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-16 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+### Progress Update (2026-11-16, PR #8179)
+- Formalized `DualCertificateExists`, `dualMultiplierOfInverse`, `dualCertificateExists_of_inverse_cone`, and `strong_duality_of_dualCertificate` in `QOU/Shared/OperatorSelectionLP.lean` (`0` `sorry`).
+- Evaluated the $H_2$ ($d = 2$) normal-form Markov trace vector $t$ and symmetric Frobenius Gram matrix $G$ under canonical convention D at $q_0$ to 80 dps in `computations/probes/tail_d6_lp_dual_altchar_vlevel_probe.py`.
+- Opened PR `litlfred/qou#8179` (`bf3902040cf206123f8aa0b5dc2b79c176dd9ce1`). Keeping status `in-progress` pending owner review.

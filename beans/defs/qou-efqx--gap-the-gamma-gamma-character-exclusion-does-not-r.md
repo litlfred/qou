@@ -1,7 +1,7 @@
 ---
 # qou-efqx
 title: 'GAP: the gamma-gamma character exclusion does not reach the colour-weighted letter (four-letter alphabet)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -85,3 +85,8 @@ deliberately does not construct it (the properties blocks give the typed shifts
 but never say which generator each quark crossing sits on, which is why the 16
 `blocks CONSTRUCTED` readings are enumerated in its place). There is no word and
 no vector to test, so it is an authoring gap rather than a mathematical one.
+
+### Progress Update (2026-11-16, PR #8179)
+- Formalized the fourth (`averaged_weighted`) letter character `altCharCw` and `flavorSplitLeading` in `QOU/Mass/AltCharShiftMultiset.lean`, proving `altCharCw_sextic_closed_form`, `altCharCw_sub_ud`, `uu_sub_altCharCw`, and `altCharCw_strict_sandwich` (`letterChar q .ud < altCharCw q < letterChar q .uu < 0` on $1 < q$ with $0 < \delta(q) < 2$, `0` `sorry`).
+- Verified at 80 dps at $q_0$ in `computations/probes/tail_d6_lp_dual_altchar_vlevel_probe.py`.
+- Opened PR `litlfred/qou#8179` (`bf3902040cf206123f8aa0b5dc2b79c176dd9ce1`). Keeping status `in-progress` pending owner review.
