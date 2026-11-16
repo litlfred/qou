@@ -21,3 +21,12 @@ H₂ with nucleon V³ and V⁶ and each passing nonzero-writhe electron of minim
 ## What counts as a result
 
 Either outcome is reported: "no word of writhe ≠ 0 passes up to length 6" (scope (a)), or the list of passing chiral words. Nothing is selected or compared with measurement.
+
+## Stage 3 — full photon (owner 2026-11-16: "L is part of photon so it is supposed to be included … use it")
+
+Basis: `gamma-gamma-generates-particles` (γ = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁; two-photon products span H₃(q), incl. L±
+and e⁻ = σ₀σ₁σ₀; `gamma_gamma_chirality_surjective`, `gamma_gamma_reaches_Lminus`). With γ and γ̄ the letters
+σ₀^±1, σ₁^±1 are all photon terms, so the full-photon γγ word set on 3 strands is the whole braid group B₃ and the
+selection is reading 3 alone. Test: every freely reduced word over {σ₀^±1, σ₁^±1} of length 1..7 at site 0; record
+pass/fail (reading 3, every level 1..3, convention D, proton pin, mpmath 40 dps), writhe, components.
+Prediction recorded before running: pass ⟺ pure (3 components) on this set, as in stage 1. Nothing fitted.
