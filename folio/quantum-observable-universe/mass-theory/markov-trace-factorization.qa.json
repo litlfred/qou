@@ -1296,6 +1296,24 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "evidence": "markov-trace-factorization.lean:151-154 `noncomputable def markov_trace_factorization … := chains.foldl (fun acc ab => acc * (z * ab.1 + ab.2)) 1` — the product is the definition; no tr_M; :96-98 crossingNegative (q², −q(√q−1/√q)) ≠ .md:30 (1, −(q−q⁻¹)); :16,:27 docstrings say convention C",
         "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
+      },
+      {
+        "field_hash": {
+          "md": "5216c3d36be1",
+          "ts": "b9e019c08110",
+          "lean": "ea5d5d97da46",
+          "lean_statement": "bed2bcd00e84"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:10:00.579Z",
+        "reviewed_sha": "06a3439cc5ff0cdc91182a4199f03868f80ab9b8",
+        "severity": "major",
+        "evidence": "lean.ref is a def: markov_trace_factorization is defined as the product of (z a_i + b_i), and markov_trace_factorization_mul is fold algebra. The md claim that this product equals tr_M of the grouped nuclear word is not encoded. Over R with q > 1 though the identity is algebraic."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2738,6 +2756,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:57:31.775Z",
+  "updated_at": "2026-11-16T07:10:00.579Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -1254,6 +1254,24 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "evidence": "frobenius-codim-universal.lean:40-45 `class SemisimpleFrobeniusAlgebra (Λ) where dim_q : Λ → ℝ … tau_idem_ne_zero : ∀ μ, tau_idem μ ≠ 0` (extra hypothesis not in md:1-8); :84-90 sum identity only; centrality 'C ∈ Z(A)' not encoded; ℝ",
         "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
+      },
+      {
+        "field_hash": {
+          "md": "c7dfc7ed9059",
+          "ts": "cbf7d59f11b9",
+          "lean": "932112c284a4",
+          "lean_statement": "4575f232d649"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:10:00.541Z",
+        "reviewed_sha": "06a3439cc5ff0cdc91182a4199f03868f80ab9b8",
+        "severity": "minor",
+        "evidence": "Lean proves the scalar identity sum (1/(d_q tau_p)) tau_p = sum 1/d_q given tau(p) != 0. Centrality of C and linearity of tau are not stated; the md scope note correctly says the hypothesis fails for n >= 3 under convention D."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2481,6 +2499,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:57:24.559Z",
+  "updated_at": "2026-11-16T07:10:00.541Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
