@@ -74,50 +74,55 @@ def restrict(word, n, keep):
         pos[i], pos[i + 1] = b, a
     return out, len(keep)
 
-V3 = [(0, 1), (1, -1)] * 3
-checks = []
-t0 = time.time()
-J = {}
-for T in itertools.chain.from_iterable(itertools.combinations(range(3), r) for r in (1, 2, 3)):
-    w, k = restrict(V3, 3, set(T))
-    J[T] = sp.simplify(jones(w, k)) if w else (-(t**sp.Rational(1,2) + t**sp.Rational(-1,2)))**(k - 1)
-    print(T, J[T], f"{time.time()-t0:.1f}s", flush=True)
+def main():
+    V3 = [(0, 1), (1, -1)] * 3
+    checks = []
+    t0 = time.time()
+    J = {}
+    for T in itertools.chain.from_iterable(itertools.combinations(range(3), r) for r in (1, 2, 3)):
+        w, k = restrict(V3, 3, set(T))
+        J[T] = sp.simplify(jones(w, k)) if w else (-(t**sp.Rational(1,2) + t**sp.Rational(-1,2)))**(k - 1)
+        print(T, J[T], f"{time.time()-t0:.1f}s", flush=True)
 
-delta = -(sp.sqrt(t) + 1/sp.sqrt(t))
-known_bor = -t**3 + 3*t**2 - 2*t + 4 - 2/t + 3/t**2 - 1/t**3
-c1 = sp.simplify(J[(0, 1, 2)] - known_bor) == 0
-checks.append(("V(Borromean) matches the tabulated Jones polynomial", c1))
-c2 = all(sp.simplify(J[T] - delta**(len(T) - 1)) == 0 for T in J if len(T) < 3)
-checks.append(("every proper sublink is an unlink (pairs: V = delta, singles: V = 1)", c2))
+    delta = -(sp.sqrt(t) + 1/sp.sqrt(t))
+    known_bor = -t**3 + 3*t**2 - 2*t + 4 - 2/t + 3/t**2 - 1/t**3
+    c1 = sp.simplify(J[(0, 1, 2)] - known_bor) == 0
+    checks.append(("V(Borromean) matches the tabulated Jones polynomial", c1))
+    c2 = all(sp.simplify(J[T] - delta**(len(T) - 1)) == 0 for T in J if len(T) < 3)
+    checks.append(("every proper sublink is an unlink (pairs: V = delta, singles: V = 1)", c2))
 
-ratio = sp.simplify(J[(0, 1, 2)] / delta**2)   # = G(L_T) / delta^{|T|}
-c3 = sp.simplify(ratio.subs(t, 1) - 1) == 0
-checks.append(("ratio V_Bor/delta^2 = 1 at t = 1 (cumulant vanishes classically)", c3))
+    ratio = sp.simplify(J[(0, 1, 2)] / delta**2)   # = G(L_T) / delta^{|T|}
+    c3 = sp.simplify(ratio.subs(t, 1) - 1) == 0
+    checks.append(("ratio V_Bor/delta^2 = 1 at t = 1 (cumulant vanishes classically)", c3))
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "../../../tools/qou-substrate/python"))
-from qou_substrate.constants import q_at
-q0 = mp.mpf(q_at())
-f = sp.lambdify(t, ratio, "mpmath")
-res = {}
-for lab, tv in (("t=q0", q0), ("t=q0^2", q0**2)):
-    r = f(tv)
-    phi = mp.log(r) if r > 0 else None
-    res[lab] = {"ratio": mp.nstr(r, 30), "phi_123": mp.nstr(phi, 30) if phi is not None else "ratio<=0"}
-    print(lab, res[lab])
-c4 = all(mp.mpf(v["ratio"]) != 1 for v in res.values())
-checks.append(("phi_123 != 0 at q0 under both t readings (three-party entanglement detected)", c4))
+    sys.path.insert(0, os.path.join(os.path.dirname(__file__), "../../../tools/qou-substrate/python"))
+    from qou_substrate.constants import q_at
+    q0 = mp.mpf(q_at())
+    f = sp.lambdify(t, ratio, "mpmath")
+    res = {}
+    for lab, tv in (("t=q0", q0), ("t=q0^2", q0**2)):
+        r = f(tv)
+        phi = mp.log(r) if r > 0 else None
+        res[lab] = {"ratio": mp.nstr(r, 30), "phi_123": mp.nstr(phi, 30) if phi is not None else "ratio<=0"}
+        print(lab, res[lab])
+    c4 = all(mp.mpf(v["ratio"]) != 1 for v in res.values())
+    checks.append(("phi_123 != 0 at q0 under both t readings (three-party entanglement detected)", c4))
 
-for name, ok in checks:
-    print(("PASS " if ok else "FAIL ") + name)
-out = {
-    "description": "Exact Jones cumulants of the Borromean braid (s0 s1^-1)^3; GHZ-level connected part.",
-    "producer": "computations/probes/gg_twist_reading3/borromean_jones_cumulant_probe.py",
-    "q0Value": mp.nstr(q0, 50), "q0Anchor": "proton",
-    "jones": {",".join(map(str, T)): str(J[T]) for T in J},
-    "ratio_symbolic": str(ratio),
-    "evaluations": res,
-    "pairwise_connected_parts": "0 exactly (every pair sublink is an unlink)",
-    "checks": [{"name": n, "pass": bool(o)} for n, o in checks],
-}
-json.dump(out, open(os.path.join(os.path.dirname(__file__), "borromean-jones-cumulant.witness.json"), "w"), indent=2)
-sys.exit(0 if all(o for _, o in checks) else 1)
+    for name, ok in checks:
+        print(("PASS " if ok else "FAIL ") + name)
+    out = {
+        "description": "Exact Jones cumulants of the Borromean braid (s0 s1^-1)^3; GHZ-level connected part.",
+        "producer": "computations/probes/gg_twist_reading3/borromean_jones_cumulant_probe.py",
+        "q0Value": mp.nstr(q0, 50), "q0Anchor": "proton",
+        "jones": {",".join(map(str, T)): str(J[T]) for T in J},
+        "ratio_symbolic": str(ratio),
+        "evaluations": res,
+        "pairwise_connected_parts": "0 exactly (every pair sublink is an unlink)",
+        "checks": [{"name": n, "pass": bool(o)} for n, o in checks],
+    }
+    json.dump(out, open(os.path.join(os.path.dirname(__file__), "borromean-jones-cumulant.witness.json"), "w"), indent=2)
+    sys.exit(0 if all(o for _, o in checks) else 1)
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,805 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-16T08:50:57.608170+00:00",
+  "commitSha": "85195343825f9bf68429e12e035ef03d35194d4a",
+  "assertions": [
+    {
+      "name": "ran_all_patterns",
+      "computed": "16",
+      "expected": "16",
+      "passed": true,
+      "source": "8 exponent patterns x (ring, chain)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "carbon-ring-stage5",
+  "scriptFile": "carbon_ring_stage5_probe.py",
+  "scriptHash": "7c7523471f9b",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/gg_twist_reading3/carbon_ring_stage5_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/gg_twist_reading3/carbon_ring_stage5_probe.py"
+  },
+  "q0Anchor": "proton",
+  "q0AnchorReason": "q_at() (proton pin)",
+  "description": "PROBE stage 5 (bean qou-a1hh): coarse-grained 6-node ring (one strand per carbon) with BKL band generators vs open chain; reading 3, components, exact Jones 3-party connected parts on pure words. Pre-registered.",
+  "weight_family": "markov_y_lambda_convention_D",
+  "rows": {
+    "sym(1),ring": {
+      "letters": 16,
+      "writhe": 6,
+      "components": 2,
+      "pure": false,
+      "reading3_every_level": false,
+      "min_level_char": "-1.2320524541667639313",
+      "failing_levels": [
+        "3:(2, 1)",
+        "4:(3, 1)",
+        "4:(2, 2)",
+        "5:(4, 1)",
+        "5:(3, 2)",
+        "6:(5, 1)",
+        "6:(4, 2)"
+      ],
+      "chi_6": "1.870198026749108018"
+    },
+    "sym(1),chain": {
+      "letters": 5,
+      "writhe": 5,
+      "components": 1,
+      "pure": false,
+      "reading3_every_level": false,
+      "min_level_char": "-1.367551836951385188",
+      "failing_levels": [
+        "2:(1, 1)",
+        "3:(2, 1)",
+        "4:(3, 1)",
+        "4:(2, 2)",
+        "5:(4, 1)",
+        "5:(3, 2)",
+        "6:(5, 1)",
+        "6:(4, 2)"
+      ],
+      "chi_6": "1.6848955969162203201"
+    },
+    "sym(2),ring": {
+      "letters": 22,
+      "writhe": 12,
+      "components": 6,
+      "pure": true,
+      "reading3_every_level": true,
+      "min_level_char": "1.4827464139368313866",
+      "failing_levels": [],
+      "chi_6": "3.4976406592562573496",
+      "phi3": {
+        "0,1,2": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "0,1,3": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "0,1,4": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "0,1,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "0,2,3": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "0,2,4": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "0,2,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "0,3,4": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "0,3,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "0,4,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "1,2,3": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "1,2,4": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "1,2,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "1,3,4": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "1,3,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "1,4,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "2,3,4": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "2,3,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "2,4,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "3,4,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        }
+      }
+    },
+    "sym(2),chain": {
+      "letters": 10,
+      "writhe": 10,
+      "components": 6,
+      "pure": true,
+      "reading3_every_level": true,
+      "min_level_char": "1.3144493789738704719",
+      "failing_levels": [],
+      "chi_6": "2.8388731725076663814",
+      "phi3": {
+        "0,1,2": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "0,1,3": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "0,1,4": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "0,1,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "0,2,3": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "0,2,4": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "0,2,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "0,3,4": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "0,3,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "0,4,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "1,2,3": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "1,2,4": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "1,2,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "1,3,4": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "1,3,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "1,4,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "2,3,4": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "2,3,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "2,4,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "3,4,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        }
+      }
+    },
+    "sym(-1),ring": {
+      "letters": 16,
+      "writhe": -6,
+      "components": 2,
+      "pure": false,
+      "reading3_every_level": false,
+      "min_level_char": "-1.2320524541667639313",
+      "failing_levels": [
+        "4:(2, 2)",
+        "5:(3, 2)",
+        "6:(4, 2)"
+      ],
+      "chi_6": "0.53470273505649069374"
+    },
+    "sym(-1),chain": {
+      "letters": 5,
+      "writhe": -5,
+      "components": 1,
+      "pure": false,
+      "reading3_every_level": false,
+      "min_level_char": "-0.73123370754943367404",
+      "failing_levels": [
+        "2:(1, 1)",
+        "3:(2, 1)",
+        "4:(3, 1)",
+        "4:(2, 2)",
+        "5:(4, 1)",
+        "5:(3, 2)",
+        "6:(5, 1)",
+        "6:(4, 2)",
+        "6:(3, 3)"
+      ],
+      "chi_6": "0.59350858405129060302"
+    },
+    "sym(-2),ring": {
+      "letters": 22,
+      "writhe": -12,
+      "components": 6,
+      "pure": true,
+      "reading3_every_level": true,
+      "min_level_char": "0.28590701487689168189",
+      "failing_levels": [],
+      "chi_6": "0.28590701487689168189",
+      "phi3": {
+        "0,1,2": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "0,1,3": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "0,1,4": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "0,1,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "0,2,3": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "0,2,4": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "0,2,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "0,3,4": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "0,3,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "0,4,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "1,2,3": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "1,2,4": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "1,2,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "1,3,4": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "1,3,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "1,4,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "2,3,4": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "2,3,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "2,4,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "3,4,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        }
+      }
+    },
+    "sym(-2),chain": {
+      "letters": 10,
+      "writhe": -10,
+      "components": 6,
+      "pure": true,
+      "reading3_every_level": true,
+      "min_level_char": "0.35225243934256788235",
+      "failing_levels": [],
+      "chi_6": "0.35225243934256788235",
+      "phi3": {
+        "0,1,2": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "0,1,3": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "0,1,4": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "0,1,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "0,2,3": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "0,2,4": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "0,2,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "0,3,4": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "0,3,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "0,4,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "1,2,3": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "1,2,4": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "1,2,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "1,3,4": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "1,3,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "1,4,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "2,3,4": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "2,3,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "2,4,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        },
+        "3,4,5": {
+          "ratio": "1",
+          "exactly_one": true,
+          "t=q0": "0.0",
+          "t=q0^2": "0.0"
+        }
+      }
+    },
+    "alt(2,1),ring": {
+      "letters": 19,
+      "writhe": 9,
+      "components": 3,
+      "pure": false,
+      "reading3_every_level": false,
+      "min_level_char": "-3.46633738145220405",
+      "failing_levels": [
+        "3:(2, 1)",
+        "5:(4, 1)",
+        "6:(5, 1)",
+        "6:(3, 3)"
+      ],
+      "chi_6": "2.5575927469435984826"
+    },
+    "alt(2,1),chain": {
+      "letters": 8,
+      "writhe": 8,
+      "components": 4,
+      "pure": false,
+      "reading3_every_level": false,
+      "min_level_char": "-0.14449547048314618714",
+      "failing_levels": [
+        "4:(2, 2)"
+      ],
+      "chi_6": "2.3041820686340777511"
+    },
+    "alt(1,2),ring": {
+      "letters": 19,
+      "writhe": 9,
+      "components": 3,
+      "pure": false,
+      "reading3_every_level": false,
+      "min_level_char": "-3.46633738145220405",
+      "failing_levels": [
+        "2:(1, 1)",
+        "3:(2, 1)",
+        "4:(3, 1)",
+        "5:(4, 1)",
+        "6:(5, 1)",
+        "6:(3, 3)"
+      ],
+      "chi_6": "2.5575927469435984826"
+    },
+    "alt(1,2),chain": {
+      "letters": 7,
+      "writhe": 7,
+      "components": 3,
+      "pure": false,
+      "reading3_every_level": false,
+      "min_level_char": "-3.2087641272521996696",
+      "failing_levels": [
+        "2:(1, 1)",
+        "3:(2, 1)",
+        "4:(3, 1)",
+        "6:(5, 1)",
+        "6:(3, 3)"
+      ],
+      "chi_6": "2.0758797551954038913"
+    },
+    "alt(-2,-1),ring": {
+      "letters": 19,
+      "writhe": -9,
+      "components": 3,
+      "pure": false,
+      "reading3_every_level": false,
+      "min_level_char": "-2.830019252050252536",
+      "failing_levels": [
+        "3:(2, 1)",
+        "4:(2, 2)",
+        "6:(5, 1)",
+        "6:(3, 3)"
+      ],
+      "chi_6": "0.39099266339218023264"
+    },
+    "alt(-2,-1),chain": {
+      "letters": 8,
+      "writhe": -8,
+      "components": 4,
+      "pure": false,
+      "reading3_every_level": false,
+      "min_level_char": "-0.13997221569347547653",
+      "failing_levels": [
+        "5:(4, 1)"
+      ],
+      "chi_6": "0.43399348237823990769"
+    },
+    "alt(-1,-2),ring": {
+      "letters": 19,
+      "writhe": -9,
+      "components": 3,
+      "pure": false,
+      "reading3_every_level": false,
+      "min_level_char": "-2.830019252050252536",
+      "failing_levels": [
+        "2:(1, 1)",
+        "3:(2, 1)",
+        "4:(3, 1)",
+        "6:(5, 1)",
+        "6:(3, 3)"
+      ],
+      "chi_6": "0.39099266339218023264"
+    },
+    "alt(-1,-2),chain": {
+      "letters": 7,
+      "writhe": -7,
+      "components": 3,
+      "pure": false,
+      "reading3_every_level": false,
+      "min_level_char": "-2.9997038284565603542",
+      "failing_levels": [
+        "2:(1, 1)",
+        "3:(2, 1)",
+        "4:(3, 1)",
+        "5:(4, 1)",
+        "6:(5, 1)",
+        "6:(3, 3)"
+      ],
+      "chi_6": "0.48172347049353509368"
+    }
+  },
+  "q1_ring_vs_chain": {
+    "sym(1)": [
+      false,
+      false
+    ],
+    "sym(2)": [
+      true,
+      true
+    ],
+    "sym(-1)": [
+      false,
+      false
+    ],
+    "sym(-2)": [
+      true,
+      true
+    ],
+    "alt(2,1)": [
+      false,
+      false
+    ],
+    "alt(1,2)": [
+      false,
+      false
+    ],
+    "alt(-2,-1)": [
+      false,
+      false
+    ],
+    "alt(-1,-2)": [
+      false,
+      false
+    ]
+  },
+  "q3_nonzero_phi3": {
+    "sym(2),ring": [],
+    "sym(2),chain": [],
+    "sym(-2),ring": [],
+    "sym(-2),chain": []
+  }
+}

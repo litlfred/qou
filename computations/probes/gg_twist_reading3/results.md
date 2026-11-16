@@ -131,3 +131,40 @@ q^{c}·q^{s} and the block alone cannot separate c from s), now seen across ever
 Scope (a): a negative about this selector's resolving power, not an exclusion of either reading.
 What could separate them is an observable that sees c_{p|e} directly, such as the pairwise connected
 part of `def:virtual-subword` on the p|e cut.
+
+## Stage 5 — coarse-grained carbon ring (run 2026-11-16, proton pin, convention D)
+
+Witness `carbon-ring-stage5.witness.json`, producer `carbon_ring_stage5_probe.py`, 16 words
+(8 exponent patterns × ring/chain), as pre-registered. One strand per carbon is an assumption.
+
+| pattern | ring: pass, components | chain: pass, components |
+|---|---|---|
+| all +1 | fail, 2 | fail, 1 |
+| all +2 | **pass**, 6 | **pass**, 6 |
+| all −1 | fail, 2 | fail, 1 |
+| all −2 | **pass**, 6 | **pass**, 6 |
+| (2,1)×3 | fail, 3 | fail, 4 |
+| (1,2)×3 | fail, 3 | fail, 3 |
+| (−2,−1)×3 | fail, 3 | fail, 4 |
+| (−1,−2)×3 | fail, 3 | fail, 3 |
+
+**Answers to the three pre-registered questions.**
+1. Closing the chain into a ring never changes pass/fail. Every pattern gives the same verdict as a
+   ring and as a chain.
+2. The symmetric ring and the alternating (Kekulé) ring differ, but only because the symmetric ±2
+   word is pure and the alternating words are not. The passing words are exactly the pure ones, the
+   same rule seen in stages 1 and 3.
+3. No. For the pure rings and chains, all 20 three-strand connected parts are exactly 0, as exact
+   rational functions of t.
+
+**Why question 3 comes out 0.** With exponent ±2 each bond is a Hopf link between neighbours, and
+the Jones polynomial is multiplicative under connected sum. Three nodes of a 6-cycle induce at most
+a path, whose sublink is a connected sum of Hopf links. So F is a sum of pair terms on every subset
+of size at most 5, and its connected part vanishes there. The ring closure can only appear in the
+full six-strand connected part, φ({1..6}) = F(all) − (sum of the six pair terms). That was not
+computed: the 22-crossing word needs about 4·10⁶ bracket states. A 12-crossing necklace diagram
+would make it cheap, and that is the natural next step.
+
+**Reading.** In this coarse-graining, reading 3 does not see aromatic closure at all, and the
+three-party connected part cannot see it either. Any ring-specific effect has to live in the
+six-party term. Scope (a).
