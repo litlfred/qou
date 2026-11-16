@@ -1,13 +1,13 @@
 ---
 # qou-qkbp
 title: 'CORRECTION + CONVERGENCE: E_0 is NOT CAL-1 — it is derived as m_e.c_q^2.hbar_q = the energy of one Hecke reduction step, which is exactly what log_z tr_M counts. Remaining freedom is the ~1% brane-tower truncation, and the two derived forms BRACKET the measured peak.'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T06:17:21Z
-updated_at: 2026-10-04T15:12:14Z
+updated_at: 2026-11-16T18:02:18Z
 parent: qou-wp3h
 ---
 
@@ -106,3 +106,10 @@ one point.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-05 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Verification & Audit Note (2026-11-16 — Owner Ruling `Q-WP3H-1 = 1`)
+
+- Verified on `main` that both probes and their witnesses are landed and current:
+  1. `computations/qbeta/qbeta_e0_is_derived_probe.py` (+ `computations/qbeta/qbeta-e0-is-derived.witness.json`): landed in commit `b9c56a4a59` (`2026-09-05`, *"qou-qkbp: E_0 is NOT CAL-1 — it is derived, and it is the object this arc counts"*) and updated in `1f4123f29d` (`2026-10-13`, `q0Anchor: "proton"`).
+  2. `computations/qbeta/qbeta_tower_ruling_bound_probe.py` (+ `computations/qbeta/qbeta-tower-ruling-bound.witness.json`): landed in commit `534794e799` (`2026-09-05`, *"Wrap up the binding-law arc: tower ruling adopted, sweep landed, synthesis written"*) and updated in `1f4123f29d` (`2026-10-13`).
+- Kept at `status: in-progress` per owner rule (no unilateral bean closure; ready for owner review).
