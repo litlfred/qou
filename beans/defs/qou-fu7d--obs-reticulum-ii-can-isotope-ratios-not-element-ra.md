@@ -1,7 +1,8 @@
 ---
 # qou-fu7d
 title: 'OBS: Reticulum II — can isotope ratios (not element ratios) be resolved in r-II dwarf stars? the elemental/isotopic discriminator is the whole test'
-status: todo
+status: in-progress
+pr: 8203
 type: task
 priority: normal
 tags:
@@ -30,3 +31,6 @@ untouched by the alpha calculation. Scope (a) on `qou-ultb`'s route only.
 
 Still a title with an empty body; the task needs scoping before it can be
 worked.
+
+## Progress (2026-11-16, PR #8203)
+- [x] Formalized `elementalObservable`, `hyperfineObservable`, and `elemental_degenerate_but_hyperfine_separates` in `folio/quantum-observable-universe/lean/QOU/Eightfold/RootOfUnityCutoffIsotopeHyperfineBetaCoulombAndSymplecticRoots.lean` + 50-dps mpmath witness (`qou_fu7d_elemental_vs_hyperfine_isotopic_separation`) in PR #8203 (`74a091a53fd300f6f906db42c72c6a5e3e84e7b3`).

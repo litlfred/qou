@@ -1,7 +1,8 @@
 ---
 # qou-qhrw
 title: 'T4: root-of-unity truncation as the freeze-out mechanism'
-status: todo
+status: in-progress
+pr: 8203
 type: task
 priority: normal
 tags:
@@ -40,3 +41,6 @@ premises; do not restate them as established.
 
 Tagged `8f-open` — open formalisation research, not the mechanical work the
 reorg's title-based tagging implied.
+
+## Progress (2026-11-16, PR #8203)
+- [x] Formalized `oddRootCutoffIndex`, `oddRootCutoffIndex_properties`, and `real_positive_square_diff_pos` in `folio/quantum-observable-universe/lean/QOU/Eightfold/RootOfUnityCutoffIsotopeHyperfineBetaCoulombAndSymplecticRoots.lean` + 50-dps mpmath witness (`qou_qhrw_root_of_unity_cutoff_vs_real_positive`) in PR #8203 (`74a091a53fd300f6f906db42c72c6a5e3e84e7b3`).

@@ -1,7 +1,8 @@
 ---
 # qou-jogb
 title: 'Gap 1: charge radius as a falloff coefficient -- five routes, and the proton-radius-puzzle block may be stale'
-status: todo
+status: in-progress
+pr: 8203
 type: task
 priority: normal
 tags:
@@ -66,3 +67,6 @@ This bean is now a POINTER, not a work item. The live work is `qou-usft`
 (blocked behind the NN sector per the owner ruling) and `qou-bn8e`. The one
 thing here not covered elsewhere is the staleness question on
 `observations/proton-radius-puzzle.md` — see below.
+
+## Progress (2026-11-16, PR #8203)
+- [x] Formalized `formFactorLinearDrop`, `uniformBallRmsResidual`, and `he3_binding_length_fivefold_improvement` in `folio/quantum-observable-universe/lean/QOU/Eightfold/RootOfUnityCutoffIsotopeHyperfineBetaCoulombAndSymplecticRoots.lean` + 50-dps mpmath witness (`qou_jogb_he3_binding_length_fivefold_improvement`) in PR #8203 (`74a091a53fd300f6f906db42c72c6a5e3e84e7b3`).
