@@ -114,7 +114,14 @@ def SignedBraidWord.flipAt
     The conjectural content (per `conj:crystal-graph-realization`):
     on every SYT eigenline, the q→0 actions of `σ_i` and
     `σ_i⁻¹` agree.  This is implemented by the `abs(i)` reduction
-    in `term7_alpha5_crystal_derivation.py`. -/
+    in `term7_alpha5_crystal_derivation.py`.
+
+    Scope (2026-11-16): this field is a modelling choice, not a
+    consequence of the Hecke relation `(σ - q)(σ + q⁻¹) = 0`, which
+    cannot be specialised at `q = 0`.  In `H_n(q)` the eigenvalues of
+    `σ_i` are `q, -q⁻¹` and those of `σ_i⁻¹` are `q⁻¹, -q`.  The
+    implication `CrystalGraphRealization ⟹ CrystalEigenlineSignBlind`
+    named in the module docstring is not proved anywhere. -/
 class CrystalEigenlineSignBlind (R : Type u) [Ring R] where
   /-- Per-eigenline eigenvalue of a single signed letter. -/
   eigLetter : SignedLetter → R
