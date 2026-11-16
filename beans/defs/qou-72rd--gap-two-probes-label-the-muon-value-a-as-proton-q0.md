@@ -1,7 +1,7 @@
 ---
 # qou-72rd
 title: 'GAP: two probes label the MUON value A as proton_q0; their anchor-stability claims are 3-4 orders of magnitude off'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -27,3 +27,16 @@ The witness descriptions still assert 'Anchor-stable'; that wording does not sur
 SECOND DEFECT, blocking the fix. A fresh run also DROPS q0Anchor and q0Value from both witnesses -- fields q0_anchor_consistency_audit reads. Find out why q0_anchor_is_declared no longer resolves for these producers BEFORE regenerating, or the refresh trades a stale number for lost provenance.
 
 RELATED, same shape, separate cause: deltalambda/mu3_anchor_consistency_probe re-runs with d2 0.4225 -> 0.3278 (22 %) and rel_shift_vs_mixed -> exactly 0.0. Verified by stashing the edit and re-running the UNMODIFIED file: same numbers, so it is main-side drift in the y_lambda / chi caches since 2026-08-07, not a mislabel.
+
+
+## Progress Update — 2026-11-16 (PR litlfred/qou#8176)
+
+- **Lean 4 Formalization (`0` `sorry`, `0` vacuity audit hits/advisories)**:
+  - `folio/quantum-observable-universe/lean/QOU/MassTheory/MuonAnchorInversionAndStraddleClassification.lean` (wired into `QOU.lean`) proves:
+    - `cal2MuonQ_roundtrip_and_excess`, `cal2MuonQ_secant_and_rel_shift`, and `cal2MuonQ_strict_three_value_ordering` (`qou-5op4`)
+    - `crossAnchor_drift_magnification_and_inv_hbar_sq_secant` (`qou-72rd`)
+    - `habiroSymbolicPayload_stamp_independent_and_secant` (`qou-mha1`)
+    - `markovZD_over_markovZC_and_diff` and `fourMethod_straddle_cross_ratio_and_rel_delta` (`qou-3zby`, `qou-dau6`)
+- **50-dps Verification Probe & Witness (`0` raw `float64` fields)**:
+  - `computations/probes/muon_anchor_inversion_and_straddle_classification_probe.py` -> `computations/probes/muon-anchor-inversion-and-straddle-classification-probe.witness.json` (`allPassed: true`, 4/4 assertions, `scriptHash: 3b8c800c79a2`, `scriptCommitSha: 80719a03fb31a87a5718702e605db5cbed1f57ce`).
+- **PR**: `litlfred/qou#8176` (`0e75c0ddb6a55fd2ce17a4041ac822379106c89c`).

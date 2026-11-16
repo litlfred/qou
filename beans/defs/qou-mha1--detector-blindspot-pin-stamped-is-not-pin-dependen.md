@@ -1,7 +1,7 @@
 ---
 # qou-mha1
 title: 'detector blindspot: pin-STAMPED is not pin-DEPENDENT (symbolic payloads)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -63,3 +63,16 @@ pin-independent. I checked this one because the detector pointed at it; I have
 not swept for the class. A symbolic-payload witness read by a differently
 pinned producer would look identical to a straddle under the old rule, so
 there may be more of these — in either direction.
+
+
+## Progress Update — 2026-11-16 (PR litlfred/qou#8176)
+
+- **Lean 4 Formalization (`0` `sorry`, `0` vacuity audit hits/advisories)**:
+  - `folio/quantum-observable-universe/lean/QOU/MassTheory/MuonAnchorInversionAndStraddleClassification.lean` (wired into `QOU.lean`) proves:
+    - `cal2MuonQ_roundtrip_and_excess`, `cal2MuonQ_secant_and_rel_shift`, and `cal2MuonQ_strict_three_value_ordering` (`qou-5op4`)
+    - `crossAnchor_drift_magnification_and_inv_hbar_sq_secant` (`qou-72rd`)
+    - `habiroSymbolicPayload_stamp_independent_and_secant` (`qou-mha1`)
+    - `markovZD_over_markovZC_and_diff` and `fourMethod_straddle_cross_ratio_and_rel_delta` (`qou-3zby`, `qou-dau6`)
+- **50-dps Verification Probe & Witness (`0` raw `float64` fields)**:
+  - `computations/probes/muon_anchor_inversion_and_straddle_classification_probe.py` -> `computations/probes/muon-anchor-inversion-and-straddle-classification-probe.witness.json` (`allPassed: true`, 4/4 assertions, `scriptHash: 3b8c800c79a2`, `scriptCommitSha: 80719a03fb31a87a5718702e605db5cbed1f57ce`).
+- **PR**: `litlfred/qou#8176` (`0e75c0ddb6a55fd2ce17a4041ac822379106c89c`).
