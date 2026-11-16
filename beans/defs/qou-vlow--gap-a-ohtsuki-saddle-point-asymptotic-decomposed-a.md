@@ -1,7 +1,8 @@
 ---
 # qou-vlow
 title: 'GAP (A): Ohtsuki saddle-point asymptotic -- decomposed, and NOT out of reach'
-status: todo
+status: in-progress
+pr: 8220
 type: task
 priority: normal
 tags:
@@ -97,3 +98,8 @@ Proposition 3.1 in `QOU/MathlibExt/`, stated for complex `a`, off
 `integral_gaussian_complex` plus two `O(e^{−εN})` tail bounds. It is the only
 piece that is (i) self-contained, (ii) a genuine Mathlib gap, and (iii) needed by
 every later proposition. Do **not** start from §5.3.
+
+
+## Progress Update (2026-11-16T22:11:55Z)
+- Implemented machine-checked Lean 4 theorem in `folio/quantum-observable-universe/lean/QOU/QBeta/DilogPartBJointAndOhtsukiSaddleBrick.lean` and 80-dps `mpmath` / exact rational witness `computations/probes/dilog-part-b-joint-and-ohtsuki-saddle-brick.witness.json`.
+- Opened PR https://github.com/litlfred/qou/pull/8220 (`4fed1eb1d2c9f99be67799649865fd4f3ddd3d6a`); keeping `status: in-progress` until PR merges.
