@@ -3,8 +3,7 @@
 $$
     \Delta m_{\mathfrak{p}}
     \;:=\;
-    m_{\mathfrak{p}}^{\mathrm{CODATA}}
-    - \mathfrak{m}^{\mathrm{tower}}(\mathfrak{p}, q_0)
+    m_{\mathfrak{p}}^{\mathrm{CODATA}} - \mathfrak{m}^{\mathrm{tower}}(\mathfrak{p}, q_0)
     \;\overset{?}{=}\;
     m_e\sum_{\lambda\vdash3}\frac{1}{\dim_q\lambda}
     \;=\;
