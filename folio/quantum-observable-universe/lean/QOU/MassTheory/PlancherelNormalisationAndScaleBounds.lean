@@ -79,11 +79,17 @@ def ySchur21 (q : K) : K := 1 / qFactThreeBalanced q
 /-- `q`-Schur Plancherel weight for `λ = (1,1,1)`, content sum `c((1,1,1)) = 0 - 1 - 2 = -3`. -/
 def ySchur111 (q : K) : K := (q ^ 3)⁻¹ / qFactThreeBalanced q
 
-/-- **The `F_Bor` normaliser `[3]_q!^bal / q³` is identically `(y_{(3)}^Schur(q))⁻¹`.** -/
-theorem qschur_trivial_inv_eq_fbor_normaliser (q : K) :
-    (ySchur3 q)⁻¹ = qFactThreeBalanced q / q ^ 3 := by
-  unfold ySchur3
-  rw [inv_div]
+/-- **The `F_Bor` normaliser `[3]_q!^bal / q³` is identically `(y_{(3)}^Schur(q))⁻¹`
+and expands to `(1 + 2q² + 2q⁴ + q⁶) / q⁶`.** -/
+theorem qschur_trivial_inv_eq_fbor_normaliser (q : K) (hq : q ≠ 0) :
+    (ySchur3 q)⁻¹ = qFactThreeBalanced q / q ^ 3 ∧
+      (ySchur3 q)⁻¹ = (1 + 2 * q ^ 2 + 2 * q ^ 4 + q ^ 6) / q ^ 6 := by
+  constructor
+  · unfold ySchur3
+    field_simp
+  · unfold ySchur3 qFactThreeBalanced
+    field_simp
+    ring
 
 /-- **Bar-conjugate duality of the extremal `q`-Schur Plancherel weights.**
 Under `q ↦ q⁻¹`, the trivial block `(3)` and sign block `(1,1,1)` swap, and their
@@ -115,13 +121,18 @@ theorem wenzl_weights_trace_normalised (q : K) (hq : q ≠ 0) (hq2 : q + q⁻¹ 
   field_simp
   ring
 
-/-- **The inverse Wenzl weight of the standard `(2,1)` block is `[2]_q² = (q + q⁻¹)²`.**
+/-- **The inverse Wenzl weight of the standard `(2,1)` block is `[2]_q² = (q + q⁻¹)² = (q - q⁻¹)² + 4`.**
 This collapses the Wenzl standard-block option and the Temperley–Lieb `δ^{n-1}` option
-into a single identity. -/
-theorem wenzl_standard_block_inv_eq_two_bracket_sq (q : K) :
-    (yWenzl21 q)⁻¹ = (q + q⁻¹) ^ 2 := by
-  unfold yWenzl21
-  rw [one_div, inv_inv]
+into a single identity and identifies it with the Borromean trace denominator `h² + 4`. -/
+theorem wenzl_standard_block_inv_eq_two_bracket_sq (q : K) (hq : q ≠ 0) :
+    (yWenzl21 q)⁻¹ = (q + q⁻¹) ^ 2 ∧
+      (yWenzl21 q)⁻¹ = (q - q⁻¹) ^ 2 + 4 := by
+  constructor
+  · unfold yWenzl21
+    field_simp
+  · unfold yWenzl21
+    field_simp
+    ring
 
 /-- Phase-1c character `χ^{(2,1)}(β_Bor, q)` on the 3-strand Borromean braid. -/
 def chiBorromean21 (q : K) : K :=
