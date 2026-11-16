@@ -69,6 +69,7 @@ instance (e : Fin 8 → ℚ) : ColourStabilizerAction ↥(su3 e) (Fin 8 → ℚ)
   ⟨⟨su3ToEndOct e, su3ToEndOct_injective e⟩⟩
 
 /-- The concrete wiring holds for the octonion base module. -/
+-- Ref: [dubois-violette-todorov2018] §2 (octonion base module 𝕆 = ℂ ⊕ ℂ³ for the colour stabilizer su(3))
 theorem colourStabilizerActionOnSU3_octonions (e : Fin 8 → ℚ) :
     ColourStabilizerActionOnSU3 e (Fin 8 → ℚ) :=
   inferInstance

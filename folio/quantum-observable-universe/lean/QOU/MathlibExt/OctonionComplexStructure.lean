@@ -65,6 +65,7 @@ theorem octMul_zero_left (v : Fin 8 → ℚ) : octMul 0 v = 0 := by
 /-- **The colour stabilizer acts ℂ-linearly on the octonions**: every
 derivation fixing `e₁` commutes with the complex structure `Le`. Pure
 Leibniz: `D(e₁·x) = D(e₁)·x + e₁·D(x) = e₁·D(x)`. -/
+-- Ref: [dubois-violette-todorov2018] §2 (complex structure on 𝕆 = ℂ ⊕ ℂ³ and ℂ-linearity of su(3))
 theorem su3_comp_Le_eq_Le_comp {D : Der𝕆} (hD : D ∈ su3 stdIm) :
     D.1 ∘ₗ Le = Le ∘ₗ D.1 := by
   have hleib : ∀ x y : Fin 8 → ℚ,
