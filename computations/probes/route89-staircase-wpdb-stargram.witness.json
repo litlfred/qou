@@ -1,0 +1,87 @@
+{
+  "schema": "qou-probe-witness/v1",
+  "script": "computations/probes/route89_staircase_wpdb_stargram_probe.py",
+  "scriptHash": "90d1e7418cd8",
+  "commitSha": "f3d7f0a51d31a6d9fa4e53d717fcd6d96c6ad0de",
+  "scriptCommitSha": "f3d7f0a51d31a6d9fa4e53d717fcd6d96c6ad0de",
+  "generatedAt": "2026-11-16T20:40:00Z",
+  "precisionDps": 80,
+  "allPassed": true,
+  "beans": [
+    "wpdb",
+    "qou-4qno",
+    "qou-8v3k",
+    "qou-b7cy",
+    "qou-018h"
+  ],
+  "results": {
+    "probe": "route89_staircase_wpdb_stargram_probe",
+    "beans": [
+      "wpdb",
+      "qou-4qno",
+      "qou-8v3k",
+      "qou-b7cy",
+      "qou-018h"
+    ],
+    "precisionDps": 80,
+    "allPassed": true,
+    "checks": [
+      {
+        "id": "wpdb-corner-hook-and-stratification",
+        "passed": true,
+        "boundsVerifiedN1To6": true,
+        "n3CornerHooks": [
+          3,
+          3,
+          3
+        ],
+        "n4SelfConjugateHook": 3,
+        "n4HookStratumCount": 4
+      },
+      {
+        "id": "qou-4qno-staircase-tl-kernel-threshold",
+        "passed": true,
+        "physicalCasesGe2": [
+          2
+        ],
+        "tlKernelCasesGe2": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "strandsK2K3K4": [
+          3,
+          6,
+          10
+        ]
+      },
+      {
+        "id": "qou-8v3k-route8-vieta-and-cyclotomic-degeneration",
+        "passed": true,
+        "curveAtNegOneResidual": "4.2168791772922092897e-81",
+        "vietaProductResidual": "6.3253187659383139346e-81",
+        "cyclotomicSumResidual": "0.0"
+      },
+      {
+        "id": "qou-b7cy-route9-bloch-torsion-and-level7-ladder",
+        "passed": true,
+        "blochIdentityResidual": "4.2168791772922092897e-81",
+        "unitInverseResidual": "7.6958044985582819538e-80",
+        "normIdentityResidual": "3.1626593829691569673e-81",
+        "level7LadderResidual": "8.4337583545844185795e-81",
+        "ladderNumeratorSumOver42": "1/2"
+      },
+      {
+        "id": "qou-018h-star-gram-involution-positivity",
+        "passed": true,
+        "m2InvolutionFlipResidual": "0.0",
+        "y3ConventionD": "0.5054042265039307283638213",
+        "y21ConventionD": "0.2472978867480346358180893",
+        "quotientStarValue": "1.326433210507405719279878"
+      }
+    ]
+  }
+}
