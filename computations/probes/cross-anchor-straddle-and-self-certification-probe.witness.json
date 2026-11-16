@@ -1,0 +1,111 @@
+{
+  "engine": "mpmath+sympy",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-16T20:06:41.790554+00:00",
+  "commitSha": "aa5f4d7a1cb250599dfceca8aa1274da33800a1a",
+  "assertions": [
+    {
+      "name": "qou_2t9y_stage_b_truncation_bias_0p719pct_and_coxeter_trace",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "qou_2whe_detector_union_and_inv_hbar_truncation_secant",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "qou_qyef_operator_input_straddle_residual_amplification",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "qou_o922_env_diff_confound_and_true_pin_swing",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "qou_tekx_cal2_self_certification_roundtrip_and_A_vs_C_secant",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 19,
+  "computation": "cross-anchor-straddle-and-self-certification-probe",
+  "scriptFile": "cross_anchor_straddle_and_self_certification_probe.py",
+  "scriptHash": "ccf81d198aee",
+  "scriptCommitSha": "aa5f4d7a1cb250599dfceca8aa1274da33800a1a",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/cross_anchor_straddle_and_self_certification_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/cross_anchor_straddle_and_self_certification_probe.py"
+  },
+  "description": "50-dps verification of Stage-B 12-digit truncation bias and H_3(q) Coxeter trace (qou-2t9y), two-detector union and 1/hbar_q truncation secant (qou-2whe), operator-input pin straddle residual inflation (qou-qyef), both-anchor env-var diff confound on hardcoded-pin producers (qou-o922), and CAL-2 self-certification round-trip vs Value-A discrepancy (qou-tekx).",
+  "parameters": {
+    "dps": 50,
+    "q0_proton_pin": "1.1099785827513808075916690956107688798744991218736",
+    "q0_muon_codata2022_C": "1.1099785956427390466817951293800017527000655610290"
+  },
+  "data": {
+    "qou_2t9y_stage_b_truncation_and_coxeter": {
+      "q_muon_12digit_truncated": "1.1099785955500000000000000000000000000000000000000",
+      "eps_12digit": "0.000000000092739046681795129380001752700065561029011556974046",
+      "delta_q_over_q_live": "0.000000011614060342619785788004692467102689086750005209893",
+      "delta_q_over_q_12digit": "0.000000011530510039827531517828667346525264474801286279230",
+      "fractional_bias_0p719pct": "0.0071938926032312841052148109036956848202903994662060",
+      "fractional_bias_residual": "3.11288968335e-72",
+      "coxeter_trace_at_qC": "0.69116650407358306055943704623941574548421737563186",
+      "coxeter_trace_residual": "9.05567907883e-72"
+    },
+    "qou_2whe_detector_union_and_inv_hbar_secant": {
+      "inv_hbar_qC": "10.092678390333869600831408982127773875984260962632",
+      "inv_hbar_12digit": "10.092678398001237250751562266154070740904274077175",
+      "inv_hbar_secant_residual": "5.96991512862e-71"
+    },
+    "qou_qyef_operator_input_straddle": {
+      "r0_baseline": "0.000000000000069600000000000000000000000000000000000000000000000",
+      "straddle_shift": "0.0000032367714573593185275695943338537464677502110109752",
+      "straddle_inflation_factor": "46505337.031024691488068884107094058444686939812863",
+      "straddle_formula_residual": "1.02183146344e-73"
+    },
+    "qou_o922_env_diff_confound": {
+      "symbolic_env_diff_residual": "0",
+      "symbolic_hardcoded_w0_env_diff": "0",
+      "symbolic_true_swing_residual": "0",
+      "pin_swing_qA_minus_qp": "0.000000012805953911561259478490087991791097929786790000000"
+    },
+    "qou_tekx_cal2_self_certification": {
+      "R_C_declared_codata2022": "206.76828270000000000000000000000000000000000000000",
+      "R_inv_C_recovered": "206.76828270000000000000000000000000000000000000000",
+      "R_inv_A_retired_frozen_pin": "206.76828298931504634728812002263525428674604147973",
+      "self_certification_C_abs_err": "1.85460307534e-68",
+      "discrepancy_A_minus_C": "0.00000028931504634728812002263525428674604147973294547172",
+      "discrepancy_secant_residual": "1.59860312323e-69"
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
