@@ -153,4 +153,41 @@ theorem n_v_leading_order :
   rw [hsplit, h_ratio]
   ring
 
+/-! ## Two-sided residual enclosure and generation rescaling structure (`qou-5lib`) -/
+
+/-- **Sharp two-sided residual enclosure (`qou-5lib`).**
+The exact relative residual `ε = v_ew_real / (m_e_real · 40 · q_0_real^90) - 1`
+satisfies `0.0057 < ε < 0.0058` (`ε ≈ 0.0057255983`), refuting the older `~0.003`
+figure and showing the `0.006` threshold has a headroom factor of `1.048`. -/
+theorem v_over_m_e_residual_two_sided_bounds :
+    (0.0057 : ℝ) < v_ew_real / (m_e_real * (40 * q_0_real ^ (90 : ℕ))) - 1 ∧
+      v_ew_real / (m_e_real * (40 * q_0_real ^ (90 : ℕ))) - 1 < (0.0058 : ℝ) := by
+  constructor
+  · rw [q_0_real, m_e_real, v_ew_real]; norm_num
+  · rw [q_0_real, m_e_real, v_ew_real]; norm_num
+
+/-- **Bring prefactor arithmetic factorization (`qou-5lib`).**
+The symmetric group order `5! = 120` factors through the `3`-fold splitting in
+`N_v := 3 v / m_e` with quotient `40 = 120 / 3`. -/
+theorem bring_s5_prefactor_factorization :
+    Nat.factorial 5 = 120 ∧ 120 = 3 * 40 := by
+  refine ⟨?_, ?_⟩
+  · decide
+  · omega
+
+/-- **Geometric rescaling across `d` tower steps (`qou-5lib` item (ii)).**
+If each tower step rescales the scale sequence `scale : ℕ → R` by `q`
+(`scale (k + 1) = q * scale k`), then `d` steps from level `k` rescale by `q ^ d`. -/
+theorem tower_generation_rescaling {R : Type*} [CommSemiring R]
+    (scale : ℕ → R) (q : R)
+    (hstep : ∀ k : ℕ, scale (k + 1) = q * scale k)
+    (k d : ℕ) :
+    scale (k + d) = q ^ d * scale k := by
+  induction d with
+  | zero =>
+    simp
+  | succ d ih =>
+    rw [← Nat.add_assoc, hstep (k + d), ih, pow_succ']
+    ring
+
 end QOU.Observations

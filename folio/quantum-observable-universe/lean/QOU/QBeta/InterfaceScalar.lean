@@ -640,6 +640,54 @@ theorem common_factor_preserves_degeneracy (x y g : R) (h : x = y) :
 
 end SpaceIndexSeparability
 
+section TensorSpaceCoupling
+
+variable {R : Type*} [CommRing R]
+
+/-- **An additive separable interface is likewise degenerate on `³S₁` and `¹S₀` (`qou-7zob`).**
+Under the Pauli lock (`fSpin s1 = fIso t1`, `fSpin s0 = fIso t0`), any additive
+combination `fSpin s + fIso t + fSpace ell` takes identical values on `(s1, t0, ell)`
+and `(s0, t1, ell)`. -/
+theorem additive_separable_interface_degenerate
+    {Sp Is Sp3 : Type*} (fSpin : Sp → R) (fIso : Is → R) (fSpace : Sp3 → R)
+    (s1 s0 : Sp) (t1 t0 : Is) (ell : Sp3)
+    (hplus : fSpin s1 = fIso t1) (hminus : fSpin s0 = fIso t0) :
+    fSpin s1 + fIso t0 + fSpace ell = fSpin s0 + fIso t1 + fSpace ell := by
+  rw [hplus, hminus]
+  ring
+
+/-- **Non-separable spin–space tensor coupling isolates the `³S₁ − ¹S₀` splitting (`qou-7zob`).**
+For an interface `F s t ell = fSpin s * fIso t * fSpace ell + gTensor s ell * fIso t`
+combining a separable base with a spin–space tensor coupling `gTensor : Sp → Sp3 → R`,
+the separable base cancels identically under the Pauli lock, leaving the channel splitting
+equal to `gTensor s1 ell * fIso t0 - gTensor s0 ell * fIso t1`. -/
+theorem coupled_spin_space_splitting_identity
+    {Sp Is Sp3 : Type*} (fSpin : Sp → R) (fIso : Is → R) (fSpace : Sp3 → R)
+    (gTensor : Sp → Sp3 → R)
+    (s1 s0 : Sp) (t1 t0 : Is) (ell : Sp3)
+    (hplus : fSpin s1 = fIso t1) (hminus : fSpin s0 = fIso t0) :
+    (fSpin s1 * fIso t0 * fSpace ell + gTensor s1 ell * fIso t0) -
+      (fSpin s0 * fIso t1 * fSpace ell + gTensor s0 ell * fIso t1) =
+      gTensor s1 ell * fIso t0 - gTensor s0 ell * fIso t1 := by
+  rw [hplus, hminus]
+  ring
+
+/-- **When the spin singlet `S = 0` carries zero tensor operator (`gTensor s0 ell = 0`),
+the `³S₁ − ¹S₀` splitting equals `gTensor s1 ell * fIso t0` (`qou-7zob`).** -/
+theorem coupled_spin_space_splitting_of_singlet_zero
+    {Sp Is Sp3 : Type*} (fSpin : Sp → R) (fIso : Is → R) (fSpace : Sp3 → R)
+    (gTensor : Sp → Sp3 → R)
+    (s1 s0 : Sp) (t1 t0 : Is) (ell : Sp3)
+    (hplus : fSpin s1 = fIso t1) (hminus : fSpin s0 = fIso t0)
+    (hsing : gTensor s0 ell = 0) :
+    (fSpin s1 * fIso t0 * fSpace ell + gTensor s1 ell * fIso t0) -
+      (fSpin s0 * fIso t1 * fSpace ell + gTensor s0 ell * fIso t1) =
+      gTensor s1 ell * fIso t0 := by
+  rw [coupled_spin_space_splitting_identity fSpin fIso fSpace gTensor s1 s0 t1 t0 ell hplus hminus,
+      hsing, zero_mul, sub_zero]
+
+end TensorSpaceCoupling
+
 section ConjugationInvariance
 
 variable {A : Type*} [Ring A] {K : Type*}

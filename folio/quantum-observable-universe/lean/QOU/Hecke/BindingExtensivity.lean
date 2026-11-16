@@ -179,4 +179,34 @@ theorem bondSum_pos {epp epn enn m : ℝ} (hm : 0 < m) (hpp : m ≤ epp)
   have : (0 : ℝ) < m * ((p : ℝ) + q + 1) := by positivity
   linarith
 
+/-! ## 3. Prefactor ratio identity and scale cancellation in binding ratios (`qou-2pnv`) -/
+
+/-- **Exact algebraic identity for the `12.4347` prefactor ratio (`qou-2pnv`).**
+The ratio of the deprecated volume-density prefactor `m_e / ℏ_q² = m_e / ((q - 1) / q)²`
+to the canonical binding scale `E₀ = m_e / (q (q - 1))` equals `q³ / (q - 1)` identically
+for every `q ≠ 0, 1` and `m_e ≠ 0`. -/
+theorem deprecated_vs_canonical_prefactor_ratio {R : Type*} [Field R]
+    (m_e q : R) (hm : m_e ≠ 0) (hq : q ≠ 0) (hq1 : q - 1 ≠ 0) :
+    (m_e / ((q - 1) / q) ^ 2) / (m_e / (q * (q - 1))) = q ^ 3 / (q - 1) := by
+  field_simp
+  ring
+
+/-- **Identity `q³ / (q - 1) = 1 / (c_q² ℏ_q³)` (`qou-2pnv`).**
+With `c_q = 1 / (q - 1)` and `ℏ_q = (q - 1) / q`, the prefactor ratio `q³ / (q - 1)`
+equals `1 / (c_q² ℏ_q³)` identically. -/
+theorem prefactor_ratio_eq_inv_cq_sq_hbar_cu {R : Type*} [Field R]
+    (q : R) (hq : q ≠ 0) (hq1 : q - 1 ≠ 0) :
+    q ^ 3 / (q - 1) = 1 / ((1 / (q - 1)) ^ 2 * ((q - 1) / q) ^ 3) := by
+  field_simp
+  ring
+
+/-- **Scale cancellation in binding-energy ratios (`qou-2pnv`).**
+Any nonzero rescaling `E₀ ↦ c · E₀` of the overall energy scale cancels identically
+in the ratio of two binding energies `((c · E₀) · b₁) / ((c · E₀) · b₂) = b₁ / b₂`. -/
+theorem binding_ratio_scale_invariant {R : Type*} [Field R]
+    (E₀ c b₁ b₂ : R) (hE : E₀ ≠ 0) (hc : c ≠ 0) :
+    ((c * E₀) * b₁) / ((c * E₀) * b₂) = b₁ / b₂ := by
+  have hcE : c * E₀ ≠ 0 := mul_ne_zero hc hE
+  exact mul_div_mul_left b₁ b₂ hcE
+
 end QOU.Hecke.BindingExtensivity
