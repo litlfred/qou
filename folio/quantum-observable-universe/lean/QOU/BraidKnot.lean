@@ -312,6 +312,7 @@ import QOU.BraidKnot.SpechtBranchingMultiplicityOne
 -- non-integer, so no integral monodromy realizes it (scope-(b); uploaded-papers
 -- audit idea A3, 2026-07-18); the surviving object is an SL₂(ℝ) transfer family.
 import QOU.BraidKnot.TrBIntegerTracePrune
+import QOU.BraidKnot.HeckeReebHolonomyLaplacian
 
 /-!
 # BraidKnot — Module Index
