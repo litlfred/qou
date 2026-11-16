@@ -1,0 +1,139 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-16T17:39:12.584501+00:00",
+  "commitSha": "a483e4c1498f9aa6c8faa0ce6e9551f6c3a27ebb",
+  "assertions": [
+    {
+      "name": "sigma_avg_equals_sigma_minus_half_hq_identity",
+      "computed": "1.81113581576534247350182385817755835613650623962782763791652e-71",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-48",
+      "source": "In any Hecke representation satisfying (sigma - q)(sigma + q^-1) = 0, the flavor-blind color-averaged generator (sigma + sigma^-1)/2 equals sigma - (h_q/2)*I identically."
+    },
+    {
+      "name": "bring_color_tube_pn_factor_matches_closed_form",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-48",
+      "source": "closed_form_tau_M.closed_form_ratio(1, 1, q0, 'bring_color_weighted') equals z(q0) - h(q0)*(1/2 - delta(q0)/4) where delta(q0) is the light (u, d) substrate split from prop:flavor-split-substrate."
+    },
+    {
+      "name": "isotypic_weights_normalized_and_charge_symmetric",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-48",
+      "source": "A_5 isotypic weights on the 9 color pairs sum to 1 in both I=1 (T_1) and I=0 (A (+) H) channels, and assign identical weights to pp and nn."
+    },
+    {
+      "name": "c_swap_is_charge_conjugation_involution_preserving_generator",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-48",
+      "source": "C in conj:c-from-color-flavor-swap is discrete charge conjugation (C^2 = id, eps C-invariant over all 144 nucleon/color cells, and sigma^(CF1, CF2) = sigma^(F1, F2) to working precision)."
+    },
+    {
+      "name": "charm_quark_projection_onto_nucleon_color_sheets_is_zero",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Every nucleon/antinucleon color-sheet triple in {p, n, pbar, nbar} takes values in the light doublet {u, d, ubar, dbar}; Flavor.charm (heavy meson dressing sector) has zero occurrences in the 3-strand inter-nucleon additive channel."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 24,
+  "computation": "charm-vs-color-sector-additive-term",
+  "scriptFile": "charm_vs_color_sector_additive_term_probe.py",
+  "scriptHash": "2918730150a5",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/charm_vs_color_sector_additive_term_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/charm_vs_color_sector_additive_term_probe.py"
+  },
+  "description": "Bean qou-q6lw (Epic qou-8lxd). Verifies at 50+ dps that the inter-nucleon additive term is a 3-strand COLOR-SHEET channel term (gluon exchange across the 9 color pairs (c1, c2) in {r, g, b}^2 with leading flavor-blind average sigma_avg = sigma - (h_q/2)*1 and subleading light-(u,d) Bring color-tube correction +h_q*delta/4), that the 'c' in c-from-color-flavor-swap is discrete charge conjugation C (u <-> ubar, d <-> dbar, C^2 = id) rather than the charm quark, and that Flavor.charm lives in the heavy-meson mass dressing sector with identically zero projection onto the 3-strand (u, d) nucleon additive channel.",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "data": {
+    "color_sector_additive_channel": {
+      "color_sheets": [
+        "r",
+        "g",
+        "b"
+      ],
+      "color_pair_count": 9,
+      "t1_summand_dims": [
+        1,
+        3,
+        5
+      ],
+      "markov_z_q0": "0.612688037146465251595829863945899248026308391545087014074774",
+      "hecke_h_q0": "0.209060298795639315430846213129674943859757495263063078255215",
+      "light_flavor_split_delta_q0": "0.00137571080702709600855110927410655062222547601193777493132134",
+      "f_pp_positive": "0.612688037146465251595829863945899248026308391545087014074774",
+      "f_nn_negative": "0.403627738350825936164983650816224304166550896282023935819559",
+      "f_pn_strict_averaged": "0.508157887748645593880406757381061776096429643913555474947166",
+      "f_pn_bring_color_weighted": "0.508229789376738962577995797655893603898308390916567021541465",
+      "color_tube_shift_hq_delta_over_4": "0.0000719016280933686975890402748318278018787470030115465942982909",
+      "isotypic_w_i1_sum": "1.00000000000000000000000000000000000000000000000000000000000",
+      "isotypic_w_i0_sum": "1.00000000000000000000000000000000000000000000000000000000000",
+      "max_hecke_quadratic_residual": "0.0",
+      "max_sigma_avg_identity_residual": "1.81113581576534247350182385817755835613650623962782763791652e-71"
+    },
+    "c_from_color_flavor_swap_check": {
+      "meaning_of_C": "discrete charge conjugation u <-> ubar, d <-> dbar on the 3 color sheets (NOT charm quark)",
+      "nucleon_pairs_checked": 16,
+      "color_cells_checked": 144,
+      "involution_mismatches": 0,
+      "eps_conj_mismatches": 0,
+      "max_generator_conj_residual": "0.0"
+    },
+    "charm_sector_orthogonality": {
+      "all_flavors_in_FlavorDressing": [
+        "up",
+        "down",
+        "strange",
+        "charm",
+        "bottom",
+        "top"
+      ],
+      "nucleon_sheet_flavors": [
+        "up",
+        "down"
+      ],
+      "charm_counts_by_nucleon": {
+        "p": 0,
+        "n": 0,
+        "pbar": 0,
+        "nbar": 0
+      },
+      "total_charm_occurrences_in_nucleon_sheets": 0,
+      "light_doublet_sheet_count": 12
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
