@@ -64,7 +64,7 @@ def main() -> None:
     # 1. oq8a: Borromean/alternating tower vs level lattice
     c_bor, l_bor = 6, 3
     defect_bor = c_bor - 2 * l_bor
-    v_tet = mp.clsin(2 * mp.pi / 3)  # Gieseking constant ~ 1.0149416...
+    v_tet = mp.clsin(2, mp.pi / 3)  # Gieseking constant ~ 1.0149416...
     v_41 = 2 * v_tet
     v_bor = 2 * (4 * v_tet)
     err_bor_ratio = abs(v_bor - 4 * v_41)
