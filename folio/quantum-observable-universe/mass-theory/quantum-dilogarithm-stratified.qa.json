@@ -66,6 +66,23 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "evidence": "S↔L: ref is sibling-only. `phi_q_frobenius_truncation` (lean:55-74) is a finite-sum fact: if `pairing k = 0` for k > k_star then Σ_{k≤N} = Σ_{k≤k_star}. The vanishing is the structure field `vanish_above_kstar` (lean:40), so the md's substantive claim (Frobenius orthogonality of T_w against the deep strata, md:10-14) is assumed as a field. Neither Φ_q, tr_M, H_n, Z(A), the GB-depth grading nor the main expansion (md:3-7, \"captures exactly the ⊕_{j≤k} Z^{(j)}(A)-content\") appears. `partialProductPairing` is defined as `truncatedPairing` (lean:81-83), so the \"partial product = depth-≤N strata\" claim is a definition. S↔P: the prf itself marks Steps 1, 3 and 4 as open. Step 1 is \"not supplied by that proposition\" (prf:5-7); Step 4's T_w-projection is \"not stated in the block\" (prf:34-39); \"'explicit' here means *written down*, not *established*\" (prf:183). Step 3(d) is false as written: F_n(z) = Σ_{λ⊢n} dim_q^{-1}(V_λ) z^{|λ|} (prf:105) is a single monomial z^n·const, since |λ| = n for every term. It cannot equal u_n(q)·∏_k (1−q^{-k}z)^{-c_k(n)} (prf:107) with some c_k(n) > 0, which has infinitely many nonzero z-coefficients. Exact counterexample at n = 1: F_1(z) = z, while c_1(1) = 1 gives u_1·(1 + q^{-1}z + q^{-2}z² + …). The statement thus claims more than is proved. The ts status also concedes \"asserted, not yet fully proved\" (ts:20).",
         "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
+      },
+      {
+        "field_hash": {
+          "md": "c2c79e0c51b5",
+          "ts": "986dd5a01933",
+          "lean": "f400fe7230b8",
+          "lean_statement": "0c99a6a609a5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:35:09.424Z",
+        "reviewed_sha": "417ce2d4a8ef9a52d17ab6c3bc8da22feaefdf71",
+        "evidence": "Re-review after #8117: now conj:quantum-dilogarithm-stratified, so statement-to-Lean equivalence is not applicable. The F_n(z) monomial defect is recorded in its authorNotes."
       }
     ],
     "milnor-amalgamated-flow": [
@@ -2140,6 +2157,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:57:27.816Z",
+  "updated_at": "2026-11-16T07:35:09.424Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
