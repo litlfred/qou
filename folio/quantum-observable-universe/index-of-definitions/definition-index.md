@@ -936,7 +936,7 @@
 | [prop:mass-identity-unique](#prop:mass-identity-unique) | Uniqueness of the inertial mass identity | Ch 7 | `qou:QOU.MassIdentity.unique` |
 | [prop:knot-operator-energy-unique](#prop:knot-operator-energy-unique) | Uniqueness of the knot operator energy | Ch 11 | `qou:QOU.BraidKnot.KnotOperatorEnergy.shadowPrice_unique` |
 | [prop:faddeev-phib-uniqueness](#prop:faddeev-phib-uniqueness) | Uniqueness of the modular-double $\Phi_b$: strip growth pins the quantum dilogarithm up to scale | Ch 12 | `qou:QOU.QBeta.PhiBProdUniquenessMeromorphic.phiBProd_uniqueUpToScalar_of_meromorphic` |
-| [prop:unit-modulus-eigenvalue](#prop:unit-modulus-eigenvalue) | Unit-modulus eigenvalues on $V_{(2,1)}$ and the Borromean fixed point | Ch 12 | `qou:QOU.BraidsAndKnots.borromean_eigenvalue_neg_one` |
+| [prop:unit-modulus-eigenvalue](#prop:unit-modulus-eigenvalue) | Eigenvalues of even braids on $V_{(2,1)}$ and the Borromean trace | Ch 12 | `qou:QOU.BraidsAndKnots.borromean_trace_standard` |
 | [prop:phi-b-unitary-bar-odd](#prop:phi-b-unitary-bar-odd) | Unitary phases are bar-odd: the fibre-saddle rigidity | Ch 12 | `qou:QOU.QBeta.IsSigmaUnitary.sq_eq_one_of_bar_even` |
 | [prop:universal-braid-branching](#prop:universal-braid-branching) | Universal braid character formula via Young's lattice branching | Ch 12 | `qou:QOU.BraidKnot.universal_braid_branching` |
 | [prop:hecke-1d-irrep-closed-form-character](#prop:hecke-1d-irrep-closed-form-character) | Universal closed form for 1-d Hecke irrep characters: $\chi^{(n)}_q(\beta) = q^w \cdot ([2]_q/2)^m$ and $\chi^{(1^n)}_q(\beta) = (-q^{-1})^w \cdot (-[2]_q/2)^m$ for typed braids of any $n$ | Ch 12 | `qou:QOU.BraidKnot.Hecke1dIrrep.hecke_1d_irrep_closed_form_character` |
