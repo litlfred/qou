@@ -17,7 +17,7 @@ export default remark({
     "prop:rho-k-graded-expansion",
     "prop:alpha-shift-torus-knot",
     "prop:alpha-em-shift-multiplicative-chain",
-    "prop:binding-scale-catalan",
+    "conj:binding-scale-catalan",
     "sec:atomic-braid-mass-foundations",
     "prop:per-nucleon-shift-additive-linearity",
     "thm:wedderburn-mass-formula",

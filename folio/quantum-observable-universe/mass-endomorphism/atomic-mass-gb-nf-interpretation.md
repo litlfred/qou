@@ -76,7 +76,7 @@ The single-gen binding correction $\tfrac{\alpha}{2} \sum_i \ln\bigl(\hat V_i^{\
 (where $\overline{\,\cdot\,}$ forms the Hecke bar-involution $q \leftrightarrow q^{-1}$;
 at the archimedean specialization with real $q_0$ and real $\hat V_i$,
 this equals $\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|$)
-with $\alpha = m_e \cdot 8G$ ([binding scale](#prop:binding-scale-catalan))
+with $\alpha = m_e \cdot 8G$ ([binding scale](#conj:binding-scale-catalan))
 takes $\rho_K$ to $0.18\%$ mean accuracy across $Z = 1..20$
 ([atomic braid mass](#sec:atomic-braid-mass-foundations)). The pair-gen and
 higher pieces require the proper Wedderburn-coupling structure

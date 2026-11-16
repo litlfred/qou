@@ -1,7 +1,7 @@
-*Proof.*
+*Argument (not a proof).*
 The constituent baseline
 $Z\,m_{\mathfrak{p}} + N\,m_{\mathfrak{n}} + Z\,m_e$ is the
-free-particle sum from CODATA.  The binding energy is the
+free-particle sum.  The binding energy is the
 algebraic difference of the bound atom's mass formula and its
 free baseline.  Each of the six terms contributes additively to
 the categorical mass per
@@ -12,7 +12,7 @@ the per-derivation reading above:
 - *$T_1$ binding (descended Markov):* the categorical mass
   formula
   $\mathfrak{m}(Z, N) = E_{0,\beta} \cdot \mathfrak{m}(\beta_{Z,N})$
-  with $E_{0,\beta} = 0.7823$ MeV the free-neutron β-decay $Q$
+  with $E_{0,\beta}$ the β-decay scale
   per [categorical mass, Markov](#prop:categorical-mass-markov)
   reads $T_1$ in cat units.  The binding contribution is the
   bound–free differential.
@@ -20,7 +20,7 @@ the per-derivation reading above:
   the *atomic-braid mass formula* in the Particles chapter, the binding
   correction is $\alpha \cdot \sum_i \ln\lvert \hat V_i \rvert$
   where $\alpha = m_e \cdot 8G$ is the
-  [Borromean–Catalan binding scale](#prop:binding-scale-catalan)
+  [Borromean–Catalan binding scale](#conj:binding-scale-catalan) (itself a conjecture)
   and $G \approx 0.9160$ is Catalan's constant.  Per
   [the mass-endomorphism tower](#prop:mass-endomorphism-tower),
   $\alpha\,\ln\lvert V \rvert$ is the leading-order expansion of
@@ -47,9 +47,11 @@ the per-derivation reading above:
   residue evaluation.  No additional scaling needed.
 
 The total $B(Z, N)$ is the sum of these per-term contributions
-and is positive for bound systems.  $\square$
+and is positive for bound systems.  The argument assumes the
+scale assignment of each term; it does not derive it, and the
+Catalan scale it uses is itself conjectural.
 
-**Empirical verification.**
+**Comparison boundary.** The measured inputs enter here and only here.
 
 The assembly is implemented in
 the formal derivation

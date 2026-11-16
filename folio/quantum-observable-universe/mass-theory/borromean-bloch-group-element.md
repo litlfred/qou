@@ -75,7 +75,7 @@ $$
 
 with regulator $r_2[\mathcal{B}_3] = 8 \cdot D(i) = 8\,\mathrm{Cl}_2(\pi/2)
 = 8G$ (Catalan's constant; see
-[`prop:binding-scale-catalan`](#prop:binding-scale-catalan)).  This is
+[`conj:binding-scale-catalan`](#conj:binding-scale-catalan)).  This is
 the $\zeta_4$ row of the
 [transcendental-accounting table](../appendix-surreals/transcendental-accounting-table-data.md);
 the figure-eight sits in the $\zeta_6$ row with
@@ -190,7 +190,7 @@ class BorromeanBlochGroupElement
   [`rem:vol-as-motivic-period`](#rem:vol-as-motivic-period)
 - The volume = regulator identity:
   [`prop:vol-through-tau`](#prop:vol-through-tau),
-  [`prop:binding-scale-catalan`](#prop:binding-scale-catalan)
+  [`conj:binding-scale-catalan`](#conj:binding-scale-catalan)
 - The archimedean dilog limit:
   [`conj:dilogarithm-archimedean-limit`](#conj:dilogarithm-archimedean-limit)
 - The Kashaev volume conjecture (upstream):

@@ -106,8 +106,10 @@ theorem SpectralIdempotentData.p_minus_pos (d : SpectralIdempotentData) :
 /-- **Boltzmann ratio**: p₊/p₋ = q².
 
     The ratio of transition probabilities equals q², the Boltzmann
-    weight for a single crossing.  This identifies q² as the
-    fugacity of the Mallows measure. -/
+    weight for a single crossing.  Note that `K_i = p₊·id + p₋·s_i` is
+    doubly stochastic (`s_i` is a permutation matrix), so its stationary law
+    is the uniform measure, not the Mallows measure: q² here is a one-step
+    ratio, not the fugacity of a stationary distribution. -/
 -- Ref: [diaconis-ram2000] Diaconis & Ram, "Analysis of systematic scan Metropolis algorithms using Iwahori-Hecke algebra techniques," Ann. Appl. Probab. 12 (2000), arXiv:math/0401318
 theorem SpectralIdempotentData.boltzmann_ratio (d : SpectralIdempotentData) :
     d.p_plus / d.p_minus = d.q ^ 2 := by
