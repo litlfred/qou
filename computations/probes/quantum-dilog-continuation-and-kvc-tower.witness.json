@@ -1,0 +1,61 @@
+{
+  "probe": "quantum_dilog_continuation_and_kvc_tower_probe.py",
+  "beans": [
+    "oq8a",
+    "qou-cw27",
+    "qou-fuz1",
+    "qou-ic22",
+    "x7h8"
+  ],
+  "parentBean": "qou-r9ih",
+  "leanModule": "QOU.QBeta.QuantumDilogContinuationAndKVCTower",
+  "scriptHash": "7d73ec5a5a66",
+  "scriptCommitSha": "c308a076161bc1c0a1b46834008400b1576dfd38",
+  "generatedAt": "2026-11-16T21:23:23.039575+00:00",
+  "precisionDps": "80",
+  "allPassed": true,
+  "assertions": [
+    {
+      "id": "oq8a-borromean-crossing-balance-and-fourfold-volume",
+      "bean": "oq8a",
+      "description": "Borromean link (6 crossings, 3 components) has 0 two-per-component crossing defect and 2-octahedron volume = 4 * Vol(4_1)",
+      "borromeanCrossingDefect": "0",
+      "vol4180Dps": "2.029883212819307250042405108549040571883",
+      "volBorromean80Dps": "8.119532851277229000169620434196162287534",
+      "passed": true
+    },
+    {
+      "id": "qou-cw27-li2q-product-analytic-continuation-positivity",
+      "bean": "qou-cw27",
+      "description": "Li_2^q q-product continuation agrees with power series inside |z|<q and keeps g(x) = -Li_2^q(-x) finite and positive for x > q > 0",
+      "seriesVsProductDiffAtMinus0p5": "1.37048573262e-80",
+      "continuedGAtX2Q1p5": "1.457625795252078626819353260750524241459",
+      "passed": true
+    },
+    {
+      "id": "qou-fuz1-ggm-vs-ggmw-normalization-invariance",
+      "bean": "qou-fuz1",
+      "description": "Cross-multiplied GGM-vs-GGMW V1/V3 ratio is invariant under Jacobian/loop rescaling and Alexander exponent shift is 1 - 1/2 = 1/2",
+      "crossRatioDiff": "0",
+      "alexanderExponentShift": "1/2",
+      "passed": true
+    },
+    {
+      "id": "qou-ic22-kvc-anchor-tetrahedral-volume-budget",
+      "bean": "qou-ic22",
+      "description": "KVC anchor tetrahedral counts (4_1: 2, 5_2: 3, Borromean: 8, torus/Hopf: 0) sum to 13 with Vol(torus)=0 and Vol(Borromean)=4*Vol(4_1)",
+      "totalTetrahedra": "13",
+      "torusVolume": "0",
+      "passed": true
+    },
+    {
+      "id": "x7h8-rogers-bar-even-kernel-square-split-and-positivity",
+      "bean": "x7h8",
+      "description": "Compact bar-even Rogers kernel factor 1 - 2*q^n*x + q^{2n} equals (1-q^n)^2 + 2*q^n*(1-x) > 0 on [-1, 1]",
+      "testedQPow": "3/5",
+      "minKernelAtX1": "4/25",
+      "maxKernelAtXMinus1": "64/25",
+      "passed": true
+    }
+  ]
+}
