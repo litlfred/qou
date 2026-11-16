@@ -1,7 +1,8 @@
 ---
 # qou-v8qx
 title: w_3 second base case via the ramified double cover (adjoin q^1/2, x^1/2) — the one route nothing excludes
-status: todo
+status: in-progress
+pr: 8199
 type: task
 priority: normal
 tags:
@@ -65,3 +66,8 @@ qou-d8de (GAP W1: construct the prolongation operator D_q) is the adjacent
 parent -- that bean builds the OPERATOR; this one asks whether the ramified
 cover supplies the second INITIAL CONDITION. Do not merge them; the negative
 results differ.
+
+## Progress (PR #8199)
+- [x] Formalized in `folio/quantum-observable-universe/lean/QOU/MassTheory/RouteCDTChiralityAndQBridgeTaming.lean` (`0` `sorry`, `0` `axiom`, `0 CRITICAL, 0 advisory` across all 7 static vacuity/borrowed-name audits) and wired into `QOU.lean`.
+- [x] Verified exact rational witness in `computations/probes/route-c-dt-chirality-and-qbridge-taming.witness.json` (`scriptHash: d89ffef0f347`, `scriptCommitSha: d6aa2e9463a3ba079ec1d472e356f34252ece779`, `allPassed: true`, `0` raw `float64` fields).
+- [ ] Awaiting Merge Manager merge of PR #8199 (`1f4bf9af7d58a057599a62f5a8d42748dc742ea8`).

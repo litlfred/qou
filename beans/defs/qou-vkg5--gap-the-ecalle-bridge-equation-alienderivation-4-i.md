@@ -1,7 +1,8 @@
 ---
 # qou-vkg5
 title: 'GAP: the Ecalle bridge equation (AlienDerivation §4) is unproved'
-status: todo
+status: in-progress
+pr: 8199
 type: task
 priority: normal
 tags:
@@ -554,3 +555,8 @@ there, with the staleness recorded rather than silently overwritten.
 **This bean is subordinate to `qou-wgnx`.** Live follow-ons there are `qou-c1ln`
 (discharge the numerics in Lean) and `qou-c1wr` (the C1 work is invisible to the
 manifest graph; its natural home is a leaf block). Neither is a Stokes multiplier.
+
+## Progress (PR #8199)
+- [x] Formalized in `folio/quantum-observable-universe/lean/QOU/MassTheory/RouteCDTChiralityAndQBridgeTaming.lean` (`0` `sorry`, `0` `axiom`, `0 CRITICAL, 0 advisory` across all 7 static vacuity/borrowed-name audits) and wired into `QOU.lean`.
+- [x] Verified exact rational witness in `computations/probes/route-c-dt-chirality-and-qbridge-taming.witness.json` (`scriptHash: d89ffef0f347`, `scriptCommitSha: d6aa2e9463a3ba079ec1d472e356f34252ece779`, `allPassed: true`, `0` raw `float64` fields).
+- [ ] Awaiting Merge Manager merge of PR #8199 (`1f4bf9af7d58a057599a62f5a8d42748dc742ea8`).
