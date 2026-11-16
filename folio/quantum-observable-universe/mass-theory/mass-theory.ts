@@ -141,6 +141,7 @@ export default chapter({
             "ground-state-ordering-derivation",
             "skein-generation",
             "skein-generation-proof",
+            "skein-generation-hadron-reading",
             "skein-mass-from-linking",
             "skein-mass-from-linking-proof",
           ],

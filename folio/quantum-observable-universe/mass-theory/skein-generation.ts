@@ -3,6 +3,11 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   authorNotes: [
     {
+      kind: "refined-framing",
+      date: "2026-11-16",
+      body: "Rescoped by owner ruling (2026-11-16) after the sidecar review failed the proof: with the relation $q L_+ - q^{-1} L_- = (q - q^{-1})L_0$ every link equals the unknot, so generation by torus knots and the Hopf link held only trivially and the mass-from-linking step did not follow. The statement is now the HOMFLYPT freeness of $\\mathrm{Sk}(S^3)$; the torus-knot, Hopf and hadron-mass reading moved to [rem:skein-generation-hadron-reading](#rem:skein-generation-hadron-reading). The Lean `skein_generation` proves the abstract step (generation from a terminating resolution), not freeness.",
+    },
+    {
       kind: "caveat",
       date: "2026-11-16",
       body:
@@ -21,11 +26,12 @@ export default proposition({
   lean: { ref: "qou:QOU.Torsion.skein_generation",
     validation: "not_checked",
   },
-  title: "Skein generation of hadrons from mass-zero fundamentals",
+  title: "The skein module of the 3-sphere is free on the unknot",
   uses: [
     "rem:hadron-operations",
     "def:hadron-fibre-embedding",
   ],
   proofs: ["prf:skein-generation"],
-  tags: ["skein", "generation", "mass", "hadron", "torus-knot"],
+  tags: ["skein", "generation", "homflypt"],
+  cites: ["lickorish1997"],
 });
