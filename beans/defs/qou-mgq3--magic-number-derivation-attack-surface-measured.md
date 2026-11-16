@@ -1,7 +1,7 @@
 ---
 # qou-mgq3
 title: 'Magic-number derivation: measured attack surface, and the two walls'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -303,3 +303,19 @@ implements it.
 covered by the default-partition sweep to A = 30; 50, 82, 126 by neither.
 `min|y|` is exactly 0.0 at some partitions for A = 3,4,5,10, so its cross-A
 ranking is degenerate and carries no signal either way — do not read it as one.
+
+
+---
+
+## Round 48 Execution Update (2026-11-16, PR #8181)
+
+- **PR:** https://github.com/litlfred/qou/pull/8181 (`e3a0c2e1773d8a4bc1635ead95154cb8d9babb4d`)
+- **Lean 4 Formalisation (`0` `sorry`, `0` `axiom`, wired into `QOU.lean`):**
+  - `folio/quantum-observable-universe/lean/QOU/MassTheory/FramingSpinOrbitMagicLadder.lean`
+    - Formalises both magic-number walls:
+      1. The oscillator-vs-intruder bifurcation (`hoCumulative_first_seven` `[2, 8, 20, 40, 70, 112, 168]` vs `soIntruderCumulative_magic_upper` `[28, 50, 82, 126]` and `mayer_jensen_intruder_splits`).
+      2. The `A₅` icosahedral branching obstruction (`a5IrrepDims_burnside`, `a5_spin_doubled_max_lt_h11_half`, `a5_l5_branching_dimension_split`): every spin-doubled `A₅ × SU(2)` irreducible multiplet has dimension `2d ≤ 10 < 12` (`1h_{11/2}` closing `82`) and `< 14` (`1i_{13/2}` closing `126`), and under `SO(3) ↓ A₅` the `ℓ = 5` (`dim 11`) orbital representation splits into `3 + 3 + 5 = 11`.
+- **Probe & 50-dps Witness:**
+  - `computations/probes/spin_orbit_magic_rstar_mirror_probe.py`
+  - `computations/probes/spin-orbit-magic-rstar-mirror-probe.witness.json`
+- **Status:** Kept at `in-progress` pending owner review and PR merge.

@@ -1,7 +1,7 @@
 ---
 # qou-frso
 title: 'Framing spin-orbit: the 2l+1 shape is derived, the scale is not'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -81,3 +81,19 @@ was mine.
    is reachable and the metric stops capping at 6.
 3. Do **not** re-attempt `l·s` from a scalar q-oscillator — proved scope-(b)
    exclusion, 2026-07-06 audit.
+
+
+---
+
+## Round 48 Execution Update (2026-11-16, PR #8181)
+
+- **PR:** https://github.com/litlfred/qou/pull/8181 (`e3a0c2e1773d8a4bc1635ead95154cb8d9babb4d`)
+- **Lean 4 Formalisation (`0` `sorry`, `0` `axiom`, wired into `QOU.lean`):**
+  - `folio/quantum-observable-universe/lean/QOU/MassTheory/FramingSpinOrbitMagicLadder.lean`
+    - `fourCasimir_spin_orbit_diff`, `twoLdotS_eigen_diff`: proves the parameter-free Landé spin–orbit splitting `C(ℓ + 1/2) - C(ℓ - 1/2) = 2ℓ + 1` and `2L·S|_{j=ℓ+1/2} - 2L·S|_{j=ℓ-1/2} = ℓ - (-(ℓ + 1)) = 2ℓ + 1`.
+    - `framingSpinOrbitShift_injective_in_scale`: isolates the unfixed radial scale `V_ls`.
+    - `hoCumulative_first_seven`, `soIntruderCumulative_magic_upper`, `mayer_jensen_intruder_splits`, `mayer_jensen_ladder_eq_magicList`: proves the pure 3D harmonic-oscillator closures `[2, 8, 20, 40, 70, 112, 168]` vs the high-`j` spin–orbit intruder closures `[20 + 8 = 28, 40 + 10 = 50, 70 + 12 = 82, 112 + 14 = 126]` yielding `[2, 8, 20, 28, 50, 82, 126]`.
+- **Probe & 50-dps Witness:**
+  - `computations/probes/spin_orbit_magic_rstar_mirror_probe.py`
+  - `computations/probes/spin-orbit-magic-rstar-mirror-probe.witness.json`
+- **Status:** Kept at `in-progress` pending owner review and PR merge.

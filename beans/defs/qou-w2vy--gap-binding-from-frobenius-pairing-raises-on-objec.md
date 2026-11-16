@@ -1,7 +1,7 @@
 ---
 # qou-w2vy
 title: 'GAP: binding_from_frobenius_pairing raises on object dtype -- latent behind term 1''s hang'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -403,3 +403,17 @@ recorded.
 Caught by the pre-merge file listing, not by any checker. A near-miss slug is
 indistinguishable from a new bean to anything that globs `.beans/*.md`, and
 nothing validates that a bean file carries the header its name implies.
+
+
+---
+
+## Round 48 Execution Update (2026-11-16, PR #8181)
+
+- **PR:** https://github.com/litlfred/qou/pull/8181 (`e3a0c2e1773d8a4bc1635ead95154cb8d9babb4d`)
+- **Probe & 50-dps Witness:**
+  - `computations/probes/spin_orbit_magic_rstar_mirror_probe.py`
+  - `computations/probes/spin-orbit-magic-rstar-mirror-probe.witness.json`
+- **Findings Verified:**
+  1. Both the Rust MPFR LP kernel (`_lp_kernel_steps`) and the Python cached COO object-dtype fallback (`_HAS_LP_KERNEL = False`, accumulating in `dtype=object` via row/col index arrays) in `computations/hecke_core_legacy.py` execute cleanly without raising `TypeError: no supported conversion for types: (dtype('float64'), dtype('O'))`, with `0.0` relative difference at `k_cap = 3` (`(2, 1)` block).
+  2. Live post-`qou-oiz3` return-type contract recorded: `atom_character_raw` casts `(chi, log_norm)` to `(float, float)` at its return boundary, while `atom_markov_trace`, `atom_frobenius_norm_sq`, and `binding_from_frobenius_pairing` return `mpmath.mpf`. Per the bean recommendation, `atom_character_raw`'s public `(float, float, int)` return signature is left unchanged so downstream callers (`sdp_cross_channel.py`) are unaffected.
+- **Status:** Kept at `in-progress` pending owner review and PR merge.

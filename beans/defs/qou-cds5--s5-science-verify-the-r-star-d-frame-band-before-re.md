@@ -1,7 +1,7 @@
 ---
 # qou-cds5
 title: 'S5 (SCIENCE): verify the r* D-frame band BEFORE re-scoring the six Delta_lambda ansaetze'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -57,3 +57,26 @@ find the one ansatz that lands, and call it closure.
   proved exclusion, not a scope gate.
 - The gate is **open for all** (2026-07-13) for *derivation* routes; the
   anti-fit discipline is orthogonal and unchanged.
+
+
+---
+
+## Round 48 Execution Update — Step 1 Resolved (2026-11-16, PR #8181)
+
+- **PR:** https://github.com/litlfred/qou/pull/8181 (`e3a0c2e1773d8a4bc1635ead95154cb8d9babb4d`)
+- **Lean 4 Formalisation (`0` `sorry`, `0` `axiom`, wired into `QOU.lean`):**
+  - `folio/quantum-observable-universe/lean/QOU/MassTheory/DeltaLambdaRStarConventionD.lean`
+    - `rStarCabled_cross_decreases_while_door_increases`
+    - `pr4766_door_scaled_band_provenance`
+    - `rStar_convention_D_outside_pr4766_band`
+    - `rBoth_convention_D_overshoots_all_targets`
+- **Probe & 50-dps Witness:**
+  - `computations/probes/spin_orbit_magic_rstar_mirror_probe.py`
+  - `computations/probes/spin-orbit-magic-rstar-mirror-probe.witness.json`
+- **Step 1 Resolution Summary:**
+  1. **Provenance of `[2.04, 2.16]`:** PR #4766 (`docs/audits/2026-08-08-binding-channel-convention-exposure.md`, opened 2026-08-08 and merged 2026-08-25, ten days after the 2026-08-15 ruling doc) measured the **uncabled pairwise supermodularity door** `c₃^door = -E₀(χ_ab - χ_a - χ_b + χ_∅)` (`-1.768775 MeV` for `³H`, `-1.405424 MeV` for `³He` under C; `-1.372331 MeV` for `³H`, `-1.033836 MeV` for `³He` under D), giving C-to-D door ratios `1.288883` (`³H`) and `1.359427` (`³He`). Multiplying the cabled-Borromean C-frame ratio `r*_C = 1.585412` by those uncabled door ratios produced `[2.043411, 2.155251] ≈ [2.04, 2.16]`.
+  2. **Direct 50-dps Convention-D measurement of the `#4364` cabled-Borromean cluster `c₃^cabled(y_λ) = E₀(g₀ - g_B)`:**
+     - On the `#4364` `grouped` word: `c₃^cabled` increases from `0.296958 MeV` (C) to `0.303867 MeV` (D), so `r*_D(grouped) = 0.4708 / 0.303867 = 1.549361` (per-isotope `[1.414661, 1.712412]`), moving **down** by `-2.27%` (strictly below `[2.04, 2.16]`).
+     - On the canonical `borromean` word (`qou-hu1f`): `c₃^cabled(D) = 0.191529 MeV`, giving `r*_D(borromean) = 2.458116` (per-isotope `[2.213893, 2.762901]`, strictly above `[2.04, 2.16]`).
+  3. **Fate of `r_both` and the six `Δ_λ` ansaetze:** Under Convention D, `∑_λ y_λ^D = 0.062025` is `1.953×` larger than `∑_λ y_λ^C = 0.031752`, so `r_both^D = r_geom^D · ∑_λ y_λ^D = 2.871237` overshoots `r*_D(grouped) = 1.549361` by `+85.32%` (refuting the C-frame `1.504 vs 1.585` near-miss as a normalization artifact). None of the six pruned `Δ_λ` ansaetze is rescued.
+- **Status:** Kept at `in-progress` pending owner review and PR merge.
