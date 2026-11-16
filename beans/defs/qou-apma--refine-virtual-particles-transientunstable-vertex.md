@@ -1,7 +1,8 @@
 ---
 # qou-apma
 title: 'REFINE: virtual particles = transient/unstable vertex flows (Reeb flow + Demazure + width)'
-status: todo
+status: in-progress
+pr: 8209
 type: task
 priority: normal
 tags:
@@ -172,3 +173,8 @@ and is repeated here so a skimmer does not re-derive it: **width is NOT
 `Im(q)`.** `Im(q₀) = 0` at the observable level while resonance widths are
 measured, so that framing is self-inconsistent. The width is `Im(s_pole)` in the
 energy plane at real `q₀`.
+
+## Progress (2026-11-16, PR #8209)
+- [x] Non-vacuous Lean 4 theorem proved (`0` `sorry`, `0` vacuity advisories) in `folio/quantum-observable-universe/lean/QOU/Eightfold/RankOneSpinSingletThreeGenerationsLadderChargeAndNearlyKahlerCosets.lean`
+- [x] 50-dps `mpmath` probe and witness stamped (`9c4fe9d8065c7167caac7a61ef4becd45df1573f`, `scriptHash: e6bdb7c63ac7`)
+- [ ] Awaiting Merge Manager merge of `litlfred/qou#8209`

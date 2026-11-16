@@ -1,7 +1,8 @@
 ---
 # qou-ctzi
 title: 'CITE: nearly-Kahler homogeneous classification (Butruille 2005; Gray; Fernandez-Gray) is neither held nor registered — U — the S^6 = G2/SU(3) leg'
-status: todo
+status: in-progress
+pr: 8209
 type: task
 priority: normal
 tags:
@@ -55,3 +56,8 @@ frame, not a route to `W`. `docs/audits/2026-09-04-the-cr-dimension-decision-ful
 decision supplies `W`.
 
 Found by the citation-gap sweep, `docs/audits/2026-09-04-citation-gap-inventory.md`.
+
+## Progress (2026-11-16, PR #8209)
+- [x] Non-vacuous Lean 4 theorem proved (`0` `sorry`, `0` vacuity advisories) in `folio/quantum-observable-universe/lean/QOU/Eightfold/RankOneSpinSingletThreeGenerationsLadderChargeAndNearlyKahlerCosets.lean`
+- [x] 50-dps `mpmath` probe and witness stamped (`9c4fe9d8065c7167caac7a61ef4becd45df1573f`, `scriptHash: e6bdb7c63ac7`)
+- [ ] Awaiting Merge Manager merge of `litlfred/qou#8209`
