@@ -1,13 +1,14 @@
 ---
 # qou-09lg
 title: 'GAP: fr_pullback_* and binding_depth_stratified_* bind q as a Python float — the f64_into_mpmath half-fix trap is LIVE'
-status: todo
+status: in-progress
+pr: 8190
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-29T16:17:15Z
-updated_at: 2026-10-04T15:20:01Z
+updated_at: 2026-11-16T20:28:40Z
 parent: qou-9nnz
 ---
 
@@ -68,3 +69,9 @@ read the per-nuclide rows, and the first reads them as floats by design.
 So the audit's PROPAGATES bucket is coarse: it keys on "the WITNESS is read by
 another module", not "the f64 FIELD is read". Narrowing it to field-level
 consumption would move this file out of the actionable set.
+
+## Progress Update (2026-11-16, PR #8190)
+- [x] Formalized in `folio/quantum-observable-universe/lean/QOU/MassTheory/Float64EngineReachabilityAndGramInverse.lean` (wired into `QOU.lean`, `0` `sorry`, `0` vacuity advisories across all 7 static audits).
+- [x] Paired with 50-dps `mpmath` + `sympy` verification probe `computations/probes/float64_engine_reachability_and_gram_inverse_probe.py` and stamped witness `computations/probes/float64-engine-reachability-and-gram-inverse.witness.json` (`allPassed: true`, `0` raw `float64` fields, `scriptCommitSha: 2ed61761fb447e7b912df4f3ef73e8603236969a`).
+- [ ] Awaiting merge of PR [`litlfred/qou#8190`](https://github.com/litlfred/qou/pull/8190) (`345a3f9ff4ba913bb465b8884e861bfccde997ca`).
+

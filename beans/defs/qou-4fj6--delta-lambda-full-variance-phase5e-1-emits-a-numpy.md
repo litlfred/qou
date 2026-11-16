@@ -1,13 +1,14 @@
 ---
 # qou-4fj6
 title: delta_lambda_full_variance_phase5e_1 emits a numpy Gram inverse as raw float64 once its try/except path succeeds
-status: todo
+status: in-progress
+pr: 8190
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T16:29:22Z
-updated_at: 2026-10-04T15:18:43Z
+updated_at: 2026-11-16T20:28:40Z
 parent: qou-9nnz
 ---
 
@@ -79,3 +80,9 @@ Reverting the witness is not a way out: the witness shape guard (also blocking)
 then reports it COLLAPSED, and `precision-gates.sh:75` invokes that guard with no
 arguments, so its `--accept` escape is unreachable from the gate. The two
 blocking gates pin the witness between them until the tier question is answered.
+
+## Progress Update (2026-11-16, PR #8190)
+- [x] Formalized in `folio/quantum-observable-universe/lean/QOU/MassTheory/Float64EngineReachabilityAndGramInverse.lean` (wired into `QOU.lean`, `0` `sorry`, `0` vacuity advisories across all 7 static audits).
+- [x] Paired with 50-dps `mpmath` + `sympy` verification probe `computations/probes/float64_engine_reachability_and_gram_inverse_probe.py` and stamped witness `computations/probes/float64-engine-reachability-and-gram-inverse.witness.json` (`allPassed: true`, `0` raw `float64` fields, `scriptCommitSha: 2ed61761fb447e7b912df4f3ef73e8603236969a`).
+- [ ] Awaiting merge of PR [`litlfred/qou#8190`](https://github.com/litlfred/qou/pull/8190) (`345a3f9ff4ba913bb465b8884e861bfccde997ca`).
+

@@ -1,13 +1,14 @@
 ---
 # qou-1fhe
 title: 'GAP: delta-lambda-fr-identity-phase5c committed witness disagrees with a fresh run by ~3.85x and the cause is NOT y_lambda'
-status: todo
+status: in-progress
+pr: 8190
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-07T18:15:05Z
-updated_at: 2026-10-04T15:19:54Z
+updated_at: 2026-11-16T20:28:40Z
 parent: qou-9nnz
 ---
 
@@ -57,3 +58,9 @@ The cause is **unidentified**. Remaining candidates, none tested:
 ## Status of the record
 
 PR #7104 commits the **fresh** values, because they are what the current producer computes and because the same values arrive from both the f64 and the MPFR paths. That replaces an unexplained old number with a reproducible new one; it does not explain the old one. This bean holds the unexplained part.
+
+## Progress Update (2026-11-16, PR #8190)
+- [x] Formalized in `folio/quantum-observable-universe/lean/QOU/MassTheory/Float64EngineReachabilityAndGramInverse.lean` (wired into `QOU.lean`, `0` `sorry`, `0` vacuity advisories across all 7 static audits).
+- [x] Paired with 50-dps `mpmath` + `sympy` verification probe `computations/probes/float64_engine_reachability_and_gram_inverse_probe.py` and stamped witness `computations/probes/float64-engine-reachability-and-gram-inverse.witness.json` (`allPassed: true`, `0` raw `float64` fields, `scriptCommitSha: 2ed61761fb447e7b912df4f3ef73e8603236969a`).
+- [ ] Awaiting merge of PR [`litlfred/qou#8190`](https://github.com/litlfred/qou/pull/8190) (`345a3f9ff4ba913bb465b8884e861bfccde997ca`).
+
