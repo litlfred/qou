@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-16T09:55:00Z
+updated_at: 2026-11-16T09:58:00Z
 parent: qou-10v9
 ---
 
@@ -3694,3 +3694,19 @@ H₂ with nucleon V³/V⁶ × four chiral length-2 electrons (σ₁²=V⁻¹L₊
 - The ruled base (2026-09-08: z_D, tower E₀) on Δ_S gives Q_β = 0.4491 MeV, −42.59 % (#8124).
 - Open, and the reason this bean stays open: what decides y₃ (equivalently the chirality expectation τ(P_L) − τ(P_R)) from the corpus, and the element choice (nuc11 fails reading-3 confinement on (2,1)).
 - Five blocks still print the superseded order-zero 0.4447 MeV: epistemic-status-of-calibrations, mass-comparison-table, three-calibration-discipline-remark, np-discrepancy-resolution, q-beta-over-e0-classical-vanishing-ladder-reading. q-beta-c-2-eq-neg-one-structural also prints it, but that block is explicitly order-zero.
+
+### NOTE 2026-11-16 — gluon thread stage 2 (PR #8128), relayed
+H₂ with nucleon V³/V⁶ × four chiral length-2 electrons (σ₁²=V⁻¹L₊, V⁻¹L₋, L₊V⁻¹, L₋V⁻¹): bare molecule passes reading 3 in all 16 cells; V³ bond passes everywhere. Trefoil fails reading 3 at every q, alone and in composites; its negative trace is forced by the Hecke relation (only a z=q truncation removes it). Handed-electron candidates = pure braids with nonzero writhe. No effect on the n–p break (all F₃-covariant) or on the nucleon element choice.
+
+### NOTE 2026-11-16 09:50Z — thread "Find the n–p break and nucleon element" resumed
+- PR #8104 (ε-L1 probe) re-run here: reproduces the committed witness byte-for-byte (exact sympy). Precision gate not examined (qou_substrate absent in container). Merge card posted to the owner.
+- Owner card posted: does L± = σ₀σ₁ join the γγ rule (add / keep as is / decide later). Agent recommendation: keep as is (no corpus derivation of L± as a γγ letter; adopting it for its handedness would be selection by outcome). No selection rule is adopted or computed until the owner rules; any rule will be pre-registered here first.
+- Status unchanged: n–p break still needs a non-U_q-covariant ingredient beyond the Coulomb/Y insertion; no element rule derived. Bean stays OPEN (open conjecture).
+
+### OWNER RULING 2026-11-16 09:46Z — L± joins the γγ word rule
+Owner tapped "Add L± to γγ" (card in thread "Find the n–p break and nucleon element"; agent had recommended keep-as-is). From now on the γγ alphabet is {V, V⁻¹, L₊, L₋} with L± = σ₀σ₁ (resp. inverse). Recorded consequences, NOT yet re-derived:
+- Reading 3 then passes exactly the pure braids (gluon thread stage 1); handed (nonzero-writhe) pure words are admissible.
+- Δ_S is no longer guaranteed canonical, so Q_β = 0.4491 MeV (#8124) is provisional, and the level-1 "Q_β = 0" prune (GammaGammaSelectedDeltaVanishes.lean) must be re-checked over the enlarged alphabet.
+- n–p break: unaffected (every L± word is F₃-covariant, ε-L1 ratio 1).
+- Canonical word reselection over the new alphabet is required. Any selection rule will be PRE-REGISTERED here before computing; no element picked by residual; any m_n move flagged in project chat.
+Bean stays OPEN.
