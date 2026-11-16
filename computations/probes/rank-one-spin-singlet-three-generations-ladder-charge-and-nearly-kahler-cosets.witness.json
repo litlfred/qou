@@ -1,0 +1,103 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-16T21:26:45.492734+00:00",
+  "commitSha": "75710a0982baee4822aa9e21f3a5ad959ffae501",
+  "assertions": [
+    {
+      "name": "qou-0tiw-fundamental-dim-two-forced-by-antisym-singlet",
+      "computed": "2.0",
+      "expected": "2.0",
+      "passed": true,
+      "tolerance": "1e-48"
+    },
+    {
+      "name": "qou-0tiw-sym-plus-antisym-partition",
+      "computed": "4.0",
+      "expected": "4.0",
+      "passed": true,
+      "tolerance": "1e-48"
+    },
+    {
+      "name": "qou-7opd-three-generations-crossing-sum",
+      "computed": "15.0",
+      "expected": "15.0",
+      "passed": true,
+      "tolerance": "1e-48"
+    },
+    {
+      "name": "qou-7opd-k3-cohomology-rank-and-signature",
+      "computed": "12.0",
+      "expected": "12.0",
+      "passed": true,
+      "tolerance": "1e-48"
+    },
+    {
+      "name": "qou-abtu-exterior-ladder-mean-charge",
+      "computed": "0.5",
+      "expected": "0.5",
+      "passed": true,
+      "tolerance": "1e-48"
+    },
+    {
+      "name": "qou-abtu-exterior-ladder-centered-trace-zero",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1e-48"
+    },
+    {
+      "name": "qou-ctzi-homogeneous-six-manifold-distinct-invariants",
+      "computed": "4.0",
+      "expected": "4.0",
+      "passed": true,
+      "tolerance": "1e-48"
+    },
+    {
+      "name": "qou-ctzi-g2-mod-so4-dim-eight",
+      "computed": "8.0",
+      "expected": "8.0",
+      "passed": true,
+      "tolerance": "1e-48"
+    },
+    {
+      "name": "qou-apma-energy-plane-resolvent-modulus-squared",
+      "computed": "1.0041585852540862895537698408043886717281485313994",
+      "expected": "1.0041585852540862895537698408043886717281485313994",
+      "passed": true,
+      "tolerance": "1e-48"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "rank-one-spin-singlet-three-generations-ladder-charge-and-nearly-kahler-cosets",
+  "scriptFile": "rank_one_spin_singlet_three_generations_ladder_charge_and_nearly_kahler_cosets_probe.py",
+  "scriptHash": "e6bdb7c63ac7",
+  "scriptCommitSha": "75710a0982baee4822aa9e21f3a5ad959ffae501",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/rank_one_spin_singlet_three_generations_ladder_charge_and_nearly_kahler_cosets_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/rank_one_spin_singlet_three_generations_ladder_charge_and_nearly_kahler_cosets_probe.py"
+  },
+  "description": "50-dps mpmath verification of fundamental dimension d = 2 forced by antisymmetric singlet dim(Lambda^2 V) = d(d-1)/2 = 1 and dim(Sym^2 V) = 3 (qou-0tiw), three-generation odd torus window (3,5,7) and K3 lattice rank split 22 = 3*2 + 2*8 (qou-7opd), three-generator exterior ladder charge spectrum 1+3+3+1=8 and centered trace 0 (qou-abtu), six-dimensional homogeneous coset topological invariants (b_2, chi) and G_2/SO(4) dim 8 (qou-ctzi), and energy-plane resolvent denominator positivity 4(s-E_R)^2 + Gamma^2 >= Gamma^2 > 0 (qou-apma).",
+  "parameters": {
+    "dps": "50"
+  }
+}
