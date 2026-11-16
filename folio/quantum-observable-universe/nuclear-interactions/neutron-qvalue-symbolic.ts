@@ -40,6 +40,12 @@ export default proposition({
       body:
         "Owner card 2026-11-16 (prose + canonical E0). The element Delta is unchanged. E0 is now the tower-summed form of `computations/qbeta/qbeta_e0.py::canonical`, so the base moves 0.4447 -> 0.4491 MeV (-43.16% -> -42.59%). Added: the typed-crossing rule is labelled as the only u/d-breaking input (a definition; see #8111), a note that Delta has a sign-block part invisible to the convention-D trace, and the Form B paragraph no longer calls Form A an equivalent basis. Other blocks that still print 0.4447 MeV are not changed here.",
     },
+    {
+      kind: "status",
+      date: "2026-11-16",
+      body:
+        "Owner ruling 2026-11-16: L+ and L- join the gamma-gamma word rule. The element Delta is therefore no longer guaranteed canonical, and 0.4491 MeV is provisional until the element is reselected over {V, V^-1, L+, L-} (bean qou-99qc).",
+    },
   ],
   tags: [
     "beta-decay",
