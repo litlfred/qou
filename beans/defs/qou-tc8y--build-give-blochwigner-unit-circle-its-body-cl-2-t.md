@@ -1,13 +1,13 @@
 ---
 # qou-tc8y
 title: 'BUILD: give BlochWigner_unit_circle its body (Cl_2) — the opaque seal is stale and collides with the proved def'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T09:07:54Z
-updated_at: 2026-10-04T15:14:41Z
+updated_at: 2026-11-16T18:38:00Z
 parent: qou-rtxm
 ---
 
@@ -46,3 +46,9 @@ re-enable the import, delete the other. Consumer to re-verify:
 Do NOT edit .lean in the audit session that filed this — it was read-only.
 
 Source: `docs/audits/2026-09-04-mathlib-infrastructure-inventory.md` §B1, §F5.
+
+## Resolution (2026-11-16, PR [`litlfred/qou#8151`](https://github.com/litlfred/qou/pull/8151), commit `11d9d9a0016ff7aacd751e96586ecbf5f1217753`)
+
+- `QOU/Archimedean/BlochWignerUnitCircle.lean` already carries the concrete body `noncomputable def BlochWigner_unit_circle (θ : ℝ) : ℝ := Cl_2 θ` (since issue #7942); updated its module header docstring to retire the stale `noncomputable opaque` note.
+- `QOU/Archimedean/BlochWignerMathlibFiller.lean` now imports `QOU.Archimedean.BlochWignerUnitCircle` instead of redeclaring a duplicate `BlochWigner_unit_circle` in `namespace QOU.Archimedean`, and exposes `@[simp] theorem BlochWigner_unit_circle_eq_Cl_2 (θ : ℝ) : BlochWigner_unit_circle θ = Cl_2 θ := rfl`.
+- Re-enabled `import QOU.Archimedean.BlochWignerMathlibFiller` in both `QOU/Archimedean.lean` and `QOU/Archimedean/ThreeSubstantiveMathlibFillers.lean`.

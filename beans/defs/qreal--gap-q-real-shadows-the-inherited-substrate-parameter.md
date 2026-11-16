@@ -1,7 +1,7 @@
 ---
 # qreal
 title: 'GAP: a redundant `q_real : ℝ` shadows the inherited substrate parameter `q : R`'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -10,7 +10,7 @@ tags:
     - lean
     - soundness
 created_at: 2026-08-08T13:30:00Z
-updated_at: 2026-10-04T15:14:52Z
+updated_at: 2026-11-16T18:38:00Z
 parent: qou-rtxm
 ---
 
@@ -115,3 +115,14 @@ Some `q_real` uses may be legitimate: the archimedean evaluation of `q` at the
 substrate anchor is a real number, and a block on the observable side of the
 §7c wall may want it. The defect is the **missing tie**, not the existence of a
 real. Read each before acting.
+
+## Resolution across all 8 files (2026-11-16, PR [`litlfred/qou#8151`](https://github.com/litlfred/qou/pull/8151), commit `11d9d9a0016ff7aacd751e96586ecbf5f1217753`)
+
+1. `folio/quantum-observable-universe/lean/QOU/Braiding/mobius_energy.lean`: shadow `q_real` dropped; classical limit stated directly on inherited `q : R` (`q = 1`).
+2. `folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/wedderburn_bratteli_recursion.lean`: vacuous duplicate context removed; formalisation lives in `mass-theory/wedderburn-bratteli-recursion.lean`.
+3. `folio/quantum-observable-universe/lean/QOU/Torsion/antiparticle_crossing_reversal.lean`: shadow `q_real` dropped; fields live over inherited `R`.
+4. `folio/quantum-observable-universe/lean/QOU/Information/reeb_operations_per_planck.lean`: extends `QOU.Shared.ArchimedeanEval`, deriving `q_real := eval q` via `eval : R →+* ℝ`.
+5. `folio/quantum-observable-universe/lean/QOU/Information/toffoli_transfer_matrix.lean`: extends `QOU.Shared.ArchimedeanEval`, deriving `q_real := eval q` via `eval : R →+* ℝ`.
+6. `folio/quantum-observable-universe/lean/QOU/Observations/strangelet_crossing_energy.lean`: extends `QOU.Shared.ArchimedeanEval`, deriving `q_real := eval q` via `eval : R →+* ℝ`.
+7. `folio/quantum-observable-universe/lean/QOU/Observations/brane_tower_q_laplacian_decay.lean`: migrated `BraneTowerQLaplacianDecayContext` in PR #8151 to extend `QOU.Shared.ArchimedeanEval` so `q_real := eval q` is derived from the inherited `q : R` rather than posited as an independent `ℝ` field.
+8. `folio/quantum-observable-universe/mass-theory/conj-im-q-physical-role.lean`: updated `default_q_real (q : ℂ) : ℂ := ((q.re : ℝ) : ℂ)` in PR #8151 so it projects `q : ℂ` onto the real axis rather than taking an untied `q_real : ℝ` parameter.

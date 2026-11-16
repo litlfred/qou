@@ -1,13 +1,13 @@
 ---
 # qou-6moa
 title: 'DEFECT in AGENTS.md: markovWeights_eq_jones_of_threeRow_eq_zero is cited for its own HYPOTHESIS'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-26T14:15:29Z
-updated_at: 2026-10-04T15:14:48Z
+updated_at: 2026-11-16T18:38:00Z
 parent: qou-rtxm
 ---
 
@@ -166,3 +166,8 @@ keys on decimal literals and cannot see a lemma name.
 "faithful" — and "uniquely" is exactly what `hfaith` buys. The **file** covers
 itself: `:173`, 26 lines above, spells out both roots (`z = q` degenerate and
 `z = z_D`) and is **the corpus's single best citation of this lemma**. Left as-is.
+
+## Resolution (2026-11-16, PR [`litlfred/qou#8151`](https://github.com/litlfred/qou/pull/8151), commit `11d9d9a0016ff7aacd751e96586ecbf5f1217753`)
+
+- Added `threeRow_eq_zero_of_conventionD` directly in `QOU/BraidsAndKnots/MarkovTraceTLUniqueness.lean` proving the converse direction `D ⟹ TL` (`z * (q + qi) = q ^ 2 ⟹ y₁₃ = 0` when `[2]_q ≠ 0` and `[3]_q = [2]_q² − 1 ≠ 0`, sorry-free via `linear_combination`) side-by-side with `markovWeights_eq_jones_of_threeRow_eq_zero` (`TL + faithful ⟹ D`).
+- Updated `docs/coordination/trace-convention-registry.json` (`:199` and `:362`) to explicitly state `FibreDimensionForcesTL.twoDimFibre_pins_h3_weights` and the faithfulness requirement (`hfaith : y_(2,1) != 0` on `TL_3`).
