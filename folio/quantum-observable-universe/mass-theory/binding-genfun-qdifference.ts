@@ -12,4 +12,19 @@ export default proposition({
     "prop:sw-period-residue-sum",
   ],
   proofs: ["prf:binding-genfun-qdifference"],
+  authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-16",
+      body:
+        "**Corrected 2026-11-16 (QA finding: da-non-sequitur, critical).** The block said " +
+        "$G(qx) = RG$ gives a recurrence $B_{n+d} = \\sum_j a_j(q) B_{n+j}$ with constant " +
+        "$a_j$, and that the '$\\rho\\cdot A$' scale rule is its solution. The coefficients " +
+        "depend on $n$ through $q^n$ (counterexample $R = 1 - x$, $B_n = 1/(q;q)_n$). The Lean " +
+        "structure now carries position-dependent coefficients. **Mass-derivation flag:** " +
+        "`BindingRecurrenceSpectral.lean` studies the constant-$\\tau$ recurrence " +
+        "$a_{n+2} = \\tau a_{n+1} - a_n$ as if it came from $R = x^2 - \\tau x + 1$; it does " +
+        "not, and its docstring now says so. No compute changes.",
+    },
+  ],
 });
