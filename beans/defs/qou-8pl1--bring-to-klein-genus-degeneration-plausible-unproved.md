@@ -1,14 +1,14 @@
 ---
 # qou-8pl1
 title: 'PLAUSIBLE-NOT-PROVED: Bring → Klein quartic genus degeneration'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - 8f-flavour
 created_at: 2026-08-06T00:00:00Z
-updated_at: 2026-10-10T07:15:45Z
+updated_at: 2026-11-16T18:56:59Z
 parent: qou-8lxd
 ---
 
@@ -116,3 +116,10 @@ faithful on the normalization; non-hyperelliptic normalization) the degeneration
 
 Left as `todo` deliberately: the *conjecture* is not dead, only this route to
 it. Renaming is the owner's call.
+
+
+## Progress Update — 2026-11-16 (`litlfred/qou#8155`, `f3af82fd1d99fc5eb05c0bd46bbd812b46330432`)
+
+- **Lean 4 formalization (`folio/quantum-observable-universe/lean/QOU/Eightfold/FlavourCartanOctetDecuplet.lean`, `0` `sorry`, wired into `QOU.lean`)**:
+  - Proves `bring_genus_pinching_and_s4_competitors`: formalizes the topological invariants of pinching 1 non-separating cycle from $g = 4$ to $g = 3$ ($\chi(4) = -6 \to \chi(3) = -4$, $\Delta\chi = +2$, $b_1 : 8 \to 6$), the Hurwitz bounds $84(3-1) = 168$ and $84(4-1) = 252$, and the common $S_4$ divisibility $24 \mid 120$ (Bring), $24 \mid 168$ (Klein, index 7), and $24 \mid 96$ (Fermat quartic competitor, index 4).
+- **Witness (`computations/probes/flavour-cartan-octet-decuplet-degeneration.witness.json`)**: `allPassed: true` (`q0Anchor: "independent"`).

@@ -1,14 +1,14 @@
 ---
 # qou-8pl3
 title: 'PLAUSIBLE-NOT-PROVED: routes to N = 3 for the flavour fundamental'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - 8f-flavour
 created_at: 2026-08-06T00:00:00Z
-updated_at: 2026-10-10T07:15:44Z
+updated_at: 2026-11-16T18:56:59Z
 parent: qou-8lxd
 ---
 
@@ -489,3 +489,10 @@ such fibre functors exist (Bichon 2003, real at q0) and preserve fusion rules,
 so V^{x3} still has no singlet. Route A proper (a different category / object,
 not a summand of V^{x n} and not a re-fibred V) is untouched. See
 docs/audits/2026-09-03-fibre-functors-do-not-change-the-category.md §4.
+
+
+## Progress Update — 2026-11-16 (`litlfred/qou#8155`, `f3af82fd1d99fc5eb05c0bd46bbd812b46330432`)
+
+- **Lean 4 formalization (`folio/quantum-observable-universe/lean/QOU/Eightfold/FlavourCartanOctetDecuplet.lean`, `0` `sorry`, wired into `QOU.lean`)**:
+  - Proves `su6_spin_flavour_56_and_condition5_split` combining the single-fibre $N = 2$ row-cap (`weylDimSym3 2 = 4`, `weylDimMixed3 2 = 2`, `weylDimAlt3 2 = 0`) with the $N = 3$ flavour object $W$ (`weylDimSym3 3 = 10`, `weylDimMixed3 3 = 8`, `weylDimAlt3 3 = 1`, $10 + 2 \times 8 + 1 = 27$) to establish the Kronecker decomposition $\dim \mathrm{Sym}^3(\mathbb{C}^3 \otimes \mathbb{C}^2) = 10 \times 4 + 8 \times 2 + 1 \times 0 = 56$.
+- **Witness (`computations/probes/flavour-cartan-octet-decuplet-degeneration.witness.json`)**: `allPassed: true` (`q0Anchor: "independent"`).
