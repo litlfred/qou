@@ -1,13 +1,13 @@
 ---
 # qou-wrtv
 title: 'B1/B2: reformulate alpha_blend_tower with the chirality term H_A^2 Phi_3 and excise the fitted alpha*'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-25T00:31:29Z
-updated_at: 2026-10-04T15:16:32Z
+updated_at: 2026-11-16T17:58:00Z
 parent: qou-3l2l
 ---
 
@@ -75,3 +75,10 @@ Scope-(a): this says the 2-term frame's deficit is NOT the chirality term. It
 does not exclude chirality from the mass formula — the term is canonical, exact,
 and integer-quantised. Whatever the nucleon channel is missing is something
 else.
+
+## 2026-11-16 — On-`main` Verification & `Q-3L2L-1 = 1` Cross-Link (`litlfred/qou#8141`)
+
+- **Verified on `main`:**
+  - The B1/B2 measurement above and the conditional per-loop assembly `folio/quantum-observable-universe/lean/QOU/Archimedean/PerLoopMeasureShadowAssembly.lean` (landed in `d68b998f91`, moved to `folio/` in `114b24ba5b`, `0` `sorry`) + `computations/alpha_em_b5_shadow_assembly_probe.py` (`computations/alpha-em-b5-shadow-assembly.witness.json`) are on `main`.
+  - Cross-linked with the $(4,1)$ standard block Hoefsmit/Markov Gram and Schur reduction formalization in `folio/quantum-observable-universe/lean/QOU/AlphaEM/StdBlockHoefsmitMarkovSchur.lean` (`qou-mxnu`, `qou-vbz4`, commit `593cd323f3c15de52fd2e46e8f2346c6fd815c68`, PR `https://github.com/litlfred/qou/pull/8141`).
+- Kept at `status: in-progress` per owner governance.

@@ -1,13 +1,13 @@
 ---
 # qou-wf2v
 title: 'canonical-scale-ratio: normalization-independent restatement of 25=deg^2 — outcome (iii) recorded; conditional theta_5 restatement + matching condition; Hodge pin blocked on Riera-Rodriguez Z'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-25T13:41:58Z
-updated_at: 2026-10-04T15:12:04Z
+updated_at: 2026-11-16T17:58:00Z
 parent: qou-wp3h
 ---
 
@@ -36,3 +36,10 @@ Hodge-side canonical evaluation (needs Z).
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-07-25 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-11-16 — On-`main` Verification & `Q-3L2L-1 = 1` Cross-Link (`litlfred/qou#8141`)
+
+- **Verified on `main`:**
+  - Audit `docs/audits/2026-07-25-alpha-em-b2-canonical-scale-ratio.md` (landed in `6e83109287`), probe `computations/alpha_em/alpha_em_b2_canonical_scale_ratio_probe.py`, witness `computations/alpha_em/alpha-em-b2-canonical-scale-ratio.witness.json` (8/8 PASS at 50 dps), and Lean module `folio/quantum-observable-universe/lean/QOU/Archimedean/GaugeGroupThreeScale.lean` (`0` `sorry`).
+  - Companion formalization in `folio/quantum-observable-universe/lean/QOU/AlphaEM/StdBlockHoefsmitMarkovSchur.lean` (`qou-mxnu`, `qou-vbz4`, commit `593cd323f3c15de52fd2e46e8f2346c6fd815c68`, PR `https://github.com/litlfred/qou/pull/8141`) proves `qFact5_eq_qDim41_mul_qHookProd41` (the algebraic identity underlying pin (b) $w_{(4,1)}(q) = d_q(4,1)^2 / [5]_q!$) and the 1D Schur line proportionality `schur_invariantForm_proportional`.
+- Kept at `status: in-progress` per owner governance.

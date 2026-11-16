@@ -1,13 +1,13 @@
 ---
 # qou-aemx
 title: The alpha_em Lean file holds TWO rival conjectures and the block cites only one; the 470 ppb figure compares the .md to the UNCITED one (corrected 2026-08-29)
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-28T16:32:49Z
-updated_at: 2026-10-04T15:11:09Z
+updated_at: 2026-11-16T17:58:00Z
 parent: qou-3l2l
 ---
 
@@ -389,3 +389,12 @@ remains an author call, and the 0/5-unconditional L2 count is unaffected.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-29 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-11-16 — On-`main` Verification of `.lean`/`.md` Alignment (`b36554ecec`, `9d726d6caa`, `114b24ba5b`) & `Q-3L2L-1 = 1` Cross-Link (`litlfred/qou#8141`)
+
+- **Verified on `main`:**
+  - `folio/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.lean` and `folio/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.md` are now aligned on `main` (landed in `9d726d6caa` and `b36554ecec`, moved to `folio/` in `114b24ba5b`, updated in `e389b33b05`, `0` `sorry`):
+    - Proves `carrierLinking_eq` ($\ell = 17$), `gramDetRatio_congr` (basis-invariance of $\kappa = \det G^{\mathrm{cl}}_{\mathrm{CS}} / \det G_q$ under $G \mapsto B^T G B$, also in `QOU/Archimedean/GramDetRatioCongruence.lean`), `csTower_resums` ($\sum_{j \ge 1} \delta^j \kappa^{j-1} = \delta / (1 - \delta \kappa)$ for $|\delta \kappa| < 1$), and `csTower_partialSum_two`.
+    - States `ChernSimonsCorrectionConjecture` with `Gq : Matrix (Fin 2) (Fin 2) ℝ` carried as an explicit parameter and **no instance** (and no CODATA literal in any statement; the superseded `alphaEmInvGluonOctet` is retained only as a plain provenance definition).
+  - Companion epic `qou-3l2l` formalization of the $(4,1)$ standard block Hoefsmit/Markov Gram and Schur reduction landed in `folio/quantum-observable-universe/lean/QOU/AlphaEM/StdBlockHoefsmitMarkovSchur.lean` (`qou-mxnu`, `qou-vbz4`, commit `593cd323f3c15de52fd2e46e8f2346c6fd815c68`, PR `https://github.com/litlfred/qou/pull/8141`).
+- Kept at `status: in-progress` per owner governance (structural derivation of the $q$-deformed CS pairing `Gq` / $\kappa$ remains open).
