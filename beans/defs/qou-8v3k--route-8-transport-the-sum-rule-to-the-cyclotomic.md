@@ -1,7 +1,8 @@
 ---
 # qou-8v3k
 title: 'Route 8: transport the 5₂ sum rule along GGM''s deformation to the cyclotomic point x = −1'
-status: todo
+status: in-progress
+pr: 8193
 type: task
 priority: normal
 tags:
@@ -11,7 +12,7 @@ tags:
     - reorg-2026-10-04
     - qbeta
 created_at: 2026-08-07T16:40:00Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-16T20:41:00Z
 parent: qou-n4nr
 ---
 
@@ -188,3 +189,8 @@ is probably to work symmetrically or deform off the circle — neither is writte
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+## Round 53 Progress (PR #8193)
+- [x] Added `saddle_critical_eq_deformed_curve`, `envelope_ratio_cleared_identity`, and `deformed_curve_at_neg_one_eq_cyclotomic_cubic` to `folio/quantum-observable-universe/lean/QOU/QBeta/FiveTwoCyclotomicBloch.lean` (`0 sorry`, `0` vacuity hits).
+- [x] Verified 80-dps Route 8 Vieta products and `x = -1` cyclotomic degeneration in `computations/probes/route89_staircase_wpdb_stargram_probe.py` (`computations/probes/route89-staircase-wpdb-stargram.witness.json`).
+- [ ] Await CI verification and Merge Manager merge of PR #8193 (`9d88b10b75877699bcfe0134c2f9a3d95a32edf4`).

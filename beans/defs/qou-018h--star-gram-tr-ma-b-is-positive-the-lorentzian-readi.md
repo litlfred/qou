@@ -1,13 +1,14 @@
 ---
 # qou-018h
 title: Star-Gram tr_M(a b*) is POSITIVE -- the Lorentzian reading was a wrong-pairing artifact; metric arc unblocked
-status: todo
+status: in-progress
+pr: 8193
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T13:34:15Z
-updated_at: 2026-10-04T15:24:37Z
+updated_at: 2026-11-16T20:41:00Z
 parent: qou-10v9
 ---
 
@@ -92,3 +93,8 @@ real and unanswered question.
   [ ] then compute d and compare to step counts -- remembering the target
       "d = Reeb step count" only holds as q -> infinity, since D_grad mixes
       gradient and Reeb at 9:1
+
+## Round 53 Progress (PR #8193)
+- [x] Added `starform_M2_sym_antisym`, `starform_sub_traceform_M2`, `invword_swap_flips_antisym_mode`, `invword_swap_restores_positivity`, and `markov_star_quotient_pos_of_radical` to `folio/quantum-observable-universe/lean/QOU/QBeta/GramSignature.lean` (`0 sorry`, `0` vacuity hits).
+- [x] Verified 80-dps `M_2` involution sign flip and convention-D quotient positivity in `computations/probes/route89_staircase_wpdb_stargram_probe.py` (`computations/probes/route89-staircase-wpdb-stargram.witness.json`).
+- [ ] Await CI verification and Merge Manager merge of PR #8193 (`9d88b10b75877699bcfe0134c2f9a3d95a32edf4`).

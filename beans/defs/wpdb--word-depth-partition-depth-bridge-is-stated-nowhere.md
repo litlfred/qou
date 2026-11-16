@@ -1,13 +1,14 @@
 ---
 # wpdb
 title: The curvature-rank chain assumes a word-depth -> partition-depth bridge that is stated nowhere
-status: todo
+status: in-progress
+pr: 8193
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T02:30:00Z
-updated_at: 2026-10-10T07:01:42Z
+updated_at: 2026-11-16T20:41:00Z
 parent: qou-n4nr
 ---
 
@@ -510,3 +511,8 @@ Was in-progress with no bean update since 2026-08-26 and no main commit naming i
 ## 2026-10-10 — pointer
 
 Tracked under related carrier M12 of epic `qou-d8c7` "Mass endomorphism" (issue litlfred/qou#7547). Parent and status unchanged; the epic body lists what is still open for this item and where it sits in the attack-vector catalogue.
+
+## Round 53 Progress (PR #8193)
+- [x] Added `partitionCornerHook`, `partitionCornerHook_bounds` (`1 ≤ h(0,0) ≤ n`), `n_three_corner_hook_degenerate`, `n_four_corner_hook_stratification`, `WordPartitionDepthBridge`, `partDepth_unique_of_wordPartitionDepthBridge`, and `no_unshifted_degree_zero_stratum` to `folio/quantum-observable-universe/mass-theory/curvature-rank-gb-stratification.lean` (`0 sorry`, `0` vacuity hits).
+- [x] Verified corner-hook bounds and `n = 3, 4` stratification in `computations/probes/route89_staircase_wpdb_stargram_probe.py` (`computations/probes/route89-staircase-wpdb-stargram.witness.json`, Commit 1 `f3d7f0a51d31a6d9fa4e53d717fcd6d96c6ad0de`).
+- [ ] Await CI verification and Merge Manager merge of PR #8193 (`9d88b10b75877699bcfe0134c2f9a3d95a32edf4`).

@@ -1,7 +1,8 @@
 ---
 # qou-b7cy
 title: 'Route 9: Bloch torsion at ℚ(ζ₇)⁺ makes the 5₂ sum rule a RATIONALITY statement'
-status: todo
+status: in-progress
+pr: 8193
 type: task
 priority: high
 tags:
@@ -12,7 +13,7 @@ tags:
     - reduction
     - reorg-2026-10-04
 created_at: 2026-08-07T17:05:00Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-16T20:41:00Z
 parent: qou-n4nr
 ---
 
@@ -208,3 +209,8 @@ in-tree reproduces `[propext, Classical.choice, Quot.sound]` (and
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+## Round 53 Progress (PR #8193)
+- [x] Added `unit_inv_w`, `unit_inv_one_sub_w`, `unit_inv_one_add_w`, `norm_one_sub_w_eq_neg_one`, and `norm_one_add_w_eq_one` to `folio/quantum-observable-universe/lean/QOU/QBeta/FiveTwoCyclotomicBloch.lean` (`0 sorry`, `0` vacuity hits).
+- [x] Verified 80-dps Route 9 Bloch polynomial identity, unit inverses, norms, and per-embedding level-7 Rogers dilogarithm ladder `(17, 5, -1)/42` in `computations/probes/route89_staircase_wpdb_stargram_probe.py` (`computations/probes/route89-staircase-wpdb-stargram.witness.json`).
+- [ ] Await CI verification and Merge Manager merge of PR #8193 (`9d88b10b75877699bcfe0134c2f9a3d95a32edf4`).
