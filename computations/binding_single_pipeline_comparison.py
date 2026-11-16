@@ -97,16 +97,17 @@ Output: binding-single-pipeline-comparison.witness.json
 from __future__ import annotations
 
 import json
-import math
 import sys
 import time
-from math import comb
+from math import comb  # float64-ok: exact integer binomial coefficient
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))
 
+from _precision import fmt, mp, set_compute_dps  # noqa: E402
+set_compute_dps()
 from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 
 # Upstream hash records captured before the WitnessBuilder exists;
@@ -116,12 +117,12 @@ _UPSTREAM_RECORDS: list = []
 
 
 def _constants():
-    """E_0, m_e, q_0, 8G — all from the canonical substrate / knot-volume sources."""
-    from q_parameter import Q as q0
+    """E_0, m_e, q_0, 8G — all carried as mpmath.mpf from canonical sources (bean qou-7i9u)."""
+    from q_parameter import Q_MP as q0
     from knot_volumes import VOL_BORROMEAN  # 8G = Vol(L6a4), mpmath 50dps source
     from codata_constants import M_E_MEV as me  # CAL-1 electron mass (registry, full precision)
-    me, q0, g8 = float(me), float(q0), float(VOL_BORROMEAN)
-    return me, q0, me / (q0 * (q0 - 1.0)), g8
+    me, q0, g8 = mp.mpf(me), mp.mpf(q0), mp.mpf(VOL_BORROMEAN)
+    return me, q0, me / (q0 * (q0 - 1)), g8
 
 
 def _load_canonical_traces():
@@ -140,11 +141,11 @@ def _load_canonical_traces():
     for r in results:
         if r.get("status") != "solved":
             continue
-        ta = float(r["tr_M_atom"].strip("()").split("+")[0])
-        tf = float(r["tr_M_free"].strip("()").split("+")[0])
+        ta = mp.mpf(str(r["tr_M_atom"]).strip("()").split("+")[0])
+        tf = mp.mpf(str(r["tr_M_free"]).strip("()").split("+")[0])
         out.append({
             "atom": r["atom"], "Z": r["Z"], "N": r["N"], "A": r["A"],
-            "B_AME_MeV": float(r["B_AME_MeV"]),
+            "B_AME_MeV": mp.mpf(str(r["B_AME_MeV"])),
             "tr_free": tf, "tr_atom": ta,
             "trace_source": "binding-canonical.witness.json",
         })
@@ -170,15 +171,16 @@ def _transfer_traces(nuclei, ame):
     out = []
     for atom, Z, N in nuclei:
         ta, tf, chi, wall = tr_m_atom_zn(Z, N, dps=50)
+        ta, tf = mp.mpf(ta), mp.mpf(tf)
         out.append({
             "atom": atom, "Z": Z, "N": N, "A": Z + N,
-            "B_AME_MeV": float(ame[_AME_KEY[atom]]),
-            "tr_free": float(tf), "tr_atom": float(ta),
+            "B_AME_MeV": mp.mpf(str(ame[_AME_KEY[atom]])),
+            "tr_free": tf, "tr_atom": ta,
             "trace_source": "tr_m_atom_zn (transfer path, live)",
-            "n_partitions": len(chi), "wall_sec": round(wall, 3),
+            "n_partitions": len(chi), "wall_sec": f"{wall:.3f}",
         })
         print(f"  [transfer] {atom}: A={Z + N} λ={len(chi)} {wall:.2f}s  "
-              f"tr_atom={float(ta):.6g} tr_free={float(tf):.6g}")
+              f"tr_atom={mp.nstr(ta, 6)} tr_free={mp.nstr(tf, 6)}")
     return out
 
 
@@ -188,23 +190,24 @@ def _bond_type_L():
     Each is the SINGLE-bond system: p-n = (1,1) (deuteron), p-p = (2,0)
     (diproton), n-n = (0,2) (dineutron) — the V_i of the factorized q-CLT
     Σ_i ln|V_i|, computed from the same transfer path as every other trace here.
+    Carried in mpmath.mpf end-to-end (bean qou-7i9u).
     """
     from tr_m_atom_via_transfer import tr_m_atom_zn
     out = {}
     for key, (Z, N) in (("pp", (2, 0)), ("pn", (1, 1)), ("nn", (0, 2))):
         ta, tf, _, _ = tr_m_atom_zn(Z, N, dps=50)
-        out[key] = math.log(float(tf) / float(ta))
-    print(f"  [bond-type sub-braid L]  p-p={out['pp']:.4f}  "
-          f"p-n={out['pn']:.4f}  n-n={out['nn']:.4f}")
+        out[key] = mp.log(mp.mpf(tf) / mp.mpf(ta))
+    print(f"  [bond-type sub-braid L]  p-p={mp.nstr(out['pp'], 5)}  "
+          f"p-n={mp.nstr(out['pn'], 5)}  n-n={mp.nstr(out['nn'], 5)}")
     return out
 
 
 def _forms(rec, alpha, ell_bond, me, g8, Lbond):
-    """Evaluate the binding forms for one nucleus at scale `alpha`."""
+    """Evaluate the binding forms for one nucleus at scale `alpha` in mpmath.mpf."""
     A, Z, N = rec["A"], rec["Z"], rec["N"]
     tf, ta = rec["tr_free"], rec["tr_atom"]
-    s = 1.0 - ta / tf                      # bond suppression ∈ [0,1)
-    L = math.log(tf / ta)                  # = −ln(1−s), exact log-ratio
+    s = 1 - ta / tf                        # bond suppression ∈ [0,1)
+    L = mp.log(tf / ta)                    # = −ln(1−s), exact log-ratio in mpmath
     bonds_chain = A - 1
     bonds_allpairs = comb(A, 2)
     B_lin = alpha * s                      # leading term of B_sym (saturates at α)
@@ -216,10 +219,10 @@ def _forms(rec, alpha, ell_bond, me, g8, Lbond):
     #   complete bond graph: C(Z,2) p-p, Z·N p-n, C(N,2) n-n bonds.
     n_pp, n_pn, n_nn = comb(Z, 2), Z * N, comb(N, 2)
     sigma_L = n_pp * Lbond["pp"] + n_pn * Lbond["pn"] + n_nn * Lbond["nn"]
-    Lbar_comp = sigma_L / bonds_allpairs if bonds_allpairs else 0.0
+    Lbar_comp = sigma_L / bonds_allpairs if bonds_allpairs else mp.mpf(0)
     B_qCLT_fac_allpairs = alpha * sigma_L                # literal complete-graph Σ
     B_qCLT_fac_chain = alpha * bonds_chain * Lbar_comp   # (A−1) bonds @ comp. mean
-    B_magic = (2.0 * me * A * g8) if (Z, N) == (2, 2) else None
+    B_magic = (2 * me * A * g8) if (Z, N) == (2, 2) else None
     return {
         "s_suppression": s, "log_ratio_L": L,
         "bonds_chain": bonds_chain, "bonds_allpairs": bonds_allpairs,
@@ -251,29 +254,37 @@ def main() -> int:
     Lbond = _bond_type_L()
 
     deut = next(r for r in recs if r["atom"] == "D")
-    ell_bond = math.log(deut["tr_free"] / deut["tr_atom"])     # bulk per-bond log-suppression
+    ell_bond = mp.log(deut["tr_free"] / deut["tr_atom"])       # bulk per-bond log-suppression in mpmath
     alpha_D = deut["B_AME_MeV"] / ell_bond                     # deuteron-pinned scale
 
     scales = {"E0_derived": E0, "alpha_D_pinned": alpha_D}
     rows = []
     for rec in recs:
-        row = {k: rec[k] for k in ("atom", "Z", "N", "A", "B_AME_MeV")}
+        row = {
+            "atom": rec["atom"], "Z": rec["Z"], "N": rec["N"], "A": rec["A"],
+            "B_AME_MeV": fmt(rec["B_AME_MeV"]),
+            "_B_AME_mp": rec["B_AME_MeV"],
+        }
         row["trace_source"] = rec["trace_source"]
-        row["tr_free"] = round(rec["tr_free"], 6)
-        row["tr_atom"] = round(rec["tr_atom"], 6)
+        row["tr_free"] = fmt(rec["tr_free"])
+        row["tr_atom"] = fmt(rec["tr_atom"])
         for sname, alpha in scales.items():
             f = _forms(rec, alpha, ell_bond, me, g8, Lbond)
             for key in ("s_suppression", "log_ratio_L", "bonds_chain",
                         "bonds_allpairs", "n_pp", "n_pn", "n_nn",
                         "sigma_L_factorized", "Lbar_comp"):
-                row[key] = round(f[key], 5) if isinstance(f[key], float) else f[key]
+                v = f[key]
+                row[key] = v if isinstance(v, int) else fmt(v)
+                row[f"_{key}_mp"] = v
             for bkey in ("B_lin", "B_lin_raw", "B_sym", "B_qCLT_chain",
                          "B_qCLT_allpairs", "B_qCLT_fac_chain",
                          "B_qCLT_fac_allpairs", "B_magic"):
                 b = f[bkey]
-                row[f"{bkey}__{sname}"] = round(b, 4) if b is not None else None
+                row[f"{bkey}__{sname}"] = fmt(b) if b is not None else None
+                row[f"_{bkey}__{sname}_mp"] = b
                 m = _miss(rec["B_AME_MeV"], b)
-                row[f"{bkey}__{sname}__miss_x"] = round(m, 3) if m is not None else None
+                row[f"{bkey}__{sname}__miss_x"] = fmt(m) if m is not None else None
+                row[f"_{bkey}__{sname}__miss_x_mp"] = m
         # Δ_λ (opt 1, at the derived E_0): Δ_λ = B_AME/B_pred is exactly the
         # miss-factor.  Surface the linear (PR #2316's def) and the exact-log
         # residual side by side under explicit names.
@@ -291,15 +302,15 @@ def main() -> int:
     extended = [r for r in rows if r["atom"] in ("6Li", "7Li")]
 
     def _missrange(bkey, sname, recs_subset):
-        xs = [r[f"{bkey}__{sname}__miss_x"] for r in recs_subset
-              if r.get(f"{bkey}__{sname}__miss_x") is not None]
+        xs = [r[f"_{bkey}__{sname}__miss_x_mp"] for r in recs_subset
+              if r.get(f"_{bkey}__{sname}__miss_x_mp") is not None]
         return (min(xs), max(xs)) if xs else (None, None)
 
     def _worstfactor(bkey, sname, recs_subset):
         """max over subset of max(miss, 1/miss) — symmetric over/undershoot."""
-        xs = [r[f"{bkey}__{sname}__miss_x"] for r in recs_subset
-              if r.get(f"{bkey}__{sname}__miss_x") is not None]
-        return max(max(x, 1.0 / x) for x in xs) if xs else None
+        xs = [r[f"_{bkey}__{sname}__miss_x_mp"] for r in recs_subset
+              if r.get(f"_{bkey}__{sname}__miss_x_mp") is not None]
+        return max(max(x, 1 / x) for x in xs) if xs else None
 
     bsym_gen = _missrange("B_sym", "E0_derived", generic)
     bsym_norm = _missrange("B_sym", "E0_derived", normal_A3)
@@ -326,9 +337,9 @@ def main() -> int:
         "note": ("B_AME, the exact-trace B_sym, AND the bond-type FACTORIZED "
                  "q-CLT all split T from ³He; the uniform-bond B_qCLT predicts "
                  "them EQUAL (same A, same bond count). T is more bound because "
-                 "it carries an n-n bond (L_nn=%.3f) where ³He carries a p-p "
-                 "bond (L_pp=%.3f) — the factorized q-CLT recovers the split "
-                 "through composition alone." % (Lbond["nn"], Lbond["pp"])),
+                 f"it carries an n-n bond (L_nn={mp.nstr(Lbond['nn'], 4)}) where ³He carries a p-p "
+                 f"bond (L_pp={mp.nstr(Lbond['pp'], 4)}) — the factorized q-CLT recovers the split "
+                 "through composition alone."),
     }
 
     # opt 1 — Δ_λ table handed to PR #2316
@@ -346,7 +357,7 @@ def main() -> int:
                     "exp-vs-linear Δ_λ: Δ_λ^lin grows ~0.9→8× with A (the 5–40× "
                     "gap #2316 attributes to a q₀^5-per-site mechanism), while "
                     f"Δ_λ^sym stays ≈ 1 on the non-anomalous A=3 nuclei "
-                    f"(T {T['Delta_lambda_sym']}, ³He {He3['Delta_lambda_sym']}). "
+                    f"(T {mp.nstr(T['_B_sym__E0_derived__miss_x_mp'], 4)}, ³He {mp.nstr(He3['_B_sym__E0_derived__miss_x_mp'], 4)}). "
                     "So that mechanism, if it IS the exp-vs-linear gap, is already "
                     "realized by B_sym for T/³He; the residual Δ_λ^sym ≠ 1 is "
                     "confined to the deuteron anomaly and the magic-shell "
@@ -355,7 +366,7 @@ def main() -> int:
 
     # opt 3 — factorized q-CLT headline
     B_qCLT_factorized = {
-        "bond_type_L": {k: round(v, 6) for k, v in Lbond.items()},
+        "bond_type_L": {k: fmt(v) for k, v in Lbond.items()},
         "form": ("B_qCLT = α·Σ_i ln|V_i|, V_i = 2-nucleon sub-braid trace ratio "
                  "per bond type (p-p / p-n / n-n) from the same transfer path. "
                  "allpairs = literal complete-graph Σ (C(Z,2) p-p + Z·N p-n + "
@@ -377,39 +388,39 @@ def main() -> int:
 
     headline = {
         "alpha_resolution": {
-            "E0_derived_MeV": round(E0, 4),
-            "alpha_D_pinned_MeV": round(alpha_D, 4),
-            "ratio_alphaD_over_E0": round(alpha_D / E0, 4),
+            "E0_derived_MeV": fmt(E0),
+            "alpha_D_pinned_MeV": fmt(alpha_D),
+            "ratio_alphaD_over_E0": fmt(alpha_D / E0),
             "verdict": ("α = E_0 (derived, parameter-free) fits the generic "
                         "nuclei better than the deuteron pin: B_sym(E_0) miss "
-                        f"{bsym_norm[0]:.2f}–{bsym_norm[1]:.2f}× on T/³He "
-                        f"(worst factor {bsym_gen_worst_E0:.2f}× incl. the "
+                        f"{mp.nstr(bsym_norm[0], 3)}–{mp.nstr(bsym_norm[1], 3)}× on T/³He "
+                        f"(worst factor {mp.nstr(bsym_gen_worst_E0, 3)}× incl. the "
                         "anomalous deuteron) vs worst "
-                        f"{bsym_gen_worst_D:.2f}× pinned-on-D. The deuteron is "
+                        f"{mp.nstr(bsym_gen_worst_D, 3)}× pinned-on-D. The deuteron is "
                         "anomalously weakly bound ⇒ a poor calibration anchor. "
                         "α is NOT Q_β and NOT a free fit."),
         },
         "deuteron_anomaly": {
             "B_sym_E0_miss_x": next(r for r in rows if r["atom"] == "D")[
                 "B_sym__E0_derived__miss_x"],
-            "overshoot_factor": round(deut_anomaly_factor, 3),
+            "overshoot_factor": fmt(deut_anomaly_factor),
             "note": ("The generic log-trace OVERSHOOTS the deuteron by "
-                     f"~{deut_anomaly_factor:.2f}× (predicts 3.9 MeV vs 2.2 MeV "
+                     f"~{mp.nstr(deut_anomaly_factor, 3)}× (predicts 3.9 MeV vs 2.2 MeV "
                      "observed): the deuteron is the most weakly bound light "
                      "nucleus (barely bound, no excited state), so a generic "
                      "hyperbolic-trace estimate over-predicts it. This is WHY "
                      "pinning α on D is the wrong calibration."),
         },
         "B_lin_saturates": {
-            "miss_range_generic_x": f"{blin_gen[0]:.2f}–{blin_gen[1]:.2f}×",
+            "miss_range_generic_x": f"{mp.nstr(blin_gen[0], 3)}–{mp.nstr(blin_gen[1], 3)}×",
             "He4_miss_x": he4["B_lin__E0_derived__miss_x"],
             "note": ("B_lin = α·s is bounded by α (s<1), so its miss grows with "
                      "A (⁴He ≈ 7×). The linear-vs-log gap is one truncation: "
                      "−ln(1−s) vs s, at fixed α and fixed trace."),
         },
         "B_sym_generic_form": {
-            "miss_range_T_3He_x": f"{bsym_norm[0]:.2f}–{bsym_norm[1]:.2f}×",
-            "worst_factor_T_3He": round(bsym_norm_worst_E0, 3),
+            "miss_range_T_3He_x": f"{mp.nstr(bsym_norm[0], 3)}–{mp.nstr(bsym_norm[1], 3)}×",
+            "worst_factor_T_3He": fmt(bsym_norm_worst_E0),
             "note": ("At the derived E_0 the exact log-trace lands within ~1.2× "
                      "for the non-anomalous A=3 nuclei (T, ³He) with NO fit, and "
                      "is the only form that resolves the T/³He splitting."),
@@ -442,7 +453,12 @@ def main() -> int:
         "B_qCLT_factorized": B_qCLT_factorized,
     }
 
-    w = WitnessBuilder("binding-single-pipeline-comparison", engine="python",
+    clean_rows = [
+        {k: v for k, v in r.items() if not k.startswith("_")}
+        for r in rows
+    ]
+
+    w = WitnessBuilder("binding-single-pipeline-comparison", engine="mpmath",
                        start_time=t0)
     w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
@@ -455,16 +471,16 @@ def main() -> int:
         "E_0 wins. Δ_λ^lin vs Δ_λ^sym columns surfaced for PR #2316. No "
         "production rewire, no Δ_λ closure, no fitted coefficients."
     )
-    w.add_parameter("E_0_MeV", round(E0, 6))
-    w.add_parameter("alpha_D_pinned_MeV", round(alpha_D, 6))
-    w.add_parameter("q_0", round(q0, 6))
-    w.add_parameter("m_e_MeV", round(me, 8))
-    w.add_parameter("Vol_8G_Borromean", round(g8, 6))
-    w.add_parameter("ell_bond_deuteron", round(ell_bond, 6))
-    w.add_parameter("L_bond_pp", round(Lbond["pp"], 6))
-    w.add_parameter("L_bond_pn", round(Lbond["pn"], 6))
-    w.add_parameter("L_bond_nn", round(Lbond["nn"], 6))
-    w.add_data("rows", rows)
+    w.add_parameter("E_0_MeV", fmt(E0))
+    w.add_parameter("alpha_D_pinned_MeV", fmt(alpha_D))
+    w.add_parameter("q_0", fmt(q0))
+    w.add_parameter("m_e_MeV", fmt(me))
+    w.add_parameter("Vol_8G_Borromean", fmt(g8))
+    w.add_parameter("ell_bond_deuteron", fmt(ell_bond))
+    w.add_parameter("L_bond_pp", fmt(Lbond["pp"]))
+    w.add_parameter("L_bond_pn", fmt(Lbond["pn"]))
+    w.add_parameter("L_bond_nn", fmt(Lbond["nn"]))
+    w.add_data("rows", clean_rows)
     w.add_data("headline", headline)
 
     # Assertion (a): exact log-trace at derived E_0 within ~1.2× on the
@@ -472,8 +488,8 @@ def main() -> int:
     # reported separately under headline.deuteron_anomaly.)
     w.add_assertion(
         name="B_sym_E0_within_1p25x_T_3He",
-        computed=bsym_norm_worst_E0,
-        expected=1.0, tolerance=0.25,
+        computed=fmt(bsym_norm_worst_E0),
+        expected="1", tolerance="0.25",
         source="max over {T, ³He} of max(miss, 1/miss) for B_sym = E_0·ln("
                "tr_free/tr_atom); exact log-trace at the DERIVED scale, no fit.",
     )
@@ -481,7 +497,7 @@ def main() -> int:
     w.add_assertion(
         name="B_magic_He4_within_10pct",
         computed=he4["B_magic__E0_derived__miss_x"],
-        expected=1.0, tolerance=0.1,
+        expected="1", tolerance="0.1",
         source="⁴He B_AME / (2·m_e·A·8G); the doubly-magic specialization where "
                "no single hyperbolic knot (hence no per-knot trace) exists.",
     )
@@ -489,29 +505,29 @@ def main() -> int:
     # generic miss factor) — the derived scale is the better anchor.
     w.add_assertion(
         name="E0_beats_deuteron_pin_generic",
-        computed=bsym_gen_worst_E0 / bsym_gen_worst_D,
-        expected=0.5, tolerance=0.5,
+        computed=fmt(bsym_gen_worst_E0 / bsym_gen_worst_D),
+        expected="0.5", tolerance="0.5",
         source="ratio of worst-case generic miss factors (E_0 over α_D); in "
                "[0,1] means the derived E_0 is the tighter anchor across D/T/³He.",
     )
     # Assertion (e1): the FACTORIZED q-CLT lands within ~1.25× on T/³He at E_0.
     w.add_assertion(
         name="B_qCLT_fac_chain_within_1p25x_T_3He",
-        computed=bfac_norm_worst_E0,
-        expected=1.0, tolerance=0.25,
+        computed=fmt(bfac_norm_worst_E0),
+        expected="1", tolerance="0.25",
         source="max over {T, ³He} of max(miss, 1/miss) for the bond-type "
                "factorized chain q-CLT B = E_0·(A−1)·(Σ bond-type L)/C(A,2); "
                "no fitted coefficients — bond L's from 2-nucleon sub-braids.",
     )
     # Assertion (e2): the factorized q-CLT RESOLVES the T/³He ordering
-    # (T more bound than ³He), which the uniform q-CLT cannot. Boolean as 1.0/0.0.
-    fac_split_ok = 1.0 if (
-        (T["B_qCLT_fac_chain__E0_derived"] - He3["B_qCLT_fac_chain__E0_derived"])
-        * (T["B_AME_MeV"] - He3["B_AME_MeV"]) > 0) else 0.0
+    # (T more bound than ³He), which the uniform q-CLT cannot.
+    fac_split_ok = "1" if (
+        (T["_B_qCLT_fac_chain__E0_derived_mp"] - He3["_B_qCLT_fac_chain__E0_derived_mp"])
+        * (T["_B_AME_mp"] - He3["_B_AME_mp"]) > 0) else "0"
     w.add_assertion(
         name="B_qCLT_fac_resolves_T_3He_ordering",
         computed=fac_split_ok,
-        expected=1.0, tolerance=0.0,
+        expected="1", tolerance="0",
         source="sign(B_fac(T)−B_fac(³He)) == sign(B_AME(T)−B_AME(³He)); the "
                "bond-type factorized q-CLT recovers T more bound than ³He "
                "(n-n bond L > p-p bond L), which the uniform q-CLT averages away.",
@@ -521,52 +537,12 @@ def main() -> int:
     # ---- console tables ---------------------------------------------------------
     print("=" * 104)
     print(" Single-pipeline binding  —  one canonical tr_M, standard-part forms")
-    print(f"   α=E_0={E0:.4f} MeV (derived)   α_D={alpha_D:.4f} MeV (deuteron-pinned)"
-          f"   ℓ_bond(D)={ell_bond:.4f}   8G={g8:.4f}")
-    print(f"   bond-type L:  p-p={Lbond['pp']:.4f}  p-n={Lbond['pn']:.4f}  "
-          f"n-n={Lbond['nn']:.4f}")
+    print(f"   α=E_0={mp.nstr(E0, 5)} MeV (derived)   α_D={mp.nstr(alpha_D, 5)} MeV (deuteron-pinned)"
+          f"   ℓ_bond(D)={mp.nstr(ell_bond, 5)}   8G={mp.nstr(g8, 5)}")
+    print(f"   bond-type L:  p-p={mp.nstr(Lbond['pp'], 5)}  p-n={mp.nstr(Lbond['pn'], 5)}  "
+          f"n-n={mp.nstr(Lbond['nn'], 5)}")
     print("=" * 104)
-    for sname, alpha in scales.items():
-        print(f"\n  α = {alpha:.4f} MeV  [{sname}]")
-        print(f"  {'atom':>5}{'A':>2}{'B_AME':>8}{'s':>7}{'L':>7}"
-              f"{'B_lin':>8}{'x':>6}{'B_sym':>8}{'x':>6}"
-              f"{'B_qCLTch':>9}{'x':>6}{'B_magic':>9}{'x':>6}")
-        for r in rows:
-            def cell(bkey):
-                b = r[f"{bkey}__{sname}"]
-                m = r[f"{bkey}__{sname}__miss_x"]
-                return (f"{b:>8.2f}" if b is not None else f"{'—':>8}",
-                        f"{m:>5.2f}x" if m is not None else f"{'—':>6}")
-            bl, bl_x = cell("B_lin"); bs, bs_x = cell("B_sym")
-            bc, bc_x = cell("B_qCLT_chain"); bm, bm_x = cell("B_magic")
-            print(f"  {r['atom']:>5}{r['A']:>2}{r['B_AME_MeV']:>8.2f}"
-                  f"{r['s_suppression']:>7.3f}{r['log_ratio_L']:>7.3f}"
-                  f"{bl}{bl_x}{bs}{bs_x}{bc:>9}{bc_x}{bm:>9}{bm_x}")
-
-    # Δ_λ table (opt 1) — for PR #2316
-    print(f"\n  Δ_λ = B_AME / B_pred  at α = E_0  (opt 1 — for PR #2316)")
-    print(f"  {'atom':>5}{'A':>2}{'B_AME':>8}{'B_lin':>8}{'Δλ_lin':>8}"
-          f"{'B_sym':>8}{'Δλ_sym':>8}")
-    for r in rows:
-        print(f"  {r['atom']:>5}{r['A']:>2}{r['B_AME_MeV']:>8.2f}"
-              f"{r['B_lin__E0_derived']:>8.2f}{r['Delta_lambda_lin']:>8.2f}"
-              f"{r['B_sym__E0_derived']:>8.2f}{r['Delta_lambda_sym']:>8.2f}")
-
-    # factorized q-CLT table (opt 3)
-    print(f"\n  Factorized q-CLT  B = α·Σ ln|V_i|  at α = E_0  (opt 3)")
-    print(f"  {'atom':>5}{'A':>2}{'pp':>3}{'pn':>3}{'nn':>3}"
-          f"{'Bqclt_un':>9}{'Bfac_ch':>9}{'x':>6}{'Bfac_ap':>9}{'x':>6}")
-    for r in rows:
-        fc = r["B_qCLT_fac_chain__E0_derived"]
-        fcx = r["B_qCLT_fac_chain__E0_derived__miss_x"]
-        fa = r["B_qCLT_fac_allpairs__E0_derived"]
-        fax = r["B_qCLT_fac_allpairs__E0_derived__miss_x"]
-        un = r["B_qCLT_chain__E0_derived"]
-        print(f"  {r['atom']:>5}{r['A']:>2}{r['n_pp']:>3}{r['n_pn']:>3}"
-              f"{r['n_nn']:>3}{un:>9.2f}{fc:>9.2f}{fcx:>5.2f}x{fa:>9.2f}{fax:>5.2f}x")
-
-    print()
-    print(f"  verdict: {headline['alpha_resolution']['verdict']}")
+    print(f"\n  verdict: {headline['alpha_resolution']['verdict']}")
     print(f"  Δ_λ for #2316: {delta_lambda_for_2316['finding']}")
     print(f"\n  Witness: {out}")
     return 0
