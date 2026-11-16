@@ -69,3 +69,42 @@ Hypothesis H (may fail): m·(q*_min(m) − 1) is bounded below by a positive con
 the 1 + c/m form is wrong and the theorem will be stated in whatever form the data does support, or not at all.
 Nothing selected or fitted; c is a readout, and the Lean statement will use a rational below it, not at it.
 Scope (a).
+
+## Amendment 4 (2026-11-15, before any run): does pure ⟺ pass persist at q₀ for long words?
+
+Open item left by amendment 3 and the Lean bound (bean qou-a1hh): the proved interval 1 ≤ q ≤ 1 + (1/12)/m
+reaches q₀ only for m = 1, so it says nothing about long words at q₀.
+
+Object: reading 3 at q = q₀ only (proton pin, convention-D weights y_μ, levels k = 1..4), in the amendment-3
+independent seminormal representation (mpmath, 40 dps). A word passes iff every level character ≥ −1e-30.
+
+Readouts, all at q₀:
+- R1 (exhaustive): every word of length m = 7 and m = 8 (4^m words), classified pure / not pure and
+  pass / fail. Tests both directions of "pure ⟺ pass".
+- R2 (powers): for every pure word u with 3 ≤ |u| ≤ 6, the powers u^k for k = 1..10 (lengths up to 60).
+  Products of pure words are pure, so any failure here is a long pure word that fails at q₀.
+  Report the smallest k at which each u^k fails (if any), and the count of u with a failure.
+- R3 (sample): for m ∈ {10, 12, 16, 20, 24, 30}, 2000 uniformly random pure words (seed 0) and 2000
+  uniformly random non-pure words (seed 1). Report pass/fail counts and the minimum level character.
+- Spectral side readout for R2: for each u, the eigenvalues of u in each irrep (3,1), (2,2) at q₀, so that
+  failure of powers can be explained by eigenvalues rather than by eye.
+
+No hypothesis is preferred. "Pure ⟺ pass" fails if any pure word fails or any non-pure word passes.
+Nothing is selected or fitted; samples are seeded and fixed above. Scope (a).
+
+## Amendment 5 (2026-11-15, before any run): the shortest pure γγ word that fails reading 3 at q₀
+
+Amendment 4 found failing pure words at length 24 (power u⁴, |u| = 6) and in samples at m = 24, 30, and none
+among all words of length ≤ 8. Lengths 9..23 were only sampled.
+
+Object and convention as in amendment 4 (q₀ proton, convention D, 40 dps, pass iff every level character ≥ −1e-30).
+
+Readouts:
+- S1 (exhaustive, pure only): every pure word of length m = 9, 10, 11. Report pure pass/fail counts, the
+  smallest level character over pure words, and every failing pure word if any.
+- S2 (powers): for every pure u with 7 ≤ |u| ≤ 11 found in S1 or amendment 4, the powers u^k with
+  k·|u| ≤ 23. Report any failure and its length.
+- Stated answer: the smallest length L among failures found. If S1 and S2 find none, the result is
+  "no failing pure word of length ≤ 11, and none among the powers tested", and 12..23 stays open.
+
+No hypothesis preferred. Nothing selected or fitted. Scope (a).

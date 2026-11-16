@@ -139,6 +139,7 @@ import QOU.MathlibExt.QPlancherel
 import QOU.MathlibExt.MonoidalCalcVar
 import QOU.MathlibExt.QGaussianBinomialPascal
 import QOU.MathlibExt.DerivationRankNullity
+import QOU.MathlibExt.Dolbeault
 import QOU.MathlibExt.OctonionDerivations
 import QOU.MathlibExt.OctonionDerivationsBound
 import QOU.MathlibExt.OctonionDerivationsUpperBound
@@ -510,6 +511,7 @@ import QOU.SchurWeyl.HoefsmitRep
 import QOU.SchurWeyl.SeminormalParamAnchorReal
 import QOU.SchurWeyl.HoefsmitRepGeneral
 import QOU.SchurWeyl.QJucysMurphy
+import QOU.SchurWeyl.ContentCasimir
 import QOU.SchurWeyl.QJucysMurphyEigen
 import QOU.SchurWeyl.AxialDistanceBound
 import QOU.SchurWeyl.MatRepEquiv
@@ -580,6 +582,7 @@ import QOU.Information.PolyGrowthAlgebra
 import QOU.Information.MagnitudeTraceCommutator
 import QOU.Information.CocenterTraceFactor
 import QOU.Information.OuterDerivationResidue
+import QOU.Information.WeylCentre
 import QOU.Information.HochschildH1
 import QOU.Information.SkeinGradeConnective
 import QOU.Information.SkeinShadowConjInvariance
@@ -812,6 +815,8 @@ import QOU.ParticleInteractions.delta_pre_archimedean
 import QOU.ParticleInteractions.even_tower_continuant_harmonics
 import QOU.FluidDynamics.q_bkm_criterion
 import QOU.FluidDynamics.TwoVortexChannelAlgebra
+import QOU.FluidDynamics.LambCalculus
+import QOU.FluidDynamics.LambCalculusArchimedean
 import QOU.QBeta.BarOddLadderShape
 -- Anchor-followups cluster (beans qou-o3ta / qou-4g4a): the interface scalar,
 -- the Markov-Gram signature, and the Temperley-Lieb tower. Added to the root
@@ -838,6 +843,14 @@ import QOU.QBeta.FiveTwoRogersExtend
 import QOU.QBeta.FiveTwoFiveTermArguments
 import QOU.QBeta.FiveTwoRogersReflection
 import QOU.QBeta.FiveTwoAbelFiveTerm
+import QOU.QBeta.DilogTheory
+import QOU.Archimedean.BlochRigidity.Reflection
+import QOU.QBeta.DilogTheoryArchimedean
+import QOU.QBeta.ToddDilogExpansion
+import QOU.QBeta.BarEvenJet
+import QOU.QBeta.BarEvenJetArchimedean
+import QOU.QBeta.FaddeevCompactCurve
+import QOU.Archimedean.IdealTetVolumeRigidity
 -- The Li₂-continuation / scalar-IFT chain this lane rests on is wired at the
 -- top of this file (with the other MathlibExt imports), not here — it is
 -- general analytic infrastructure, not 5₂ content.
@@ -1048,6 +1061,7 @@ import QOU.Machinery.HeckeH4Wedderburn
 import QOU.Machinery.HeckeH4Semisimple
 import QOU.Machinery.HeckeTowerBasicConstruction
 import QOU.Machinery.QuantumTorus
+import QOU.Machinery.QuantumTorusQDifference
 import QOU.Machinery.QuantumTorusAJ
 import QOU.Machinery.QuantumTorusDivision
 import QOU.Machinery.QuantumTorusSymbol
@@ -1059,6 +1073,24 @@ import QOU.HyperellipticQuintic.zeta5_residue_monodromy
 
 import QOU.Archimedean.BorromeanQuark
 import QOU.Archimedean.EmCouplingBringZeroMode
+import QOU.Archimedean.BringZeroModeClausenWitness
+import QOU.Archimedean.ArchimedeanLimitDomain
+import QOU.Archimedean.BlochSuslinComplex
+import QOU.Archimedean.BlochWignerFiveTermInstance
+import QOU.Archimedean.BlochRigidity.Algebra
+import QOU.Archimedean.BlochRigidity.Abstract
+import QOU.Archimedean.BlochRigidity.ComplexAlgebra
+import QOU.Archimedean.BlochRigidity.Derivative
+import QOU.Archimedean.BlochRigidity.Growth
+import QOU.Archimedean.BlochRigidity.Holomorphic
+import QOU.Archimedean.BlochRigidity.Instance
+import QOU.Archimedean.BlochRigidity.IntegrationBridge
+import QOU.Archimedean.BlochRigidity.LinearSections
+import QOU.Archimedean.BlochRigidity.ReebPlane
+import QOU.Archimedean.BlochRigidity.Regularity
+import QOU.Archimedean.BlochRigidity.Rigidity
+import QOU.Archimedean.BlochRigidity.Smooth
+import QOU.Archimedean.BlochRigidity.Vanishing
 import QOU.Archimedean.BringEllipticFactor
 import QOU.Archimedean.SigmaJGeometricCarrier
 import QOU.Archimedean.HodgeWeilRealStructure
@@ -1659,12 +1691,14 @@ import QOU.Common.HookSumIdentity
 import QOU.Hecke.H2KaehlerDegrees
 import QOU.Mass.FormalityBridgeF1
 import QOU.MathlibExt.InterleavedWordClosures
+import QOU.MathlibExt.UniversalDifferentials
 import QOU.Mass.CrossTermFixedPointCount
 import QOU.LiftingDescent.CrossedModuleSurfaceHolonomy
 import QOU.Mass.CrossTermOrderZeroComponentCount
 import QOU.Mass.HeckeQuadraticClassicalShadow
 import QOU.Mass.KZUnitModulusPrune
 import QOU.Mass.HeckeMonodromy
+import QOU.Mass.BraidedStrands
 import QOU.Mass.ColourCubicDiscriminant
 import QOU.Mass.ColourCubicDiscriminantReal
 import QOU.Mass.FigureEightGluingFromMonodromy
@@ -1684,7 +1718,17 @@ import QOU.MassTheory.SegmentCollisionDatum
 import QOU.MassTheory.ConvolutionFlowParity
 import QOU.MassTheory.ConvolutionFlowFibre
 import QOU.MassTheory.BringResidueEnergy
+import QOU.MassTheory.DeuteronKappaThreeSixteenthsReconciliation
 import QOU.Brings.BringConjugationChirality
 import QOU.Brings.BringCoverTower
 import QOU.Brings.BringDescendingTower
 import QOU.Brings.BringUTContactChirality
+import QOU.Mass.YangMillsVacuumFlat
+import QOU.Mass.InfinitesimalPureBraid
+import QOU.Mass.LagrangianKZIdentification
+import QOU.Mass.KZPullbackHypothesis
+import QOU.Mass.KohnoTwoPoint
+import QOU.KZ.Drinfeld.HeckeStrands
+import QOU.Mass.LagrangianKZInputs
+import QOU.QBeta.BorromeanThreeCuspNZHessian
+import QOU.QBeta.McPhailSnyderBridgeExclusion

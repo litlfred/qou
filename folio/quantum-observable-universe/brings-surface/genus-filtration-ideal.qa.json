@@ -60,6 +60,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a92b34128813",
+          "ts": "eb6c40976f1a",
+          "lean": "08cd1fa5ad36",
+          "lean_statement": "be548708c25f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T22:00:11.190Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "[sidecar review 2026-11-15, issue #8030] LIB!=SIB. Library `genus_filtration_ideal` is a `def … : Prop` (never asserted) whose second conjunct is `ctx.EvalMatrixRank = 5`. The md now says the opposite: the rank is at most 2+2 = 4 for every q, so g = 4 is \"taken as given\". The Lean encodes a claim the narrative has retracted, and its docstring table still shows rank 5 at g = 4. prf: (a) \"𝔍₄ = (u⁵) kills T_{2,p} for p ≥ 11\" is not established. With a₀=0, a₁=1 the odd-index Chebyshev/Fibonacci polynomials have constant term 1, so a_p ∉ (u⁵) and π₄(a_p) ≠ 0; the truncation only drops the top terms. (b) \"leading coefficient c=1, nonzero for q ≠ 1\": the coefficient is 1 for every q, so the q-condition is empty. (c) \"Both characterisations therefore agree\" does not follow from the steps."
       }
     ],
     "milnor-amalgamated-flow": [
@@ -2122,6 +2140,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-19T21:35:23.659Z",
+  "updated_at": "2026-11-15T22:00:11.190Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

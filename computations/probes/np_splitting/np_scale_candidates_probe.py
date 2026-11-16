@@ -5,12 +5,18 @@ Candidates are fixed here; none is selected by its residual.
  S1  canonical facade, weight entering F_Bor: m = 2(m_μ F − 6 m_e), F_n/F_p = q^{±2}
  S2  linearised facade: Δm = 2 m_μ F · |ΔΦ|
  S3  unified mass formula m = m_e·Vol·ρ/ℏ_q², ρ ratio q^{±2}, Vol = 8G (Borromean)
-Report all; CODATA 1.29333205 MeV is the comparison only.
+Report all; CODATA 2022 m_n - m_p (1.29333251 MeV) is the comparison only.
 """
 from mpmath import mp,mpf,log,catalan
+from qou_substrate.constants import q_at  # proton pin, derived, not a typed copy
 mp.dps=40
-q=mpf('1.1099785827513808075916690956107688798744991218736')
-me=mpf('0.51099895069'); mpr=mpf('938.27208816'); cod=mpf('1.29333205')
+q=mpf(q_at(60))
+import sys, pathlib
+_C = pathlib.Path(__file__).resolve().parents[2]
+sys.path[:0] = [str(_C), str(_C / "substrate")]
+from codata_constants import M_E_MEV, M_P_MEV_VALIDATION  # CODATA 2022 registry
+from codata_2022_source import M_N_MINUS_P_MEV  # comparison only
+me=mpf(M_E_MEV); mpr=mpf(M_P_MEV_VALIDATION); cod=mpf(M_N_MINUS_P_MEV)
 dPhi=2*log(q); a=me*8*catalan; hq=1-1/q
 mmuF=mpr/2+6*me
 rows={

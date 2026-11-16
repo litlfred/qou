@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T17:28:08.328000+00:00",
-  "commitSha": "cc965c91dd849b858b477fc0d0e172ac8f67f0fa",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-15T20:11:04.328072+00:00",
+  "commitSha": "6898a93de88af7d81d0c34b80d3a9160e6ba9680",
   "assertions": [
     {
       "name": "h^2/(q*delta_9*delta_10) == 1/(q [9]_q [10]_q) identically — the two h cancel the h^2, so this holds at every pin",
@@ -42,11 +42,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 53,
   "computation": "two_blocks_publish_the_two_sides_of_one_identity_at_different_pins_probe",
   "scriptFile": "two_blocks_publish_the_two_sides_of_one_identity_at_different_pins_probe.py",
-  "scriptHash": "40f61dd1102a",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "39b87df4ca9f",
+  "scriptCommitSha": "547b78208f6bb667ec8b3580f16390a74dbb9ce4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -54,14 +54,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e87a23f8d6fd6732"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "24ca776b0ad05497"
   },
   "invocation": {
     "argv": [
@@ -127,5 +128,7 @@
     "Determines the anchor FAMILY (muon, decisively) and says NOTHING about which muon vintage. The published precision cannot separate them and no guess is recorded here -- qou-i229 has twice recorded that 'no resolving power' and 'clean' look identical in a results table.",
     "Says nothing about which pin either block SHOULD use; that is the owner ruling qou-i229 holds. It is sharper here than elsewhere only because the two blocks publish the two sides of one identity and so cannot both be right.",
     "Says nothing about whether the bare form models alpha_EM at all. rem:em-coupling-chern-simons is explicitly open. No published figure is changed."
-  ]
+  ],
+  "q0Anchor": "ambiguous",
+  "q0AnchorReason": "comparison by design: rounding test of both blocks' figures against every registered pin (proton, live CODATA-2022 muon, retired CODATA-2018 muon, frozen pin A 1.1099785955573347)"
 }

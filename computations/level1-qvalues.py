@@ -86,9 +86,41 @@ print()
 
 results = []
 
+# Resume support (bean qou-l1zd). The heavy nuclei run for hours
+# (137Cs ~80 min, 210Bi ~9 h), longer than a cloud job may live, so
+# each finished nucleus can be checkpointed and reused on restart.
+#   LEVEL1_CHECKPOINT=<path>  per-nucleus results, keyed by q and z
+#   LEVEL1_SKIP=<name,...>    record these nuclei as status "pending"
+import os as _os_ck  # noqa: E402
+_CK_PATH = _os_ck.environ.get("LEVEL1_CHECKPOINT")
+_SKIP = {s.strip() for s in _os_ck.environ.get("LEVEL1_SKIP", "").split(",") if s.strip()}
+_CK_KEY = f"q={qr.q};z={qr.z}"
+_ck = {}
+if _CK_PATH and Path(_CK_PATH).exists():
+    _loaded = json.loads(Path(_CK_PATH).read_text())
+    if _loaded.get("key") == _CK_KEY:
+        _ck = _loaded.get("nuclei", {})
+    else:
+        print(f"Checkpoint key mismatch ({_loaded.get('key')}); ignoring it.")
+
 for nuc in nuclei:
     p, n = nuc["p"], nuc["n"]
     A = p + n
+    if nuc["name"] in _ck:
+        print(f"{nuc['name']}: reused from checkpoint")
+        results.append(_ck[nuc["name"]])
+        continue
+    if nuc["name"] in _SKIP:
+        print(f"{nuc['name']}: skipped (LEVEL1_SKIP), recorded as pending")
+        results.append({
+            "name": nuc["name"], "A": A, "p": p, "n": n,
+            "Q_exp_MeV": nuc["Q_exp_MeV"],
+            "status": "pending",
+            "pending_reason": (
+                "not yet computed on the convention-D engine; estimated "
+                "~9 h wall, longer than the cloud job limit (bean qou-l1zd)"),
+        })
+        continue
     strands_L1 = 3 * A
     crossings_L1 = strands_L1 * (strands_L1 - 1) // 2
 
@@ -134,6 +166,11 @@ for nuc in nuclei:
     best_quark_dau = None
     best_affected = 0
 
+    # Parent volumes do not depend on the conversion site: compute once.
+    # traced_volumes_all gives the same exact rationals as per-generator
+    # traced_volume calls, in one O(A) sweep (bean qou-l1zd).
+    _vp_all = [float(v) for v in qr.traced_volumes_all(quark_par)]
+
     for site in neutron_positions:
         nucleon_dau_trial = list(nucleon_par)
         nucleon_dau_trial[site] = 1
@@ -144,9 +181,10 @@ for nuc in nuclei:
         n_gens = strands_L1 - 1
         lr_sum = 0.0
         aff = 0
+        _vd_all = [float(v) for v in qr.traced_volumes_all(quark_dau_trial)]
         for i in range(n_gens):
-            vp = float(qr.traced_volume(i, quark_par))
-            vd = float(qr.traced_volume(i, quark_dau_trial))
+            vp = _vp_all[i]
+            vd = _vd_all[i]
             if vp != 0 and vd != 0 and abs(vp - vd) > 1e-15:
                 lr_sum += mp.log(abs(vp)) - mp.log(abs(vd))
                 aff += 1
@@ -173,9 +211,10 @@ for nuc in nuclei:
             n_gens = strands_L1 - 1
             lr_sum = 0.0
             aff = 0
+            _vd_all = [float(v) for v in qr.traced_volumes_all(quark_dau_trial)]
             for i in range(n_gens):
-                vp = float(qr.traced_volume(i, quark_par))
-                vd = float(qr.traced_volume(i, quark_dau_trial))
+                vp = _vp_all[i]
+                vd = _vd_all[i]
                 if vp != 0 and vd != 0 and abs(vp - vd) > 1e-15:
                     lr_sum += mp.log(abs(vp)) - mp.log(abs(vd))
                     aff += 1
@@ -219,6 +258,9 @@ for nuc in nuclei:
     result["conversion_site"] = best_site
     result["n_sites_tested"] = n
     results.append(result)
+    if _CK_PATH:
+        _ck[nuc["name"]] = result
+        Path(_CK_PATH).write_text(json.dumps({"key": _CK_KEY, "nuclei": _ck}, indent=2))
     print()
 
 # ── Assemble witness ─────────────────────────────────────────────

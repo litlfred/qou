@@ -397,6 +397,7 @@ export default chapter({
         "qbeta-formalize-first-gates-intro",
         "toroidal-harmonics-delta-lambda",
         "q-beta-over-e0-classical-vanishing",
+        "q-beta-over-e0-classical-vanishing-ladder-reading",
         "q-beta-over-e0-classical-vanishing-proof",
         "qbeta-c8-c10-silver-rationals",
         "q-beta-c-k-recursion-from-habiro-q-difference",
@@ -421,6 +422,7 @@ export default chapter({
         "q-beta-direction-sanity-gate",
         "q-beta-direction-sanity-gate-proof",
         "q-beta-c-k-leading-bias-correction-identity",
+        "q-beta-c-k-leading-bias-correction-identity-extraction-check",
         "q-beta-c-k-leading-bias-correction-identity-proof",
         "q-beta-bar-even-kernel-typeclass",
         "mass-side-kernel-formalize-first-gates",
@@ -825,6 +827,7 @@ export default chapter({
         // strand-doubling *interpretation* was refuted (the algebraic
         // identity stands); see its historical-note section.
         "cyclotomic-strand-doubling",
+        "cyclotomic-strand-doubling-habiro-observation",
         "cyclotomic-strand-doubling-proof",
         "a8-partition-function-identity",
         "a8-partition-function-identity-proof",
@@ -923,6 +926,7 @@ export default chapter({
         "wigner-2-coefficient-proof",
         "wigner-2-coefficient-interpretation",
         "mass-endomorphism-tower",
+        "mass-endomorphism-tower-phi-q-history",
         "mass-endomorphism-tower-proof",
         "mass-endomorphism-jet-tower",
         "mass-endomorphism-jet-tower-table1-data",
@@ -951,6 +955,7 @@ export default chapter({
         "spectral-sequence-collapse-proof",
         "delta-q-decoration",
         "q-dimension-layer",
+        "torus-knot-top-channel-decoration",
         "alpha-basis-knot-delta-q",
         "torus-knot-delta-q-writhe",
         "force-carrier-intertwining-correspondence",
@@ -1230,10 +1235,12 @@ export default chapter({
         // Re-homed orphan: kaon/pion mass ratio from Hecke χ^{(2,1)}(σ_1^5)
         // + Seifert volumes (structured near-match, ~290 ppm vs PDG).
         "meson-kaon-pion-hecke-seifert",
+        "meson-kaon-pion-hecke-seifert-comparison",
         "meson-kaon-pion-hecke-seifert-proof",
         // Gen-3 extension: φ(1020) = T(2,7), m_φ/m_π ≈ 7.320 (2167 ppm vs
         // PDG); the torus tower tracks the strange-vector line, not the η.
         "gen3-meson-phi-hecke-seifert",
+        "gen3-meson-phi-hecke-seifert-identification",
         "tower-binding-energy",
         "tower-binding-energy-table-data",
         "mass-table-z1-20",

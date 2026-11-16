@@ -624,7 +624,7 @@
           "in_degree": 0,
           "cone_size": 0,
           "depth": 0,
-          "pagerank": 7.9e-05,
+          "pagerank": 0.000079,
           "edge_span_max": 0,
           "edge_span_mean": 0,
           "worst_target": ""
@@ -905,6 +905,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ddc09ef0f73b",
+          "ts": "d66adfa96623"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:55:06.889Z",
+        "reviewed_sha": "5d7f0ff2443bce339f18629dcc1e386fd754720f",
+        "severity": "critical",
+        "evidence": "Lean: `bridge : τ.map (π_V ≫ d) = contactOp` is a structure field and the theorem returns it (self-assuming); `contactOp` is an arbitrary morphism, not Θ∧ℒ_ξ. Narrative: Cartan gives π_V(dα) = Θ∧ι_ξdα = Θ∧(ℒ_ξα − dι_ξα); the step \"because ℒ_ξΘ = 0 the identity π_V(dα) = Θ∧ℒ_ξα holds in all cases\" is false. Counterexample: standard contact ℝ³, Θ = dz − y dx, ξ = ∂_z, α = xΘ. Then ℒ_ξα = 0, so Θ∧ℒ_ξα = 0, but ι_ξdα = −dx and Θ∧ι_ξdα = −dz∧dx ≠ 0. The bridge holds only for horizontal α (ι_ξα = 0)",
+        "notes": "Hand review 2026-11-15 (statement vs narrative proof); issue #8020. "
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1514,6 +1531,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T06:23:44.801Z",
+  "updated_at": "2026-11-15T21:55:06.889Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

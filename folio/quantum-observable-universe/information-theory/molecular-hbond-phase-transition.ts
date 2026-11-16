@@ -19,7 +19,7 @@ export default remark({
     "prop:symmetric-block-domain-weight",
     "def:covalent-bond-shared-trefoil",
     "prop:tetrahedral-hbond-directions",
-    "prop:boltzmann-constant",
+    "def:boltzmann-constant",
     "def:quantum-temperature",
     "def:van-der-waals-hopf-channel",
   ],

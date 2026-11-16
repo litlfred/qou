@@ -98,6 +98,7 @@ export default chapter({
             // braids-and-knots/sec:hoefsmit-convergence-atomic per
             // detangler P28. New H2 → confinement-lp accepted §5.
             "q-beta-cos-resummation",
+            "q-beta-cos-resummation-comparison",
             "q-beta-cos-resummation-table-data",
           ],
         }),
@@ -135,6 +136,7 @@ export default chapter({
       blocks: [
         "nn-isospin-interface-intro",
         "isospin-singlet-binds-more",
+        "isospin-singlet-binds-more-two-nucleon-reading",
         "isospin-singlet-binds-more-proof",
         "content-keyed-interface-refuted",
         "markov-stabilisation-needs-a-fresh-generator",

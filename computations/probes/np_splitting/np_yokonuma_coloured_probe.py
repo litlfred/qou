@@ -85,7 +85,9 @@ def wordel(c,gens,variant):
         X=mul(X,el); pos[s-1],pos[s]=b,a
     return X
 zD=q**3/(q**2+1)
-mp.mp.dps=40; q0=mp.mpf('1.1099785827513808075916690956107688798744991218736')
+mp.mp.dps=40
+from qou_substrate.constants import q_at  # proton pin, derived, not a typed copy
+q0=mp.mpf(q_at(mp.mp.dps))
 al=mp.mpf('0.51099895069')*8*mp.catalan; tgt=mp.mpf('1.29333378')
 # consistency: all-u sector vs Ocneanu H3 half twist tr = z(hz+1)
 pu=proj('uuu'); W=wordel('uuu',[1,2,1],'Y0')

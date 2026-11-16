@@ -335,7 +335,7 @@ def main() -> int:
     print(f"    qbeta_1ppq_achieved.py extracts c_4 by:")
     print(f"      (a) reading c_3 from q-beta-operator-valued-N3.witness")
     print(f"          where c_3 was fitted using rounded Q_AME =")
-    print(f"          mpf('939.5654205240') - mpf(M_P_MEV_VALIDATION) - m_e")
+    print(f"          mpf('939.5654205240') - mpf(M_P_MEV_VALIDATION) - m_e")  # noqa: P31 — quotes the historical fit input
     print(f"      (b) computing Q_N3 with that c_3")
     print(f"      (c) comparing to full-precision Q_codata = m_n - m_p - m_e")
     print(f"          using codata_constants values (different precision!)")

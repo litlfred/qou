@@ -902,7 +902,25 @@
         "reviewed_sha": "fbc2be0054ae0bbc25ef80999af93c64a9dfb13f",
         "notes": "criterion applies to dak; block kind \"proof\" is paper"
       }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "af96167adbad",
+          "ts": "5e688e9bf7cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:27.565Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "S↔P: the proof is correct and complete. Σ_i L_i² = p_2(L_1,…,L_n) is a symmetric polynomial in the Jucys–Murphy elements, hence central. L_i acts diagonally on the Young/Gelfand–Tsetlin basis with eigenvalue the content of the cell containing i (L_1 = 0 ↔ c = 0), so the eigenvalue is Σ_□ c(□)² (prf:3-8). Schur's lemma then gives Tr = dim · scalar, and Artin–Wedderburn multiplicities dim S^μ give the regular trace (prf:17-35). Statement and prf match exactly over ℂ[S_n].",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: other"
+      }
     ]
   },
-  "updated_at": "2026-08-31T04:13:04.789Z"
+  "updated_at": "2026-11-15T21:57:27.565Z"
 }

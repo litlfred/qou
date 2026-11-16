@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-11-15T18:24:20.569037+00:00",
-  "commitSha": "669d96f2adbf230bdc0b8938dc39180cbc0d7f00",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-15T23:05:39.449578+00:00",
+  "commitSha": "a3de2b63555ed5a5181878dd98c1312b17f80b42",
   "assertions": [
     {
       "name": "T1_trace_matches_chi31",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 4,
   "computation": "gg-four-strand-j4-projected",
   "scriptFile": "gg_four_strand_j4_projected_probe.py",
-  "scriptHash": "831ba8b85f0a",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "cdef6445fed3",
+  "scriptCommitSha": "82b901e236d602295cc0ce85e7ec093896fa15ab",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,9 +27,13 @@
   "environment": {
     "python": "3.13.18",
     "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "cvxpy": "absent"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "24ca776b0ad05497"
   },
   "invocation": {
     "argv": [

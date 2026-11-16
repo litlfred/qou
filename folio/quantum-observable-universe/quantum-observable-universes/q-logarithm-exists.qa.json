@@ -1224,6 +1224,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5651d8dcbaa0",
+          "ts": "05523a58b670",
+          "lean": "7f63641b621e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:55:12.586Z",
+        "reviewed_sha": "2ddd93430a21609842c768a1e983ab7fda5cf639",
+        "severity": "major",
+        "evidence": "The Lean witness is trivial. The proof's series Σ(−1)^{n−1}xⁿ/[n]_q is not inverse to exp_q: at q = 2 the x³ coefficient of log_q(exp_q x) is −2/63 (checked with exact `Fraction`). It is also not primitive, because only multiples of x are primitive under the q-binomial coproduct.",
+        "notes": "Hand review 2026-11-15 (statement vs Lean); issue #8020. "
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2491,6 +2509,6 @@
       }
     ]
   },
-  "updated_at": "2026-10-10T12:00:00.000Z",
+  "updated_at": "2026-11-15T21:55:12.586Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -106,6 +106,7 @@ mp.dps = DPS
 P3 = [(3,), (2, 1), (1, 1, 1)]
 WORD = [(1, 1)] * 7 + [(1, 2)] * 4          # sigma_1^7 sigma_2^4, the proton word
 
+# witness-copy-intentional: a census of five recorded values, by design.
 CLAIMS = {
     "option_b_full_chain":        mpf("1.884319467254976"),
     "axiomatic_content_block":    mpf("1.88432"),

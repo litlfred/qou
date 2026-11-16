@@ -115,7 +115,7 @@ noncomputable def defaultQBetaCKClosedForms : QBetaCKClosedForms where
   c_7 := (-2 : ℝ)^3
   c_7_closed_form := rfl
 
--- Ref: [leitner2026] prop:qbeta-c-k-closed-forms
+-- Ref: [leitner2026] conj:qbeta-c-k-closed-forms
 /-- **The canonical instance realises the conjectured `c_4`, `c_5` closed
     forms.** This records that `defaultQBetaCKClosedForms` evaluates to the
     empirical closed forms `c_4 = -2·b(q)^4` and `c_5 = -(b(q)^2 + 1/2)`;
@@ -158,7 +158,7 @@ theorem qbeta_c_k_closed_forms_of_instance (q : ℝ) :
     2026-09-14, the class and both theorems here are referenced by **no other
     file** and this module has no importer — so the defect was contained to
     this file's self-description. -/
--- Ref: [leitner2026] prop:qbeta-c-k-closed-forms
+-- Ref: [leitner2026] conj:qbeta-c-k-closed-forms
 -- Ref: [khovanov-rozansky2008] doi:10.4064/fm199-1-1
 theorem qbeta_c_k_closed_forms_derived
     [inst : QBetaCKClosedForms] (q : ℝ) :

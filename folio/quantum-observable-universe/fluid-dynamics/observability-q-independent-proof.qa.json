@@ -237,6 +237,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "14d670ec9dbe",
+          "ts": "9f85d2424d87"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:55:10.738Z",
+        "reviewed_sha": "dd3595d7dc1ecd1099ddcb695fb47671676c4ba6",
+        "severity": "critical",
+        "evidence": "Premise \"C is defined independently of q … the braiding does not depend on q\" contradicts thm:quantum-gap-collapse (braiding R(q) → id as q → 1) and prop:root-of-unity-truncation (the category truncates at roots of unity). \"S, Δ do not depend on q\" is false for U_q. The corollary \"holds at all roots of unity\" is in tension with the truncation proposition",
+        "notes": "Hand review 2026-11-15 (statement vs narrative proof); issue #8020. "
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1140,7 +1157,7 @@
           "in_degree": 0,
           "cone_size": 17,
           "depth": 13,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1702,6 +1719,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-11-15T21:55:10.738Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

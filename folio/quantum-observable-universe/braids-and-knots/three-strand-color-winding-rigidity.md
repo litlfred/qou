@@ -5,7 +5,7 @@ $$
 \mathrm{tr}\,M = -1, \qquad \det M = 1, \qquad M^3 = \mathrm{Id},
 $$
 
-*for every $q$ with $1 - q^2$ invertible. The eigenvalues of $M$ are the
+*for every $q$ with $1 - q^4$ invertible. The eigenvalues of $M$ are the
 primitive cube roots of unity, independently of $q$.*
 
 The proof is Cayley–Hamilton: trace $-1$ and determinant $1$ give the
@@ -15,13 +15,17 @@ identity is exactly the Hoefsmit constraint
 $\beta^2 = a_2 a_{-2} + 1$ on the binding amplitude
 ([prop:hoefsmit-binding-amplitude](hoefsmit-binding-amplitude.md)). The
 Lean sibling states both over a generic commutative ring with $q$ a unit
-and with both $\beta$ and the axial entry $a_2$ carried as constrained
-variables — $\beta^2 = a_{-2} a_2 + 1$ and $a_2 (1 - q^4) = q - q^{-1}$ — so
+and with both $\beta$ and the axial entry $a_{-2}$ carried as constrained
+variables — $\beta^2 = a_{-2} a_2 + 1$ and $a_{-2} (1 - q^4) = q - q^{-1}$ — so
 neither the square root nor the axial-distance quotient appears (no
 division, no $\mathbb{R}$), and derives the cube identity from the two
-scalar facts. Only the trace needs $1 - q^2$ invertible, and genuinely
-so: at $q^2 = 1$ the defining relation for $a_2$ degenerates and
-constrains nothing. The determinant identity needs no hypothesis at all.
+scalar facts. The hypothesis $1 - q^4$ invertible is what makes the
+axial entry $a_{-2} = (q - q^{-1})/(1 - q^4)$ of the Hoefsmit block defined.
+The Lean sibling, which carries $a_{-2}$ as a constrained variable, needs
+only $1 - q^2$ invertible and only for the trace; the statement's
+hypothesis implies it. At $q^2 = 1$ the defining relation for $a_{-2}$
+degenerates and constrains nothing. The determinant identity needs no
+hypothesis at all.
 
 Since the closures of $(\sigma_1\sigma_2)^k$ are the $(3,k)$ torus links,
 the proposition says the compact winding of the three-strand torus-link

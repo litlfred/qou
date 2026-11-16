@@ -6,7 +6,7 @@ $$
   [k]_q = \frac{q^k - q^{-k}}{q - q^{-1}},
 $$
 
-the exact eigenvalues $\mu_k^{(q)} = [k]_q^2$ of $\Delta_q$ on $L$-periodic functions (with $L_q = L$). The linearised [q-Navier--Stokes equation](#def:q-navier-stokes) for normal displacements then yields the $q$-deformed Kelvin dispersion and its viscous decay rate,
+the exact eigenvalues $\mu_k^{(q)} = [k]_q^2$ of $\Delta_q$ on $L$-periodic functions, in the variable $z = e^{2\pi i s/L}$; the units enter only through the factor $\hbar_q / L_q^2$. The linearised [q-Navier--Stokes equation](#def:q-navier-stokes) for normal displacements then yields the $q$-deformed Kelvin dispersion and its viscous decay rate,
 
 $$
   \omega_k^{(q)}

@@ -403,7 +403,8 @@ def main() -> int:
         print(f"         growth: "
               f"{[g['distinct_elements_cumulative'] for g in r['growth']]}")
 
-    w.save()
+    w.save(extra={"q0Anchor": "independent", "q0AnchorReason": (
+            "growth and Q(h)-rank of the gamma-gamma submonoid computed symbolically in the generic Hecke algebra (sympy, h a symbol); the census module it loads supplies only the symbol h and the H_3 multiplication table, so q0 is never evaluated")})
     print()
     if FAILED:
         print(f"FAILED ({len(FAILED)}): {', '.join(FAILED)}")

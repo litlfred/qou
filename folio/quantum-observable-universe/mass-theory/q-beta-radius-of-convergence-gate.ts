@@ -1,9 +1,9 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:q-beta-radius-of-convergence-gate",
+export default conjecture({
+  label: "conj:q-beta-radius-of-convergence-gate",
   title:
-    "$\\mathfrak{Q}_\\beta$ precision-ladder $\\S 4(a)$ formalize-first gate — the log-correction generating function $g(u) = \\sum_{k \\ge 2} c_k u^k$ must have a simple pole at $u_{\\text{substrate}}$, and any candidate $F(q)$ whose nearest singularity lies elsewhere is structurally REFUTED",
+    "$\\mathfrak{Q}_\\beta$ precision-ladder $\\S 4(a)$ gate — the log-correction generating function $g(u) = \\sum_{k \\ge 2} c_k u^k$ has a unique dominant simple pole at $u_{\\text{substrate}}$ (convention-C frame)",
   lean: {
     ref: "qou:QOU.QBeta.RadiusOfConvergenceGate.qbeta_g_simple_pole_at_u_substrate",
     validation: "not_checked",
@@ -12,6 +12,7 @@ export default proposition({
     "prop:q-beta-bar-even-kernel-invariant",
     "prop:q-beta-c-k-recursion-from-habiro-q-difference",
     "prop:q-beta-c-2-eq-neg-one-structural",
+    "conj:qbeta-c-k-closed-forms",
   ],
   cites: ["jones1987", "wenzl1988", "habiro2004"],
   computation: {
@@ -25,12 +26,12 @@ export default proposition({
   tags: [
     "q-beta",
     "precision-ladder",
-    "structural",
     "formalize-first",
     "radius-of-convergence",
     "simple-pole",
     "kernel-invariant",
-    "no-fit",
+    "convention-c-frame",
+    "open-rd",
   ],
   authorNotes: [
     {
@@ -40,17 +41,27 @@ export default proposition({
     },
     {
       kind: "status",
+      date: "2026-11-15",
       body:
-        "**Theorem (this proposition, the gate direction).** Sorry-free " +
-        "Lean proof (`q-beta-radius-of-convergence-gate.lean`) — conditional " +
-        "theorem over `CommRing R` / the `RadiusOfConvergenceGateClass` " +
-        "typeclass (§3b-cond); the forward direction (the cross-anchor " +
-        "asymptotic-pole test) is a class hypothesis. **Compute (sympy + " +
-        "mpmath):** verified in `qbeta_radius_of_convergence_gate_probe.py` " +
-        "(witness `qbeta-radius-of-convergence-gate-probe.witness.json`) — " +
-        "verifies the substrate anchors and demonstrates the gate on " +
-        "candidate forms (passing: canonical SDP $c_k$ series; failing: a " +
-        "mislocated pole at $u_0 = 2 u_{\\text{substrate}}$).",
+        "**Conjecture (demoted from proposition 2026-11-15, owner choice " +
+        "\"Conjecture + re-scope\").** The former statement asserted an exact " +
+        "pole location and called every other candidate \"structurally " +
+        "REFUTED\". That cannot follow from the evidence: the only input is the " +
+        "finite window $c_2, \\ldots, c_{10}$, and finitely many Taylor " +
+        "coefficients do not determine where a generating function's poles are " +
+        "(adding $u^{11} h(u)$ with $h$ rational moves the pole anywhere and " +
+        "leaves the window unchanged). The window is *consistent* with a simple " +
+        "dominant pole at $u_{\\text{substrate}}$, which is what is now claimed, " +
+        "as a conjecture. The $c_k$ themselves are the convention-C frame " +
+        "(`conj:qbeta-c-k-closed-forms`; $c_k$ for $k \\ge 4$ are calibrated " +
+        "against the CODATA residual), and no ladder exists yet under " +
+        "convention D (bean `qou-cds1`). **Lean:** the sibling file's " +
+        "`qbeta_g_simple_pole_at_u_substrate` projects the class field " +
+        "`pole_location_is_u_substrate`, i.e. it assumes its conclusion; it is " +
+        "a statement of the conjecture, not a proof of it. **Compute:** " +
+        "`qbeta_radius_of_convergence_gate_probe.py` measures the window " +
+        "signature (flat $c_k u_0^k$, ratio test) and demonstrates the test on " +
+        "a mislocated candidate pole; it is evidence, not a proof.",
     },
   ],
 });

@@ -229,7 +229,10 @@ def main():
     out = pathlib.Path(__file__).with_suffix("").name.replace("_probe", "").replace("_", "-") + ".witness.json"
     pathlib.Path(__file__).with_name(out).write_text(
         json.dumps({"description": __doc__.strip().splitlines()[0], "results": {str(k): v for k, v in results.items()},
-                    "checks": checks, "exact": True}, indent=2, ensure_ascii=False) + "\n")
+                    "checks": checks, "exact": True,
+                    "q0Anchor": "independent",
+                    "q0AnchorReason": "exact symbolic computation over Q(q) in sympy; q stays a "
+                                      "symbol and no q0 pin is ever read"}, indent=2, ensure_ascii=False) + "\n")
     return 0 if all(checks.values()) else 1
 
 

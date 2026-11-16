@@ -97,6 +97,33 @@ class HeckeRational:
             M00, M01, M10, M11 = n00, n01, n10, n11
         return self.z * M10 + M11
 
+    def traced_volumes_all(self, ordering):
+        """All traced volumes [V̂_0, ..., V̂_{A-2}] in one right-to-left sweep.
+
+        Same exact rationals as ``traced_volume(i, ordering)`` for every i,
+        but O(A) matrix products instead of O(A^2). The transfer matrix
+        T(c,d) depends only on the pair of strand types, so for each
+        type t the suffix product R_t(i) = T(t,t_{i+1})...T(t,t_{A-1})
+        obeys R_t(i-1) = T(t,t_i)·R_t(i). Row i uses R_{t_i}(i).
+        """
+        A = len(ordering)
+        one, zero = Fraction(1), Fraction(0)
+        # suffix products for each strand type: [M00, M01, M10, M11]
+        R = {t: [one, zero, zero, one] for t in set(ordering)}
+        out = [None] * max(A - 1, 0)
+        for i in range(A - 2, -1, -1):
+            tj = ordering[i + 1]
+            for t, (M00, M01, M10, M11) in R.items():
+                c, d = self.crossing(t, tj)
+                t00 = c * self.ha + d; t01 = c
+                t10 = c;               t11 = d
+                # left-multiply: T · M
+                R[t] = [t00*M00 + t01*M10, t00*M01 + t01*M11,
+                        t10*M00 + t11*M10, t10*M01 + t11*M11]
+            M = R[ordering[i]]
+            out[i] = self.z * M[2] + M[3]
+        return out
+
     def markov_trace(self, ordering):
         """Product of traced volumes (exact rational)."""
         A = len(ordering)

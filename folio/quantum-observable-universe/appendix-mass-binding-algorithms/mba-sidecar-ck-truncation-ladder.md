@@ -50,17 +50,34 @@ series — the normalised series' coefficient is $\tilde c_2 = -9/8$.*
 
 ### Python API entry point
 
-*Canonical compute is the script
-[`computations/q_beta_predicted.py`](../../../computations/q_beta_predicted.py),
-which records each $c_k$ with its tier in the witness JSON.
-Higher-precision regenerations use
+*Canonical compute for the tiered $c_k$ cache is the script
+[`computations/qbeta/qbeta_ck_cache.py`](../../../computations/qbeta/qbeta_ck_cache.py),
+which records each $c_k$ row (`data.rows`) with its `tier` (`"derived"` vs
+`"cal-anchored"`), `label`, structural candidates, and cumulative truncation
+prediction `Q_pred_after_this_rung_MeV` alongside `data.Q_beta_tiers` in the
+witness JSON. Note that the cached $c_k$ ladder artifact is a retained
+**Convention-C** cache (`markov_convention: "C"`, generated via
+`--historical-convention-C` pending the Convention-D re-derivation tracked
+under `qou-cds1` / `qou-wxhi`; its default Convention-D path refuses because
+substituting $z_D$ into $\alpha = (z-1)h/2$ is proved invalid by
+`QOU.QBeta.decayLadder_zC_threeRow_ne_zero` and
+`QOU.QBeta.eigenphase_bar_defect_of_fullBar`). The downstream consumer
+[`computations/q_beta_predicted.py`](../../../computations/q_beta_predicted.py)
+(witness:
+[`q-beta-predicted.witness.json`](../../../computations/q-beta-predicted.witness.json))
+wires only the derived $N = 2$ rung ($c_2 = -1$, emitting $Q_{N_2}$ without
+recording a per-rung $c_k$ or `tier` table); higher-precision CAL-3
+regenerations use
 [`build_cal_3_q_beta_witness.py`](../../../computations/build_cal_3_q_beta_witness.py).*
 
 ### Witness contract
 
-*Canonical witness:
-[`q-beta-predicted.witness.json`](../../../computations/q-beta-predicted.witness.json).
-**Must** record each $c_k$ alongside its tier.*
+*Canonical witness for the tiered $c_k$ ladder:
+[`computations/qbeta/qbeta-ck-cache.witness.json`](../../../computations/qbeta/qbeta-ck-cache.witness.json)
+(C-frame cache, `markov_convention: "C"`, with downstream $Q_{N_2}$ consumer
+[`q-beta-predicted.witness.json`](../../../computations/q-beta-predicted.witness.json)).
+**Must** record each $c_k$ alongside its `tier` (`"derived"` vs
+`"cal-anchored"`) and its `markov_convention`.*
 
 ### Notes
 

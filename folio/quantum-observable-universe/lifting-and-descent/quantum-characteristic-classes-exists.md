@@ -2,4 +2,6 @@ Let $(\mathbf{C}, A, \tau)$ be a [quantum observable universe](#def:quantum-obse
 $$
   \kappa_n \in H^2(\mathcal{S}, \mathcal{B})
 $$
-exists as a well-defined cohomology class obstructing the lift $\mathfrak{G}_n \to \mathfrak{G}_{n+1}$.
+exists as a well-defined cohomology class obstructing the lift of the Frobenius--Hopf object of level $n$, a global object of the gerbe $\mathfrak{G}_n$, to a global object of $\mathfrak{G}_{n+1}$ along the central extension $1 \to \mathcal{B} \to \mathfrak{G}_{n+1} \to \mathfrak{G}_n \to 1$.
+
+The class lives in degree $2$ because it obstructs lifting an *object* of a gerbe. Lifting the gerbe $\mathfrak{G}_n$ itself along an extension of its band would be obstructed in $H^3$ (Giraud); that is not the question here.

@@ -9,7 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: ["def:phi-q-piece"],
-  cites: ["bokut1978", "shirshov1962", "jones1987"],
+  cites: ["shirshov1962", "jones1987"],
   tags: [
     "phi-q",
     "stratification",

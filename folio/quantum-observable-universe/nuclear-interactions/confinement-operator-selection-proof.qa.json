@@ -1244,7 +1244,25 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "799d5b64bfe5",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:56:05.076Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "Minimality of B₃ among 3-component Brunnian links (`:39`) asserted, neither proved nor cited. \"Confinement ⇔ Brunnian\" is a physical premise. Empirical in proof: `:37` \"far from the physical proton mass\", `:41` \"against the physical data\", q₀ numerics at `:14,:24`"
+      }
     ]
   },
-  "updated_at": "2026-08-22T03:11:02.371Z"
+  "updated_at": "2026-11-15T21:56:05.076Z"
 }

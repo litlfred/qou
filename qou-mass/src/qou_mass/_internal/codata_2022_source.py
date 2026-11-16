@@ -306,12 +306,18 @@ Q_BETA_MEV_DERIVED_FROM_CODATA_DIRECT = (
 )
 """Q_β computed from CODATA-2022 direct m_n.
 
-Equals 939.56542194 − 938.27208816 − 0.51099895069 ≈ 0.78233482931 MeV.
+Equals 939.56542194 − 938.27208943 − 0.51099895069 = 0.78233355931 MeV — the
+same number the registry's own `neutron-proton mass difference energy
+equivalent in MeV` = 1.29333251(38) gives after subtracting m_e.
 
-**Differs from AME's 0.78233341 by ~1.8 × 10⁻⁶ MeV (1810 ppb)**
-— this is the m_n-CODATA-vs-AME discrepancy expressed in Q_β.
-Within their combined σ (sqrt of the m_n errors ~700 ppb on Q_β
-relative).
+**Differs from AME's 0.78233341 by 1.49 × 10⁻⁷ MeV (+191 ppb, 0.2σ
+combined)** — the CODATA-2022-vs-AME-2020 dataset difference expressed in
+Q_β. Consistent, but a different dataset; which one is CAL-3 is an owner
+call (bean qou-0e2p, `qbeta_bar_odd_qq_coefficient_leg_probe.py`).
+
+(This docstring read "938.27208816 … ≈ 0.78233482931 … 1810 ppb" until
+2026-09-08 — figures on the CODATA-2018 proton that PR #4860 retired; the
+code below never carried them.)
 """
 
 Q_BETA_MEV_DERIVED_FROM_AME = (
@@ -319,11 +325,14 @@ Q_BETA_MEV_DERIVED_FROM_AME = (
 )
 """Q_β computed from AME-derived m_n.
 
-Equals 939.56542052 − 938.27208816 − 0.51099895069 ≈ 0.78233340931 MeV.
+Equals 939.56542179 − 938.27208943 − 0.51099895069 = 0.78233340931 MeV.
 
 **Within 1 ppb of the AME direct measurement** (0.78233341 vs
-0.78233340931 — 0.9 × 10⁻⁹ MeV ≈ 1.1 ppb difference).  This is
-the AME-self-consistency check.
+0.78233340931 — 0.69 × 10⁻⁹ MeV ≈ 0.88 ppb).  This is the
+AME-self-consistency check, and the 0.88 ppb is exactly the rounding of
+`M_N_MEV_AME_DERIVED` to 8 decimals (M_P + M_E + Q_β = 939.56542179069):
+a round-trip artefact, not information. (Read "939.56542052 … 938.27208816
+… 1.1 ppb" until 2026-09-08 — CODATA-2018-proton figures.)
 """
 
 

@@ -20,7 +20,7 @@ export default conjecture({
   cites: [
     "pachner1991",
     "adams1985hyperbolic",
-    "faddeev1996",
+    "faddeev_kashaev1994",
     "kashaev1997",
     "turaev-viro1992",
     "neumann-zagier1985",

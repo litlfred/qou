@@ -238,7 +238,8 @@ def survivor(W, pair, side):
 
 def main():
     checks, out = {}, {"recipe": "computations/probes/gg_quark_letters_parity/preregistration.md (74045a7695d)",
-                       "issue": 7777, "q0_pin": "proton", "q0": Q_50_DIGIT_STR}
+                       "issue": 7777, "q0_pin": "proton", "q0": Q_50_DIGIT_STR,
+                       "q0Anchor": "proton", "q0Value": Q_50_DIGIT_STR}
 
     # P0 reproduce step 2
     ref = json.loads((ROOT / "computations/probes/gg_quark_letters_tl/gg-quark-letters-tl.witness.json").read_text())
@@ -346,7 +347,7 @@ def main():
                 "V, V^3 or the closures names a flavour, so no sign map is output.",
     }
     out["checks"] = checks
-    out["wall_seconds"] = round(time.monotonic() - T0, 1)
+    out["elapsed_sec"] = round(time.monotonic() - T0, 1)  # a wall-clock duration: the name the raw-float64 audit carves out
     (HERE / "gg-quark-letters-parity.witness.json").write_text(
         json.dumps(out, indent=1, ensure_ascii=False, default=str) + "\n")
     summ = {r: {pl: (d["reading3_at_q0"], d["reading3_on_all_(1,oo)"], d["template_expressible_as"])

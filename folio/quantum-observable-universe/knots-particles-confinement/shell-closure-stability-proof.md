@@ -1,5 +1,7 @@
 *Proof.*
 
+**Scope (2026-11-15).** Step 1 is an open gap. In the dual constraint $u_0 I + \sum_\lambda u_\lambda \pi_\lambda - T \preceq 0$ with $u_\lambda \ge 0$, raising a new $u_\lambda$ adds a positive semidefinite term and makes the constraint harder to satisfy. The best a new block admits is $u_\lambda = 0$, and then the lift is feasible only if $u_0 I \preceq T_{\mathrm{new}}$ on the new block, which is not shown. Claim 1 of the proposition, and the reading of claim 2 that relies on it, are therefore unproved. Step 3 compares against the archimedean quantity $\alpha \cdot m_e \cdot c_q^2$ without deriving that comparison from the categorical data.
+
 We establish three claims.
 
 **1. SDP-relaxation monotonicity.**
@@ -28,9 +30,3 @@ For $Z \in \mathcal{Z}_{\mathrm{noble}}$, the orbital parametrisation of the ele
 
 **3. Terminality.**
 An outgoing dressing $\mathrm{dress}_{S'}: P^{(Z)} \to P'$ with $Z \in \mathcal{Z}_{\mathrm{noble}}$ extends the active support by opening a block of principal shell $n + 1$. Because the $n$-th shell is fully closed, no dual variable in shell $n$ can slack. The extension is feasible only if every dual variable in shell $n$ increases; every currently tight block must break to admit the new one. The energetic cost of breaking $\mu(S_Z, q) \ge 2$ tight blocks is at least $\mu \cdot \Delta E_{\mathrm{shell}}(q)$. For $q$ in the generic locus, $\mu \cdot \Delta E_{\mathrm{shell}}(q) > \alpha \cdot m_e \cdot c_q^2$. No electromagnetic-mediated dressing clears the barrier, making $P^{(Z)}$ terminal within the $\mathrm{dress}$ sub-diagram. $\square$
-
-**Corollary (chemical inertness).**
-Categorical terminality of noble-gas $P^{(Z)}$ structurally forces chemical inertness. No covalent dressing morphism $\mathrm{dress}_{S_{\mathrm{bond}}}: P^{(Z)} \to P_{\mathrm{molecule}}$ is feasible at room-temperature $q$ without breaking a closed shell. Noble gas compounds require $q$ far from the generic locus to clear the terminality barrier.
-
-**Corollary (ionisation energy peaks).**
-The first-ionisation energy $I_1(Z)$ is the Markov-trace gap from $P^{(Z)}$ to $P^{(Z-1)} + e^-$. This matches the marginal stability gain $\Delta\sigma_F(Z)$. By [confinement-topological](#prop:confinement-topological) and the dual shadow-price structure, $I_1$ peaks at shell closures and dips at shell openings. Identifying these closures with empirical noble-gas peaks is conditional on the open shell-capacity derivation; the bare categorical operator does not place the closures at the noble gases without the Madelung structure.

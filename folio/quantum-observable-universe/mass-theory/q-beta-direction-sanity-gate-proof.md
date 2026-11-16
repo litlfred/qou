@@ -36,8 +36,9 @@ outside the window.
 **Step 1 — the target has order of magnitude one.** Every ladder
 factor satisfies $|c_k u_0^k| \le |c_2|\,u_0^2 \approx 7.3\times
 10^{-5}$, with the sequence $|c_k|\,u_0^k$ decreasing to the flat
-asymptote $\approx 2.1\times 10^{-13}$ established by the
-[radius-of-convergence gate](q-beta-radius-of-convergence-gate.md).
+asymptote $\approx 2.1\times 10^{-13}$ measured on the window
+$c_2, \ldots, c_{10}$ (witness
+`computations/qbeta/qbeta-radius-of-convergence-gate-probe.witness.json`).
 Hence
 
 $$
@@ -68,7 +69,8 @@ F_{\text{true}}(q_0)$, and two fibre elements with distinct
 archimedean evaluations at $q_0$ are distinct: the refuted candidate
 is not the true kernel. Rejection is definitive; passage is only
 necessary — a passing candidate still faces the exact $\S 4(c)$
-integer shadows and the $\S 4(a)$ pole-location test.
+integer shadows and the $\S 4(a)$ pole-location test, which is
+conditional on the [radius-of-convergence conjecture](q-beta-radius-of-convergence-gate.md).
 
 **Step 3 — calibration of the $10\times$ threshold.** Two constraints
 bound the admissible threshold window.

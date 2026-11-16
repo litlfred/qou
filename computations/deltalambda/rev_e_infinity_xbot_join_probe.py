@@ -56,6 +56,11 @@ _NS: dict = {"__name__": "_xbot_lnatural_defs", "__file__": _SRC}
 exec(_TEXT[:_TEXT.index(_MARK)], _NS)  # noqa: S102 — deliberate; the split is asserted
 
 mp = _NS["mp"]
+# The relaxation probe's working precision, restated here because a prelude run
+# through exec() is invisible to the import-time / never-raises dps audits. The
+# assert keeps the two in step: change the relaxation probe and this fails.
+assert mp.dps == 25, f"relaxation probe dps moved to {mp.dps}; update this probe"
+mp.dps = 25
 epsx, b0_of = _NS["epsx"], _NS["b0_of"]
 LNQ, LNQ_HALF, TOL, GAIN_TOL = _NS["LNQ"], _NS["LNQ_HALF"], _NS["TOL"], _NS["GAIN_TOL"]
 E_INF_7335, B_TOP_CERT = _NS["E_INF_7335"], _NS["B_TOP_CERT"]
@@ -229,6 +234,9 @@ _wit = {
     "computation": {"script": "computations/deltalambda/rev_e_infinity_xbot_join_probe.py"},
     "bean": "qou-as81",
     "anchor": "physical_proton",
+    # Canonical anchor key read by the q0 audits/ratchet (the "anchor" key
+    # above is a near-miss spelling they cannot see).
+    "q0Anchor": "proton",
     "q0Value": Q_50_DIGIT_STR,
     "description": (
         "Per-sum upper bound on the bottom edge, Xbot(s) <= h(mu) + mu s, with h(mu) the "

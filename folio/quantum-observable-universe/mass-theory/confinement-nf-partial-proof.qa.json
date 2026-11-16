@@ -792,7 +792,7 @@
           "in_degree": 0,
           "cone_size": 8,
           "depth": 5,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1178,7 +1178,7 @@
         "reviewed_at": "2026-07-07T14:26:56.898375Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
-        "evidence": "folio/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean:1 \u2014 Lean file exists",
+        "evidence": "folio/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean:1 — Lean file exists",
         "severity": "minor"
       }
     ],
@@ -1230,6 +1230,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "fa8a9f9de4e8",
+          "ts": "e0d6469a0fa5",
+          "lean": "fb9ac1acee2c",
+          "lean_statement": "12bdbf5f5d49"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:24.159Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "confinement-nf-partial-proof.lean:126 class field `strong_duality_holds : lp.duality_gap = 0` projected by theorem_3_strong_duality (:151-154), primal/dual objectives `opaque`; :171-173 `shift_decomp_bound : ∀ (β_pole alpha_shift delta_struct : ℝ), β_pole ≤ alpha_shift + delta_struct + lp.duality_gap` is unsatisfiable (β_pole=0, alpha_shift=−gap−1, delta_struct=0), so theorem_2 is vacuous; md:107 'empirical n-context shifts' inside the proposition",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1766,7 +1784,7 @@
         "reviewed_at": "2026-07-07T14:26:56.898375Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
-        "evidence": "folio/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean:1 \u2014 folio/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean:44:11: error: Function expected at",
+        "evidence": "folio/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean:1 — folio/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean:44:11: error: Function expected at",
         "severity": "minor"
       },
       {
@@ -2451,6 +2469,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T14:57:53.241Z",
+  "updated_at": "2026-11-15T21:57:24.159Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -407,7 +407,8 @@ def main() -> int:
         print(f"  {x['atom']:<10}    {vals[0]:>10}    {vals[1]:>12}    {vals[2]:>12}    {vals[3]:>8}    {vals[4]:>10}")
     print()
     print(f"  m_p / m_e (predicted) = {mp.nstr(ratio_pe, 14)}")
-    print(f"  CODATA m_p / m_e      = 1836.15267343")
+    from qou_substrate.codata import codata as _codata
+    print(f"  CODATA m_p / m_e      = {_codata('proton-electron mass ratio').value_str}")
     print()
     print(f"  m_p_pred (MeV) = {mp.nstr(m_p_pred_MeV, 14)}")
     print(f"  CODATA m_p     = {mp.nstr(M_P_MEV_CODATA, 14)}")
