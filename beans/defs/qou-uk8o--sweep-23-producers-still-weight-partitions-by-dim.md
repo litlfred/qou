@@ -1,7 +1,7 @@
 ---
 # qou-uk8o
 title: 'Sweep: 23 producers still weight partitions by dim_q^2/[n]_q!; triage by CROSS-ATOM exposure (c_n cancels within one n)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -66,3 +66,5 @@ stronger evidence than the upstream numerical table and is independent of it.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-05 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+- **Round 55 Progress (`2026-11-16T21:09:27Z`)**: Opened [`litlfred/qou#8202`](https://github.com/litlfred/qou/pull/8202) (`61d4706edbc97c195108082e38b072c982ba2984`, Commit 1 `842a8da69cdb997861cc48f6f16593cc33e1e707`). Keeping bean at `status: in-progress` pending owner review.

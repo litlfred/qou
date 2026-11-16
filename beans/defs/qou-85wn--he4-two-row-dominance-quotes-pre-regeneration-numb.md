@@ -1,7 +1,7 @@
 ---
 # qou-85wn
 title: he4-two-row-dominance quotes pre-regeneration numbers — thesis survives, every table value is stale, one contribution flips sign
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -314,3 +314,5 @@ fail**.
 `dominant_partition` is unchanged, so every existing downstream theorem —
 `dominant_in_two_row_stratum`, `dominant_eq_nine_three_in_stratum` — is
 untouched.
+
+- **Round 55 Progress (`2026-11-16T21:09:27Z`)**: Opened [`litlfred/qou#8202`](https://github.com/litlfred/qou/pull/8202) (`61d4706edbc97c195108082e38b072c982ba2984`, Commit 1 `842a8da69cdb997861cc48f6f16593cc33e1e707`). Keeping bean at `status: in-progress` pending owner review.

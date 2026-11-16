@@ -1,7 +1,7 @@
 ---
 # qou-blla
 title: 'ROUTE D: Hadamard/creative-telescoping for connected sum - order <= n1*n2, does NOT cross depth'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -20,3 +20,5 @@ WHAT SURVIVES: the Hadamard-product / creative-telescoping closure property - th
 WHY IT IS ONLY A TEMPLATE: order is not depth. Creative telescoping operates at fixed transcendence depth - it manipulates the recurrence, not the polylogarithm weight. So this route does NOT cross depth 0 -> 2 and cannot on its own bridge the gap of epic qou-2q85. Its value is as the worked example of an order-raising construction, to be copied by whatever does cross depth.
 
 CAUTION FOR THE NEXT AGENT: 'Hadamard' matches 24 beans in this tracker and NONE of them are this - they are all HadamardFactorization, the entire-function factorization theorem. Different Hadamard. Do not read those as prior work.
+
+- **Round 55 Progress (`2026-11-16T21:09:27Z`)**: Opened [`litlfred/qou#8202`](https://github.com/litlfred/qou/pull/8202) (`61d4706edbc97c195108082e38b072c982ba2984`, Commit 1 `842a8da69cdb997861cc48f6f16593cc33e1e707`). Keeping bean at `status: in-progress` pending owner review.
