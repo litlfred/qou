@@ -73,8 +73,8 @@ algebraic object that encodes:*
 
 *Basis: $\{1, \sigma_0, \sigma_1, \sigma_0 \sigma_1, \sigma_1 \sigma_0, \sigma_0 \sigma_1 \sigma_0\}$.
 Markov trace on standard basis ([Markov trace factorization](#thm:markov-trace-factorization)):
-$\tau(T_w) = z^{\ell(w)}$ for $w \in S_n$ reduced, where
-$\ell(w)$ is the length.  So $\tau(1) = 1$, $\tau(\sigma_i) = z$,
+$\tau(T_w) = z^{\ell(w)}$ when the reduced word of $w$ uses each
+generator at most once, where $\ell(w)$ is the length.  So $\tau(1) = 1$, $\tau(\sigma_i) = z$,
 $\tau(\sigma_i \sigma_j) = z^2$. The naïve length rule $z^{\ell(w)}$
 **fails for adjacent triples** (the rule assumes the rightmost
 generator lies in the proper sub-algebra; this fails for
