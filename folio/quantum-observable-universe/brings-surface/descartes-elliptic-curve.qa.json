@@ -1136,6 +1136,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "932ea16de58f",
+          "ts": "d84cd68c4614",
+          "lean": "74c29c88de91",
+          "lean_statement": "ed70882219bf"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:05:10.995Z",
+        "reviewed_sha": "d452093fabf877690aeba624197ad015c6b9aa74",
+        "severity": "minor",
+        "evidence": "Lean proves the z-coefficients equal weierstrass_p/weierstrass_r over R with q>0 (p checked by hand: 2/3 z^2+z/3+2/3 = (2s^4+s^3-2s^2-s+2)/(3s^2)). The identification with the colour elliptic fibre of Bring's surface is not encoded."
       }
     ],
     "milnor-amalgamated-flow": [
@@ -2115,6 +2133,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-11-16T07:05:10.995Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
