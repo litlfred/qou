@@ -1,13 +1,13 @@
 ---
 # ovud
 title: Wire Li2q brane-tower into production F_Bor (replace /q3 normalization)
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-06-24T03:48:33Z
-updated_at: 2026-10-04T15:14:25Z
+updated_at: 2026-11-16T19:04:00Z
 parent: qou-2002
 ---
 
@@ -53,3 +53,8 @@ keystone). NOT a Li₂^q-tower reparametrisation. Gated on s5bb.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-06-24 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Formalisation & Verification Update (2026-11-16, PR [`litlfred/qou#8158`](https://github.com/litlfred/qou/pull/8158), commit `75b6b451ceab7004d7b1dbd5350d3c71eff04c1c`)
+
+- Formalised the exact Laurent balancing identity in Lean 4 at `folio/quantum-observable-universe/lean/QOU/Observations/SubstrateParameterLocality.lean` (`qfact3_eq_q3_mul_laurent_balancing` and `qfact3_expanded_laurent`, `0` `sorry`, generic `CommRing R` with `q * qi = 1`): $(q^2 + 1 + qi^2)(q + qi) = q^3(1 + 2qi^2 + 2qi^4 + qi^6) = q^3 + 2q + 2qi + qi^3$.
+- Verified symbolic exactness and 50-dps logarithmic sensitivity $\frac{d\ln([3]_q!/q^3)}{d\ln q}\big|_{q_0} = -2.35361087\dots$ in `computations/probes/substrate_parameter_locality_varying_constants_probe.py`.

@@ -1,13 +1,13 @@
 ---
 # qou-cweq
 title: derivation_chain.Q_0 is proton-pinned but c-q-q0 target is muon (11.5ppb, derivation-chain audit FAIL)
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-11T22:07:45Z
-updated_at: 2026-10-04T15:18:44Z
+updated_at: 2026-11-16T19:04:00Z
 parent: qou-2002
 ---
 
@@ -60,3 +60,8 @@ Recommend option 1 (internal muon consistency), pending owner sign-off.
   post-rebase witness-drift refresh on `claude/dilog-pole-cusp-phase-2026-07-11`).
 - Related: bean `tnjb` (per-observable 100× status silent-flip), `b0vf` (χ He-4 q₀
   data-integrity), AGENTS.md §"q₀ anchor convention — ideal CAL-2 (muon) vs experimental (proton)".
+
+## Resolution (2026-11-16, PR [`litlfred/qou#8158`](https://github.com/litlfred/qou/pull/8158), commit `75b6b451ceab7004d7b1dbd5350d3c71eff04c1c`)
+
+- `computations/c-q-q0.derivation.json` was repinned to the proton anchor `q_0 = 1.1099785827513808...` (`target_value = 9.0926794561502453911039703556573825637151463686661`) under the 2026-08-07 owner directive (`qou-ibcv`), matching `derivation_chain.Q_0` to `< 10^{-48}`.
+- Formalised `cq_hbarQ_cross_identity` and `cq_anchor_relative_shift` (`(c_q(q_p) - c_q(q_\mu)) / c_q(q_p) = (q_\mu - q_p) / (q_\mu - 1)`) in `folio/quantum-observable-universe/lean/QOU/Observations/SubstrateParameterLocality.lean` (`0` `sorry`) and verified at 50 dps in `computations/probes/substrate_parameter_locality_varying_constants_probe.py`.
