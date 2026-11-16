@@ -1,0 +1,158 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-16T06:53:46.731264+00:00",
+  "commitSha": "d00b52c3a205e312958f8db39f7fe107009ab3eb",
+  "assertions": [
+    {
+      "name": "delta_S_closed_form_matches_census",
+      "computed": "1.28394e-26",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-20",
+      "source": "tr_{z_D}(Delta_S) closed form vs census tr_conv_D"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "qbeta-mn-mixed-base-d-cells",
+  "scriptFile": "qbeta_mn_mixed_base_d_cells_probe.py",
+  "scriptHash": "816d253f0596",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_mn_mixed_base_d_cells_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_mn_mixed_base_d_cells_probe.py"
+  },
+  "description": "Production m_n = m_p + Q_beta + m_e uses derived_masses.q_beta_kashiwara_n2_mev, which applies a convention-D phase to the retired z=1 Form A base. Records the production value as 'retired-mixed-base' and every convention-D cell (zero c_k rungs, both E0 forms, every census element) beside it. No element is selected and no production value changes (owner, 2026-11-16).",
+  "data": {
+    "production": {
+      "status": "retired-mixed-base",
+      "Q_beta_MeV": "0.782804689809386912300992411191086597489032661350230106937576",
+      "Q_A_form_A_MeV": "0.783645803740748837458177007581843905419000234584921918127373",
+      "m_p_MeV": "938.272089427324200000000000000000000000000000000000000000000",
+      "m_n_MeV": "939.565893067823600000000000000000000000000000000000000000000",
+      "m_n_err_ppb": "501.43163",
+      "Q_beta_pin": "muon (derived_masses._q_0, bean qou-aj91)",
+      "why_mixed": "base Q_A is the z=1 cell retired 2026-09-08; the phase alpha=(z-1)h/2 uses z_D"
+    },
+    "d_cells": [
+      {
+        "element": "nuc9_build_nucleon_nf",
+        "E0_form": "tower",
+        "pin": "proton",
+        "Q_beta_MeV": "0.545664266485548807494141631709228340519309693377549042611816",
+        "m_n_MeV": "939.328752644499748807494141631709228340519309693377549042612",
+        "m_n_err_ppb": "-251892.30",
+        "shift_from_production_ppb": "-252393.73"
+      },
+      {
+        "element": "nuc9_build_nucleon_nf",
+        "E0_form": "order_zero",
+        "pin": "proton",
+        "Q_beta_MeV": "0.540307378640024933605380741409161413809181892759474027809229",
+        "m_n_MeV": "939.323395756654224933605380741409161413809181892759474027809",
+        "m_n_err_ppb": "-257593.75",
+        "shift_from_production_ppb": "-258095.18"
+      },
+      {
+        "element": "nuc11_interleaved",
+        "E0_form": "tower",
+        "pin": "proton",
+        "Q_beta_MeV": "0.651856310060337537759386764180716953854105083179664586873005",
+        "m_n_MeV": "939.434944688074537537759386764180716953854105083179664586873",
+        "m_n_err_ppb": "-138869.79",
+        "shift_from_production_ppb": "-139371.22"
+      },
+      {
+        "element": "nuc11_interleaved",
+        "E0_form": "order_zero",
+        "pin": "proton",
+        "Q_beta_MeV": "0.645456915123079459561875817038373536781011944029497874877867",
+        "m_n_MeV": "939.428545293137279459561875817038373536781011944029497874878",
+        "m_n_err_ppb": "-145680.80",
+        "shift_from_production_ppb": "-146182.24"
+      },
+      {
+        "element": "nuc11_gen_grouped",
+        "E0_form": "tower",
+        "pin": "proton",
+        "Q_beta_MeV": "0.668010028276659092567203743299753867195020347852589038528786",
+        "m_n_MeV": "939.451098406290859092567203743299753867195020347852589038529",
+        "m_n_err_ppb": "-121677.03",
+        "shift_from_production_ppb": "-122178.47"
+      },
+      {
+        "element": "nuc11_gen_grouped",
+        "E0_form": "order_zero",
+        "pin": "proton",
+        "Q_beta_MeV": "0.661452049275741565895300654373098074410613561844147634130795",
+        "m_n_MeV": "939.444540427289941565895300654373098074410613561844147634131",
+        "m_n_err_ppb": "-128656.83",
+        "shift_from_production_ppb": "-129158.27"
+      },
+      {
+        "element": "delta_S_short_normal_form",
+        "E0_form": "tower",
+        "pin": "proton",
+        "Q_beta_MeV": "0.449109399232412464983750733501958822774142378644297147093589",
+        "m_n_MeV": "939.232197777246612464983750733501958822774142378644297147094",
+        "m_n_err_ppb": "-354657.75",
+        "shift_from_production_ppb": "-355159.19"
+      },
+      {
+        "element": "delta_S_short_normal_form",
+        "E0_form": "order_zero",
+        "pin": "proton",
+        "Q_beta_MeV": "0.444700408521780409100962266770633264055679436172256985839548",
+        "m_n_MeV": "939.227788786535980409100962266770633264055679436172256985840",
+        "m_n_err_ppb": "-359350.34",
+        "shift_from_production_ppb": "-359851.77"
+      }
+    ],
+    "delta_S_pin_effect": {
+      "Q_beta_tower_muon_MeV": "0.449109394088436037696665368376850316603459074314223680197088",
+      "Q_beta_tower_proton_MeV": "0.449109399232412464983750679223405660884816350858913785163556",
+      "relative_shift": "-1.1453727e-8"
+    },
+    "production_q0_straddle": {
+      "Q_beta_production_formula_muon_pin_MeV": "0.782804689809386912300992411191086597489032661350230106937576",
+      "Q_beta_production_formula_proton_pin_MeV": "0.782804713582601608047366699594231456515048200356399171090669",
+      "matches_derived_masses_at_muon": "0.0",
+      "Q_beta_relative_shift": "3.0369280e-8",
+      "m_n_shift_ppb": "0.025302352"
+    },
+    "open": {
+      "element_choice": "qou-99qc (SDP reading 3 rejects nuc11_interleaved)",
+      "ladder_on_admissible_base": "qou-cds1 (none exists)",
+      "E0_tower_series": "qou-y3bm (canonical by ruling, not derived)"
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "qbeta-option-e-required-level.witness.json",
+        "sha256": "94c9a9eed3217b1e82844a6d6df2a9917c3acc2d15d84fb103366022b47fb2d7",
+        "size_bytes": 11671,
+        "commitSha": "b4dbaacd9e13d76f0c6d3adead7db0b1d3625fcd",
+        "scriptCommitSha": "unknown",
+        "computedAt": "2026-09-08T08:56:34.850151+00:00"
+      }
+    ]
+  },
+  "caveats": [
+    "Rows are not ranked by residual. Choosing an element by its m_n error would be selection against the target."
+  ]
+}
