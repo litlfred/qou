@@ -1,7 +1,7 @@
 ---
 # qou-s16e
 title: 'T5: no-free-parameter certificate for the mass chain'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -11,6 +11,7 @@ tags:
 created_at: 2026-08-03T23:27:17Z
 updated_at: 2026-10-10T12:01:25Z
 parent: qou-8lxd
+pr: 8221
 ---
 
 Prove predict(obs) is a closed term with no numeric literal untraceable to a CODATA-tagged calibration or a proved categorical constant. Half-built: canonical_mass facade + hidden-CODATA-literal rollup (bean 46ke).
@@ -111,3 +112,6 @@ certificate simply cannot be the thing that says so.
 
 Re-tagged `8f-open`: this is formalisation research, not the mechanical work
 the reorg's title-based tagging implied.
+
+## Implementation Note (PR #8221)
+- Implemented in `folio/quantum-observable-universe/lean/QOU/Eightfold/TorusZeroVolumeConnectedRankOneBringChiralityMassClosureAndJordanTwentySix.lean` and `computations/probes/torus_zero_volume_connected_rank_one_bring_chirality_mass_closure_and_jordan_twenty_six_probe.py` (witness `computations/probes/torus-zero-volume-connected-rank-one-bring-chirality-mass-closure-and-jordan-twenty-six.witness.json`, `3849d3633186444056f013bfbcda743be84b0a9c`).

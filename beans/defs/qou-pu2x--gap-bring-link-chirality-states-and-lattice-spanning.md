@@ -1,7 +1,7 @@
 ---
 # qou-pu2x
 title: 'GAP: Bring-link chirality — which object are the states, and does Γ₄ span M₂(ℝ) (Borel density)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -9,6 +9,7 @@ tags:
 created_at: 2026-11-15T12:00:00Z
 updated_at: 2026-11-15T08:52:50Z
 parent: qou-wqto
+pr: 8221
 ---
 
 Created from step (b) of issue #7783 / PR #7820. See `QOU/BringConeSplitChirality.lean`.
@@ -67,3 +68,6 @@ Session: https://claude.ai/code/session_01A1NHnUY3QMcdoxDYQmLCXB
 - **Item 1** rests only on Kattan–Singerman's definition of Γ₄ as the kernel of the map onto S₅ (#7829, #7838).
 
 Stays `todo` (rule 13a). Session: https://claude.ai/code/session_01A1NHnUY3QMcdoxDYQmLCXB
+
+## Implementation Note (PR #8221)
+- Implemented in `folio/quantum-observable-universe/lean/QOU/Eightfold/TorusZeroVolumeConnectedRankOneBringChiralityMassClosureAndJordanTwentySix.lean` and `computations/probes/torus_zero_volume_connected_rank_one_bring_chirality_mass_closure_and_jordan_twenty_six_probe.py` (witness `computations/probes/torus-zero-volume-connected-rank-one-bring-chirality-mass-closure-and-jordan-twenty-six.witness.json`, `3849d3633186444056f013bfbcda743be84b0a9c`).

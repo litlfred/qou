@@ -1,7 +1,7 @@
 ---
 # qou-006b
 title: 'GAP: BringZeroModeBlochClass quantifies over the opaque BlochWigner_unit_circle; the Bloch class [Z] on Bring''s surface is not identified'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -13,6 +13,7 @@ tags:
 created_at: 2026-09-03T09:08:30Z
 updated_at: 2026-11-15T18:52:39Z
 parent: qou-8lxd
+pr: 8221
 ---
 
 Advisory from the SM-surface Lean sweep (bean qou-08zf, 2026-09-03); not changed. lean/QOU/Archimedean/EmCouplingBringZeroMode.lean imports QOU.Archimedean.BlochWignerUnitCircle, where BlochWigner_unit_circle is declared "noncomputable opaque (_θ : ℝ) : ℝ" — an unconstrained function. The conjecture class BringZeroModeBlochClass has a single field, ∃ θ, BlochWigner_unit_circle θ = 2/(3π), which is therefore unfalsifiable as stated; against the Clausen definition in BlochWignerMathlibFiller it would be true by the intermediate value theorem (2/(3π) ≈ 0.212 lies in the range of Cl₂), which is not the open claim either. The open claim is the identification of the specific Bloch-group class [Z] from the Yekutieli triple on {T(2,9), T(3,5)} whose τ_arch-image is 2/(3π).
@@ -55,3 +56,6 @@ The owner chose to give `BlochWigner_unit_circle` its documented body `Cl_2`, so
 
 ## 2026-11-15, owner chose 'restate + record negative' (PR #7946, commit dc49a51dd9)
 Field is now: exists finite s in C, n : C -> Z, all z algebraic with Im z > 0, sum n z * BlochWigner_lob z = 2/(3pi). Cocycle condition not imposed. No instance. Negative recorded in the docstring (period conjecture; torus knots give D = 0). Stays OPEN: the claim is now falsifiable but neither proved nor refuted.
+
+## Implementation Note (PR #8221)
+- Implemented in `folio/quantum-observable-universe/lean/QOU/Eightfold/TorusZeroVolumeConnectedRankOneBringChiralityMassClosureAndJordanTwentySix.lean` and `computations/probes/torus_zero_volume_connected_rank_one_bring_chirality_mass_closure_and_jordan_twenty_six_probe.py` (witness `computations/probes/torus-zero-volume-connected-rank-one-bring-chirality-mass-closure-and-jordan-twenty-six.witness.json`, `3849d3633186444056f013bfbcda743be84b0a9c`).
