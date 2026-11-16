@@ -1,7 +1,8 @@
 ---
 # qou-17gn
 title: 'Colour-weight blocker attack: shadow price + Frobenius projection; option 3 KILLED by trace conjugation-invariance; gram-matrix-dual is geometrically ill-posed'
-status: todo
+status: in-progress
+pr: 8185
 type: task
 priority: normal
 tags:
@@ -162,3 +163,8 @@ Provenance: cross-session read-only pre-read
 (`/mnt/project-files/eightfold/8f-colour-preread.md`); both the line-45 finding and
 the `pyhecke.gram.z` convention were re-verified on this branch rather than taken on
 trust.
+
+## Progress Update (Round 55 — PR #8185)
+- [x] Formalized non-vacuous Lean 4 theorems (`0` `sorry`, `0` vacuity advisories across all 6 static audits) in `folio/quantum-observable-universe/lean/QOU/Eightfold/ColourConjugationGMODeviationAndAsymmetry.lean` and wired into `QOU.lean`.
+- [x] Added 50-dps `mpmath` probe `computations/probes/colour_conjugation_gmo_deviation_and_asymmetry_probe.py` and 2-commit stamped witness `computations/probes/colour-conjugation-gmo-deviation-and-asymmetry.witness.json` (`scriptCommitSha: dc490df3193b70802e4608a98cc9402380f4dbcd`, `HEAD: ea791bb906663eb37105b3486abd6e07818699ed`).
+- [x] Opened `litlfred/qou#8185` (status kept at `in-progress` per no-unilateral-closure policy).

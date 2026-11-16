@@ -1,7 +1,8 @@
 ---
 # qou-8pl2
 title: 'PLAUSIBLE-NOT-PROVED: Gell-Mann–Okubo from the crossing-energy splitting'
-status: todo
+status: in-progress
+pr: 8185
 type: task
 priority: normal
 tags:
@@ -89,3 +90,8 @@ Both routes are gated on `N = 3` (item 1 of the chapter's open problems) and on
 hypercharge `Y` (item 2), since inter-multiplet splittings depend on `Y`. Within
 an isospin multiplet the splitting is electromagnetic and comes from the writhe
 difference, which IS derived — that sub-case is the honest place to start.
+
+## Progress Update (Round 55 — PR #8185)
+- [x] Formalized non-vacuous Lean 4 theorems (`0` `sorry`, `0` vacuity advisories across all 6 static audits) in `folio/quantum-observable-universe/lean/QOU/Eightfold/ColourConjugationGMODeviationAndAsymmetry.lean` and wired into `QOU.lean`.
+- [x] Added 50-dps `mpmath` probe `computations/probes/colour_conjugation_gmo_deviation_and_asymmetry_probe.py` and 2-commit stamped witness `computations/probes/colour-conjugation-gmo-deviation-and-asymmetry.witness.json` (`scriptCommitSha: dc490df3193b70802e4608a98cc9402380f4dbcd`, `HEAD: ea791bb906663eb37105b3486abd6e07818699ed`).
+- [x] Opened `litlfred/qou#8185` (status kept at `in-progress` per no-unilateral-closure policy).

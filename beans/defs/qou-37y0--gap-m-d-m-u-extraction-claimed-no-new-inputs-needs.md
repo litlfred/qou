@@ -1,7 +1,8 @@
 ---
 # qou-37y0
 title: 'GAP: m_d - m_u extraction claimed ''no new inputs'' — needs the underived EM coupling k, and does not cite the existing substrate split'
-status: todo
+status: in-progress
+pr: 8185
 type: task
 priority: normal
 tags:
@@ -93,3 +94,8 @@ and its L2 gap is **Q_β-driven**, not EM — see
 [`2026-07-11-trio-shared-root-qbeta-bottleneck.md`](../docs/audits/2026-07-11-trio-shared-root-qbeta-bottleneck.md).
 This bean is about the honesty of a programme statement, not about closing a
 precision target.
+
+## Progress Update (Round 55 — PR #8185)
+- [x] Formalized non-vacuous Lean 4 theorems (`0` `sorry`, `0` vacuity advisories across all 6 static audits) in `folio/quantum-observable-universe/lean/QOU/Eightfold/ColourConjugationGMODeviationAndAsymmetry.lean` and wired into `QOU.lean`.
+- [x] Added 50-dps `mpmath` probe `computations/probes/colour_conjugation_gmo_deviation_and_asymmetry_probe.py` and 2-commit stamped witness `computations/probes/colour-conjugation-gmo-deviation-and-asymmetry.witness.json` (`scriptCommitSha: dc490df3193b70802e4608a98cc9402380f4dbcd`, `HEAD: ea791bb906663eb37105b3486abd6e07818699ed`).
+- [x] Opened `litlfred/qou#8185` (status kept at `in-progress` per no-unilateral-closure policy).

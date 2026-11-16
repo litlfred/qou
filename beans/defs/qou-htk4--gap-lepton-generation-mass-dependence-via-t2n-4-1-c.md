@@ -1,7 +1,8 @@
 ---
 # qou-htk4
 title: 'GAP: lepton generation mass dependence via the T(2,n)-4_1 coupling. The multiplicative net(T(2,n)) bridge is EXCLUDED (docs/audits/2026-08-07-lepton-net-to-mass-bridge-exclusion.md, Lean morganVoyceBK_binet + mass_ratio_rigidity): net is log-linear in the winding, the observed tower is log-concave. Torus knots have Vol=0, and the corpus muon mass already comes from Vol(4_1) (the hyperbolic Higgs knot), so generation dependence should be sought in a linking/satellite quantity coupling T(2,n) to 4_1 -- something NOT multiplicative in a normal-form amplitude. Successor to qou-lsp9.'
-status: todo
+status: in-progress
+pr: 8185
 type: task
 priority: normal
 tags:
@@ -107,3 +108,8 @@ Open question this line has NOT touched: whether a node is physically
 available -- i.e. whether the electron can sit near a genuine zero of the
 underlying quantity. That is a strong, testable structural claim, not a
 fitting knob, and it is the natural next target.
+
+## Progress Update (Round 55 — PR #8185)
+- [x] Formalized non-vacuous Lean 4 theorems (`0` `sorry`, `0` vacuity advisories across all 6 static audits) in `folio/quantum-observable-universe/lean/QOU/Eightfold/ColourConjugationGMODeviationAndAsymmetry.lean` and wired into `QOU.lean`.
+- [x] Added 50-dps `mpmath` probe `computations/probes/colour_conjugation_gmo_deviation_and_asymmetry_probe.py` and 2-commit stamped witness `computations/probes/colour-conjugation-gmo-deviation-and-asymmetry.witness.json` (`scriptCommitSha: dc490df3193b70802e4608a98cc9402380f4dbcd`, `HEAD: ea791bb906663eb37105b3486abd6e07818699ed`).
+- [x] Opened `litlfred/qou#8185` (status kept at `in-progress` per no-unilateral-closure policy).
