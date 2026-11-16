@@ -1,13 +1,13 @@
 ---
 # qou-qpj5
 title: mpf_import_time_dps_audit never scans tools/pyhecke, where _PROTON_G0 is frozen — and test_nucleon_gen_chains_q_param fails on main because of it
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-14T06:42:55Z
-updated_at: 2026-10-04T15:21:39Z
+updated_at: 2026-11-16T19:56:39Z
 parent: qou-9nnz
 ---
 
@@ -65,3 +65,9 @@ Incidentally, while running this test to confirm my `atom.py` change for
 `qou-t29k` had not broken anything. It had not — the failure reproduces on a
 clean tree. Worth saying plainly: the only reason this surfaced is that I ran
 an adjacent test I did not have to run.
+
+## Progress Update (Round 50 — PR #8178)
+
+- Raised the import-time `workdps` floor in `tools/pyhecke/python/pyhecke/atom.py::nucleon_gen_chains` from `60` to `70` (`COMPUTE_DPS`), so `_PROTON_G0` / `_PROTON_G1` / `_NEUTRON_G0` / `_NEUTRON_G1` match `nucleon_gen_chains` called after `set_compute_dps()` (fixing `computations/test_nucleon_gen_chains_q_param.py` on `main`).
+- Added `--include-tools` to `computations/mpf_import_time_dps_audit.py` to scan `tools/pyhecke` alongside `computations/`.
+- PR: https://github.com/litlfred/qou/pull/8178 (`6465362ef2e7902778c4f8796f81286e3aeb81bc`)

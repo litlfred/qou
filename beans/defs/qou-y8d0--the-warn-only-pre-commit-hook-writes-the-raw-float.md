@@ -1,13 +1,13 @@
 ---
 # qou-y8d0
 title: The warn-only pre-commit hook WRITES the raw-float64 ratchet witness on every computations commit
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T09:19:43Z
-updated_at: 2026-10-04T15:25:01Z
+updated_at: 2026-11-16T19:56:39Z
 parent: qou-9nnz
 ---
 
@@ -55,3 +55,8 @@ warn-only hook has no business mutating the tree at all.
 
 **Stage by path, not `git add -A`, on any branch that touches `computations/`.**
 `git add -A` cannot tell a deliberate edit from one a hook made underneath it.
+
+## Progress Update (Round 50 — PR #8178)
+
+- Added `--no-write` flag to `computations/witness_raw_float64_audit.py` and passed `--no-write` from `scripts/precommit-precision-warn.sh` so the warn-only `PreToolUse` hook runs the ratchet in read-only mode without rewriting `computations/witness-raw-float64-audit.witness.json`.
+- PR: https://github.com/litlfred/qou/pull/8178 (`6465362ef2e7902778c4f8796f81286e3aeb81bc`)

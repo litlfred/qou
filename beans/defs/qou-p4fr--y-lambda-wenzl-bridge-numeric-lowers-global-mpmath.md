@@ -1,13 +1,13 @@
 ---
 # qou-p4fr
 title: y_lambda_wenzl_bridge_numeric lowers global mpmath precision and never restores it
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-13T09:21:45Z
-updated_at: 2026-10-04T15:25:41Z
+updated_at: 2026-11-16T19:56:39Z
 parent: qou-9nnz
 ---
 
@@ -65,3 +65,8 @@ digits may move, and they should be *checked*, not assumed unchanged.
 Warned in the entry point's docstring (2026-09-13) with the incident and the
 `dps=mp.mp.dps` guidance, since that is where the next person looks. The
 warning is not the fix.
+
+## Progress Update (Round 50 — PR #8178)
+
+- Wrapped `_wenzl_norm_numeric_cached`, `_y_lambda_wenzl_bridge_numeric_impl`, `chi_lambda_mpmath`, `markov_m3_sum_numeric`, `markov_trace_lhs_numeric`, and `markov_trace_target_numeric` in `computations/y_lambda_wenzl_bridge.py` with `with mp.workdps(dps):` so calling them at a lower `dps` restores the caller's ambient working precision on exit; added `--self-test`.
+- PR: https://github.com/litlfred/qou/pull/8178 (`6465362ef2e7902778c4f8796f81286e3aeb81bc`)
