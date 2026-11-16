@@ -1,7 +1,7 @@
 {
   "schema": "witness/v1",
   "name": "witness-raw-float64-audit",
-  "description": "Witnesses carrying raw float64 JSON numbers. Enforces the stated NO-FLOAT64 rule, which the padding audit does not: that gate catches only FAKE precision (float64 padded past ~17 digits), so honest float64 passes it. Ratchet only \u2014 draining is PR #4677.",
+  "description": "Witnesses carrying raw float64 JSON numbers. Enforces the stated NO-FLOAT64 rule, which the padding audit does not: that gate catches only FAKE precision (float64 padded past ~17 digits), so honest float64 passes it. Ratchet only — draining is PR #4677.",
   "data": {
     "dirty_witnesses": 4,
     "total_fields": 409,
@@ -38,7 +38,7 @@
     "drained_files": 5
   },
   "scriptFile": "witness_raw_float64_audit.py",
-  "scriptHash": "9eb501eed27a",
+  "scriptHash": "eac6299ee91d",
   "scriptCommitSha": "d1bc358ade1369639d19fd60f10e64ad7e7886d3",
   "commitSha": "606a711778e4229098a387dc4024a0b10de8b7f1",
   "engine": "python",

@@ -1,24 +1,24 @@
 {
-  "engine": "sympy",
-  "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-29T07:56:02.091621+00:00",
-  "commitSha": "0a619f4d07bc88eba4aac22f699257c13d84d54c",
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-16T19:53:56.476935+00:00",
+  "commitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
   "assertions": [
     {
       "name": "symbolic_f_bond_matches_numeric_at_q0",
-      "computed": 0.0,
-      "expected": 0.0,
+      "computed": "9.05567907882671236750911929088779178068253119813913818958261e-72",
+      "expected": "0",
       "passed": true,
-      "tolerance": "1e-12",
-      "source": "symbolic f_pp(q₀) == z_D(q₀) = q₀³/(q₀²+1) evaluated independently; the fibre expression realizes correctly at the archimedean anchor. Both sides float64, as is this whole archimedean block (bean `qou-uc1n`)."
+      "tolerance": "1e-55",
+      "source": "symbolic f_pp(q₀) == z_D(q₀) = q₀³/(q₀²+1) evaluated independently at compute_dps=70 (bean `qou-uc1n`)."
     }
   ],
   "allPassed": true,
-  "durationMs": 349,
+  "durationMs": 169,
   "computation": "prearchimedean-bond-factor",
   "scriptFile": "prearchimedean_bond_factor.py",
-  "scriptHash": "ad50d6e014bf",
-  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+  "scriptHash": "120254ce5c75",
+  "scriptCommitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,14 +26,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
   },
   "invocation": {
     "argv": [
@@ -51,16 +51,16 @@
       "f_pn_delta0": "(q**4 + 1)/(2*q*(q**2 + 1))"
     },
     "archimedean_eval": {
-      "q0": 1.1099785827513808,
-      "E_0_MeV": 4.186,
-      "f_pp_at_q0": 0.6126880371464652,
-      "f_nn_at_q0": 0.40362773835082594,
-      "f_pn_at_q0": 0.5082297893767389
+      "q0": "1.10997858275138080759166909561076887987449912187360000000000",
+      "E_0_MeV": "4.18598136329447589694506215875900841014348689087871544862230",
+      "f_pp_at_q0": "0.612688037146465251595829863945899248026308391545087014074774",
+      "f_nn_at_q0": "0.403627738350825936164983650816224304166550896282023935819559",
+      "f_pn_at_q0": "0.508229789376738962577995797655893603898308390916567021541465"
     },
     "per_bond_energy_MeV": {
-      "pp": 2.0507,
-      "nn": 3.7978,
-      "pn": 2.8332
+      "pp": "2.05070969238143368563095783488465331689032300627252183881746",
+      "nn": "3.79778293514235332912382598485379642424684183886446052154535",
+      "pn": "2.83316257200452377033781580149201952418686016072745970981793"
     },
     "z_closed_form": "q**3/(q**2 + 1)",
     "peaceful_brown_link": "tr_M = Σ_λ y_λ χ_λ is the Z_q heat trace; f_bond is the depth-1 bridge multiplier on the Wedderburn eigenbasis; binding is the q-heat free energy. See claude/peaceful-brown-hrt19q §3-bis + QBetaPreArchHeatDepthOneKernel.lean."
