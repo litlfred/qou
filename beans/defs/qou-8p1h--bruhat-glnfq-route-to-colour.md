@@ -1,7 +1,7 @@
 ---
 # qou-8p1h
 title: 'qou-8p1x/h: Bruhat / GL_n(F_q) realisation of H_n(q) as a native route to PSL(2,7)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -107,3 +107,6 @@ Provenance: cross-session read-only pre-read of the 15 open `8f-colour` beans
 (`/mnt/project-files/eightfold/8f-colour-preread.md`), confirmed on this branch at
 `37bdbeef6b3` rather than taken on trust — the pre-read states its own path checks
 were run partly against `main` at a different commit.
+
+## Progress Note (2026-11-16)
+- Formalized Bruhat / GL_3(F_2) = PSL(2,7) order 168 = 7*6*4, 7 Fano points + 7 lines = 14, and Bruhat length polynomial sum_{w in S_3} 2^{l(w)} = 21 complete flags in `QOU/Eightfold/BringThetaBruhatAndMesonH3.lean` (`bruhat_gl3_f2_psl27_and_fano_flag_certificate`) + 50-dps probe `bring_theta_bruhat_and_meson_h3_probe.py` (PR `litlfred/qou#8163`, head `bc5c91877bf9516be8cbcc8cd12c1a6501a5e983`).

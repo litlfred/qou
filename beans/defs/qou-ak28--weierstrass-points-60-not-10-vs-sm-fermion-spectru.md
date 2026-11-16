@@ -1,7 +1,7 @@
 ---
 # qou-ak28
 title: Weierstrass points (60, not 10) vs SM fermion spectrum — explore S₅-orbit decomposition
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -32,3 +32,6 @@ Sources: Braden-DH §theta characteristics; standard AG (g³-g formula).
 ANTI-FITTING: Don't force-fit 60 to any SM count. If it doesn't
 match naturally, document the non-match. The Weierstrass points are
 a mathematical invariant, not necessarily a particle dictionary.
+
+## Progress Note (2026-11-16)
+- Formalized Bring curve 60 Weierstrass points S_5-orbit decomposition (24 + 36 = 60 = g^3 - g) and Weierstrass gap weights ([1,2,3,6] weight 2 on 24-orbit, [1,2,3,5] weight 1 on 36-orbit, quadric-cubic weight 24*2 + 36*1 = 84) in `QOU/Eightfold/BringThetaBruhatAndMesonH3.lean` (`bring_weierstrass_60_orbit_and_weight_certificate`) + 50-dps probe `bring_theta_bruhat_and_meson_h3_probe.py` (PR `litlfred/qou#8163`, head `bc5c91877bf9516be8cbcc8cd12c1a6501a5e983`).

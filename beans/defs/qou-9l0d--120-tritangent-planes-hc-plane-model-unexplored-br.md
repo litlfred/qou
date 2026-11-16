@@ -1,7 +1,7 @@
 ---
 # qou-9l0d
 title: 120 tritangent planes + HC plane model — unexplored Bring structures from Braden-DH 2024
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -49,3 +49,6 @@ TWO unexplored structures from the Braden-DH paper:
    Bring's Jacobian J(B) ∼ (50a)⁴. The level-50 modular curve
    appears. 50 = 2 × 5². Does this connect to any QOU modular data?
    Needs exploration.
+
+## Progress Note (2026-11-16)
+- Formalized Bring curve genus g=4 theta characteristics (256 = 136 even + 120 odd) and 120 tritangent planes S_5-orbit decomposition (36 even + 60 odd + 24 C_3 bitangents) in `QOU/Eightfold/BringThetaBruhatAndMesonH3.lean` (`bring_tritangent_120_and_theta_256_certificate`) + 50-dps probe `bring_theta_bruhat_and_meson_h3_probe.py` (PR `litlfred/qou#8163`, head `bc5c91877bf9516be8cbcc8cd12c1a6501a5e983`).
