@@ -1,0 +1,114 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-16T17:46:14.743022+00:00",
+  "commitSha": "606686f9441e8903014dd8cb0778996d2a5c7358",
+  "assertions": [
+    {
+      "name": "A1_full_tower_h3_t29_chiral_vs_balanced_singlet_cp_even_50dps",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "T(2,9) tower bar-diff=2.16660008355141824995 != 0; balanced 3x3bar singlet writhe=0, bar-diff=0"
+    },
+    {
+      "name": "A2_young_content_transpose_antisymmetry_and_chiral_moment",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "contents={'(3)': 3, '(2,1)': 0, '(1,1,1)': -3}, moment=3*w*(-y111 + y3)"
+    },
+    {
+      "name": "B1_h3_wedderburn_and_derived_commutant_dim_obstruction",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "dim H_3=6, max d_lambda=2<3, dim End(V_21)=4<8, dim [End,End]=3<8"
+    },
+    {
+      "name": "B2_reality_cubic_anomaly_and_schur_weyl_27_singlet_decomposition",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "C3(3)=-sqrt(3)/6=-C3(3bar)!=0 vs C3(V_21)=0; (C^3)^3=10*1+8*2+1*1=27"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "three_strand_colour_tower_cp_probe",
+  "scriptFile": "three_strand_colour_tower_cp_probe.py",
+  "scriptHash": "1ce4ba24a161",
+  "scriptCommitSha": "5e0a74074e0cb8c65952433e800986e03cb4d278",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/three_strand_colour_tower_cp_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/three_strand_colour_tower_cp_probe.py"
+  },
+  "description": "50-dps and symbolic verification for beans tqcp, qou-ni4b, and qou-5iaz: (1) upgrades the strong-CP framing route from ORDER-ZERO-ONLY to the full-tower 3-strand Wedderburn Markov trace over partitions (3), (2,1), (1,1,1) at proton q_0, showing that a single T(2,9) gluon knot (writhe 9) has non-zero bar-odd tower asymmetry whereas a balanced 3x3bar singlet flux-tube pair (writhes (3,3,3) and (-3,-3,-3)) has zero net writhe and vanishing bar-odd tower asymmetry; (2) verifies the dimension, derived commutant Lie algebra (dim=3 < 8), and cubic-anomaly reality obstructions preventing V_(2,1) or regular H_3(q) from hosting faithful fundamental su(3), requiring the complexified octonion/tensor module (C^3)^3 (dim=27).",
+  "data": {
+    "tower_50dps": {
+      "q0_50dps": "1.1099785827513808075916690956107688798744991218736",
+      "y3_50dps": "0.37837069134233039396726850621483345409819022150902",
+      "y21_50dps": "0.29308248728684642273556769702332518216077214555755",
+      "y111_50dps": "0.035464334083976760561596099738516181580265487375879",
+      "weight_sum_resid": "8.150111170944041130758207361799012602614278078325224370624353400941951e-71",
+      "theta_t29_q0_50dps": "1.5888443828373940150588413222563501518466440893365",
+      "theta_t29_q0inv_50dps": "-0.57775570071402423489440247316582776568926020487343",
+      "t29_bar_diff_50dps": "2.1666000835514182499532437954221779175359042942099",
+      "t29_framing_diff_50dps": "0.97395349495536937327113822806214248890554199696898",
+      "t29_q18_minus_1_50dps": "5.5412806592185017853130886744495009192757073776829",
+      "singlet_total_writhe": "0",
+      "singlet_framing_phase": "1.0",
+      "singlet_bar_diff": "0.0",
+      "net_tower_bar_diff": "-1.177238280247472607776185507815412931488729055758087964645739935691615e-70"
+    },
+    "symbolic_contents": {
+      "c_sums": "{'(3)': 3, '(2,1)': 0, '(1,1,1)': -3}",
+      "sum_c_zero": "True",
+      "transpose_antisymm": "True",
+      "moment_factored": "3*w*(-y111 + y3)",
+      "moment_matches": "True"
+    },
+    "ni4b_obstructions": {
+      "h3_dim": "6",
+      "h3_max_irrep_dim": "2",
+      "specht21_end_dim": "4",
+      "h3_derived_lie_dim": "3",
+      "su3_dim": "8",
+      "su3_fund_dim": "3",
+      "c3_fund": "-sqrt(3)/6",
+      "c3_antifund": "sqrt(3)/6",
+      "c3_fund_nonzero_and_opposite": "True",
+      "c3_specht21_zero": "True",
+      "tensor_cube_dim": "27",
+      "singlet_multiplicity": "1"
+    }
+  },
+  "caveats": [
+    "Discharges the CP-even framing condition conditionally on balanced 3x3bar singlet tube configurations (sum(w_a + wbar_a) = 0); does not supply an unconditional ColorSectorCPEven instance by fiat and does not derive the |theta_QCD| < 1e-10 continuous smallness residual."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "q0 enters the 50-dps full-tower H_3(q_0) evaluation in A1 via q_parameter.q_at (proton pin default); A2, B1, and B2 are symbolic and q0-free."
+}
