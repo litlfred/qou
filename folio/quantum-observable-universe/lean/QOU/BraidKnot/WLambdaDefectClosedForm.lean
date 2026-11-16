@@ -273,4 +273,75 @@ same caveat applies to `secondMomentKernel_eq_zero`, which is a first-moment
 identity despite its name.
 Ref: [leitner2026] docs/audits/2026-07-07-keystone-identity-I-hlf-free-resolution.md -/
 
+/-! ## Normalizer cancellation vs distortion across partition-sum ratios (`bean qou-uk8o`)
+
+When a partition-weighted sum `S(n) = Σ_{λ⊢n} w(λ) · f(λ)` omits the global
+`n`-dependent normalizer `c_n ≠ 0` (such as `1 / n!` or `1 / [n]_q!`), the effect
+depends on how `S(n)` is consumed across the 23 audited producers (`bean qou-uk8o`):
+
+1. **Same-`n` normalized ratio (`same_level_normalizer_cancels`)**: In any ratio
+   `(c_n * S_num) / (c_n * S_den)` of two weighted sums at the same `n` (such as
+   stratum shares or normalized expectation values), `c_n` cancels identically.
+2. **Cross-`n` ratio (`cross_level_normalizer_scales_ratio`)**: In a ratio across
+   distinct strand counts `n₁ ≠ n₂`, `(c₁ * S₁) / (c₂ * S₂) = (c₁ / c₂) * (S₁ / S₂)`,
+   which differs from the unnormalized ratio `S₁ / S₂` whenever `c₁ ≠ c₂` and
+   `S₁, S₂ ≠ 0`.
+3. **Unnormalized sum against an external target (`unnormalized_sum_ne_of_scale_ne_one`)**:
+   Comparing `c_n * S` directly against an unscaled target `S ≠ 0` changes the
+   value whenever `c_n ≠ 1`. -/
+
+/-- Full `n = 1..8` consistency between the closed-form polynomial `twoM n` and
+the partition-enumerated hook sum `numerComputed n`:
+`twoM n · n! = 2 · numerComputed n` for every `n ∈ {1, …, 8}`. -/
+theorem twoM_eq_numer_all_eight :
+    twoM 1 * (Nat.factorial 1 : ℤ) = 2 * (numerComputed 1 : ℤ) ∧
+    twoM 2 * (Nat.factorial 2 : ℤ) = 2 * (numerComputed 2 : ℤ) ∧
+    twoM 3 * (Nat.factorial 3 : ℤ) = 2 * (numerComputed 3 : ℤ) ∧
+    twoM 4 * (Nat.factorial 4 : ℤ) = 2 * (numerComputed 4 : ℤ) ∧
+    twoM 5 * (Nat.factorial 5 : ℤ) = 2 * (numerComputed 5 : ℤ) ∧
+    twoM 6 * (Nat.factorial 6 : ℤ) = 2 * (numerComputed 6 : ℤ) ∧
+    twoM 7 * (Nat.factorial 7 : ℤ) = 2 * (numerComputed 7 : ℤ) ∧
+    twoM 8 * (Nat.factorial 8 : ℤ) = 2 * (numerComputed 8 : ℤ) := by
+  refine ⟨?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_⟩ <;> decide
+
+/-- **Category 1 (same-`n` ratio invariance, `bean qou-uk8o`).**
+A nonzero global normalizer `c_n ≠ 0` cancels identically in any ratio of two
+partition sums at the same `n`. -/
+theorem same_level_normalizer_cancels {c_n S_num S_den : ℚ} (hc : c_n ≠ 0) :
+    (c_n * S_num) / (c_n * S_den) = S_num / S_den := by
+  exact mul_div_mul_left S_num S_den hc
+
+/-- **Category 2 (cross-`n` ratio distortion, `bean qou-uk8o`).**
+Across two strand counts with distinct nonzero normalizers `c₁ ≠ c₂`, the
+normalized ratio `(c₁ * S₁) / (c₂ * S₂)` factors as `(c₁ / c₂) * (S₁ / S₂)` and
+strictly differs from the unnormalized ratio `S₁ / S₂` whenever `S₁, S₂ ≠ 0`. -/
+theorem cross_level_normalizer_scales_ratio {c₁ c₂ S₁ S₂ : ℚ}
+    (hc₂ : c₂ ≠ 0) (hS₁ : S₁ ≠ 0) (hS₂ : S₂ ≠ 0) (hne : c₁ ≠ c₂) :
+    (c₁ * S₁) / (c₂ * S₂) = (c₁ / c₂) * (S₁ / S₂) ∧
+      (c₁ * S₁) / (c₂ * S₂) ≠ S₁ / S₂ := by
+  refine ⟨by ring, ?_⟩
+  intro h_eq
+  have h_diff : ((c₁ * S₁) / (c₂ * S₂) - S₁ / S₂) * (c₂ * S₂) = (c₁ - c₂) * S₁ := by
+    field_simp [hc₂, hS₂]
+    ring
+  rw [h_eq, sub_self, zero_mul] at h_diff
+  have hc_sub : c₁ - c₂ = 0 := by
+    rcases mul_eq_zero.mp h_diff.symm with h0 | h0
+    · exact h0
+    · exact False.elim (hS₁ h0)
+  exact hne (sub_eq_zero.mp hc_sub)
+
+/-- **Category 3 (unnormalized sum distortion, `bean qou-uk8o`).**
+When a nonzero sum `S ≠ 0` is multiplied by a normalizer `c_n ≠ 1`, the scaled
+sum `c_n * S` strictly differs from the unnormalized sum `S`. -/
+theorem unnormalized_sum_ne_of_scale_ne_one {c_n S : ℚ}
+    (hc : c_n ≠ 1) (hS : S ≠ 0) :
+    c_n * S ≠ S := by
+  intro h_eq
+  have h_sub : (c_n - 1) * S = 0 := by
+    linear_combination h_eq
+  rcases mul_eq_zero.mp h_sub with h0 | h0
+  · exact hc (sub_eq_zero.mp h0)
+  · exact hS h0
+
 end QOU.BraidKnot.WLambdaDefect

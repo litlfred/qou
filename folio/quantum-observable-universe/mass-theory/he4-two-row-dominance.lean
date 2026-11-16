@@ -189,4 +189,48 @@ theorem dominant_eq_nine_three_in_stratum
   rw [← h.dominant_eq]
   exact dominant_in_two_row_stratum
 
+/-! ## Signed versus magnitude block share and one-row stratum membership (`bean qou-85wn`)
+
+After the canonical intra-nucleon ordering regeneration (`bean qou-85wn`), two
+blocks in the two-row stratum `Λ²(12)` carry negative character contributions
+(`(11, 1)` and `(8, 4)`), while the one-row partition `[12]` is invariant under
+any permutation of generator letters because its 1D character is a commutative
+product of per-letter scalars. Consequently:
+1. The signed two-row stratum share remains identically `1` (`ratio = 1`),
+   whereas individual block magnitude ratios `|c_λ| / |∑ c_μ|` can exceed
+   their signed counterparts whenever negative-weight blocks partially cancel
+   positive-weight blocks in the denominator.
+2. The overall largest block `[12]` has row-list length `1`, strictly smaller
+   than the two-row non-trivial fingerprint `[9, 3]` of length `2`. -/
+
+/-- Concrete consequence for the overall largest block: `[12]` belongs to
+    `TwoRowStratum 12` via `largest_in_two_row_stratum`. -/
+theorem largest_eq_twelve_in_stratum
+    [h : HasHe4DominantBlock] :
+    TwoRowStratum 12 [12] := by
+  rw [← h.largest_eq]
+  exact largest_in_two_row_stratum
+
+/-- The leading non-trivial block `[9, 3]` has exactly two rows, whereas the
+    overall largest block `[12]` has one row, so their row counts are distinct. -/
+theorem dominant_length_ne_largest_length
+    [h : HasHe4DominantBlock] :
+    h.dominant_partition.length ≠ h.largest_partition.length := by
+  rw [h.dominant_eq, h.largest_eq]
+  decide
+
+/-- When a stratum splits into a positive contribution `c_pos > 0` and a
+    negative contribution `c_neg < 0` (such as `(11, 1)` and `(8, 4)` in ⁴He),
+    the net signed sum `c_pos + c_neg` is strictly smaller than the positive
+    part `c_pos` alone, and strictly smaller than the magnitude sum
+    `c_pos - c_neg`. -/
+theorem signed_sum_lt_magnitude_sum_of_neg_part
+    {c_pos c_neg : ℚ} (hpos : 0 < c_pos) (hneg : c_neg < 0) :
+    c_pos + c_neg < c_pos ∧ c_pos < c_pos - c_neg ∧
+      (c_pos - c_neg) - (c_pos + c_neg) = -2 * c_neg := by
+  refine ⟨?_, ?_, ?_⟩
+  · linarith [hpos, hneg]
+  · linarith [hpos, hneg]
+  · ring
+
 end QOU.BraidKnot.He4TwoRowDominance

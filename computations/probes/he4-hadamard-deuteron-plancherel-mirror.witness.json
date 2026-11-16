@@ -1,0 +1,53 @@
+{
+  "probe": "computations/probes/he4_hadamard_deuteron_plancherel_mirror_probe.py",
+  "beans": [
+    "qou-85wn",
+    "qou-blla",
+    "qou-e5jf",
+    "qou-uk8o",
+    "qou-vudb"
+  ],
+  "precision_dps": 80,
+  "gitCommit": "0000000000000000000000000000000000000000",
+  "scriptHash": "0fec07ebc607",
+  "generatedAt": "2026-11-16T21:08:05.156777+00:00",
+  "results": {
+    "qou_85wn_he4_signed_vs_magnitude": {
+      "signed_sum": "1.0",
+      "magnitude_sum": "1.996",
+      "mag_minus_signed_eq_neg_two_c_neg": "0.996",
+      "dominant_length": 2,
+      "largest_length": 1
+    },
+    "qou_blla_pointwise_mul_closure": {
+      "factor_eigenvalues": [
+        3,
+        5
+      ],
+      "product_eigenvalue": 15,
+      "max_recurrence_residual": "0.0",
+      "trefoil_fig8_product_order_bound": 6
+    },
+    "qou_e5jf_deuteron_closure_invariance": {
+      "strands": 6,
+      "word_length": 23,
+      "resolutions_checked": 32,
+      "all_resolutions_components": 3,
+      "excludes_1_component_knots_and_2_component_links": true
+    },
+    "qou_uk8o_normalizer_triage": {
+      "identity_i_verified_n_1_to_8": true,
+      "same_n_ratio_cancellation_residual": "0.0",
+      "cross_n_6_vs_12_factorial_ratio": 665280
+    },
+    "qou_vudb_mirror_pair_asymmetry": {
+      "h_val": "-0.0145948346603103818170101880529",
+      "a3_mirror_pair_diff_he3_minus_h3": "-0.0145948346603103818170101880529",
+      "mirror_diff_minus_h_residual": "0.0",
+      "a3_crossing_sum_he3": 28,
+      "a3_crossing_sum_h3": 28,
+      "a3_generator_diff_he3": 4,
+      "a3_generator_diff_h3": -4
+    }
+  }
+}

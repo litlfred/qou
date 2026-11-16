@@ -242,4 +242,59 @@ theorem level3_no_fixed_point_level4_has_one :
     (∀ b : Block, ¬ shellDuality.SelfDual b) ∧ (∃ b : Block4, shellDuality4.SelfDual b) :=
   ⟨no_selfDual, ⟨.p22, p22_selfDual⟩⟩
 
+/-! ## 6. Mirror-pair difference inherits the like-pair defect (`bean qou-vudb`)
+
+Because the `n = 2` pair layer has no self-conjugate partition (`no_selfDual`) and
+carries distinct like-pair bond factors `f_pp = z` and `f_nn = z - h`, any
+additive pair sum over a mirror pair `(Z, N) ↔ (N, Z)` with pair counts
+`(n_pp, n_nn, n_pn)` and `(n_nn, n_pp, n_pn)` cancels the mixed `n_pn · f_pn`
+contribution identically while exposing `(n_pp - n_nn) · h`. Concurrently, in the
+canonical atomic braid word, total crossing count `10·(Z + N) - 2` is mirror-even
+whereas the `(Z, N)` generator-count difference `(4·Z - 1) - (4·N - 1) = 4·(Z - N)`
+is mirror-odd. -/
+
+/-- The like-pair bond difference `f_pp - f_nn = z - (z - h)` equals `h`, while
+the like-pair bond sum `f_pp + f_nn = z + (z - h)` equals `2·z - h`. -/
+theorem like_pair_bond_diff_and_sum (h z : R) :
+    z - (z - h) = h ∧ z + (z - h) = 2 * z - h := by
+  constructor
+  · ring
+  · ring
+
+/-- **Mirror-pair additive asymmetry (`bean qou-vudb`).**
+Under mirror reflection `(n_pp, n_nn) ↦ (n_nn, n_pp)` at fixed mixed-pair count
+`n_pn`, the mixed bond contribution `n_pn · f_pn` cancels out of the mirror
+difference, leaving `(n_pp - n_nn) · h`. -/
+theorem mirror_pair_asymmetry_cancels_mixed
+    (n_pp n_nn n_pn z h f_pn : R) :
+    (n_pp * z + n_nn * (z - h) + n_pn * f_pn) -
+      (n_nn * z + n_pp * (z - h) + n_pn * f_pn) = (n_pp - n_nn) * h := by
+  ring
+
+/-- **A = 3 mirror-pair symmetry criterion (`bean qou-vudb`).**
+For the `A = 3` mirror pair (`n_pp = 1, n_nn = 0` vs `n_pp = 0, n_nn = 1`), the
+pair-sum totals agree if and only if the deformation parameter `h` vanishes. -/
+theorem a3_mirror_pair_symmetric_iff_h_eq_zero
+    (n_pn z h f_pn : R) :
+    (1 * z + 0 * (z - h) + n_pn * f_pn) =
+      (0 * z + 1 * (z - h) + n_pn * f_pn) ↔ h = 0 := by
+  constructor
+  · intro h_eq
+    linear_combination h_eq
+  · rintro rfl
+    ring
+
+/-- **Mirror-even total crossing count vs mirror-odd writhe asymmetry (`bean qou-vudb`).**
+Under `(Z, N) ↦ (N, Z)`, the total crossing count `10·(Z + N) - 2` is invariant,
+whereas the intra-nucleon generator difference `(4·Z - 1) - (4·N - 1)` equals
+`4·(Z - N)` and negates under mirror exchange. -/
+theorem crossing_sum_even_and_writhe_diff_odd (Z N : R) :
+    (10 * (Z + N) - 2) = (10 * (N + Z) - 2) ∧
+      ((4 * Z - 1) - (4 * N - 1)) = 4 * (Z - N) ∧
+      ((4 * N - 1) - (4 * Z - 1)) = -(4 * (Z - N)) := by
+  refine ⟨?_, ?_, ?_⟩
+  · ring
+  · ring
+  · ring
+
 end QOU.MassTheory.PairIsospinAssignment
