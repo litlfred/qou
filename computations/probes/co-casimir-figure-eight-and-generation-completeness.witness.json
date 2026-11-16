@@ -1,0 +1,176 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-16T20:07:03.074907+00:00",
+  "commitSha": "0a9a3d4c2110ac1fe5749fd28e2cb610a48c9e50",
+  "assertions": [
+    {
+      "name": "frobenius_co_casimir_trace_closed_forms_n6_n7_n8",
+      "computed": 48,
+      "expected": 48,
+      "passed": true,
+      "source": "CoCasimirFigureEightAndGenerationCompleteness.lean (qou-ibck)"
+    },
+    {
+      "name": "noncommutative_specht_figure_eight_reduction_and_tower_ninety",
+      "computed": 180,
+      "expected": 180,
+      "passed": true,
+      "source": "CoCasimirFigureEightAndGenerationCompleteness.lean (qou-js8z, qou-lyp3)"
+    },
+    {
+      "name": "torus_unknotting_reachability_and_four_generation_filters",
+      "computed": 17,
+      "expected": 17,
+      "passed": true,
+      "source": "CoCasimirFigureEightAndGenerationCompleteness.lean (qou-fk8s, qou-xtcl)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 19,
+  "computation": "co-casimir-figure-eight-and-generation-completeness",
+  "scriptFile": "co_casimir_figure_eight_and_generation_completeness_probe.py",
+  "scriptHash": "eca73db2ba8d",
+  "scriptCommitSha": "0a9a3d4c2110ac1fe5749fd28e2cb610a48c9e50",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/co_casimir_figure_eight_and_generation_completeness_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/co_casimir_figure_eight_and_generation_completeness_probe.py"
+  },
+  "description": "Frobenius co-Casimir trace closed forms for n = 6, 7, 8, non-commutative 2x2 Specht figure-eight normal form, brane-tower L = 90 structural factorizations, 2-strand torus-knot Skein unknotting reachability, and four generation-counting filters (qou-ibck, qou-js8z, qou-lyp3, qou-fk8s, qou-xtcl)",
+  "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
+  "parameters": {
+    "qTest": "111/100",
+    "partitionsCheckedUpToN": 8,
+    "torusGenusWindow": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "data": {
+    "workItems": [
+      "qou-ibck",
+      "qou-js8z",
+      "qou-lyp3",
+      "qou-fk8s",
+      "qou-xtcl"
+    ],
+    "epic": "qou-8lxd",
+    "coCasimirTraceByN": {
+      "2": {
+        "partitionCount": 2,
+        "coCasimirTrace50dps": "2.0",
+        "groupedClosedFormDiff50dps": "0.0",
+        "classicalInverseDimSum": "2/1",
+        "plancherelSum": 2
+      },
+      "3": {
+        "partitionCount": 3,
+        "coCasimirTrace50dps": "2.4972895479593208189597240267013126652031719009005",
+        "groupedClosedFormDiff50dps": "0.0",
+        "classicalInverseDimSum": "5/2",
+        "plancherelSum": 6
+      },
+      "4": {
+        "partitionCount": 5,
+        "coCasimirTrace50dps": "3.1463933760365110962589615973132458248293638825243",
+        "groupedClosedFormDiff50dps": "0.0",
+        "classicalInverseDimSum": "19/6",
+        "plancherelSum": 24
+      },
+      "5": {
+        "partitionCount": 7,
+        "coCasimirTrace50dps": "3.0305122547241051603161653770163522601816267548908",
+        "groupedClosedFormDiff50dps": "0.0",
+        "classicalInverseDimSum": "46/15",
+        "plancherelSum": 120
+      },
+      "6": {
+        "partitionCount": 11,
+        "coCasimirTrace50dps": "3.2021048605732076351618255835102288028579916996292",
+        "groupedClosedFormDiff50dps": "0.0",
+        "classicalInverseDimSum": "473/144",
+        "plancherelSum": 720
+      },
+      "7": {
+        "partitionCount": 15,
+        "coCasimirTrace50dps": "2.8644203887636881240964376757355155959990108144755",
+        "groupedClosedFormDiff50dps": "0.0",
+        "classicalInverseDimSum": "1241/420",
+        "plancherelSum": 5040
+      },
+      "8": {
+        "partitionCount": 22,
+        "coCasimirTrace50dps": "2.7593859070981949155593638591815733666681939350676",
+        "groupedClosedFormDiff50dps": "0.0",
+        "classicalInverseDimSum": "29059/10080",
+        "plancherelSum": 40320
+      }
+    },
+    "figureEightNonCommutativeReduction50dps": {
+      "commutatorFrobeniusNorm50dps": "3.1760738131359777532246043941117038595698697240009",
+      "braidRelationResidual50dps": "0.0",
+      "figureEightNormalFormResidual50dps": "1.6036343312783701487324087250759333702643580953042e-61",
+      "barInvarianceHSquaredResidual50dps": "0.0"
+    },
+    "braneTowerNinetyFactorizations": {
+      "bringFiveCycleRoute": 90,
+      "borromeanSixCrossingRoute": 90
+    },
+    "torusKnotSkeinReachability": {
+      "embeddableGenusLe4KWindow": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "maxGenusInWindow": 4
+    },
+    "fourGenerationCountingFilters": {
+      "filter1SeifertGenusLe4": [
+        3,
+        5,
+        7,
+        9
+      ],
+      "filter2PrimeContinuant": [
+        3,
+        5,
+        7
+      ],
+      "filter3S5Equivariant": [
+        3,
+        5
+      ],
+      "filter4ColourSexticBranchPairs": 3,
+      "upperHalfSexticRootModuli50dps": [
+        "0.37637625998175237445358994972656872108732279063119",
+        "1.0",
+        "2.6569157152698270690096554647814215183467488908217"
+      ]
+    }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Pure representation-theoretic Frobenius co-Casimir hook-product identities evaluated at test point q = 111/100 and q = 1, non-commutative 2x2 Specht Hecke normal form, Coxeter length factorizations, and finite torus-knot / S_5 generation filter counts with no Q_0 dependence."
+}
