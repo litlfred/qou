@@ -125,5 +125,71 @@
       "_comment": "Same shape as the platform's own beans declaration (`scope: repository`, which dependents do not inherit, so qou declares its own) and as qou's fsh-guts entry above. The branch name is the owner's choice over the documented folio convention `cat/qou/beans`; the declaration names it explicitly, so no tool needs to compose it."
     }
   ],
+  "_assets_comment": "Story S4 (bean qou-kb8t): the nine live paper simulator HTML pages in `simulators/` referenced by `simulator({...})` blocks in `folio/quantum-observable-universe/` (restored from `fsh-guts/deprecated/simulators/` in a28d3d37e0). Accounting of the 11 simulator blocks and 11 former `fsh-guts/deprecated/simulators/*.html` files: (1) 9 live HTML pages exist in `simulators/` and are declared below so `check-declared-assets` verifies their presence; (2) 2 `simulator({...})` blocks (`sim:descent-rate-probe` -> `simulators/descent_rate_probe.html`, `sim:multi-level-jet-sum` -> `simulators/multi_level_jet_sum.html`) carry the `todo-html` tag and their HTML pages were never authored — reported as missing-for-owner per S4 ('do not invent them') and omitted from `assets` because `declaredAssets` treats any declared path absent on disk as a hard failure; (3) 2 unreferenced HTML files (`fsh-guts/deprecated/simulators/double_slit.html` and `fsh-guts/deprecated/simulators/empty.html`) are not referenced by any paper block and remain parked on the `cat/cat-harness/fsh-guts` branch store (together with `fsh-guts/deprecated/ruby-3d-viewer.html`, the 3rd non-paper HTML viewer in `fsh-guts/deprecated/`).",
+  "assets": [
+    {
+      "id": "sim-beta-decay-braid",
+      "src": "simulators/beta_decay_braid.html",
+      "role": "simulator",
+      "title": "Beta decay as T_{3,5} braid insertion: crossing budget and transfer matrices",
+      "description": "Interactive HTML simulator for `sim:beta-decay-braid` (`folio/quantum-observable-universe/nuclear-interactions/beta-decay-braid-visualizer.ts`)."
+    },
+    {
+      "id": "sim-beta-decay-halflife",
+      "src": "simulators/beta_decay_halflife.html",
+      "role": "simulator",
+      "title": "Beta Decay Half-Life Simulator",
+      "description": "Interactive HTML simulator for `sim:beta-decay-simulator` (`folio/quantum-observable-universe/observations/beta-decay-simulator.ts`)."
+    },
+    {
+      "id": "sim-brings-surface",
+      "src": "simulators/brings_surface.html",
+      "role": "simulator",
+      "title": "Bring's Surface Simulator",
+      "description": "Interactive HTML simulator for `sim:brings-surface` (`folio/quantum-observable-universe/observations/brings-surface-simulator.ts`)."
+    },
+    {
+      "id": "sim-double-slit-simulator",
+      "src": "simulators/double_slit_simulator.html",
+      "role": "simulator",
+      "title": "Analytical Double-Slit Simulator",
+      "description": "Interactive HTML simulator for `sim:double-slit-analytical` (`folio/quantum-observable-universe/observations/double-slit-analytical.ts`)."
+    },
+    {
+      "id": "sim-knot-atom-diagrams",
+      "src": "simulators/knot_atom_diagrams.html",
+      "role": "simulator",
+      "title": "Knot Diagrams of Light Atoms (Z <= 4)",
+      "description": "Interactive HTML simulator for `sim:knot-atom-diagrams` (`folio/quantum-observable-universe/appendix-knot-periodic-table/knot-atom-diagrams-sim.ts`)."
+    },
+    {
+      "id": "sim-knot-periodic-table",
+      "src": "simulators/knot_periodic_table.html",
+      "role": "simulator",
+      "title": "Knot-Centric Periodic Table with Beta Decay",
+      "description": "Interactive HTML simulator for `sim:knot-periodic-table` (`folio/quantum-observable-universe/appendix-knot-periodic-table/knot-periodic-table-sim.ts`)."
+    },
+    {
+      "id": "sim-q-double-slit",
+      "src": "simulators/q_double_slit.html",
+      "role": "simulator",
+      "title": "q-Deformed Double-Slit Simulator",
+      "description": "Interactive HTML simulator for `sim:q-double-slit` (`folio/quantum-observable-universe/observations/q-double-slit.ts`)."
+    },
+    {
+      "id": "sim-quantum-brings-surface",
+      "src": "simulators/quantum_brings_surface.html",
+      "role": "simulator",
+      "title": "Quantum Bring's Surface Simulator",
+      "description": "Interactive HTML simulator for `sim:quantum-brings-surface` (`folio/quantum-observable-universe/observations/quantum-brings-surface.ts`)."
+    },
+    {
+      "id": "sim-valley-stability",
+      "src": "simulators/valley_stability.html",
+      "role": "simulator",
+      "title": "Valley of stability: beta-stability curve vs integer lattice",
+      "description": "Interactive HTML simulator for `sim:valley-stability` (`folio/quantum-observable-universe/predicted-spectra/valley-stability.ts`)."
+    }
+  ],
   "_platform_scope_comment": "LOAD-BEARING since 2026-10-04: the pin moved to 26c5d37b9 (platform main), which reads this file through readDeclaration. The 2026-09-26 note that it was inert applied to the old pin df28d02."
 }
