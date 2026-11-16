@@ -1,13 +1,13 @@
 ---
 # qou-0ndb
 title: to_u_polynomial serializes in the CALLER's symbol name — two copies disagree (u vs check_q), 3 consumers broke
-status: todo
+status: in-progress
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-10T02:36:12Z
-updated_at: 2026-10-04T15:11:41Z
+updated_at: 2026-11-16T19:43:00Z
 parent: qou-trd0
 ---
 
@@ -612,3 +612,12 @@ guard rather than --accept-ing past it.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-18 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## Round 47 Execution Update (2026-11-16, PR #8152)
+
+- **PR:** https://github.com/litlfred/qou/pull/8152 (`d0d9e522bf023310f599b4d6724b0703e39ccbd4`)
+- **Verification & self-test:**
+  - Confirmed `U_CANONICAL` and `str_in_u` are live in both `computations/habiro/habiro_coefficients_atomic.py` and `computations/probes/qbeta_habiro_phi8_squared_from_z_squared_probe.py` on `main`.
+  - Added `--self-test` / `--selftest` to `computations/habiro/habiro_coefficients_atomic.py` verifying `str_in_u`, `to_u_polynomial`, `cyclotomic_expansion`, and `reconstruct` serialize identically in canonical `u` whether called with `u` or `check_q`, and removed raw `float(_Q_CANONICAL)` formatting.
+- **Status:** Kept `in-progress` pending PR #8152 merge and owner review.

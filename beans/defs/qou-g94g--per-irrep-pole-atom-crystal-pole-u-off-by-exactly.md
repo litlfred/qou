@@ -1,13 +1,13 @@
 ---
 # qou-g94g
 title: 'per_irrep_pole_atom_crystal: pole_u off by exactly one at the first atom'
-status: todo
+status: in-progress
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T10:15:38Z
-updated_at: 2026-10-04T15:11:39Z
+updated_at: 2026-11-16T19:43:00Z
 parent: qou-trd0
 ---
 
@@ -108,3 +108,12 @@ The top-level assertion still fails, correctly — the two laws do disagree.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## Round 47 Execution Update (2026-11-16, PR #8152)
+
+- **PR:** https://github.com/litlfred/qou/pull/8152 (`d0d9e522bf023310f599b4d6724b0703e39ccbd4`)
+- **Verification & self-test:**
+  - Confirmed the 2026-09-07 updates (`measured_law_fit` `16Z + 20N + 2` vs `18Z + 21N + 1` with gap `2Z + N - 1`, `n=15, 18` `KeyError` diagnostics, and string-formatted `elapsed_sec` / `computed`) are live on `main`.
+  - Added `--self-test` / `--selftest` to `computations/per_irrep_pole_atom_crystal.py` verifying proton (`pole_u = 18` vs `19`) and deuteron (`pole_u = 38` vs `40`) without overwriting the witness.
+- **Status:** Kept `in-progress` pending PR #8152 merge and owner decision on the `16Z + 20N + 2` vs `18Z + 21N + 1` convention.
