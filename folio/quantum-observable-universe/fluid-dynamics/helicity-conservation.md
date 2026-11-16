@@ -47,6 +47,17 @@ Then:
 
    capturing the full topological structure of the vortex tangle missed by $\mathcal{H}_q$.
 
+   *Where the closure enters.* $J_L$ is a value of the tangle's braid word $\beta$ only after the
+   strands are closed: a cup below and a cap above each strand, the return arcs adding no
+   crossing ([closure](#prop:closure-unseen-subword)). Closure is a trace, so it factors through
+   the annular class of $\beta$ in $\mathrm{HH}_0 = H_n(q)/[H_n(q), H_n(q)]$, which keeps every
+   sector character $\chi_\lambda$; the Markov trace then averages the sectors. If the flow acts
+   on the word by conjugation, $\beta \mapsto g\,\beta\,g^{-1}$, the annular class is constant in
+   time, and hence so is every closure invariant, $J_L$ included. That hypothesis is where the
+   quantum Euler equation enters; a reconnection changes the word and is outside it. The classical
+   counterpart is the asymptotic linking number, where long orbit segments are closed by short
+   paths whose contribution vanishes in the limit \cite{komendarczyk2008}.
+
 4. **Classical limit.** As $q \to 1$, the representations collapse ($[j]_q[j+1]_q \to j(j+1)$), linking reduces to Gauss linking ($\mathrm{lk}_q \to \mathrm{lk}$), and $\mathcal{H}_q$ simplifies to classical Moffatt helicity $H = \int v \cdot \omega\,dV$.
 
 **Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
