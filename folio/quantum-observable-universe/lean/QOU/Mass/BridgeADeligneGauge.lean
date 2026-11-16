@@ -236,7 +236,74 @@ theorem gauge_of_conj_monodromy (R : Type*) [CommRing R] [Algebra R S]
   · apply hinjM; simp only; rw [hmulR, ← hg, ← hgi, hprod', honeR]
   · intro j; rw [← hg]; exact intertwiner_horiz hDK F₁ F₂ C j
 
+omit hDK in
+include hΓK in
+/-- The monodromy of a fundamental solution is multiplicative. -/
+theorem monodromy_mul (hinjK : Function.Injective (algebraMap K S)) {ω : ι → Matrix n n S}
+    (F : FundamentalSolution (Γ := Γ) (K := K) D ω) (γ δ : Γ) :
+    F.M (γ * δ) = F.M γ * F.M δ := by
+  have hcst : actM γ (cst (S := S) (F.M δ)) = cst (F.M δ) := by ext i k; simp [actM, hΓK]
+  have hact : actM (γ * δ) F.Φ = actM γ (actM δ F.Φ) := by ext i k; simp [actM, MulAction.mul_smul]
+  have h : F.Φ * cst (F.M (γ * δ)) = F.Φ * cst (F.M γ * F.M δ) := by
+    rw [← F.deck, hact, F.deck, actM_mul, F.deck, hcst, Matrix.mul_assoc]
+    congr 1
+    exact (Matrix.map_mul (f := algebraMap K S)).symm
+  have h' : cst (S := S) (F.M (γ * δ)) = cst (F.M γ * F.M δ) := by
+    have := congrArg (fun A => F.Φinv * A) h
+    simpa only [← Matrix.mul_assoc, F.inv_mul, Matrix.one_mul] using this
+  ext i k; exact hinjK (congrFun (congrFun h' i) k)
+
+omit hDK hΓK in
+/-- The monodromy of the identity is the identity. -/
+theorem monodromy_one (hinjK : Function.Injective (algebraMap K S)) {ω : ι → Matrix n n S}
+    (F : FundamentalSolution (Γ := Γ) (K := K) D ω) : F.M 1 = 1 := by
+  have h : F.Φ * cst (F.M 1) = F.Φ * cst (S := S) (1 : Matrix n n K) := by
+    have h1 : cst (S := S) (1 : Matrix n n K) = 1 := Matrix.map_one _ (map_zero _) (map_one _)
+    have h2 : actM (1 : Γ) F.Φ = F.Φ := by ext i k; simp [actM]
+    rw [← F.deck, h1, Matrix.mul_one, h2]
+  have h' : cst (S := S) (F.M 1) = cst (1 : Matrix n n K) := by
+    have := congrArg (fun A => F.Φinv * A) h
+    simpa only [← Matrix.mul_assoc, F.inv_mul, Matrix.one_mul] using this
+  ext i k; exact hinjK (congrFun (congrFun h' i) k)
+
 end Setting
+
+section Generators
+
+variable {ι : Type*} {D : ι → Derivation ℤ S S}
+variable {K : Type*} [CommRing K] [Algebra K S]
+variable {Γ : Type*} [Group Γ] [MulSemiringAction Γ S]
+
+/-- Intertwining the monodromies on a generating set of the deck group suffices. -/
+theorem intertwine_of_closure
+    (hΓK : ∀ (γ : Γ) (c : K), γ • algebraMap K S c = algebraMap K S c)
+    (hinjK : Function.Injective (algebraMap K S)) {ω₁ ω₂ : ι → Matrix n n S}
+    (F₁ : FundamentalSolution (Γ := Γ) (K := K) D ω₁)
+    (F₂ : FundamentalSolution (Γ := Γ) (K := K) D ω₂) (C : Matrix n n K)
+    {s : Set Γ} (hs : Subgroup.closure s = ⊤) (hgen : ∀ γ ∈ s, F₂.M γ * C = C * F₁.M γ) :
+    ∀ γ, F₂.M γ * C = C * F₁.M γ := by
+  have hmul := fun {ω : ι → Matrix n n S} (F : FundamentalSolution (Γ := Γ) (K := K) D ω) =>
+    monodromy_mul (D := D) hΓK hinjK F
+  have hone := fun {ω : ι → Matrix n n S} (F : FundamentalSolution (Γ := Γ) (K := K) D ω) =>
+    monodromy_one (D := D) hinjK F
+  intro γ
+  have hγ : γ ∈ Subgroup.closure s := hs ▸ Subgroup.mem_top γ
+  induction hγ using Subgroup.closure_induction with
+  | mem x hx => exact hgen x hx
+  | one => rw [hone F₁, hone F₂, Matrix.one_mul, Matrix.mul_one]
+  | mul x y _ _ hx hy =>
+      rw [hmul F₁, hmul F₂, Matrix.mul_assoc, hy, ← Matrix.mul_assoc, hx, Matrix.mul_assoc]
+  | inv x _ hx =>
+      have h1 : ∀ {ω : ι → Matrix n n S} (F : FundamentalSolution (Γ := Γ) (K := K) D ω),
+          F.M x⁻¹ * F.M x = 1 := fun F => by rw [← hmul F, inv_mul_cancel, hone F]
+      have h2 : ∀ {ω : ι → Matrix n n S} (F : FundamentalSolution (Γ := Γ) (K := K) D ω),
+          F.M x * F.M x⁻¹ = 1 := fun F => by rw [← hmul F, mul_inv_cancel, hone F]
+      calc F₂.M x⁻¹ * C = F₂.M x⁻¹ * C * (F₁.M x * F₁.M x⁻¹) := by rw [h2 F₁, Matrix.mul_one]
+        _ = F₂.M x⁻¹ * (F₂.M x * C) * F₁.M x⁻¹ := by
+            rw [hx]; simp only [Matrix.mul_assoc]
+        _ = C * F₁.M x⁻¹ := by rw [← Matrix.mul_assoc, h1 F₂, Matrix.one_mul]
+
+end Generators
 
 /-! ## Non-vacuity: the hypotheses are jointly satisfiable
 
