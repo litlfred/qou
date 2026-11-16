@@ -1,7 +1,8 @@
 ---
 # qou-c6gx
 title: '2H: nucleon-nucleon interface is 2-dimensional -- B floor is alpha*ln(1/z) = 2.907 MeV, ABOVE AME 2.2246'
-status: todo
+status: in-progress
+pr: 8219
 type: task
 priority: normal
 tags:
@@ -174,3 +175,9 @@ Repro (read-only, writes no witness):
   /tmp/.../scratchpad/attack_2h.py
   /tmp/.../scratchpad/a_scaling.py
   /tmp/.../scratchpad/ordering_dep.py
+
+
+## Progress Update (PR #8219)
+- [x] Pure Lean 4 formalization wired into `QOU.lean` (`ThermodynamicTemperatureAndRepinBound.lean`, `SiteVsBondVolumeFactorTwo.lean`, `TwoDimensionalInterfaceCollapseAndOrdering.lean`, `WritheSignOppositionEndpointSplit.lean`; 0 `sorry`, 0 vacuity advisories across all 6 static audits)
+- [x] 50-dps `mpmath` probe (`computations/probes/kt_repin_octahedron_interface_writhe_probe.py`) and stamped witness (`computations/probes/kt-repin-octahedron-interface-writhe-probe.witness.json`, 0 raw `float64` fields)
+- [ ] Awaiting adversarial review and Merge Manager merge of PR #8219 (`ready: 0004396c02a14ba756cc43c66855073b0a08f82d`)

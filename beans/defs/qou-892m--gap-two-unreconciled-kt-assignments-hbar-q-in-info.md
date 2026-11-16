@@ -1,7 +1,8 @@
 ---
 # qou-892m
 title: 'GAP: two unreconciled kT assignments -- hbar_q in information-theory vs E_0 in the binding law'
-status: todo
+status: in-progress
+pr: 8219
 type: task
 priority: normal
 tags:
@@ -36,3 +37,9 @@ unrelated ones wearing the same name.
 ## 2026-10-10 — pointer
 
 Tracked under related carrier M13 of epic `qou-d8c7` "Mass endomorphism" (issue litlfred/qou#7547). Parent and status unchanged; the epic body lists what is still open for this item and where it sits in the attack-vector catalogue.
+
+
+## Progress Update (PR #8219)
+- [x] Pure Lean 4 formalization wired into `QOU.lean` (`ThermodynamicTemperatureAndRepinBound.lean`, `SiteVsBondVolumeFactorTwo.lean`, `TwoDimensionalInterfaceCollapseAndOrdering.lean`, `WritheSignOppositionEndpointSplit.lean`; 0 `sorry`, 0 vacuity advisories across all 6 static audits)
+- [x] 50-dps `mpmath` probe (`computations/probes/kt_repin_octahedron_interface_writhe_probe.py`) and stamped witness (`computations/probes/kt-repin-octahedron-interface-writhe-probe.witness.json`, 0 raw `float64` fields)
+- [ ] Awaiting adversarial review and Merge Manager merge of PR #8219 (`ready: 0004396c02a14ba756cc43c66855073b0a08f82d`)

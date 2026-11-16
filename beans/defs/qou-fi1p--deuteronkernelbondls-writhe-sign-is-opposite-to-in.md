@@ -1,7 +1,8 @@
 ---
 # qou-fi1p
 title: DeuteronKernel.bondL's writhe sign is opposite to InterfaceScalar's — latent, 3.57x on the mirror split
-status: todo
+status: in-progress
+pr: 8219
 type: task
 priority: normal
 tags:
@@ -95,3 +96,9 @@ another arc's call: it is not a precision fix and not corpus-derived in the
 ASK-BEFORE-CHANGING sense (two carriers say one thing, one says another --
 that is a disagreement to adjudicate, not an artifact to point at), and it
 would move `BSymDeuteron` and `bondL_strictMono`. Reported, not touched.
+
+
+## Progress Update (PR #8219)
+- [x] Pure Lean 4 formalization wired into `QOU.lean` (`ThermodynamicTemperatureAndRepinBound.lean`, `SiteVsBondVolumeFactorTwo.lean`, `TwoDimensionalInterfaceCollapseAndOrdering.lean`, `WritheSignOppositionEndpointSplit.lean`; 0 `sorry`, 0 vacuity advisories across all 6 static audits)
+- [x] 50-dps `mpmath` probe (`computations/probes/kt_repin_octahedron_interface_writhe_probe.py`) and stamped witness (`computations/probes/kt-repin-octahedron-interface-writhe-probe.witness.json`, 0 raw `float64` fields)
+- [ ] Awaiting adversarial review and Merge Manager merge of PR #8219 (`ready: 0004396c02a14ba756cc43c66855073b0a08f82d`)

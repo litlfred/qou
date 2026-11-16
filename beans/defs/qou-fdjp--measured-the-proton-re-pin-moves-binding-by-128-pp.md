@@ -1,7 +1,8 @@
 ---
 # qou-fdjp
 title: 'MEASURED: the proton re-pin moves binding by 128 ppb; the binding error is 21-226% — R2 cannot be the cause'
-status: todo
+status: in-progress
+pr: 8219
 type: task
 priority: normal
 tags:
@@ -56,3 +57,9 @@ This is a scope-(b) STRUCTURAL exclusion for R2, not a scope-(a) negative: the
 invariant cited is that `alpha` enters every binding form linearly, so a 128 ppb
 shift in `alpha` cannot produce a >1% change in any of them. R3's bound is
 scope-(a) (measured on the current forms, not proved).
+
+
+## Progress Update (PR #8219)
+- [x] Pure Lean 4 formalization wired into `QOU.lean` (`ThermodynamicTemperatureAndRepinBound.lean`, `SiteVsBondVolumeFactorTwo.lean`, `TwoDimensionalInterfaceCollapseAndOrdering.lean`, `WritheSignOppositionEndpointSplit.lean`; 0 `sorry`, 0 vacuity advisories across all 6 static audits)
+- [x] 50-dps `mpmath` probe (`computations/probes/kt_repin_octahedron_interface_writhe_probe.py`) and stamped witness (`computations/probes/kt-repin-octahedron-interface-writhe-probe.witness.json`, 0 raw `float64` fields)
+- [ ] Awaiting adversarial review and Merge Manager merge of PR #8219 (`ready: 0004396c02a14ba756cc43c66855073b0a08f82d`)
