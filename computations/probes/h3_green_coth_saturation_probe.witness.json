@@ -1,0 +1,279 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-16T19:01:02.037475+00:00",
+  "commitSha": "623eb75e46a17b8f976d4ecf95e68bd186122047",
+  "assertions": [
+    {
+      "name": "qou_4uhn_gauss_bonnet_genus_independent_1_over_8pi",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "gauss_bonnet_measure_denominator_eq_eight (PropagatorHodgeH3GreenAssembly.lean)"
+    },
+    {
+      "name": "qou_4uhn_propagator_1_over_pi_dimH1_coincides_iff_g4",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "propagator_dimH1_eq_eight_iff_g4 (PropagatorHodgeH3GreenAssembly.lean)"
+    },
+    {
+      "name": "qou_l1je_braden_northover_trace_16_and_min_poly",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "bradenNorthoverC_spectral_decomposition (PropagatorHodgeH3GreenAssembly.lean)"
+    },
+    {
+      "name": "qou_l1je_bring_j_invariants_non_integral_no_cm",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "bring_elliptic_factors_non_cm (PropagatorHodgeH3GreenAssembly.lean)"
+    },
+    {
+      "name": "qou_zp6a_short_distance_alpha_coth_to_1",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "DeTurck-Gluck Thm 1(3): coth(alpha) ~ 1/alpha as alpha -> 0+"
+    },
+    {
+      "name": "qou_zp6a_large_distance_unsubtracted_saturates_to_1",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "h3_coth_unsubtracted_gt_one (PropagatorHodgeH3GreenAssembly.lean)"
+    },
+    {
+      "name": "qou_zp6a_o2_background_subtraction_identity_50dps",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "h3_coth_background_subtraction_identity (PropagatorHodgeH3GreenAssembly.lean)"
+    },
+    {
+      "name": "qou_zp6a_kappa_strictly_monotone_3p2_to_2p2",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "h3_coth_strict_antitone (PropagatorHodgeH3GreenAssembly.lean)"
+    },
+    {
+      "name": "qou_9gj9_balanced_two_q_sq_minus_h_sq_eq_4",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "balanced_two_q_sq_sub_h_sq (PropagatorHodgeH3GreenAssembly.lean)"
+    },
+    {
+      "name": "qou_9gj9_hecke_h_over_hbar_q_eq_q_plus_1",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "hecke_h_eq_q_plus_one_mul_hbar_q (PropagatorHodgeH3GreenAssembly.lean)"
+    },
+    {
+      "name": "qou_9gj9_np_em_charge_gap_one_third_positive",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "np_em_sign_convention_immune (PropagatorHodgeH3GreenAssembly.lean)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "h3_green_coth_saturation_probe",
+  "scriptFile": "h3_green_coth_saturation_probe.py",
+  "scriptHash": "8bf652d5126b",
+  "scriptCommitSha": "623eb75e46a17b8f976d4ecf95e68bd186122047",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/h3_green_coth_saturation_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/h3_green_coth_saturation_probe.py"
+  },
+  "description": "50-dps mpmath and exact integer verification of (I) genus-4 propagator normalization 1/(pi dim H_1(Sigma_4)) = 1/(8*pi) (`qou-4uhn`), (II) Bring H^1 period matrix C = 5*I_4 - J_4 spectrum (5,5,5,1) and non-CM j-invariants (`qou-l1je`), (III) H^3 Laplacian Green's function phi_0 = -coth(alpha)/(4*pi) saturation vs O2 background subtraction coth(alpha)-1 = 2/(e^(2*alpha)-1) and monotone kappa(A) 3.2 -> 2.2 (`qou-zp6a`), and (IV) [2]_q(1-h^2*alpha) balanced discriminant [2]_q^2 - h^2 = 4 and n-p EM sign convention-slip immunity (`qou-9gj9`).",
+  "auditOnly": "Beans qou-4uhn, qou-l1je, qou-zp6a, qou-9gj9 (parent qou-3l2l); companion Lean module QOU/AlphaEM/PropagatorHodgeH3GreenAssembly.lean.",
+  "data": {
+    "qou_4uhn_genus_propagator_vs_gauss_bonnet": [
+      {
+        "genus": 2,
+        "dim_H1": 4,
+        "abs_chi": 2,
+        "gauss_bonnet_measure_50dps": "3.9788735772973833942220940843128590508614911435114e-2",
+        "propagator_norm_1_over_pi_dimH1_50dps": "7.9577471545947667884441881686257181017229822870228e-2",
+        "coincides_with_1_over_8pi": false
+      },
+      {
+        "genus": 3,
+        "dim_H1": 6,
+        "abs_chi": 4,
+        "gauss_bonnet_measure_50dps": "3.9788735772973833942220940843128590508614911435114e-2",
+        "propagator_norm_1_over_pi_dimH1_50dps": "5.3051647697298445256294587790838120678153215246819e-2",
+        "coincides_with_1_over_8pi": false
+      },
+      {
+        "genus": 4,
+        "dim_H1": 8,
+        "abs_chi": 6,
+        "gauss_bonnet_measure_50dps": "3.9788735772973833942220940843128590508614911435114e-2",
+        "propagator_norm_1_over_pi_dimH1_50dps": "3.9788735772973833942220940843128590508614911435114e-2",
+        "coincides_with_1_over_8pi": true
+      },
+      {
+        "genus": 5,
+        "dim_H1": 10,
+        "abs_chi": 8,
+        "gauss_bonnet_measure_50dps": "3.9788735772973833942220940843128590508614911435114e-2",
+        "propagator_norm_1_over_pi_dimH1_50dps": "3.1830988618379067153776752674502872406891929148091e-2",
+        "coincides_with_1_over_8pi": false
+      },
+      {
+        "genus": 6,
+        "dim_H1": 12,
+        "abs_chi": 10,
+        "gauss_bonnet_measure_50dps": "3.9788735772973833942220940843128590508614911435114e-2",
+        "propagator_norm_1_over_pi_dimH1_50dps": "2.6525823848649222628147293895419060339076607623409e-2",
+        "coincides_with_1_over_8pi": false
+      },
+      {
+        "genus": 7,
+        "dim_H1": 14,
+        "abs_chi": 12,
+        "gauss_bonnet_measure_50dps": "3.9788735772973833942220940843128590508614911435114e-2",
+        "propagator_norm_1_over_pi_dimH1_50dps": "2.2736420441699333681269109053216337433494235105779e-2",
+        "coincides_with_1_over_8pi": false
+      }
+    ],
+    "qou_l1je_bring_hodge_period_summary": {
+      "period_matrix_C": [
+        [
+          4,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          4,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          4,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          -1,
+          4
+        ]
+      ],
+      "trace_C": 16,
+      "eigenvalues": [
+        5,
+        5,
+        5,
+        1
+      ],
+      "determinant_C": 125,
+      "j_tau0_rational": "-121945/32",
+      "j_5tau0_rational": "-25/2",
+      "minimal_open_core_class": "QOU.Archimedean.PeriodMapWeightReduction.PeriodMapWeight"
+    },
+    "qou_zp6a_h3_green_coth_saturation": {
+      "alpha_small_1e_minus_25_coth_err": "3.3333333333333337543694017592660906700494584457239e-51",
+      "alpha_40_unsubtracted_coth_50dps": "1.0000000000000000000000000000000000360970277569083",
+      "alpha_40_o2_subtracted_coth_minus_1_50dps": "3.6097027756908303446242567147001556557847764148629e-35",
+      "alpha_unsubtracted_at_3p2_50dps": "3.233135824625262262193272012002880672314342167336e-1",
+      "alpha_unsubtracted_at_2p2_50dps": "4.9041462650586311842822556372600199978950492262901e-1",
+      "alpha_o2_subtracted_at_3p2_50dps": "2.4275390789085040390089553859539445028938377083972e-1",
+      "alpha_o2_subtracted_at_2p2_50dps": "3.233135824625262262193272012002880672314342167336e-1",
+      "kappa_profile_A_3_to_56": [
+        {
+          "A": 3,
+          "alpha_unsubtracted_50dps": "3.233135824625262262193272012002880672314342167336e-1",
+          "kappa_unsubtracted_coth_50dps": "3.2",
+          "alpha_o2_subtracted_50dps": "2.4275390789085040390089553859539445028938377083972e-1",
+          "kappa_o2_subtracted_coth_minus_1_50dps": "3.2"
+        },
+        {
+          "A": 4,
+          "alpha_unsubtracted_50dps": "3.4731168388684783132095518022618611267170496494342e-1",
+          "kappa_unsubtracted_coth_50dps": "2.9941082980974203274462186053301361883626427659253",
+          "alpha_o2_subtracted_50dps": "2.5500868679276013289096359901966791534114108117197e-1",
+          "kappa_o2_subtracted_coth_minus_1_50dps": "3.0060716909135444391749833657213414372626818516328"
+        },
+        {
+          "A": 12,
+          "alpha_unsubtracted_50dps": "4.565285797850946303548063707013280547425684800949e-1",
+          "kappa_unsubtracted_coth_50dps": "2.3405462540302129064637978952623828102254181535475",
+          "alpha_o2_subtracted_50dps": "3.0777632167782771271598114808918373079871045526938e-1",
+          "kappa_o2_subtracted_coth_minus_1_50dps": "2.3510628639540351782180535349516494839631271885474"
+        },
+        {
+          "A": 16,
+          "alpha_unsubtracted_50dps": "4.9041462650586311842822556372600199978950492262901e-1",
+          "kappa_unsubtracted_coth_50dps": "2.2",
+          "alpha_o2_subtracted_50dps": "3.233135824625262262193272012002880672314342167336e-1",
+          "kappa_o2_subtracted_coth_minus_1_50dps": "2.2"
+        },
+        {
+          "A": 40,
+          "alpha_unsubtracted_50dps": "6.1603434414736840385127713895369385750059857405668e-1",
+          "kappa_unsubtracted_coth_50dps": "1.8236166068176900874432331290313700154228894086412",
+          "alpha_o2_subtracted_50dps": "3.7822378519895113385832876570195763976836412139858e-1",
+          "kappa_o2_subtracted_coth_minus_1_50dps": "1.7688257568279252328095151691487110685125675981085"
+        },
+        {
+          "A": 56,
+          "alpha_unsubtracted_50dps": "6.6984462790492129235569944571350883413079765730609e-1",
+          "kappa_unsubtracted_coth_50dps": "1.709759238896022318619716312549727580451853097158",
+          "alpha_o2_subtracted_50dps": "4.0064991912966653427018044395315323723918613894141e-1",
+          "kappa_o2_subtracted_coth_minus_1_50dps": "1.6280869052083733642844559176513087956088668970095"
+        }
+      ]
+    },
+    "qou_9gj9_convention_slip_sweep_summary": {
+      "max_discriminant_err_50dps": "9.4955677457597987474732422695619571542209658336199e-66",
+      "max_h_over_hbar_q_err_50dps": "4.74778387287989937373662113478097857711048291681e-66",
+      "proton_uud_pairwise_qq": "0",
+      "neutron_udd_pairwise_qq": "-1/3",
+      "proton_minus_neutron_qq_gap": "1/3"
+    }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Exact genus-4 cohomology/period-matrix identities, H^3 Laplacian Green's function coth(alpha) analytical saturation identities, and symbolic Laurent polynomial identities tested across generic q values."
+}
