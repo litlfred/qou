@@ -1,13 +1,14 @@
 ---
 # qou-s39m
 title: 'conj:crossing-graded-mass-expansion: xi -> +inf in the classical limit; the block is wrong as written'
-status: todo
+status: in-progress
+pr: 8187
 type: task
 priority: medium
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T13:45:00Z
-updated_at: 2026-10-04T15:26:05Z
+updated_at: 2026-11-16T20:22:00Z
 parent: qou-wp3h
 ---
 
@@ -75,3 +76,8 @@ PR #4744 flagged this from the single anchor value `xi = 93.2 >> 1`. That is
 weak on its own — a quantity can be large at `q_0` and still tend to 0 in the
 named limit — so the finding was strengthened to the limit itself in PR #4769,
 which is the claim the block actually makes.
+
+## Progress 2026-11-16 (PR #8187)
+
+- [x] Added `descartes_cubic_at_q_one_factorization`, `descartes_quadratic_factor_complete_sq`, `descartes_cubic_eval_neg_two_thirds`, `descartes_cross_ratio_eq_I_coords`, `xi_product_at_zero_hbar`, and `xi_ne_zero_of_mul_hbar_sq_eq` in `folio/quantum-observable-universe/mass-theory/crossing-graded-mass-expansion.lean` + 80-dps `mpmath` probe (`litlfred/qou#8187`, `28237151a70df9ecb11495b374e141771a7b4a76`).
+- [ ] Await review and merge of `litlfred/qou#8187`.

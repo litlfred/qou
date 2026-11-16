@@ -1,13 +1,14 @@
 ---
 # qou-t6hc
 title: 'M1 tranche A+B+C: effective one-sided bound, Lean edge-calculus, and the kappa_n correction exponent'
-status: todo
+status: in-progress
+pr: 8187
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T09:43:34Z
-updated_at: 2026-10-04T15:13:15Z
+updated_at: 2026-11-16T20:22:00Z
 parent: qou-10v9
 ---
 
@@ -1389,3 +1390,8 @@ correlation question.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-31 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Progress 2026-11-16 (PR #8187)
+
+- [x] Added `same_sign_edge_num_bounds`, `edge_ratio_eq_slope_add_gap`, `weighted_edge_ratio_eq_slope_add_gap`, and `sum_edge_ratio_lt_of_slope_and_gap_bounds` in `QOU/BraidKnot/M1EdgeCalculus.lean` + 80-dps `mpmath` probe (`litlfred/qou#8187`, `28237151a70df9ecb11495b374e141771a7b4a76`).
+- [ ] Await review and merge of `litlfred/qou#8187`.

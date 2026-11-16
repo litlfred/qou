@@ -1,10 +1,11 @@
 ---
 # qou-v57s
 title: 'The cusp shape parameter is INDEX-BLIND: tau_arch is not a function of the algebraic seed (scope-(b), pigeonhole)'
-status: todo
+status: in-progress
+pr: 8187
 type: task
 created_at: 2026-10-10T12:34:17Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-16T20:22:00Z
 parent: qou-n4nr
 ---
 
@@ -353,3 +354,8 @@ Parent `(none)` → `qou-n4nr`. The old parent was missing or absent, so the bea
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+## Progress 2026-11-16 (PR #8187)
+
+- [x] Added `l6a4_orbit_step_one`, `l6a4_orbit_step_two`, `l6a4_orbit_step_three`, `tau_arch_not_injective_of_lt_roots`, `tau_arch_constant_of_single_isometry_class`, and `snappy_cusp_seeding_non_injective` in `folio/quantum-observable-universe/mass-theory/shared-denominator-cusp-holonomy.lean` + 80-dps `mpmath` probe (`litlfred/qou#8187`, `28237151a70df9ecb11495b374e141771a7b4a76`).
+- [ ] Await review and merge of `litlfred/qou#8187`.
