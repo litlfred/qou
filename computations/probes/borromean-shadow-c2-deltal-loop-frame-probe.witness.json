@@ -1,0 +1,318 @@
+{
+  "schema": "https://raw.githubusercontent.com/litlfred/folio-engage/main/schemas/witness/v1.json",
+  "probeId": "borromean-shadow-c2-deltal-loop-frame-probe",
+  "beans": [
+    "qou-tjys",
+    "qou-qqm4",
+    "qou-epmq",
+    "qou-xf14",
+    "qou-y1w0"
+  ],
+  "title": "Canonical Borromean Permutation Shadow, Second-Order Content Cancellation, Delta_L e_minus Split, Loop-Value Normaliser Uniqueness, and Difference-Route Frame Scaling",
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "precisionDps": 50,
+  "q0Anchor": "proton",
+  "q0Value50": "1.1099785827513808075916690956107688798744991218736",
+  "computedAt": "2026-11-16T20:51:01.270746+00:00",
+  "commitSha": "d74edf58f53d51852dd4fae46323721dd3442eee",
+  "scriptFile": "computations/probes/borromean_shadow_c2_deltal_loop_frame_probe.py",
+  "scriptPath": "computations/probes/borromean_shadow_c2_deltal_loop_frame_probe.py",
+  "scriptHash": "94fa3b2ccc67",
+  "scriptCommitSha": "d74edf58f53d51852dd4fae46323721dd3442eee",
+  "allPassed": true,
+  "assertions": [
+    {
+      "name": "qou-tjys: borromean 11-letter shadow is swap(1,2) while grouped is swap(0,1), and cFree - cAtom = A - 1 for A=1..6",
+      "passed": true
+    },
+    {
+      "name": "qou-qqm4: 2^(A+2) * [eps^2](free; Z, N) = (3Z-2N)^2/2 + (37Z+20N)/2 and A=3 content cancellation = 9/64 in both frames",
+      "passed": true
+    },
+    {
+      "name": "qou-epmq: delta_l[5] = 0 in grouped frame and -(q^2-1)^2*(q^4-q^2+1)^2/(2*q^6) in canonical borromean frame",
+      "passed": true
+    },
+    {
+      "name": "qou-xf14: sqrt(b_pp * b_nn) = 1 / [2]_q identically in q, uniquely pinning delta_norm = [2]_q",
+      "passed": true
+    },
+    {
+      "name": "qou-y1w0: Delta_tr(grouped)/Delta_tr(borromean) = kappa(2H) = 3.784816689 while tr_M(atom)/tr_M(free) is frame-invariant",
+      "passed": true
+    }
+  ],
+  "results": {
+    "qou_tjys_borromean_shadow_hmerge": {
+      "borromeanCoreShadow": [
+        0,
+        1,
+        2
+      ],
+      "borromeanTailShadow": [
+        0,
+        2,
+        1
+      ],
+      "borromeanNucleonShadow": [
+        0,
+        2,
+        1
+      ],
+      "groupedNucleonShadow": [
+        1,
+        0,
+        2
+      ],
+      "cycleTableA1To6": [
+        {
+          "A": 1,
+          "nStrands": 3,
+          "cFreeBorromean": 2,
+          "cAtomBorromean": 2,
+          "cFreeGrouped": 2,
+          "cAtomGrouped": 2,
+          "hmergeDiff": 0,
+          "interleavedRightEndpoints": [
+            2
+          ]
+        },
+        {
+          "A": 2,
+          "nStrands": 6,
+          "cFreeBorromean": 4,
+          "cAtomBorromean": 3,
+          "cFreeGrouped": 4,
+          "cAtomGrouped": 3,
+          "hmergeDiff": 1,
+          "interleavedRightEndpoints": [
+            2,
+            3,
+            5
+          ]
+        },
+        {
+          "A": 3,
+          "nStrands": 9,
+          "cFreeBorromean": 6,
+          "cAtomBorromean": 4,
+          "cFreeGrouped": 6,
+          "cAtomGrouped": 4,
+          "hmergeDiff": 2,
+          "interleavedRightEndpoints": [
+            2,
+            3,
+            5,
+            6,
+            8
+          ]
+        },
+        {
+          "A": 4,
+          "nStrands": 12,
+          "cFreeBorromean": 8,
+          "cAtomBorromean": 5,
+          "cFreeGrouped": 8,
+          "cAtomGrouped": 5,
+          "hmergeDiff": 3,
+          "interleavedRightEndpoints": [
+            2,
+            3,
+            5,
+            6,
+            8,
+            9,
+            11
+          ]
+        },
+        {
+          "A": 5,
+          "nStrands": 15,
+          "cFreeBorromean": 10,
+          "cAtomBorromean": 6,
+          "cFreeGrouped": 10,
+          "cAtomGrouped": 6,
+          "hmergeDiff": 4,
+          "interleavedRightEndpoints": [
+            2,
+            3,
+            5,
+            6,
+            8,
+            9,
+            11,
+            12,
+            14
+          ]
+        },
+        {
+          "A": 6,
+          "nStrands": 18,
+          "cFreeBorromean": 12,
+          "cAtomBorromean": 7,
+          "cFreeGrouped": 12,
+          "cAtomGrouped": 7,
+          "hmergeDiff": 5,
+          "interleavedRightEndpoints": [
+            2,
+            3,
+            5,
+            6,
+            8,
+            9,
+            11,
+            12,
+            14,
+            15,
+            17
+          ]
+        }
+      ]
+    },
+    "qou_qqm4_second_order_c2": {
+      "freeEps2Table": [
+        {
+          "species": "pp",
+          "Z": 2,
+          "N": 0,
+          "u": 6,
+          "eps2ExactRational": "55/16",
+          "twoPowAPlus2TimesEps2Rational": "55/1"
+        },
+        {
+          "species": "pn",
+          "Z": 1,
+          "N": 1,
+          "u": 1,
+          "eps2ExactRational": "29/16",
+          "twoPowAPlus2TimesEps2Rational": "29/1"
+        },
+        {
+          "species": "nn",
+          "Z": 0,
+          "N": 2,
+          "u": -4,
+          "eps2ExactRational": "7/4",
+          "twoPowAPlus2TimesEps2Rational": "28/1"
+        },
+        {
+          "species": "3p",
+          "Z": 3,
+          "N": 0,
+          "u": 9,
+          "eps2ExactRational": "3/1",
+          "twoPowAPlus2TimesEps2Rational": "96/1"
+        },
+        {
+          "species": "3He",
+          "Z": 2,
+          "N": 1,
+          "u": 4,
+          "eps2ExactRational": "55/32",
+          "twoPowAPlus2TimesEps2Rational": "55/1"
+        },
+        {
+          "species": "T",
+          "Z": 1,
+          "N": 2,
+          "u": -1,
+          "eps2ExactRational": "39/32",
+          "twoPowAPlus2TimesEps2Rational": "39/1"
+        },
+        {
+          "species": "3n",
+          "Z": 0,
+          "N": 3,
+          "u": -6,
+          "eps2ExactRational": "3/2",
+          "twoPowAPlus2TimesEps2Rational": "48/1"
+        }
+      ],
+      "c2A3CombinationGrouped": "9/64",
+      "c2A3CombinationBorromean": "9/64"
+    },
+    "qou_epmq_delta_l_eminus_split": {
+      "evaluations": [
+        {
+          "point": "q0_proton",
+          "q": "1.1099785827513808075916690956107688798744991218736",
+          "borromeanDeltaLX5": "-0.023805081444134802361741696525855853643847939773045",
+          "borromeanClosedFormX5": "-0.023805081444134802361741696525855853643847939773045",
+          "borromeanX5Residual": "3.3409558876152445576756705839393523485189961001313e-52",
+          "groupedDeltaLX5": "0.0",
+          "borromeanTrMinusNetAtZ1": "-0.0049766974395653508379037769869265083575020687474482"
+        },
+        {
+          "point": "q_eq_2",
+          "q": "2.0",
+          "borromeanDeltaLX5": "-11.8828125",
+          "borromeanClosedFormX5": "-11.8828125",
+          "borromeanX5Residual": "0.0",
+          "groupedDeltaLX5": "0.0",
+          "borromeanTrMinusNetAtZ1": "-17.82421875"
+        },
+        {
+          "point": "q_eq_3",
+          "q": "3.0",
+          "borromeanDeltaLX5": "-233.9204389574759945130315500685871056241426611797",
+          "borromeanClosedFormX5": "-233.9204389574759945130315500685871056241426611797",
+          "borromeanX5Residual": "6.8422776578360208541197733559077936097669040130689e-49",
+          "groupedDeltaLX5": "0.0",
+          "borromeanTrMinusNetAtZ1": "-623.78783721993598536808413351623228166438042981252"
+        }
+      ]
+    },
+    "qou_xf14_normaliser_uniqueness": {
+      "evaluations": [
+        {
+          "point": "q0_proton",
+          "q": "1.1099785827513808075916690956107688798744991218736",
+          "b_pp": "0.61268803714646525159582986394589924802630839154509",
+          "b_nn": "0.40362773835082593616498365081622430416655089628202",
+          "geomMeanSqrtBppBnn": "0.49729054560491555599583923166486963184819073032851",
+          "invQuantumTwo": "0.49729054560491555599583923166486963184819073032851",
+          "quantumTwoResidual": "6.6819117752304891153513411678787046970379922002626e-52",
+          "classicalTwoDiscrepancy": "0.0027094543950844440041607683351303681518092696714877"
+        },
+        {
+          "point": "q_eq_2",
+          "q": "2.0",
+          "b_pp": "1.6",
+          "b_nn": "0.1",
+          "geomMeanSqrtBppBnn": "0.4",
+          "invQuantumTwo": "0.4",
+          "quantumTwoResidual": "2.0045735325691467346054023503636114091113976600788e-51",
+          "classicalTwoDiscrepancy": "0.099999999999999999999999999999999999999999999999998"
+        },
+        {
+          "point": "q_eq_3",
+          "q": "3.0",
+          "b_pp": "2.7",
+          "b_nn": "0.033333333333333333333333333333333333333333333333337",
+          "geomMeanSqrtBppBnn": "0.30000000000000000000000000000000000000000000000002",
+          "invQuantumTwo": "0.3",
+          "quantumTwoResidual": "1.8041161793122320611448621153272502682002578940709e-50",
+          "classicalTwoDiscrepancy": "0.19999999999999999999999999999999999999999999999998"
+        }
+      ]
+    },
+    "qou_y1w0_difference_route_frame_scaling": {
+      "trProtonGrouped": "1.1457596924573008696890815957741193059437280619435",
+      "trProtonBorromean": "0.62932840220292191816534574677848592760021940063437",
+      "trNeutronGrouped": "0.98774368811580957163402016550129498205504875906279",
+      "trNeutronBorromean": "0.47513351715568221250609023267500579955840763470872",
+      "trFree2HGrouped": "1.1317169043222100827313075681159639985201502826418",
+      "trFree2HBorromean": "0.29901501718464007670216042677098383227494947439701",
+      "deltaTr2HGrouped": "0.55662603269239976597967468509043803245696912077336",
+      "deltaTr2HBorromean": "0.14706817764696841135031775356599664440438878474078",
+      "kappa2HFactor": "3.7848162777168523108325447017653826975144209326343",
+      "bondRatioBPnGrouped": "0.50815788774864559388040675738106177609642964391355",
+      "bondRatioBPnBorromean": "0.50815788774864559388040675738106177609642964391355",
+      "b2HGroupedMeV": "2.0842637222756572718980593270335426401097943281762",
+      "b2HBorromeanMeV": "0.55069085771660383767408844948259415050237787047931",
+      "relErrGroupedPct": "-6.3069505568431203255799411195917477786770845110383",
+      "relErrBorromeanPct": "-75.245020479652937351641243753496450521028467104176"
+    }
+  }
+}
