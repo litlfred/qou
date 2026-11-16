@@ -1,0 +1,79 @@
+{
+  "schema": "qou-probe-witness/v1",
+  "script": "computations/probes/boxcontent_ward_nv_interface_binding_probe.py",
+  "scriptHash": "463454748135",
+  "commitSha": "f173f5c66fdcbc0069dcbfce2da8a154bd52f3e4",
+  "scriptCommitSha": "f173f5c66fdcbc0069dcbfce2da8a154bd52f3e4",
+  "generatedAt": "2026-11-16T20:54:00Z",
+  "precisionDps": 80,
+  "allPassed": true,
+  "beans": [
+    "qou-59x9",
+    "qou-58r5",
+    "qou-5lib",
+    "qou-7zob",
+    "qou-2pnv"
+  ],
+  "results": {
+    "probe": "boxcontent_ward_nv_interface_binding_probe",
+    "beans": [
+      "qou-59x9",
+      "qou-58r5",
+      "qou-5lib",
+      "qou-7zob",
+      "qou-2pnv"
+    ],
+    "precisionDps": 80,
+    "allPassed": true,
+    "checks": [
+      {
+        "id": "qou-59x9-box-content-unique-two-zero-and-axial-shift",
+        "passed": true,
+        "testedTwoRowShapes": 77,
+        "validWeightShapes": [
+          [
+            2,
+            0
+          ]
+        ],
+        "axialShiftInvariant": true
+      },
+      {
+        "id": "qou-58r5-two-row-self-conjugate-obstruction",
+        "passed": true,
+        "twoRowSelfConjugateCountN5To12": 0,
+        "unrestrictedScN3N6N8": [
+          1,
+          1,
+          2
+        ]
+      },
+      {
+        "id": "qou-5lib-nv-residual-two-sided-enclosure",
+        "passed": true,
+        "residual80dps": "0.0057255983005575431342972866457",
+        "headroomFactor": "1.0479254193253020173",
+        "s5PrefactorSplit": [
+          120,
+          3,
+          40
+        ]
+      },
+      {
+        "id": "qou-7zob-separable-degeneracy-and-tensor-coupling",
+        "passed": true,
+        "separableDifference": "0.0",
+        "additiveDifference": "0.0",
+        "tensorCoupledSplitting": "0.04698659848212658080543697",
+        "tensorIdentityResidual": "6.5888737145190770152e-83"
+      },
+      {
+        "id": "qou-2pnv-prefactor-ratio-and-scale-cancellation",
+        "passed": true,
+        "prefactorRatioAtQ0": "12.4347104930684542986656730793",
+        "prefactorIdentityResidual": "1.6867516709168837159e-80",
+        "scaleCancellationResidual": "0.0"
+      }
+    ]
+  }
+}
