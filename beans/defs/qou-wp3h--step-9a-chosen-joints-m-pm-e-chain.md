@@ -6,7 +6,7 @@ type: epic
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-04T15:09:58Z
-updated_at: 2026-11-16T18:02:18Z
+updated_at: 2026-11-16T19:07:00Z
 parent: qou-10v9
 ---
 
@@ -19,3 +19,7 @@ Sub-epic P1.9A of PROGRAM: L2 at 1 ppQ (mass and binding accuracy) (work-plan re
   - `qou-zbcj` & `qou-tw5z`: Added `QOU/Torsion/MultiplicativeIntegralCurvature.lean` (`0` `sorry`, wired into `QOU/Torsion.lean` and `QOU.lean`) and 50+ dps `mpmath` probe `computations/probes/yekutieli_multiplicative_integral_curvature_probe.py` + `yekutieli-multiplicative-integral-curvature.witness.json` (registered in `computations/q0_anchor_manifest.json`).
   - `qou-kx92` & `qou-qkbp`: Verified landed `main` commits (`62d3235885`, `a2842b21ac`, `0912f1aa53`, `709b8cc166`, `b9c56a4a59`, `534794e799`) and recorded audit notes.
 - All beans kept at `status: in-progress` per owner rule.
+
+## Progress Update (2026-11-16 — Round 48: PR #8160)
+- **PR:** [`litlfred/qou#8160`](https://github.com/litlfred/qou/pull/8160) (`c0fb591249c67f13f6a77b40075589852babb011`)
+- Completed Lean formalization and impact analysis for `8gzz`, `qou-0w42`, `qou-tknh`, `qou-bhrx`, and `qou-loqn` (`0` `sorry`, `0` self-assuming audit hits).

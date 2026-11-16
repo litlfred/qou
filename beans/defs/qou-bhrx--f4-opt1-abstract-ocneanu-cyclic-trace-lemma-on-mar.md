@@ -1,13 +1,13 @@
 ---
 # qou-bhrx
 title: 'F4-opt1: abstract Ocneanu cyclic-trace lemma on MarkovStabilization (light permanent closure, all-n)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-19T17:13:51Z
-updated_at: 2026-10-04T15:12:34Z
+updated_at: 2026-11-16T19:07:00Z
 parent: qou-rtxm
 ---
 
@@ -59,3 +59,11 @@ closure, it is closeable on the evidence above.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-22 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Progress Update (2026-11-16 — PR #8160)
+- **PR:** [`litlfred/qou#8160`](https://github.com/litlfred/qou/pull/8160) (`c0fb591249c67f13f6a77b40075589852babb011`)
+- **Resolution:**
+  - Extended `folio/quantum-observable-universe/lean/QOU/Machinery/BilinearTraceRepBasis.lean` (`0` `sorry`, `0` self-assuming audit hits; leaves `MarkovTraceTowerStabilization.lean` untouched) with:
+    1. `cyclic_of_rep_decomp_of_basis`: chains `gram_symm_of_rep_decomp_of_basis` directly into `cyclic_of_gram_symm`, providing the all-$n$ (`[Fintype ι] [DecidableEq ι]`) closure from basis-level character decomposition $\tau(e_i) = \sum_{\lambda \in s} w_\lambda \operatorname{tr}(\rho_\lambda(e_i))$ to full trace cyclicity $\tau(B(u, v)) = \tau(B(v, u))$.
+    2. `ocneanu_stabilization_cyclic`: proves the abstract Ocneanu single-generator stabilization cyclicity step $\tau_{n+1}(\iota(u) g \iota(v)) = \tau_{n+1}(\iota(v) g \iota(u))$ from $\tau_{n+1}(\iota(x) g \iota(y)) = z \tau_n(xy)$ and level-$n$ cyclicity $\tau_n(uv) = \tau_n(vu)$.
+  - Status kept at `in-progress` pending PR #8160 merge and owner verification.
