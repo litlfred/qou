@@ -1,0 +1,194 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-16T19:03:26.501653+00:00",
+  "commitSha": "aec20955d47daabf70ec233d7247844f9fb99b9f",
+  "assertions": [
+    {
+      "name": "magnus_mubar123_separates_borromean_from_gluon_at_writhe_zero",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "MagnusTripleLinkingAndFlavourGradings.lean (qou-t0hl)"
+    },
+    {
+      "name": "bar_grade_and_ribbon_twist_injective_quark_cartan",
+      "computed": 4,
+      "expected": 4,
+      "passed": true,
+      "source": "MagnusTripleLinkingAndFlavourGradings.lean (qou-10zv, qou-n6ls)"
+    },
+    {
+      "name": "su4_flavour_cube_and_charm_stratum_branching",
+      "computed": 64,
+      "expected": 64,
+      "passed": true,
+      "source": "MagnusTripleLinkingAndFlavourGradings.lean (qou-wyy9)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "magnus-triple-linking-and-flavour-gradings",
+  "scriptFile": "magnus_triple_linking_and_flavour_gradings_probe.py",
+  "scriptHash": "e7e4ac27a157",
+  "scriptCommitSha": "aec20955d47daabf70ec233d7247844f9fb99b9f",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/magnus_triple_linking_and_flavour_gradings_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/magnus_triple_linking_and_flavour_gradings_probe.py"
+  },
+  "description": "Verifies the computable Artin + truncated Magnus triple-linking invariant magnusMuBar123 on 3-strand braids (resolving qou-t0hl unconditionally with writhe(borromean) = writhe(gluonUnit) = 0 and magnusMuBar123(borromean) = 1 != 0 = magnusMuBar123(gluonUnit)), the combined (barGrade, ribbonTwist) flavour Cartan grading across (u,d,s,c) (qou-10zv, qou-n6ls), and the SU(3)_f subset SU(4)_f Schur-Weyl cube 64 = 20*1 + 20*2 + 4*1 and charm-stratum branching (qou-wyy9).",
+  "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
+  "parameters": {
+    "gluonUnitBraid": [
+      1,
+      -2
+    ],
+    "borromeanBraid": [
+      1,
+      -2,
+      1,
+      -2,
+      1,
+      -2
+    ],
+    "torusCarrierOddN": [
+      1,
+      3,
+      5,
+      7
+    ]
+  },
+  "data": {
+    "workItems": [
+      "qou-t0hl",
+      "qou-10zv",
+      "qou-n6ls",
+      "qou-wyy9"
+    ],
+    "epic": "qou-8lxd",
+    "magnusTripleLinking": {
+      "writheGluonUnit": 0,
+      "writheBorromean": 0,
+      "gluonX2Image": [
+        1
+      ],
+      "borromeanX2Image": [
+        1,
+        3,
+        -1,
+        -3,
+        2,
+        3,
+        1,
+        -3,
+        -1
+      ],
+      "borromeanX2IsCommutatorConjugate": true,
+      "magnusMuBar123GluonUnit": 0,
+      "magnusMuBar123Borromean": 1,
+      "allDegree2MagnusCoeffsVanish": true,
+      "magnusBorromeanX2": {
+        "": 1,
+        "2": 1,
+        "213": -1,
+        "231": 1,
+        "312": -1,
+        "132": 1
+      }
+    },
+    "barGradeAndRibbonTwistGrading": {
+      "carrierBarGrades": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "quarkRows": [
+        {
+          "quark": "u",
+          "barGrade": 1,
+          "ribbonTwistSum": 2,
+          "twoI3": 1,
+          "S": 0,
+          "C": 0,
+          "sixQ": 4,
+          "matchesTwoTwist": true
+        },
+        {
+          "quark": "d",
+          "barGrade": 1,
+          "ribbonTwistSum": -1,
+          "twoI3": -1,
+          "S": 0,
+          "C": 0,
+          "sixQ": -2,
+          "matchesTwoTwist": true
+        },
+        {
+          "quark": "s",
+          "barGrade": 2,
+          "ribbonTwistSum": -1,
+          "twoI3": 0,
+          "S": -1,
+          "C": 0,
+          "sixQ": -2,
+          "matchesTwoTwist": true
+        },
+        {
+          "quark": "c",
+          "barGrade": 3,
+          "ribbonTwistSum": 2,
+          "twoI3": 0,
+          "S": 0,
+          "C": 1,
+          "sixQ": 4,
+          "matchesTwoTwist": true
+        }
+      ],
+      "allQuarksMatchAndSeparate": true
+    },
+    "su4FlavourCubeAndCharmBranching": {
+      "rootsA2": 6,
+      "rootsA3": 12,
+      "dimSym3_SU4": 20,
+      "dimMixed3_SU4": 20,
+      "dimAlt3_SU4": 4,
+      "schurWeylCubeSum": 64,
+      "charmBranching20S": [
+        10,
+        6,
+        3,
+        1
+      ],
+      "charmBranching20M": [
+        8,
+        9,
+        3
+      ],
+      "charmBranching4A": [
+        1,
+        3
+      ]
+    }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Pure free-group Artin braid representation, truncated Magnus polynomial algebra over Z, and discrete SU(3)/SU(4) representation dimensions with no Q_0 dependence."
+}
