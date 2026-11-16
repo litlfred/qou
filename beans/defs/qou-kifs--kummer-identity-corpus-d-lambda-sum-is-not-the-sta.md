@@ -1,7 +1,8 @@
 ---
 # qou-kifs
 title: 'Kummer identity: corpus D := Lambda-sum is NOT the standard Bloch-Wigner (Im Li_2 + log|z|arg(1-z))'
-status: todo
+status: in-progress
+pr: 8212
 type: task
 priority: medium
 tags:
@@ -88,3 +89,8 @@ the geometric identification is untouched by it. Recorded so nobody mistakes
 * `qou-5gai` H4 / `qou-w3eg` — the geometric factor
 * `qou-idvt` T2 — same statement, ideal-tetrahedron side
 * N–Z §3, eqs (37)–(39) — `library/1-s20-0040938385900047-main/1-s2.0-0040938385900047-main.pdf`
+
+
+## Progress Update (2026-11-16T21:42:42Z)
+- Implemented machine-checked Lean 4 theorem in `folio/quantum-observable-universe/lean/QOU/QBeta/ExtendedBlochFlatteningAndGaussianCell.lean` and 80-dps `mpmath` / exact rational witness `computations/probes/extended-bloch-flattening-and-gaussian-cell.witness.json`.
+- Opened PR https://github.com/litlfred/qou/pull/8212 (`6f86defb7b9ef2d83e38ac9d5dd375a7109fbabd`); keeping `status: in-progress` until PR merges.

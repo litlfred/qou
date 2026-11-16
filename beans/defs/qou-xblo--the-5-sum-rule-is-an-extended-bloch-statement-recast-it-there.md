@@ -1,7 +1,8 @@
 ---
 # qou-xblo
 title: The 5₂ sum rule is an EXTENDED Bloch statement — Σ R̂(y_σ; ε_σ, 0) = −π²/6, flattening supplied by the cubic
-status: todo
+status: in-progress
+pr: 8212
 type: task
 priority: normal
 tags:
@@ -1505,3 +1506,8 @@ recast. That recast now exists on paper (write-up
 https://claude.ai/artifact/9xU2nSF4sTbGnNEPRtUf19, PR #7913) and is conditional
 on one cited step, Zickert (2015) B̂(F) ≅ K₃^ind(F) natural in embeddings. It
 also covers the trinomial family, which the pentagon proof does not.
+
+
+## Progress Update (2026-11-16T21:42:42Z)
+- Implemented machine-checked Lean 4 theorem in `folio/quantum-observable-universe/lean/QOU/QBeta/ExtendedBlochFlatteningAndGaussianCell.lean` and 80-dps `mpmath` / exact rational witness `computations/probes/extended-bloch-flattening-and-gaussian-cell.witness.json`.
+- Opened PR https://github.com/litlfred/qou/pull/8212 (`6f86defb7b9ef2d83e38ac9d5dd375a7109fbabd`); keeping `status: in-progress` until PR merges.
