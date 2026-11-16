@@ -5,7 +5,7 @@ import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Topology.Algebra.InfiniteSum.Basic
 import Mathlib.Tactic
 import QOU.Archimedean.ClausenFunctionMathlibFiller
--- import QOU.Archimedean.BlochWignerMathlibFiller
+import QOU.Archimedean.BlochWignerMathlibFiller
 import QOU.Archimedean.DilogarithmArchimedeanLimit
 
 
