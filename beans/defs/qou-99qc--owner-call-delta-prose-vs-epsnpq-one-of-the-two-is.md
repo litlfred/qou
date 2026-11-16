@@ -3593,3 +3593,12 @@ Categorical translation (proposal, not proved):
 - the corpus γγ rule already gives words of even length (gammaGamma_length_even), and the gluon unit is V = σ₀σ₁⁻¹.
 - If each strand's twist datum = the exponent sum of ONE γγ two-letter unit, then t_i ∈ {−2, 0, 2}/2 = {−1, 0, 1}, and ε-Y3 gives Y = ±1/3.
 Remaining assumption: "one γγ unit per strand". This is a minimality statement, the same kind of choice as k = 0. So the bound is MOVED onto the γγ construction, not yet derived. A derivation would need the γγ pair-production construction to put exactly one pair on each strand.
+
+
+### RESULT ε-Y5 (2026-11-16 07:20Z): the γγ route to the twist bound is EXCLUDED
+- The ε-Y4 proposal ("a strand's twist = exponent sum of one γγ two-letter unit") fails structurally.
+- vertex i = [σ_i, σ_{i+1}⁻¹] has writhe 0 (QOU.Mass.GammaGammaWordSelection.writhe_vertex), and every γγ word has writhe 0 (writhe_eq_zero, sorry-free).
+- Any ADDITIVE attribution of crossing signs to strands gives a total Σt_i that is a multiple of the writhe. So on γγ words T = 0, hence Q_twist = 0, for every strand assignment.
+- A fractional quark charge needs T ≠ 0, so the twist datum of a charged strand cannot come from γγ letters at all. Scope (b), invariant: writhe_eq_zero.
+- This agrees with def:strand-twist-datum, which calls the datum "an independent label, not the ambient twist".
+- Status: the bound |t_i| ≤ 1 is NOT derivable on this route. Y = ±1/3 stays conditional on the imported helon bound (two ±π tweedles per strand). Y stays OPEN.
