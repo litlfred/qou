@@ -72,7 +72,7 @@ theorem chi21_borromean_even (h : R) :
        $M = T_1 T_2^{-1} \in \mathrm{SL}_2(R)$ has determinant $\det(M) = 1$ and
        trace $t_{(2,1)}(h) = -1 - h^2$ (`yekutieliBond21Trace`).
        By the $\mathrm{SL}_2$ Cayley–Hamilton cubic trace polynomial
-       $\operatorname{tr}(M^3) = t^3 - 3t$ (`chebyshevCubicTrace`), the 3-fold
+       $\operatorname{tr}(M^3) = t^3 - 3t$ (`sl2CubicTrace`), the 3-fold
        Yekutieli holonomy around the Borromean cycle $B_3 = (T_1 T_2^{-1})^3$
        projects onto the $(2,1)$ bond as
        $$(-1 - h^2)^3 - 3(-1 - h^2) = 2 - 3h^4 - h^6 = \chi^{(2,1)}(\beta_{\text{Bor}}).$$
@@ -105,7 +105,7 @@ theorem yekutieliBond21Trace_even (h : R) :
 /-- The $\mathrm{SL}_2$ Cayley–Hamilton cubic trace polynomial
     $T_3(t) = t^3 - 3t$, expressing $\operatorname{tr}(M^3)$ in terms of
     $t = \operatorname{tr}(M)$ for any $2 \times 2$ matrix $M$ with $\det(M) = 1$. -/
-def chebyshevCubicTrace (t : R) : R := t^3 - 3 * t
+def sl2CubicTrace (t : R) : R := t^3 - 3 * t
 
 /-- **Yekutieli $B_3$ projection onto the local $(2,1)$ bond (`qou-h5aw`).**
     Evaluating the $\mathrm{SL}_2$ cubic trace polynomial $t^3 - 3t$ on the
@@ -113,17 +113,17 @@ def chebyshevCubicTrace (t : R) : R := t^3 - 3 * t
     character $\chi^{(2,1)}(\beta_{\text{Bor}}) = 2 - 3h^4 - h^6$, with the
     $O(h^2)$ term cancelling identically because $T_3'(-1) = 0$. -/
 theorem yekutieli_b3_local_21_bond_projection (h : R) :
-    chebyshevCubicTrace (yekutieliBond21Trace h) = chi21_borromean h := by
-  unfold chebyshevCubicTrace yekutieliBond21Trace chi21_borromean
+    sl2CubicTrace (yekutieliBond21Trace h) = chi21_borromean h := by
+  unfold sl2CubicTrace yekutieliBond21Trace chi21_borromean
   ring
 
 /-- The $O(h^2)$ stationarity identity at the unknot/trivial-braid basepoint
     $t_0 = -1$: $T_3(-1 + \delta) - T_3(-1) = -3\delta^2 + \delta^3$, with zero
     linear term in $\delta$. -/
-theorem chebyshevCubicTrace_stationary_at_neg_one (δ : R) :
-    chebyshevCubicTrace (-1 + δ) - chebyshevCubicTrace (-1)
+theorem sl2CubicTrace_stationary_at_neg_one (δ : R) :
+    sl2CubicTrace (-1 + δ) - sl2CubicTrace (-1)
       = -3 * δ^2 + δ^3 := by
-  unfold chebyshevCubicTrace
+  unfold sl2CubicTrace
   ring
 
 /-- Bar-odd ($\sinh$-channel) component of the NA-Stokes counit expansion
@@ -250,7 +250,7 @@ theorem yekutieliBond21Trace_qform_unit_eq_poly (q : Rˣ) :
     Borromean character directly from the single local $(2,1)$ bond trace
     (`qou-h5aw`). -/
 theorem yekutieli_b3_local_21_bond_qform_unit (q : Rˣ) :
-    chebyshevCubicTrace (yekutieliBond21Trace_qform_unit q)
+    sl2CubicTrace (yekutieliBond21Trace_qform_unit q)
       = chi21_borromean_qform_unit q := by
   rw [yekutieliBond21Trace_qform_unit_eq_poly q,
       yekutieli_b3_local_21_bond_projection,
