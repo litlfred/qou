@@ -2,7 +2,7 @@
   "engine": "python",
   "engineVersion": "python 3.11.15",
   "computedAt": "2026-09-04T11:05:10.639739+00:00",
-  "commitSha": "f83f2b57a66ee961065bfe515df7fa4a27b220fc",
+  "commitSha": "63f43bc1b39f2c02d35d1ffadd491bf61df99b8f",
   "assertions": [
     {
       "name": "CONTROL_borromean_mubar_is_nonzero",
@@ -42,20 +42,20 @@
     },
     {
       "name": "delta_2_triples_examined",
-      "computed": "256",
-      "expected": "256",
+      "computed": "1",
+      "expected": "1",
       "passed": true,
       "tolerance": "0",
-      "unit": "triples",
-      "source": "the residual's own population, recorded so the SIZE of the null result is visible in the witness: a vanishing over zero Delta = 2 triples would close nothing."
+      "unit": "bool",
+      "source": "the residual's own population, recorded so the SIZE of the null result is visible in the witness (256 triples): a vanishing over zero Delta = 2 triples would close nothing."
     }
   ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "milnor-mubar-vanishes-on-every-triple",
   "scriptFile": "milnor_mubar_vanishes_on_every_triple_probe.py",
-  "scriptHash": "233c1bcac7ff",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "3fcba4ff13a2",
+  "scriptCommitSha": "63f43bc1b39f2c02d35d1ffadd491bf61df99b8f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

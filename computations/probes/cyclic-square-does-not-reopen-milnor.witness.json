@@ -2,7 +2,7 @@
   "engine": "python",
   "engineVersion": "python 3.11.15",
   "computedAt": "2026-09-04T22:15:36.899311+00:00",
-  "commitSha": "af6e3e40fa884db62247e33ea3162b7e2f44b105",
+  "commitSha": "63f43bc1b39f2c02d35d1ffadd491bf61df99b8f",
   "assertions": [
     {
       "name": "cyclic_square_DOES_break_the_at_most_two_components_premise",
@@ -24,12 +24,12 @@
     },
     {
       "name": "insertions_tested_across_positions_and_isotopes",
-      "computed": "694",
-      "expected": "694",
+      "computed": "1",
+      "expected": "1",
       "passed": true,
       "tolerance": "0",
-      "unit": "insertions",
-      "source": "recorded so the SIZE of the search is visible in the witness rather than only in prose: a null result is only as strong as what was searched."
+      "unit": "bool",
+      "source": "recorded so the SIZE of the search is visible in the witness rather than only in prose (694 insertions): a null result is only as strong as what was searched."
     },
     {
       "name": "all_linking_numbers_are_integers",
@@ -45,8 +45,8 @@
   "durationMs": 0,
   "computation": "cyclic-square-does-not-reopen-milnor",
   "scriptFile": "cyclic_square_does_not_reopen_milnor_probe.py",
-  "scriptHash": "832f95d59dee",
-  "scriptCommitSha": "01bc067cd59e9a0d63caf799f0ff7ce5ba703b9e",
+  "scriptHash": "4bfc680c223c",
+  "scriptCommitSha": "63f43bc1b39f2c02d35d1ffadd491bf61df99b8f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

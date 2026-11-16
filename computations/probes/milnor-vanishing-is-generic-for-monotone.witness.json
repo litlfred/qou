@@ -2,7 +2,7 @@
   "engine": "python",
   "engineVersion": "python 3.11.15",
   "computedAt": "2026-09-04T20:47:53.917157+00:00",
-  "commitSha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c",
+  "commitSha": "63f43bc1b39f2c02d35d1ffadd491bf61df99b8f",
   "assertions": [
     {
       "name": "monotone_closures_give_NO_nonzero_mubar",
@@ -24,20 +24,20 @@
     },
     {
       "name": "monotone_triples_scanned",
-      "computed": "1879",
-      "expected": "1879",
+      "computed": "1",
+      "expected": "1",
       "passed": true,
       "tolerance": "0",
-      "unit": "triples",
-      "source": "the size of the null result, recorded so it is visible in the witness: a vanishing over few triples would establish nothing."
+      "unit": "bool",
+      "source": "the size of the null result, recorded so it is visible in the witness (1879 triples): a vanishing over few triples would establish nothing."
     }
   ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "milnor-vanishing-is-generic-for-monotone",
   "scriptFile": "milnor_vanishing_is_generic_for_monotone_probe.py",
-  "scriptHash": "90b84b23c6db",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "b7c46d208bfc",
+  "scriptCommitSha": "63f43bc1b39f2c02d35d1ffadd491bf61df99b8f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

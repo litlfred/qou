@@ -2,7 +2,7 @@
   "engine": "python",
   "engineVersion": "python 3.11.15",
   "computedAt": "2026-09-05T06:11:20.320579+00:00",
-  "commitSha": "e0b5414868c78e877526083b09db396b0cf19fa3",
+  "commitSha": "63f43bc1b39f2c02d35d1ffadd491bf61df99b8f",
   "assertions": [
     {
       "name": "every_CHAIN_triple_IS_the_consecutive_triple",
@@ -42,20 +42,20 @@
     },
     {
       "name": "the_6679_monotone_null_is_majority_NON_vacuous",
-      "computed": "870",
-      "expected": "870",
+      "computed": "1",
+      "expected": "1",
       "passed": true,
       "tolerance": "0",
-      "unit": "triples",
-      "source": "the Delta = 1 (vacuous) count, recorded so the non-vacuous majority is visible in the witness rather than asserted in prose."
+      "unit": "bool",
+      "source": "the Delta = 1 (vacuous) count is strictly less than half of the monotone triples, so the non-vacuous majority is checked rather than asserted in prose."
     }
   ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "milnor-one-separated-component-and-the-chain-residual",
   "scriptFile": "milnor_one_separated_component_and_the_chain_residual_probe.py",
-  "scriptHash": "34be4e4891a6",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "491d6d30065c",
+  "scriptCommitSha": "63f43bc1b39f2c02d35d1ffadd491bf61df99b8f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
