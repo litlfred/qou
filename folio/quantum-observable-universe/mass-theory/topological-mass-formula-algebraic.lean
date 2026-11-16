@@ -50,7 +50,12 @@ structure AlgebraicMassData (R : Type*) [CommRing R] where
     `R` a field and `u = Units.mk0 hbar_sq h` recovers the divided
     form `mass_alg = phi1 / hbar_sq`.  The Archimedean version
     `prop:topological-mass-formula` is the specialisation under
-    `τ_arch` at `q = q₀`. -/
+    `τ_arch` at `q = q₀`.
+
+    Scope (2026-11-16): the mass formula enters as the hypothesis
+    `h_phi1 : phi1 = mass_alg · ℏ_q²`; the theorem only multiplies by the
+    inverse unit. It does not derive the formula, and none of the four
+    `AlgebraicMassData` fields is tied to a braid. -/
 -- Ref: [leitner2026] prop:topological-mass-formula-algebraic
 theorem AlgebraicMassFormula
     {R : Type*} [CommRing R] (D : AlgebraicMassData R)
