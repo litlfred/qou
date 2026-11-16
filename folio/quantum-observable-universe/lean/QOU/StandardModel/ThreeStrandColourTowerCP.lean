@@ -123,14 +123,18 @@ def mirrorConfig (cfg : SingletTubeConfig) : SingletTubeConfig where
 /-- `mirrorConfig` is an involution (`CP² = id`). -/
 theorem mirrorConfig_involutive (cfg : SingletTubeConfig) :
     mirrorConfig (mirrorConfig cfg) = cfg := by
-  cases cfg
-  simp [mirrorConfig]
+  rcases cfg with ⟨w₁, w₂, w₃, wb₁, wb₂, wb₃⟩
+  simp only [mirrorConfig, SingletTubeConfig.mk.injEq]
+  refine ⟨?_, ?_, ?_, ?_, ?_, ?_⟩
+  all_goals omega
 
 /-- Under the bar-mirror, the total writhe negates:
 `totalWrithe (mirrorConfig cfg) = -totalWrithe cfg`. -/
 theorem totalWrithe_mirrorConfig (cfg : SingletTubeConfig) :
     totalWrithe (mirrorConfig cfg) = -totalWrithe cfg := by
-  simp only [totalWrithe, pairWrithe1, pairWrithe2, pairWrithe3, mirrorConfig]
+  rcases cfg with ⟨w₁, w₂, w₃, wb₁, wb₂, wb₃⟩
+  unfold totalWrithe pairWrithe1 pairWrithe2 pairWrithe3 mirrorConfig
+  dsimp only
   omega
 
 /-- **Writhe bar-amphicheirality equivalence (`tqcp`).** A configuration's total
@@ -247,7 +251,10 @@ exponent negates, which equals the framing exponent of the transposed partition
 at the original writhe `w`. -/
 theorem blockFramingExponent_neg_eq_transpose (w : Int) (p : Partition3) :
     blockFramingExponent (-w) p = blockFramingExponent w (transposePartition3 p) := by
-  cases p <;> simp [blockFramingExponent, contentSum3, transposePartition3] <;> omega
+  cases p
+  · unfold blockFramingExponent contentSum3 transposePartition3; omega
+  · unfold blockFramingExponent contentSum3 transposePartition3; omega
+  · unfold blockFramingExponent contentSum3 transposePartition3; omega
 
 /-- Sum of block framing exponents across all three Wedderburn blocks of `H_3(q)`
 vanishes identically for any writhe `w`, because `3 + 0 + (-3) = 0`. -/
@@ -255,7 +262,9 @@ theorem sum_blockFramingExponents_eq_zero (w : Int) :
     blockFramingExponent w .sym3 +
     blockFramingExponent w .mixed21 +
     blockFramingExponent w .alt111 = 0 := by
-  simp only [blockFramingExponent, contentSum3]
+  unfold blockFramingExponent
+  unfold contentSum3
+  dsimp only
   omega
 
 /-- Weighted full-tower chiral asymmetry `Δ_tower(w) = w * (w_{(3)} * c_{(3)} +
@@ -405,7 +414,8 @@ def octonionBaseRealDim : Nat := 8
 theorem h3_wedderburn_dim_sum :
     wedderburnBlockDim3 .sym3 +
     wedderburnBlockDim3 .mixed21 +
-    wedderburnBlockDim3 .alt111 = 6 := rfl
+    wedderburnBlockDim3 .alt111 = 6 := by
+  decide
 
 /-- **Every irreducible Specht module of `H_3(q)` has dimension `≤ 2 < 3`:**
 no single irreducible representation of `H_3(q)` has dimension equal to the
