@@ -1,7 +1,7 @@
 ---
 # qou-ptnp
 title: Three vacuous decls survive in p-vs-np-boundary.lean; one is cited as the warrant for the intractability input
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -10,7 +10,7 @@ tags:
     - lean
     - vacuity
 created_at: 2026-08-22T06:05:00Z
-updated_at: 2026-10-04T15:25:04Z
+updated_at: 2026-11-16T20:00:34Z
 parent: qou-6qbv
 ---
 
@@ -105,3 +105,10 @@ for (3), because something downstream is relying on it.
 Not attempted here: this is a statement-design decision about what the
 non-torsion premise is allowed to assume, and it belongs to whoever owns the
 intractability chain.
+
+## Round 49 Progress (`litlfred/qou#8180`, `75360a145951a3e9bdb50b79e4a7ca2a9c94a813`)
+
+- Replaced the vacuous `: True` conjunct in `classP` (`folio/quantum-observable-universe/information-theory/p-vs-np-boundary.lean`) with the polynomial upper bound `c ≤ (c + 1) ^ d`.
+- Defined `FiniteFieldLookupTable (p c : ℕ) : Type := Fin p × Fin (3 ^ c)` and `ResolutionTreeBranch (c : ℕ) : Type := Fin c → Fin 3`, and replaced the three vacuous declarations `finite_field_always_decidable`, `finite_field_p_eq_np`, and `nontorsion_full_tree` with non-vacuous `Fintype.card` and non-torsion (`qt.q ^ c ≠ 1`) theorems consuming `hp`, `qt.not_root_of_unity`, and `hc`.
+- Clarified the citation of `nontorsion_full_tree` in `folio/quantum-observable-universe/lean/QOU/Information/PhysicalIntractability.lean` and fixed the unused `hB` compiler warning.
+- Verified with `lean -DautoImplicit=false -s 65536` (`0` errors, `0` warnings, `0` `sorry`) and all static vacuity audits (`0` findings).

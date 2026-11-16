@@ -1,7 +1,7 @@
 ---
 # qou-bvo3
 title: Add disclosure — 20 bare projections that are NON-EXEMPT (live scanner defects)
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -9,7 +9,7 @@ tags:
     - issue-2472
     - reorg-2026-10-04
 created_at: 2026-08-10T01:47:54Z
-updated_at: 2026-10-04T15:16:15Z
+updated_at: 2026-11-16T20:00:34Z
 parent: qou-6qbv
 ---
 
@@ -41,3 +41,8 @@ Priority above the exempt siblings: these are live in `proof-no-self-assuming-pr
 - `folio/quantum-observable-universe/lean/QOU/Interactions/TrefoilCanonicalMassUnit.lean:193` — `trefoil_strand_count_eq_two`
 
 Criterion: `docs/audits/2026-08-09-honest-placeholder-criterion.md`
+
+## Round 49 Progress (`litlfred/qou#8180`, `75360a145951a3e9bdb50b79e4a7ca2a9c94a813`)
+
+- Added explicit Criterion-(1)+(3) `"**Assumed, not derived here:**"` disclosures and proved consumer theorems (`substrate_split_factor_at_one`, `dressed_mass_down_eq_up_add_split`, `e_infinity_first_three_pages_sum`, `e_infinity_chirality_sq_eq_one`) in `folio/quantum-observable-universe/lean/QOU/FlavorDressing/DressedMassFromSubstrateSplit.lean` and `folio/quantum-observable-universe/lean/QOU/BraidKnot/e_infinity_identifications.lean`.
+- Verified `lean-self-assuming-audit.py` and `lean-self-assuming-typematch-scan.mjs` report `0` findings on both files.

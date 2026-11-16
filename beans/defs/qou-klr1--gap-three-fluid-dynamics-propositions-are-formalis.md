@@ -1,13 +1,13 @@
 ---
 # qou-klr1
 title: 'GAP: three fluid-dynamics propositions are formalised twice and the LIBRARY copy is the vacuous one (§0a inverted)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-14T07:59:14Z
-updated_at: 2026-10-04T15:20:28Z
+updated_at: 2026-11-16T20:00:34Z
 parent: qou-6qbv
 ---
 
@@ -73,3 +73,8 @@ the shape-(A) version, not the proved one.
 plus a strictly-better sibling makes deletion the honest cleanup, and option 2's
 extra work buys an importable copy nobody has asked for. But deleting Lean that
 compiles is the owner's call, and option 3 is safe.
+
+## Round 49 Progress (`litlfred/qou#8180`, `75360a145951a3e9bdb50b79e4a7ca2a9c94a813`)
+
+- Replaced the three decoy-hypothesis library twins in `folio/quantum-observable-universe/lean/QOU/FluidDynamics/` (`acoustic_horizon_conditions.lean`, `discrete_vortex_spectrum.lean`, `root_of_unity_truncation.lean`) with the non-decoy context classes from their `fluid-dynamics/` chapter siblings plus proved consumer theorems (`acoustic_horizon_criterion_iff`, `acoustic_horizon_conditions`, `acoustic_horizon_hawking_temperature`, `discrete_vortex_transition_energy`, `discrete_vortex_ladder_rule`, `discrete_vortex_classical_energy`, `root_of_unity_truncation_core_at_one`).
+- Verified `lean-decoy-hypothesis-audit.py` reports `0` hits on all three files and `lean -DautoImplicit=false -s 65536` exits `0` with `0` warnings.

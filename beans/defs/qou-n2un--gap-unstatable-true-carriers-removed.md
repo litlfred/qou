@@ -1,13 +1,13 @@
 ---
 # qou-n2un
 title: 'GAP: statements behind removed True markers and false axioms (epic N2)'
-status: todo
+status: in-progress
 type: task
 tags:
     - lean-foundations
     - devacuify
 created_at: 2026-11-15T14:05:00Z
-updated_at: 2026-11-15T21:21:03Z
+updated_at: 2026-11-16T20:00:34Z
 parent: qou-6qbv
 ---
 
@@ -92,3 +92,9 @@ Next: CategoricalQExtDeriv.exists_axiom and frobeniusForm_unique.
 - Energy (8f00e50d47): E(ξ)=Σ|c_w|ℓ(w). Path independence = telescoping (`energyPath_telescopes`). The .md per-step formula |c|·|h| is wrong: the true change is |c|(|h|(ℓ−1)−2), and it is negative at h=1/5 on σ₁σ₁ (`heckeStep_can_lower_energy`). .md claim 3 needs an owner decision to correct.
 
 2026-11-16 (PR #7915, owner option A): false-claim pass done on 18 blocks. Housekeeping: markov-trace-factorization crossing coefficients now match compute; beta-decay algebra moved to a generic field with 2 ≠ 0. Weak proofs: ClassicalLimitStpart made contentful (plus a non-triviality lemma); the MarkovChainFactorization self-assuming field removed; HabiroCompletion.trivialOf proves that class unconstrained; TwoFiltrationBridgeGeneral labelled self-assuming. Measured: deuteron-real-sdp top-level y_star prices the 7 zero-weight (≥3-row) blocks at 0.1684 (artifacts); the qbk2 and lpdual-active-set probes quote stale kernel-block prices; no production consumer. Still open: IsMarkovTrace repair (support conditions, qou-tmmt); demotion of 6 propositions awaits the owner's card.
+
+## Round 49 Progress (`litlfred/qou#8180`, `75360a145951a3e9bdb50b79e4a7ca2a9c94a813`)
+
+- Formalized `SpinIsospinState := Fin 2 × Fin 2` (`spinIsospinState_card`), `AntisymSlaterState (k : ℕ)`, `wigner_a_four_antisymmetric_singlet : Fintype.card (AntisymSlaterState 4) = 1`, `wigner_pauli_exclusion_gt_four`, and `alpha_cluster_quadruplet_decomposition` in `folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/WignerSU4FromSpinIsospin.lean`.
+- Replaced deprecated `Mathlib.Algebra.GeomSum` import with `Mathlib.Algebra.Order.Ring.GeomSum` in `folio/quantum-observable-universe/lean/QOU/Machinery/QPochhammer.lean` and proved `qPochhammerFinite_dvd_of_le`, `qPochhammerDiag_dvd_of_le`, `qPochhammerDiag_eq_zero_of_pow_eq_one`, and `habiro_series_truncates_at_root_of_unity`.
+- Verified with `lean -DautoImplicit=false -s 65536` (`0` errors, `0` warnings, `0` `sorry`).
