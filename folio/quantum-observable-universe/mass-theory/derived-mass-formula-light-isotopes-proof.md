@@ -3,7 +3,7 @@ The constituent baseline $Z \mathfrak{m}_{\mathfrak{p}} + N \mathfrak{m}_{\mathf
 
 The Wedderburn 3-term correction is the paper's
 [Wedderburn mass formula](#thm:wedderburn-mass-formula) with $\alpha = m_e \cdot 8G$ from
-[binding scale](#prop:binding-scale-catalan).
+[binding scale](#conj:binding-scale-catalan).
 The functionals $\Phi_1, \Phi_2, \Phi_3$ are evaluated using only
 inter-nucleon generators of the atomic braid: this convention isolates
 inter-nucleon interactions, and ensures free nucleons ($A = 1$)

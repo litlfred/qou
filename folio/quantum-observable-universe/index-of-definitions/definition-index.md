@@ -401,7 +401,7 @@
 | [prop:beta-stability](#prop:beta-stability) | Beta-stability line from the Skein binding Lagrangian | Ch 10 | `qou:QOU.Braiding.beta_stability` |
 | [lem:bar-involution-parity-decomposition](#lem:bar-involution-parity-decomposition) | Even/odd decomposition under a linear involution | Ch 12 | `qou:QOU.Mass.evenPart_add_oddPart` |
 | [prop:binding-alpha-shift-extension](#prop:binding-alpha-shift-extension) | Binding A≥3 via per-rep Reeb phase at a force-carrier torus knot | Ch 12 | `qou:QOU.BraidKnot.binding_unique_via_alpha_shift` |
-| [prop:binding-scale-catalan](#prop:binding-scale-catalan) | Binding energy scale $\alpha = m_e \times 8G$ | Ch 12 | `qou:QOU.BindingScale.bindingScale_value` |
+| [conj:binding-scale-catalan](#conj:binding-scale-catalan) | Binding energy scale $\alpha = m_e \times 8G$ | Ch 12 | `qou:QOU.BindingScale.bindingScale_value` |
 | [prop:isovector-chiral-residue](#prop:isovector-chiral-residue) | Binding isovector coefficient as the $W_\lambda$ chiral residue (conditional) | Mass and Binding Algorithms | `qou:QOU.BraidKnot.binding_isovector_mirror_from_chiral` |
 | [prop:binding-error-amplification](#prop:binding-error-amplification) | Binding-energy error amplification: $\mathcal{A} = M_{\mathrm{atom}}/B$ | Ch 12 | `qou:QOU.MassTheory.BindingErrorAmplification.binding_rel_error` |
 | [prop:blowup-yekutieli](#prop:blowup-yekutieli) | Blowup mechanism as Yekutieli lifting obstruction in the brane tower | Ch 4 | `qou:QOU.FluidDynamics.BlowupYekutieli` |
@@ -705,7 +705,7 @@
 | [prop:tower-binding-energy](#prop:tower-binding-energy) | Nuclear binding energy from the $3$-channel brane tower | Ch 12 | `qou:QOU.ParticleInteractions.towerBinding` |
 | [prop:generator-volume-decomposition](#prop:generator-volume-decomposition) | Nuclear energy as a sum of generator volumes via Chebyshev recurrence | Ch 10 | `qou:QOU.Archimedean.generator_volume_decomposition` |
 | [prop:quantum-dilogarithm-volume](#prop:quantum-dilogarithm-volume) | Nuclear energy from the quantum dilogarithm of the Markov trace | Ch 14 | `qou:QOU.Archimedean.quantum_dilogarithm_volume` |
-| [prop:nuclear-knot-classification](#prop:nuclear-knot-classification) | Nuclear knot classification: braid closure type determines binding scale | Ch 12 | `qou:QOU.BraidKnot.nuclear_knot_classification` |
+| [conj:nuclear-knot-classification](#conj:nuclear-knot-classification) | Nuclear knot classification: braid closure type determines binding scale | Ch 12 | `qou:QOU.BraidKnot.nuclear_knot_classification` |
 | [prop:nuclear-spin-parity](#prop:nuclear-spin-parity) | Nuclear spin is integral for even $A$ and half-integral for odd $A$ | Ch 14 | `qou:QOU.Archimedean.nuclear_spin_parity` |
 | [prop:four-term-pair-nucleon](#prop:four-term-pair-nucleon) | Nucleon derivation from 4-term photon pair production | Ch 8 | `qou:QOU.ParticleInteractions.four_term_pair_nucleon` |
 | [prop:knot-operator-transition](#prop:knot-operator-transition) | Nucleon-addition operators: Hopf link at $A{=}3$, trefoil at $A{=}4$ | Ch 12 | `qou:QOU.BraidKnot.knot_operator_transition` |
@@ -732,7 +732,7 @@
 | [prop:per-braid-mass-tower](#prop:per-braid-mass-tower) | Per-braid mass tower | Ch 12 | `qou:QOU.BraidKnot.perBraidMassTower` |
 | [prop:selection-rule-anchors-c1-c3](#prop:selection-rule-anchors-c1-c3) | Per-component selection rule $\frac{1}{c+1}\sum_{\lambda\vdash c+1} \dim_q V_\lambda$ at c=1, c=3 | Ch 11 | `qou:QOU.Mass.selection_rule_c3_anchor_derived` |
 | [prop:selection-rule-c2-prediction](#prop:selection-rule-c2-prediction) | Per-component selection rule at c=2: $\mathrm{lw}(2) = (q+1)^2/(3q)$ | Ch 11 | `qou:QOU.Mass.selection_rule_c2_prediction_derived` |
-| [prop:six-term-per-derivation-weights](#prop:six-term-per-derivation-weights) | Per-derivation weights for the six-term mass formula | Ch 12 | `qou:QOU.BraidKnot.SixTermPerDerivationWeights.binding_assembly` |
+| [conj:six-term-per-derivation-weights](#conj:six-term-per-derivation-weights) | Per-derivation weights for the six-term mass formula | Ch 12 | `qou:QOU.BraidKnot.SixTermPerDerivationWeights.binding_assembly` |
 | [prop:per-nucleon-shift-additive-linearity](#prop:per-nucleon-shift-additive-linearity) | Per-new-nucleon additive linearity: $\mathrm{shift}(Z, N) = 18Z + 21N + 1$ on canonical pppnnn ordering | Ch 12 | `qou:QOU.BraidKnot.per_nucleon_shift_additive_linearity` |
 | [prop:q-heat-kernel-peter-weyl](#prop:q-heat-kernel-peter-weyl) | Peter--Weyl decomposition of the $q$-heat kernel (archimedean) | Ch 20 | `qou:QOU.qHeatKernelPeterWeyl` |
 | [prop:phase-transition-boundary](#prop:phase-transition-boundary) | Phase transitions as $S^3$ boundary actions | Ch 20 | `qou:QOU.Information.gasLiquidCriticalTemp` |

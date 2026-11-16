@@ -7,5 +7,5 @@ export default proposition({
     ref: "qou:QOU.MassTheory.BindingErrorAmplification.binding_rel_error",
     validation: "not_checked",
   },
-  uses: ["prop:binding-scale-catalan"],
+  uses: ["conj:binding-scale-catalan"],
 });

@@ -11,7 +11,7 @@ export default conjecture({
   uses: [
     "prop:vol-through-tau",
     "rem:vol-as-motivic-period",
-    "prop:binding-scale-catalan",
+    "conj:binding-scale-catalan",
     "conj:dilogarithm-archimedean-limit",
   ],
   cites: [

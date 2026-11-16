@@ -5,7 +5,7 @@ export default remark({
   title: "Piecewise geometric invariant $\\mathrm{Geom}(K)$",
   interprets: "prop:topological-mass-formula",
   uses: [
-    "prop:nuclear-knot-classification",
+    "conj:nuclear-knot-classification",
     "rem:em-coupling-chern-simons",
   ],
   tags: [

@@ -113,7 +113,7 @@ stated.
 $\alpha = m_e \times 8G$ is the archimedean evaluation of the
 algebraic binding scale $m_e \cdot \mathrm{Vol}_q(\mathcal{B}_3)$,
 with $\mathrm{Vol}(\mathcal{B}_3) = 8G$ the Borromean volume
-([binding scale](#prop:binding-scale-catalan)). The determinant
+([binding scale](#conj:binding-scale-catalan)). The determinant
 weight $\beta_2 = -2[3]_q$ is the degree-two baryon weight
 ([degree-2 weight](#prop:degree-two-baryon-weight)): the three color
 channels give the pair count $\binom{3}{2} = 3$, $q$-deformed to

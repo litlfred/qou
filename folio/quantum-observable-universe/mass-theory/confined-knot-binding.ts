@@ -7,7 +7,7 @@ export default proposition({
   lean: { ref: "qou:QOU.BraidKnot.confined_knot_binding",
     validation: "not_checked",
   },
-  uses: ["prop:nuclear-knot-classification"],
+  uses: ["conj:nuclear-knot-classification"],
   tags: [
     "binding-mechanism",
     "character-ratio",

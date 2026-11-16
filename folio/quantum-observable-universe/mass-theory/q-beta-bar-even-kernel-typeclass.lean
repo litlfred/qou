@@ -52,7 +52,11 @@ noncomputable def radiusTolerance : ℝ := uSubstrate / 1000000
 noncomputable def jonesHopfAtQOne : ℝ := -2
 
 /-- Direction-sanity target magnitude (PR #1727 + PR #1786 substrate
-    derivation: `Q_β / [Q_A · cos α_eff] ≈ 0.998` at q_0). -/
+    derivation: `Q_β / [Q_A · cos α_eff] ≈ 0.998` at q_0).
+
+    Comparison-boundary constant: `0.99824` is computed from the measured
+    `Q_β`, so a gate stated against it is a screening check at the
+    comparison with measurement, not a derived invariant of the kernel. -/
 -- Ref: [pr1727] https://github.com/litlfred/qou/pull/1727
 noncomputable def directionTarget : ℝ := 0.99824
 
