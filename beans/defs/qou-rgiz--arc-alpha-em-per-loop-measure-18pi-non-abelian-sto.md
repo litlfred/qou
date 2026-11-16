@@ -1,14 +1,14 @@
 ---
 # qou-rgiz
 title: 'Arc: alpha_EM per-loop measure 1/(8pi) — non-abelian Stokes germ route (owner-gated on MOC/Phi, low program-value)'
-status: todo
+status: in-progress
 type: feature
 priority: normal
 tags:
     - sm-26
     - reorg-2026-10-04
 created_at: 2026-08-29T16:24:57Z
-updated_at: 2026-10-04T15:11:13Z
+updated_at: 2026-11-16T19:28:00Z
 parent: qou-3l2l
 blocked_by:
     - 08a2
@@ -31,3 +31,11 @@ Tower status [reading: qou-ggdk]: MIXED — the ladder is order-by-order, trunca
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-03 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## Progress 2026-11-16 (PR #8167, `656614697372bd8008f27a4328b66e10d7e1263c` — kept `in-progress` per owner closure rule)
+
+- **Formalized in `folio/quantum-observable-universe/lean/QOU/AlphaEM/BradenNorthoverJNormalizationStokes.lean` (`0` `sorry`, `0` custom axioms, wired into `QOU.lean`) + 50-dps probe `computations/probes/braden_northover_j_normalization_stokes_probe.py` (`12/12` assertions passed):**
+  - `em_germ_nonvanishing_at_self_dual_vs_discrete_shadow`: at `q = 1`, the EM-singlet moment numerator `P(q) = q² - 1` vanishes (`P(1) = 0`) while its first-order `q`-germ `P'(1) = 2 ≠ 0` is non-vanishing (`m_F'(1) = -1` at 50 dps), whereas a point-pinned discrete shadow (`q = i` F-construction) has zero `q`-derivative everywhere.
+  - `single_generator_sterile_and_two_generator_live`: single-generator commutator `[A, A] = 0` vanishes identically (abelian transport sterility on `σ₁³`), whereas two-generator root matrices `(heckeRootGen1, heckeRootGen2)` have non-zero commutator `[[1, 1], [-1, -1]] ≠ 0` with trace `0`.
+  - `nonsterile_germ_does_not_fix_period_scale` & `cubic_ladder_vs_cs_resummation_discrepancy`: proves that germ non-sterility (`g ≠ 0`) does not fix the MOC/Φ proportionality constant `c` (`c₁ ≠ c₂ → c₁·g ≠ c₂·g`), and the truncated cubic ladder `1 + x + x² + x³` differs from the all-orders CS resummation `1/(1 - x)` by `-x⁴ ≠ 0` for all `x ≠ 0`.

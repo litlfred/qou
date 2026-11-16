@@ -1,7 +1,7 @@
 ---
 # qou-yf1y
 title: 'Instance declaration + config: qou.json and qou.config.json replace three retired spellings'
-status: todo
+status: in-progress
 type: feature
 priority: high
 tags:
@@ -9,7 +9,7 @@ tags:
     - config
     - reorg-2026-10-04
 created_at: 2026-09-26T11:18:46Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-16T19:28:00Z
 parent: qou-n4r9
 ---
 
@@ -139,3 +139,10 @@ call).
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+
+## Progress 2026-11-16 (Round 49 verification — kept `in-progress` per owner closure rule)
+
+- **Verified on `origin/main` (`dc12b128cc`):**
+  - `qou.json` and `qou.config.json` are live at the repository root (`name: "qou"`, `needs: ["folio-assistant-sci"]`, `dependencies.folioAssistant` pinned to `.folio-assistant-pin = 82b389982a73701b77f723d34d42c77acf41b5b4`).
+  - All three retired config/declaration spellings (`folio.config.json`, `harness.config.json`, `harness.json`) are completely absent from `origin/main`.

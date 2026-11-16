@@ -1,11 +1,11 @@
 ---
 # qou-4jhp
 title: 'GAP: qa-sweep cannot load at platform pin b61e856 (sci layer imports moved cat-harness/schemas); first fixing pin a6e5884 needs owner ruling'
-status: todo
+status: in-progress
 type: bug
 priority: high
 created_at: 2026-11-15T09:00:38Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-16T19:28:00Z
 parent: qou-n4r9
 ---
 
@@ -94,3 +94,9 @@ Pre-existing (blame fee4ad592), not introduced by #7825. Not fixed here.
 ## Parented 2026-11-15 (owner-approved bean triage)
 
 Parent `(none)` → `qou-n4r9`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.
+
+
+## Progress 2026-11-16 (Round 49 verification — kept `in-progress` per owner closure rule)
+
+- **Verified at current `.folio-assistant-pin` (`82b389982a73701b77f723d34d42c77acf41b5b4` on `origin/main`):**
+  - `bun /Users/litlfred/space_cats/folio-assistant/cat-harness-tools/pipeline/qa-sweep.ts --help` loads cleanly (`EXIT=0`) with zero missing-module errors (`cat-harness-tools/schemas/kg/cat-harness` resolves cleanly).
