@@ -9,6 +9,6 @@ export default proposition({
     "prop:discrete-vortex-spectrum",
     "prop:closure-unseen-subword",
   ],
-  cites: ["moffatt-ricca-helicity", "komendarczyk2008"],
+  cites: ["moffatt-ricca-helicity", "komendarczyk2008", "moffatt1969", "alexander1923", "markov1936", "birman1974"],
   tags: ["helicity", "topological-invariant", "conservation", "fluid-dynamics", "knot"],
 });
