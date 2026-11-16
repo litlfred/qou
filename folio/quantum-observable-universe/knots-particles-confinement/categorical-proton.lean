@@ -46,31 +46,33 @@ noncomputable def q₀ : ℝ := 1.10998
 /-- q₀ > 1. -/
 theorem q₀_gt_one : (1 : ℝ) < q₀ := by unfold q₀; norm_num
 
-/-- The proton mass as a function of the substrate parameter q.
-    m_𝔭(q) = S_uu(q) + 2 · S_ud(q), where the pair Skein masses
-    S_uu and S_ud are determined by the Borromean volume and
-    crossing energy at q. -/
+/-- The bare Borromean volume carrier as a function of the substrate parameter `q`:
+    `Vol(𝓑₃) / (1 - q⁻¹)²` with `Vol(𝓑₃) ≈ 7.32772475341775`.
+    Per the 2026-06-24 and 2026-08-11 owner rulings (see `qou-4paj` and
+    `docs/audits/2026-09-04-two-false-nucleon-mass-axioms.md`), this bare
+    hyperbolic-volume carrier (`≈ 746.40` at `q₀ = 1.10998`) is superseded by
+    the canonical Wedderburn / Borromean trace ratio and is retained here only
+    as a historical reference expression without the inconsistent `< 1` axiom. -/
 noncomputable def proton_mass (q : ℝ) : ℝ :=
   let vol_borromean := 7.32772475341775
   let hbar_q := 1 - q⁻¹
   vol_borromean / hbar_q ^ 2
 
-/- The proton mass derived from the substrate parameter q₀.
-    At the CODATA value q₀, the Borromean volume formula yields
-    m_𝔭(q₀) ≈ 938.272 MeV.
-    Ref: [leitner2026] Ch. 5, §Categorical proton -/
-/-- **External axiom (§3b-cond pattern): proton_mass_from_substrate.**
-
-    Auto-extracted from the single-sorry theorem body in this file.
-    Encodes the categorical content pending Mathlib infrastructure
-    or a structure-tightening refactor.
-
-    See the theorem docstring below for the cited reference. -/
-axiom proton_mass_from_substrate_axiom  :
-    |proton_mass q₀ - 938.272| < 1
-
+/-- Exact evaluation of the bare Borromean carrier `proton_mass` at `q₀` (`qou-4paj`).
+    Replaces the former inconsistent `proton_mass_from_substrate_axiom`
+    (which asserted `|proton_mass q₀ - 938.272| < 1`, refuted below by
+    `bare_borromean_carrier_not_938`). -/
+-- Ref: [leitner2026] Ch. 5, §Categorical proton
 theorem proton_mass_from_substrate :
-    |proton_mass q₀ - 938.272| < 1 :=
-  proton_mass_from_substrate_axiom
+    proton_mass q₀ = 7.32772475341775 / (1 - q₀⁻¹) ^ 2 :=
+  rfl
+
+/-- At `q₀ = 1.10998`, the bare Borromean carrier `proton_mass q₀ ≈ 746.400676`
+    does **not** lie within `1` of `938.272` (`qou-4paj`). -/
+-- Ref: [leitner2026] Ch. 5, §Categorical proton
+theorem bare_borromean_carrier_not_938 :
+    ¬ (|proton_mass q₀ - 938.272| < 1) := by
+  unfold proton_mass q₀
+  norm_num [abs_lt]
 
 end QOU.Torsion

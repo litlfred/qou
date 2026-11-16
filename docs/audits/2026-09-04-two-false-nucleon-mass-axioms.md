@@ -104,3 +104,15 @@ By fixing an unrelated scope bug. The audit script walked only
 content-block siblings were invisible, and with them 148 of the corpus's 182
 axioms. These two were in that blind spot. Nothing was looking for false
 axioms; they surfaced from a citation-key survey of the 46 uncited ones.
+
+## Resolution (2026-11-16 — `qou-4paj`)
+
+Both inconsistent `axiom` declarations (`proton_mass_from_substrate_axiom` in
+`folio/quantum-observable-universe/knots-particles-confinement/categorical-proton.lean`
+and `neutron_mass_from_substrate_axiom` in
+`folio/quantum-observable-universe/knots-particles-confinement/categorical-neutron.lean`)
+have been removed and replaced by sorry-free theorems (`proton_mass_from_substrate`,
+`bare_borromean_carrier_not_938`, `neutron_mass_from_substrate`, and
+`bare_neutron_carrier_not_939`), documenting that the retired bare-volume
+carrier `Vol(𝓑₃)/ℏ_q² ≈ 746.40` is superseded by the canonical Wedderburn /
+Borromean trace ratio per the 2026-06-24 and 2026-08-11 owner rulings.

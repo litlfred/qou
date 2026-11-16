@@ -495,6 +495,69 @@ theorem transitivity_and_order_five_give_chi_neg_six
     eulerChar g = -6 := by
   subst h5; decide
 
+/-! ## §6.5. Hyperelliptic vs. trigonal Riemann–Hurwitz ramification at genus `g = 4`
+
+For a degree-`d` branched cover of `ℙ¹` by a closed orientable surface of genus
+`g ≥ 1`, Riemann–Hurwitz `2 − 2g = 2d − R` fixes the total ramification to
+`R(d, g) = 2g − 2 + 2d`:
+
+* **Hyperelliptic (`d = 2`, `g = 4`)**: `R(2, 4) = 10 = 2g + 2` (which is why the
+  `.qa.json` note's "minimum `2g + 2 = 10` Weierstrass points" is the
+  hyperelliptic branch count, not the non-hyperelliptic Weierstrass count
+  `g³ − g = 60`).
+* **Trigonal (`d = 3`, `g = 4`)**: `R(3, 4) = 12 = 2g + 4` (the canonical
+  projection of Bring's space quintic from a line in `ℙ³`).  A simple-transposition
+  (`e − 1 = 1`) 3-sheeted cover of `ℙ¹` at genus 4 therefore has `b = 12` simple
+  branch points, whereas `b = 6` branch points occur iff the average ramification
+  index per branch point is `R / b = 12 / 6 = 2` (total ramification `e = 3` at
+  each of the 6 branch points). -/
+
+/-- Total ramification `R(d, g) = 2g − 2 + 2d` required by Riemann–Hurwitz for a
+degree-`d` cover of `ℙ¹` to have genus `g ≥ 1`. -/
+def totalRamificationOverP1 (d g : Nat) : Nat := 2 * g - 2 + 2 * d
+
+/-- `chiOverP1 d (totalRamificationOverP1 d g)` recovers `eulerChar g` for every
+`g ≥ 1` and `d`. -/
+theorem chiOverP1_totalRamification (d g : Nat) (hg : 1 ≤ g) :
+    chiOverP1 d (totalRamificationOverP1 d g) = eulerChar g := by
+  simp only [chiOverP1, totalRamificationOverP1, eulerChar]
+  omega
+
+/-- Hyperelliptic (`d = 2`) ramification at `g = 4` is `2g + 2 = 10`, not `6`. -/
+theorem hyperelliptic_ramification_genus_four :
+    totalRamificationOverP1 2 4 = 10 ∧ totalRamificationOverP1 2 4 ≠ 6 := by decide
+
+/-- Trigonal (`d = 3`) ramification at `g = 4` is `2g + 4 = 12`. -/
+theorem trigonal_ramification_genus_four :
+    totalRamificationOverP1 3 4 = 12 := by decide
+
+/-- For any `g ≥ 1`, a 3-sheeted simple-transposition cover (`rPerPoint = 1`) of
+`ℙ¹` has `2g + 4` branch points. -/
+theorem trigonal_simple_branch_count (g : Nat) (hg : 1 ≤ g) :
+    totalRamificationOverP1 3 g = 2 * g + 4 := by
+  simp only [totalRamificationOverP1]
+  omega
+
+/-- For a 3-sheeted cover of `ℙ¹` of genus `4` (`R = 12`), six branch points of
+uniform ramification index `rPerPoint = e − 1` occur if and only if `rPerPoint = 2`
+(cyclic 3-cycle monodromy `e = 3` at each of the 6 branch points). -/
+theorem trigonal_genus_four_six_branch_points_iff_index_two (rPerPoint : Nat) :
+    6 * rPerPoint = totalRamificationOverP1 3 4 ↔ rPerPoint = 2 := by
+  simp only [totalRamificationOverP1]
+  omega
+
+/-- Across all degrees `d ≥ 2`, a uniform-ramification cover of `ℙ¹` of genus `4`
+with `b = 6` branch points (`6 · rPerPoint = 2(4) − 2 + 2d = 6 + 2d`, with
+`1 ≤ rPerPoint ≤ d − 1`) has `d ≡ 0 (mod 3)` and `rPerPoint = 1 + d / 3`; in
+particular the unique minimal-degree solution is the trigonal triple-ramified
+cover `(d, rPerPoint) = (3, 2)`. -/
+theorem uniform_six_branch_points_minimal_degree_is_trigonal (d rPerPoint : Nat) :
+    (2 ≤ d ∧ d ≤ 5 ∧ 1 ≤ rPerPoint ∧ rPerPoint ≤ d - 1 ∧
+      6 * rPerPoint = totalRamificationOverP1 d 4) ↔
+    (d = 3 ∧ rPerPoint = 2) := by
+  simp only [totalRamificationOverP1]
+  omega
+
 /-! ## §7. Summary of what is and is not established here
 
 | claim | status |

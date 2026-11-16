@@ -153,4 +153,38 @@ theorem birthdayFaithful_independent_witnessed :
       ¬ (∀ n : ℕ, S.birthday ((n : ℕ) : ℝ*) = (n : Ordinal)) :=
   ⟨HyperrealTransfer.surrealFieldHyperreal, flatBirthday_not_faithful⟩
 
+/-! ## §4 — `StrictBirthdayHierarchy` and exclusion of every finite-bounded birthday model
+
+`BirthdayFaithful` not only excludes the two-valued `flatBirthday ≤ 1` model, it enforces a
+strictly increasing ordinal hierarchy on the natural numbers `0 < 1 < 2 < ⋯ < n < ⋯` and
+therefore rules out **every** finite-bounded birthday assignment `birthday x ≤ B` (`B : ℕ`). -/
+
+/-- Alias emphasizing that `[BirthdayFaithful K]` equips `K` with a strict, unbounded ordinal
+birthday hierarchy on `(n : K)` (`bday`). -/
+abbrev StrictBirthdayHierarchy (K : Type u) [SurrealField K] := BirthdayFaithful K
+
+/-- Under `[BirthdayFaithful K]`, the map `n ↦ birthday (n : K)` is strictly monotone. -/
+theorem birthday_natCast_strictMono [BirthdayFaithful K] {m n : ℕ} (hmn : m < n) :
+    birthday ((m : ℕ) : K) < birthday ((n : ℕ) : K) := by
+  rw [birthday_natCast_eq, birthday_natCast_eq]
+  exact Nat.cast_lt.mpr hmn
+
+/-- Under `[BirthdayFaithful K]`, birthdays are unbounded across the finite ordinals:
+for every `N : ℕ` there exists `x : K` with `(N : Ordinal) ≤ birthday x`. -/
+theorem birthday_unbounded_of_faithful [BirthdayFaithful K] (N : ℕ) :
+    ∃ x : K, (N : Ordinal) ≤ birthday x := by
+  refine ⟨((N : ℕ) : K), ?_⟩
+  rw [birthday_natCast_eq]
+
+/-- Under `[BirthdayFaithful K]`, no finite ordinal `B : ℕ` can bound `birthday x` for all
+`x : K` (ruling out not only the 2-valued `flatBirthday ≤ 1` model, but every `B`-bounded
+model). -/
+theorem no_finite_birthday_bound_of_faithful [BirthdayFaithful K] (B : ℕ) :
+    ¬ (∀ x : K, birthday x ≤ (B : Ordinal)) := by
+  intro hB
+  have hlt : birthday ((B : ℕ) : K) < birthday (((B + 1 : ℕ) : K)) :=
+    birthday_natCast_strictMono (Nat.lt_succ_self B)
+  rw [birthday_natCast_eq] at hlt
+  exact not_le_of_gt hlt (hB (((B + 1 : ℕ) : K)))
+
 end QOU.AppendixSurreals
