@@ -1,13 +1,13 @@
 ---
 # qou-5cyl
 title: 'derived_chi_catalogue_build is non-idempotent: add() refuses duplicates, no update path exists'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-10T14:18:04Z
-updated_at: 2026-10-04T15:18:47Z
+updated_at: 2026-11-16T19:29:47Z
 parent: qou-trd0
 ---
 
@@ -65,3 +65,9 @@ defensible:
 `derived_chi_catalogue_build.py` runs twice in a row without error, the
 second run leaves the catalogue's `tier_counts()` no worse than the first,
 and the chosen tier-collision rule is written down where `add()` is defined.
+
+## Progress Update (Round 49 — PR #8170)
+
+- Added provenance-tier (`extracted < cal-anchored < derived`) and `q_convention` (`kassel < kauffman`) preservation guard to `DerivedChiCatalogue.upsert(self, cell, *, allow_downgrade=False)` in `computations/derived_chi_catalogue.py`, returning `'kept_higher_tier'` instead of silently downgrading Phase-3 `derived` / `kauffman` cells.
+- Wired `'kept_higher_tier'` reporting into `computations/derived_chi_catalogue_build.py` and added `--self-test` to `computations/derived_chi_catalogue.py`.
+- PR: https://github.com/litlfred/qou/pull/8170 (`8b83507c7e14547848b5b991bdd3396fc7f3a703`)

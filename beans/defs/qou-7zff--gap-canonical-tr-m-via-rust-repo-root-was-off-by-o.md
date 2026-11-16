@@ -1,13 +1,13 @@
 ---
 # qou-7zff
 title: 'GAP: canonical_tr_m_via_rust REPO_ROOT was off by one — the canonical tr_M was never computed'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T17:53:15Z
-updated_at: 2026-10-04T15:19:49Z
+updated_at: 2026-11-16T19:29:47Z
 parent: qou-trd0
 ---
 
@@ -150,3 +150,8 @@ of the seven is `tr_M(p, q₀)`, and by what derivation.** The seventh at least
 has a named, reproducible producer and a dated owner ruling behind its braid
 word, which none of claimants #3–#5 do — but "has a provenance" is not "is
 canonical", and this note does not claim it is.
+
+## Progress Update (Round 49 — PR #8170)
+
+- Added `--self-test` to `computations/canonical_tr_m_via_rust.py` locking in `REPO_ROOT == HERE.parent`, `(REPO_ROOT / 'tools' / 'hecke-engine' / 'Cargo.toml').is_file()`, and `canonical_word_for(1, 0)` / `canonical_word_for(1, 1)` wire-format encoding.
+- PR: https://github.com/litlfred/qou/pull/8170 (`8b83507c7e14547848b5b991bdd3396fc7f3a703`)

@@ -1,11 +1,11 @@
 ---
 # qou-0p2h
 title: never_raises_dps_audit is blind to a file that never NAMES mpmath — 5 live, 1 fixed, all computing at dps=15
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-14T15:57:17Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-16T19:29:47Z
 parent: qou-9nnz
 ---
 
@@ -232,3 +232,9 @@ pre-existing and not a precision artefact.
 ## Parented 2026-11-15 (owner-approved bean triage)
 
 Parent `(none)` → `qou-9nnz`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.
+
+## Progress Update (Round 49 — PR #8170)
+
+- Extended `mp_value_calls(tree)` in `computations/never_raises_dps_audit.py` with `MPF_CONST_MODULES` so scripts that never name `mpmath` directly but import an `mpf` constant (`HBAR_MEV_S`, `M_E_MEV`, etc.) without importing a float64 `Q` (`qou-840k` lane) and perform `ast.BinOp` arithmetic on it are detected by the audit.
+- Added `.claude`, `.git`, `.lake`, `node_modules` to `SKIP_DIRS` and added 2 new self-test cases (15 total).
+- PR: https://github.com/litlfred/qou/pull/8170 (`8b83507c7e14547848b5b991bdd3396fc7f3a703`)
