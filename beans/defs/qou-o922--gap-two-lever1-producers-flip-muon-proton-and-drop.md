@@ -1,7 +1,8 @@
 ---
 # qou-o922
 title: 'GAP: two lever1 producers flip muon->proton and drop q0Anchor on re-run (qou-po7i, measured)'
-status: todo
+status: in-progress
+pr: 8182
 type: task
 priority: normal
 tags:
@@ -421,3 +422,17 @@ Not "40 producers to disposition". Three separate problems:
 (3) should not ride on this bean. It wants its own arc, and it is gated on
 A-vs-C (bean qou-bred) since you cannot migrate sites to read a pin before
 ruling which pin.
+
+
+## Progress Update — 2026-11-16 (PR litlfred/qou#8182)
+
+- [x] **Lean 4 Formalization (`0` `sorry`, `0` vacuity audit hits/advisories)**:
+  - `folio/quantum-observable-universe/lean/QOU/MassTheory/CrossAnchorStraddleAndSelfCertification.lean` (wired into `QOU.lean`) proves:
+    - `stageB_truncation_bias_and_coxeter_trace` (`qou-2t9y`)
+    - `detector_union_and_truncation_secant` (`qou-2whe`)
+    - `operator_input_straddle_residual_and_amplification` (`qou-qyef`)
+    - `env_diff_confound_and_true_pin_swing` (`qou-o922`)
+    - `cal2_self_certification_roundtrip_and_discrepancy` (`qou-tekx`)
+- [x] **50-dps Verification Probe & Witness (`0` raw `float64` fields)**:
+  - `computations/probes/cross_anchor_straddle_and_self_certification_probe.py` -> `computations/probes/cross-anchor-straddle-and-self-certification-probe.witness.json` (`allPassed: true`, 5/5 assertions, `scriptHash: ccf81d198aee`, `scriptCommitSha: aa5f4d7a1cb250599dfceca8aa1274da33800a1a`).
+- [x] **PR**: `litlfred/qou#8182` (`e87dd879c9ba7ce8a4dbb4751ce6e8dadbaf371b`).

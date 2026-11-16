@@ -1,7 +1,8 @@
 ---
 # qou-2whe
 title: 'GAP: hardcoded-q0-literal audit is blind to bare floats and to the canonical pin itself'
-status: todo
+status: in-progress
+pr: 8182
 type: task
 priority: normal
 tags:
@@ -78,3 +79,17 @@ So the three blind spots are **quotes required**, **prefix pinned to A/B**, and
 **scope limited to computations/** — and the same caution applies to all three:
 widening without extending the triage classes would flag the class-(b) sites
 that carry a superseded value in order to detect it.
+
+
+## Progress Update — 2026-11-16 (PR litlfred/qou#8182)
+
+- [x] **Lean 4 Formalization (`0` `sorry`, `0` vacuity audit hits/advisories)**:
+  - `folio/quantum-observable-universe/lean/QOU/MassTheory/CrossAnchorStraddleAndSelfCertification.lean` (wired into `QOU.lean`) proves:
+    - `stageB_truncation_bias_and_coxeter_trace` (`qou-2t9y`)
+    - `detector_union_and_truncation_secant` (`qou-2whe`)
+    - `operator_input_straddle_residual_and_amplification` (`qou-qyef`)
+    - `env_diff_confound_and_true_pin_swing` (`qou-o922`)
+    - `cal2_self_certification_roundtrip_and_discrepancy` (`qou-tekx`)
+- [x] **50-dps Verification Probe & Witness (`0` raw `float64` fields)**:
+  - `computations/probes/cross_anchor_straddle_and_self_certification_probe.py` -> `computations/probes/cross-anchor-straddle-and-self-certification-probe.witness.json` (`allPassed: true`, 5/5 assertions, `scriptHash: ccf81d198aee`, `scriptCommitSha: aa5f4d7a1cb250599dfceca8aa1274da33800a1a`).
+- [x] **PR**: `litlfred/qou#8182` (`e87dd879c9ba7ce8a4dbb4751ce6e8dadbaf371b`).
