@@ -1,7 +1,8 @@
 ---
 # qou-rsrg
 title: 'SEPARATE LANE (not a dependency): resurgence / Stokes as an INDEPENDENT check on S(0) = 3·S(π) = −3π²/2'
-status: todo
+status: in-progress
+pr: 8204
 type: task
 priority: low
 tags:
@@ -88,3 +89,8 @@ it is the nearest prior art and it went wrong once already.
 * Prior art on main: the `S_leak` retraction, `d4c9a36022`
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+## Progress Note (2026-11-16, PR #8204)
+- Formalized in `folio/quantum-observable-universe/lean/QOU/MassTheory/QGevreyCauchyAndFWGGMStokes.lean` (wired into `QOU.lean`, `0` `sorry`, `0` `axiom`, `0 CRITICAL / 0 advisory` across all 8 Lean static vacuity/borrowed-name audits).
+- Verified by 80-dps `mpmath` / exact rational probe `computations/probes/qgevrey_cauchy_and_fw_ggm_stokes_probe.py` and witness `computations/probes/qgevrey-cauchy-and-fw-ggm-stokes.witness.json` (`scriptCommitSha: 8ee650e779786706f931cf4f825d18b2810370eb`, `scriptHash: 7ed9e0953101`, `allPassed: true`, `0` raw `float64` fields).
+- PR: https://github.com/litlfred/qou/pull/8204 (`6b9e46ecf45f518a03c0a6fb1de251bf59b285da`).
