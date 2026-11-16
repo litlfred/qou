@@ -466,7 +466,7 @@ def main(argv=None) -> int:
     # ── Table 3: experiment error decomposition ───────────────────────────
     print("\n### 3. EXPERIMENT error: reconstruction vs direct, and the unit-conversion ceiling")
     print("| iso | M_exp recon (MeV) | σ recon (MeV) | M_exp direct (MeV) | "
-          "σ direct (MeV) | σ direct (ppQ) | intrinsic mass-in-u (ppQ) | σ B_AME (MeV) |")
+          "σ direct (MeV) | σ direct (ppQ) | σ mass-in-u (ppQ) | σ B_AME (MeV) |")
     print("|---|--:|--:|--:|--:|--:|--:|--:|")
     for r in rows:
         epp = r["sig_exp_dir"] / r["m_exp_dir"] * PPQ
