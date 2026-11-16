@@ -1,0 +1,134 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-16T20:19:31.577943+00:00",
+  "commitSha": "dc490df3193b70802e4608a98cc9402380f4dbcd",
+  "assertions": [
+    {
+      "name": "trace_conjugation_invariance_and_em_coupling_underdetermination",
+      "computed": 84,
+      "expected": 84,
+      "passed": true,
+      "source": "ColourConjugationGMODeviationAndAsymmetry.lean (qou-17gn, qou-37y0)"
+    },
+    {
+      "name": "second_order_gmo_deviation_and_sign_indefinite_node_escape",
+      "computed": 285,
+      "expected": 285,
+      "passed": true,
+      "source": "ColourConjugationGMODeviationAndAsymmetry.lean (qou-8pl2, qou-htk4)"
+    },
+    {
+      "name": "channel_product_identity_and_asymmetry_normalizations",
+      "computed": 965,
+      "expected": 965,
+      "passed": true,
+      "source": "ColourConjugationGMODeviationAndAsymmetry.lean (qou-nxvg)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "colour-conjugation-gmo-deviation-and-asymmetry",
+  "scriptFile": "colour_conjugation_gmo_deviation_and_asymmetry_probe.py",
+  "scriptHash": "cfb8d4c71137",
+  "scriptCommitSha": "dc490df3193b70802e4608a98cc9402380f4dbcd",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/colour_conjugation_gmo_deviation_and_asymmetry_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/colour_conjugation_gmo_deviation_and_asymmetry_probe.py"
+  },
+  "description": "Trace conjugation-invariance on H_3(q) Specht matrices, Convention C vs D Markov weights, EM coupling underdetermination of m_d - m_u, second-order Gell-Mann-Okubo deviation 16d, 3-mode Lagrange log-convexity vs sign-indefinite node escape, and beta-stability vs seven-term asymmetry normalizations (qou-17gn, qou-37y0, qou-8pl2, qou-htk4, qou-nxvg)",
+  "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
+  "parameters": {
+    "qTest": "111/100",
+    "gmoGridSize": 2401,
+    "atomicMassNumbersTested": [
+      56,
+      120,
+      208,
+      238
+    ]
+  },
+  "data": {
+    "workItems": [
+      "qou-17gn",
+      "qou-37y0",
+      "qou-8pl2",
+      "qou-htk4",
+      "qou-nxvg"
+    ],
+    "epic": "qou-8lxd",
+    "traceConjugationAndMarkovConvention50dps": {
+      "trSigma2_50dps": "0.2090990990990990990990990990990990990990990990991",
+      "trConjugatedNonMonotoneWord50dps": "0.2090990990990990990990990990990990990990990990991",
+      "conjugationTraceResidual50dps": "0.0",
+      "zConventionC50dps": "0.49932008307358951888158315933173779510652609761727",
+      "zConventionD50dps": "0.6127104520406791810402759732986873347968280990995",
+      "zConventionDiff50dps": "0.11339036896708966215869281396694953969030200148224"
+    },
+    "quarkMassSplitEMUnderdetermination": {
+      "sigmaQqProton": "0/1",
+      "sigmaQqNeutron": "-1/3",
+      "deltaQPn": "1/3",
+      "substrateSplit50dps": "0.0013764517376151654696086637158461356655167705078098",
+      "substrateSplitIdentityResidual50dps": "6.0771633572862711983828750525196525787014181335168e-64"
+    },
+    "secondOrderGellMannOkuboDeviation": {
+      "gridPointsVerified": 2401,
+      "allMatch16d": true,
+      "gmoAtD3": 48
+    },
+    "multiModeLogConvexityAndNodeEscape": {
+      "threeModeLagrangeIdentityHolds": true,
+      "signIndefiniteNodeValues": [
+        91,
+        82,
+        64
+      ],
+      "signIndefiniteBendFraction": "1681/1456"
+    },
+    "asymmetryNormalizations50dps": {
+      "channelProductIdentity31x31Holds": true,
+      "cBetaStability50dps": "0.014518379293520617519764719684798194042094257500182",
+      "cSevenTerm50dps": "0.029036758587041235039529439369596388084188515000363",
+      "cSevenMinusTwoCBetaResidual50dps": "0.0",
+      "zStarComparisonByA": {
+        "56": {
+          "zStarBetaStability50dps": "25.310634330446529899773018915348616553610287670542",
+          "zStarSevenTerm50dps": "23.092616800339828628950511835870206126289486267539"
+        },
+        "120": {
+          "zStarBetaStability50dps": "50.994068555073394299304785612095527373094604202074",
+          "zStarSevenTerm50dps": "44.338856808943952908999890983094701482635741582758"
+        },
+        "208": {
+          "zStarBetaStability50dps": "82.879243196835516400188354020577874942718758269718",
+          "zStarSevenTerm50dps": "68.888979835941143050383131128227920628469272613552"
+        },
+        "238": {
+          "zStarBetaStability50dps": "93.056923745144152438957039877693150729422837979339",
+          "zStarSevenTerm50dps": "76.400847917709096292297479864866096374995411375766"
+        }
+      }
+    }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Pure algebraic matrix-trace conjugation identities, pairwise quark charge combinatorics, second-order Gell-Mann-Okubo polynomial cancellation, 3-mode Lagrange sum-of-squares identity, and q-integer ratio comparison evaluated at test point q = 111/100 with no Q_0 dependence."
+}
