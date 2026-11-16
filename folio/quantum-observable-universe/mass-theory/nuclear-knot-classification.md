@@ -28,10 +28,12 @@ linearly ($-h < 0$, increasing binding).*
 | $2$ | $1$ pn (chiral) | $-h$ | $1 + h \approx 1.209$ |
 | $3$ | $1$ pp or nn (amphicheiral) | $h^2$ | $1 - h^2 \approx 0.956$ |
 | $4$ | $2$ (pp + nn, amphicheiral) | $h^2, h^2$ | $(1 - h^2)^2 \approx 0.914$ |
-| $\geq 5$ | many | $(1 - h^2)^n \to 1$ | $1$ |
+| $\geq 5$ | many | not derived | not derived |
 
-*In the large-$A$ limit, $(1 - h^2)^n \to 1$ since
-$h^2 \approx 0.044 \ll 1$, recovering the standard
-BW formula for heavy nuclei.*
+*The large-$A$ limit is not derived. For fixed $h \neq 0$ and
+$n$ amphicheiral pairs the product is $(1 - h^2)^n$, which tends
+to $0$, not to $1$, as $n \to \infty$ (at $q_0$, $h^2 \approx 0.044$
+gives $(1 - h^2)^{n} < 1/2$ once $n \geq 16$). So the pair product
+does not by itself recover the standard BW formula for heavy nuclei.*
 
 **Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
