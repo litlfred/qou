@@ -1,7 +1,7 @@
 ---
 # qou-5p7n
 title: 'EPIC: §3b disclosure backlog — 125 of 147 self-assuming projections lack the disclosure sentence'
-status: todo
+status: in-progress
 type: epic
 priority: normal
 tags:
@@ -9,7 +9,7 @@ tags:
     - vacuity
     - issue-2472
 created_at: 2026-08-10T01:47:52Z
-updated_at: 2026-10-04T15:10:05Z
+updated_at: 2026-11-16T21:22:30Z
 parent: b9cj
 ---
 
@@ -35,3 +35,6 @@ Scope note: this is *disclosure* work — making the prose match what the Lean d
 ## Reorganisation 2026-10-04
 
 Now the epic for P2.HYG under UMBRELLA: open conjectures (formal mathematics only).
+
+### Round 51 Update (PR #8206)
+- [x] Devacuified `qou-zzhw`, `qou-1vu3`, `qou-w61k`, `qou-sz98`, `qou-00c5` in PR #8206 (`aecfe3f528c442bfb5e105f53d801fa139604119`).

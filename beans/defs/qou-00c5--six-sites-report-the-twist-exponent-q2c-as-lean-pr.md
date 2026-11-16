@@ -1,13 +1,14 @@
 ---
 # qou-00c5
 title: Six sites report the twist exponent q^{2c} as Lean-PROVED; ChiralityWritheRibbon axiomatizes it as an uninhabited class
-status: todo
+status: in-progress
+pr: 8206
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T19:30:27Z
-updated_at: 2026-10-04T15:24:25Z
+updated_at: 2026-11-16T21:22:30Z
 parent: qou-6qbv
 ---
 
@@ -134,3 +135,9 @@ the identity. So `anchored_on_axiom_class` is the right label for the
 interpretive claim, and it would be equally wrong to say the identity itself is
 axiom-dependent. Both directions of over-claim are available here; the fix
 committed avoids the first, and this note guards the second.
+
+## Round 51 Progress (PR #8206)
+
+- [x] Proved `halfTwist_sq_eq_fullTwist`, `h2_fullTwist_eigenvalue_sym`, `h2_fullTwist_eigenvalue_alt`, and `h3_fullTwist_eigenvalues` in `QOU/BraidKnot/ChiralityWritheRibbon.lean`, inhabited `canonicalRibbonTwistEigenvalue`, and replaced the vacuous existential in `PNCrossingRule` with `pnCrossingProduct` (`pnCrossingProduct_deuteron`, `pnCrossingProduct_triton`, `pnCrossingProduct_alpha`) (PR #8206, HEAD `aecfe3f528c442bfb5e105f53d801fa139604119`).
+- [x] Verified 80-dps `mpmath` witness `round51-devacuify-6qbv.witness.json` (`allPassed: true`, `0` float64 values) and `0` findings across all 6 vacuity audits.
+- [ ] Awaiting Merge Manager merge of PR #8206.

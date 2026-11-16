@@ -5,7 +5,7 @@ status: in-progress
 type: epic
 priority: high
 created_at: 2026-07-11T18:40:54Z
-updated_at: 2026-11-16T20:28:56Z
+updated_at: 2026-11-16T21:22:30Z
 parent: qou-rtxm
 pr: 8189
 ---
@@ -31,3 +31,6 @@ Now the epic for P3.HON under Lean / Mathlib foundations.
 
 - [x] De-vacuified 5 children (`qou-lrnd`, `confinement_categorical`, `confinement_frobenius_reciprocity`, `four_term_pair_nucleon`, `parity_regime_selection`) in PR https://github.com/litlfred/qou/pull/8189 (`8a01e69797fd39964625747271958c7e8b76cc65`).
 - [x] Added 80-dps `mpmath` probe `computations/probes/round50_devacuify_6qbv_probe.py` and 2-commit stamped witness `computations/probes/round50-devacuify-6qbv.witness.json` (`scriptCommitSha: 357a63280dd6b77b067855dfd2ebaeb6340b2c28`, `scriptHash: 3ff73a87c2af`).
+
+### Round 51 Update (PR #8206)
+- [x] Devacuified `qou-zzhw`, `qou-1vu3`, `qou-w61k`, `qou-sz98`, `qou-00c5` in PR #8206 (`aecfe3f528c442bfb5e105f53d801fa139604119`).

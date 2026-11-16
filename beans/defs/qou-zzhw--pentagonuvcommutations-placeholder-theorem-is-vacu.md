@@ -1,13 +1,14 @@
 ---
 # qou-zzhw
 title: PentagonUvCommutation's placeholder theorem is vacuous (∨ True) — now that it compiles, the vacuity scanner will see it
-status: todo
+status: in-progress
+pr: 8206
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T21:40:00Z
-updated_at: 2026-10-04T15:22:00Z
+updated_at: 2026-11-16T21:22:30Z
 parent: qou-5p7n
 ---
 
@@ -63,3 +64,10 @@ evaluated is exactly where a false statement hides.
 The drain commit fixes only the three *compile* defects. The vacuity is
 untouched, deliberately: changing what a theorem asserts is a claim change and
 belongs to the author, not to a build-drain pass.
+
+## Round 51 Progress (PR #8206)
+
+- [x] Removed vacuous `u * v = q • (v * u) ∨ True := by exact Or.inr trivial` placeholder in `QOU/QuantumBloch/PentagonUvCommutation.lean` (PR #8206, HEAD `aecfe3f528c442bfb5e105f53d801fa139604119`).
+- [x] Proved Step 1 (`hatV_pair_commutes_of_farCommuting`), Step 3 (`hatV_braid_quadratic_swap`), Step 4 (`PentagonInterLevelDescent`, `pentagon_uv_commutation_on_transient`, `pentagon_uv_commutation_inter_level`), and concrete `2 × 2` Weyl-pair model (`weylU_mul_weylV_eq_q_smul`, `weylU_mul_weylV_ne_comm`).
+- [x] Verified 80-dps `mpmath` witness `round51-devacuify-6qbv.witness.json` (`allPassed: true`, `0` float64 values) and `0` findings across all 6 vacuity audits.
+- [ ] Awaiting Merge Manager merge of PR #8206.

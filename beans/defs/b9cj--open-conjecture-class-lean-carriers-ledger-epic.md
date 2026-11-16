@@ -1,11 +1,11 @@
 ---
 # b9cj
 title: 'UMBRELLA: open conjectures (formal mathematics only)'
-status: todo
+status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-07-05T13:20:00Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-16T21:22:30Z
 ---
 
 Ledger of all 23 open §3b conjecture-class Lean carriers (`instance : X := sorry`) across the QOU lean tree. Per AGENTS.md §3b/§1a these are HONEST conjecture placeholders — the `sorry` IS the conjecture, not missing proof; filling with a fabricated instance is an audit-dodge. Beans below track each for status/backing; famous-open encodings (RH/BSD/Collatz/…) are aspirational and NOT action items to 'prove'. Corpus also has ~153 conj: content-block labels (58 already bean-referenced); this epic scopes the open LEAN carriers specifically. One child bean per carrier.
@@ -49,3 +49,6 @@ Umbrella for every open FORMAL conjecture, one epic per family. Owner ruling 202
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+### Round 51 Update (PR #8206)
+- [x] Devacuified `qou-zzhw`, `qou-1vu3`, `qou-w61k`, `qou-sz98`, `qou-00c5` in PR #8206 (`aecfe3f528c442bfb5e105f53d801fa139604119`).
