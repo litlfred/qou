@@ -52,13 +52,11 @@ neither is a field of anything.
   every `t` — is where the quantum Euler equation would enter.  That the
   flow preserves the linking numbers and quantised circulations is the
   physical content of md part (1) and is **not** established here.
-- md part (3) (Jones-polynomial refinement) is encoded as `annular_class_conserved` and
-  `closure_invariants_conserved` below (added 2026-11-16, issue #8133): the closure of the
-  tangle's braid word is a trace, so under conjugation dynamics the whole annular class in
-  `HH₀` is conserved, and with it every closure invariant (each sector character, and the
-  Markov trace that gives `J_L`). The hypothesis that the flow acts on the word by conjugation
-  is where the Euler equation would enter, exactly as `hdef` does for part (1); it is **not**
-  established here, and a reconnection event (which changes the word) is outside it.
+- md part (3) (Jones-polynomial refinement) is encoded in the section `Closure` below
+  (2026-11-16, issue #8133): `jones_normalised_conserved` (general isotopy, via Markov moves),
+  `annular_class_conserved` / `closure_invariants_conserved` (fixed-axis case, conjugation only),
+  and `reconnection_jump` (exact jump across a reconnection). The physical input — frozen-in
+  vortex lines give an isotopy, and isotopy gives a Markov path — is cited, **not** proved here.
 - md part (4) (the `q → 1` classical Moffatt limit) has **no encoding** in this file.
 
 ## References
@@ -192,25 +190,45 @@ section Closure
 
 open QOU.BraidsAndKnots.ClosureUnseen
 
+/-! ### md part (3): what is conserved, and under which hypothesis
+
+The physical input, in its correct form (corrected 2026-11-16; the previous version assumed the
+flow acts on the braid word by conjugation, which is too narrow):
+
+1. A smooth ideal flow carries vortex lines with it (Helmholtz–Kelvin, `[moffatt1969]`), so the
+   closed vortex link at time `t` is the image of the link at time `0` under the flow map: the two
+   are **isotopic**.
+2. By the Alexander and Markov theorems (`[alexander1923]`, `[markov1936]`, `[birman1974]`), two
+   closed braids give isotopic links iff their words are joined by a path of **Markov moves**:
+   conjugation, stabilisation `x ↦ x σₙ^{±1}`, and the inverses.
+
+Step 1 is analytic and is not proved here; step 2 is classical topology and is not proved here
+either. Given them, the algebra below is proved:
+
+* `jones_normalised_conserved`: along any Markov path a Markov trace changes only by the recorded
+  stabilisation factors, so the normalised trace (the Jones value) is conserved.
+* `annular_class_conserved`: the finer annular class in `HH₀` (every sector separately) is
+  conserved only when the path uses **conjugation alone**, i.e. when the tangle stays a closed
+  braid on a fixed number of strands around a fixed axis.
+* `reconnection_jump`: a reconnection flips one crossing, which breaks isotopy; the Jones value
+  then jumps by exactly `h` times its value on the smoothed word. -/
+
+section Generic
+
 variable {R : Type*} [CommRing R] {A : Type*} [Ring A] [Algebra R A]
 
-/-- **md part (3), the closure step made explicit: the annular class is conserved.**
-
-Record the vortex tangle at discrete times by an element `β s` of the braid (Hecke) algebra `A`,
-and suppose the flow acts on it by conjugation, `β (s+1) = g s * β s * (g s)⁻¹` (hypothesis
-`hstep`, where the Euler flow would enter). Then the class of `β s` in
-`HH₀(A) = A ⧸ [A, A]` — the annular closure, which keeps every sector character separately — is
-the same at every time. -/
+/-- **Fixed-axis case.** If the flow acts on the tangle's word by conjugation,
+`β (s+1) = g s * β s * (g s)⁻¹` — the tangle stays a closed braid on the same strands around a
+fixed axis — then the class of `β s` in `HH₀(A) = A ⧸ [A, A]`, which keeps every sector character
+separately, is the same at every time. -/
 -- Ref: [leitner2026] prop:helicity-conservation; prop:closure-unseen-subword
 theorem annular_class_conserved (β : ℕ → A) (g : ℕ → Aˣ)
     (hstep : ∀ s, β (s + 1) = (g s : A) * β s * (↑(g s)⁻¹ : A)) :
     ∀ s, univTrace (R := R) (β s) = univTrace (R := R) (β 0) :=
   trace_conserved_of_conj univTrace_isTrace β g hstep
 
-/-- **md part (3): every closure invariant is conserved.** Under the same conjugation dynamics,
-any trace `t` on `A` — a sector character, or the Markov trace whose value on the tangle's word
-is `J_L` — takes the same value at every time. It is read off the conserved annular class
-through the factorisation `t = f ∘ univTrace` (`trace_factors`). -/
+/-- **Fixed-axis case: every closure invariant is conserved**, read off the conserved annular
+class through `t = f ∘ univTrace` (`trace_factors`). -/
 -- Ref: [leitner2026] prop:helicity-conservation; prop:closure-unseen-subword
 theorem closure_invariants_conserved {M : Type*} [AddCommGroup M] [Module R M]
     {t : A →ₗ[R] M} (ht : IsTrace t) (β : ℕ → A) (g : ℕ → Aˣ)
@@ -219,6 +237,36 @@ theorem closure_invariants_conserved {M : Type*} [AddCommGroup M] [Module R M]
   intro s
   rw [trace_factors ht, LinearMap.comp_apply, LinearMap.comp_apply,
     annular_class_conserved (R := R) β g hstep s]
+
+/-- **Reconnection jump.** A reconnection replaces one crossing `σ` by `σ⁻¹` inside the word
+`u σ v`. With the skein relation `σ - σ⁻¹ = h` (`h = q - q⁻¹`), any closure invariant `t` jumps by
+exactly `h` times its value on the smoothed word `u v`. -/
+-- Ref: [leitner2026] prop:helicity-conservation; prop:closure-unseen-subword
+theorem reconnection_jump {M : Type*} [AddCommGroup M] [Module R M] (t : A →ₗ[R] M)
+    (σ : Aˣ) (h : R) (hskein : (σ : A) - (↑σ⁻¹ : A) = algebraMap R A h) (u v : A) :
+    t (u * (↑σ⁻¹ : A) * v) = t (u * σ * v) - h • t (u * v) := by
+  rw [← crossing_change_jump t σ h hskein u v, sub_sub_cancel]
+
+end Generic
+
+section Isotopy
+
+variable {R : Type*} [Field R] {A : ℕ → Type*} [∀ n, Ring (A n)] [∀ n, Algebra R (A n)]
+  {T : BraidTower (R := R) A} (M : MarkovTraceOn T)
+
+/-- **General case: the normalised Jones value is conserved under isotopy.** Let the tangle's
+braid words `p 0, p 1, …` be joined by Markov moves and their inverses (what isotopy of the closed
+vortex link gives, by Markov's theorem), with recorded factors `e k`, none zero. Then the Markov
+trace divided by the accumulated factor is the same at every time. -/
+-- Ref: [leitner2026] prop:helicity-conservation; [markov1936]; [birman1974]
+theorem jones_normalised_conserved (p : ℕ → Σ n, A n) (e : ℕ → R)
+    (hstep : ∀ k, PathStep M (p k) (p (k + 1)) (e k)) (he : ∀ k, e k ≠ 0) :
+    ∀ k, (∏ i ∈ Finset.range k, e i)⁻¹ * M.val (p k) = M.val (p 0) := by
+  intro k
+  rw [val_along_path M p e hstep k, ← mul_assoc,
+    inv_mul_cancel₀ (Finset.prod_ne_zero_iff.2 (fun i _ => he i)), one_mul]
+
+end Isotopy
 
 end Closure
 
