@@ -202,7 +202,7 @@ def main():
     targets: list[Path] = []
     for p in HERE.rglob("*.py"):
         sp = str(p)
-        if "_deprecated/" in sp or "/script-qa/" in sp or "/__pycache__/" in sp:
+        if "_deprecated/" in sp or "/script-qa/" in sp or "/__pycache__/" in sp or "/.claude/" in sp:
             continue
         if p.name == HERE.joinpath("cal4_disguise_hunt.py").name:
             continue
@@ -249,8 +249,8 @@ def main():
     w.add_data("findings", all_findings)
     w.add_assertion(
         "no_unacknowledged_cal4_disguises_found",
-        computed=float(len(all_findings) == 0),
-        expected=1.0,
+        computed=int(len(all_findings) == 0),
+        expected=1,
     )
     out = w.save()
     print(f"\nWitness: {out.name}")

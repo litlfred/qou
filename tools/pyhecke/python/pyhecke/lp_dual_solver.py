@@ -809,8 +809,7 @@ def _solve_operator_selection_lp_clarabel(
         _scale = None
 
     def _finish(out: dict) -> LpDualResult:
-        if _scale is not None:
-            out = _rescale_mpfr_result(out, _scale, G_str, d)
+        out = _rescale_mpfr_result(out, _scale if _scale is not None else 1, G_str, d)
         return _lp_result_from_dict(out, d)
 
     def _solve(t_vals: list) -> dict:

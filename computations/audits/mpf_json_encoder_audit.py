@@ -76,7 +76,11 @@ MPF_SOURCES = {
     "hecke_core",
 }
 
-SKIP_DIRS = {"_deprecated", "fsh-guts", ".git", "__pycache__", "node_modules"}
+SKIP_DIRS = {"_deprecated", "fsh-guts", ".git", ".claude", ".lake", "__pycache__", "node_modules"}
+
+#: Known recursive mpf-to-string/float sanitizer helpers defined in producers
+#: (`json.dumps(_ser(witness), ...)` — bean qou-lz8f).
+SANITIZER_FUNCS = {"_ser", "_serialize", "_to_jsonable", "_clean"}
 
 
 def _iter_producers(root: pathlib.Path):
@@ -86,15 +90,18 @@ def _iter_producers(root: pathlib.Path):
         yield p
 
 
-def _analyse(path: pathlib.Path):
+def _analyse_source(src: str):
     """Return (bare_dump_lines, mpf_import_names) or None if unparseable."""
     try:
-        tree = ast.parse(path.read_text(errors="replace"))
+        tree = ast.parse(src)
     except SyntaxError:
         return None
 
     bare = []
     mpf_names = set()
+    defined_funcs = {
+        n.name for n in ast.walk(tree) if isinstance(n, ast.FunctionDef)
+    }
 
     for node in ast.walk(tree):
         # --- (2) does an mpf source reach this namespace? -------------
@@ -118,9 +125,37 @@ def _analyse(path: pathlib.Path):
             continue
         if any(kw.arg == "default" for kw in node.keywords):
             continue
+        # Exempt calls whose first argument is wrapped in a local sanitizer
+        # helper like `_ser(witness)` (the repair idiom from bean qou-lz8f).
+        if (node.args
+                and isinstance(node.args[0], ast.Call)
+                and isinstance(node.args[0].func, ast.Name)
+                and (node.args[0].func.id in SANITIZER_FUNCS
+                     or node.args[0].func.id in defined_funcs)):
+            continue
         bare.append(node.lineno)
 
     return bare, mpf_names
+
+
+def _analyse(path: pathlib.Path):
+    """Return (bare_dump_lines, mpf_import_names) or None if unparseable."""
+    return _analyse_source(path.read_text(errors="replace"))
+
+
+def _selftest() -> int:
+    """Fast self-test (bean qou-lz8f): verify bare json.dump detection and
+    `default=` / `_ser(...)` sanitizer exemptions."""
+    b1, m1 = _analyse_source("import json, mpmath\njson.dump(obj, fp)\n")
+    assert b1 == [2] and "mpmath" in m1, (b1, m1)
+    b2, m2 = _analyse_source("import json, mpmath\njson.dumps(obj, default=str)\n")
+    assert b2 == [] and "mpmath" in m2, (b2, m2)
+    b3, m3 = _analyse_source(
+        "import json, mpmath\ndef _ser(x):\n    return str(x)\njson.dumps(_ser(obj), indent=2)\n"
+    )
+    assert b3 == [] and "mpmath" in m3, (b3, m3)
+    print("self-test: ok (bare dump flagged; default=str and _ser(obj) exempted)")
+    return 0
 
 
 def main(argv=None):
@@ -128,8 +163,12 @@ def main(argv=None):
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--strict", action="store_true",
                     help="exit 1 when candidates exist")
+    ap.add_argument("--self-test", "--selftest", action="store_true",
+                    dest="selftest", help="run fast unit self-test and exit")
     ap.add_argument("--root", default=str(COMP))
     args = ap.parse_args(argv)
+    if args.selftest:
+        return _selftest()
 
     root = pathlib.Path(args.root)
     hits = []

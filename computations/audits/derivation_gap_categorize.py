@@ -71,7 +71,10 @@ FAMILY_MIN = 2  # a producer emitting >= this many witnesses is a "family"
 
 
 def _scan(pattern: str) -> list[pathlib.Path]:
-    return sorted(p for p in ROOT.rglob(pattern) if ("_deprecated" not in p.parts and "fsh-guts" not in p.parts))
+    return sorted(
+        p for p in ROOT.rglob(pattern)
+        if not ({".git", ".claude", ".lake", "node_modules", "_deprecated", "fsh-guts"} & set(p.parts))
+    )
 
 
 def _referenced_producers() -> set[str]:

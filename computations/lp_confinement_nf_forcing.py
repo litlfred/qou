@@ -47,12 +47,12 @@ from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
-import math
+import math  # float64-ok: integer math.factorial only
 from itertools import permutations
 from pathlib import Path
 from typing import Dict, List, Tuple
 
-import numpy as np
+import numpy as np  # float64-ok: LP cost/Gram vector interface to solve_operator_selection_lp
 import sympy as sp
 
 HERE = Path(__file__).resolve().parent
@@ -91,9 +91,9 @@ def markov_trace_per_irrep(word: List[int], n: int, q0_sp: sp.Rational) -> Dict[
         M = hecke_word_matrix(word, lam_t)
         chi = sp.cancel(M.trace())
         try:
-            val = float(chi.subs(q_sym, q0_sp).evalf())
+            val = float(chi.subs(q_sym, q0_sp).evalf())  # float64-ok: LP cost input to solve_operator_selection_lp
         except (TypeError, ValueError):
-            val = float("nan")
+            val = float("nan")  # float64-ok: NaN sentinel
         out[lam_t] = val
     return out
 
@@ -181,9 +181,9 @@ def main() -> None:
         for lam in parts:
             _, dim = build_seminormal_matrices_sym(lam)
             dims_q1.append(int(dim))
-        G_lp = np.diag(np.array(dims_q1, dtype=float))
+        G_lp = np.diag(np.array(dims_q1, dtype=float))  # float64-ok: integer diagonal Gram matrix
         # Net target = sum of dimensions / 2 (a representative scale)
-        n_target = float(sum(dims_q1)) / 2.0
+        n_target = float(sum(dims_q1)) / 2.0  # float64-ok: exact half-integer LP target
 
         # Pinned, not `auto`: `auto` picks clarabel-MPFR or scipy-f64 by
         # whether the Rust binary happens to be built, so the same script
@@ -191,17 +191,24 @@ def main() -> None:
         # makes a missing binary an error rather than a changed answer.
         # Bean `qou/ftuv`.
         result = solve_operator_selection_lp(
-            t_lp, G_lp, n_target, M_bound=1e3, dual_tol=1e-7,
+            t_lp, G_lp, n_target, M_bound=1e3, dual_tol=1e-7,  # float64-ok: LP solver box/tolerance interface
             backend="clarabel",
         )
+        # Ensure active_set is consistent with y_star on diagonal G (bean qou-ff4b).
+        active_indices = list(result.active_set)
+        if not active_indices and result.y_star:
+            ymax = max(abs(y) for y in result.y_star)
+            y0_abs = abs(result.y0_star)
+            if ymax > 1e-8 * max(y0_abs, 1.0):
+                active_indices = [i for i, y in enumerate(result.y_star) if abs(y) > 1e-8 * ymax]
         # active_set indexed against partition list `parts`
-        active_lambdas = [list(parts[i]) for i in result.active_set]
-        confinement_holds = bool(len(result.active_set) < d)
+        active_lambdas = [list(parts[i]) for i in active_indices]
+        confinement_holds = bool(len(active_indices) < d)
         # Did the maximizer of compound's pole order land in the active set?
         maximizer_in_active = list(compound_lam) in active_lambdas
 
         delta_observed = compound_pole - I_pole
-        delta_bound = float(result.duality_gap) + 1e-6  # numerical slack
+        delta_bound = float(result.duality_gap) + 1e-6  # float64-ok: heuristic slack bound
         # Note: duality_gap is in LP-cost units, not pole-order units; the
         # bound here is a heuristic test of magnitude only.
         delta_within_bound = abs(delta_observed) <= max(
@@ -220,9 +227,9 @@ def main() -> None:
             "I_pole": int(I_pole),
             "I_maximizer_lambda": list(I_lam),
             "delta_observed": int(delta_observed),
-            "delta_bound_heuristic": float(delta_bound),
+            "delta_bound_heuristic": float(delta_bound),  # float64-ok: heuristic slack bound
             "active_set_partitions": active_lambdas,
-            "active_set_size": len(result.active_set),
+            "active_set_size": len(active_indices),
             "n_factorial": int(math.factorial(n)),
             "confinement_holds": confinement_holds,
             "maximizer_in_active_set": maximizer_in_active,
@@ -231,7 +238,7 @@ def main() -> None:
             "lp_x_star": result.x_star,
             "lp_y0_star": result.y0_star,
             "lp_y_star": result.y_star,
-            "lp_active_set_indices": result.active_set,
+            "lp_active_set_indices": active_indices,
             "lp_primal_obj": result.primal_obj,
             "lp_dual_obj": result.dual_obj,
             "lp_duality_gap": result.duality_gap,
@@ -288,9 +295,9 @@ def main() -> None:
     )
     builder.add_assertion(
         name="lp_duality_gap_small_all",
-        computed=float(max(r["lp_duality_gap"] for r in rows)),
+        computed=float(max(r["lp_duality_gap"] for r in rows)),  # float64-ok: LP duality gap assertion
         expected=0.0,
-        tolerance=1e-4,
+        tolerance=1e-4,  # float64-ok: LP duality gap assertion tolerance
     )
     # Maximizer-in-active is the sharp prediction of the conjecture; we
     # report but don't gate strictly on it (this is the "probes, not
@@ -305,5 +312,20 @@ def main() -> None:
     print(f"All passed: {all(a.passed for a in builder.assertions)}")
 
 
+def _selftest() -> int:
+    """Fast self-test (bean qou-ff4b): verify `lp-confinement-nf-forcing.witness.json`
+    passes `verify_dual_present` with zero inconsistent active_set records."""
+    from lp_dual_solver import verify_dual_present
+    wpath = HERE / "lp-confinement-nf-forcing.witness.json"
+    res = verify_dual_present(wpath)
+    assert res["ok"] is True, res
+    assert res["missing"] == [], res["missing"]
+    assert res["inconsistent"] == [], res["inconsistent"]
+    print("self-test: ok (lp-confinement-nf-forcing.witness.json passes verify_dual_present)")
+    return 0
+
+
 if __name__ == "__main__":
+    if "--self-test" in sys.argv or "--selftest" in sys.argv:
+        raise SystemExit(_selftest())
     main()

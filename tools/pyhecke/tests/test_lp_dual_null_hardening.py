@@ -79,15 +79,29 @@ def test_empty_active_set_with_nonzero_y_star_fails(tmp_path):
 def test_empty_active_set_with_zero_y_star_passes(tmp_path):
     """An interior optimum — no tight constraint — is legitimate.
 
-    This is the case the corpus actually contains. Of 3096 witnesses, 14
-    carry an empty active set and ALL 14 pair it with an absent or all-zero
-    `y_star` (e.g. `wedderburn-lp-ew-wiring`, `duality_gap = 0.0`,
-    `y0_star = 5.2e-06`). Failing emptiness outright would have rejected
-    every one of them, which is why the implementation carved it out —
-    it was right about this half."""
+    Genuine interior optima (e.g. `wedderburn-lp-ew-wiring`, `duality_gap = 0.0`,
+    `y0_star = 5.2e-06`, or `r5-full-canonical-knot-solver` and `e-0-lp-dual-h3`
+    where `max|y*| < 1e-9`) pair an empty active set with an absent or all-zero
+    `y_star`. Conversely, the 6 records in `lp-confinement-nf-forcing` that
+    previously carried `active_set = []` alongside `max|y*| = 1.1160` (from the
+    pre-2026-08-24 primal-slack rule on diagonal `G`) were genuine violations
+    caught by this guard and repaired under bean `qou-ff4b`."""
     payload = dict(_FULL, active_set=[], y_star=[0.0, 0.0])
     r = verify_dual_present(_write(tmp_path, payload))
     assert r["ok"] is True, (r["missing"], r["inconsistent"])
+
+
+def test_lp_confinement_nf_forcing_witness_passes_verify_dual_present():
+    """Regression for bean `qou-ff4b`: `lp-confinement-nf-forcing.witness.json`
+    must pass `verify_dual_present` with zero inconsistent records."""
+    repo_root = Path(__file__).resolve().parents[3]
+    wpath = repo_root / "computations" / "lp-confinement-nf-forcing.witness.json"
+    if not wpath.exists():
+        return
+    r = verify_dual_present(wpath)
+    assert r["ok"] is True, r
+    assert r["missing"] == [], r["missing"]
+    assert r["inconsistent"] == [], r["inconsistent"]
 
 
 def test_consistent_nonempty_active_set_passes(tmp_path):

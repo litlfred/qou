@@ -197,6 +197,8 @@ def lint_docs(d: dict) -> list[str]:
                     decls.append(short)
     docs_dir = REPO / "docs"
     for md in sorted(docs_dir.rglob("*.md")):
+        if {".git", ".claude", ".lake", "node_modules"} & set(md.parts):
+            continue
         try:
             lines = md.read_text(encoding="utf-8", errors="replace").splitlines()
         except OSError:
@@ -214,7 +216,52 @@ def lint_docs(d: dict) -> list[str]:
     return findings
 
 
+def _selftest() -> int:
+    """Fast self-test (bean qou-ungx): verify R6a/R6b/R6c twin-drift checks
+    against reconstructed pre-#5074 KC21/KC22 drift cases and the live twin."""
+    fake_md = (
+        "| KC21 | **WITHDRAWN 2026-08-15** ~~the S=0 point q* is a third, decay-sector determination of q0~~ |\n"
+        "| KC22 | **WITHDRAWN 2026-08-09** ~~super-exponentially divergent (q-Gevrey, radius -> 0)~~ |\n"
+        "| KC99 | **WITHDRAWN 2026-08-15** un-struck withdrawal text |\n"
+    )
+    fake_json_drift = {
+        "constraints": [
+            {"id": "KC21", "statement": "the S=0 point q* is a third, decay-sector determination of q0"},
+            {"id": "KC22", "statement": "WITHDRAWN: super-exponentially divergent (q-Gevrey, radius -> 0)"},
+            {"id": "KC99", "statement": "WITHDRAWN: quoted only"},
+        ]
+    }
+    e, w = check_twin_drift(fake_json_drift, fake_md)
+    assert any("R6a: KC21" in x for x in e), e
+    assert any("R6b: KC21" in x for x in e), e
+    assert any("R6a: KC22" in x for x in e), e
+    assert any("R6c: KC99" in x for x in w), w
+
+    # Quoting the withdrawn claim inside double quotes with WITHDRAWN present is clean:
+    fake_json_clean = {
+        "constraints": [
+            {"id": "KC21", "statement": 'WITHDRAWN 2026-08-15 (previously read: "the S=0 point q* is a third, decay-sector determination of q0")'},
+            {"id": "KC22", "statement": 'WITHDRAWN 2026-08-09 (previously read: "super-exponentially divergent (q-Gevrey, radius -> 0)")'},
+        ]
+    }
+    e_clean, w_clean = check_twin_drift(fake_json_clean, fake_md)
+    assert e_clean == [], e_clean
+    assert w_clean == [], w_clean
+
+    # Live registry check:
+    d_live = json.loads(REGISTRY.read_text(encoding="utf-8"))
+    md_live = MARKDOWN.read_text(encoding="utf-8")
+    e_live, w_live = validate(d_live)
+    e6_live, w6_live = check_twin_drift(d_live, md_live)
+    assert e_live == [] and e6_live == [], (e_live, e6_live)
+    assert w6_live == [], w6_live
+    print("self-test: ok (R6a/R6b/R6c twin-drift checks + live registry)")
+    return 0
+
+
 def main() -> int:
+    if "--self-test" in sys.argv or "--selftest" in sys.argv:
+        return _selftest()
     strict = "--strict" in sys.argv
     do_lint = "--lint-docs" in sys.argv
     d = json.loads(REGISTRY.read_text(encoding="utf-8"))
