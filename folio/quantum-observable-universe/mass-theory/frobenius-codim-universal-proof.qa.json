@@ -254,6 +254,21 @@
         "severity": "critical",
         "evidence": "CRITICAL: md:7 divides by τ(p_λ), but under convention D tr_M(p_{(1³)}) = y_{(1³)}·χ = 0 (thm:jones-markov-trace; borromean proof:139 'y_{(1³)} = 0 identically'), so C undefined for H_3; proof:74 'At n = 3: = 2 + 1/[2]_q' uses that block. proof:24-29 uniqueness false (dim Z(A) = p(n) ≥ 2); proof:161 'τ(p_λ) → d_λ/|G|' should be d_λ²/|G|; proof:167-168 'matching proton residual to 0.14% at q₀'",
         "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: binding"
+      },
+      {
+        "field_hash": {
+          "md": "37bbd2b8f3c1",
+          "ts": "94a7a0c164a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:12:07.713Z",
+        "reviewed_sha": "5f209b510c5b50294fd755d263c17c75d49be3ed",
+        "evidence": "Follows."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1734,6 +1749,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:57:24.591Z",
+  "updated_at": "2026-11-16T07:12:07.713Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

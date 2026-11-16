@@ -253,6 +253,21 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "evidence": "crystal-isospin-degeneracy-proof.md:15-18 'relation σ_i⁻¹ = σ_i ... from the Hecke skein convention (σ_i − q)(σ_i + q⁻¹) = 0 specialised at q = 0' (counterexample: sign rep, q=1/2, σ=−2, σ⁻¹=−1/2)",
         "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: binding"
+      },
+      {
+        "field_hash": {
+          "md": "0ee79f949a31",
+          "ts": "4b05ba4b4a5f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:12:07.046Z",
+        "reviewed_sha": "5f209b510c5b50294fd755d263c17c75d49be3ed",
+        "evidence": "Follows; the modelling input is stated as an input, not derived."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1719,6 +1734,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:57:34.121Z",
+  "updated_at": "2026-11-16T07:12:07.046Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
