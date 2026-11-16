@@ -1,7 +1,8 @@
 ---
 # qou-vs2i
 title: 'PROVE(lean): shell_filling_rule.lean — 3 cited sorries [cited bertsimas1997,manuscript]'
-status: todo
+status: in-progress
+pr: 8216
 type: task
 priority: normal
 tags:
@@ -41,3 +42,8 @@ parent: qou-wp6m
   - [manuscript] quantum-observable-universe/molecular-construction/shell-filling-rule.md
 - **Tractability:** LP strong duality primal_obj = Z·y_0 for the shell-filling LP; needs LP strong-duality library Mathlib lacks.
 - **Next step:** Infra-blocked: needs Mathlib theory that does not exist. Track upstream; do not launder via axiom/class.
+
+## Progress (2026-11-16, PR #8216)
+- [x] Non-vacuous Lean 4 theorem proved (`0` `sorry`, `0` vacuity advisories) in `folio/quantum-observable-universe/lean/QOU/Eightfold/HyperchargeWritheRotationJordanGlobalGroupOctonionAndShellFilling.lean`
+- [x] 50-dps `mpmath` probe and witness stamped (`4e815f9543024d961ef648f5d19347ad79739059`, `scriptHash: 34801c11045c`)
+- [ ] Awaiting Merge Manager merge of `litlfred/qou#8216`
