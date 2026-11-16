@@ -1,11 +1,59 @@
 {
-  "computation": "he-nu-sdp-saturation-obstruction",
-  "kind": "exploratory-probe",
-  "description": "Capstone of the ν_SDP line: the operator-selection SDP saturation does not reproduce ν=1,2,2 in any principled regime — q→1 gives a single min-cost block (ν=1 always); q₀ is indefinite/rail-degenerate. With per-block-PSD, SDP-active-set, bar-fold, and self-conjugate all refuted, ν_SDP has no first-principles SDP-saturation derivation; 1,2,2 are hand-assigned. No fit.",
   "engine": "numpy+scipy",
-  "q0": 1.1099785827513808,
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-16T20:19:56.993967+00:00",
+  "commitSha": "a13d5cb78260b661631a60163702afb38764b61c",
+  "assertions": [
+    {
+      "name": "he_nu_sdp_q1_saturates_at_most_single_block",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "at q->1+ bounded support size across D, T, 3He is at most 1 (never 2)"
+    },
+    {
+      "name": "he_nu_sdp_neither_regime_yields_1_2_2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "neither q->1+ nor q0 reproduces the hand-assigned nu_SDP = (1,2,2)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "he-nu-sdp-saturation-obstruction",
+  "scriptFile": "he_nu_sdp_saturation_obstruction.py",
+  "scriptHash": "5671732228dc",
+  "scriptCommitSha": "a13d5cb78260b661631a60163702afb38764b61c",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/he_nu_sdp_saturation_obstruction.py"
+    ],
+    "reproduce": "python3 -u computations/probes/he_nu_sdp_saturation_obstruction.py"
+  },
+  "description": "Capstone of the \u03bd_SDP line: the operator-selection SDP saturation does not reproduce \u03bd=1,2,2 in any principled regime \u2014 q\u21921 gives a single min-cost block (\u03bd=1 always); q\u2080 is indefinite/rail-degenerate. With per-block-PSD, SDP-active-set, bar-fold, and self-conjugate all refuted, \u03bd_SDP has no first-principles SDP-saturation derivation; 1,2,2 are hand-assigned. No fit.",
+  "kind": "exploratory-probe",
+  "q0": "1.1099785827513808075916690956107688798744991218736",
   "regimes": {
-    "q→1⁺ (well-posed)": {
+    "q\u21921\u207a (well-posed)": {
       "D": {
         "bounded_support_size": 0,
         "nu_canonical": 1,
@@ -35,12 +83,12 @@
               3,
               3
             ],
-            0.03131267622700258
+            "0.031312676227"
           ]
         ]
       }
     },
-    "q₀ (indefinite)": {
+    "q\u2080 (indefinite)": {
       "D": {
         "bounded_support_size": 0,
         "nu_canonical": 1,
@@ -62,7 +110,7 @@
               3,
               3
             ],
-            0.029144042360972292
+            "0.029144042361"
           ]
         ]
       },
@@ -79,7 +127,7 @@
               3,
               3
             ],
-            0.0585962536544368
+            "0.0585962536544"
           ]
         ]
       }
@@ -91,19 +139,13 @@
     "3He": 1
   },
   "verdict": "OBSTRUCTED",
-  "conclusion": "No principled Markov-trace SDP saturation yields ν_SDP=1,2,2. The kashaev 'MacMahon SDP-multiplicity' categorical home is aspirational; ρ_F=2 (⁴He) is an underived acknowledged input, not a derived structural quantity.",
+  "conclusion": "No principled Markov-trace SDP saturation yields \u03bd_SDP=1,2,2. The kashaev 'MacMahon SDP-multiplicity' categorical home is aspirational; \u03c1_F=2 (\u2074He) is an underived acknowledged input, not a derived structural quantity.",
   "refs": [
-    "PR #2552, #2556 (ν_SDP arc)",
-    "content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.md",
+    "PR #2552, #2556 (\u03bd_SDP arc)",
+    "folio/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.md",
     "computations/deuteron_real_sdp.py"
   ],
-  "discipline": "EXPLORATORY — derive-or-refute, no fit, no forced ⁴He number.",
-  "scriptFile": "he_nu_sdp_saturation_obstruction.py",
-  "scriptHash": "e15ff60dc628",
-  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
-  "commitSha": "e0fa8d7e50029b30e2e972daf610417359aee37d",
-  "computedAt": "2026-09-07T10:36:24.369888+00:00",
-  "durationMs": 0,
+  "discipline": "EXPLORATORY \u2014 derive-or-refute, no fit, no forced \u2074He number.",
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
