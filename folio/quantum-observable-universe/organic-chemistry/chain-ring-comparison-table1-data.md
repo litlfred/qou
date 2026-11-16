@@ -1,4 +1,4 @@
-Experimental energy scales for the predicted-versus-observed $\mathrm{C}_6$ ring-closure barrier of [prop:chain-ring-comparison](#prop:chain-ring-comparison): the C–C single-bond and benzene-resonance energies fix the relevant molecular scale, while the last two rows give the observed chain-to-ring barriers against which the substrate-parameter prediction is checked.
+Experimental energy scales for the predicted-versus-observed $\mathrm{C}_6$ ring-closure barrier of [conj:chain-ring-comparison](#conj:chain-ring-comparison): the C–C single-bond and benzene-resonance energies fix the relevant molecular scale, while the last two rows give the observed chain-to-ring barriers against which the substrate-parameter prediction is checked.
 
 | Quantity | Experimental value | Source |
 |----------|-------------------:|--------|
