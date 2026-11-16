@@ -1,4 +1,4 @@
-**1297** indexed entries across 7 categories.
+**1303** indexed entries across 7 categories.
 
 ## Definitions
 
@@ -330,6 +330,7 @@
 | [thm:knot-mass-formula-unified](#thm:knot-mass-formula-unified) | Unified mass formula: tower + Frobenius co-Casimir correction | Ch 12 | `qou:QOU.BraidKnot.knot_mass_unified` |
 | [thm:substrate-parameter-unique](#thm:substrate-parameter-unique) | Uniqueness of the substrate parameter | Ch 2 | `qou:QOU.SubstrateParameter.unique` |
 | [thm:frobenius-codim-universal](#thm:frobenius-codim-universal) | Universal Frobenius co-dimension trace: $\tau(C_{\dim_q}) = \sum_\lambda 1/\dim_q(\lambda)$ | Ch 12 | `qou:QOU.BraidKnot.frobenius_codim_universal` |
+| [thm:centre-cocentre-descent](#thm:centre-cocentre-descent) | Centre–cocentre splitting: $A = Z(A)\oplus[A,A]$ gives a unique descended/transient split that every trace sees only through its central part | Ch 12 | `qou:QOU.MassCore.CentreCocentre.trace_eq_trace_desc` |
 
 ## Propositions
 
@@ -677,7 +678,7 @@
 | [prop:wedderburn-trace-identity](#prop:wedderburn-trace-identity) | Markov-trace normalization for $H_n(q)$ | Ch 12 | `qou:QOU.BraidsAndKnots.PlancherelViaRecipe.plancherel_via_recipe` |
 | [prop:markov-trace-frobenius-selection](#prop:markov-trace-frobenius-selection) | Markov-trace selection on H_n(R, q) — the row cap, not non-degeneracy | Ch 12 | `qou:QOU.BraidsAndKnots.markovWeights_eq_jones_of_fibre_categorical` |
 | [prop:photon-threading-mass](#prop:photon-threading-mass) | Mass as photon threading cost | Ch 20 | `qou:QOU.Information.photon_threading_mass` |
-| [conj:mass-formula-regime-switching](#conj:mass-formula-regime-switching) | Mass formula regime switch: SW+Frob for $A \leq 2$, BW+$\chi$ for $A \geq 3$ (non-additive) | Ch 12 | `qou:QOU.BraidKnot.mass_formula_regime_switching` |
+| [conj:mass-formula-regime-switching](#conj:mass-formula-regime-switching) | Mass formula regime switch: an $A$-uniform evaluation whose dominant term changes at the pair-graph regime boundaries $A = 2 \mid 3$ and $4 \mid 5$ | Ch 12 | `qou:QOU.BraidKnot.mass_formula_regime_switching` |
 | [prop:hecke-mass-trace](#prop:hecke-mass-trace) | Mass via the Markov trace of the Hecke mass element | Ch 12 | `qou:QOU.Braiding.hecke_mass_trace` |
 | [prop:mass-coefficient-shadow-price](#prop:mass-coefficient-shadow-price) | Mass-formula coefficients as shadow prices of the Frobenius positivity constraints | Ch 12 | `qou:QOU.BraidKnot.MassCoefficientShadowPrice` |
 | [prop:mass-side-kernel-formalize-first-gates](#prop:mass-side-kernel-formalize-first-gates) | Mass-side $\S 4$ formalize-first gates as parametric Lean classes — `MassSideKernel` bundles anchor-stability, q=1 shadow (open gap), and direction sanity for any `linking_weight` candidate $w(q)$; mirrors the $\mathfrak{Q}_\beta$ `BarEvenKernel` typeclass | Ch 12 | `qou:QOU.Mass.MassSideKernelFormalize.MassSideKernel` |
@@ -746,7 +747,7 @@
 | [prop:habiro-precision-ladder-equivalence](#prop:habiro-precision-ladder-equivalence) | Precision-ladder coefficients are Habiro integer evaluations | Ch 12 | `qou:QOU.BraidKnot.habiro_integral` |
 | [prop:chain-ring-comparison](#prop:chain-ring-comparison) | Predicted vs. observed $\mathrm{C}_6$ ring-closure barrier | Ch 17 | `qou:QOU.Organic.benzene_weights` |
 | [prop:homological-shell-condensation](#prop:homological-shell-condensation) | Proposition (homological shell condensation): BB-stratified $E_\infty^{p,>0}(n) = 0$ at magic $n$ | Ch 7 | `qou:QOU.ShellCondensation.HomologicalConjecture` |
-| [conj:partition-sum-proton-residual](#conj:partition-sum-proton-residual) | Proton tower residual = $m_e \cdot \mathrm{tr}_M(C_{\mathrm{Frob}}) = m_e(2 + 1/[2]_q)$ | Ch 12 | `qou:QOU.BraidKnot.proton_tower_residual_frobenius` |
+| [conj:partition-sum-proton-residual](#conj:partition-sum-proton-residual) | Proton tower residual compared with $m_e\sum_{\lambda\vdash3}1/\dim_q\lambda = m_e(2 + 1/[2]_q)$ | Ch 12 | `qou:QOU.BraidKnot.proton_tower_residual_frobenius` |
 | [prop:mass-endomorphism-tower](#prop:mass-endomorphism-tower) | Proton--electron mass endomorphism tower (convention D, $\mathrm{Li}_2^q$): the mass formula is positive under a genuine norm and bounded dilogarithm | Ch 12 | `qou:QOU.MassEndomorphism.mass_endomorphism_positive` |
 | [prop:cl3-zeta5-pslq-independence](#prop:cl3-zeta5-pslq-independence) | PSLQ certifies Cl$_3$(2$\pi$/5) $-$ Cl$_3$(4$\pi$/5) is independent of standard depth-3 periods up to coefficient norm 10$^8$ | Ch 12 | `qou:QOU.BraidKnot.Cl3Zeta5PslqIndependence.pslq_independence` |
 | [prop:meson-qcg-fusion-identity](#prop:meson-qcg-fusion-identity) | q-Clebsch–Gordan fusion identity $[3]_q\cdot[4]_q = [2]_q + [4]_q + [6]_q$ | Ch 5 | `qou:QOU.BraidKnot.meson_qCG_3x4` |
@@ -957,6 +958,11 @@
 | [prop:wigner-2-coefficient](#prop:wigner-2-coefficient) | Wigner-2 coefficient $C_{[3,2,1]} = w_{[3,2,1]} \cdot h/2$ from self-conjugate trace pairing | Ch 12 | `qou:QOU.BraidKnot.wigner2_coefficient` |
 | [prop:torus-knot-delta-q-writhe](#prop:torus-knot-delta-q-writhe) | Writhe exponent of the torus-knot $\delta_q$ decoration: $\delta_q(T_{m,p}) = h\,[(m-1)p]_q$ | Ch 12 | `qou:QOU.TorusKnotDeltaQ.torus_deltaQ_eq_h_qbracket` |
 | [prop:r-matrix-braiding-structure](#prop:r-matrix-braiding-structure) | Yang--Baxter equation and braid operator from the $R$-matrix | Ch 5 | `qou:QOU.Braiding.r_matrix_braiding_structure` |
+| [prop:pair-graph-regime-trichotomy](#prop:pair-graph-regime-trichotomy) | Pair-graph regimes of $A$: $2\bigl(\binom A2-(3A-6)\bigr)=(A-3)(A-4)$ splits $A\ge2$ into $\{2\}$, $\{3,4\}$, $\{\ge5\}$ | Ch 12 | `qou:QOU.MassCore.PairGraphRegime.regime_trichotomy` |
+| [prop:h3-frobenius-casimir-markov-trace](#prop:h3-frobenius-casimir-markov-trace) | Frobenius Casimir of $H_3(q)$: Schur elements, Markov weights, its Markov trace, and $\sum_{\lambda\vdash3}1/\dim_q\lambda = 2+1/[2]_q$ | Ch 12 | `qou:QOU.MassCore.H3FrobeniusCasimir.tr_casimir_D_ne` |
+| [prop:order-of-magnitude-screen](#prop:order-of-magnitude-screen) | The order-of-magnitude screen $\mathrm{Scr}_\lambda(t,x)$: monotone in the threshold, multiplicative, conditional rejection, finite-ladder bound, and the threshold-free direction obstruction | Ch 12 | `qou:QOU.MassCore.OrderOfMagnitudeScreen.not_screen_pow_of_le` |
+| [prop:cellular-depth-filtration](#prop:cellular-depth-filtration) | Cell-depth filtration of $Z(H_n(q))$: GB-depth as Lusztig's $a$-function, a filtration by ideals that the Goldman involution carries to the $n(\lambda)$-filtration; conditional parity transfer | Ch 12 | `qou:QOU.MassCore.CellularDepth.map_mem_F_comp` |
+| [prop:cell-depth-truncation](#prop:cell-depth-truncation) | Cell-depth truncation of a trace: the depth-$k$ parts vanish above $k_\star(x)$, any weighted sum stabilises there, and the truncated $\Phi_q$ product never stabilises | Ch 12 | `qou:QOU.MassCore.CellDepthTruncation.tower_stable` |
 
 ## Lemmas
 
