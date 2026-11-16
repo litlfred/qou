@@ -119,7 +119,7 @@ def partitionCountLow (n : ℕ) : ℕ :=
   if n ≤ 1 then 1 else if n = 2 then 2 else if n = 3 then 3 else 5
 
 /-- **Domain constraint (`qou-1jw9`).** On the low-strand window `1 ≤ n ≤ 4`,
-    the three extremal Wedderburn blocks `(n), (n-1,1), (1^n)` exhaust all
+    the three extremal partition blocks `(n), (n-1,1), (1^n)` exhaust all
     irreducible representations of `H_n(q)` if and only if `n ≤ 3`. At `n = 4`
     (`p(4) = 5 > 3`), two non-extremal blocks `(2,2)` and `(2,1,1)` appear. -/
 theorem extremal_exhausts_iff_n_le_three (n : ℕ) (hn1 : 1 ≤ n) (hn4 : n ≤ 4) :
@@ -128,7 +128,7 @@ theorem extremal_exhausts_iff_n_le_three (n : ℕ) (hn1 : 1 ≤ n) (hn4 : n ≤ 
   rcases h with rfl | rfl | rfl | rfl <;> decide
 
 /-- At `n = 4`, exactly `2` partitions (`(2,2)` and `(2,1,1)`) lie outside the
-    three extremal Wedderburn blocks. -/
+    three extremal partition blocks. -/
 theorem non_extremal_irreps_at_n_eq_four :
     partitionCountLow 4 - extremalIrrepCount 4 = 2 := rfl
 
