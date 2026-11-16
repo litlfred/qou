@@ -1,0 +1,123 @@
+{
+  "probe": "root-of-unity-cutoff-isotope-hyperfine-beta-coulomb-and-symplectic-roots",
+  "beans": [
+    "qou-qhrw",
+    "qou-fu7d",
+    "qou-ihtw",
+    "qou-jogb",
+    "qou-atsd-t3"
+  ],
+  "parentBean": "qou-8lxd",
+  "workDps": 60,
+  "outputDps": 50,
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "qou_qhrw_root_of_unity_cutoff_vs_real_positive",
+      "bean": "qou-qhrw",
+      "passed": true,
+      "cutoff_indices": [
+        3,
+        5,
+        7
+      ],
+      "max_root_of_unity_residual": "2.6320269612949326453494212985536870013821327147614e-61",
+      "min_q0_quantum_integer_m1_to_9": "1.0000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "qou_fu7d_elemental_vs_hyperfine_isotopic_separation",
+      "bean": "qou-fu7d",
+      "passed": true,
+      "o_elem_s_process": 3000,
+      "o_elem_r_process": 3000,
+      "o_hfs_s_process": 2330,
+      "o_hfs_r_process": 3380,
+      "f_odd_s_process": "0.11000000000000000000000000000000000000000000000000",
+      "f_odd_r_process": "0.46000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "qou_ihtw_isobaric_beta_coulomb_pair_increment",
+      "bean": "qou-ihtw",
+      "passed": true,
+      "pairs_kr36_rb37_sr38": [
+        1260,
+        1332,
+        1406
+      ],
+      "step_increments": [
+        72,
+        74
+      ],
+      "total_pair_increment": 146,
+      "delta_ec_two_step_mev": "11.652532371980916636600562616808845052305476672931"
+    },
+    {
+      "id": "qou_jogb_he3_binding_length_fivefold_improvement",
+      "bean": "qou-jogb",
+      "passed": true,
+      "err_binding_fm": "0.15870000000000000000000000000000000000000000000000",
+      "err_liquid_drop_fm": "0.80750000000000000000000000000000000000000000000000",
+      "improvement_ratio": "5.0882167611846250787649653434152488972904851921865",
+      "uniform_ball_rms_residual": 0
+    },
+    {
+      "id": "qou_atsd_t3_symplectic_root_and_dimension_identities",
+      "bean": "qou-atsd-t3",
+      "passed": true,
+      "cm_table": [
+        {
+          "rank_m": 1,
+          "short_roots": 0,
+          "long_roots": 2,
+          "total_roots": 2,
+          "lie_dim": 3
+        },
+        {
+          "rank_m": 2,
+          "short_roots": 4,
+          "long_roots": 4,
+          "total_roots": 8,
+          "lie_dim": 10
+        },
+        {
+          "rank_m": 3,
+          "short_roots": 12,
+          "long_roots": 6,
+          "total_roots": 18,
+          "lie_dim": 21
+        },
+        {
+          "rank_m": 4,
+          "short_roots": 24,
+          "long_roots": 8,
+          "total_roots": 32,
+          "lie_dim": 36
+        },
+        {
+          "rank_m": 5,
+          "short_roots": 40,
+          "long_roots": 10,
+          "total_roots": 50,
+          "lie_dim": 55
+        },
+        {
+          "rank_m": 6,
+          "short_roots": 60,
+          "long_roots": 12,
+          "total_roots": 72,
+          "lie_dim": 78
+        }
+      ]
+    }
+  ],
+  "scriptFile": "root_of_unity_cutoff_isotope_hyperfine_beta_coulomb_and_symplectic_roots_probe.py",
+  "scriptHash": "66984f1a5736",
+  "scriptCommitSha": "92b60d7ef70429432ca447e8a486e20a6efa055b",
+  "commitSha": "92b60d7ef70429432ca447e8a486e20a6efa055b",
+  "engine": "mpmath",
+  "computedAt": "2026-11-16T21:11:29.330971+00:00",
+  "durationMs": 0,
+  "engineVersion": "mpmath 1.3.0",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
+}
