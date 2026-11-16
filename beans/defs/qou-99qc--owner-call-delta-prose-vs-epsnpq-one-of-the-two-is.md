@@ -3560,3 +3560,14 @@ Steps:
 2. Test whether "integer charge ⟺ triality zero", applied with the colour-fixed ratio (quark : baryon = 1 : N), forces Q − T³ ≡ B mod ℤ on quark strands. That would fix Y/2 = B/2 mod integers.
 3. Report the residual freedom; do not pick from it.
 No data, and no lepton charges as input.
+
+
+### RESULT ε-Y2 (2026-11-16 06:55Z), triality_hypercharge_y2_probe.py (exact Fractions)
+- Input: the principle "total charge ∈ ℤ ⟺ (n_q − n_q̄) ≡ 0 mod 3" on all quark and antiquark strand lists up to length 6, with Q = T³ + Y/2.
+- This principle is the reverse of QuarkStrandConsequences Result 2. It is a physical input (colour confinement plus charge quantisation), NOT derived from the braid.
+- Output: the solution set is exactly Y ∈ ±1/3 + 2ℤ (scan k/36, |Y| ≤ 4).
+- Residual freedom has two parts:
+  - (a) the sign. Y → −Y is charge conjugation (V ↔ V*: which strand is called the quark). A labelling convention.
+  - (b) an integer shift Y → Y + 2k. Nothing here fixes k = 0. Taking the minimal |Y| = 1/3 would be a choice, and is NOT made here.
+- Combined with ε-Y1, colour plus triality give Y ≡ ±B (mod 2) for the quark doublet, with B = 1/3. The value 1/3 itself needs the minimality choice, or a further structure that picks k.
+- So Y is constrained but NOT derived (scope a). The ε-EM1 asymmetry 2Y is fixed up to sign and an even-integer shift: 2/3 at the minimal choice.
