@@ -30,3 +30,25 @@ and e⁻ = σ₀σ₁σ₀; `gamma_gamma_chirality_surjective`, `gamma_gamma_rea
 selection is reading 3 alone. Test: every freely reduced word over {σ₀^±1, σ₁^±1} of length 1..7 at site 0; record
 pass/fail (reading 3, every level 1..3, convention D, proton pin, mpmath 40 dps), writhe, components.
 Prediction recorded before running: pass ⟺ pure (3 components) on this set, as in stage 1. Nothing fitted.
+
+## Stage 4 — prior entangled γγ pair across proton and electron (owner card 2026-11-16 08:21Z)
+
+Owner reading: no virtual photons. The bound electron's q^{±2} shift comes from one γγ pair, created
+before binding, whose two photons land on the proton and electron strands. Backups kept on standby:
+(i) put the shift on the bond letter, (ii) unseen emitters at the exceptional divisor (the
+conjugation-invariant reading of stage 3).
+
+**Atom (6 strands, order "pe").** Nucleon V^m on strands 0–2 (m ∈ {3, 6}), then the pair word P at
+window b (sites b, b+1), then the free electron V³ on strands 3–5. No p–e single-crossing letter.
+P ∈ {L₊V⁻¹, V⁻¹L₊, L₋V⁻¹, V⁻¹L₋}; b ∈ {1, 2} (the two windows that straddle the p|e boundary).
+Order "ep" mirrors it: electron on 0–2, nucleon on 3–5, P at window b' ∈ {1, 2}.
+Control: P empty (the free atom).
+
+**Measured, reported, not selected on.**
+1. Atom alone: reading 3 at levels 1..6, and χ₍₆₎(atom) (= q^{writhe P} = q^{±2} by construction).
+2. H₂ (two atoms, both orders of atom 2), bonds none, V, V², V³ at s = 4, 5, reading 3 at levels
+   1..12 — the stage-2 recipe.
+3. Whether the passing set depends on the sign of P (L₊ vs L₋).
+
+**Prediction.** None on the sign. Expect at least one P to give a passing atom; if no atom with a
+pair passes, the entangled-pair reading fails as stated (scope a) and the backups come up.
