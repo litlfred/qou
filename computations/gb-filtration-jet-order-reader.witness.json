@@ -2,7 +2,7 @@
   "engine": "python",
   "engineVersion": "python 3.13.12",
   "computedAt": "2026-11-16T19:53:53.649901+00:00",
-  "commitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
+  "commitSha": "6465362ef2e7902778c4f8796f81286e3aeb81bc",
   "assertions": [
     {
       "name": "gb_reader_knot_named_rows_have_single_component",
@@ -17,7 +17,7 @@
   "computation": "gb-filtration-jet-order-reader",
   "scriptFile": "gb_filtration_jet_order_reader.py",
   "scriptHash": "770aa78f8743",
-  "scriptCommitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
+  "scriptCommitSha": "6465362ef2e7902778c4f8796f81286e3aeb81bc",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

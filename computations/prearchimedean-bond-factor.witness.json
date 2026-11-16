@@ -2,7 +2,7 @@
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.13.12",
   "computedAt": "2026-11-16T19:53:56.476935+00:00",
-  "commitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
+  "commitSha": "6465362ef2e7902778c4f8796f81286e3aeb81bc",
   "assertions": [
     {
       "name": "symbolic_f_bond_matches_numeric_at_q0",
@@ -18,7 +18,7 @@
   "computation": "prearchimedean-bond-factor",
   "scriptFile": "prearchimedean_bond_factor.py",
   "scriptHash": "120254ce5c75",
-  "scriptCommitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
+  "scriptCommitSha": "6465362ef2e7902778c4f8796f81286e3aeb81bc",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
