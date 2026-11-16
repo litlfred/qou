@@ -723,4 +723,74 @@ end BandSeparation
 
 end BranchingWeights
 
+section StarInvolutionFlip
+
+variable {R : Type*} [Field R] [LinearOrder R] [IsStrictOrderedRing R]
+
+/-!
+## Inverse-word involution sign flip and quotient-by-radical positivity (`qou-018h`)
+
+The Hecke `*`-structure `T_w* = T_{w⁻¹}` swaps `L₊ = σ₀σ₁ ↔ L₋ = σ₁σ₀` and fixes the
+four palindromic normal-form basis elements `γ, σ₀, σ₁, e⁻`. On the `M₂` block of
+`V_(2,1)` in the symmetric/antisymmetric parametrisation `A = [[α, β+γ], [β-γ, δ]]`,
+this involution acts as matrix transposition (`γ ↦ -γ`), converting the `-2γ²`
+antisymmetric term of `tr(A²)` into `+2γ²` in `tr(A Aᵀ)` and rendering the quotient
+`H₃(q) / rad` strictly positive definite under convention D (`y₁₃ = 0`).
+-/
+
+omit [LinearOrder R] [IsStrictOrderedRing R] in
+/-- **The transpose involution on `M₂` flips the sign of the `-2γ²` antisymmetric term.**
+
+In the symmetric/antisymmetric parametrisation `A = [[α, β+γ], [β-γ, δ]]`,
+`Aᵀ = [[α, β-γ], [β+γ, δ]]`, so `tr(A Aᵀ) = α² + 2β² + 2γ² + δ²`, turning the
+Lorentzian `-2γ²` of `traceform_M2` into `+2γ²` (`qou-018h`). -/
+theorem starform_M2_sym_antisym (α δ β γ : R) :
+    α * α + (β + γ) * (β + γ) + (β - γ) * (β - γ) + δ * δ
+      = α ^ 2 + 2 * β ^ 2 + 2 * γ ^ 2 + δ ^ 2 := by ring
+
+omit [LinearOrder R] [IsStrictOrderedRing R] in
+/-- **The star-minus-bilinear difference on `M₂` is `4γ²`, concentrated entirely on the
+antisymmetric direction.** -/
+theorem starform_sub_traceform_M2 (α δ β γ : R) :
+    (α * α + (β + γ) * (β + γ) + (β - γ) * (β - γ) + δ * δ) -
+      (α * α + (β + γ) * (β - γ) + (β - γ) * (β + γ) + δ * δ)
+      = 4 * γ ^ 2 := by ring
+
+omit [LinearOrder R] [IsStrictOrderedRing R] in
+/-- **On the `(L₊, L₋)` sub-block, swapping `L₊ ↔ L₋` in the second factor flips the
+antisymmetric mode `(d - c)(u - v)² ↦ (c - d)(u - v)²` while preserving the symmetric mode.** -/
+theorem invword_swap_flips_antisym_mode (d c u v : R) :
+    (c * (u ^ 2 + v ^ 2) + 2 * d * u * v) -
+      (d * (u ^ 2 + v ^ 2) + 2 * c * u * v)
+      = (c - d) * (u - v) ^ 2 := by ring
+
+/-- **When the cross trace exceeds the self trace (`d < c`), the `(L₊, L₋)` quadratic
+form is strictly positive on every antisymmetric state `u ≠ v` under the star pairing.** -/
+theorem invword_swap_restores_positivity (d c u v : R)
+    (hdc : d < c) (hd_pos : 0 < d + c) (hne : u - v ≠ 0) :
+    0 < (c + d) * (u + v) ^ 2 + (c - d) * (u - v) ^ 2 := by
+  have hcd : 0 < c - d := sub_pos.mpr hdc
+  have huv : 0 < (u - v) ^ 2 := sq_pos_of_ne_zero hne
+  have h1 : 0 ≤ (c + d) * (u + v) ^ 2 := mul_nonneg (by linarith) (sq_nonneg (u + v))
+  have h2 : 0 < (c - d) * (u - v) ^ 2 := mul_pos hcd huv
+  linarith
+
+/-- **Quotienting by the `(1³)` radical under convention D (`y₁₃ = 0`) yields a
+strictly positive Markov star form on every nonzero `(3) ⊕ (2,1)` state.** -/
+theorem markov_star_quotient_pos_of_radical (y₃ y₂₁ y₁₃ t₃ t₂₁ t₁₃ : R)
+    (hy₃ : 0 < y₃) (hy₂₁ : 0 < y₂₁) (hy₁₃ : y₁₃ = 0)
+    (ht₃ : 0 ≤ t₃) (ht₂₁ : 0 ≤ t₂₁) (hne : 0 < t₃ + t₂₁) :
+    0 < y₃ * t₃ + y₂₁ * t₂₁ + y₁₃ * t₁₃ := by
+  rw [hy₁₃, zero_mul, add_zero]
+  rcases lt_or_eq_of_le ht₃ with ht₃_pos | ht₃_zero
+  · have h1 : 0 < y₃ * t₃ := mul_pos hy₃ ht₃_pos
+    have h2 : 0 ≤ y₂₁ * t₂₁ := mul_nonneg (le_of_lt hy₂₁) ht₂₁
+    linarith
+  · have ht₂₁_pos : 0 < t₂₁ := by linarith
+    have h1 : 0 ≤ y₃ * t₃ := mul_nonneg (le_of_lt hy₃) ht₃
+    have h2 : 0 < y₂₁ * t₂₁ := mul_pos hy₂₁ ht₂₁_pos
+    linarith
+
+end StarInvolutionFlip
+
 end QOU.QBeta.GramSignature

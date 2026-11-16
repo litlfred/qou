@@ -157,4 +157,89 @@ theorem mass_formula_stratification_existence
   intro T r _hT
   rfl
 
+/-! ### Partition corner-hook depth and the word–partition depth bridge (`wpdb`) -/
+
+/-- The corner hook `h(0,0) = rowZero + colZero - 1` of a non-empty Young diagram
+with first-row length `rowZero = λ₁` and first-column length `colZero = λ'₁`.
+By `QOU.BraidKnot.TwoFiltrationBridge.gbDepth_eq_corner`, the maximum hook length
+(`gbDepth`) of any partition equals its corner hook. -/
+def partitionCornerHook (rowZero colZero : ℕ) : ℕ :=
+  rowZero + colZero - 1
+
+/-- For any non-empty Young diagram of `n` boxes (`1 ≤ rowZero`, `1 ≤ colZero`,
+and `rowZero + colZero - 1 ≤ n` since the first row and column overlap at `(0,0)`),
+the corner hook satisfies `1 ≤ partitionCornerHook rowZero colZero ≤ n`. -/
+theorem partitionCornerHook_bounds {rowZero colZero n : ℕ}
+    (hrow : 1 ≤ rowZero) (hcol : 1 ≤ colZero)
+    (hboxes : rowZero + colZero ≤ n + 1) :
+    1 ≤ partitionCornerHook rowZero colZero ∧
+      partitionCornerHook rowZero colZero ≤ n := by
+  unfold partitionCornerHook
+  constructor
+  · omega
+  · omega
+
+/-- At `n = 3` (the single-nucleon `H₃(q)` sector), all three partitions
+`(3)`, `(2,1)`, and `(1,1,1)` have corner hook `3`, so the partition-depth
+grading is constant on `H₃(q)`. -/
+theorem n_three_corner_hook_degenerate :
+    partitionCornerHook 3 1 = 3 ∧
+      partitionCornerHook 2 2 = 3 ∧
+      partitionCornerHook 1 3 = 3 := by
+  unfold partitionCornerHook
+  refine ⟨?_, ?_, ?_⟩
+  · omega
+  · omega
+  · omega
+
+/-- At `n = 4` (`H₄(q)`), the corner-hook grading first separates into two strata:
+the self-conjugate partition `(2,2)` has corner hook `3`, while the four hook
+partitions `(4)`, `(3,1)`, `(2,1,1)`, `(1,1,1,1)` have corner hook `4`. -/
+theorem n_four_corner_hook_stratification :
+    partitionCornerHook 4 1 = 4 ∧
+      partitionCornerHook 3 2 = 4 ∧
+      partitionCornerHook 2 2 = 3 ∧
+      partitionCornerHook 2 3 = 4 ∧
+      partitionCornerHook 1 4 = 4 := by
+  unfold partitionCornerHook
+  refine ⟨?_, ?_, ?_, ?_, ?_⟩
+  · omega
+  · omega
+  · omega
+  · omega
+  · omega
+
+/-- Explicit hypothesis carrier for the word-depth to partition-depth bridge (`wpdb`):
+relates a filtered algebra `Φ` on `A` to a partition index type `Part` by equipping
+each partition `μ` with its central idempotent `e_μ` and partition depth `partDepth μ`
+such that `e_μ` lies in the `partDepth μ`-th stratum of `Φ`. -/
+class WordPartitionDepthBridge (R : Type u) (A : Type v) (Part : Type*)
+    [CommRing R] [Ring A] [Algebra R A] (Φ : FilteredAlgebra R A) where
+  centralIdempotent : Part → A
+  partDepth : Part → ℕ
+  idempotent_in_stratum : ∀ μ : Part, gbDepth Φ (centralIdempotent μ) (partDepth μ)
+
+/-- Under `WordPartitionDepthBridge`, the GB filtration stratum `r` of each central
+idempotent `e_μ` is uniquely pinned to `partDepth μ`. -/
+theorem partDepth_unique_of_wordPartitionDepthBridge
+    {R : Type u} {A : Type v} {Part : Type*}
+    [CommRing R] [Ring A] [Algebra R A]
+    (Φ : FilteredAlgebra R A) [B : WordPartitionDepthBridge R A Part Φ]
+    (μ : Part) (r : ℕ) (hr : gbDepth Φ (B.centralIdempotent μ) r) :
+    r = B.partDepth μ :=
+  FilteredAlgebra.inStratum_unique Φ (B.centralIdempotent μ) hr (B.idempotent_in_stratum μ)
+
+/-- Since every non-empty partition has `1 ≤ partDepth μ`, no central idempotent `e_μ`
+can occupy the unshifted degree-0 stratum `gbDepth Φ (e_μ) 0` (`wpdb` Result 1). -/
+theorem no_unshifted_degree_zero_stratum
+    {R : Type u} {A : Type v} {Part : Type*}
+    [CommRing R] [Ring A] [Algebra R A]
+    (Φ : FilteredAlgebra R A) [B : WordPartitionDepthBridge R A Part Φ]
+    (hpos : ∀ μ : Part, 1 ≤ B.partDepth μ) (μ : Part) :
+    ¬ gbDepth Φ (B.centralIdempotent μ) 0 := by
+  intro h0
+  have heq := partDepth_unique_of_wordPartitionDepthBridge Φ μ 0 h0
+  have h1 := hpos μ
+  omega
+
 end QOU.WedderburnMass

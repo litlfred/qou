@@ -204,4 +204,61 @@ example : (betaEWWord 10).length = 35 := by decide
 /-- Sanity: the fallback at `n = 3` is `[σ₀, σ₁, σ₀]` (length 3). -/
 example : (betaEWWord 3).length = 3 := by decide
 
+/-! ### Row count and Temperley–Lieb kernel threshold (`qou-4qno`) -/
+
+/-- The staircase list `staircaseList k = [k, k-1, …, 1]` has length `k`. -/
+theorem staircaseList_length (k : ℕ) :
+    (staircaseList k).length = k := by
+  induction k with
+  | zero => simp [staircaseList]
+  | succ k ih =>
+    simp only [staircaseList, List.length_cons, ih]
+
+/-- The staircase partition `ρ_k = (k, k-1, …, 1)` has `k` rows. -/
+theorem staircasePartition_rows (k : ℕ) :
+    (staircasePartition k).parts.length = k := by
+  have h : (staircasePartition k).parts = staircaseList k := rfl
+  rw [h]
+  exact staircaseList_length k
+
+/-- Under the `SU(2)_q` / Temperley–Lieb row cap (`N = 2`), `ρ_k` exceeds two rows
+(and hence lies in the kernel of `H_{n_k}(q) → TL_{n_k}(q)`) if and only if `3 ≤ k`. -/
+theorem staircase_in_tl_kernel_iff_three_le (k : ℕ) :
+    2 < (staircasePartition k).parts.length ↔ 3 ≤ k := by
+  rw [staircasePartition_rows]
+  omega
+
+/-- `ρ_k` satisfies the `N = 2` Schur–Weyl row bound `ℓ(ρ_k) ≤ 2` if and only if `k ≤ 2`. -/
+theorem staircase_physical_at_su2_iff_le_two (k : ℕ) :
+    (staircasePartition k).parts.length ≤ 2 ↔ k ≤ 2 := by
+  rw [staircasePartition_rows]
+  omega
+
+/-- Among the staircase cases `k ≥ 2`, `k = 2` (`ρ₂ = (2,1)` on `3` strands) is the
+unique case within the `N = 2` row bound (`qou-4qno`). -/
+theorem staircase_unique_physical_ge_two (k : ℕ) (hk : 2 ≤ k) :
+    (staircasePartition k).parts.length ≤ 2 ↔ k = 2 := by
+  rw [staircase_physical_at_su2_iff_le_two]
+  omega
+
+/-- Explicit strand counts and row-cap classifications at `k = 2, 3, 4`:
+`n₂ = 3` (`2` rows, physical at `N = 2`), `n₃ = 6` (`3 > 2` rows, in TL kernel),
+and `n₄ = 10` (`4 > 2` rows, in TL kernel). -/
+theorem staircaseStrands_small_values :
+    staircaseStrands 2 = 3 ∧
+      staircaseStrands 3 = 6 ∧
+      staircaseStrands 4 = 10 ∧
+      (staircasePartition 2).parts.length = 2 ∧
+      2 < (staircasePartition 3).parts.length ∧
+      2 < (staircasePartition 4).parts.length := by
+  rw [staircasePartition_rows, staircasePartition_rows, staircasePartition_rows]
+  unfold staircaseStrands
+  refine ⟨?_, ?_, ?_, ?_, ?_, ?_⟩
+  · omega
+  · omega
+  · omega
+  · omega
+  · omega
+  · omega
+
 end QOU.Hecke
