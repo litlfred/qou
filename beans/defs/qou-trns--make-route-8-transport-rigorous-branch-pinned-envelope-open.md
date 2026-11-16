@@ -1,7 +1,7 @@
 ---
 # qou-trns
 title: 'Route 8 transport: branch integer now PINNED by the base point; envelope theorem still open'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -1384,3 +1384,6 @@ independent check — which this branch's record argues for.
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+## Progress (Round 57)
+- Round 57 (`litlfred/qou#8213`, commit `2301811899d7f5b7e6235c29e2d41d3e068ef89b`): Added `prod_x_sub_eq_x_mul_prod_one_sub`, `base_point_x_eq_one_pins_products`, and `root_and_shifts_invertible` in `FiveTwoCyclotomicBloch.lean` plus 80-dps mpmath witness.

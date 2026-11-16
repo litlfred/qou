@@ -1,7 +1,7 @@
 ---
 # qou-i5yp
 title: 'GAP: does a depth-<=8 Bring Gauss-Manin recurrence admit body-order period ratio a2:a3:a4 = 1:-0.52:+4.45?'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -68,3 +68,6 @@ is falsifiable. Only after that does the Picard-Fuchs identification have a
 target worth computing against.
 
 Do not run the PF computation against three terms.
+
+## Progress (Round 57)
+- Round 57 (`litlfred/qou#8213`, commit `2301811899d7f5b7e6235c29e2d41d3e068ef89b`): Added `a_four_in_terms_of_a_two`, `a_five_in_terms_of_a_two`, and `depth_three_kernel_unique` in `BodyOrderRecurrenceDepth.lean` plus 80-dps mpmath witness.

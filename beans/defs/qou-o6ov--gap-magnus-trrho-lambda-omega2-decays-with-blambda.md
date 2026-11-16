@@ -1,7 +1,7 @@
 ---
 # qou-o6ov
 title: 'RESEARCH: does |tr(rho_lambda Omega2^P)|/dim decay in b across the <=2-row column? (NOT a truncation blocker)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -623,3 +623,6 @@ cited not re-derived). The total is a weighted sum of mixed-sign terms (33+/42-)
 ## 2026-11-15 — re-scoped by the γγ rule
 
 The owner ruled that the γγ selection rule also covers the nuclear bond letters. Any number in this bean computed on the single-crossing interface letters of `atom_braid_word_3A` (`d_k`, `μ_e`, the chain law `∏(z_D + d_k)`, the `b₃` magnitudes −1.2277 / −0.7973 MeV, or a sign map on that word) is now a record of a superseded word, not a current result. Lean results stated for generic bond weights are unaffected. The redo waits on a γγ-selected word per nucleus (PR #7876). Record: `docs/audits/2026-11-15-gg-rule-rescopes-old-letter-binding.md`. The bean stays open.
+
+## Progress (Round 57)
+- Round 57 (`litlfred/qou#8213`, commit `2301811899d7f5b7e6235c29e2d41d3e068ef89b`): Added `commutator_mul_three`, `commutator_mul_of_right_commute`, and `commutator_mul_of_left_commute` in `MagnusOmega2LocalDecomposition.lean` plus 80-dps mpmath witness.

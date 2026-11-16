@@ -1,7 +1,7 @@
 ---
 # qou-o43i
 title: 'qou-brng: the Pauli-lock closure has ZERO instantiation sites — its equal-scalars hypothesis is not a corpus claim a D9 witness could settle'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -262,3 +262,6 @@ should mean for a sidecar. Recorded so it is not mistaken for an oversight.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-06 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Progress (Round 57)
+- Round 57 (`litlfred/qou#8213`, commit `2301811899d7f5b7e6235c29e2d41d3e068ef89b`): Added `reciprocal_rescale_preserves_product`, `unit_sum_product_deficit_eq_sq_diff`, and `channel_product_diff_factor` in `SeparableInterfaceHypothesesHaveContent.lean` plus 80-dps mpmath witness.

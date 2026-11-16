@@ -1,7 +1,7 @@
 ---
 # qou-offl
 title: 'Route 1 (parent: qnnq): off-lattice ϑ_K = cone-manifold / generalized-Dehn-filling deformation. Non-integer (m,ℓ) is standard geometry: Thurston generalized Dehn surgery coefficients ∈ ℝ², Hodgson–Kerckhoff cone-manifold rigidity, Gukov/Murakami generalized volume conjecture (continuous parameter u off the complete structure). Probe: fit probed ϑ values (4₁: proton 0.203, muon 0.059) to real filling coefficients on the NZ volume function; Lean: conditional NZ dVol/du statement.'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -132,3 +132,6 @@ which this bean's 2026-08-01 addendum proves unfalsifiable — it merely names
 `A = 10.35` (the rho = 1.5 row of the U2 table) and cannot be tested. Exactly
 the trap: the cusp-shape route must yield theta ABSOLUTELY, per knot, or it
 buys nothing.
+
+## Progress (Round 57)
+- Round 57 (`litlfred/qou#8213`, commit `2301811899d7f5b7e6235c29e2d41d3e068ef89b`): Added `meridian_normSq_strict_mono_winding` and `off_lattice_inside_disk_ne_meridian` in `FigureEightDeformedMeridianWinding.lean` plus 80-dps mpmath witness.
