@@ -978,7 +978,7 @@
 | [lem:tmli-constituent-composite-agreement](#lem:tmli-constituent-composite-agreement) | Constituent and composite Markov-trace evaluations agree exactly | Ch 12 | `qou:QOU.BraidsKnots.tmli_constituent_composite_agreement` |
 | [lem:piece-a-corner-removal-obligation](#lem:piece-a-corner-removal-obligation) | Corner-removal obligation: the hook-square change on removing a corner is $(s-r)^2 + 2n - 1$ | Ch 12 | — |
 | [lem:ccg-crossed-module-structure](#lem:ccg-crossed-module-structure) | Crossed-module structure on $(\mathrm{SU}_{q_n}(2), \mathcal{O}_M^{\times})$ | Ch 4 | `qou:QOU.LiftingDescent.ccg_crossed_module_structure` |
-| [lem:degree-one-braid-trivial-volume](#lem:degree-one-braid-trivial-volume) | Degree-one Hecke elements have vanishing archimedean volume: $\mathrm{Vol}\bigl(\overline{1 + \sum_i \phi_i \sigma_i}\bigr) = 0$ | Ch 12 | `qou:QOU.Photon.geom_degree_one_zero` |
+| [lem:degree-one-braid-trivial-volume](#lem:degree-one-braid-trivial-volume) | Braid words of a degree-one element have non-hyperbolic closures | Ch 12 | `qou:QOU.Photon.linearVol_eq_zero_of_mem_span` |
 | [lem:topological-mass-cat-descended](#lem:topological-mass-cat-descended) | Descended term equals the base-level mass | Ch 7 | `qou:QOU.TopologicalMass.cat_descended_is_base_mass` |
 | [lem:topological-mass-holonomy](#lem:topological-mass-holonomy) | Descended term is the unknot-core holonomy | Ch 7 | `qou:QOU.LiftingDescent.tm_descended_is_holonomy` |
 | [lem:descent](#lem:descent) | Descent preserves the quantum observable universe | Ch 4 | `qou:QOU.DescentLemma` |

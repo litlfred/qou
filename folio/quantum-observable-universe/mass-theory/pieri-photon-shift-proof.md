@@ -98,7 +98,7 @@ single photon coupling to one box.
 
 **Relation to the volume vanishing.** The
 [degree-one volume lemma](#lem:degree-one-braid-trivial-volume) says
-$\tau_{\mathrm{arch}}(\gamma) = 0$. The Pieri shift is the
+every braid word in the support of $\gamma$ has volume $0$. The Pieri shift is the
 *representation-theoretic* counterpart: it tracks how $\gamma$ moves
 the Wedderburn support without itself contributing to the archimedean
 volume of $\overline{\gamma}$.
