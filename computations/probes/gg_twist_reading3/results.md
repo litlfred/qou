@@ -186,3 +186,17 @@ does not supply. Both are reported. Neither is selected.
 
 **Reading.** In this coarse-graining, reading 3 does not see aromatic closure, the three-party
 connected part cannot see it, and the six-party connected part does, at order (log t)⁶. Scope (a).
+
+## Stage 5b — convolution-flow channels on the 6-carbon chain and ring
+
+Probe `carbon_ring_channel_probe.py` (exact integer polynomials in A, no evaluation at q₀). Each bond σ² splits under the
+convolution flow into σ² = A²·1 + (1 − A⁻⁴)·e, so the Alt channel is active on every bond for A⁴ ≠ 1.
+
+| object | channel states | states not equal to the independent-bond value d^(5−\|S\|) |
+|---|---|---|
+| chain, 5 bonds | 32 | **none**: the chain is a pure convolution product |
+| ring, 6 bonds, front band | 64 | **one**: all six bonds Alt; closes to a 2-component link, V = −t^{-1/2} + t^{-3/2} − t^{-5/2} − t^{-9/2} |
+| ring, 6 bonds, back band | 64 | **one**: the same state; V is the mirror |
+
+Closing the ring adds exactly one state that is not a convolution of its bonds, the whole cycle in the Alt channel.
+Scope (a): this locates where the ring differs from the chain; it is not a selection rule.
