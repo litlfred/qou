@@ -64,3 +64,33 @@ the modulus passes it, and the modulus passes every word.
 On 2 strands χ_(2)(σ³) = q³, χ_(1,1)(σ³) = −q⁻³: both real parts ≥ 0 only when cos(arg q³) = 0, where both are
 exactly 0 (e.g. q = e^{iπ/6}, a 12th root of unity) — a boundary point, not a pass with positive weight, and
 it is not q₀.
+
+## Stage 3 — full-photon γγ words (pre-registered in 3df55fdc6d7)
+
+**Word set.** The photon is γ = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁, and two-photon products span H₃(q)
+(`gamma-gamma-generates-particles`, theorems `gamma_gamma_chirality_surjective`,
+`gamma_gamma_reaches_Lminus`). With γ and γ̄ the words are all of B₃, so L± = σ₀σ₁, σ₀⁻¹σ₁⁻¹ are
+included. The probe takes every freely reduced word over {σ₀^±1, σ₁^±1} of length 1..7
+(4372 words). Reading 3, levels 1..3, convention D, proton pin, mpmath 40 dps. About 5 s.
+
+**Pre-registered prediction: "pass ⟺ pure braid". It FAILED as stated.**
+
+| closure | words | pass (site reading) |
+|---|---|---|
+| knot (1 component) | 720 | 0 |
+| pure (3 components) | 372 | 372 |
+| 2-component | 3280 | 1214 (954 strictly, 260 at exactly 0) |
+
+The 2-component passes depend on placement. Every word whose permutation is (1,0,2), so that the
+linked pair sits on strands 0–1, fails (1112/1112). On permutations (0,2,1) and (2,1,0) about half
+pass, and the mirror of every strict passer fails (954/954). So level-by-level reading 3 is not
+invariant under conjugation: it sees which strands carry the pair, because the level-1 and level-2
+restrictions privilege strand 0.
+
+**Conjugation-invariant reading 3.** A word passes only if every word in its orbit passes, where
+the orbit is its cyclic rotations, conjugations by each letter (freely reduced), and the σ₀↔σ₁
+flip. Under this reading the prediction holds exactly: pure 372/372 pass, 2-component 0/3280,
+knots 0/720 (`conj_invariant_pass_iff_pure`, 0 violations).
+
+Scope (a): this is a finite computation on words of length ≤ 7 at one q. It is not a proof for B₃.
+Witness: `gg-full-photon-stage3.witness.json`.
