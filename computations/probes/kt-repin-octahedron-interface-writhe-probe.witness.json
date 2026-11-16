@@ -1,0 +1,78 @@
+{
+  "probeId": "kt-repin-octahedron-interface-writhe-probe",
+  "beans": [
+    "qou-892m",
+    "qou-9lew",
+    "qou-c6gx",
+    "qou-fdjp",
+    "qou-fi1p"
+  ],
+  "parentBean": "qou-v2om",
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "dps": "50",
+  "q0Anchor": "proton",
+  "q0Value50": "1.1099785827513808075916690956107688798744991218736",
+  "computedAt": "2026-11-16T22:09:19.704334+00:00",
+  "commitSha": "7f1e70e730d1f9c70f7e9250e5dd40f97c8f2d4a",
+  "scriptFile": "kt_repin_octahedron_interface_writhe_probe.py",
+  "scriptPath": "computations/probes/kt_repin_octahedron_interface_writhe_probe.py",
+  "scriptHash": "aadb5403f318",
+  "scriptCommitSha": "7f1e70e730d1f9c70f7e9250e5dd40f97c8f2d4a",
+  "allPassed": true,
+  "assertions": {
+    "qou_892m_two_kt_assignments_differ_by_exact_q0_squared": true,
+    "qou_9lew_octahedral_half_volume_matches_1_966x_factor_two": true,
+    "qou_c6gx_2d_interface_floor_2_907_mev_and_a_scaling_sign_flip": true,
+    "qou_fdjp_proton_repin_moves_e0_by_127_978_ppb_vs_226_pct_error": true,
+    "qou_fi1p_writhe_sign_opposition_gives_3_57x_endpoint_mirror_split": true
+  },
+  "results": {
+    "qou_892m_two_kt_assignments": {
+      "hbarQ": "0.099081716044258507839177117518906063985258373389462",
+      "invHbarQ": "10.092679456150245391103970355657382563715146368666",
+      "e0ProtonMeV": "4.1859813632944758969450621587590084101434868908788",
+      "e0OverMe": "8.1917611721945038989431474731762886277004047420557",
+      "ratioInvHbarQToE0OverMe": "1.232052454166763931269804513535636184849681422917",
+      "q0Squared": "1.232052454166763931269804513535636184849681422917",
+      "meTimesHbarQMeV": "0.050630652931180635104924646325219814933145028430552",
+      "meOverHbarQSquaredMeV": "52.051466381946544294146986585611120184779794762311"
+    },
+    "qou_9lew_borromean_volume_factor_two": {
+      "volB3": "7.3277247534177487660168660064296223823151084746278",
+      "vOct": "3.6638623767088743830084330032148111911575542373139",
+      "e0TimesVolB3MeV": "30.67371925315830520729207485101514867122842613128",
+      "e0TimesVOctMeV": "15.33685962657915260364603742550757433561421306564",
+      "ratioFullToAvSemf": "1.9662640546896349491853894135266120943095144955948",
+      "ratioHalfToAvSemf": "0.98313202734481747459269470676330604715475724779742",
+      "halfVolumeResidualPct": "1.6867972655182525407305293236693952845242752202575"
+    },
+    "qou_c6gx_2d_interface_floor_and_ordering": {
+      "zConventionC": "0.49932033418369445241344268025766630375194816404153",
+      "hStep": "0.20906029879563931543084621312967494385975749526306",
+      "bPpFloorMeV": "2.9071951876245053789243251000835580631416998475964",
+      "bPnAvgMeV": "3.8904545658142179624303065615185128291216079376008",
+      "bNnCeilMeV": "5.1779672065175297310466088116481149674203933219286",
+      "floorOvershootOver2HAmePct": "30.685937223378894227752138825248628840162178477604",
+      "perBondDeficit2HMeV": "1.6651",
+      "perBondDeficit4HeMeV": "-5.4403",
+      "perBondDeficitSpreadMeV": "7.1054",
+      "orderingSpread3HePnpMinusPpnMeV": "0.98249681237549462107567489991644193685830015240356"
+    },
+    "qou_fdjp_proton_vs_muon_repin_bound": {
+      "e0ProtonMeV": "4.1859813632944758969450621587590084101434868908788",
+      "e0MuonMeV": "4.1859808275828909142898761858172327622517686975181",
+      "repinRelativeDiffPpb": "127.9775534213306211234112988327555786616928214019",
+      "ratioHe4ErrorToRepinShift": "17659346.811855173064039807389320117059869097860474"
+    },
+    "qou_fi1p_writhe_sign_opposition": {
+      "fourLogQ": "0.41736288127807804926362511989228958821497712331601",
+      "logOneMinusH": "-0.23453354521458142690999719889554525553743677918654",
+      "interfaceScalarMirrorSplitMeV": "0.76532019342529947851090404051401071779056375516712",
+      "bondLMirrorSplitMeV": "2.7288262920965398084748322594242754969224739100168",
+      "bareTransferTraceMirrorSplitMeV": "1.7470732427609196434928681499691431073565188325919",
+      "ratioBondLToInterfaceScalar": "3.5656007975998767991184327074735094840951996287947",
+      "midpointMinusBareResidualMeV": "0.0"
+    }
+  }
+}
