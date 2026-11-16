@@ -205,6 +205,116 @@ theorem eigenphase_not_bar_odd (q : ℝ) (hq : 0 < q) (hq1 : q ≠ 1) :
   have : (0 : ℝ) < (q ^ 2 - 1) ^ 2 / (2 * q ^ 2) := by positivity
   linarith
 
+/-- **Exact bar-conjugate sum in `h(q)` form (`qou-q2oa`, `qou-zuva`).**
+    `α_D(q⁻¹) + α_D(q) = h(q)² / 2`. -/
+theorem eigenphase_bar_sum_eq_half_heckeH_sq (q : ℝ) (hq : q ≠ 0) :
+    eigenphase q⁻¹ + eigenphase q = heckeH q ^ 2 / 2 := by
+  rw [eigenphase_bar_even_sum q hq]
+  unfold heckeH
+  field_simp
+  ring
+
+/-- **Convention D (`qou-q2oa`).** The standard-block `(2,1)` Wedderburn weight
+    of the `H_3(q)` Markov trace at `z_D`:
+    `y_{(2,1)}(z_D) = q² / (q² + 1)²`
+    (`QOU.QBeta.MarkovWeightsConventionD`, PR #5185). -/
+noncomputable def wedderburnMiddleWeightD (q : ℝ) : ℝ :=
+  q ^ 2 / (q ^ 2 + 1) ^ 2
+
+/-- **The convention-D `H_3(q)` middle Wedderburn weight `y_{(2,1)}(z_D)` is
+    strictly positive for every `q > 1`.** -/
+theorem wedderburnMiddleWeightD_pos (q : ℝ) (hq : 1 < q) :
+    0 < wedderburnMiddleWeightD q := by
+  unfold wedderburnMiddleWeightD
+  have hq0 : (0 : ℝ) < q := lt_trans zero_lt_one hq
+  positivity
+
+/-- The `Q_β` ladder's affine phase coefficient `κ(z) = 1/2 − z`, matching
+    `QOU.QBeta.DecayLadderConventionDPositivity.ladderPhaseCoeff`. -/
+noncomputable def ladderPhaseCoeff (z : ℝ) : ℝ := 1 / 2 - z
+
+/-- Closed rational form of the ladder phase coefficient at `z_D`:
+    `κ(z_D) = 1/2 − z_D = (1 + q² − 2q³) / (2(q² + 1))`. -/
+theorem ladderPhaseCoeff_zD_eq (q : ℝ) :
+    ladderPhaseCoeff (markovZD q) =
+      (1 + q ^ 2 - 2 * q ^ 3) / (2 * (q ^ 2 + 1)) := by
+  unfold ladderPhaseCoeff markovZD
+  have h1 : q ^ 2 + 1 ≠ 0 := by positivity
+  field_simp
+  ring
+
+/-- **`z_D(q) > 1/2` throughout the substrate regime `q > 1`.** -/
+theorem markovZD_gt_half (q : ℝ) (hq : 1 < q) : 1 / 2 < markovZD q := by
+  have hden : (0 : ℝ) < q ^ 2 + 1 := by positivity
+  rw [markovZD, lt_div_iff₀ hden]
+  nlinarith [sq_nonneg q, sq_nonneg (q - 1), sq_nonneg (q + 1)]
+
+/-- **The ladder's affine phase coefficient `κ(z_D) = 1/2 − z_D` is strictly
+    negative for every `q > 1`.** -/
+theorem ladderPhaseCoeff_neg_at_zD (q : ℝ) (hq : 1 < q) :
+    ladderPhaseCoeff (markovZD q) < 0 := by
+  have := markovZD_gt_half q hq
+  simp only [ladderPhaseCoeff]
+  linarith
+
+/-- **Discrepancy theorem (`qou-q2oa`).** For every `q > 1`, the ladder's
+    affine phase coefficient `κ(z_D) = 1/2 − z_D < 0` is strictly negative
+    while the actual convention-D `H_3(q)` middle Wedderburn weight
+    `y_{(2,1)}(z_D) = q²/(q²+1)² > 0` is strictly positive; hence
+    `κ(z_D) ≠ y_{(2,1)}(z_D)`. -/
+theorem ladderPhaseCoeff_ne_wedderburnMiddleWeight (q : ℝ) (hq : 1 < q) :
+    ladderPhaseCoeff (markovZD q) ≠ wedderburnMiddleWeightD q := by
+  have hneg := ladderPhaseCoeff_neg_at_zD q hq
+  have hpos := wedderburnMiddleWeightD_pos q hq
+  linarith
+
+/-- **Affine phase identity (`qou-q2oa`).** The eigenphase `α_D = (z_D − 1)h/2`
+    is affine in `κ(z_D) = 1/2 − z_D`:
+    `α_D(q) = −h(q)/4 − (h(q)/2) · κ(z_D)`. -/
+theorem eigenphase_eq_affine_ladderPhaseCoeff (q : ℝ) :
+    eigenphase q =
+      - heckeH q / 4 - (heckeH q / 2) * ladderPhaseCoeff (markovZD q) := by
+  unfold eigenphase ladderPhaseCoeff
+  ring
+
+/-- **Mirror-covariant projection of `α_D` (`qou-q2oa`, `qou-cds1`).**
+    Subtracting half the bar defect `h(q)²/4` from `α_D(q)` yields the unique
+    bar-odd projection:
+    `α_D(q) − h(q)²/4 = h(q)·(q⁴ − 2q³ − 2q + 1) / (4q(q² + 1))`. -/
+theorem eigenphase_mirror_covariant_projection (q : ℝ) (hq : q ≠ 0) :
+    eigenphase q - heckeH q ^ 2 / 4 =
+      heckeH q * (q ^ 4 - 2 * q ^ 3 - 2 * q + 1) / (4 * q * (q ^ 2 + 1)) := by
+  unfold eigenphase markovZD heckeH
+  have h1 : q ^ 2 + 1 ≠ 0 := by positivity
+  field_simp
+  ring
+
+/-- **Harmonic-mean comparison of the mirror-covariant projection (`qou-q2oa`).**
+    Relative to the harmonic-mean phase `−h(q)(q − 1)² / (2(q² + 1))`
+    (corresponding to `z = 2/[2]_q = 2q/(q² + 1)`), the convention-D
+    mirror-covariant projection `α_D(q) − h(q)²/4` differs by the exact
+    bar-odd remainder `h(q)(q⁴ − 4q² + 1) / (4q(q² + 1))`. -/
+theorem eigenphase_mirror_covariant_projection_sub_harmonic (q : ℝ) (hq : q ≠ 0) :
+    (eigenphase q - heckeH q ^ 2 / 4) -
+      (- (heckeH q * (q - 1) ^ 2) / (2 * (q ^ 2 + 1))) =
+      heckeH q * (q ^ 4 - 4 * q ^ 2 + 1) / (4 * q * (q ^ 2 + 1)) := by
+  unfold eigenphase markovZD heckeH
+  have h1 : q ^ 2 + 1 ≠ 0 := by positivity
+  field_simp
+  ring
+
+/-- **The mirror-covariant projection `α_D(q) − h(q)²/4` is strictly bar-odd.** -/
+theorem eigenphase_mirror_covariant_projection_bar_odd (q : ℝ) (hq : q ≠ 0) :
+    eigenphase q⁻¹ - heckeH q⁻¹ ^ 2 / 4 =
+      - (eigenphase q - heckeH q ^ 2 / 4) := by
+  have hsum := eigenphase_bar_sum_eq_half_heckeH_sq q hq
+  have hbar : heckeH q⁻¹ ^ 2 = heckeH q ^ 2 := by
+    unfold heckeH
+    rw [inv_inv]
+    ring
+  rw [hbar]
+  linarith
+
 /-! ## Spectral-identification class
 
 The fact that the single-wrap transfer-matrix eigenphase on `V_{(2,1)}`
@@ -428,5 +538,14 @@ end QOU.Interactions
 #print axioms QOU.Interactions.markovZD_bar_ne
 #print axioms QOU.Interactions.eigenphase_bar_even_sum
 #print axioms QOU.Interactions.eigenphase_not_bar_odd
+#print axioms QOU.Interactions.eigenphase_bar_sum_eq_half_heckeH_sq
+#print axioms QOU.Interactions.wedderburnMiddleWeightD_pos
+#print axioms QOU.Interactions.ladderPhaseCoeff_zD_eq
+#print axioms QOU.Interactions.ladderPhaseCoeff_neg_at_zD
+#print axioms QOU.Interactions.ladderPhaseCoeff_ne_wedderburnMiddleWeight
+#print axioms QOU.Interactions.eigenphase_eq_affine_ladderPhaseCoeff
+#print axioms QOU.Interactions.eigenphase_mirror_covariant_projection
+#print axioms QOU.Interactions.eigenphase_mirror_covariant_projection_sub_harmonic
+#print axioms QOU.Interactions.eigenphase_mirror_covariant_projection_bar_odd
 #print axioms QOU.Interactions.eigenphaseC_bar_involution
 #print axioms QOU.Interactions.q_beta_cos_resummation

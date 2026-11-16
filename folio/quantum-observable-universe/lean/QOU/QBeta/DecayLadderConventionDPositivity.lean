@@ -198,6 +198,32 @@ theorem ladderPhaseCoeff_sign_separates_zC_zD (q : ℝ) (hq : 1 < q) :
     0 < ladderPhaseCoeff (zC q) ∧ ladderPhaseCoeff (zD q) < 0 :=
   ⟨ladderPhaseCoeff_pos_at_zC q hq, ladderPhaseCoeff_neg_at_zD q hq⟩
 
+/-- The actual convention-D `H₃(q)` middle Wedderburn weight on the 2-d irrep
+    `V_{(2,1)}`, solved from the three `H₃(q)` Markov defining conditions in
+    `QOU.QBeta.MarkovWeightsConventionD` (PR #5185):
+    `y_{(2,1)}(z_D) = q² / (q² + 1)²`. -/
+noncomputable def wedderburnMiddleWeightD (q : ℝ) : ℝ :=
+  q ^ 2 / (q ^ 2 + 1) ^ 2
+
+/-- **The actual convention-D `H₃(q)` middle Wedderburn weight `y_{(2,1)}(z_D)`
+    is strictly positive for every `q > 1`.** -/
+theorem wedderburnMiddleWeightD_pos (q : ℝ) (hq : 1 < q) :
+    0 < wedderburnMiddleWeightD q := by
+  have hq0 : (0 : ℝ) < q := lt_trans zero_lt_one hq
+  rw [wedderburnMiddleWeightD]
+  positivity
+
+/-- **Discrepancy theorem (`qou-q2oa`).** For every `q > 1`, the ladder's
+    affine phase coefficient `κ(z_D) = 1/2 − z_D < 0` is strictly negative
+    while the actual convention-D `H₃(q)` middle Wedderburn weight
+    `y_{(2,1)}(z_D) = q²/(q²+1)² > 0` is strictly positive; hence
+    `1/2 − z_D ≠ y_{(2,1)}(z_D)` throughout the substrate regime `q > 1`. -/
+theorem ladderPhaseCoeff_ne_wedderburnMiddleWeight (q : ℝ) (hq : 1 < q) :
+    ladderPhaseCoeff (zD q) ≠ wedderburnMiddleWeightD q := by
+  have hneg := ladderPhaseCoeff_neg_at_zD q hq
+  have hpos := wedderburnMiddleWeightD_pos q hq
+  linarith
+
 /-! ### `z_D` in Temperley–Lieb form
 
 The Markov parameter of convention D is `q²` divided by the quantum integer
