@@ -1,0 +1,103 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-16T19:16:55.963317+00:00",
+  "commitSha": "a483e4c1498f9aa6c8faa0ce6e9551f6c3a27ebb",
+  "assertions": [
+    {
+      "name": "double_half_plaquette_equals_surface_ordering_shift",
+      "computed": "-3.289868133696452872944830333292050378437899802413596875471116458740015",
+      "expected": "-3.289868133696452872944830333292050378437899802413596875471116458740015",
+      "passed": true,
+      "tolerance": "1e-55",
+      "source": "QOU.BraidsAndKnots.naStokes_surface_ordering_double_half_plaquette"
+    },
+    {
+      "name": "bar_parity_split_extracts_even_and_odd_counit_channels",
+      "computed": "5.659799424266695e-73",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-55",
+      "source": "QOU.BraidsAndKnots.naStokesMuEff_bar_parity_split"
+    },
+    {
+      "name": "yekutieli_single_bond21_trace_equals_neg_one_minus_h_sq",
+      "computed": "-1.04370620853252198940201933567738830976821396071350610903595079685529",
+      "expected": "-1.04370620853252198940201933567738830976821396071350610903595079685529",
+      "passed": true,
+      "tolerance": "1e-55",
+      "source": "QOU.BraidsAndKnots.yekutieliBond21Trace"
+    },
+    {
+      "name": "yekutieli_b3_local_21_bond_projection_matches_chi21_borromean",
+      "computed": "1.994185812979964086728199368018716700089139582511814834682828948496677",
+      "expected": "1.994185812979964086728199368018716700089139582511814834682828948496677",
+      "passed": true,
+      "tolerance": "1e-55",
+      "source": "QOU.BraidsAndKnots.yekutieli_b3_local_21_bond_projection"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "na-stokes-bar-parity-local-bond",
+  "scriptFile": "na_stokes_bar_parity_local_bond_probe.py",
+  "scriptHash": "b65e8dd8917b",
+  "scriptCommitSha": "0460230ed949f9048ab3fee481d3038ba5d0ec59",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/na_stokes_bar_parity_local_bond_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/na_stokes_bar_parity_local_bond_probe.py"
+  },
+  "description": "50+ dps verification of the NA-Stokes curvature route -2*(pi^2/6) = -pi^2/3 (qou-yczy), the bar-odd sinh / bar-even cosh counit parity split (qou-quv8, qou-ch8w), and the Yekutieli B_3 local (2,1) bond trace projection (-1 - h^2)^3 - 3*(-1 - h^2) = 2 - 3*h^4 - h^6 (qou-h5aw).",
+  "parameters": {
+    "q_proton": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+    "h_proton": "0.2090602987956393154308462131296749438597574952630245553816960544589759"
+  },
+  "data": {
+    "beans": [
+      "qou-yczy",
+      "qou-quv8",
+      "qou-ch8w",
+      "qou-h5aw",
+      "qou-wp3h"
+    ],
+    "lean_module": "QOU.BraidsAndKnots",
+    "zeta_2": "1.644934066848226436472415166646025189218949901206798437735558229370007",
+    "half_plaquette_shift_neg_pi_sq_div_6": "-1.644934066848226436472415166646025189218949901206798437735558229370007",
+    "double_half_plaquette_neg_pi_sq_div_3": "-3.289868133696452872944830333292050378437899802413596875471116458740015",
+    "total_part_b_shifted_neg_pi_sq_div_2": "-4.934802200544679309417245499938075567656849703620395313206674688110022",
+    "sinh_log_q0_bar_odd": "0.104530149397819657715423106564837471929878747631512277690848027229488",
+    "cosh_log_q0_minus_one_bar_even": "0.005448433353561149876245989045931407944620374242066458381966212952311015",
+    "hyperbolic_casimir_residual": "0.0",
+    "mu_odd_h0": "0.207537426626467054158707444892136653465118290987322557649069496962851",
+    "mu_even_h0": "0.02161432518322495745721759601282416708518466802480053844129066865722584",
+    "mu_eff_h0": "0.2291517518096920116159250409049608205503029590121230960903601656200769",
+    "even_parity_residual": "5.659799424266695e-73",
+    "odd_parity_residual": "0.0",
+    "braid_relation_fro_residual": "2.368897314062797567012513677884741146003233473267420919065170867265915e-72",
+    "yekutieli_bond21_trace": "-1.04370620853252198940201933567738830976821396071350610903595079685529",
+    "yekutieli_bond21_det_residual": "0.0",
+    "yekutieli_b3_bond21_trace_cubed": "1.994185812979964086728199368018716700089139582511814834682828948496677",
+    "chi21_borromean_h0": "1.994185812979964086728199368018716700089139582511814834682828948496677",
+    "b3_bond_projection_residual": "1.8111358157653425e-71"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
