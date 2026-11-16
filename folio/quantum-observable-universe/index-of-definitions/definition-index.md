@@ -647,7 +647,7 @@
 | [prop:joint-galois-braid-discharged](#prop:joint-galois-braid-discharged) | Joint motivic-Galois $\times$ braid action commutes on every bi-filtration cell — discharged | Ch 19 | `qou:QOU.AlgebraicSubstrate.JointGaloisBraidDischarged.joint_action_discharged` |
 | [prop:meson-kaon-pion-hecke-seifert](#prop:meson-kaon-pion-hecke-seifert) | Kaon-to-pion mass ratio from Hecke characters and Seifert volumes | Ch 12 | `qou:QOU.Mass.seifert_ratio_T25_T23` |
 | [prop:kelvin-dispersion-derivation](#prop:kelvin-dispersion-derivation) | Kelvin wave dispersion from the $q$-Laplacian eigenvalue problem | Ch 18 | `qou:QOU.FluidDynamics.kelvin_dispersion_derivation` |
-| [prop:knot-factor-spectral-form](#prop:knot-factor-spectral-form) | Knot factor $a_K$ as a chirality-block Plancherel pairing | Ch 12 | `qou:QOU.BraidKnot.knot_factor_spectral_form` |
+| [prop:knot-factor-spectral-form](#prop:knot-factor-spectral-form) | Knot factor $a_K$ as a central Gram pairing | Ch 12 | `qou:QOU.BraidKnot.knot_factor_spectral_form` |
 | [prop:operator-selection-lp](#prop:operator-selection-lp) | Knot operator selection as linear program with LP duality | Ch 12 | `qou:QOU.ParticleInteractions.operator_selection_lp` |
 | [prop:knot-operator-selection](#prop:knot-operator-selection) | Knot operator selection via Frobenius dual | Ch 14 | `qou:QOU.Archimedean.knot_operator_selection` |
 | [prop:knot-operator-lp-selection](#prop:knot-operator-lp-selection) | Knot operators are selected per confinement by the Frobenius Gram-inverse LP/SDP dual basis | Ch 12 | `qou:QOU.BraidsAndKnots.knot_operator_lp_selection` |
