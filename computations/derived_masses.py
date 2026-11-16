@@ -140,6 +140,7 @@ from __future__ import annotations
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
+import warnings
 from functools import lru_cache
 from pathlib import Path
 
@@ -638,9 +639,31 @@ def q_beta_predicted_mev() -> mp.mpf:
     return M_E_MEV * abs(q0 ** 2 - 2 * q0 - 1) * (q0 + 1) / (2 * q0 ** 3)
 
 
+class RetiredMixedBaseWarning(UserWarning):
+    """Raised when a value built on the retired z = 1 Q_β base is used."""
+
+
+#: Status of ``q_beta_kashiwara_n2_mev``. Owner ruling 2026-11-16 (mass gap 5):
+#: label it and fail loudly; do not move the number.
+Q_BETA_KASHIWARA_N2_STATUS = "retired-mixed-base"
+
+
 @lru_cache(maxsize=None)
 def q_beta_kashiwara_n2_mev() -> mp.mpf:
-    """Q_β via the parameter-free Kashiwara b² truncation (N=2).
+    """Q_β via the Kashiwara b² truncation (N=2) — RETIRED MIXED BASE.
+
+    🛑 STATUS: ``retired-mixed-base`` (owner, 2026-11-16, mass gap 5). This
+    value is NOT a convention-D prediction. It puts a convention-D phase on the
+    z = 1 Form A base that the 2026-09-08 ruling retired, so the +501 ppb it
+    gives on m_n belongs to the retired base. Calling it emits
+    ``RetiredMixedBaseWarning`` once per process. The number is kept unchanged
+    on purpose. Every consistent convention-D cell (zero ``c_k`` rungs, each
+    census element, both E₀ forms) is recorded beside it in
+    ``qbeta/qbeta-mn-mixed-base-d-cells.witness.json``; they move m_n by
+    −122 000 to −360 000 ppb. Which element replaces this is open
+    (``qou-99qc``), and no ladder exists on an admissible base (``qou-cds1``).
+    This function evaluates at the muon pin; at the proton pin the same formula
+    moves m_n by only +0.025 ppb (same witness, ``production_q0_straddle``).
 
     Canonical near-match Q_β used for the production neutron mass
     (`m_n = m_p + Q_β + m_e`). Refines the single-wrap closed form
@@ -677,6 +700,11 @@ def q_beta_kashiwara_n2_mev() -> mp.mpf:
     Probe: `probe_q_beta_operator_valued_N3.py`
     (witness `q-beta-operator-valued-N3.witness.json`: Q_N2, eps_N2 ≈ 602 ppm).
     """
+    warnings.warn(
+        "q_beta_kashiwara_n2_mev is the RETIRED MIXED BASE (z=1 Form A base "
+        "with a convention-D phase); it is not a convention-D prediction. See "
+        "qbeta/qbeta-mn-mixed-base-d-cells.witness.json.",
+        RetiredMixedBaseWarning, stacklevel=2)
     q = _q_0()
     Q_A = q_beta_predicted_mev()
     h = q - 1 / q
@@ -723,6 +751,11 @@ def q_beta_toroidal_mev() -> mp.mpf:
     P_{n-1/2}^m is the ansatz that motivates the coefficients, not a proof
     of them. Audit: docs/audits/2026-07-19-qbeta-toroidal-tower-overclaim-audit.md.
     """
+    warnings.warn(
+        "q_beta_kashiwara_n2_mev is the RETIRED MIXED BASE (z=1 Form A base "
+        "with a convention-D phase); it is not a convention-D prediction. See "
+        "qbeta/qbeta-mn-mixed-base-d-cells.witness.json.",
+        RetiredMixedBaseWarning, stacklevel=2)
     q = _q_0()
     Q_A = q_beta_predicted_mev()
     h = q - 1 / q

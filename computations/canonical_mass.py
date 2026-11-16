@@ -67,7 +67,10 @@ def proton_neutron_mass_mev() -> tuple[float, float]:
     recomputed m_p from the F_Bor identity but derived m_n from the
     ``q_beta_toroidal_mev()`` near-match tower, whose Q_β (0.7823334279…)
     *diverges* from the canonical witness Q_β (0.7823343865… =
-    ``q_beta_kashiwara_n2_mev``). A missing witness therefore raises with a
+    ``q_beta_kashiwara_n2_mev``, which is the RETIRED MIXED BASE — z = 1
+    Form A with a convention-D phase, labelled 2026-11-16; its +501 ppb on
+    m_n is not a convention-D result, see
+    ``qbeta/qbeta-mn-mixed-base-d-cells.witness.json``). A missing witness therefore raises with a
     regeneration instruction rather than silently substituting a
     non-canonical m_n. (Toroidal-tower over-claim audit:
     docs/audits/2026-07-19-qbeta-toroidal-tower-overclaim-audit.md; the
@@ -136,6 +139,8 @@ def prediction_uncertainty_ppb(Z: int, N: int, layer: str = "canonical") -> floa
 
     def constit(qq, mee):
         m_p = 2 * (mee * vol41 / ((qq - 1) / qq) ** 2 * F_Bor(qq) - 6 * mee)
+        # RETIRED MIXED BASE (owner 2026-11-16): not a convention-D Q_β; see
+        # qbeta/qbeta-mn-mixed-base-d-cells.witness.json for the D cells.
         m_n = m_p + q_beta_kashiwara_n2_mev() + mee  # Kashiwara b² Q_β (const in FD)
         return Z * m_p + N * m_n
 
