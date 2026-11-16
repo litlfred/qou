@@ -1,0 +1,104 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-16T19:27:30.236366+00:00",
+  "commitSha": "a483e4c1498f9aa6c8faa0ce6e9551f6c3a27ebb",
+  "assertions": [
+    {
+      "name": "pn_crossing_template_subleading_shift_identity",
+      "computed": "3.075441097449654e-72",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-55",
+      "source": "QOU.AppendixQValues.pnCrossingTemplateFour_subleading_shift"
+    },
+    {
+      "name": "proton_mass_factors_mE_and_homogeneous_in_scale",
+      "computed": "7.418412301374843e-68",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-55",
+      "source": "QOU.AppendixQValues.proton_mass_factors_mE"
+    },
+    {
+      "name": "yekutieli_2d_grid_corner_holonomy_telescopes_and_path_independent",
+      "computed": "4.527839539413356e-72",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-55",
+      "source": "QOU.MathlibExt.YekutieliIntegration.gridCornerHolonomy_path_indep"
+    },
+    {
+      "name": "four_phi_holonomy_split_pairs_and_inverse",
+      "computed": "2.930826964077443474175126064421947513265013388859095044523017878117871e-71",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-55",
+      "source": "QOU.MathlibExt.YekutieliIntegration.fourPhiHolonomy_inv"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "delta-split-mrel-four-phi-resummation",
+  "scriptFile": "delta_split_mrel_four_phi_resummation_probe.py",
+  "scriptHash": "2ce4d9d7726e",
+  "scriptCommitSha": "66da8967c7bbb2544d7558251e982ed669439326",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/delta_split_mrel_four_phi_resummation_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/delta_split_mrel_four_phi_resummation_probe.py"
+  },
+  "description": "50+ dps verification of the delta-split role decoupling (qou-nbx7), relational m_e factorization and |S_3|=6 baseline subtraction in ProtonBorromeanAssembly (qou-mrel, qou-n04i), and 2D Yekutieli grid / 4-Phi_q quantum-dilogarithm holonomy factorization (qou-ncgk, qou-3fqa).",
+  "parameters": {
+    "q_proton": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+    "h_proton": "0.2090602987956393154308462131296749438597574952630245553816960544589759",
+    "hbar_proton": "0.09908171604425850783917711751890606398525837338944581930888181427717694"
+  },
+  "data": {
+    "beans": [
+      "qou-nbx7",
+      "qou-mrel",
+      "qou-n04i",
+      "qou-ncgk",
+      "qou-3fqa",
+      "qou-wp3h"
+    ],
+    "lean_modules": [
+      "QOU.AppendixQValues.ProtonBorromeanAssembly",
+      "QOU.MathlibExt.YekutieliIntegration"
+    ],
+    "delta_lead": "0.002082284573524830658753905405058053106338506919133124720575442672897659",
+    "d_subleading_minus_leading_abs": "0.0000001058600796292127284429955652808837958732466528427818185438388992856784",
+    "subleading_shift_residual": "1.174618239431228e-72",
+    "k43_k1_shift_residual": "1.900822858018426e-72",
+    "vol_4_1": "2.029883212819307250042405108549040571883378615060599584034978213553195",
+    "mu_over_me_ratio": "206.7683263706738902896095864099026759384582045510299860852537003315976",
+    "f_bor_q0": "4.46913873576752252938907513085251112799197409748647032095151718049928",
+    "proton_over_me_dimensionless": "1836.152673426",
+    "m_e_factorization_residual": "0.0",
+    "m_e_homogeneity_residual": "7.418412301374843e-68",
+    "grid_lr_telescope_residual": "4.527839539413356e-72",
+    "grid_path_indep_residual": "0.0",
+    "four_phi_split_residual": "1.812019943626527946186070890686572678373830649119236335973111379767855e-71",
+    "four_phi_inv_residual": "1.118807020450915527989055173735374834891182739739858708549906498350015e-71"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
