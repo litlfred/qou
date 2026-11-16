@@ -1,0 +1,91 @@
+{
+  "probe": "extended-bloch-flattening-and-gaussian-cell",
+  "beans": [
+    "qou-985x",
+    "qou-adgd",
+    "qou-epy2",
+    "qou-kifs",
+    "qou-xblo"
+  ],
+  "precisionDps": "80",
+  "scriptHash": "5f845dd0f738",
+  "scriptCommitSha": "901f37789dbea27a6205b8b891355c42b76dc271",
+  "generatedAt": "2026-11-16T21:40:00.629346+00:00",
+  "allPassed": true,
+  "checks": {
+    "qou_985x_tetrahedral_threshold": {
+      "passed": true,
+      "simplexTable": [
+        {
+          "A": "2",
+          "pairwiseEdgeCount": "1/1",
+          "tetrahedralSimplexCount": "0/1",
+          "ratio12C4MinusC2Prod": "0"
+        },
+        {
+          "A": "3",
+          "pairwiseEdgeCount": "3/1",
+          "tetrahedralSimplexCount": "0/1",
+          "ratio12C4MinusC2Prod": "0"
+        },
+        {
+          "A": "4",
+          "pairwiseEdgeCount": "6/1",
+          "tetrahedralSimplexCount": "1/1",
+          "ratio12C4MinusC2Prod": "0"
+        },
+        {
+          "A": "5",
+          "pairwiseEdgeCount": "10/1",
+          "tetrahedralSimplexCount": "5/1",
+          "ratio12C4MinusC2Prod": "0"
+        },
+        {
+          "A": "6",
+          "pairwiseEdgeCount": "15/1",
+          "tetrahedralSimplexCount": "15/1",
+          "ratio12C4MinusC2Prod": "0"
+        },
+        {
+          "A": "7",
+          "pairwiseEdgeCount": "21/1",
+          "tetrahedralSimplexCount": "35/1",
+          "ratio12C4MinusC2Prod": "0"
+        },
+        {
+          "A": "8",
+          "pairwiseEdgeCount": "28/1",
+          "tetrahedralSimplexCount": "70/1",
+          "ratio12C4MinusC2Prod": "0"
+        }
+      ]
+    },
+    "qou_adgd_archimedean_li2_branches": {
+      "passed": true,
+      "li2One": "1.644934066848226436472415166646025189219",
+      "li2MinusOne": "-0.8224670334241132182362075833230125946095",
+      "duplicationResidual": "0.0",
+      "li2MinusOneTargetResidual": "1.054219794323052322434857405127001900771e-81",
+      "xGt1InversionResidual": "4.216879177292209289739429620508007603084e-81"
+    },
+    "qou_epy2_gaussian_cell_comparison": {
+      "passed": true,
+      "exactCellIntegral": "-54229/11520",
+      "trapezoidDefect": "-7/1920",
+      "midpointDefect": "7/3840",
+      "simpsonDefect": "0/1"
+    },
+    "qou_kifs_kummer_lobachevsky_vs_bloch_wigner": {
+      "passed": true,
+      "threeCycleShiftResidual": "0.0",
+      "edgeProductMinusOneResidual": "1.056214063864925433291923522381981884154e-81",
+      "genericBlochWignerVsCorpusThreeSumGap": "0.6635963194476155330360432437239660649762"
+    },
+    "qou_xblo_five_two_extended_bloch_sum_rule": {
+      "passed": true,
+      "cubicRootSumResidual": "1.054219794323052322434857405127001900771e-81",
+      "cubicRootProductResidual": "1.078388826676303213006253349653367268925e-81",
+      "ninefoldPiSqCoefficient": "-3/2"
+    }
+  }
+}
