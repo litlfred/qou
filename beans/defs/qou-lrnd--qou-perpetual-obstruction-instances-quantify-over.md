@@ -1,14 +1,15 @@
 ---
 # qou-lrnd
 title: QOU perpetual-obstruction instances quantify over p but conclude about a constant
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-22T15:26:08Z
-updated_at: 2026-10-10T07:01:37Z
+updated_at: 2026-11-16T20:28:25Z
 parent: qou-6qbv
+pr: 8189
 ---
 
 FOUND 2026-08-22 while resolving qou-oy4r (main red on
@@ -856,3 +857,10 @@ For scale: the route this replaces was measured at **18.1 days for A=3**.
 ## 2026-10-10 — pointer
 
 Tracked under the in-scope list (not merged) of epic `qou-d8c7` "Mass endomorphism" (issue litlfred/qou#7547). Parent and status unchanged; the epic body lists what is still open for this item and where it sits in the attack-vector catalogue.
+
+## Progress (PR #8189, 2026-11-16T20:28:25Z)
+
+- [x] Restated `perpetual_obstruction_from_collapse_invariant`, `qou_proton_perpetual_obstruction`, `qou_neutron_perpetual_obstruction`, and `qou_deuteron_perpetual_obstruction` in `folio/quantum-observable-universe/lean/QOU/LiftingDescent/MotivicPerpetualObstructionFromTrace.lean` using `habiroPrimeCollapse` so the conclusion genuinely evaluates the `p`-indexed Habiro prime-ideal collapse functional at `p` via `perpetual_obstruction_from_trace`.
+- [x] Verified with Lean v4.24.0 (`lean -DautoImplicit=false -s 65536`: 0 errors, 0 warnings, 0 `sorry`) and all 6 static vacuity audits (0 findings).
+- [x] Verified with 80-dps `mpmath` probe (`computations/probes/round50_devacuify_6qbv_probe.py`) and 2-commit stamped witness (`computations/probes/round50-devacuify-6qbv.witness.json`, `scriptCommitSha: 357a63280dd6b77b067855dfd2ebaeb6340b2c28`, `scriptHash: 3ff73a87c2af`).
+- [ ] Awaiting review and merge of PR https://github.com/litlfred/qou/pull/8189 (`status: in-progress` maintained per repo rule).
