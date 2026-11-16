@@ -105,4 +105,40 @@ theorem minpoly_one_add (w : R) (hw : w ^ 3 - 2 * w ^ 2 - w + 1 = 0) :
     (1 + w) ^ 3 - 5 * (1 + w) ^ 2 + 6 * (1 + w) - 1 = 0 := by
   linear_combination hw
 
+/-- **Direct equality of the two symmetric-product combinations along the curve.**
+
+Along the elementary-symmetric locus, `(x − y₁)(x − y₂)(x − y₃)` equals
+`x · (1 − x y₁)(1 − x y₂)(1 − x y₃)`. -/
+theorem prod_x_sub_eq_x_mul_prod_one_sub (x y₁ y₂ y₃ : R)
+    (h₁ : x * (y₁ + y₂ + y₃) = x ^ 2 + 1)
+    (h₂ : x * (y₁ * y₂ + y₁ * y₃ + y₂ * y₃) = x ^ 2 + x + 1)
+    (h₃ : y₁ * y₂ * y₃ = 1) :
+    (x - y₁) * (x - y₂) * (x - y₃) =
+      x * ((1 - x * y₁) * (1 - x * y₂) * (1 - x * y₃)) := by
+  linear_combination (x ^ 3 - x) * h₁ + (1 - x ^ 2) * h₂ + (x ^ 4 - 1) * h₃
+
+/-- **Specialization at the base point `x = 1` pins `(1 − y₁)(1 − y₂)(1 − y₃) = 1`.**
+
+At `x = 1`, the elementary symmetric relations `y₁ + y₂ + y₃ = 2`,
+`y₁ y₂ + y₁ y₃ + y₂ y₃ = 3`, and `y₁ y₂ y₃ = 1` force `(1 − y₁)(1 − y₂)(1 − y₃) = 1`. -/
+theorem base_point_x_eq_one_pins_products (y₁ y₂ y₃ : R)
+    (h₁ : (1 : R) * (y₁ + y₂ + y₃) = 1 ^ 2 + 1)
+    (h₂ : (1 : R) * (y₁ * y₂ + y₁ * y₃ + y₂ * y₃) = 1 ^ 2 + 1 + 1)
+    (h₃ : y₁ * y₂ * y₃ = 1) :
+    (1 - y₁) * (1 - y₂) * (1 - y₃) = 1 := by
+  linear_combination -h₁ + h₂ - h₃
+
+/-- **Explicit polynomial inverses of `w`, `1 − w`, and `1 + w` at any root of `w³ − 2w² − w + 1 = 0`.**
+
+Every root `w` of `w³ − 2w² − w + 1 = 0` has polynomial inverses for `w`, `1 − w`, and `1 + w`
+in `ℤ[w]`, certifying that none of the three factors can vanish along the cyclotomic locus. -/
+theorem root_and_shifts_invertible (w : R) (hw : w ^ 3 - 2 * w ^ 2 - w + 1 = 0) :
+    w * (-w ^ 2 + 2 * w + 1) = 1 ∧
+      (1 - w) * (2 + w - w ^ 2) = 1 ∧
+      (1 + w) * (w ^ 2 - 3 * w + 2) = 1 := by
+  refine ⟨?_, ?_, ?_⟩
+  · linear_combination -hw
+  · linear_combination hw
+  · linear_combination hw
+
 end QOU.QBeta.FiveTwoCyclotomicBloch

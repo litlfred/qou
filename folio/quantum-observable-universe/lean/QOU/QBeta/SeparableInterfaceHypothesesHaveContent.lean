@@ -198,4 +198,34 @@ theorem asymmetry_attainable_with_distinct_scalars {R : Type*} [Field R]
   refine ⟨1, r * μm / μp, ?_⟩
   field_simp
 
+/-- **Reciprocal rescaling leaves the scalar pair product invariant.**
+
+For any nonzero scale factor `t`, rescaling the first scalar by `t` and the second by
+`t⁻¹` leaves the product `μ₊ · μ₋` unchanged while shifting their individual values,
+showing that fixing the product alone does not pin the scalar pair. -/
+theorem reciprocal_rescale_preserves_product {R : Type*} [Field R]
+    (μp μm t : R) (ht : t ≠ 0) :
+    (μp * t) * (μm / t) = μp * μm := by
+  have h1 : (μp * t) * (μm / t) = (μp * μm) * (t / t) := by ring
+  rw [h1, div_self ht, mul_one]
+
+/-- **Under unit sum, the product deficit equals the squared difference.**
+
+Whenever `μ₊ + μ₋ = 1`, the discrepancy `1 − 4 μ₊ μ₋` equals `(μ₊ − μ₋)²`, so a one-dimensional
+family parameterized by `μ₊ − μ₋` varies the individual scalars continuously unless both
+sum and product are simultaneously fixed. -/
+theorem unit_sum_product_deficit_eq_sq_diff {R : Type*} [CommRing R]
+    (μp μm : R) (hsum : μp + μm = 1) :
+    1 - 4 * (μp * μm) = (μp - μm) ^ 2 := by
+  linear_combination (μp + μm + 1) * (-hsum)
+
+/-- **Difference of opposite-channel products factors through the orbital weight.**
+
+For arbitrary scalar pairs `(μ₊, μ₋)` and `(ν₊, ν₋)` and orbital factor `f_ℓ`, the
+channel difference `(μ₊ ν₋ f_ℓ) − (μ₋ ν₊ f_ℓ)` factors as `(μ₊ ν₋ − μ₋ ν₊) · f_ℓ`. -/
+theorem channel_product_diff_factor {R : Type*} [CommRing R]
+    (μp μm νp νm f_ell : R) :
+    (μp * νm * f_ell) - (μm * νp * f_ell) = (μp * νm - μm * νp) * f_ell := by
+  ring
+
 end QOU.QBeta.SeparableInterfaceContent
