@@ -1,13 +1,14 @@
 ---
 # qou-7zob
 title: 'NN sector: open the ell/space index -- a flavour-only interface CANNOT split 3S1 from 1S0, proved degenerate'
-status: todo
+status: in-progress
+pr: 8198
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T03:11:32Z
-updated_at: 2026-10-04T15:21:41Z
+updated_at: 2026-11-16T20:55:00Z
 parent: qou-10v9
 ---
 
@@ -83,3 +84,8 @@ Full write-up:
   docs/audits/2026-08-09-two-nucleon-channels-isospin-not-crossing-count.md
   (section 4 = the degeneracy theorem; section 6b = the ell addresses)
 Lean: QOU/QBeta/InterfaceScalar.lean, sections IsospinOrdering + ChannelSelection.
+
+## Round 54 Progress (PR #8198)
+- [x] Added `additive_separable_interface_degenerate`, `coupled_spin_space_splitting_identity`, and `coupled_spin_space_splitting_of_singlet_zero` to `folio/quantum-observable-universe/lean/QOU/QBeta/InterfaceScalar.lean` (`0 sorry`, `0` vacuity hits).
+- [x] Verified 80-dps separable degeneracy and spin–space tensor coupling splitting in `computations/probes/boxcontent_ward_nv_interface_binding_probe.py` (`computations/probes/boxcontent-ward-nv-interface-binding.witness.json`).
+- [ ] Await CI verification and Merge Manager merge of PR #8198 (`1f80984f96ba3e6334bf43a2df76dd82a90eba3e`).

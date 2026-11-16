@@ -1,13 +1,14 @@
 ---
 # qou-58r5
 title: 'Real open content of rho_F=nu_SDP: prove/refute identity SDP-saturating-mult = bar-fixed-block sc(n) = bond count A-1 (NOT which integer)'
-status: todo
+status: in-progress
+pr: 8198
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-02T16:03:25Z
-updated_at: 2026-10-04T15:23:15Z
+updated_at: 2026-11-16T20:55:00Z
 parent: qou-10v9
 ---
 
@@ -49,3 +50,8 @@ inside the two-row stratum. Probe `computations/he4_rho_F_cpt_mechanism_refuted.
 `docs/audits/2026-08-21-he4-rho-F-cpt-mechanism-refuted.md`. Recommend re-scoping
 `frobenius-packing-density.md`'s "derives … without tuning" claim (owner call — content edit with
 sidecar).
+
+## Round 54 Progress (PR #8198)
+- [x] Added `no_two_row_self_conjugate_ge_five`, `deuteron_and_helium4_no_two_row_self_conjugate`, and `scPart_vs_bondCount_small` to `folio/quantum-observable-universe/lean/QOU/Resurgence/WardFiltrationCounting.lean` (`0 sorry`, `0` vacuity hits).
+- [x] Verified two-row self-conjugate obstruction for `n = 5..12` in `computations/probes/boxcontent_ward_nv_interface_binding_probe.py` (`computations/probes/boxcontent-ward-nv-interface-binding.witness.json`).
+- [ ] Await CI verification and Merge Manager merge of PR #8198 (`1f80984f96ba3e6334bf43a2df76dd82a90eba3e`).

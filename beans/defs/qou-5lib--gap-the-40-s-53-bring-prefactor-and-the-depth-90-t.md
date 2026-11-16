@@ -1,13 +1,14 @@
 ---
 # qou-5lib
 title: 'GAP: the 40 = |S_5|/3 Bring prefactor and the depth-90 tower are not derived — only their arithmetic consequence is'
-status: todo
+status: in-progress
+pr: 8198
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-03T21:48:29Z
-updated_at: 2026-10-04T15:20:24Z
+updated_at: 2026-11-16T20:55:00Z
 parent: qou-n4nr
 ---
 
@@ -63,3 +64,8 @@ Sibling `conj:n-v-bring-action` carries `axiom s5_acts_on_ew_slice` and is
 the last remaining `axiom` carrier in the conjecture corpus
 (`scripts/conjecture-carrier-kind-audit.ts`). Whether it is the same
 situation — a decidable statement assumed — has NOT been checked.
+
+## Round 54 Progress (PR #8198)
+- [x] Added `v_over_m_e_residual_two_sided_bounds` (`0.0057 < ε < 0.0058`), `bring_s5_prefactor_factorization`, and `tower_generation_rescaling` to `folio/quantum-observable-universe/observations/n-v-leading-order-derivation.lean` (`0 sorry`, `0` vacuity hits).
+- [x] Verified exact rational and 80-dps two-sided residual enclosure in `computations/probes/boxcontent_ward_nv_interface_binding_probe.py` (`computations/probes/boxcontent-ward-nv-interface-binding.witness.json`).
+- [ ] Await CI verification and Merge Manager merge of PR #8198 (`1f80984f96ba3e6334bf43a2df76dd82a90eba3e`).

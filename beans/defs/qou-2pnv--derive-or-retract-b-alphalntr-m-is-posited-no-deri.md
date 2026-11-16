@@ -1,13 +1,14 @@
 ---
 # qou-2pnv
 title: 'DERIVE-OR-RETRACT: B = -alpha*ln|tr_M| is posited - no derivation, nothing in Lean, only a notation-table row, and a dead citation'
-status: todo
+status: in-progress
+pr: 8198
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-25T18:53:53Z
-updated_at: 2026-10-04T15:18:46Z
+updated_at: 2026-11-16T20:55:00Z
 parent: qou-10v9
 ---
 
@@ -86,3 +87,8 @@ The derive half of this bean closed 2026-09-04 (derivation, Lean, full-table
 measurement); the scale half closed 2026-09-05 with the tower ruling
 (`qou-qkbp`). Full record:
 `docs/audits/2026-09-05-binding-law-arc-synthesis.md`.
+
+## Round 54 Progress (PR #8198)
+- [x] Added `deprecated_vs_canonical_prefactor_ratio`, `prefactor_ratio_eq_inv_cq_sq_hbar_cu`, and `binding_ratio_scale_invariant` to `folio/quantum-observable-universe/lean/QOU/Hecke/BindingExtensivity.lean` (`0 sorry`, `0` vacuity hits).
+- [x] Verified 80-dps prefactor ratio `q₀³ / (q₀ - 1) = 12.43471049...` and scale cancellation in `computations/probes/boxcontent_ward_nv_interface_binding_probe.py` (`computations/probes/boxcontent-ward-nv-interface-binding.witness.json`).
+- [ ] Await CI verification and Merge Manager merge of PR #8198 (`1f80984f96ba3e6334bf43a2df76dd82a90eba3e`).
