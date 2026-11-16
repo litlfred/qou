@@ -3606,3 +3606,11 @@ Remaining assumption: "one γγ unit per strand". This is a minimality statement
 
 ### LABEL (owner tap 2026-11-16 07:06Z "Label Y, switch to element")
 Y = ±1/3 for the quark doublet is recorded as a LABELLED CONDITIONAL INPUT. Its conditions: the triality principle (ε-Y2) and the helon twist bound |t_i| ≤ 1 (arxiv-hep-ph-0503213v2). The sign is a C-convention. Y is not derived. Work moves to the nucleon element choice.
+
+
+### RESULT ε-Y6 (2026-11-16 07:15Z; owner "and B": ribbon-twist route too)
+- Treat a helon as a 2-strand ribbon of V⊗V, and read its twist as the exponent in units of q² of the full-twist monodromy Ř^{2k}.
+- Exact eigenvalues (gl_2 Jimbo): Ř² has q² (×3, symmetric) and q⁻² (×1, antisymmetric). Ř^{2k} has q^{±2k}.
+- So ONE full twist gives t ∈ {+1 (sym), −1 (antisym)}, and no twist gives 0: exactly the helon set {UU, EE, UE}. As a bonus, the twist SIGN is tied to the symmetry channel.
+- But Ř^{2k} gives ±k, and nothing in the braiding bounds k.
+- Verdict: like the γγ route, this moves the bound onto a minimality statement ("at most one full twist per helon"); it does not derive it. Scope (a). Y stays a labelled conditional input.
