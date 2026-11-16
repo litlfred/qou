@@ -7,7 +7,7 @@ tags:
     - mass-energy
     - research
 created_at: 2026-11-15T20:26:03Z
-updated_at: 2026-11-15T23:00:00Z
+updated_at: 2026-11-16T09:50:00Z
 parent: qou-6qbv
 ---
 
@@ -113,3 +113,19 @@ Owner choice 2026-11-15: record (this note) + Lean the exclusion (PR) + then the
 
 
 2026-11-16: info-theory line Leaned. Issue #8112, draft PR #8113 (classical trace z^(n-cyc) at z_D(1)=1/2 gives 2^c; two-row Ocneanu weight at z_D = [n-2k+1]/[2]^n, Markov measure = spin-sector split, reading depends on G3.4; not_landauer remark).
+
+## 2026-11-16: three-directions round + p/n mirror (handover record)
+
+- Merged #8113 (issue #8112): 𝔪(1) = 2^c via tr(w) = z^{n−cyc} (`MarkovTraceClassicalLimit.lean`); spin-sector Markov measure at z_D, W_(n−k,k) = [n−2k+1]/[2]ⁿ (`SchurWeyl/SpinSectorMeasure.lean`, depends on G3.4 + Ocneanu uniqueness, stated in docstring); non-Landauer remark.
+- Merged #8115 (issue #8114): equality lemmas for the Hecke cost bound (`UGB/.../HeckeReducedCost.lean`).
+- Pre-registered directions (project file qou-crossing-energy/result-three-directions.md):
+  - Tightness: M = 1 only at w = 1 below the thresholds; M > 1 from n = 7 at q₀. So 𝔈 is never an exact operation count (scope a).
+  - Positivity of 𝔪: n = 2 rule proved; n = 3 sector condition sufficient, not necessary. n ≥ 3 characterisation OPEN.
+  - Dead-block entropy ΔH is sublinear and does NOT track binding (scope a).
+- p/n mirror via γγ walk (result-pn-mirror-gg-walk.md): the #8108 p and n words are a partial mirror. γγ core bar-even; quark blocks mirror exactly in χ₃, differ by −h/2 in the bar-odd part of χ₂₁. Sent to the weak-vertex and audit threads.
+
+### Still open
+1. Test #8111's F₃ condition against bar. Bar is semilinear (q ↦ q⁻¹): build a linear version first (bar ∘ coefficient involution).
+2. Optional Lean: n = 2 positivity criterion; sector formula 𝔪(β) = q^{−2w} Σ [n−2k+1] χ_k; mirror = bar, 𝔪(β̄)(q) = 𝔪(β)(q⁻¹); long-transposition trace tr T_(1n) = z_D·r^{n−2}.
+3. Characterise positivity for n ≥ 3.
+4. Check max |tr T_w| at n = 6.
