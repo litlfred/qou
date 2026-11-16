@@ -175,8 +175,11 @@ noncomputable def MarkovTransitionStep.vertexVolume (s : MarkovTransitionStep) :
     not on the other generators.  This holds for words that use each
     generator once (one step per generator, as indexed by `Fin (n-1)`
     here).  It fails when a generator repeats: tr_M(σ₁σ₂σ₁) = h z² + z,
-    not z³ (corrected 2026-11-16).  `factorization` is a field, so this
-    structure assumes the product formula; it does not derive it. -/
+    not z³ (corrected 2026-11-16).  The product is a definition here
+    (`MarkovChainFactorization.totalTrace`); its identification with
+    the Markov trace of the grouped word is not proved in this file.
+    (Until 2026-11-16 `totalTrace` was a free field and the product
+    formula a structure field, so the structure assumed the formula.) -/
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
@@ -189,19 +192,18 @@ structure MarkovChainFactorization where
   n_ge : n ≥ 2
   /-- The transition steps, one per generator. -/
   steps : Fin (n - 1) → MarkovTransitionStep
-  /-- The total Markov trace value. -/
-  totalTrace : ℝ
-  /-- **Factorization**: the trace is the product of vertex volumes. -/
-  factorization : totalTrace =
-    Finset.univ.prod (fun i => (steps i).vertexVolume)
 
-/-- The total trace is nonzero when all vertex volumes are nonzero. -/
+/-- The product of the vertex volumes, `∏ᵢ V̂ᵢ`. -/
+noncomputable def MarkovChainFactorization.totalTrace
+    (mcf : MarkovChainFactorization) : ℝ :=
+  Finset.univ.prod (fun i => (mcf.steps i).vertexVolume)
+
+/-- The product is nonzero when all vertex volumes are nonzero. -/
 theorem MarkovChainFactorization.trace_ne_zero
     (mcf : MarkovChainFactorization)
     (h : ∀ i, (mcf.steps i).vertexVolume ≠ 0) :
-    mcf.totalTrace ≠ 0 := by
-  rw [mcf.factorization]
-  exact Finset.prod_ne_zero_iff.mpr (fun i _ => h i)
+    mcf.totalTrace ≠ 0 :=
+  Finset.prod_ne_zero_iff.mpr (fun i _ => h i)
 
 /-! ## Connecting spectral data to transition steps -/
 
