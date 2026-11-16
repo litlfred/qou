@@ -1,7 +1,7 @@
 ---
 # qou-0c19
 title: 'Missing additive extensive term: is the inter-nucleon COLOR-TUBE channel (conj:inter-nucleon-channel-color-tube) its home? The arc-count diagnostic that motivated this is REFUTED — R²=0.83/0.26 are not in the cited witness (true 0.2653/0.0018, its own verdict "weak"), and arc count = A−1 so the fit is degenerate with A. W_{c1c2} now rests on the categorical argument alone. OPEN Q: does color-tube weighting saturate at A=4 giving ρ_4? Conditional on conj:s5-so3-fiber-action.'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -233,3 +233,5 @@ the conjecture.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+- **Round 56 Progress (`2026-11-16T21:20:58Z`)**: Opened [`litlfred/qou#8207`](https://github.com/litlfred/qou/pull/8207) (`cfc03c4131df1ea758c17554768f2274e708f38b`, Commit 1 `0a9d3f269d6c23f614dc40aac55d5f0a7b2baafd`). Keeping bean at `status: in-progress` pending owner review.

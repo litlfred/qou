@@ -1,7 +1,7 @@
 ---
 # qou-0gbx
 title: The flavour split's (1+ℏ_q³) is posited, not derived — and summing its whole tail buys 1/323 of the gap
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -102,3 +102,5 @@ Landed on `claude/q407-self-assuming-projections-2026-08-21` (commit
 the probe, the Lean file, and the citation of the predecessor probe. Returned to
 `todo` rather than left `in-progress` so a sibling is not blocked — nobody is
 working the derivation.
+
+- **Round 56 Progress (`2026-11-16T21:20:58Z`)**: Opened [`litlfred/qou#8207`](https://github.com/litlfred/qou/pull/8207) (`cfc03c4131df1ea758c17554768f2274e708f38b`, Commit 1 `0a9d3f269d6c23f614dc40aac55d5f0a7b2baafd`). Keeping bean at `status: in-progress` pending owner review.
