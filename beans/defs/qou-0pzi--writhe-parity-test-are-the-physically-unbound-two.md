@@ -1,7 +1,8 @@
 ---
 # qou-0pzi
 title: 'writhe-parity test: are the physically-unbound two-nucleon channels at even-negative stacked powers while the deuteron is not?'
-status: todo
+status: in-progress
+pr: 8205
 type: task
 priority: normal
 tags:
@@ -56,3 +57,9 @@ per-bond VALUES. Corpus already knew nature's pp/nn are unbound and that
 projectors cannot unbind (`mu_+ + mu_- = 1`); what is new is that production does
 not merely fail to unbind them, it binds them at +2.54 / +3.31 and feeds those
 into every multi-nucleon B_sym.
+
+
+## Progress Update (PR #8205)
+- [x] Pure Lean 4 formalization wired into `QOU.lean` (`AtomNFQDegreeBondSetDichotomy.lean`, `TwoNucleonChannelSignObstruction.lean`, `PairLayerLinearRampParity.lean`, `ChainMirrorSplittingChargeSymmetry.lean`; 0 `sorry`, 0 vacuity advisories across all 6 static audits)
+- [x] 50-dps `mpmath` + exact `TL_3` Laurent polynomial probe (`computations/probes/atom_nf_qdegree_pair_ramp_mirror_probe.py`) and stamped witness (`computations/probes/atom-nf-qdegree-pair-ramp-mirror-probe.witness.json`, 0 raw `float64` fields)
+- [ ] Awaiting adversarial review and Merge Manager merge of PR #8205 (`ready: ed5c0c87c86301f2666c843555cc576831d17a74`)

@@ -1,7 +1,8 @@
 ---
 # qou-6k8b
 title: 'binding forces: weak cannot account for the low-dashboard error; charge-symmetry breaking is 2.97x too large'
-status: todo
+status: in-progress
+pr: 8205
 type: task
 priority: normal
 tags:
@@ -114,3 +115,9 @@ CAUTION before acting: the pp/nn sign asymmetry is what produces mu_min = -sqrt5
 and hence the DERIVED "5" in g_reeb. Imposing charge symmetry changes that
 spectrum, so the 5 must be re-derived under the symmetric pattern rather than
 carried over. The two findings are coupled and must move together.
+
+
+## Progress Update (PR #8205)
+- [x] Pure Lean 4 formalization wired into `QOU.lean` (`AtomNFQDegreeBondSetDichotomy.lean`, `TwoNucleonChannelSignObstruction.lean`, `PairLayerLinearRampParity.lean`, `ChainMirrorSplittingChargeSymmetry.lean`; 0 `sorry`, 0 vacuity advisories across all 6 static audits)
+- [x] 50-dps `mpmath` + exact `TL_3` Laurent polynomial probe (`computations/probes/atom_nf_qdegree_pair_ramp_mirror_probe.py`) and stamped witness (`computations/probes/atom-nf-qdegree-pair-ramp-mirror-probe.witness.json`, 0 raw `float64` fields)
+- [ ] Awaiting adversarial review and Merge Manager merge of PR #8205 (`ready: ed5c0c87c86301f2666c843555cc576831d17a74`)

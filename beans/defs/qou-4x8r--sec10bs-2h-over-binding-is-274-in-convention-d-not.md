@@ -1,7 +1,8 @@
 ---
 # qou-4x8r
 title: Sec.10b's 2H over-binding is +27.4% in convention D, not the recorded +74.9% (that figure is convention C)
-status: todo
+status: in-progress
+pr: 8205
 type: task
 priority: normal
 tags:
@@ -48,3 +49,9 @@ any of them: they are all C-frame.
 
 Related: qou-cds1 (the Q_beta c_k ladder is C-frame and un-re-derived), which is
 the same class of debt.
+
+
+## Progress Update (PR #8205)
+- [x] Pure Lean 4 formalization wired into `QOU.lean` (`AtomNFQDegreeBondSetDichotomy.lean`, `TwoNucleonChannelSignObstruction.lean`, `PairLayerLinearRampParity.lean`, `ChainMirrorSplittingChargeSymmetry.lean`; 0 `sorry`, 0 vacuity advisories across all 6 static audits)
+- [x] 50-dps `mpmath` + exact `TL_3` Laurent polynomial probe (`computations/probes/atom_nf_qdegree_pair_ramp_mirror_probe.py`) and stamped witness (`computations/probes/atom-nf-qdegree-pair-ramp-mirror-probe.witness.json`, 0 raw `float64` fields)
+- [ ] Awaiting adversarial review and Merge Manager merge of PR #8205 (`ready: ed5c0c87c86301f2666c843555cc576831d17a74`)
