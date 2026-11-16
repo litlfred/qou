@@ -136,3 +136,6 @@ Every pure word of length ≤ 11 passes reading 3 at q₀ (exhaustive; min level
 
 ## 2026-11-16 amendment 6 (PR #8122, issue #8121)
 Exhaustive m=12: 1,351,680 pure words, 0 fail (min level char 0.0232). Seeded 20,000 per m=13..17: 0 fail. Every pure word of length <= 12 passes reading 3 at q0; shortest known failing pure word stays length 18. 13-17 sampled, not enumerated.
+
+## 2026-11-16 electron observables (PR #8126, issue #8125)
+V^0/V^3/V^6 are the unlink / Borromean (vol 7.3277) / L12a1882 (vol 21.6316). All 3-component, zero linking, amphichiral: none is chiral. On (2,1) V is a rotation, 2cos(theta) = -1-h^2. Which power is the electron is an owner ruling (card posted).
