@@ -3571,3 +3571,13 @@ No data, and no lepton charges as input.
   - (b) an integer shift Y → Y + 2k. Nothing here fixes k = 0. Taking the minimal |Y| = 1/3 would be a choice, and is NOT made here.
 - Combined with ε-Y1, colour plus triality give Y ≡ ±B (mod 2) for the quark doublet, with B = 1/3. The value 1/3 itself needs the minimality choice, or a further structure that picks k.
 - So Y is constrained but NOT derived (scope a). The ε-EM1 asymmetry 2Y is fixed up to sign and an even-integer shift: 2/3 at the minimal choice.
+
+
+### NOTE ε-Y3 (2026-11-16 06:50Z), corpus check for the even shift k
+- Anomaly cancellation cannot fix k from quarks alone: every U(1)_Y anomaly that involves the left doublet's Y also needs the lepton content.
+- The strand-twist datum (def:strand-twist-datum) does fix k, but only under a bound. Its candidate Y_t = 2(T/3 − I₃), with T the total twist of three sub-strands, gives the following for a doublet with T_u − T_d = 3 and fractional Q:
+  - per-strand bound |t_i| ≤ 1: Y ∈ {−1/3, +1/3}, so k = 0;
+  - bound |t_i| ≤ 2: Y ∈ {±1/3, ±5/3, ±7/3}.
+- So k = 0 is equivalent to the helon bound |t_i| ≤ 1, which is imported (bilson-thompson2005). The datum itself is t: {1..n} → ℤ and is unbounded.
+- Also, Q_twist = Q is the defining equation (TwistBatteryVacuity), not a test.
+- Status: Y = ±1/3 is CONDITIONAL on the helon twist bound. The sign is a convention (C). Y stays OPEN until the bound |t_i| ≤ 1 is derived, e.g. from a ribbon-twist eigenvalue constraint.
