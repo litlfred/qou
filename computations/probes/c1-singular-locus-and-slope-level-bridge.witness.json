@@ -1,0 +1,59 @@
+{
+  "probe": "c1_singular_locus_and_slope_level_bridge_probe.py",
+  "beans": [
+    "qou-gh6m",
+    "qou-jwbq",
+    "qou-qbe9x",
+    "qou-qbf0",
+    "qou-slvl"
+  ],
+  "parentBean": "qou-frzo",
+  "leanModule": "QOU.MassTheory.C1SingularLocusAndSlopeLevelBridge",
+  "scriptHash": "fc315c730706",
+  "scriptCommitSha": "17c1b41227b6c499979110fb6c31637514935ccf",
+  "generatedAt": "2026-11-16T20:50:47.290588+00:00",
+  "precisionDps": "80",
+  "allPassed": true,
+  "assertions": [
+    {
+      "id": "qou-qbe9x-third-singular-site-and-gauge-invariant-degree",
+      "bean": "qou-qbe9x",
+      "description": "Leading coefficient a_2(x)=q^2 x - 1 vanishes at x=q^-2 (orbit [1] on E_q) with gauge-invariant companion divisor degree -1",
+      "singularSiteFormula": "x = q^-2",
+      "companionDetDivisorDegreeOnCStar": "-1",
+      "passed": true
+    },
+    {
+      "id": "qou-qbf0-kz-slope-mismatch-and-classical-limit-collapse",
+      "bean": "qou-qbf0",
+      "description": "C1 infinity slope 1/2 mismatches regular-singular KZ slope 0, and q->1 collapses subleading coefficients to 0",
+      "infinitySlopeMismatch": "1/2",
+      "subleadingAtQ1": "0",
+      "passed": true
+    },
+    {
+      "id": "qou-gh6m-gevrey-half-slope-curvature",
+      "bean": "qou-gh6m",
+      "description": "q-lift exponent m(m-1)/4 is half the unit-slope exponent and has constant second difference 1/2",
+      "secondDifference": "1/2",
+      "sampleAtM5": "5",
+      "passed": true
+    },
+    {
+      "id": "qou-jwbq-qborel-slope-shift-and-ramification",
+      "bean": "qou-jwbq",
+      "description": "Slope-changing q-Borel shift 1/d=1/2 or r=2 ramification reduces slope 1/2 to 0, while algebraic (shift 0) functors preserve positive slope",
+      "postShiftSlope": "0",
+      "ramifiedDoubleCoverPostLevel1Slope": "0",
+      "passed": true
+    },
+    {
+      "id": "qou-slvl-general-slope-k-subsequence-and-induction",
+      "bean": "qou-slvl",
+      "description": "For all k >= 1 and j >= 1, 2*log_q(c_{jk})/(kj)^2 = (j-1)/(kj) -> 1/k and 2*k*j*(j-1) + 2*k*j = 2*k*j^2",
+      "testedKRange": "1..5",
+      "testedJRange": "1..6",
+      "passed": true
+    }
+  ]
+}
