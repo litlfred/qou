@@ -285,8 +285,8 @@ and `0` off the diagonal (`u ≠ v`). -/
 def hoefsmitGramMatrix (qBr : Nat → R) (u v : SYT41) : R :=
   if u = v then hoefsmitGramDiag qBr u else ops.zero
 
-/-- **Symmetry of the Hoefsmit / Markov Gram matrix (`IsSymm`, §7c generic `R`).** -/
-theorem hoefsmitGramMatrix_symm (qBr : Nat → R) (u v : SYT41) :
+/-- **Symmetry of the seminormal Gram matrix on `SYT41` (`IsSymm`, §7c generic `R`).** -/
+theorem std41SeminormalGramMatrix_symm (qBr : Nat → R) (u v : SYT41) :
     hoefsmitGramMatrix qBr u v = hoefsmitGramMatrix qBr v u := by
   unfold hoefsmitGramMatrix
   cases u <;> cases v <;> rfl
@@ -445,11 +445,11 @@ def rawIsogenyHodgeDiag : SYT41 → Int
   | .t5 => 1
 
 /-- **Non-vacuity theorem (`qou-vbz4`):** Without the `S₅`-equivariant intertwiner `U`,
-the raw isogeny-frame Hodge diagonal `(5, 5, 5, 1)` and the classical Hoefsmit
+the raw isogeny-frame Hodge diagonal `(5, 5, 5, 1)` and the classical seminormal
 diagonal `(576, 432, 384, 360)` are NOT entrywise proportional over `Int`: at `T₂`
 vs `T₃`, `rawIsogenyHodgeDiag` is equal (`5 = 5`) whereas `hoefsmitGramDiag` drops
 from `576` to `432`. Hence the `S₅`-equivariance / intertwiner premise of the
-Schur reduction is load-bearing and non-vacuous. -/
+invariant-form reduction is load-bearing and non-vacuous. -/
 theorem non_vacuity_unaligned_not_proportional :
     ¬ ∃ c : Int, ∀ t : SYT41, hoefsmitGramDiag qBrClassical t = c * rawIsogenyHodgeDiag t := by
   intro ⟨c, hc⟩
