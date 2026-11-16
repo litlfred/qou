@@ -1,0 +1,46 @@
+{
+  "probe": "keystone_writhe_ramified_stokes_ladder_probe.py",
+  "gitCommit": "4ed1888aba96f0c3e837a57c93b666bdd892604e",
+  "scriptCommitSha": "4ed1888aba96f0c3e837a57c93b666bdd892604e",
+  "scriptHash": "75539ba8f436",
+  "dps": 80,
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "qou-2v7k-keystone-second-fold-and-norm",
+      "passed": true,
+      "d2MtcSecondFold": "2.763932022500210303590826331268723764559",
+      "d2E8SecondFold": "5.527864045000420607181652662537447529119",
+      "foldTrace": "20.0",
+      "foldNorm": "80.0",
+      "maxResidual": "4.048204010200520918149852435687687298961e-79"
+    },
+    {
+      "id": "qou-6nd0-writhe-power-and-anchor-shift",
+      "passed": true,
+      "anchorBaseLinearShift": "-0.0000000231942400230400568887186627001493200799",
+      "maxResidual": "8.433758354584418579478859241016015206168e-81"
+    },
+    {
+      "id": "qou-p6m1-ramified-shift-additivity-and-two-step-residue",
+      "passed": true,
+      "twoStepResidueAtMinusTwo": "0.01669758812615955473098330241187384044527",
+      "maxResidual": "8.433758354584418579478859241016015206168e-81"
+    },
+    {
+      "id": "qou-qnnq-qzero-matrix-trace-and-unipotent-identities",
+      "passed": true,
+      "traceQZero": "2.0",
+      "detQZero": "1.0",
+      "offDiagSq": "9.0",
+      "maxResidual": "0.0"
+    },
+    {
+      "id": "qou-wxhi-ladder-deficit-lower-bound",
+      "passed": true,
+      "actualDeficit": "0.2790415515871325483094593539713980854485",
+      "deficitLowerBound": "0.2100423767662755131571514832513019648844",
+      "marginAboveLowerBound": "0.06899917482085703515230787072009612056405"
+    }
+  ]
+}
