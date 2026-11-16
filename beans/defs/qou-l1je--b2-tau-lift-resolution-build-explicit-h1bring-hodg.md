@@ -1,13 +1,13 @@
 ---
 # qou-l1je
 title: 'B2 tau-lift resolution: build explicit H1(Bring) Hodge model, reduce lift to minimal tau-dictionary core (alpha_EM per-loop)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-02T19:03:03Z
-updated_at: 2026-10-04T15:16:32Z
+updated_at: 2026-11-16T19:01:00Z
 parent: qou-3l2l
 ---
 
@@ -30,3 +30,9 @@ hodge_lift_bring_model.py (10/10 PASS, re-verified).
   != premise-established. Nothing wired.
 Follow-up options: (1) land the PeriodMapWeight interface reduction as real Lean infra;
 (2) attack MOC via the genus-1 E(q) Gauss-Manin family (foundational, multi-week).
+
+## Progress (2026-11-16, PR `litlfred/qou#8156` — `status: in-progress`)
+- **Lean 4 formalization (`0` `sorry`, `0` custom axioms):** Added Part II of `folio/quantum-observable-universe/lean/QOU/AlphaEM/PropagatorHodgeH3GreenAssembly.lean` (complementing `QOU.Archimedean.HodgeWeilRealStructure` and `QOU.Archimedean.PeriodMapWeightReduction`, wired into `QOU.lean`, verified with Lean v4.24.0 `-DautoImplicit=false`), proving:
+  - `bradenNorthoverC_spectral_decomposition`: formalizes the `4 × 4` Braden–Northover / Riera–Rodríguez period matrix `C = 5 I₄ - J₄` on `V_std` (`Ω = τ₀ C`), proving `Cᵀ = C`, `tr(C) = 16`, `(C - 5 I₄)(C - I₄) = 0`, explicit eigenbasis `e₁ - e₄, e₂ - e₄, e₃ - e₄` with eigenvalue `5` (the `E_{5τ₀}³` isogeny block) and `(1, 1, 1, 1)` with eigenvalue `1` (the `S₄`-invariant `E_{τ₀}` quotient block), and `det(C) = 5³ · 1 = 125`.
+  - `bring_elliptic_factors_non_cm`: proves `(-121945) % 32 ≠ 0` and `(-25) % 2 ≠ 0`, confirming neither `j(τ₀) = -121945/32` nor `j(5τ₀) = -25/2` is an integer, foreclosing CM period closure and reducing the B2 lift to the single-field `PeriodMapWeight` MOC.
+- **50-dps / Exact Probe + Witness:** `computations/probes/h3_green_coth_saturation_probe.py` and `.witness.json` (11/11 assertions passed).
