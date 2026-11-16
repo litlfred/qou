@@ -1,13 +1,13 @@
 ---
 # qou-ndsa
 title: 'Break the confinement-LP homogeneity: get the braid into t or G, not just n_target'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-07T17:16:15Z
-updated_at: 2026-10-04T15:10:50Z
+updated_at: 2026-11-16T19:46:00Z
 parent: qou-v2om
 ---
 
@@ -208,3 +208,14 @@ content has to reach the **objective**. Candidates 1–3 all leave `t` alone.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-16 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+---
+
+## Round 47 Progress (`lane-e925`, 2026-11-16 — PR #8154)
+
+- **PR:** [litlfred/qou#8154](https://github.com/litlfred/qou/pull/8154) (`ffb527fcd5e3aac0c7b00570fecb3e6dded50749`), signed `ready: ffb527fcd5e3aac0c7b00570fecb3e6dded50749` ([comment](https://github.com/litlfred/qou/pull/8154#issuecomment-6925680171)).
+- **New sorry-free Lean 4 module `folio/quantum-observable-universe/lean/QOU/Interactions/ConfinementLPHomogeneity.lean`:**
+  - Formalises primal cone-LP scaling homogeneity (`sumFin_scaleVec`, `dotFin_scaleVec_right`, `frobeniusRow_nonneg_scaleVec`), the exact radical pairing identity $\langle t, v \rangle = y_0 \langle \mathbf{1}, v \rangle$ (`radical_pairing_eq_shadow_price_mul_net`), the **converse non-degeneracy theorem** (`radical_pairing_ne_zero_of_shadow_price_ne_zero`: $y_0 \ne 0 \implies \langle t, v \rangle \ne 0$ whenever $\langle c, v \rangle = 0$ and $\langle \mathbf{1}, v \rangle \ne 0$), and shadow-price uniqueness (`shadow_price_unique_of_radical`).
+  - Wires `QOU.ParticleInteractions.operator_selection_lp`, `QOU.MassTheory.UICGateNotFromComplementarySlackness`, and `QOU.Interactions.ConfinementLPHomogeneity` into `QOU.lean`.
+- **Verified in `computations/probes/low_isotope_binding_substrate_probe.py` (`low-isotope-binding-substrate-probe.witness.json`):** assertions `qou_ndsa_markov_cost_orthogonal_to_radical` and `qou_ndsa_converse_radical_coupled_cost_gives_nonzero_y0` PASS over exact $\mathbb{Q}(q)$ (`Fraction`) and 50-dps `mpmath`.

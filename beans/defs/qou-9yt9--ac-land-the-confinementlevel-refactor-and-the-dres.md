@@ -1,13 +1,13 @@
 ---
 # qou-9yt9
 title: 'A+C: land the ConfinementLevel refactor and the DressedParticle shadowing fix'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T09:08:06Z
-updated_at: 2026-10-04T15:10:47Z
+updated_at: 2026-11-16T19:46:00Z
 parent: qou-v2om
 ---
 
@@ -639,3 +639,14 @@ Neither is enacted. Closing this bean would bury both.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-14 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+---
+
+## Round 47 Progress (`lane-e925`, 2026-11-16 — PR #8154)
+
+- **PR:** [litlfred/qou#8154](https://github.com/litlfred/qou/pull/8154) (`ffb527fcd5e3aac0c7b00570fecb3e6dded50749`), signed `ready: ffb527fcd5e3aac0c7b00570fecb3e6dded50749` ([comment](https://github.com/litlfred/qou/pull/8154#issuecomment-6925680171)).
+- **New sorry-free Lean 4 module `folio/quantum-observable-universe/lean/QOU/BraidKnot/ConfinementLevelFiltration.lean`:**
+  - Formalises anti-monotonicity (`FiltrationMinLevel.le_of_imp`) and equivalence invariance (`FiltrationMinLevel.eq_of_iff`) of the minimum valid `ConfinementLevel` under filtration inclusion ($V_1 \subseteq V_2 \implies \ell_{\min}(V_2) \le \ell_{\min}(V_1)$), upward-closure characterisation (`FiltrationMinLevel.valid_iff_level_le`), functional-parameter shadow-price uniqueness (`IndexedShadowPrice.shadowPrice_unique`) vs the explicit counterexample for an unconstrained field (`unconstrainedShadowPrice_not_canonical`), and multi-step `DressedParticle` shell-chain level invariance (`LevelPreservingChain.level_eq`).
+- **Wired all orphaned sorry-free arc modules into `folio/quantum-observable-universe/lean/QOU.lean`:**
+  - Added `QOU.Information.GeometryOfIncompleteness`, `QOU.OptionE.RungSelection`, `QOU.BraidKnot.HeckeAnyonicSubstrate`, and `QOU.BraidKnot.ConfinementLevelFiltration` to `QOU.lean` so all 12 modules in the `ConfinementLevel` / `DressedParticle` arc are reachable from the top-level umbrella and verified 100% sorry-free and axiom-free (`qou_9yt9_all_12_modules_sorry_and_axiom_free` and `qou_9yt9_all_12_modules_wired_in_QOU_umbrella` PASS).

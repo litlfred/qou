@@ -1,13 +1,13 @@
 ---
 # qou-zrx2
 title: 'GAP: the signed trace difference has an hbar_q^0 classical floor -- it is not a pure deformation observable'
-status: todo
+status: in-progress
 type: bug
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-31T10:13:14Z
-updated_at: 2026-10-04T15:10:44Z
+updated_at: 2026-11-16T19:46:00Z
 parent: qou-v2om
 ---
 
@@ -675,3 +675,16 @@ Same cause has reopened `qou-pdg9` (its six c1 are also the grouped word's). Pro
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-06 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+---
+
+## Round 47 Progress (`lane-e925`, 2026-11-16 — PR #8154)
+
+- **PR:** [litlfred/qou#8154](https://github.com/litlfred/qou/pull/8154) (`ffb527fcd5e3aac0c7b00570fecb3e6dded50749`), signed `ready: ffb527fcd5e3aac0c7b00570fecb3e6dded50749` ([comment](https://github.com/litlfred/qou/pull/8154#issuecomment-6925680171)).
+- **New sorry-free Lean 4 module `folio/quantum-observable-universe/lean/QOU/MassTheory/ClassicalTraceFloorParity.lean`:**
+  - Formalises the general interface-parity classical trace floor $c_0(A, O) = 2^{-A}(1 - 2^{-O})$ via its cleared dyadic numerators `clearedFloorNumerator A O = 2^(2*A) - 2^(2*A - O)` and `reducedFloorNumerator O = 2^O - 1`.
+  - Proves `clearedFloorNumerator_factor` ($2^{2A} - 2^{2A-O} = 2^{2A-O}(2^O - 1)$ for $O \le 2A$), `reducedFloorNumerator_eq_zero_iff : reducedFloorNumerator O = 0 ↔ O = 0` (**the classical trace floor vanishes if and only if all $A-1$ inter-nucleon interfaces have even crossing multiplicity**), `reducedFloorNumerator_strictMono` ($O_1 < O_2 \implies 2^{O_1} - 1 < 2^{O_2} - 1$), and `canonicalOddInterfaces_eq` (recovering $0, 1, 3, 7, 15, 31$ at $A = 1..6$).
+- **Updated `folio/quantum-observable-universe/lean/QOU/MassTheory/ClassicalTraceFloor.lean` & `computations/derivation_chain.py`:**
+  - Documented the canonical Borromean classical floor shares **85.01%** for D ($0.125 / 0.14704668$) and **9.61%** for ${}^4\mathrm{He}$ ($0.4375 / 4.55297954$) alongside the historical grouped-word shares (22.46% / 4.88%), and wired both `QOU.MassTheory.ClassicalTraceFloor` and `QOU.MassTheory.ClassicalTraceFloorParity` into `QOU.lean`.
+- **Verified in `computations/probes/low_isotope_binding_substrate_probe.py` (`low-isotope-binding-substrate-probe.witness.json`):** assertions `qou_zrx2_interface_parity_formula_A2_to_6`, `qou_zrx2_deuteron_borromean_floor_share_gt_85pct`, and `qou_zrx2_deuteron_grouped_floor_share_22_46pct` all PASS at 50-dps `mpmath`.

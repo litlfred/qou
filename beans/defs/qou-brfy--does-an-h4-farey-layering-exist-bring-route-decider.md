@@ -1,13 +1,13 @@
 ---
 # qou-brfy
 title: Does an H_4 Farey layering exist? — the one search that decides the Bring route
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T11:52:20Z
-updated_at: 2026-10-04T15:10:55Z
+updated_at: 2026-11-16T19:46:00Z
 parent: qou-v2om
 ---
 
@@ -170,3 +170,13 @@ future attempt to build an H_4 word calculus.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+---
+
+## Round 47 Progress (`lane-e925`, 2026-11-16 — PR #8154)
+
+- **PR:** [litlfred/qou#8154](https://github.com/litlfred/qou/pull/8154) (`ffb527fcd5e3aac0c7b00570fecb3e6dded50749`), signed `ready: ffb527fcd5e3aac0c7b00570fecb3e6dded50749` ([comment](https://github.com/litlfred/qou/pull/8154#issuecomment-6925680171)).
+- **New sorry-free Lean 4 formalisation in `folio/quantum-observable-universe/lean/QOU/Hecke/LevelLocalPathSumSupport.lean`:**
+  - Proves `bring_quadrangulation_invariants` ($V = 24, E = 60, F = 30, 5V = 2E = 4F = 120, V - E + F = -6 = 2 - 2g$ for $g = 4$) and `bring_diagonal_refinement_triangulation_invariants` (splitting each of the $F = 30$ quadrangular faces by a diagonal yields $2^{30} = 1{,}073{,}741{,}824$ triangulations with $V' = 24, E' = 90, F' = 60, 3F' = 2E' = 180$, and Euler characteristic $V' - E' + F' = -6$, whereas no uniform vertex degree $d \in \mathbb{N}$ satisfies $24d = 180$ since $180 \bmod 24 = 12 \ne 0$).
+- **Verified in `computations/probes/low_isotope_binding_substrate_probe.py` (`low-isotope-binding-substrate-probe.witness.json`):** assertion `qou_brfy_bring_quadrangulation_and_triangulation_invariants` PASSES.

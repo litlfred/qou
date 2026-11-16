@@ -1,13 +1,13 @@
 ---
 # qou-s7ld
 title: 'chi scaling wall: the Rust GP minimal-length reduction is the cost, not dim — a dim-free seminormal path-sum makes 5Li/6Li seconds'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-08T04:08:11Z
-updated_at: 2026-10-04T15:10:52Z
+updated_at: 2026-11-16T19:46:00Z
 parent: qou-v2om
 ---
 
@@ -30,3 +30,15 @@ Audit: docs/audits/2026-09-07-chi-scaling-wall-level-local-path-sum.md. Not esta
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+---
+
+## Round 47 Progress (`lane-e925`, 2026-11-16 — PR #8154)
+
+- **PR:** [litlfred/qou#8154](https://github.com/litlfred/qou/pull/8154) (`ffb527fcd5e3aac0c7b00570fecb3e6dded50749`), signed `ready: ffb527fcd5e3aac0c7b00570fecb3e6dded50749` ([comment](https://github.com/litlfred/qou/pull/8154#issuecomment-6925680171)).
+- **Resolved Open Question #1 (Are all producer words in the binding sweep level-local?):**
+  - Audited all 32 `(intra_order, include_inter, isotope)` binding producer words emitted by `atom_braid_word_3A` across all 8 isotopes ($A = 1..6$) for both `intra_order="borromean"` and `intra_order="grouped"` and both `W_atom` (`include_inter=True`) and `W_free` (`include_inter=False`).
+  - Every contiguous level-local segment has generator span $\le 2$ (at most 2 adjacent generators in a single 3-strand block, so local SYT orbit size $\le |S_3| = 6$), with exact segment counts $2A - 1$ (`borromean` $W_{\text{atom}}$), $A$ (`borromean` $W_{\text{free}}$), $3A - 1$ (`grouped` $W_{\text{atom}}$), and $2A$ (`grouped` $W_{\text{free}}$).
+- **New sorry-free Lean 4 module `folio/quantum-observable-universe/lean/QOU/Hecke/LevelLocalPathSumSupport.lean`:**
+  - Proves `atomWordLength_eq` ($6(2A - 1) + (A - 1) = 12A - 1$ for $A \ge 1$), `borromeanAtomSegments_eq` ($A + (A - 1) = 2A - 1$), `groupedAtomSegments_eq` ($2A + (A - 1) = 3A - 1$), `twChainSupport_values` ($6^A$ chain support at $A = 1..6$), and `twChainSupport_lt_fullSymGroupCard` ($6^5 = 7776 < 15! = 1{,}307{,}674{,}368{,}000$ and $6^6 = 46{,}656 < 18! = 6{,}402{,}373{,}705{,}728{,}000{,}000$).
