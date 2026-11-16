@@ -1,7 +1,7 @@
 ---
 # tqcp
 title: 'GAP: θ_QCD framing route — <10⁻¹⁰ smallness residual + ColorSectorCPEven instance (needs SU(3) 3×3 writhe cancellation)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - 8f-colour
 created_at: 2026-08-02T00:00:00Z
-updated_at: 2026-10-10T07:15:42Z
+updated_at: 2026-11-16T17:48:00Z
 parent: qou-8lxd
 blocked_by:
     - qou-ni4b
@@ -50,3 +50,10 @@ class ⟹ θ∈{0,π}). Gated on the open SU(3) sector.
 (iv) Next: derive the SU(3) colour-singlet projection and check whether it forces the summed writhe to zero (`qou-ni4b`). Not near-term.
 (v) Forecast: one algebraic step done, no foothold on smallness; the hardest open problem in this sector.
 Tower status [reading: qou-ggdk]: ORDER-ZERO-ONLY — the framing phase q^{w·c} is a per-crossing datum; the bar involution is fibre-level (Habiro), so CP-evenness is naturally a bar-parity statement about the full colour-sector Markov trace over all partitions — not formulated.
+
+## Progress update 2026-11-16 (PR #8139, `0435e799b9eb320f989c979717153b33245cefc1`)
+
+Upgraded the strong-CP framing route from `ORDER-ZERO-ONLY` to the full-tower 3-strand Wedderburn Markov trace $\Theta_{\mathrm{tower}}(w; q) = \sum_{\lambda \vdash 3} y_\lambda(q)\chi_\lambda(T_w; q)$ in `folio/quantum-observable-universe/lean/QOU/StandardModel/ThreeStrandColourTowerCP.lean` (wired into `QOU.lean`, `0` `sorry`, `0` custom axioms) and verified at 50 dps in `computations/probes/three_strand_colour_tower_cp_probe.py`:
+- `SingletTubeConfig`, `mirrorConfig`, `totalWrithe_mirror_eq_self_iff`, `totalWrithe_eq_zero_of_balanced`, `mirrorConfig_eq_self_of_balanced`: proves that a $3$-tube + $3$-antitube configuration has bar-symmetric total writhe iff $\sum_{a=1}^3 (w_a + \bar{w}_a) = 0$.
+- `contentSum3_transpose`, `towerChiralMoment_eq`, `towerChiralMoment_eq_zero_iff`: across $\lambda \in \{(3), (2,1), (1^3)\}$, the Young content sums $(+3, 0, -3)$ satisfy $c_{\lambda'} = -c_\lambda$ and factor the full-tower chiral moment as $3w(y_{(3)} - y_{(1^3)})$, which vanishes for $y_{(3)} \ne y_{(1^3)}$ iff $w = 0$.
+- `cpEvenSingletWitness_of_balanced` & `balancedT29Singlet_cpEven` vs `gluonT29_not_cpEven` & `gluonT29_qpow_ne_one`: discharges the division-free CP-even framing witness conditionally on any balanced $3 \times \bar{3}$ singlet tube configuration without supplying a fake unconditional `ColorSectorCPEven` instance by fiat. The $|\theta_{\mathrm{QCD}}| < 10^{-10}$ smallness residual remains open; kept `in-progress`.

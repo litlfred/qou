@@ -1,7 +1,7 @@
 ---
 # qou-5iaz
 title: 'GAP: alpha_s — no coupling extraction; blocked on SU(3) action (see qou-ni4b)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -9,7 +9,7 @@ tags:
     - sm-26
     - 8f-colour
 created_at: 2026-07-31T20:15:08Z
-updated_at: 2026-10-10T07:15:41Z
+updated_at: 2026-11-16T17:48:00Z
 parent: qou-8lxd
 blocked_by:
     - qou-ni4b
@@ -98,3 +98,7 @@ only single-number target that isn't a category error.
 (iv) Next: run `qou-lxh5` — does the ℓ(λ) = 3 sector at level 3 yield any colour quantity at the three existing calibrations? PASS/FAIL is decisive.
 (v) Forecast: Λ_QCD before α_s(μ); neither before `qou-ni4b`.
 Tower status [reading: qou-ggdk]: ORDER-ZERO-ONLY so far (single bracket ratios at q₀); the level-3 Markov trace over all three-row blocks IS the full-tower formulation, and it exists as a test.
+
+## Progress update 2026-11-16 (PR #8139, `0435e799b9eb320f989c979717153b33245cefc1`)
+
+Recorded the 3-strand Wedderburn tower weights $y_{(3)}(q_0), y_{(2,1)}(q_0), y_{(1^3)}(q_0)$ ($y_{(3)} + 2y_{(2,1)} + y_{(1^3)} = 1$ to 70 dps) and the `qou-ni4b` dimension / derived-Lie-algebra / cubic-anomaly boundary in `folio/quantum-observable-universe/lean/QOU/StandardModel/ThreeStrandColourTowerCP.lean` and `computations/probes/three_strand_colour_tower_cp_probe.py` (PR #8139). Per the honesty gate, no $\alpha_s$ constant is wired; kept `in-progress`.
