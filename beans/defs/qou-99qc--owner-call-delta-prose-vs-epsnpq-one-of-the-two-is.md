@@ -3652,3 +3652,12 @@ Yes, there is a mismatch inside the corpus.
 - (ii) L± supplies twist ±1 per photon, so one photon per strand gives |t| ≤ 1 and hence Y = ±1/3 (ε-Y3/Y7). This is the only place the twist channel matters for n–p: through Y, not through the braid. L₊ being "inherently positive" (trivial-knot-photon-interpretation) would also fix the SIGN of Y, if that statement is derived. It is currently prose.
 - (iii) Reading 3 on L± nucleon words: NOT run here. It belongs to the γγ-grammar owner (colour/gluon thread).
 - No mass or compute change. The element choice is unaffected.
+
+
+### NOTE (2026-11-16 07:32Z), from the thread "Pin down what ε means for Q_β"
+- On Δ_S = −(h[2]/4)(J₁ + J₂) (Lean: QuarkState/DeltaSIsWeakVertexSum.lean, merged) we have χ₍₂,₁₎(Δ_S) = 0. So every block-weighted trace gives τ(Δ_S) = −(h[2]/2)(y₃ − y₁₁₁) = −(h[2]/2)τ(J).
+- The ε question on Δ_S is therefore the single chirality expectation τ(P_L) − τ(P_R):
+  - augmentation: y₃ = 1, +12.47 %;
+  - z_D: y₃ = (q⁴+1)/(q²+1)², −43.16 %.
+- The long elements nuc9 and nuc11 have χ₍₂,₁₎ ≠ 0, so for them ε is affine in y₃.
+- The AME-implied y₃ = 0.889 is recorded as a TARGET only, never a selector. Their probe: /mnt/project-files/qou-qbeta-epsilon/qbeta_epsilon_chirality_reduction_probe.py.
