@@ -1275,6 +1275,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5188d0455921",
+          "ts": "8e1f4523b63d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:06:46.167Z",
+        "reviewed_sha": "06a3439cc5ff0cdc91182a4199f03868f80ab9b8",
+        "severity": "major",
+        "evidence": "Aggregate is derived by induction, but the per-constituent peel (trace multiplies by tr_M(constituent k)) is a context field, i.e. the multiplicativity is assumed step by step. The generator-monotone hypothesis of the md is never used; it should be what discharges peel (via thm:markov-trace-product)."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2444,6 +2460,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T02:31:42.576Z",
+  "updated_at": "2026-11-16T07:06:46.167Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

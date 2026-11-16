@@ -48,6 +48,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "3575f1c8d208",
+          "ts": "221545be3a9d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:08:07.913Z",
+        "reviewed_sha": "06a3439cc5ff0cdc91182a4199f03868f80ab9b8",
+        "severity": "major",
+        "evidence": "lean.ref is a structure that takes non-degeneracy of tau as a field. The md content (radical = blocks with three or more rows under convention D, H_n/I_n = TL_n, the descended pairing is non-degenerate) is assumed, not derived."
       }
     ],
     "proof-statement-integrity": [
@@ -2314,6 +2330,6 @@
       }
     ]
   },
-  "updated_at": "2026-09-05T06:14:50.673Z",
+  "updated_at": "2026-11-16T07:08:07.913Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
