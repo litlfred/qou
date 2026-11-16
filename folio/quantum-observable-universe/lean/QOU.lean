@@ -1737,3 +1737,5 @@ import QOU.KZ.Drinfeld.HeckeStrands
 import QOU.Mass.LagrangianKZInputs
 import QOU.QBeta.BorromeanThreeCuspNZHessian
 import QOU.QBeta.McPhailSnyderBridgeExclusion
+import QOU.QBeta.CyclicFaddeevZeta4Bridge
+import QOU.AlphaEM.ChernSimonsTowerAndT35Linchpin
