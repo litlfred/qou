@@ -1,14 +1,14 @@
 ---
 # qou-uq5x
 title: 'The G2 frame: S6 = G2/SU(3) isotropy is viable, and what it actually costs'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
     - 8f-flavour
 created_at: 2026-09-04T02:31:24Z
-updated_at: 2026-10-10T07:15:47Z
+updated_at: 2026-11-16T18:32:12Z
 parent: qou-8lxd
 ---
 
@@ -50,3 +50,13 @@ derived one. Does not close O-from-substrate (Hecke transport: qou-ni4b).
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-04 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## Progress Update — 2026-11-16 (`litlfred/qou#8149`, `e824457ca8e0ff4e0b85644c5478eebd2c3c8d56`)
+
+- **Lean 4 formalization (`folio/quantum-observable-universe/lean/QOU/Eightfold/G2IsotropyComplexThreefold.lean`, `0` `sorry`, wired into `QOU.lean`)**:
+  - Formalizes the 6D orthogonal complement $W = \mathrm{span}(e_2, e_3, e_4, e_5, e_6, e_7) \subset \mathrm{Im}(\mathbb{O})$ (`OctComplement6`) and left multiplication $J = L_{e_1}$ (`OctComplement6.jMap`) under the Fano triples $(1,2,3), (1,4,5), (1,6,7)$;
+  - Proves `OctComplement6.jMap_sq_eq_neg` ($J^2 = -\mathrm{id}_W$), `OctComplement6.fano_planes_jMap_invariant`, and `OctComplement6.direct_sum_three_fano_planes` ($W = W_1 \oplus W_2 \oplus W_3 \cong \mathbb{C}^3$);
+  - Formalizes $J$-commuting endomorphisms (`ComplexEnd3`) and proves `ComplexEnd3.su3_annihilates_top_exterior_power`: every traceless $J$-commuting derivation $D \in \mathfrak{su}(3)_{e_1}$ ($\operatorname{tr}_{\mathbb{C}}(D) = 0$) acts with weight $(0,0)$ on $\Lambda^3_{\mathbb{C}} W \cong \mathbb{C}$ ($\Lambda^3_{\mathbb{C}} W \cong \mathbf{1}$) and satisfies $\operatorname{tr}_{\mathbb{R}}(D) = 0 \wedge \operatorname{tr}_{\mathbb{R}}(J D) = 0$, plus `exterior_algebra_dimension_split` ($1 + 3 + 3 + 1 = 8$).
+- **50-dps / exact matrix verification (`computations/probes/ribbon_twist_z6_hypercharge_hirzebruch_probe.py` + `ribbon-twist-z6-hypercharge-hirzebruch.witness.json`)**:
+  - Explicitly constructs $J = L_{e_1}$ and all 8 real $6 \times 6$ Gell-Mann generators $D_a$ ($a = 1..8$) of $\mathfrak{su}(3)_{e_1} \subset \mathfrak{so}(6)$, verifying $J^2 = -I_6$, $[D_a, J] = 0$, $D_a^T + D_a = 0$, and $\operatorname{tr}_{\mathbb{R}}(D_a) = \operatorname{tr}_{\mathbb{R}}(J D_a) = 0$ (`allPassed: true`).

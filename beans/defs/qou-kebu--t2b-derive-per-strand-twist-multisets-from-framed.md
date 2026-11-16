@@ -1,7 +1,7 @@
 ---
 # qou-kebu
 title: 'T2b: derive per-strand twist multisets from framed braid words'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -9,7 +9,7 @@ tags:
     - 8f-tseries
     - 8f-open
 created_at: 2026-08-04T10:16:22Z
-updated_at: 2026-10-10T14:47:45Z
+updated_at: 2026-11-16T18:32:12Z
 parent: qou-8lxd
 blocked_by:
     - qou-qvpl
@@ -180,3 +180,10 @@ ribbon-normal-form upgrade are actually written up. It is not superseded content
 — only a closed work item. The full open/closed split is appended to
 `qou-h0zz`; the correction to a stale "root blocker" recommendation of mine is
 on `qou-8lxd`.
+
+
+## Progress Update — 2026-11-16 (`litlfred/qou#8149`, `e824457ca8e0ff4e0b85644c5478eebd2c3c8d56`)
+
+- **Lean 4 formalization (`folio/quantum-observable-universe/lean/QOU/StandardModel/RibbonTwistZ6Hypercharge.lean`, `0` `sorry`, wired into `QOU.lean`)**:
+  - Formalizes `strandTwistSum` and proves `battery_survivors_produce_exact_twist_sums` verifying that both survivor multiset families $A = ((-1,-1,-1), (-1,0,0), (0,0,0), (0,1,1))$ and $B = ((-1,-1,-1), (-1,-1,1), (0,0,0), (0,1,1))$ produce the exact twist-sum spectrum $[T(e), T(d), T(\nu), T(u)] = [-3, -1, 0, +2]$, satisfy $3 \mid (\tau + T(t))$, and force the Baez–Huerta $\mathbb{Z}_6$ quantization $6 \mid (2\tau + 3w + 3Y_t)$ across all 8 chiral states (`firstGenChiralStates_all_valid_z6`).
+  - Establishes why 3-strand framed ribbon twists succeed where 1-component Seifert knot signatures $\sigma(K) \in 2\mathbb{Z}$ fail (`knot_signature_even_obstruction`): per-strand framing $t_i \in \{-1, 0, +1\}$ reaches both odd ($-3, -1$) and even ($0, +2$) numerators over $3$.

@@ -1,14 +1,14 @@
 ---
 # qou-ys29
 title: 'T3h: Fano plane from genus-3 restriction of Bring surface — derive octonions from geometry'
-status: todo
+status: in-progress
 type: task
 priority: critical
 tags:
     - reorg-2026-10-04
     - 8f-flavour
 created_at: 2026-08-04T10:18:37Z
-updated_at: 2026-10-10T07:15:49Z
+updated_at: 2026-11-16T18:32:12Z
 parent: qou-8lxd
 ---
 
@@ -164,3 +164,11 @@ REMAINING OPEN QUESTIONS:
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-04 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## Progress Update — 2026-11-16 (`litlfred/qou#8149`, `e824457ca8e0ff4e0b85644c5478eebd2c3c8d56`)
+
+- **Lean 4 formalization (`folio/quantum-observable-universe/lean/QOU/Eightfold/G2IsotropyComplexThreefold.lean`, `0` `sorry`, wired into `QOU.lean`)**:
+  - Proves `bring_klein_s4_order_bridge`: $\gcd(|S_5|=120, |\mathrm{PSL}_2(\mathbb{F}_7)|=168) = 24 = |S_4|$, $\neg(168 \mid 120)$, $\neg(7 \mid 120)$ (formalizing the exact group-order obstruction preventing $\mathrm{PSL}_2(\mathbb{F}_7)$ from embedding into $\mathrm{Aut}(\Sigma_{\mathrm{Bring}}) = S_5$), $[\mathrm{PSL}_2(\mathbb{F}_7) : S_4] = 7$ (Fano points/lines), and $[S_5 : S_4] = 5$ (Bring covering sheets).
+  - Proves `fano_local_nonlocal_line_partition`: fixing $e_1$ splits the 7 Fano lines into `3` local lines through $e_1$ (which form the 3 complex lines of $W \cong \mathbb{C}^3$ under $J = L_{e_1}$) and `4` non-local lines disjoint from $e_1$ ($3 + 4 = 7$).
+- **Probe & Witness (`computations/probes/ribbon_twist_z6_hypercharge_hirzebruch_probe.py` + `ribbon-twist-z6-hypercharge-hirzebruch.witness.json`)**: `allPassed: true` (`q0Anchor: "independent"`).
