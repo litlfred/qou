@@ -12,7 +12,7 @@ export default proposition({
     "prop:q-beta-bar-even-kernel-invariant",
     "conj:q-beta-radius-of-convergence-gate",
     "prop:q-beta-q-eq-one-shadow-gate",
-    "prop:q-beta-direction-sanity-gate",
+    "rem:q-beta-direction-sanity-gate",
     "prop:q-beta-c-k-recursion-from-habiro-q-difference",
   ],
   cites: ["jones1987", "wenzl1988", "habiro2004"],

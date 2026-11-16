@@ -8,7 +8,7 @@ Sibling docstub at
 `algebraic-substrate/two-filtration-bridge-small-cases.lean`.
 
 Small-case (`n ≤ 4`) verification of the bridge identity already
-stated in full generality at `prop:two-filtration-bridge-general`:
+stated in full generality at `conj:two-filtration-bridge-general`:
 self-conjugate cells go to depth 2, chiral pairs go to depth 3,
 restricted to partitions of size at most 4.
 -/

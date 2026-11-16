@@ -1,7 +1,8 @@
-import { proof } from "../../schema/builders";
+import { remark } from "../../schema/builders";
 
-export default proof({
-  label: "prf:q-beta-direction-sanity-gate",
-  title: "Proof of q beta direction sanity gate",
-  uses: ["prop:q-beta-direction-sanity-gate"],
+export default remark({
+  label: "rem:q-beta-direction-sanity-gate-argument",
+  interprets: "rem:q-beta-direction-sanity-gate",
+  title: "Argument for q beta direction sanity gate (not a proof)",
+  uses: ["rem:q-beta-direction-sanity-gate"],
 });

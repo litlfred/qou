@@ -1,13 +1,14 @@
-import { proposition } from "../../schema/builders";
+import { remark } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:q-beta-direction-sanity-gate",
+export default remark({
+  label: "rem:q-beta-direction-sanity-gate",
   title:
     "$\\mathfrak{Q}_\\beta$ precision-ladder $\\S 4(d)$ formalize-first gate — any candidate Habiro element $F(q_0)$ must have magnitude consistent with the target observable's order of magnitude; the $z(q_0) \\approx 0.6127 < 1$ direction obstruction is the canonical refutation precedent",
   lean: {
     ref: "qou:QOU.QBeta.DirectionSanityGate.qbeta_direction_sanity_magnitude_match",
     validation: "not_checked",
   },
+  interprets: "prop:q-beta-q-eq-one-shadow-gate",
   uses: [
     "prop:q-beta-q-eq-one-shadow-gate",
     "prop:q-beta-bar-even-kernel-invariant",
@@ -32,6 +33,7 @@ export default proposition({
     "no-fit",
   ],
   authorNotes: [
+    { kind: "status", date: "2026-11-16", body: "Demoted from proposition on owner ruling 2026-11-16 (card \"Demote all six\"): the claim is not proved from established results, so it is stated as a remark (a screening policy, not a theorem). Label renamed rem:q-beta-direction-sanity-gate -> rem:q-beta-direction-sanity-gate." },
     {
       kind: "caveat",
       date: "2026-11-16",

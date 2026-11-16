@@ -170,7 +170,7 @@ to be uniformly bounded as $|z_i| \to q$ — equivalently, no spurious
 analytic mass leaks into $Z^{(k)}(A)$ from the divergent infinite
 product. Establishing this uniform bound is the conjectural target of
 [$z$-Habiro completion](#conj:brane-tower-z-habiro) and the open part
-of [$\Phi_q$ categorical truncation](#prop:phi-q-categorical-truncation).
+of [$\Phi_q$ categorical truncation](#conj:phi-q-categorical-truncation).
 
 The argument above is solid as a **categorical (Frobenius-paired)
 identity** but does not by itself rule out that the infinite analytic

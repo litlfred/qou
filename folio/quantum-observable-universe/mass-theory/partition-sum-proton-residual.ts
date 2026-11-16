@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:partition-sum-proton-residual",
+export default conjecture({
+  label: "conj:partition-sum-proton-residual",
   title:
     "Proton tower residual = $m_e \\cdot \\mathrm{tr}_M(C_{\\mathrm{Frob}}) = m_e(2 + 1/[2]_q)$",
   lean: {
@@ -30,6 +30,7 @@ export default proposition({
     "gb-filtration",
   ],
   authorNotes: [
+    { kind: "status", date: "2026-11-16", body: "Demoted from proposition on owner ruling 2026-11-16 (card \"Demote all six\"): the claim is not proved from established results, so it is stated as a conjecture. Label renamed conj:partition-sum-proton-residual -> conj:partition-sum-proton-residual." },
     {
       kind: "caveat",
       date: "2026-11-16",

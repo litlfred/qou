@@ -1,13 +1,12 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:phi-q-categorical-truncation",
+export default conjecture({
+  label: "conj:phi-q-categorical-truncation",
   title: "Brane-tower truncation depth = NF support depth (centre stratification)",
   lean: { ref: "qou:QOU.WedderburnMass.phi_q_categorical_truncation",
     validation: "not_checked",
   },
   uses: ["cor:habiro-expansion-atomic"],
-  proofs: ["prf:phi-q-categorical-truncation"],
   tags: [
     "brane-tower",
     "spectral-sequence",
@@ -16,6 +15,7 @@ export default proposition({
     "centre-stratification",
   ],
   authorNotes: [
+    { kind: "status", date: "2026-11-16", body: "Demoted from proposition on owner ruling 2026-11-16 (card \"Demote all six\"): the claim is not proved from established results, so it is stated as a conjecture. Label renamed conj:phi-q-categorical-truncation -> conj:phi-q-categorical-truncation." },
     {
       kind: "caveat",
       date: "2026-11-16",

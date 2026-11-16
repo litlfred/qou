@@ -15,7 +15,7 @@ switched:
     BW+shell if A ≥ 5.
 
 Ref: [leitner2026] Chapter 6, §Nuclear Binding and Beta Stability
-LaTeX label: `prop:mass-formula-regime-switching`
+LaTeX label: `conj:mass-formula-regime-switching`
 -/
 
 namespace QOU.BraidKnot

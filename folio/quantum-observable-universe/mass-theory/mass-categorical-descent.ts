@@ -1,18 +1,18 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
 /**
  * The QOU mass formula as a categorical descent decomposition:
  * descended (central) + transient (exceptional divisor)
  * components.
  *
- * History: renamed from `prop:mass-categorical-descent` on 2026-05-18
+ * History: renamed from `conj:mass-categorical-descent` on 2026-05-18
  * to align with the QOU six-term-mass-formula production framework
  * (the BW naming framed the same descent decomposition around the
  * empirical Bethe-Weizsäcker formula; the structural content is
  * mass-formula-agnostic and recovers BW as one phenomenology).
  */
-export default proposition({
-  label: "prop:mass-categorical-descent",
+export default conjecture({
+  label: "conj:mass-categorical-descent",
   title:
     "QOU mass formula as descent decomposition of the mass endomorphism",
   tags: [
@@ -29,6 +29,7 @@ export default proposition({
   },
   uses: ["thm:wedderburn-mass-formula"],
   authorNotes: [
+    { kind: "status", date: "2026-11-16", body: "Demoted from proposition on owner ruling 2026-11-16 (card \"Demote all six\"): the claim is not proved from established results, so it is stated as a conjecture. Label renamed conj:mass-categorical-descent -> conj:mass-categorical-descent." },
     {
       kind: "caveat",
       date: "2026-11-16",

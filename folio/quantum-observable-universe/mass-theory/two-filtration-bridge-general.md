@@ -1,6 +1,6 @@
 [`prop:two-filtration-bridge-small-cases`](#prop:two-filtration-bridge-small-cases)
 verified the bridge map $d_{\mathrm{II}}$ at all partitions of $n \leq 4$.
-*This proposition proposes the extension to **all** partitions of any $n$.
+*This conjecture proposes the extension to **all** partitions of any $n$.
 It is conditional: it rests on
 [`conj:two-filtration-bridge`](#conj:two-filtration-bridge), which defines
 $d_{\mathrm{II}}$, and on an unproved matching of the transposing involution

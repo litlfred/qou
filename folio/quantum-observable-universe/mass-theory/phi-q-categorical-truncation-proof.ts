@@ -1,10 +1,10 @@
-import { proof } from "../../schema/builders";
+import { remark } from "../../schema/builders";
 
-export default proof({
-  label: "prf:phi-q-categorical-truncation",
-  of: "prop:phi-q-categorical-truncation",
+export default remark({
+  label: "rem:phi-q-categorical-truncation-argument",
+  interprets: "conj:phi-q-categorical-truncation",
   uses: [
-    "prop:phi-q-categorical-truncation",
+    "conj:phi-q-categorical-truncation",
     "prop:categorical-mass-markov",
     // Step 4's starting identity: the transient trace at p_i evaluates to
     // Phi_q(z_i). Unstratified, which is why the next entry is also needed.

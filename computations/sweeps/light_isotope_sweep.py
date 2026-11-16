@@ -28,7 +28,7 @@ on A = Z+N nucleons:
 β-decay calibration: E_0 = 0.78233341 MeV / |tr_M(n) - tr_M(p)|.
 Binding: B = E_0 · (|tr_M(free)| - |tr_M(atom)|).
 
-Frobenius correction per prop:partition-sum-proton-residual and
+Frobenius correction per conj:partition-sum-proton-residual and
 thm:frobenius-codim-universal:
   Δ_Frob = m_e · (2 + 1/[2]_q) ≈ 1.276 MeV (universal, n=3)
 
@@ -353,7 +353,7 @@ if __name__ == "__main__":
             "prop:schur-weyl-mass-decomposition",
             "thm:frobenius-codim-universal",
             "thm:knot-mass-formula-unified",
-            "prop:partition-sum-proton-residual",
+            "conj:partition-sum-proton-residual",
         ],
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "parameters": {

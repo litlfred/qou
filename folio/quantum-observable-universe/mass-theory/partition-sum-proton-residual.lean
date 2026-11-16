@@ -24,7 +24,7 @@ At q = 1 this reduces to the classical (5/2)·m_e via
 dim_q(λ) → d_λ and [2]_q → 2.
 
 Ref: [leitner2026] Chapter 6, §Nuclear Binding and Beta Stability
-LaTeX label: `prop:partition-sum-proton-residual`
+LaTeX label: `conj:partition-sum-proton-residual`
 -/
 
 namespace QOU.BraidKnot
@@ -50,7 +50,7 @@ noncomputable def invDimPartitionSum (_n : ℕ) : ℚ := 0
 def protonTowerMass : ℝ := 938.7228
 
 /-- The manuscript-witnessed proton tower residual `Δm_p`, in MeV
-    (`prop:partition-sum-proton-residual`, value `1.2779 MeV`).  This is the
+    (`conj:partition-sum-proton-residual`, value `1.2779 MeV`).  This is the
     residual the Frobenius co-Casimir trace `m_e·(2 + 1/[2]_q)` is claimed to
     reproduce (to 0.14 %). -/
 def protonTowerResidualMeV : ℝ := 1.2779
@@ -109,7 +109,7 @@ noncomputable def frobeniusCoCasimirTraceN3 : ℝ :=
     witnessed residual directly).
 
     Ref: [leitner2026] §Frobenius derivation in
-    `prop:partition-sum-proton-residual`;
+    `conj:partition-sum-proton-residual`;
     `computations/frobenius_partition_sum.py`. -/
 theorem proton_tower_residual_frobenius :
     ∃ (ε : ℝ), abs ε ≤ electronMass * (4 / 1000) ∧

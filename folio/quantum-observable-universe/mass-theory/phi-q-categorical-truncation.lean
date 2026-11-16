@@ -24,7 +24,7 @@ projection identity (tilde w_λ = dim_q²/[n]_q!; cf.
 prop:plancherel-weight-boundedness for the classical Plancherel
 measure).
 
--- Ref: [leitner2026] prop:phi-q-categorical-truncation
+-- Ref: [leitner2026] conj:phi-q-categorical-truncation
 -- Ref: [leitner2026] prop:spectral-sequence-collapse
 -/
 
@@ -64,7 +64,7 @@ structure SpectralSequenceCollapse {R : Type*} [CommRing R]
 
 /-- The categorical brane-tower contribution: a finite sum over
     curvature-rank strata up to the NF-support depth k★(T_w). -/
--- Ref: [leitner2026] prop:phi-q-categorical-truncation
+-- Ref: [leitner2026] conj:phi-q-categorical-truncation
 def categoricalBraneTower {R : Type*} [CommRing R]
     (G : GBStratifiedAlgebra R) (T_w : G.algebra)
     (k_star : ℕ) (mass_at_depth : ℕ → R) : R :=
@@ -74,7 +74,7 @@ def categoricalBraneTower {R : Type*} [CommRing R]
     derived from the `SpectralSequenceCollapse` bundle, not assumed —
     The theorem is non-tautological: it asserts that the structural
     spectral-sequence input *forces* the truncation invariance. -/
--- Ref: [leitner2026] prop:phi-q-categorical-truncation
+-- Ref: [leitner2026] conj:phi-q-categorical-truncation
 -- Ref: [leitner2026] prop:spectral-sequence-collapse
 theorem phi_q_categorical_truncation {R : Type*} [CommRing R]
     (G : GBStratifiedAlgebra R) (T_w : G.algebra)

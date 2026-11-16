@@ -5,7 +5,7 @@ import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 # QOU.ParticleInteractions.mass_categorical_descent
 
 Canonical Lean for content block
-[`prop:mass-categorical-descent`](../../../quantum-observable-universe/mass-theory/mass-categorical-descent.md):
+[`conj:mass-categorical-descent`](../../../quantum-observable-universe/mass-theory/mass-categorical-descent.md):
 *QOU mass formula as descent decomposition of the mass endomorphism.*
 
 **Proposition.** The nuclear binding energy `B(Z,N)` splits as
@@ -118,7 +118,7 @@ theorem descent_decomposition : B_total = B_desc + B_trans := by
 end MassDescentChannels
 
 /-- **Mass formula as descent decomposition**
-    ([`prop:mass-categorical-descent`]) — conditional on the channel
+    ([`conj:mass-categorical-descent`]) — conditional on the channel
     structure, now **sorry-free**: given the Wedderburn channel
     decomposition (`MassDescentChannels`), the total binding splits as
 

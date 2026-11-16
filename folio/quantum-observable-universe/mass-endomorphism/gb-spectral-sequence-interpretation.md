@@ -24,7 +24,7 @@ The spectral-sequence framing enforces architectural rigidity:
 
 1. The six mass terms are structurally constrained. They constitute the non-trivial pages of a canonical spectral sequence.
 2. The mass sum equals the total cohomology of the filtered Hecke algebra paired with $T_w$.
-3. Regime switching ([`prop:mass-formula-regime-switching`](#prop:mass-formula-regime-switching)) occurs because different pages dominate for different $A$. This reflects the spectral sequence structure, not an ad-hoc failure of additivity.
+3. Regime switching ([`conj:mass-formula-regime-switching`](#conj:mass-formula-regime-switching)) occurs because different pages dominate for different $A$. This reflects the spectral sequence structure, not an ad-hoc failure of additivity.
 
 ## Relation to standard formalisms
 
