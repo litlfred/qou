@@ -1,13 +1,13 @@
 ---
 # qou-ungx
 title: Registry JSON twin drifts silently from the .md — validator never compares them
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-15T04:32:25Z
-updated_at: 2026-10-04T15:13:45Z
+updated_at: 2026-11-16T20:10:00Z
 parent: qou-trd0
 ---
 
@@ -102,3 +102,12 @@ whichever lands second renumbers.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-15 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## Round 48 Execution Update (2026-11-16, PR #8161)
+
+- **PR:** https://github.com/litlfred/qou/pull/8161 (`38bc15fe7214bb6951d6acb18fa8c8d7d32d5225`)
+- **Action taken:**
+  - Verified R6 (`R6a`, `R6b`, `R6c` in `check_twin_drift`) is live in `docs/coordination/kernel_constraints_registry_validate.py` (`22 rows, 0 error(s), 0 R6 warning(s)`).
+  - Added `--self-test` / `--selftest` to `docs/coordination/kernel_constraints_registry_validate.py` regression-testing `check_twin_drift` on reconstructed pre-#5074 `KC21`/`KC22` drift cases, `R6c` idiom warning, quoted-withdrawal exemption, and the live registry, and excluded `.claude` from `docs_dir.rglob("*.md")`.
+- **Status:** Kept `in-progress` pending PR #8161 merge and owner review.

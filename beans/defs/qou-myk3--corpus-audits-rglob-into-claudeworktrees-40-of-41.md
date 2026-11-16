@@ -1,13 +1,13 @@
 ---
 # qou-myk3
 title: 'Corpus audits rglob into .claude/worktrees: 40 of 41 scanners lack the exclusion; counts inflate ~2x when an agent worktree exists'
-status: todo
+status: in-progress
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-22T12:38:06Z
-updated_at: 2026-10-04T15:15:38Z
+updated_at: 2026-11-16T20:10:00Z
 parent: qou-trd0
 ---
 
@@ -86,3 +86,11 @@ Scoping `qou-v6vp` (the `char_fast` constant-function defect) on PR #5427.
 Running `f64_into_mpmath_audit` to see whether that defect was already a
 tracked class, I noticed its listing was dominated by
 `.claude/worktrees/...` paths.
+
+
+## Round 48 Execution Update (2026-11-16, PR #8161)
+
+- **PR:** https://github.com/litlfred/qou/pull/8161 (`38bc15fe7214bb6951d6acb18fa8c8d7d32d5225`)
+- **Action taken:**
+  - Added `.claude` (along with `.git`, `.lake`, `node_modules`) worktree exclusions across 24 repo-root/tree `rglob` scanners in `computations/audits/`, `computations/`, and `scripts/` (`content_witness_citation_audit.py`, `derivation_gap_categorize.py`, `duplicate_witness_stem_audit.py`, `float64_leak_audit.py`, `ghost_value_sweep.py`, `mpf_json_encoder_audit.py`, `q0_cross_layer_fallback_scan.py`, `q0_declared_vs_recorded_sweep.py`, `q0_witness_read_dataflow_audit.py`, `reference_anchor_straddle_audit.py`, `self_built_braid_word_audit.py`, `silent_parse_failure_audit.py`, `silent_self_check_audit.py`, `step9_mqou_scope_probe.py`, `witness_braid_word_ordering_audit.py`, `witness_dependency_residue_targets.py`, `witness_producer_resolution_audit.py`, `cal4_disguise_hunt.py`, `canonical_mass_status_guard.py`, `docs/coordination/kernel_constraints_registry_validate.py`, `scripts/convention-c-triage.py`, `scripts/convention-c-value-audit.py`, `scripts/convention-c-witness-audit.py`, `scripts/regen-witnesses-mpmath141.py`, `scripts/witness-shrink-check.py`).
+- **Status:** Kept `in-progress` pending PR #8161 merge and owner review.

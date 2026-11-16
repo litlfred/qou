@@ -1,11 +1,11 @@
 ---
 # qou-lz8f
 title: A producer that cannot serialize an mpf DESTROYS its witness on every run — 38 candidates, and qou-geqa's crash class refills
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-09-13T17:29:26Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-16T20:10:00Z
 parent: qou-9nnz
 ---
 
@@ -300,3 +300,11 @@ crash). **It is the highest-yield step in the screen and it costs one run.**
 ## Parented 2026-11-15 (owner-approved bean triage)
 
 Parent `(none)` → `qou-9nnz`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.
+
+
+## Round 48 Execution Update (2026-11-16, PR #8161)
+
+- **PR:** https://github.com/litlfred/qou/pull/8161 (`38bc15fe7214bb6951d6acb18fa8c8d7d32d5225`)
+- **Action taken:**
+  - Updated `computations/audits/mpf_json_encoder_audit.py` so `_analyse_source` recognises sanitizer-wrapped payloads (`json.dumps(_ser(witness), ...)` / `json.dump(_ser(wit), ...)`, the repair idiom across the 5 confirmed producers in `qou-lz8f`), excludes `.claude`/`.lake` worktrees, and supports `--self-test` / `--selftest`.
+- **Status:** Kept `in-progress` pending PR #8161 merge and owner review.

@@ -1,13 +1,13 @@
 ---
 # qou-li9a
 title: chi_at_q0_via_matrix_m_mpfr prints n_match/n_total and exits 0 regardless — the qou-7bv5 silence, unfixed
-status: todo
+status: in-progress
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-08T05:02:18Z
-updated_at: 2026-10-04T15:15:37Z
+updated_at: 2026-11-16T20:10:00Z
 parent: qou-trd0
 ---
 
@@ -73,3 +73,12 @@ turned 29 correct records into violations."*
 Do **not** make the exit code conditional on a *widened* tolerance to keep
 current callers green — that is the baseline-widening move the precision
 discipline forbids, one layer up.
+
+
+## Round 48 Execution Update (2026-11-16, PR #8161)
+
+- **PR:** https://github.com/litlfred/qou/pull/8161 (`38bc15fe7214bb6951d6acb18fa8c8d7d32d5225`)
+- **Action taken:**
+  - Gated the exit code of `computations/chi_at_q0_via_matrix_m_mpfr.py` on `n_match == n_total` across all cross-checked atoms (and on atom build errors) via `any_mismatch`, so a cross-check mismatch against `chi_rust_at_q_mpf` exits `1` instead of `0`.
+  - Updated `computations/audits/silent_self_check_audit.py` `REPAIRED` table and verified `silent_self_check_audit.py` reports `chi_at_q0_via_matrix_m_mpfr.py` as fixed.
+- **Status:** Kept `in-progress` pending PR #8161 merge and owner review.

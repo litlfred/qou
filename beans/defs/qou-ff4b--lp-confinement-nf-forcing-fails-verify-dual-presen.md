@@ -1,13 +1,13 @@
 ---
 # qou-ff4b
 title: 'lp-confinement-nf-forcing FAILS verify_dual_present: 6 records where active_set is empty but y_star has tight constraints'
-status: todo
+status: in-progress
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-08T04:46:25Z
-updated_at: 2026-10-04T15:15:45Z
+updated_at: 2026-11-16T20:10:00Z
 parent: qou-trd0
 ---
 
@@ -84,3 +84,13 @@ Read `lp_confinement_nf_forcing`'s dual-emission path and decide whether the
 active set is thresholded or unpopulated; fix at the producer and regenerate.
 Do **not** widen the guard's tolerance to make this pass — the guard is correct
 here and is the only thing that caught it.
+
+
+## Round 48 Execution Update (2026-11-16, PR #8161)
+
+- **PR:** https://github.com/litlfred/qou/pull/8161 (`38bc15fe7214bb6951d6acb18fa8c8d7d32d5225`)
+- **Action taken:**
+  - Confirmed root cause: `computations/lp-confinement-nf-forcing.witness.json` (diagonal `G`) was generated under the pre-2026-08-24 primal-slack rule in `_rescale_mpfr_result` (`|(Gx)_i| / sum_j |G_ij x_j| == 1` on diagonal `G`, returning `active_set = []` for all 6 rows despite `y_star` entries up to `1.2589`).
+  - Updated `_finish` in `tools/pyhecke/python/pyhecke/lp_dual_solver.py` and `computations/lp_confinement_nf_forcing.py` to always derive `active_set` from `y_star` / `y0_star`, and updated all 6 records in `computations/lp-confinement-nf-forcing.witness.json` from their committed 167-bit `lp_y_star_str` / `lp_y0_star_str` (`active_set` `[1, 2]`, `[1, 2]`, `[0, 2]`, `[1, 2, 3, 4]`, `[1, 2, 3, 4]`, `[1, 2, 3, 4]`; `maximizer_in_active_set: true` on 6/6 compounds).
+  - Added `--self-test` / `--selftest` to `computations/lp_confinement_nf_forcing.py` and regression test `test_lp_confinement_nf_forcing_witness_passes_verify_dual_present` in `tools/pyhecke/tests/test_lp_dual_null_hardening.py` (`9 passed`).
+- **Status:** Kept `in-progress` pending PR #8161 merge and owner review.
