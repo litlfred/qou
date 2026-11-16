@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: critical
 created_at: 2026-10-10T14:43:05Z
-updated_at: 2026-11-15T20:40:00Z
+updated_at: 2026-11-16T18:30:00Z
 ---
 
 Owner goal #1 (ofri, 2026-10-10, verbatim: 'start new session focused ONLY on showing that the trace equals the multiplicative integral. THAT IS PRIMARY GOAL #1 (GOAL #2 is 1ppq L2)').
@@ -33,3 +33,6 @@ Kohno 1987 Remark 1.3.14 (library/kohno1987-aif, p.150): Theorem 1.2.8 holds at 
 ## 2026-11-15 — PR #7990 (`f6c6c9e`, owner ruling Q-YWYQ-1 = "try 1 and 3")
 - Formalised Option 1 (non-abelian ordered holonomy `hol w` in `Hom(1, A)` before applying `∫_A ∘ Ψ` or `tr(L_{hol(w)} ≫ Ψ)` in `QOU/Torsion/MassTraceIdentity.lean`, `QOU/Torsion/MassTraceMarkov.lean`, and `mass-identity.lean`) and Option 3 (Temperley–Lieb state-sum expansion of `hol q qi ℓs`, `braidTrace`, `jonesFn`, and `massClass` over generic `[CommRing R]` with `q * qi = 1` in `QOU/Torsion/MassTraceMarkov.lean` and `QOU/Torsion/MassTraceMarkovClass.lean`, including `braidTrace_wordBraid_eq_leadProd_add_tlStates` isolating the $s \equiv \mathrm{false}$ naive per-crossing scalar product from the $2^k - 1$ Temperley–Lieb cup-cap states).
 - Updated `mass-identity.{md,ts,lean}` in parity while preserving the §7c wall-side acknowledgement. Kept `status: in-progress` for owner review.
+
+## 2026-11-16 — PR #8148 (`b1cda0e`, `qou-9634` & `qou-ep0a`)
+- Formalized `QOU.Mass.KZHolonomy.MultiStrandHeckeFactor` (`qou-9634`, generic `R` per §7c, `0` `sorry`) and `QOU.Torsion.MarkovTraceTowerStabilization` (`qou-ep0a`, generic `R` per §7c, `0` `sorry`), wired into `QOU.lean`. Kept `status: in-progress`.
