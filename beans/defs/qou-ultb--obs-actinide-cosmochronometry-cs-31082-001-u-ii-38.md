@@ -1,7 +1,8 @@
 ---
 # qou-ultb
 title: 'OBS: actinide cosmochronometry (CS 31082-001 U II 3859.57A) — Gamow-amplified alpha_EM probe; bounds |da/a| <~ 2.08e-3, LOOSER than quasars but at the FORMATION site'
-status: todo
+status: in-progress
+pr: 8196
 type: task
 priority: normal
 tags:
@@ -81,3 +82,6 @@ at 60 dps, cross-checked at 90; no float64).
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-13 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Progress (2026-11-16, PR #8196)
+- [x] Formalized `hasSensitivitySlack`, `sensitivity_slack_implies_looser_than_anchor`, and `actinide_u2_cosmochronometry_slack_witness` in `folio/quantum-observable-universe/lean/QOU/Eightfold/LeptonReadoutHiggsScaleMesonSyllableAndIcosahedralOrbit.lean` + 50-dps mpmath witness (`qou_ultb_actinide_cosmochronometry_slack`) in PR #8196 (`38b68fa660bb34e2ffb7a2e1a09e5c4f5308e2cf`).

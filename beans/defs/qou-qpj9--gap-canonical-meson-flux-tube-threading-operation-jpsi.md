@@ -1,7 +1,8 @@
 ---
 # qou-qpj9
 title: 'GAP: define canonical meson flux-tube threading braid (J/ψ underived)'
-status: todo
+status: in-progress
+pr: 8196
 type: task
 priority: normal
 tags:
@@ -256,3 +257,6 @@ atom_word_braid_letter_census_probe (3). All assertions pass.
 
 STILL OPEN and unchanged by any of it: Obstruction A itself. T(2,n) torus
 closures have Vol = 0. Nothing above touches that.
+
+## Progress (2026-11-16, PR #8196)
+- [x] Formalized `minNegativeCrossings`, `syllableVolumeWindowMultipliers`, `negative_crossing_lower_bound`, and `pion_and_charmonium_syllable_bounds` in `folio/quantum-observable-universe/lean/QOU/Eightfold/LeptonReadoutHiggsScaleMesonSyllableAndIcosahedralOrbit.lean` + 50-dps mpmath witness (`qou_qpj9_negative_syllable_volume_window`) in PR #8196 (`38b68fa660bb34e2ffb7a2e1a09e5c4f5308e2cf`).

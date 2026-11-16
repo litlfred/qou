@@ -1,7 +1,8 @@
 ---
 # qou-b5ic
 title: 'GAP: no action of Bring''s S5/A5 on the model cone''s chirality units u'
-status: todo
+status: in-progress
+pr: 8196
 type: task
 priority: normal
 created_at: 2026-11-15T12:00:00Z
@@ -34,3 +35,6 @@ that half-turn carries `Γ_u` to `−Γ_u`. An A5-invariant rule identifies L wi
 Audit: `docs/audits/2026-11-15-bring-s5-distinguished-unit-preregistration.md` §5.
 Probe: `computations/probes/bring_cone_icosahedral_unit_orbits_probe.py`.
 PR #7818. Stays `todo` (open, rule 13a).
+
+## Progress (2026-11-16, PR #8196)
+- [x] Formalized `exceptionalOrbitSize`, `order60_exceptional_orbits_and_euler_deficit`, and `antipodal_pair_chirality_sum_zero_and_distinction` in `folio/quantum-observable-universe/lean/QOU/Eightfold/LeptonReadoutHiggsScaleMesonSyllableAndIcosahedralOrbit.lean` + 50-dps mpmath witness (`qou_b5ic_icosahedral_orbits_and_antipodal_chirality`) in PR #8196 (`38b68fa660bb34e2ffb7a2e1a09e5c4f5308e2cf`).

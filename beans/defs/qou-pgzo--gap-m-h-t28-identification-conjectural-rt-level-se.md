@@ -1,7 +1,8 @@
 ---
 # qou-pgzo
 title: 'GAP: m_H — T(2,8) identification conjectural; RT level selection + invariant→mass map open; probes within 2×'
-status: todo
+status: in-progress
+pr: 8196
 type: task
 priority: normal
 tags:
@@ -23,3 +24,6 @@ Per-term bean for the Higgs mass (session qou-ggdk, bean qou-bsu0). Tier: conjec
 (iv) Next: not near-term; a derived level principle would be a result even at factor-2 accuracy.
 (v) Forecast: factor 2 stays factor 2 without a level principle.
 Tower status [reading: qou-ggdk]: MIXED — RT at a root of unity is a fibre-level object, but with the level unselected and the mass map absent every actual number is an order-zero volume or ratio reading.
+
+## Progress (2026-11-16, PR #8196)
+- [x] Formalized `twoStrandComponents`, `twoStrandEulerChar`, `twoStrandGenus`, `t27_knot_vs_t28_link_invariants`, `scalarSquaredMass`, and `scalarSquaredMass_strictMono_in_quartic` in `folio/quantum-observable-universe/lean/QOU/Eightfold/LeptonReadoutHiggsScaleMesonSyllableAndIcosahedralOrbit.lean` + 50-dps mpmath witness (`qou_pgzo_t27_t28_surface_and_quartic_scale`) in PR #8196 (`38b68fa660bb34e2ffb7a2e1a09e5c4f5308e2cf`).

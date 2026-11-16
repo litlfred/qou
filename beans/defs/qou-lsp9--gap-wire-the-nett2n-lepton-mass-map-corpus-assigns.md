@@ -1,7 +1,8 @@
 ---
 # qou-lsp9
 title: 'GAP: wire the net(T(2,n)) -> lepton mass map. Corpus assigns T(2,n) to generations but the Morgan-Voyce net is a normal-form coefficient, NOT a mass: net ratios 1.2455 and 1.2408 vs observed 206.8 and 16.8. Until wired, the ladder has no predictive content at n=9 to test against the LEP no-4th-lepton bound. Prerequisite to any numerical falsification.'
-status: todo
+status: in-progress
+pr: 8196
 type: task
 priority: normal
 tags:
@@ -49,3 +50,6 @@ predictions; it is not the load-bearing gate on the falsification.
 non-H_2-linear bridge (additive interface term, or linking/satellite
 coupling T(2,n) to the hyperbolic Higgs knot 4_1). Left `todo`
 deliberately -- a class was excluded, the goal was not achieved.
+
+## Progress (2026-11-16, PR #8196)
+- [x] Formalized `twoStepReadout`, `nextRecurrenceTerm`, `two_step_recurrence_expansion`, `twoStepReadout_pos_of_nonneg_weights`, and `node_requires_negative_alpha` in `folio/quantum-observable-universe/lean/QOU/Eightfold/LeptonReadoutHiggsScaleMesonSyllableAndIcosahedralOrbit.lean` + 50-dps mpmath witness (`qou_lsp9_two_step_readout_and_node_sign`) in PR #8196 (`38b68fa660bb34e2ffb7a2e1a09e5c4f5308e2cf`).
