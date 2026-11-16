@@ -204,3 +204,22 @@ S2, squares (and cubes for |u| = 7) of every pure u with 7 ≤ |u| ≤ 11:
 **Shortest failing pure word found: length 18**, e.g. (B0.B0.V0.V0.B0.B0.V0.V0.B0)², smallest level character
 −0.1487. Not settled: lengths 12 to 17, where only powers were tested, so a failing pure word of length 12–17
 that is not a power may exist. Scope (a).
+
+## Amendment 6 — the length 12–17 gap (run 2026-11-16)
+
+Pre-registered in `preregistration.md` §Amendment 6 before the run. Same frame as amendments 3–5: Hoefsmit seminormal H₄(q), convention-D level weights, proton pin q₀, 40 dps (relations error 9.76e-41).
+
+| readout | words tested | failures | min level character |
+|---|---:|---:|---|
+| G1, m = 12, exhaustive | 1,351,680 pure words | 0 | 0.02316 |
+| G2, m = 13, 20,000 seeded | 20,000 | 0 | 0.2146 |
+| G2, m = 14 | 20,000 | 0 | 0.1580 |
+| G2, m = 15 | 20,000 | 0 | 0.1566 |
+| G2, m = 16 | 20,000 | 0 | 0.1735 |
+| G2, m = 17 | 20,000 | 0 | 0.0695 |
+
+**What this settles.** Every pure word of length ≤ 12 passes reading 3 at q₀ (exhaustive, extends amendment 5's ≤ 11). No failure was found at lengths 13–17.
+
+**What it does not settle.** Lengths 13–17 were sampled, not enumerated, so "no pure word of length 13–17 fails" is not shown. The shortest known failing pure word is still length 18, `(B0.B0.V0.V0.B0.B0.V0.V0.B0)²`. The minimum at m = 12 (0.0232) is much closer to 0 than the sampled minima, consistent with failures being rare structured words (squares and powers) that uniform sampling does not hit.
+
+Witness: `gg-four-strand-pure-gap-12-17.witness.json`.
