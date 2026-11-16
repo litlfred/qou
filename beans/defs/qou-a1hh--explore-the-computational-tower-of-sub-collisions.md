@@ -133,3 +133,6 @@ At q₀ (proton, conv D, 40 dps). Exhaustive m = 7, 8: every pure word passes (m
 
 ## 2026-11-15 — amendment 5: shortest failing pure word at q₀ (dbdcdebf265, branch claude/gg-shortest-failing-pure-2026-11-15)
 Every pure word of length ≤ 11 passes reading 3 at q₀ (exhaustive; min level char 0.3200 at m = 11). Squares of pure words of length 9, 10, 11 fail 3, 10, 34 times, so the shortest failing pure word found has length 18, e.g. (B0.B0.V0.V0.B0.B0.V0.V0.B0)². Open: lengths 12–17 (only powers tested). Scope (a).
+
+## 2026-11-16 amendment 6 (PR #8122, issue #8121)
+Exhaustive m=12: 1,351,680 pure words, 0 fail (min level char 0.0232). Seeded 20,000 per m=13..17: 0 fail. Every pure word of length <= 12 passes reading 3 at q0; shortest known failing pure word stays length 18. 13-17 sampled, not enumerated.
