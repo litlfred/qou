@@ -1,7 +1,7 @@
 ---
 # qou-mrel
 title: Where does m_e come from? — relational mass and the unexplained −6·m_e term
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -86,3 +86,8 @@ whether the electron's role is conventional or structural.
 
 `docs/canonical-mass-formula-guardrail.md`; `observations/epistemic-status-of-calibrations.md`;
 AGENTS.md §"Canonical derivation chain" (CAL-1 = m_e as "the dimensional unit").
+
+### Progress Update (2026-11-16, PR #8171)
+- Defined `protonOverMeDimensionless` in `folio/quantum-observable-universe/lean/QOU/AppendixQValues/ProtonBorromeanAssembly.lean` and proved `proton_mass_factors_mE` (`protonMassFromLoop m_e V_e = m_e * protonOverMeDimensionless V_e`) and `proton_mass_homogeneous_in_scale` (`protonMassFromLoop (λ * m_e) V_e = λ * protonMassFromLoop m_e V_e`) with `0` `sorry`.
+- Verified at 80 dps at $q_0$ in `computations/probes/delta_split_mrel_four_phi_resummation_probe.py` (`computations/probes/delta-split-mrel-four-phi-resummation.witness.json`).
+- Opened PR `litlfred/qou#8171` (`1c72739193707fef67fbebe3aa153f994c73933e`). Keeping status `in-progress` pending owner review.

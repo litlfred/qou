@@ -1,7 +1,7 @@
 ---
 # qou-n04i
 title: 'RED-TEAM: m_p = 2(m_μ·F_Bor − 6·m_e) — parameter-free-in-q₀ but fitted-by-selection (β_Bor/q³/2/6)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -29,3 +29,7 @@ Per-piece tiers:
 Sensitivity (60-dps probe): bind=6 uniquely lands μ at 211 ppb (bind=5,7 → ~943,000 ppb); but only because F_Bor pre-normalized so 2·m_μ·F_Bor overshoots m_p by EXACTLY 12.0 m_e. Integer is the residual re-labeled, not derived.
 
 Follow-ups (not done, read-only): (1) scrub refuted −1/12 from conj+def blocks; (2) resolve qou-24w9 /q³; (3) re-label the prop.
+
+### Progress Update (2026-11-16, PR #8171)
+- Retired the refuted `(the Ocneanu −1/12 leading-pole inverse)` parenthetical on `|S₃| = 6` in `folio/quantum-observable-universe/lean/QOU/AppendixQValues/ProtonBorromeanAssembly.lean` (lines 21 and 59), aligning with `f-bor-borromean-observable.lean:109-114`.
+- Opened PR `litlfred/qou#8171` (`1c72739193707fef67fbebe3aa153f994c73933e`). Keeping status `in-progress` pending owner review.

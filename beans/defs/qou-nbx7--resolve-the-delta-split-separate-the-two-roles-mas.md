@@ -1,7 +1,7 @@
 ---
 # qou-nbx7
 title: 'resolve the delta split: separate the two roles (mass observable vs crossing tilt); subleading coefficient is 1.3147, not 1'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -86,3 +86,8 @@ k = 1.31470967527 to within the CODATA uncertainty, i.e. delta within ~0.1 ppm.
 Neither k=1 (306 ppm) nor k=4/3 (18 ppm) meets that. The 2026-06-29 Part B
 result stands: the geometric closure 1/(1-hbar^3) gives k = 1.00097, no better
 than k=1, so the missing physics is not in higher geometric terms.
+
+### Progress Update (2026-11-16, PR #8171)
+- Formalized Role (a) (`deltaMassObservable : ℝ → ℝ`) and Role (b) (`pnCrossingTemplateFour : ℝ → ℝ → ℝ`) in `folio/quantum-observable-universe/lean/QOU/AppendixQValues/ProtonBorromeanAssembly.lean`, proving `pnCrossingTemplateFour_diff` and `pnCrossingTemplateFour_subleading_shift` (`0` `sorry`).
+- Verified numerically to 80 dps at $q_0$ in `computations/probes/delta_split_mrel_four_phi_resummation_probe.py` (`computations/probes/delta-split-mrel-four-phi-resummation.witness.json`, `scriptCommitSha: 66da8967c7bbb2544d7558251e982ed669439326`).
+- Opened PR `litlfred/qou#8171` (`1c72739193707fef67fbebe3aa153f994c73933e`). Keeping status `in-progress` pending owner review.
