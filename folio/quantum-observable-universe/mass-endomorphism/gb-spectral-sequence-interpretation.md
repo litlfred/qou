@@ -24,7 +24,7 @@ The spectral-sequence framing enforces architectural rigidity:
 
 1. The six mass terms are structurally constrained. They constitute the non-trivial pages of a canonical spectral sequence.
 2. The mass sum equals the total cohomology of the filtered Hecke algebra paired with $T_w$.
-3. Regime switching ([`conj:mass-formula-regime-switching`](#conj:mass-formula-regime-switching)) occurs because different pages dominate for different $A$. This reflects the spectral sequence structure, not an ad-hoc failure of additivity.
+3. If different pages dominated for different $A$, that would explain the regime switching of [`conj:mass-formula-regime-switching`](#conj:mass-formula-regime-switching). This is conjectural: in the corpus the regime of each $A$ is selected against AME data, which is an ad-hoc per-$A$ choice. Only the location of the boundaries ($A = 2\mid3$ and $4\mid5$) is derived, from $A$ alone, in [`prop:pair-graph-regime-trichotomy`](#prop:pair-graph-regime-trichotomy).
 
 ## Relation to standard formalisms
 

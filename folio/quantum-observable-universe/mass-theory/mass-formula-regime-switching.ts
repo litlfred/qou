@@ -3,7 +3,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:mass-formula-regime-switching",
   title:
-    "Mass formula regime switch: SW+Frob for $A \\leq 2$, BW+$\\chi$ for $A \\geq 3$ (non-additive)",
+    "Mass formula regime switch: an $A$-uniform evaluation whose dominant term changes at the pair-graph regime boundaries $A = 2 \\mid 3$ and $4 \\mid 5$",
   lean: {
     ref: "qou:QOU.BraidKnot.mass_formula_regime_switching",
     validation: "not_checked",
@@ -11,6 +11,7 @@ export default conjecture({
   uses: [
     "rem:np-discrepancy-resolution",
     "prop:chirality-from-frobenius-self-pairing",
+    "prop:pair-graph-regime-trichotomy",
   ],
   tags: [
     "mass-formula",
@@ -21,6 +22,7 @@ export default conjecture({
     "chirality",
   ],
   authorNotes: [
+    { kind: "status", date: "2026-11-16", body: "Restated (issue #8094): the conjecture is now the existence of an A-uniform evaluation that changes character at the boundaries of prop:pair-graph-regime-trichotomy, which proves the cut-offs from A alone. The AME selection, the 5% tolerance and the 'non-additive' wording are moved to a marked comparison paragraph or dropped. The sibling Lean holds AME tables and if-branch evaluations; it is data for the comparison, not support for the conjecture." },
     { kind: "status", date: "2026-11-16", body: "Demoted from proposition on owner ruling 2026-11-16 (card \"Demote all six\"): the claim is not proved from established results, so it is stated as a conjecture. Label renamed conj:mass-formula-regime-switching -> conj:mass-formula-regime-switching." },
     {
       kind: "caveat",
