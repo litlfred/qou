@@ -1,0 +1,71 @@
+{
+  "probeId": "codata-truncation-and-q0-anchor-recentering",
+  "title": "50-dps verification of 46ke, inkh, qou-1c4y, qou-q0dr, and qou-q0lp (CODATA truncation partition, complex recurrence guard, and q0 anchor re-centring)",
+  "beans": [
+    "46ke",
+    "inkh",
+    "qou-1c4y",
+    "qou-q0dr",
+    "qou-q0lp"
+  ],
+  "leanModule": "QOU.MassTheory.CodataTruncationAndQ0AnchorRecentering",
+  "scriptPath": "computations/probes/codata_truncation_and_q0_anchor_recentering_probe.py",
+  "scriptHash": "83a4b1eef864",
+  "scriptCommitSha": "4f0055fd85b9bb82232f9b87ef757139e895bd6d",
+  "generatedAt": "2026-11-16T20:22:04.565307+00:00",
+  "workingPrecisionDigits": 50,
+  "allPassed": true,
+  "assertions": [
+    {
+      "id": "qou_46ke_codata_truncation_vs_duplication_and_edition_shift",
+      "claim": "CODATA truncation audit partitions into 35+25+15+9+2 = 86 truncations plus 158 duplicates = 244 total, m_e truncation residual is 6.9e-10 MeV, and CODATA-2022 vs 2018 u->MeV shift is 1.3e-6 MeV",
+      "passed": true,
+      "truncationCount": 86,
+      "duplicateCount": 158,
+      "totalLiterals": 244,
+      "meTruncationShiftMeV": "6.9e-10",
+      "uEditionShiftMeV": "1.3e-6"
+    },
+    {
+      "id": "qou_inkh_drop_imaginary_part_recurrence_error",
+      "claim": "Dropping the imaginary component b in a complex recurrence step (a+ib)(c+id) introduces exact bilinear real-part error b*d",
+      "passed": true,
+      "symbolicResidual": "0",
+      "exactRealStep": "1.109375",
+      "droppedRealStep": "1.0625",
+      "bilinearError": "-4.6875e-2",
+      "bilinearErrorResidual": "0.0"
+    },
+    {
+      "id": "qou_1c4y_migration_triage_and_markov_log_sensitivity",
+      "claim": "Superseded-muon triage reduces 265 -> 51 -> 36 -> 19 genuine candidates, unstamped no-q0 producers split 478+105 = 583 of 1458, and Markov trace log sensitivity satisfies 3 - 2q^2/(q^2+1) = (q^2+3)/(q^2+1)",
+      "passed": true,
+      "supersededTotal": 265,
+      "supersededGenuineCandidates": 19,
+      "unstampedReadsCount": 583,
+      "unstampedTotalCount": 1458,
+      "markovLogSensitivityAtQ0": "1.8960362888093279695466888804968185199279067649409",
+      "markovSensitivityResidual": "1.5557538194652854267860160134450310601475630421803e-61"
+    },
+    {
+      "id": "qou_q0dr_value_drift_audit_partition_and_ppq_ratio",
+      "claim": "q0_value_drift_audit.py classifies 699 + 564 + 329 + 25 = 1617 witness fields (with 329 = 229 + 100 stale fields at 2840x the 1 ppQ L1 target)",
+      "passed": true,
+      "driftTotalFields": 1617,
+      "staleFieldCount": 329,
+      "ppqExceedanceRatio": 2840,
+      "stalePinGap": "3.1541347184059203904906220067177200413e-12"
+    },
+    {
+      "id": "qou_q0lp_lean_recentering_partition_and_slack_law",
+      "claim": "Lean 1.1097 occurrences partition as 79 + 31 = 110, centre displacement 1.10998 - 1.1097 = 0.00028 leaves 0.00072 slack inside 0.001, and (q - qNew) + (qNew - qOld) = q - qOld identically",
+      "passed": true,
+      "leanStatementSites": 79,
+      "leanCommentSites": 31,
+      "leanTotalSites": 110,
+      "centreDisplacement": "2.8e-4",
+      "remainingSlack": "7.2e-4",
+      "symbolicDisplacementResidual": "0"
+    }
+  ]
+}
