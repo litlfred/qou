@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.13.12",
-  "computedAt": "2026-11-16T19:00:16.677347+00:00",
-  "commitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
+  "computedAt": "2026-11-16T19:11:38.732096+00:00",
+  "commitSha": "75b6b451ceab7004d7b1dbd5350d3c71eff04c1c",
   "assertions": [
     {
       "name": "symbolic_cq_and_kappa_identities_exact",
@@ -48,11 +48,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 421,
+  "durationMs": 193,
   "computation": "substrate-parameter-locality-varying-constants-probe",
   "scriptFile": "substrate_parameter_locality_varying_constants_probe.py",
   "scriptHash": "6454de91636b",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "75b6b451ceab7004d7b1dbd5350d3c71eff04c1c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
