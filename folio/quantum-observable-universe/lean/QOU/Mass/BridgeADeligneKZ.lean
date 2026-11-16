@@ -35,8 +35,10 @@ No hypothesis is placed on the Lagrangian connection beyond its monodromy.
 namespace QOU.Mass.BridgeADeligneKZ
 
 open QOU.Mass.BridgeADeligneGauge QOU.Mass.KohnoAssembly QOU.Mass.KZHolonomy
-open QOU.IwahoriHecke.TensorEmbed QOU.MathlibExt.Braid
+open QOU.IwahoriHecke.TensorEmbed QOU.MathlibExt.Braid QOU.SchurWeyl
 open Complex
+
+attribute [local instance] Matrix.linftyOpNormedRing Matrix.linftyOpNormedAlgebra
 
 variable {m : ℕ} {S : Type*} [CommRing S] [Nontrivial S] [Algebra ℂ S]
   [MulSemiringAction (BraidGroup m) S] {ι : Type*} {D : ι → Derivation ℤ S S}
