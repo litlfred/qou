@@ -12,7 +12,7 @@ V = σ₀σ₁⁻¹; mpmath 40 dps, convention D, proton pin; SnapPy 3.x for lin
 | O3 amphichiral | yes | yes | yes | no |
 | O4 hyperbolic volume | 0 (not hyperbolic) | 7.32772475341775212043682811946 | 21.6315986791926589697402486963 | **yes, all three** |
 | O5 min level character, levels 1–3 | 1 | 0.99440172663906920 | 0.98692577002215985 | **yes** (all pass) |
-| O6 ρ₍₂,₁₎ eigenvalues | 1, 1 | e^{±i·3θ}, 3θ = 0.07627… rad | e^{±i·6θ} | **yes** |
+| O6 ρ₍₂,₁₎ eigenvalues | 1, 1 | e^{±iφ}, φ = 3θ − 2π = 0.07627 rad | e^{±2iφ} | **yes** |
 | O7 equals the nucleon word | no | yes, if nucleon = V³ | yes, if nucleon = V⁶ | — |
 
 ## Structure behind O5/O6 (exact)
