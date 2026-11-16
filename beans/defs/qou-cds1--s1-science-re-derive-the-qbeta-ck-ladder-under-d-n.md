@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-11-15T17:33:08Z
+updated_at: 2026-11-16T07:30:00Z
 parent: qou-wxhi
 ---
 
@@ -8787,3 +8787,7 @@ The owner chose route 2 next. Measured with the census normal forms from `qbeta_
 - **Whole element at rank 3: wrong direction**, a factor of 0.852 on nuc11. Structural reason: z(r) = (q²−1)/(q(1 − q^{−2r})) is strictly decreasing in r for q > 1, and every census candidate needs a level between 1 and 2 (nuc11 r = 1.46, gen-grouped 1.49, nuc9 1.13, Δ_S 1.13). Any rank ≥ 3 moves away. It also contradicts D7 (D governs the decay channel). Scope: (a) for these candidates, plus the monotonicity of z(r).
 - **Colour trace on the quark block only:** no corpus rule says which letters take which trace. In the reduced 6-slot normal form [γ, σ₀, σ₁, L−, L+, e⁻] the quark block is not a separate slot, and `SecondMarkovTrace.lean` says the rank-3 trace on general H_n elements is not re-derived there. Inventing a per-block rule would be a choice, so this is left as an owner modelling question.
 - Net: routes 1 and 2 are both exhausted without a free choice. What is left is the element (route 3, qou-99qc), the L_q sibling thread, and the meaning of ε (assembly).
+
+## 2026-11-16 — derived D rungs recover none of the gap (PR #8098, issue #8097)
+
+Probe `qbeta_d_ladder_gap_recovery_probe.py` (60 dps, 6/6 PASS). The only derived D rung (c_2 = −1, b² = [3]_q/[2]_q², factor 1 − u² = 0.99992746) applied to all 4 census elements × both E₀ forms: recovery −0.013 % to −0.046 % of the log-gap on every cell, i.e. it moves every cell away by 72.5 ppm. Closing the 12–43 % gap with any ladder needs uniform |c_k| ≥ 1997..5898 (LadderUniformBound). c_3, c_k≥4 and the N=1 phase are not derived under D and were not applied. Scope (a). The gap is in the base (element qou-99qc / meaning of ε); the one ladder-side lever that can exceed 1 is an imaginary eigenphase (cosh route), still underived. Bean stays open.
