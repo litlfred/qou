@@ -7,7 +7,7 @@ import { proposition } from "../../schema/builders";
  *
  * This closes the derivation loop:
  *   operator-selection-lp → shadow prices → mass coefficients
- *   mass-categorical-descent → partition structure → scaling functions
+ *   (mass-categorical-descent is now a conjecture and is not a dependency)
  *   wedderburn-trace-identity → normalization → trace budget
  *
  * At each Hecke level k, the mass-formula coefficient for
@@ -36,7 +36,6 @@ export default proposition({
     validation: "validated",
   },
   uses: [
-    "conj:mass-categorical-descent",
     "prop:wigner-coefficient-derivation",
     "prop:operator-selection-lp",
   ],
