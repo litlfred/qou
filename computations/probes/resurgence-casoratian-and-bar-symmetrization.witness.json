@@ -1,0 +1,60 @@
+{
+  "probeId": "resurgence-casoratian-and-bar-symmetrization",
+  "title": "50-dps verification of 8we6, qou-2qt2, qou-3cgi, qou-3qla, and qou-6hzr (Casoratian antisymmetry, bar-symmetrization falsifier, C1 slope separation, Bring palindromic cubic discriminant, and co-equational Stokes bridge)",
+  "beans": [
+    "8we6",
+    "qou-2qt2",
+    "qou-3cgi",
+    "qou-3qla",
+    "qou-6hzr"
+  ],
+  "leanModule": "QOU.MassTheory.ResurgenceCasoratianAndBarSymmetrization",
+  "scriptPath": "computations/probes/resurgence_casoratian_and_bar_symmetrization_probe.py",
+  "scriptHash": "2c8e09c0d6af",
+  "scriptCommitSha": "e9de8818430aa7aa5b7c9bf66d2b0bab443b968f",
+  "generatedAt": "2026-11-16T20:34:14.163081+00:00",
+  "workingPrecisionDigits": 50,
+  "allPassed": true,
+  "assertions": [
+    {
+      "id": "qou_8we6_casoratian_antisymmetry_and_routeA_shifts",
+      "claim": "Two-channel Casoratian W_k is antisymmetric under channel swap, vanishes on proportional rungs, and the three H_4 Route-A c_2 shifts (+12, +13/6, -40) sum to -155/6 != 0",
+      "passed": true,
+      "w2Sample": "1.023696255e+2",
+      "w2AntisymmetryResidual": "0.0",
+      "routeAShiftSumRational": "-155/6"
+    },
+    {
+      "id": "qou_2qt2_bar_symmetrization_identity_and_even_falsifier",
+      "claim": "barEvenHalf + barOddHalf reconstructs f(q) identically and barOddHalf(f(q), f(q)) = 0 falsifies any purely bar-even candidate for a non-zero odd channel",
+      "passed": true,
+      "barEvenAtQ0": "5.0815788792841969270317983506916089310876939156179e-1",
+      "barOddAtQ0": "1.0453015055478832822229747549743548427965700406894e-1",
+      "reconstructionResidual": "0.0"
+    },
+    {
+      "id": "qou_3cgi_theta_half_difference_and_slope_separation",
+      "claim": "thetaHalf(m) = m*(m-1)/2 has first difference m and second difference 1, and C1 slope 1/2 is separated from GGM Stokes slopes {-1, 1} by span 2",
+      "passed": true,
+      "firstDiffResidual": "0",
+      "secondDiffResidual": "0",
+      "stokesSlopeSpan": 2
+    },
+    {
+      "id": "qou_3qla_bring_sextic_palindromic_reduction_and_discriminant",
+      "claim": "Dividing the palindromic colour-cubic sextic by z^3 yields 16w^3 + 24w^2 - 13w + 2 in w = z + 1/z with cubic discriminant -80000 = -2^7 * 5^4, and resurgence audits partition 45 + 28 = 73",
+      "passed": true,
+      "reducedCubicDiscriminant": -80000,
+      "factoredDiscriminant": -80000,
+      "resurgenceCConditional": 45,
+      "resurgenceTotalAudits": 73
+    },
+    {
+      "id": "qou_6hzr_coequational_bridge_survival_at_vanishing_equational_stokes",
+      "claim": "When equational ODE Stokes multiplier aEq = 0 (entire EGF at q=1), combinedBridgeResponse reduces to co-equational term aCoeq * gK != 0",
+      "passed": true,
+      "symbolicBridgeResidual": "0",
+      "coequationalProductSample": "2.131823172628332e+2"
+    }
+  ]
+}
