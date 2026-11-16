@@ -1,0 +1,43 @@
+{
+  "probe": "recurrence_interface_magnus_meridian_fivetwo_probe.py",
+  "gitCommit": "e6ab72799706e674cb404d078a49066ef6e58748",
+  "scriptCommitSha": "e6ab72799706e674cb404d078a49066ef6e58748",
+  "scriptHash": "07b8926d2442",
+  "dps": 80,
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "qou-i5yp-depth3-recurrence-propagation",
+      "passed": true,
+      "a3": "-0.3834586466165413533834586466165413533835",
+      "a4": "-0.5857469761359921542987904543968617195162",
+      "a5": "-1.07874093248520680502125218959010087751",
+      "maxResidual": "0.0"
+    },
+    {
+      "id": "qou-o43i-separable-interface-identities",
+      "passed": true,
+      "unitSumDeficit": "0.2066115702479338842975206611570247933884",
+      "maxResidual": "7.906648457422892418261430538452514255782e-82"
+    },
+    {
+      "id": "qou-o6ov-magnus-three-factor-leibniz",
+      "passed": true,
+      "maxResidual": "0.0"
+    },
+    {
+      "id": "qou-offl-meridian-winding-monotonicity-and-disk-gap",
+      "passed": true,
+      "k1NormSq": "39.60091760435743447533796399950460454125",
+      "twoPiSqFloor": "39.47841760435743447533796399950460454125",
+      "diskPointNormSq": "35.87927188793258461399251250955290559848",
+      "minGapToK1Meridian": "3.721645716424849861345451489951698942772"
+    },
+    {
+      "id": "qou-trns-fivetwo-cyclotomic-transport-and-inverses",
+      "passed": true,
+      "symmetricProductResidual": "2.108439588646104644869714810254003801542e-81",
+      "maxCyclotomicInverseResidual": "8.433758354584418579478859241016015206168e-81"
+    }
+  ]
+}
