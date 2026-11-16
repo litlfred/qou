@@ -3661,3 +3661,14 @@ Yes, there is a mismatch inside the corpus.
   - z_D: y₃ = (q⁴+1)/(q²+1)², −43.16 %.
 - The long elements nuc9 and nuc11 have χ₍₂,₁₎ ≠ 0, so for them ε is affine in y₃.
 - The AME-implied y₃ = 0.889 is recorded as a TARGET only, never a selector. Their probe: /mnt/project-files/qou-qbeta-epsilon/qbeta_epsilon_chirality_reduction_probe.py.
+
+
+### NOTE (2026-11-16 07:35Z), from the crossing-energy thread (PR #8108; /mnt/project-files/qou-crossing-energy/result-pn-mirror-gg-walk.md)
+Setting: H₃, convention D, exact.
+- The only mirror fixing the γγ vertex σ₀σ₁⁻¹ is M = bar ∘ flip ∘ reverse, which acts as bar on traces.
+- The γγ core (σ₀σ₁⁻¹)³ is M-fixed and bar-even.
+- Full p and n are NOT mirrors. Their quark blocks form a partial mirror:
+  - χ₃(q_n) = bar χ₃(q_p) exactly;
+  - in (2,1) both bar-even parts are 0, and the bar-odd parts differ by exactly −h/2.
+- So the element asymmetry sits only in the (2,1) sector, as a −h/2 shift, and lies in the 5 non-γγ letters.
+- Relevance to the element choice: any rule fixing the quark block decides the (2,1) shift. Since χ₍₂,₁₎(Δ_S) = 0 (ε thread), the short element Δ_S does not see it, while nuc9 and nuc11 do. bar is semilinear, so F₃-commutation (Bridge B) does not apply to it directly.
