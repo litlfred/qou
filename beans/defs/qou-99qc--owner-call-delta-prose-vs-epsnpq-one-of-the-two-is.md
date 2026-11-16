@@ -3551,3 +3551,12 @@ No value of Y is compared to data. The δε numbers at Y = 1/3 are reported only
 - Next honest options:
   - (a) derive the u1 ↔ hypercharge identification, e.g. from the strand-twist datum or the anomaly-free trace condition, without importing lepton charges;
   - (b) use only the colour-fixed ratio and accept Y as a labelled open input.
+
+
+### PRE-REGISTRATION ε-Y2 (2026-11-16 06:40Z; owner tapped "Derive Y from colour" after ε-Y1, so the remaining step is pursued)
+Goal: derive the colour-u1 ↔ hypercharge identification that ε-Y1 left open, without importing lepton charges.
+Steps:
+1. Corpus check first: strand-twist-datum, conj:sm-hypercharge-invariant, eightfold-open-problems, QuarkStrandConsequences (integer charge ⟺ triality zero).
+2. Test whether "integer charge ⟺ triality zero", applied with the colour-fixed ratio (quark : baryon = 1 : N), forces Q − T³ ≡ B mod ℤ on quark strands. That would fix Y/2 = B/2 mod integers.
+3. Report the residual freedom; do not pick from it.
+No data, and no lepton charges as input.
