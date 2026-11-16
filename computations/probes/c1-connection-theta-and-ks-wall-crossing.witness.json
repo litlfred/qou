@@ -1,0 +1,67 @@
+{
+  "probe": "c1_connection_theta_and_ks_wall_crossing_probe.py",
+  "beans": [
+    "qou-vnik",
+    "qou-wgnx",
+    "qou-xi16",
+    "qou-xufp",
+    "qou-yju0"
+  ],
+  "parentBean": "qou-frzo",
+  "leanModule": "QOU.MassTheory.C1ConnectionThetaAndKSWallCrossing",
+  "scriptHash": "c4713523ced0",
+  "scriptCommitSha": "6a7d9973a198adec786d4227a4bfc12f4785934e",
+  "generatedAt": "2026-11-16T21:06:31.349584+00:00",
+  "precisionDps": "80",
+  "allPassed": true,
+  "assertions": [
+    {
+      "id": "qou-vnik-c1-vs-ggm-newton-polygon-discrepancy",
+      "bean": "qou-vnik",
+      "description": "C1 pure-isoclinic Newton slopes {1/2, 1/2} vs GGM SW anisoclinic slopes {-1, +1} differ in both slope sum (1 vs 0) and slope spread (0 vs 2)",
+      "c1SlopeSum": "1",
+      "c1SlopeSpread": "0",
+      "ggmSlopeSum": "0",
+      "ggmSlopeSpread": "2",
+      "passed": true
+    },
+    {
+      "id": "qou-wgnx-rsz-isoclinic-collapse-and-zero-side-discriminant",
+      "bean": "qou-wgnx",
+      "description": "RSZ isoformal dimension r1*r2*(mu2-mu1) vanishes on pure-isoclinic C1, and 0-side quadratic has discriminant (q-1)(q-5) < 0 on (1,5) with |alpha|^4 = q^3",
+      "rszIsoformalDimC1": "0",
+      "discriminantAtQ2": "-3",
+      "alphaModFourthAtQ2": "8.0",
+      "absErrorAlphaModFourth": "1.68675167092e-80",
+      "passed": true
+    },
+    {
+      "id": "qou-xi16-ks-primitive-wall-crossing-pentagon-unit-jump",
+      "bean": "qou-xi16",
+      "description": "Primitive KS wall-crossing jump <gamma1,gamma2>*Omega(gamma1)*Omega(gamma2) = 1 matches the 5-term quantum pentagon factor difference 3 - 2 = 1",
+      "primitiveJump": "1",
+      "wallCrossedOmega": "1",
+      "pentagonFactorDiff": "1",
+      "passed": true
+    },
+    {
+      "id": "qou-xufp-ramified-derivative-pole-and-valuation-shift",
+      "bean": "qou-xufp",
+      "description": "Each z-derivative (1/(2t) d/dt) at a simple ramified pole z = z_c + t^2 increments t^{-1} pole order by 2 and decrements t-valuation by 2",
+      "poleOrderStepIncrement": "2",
+      "valuationStepDecrement": "-2",
+      "invariantSumAtP0V0": "4",
+      "passed": true
+    },
+    {
+      "id": "qou-yju0-stokes-filtration-dimension-decomposition",
+      "bean": "qou-yju0",
+      "description": "GL(r1+r2) dimension decomposes into Levi block (r1^2+r2^2) plus opposite unipotent Stokes radicals 2*r1*r2, giving 4 = 2 + 2*1 for rank-(1,1)",
+      "rank11LeviDim": "2",
+      "rank11UnipotentStokesDim": "1",
+      "rank11ParabolicDim": "3",
+      "rank11FullGlDim": "4",
+      "passed": true
+    }
+  ]
+}
