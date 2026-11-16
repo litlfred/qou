@@ -36,12 +36,13 @@ namespace QOU.BraidKnot
     enumerator + hook-length dimension; deferred. -/
 noncomputable def invDimPartitionSum (_n : ℕ) : ℚ := 0
 
-/-- The pure-tower proton mass, in MeV, computed from the
-    mass-endomorphism tower at q = q_0 and converted to MeV via
-    electron-trefoil calibration.  Pinned to the
-    `proton-mass-50dps.derivation.json` value (≈ 938.7228 MeV at the
-    current 544_145 ppb gap to CODATA — recorded as a faithful but
-    *open-gap* numerical witness from one pipeline).
+/-- **Archived literal, no producer.**  The value 938.7228 MeV was once
+    recorded as a pure-tower proton mass.  No live producer reproduces it:
+    the production identity `m_p/m_e = 2(Vol(4₁)/ℏ_q²)·F_Bor − 12` is
+    convention D, and its tower term is ≈ 944.404 MeV, with residual
+    −12·m_e at the proton pin (by construction, since q₀ is solved from the
+    identity) and −11.99955·m_e at the muon pin (issue #8118).  Kept only so
+    that existing references still elaborate; no theorem here uses it.
 
     NOTE: this open-gap value does NOT equal `protonCodata −
     protonTowerResidualMeV`; the Frobenius-residual claim below is stated
