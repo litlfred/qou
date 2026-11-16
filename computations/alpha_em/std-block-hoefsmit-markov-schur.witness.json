@@ -1,0 +1,146 @@
+{
+  "computation": "std-block-hoefsmit-markov-schur",
+  "beans": [
+    "qou-mxnu",
+    "qou-vbz4"
+  ],
+  "epic": "qou-3l2l",
+  "leanModule": "folio/quantum-observable-universe/lean/QOU/AlphaEM/StdBlockHoefsmitMarkovSchur.lean",
+  "description": "50-dps mpmath + exact rational/symbolic certification of the (4,1) standard block of H_5(q) (SYT(4,1) basis, shifted axial distances, q-hook dimension d_q(4,1) = [4]_q, Wedderburn/Plancherel weight w_(4,1)(q_0), and explicit diagonal Hoefsmit/Markov Gram matrix) and the 1D Schur-uniqueness reduction B_1 = c * B_2 with exact basis transport to the Braden-Northover Hodge Gram M_S = 5 I_4 - J_4 and non-vacuity witness.",
+  "computedAt": "2026-11-16T17:54:13.298850+00:00",
+  "commitSha": "227e082fac4bad8db883b039976f61185d5adce8",
+  "engine": "mpmath+sympy",
+  "workingPrecisionDps": 60,
+  "targetPrecisionDps": 50,
+  "scriptFile": "std_block_hoefsmit_markov_schur_probe.py",
+  "scriptHash": "8bd6fd81f37a",
+  "assertions": [
+    {
+      "name": "syt41_count_and_content_sum_eq_5",
+      "passed": true,
+      "detail": "|SYT(4,1)| = 4, content sums = [5, 5, 5, 5]"
+    },
+    {
+      "name": "axial_distances_nonzero_and_removable_transitions",
+      "passed": true,
+      "detail": "axial distances = {'T_2': [1, -2, -1, -1], 'T_3': [-1, 2, -3, -1], 'T_4': [-1, -1, 3, -4], 'T_5': [-1, -1, -1, 4]}"
+    },
+    {
+      "name": "classical_hook_dimension_and_plancherel_weight",
+      "passed": true,
+      "detail": "hooks = [5, 3, 2, 1, 1], prod = 30, d_(4,1) = 4, w_(4,1)(1) = 2/15"
+    },
+    {
+      "name": "q_hook_dimension_and_wedderburn_weight_q0",
+      "passed": true,
+      "detail": "d_q(4,1)(q0) = 4.1096824112079411617605687891, w_(4,1)(q0) = 0.128620004175246883333850815092, hook_err = 0.0"
+    },
+    {
+      "name": "hoefsmit_hecke_and_braid_relations_50dps",
+      "passed": true,
+      "detail": "max_hecke_err = 1.5557538e-61, max_braid_err = 3.9664095e-61"
+    },
+    {
+      "name": "hoefsmit_markov_gram_diagonal_invariance_and_classical_limit",
+      "passed": true,
+      "detail": "max_contravariant_err = 1.1000841e-61, g_tilde(1) = [576, 432, 384, 360], ratios(1) = ['1', '3/4', '2/3', '5/8']"
+    },
+    {
+      "name": "schur_invariant_form_space_one_dimensional",
+      "passed": true,
+      "detail": "nullity(q=1) = 1, nullity(q=11/10) = 1 (unique invariant symmetric form line on V_(4,1))"
+    },
+    {
+      "name": "exact_intertwiner_transport_hoefsmit_to_braden_northover_MS",
+      "passed": true,
+      "detail": "W^T * M_S * W = 10 * diag(1, 3/4, 2/3, 5/8) exactly (det W = 5, c_q1 = 1/10)"
+    },
+    {
+      "name": "non_vacuity_raw_isogeny_diag_not_proportional",
+      "passed": true,
+      "detail": "entrywise ratios g_tilde / diag(5,5,5,1) = ['576/5', '432/5', '384/5', '360'] (non-constant => S_5 intertwiner premise is load-bearing)"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "syt41_leg_entries": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "axial_distances": {
+      "T_2": [
+        1,
+        -2,
+        -1,
+        -1
+      ],
+      "T_3": [
+        -1,
+        2,
+        -3,
+        -1
+      ],
+      "T_4": [
+        -1,
+        -1,
+        3,
+        -4
+      ],
+      "T_5": [
+        -1,
+        -1,
+        -1,
+        4
+      ]
+    },
+    "hook_lengths_41": [
+      5,
+      3,
+      2,
+      1,
+      1
+    ],
+    "hook_product_41": 30,
+    "dq_41_q0_50dps": "4.1096824112079411617605687890963302433643280785864",
+    "q_fact5_q0_50dps": "131.31308484471597692590552115298467903604440316896",
+    "wedderburn_weight_41_q0_50dps": "0.12862000417524688333385081509220279241180740968725",
+    "wedderburn_weight_41_classical": "2/15",
+    "hoefsmit_gram_classical_cleared": [
+      576,
+      432,
+      384,
+      360
+    ],
+    "hoefsmit_gram_classical_normalized": [
+      "1",
+      "3/4",
+      "2/3",
+      "5/8"
+    ],
+    "hoefsmit_gram_q0_normalized_50dps": [
+      "1.0",
+      "0.75270211325196540159377935162023613783017559887491",
+      "0.67145317862917681670283620323815863625896236706657",
+      "0.63169749638699721576221845343409722977796520672819"
+    ],
+    "max_hecke_quadratic_residual": "1.55575381947e-61",
+    "max_braid_relation_residual": "3.9664095419e-61",
+    "max_contravariant_gram_residual": "1.1000840756e-61",
+    "invariant_symmetric_form_space_dim": 1,
+    "intertwiner_hoef_to_bn_det": "5",
+    "classical_schur_scalar_hoef_vs_MS": "1/10",
+    "non_vacuity_unaligned_ratios": [
+      "576/5",
+      "432/5",
+      "384/5",
+      "360"
+    ],
+    "verdict": "PASS \u2014 (4,1) standard block SYT(4,1) basis, q-hook dimension d_q(4,1) = [4]_q, Wedderburn weight w_(4,1)(q_0), explicit diagonal Hoefsmit/Markov Gram matrix, and 1D Schur-uniqueness proportionality reduction (with exact transport to M_S = 5 I_4 - J_4 and non-vacuity witness) certified at 50 dps and symbolically."
+  },
+  "scriptCommitSha": "227e082fac4bad8db883b039976f61185d5adce8",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
