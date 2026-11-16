@@ -1,0 +1,165 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-16T19:42:01.824465+00:00",
+  "commitSha": "bdc558a8f10d26666ba057c81bf22753e6d0aca0",
+  "assertions": [
+    {
+      "name": "boltzmann_frobenius_dictionary_and_os_reflection_positivity",
+      "computed": 343,
+      "expected": 343,
+      "passed": true,
+      "source": "BoltzmannOSPositivityAndColourSaddle.lean (qou-j6lf, qou-jsx5)"
+    },
+    {
+      "name": "two_row_delta_lambda_sign_and_colour_cubic_reduction_chain",
+      "computed": 3775,
+      "expected": 3775,
+      "passed": true,
+      "source": "BoltzmannOSPositivityAndColourSaddle.lean (qou-buxs, qou-z03j)"
+    },
+    {
+      "name": "bring_riemann_hurwitz_14_and_s5_torus_knot_filters",
+      "computed": 23,
+      "expected": 23,
+      "passed": true,
+      "source": "BoltzmannOSPositivityAndColourSaddle.lean (qou-vhv6)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "boltzmann-os-positivity-and-colour-saddle",
+  "scriptFile": "boltzmann_os_positivity_and_colour_saddle_probe.py",
+  "scriptHash": "19d38e88a23d",
+  "scriptCommitSha": "bdc558a8f10d26666ba057c81bf22753e6d0aca0",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "boltzmann_os_positivity_and_colour_saddle_probe.py"
+    ],
+    "reproduce": "python3 -u boltzmann_os_positivity_and_colour_saddle_probe.py"
+  },
+  "description": "Boltzmann-Frobenius beta = ln(q) energy dictionary, Osterwalder-Schrader reflection positivity quadratic form, two-row Delta_lambda (-1)^((n-2T)/2) sign grading, colour w-cubic depression/trinomial reduction chain, and Bring Riemann-Hurwitz 14 / S_5 torus-knot filter (qou-j6lf, qou-jsx5, qou-buxs, qou-z03j, qou-vhv6)",
+  "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
+  "parameters": {
+    "qTest": "111/100",
+    "osWeights": [
+      3,
+      5,
+      2
+    ],
+    "genusFourOddWindings": [
+      3,
+      5,
+      7,
+      9
+    ]
+  },
+  "data": {
+    "workItems": [
+      "qou-j6lf",
+      "qou-jsx5",
+      "qou-buxs",
+      "qou-z03j",
+      "qou-vhv6"
+    ],
+    "epic": "qou-8lxd",
+    "boltzmannFrobeniusDictionary50dps": {
+      "beta50dps": "0.10436001532424276772735799858524445334536516773284",
+      "energies50dps": [
+        "6.6418846184179089837773810909999397052663516342165",
+        "10.527138054309031216774840594774667282059077489636",
+        "17.169022672726940200552221685774606987325429123853"
+      ],
+      "maxReconstructionError50dps": "0.0",
+      "partitionSumResidual50dps": "0.0",
+      "strictlyOrderReversing": true
+    },
+    "osReflectionPositivity": {
+      "gridPointsChecked": 343,
+      "coerciveLowerBoundHolds": true,
+      "zeroUniqueAtOrigin": true
+    },
+    "twoRowDeltaLambdaSign": {
+      "allN2To10MatchSecondRowK": true,
+      "twoRowSignCountsByN": {
+        "2": {
+          "pos": 1,
+          "neg": 1
+        },
+        "3": {
+          "pos": 1,
+          "neg": 1
+        },
+        "4": {
+          "pos": 2,
+          "neg": 1
+        },
+        "5": {
+          "pos": 2,
+          "neg": 1
+        },
+        "6": {
+          "pos": 2,
+          "neg": 2
+        },
+        "7": {
+          "pos": 2,
+          "neg": 2
+        },
+        "8": {
+          "pos": 3,
+          "neg": 2
+        },
+        "9": {
+          "pos": 3,
+          "neg": 2
+        },
+        "10": {
+          "pos": 3,
+          "neg": 3
+        }
+      }
+    },
+    "colourCubicReductionChain": {
+      "exactRationalIdentityHoldsOn17Points": true,
+      "qAtZero": 25,
+      "qAtFive": 3775
+    },
+    "bringRiemannHurwitzAndFilters": {
+      "riemannHurwitzRamification": 14,
+      "seifertGenusLe4Filter": [
+        3,
+        5,
+        7,
+        9
+      ],
+      "primeContinuantFilter": [
+        3,
+        5,
+        7
+      ],
+      "s5EquivariantFilter": [
+        3,
+        5
+      ]
+    }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Pure Boltzmann-Frobenius log/exp dictionary at test point q = 111/100, Osterwalder-Schrader quadratic positivity, two-row partition spin identities, exact rational polynomial reduction chain, and Riemann-Hurwitz ramification with no Q_0 dependence."
+}
