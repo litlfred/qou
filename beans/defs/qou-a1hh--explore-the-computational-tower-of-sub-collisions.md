@@ -143,3 +143,9 @@ V^0/V^3/V^6 are the unlink / Borromean (vol 7.3277) / L12a1882 (vol 21.6316). Al
 
 ## 2026-11-16 twist recheck + trefoil (PR #8128)
 L± added: pass ⟺ pure (5460 words). H₂ with chiral electrons σ₁², V⁻¹L₋, L₊V⁻¹, L₋V⁻¹: bare passes, bond V³@4,5 always; σ₁² also V²@4. Trefoil fails reading 3 alone and bound; negative trace is exact in q (2-strand char product (−1)^k; (2,1) trace −1), so readings 1/2 and any q fail too; only z=q truncation escapes. Electron power ruling held by owner pending this.
+
+## 2026-11-16 08:30Z — full-photon stage 3, bound-electron shift (PR #8128)
+- Stage 3: full-photon γγ words (B₃, L± included), length ≤ 7. Knots 0/720 pass, pure 372/372 pass, 2-component 1214/3280 pass by placement. The site reading is not conjugation-invariant. The conjugation-invariant reading 3 gives pass ⟺ pure exactly.
+- Owner, 08:16Z: "bound electrons q power shifted". Measured: the handed electrons σ₁², L₊V⁻¹ (χ₃ = q₀²) and V⁻¹L₋, L₋V⁻¹ (q₀⁻²) against free V³ (χ₃ = 1); χ₍₂,₁₎ = 2.04371 for all four.
+- Owner, 08:20Z: no virtual photons in qou. Card, 08:21Z: option A, the q^{±2} shift. Read as one prior entangled γγ pair (L term × V⁻¹) across p|e. Stage 4 pre-registered (3f6f5a66d4b), running.
+- STANDBY backups (owner, 08:22Z): (i) put the q² on the bond letter, with the electron staying V³; (ii) unseen emitters at the exceptional divisor = the conjugation-invariant reading.
