@@ -1,13 +1,13 @@
 ---
 # qou-c46w
 title: prop:brings-smoothness-resolution is a PROPOSITION whose cited Lean proof was True AND True AND True -- owner decision needed on the block kind
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-12T12:19:32Z
-updated_at: 2026-10-04T15:15:01Z
+updated_at: 2026-11-16T19:22:00Z
 parent: qou-6qbv
 ---
 
@@ -68,3 +68,8 @@ verbatim — in `docs/audits/2026-08-23-free-prop-field-triviality-probe.lean` o
 What that probe did not record is that the carrier backs a **`proposition`** block rather
 than a conjecture, which is what makes it the sharpest instance of the pattern rather than
 one of nineteen.
+
+## Progress Update (2026-11-16 — Round 48, PR #8165)
+
+- Replaced the conditional accessor in `folio/quantum-observable-universe/brings-surface/brings-smoothness-resolution.lean` with an **unconditional, sorry-free proof** (`BringTransverseInP4 ∧ BringIntrinsicResolution ∧ BringRegularC5Foliation`) backing `prop:brings-smoothness-resolution`: proved the $3 \times 3$ Vandermonde Jacobian factorisation `bringJacobianMinor_eq_six_vandermonde`, non-vanishing on distinct coordinates `bringJacobianMinor_ne_zero`, the two-value power-sum elimination lemmas (`two_value_sum_identity`, `eq_zero_of_mem_zero_pair`, `all_zero_of_mem_zero_pair`, `all_zero_of_two_values`), `bring_transverse_in_P4`, `bring_intrinsic_resolution`, and `bring_regular_c5_foliation` (`0` `sorry`, `0` self-assuming projections).
+- Opened PR `litlfred/qou#8165` (`cf010d07bb34f2e3118733212559b61ede4b8cc4`) with `ready-to-merge` + `release` labels.

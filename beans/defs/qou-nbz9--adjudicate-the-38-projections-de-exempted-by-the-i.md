@@ -1,7 +1,7 @@
 ---
 # qou-nbz9
 title: Adjudicate the 38 projections de-exempted by the isDefProof narrowing
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -9,7 +9,7 @@ tags:
     - issue-2472
     - reorg-2026-10-04
 created_at: 2026-08-10T01:50:40Z
-updated_at: 2026-10-04T15:14:39Z
+updated_at: 2026-11-16T19:22:00Z
 parent: qou-6qbv
 ---
 
@@ -61,3 +61,8 @@ Each needs the standard self-assuming adjudication: is the carrier inhabited, an
 - `folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/wedderburn_bratteli_recursion.lean:64` — `wedderburn_bratteli_recursion`
 - `folio/quantum-observable-universe/lean/QOU/Information/toffoli_transfer_matrix.lean:99` — `toffoli_transfer_matrix`
 - `folio/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean:118` — `strong_duality`
+
+## Progress Update (2026-11-16 — Round 48, PR #8165)
+
+- Verified all 38 declarations from the `isDefProof` narrowing: 30 were retired/refactored to `Prop`-valued definitions or removed, and the remaining 8 (`LevelSufficiency`, `algebraic_quantum_volume_specialization`, `e_infinity_identifications`, `spectral_sequence_h3_explicit`, `terms_2_6_higher_operations`, `ew_interface_knot`, `toffoli_transfer_matrix`, `strong_duality`) are adjudicated as `genuine` in `docs/audits/lean-vacuity-review-ledger.json` (`0` `needs-agent` entries) and carry explicit §3b-conditional disclosures.
+- Opened PR `litlfred/qou#8165` (`cf010d07bb34f2e3118733212559b61ede4b8cc4`) with `ready-to-merge` + `release` labels.

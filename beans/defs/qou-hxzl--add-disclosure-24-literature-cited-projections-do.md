@@ -1,7 +1,7 @@
 ---
 # qou-hxzl
 title: Add disclosure — 24 literature-cited projections (do NOT bulk-convert to axioms)
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -9,7 +9,7 @@ tags:
     - issue-2472
     - reorg-2026-10-04
 created_at: 2026-08-10T01:47:53Z
-updated_at: 2026-10-04T15:14:39Z
+updated_at: 2026-11-16T19:22:00Z
 parent: qou-6qbv
 ---
 
@@ -47,3 +47,8 @@ Criterion (3) — *citations point at the claim's provenance, not at its proof*.
 - `folio/quantum-observable-universe/lean/QOU/Observations/AlgebraicGnsEmbedding.lean:89` — `markov_gns_embedding`
 
 Criterion: `docs/audits/2026-08-09-honest-placeholder-criterion.md`
+
+## Progress Update (2026-11-16 — Round 48, PR #8165)
+
+- Audited all 24 literature-cited declarations and added the explicit criterion-(1)+(3) `**Assumed, not derived here**` context-class disclosures to `noble_gas_multi_operator` (`ElectronShell.lean`), `shell_closure_monotone` (`ShellClosureStability.lean`), `strong_duality` (`SDP.lean`), `bar_even_kernel_implies_radius_of_convergence`, and `bar_even_kernel_implies_direction_sanity` (`q-beta-bar-even-kernel-typeclass.lean`) without converting any conditional class projection to a global `axiom`.
+- Opened PR `litlfred/qou#8165` (`cf010d07bb34f2e3118733212559b61ede4b8cc4`) with `ready-to-merge` + `release` labels.
