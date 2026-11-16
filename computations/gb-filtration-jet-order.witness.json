@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-11-16T19:53:53.039952+00:00",
-  "commitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
+  "computedAt": "2026-11-16T19:59:53.506014+00:00",
+  "commitSha": "6465362ef2e7902778c4f8796f81286e3aeb81bc",
   "assertions": [
     {
       "name": "gb_filtration_shape_matches_declared_expected_count",
@@ -24,7 +24,7 @@
   "computation": "gb-filtration-jet-order",
   "scriptFile": "gb_filtration_jet_tracker.py",
   "scriptHash": "34abaf436d7d",
-  "scriptCommitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
+  "scriptCommitSha": "6465362ef2e7902778c4f8796f81286e3aeb81bc",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
