@@ -1,7 +1,7 @@
 ---
 # qou-ozyt
 title: Lean-prove the colour-cubic discriminant assertions (palindromic, reciprocal, disc = -2^7*5^4)
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -127,3 +127,6 @@ One practical note for whoever proves it. Mathlib's `Cubic.discr` lives in
 `Mathlib.Algebra.CubicDiscriminant`, which imports `Mathlib.Algebra.Polynomial.Splits`.
 Neither olean is in the restored `lake-cache/qou-v4-24-0` paper tree as of this date,
 so the cone has to be built with lean-direct first.
+
+## Progress Note (2026-11-16)
+- Formalized the reduced colour w-cubic discriminant `cubicDiscriminant 16 24 (-13) 2 = -80000 = -(2^7 * 5^4)`, the depressed trinomial discriminant `-8/25 = -2^3/5^2` (scaling factor `2^4 * 5^6 = 250000`), and the full palindromic sextic discriminant `-2^19 * 5^10 = -5120000000000` in `QOU/Eightfold/T29FluxTubeLatticeAndColourDisc.lean` (`colour_w_cubic_and_trinomial_discriminant_certificate`) + 50-dps Cardano root check in `t29_flux_tube_lattice_and_colour_disc_probe.py` (PR `litlfred/qou#8168`, head `bca84d0884fa3fb226f06011fff4d42b6b78d003`).
