@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-15T23:31:36Z
+updated_at: 2026-11-16T09:55:00Z
 parent: qou-10v9
 ---
 
@@ -3678,3 +3678,19 @@ Over 5,460 words of length 1–6 in {V, V⁻¹, L₊, L₋}: a word passes readi
 
 ### NOTE 2026-11-16 — gluon thread stage 2 (PR #8128), relayed
 H₂ with nucleon V³/V⁶ × four chiral length-2 electrons (σ₁²=V⁻¹L₊, V⁻¹L₋, L₊V⁻¹, L₋V⁻¹): bare molecule passes reading 3 in all 16 cells; V³ bond passes everywhere. Trefoil fails reading 3 at every q, alone and in composites; its negative trace is forced by the Hecke relation (only a z=q truncation removes it). Handed-electron candidates = pure braids with nonzero writhe. No effect on the n–p break (all F₃-covariant) or on the nucleon element choice.
+
+### NOTE 2026-11-16 — y₃ result, re-measured (PR #8130 probe, 15/15 pass, 60 dps, proton pin)
+ε on a block-weighted trace on the normalised convention-D line (y₁₁₁ = 0, y₂₁ = (1−y₃)/2) is affine in y₃. Values for the convention-D weight y₃(z_D) = (q⁴+1)/(q²+1)² = 0.505404226504 and the augmentation y₃ = 1:
+
+| element | χ₍₂,₁₎ | E₀ | z_D | augmentation | y₃ that would give AME |
+|---|---|---|---|---|---|
+| Δ_S | 0 | order zero | −43.157 % | +12.470 % | 0.889126 |
+| Δ_S | 0 | tower (#8124) | −42.594 % | +13.585 % | 0.880397 |
+| nuc9 | −0.0900 | tower | −30.252 % | +14.204 % | 0.841972 |
+| nuc11_interleaved | −0.0914 | tower | −16.678 % | +40.705 % | 0.649154 |
+| nuc11_gen_grouped | −0.1068 | tower | −14.613 % | +40.705 % | 0.636059 |
+
+- The "y₃ for AME" column is diagnostic only. It is obtained by inverting the target, so it is a fit and may not select a functional or a weight (§NO FITTING). No derived trace on record has y₃ near 0.88. The two derived points, z_D (0.505) and the augmentation (1), are on either side of it.
+- The ruled base (2026-09-08: z_D, tower E₀) on Δ_S gives Q_β = 0.4491 MeV, −42.59 % (#8124).
+- Open, and the reason this bean stays open: what decides y₃ (equivalently the chirality expectation τ(P_L) − τ(P_R)) from the corpus, and the element choice (nuc11 fails reading-3 confinement on (2,1)).
+- Five blocks still print the superseded order-zero 0.4447 MeV: epistemic-status-of-calibrations, mass-comparison-table, three-calibration-discipline-remark, np-discrepancy-resolution, q-beta-over-e0-classical-vanishing-ladder-reading. q-beta-c-2-eq-neg-one-structural also prints it, but that block is explicitly order-zero.
