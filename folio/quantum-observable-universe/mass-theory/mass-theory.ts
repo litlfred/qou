@@ -535,7 +535,7 @@ export default chapter({
         "prop-rigid-monoidal-structural-gap-invariance",
         "prop-rigid-monoidal-structural-gap-invariance-proof",
         "quantum-dilogarithm-stratified",
-        "quantum-dilogarithm-stratified-proof",
+        "quantum-dilogarithm-stratified-partial-argument",
         "qz-bicompletion",
         "qz-bicompletion-properties",
         "q-pochhammer-partial-product",

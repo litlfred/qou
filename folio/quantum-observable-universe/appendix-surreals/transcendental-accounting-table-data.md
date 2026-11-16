@@ -1,7 +1,7 @@
 | Symbol | Depth | Algebraic input | Where it appears | $q$-rational pre-image | Archimedean accident |
 |---|---|---|---|---|---|
 | $\zeta_n = e^{2\pi i / n}$ | **0** | $\overline{\mathbb{Q}}^\times$ | `rem:figure-8-archimedean-illustration` ($\zeta_6$), `conj:bring-trilog-depth-3-witness` ($\zeta_5$) | itself (algebraic by def) | none — depth 0 |
-| $\log\alpha$, $\alpha \in \overline{\mathbb{Q}}^\times$ | **1** | $\alpha$ algebraic | spectral / partition-function expansions, occasional in $\Phi_q$ residues | logarithmic singularity locus of $\Phi_q$ at $z = q^k$ ([`prop:quantum-dilogarithm-stratified`](#prop:quantum-dilogarithm-stratified)) | Baker's theorem on linear independence of logs of multiplicatively independent algebraics |
+| $\log\alpha$, $\alpha \in \overline{\mathbb{Q}}^\times$ | **1** | $\alpha$ algebraic | spectral / partition-function expansions, occasional in $\Phi_q$ residues | logarithmic singularity locus of $\Phi_q$ at $z = q^k$ ([`conj:quantum-dilogarithm-stratified`](#conj:quantum-dilogarithm-stratified)) | Baker's theorem on linear independence of logs of multiplicatively independent algebraics |
 | $\pi$ | **2** *(Tate twist)* | — | everywhere (volumes, $\alpha_{EM}$) | period of $H^1(\mathbb{P}^1 \setminus \{0,1\})$; Tate motive denominator | none structural — $\pi$ is the Tate-motive period |
 | $\zeta(2) = \pi^2/6$ | **2** | — | `rem:rh-surreal-bound` envelope | $-\mathrm{Li}_2(1)$ analytic continuation | none — pinned by Tate twist |
 | $\mathrm{Cl}_2(\pi/3)$ | **2** | $\zeta_6$ | `rem:figure-8-archimedean-illustration`, `conj:bring-figure-eight-depth-2-witness` | $\mathrm{Im}\,\mathrm{Li}_2^q(\zeta_6) \in G^{(2)}(\mathcal{H}_q)$ | Bloch–Wigner 5-term relation; scissors-congruence equalities among polyhedral volumes |

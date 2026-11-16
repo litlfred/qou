@@ -1,4 +1,4 @@
-**Proof of [partition-depth stratification of $\Phi_q$](#prop:quantum-dilogarithm-stratified).**
+**Partial argument for [the stratified quantum dilogarithm conjecture](#conj:quantum-dilogarithm-stratified).** Steps 1, 2 and 4 below are argued; Step 3 is not established, and as written it cannot be: $F_n(z)$ in (d) is a single power of $z$, so the product expansion $F_n(z) = \prod_k (1 - q^{-k}z)^{-c_k(n)}\, u_n(q)$ fails for it. What is proved is Step 1, the mutual orthogonality of the depth strata under the Frobenius pairing.
 
 *Step 1 (Frobenius dual decomposition of $Z(A)$).* By
 [curvature-rank stratification](#prop:curvature-rank-gb-stratification)
@@ -159,7 +159,7 @@ $$
 
 The second equality uses depth orthogonality (Step 1); the third uses
 Step 3's identification of the partial product with the
-$\bigoplus_{j \leq k_\star(T_w)} Z^{(j)}$-content. $\square$
+$\bigoplus_{j \leq k_\star(T_w)} Z^{(j)}$-content. 
 
 **Open: canonical bound.**
 The proof above is a Frobenius-paired *equality*, not a canonical

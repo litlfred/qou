@@ -755,7 +755,7 @@
 | [conj:mass-categorical-descent](#conj:mass-categorical-descent) | QOU mass formula as descent decomposition of the mass endomorphism | Ch 12 | `qou:QOU.ParticleInteractions.mass_categorical_descent` |
 | [prop:vertex-algebra-relations](#prop:vertex-algebra-relations) | QU and QUO axioms as relations on Hecke generators | Ch 11 | `qou:QOU.VertexAlgebra.descartes_genus` |
 | [prop:vertex-algebra-jet-relations](#prop:vertex-algebra-jet-relations) | QU/QUO and cohomological relations on the jet bundle | Ch 11 | `qou:QOU.VertexAlgebra.JetRelations.euler_level_stable` |
-| [prop:quantum-dilogarithm-stratified](#prop:quantum-dilogarithm-stratified) | Quantum dilogarithm stratifies by partition GB-depth | Ch 12 | `qou:QOU.WedderburnMass.phi_q_frobenius_truncation` |
+| [conj:quantum-dilogarithm-stratified](#conj:quantum-dilogarithm-stratified) | Quantum dilogarithm stratifies by partition GB-depth | Ch 12 | `qou:QOU.WedderburnMass.phi_q_frobenius_truncation` |
 | [prop:quantum-ideal-gas-law](#prop:quantum-ideal-gas-law) | Quantum ideal gas law | Ch 20 | `qou:QOU.Information.IdealKnotGas` |
 | [prop:ramified-disc-fusion](#prop:ramified-disc-fusion) | Ramified-disc fusion at the foundry boundary | Ch 12 | `qou:QOU.BraidsKnots.RamifiedDiscFusion.resolvent_agreement` |
 | [prop:markov-trace-ratio-exact](#prop:markov-trace-ratio-exact) | Ratios of Markov traces are normalization-independent | Ch 12 | `qou:QOU.BraidsKnots.markov_trace_ratio_exact` |

@@ -11,7 +11,7 @@ two distinct filtrations:*
 - *the **partition-cellular GB-depth** on the centre $Z(H_n(q))$
   (attributed to
   [curvature-rank GB stratification](#prop:curvature-rank-gb-stratification),
-  [stratified $\Phi_q$](#prop:quantum-dilogarithm-stratified) — but the
+  [stratified $\Phi_q$](#conj:quantum-dilogarithm-stratified) — but the
   first stratifies by the curvature rank of **words** and supplies no
   partition-indexed filtration, so this conjecture **presupposes** the very
   word-to-partition step that is unestablished),
