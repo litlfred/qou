@@ -1,0 +1,287 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "computedAt": "2026-11-16T19:57:36.582015+00:00",
+  "commitSha": "d088007ed7eb92c94aa439d0cfc650ed7a99040b",
+  "scriptFile": "probes/spin_orbit_magic_rstar_mirror_probe.py",
+  "scriptPath": "computations/probes/spin_orbit_magic_rstar_mirror_probe.py",
+  "scriptHash": "e559f07eec19",
+  "scriptCommitSha": "d088007ed7eb92c94aa439d0cfc650ed7a99040b",
+  "allPassed": true,
+  "assertions": [
+    {
+      "name": "qou_w2vy_return_types_and_coo_object_fallback",
+      "passed": true
+    },
+    {
+      "name": "qou_frso_lande_2ell_plus_1_interval_identity",
+      "passed": true
+    },
+    {
+      "name": "qou_mgq3_mayer_jensen_magic_ladder_and_a5_wall",
+      "passed": true
+    },
+    {
+      "name": "qou_cds5_step1_r_star_convention_D_outside_pr4766_band",
+      "passed": true
+    },
+    {
+      "name": "qou_z4ba_c1_mirror_diff_gap_five_invariance",
+      "passed": true
+    }
+  ],
+  "probe": "spin_orbit_magic_rstar_mirror_probe",
+  "beans": [
+    "qou-w2vy",
+    "qou-frso",
+    "qou-mgq3",
+    "qou-cds5",
+    "qou-z4ba"
+  ],
+  "generatedAt": "2026-11-16T19:57:36.582015+00:00",
+  "q0Anchor": "proton",
+  "workDps": "50",
+  "q0_50dps": "1.1099785827513808075916690956107688798744991218736",
+  "E0_MeV_50dps": "4.1859813632944758969450621587590084101434868908788",
+  "qou_w2vy": {
+    "bean": "qou-w2vy",
+    "k_cap_tested": "3",
+    "partition_entry_tested": "(2, 1)",
+    "has_lp_kernel": "False",
+    "atom_character_raw_return_types": {
+      "chi_type": "float",
+      "log_norm_type": "float",
+      "dim_type": "int"
+    },
+    "downstream_return_types": {
+      "atom_markov_trace": "mpf",
+      "atom_frobenius_norm_sq": "mpf",
+      "binding_from_frobenius_pairing": "mpf"
+    },
+    "deuteron_kcap3": {
+      "chi_float_str": "2.21984998987298010e-01",
+      "log_norm_float_str": "0.00000000000000000e+00",
+      "markov_trace_50dps": "0.65670049190931170527850888824017233131842686042786",
+      "frobenius_norm_sq_50dps": "0.0081390615063477963020155565557799855675240857376219",
+      "binding_from_frobenius_pairing_MeV_50dps": "1.1671236953083060641717340629844241404401517128798"
+    },
+    "python_coo_object_fallback_deuteron_kcap3": {
+      "chi_python_coo": "2.21984998987298010e-01",
+      "chi_rust_kernel": "2.21984998987298010e-01",
+      "rel_diff": "0.0",
+      "object_dtype_crash_reproduced": "False"
+    }
+  },
+  "qou_frso_mgq3": {
+    "beans": [
+      "qou-frso",
+      "qou-mgq3"
+    ],
+    "lande_interval_identity_verified_ell_0_to_10": [
+      {
+        "ell": "0",
+        "two_ls_aligned": "0",
+        "two_ls_anti_aligned": "-1",
+        "casimir_diff_2ell_plus_1": "1"
+      },
+      {
+        "ell": "1",
+        "two_ls_aligned": "1",
+        "two_ls_anti_aligned": "-2",
+        "casimir_diff_2ell_plus_1": "3"
+      },
+      {
+        "ell": "2",
+        "two_ls_aligned": "2",
+        "two_ls_anti_aligned": "-3",
+        "casimir_diff_2ell_plus_1": "5"
+      },
+      {
+        "ell": "3",
+        "two_ls_aligned": "3",
+        "two_ls_anti_aligned": "-4",
+        "casimir_diff_2ell_plus_1": "7"
+      },
+      {
+        "ell": "4",
+        "two_ls_aligned": "4",
+        "two_ls_anti_aligned": "-5",
+        "casimir_diff_2ell_plus_1": "9"
+      },
+      {
+        "ell": "5",
+        "two_ls_aligned": "5",
+        "two_ls_anti_aligned": "-6",
+        "casimir_diff_2ell_plus_1": "11"
+      },
+      {
+        "ell": "6",
+        "two_ls_aligned": "6",
+        "two_ls_anti_aligned": "-7",
+        "casimir_diff_2ell_plus_1": "13"
+      },
+      {
+        "ell": "7",
+        "two_ls_aligned": "7",
+        "two_ls_anti_aligned": "-8",
+        "casimir_diff_2ell_plus_1": "15"
+      },
+      {
+        "ell": "8",
+        "two_ls_aligned": "8",
+        "two_ls_anti_aligned": "-9",
+        "casimir_diff_2ell_plus_1": "17"
+      },
+      {
+        "ell": "9",
+        "two_ls_aligned": "9",
+        "two_ls_anti_aligned": "-10",
+        "casimir_diff_2ell_plus_1": "19"
+      },
+      {
+        "ell": "10",
+        "two_ls_aligned": "10",
+        "two_ls_anti_aligned": "-11",
+        "casimir_diff_2ell_plus_1": "21"
+      }
+    ],
+    "ho_cumulative_closures_n_0_to_6": [
+      "2",
+      "8",
+      "20",
+      "40",
+      "70",
+      "112",
+      "168"
+    ],
+    "so_intruder_closures_n_2_to_5": [
+      {
+        "n": "2",
+        "ho_base": "20",
+        "intruder_j": "7/2",
+        "intruder_capacity_2j_plus_1": "8",
+        "magic_closure": "28"
+      },
+      {
+        "n": "3",
+        "ho_base": "40",
+        "intruder_j": "9/2",
+        "intruder_capacity_2j_plus_1": "10",
+        "magic_closure": "50"
+      },
+      {
+        "n": "4",
+        "ho_base": "70",
+        "intruder_j": "11/2",
+        "intruder_capacity_2j_plus_1": "12",
+        "magic_closure": "82"
+      },
+      {
+        "n": "5",
+        "ho_base": "112",
+        "intruder_j": "13/2",
+        "intruder_capacity_2j_plus_1": "14",
+        "magic_closure": "126"
+      }
+    ],
+    "mayer_jensen_magic_ladder": [
+      "2",
+      "8",
+      "20",
+      "28",
+      "50",
+      "82",
+      "126"
+    ],
+    "a5_icosahedral_branching_wall": {
+      "a5_irrep_dims": [
+        "1",
+        "3",
+        "3",
+        "4",
+        "5"
+      ],
+      "burnside_sum_sq": "60",
+      "max_spin_doubled_a5_dim": "10",
+      "h11_half_intruder_dim_at_82": "12",
+      "i13_half_intruder_dim_at_126": "14",
+      "single_a5_irrep_excluded_at_82_and_126": "True",
+      "so3_ell5_to_a5_branching": "3 + 3 + 5 = 11"
+    }
+  },
+  "qou_cds5": {
+    "bean": "qou-cds5",
+    "mu3_target_MeV": "0.4708",
+    "sum_y_lambda_C_H9": "0.031751754337232431401840436485303564773509001032805",
+    "sum_y_lambda_D_H9": "0.062025436960613858621424680111913139277521809828715",
+    "pr4766_uncabled_door_provenance": {
+      "c3_door_T_C_MeV": "-1.7687752752067307746193699342951149546847219275259",
+      "c3_door_T_D_MeV": "-1.3723314283506129814529409937958095716012109647935",
+      "c3_door_He3_C_MeV": "-1.4054244334325361154872692995835773557974621202498",
+      "c3_door_He3_D_MeV": "-1.0338362638975350491272909285467365998569795610483",
+      "door_ratio_C_over_D_T": "1.2888834567700591224059955872741959870136571377053",
+      "door_ratio_C_over_D_He3": "1.359426518986791594080035875028382219054362994894",
+      "r_star_C_times_door_ratio_T": "2.0434112601501126613025571875097819975522101355376",
+      "r_star_C_times_door_ratio_He3": "2.1552510753808683502525332275053577021433018215401",
+      "relayed_band_explanation": "PR #4766 multiplied the cabled-Borromean r*_C = 1.585412 by the uncabled pairwise supermodularity door scale factor c3_door(C)/c3_door(D) in [1.2889, 1.3594] to obtain [2.0434, 2.1552] ~ [2.04, 2.16]."
+    },
+    "cabled_borromean_grouped_word": {
+      "c3_T_C_MeV": "0.27262635684922852420943538636880094368915102399166",
+      "c3_He3_C_MeV": "0.32128867462883698458820185811602369235744983837623",
+      "c3_mean_C_MeV": "0.29695751573903275439881862224241231802330043118395",
+      "c3_T_D_MeV": "0.27493384159923242968759922565856102486040237423808",
+      "c3_He3_D_MeV": "0.33280048519125344945743493468994496076572546340724",
+      "c3_mean_D_MeV": "0.30386716339524293957251708017425299281306391882266",
+      "c3_geom_mean_MeV": "14.06640130162907687772509370158410919365471922191",
+      "r_star_C_mean": "1.5854119698850814569854255744749592350250152743126",
+      "r_star_D_mean": "1.5493612233040985598092316107682248286394378331492",
+      "r_star_D_per_isotope_band": [
+        "1.4146613990945389626126548512459382835166725806533",
+        "1.7124119652257257681555166334093268313364666571654"
+      ],
+      "r_geom_C": "47.368396339867945282400304087646491707851799807079",
+      "r_geom_D": "46.291284469367864955729133069927622949301055273393",
+      "r_both_C": "1.5040296839321468603919414522963728223332450725873",
+      "r_both_D": "2.8712371466806198629297143962567392717255003535055"
+    },
+    "cabled_borromean_canonical_word": {
+      "c3_T_C_MeV": "0.095896037154714509771319885063760632979316358855309",
+      "c3_He3_C_MeV": "0.11742747036447563540098295951534820913030740084226",
+      "c3_mean_C_MeV": "0.10666175375959507258615142228955442105481187984878",
+      "c3_T_D_MeV": "0.17040060967419706243345351816289440934060720787447",
+      "c3_He3_D_MeV": "0.21265703930891150164852681660932206325639838486391",
+      "c3_mean_D_MeV": "0.19152882449155428204099016738610823629850279636919",
+      "c3_geom_mean_MeV": "1.3529995121907064737359380069406456033499645320668",
+      "r_star_C_mean": "4.4139533000848281823211955458645789381563330964004",
+      "r_star_D_mean": "2.4581156452550595142949551125007599898351770194986",
+      "r_star_D_per_isotope_band": [
+        "2.2138933257511541306307750958691583333959231069581",
+        "2.7629009127382891033983217197325494500394144108311"
+      ],
+      "r_geom_C": "12.68495467682101010700660318323351513503200043238",
+      "r_geom_D": "7.0642083027579422368601605893167902966672646852849",
+      "r_both_C": "0.40276956467734832283568365504110194066856070277304",
+      "r_both_D": "0.43816060675935776552187904865905463014579699515162"
+    },
+    "step1_verdict": "REFUTED as cabled-Borromean r*_D: on the #4364 grouped word, c3^cabled increases from 0.296958 MeV (C) to 0.303867 MeV (D), so r*_D = 1.549361 moves DOWN (-2.27%), while r_both^D jumps to 2.871235 (+85.32% overshoot). On the canonical borromean word, r*_D = 2.458116 lies above [2.04, 2.16]. None of the six pruned Delta_lambda ansaetze is rescued."
+  },
+  "qou_z4ba": {
+    "bean": "qou-z4ba",
+    "checked_mirror_pairs_1_le_N_lt_Z_le_20": "190",
+    "grouped_coefficients_P_Q": [
+      "21",
+      "16"
+    ],
+    "borromean_coefficients_P_Q": [
+      "3",
+      "-2"
+    ],
+    "shared_gap_P_minus_Q": "5",
+    "mirror_bracket_A2": "-3/16",
+    "mirror_bracket_A3": "7/64",
+    "mirror_bracket_A4": "27/256",
+    "he3_minus_tritium_c1_grouped": "7/64",
+    "he3_minus_tritium_c1_borromean": "7/64",
+    "ordering_invariance_verified": "True"
+  }
+}
