@@ -1,7 +1,8 @@
 ---
 # 8we6
 title: 'u-rung tie decision: genuine c4 rungs — H4 Hoefsmit build for c4^even + c4^odd beyond CAL-anchor (Casoratian W3 sign test)'
-status: todo
+status: in-progress
+pr: 8191
 type: task
 priority: normal
 tags:
@@ -80,3 +81,8 @@ not arranged) — bean stays in-progress awaiting that input; do not re-scan.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-07-03 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Progress (PR #8191)
+- [x] Formalized in `folio/quantum-observable-universe/lean/QOU/MassTheory/ResurgenceCasoratianAndBarSymmetrization.lean` (`0` `sorry`, `0` `axiom`, `0 CRITICAL, 0 advisory` across all 7 static vacuity/borrowed-name audits) and wired into `QOU.lean`.
+- [x] Verified exact rational witness in `computations/probes/resurgence-casoratian-and-bar-symmetrization.witness.json` (`scriptHash: 2c8e09c0d6af`, `scriptCommitSha: e9de8818430aa7aa5b7c9bf66d2b0bab443b968f`, `allPassed: true`, `0` raw `float64` fields).
+- [ ] Awaiting Merge Manager merge of PR #8191 (`8351218487c53d0f60e66b9d4c335ccaab315d98`).

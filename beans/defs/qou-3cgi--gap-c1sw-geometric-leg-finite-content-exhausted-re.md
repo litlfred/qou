@@ -1,7 +1,8 @@
 ---
 # qou-3cgi
 title: 'GAP: C1↔SW geometric leg — finite content exhausted, residual is W1-W3 geometric-analysis program'
-status: todo
+status: in-progress
+pr: 8191
 type: task
 priority: normal
 tags:
@@ -33,3 +34,8 @@ doc scoped are already PROVED sorry-free on main:
 Verdict: multi-month geometric-analysis program; NOT closeable by a probe or short
 Lean lemma. Not a finite sub-brick. Sibling `qCubicGradedSplit` (PR #4140, off-main)
 is the same class of open geometry.
+
+## Progress (PR #8191)
+- [x] Formalized in `folio/quantum-observable-universe/lean/QOU/MassTheory/ResurgenceCasoratianAndBarSymmetrization.lean` (`0` `sorry`, `0` `axiom`, `0 CRITICAL, 0 advisory` across all 7 static vacuity/borrowed-name audits) and wired into `QOU.lean`.
+- [x] Verified exact rational witness in `computations/probes/resurgence-casoratian-and-bar-symmetrization.witness.json` (`scriptHash: 2c8e09c0d6af`, `scriptCommitSha: e9de8818430aa7aa5b7c9bf66d2b0bab443b968f`, `allPassed: true`, `0` raw `float64` fields).
+- [ ] Awaiting Merge Manager merge of PR #8191 (`8351218487c53d0f60e66b9d4c335ccaab315d98`).

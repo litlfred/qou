@@ -1,7 +1,8 @@
 ---
 # qou-3qla
 title: 'Resurgence arc: 45 of 73 audits are convention-C-conditional and none says so; the Borel singularity and the Bring saddle are never connected'
-status: todo
+status: in-progress
+pr: 8191
 type: task
 priority: normal
 tags:
@@ -161,3 +162,8 @@ no pointer to any of it.
 Good news in it: because nothing consumes `A(q₀)`, **re-statusing the document
 moves no numbers at all** — it is a documentation fix, not a compute change.
 That strengthens recommendation 3 and makes it the cheapest of the four.
+
+## Progress (PR #8191)
+- [x] Formalized in `folio/quantum-observable-universe/lean/QOU/MassTheory/ResurgenceCasoratianAndBarSymmetrization.lean` (`0` `sorry`, `0` `axiom`, `0 CRITICAL, 0 advisory` across all 7 static vacuity/borrowed-name audits) and wired into `QOU.lean`.
+- [x] Verified exact rational witness in `computations/probes/resurgence-casoratian-and-bar-symmetrization.witness.json` (`scriptHash: 2c8e09c0d6af`, `scriptCommitSha: e9de8818430aa7aa5b7c9bf66d2b0bab443b968f`, `allPassed: true`, `0` raw `float64` fields).
+- [ ] Awaiting Merge Manager merge of PR #8191 (`8351218487c53d0f60e66b9d4c335ccaab315d98`).
