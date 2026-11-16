@@ -230,6 +230,7 @@ import QOU.KZ.AssociatorKZ
 import QOU.KZ.BlockResidues
 import QOU.KZ.Drinfeld.Assoc
 import QOU.KZ.Drinfeld.Braiding
+import QOU.KZ.Drinfeld.BraidingVV
 import QOU.KZ.Drinfeld.Braided
 import QOU.KZ.Drinfeld.Hexagon
 import QOU.KZ.Drinfeld.Category
