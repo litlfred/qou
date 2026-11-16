@@ -94,3 +94,40 @@ knots 0/720 (`conj_invariant_pass_iff_pure`, 0 violations).
 
 Scope (a): this is a finite computation on words of length ≤ 7 at one q. It is not a proof for B₃.
 Witness: `gg-full-photon-stage3.witness.json`.
+
+## Stage 4 — prior entangled γγ pair across proton and electron (run 2026-11-16, proton pin, convention D)
+
+Witness `gg-entangled-pair-stage4.witness.json`, producer `gg_entangled_pair_stage4_probe.py`,
+18 configurations (2 nucleons V³, V⁶ × (control + 4 pair words × 2 windows)), as pre-registered.
+
+Each pair word P reduces to a single pure two-strand twist. Strands 0–2 are the nucleon and 3–5 the
+electron, so the cross sum c_{p|e}(P) is read off directly (lk = c/2):
+
+| P (window b) | reduced form | strands linked | c_{p\|e} | kind |
+|---|---|---|---|---|
+| L₊V⁻¹ (1) | σ₁σ₂²σ₁⁻¹ | 1–3 | +2 | entangled |
+| L₊V⁻¹ (2) | σ₂σ₃²σ₂⁻¹ | 2–4 | +2 | entangled |
+| V⁻¹L₊ (1) | σ₂² | 2–3 | +2 | entangled |
+| V⁻¹L₊ (2) | σ₃² | 3–4 | 0 | electron self-twist |
+| L₋V⁻¹ (1) | σ₁⁻² | 1–2 | 0 | nucleon self-twist |
+| L₋V⁻¹ (2) | σ₂⁻² | 2–3 | −2 | entangled |
+| V⁻¹L₋ (1) | σ₂σ₁⁻²σ₂⁻¹ | 1–3 | −2 | entangled |
+| V⁻¹L₋ (2) | σ₃σ₂⁻²σ₃⁻¹ | 2–4 | −2 | entangled |
+
+**Results.**
+1. Every atom passes reading 3 at every level 1..6, with and without the pair, for both nucleons and
+   both orders. χ₍₆₎ = q₀² = 1.23205245… for L₊, q₀⁻² = 0.81165375… for L₋, and 1 for the control,
+   as fixed by the writhe.
+2. H₂: in all 36 (configuration, order) cases the passing bonds are exactly V³ at s = 4 and s = 5,
+   the same as the pair-free control. V and V² never pass.
+3. The sign of P (L₊ vs L₋) changes nothing in the pass/fail pattern.
+
+**Reading.** The prior-entangled-pair picture is admissible: an atom carrying one across the p|e
+boundary passes reading 3 (the pre-registered failure condition is not met). But reading 3 does not
+discriminate. The six entangled words, the two self-twist words and the empty control give identical
+pass/fail, so this test cannot tell a prior entangled pair from a self-twist or from no pair at all.
+This is the trivial-block statement made in `def:virtual-subword` (the q^{±2} shift factors as
+q^{c}·q^{s} and the block alone cannot separate c from s), now seen across every level and in H₂.
+Scope (a): a negative about this selector's resolving power, not an exclusion of either reading.
+What could separate them is an observable that sees c_{p|e} directly, such as the pairwise connected
+part of `def:virtual-subword` on the p|e cut.
