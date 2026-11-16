@@ -160,11 +160,29 @@ Witness `carbon-ring-stage5.witness.json`, producer `carbon_ring_stage5_probe.py
 **Why question 3 comes out 0.** With exponent ±2 each bond is a Hopf link between neighbours, and
 the Jones polynomial is multiplicative under connected sum. Three nodes of a 6-cycle induce at most
 a path, whose sublink is a connected sum of Hopf links. So F is a sum of pair terms on every subset
-of size at most 5, and its connected part vanishes there. The ring closure can only appear in the
-full six-strand connected part, φ({1..6}) = F(all) − (sum of the six pair terms). That was not
-computed: the 22-crossing word needs about 4·10⁶ bracket states. A 12-crossing necklace diagram
-would make it cheap, and that is the natural next step.
+of size at most 5, and its connected part vanishes there.
 
-**Reading.** In this coarse-graining, reading 3 does not see aromatic closure at all, and the
-three-party connected part cannot see it either. Any ring-specific effect has to live in the
-six-party term. Scope (a).
+**Six-party connected part (computed exactly, Temperley–Lieb bracket cross-checked against the
+state sum on the Borromean braid).** For the pure words, φ over all six strands is:
+
+| word | φ₆ exact? | series in s = log t | t = q₀ | t = q₀² |
+|---|---|---|---|---|
+| chain, ±2 | exactly 0 | 0 | 0 | 0 |
+| ring +2 (band in front) | ≠ 0 | 3/64 s⁶ − 3/64 s⁷ − 23/256 s⁸ + … | 5.308e-8 | 2.831e-6 |
+| ring −2 (band in front) | ≠ 0 | 3/64 s⁶ − 21/64 s⁷ + 265/256 s⁸ + … | 2.838e-8 | 8.093e-7 |
+| ring +2 (band behind) | ≠ 0 | — | 1.223e-7 | — |
+| ring −2 (band behind) | ≠ 0 | — | 6.540e-8 | — |
+
+So the ring closure is invisible to reading 3 and to every connected part of size ≤ 5, and it
+appears first in the six-party term, at order (log t)⁶. The chain is an iterated connected sum and
+its six-party term is exactly zero.
+
+**A hidden choice, found while checking.** "Six bonds in a cycle" does not fix the link. The closing
+bond can pass in front of the four intermediate strands (ρ = σ₀⋯σ₄, the pre-registered choice) or
+behind them (ρ̄ = σ₀⁻¹⋯σ₄⁻¹). The two give different Jones polynomials, so different links, and
+different six-party values. The −2 front ring is the mirror of the +2 back ring, not of the +2 front
+ring. Fixing the ring needs a rule for the route of the closing bond, which the coarse-graining
+does not supply. Both are reported. Neither is selected.
+
+**Reading.** In this coarse-graining, reading 3 does not see aromatic closure, the three-party
+connected part cannot see it, and the six-party connected part does, at order (log t)⁶. Scope (a).

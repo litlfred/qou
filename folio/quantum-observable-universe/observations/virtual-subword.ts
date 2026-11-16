@@ -23,7 +23,7 @@ export default definition({
     {
       kind: "note",
       date: "2026-11-16",
-      body: "Connected part: `connected`, `connected_pair`, `connected_eq_zero_of_split` in the sibling `.lean`, sorry-free. The Borromean value is computed exactly by `computations/probes/gg_twist_reading3/borromean_jones_cumulant_probe.py` (Kauffman state sum in sympy, 4/4 checks). The t to q dictionary is left open: at the proton q0 the cumulant is -8.914e-5 for t = q0 and -1.439e-3 for t = q0^2.",
+      body: "Connected part: `connected`, `connected_pair`, `connected_eq_zero_of_split` in the sibling `.lean`, sorry-free. The Borromean value is computed exactly by `computations/probes/gg_twist_reading3/borromean_jones_cumulant_probe.py` (Kauffman state sum in sympy, 4/4 checks). The t to q dictionary is left open: at the proton q0 the cumulant is -8.914e-5 for t = q0 and -1.439e-3 for t = q0^2. The trace-level statement behind `IsVirtual` (a and b agree under every trace iff a - b is in the commutator span; conjugates are unseen) is proved generally in PR #8134 as `QOU.BraidsAndKnots.ClosureUnseen.unseen_iff` / `unseen_conj` (block prop:closure-unseen-subword). Add it to `uses` once #8134 merges.",
     },
   ],
 });
