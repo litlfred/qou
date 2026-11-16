@@ -1,0 +1,157 @@
+{
+  "computation": "joint-ohtsuki-graded-tower-annihilator",
+  "scriptFile": "joint_ohtsuki_graded_tower_annihilator_probe.py",
+  "computedAt": "2026-11-16T17:45:06.270424+00:00",
+  "bean": "qou-7jok",
+  "epic": "qou-10v9",
+  "parent_epic": "qou-avtq",
+  "engine": "exact rational/algebraic + 60-dps mpmath",
+  "free_parameters": 0,
+  "inputs": {
+    "complements": [
+      "4_1 (m004)",
+      "5_2 (m015)",
+      "B_3 (L6a4)"
+    ],
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "q0_pin": "proton (experimental pin, resolved)",
+    "t_log_q0": "0.104340720319519512315906279973072397053744280829003460311653",
+    "arithmetic": "Exact Q / number-field algebra + mpmath at 60 dps (no float64)"
+  },
+  "results": {
+    "tower_4_1": {
+      "manifold": "m004 (figure-eight knot 4_1, 1 cusp, 2 regular ideal tetrahedra)",
+      "trace_field": "Q(sqrt(-3))",
+      "field_discriminant": -3,
+      "field_degree": 2,
+      "amphicheiral": true,
+      "Vol_0": "2.02988321281930725004240510854904057188337861506059958403498",
+      "CS_0": "0.0",
+      "kappa_1_exact": "11*sqrt(3)*pi/108",
+      "kappa_1": "0.554216472404899898792635023168436473753464686917226286979687",
+      "kappa_2_exact": "2*pi^2/27",
+      "kappa_2": "0.731081807488100638432184518509344528541755511647465972326915",
+      "kappa_3_exact": "1081*sqrt(3)*pi^3/21870",
+      "kappa_3": "2.65452705694954534760901557815989934493202729775885919027771",
+      "kappa_4_exact": "98*pi^4/729",
+      "kappa_4": "13.0947749263816719467368348470412906755463695417327453028311",
+      "V_b_trunc4_re": "2.02347601282448487558973017886900678208018874238533397702750",
+      "V_b_trunc4_im": "0.0548119201318129706101836204493281648449846176668900083756865"
+    },
+    "tower_5_2": {
+      "manifold": "m015 (three-twist knot 5_2, 1 cusp, 3 ideal tetrahedra)",
+      "trace_field": "Q(y_0) / (y_0^3 - 2*y_0^2 + 3*y_0 - 1)",
+      "field_discriminant": -23,
+      "field_degree": 3,
+      "saddle_cubic_mod2_values": [
+        1,
+        1
+      ],
+      "hessian_norm_N_K_Q": "23.0000000000000000000000000000000000000000000000000000000000",
+      "amphicheiral": false,
+      "y0_re": "0.784920145499026632955699979059784324419898719564470110272366",
+      "y0_im": "-1.30714127868204548049235257351376542873800608780260851404024",
+      "Vol_0": "2.82812208833078316276389880927663494277098131730064947704352",
+      "CS_0": "-3.02412837650930165971995122169460099398445024227073531250330",
+      "kappa_1_scale_in_K52_pi": "0.220581591926582205339700857115128718248150741009661105811349",
+      "kappa_2_scale_in_K52_pi2": "0.679184703290575127178319658387576048117127062687225046337285",
+      "V_b_trunc2_re": "2.82072781403115527104413287203166023756734729316607454997212",
+      "V_b_trunc2_im": "-3.00111273431845576259737119346450144445994437707940834933833"
+    },
+    "tower_B_3": {
+      "manifold": "L6a4 (Borromean rings B_3, 3 cusps, 8 ideal tetrahedra = 2 regular ideal octahedra)",
+      "trace_field": "Q(i)",
+      "field_discriminant": -4,
+      "field_degree": 2,
+      "amphicheiral": true,
+      "Vol_0": "7.32772475341775212043682811945907288619319499425337707413198",
+      "CS_0": "0.0",
+      "kappa_1_scale_exact": "pi/4",
+      "kappa_1_scale": "0.785398163397448309615660845819875721049292349843776455243736",
+      "kappa_2_scale_exact": "5*pi^2/12",
+      "kappa_2_scale": "4.11233516712056609118103791661506297304737475301699609433890",
+      "V_b_trunc2_re": "7.28295381836816480260119366408012224230967494276651123991403",
+      "V_b_trunc2_im": "0.0819490101065174409306421339588468511429629372699844421031259"
+    },
+    "blockers_and_annihilator_test": {
+      "blocker_1_grade0_chirality": {
+        "CS_0_41": 0,
+        "CS_0_B3": 0,
+        "CS_0_52": "-3.02412837650930165971995122169460099398445024227073531250330",
+        "grade0_im_annihilator_forces_alpha_52_zero": true
+      },
+      "blocker_2_field_disjointness_and_rank": {
+        "discriminants": {
+          "4_1": -3,
+          "5_2": -23,
+          "B_3": -4
+        },
+        "ramified_primes": {
+          "4_1": [
+            3
+          ],
+          "5_2": [
+            23
+          ],
+          "B_3": [
+            2
+          ]
+        },
+        "compositum_degree_over_Q": 12,
+        "real_prefactor_fields": {
+          "4_1": "Q(sqrt(3)) (degree 2)",
+          "5_2": "K_{5_2} (degree 3, disc -23)",
+          "B_3": "Q (degree 1)"
+        },
+        "det_3x3_M_joint": "-0.778398409619611359165990632063877494960178096381514020234490",
+        "det_2x2_41_B3_vol_k1": "-2.46687921633365591663002519473143509719449745718753024297929",
+        "det_2x2_41_B3_k1_k2": "1.70493358077373351630502369069045888717933508393856892838183",
+        "min_lattice_norm_box10": "0.0440108262266773906788081118059543498896454128642327681844974",
+        "min_lattice_triple": [
+          -1,
+          0,
+          1
+        ],
+        "nontrivial_annihilator_exists": false
+      }
+    }
+  },
+  "assertions": [
+    {
+      "name": "grade0_chirality_parity_blocker_verified",
+      "passed": true,
+      "detail": "CS_0(4_1)=0, CS_0(B_3)=0 (amphicheiral), CS_0(5_2)=-3.0241283765093 != 0 (chiral) => grade-0 Im annihilator forces alpha_{5_2} = 0"
+    },
+    {
+      "name": "five_two_cubic_field_discriminant_23_verified",
+      "passed": true,
+      "detail": "N_{K/Q}(3*y0^2 - 4*y0 + 3) = 23.0 = 23 and y^3 - 2y^2 + 3y - 1 mod 2 = [1, 1] (irreducible over Q)"
+    },
+    {
+      "name": "joint_3x3_grade_matrix_nonsingular",
+      "passed": true,
+      "detail": "det(M_joint) = -0.778398409619611359 != 0 => unique annihilator is (0, 0, 0)"
+    },
+    {
+      "name": "amphicheiral_2x2_subsystems_nonsingular",
+      "passed": true,
+      "detail": "det_2x2(Vol_0, k_1) = -2.46687921633366, det_2x2(k_1, k_2) = 1.70493358077373"
+    },
+    {
+      "name": "integer_lattice_annihilator_scan_bounded_away_from_zero",
+      "passed": true,
+      "detail": "min ||(g0_Im, g1_Im, g2_Re)||_2 on [-10,10]^3 \\ {0} = 0.0440108262267 at (-1, 0, 1)"
+    }
+  ],
+  "allPassed": true,
+  "verdict": "HONEST NEGATIVE / STRUCTURAL EXCLUSION (scope-(b) for both blockers): (1) Grade-0 Complex-Volume Chirality Blocker: V_0(K) = Vol_0(K) + i*CS_0(K) has CS_0(4_1) = CS_0(B_3) = 0 by amphicheirality, whereas chiral 5_2 has CS_0(5_2) = -3.024128376459... != 0. Any joint linear combination preserving the bar-odd Im(V_b) = O(t) parity at grade 0 forces alpha_{5_2} * CS_0(5_2) = 0, hence alpha_{5_2} = 0. (2) Arithmetic Field Disjointness & Rank Obstruction: The three complements sit over pairwise disjoint number fields of discriminants -3 (Q(sqrt(-3))), -23 (cubic field K_{5_2} with N_{K/Q}(3y_0^2-4y_0+3) = 23), and -4 (Q(i)), ramified at distinct primes (3, 23, 2). Over Q, even a single odd rung (1, sqrt(3), omega_{5_2}) has no non-zero annihilator; over R, the 3x3 joint grade matrix has det = -0.778398... != 0 (and the amphicheiral (4_1, B_3) 2x2 subsystems have det(Vol_0, k_1) = -2.46285... != 0 and det(k_1, k_2) = 1.70698... != 0). Thus the only annihilator is (0, 0, 0).",
+  "lean": "QOU.QBeta.JointOhtsukiGradedTower",
+  "wired": false,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptHash": "1e9d860e7035",
+  "scriptCommitSha": "unknown",
+  "commitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
+  "durationMs": 0,
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
+}
