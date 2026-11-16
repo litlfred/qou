@@ -146,6 +146,34 @@ theorem D2_E8_second_fold {φ : R} (hφ : φ ^ 2 = φ + 1) :
     qi_phi'_six hφ]
   linear_combination 4 * hφ
 
+/-- Alcove sum of squared quantum integers at the second fold `t = φ − 1`:
+`[1]² + [2]² + [3]² + [4]² = 6 − 2φ`. -/
+theorem D2_MTC_second_fold {φ : R} (hφ : φ ^ 2 = φ + 1) :
+    qi (φ - 1) 1 * qi (φ - 1) 1 + qi (φ - 1) 2 * qi (φ - 1) 2
+      + qi (φ - 1) 3 * qi (φ - 1) 3 + qi (φ - 1) 4 * qi (φ - 1) 4
+      = 6 - 2 * φ := by
+  rw [qi_one, qi_two, qi_phi'_three hφ, qi_phi'_four hφ]
+  linear_combination 2 * hφ
+
+/-- **Second-fold multiplicity**: the 9-node sum at `t = φ − 1` also equals twice
+the 4-node alcove sum (`12 − 4φ = 2 · (6 − 2φ)`). -/
+theorem fold_multiplicity_second {φ : R} (hφ : φ ^ 2 = φ + 1) :
+    (marks.map fun m => qi (φ - 1) m * qi (φ - 1) m).sum
+      = 2 * (qi (φ - 1) 1 * qi (φ - 1) 1 + qi (φ - 1) 2 * qi (φ - 1) 2
+              + qi (φ - 1) 3 * qi (φ - 1) 3 + qi (φ - 1) 4 * qi (φ - 1) 4) := by
+  rw [D2_E8_second_fold hφ, D2_MTC_second_fold hφ]; ring
+
+/-- **Trace and norm of the two fold normalizers in `[CommRing R]`**: the sum of the
+first-fold and second-fold 9-node normalizers is `20` and their product is `80`
+directly from `φ² = φ + 1`, without adjoining `√5` or inverting `2`. -/
+theorem D2_E8_fold_sum_and_product {φ : R} (hφ : φ ^ 2 = φ + 1) :
+    (marks.map fun m => qi φ m * qi φ m).sum
+      + (marks.map fun m => qi (φ - 1) m * qi (φ - 1) m).sum = 20 ∧
+    (marks.map fun m => qi φ m * qi φ m).sum
+      * (marks.map fun m => qi (φ - 1) m * qi (φ - 1) m).sum = 80 := by
+  rw [D2_E8_first_fold hφ, D2_E8_second_fold hφ]
+  exact ⟨by ring, by linear_combination (-16 : R) * hφ⟩
+
 end Fold
 
 section Normalization

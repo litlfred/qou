@@ -92,4 +92,20 @@ theorem symmetry_reading_qzero :
     rw [h]; norm_num
   exact StokesSymmetryConstant.symmetryConstant_const hsym hne ()
 
+/-- **Trace of the concrete `q → 0` matrix `Splus0` is `2` (`1 + 1 = 2`).** -/
+theorem trace_qzero : Splus0 0 0 + Splus0 1 1 = 2 := by decide
+
+/-- **Upper-triangular unipotent structure of `Splus0`**: the lower-left entry
+vanishes and `(S₀₀ − 1)(S₁₁ − 1) − S₀₁ S₁₀ = 0`. -/
+theorem unipotent_characteristic_qzero :
+    Splus0 1 0 = 0 ∧
+      (Splus0 0 0 - 1) * (Splus0 1 1 - 1) - Splus0 0 1 * Splus0 1 0 = 0 := by
+  decide
+
+/-- **Off-diagonal square vs determinant relation at `q → 0`**:
+`(S₀₁ + S₁₀)² = 9 · det Splus0`. -/
+theorem off_diag_sum_sq_eq_nine_det_qzero :
+    (Splus0 0 1 + Splus0 1 0) ^ 2 = 9 * det Splus0 := by
+  decide
+
 end QOU.QBeta.StokesSymmetryConstantQZero

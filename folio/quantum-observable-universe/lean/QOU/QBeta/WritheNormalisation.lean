@@ -96,6 +96,25 @@ theorem writhe_factor_unique_up_to_sign (A B A' B' h : R)
     A ^ 2 = A' ^ 2 := by
   rw [writhe_factor_sq A B h hAB hA, writhe_factor_sq A' B' h hAB' hA']
 
+/-- **Power-law propagation across `k` net stabilisation steps.**
+For any `k : ℕ`, `(A^k)² = (1 − h)^k` and `(1 − h)^k · (B^k)² = 1`. -/
+theorem writhe_step_power_sq (A B h : R) (hAB : A * B = 1) (hA : A = (1 - h) * B) (k : ℕ) :
+    (A ^ k) ^ 2 = (1 - h) ^ k ∧ (1 - h) ^ k * (B ^ k) ^ 2 = 1 := by
+  constructor
+  · calc (A ^ k) ^ 2 = (A ^ 2) ^ k := by ring
+      _ = (1 - h) ^ k := by rw [writhe_factor_sq A B h hAB hA]
+  · calc (1 - h) ^ k * (B ^ k) ^ 2 = ((1 - h) * B ^ 2) ^ k := by ring
+      _ = 1 ^ k := by rw [writhe_factor_B_sq A B h hAB hA]
+      _ = 1 := one_pow k
+
+/-- **Anchor-migration sensitivity of the writhe base `1 − h`.**
+Across two anchor pins `(h₁, h₂)`, the linear and quadratic differences of the
+writhe base `1 − h` factor through `h₁ − h₂`. -/
+theorem anchor_shift_writhe_base_diff (h₁ h₂ : R) :
+    (1 - h₁) - (1 - h₂) = -(h₁ - h₂) ∧
+      (1 - h₁) ^ 2 - (1 - h₂) ^ 2 = -(h₁ - h₂) * (2 - h₁ - h₂) := by
+  exact ⟨by ring, by ring⟩
+
 section Invertible
 
 variable {K : Type*} [Field K]

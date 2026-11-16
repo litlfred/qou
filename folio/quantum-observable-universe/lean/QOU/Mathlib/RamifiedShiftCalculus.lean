@@ -284,4 +284,33 @@ theorem constant_weight_shift_one_residue (f : ℤ → R) :
     (shiftOp 1 (fun _ => (1 : R)))^[2] f (-2) = f 0 := by
   rw [shiftOp_iterate]; norm_num
 
+/-- **Additivity of `shiftOp` in the Laurent series seed.** -/
+theorem shiftOp_add (k : ℤ) (c : ℤ → R) (f g : ℤ → R) :
+    shiftOp k c (f + g) = shiftOp k c f + shiftOp k c g := by
+  funext e
+  have hfg : (f + g) (e + k) = f (e + k) + g (e + k) := rfl
+  show c e * (f + g) (e + k) = c e * f (e + k) + c e * g (e + k)
+  rw [hfg, mul_add]
+
+/-- **Under an even-shift prolongation, a fixed-parity seed retains its monodromy
+eigenvalue `ε` at every jet level `n`.** -/
+theorem even_shift_jet_monodromy_invariant (k : ℤ) (hk : Even k) (c : ℤ → R)
+    (X : ℤ → R) (ε : R) (hX : mono X = ε • X) (n : ℕ) :
+    mono ((shiftOp k c)^[n] X) = ε • (shiftOp k c)^[n] X := by
+  induction n with
+  | zero => simpa using hX
+  | succ n ih =>
+    rw [Function.iterate_succ_apply']
+    rw [← shiftOp_comm_mono_of_even k hk c ((shiftOp k c)^[n] X)]
+    rw [ih, shiftOp_smul]
+
+/-- **General two-step shift-1 residue formula**: two applications of `shiftOp 1 c`
+read the residue slot `t⁻²` from the constant term `f 0` with weight `c(-2) · c(-1)`. -/
+theorem shift_one_two_step_residue_eq (c : ℤ → R) (f : ℤ → R) :
+    (shiftOp 1 c)^[2] f (-2) = c (-2) * c (-1) * f 0 := by
+  rw [shiftOp_iterate]
+  rw [prod_range_succ, prod_range_one]
+  norm_num
+  ring
+
 end QOU.Mathlib.RamifiedShiftCalculus
