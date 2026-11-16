@@ -1,7 +1,8 @@
 ---
 # qou-slvl
 title: slope = q-Gevrey level in general; and the two recursions still defined-to-match
-status: todo
+status: in-progress
+pr: 8195
 type: task
 priority: medium
 tags:
@@ -83,3 +84,8 @@ in place the ansatz is the right shape and there is no leftover.
 prefactors are the *canonical* solutions — normalisation and uniqueness.
 
 Relates: `qou-slpd`, `qou-c1ln` (row 3).
+
+## Progress (PR #8195)
+- [x] Formalized in `folio/quantum-observable-universe/lean/QOU/MassTheory/C1SingularLocusAndSlopeLevelBridge.lean` (`0` `sorry`, `0` `axiom`, `0 CRITICAL, 0 advisory` across all 7 static vacuity/borrowed-name audits) and wired into `QOU.lean`.
+- [x] Verified exact rational witness in `computations/probes/c1-singular-locus-and-slope-level-bridge.witness.json` (`scriptHash: fc315c730706`, `scriptCommitSha: 17c1b41227b6c499979110fb6c31637514935ccf`, `allPassed: true`, `0` raw `float64` fields).
+- [ ] Awaiting Merge Manager merge of PR #8195 (`4d59250dbada4070a6545f88b8d6f14fb94d89f6`).
