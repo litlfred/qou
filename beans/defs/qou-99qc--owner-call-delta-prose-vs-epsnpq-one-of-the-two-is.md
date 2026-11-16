@@ -3626,3 +3626,20 @@ Yes, there is a mismatch inside the corpus.
 - Consequence for Y: if each photon carries twist content in {L₊, none, L₋} = {+1, 0, −1} full twists, and a strand's twist datum is supplied by ONE photon, then |t_i| ≤ 1 follows. That is the helon bound, with each photon playing the tweedle pair.
 - It still rests on "one photon per strand", but that is how pair production naturally counts, not a free minimality choice.
 - Caveat: adding L± to the γγ rule changes an owner-ruled grammar (qou-ales). The writhe-0, reading-3 and element results (V³, V⁶; the trefoil electron as the non-γγ blocker) would all need re-checking. Owner decision.
+
+
+### PRE-REGISTRATION ε-L1 (2026-11-16 07:30Z; owner tap: test the γγ grammar with the photon twist channel L±)
+- Extended grammar units:
+  - the existing V = σ₁σ₂⁻¹ (writhe 0);
+  - L₊ = σ₁σ₂ (writhe +2), from breit-wheeler-vertex;
+  - L₋ = σ₁⁻¹σ₂⁻¹.
+- Words to test on the ε-TR1 traced setup (isospin-½ multiplicity trace, Δ_S, emission Ř₃₄):
+  - L₊, L₋, L₊V³, V³L₊, L₊L₋;
+  - the Breit–Wheeler electron-type word L₊σ₁ = σ₁σ₂σ₁.
+- Questions:
+  - (i) does any word give ε_pn ≠ ε_np, i.e. break u↔d?
+  - (ii) does the twist content per photon lie in {−1, 0, +1} full twists, so that |t| ≤ 1 follows from one photon per strand?
+  - (iii) reading 3 on the nucleon words with L±: which pass?
+- Prediction for (i): NO breaking. Every Ř word commutes with the U_q(sl₂) action, so on canonically traced isospin-½ states n↔p symmetry should hold whatever the writhe, exactly as in ε-TR1.
+- Prediction for (ii): yes by construction (writhe ±2 per unit).
+- Nothing is compared to data, and no element is picked by residual.
