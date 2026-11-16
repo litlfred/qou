@@ -6,7 +6,7 @@ type: epic
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-04T15:09:58Z
-updated_at: 2026-11-16T19:07:00Z
+updated_at: 2026-11-16T19:19:00Z
 parent: qou-10v9
 ---
 
@@ -23,3 +23,7 @@ Sub-epic P1.9A of PROGRAM: L2 at 1 ppQ (mass and binding accuracy) (work-plan re
 ## Progress Update (2026-11-16 — Round 48: PR #8160)
 - **PR:** [`litlfred/qou#8160`](https://github.com/litlfred/qou/pull/8160) (`c0fb591249c67f13f6a77b40075589852babb011`)
 - Completed Lean formalization and impact analysis for `8gzz`, `qou-0w42`, `qou-tknh`, `qou-bhrx`, and `qou-loqn` (`0` `sorry`, `0` self-assuming audit hits).
+
+## Progress Update (2026-11-16 — Round 49: PR #8143 fix + PR #8164)
+- **PR #8143 fix:** Stamped `scriptCommitSha: "7df80d1c2e228518b2ca15ec1d314be46da8e524"` in `computations/probes/yekutieli-multiplicative-integral-curvature.witness.json` (`4340428cced694b249ca48316cbb5096751b5f64`).
+- **PR #8164:** Opened [`litlfred/qou#8164`](https://github.com/litlfred/qou/pull/8164) (`47da262e4f487a8f51de58f3577a63d5b17e6d6a`) for `qou-ch8w`, `qou-quv8`, `qou-yczy`, `qou-h5aw`, and `qou-n4u6` (`0` `sorry`, `0` self-assuming audit hits, 50+ dps witness `na-stokes-bar-parity-local-bond.witness.json`).
