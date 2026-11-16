@@ -1,0 +1,114 @@
+{
+  "engine": "mpmath+sympy",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-16T19:51:43.001209+00:00",
+  "commitSha": "80719a03fb31a87a5718702e605db5cbed1f57ce",
+  "assertions": [
+    {
+      "name": "qou_5op4_cal2_inversion_and_three_value_ordering",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "qou_72rd_anchor_label_confusion_and_secant_identity",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "qou_mha1_symbolic_pin_stamped_vs_pin_dependent_secants",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "qou_3zby_dau6_markov_cd_straddle_and_strict_gate_factorization",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "muon-anchor-inversion-and-straddle-classification-probe",
+  "scriptFile": "muon_anchor_inversion_and_straddle_classification_probe.py",
+  "scriptHash": "3b8c800c79a2",
+  "scriptCommitSha": "80719a03fb31a87a5718702e605db5cbed1f57ce",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/muon_anchor_inversion_and_straddle_classification_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/muon_anchor_inversion_and_straddle_classification_probe.py"
+  },
+  "description": "50-dps verification of CAL-2 muon q0 inversion and 3-value hierarchy (qou-5op4), mislabelled proton_q0 anchor-stability inflation (qou-72rd), symbolic pin-stamped vs pin-dependent separation (qou-mha1), and H_3(q) C/D Markov straddle across muon/proton pins (qou-3zby, qou-dau6).",
+  "parameters": {
+    "dps": 50,
+    "q0_proton_pin": "1.1099785827513808075916690956107688798744991218736",
+    "q0_muon_codata2022_C": "1.1099785956427390466817951293800017527000655610290"
+  },
+  "data": {
+    "qou_5op4_three_muon_values": {
+      "vol_4_1": "2.0298832128193072500424051085490405718833786150606",
+      "R_B_codata2018_direct_ratio": "206.76828300000000000000000000000000000000000000000",
+      "R_A_frozen_pin_inverted_ratio": "206.76828298931504634728812002263525428674604147973",
+      "R_C_codata2022_direct_ratio": "206.76828270000000000000000000000000000000000000000",
+      "h_B": "0.099081726435698885820014342688412528468474023957772",
+      "h_A": "0.099081726438258958475928285343005734231805549297840",
+      "h_C": "0.099081726507577699949005132121918133280071608196868",
+      "q_B_codata2018": "1.1099785955541805752815940796095093779932822799587",
+      "q_A_retired_frozen_pin": "1.1099785955573347191529285741008568716655970516604",
+      "q_C_canonical_muon_2022": "1.1099785956427390466817951293800017527000655610290"
+    },
+    "qou_72rd_anchor_confusion": {
+      "q_p_proton_anchor": "1.1099785827513808075916690956107688798744991218736",
+      "gap_intra_muon_A_minus_B": "0.0000000000031541438713344944913474936723147717017037745332483",
+      "gap_intra_muon_C_minus_A": "0.000000000085404327528866555279144881034468509368621556974046",
+      "gap_cross_anchor_C_minus_p": "0.000000012891358239090126033769232872825566439155411556974",
+      "gap_cross_anchor_A_minus_p": "0.000000012805953911561259478490087991791097929786790000000",
+      "inflation_ratio_Cp_over_AB": "4087.1180152083200811593378138661624051658625664267",
+      "inflation_ratio_Ap_over_AB": "4060.0411502926012467467027687876601104110285011153",
+      "inv_hbar_sq_secant_residual": "1.32897728173e-69"
+    },
+    "qou_mha1_symbolic_payloads": {
+      "u_mu": "1.0535552171778843441720398644651602630742798350929",
+      "u_p": "1.0535552110598574641704686986707191825838829731705",
+      "a1_mu": "-73336.563915856605699071887639779803314908681470839",
+      "a1_p": "-73336.563697369629760455778166928723448435628737864",
+      "a2_mu": "1592113.5866787017105348146125738618974932107508784",
+      "a2_p": "1592113.5772558791904130746284281592531958685702120",
+      "a2_secant_residual": "1.68166406942e-65"
+    },
+    "qou_3zby_dau6_markov_straddle": {
+      "zC_mu": "0.49932033403256001688828352049175459788498166792995",
+      "zD_mu": "0.61268805063827241522088892764611066483196463136078",
+      "zC_p": "0.49932033418369445241344268025766630375194816404153",
+      "zD_p": "0.61268803714646525159582986394589924802630839154509",
+      "trC_proton_mu": "0.42494384116415472729717056001342525224626033630150",
+      "trD_proton_mu": "0.62932842431369996896355326733787143726642537907033",
+      "trC_proton_p": "0.42494384245369386058957845824075925433666113987849",
+      "trD_proton_p": "0.62932841227928229795163689598624537918704926345551",
+      "rho_DC_proton_mu": "1.4809684559484931938138541361505900589746155598269",
+      "relative_discrepancy_C_vs_D_proton_mu": "0.32476617176863141916842933158067262476528132426740",
+      "cross_ratio_residual": "1.81113581577e-71"
+    }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.1099785956427390466817951293800017527000655610290"
+}
