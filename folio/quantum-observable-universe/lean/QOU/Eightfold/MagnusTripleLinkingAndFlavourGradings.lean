@@ -315,6 +315,7 @@ def dimMixed3 (N : Nat) : Nat := N * (N + 1) * (N - 1) / 3
 def dimAlt3 (N : Nat) : Nat := binom N 3
 
 /-- **`SU(3)_f ⊂ SU(4)_f` Schur–Weyl Cube & Charm-Stratum Branching Theorem (`qou-wyy9`)**:
+    By construction of the explicit root-count and Weyl dimension definitions above:
     1. Root counts: `|R(A₂)| = 6` (`SU(3)_f`) and `|R(A₃)| = 12` (`SU(4)_f`);
     2. At `N = 4` (`SU(4)_f`), `dimSym3 4 = 20`, `dimMixed3 4 = 20`, `dimAlt3 4 = 4`, with
        Schur–Weyl cube sum `20 * 1 + 20 * 2 + 4 * 1 = 64 = 4³`;
