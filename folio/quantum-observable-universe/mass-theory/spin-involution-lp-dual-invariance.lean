@@ -9,10 +9,12 @@ involutive anti-homomorphism σ : A → A with τ ∘ σ = τ that is
 
 When the cost operator c ∈ A satisfies σ(c) = c and the
 channel set Σ ⊆ Z(A) is σ-stable, the LP-dual variable y_0*
-of the operator-selection LP is invariant under σ on the
-input:
+of the operator-selection LP satisfies
 
-  y_0*(σ(β)) = y_0*(β).
+  y_0*(σ(β)⋆) = y_0*(β)   when n_target(σ(β)⋆) = n_target(β).
+
+(Corrected 2026-11-16: σ(β⋆β) = σ(β)σ(β)⋆, so the LP isomorphism lands
+on input σ(β)⋆, not σ(β); see `net_constraint_transform`.)
 
 QOU instance — NOT available (corrected 2026-11-16).  It was claimed
 that σ = the antipode σ_i ↦ σ_i⁻¹ on H_n(R, q) with τ = Markov trace
@@ -171,12 +173,35 @@ theorem lp_isomorphism_sigma_bijective {F : FrobeniusSelfDualityForcesLPDualExtr
     intro y
     exact ⟨S.sigma y, S.involutive y⟩
 
+/-- Step 4 (net constraint).  The net-constraint row is carried by
+    `x ↦ σ(x)` from input `β` to input `γ := σ(β)⋆`, not to `σ(β)`:
+
+      τ(β⋆β · σ(x)) = τ(γ⋆γ · x),   γ⋆γ = σ(β)·σ(β)⋆.
+
+    Anti-multiplicativity gives σ(β⋆β) = σ(β)·σ(β⋆) = σ(β)·σ(β)⋆, which
+    is `γ⋆γ` for `γ = σ(β)⋆`, and is in general different from
+    σ(β)⋆σ(β).  So the LP isomorphism pairs LP(β) with LP(σ(β)⋆)
+    (given n_target(σ(β)⋆) = n_target(β)). -/
+theorem net_constraint_transform {F : FrobeniusSelfDualityForcesLPDualExtraction A R}
+    (S : SpinInvolution F) (b x : A) :
+    F.τ (S.star b * b * S.sigma x)
+      = F.τ (S.star (S.star (S.sigma b)) * S.star (S.sigma b) * x) := by
+  have hsig : S.sigma (S.star b * b) = S.sigma b * S.star (S.sigma b) := by
+    rw [S.anti_multiplicative, S.star_compatible]
+  calc F.τ (S.star b * b * S.sigma x)
+      = F.τ (S.sigma (S.sigma (S.star b * b)) * S.sigma x) := by rw [S.involutive]
+    _ = F.τ (S.sigma (x * S.sigma (S.star b * b))) := by rw [S.anti_multiplicative]
+    _ = F.τ (x * S.sigma (S.star b * b)) := S.trace_invariant _
+    _ = F.τ (S.sigma (S.star b * b) * x) := F.tau_cyclic _ _
+    _ = F.τ (S.star (S.star (S.sigma b)) * S.star (S.sigma b) * x) := by
+        rw [hsig, S.star_involutive]
+
 /-- Step 5 (main theorem).  σ-invariance of the LP-dual
     shadow price y_0*:
 
-      y_0*(σ(β)) = y_0*(β).
+      y_0*(σ(β)⋆) = y_0*(β)   (given n_target(σ(β)⋆) = n_target(β)).
 
-    Proof: Steps 1–4 establish that LP(β) and LP(σ(β)) have
+    Proof: Steps 1–4 establish that LP(β) and LP(σ(β)⋆) have
     feasible sets in σ-bijection and the same σ-invariant
     objective.  Their primal optima coincide; by strong duality
     (qou:QOU.BraidKnot.FrobeniusSelfDualityForcesLPDualExtraction
@@ -197,9 +222,13 @@ theorem spin_invariance_of_y0 {F : FrobeniusSelfDualityForcesLPDualExtraction A 
   intro x
   exact spin_invariant_cost S c sigma_c x
 
-/-- QOU instance: the Hopf antipode S on H_n(R, q) is a spin
-    involution; the Murphy central element P_ℓ = e_ℓ(J_1,…,J_n)
-    is σ-invariant.  Consequently, mirror nuclei
+/-- Formerly stated as a QOU instance (antipode on H_n(R, q), mirror
+    nuclei have equal shadow prices).  WITHDRAWN 2026-11-16: under
+    convention D the Markov trace is not antipode-invariant
+    (τ(σ_i) = q³/(q²+1) ≠ τ(σ_i⁻¹) = 1/(q(q²+1))), so `S` below is not
+    instantiated by the antipode.  What is proved is only the generic
+    cost-invariance statement, for an abstract spin involution.  The
+    original claim, for the record:  mirror nuclei
     (β_K(Z, N), β_K(N, Z)) — Markov-conjugate under S — have
     exactly equal LP-dual binding-energy shadow prices.
 
