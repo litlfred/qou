@@ -110,3 +110,6 @@ Owner choice 2026-11-15: record (this note) + Lean the exclusion (PR) + then the
 
 
 2026-11-15: PR #8005 rebase-merged into main at 395ca05e9; issue #8004 closed.
+
+
+2026-11-16: info-theory line Leaned. Issue #8112, draft PR #8113 (classical trace z^(n-cyc) at z_D(1)=1/2 gives 2^c; two-row Ocneanu weight at z_D = [n-2k+1]/[2]^n, Markov measure = spin-sector split, reading depends on G3.4; not_landauer remark).
