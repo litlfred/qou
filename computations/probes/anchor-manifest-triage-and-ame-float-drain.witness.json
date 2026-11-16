@@ -1,0 +1,73 @@
+{
+  "probeId": "anchor-manifest-triage-and-ame-float-drain",
+  "title": "50-dps verification of qou-9ugp, qou-bypn, qou-c4kv, qou-9idb, and qou-515v (anchor manifest triage, literal transcription split, and AME2020 float64 drain)",
+  "beans": [
+    "qou-9ugp",
+    "qou-bypn",
+    "qou-c4kv",
+    "qou-9idb",
+    "qou-515v"
+  ],
+  "leanModule": "QOU.MassTheory.AnchorManifestTriageAndAmeFloatDrain",
+  "scriptPath": "computations/probes/anchor_manifest_triage_and_ame_float_drain_probe.py",
+  "scriptHash": "d12440d8c84a",
+  "scriptCommitSha": "100f1be37af2187c6d27ac18b72a859b25538c6c",
+  "generatedAt": "2026-11-16T20:15:23.354969+00:00",
+  "workingPrecisionDigits": 50,
+  "allPassed": true,
+  "assertions": [
+    {
+      "id": "qou_9ugp_retired_muon_pin_partition_and_drift_split",
+      "claim": "Five-tranche AST vs grep partition satisfies 48 + 89 = 137, Q_50_DIGIT_STR resolves to q_muon on ideal_muon and q_proton otherwise, and total witness drift splits into pre-existing + re-pin shift",
+      "passed": true,
+      "liveSum": 48,
+      "proseSum": 89,
+      "totalGrep": 137,
+      "qMuonRetiredStr": "1.10997859555733471",
+      "qResolvedDiffResidual": "0.0",
+      "driftPreexisting": "1.232642885325411e-2",
+      "driftRepin": "4.201418634354e-8",
+      "pinSensitivity": "3.6175133508525254640919691648045077234010455725188"
+    },
+    {
+      "id": "qou_bypn_ideal_muon_35_stem_triage_and_ruling_law",
+      "claim": "ideal_muon manifest partitions as 7 + 15 + 13 = 35 (with 7 = 3+2+1+1 and 13 = 5+7+1), Group A shifts by qProton - qMuon on removal while Group B is invariant until routed through q_parameter, and E1/E2 ruling law holds",
+      "passed": true,
+      "justifiedCount": 7,
+      "unjustifiedCount": 13,
+      "manifestTotal": 35,
+      "symbolicResiduals": "(0, 0, 0, 0, 0)"
+    },
+    {
+      "id": "qou_c4kv_class_a_literal_split_and_frozen_straddle",
+      "claim": "Class-(a) q0 literal ledger partitions as 8 + 32 + 5 = 45 (37 remaining, ratchet 71 - 10 = 61), two-step B->A->C migration equals direct B->C, and holding tr_M(qB) frozen leaves straddle residual -sTr*(trMC - trMB)",
+      "passed": true,
+      "classATotal": 45,
+      "classARemaining": 37,
+      "ratchetAfter": 61,
+      "twoStepResidual": "0",
+      "frozenStraddleResidual": "0"
+    },
+    {
+      "id": "qou_9idb_rho_f_categorical_straddle_and_float_drain",
+      "claim": "rho_f_categorical_probe raw-float64 count expands 17 + 3*9 = 44 (delta 27), proton-to-muon tr_M_proton shift is 8.436e-8, and err_pct difference equals (rhoMuon - rhoProton) / trueRho * 100",
+      "passed": true,
+      "rawFloatBase": 17,
+      "rawFloatRerun": 44,
+      "rawFloatDelta": 27,
+      "trmProtonToMuonShift": "8.436e-8",
+      "errPctDiffResidual": "1.2446030555722283414288128107560248481180504337442e-60"
+    },
+    {
+      "id": "qou_515v_ame2020_float64_artifact_tail_propagation",
+      "claim": "ame2020.json partitions as 640 + 2918 = 3558 entries, and 6Li (Z=3, A=6) carries an exact 4e-12 keV float64 tail that propagates to 4e-15 MeV in AME_B_LI6_MEV_VALIDATION",
+      "passed": true,
+      "ameTotalEntries": 3558,
+      "ameVisibleTails": 640,
+      "li6KeVExact": "3.19939872e+4",
+      "li6KeVF64": "3.1993987199999996e+4",
+      "li6KeVTail": "3.9999999999999999999999999999999999999999999997043e-12",
+      "li6MeVTail": "3.9999999999999999999999999999999999999999999980515e-15"
+    }
+  ]
+}
