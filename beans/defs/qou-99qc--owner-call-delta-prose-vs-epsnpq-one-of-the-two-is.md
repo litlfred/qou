@@ -3675,3 +3675,6 @@ Setting: H₃, convention D, exact.
 
 ### NOTE 2026-11-16 — gluon thread stage 1 (L± in the reading-3 re-check), relayed
 Over 5,460 words of length 1–6 in {V, V⁻¹, L₊, L₋}: a word passes reading 3 iff it is a pure braid (1,778 pass, 3,682 knots fail). Adding L± changes character SIZES (L₊³ lowest char 1, L₋³ 0.5347), not pass/fail; no knot passes, so the trefoil electron is still not γγ-reachable. For this bean: L± is F₃-covariant (ε-L1), so it cannot be the n–p break, and it does not rescue nuc11's (2,1) failure. Stage 2 (H₂, V³/V⁶ + length-2 chiral electrons) pending. Adding L± to the rule stays the user's ruling.
+
+### NOTE 2026-11-16 — gluon thread stage 2 (PR #8128), relayed
+H₂ with nucleon V³/V⁶ × four chiral length-2 electrons (σ₁²=V⁻¹L₊, V⁻¹L₋, L₊V⁻¹, L₋V⁻¹): bare molecule passes reading 3 in all 16 cells; V³ bond passes everywhere. Trefoil fails reading 3 at every q, alone and in composites; its negative trace is forced by the Hecke relation (only a z=q truncation removes it). Handed-electron candidates = pure braids with nonzero writhe. No effect on the n–p break (all F₃-covariant) or on the nucleon element choice.
