@@ -1,4 +1,4 @@
-*Archived values. The corrected tower $936.994$ MeV is not the current pipeline value (the current Lean pin is $938.7228$ MeV, which gives a residual of $-0.451$ MeV). Entries are $m_e$-scaled realizations of the dimensionless proton-mass ratio (CAL-1 sets the MeV scale by fiat); absolute mass in MeV is not a framework prediction. The residual is the quantity of interest.*
+*Archived values, kept as a record. No live producer reproduces the corrected tower $936.994$ MeV. The live convention-D tower is $944.404$ MeV, and its residual is $-12\,m_e$ at the proton pin (by construction) and $-11.99955\,m_e$ at the muon pin. The Lean literal $938.7228$ MeV (residual $-0.451$ MeV) is also archived and has no producer. Entries are $m_e$-scaled realizations of the dimensionless proton-mass ratio (CAL-1 sets the MeV scale by fiat); absolute mass in MeV is not a framework prediction. The residual is the quantity of interest.*
 
 | quantity | value |
 |---|---|
