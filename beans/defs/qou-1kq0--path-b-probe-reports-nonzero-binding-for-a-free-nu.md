@@ -1,7 +1,8 @@
 ---
 # qou-1kq0
 title: 'path_b probe reports nonzero binding for a FREE nucleon: B_AME(p) = 1.27e-06 MeV'
-status: todo
+status: in-progress
+pr: 8215
 type: task
 priority: low
 tags:
@@ -82,3 +83,9 @@ moved fields drops 53 -> 42.
 **Baseline from a fresh run of the unmodified code, never from the committed
 artifact.** The committed artifact carries every drift since it was last
 regenerated, and attributes all of it to whatever you changed last.
+
+
+## Progress Update (PR #8215)
+- [x] Pure Lean 4 formalization wired into `QOU.lean` (`FreeNucleonPrecisionStraddleDefect.lean`, `TowerPartitionGrowthAndWeightSubstitution.lean`, `InterfaceScaleFloorAndBandDisjointness.lean`, `SWaveAntisymmetryIsospinGrading.lean`; 0 `sorry`, 0 vacuity advisories across all 6 static audits)
+- [x] 50-dps `mpmath` + exact integer-partition DP probe (`computations/probes/free_nucleon_straddle_h3a_band_isospin_probe.py`) and stamped witness (`computations/probes/free-nucleon-straddle-h3a-band-isospin-probe.witness.json`, 0 raw `float64` fields)
+- [ ] Awaiting adversarial review and Merge Manager merge of PR #8215 (`ready: 5d009c2bc892c5362b5b72a46c0f7f2e162d8d40`)

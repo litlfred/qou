@@ -1,7 +1,8 @@
 ---
 # qou-302y
 title: 'V0/alpha: three independent routes converge on the NN interface energy scale alpha being ~2.70x too large'
-status: todo
+status: in-progress
+pr: 8215
 type: task
 priority: normal
 tags:
@@ -83,3 +84,9 @@ question (qou-edt7) resolves, because a scale extracted against a wrong assembly
 is a fit against a wrong assembly. Working it now is the most fit-prone move on
 the board -- an O(1) number, no mechanism, no decisive test, and e = 2.71828 is
 0.7% from E_0/1.5516 = 2.698.
+
+
+## Progress Update (PR #8215)
+- [x] Pure Lean 4 formalization wired into `QOU.lean` (`FreeNucleonPrecisionStraddleDefect.lean`, `TowerPartitionGrowthAndWeightSubstitution.lean`, `InterfaceScaleFloorAndBandDisjointness.lean`, `SWaveAntisymmetryIsospinGrading.lean`; 0 `sorry`, 0 vacuity advisories across all 6 static audits)
+- [x] 50-dps `mpmath` + exact integer-partition DP probe (`computations/probes/free_nucleon_straddle_h3a_band_isospin_probe.py`) and stamped witness (`computations/probes/free-nucleon-straddle-h3a-band-isospin-probe.witness.json`, 0 raw `float64` fields)
+- [ ] Awaiting adversarial review and Merge Manager merge of PR #8215 (`ready: 5d009c2bc892c5362b5b72a46c0f7f2e162d8d40`)

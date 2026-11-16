@@ -1,7 +1,8 @@
 ---
 # qou-4g4a
 title: 'DERIVED: interface band lies strictly BETWEEN the two isospin weights -- the two NN mechanisms compute on disjoint sets'
-status: todo
+status: in-progress
+pr: 8215
 type: task
 priority: normal
 tags:
@@ -107,3 +108,9 @@ paper. Either derive the quarter-Reeb step or drop it.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-09 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## Progress Update (PR #8215)
+- [x] Pure Lean 4 formalization wired into `QOU.lean` (`FreeNucleonPrecisionStraddleDefect.lean`, `TowerPartitionGrowthAndWeightSubstitution.lean`, `InterfaceScaleFloorAndBandDisjointness.lean`, `SWaveAntisymmetryIsospinGrading.lean`; 0 `sorry`, 0 vacuity advisories across all 6 static audits)
+- [x] 50-dps `mpmath` + exact integer-partition DP probe (`computations/probes/free_nucleon_straddle_h3a_band_isospin_probe.py`) and stamped witness (`computations/probes/free-nucleon-straddle-h3a-band-isospin-probe.witness.json`, 0 raw `float64` fields)
+- [ ] Awaiting adversarial review and Merge Manager merge of PR #8215 (`ready: 5d009c2bc892c5362b5b72a46c0f7f2e162d8d40`)

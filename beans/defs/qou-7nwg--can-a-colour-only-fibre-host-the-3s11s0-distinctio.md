@@ -1,7 +1,8 @@
 ---
 # qou-7nwg
 title: can a colour-only fibre host the 3S1/1S0 distinction at all? the two-nucleon bound/unbound split is spin-tensor, and Schur-Weyl kills spinor C^2
-status: todo
+status: in-progress
+pr: 8215
 type: task
 priority: normal
 tags:
@@ -54,3 +55,9 @@ is aimed at the small effect and has no grading by the one that flips the sign.
 
 Neither alone suffices. Superseding audit:
 [`2026-08-16-interface-graded-by-t3-but-the-physics-is-graded-by-t.md`](../docs/audits/2026-08-16-interface-graded-by-t3-but-the-physics-is-graded-by-t.md).
+
+
+## Progress Update (PR #8215)
+- [x] Pure Lean 4 formalization wired into `QOU.lean` (`FreeNucleonPrecisionStraddleDefect.lean`, `TowerPartitionGrowthAndWeightSubstitution.lean`, `InterfaceScaleFloorAndBandDisjointness.lean`, `SWaveAntisymmetryIsospinGrading.lean`; 0 `sorry`, 0 vacuity advisories across all 6 static audits)
+- [x] 50-dps `mpmath` + exact integer-partition DP probe (`computations/probes/free_nucleon_straddle_h3a_band_isospin_probe.py`) and stamped witness (`computations/probes/free-nucleon-straddle-h3a-band-isospin-probe.witness.json`, 0 raw `float64` fields)
+- [ ] Awaiting adversarial review and Merge Manager merge of PR #8215 (`ready: 5d009c2bc892c5362b5b72a46c0f7f2e162d8d40`)
