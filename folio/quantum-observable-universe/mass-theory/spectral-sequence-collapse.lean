@@ -7,16 +7,19 @@ import Mathlib.Tactic.NoncommRing
 /-!
 # Cohomology vanishing collapses the GB spectral sequence
 
-For semisimple algebras over a field of characteristic zero,
-Hochschild cohomology vanishes in positive degrees (Whitehead lemma).
+For separable algebras (e.g. semisimple over a field of characteristic
+zero), Hochschild cohomology vanishes in positive degrees (Hochschild 1945,
+the associative analogue of Whitehead's lemma).
 The Iwahori-Hecke algebra `A = H_n(R, q)` is semisimple at generic q,
-so `HH^k(A) = 0` for `k ≥ 1`.  The GB filtration spectral sequence
-therefore collapses at `E_1` with all contributions concentrated in
-`HH^0 = Z(A) = ⊕_λ R · e_λ` (the centre).
+so `HH^k(A) = 0` for `k ≥ 1`.  The limit page of the GB filtration
+spectral sequence is therefore concentrated in `HH^0 = Z(A) = ⊕_λ R · e_λ`
+(the centre).  That does not imply collapse at `E_1` (corrected
+2026-11-16).
 
 The Markov trace (Frobenius integral `Int_A : A → R`) factors through
 the Wedderburn-Artin centre.  Plancherel weights `w_λ = dim_q²(λ)/[n]_q!`
-on the centre are bounded (`Σ_λ w_λ = 1`), avoiding the super-
+on the centre are bounded (but `Σ_λ w_λ(q) ≠ 1` at `q ≠ 1`; only the
+classical `w_λ(1)` sums to 1), avoiding the super-
 exponential blow-up that disrupted naive numerical tests of the
 universal residue.
 
