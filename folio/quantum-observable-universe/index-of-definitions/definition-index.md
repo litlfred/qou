@@ -428,7 +428,7 @@
 | [prop:qou-canonical-action](#prop:qou-canonical-action) | Canonical action of a quantum observable universe | Ch 2 | `qou:QOU.qou_canonical_action` |
 | [prop:braiding-induced-ordering](#prop:braiding-induced-ordering) | Canonical admissible ordering on the Hecke basis induced by braiding | Ch 2 | `qou:QOU.braiding_induced_ordering` |
 | [prop:rj-canonical-inner-product](#prop:rj-canonical-inner-product) | Canonical inner product on $R(H_r(q))$ via Schur orthogonality | Ch 14 | `qou:QOU.Archimedean.rj_canonical_inner_product` |
-| [prop:pn-averaging-uniqueness](#prop:pn-averaging-uniqueness) | Canonical p-n interface averaging uniqueness | Ch 12 | `qou:QOU.BraidKnot.pn_averaging_unique` |
+| [prop:pn-averaging-uniqueness](#prop:pn-averaging-uniqueness) | Bar-invariant p-n interface averagings | Ch 12 | `qou:QOU.BraidKnot.pn_averaging_unique` |
 | [prop:wedderburn-weight-canonical](#prop:wedderburn-weight-canonical) | Canonical q-deformed Wedderburn-block weight $\tilde w_\lambda$ and named scalings (BW, LP for all $\lambda$) | Ch 12 | `qou:QOU.BraidKnot.wedderburnWeightCanonical` |
 | [prop:gravity-spectral-prefactor](#prop:gravity-spectral-prefactor) | Catalan's $G$ as the universal-residue prefactor of the unified mass formula | Ch 15 | `qou:QOU.Observations.gravity_spectral_prefactor` |
 | [prop:qbeta-delta-tau-surrogate-taylor-coefficients](#prop:qbeta-delta-tau-surrogate-taylor-coefficients) | Catalogue: Taylor coefficients of $\Delta\mathrm{tr}_M^{\text{surr}}$ at $q = 1$, orders 0..7 | Ch 7 | `qou:QOU.BraidKnot.delta_tau_M_surrogate_taylor_witness` |
