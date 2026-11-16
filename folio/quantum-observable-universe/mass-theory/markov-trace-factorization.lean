@@ -90,25 +90,20 @@ theorem asymptoticRatio_at_q :
 -- Ref: [leitner2026] §6/markov-trace-factorization
 def crossingPositive : ℝ × ℝ := (1, 0)
 
-/-- Negative crossing (neutron-neutron): c = q², d = -q·skein_amp.
-
-    Intended domain `0 < q` (the `Real.sqrt q` term is the physical
-    `q^{1/2}`); for `q ≤ 0` the value is formal only. The substrate
-    evaluates at `q₀ ≈ 1.11 > 0`, so the constraint holds in use. -/
+/-- Negative crossing (neutron-neutron): c = 1, d = -(q - q⁻¹), i.e.
+    `σ_i - (q - q⁻¹) = σ_i⁻¹` by the Hecke relation. Matches the (c, d)
+    table of this block, `nucleon_typed_d` in `inverse-markov-qvalues.py`
+    and `crossingNN` in `generator-volume-decomposition.lean`. (Corrected
+    2026-11-16 from a convention-C form `(q², -q(√q - 1/√q))`.) -/
 -- Ref: [leitner2026] §6/markov-trace-factorization
 noncomputable def crossingNegative (q : ℝ) : ℝ × ℝ :=
-  let q_half := Real.sqrt q
-  (q^2, -q * (q_half - 1 / q_half))
+  (1, -(q - 1 / q))
 
-/-- Mixed crossing (proton-neutron): average of positive and negative.
-
-    Intended domain `0 < q` (the `Real.sqrt q` term is the physical
-    `q^{1/2}`); for `q ≤ 0` the value is formal only. The substrate
-    evaluates at `q₀ ≈ 1.11 > 0`, so the constraint holds in use. -/
+/-- Mixed crossing (proton-neutron): c = 1, d = -(q - q⁻¹)/2, the average
+    of the positive and negative crossings. -/
 -- Ref: [leitner2026] §6/markov-trace-factorization
 noncomputable def crossingMixed (q : ℝ) : ℝ × ℝ :=
-  let q_half := Real.sqrt q
-  ((1 + q^2) / 2, -q * (q_half - 1 / q_half) / 2)
+  (1, -(q - 1 / q) / 2)
 
 -- ═══════════════════════════════════════════════════════════════════
 -- The factorization chain: R[B_A] → H_A(q) → Π(a_i σ_i + b_i) → R

@@ -5,7 +5,7 @@ export default theorem({
     {
       kind: "caveat",
       date: "2026-11-16",
-      body: "The statement said the Markov trace of the Gröbner–Shirshov-reduced nuclear word factors exactly as a product of vertex volumes. That needs the word grouped by generator in increasing order; Hecke reduction does not regroup an interleaved word (for $\\sigma_1\\sigma_2\\sigma_1$ the trace is $hz^2 + z$, not $z^3$). Hypothesis added. The factors are rational in $q$, not polynomials. Lean: the module and `markovZ` docstrings described the excised convention-C $z$ while the body computes convention D; corrected. Still open for housekeeping: the Lean `crossingNegative` / `crossingMixed` use $c = q^2$, $d = -q(q^{1/2} - q^{-1/2})$, which does not match the $(c, d)$ table in this block ($c = 1$, $d = -(q - q^{-1})$ or $-\\tfrac12(q - q^{-1})$).",
+      body: "The statement said the Markov trace of the Gröbner–Shirshov-reduced nuclear word factors exactly as a product of vertex volumes. That needs the word grouped by generator in increasing order; Hecke reduction does not regroup an interleaved word (for $\\sigma_1\\sigma_2\\sigma_1$ the trace is $hz^2 + z$, not $z^3$). Hypothesis added. The factors are rational in $q$, not polynomials. Lean: the module and `markovZ` docstrings described the excised convention-C $z$ while the body computes convention D; corrected. The Lean `crossingNegative` / `crossingMixed` used a convention-C form $(q^2, -q(q^{1/2} - q^{-1/2}))$; corrected to the table here, $c = 1$, $d = -(q - q^{-1})$ and $-\\tfrac12(q - q^{-1})$, matching the compute and `generator-volume-decomposition.lean`. Neither def has a consumer, so nothing downstream moves.",
     },
     {
       kind: "refined-framing",
