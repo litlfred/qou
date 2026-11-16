@@ -1,0 +1,68 @@
+{
+  "probeId": "float64-engine-reachability-and-gram-inverse",
+  "title": "50-dps verification of qou-09lg, qou-1fhe, qou-1lr8, qou-47sx, and qou-4fj6 (float64 argument binding, Markov ratio invariance, H_9 reachability, convention-D caller sweep, and H_3 Gram inverse float jump)",
+  "beans": [
+    "qou-09lg",
+    "qou-1fhe",
+    "qou-1lr8",
+    "qou-47sx",
+    "qou-4fj6"
+  ],
+  "leanModule": "QOU.MassTheory.Float64EngineReachabilityAndGramInverse",
+  "scriptPath": "computations/probes/float64_engine_reachability_and_gram_inverse_probe.py",
+  "scriptHash": "c85a5086f0ea",
+  "scriptCommitSha": "2ed61761fb447e7b912df4f3ef73e8603236969a",
+  "generatedAt": "2026-11-16T20:27:53.553213+00:00",
+  "workingPrecisionDigits": 50,
+  "allPassed": true,
+  "assertions": [
+    {
+      "id": "qou_09lg_dim_q_two_one_f64_vs_mpf_binding_error",
+      "claim": "dim_q((2,1), q) = q + 1/q satisfies dim_q(qMpf) - dim_q(qF64) = (qMpf - qF64)*(qMpf*qF64 - 1)/(qMpf*qF64) across the 8 consumer modules",
+      "passed": true,
+      "consumerModules": 8,
+      "dimQMpf": "2.0108968669476878118700235906147957352577322348537",
+      "dimQF64": "2.0108968667071222983226296058360736087277099757726",
+      "bindingDifference": "2.4056551354739398477872212653002225908111052963674e-10",
+      "identityResidual": "1.954150105251509295554215375073941794732766308315e-61"
+    },
+    {
+      "id": "qou_1fhe_markov_interface_ratio_invariance_and_ylambda_split",
+      "claim": "Common weight scaling yScale cancels identically in tau_M(FULL)/tau_M(CONSTIT) while shifting individual traces by (yScale - 1)*tau, and y_lambda splits 47 + 223 = 270 (significant vs numerical zero)",
+      "passed": true,
+      "yLambdaSignificant": 47,
+      "yLambdaNumericalZero": 223,
+      "yLambdaTotal": 270,
+      "ratioInvarianceResidual": "0.0"
+    },
+    {
+      "id": "qou_1lr8_h9_extract_totals_and_branching_unreachability",
+      "claim": "Four H_9 extracts total 22750+22738+17559+17531 = 80578 raw float64 fields (drain 487597 - 127388 = 360209), n = 3*A separates A=2 (n=6) from H_9 (n=9), and cubic QR scaling holds",
+      "passed": true,
+      "h9ExtractFloatTotal": 80578,
+      "backlogDrained": 360209,
+      "nStrandsA2": 6,
+      "nStrandsA3": 9,
+      "qrCubicScalingRatio": "1.48613811492919921875e+5"
+    },
+    {
+      "id": "qou_47sx_convention_d_caller_partition_and_isolated_delta",
+      "claim": "AST taint caller sweep partitions 2+2+1+15 = 20 live modules (12 producers owning 12+5 = 17 witnesses, disposed as 4+1+1+3+1+2 = 12), and two-run isolated delta cancels baseline drift",
+      "passed": true,
+      "liveModulesReachingSymbol": 20,
+      "ownedWitnessFiles": 17,
+      "witnessOwningProducers": 12,
+      "volProtonConventionDelta": "6.3048e-2",
+      "isolatedDeltaResidual": "0.0"
+    },
+    {
+      "id": "qou_4fj6_gram_inverse_h3_raw_float_jump_and_det_law",
+      "claim": "Enabling the 6x6 gram_inverse_H3 matrix plus 1 condition number increases raw float64 count by 6^2 + 1 = 37 (445 -> 482), and 2x2 Gram inverse satisfies a*(d/det) + b*(-b/det) = 1",
+      "passed": true,
+      "gramBaseFloats": 445,
+      "gramAddedFloats": 37,
+      "gramTotalFloats": 482,
+      "symbolicGramInvResidual": "0"
+    }
+  ]
+}
