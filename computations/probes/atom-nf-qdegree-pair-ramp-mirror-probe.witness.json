@@ -1,0 +1,221 @@
+{
+  "probeId": "atom-nf-qdegree-pair-ramp-mirror-probe",
+  "beans": [
+    "qou-07vh",
+    "qou-0pzi",
+    "qou-1pig",
+    "qou-4x8r",
+    "qou-6k8b"
+  ],
+  "parentBean": "qou-v2om",
+  "engine": "mpmath+exact-tl3-laurent",
+  "engineVersion": "1.3.0",
+  "dps": "50",
+  "q0Anchor": "proton",
+  "q0Value50": "1.1099785827513808075916690956107688798744991218736",
+  "computedAt": "2026-11-16T21:16:34.473801+00:00",
+  "commitSha": "9e16e36b52d62bbd5b07d14050d5b83b1a8cad0c",
+  "scriptFile": "atom_nf_qdegree_pair_ramp_mirror_probe.py",
+  "scriptPath": "computations/probes/atom_nf_qdegree_pair_ramp_mirror_probe.py",
+  "scriptHash": "34b7ccaf29eb",
+  "scriptCommitSha": "9e16e36b52d62bbd5b07d14050d5b83b1a8cad0c",
+  "allPassed": true,
+  "assertions": {
+    "qou_07vh_chain_sparse_three_basis_slots": true,
+    "qou_07vh_all_pairs_populates_all_six_slots_for_A_ge_3": true,
+    "qou_0pzi_unsigned_bond_factors_all_positive": true,
+    "qou_0pzi_writhe_parity_sign_gives_pn_bound_pp_nn_unbound": true,
+    "qou_1pig_hydrogen_chain_strictly_linear_monotone_in_N": true,
+    "qou_4x8r_conv_d_is_27_4_pct_and_conv_c_is_74_9_pct": true,
+    "qou_6k8b_mirror_diff_equals_Bnn_minus_Bpp_and_weak_negligible": true
+  },
+  "results": {
+    "qou_07vh_atom_nf_qdegree_vs_A": [
+      {
+        "nuclide": "2H",
+        "Z": "1",
+        "N": "1",
+        "A": "2",
+        "chainBondCount": "1",
+        "allPairsBondCount": "1",
+        "chainBasisQDegrees": {
+          "1": "-1",
+          "e0": "-1",
+          "e1": "-1",
+          "e0e1": "-1",
+          "e1e0": "-1",
+          "e0e1e0": "0"
+        },
+        "allPairsBasisQDegrees": {
+          "1": "0",
+          "e0": "1",
+          "e1": "0",
+          "e0e1": "0",
+          "e1e0": "0",
+          "e0e1e0": "0"
+        }
+      },
+      {
+        "nuclide": "3H",
+        "Z": "1",
+        "N": "2",
+        "A": "3",
+        "chainBondCount": "2",
+        "allPairsBondCount": "3",
+        "chainBasisQDegrees": {
+          "1": "-1",
+          "e0": "-1",
+          "e1": "0",
+          "e0e1": "-1",
+          "e1e0": "-1",
+          "e0e1e0": "0"
+        },
+        "allPairsBasisQDegrees": {
+          "1": "0",
+          "e0": "2",
+          "e1": "3",
+          "e0e1": "3",
+          "e1e0": "1",
+          "e0e1e0": "4"
+        }
+      },
+      {
+        "nuclide": "3He",
+        "Z": "2",
+        "N": "1",
+        "A": "3",
+        "chainBondCount": "2",
+        "allPairsBondCount": "3",
+        "chainBasisQDegrees": {
+          "1": "-1",
+          "e0": "0",
+          "e1": "-1",
+          "e0e1": "-1",
+          "e1e0": "-1",
+          "e0e1e0": "0"
+        },
+        "allPairsBasisQDegrees": {
+          "1": "0",
+          "e0": "3",
+          "e1": "2",
+          "e0e1": "3",
+          "e1e0": "1",
+          "e0e1e0": "4"
+        }
+      },
+      {
+        "nuclide": "4He",
+        "Z": "2",
+        "N": "2",
+        "A": "4",
+        "chainBondCount": "3",
+        "allPairsBondCount": "6",
+        "chainBasisQDegrees": {
+          "1": "-1",
+          "e0": "0",
+          "e1": "0",
+          "e0e1": "-1",
+          "e1e0": "-1",
+          "e0e1e0": "0"
+        },
+        "allPairsBasisQDegrees": {
+          "1": "0",
+          "e0": "6",
+          "e1": "6",
+          "e0e1": "7",
+          "e1e0": "4",
+          "e0e1e0": "11"
+        }
+      },
+      {
+        "nuclide": "5He",
+        "Z": "2",
+        "N": "3",
+        "A": "5",
+        "chainBondCount": "4",
+        "allPairsBondCount": "10",
+        "chainBasisQDegrees": {
+          "1": "-1",
+          "e0": "0",
+          "e1": "1",
+          "e0e1": "-1",
+          "e1e0": "-1",
+          "e0e1e0": "0"
+        },
+        "allPairsBasisQDegrees": {
+          "1": "0",
+          "e0": "9",
+          "e1": "11",
+          "e0e1": "12",
+          "e1e0": "7",
+          "e0e1e0": "19"
+        }
+      },
+      {
+        "nuclide": "6Li",
+        "Z": "3",
+        "N": "3",
+        "A": "6",
+        "chainBondCount": "5",
+        "allPairsBondCount": "15",
+        "chainBasisQDegrees": {
+          "1": "-1",
+          "e0": "1",
+          "e1": "1",
+          "e0e1": "-1",
+          "e1e0": "-1",
+          "e0e1e0": "0"
+        },
+        "allPairsBasisQDegrees": {
+          "1": "0",
+          "e0": "16",
+          "e1": "15",
+          "e0e1": "18",
+          "e1e0": "12",
+          "e0e1e0": "30"
+        }
+      }
+    ],
+    "qou_0pzi_two_nucleon_writhe_parity": {
+      "x_pp_q0_minus_6": "0.53470273505649069374165349300044788090042675223258",
+      "x_pn_q0_minus_7": "0.48172347049353509367657286553798850461894733440574",
+      "x_nn_q0_minus_8": "0.43399348237823990769372354721324850743465459028496",
+      "det_pp": "0.46529726494350930625834650699955211909957324776742",
+      "det_pn": "0.51827652950646490632342713446201149538105266559426",
+      "det_nn": "0.56600651762176009230627645278675149256534540971504",
+      "f_pp_x_one_minus_x": "0.24879572017959901184704328226174891549462005417607",
+      "f_pn_x_one_minus_x": "0.249665968469199317647688499858038472401760513349",
+      "f_nn_x_one_minus_x": "0.24564313963144827440794277584015376544436651487678",
+      "writheParitySigns": {
+        "pp": "-1",
+        "pn": "1",
+        "nn": "-1"
+      }
+    },
+    "qou_1pig_pair_layer_linear_ramp": {
+      "B_pp_mev": "-2.238929",
+      "B_pn_mev": "2.839887",
+      "B_nn_mev": "3.377581",
+      "hydrogenChainPairLayerMeV": {
+        "2H": "2.839887",
+        "3H": "6.217468",
+        "4H": "9.595049",
+        "5H": "12.97263"
+      },
+      "linearSlopePerNeutronMeV": "3.377581"
+    },
+    "qou_4x8r_deuteron_convention_c_vs_d": {
+      "B_exp_2H_mev": "2.224575",
+      "B_2H_convention_D_mev": "2.83392",
+      "B_2H_convention_C_mev": "3.890212",
+      "overbindingPctConventionD": "27.391524223728127844644482653990087994335996763427",
+      "overbindingPctConventionC": "74.874391737747659665329332569142420462335502286954"
+    },
+    "qou_6k8b_mirror_splitting_and_weak_scale": {
+      "B_exp_3H_minus_3He_mev": "0.763755",
+      "chainMirrorDiffOppositeSignsMeV": "5.61651",
+      "chainMirrorDiffSameNegativeSignsMeV": "-1.138652",
+      "weakScaleGFmPi3MeV": "0.0000003"
+    }
+  }
+}
