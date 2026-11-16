@@ -1,0 +1,64 @@
+{
+  "probe": "qgevrey_cauchy_and_fw_ggm_stokes_probe.py",
+  "beans": [
+    "qou-qb99",
+    "qou-ratf",
+    "qou-ri9w",
+    "qou-rsrg",
+    "qou-u7hx"
+  ],
+  "parentBean": "qou-frzo",
+  "leanModule": "QOU.MassTheory.QGevreyCauchyAndFWGGMStokes",
+  "scriptHash": "7ed9e0953101",
+  "scriptCommitSha": "8ee650e779786706f931cf4f825d18b2810370eb",
+  "generatedAt": "2026-11-16T21:15:35.474770+00:00",
+  "precisionDps": "80",
+  "allPassed": true,
+  "assertions": [
+    {
+      "id": "qou-qb99-qgevrey-cauchy-convolution-deficit",
+      "bean": "qou-qb99",
+      "description": "Triangular q-Gevrey exponent at Cauchy index i+j exceeds the sum at i and j by s*i*j >= 0",
+      "testedOrderS": "1/2",
+      "sampleDeficitAt3And4": "6",
+      "passed": true
+    },
+    {
+      "id": "qou-ratf-cosh-even-sinh-odd-and-rotor-casimir",
+      "bean": "qou-ratf",
+      "description": "Bilateral crossing observable decomposes into cosh-even and sinh-odd parts with (even^2 - odd^2) = fPlus*fMinus and (J+1/2)^2 - 1/4 = J(J+1)",
+      "coshEvenAt0p35": "1.061877819155985341312608180485375450511",
+      "sinhOddAt0p35": "0.3571897294372719069577874814544969823262",
+      "maxReconstructionError": "1.05421979432e-81",
+      "passed": true
+    },
+    {
+      "id": "qou-ri9w-fw-ggm-coupling-defect-and-median-borel",
+      "bean": "qou-ri9w",
+      "description": "Both 4_1 (1,2) and 5_2 (2,3) have unit FW coupling defect B-A = 1, and twice the median-Borel sum equals (2 + m0)*S_-",
+      "defect41": "1",
+      "defect52": "1",
+      "twiceMedianBorelSample": "7",
+      "stokesDiscontinuitySample": "21/5",
+      "passed": true
+    },
+    {
+      "id": "qou-rsrg-three-saddle-coherent-sum-rule-check",
+      "bean": "qou-rsrg",
+      "description": "For N=3 saddles with per-saddle value S(pi) = -pi^2/2, the coherent sum is S(0) = -3*pi^2/2 with excess S(0)-S(pi) = -pi^2",
+      "sZeroPiSqCoeff": "-3/2",
+      "excessPiSqCoeff": "-1",
+      "sZero80Dps": "-14.80440660163403792825173649981422670297",
+      "passed": true
+    },
+    {
+      "id": "qou-u7hx-sibling-normalization-defect-and-transitivity",
+      "bean": "qou-u7hx",
+      "description": "Cross-multiplied sibling normalization defect vA*zB - vB*zA vanishes iff normalized values agree, and satisfies zC*def(A,B) + zA*def(B,C) = zB*def(A,C)",
+      "normalizedValue": "3/2",
+      "defectAB": "0",
+      "transitiveCheckDiff": "0",
+      "passed": true
+    }
+  ]
+}
