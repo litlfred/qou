@@ -1,0 +1,116 @@
+{
+  "probeId": "free-nucleon-straddle-h3a-band-isospin-probe",
+  "beans": [
+    "qou-1kq0",
+    "qou-2tuv",
+    "qou-302y",
+    "qou-4g4a",
+    "qou-7nwg"
+  ],
+  "parentBean": "qou-v2om",
+  "engine": "mpmath+exact-pentagonal-partition-dp",
+  "engineVersion": "1.3.0",
+  "dps": "50",
+  "q0Anchor": "proton",
+  "q0Value50": "1.1099785827513808075916690956107688798744991218736",
+  "computedAt": "2026-11-16T21:58:55.587302+00:00",
+  "commitSha": "d65caaa3c0a9eb08934dcb137f4b45a6c50d2933",
+  "scriptFile": "free_nucleon_straddle_h3a_band_isospin_probe.py",
+  "scriptPath": "computations/probes/free_nucleon_straddle_h3a_band_isospin_probe.py",
+  "scriptHash": "47b69b6a41a2",
+  "scriptCommitSha": "d65caaa3c0a9eb08934dcb137f4b45a6c50d2933",
+  "allPassed": true,
+  "assertions": {
+    "qou_1kq0_free_proton_straddle_is_1_27e_6_mev_and_matched_is_zero": true,
+    "qou_2tuv_partition_3a_table_and_deuteron_8_84x_amplification": true,
+    "qou_302y_two_channel_floor_5_803_mev_2_70x_and_hbar_q_rung": true,
+    "qou_4g4a_convention_d_band_strictly_between_mu_minus_and_mu_plus": true,
+    "qou_7nwg_isospin_t_flips_scattering_sign_while_t3_modulates_unbound": true
+  },
+  "results": {
+    "qou_1kq0_free_proton_precision_straddle": {
+      "constituentSumExactMeV": "938.78308838069",
+      "mAmeProtonTruncatedLiteralMeV": "938.78308711",
+      "spuriousFreeProtonBindingMeV": "0.0000012706899999999999999999999999999999999999993684344",
+      "matchedPrecisionFreeProtonBindingMeV": "0.0",
+      "spuriousRelativeErrorPct": "-100.0"
+    },
+    "qou_2tuv_h3_vs_h3a_partition_growth": {
+      "partitionCounts3A": {
+        "1": {
+          "threeA": "3",
+          "partitionCount": "3",
+          "tractableUnder20000": true
+        },
+        "2": {
+          "threeA": "6",
+          "partitionCount": "11",
+          "tractableUnder20000": true
+        },
+        "3": {
+          "threeA": "9",
+          "partitionCount": "30",
+          "tractableUnder20000": true
+        },
+        "4": {
+          "threeA": "12",
+          "partitionCount": "77",
+          "tractableUnder20000": true
+        },
+        "12": {
+          "threeA": "36",
+          "partitionCount": "17977",
+          "tractableUnder20000": true
+        },
+        "20": {
+          "threeA": "60",
+          "partitionCount": "966467",
+          "tractableUnder20000": false
+        },
+        "40": {
+          "threeA": "120",
+          "partitionCount": "1844349560",
+          "tractableUnder20000": false
+        },
+        "418": {
+          "threeA": "1254",
+          "partitionCount": "319707938216222310789920115620477565",
+          "tractableUnder20000": false
+        }
+      },
+      "deuteronSumLnVLegacyH3": "-1.1754639415221841672946836104788344093952722284684",
+      "deuteronSumLnVProperH6": "-10.421917578170224464889562206522142773971892391705",
+      "deuteronProperOverLegacyRatio": "8.8662163168307913925457783887262643442803414393523"
+    },
+    "qou_302y_nn_interface_scale_floor": {
+      "alphaE0MeV": "4.1859813632944758969450621587590084101434868908788",
+      "twoChannelFloorAlphaLn4MeV": "5.8030023596880842144602657979364365334515867093722",
+      "natureTwoChannelMeV": "2.151",
+      "floorOverNatureRatio": "2.6978160668005970313622807056887199132736339885505",
+      "hbarQ": "0.099081716044258507839177117518906063985258373389463",
+      "invHbarQSquared": "101.86217860459721308033002721470054176556805242764"
+    },
+    "qou_4g4a_interface_band_disjointness": {
+      "hStep": "0.20906029879563931543084621312967494385975749526306",
+      "muMinusConventionD": "0.24729788674803459840622064837976386216982440112509",
+      "zFloorConventionD": "0.40362773835082593616915378687032505614024250473694",
+      "zCeilConventionD": "0.6126880371464652516",
+      "muPlusConventionD": "0.75270211325196540159377935162023613783017559887491",
+      "belowFloorPctConventionD": "63.21519915051751662190384686285928865398232651002",
+      "aboveCeilPctConventionD": "22.852425315434923002883031321500607453746143450855",
+      "q2Plus1MinusQ5Margin": "0.54715685725054361119089519420109963608824237981349",
+      "zFloorConventionC": "0.29025970120436068456915378687032505614024250473694",
+      "muMinusConventionC": "0.303675",
+      "zCeilConventionC": "0.49932",
+      "muPlusConventionC": "0.696325"
+    },
+    "qou_7nwg_s_wave_isospin_vs_t3_grading": {
+      "aNpT0SingletIsospinFm": "5.419",
+      "aPpT1TripletIsospinFm": "-17.3",
+      "aNnT1TripletIsospinFm": "-18.9",
+      "aNpT1TripletIsospinFm": "-23.74",
+      "deltaACibWithinT1Fm": "6.44",
+      "deltaAIsospinFlipFm": "29.159"
+    }
+  }
+}
