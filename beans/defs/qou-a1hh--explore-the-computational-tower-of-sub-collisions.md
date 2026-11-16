@@ -149,3 +149,5 @@ L± added: pass ⟺ pure (5460 words). H₂ with chiral electrons σ₁², V⁻�
 - Owner, 08:16Z: "bound electrons q power shifted". Measured: the handed electrons σ₁², L₊V⁻¹ (χ₃ = q₀²) and V⁻¹L₋, L₋V⁻¹ (q₀⁻²) against free V³ (χ₃ = 1); χ₍₂,₁₎ = 2.04371 for all four.
 - Owner, 08:20Z: no virtual photons in qou. Card, 08:21Z: option A, the q^{±2} shift. Read as one prior entangled γγ pair (L term × V⁻¹) across p|e. Stage 4 pre-registered (3f6f5a66d4b), running.
 - STANDBY backups (owner, 08:22Z): (i) put the q² on the bond letter, with the electron staying V³; (ii) unseen emitters at the exceptional divisor = the conjugation-invariant reading.
+
+**2026-11-16 (PR #8128, 04e78f0 / 8519534).** Connected-part principle formalised: `connected`, `connected_eq_zero_of_split` (sorry-free) in observations/virtual-subword.lean. Borromean three-party Jones cumulant exact: log(1 − (t−1)⁴(t²+t+1)/(t²(t+1)²)) ≈ −¾(log t)⁴, pairs 0. Stage 4: entangled pair admissible but reading 3 does not discriminate it from a self-twist or no pair (scope a). Stage 5 (6-node ring) pre-registered, not run. Open: t↔q dictionary; whether φ is b₃.
