@@ -59,7 +59,9 @@ namespace QOU.Archimedean
     Imported from `QOU.Archimedean.BlochWignerUnitCircle` (bean `qou-tc8y`). -/
 -- Ref: [zagier1986], [bloch2000]
 @[simp] theorem BlochWigner_unit_circle_eq_Cl_2 (θ : ℝ) :
-    BlochWigner_unit_circle θ = Cl_2 θ := rfl
+    BlochWigner_unit_circle θ = Cl_2 θ := by
+  unfold BlochWigner_unit_circle
+  ring
 
 /-- **Boundary lemma:** `D(e^{i · 0}) = D(1) = 0`. -/
 @[simp] theorem BlochWigner_unit_circle_zero :
