@@ -154,6 +154,7 @@ import QOU.QuantumObservableUniverse.SelfDualityDegree
 import QOU.StandardModel.ColourStabilizerAction
 import QOU.StandardModel.ColourBridge
 import QOU.StandardModel.ThetaQcdFramingCp
+import QOU.StandardModel.ThreeStrandColourTowerCP
 import QOU.StandardModel.SecondCrossingInvariant
 -- Information content of the eightfold-way hypercharge battery: the RH half
 -- is entailed by Q (GMN at I3=0 pins Y uniquely, so it discriminates nothing);
