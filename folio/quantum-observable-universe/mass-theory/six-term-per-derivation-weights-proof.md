@@ -29,8 +29,10 @@ the per-derivation reading above:
   q-dilogarithm form.
 - *$T_4$ binding (Frobenius co-Casimir):* the universal
   [Frobenius co-Casimir](#thm:frobenius-codim-universal)
-  $T_4 = m_e \cdot \tau(C_{\dim_q})$ has $m_e$ baked into the
-  formula.  Empirically the bound–free differential vanishes for
+  $T_4 = m_e \cdot \sum_{\lambda \vdash 3A} 1/\dim_q(\lambda)$, a
+  formal sum over all partitions, has $m_e$ baked into the formula.
+  Under convention D this is not $m_e \cdot \tau(C_{\dim_q})$, since
+  $\tau(p_\lambda) = 0$ on every block with three or more rows.  Empirically the bound–free differential vanishes for
   the atomic-braid $\tau$, so $T_4$ contributes no binding at
   this stage (open question — see remarks).
 - *$T_5$ binding (chirality):* per
