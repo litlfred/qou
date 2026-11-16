@@ -1,13 +1,13 @@
 ---
 # qou-15sj
 title: 'GAP: alpha_em [10]_q linchpin — delta_q(T_3,5)=q^10-q^-10 asserted not derived'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-22T20:56:46Z
-updated_at: 2026-10-04T15:19:42Z
+updated_at: 2026-11-16T19:56:51Z
 parent: qou-3l2l
 ---
 
@@ -22,3 +22,12 @@ NEXT: produce the explicit 3-strand H_3 Rosso-Jones/Markov-trace sum over V_(3),
 Also flagged (finding 2): meson EM factor (3q^2-1)/(2q^2) 'three generations = T(2,3),T(2,5),T(2,7)' uses genus-1/2/3 selection, INCONSISTENT with the force-carrier genus-4 rule it cites.
 
 Corpus already honest on the -467.6 ppb structural gap (beans qou-gwio, qou-93ap; PR #5361). No new over-claim found live on main.
+
+## Round 50 Formalization & 50-dps Witness (PR #8177)
+- **Lean 4 Module (`0 sorry`, `0 axiom`, `0 vacuity`):** `folio/quantum-observable-universe/lean/QOU/AlphaEM/ChernSimonsTowerAndT35Linchpin.lean`
+  - `t35_weighted_trace_eq_binomial_iff`: the 3-strand $H_3(q)$ weighted trace on $T(3,5) = (\sigma_1 \sigma_2)^5$ collapses to $q^{10} - q^{-10} = (q - q^{-1})[10]_q$ if and only if $(w_{(3)}, w_{(2,1)}, w_{(1,1,1)}) = (1, 0, -1)$ (pure exterior-power alternating character, $w_{(2,1)} = 0$).
+  - `t35_conventionD_rowCap_excludes_binomial`: under Convention-D's $N=2$ row cap ($w_{(1,1,1)} = 0$), the $q^{-10}$ coefficient vanishes so the trace never equals $q^{10} - q^{-10}$.
+  - `forceCarrier_vs_mesonGeneration_genus`: $2g(T(2,9)) = 2g(T(3,5)) = 8$ ($g = 4$, coinciding with the 8-dimensional $\mathfrak{su}(3)$ adjoint), whereas the 2-strand meson knots $T(2,3), T(2,5), T(2,7)$ have $2g \in \{2, 4, 6\}$ ($g \in \{1, 2, 3\}$).
+- **50-dps Witness:** `computations/probes/round50-zeta4-bridge-and-alpha-em-cs-tower.witness.json` (`scriptHash: e7bf4a93b887`, `scriptCommitSha: cf283b8e199f4643fb9e0259ec0a2702096bdd9b`).
+- **PR:** `litlfred/qou#8177` (`https://github.com/litlfred/qou/pull/8177`, head SHA `3fdbeeb87a6b1821ff8d57a95f95d4d20cf72628`).
+- **Status:** Kept at `status: in-progress` per reviewer-separated closure discipline.

@@ -1,13 +1,13 @@
 ---
 # qou-gwio
 title: 'GAP: alpha_em structural residual -468 ppb survives exact resummation — what is missing from the CS tower''s STRUCTURE (not its order)?'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-07T01:00:00Z
-updated_at: 2026-10-04T15:19:43Z
+updated_at: 2026-11-16T19:56:51Z
 parent: qou-3l2l
 ---
 
@@ -68,3 +68,11 @@ reported, not discarded.
 Note the residual is ~468 ppb while the L2 target for a 100× pass on a
 CODATA-precision observable is far tighter — so this is not a near-miss to
 be polished, it is a real structural gap.
+
+## Round 50 Formalization & 50-dps Witness (PR #8177)
+- **Lean 4 Module (`0 sorry`, `0 axiom`, `0 vacuity`):** `folio/quantum-observable-universe/lean/QOU/AlphaEM/ChernSimonsTowerAndT35Linchpin.lean`
+  - `csTower_order2_tail_identity` and `csTower_order3_tail_identity`: exact closed-form geometric tail identities $\text{full} - S_2 = -a_0 \varepsilon^3 / (1 + \varepsilon)$ ($+11.063\text{ ppb}$) and $\text{full} - S_3 = a_0 \varepsilon^4 / (1 + \varepsilon)$ ($+0.030\text{ ppb}$).
+  - `csTower_tail_lt_30_of_ge_one`: for $\varepsilon = 1/366 > 0$, the geometric tail magnitude past order 2 is strictly below $30\text{ ppb}$, and the $-467.636\text{ ppb}$ CODATA residual (`csTower_structural_defect_decomposition`) is an order-independent structural defect of the single-ratio $\varepsilon = \kappa/([9]_q[10]_q)$ ansatz.
+- **50-dps Witness:** `computations/probes/round50-zeta4-bridge-and-alpha-em-cs-tower.witness.json` (`scriptHash: e7bf4a93b887`, `scriptCommitSha: cf283b8e199f4643fb9e0259ec0a2702096bdd9b`).
+- **PR:** `litlfred/qou#8177` (`https://github.com/litlfred/qou/pull/8177`, head SHA `3fdbeeb87a6b1821ff8d57a95f95d4d20cf72628`).
+- **Status:** Kept at `status: in-progress` per reviewer-separated closure discipline.

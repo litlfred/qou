@@ -1,7 +1,7 @@
 ---
 # qou-gbsa
 title: 'GAP: alpha_EM Chern-Simons kappa — no parameter-free q-deformed Gram pairing G_q reproduces 1/alpha (ChernSimonsCorrectionConjecture carries G_q as a parameter, no instance)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - lean
 created_at: 2026-09-03T09:08:30Z
-updated_at: 2026-10-04T15:19:42Z
+updated_at: 2026-11-16T19:56:51Z
 parent: qou-3l2l
 ---
 
@@ -20,3 +20,10 @@ OPEN: which q-deformation of the classical pairing is G_q. The .md enumerates 16
 NEXT HONEST STEP: a structural argument selecting the q-deformed pairing (or a different pairing — the .md's surviving explanation is "wrong decomposition"), computed end-to-end in exact arithmetic. Never fit κ.
 
 Note (2026-09-03, session qou-ggdk): computations/alpha_em_lean_vs_compute_divergence_probe.py still re-implements the SUPERSEDED alphaEmInvCorrected / gluonOctetKappa = 8q and describes them as 'exactly as the .lean declares' — false since em-coupling-chern-simons.lean now states the .md's resummed form with the Gram ratio as a class parameter (this branch). Numbers unaffected; the wording is stale. Comment-only producer edits drift scriptHash on any witness it writes, so fix it together with the next substantive change to that probe, not as a drive-by.
+
+## Round 50 Formalization & 50-dps Witness (PR #8177)
+- **Lean 4 Module (`0 sorry`, `0 axiom`, `0 vacuity`):** `folio/quantum-observable-universe/lean/QOU/AlphaEM/ChernSimonsTowerAndT35Linchpin.lean`
+  - `qGram16_all_outside_codata_window`: proves across all 16 parameter-free $[m]_q$-substitution readings of the Seifert pairing matrix $G = \begin{pmatrix} 2 & 1 \\ 1 & 5 \end{pmatrix}$ ($G_{11} \in \{2, [2]_q\}$, $G_{12}, G_{21} \in \{1, [1]_q\}$, $G_{22} \in \{5, [5]_q, [2]_q + [3]_q, [4]_q + 1\}$) that every resulting $\kappa = 9 / \det G_q$ lies strictly outside the $100\text{ ppb}$ CODATA window $[1.873903, 1.956720]$ around $\kappa_\star = 1.915314296...$.
+- **50-dps Witness:** `computations/probes/round50-zeta4-bridge-and-alpha-em-cs-tower.witness.json` (`scriptHash: e7bf4a93b887`, `scriptCommitSha: cf283b8e199f4643fb9e0259ec0a2702096bdd9b`).
+- **PR:** `litlfred/qou#8177` (`https://github.com/litlfred/qou/pull/8177`, head SHA `3fdbeeb87a6b1821ff8d57a95f95d4d20cf72628`).
+- **Status:** Kept at `status: in-progress` per reviewer-separated closure discipline.

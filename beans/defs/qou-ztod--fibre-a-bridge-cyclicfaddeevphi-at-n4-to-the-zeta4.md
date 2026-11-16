@@ -1,13 +1,13 @@
 ---
 # qou-ztod
 title: 'FIBRE-A: bridge CyclicFaddeevPhi at N=4 to the zeta4 analytic model -- the two sorry-free zeta4 artifacts do not touch'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-19T14:21:19Z
-updated_at: 2026-10-10T08:30:00Z
+updated_at: 2026-11-16T19:56:51Z
 parent: qou-avtq
 ---
 
@@ -22,3 +22,13 @@ Evidence: `grep -rl CyclicFaddeevPhi folio/.../lean/QOU` → only `QBeta/Faddeev
 
 Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
 Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
+
+## Round 50 Formalization & 50-dps Witness (PR #8177)
+- **Lean 4 Module (`0 sorry`, `0 axiom`, `0 vacuity`):** `folio/quantum-observable-universe/lean/QOU/QBeta/CyclicFaddeevZeta4Bridge.lean`
+  - `cyclicDenomFour_collapse`: $(1 - x)(1 - \zeta_4 x)(1 - \zeta_4^2 x)(1 - \zeta_4^3 x) = 1 - x^4$ when $\zeta_4^2 = -1$.
+  - `cyclicDenomFour_periodic`: $D_4(\zeta_4, \zeta_4 x) = D_4(\zeta_4, x)$.
+  - `cyclicCarrier_not_zeta4Faithful_of_ne_zero`: any `CyclicFaddeevPhiFour` carrier $D$ is strictly $\zeta_4$-periodic with 4-step $\zeta_4$-orbit sum $4 D(x)$, so it cannot be `IsZeta4Faithful` whenever $D(x) \neq 0$.
+  - `bridgedAssembly_isZeta4Faithful`: multiplying any `IsZeta4Faithful` analytic model $V$ (`vModel`) by any `CyclicFaddeevPhiFour` carrier $D$ yields a bridged assembly $B_k(x) = V_k \cdot D(x)$ that satisfies both $\zeta_4^2 = -1$ and `IsZeta4Faithful`.
+- **50-dps Witness:** `computations/probes/round50-zeta4-bridge-and-alpha-em-cs-tower.witness.json` (`scriptHash: e7bf4a93b887`, `scriptCommitSha: cf283b8e199f4643fb9e0259ec0a2702096bdd9b`).
+- **PR:** `litlfred/qou#8177` (`https://github.com/litlfred/qou/pull/8177`, head SHA `3fdbeeb87a6b1821ff8d57a95f95d4d20cf72628`).
+- **Status:** Kept at `status: in-progress` per reviewer-separated closure discipline.
