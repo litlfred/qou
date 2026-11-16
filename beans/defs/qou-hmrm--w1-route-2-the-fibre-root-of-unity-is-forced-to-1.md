@@ -1,7 +1,8 @@
 ---
 # qou-hmrm
 title: 'W1 route 2: the fibre root of unity is forced to -1 by squarefreeness, and C1 degenerates there'
-status: todo
+status: in-progress
+pr: 8194
 type: task
 priority: normal
 tags:
@@ -111,3 +112,8 @@ Audit: docs/audits/2026-09-07-w1-route2-fibre-monodromy-is-order-two.md
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Progress (PR #8194)
+- [x] Formalized in `folio/quantum-observable-universe/lean/QOU/MassTheory/W1SpectralRigidityAndEllipticInvolution.lean` (`0` `sorry`, `0` `axiom`, `0 CRITICAL, 0 advisory` across all 7 static vacuity/borrowed-name audits) and wired into `QOU.lean`.
+- [x] Verified exact rational witness in `computations/probes/w1-spectral-rigidity-and-elliptic-involution.witness.json` (`scriptHash: 5e848ba624fe`, `scriptCommitSha: 62bd8cb179998d43808552b8955ff0b3857febae`, `allPassed: true`, `0` raw `float64` fields).
+- [ ] Awaiting Merge Manager merge of PR #8194 (`b0ca85df1a1275572e6a829fccdff9eb4eff2fe0`).

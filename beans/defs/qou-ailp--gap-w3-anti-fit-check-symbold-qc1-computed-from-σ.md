@@ -1,7 +1,8 @@
 ---
 # qou-ailp
 title: 'GAP W3: anti-fit check symbol(D_q)=C1 computed from Σ independently (kernel_eq_symbol, no target-matching)'
-status: todo
+status: in-progress
+pr: 8194
 type: task
 priority: normal
 tags:
@@ -31,3 +32,8 @@ coefficient comparison (Lean/sympy). If it matches → the keystone identificati
 derived. If it does NOT match → honest scope-(a) negative (this D_q construction does
 not reproduce C1), recorded, not buried. Either outcome is a valid result; a forced
 match is not.
+
+## Progress (PR #8194)
+- [x] Formalized in `folio/quantum-observable-universe/lean/QOU/MassTheory/W1SpectralRigidityAndEllipticInvolution.lean` (`0` `sorry`, `0` `axiom`, `0 CRITICAL, 0 advisory` across all 7 static vacuity/borrowed-name audits) and wired into `QOU.lean`.
+- [x] Verified exact rational witness in `computations/probes/w1-spectral-rigidity-and-elliptic-involution.witness.json` (`scriptHash: 5e848ba624fe`, `scriptCommitSha: 62bd8cb179998d43808552b8955ff0b3857febae`, `allPassed: true`, `0` raw `float64` fields).
+- [ ] Awaiting Merge Manager merge of PR #8194 (`b0ca85df1a1275572e6a829fccdff9eb4eff2fe0`).
