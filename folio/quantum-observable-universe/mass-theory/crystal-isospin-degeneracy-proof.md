@@ -12,17 +12,24 @@ $$
 on the standard-Young-tableaux basis $\mathrm{SYT}(\lambda)$, where
 $c(\cdot)$ is the cell content
 ([content scaling](#prop:content-scaling-correspondence)).
-The Hecke involutivity at $q = 0$ — equivalently, reading off the
-relation $\sigma_i^{-1} = \sigma_i$ on the crystal sub-quotient from
-the Hecke skein convention $(\sigma_i - q)(\sigma_i + q^{-1}) = 0$
-specialised at $q = 0$ — gives
+The crystal model takes $\sigma_i^{-1}$ to act by the same sign on
+the same line:
 
 $$
   \sigma_i^{-1} : T \;\longmapsto\; \mathrm{sign}(\rho_T(i)) \cdot T
   \;=\; \sigma_i \cdot T
 $$
 
-acting on the same SYT eigenline.  The crystal-limit generators
+acting on the same SYT eigenline.  This is an input of the model
+(the `abs(i)` reduction in `term7_alpha5_crystal_derivation.py`),
+not a consequence of the Hecke relation.  The relation
+$(\sigma_i - q)(\sigma_i + q^{-1}) = 0$ cannot be specialised at
+$q = 0$, because $q^{-1}$ is undefined there.  At generic $q$ it
+gives $\sigma_i^{-1} = \sigma_i - (q - q^{-1})$, so $\sigma_i$ has
+eigenvalues $q, -q^{-1}$ while $\sigma_i^{-1}$ has $q^{-1}, -q$; the
+two are not equal on any line.  In the seminormal form $\sigma_i$ is
+also not diagonal on the SYT basis: it mixes $T$ with $s_i T$
+whenever $i$ and $i+1$ lie in different rows and columns of $T$.  The crystal-limit generators
 therefore act *diagonally* on the SYT basis with eigenvalues
 that are individually invariant under $\sigma_i \leftrightarrow
 \sigma_i^{-1}$.  For any fixed $T \in \mathrm{SYT}(\lambda)$, the

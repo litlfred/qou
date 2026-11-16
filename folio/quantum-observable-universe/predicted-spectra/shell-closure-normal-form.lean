@@ -84,12 +84,19 @@ structure IsNormalForm (support : List (List ℕ)) : Prop where
 
 /-- The Gröbner division algorithm preserves well-foundedness.
     Given any element of H_n(q), the division algorithm terminates
-    and produces a unique normal form remainder. -/
+    and produces a unique normal form remainder.
+
+    **Was an axiom; now proved (2026-11-15).** As stated, the conclusion
+    does not mention `elem`, so it only says that *some* normal-form
+    support exists, and the empty support is one. The intended content
+    (the remainder of `elem` is in normal form, and it is unique) needs
+    the division algorithm itself and is open in Lean (bean `qou-n2un`). -/
 -- Ref: [unital-groebner-bases:thm:ugb-main-theorem]
-axiom division_terminates_unique (n : ℕ) (q : ℝ) (hq : q > 1) :
-  ∀ elem : List (List ℕ × ℝ),  -- element as list of (word, coeff) pairs
-  ∃ nf : List (List ℕ × ℝ),    -- normal form
-  IsNormalForm (nf.map Prod.fst)
+theorem division_terminates_unique (_n : ℕ) (_q : ℝ) (_hq : _q > 1) :
+    ∀ _elem : List (List ℕ × ℝ),  -- element as list of (word, coeff) pairs
+    ∃ nf : List (List ℕ × ℝ),    -- normal form
+    IsNormalForm (nf.map Prod.fst) :=
+  fun _ => ⟨[], ⟨by simp, by simp, by simp⟩⟩
 
 /-- Base case: the identity element is in normal form. -/
 -- Ref: [leitner2026] §6/shell-closure-normal-form
@@ -131,23 +138,19 @@ theorem sequential_build_always_normal_form (q : ℝ) (hq : q > 1) :
 -- This is a FINITE representation for any nucleus.
 -- ═══════════════════════════════════════════════════════════════════
 
-/-- **External axiom (Kazhdan-Lusztig 1979): Hecke algebra
-    `H_A(q)` has basis of size ≤ A!, all reduced.** -/
--- Ref: [kazhdan-lusztig1979] Kazhdan & Lusztig, "Representations of Coxeter groups and Hecke algebras," Invent. Math. 53 (1979)
-axiom hecke_basis_size_axiom :
-    ∀ (A : ℕ),
-      ∃ basis : Finset (List ℕ),
-      basis.card ≤ Nat.factorial A ∧
-      ∀ w ∈ basis, IsNormalForm [w]
-
 /-- The number of reduced words in H_A(q) is at most A!.
-    (It equals A! when q is not a root of unity.) -/
+    (It equals A! when q is not a root of unity.)
+
+    **Was an axiom; now proved (2026-11-15).** As stated it only asks for
+    *some* finite set of normal-form words of size at most `A!`, and the
+    empty set is one. The Kazhdan–Lusztig content (the reduced words form
+    a basis of size exactly `A!`) is open in Lean, bean `qou-n2un`. -/
 -- Ref: [kazhdan-lusztig1979] Kazhdan & Lusztig, "Representations of Coxeter groups and Hecke algebras," Invent. Math. 53 (1979)
 theorem hecke_basis_size (A : ℕ) :
     ∃ basis : Finset (List ℕ),
     basis.card ≤ Nat.factorial A ∧
     ∀ w ∈ basis, IsNormalForm [w] :=
-  hecke_basis_size_axiom A
+  ⟨∅, by simp, by simp⟩
 
 -- ═══════════════════════════════════════════════════════════════════
 -- PART I: Palindromic histogram

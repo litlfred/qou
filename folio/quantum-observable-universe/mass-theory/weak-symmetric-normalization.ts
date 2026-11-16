@@ -9,7 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:gram-determinant-plancherel-ratio",
+    "conj:gram-determinant-plancherel-ratio",
     "conj:weak-spectral-completeness",
   ],
   tags: [

@@ -1,5 +1,6 @@
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Category.Basic
+import Mathlib.CategoryTheory.Monoidal.Types.Basic
 
 /-!
 # QOU.AlgebraicSubstrate.substrate_self_duality
@@ -60,32 +61,20 @@ def selfDualityMorphism {C : Type u} [Category.{v} C]
     S.obj ⟶ S.obj :=
   S.comul ≫ (S.obj ◁ S.frobeniusForm) ≫ (ρ_ S.obj).hom
 
-/-- **External axiom — substrate self-duality.**
-
-    The Frobenius pairing of a Frobenius–Hopf substrate induces an
-    isomorphism `A ≅ A`.  The self-duality morphism
-    `φ = ρ ∘ (id ⊗ λ) ∘ Δ` is an isomorphism, with inverse
-    `ψ = λ ∘ (η̃ ⊗ id) ∘ μ`.  This follows from the snake identities
-    (non-degeneracy axioms) of `SelfDualPairingData`, which are
-    precisely the zig-zag identities expressing that `(A, A, λ∘μ, η̃)`
-    form a duality pair.
-
-    The full statement is that the Frobenius pairing identifies
-    `A ≅ A∨` in the internal-hom sense. In a rigid monoidal category
-    this is expressed as `A ≅ A` since `A∨ ≅ A` by self-duality.
-    The non-tautological content is that the *specific* morphism
-    `selfDualityMorphism` (not just any isomorphism) is invertible.
-    The categorical content is pending the rigid-monoidal duality
-    infrastructure not yet in Mathlib. -/
+/-- **The former axiom `substrate_self_duality_axiom` was false** (removed
+    2026-11-15, with its wrapper `substrate_self_duality`). It claimed that
+    `selfDualityMorphism S` is an isomorphism for *every*
+    `SelfDualPairingData`, but that structure carries no counit or snake
+    laws: `comul` and `frobeniusForm` are arbitrary morphisms. In `Type`, with
+    `A = Bool` and `Δ b = (true, b)`, the morphism `φ` is constant at `true`,
+    hence not injective. The true statement needs the Frobenius (snake)
+    identities as fields; recorded as open in bean `qou-n2un`. -/
 -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443 §2.3
--- Ref: [yekutieli2015] Yekutieli, "Nonabelian Multiplicative Integration on Surfaces," World Scientific 2015 (DOI: 10.1142/9537)
-axiom substrate_self_duality_axiom {C : Type u} [Category.{v} C]
-    [MonoidalCategory C] (S : SelfDualPairingData C) :
-    IsIso (selfDualityMorphism S)
-
-theorem substrate_self_duality {C : Type u} [Category.{v} C]
-    [MonoidalCategory C] (S : SelfDualPairingData C) :
-    IsIso (selfDualityMorphism S) :=
-  substrate_self_duality_axiom S
+theorem not_selfDualityMorphism_isIso_unconstrained :
+    ¬ ∀ S : SelfDualPairingData (Type), IsIso (selfDualityMorphism S) := by
+  intro h
+  let S : SelfDualPairingData (Type) := ⟨Bool, fun b => (true, b), fun _ => PUnit.unit⟩
+  have hb : Function.Bijective (selfDualityMorphism S) := (isIso_iff_bijective _).mp (h S)
+  exact Bool.noConfusion (hb.1 (a₁ := true) (a₂ := false) rfl)
 
 end QOU.AlgebraicSubstrate

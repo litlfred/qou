@@ -66,12 +66,13 @@ theorem buchberger
     (sys : RewritingSystem G k)
     (hgs : IsGrobnerShirshovBasis G k ord sys)
     (hnqz : NoQuasiZerosFree G k)
+    (hlc : ∀ r ∈ sys.rules, IsUnit (r.lc ord))
     (f g₁ g₂ : AlgElement G k)
     (h₁ : MultiStepReduction ord sys f g₁)
     (h₂ : MultiStepReduction ord sys f g₂) :
     ∃ h : AlgElement G k,
       MultiStepReduction ord sys g₁ h ∧ MultiStepReduction ord sys g₂ h :=
   -- Confluence of a GS basis (Newman's lemma over the resolved S-polys).
-  confluence ord sys hgs hnqz f g₁ g₂ h₁ h₂
+  confluence ord sys hgs hnqz hlc f g₁ g₂ h₁ h₂
 
 end UGB.UnitalGroebner

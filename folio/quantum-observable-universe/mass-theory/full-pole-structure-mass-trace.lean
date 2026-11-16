@@ -43,11 +43,9 @@ noncomputable def qPochhammer (q : ℝ) (m : ℕ) : ℝ :=
 /-- **Polynomial q-Pochhammer** `(u; u)_m = Π_{k=1}^{m} (1 - u^k) ∈ ℤ[u]`.
 
     This is the polynomial-ring companion of `qPochhammer` above.
-    Polynomial divisibility by `qPochhammerPoly N` is non-trivial:
-    `qPochhammerPoly N` has degree `N(N+1)/2` and is a non-unit in
-    `ℤ[u]`, so divisibility encodes the Habiro-ideal property
-    genuinely (unlike real divisibility, which is trivially solvable
-    whenever the divisor is non-zero).
+    `qPochhammerPoly N` is a non-unit of degree `N(N+1)/2` in `ℤ[u]`,
+    but divisibility of the tail by it does not constrain a free
+    coefficient sequence: see `HabiroCompletion.trivialOf`.
 
     The generic ring-valued analogue
     `QOU.BraidKnot.qPochhammer (u : R) : ℕ → R` over an arbitrary
@@ -115,16 +113,35 @@ class HabiroCompletion where
       `trace - Σ_{m<N} a_m · (u;u)_m` lies in the principal ideal
       `((u;u)_N) ⊂ ℤ[u]`.
 
-      Non-vacuous: `qPochhammerPoly N` has degree `N(N+1)/2` and is
-      a non-unit, so this divisibility genuinely constrains the
-      coefficient sequence.  In particular, evaluating both sides
-      at any `q` with `qPochhammer q N = 0` forces the trace to
-      equal the cyclotomic partial sum up to order `N` (the
-      ℝ-evaluation shadow). -/
+      Not a constraint as stated: `trace` and every `coeff m` are free,
+      so `HabiroCompletion.trivialOf` satisfies it for any polynomial.
+      (This read "Non-vacuous" until 2026-11-16.) -/
   tail_in_ideal :
     ∀ (N : ℕ),
       qPochhammerPoly N ∣
         (trace - ∑ m ∈ Finset.range N, coeff m * qPochhammerPoly m)
+
+/-- **The class as stated constrains nothing** (added 2026-11-16).
+
+    Every polynomial `p` admits a `HabiroCompletion` with `trace = p`:
+    take `coeff 0 = p` and every other coefficient `0`. Then the
+    residual is `p` at `N = 0`, divisible by `(u;u)_0 = 1`, and `0` for
+    `N ≥ 1`. So the docstring's "non-vacuous" reading is wrong: because
+    `trace` is a free field and `coeff m` ranges over all of `ℤ[u]`, the
+    divisibility is always satisfiable. A contentful version would fix
+    `trace` to the Markov trace of a given word and restrict the
+    coefficients (Habiro's theorem lives in the completion, where the
+    expansion is unique), which this file does not do. -/
+noncomputable def HabiroCompletion.trivialOf (p : Polynomial ℤ) :
+    HabiroCompletion where
+  trace := p
+  coeff := fun m => if m = 0 then p else 0
+  tail_in_ideal := by
+    intro N
+    rcases N with _ | N
+    · simp [qPochhammerPoly]
+    · rw [Finset.sum_range_succ']
+      simp [qPochhammerPoly]
 
 /-- **Habiro cyclotomic monotone bound** (purely structural).
 

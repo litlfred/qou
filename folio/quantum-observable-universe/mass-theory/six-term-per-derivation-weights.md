@@ -1,4 +1,4 @@
-*The atomic binding energy derives directly from the six terms. It requires zero empirical parameter fits:*
+*The atomic binding energy is assembled from the six terms. No parameter is tuned; the energy scales are $E_{0,\beta}$ (set to the measured β-decay $Q$-value, the CAL-2 proxy, not to a derived base), $\alpha = m_e \cdot 8G$, and $m_e$:*
 
 $$
 \begin{aligned}

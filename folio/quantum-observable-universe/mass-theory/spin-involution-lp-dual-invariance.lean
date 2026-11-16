@@ -14,10 +14,13 @@ input:
 
   y_0*(σ(β)) = y_0*(β).
 
-QOU instance: σ = Hopf antipode on H_n(R, q), τ = Markov trace,
-c = P_ℓ = e_ℓ(J_1, …, J_n) (Murphy 1992 central element).
-The Z↔N swap on atomic-braid recipes is σ; mirror nuclei have
-exactly equal LP-dual binding-energy shadow prices.
+QOU instance — NOT available (corrected 2026-11-16).  It was claimed
+that σ = the antipode σ_i ↦ σ_i⁻¹ on H_n(R, q) with τ = Markov trace
+is an instance, giving equal shadow prices for mirror nuclei.  It is
+not: under convention D, τ(σ_i) = q³/(q²+1) but τ(σ_i⁻¹) = 1/(q(q²+1)),
+so `trace_invariant` fails; and σ_i ↦ σ_i⁻¹ respects the Hecke relation
+only together with q ↦ q⁻¹ (the bar involution), under which τ is
+equivariant, not invariant.  The theorem below is generic and stands.
 
 ## Architecture
 

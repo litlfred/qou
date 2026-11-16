@@ -11,6 +11,13 @@ $$
   \,\in\, R.
 $$
 
-*This is the alternating-block trace divided by the symmetric-block trace. $F_{\mathrm{Pauli}}$ vanishes when $\beta_\mathcal{K}$ has no alternating-block content (bosonic). It is a unit when $\beta_\mathcal{K}$ saturates the alternating block (fully fermionic).*
+*This is the alternating-block trace divided by the symmetric-block trace. Both blocks are one-dimensional, with $\sigma_i \mapsto q$ on $V_{(n)}$ and $\sigma_i \mapsto -q^{-1}$ on $V_{(1^n)}$, so for a braid of writhe (exponent sum) $w$*
+
+$$
+  \frac{\chi_{(1^n)}(\beta_\mathcal{K})}{\chi_{(n)}(\beta_\mathcal{K})}
+  \;=\; (-1)^{w}\, q^{-2w}.
+$$
+
+*This is a unit of $R$ for every braid and depends only on the writhe. It never vanishes, so it does not detect bosonic or fermionic content of $\beta_\mathcal{K}$.*
 
 **Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs. Any generic categorical identities it draws on remain valid over an abstract coefficient ring. Only their archimedean realisation is specialised here.

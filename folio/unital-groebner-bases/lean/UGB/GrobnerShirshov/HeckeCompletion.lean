@@ -18778,6 +18778,20 @@ Hecke system has unique normal forms at every `n`. The GS-basis half of that is
 now proved outright; the Diamond Lemma half is still assumed.
 -/
 
+/-- **Every rule of the completed Hecke system has a unit leading
+coefficient** (`±1`). This is the hypothesis `local_confluence` carries since
+2026-11-15. -/
+theorem heckeCompleted_rules_lc_isUnit (hn : 0 < n) (hp : HeckeParams) :
+    ∀ r ∈ (heckeCompletedRewritingSystem n hn hp).rules,
+      IsUnit (r.lc (heckeOrder n)) := by
+  intro r hr
+  rcases mem_heckeCompletedRewritingSystem_rules hn hp hr with
+    ⟨i, rfl⟩ | ⟨i, j, hij, rfl⟩ | ⟨i, j, hij, rfl⟩ | ⟨i', i, j, hi, hj, rfl⟩
+  · rw [heckeRelation_lc]; exact isUnit_one
+  · rw [DegenerateYbBs.yangBaxter_lc hij.symm]; exact isUnit_one.neg
+  · rw [farCommRelation_lc i j (by omega)]; exact isUnit_one
+  · rw [bokutShiaoRelation_lc hi hj]; exact isUnit_one
+
 /-- **Normal forms in the completed Hecke system are unique** — with no
 hypothesis. -/
 theorem heckeCompleted_normalForm_unique (hn : 0 < n) (hp : HeckeParams)
@@ -18789,7 +18803,8 @@ theorem heckeCompleted_normalForm_unique (hn : 0 < n) (hp : HeckeParams)
     nf₁ = nf₂ :=
   normal_form_unique (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
     (heckeCompleted_isGrobnerShirshovBasis hn hp)
-    (noQuasiZerosFree_of_generator ⟨0, hn⟩) f nf₁ nf₂ hred₁ hred₂
+    (noQuasiZerosFree_of_generator ⟨0, hn⟩) (heckeCompleted_rules_lc_isUnit hn hp)
+    f nf₁ nf₂ hred₁ hred₂
 
 /-- **Threading cost is well-defined** — with no hypothesis. -/
 theorem heckeCompleted_threading_cost_unique (hp : HeckeParams) (hadron : List ℤ)

@@ -12,18 +12,23 @@ $$
 
 Then:
 
-1. **Linear recurrence.** The body terms satisfy a depth-$d$ linear
-   recurrence $B_{n+d} = \sum_{j=0}^{d-1} a_j(q)\,B_{n+j}$, with kernel
-   $\{a_j\}$ read off from $R$. In particular the empirical "$\rho\cdot A$"
-   scale rule governing the growth of the terms is the **solution of the
-   recurrence — an output of $R$, not a fitted constant**.
+1. **Linear $q$-recurrence.** Writing $R = \sum_j r_j(q)\,x^j$, the body terms
+   satisfy an order-$d$ linear recurrence whose coefficients depend on the
+   position through $q^n$; for polynomial $R$,
+   $(q^n - r_0)\,B_n = \sum_{j=1}^{d} r_j\,B_{n-j}$. Every term is fixed by
+   $R$ and the first $d$ terms, so whatever growth the $B_n$ show is an
+   output of $R$, not a fitted constant. The coefficients are **not**
+   constant in $n$: for $R = 1 - x$ the solution $B_n = 1/(q;q)_n$ gives
+   $1, -1, 1/3, -1/21, 1/315$ at $q = 2$, which satisfies no constant-coefficient
+   recurrence of depth $1$ or $2$.
 2. **Archimedean image.** Under the realisation functor $\tau$ at $q=q_0$,
    the $q$-difference equation passes to a linear (Dirac-type) differential
    equation on the realised generating function: the fibre $q$-shift becomes
    a derivation in the archimedean limit.
 
 The implications (1)--(2) are the standard passage from a $q$-holonomic
-generating function to a $P$-recursive coefficient sequence and its
+generating function to a $q$-recursive coefficient sequence (coefficients
+polynomial in $q^n$) and its
 confluent (differential) limit; they hold for *any* such $R$. What is
 **open** is the existence and identity of the kernel $R$ for the binding
 $G$. By the precision-floor obstruction — the $c_k$ information bound, which

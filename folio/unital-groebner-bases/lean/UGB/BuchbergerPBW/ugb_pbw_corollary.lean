@@ -109,6 +109,6 @@ theorem ugb_pbw_corollary (qs : QSerreRelations k) :
       -- generators, so left multiplication by one of them is injective.
       exact normal_form_unique degLexOrder (qSerreRewritingSystem k qs)
         (qSerre_is_gs_basis k qs) (noQuasiZerosFree_of_generator SU2Gen.K)
-        f nf₁ nf₂ h₁ h₂
+        (qSerre_rules_monic k qs) f nf₁ nf₂ h₁ h₂
 
 end UGB.BuchbergerPBW

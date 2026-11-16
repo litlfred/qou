@@ -1,7 +1,7 @@
 **Spectral characterisation.**
 Three structural results establish the existence and uniqueness of the electromagnetic fine structure constant:
 
-1. *Two-strand spectral completeness* ([completeness theorem](#thm:em-spectral-completeness)). The algebra $\mathrm{End}_{\mathbf{C}}(A \otimes A)$ has $R$-rank $2$. Exactly two central idempotents $e_+, e_-$ sum to $\mathrm{id}$. Plancherel completeness $w_+ + w_- = 1$ exhausts the Frobenius mass. No third channel exists.
+1. *Two-strand spectral completeness* ([completeness theorem](#thm:em-spectral-completeness)). The algebra $\mathrm{End}_{\mathbf{C}}(A \otimes A)$ has $R$-rank $2$. Exactly two central idempotents $e_+, e_-$ sum to $\mathrm{id}$. Their normalised traces $w_\pm = \dim_q V_\pm/[2]_q^2$ sum to $1$, since $[3]_q + 1 = [2]_q^2$. No third channel exists.
 2. *Uniqueness of the gauge coupling* (corollary, *ibid.*). The singlet idempotent $e_-$ is the unique scalar exchange channel. Any $R$-linear braid-invariant scalar coupling $A \otimes A \to \mathbf{1}$ is a multiple of $\mathrm{tr}_\tau(e_-) \cdot e_-$. The constant $\alpha_{\mathrm{EM}}$ exists and is unique up to global normalisation. The antisymmetric eigenvalue captures the entirety of the electromagnetic coupling.
 3. *Force-carrier uniqueness* ([Bring uniqueness](#prop:force-carrier-bring-uniqueness)). The set $\{T_{2,9}, T_{3,5}\}$ exhausts genus-$4$ torus knots. This is a Diophantine fact: the equation $(m-1)(n-1)=8$ with $\gcd(m,n)=1$ and $m \leq n$ has only the solutions $(2,9)$ and $(3,5)$. The Bring-supported quantum observable universe has a forced force-carrier sector with categorical complexity $[9]_q \cdot [10]_q \in R$.
 

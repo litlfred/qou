@@ -1,15 +1,31 @@
 ### Proof — bar-eigenspace argument
 
-**Step 1 (bar action on central idempotents).** The bar involution
-acts on the central primitive idempotent $e_\lambda \in Z(H_n(q))$
-([`prop:explicit-central-idempotent`](#prop:explicit-central-idempotent),
-[`prop:hecke-baer-star-generic`](#prop:hecke-baer-star-generic)) by
+**Step 1 (which involution transposes $\lambda$).** The bar involution does
+**not** transpose cells. It fixes every central primitive idempotent:
 
 $$
-  \mathrm{bar}(e_\lambda) \;=\; e_{\lambda'},
+  \mathrm{bar}(e_\lambda) \;=\; e_\lambda .
 $$
 
-where $\lambda'$ is the transpose Young diagram.
+Bar is a ring automorphism of $H_n(q)$, so it permutes the $e_\lambda$. At
+$q = 1$ it is $T_w \mapsto T_{w^{-1}}^{-1} = T_w$, the identity, and the
+permutation is locally constant in $q$, so it is the identity. Explicitly in
+$H_2$ (with $\sigma^{-1} = \sigma - h$, $h = q - q^{-1}$),
+$e_{(2)} = (\sigma + q^{-1})/(q + q^{-1})$ maps to
+$(\sigma - h + q)/(q^{-1} + q) = e_{(2)}$.
+
+The involution that transposes is the Goldman involution
+$\sigma_i \mapsto -\sigma_i^{-1}$, which is $q$-linear and at $q = 1$ is
+tensoring with the sign character:
+
+$$
+  \#(e_\lambda) \;=\; e_{\lambda'} .
+$$
+
+In $H_2$, $\#(e_{(2)}) = (-\sigma + h + q^{-1})/(q + q^{-1}) = (q - \sigma)/(q + q^{-1}) = e_{(1,1)}$.
+The earlier version of this step wrote $\mathrm{bar}(e_\lambda) = e_{\lambda'}$,
+which is false. Steps 2 and 3 below use the transposing involution, so read
+"bar" there as $\#$ on the Hecke side.
 
 **Step 2 (period-class bar-action).** Under the archimedean
 realization functor $\tau_{\mathrm{arch}}$
@@ -33,7 +49,7 @@ e_\lambda$ — the cell is bar-fixed. Pairing with a depth-$n$ grouplike
 $g \in G^{(n)}(\mathcal{H}_q)$ under Markov trace yields a value in
 the bar-fixed component of $\mathcal{P}_n / \mathcal{P}_{n - 1}$:
 
-- At $n = 2$: pairs with $\mathrm{Vol}$ (bar-fixed) — non-by definition.
+- At $n = 2$: pairs with $\mathrm{Vol}$ (bar-fixed), which can be non-zero.
 - At $n = 3$: pairs with $\mathrm{CS}$ (bar-anti-fixed) — gives zero
  on bar-fixed cells.
 
@@ -56,7 +72,12 @@ $\mathrm{CS}$ (which is bar-anti-invariant).
 
 So chiral pair $\Rightarrow$ $d_{\mathrm{II}}(\lambda) = 3$.
 
-$\square$
+**What this argument does not prove.** Steps 2 and 3 assume that $\#$ on the
+Hecke side matches orientation reversal on the period side, and that "pairing
+with a depth-$n$ grouplike" lands in the matching eigenspace. Neither is proved
+here, and $d_{\mathrm{II}}$ itself is defined only through
+[`conj:two-filtration-bridge`](#conj:two-filtration-bridge). The argument is
+therefore a heuristic, conditional on that conjecture and on this matching.
 
 ### Generality of the proof
 

@@ -1,8 +1,17 @@
-*Let $H = H_n(R, q)$ be the Iwahori–Hecke algebra over a field $R$, equipped with the unique Jones–Markov trace $\mathrm{tr}_M : H \to R$ ([Wenzl–Jones uniqueness theorem](#prop:markov-trace-frobenius-selection)). Equip $H$ with the Frobenius inner product $\langle X, Y \rangle_\tau := \mathrm{tr}_M(X \cdot Y)$. The element of minimum Frobenius norm satisfying the linear constraint $\mathrm{tr}_M(T_\beta) = S$ for a scalar $S \in R$ is:*
+*Let $H = H_n(R, q)$ be the Iwahori–Hecke algebra over a field $R$, equipped with the unique Jones–Markov trace $\mathrm{tr}_M : H \to R$ ([Wenzl–Jones uniqueness theorem](#prop:markov-trace-frobenius-selection)). Let $R$ be ordered, $q > 0$, and let $X \mapsto X^\dagger$ be the $R$-linear anti-involution fixing each $\sigma_i$. Equip $H$ with the Frobenius form $\langle X, Y \rangle_\tau := \mathrm{tr}_M(X \cdot Y^\dagger)$. An element of minimum Frobenius norm satisfying the linear constraint $\mathrm{tr}_M(T_\beta) = S$ for a scalar $S \in R$ is:*
 $$
 \boxed{\; T_\beta = S \cdot 1_H \;}
 $$
-*with $\| T_\beta \|^2_\tau = S^2$.*
+*with $\| T_\beta \|^2_\tau = S^2$. The minimiser is unique up to the radical of $\langle\,\cdot\,,\cdot\,\rangle_\tau$, which under convention D is the sum of the Wedderburn blocks of shapes with three or more rows.*
+
+## Why the twist $Y^\dagger$ is needed
+
+The untwisted form $\mathrm{tr}_M(X \cdot Y)$ is not positive on $H_n$ for $n \ge 3$. In $H_3$ take $X = \sigma_1\sigma_2 - \sigma_2\sigma_1$. Then $\mathrm{tr}_M(X) = 0$ and
+$$
+\mathrm{tr}_M(X \cdot X) \;=\; -\,\frac{2\,(q^4 + q^2 + 1)}{(q^2+1)^2} \;<\; 0
+\qquad (q > 0),
+$$
+so $\mathrm{tr}_M\bigl((S\cdot 1 + tX)^2\bigr) = S^2 + t^2\,\mathrm{tr}_M(X^2)$ is unbounded below in $t$ and has no minimum. In the orthogonal seminormal form every $\sigma_i$ is a real symmetric matrix, so $\dagger$ is the blockwise transpose and $\mathrm{tr}_M(X X^\dagger) = \sum_\lambda y_\lambda \,\| X_\lambda \|_F^2 \ge 0$ because every Markov weight $y_\lambda$ is non-negative.
 
 ## Corollary — observable c_k invariance
 

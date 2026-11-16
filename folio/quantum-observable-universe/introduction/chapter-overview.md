@@ -72,7 +72,7 @@ The content of this formula is the dimensionless ratio on the left: the electron
 
 [*Stochastic Mechanics*](#chap:stochastic-mechanics) translates the Markov trace into a stochastic process, linking the categorical substrate to quantum diffusion.
 
-[*Information-Theoretic Perspectives*](#chap:info-theory) frames QOU mechanics as Turing-complete. Confluent reductions govern the logic. The Reeb flow builds a fractal event horizon. Setting the information speed $c_q = 1/(q - 1)$ derives $\mathfrak{E} = \mathfrak{m} \cdot c_q^{2}$ categorically.
+[*Information-Theoretic Perspectives*](#chap:info-theory) frames QOU mechanics as Turing-complete. Confluent reductions govern the logic. The Reeb flow builds a fractal event horizon. Setting the information speed $c_q = 1/(q - 1)$ defines the energy $\mathfrak{E} = \mathfrak{m} \cdot c_q^{2}$.
 
 [*Measurement and Observation*](#chap:measurement-observation) internalizes the observer. Observation acts as an open braid map, depositing energy equivalents into the colour fibre upon measurement.
 

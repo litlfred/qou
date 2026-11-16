@@ -33,6 +33,11 @@ export default proposition({
   ],
   authorNotes: [
     {
+      kind: "caveat",
+      date: "2026-11-16",
+      body: "'Structurally REFUTED' replaced: a 10x window is a heuristic screen with no proved invariant, so it is a scope-(a) filter, not an exclusion (AGENTS 'Before declaring refuted'). Target magnitude is ~1 only on the retired z=1 base; ~1.76 on the ruled z_D base. Queued for demotion to a remark (it is a policy, not a theorem).",
+    },
+    {
       kind: "status",
       body:
         "**Theorem (this proposition).** Sorry-free Lean proof " +

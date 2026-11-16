@@ -7,8 +7,12 @@ quark crossings.
 For $A = 3$: the three nucleon NFs compose to give a braid whose
 NF has alternating $\sigma_0, \sigma_1$ signs and dominant $L_+$
 (Hopf link) content.  This is the NF signature of the figure-eight
-knot $4_1 = \sigma_0\sigma_1^{-1}\sigma_0^{-1}\sigma_1$, verified
-by comparing eigenvalue structure.
+knot $4_1$, whose braid word is $(\sigma_0\sigma_1^{-1})^2$, verified
+by comparing eigenvalue structure. (The word
+$\sigma_0\sigma_1^{-1}\sigma_0^{-1}\sigma_1$ given here before closes
+to the unknot: by cyclicity and $\sigma_1\sigma_0\sigma_1^{-1} =
+\sigma_0^{-1}\sigma_1\sigma_0$ its trace equals
+$\mathrm{tr}_M(\sigma_0^{-1}\sigma_1)$.)
 
 For $A \geq 4$: the composition of four or more nucleon NFs
 produces identity-dominated NF with small Hopf corrections — the

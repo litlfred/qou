@@ -402,7 +402,15 @@ def term3_pair_gen_tower(vols):
 
 
 def term4_frobenius_codim(A):
-    """Term 4 in Hecke units (without `m_e`): τ(C_dim_q).
+    """Term 4 in Hecke units (without `m_e`): the FORMAL sum Σ_{λ ⊢ 3A} 1/dim_q(λ).
+
+    Scope label (owner ruling 2026-11-16, option B "keep number, relabel"):
+    this is NOT τ(C_dim_q) under convention D.  For n = 3A ≥ 3, τ(p_λ) = 0
+    for every λ with three or more rows, so C_dim_q is undefined there
+    (thm:frobenius-codim-universal, scope paragraph).  The sum below runs
+    over ALL partitions and is kept unchanged as a formal sum; the value
+    τ(C°_dim_q) over the surviving blocks is a different number.  Which of
+    the two (or a radical-quotient object) Term 4 should be is open.
 
     Returns Σ_{λ ⊢ 3A} 1/dim_q(λ).  The full Term 4 contribution
     is `m_e · τ(C_dim_q)`; the `m_e` factor is applied at the

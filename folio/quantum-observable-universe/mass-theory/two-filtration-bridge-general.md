@@ -1,7 +1,12 @@
 [`prop:two-filtration-bridge-small-cases`](#prop:two-filtration-bridge-small-cases)
 verified the bridge map $d_{\mathrm{II}}$ at all partitions of $n \leq 4$.
-*This proposition extends the verification to **all** partitions of
-any $n$ via a structural bar-eigenspace argument.*
+*This proposition proposes the extension to **all** partitions of any $n$.
+It is conditional: it rests on
+[`conj:two-filtration-bridge`](#conj:two-filtration-bridge), which defines
+$d_{\mathrm{II}}$, and on an unproved matching of the transposing involution
+$\#$ on $H_n(q)$ with orientation reversal on periods. The bar involution
+itself fixes every $e_\lambda$ and does not separate $\lambda$ from
+$\lambda'$.*
 
 ### Statement
 
@@ -26,8 +31,9 @@ $$
 at $n \leq 4$ extends to all $n$ via the bar-eigenspace argument.
 
 **Corollary for the depth correspondence**:
-- For each self-conjugate cell, its depth-2 row is theorem-level
- (combining Bloch–Suslin + per-knot VC where available).
+- For each self-conjugate cell, its depth-2 row is conditional on the
+ bridge conjecture (with Bloch–Suslin and the per-knot volume conjecture
+ where available).
 - For each chiral pair, its depth-3 row is conditional on the CS
  computation per knot.
 

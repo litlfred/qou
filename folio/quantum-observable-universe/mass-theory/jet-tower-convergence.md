@@ -23,7 +23,7 @@ Kähler form with its Frobenius dual, contributing $\hbar_q^2$ to
 the weight.
 
 **Proposition.**
-*Assume there exists $\Delta_{\max}(\varrho) < \infty$ with
+*Assume $q > 1/2$ and $q \neq 1$, so that $0 < \hbar_q^2 < 1$, and assume there exists $\Delta_{\max}(\varrho) < \infty$ with
 $|\Delta^{(n)}(\varrho)| \leq \Delta_{\max}(\varrho)$ for all
 $n \geq 1$.  Then the brane-tower sum
 $T(\varrho) := \sum_{n \geq 1} \hbar_q^{2n} \Delta^{(n)}(\varrho)$

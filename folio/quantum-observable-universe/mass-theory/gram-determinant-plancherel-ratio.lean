@@ -16,7 +16,7 @@ where `c_λ^(•) = χ_λ(β_•)` are the central-idempotent character
 coefficients of the genus-4 torus knots `T_{2,9}` (strong) and
 `T_{3,5}` (weak).
 
-LaTeX label: `prop:gram-determinant-plancherel-ratio`
+LaTeX label: `conj:gram-determinant-plancherel-ratio`
 
 ## References
 

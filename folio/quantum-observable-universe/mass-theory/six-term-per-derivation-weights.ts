@@ -24,6 +24,11 @@ export default proposition({
   },
   authorNotes: [
     {
+      kind: "caveat",
+      date: "2026-11-16",
+      body: "The headline 0.184% mean error is on TOTAL atomic mass with a CODATA nucleon baseline. On binding energy (same Table 3) the assembly gives D +3.7% but 3H -50.9%, 3He -22.3%, 4He -69.2%, 6Li -41.3%, 7Li -40.1%, 9Be -35.5%. The 'zero empirical fits' wording was replaced: no parameter is tuned, but E_{0,beta} is the CODATA Q_beta (CAL-2 proxy), not the ruled z_D base. Mass-pipeline flag; numbers unchanged.",
+    },
+    {
       kind: "note",
       date: "2026-08-08",
       body:

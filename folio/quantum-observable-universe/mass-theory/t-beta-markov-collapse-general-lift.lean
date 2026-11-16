@@ -14,9 +14,10 @@
       τ positive-semi-definite on squares, non-degenerate
 
   Then the SDP-min-norm primal-feasible element of A satisfying
-  `τ X = S` is `X = S • 1`, exactly.  Applied to A = H_n(R, q) (the
-  Iwahori–Hecke algebra at generic q) with τ = the Jones–Markov
-  trace τ_M, this gives T_β = S · 1_H.
+  `τ X = S` is `X = S • 1`, exactly.  The hypotheses FAIL for
+  A = H_n(R, q), n ≥ 3, with τ = τ_M (τ_M(X·X) < 0 at σ₁σ₂ − σ₂σ₁);
+  the Hecke case needs the twisted form τ_M(X · X†) and is not
+  covered by this file.
 
   **Strategy.**
 
@@ -89,9 +90,11 @@ structure NormalizedTrace (R : Type u) [CommSemiring R]
     The trace `τ` is positive-semi-definite on the Frobenius bilinear
     form `⟨X, Y⟩_τ := τ(X · Y)`, i.e. `0 ≤ τ(X · X)` for every `X`.
 
-    For the Jones–Markov trace `τ_M` on `H_n(R, q)` at generic `q > 0`
-    over `R = ℝ`, this follows from the q-hook-length formula
-    `dim_q(λ) > 0` and the Wedderburn decomposition.
+    **Not satisfied by the Jones–Markov `τ_M` on `H_n(R, q)` for
+    `n ≥ 3` (corrected 2026-11-15).**  At `X = σ₁σ₂ − σ₂σ₁ ∈ H₃`,
+    `τ_M(X · X) = −2(q⁴ + q² + 1)/(q² + 1)² < 0`.  The positive form on
+    `H_n` is the twisted one, `τ_M(X · X†)` with `†` the anti-involution
+    fixing each `σ_i`; this class does not encode it.
 
     Class hypothesis per AGENTS.md §3b-cond: the substantive analytic
     content is axiomatised here so the downstream min-norm theorem is
@@ -196,8 +199,8 @@ theorem completing_the_square_general (R : Type u) [CommRing R]
     attained iff `X = S • 1`, giving the full SHAPE-collapse claim
     `T_β = S · 1_H` of PR #1750.
 
-    Applied to the Iwahori–Hecke algebra `A = H_n(R, q)` at generic
-    `q > 0` with `τ = τ_M` (the Jones–Markov trace): the L2 SHAPE × S
+    This does not apply to `A = H_n(R, q)`, `n ≥ 3`, with `τ = τ_M`,
+    where `PSDTrace` fails (see the class docstring).  The L2 SHAPE × S
     decomposition of PR #1739 is basis-dependence of the
     coordinate-vector Euclidean norm on `ℝ^6`, NOT the categorical
     Frobenius norm on H_3(ℝ, q).

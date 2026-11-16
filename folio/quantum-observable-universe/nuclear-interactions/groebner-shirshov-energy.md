@@ -10,7 +10,13 @@ $$
 where $\xi$ is the normal form and $\ell(w)$ is the word length. Then:
 
 1. **Only Hecke reductions change energy.** The Yang--Baxter relation and far commutativity preserve coefficients and lengths. The Hecke relation is the unique energy-changing generator.
-2. **Energy is path-independent.** The total energy change is independent of the order of applied basis elements. This follows from confluence.
-3. **Each Hecke step has a definite energy.** Replacing $\sigma_i^2$ with $(q - q^{-1})\sigma_i + 1$ changes energy by $|c| \cdot |q - q^{-1}|$. Every Hecke step increases the total weight.
+2. **Energy is path-independent.** Along any reduction path $\xi_0 \to \xi_1 \to \cdots \to \xi_m$ the step changes sum to $E(\xi_m) - E(\xi_0)$. By confluence every path ends at the same normal form, so the total change depends only on $\xi_0$.
+3. **Energy change of one Hecke step.** Let $h = q - q^{-1}$. Applied to an isolated monomial $c\,w$ with $w = u\,\sigma_i\sigma_i\,v$ of length $\ell$, the replacement of $\sigma_i^2$ by $h\,\sigma_i + 1$ changes the energy by
 
-**Archimedean specialisation.** The energy $|c|\,(q - q^{-1})$ and its positivity for $q > 1$ are stated over $\mathbb{R}$. What follows sits on the archimedean side of the substrate wall.
+$$
+  |c|\,\bigl(|h|\,(\ell - 1) - 2\bigr).
+$$
+
+The sign is not fixed: for $|h|\,(\ell - 1) < 2$ the step lowers the energy.
+
+**Archimedean specialisation.** The absolute values in $E$ are taken over $\mathbb{R}$, so the functional sits on the archimedean side of the substrate wall. Near the substrate value, $h \approx 0.21$, so a Hecke step on a short word lowers the energy.

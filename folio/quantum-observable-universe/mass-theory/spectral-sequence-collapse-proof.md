@@ -1,11 +1,12 @@
 *Proof.*
-Whitehead's lemma for semisimple algebras over a field of
-characteristic zero: every Hochschild cocycle in degree $k \geq 1$ is
-a coboundary, so $\mathrm{HH}^k = 0$.  Over a commutative ring $R$ the
-same conclusion holds whenever $A$ is separable / semisimple.  The
+A separable algebra has $\mathrm{HH}^k(A, M) = 0$ for $k \geq 1$ and
+every bimodule $M$ (Hochschild 1945; this is the associative analogue
+of Whitehead's lemma, not Whitehead's lemma itself).  A semisimple
+algebra over a field of characteristic zero is separable.  The
 spectral sequence $E_r^{p, q} \Rightarrow \mathrm{HH}^{p+q}$ then has
-only $E_\infty^{p, 0}$ surviving with $p + 0 = 0$, giving
-$E_\infty^{0, 0} = \mathrm{HH}^0 = Z(A)$. $\square$
+$E_\infty^{p,q} = 0$ for $p + q \geq 1$, and $E_\infty^{0, 0} =
+\mathrm{HH}^0 = Z(A)$. Nothing here forces the differentials $d_r$ to
+vanish. $\square$
 
 **Corollary (mass functional is a q-deformed Wedderburn-weighted centre projection).**
 *The categorical mass functional pairs the Frobenius integral
@@ -83,8 +84,10 @@ $\geq 2$) is self-dual under combined S-reversal and rank inversion.*
 compute their GB-depth, evaluate $\chi_\lambda$ via Hoefsmit seminormal
 form ([Hoefsmit pipeline](#conj:hoefsmit-scattering-pipeline)), and
 sum $\sum_\lambda w_\lambda \cdot \chi_\lambda(\beta) / \dim_q V_\lambda$
-binning by $\mathrm{depth}(\lambda)$.  No higher-page differentials
-$d_r$ ($r \geq 1$) need ever be computed — they all vanish.*
+binning by $\mathrm{depth}(\lambda)$.  This uses only the centre
+$Z(A) = E_\infty^{0,0}$, so no page of the spectral sequence is
+needed. That is not because the differentials $d_r$ vanish, which
+is not shown.*
 
 > **Gap.** The step above reads a grading of the **centre** by
 > *partition* depth off a proposition that stratifies $H_n(R,q)$ by the

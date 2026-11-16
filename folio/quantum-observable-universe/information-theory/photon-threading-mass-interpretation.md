@@ -8,7 +8,7 @@ We compute the mass $\mathfrak{m}_{\mathfrak{H}}$ using three independent method
 | Ribbon trace | Algebraic | $\lVert\mathrm{tr}_{\mathrm{ribbon}}(\rho(\beta_{\mathfrak{H}}))\rVert \cdot (q-1)^2$ |
 | Gröbner--Shirshov reduction | Computational | $(q-1)^2 \sum \lvert c_w\rvert \cdot \lvert q - q^{-1}\rvert$ |
 
-The first represents the definition ([mass over $\mathbb{C}$](#ex:mass-identity-su2)). The second derives from the ribbon category structure ([mass--energy equivalence](#thm:mass-energy-equivalence)). The third forms the content of this proposition.
+The first represents the definition ([mass over $\mathbb{C}$](#ex:mass-identity-su2)). The second derives from the ribbon category structure ([energy](#def:mass-energy)). The third forms the content of this proposition.
 
 **Physical picture.**
 

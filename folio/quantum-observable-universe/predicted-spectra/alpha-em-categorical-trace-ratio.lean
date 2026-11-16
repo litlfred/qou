@@ -57,9 +57,13 @@ q^n and (-q⁻¹)^n. For n odd this simplifies to qⁿ - q⁻ⁿ.
 -/
 def delta_q_T_2_n (q : Rˣ) (n : ℕ) : R := (q : R) ^ n - (↑q⁻¹ : R) ^ n
 
-/-- The categorical trace δ_q(T_{3,5}) in the standard H_3
-representation. By the analogue of the 2-strand computation on the
-3-strand torus knot, this evaluates to q^10 - q^-10 = h · [10]_q.
+/-- The value **assigned** to δ_q(T_{3,5}): `q^10 − q^-10 = h · [10]_q`.
+
+**This is not the trace sum (corrected 2026-11-15).** Summing the actions
+of `(σ₁σ₂)^5` over `V_(3)`, `V_(2,1)`, `V_(1,1,1)` gives
+`q^10 − 1 + q^-10`, because on the 2-dimensional `V_(2,1)` the element
+`σ₁σ₂` has eigenvalues `ω, ω²` (`ω³ = 1`) and its fifth power has trace −1.
+So the identities below hold for this assigned value, not for a derived one.
 -/
 def delta_q_T_3_5 (q : Rˣ) : R := delta_q_T_2_n q 10
 

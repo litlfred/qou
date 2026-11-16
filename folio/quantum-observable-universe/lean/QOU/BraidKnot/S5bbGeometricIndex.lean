@@ -6,7 +6,8 @@ import Mathlib.Tactic
 
 Lean formalisation of the geometric index for the `s5bb` keystone.
 
-This file class-axiomatises the contact geometry properties of the 5-manifold,
+This file carries the conditional index hypothesis for the 5-manifold
+(the contact-geometry marker class `IsColourReeb` was removed 2026-11-15),
 specifically the existence of a nowhere-zero U(1) ⊂ SU(3) colour Reeb vector field
 outside the SO(3) isotropy, and defines its equivariant index against the
 Ocneanu weights.
@@ -24,17 +25,10 @@ opaque Manifold5 : Type
 opaque VectorField (M : Manifold5) : Type
 opaque WenzlWeights : Type
 
-/-- The properties of the colour Reeb vector field on the 5-manifold. -/
-class IsColourReeb {M : Manifold5} (ξ : VectorField M) : Prop where
-  /-- `opaque marker` — Mathlib has no contact-geometry / Reeb-field
-      infrastructure, and `Manifold5` / `VectorField` are opaque hooks,
-      so the genuine Reeb condition (ξ is the Reeb field of a contact
-      form θ: θ(ξ) = 1, dθ(ξ, ·) = 0) cannot yet be stated. -/
-  is_reeb : True
-  /-- `opaque marker` — the SO(3)-isotropy-avoidance locus (ξ nowhere
-      zero outside the SO(3) isotropy) is likewise unstatable over the
-      opaque `Manifold5`; tracked as open geometric content. -/
-  avoids_SO3 : True
+/-! **Removed 2026-11-15: `IsColourReeb`.** Both fields were `True`. The
+Reeb condition (θ(ξ) = 1, ι_ξ dθ = 0) and SO(3)-isotropy avoidance cannot be
+stated over the opaque `Manifold5`; Mathlib has no contact geometry, and no
+file used the class. Recorded in bean `qou-n2un`. -/
 
 /-- The equivariant index evaluated against the Ocneanu weights via Atiyah-Bott localization. -/
 opaque EquivariantIndex {M : Manifold5} (ξ : VectorField M) (W : WenzlWeights) : ℝ

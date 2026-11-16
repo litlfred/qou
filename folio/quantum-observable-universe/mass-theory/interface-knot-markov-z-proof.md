@@ -14,10 +14,47 @@ $$
   \;=\; \mathrm{tr}_M(\alpha \cdot \sigma_g) - h \cdot \mathrm{tr}_M(\alpha)
   \;=\; (z - h) \cdot \mathrm{tr}_M(\alpha).
 $$
-Iterating over the $p_+(K) + p_-(K)$ interface generators of
-$\bowtie_K$ — each one is "topmost" relative to the constituent
-sub-braid below it — and applying the appropriate factor per sign
-yields the boxed identity ($\star$).
+These two identities apply when the interface generator is the last
+letter. In $\mathcal{B}_K$ an interface generator sits *between* two
+blocks, so the iteration needs a block-multiplicativity lemma.
+
+**Lemma (block multiplicativity).** Let $x \in H_{k+1}(q)$, let
+$y \in H_m(q)$, and let $\mathrm{sh}_{k+1}(y)$ be $y$ with every
+$\sigma_i$ replaced by $\sigma_{i+k+1}$. Then
+$$
+  \mathrm{tr}_M\bigl(x\,\mathrm{sh}_{k+1}(y)\bigr) = \mathrm{tr}_M(x)\,\mathrm{tr}_M(y),
+  \qquad
+  \mathrm{tr}_M\bigl(x\,\sigma_k\,\mathrm{sh}_{k+1}(y)\bigr) = z\,\mathrm{tr}_M(x)\,\mathrm{tr}_M(y).
+$$
+
+*Proof.* Put $a = x$ or $a = x\sigma_k$; in both cases $a$ lies in
+$H_{k+2}(q)$. Consider the linear map $y \mapsto \mathrm{tr}_M(a\,\mathrm{sh}_{k+1}(y))$.
+For $m = 1$ it gives $\mathrm{tr}_M(a)$. For $m \ge 2$, write a basis
+element of $H_m(q)$ as $T_u\,\sigma_{m-1}\,T_v$ with $u, v \in S_{m-1}$, or
+as $T_u$ with $u \in S_{m-1}$. In the first case $\mathrm{sh}(T_v)\,a\,\mathrm{sh}(T_u)$ lies in
+$H_{m+k}(q)$, so cyclicity, the Markov property for the top generator
+$\sigma_{m+k}$, and cyclicity again give
+$$
+  \mathrm{tr}_M\bigl(a\,\mathrm{sh}(T_u)\,\sigma_{m+k}\,\mathrm{sh}(T_v)\bigr)
+  = z\,\mathrm{tr}_M\bigl(\mathrm{sh}(T_v)\,a\,\mathrm{sh}(T_u)\bigr)
+  = z\,\mathrm{tr}_M\bigl(a\,\mathrm{sh}(T_u T_v)\bigr).
+$$
+In the second case $\mathrm{sh}(T_u)$ lies in $H_{m+k}(q)$ and the trace
+restricts. This is the same recursion that computes $\mathrm{tr}_M(y)$ from
+$\mathrm{tr}_M(1) = 1$, so the map equals $\mathrm{tr}_M(a)\,\mathrm{tr}_M(y)$.
+The Markov property gives $\mathrm{tr}_M(x\sigma_k) = z\,\mathrm{tr}_M(x)$. $\square$
+
+Now write $\mathcal{B}_K = b_1\,\varepsilon_1\,b_2\,\varepsilon_2 \cdots
+\varepsilon_{A-1}\,b_A$, where $b_i$ is the word of the $i$-th nucleon on
+its own block of strands and $\varepsilon_i = \sigma_{g_i}^{\pm 1}$ joins
+blocks $i$ and $i+1$; the vacuum braid is $b_1 b_2 \cdots b_A$. Applying
+the lemma $A - 1$ times, with $\sigma^{-1} = \sigma - h$ for the negative
+connectors, gives $\mathrm{tr}_M(\mathcal{B}_K) = z^{p_+}(z-h)^{p_-}
+\prod_i \mathrm{tr}_M(b_i)$, and $\mathrm{tr}_M(\mathcal{B}_K^{\mathrm{vac}})
+= \prod_i \mathrm{tr}_M(b_i)$. Dividing yields the boxed identity
+($\star$). An exact check over $\mathbb{Q}$ at $q = 2$ (three blocks on
+nine strands, one positive and one negative connector) reproduces
+$z(z-h)$.
 
 ### Averaged (bar-invariant) p-n interface
 

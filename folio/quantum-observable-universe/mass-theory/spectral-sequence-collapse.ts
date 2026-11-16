@@ -10,6 +10,11 @@ export default proposition({
   uses: ["prop:curvature-rank-gb-stratification"],
   authorNotes: [
     {
+      kind: "caveat",
+      date: "2026-11-16",
+      body: "The statement said the GB spectral sequence collapses at $E_1$, and the proof's practical consequence said all differentials vanish. Vanishing of $\\mathrm{HH}^k$ for $k \\geq 1$ only fixes the limit page ($E_\\infty$ concentrated in total degree 0); it does not force $d_r = 0$. Also: the statement now requires $R$ a field with $H_n(R,q)$ semisimple and separable; the vanishing theorem is Hochschild's for separable algebras, not Whitehead's lemma; and the Lean docstring's `Σ w_λ = 1` was corrected to the classical weights only.",
+    },
+    {
       kind: "status",
       date: "2026-08-26",
       body:

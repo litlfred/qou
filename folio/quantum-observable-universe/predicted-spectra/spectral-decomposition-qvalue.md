@@ -24,7 +24,7 @@ $$
 
 *Until 2026-10-10 this read $z = (q^{1/2} + q^{-1/2})^{-1} \approx 0.4993203342$, the excised convention-C value. Under convention D each $\hat{V}_j$, and hence $P(q)$, lies in $\mathbb{Q}(q)$; the convention-D values of $\mathcal{Q}_{\mathrm{bare}}$ are tabulated in the [interpretation](#rem:spectral-decomposition-qvalue-interpretation).*
 
-**(ii)** *$\log_q(x) = \ln x / \ln q$ is the $q$-natural logarithm. It counts exceptional divisor levels along the color tube fiber of $\Sigma_g$. The constant $\hbar_q = (q - 1)/q$ is the quantum Planck constant. This is the action per divisor step. The factor $m_e/3$ is the mass per crossing of the trefoil $\mathcal{K}_e = \mathcal{K}_{\tau(2,3)}$. The electron has $3$ crossings. The product $\hbar_q \cdot m_e / 3$ replaces the intermediate notation $\mathfrak{E} \cdot \mu_0$. These cancel algebraically.*
+**(ii)** *$\log_q(x) = \ln x / \ln q$ is the $q$-natural logarithm. It counts exceptional divisor levels along the color tube fiber of $\Sigma_g$. The constant $\hbar_q = (q - 1)/q$ is the quantum Planck constant. This is the action per divisor step. The factor $m_e/3$ is the mass per crossing of the trefoil $\mathcal{K}_e = \mathcal{K}_{\tau(2,3)}$. The electron has $3$ crossings. The product $\hbar_q \cdot m_e / 3$ replaces the intermediate notation $\mathfrak{E}_{\mathrm{int}} \cdot \mu_0$. These cancel algebraically.*
 
 **(iii)** *$F(\tau(r,s), N)$ is the knot operator of $\tau(r,s)$ acting on the converting neutron's shell:*
 

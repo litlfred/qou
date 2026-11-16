@@ -43,9 +43,15 @@ at the longest element. -/
 /-- Reduced word over `Fin (n−1)` simple reflections. -/
 abbrev ReducedWord (n : ℕ) := List (Fin (n - 1))
 
+/-- Macdonald hook-content principal specialisation
+    `s_λ(1, q, …, q^{n−1})` (left opaque here; the explicit closed
+    form is in `prop:macdonald-hook-telescope`). -/
+opaque macdonaldHookPrincipal
+    (Partition : ℕ → Type) (n : ℕ) (lam : Partition n) (q : ℝ) : ℝ
+
 /-- An abstract model of the Demazure operator on weights of
     `S_n`-irreducibles.  An instance provides the Demazure character
-    `demazureCharacter` and the Schur recovery axiom. -/
+    `demazureCharacter` and the Schur recovery hypothesis. -/
 class DemazureModel (Partition : ℕ → Type) (n : ℕ) where
   /-- D_w(λ) at the principal specialisation `x_i = q^{i−1}`. -/
   demazureCharacter : Partition n → ReducedWord n → (q : ℝ) → ℝ
@@ -56,6 +62,12 @@ class DemazureModel (Partition : ℕ → Type) (n : ℕ) where
   schur_nonzero :
     ∀ (lam : Partition n) (q : ℝ), q > 1 →
       demazureCharacter lam w0 q ≠ 0
+  /-- Schur recovery: `D_{w₀}(λ)` at the principal specialisation is the
+      Macdonald hook-content value `s_λ(1, q, …, q^{n−1})`. -/
+  -- Ref: [macdonald1995] Symmetric Functions and Hall Polynomials, §I.3 Ex. 1
+  schur_recovery :
+    ∀ (lam : Partition n) (q : ℝ), q > 1 →
+      demazureCharacter lam w0 q = macdonaldHookPrincipal Partition n lam q
 
 /-! ## Demazure-fiber Markov-trace functional -/
 
@@ -101,31 +113,21 @@ polynomial.  At the principal specialisation `x_i ↦ q^{i−1}` this
 recovers the Macdonald hook-content formula (cf.
 `prop:macdonald-hook-telescope`). -/
 
-/-- Macdonald hook-content principal specialisation
-    `s_λ(1, q, …, q^{n−1})` (axiomatised here; the explicit closed
-    form is in `prop:macdonald-hook-telescope`). -/
-opaque macdonaldHookPrincipal
-    (Partition : ℕ → Type) (n : ℕ) (lam : Partition n) (q : ℝ) : ℝ
+/-- Schur recovery at `w₀`, read off the `DemazureModel` hypothesis
+    `schur_recovery`.
 
--- Demazure character at `w_0` equals the Macdonald hook-content
--- principal specialisation.
-/-- **External axiom (§3b-cond pattern): demazure_principal_specialization_eq_schur.**
-
-    Auto-extracted from the single-sorry theorem body in this file.
-    Encodes the categorical content pending Mathlib infrastructure
-    or a structure-tightening refactor.
-
-    See the theorem docstring below for the cited reference. -/
--- Ref: [macdonald1995] Symmetric Functions and Hall Polynomials, 2nd ed., OUP, §I.3 Ex. 1 (principal specialisation s_λ(1,q,…,q^{n−1}) hook-content); cf. prop:macdonald-hook-telescope
-axiom demazure_principal_specialization_eq_schur_axiom (lam : Partition n) (q : ℝ) (hq : q > 1) :
-    inst.demazureCharacter lam inst.w0 q
-      = macdonaldHookPrincipal Partition n lam q
-
+    Until 2026-11-16 this was discharged by a global `axiom` asserting the
+    identity for EVERY `DemazureModel` instance.  That axiom was
+    inconsistent: two instances with constant characters `1` and `2`
+    (both satisfy `schur_nonzero`) would each equal the same opaque value,
+    giving `1 = 2`.  The identity is now a field of the model, so it is a
+    hypothesis about a given instance, not a global assumption. -/
+-- Ref: [macdonald1995] Symmetric Functions and Hall Polynomials, 2nd ed., OUP, §I.3 Ex. 1
 theorem demazure_principal_specialization_eq_schur
     (lam : Partition n) (q : ℝ) (hq : q > 1) :
     inst.demazureCharacter lam inst.w0 q
       = macdonaldHookPrincipal Partition n lam q :=
-  demazure_principal_specialization_eq_schur_axiom lam q hq
+  inst.schur_recovery lam q hq
 
 /-- Witness scope tag.  For every Weyl element `w ∈ S_n` and every
     partition `λ ⊢ n` at `n ∈ {2, 3}`, the Demazure-fiber Markov-

@@ -10,7 +10,7 @@ This proposition lifts [`prop:t-beta-markov-frobenius-collapse`](t-beta-markov-f
 
 ## Application to the Iwahori–Hecke algebra
 
-For $A = H_n(R, q)$ at generic $q > 0$ with $\tau = \mathrm{tr}_M$, this proposition identifies the canonical SDP-min-Frobenius-norm operator for the constraint $\mathrm{tr}_M(T_\beta) = S$:
+For $A = H_n(R, q)$ with $\tau = \mathrm{tr}_M$ the hypothesis fails for $n \ge 3$: $\mathrm{tr}_M(X \cdot X) < 0$ at $X = \sigma_1\sigma_2 - \sigma_2\sigma_1 \in H_3$, and under convention D the trace is degenerate as well. The Hecke case is instead proved with the twisted form $\mathrm{tr}_M(X \cdot X^\dagger)$ in [`prop:t-beta-markov-frobenius-collapse`](t-beta-markov-frobenius-collapse.md), which gives, up to the radical,
 $$
 T_\beta^{\mathrm{Markov}} \;=\; S \cdot 1_H.
 $$

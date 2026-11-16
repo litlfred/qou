@@ -29,8 +29,10 @@ the per-derivation reading above:
   q-dilogarithm form.
 - *$T_4$ binding (Frobenius co-Casimir):* the universal
   [Frobenius co-Casimir](#thm:frobenius-codim-universal)
-  $T_4 = m_e \cdot \tau(C_{\dim_q})$ has $m_e$ baked into the
-  formula.  Empirically the bound–free differential vanishes for
+  $T_4 = m_e \cdot \sum_{\lambda \vdash 3A} 1/\dim_q(\lambda)$, a
+  formal sum over all partitions, has $m_e$ baked into the formula.
+  Under convention D this is not $m_e \cdot \tau(C_{\dim_q})$, since
+  $\tau(p_\lambda) = 0$ on every block with three or more rows.  Empirically the bound–free differential vanishes for
   the atomic-braid $\tau$, so $T_4$ contributes no binding at
   this stage (open question — see remarks).
 - *$T_5$ binding (chirality):* per
@@ -61,12 +63,20 @@ See [Table 3](#tbl:six-term-per-derivation-weights-table3-data).
 **Mean $\lvert\delta\mathfrak{m}/\mathfrak{m}\rvert = 0.184\%$,
 max $= 0.525\%$ (${}^{4}$He).**
 
-This matches the standalone
-the *atomic-braid mass formula* in the Particles chapter formula's empirical
-fit (0.13–0.16% mean across the same spectrum) and **76$\times$ improves**
-on the proton-fitted single-$E_0$ assembly (14.7% mean) — the
-improvement is entirely from honouring the per-term derivation
-weights.
+These percentages are relative to the **total atomic mass**, whose
+constituent baseline $Z\,m_{\mathfrak{p}} + N\,m_{\mathfrak{n}} + Z\,m_e$
+is taken from CODATA, so they measure the binding only weakly. Read
+from the same Table 3 as a **binding** energy
+$B = Z\,m(^1\mathrm{H}) + N\,m_{\mathfrak{n}} - \mathfrak{m}$,
+the assembly gives $B_{\mathrm{pred}}(\mathrm{D}) = 2.308$ MeV
+($+3.7\%$ against AME $2.225$ MeV), but misses every heavier atom
+by $-22\%$ to $-69\%$: ${}^{3}$H $4.160$ vs $8.482$ ($-50.9\%$),
+${}^{3}$He $5.996$ vs $7.718$ ($-22.3\%$), ${}^{4}$He $8.716$ vs
+$28.296$ ($-69.2\%$), ${}^{6}$Li $18.790$ vs $31.994$ ($-41.3\%$),
+${}^{9}$Be $38.835$ vs $60.210$ ($-35.5\%$) MeV. The comparison
+with the standalone atomic-braid formula (0.13–0.16% mean) and with
+the single-$E_0$ assembly (14.7% mean) is likewise a comparison on
+total mass, not on binding.
 
 **Open questions.**
 

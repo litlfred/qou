@@ -131,19 +131,14 @@ theorem qBinomial_zero [Field R] (n : ℕ) (q : R) (hq : qPochhammerDiag q n ≠
   rw [qPochhammerDiag_zero, Nat.sub_zero, one_mul]
   exact div_self hq
 
-/-! ## Conditional class for the q-Pochhammer / Habiro link
+/-! ## Open: the q-Pochhammer / Habiro link
 
 The Habiro ring identification of the Q_β residue A (per the KLR/crystal
 infra scope) requires the q-Pochhammer module to be wired into a
-Habiro-ring structure. This is captured as a conditional class so
-downstream theorems can carry it as a hypothesis. -/
+Habiro-ring structure. This is open; see the removal note below. -/
 
-/-- Conditional class axiomatising the Habiro-ring evaluation of
-q-Pochhammer products at roots of unity. NEAR-MATCH tier — instance
-not constructed (requires upstream Habiro-ring machinery in Mathlib). -/
-class QPochhammerHabiroEvaluation [CommRing R] (q : R) : Prop where
-  /-- The finite q-Pochhammer evaluates consistently at unity-shifted
-  arguments (opaque marker for the open derivation). -/
-  habiro_evaluation : True
+/-! **Removed 2026-11-15: `QPochhammerHabiroEvaluation`.** Its only field
+was `habiro_evaluation : True`. The real statement lives in the Habiro ring
+`lim_n Z[q]/((q;q)_n)`, which Mathlib does not have. Recorded in bean `qou-n2un`. -/
 
 end QOU.Machinery
