@@ -1737,3 +1737,5 @@ import QOU.KZ.Drinfeld.HeckeStrands
 import QOU.Mass.LagrangianKZInputs
 import QOU.QBeta.BorromeanThreeCuspNZHessian
 import QOU.QBeta.McPhailSnyderBridgeExclusion
+import QOU.Mass.KZHolonomy.MultiStrandHeckeFactor
+import QOU.Torsion.MarkovTraceTowerStabilization
