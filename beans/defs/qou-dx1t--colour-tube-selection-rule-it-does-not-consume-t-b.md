@@ -1,13 +1,13 @@
 ---
 # qou-dx1t
 title: 'Colour-tube selection rule: it does NOT consume t, but it cannot produce it either -- floor overshoots 2H by 3.2%'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T14:12:47Z
-updated_at: 2026-10-04T15:12:09Z
+updated_at: 2026-11-16T18:04:00Z
 parent: qou-10v9
 ---
 
@@ -143,3 +143,11 @@ touch .lake" explicitly.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-09 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-11-16 — Proton–neutron contact split and linear contraction `t_{pn} = c(W)*x` formalized in `InterNucleonChannelColorTube.lean` (PR #8145)
+
+- Verified `ColorFlavorIsospinSelection.lean` (`trivially_inhabited : Nonempty InterfaceExchangeAntisymmetry`) and extended `folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/InterNucleonChannelColorTube.lean` with sorry-free theorems:
+  - `proton_neutron_contact_counts`: proves by `decide` that across the 9 colour-sheet contacts of `(proton, neutron)` (`uud x udd`), there are exactly `4` matched contacts (`epsilon = +1`), `5` mixed contacts (`epsilon = 0`), and `0` conjugate contacts (`epsilon = -1`).
+  - `pnContractedOffset_eq_mixedWeightSum_mul`: proves that for any colour-pair weight tensor `W` and mixed-contact offset datum `x`, `pnContractedOffset W x = pnMixedWeightSum W * x` (`t_{pn} = c(W) * x`), confirming in Lean that `W` scales `x` linearly by `c(W)` and cannot eliminate `x` unless `c(W) = 0`.
+  - `uniform_pnMixedWeightSum` & `uniform_pnContractedOffset`: proves `pnMixedWeightSum uniformWeight = 5 / 9` and `pnContractedOffset uniformWeight x = (5 / 9) * x`.
+- Status kept `in-progress` pending merge of PR #8145 (`ed78b60a0ffe233f132df45a37bb1456ec237832`).

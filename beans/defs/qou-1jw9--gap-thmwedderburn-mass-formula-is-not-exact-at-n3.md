@@ -1,14 +1,14 @@
 ---
 # qou-1jw9
 title: 'GAP (closed): thm:wedderburn-mass-formula''s three invariants were carried — Phi_2/Phi_3 now derived, Phi_1 recomputed under convention D, D table adopted'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-25T07:10:47Z
-updated_at: 2026-10-04T15:12:42Z
+updated_at: 2026-11-16T18:04:00Z
 parent: qou-wp3h
 ---
 
@@ -1272,3 +1272,13 @@ forbids.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-12 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-11-16 — Domain & adjacent-chain growth constraints formalized in Lean and verified in `wedderburn_Mi_constructor_test.py` (PR #8145)
+
+- **Lean formalization (`folio/quantum-observable-universe/mass-theory/wedderburn-mass-formula.lean` & `folio/quantum-observable-universe/lean/QOU/Mass/WedderburnMassFormulaCoefficients.lean`, wired into `QOU.lean`):**
+  - Strengthened `extremal_irreps_count` with a non-vacuous proof (`d_std = n - 1 ∧ d_std >= 2` using `hn : n >= 3`).
+  - Proved `extremal_exhausts_iff_n_le_three` (`extremalIrrepCount n = partitionCountLow n <-> n <= 3` on `1 <= n <= 4`) and `non_extremal_irreps_at_n_eq_four` (`partitionCountLow 4 - extremalIrrepCount 4 = 2`, corresponding to `[2,2]` and `[2,1,1]`).
+  - Proved `adjacentChainPairCount_eq_allPairsCount_at_two` (`1 = 1` at `A = 2`) and `adjacentChain_twice_lt_allPairs_twice` (`2 * adjacentChainPairCount A < A * (A - 1)` for all `A >= 3`).
+- **Python probe & witness (`computations/wedderburn_Mi_constructor_test.py` -> `computations/wedderburn-mi-constructor-test.witness.json`, 4/4 assertions passed):**
+  - Verifies the partition-exhaustion boundary (`n <= 3` vs `n >= 4`), the adjacent-chain vs all-pairs growth table (`A = 2..6`), the exact algebraic coefficient relation `2*beta_3 + beta_2 + 6 = 0` (`< 1.1e-50` at 50 dps), and the 8-cell constructor grid on deuterium.
+- Status kept `in-progress` (rule 13a / owner decision on `Phi_1` table adoption). PR #8145 (`ed78b60a0ffe233f132df45a37bb1456ec237832`).
