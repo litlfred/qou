@@ -1,7 +1,8 @@
 ---
 # qou-atsd-t3
 title: 'T3: rank Sp(2m)=m — m=1 torus fully pinned (lower + torus-upper + self-centralizing over a field); remaining gap = MAXIMALITY via connected-reductive structure theory (root count)'
-status: todo
+status: in-progress
+pr: 8203
 type: task
 priority: normal
 tags:
@@ -32,3 +33,6 @@ m (Sp(2m), rank m); the ≃*-onto-range upgrade.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-07-26 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Progress (2026-11-16, PR #8203)
+- [x] Formalized `symplecticShortRootCount`, `symplecticLongRootCount`, `symplecticTotalRootCount`, `symplecticLieDim`, and `symplectic_root_and_dimension_identities` in `folio/quantum-observable-universe/lean/QOU/Eightfold/RootOfUnityCutoffIsotopeHyperfineBetaCoulombAndSymplecticRoots.lean` + 50-dps mpmath witness (`qou_atsd_t3_symplectic_root_and_dimension_identities`) in PR #8203 (`74a091a53fd300f6f906db42c72c6a5e3e84e7b3`).
