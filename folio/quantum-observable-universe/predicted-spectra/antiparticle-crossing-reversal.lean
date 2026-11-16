@@ -8,8 +8,8 @@ import Mathlib.Tactic.Ring
 
 The mirror operation σ on a knot composite reverses all crossings.  The crossing
 energy changes sign under the bar-involution `q ↦ q⁻¹`, the Coulomb charge
-reverses, and the bare mass (total crossing count, hence hyperbolic volume) is
-preserved.
+reverses, and the topological (relational) mass (total crossing count, hence
+hyperbolic volume) is preserved.
 
 LaTeX label: `prop:antiparticle-crossing-reversal`
 
@@ -76,26 +76,33 @@ theorem coulomb_reversal (H : KnotComposite R) :
   simp only [KnotComposite.coulombCharge, KnotComposite.mirror]
   ring
 
-/-- **Bare-mass invariance** (narrative claim 4): the mirror preserves the total
-    crossing count (hence the knot type and its hyperbolic volume), so a particle
-    and its antiparticle have equal bare mass. -/
-theorem bare_mass_invariance {S : Type*} [CommRing S] (H : KnotComposite S) :
+/-- **Topological-mass invariance** (narrative claim 4): the mirror preserves the
+    total crossing count (hence the knot type and its hyperbolic volume), so a
+    particle and its antiparticle have equal topological (relational) mass. -/
+theorem topological_mass_invariance {S : Type*} [CommRing S] (H : KnotComposite S) :
     H.mirror.pos_crossings + H.mirror.neg_crossings
       = H.pos_crossings + H.neg_crossings := by
   simp only [KnotComposite.mirror]
   omega
 
+/-- Deprecated alias for `topological_mass_invariance` (bean `qou-tknh`). -/
+@[deprecated topological_mass_invariance (since := "2026-11-16")]
+abbrev bare_mass_invariance {S : Type*} [CommRing S] (H : KnotComposite S) :
+    H.mirror.pos_crossings + H.mirror.neg_crossings
+      = H.pos_crossings + H.neg_crossings :=
+  topological_mass_invariance H
+
 /-- **Antiparticles from crossing reversal** (narrative claims 2–4 bundled).
     The mirror operation σ on a knot composite reverses the crossing energy under
     the bar-involution `q ↦ q⁻¹`, reverses the Coulomb charge, and preserves the
-    bare mass.  (Claim 1 — that σ *defines* the antiparticle — is the definition
-    of `KnotComposite.mirror` itself.) -/
+    topological (relational) mass.  (Claim 1 — that σ *defines* the antiparticle —
+    is the definition of `KnotComposite.mirror` itself.) -/
 -- Ref: [leitner2026] Ch. 6, §chirality-trefoil-electron-positron
 theorem antiparticle_crossing_reversal (H : KnotComposite R) :
     H.mirror.crossingEnergy = - H.barCrossingEnergy
     ∧ H.mirror.coulombCharge = - H.coulombCharge
     ∧ H.mirror.pos_crossings + H.mirror.neg_crossings
         = H.pos_crossings + H.neg_crossings :=
-  ⟨crossing_energy_bar_reversal H, coulomb_reversal H, bare_mass_invariance H⟩
+  ⟨crossing_energy_bar_reversal H, coulomb_reversal H, topological_mass_invariance H⟩
 
 end QOU.Torsion

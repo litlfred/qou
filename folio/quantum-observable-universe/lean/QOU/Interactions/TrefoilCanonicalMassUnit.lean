@@ -66,9 +66,18 @@ crossing count.  The mass identification is the genuinely open part, and
 is now stated about given data.
 
 This is an improvement, not a closure: see the residual-weakness note on
-the class itself.  The class remains dischargeable by solving for
-`m_e_cat`, because the corpus does not define a cat-unit electron scale
-to pin it against.
+`TrefoilElectronMassConj` itself.  When `m_e_cat` is left as a free parameter,
+`TrefoilElectronMassConj` remains dischargeable by solving `m_e_cat = 1 / |tr_M T|`.
+
+**Closed 2026-11-16 (bean `qou-0w42`) — canonical cat-unit electron scale pinned.**
+In cat-units (where mass is measured in units of the electron mass and converted
+to MeV by multiplying by `m_e_MeV_codata`), the electron's own cat-unit scale is
+the unit `m_e_cat_canonical : ℝ := 1` and its $n = 2$ Wedderburn multiplicity is
+`trefoil_multiplicity_canonical : ℕ := 1`.  Pinning both parameters in
+`TrefoilCanonicalElectronMassConj (T : HeckeElement 2)` removes the free
+`m_e_cat := 1 / |tr_M T|` degree of freedom: `TrefoilCanonicalElectronMassConj T`
+is equivalent to `absMarkovTrace 2 T = 1`
+(`trefoilCanonicalElectronMassConj_iff_absMarkovTrace_eq_one`).
 
 ## Already-proved algebraic facts (sorry-free, no class needed)
 
@@ -126,6 +135,34 @@ theorem trefoil_b3_nf_coeff_zero :
     QOU.Interactions.unit_nf 5 = 0 :=
   QOU.Interactions.unit_nf_no_trefoil
 
+/-! ## §1b  Canonical cat-unit electron scale (bean `qou-0w42`)
+
+    In QOU cat-units, all topological masses are dimensionless ratios relative
+    to the electron calibration anchor (`M(K)_MeV = M(K)_cat · m_e_MeV_codata`).
+    Consequently, the electron's own cat-unit scale is the unit `1 : ℝ`, and its
+    $n = 2$ Hecke-sector Wedderburn multiplicity is `1 : ℕ`.  Defining these two
+    canonical constants closes the `m_e_cat := 1 / |tr_M T|` rescaling loophole
+    noted in `qou-lo1t` / `qou-0w42`. -/
+
+/-- The canonical cat-unit electron mass scale: in cat-units (dimensionless units
+    of the electron mass, converted to MeV via `m_e_MeV_codata`), the electron
+    scale is identically `1`. -/
+def m_e_cat_canonical : ℝ := 1
+
+/-- The canonical cat-unit electron mass scale is strictly positive. -/
+theorem m_e_cat_canonical_pos : (0 : ℝ) < m_e_cat_canonical := by
+  unfold m_e_cat_canonical
+  norm_num
+
+/-- The canonical Wedderburn multiplicity `ρ(T(2,3)) = 1` in the `n = 2` Hecke
+    sector. -/
+def trefoil_multiplicity_canonical : ℕ := 1
+
+/-- The canonical trefoil Wedderburn multiplicity is strictly positive. -/
+theorem trefoil_multiplicity_canonical_pos : 0 < trefoil_multiplicity_canonical := by
+  unfold trefoil_multiplicity_canonical
+  norm_num
+
 /-! ## §2  Primary conjecture class (§3b-tax: primary, no upstream class) -/
 
 /-- **Primary conjecture: the trefoil is the canonical mass unit for the electron.**
@@ -166,6 +203,22 @@ class TrefoilElectronMassConj
       This is the CAL-1 calibration identification: m_e is the trefoil's
       topological mass in the QOU framework. -/
   trefoil_mass_eq_m_e : categoricalMassMeV rho m_e_cat T = m_e_MeV_codata
+
+/-- **Parameter-pinned primary conjecture (bean `qou-0w42`): the trefoil `T` has
+    unit categorical mass at the canonical cat-unit electron scale.**
+
+    Fixes `rho := trefoil_multiplicity_canonical` (`1`) and
+    `m_e_cat := m_e_cat_canonical` (`1`), eliminating the `m_e_cat := 1 / |tr_M T|`
+    rescaling degree of freedom.  By
+    `trefoilCanonicalElectronMassConj_iff_absMarkovTrace_eq_one` below, this
+    class is equivalent to `absMarkovTrace 2 T = 1`, which cannot be discharged
+    without exhibiting a `T : HeckeElement 2` whose Markov trace has unit
+    modulus.
+    @conjecture: primary -/
+-- Ref: [leitner2026] quantum-observable-universe/knots-particles-confinement/
+--      binding-knots-visual-inventory.md §"Trefoil = electron"
+class TrefoilCanonicalElectronMassConj (T : HeckeElement 2) : Prop extends
+    TrefoilElectronMassConj T trefoil_multiplicity_canonical m_e_cat_canonical
 
 /-! ## §2a  Structural integers of the trefoil — computed, not assumed
 
@@ -240,6 +293,38 @@ theorem trefoil_cat_mass_normalised [ctx : TrefoilElectronMassConj T rho m_e_cat
   have hne : m_e_MeV_codata ≠ 0 := m_e_ne_zero
   field_simp at h
   exact h
+
+/-- **Theorem (bean `qou-0w42`).**
+
+    Under the canonical cat-unit electron scale (`rho = 1`, `m_e_cat = 1`),
+    `TrefoilCanonicalElectronMassConj T` is equivalent to the parameter-free
+    Markov-trace normalisation `absMarkovTrace 2 T = 1`. -/
+-- Ref: [leitner2026] quantum-observable-universe/observations/three-calibration-inputs-context.ts
+theorem trefoilCanonicalElectronMassConj_iff_absMarkovTrace_eq_one :
+    TrefoilCanonicalElectronMassConj T ↔ absMarkovTrace 2 T = 1 := by
+  constructor
+  · intro h
+    have hnorm : categoricalMass trefoil_multiplicity_canonical m_e_cat_canonical T = 1 :=
+      @trefoil_cat_mass_normalised T trefoil_multiplicity_canonical m_e_cat_canonical
+        h.toTrefoilElectronMassConj
+    unfold categoricalMass trefoil_multiplicity_canonical m_e_cat_canonical at hnorm
+    simpa using hnorm
+  · intro htr
+    refine ⟨⟨?_⟩⟩
+    unfold categoricalMassMeV categoricalMass
+      trefoil_multiplicity_canonical m_e_cat_canonical
+    rw [htr]
+    simp
+
+/-- **Corollary (bean `qou-0w42`).**
+
+    Any canonical trefoil electron mass witness has unit absolute Markov trace
+    `|tr_M(T)| = 1`. -/
+-- Ref: [leitner2026] quantum-observable-universe/observations/three-calibration-inputs-context.ts
+theorem trefoil_canonical_absMarkovTrace_eq_one
+    [h : TrefoilCanonicalElectronMassConj T] :
+    absMarkovTrace 2 T = 1 :=
+  (trefoilCanonicalElectronMassConj_iff_absMarkovTrace_eq_one T).mp h
 
 /-- **Theorem (conditional on `TrefoilElectronMassConj`).**
 

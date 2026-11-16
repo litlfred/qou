@@ -107,4 +107,55 @@ theorem gram_symm_of_rep_decomp_of_basis
   gram_symm_of_rep_decomp B τ s w ρ hmul
     (rep_decomp_of_basis τ s w ρ hτadd hτsmul hρadd hρsmul hbasis) i j
 
+/-- **All-`n` full trace cyclicity from a basis-level character decomposition
+    (bean `qou-bhrx`, F4-opt1).**
+
+    Chains `gram_symm_of_rep_decomp_of_basis` directly into `cyclic_of_gram_symm`:
+    at any level `ι` (`[Fintype ι] [DecidableEq ι]`), if `B` is bilinear and `τ`
+    agrees on the standard basis `e i` with a weighted sum of matrix traces of
+    `B`-multiplicative linear representations `ρ l`, then `τ (B u v) = τ (B v u)`
+    holds for all `u, v : ι → R`. -/
+theorem cyclic_of_rep_decomp_of_basis
+    (B : (ι → R) → (ι → R) → (ι → R)) (τ : (ι → R) → R)
+    (s : Finset Λ) (w : Λ → R) (ρ : ∀ l, (ι → R) → Matrix (dim l) (dim l) R)
+    (hBaddl : ∀ u u' v, B (u + u') v = B u v + B u' v)
+    (hBaddr : ∀ u v v', B u (v + v') = B u v + B u v')
+    (hBsmull : ∀ (c : R) u v, B (c • u) v = c • B u v)
+    (hBsmulr : ∀ (c : R) u v, B u (c • v) = c • B u v)
+    (hBzerol : ∀ v, B 0 v = 0)
+    (hmul : ∀ l u v, ρ l (B u v) = ρ l u * ρ l v)
+    (hτadd : ∀ u v, τ (u + v) = τ u + τ v)
+    (hτsmul : ∀ (c : R) v, τ (c • v) = c * τ v)
+    (hρadd : ∀ l u v, ρ l (u + v) = ρ l u + ρ l v)
+    (hρsmul : ∀ l (c : R) v, ρ l (c • v) = c • ρ l v)
+    (hbasis : ∀ i, τ (e (R := R) i) = ∑ l ∈ s, w l * (ρ l (e (R := R) i)).trace)
+    (u v : ι → R) :
+    τ (B u v) = τ (B v u) :=
+  cyclic_of_gram_symm B τ hBaddl hBaddr hBsmull hBsmulr hBzerol hτadd hτsmul
+    (gram_symm_of_rep_decomp_of_basis B τ s w ρ hmul hτadd hτsmul hρadd hρsmul hbasis)
+    u v
+
+section OcneanuStabilization
+
+variable {H_n H_succ : Type*} [Mul H_n] [Mul H_succ]
+
+/-- **Abstract Ocneanu stabilization cyclicity step (bean `qou-bhrx`, F4-opt1).**
+
+    Suppose `ι_emb : H_n → H_succ` is a multiplicative embedding into the next
+    Hecke level, `g : H_succ` is the top-strand generator $\sigma_n$, and the
+    Markov trace satisfies the Ocneanu stabilization law on double-coset words
+    `τ_succ (ι_emb u * g * ι_emb v) = z * τ_n (u * v)`.  If `τ_n` is cyclic on
+    `H_n` (`τ_n (u * v) = τ_n (v * u)`), then `τ_succ` is cyclic on the
+    stabilized word pair `(ι_emb u * g, ι_emb v)` vs `(ι_emb v * g, ι_emb u)`. -/
+theorem ocneanu_stabilization_cyclic
+    (ι_emb : H_n → H_succ) (g : H_succ) (z : R)
+    (τ_n : H_n → R) (τ_succ : H_succ → R)
+    (hstab : ∀ x y : H_n, τ_succ (ι_emb x * g * ι_emb y) = z * τ_n (x * y))
+    (hcyc_n : ∀ x y : H_n, τ_n (x * y) = τ_n (y * x))
+    (u v : H_n) :
+    τ_succ (ι_emb u * g * ι_emb v) = τ_succ (ι_emb v * g * ι_emb u) := by
+  rw [hstab u v, hstab v u, hcyc_n u v]
+
+end OcneanuStabilization
+
 end QOU.Machinery.BilinearTrace
