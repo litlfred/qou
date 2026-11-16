@@ -1,4 +1,4 @@
-*Let $\mathcal{N}(Z, N)$ be the Gröbner-Shirshov-reduced nuclear braid word in $H_A(q)$. At each generator $\sigma_i$, let $(a_i, b_i)$ be the transfer-matrix-reduced chain coefficients. Let $z = q^{3}/(q^{2}+1)$ (**convention D**) be the Markov trace parameter. The Markov trace factors exactly:*
+*Let $\mathcal{N}(Z, N)$ be the nuclear braid word in $H_A(q)$, presented with its crossings grouped by generator in increasing order, $\mathcal{N} = X_0 X_1 \cdots X_{A-2}$ with each $X_i$ a product of factors $c\,\sigma_i + d$ at the single generator $\sigma_i$. At each generator, let $(a_i, b_i)$ be the transfer-matrix-reduced chain coefficients, so $X_i = a_i \sigma_i + b_i$. Let $z = q^{3}/(q^{2}+1)$ (**convention D**) be the Markov trace parameter. The Markov trace factors exactly:*
 
 $$
   \mathrm{tr}_{\mathrm{Markov}}\!\bigl(
@@ -9,7 +9,9 @@ $$
   \bigl(z \cdot a_i + b_i\bigr).
 $$
 
-Each factor $\hat{V}_i = z \cdot a_i + b_i$ is a polynomial in $q$. The full trace is a product of polynomials, evaluating the nuclear Skein polynomial.
+Each factor $\hat{V}_i = z \cdot a_i + b_i$ is a rational function of $q$ (since $z = q^3/(q^2+1)$), with coefficients in $\mathbb{Z}[\tfrac12]$. The full trace is their product.
+
+The grouping hypothesis is essential. Letters at adjacent generators do not commute, so a word that interleaves them, such as $\sigma_1\sigma_2\sigma_1$ or the Borromean core $(\sigma_1\sigma_2^{-1})^3$, cannot be regrouped into this form, and its trace does not factor: $\mathrm{tr}_M(\sigma_1\sigma_2\sigma_1) = h z^2 + z \neq z^3$.
 
 **The transfer matrix IS the polynomial.**
 At each crossing between nucleons $i$ and $j$, the transfer matrix

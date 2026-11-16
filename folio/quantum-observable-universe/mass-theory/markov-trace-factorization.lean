@@ -13,8 +13,11 @@ of Markov-traced generator volumes:
   tr(N̄(p,n)) = Π_{i=0}^{A-2} (z · a_i + b_i)
 
 where (a_i, b_i) are the Chebyshev-reduced chain coefficients
-at generator σ_i, and z = 1/(q^{1/2} + q^{-1/2}) is the
-Markov trace parameter.
+at generator σ_i, and z = q³/(q²+1) is the Markov trace parameter
+(convention D; this read the excised convention-C 1/(q^{1/2}+q^{-1/2})
+until 2026-11-16).  The factorisation needs the word grouped by
+generator in increasing order; an interleaved word such as σ₁σ₂σ₁
+does not factor (its trace is h z² + z, not z³).
 
 LaTeX label: `thm:markov-trace-factorization`
 
@@ -24,7 +27,7 @@ LaTeX label: `thm:markov-trace-factorization`
 
 namespace QOU.Archimedean
 
-/-- The Markov trace parameter z = 1/(q^{1/2} + q^{-1/2}). -/
+/-- The Markov trace parameter z = q³/(q²+1) (convention D). -/
 -- Ref: [leitner2026] §6/markov-trace-factorization
 noncomputable def markovZ (q : ℝ) (hq : 0 < q) : ℝ :=
   q ^ 3 / (q ^ 2 + 1)
