@@ -109,7 +109,7 @@ theorem t35_weighted_trace_eq_binomial_iff (w : H3WeightTriple) :
     omega
 
 /-- **Convention-D Row-Cap Exclusion (`t35_conventionD_rowCap_excludes_binomial`, `qou-15sj`):**
-    Under Convention D (`N = 2` Wenzl / Temperley–Lieb quotient `H_3(q) ↠ TL_3(q)`), the 3-row
+    Under Convention D (`N = 2` two-row projector quotient `H_3(q) ↠ TL_3(q)`), the 3-row
     antisymmetric representation `λ = (1,1,1)` has weight `w.wExt = 0`. Any weight triple with
     `w.wExt = 0` cannot reproduce `deltaBinomialTarget` across independent character evaluations. -/
 theorem t35_conventionD_rowCap_excludes_binomial (w : H3WeightTriple) (hCap : w.wExt = 0) :

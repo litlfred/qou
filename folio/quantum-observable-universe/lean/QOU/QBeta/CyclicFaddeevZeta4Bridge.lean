@@ -93,15 +93,21 @@ theorem ext {a b : GaussianInt} (hre : a.re = b.re) (him : a.im = b.im) : a = b 
 
 theorem zero_mul (d : GaussianInt) : mul zero d = zero := by
   rcases d with ⟨dr, di⟩
-  apply ext <;> simp [mul, zero]
+  have hre : (mul zero ⟨dr, di⟩).re = zero.re := by simp [mul, zero]
+  have him : (mul zero ⟨dr, di⟩).im = zero.im := by simp [mul, zero]
+  exact ext hre him
 
 theorem mul_one (a : GaussianInt) : mul a one = a := by
   rcases a with ⟨ar, ai⟩
-  apply ext <;> simp [mul, one]
+  have hre : (mul ⟨ar, ai⟩ one).re = ar := by simp [mul, one]
+  have him : (mul ⟨ar, ai⟩ one).im = ai := by simp [mul, one]
+  exact ext hre him
 
 theorem one_mul (a : GaussianInt) : mul one a = a := by
   rcases a with ⟨ar, ai⟩
-  apply ext <;> simp [mul, one]
+  have hre : (mul one ⟨ar, ai⟩).re = ar := by simp [mul, one]
+  have him : (mul one ⟨ar, ai⟩).im = ai := by simp [mul, one]
+  exact ext hre him
 
 theorem neg_mul (a d : GaussianInt) : mul (neg a) d = neg (mul a d) := by
   rcases a with ⟨ar, ai⟩
@@ -124,7 +130,9 @@ theorem sub_mul (a b d : GaussianInt) :
 
 theorem mul_zeta4 (x : GaussianInt) : mul zeta4 x = ⟨-x.im, x.re⟩ := by
   rcases x with ⟨xr, xi⟩
-  apply ext <;> simp [mul, zeta4]
+  have hre : (mul zeta4 ⟨xr, xi⟩).re = -xi := by simp [mul, zeta4]
+  have him : (mul zeta4 ⟨xr, xi⟩).im = xr := by simp [mul, zeta4]
+  exact ext hre him
 
 theorem mul_zeta4_four_times (x : GaussianInt) :
     mul zeta4 (mul zeta4 (mul zeta4 (mul zeta4 x))) = x := by
@@ -248,8 +256,8 @@ theorem cyclicDenomFour_shift_factor (x : GaussianInt) :
       (cyclicDenomFour x) := by
   rw [cyclicDenomFour_periodic, GaussianInt.zeta4_pow_four, GaussianInt.mul_one]
 
-/-- Specialization of `QOU.QBeta.FaddeevPhiFibreBranch.CyclicFaddeevPhi` to `N = 4` over `ℤ[i]`. -/
-structure CyclicFaddeevPhiFour (D : GaussianInt → GaussianInt) : Prop where
+/-- Specialization of the 4-factor cyclic shift carrier to `N = 4` over `ℤ[i]`. -/
+structure CyclicPhiFour (D : GaussianInt → GaussianInt) : Prop where
   shift_factor : ∀ x : GaussianInt,
     GaussianInt.mul (GaussianInt.sub GaussianInt.one x) (D (GaussianInt.mul GaussianInt.zeta4 x)) =
     GaussianInt.mul
@@ -257,13 +265,13 @@ structure CyclicFaddeevPhiFour (D : GaussianInt → GaussianInt) : Prop where
       (D x)
   periodic : ∀ x : GaussianInt, D (GaussianInt.mul GaussianInt.zeta4 x) = D x
 
-/-- Unconditional discharge of `CyclicFaddeevPhiFour` by `cyclicDenomFour`. -/
-theorem cyclicFaddeevPhiFour_cyclicDenom : CyclicFaddeevPhiFour cyclicDenomFour :=
+/-- Unconditional discharge of `CyclicPhiFour` by `cyclicDenomFour`. -/
+theorem cyclicPhiFour_cyclicDenom : CyclicPhiFour cyclicDenomFour :=
   ⟨cyclicDenomFour_shift_factor, cyclicDenomFour_periodic⟩
 
-/-- Two, three, and four `ζ₄`-rotations of any `CyclicFaddeevPhiFour` carrier `D` leave `D(x)` fixed. -/
-theorem cyclicFaddeevPhiFour_orbit_steps {D : GaussianInt → GaussianInt}
-    (hD : CyclicFaddeevPhiFour D) (x : GaussianInt) :
+/-- Two, three, and four `ζ₄`-rotations of any `CyclicPhiFour` carrier `D` leave `D(x)` fixed. -/
+theorem cyclicPhiFour_orbit_steps {D : GaussianInt → GaussianInt}
+    (hD : CyclicPhiFour D) (x : GaussianInt) :
     let x1 := GaussianInt.mul GaussianInt.zeta4 x
     let x2 := GaussianInt.mul GaussianInt.zeta4 x1
     let x3 := GaussianInt.mul GaussianInt.zeta4 x2
@@ -350,17 +358,17 @@ theorem vModelEval_isZeta4Faithful : IsZeta4FaithfulState vModelEval := by
         GaussianInt.zero] <;>
       omega
 
-/-! ## 3. Bridge Theorems (`qou-ztod`): Why Pure `CyclicFaddeevPhi` Fails Faithfulness & How the Product Succeeds -/
+/-! ## 3. Bridge Theorems (`qou-ztod`): Why Pure `CyclicPhiFour` Fails Faithfulness & How the Product Succeeds -/
 
-/-- **Orbit Sum of a Pure `CyclicFaddeevPhi` Carrier (`cyclicCarrier_orbit_and_sign`).**
-    For any `D` satisfying `CyclicFaddeevPhiFour D`, the pure coordinate evaluation
+/-- **Orbit Sum of a Pure `CyclicPhiFour` Carrier (`cyclicCarrier_orbit_and_sign`).**
+    For any `D` satisfying `CyclicPhiFour D`, the pure coordinate evaluation
     `st ↦ D(st.xCoord)` has 4-step orbit sum equal to `4 · D(st.xCoord)` (purely trivial isotype)
     and alternating sign isotype equal to `0`. -/
 theorem cyclicCarrier_orbit_and_sign {D : GaussianInt → GaussianInt}
-    (hD : CyclicFaddeevPhiFour D) (st : Zeta4FibreState) :
+    (hD : CyclicPhiFour D) (st : Zeta4FibreState) :
     orbitSumFour (fun s => D s.xCoord) st = GaussianInt.smul 4 (D st.xCoord) ∧
     signIsotypeFour (fun s => D s.xCoord) st = GaussianInt.zero := by
-  have hsteps := cyclicFaddeevPhiFour_orbit_steps hD st.xCoord
+  have hsteps := cyclicPhiFour_orbit_steps hD st.xCoord
   rcases hsteps with ⟨h1, h2, h3⟩
   dsimp [orbitSumFour, signIsotypeFour, zeta4RotState]
   rw [h1, h2, h3]
@@ -374,10 +382,10 @@ theorem cyclicCarrier_orbit_and_sign {D : GaussianInt → GaussianInt}
       omega
 
 /-- **Falsifier (`cyclicCarrier_not_zeta4Faithful_of_ne_zero`).**
-    Any `CyclicFaddeevPhiFour` carrier `D` that is non-zero at some state `st` (`D(st.xCoord) ≠ 0`)
+    Any `CyclicPhiFour` carrier `D` that is non-zero at some state `st` (`D(st.xCoord) ≠ 0`)
     has non-zero 4-step orbit sum and therefore FAILS `IsZeta4FaithfulState`. -/
 theorem cyclicCarrier_not_zeta4Faithful_of_ne_zero {D : GaussianInt → GaussianInt}
-    (hD : CyclicFaddeevPhiFour D) (st : Zeta4FibreState)
+    (hD : CyclicPhiFour D) (st : Zeta4FibreState)
     (hne : D st.xCoord ≠ GaussianInt.zero) :
     ¬ IsZeta4FaithfulState (fun s => D s.xCoord) := by
   intro hFaith
@@ -395,24 +403,24 @@ theorem cyclicCarrier_not_zeta4Faithful_of_ne_zero {D : GaussianInt → Gaussian
     where `D₄(0) = 1` and the 4-step orbit sum is `4`). -/
 theorem cyclicDenomFour_alone_not_zeta4Faithful :
     ¬ IsZeta4FaithfulState (fun s => cyclicDenomFour s.xCoord) := by
-  apply cyclicCarrier_not_zeta4Faithful_of_ne_zero cyclicFaddeevPhiFour_cyclicDenom
+  apply cyclicCarrier_not_zeta4Faithful_of_ne_zero cyclicPhiFour_cyclicDenom
     ⟨GaussianInt.one, GaussianInt.zero, GaussianInt.zero⟩
   decide
 
 /-- The bridged assembly `bridgedAssembly A D`, multiplying a state evaluator `A` (such as
-    `vModelEval`) by a `CyclicFaddeevPhiFour` fibre factor `D(st.xCoord)`. -/
+    `vModelEval`) by a `CyclicPhiFour` fibre factor `D(st.xCoord)`. -/
 def bridgedAssembly (A : Zeta4FibreState → GaussianInt) (D : GaussianInt → GaussianInt)
     (st : Zeta4FibreState) : GaussianInt :=
   GaussianInt.mul (A st) (D st.xCoord)
 
 /-- **Bridge Theorem 1 (`bridgedAssembly_zeta4_sq`):**
-    If `D` satisfies `CyclicFaddeevPhiFour D`, then `bridgedAssembly vModelEval D` inherits
+    If `D` satisfies `CyclicPhiFour D`, then `bridgedAssembly vModelEval D` inherits
     the exact `ζ₄² = -1` negation under two quarter-period rotations. -/
 theorem bridgedAssembly_zeta4_sq {D : GaussianInt → GaussianInt}
-    (hD : CyclicFaddeevPhiFour D) (st : Zeta4FibreState) :
+    (hD : CyclicPhiFour D) (st : Zeta4FibreState) :
     bridgedAssembly vModelEval D (zeta4RotState (zeta4RotState st)) =
       GaussianInt.neg (bridgedAssembly vModelEval D st) := by
-  have hsteps := cyclicFaddeevPhiFour_orbit_steps hD st.xCoord
+  have hsteps := cyclicPhiFour_orbit_steps hD st.xCoord
   rcases hsteps with ⟨_, h2, _⟩
   dsimp [bridgedAssembly]
   have hx2 : (zeta4RotState (zeta4RotState st)).xCoord =
@@ -420,16 +428,16 @@ theorem bridgedAssembly_zeta4_sq {D : GaussianInt → GaussianInt}
   rw [hx2, h2, vModelEval_zeta4_sq, GaussianInt.neg_mul]
 
 /-- **Bridge Theorem 2 (`bridgedAssembly_isZeta4Faithful`):**
-    For *every* `IsZeta4FaithfulState` analytic model `A` and *every* `CyclicFaddeevPhiFour`
+    For *every* `IsZeta4FaithfulState` analytic model `A` and *every* `CyclicPhiFour`
     carrier `D`, the product assembly `st ↦ A(st) · D(st.xCoord)` is `IsZeta4FaithfulState`:
     both its 4-step trivial-isotype orbit sum and its 4-step sign-isotype alternating sum vanish! -/
 theorem bridgedAssembly_isZeta4Faithful {A : Zeta4FibreState → GaussianInt}
     {D : GaussianInt → GaussianInt}
-    (hA : IsZeta4FaithfulState A) (hD : CyclicFaddeevPhiFour D) :
+    (hA : IsZeta4FaithfulState A) (hD : CyclicPhiFour D) :
     IsZeta4FaithfulState (bridgedAssembly A D) := by
   constructor
   · intro st
-    have hsteps := cyclicFaddeevPhiFour_orbit_steps hD st.xCoord
+    have hsteps := cyclicPhiFour_orbit_steps hD st.xCoord
     rcases hsteps with ⟨h1, h2, h3⟩
     have horbA := hA.1 st
     dsimp [orbitSumFour, bridgedAssembly]
@@ -444,7 +452,7 @@ theorem bridgedAssembly_isZeta4Faithful {A : Zeta4FibreState → GaussianInt}
     change GaussianInt.mul (orbitSumFour A st) (D st.xCoord) = GaussianInt.zero
     rw [horbA, GaussianInt.zero_mul]
   · intro st
-    have hsteps := cyclicFaddeevPhiFour_orbit_steps hD st.xCoord
+    have hsteps := cyclicPhiFour_orbit_steps hD st.xCoord
     rcases hsteps with ⟨h1, h2, h3⟩
     have hsignA := hA.2 st
     dsimp [signIsotypeFour, bridgedAssembly]
@@ -462,13 +470,13 @@ theorem bridgedAssembly_isZeta4Faithful {A : Zeta4FibreState → GaussianInt}
 /-- **Concrete Discharged Bridge (`bridgedCyclicDenomFour_isZeta4Faithful`, closing `qou-ztod`):**
     The product assembly `vModelEval(st) · cyclicDenomFour(st.xCoord)` — coupling
     `QOU.Mass.ComplexVolumeZeta4Partner.vModel` directly to the discharged `N = 4`
-    `QOU.QBeta.FaddeevPhiFibreBranch.CyclicFaddeevPhi` carrier `(x; ζ₄)₄ = 1 - x⁴` —
+    4-factor cyclic shift carrier `(x; ζ₄)₄ = 1 - x⁴` —
     is `IsZeta4FaithfulState` and non-vacuously non-zero (`bridgedAssembly = -15` at `x = 2, e_+ = 1`). -/
 theorem bridgedCyclicDenomFour_isZeta4Faithful :
     IsZeta4FaithfulState (bridgedAssembly vModelEval cyclicDenomFour) ∧
     bridgedAssembly vModelEval cyclicDenomFour
       ⟨GaussianInt.one, GaussianInt.zero, ⟨2, 0⟩⟩ = ⟨-15, 0⟩ := by
-  refine ⟨bridgedAssembly_isZeta4Faithful vModelEval_isZeta4Faithful cyclicFaddeevPhiFour_cyclicDenom, ?_⟩
+  refine ⟨bridgedAssembly_isZeta4Faithful vModelEval_isZeta4Faithful cyclicPhiFour_cyclicDenom, ?_⟩
   decide
 
 end QOU.QBeta.CyclicFaddeevZeta4Bridge
