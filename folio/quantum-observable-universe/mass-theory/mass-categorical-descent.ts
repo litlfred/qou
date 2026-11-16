@@ -30,6 +30,11 @@ export default proposition({
   uses: ["thm:wedderburn-mass-formula"],
   authorNotes: [
     {
+      kind: "caveat",
+      date: "2026-11-16",
+      body: "The statement asserted, as facts, that the descended components are the volume, pairing and Wigner terms of the liquid-drop model and the transient components the surface, Coulomb, exchange and shell terms. The proof sketch supports neither; it only splits the mass into a central part and a remainder, which holds by definition. Those identifications are now marked conjectural, and the Wigner term is flagged as an empirical import. Wedderburn–Artin was stated over a general ring $R$; it needs a field where $H_n$ is split semisimple. Queued for the weak-proofs pass: demote to a conjecture, since the block's content beyond the definitional split is unproved.",
+    },
+    {
       kind: "status",
       date: "2026-08-14",
       body:
