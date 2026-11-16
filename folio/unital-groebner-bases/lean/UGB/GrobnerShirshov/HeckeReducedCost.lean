@@ -111,4 +111,72 @@ theorem linearFunctional_one (t : Monomial (HeckeGen n) → ℝ) :
   unfold linearFunctional heckeCost AlgElement.singleton AlgElement.single
   simp
 
+/-! ### When is the cost bound an equality?
+
+`abs_linearFunctional_le` gives `|Σ c_m t_m| ≤ M · Σ |c_m|`. Equality would make the functional an
+exact multiple of the cost. The two lemmas below pin down when it can hold.
+
+* `abs_eq_of_bound_tight` — **necessity**: if the bound is an equality, every monomial with a
+  non-zero coefficient has weight of absolute value exactly `M`.
+* `bound_tight_of_aligned` — **sufficiency**: if every weight on the support has absolute value `M`
+  and all products `c_m · t_m` are non-negative, the bound is an equality.
+* `support_subset_of_bound_tight` — the consequence used for the Markov trace: if one monomial `m₀`
+  is the only one with `|t| = M`, equality forces every non-zero coefficient onto `m₀`.
+
+For the convention-D Ocneanu trace `t_w = tr(T_w)` with `q` close to `1`, the maximum `M = 1` is
+attained only at the identity (computed exactly for `n ≤ 5`; it fails for larger `n` at any fixed
+`q > 1`, see `qou-crossing-energy/result-three-directions.md`). There the bound is an equality only
+when the element's normal form is a multiple of `1`. Bean `qou-078y`.
+-/
+
+/-- **Necessity.** If `|Σ c_m t_m| = M · Σ |c_m|` and `|t_m| ≤ M` on the support, then
+`|t_m| = M` at every `m` in the support with `c_m ≠ 0`. -/
+theorem abs_eq_of_bound_tight (t : Monomial (HeckeGen n) → ℝ) (M : ℝ)
+    (f : AlgElement (HeckeGen n) ℝ) (hM : ∀ m ∈ f.support, |t m| ≤ M)
+    (heq : |linearFunctional t f| = M * heckeCost f) :
+    ∀ m ∈ f.support, f.coeff m ≠ 0 → |t m| = M := by
+  have hle : |linearFunctional t f| ≤ f.support.sum (fun m => |f.coeff m| * |t m|) := by
+    unfold linearFunctional
+    refine (Finset.abs_sum_le_sum_abs _ _).trans (le_of_eq ?_)
+    exact Finset.sum_congr rfl fun m _ => abs_mul _ _
+  have hsum : f.support.sum (fun m => |f.coeff m| * (M - |t m|)) ≤ 0 := by
+    have : f.support.sum (fun m => |f.coeff m| * (M - |t m|))
+        = M * heckeCost f - f.support.sum (fun m => |f.coeff m| * |t m|) := by
+      unfold heckeCost
+      rw [Finset.mul_sum, ← Finset.sum_sub_distrib]
+      exact Finset.sum_congr rfl fun m _ => by ring
+    rw [this]; linarith
+  have hnn : ∀ m ∈ f.support, 0 ≤ |f.coeff m| * (M - |t m|) := fun m hm =>
+    mul_nonneg (abs_nonneg _) (by linarith [hM m hm])
+  have hzero := (Finset.sum_eq_zero_iff_of_nonneg hnn).mp (le_antisymm hsum (Finset.sum_nonneg hnn))
+  intro m hm hc
+  have h0 := hzero m hm
+  rcases mul_eq_zero.mp h0 with h | h
+  · exact absurd (abs_eq_zero.mp h) hc
+  · linarith
+
+/-- **Sufficiency.** If every weight on the support has `|t_m| = M` and every product
+`c_m · t_m` is non-negative, the cost bound is an equality. -/
+theorem bound_tight_of_aligned (t : Monomial (HeckeGen n) → ℝ) (M : ℝ)
+    (f : AlgElement (HeckeGen n) ℝ) (hM : ∀ m ∈ f.support, |t m| = M)
+    (hsign : ∀ m ∈ f.support, 0 ≤ f.coeff m * t m) :
+    |linearFunctional t f| = M * heckeCost f := by
+  unfold linearFunctional heckeCost
+  rw [abs_of_nonneg (Finset.sum_nonneg hsign), Finset.mul_sum]
+  refine Finset.sum_congr rfl fun m hm => ?_
+  rw [← abs_of_nonneg (hsign m hm), abs_mul, hM m hm, mul_comm]
+
+/-- **Equality concentrates the coefficients on the maximiser.** If `m₀` is the only monomial of
+the support with `|t| = M` (all others strictly below), equality in the cost bound forces
+`c_m = 0` for every `m ≠ m₀` in the support. -/
+theorem support_subset_of_bound_tight (t : Monomial (HeckeGen n) → ℝ) (M : ℝ)
+    (f : AlgElement (HeckeGen n) ℝ) (m₀ : Monomial (HeckeGen n))
+    (hM : ∀ m ∈ f.support, |t m| ≤ M) (hstrict : ∀ m ∈ f.support, m ≠ m₀ → |t m| < M)
+    (heq : |linearFunctional t f| = M * heckeCost f) :
+    ∀ m ∈ f.support, m ≠ m₀ → f.coeff m = 0 := by
+  intro m hm hne
+  by_contra hc
+  have := abs_eq_of_bound_tight t M f hM heq m hm hc
+  exact absurd this (ne_of_lt (hstrict m hm hne))
+
 end UGB.GrobnerShirshov.Hecke.ReducedCost
