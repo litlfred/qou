@@ -21,4 +21,11 @@ export default proposition({
     witness: "computations/probes/hecke-markov-transition-probe.witness.json",
     status: "verified",
   },
+  authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-16",
+      body: "Item (iv) said the Markov trace of any braid factors as a product of independent vertex volumes. That holds only for words using each generator at most once; for $\\sigma_1\\sigma_2\\sigma_1$ the trace is $h z^2 + z$, not $z^3$. Statement, proof and Lean docstring are scoped. The Lean `MarkovChainFactorization` carries the product formula as a field, so it assumes rather than proves it (queued for the weak-proofs pass).",
+    },
+  ],
 });

@@ -30,10 +30,13 @@ This is the **memorylessness** of a Markov chain: the transition
 at step $n$ depends only on the crossing type at $\sigma_n$,
 not on the history of previous crossings.
 
-**(iv)** Follows from (iii) by induction: peeling generators
-from right to left, each factor $\hat{V}_i = z a_i + b_i$ is
-independent of the remaining product, giving
-$\mathrm{tr}_M(\rho(\beta)) = \prod_i \hat{V}_i$.  $\square$
+**(iv)** Follows from (iii) by induction when each generator occurs
+at most once: then the highest-index letter $\sigma_m$ is the only
+one in $H_m(q) \setminus H_{m-1}(q)$, the Markov property applies to
+it, and peeling gives $\mathrm{tr}_M(\rho(\beta)) = \prod_i \hat{V}_i$.
+If a generator repeats, the remaining word is no longer in
+$H_{m-1}(q)$ and the Markov property does not apply; the step fails
+(for $\sigma_1\sigma_2\sigma_1$ one gets $h z^2 + z \neq z^3$).  $\square$
 
 ## Limiting behaviour
 

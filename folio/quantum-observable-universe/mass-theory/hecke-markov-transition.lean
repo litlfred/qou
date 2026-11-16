@@ -172,9 +172,11 @@ noncomputable def MarkovTransitionStep.vertexVolume (s : MarkovTransitionStep) :
       tr_M(ρ(β)) = ∏_{i=0}^{n−2} V̂_i
 
     Each V̂_i depends only on the local crossing data (a_i, b_i),
-    not on the other generators.  This is the direct consequence of
-    memorylessness: each step is conditionally independent given the
-    Markov property. -/
+    not on the other generators.  This holds for words that use each
+    generator once (one step per generator, as indexed by `Fin (n-1)`
+    here).  It fails when a generator repeats: tr_M(σ₁σ₂σ₁) = h z² + z,
+    not z³ (corrected 2026-11-16).  `factorization` is a field, so this
+    structure assumes the product formula; it does not derive it. -/
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
