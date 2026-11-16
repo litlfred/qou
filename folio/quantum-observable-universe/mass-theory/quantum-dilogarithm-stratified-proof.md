@@ -110,6 +110,8 @@ and $u_n(q) \in \mathbb{Z}[q^{\pm 1/2}]$ is a unit. The exponent
 $c_k(n)$ counts depth-exactly-$k$ partitions; the factor
 $(1 - q^{-k} z)^{-c_k(n)}$ contributes the depth-$k$ stratum of $Z(A)$.
 
+> **Status (2026-11-16): the product expansion in (d) is false as written.** Every $\lambda \vdash n$ has $|\lambda| = n$, so $F_n(z) = \bigl(\sum_{\lambda \vdash n} \dim_q^{-1}(V_\lambda)\bigr)\, z^n$ is a single monomial in $z$. A product $\prod_{k \geq 1}(1-q^{-k}z)^{-c_k(n)}\, u_n(q)$ with some $c_k(n) > 0$ has the nonzero $z^1$ coefficient $u_n(q)\sum_k c_k(n)\, q^{-k}$ when $n \geq 2$, so the two sides cannot agree. Steps (e)–(f) inherit this. The proved truncation statement is [`prop:cell-depth-truncation`](#prop:cell-depth-truncation).
+
 (e) The single-stratum factor $(1 - q^{-k}z)^{-1}$ in $\Phi_q$ is
 the $c_k = 1$ specialisation of (d) — applicable when each depth-$k$
 stratum is one-dimensional or when factoring over irreducible
@@ -191,11 +193,6 @@ correspondence to the standard $q$-content / hook-length formula plus
 explicit — **but "explicit" here means *written down*, not *established*.
 The citation does not supply the identification; the passage above, at
 "not a consequence of [curvature-rank stratification] ... which ... mentions no
-partition", states the position of this proof.** The remaining open piece in Step 3 is **(d)'s product
-expansion** $F_n(z) = \prod_k (1 - q^{-k}z)^{-c_k(n)} \cdot u_n(q)$:
-the existence of such an expansion follows from finiteness of
-$\dim_q^{-1}$ as a Laurent polynomial and unique factorisation in
-$\mathbb{Z}[q^{\pm 1/2}][z]$, but the explicit identification of the
-exponents $c_k(n)$ with $\#\{\lambda : \max\text{-hook} = k\}$
-requires verification on small cases (D's $H_6$ and ${}^3\mathrm{He}$'s
-$H_9$ are tractable computations).
+partition", states the position of this proof.** The product expansion in **(d)** is false (see the status note under (d)); what this paragraph called the remaining open piece is the
+expansion $F_n(z) = \prod_k (1 - q^{-k}z)^{-c_k(n)} \cdot u_n(q)$.
+No such expansion exists for $n \geq 2$, because $F_n$ is a monomial in $z$. The earlier claim that unique factorisation in $\mathbb{Z}[q^{\pm 1/2}][z]$ supplies one is withdrawn.

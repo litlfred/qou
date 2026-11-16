@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Frobenius Casimir of $H_3(q)$: Schur elements, Markov weights, its Markov trace, and $\\sum_{\\lambda\\vdash3}1/\\dim_q\\lambda = 2+1/[2]_q$",
   lean: {
-    ref: "qou:QOU.MassCore.H3FrobeniusCasimir.tr_casimir_D_ne",
+    ref: "qou:QOU.MassCore.H3FrobeniusCasimir.tr_casimir_D",
   },
   uses: ["thm:frobenius-codim-universal"],
   cites: ["jones1987", "geckpfeiffer2000"],
