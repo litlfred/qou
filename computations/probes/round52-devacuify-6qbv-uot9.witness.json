@@ -1,0 +1,58 @@
+{
+  "probe": "round52_devacuify_6qbv_uot9_probe",
+  "scriptPath": "computations/probes/round52_devacuify_6qbv_uot9_probe.py",
+  "scriptHash": "c11a720656fe",
+  "scriptCommitSha": "5355a18ce7a60c5cabb79019663bff82e103d505",
+  "generatedAt": "2026-11-16T22:05:32.074497+00:00",
+  "precisionDps": "80",
+  "allPassed": true,
+  "beans": [
+    "lp_dual_stability",
+    "nucleon_ordering_factorization",
+    "q_turbulence_spectrum",
+    "nsi_q_deformed_kernel",
+    "qou-ewc4"
+  ],
+  "checks": [
+    {
+      "bean": "lp_dual_stability",
+      "passed": true,
+      "minPrimalPairing": "6.0",
+      "channelMargin": "6.0",
+      "dualBound": "21.0",
+      "partialSigma0Pairing": "-6.0",
+      "dualityGap": "0.0"
+    },
+    {
+      "bean": "nucleon_ordering_factorization",
+      "passed": true,
+      "q0": "2.07316016363621913059660617523",
+      "markovTraceCanonical": "8.53835361193528706126475207101",
+      "maxPermutationSpread": "1.6867516709168837158957718482e-80"
+    },
+    {
+      "bean": "q_turbulence_spectrum",
+      "passed": true,
+      "qPowN": "1.423828125",
+      "reCutoff": "8.0",
+      "logDepthBound": "17.6548475770851556529230441943",
+      "deltaEGap": "0.688631871017965025210080757789"
+    },
+    {
+      "bean": "nsi_q_deformed_kernel",
+      "passed": true,
+      "hbarQAt2": "0.5",
+      "qInt2At2": "2.5",
+      "classicalKernelAtR3": "0.222222222222222222222222222222",
+      "puncturedMagnitudeAt1eMinus30": "2.5e+30"
+    },
+    {
+      "bean": "qou-ewc4",
+      "passed": true,
+      "groupLineIntegral": "5.0",
+      "groupSurfaceIntegral": "5.0",
+      "lieLineIntegral": "3.0",
+      "lieSurfaceIntegral": "3.0"
+    }
+  ]
+}
