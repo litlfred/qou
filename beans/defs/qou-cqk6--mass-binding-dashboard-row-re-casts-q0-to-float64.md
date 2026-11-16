@@ -1,7 +1,7 @@
 ---
 # qou-cqk6
 title: mass_binding_dashboard._row re-casts q0 to float64 one line in — 2 of 12 rows publish 'not representable' for a number that is 2.5e74
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -370,3 +370,12 @@ carry the old false text, because the witness cannot be refreshed without
 re-running — i.e. it is blocked on the same `B_sym_ent` decision. So B is done at
 the producer and incomplete in the artifact, which is the normal state and not a
 second defect.
+
+---
+
+## Verification & Fix Update (2026-11-15 — Owner Ruling Q-9NNZ-2 = 1)
+
+- **Status:** Kept `in-progress` pending owner review/merge of PR [`litlfred/qou#8082`](https://github.com/litlfred/qou/pull/8082) (`1076c65f2a00f2604e1ba22458355ff382e7bde9`).
+- **Fixed in PR #8082 (`1076c65f2a`):**
+  - In `computations/mass_binding_dashboard.py`, `_row` and `W_lambda_float` now evaluate `[k]_q`, `[n]_q!`, and `W_lambda = q^{c(lambda)} / prod_b [h(b)]_q` in `mpmath.mpf` at `>= 60` dps from `_Q50` instead of `float(_Q50)`.
+  - Verified finite `mpmath.mpf` values with zero float64 intermediate overflow across the dashboard table, including `${}^{40}\mathrm{Ca}$` ($n=120$, $W_\lambda = 2.45640727656 \times 10^{74}$, $E_{\mathrm{gate}} = -717.01673\text{ MeV}$, $c_\lambda = -0.47704909$) and `${}^{56}\mathrm{Fe}$` ($n=168$, $W_\lambda = 8.14096263205 \times 10^{192}$, $E_{\mathrm{gate}} = -1859.3847\text{ MeV}$, $c_\lambda = -0.26474347$).

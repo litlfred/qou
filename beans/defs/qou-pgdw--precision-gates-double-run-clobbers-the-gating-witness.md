@@ -1,7 +1,7 @@
 ---
 # qou-pgdw
 title: precision-gates.sh runs the raw-float64 audit twice and the advisory run overwrites the gating run's committed witness
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -64,3 +64,11 @@ there** because `precision-gates.sh` is shared and sibling PR #5124 was editing
 gates in the same file — deliberately left to its own owner rather than
 creating a cross-PR conflict. Detail:
 https://github.com/litlfred/qou/pull/5123#issuecomment-5304213117
+
+---
+
+## Verification Update (2026-11-15 — Owner Ruling Q-9NNZ-2 = 1)
+
+- **Status:** Kept `in-progress` per owner review policy.
+- **Verified on `main`:**
+  - `computations/witness_raw_float64_audit.py` derives both `_output_name(scan_root)` (line 131, landed in `7083509439` / `7668b998e9` on `2026-08-15`) and `_baseline_path(scan_root)` (line 76, landed in `8ba73cc915` on `2026-08-21`), emitting `witness-raw-float64--<slug>-audit.witness.json` and `raw-float64-baseline--<slug>.json` for non-default `--scan-root` values without clobbering `computations/witness-raw-float64-audit.witness.json`.

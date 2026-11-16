@@ -1,7 +1,7 @@
 ---
 # qou-f8lit
 title: MostowRigidity.figureEight carries a truncated literal, not the exact Vol(4_1)
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -846,3 +846,12 @@ overload of one name, exactly the `markovZ` pattern AGENTS.md tracks.
 has 0 mathlib oleans and 1.9 G free against a 2.4 G cache restore, so
 `lean`-direct cannot run. Established instead: the diff is comment-only, the
 comment delimiters balance (8 `/-` / 8 `-/`), and the value is byte-identical.
+
+---
+
+## Verification Update (2026-11-15 — Owner Ruling Q-9NNZ-2 = 1)
+
+- **Status:** Kept `in-progress` per owner review policy.
+- **Verified on `main`:**
+  1. `folio/quantum-observable-universe/lean/QOU/Encounter/MostowRigidity.lean`: `figureEight.volume := VOL_4_1` (exactified in `b0fcd205ad` / `cd46a355c7`, `2026-08-30`) and `knot5_2.volume := VOL_5_2` (exactified in `0cacf7891c` / `c30e0ffdb6`, `2026-08-30`); zero `2.0298832` float literals remain in `MostowRigidity.lean` or `MostowTriangulationBridge.lean`.
+  2. `folio/quantum-observable-universe/lean/QOU/BraidKnot/QBetaKeystoneInteraction.lean:15-19`: Docstring explicitly documents that `Vol_4_1 : Real := 2029883212819307250042 / 10^21` is a 21-decimal rational approximation and points to `QOU.Encounter.MostowRigidity.VOL_4_1` for the exact Bloch–Wigner integral (`a28e440649`, `2026-09-04`).

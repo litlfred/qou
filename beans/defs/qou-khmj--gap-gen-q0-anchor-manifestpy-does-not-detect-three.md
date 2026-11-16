@@ -1,7 +1,7 @@
 ---
 # qou-khmj
 title: 'GAP: gen_q0_anchor_manifest.py does not detect three proton-pinned producers — fbor_normalisation_barsymmetry_probe, fbor_q3_is_qschur_plancherel_weight_probe, phase2b_dim_v21_bridge_derivation. All three import Q_MP/Q_50_DIGIT_STR from q_parameter (so NOT independent), but the generator omits them, so their witnesses ship with no q0Anchor and land in Q0_ANCHOR_MISSING. Fix the generator''s detection, not the manifest by hand.'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -45,3 +45,12 @@ which pin a witness used.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-23 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+---
+
+## Verification & Fix Update (2026-11-15 — Owner Ruling Q-9NNZ-2 = 1)
+
+- **Status:** Kept `in-progress` pending owner review/merge of PR [`litlfred/qou#8082`](https://github.com/litlfred/qou/pull/8082) (`1076c65f2a00f2604e1ba22458355ff382e7bde9`).
+- **Verified on `main` & Completed in PR #8082 (`1076c65f2a`):**
+  1. Verified on `main` (`27f26d2616`, `2026-08-23`): `phase2b_dim_v21_bridge_derivation.py`, `fbor_normalisation_barsymmetry_probe.py`, and `fbor_q3_is_qschur_plancherel_weight_probe.py` call `resolve_q0_anchor(__file__)` and stamp `q0Anchor: "proton"` + `q0Value` in their committed witnesses.
+  2. Identified and fixed the remaining manifest generator gap in PR [`litlfred/qou#8082`](https://github.com/litlfred/qou/pull/8082) (`1076c65f2a`): updated `_producer_stem()` in `computations/gen_q0_anchor_manifest.py` to check `<stem>_probe.py` and `<stem>_derivation.py`, and added `fbor_normalisation_barsymmetry_probe`, `fbor_q3_is_qschur_plancherel_weight_probe`, and `phase2b_dim_v21_bridge_derivation` to `physical_proton` in `computations/q0_anchor_manifest.json` so `q0_anchor_is_declared()` returns `True` for all three producers.

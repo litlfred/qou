@@ -1,7 +1,7 @@
 ---
 # qou-4ohh
 title: mass_binding_dashboard computes in float64 — and its own accuracy claim is the f64 floor
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -220,3 +220,12 @@ value position is not. Candidate row for
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-05 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+---
+
+## Verification & Fix Update (2026-11-15 — Owner Ruling Q-9NNZ-2 = 1)
+
+- **Status:** Kept `in-progress` pending owner review/merge of PR [`litlfred/qou#8082`](https://github.com/litlfred/qou/pull/8082) (`1076c65f2a00f2604e1ba22458355ff382e7bde9`).
+- **Fixed in PR #8082 (`1076c65f2a`):**
+  1. `computations/mass_binding_dashboard.py`: Replaced `q0 = float(_Q50)` in `_row` with `q0 = mp.mpf(str(_Q50))` inside `with mp.workdps(max(mp.mp.dps, 60)):`, and updated `q_int_float`, `q_fact_float`, `W_lambda_float`, `_ame_table`, `_electron_binding_mev`, and `main()` (`mp_, mn_`) to compute in `mpmath.mpf` at `>= 60` dps (coercing via `_disp()` only at print/format boundaries). Updated stale docstrings at lines 56 and 368 from `≈ 1e-13` to `≈ 2e-49 MeV` (measured `max|Δ| = 1.4e-49 MeV`).
+  2. `computations/canonical_mass.py`: Updated `_from_witness()` and `prediction_uncertainty_ppb()` to return `_FormattableMpf` (`mpmath.mpf` subclass at `>= 50` dps) instead of `float(...)`, closing the remaining `canonical_mass.py:51` downcast while preserving `f"{mp_:.6f}"` format-spec compatibility.
