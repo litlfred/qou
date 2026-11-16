@@ -1,13 +1,13 @@
 ---
 # qou-cins
 title: 'GAP S1: N-indexed Hecke tower as a MarkovTrace -- one R-algebra with g:N->A + growing H, from the IwahoriHecke type-A tower'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-12T11:54:27Z
-updated_at: 2026-10-04T15:19:31Z
+updated_at: 2026-11-16T19:27:00Z
 parent: qou-rtxm
 ---
 
@@ -63,3 +63,8 @@ Also for `qou-p8yg`, since it now bears directly on my side: `#7153` merged
 `BraidedTower` and carries `TowerSpan` + `DisjointBlockMultiplicative`. If
 `H 1 < H 2` lands as the wire your bean describes, the "growth only at the
 bottom" caveat in my docstring goes with it.
+
+## 2026-11-16 — Iwahori–Hecke Quadratic Inverse & Ocneanu Root (`QOU.Foundations.ConventionDFrobeniusMarkovTower`, PR #8166)
+- Formalized `heckeQuadInverse`, `hecke_quad_right_inverse`, `hecke_quad_left_inverse`, and `hecke_ocneanu_parameter_satisfies_quadratic` in `folio/quantum-observable-universe/lean/QOU/Foundations/ConventionDFrobeniusMarkovTower.lean` (pure Lean 4 core, generic `CommRingOps R` per §7c, `0` `sorry`, `0` warnings, `0` vacuity audit hits; wired into `QOU.lean`).
+- Commit: `246ab0f17af473b433e680ddc0223712e5c0d13c` | PR: `https://github.com/litlfred/qou/pull/8166`
+- Kept at `status: in-progress` per merge-manager protocol.

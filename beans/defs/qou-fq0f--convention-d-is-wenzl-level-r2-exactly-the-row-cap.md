@@ -1,13 +1,13 @@
 ---
 # qou-fq0f
 title: 'Convention D is Wenzl level r=2 exactly: the row cap the closure block argues against'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T10:24:30Z
-updated_at: 2026-10-10T07:01:40Z
+updated_at: 2026-11-16T19:27:00Z
 parent: qou-rtxm
 ---
 
@@ -249,3 +249,8 @@ Was in-progress with no bean update since 2026-09-08 and no main commit naming i
 ## 2026-10-10 — pointer
 
 Tracked under carriers M6 and M8 of epic `qou-d8c7` "Mass endomorphism" (issue litlfred/qou#7547). Parent and status unchanged; the epic body lists what is still open for this item and where it sits in the attack-vector catalogue.
+
+## 2026-11-16 — Convention D Wenzl Level r=2 Identity (`QOU.Foundations.ConventionDFrobeniusMarkovTower`, PR #8166)
+- Formalized `wenzlLevelRTwoResidual`, `conventionD_wenzl_level_two_residual_eq_one`, `conventionD_wenzl_level_two_identity`, `threeRowFactor`, and `conventionD_three_row_factor_vanishes` in `folio/quantum-observable-universe/lean/QOU/Foundations/ConventionDFrobeniusMarkovTower.lean` (pure Lean 4 core, generic `CommRingOps R` per §7c, `0` `sorry`, `0` warnings, `0` vacuity audit hits; wired into `QOU.lean`).
+- Commit: `246ab0f17af473b433e680ddc0223712e5c0d13c` | PR: `https://github.com/litlfred/qou/pull/8166`
+- Kept at `status: in-progress` per merge-manager protocol.
