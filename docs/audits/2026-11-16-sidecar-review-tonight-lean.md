@@ -13,13 +13,11 @@ findings for the owning threads.
 
 | set | verdicts | pass | warn | fail | n/a |
 |---|---:|---:|---:|---:|---:|
-| non-mass-theory blocks (statement vs Lean, and two proofs) | 27 | 4 | 6 | 17 | 0 |
-| mass-theory statements vs Lean | 48 | 7 | — | — | 0 |
+| non-mass-theory blocks (statement vs Lean, and two proofs) | 27 | 3 | 6 | 18 | 0 |
+| mass-theory statements vs Lean | 48 | 7 | 18 | 23 | 0 |
 | mass-theory proofs vs statements | 34 | 19 | 10 | 5 | 0 |
 | conjectures (statement vs Lean not applicable) | 11 | 0 | 0 | 0 | 11 |
 
-The mass-theory statement row is mostly fail or warn; the sidecars hold the
-per-block result.
 
 ## Recurring defects in statement vs Lean
 
