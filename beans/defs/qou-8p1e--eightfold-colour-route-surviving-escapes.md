@@ -1,7 +1,8 @@
 ---
 # qou-8p1e
 title: 'qou-8pl1/e: the colour route after the marked-pair exclusion — which premise gets dropped?'
-status: todo
+status: in-progress
+pr: 8200
 type: task
 priority: normal
 tags:
@@ -138,3 +139,6 @@ Provenance: cross-session read-only pre-read of the 15 open `8f-colour` beans
 (`/mnt/project-files/eightfold/8f-colour-preread.md`), confirmed on this branch at
 `37bdbeef6b3` rather than taken on trust — the pre-read states its own path checks
 were run partly against `main` at a different commit.
+
+## Progress (2026-11-16, PR #8200)
+- [x] Formalized `nodalGeometricGenus`, `surfaceHomologyRank`, and `nodal_genus_bookkeeping_and_imaginary_split` in `folio/quantum-observable-universe/lean/QOU/Eightfold/TauAnchoredRatioChiralBraidWritheAndSpectralCubicPowerSums.lean` + 50-dps mpmath witness (`qou_8p1e_nodal_genus_bookkeeping_and_imaginary_split`) in PR #8200 (`ec7070e7f1b47f4548cd7f98fc2a7948b28854b0`).

@@ -1,7 +1,8 @@
 ---
 # qou-d8de
 title: 'GAP W1: construct the q-difference prolongation D_q from the color spectral curve Σ'
-status: todo
+status: in-progress
+pr: 8200
 type: task
 priority: normal
 tags:
@@ -377,3 +378,6 @@ Two things worth surfacing for anyone scoping from the front list:
   (2.4.1) into a hypothesis with no invertibility side-condition. A prior pass
   had recorded one of them as needing "Möbius machinery Mathlib does not carry".
   Worth remembering the next time a gap on this arc is blamed on Mathlib.
+
+## Progress (2026-11-16, PR #8200)
+- [x] Formalized `spectralCubicE1`, `spectralCubicE2`, `spectralCubicE3`, `spectralCubicP1`, `spectralCubicP2`, `spectralCubicP3`, `spectral_cubic_p1_p2_closed_form`, and `spectral_cubic_power_sums_and_ramified_parity` in `folio/quantum-observable-universe/lean/QOU/Eightfold/TauAnchoredRatioChiralBraidWritheAndSpectralCubicPowerSums.lean` + 50-dps mpmath witness (`qou_d8de_spectral_cubic_power_sums_and_ramified_parity`) in PR #8200 (`ec7070e7f1b47f4548cd7f98fc2a7948b28854b0`).

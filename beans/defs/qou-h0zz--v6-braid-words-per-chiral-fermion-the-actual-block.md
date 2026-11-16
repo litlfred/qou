@@ -1,7 +1,8 @@
 ---
 # qou-h0zz
 title: 'V6: braid words per chiral fermion -- the actual blocker for T(t)'
-status: todo
+status: in-progress
+pr: 8200
 type: task
 priority: normal
 tags:
@@ -382,3 +383,6 @@ failed identically. Full record on `qou-wqto`.
 Nothing else in this bean's open set changes: the total is still pinned by
 `T = 3Q`, `hrange` is still an input, the `1/3` normalisation is still the helon
 precedent, and `conj:sm-hypercharge-invariant` stays open.
+
+## Progress (2026-11-16, PR #8200)
+- [x] Formalized `writheSignLeptonNumber`, `scaledLeftHypercharge`, `carrier_writhe_sign_and_hypercharge_cancellation`, and `writheSignLeptonNumber_neg` in `folio/quantum-observable-universe/lean/QOU/Eightfold/TauAnchoredRatioChiralBraidWritheAndSpectralCubicPowerSums.lean` + 50-dps mpmath witness (`qou_h0zz_chiral_carrier_writhe_and_hypercharge_cancellation`) in PR #8200 (`ec7070e7f1b47f4548cd7f98fc2a7948b28854b0`).

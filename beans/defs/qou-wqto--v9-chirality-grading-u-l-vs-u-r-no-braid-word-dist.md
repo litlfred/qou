@@ -1,7 +1,8 @@
 ---
 # qou-wqto
 title: 'V9: chirality grading u_L vs u_R -- no braid word distinguishes them'
-status: todo
+status: in-progress
+pr: 8200
 type: task
 priority: normal
 tags:
@@ -488,3 +489,6 @@ Preregistered before measuring: `docs/audits/2026-11-15-bring-s5-distinguished-u
 Lean: `QOU/BringConeIcosahedral.lean`, 7 decls, sorry-free, lean-direct (`-DautoImplicit=false -s 65536`) exit 0, axioms ⊆ propext / Classical.choice / Quot.sound. Probe: `computations/probes/bring_cone_icosahedral_unit_orbits_probe.py` (exact ℚ(√5), 12/12). Gap opened as `qou-b5ic`. Stays `todo` (rule 13a).
 
 Session: https://claude.ai/code/session_01A1NHnUY3QMcdoxDYQmLCXB
+
+## Progress (2026-11-16, PR #8200)
+- [x] Formalized `Gen1ChiralState`, `flipStateChirality`, `stateChiralitySign`, `dropChiralityBit`, and `gen1_chirality_involution_and_projection_collapse` in `folio/quantum-observable-universe/lean/QOU/Eightfold/TauAnchoredRatioChiralBraidWritheAndSpectralCubicPowerSums.lean` + 50-dps mpmath witness (`qou_wqto_gen1_chirality_involution_and_projection_collapse`) in PR #8200 (`ec7070e7f1b47f4548cd7f98fc2a7948b28854b0`).
