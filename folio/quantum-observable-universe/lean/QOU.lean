@@ -1737,3 +1737,8 @@ import QOU.KZ.Drinfeld.HeckeStrands
 import QOU.Mass.LagrangianKZInputs
 import QOU.QBeta.BorromeanThreeCuspNZHessian
 import QOU.QBeta.McPhailSnyderBridgeExclusion
+import QOU.MassTheory.BorromeanShadowCycleMerge
+import QOU.MassTheory.SecondOrderContentCancellation
+import QOU.Hecke.DeltaLongEMinusOrderingSplit
+import QOU.MassTheory.LoopValueNormaliserAndFrameDiff
+
