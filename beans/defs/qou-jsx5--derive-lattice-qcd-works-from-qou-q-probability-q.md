@@ -1,7 +1,7 @@
 ---
 # qou-jsx5
 title: 'DERIVE: lattice-QCD works from QOU — q-probability + q-CLT + O-S reflection positivity'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -99,3 +99,8 @@ $-b_0\alpha_s^2$ running is OPEN and shared with the alpha_S/Λ_QCD bean
 
 Revised split: RP/valid-QFT = near-term & probable; asymptotic-freedom
 continuum limit = open, coupled to SU(3) (`qou-ni4b`) + Λ_QCD.
+
+## Progress (2026-11-16T19:43:48Z)
+- **Status:** `in-progress` (awaiting human review; no unilateral closure).
+- **PR:** `litlfred/qou#8173` (head `ad97deb87bc648e5c129faba2fa1d69d9619253c`, script commit `bdc558a8f10d26666ba057c81bf22753e6d0aca0`).
+- **Summary:** Formalized discrete Osterwalder-Schrader reflection positivity (non-negative Gram squares and diagonal reflection weights) and q-CLT moment positivity in QOU/Eightfold/BoltzmannOSPositivityAndColourSaddle.lean + 50-dps witness probe in PR litlfred/qou#8173 (head ad97deb87bc648e5c129faba2fa1d69d9619253c).

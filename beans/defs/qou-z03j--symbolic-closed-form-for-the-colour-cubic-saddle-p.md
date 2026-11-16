@@ -1,7 +1,7 @@
 ---
 # qou-z03j
 title: Symbolic closed form for the colour-cubic saddle points via the palindromic reduction
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -101,3 +101,8 @@ are stated in this body and **none of them is Lean or witnessed**, and the beari
 `qou-l155` in the section below is still an open question rather than a recorded
 answer. A bean whose results live only in its own body is the thing §path-6 of the
 corpus-grep checklist exists to catch, not a completed bean.
+
+## Progress (2026-11-16T19:43:48Z)
+- **Status:** `in-progress` (awaiting human review; no unilateral closure).
+- **PR:** `litlfred/qou#8173` (head `ad97deb87bc648e5c129faba2fa1d69d9619253c`, script commit `bdc558a8f10d26666ba057c81bf22753e6d0aca0`).
+- **Summary:** Formalized exact palindromic reduction y = x + 1/x of the degree-6 reciprocal colour polynomial to a depressed/reduced cubic and verified all 6 roots in QOU/Eightfold/BoltzmannOSPositivityAndColourSaddle.lean + 50-dps witness probe in PR litlfred/qou#8173 (head ad97deb87bc648e5c129faba2fa1d69d9619253c).

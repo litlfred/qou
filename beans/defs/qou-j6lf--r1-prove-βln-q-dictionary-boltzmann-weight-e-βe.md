@@ -1,7 +1,7 @@
 ---
 # qou-j6lf
 title: 'R1: prove β=ln q dictionary — Boltzmann weight e^{-βE_λ} ≡ Frobenius weight y_λ(q); read off E_λ'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -43,3 +43,8 @@ are R2's job.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-02 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Progress (2026-11-16T19:43:48Z)
+- **Status:** `in-progress` (awaiting human review; no unilateral closure).
+- **PR:** `litlfred/qou#8173` (head `ad97deb87bc648e5c129faba2fa1d69d9619253c`, script commit `bdc558a8f10d26666ba057c81bf22753e6d0aca0`).
+- **Summary:** Formalized exact Boltzmann-Frobenius dictionary (beta = ln q, E_lambda = -(ln y_lambda(q))/(ln q)) and energy-ordering theorems in QOU/Eightfold/BoltzmannOSPositivityAndColourSaddle.lean + 50-dps witness probe in PR litlfred/qou#8173 (head ad97deb87bc648e5c129faba2fa1d69d9619253c).

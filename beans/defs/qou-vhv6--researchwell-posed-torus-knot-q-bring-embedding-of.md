@@ -1,7 +1,7 @@
 ---
 # qou-vhv6
 title: 'Research(well-posed): torus-knot -> q-Bring embedding offset — track discriminant/branch-point roots of q-deformed color curve vs q, angle from zeta_5/zeta_3 equivariance'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -134,3 +134,8 @@ saddle_offset_norm, hbarQ_one. At q₀≈1.10998 (ℏ_q≈0.0991), r∈{0.0934,0
 0.1051} for |z*|∈{0.943,1.0,1.060}. LINEAR in ℏ_q — recovers Gemini's "scales
 with ℏ_q" intuition, REFUTES its sinh/cosh ODE. All three tiers now Lean-backed;
 offset question CLOSED (angle=stabilizer root of unity, magnitude=|z*|·ℏ_q radial).
+
+## Progress (2026-11-16T19:43:48Z)
+- **Status:** `in-progress` (awaiting human review; no unilateral closure).
+- **PR:** `litlfred/qou#8173` (head `ad97deb87bc648e5c129faba2fa1d69d9619253c`, script commit `bdc558a8f10d26666ba057c81bf22753e6d0aca0`).
+- **Summary:** Formalized torus-knot (3,5) to q-Bring curve discriminant/branch-point root tracking and 15th-root zeta_5 * zeta_3 angular offset 2*pi/15 in QOU/Eightfold/BoltzmannOSPositivityAndColourSaddle.lean + 50-dps witness probe in PR litlfred/qou#8173 (head ad97deb87bc648e5c129faba2fa1d69d9619253c).
