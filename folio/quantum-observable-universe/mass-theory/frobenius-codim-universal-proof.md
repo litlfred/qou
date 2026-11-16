@@ -14,19 +14,8 @@ $$
 
 *$\square$*
 
-**Uniqueness of $C_{\dim_q}$ (categorical + forced).**
-
-*Two answers.  **Uniqueness**: the map
-$Z(A) \ni z \mapsto \tau(z) \in \mathbb{C}$ is a linear functional
-on the centre.  By non-degeneracy of $\tau$ on $Z(A)$ (which
-holds iff the Frobenius form restricts non-degenerately to the
-centre — true for any semisimple Frobenius algebra), the element
-$z \in Z(A)$ with $\tau(z) = \sum_\lambda 1/\dim_q(\lambda)$ is
-**unique**.  Writing $z = \sum_\lambda c_\lambda p_\lambda$ and
-matching $\tau(z) = \sum c_\lambda \cdot \tau(p_\lambda)$ to
-$\sum 1/\dim_q$ forces $c_\lambda = 1/(\dim_q(\lambda)\,\tau(p_\lambda))$
-— this **is** the definition of $C_{\dim_q}$.  The element is
-therefore **forced by the structure**.*
+**$C_{\dim_q}$ is not forced by its trace.**
+*An earlier version claimed that $C_{\dim_q}$ is the unique central element with trace $\sum_\lambda 1/\dim_q(\lambda)$. That is false whenever $A$ has at least two blocks: $\tau$ is one linear functional on $Z(A)$, which has dimension $|\widehat{A}| = p(n) \geq 2$ for $n \geq 2$, so every $z = \sum_\lambda c_\lambda p_\lambda$ with $\sum_\lambda c_\lambda\,\tau(p_\lambda) = \sum_\lambda 1/\dim_q(\lambda)$ has the same trace. The coefficients $c_\lambda = 1/(\dim_q(\lambda)\,\tau(p_\lambda))$ are a choice, not a consequence.*
 
 *$C_{\dim_q}$ is categorical in three distinct senses:*
 
@@ -109,8 +98,8 @@ $$
   \dim_q\bigl((n)\bigr) \;=\; 1 \;=\; \dim_q\bigl((1^n)\bigr),
 $$
 
-*so levels $0$ and $n-1$ contribute exactly $1$ each, giving
-the universal bound*
+*so, when both blocks are included, levels $0$ and $n-1$ contribute exactly $1$ each, giving
+the bound*
 
 $$
   \tau(C_{\dim_q}) \;\geq\; 2 \qquad \text{for all } n \geq 1.
@@ -118,7 +107,10 @@ $$
 
 *Middle levels carry all the $q$-dependence.  For $n = 3$ only
 one middle level exists (level $1$, $\lambda = (2,1)$), giving
-$\tau(C_{\dim_q}) = 2 + 1/[2]_q$.*
+$\tau(C_{\dim_q}) = 2 + 1/[2]_q$ when every block is included.
+Under convention D the block $(1^n)$ has $\tau(p_{(1^n)}) = 0$ for $n \geq 3$
+and must be dropped, so the bound $\geq 2$ does not hold there; at $n = 3$
+the sum over $\widehat{A}^{\circ} = \{(3), (2,1)\}$ is $1 + 1/[2]_q$.*
 
 **Independence of the vortex $\varrho$.**
 *$\tau(C_{\dim_q}^{(A)})$ is **independent of the
@@ -129,8 +121,8 @@ $\sigma_w$ representing $\varrho$.  This is both a **feature** and a
 
 * *Feature (universality):* *Every vortex on $H_3(R, q)$ —
   proton $(uud)$, neutron $(udd)$, any nucleon-like trefoil —
-  inherits the same $(2 + 1/[2]_q) \cdot m_e$ additive
-  offset.  Mass differences between nucleons come entirely
+  inherits the same additive offset, $(2 + 1/[2]_q) \cdot m_e$ with
+  every block included (not available under convention D, see above).  Mass differences between nucleons come entirely
   from the descended $|\mathrm{tr}_M|$ and brane-tower pieces,
   not from the Frobenius correction.*
 * *Limitation (vortex-blind):* *The Frobenius correction cannot
@@ -158,14 +150,16 @@ three tiers:*
 **Consistency.**
 
 1. *At $q = 1$ (classical limit): $\dim_q \to d_\lambda$ and
-   $\tau(p_\lambda) \to d_\lambda/|G|$ (group-algebra trace), so
-   $C_{\dim_q}$ reduces to $\sum_\lambda |G|/d_\lambda^2 \cdot p_\lambda$
+   $\tau(p_\lambda) \to d_\lambda^2/|G|$ (normalised group-algebra trace), so
+   $C_{\dim_q}$ reduces to $\sum_\lambda |G|/d_\lambda^3 \cdot p_\lambda$
    and its trace is $\sum_\lambda 1/d_\lambda$ — the classical
    reciprocal-dimension sum.*
 2. *In the "single-vortex" case $A = H_3(R, q)$, three blocks
    $\{(3), (2,1), (1,1,1)\}$ with $q$-dims $\{1, [2]_q, 1\}$
-   give $\tau(C_{\dim_q}) = 2 + 1/[2]_q$ matching proton
-   residual to $0.14\%$ at $q_0 \approx 1.11$.*
+   give $\tau(C_{\dim_q}) = 2 + 1/[2]_q$ when all three blocks are
+   included. Under convention D, $\tau(p_{(1,1,1)}) = 0$, so the
+   $(1,1,1)$ term is undefined and the sum over the surviving blocks
+   is $1 + 1/[2]_q$.*
 3. *The self-duality $\lambda \leftrightarrow \lambda'$ is the
    **categorical shadow** of the Young-diagram transpose
    symmetry of the Hecke algebra, which in turn descends from
