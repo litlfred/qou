@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:mass-formula-regime-switching",
+export default conjecture({
+  label: "conj:mass-formula-regime-switching",
   title:
     "Mass formula regime switch: SW+Frob for $A \\leq 2$, BW+$\\chi$ for $A \\geq 3$ (non-additive)",
   lean: {
@@ -21,6 +21,7 @@ export default proposition({
     "chirality",
   ],
   authorNotes: [
+    { kind: "status", date: "2026-11-16", body: "Demoted from proposition on owner ruling 2026-11-16 (card \"Demote all six\"): the claim is not proved from established results, so it is stated as a conjecture. Label renamed conj:mass-formula-regime-switching -> conj:mass-formula-regime-switching." },
     {
       kind: "caveat",
       date: "2026-11-16",

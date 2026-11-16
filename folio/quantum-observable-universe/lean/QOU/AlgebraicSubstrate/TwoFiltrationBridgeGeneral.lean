@@ -3,7 +3,7 @@ import Mathlib.Tactic
 /-!
 # Two-filtration bridge in full generality
 
-Compiled formalisation of `prop:two-filtration-bridge-general`.
+Compiled formalisation of `conj:two-filtration-bridge-general`.
 Sibling docstub at `algebraic-substrate/two-filtration-bridge-general.lean`.
 
 The bar-class → iterated-integral-depth bridge: under the bridge map,
@@ -28,7 +28,7 @@ class TwoFiltrationBridgeContext where
   depth_formula : ∀ lam : PartitionIdx, depth lam = if conj lam = lam then 2 else 3
 
 /-- **Restatement of the class field, not a derivation.**
-    (`prop:two-filtration-bridge-general`.) Self-conjugate cells go to
+    (`conj:two-filtration-bridge-general`.) Self-conjugate cells go to
     depth 2, chiral pairs to depth 3, at every partition.
 
     The class field `depth_formula` *is* this statement, and the proof

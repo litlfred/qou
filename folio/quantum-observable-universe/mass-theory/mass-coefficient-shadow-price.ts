@@ -36,7 +36,7 @@ export default proposition({
     validation: "validated",
   },
   uses: [
-    "prop:mass-categorical-descent",
+    "conj:mass-categorical-descent",
     "prop:wigner-coefficient-derivation",
     "prop:operator-selection-lp",
   ],

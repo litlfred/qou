@@ -246,7 +246,7 @@ if __name__ == "__main__":
             "carry the q-dependent part."
         ),
         "reference_blocks": [
-            "prop:partition-sum-proton-residual",
+            "conj:partition-sum-proton-residual",
             "def:confinement-level",
             "prop:gb-residue-spectral-sum",
         ],

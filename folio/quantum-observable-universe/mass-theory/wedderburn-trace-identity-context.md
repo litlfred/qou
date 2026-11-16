@@ -7,7 +7,7 @@ for the :refterm[descent]{#descent} decomposition of mass and coupling.
 **Consequence for mass.**
 
 In the :refterm[descent]{#descent} decomposition of the mass
-endomorphism ([BW as :refterm[descent]{#descent}](#prop:mass-categorical-descent)),
+endomorphism ([BW as :refterm[descent]{#descent}](#conj:mass-categorical-descent)),
 the Markov weight $y_\lambda$ of each partition $\lambda$ fixes that
 block's contribution to the total binding energy; the unit-sum
 normalization is what makes the descent a genuine *partition* of the

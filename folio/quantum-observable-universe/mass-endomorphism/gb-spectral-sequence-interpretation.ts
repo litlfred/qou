@@ -16,6 +16,6 @@ export default remark({
   uses: [
     "prop:gb-spectral-sequence",
     "thm:frobenius-codim-universal",
-    "prop:mass-formula-regime-switching",
+    "conj:mass-formula-regime-switching",
   ],
 });

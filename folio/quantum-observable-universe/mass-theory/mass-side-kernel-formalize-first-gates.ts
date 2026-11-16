@@ -12,7 +12,7 @@ export default proposition({
     "prop:q-beta-bar-even-kernel-invariant",
     "prop:q-beta-bar-even-kernel-typeclass",
     "prop:q-beta-q-eq-one-shadow-gate",
-    "prop:q-beta-direction-sanity-gate",
+    "rem:q-beta-direction-sanity-gate",
   ],
   cites: ["jones1987", "wenzl1988", "habiro2004"],
   tags: [

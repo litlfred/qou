@@ -1,4 +1,4 @@
-**Proof of [$\Phi_q$ categorical truncation depth](#prop:phi-q-categorical-truncation).**
+**Argument for [$\Phi_q$ categorical truncation depth](#conj:phi-q-categorical-truncation).**
 
 *Step 1 (spectral-sequence reduction).* By
 [GB spectral sequence collapse](#prop:spectral-sequence-collapse), for

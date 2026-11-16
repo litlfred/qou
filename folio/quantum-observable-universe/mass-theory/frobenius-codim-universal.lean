@@ -150,7 +150,7 @@ theorem frobenius_codim_tau_invariant {Λ : Type*} [Fintype Λ]
     For `n = 3` this equals `2 + 1/[2]_q`, matching the observed
     proton tower residual to 0.14% at `q_0 ≈ 1.11`.
 
-    Ref: [leitner2026] `prop:partition-sum-proton-residual`. -/
+    Ref: [leitner2026] `conj:partition-sum-proton-residual`. -/
 
 /-- The q-hook-length dimensions of the three partitions of n=3.
     Indexed by `Fin 3`:
@@ -192,7 +192,7 @@ noncomputable def heckeH3DimQ (q : ℝ) (i : Fin 3) : ℝ :=
     here we actually evaluate the partition sum at the three `Fin 3`
     indices and conclude.
 
-    Ref: [leitner2026] `prop:partition-sum-proton-residual`,
+    Ref: [leitner2026] `conj:partition-sum-proton-residual`,
     `computations/frobenius_partition_sum.py`. -/
 theorem hecke_n3_frobenius_codim (q : ℝ) :
     ∑ i : Fin 3, 1 / heckeH3DimQ q i = 2 + 1 / (q + q⁻¹) := by
@@ -228,7 +228,7 @@ noncomputable def heckeH2DimQ (_q : ℝ) (_i : Fin 2) : ℝ := 1
     `rfl` theorem).  This explicit theorem cross-validates that
     chosen def value via Fin-enumeration of the two partitions of 2.
 
-    Ref: [leitner2026] `prop:partition-sum-proton-residual` (n=2 base). -/
+    Ref: [leitner2026] `conj:partition-sum-proton-residual` (n=2 base). -/
 theorem hecke_n2_frobenius_codim (q : ℝ) :
     ∑ i : Fin 2, 1 / heckeH2DimQ q i = 2 := by
   rw [Fin.sum_univ_two]
@@ -283,7 +283,7 @@ noncomputable def heckeH4DimQ (q : ℝ) (i : Fin 5) : ℝ :=
     (both `1/[3]_q`), and the self-conjugate `(2,2)` contributes the
     odd `1/(q²+q⁻²)` term.
 
-    Ref: [leitner2026] `prop:partition-sum-proton-residual` (n=4 base). -/
+    Ref: [leitner2026] `conj:partition-sum-proton-residual` (n=4 base). -/
 theorem hecke_n4_frobenius_codim (q : ℝ) :
     ∑ i : Fin 5, 1 / heckeH4DimQ q i
       = 2 + 2 / (q ^ 2 + 1 + (q ^ 2)⁻¹) + 1 / (q ^ 2 + (q ^ 2)⁻¹) := by
@@ -349,7 +349,7 @@ noncomputable def heckeH5DimQ (q : ℝ) (i : Fin 7) : ℝ :=
     This **closes the n = 5 case of S3** (combined with the partial
     `def` of `frobeniusCoCasimirTrace` in `knot-mass-formula-unified`).
 
-    Ref: [leitner2026] `prop:partition-sum-proton-residual` (n=5 base). -/
+    Ref: [leitner2026] `conj:partition-sum-proton-residual` (n=5 base). -/
 theorem hecke_n5_frobenius_codim (q : ℝ) :
     ∑ i : Fin 7, 1 / heckeH5DimQ q i
       = 2 + 2 / (q ^ 3 + q + q⁻¹ + (q ^ 3)⁻¹)
@@ -467,7 +467,7 @@ private lemma Fin_sum_univ_eleven {M : Type*} [AddCommMonoid M]
     Numeric check: 2 + 0.4 + 0.222 + 0.2 + 0.4 + 0.0625 = 3.285,
     matching `Σ 1/dim((6 partitions))` for S_6.
 
-    Ref: [leitner2026] `prop:partition-sum-proton-residual` (n=6 base);
+    Ref: [leitner2026] `conj:partition-sum-proton-residual` (n=6 base);
     1ppb plan T1, `docs/audits/2026-05-09-mass-table-1ppb-audit.md`. -/
 theorem hecke_n6_frobenius_codim (q : ℝ) :
     ∑ i : Fin 11, 1 / heckeH6DimQ q i
@@ -594,7 +594,7 @@ private lemma Fin_sum_univ_fifteen {M : Type*} [AddCommMonoid M]
           + 1/([5]_q·(q³+q⁻³)·(q²+q⁻²))                    -- (4,1,1,1) self-conj.
           + 2/([7]_q·(q⁴+1+q⁻⁴))                          -- (3,3,1) and (3,2,2)
 
-    Ref: [leitner2026] `prop:partition-sum-proton-residual` (n=7 base);
+    Ref: [leitner2026] `conj:partition-sum-proton-residual` (n=7 base);
     1ppb plan T1. -/
 theorem hecke_n7_frobenius_codim (q : ℝ) :
     ∑ i : Fin 15, 1 / heckeH7DimQ q i
@@ -861,7 +861,7 @@ theorem gb_filtration_self_dual_bound
     sum over `(univ.erase s).erase a` is shown to be **strictly
     positive** because `t` is in that set and `1/frobDimQ t > 0`.
 
-    Ref: [leitner2026] `prop:partition-sum-proton-residual` (general
+    Ref: [leitner2026] `conj:partition-sum-proton-residual` (general
     n ≥ 3 strict bound). -/
 theorem gb_filtration_strict_self_dual_bound
     {Λ : Type*} [Fintype Λ] [DecidableEq Λ] [SemisimpleFrobeniusAlgebra Λ]
