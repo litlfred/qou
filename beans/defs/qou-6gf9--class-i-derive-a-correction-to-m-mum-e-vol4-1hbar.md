@@ -1,13 +1,13 @@
 ---
 # qou-6gf9
 title: 'Class I: derive a correction to m_mu/m_e = Vol(4_1)/hbar_q^2 (the 11.5 ppb mu-p residual)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T09:31:00Z
-updated_at: 2026-10-04T15:12:08Z
+updated_at: 2026-11-16T17:56:00Z
 parent: qou-2002
 ---
 
@@ -311,3 +311,16 @@ as a measurement.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-04 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## Round 46 Update (2026-11-16 — PR `litlfred/qou#8142`)
+
+- **Status**: `in-progress` (exact Laurent-polynomial Habiro-basis probe landed in Round 46; kept `in-progress` per strict non-closure rule).
+- **Exact Laurent-Polynomial Habiro-Basis Probe & Witness**:
+  - Added `computations/probes/mu_p_carrier_habiro_laurent_coefficients_probe.py` and `computations/probes/mu-p-carrier-habiro-laurent-coefficients.witness.json` (50-dps `mpmath` + exact $\mathbb{Z}[q, q^{-1}]$ Laurent arithmetic, 5/5 assertions passing, 0 raw `float64`s, 0 `float64` padding hits).
+  - Verifies in exact $\mathbb{Z}[q, q^{-1}]$ arithmetic ($n = 0 \dots 8$) that the figure-eight Habiro cyclotomic coefficients $a_n(q) = (-1)^n q^{-n(n+1)/2} \in \mathbb{Z}[q, q^{-1}]$ satisfy $c_n(q) = a_n(q)(q; q)_n^2 = (q; q)_n(q^{-1}; q^{-1})_n = \omega_n(q)$ identically with zero coefficient discrepancy and exact bar-evenness $c_n(q^{-1}) = c_n(q)$.
+  - Compares the Laurent-kept rungs $c_1(q_0) = -w(q_0) = -0.01089686670712230$ and $c_2(q_0) = w(q_0)h(q_0)^2 = +4.762607286525835 \times 10^{-4}$ against the leading $q=1$ Taylor terms in $h^2 = (q_0 - q_0^{-1})^2$ ($-h(q_0)^2/4$ and $+h(q_0)^4/4$):
+    - $\Delta_{h^2} c_1(q_0) = c_1(q_0) - (-h(q_0)^2/4) = +w(q_0)^2/4 = +2.96854260081976 \times 10^{-5}$ ($141.524 \times t_{\text{2018}}$, $140.579 \times t_{\text{live}}$);
+    - $\Delta_{h^2} c_2(q_0) = c_2(q_0) - h(q_0)^4/4 = -w(q_0)^2 h(q_0)^2 / 4 = -1.297437419491036 \times 10^{-6}$ ($6.18549 \times t_{\text{2018}}$, $6.14419 \times t_{\text{live}}$).
+  - Neither $n=1$ nor $n=2$ (nor their Laurent-vs-$h^2$-Taylor shifts) lies inside the $[1.8 \times 10^{-7}, 2.4 \times 10^{-7}]$ $\mu\text{--}p$ carrier residual window.
+- **PR**: `https://github.com/litlfred/qou/pull/8142` (`7ba86df415ad231cf6e834adee99dcb383115c6d`).

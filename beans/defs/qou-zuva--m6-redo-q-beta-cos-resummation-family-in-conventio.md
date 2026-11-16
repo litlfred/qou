@@ -1,11 +1,11 @@
 ---
 # qou-zuva
 title: 'M6: redo q-beta-cos-resummation family in convention D'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-10T08:58:08Z
-updated_at: 2026-11-15T17:33:09Z
+updated_at: 2026-11-16T17:56:00Z
 parent: qou-wxhi
 ---
 
@@ -23,3 +23,12 @@ Was in-progress with no bean update since October 2026. Reset to todo by the own
 
 
 2026-11-15: moved under epic `qou-wxhi` (c_k ladder under convention D). Previous parent kept in history.
+
+
+## Round 46 Update (2026-11-16 — PR `litlfred/qou#8142`)
+
+- **Status**: `in-progress` (verified on `origin/main` and extended in Round 46; kept `in-progress` per strict non-closure rule).
+- **Verification & Extension**:
+  - Verified that the `2026-10-10` Convention-D cosine resummation deliverables (`folio/quantum-observable-universe/nuclear-interactions/q-beta-cos-resummation.{lean,md,ts}` and `computations/qbeta/qbeta_cos_resummation_d_probe.py` + `computations/qbeta/qbeta-cos-resummation-d.witness.json`) are present on `origin/main` and pass all 5 assertions (`reproduces_block_published_values`, `reproduces_block_published_ppm`, `ruled_base_cos_moves_residual_away_from_zero`, `alpha_D_bar_even_part_matches_closed_form`, `eps_DeltaS_chain_identity`).
+  - Extended `folio/quantum-observable-universe/nuclear-interactions/q-beta-cos-resummation.lean` with `eigenphase_bar_sum_eq_half_heckeH_sq`, `wedderburnMiddleWeightD_pos`, `ladderPhaseCoeff_zD_eq`, `ladderPhaseCoeff_neg_at_zD`, `ladderPhaseCoeff_ne_wedderburnMiddleWeight`, `eigenphase_eq_affine_ladderPhaseCoeff`, `eigenphase_mirror_covariant_projection`, `eigenphase_mirror_covariant_projection_sub_harmonic`, and `eigenphase_mirror_covariant_projection_bar_odd` (`0` `sorry`, `#print axioms` clean).
+- **PR**: `https://github.com/litlfred/qou/pull/8142` (`7ba86df415ad231cf6e834adee99dcb383115c6d`).

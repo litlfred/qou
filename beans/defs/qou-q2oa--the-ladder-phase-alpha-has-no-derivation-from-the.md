@@ -1,13 +1,13 @@
 ---
 # qou-q2oa
 title: The ladder phase alpha has no derivation from the actual Wedderburn weights
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T11:40:16Z
-updated_at: 2026-11-15T17:33:08Z
+updated_at: 2026-11-16T17:56:00Z
 parent: qou-wxhi
 ---
 
@@ -173,3 +173,17 @@ Was in-progress with no bean update since 2026-08-21 and no main commit naming i
 
 
 2026-11-15: moved under epic `qou-wxhi` (c_k ladder under convention D). Previous parent kept in history.
+
+
+## Round 46 Update (2026-11-16 — PR `litlfred/qou#8142`)
+
+- **Status**: `in-progress` (claimed and updated in Round 46; kept `in-progress` per strict non-closure rule).
+- **Lean Formalization (`0` `sorry`, `#print axioms` clean)**:
+  - Extended `folio/quantum-observable-universe/nuclear-interactions/q-beta-cos-resummation.lean` and `folio/quantum-observable-universe/lean/QOU/QBeta/DecayLadderConventionDPositivity.lean` with:
+    - `wedderburnMiddleWeightD` and `wedderburnMiddleWeightD_pos`: for every $q > 1$, the actual Convention-D $H_3(q)$ middle Wedderburn weight $y_{(2,1)}(z_D) = q^2 / (q^2 + 1)^2 > 0$ is strictly positive;
+    - `ladderPhaseCoeff_zD_eq` and `ladderPhaseCoeff_neg_at_zD`: $\kappa(z_D) = 1/2 - z_D = (1 + q^2 - 2 q^3) / (2(q^2 + 1)) < 0$ for every $q > 1$;
+    - `ladderPhaseCoeff_ne_wedderburnMiddleWeight`: $\kappa(z_D) \neq y_{(2,1)}(z_D)$ for every $q > 1$;
+    - `eigenphase_eq_affine_ladderPhaseCoeff`: $\alpha_D(q) = -h(q)/4 - (h(q)/2)\kappa(z_D)$;
+    - `eigenphase_bar_sum_eq_half_heckeH_sq`: $\alpha_D(q^{-1}) + \alpha_D(q) = h(q)^2 / 2$;
+    - `eigenphase_mirror_covariant_projection`, `eigenphase_mirror_covariant_projection_sub_harmonic`, and `eigenphase_mirror_covariant_projection_bar_odd`.
+- **PR**: `https://github.com/litlfred/qou/pull/8142` (`7ba86df415ad231cf6e834adee99dcb383115c6d`).
