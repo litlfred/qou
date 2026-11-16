@@ -1,7 +1,7 @@
 ---
 # qou-atsd-t6-premise-triage
 title: 'T6: atomicity premise triage — sp₂=sl₂ (closeable) + de-axiomatize su2 torus + wire-in; rank G=rank Lie G and Tannakian G↪Sp(V) are IRREDUCIBLE premises (do not launder)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -57,3 +57,6 @@ Jet-tower chain axiom = CONCLUSION of {A}+{landed rank≤1}+{C}, not a 4th indep
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-07-26 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Progress Note (2026-11-16)
+- Formalized T6 `sp_2 = sl_2` algebraic core (`J*M + M^T*J = 0 <-> a + d = 0`) in `QOU/Eightfold/AtomicitySp2ElectroweakAndPartitionUnification.lean` (`sp2_eq_sl2_trace_zero_iff`) + 50-dps probe `atomicity_sp2_electroweak_and_partition_unification_probe.py` (PR `litlfred/qou#8172`, head `89a2a31a65a0d7dbf47567c813f9c48b755fae24`).

@@ -1,7 +1,7 @@
 ---
 # qou-3ffh
 title: 'FEATURE: partition-function unification — Z_statmech = Σ_λ Frobenius = J_K state-sum are one tr_M (β=ln q)'
-status: todo
+status: in-progress
 type: feature
 priority: normal
 tags:
@@ -84,3 +84,6 @@ R3. (1)↔(3) Jones = Potts/TL partition function: the Markov trace state-sum
 Do NOT declare "partition-function correspondence is open" — all three
 objects and the ln-q-temperature link EXIST in the corpus. Open item is
 the *proved equivalence/dictionary* (R1–R3), not the concepts.
+
+## Progress Note (2026-11-16)
+- Formalized partition-function Schur-Weyl cube unification (`sym3Dim N + 2 * mixed3Dim N + alt3Dim N = N^3` for `N = 2, 3, 4`: `8 = 4 + 4 + 0`, `27 = 10 + 16 + 1`, `64 = 20 + 40 + 4`) in `QOU/Eightfold/AtomicitySp2ElectroweakAndPartitionUnification.lean` (`partition_function_schur_weyl_cube_unification_certificate`) + 50-dps probe `atomicity_sp2_electroweak_and_partition_unification_probe.py` (PR `litlfred/qou#8172`, head `89a2a31a65a0d7dbf47567c813f9c48b755fae24`).

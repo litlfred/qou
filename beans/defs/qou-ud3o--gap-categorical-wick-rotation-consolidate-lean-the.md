@@ -1,7 +1,7 @@
 ---
 # qou-ud3o
 title: 'GAP: categorical Wick rotation — consolidate + Lean the i↦-i braiding-flip / Laplace-Fourier collapse'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -126,3 +126,6 @@ Was in-progress with no bean update since 2026-08-02 and no main commit naming i
 ## 2026-10-10 — reparented under qou-20sx
 
 Owner decision 7b (ofri, 2026-10-10): the electroweak (`8f-ew`) beans are grouped under `qou-20sx`, the electroweak front's node, instead of directly under the epic `qou-8lxd`. Only the parent changed. Status, scope and body are untouched.
+
+## Progress Note (2026-11-16)
+- Formalized categorical Wick rotation involution (`wickInverse (wickForward p) = p`, `wickForward (wickInverse p) = p`) and `q`-factorial degree bound in `QOU/Eightfold/AtomicitySp2ElectroweakAndPartitionUnification.lean` (`categorical_wick_rotation_and_qexp_degree_certificate`) + 50-dps `exp_q(i*xi)` Laplace-Fourier continuation check in `atomicity_sp2_electroweak_and_partition_unification_probe.py` (PR `litlfred/qou#8172`, head `89a2a31a65a0d7dbf47567c813f9c48b755fae24`).
