@@ -613,7 +613,7 @@
 | [prop:gram-weighted-qvalue](#prop:gram-weighted-qvalue) | Gram-weighted $\mathcal{Q}_q$-value from Frobenius norm of conversion channels | Ch 10 | `qou:QOU.Archimedean.gram_weighted_qvalue` |
 | [prop:gb-residue-spectral-sum](#prop:gb-residue-spectral-sum) | Gröbner–Shirshov residue spectral sum for the mass trace | Ch 12 | `qou:QOU.BraidKnot.gb_residue_spectral_sum` |
 | [prop:habiro-residue-sum-equivalence](#prop:habiro-residue-sum-equivalence) | Habiro completion ≡ Gröbner–Shirshov residue spectral sum (equivalence) | Ch 12 | `qou:QOU.BraidKnot.HabiroResidueSumEquivalence` |
-| [prop:full-pole-structure-mass-trace](#prop:full-pole-structure-mass-trace) | Habiro completion of the mass trace | Ch 12 | `qou:QOU.BraidKnot.HabiroCompletion` |
+| [prop:full-pole-structure-mass-trace](#prop:full-pole-structure-mass-trace) | Cyclotomic expansion of the cleared mass trace | Ch 12 | `qou:QOU.BraidKnot.HabiroCompletion` |
 | [prop:habiro-tail-star-identity](#prop:habiro-tail-star-identity) | Habiro-tail star identity: the $5_2$ Masbaum cyclotomic datum equals its bar-inverted $q$-Borel transform, with the quadratic $k$-exponent collapsed to linear | Ch 24 | `qou:QOU.QBeta.HabiroTailStar.star` |
 | [prop:habiro-pochhammer-bridge](#prop:habiro-pochhammer-bridge) | Habiro–Markov bridge via Pochhammer factorisation | Ch 12 | `qou:QOU.BraidKnot.HabiroPochhammerBridge` |
 | [prop:hadron-half-life](#prop:hadron-half-life) | Hadron half-life from the $q$-deformed transition amplitude | Ch 14 | `qou:QOU.Archimedean.hadron_half_life` |
