@@ -335,7 +335,7 @@ def main() -> int:
     )
     b.add_assertion(
         name="the_6679_monotone_null_is_majority_NON_vacuous",
-        computed="1" if 2 * mono["delta_histogram"].get("1", 0) < mono["triples"] else "0",
+        computed="1" if 2 * mono["delta_histogram"].get("1", 0) < (mono["separable"] + mono["chain"]) else "0",
         expected="1", tolerance="0", unit="bool",
         source=("the Delta = 1 (vacuous) count is strictly less than half of the monotone "
                 "triples, so the non-vacuous majority is checked rather than asserted in prose."),
