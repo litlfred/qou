@@ -22,11 +22,22 @@ dashboard's own legend (`MEASURED` / `CAL` / `DERIVED` / `DERIVED*` / `POSITED`
 | 2 | $m_\mu$ | $m_e \cdot \mathrm{Vol}(4_1)/\hbar_q^2$ — at the proton pin this is a **prediction**, not an anchor | DERIVED | ~210 ppb (the μ–p tension) |
 | 3 | $m_p$ | $2(m_\mu F_{\mathrm{Bor}} - 6m_e)$, $F_{\mathrm{Bor}} = \lvert\mathrm{tr}_M(\beta_{\mathrm{Bor}})\rvert\,[3]_q!/q^3$ | DERIVED | $-0.003$ ppb — but see §1a |
 | 4 | $Q_\beta$ | Kashiwara $b^2$, parameter-free | DERIVED | +602 ppm |
-| 5 | $m_n$ | $m_p + Q_\beta + m_e$ | DERIVED | **+501 ppb — FAILS its own 10 ppb witness assertion** (`allPassed: false`) |
+| 5 | $m_n$ | $m_p + Q_\beta + m_e$ | ~~DERIVED~~ **RETIRED MIXED BASE** (2026-11-16) | **+501 ppb — FAILS its own 10 ppb witness assertion** (`allPassed: false`). See note below the table. |
 | 6 | $B(A,Z)$ nuclear binding | production $B_{\mathrm{sym}} = \alpha\ln(\mathrm{tr}_{\mathrm{free}}/\mathrm{tr}_{\mathrm{atom}})$, $\alpha = E_0 = m_e/(q_0(q_0-1)) \approx 4.186$ MeV | **POSITED** | err 0.79× (²H) → 3.26× (⁴He) |
 | 6′ | $B$ alternates | $B_{\mathrm{can}^0}$ (Borromean tower, DERIVED, wrong magnitude — the Δ_λ frontier); $B_{q\mathrm{CLT_{fac}}}$ (POSITED); $E_C$ Coulomb (DERIVED*, conditional on the Witten-κ `sorry`); $B_{\mathrm{gate}}/B_{\mathrm{vol}}$ (deprecated 2026-08-08, non-derived, still printed) | mixed | see §3 tables |
 | 7 | $M_{\mathrm{nuclear}}$ | $Z\,m_{p,\mathrm{can}} + N\,m_{n,\mathrm{can}} - B$ | inherits 5+6 | ppm-scale and worse |
 | 8 | $M_{\mathrm{atom}}$ | $+ Z m_e - B_{\mathrm{el}}(Z)$, $B_{\mathrm{el}}$ = AME Lunney–Pearson empirical fit | **MEASURED (imported)** | H-atom −0.91 ppb |
+
+> **Row 5, relabelled 2026-11-16 (owner, mass gap 5).** The production $Q_\beta$
+> (`derived_masses.q_beta_kashiwara_n2_mev`) puts a convention-D phase on the
+> $z = 1$ Form A base that the 2026-09-08 ruling retired, so the +501 ppb belongs
+> to the retired base and is not a convention-D result. The number is kept and
+> now emits `RetiredMixedBaseWarning`. The consistent convention-D cells (zero
+> $c_k$ rungs, every census element, both $E_0$ forms) move $m_n$ by −122 000 to
+> −360 000 ppb and are recorded in
+> `computations/qbeta/qbeta-mn-mixed-base-d-cells.witness.json`. The element
+> choice (`qou-99qc`) and a ladder on an admissible base (`qou-cds1`) are the two
+> open routes to a D answer.
 
 Standing owner rulings shaping the ladder: **ABSOLUTE MASS EXCISED**
 (2026-08-11) — $m_p \approx 938.27$ MeV is an $m_e$-scaled rendering of a
