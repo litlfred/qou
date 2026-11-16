@@ -1,13 +1,13 @@
 ---
 # qou-yk03
 title: 'RESCOPED: does H_n(q) admit a SECOND Markov trace at N=3 — the Ocneanu-parameter question, NOT the fibre-dimension one (that is qou-8p1x)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T12:51:20Z
-updated_at: 2026-10-04T15:24:03Z
+updated_at: 2026-11-16T21:54:00Z
 parent: qou-rtxm
 ---
 
@@ -273,3 +273,8 @@ small slip inside a true statement.
 The two numbers are ONE quantity at TWO ANCHORS: a layer straddle, not a
 lookalike. Extent measured and small: 0 live producers (3 deprecated, 2 doc
 sites carrying the misidentification itself). Both sites corrected.
+
+## 2026-11-16 — N=3 Second Markov Trace Channel-Ratio Separation (`QOU.Foundations.ConventionDKeystoneTraceTower`, PR #8214)
+- Formalized `ocneanuN2N3ChannelDet` and `ocneanu_n2_vs_n3_channel_ratio_det` in `folio/quantum-observable-universe/lean/QOU/Foundations/ConventionDKeystoneTraceTower.lean` (pure Lean 4 core, generic `CommRingOps R` per §7c, `0` `sorry`, `0` warnings, `0` vacuity audit hits; wired into `QOU.lean`).
+- Commit: `7cc3c04b0719e92286ff6279855cbf3f0b9a7826` | PR: `https://github.com/litlfred/qou/pull/8214`
+- Kept at `status: in-progress` per merge-manager protocol.
