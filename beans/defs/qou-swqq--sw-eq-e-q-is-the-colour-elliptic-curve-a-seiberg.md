@@ -1,16 +1,20 @@
 ---
 # qou-swqq
 title: 'SW = E_q: is the colour elliptic curve a Seiberg-Witten curve? (NOT new — the 2026-06-08 audit already names it; disc(E_q) is degree 12, irreducible, 0 real roots)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - 8f-colour
 created_at: 2026-08-30T02:45:00Z
-updated_at: 2026-10-10T07:15:42Z
+updated_at: 2026-11-16T17:50:00Z
 parent: qou-8lxd
 ---
+
+## Status Update (PR `litlfred/qou#8140`, `468e210bfac6c8438bd4b6331f2fa807f91853e8`)
+
+Claimed `in-progress` under `Q-8LXD-1` alongside `qou-q6lw`, `qou-tekm`, `qou-pa2f`, and `qou-v5fp`. Kept `in-progress` per owner decision policy.
 
 Owner proposal, 2026-08-30, branch claude/arithmetic-upgrade-pending-543abd (PR #6052).
 Recorded with its red-team per the standing critical-distance license.

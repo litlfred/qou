@@ -1,16 +1,20 @@
 ---
 # qou-v5fp
 title: Four statements of the gluon operator, three answers - min-cr vs min-|tr_M| disagree
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - 8f-colour
     - reorg-2026-10-04
 created_at: 2026-08-24T20:59:37Z
-updated_at: 2026-10-10T07:15:43Z
+updated_at: 2026-11-16T17:50:00Z
 parent: qou-8lxd
 ---
+
+## Status Update (PR `litlfred/qou#8140`, `468e210bfac6c8438bd4b6331f2fa807f91853e8`)
+
+Claimed `in-progress` under `Q-8LXD-1` alongside `qou-q6lw` and `qou-tekm` (`ColorVsCharmAdditiveSector.lean` + `charm_vs_color_sector_additive_term_probe.py` verify the inter-nucleon gluon color-averaged Hecke generator $\sigma_{\text{avg}} = \sigma - (h_q/2)\cdot 1$ on the 9 color-sheet pairs). Kept `in-progress` pending owner decision on the gluon operator objective (`min cr(K)` vs `min |tr_M|`).
 
 Found while closing qou-1ngr, 2026-08-24. Separate from qou-jqjx (trace convention); this one is about the objective, not the weights.
 
