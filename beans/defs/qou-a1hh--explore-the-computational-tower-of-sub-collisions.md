@@ -139,3 +139,7 @@ Exhaustive m=12: 1,351,680 pure words, 0 fail (min level char 0.0232). Seeded 20
 
 ## 2026-11-16 electron observables (PR #8126, issue #8125)
 V^0/V^3/V^6 are the unlink / Borromean (vol 7.3277) / L12a1882 (vol 21.6316). All 3-component, zero linking, amphichiral: none is chiral. On (2,1) V is a rotation, 2cos(theta) = -1-h^2. Which power is the electron is an owner ruling (card posted).
+
+
+## 2026-11-16 twist recheck + trefoil (PR #8128)
+L± added: pass ⟺ pure (5460 words). H₂ with chiral electrons σ₁², V⁻¹L₋, L₊V⁻¹, L₋V⁻¹: bare passes, bond V³@4,5 always; σ₁² also V²@4. Trefoil fails reading 3 alone and bound; negative trace is exact in q (2-strand char product (−1)^k; (2,1) trace −1), so readings 1/2 and any q fail too; only z=q truncation escapes. Electron power ruling held by owner pending this.
