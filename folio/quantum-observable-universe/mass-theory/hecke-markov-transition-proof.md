@@ -16,11 +16,14 @@ is the transposed subspace.  The convex combination
 $K_i = p_+ \cdot \mathrm{id} + p_- \cdot s_i$ is manifestly
 stochastic (non-negative entries, rows summing to $1$).
 
-This is precisely the Diaconis--Ram construction \cite{diaconis-ram2000}:
-the systematic-scan Metropolis algorithm on $S_n$ targeting the
-Mallows measure $\pi(\sigma) \propto q^{\mathrm{inv}(\sigma)}$
-has transition operator $K = K_1 K_2 \cdots K_{n-1}$, a product
-of Hecke algebra elements.
+Since $s_i$ acts by a permutation matrix, $K_i$ is symmetric, so its
+columns also sum to $1$: $K_i$ is doubly stochastic, and its stationary
+law is the uniform measure on $S_n$, not the Mallows measure
+$\pi(\sigma) \propto q^{\mathrm{inv}(\sigma)}$. The Diaconis--Ram
+systematic-scan Metropolis chain \cite{diaconis-ram2000}, which does
+target the Mallows measure, accepts the transposition with a
+probability that depends on whether it creates an inversion; it is a
+different operator from $K_i$.
 
 **(iii)** The Markov property
 $\mathrm{tr}_M(x \sigma_n) = z \cdot \mathrm{tr}_M(x)$ says that the

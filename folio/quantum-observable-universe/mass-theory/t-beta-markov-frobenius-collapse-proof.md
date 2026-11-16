@@ -5,9 +5,9 @@ decomposition $X = (X - S \cdot 1) + S \cdot 1$ and expand the
 Frobenius norm-squared:
 
 $$
-\| X \|^2_\tau = \mathrm{tr}_M(X \cdot X)
-              = \mathrm{tr}_M\big((X - S \cdot 1)(X - S \cdot 1)\big)
-                + 2 S \, \mathrm{tr}_M(X) - S^2 \, \mathrm{tr}_M(1).
+\| X \|^2_\tau = \mathrm{tr}_M(X X^\dagger)
+              = \mathrm{tr}_M\big((X - S \cdot 1)(X - S \cdot 1)^\dagger\big)
+                + S \, \mathrm{tr}_M(X + X^\dagger) - S^2 \, \mathrm{tr}_M(1).
 $$
 
 (The scalar $S \cdot 1$ is central and fixed by $\dagger$, so
