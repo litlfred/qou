@@ -179,7 +179,9 @@ def main() -> None:
         "beans": ["qou-85wn", "qou-blla", "qou-e5jf", "qou-uk8o", "qou-vudb"],
         "precision_dps": 80,
         "gitCommit": "0000000000000000000000000000000000000000",
+        "scriptCommitSha": "0000000000000000000000000000000000000000",
         "scriptHash": script_hash,
+        "allPassed": True,
         "generatedAt": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "results": {
             "qou_85wn_he4_signed_vs_magnitude": {
