@@ -44,8 +44,8 @@ and 3 respectively.
 
 **Step 3 (pairing analysis).**
 
-*Self-conjugate case $\lambda = \lambda'$.* $\mathrm{bar}(e_\lambda) =
-e_\lambda$ — the cell is bar-fixed. Pairing with a depth-$n$ grouplike
+*Self-conjugate case $\lambda = \lambda'$.* $\#(e_\lambda) =
+e_\lambda$ — the cell is $\#$-fixed. Pairing with a depth-$n$ grouplike
 $g \in G^{(n)}(\mathcal{H}_q)$ under Markov trace yields a value in
 the bar-fixed component of $\mathcal{P}_n / \mathcal{P}_{n - 1}$:
 
@@ -55,14 +55,16 @@ the bar-fixed component of $\mathcal{P}_n / \mathcal{P}_{n - 1}$:
 
 So bar-fixed cell $\Rightarrow$ $d_{\mathrm{II}}(\lambda) = 2$.
 
-*Chiral pair case $\lambda \neq \lambda'$.* $\mathrm{bar}(e_\lambda) =
-e_{\lambda'}$ — bar swaps the two cells. The bar-eigenspaces of the
+*Chiral pair case $\lambda \neq \lambda'$.* $\#(e_\lambda) =
+e_{\lambda'}$ — $\#$ swaps the two cells, so $e_\lambda$ itself is not an
+eigenvector: it is the sum of its symmetric and antisymmetric parts below,
+both nonzero. The bar-eigenspaces of the
 direct sum $e_\lambda + e_{\lambda'}$ decompose as:
 
 - Bar-symmetric: $(e_\lambda + e_{\lambda'})/2$ — pairs with depth-2
  (Vol-type) periods.
 - Bar-antisymmetric: $(e_\lambda - e_{\lambda'})/2$ — pairs with
- depth-3 (CS-type) periods non-by definition.
+ depth-3 (CS-type) periods, if the matching holds.
 
 The bar-symmetric part pairs by definition with depth-2 of a chiral knot
 (volume can be non-zero, but in the chiral pair the antisymmetric
@@ -77,7 +79,13 @@ Hecke side matches orientation reversal on the period side, and that "pairing
 with a depth-$n$ grouplike" lands in the matching eigenspace. Neither is proved
 here, and $d_{\mathrm{II}}$ itself is defined only through
 [`conj:two-filtration-bridge`](#conj:two-filtration-bridge). The argument is
-therefore a heuristic, conditional on that conjecture and on this matching.
+therefore a heuristic, conditional on that conjecture and on this matching. The
+part that is a theorem is item 4 of
+[`prop:cellular-depth-filtration`](#prop:cellular-depth-filtration): under
+(H-match) and (H-parity) it gives the vanishing and antisymmetry of odd-depth
+components, but not the non-vanishing that the values $2$ and $3$ require.
+Assigning a single depth to a chiral cell is not forced, because $e_\lambda$
+carries both a symmetric and an antisymmetric part.
 
 ### Generality of the proof
 
@@ -87,8 +95,8 @@ The argument is *structural*, not case-by-case:
 2. **Bar-class of $\lambda$ is computable.** Self-conjugate partitions
  of $n$ are exactly those with bar-fixed Young diagram (a
  well-defined combinatorial property).
-3. **Depth assignment is binary.** Either 2 or 3 — no other values
- arise in this bridge.
+3. **Depth assignment is binary by definition.** The values 2 and 3 come
+ from the definition of $d_{\mathrm{II}}$, whose third branch is empty.
 
 See [Table](#tbl:two-filtration-bridge-general-table-data).
 

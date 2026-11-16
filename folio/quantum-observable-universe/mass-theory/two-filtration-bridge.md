@@ -18,6 +18,15 @@ two distinct filtrations:*
   $Z^{(0)}(A) \subseteq Z^{(1)}(A) \subseteq \cdots$ where
   $\mathrm{depth}_{\mathrm{GB}}(\lambda) = \max_\square h(\square)$.*
 
+*Terminology (2026-11-16).* The statistic $\max_\square h(\square) =
+\lambda_1+\lambda'_1-1$ used in this block is now called the **max-hook
+depth**. The corpus fixes "GB-depth" to mean Lusztig's $a$-function
+$a(\lambda)=\sum_i\binom{\lambda_i}{2}$; see
+[`prop:cellular-depth-filtration`](#prop:cellular-depth-filtration), which also
+shows that either choice gives a filtration of $Z(H_n(q))$ by ideals, not a
+unital algebra filtration. Below, $\mathrm{depth}_{\mathrm{GB}}$ should be read
+as the max-hook depth.
+
 *These are different numbers* — for the figure-8 self-conjugate cell
 $\lambda = (2, 2)$, iterated-integral depth $= 2$ but partition
 GB-depth $= 3$ (max hook length). *The conjecture: they are
@@ -40,6 +49,16 @@ $$
   \end{cases}
 $$
 
+*The third branch is empty:* every partition is either self-conjugate or one
+half of the two-element orbit $\{\lambda,\lambda'\}$. So $d_{\mathrm{II}}$ is
+the indicator of $\lambda=\lambda'$ recoded as $\{2,3\}$, and the content of the
+conjecture is the existence of the lift $\hat e_\lambda$. Under the
+hypotheses (H-match) and (H-parity) of
+[`prop:cellular-depth-filtration`](#prop:cellular-depth-filtration) item 4,
+such a realisation forces odd-depth components to vanish on self-conjugate
+cells and to be antisymmetric on chiral pairs; non-vanishing is the remaining
+conjectural input.
+
 *and the bridge map is given by the action of $e_\lambda$ on the
 depth-$d_{\mathrm{II}}(\lambda)$ component of $\mathrm{Li}_n^q$ at
 the canonical Bring shape parameter for cell $\lambda$.*
@@ -51,16 +70,15 @@ The two filtrations have orthogonal information:
 - **Iterated-integral depth** counts *how many polylogarithm
   factors* are needed to express a grouplike — equivalently, the
   Goncharov motivic-Galois weight.
-- **Partition-cellular GB-depth** counts *how many braid generators*
-  are needed to express a Hecke element — equivalently, the
-  Bruhat-length/cellular complexity.
+- **Max-hook depth** is a statistic of the partition labelling a cell.
+  It is not the Bruhat length of any element.
 
 They cannot be equal in general (different units; one counts
 "transcendental complexity," the other counts "algebraic combinatorial
 complexity"). But they are *bridged* by the central idempotents,
 which simultaneously:
 
-- live in $Z(H_n(q))$ at a specific GB-depth (max hook), and
+- live in $Z(H_n(q))$ at a specific max-hook depth, and
 - pair under Markov trace with grouplikes at a specific iterated-
   integral depth.
 
@@ -74,8 +92,11 @@ the conjecture predicts.
 | $(2,2)$ self-conj. | 3 | **2** | $\mathrm{Vol}(4_1) \in \mathcal{P}_2^+$ |
 | $(3), (1,1,1)$ chiral pair | 3 | **3** | $\mathrm{CS}(3_1) \in \mathcal{P}_3^-$ |
 | $(2, 1)$ self-conj. | 3 | **2** | hyperbolic vol if 3-mfd (not $T(2,3) = 3_1$) |
-| $(4)$ totally symm | 4 | **2** | sym-channel vol (depends on shape) |
+| $(4), (1^4)$ chiral pair | 4 | **3** | (none assigned) |
 | $(2, 2, 1, \ldots)$ | depends | **2** if self-conj, **3** if pair | $\ldots$ |
+
+The period column is a comparison: the cell-to-knot assignment is chosen,
+not derived, and is not part of the conjecture.
 
 The general pattern: **self-conjugacy under partition transpose
 $\Rightarrow$ even iterated-integral depth (real period); chiral
@@ -86,8 +107,7 @@ pair $\Rightarrow$ odd depth (Tate-twisted period)**. Verifies
 
 At $n = 2, 3, 4$: the table above can be checked exhaustively against
 the Hecke-cell structure. Self-conjugate partitions of small $n$ are
-$(1)$, $(2,1)$ [no, $(2,1)$ is its own transpose], $(2,2)$, $(3,2,1)$,
-$\ldots$ (these are the partitions equal to their transpose, called
+$(1)$, $(2,1)$, $(2,2)$, $(3,1,1)$, $(3,2,1)$, $\ldots$ (these are the partitions equal to their transpose, called
 *self-conjugate*). The bridge map gives them depth-$2$ witnesses;
 chiral pairs split into depth-$3$ witnesses.
 

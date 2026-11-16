@@ -8,6 +8,19 @@ $\#$ on $H_n(q)$ with orientation reversal on periods. The bar involution
 itself fixes every $e_\lambda$ and does not separate $\lambda$ from
 $\lambda'$.*
 
+*What is proved.* [`prop:cellular-depth-filtration`](#prop:cellular-depth-filtration),
+item 4, is the provable core: under two named hypotheses (H-match: $\#$ is
+intertwined with orientation reversal by a realisation map $\Phi$; H-parity:
+orientation reversal acts on depth-$d$ periods by $(-1)^d$), odd-depth
+components vanish on self-conjugate cells and are antisymmetric under
+$\lambda\leftrightarrow\lambda'$. It does not give the values $2$ and $3$,
+which need a further non-vanishing. Note also that the "otherwise" branch of the
+definition of $d_{\mathrm{II}}$ in
+[`conj:two-filtration-bridge`](#conj:two-filtration-bridge) is empty, since every
+partition is either self-conjugate or half of the pair $\{\lambda,\lambda'\}$.
+So the boxed formula below restates that definition; the content of this
+conjecture is the existence of a realisation for which it is non-degenerate.
+
 ### Statement
 
 For every partition $\lambda$ (of any $n \geq 1$), the iterated-
@@ -27,8 +40,10 @@ $$
 $$
 ### Corollaries
 
-**Generalisation**: the small-cases bridge verification
-at $n \leq 4$ extends to all $n$ via the bar-eigenspace argument.
+**Scope**: the small-cases table at $n \leq 4$ is a comparison (the
+cell-to-knot assignment there is chosen, not derived), so it does not
+"extend" to all $n$; the general-$n$ content is item 4 of
+[`prop:cellular-depth-filtration`](#prop:cellular-depth-filtration).
 
 **Corollary for the depth correspondence**:
 - For each self-conjugate cell, its depth-2 row is conditional on the
@@ -37,17 +52,18 @@ at $n \leq 4$ extends to all $n$ via the bar-eigenspace argument.
 - For each chiral pair, its depth-3 row is conditional on the CS
  computation per knot.
 
-**Combined with
+**Comparison, not a consequence.**
 [`prop:cyclotomic-cl3-orbit-sum-general`](#prop:cyclotomic-cl3-orbit-sum-general)
-+
-[`prop:cyclotomic-trilog-imaginary-closed-form`](#prop:cyclotomic-trilog-imaginary-closed-form)**:
-the depth-3 content over $\mathbb{Q}(\zeta_N)$ for every prime $N$ is
-controlled by $\lfloor (N - 1)/2 \rfloor - 1$ genuinely-new real
-numbers, all pairing with chiral-pair cells in the appropriate
-$H_n(q)$.
+and
+[`prop:cyclotomic-trilog-imaginary-closed-form`](#prop:cyclotomic-trilog-imaginary-closed-form)
+count the depth-3 content over $\mathbb{Q}(\zeta_N)$ for prime $N$ as
+$\lfloor (N - 1)/2 \rfloor - 1$ new real numbers. That these pair with
+chiral-pair cells of some $H_n(q)$ would need the realisation $\Phi$ above;
+it does not follow from this conjecture as stated.
 
 ### Cross-references
 
+- Proved core: [`prop:cellular-depth-filtration`](#prop:cellular-depth-filtration)
 - Bridge conjecture: [`conj:two-filtration-bridge`](#conj:two-filtration-bridge)
 - Small-cases verification: [`prop:two-filtration-bridge-small-cases`](#prop:two-filtration-bridge-small-cases)
 - Chirality structure: [`rem:chirality-period-pairing`](#rem:chirality-period-pairing)

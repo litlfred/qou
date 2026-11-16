@@ -8,7 +8,7 @@ export default conjecture({
     ref: "qou:QOU.AlgebraicSubstrate.TwoFiltrationBridgeGeneral.bridge_map_general",
     validation: "not_checked",
   },
-  uses: ["prop:cyclotomic-cl3-orbit-sum-general"],
+  uses: ["prop:cyclotomic-cl3-orbit-sum-general", "prop:cellular-depth-filtration"],
   cites: ["bloch2000"],
   tags: [
     "two-filtration-bridge",
@@ -20,6 +20,7 @@ export default conjecture({
     "conditional",
   ],
   authorNotes: [
+    { kind: "status", date: "2026-11-16", body: "Restated 2026-11-16: the provable core is item 4 of prop:cellular-depth-filtration (conditional parity transfer under H-match and H-parity, Lean-checked). The 'otherwise' branch of d_II is empty, so the boxed formula restates the definition; the 'Generalisation' and cyclotomic corollary sentences were not consequences and are reworded as comparison. No compute impact." },
     { kind: "status", date: "2026-11-16", body: "Demoted from proposition on owner ruling 2026-11-16 (card \"Demote all six\"): the claim is not proved from established results, so it is stated as a conjecture. Label renamed conj:two-filtration-bridge-general -> conj:two-filtration-bridge-general." },
     {
       kind: "caveat",
