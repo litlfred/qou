@@ -312,7 +312,7 @@ def main() -> int:
     adjudicated: list[dict] = []
 
     for p in sorted((ROOT / "computations").rglob("*.py")):
-        if ("_deprecated" in p.parts or "fsh-guts" in p.parts) or p.name == Path(__file__).name:
+        if ({"_deprecated", "fsh-guts", ".claude", ".git", "node_modules", ".lake"} & set(p.parts)) or p.name == Path(__file__).name:
             continue
         src = p.read_text()
         try:
@@ -353,7 +353,7 @@ def main() -> int:
     # bare count reads as a detector regression the moment a repair lands.
     REPAIRED = {
         "computations/chi_at_q0_via_matrix_m_mpfr.py":
-            "q₀ resume guard + --fresh ported from the hoefsmit producer",
+            "q₀ resume guard + --fresh ported from the hoefsmit producer; exits 1 on cross-check mismatch (qou-li9a)",
         "computations/substrate/deuteron_tower_fusion_frame_probe.py":
             "exits 1 when allPassed is False (qou-9d6h)",
     }

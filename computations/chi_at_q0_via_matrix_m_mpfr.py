@@ -484,6 +484,7 @@ def main() -> int:
     print("  " + "-" * 70)
 
     last_record = None
+    any_mismatch = False
     q_mpf = mp.mpf(q_str)
     for atom_name in atoms:
         if atom_name not in ATOMS:
@@ -502,6 +503,7 @@ def main() -> int:
             )
         except Exception as exc:  # noqa: BLE001
             print(f"  {atom_name:>10}  ERROR  {type(exc).__name__}: {exc}")
+            any_mismatch = True
             continue
         save_witness(record, start_time=atom_start)
         n_parts = record["n_partitions"]
@@ -531,13 +533,15 @@ def main() -> int:
             n_total += 1
             if abs(chi_mpf - chi_rust) < tol:
                 n_match += 1
+        if n_match < n_total:
+            any_mismatch = True
         cap_note = (f"dim > {args.max_dim}" if args.max_dim is not None
                     else "lossless: none")
         print(f"  {'':>10}     cross-check vs chi_q_via_gp at q_0: "
               f"{n_match}/{n_total} match (tol 1e-{args.dps-5}), "
               f"{n_skipped} skipped ({cap_note})")
 
-    return 0 if last_record is not None else 1
+    return 0 if (last_record is not None and not any_mismatch) else 1
 
 
 if __name__ == "__main__":
