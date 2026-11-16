@@ -1,1 +1,1 @@
-We now resolve the empirical chirality discrepancy using the partition-sum proton residual. We trace the substrate-level mechanism distinguishing proton from neutron. We document the resulting corrections to the binding energy formula.
+We record the inverse-quantum-dimension sum over partitions of $3$, its relation to the Frobenius structure of $H_3(q)$, and the Markov trace of the Frobenius Casimir. We then compare the sum, scaled by $m_e$, with recorded proton-mass residuals. No identification of the residual with a trace on $H_3(q)$ is claimed.
