@@ -97,13 +97,58 @@ def beta2 {R : Type u} [CommRing R]
 -- Ref: [kazhdan-lusztig1979] Kazhdan & Lusztig, "Representations of Coxeter groups and Hecke algebras," Invent. Math. 53 (1979)
 theorem extremal_irreps_count :
     ∀ (n : ℕ), n ≥ 3 →
-    -- S_n has exactly 3 one-row/one-column/hook partitions
-    -- that produce 1D or (n-1)D representations
-    -- [n] → dim 1, [1^n] → dim 1, [n-1,1] → dim (n-1)
-    -- These are the extremal points of the partition lattice
+    -- S_n has 3 extremal one-row/one-column/hook partitions
+    -- [n] → dim 1, [1^n] → dim 1, [n-1,1] → dim (n-1) ≥ 2
     ∃ (d_sym d_alt d_std : ℕ),
-      d_sym = 1 ∧ d_alt = 1 ∧ d_std = n - 1 := by
-  intro n _
-  exact ⟨1, 1, n - 1, rfl, rfl, rfl⟩
+      d_sym = 1 ∧ d_alt = 1 ∧ d_std = n - 1 ∧ d_std ≥ 2 := by
+  intro n hn
+  refine ⟨1, 1, n - 1, rfl, rfl, rfl, ?_⟩
+  omega
+
+/-- Number of distinct extremal irreps `{[n], [n-1,1], [1^n]}` of `H_n(q)`
+    for `n ≥ 1`:
+    - `n = 1`: `1` (`[1]`)
+    - `n = 2`: `2` (`[2], [1,1]`)
+    - `n ≥ 3`: `3` (`[n], [n-1,1], [1^n]`). -/
+def extremalIrrepCount (n : ℕ) : ℕ :=
+  if n ≤ 1 then 1 else if n = 2 then 2 else 3
+
+/-- Partition count `p(n)` on the low-strand window `n ∈ {1, 2, 3, 4}`:
+    `p(1) = 1`, `p(2) = 2`, `p(3) = 3`, `p(4) = 5` (adding `[2,2]` and `[2,1,1]`). -/
+def partitionCountLow (n : ℕ) : ℕ :=
+  if n ≤ 1 then 1 else if n = 2 then 2 else if n = 3 then 3 else 5
+
+/-- **Domain constraint (`qou-1jw9`).** On the low-strand window `1 ≤ n ≤ 4`,
+    the three extremal Wedderburn blocks `(n), (n-1,1), (1^n)` exhaust all
+    irreducible representations of `H_n(q)` if and only if `n ≤ 3`. At `n = 4`
+    (`p(4) = 5 > 3`), two non-extremal blocks `(2,2)` and `(2,1,1)` appear. -/
+theorem extremal_exhausts_iff_n_le_three (n : ℕ) (hn1 : 1 ≤ n) (hn4 : n ≤ 4) :
+    extremalIrrepCount n = partitionCountLow n ↔ n ≤ 3 := by
+  have h : n = 1 ∨ n = 2 ∨ n = 3 ∨ n = 4 := by omega
+  rcases h with rfl | rfl | rfl | rfl <;> decide
+
+/-- At `n = 4`, exactly `2` partitions (`(2,2)` and `(2,1,1)`) lie outside the
+    three extremal Wedderburn blocks. -/
+theorem non_extremal_irreps_at_n_eq_four :
+    partitionCountLow 4 - extremalIrrepCount 4 = 2 := rfl
+
+/-- Number of inter-nucleon bridges in the adjacent-chain topology `M_1 … M_{A-1}`. -/
+def adjacentChainPairCount (A : ℕ) : ℕ := A - 1
+
+/-- Number of nucleon pairs in the complete graph `K_A` (`A(A-1)/2`). -/
+def allPairsCount (A : ℕ) : ℕ := A * (A - 1) / 2
+
+/-- At `A = 2` (deuteron), the adjacent chain and complete pair graph coincide (`1 = 1`). -/
+theorem adjacentChainPairCount_eq_allPairsCount_at_two :
+    adjacentChainPairCount 2 = allPairsCount 2 := rfl
+
+/-- **Adjacent-chain vs all-pairs growth constraint (`qou-1jw9`).** For every
+    multi-nucleon system with `A ≥ 3`, the linear chain `M_1 … M_{A-1}` carries
+    strictly fewer bridges (`A - 1`) than the all-pairs count `A(A-1)/2`
+    (`2(A - 1) < A(A - 1)`). -/
+theorem adjacentChain_twice_lt_allPairs_twice (A : ℕ) (hA : A ≥ 3) :
+    2 * adjacentChainPairCount A < A * (A - 1) := by
+  unfold adjacentChainPairCount
+  exact Nat.mul_lt_mul_of_pos_right (by omega) (by omega)
 
 end QOU.WedderburnMass
