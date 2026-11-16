@@ -1,7 +1,7 @@
 {
   "computation": "joint-ohtsuki-graded-tower-annihilator",
   "scriptFile": "joint_ohtsuki_graded_tower_annihilator_probe.py",
-  "computedAt": "2026-11-16T17:45:06.270424+00:00",
+  "computedAt": "2026-11-16T19:27:01.984622+00:00",
   "bean": "qou-7jok",
   "epic": "qou-10v9",
   "parent_epic": "qou-avtq",
@@ -150,8 +150,8 @@
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "scriptHash": "1e9d860e7035",
-  "scriptCommitSha": "unknown",
-  "commitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
+  "scriptCommitSha": "8fecf0a5bc64b5831742a0515ad6f634a0202925",
+  "commitSha": "8fecf0a5bc64b5831742a0515ad6f634a0202925",
   "durationMs": 0,
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }
