@@ -63,6 +63,116 @@ theorem chi21_borromean_even (h : R) :
   unfold chi21_borromean
   ring
 
+/-! ### Yekutieli $B_3$ action projected onto the local $(2,1)$ bond (`qou-h5aw`)
+    and NA-Stokes counit bar-parity split (`qou-quv8`, `qou-ch8w`, `qou-yczy`)
+
+    1. **Local $(2,1)$ bond projection (`qou-h5aw`):**
+       In the 2-dimensional standard Hook representation $V_{(2,1)}$ of $H_3(q)$,
+       a single elementary crossing-commutator plaquette step
+       $M = T_1 T_2^{-1} \in \mathrm{SL}_2(R)$ has determinant $\det(M) = 1$ and
+       trace $t_{(2,1)}(h) = -1 - h^2$ (`yekutieliBond21Trace`).
+       By the $\mathrm{SL}_2$ Cayley–Hamilton cubic trace polynomial
+       $\operatorname{tr}(M^3) = t^3 - 3t$ (`chebyshevCubicTrace`), the 3-fold
+       Yekutieli holonomy around the Borromean cycle $B_3 = (T_1 T_2^{-1})^3$
+       projects onto the $(2,1)$ bond as
+       $$(-1 - h^2)^3 - 3(-1 - h^2) = 2 - 3h^4 - h^6 = \chi^{(2,1)}(\beta_{\text{Bor}}).$$
+       Notice that because $T_3'(-1) = 3(-1)^2 - 3 = 0$, the $O(h^2)$ term in
+       $t_{(2,1)}(h) = -1 - h^2$ cancels identically in $t^3 - 3t$, explaining why
+       $\chi^{(2,1)}(\beta_{\text{Bor}})$ begins at $-3h^4$.
+
+    2. **Bar-parity split of the NA-Stokes counit expansion (`qou-quv8`, `qou-ch8w`, `qou-yczy`):**
+       Under the bar-involution $q \mapsto q^{-1}$ ($h = q - q^{-1} \mapsto -h$),
+       the leading coupling $\mu_0(h) = c_1 h$ is strictly **bar-odd** ($\sinh$
+       channel), whereas the 2nd-order NA-Stokes counit correction $c_2 h^2$ is
+       strictly **bar-even** ($\cosh$ channel).  Decomposing the higher-order
+       effective coupling $\mu_{\text{eff}}(h) = \mu_{\text{odd}}(h) + \mu_{\text{even}}(h)$
+       into its odd ($\sinh$, $c_1 h + c_3 h^3$) and even ($\cosh$, $c_2 h^2 + c_4 h^4$)
+       pieces isolates the 2nd-order bar-even counit term via
+       $\mu_{\text{eff}}(h) + \mu_{\text{eff}}(-h) = 2 \mu_{\text{even}}(h)$ and
+       $\mu_{\text{eff}}(h) - \mu_{\text{eff}}(-h) = 2 \mu_{\text{odd}}(h)$. -/
+
+/-- Trace of a single Yekutieli $T_1 T_2^{-1}$ plaquette step projected onto the
+    2-dimensional local $(2,1)$ Hook representation $V_{(2,1)}$ of $H_3(q)$:
+    $t_{(2,1)}(h) = -1 - h^2$. -/
+def yekutieliBond21Trace (h : R) : R := -1 - h^2
+
+/-- The single-step $(2,1)$ bond trace $-1 - h^2$ is bar-even ($h \mapsto -h$). -/
+theorem yekutieliBond21Trace_even (h : R) :
+    yekutieliBond21Trace (-h) = yekutieliBond21Trace h := by
+  unfold yekutieliBond21Trace
+  ring
+
+/-- The $\mathrm{SL}_2$ Cayley–Hamilton cubic trace polynomial
+    $T_3(t) = t^3 - 3t$, expressing $\operatorname{tr}(M^3)$ in terms of
+    $t = \operatorname{tr}(M)$ for any $2 \times 2$ matrix $M$ with $\det(M) = 1$. -/
+def chebyshevCubicTrace (t : R) : R := t^3 - 3 * t
+
+/-- **Yekutieli $B_3$ projection onto the local $(2,1)$ bond (`qou-h5aw`).**
+    Evaluating the $\mathrm{SL}_2$ cubic trace polynomial $t^3 - 3t$ on the
+    single-bond trace $t = -1 - h^2$ yields the exact Borromean standard-irrep
+    character $\chi^{(2,1)}(\beta_{\text{Bor}}) = 2 - 3h^4 - h^6$, with the
+    $O(h^2)$ term cancelling identically because $T_3'(-1) = 0$. -/
+theorem yekutieli_b3_local_21_bond_projection (h : R) :
+    chebyshevCubicTrace (yekutieliBond21Trace h) = chi21_borromean h := by
+  unfold chebyshevCubicTrace yekutieliBond21Trace chi21_borromean
+  ring
+
+/-- The $O(h^2)$ stationarity identity at the unknot/trivial-braid basepoint
+    $t_0 = -1$: $T_3(-1 + \delta) - T_3(-1) = -3\delta^2 + \delta^3$, with zero
+    linear term in $\delta$. -/
+theorem chebyshevCubicTrace_stationary_at_neg_one (δ : R) :
+    chebyshevCubicTrace (-1 + δ) - chebyshevCubicTrace (-1)
+      = -3 * δ^2 + δ^3 := by
+  unfold chebyshevCubicTrace
+  ring
+
+/-- Bar-odd ($\sinh$-channel) component of the NA-Stokes counit expansion
+    (`qou-quv8`, `qou-ch8w`): $\mu_{\text{odd}}(h) = c_1 h + c_3 h^3$. -/
+def naStokesMuOdd (c1 c3 h : R) : R := c1 * h + c3 * h^3
+
+/-- Bar-even ($\cosh$-channel) component of the NA-Stokes counit expansion
+    (`qou-quv8`, `qou-ch8w`): $\mu_{\text{even}}(h) = c_2 h^2 + c_4 h^4$. -/
+def naStokesMuEven (c2 c4 h : R) : R := c2 * h^2 + c4 * h^4
+
+/-- Total 4th-order NA-Stokes effective counit expansion
+    $\mu_{\text{eff}}(h) = \mu_{\text{odd}}(h) + \mu_{\text{even}}(h)$. -/
+def naStokesMuEff (c1 c2 c3 c4 h : R) : R :=
+  naStokesMuOdd c1 c3 h + naStokesMuEven c2 c4 h
+
+/-- `naStokesMuOdd` reverses sign under the bar-involution $h \mapsto -h$. -/
+theorem naStokesMuOdd_neg (c1 c3 h : R) :
+    naStokesMuOdd c1 c3 (-h) = - naStokesMuOdd c1 c3 h := by
+  unfold naStokesMuOdd
+  ring
+
+/-- `naStokesMuEven` is invariant under the bar-involution $h \mapsto -h$. -/
+theorem naStokesMuEven_neg (c2 c4 h : R) :
+    naStokesMuEven c2 c4 (-h) = naStokesMuEven c2 c4 h := by
+  unfold naStokesMuEven
+  ring
+
+/-- **Bar-parity extraction of the 2nd/4th-order bar-even ($\cosh$) and 1st/3rd-order
+    bar-odd ($\sinh$) NA-Stokes counit channels (`qou-quv8`, `qou-ch8w`, `qou-yczy`).** -/
+theorem naStokesMuEff_bar_parity_split (c1 c2 c3 c4 h : R) :
+    naStokesMuEff c1 c2 c3 c4 h + naStokesMuEff c1 c2 c3 c4 (-h)
+      = 2 * naStokesMuEven c2 c4 h
+    ∧ naStokesMuEff c1 c2 c3 c4 h - naStokesMuEff c1 c2 c3 c4 (-h)
+        = 2 * naStokesMuOdd c1 c3 h := by
+  constructor <;> {
+    unfold naStokesMuEff naStokesMuOdd naStokesMuEven
+    ring
+  }
+
+/-- **Surface-ordering curvature double-channel decomposition (`qou-yczy`).**
+    If each of the two oriented triangular half-plaquettes of the 2-simplex
+    contributes $-z_2$ (where $z_2 = \zeta(2) = \pi^2/6$ in the Archimedean
+    evaluation), the total NA-Stokes surface-ordering shift is $-2 z_2$
+    ($= -\pi^2/3$), and the shifted Part B evaluation $(-z_2) + (-2 z_2)$ equals
+    $-3 z_2$ ($= -\pi^2/2$). -/
+theorem naStokes_surface_ordering_double_half_plaquette (z2 : R) :
+    (-z2 + -z2 = -2 * z2) ∧ (-z2 + (-2 * z2) = -3 * z2) := by
+  constructor <;> ring
+
 end CommRing
 
 /-! ## `Rˣ` layer — the published q-rational form over a commutative ring
@@ -118,6 +228,33 @@ theorem chi21_borromean_qform_unit_bar_invariant (q : Rˣ) :
   rw [chi21_borromean_qform_unit_eq_poly q⁻¹, chi21_borromean_qform_unit_eq_poly q, inv_inv]
   rw [show ((↑q⁻¹ : R) - ↑q) = -((↑q : R) - ↑q⁻¹) by ring]
   exact chi21_borromean_even _
+
+/-- The $q$-Laurent form of the single Yekutieli $(2,1)$ bond trace
+    $\operatorname{tr}(T_1 T_2^{-1}) = (-q^2) + (1 - q^{-2}) = 1 - q^2 - q^{-2}$
+    for $T_1 = \begin{pmatrix} q & 0 \\ 1 & -q^{-1} \end{pmatrix}$ and
+    $T_2^{-1} = \begin{pmatrix} -q & 1 \\ 0 & q^{-1} \end{pmatrix}$ (`qou-h5aw`). -/
+def yekutieliBond21Trace_qform_unit (q : Rˣ) : R :=
+  1 - (↑q : R)^2 - (↑q⁻¹ : R)^2
+
+/-- Over any commutative ring with unit `q : Rˣ`, the matrix trace
+    $1 - q^2 - q^{-2}$ of $T_1 T_2^{-1}$ in $V_{(2,1)}$ equals the `R[h]`
+    polynomial `yekutieliBond21Trace (q - q⁻¹) = -1 - (q - q⁻¹)²` (`qou-h5aw`). -/
+theorem yekutieliBond21Trace_qform_unit_eq_poly (q : Rˣ) :
+    yekutieliBond21Trace_qform_unit q = yekutieliBond21Trace ((↑q : R) - ↑q⁻¹) := by
+  have hab : (↑q : R) * ↑q⁻¹ = 1 := q.mul_inv
+  unfold yekutieliBond21Trace_qform_unit yekutieliBond21Trace
+  linear_combination -2 * hab
+
+/-- Combining the $V_{(2,1)}$ matrix trace identity with the $\mathrm{SL}_2$
+    Cayley–Hamilton cubic trace polynomial yields the full $q$-Laurent
+    Borromean character directly from the single local $(2,1)$ bond trace
+    (`qou-h5aw`). -/
+theorem yekutieli_b3_local_21_bond_qform_unit (q : Rˣ) :
+    chebyshevCubicTrace (yekutieliBond21Trace_qform_unit q)
+      = chi21_borromean_qform_unit q := by
+  rw [yekutieliBond21Trace_qform_unit_eq_poly q,
+      yekutieli_b3_local_21_bond_projection,
+      chi21_borromean_qform_unit_eq_poly q]
 
 end Unit
 
