@@ -1,13 +1,14 @@
 ---
 # qou-xf14
 title: 'PINNED: the normaliser convention is delta = [2]_q, forced by the identity sqrt(b_pp.b_nn) = 1/[2]_q at every q — qou-59j5/qou-78pt family span 1.33x collapses to one member'
-status: todo
+status: in-progress
+pr: 8197
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T05:47:43Z
-updated_at: 2026-11-15T17:10:00Z
+updated_at: 2026-11-16T20:55:10Z
 parent: qou-v2om
 ---
 
@@ -76,3 +77,9 @@ Was in-progress with no bean update since 2026-09-05 and no main commit naming i
 ## 2026-11-15 — re-scoped by the γγ rule
 
 The owner ruled that the γγ selection rule also covers the nuclear bond letters. Any number in this bean computed on the single-crossing interface letters of `atom_braid_word_3A` (`d_k`, `μ_e`, the chain law `∏(z_D + d_k)`, the `b₃` magnitudes −1.2277 / −0.7973 MeV, or a sign map on that word) is now a record of a superseded word, not a current result. Lean results stated for generic bond weights are unaffected. The redo waits on a γγ-selected word per nucleus (PR #7876). Record: `docs/audits/2026-11-15-gg-rule-rescopes-old-letter-binding.md`. The bean stays open.
+
+## Progress Update (PR #8197 — `status: in-progress`)
+
+- [x] Formalized pure Lean 4 module(s) (`QOU/MassTheory/BorromeanShadowCycleMerge.lean`, `QOU/MassTheory/SecondOrderContentCancellation.lean`, `QOU/Hecke/DeltaLongEMinusOrderingSplit.lean`, `QOU/MassTheory/LoopValueNormaliserAndFrameDiff.lean`) with `0 sorry` and `0` findings across all 6 static vacuity audits.
+- [x] Added 50-dps `mpmath` + exact rational probe `computations/probes/borromean_shadow_c2_deltal_loop_frame_probe.py` and 2-commit stamped witness `computations/probes/borromean-shadow-c2-deltal-loop-frame-probe.witness.json` (`allPassed: true`, `0` raw `float64`).
+- [x] Opened and signed [PR #8197](https://github.com/litlfred/qou/pull/8197) (`ready: 4a2ed9a21b68b7d23b2e693b68f472d7dcf102a6`).

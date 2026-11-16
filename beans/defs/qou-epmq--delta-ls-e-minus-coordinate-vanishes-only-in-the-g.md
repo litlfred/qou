@@ -1,13 +1,14 @@
 ---
 # qou-epmq
 title: 'Delta_L''s e_minus coordinate vanishes ONLY in the grouped frame: canonical gives -(q^2-1)^2*Phi_12(q)^2/(2q^6), so net != tr_M(z=1) on the long model'
-status: todo
+status: in-progress
+pr: 8197
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-14T17:42:13Z
-updated_at: 2026-10-04T15:18:42Z
+updated_at: 2026-11-16T20:55:10Z
 parent: qou-v2om
 ---
 
@@ -88,3 +89,9 @@ in the canonical frame changes anything downstream of the fork. It is a new
 exact closed form for a coordinate previously recorded as identically zero, and
 `net` and `tr_M(z=1)` are no longer interchangeable on the long model. Nothing
 in this session traced who relies on that.
+
+## Progress Update (PR #8197 — `status: in-progress`)
+
+- [x] Formalized pure Lean 4 module(s) (`QOU/MassTheory/BorromeanShadowCycleMerge.lean`, `QOU/MassTheory/SecondOrderContentCancellation.lean`, `QOU/Hecke/DeltaLongEMinusOrderingSplit.lean`, `QOU/MassTheory/LoopValueNormaliserAndFrameDiff.lean`) with `0 sorry` and `0` findings across all 6 static vacuity audits.
+- [x] Added 50-dps `mpmath` + exact rational probe `computations/probes/borromean_shadow_c2_deltal_loop_frame_probe.py` and 2-commit stamped witness `computations/probes/borromean-shadow-c2-deltal-loop-frame-probe.witness.json` (`allPassed: true`, `0` raw `float64`).
+- [x] Opened and signed [PR #8197](https://github.com/litlfred/qou/pull/8197) (`ready: 4a2ed9a21b68b7d23b2e693b68f472d7dcf102a6`).
