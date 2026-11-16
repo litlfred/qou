@@ -613,6 +613,75 @@ theorem char_difference_ne_zero (hq : 0 < q) (hq1 : q ≠ 1) :
     · linarith
   · exact absurd h (by positivity)
 
+/-! ### Four-letter alphabet extension: the colour-weighted letter `averaged_weighted` (`qou-efqx`)
+
+Under owner ruling R3 (`bring_color_weighted`), the p–n interface uses a fourth crossing template
+with shift `d_cw = -h(1/2 - δ(q)/4)` where `δ(q) = (q - 1)²(1 - q⁻⁴)/3`. Its alternating character
+`altCharCw q = -q⁻¹ + d_cw` rationalizes to `(q² + 1)(q⁶ - 2q⁵ - 7q⁴ + 4q³ - q² - 2q + 1)/(12q⁵)`,
+carrying an irreducible sextic factor. While unique monomial factorization does not apply to the
+sextic, on the physical regime `1 < q` with `0 < δ(q) < 2` (at `q₀`, `δ(q₀) ≈ 0.0013757`),
+`altCharCw q` is strictly sandwiched between `letterChar q .ud` (`-(q²+1)/(2q)`) and
+`letterChar q .uu` (`-q⁻¹`), hence strictly negative, and its pairings with `.uu` and with itself
+remain strictly below `1` whenever `-1 < altCharCw q < 0`. -/
+
+/-- The leading flavour-split rational function `δ(q) = (q - 1)²(1 - q⁻⁴)/3`. -/
+noncomputable def flavorSplitLeading (q : ℝ) : ℝ :=
+  (q - 1) ^ 2 * (1 - (q⁻¹) ^ 4) / 3
+
+/-- Alternating character of the fourth (`averaged_weighted`) letter template:
+`altCharCw q = -q⁻¹ - (q - q⁻¹)(1/2 - δ(q)/4)`. -/
+noncomputable def altCharCw (q : ℝ) : ℝ :=
+  -q⁻¹ - (q - q⁻¹) * (1 / 2 - flavorSplitLeading q / 4)
+
+/-- Exact sextic rational closed form of the colour-weighted alternating character (`qou-efqx`):
+`altCharCw q = (q² + 1)(q⁶ - 2q⁵ - 7q⁴ + 4q³ - q² - 2q + 1) / (12 q⁵)`. -/
+theorem altCharCw_sextic_closed_form (hq : q ≠ 0) :
+    altCharCw q =
+      (q ^ 2 + 1) * (q ^ 6 - 2 * q ^ 5 - 7 * q ^ 4 + 4 * q ^ 3 - q ^ 2 - 2 * q + 1) /
+        (12 * q ^ 5) := by
+  unfold altCharCw flavorSplitLeading
+  field_simp
+  ring
+
+/-- Exact difference between `altCharCw q` and the `.ud` letter character `-(q² + 1)/(2q)`. -/
+theorem altCharCw_sub_ud (hq : q ≠ 0) :
+    altCharCw q - letterChar q .ud = (q - q⁻¹) * (flavorSplitLeading q / 4) := by
+  unfold altCharCw letterChar
+  field_simp
+  ring
+
+/-- Exact difference between the `.uu` letter character `-q⁻¹` and `altCharCw q`. -/
+theorem uu_sub_altCharCw :
+    letterChar q .uu - altCharCw q = (q - q⁻¹) * (1 / 2 - flavorSplitLeading q / 4) := by
+  unfold altCharCw letterChar
+  ring
+
+/-- **Strict sandwich on the physical band (`qou-efqx`):** For `1 < q` with `0 < δ(q) < 2`,
+the colour-weighted letter character lies strictly between `.ud` and `.uu` and is strictly
+negative: `letterChar q .ud < altCharCw q < letterChar q .uu < 0`. -/
+theorem altCharCw_strict_sandwich (hq1 : 1 < q)
+    (hd_pos : 0 < flavorSplitLeading q) (hd_lt : flavorSplitLeading q < 2) :
+    letterChar q .ud < altCharCw q ∧ altCharCw q < letterChar q .uu ∧ altCharCw q < 0 := by
+  have hq0 : 0 < q := by linarith
+  have hqne : q ≠ 0 := hq0.ne'
+  have hh_eq : q - q⁻¹ = (q - 1) * (q + 1) / q := by
+    field_simp
+    ring
+  have hh_pos : 0 < q - q⁻¹ := by
+    rw [hh_eq]
+    exact div_pos (mul_pos (by linarith) (by linarith)) hq0
+  have hdiff_ud : 0 < altCharCw q - letterChar q .ud := by
+    rw [altCharCw_sub_ud hqne]
+    exact mul_pos hh_pos (by linarith)
+  have hdiff_uu : 0 < letterChar q .uu - altCharCw q := by
+    rw [uu_sub_altCharCw]
+    exact mul_pos hh_pos (by linarith)
+  have huu_neg : letterChar q .uu < 0 := by
+    unfold letterChar
+    linarith
+  refine ⟨by linarith, by linarith, by linarith⟩
+
 end Real
 
 end QOU.Mass.AltCharShiftMultiset
+

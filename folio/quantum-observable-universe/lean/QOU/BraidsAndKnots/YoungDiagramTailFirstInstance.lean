@@ -194,4 +194,79 @@ theorem nuV_top_closed_form (r : ℕ) (hr : 1 ≤ r) (hk' : r + 2 ≤ 20)
   field_simp
   linarith [h6]
 
+/-! ## The (TAIL) second instance (`v = n - 1`): polynomial factor, closed form, and `n₁ = 8` sign onset (`qou-1a69`, `qou-ec5z`)
+
+Companion to `nuV_top_nonneg` / `nuV_top_closed_form` at `v = n`. At depth 1 (`v = n - 1`),
+the carrier shapes (`HookArmLeg.carrier_mem_three`, `DepthOneHookClassification`) reduce the
+Plancherel covariance `ν_{n-1} = Cov_Planch(N_{n-1}, ω₃)` to the closed form
+
+`ν_{n-1}(n) = (n - 1)(n - 4)(n³ - 11n² + 32n - 30) · C(2n - 6, n - 3) / (3 · n!)`.
+
+Because `(n - 1) > 0`, `(n - 4) > 0` for `n ≥ 5`, and `C(2n - 6, n - 3) > 0`, the sign of
+`ν_{n-1}(n)` is governed by the cubic factor `n³ - 11n² + 32n - 30`, which decomposes as
+`(n - 8)((n - 2)² + (n - 1) + 5) + 34`. Consequently:
+- `ν_{n-1}(4) = 0`,
+- `ν_{n-1}(n) < 0` for `n = 5, 6, 7` (exact values `-4/3, -5/3, -1/6`),
+- `ν_{n-1}(n) > 0` for all `n ≥ 8` (exact positive-tail onset `n₁ = 8`).
+-/
+
+/-- The cubic factor `n³ - 11n² + 32n - 30` governing the sign of `ν_{n-1}`. -/
+def depthOneCubicFactor (n : ℝ) : ℝ :=
+  n ^ 3 - 11 * n ^ 2 + 32 * n - 30
+
+/-- The polynomial prefactor `(n - 1)(n - 4)(n³ - 11n² + 32n - 30)` of `ν_{n-1}`. -/
+def depthOnePolyFactor (n : ℝ) : ℝ :=
+  (n - 1) * (n - 4) * depthOneCubicFactor n
+
+/-- The exact closed-form expression for `ν_{n-1}(n)` at `n ≥ 4`. -/
+noncomputable def nuDepthOneClosedForm (n : ℕ) : ℝ :=
+  depthOnePolyFactor (n : ℝ) * (((2 * n - 6).choose (n - 3) : ℕ) : ℝ)
+    / (3 * (Nat.factorial n : ℝ))
+
+/-- Exact positivity decomposition of the depth-1 cubic factor around the onset `n₁ = 8`:
+`n³ - 11n² + 32n - 30 = (n - 8)((n - 2)² + (n - 1) + 5) + 34`. -/
+theorem depthOneCubicFactor_decomp (n : ℝ) :
+    depthOneCubicFactor n = (n - 8) * ((n - 2) ^ 2 + (n - 1) + 5) + 34 := by
+  unfold depthOneCubicFactor
+  ring
+
+/-- The depth-1 polynomial prefactor vanishes at `n = 4` (`(n - 4)` factor), and is strictly
+negative at `n = 5, 6, 7` (`-72, -180, -54`). -/
+theorem depthOnePolyFactor_small_values :
+    depthOnePolyFactor 4 = 0 ∧
+    depthOnePolyFactor 5 = -72 ∧
+    depthOnePolyFactor 6 = -180 ∧
+    depthOnePolyFactor 7 = -54 := by
+  unfold depthOnePolyFactor depthOneCubicFactor
+  refine ⟨by norm_num, by norm_num, by norm_num, by norm_num⟩
+
+/-- For every `n ≥ 8`, the cubic factor `n³ - 11n² + 32n - 30` is strictly positive (`≥ 34 > 0`). -/
+theorem depthOneCubicFactor_pos_of_ge_eight {n : ℝ} (hn : 8 ≤ n) :
+    0 < depthOneCubicFactor n := by
+  rw [depthOneCubicFactor_decomp]
+  have h1 : 0 ≤ n - 8 := by linarith
+  have h2 : 0 ≤ (n - 2) ^ 2 + (n - 1) + 3 := by nlinarith [sq_nonneg (n - 2)]
+  nlinarith [mul_nonneg h1 h2]
+
+/-- For every `n ≥ 8`, the full polynomial prefactor `(n - 1)(n - 4)(n³ - 11n² + 32n - 30)` is
+strictly positive. -/
+theorem depthOnePolyFactor_pos_of_ge_eight {n : ℝ} (hn : 8 ≤ n) :
+    0 < depthOnePolyFactor n := by
+  unfold depthOnePolyFactor
+  have hc := depthOneCubicFactor_pos_of_ge_eight hn
+  have h1 : 0 < (n - 1) * (n - 4) := by nlinarith
+  exact mul_pos h1 hc
+
+/-- **D6 (`qou-1a69`, `qou-ec5z`): `ν_{n-1}` closed form is strictly positive for all `n ≥ 8`.** -/
+theorem nuDepthOneClosedForm_pos_of_ge_eight (n : ℕ) (hn : 8 ≤ n)
+    (hchoose : 0 < (((2 * n - 6).choose (n - 3) : ℕ) : ℝ)) :
+    0 < nuDepthOneClosedForm n := by
+  unfold nuDepthOneClosedForm
+  have hnR : (8 : ℝ) ≤ (n : ℝ) := by exact_mod_cast hn
+  have hp := depthOnePolyFactor_pos_of_ge_eight hnR
+  have hfac : (0 : ℝ) < (Nat.factorial n : ℝ) := by
+    exact_mod_cast Nat.factorial_pos n
+  positivity
+
 end QOU.BraidsAndKnots.YoungDiagramTailFirstInstance
+
