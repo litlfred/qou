@@ -1,14 +1,15 @@
 ---
 # qou-9ugp
 title: 'GAP: retired muon pin literal 1.10997859555733471 still hardcoded in ~180 computations/ producers outside the alpha cluster — all unstamped, invisible to the qou-3f7a anchor drain'
-status: todo
+status: in-progress
+pr: 8184
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - sm-26
 created_at: 2026-09-03T16:32:23Z
-updated_at: 2026-10-04T15:20:22Z
+updated_at: 2026-11-16T20:16:00Z
 parent: qou-2002
 ---
 
@@ -319,3 +320,9 @@ PR #6519; it is the third time this session that a claimed mechanism for this
 stamp has turned out to be wrong.
 
 ## 2026-09-08: canonical ledger for the q₀-gate family is qou-1c4y (the AGENTS.md-named migration tracker); see docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 3 / §7.3 C3. Sixteen q₀-gate beans, ~10 % cross-reference density, now all point there.
+
+## Progress Update (2026-11-16, PR #8184)
+- [x] Formalized in `folio/quantum-observable-universe/lean/QOU/MassTheory/AnchorManifestTriageAndAmeFloatDrain.lean` (wired into `QOU.lean`, `0` `sorry`, `0` vacuity advisories across all 7 static audits).
+- [x] Paired with 50-dps `mpmath` + `sympy` verification probe `computations/probes/anchor_manifest_triage_and_ame_float_drain_probe.py` and stamped witness `computations/probes/anchor-manifest-triage-and-ame-float-drain.witness.json` (`allPassed: true`, `0` raw `float64` fields, `scriptCommitSha: 100f1be37af2187c6d27ac18b72a859b25538c6c`).
+- [ ] Awaiting merge of PR [`litlfred/qou#8184`](https://github.com/litlfred/qou/pull/8184) (`0a6bb0fe54cf925fb3bdc7285374e8ee0913d6dd`).
+

@@ -1,13 +1,14 @@
 ---
 # qou-9idb
 title: 'GAP: rho_f_categorical_probe -- anchor straddle fix BLOCKED behind a float64 drain (17 -> 44 raw floats on any re-run)'
-status: todo
+status: in-progress
+pr: 8184
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-25T00:39:16Z
-updated_at: 2026-10-04T15:20:22Z
+updated_at: 2026-11-16T20:16:00Z
 parent: qou-2002
 ---
 
@@ -62,3 +63,9 @@ changes what the probe publishes and deserves its own diff.
 
 Draining without the anchor fix leaves the straddle; fixing the anchor without
 the drain cannot pass the gate. They land together or not at all.
+
+## Progress Update (2026-11-16, PR #8184)
+- [x] Formalized in `folio/quantum-observable-universe/lean/QOU/MassTheory/AnchorManifestTriageAndAmeFloatDrain.lean` (wired into `QOU.lean`, `0` `sorry`, `0` vacuity advisories across all 7 static audits).
+- [x] Paired with 50-dps `mpmath` + `sympy` verification probe `computations/probes/anchor_manifest_triage_and_ame_float_drain_probe.py` and stamped witness `computations/probes/anchor-manifest-triage-and-ame-float-drain.witness.json` (`allPassed: true`, `0` raw `float64` fields, `scriptCommitSha: 100f1be37af2187c6d27ac18b72a859b25538c6c`).
+- [ ] Awaiting merge of PR [`litlfred/qou#8184`](https://github.com/litlfred/qou/pull/8184) (`0a6bb0fe54cf925fb3bdc7285374e8ee0913d6dd`).
+

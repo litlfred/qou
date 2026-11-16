@@ -1,13 +1,14 @@
 ---
 # qou-bypn
 title: 'TRIAGE: 13 ideal_muon producers carry no anchor rationale in their own source'
-status: todo
+status: in-progress
+pr: 8184
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-25T19:40:03Z
-updated_at: 2026-10-04T15:25:11Z
+updated_at: 2026-11-16T20:16:00Z
 parent: qou-2002
 ---
 
@@ -130,3 +131,9 @@ The ~11.5 ppb this bean cites as the cost of removing a stem is still right and
 is still the reason not to sweep — but it is now the *size* of a change the
 ruling has already authorised for the non-exception cases, rather than a reason
 to hold each one for the author.
+
+## Progress Update (2026-11-16, PR #8184)
+- [x] Formalized in `folio/quantum-observable-universe/lean/QOU/MassTheory/AnchorManifestTriageAndAmeFloatDrain.lean` (wired into `QOU.lean`, `0` `sorry`, `0` vacuity advisories across all 7 static audits).
+- [x] Paired with 50-dps `mpmath` + `sympy` verification probe `computations/probes/anchor_manifest_triage_and_ame_float_drain_probe.py` and stamped witness `computations/probes/anchor-manifest-triage-and-ame-float-drain.witness.json` (`allPassed: true`, `0` raw `float64` fields, `scriptCommitSha: 100f1be37af2187c6d27ac18b72a859b25538c6c`).
+- [ ] Awaiting merge of PR [`litlfred/qou#8184`](https://github.com/litlfred/qou/pull/8184) (`0a6bb0fe54cf925fb3bdc7285374e8ee0913d6dd`).
+
