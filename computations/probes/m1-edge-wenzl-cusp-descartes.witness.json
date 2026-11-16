@@ -1,0 +1,66 @@
+{
+  "schema": "qou-probe-witness/v1",
+  "script": "computations/probes/m1_edge_wenzl_cusp_descartes_probe.py",
+  "scriptHash": "81d8f3a387c7",
+  "commitSha": "357128bae7902e8d2b67ca1b8c8f502a1ef6ebce",
+  "scriptCommitSha": "357128bae7902e8d2b67ca1b8c8f502a1ef6ebce",
+  "generatedAt": "2026-11-16T20:20:00Z",
+  "precisionDps": 80,
+  "allPassed": true,
+  "beans": [
+    "qou-t6hc",
+    "qou-8zjc",
+    "qou-niah",
+    "qou-v57s",
+    "qou-s39m"
+  ],
+  "results": {
+    "probe": "m1_edge_wenzl_cusp_descartes_probe",
+    "beans": [
+      "qou-t6hc",
+      "qou-8zjc",
+      "qou-niah",
+      "qou-v57s",
+      "qou-s39m"
+    ],
+    "precisionDps": 80,
+    "allPassed": true,
+    "checks": [
+      {
+        "id": "qou-t6hc-edge-bounds-and-sq-split",
+        "passed": true,
+        "sameSignTested": 824,
+        "sameSignViolations": 0,
+        "sqDecompositionExact": true
+      },
+      {
+        "id": "qou-8zjc-level2-conjugate-pair-survival",
+        "passed": true,
+        "n2BothSurvive": true,
+        "n6SurvivorCount": 4,
+        "n6NoConjugatePairSurvives": true
+      },
+      {
+        "id": "qou-niah-third-z-no-wenzl-level",
+        "passed": true,
+        "formalWenzlLevelAtProtonPin": "2.61363924746462129790870172915",
+        "qTwoExcludedAllR": true
+      },
+      {
+        "id": "qou-v57s-l6a4-orbit-and-pigeonhole",
+        "passed": true,
+        "orbitResidual": "0.0",
+        "pigeonholeCasesVerified": 4
+      },
+      {
+        "id": "qou-s39m-descartes-q1-and-xi-limit",
+        "passed": true,
+        "cubicRootResidual": "6.7470066836675348636e-80",
+        "crossRatioResidual": "0.0",
+        "catalanG": "0.915965594177219015054603514932",
+        "xiDivAt1eMinus20": "9.1596559417721901505e+39",
+        "xiMulAt1eMinus20": "9.1596559417721901505e-41"
+      }
+    ]
+  }
+}
