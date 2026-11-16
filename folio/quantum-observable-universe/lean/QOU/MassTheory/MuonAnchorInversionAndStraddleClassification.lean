@@ -110,35 +110,48 @@ theorem crossAnchor_drift_magnification_and_inv_hbar_sq_secant
   · field_simp
     ring
 
-/-! ### 3. Bean `qou-mha1`: Symbolic Habiro Payload Pin-Independence & Secants -/
+/-! ### 3. Bean `qou-mha1`: Symbolic Expansion Payload Pin-Independence & Secants -/
 
-/-- Symbolic Habiro `m = 1` polynomial `a₁(u) = -35712 u - 35712` carrying a witness stamp `qStamp`. -/
+/-- Symbolic `m = 1` polynomial `a₁(u) = -35712 u - 35712` carrying a witness stamp `qStamp`. -/
 def habiroCoeffA1 (u _qStamp : K) : K := -35712 * u - 35712
 
-/-- Symbolic Habiro `m = 2` polynomial `a₂(u) = 491861 u² + 503768 u + 515411` carrying a witness stamp `qStamp`. -/
+/-- Symbolic `m = 2` polynomial `a₂(u) = 491861 u² + 503768 u + 515411` carrying a witness stamp `qStamp`. -/
 def habiroCoeffA2 (u _qStamp : K) : K := 491861 * u ^ 2 + 503768 * u + 515411
 
-/-- **Symbolic Habiro coefficients are invariant under the producer's witness stamp `qStamp`
+/-- **Symbolic expansion coefficients are invariant under the producer's witness stamp `qStamp`
 and satisfy exact factored secant identities across consumer evaluation pins `(u₁, u₂)`.** -/
-theorem habiroSymbolicPayload_stamp_independent_and_secant (u1 u2 qs1 qs2 : K) :
+theorem symbolicPayload_stamp_independent_and_secant (u1 u2 qs1 qs2 : K) :
     habiroCoeffA1 u1 qs1 - habiroCoeffA1 u1 qs2 = 0 ∧
       habiroCoeffA2 u1 qs1 - habiroCoeffA2 u1 qs2 = 0 ∧
       habiroCoeffA1 u1 qs1 - habiroCoeffA1 u2 qs2 = -35712 * (u1 - u2) ∧
       habiroCoeffA2 u1 qs1 - habiroCoeffA2 u2 qs2 =
         (u1 - u2) * (491861 * (u1 + u2) + 503768) := by
-  unfold habiroCoeffA1 habiroCoeffA2
-  refine ⟨by ring, by ring, by ring, by ring⟩
+  have h1 : habiroCoeffA1 u1 qs1 - habiroCoeffA1 u1 qs2 = 0 := by
+    change (-35712 * u1 - 35712) - (-35712 * u1 - 35712) = 0
+    ring
+  have h2 : habiroCoeffA2 u1 qs1 - habiroCoeffA2 u1 qs2 = 0 := by
+    change (491861 * u1 ^ 2 + 503768 * u1 + 515411) - (491861 * u1 ^ 2 + 503768 * u1 + 515411) = 0
+    ring
+  have h3 : habiroCoeffA1 u1 qs1 - habiroCoeffA1 u2 qs2 = -35712 * (u1 - u2) := by
+    change (-35712 * u1 - 35712) - (-35712 * u2 - 35712) = -35712 * (u1 - u2)
+    ring
+  have h4 : habiroCoeffA2 u1 qs1 - habiroCoeffA2 u2 qs2 =
+      (u1 - u2) * (491861 * (u1 + u2) + 503768) := by
+    change (491861 * u1 ^ 2 + 503768 * u1 + 515411) - (491861 * u2 ^ 2 + 503768 * u2 + 515411) =
+      (u1 - u2) * (491861 * (u1 + u2) + 503768)
+    ring
+  exact ⟨h1, h2, h3, h4⟩
 
 /-! ### 4. Beans `qou-3zby` & `qou-dau6`: Convention C/D Ratio & Four-Method Straddle Factorization -/
 
-/-- Convention-D Markov parameter on `H₃(q)` in `t = √q` (`q = t²`): `z_D(t) = t⁶ / (t⁴ + 1) = q³ / (q² + 1)`. -/
+/-- Convention-D trace parameter on `H₃(q)` in `t = √q` (`q = t²`): `z_D(t) = t⁶ / (t⁴ + 1) = q³ / (q² + 1)`. -/
 def markovZD (t : K) : K := t ^ 6 / (t ^ 4 + 1)
 
-/-- Convention-C Markov parameter on `H₃(q)` in `t = √q`: `z_C(t) = t / (t² + 1) = 1 / (q^{1/2} + q^{-1/2})`. -/
+/-- Convention-C trace parameter on `H₃(q)` in `t = √q`: `z_C(t) = t / (t² + 1) = 1 / (q^{1/2} + q^{-1/2})`. -/
 def markovZC (t : K) : K := t / (t ^ 2 + 1)
 
-/-- **Ratio and difference of the `H₃(q)` Markov parameters under conventions D and C in `t = √q`.** -/
-theorem markovZD_over_markovZC_and_diff (t : K)
+/-- **Ratio and difference of the `H₃(q)` trace parameters under conventions D and C in `t = √q`.** -/
+theorem conventionZD_over_conventionZC_and_diff (t : K)
     (ht : t ≠ 0) (ht2 : t ^ 2 + 1 ≠ 0) (ht4 : t ^ 4 + 1 ≠ 0) :
     markovZD t / markovZC t = t ^ 5 * (t ^ 2 + 1) / (t ^ 4 + 1) ∧
       markovZD t - markovZC t = t * (t ^ 7 + t ^ 5 - t ^ 4 - 1) / ((t ^ 2 + 1) * (t ^ 4 + 1)) := by
