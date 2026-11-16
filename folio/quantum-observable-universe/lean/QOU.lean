@@ -471,6 +471,7 @@ import QOU.SchurWeyl.BurnsideSpan
 import QOU.SchurWeyl.PiBlockSeparation
 import QOU.SchurWeyl.HeckeProductSurjective
 import QOU.SchurWeyl.HeckeWedderburnGeneral
+import QOU.SchurWeyl.SpinSectorMeasure
 import QOU.SchurWeyl.HeckeSemisimpleGeneral
 import QOU.SchurWeyl.HeckeSemisimpleReal
 import QOU.SchurWeyl.HeckeCarrierEquiv
@@ -755,6 +756,7 @@ import QOU.substrate_radial_coordinate
 -- CI type-checks it (not an orphan).
 import QOU.SelectionRules
 import QOU.Braiding.non_self_intersection
+import QOU.Braiding.MarkovTraceClassicalLimit
 -- Keystone geometric-angle fingerprint: the ℓ=1 icosahedral character on the
 -- 5-fold rotation is the golden ratio (parameter-free; validates irrepToRotation).
 import QOU.BraidsAndKnots.IcosahedralCharacterGoldenRatio
