@@ -5,6 +5,7 @@ export default remark({
   interprets: "conj:phi-q-categorical-truncation",
   uses: [
     "conj:phi-q-categorical-truncation",
+    "prop:cell-depth-truncation",
     "prop:categorical-mass-markov",
     // Step 4's starting identity: the transient trace at p_i evaluates to
     // Phi_q(z_i). Unstratified, which is why the next entry is also needed.

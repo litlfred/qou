@@ -148,12 +148,18 @@ modulo the depth-stratified version of $\Phi_q$
 The remaining gap is between the categorical equality and its
 real-valued canonical evaluation at $|\hat{V}|\approx 1$.
 
-The empirical $k=2$ subtractive sweet spot
+*Comparison, not part of the proof.* The empirical $k=2$ subtractive cut-off
 ([brane-tower in $z$-Habiro §"Empirical observation"](#conj:brane-tower-z-habiro))
-is consistent with $k_\star(T_w) \leq 2$ for D, T, ${}^3\mathrm{He}$
-under this proposition, supporting the structural picture; the
-${}^3\mathrm{He}$ residual overshoot is then attributable to multiplicity
-in $\mathrm{supp}(T_w)$ rather than to a missing brane-tower
-correction. The witness's anomalous $k_{\max} = 9$ for tritium remains
-the most concrete falsifier — if it reflects a genuine $k_\star(T) = 9$
-rather than a strand-padding artifact, the proposition fails.
+for D, T, ${}^3\mathrm{He}$ is not supported by this argument: with GB-depth
+fixed as the $a$-function, $k_\star(T_w)=\binom n2$, and under the max-hook depth
+$k_\star(T_w)=n$; neither is $\le 2$ at the relevant $n$. The witness value
+$k_{\max}=9$ for tritium is a Coxeter-length quantity and is not compared with
+$k_\star$ here.
+
+*Status (2026-11-16).* Steps 4–5 together assert that the level-$K$ partial
+sum equals $\sum_i\Phi_q^{[\le K]}(z_i)$ for every $K$ and is constant for
+$K\ge k_\star$. These cannot both hold, since
+$\Phi_q^{[\le K+1]}(z)\ne\Phi_q^{[\le K]}(z)$ for $z\ne0$
+([`prop:cell-depth-truncation`](#prop:cell-depth-truncation), item 5). The
+correct centre-projection statement, with its proof, is items 1–3 of that
+proposition; Step 1's spectral-sequence reduction is not needed for it.
