@@ -2,7 +2,7 @@
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
   "computedAt": "2026-11-16T17:46:59.435785+00:00",
-  "commitSha": "a483e4c1498f9aa6c8faa0ce6e9551f6c3a27ebb",
+  "commitSha": "468e210bfac6c8438bd4b6331f2fa807f91853e8",
   "assertions": [
     {
       "name": "zero_boyle_mentions_in_eos_and_stat_mech_blocks",
@@ -42,7 +42,7 @@
   "computation": "boyle-virial-eos-assessment",
   "scriptFile": "boyle_virial_eos_assessment_probe.py",
   "scriptHash": "1164032f5ad0",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "468e210bfac6c8438bd4b6331f2fa807f91853e8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
