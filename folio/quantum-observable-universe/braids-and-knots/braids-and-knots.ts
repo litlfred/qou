@@ -105,6 +105,8 @@ export default chapter({
             "dark-vision-strand-bandwidth",
             "markov-moves-brane-tower",
             "markov-trace-ambient-s3",
+            "closure-unseen-subword",
+            "braid-closure-physical-reading",
             "substrate-massive-regime",
             "tl-is-the-xxz-chain",
             "chi-sym-alt-closed-form",
