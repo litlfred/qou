@@ -1,7 +1,7 @@
 ---
 # qou-7d08
 title: 'Lean the Wenzl level family beyond r=2: z_C non-existence and general-r lemmas'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -11,7 +11,7 @@ tags:
     - qbeta
     - hecke
 created_at: 2026-08-16T12:55:47Z
-updated_at: 2026-10-04T15:21:09Z
+updated_at: 2026-11-16T19:15:00Z
 parent: qou-rtxm
 ---
 
@@ -98,3 +98,7 @@ then only for the type-A Wenzl relation as stated.
 - `qou-25k5` (completed) — a prior convention collision where a Wenzl-Schur
   specialisation capped **columns** rather than rows. Read before assuming
   which of row/column a level caps in a given normalisation.
+
+## 2026-11-16 — General-`r` Wenzl Level Pinning & `z_C` Non-Existence Criterion in Lean (PR #8162)
+- Formalized `pow_level_mul_one_add_z_eq`, `level_eq_of_markovParameter` (general target level `r₀` parameter, specializing to `r₀ = 1, 2, 3, 4` without copy-paste), and `no_integer_wenzl_level_of_strict_bracket` / `zC_bracket_nonexistence_witness` in `folio/quantum-observable-universe/lean/QOU/Foundations/WenzlTemperleyLiebH4Keystone.lean` (wired into `QOU.lean`, 0 `sorry`, generic `CommRingOps R` per §7c).
+- PR: https://github.com/litlfred/qou/pull/8162 (commit `f3dcbfe5fb51a67f3233319674c13a3791ba91d2`). Status kept `in-progress`.

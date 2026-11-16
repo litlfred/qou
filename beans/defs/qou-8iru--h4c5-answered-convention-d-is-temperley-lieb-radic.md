@@ -1,13 +1,13 @@
 ---
 # qou-8iru
 title: 'H4/C5 answered: convention D IS Temperley-Lieb. Radical = TL ideal, dim H_n/rad = Catalan(n). Interface gain 2->5 params.'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T14:54:13Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-16T19:15:00Z
 parent: qou-rtxm
 ---
 
@@ -577,3 +577,7 @@ Bean stays open (rule 13a): the ideal equality and TL_n semisimplicity are open.
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+## 2026-11-16 — Convention D = Temperley–Lieb Catalan Quotient Table (`n = 2..7`) in Lean (PR #8162)
+- Formalized `su2SurvivingDimSqSum`, `catalanNumberTable`, `heckeFactorialDim`, `tlRadicalDim`, and `tl_catalan_dimension_table_n2_to_n7` (`∑_{λ ⊢ n, ℓ(λ) ≤ 2} (f^λ)² = Catalan(n) = (2, 5, 14, 42, 132, 429)`, `dim rad(H_n(q)) = n! - Catalan(n) = (0, 1, 10, 78, 588, 4611)`, and `dim TL_n(q) + dim rad(H_n(q)) = n!`) in `folio/quantum-observable-universe/lean/QOU/Foundations/WenzlTemperleyLiebH4Keystone.lean` (wired into `QOU.lean`, 0 `sorry`).
+- PR: https://github.com/litlfred/qou/pull/8162 (commit `f3dcbfe5fb51a67f3233319674c13a3791ba91d2`). Status kept `in-progress`.

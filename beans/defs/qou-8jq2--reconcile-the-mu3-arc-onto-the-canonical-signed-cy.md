@@ -1,13 +1,13 @@
 ---
 # qou-8jq2
 title: Reconcile the mu3 arc onto the canonical signed cyclic Markov trace (non-cyclic perblock vs tr_M)
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-07T09:09:03Z
-updated_at: 2026-10-04T15:23:16Z
+updated_at: 2026-11-16T19:15:00Z
 parent: qou-rtxm
 ---
 
@@ -77,3 +77,7 @@ A=3 words can be re-expressed Brunnian-ly, which would collapse the question ent
    signed object — the violator sets will change.
 3. Either way, the μ₃ producers state which trace object they use, in the docstring
    and the witness, so the next reader does not have to infer it from a call site.
+
+## 2026-11-16 — Signed Cyclic Markov Trace vs Non-Cyclic Per-Block Modulus Readout in Lean (PR #8162)
+- Formalized `signed_trace_abs_le_perblock_modulus` (`|y₁ · c₁ + y₂ · c₂| ≤ y₁ · |c₁| + y₂ · |c₂|` for `y₁, y₂ ≥ 0`) and `perblock_modulus_overshoot_and_nonadditivity_witness` (strict inequality on opposite-sign block characters and explicit refutation of additivity for `T_abs`) in `folio/quantum-observable-universe/lean/QOU/Foundations/WenzlTemperleyLiebH4Keystone.lean` (wired into `QOU.lean`, 0 `sorry`).
+- PR: https://github.com/litlfred/qou/pull/8162 (commit `f3dcbfe5fb51a67f3233319674c13a3791ba91d2`). Status kept `in-progress`.

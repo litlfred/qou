@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-19T17:13:51Z
-updated_at: 2026-11-16T19:07:00Z
+updated_at: 2026-11-16T19:15:00Z
 parent: qou-rtxm
 ---
 
@@ -67,3 +67,7 @@ Was in-progress with no bean update since 2026-08-22 and no main commit naming i
     1. `cyclic_of_rep_decomp_of_basis`: chains `gram_symm_of_rep_decomp_of_basis` directly into `cyclic_of_gram_symm`, providing the all-$n$ (`[Fintype ι] [DecidableEq ι]`) closure from basis-level character decomposition $\tau(e_i) = \sum_{\lambda \in s} w_\lambda \operatorname{tr}(\rho_\lambda(e_i))$ to full trace cyclicity $\tau(B(u, v)) = \tau(B(v, u))$.
     2. `ocneanu_stabilization_cyclic`: proves the abstract Ocneanu single-generator stabilization cyclicity step $\tau_{n+1}(\iota(u) g \iota(v)) = \tau_{n+1}(\iota(v) g \iota(u))$ from $\tau_{n+1}(\iota(x) g \iota(y)) = z \tau_n(xy)$ and level-$n$ cyclicity $\tau_n(uv) = \tau_n(vu)$.
   - Status kept at `in-progress` pending PR #8160 merge and owner verification.
+
+## 2026-11-16 — All-`n` Gram-Symmetry ↔ Bilinear Cyclicity & Wedderburn Sum Closure (PR #8162)
+- Formalized `gram_symm_term_comm` and `wedderburn_gram_symm_of_blocks` over generic `CommRingOps R` and arbitrary index type `ι` in `folio/quantum-observable-universe/lean/QOU/Foundations/WenzlTemperleyLiebH4Keystone.lean` (wired into `QOU.lean`, 0 `sorry`).
+- PR: https://github.com/litlfred/qou/pull/8162 (commit `f3dcbfe5fb51a67f3233319674c13a3791ba91d2`). Status kept `in-progress`.
