@@ -47,16 +47,32 @@ Then:
 
    capturing the full topological structure of the vortex tangle missed by $\mathcal{H}_q$.
 
-   *Where the closure enters.* $J_L$ is a value of the tangle's braid word $\beta$ only after the
-   strands are closed: a cup below and a cap above each strand, the return arcs adding no
-   crossing ([closure](#prop:closure-unseen-subword)). Closure is a trace, so it factors through
-   the annular class of $\beta$ in $\mathrm{HH}_0 = H_n(q)/[H_n(q), H_n(q)]$, which keeps every
-   sector character $\chi_\lambda$; the Markov trace then averages the sectors. If the flow acts
-   on the word by conjugation, $\beta \mapsto g\,\beta\,g^{-1}$, the annular class is constant in
-   time, and hence so is every closure invariant, $J_L$ included. That hypothesis is where the
-   quantum Euler equation enters; a reconnection changes the word and is outside it. The classical
-   counterpart is the asymptotic linking number, where long orbit segments are closed by short
-   paths whose contribution vanishes in the limit \cite{komendarczyk2008}.
+   *Where the closure enters, and what is conserved.* $J_L$ is a value of the tangle's braid word
+   $\beta$ only after the strands are closed: a cup below and a cap above each strand, the return
+   arcs adding no crossing ([closure](#prop:closure-unseen-subword)). Closure is a trace, so it
+   factors through the annular class of $\beta$ in
+   $\mathrm{HH}_0 = H_n(q)/[H_n(q), H_n(q)]$, which keeps every sector character $\chi_\lambda$; the
+   Markov trace then averages the sectors. Three statements follow, each proved in the Lean twin
+   from the stated input.
+
+   - *Isotopy.* A smooth ideal flow carries vortex lines with it \cite{moffatt1969}, so the closed
+     vortex link at time $t$ is isotopic to the link at time $0$. By the Alexander and Markov
+     theorems \cite{alexander1923,markov1936,birman1974} the two braid words are joined by
+     conjugations, stabilisations $x \mapsto x\,\sigma_n^{\pm 1}$ and their inverses. Along such a
+     path the Markov trace changes only by the recorded stabilisation factors, so the normalised
+     value $J_L$ is conserved.
+   - *Fixed axis.* If the tangle stays a closed braid on the same strands around a fixed axis, the
+     path uses conjugations only. Then the whole annular class is conserved, and with it every
+     sector character, which is finer than $J_L$. Under stabilisation the strand number changes and
+     only the Markov-normalised value survives.
+   - *Reconnection.* A reconnection replaces one crossing $\sigma$ by $\sigma^{-1}$ and breaks
+     isotopy. By the skein relation $\sigma - \sigma^{-1} = q - q^{-1}$, every closure invariant
+     jumps by exactly $q - q^{-1}$ times its value on the word with that crossing smoothed.
+
+   The two inputs to the isotopy statement, frozen-in vortex lines and Markov's theorem, are cited
+   and not proved here. The classical counterpart of closing the strands is the asymptotic linking
+   number, where long orbit segments are closed by short paths whose contribution vanishes in the
+   limit \cite{komendarczyk2008}.
 
 4. **Classical limit.** As $q \to 1$, the representations collapse ($[j]_q[j+1]_q \to j(j+1)$), linking reduces to Gauss linking ($\mathrm{lk}_q \to \mathrm{lk}$), and $\mathcal{H}_q$ simplifies to classical Moffatt helicity $H = \int v \cdot \omega\,dV$.
 
