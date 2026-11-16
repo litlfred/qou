@@ -1,0 +1,118 @@
+{
+  "computation": "cp-bar-parity-level3-channel-and-wigner-s3-pinning",
+  "description": "50-dps mpmath verification for qou-hjs8, qou-lxh5, qou-usft, qou-wg3c, and qou-x0th under qou-8lxd.",
+  "results": {
+    "qou_hjs8_bar_parity_and_crossing_phase": {
+      "bar_even_asymmetry": "0.0",
+      "mixed_crossing_norm_sq_theta0": "0.18832295222890009419115243558829348346448051615346",
+      "mixed_crossing_norm_sq_theta": "0.18832295225856912305831575845188005381259600642890",
+      "mixed_phase_shift": "0.000000000029669028867163322863586570348115490275440677766425",
+      "exact_phase_shift_formula": "0.000000000029669028867163322863586570348115490275440677766425"
+    },
+    "qou_lxh5_level3_channel_and_ocneanu_shift": {
+      "level2_dims_n1_to_6": [
+        "1",
+        "2",
+        "5",
+        "14",
+        "42",
+        "132"
+      ],
+      "level3_dims_n1_to_6": [
+        "1",
+        "2",
+        "6",
+        "23",
+        "103",
+        "513"
+      ],
+      "coranks_level2_n1_to_6": [
+        "0",
+        "0",
+        "1",
+        "10",
+        "78",
+        "588"
+      ],
+      "coranks_level3_n1_to_6": [
+        "0",
+        "0",
+        "0",
+        "1",
+        "17",
+        "207"
+      ],
+      "z2_ocneanu": "0.16335968163063962149854524966458676741658301596313",
+      "z3_ocneanu": "0.054740933730068612453877311239089212808864169844461",
+      "z2_minus_z3": "0.10861874790057100904466793842549755460771884611867"
+    },
+    "qou_usft_coulomb_shape_and_binding_length": {
+      "f_exp": "0.54126587736527415422732698172058511466962664181574",
+      "f_unif": "0.77459666924148337703585307995647992216658434105832",
+      "f_gauss": "0.79788456080286535587989211986876373695171726232987",
+      "f_req": "1.0913000000000000000000000000000000000000000000000",
+      "r_ame_fm": "1.8800000000000000000000000000000000000000000000000",
+      "r_qou_fm": "3.4723904406378900758071985667481364100409916543844"
+    },
+    "qou_wg3c_partition22_weight_and_k5_cap": {
+      "hook_product_22": "20.757318269290540717328804012013674662473664167697",
+      "dimq_22": "3.0833741140442093216969774014708291632208170158014",
+      "shadow_weight_22": "0.14854395322376078825698183126094150039937768696802",
+      "ratio_hook_to_shadow_weight": "139.73856100370864748188446839401907189908261579237",
+      "two_row_self_conjugate_partitions_of_5_count": "0"
+    },
+    "qou_x0th_s3_character_pinning": {
+      "s3_character_determinant": "-6",
+      "branching_multiplicities_ell_0_to_4": [
+        {
+          "ell": "0",
+          "a": "1",
+          "b": "0",
+          "c": "0"
+        },
+        {
+          "ell": "1",
+          "a": "0",
+          "b": "1",
+          "c": "1"
+        },
+        {
+          "ell": "2",
+          "a": "1",
+          "b": "0",
+          "c": "2"
+        },
+        {
+          "ell": "3",
+          "a": "1",
+          "b": "2",
+          "c": "2"
+        },
+        {
+          "ell": "4",
+          "a": "2",
+          "b": "1",
+          "c": "3"
+        }
+      ]
+    }
+  },
+  "assertions": {
+    "hjs8_bar_even_exact_zero_and_mixed_crossing_phase_positive": true,
+    "lxh5_level3_coranks_and_ocneanu_shift_exact": true,
+    "usft_shape_hierarchy_and_binding_radius_expansion": true,
+    "wg3c_hook_vs_shadow_ratio_and_empty_k5_two_row_self_conjugate": true,
+    "x0th_s3_character_orthogonality_pins_multiplicities": true
+  },
+  "allPassed": true,
+  "scriptFile": "cp_bar_parity_level3_channel_and_wigner_s3_pinning_probe.py",
+  "scriptHash": "d2a06f0c494a",
+  "scriptCommitSha": "c0214e17e49e615dc65e266a92be3d79589d2874",
+  "commitSha": "c0214e17e49e615dc65e266a92be3d79589d2874",
+  "engine": "mpmath",
+  "computedAt": "2026-11-16T20:37:19.775714+00:00",
+  "durationMs": 0,
+  "engineVersion": "mpmath 1.3.0",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
+}
