@@ -202,6 +202,50 @@ To prevent symbol conflation across §§1–10 (enacted in PR #7426 and #7982; s
 
 Every arrow lives in $\mathbb{Q}(q)$ until the Archimedean functor in step 9. No fitting, no empirical nuclear-physics constants, no analytic limits in the pre-Archimedean chain.
 
+### §3a — what step 3's closure does (cups, caps, and two separate steps)
+
+*Added 2026-11-16 (issue #8133). The math below is classical or already in the
+corpus; the Lean for the commutator statement is in progress on the same branch and is
+**not** yet merged. Exact checks: `/mnt/project-files/qou-braid-closure/closure_probe.py`.*
+
+Step 3 writes "knot ⇄ braid closure, unique trace `tr_M`". Closure adds **no crossing**. It
+adds a coevaluation (cup) below every strand and an evaluation (cap) above it. Observation in
+the corpus *inserts* a crossing (`measurement-observation/observation-braid.md`), so closure is
+not observation.
+
+- **Cups and caps as entangled pairs.** `coev(1) = Σᵢ eᵢ ⊗ eⁱ` is the maximally entangled vector;
+  with the pivotal weight `K = diag(q, q⁻¹)` it is the q-weighted Bell vector `Ω_K`, and
+  `Tr_q(β) = ⟨Ω_K | (β ⊗ 1) | Ω_K⟩`. Read: the cups prepare `n` entangled pairs, `β` acts on one
+  half, and the caps project back onto the pairs. Every map here lives in `ℚ(q)`; nothing is
+  archimedean yet.
+- **Two steps, which "closure" runs together.**
+  1. *Annular closure* (keep the axis): `H_n → HH₀(H_n) = H_n/[H_n, H_n]` ≅ the annular skein,
+     basis `Q_λ`. It keeps **every** character `χ_λ` separately.
+  2. *Forget the axis* (embed in S³): `Q_λ ↦ dim_q`, giving
+     `tr_M^{z_D} = Σ_k [n−2k+1]/[2]ⁿ · χ_(n−k,k)` — already proved as
+     `rem:categorical-trace-is-the-markov-trace` (`qtrace_rHecke_div`).
+- **What closure cannot see.** Two braid elements have the same value under every trace iff
+  their difference lies in the commutator span `[H_n, H_n]`. So an emitted-and-reabsorbed
+  subword `y·w·y⁻¹` is invisible to every closure; that is the precise meaning of an
+  intermediate that is "produced and not seen" (no virtual particles needed). Exact check: 340
+  cases in `B₃`.
+- **Relation to the guiding principle below** ("preserve information until observation").
+  Step 1 keeps the per-λ data; **step 2 is the collapse that principle warns about**, because it
+  averages the sectors with weights `p_k = [n−2k+1] f_(n−k,k)/[2]ⁿ` (positive, summing to 1) and
+  happens before `τ`. So "cup/cap = projection onto the observable" is accurate for step 2
+  followed by `τ`; the cups and caps by themselves only project onto conjugation-invariant data.
+
+**Where closure enters the Navier–Stokes / fluid chapter.** `fluid-dynamics/braid-fluid.md`
+("Helicity as Markov trace") and `fluid-dynamics/helicity-conservation.md` (item 3) use
+`J_L(q) = tr_M(ρ(β_L))` for the vortex tangle, so they use step 3, but neither says which arcs
+close the vortex strands. The classical counterpart is Arnold's asymptotic linking number:
+orbit segments of a volume-preserving field are closed by **short paths**, and the closing arcs
+drop out of the helicity in the limit `T → ∞` (stated with proof references in
+`[komendarczyk2008]` §2, held at `library/arxiv-0808.1533v3/`). This is the fluid version of
+"the return arcs are unseen". It is **not yet explicit** in the fluid chapter; those two blocks
+are where it belongs. Reading the periodic direction of a periodic-box flow as the closure axis
+(so that step 1 survives there) is an interpretation, not a derivation.
+
 ---
 
 ## 2. Step-by-step: math + reference + compute script
