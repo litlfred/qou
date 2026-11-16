@@ -1,0 +1,76 @@
+{
+  "probe": "w1_spectral_rigidity_and_elliptic_involution_probe.py",
+  "beans": [
+    "qou-ailp",
+    "qou-ar4v",
+    "qou-cvst",
+    "qou-ei4q",
+    "qou-hmrm"
+  ],
+  "parentBean": "qou-frzo",
+  "leanModule": "QOU.MassTheory.W1SpectralRigidityAndEllipticInvolution",
+  "scriptHash": "5e848ba624fe",
+  "scriptCommitSha": "62bd8cb179998d43808552b8955ff0b3857febae",
+  "generatedAt": "2026-11-16T20:42:56.350042+00:00",
+  "precisionDps": "80",
+  "allPassed": true,
+  "assertions": [
+    {
+      "id": "qou-ailp-anti-fit-gate-and-c1-recurrence",
+      "bean": "qou-ailp",
+      "description": "C1 recurrence residuals vanish on exact kernel coefficients while non-matching symbol gives positive squared anti-fit defect",
+      "c1RecurrenceResiduals": [
+        "0",
+        "0",
+        "0"
+      ],
+      "mismatchAt2": "-1/6",
+      "squaredDefectAt2": "1/36",
+      "passed": true
+    },
+    {
+      "id": "qou-ar4v-qgauge-spectral-cubic-rigidity",
+      "bean": "qou-ar4v",
+      "description": "z=0 colour-cubic gauge shift factors as (t-1)((t+1)^2+2) > 0 for all t > 1",
+      "sampleShiftAtTwo": "11",
+      "passed": true
+    },
+    {
+      "id": "qou-cvst-behrend-two-stratum-parity",
+      "bean": "qou-cvst",
+      "description": "Two-stratum Behrend decomposition for A_omega(4_1)=3 with even abelian stratum forces odd irreducible product",
+      "totalBehrendCount": "3",
+      "irreducibleProduct": "3",
+      "oddWitnessIdentity": "2 == 2",
+      "passed": true
+    },
+    {
+      "id": "qou-ei4q-palindromic-involution-and-riemann-hurwitz",
+      "bean": "qou-ei4q",
+      "description": "Branch sextic D(z) equals z^3 R(z+1/z), evaluates to D(1)=200 and D(-1)=4, and satisfies genus-1 -> genus-0 Riemann-Hurwitz balance",
+      "D_at_1": "200",
+      "D_at_neg1": "4",
+      "riemannHurwitzBalance": "0 == 0",
+      "passed": true
+    },
+    {
+      "id": "qou-hmrm-bezout-coprimality-and-q-neg1-collapse",
+      "bean": "qou-hmrm",
+      "description": "Triple-root eliminants satisfy (-26z^2-76z-20)*elimQuad + (2z+5)*elimCubic = 90 and [2k]_{-1} = 0 collapses C1 leading term",
+      "bezoutConstant": "90",
+      "evenQuantumIntegersAtNegOne": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "oddQuantumIntegersAtNegOne": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "passed": true
+    }
+  ]
+}
