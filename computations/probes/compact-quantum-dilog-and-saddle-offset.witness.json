@@ -1,0 +1,63 @@
+{
+  "probe": "compact_quantum_dilog_and_saddle_offset_probe.py",
+  "beans": [
+    "qou-dizz",
+    "qou-obmp",
+    "qou-q86o",
+    "qou-r1si",
+    "qou-rlkw"
+  ],
+  "parentBean": "qou-r9ih",
+  "leanModule": "QOU.QBeta.CompactQuantumDilogAndSaddleOffset",
+  "scriptHash": "a4ac672e3865",
+  "scriptCommitSha": "4755c87e9f5eee61dab667d125dbf7cba1a93d8b",
+  "generatedAt": "2026-11-16T21:29:40.907055+00:00",
+  "precisionDps": "80",
+  "allPassed": true,
+  "assertions": [
+    {
+      "id": "qou-dizz-qdilog-two-step-multiplier-expansion",
+      "bean": "qou-dizz",
+      "description": "Two-step quantum dilogarithm multiplier (1-qz)(1-q^2 z) equals 1 - q(1+q)z + q^3 z^2 and evaluates to 1 at z=0",
+      "sampleTwoStepFactor": "4553/6125",
+      "sampleTwoStepPoly": "4553/6125",
+      "passed": true
+    },
+    {
+      "id": "qou-obmp-pade-channel-dependent-bias-residual",
+      "bean": "qou-obmp",
+      "description": "Control-channel subtraction on 1/n^2 Borel-Pade pole bias leaves order-invariant scaled residual c1 - c2",
+      "scaledResidualDiff": "8/25",
+      "relativePlateauSample": "32/121",
+      "passed": true
+    },
+    {
+      "id": "qou-q86o-dt-saddle-offset-quadratic-and-root",
+      "bean": "qou-q86o",
+      "description": "DT Stokes saddle offset quadratic 1 - 9q - 28q^2 has o(0)=1, o(1)=-36, discriminant 193, and root (-9+sqrt(193))/56 ~ 0.08915",
+      "offsetAtQ0": "1",
+      "offsetAtQ1": "-36",
+      "discriminant": "193",
+      "positiveRoot80Dps": "0.08736507124017508050772405430408132909495",
+      "passed": true
+    },
+    {
+      "id": "qou-r1si-qint-quadratic-curvature-and-classical-limit",
+      "bean": "qou-r1si",
+      "description": "Second-order quantum integer n + n(n^2-1)*hbar^2/6 reduces to n at hbar=0, has 0 curvature at n=1, and equals 2 + hbar^2 at n=2",
+      "qIntApproxN1": "1",
+      "qIntApproxN2": "51/25",
+      "qIntApproxN3": "79/25",
+      "passed": true
+    },
+    {
+      "id": "qou-rlkw-compact-phi-q-functional-equation-and-bar-reflection",
+      "bean": "qou-rlkw",
+      "description": "Compact quantum dilogarithm phi_q(z) satisfies phi_q(z) = (1-z)(1-qz)phi_q(q^2 z) to 80 dps and (1-q)(1-q^-1) = -(q^{1/2}-q^{-1/2})^2",
+      "phiZ80Dps": "0.5408815076994378902599880030949093803743",
+      "twoStepError": "2.10843958865e-81",
+      "barReflectionProduct": "-25/36",
+      "passed": true
+    }
+  ]
+}
