@@ -12,6 +12,8 @@ export default remark({
     "sec:webster-inner-product",
     // J_L(q), which this block reads as the topological helicity.
     "thm:jones-markov-trace",
+    // The closure that turns the tangle's word into J_L.
+    "prop:closure-unseen-subword",
   ],
   tags: ["braid-group", "fluid-dynamics", "arnold", "vortex", "correspondence"],
 });
