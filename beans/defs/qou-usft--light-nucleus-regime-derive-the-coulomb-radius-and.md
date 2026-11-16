@@ -1,7 +1,8 @@
 ---
 # qou-usft
 title: 'Light-nucleus regime: derive the Coulomb radius AND density shape from binding + q-CLT, not r0*A^(1/3)'
-status: todo
+status: in-progress
+pr: 8192
 type: task
 priority: normal
 tags:
@@ -365,3 +366,10 @@ NEXT IS THE NN SECTOR, not this bean. The live handles there:
   * qou-7zob -- the ell/space index, needed because Pauli locks spin to isospin
     and a flavour-only interface cannot split 3S1 from 1S0 at all.
   * qou-h7mh -- the coordination/bond-count question for A >= 3.
+
+
+## Progress Checklist (Round 56 — PR #8192)
+- [x] Non-vacuous Lean 4 formalization in `QOU.Eightfold.CPBarParityLevel3ChannelAndWignerS3Pinning` (`0` `sorry`, `0` vacuity audit findings)
+- [x] 50-dps `mpmath` probe `computations/probes/cp_bar_parity_level3_channel_and_wigner_s3_pinning_probe.py` and stamped witness `computations/probes/cp-bar-parity-level3-channel-and-wigner-s3-pinning.witness.json` (`allPassed: true`, `scriptHash: d2a06f0c494a`, `scriptCommitSha: c0214e17e49e615dc65e266a92be3d79589d2874`)
+- [x] Opened PR `litlfred/qou#8192` (`82fe2aa092fb7be41555f2084a2891bcea71c295`)
+- [ ] Awaiting merge and final closure verification

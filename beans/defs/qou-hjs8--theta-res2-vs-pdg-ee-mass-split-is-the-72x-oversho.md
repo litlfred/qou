@@ -1,7 +1,8 @@
 ---
 # qou-hjs8
 title: 'theta_res^2 vs PDG e+/e- mass split: is the 72x overshoot real or higher-order?'
-status: todo
+status: in-progress
+pr: 8192
 type: task
 priority: normal
 tags:
@@ -143,3 +144,10 @@ readings the author intends is an authoring decision, so this bean stays open.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-13 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## Progress Checklist (Round 56 — PR #8192)
+- [x] Non-vacuous Lean 4 formalization in `QOU.Eightfold.CPBarParityLevel3ChannelAndWignerS3Pinning` (`0` `sorry`, `0` vacuity audit findings)
+- [x] 50-dps `mpmath` probe `computations/probes/cp_bar_parity_level3_channel_and_wigner_s3_pinning_probe.py` and stamped witness `computations/probes/cp-bar-parity-level3-channel-and-wigner-s3-pinning.witness.json` (`allPassed: true`, `scriptHash: d2a06f0c494a`, `scriptCommitSha: c0214e17e49e615dc65e266a92be3d79589d2874`)
+- [x] Opened PR `litlfred/qou#8192` (`82fe2aa092fb7be41555f2084a2891bcea71c295`)
+- [ ] Awaiting merge and final closure verification

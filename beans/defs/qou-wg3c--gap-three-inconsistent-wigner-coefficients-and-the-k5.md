@@ -1,7 +1,8 @@
 ---
 # qou-wg3c
 title: 'GAP: three inconsistent Wigner coefficients, and the [5]_q! block conflicts with the k=5 row cap'
-status: todo
+status: in-progress
+pr: 8192
 type: task
 priority: normal
 created_at: 2026-10-11T07:35:00Z
@@ -152,3 +153,10 @@ It cannot carry the Wigner term, for a structural reason and a measured one.
 So the (2,2) price can only arise in a program posed at level 4 (the UIC's
 per-step k), whose data is not a nuclear word. Scope-(a) negative for this
 route; the question of which C_lambda definition is meant stays open.
+
+
+## Progress Checklist (Round 56 — PR #8192)
+- [x] Non-vacuous Lean 4 formalization in `QOU.Eightfold.CPBarParityLevel3ChannelAndWignerS3Pinning` (`0` `sorry`, `0` vacuity audit findings)
+- [x] 50-dps `mpmath` probe `computations/probes/cp_bar_parity_level3_channel_and_wigner_s3_pinning_probe.py` and stamped witness `computations/probes/cp-bar-parity-level3-channel-and-wigner-s3-pinning.witness.json` (`allPassed: true`, `scriptHash: d2a06f0c494a`, `scriptCommitSha: c0214e17e49e615dc65e266a92be3d79589d2874`)
+- [x] Opened PR `litlfred/qou#8192` (`82fe2aa092fb7be41555f2084a2891bcea71c295`)
+- [ ] Awaiting merge and final closure verification

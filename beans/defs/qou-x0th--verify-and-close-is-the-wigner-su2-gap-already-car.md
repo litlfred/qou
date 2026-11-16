@@ -1,7 +1,8 @@
 ---
 # qou-x0th
 title: 'OPEN (not a verify-and-close): the SU(2) -> SO(3) architectural gap is D10, the WignerSU4 files are D11 and cannot carry it, and the Lean does not derive the falsification'
-status: todo
+status: in-progress
+pr: 8192
 type: task
 priority: normal
 tags:
@@ -213,3 +214,10 @@ is D10 — a derived map from the 5-strand `A₅ ⊂ S₅` fibre data to the 3-s
 `S₃/H₃` Borromean trace — which the 2026-06-01 audit reports as not derivable
 from the current structure. **Do not pick this up expecting a repair**, and do
 not cite `S5SO3FiberAction.lean` as having derived the falsification.
+
+
+## Progress Checklist (Round 56 — PR #8192)
+- [x] Non-vacuous Lean 4 formalization in `QOU.Eightfold.CPBarParityLevel3ChannelAndWignerS3Pinning` (`0` `sorry`, `0` vacuity audit findings)
+- [x] 50-dps `mpmath` probe `computations/probes/cp_bar_parity_level3_channel_and_wigner_s3_pinning_probe.py` and stamped witness `computations/probes/cp-bar-parity-level3-channel-and-wigner-s3-pinning.witness.json` (`allPassed: true`, `scriptHash: d2a06f0c494a`, `scriptCommitSha: c0214e17e49e615dc65e266a92be3d79589d2874`)
+- [x] Opened PR `litlfred/qou#8192` (`82fe2aa092fb7be41555f2084a2891bcea71c295`)
+- [ ] Awaiting merge and final closure verification
