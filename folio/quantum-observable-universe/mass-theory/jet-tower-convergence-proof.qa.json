@@ -253,6 +253,21 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "evidence": "jet-tower-convergence-proof.md:2-4 'because ħ_q² ∈ (0,1) (indeed ħ_q² ≈ 0.00982 at q₀ ≈ 1.11)'; counterexample q = 1/3: ħ_q = −2, ħ_q² = 4, series diverges",
         "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: binding"
+      },
+      {
+        "field_hash": {
+          "md": "e6299b14fa8a",
+          "ts": "21382567de8a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:13:24.136Z",
+        "reviewed_sha": "5f209b510c5b50294fd755d263c17c75d49be3ed",
+        "evidence": "Geometric-series tail bound is correct; hbar_q^2<1 holds for q>1/2. The numeric value at q0 is illustrative, not used."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1718,6 +1733,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:57:35.343Z",
+  "updated_at": "2026-11-16T07:13:24.136Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
