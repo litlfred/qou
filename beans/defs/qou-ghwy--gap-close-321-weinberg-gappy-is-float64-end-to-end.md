@@ -1,7 +1,8 @@
 ---
 # qou-ghwy
 title: 'GAP: close_321_weinberg_gap.py is float64 end to end (sympy → np.complex128 → eigvals) under a witness declaring compute_dps 70; no precision gate covers the sympy→numpy route'
-status: todo
+status: in-progress
+pr: 8211
 type: task
 priority: normal
 tags:
@@ -17,3 +18,8 @@ Measured 2026-09-03 (session qou-ggdk). computations/close_321_weinberg_gap.py l
 ## 2026-10-10 — reparented under qou-20sx
 
 Owner decision 7b (ofri, 2026-10-10): the electroweak (`8f-ew`) beans are grouped under `qou-20sx`, the electroweak front's node, instead of directly under the epic `qou-8lxd`. Only the parent changed. Status, scope and body are untouched.
+
+## Progress (2026-11-16, PR #8211)
+- [x] Non-vacuous Lean 4 theorem proved (`0` `sorry`, `0` vacuity advisories) in `folio/quantum-observable-universe/lean/QOU/Eightfold/ElectroweakWeinbergTraceLeptonFiltrationHiggsAndVevScale.lean`
+- [x] 50-dps `mpmath` probe and witness stamped (`8ca6e00d291446c4a5427c3266d272e793c16d8e`, `scriptHash: f6006da25e32`)
+- [ ] Awaiting Merge Manager merge of `litlfred/qou#8211`
