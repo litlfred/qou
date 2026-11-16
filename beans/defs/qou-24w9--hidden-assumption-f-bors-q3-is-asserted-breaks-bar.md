@@ -1,13 +1,13 @@
 ---
 # qou-24w9
 title: 'HIDDEN ASSUMPTION: F_Bor''s /q^3 is asserted, breaks bar-symmetry, and carries 37% of m_p'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-18T20:45:53Z
-updated_at: 2026-10-04T15:20:46Z
+updated_at: 2026-11-16T19:28:00Z
 parent: qou-2002
 ---
 
@@ -467,3 +467,11 @@ half of the hook-content formula), and it is a much better-posed target than
 "what derives 3". Not attempted here.
 
 Scope-(a). Does not refute F_Bor; does not touch the Lean-proved |tr_M|.
+
+## 2026-11-16 — Lean 4 Plancherel Normalisation & Three-Way Reconstruction Formalized (PR #8169)
+
+- **Lean 4 formalization** (`folio/quantum-observable-universe/lean/QOU/MassTheory/PlancherelNormalisationAndScaleBounds.lean`, `0` `sorry`, wired into `QOU.lean`):
+  - `qschur_trivial_inv_eq_fbor_normaliser` & `qschur_bar_conjugate_duality`: proves `(y_{(3)}^Schur(q))⁻¹ = [3]_q!^bal / q³` and `y_{(1,1,1)}^Schur(q) = y_{(3)}^Schur(q⁻¹)` with `(y_{(1,1,1)}^Schur(q))⁻¹ = q⁶ · (y_{(3)}^Schur(q))⁻¹`.
+  - `wenzl_weights_trace_normalised`, `wenzl_standard_block_inv_eq_two_bracket_sq`, & `wenzl_reconstructs_borromean_trM`: proves exact trace normalisation `1·y_{(3)}^Wenzl + 2·y_{(2,1)}^Wenzl + 1·y_{(1,1,1)}^Wenzl = 1`, `(y_{(2,1)}^Wenzl(q))⁻¹ = (q + q⁻¹)² = [2]_q²`, and exact algebraic reconstruction `y_{(3)}^Wenzl(q)·1 + y_{(2,1)}^Wenzl(q)·χ^{(2,1)}(β_Bor, q) + y_{(1,1,1)}^Wenzl(q)·1 = tr_M(β_Bor, q)`.
+  - `net_bar_asymmetry_mmu_fbor`: proves `(1/ℏ_q²)([3]_q!^bal / q³) = [3]_q!^bal / (q² ℏ_sym²)`.
+- **50-dps probe & witness**: `computations/probes/plancherel_normalisation_and_scale_bounds_probe.py` and `computations/probes/plancherel-normalisation-and-scale-bounds-probe.witness.json` (PR `litlfred/qou#8169`, head `32d6039de208cfa3dab898932c88023a55ef3267`).

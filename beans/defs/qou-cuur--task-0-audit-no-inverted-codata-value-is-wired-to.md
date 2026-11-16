@@ -1,13 +1,13 @@
 ---
 # qou-cuur
 title: 'Task-0 audit: no inverted-CODATA value is wired to production; 3 labelling defects + AGENTS.md lambda_A wording'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T13:40:48Z
-updated_at: 2026-10-04T15:24:49Z
+updated_at: 2026-11-16T19:28:00Z
 parent: qou-2002
 ---
 
@@ -68,3 +68,9 @@ COVERAGE LIMIT worth recording: a fit that was once obtained by inversion and
 then HARDCODED as a bare numeric literal is invisible to this audit's method
 (name-shape + consumption tracing). The 4 and 29 in the Habiro tower are
 exactly that class and were findable only because the audit trail named them.
+
+## 2026-11-16 — Algebraic Purity & Strict Lower Bound of linking_weight_family_a Formalized (PR #8169)
+
+- **Lean 4 formalization** (`folio/quantum-observable-universe/lean/QOU/MassTheory/PlancherelNormalisationAndScaleBounds.lean`, `0` `sorry`):
+  - `linkingWeightFamilyA_properties`: proves `λ_A(q) = 5/2 + (3/4)(q - 2 + q⁻¹)` is bar-symmetric (`λ_A(q⁻¹) = λ_A(q)`), has classical limit `λ_A(1) = 5/2`, satisfies `λ_A(q) - 5/2 = 3(q - 1)²/(4q) > 0`, and obeys `λ_A(q) > 5/2 > 2.461` for all `q > 0, q ≠ 1`, proving algebraically that `linking_weight_family_a` is a closed-form parameter-free expression and not an inverted-CODATA fit.
+- **50-dps verification probe**: `computations/probes/plancherel_normalisation_and_scale_bounds_probe.py` (`λ_A(q_0) = 2.5081726500303417248143689835688971119169305613631`, PR `litlfred/qou#8169`, head `32d6039de208cfa3dab898932c88023a55ef3267`).

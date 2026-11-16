@@ -1,13 +1,13 @@
 ---
 # qou-hgm6
 title: 'GAP: three q0-stale probes compute in float64 end-to-end — the literal cannot be drained without fixing that first'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T02:45:28Z
-updated_at: 2026-10-04T15:20:29Z
+updated_at: 2026-11-16T19:28:00Z
 parent: qou-2002
 ---
 
@@ -77,3 +77,11 @@ deliberately left alone.
 - `hadron-knot-table` — the last `Q0_FLIP` on main. Its producer is out of reach:
   measured >7200 s reaching atom 4 of 19, deuterium alone ≥7170 s.
 - `_deprecated/alpha-high-precision` — deprecated tree.
+
+## 2026-11-16 — 50-dps Saddle-Offset Quadratic Root, Berezinian Lift, & rho_binding Constancy Formalized (PR #8169)
+
+- **Lean 4 formalization** (`folio/quantum-observable-universe/lean/QOU/MassTheory/PlancherelNormalisationAndScaleBounds.lean`, `0` `sorry`):
+  - `discriminant_193_rational_bracket` & `saddleQuadPoly_at_qQuadRoot_and_bounds`: proves `q_quad = (-9 + √193)/56 ∈ (0.087, 0.088)` is an exact root of `1 - 9q - 28q² = 0`.
+  - `berezinianEvenLift_fit_and_residual`: proves zero-mixing lift `= 1`, exact surjectivity fit witness `B* = A(1 - r*)D C⁻¹`, and residual formula.
+  - `rho_binding_mirror_mismatch_zero_of_universal`: proves mirror ratio cancellation under a single universal `α_M`.
+- **50-dps verification probe**: `computations/probes/plancherel_normalisation_and_scale_bounds_probe.py` and `computations/probes/plancherel-normalisation-and-scale-bounds-probe.witness.json` (PR `litlfred/qou#8169`, head `32d6039de208cfa3dab898932c88023a55ef3267`).
