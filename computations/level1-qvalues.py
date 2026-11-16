@@ -73,10 +73,17 @@ nuclei = [
 
 # ── Engine ───────────────────────────────────────────────────────
 
-from q_parameter import Q_RAT_NUM, Q_RAT_DEN, Q, HBAR_Q_SQ_MP
+from fractions import Fraction
+from q_parameter import Q_MP, HBAR_Q_SQ_MP
 from qou_substrate.precision import COMPUTE_DPS, fmt
 mp.dps = COMPUTE_DPS
-qr = HeckeRational(Q_RAT_NUM, Q_RAT_DEN)
+# The engine needs an exact rational q. It used Q_RAT_NUM/Q_RAT_DEN =
+# 11099786/10^7, a 7-digit truncation of q0 that moved Q_q by 1e-7..2e-6
+# relative (owner, 2026-11-15). Use q0 (Q_MP) to LEVEL1_Q_DIGITS digits.
+import os as _os_q  # noqa: E402
+_Q_DIGITS = int(_os_q.environ.get("LEVEL1_Q_DIGITS", "40"))
+_q_frac = Fraction(mp.nstr(Q_MP, _Q_DIGITS, strip_zeros=False))
+qr = HeckeRational(_q_frac.numerator, _q_frac.denominator)
 # NO-FLOAT64 (owner, 2026-11-15): hbar_q^2 as mpf, and each log ratio
 # taken on the exact rational V_par/V_dau, never on a float cast.
 hbar_q_sq = HBAR_Q_SQ_MP
@@ -86,6 +93,30 @@ def _log_abs_ratio(vp, vd):
     """log|vp/vd| for exact Fractions, evaluated at mp.dps."""
     r = vp / vd
     return mp.log(abs(mp.mpf(r.numerator) / mp.mpf(r.denominator)))
+
+
+import multiprocessing as _mproc  # noqa: E402
+_W_ctx = None
+
+
+def _eval_site(site):
+    """Q_q for converting the neutron at nucleon index `site` (exact volumes)."""
+    nucleon_par, quark_par, vp_all, n_gens = _W_ctx
+    nucleon_dau = list(nucleon_par)
+    nucleon_dau[site] = 1
+    quark_dau = expand_to_quarks(nucleon_dau)
+    converting = find_converting_quarks(quark_par, quark_dau)
+    vd_all = qr.traced_volumes_all(quark_dau)
+    lr_sum = mp.mpf(0)
+    aff = 0
+    for i in range(n_gens):
+        vp = vp_all[i]
+        vd = vd_all[i]
+        if vp != 0 and vd != 0 and vp != vd:
+            lr_sum += _log_abs_ratio(vp, vd)
+            aff += 1
+    Q_trial = lr_sum / hbar_q_sq if hbar_q_sq != 0 else 0
+    return Q_trial, aff, converting, quark_dau
 
 print("=" * 60)
 print("Level 1 (quark-level) Q-value computation")
@@ -181,61 +212,34 @@ for nuc in nuclei:
     # traced_volume calls, in one O(A) sweep (bean qou-l1zd).
     _vp_all = qr.traced_volumes_all(quark_par)
 
-    for site in neutron_positions:
-        nucleon_dau_trial = list(nucleon_par)
-        nucleon_dau_trial[site] = 1
-        quark_dau_trial = expand_to_quarks(nucleon_dau_trial)
+    # Every site is independent and exact, so evaluate them in parallel
+    # (fork start method; LEVEL1_PROCS, default = all cores). The
+    # selection below runs serially in site order, so the result is the
+    # same as the serial loop.
+    _W_ctx = (nucleon_par, quark_par, _vp_all, strands_L1 - 1)
+    _procs = int(_os_ck.environ.get("LEVEL1_PROCS", str(_mproc.cpu_count())))
+    if _procs > 1 and len(neutron_positions) > 1:
+        with _mproc.get_context("fork").Pool(_procs) as _pool:
+            _evals = dict(zip(neutron_positions,
+                              _pool.map(_eval_site, neutron_positions, chunksize=1)))
+    else:
+        _evals = {site: _eval_site(site) for site in neutron_positions}
 
-        converting_trial = find_converting_quarks(quark_par, quark_dau_trial)
-
-        n_gens = strands_L1 - 1
-        lr_sum = mp.mpf(0)
-        aff = 0
-        _vd_all = qr.traced_volumes_all(quark_dau_trial)
-        for i in range(n_gens):
-            vp = _vp_all[i]
-            vd = _vd_all[i]
-            if vp != 0 and vd != 0 and vp != vd:
-                lr_sum += _log_abs_ratio(vp, vd)
-                aff += 1
-
-        Q_trial = lr_sum / hbar_q_sq if hbar_q_sq != 0 else 0
-
-        # Select the conversion site with negative Q_q closest to zero
-        if Q_trial < 0:
-            if best_Q is None or abs(Q_trial) < abs(best_Q):
-                best_Q = Q_trial
-                best_site = site
-                best_converting = converting_trial
-                best_quark_dau = quark_dau_trial
-                best_affected = aff
-
-    # If no negative Q found, take smallest magnitude overall
-    if best_Q is None:
+    def _pick(require_negative):
+        nonlocal_best = None
         for site in neutron_positions:
-            nucleon_dau_trial = list(nucleon_par)
-            nucleon_dau_trial[site] = 1
-            quark_dau_trial = expand_to_quarks(nucleon_dau_trial)
-            converting_trial = find_converting_quarks(quark_par, quark_dau_trial)
+            Q_trial, aff, converting_trial, quark_dau_trial = _evals[site]
+            if require_negative and not Q_trial < 0:
+                continue
+            if nonlocal_best is None or abs(Q_trial) < abs(nonlocal_best[0]):
+                nonlocal_best = (Q_trial, site, converting_trial, quark_dau_trial, aff)
+        return nonlocal_best
 
-            n_gens = strands_L1 - 1
-            lr_sum = mp.mpf(0)
-            aff = 0
-            _vd_all = qr.traced_volumes_all(quark_dau_trial)
-            for i in range(n_gens):
-                vp = _vp_all[i]
-                vd = _vd_all[i]
-                if vp != 0 and vd != 0 and vp != vd:
-                    lr_sum += _log_abs_ratio(vp, vd)
-                    aff += 1
-
-            Q_trial = lr_sum / hbar_q_sq if hbar_q_sq != 0 else 0
-            if best_Q is None or abs(Q_trial) < abs(best_Q):
-                best_Q = Q_trial
-                best_site = site
-                best_converting = converting_trial
-                best_quark_dau = quark_dau_trial
-                best_affected = aff
+    # Select the conversion site with negative Q_q closest to zero;
+    # if none is negative, take the smallest magnitude overall.
+    _best = _pick(True) or _pick(False)
+    if _best is not None:
+        best_Q, best_site, best_converting, best_quark_dau, best_affected = _best
 
     log_ratio_sum = best_Q * hbar_q_sq if best_Q else 0
     Q_q = best_Q if best_Q else 0
@@ -284,6 +288,7 @@ witness = {
         "the site giving negative Q_q with smallest magnitude is selected."
     ),
     "q": str(qr.q),
+    "q_digits": _Q_DIGITS,
     "hbar_q_sq": fmt(hbar_q_sq),
     "nuclei": results,
     "notes": [
