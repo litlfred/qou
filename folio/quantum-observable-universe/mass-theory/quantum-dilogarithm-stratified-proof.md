@@ -169,8 +169,16 @@ answer, one needs the projections $\mathrm{proj}_{Z^{(k)}}(\Phi_q(z_i))$
 to be uniformly bounded as $|z_i| \to q$ — equivalently, no spurious
 analytic mass leaks into $Z^{(k)}(A)$ from the divergent infinite
 product. Establishing this uniform bound is the conjectural target of
-[$z$-Habiro completion](#conj:brane-tower-z-habiro) and the open part
-of [$\Phi_q$ categorical truncation](#conj:phi-q-categorical-truncation).
+[$z$-Habiro completion](#conj:brane-tower-z-habiro). It is no longer
+needed for [$\Phi_q$ categorical truncation](#conj:phi-q-categorical-truncation):
+the level-wise $\Phi_q$ identity that the bound was meant to regularise is
+false algebraically, and the centre-projection truncation is proved without
+it ([`prop:cell-depth-truncation`](#prop:cell-depth-truncation)). Note also
+that with $\Phi_q(z_i)$ a scalar the equality
+$\mathrm{tr}_M(\Phi_q(z_i)T_w)=\mathrm{tr}_M(\Phi_q^{[\le k_\star]}(z_i)T_w)$
+fails at $w=e$ unless $\prod_{j>k_\star}(1-q^{-j}z_i)^{-1}=1$, which is false
+for $z_i\ne0$; the statement above needs $\Phi_q(z_i)$ read as a central
+element, and that reading is not fixed here.
 
 The argument above is solid as a **categorical (Frobenius-paired)
 identity** but does not by itself rule out that the infinite analytic
