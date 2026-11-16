@@ -1,0 +1,135 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-16T19:26:49.521087+00:00",
+  "commitSha": "143b2bbffe581d52a3784fba22d19f61a02d6d1c",
+  "assertions": [
+    {
+      "name": "j_tau0_prime_factorization_exact",
+      "computed": "-3810.78125",
+      "expected": "-3810.78125",
+      "passed": true,
+      "tolerance": "1e-60"
+    },
+    {
+      "name": "j_tau0_minus_1728_is_neg_421_sq_over_32",
+      "computed": "-5538.78125",
+      "expected": "-5538.78125",
+      "passed": true,
+      "tolerance": "1e-60"
+    },
+    {
+      "name": "j_5tau0_minus_1728_is_neg_59_sq_over_2",
+      "computed": "-1740.5",
+      "expected": "-1740.5",
+      "passed": true,
+      "tolerance": "1e-60"
+    },
+    {
+      "name": "weierstrass_E_5tau0_j_roundtrip",
+      "computed": "-12.5",
+      "expected": "-12.5",
+      "passed": true,
+      "tolerance": "1e-60"
+    },
+    {
+      "name": "weierstrass_E_tau0_j_roundtrip",
+      "computed": "-3810.78125",
+      "expected": "-3810.78125",
+      "passed": true,
+      "tolerance": "1e-60"
+    },
+    {
+      "name": "klein_j_at_tau0_matches_minus_121945_over_32",
+      "computed": "-3810.78125",
+      "expected": "-3810.78125",
+      "passed": true,
+      "tolerance": "1e-50"
+    },
+    {
+      "name": "klein_j_at_5tau0_matches_minus_25_over_2",
+      "computed": "-12.5",
+      "expected": "-12.5",
+      "passed": true,
+      "tolerance": "1e-50"
+    },
+    {
+      "name": "isogeny_ratio_im_tau_B_fund_over_im_tau0_equals_5",
+      "computed": "5.0",
+      "expected": "5.0",
+      "passed": true,
+      "tolerance": "1e-50"
+    },
+    {
+      "name": "sigma12_065_line_607_prose_typo_is_5895_ppm",
+      "computed": "0.005895025266129411727586407861483953431973997849532148628",
+      "expected": "0.005895025266129411727586407861483953431973997849532148628",
+      "passed": true,
+      "tolerance": "1e-55"
+    },
+    {
+      "name": "m_rr_quadratic_minimal_polynomial_zero",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1e-60"
+    },
+    {
+      "name": "em_germ_moment_two_spellings_agree_at_q0",
+      "computed": "-0.1039637100524101456766528585363901355661986041617910358",
+      "expected": "-0.1039637100524101456766528585363901355661986041617910358",
+      "passed": true,
+      "tolerance": "1e-55"
+    },
+    {
+      "name": "em_germ_moment_derivative_at_self_dual_q1_equals_minus_1",
+      "computed": "-1.0",
+      "expected": "-1.0",
+      "passed": true,
+      "tolerance": "1e-60"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "braden-northover-j-normalization-stokes",
+  "scriptFile": "braden_northover_j_normalization_stokes_probe.py",
+  "scriptHash": "ada40e80ca1c",
+  "scriptCommitSha": "143b2bbffe581d52a3784fba22d19f61a02d6d1c",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/braden_northover_j_normalization_stokes_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/braden_northover_j_normalization_stokes_probe.py"
+  },
+  "description": "50-dps verification of Braden-Northover arXiv:1206.6004v2 §4 j-normalization (j(tau_0) = -121945/32, j(tau_0)-1728 = -421^2/32, j(5*tau_0) = -25/2, j(5*tau_0)-1728 = -59^2/2, 0.5895% prose-float typo resolution) and non-abelian Stokes holonomy germ vs discrete q=i shadow (qou-7pb0, qou-rgiz).",
+  "parameters": {
+    "working_dps": 65,
+    "q0": "1.109978582751380807591669095610768879874499121873578736"
+  },
+  "data": {
+    "im_tau_A_fund": "1.339215435635360429517305028854102963971669292029233106",
+    "im_tau_B_fund": "0.9333823123140496160308144068156201473184762610941681178",
+    "im_tau_0_exact": "0.1866764624628099232061628813631240294636952522188336236",
+    "sigma12_065_prose_typo_rel_diff": "0.005895025266129411727586407861483953431973997849532148628",
+    "em_moment_q0": "-0.1039637100524101456766528585363901355661986041617910358",
+    "em_moment_deriv_q0": "-0.8911807510196825412380464687365111234812421593231335502"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
