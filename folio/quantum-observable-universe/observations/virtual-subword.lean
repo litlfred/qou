@@ -5,6 +5,8 @@ import Mathlib.Algebra.Field.Basic
 import Mathlib.Algebra.GroupWithZero.Units.Lemmas
 import Mathlib.GroupTheory.Perm.Basic
 import Mathlib.Data.Finset.Basic
+import Mathlib.Data.Finset.Powerset
+import Mathlib.Algebra.BigOperators.Group.Finset.Powerset
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
 
@@ -246,5 +248,93 @@ theorem V3_ne_one :
   norm_num
 
 end Borromean
+
+section Cumulant
+
+/-! ### Entanglement as a convolution cumulant
+
+Let `F T` be the logarithm of a multiplicative observable of the sub-braid on the strand set `T`,
+normalised so that an unlink gives `0`. Split (convolved) pieces make `F` additive. The connected
+part `φ T` is the Möbius inversion of `F` over the subsets of `T`. A split sub-braid has `φ = 0`,
+so `φ T ≠ 0` certifies `|T|`-party entanglement: `|T| = 2` is the Bell (pairwise) level and
+`|T| = 3` with all pairs zero is the GHZ (Borromean) level. -/
+
+variable {ι R : Type*} [DecidableEq ι] [CommRing R]
+
+/-- The connected part (Möbius inversion over subsets) of a set function. -/
+def connected (F : Finset ι → R) (T : Finset ι) : R :=
+  (-1) ^ T.card * ∑ U ∈ T.powerset, (-1) ^ U.card * F U
+
+/-- On a pair the connected part is the familiar inclusion–exclusion. -/
+theorem connected_pair (F : Finset ι → R) {a b : ι} (hab : a ≠ b) :
+    connected F {a, b} = F {a, b} - F {a} - F {b} + F ∅ := by
+  have hb : a ∉ ({b} : Finset ι) := by simpa using hab
+  have hps : ({b} : Finset ι).powerset = {∅, {b}} := by
+    ext s; simp [Finset.subset_singleton_iff]
+  have hne : ({b} : Finset ι) ≠ ∅ := Finset.singleton_ne_empty b
+  have h0 : (∅ : Finset ι) ∉ ({{b}} : Finset (Finset ι)) := by
+    simpa [eq_comm] using hne
+  simp only [connected, Finset.sum_powerset_insert hb, hps, Finset.sum_insert h0,
+    Finset.sum_singleton, Finset.card_insert_of_notMem hb, Finset.card_singleton,
+    Finset.card_empty, insert_empty_eq]
+  rw [Finset.pair_comm]
+  ring
+
+/-- If `F` does not depend on a strand `a`, the signed sum over subsets containing `a` cancels the
+sum over subsets avoiding it. -/
+theorem sum_signed_eq_zero_of_indep (F : Finset ι → R) {a : ι} {S : Finset ι} (ha : a ∉ S)
+    (hind : ∀ U ⊆ S, F (insert a U) = F U) :
+    ∑ U ∈ (insert a S).powerset, (-1) ^ U.card * F U = 0 := by
+  rw [Finset.sum_powerset_insert ha, ← Finset.sum_add_distrib]
+  refine Finset.sum_eq_zero fun U hU => ?_
+  have hUS : U ⊆ S := Finset.mem_powerset.mp hU
+  have haU : a ∉ U := fun h => ha (hUS h)
+  rw [Finset.card_insert_of_notMem haU, hind U hUS, pow_succ]
+  ring
+
+/-- A set function that ignores a strand of `T` has zero connected part on `T`. -/
+theorem connected_eq_zero_of_indep (F : Finset ι → R) {T : Finset ι} {a : ι} (haT : a ∈ T)
+    (hind : ∀ U ⊆ T.erase a, F (insert a U) = F U) : connected F T = 0 := by
+  have hT : insert a (T.erase a) = T := Finset.insert_erase haT
+  have h := sum_signed_eq_zero_of_indep F (Finset.notMem_erase a T) hind
+  rw [hT] at h
+  simp [connected, h]
+
+omit [DecidableEq ι] in
+/-- The connected part is additive in the set function. -/
+theorem connected_add (F G : Finset ι → R) (T : Finset ι) :
+    connected (F + G) T = connected F T + connected G T := by
+  simp only [connected, Pi.add_apply, mul_add, Finset.sum_add_distrib]
+
+omit [DecidableEq ι] in
+/-- The connected part only sees the values of `F` on subsets of `T`. -/
+theorem connected_congr {F G : Finset ι → R} {T : Finset ι} (h : ∀ U ⊆ T, F U = G U) :
+    connected F T = connected G T := by
+  unfold connected
+  congr 1
+  exact Finset.sum_congr rfl fun U hU => by rw [h U (Finset.mem_powerset.mp hU)]
+
+/-- **Split implies no connected part.** If `T = T₁ ∪ T₂` with `T₁, T₂` disjoint and nonempty, and
+`F` is additive over the split on every subset of `T`, then `connected F T = 0`. Contrapositive:
+`connected F T ≠ 0` means the strands of `T` do not split into two non-interacting groups. -/
+theorem connected_eq_zero_of_split (F : Finset ι → R) {T₁ T₂ : Finset ι}
+    (hdisj : Disjoint T₁ T₂) (h₁ : T₁.Nonempty) (h₂ : T₂.Nonempty)
+    (hadd : ∀ U ⊆ T₁ ∪ T₂, F U = F (U ∩ T₁) + F (U ∩ T₂)) :
+    connected F (T₁ ∪ T₂) = 0 := by
+  rw [connected_congr (G := fun U => F (U ∩ T₁) + F (U ∩ T₂)) hadd]
+  change connected ((fun U => F (U ∩ T₁)) + (fun U => F (U ∩ T₂))) (T₁ ∪ T₂) = 0
+  rw [connected_add]
+  obtain ⟨b, hb⟩ := h₂
+  obtain ⟨a, ha⟩ := h₁
+  have hb1 : b ∉ T₁ := fun h => Finset.disjoint_left.mp hdisj h hb
+  have ha2 : a ∉ T₂ := fun h => Finset.disjoint_left.mp hdisj ha h
+  rw [connected_eq_zero_of_indep _ (Finset.mem_union_right _ hb) (fun U _ => by
+        simp [Finset.insert_inter_of_notMem hb1]),
+      connected_eq_zero_of_indep _ (Finset.mem_union_left _ ha) (fun U _ => by
+        simp [Finset.insert_inter_of_notMem ha2])]
+  simp
+
+
+end Cumulant
 
 end QOU.VirtualSubword
