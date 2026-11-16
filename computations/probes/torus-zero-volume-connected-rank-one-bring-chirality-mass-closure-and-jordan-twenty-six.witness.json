@@ -1,0 +1,96 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-16T22:10:51.101652+00:00",
+  "commitSha": "d4321816dc29a391e9a3b9e82e017863286ef3a1",
+  "assertions": [
+    {
+      "name": "qou-006b-torus-knot-volume-gap-two-over-three-pi",
+      "computed": "0.21220659078919378102517835116335248271261286098728",
+      "expected": "0.21220659078919378102517835116335248271261286098728",
+      "passed": true,
+      "tolerance": "1e-48"
+    },
+    {
+      "name": "qou-006b-t29-t35-common-genus-four",
+      "computed": "4.0",
+      "expected": "4.0",
+      "passed": true,
+      "tolerance": "1e-48"
+    },
+    {
+      "name": "qou-atsd-t4-sym-power-first-four-dims-sum-16",
+      "computed": "16.0",
+      "expected": "16.0",
+      "passed": true,
+      "tolerance": "1e-48"
+    },
+    {
+      "name": "qou-pu2x-bring-surface-gauss-bonnet-area-12pi",
+      "computed": "37.699111843077518861551720599354034610366032792501",
+      "expected": "37.699111843077518861551720599354034610366032792501",
+      "passed": true,
+      "tolerance": "1e-48"
+    },
+    {
+      "name": "qou-s16e-primary-mass-closure-sum-36",
+      "computed": "36.0",
+      "expected": "36.0",
+      "passed": true,
+      "tolerance": "1e-48"
+    },
+    {
+      "name": "qou-s16e-theta-channel-surplus-one",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "1e-48"
+    },
+    {
+      "name": "qou-u19l-f4-twenty-six-su3-su3-branching",
+      "computed": "26.0",
+      "expected": "26.0",
+      "passed": true,
+      "tolerance": "1e-48"
+    },
+    {
+      "name": "qou-u19l-f4-twenty-six-sm-branching",
+      "computed": "26.0",
+      "expected": "26.0",
+      "passed": true,
+      "tolerance": "1e-48"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "torus-zero-volume-connected-rank-one-bring-chirality-mass-closure-and-jordan-twenty-six",
+  "scriptFile": "torus_zero_volume_connected_rank_one_bring_chirality_mass_closure_and_jordan_twenty_six_probe.py",
+  "scriptHash": "1f03b8c08aa0",
+  "scriptCommitSha": "d4321816dc29a391e9a3b9e82e017863286ef3a1",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/torus_zero_volume_connected_rank_one_bring_chirality_mass_closure_and_jordan_twenty_six_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/torus_zero_volume_connected_rank_one_bring_chirality_mass_closure_and_jordan_twenty_six_probe.py"
+  },
+  "description": "50-dps mpmath verification of torus-knot zero simplicial volume vs 2/(3*pi) gap and equal genus 4 for T(2,9), T(3,5) (qou-006b), unbounded symmetric-power dimension tower 2j+1 exceeding any finite subgroup bound (qou-atsd-t4), reduced-norm +1 vs -1 chirality separation on the genus-4 (2,4,5) surface with chi=-6 and index 120 (qou-pu2x), parameter-free mass-chain closure (36 modules, 0 untraceable literals) and theta-channel surplus 3-2=1 (qou-s16e), and trace-free 26-of-F4 branching 27 - 1 = 26 = 8 + 9 + 9 = 8 + 6 + 3 + 3 + 3 + 2 + 1 (qou-u19l).",
+  "parameters": {
+    "dps": "50"
+  }
+}
