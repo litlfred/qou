@@ -1,0 +1,126 @@
+{
+  "engine": "mpmath-80dps",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-16T20:25:18.855884+00:00",
+  "commitSha": "357a63280dd6b77b067855dfd2ebaeb6340b2c28",
+  "assertions": [
+    {
+      "name": "habiro_prime_collapse_proton_at_neg_one",
+      "computed": 8,
+      "expected": 8,
+      "passed": true,
+      "tolerance": 0,
+      "source": "QOU.LiftingDescent.qou_proton_perpetual_obstruction (a0=-1 -> 8, a1=-1 -> 0)"
+    },
+    {
+      "name": "habiro_prime_collapse_neutron_at_neg_one",
+      "computed": 2,
+      "expected": 2,
+      "passed": true,
+      "tolerance": 0,
+      "source": "QOU.LiftingDescent.qou_neutron_perpetual_obstruction (a0=-1 -> 2, a1=-1 -> 0)"
+    },
+    {
+      "name": "habiro_prime_collapse_deuteron_at_neg_one",
+      "computed": 192,
+      "expected": 192,
+      "passed": true,
+      "tolerance": 0,
+      "source": "QOU.LiftingDescent.qou_deuteron_perpetual_obstruction (a0=-1 -> 192, a1=-1 -> 0)"
+    },
+    {
+      "name": "confinement_categorical_commutator_trace_zero",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "QOU.WedderburnMass.integral_factors_through_centre: tr([A, B]) = 0 to 75+ dps"
+    },
+    {
+      "name": "confinement_frobenius_reciprocity_double_sum_identity",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "QOU.ParticleInteractions.reciprocity_of_kkt: active primal expansion equals double sum to 75+ dps"
+    },
+    {
+      "name": "four_term_pair_proton_milli_sum",
+      "computed": 999,
+      "expected": 999,
+      "passed": true,
+      "tolerance": 0,
+      "source": "QOU.ParticleInteractions.proton_nf_channel_sum (Table 2 milli-units)"
+    },
+    {
+      "name": "four_term_pair_neutron_milli_sum",
+      "computed": 811,
+      "expected": 811,
+      "passed": true,
+      "tolerance": 0,
+      "source": "QOU.ParticleInteractions.neutron_nf_channel_sum (Table 3 milli-units)"
+    },
+    {
+      "name": "four_term_pair_polarization_conjugation_trace_invariance",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "QOU.ParticleInteractions.confinedNet_eq_base_trace: tr(g B g^{-1}) = tr(B) to 75+ dps"
+    },
+    {
+      "name": "parity_regime_spectator_asymmetry_numerator_positive",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "QOU.ParticleInteractions.spectator_asymmetry_num_pos at q = 1 + 1/137 (80 dps)"
+    },
+    {
+      "name": "parity_regime_factored_spectator_sign_identity",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "QOU.ParticleInteractions.sign_identity_of_factored across A=1 (n), A=3 (3H), A=6 (6He)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "round50-devacuify-6qbv",
+  "scriptFile": "round50_devacuify_6qbv_probe.py",
+  "scriptHash": "3ff73a87c2af",
+  "scriptCommitSha": "357a63280dd6b77b067855dfd2ebaeb6340b2c28",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/round50_devacuify_6qbv_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/round50_devacuify_6qbv_probe.py"
+  },
+  "description": "80-dps mpmath and exact rational verification probe for the 5 Round 50 de-vacuified Lean 4 modules under qou-6qbv / qou-uot9: MotivicPerpetualObstructionFromTrace (qou-lrnd), confinement_categorical, confinement_frobenius_reciprocity, four_term_pair_nucleon, and parity_regime_selection.",
+  "data": {
+    "precision_dps": 80,
+    "habiro_collapse_constants": {
+      "proton": "8",
+      "neutron": "2",
+      "deuteron": "192"
+    },
+    "spectator_asymmetry_num_at_q0": "0.14867438921323452804484976097607785946126227163334"
+  }
+}
