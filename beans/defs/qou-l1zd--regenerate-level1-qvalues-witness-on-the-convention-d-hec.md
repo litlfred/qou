@@ -1,7 +1,7 @@
 ---
 # qou-l1zd
 title: Regenerate level1-qvalues witness on the convention-D Hecke engine
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
@@ -26,3 +26,7 @@ hadron_knot_table.py (known >50 min per bound atom), hecke_rust_bridge.py.
 ## 2026-11-15 23:30Z
 
 Done on branch claude/level1-witness-convention-d-2026-11-15, draft PR #8073 (issue #8072). All 6 decays computed under D. The O(A) traced_volumes_all sweep gives the same exact rationals about 50x faster (210Bi 428 s). 210Bi Q_q = +156.25: no negative site, so the fallback applies. Complete when #8073 merges.
+
+## 2026-11-15 23:26Z
+
+PR #8073 merged (rebase). Completed. Float64 follow-up is on branch claude/level1-qvalues-no-float64-2026-11-15.
