@@ -27,8 +27,9 @@ export default conjecture({
   lean: { ref: "qou:QOU.ParticleInteractions.mass_categorical_descent",
     validation: "not_checked",
   },
-  uses: ["thm:wedderburn-mass-formula"],
+  uses: ["thm:wedderburn-mass-formula", "thm:centre-cocentre-descent", "def:descent-involution"],
   authorNotes: [
+    { kind: "status", date: "2026-11-16", body: "Restated (issue #8094) as a conjecture about a mass element and a functional, on top of the proved thm:centre-cocentre-descent. The clause 'the descended component resides in the centre' was false for the descent idempotent of def:descent-involution and is removed; the liquid-drop pairing is now a marked comparison paragraph." },
     { kind: "status", date: "2026-11-16", body: "Demoted from proposition on owner ruling 2026-11-16 (card \"Demote all six\"): the claim is not proved from established results, so it is stated as a conjecture. Label renamed conj:mass-categorical-descent -> conj:mass-categorical-descent." },
     {
       kind: "caveat",
