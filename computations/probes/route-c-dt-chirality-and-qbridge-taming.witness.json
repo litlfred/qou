@@ -1,0 +1,66 @@
+{
+  "probe": "route_c_dt_chirality_and_qbridge_taming_probe.py",
+  "beans": [
+    "qou-rtec",
+    "qou-sfwp",
+    "qou-u452",
+    "qou-v8qx",
+    "qou-vkg5"
+  ],
+  "parentBean": "qou-frzo",
+  "leanModule": "QOU.MassTheory.RouteCDTChiralityAndQBridgeTaming",
+  "scriptHash": "d89ffef0f347",
+  "scriptCommitSha": "d6aa2e9463a3ba079ec1d472e356f34252ece779",
+  "generatedAt": "2026-11-16T20:56:31.245796+00:00",
+  "precisionDps": "80",
+  "allPassed": true,
+  "assertions": [
+    {
+      "id": "qou-rtec-dt-chirality-bar-split",
+      "bean": "qou-rtec",
+      "description": "5_2 chirality pair (3,4) decomposes into bar-even sum 7 and non-zero bar-odd diff 1, whereas amphichiral 4_1 (3,3) has bar-odd diff 0",
+      "fiveTwoBarSplit": [
+        "7",
+        "1"
+      ],
+      "fourOneBarSplit": [
+        "6",
+        "0"
+      ],
+      "passed": true
+    },
+    {
+      "id": "qou-sfwp-driver14-abelian-branch-table",
+      "bean": "qou-sfwp",
+      "description": "dtMax = recOrder + abelianBranch reproduces (3,4) for (4_1, 5_2) with AJ orders (2,3) and abelian branch 1",
+      "dtMax41": "3",
+      "dtMax52": "4",
+      "passed": true
+    },
+    {
+      "id": "qou-u452-qgevrey-taming-to-qbridge-character",
+      "bean": "qou-u452",
+      "description": "q-Borel taming subtracts quadratic growth s*n(n-1)/2 to isolate linear QBridgeSystem character exponent k*n with invariant second difference s",
+      "testedSlope": "1/2",
+      "testedDilationWeight": "3",
+      "passed": true
+    },
+    {
+      "id": "qou-v8qx-ramified-double-cover-riccati-and-two-step-split",
+      "bean": "qou-v8qx",
+      "description": "Unramified q-Riccati degree diff 1+2(p-u) is never 0 over Z, whereas ramified double cover solves u=2p+1 and decouples even/odd seeds",
+      "sampleSolutionAtP2": "5",
+      "evenStep4": "50/9",
+      "oddStep5": "175/9",
+      "passed": true
+    },
+    {
+      "id": "qou-vkg5-bridge-shift-and-ramified-degree-budget",
+      "bean": "qou-vkg5",
+      "description": "Classical bridge shift composes additively, q-native bridge shift composes multiplicatively, and m^2 = m(m-1) + m with deck-sign invariance (-c)^2 = c^2",
+      "classicalComposedShift": "9",
+      "qNativeComposedShift": "15",
+      "passed": true
+    }
+  ]
+}
