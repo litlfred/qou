@@ -90,6 +90,59 @@ theorem heckeMonodromy_of_kz [KZPullbackGenerators T q] {B : Type*} [Ring B] (ε
     far_comm := far_comm
     shadow_at_one := shadow_at_one }
 
+/-! ## Polynomial inverse and common-conjugator relation transport (`bean qou-d0qq`)
+
+From the derived quadratic `T.g i * T.g i = ((q : R) - ↑q⁻¹) • T.g i + 1`, every
+substrate generator `T.g i` has the explicit polynomial inverse
+`T.g i - ((q : R) - ↑q⁻¹) • 1` (`pullback_gen_mul_shifted_eq_one`). Furthermore,
+when two generators `k₁, k₂ : A` are conjugated by the *same* unit `u : Aˣ`, both
+the three-strand braid relation and far commutation transport across conjugation
+(`common_unit_conj_braid` and `common_unit_conj_comm`), isolating why distinct
+per-lasso conjugators `u_i ≠ u_{i+1}` are the sole obstruction to automatic braid
+transport. -/
+
+/-- **Explicit polynomial inverse of every pulled-back generator (`bean qou-d0qq`).**
+Under `[KZPullbackGenerators T q]`, `T.g i * (T.g i - ((q : R) - ↑q⁻¹) • 1) = 1`. -/
+theorem pullback_gen_mul_shifted_eq_one [KZPullbackGenerators T q] (i : ℕ) :
+    T.g i * (T.g i - ((q : R) - ↑q⁻¹) • (1 : A)) = 1 := by
+  have hq := quad_of_kz T q i
+  calc T.g i * (T.g i - ((q : R) - ↑q⁻¹) • (1 : A))
+      = T.g i * T.g i - ((q : R) - ↑q⁻¹) • T.g i := by
+        rw [mul_sub, mul_smul_comm, mul_one]
+    _ = (((q : R) - ↑q⁻¹) • T.g i + 1) - ((q : R) - ↑q⁻¹) • T.g i := by
+        rw [hq]
+    _ = 1 := by abel
+
+/-- **Common-conjugator transport of the braid relation (`bean qou-d0qq`).**
+If `k₁ * k₂ * k₁ = k₂ * k₁ * k₂`, then conjugating both `k₁` and `k₂` by the same
+unit `u : Aˣ` preserves the braid relation. -/
+theorem common_unit_conj_braid {k₁ k₂ : A}
+    (hb : k₁ * k₂ * k₁ = k₂ * k₁ * k₂) (u : Aˣ) :
+    (↑u * k₁ * ↑u⁻¹) * (↑u * k₂ * ↑u⁻¹) * (↑u * k₁ * ↑u⁻¹) =
+      (↑u * k₂ * ↑u⁻¹) * (↑u * k₁ * ↑u⁻¹) * (↑u * k₂ * ↑u⁻¹) := by
+  have hu : (↑u⁻¹ : A) * ↑u = 1 := Units.inv_mul u
+  calc (↑u * k₁ * ↑u⁻¹) * (↑u * k₂ * ↑u⁻¹) * (↑u * k₁ * ↑u⁻¹)
+      = ↑u * (k₁ * ((↑u⁻¹ * ↑u) * k₂) * ((↑u⁻¹ * ↑u) * k₁)) * ↑u⁻¹ := by noncomm_ring
+    _ = ↑u * (k₁ * k₂ * k₁) * ↑u⁻¹ := by rw [hu, one_mul, one_mul]
+    _ = ↑u * (k₂ * k₁ * k₂) * ↑u⁻¹ := by rw [hb]
+    _ = ↑u * (k₂ * ((↑u⁻¹ * ↑u) * k₁) * ((↑u⁻¹ * ↑u) * k₂)) * ↑u⁻¹ := by
+        rw [hu, one_mul, one_mul]
+    _ = (↑u * k₂ * ↑u⁻¹) * (↑u * k₁ * ↑u⁻¹) * (↑u * k₂ * ↑u⁻¹) := by noncomm_ring
+
+/-- **Common-conjugator transport of far commutation (`bean qou-d0qq`).**
+If `k₁ * k₂ = k₂ * k₁`, then conjugating both by the same unit `u : Aˣ` preserves
+commutation. -/
+theorem common_unit_conj_comm {k₁ k₂ : A}
+    (hc : k₁ * k₂ = k₂ * k₁) (u : Aˣ) :
+    (↑u * k₁ * ↑u⁻¹) * (↑u * k₂ * ↑u⁻¹) = (↑u * k₂ * ↑u⁻¹) * (↑u * k₁ * ↑u⁻¹) := by
+  have hu : (↑u⁻¹ : A) * ↑u = 1 := Units.inv_mul u
+  calc (↑u * k₁ * ↑u⁻¹) * (↑u * k₂ * ↑u⁻¹)
+      = ↑u * (k₁ * ((↑u⁻¹ * ↑u) * k₂)) * ↑u⁻¹ := by noncomm_ring
+    _ = ↑u * (k₁ * k₂) * ↑u⁻¹ := by rw [hu, one_mul]
+    _ = ↑u * (k₂ * k₁) * ↑u⁻¹ := by rw [hc]
+    _ = ↑u * (k₂ * ((↑u⁻¹ * ↑u) * k₁)) * ↑u⁻¹ := by rw [hu, one_mul]
+    _ = (↑u * k₂ * ↑u⁻¹) * (↑u * k₁ * ↑u⁻¹) := by noncomm_ring
+
 end KZPullbackGenerators
 
 end QOU.Mass

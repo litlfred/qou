@@ -1,0 +1,52 @@
+{
+  "probe": "computations/probes/layout_geomtail_neutrality_slq2_kz_probe.py",
+  "beans": [
+    "qou-0c19",
+    "qou-0gbx",
+    "qou-17mq",
+    "qou-768r",
+    "qou-d0qq"
+  ],
+  "precision_dps": 80,
+  "gitCommit": "0000000000000000000000000000000000000000",
+  "scriptCommitSha": "0000000000000000000000000000000000000000",
+  "scriptHash": "d7aefb53b41a",
+  "allPassed": true,
+  "generatedAt": "2026-11-16T21:20:06.863910+00:00",
+  "results": {
+    "qou_0c19_layout_and_collinearity": {
+      "colour_mismatch_verified_k_1_to_11": true,
+      "lower_colour_mod_3": 2,
+      "upper_colour_mod_3": 0,
+      "max_collinearity_residual": "3.37350334183376743179154369641e-80"
+    },
+    "qou_0gbx_geometric_tail_bound": {
+      "x_hbar_q_cubed": "0.000972703680616023872931658395643",
+      "tail_to_gap_ratio_K": "323.103534418699345744533287787",
+      "required_coeff_excess_residual": "6.8893263559011469271117931425e-79",
+      "required_coeffs_k_1_to_4": [
+        "0.01290557514092546928159674",
+        "0.1302518330946217918251522",
+        "1.31459",
+        "13.26773548626055108819751"
+      ]
+    },
+    "qou_17mq_neutrality_sign_change": {
+      "unsubtracted_weighted_sum": "8.3791374208689970430873112812",
+      "volume_average_offset_mu": "2.0947843552172492607718278203",
+      "subtracted_region_1": "-0.895246811024898494021907888731",
+      "subtracted_region_2": "0.537148086614939096413144733239",
+      "neutralised_integral_residual": "4.21687917729220928973942962051e-81"
+    },
+    "qou_768r_slq2_parity_and_genus": {
+      "verified_a_2_to_12": true,
+      "deuteron_a2_genus": 8,
+      "a3_mirror_components": 4,
+      "a3_admits_knot_label": false
+    },
+    "qou_d0qq_kz_pullback_inverse": {
+      "kz_k_plus_2_imag": "30.1089799262395990364825652695",
+      "polynomial_inverse_max_residual": "0.0"
+    }
+  }
+}

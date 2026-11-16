@@ -113,4 +113,51 @@ theorem gap_le_tail_of_summing_closes {x C : ℝ} (_h0 : 0 < x) (h1 : x < 1)
   rw [← tail_eq (ne_of_lt h1)]
   linarith
 
+/-! ## Required single-term coefficient and exponent-sweep scaling (`bean qou-0gbx`)
+
+When a two-term ansatz `1 + c * x` is matched to the target ratio `C`, the required
+coefficient `c = (C - 1) / x` exceeds `1` by `(C - (1 + x)) / x = K * x / (1 - x)`.
+Moreover, replacing `x` by a higher power `x^2` for `0 < x < 1` scales the required
+coefficient by `1 / x > 1`, so `c₁ < c₂` across the `k = 1, 2, 3, 4` exponent sweep. -/
+
+/-- **Excess of the required single-term coefficient above `1` (`bean qou-0gbx`).**
+If `1 + c * x = C` and `C - (1 + x) = K * (x ^ 2 / (1 - x))`, then
+`c - 1 = K * x / (1 - x)`. -/
+theorem required_coeff_excess_eq {x C K c : ℝ} (hx0 : x ≠ 0) (hx1 : x ≠ 1)
+    (hc : 1 + c * x = C) (hgap : C - (1 + x) = K * (x ^ 2 / (1 - x))) :
+    c - 1 = K * x / (1 - x) := by
+  have h1mx : (1 : ℝ) - x ≠ 0 := sub_ne_zero.mpr (Ne.symm hx1)
+  have h_sub : (c - 1) * x = K * (x ^ 2 / (1 - x)) := by
+    linear_combination hgap - hc
+  have h_cleared : ((c - 1) - K * x / (1 - x)) * x * (1 - x) = 0 := by
+    field_simp [h1mx]
+    linear_combination (1 - x) * h_sub
+  rcases mul_eq_zero.mp h_cleared with h_left | h_right
+  · rcases mul_eq_zero.mp h_left with h_diff | hx_zero
+    · exact sub_eq_zero.mp h_diff
+    · exact False.elim (hx0 hx_zero)
+  · exact False.elim (h1mx h_right)
+
+/-- **Monotonicity of required coefficients across higher powers (`bean qou-0gbx`).**
+For `0 < x < 1` and `1 < C`, if `1 + c₁ * x = C` and `1 + c₂ * x ^ 2 = C`, then
+`0 < c₁` and `c₁ < c₂`. -/
+theorem higher_power_requires_larger_coeff {x C c₁ c₂ : ℝ}
+    (hx0 : 0 < x) (hx1 : x < 1) (hC : 1 < C)
+    (hc₁ : 1 + c₁ * x = C) (hc₂ : 1 + c₂ * x ^ 2 = C) :
+    0 < c₁ ∧ c₁ < c₂ := by
+  have hc₁_pos : 0 < c₁ := by
+    have hcx : 0 < c₁ * x := by linarith [hC, hc₁]
+    exact (mul_pos_iff_of_pos_right hx0).mp hcx
+  refine ⟨hc₁_pos, ?_⟩
+  have h_eq : c₂ * x ^ 2 = c₁ * x := by linarith [hc₁, hc₂]
+  have h_diff : (c₂ - c₁) * x ^ 2 = c₁ * x * (1 - x) := by
+    linear_combination x * h_eq
+  have h_rhs_pos : 0 < c₁ * x * (1 - x) := by
+    have h1mx : 0 < 1 - x := by linarith [hx1]
+    positivity
+  have h_lhs_pos : 0 < (c₂ - c₁) * x ^ 2 := by linarith [h_diff, h_rhs_pos]
+  have hx2_pos : 0 < x ^ 2 := sq_pos_of_pos hx0
+  have h_sub_pos : 0 < c₂ - c₁ := (mul_pos_iff_of_pos_right hx2_pos).mp h_lhs_pos
+  linarith
+
 end QOU.Hecke.GeometricTailBound
