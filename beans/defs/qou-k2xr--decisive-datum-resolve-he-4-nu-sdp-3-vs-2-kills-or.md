@@ -1,13 +1,13 @@
 ---
 # qou-k2xr
 title: 'DECISIVE datum: resolve He-4 nu_SDP = 3 vs 2 — kills or saves the whole monotone {sc(n)=A-1} family'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-02T16:03:25Z
-updated_at: 2026-10-04T15:18:38Z
+updated_at: 2026-11-17T11:52:00Z
 parent: qou-v2om
 ---
 
@@ -32,3 +32,7 @@ shell). Sub-roast: rho_F=2 is corpus-rounded empirical (data says 1.89), not der
 Orthogonal to sibling A=4 interface-magnitude work (that's the Delta_lambda MAGNITUDE
 scalar m, not the nu_SDP multiplicity). Follow-on: bean qou-58r5 (regime-dependent
 rho_F derivation) is now the sharpened open problem.
+
+## Round 88 Progress (`litlfred/qou#8330`)
+- **Lean 4.24.0 Module**: `folio/quantum-observable-universe/lean/QOU/QBeta/SelfConjugateMultiplicityAndProlongationKernelBrick.lean` (`0` `sorry`, `0` `axiom`, `0` warnings; `0` CRITICAL, `0` major, `0` advisory across all directory-mode static audits).
+- **80-dps Probe & Witness**: `computations/probes/self_conjugate_multiplicity_and_prolongation_kernel_brick_probe.py` & `computations/probes/self-conjugate-multiplicity-and-prolongation-kernel-brick.witness.json` (`scriptCommitSha = b74bffb0d148592f3bcef84a6e80235048fdcaad`, HEAD `10687cdc1c1ca67ba352499264f665447671cbf9`, `allPassed = true`).

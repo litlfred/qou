@@ -1,13 +1,13 @@
 ---
 # qou-k4ud
 title: 'FRONTIER A: Δ_λ MAGNITUDE assembly — sign done (valuation); is |Δ_λ|=dim_λ closed-form? tr(g_ρ)→B wiring'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-19T03:32:44Z
-updated_at: 2026-10-04T15:12:40Z
+updated_at: 2026-11-17T11:52:00Z
 parent: qou-v2om
 ---
 
@@ -69,3 +69,7 @@ as stated; the open magnitude object is now the α-condensation pole regulator. 
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-07-19 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Round 88 Progress (`litlfred/qou#8330`)
+- **Lean 4.24.0 Module**: `folio/quantum-observable-universe/lean/QOU/QBeta/SelfConjugateMultiplicityAndProlongationKernelBrick.lean` (`0` `sorry`, `0` `axiom`, `0` warnings; `0` CRITICAL, `0` major, `0` advisory across all directory-mode static audits).
+- **80-dps Probe & Witness**: `computations/probes/self_conjugate_multiplicity_and_prolongation_kernel_brick_probe.py` & `computations/probes/self-conjugate-multiplicity-and-prolongation-kernel-brick.witness.json` (`scriptCommitSha = b74bffb0d148592f3bcef84a6e80235048fdcaad`, HEAD `10687cdc1c1ca67ba352499264f665447671cbf9`, `allPassed = true`).
