@@ -1,0 +1,60 @@
+{
+  "probe": "trefoil-cube-jsj-volume-jet-monotonicity-flux-ell1-probe",
+  "beans": [
+    "qou-k8fc",
+    "qou-l99f",
+    "qou-u8oy",
+    "qou-u3vw",
+    "qou-fx5g"
+  ],
+  "scriptPath": "computations/probes/trefoil_cube_jsj_volume_jet_monotonicity_flux_ell1_probe.py",
+  "scriptHash": "255e3687247b",
+  "scriptCommitSha": "4932ec701c488d5549804d7d943ebd035a4af858",
+  "computedAt": "2026-11-17T10:25:25.272678+00:00",
+  "dps": 50,
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "qou_k8fc_sigma1_cube_hecke_reduction_and_eigenvalues",
+      "passed": true,
+      "c3AtQ0": "1.121938307382156395511019873985265473598",
+      "d3AtQ0": "0.1219383073821563955110198739852654735983",
+      "trivialEigenvalueDiff": "2.6727647100922e-51",
+      "signEigenvalueDiff": "0.0",
+      "c3PlusC2MinusQ0Sq": "0.0"
+    },
+    {
+      "id": "qou_l99f_connected_sum_volume_zero_diff_and_cauchy_linearity",
+      "passed": true,
+      "vpBranchMean": "10.7125",
+      "vnBranchMean": "12.1099",
+      "relVolumeDiff4He": "0.0",
+      "cauchyParallelogramGap": "1.71056941445901e-49",
+      "double2HMinus4HeGap": "0.0"
+    },
+    {
+      "id": "qou_u8oy_jet_filtration_body_order_strict_monotonicity",
+      "passed": true,
+      "partialSumA2": "2.0108759444280087000009981056515784",
+      "partialSumA3": "8.1312223366130922826170206331851596",
+      "partialSumA4": "20.438479668224827957403853458674999",
+      "partialSumA5": "57.897119628557796895602924186790731"
+    },
+    {
+      "id": "qou_u3vw_em_linking_flux_quadratic_scaling_bracket",
+      "passed": true,
+      "observedKappaRatioA3OverA41": "2.099",
+      "requiredFluxDeclineRatio": "1.448792600754159014696528744194290108062",
+      "bracketLower": "1.448",
+      "bracketUpper": "1.45"
+    },
+    {
+      "id": "qou_fx5g_convention_d_ell1_binding_ceiling_shift",
+      "passed": true,
+      "legacyCeilingPct": "59.0",
+      "conventionDCeilingPct": "69.2",
+      "upwardShiftPct": "10.2",
+      "remainingDeficitPct": "30.8"
+    }
+  ]
+}
