@@ -1,0 +1,26 @@
+{
+  "$schema": "block-qa/v1",
+  "criteria": {
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "030e59923832",
+          "ts": "305bfe9983a8",
+          "lean": "1594d82782fe",
+          "lean_statement": "c60ec3360a12"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-17T00:43:10.897Z",
+        "reviewed_sha": "0eba507a077106abc6597936dd5f1cfb3cff653b",
+        "severity": "minor",
+        "evidence": "Lean screen_mul carries a 0 <= lam hypothesis that item 1's product rule omits. The rule appears true without it, but the Lean proves the weaker form."
+      }
+    ]
+  },
+  "updated_at": "2026-11-17T00:43:10.897Z"
+}

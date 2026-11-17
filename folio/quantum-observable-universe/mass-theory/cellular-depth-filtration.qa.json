@@ -1,0 +1,26 @@
+{
+  "$schema": "block-qa/v1",
+  "criteria": {
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "4fc4863e69f2",
+          "ts": "b3c6ab749b72",
+          "lean": "9106b39c0010",
+          "lean_statement": "60e4c3869541"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-17T00:43:10.940Z",
+        "reviewed_sha": "0eba507a077106abc6597936dd5f1cfb3cff653b",
+        "severity": "minor",
+        "evidence": "Item 2 states equality #(F^delta_k) = F^{delta o t}_k but map_mem_F_comp proves only inclusion; the stability iff is proved only in the 'if' direction (map_mem_F_of_perm); the item 3 dimension count and a=0 <=> (1^n) are not formalised; the # input is a hypothesis h_phi. The statement flags none of this."
+      }
+    ]
+  },
+  "updated_at": "2026-11-17T00:43:10.940Z"
+}
