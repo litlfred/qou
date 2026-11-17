@@ -32,9 +32,16 @@ differ — the "entangled" block set is non-empty. -/
 theorem bindingForm_eq_zero_of_entangledSupp_empty (α : ℝ) {atom free : A}
     (h : D.entangledSupp atom free = ∅) (hfree : D.trM free ≠ 0) :
     D.bindingForm α atom free = 0 := by
-  unfold bindingForm
+  dsimp [bindingForm]
   rw [D.trM_eq_of_entangledSupp_empty h, div_self hfree, Real.log_one, mul_zero]
 
+/-- **Self-reference normalization (`qou-jfx8`).** Evaluating the logarithmic
+binding form `D.bindingForm α a a` of any state `a` with non-vanishing trace
+`D.trM a ≠ 0` against itself yields zero. -/
+theorem bindingForm_self_eq_zero (α : ℝ) {a : A} (ha : D.trM a ≠ 0) :
+    D.bindingForm α a a = 0 := by
+  dsimp [bindingForm]
+  rw [div_self ha, Real.log_one, mul_zero]
 
 end FrobeniusPairingData
 

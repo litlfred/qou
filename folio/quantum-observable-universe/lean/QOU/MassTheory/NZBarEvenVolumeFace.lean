@@ -44,11 +44,20 @@ substrate ray the Volume face is the undeformed `Vol` exactly. The old
 `nzReVolume r 0 = (√3/2)r²` (and its `≠ 0` / `> 0` corollaries) belonged to the
 CS face. -/
 theorem nzReVolume_real_ray (r : ℝ) : nzReVolume r 0 = 0 := by
-  simp [nzReVolume]
+  dsimp [nzReVolume]
+  rw [mul_zero, Real.sin_zero, mul_zero, neg_zero]
 
 /-- The Volume-deviation face is **odd** in the phase (the CS face is the even
 one) — the quadrature signature that identifies which face is which. -/
 theorem nzReVolume_phase_odd (r φ : ℝ) : nzReVolume r (-φ) = -nzReVolume r φ := by
-  simp [nzReVolume, mul_comm]
+  dsimp [nzReVolume]
+  rw [mul_neg, Real.sin_neg, mul_neg]
+
+/-- Phase-reflection cancellation (`kl2o`): the Volume-deviation face `nzReVolume r φ`
+cancels its reflected partner `nzReVolume r (-φ)` at every radius `r` and phase `φ`,
+isolating the bar-even Volume anchor on the real substrate ray. -/
+theorem nzReVolume_add_phase_neg (r φ : ℝ) :
+    nzReVolume r φ + nzReVolume r (-φ) = 0 := by
+  rw [nzReVolume_phase_odd, add_neg_cancel]
 
 end QOU.MassTheory
