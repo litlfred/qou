@@ -1,7 +1,8 @@
 ---
 # qou-1el8
 title: Cross-check 0906.1500v4.pdf at computations/whitehead_c_sigma_torsion.py
-status: todo
+status: in-progress
+pr: 8335
 type: task
 priority: normal
 tags:

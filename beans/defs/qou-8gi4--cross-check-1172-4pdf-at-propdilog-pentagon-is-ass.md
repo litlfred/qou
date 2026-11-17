@@ -1,7 +1,8 @@
 ---
 # qou-8gi4
 title: Cross-check 1172-4.pdf at prop:dilog-pentagon-is-associator
-status: todo
+status: in-progress
+pr: 8335
 type: task
 priority: normal
 tags:

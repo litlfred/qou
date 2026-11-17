@@ -1,7 +1,8 @@
 ---
 # qou-9zcl
 title: Cross-check cJdoubletwistfinal.pdf at prop:habiro-tail-archimedean-action
-status: todo
+status: in-progress
+pr: 8335
 type: task
 priority: normal
 tags:

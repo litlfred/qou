@@ -1,7 +1,8 @@
 ---
 # qou-chx8
 title: Cite 2412.04241v2.pdf at folio/quantum-observable-universe/lean/QOU/Machinery/HabiroZetaFamily.…
-status: todo
+status: in-progress
+pr: 8335
 type: task
 priority: normal
 tags:

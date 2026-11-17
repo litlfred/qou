@@ -1,7 +1,8 @@
 ---
 # qou-5zbn
 title: Cross-check 0111022v1.pdf at prop:cl3-zeta5-orbit-sum-identity
-status: todo
+status: in-progress
+pr: 8335
 type: task
 priority: normal
 tags:
