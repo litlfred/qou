@@ -1,13 +1,13 @@
 ---
 # qou-gcmn
 title: 'EM-linking: the B_pp confound is now the limiting systematic. The per-pair Coulomb unit is held at its A=3 H_6 value across the whole A=3..41 series, so any A-dependence of the underlying strong bond is absorbed into kappa and is indistinguishable from the geometric factor under test. Computing B_pp at higher A (H_2A trace, previously called intractable) or bounding its A-dependence would let the ~4% residual actually discriminate coth-saturation from Vol^{-1/3}. This is the single biggest blocker to closing qou-o6ml'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-01T21:25:42Z
-updated_at: 2026-10-04T15:19:00Z
+updated_at: 2026-11-17T07:52:47Z
 parent: qou-10v9
 ---
 
@@ -122,3 +122,8 @@ numbers from the computed table, and gate the check-1 text on the check.
 ## Still open (do not close)
 
 `delta` across the series — unchanged, and now with a named prerequisite.
+
+## Implementation & Witness Progress (PR #8264)
+- Branch: `qou-10v9-e58e-gcmn-vbyi-vtlj-xy5f` (`248efc097170676991e07dd557f09bee0827f2bc`), PR: `litlfred/qou#8264`
+- Lean 4 module: `folio/quantum-observable-universe/lean/QOU/Eightfold/BarParityIsospinSplitBppConfoundSingletTensorInvarianceDeltaFourValuesAndOrderingDofShift.lean` (0 sorry, 0 axioms, 0 vacuity findings)
+- Probe & witness: `computations/probes/bar_parity_isospin_split_bpp_confound_singlet_tensor_invariance_delta_four_values_and_ordering_dof_shift_probe.py` -> `computations/probes/bar-parity-isospin-split-bpp-confound-singlet-tensor-invariance-delta-four-values-and-ordering-dof-shift.witness.json` (`allPassed: true`, `scriptHash: e7d87b167c3f`, `scriptCommitSha: 7d111fc9111a5ac911879c633afd63652e0f6384`)

@@ -1,13 +1,13 @@
 ---
 # qou-vbyi
 title: '2H ATTACK A: derive the interface offset t from a SPACE index (3S1-3D1 tensor channel) - the only route past the proved flavour-only degeneracy'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-25T18:37:51Z
-updated_at: 2026-10-04T15:16:01Z
+updated_at: 2026-11-17T07:52:47Z
 parent: qou-10v9
 ---
 
@@ -132,3 +132,8 @@ present behaviour or every one of those moves.
 **Still open, unchanged:** whether anything in the categorical data DERIVES a
 channel label to pass in. Without that, a channel argument is two free
 parameters wearing a signature, which `qou-h7mh` forbids.
+
+## Implementation & Witness Progress (PR #8264)
+- Branch: `qou-10v9-e58e-gcmn-vbyi-vtlj-xy5f` (`248efc097170676991e07dd557f09bee0827f2bc`), PR: `litlfred/qou#8264`
+- Lean 4 module: `folio/quantum-observable-universe/lean/QOU/Eightfold/BarParityIsospinSplitBppConfoundSingletTensorInvarianceDeltaFourValuesAndOrderingDofShift.lean` (0 sorry, 0 axioms, 0 vacuity findings)
+- Probe & witness: `computations/probes/bar_parity_isospin_split_bpp_confound_singlet_tensor_invariance_delta_four_values_and_ordering_dof_shift_probe.py` -> `computations/probes/bar-parity-isospin-split-bpp-confound-singlet-tensor-invariance-delta-four-values-and-ordering-dof-shift.witness.json` (`allPassed: true`, `scriptHash: e7d87b167c3f`, `scriptCommitSha: 7d111fc9111a5ac911879c633afd63652e0f6384`)

@@ -1,13 +1,13 @@
 ---
 # qou-e58e
 title: 'FIBRE-D: q-parameterise the atom word builder so tr_M(q0^-1) is computable -- unblocks every bar-parity claim'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-19T14:21:19Z
-updated_at: 2026-10-10T07:01:38Z
+updated_at: 2026-11-17T07:52:47Z
 parent: qou-10v9
 ---
 
@@ -57,3 +57,8 @@ Was in-progress with no bean update since 2026-08-19 and no main commit naming i
 ## 2026-10-10 — pointer
 
 Tracked under related carrier M11 (qou-wzgm) of epic `qou-d8c7` "Mass endomorphism" (issue litlfred/qou#7547). Parent and status unchanged; the epic body lists what is still open for this item and where it sits in the attack-vector catalogue.
+
+## Implementation & Witness Progress (PR #8264)
+- Branch: `qou-10v9-e58e-gcmn-vbyi-vtlj-xy5f` (`248efc097170676991e07dd557f09bee0827f2bc`), PR: `litlfred/qou#8264`
+- Lean 4 module: `folio/quantum-observable-universe/lean/QOU/Eightfold/BarParityIsospinSplitBppConfoundSingletTensorInvarianceDeltaFourValuesAndOrderingDofShift.lean` (0 sorry, 0 axioms, 0 vacuity findings)
+- Probe & witness: `computations/probes/bar_parity_isospin_split_bpp_confound_singlet_tensor_invariance_delta_four_values_and_ordering_dof_shift_probe.py` -> `computations/probes/bar-parity-isospin-split-bpp-confound-singlet-tensor-invariance-delta-four-values-and-ordering-dof-shift.witness.json` (`allPassed: true`, `scriptHash: e7d87b167c3f`, `scriptCommitSha: 7d111fc9111a5ac911879c633afd63652e0f6384`)

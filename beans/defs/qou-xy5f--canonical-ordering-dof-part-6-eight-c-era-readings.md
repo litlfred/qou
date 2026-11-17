@@ -1,13 +1,13 @@
 ---
 # qou-xy5f
 title: 'canonical-ordering-dof Part 6: eight C-era readings blocked on qou-eea0 pass 2'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-10T09:13:33Z
-updated_at: 2026-10-04T15:16:52Z
+updated_at: 2026-11-17T07:52:47Z
 parent: qou-10v9
 ---
 
@@ -42,3 +42,8 @@ this arc exists to unpick.
 **To close:** after pass 2 regenerates the H_3A / He-3 witnesses, retake the
 eight readings from them and replace the literals. The assertion should go
 green on its own; if it does not, the disagreement is real and is a finding.
+
+## Implementation & Witness Progress (PR #8264)
+- Branch: `qou-10v9-e58e-gcmn-vbyi-vtlj-xy5f` (`248efc097170676991e07dd557f09bee0827f2bc`), PR: `litlfred/qou#8264`
+- Lean 4 module: `folio/quantum-observable-universe/lean/QOU/Eightfold/BarParityIsospinSplitBppConfoundSingletTensorInvarianceDeltaFourValuesAndOrderingDofShift.lean` (0 sorry, 0 axioms, 0 vacuity findings)
+- Probe & witness: `computations/probes/bar_parity_isospin_split_bpp_confound_singlet_tensor_invariance_delta_four_values_and_ordering_dof_shift_probe.py` -> `computations/probes/bar-parity-isospin-split-bpp-confound-singlet-tensor-invariance-delta-four-values-and-ordering-dof-shift.witness.json` (`allPassed: true`, `scriptHash: e7d87b167c3f`, `scriptCommitSha: 7d111fc9111a5ac911879c633afd63652e0f6384`)
