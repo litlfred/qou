@@ -1,13 +1,13 @@
 ---
 # qou-dhsn
 title: The level-3 EM term already exists and is mirror-blind; crossing counts are affine so no Coulomb term can be built from them
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T12:35:18Z
-updated_at: 2026-10-04T15:24:57Z
+updated_at: 2026-11-17T07:28:00Z
 parent: qou-v2om
 ---
 
@@ -90,3 +90,6 @@ Nothing refuted; `qou-toul`'s correction stands and this builds on it. Nothing
 wired.
 
 Parents: qou-vudb, qou-toul, qou-1pig.
+
+## Round 62 Update (PR #8255)
+- Formalized in PR https://github.com/litlfred/qou/pull/8255 (head `b4ec4b15ca43f486c66d8f53b0eeb216293fc6aa`, Commit 1 `c715790dad2efe16f1713c8a17825e912524e641`, `scriptHash: e2eb499467fc`).

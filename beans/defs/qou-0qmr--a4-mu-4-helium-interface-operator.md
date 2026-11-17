@@ -1,13 +1,13 @@
 ---
 # qou-0qmr
 title: A=4 / mu_4 helium interface operator
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-07T00:53:31Z
-updated_at: 2026-10-04T15:16:12Z
+updated_at: 2026-11-17T07:28:00Z
 parent: qou-v2om
 ---
 
@@ -50,3 +50,6 @@ The μ₃ machinery landed 2026-08-07 (#4657, #4662) has not been applied at A=4
 
 Both are measurement/classification questions — cheap, non-vacuous, and they do NOT
 touch the walled magnitude. That is the honest next step here, if this bean is worked.
+
+## Round 62 Update (PR #8255)
+- Formalized in PR https://github.com/litlfred/qou/pull/8255 (head `b4ec4b15ca43f486c66d8f53b0eeb216293fc6aa`, Commit 1 `c715790dad2efe16f1713c8a17825e912524e641`, `scriptHash: e2eb499467fc`).

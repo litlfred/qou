@@ -1,13 +1,13 @@
 ---
 # qou-9nq9
 title: 'GAP: A=4 (4He) Delta_lambda magnitude OPEN — s5-so3 geometric W_lambda brackets but does not close'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-01T23:11:09Z
-updated_at: 2026-10-04T15:19:40Z
+updated_at: 2026-11-17T07:28:00Z
 parent: qou-v2om
 ---
 
@@ -48,3 +48,6 @@ Both are 0-fit endpoints on opposite sides; the derivation that pins the physica
 - probe computations/deltalambda/s5so3_geometric_wlambda_a4_helium_probe.py
 - lean QOU/MassTheory/GeometricWLambdaA4Helium.lean (sorry-free, lean-direct exit 0)
 - option-e.md ledger row 2026-08-01
+
+## Round 62 Update (PR #8255)
+- Formalized in PR https://github.com/litlfred/qou/pull/8255 (head `b4ec4b15ca43f486c66d8f53b0eeb216293fc6aa`, Commit 1 `c715790dad2efe16f1713c8a17825e912524e641`, `scriptHash: e2eb499467fc`).
