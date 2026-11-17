@@ -1,7 +1,7 @@
 ---
 # qou-qint
 title: Reconcile the 8 q-integer definitions — `qInt` names two conventions
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -375,3 +375,7 @@ Same axis: `qInt` naming two q-integer conventions. Not the Markov parameter.
 Keep open, re-home.
 
 Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.
+
+## Progress Update (Round 92 — lane-cf11)
+- Formalized in `folio/quantum-observable-universe/lean/QOU/QBeta/NucleonOrderingAndBringAdjointTorsionBrick.lean` with 80-dps probe `computations/probes/nucleon_ordering_and_bring_adjoint_torsion_brick_probe.py` and witness `computations/probes/nucleon-ordering-and-bring-adjoint-torsion-brick.witness.json`.
+- PR: https://github.com/litlfred/qou/pull/8348 (`feat/qou-b9cj-q6h7-qd27-qint-r91v-tvok`, HEAD `e0985c4fc3ff765e1935e3343005512aaca69b2b`).

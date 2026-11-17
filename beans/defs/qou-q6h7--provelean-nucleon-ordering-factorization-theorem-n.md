@@ -1,7 +1,7 @@
 ---
 # qou-q6h7
 title: 'PROVE(lean): nucleon_ordering_factorization — theorem nucleon_ordering_factorization [ctx : NucleonOrderingFactorizationContext] : ctx.t [cited jones1987,manuscript]'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -26,3 +26,7 @@ parent: qou-l2vh
   - [jones1987] Jones (1987), *Hecke algebra representations of braid groups and link polynomials* — https://doi.org/10.2307/1971403
 - **Tractability:** trM_N = W_sym·S_π + W_std·(…) + W_alt·A_π factorization; repo Hecke/Markov compute identity.
 - **Next step:** Blocked on in-repo scaffolding (not Mathlib). Complete/route the named repo infra, then discharge; do NOT weaken the statement.
+
+## Progress Update (Round 92 — lane-cf11)
+- Formalized in `folio/quantum-observable-universe/lean/QOU/QBeta/NucleonOrderingAndBringAdjointTorsionBrick.lean` with 80-dps probe `computations/probes/nucleon_ordering_and_bring_adjoint_torsion_brick_probe.py` and witness `computations/probes/nucleon-ordering-and-bring-adjoint-torsion-brick.witness.json`.
+- PR: https://github.com/litlfred/qou/pull/8348 (`feat/qou-b9cj-q6h7-qd27-qint-r91v-tvok`, HEAD `e0985c4fc3ff765e1935e3343005512aaca69b2b`).

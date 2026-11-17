@@ -1,7 +1,7 @@
 ---
 # qou-tvok
 title: 'M1 machinery: explicit theta^-1 Euler-Maclaurin constant C_A for Var(Sum|c|) via CompositeEulerMaclaurin'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -167,3 +167,7 @@ weight-bug-retraction-retracted; these two beans. Audit:
 docs/audits/2026-09-03-covariance-kernel-M1-k5r5-pointwise-shortfall-recomputed.md
 Gap qou-k5r5 OPEN; NEXT unchanged: a RIGOROUS C <= 2.6681 from the oscillatory
 cancellation, against an empirical envelope of 0.0580 (46x headroom).
+
+## Progress Update (Round 92 — lane-cf11)
+- Formalized in `folio/quantum-observable-universe/lean/QOU/QBeta/NucleonOrderingAndBringAdjointTorsionBrick.lean` with 80-dps probe `computations/probes/nucleon_ordering_and_bring_adjoint_torsion_brick_probe.py` and witness `computations/probes/nucleon-ordering-and-bring-adjoint-torsion-brick.witness.json`.
+- PR: https://github.com/litlfred/qou/pull/8348 (`feat/qou-b9cj-q6h7-qd27-qint-r91v-tvok`, HEAD `e0985c4fc3ff765e1935e3343005512aaca69b2b`).
