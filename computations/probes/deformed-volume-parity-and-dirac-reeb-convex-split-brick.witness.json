@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "1.0",
+  "probe": "deformed_volume_parity_and_dirac_reeb_convex_split_brick_probe",
+  "beans": [
+    "qou-5uj7",
+    "qou-6s8k",
+    "qou-7fyw",
+    "qou-9s8k",
+    "qou-cyon"
+  ],
+  "precisionDps": 80,
+  "qCanonical": "1.0670442670094260999209120230611007313991569425981",
+  "commitSha": "9d5b1ea5cef1335474ac59e8528d4646769eddc6",
+  "scriptCommitSha": "9d5b1ea5cef1335474ac59e8528d4646769eddc6",
+  "scriptSha256": "34301e8849edbc0f712349fe34fd8858eca6e13310391a0a4a240f63f9e7395b",
+  "generatedAt": "2026-11-17T08:04:55.585554+00:00",
+  "allPassed": true,
+  "assertions": [
+    {
+      "id": "qou-5uj7-dirac-reeb-convex-split",
+      "bean": "qou-5uj7",
+      "passed": true,
+      "maxAbsError": "1.317774742903815403e-82",
+      "wGrad": "0.93716824214113523605752354927719699",
+      "hbarQ": "0.062831757858864763942476450722803006"
+    },
+    {
+      "id": "qou-6s8k-deformed-complex-volume-parity",
+      "bean": "qou-6s8k",
+      "passed": true,
+      "maxAbsError": "0.0",
+      "volAtZero": "2.0298832128193072500424051085490406"
+    },
+    {
+      "id": "qou-7fyw-delta-max-two-sided-slack",
+      "bean": "qou-7fyw",
+      "passed": true,
+      "maxAbsError": "0.0",
+      "quadraticSlackMargin": "0.18202026504467511632071415810017517"
+    },
+    {
+      "id": "qou-9s8k-gk-bilinear-odd-even-channel",
+      "bean": "qou-9s8k",
+      "passed": true,
+      "maxAbsError": "2.1084395886461046449e-81"
+    },
+    {
+      "id": "qou-cyon-harmonic-im-form-diagonal-swap",
+      "bean": "qou-cyon",
+      "passed": true,
+      "maxAbsError": "1.0542197943230523224e-81",
+      "harmonicValue": "0.52363865019289129615120218183596442"
+    }
+  ]
+}
