@@ -1724,6 +1724,9 @@ import QOU.MassTheory.ConvolutionFlowParity
 import QOU.MassTheory.ConvolutionFlowFibre
 import QOU.MassTheory.BringResidueEnergy
 import QOU.MassTheory.DeuteronKappaThreeSixteenthsReconciliation
+import QOU.MassTheory.FourBodyCumulantAndCoordinationA2Ceiling
+import QOU.MassTheory.FullTowerSurfaceSplitAndPairingTwoBitParity
+import QOU.MassTheory.FullTowerEnergyScaleDenominatorIdentity
 import QOU.Brings.BringConjugationChirality
 import QOU.Brings.BringCoverTower
 import QOU.Brings.BringDescendingTower
