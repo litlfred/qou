@@ -1,7 +1,8 @@
 ---
 # qou-vd7j
 title: 'GAP(knot-solver): canonical knot-assignment SDP admits 0/3558 at Frobenius level — open R5 gap (finitude/search-bounds/K(H) structural id)'
-status: todo
+status: in-progress
+pr: 8344
 type: task
 priority: normal
 tags:
@@ -85,3 +86,8 @@ the open R5 work at the net normalization + the mpfr overflow for heavy A.
 
 ## 2026-09-08 (qou-ales step 2) — the cheap fix was run, and D changed the diagnosis
 computations/probes/frobenius_admissibility_net_row_probe.py (proton pin, 60 dps, no AME): under convention D the H3 Gram is rank 5 (radical = q-antisymmetriser v) and 1'v = 0.0902 != 0, so the net row 1'x=A is ALWAYS satisfiable along the kernel whenever Gx=nf is — the over-determination above (a rank-6, convention-C diagnosis) is gone. The obstruction is now <v, nf(W)> = eps(W), the alternating character of the word, a product of nonzero factors for every crossing type (S: -1/q, I: -q, C: -1/q+D_PN, gamma-gamma vertex: 1 exactly, Lean altChar_eq_one). Result: 0/4238 candidate words survive for p,n,2H,pp,nn,3H,3He,4He. Scope-(a): about the Gx=nf demand formulation, NOT the PSD confinement SDP. Audit: docs/audits/2026-09-08-gamma-gamma-word-selection-step1.md.
+
+
+## Progress Update (PR #8344)
+- Formalized in Lean 4.24.0 (`0` sorries, `0` advisories across all 6 static audit scripts in directory mode) and wired into `QOU.lean`.
+- Verified at `mp.dps = 50` with 2-commit witness stamp (`291dd36ab34a42866efb444b586e05f0b621971e` -> `38f4a86a95df28f43dea57e331b0e3b812f7f526`) in PR #8344.

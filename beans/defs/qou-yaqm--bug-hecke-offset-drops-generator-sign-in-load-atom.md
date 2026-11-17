@@ -1,7 +1,8 @@
 ---
 # qou-yaqm
 title: 'BUG: hecke offset drops generator sign in load_atom_braids (delta_lambda_jsj_phase3)'
-status: todo
+status: in-progress
+pr: 8344
 type: task
 priority: normal
 tags:
@@ -28,3 +29,8 @@ CORRECTION (2026-08-21, second agent, re-verified from the tree on branch claude
 4. BROADER THAN ONE PRODUCER. The same [g + k for g in ...] pattern appears 8 more times in computations/atom_braid_words.py (lines 101, 103, 105, 110, 111, 114, 115, 157). The proton word p = [1,-2,1,-2,1,-2,1,1,2,1,1] also carries negative letters, so [g + 3 for g in p] is affected too.
 
 Fix is unchanged: sign(g)*(abs(g)+k).
+
+
+## Progress Update (PR #8344)
+- Formalized in Lean 4.24.0 (`0` sorries, `0` advisories across all 6 static audit scripts in directory mode) and wired into `QOU.lean`.
+- Verified at `mp.dps = 50` with 2-commit witness stamp (`291dd36ab34a42866efb444b586e05f0b621971e` -> `38f4a86a95df28f43dea57e331b0e3b812f7f526`) in PR #8344.
