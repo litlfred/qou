@@ -5,7 +5,7 @@ status: in-progress
 type: epic
 priority: normal
 created_at: 2026-08-02T19:32:20Z
-updated_at: 2026-11-17T12:41:36Z
+updated_at: 2026-11-17T13:00:03Z
 parent: qou-rtxm
 ---
 
@@ -98,3 +98,8 @@ Was in-progress with no bean update since October 2026. Reset to todo by the own
 - **PR:** https://github.com/litlfred/qou/pull/8346 (`2c3a7bfb0c79ccd01acb2c398dcf5d428cbb2d13`)
 - **Lean 4 Module:** `QOU.Foundations.ProjectorBranchingThreeRowCornerDeletionGenerictyEquivalenceQuotientPairingDiagonalTrace` (`LEAN_EXIT=0`, `0` warnings, `0` `sorry`, `0` `axiom`, `0 CRITICAL, 0 major, 0 advisory` across all 6 directory-mode static vacuity & borrowed-name audits)
 - **Numerical Probe & Witness:** `computations/probes/projector_branching_three_row_corner_deletion_genericity_equivalence_quotient_pairing_diagonal_trace_probe.py` & `computations/probes/projector-branching-three-row-corner-deletion-genericity-equivalence-quotient-pairing-diagonal-trace.witness.json` (`COMMIT1 = cb6750d2375a33fa0ecc4e3b1af425657b51686d`, `scriptHash = fc06654c2e67`, `allPassed = True`, `dps = 80`)
+
+### Progress Update (Round 68 — PR litlfred/qou#8356)
+- **PR:** https://github.com/litlfred/qou/pull/8356 (`2c058b5e380e076d0aec9233aad57fa6af43d018`)
+- **Lean 4 Module:** `QOU.Foundations.BringCurveHochschildStaleWeightCyclicityThreeCellComparabilityQuadraticRescaling` (`LEAN_EXIT=0`, `0` warnings, `0` `sorry`, `0` `axiom`, `0 CRITICAL, 0 major, 0 advisory` across all directory-mode static vacuity & borrowed-name audits)
+- **Numerical Probe & Witness:** `computations/probes/bring_curve_hochschild_stale_weight_cyclicity_three_cell_comparability_quadratic_rescaling_probe.py` & `computations/probes/bring-curve-hochschild-stale-weight-cyclicity-three-cell-comparability-quadratic-rescaling.witness.json` (`COMMIT1 = 8ee314938e6a9bac9ee46faedf9aebdee8b895fb`, `scriptHash = 326bd13833f0`, `allPassed = True`, `dps = 80`)

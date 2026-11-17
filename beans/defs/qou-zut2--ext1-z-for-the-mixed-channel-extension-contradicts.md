@@ -1,13 +1,13 @@
 ---
 # qou-zut2
 title: Ext^1 = Z for the mixed-channel extension contradicts H_n(q0) semisimplicity
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T20:05:49Z
-updated_at: 2026-10-04T15:12:31Z
+updated_at: 2026-11-17T13:00:03Z
 parent: qou-59vq
 ---
 
@@ -257,3 +257,8 @@ that Ext^1 supplies no obstruction. Four content files in total:
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-24 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+### Progress Update (Round 68 — PR litlfred/qou#8356)
+- **PR:** https://github.com/litlfred/qou/pull/8356 (`2c058b5e380e076d0aec9233aad57fa6af43d018`)
+- **Lean 4 Module:** `QOU.Foundations.BringCurveHochschildStaleWeightCyclicityThreeCellComparabilityQuadraticRescaling` (`LEAN_EXIT=0`, `0` warnings, `0` `sorry`, `0` `axiom`, `0 CRITICAL, 0 major, 0 advisory` across all directory-mode static vacuity & borrowed-name audits)
+- **Numerical Probe & Witness:** `computations/probes/bring_curve_hochschild_stale_weight_cyclicity_three_cell_comparability_quadratic_rescaling_probe.py` & `computations/probes/bring-curve-hochschild-stale-weight-cyclicity-three-cell-comparability-quadratic-rescaling.witness.json` (`COMMIT1 = 8ee314938e6a9bac9ee46faedf9aebdee8b895fb`, `scriptHash = 326bd13833f0`, `allPassed = True`, `dps = 80`)

@@ -5,7 +5,7 @@ status: in-progress
 type: epic
 priority: normal
 created_at: 2026-09-05T07:53:31Z
-updated_at: 2026-11-17T08:12:13Z
+updated_at: 2026-11-17T13:00:03Z
 parent: qou-rtxm
 ---
 
@@ -291,3 +291,8 @@ Was in-progress with no bean update since October 2026. Reset to todo by the own
 - **Module:** `QOU.Foundations.OcneanuTowerConventionDRibbonClebschGordan` (`folio/quantum-observable-universe/lean/QOU/Foundations/OcneanuTowerConventionDRibbonClebschGordan.lean`), wired into `QOU.lean`.
 - **Theorem:** `partial_trace_peel_forces_weight_and_convention_d` — proves that `2 × 2` R-matrix partial-trace diagonal balance `w0 · q + w1 · (q - q⁻¹) = w1 · q` forces `w0 · q = w1 · q⁻¹` and `w1 = q² · w0`, pinning `w = (1, q²)`, `z = q³`, and the cleared Convention D normalization identity `zNorm · (1 + q²) = q³`, verified in `ocneanu-tower-convention-d-ribbon-clebsch-gordan.witness.json`.
 - **Status:** Kept at `in-progress` pending Merge Manager merge and full dependency verification.
+
+### Progress Update (Round 68 — PR litlfred/qou#8356)
+- **PR:** https://github.com/litlfred/qou/pull/8356 (`2c058b5e380e076d0aec9233aad57fa6af43d018`)
+- **Lean 4 Module:** `QOU.Foundations.BringCurveHochschildStaleWeightCyclicityThreeCellComparabilityQuadraticRescaling` (`LEAN_EXIT=0`, `0` warnings, `0` `sorry`, `0` `axiom`, `0 CRITICAL, 0 major, 0 advisory` across all directory-mode static vacuity & borrowed-name audits)
+- **Numerical Probe & Witness:** `computations/probes/bring_curve_hochschild_stale_weight_cyclicity_three_cell_comparability_quadratic_rescaling_probe.py` & `computations/probes/bring-curve-hochschild-stale-weight-cyclicity-three-cell-comparability-quadratic-rescaling.witness.json` (`COMMIT1 = 8ee314938e6a9bac9ee46faedf9aebdee8b895fb`, `scriptHash = 326bd13833f0`, `allPassed = True`, `dps = 80`)
