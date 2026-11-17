@@ -1,0 +1,65 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-17T10:21:38.173437+00:00",
+  "commitSha": "a21b136d3f122bac6df50bab417b7232ca55064f",
+  "assertions": [
+    {
+      "name": "qou_argp_annulus_qtheta_functional_equation_and_simple_zero",
+      "computed": "1.48699047202989665746036350744628937874117329421474037758978e-71",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "unit": "absolute",
+      "source": "|theta_p(w/p) - (w/p)*theta_p(w)| + |theta_p(-p)| = 1.486990472029896657460364e-71 across fundamental annulus"
+    },
+    {
+      "name": "qou_bp5n_jensen_nevanlinna_log_counting_decomposition_and_increment",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "unit": "absolute",
+      "source": "N(R) slope-intercept residual + annular increment residual = 0.0"
+    },
+    {
+      "name": "qou_ghc6_lie_one_form_bracket_wedge_and_flat_curvature",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "unit": "absolute",
+      "source": "tr([A1,A2]) = 0.0, ||d alpha + [A1,A2]||_1 = 0.0, ||[A1,A2]||_1 = 52.0 > 0"
+    },
+    {
+      "name": "qou_h2mb_hemisphere_inversion_reflection_and_hypvolume_density_invariance",
+      "computed": "1.31777474290381540304357175640875237596374517279606344375972e-82",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "unit": "absolute",
+      "source": "Hemisphere inversion radial reversal + tangential fix + |det D sigma|/sigma_z^3 - 1/z^3 residual = 1.317774742903815403043572e-82"
+    },
+    {
+      "name": "qou_i0sr_z_axis_geodesic_telescoping_lower_bound",
+      "computed": "2.10843958864610464486971481025400380154199227647370151001555e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "unit": "absolute",
+      "source": "Telescoping vertical log-height integral sum(log z_{k+1} - log z_k) - log(b/a) = 2.108439588646104644869715e-81"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "annulus-winding-log-counting-lie-curvature-hemisphere-inversion-z-axis-bound",
+  "scriptFile": "annulus_winding_log_counting_lie_curvature_hemisphere_inversion_z_axis_bound_probe.py",
+  "scriptHash": "001b12183bba",
+  "scriptCommitSha": "a21b136d3f122bac6df50bab417b7232ca55064f",
+  "precisionMetadata": {
+    "compute_dps": 80,
+    "output_dps": 60,
+    "guard_digits": 20,
+    "truncation_bound": "1e-70"
+  }
+}
