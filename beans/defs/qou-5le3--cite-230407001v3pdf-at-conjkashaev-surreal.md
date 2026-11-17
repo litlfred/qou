@@ -1,13 +1,14 @@
 ---
 # qou-5le3
 title: Cite 2304.07001v3.pdf at conj:kashaev-surreal
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T16:13:24Z
-updated_at: 2026-10-04T15:17:17Z
+updated_at: 2026-11-17T10:54:12Z
+pr: 8315
 parent: qou-ysb7
 ---
 
@@ -28,3 +29,6 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   RESURGENCE, HABIRO ELEMENTS AND STRANGE IDENTITIES
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [crew2023] as the citation key when you do it.
+
+### Progress (Round 60)
+- Formalized Lean 4 theorems, 80-dps mpmath probe, and 2-commit witness chain in PR #8315 (`bfd875bed8570b98aa208b007cb51288416e1d03`). Status kept `in-progress` pending PR merge.

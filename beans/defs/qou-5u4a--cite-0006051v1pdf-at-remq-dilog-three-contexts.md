@@ -1,13 +1,14 @@
 ---
 # qou-5u4a
 title: Cite 0006051v1.pdf at rem:q-dilog-three-contexts
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T16:12:30Z
-updated_at: 2026-10-04T15:16:58Z
+updated_at: 2026-11-17T10:54:12Z
+pr: 8315
 parent: qou-ysb7
 ---
 
@@ -30,3 +31,6 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   Finite and p-adic polylogarithms
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [besser2000] as the citation key when you do it.
+
+### Progress (Round 60)
+- Formalized Lean 4 theorems, 80-dps mpmath probe, and 2-commit witness chain in PR #8315 (`bfd875bed8570b98aa208b007cb51288416e1d03`). Status kept `in-progress` pending PR merge.
