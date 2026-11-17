@@ -1,0 +1,47 @@
+{
+  "probe": "uicgate_deuteron1st_ecatrad_polydom_magnusbound_probe",
+  "scriptPath": "computations/probes/uicgate_deuteron1st_ecatrad_polydom_magnusbound_probe.py",
+  "scriptHash": "114208bf918e",
+  "scriptCommitSha": "ee4114ef7bce7b8878e53d9058271542d06bcf7a",
+  "executedAt": "2026-11-17T12:33:57Z",
+  "dps": "80",
+  "allPassed": true,
+  "checks": [
+    {
+      "bean": "qou-px38",
+      "theorem": "QOU.MassTheory.UICGateLP.complementarySlackness_diagonal_active_forces_zero",
+      "max_cs_residual": "0.0",
+      "active_primal_coord": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-i4pz",
+      "theorem": "QOU.MassTheory.DeuteronFirstOrderCluster.secondDiff_and_cluster3_zero_of_additive",
+      "second_diff": "0.0",
+      "cluster3": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-v7qj",
+      "theorem": "QOU.QBeta.ECatLPDualRadical.dual_price_zero_of_diagonal_gram_cost",
+      "tv_inner": "0.0",
+      "y0_shadow_price": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-rpj5",
+      "theorem": "QOU.AlgebraicSubstrate.squeeze_sub_of_face_separation",
+      "phi_cost": "13.0",
+      "phi_budget": "27.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-yez0",
+      "theorem": "QOU.MassTheory.sum_const_eq_sqrt_card_mul_sum_sq",
+      "lhs": "4.9565217391304347826086956521739130434782608695652173913043478260869565217391304",
+      "rhs": "4.9565217391304347826086956521739130434782608695652173913043478260869565217391304",
+      "residual": "0.0",
+      "passed": true
+    }
+  ]
+}
