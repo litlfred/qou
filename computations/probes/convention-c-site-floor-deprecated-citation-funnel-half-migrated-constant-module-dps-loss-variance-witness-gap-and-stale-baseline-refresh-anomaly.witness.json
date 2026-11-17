@@ -1,0 +1,83 @@
+{
+  "allPassed": true,
+  "beans": [
+    "qou-ju05",
+    "qou-jyqd",
+    "qou-ke35",
+    "qou-kfeg",
+    "qou-kn46"
+  ],
+  "checks": [
+    {
+      "actionableSiteFloor": 11,
+      "activeConventionCSites": 14,
+      "beanId": "qou-ju05",
+      "cleanlyMigratedSites": 3,
+      "epsProbe": "1.0e-20",
+      "passed": true,
+      "qbetaDecayCoupledSites": 9,
+      "totalRetiredBraidRegistryRecords": 269,
+      "zCMinusHalfAtOnePlusEps": "-2.4999999999999999999750000000000000000000295727390648380802998399237380470920234e-41",
+      "zCOrderTwoIdentityResidual": "9.5427260935161919700160076261952907976632516389733862417883273611817892333822197e-82",
+      "zCQuadraticCoefficientAtOne": "2.4999999999999999999750000000000000000000295727390648380802998399237380470920234e-1",
+      "zDLinearCoefficientAtOne": "7.4999999999999999999624999999999999999996875000000000000000072947421004958527169e-1",
+      "zDMinusHalfAtOnePlusEps": "7.4999999999999999999624999999999999999996875000000000000000072947421004958527169e-21",
+      "zDOrderOneIdentityResidual": "7.3224210049585271689875970382647572238498326813403779637342684916456385728687582e-82"
+    },
+    {
+      "beanId": "qou-jyqd",
+      "citationFunnelFraction": "1.4388489208633093525179856115107913669064748201438848920863309352517985611510791e-2",
+      "deprecatedConventionCScripts": 139,
+      "deprecatedNonConventionCScripts": 428,
+      "passed": true,
+      "proseReferencedScripts": 2,
+      "totalDeprecatedPyScripts": 567,
+      "totalProseReferencingFiles": 4,
+      "unreferencedConventionCFraction": "9.8561151079136690647482014388489208633093525179856115107913669064748201438848921e-1",
+      "unreferencedConventionCScripts": 137
+    },
+    {
+      "ambientImportMpfDps": 15,
+      "beanId": "qou-ke35",
+      "binary64RoundTripDecimalDigits": 17,
+      "canonicalTargetMpfDps": 80,
+      "maskedLowPrecisionMpfFields": 97,
+      "passed": true,
+      "sampleImportTruncationGap": "6.3282723741951330099254846572875976562499999999999999999999999999622661085912124e-18",
+      "totalSharedModuleConstants": 214,
+      "totalSharedModuleFloatConstants": 135,
+      "totalSharedModuleMpfConstants": 79
+    },
+    {
+      "arityExcess": 1,
+      "beanId": "qou-kfeg",
+      "brokenCallerArgCount": 2,
+      "formalParameterCount": 1,
+      "maxObservedBDimGap": "2.68e-8",
+      "maxPureAnchorMigrationShift": "2.1e-16",
+      "minObservedBDimGap": "3.559e-9",
+      "minPureAnchorMigrationShift": "3.8e-17",
+      "minToMaxSeparationRatio": "1.6947619047619047619047619047619047619047619047619047619047619047619047619047619e+7",
+      "passed": true
+    },
+    {
+      "baselineDirtyWitnessCount": 69,
+      "beanId": "qou-kn46",
+      "distinctExactIntegerMagnitudeSum": 5743,
+      "exactIntegerFloatFieldCount": 63,
+      "nonRegressedBaselineWitnessCount": 64,
+      "passed": true,
+      "staleBaselineRegressedWitnessCount": 5,
+      "staleRegressedWitnessFraction": "7.2463768115942028985507246376811594202898550724637681159420289855072463768115942e-2",
+      "totalStaleWitnessLiveDirtyFields": 37
+    }
+  ],
+  "generatedAt": "2026-11-17T13:02:41.885760+00:00",
+  "leanModule": "QOU.Eightfold.ConventionCSiteFloorDeprecatedCitationFunnelHalfMigratedConstantModuleDpsLossVarianceWitnessGapAndStaleBaselineRefreshAnomaly",
+  "probeName": "convention_c_site_floor_deprecated_citation_funnel_half_migrated_constant_module_dps_loss_variance_witness_gap_and_stale_baseline_refresh_anomaly_probe",
+  "scriptCommitSha": "1f277778ada2c5a2e3d46455b358c9c6ced944fb",
+  "scriptHash": "e200ffb7f1cb",
+  "scriptPath": "computations/probes/convention_c_site_floor_deprecated_citation_funnel_half_migrated_constant_module_dps_loss_variance_witness_gap_and_stale_baseline_refresh_anomaly_probe.py",
+  "scriptSha256": "e200ffb7f1cbce50ad840aa85cac2d85e775e0584ff23cd0949f70f8ac03cdad",
+  "workingDps": 80
+}
