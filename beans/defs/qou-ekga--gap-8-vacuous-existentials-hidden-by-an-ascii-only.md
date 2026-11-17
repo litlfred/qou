@@ -1,13 +1,14 @@
 ---
 # qou-ekga
 title: 'GAP: 8 vacuous existentials, hidden by an ASCII-only detector — one claims to discharge an axiomatic class'
-status: todo
+status: in-progress
+pr: 8307
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T08:33:27Z
-updated_at: 2026-10-04T15:19:38Z
+updated_at: 2026-11-17T10:37:00Z
 parent: qou-5vkl
 ---
 
@@ -274,3 +275,8 @@ Practical consequence for anyone extending this: **run the elaborating oracle
 before widening regexes.** The regex route has now been widened twice (ASCII→
 Unicode, then `∀`-prefix) for a combined 9 findings, of which the oracle had
 already listed several a year earlier.
+
+
+## Round 55 Update (2026-11-17, PR #8307)
+
+Defined recursive `k`-fold stabilisation `iteratedStab` in `folio/quantum-observable-universe/lean/QOU/BraidKnot/MarkovAxiomsPrimitive.lean` and replaced the 7 vacuous existential declarations with genuine equality proofs (PR #8307, commit `cf8ca11962518083f27bc0a2ce60447359b28381`).

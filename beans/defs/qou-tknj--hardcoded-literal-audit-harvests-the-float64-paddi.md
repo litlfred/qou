@@ -1,13 +1,14 @@
 ---
 # qou-tknj
 title: hardcoded_literal_audit harvests the float64-padding audit's own fixture, turning a blocking gate red
-status: todo
+status: in-progress
+pr: 8307
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T10:09:44Z
-updated_at: 2026-10-04T15:20:43Z
+updated_at: 2026-11-17T10:37:00Z
 parent: qou-9nnz
 ---
 
@@ -61,3 +62,8 @@ so in their own output, and the finding would then be hidden rather than fixed.
 `computations/audits/hardcoded-literal-audit.witness.json` was reverted to HEAD so
 the blocking gate stays green. That witness is therefore knowingly stale against
 its producer until this is fixed.
+
+
+## Round 55 Update (2026-11-17, PR #8307)
+
+Excluded `witness_float64_padding_audit.py` and `strip_float64_padding.py` in `computations/audits/hardcoded_literal_audit.py` so the audit does not harvest the float64-padding audit's own documentation/test fixture strings (PR #8307, commit `cf8ca11962518083f27bc0a2ce60447359b28381`).

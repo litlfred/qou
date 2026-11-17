@@ -1,13 +1,14 @@
 ---
 # qou-i2q5
 title: 13 references to computations/_deprecated/hecke_core_legacy.py — a path that never existed, from a split blocked on owner OK since 2026-05-24
-status: todo
+status: in-progress
+pr: 8307
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T14:51:30Z
-updated_at: 2026-10-04T15:15:58Z
+updated_at: 2026-11-17T10:37:00Z
 parent: qou-5vkl
 ---
 
@@ -67,3 +68,8 @@ the time. The tractable, unblocked piece is the 8 code-side references: correct
 them to `computations/hecke_core_legacy.py` so the shipped package stops
 pointing at a file that does not exist. That is a documentation fix and does not
 touch the classification question.
+
+
+## Round 55 Update (2026-11-17, PR #8307)
+
+Updated the module docstrings and comments in `tools/pyhecke/python/pyhecke/{partition,tower,trace,wedderburn}.py` from the nonexistent `_deprecated/hecke_core_legacy.py` path to `computations/hecke_core_legacy.py` (PR #8307, commit `cf8ca11962518083f27bc0a2ce60447359b28381`).
