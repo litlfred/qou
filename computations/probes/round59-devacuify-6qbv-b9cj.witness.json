@@ -1,0 +1,53 @@
+{
+  "probe": "round59_devacuify_6qbv_b9cj_probe.py",
+  "scriptCommitSha": "86f19e55ded17f43eef72d6b7b610701e524bb08",
+  "scriptHash": "80c9bce8d43a",
+  "scriptSha256": "80c9bce8d43a7b74f42de4b1098cae0b4381ced3fe226e06afb20151e77e7573",
+  "precisionDps": "80",
+  "allPassed": true,
+  "checks": [
+    {
+      "bean": "qou-c64q",
+      "target": "QOU/QuantumObservableUniverse/FrobeniusBialgebraCollapse.lean",
+      "ab_11": "2.0",
+      "ba_11": "1.0",
+      "commutator_11_abs": "1.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-k4zx",
+      "target": "QOU/QuantumObservableUniverse/AntipodeIndependence.lean",
+      "idem_anti_mul_residual": "0.0",
+      "idem_unit_gap": "1.0",
+      "swap_sym_form_residual": "0.0",
+      "swap_asym_form_gap_at_10": "1.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-mfdq",
+      "target": "QOU/QBeta/QPochhammerPoles.lean",
+      "q": "1.11",
+      "max_pole_residual_n4": "0.0",
+      "nonpole_value_at_q_minus_4": "1.7125330089494427019595800828529738379829569443747989440564021285866808468588355e-3",
+      "passed": true
+    },
+    {
+      "bean": "qou-olxi",
+      "target": "QOU/MassTheory/BondFactorClassicalFloor.lean",
+      "eps": "1.1e-1",
+      "zD_at_1_plus_eps": "6.1271045204067918104027597329868733479682809909950271045204067918104027597329869e-1",
+      "exact_cubic_remainder": "-3.1454795932081895972402670131266520317190090049728954795932081895972402670131267e-4",
+      "max_kind_remainder_residual": "6.5013652354981205236094965950947431673523834110993286307364329593318292185033234e-82",
+      "passed": true
+    },
+    {
+      "bean": "qou-rutm",
+      "target": "QOU/QBeta/BarParityZeta4Swap.lean",
+      "cusp_barEven_real": "1.0",
+      "cusp_barOdd_sq_real": "-3.0",
+      "hyperbola_residual": "0.0",
+      "ggm_eq98_kernel_norm": "0.0",
+      "passed": true
+    }
+  ]
+}
