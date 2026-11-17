@@ -1,17 +1,17 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T13:49:28.292602+00:00",
-  "commitSha": "837b5acb3b07d6cda32c950271818b04c01571c2",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-17T06:32:16.281325+00:00",
+  "commitSha": "9ac2439af7418c4d31ccdae0ae4794724618a9e1",
   "assertions": [
     {
       "name": "gmor_lo_reproduces_squared_ratio_within_chpt_lo",
-      "computed": "0.118294613254495649",
+      "computed": "0.118294613254495627",
       "expected": "0",
       "passed": true,
       "tolerance": "0.15",
-      "unit": "relative gap, GMOR LO vs m_K²/m_π²",
-      "source": "Route A: (m_K/m_π)² from PDG-2024 charged meson masses. Route B: (m_u+m_s)/(m_u+m_d) from PDG MS-bar quark masses at 2 GeV — disjoint inputs. Bound 15% = the LO-χPT gap NLO closes; the same GMOR value misses the LINEAR ratio by 296%, which is the reframe this replaces a narration flag with."
+      "unit": "relative gap, GMOR LO vs m_K\u00b2/m_\u03c0\u00b2",
+      "source": "Route A: (m_K/m_\u03c0)\u00b2 from PDG-2024 charged meson masses. Route B: (m_u+m_s)/(m_u+m_d) from PDG MS-bar quark masses at 2 GeV \u2014 disjoint inputs. Bound 15% = the LO-\u03c7PT gap NLO closes; the same GMOR value misses the LINEAR ratio by 296%, which is the reframe this replaces a narration flag with."
     },
     {
       "name": "sweep_winner_is_the_spin1_spin3half_fusion_sum",
@@ -19,8 +19,8 @@
       "expected": "0",
       "passed": true,
       "tolerance": "1e-30",
-      "unit": "|best sweep candidate − ([2]_q+[4]_q+[6]_q)|",
-      "source": "Route A: the sweep winner, chosen by proximity to the measured m_K²/m_π². Route B: the fusion sum [2]_q+[4]_q+[6]_q. The winner this run is [4]_q·[3]_q."
+      "unit": "|best sweep candidate \u2212 ([2]_q+[4]_q+[6]_q)|",
+      "source": "Route A: the sweep winner, chosen by proximity to the measured m_K\u00b2/m_\u03c0\u00b2. Route B: the fusion sum [2]_q+[4]_q+[6]_q. The winner this run is [4]_q\u00b7[3]_q."
     },
     {
       "name": "fusion_identity_holds",
@@ -28,15 +28,15 @@
       "expected": 1,
       "passed": true,
       "tolerance": 0,
-      "source": "[3]_q·[4]_q = [2]_q+[4]_q+[6]_q q-Clebsch-Gordan"
+      "source": "[3]_q\u00b7[4]_q = [2]_q+[4]_q+[6]_q q-Clebsch-Gordan"
     }
   ],
   "allPassed": true,
   "durationMs": 6,
   "computation": "meson-gmor-derivation-probe",
   "scriptFile": "meson_gmor_derivation_probe.py",
-  "scriptHash": "53b7f41560d0",
-  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
+  "scriptHash": "bfa33a10244b",
+  "scriptCommitSha": "9ac2439af7418c4d31ccdae0ae4794724618a9e1",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,14 +44,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "9916510690677ea8"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
   },
   "invocation": {
     "argv": [
@@ -59,23 +59,23 @@
     ],
     "reproduce": "python3 -u computations/probes/meson_gmor_derivation_probe.py"
   },
-  "description": "Tests derived routes for m_K/m_π via GMOR (squared ratio) and pure q-integer forms. Best m_K²/m_π² candidate: [4]_q·[3]_q at 0.02% miss. GMOR reframes the target as the squared ratio (m_u+m_s)/(m_u+m_d), correcting the 71% linear-ratio artifact.",
+  "description": "Tests derived routes for m_K/m_\u03c0 via GMOR (squared ratio) and pure q-integer forms. Best m_K\u00b2/m_\u03c0\u00b2 candidate: [4]_q\u00b7[3]_q at 0.02% miss. GMOR reframes the target as the squared ratio (m_u+m_s)/(m_u+m_d), correcting the 71% linear-ratio artifact.",
   "auditOnly": "docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md",
   "data": {
-    "m_K_over_m_pi": 3.537118438946828,
-    "m_K2_over_m_pi2": 12.511206851137647,
-    "best_pure_q_candidate": "[4]_q·[3]_q",
-    "best_pure_q_value": 12.508665870090516,
-    "best_pure_q_miss_pct": 0.020309639808250447,
-    "gmor_lo_pdg": 13.991215226939971,
+    "m_K_over_m_pi": "3.53711843894682819185358728309063261913934610342494826340302",
+    "m_K2_over_m_pi2": "12.5112068511376467549435335758131380124312539808803247906682",
+    "best_pure_q_candidate": "[4]_q\u00b7[3]_q",
+    "best_pure_q_value": "12.5086658700905155463763159458381157798694720794789350483990",
+    "best_pure_q_miss_pct": "0.0203096398082504455515284577546344195357582334534370187016758",
+    "gmor_lo_pdg": "13.9912152269399707174231332357247437774524158125915080527086",
     "derived_candidate_found": true,
-    "fusion_identity": "[3]_q·[4]_q = [2]_q+[4]_q+[6]_q (spin-1⊗spin-3/2)",
-    "mK2_mpi2_eq_3q4q_miss_ppm": 203.13765460847037,
+    "fusion_identity": "[3]_q\u00b7[4]_q = [2]_q+[4]_q+[6]_q (spin-1\u2297spin-3/2)",
+    "mK2_mpi2_eq_3q4q_miss_ppm": "203.137654608470363708031552464600167426890048983089690325230",
     "gmor_lo_vs_squared_ratio_rel_gap": "0.118294613254",
     "gmor_lo_vs_linear_ratio_rel_gap": "2.95554049672"
   },
   "caveats": [
-    "The (a) candidate list declares 11 forms but only 10 distinct ones: '[5]_q²/[2]_q' and '[5]_q·[5]_q/[2]_q' are the same expression, so that value is scored twice. Recorded, not repaired — it does not change the winner ([4]_q·[3]_q) or any number here.",
+    "The (a) candidate list declares 11 forms but only 10 distinct ones: '[5]_q\u00b2/[2]_q' and '[5]_q\u00b7[5]_q/[2]_q' are the same expression, so that value is scored twice. Recorded, not repaired \u2014 it does not change the winner ([4]_q\u00b7[3]_q) or any number here.",
     "best_pure_q_miss_pct and mK2_mpi2_eq_3q4q_miss_ppm drift ~4.5e-5 relative between container images (python/numpy/scipy versions) with no source change. Environmental; the assertions above are stated against bounds far wider than that drift."
   ]
 }

@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-13T09:13:33.807674+00:00",
-  "commitSha": "dbe1ff52a11903d3ba9b992e537345577948563e",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-17T06:32:22.176605+00:00",
+  "commitSha": "9ac2439af7418c4d31ccdae0ae4794724618a9e1",
   "assertions": [
     {
       "name": "baseline_spread_reproduced",
@@ -18,16 +18,16 @@
       "computed": "9.98313406377588163300581142350409143413174214388840386969455e-51",
       "expected": "0",
       "passed": true,
-      "tolerance": "0.0005",
-      "source": "y-lambda witness × proved chi vs Lean BorromeanMarkovTrace"
+      "tolerance": "1e-40",
+      "source": "y-lambda witness \u00d7 proved chi vs Lean BorromeanMarkovTrace (exact agreement under Convention D; bean qou-gik1)"
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 4,
   "computation": "borromean-per-lambda-fr-probe",
   "scriptFile": "borromean_per_lambda_fr_probe.py",
-  "scriptHash": "67db148515ec",
-  "scriptCommitSha": "70ae502091a8812b80e72e2a7b49aac0fc2b4e7a",
+  "scriptHash": "b0add79751f9",
+  "scriptCommitSha": "9ac2439af7418c4d31ccdae0ae4794724618a9e1",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,14 +35,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
   },
   "invocation": {
     "argv": [
@@ -50,14 +50,14 @@
     ],
     "reproduce": "python3 -u computations/probes/borromean_per_lambda_fr_probe.py"
   },
-  "description": "H_3-level probe of the FR-restricted knot-ideal projector weight (K*=4_1, Fricke chi_{4_1}((2,1)) = 2-[3]_q) as the missing per-λ weight on the Borromean single binding pipeline, via the Wedderburn re-lift τ = Σ_λ y_λ χ^λ(β_Bor) and a candidate reweight of the (2,1) channel (56.1% of τ). 4 structural candidates × 2 placements tested against the U-shaped net/target residual (baseline spread 7.16x, convention D). No fitted parameters (Δ_λ gate honored). Audit-only.",
+  "description": "H_3-level probe of the FR-restricted knot-ideal projector weight (K*=4_1, Fricke chi_{4_1}((2,1)) = 2-[3]_q) as the missing per-\u03bb weight on the Borromean single binding pipeline, via the Wedderburn re-lift \u03c4 = \u03a3_\u03bb y_\u03bb \u03c7^\u03bb(\u03b2_Bor) and a candidate reweight of the (2,1) channel (56.1% of \u03c4). 4 structural candidates \u00d7 2 placements tested against the U-shaped net/target residual (baseline spread 7.16x, convention D). No fitted parameters (\u0394_\u03bb gate honored). Audit-only.",
   "parameters": {
     "tau_closed_form": "0.998562163836787265951213135146650202094025880059411134127535",
     "channel_fraction_21": "0.493868038658694878822238240951401409387786270582767261861744"
   },
   "data": {
     "wedderburn_lift_mismatch_rel": "9.98313406377588163300581142350409143413174214388840386969455e-51",
-    "wedderburn_lift_note": "y-lambda-at-q0 × proved chi closed forms reproduce the Lean closed-form tau EXACTLY: |lift - tau|/tau = 9.98e-51, i.e. zero at the working precision, and the two routes are independent (tau is the algebraic (4 + h^2 - 3h^4 - h^6)/(h^2 + 4); the lift is a sum over the y-lambda witness against the proved chi forms). This field read 'to 1.96e-4 relative only - convention gap flagged' until 2026-09-13; that gap is the convention-C one and convention D closed it. The committed witness has carried 9.983134063775882e-51 all along, so the note contradicted the number beside it. Same stale premise as probe_9b (bean qou-gik1), which is RED for it while this probe stayed green only because its tolerance is 47 orders too loose.",
+    "wedderburn_lift_note": "y-lambda-at-q0 \u00d7 proved chi closed forms reproduce the Lean closed-form tau EXACTLY: |lift - tau|/tau = 9.98e-51, i.e. zero at the working precision, and the two routes are independent (tau is the algebraic (4 + h^2 - 3h^4 - h^6)/(h^2 + 4); the lift is a sum over the y-lambda witness against the proved chi forms). This field read 'to 1.96e-4 relative only - convention gap flagged' until 2026-09-13; that gap is the convention-C one and convention D closed it. The committed witness has carried 9.983134063775882e-51 all along, so the note contradicted the number beside it. Same stale premise as probe_9b (bean qou-gik1), which is RED for it while this probe stayed green only because its tolerance is 47 orders too loose.",
     "results": {
       "baseline": {
         "rows": {
@@ -536,7 +536,7 @@
       "w_chi_raw::both": "FAIL (monotone rescale)",
       "w_chi_raw::atom_only": "FAIL (monotone rescale)"
     },
-    "overall": "SCOPE-LIMITED NEGATIVE — no H_3-per-nucleon proxy of the FR-projector weight (4 structural candidates × 2 placements) flattens the U-shaped residual. Constrains the per-NUCLEON scalar proxy only; the per-partition weight at H_{3A} (where the depth strata are non-trivial) remains the open test — this probe sharpens its spec, it does not exclude the FR-projector ingredient.",
+    "overall": "SCOPE-LIMITED NEGATIVE \u2014 no H_3-per-nucleon proxy of the FR-projector weight (4 structural candidates \u00d7 2 placements) flattens the U-shaped residual. Constrains the per-NUCLEON scalar proxy only; the per-partition weight at H_{3A} (where the depth strata are non-trivial) remains the open test \u2014 this probe sharpens its spec, it does not exclude the FR-projector ingredient.",
     "upstream_witness_hashes": [
       {
         "path": "y-lambda-at-q0.witness.json",
