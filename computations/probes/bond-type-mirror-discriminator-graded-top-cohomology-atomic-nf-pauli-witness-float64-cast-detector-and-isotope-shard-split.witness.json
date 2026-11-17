@@ -1,0 +1,61 @@
+{
+  "probe": "bond_type_mirror_discriminator_graded_top_cohomology_atomic_nf_pauli_witness_float64_cast_detector_and_isotope_shard_split_probe",
+  "round": "79",
+  "beans": [
+    "qou-7xa5",
+    "qou-7ygi",
+    "qou-83r4",
+    "qou-840k",
+    "qou-85o2"
+  ],
+  "leanModule": "QOU.Eightfold.BondTypeMirrorDiscriminatorGradedTopCohomologyAtomicNfPauliWitnessFloat64CastDetectorAndIsotopeShardSplit",
+  "scriptPath": "computations/probes/bond_type_mirror_discriminator_graded_top_cohomology_atomic_nf_pauli_witness_float64_cast_detector_and_isotope_shard_split_probe.py",
+  "scriptCommitSha": "b12a448b25f61df8de5a0cc36cf5a56e1e201d2e",
+  "scriptHash": "583dca135097",
+  "scriptSha256": "583dca135097f498ed6ded3713a5b9de16aa0af7c97605d9b46b88d9b75ccc7f",
+  "dps": "80",
+  "generatedAt": "2026-11-17T10:13:57Z",
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "qou-7xa5-bond-type-mirror-discriminator",
+      "bean": "qou-7xa5",
+      "description": "Bond-type mirror discriminator separates symmetric sigma bonds (parityDiff = 0, paritySum = 2*fwd) from antisymmetric pi bonds (parityDiff = fwd > 0)",
+      "sigmaParitySumSample": "4.8e+2",
+      "piParityDiffSample": "1.95e+2",
+      "passed": true
+    },
+    {
+      "id": "qou-7ygi-graded-top-cohomology",
+      "bean": "qou-7ygi",
+      "description": "Graded complex H^* (degrees 0,1,2) satisfies totalDim + eulerChar = 2*(h0 + h2), totalDim - eulerChar = 2*h1, and strict top-degree dominance",
+      "sampleEulerChar": "3.0",
+      "sampleTotalDim": "1.1e+1",
+      "passed": true
+    },
+    {
+      "id": "qou-83r4-atomic-nf-pauli-witness",
+      "bean": "qou-83r4",
+      "description": "Pauli-blocked s+p+d+f shell capacity sum equals 32*N_f with exact Pauli exclusion surplus over unfilled configurations",
+      "capacityNf1": "3.2e+1",
+      "capacityNf3": "9.6e+1",
+      "passed": true
+    },
+    {
+      "id": "qou-840k-float64-cast-detector",
+      "bean": "qou-840k",
+      "description": "Float64 cast detector flags 65 lost decimal digits relative to 80-dps and detects exact 10^-60 tail truncation under IEEE-754 binary64 cast",
+      "digitLossFrom80Dps": "6.5e+1",
+      "truncationResidual80Dps": "6.2230152778611417071440640537801242405902521687211671331011166147896988340353834e-61",
+      "passed": true
+    },
+    {
+      "id": "qou-85o2-isotope-shard-split",
+      "bean": "qou-85o2",
+      "description": "5-shard split-isotope allocator partitions 295 isotopes across 5x64=320 capacity with 25 slack and max-min load spread <= 2",
+      "totalIsotopes": "2.95e+2",
+      "totalSlack": "2.5e+1",
+      "passed": true
+    }
+  ]
+}
