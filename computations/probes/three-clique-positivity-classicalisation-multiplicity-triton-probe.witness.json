@@ -1,0 +1,132 @@
+{
+  "probe": "three_clique_positivity_classicalisation_multiplicity_triton_probe",
+  "beans": [
+    "qou-izah",
+    "qou-jc0e",
+    "qou-wpr6",
+    "qou-x5bv",
+    "qou-zbgu"
+  ],
+  "dps": "50",
+  "scriptCommitSha": "fe16ce6efd7a556df229fe9248a1b04218c021f8",
+  "scriptHash": "38a170424fc7",
+  "generatedAt": "2026-11-17T10:51:12.245363+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "qou_izah_three_clique_and_mubar_A_4",
+      "bean": "qou-izah",
+      "A": "4",
+      "completeThreeCliqueScaled6": "24.000000000000000000000000000000000000000000000000",
+      "linearBudgetScaled6": "12.000000000000000000000000000000000000000000000000",
+      "factoredExcessScaled6": "12.000000000000000000000000000000000000000000000000",
+      "muBarIrreducibleTriadCount": "4.0000000000000000000000000000000000000000000000000",
+      "passed": true
+    },
+    {
+      "id": "qou_izah_three_clique_and_mubar_A_5",
+      "bean": "qou-izah",
+      "A": "5",
+      "completeThreeCliqueScaled6": "60.000000000000000000000000000000000000000000000000",
+      "linearBudgetScaled6": "18.000000000000000000000000000000000000000000000000",
+      "factoredExcessScaled6": "42.000000000000000000000000000000000000000000000000",
+      "muBarIrreducibleTriadCount": "0.0",
+      "passed": true
+    },
+    {
+      "id": "qou_izah_three_clique_and_mubar_A_16",
+      "bean": "qou-izah",
+      "A": "16",
+      "completeThreeCliqueScaled6": "3360.0000000000000000000000000000000000000000000000",
+      "linearBudgetScaled6": "84.000000000000000000000000000000000000000000000000",
+      "factoredExcessScaled6": "3276.0000000000000000000000000000000000000000000000",
+      "muBarIrreducibleTriadCount": "0.0",
+      "passed": true
+    },
+    {
+      "id": "qou_izah_three_clique_and_mubar_A_56",
+      "bean": "qou-izah",
+      "A": "56",
+      "completeThreeCliqueScaled6": "166320.00000000000000000000000000000000000000000000",
+      "linearBudgetScaled6": "324.00000000000000000000000000000000000000000000000",
+      "factoredExcessScaled6": "165996.00000000000000000000000000000000000000000000",
+      "muBarIrreducibleTriadCount": "0.0",
+      "passed": true
+    },
+    {
+      "id": "qou_zbgu_triton_bound_state_pair_decomposition",
+      "bean": "qou-zbgu",
+      "bindingEnergyKeV": "8482.0000000000000000000000000000000000000000000000",
+      "protonPairScaled2": "0.0",
+      "neutronPairScaled2": "2.0000000000000000000000000000000000000000000000000",
+      "protonNeutronPairs": "2.0000000000000000000000000000000000000000000000000",
+      "totalPairsScaled2": "6.0000000000000000000000000000000000000000000000000",
+      "passed": true
+    },
+    {
+      "id": "qou_jc0e_analytic_positivity_non_discrimination_1",
+      "bean": "qou-jc0e",
+      "sector1SquaredSum": "1.0000000000000000000000000000000000000000000000000",
+      "sector2SquaredSum": "25.000000000000000000000000000000000000000000000000",
+      "signCapabilityDifference": "0.0",
+      "passed": true
+    },
+    {
+      "id": "qou_jc0e_analytic_positivity_non_discrimination_2",
+      "bean": "qou-jc0e",
+      "sector1SquaredSum": "29.000000000000000000000000000000000000000000000000",
+      "sector2SquaredSum": "50.000000000000000000000000000000000000000000000000",
+      "signCapabilityDifference": "0.0",
+      "passed": true
+    },
+    {
+      "id": "qou_x5bv_li6_multiplicity_blowup_627_to_100",
+      "bean": "qou-x5bv",
+      "towerScaled100": "62700.000000000000000000000000000000000000000000000",
+      "budgetScaled100": "10000.000000000000000000000000000000000000000000000",
+      "excessScaled100": "52700.000000000000000000000000000000000000000000000",
+      "blowupRatio": "6.2700000000000000000000000000000000000000000000000",
+      "passed": true
+    },
+    {
+      "id": "qou_wpr6_classicalisation_and_bond_disagreement_A_3",
+      "bean": "qou-wpr6",
+      "A": "3",
+      "classicalisationShiftPpm": "690.00000000000000000000000000000000000000000000000",
+      "residualUnexplainedGapPpm": "999310.00000000000000000000000000000000000000000000",
+      "bondSetDisagreementScaled2": "2.0000000000000000000000000000000000000000000000000",
+      "factoredBondDisagreementScaled2": "2.0000000000000000000000000000000000000000000000000",
+      "passed": true
+    },
+    {
+      "id": "qou_wpr6_classicalisation_and_bond_disagreement_A_4",
+      "bean": "qou-wpr6",
+      "A": "4",
+      "classicalisationShiftPpm": "690.00000000000000000000000000000000000000000000000",
+      "residualUnexplainedGapPpm": "999310.00000000000000000000000000000000000000000000",
+      "bondSetDisagreementScaled2": "6.0000000000000000000000000000000000000000000000000",
+      "factoredBondDisagreementScaled2": "6.0000000000000000000000000000000000000000000000000",
+      "passed": true
+    },
+    {
+      "id": "qou_wpr6_classicalisation_and_bond_disagreement_A_6",
+      "bean": "qou-wpr6",
+      "A": "6",
+      "classicalisationShiftPpm": "690.00000000000000000000000000000000000000000000000",
+      "residualUnexplainedGapPpm": "999310.00000000000000000000000000000000000000000000",
+      "bondSetDisagreementScaled2": "20.000000000000000000000000000000000000000000000000",
+      "factoredBondDisagreementScaled2": "20.000000000000000000000000000000000000000000000000",
+      "passed": true
+    },
+    {
+      "id": "qou_wpr6_classicalisation_and_bond_disagreement_A_16",
+      "bean": "qou-wpr6",
+      "A": "16",
+      "classicalisationShiftPpm": "690.00000000000000000000000000000000000000000000000",
+      "residualUnexplainedGapPpm": "999310.00000000000000000000000000000000000000000000",
+      "bondSetDisagreementScaled2": "210.00000000000000000000000000000000000000000000000",
+      "factoredBondDisagreementScaled2": "210.00000000000000000000000000000000000000000000000",
+      "passed": true
+    }
+  ]
+}
