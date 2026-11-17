@@ -1,13 +1,14 @@
 ---
 # qou-p77d
 title: 'GAP: 883 non-integral float64 at .assertions[].computed/.expected across 300 witnesses — the class #5910 deferred'
-status: todo
+status: in-progress
+pr: 8290
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-29T02:28:37Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-17T08:47:00Z
 parent: qou-9nnz
 ---
 
@@ -597,3 +598,7 @@ on this bean, on a container matching the recorded environment.
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+## Progress 2026-11-17 (PR #8290)
+
+Drained the remaining binary64 downcast `float(canonical_resolvent(q, n))` and `round(v, 20)` in `computations/probe_bring_residue_resolvent.py` by evaluating distinctness directly in `mpf` via `mp.nstr(v, 40)` and regenerated `computations/bring-residue-resolvent-probe.witness.json` on PR #8290 (`1c907342f24ac048c99eb24f30832b0b87b024b0`).

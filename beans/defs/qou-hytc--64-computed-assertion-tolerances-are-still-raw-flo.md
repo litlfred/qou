@@ -1,13 +1,14 @@
 ---
 # qou-hytc
 title: 64 COMPUTED assertion tolerances are still raw float64 — a producer fix, not a serialization one
-status: todo
+status: in-progress
+pr: 8290
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-28T19:42:44Z
-updated_at: 2026-10-04T15:16:07Z
+updated_at: 2026-11-17T08:47:00Z
 parent: qou-9nnz
 ---
 
@@ -56,3 +57,7 @@ that is the whole reason this is a separate bean from #5910.
   treatment, different field.
 * ~200 integral-valued tolerances (`0.0`, `1.0`). Exact in binary64 and
   already excused by the ratchet — nothing to fix.
+
+## Progress 2026-11-17 (PR #8290)
+
+Lifted `computations/tau-lepton-nf.py` to full `mpmath.mpf` (`set_compute_dps()`, `Q_50_DIGIT_STR`, `VOL_FIGURE_EIGHT_50_STR`, `MASS_RATIO_MU_E_STR`, `_precision.fmt`), draining all 4 computed `float64` assertion tolerances and all 64 other raw `float64` fields in `computations/tau-lepton-nf.witness.json` (`68 -> 0` raw `float64`) on PR #8290 (`1c907342f24ac048c99eb24f30832b0b87b024b0`).

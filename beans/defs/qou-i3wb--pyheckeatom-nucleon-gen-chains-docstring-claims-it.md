@@ -1,13 +1,14 @@
 ---
 # qou-i3wb
 title: 'pyhecke.atom: nucleon_gen_chains'' docstring claims it matches build_nucleon_nf, and it does not'
-status: todo
+status: in-progress
+pr: 8290
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-29T18:28:14Z
-updated_at: 2026-10-04T15:22:50Z
+updated_at: 2026-11-17T08:47:00Z
 parent: qou-5vkl
 ---
 
@@ -80,3 +81,7 @@ build_nucleon_nf" from `nucleon_gen_chains` and say what it actually does
 `build_nucleon_nf`'s docstring name the other builder as the dressed variant.
 Do NOT "fix" either builder to match the other before `bg3w` is decided --
 that would silently move numbers in every producer listed above.
+
+## Progress 2026-11-17 (PR #8290)
+
+Updated `nucleon_gen_chains` and `build_nucleon_nf` docstrings in `tools/pyhecke/python/pyhecke/atom.py` on PR #8290 (`1c907342f24ac048c99eb24f30832b0b87b024b0`) to state the ordering distinction between `nucleon_gen_chains` (per-generator partitioned `(g0_chain, g1_chain)` of lengths `(7, 4)`, matching `grouped_word_from_chains`) and `build_nucleon_nf` / `nucleon_braid_word` (alternating `(sigma_0 sigma_1^-1)^3` Borromean braid order).

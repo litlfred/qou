@@ -1,13 +1,14 @@
 ---
 # qou-t0wm
 title: 'Seven assertions cannot fail: the tolerance bounds its own residual, in six producers'
-status: todo
+status: in-progress
+pr: 8290
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T06:21:10Z
-updated_at: 2026-10-04T15:13:56Z
+updated_at: 2026-11-17T08:47:00Z
 parent: qou-5vkl
 ---
 
@@ -168,3 +169,7 @@ fixed sha.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-05 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Progress 2026-11-17 (PR #8290)
+
+Cleared the remaining 2 `blocking` tautological assertions in `computations/confined_knot_binding.py` (`tolerance_from_residual_audit.py` `blocking: 2 -> 0`, exit 0) by comparing `W_SYM` (`q^2/(q^4+4q^2+1)`) against the bar-conjugate symmetric form `1/(q^2+4+q^-2)` and comparing the 3-channel sum `crossing_channels(1, -h/2)[3]` against `W_STD * (z - h/2)`, while lifting `confined_knot_binding.py` to `mpmath.mpf` (`54 -> 0` raw `float64`) on PR #8290 (`1c907342f24ac048c99eb24f30832b0b87b024b0`).
