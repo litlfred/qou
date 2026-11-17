@@ -6,7 +6,7 @@ type: milestone
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-04T15:09:55Z
-updated_at: 2026-11-17T08:12:13Z
+updated_at: 2026-11-17T08:19:19Z
 ---
 
 Foundational Lean infrastructure. Measured 2026-10-04: 9-15 real `sorry` on main; open gaps now sit in axioms and instance-less classes. The only item on the L2 critical path is SW-WIRE (WedderburnDecomp instance, markov_trace_unique_axiom), gated by owner decision qou-ar7f.
@@ -49,3 +49,7 @@ Foundational Lean infrastructure. Measured 2026-10-04: 9-15 real `sorry` on main
 
 ### Round 57 Update (lane-e667)
 - Formalized `qou-utb3`, `qou-w4la`, `qou-k4oq`, `qou-o9ge`, `qou-0cyu` in `QOU.Foundations.OcneanuTowerConventionDRibbonClebschGordan` (https://github.com/litlfred/qou/pull/8254, commit `e9795825b5e02ba1c5315e9cbd5d10db4bc08957`).
+
+
+### Round 58 Update (lane-e667)
+- Formalized `qou-59vq`, `qou-1o8n`, `qou-1oif`, `qou-1wcu`, `qou-6ers` in `QOU.Foundations.IsotypicBlockSpolyLaurentHolonomy` (https://github.com/litlfred/qou/pull/8276, commit `1909a7bd3bec6ebbdc594cc42f836c8a59fb6451`).

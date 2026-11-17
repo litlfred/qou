@@ -1,11 +1,11 @@
 ---
 # qou-59vq
 title: 'EPIC: quantum Schur-Weyl / Hecke Wedderburn for H_n(q) in Mathlib'
-status: todo
+status: in-progress
 type: epic
 priority: normal
 created_at: 2026-08-02T19:32:20Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-17T08:19:19Z
 parent: qou-rtxm
 ---
 
@@ -74,3 +74,10 @@ Now the epic for P3.SW under Lean / Mathlib foundations.
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+
+## Round 58 Progress (lane-e667)
+- **PR:** https://github.com/litlfred/qou/pull/8276 (`1909a7bd3bec6ebbdc594cc42f836c8a59fb6451`)
+- **Module:** `QOU.Foundations.IsotypicBlockSpolyLaurentHolonomy` (`folio/quantum-observable-universe/lean/QOU/Foundations/IsotypicBlockSpolyLaurentHolonomy.lean`), wired into `QOU.lean`.
+- **Theorem:** `isotypic_three_block_projection_and_trace_add` — proves three-stratum central idempotent decomposition (`e0 + e1 + e2 = 1`, `e0² = e0`, `e0 e1 = 0`, `e0 e2 = 0`), orthogonal block projection, and weighted character trace additivity over generic `CommRingCarrier R`, verified at 80 dps in `isotypic-block-spoly-laurent-holonomy.witness.json`.
+- **Status:** Kept at `in-progress` pending Merge Manager merge and full dependency verification.
