@@ -1,0 +1,90 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-17T07:16:41.020495+00:00",
+  "commitSha": "5686d90696d944877fac939e8026c65cb9fed227",
+  "assertions": [
+    {
+      "name": "qou_0pnj_toffoli_hecke_gram_vs_eight_by_eight_index_mismatch",
+      "computed": "6:8:28:1",
+      "expected": "6:8:28:1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.ToffoliDimensionMismatchHeckeOffsetHypernuclearRatioNielsenThurstonAndNolenSchiffer.toffoli_hecke_gram_vs_eight_by_eight_index_mismatch"
+    },
+    {
+      "name": "qou_19jc_hecke_bar_symmetric_offset_exact_minus_half",
+      "computed": "2.10843958864610464486971481025e-81",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "QOU.Eightfold.ToffoliDimensionMismatchHeckeOffsetHypernuclearRatioNielsenThurstonAndNolenSchiffer.hecke_bar_symmetric_offset_half_and_deuteron_gap"
+    },
+    {
+      "name": "qou_19jc_hecke_bar_symmetric_vs_required_deuteron_gap",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.ToffoliDimensionMismatchHeckeOffsetHypernuclearRatioNielsenThurstonAndNolenSchiffer.hecke_bar_symmetric_offset_half_and_deuteron_gap"
+    },
+    {
+      "name": "qou_4q9h_lambda_hypernuclear_two_thirds_well_depth_ratio",
+      "computed": "2/3",
+      "expected": "2/3",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.ToffoliDimensionMismatchHeckeOffsetHypernuclearRatioNielsenThurstonAndNolenSchiffer.lambda_hypernuclear_two_thirds_well_depth_ratio"
+    },
+    {
+      "name": "qou_4tqt_ito_nielsen_thurston_periodic_vs_pseudo_anosov_entropy",
+      "computed": "0.0:1",
+      "expected": "0.0:1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.ToffoliDimensionMismatchHeckeOffsetHypernuclearRatioNielsenThurstonAndNolenSchiffer.ito_nielsen_thurston_periodic_zero_volume_dichotomy"
+    },
+    {
+      "name": "qou_4waf_nolen_schiffer_a3_opposite_sign_decomposition",
+      "computed": "234613:-83028:83028:1",
+      "expected": "234613:-83028:83028:1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.ToffoliDimensionMismatchHeckeOffsetHypernuclearRatioNielsenThurstonAndNolenSchiffer.nolen_schiffer_a3_opposite_sign_decomposition"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "toffoli-dimension-mismatch-hecke-offset-hypernuclear-ratio-nielsen-thurston-and-nolen-schiffer",
+  "scriptFile": "toffoli_dimension_mismatch_hecke_offset_hypernuclear_ratio_nielsen_thurston_and_nolen_schiffer_probe.py",
+  "scriptHash": "c832e559d02f",
+  "scriptCommitSha": "5686d90696d944877fac939e8026c65cb9fed227",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/toffoli_dimension_mismatch_hecke_offset_hypernuclear_ratio_nielsen_thurston_and_nolen_schiffer_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/toffoli_dimension_mismatch_hecke_offset_hypernuclear_ratio_nielsen_thurston_and_nolen_schiffer_probe.py"
+  },
+  "description": "Exact 80-dps mpmath and Fraction verification for qou-0pnj, qou-19jc, qou-4q9h, qou-4tqt, and qou-4waf under epic qou-10v9.",
+  "data": {
+    "d_over_h_bar_symmetric": "-0.5",
+    "lambda_4_1_dilatation_entropy": "0.9624236501192068949955178268487368462704",
+    "nolen_schiffer_a3_mev": "0.083028"
+  }
+}
