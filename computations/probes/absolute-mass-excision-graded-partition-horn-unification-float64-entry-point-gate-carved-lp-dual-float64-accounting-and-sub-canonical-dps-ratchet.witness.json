@@ -1,0 +1,111 @@
+{
+  "probe": "absolute_mass_excision_graded_partition_horn_unification_float64_entry_point_gate_carved_lp_dual_float64_accounting_and_sub_canonical_dps_ratchet_probe.py",
+  "beans": [
+    "qou-exam",
+    "qou-f0ny",
+    "qou-f64g",
+    "qou-f7af",
+    "qou-fl9i"
+  ],
+  "dps": 80,
+  "computedAt": "2026-11-17T12:30:01Z",
+  "scriptCommitSha": "e6e062084beafc3a1fc8a3d883d9b85a8a5b2533",
+  "scriptSha256": "26219455d099ed801b8c575a6e1e9f774132eb7f0d0b6a6e41d107b3a8e58074",
+  "scriptHash": "26219455d099",
+  "allPassed": true,
+  "checks": [
+    {
+      "name": "qou_exam_absolute_mass_excision_and_scale_cancellation",
+      "bean": "qou-exam",
+      "passed": true,
+      "excisedAbsoluteMassRowCount": 3,
+      "retainedRatioAndSplittingCount": 5,
+      "totalPreExcisionL2RowCount": 8,
+      "totalReframedContentBlockCount": 15,
+      "directProtonNeutronRatio80dps": "9.9862347811498003025767061401645883868436956092601631081987848974608835798283384e-1",
+      "scaleCancellationDrift80dps": "1.054219794323052322434857405127001900770996138236850755007776302510814429096976e-81"
+    },
+    {
+      "name": "qou_f0ny_graded_partition_horn_unification_a4",
+      "bean": "qou-f0ny",
+      "passed": true,
+      "partitionTableA4": [
+        {
+          "partition": "(4)",
+          "grade": 0,
+          "sign": 1,
+          "dim": 1,
+          "deltaLambda": 1
+        },
+        {
+          "partition": "(3,1)",
+          "grade": 1,
+          "sign": -1,
+          "dim": 3,
+          "deltaLambda": -3
+        },
+        {
+          "partition": "(2,2)",
+          "grade": 2,
+          "sign": 1,
+          "dim": 2,
+          "deltaLambda": 2
+        },
+        {
+          "partition": "(2,1,1)",
+          "grade": 3,
+          "sign": -1,
+          "dim": 3,
+          "deltaLambda": -3
+        },
+        {
+          "partition": "(1,1,1,1)",
+          "grade": 6,
+          "sign": 1,
+          "dim": 1,
+          "deltaLambda": 1
+        }
+      ],
+      "totalUnsignedDimSumA4": 10,
+      "totalSquaredDimSumA4": 24,
+      "totalSignedCharacteristicSumA4": -2,
+      "gradedCharacteristicAtOne80dps": "-2.0"
+    },
+    {
+      "name": "qou_f64g_float64_entry_point_dyadic_representability_gate",
+      "bean": "qou-f64g",
+      "passed": true,
+      "measuredFloat64EntryPointHits": 17546,
+      "priorFloat64LeakBeanCount": 4,
+      "float64DetectorCategoryCount": 5,
+      "dyadicTwoPointFiveGap80dps": "0.0",
+      "nonDyadicZeroPointFourGap80dps": "2.220446049250313080847263336181640624999999999999999999999999999978915604113539e-17",
+      "exactBinary64ZeroPointFourGapFormula80dps": "2.220446049250313080847263336181640625e-17"
+    },
+    {
+      "name": "qou_f7af_carved_lp_dual_float64_accounting",
+      "bean": "qou-f7af",
+      "passed": true,
+      "carvedLpDualFieldNameCount": 7,
+      "totalLiveCarvedFloats": 4246,
+      "shadowedCarvedFloats": 194,
+      "unshadowedCarvedFloats": 4052,
+      "topSixCarvedFloatConcentrationSum": 2695,
+      "topSixShareOfUnshadowed80dps": "6.651036525172754195459032576505429417571569595261599210266535044422507403751234e-1"
+    },
+    {
+      "name": "qou_fl9i_sub_canonical_dps_ratchet_and_over_serialization_gap",
+      "bean": "qou-fl9i",
+      "passed": true,
+      "canonicalOutputDps": 60,
+      "canonicalGuardDps": 10,
+      "canonicalComputeDps": 70,
+      "convertedSubCanonicalDpsSites": 838,
+      "deliberateLowPrecisionSites": 33,
+      "totalPreFilterSubCanonicalDpsSites": 871,
+      "swarmTransformBugCount": 120,
+      "subCanonicalWitnessProducerFiles": 732,
+      "overSerializationTruncationError80dps": "4.7727941142857142857142857142803258125477023597446431795239671288051043383417621e-53"
+    }
+  ]
+}
