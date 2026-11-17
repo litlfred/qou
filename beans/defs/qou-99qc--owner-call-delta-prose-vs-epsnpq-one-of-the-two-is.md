@@ -3733,3 +3733,7 @@ Pre-registered before any computation. Re-run of gluon-thread stage 1 over the a
 
 ### RESULT 2026-11-17 — stage 1b (γγ thread, PR #8128, witness gg-twist-reading3-stage1b)
 (a) {V, V⁻¹, L₊ = σ₀σ₁, L₋ = σ₁σ₀}, lengths 1–6: pass ⟺ pure braid survives (1848/1848 pure pass, 0/3612 knots). All writhes ≥ 0, which the alphabet forces (L± both +2). (b) Adding e⁻ = σ₀σ₁σ₀, lengths 1–5: every pure word passes and no knot does, but 526/1771 two-component words also pass, so pass ⟺ pure breaks (shortest: V⁻¹L₋e⁻, L₊L₋e⁻). 274 words sit at a numerical zero (~1e-42, sign flips 40→80 dps) and are counted as failures. Admissibility only; no selection. Bean stays OPEN.
+
+## 2026-11-17 — photon audit (PR #8367, issue #8366)
+
+Owner asked for a single `def:photon` block: γ(φ) = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁ ∈ H₃, three colour weights, bare photon = 1 (empty knot, not 0₁). Audit `docs/audits/2026-11-17-photon-usage-audit.md` lists 12 conflicts. **C8 bears on this bean:** the γγ vertex V = σᵢσᵢ₊₁⁻¹ ("photon + anti-photon") traces to `gamma_gamma_pair_production_decomposition.py`, which takes photon = σ₀, anti-photon = σ₁⁻¹. That is not the photon of `def:photon`, so every γγ-selected word (nucleon words included) rests on an underived vertex. Decision card posted 2026-11-17: re-derive the alphabet from γ(φ)γ(ψ) (recommended) vs keep V. Nothing changed yet. Stays open.
