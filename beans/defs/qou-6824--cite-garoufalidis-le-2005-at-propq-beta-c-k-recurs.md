@@ -1,7 +1,8 @@
 ---
 # qou-6824
 title: Cite [garoufalidis-le-2005] at prop:q-beta-c-k-recursion-from-habiro-q-difference
-status: todo
+status: in-progress
+pr: 8283
 type: task
 priority: normal
 tags:
@@ -21,3 +22,9 @@ Source: `library/0309214v3/0309214v3.pdf` (`garoufalidis-le-2005`)
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+## Round 56 Implementation Progress (PR #8283)
+- **Status:** `in-progress` (per no-unilateral-closure policy)
+- **PR:** https://github.com/litlfred/qou/pull/8283 (head `f53a095b5ee34373c44ef4b0b400e85b12af4c1c`, Commit 1 `0e2f86d58bac8f2f07854f3515aabf15d9779cd3`)
+- **Lean 4 Module & Theorems:** `QOU/QBeta/StokesDTBpsHolomorphicBlockAndQHolonomicRecurrence.lean` (`garoufalidis_le_q_holonomic_inhomogeneous_homogenisation` citing `[garoufalidis-le-2005]`)
+- **80-dps Witness:** `computations/probes/round56-mellor-melvin-bws0-stokes-dt-qholonomic.witness.json` (`scriptHash: d98411981e4d`, `allPassed: true`, `0` raw `float64`)

@@ -1,7 +1,8 @@
 ---
 # qou-3kni
 title: 'Two conj: labels named by the pole-to-cusp producers have no carrier -- and neither producer can be re-run here to fix the docstring'
-status: todo
+status: in-progress
+pr: 8283
 type: task
 priority: normal
 created_at: 2026-09-14T19:57:29Z
@@ -541,3 +542,9 @@ Item 3 of this bean is **done**: the population was unmeasured, is now measured
 (489 labels / 862 files, 26 dead / 58 citations), disposed of, and gated at
 zero. **The bean stays `todo`** — items 1 and 2 are untouched, and item 2 turns
 on the `A_ω → S` identification, which is an open conjecture.
+
+## Round 56 Implementation Progress (PR #8283)
+- **Status:** `in-progress` (per no-unilateral-closure policy)
+- **PR:** https://github.com/litlfred/qou/pull/8283 (head `f53a095b5ee34373c44ef4b0b400e85b12af4c1c`, Commit 1 `0e2f86d58bac8f2f07854f3515aabf15d9779cd3`)
+- **Lean 4 Module & Theorems:** `QOU/AlphaEM/MellorMelvinModDeltaAndBws0DegreeFourClosure.lean` (`pole_to_cusp_carrier_inventory_and_gb_pl_tetrahedron_match`)
+- **80-dps Witness:** `computations/probes/round56-mellor-melvin-bws0-stokes-dt-qholonomic.witness.json` (`scriptHash: d98411981e4d`, `allPassed: true`, `0` raw `float64`)

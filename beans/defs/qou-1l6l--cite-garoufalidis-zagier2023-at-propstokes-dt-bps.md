@@ -1,7 +1,8 @@
 ---
 # qou-1l6l
 title: Cite [garoufalidis-zagier2023] at prop:stokes-dt-bps-bridge
-status: todo
+status: in-progress
+pr: 8283
 type: task
 priority: normal
 tags:
@@ -17,3 +18,9 @@ Source: `library/arxiv-2111.06645/2304.09377v2.pdf` (`garoufalidis-zagier2023`)
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+## Round 56 Implementation Progress (PR #8283)
+- **Status:** `in-progress` (per no-unilateral-closure policy)
+- **PR:** https://github.com/litlfred/qou/pull/8283 (head `f53a095b5ee34373c44ef4b0b400e85b12af4c1c`, Commit 1 `0e2f86d58bac8f2f07854f3515aabf15d9779cd3`)
+- **Lean 4 Module & Theorems:** `QOU/QBeta/StokesDTBpsHolomorphicBlockAndQHolonomicRecurrence.lean` (`stokes_dt_bps_habiro_holomorphic_block_invariance` citing `[garoufalidis-zagier2023]`)
+- **80-dps Witness:** `computations/probes/round56-mellor-melvin-bws0-stokes-dt-qholonomic.witness.json` (`scriptHash: d98411981e4d`, `allPassed: true`, `0` raw `float64`)

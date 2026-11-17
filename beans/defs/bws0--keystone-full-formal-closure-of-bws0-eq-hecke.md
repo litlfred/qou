@@ -1,7 +1,8 @@
 ---
 # bws0
 title: 'Keystone: full formal closure of bwS0_eq_hecke (the loc_matches gate)'
-status: todo
+status: in-progress
+pr: 8283
 type: feature
 priority: high
 tags:
@@ -62,3 +63,9 @@ Neither correction touches the open content. `bwsc` is still the WRT agreement i
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-03 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Round 56 Implementation Progress (PR #8283)
+- **Status:** `in-progress` (per no-unilateral-closure policy)
+- **PR:** https://github.com/litlfred/qou/pull/8283 (head `f53a095b5ee34373c44ef4b0b400e85b12af4c1c`, Commit 1 `0e2f86d58bac8f2f07854f3515aabf15d9779cd3`)
+- **Lean 4 Module & Theorems:** `QOU/AlphaEM/MellorMelvinModDeltaAndBws0DegreeFourClosure.lean` (`bws0_mark6_a5_split_degree_four_vs_degree_five`)
+- **80-dps Witness:** `computations/probes/round56-mellor-melvin-bws0-stokes-dt-qholonomic.witness.json` (`scriptHash: d98411981e4d`, `allPassed: true`, `0` raw `float64`)
