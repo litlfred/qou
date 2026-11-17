@@ -1,0 +1,71 @@
+{
+  "probeId": "gswz_module_harness_and_kerov_moment_structures_brick_probe",
+  "beans": [
+    "qou-5erw",
+    "qou-9p9y",
+    "qou-9w1u",
+    "qou-a6ma",
+    "qou-c6s9"
+  ],
+  "scriptPath": "computations/probes/gswz_module_harness_and_kerov_moment_structures_brick_probe.py",
+  "scriptCommitSha": "843d4ad40be5ebf362ac9c1f33db1be9d81b604b",
+  "scriptHash": "db35935fc04d",
+  "generatedAt": "2026-11-17T10:40:38.161803+00:00",
+  "environment": {
+    "pythonVersion": "3.13.12",
+    "mpmathVersion": "1.3.0",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "precisionDps": "80"
+  },
+  "allPassed": true,
+  "outputHash": "40546714577014634fe4eb4a854eeb33fb2f585c3ee9407681c7309aa2bc4419",
+  "results": {
+    "precisionDps": "80",
+    "allPassed": true,
+    "checks": [
+      {
+        "id": "bigraded_homology_rank_and_commutator_trace_collapse",
+        "bean": "qou-5erw",
+        "passed": true,
+        "commutatorTraceResidual": "0.0",
+        "rkEven": "7",
+        "rkOdd": "5",
+        "eulerDiff": "2",
+        "totalRank": "12"
+      },
+      {
+        "id": "gswz_module_membership_pairing_harness",
+        "bean": "qou-9p9y",
+        "passed": true,
+        "vol41At80dps": "2.029883212819307250042405108549040571883",
+        "gswzResidualPos": "0.0",
+        "gswzSignInvarianceResidual": "0.0"
+      },
+      {
+        "id": "per_loop_measure_scaling_invariant_l1_l2",
+        "bean": "qou-9w1u",
+        "passed": true,
+        "muLoop80dps": "0.09350372387629226282843704059425854469742",
+        "crossLoopResidual": "0.0",
+        "logScalingResidual": "0.0"
+      },
+      {
+        "id": "writhe_pinned_vs_decoupled_twist_framing",
+        "bean": "qou-a6ma",
+        "passed": true,
+        "writhePinnedFraming": "-9.0",
+        "twistShiftDifferenceResidual": "0.0"
+      },
+      {
+        "id": "kerov_moment_variances_and_multiplet_discriminant",
+        "bean": "qou-c6s9",
+        "passed": true,
+        "kerovR3VarAt2": "4",
+        "kerovR4VarAt2": "0",
+        "kerovR3VarAt6": "60",
+        "kerovR4VarAt6": "360",
+        "multipletDiscriminantExcessResidual": "0.0"
+      }
+    ]
+  }
+}
