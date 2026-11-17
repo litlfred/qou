@@ -1,7 +1,8 @@
 ---
 # qou-kgsx
 title: 'GAP: explain why delta is A-independent while the interface-letter count grows (bar-involution mirror law)'
-status: todo
+status: in-progress
+pr: 8260
 type: task
 priority: normal
 tags:

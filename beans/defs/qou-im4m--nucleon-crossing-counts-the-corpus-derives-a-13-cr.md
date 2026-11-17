@@ -1,7 +1,8 @@
 ---
 # qou-im4m
 title: 'Nucleon crossing counts: the corpus derives a 13-crossing neutron, hecke_core implements 11'
-status: todo
+status: in-progress
+pr: 8260
 type: task
 priority: normal
 tags:

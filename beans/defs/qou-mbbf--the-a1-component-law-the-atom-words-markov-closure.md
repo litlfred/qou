@@ -1,7 +1,8 @@
 ---
 # qou-mbbf
 title: 'The A+1 component law: the atom word''s Markov closure misses every census carrier, and 7db032fb48 did NOT invalidate that'
-status: todo
+status: in-progress
+pr: 8260
 type: task
 priority: normal
 tags:

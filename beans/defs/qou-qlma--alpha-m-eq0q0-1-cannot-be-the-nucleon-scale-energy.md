@@ -1,7 +1,8 @@
 ---
 # qou-qlma
 title: 'alpha = m_e/(q0(q0-1)) cannot be the nucleon-scale energy: derived bound alpha <= B_AME(2H)/ln2 = 3.2094 MeV, actual 4.1860 (+30.43%)'
-status: todo
+status: in-progress
+pr: 8260
 type: task
 priority: normal
 tags:

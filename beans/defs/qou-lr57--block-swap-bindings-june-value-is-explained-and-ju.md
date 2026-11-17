@@ -1,7 +1,8 @@
 ---
 # qou-lr57
 title: block_swap_binding's June value is explained — and June's y_lambda table violated the two-row cap by 7%
-status: todo
+status: in-progress
+pr: 8260
 type: task
 priority: normal
 tags:
