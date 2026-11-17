@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-16T09:58:00Z
+updated_at: 2026-11-17T23:08:21Z
 parent: qou-10v9
 ---
 
@@ -3737,3 +3737,7 @@ Pre-registered before any computation. Re-run of gluon-thread stage 1 over the a
 ## 2026-11-17 — photon audit (PR #8367, issue #8366)
 
 Owner asked for a single `def:photon` block: γ(φ) = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁ ∈ H₃, three colour weights, bare photon = 1 (empty knot, not 0₁). Audit `docs/audits/2026-11-17-photon-usage-audit.md` lists 12 conflicts. **C8 bears on this bean:** the γγ vertex V = σᵢσᵢ₊₁⁻¹ ("photon + anti-photon") traces to `gamma_gamma_pair_production_decomposition.py`, which takes photon = σ₀, anti-photon = σ₁⁻¹. That is not the photon of `def:photon`, so every γγ-selected word (nucleon words included) rests on an underived vertex. Decision card posted 2026-11-17: re-derive the alphabet from γ(φ)γ(ψ) (recommended) vs keep V. Nothing changed yet. Stays open.
+
+## 2026-11-17 sibling sweep
+Scope note only (bean stays OPEN): a sibling measured that the reading-3 whole-word search space is about 1024 candidate words. No word selected.
+Recorded 2026-11-17 from the stale-sibling-session sweep (table: /mnt/project-files/qou-sibling-consolidation/table.md). Source session archived; work not lost.
