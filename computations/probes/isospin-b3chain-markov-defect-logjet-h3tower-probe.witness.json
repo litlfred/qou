@@ -1,0 +1,66 @@
+{
+  "probe": "isospin-b3chain-markov-defect-logjet-h3tower-probe",
+  "beans": [
+    "qou-kj4v",
+    "qou-q8vl",
+    "qou-vwu3",
+    "qou-zlra",
+    "qou-tower"
+  ],
+  "dps": 50,
+  "scriptHash": "fdddfa9d5c4c",
+  "scriptCommitSha": "6503b8f18fc8ff4738e52dd90a502ef380fc1a7e",
+  "generatedAt": "2026-11-17T10:58:18Z",
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "qou-kj4v-isospin-channel-and-d-reachability",
+      "passed": true,
+      "muPlus": "0.75270211325196540136669190299858563",
+      "muMinus": "0.24729788674803459863330809700141437",
+      "muSumResidual": "0.0",
+      "twoZSubH": "1.0163157754972911863808859902552983",
+      "twoZSubHResidual": "0.0",
+      "dReqOverHConventionD": "-0.1194534475954080399122636",
+      "dReqOverHConventionC": "0.4325284074307970307417675"
+    },
+    {
+      "id": "qou-q8vl-two-bond-chain-b3-reflection-and-odd-stack",
+      "passed": true,
+      "chainTritonCumulant": "0.29329966897114048934020238046556156",
+      "chainReflectionDiff": "0.0",
+      "muSigma5": "1.121451057805068245833775106598866",
+      "muSigma7": "1.4433898823425726323379554196408681"
+    },
+    {
+      "id": "qou-vwu3-peeled-markov-defect-and-mirror-cap",
+      "passed": true,
+      "markovDefect": "-0.75270211325196540136669190299858563",
+      "markovDefectResidual": "1.33638235505e-51",
+      "deltaTritonPattern": "-0.30381145162377804536583330457341838",
+      "deltaHe3Pattern": "-0.46117158032434306868781211705865274",
+      "mirrorRatioCap": "0.20570407725231312278891393275121422",
+      "mirrorRatioResidual": "3.34095588762e-52"
+    },
+    {
+      "id": "qou-zlra-log-jet-pair-cancellation",
+      "passed": true,
+      "logJetResidual": "0.0",
+      "bareIsobarSecondDiff": "8",
+      "logIsobarSecondDiff": "0"
+    },
+    {
+      "id": "qou-tower-h3-groebner-collapse-and-crossing-schedule",
+      "passed": true,
+      "h3NormalFormDim": "6",
+      "magicZTested": [
+        "2",
+        "8",
+        "20",
+        "28"
+      ],
+      "writheOverMassNum": "3/2",
+      "mixedSecondDifference": "2"
+    }
+  ]
+}
