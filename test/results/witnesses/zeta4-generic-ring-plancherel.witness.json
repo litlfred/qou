@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "1.0",
+  "witnessId": "zeta4-generic-ring-plancherel",
+  "scriptPath": "computations/probes/zeta4_generic_ring_plancherel_probe.py",
+  "scriptCommitSha": "c51ca9d156e38c5132472fea49f6c3a82c448ee1",
+  "scriptHash": "f59e399eec51",
+  "generatedAt": "2026-11-17T08:31:07Z",
+  "dps": "80",
+  "beans": [
+    "5lcg",
+    "qou-oc4v",
+    "qou-r7qm",
+    "qou-xbyp",
+    "qou-sf1t"
+  ],
+  "theorems": [
+    "QOU.Foundations.Zeta4GenericRingPlancherel.zeta4SymmetricOddTerm_eq_zero",
+    "QOU.Foundations.Zeta4GenericRingPlancherel.survivingCubic_add_one_eq_factored",
+    "QOU.Foundations.Zeta4GenericRingPlancherel.keystone_c2_transpose_antisym",
+    "QOU.Foundations.Zeta4GenericRingPlancherel.qbeta_wenzl_level_two_decomp",
+    "QOU.Foundations.Zeta4GenericRingPlancherel.ohtsuki_tower_bar_parity_products",
+    "QOU.Foundations.Zeta4GenericRingPlancherel.substrate_period_first_coeff_eq_zero",
+    "QOU.Foundations.Zeta4GenericRingPlancherel.rogersSzego_H2_identity",
+    "QOU.Foundations.Zeta4GenericRingPlancherel.qPlancherel_sum_measure_eq_one",
+    "QOU.Foundations.Zeta4GenericRingPlancherel.molien_jones_markov_n3_common_normaliser"
+  ],
+  "allPassed": true,
+  "checks": [
+    {
+      "name": "zeta4_exclusion_and_surviving_cubic",
+      "bean": "5lcg",
+      "survivingCubicAt2Cos2PiOver7": "4.21687917729220928973943e-81",
+      "factoredResidual80dps": "0.0",
+      "cubicAtOnePlusOne": "0",
+      "passed": true
+    },
+    {
+      "name": "braid_knot_c2_and_wenzl_level_two",
+      "bean": "qou-oc4v",
+      "c2Sum": "0",
+      "wenzlResidual80dps": "8.433758354584418579478859e-81",
+      "passed": true
+    },
+    {
+      "name": "ohtsuki_bar_parity_and_period_cramer",
+      "bean": "qou-r7qm",
+      "periodDet2x2": "68/35",
+      "cramerMatch": "True",
+      "barParityResidual80dps": "0.0",
+      "passed": true
+    },
+    {
+      "name": "rogers_szego_h2_and_descent_telescope",
+      "bean": "qou-xbyp",
+      "rogersSzegoResidual80dps": "0.0",
+      "telescopeValue": "9/2",
+      "passed": true
+    },
+    {
+      "name": "qplancherel_partition_and_molien_normaliser",
+      "bean": "qou-sf1t",
+      "totalMassResidual80dps": "0.0",
+      "defectResidual80dps": "4.941655285889307761413394e-83",
+      "molienValue": "245/32",
+      "passed": true
+    }
+  ]
+}
