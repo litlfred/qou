@@ -135,6 +135,19 @@ theorem b4_eq_zero_of_const (w : ℕ → R) (c : R) (hw : ∀ z, w z = c) :
   rw [b4_eq, hw 1, hw 2, hw 3]
   ring
 
+/-- **Inverse Ursell reconstruction of `bind w 3` and `bind w 4` from `w 1`, `b₃`, and `b₄` (`qou-edt7`).**
+In any commutative ring `R`, `bind w 3 = 3 * w 1 + b3 w` and `bind w 4 = 6 * w 1 + 4 * b3 w + b4 w`. -/
+theorem bind_three_and_four_ursell_reconstruct (w : ℕ → R) :
+    bind w 3 = 3 * w 1 + b3 w ∧
+      bind w 4 = 6 * w 1 + 4 * b3 w + b4 w := by
+  refine ⟨?_, ?_⟩
+  · unfold b3 bind
+    norm_num [show Nat.choose 2 2 = 1 from rfl]
+    ring
+  · unfold b4 b3 bind
+    norm_num [show Nat.choose 2 2 = 1 from rfl]
+    ring
+
 end Identities
 
 section Signs
