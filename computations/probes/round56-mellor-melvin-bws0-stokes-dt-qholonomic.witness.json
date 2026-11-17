@@ -1,0 +1,76 @@
+{
+  "probe": "round56-mellor-melvin-bws0-stokes-dt-qholonomic",
+  "scriptPath": "computations/probes/round56_mellor_melvin_bws0_stokes_dt_qholonomic_probe.py",
+  "scriptHash": "d98411981e4d",
+  "scriptCommitSha": "0e2f86d58bac8f2f07854f3515aabf15d9779cd3",
+  "precisionDps": 80,
+  "beans": [
+    "qou-2g9j",
+    "bws0",
+    "qou-3kni",
+    "qou-1l6l",
+    "qou-6824"
+  ],
+  "leanModules": [
+    "folio/quantum-observable-universe/lean/QOU/AlphaEM/MellorMelvinModDeltaAndBws0DegreeFourClosure.lean",
+    "folio/quantum-observable-universe/lean/QOU/QBeta/StokesDTBpsHolomorphicBlockAndQHolonomicRecurrence.lean"
+  ],
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "qou-2g9j-mellor-melvin-mod-delta-borromean-and-parity",
+      "bean": "qou-2g9j",
+      "description": "Mellor-Melvin lift gives mubar_{123}=1 on Borromean rings and exact mod-2 parity dichotomy on Delta=2 triples",
+      "passed": true,
+      "borromeanMellorMelvin": 1,
+      "evenResidueCount": 35,
+      "oddResidueCount": 35
+    },
+    {
+      "id": "bws0-mark6-degree-four-factorisation-and-nodes",
+      "bean": "bws0",
+      "description": "d_{(3,1,1)}(t) = t^4 - 3t^2 + 2 = (t^2-1)(t^2-2) agrees to 80 dps across 5 level-6 Chebyshev nodes and equals 6 at t=2",
+      "passed": true,
+      "dim311At2": 6,
+      "qInt6At2": 6,
+      "maxFactorDiff80dps": "1.6867516709168837158957718482032030412335938211789612080124420840173030865551615e-80"
+    },
+    {
+      "id": "qou-3kni-pole-to-cusp-carrier-inventory-and-tetrahedra",
+      "bean": "qou-3kni",
+      "description": "Pole-to-cusp conjecture carrier inventory sums to 10 across 5 labels (2 live, 3 dead) with ideal tetrahedron counts 2, 3, 8",
+      "passed": true,
+      "carrierCounts": [
+        5,
+        5,
+        0,
+        0,
+        0
+      ],
+      "totalCarriers": 10,
+      "idealTet41": 2,
+      "idealTet52": 3,
+      "idealTetBorromean": 8
+    },
+    {
+      "id": "qou-1l6l-garoufalidis-zagier-holomorphic-block-stokes-invariance",
+      "bean": "qou-1l6l",
+      "description": "Garoufalidis-Zagier [garoufalidis-zagier2023] state-integral bilinear pairing is invariant to 80 dps under A_omega=3 Stokes jump",
+      "passed": true,
+      "pairingBefore80dps": "33.423445808468444057969292183478637728510121751997287174543694521189368434720974",
+      "pairingAfter80dps": "33.423445808468444057969292183478637728510121751997287174543694521189368434720974",
+      "pairingDiff80dps": "0.0"
+    },
+    {
+      "id": "qou-6824-garoufalidis-le-q-holonomic-order-lifting",
+      "bean": "qou-6824",
+      "description": "Garoufalidis-Le [garoufalidis-le-2005] inhomogeneous-to-homogeneous order lift annihilates RHS to 80 dps (orders 2->3 and 3->4)",
+      "passed": true,
+      "homogenisedResidual80dps": "0.0",
+      "order41Inhom": 2,
+      "order41Hom": 3,
+      "order52Inhom": 3,
+      "order52Hom": 4
+    }
+  ]
+}
