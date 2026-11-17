@@ -6,7 +6,7 @@ r(A)=\begin{cases}
 \mathrm{III} & \binom A2 > 3A-6.
 \end{cases}
 $$
-*Here $\binom A3=0$ says that $K_A$ has no triangle, and $3A-6$ is the number of edges of a triangulated 2-sphere on $A$ vertices. Then, for every integer $A$,*
+*Here $\binom A3=0$ says that $K_A$ has no triangle, and $3A-6$ is the number of edges of a triangulated 2-sphere on $A$ vertices. Then, for every natural number $A$,*
 $$
 2\Bigl(\tbinom A2-(3A-6)\Bigr)=(A-3)(A-4),
 $$

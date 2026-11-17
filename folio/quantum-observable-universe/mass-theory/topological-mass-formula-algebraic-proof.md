@@ -9,7 +9,7 @@
    No absolute value, logarithm or limit is used at this stage.
 2. **The specialisation.** $\tau_{\mathrm{arch}}$ evaluates this element at
    $q = q_0$, which is defined because $q_0^{2} + 1 \neq 0$. Only then are the
-   archimedean operations applied: the absolute value and the logarithm give
+   archimedean operations applied: the absolute value and, since $\mathrm{Vol}_{q_0}(\beta)\neq0$ by hypothesis, the logarithm give
    $\Phi_1(\beta) = \ln\lvert\mathrm{Vol}_{q_0}(\beta)\rvert$, and dividing by
    $\hbar_{q_0}^{2}$ gives $\mathfrak{m}_{\mathrm{alg}}(\beta)$.
 
