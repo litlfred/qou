@@ -1,7 +1,7 @@
 ---
 # qou-2akx
 title: 'Session: binding-gap groupoid / derived-category research survey (full tower)'
-status: todo
+status: in-progress
 type: feature
 priority: normal
 tags:
@@ -26,3 +26,9 @@ This body is a charter, not a log: it is now the Route C story under the extensi
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+## Progress Update (Round 64 — PR #8263)
+- **Status**: `in-progress` (per active rule: no unilateral `qou` bean closures).
+- **PR**: [`litlfred/qou#8263`](https://github.com/litlfred/qou/pull/8263) (branch `feat/round64-hooksum-formality-charge-ocneanu-coupling-43c1`, Commit 1 `30d0d4f4e437e19904cd4438468a9ecf56eadd3a`, Commit 2 / Head `545135545dc8e721846ea1fb0e54556f69a5a166`).
+- **Lean 4 Artifact**: `folio/quantum-observable-universe/lean/QOU/Mass/FormalityBridgeF1.lean (`additive_map_pow_and_mul_three`)` (0 sorry, 0 findings across all 6 static vacuity audits).
+- **80-dps Witness**: `computations/probes/hooksum_formality_charge_ocneanu_coupling_probe.py` (`scriptHash: dae747aae6b4`) + `test/results/witnesses/hooksum-formality-charge-ocneanu-coupling.witness.json` (`allPassed: true`).

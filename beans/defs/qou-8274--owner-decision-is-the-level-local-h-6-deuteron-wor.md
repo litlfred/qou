@@ -1,7 +1,7 @@
 ---
 # qou-8274
 title: 'OWNER DECISION: is the level-local H_6 deuteron word the right binding object, or only the faster one? (qou-w6x3 residual)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -114,3 +114,9 @@ four `computations/deltalambda/` probes.
 - Witness: `computations/probes/binding-word-3A-reembedding.witness.json`
 - Lean: `QOU/Hecke/ContiguousCouplingGraph.lean` (sorry-free)
 - Audit: `docs/audits/2026-09-12-binding-word-3A-reembedding.md`
+
+## Progress Update (Round 64 — PR #8263)
+- **Status**: `in-progress` (per active rule: no unilateral `qou` bean closures).
+- **PR**: [`litlfred/qou#8263`](https://github.com/litlfred/qou/pull/8263) (branch `feat/round64-hooksum-formality-charge-ocneanu-coupling-43c1`, Commit 1 `30d0d4f4e437e19904cd4438468a9ecf56eadd3a`, Commit 2 / Head `545135545dc8e721846ea1fb0e54556f69a5a166`).
+- **Lean 4 Artifact**: `folio/quantum-observable-universe/lean/QOU/Hecke/ContiguousCouplingGraph.lean (`isCoupling_of_ne_iff_boundary_strand`, `coupled_consecutive_pair`)` (0 sorry, 0 findings across all 6 static vacuity audits).
+- **80-dps Witness**: `computations/probes/hooksum_formality_charge_ocneanu_coupling_probe.py` (`scriptHash: dae747aae6b4`) + `test/results/witnesses/hooksum-formality-charge-ocneanu-coupling.witness.json` (`allPassed: true`).

@@ -1,7 +1,7 @@
 ---
 # qou-bsec
 title: jones_wenzl_weight is wrong and LIVE at mass_at_3A_proper.py:592
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -124,3 +124,9 @@ files.
 `jones_wenzl_weight` and `ocneanu_weights_3A` defaulted to the float64 `Q0_PROTON` / `Z_MARKOV`, so every default call evaluated the weights at a double's worth of q. The defaults are now the mpf proton pin `Q_MP`, with z derived in mpf from that same q. Measured at 70 dps: the weights move by ~5e-17 relative (for example (3) → −5.3e-17, (2,1) → +4.3e-17).
 
 Correction to a claim made earlier the same day: I said the normalisation Σ_λ d_λ w_λ = 1 held only to ~1e-16 because of the float64 default. That was wrong. The 1e-16 came from measuring at mpmath's default 15 digits. At 70 dps the identity holds to ~1e-70 with the old defaults and with the new ones, because it is a rational identity in (q, z) and holds for any z. So the "Fixed" section above stands as written.
+
+## Progress Update (Round 64 — PR #8263)
+- **Status**: `in-progress` (per active rule: no unilateral `qou` bean closures).
+- **PR**: [`litlfred/qou#8263`](https://github.com/litlfred/qou/pull/8263) (branch `feat/round64-hooksum-formality-charge-ocneanu-coupling-43c1`, Commit 1 `30d0d4f4e437e19904cd4438468a9ecf56eadd3a`, Commit 2 / Head `545135545dc8e721846ea1fb0e54556f69a5a166`).
+- **Lean 4 Artifact**: `folio/quantum-observable-universe/lean/QOU/SchurWeyl/OcneanuWeightMarkov3.lean (`markovWeights_three_sum_and_classical_values`)` (0 sorry, 0 findings across all 6 static vacuity audits).
+- **80-dps Witness**: `computations/probes/hooksum_formality_charge_ocneanu_coupling_probe.py` (`scriptHash: dae747aae6b4`) + `test/results/witnesses/hooksum-formality-charge-ocneanu-coupling.witness.json` (`allPassed: true`).

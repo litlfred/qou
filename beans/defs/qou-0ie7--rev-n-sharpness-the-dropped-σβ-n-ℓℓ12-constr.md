@@ -1,7 +1,7 @@
 ---
 # qou-0ie7
 title: 'REV_n sharpness: the dropped Σβ = n + ℓ(ℓ−1)/2 constraint after the (ℓ,W) route closed (takeover of #7093, qou-hok7)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -106,3 +106,9 @@ to the arc's new epic `qou-3e6w`. Read `qou-hok7` for the arc's ledger and `qou-
 the headline bound this task's answer discriminates: A3 asks whether `REV_n = O(√n)` can be
 *proved*; this bean asks whether the 3/4 exponent is *sharp*, which the data at `n ≤ 44` cannot
 decide. The two are siblings, not sequential.
+
+## Progress Update (Round 64 — PR #8263)
+- **Status**: `in-progress` (per active rule: no unilateral `qou` bean closures).
+- **PR**: [`litlfred/qou#8263`](https://github.com/litlfred/qou/pull/8263) (branch `feat/round64-hooksum-formality-charge-ocneanu-coupling-43c1`, Commit 1 `30d0d4f4e437e19904cd4438468a9ecf56eadd3a`, Commit 2 / Head `545135545dc8e721846ea1fb0e54556f69a5a166`).
+- **Lean 4 Artifact**: `folio/quantum-observable-universe/lean/QOU/BraidKnot/HookSumRowTangentBound.lean (`six_mul_hminClosed`, `hminClosed_step_continuity`)` (0 sorry, 0 findings across all 6 static vacuity audits).
+- **80-dps Witness**: `computations/probes/hooksum_formality_charge_ocneanu_coupling_probe.py` (`scriptHash: dae747aae6b4`) + `test/results/witnesses/hooksum-formality-charge-ocneanu-coupling.witness.json` (`allPassed: true`).
