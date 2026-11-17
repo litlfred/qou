@@ -1,13 +1,14 @@
 ---
 # qou-qb8g
 title: c_3's bar-parity is UNDETERMINED — neither named split is derived
-status: todo
+status: in-progress
+pr: 8245
 type: task
 priority: medium
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T11:45:00Z
-updated_at: 2026-10-10T08:30:00Z
+updated_at: 2026-11-17T07:09:00Z
 parent: qou-avtq
 ---
 
@@ -377,3 +378,8 @@ Evidence: Blocked on `qou-cds1`, as its own last line says. `EigenphaseBarMixedD
 
 Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
 Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
+
+## 2026-11-17 — Round 53 formalization & probe witness (PR #8245, status: in-progress)
+
+- [x] PR #8245 (`dea5885f0b662330ff1d63757512b50427bbc370`): formalized `sleak_reparametrisation_bijective`, `kappa21_numerator_antipalindromic`, and `c3_bar_parity_from_odd_kappa` in `QOU/QBeta/ThetaKChannelC3BarParityAndHabiroRigidity.lean` (`0 sorry`, `0 axiom`, `0 vacuity`), proving `kappa_{(2,1)}` is bar-odd and `c_3 = -kappa*S` is bar-odd iff `S` is bar-even.
+- [ ] Awaiting Merge Manager integration and owner review (kept `in-progress` per no-unilateral-closure policy).

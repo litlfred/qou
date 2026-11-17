@@ -1,13 +1,14 @@
 ---
 # qou-b5h9
 title: 'OPEN: 8_11 (triton knot-ID) KVC is not in Murakami 3.3 - Ohtsuki machinery stops at 6 crossings, this is a paper'
-status: todo
+status: in-progress
+pr: 8245
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-25T19:18:13Z
-updated_at: 2026-10-04T15:13:24Z
+updated_at: 2026-11-17T07:09:00Z
 parent: qou-r9ih
 ---
 
@@ -247,3 +248,8 @@ Kashaev asymptotic prefactor for 8₁₁ is the part that stays open.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-30 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-11-17 — Round 53 formalization & probe witness (PR #8245, status: in-progress)
+
+- [x] PR #8245 (`dea5885f0b662330ff1d63757512b50427bbc370`): formalized `fermat_mod_nine_returns_pivot_on_units_and_zero_on_divisors`, `fermat_fails_on_non_pm_one_units_mod_nine_and_fifteen`, and `boundary_unit_self_inverse_identity` in `QOU/QBeta/CompositeModulusFermatAndFiveTwoChiralityFrame.lean` (`0 sorry`, `0 axiom`, `0 vacuity`), proving why composite Fermat inversion fails at `N = 9, 15` on non-`+/-1` units while coinciding with extended-Euclid on `+/-1` Whitehead face-incidence pivots.
+- [ ] Awaiting Merge Manager integration and owner review (kept `in-progress` per no-unilateral-closure policy).

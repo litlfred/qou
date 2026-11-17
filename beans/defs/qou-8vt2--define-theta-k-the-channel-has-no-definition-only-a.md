@@ -1,13 +1,14 @@
 ---
 # qou-8vt2
 title: 'DEFINE ϑ_K: the channel has no definition for it, only a docstring phrase'
-status: todo
+status: in-progress
+pr: 8245
 type: task
 priority: critical
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T00:00:00Z
-updated_at: 2026-10-10T08:30:00Z
+updated_at: 2026-11-17T07:09:00Z
 parent: qou-avtq
 ---
 
@@ -931,3 +932,8 @@ Evidence: The exclusions it relies on are sorry-free (real-sorry scan = 0): Chan
 
 Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
 Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
+
+## 2026-11-17 — Round 53 formalization & probe witness (PR #8245, status: in-progress)
+
+- [x] PR #8245 (`dea5885f0b662330ff1d63757512b50427bbc370`): formalized `harmonic_sign_flip_forces_diagonal_straddle` and `murakami_colour_boost_forces_n_eq_one` in `QOU/QBeta/ThetaKChannelC3BarParityAndHabiroRigidity.lean` (`0 sorry`, `0 axiom`, `0 vacuity`), backed by 80-dps witness `round53-thetak-c3-barparity-habiro-fermat-fivetwo.witness.json`.
+- [ ] Awaiting Merge Manager integration and owner review (kept `in-progress` per no-unilateral-closure policy).

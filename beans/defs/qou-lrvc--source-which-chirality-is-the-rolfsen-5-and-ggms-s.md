@@ -1,13 +1,14 @@
 ---
 # qou-lrvc
 title: 'SOURCE: which chirality is the Rolfsen 5₂ (and GGM''s S⁺/S⁻) in the derived (μ, λ, Im τ > 0) frame — needs a held table with its orientation convention'
-status: todo
+status: in-progress
+pr: 8245
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-07T09:54:34Z
-updated_at: 2026-10-04T15:24:35Z
+updated_at: 2026-11-17T07:09:00Z
 parent: qou-r9ih
 ---
 
@@ -22,3 +23,8 @@ STILL OPEN (do not close): which of GGM's S+/S- attaches to which chirality — 
 2026-09-07, second pass (owner uploads 7cc7e752: Dunfield math/9901120, GGM 2007.10190; both ingested). Two more held sources agree: Dunfield's revised Hatcher–Oertel table, notation following Rolfsen, gives 5_2 = K(3/7): {0,4,10} (probe assertion added, 9/9); and Garoufalidis–Zagier 2111.06645 §10 "Orientation conventions" state they use SnapPy's orientation convention for M_K with trace field and complex volume from SnapPy — so every GZ 5_2 quantity refers to SnapPy's 5_2 = the MIRROR of the derived triangulation. SnapPy's complex volume of 5_2 is 2.82812 - 3.02413 i (mirror: +3.02413 i); that sign is the one-line invariant a source must print to be pinned.
 
 STILL OPEN: GGM's S+/S- (the (96)/(97) factorisations). None of the four held GGM texts (2007.10190, 2012.00062, 2111.04763, 2208.14188) states an orientation or prints a signed v(5_2) or an A_{5_2}(x,y) in its sectioned text; inheritance from GZ by citation is not a held statement. Closes with one printed signed complex volume or A-polynomial in a GGM text.
+
+## 2026-11-17 — Round 53 formalization & probe witness (PR #8245, status: in-progress)
+
+- [x] PR #8245 (`dea5885f0b662330ff1d63757512b50427bbc370`): formalized `fivetwo_boundary_slopes_mirror_equivalence` and `apoly_52_specialization_and_reciprocal_asymmetry` in `QOU/QBeta/CompositeModulusFermatAndFiveTwoChiralityFrame.lean` (`0 sorry`, `0 axiom`, `0 vacuity`), proving the mirror equivalence between derived `K(7,3)` slopes `[-10,-4,0]` and SnapPy/Dunfield `5_2` slopes `[0,4,10]` and `A_{5_2}(L,M)` reciprocal reversal.
+- [ ] Awaiting Merge Manager integration and owner review (kept `in-progress` per no-unilateral-closure policy).
