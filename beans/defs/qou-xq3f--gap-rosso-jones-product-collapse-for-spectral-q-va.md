@@ -1,13 +1,13 @@
 ---
 # qou-xq3f
 title: 'GAP: Rosso-Jones product-collapse for spectral Q-value decomposition (Lean)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-22T19:36:58Z
-updated_at: 2026-10-04T15:20:23Z
+updated_at: 2026-11-17T08:44:47Z
 parent: b9cj
 ---
 
@@ -197,3 +197,11 @@ GENERAL-X TELESCOPE (research frontier) STARTED: MacdonaldTelescopeGeneralX.lean
 General-X BRICK 2 landed (sorry-free): schurElementPoly Q λ : ℝ[X] (cellFactorPoly per cell) + eval_schurElementPoly ((schurElementPoly Q λ).eval X0 = schurElement Q X0 λ). Proves schurElement Q · λ is a genuine polynomial in X, via WenzlSchurElementBridge.schurElement_eq_finset_prod + Polynomial.eval_prod/eval_mul/eval_C/eval_X + ring. #print axioms = [propext, Classical.choice, Quot.sound]. Remaining: brick 3 (un-normalised X=Q^r agreement Σ f_λ s_λ(Q,Q^r) = Z_n from SchurWeyl.sum_dim_wenzlWeight_eq_one + bridge) and brick 4 (assembly via eq_of_infinite_eval_eq).
 
 GENERAL-X TELESCOPE COMPLETE (sorry-free, all 4 bricks): telescope_generalX proves Σ_{|ν|=n} f^ν·schurElement Q X ν.rowLens = ((1-X)/(1-Q))^n for ALL X (Q>1) -- the corpus previously had it only at X=Q^r. Route: bricks 1 (powers_infinite), 2 (schurElementPoly + eval_schurElementPoly, the ℝ[X] lift), 3 (sum_dim_schurElement_rowLens_eq, un-normalised X=Q^r agreement via sum_dim_wenzlWeight_eq_one + bridge), 4 (telescopeLHS/RHSPoly + eval lemmas + levelBracket_succ_ne_zero + eq_of_infinite_eval_eq over {Q^{r+1}}). All #print axioms = [propext, Classical.choice, Quot.sound]. This generalises the conditional jonesMarkov_normalisation_of_telescope's hypothesis to free X.
+
+
+## Round 81 Execution Note (2026-11-17T08:44:47Z)
+
+- **Status**: `in-progress` (PR awaiting merge; no unilateral closure).
+- **PR**: [`litlfred/qou#8288`](https://github.com/litlfred/qou/pull/8288) (`feat/qou-b9cj-6poy-q64u-regz-w3eg-xq3f`, HEAD `3f9d9bb7e2af7c3353cc2779b429d84aae572cda`).
+- **Lean Module**: `folio/quantum-observable-universe/lean/QOU/QBeta/NeumannZagierDeterminantAndVassilievMilnorBrick.lean` (wired into `QOU.lean`, compiled with Lean 4.24.0, 0 findings across all 7 static Lean audits).
+- **80-dps Probe & Witness**: `computations/probes/neumann_zagier_determinant_and_vassiliev_milnor_brick_probe.py` & `computations/probes/neumann-zagier-determinant-and-vassiliev-milnor-brick.witness.json` (`scriptCommitSha = b4b438fbfa2d06efdb0e7b096ec45a7a03973e2b`, `scriptHash = cf7e93178098`, `outputHash = c7210b5eb72906d3c61c7e19a0c46a0a3457be0f703d99c7dd7475108da381b1`).

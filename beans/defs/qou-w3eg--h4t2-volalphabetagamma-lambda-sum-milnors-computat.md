@@ -1,13 +1,13 @@
 ---
 # qou-w3eg
 title: 'H4/T2: Vol(alpha,beta,gamma) = Lambda-sum — Milnor''s computation, decomposed into H4-1..H4-5'
-status: todo
+status: in-progress
 type: task
 priority: medium
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T17:40:00Z
-updated_at: 2026-10-04T15:14:33Z
+updated_at: 2026-11-17T08:44:47Z
 parent: b9cj
 ---
 
@@ -1137,3 +1137,11 @@ that used to sit beside that question is gone.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-12 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## Round 81 Execution Note (2026-11-17T08:44:47Z)
+
+- **Status**: `in-progress` (PR awaiting merge; no unilateral closure).
+- **PR**: [`litlfred/qou#8288`](https://github.com/litlfred/qou/pull/8288) (`feat/qou-b9cj-6poy-q64u-regz-w3eg-xq3f`, HEAD `3f9d9bb7e2af7c3353cc2779b429d84aae572cda`).
+- **Lean Module**: `folio/quantum-observable-universe/lean/QOU/QBeta/NeumannZagierDeterminantAndVassilievMilnorBrick.lean` (wired into `QOU.lean`, compiled with Lean 4.24.0, 0 findings across all 7 static Lean audits).
+- **80-dps Probe & Witness**: `computations/probes/neumann_zagier_determinant_and_vassiliev_milnor_brick_probe.py` & `computations/probes/neumann-zagier-determinant-and-vassiliev-milnor-brick.witness.json` (`scriptCommitSha = b4b438fbfa2d06efdb0e7b096ec45a7a03973e2b`, `scriptHash = cf7e93178098`, `outputHash = c7210b5eb72906d3c61c7e19a0c46a0a3457be0f703d99c7dd7475108da381b1`).
