@@ -1,7 +1,7 @@
 ---
 # fybg
 title: Derive `hc` and `hτ` in OneLoopPrefactorInvariance from the four analytic theorems (the successor to qou-mlgp)
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -1759,3 +1759,6 @@ claim rather than prose.
 
 
 Also known as `qou-fybg` (its former front-matter header id; the beans CLI uses the filename id `fybg`). Recorded 2026-10-04.
+
+### Progress (Round 74 — PR litlfred/qou#8322)
+- Formalized in PR `litlfred/qou#8322` (`feat/round74-kashaev-stokes3-stokesamp-ohtsukinz-pauli-43c1`, Commit 1 `82ec77a3b69cc6d79a85c01e64b63d422fa51c45`, Head `d13ffedea3175ba61da12a5b2abf5cf08d471608`, `scriptHash: 79ed375a0246`).

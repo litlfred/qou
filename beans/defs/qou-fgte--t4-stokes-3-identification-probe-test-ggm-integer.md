@@ -1,7 +1,7 @@
 ---
 # qou-fgte
 title: 'T4: Stokes-3 identification probe — test GGM integer A_ω=3 against corpus κ-tower amplitude 2πC_n→3'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -38,3 +38,6 @@ Evidence: The large-order fit re-run reproduces the witness: A_ratio 0.6557, Ait
 
 Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
 Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
+
+### Progress (Round 74 — PR litlfred/qou#8322)
+- Formalized in PR `litlfred/qou#8322` (`feat/round74-kashaev-stokes3-stokesamp-ohtsukinz-pauli-43c1`, Commit 1 `82ec77a3b69cc6d79a85c01e64b63d422fa51c45`, Head `d13ffedea3175ba61da12a5b2abf5cf08d471608`, `scriptHash: 79ed375a0246`).

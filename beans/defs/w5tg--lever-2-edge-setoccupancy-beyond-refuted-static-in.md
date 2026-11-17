@@ -1,7 +1,7 @@
 ---
 # w5tg
 title: 'Lever 2: edge-set/occupancy beyond refuted static-integer graph (halo-D + magic-α blockers)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -34,3 +34,6 @@ genuine Z·N p–n occupancy gate (owner-gated to the s5-so3 keystone) is untouc
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-06-23 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+### Progress (Round 74 — PR litlfred/qou#8322)
+- Formalized in PR `litlfred/qou#8322` (`feat/round74-kashaev-stokes3-stokesamp-ohtsukinz-pauli-43c1`, Commit 1 `82ec77a3b69cc6d79a85c01e64b63d422fa51c45`, Head `d13ffedea3175ba61da12a5b2abf5cf08d471608`, `scriptHash: 79ed375a0246`).

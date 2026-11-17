@@ -1,7 +1,7 @@
 ---
 # qou-yh67
 title: 'GAP: derive boost-enhancement A≈2.05 (c=√A≈1.4305) from substrate — distinct angle: NZ ½ potential normalization κ_shape/κ_pot=2 + precision-ceiling prune'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -92,3 +92,6 @@ Evidence: `ObservableComplexVolumeVsFullPotential.lean` (Φ=2𝔙) and `OhtsukiN
 
 Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
 Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
+
+### Progress (Round 74 — PR litlfred/qou#8322)
+- Formalized in PR `litlfred/qou#8322` (`feat/round74-kashaev-stokes3-stokesamp-ohtsukinz-pauli-43c1`, Commit 1 `82ec77a3b69cc6d79a85c01e64b63d422fa51c45`, Head `d13ffedea3175ba61da12a5b2abf5cf08d471608`, `scriptHash: 79ed375a0246`).
