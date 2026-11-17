@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "1.0",
+  "brick": "QOU.QBeta.BipartitionTransseriesAndCubicDimensionKernelBrick",
+  "beans": [
+    "qou-m0bv",
+    "qou-m6gp",
+    "qou-mbz4",
+    "qou-mdbh",
+    "qou-mssy"
+  ],
+  "scriptPath": "computations/probes/bipartition_transseries_and_cubic_dimension_kernel_brick_probe.py",
+  "scriptHash": "32d87400ca3e",
+  "scriptCommitSha": "8f8dea148e5d18062bf5f60f5fe87aa6b8293b89",
+  "dirty": false,
+  "generatedAt": "2026-11-17T12:19:53.818426+00:00",
+  "precisionDps": 80,
+  "allPassed": true,
+  "checks": {
+    "qou_m0bv_non_degenerate_witness_margin": {
+      "theorem": "nonDegenerateExcessPair_degenerate_gap_and_sum",
+      "protonMassExcessMeV": "8.03e+2",
+      "degenerateGapResidual": "0.0",
+      "excessSumResidual": "0.0",
+      "compositeMassResidual": "0.0",
+      "compositeCrossingResidual": "0.0",
+      "passed": true
+    },
+    "qou_m6gp_closure_volume_deficit": {
+      "theorem": "closureVolumeDeficit_telescoping_and_disjoint_zero",
+      "figureEightVolume80dps": "6.0896496384579217501272153256471217156501358451817987521049346406595848575494641",
+      "twoBodyDeficit": "-4.21875e-1",
+      "threeBodyTotalDeficit": "-7.34375e-1",
+      "telescopingResidual": "0.0",
+      "disjointUnionResidual": "0.0",
+      "perturbationShiftResidual": "0.0",
+      "passed": true
+    },
+    "qou_mbz4_bipartition_transseries": {
+      "theorem": "bipartitionTransseries_nonperturbative_lift_and_parity_average",
+      "transseriesPositiveSector": "1.7407569137733424476768778173646296253722992975842143409321809212161005803071357e+1",
+      "transseriesNegativeSector": "1.6592430862266575523231221826353703746277007024157856590678190787838994196928643e+1",
+      "nonperturbativeLiftResidual": "1.2123527634715101708000860158960521858866455589723783682589427478874365934615224e-80",
+      "parityAverageResidual": "0.0",
+      "modeLinearityResidual": "0.0",
+      "passed": true
+    },
+    "qou_mdbh_cubic_dimension_kernel_excess": {
+      "theorem": "dimSquaredCubedKernelPair_excess_factorization_and_trivial_rep",
+      "maxFactorizationResidual": "0.0",
+      "maxObservableLinearityResidual": "0.0",
+      "trivialRepFixedPointResidual": "0.0",
+      "passed": true
+    },
+    "qou_mssy_winding_cross_form": {
+      "theorem": "windingCrossForm_expanded_and_inversion_even",
+      "crossFormAt7Minus3": "-3.3e+1",
+      "expansionResidual": "0.0",
+      "inversionSymmetryResidual": "0.0",
+      "meridianShiftResidual": "0.0",
+      "zeroLongitudeResidual": "0.0",
+      "passed": true
+    }
+  }
+}
