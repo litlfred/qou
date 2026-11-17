@@ -1,7 +1,7 @@
 ---
 # qou-qcy6
 title: 'TOOL: proof-underdetermined-product — free class fields that occur only as a product'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -171,3 +171,8 @@ each wants the citing carrier read before a verdict.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-06 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Progress Update (Round 58 — PR #8304)
+- **Status:** `in-progress` (opened `litlfred/qou#8304`, branch `claude/round58-devacuify-6qbv-b9cj`, HEAD `e72e4e04168ffebca669be8e58b6df711ee7f5ed`, C1 `e3528dd09222e2ddccf5556168d0aa31aca7f5d7`).
+- **Target:** `folio/quantum-observable-universe/lean/QOU/ProofHygiene/SelfAssumingContexts.lean` + 80-dps witness `computations/probes/round58-devacuify-6qbv-b9cj.witness.json` (`scriptHash = a44d91e59ddc`, `allPassed = true`, `0` `float64`).
+- **Updated at:** `2026-11-17T10:34:25Z`.

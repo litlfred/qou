@@ -1,7 +1,7 @@
 ---
 # qou-6dzi
 title: triv_hecke and triv_wedderburn are globally registered PUnit instances that discharge real hypotheses by typeclass search
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -73,3 +73,8 @@ Three distinct things share the `WedderburnDecomp*` name; do not conflate them.
 [ ] 3. Decide whether this class family is still wanted at all now that
        `QOU/Hecke/*` carries a genuine `HeckeAlgebra` class with real
        instances at n = 2, 3, 4 (PR #4857).
+
+## Progress Update (Round 58 — PR #8304)
+- **Status:** `in-progress` (opened `litlfred/qou#8304`, branch `claude/round58-devacuify-6qbv-b9cj`, HEAD `e72e4e04168ffebca669be8e58b6df711ee7f5ed`, C1 `e3528dd09222e2ddccf5556168d0aa31aca7f5d7`).
+- **Target:** `folio/quantum-observable-universe/lean/QOU/Hecke/Wedderburn.lean` + 80-dps witness `computations/probes/round58-devacuify-6qbv-b9cj.witness.json` (`scriptHash = a44d91e59ddc`, `allPassed = true`, `0` `float64`).
+- **Updated at:** `2026-11-17T10:34:25Z`.
