@@ -1,13 +1,14 @@
 ---
 # qou-72f8
 title: qou_mass canonical_trm_reference looks for its witness in _internal/ where none exists
-status: todo
+status: in-progress
+pr: 8248
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-13T11:12:49Z
-updated_at: 2026-10-04T15:23:06Z
+updated_at: 2026-11-17T07:18:00Z
 parent: qou-5vkl
 ---
 
@@ -65,3 +66,8 @@ re-run whatever `markov_weights_symbolic` feeds and diff.
 
 `qou-y4gi` — the same module family validates the pin but not the intra-nucleon
 ordering, which is the deeper version of this. `qou-4383` — where it surfaced.
+
+## Progress (2026-11-17, PR #8248)
+
+- [x] Update `_rows_for_pin()` in `computations/canonical_trm_reference.py` and `qou-mass/src/qou_mass/_internal/canonical_trm_reference.py` to search `(_HERE, _HERE.parent)` so the vendored `qou_mass/_internal/` module locates `atomic-tr-m-mpfr-50dps*.witness.json` in `qou_mass/` (PR #8248, Commit 1 `d3dcd4c4757a988299ad0246ed502bd2358a90e4`).
+- [ ] Merge PR #8248 (`claude/round53-trd0-9nnz-fixes`, HEAD `b4185f1dac70a76b08299e291f3137fb9b60fe3c`)

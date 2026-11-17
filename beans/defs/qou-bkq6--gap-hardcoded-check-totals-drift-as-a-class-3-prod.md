@@ -1,13 +1,14 @@
 ---
 # qou-bkq6
 title: 'GAP: hardcoded check totals drift as a class — 3 producers print N/N while N+1 checks execute'
-status: todo
+status: in-progress
+pr: 8248
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T14:35:10Z
-updated_at: 2026-10-04T15:20:04Z
+updated_at: 2026-11-17T07:18:00Z
 parent: qou-5vkl
 ---
 
@@ -53,3 +54,8 @@ recorded in, and re-run the three producers. Low risk: it changes one `data`
 integer per witness and no computed quantity. Default if nobody acts: the three
 witnesses keep a self-inconsistent tally, which is cosmetic but is exactly the
 kind of small wrongness that gets quoted later.
+
+## Progress (2026-11-17, PR #8248)
+
+- [x] Derive check totals dynamically from `len(_CHECKS)` in `qbeta_delta_bar_parity_probe.py` (16/16), `qbeta_nucleon_selection_rule_probe.py` (5/5), and `growing_width_cut_shape_exclusion_probe.py` (9/9) and regenerate all 3 witnesses (PR #8248, Commit 1 `d3dcd4c4757a988299ad0246ed502bd2358a90e4`, Commit 2 `b4185f1dac70a76b08299e291f3137fb9b60fe3c`).
+- [ ] Merge PR #8248 (`claude/round53-trd0-9nnz-fixes`, HEAD `b4185f1dac70a76b08299e291f3137fb9b60fe3c`)

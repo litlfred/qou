@@ -1,13 +1,14 @@
 ---
 # qou-mt4n
 title: 'S2 follow-up: make the hecke-gram schema contract actually execute'
-status: todo
+status: in-progress
+pr: 8248
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T11:39:42Z
-updated_at: 2026-10-04T15:24:16Z
+updated_at: 2026-11-17T07:18:00Z
 parent: qou-5vkl
 ---
 
@@ -79,3 +80,8 @@ Filed 2026-08-16 from an agent that could not reach the `beans` CLI.
 Relayed text corrected against the tree at merge `36080a4e21`; the
 correction is deliberate — filing the stale version would have sent the next
 agent to fix a schema that is already right.
+
+## Progress (2026-11-17, PR #8248)
+
+- [x] Scope the `hecke-gram` binary skip mark to subprocess-invoking tests in `tools/pyhecke/tests/test_rust_gram.py` and add 3 unconditional contract tests (`test_gram_schema_is_valid_and_requires_convention_d_keys`, `test_rust_gram_struct_fields_match_schema_contract`, `test_python_gram_certificate_validates_against_schema`) (PR #8248, Commit 1 `d3dcd4c4757a988299ad0246ed502bd2358a90e4`).
+- [ ] Merge PR #8248 (`claude/round53-trd0-9nnz-fixes`, HEAD `b4185f1dac70a76b08299e291f3137fb9b60fe3c`)
