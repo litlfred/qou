@@ -1,7 +1,7 @@
 ---
 # qou-hjf4
 title: Triage the 11 unread trivially-inhabiting-instance candidates
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -240,3 +240,6 @@ Was in-progress with no bean update since 2026-09-14 and no main commit naming i
 ## 2026-10-10 — pointer
 
 Tracked under carriers M2 and M10 of epic `qou-d8c7` "Mass endomorphism" (issue litlfred/qou#7547). Parent and status unchanged; the epic body lists what is still open for this item and where it sits in the attack-vector catalogue.
+
+## Round 57 Progress (PR litlfred/qou#8286)
+- Status updated to `in-progress` (`litlfred/qou#8286`, C1 `6c7a20f3289e7e0671ce65ef402e1a06fd77c443`, C2 `dce9c51d4a6cd8f2253c078180b4b77a6f7c1ed0`).

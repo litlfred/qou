@@ -1,7 +1,7 @@
 ---
 # qou-6poy
 title: 'GAP-3: derived R(q,x) q-difference weight kernel (formalize-first)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -45,3 +45,6 @@ derivation of `τ = tr B` (the s5-so3 / Beasley–Witten localization route, #25
 multi-session formalize-first effort best done with the Lean env online. This bean (qou-6poy) is
 now a pointer to z2bn; the two-scale substrate targets (per-bond `b*`, per-α-bond `b_αα`) from the
 GAP-1..4 arc are the binding-side inputs that `τ = tr B` must reproduce.
+
+## Round 57 Progress (PR litlfred/qou#8286)
+- Status updated to `in-progress` (`litlfred/qou#8286`, C1 `6c7a20f3289e7e0671ce65ef402e1a06fd77c443`, C2 `dce9c51d4a6cd8f2253c078180b4b77a6f7c1ed0`).

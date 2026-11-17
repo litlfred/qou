@@ -1,7 +1,7 @@
 ---
 # qou-y4ca
 title: Prove the two converses the iff-rename tranche left one-directional
-status: todo
+status: in-progress
 type: task
 priority: low
 created_at: 2026-10-10T07:29:24Z
@@ -301,3 +301,6 @@ been right by luck rather than by measurement.
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+## Round 57 Progress (PR litlfred/qou#8286)
+- Status updated to `in-progress` (`litlfred/qou#8286`, C1 `6c7a20f3289e7e0671ce65ef402e1a06fd77c443`, C2 `dce9c51d4a6cd8f2253c078180b4b77a6f7c1ed0`).

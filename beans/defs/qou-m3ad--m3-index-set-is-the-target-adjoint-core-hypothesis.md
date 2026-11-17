@@ -1,7 +1,7 @@
 ---
 # qou-m3ad
 title: 'M3: H_Ad is the dtMin projection (R1 is dtMax) -- not a re-description; but support is ONE data point and rival H_floor survives'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -227,3 +227,6 @@ Part 10 (2026-09-13): the pretzel's state integral is one-dimensional with facto
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-13 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Round 57 Progress (PR litlfred/qou#8286)
+- Status updated to `in-progress` (`litlfred/qou#8286`, C1 `6c7a20f3289e7e0671ce65ef402e1a06fd77c443`, C2 `dce9c51d4a6cd8f2253c078180b4b77a6f7c1ed0`).

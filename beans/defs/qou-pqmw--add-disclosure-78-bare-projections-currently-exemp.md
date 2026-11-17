@@ -1,7 +1,7 @@
 ---
 # qou-pqmw
 title: Add disclosure — 78 bare projections currently exempt (tracked, triage pending)
-status: todo
+status: in-progress
 type: task
 priority: low
 tags:
@@ -381,3 +381,6 @@ shapes (no longer resolves / derives / bundle built / gate / constructor /
 carrier unidentified / parametrised-and-documented). Recommend closing it, or
 re-scoping it to "re-run `scripts/pqmw-queue-recheck.py` after the next
 carrier-shape change".
+
+## Round 57 Progress (PR litlfred/qou#8286)
+- Status updated to `in-progress` (`litlfred/qou#8286`, C1 `6c7a20f3289e7e0671ce65ef402e1a06fd77c443`, C2 `dce9c51d4a6cd8f2253c078180b4b77a6f7c1ed0`).
