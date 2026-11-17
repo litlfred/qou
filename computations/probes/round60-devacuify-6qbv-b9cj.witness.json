@@ -1,0 +1,41 @@
+{
+  "schema": "qou.witness.v1",
+  "id": "round60-devacuify-6qbv-b9cj",
+  "probe": "round60_devacuify_6qbv_b9cj_probe.py",
+  "beans": [
+    "qou-085a",
+    "qou-mtc9",
+    "qou-qspc",
+    "qou-ffwk",
+    "qou-tmmt"
+  ],
+  "dps": 80,
+  "script": "computations/probes/round60_devacuify_6qbv_b9cj_probe.py",
+  "scriptHash": "5ae5e895aabe",
+  "scriptCommitSha": "34f4e81ce92a223fe50ad3f053d7dd8e42ad1eda",
+  "commit": "34f4e81ce92a223fe50ad3f053d7dd8e42ad1eda",
+  "allPassed": true,
+  "generatedAt": "2026-11-17T12:27:39.529714+00:00",
+  "results": {
+    "dps": 80,
+    "qou_085a_kernel_values_0_to_10": {
+      "0": "0",
+      "1": "0",
+      "2": "0",
+      "3": "-4",
+      "4": "-16",
+      "5": "-320",
+      "6": "-10400",
+      "7": "-163520",
+      "8": "-3224704",
+      "9": "-106339296",
+      "10": "-4722309120"
+    },
+    "qou_085a_syzygy_verified_count": "22",
+    "qou_mtc9_e_infinity_00": "1.0",
+    "qou_qspc_critical_line_product_abs_err": "0.0",
+    "qou_ffwk_unknot_residual": "0.0",
+    "qou_tmmt_residue_sum_err": "0.0",
+    "all_passed": true
+  }
+}
