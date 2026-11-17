@@ -1,7 +1,8 @@
 ---
 # g5t4
 title: 'Wire prop:confinement-local-constancy: needs confinement-level topology + shadow-price continuity formalization'
-status: todo
+status: in-progress
+pr: 8243
 type: task
 priority: low
 tags:
@@ -14,3 +15,5 @@ parent: qou-6qbv
 ---
 
 Blocked: closing it requires formalizing the confinement-level definition over the base-ring topology + continuity of the u_lambda(q) shadow prices (per prop:phase-boundary-variety). Do not fabricate a probe or add a trivializing hypothesis.
+
+- **Round 54 update (in-progress):** De-vacuified in PR `litlfred/qou#8243` (HEAD `1495a97d0656036c5fc7c664284a44d77939041e`), verified with Lean 4.24.0 (`0` `sorry`, `0` vacuity hits) and 80-dps `mpmath` witness.

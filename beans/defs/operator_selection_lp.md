@@ -1,7 +1,8 @@
 ---
 # operator_selection_lp
 title: operator selection lp missing hypotheses
-status: todo
+status: in-progress
+pr: 8243
 type: task
 priority: normal
 tags:
@@ -17,3 +18,5 @@ The `operator_selection_lp` theorem is unprovable. `OperatorSelectionLpContext` 
 
 
 Also known as `opsl` (its former front-matter header id; the beans CLI uses the filename id `operator_selection_lp`). Recorded 2026-10-04.
+
+- **Round 54 update (in-progress):** De-vacuified in PR `litlfred/qou#8243` (HEAD `1495a97d0656036c5fc7c664284a44d77939041e`), verified with Lean 4.24.0 (`0` `sorry`, `0` vacuity hits) and 80-dps `mpmath` witness.
