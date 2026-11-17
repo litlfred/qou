@@ -1,7 +1,7 @@
 ---
 # qou-k4zx
 title: 'GAP: are the six antipode axioms independent, and is the braiding instance over-applied?'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -115,3 +115,8 @@ manufacture forcings involving `involutive`.
   `lambda != eps`; no such model is in the corpus.
 - The braiding-instance over-application (six blanket-patched consumer files)
   is untouched by this measurement.
+
+## Progress Update (Round 59 — PR #8316)
+- **Status:** `in-progress` (opened `litlfred/qou#8316`, branch `claude/round59-devacuify-6qbv-b9cj`, HEAD `53b4a670e74a8018b8da97a71f572d818338e732`, C1 `76d4ce5f89f2c26a87c0da074bf6c76b37e0ea03`).
+- **Target:** `folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/AntipodeIndependence.lean` + 80-dps witness `computations/probes/round59-devacuify-6qbv-b9cj.witness.json` (`scriptHash = 80c9bce8d43a`, `allPassed = true`, `0` `float64`).
+- **Updated at:** `2026-11-17T10:55:34Z`.

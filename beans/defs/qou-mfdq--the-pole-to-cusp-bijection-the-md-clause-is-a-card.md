@@ -1,7 +1,7 @@
 ---
 # qou-mfdq
 title: 'The pole-to-cusp bijection: the .md clause is a cardinality mismatch, and the Lean named for it proves no bijection and no cusp'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -378,3 +378,8 @@ AGENTS.md's agent-memory figures are stale — it states "195-419 lines for
 MEMORY.md and 412-657 for the directory"; measured, `lean-verifier` is **721**
 and its directory **2484**, and three of five directories exceed the stated
 range. Not fixed here.
+
+## Progress Update (Round 59 — PR #8316)
+- **Status:** `in-progress` (opened `litlfred/qou#8316`, branch `claude/round59-devacuify-6qbv-b9cj`, HEAD `53b4a670e74a8018b8da97a71f572d818338e732`, C1 `76d4ce5f89f2c26a87c0da074bf6c76b37e0ea03`).
+- **Target:** `folio/quantum-observable-universe/lean/QOU/QBeta/QPochhammerPoles.lean` + 80-dps witness `computations/probes/round59-devacuify-6qbv-b9cj.witness.json` (`scriptHash = 80c9bce8d43a`, `allPassed = true`, `0` `float64`).
+- **Updated at:** `2026-11-17T10:55:34Z`.

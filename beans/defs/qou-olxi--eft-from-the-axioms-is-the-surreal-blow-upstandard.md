@@ -1,7 +1,7 @@
 ---
 # qou-olxi
 title: 'EFT from the axioms: is the surreal blow-up/standard-part calculus a Weinberg-Wilson effective-field-theory filter, and which EFT characteristics follow from the QOU axioms'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -19,3 +19,8 @@ QUEUED on owner request 2026-09-15 (exploratory; do not pivot). Owner question: 
 
 
 2026-09-15 ATTACK OPTION 1 RUN (owner: "do. as suggested"). The proposed theorem — connected m-body cumulant has ε-valuation ≥ m in ε = q − 1 — is FALSE, and the obstruction is an identity rather than a measurement: every bond factor is z_D + d_kind with z_D(1) = 1/2 and d_kind(0) = 0 for all three kinds (bond_factors_are_z_plus_d_probe), so at q = 1 every Mayer variable is −1/2 and b₃ = −φᵀ₃ = −5/8 ≠ 0 (b₄ = 79/64). ε-valuation 0. Lean: QOU/MassTheory/BondFactorClassicalFloor.lean (zD_one, bondFactor_classical, b3corpus_classical, b3_bondModel_classical; sorry-free). Probe: computations/probes/body_number_expansion_classical_floor_probe.py, 15/15, exact Fractions + two q₀ contrasts at the proton pin (jet remainder ratio q₀⁻² = 0.8117; bond factors at q₀: pp 0.6127, pn 0.5088, nn 0.4048). Content: rem:body-number-expansion-classical-floor (mass-theory, interprets prop:subset-cumulant-recursion). Scope (b) for the ordering IN ε (invariant z_D(1) = 1/2); says nothing against an ordering in another parameter. Conclusion for the EFT question: the framework's power counting is the JET-LEVEL series (ratio q⁻², already a theorem in the corpus); the body-number expansion at fixed q is an O(1)-weight lattice-gas cluster expansion, i.e. a Mayer–Ursell convergence question, not an EFT ordering. The corpus's c₀ classical floor (2^-A − 2^(1−2A)) is the same fact seen through Δ. Remaining open here: whether an ordering in some OTHER parameter exists (none proposed); the EFT remark block for the surreal/standard-part side is not written (no owner ask).
+
+## Progress Update (Round 59 — PR #8316)
+- **Status:** `in-progress` (opened `litlfred/qou#8316`, branch `claude/round59-devacuify-6qbv-b9cj`, HEAD `53b4a670e74a8018b8da97a71f572d818338e732`, C1 `76d4ce5f89f2c26a87c0da074bf6c76b37e0ea03`).
+- **Target:** `folio/quantum-observable-universe/lean/QOU/MassTheory/BondFactorClassicalFloor.lean` + 80-dps witness `computations/probes/round59-devacuify-6qbv-b9cj.witness.json` (`scriptHash = 80c9bce8d43a`, `allPassed = true`, `0` `float64`).
+- **Updated at:** `2026-11-17T10:55:34Z`.

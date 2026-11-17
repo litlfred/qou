@@ -1,7 +1,7 @@
 ---
 # qou-rutm
 title: 'Source a charge lattice for the 5_2 sigma: T[5_2] flavour lattice from 3d-3d (D1-b arrow test)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -422,3 +422,8 @@ non-degeneracy table asserts that count).
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-05 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Progress Update (Round 59 — PR #8316)
+- **Status:** `in-progress` (opened `litlfred/qou#8316`, branch `claude/round59-devacuify-6qbv-b9cj`, HEAD `53b4a670e74a8018b8da97a71f572d818338e732`, C1 `76d4ce5f89f2c26a87c0da074bf6c76b37e0ea03`).
+- **Target:** `folio/quantum-observable-universe/lean/QOU/QBeta/BarParityZeta4Swap.lean` + 80-dps witness `computations/probes/round59-devacuify-6qbv-b9cj.witness.json` (`scriptHash = 80c9bce8d43a`, `allPassed = true`, `0` `float64`).
+- **Updated at:** `2026-11-17T10:55:34Z`.
