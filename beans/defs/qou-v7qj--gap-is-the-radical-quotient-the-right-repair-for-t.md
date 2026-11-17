@@ -1,7 +1,7 @@
 ---
 # qou-v7qj
 title: 'GAP: is the radical quotient the right repair for the convention-D operator-selection LP?'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -175,3 +175,6 @@ Is the radical quotient the right repair for the convention-D operator-
 selection LP? Open mathematics downstream of D, not a C site. Live.
 
 Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.
+
+## Round 77 Progress (2026-11-17T12:34:08Z)
+- Advanced in PR `litlfred/qou#8342` (branch `feat/round77-uicgate-deuteron1st-ecatrad-polydom-magnusbound-43c1`, head `5cf054672f4eaf9dc177beab1666e1bca45dbc19`).
