@@ -1,0 +1,64 @@
+{
+  "probe": "round63_evans_berger_dedekind_zeta_morita_qairy_takata_apoly_probe.py",
+  "precisionDps": 80,
+  "scriptCommitSha": "9a495ebf1db3fb23652301cc6696fb6b1ad518cc",
+  "scriptHash": "ef10243d7f177353264d3d7fd96ff2086bd8394519725281f82d1e0ab1a50f3b",
+  "scriptSha256": "ef10243d7f177353264d3d7fd96ff2086bd8394519725281f82d1e0ab1a50f3b",
+  "beans": [
+    "qou-0seq",
+    "qou-2pp7",
+    "qou-cp1x",
+    "qou-dvqx",
+    "qou-e1me"
+  ],
+  "allPassed": true,
+  "results": {
+    "qou_0seq_evans_berger_triple_linking": {
+      "beanId": "qou-0seq",
+      "referenceKey": "evans-berger1992",
+      "continuousArnoldIntegral": "1.0",
+      "continuousIntegralResidual": "0.0",
+      "discreteBorromeanCommutator2x": 1,
+      "spectatorDecouplingResidual": 0,
+      "passed": true
+    },
+    "qou_2pp7_broadhurst_dedekind_zeta_volumes": {
+      "beanId": "qou-2pp7",
+      "referenceKey": "broadhurst1998",
+      "volFigureEight41": "2.02988321281930725004240510854904057188337861506059958403498",
+      "figureEightDedekindZetaResidual": "0.0",
+      "volWhiteheadL5a1": "3.66386237670887606021841405972953644309659749712668853706599",
+      "volBorromeanL6a4": "7.32772475341775212043682811945907288619319499425337707413198",
+      "whiteheadCatalanResidual": "8.43375835458441857947885924101601520616796910589480604006221e-81",
+      "borromeanDoubleWhiteheadResidual": "0.0",
+      "passed": true
+    },
+    "qou_cp1x_morita_ramanujan_qairy": {
+      "beanId": "qou-cp1x",
+      "referenceKey": "morita-t2011",
+      "wParam": "0.0529",
+      "recenteredPhiN": "-1.1298240867958833065563261451652762595911067865686 + 0.90058813008805681248582990896913164195639923418187i",
+      "recenteringResidual": "1.68675167091688371589577184820320304123359382117896120801244e-79",
+      "moritaTwoThetaDecompResidual": "7.60208704808173152041391020451818122217565755127325211510886e-81",
+      "passed": true
+    },
+    "qou_dvqx_takata_le_twist_knot_aj": {
+      "beanId": "qou-dvqx",
+      "referenceKey": "takata2004",
+      "companionKey": "le2006",
+      "fiveTwoAPolySample": "0.5162032458517952 + -3.1199654865332304i",
+      "traceAtM1Residual": "2.10843958864610464486971481025400380154199227647370151001555e-81",
+      "detAtM1Residual": "0.0",
+      "fiveTwoAtM1FactorResidual": "9.007257871084036425199176886101343122374912681907975137405e-81",
+      "passed": true
+    },
+    "qou_e1me_takata_fourone_apoly_seed": {
+      "beanId": "qou-e1me",
+      "referenceKey": "takata2004",
+      "fig8TakataAtMinusL": "-0.0628585452 + -0.5126404516i",
+      "ccglsBalancedMatchResidual": "1.05421979432305232243485740512700190077099613823685075500778e-81",
+      "fig8AtM1DoubleRootResidual": "1.05421979432305232243485740512700190077099613823685075500778e-81",
+      "passed": true
+    }
+  }
+}
