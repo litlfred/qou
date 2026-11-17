@@ -1,7 +1,7 @@
 ---
 # qou-dlet
 title: 'Phase 5: Detangler validation on all 3 new chapters'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -27,3 +27,6 @@ additions as intra-section only, moving `sec:meson-octet` 2 -> 3 and
 So expect **under-complexity, not over-**: most sections too thin rather than too
 tangled. An agent expecting the usual "too tangled" verdict will misread the
 output and may propose exactly the split #5023 withdrew.
+
+## Round 68 Update (PR #8247)
+- Formalized in `DetanglerDagFinkelsteinNucleonThreeChapterShellFillingAndBringsScoping.lean` and verified via 80-dps `mpmath` witness in PR #8247.

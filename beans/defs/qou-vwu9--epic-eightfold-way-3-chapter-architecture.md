@@ -1,7 +1,7 @@
 ---
 # qou-vwu9
 title: Eightfold Way 3-Chapter Architecture
-status: todo
+status: in-progress
 type: feature
 priority: normal
 tags:
@@ -14,3 +14,6 @@ parent: qou-8lxd
 
 
 Former title (before 2026-10-04, when this became a story under a programme epic): Epic: Eightfold Way 3-Chapter Architecture
+
+## Round 68 Update (PR #8247)
+- Formalized in `DetanglerDagFinkelsteinNucleonThreeChapterShellFillingAndBringsScoping.lean` and verified via 80-dps `mpmath` witness in PR #8247.

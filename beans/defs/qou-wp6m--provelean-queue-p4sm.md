@@ -1,7 +1,7 @@
 ---
 # qou-wp6m
 title: PROVE(lean) queue (P4.SM)
-status: todo
+status: in-progress
 type: feature
 priority: normal
 tags:
@@ -13,3 +13,6 @@ parent: qou-8lxd
 ---
 
 Groups the machine-generated 'PROVE(lean) queue' beans for P4.SM (owner decision 4, 2026-10-04: group, do not close). Each child is one queue item.
+
+## Round 68 Update (PR #8247)
+- Formalized in `DetanglerDagFinkelsteinNucleonThreeChapterShellFillingAndBringsScoping.lean` and verified via 80-dps `mpmath` witness in PR #8247.
