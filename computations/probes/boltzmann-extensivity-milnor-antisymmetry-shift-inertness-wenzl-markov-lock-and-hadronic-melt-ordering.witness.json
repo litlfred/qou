@@ -1,0 +1,65 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "dps": "80",
+  "computedAt": "2026-11-17T07:43:09.186088+00:00",
+  "commitSha": "83f7ff931c7cc699e6338421bf57c15a92f557d2",
+  "scriptCommitSha": "83f7ff931c7cc699e6338421bf57c15a92f557d2",
+  "scriptHash": "6d6a6f5a2d13",
+  "allPassed": true,
+  "assertions": [
+    {
+      "name": "qou_d5e8_boltzmann_log_extensivity_and_linear_bilinear_defect",
+      "computed": "-300682873320:-245341752440",
+      "expected": "-300682873320:-245341752440",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.BoltzmannExtensivityMilnorAntisymmetryShiftInertnessWenzlMarkovLockAndHadronicMeltOrdering.linear_extensivity_defect_closed_form_and_conventions"
+    },
+    {
+      "name": "qou_lq6k_milnor_antisymmetry_kills_symmetric_pair_projection",
+      "computed": "0/1:7/3",
+      "expected": "0/1:7/3",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.BoltzmannExtensivityMilnorAntisymmetryShiftInertnessWenzlMarkovLockAndHadronicMeltOrdering.milnor_antisymmetry_kills_symmetric_pair_projection"
+    },
+    {
+      "name": "qou_tqfm_shift_inert_self_residual_and_colour_shift_discrepancy",
+      "computed": "99869:24000000",
+      "expected": "99869:24000000",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.BoltzmannExtensivityMilnorAntisymmetryShiftInertnessWenzlMarkovLockAndHadronicMeltOrdering.colour_weighted_minus_blind_shift_ne_zero"
+    },
+    {
+      "name": "qou_ughq_h2_markov_stabilization_uniquely_locks_wenzl_weight",
+      "computed": "13857207176168621999:30969213441649900000",
+      "expected": "13857207176168621999:30969213441649900000",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.BoltzmannExtensivityMilnorAntisymmetryShiftInertnessWenzlMarkovLockAndHadronicMeltOrdering.h2_markov_stabilization_uniquely_locks_wenzl_weight"
+    },
+    {
+      "name": "qou_vvv4_convention_d_positivity_convention_c_ceiling_and_melt_hierarchy",
+      "computed": "4982072203277004480160000:1",
+      "expected": "4982072203277004480160000:1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.BoltzmannExtensivityMilnorAntisymmetryShiftInertnessWenzlMarkovLockAndHadronicMeltOrdering.convention_d_positivity_convention_c_ceiling_and_melt_hierarchy"
+    }
+  ],
+  "invocation": {
+    "argv": [
+      "computations/probes/boltzmann_extensivity_milnor_antisymmetry_shift_inertness_wenzl_markov_lock_and_hadronic_melt_ordering_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/boltzmann_extensivity_milnor_antisymmetry_shift_inertness_wenzl_markov_lock_and_hadronic_melt_ordering_probe.py"
+  },
+  "description": "Exact 80-dps mpmath and Fraction verification for qou-d5e8, qou-lq6k, qou-tqfm, qou-ughq, and qou-vvv4 under epic qou-10v9.",
+  "data": {
+    "q_gold_80dps": "0.38196601125010515179541316563436188227969082",
+    "q_melt_80dps": "0.465571231876768026656731225219939108025577568",
+    "psi_supergolden_80dps": "1.46557123187676802665673122521993910802557757",
+    "y21_convention_d_at_q0": "0.247297808636321524547531478300094699514000914"
+  }
+}
