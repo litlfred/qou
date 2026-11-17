@@ -64,12 +64,16 @@ class Term7ShellCorrectionClass : Prop where
       output (binding-enhancing sign from shell-closure quorum). -/
   alpha5_derived : ∃ a : ℝ, a < 0 ∧ a = alpha5_value
 
-/-- **Term 7 conditional theorem (sorry-free).** Given the class,
-    the shell correction has the binding-enhancing sign and
-    matches the carrier value. -/
+/-- **Term 7 conditional theorem (sorry-free).** Given the class and any
+    positive level-5 character weight `chi5 > 0`, the Term-7 shell correction
+    `a * chi5` is strictly negative (binding-enhancing) and `a` matches the
+    carrier value `alpha5_value`. -/
 -- Ref: [leitner2026] conj:shell-correction-term-seven
-theorem term7_structural [hT : Term7ShellCorrectionClass] :
-    ∃ a : ℝ, a < 0 ∧ a = alpha5_value := hT.alpha5_derived
+theorem term7_structural [hT : Term7ShellCorrectionClass]
+    {chi5 : ℝ} (hchi : 0 < chi5) :
+    ∃ a : ℝ, a < 0 ∧ a = alpha5_value ∧ a * chi5 < 0 := by
+  obtain ⟨a, ha_neg, ha_eq⟩ := hT.alpha5_derived
+  exact ⟨a, ha_neg, ha_eq, mul_neg_of_neg_of_pos ha_neg hchi⟩
 
 /-- **Term 7 — unconditional instance (sign witness only).**
 
@@ -89,8 +93,9 @@ instance term7ShellCorrectionInstance : Term7ShellCorrectionClass where
     · rfl
 
 theorem term7_structural_unconditional :
-    ∃ a : ℝ, a < 0 ∧ a = alpha5_value :=
-  term7_structural
+    ∃ a : ℝ, a < 0 ∧ a = alpha5_value := by
+  obtain ⟨a, ha_neg, ha_eq, _⟩ := term7_structural (chi5 := 1) one_pos
+  exact ⟨a, ha_neg, ha_eq⟩
 
 
 /-! ## Chirality factor (deuterium 1+h ansatz) -/
