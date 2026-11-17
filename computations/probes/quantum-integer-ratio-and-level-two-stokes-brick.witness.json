@@ -1,0 +1,49 @@
+{
+  "probe": "quantum_integer_ratio_and_level_two_stokes_brick_probe",
+  "beans": [
+    "qou-l2t2",
+    "qou-l39s",
+    "qou-l525",
+    "qou-li27",
+    "qou-lzzi"
+  ],
+  "leanModule": "folio/quantum-observable-universe/lean/QOU/QBeta/QuantumIntegerRatioAndLevelTwoStokesBrick.lean",
+  "precisionDps": "80",
+  "scriptCommitSha": "4d6630423af48b31069a83d2407a32bd592eec79",
+  "scriptHash": "6338ce4de659",
+  "dirty": false,
+  "generatedAt": "2026-11-17T11:59:13.235331+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "bean": "qou-l2t2",
+      "name": "qIntegerTwoThreePair_gap_cubic_and_normalization_shift",
+      "passed": true,
+      "conventionLogRatioShift80dps": "0.10376689163874704804990904101777649326867270233493632239166755200934630007916365"
+    },
+    {
+      "bean": "qou-l39s",
+      "name": "paritySignedDimPair_channel_projection_and_conjugate_flip",
+      "passed": true,
+      "s3SignedDimensionSum80dps": "0.0"
+    },
+    {
+      "bean": "qou-l525",
+      "name": "depthCommCost_stage_composition_and_bandwidth_split",
+      "passed": true,
+      "sampleDepthCommCost80dps": "115.0"
+    },
+    {
+      "bean": "qou-li27",
+      "name": "symmetryFoldedBlock_linearity_and_associativity",
+      "passed": true,
+      "foldedOrbitContraction80dps": "330.0"
+    },
+    {
+      "bean": "qou-lzzi",
+      "name": "unipotentThreeCompose_corner_commutator_and_inverse",
+      "passed": true,
+      "levelTwoCornerCommutator80dps": "38.0"
+    }
+  ]
+}
