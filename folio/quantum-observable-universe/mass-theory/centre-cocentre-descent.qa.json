@@ -1,0 +1,26 @@
+{
+  "$schema": "block-qa/v1",
+  "criteria": {
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "9a071454098d",
+          "ts": "103df2f54d19",
+          "lean": "d17a5617c0ed",
+          "lean_statement": "33892f77740b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-17T00:43:10.455Z",
+        "reviewed_sha": "0eba507a077106abc6597936dd5f1cfb3cff653b",
+        "severity": "minor",
+        "evidence": "Items 1-5 match sibling-Lean theorems (ref trace_eq_trace_desc covers item 3); item 6 is flagged unformalised. Item 7's step that the matrices give a representation of H_3(q) rests on an unformalised presentation; the proof says so, the statement does not."
+      }
+    ]
+  },
+  "updated_at": "2026-11-17T00:43:10.455Z"
+}

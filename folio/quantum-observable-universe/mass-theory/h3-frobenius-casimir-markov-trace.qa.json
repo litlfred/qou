@@ -1,0 +1,26 @@
+{
+  "$schema": "block-qa/v1",
+  "criteria": {
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "82a130ebb993",
+          "ts": "7d32f5e96b88",
+          "lean": "c3a2569f24df",
+          "lean_statement": "12d4d217aada"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-17T00:43:10.848Z",
+        "reviewed_sha": "0eba507a077106abc6597936dd5f1cfb3cff653b",
+        "severity": "minor",
+        "evidence": "tr_casimir_D covers item 3 under convention D; siblings cover the rest. The block-scalar fact c_lambda d_lambda is only checked (tr_casimir_blocks), not proved, and associativity of the K^6 model is not formalised; the statement does not flag either."
+      }
+    ]
+  },
+  "updated_at": "2026-11-17T00:43:10.848Z"
+}

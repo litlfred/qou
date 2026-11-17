@@ -1,0 +1,23 @@
+{
+  "$schema": "block-qa/v1",
+  "criteria": {
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f53a1251b5af",
+          "ts": "c274479c5de3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-17T00:43:10.959Z",
+        "reviewed_sha": "0eba507a077106abc6597936dd5f1cfb3cff653b",
+        "evidence": "Steps follow; a-function labelling with index rep (n) <-> a = binom(n,2) is consistent with the KL cell order used."
+      }
+    ]
+  },
+  "updated_at": "2026-11-17T00:43:10.959Z"
+}
