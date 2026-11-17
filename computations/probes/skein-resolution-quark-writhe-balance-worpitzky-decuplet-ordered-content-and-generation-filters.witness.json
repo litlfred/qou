@@ -1,0 +1,104 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-17T06:35:59.053646+00:00",
+  "commitSha": "0ba66fb78727206c81c4de7d28dade932a57381d",
+  "assertions": [
+    {
+      "name": "skein_depth_two_recursion_matches_leaf_expansion",
+      "computed": "5.3601087580683646477350126302393020441304692415224",
+      "expected": "5.3601087580683646477350126302393020441304692415224",
+      "passed": true,
+      "tolerance": "1e-48",
+      "source": "qou-skgn: depth-2 skein recursion equals expanded bilinear leaf combination"
+    },
+    {
+      "name": "skein_leaf_count_c4",
+      "computed": "16",
+      "expected": "16",
+      "passed": true,
+      "tolerance": "0",
+      "source": "qou-skgn: skeinResolutionLeafCount(4) = 2^4 = 16"
+    },
+    {
+      "name": "balanced_quark_braid_three_hypercharge",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "qou-jk6g: writhe-balanced single-quark braid word has L=0 and 3Y = 3(B-L) = 1"
+    },
+    {
+      "name": "unbalanced_positive_braid_three_hypercharge",
+      "computed": "-2",
+      "expected": "-2",
+      "passed": true,
+      "tolerance": "0",
+      "source": "qou-jk6g: unbalanced positive braid word has L=1 and 3Y = 1 - 3 = -2"
+    },
+    {
+      "name": "worpitzky_cubic_schur_weyl_at_n3",
+      "computed": "162.0",
+      "expected": "162.0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "qou-3oi0: 6*3^3 = 60 + 96 + 6 = 162"
+    },
+    {
+      "name": "decuplet_total_dimension_ten",
+      "computed": "10",
+      "expected": "10",
+      "passed": true,
+      "tolerance": "0",
+      "source": "qou-3oi0: 4 + 3 + 2 + 1 = 10 states across Y in {1, 0, -1, -2}"
+    },
+    {
+      "name": "ordered_bilinear_content_separates_strange_charm_swap",
+      "computed": "4.0",
+      "expected": "4.0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "qou-qneo: (n1*t1 + n2*t2) - (n1*t2 + n2*t1) = (n1-n2)(t1-t2) = 4 != 0"
+    },
+    {
+      "name": "three_generation_filters_432_hierarchy",
+      "computed": "432",
+      "expected": "432",
+      "passed": true,
+      "tolerance": "0",
+      "source": "qou-x4qm: Seifert genus<=4 gives 4, non-harmonic gives 3, S_5 divisibility gives 2"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "skein-resolution-quark-writhe-balance-worpitzky-decuplet-ordered-content-and-generation-filters",
+  "scriptFile": "skein_resolution_quark_writhe_balance_worpitzky_decuplet_ordered_content_and_generation_filters_probe.py",
+  "scriptHash": "6ef0f0c335a1",
+  "scriptCommitSha": "0ba66fb78727206c81c4de7d28dade932a57381d",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/skein_resolution_quark_writhe_balance_worpitzky_decuplet_ordered_content_and_generation_filters_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/skein_resolution_quark_writhe_balance_worpitzky_decuplet_ordered_content_and_generation_filters_probe.py"
+  },
+  "description": "60-dps mpmath verification of binary skein resolution leaf expansion (qou-skgn), writhe-balanced quark braid lepton number L=0 (qou-jk6g), Worpitzky's cubic Schur-Weyl identity and full SU(3) decuplet strangeness decomposition (qou-3oi0), ordered flavour-isospin bilinear separation (qou-qneo), and the 4/3/2 generation filter hierarchy on odd torus knots (qou-x4qm).",
+  "parameters": {
+    "dps": "60"
+  }
+}
