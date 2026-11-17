@@ -1,0 +1,94 @@
+{
+  "probe": "alpha_contact_expansion_hierarchy_imme_blindness_nonmonotone_block_probe",
+  "beans": [
+    "qou-3lsb",
+    "qou-3wxk",
+    "qou-ebs6",
+    "qou-se8k",
+    "qou-wdij"
+  ],
+  "dps": "50",
+  "scriptCommitSha": "61df9473171c72d1f0d18d060885e9375814a2ee",
+  "scriptHash": "7c5ecc3becf5",
+  "generatedAt": "2026-11-17T11:43:05.258900+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "qou_3lsb_alpha_contact_ceiling_n_alpha_3",
+      "bean": "qou-3lsb",
+      "nAlpha": "3",
+      "rigidMaxContacts": "3.0000000000000000000000000000000000000000000000000",
+      "completePairsScaled2": "6.0000000000000000000000000000000000000000000000000",
+      "excessScaled2": "0.0",
+      "prolateSubMaxContacts": "2.0000000000000000000000000000000000000000000000000",
+      "passed": true
+    },
+    {
+      "id": "qou_3lsb_alpha_contact_ceiling_n_alpha_4",
+      "bean": "qou-3lsb",
+      "nAlpha": "4",
+      "rigidMaxContacts": "6.0000000000000000000000000000000000000000000000000",
+      "completePairsScaled2": "12.000000000000000000000000000000000000000000000000",
+      "excessScaled2": "0.0",
+      "prolateSubMaxContacts": "5.0000000000000000000000000000000000000000000000000",
+      "passed": true
+    },
+    {
+      "id": "qou_3lsb_alpha_contact_ceiling_n_alpha_5",
+      "bean": "qou-3lsb",
+      "nAlpha": "5",
+      "rigidMaxContacts": "9.0000000000000000000000000000000000000000000000000",
+      "completePairsScaled2": "20.000000000000000000000000000000000000000000000000",
+      "excessScaled2": "2.0000000000000000000000000000000000000000000000000",
+      "prolateSubMaxContacts": "8.0000000000000000000000000000000000000000000000000",
+      "passed": true
+    },
+    {
+      "id": "qou_3lsb_alpha_contact_ceiling_n_alpha_6",
+      "bean": "qou-3lsb",
+      "nAlpha": "6",
+      "rigidMaxContacts": "12.000000000000000000000000000000000000000000000000",
+      "completePairsScaled2": "30.000000000000000000000000000000000000000000000000",
+      "excessScaled2": "6.0000000000000000000000000000000000000000000000000",
+      "prolateSubMaxContacts": "11.000000000000000000000000000000000000000000000000",
+      "passed": true
+    },
+    {
+      "id": "qou_ebs6_b_alpha_alpha_dof_and_spread",
+      "bean": "qou-ebs6",
+      "bAlphaAlphaC12MeV": "2.4250000000000000000000000000000000000000000000000",
+      "bAlphaAlphaO16MeV": "2.4060000000000000000000000000000000000000000000000",
+      "spreadMeV": "0.018999999999999999999999999999999999999999999999997",
+      "residualDOF": "1.0000000000000000000000000000000000000000000000000",
+      "passed": true
+    },
+    {
+      "id": "qou_3wxk_expansion_hierarchy_incommensurability",
+      "bean": "qou-3wxk",
+      "uQOU": "0.0085200000000000000000000000000000000000000000000000",
+      "chiralQOverLambda": "0.33000000000000000000000000000000000000000000000000",
+      "hierarchyRatio": "38.732394366197183098591549295774647887323943661972",
+      "hierarchySpread": "0.32148000000000000000000000000000000000000000000000",
+      "passed": true
+    },
+    {
+      "id": "qou_se8k_imme_differences_isoscalar_blindness",
+      "bean": "qou-se8k",
+      "secondDiffA1": "0.42999999999999999999999999999999999999999999999988",
+      "secondDiffA2": "0.42999999999999999999999999999999999999999999999475",
+      "thirdDiffA1": "0.00000059999999999999999999999999999999999999999998235678",
+      "thirdDiffA2": "0.00000059999999999999999999999999999999999999998390300428",
+      "passed": true
+    },
+    {
+      "id": "qou_wdij_borromean_nonmonotone_and_disjoint_block_series",
+      "bean": "qou-wdij",
+      "borromeanDescentSum": "4",
+      "groupedDescentSum": "0",
+      "fullBlockProductAtEps001": "0.25143098062500000000000000000000000000000000000000",
+      "truncatedQuadraticAtEps001": "0.25143125000000000000000000000000000000000000000000",
+      "cubicPlusQuarticRemainder": "-0.00000026937500000000000000000000000000000000000000000000",
+      "passed": true
+    }
+  ]
+}
