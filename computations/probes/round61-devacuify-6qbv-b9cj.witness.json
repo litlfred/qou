@@ -1,0 +1,56 @@
+{
+  "allPassed": true,
+  "dps": 80,
+  "probes": {
+    "qou-7yj0": {
+      "bean": "qou-7yj0",
+      "gap_identity_residual": "5.1445925962964953334821041370197692757624611545958316844379483562527744139932427e-79",
+      "h_quad_mev": "11.462654611158295944513272255567214660367737883362042176122354195116499648777096",
+      "neutron_net_mev": "919.16766380806950675914454624072130889938710352772992970646274300813916725203817",
+      "passed": true,
+      "proton_net_mev": "924.26217696858430495670600057652895985955054258700194845140601153930205598482799",
+      "q_value_mev": "4.5835142105147981975614543358076509601634390592720187449432685311628887327898206"
+    },
+    "qou-9w89": {
+      "bean": "qou-9w89",
+      "g_0_chi": "2",
+      "g_0_total": "2",
+      "g_1_chi": "0",
+      "g_1_total": "4",
+      "g_2_chi": "-2",
+      "g_2_total": "6",
+      "g_3_chi": "-4",
+      "g_3_total": "8",
+      "g_4_chi": "-6",
+      "g_4_total": "10",
+      "passed": true
+    },
+    "qou-a6vt": {
+      "bean": "qou-a6vt",
+      "initial_enstrophy": "12.5",
+      "passed": true,
+      "step_10_enstrophy": "1.7241379310344827586206896551724137931034482758620689655172413793103448275862069",
+      "strict_bound_B": "13.5"
+    },
+    "qou-ahss": {
+      "bean": "qou-ahss",
+      "eigenvalue_norm_sq": "5.0",
+      "passed": true,
+      "prime_q": "5.0",
+      "product_norm_sq": "25.0",
+      "residual_product": "0.0",
+      "residual_single": "0.0"
+    },
+    "qou-btq3": {
+      "bean": "qou-btq3",
+      "passed": true,
+      "trace_id_dim_3": "3.0",
+      "trace_id_dim_8": "8.0"
+    }
+  },
+  "round": "round61-devacuify-6qbv-b9cj",
+  "scriptCommitSha": "816a053a4c0acc1615409073b4c60709977b03d3",
+  "scriptHash": "a14d78688c22",
+  "scriptPath": "computations/probes/round61_devacuify_6qbv_b9cj_probe.py",
+  "scriptSha256": "a14d78688c225fdc784a3f3e56bd71591724a43e18149623fa5d0e52a09cf24d"
+}
