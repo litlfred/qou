@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "1.0",
+  "probe": "quantum_three_stokes_and_whitehead_winding_brick_probe",
+  "beans": [
+    "qou-hmr9",
+    "qou-nkm1",
+    "qou-r75d",
+    "qou-smyz",
+    "qou-thj7"
+  ],
+  "precisionDps": 80,
+  "qCanonical": "1.0670442670094260999209120230611007313991569425981",
+  "commitSha": "b7b0957534826afd08d6dc085fb417146f29739e",
+  "scriptCommitSha": "b7b0957534826afd08d6dc085fb417146f29739e",
+  "scriptSha256": "5b716ef4bfd0b0bd4b00840ab5d83506cc6c7650fd9ed41ebcfe52405e0a288e",
+  "generatedAt": "2026-11-17T08:17:40.357982+00:00",
+  "allPassed": true,
+  "assertions": [
+    {
+      "id": "qou-hmr9-icosahedral-fifth-quadratic-slack",
+      "bean": "qou-hmr9",
+      "passed": true,
+      "maxAbsError": "0.0",
+      "quadraticSlack": "0.79772798175259505860803427862697068"
+    },
+    {
+      "id": "qou-nkm1-qdim-three-stokes-cyclotomic",
+      "bean": "qou-nkm1",
+      "passed": true,
+      "maxAbsError": "2.6355494858076308061e-82",
+      "qDimThreeAtQ0": "3.0042125091505613359784355723382977"
+    },
+    {
+      "id": "qou-r75d-whitehead-four-catalan-and-saddle-balance",
+      "bean": "qou-r75d",
+      "passed": true,
+      "maxAbsError": "0.0",
+      "whiteheadVolume": "3.6638623767088760602184140597295364430965975"
+    },
+    {
+      "id": "qou-smyz-wedderburn-multiplicity-obstruction-excess",
+      "bean": "qou-smyz",
+      "passed": true,
+      "maxAbsError": "0.0",
+      "multiplicityExcess": 3
+    },
+    {
+      "id": "qou-thj7-deformed-meridian-winding-threshold",
+      "bean": "qou-thj7",
+      "passed": true,
+      "maxAbsError": "1.6867516709168837159e-80",
+      "windingSlack": "14.547457188925358665083517740598858"
+    }
+  ]
+}
