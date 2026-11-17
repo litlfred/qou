@@ -1,0 +1,61 @@
+{
+  "probe": "round58_devacuify_6qbv_b9cj_probe.py",
+  "scriptHash": "a44d91e59ddc",
+  "scriptSha256": "a44d91e59ddc7c8fe031b415663bd11d22c2d8c646f006549bbccfeb686cf39e",
+  "scriptCommitSha": "53ea614c819ecc4f18f77d9e66a811e5443d6b37",
+  "generatedAt": "2026-11-17T12:40:53.068880+00:00",
+  "precisionDps": "80",
+  "allPassed": true,
+  "beans": [
+    "qou-a30t",
+    "qou-qcy6",
+    "qou-6dzi",
+    "qou-ufm1",
+    "qou-ndt5"
+  ],
+  "results": [
+    {
+      "bean": "qou-a30t",
+      "module": "QOU.Habiro.FlowSolution",
+      "c1_error": "0.0",
+      "c2_recurrence_error": "0.0",
+      "fourier_eigenvalue_zero": "2.0",
+      "q_eq_one_lhs": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-qcy6",
+      "module": "QOU.ProofHygiene.SelfAssumingContexts",
+      "original_trace": "0.857142857142857142857142857143",
+      "rescaled_trace": "0.857142857142857142857142857143",
+      "max_abs_error": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-6dzi",
+      "module": "QOU.Hecke.Wedderburn",
+      "block_dims": [
+        "1",
+        "2",
+        "1"
+      ],
+      "weighted_sum_at_one": "1",
+      "passed": true
+    },
+    {
+      "bean": "qou-ufm1",
+      "module": "QOU.Archimedean.JetOrderIndependence",
+      "elimination_det": "1/16",
+      "matrix_det": "1/16",
+      "passed": true
+    },
+    {
+      "bean": "qou-ndt5",
+      "module": "QOU.BringsSurface.ColourCurveBarVsBranch",
+      "bar_odd_product_error": "2.6355494858076308061e-82",
+      "branch_sum_error": "2.1084395886461046449e-81",
+      "degeneration_locus_error": "4.2168791772922092897e-81",
+      "passed": true
+    }
+  ]
+}
