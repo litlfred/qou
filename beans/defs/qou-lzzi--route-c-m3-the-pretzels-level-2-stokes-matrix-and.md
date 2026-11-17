@@ -1,13 +1,13 @@
 ---
 # qou-lzzi
 title: 'Route C M3: the pretzel''s level-2 Stokes matrix and the s(x) adjoint-weight test'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-13T17:46:35Z
-updated_at: 2026-10-04T15:13:52Z
+updated_at: 2026-11-17T11:58:00Z
 parent: qou-v2om
 ---
 
@@ -133,3 +133,7 @@ untouched (G3 validates the operator pointwise at 2.2e-29 regardless).
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-13 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Round 89 Progress (`litlfred/qou#8334`)
+- **Lean 4.24.0 Module**: `folio/quantum-observable-universe/lean/QOU/QBeta/QuantumIntegerRatioAndLevelTwoStokesBrick.lean` (`0` `sorry`, `0` `axiom`, `0` warnings; `0` CRITICAL, `0` major, `0` advisory across all directory-mode static audits).
+- **80-dps Probe & Witness**: `computations/probes/quantum_integer_ratio_and_level_two_stokes_brick_probe.py` & `computations/probes/quantum-integer-ratio-and-level-two-stokes-brick.witness.json` (`scriptCommitSha = 4d6630423af48b31069a83d2407a32bd592eec79`, HEAD `c9d68807b57ef2cf531ca6340ce9802c12bf8d5d`, `allPassed = true`).
