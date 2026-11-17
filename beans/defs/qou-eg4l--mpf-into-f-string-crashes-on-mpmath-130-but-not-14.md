@@ -1,7 +1,8 @@
 ---
 # qou-eg4l
 title: mpf-into-f-string crashes on mpmath 1.3.0 but NOT 1.4.1 — one latent site, and my first detector returned 0 against a true 5646
-status: todo
+status: in-progress
+pr: 8189
 type: task
 priority: normal
 tags:
@@ -85,3 +86,7 @@ mpmath 1.3.0 and not 1.4.1 -- an environment/serialization defect. Keep open,
 re-home.
 
 Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.
+
+
+## Round 52 Progress
+- [x] PR https://github.com/litlfred/qou/pull/8189 (`523155d5604cc384f307eb1cb22785f1fded85da`): replaced `mpf.__format__` (`:.10f`, `:.2e`) sites with `mp.nstr(...)` in `computations/markov/markov_pipeline_cross_validator.py`, wired `record_upstream` + `w.add_upstream_records`, and regenerated `markov-pipeline-cross-validation.witness.json`.

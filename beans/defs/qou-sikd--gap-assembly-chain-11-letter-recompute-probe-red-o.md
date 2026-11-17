@@ -1,7 +1,8 @@
 ---
 # qou-sikd
 title: 'GAP: assembly_chain_11_letter_recompute_probe red on main (3/7) — LIVE literals predate the beta_Bor nucleon-word fix'
-status: todo
+status: in-progress
+pr: 8189
 type: task
 priority: normal
 tags:
@@ -33,3 +34,7 @@ NOT FIXED, deliberately. Two reasons. (1) It is a drain across producer witnesse
 NEXT HONEST STEP, for whoever picks this up: decide (owner call) whether 7db032fb48's element is canonical for the whole tr_M(p) consumer set. If yes, re-run those producers and make the probe READ its expectations from the witnesses instead of hardcoding literals -- the hardcoding is what let a 45 % change sit unnoticed. If no, 7db032fb48 needs revisiting instead.
 
 Cross-reference: docs/audits/2026-09-12-gamma-gamma-word-selection-step10.md section 7.
+
+
+## Round 52 Progress
+- [x] PR https://github.com/litlfred/qou/pull/8189 (`523155d5604cc384f307eb1cb22785f1fded85da`): updated `computations/markov/assembly_chain_11_letter_recompute_probe.py` to read `("p", "muon2022")`, `("n", "muon2022")`, and `PINS["muon2022"]` from `computations/atomic-tr-m-mpfr-50dps.witness.json` (7/7 assertions pass).

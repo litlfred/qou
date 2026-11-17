@@ -1,7 +1,8 @@
 ---
 # qou-gik1
 title: 'RED on main: probe_9b asserts a 1.96e-4 Jones/TL-vs-Wenzl trace gap that convention D closed to EXACTLY zero'
-status: todo
+status: in-progress
+pr: 8189
 type: task
 priority: normal
 tags:
@@ -103,3 +104,7 @@ regardless of what it measures.
 Blast radius checked: `wedderburn_lift_consistent_to_2em4` has **no consumer
 outside its own producer** (grep over `.py`/`.md`/`.ts`/`.json`, excluding the
 witness itself).
+
+
+## Round 52 Progress
+- [x] PR https://github.com/litlfred/qou/pull/8189 (`523155d5604cc384f307eb1cb22785f1fded85da`): updated `trace_convention_gap_recorded` in `probe_9b_perlambda_brane_tower.py` to `expected="0", tolerance="1e-40"` (`allPassed: true`, 0 raw float64) and tightened `wedderburn_lift_consistent_to_2em4` tolerance in `borromean_per_lambda_fr_probe.py` to `1e-40`.
