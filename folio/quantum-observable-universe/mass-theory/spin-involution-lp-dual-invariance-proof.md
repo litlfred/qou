@@ -38,26 +38,37 @@ The cost is $\sigma$-invariant: replacing $x$ by $\sigma(x)$
 does not change the objective.
 
 **Step 4 — σ relates the two LPs.**
-Define $\mathrm{LP}(\beta)$ to be the LP with input $\beta$.
-The net constraint $\tau(\beta^* \beta \cdot x) =
-n_{\mathrm{target}}(\beta)$ transforms under $x \mapsto
-\sigma(x)$ to
+Define $\mathrm{LP}(\beta)$ to be the LP with input $\beta$, and put
+$\gamma := \sigma(\beta)^*$. Since $\sigma$ is anti-multiplicative and
+commutes with $*$,
 
 $$
-  \tau(\beta^* \beta \cdot \sigma(x))
-  = \tau\bigl(\sigma(\sigma(\beta^*\beta) \cdot x)\bigr)
-  = \tau(\sigma(\beta)^* \sigma(\beta) \cdot x),
+  \sigma(\beta^*\beta) = \sigma(\beta)\,\sigma(\beta^*)
+  = \sigma(\beta)\,\sigma(\beta)^* = \gamma^*\gamma .
 $$
 
-where we used $\sigma(\beta^*\beta) = \sigma(\beta)^* \sigma(\beta)$
-(anti-multiplicativity preserves the involutive form $a^*a$
-when $\sigma$ is a $*$-involution; for the Hecke / Markov case
-this is the bar involution). Hence $\sigma$ is a bijection
+This is in general different from $\sigma(\beta)^*\sigma(\beta)$. The net
+constraint of $\mathrm{LP}(\beta)$ evaluated at $\sigma(x)$ is then, by
+involutivity, anti-multiplicativity, $\tau \circ \sigma = \tau$ and
+cyclicity,
+
+$$
+  \tau(\beta^*\beta \cdot \sigma(x))
+  = \tau\bigl(\sigma(x \cdot \sigma(\beta^*\beta))\bigr)
+  = \tau(\sigma(\beta^*\beta) \cdot x)
+  = \tau(\gamma^*\gamma \cdot x).
+$$
+
+So $x \mapsto \sigma(x)$ maps the feasible set of $\mathrm{LP}(\gamma)$
+onto that of $\mathrm{LP}(\beta)$, provided the right-hand sides agree,
+$n_{\mathrm{target}}(\gamma) = n_{\mathrm{target}}(\beta)$, which is the
+hypothesis of the statement. With Steps 2 and 3, $\sigma$ is a bijection
 between the feasible sets of $\mathrm{LP}(\beta)$ and
-$\mathrm{LP}(\sigma(\beta))$, preserving the objective.
+$\mathrm{LP}(\sigma(\beta)^*)$ that preserves the objective. (Lean:
+`net_constraint_transform`.)
 
 **Step 5 — LP-duality.**
-By Steps 2–4, $\mathrm{LP}(\beta)$ and $\mathrm{LP}(\sigma(\beta))$
+By Steps 2–4, $\mathrm{LP}(\beta)$ and $\mathrm{LP}(\sigma(\beta)^*)$
 have feasible sets in $\sigma$-bijection and the same
 $\sigma$-invariant cost; their primal optima coincide. By
 strong duality (which holds for Frobenius algebras structurally
@@ -65,7 +76,7 @@ strong duality (which holds for Frobenius algebras structurally
 the dual optima coincide. In particular,
 
 $$
-  y_0^*\bigl(\sigma(\beta)\bigr) = y_0^*(\beta). \qquad\square
+  y_0^*\bigl(\sigma(\beta)^*\bigr) = y_0^*(\beta). \qquad\square
 $$
 
 **Corollary (QOU instance — isospin invariance; NOT established).**

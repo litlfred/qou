@@ -7,8 +7,8 @@ $$
   \tau(\pi_\lambda \cdot x) \geq 0 \;\; \forall \lambda \in \Sigma
 $$
 
-*satisfies*
+*satisfies, whenever $n_{\mathrm{target}}(\sigma(\beta)^*) = n_{\mathrm{target}}(\beta)$,*
 
 $$
-  y_0^*\bigl(\sigma(\beta)\bigr) \;=\; y_0^*(\beta).
+  y_0^*\bigl(\sigma(\beta)^*\bigr) \;=\; y_0^*(\beta).
 $$
