@@ -1,14 +1,14 @@
 ---
 # qou-w0zn
 title: 'GAP: hup off-diagonal (DU-UD=I) on the Young lattice — the last brick of the RSK-free SW-3 route'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - close-candidate
 created_at: 2026-08-21T19:57:29Z
-updated_at: 2026-10-04T15:20:06Z
+updated_at: 2026-11-17T11:34:45Z
 parent: qou-1oif
 ---
 
@@ -184,3 +184,9 @@ compile — exactly as AGENTS.md says.
 Recorded here rather than quietly fixed because I put the defective pattern in
 this bean an hour earlier while correcting someone else's count, which is the
 fourth instance of this class in one session and the second one I authored.
+
+## Round 64 Progress (`lane-e667`)
+- Formalized `qou-7xt3`, `qou-ck0g`, `qou-em1j`, `qou-kbjc`, `qou-w0zn` in `QOU.Foundations.ThreeCellPosetOrbitSizeBarSymEigenvalueLengthGeneratingQBinomialUpDownWeyl` (`0` warnings, `0` `sorry`, `0 CRITICAL / 0 major / 0 advisory` across all 6 directory-mode static vacuity & borrowed-name audits).
+- Verified with 80-dps `mpmath` probe and 2-commit witness stamp (`COMMIT1 = 13e718201144523610e11912018cdb123e6155b3`, `COMMIT2 = 06940a10b90934e8a8d7233d592147be01aa5979`, `scriptHash = 01e1202f7b26`, `allPassed = true`).
+- Opened PR https://github.com/litlfred/qou/pull/8323 (`ready-to-merge`, `release`, `ready: 06940a10b90934e8a8d7233d592147be01aa5979`).
+- Keeping bean at `status: in-progress` pending merge and verification.
