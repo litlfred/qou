@@ -60,4 +60,13 @@ theorem continuous_substrate_evolution (q : ℝ) (hq : q > 0) :
     q + 1 > 1 := by
   linarith
 
+/-- Under canonical convention D (`z_D = q³ / (q² + 1)`), the `H₃` Gram matrix
+`gramMatrixD q` has vanishing determinant and annihilates `gramRadicalD q`
+identically for every `q : ℝ`, without requiring the supergolden threshold. -/
+theorem spectrahedral_phase_collapse_conventionD (q : ℝ) :
+    (gramMatrixD q).det = 0 ∧ (gramMatrixD q).mulVec (gramRadicalD q) = 0 := by
+  have hdet : (gramMatrixD q).det = 0 := gramMatrixD_det_eq_zero q
+  have hrad : (gramMatrixD q).mulVec (gramRadicalD q) = 0 := gramMatrixD_mulVec_radical q
+  exact ⟨hdet, hrad⟩
+
 end QOU.Archimedean

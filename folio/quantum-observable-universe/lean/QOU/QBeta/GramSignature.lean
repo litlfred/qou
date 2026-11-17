@@ -519,6 +519,20 @@ theorem mu_triplet_eq_one_sub_y21_of_radical (q z y₃ y₂₁ : R) (hs : q + q�
   rw [h, hy, mul_comm]
   exact mul_div_cancel_right₀ _ hs
 
+/-- Under `z * (q ^ 2 + 1) = q ^ 3` and `y₁₃ = 0`, the mixed-symmetry weight `y₂₁`
+satisfies `y₂₁ * (q + q⁻¹) ^ 2 = 1` (i.e. `y₂₁ = 1 / [2]_q²`). -/
+theorem y21_mul_two_q_sq_eq_one_of_radical (q z y₃ y₂₁ : R) (hq : q ≠ 0)
+    (hone : y₃ + 2 * y₂₁ + 0 = 1)
+    (hz : q * y₃ + (q - q⁻¹) * y₂₁ + (-q⁻¹) * 0 = z)
+    (hD : z * (q ^ 2 + 1) = q ^ 3) :
+    y₂₁ * (q + q⁻¹) ^ 2 = 1 := by
+  have hbranch : q - z = (q + q⁻¹) * y₂₁ := by
+    have h0 := mu_singlet_eq_branch q z y₃ y₂₁ 0 hone hz
+    simpa using h0
+  have hqinv : q * q⁻¹ = 1 := mul_inv_cancel₀ hq
+  linear_combination
+    -(q + q⁻¹) * hbranch - q⁻¹ * hD - (q ^ 2 - q * z - 1) * hqinv
+
 end Branching
 
 section AntisymmetricWeight

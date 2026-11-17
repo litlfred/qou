@@ -103,8 +103,10 @@ noncomputable def higgs_to_gauge_factor_ratio : ℝ :=
 /-- The ratio is positive (both factors are positive). -/
 theorem higgs_to_gauge_factor_ratio_pos :
     0 < higgs_to_gauge_factor_ratio := by
-  unfold higgs_to_gauge_factor_ratio
-  exact div_pos scalar_mass_factor_pos gauge_mass_factor_pos
+  dsimp [higgs_to_gauge_factor_ratio]
+  have hs : 0 < scalar_mass_factor := scalar_mass_factor_pos
+  have hg : 0 < gauge_mass_factor := gauge_mass_factor_pos
+  exact div_pos hs hg
 
 /-- The torus-knot mass classes form a 2-element type:
     {gauge bosons, scalar}. The `factors_distinct` field ensures
@@ -112,6 +114,16 @@ theorem higgs_to_gauge_factor_ratio_pos :
 theorem two_distinct_torus_mass_classes :
     gauge_mass_factor ≠ scalar_mass_factor :=
   factors_distinct
+
+/-- Because the gauge and scalar mass factors are distinct and positive,
+    their ratio `higgs_to_gauge_factor_ratio` cannot equal `1`. -/
+theorem higgs_to_gauge_factor_ratio_ne_one :
+    higgs_to_gauge_factor_ratio ≠ 1 := by
+  dsimp [higgs_to_gauge_factor_ratio]
+  have hg : gauge_mass_factor ≠ 0 := ne_of_gt gauge_mass_factor_pos
+  have hd : scalar_mass_factor ≠ gauge_mass_factor := Ne.symm factors_distinct
+  rw [ne_eq, div_eq_one_iff_eq hg]
+  exact hd
 
 end TorusKnotMass
 

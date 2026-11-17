@@ -77,19 +77,23 @@ into each shape-log yields `0`, for **any** `ε` and **any** meridian log-parame
 
 @[simp] theorem zeta0_r_pinch (ε β μ₁ μ₂ : R) :
     zeta0_r ε β (β + μ₁) (β + μ₂) β μ₁ μ₂ = 0 := by
-  unfold zeta0_r; ring
+  dsimp [zeta0_r]
+  ring
 
 @[simp] theorem zeta0_t_pinch (ε β μ₁ μ₂ : R) :
     zeta0_t ε β (β + μ₁) (β + μ₂) β μ₁ μ₂ = 0 := by
-  unfold zeta0_t; ring
+  dsimp [zeta0_t]
+  ring
 
 @[simp] theorem zeta0_l_pinch (ε β μ₁ μ₂ : R) :
     zeta0_l ε β (β + μ₁) (β + μ₂) β μ₁ μ₂ = 0 := by
-  unfold zeta0_l; ring
+  dsimp [zeta0_l]
+  ring
 
 @[simp] theorem zeta0_b_pinch (ε β μ₁ μ₂ : R) :
     zeta0_b ε β (β + μ₁) (β + μ₂) β μ₁ μ₂ = 0 := by
-  unfold zeta0_b; ring
+  dsimp [zeta0_b]
+  ring
 
 /-- **The octahedral `e₁` vanishes at the standard pinch.** -/
 theorem e1_pinch (ε β μ₁ μ₂ : R) :
@@ -97,7 +101,8 @@ theorem e1_pinch (ε β μ₁ μ₂ : R) :
        (zeta0_t ε β (β + μ₁) (β + μ₂) β μ₁ μ₂)
        (zeta0_l ε β (β + μ₁) (β + μ₂) β μ₁ μ₂)
        (zeta0_b ε β (β + μ₁) (β + μ₂) β μ₁ μ₂) = 0 := by
-  unfold e1 zeta0_r zeta0_t zeta0_l zeta0_b; ring
+  dsimp [e1, zeta0_r, zeta0_t, zeta0_l, zeta0_b]
+  ring
 
 /-- **The octahedral `e₂` (posited carrier of `g₂`) vanishes identically at the standard pinch.**
 So the four-shape octahedron has no four-distinct-shape content at the pinched trefoil, and `g₂`
@@ -107,7 +112,8 @@ theorem e2_pinch (ε β μ₁ μ₂ : R) :
        (zeta0_t ε β (β + μ₁) (β + μ₂) β μ₁ μ₂)
        (zeta0_l ε β (β + μ₁) (β + μ₂) β μ₁ μ₂)
        (zeta0_b ε β (β + μ₁) (β + μ₂) β μ₁ μ₂) = 0 := by
-  unfold e2 zeta0_r zeta0_t zeta0_l zeta0_b; ring
+  dsimp [e2, zeta0_r, zeta0_t, zeta0_l, zeta0_b]
+  ring
 
 /-! ## The octahedral gluing constraint (holds off the pinch too)
 
@@ -118,6 +124,18 @@ reason the collapse is simultaneous: the four are not independent. -/
 theorem octahedral_constraint (ε β₁ β₂ β₁' β₂' μ₁ μ₂ : R) :
     zeta0_r ε β₁ β₂ β₁' β₂' μ₁ μ₂ + zeta0_l ε β₁ β₂ β₁' β₂' μ₁ μ₂
       = zeta0_t ε β₁ β₂ β₁' β₂' μ₁ μ₂ + zeta0_b ε β₁ β₂ β₁' β₂' μ₁ μ₂ := by
-  unfold zeta0_r zeta0_l zeta0_t zeta0_b; ring
+  dsimp [zeta0_r, zeta0_l, zeta0_t, zeta0_b]
+  ring
+
+/-- Under the octahedral edge-gluing relation `r + l = t + b`, the linear sum
+`e1 r t l b` equals `2 * (r + l)` and `(e1 r t l b) ^ 2 - 2 * e2 r t l b` equals
+the sum of squares `r ^ 2 + t ^ 2 + l ^ 2 + b ^ 2`. -/
+theorem e1_glued_and_quad_sum_sq (r t l b : R) (hglue : r + l = t + b) :
+    e1 r t l b = 2 * (r + l) ∧
+      (e1 r t l b) ^ 2 - 2 * e2 r t l b = r ^ 2 + t ^ 2 + l ^ 2 + b ^ 2 := by
+  dsimp [e1, e2]
+  constructor
+  · linear_combination hglue
+  · ring
 
 end QOU.MassTheory.PinchedOctahedron

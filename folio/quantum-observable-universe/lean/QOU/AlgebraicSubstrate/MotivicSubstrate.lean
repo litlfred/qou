@@ -92,4 +92,14 @@ class MotivicSubstrate
   nonarchimedean_nontrivial :
     ∃ p : Nat.Primes, Nontrivial (Target (Place.finite p))
 
+/-- At every place `v`, the realized Lefschetz class `realize v (inclusion lefschetz)`
+is a unit in the target ring `Target v`. -/
+theorem realize_lefschetz_isUnit
+    {K0 Mhat : Type*} [CommRing K0] [CommRing Mhat]
+    {Target : Place → Type*} [∀ v, CommRing (Target v)]
+    [ms : MotivicSubstrate K0 Mhat Target] (v : Place) :
+    IsUnit (ms.realize v (ms.inclusion ms.lefschetz)) := by
+  have hu : IsUnit (ms.inclusion ms.lefschetz) := ms.lefschetz_invertible
+  exact hu.map (ms.realize v)
+
 end QOU.AlgebraicSubstrate
