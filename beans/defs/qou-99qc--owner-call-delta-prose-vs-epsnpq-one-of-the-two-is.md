@@ -3714,3 +3714,10 @@ Bean stays OPEN.
 ### CORRECTION 2026-11-16 19:50Z — the L± recommendation was wrong (agent's own error)
 The agent recommended "keep the rule as is" on the grounds that "nothing in the corpus derives L± as a γγ letter". False: prop:gamma-gamma-generates-particles (predicted-spectra/gamma-gamma-generates-particles.md) reduces the product of two three-term photons γ = 1 + φ₀σ₀ + φ₁σ₁ with the Hecke relation, and the normal form already contains L₊ = σ₀σ₁ (coefficient φ₀ψ₁) and L₋ = σ₁σ₀ (coefficient φ₁ψ₀). So L± follows from the photon definition applied to γγ; the owner's ruling restores what the definition gives, and the earlier {V, V⁻¹} rule was a truncation of it. Search gap: the agent read the bean history and the trivial-knot remark tables but not this proposition.
 Open discrepancy to check: in that proposition L₋ = σ₁σ₀ (writhe +2, opposite ORDER), while the ε-L1 probe (#8104) and the gluon-thread stages used L₋ = σ₀⁻¹σ₁⁻¹ (writhe −2, the INVERSE). ε-L1's conclusion (p/n ratio 1) holds for every Ř word, so it is unaffected; the reading-3 stage results that used L₋ as an inverse need re-checking against L₋ = σ₁σ₀.
+
+### NOTE 2026-11-17 10:50Z — the photon has FOUR terms / three parameters (owner query)
+prop:gamma-gamma-generates-particles writes γ = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁: four terms, three colour parameters (φ₀, φ₁, φ₀₁). The 19:50Z CORRECTION called it "three-term"; that is the block's first reduction step with φ₀₁ = ψ₀₁ = 0, not the definition. Consequences, from the block itself:
+- L₊ = σ₀σ₁ is already in a SINGLE photon (the φ₀₁ Hopf-dressing term); L₋ = σ₁σ₀ is not, and arises only from the γγ cross term φ₁ψ₀.
+- With φ₀₁ ≠ 0 the γγ product also reaches e⁻ = σ₀σ₁σ₀; the two-photon span is all of H₃(q).
+- No `def:` block for the photon exists; the definition lives inside this proposition's prose.
+Owner asked (2026-11-17 06:27Z) that the γγ thread re-run stage 1 over the alphabet the definition gives; request relayed.
