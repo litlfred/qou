@@ -1,23 +1,54 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-08T09:58:24.127956+00:00",
-  "commitSha": "78ce3174ecd7aeeb498c1ac0a2ae6d56255449d1",
+  "computedAt": "2026-11-17T12:49:59.351566+00:00",
+  "commitSha": "533ad7a300e6ec81b623521f31b3ace424935e25",
   "assertions": [
     {
       "name": "jet_order_independence_base_case",
-      "computed": 1,
-      "expected": 1,
+      "computed": "1",
+      "expected": "1",
       "passed": true,
-      "source": "h-jet expansion of canonical Markov traces tr_M(4_1/5_2/Borromean) about q=1 has non-singular 3x3 jet-Jacobian (det = 1/16) ⇒ jet-order independent at order 2"
+      "tolerance": "0",
+      "source": "h-jet expansion of canonical Markov traces tr_M(4_1/5_2/Borromean) about q=1 has non-singular 3x3 jet-Jacobian (det = -11/4, LU pivots [1/4, 1, -11]) ⇒ jet-order independent at order 2 (bean qou-381n)"
+    },
+    {
+      "name": "elimination_det_matches_lean_jetJacobianBase_det",
+      "computed": "-11/4",
+      "expected": "-11/4",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Archimedean.JetOrderIndependence.jetJacobianBase_det pins det(jetJacobianBase) = -11/4 (bean qou-381n)"
     }
   ],
   "allPassed": true,
-  "durationMs": 2365,
+  "durationMs": 1006,
   "computation": "jet-order-pivots",
   "scriptFile": "jet_order_pivots.py",
-  "scriptHash": "380671554d5b",
-  "scriptCommitSha": "9ce80195f72c6a408815676ad07a8de5351746cc",
+  "scriptHash": "1265572656d5",
+  "scriptCommitSha": "533ad7a300e6ec81b623521f31b3ace424935e25",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/jet_order_pivots.py"
+    ],
+    "reproduce": "python3 -u computations/jet_order_pivots.py"
+  },
   "contentBlock": "conj:three-knot-jet-order-independence",
   "data": {
     "knots": [
@@ -29,13 +60,13 @@
     "jet_jacobian": {
       "4_1": [
         "1/4",
-        "-1",
-        "55/16"
+        "0",
+        "11/4"
       ],
       "5_2": [
         "1/2",
-        "0",
-        "-1/16"
+        "1",
+        "1/4"
       ],
       "Borromean": [
         "1",
@@ -43,11 +74,11 @@
         "0"
       ]
     },
-    "elimination_det": "1/16",
+    "elimination_det": "-11/4",
     "lu_pivots": [
       "1/4",
-      "2",
-      "1/8"
+      "1",
+      "-11"
     ]
   }
 }
