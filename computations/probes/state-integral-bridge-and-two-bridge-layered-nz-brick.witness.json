@@ -1,0 +1,57 @@
+{
+  "probe": "computations/probes/state_integral_bridge_and_two_bridge_layered_nz_brick_probe.py",
+  "beans": [
+    "qou-0g4z",
+    "qou-mo1n",
+    "qou-qsns",
+    "qou-sib1",
+    "qou-yvyd"
+  ],
+  "precisionDps": 80,
+  "scriptHash": "77f8240064f5dfd094e7a0ca87bfb3f584c9b6ec374f647de08eaca96ed9a1bd",
+  "scriptCommitSha": "5a0a98fc8762e45b734969dd4e71c7271737dbf3",
+  "generatedAt": "2026-11-17T07:37:56.341016+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "bean": "qou-0g4z",
+      "theorem": "reeb_eigenphase_scale_gauge_invariance_and_difference_lock",
+      "passed": true,
+      "scale_residual": "1.054219794323052322434857405127001900770996138236850755007776302510814429096976e-81",
+      "diff_residual": "2.5301275063753255738436577723048045618503907317684418120186631260259546298327423e-80",
+      "theta_lambda": "0.72273424781341561117837735264133336202521848642444026762675413258370738191463027"
+    },
+    {
+      "bean": "qou-mo1n",
+      "theorem": "andersen_kashaev_potential_vs_complex_volume_bridge_ratio",
+      "passed": true,
+      "ratio_residual": "0.0",
+      "diff_residual": "0.0",
+      "kappa_pot": "0.5542164724048998987926350231684364737534646869172262869796870635908154164552748"
+    },
+    {
+      "bean": "qou-qsns",
+      "theorem": "jsj_torus_decomposition_per_piece_volume_additivity",
+      "passed": true,
+      "add_residual": "0.0",
+      "v_total": "13.021470342945935430697647287737649901173171106440665195232955649014351189831545",
+      "v_piece_1": "2.029883212819307250042405108549040571883378615060599584034978213553194952516488"
+    },
+    {
+      "bean": "qou-sib1",
+      "theorem": "faddeev_modular_b_squared_upper_half_plane_convergence_witness",
+      "passed": true,
+      "neg_tau_im": "0.01659842",
+      "norm_residual": "0.0"
+    },
+    {
+      "bean": "qou-yvyd",
+      "theorem": "gueritaud_two_bridge_layered_tetrahedron_count_and_farey_sum",
+      "passed": true,
+      "n_tet_4_1": "2.0",
+      "n_tet_5_2": "4.0",
+      "cf_5_2_residual": "0.0",
+      "cf_7_3_residual": "0.0"
+    }
+  ]
+}
