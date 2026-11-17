@@ -1,0 +1,135 @@
+{
+  "probe": "round53_thetak_c3_barparity_habiro_fermat_fivetwo_probe",
+  "beans": [
+    "qou-8vt2",
+    "qou-qb8g",
+    "qou-xijb",
+    "qou-b5h9",
+    "qou-lrvc"
+  ],
+  "precisionDps": "80",
+  "scriptPath": "computations/probes/round53_thetak_c3_barparity_habiro_fermat_fivetwo_probe.py",
+  "scriptHash": "7722774d7135",
+  "scriptCommitSha": "5660ea5c2e8705d5b506c0203c941bbc54f6f0d1",
+  "generatedAt": "2026-11-17T07:08:19.819028+00:00",
+  "allPassed": true,
+  "assertions": [
+    {
+      "id": "qou_8vt2_harmonic_sign_flip_diagonal_straddle",
+      "bean": "qou-8vt2",
+      "description": "Opposite signs of the harmonic form Re(u)^2 - Im(u)^2 between muon (>0) and proton (<0) anchors force |Im u_mu| < |Re u_mu| and |Re u_p| < |Im u_p| (straddling the |Re u| = |Im u| diagonal).",
+      "r_mu_log_q0": "0.1043406965970968195786062280786811724441",
+      "harm_mu_80dps": "0.00628723150807718032891498503418934175793",
+      "harm_p_80dps": "-0.008954545916351348081386478679194457154203",
+      "passed": true
+    },
+    {
+      "id": "qou_qb8g_kappa21_bar_odd_and_tensor_parity",
+      "bean": "qou-qb8g",
+      "description": "kappa_{(2,1)}(q) = (q-1)^3(q+1)/q^2 satisfies kappa(1/q) = -kappa(q) to < 1e-75 at 80 dps and has antipalindromic numerator [1,-2,0,2,-1], so c_3 = -kappa*S is bar-odd iff S is bar-even.",
+      "kappa_q0_80dps": "0.00227810220964561297426269263058654948331788149",
+      "kappa_q0_inv_80dps": "-0.00227810220964561297426269263058654948331788149",
+      "bar_odd_residual": "2.8826322501020961942e-83",
+      "numerator_coeffs": [
+        "1",
+        "-2",
+        "0",
+        "2",
+        "-1"
+      ],
+      "passed": true
+    },
+    {
+      "id": "qou_qb8g_reparametrisation_roundtrip_exactness",
+      "bean": "qou-qb8g",
+      "description": "Both S_leak = c_3 + Vol(4_1) and S = -c_3/kappa_{(2,1)} invert back to c_3 within < 1e-75 at 80 dps.",
+      "s_leak_proton": "-0.03945936430069274995759489145095942811662",
+      "s_scaled_proton": "908.362481875609908759649624154235263619",
+      "max_roundtrip_err": "0.0",
+      "passed": true
+    },
+    {
+      "id": "qou_xijb_habiro_root_termination_vs_archimedean_positivity",
+      "bean": "qou-xijb",
+      "description": "Habiro cyclotomic basis product H_5(T) vanishes identically at T = zeta_5 + zeta_5^-1 and is strictly positive on the real archimedean ray T = q_0 + q_0^-1 > 2.",
+      "T_real_80dps": "2.01089686670686222982665923875457767250329407",
+      "habiro_at_zeta5": "0.0",
+      "habiro_at_q0_80dps": "0.2784041809607225242262476613172222793885446",
+      "passed": true
+    },
+    {
+      "id": "qou_b5h9_composite_modulus_fermat_failure_vs_extended_euclid",
+      "bean": "qou-b5h9",
+      "description": "At composite N=9 (phi(9)=6), pow(a,7,9) = a on all units [1,2,4,5,7,8] and 0 on {3,6}, failing inversion on {2,4,5,7}, whereas extended-Euclid pow(a,-1,9) inverts all units.",
+      "fermat_mod_9_units": [
+        "1",
+        "2",
+        "4",
+        "5",
+        "7",
+        "8"
+      ],
+      "euclid_mod_9_units": [
+        "1",
+        "5",
+        "7",
+        "2",
+        "4",
+        "8"
+      ],
+      "fermat_mod_15_at_2": "2",
+      "passed": true
+    },
+    {
+      "id": "qou_b5h9_self_inverse_pm1_pivots_across_odd_moduli",
+      "bean": "qou-b5h9",
+      "description": "For every odd modulus N in {3,5,7,9,11,13,15}, the +/-1 pivots {1, N-1} satisfy (N-1)^2 = 1 (mod N) and pow(N-1, N-2, N) = N-1, explaining why Whitehead N=9,15 was uncorrupted.",
+      "odd_moduli_checked": [
+        "3",
+        "5",
+        "7",
+        "9",
+        "11",
+        "13",
+        "15"
+      ],
+      "pm1_coincide": "True",
+      "passed": true
+    },
+    {
+      "id": "qou_lrvc_fivetwo_boundary_slope_mirror_involution",
+      "bean": "qou-lrvc",
+      "description": "Derived Farey-word RL boundary slopes [-10,-4,0] of K(7,3) negate to SnapPy/Dunfield 5_2 slopes [0,4,10], with mirror-invariant absolute slope sum 14.",
+      "derived_slopes": [
+        "-10",
+        "-4",
+        "0"
+      ],
+      "snappy_slopes": [
+        "0",
+        "4",
+        "10"
+      ],
+      "abs_slope_sum": "14",
+      "passed": true
+    },
+    {
+      "id": "qou_lrvc_apoly_52_specialization_and_L_reciprocity",
+      "bean": "qou-lrvc",
+      "description": "A_{5_2}(L,M) L-coefficients specialize to [1,3,3,1] at M^2=1 ((L+1)^3) and [1,27,60,128] at M^2=2, reversing under L -> L^-1.",
+      "coeffs_at_m1": [
+        "1",
+        "3",
+        "3",
+        "1"
+      ],
+      "coeffs_at_m2": [
+        "1",
+        "27",
+        "60",
+        "128"
+      ],
+      "passed": true
+    }
+  ]
+}
