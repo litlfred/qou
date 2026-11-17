@@ -1,0 +1,56 @@
+{
+  "probe": "thimble_decomposition_and_symmetric_polytope_brick_probe.py",
+  "beans": [
+    "qou-h7yk",
+    "qou-krvm",
+    "qou-kyst",
+    "qou-lbth",
+    "qou-o41q"
+  ],
+  "precisionDps": "80",
+  "scriptHash": "e55db77fb2bb",
+  "scriptCommitSha": "6020aea5785046b552772c9a42fc52ac2db9f3a2",
+  "generatedAt": "2026-11-17T06:54:51.635246+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "beanId": "qou-h7yk",
+      "theorem": "fantini_wheeler_thimble_state_integral_decomposition_balance",
+      "stateIntegral": "6.089649638457921750127215325649221715649",
+      "targetTwoCI0": "6.089649638457921750127215325649221715649",
+      "balanceResidual": "8.433758354584418579478859e-81",
+      "passed": true
+    },
+    {
+      "beanId": "qou-krvm",
+      "theorem": "symmetric_angle_polytope_barycenter_fixed_and_strict_concave_gap",
+      "fMax": "4.059766425638614500084810217099481143766",
+      "fXY": "3.283994291006129676685807617833935004526",
+      "swapResidual": "0.0",
+      "gapIdentityResidual": "1.054219794323052322434857e-81",
+      "passed": true
+    },
+    {
+      "beanId": "qou-kyst",
+      "theorem": "qdifference_prolongation_symbol_commutator_obstruction_identity",
+      "symbolValue": "-0.203125",
+      "identityResidual": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-lbth",
+      "theorem": "elliptic_divisor_degree_zero_and_weierstrass_factor_cancellation",
+      "ordDiff": "0.0",
+      "abelDiff": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-o41q",
+      "theorem": "bloch_suslin_antisymmetric_duplication_and_inversion_annihilation",
+      "oddDuplicationValue": "4.059766425638614500084810217099481143768",
+      "oddResidual": "0.0",
+      "evenDegenerateValue": "0.0",
+      "passed": true
+    }
+  ]
+}
