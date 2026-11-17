@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0",
+  "probeId": "symsquare-fibretl-mu3slot-sleak-deuteronz",
+  "timestamp": "2026-11-17T10:59:13Z",
+  "scriptPath": "computations/probes/symsquare_fibretl_mu3slot_sleak_deuteronz_probe.py",
+  "scriptHash": "19f0b8589c79",
+  "scriptCommitSha": "d5360fac6f1464f5fd03c06ef76e726e30c785fd",
+  "precisionDps": 80,
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "qou-47nf-symsquare-iterated-selfdual",
+      "bean": "qou-47nf",
+      "description": "Iterated symmetric-square character Sym^2(Sym^2(V_2)) is bar-self-dual at q=3/5",
+      "charAtQ": "12.98342716049382716049382716049382716049",
+      "charAtQi": "12.98342716049382716049382716049382716049",
+      "residual": "1.686751670916883715895772e-80",
+      "passed": true
+    },
+    {
+      "id": "qou-enn6-twodim-fibre-pins-y3-scaled",
+      "bean": "qou-enn6",
+      "description": "Two-dimensional fibre pins (q+qi)^2 * y3 = (q+qi)^2 - 2 at q=3/5",
+      "lhs": "3.137777777777777777777777777777777777778",
+      "rhs": "3.137777777777777777777777777777777777778",
+      "residual": "0.0",
+      "passed": true
+    },
+    {
+      "id": "qou-qrsp-thirddiff-const-and-unit-damping",
+      "bean": "qou-qrsp",
+      "description": "Third mixed difference vanishes on constant baseline and at unit third-bond damping r_c=1",
+      "tdConst": "0.0",
+      "tdUnit": "0.0",
+      "residual": "0.0",
+      "passed": true
+    },
+    {
+      "id": "qou-t39x-sleak-reversed-sign-zero-crossing",
+      "bean": "qou-t39x",
+      "description": "Reversed-sign carrier with Sleak(a)>0>Sleak(b) crosses zero strictly inside (a,b)",
+      "qStar": "1.109982633220471336596186188747239919923",
+      "residual": "3.768572209756331289624007e-78",
+      "passed": true
+    },
+    {
+      "id": "qou-wgta-choose4-sum-and-five-bcat-bound",
+      "bean": "qou-wgta",
+      "description": "Exterior rank sum sum_{k=0}^4 C(4,k) = 16 and 5*BcatMilli = 1900 < 2225 = BAmeMilli",
+      "choose4Sum": "16",
+      "fiveBcat": "1900",
+      "residual": "0.0",
+      "passed": true
+    }
+  ]
+}
