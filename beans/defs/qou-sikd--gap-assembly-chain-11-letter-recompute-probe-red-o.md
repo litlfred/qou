@@ -2,7 +2,7 @@
 # qou-sikd
 title: 'GAP: assembly_chain_11_letter_recompute_probe red on main (3/7) — LIVE literals predate the beta_Bor nucleon-word fix'
 status: in-progress
-pr: 8189
+pr: 8226
 type: task
 priority: normal
 tags:
@@ -37,4 +37,4 @@ Cross-reference: docs/audits/2026-09-12-gamma-gamma-word-selection-step10.md sec
 
 
 ## Round 52 Progress
-- [x] PR https://github.com/litlfred/qou/pull/8189 (`523155d5604cc384f307eb1cb22785f1fded85da`): updated `computations/markov/assembly_chain_11_letter_recompute_probe.py` to read `("p", "muon2022")`, `("n", "muon2022")`, and `PINS["muon2022"]` from `computations/atomic-tr-m-mpfr-50dps.witness.json` (7/7 assertions pass).
+- [x] PR https://github.com/litlfred/qou/pull/8226 (`523155d5604cc384f307eb1cb22785f1fded85da`): updated `computations/markov/assembly_chain_11_letter_recompute_probe.py` to read `("p", "muon2022")`, `("n", "muon2022")`, and `PINS["muon2022"]` from `computations/atomic-tr-m-mpfr-50dps.witness.json` (7/7 assertions pass).

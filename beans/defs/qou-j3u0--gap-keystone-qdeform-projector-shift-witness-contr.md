@@ -2,7 +2,7 @@
 # qou-j3u0
 title: 'GAP: keystone-qdeform-projector-shift witness contradicts its own producer at the SAME pin'
 status: in-progress
-pr: 8189
+pr: 8226
 type: task
 priority: normal
 tags:
@@ -249,4 +249,4 @@ named ratio; provenance unknown, not chased.
 
 
 ## Round 52 Progress
-- [x] PR https://github.com/litlfred/qou/pull/8189 (`523155d5604cc384f307eb1cb22785f1fded85da`): wired `WitnessBuilder.wrap_legacy` with 3 checkable assertions into `docs/audits/scripts/keystone_qdeform_projector_shift_probe.py` and regenerated `computations/keystone-qdeform-projector-shift.witness.json` (`allPassed: true`, 0 raw float64).
+- [x] PR https://github.com/litlfred/qou/pull/8226 (`523155d5604cc384f307eb1cb22785f1fded85da`): wired `WitnessBuilder.wrap_legacy` with 3 checkable assertions into `docs/audits/scripts/keystone_qdeform_projector_shift_probe.py` and regenerated `computations/keystone-qdeform-projector-shift.witness.json` (`allPassed: true`, 0 raw float64).

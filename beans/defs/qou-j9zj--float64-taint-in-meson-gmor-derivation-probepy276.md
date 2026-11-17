@@ -2,7 +2,7 @@
 # qou-j9zj
 title: float64 taint in meson_gmor_derivation_probe.py:276 (winner_vs_fusion via abs(best_a[1]-fusion_sum))
 status: in-progress
-pr: 8189
+pr: 8226
 type: task
 priority: normal
 tags:
@@ -28,4 +28,4 @@ Not this arc's domain (meson GMOR, not Magnus) — hence a bean, not an inline f
 
 
 ## Round 52 Progress
-- [x] PR https://github.com/litlfred/qou/pull/8189 (`523155d5604cc384f307eb1cb22785f1fded85da`): carried `miss` and PDG quark masses as `mpmath.mpf`, serialized all 6 numeric `add_data` fields via `_precision.fmt`, and regenerated `meson-gmor-derivation-probe.witness.json` (0 raw float64).
+- [x] PR https://github.com/litlfred/qou/pull/8226 (`523155d5604cc384f307eb1cb22785f1fded85da`): carried `miss` and PDG quark masses as `mpmath.mpf`, serialized all 6 numeric `add_data` fields via `_precision.fmt`, and regenerated `meson-gmor-derivation-probe.witness.json` (0 raw float64).
