@@ -466,4 +466,32 @@ theorem LiTwo_eq_integral_unit {y : ℝ} (hy0 : 0 < y) (hy1 : y < 1) :
   rw [← hcancel, ← intervalIntegral.integral_neg]
   exact intervalIntegral.integral_congr fun z _ => by rw [neg_div]
 
+/-- **Two-point reflection difference identity**: for `x, y ∈ (0, 1)`, the difference
+between `Li₂(x) + Li₂(1 − x)` and `Li₂(y) + Li₂(1 − y)` eliminates `π²/6` and equals
+`log y · log(1 − y) − log x · log(1 − x)`. -/
+theorem LiTwo_reflection_diff_symm (x y : ℝ)
+    (hx0 : 0 < x) (hx1 : x < 1) (hy0 : 0 < y) (hy1 : y < 1) :
+    (LiTwo x + LiTwo (1 - x)) - (LiTwo y + LiTwo (1 - y)) =
+      Real.log y * Real.log (1 - y) - Real.log x * Real.log (1 - x) := by
+  have hx := LiTwo_reflection' x hx0 hx1
+  have hy := LiTwo_reflection' y hy0 hy1
+  have hsub : (LiTwo x + LiTwo (1 - x)) - (LiTwo y + LiTwo (1 - y)) =
+      (Real.pi ^ 2 / 6 - Real.log x * Real.log (1 - x)) -
+        (Real.pi ^ 2 / 6 - Real.log y * Real.log (1 - y)) := by
+    rw [hx, hy]
+  linarith
+
+/-- **Midpoint comparison for the reflection sum**: for any `x ∈ (0, 1)`,
+`(Li₂(x) + Li₂(1 − x)) − 2 Li₂(1/2) = (log 2)² − log x · log(1 − x)`. -/
+theorem LiTwo_sum_sub_two_LiTwo_half (x : ℝ) (hx0 : 0 < x) (hx1 : x < 1) :
+    (LiTwo x + LiTwo (1 - x)) - 2 * LiTwo (1 / 2) =
+      Real.log 2 ^ 2 - Real.log x * Real.log (1 - x) := by
+  have hrefl := LiTwo_reflection' x hx0 hx1
+  have hhalf := LiTwo_half
+  have hrew : (LiTwo x + LiTwo (1 - x)) - 2 * LiTwo (1 / 2) =
+      (Real.pi ^ 2 / 6 - Real.log x * Real.log (1 - x)) -
+        2 * (Real.pi ^ 2 / 12 - Real.log 2 ^ 2 / 2) := by
+    rw [hrefl, hhalf]
+  linarith
+
 end QOU.Archimedean

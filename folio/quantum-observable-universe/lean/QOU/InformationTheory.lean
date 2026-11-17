@@ -107,4 +107,31 @@ theorem classical_regime_no_information {M : Type*} (cr : ClassicalRegime M) :
     informationRate cr.sp cr.point = 0 :=
   planck_classical_limit cr.sp cr.point cr.classical
 
+/-- **Reciprocal relationship between the bare step `(q − 1) / q` and the time-step
+factor `q / (q − 1)` (`qou-adwi`).**
+Multiplying the bare step `(q − 1) / q` by `q / (q − 1)` yields `1`, and the complement
+`1 − (q − 1) / q` equals `1 / q`. -/
+theorem unit_product_vs_bare_step_ratio (q : ℝ) (hq0 : q ≠ 0) (hq1 : q - 1 ≠ 0) :
+    ((q - 1) / q) * (q / (q - 1)) = 1 ∧ 1 - (q - 1) / q = 1 / q := by
+  constructor
+  · field_simp
+  · field_simp
+    ring
+
+/-- **In any `DeepQuantumRegime`, the substrate field strictly exceeds `1`.** -/
+theorem deep_quantum_field_gt_one {M : Type*} (dqr : DeepQuantumRegime M) :
+    1 < dqr.sp.field dqr.point := by
+  have h1 : 1 < dqr.threshold := dqr.threshold_gt_one
+  have h2 : dqr.threshold ≤ dqr.sp.field dqr.point := dqr.deep_quantum
+  exact lt_of_lt_of_le h1 h2
+
+/-- **Mutual exclusion of `DeepQuantumRegime` and `ClassicalRegime` at the same point.** -/
+theorem deep_quantum_contradicts_classical {M : Type*}
+    (dqr : DeepQuantumRegime M) (cr : ClassicalRegime M)
+    (hsp : dqr.sp = cr.sp) (hpt : dqr.point = cr.point) : False := by
+  have hgt : 1 < dqr.sp.field dqr.point := deep_quantum_field_gt_one dqr
+  have heq : dqr.sp.field dqr.point = 1 := by
+    rw [hsp, hpt, cr.classical]
+  linarith
+
 end QOU.InformationTheory

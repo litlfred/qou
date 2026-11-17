@@ -87,6 +87,35 @@ theorem exchange_coulomb_relation (q m_e : ℝ) (hq : q_int q 2 ≠ 0) :
   unfold lambda_ex lambda_C
   field_simp
 
+/-- **Difference between the asymmetry and volume coefficients equals half the volume coefficient.** -/
+theorem asym_minus_volume_eq_half_volume (q m_e : ℝ) :
+    a_asym q m_e - lambda_V q m_e = (1 / 2) * lambda_V q m_e := by
+  have hrel := asym_volume_relation q m_e
+  have hsub : a_asym q m_e - lambda_V q m_e = (3 / 2) * lambda_V q m_e - lambda_V q m_e := by
+    rw [hrel]
+  rw [hsub]
+  ring
+
+/-- **Shell coefficient equals `[2]_q³` times the exchange coefficient.** -/
+theorem shell_eq_cube_q2_mul_exchange (q m_e : ℝ) (hq2 : q_int q 2 ≠ 0) :
+    delta_S q m_e = (q_int q 2) ^ 3 * lambda_ex q m_e := by
+  have h1 : delta_S q m_e = (q_int q 2) ^ 2 * q_int q 3 * m_e := rfl
+  have h2 : lambda_ex q m_e = q_int q 3 / q_int q 2 * m_e := rfl
+  rw [h1, h2]
+  field_simp
+  ring
+
+/-- **Cross-relation between pairing and volume coefficients**:
+`2 [2]_q δ_P = [3]_q λ_V`. -/
+theorem pairing_volume_cross_relation (q m_e : ℝ) :
+    2 * q_int q 2 * delta_P q m_e = q_int q 3 * lambda_V q m_e := by
+  have hP : delta_P q m_e = q_int q 3 * q_int q 7 * m_e := rfl
+  have hV : lambda_V q m_e = 2 * q_int q 2 * q_int q 7 * m_e := rfl
+  have hL : 2 * q_int q 2 * delta_P q m_e = 2 * q_int q 2 * (q_int q 3 * q_int q 7 * m_e) := by
+    rw [hP]
+  rw [hL, hV]
+  ring
+
 -- ── Seven-term binding energy ──────────────────────────────────
 
 /-- Seven-term binding energy with q-integer coefficients.

@@ -316,4 +316,35 @@ theorem integral_Ioi_hemisphere {R d : ℝ} (hd : 0 ≤ d) (hdR : d < R) :
   have hpos : 0 < R ^ 2 - d ^ 2 := by nlinarith
   rw [integral_Ioi_rpow_neg_three (Real.sqrt_pos.mpr hpos), Real.sq_sqrt hpos.le]
 
+/-- **Difference of vertical hemisphere integrals across two base distances `d₁, d₂`.** -/
+theorem integral_Ioi_hemisphere_diff {R d₁ d₂ : ℝ}
+    (hd₁ : 0 ≤ d₁) (hd₁R : d₁ < R) (hd₂ : 0 ≤ d₂) (hd₂R : d₂ < R) :
+    (∫ z in Ioi (Real.sqrt (R ^ 2 - d₁ ^ 2)), z ^ (-3 : ℝ)) -
+      (∫ z in Ioi (Real.sqrt (R ^ 2 - d₂ ^ 2)), z ^ (-3 : ℝ)) =
+      (d₁ ^ 2 - d₂ ^ 2) / (2 * (R ^ 2 - d₁ ^ 2) * (R ^ 2 - d₂ ^ 2)) := by
+  have hpos₁ : 0 < R ^ 2 - d₁ ^ 2 := by nlinarith
+  have hpos₂ : 0 < R ^ 2 - d₂ ^ 2 := by nlinarith
+  have hne₁ : R ^ 2 - d₁ ^ 2 ≠ 0 := ne_of_gt hpos₁
+  have hne₂ : R ^ 2 - d₂ ^ 2 ≠ 0 := ne_of_gt hpos₂
+  rw [integral_Ioi_hemisphere hd₁ hd₁R, integral_Ioi_hemisphere hd₂ hd₂R]
+  field_simp
+  ring
+
+/-- **Strict radial monotonicity of the vertical hemisphere fibre integral**:
+moving outward toward the hemisphere boundary (`0 ≤ d₁ < d₂ < R`) strictly increases
+the vertical integral `∫_{√(R²−d²)}^∞ z⁻³ dz`. -/
+theorem integral_Ioi_hemisphere_strict_mono {R d₁ d₂ : ℝ}
+    (hd₁ : 0 ≤ d₁) (hd₁₂ : d₁ < d₂) (hd₂R : d₂ < R) :
+    (∫ z in Ioi (Real.sqrt (R ^ 2 - d₁ ^ 2)), z ^ (-3 : ℝ)) <
+      (∫ z in Ioi (Real.sqrt (R ^ 2 - d₂ ^ 2)), z ^ (-3 : ℝ)) := by
+  have hd₂ : 0 ≤ d₂ := le_of_lt (lt_of_le_of_lt hd₁ hd₁₂)
+  have hd₁R : d₁ < R := lt_trans hd₁₂ hd₂R
+  have hpos₁ : 0 < R ^ 2 - d₁ ^ 2 := by nlinarith
+  have hpos₂ : 0 < R ^ 2 - d₂ ^ 2 := by nlinarith
+  have hdiff := integral_Ioi_hemisphere_diff hd₂ hd₂R hd₁ hd₁R
+  have hsq : 0 < d₂ ^ 2 - d₁ ^ 2 := by nlinarith
+  have hquot : 0 < (d₂ ^ 2 - d₁ ^ 2) / (2 * (R ^ 2 - d₂ ^ 2) * (R ^ 2 - d₁ ^ 2)) := by
+    positivity
+  linarith
+
 end QOU.Archimedean.HyperbolicVolume

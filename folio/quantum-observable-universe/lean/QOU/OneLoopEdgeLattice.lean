@@ -193,4 +193,30 @@ theorem percusp_free_law {t c : ℝ} (ht : 0 < t) :
       = (2 : ℝ) ^ ((c - 1) / 2) * ((2 : ℝ) ^ c * t) ^ (-(1 : ℝ) / 2) :=
   (percusp_factor_absorbs ht).symm
 
+/-- **Second elementary symmetric sum of the shape triple `(ζ, ζ', ζ'')`.** -/
+theorem zeta_elementary_symm_two {z : ℂ} (hz0 : z ≠ 0) (hz1 : z ≠ 1) :
+    zeta z * zetaP z + zetaP z * zetaPP z + zetaPP z * zeta z =
+      -(zeta z ^ 2 + zeta z * zetaP z + zetaP z ^ 2) := by
+  have hpp := zetaPP_eq hz0 hz1
+  have hrew : zeta z * zetaP z + zetaP z * zetaPP z + zetaPP z * zeta z =
+      zeta z * zetaP z + (zetaP z + zeta z) * zetaPP z := by ring
+  rw [hrew, hpp]
+  ring
+
+/-- **Sum of cubes of the shape triple equals three times their product**:
+since `ζ + ζ' + ζ'' = 0`, `ζ³ + (ζ')³ + (ζ'')³ = 3 ζ ζ' ζ''`. -/
+theorem zeta_cubes_sum_eq_three_prod {z : ℂ} (hz0 : z ≠ 0) (hz1 : z ≠ 1) :
+    zeta z ^ 3 + zetaP z ^ 3 + zetaPP z ^ 3 = 3 * (zeta z * zetaP z * zetaPP z) := by
+  have hsum := zeta_sum_eq_zero hz0 hz1
+  linear_combination (zeta z ^ 2 + zetaP z ^ 2 + zetaPP z ^ 2 - zeta z * zetaP z -
+    zetaP z * zetaPP z - zetaPP z * zeta z) * hsum
+
+/-- **Cross-index determinant relation for two sublattices of indices `k₁, k₂`.** -/
+theorem det_sublattice_index_cross_eq {n : ℕ} (U₁ U₂ : Matrix (Fin n) (Fin n) ℤ)
+    (B : Matrix (Fin n) (Fin n) ℂ) (k₁ k₂ : ℤ) (hU₁ : U₁.det = k₁) (hU₂ : U₂.det = k₂) :
+    (k₂ : ℂ) * (U₁.map (fun k : ℤ => (k : ℂ)) * B).det =
+      (k₁ : ℂ) * (U₂.map (fun k : ℤ => (k : ℂ)) * B).det := by
+  rw [det_sublattice_index U₁ B k₁ hU₁, det_sublattice_index U₂ B k₂ hU₂]
+  ring
+
 end QOU.OneLoopEdgeLattice
