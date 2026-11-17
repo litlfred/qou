@@ -36,3 +36,44 @@ review. They need a real re-review.
 | topological-mass-formula-algebraic | warn | ln needs Vol_{q0}(β) ≠ 0, not stated |
 
 All are findings. No content was changed.
+
+## Re-grade (owner question, 2026-11-17)
+
+Rule applied from here on: if a statement claims more than its Lean, or more
+than its own proof shows, it is a **fail**; a statement that is fully backed
+but relies on a cited step it does not flag stays a **warn**.
+
+Moved warn → fail (major): cellular-depth-filtration (statement-vs-Lean),
+order-of-magnitude-screen (statement-vs-Lean), pieri-photon-shift (proof),
+topological-mass-formula-algebraic (proof).
+
+## Re-read of the hash-less verdicts (owner chose "re-read all")
+
+The "48" was a count of verdict *entries*; the latest verdict per block lacked
+a Lean hash on **27** blocks. All 27 were re-read. Each new verdict carries a
+lean hash; the remaining hash-less count is 0.
+
+| block | verdict | note |
+|---|---|---|
+| hecke-satisfies-blitvic-hypothesis | fail critical | md claim false: third central moment at q=2 is −1.428, not 0 |
+| trace-locality-meets-gs-nonlocality | fail major | locality assumed as a class field, and stated without the H_n index (false as written) |
+| photon-threading-mass | fail major | formula assumed via two context fields |
+| two-filtration-bridge-small-cases | fail major | self-assuming; md Result still says "verified" |
+| frobenius-self-duality-forces-lp-dual-extraction | fail major | non-degeneracy assumed |
+| feynman-eigenbasis-decomposition | fail major | returns a structure field |
+| em-spectral-completeness | fail major (was warn) | Lean is a 2×2 diagonal toy |
+| wedderburn-trace-identity | fail major | identity assumed |
+| cyclotomic-depth3-dimension-synthesis | fail major | lean.ref dangling; md says unconditional |
+| tmli-constituent-composite-agreement | fail major (was warn) | multiplicativity assumed; counterexample checked |
+| skein-generation | fail major (was warn) | freeness not in Lean |
+| t-beta-markov-frobenius-collapse-general | fail major | self-assuming; claim is true and easy to prove |
+| unit-modulus-eigenvalue | warn minor | formula proved; det and |χ|≤2 criterion elementary, unformalised |
+| knot-factor-spectral-derivation | fail major | rfl over data; identity checked true by hand |
+| operator-selection-lp | pass | |
+| feynman-trace-collapse | fail major | partition-count bound only |
+| corrected-markov-trace | pass | |
+| feynman-categorical-trace | fail major | **content errors:** tr(xσ⁻¹)=z⁻¹tr(x) is wrong (it is (z−h)tr(x)); w_λ has an extra dim S_λ |
+| feynman-markov-identification | fail major | same w_λ error; identity assumed |
+| s4-s3-half-symmetric-projection | pass | |
+| six-term-per-derivation-weights | warn major | conjecture block whose Lean is the defining formula |
+| 6 conjecture blocks | n/a | mass-categorical-descent carrier is weaker than the md |
