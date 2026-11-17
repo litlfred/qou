@@ -79,11 +79,11 @@ def dtOffDiag52Plus : Nat := 4
 def alexanderDet41 : Nat := 5
 def alexanderDet52 : Nat := 7
 
-/-- **`4₁` vs `5₂` Off-Diagonal Stokes/DT Spectrum Split (`qou-vr3q`).**
-The chiral `5₂` off-diagonal DT pair `{3, 4}` sums to `7 = det(5₂)` with chirality gap
+/-- **`4₁` vs `5₂` Off-Diagonal Stokes Spectrum Split (`qou-vr3q`).**
+The chiral `5₂` off-diagonal pair `{3, 4}` sums to `7 = det(5₂)` with chirality gap
 `4 - 3 = 1`, whereas `4₁` has a single amphicheiral off-diagonal entry `3` with
 `det(4₁) - 3 = 2`. -/
-theorem four_one_vs_five_two_dt_spectrum_split :
+theorem four_one_vs_five_two_offdiag_spectrum_split :
     dtOffDiag52Minus + dtOffDiag52Plus = alexanderDet52 ∧
     dtOffDiag52Plus - dtOffDiag52Minus = 1 ∧
     dtOffDiag52Minus = dtOffDiag41 ∧

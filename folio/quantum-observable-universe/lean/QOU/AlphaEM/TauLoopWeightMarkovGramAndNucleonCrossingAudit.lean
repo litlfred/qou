@@ -67,17 +67,17 @@ theorem int_sq_ge_one_of_ne_zero (x : Int) (hx : x ≠ 0) : 1 ≤ x * x := by
     rw [heq] at h1
     omega
 
-/-- **Chebyshev Recurrence `[3]_q - [1]_q = t² - 2` and `TL₃` Markov Gram Positivity (`qou-6ufi`).**
+/-- **Quantum-Integer Recurrence `[3]_q - [1]_q = t² - 2` and Two-Channel `TL₃` Gram Positivity (`qou-6ufi`).**
 For any integer trace parameter `t`, `qInt3 t + 1 = t * t`, and whenever the `(2,1)` channel
-weight `w21` is nonzero, the two-channel Markov Gram form `tl3MarkovGram w3 w21` is at least `2`. -/
-theorem tau_loop_weight_markov_gram_q0_decomposition
+weight `w21` is nonzero, the two-channel Gram form `tl3MarkovGram w3 w21` is at least `2`. -/
+theorem tau_loop_weight_two_channel_gram_q0_decomposition
     (t w3 w21 : Int) (hw21 : w21 ≠ 0) :
     qInt3 t + 1 = qInt2 t * qInt2 t ∧
     2 ≤ tl3MarkovGram w3 w21 := by
   constructor
-  · unfold qInt3 qInt2
+  · dsimp only [qInt3, qInt2]
     omega
-  · unfold tl3MarkovGram
+  · dsimp only [tl3MarkovGram]
     have h3 : 0 ≤ w3 * w3 := int_sq_nonneg w3
     have h21 : 1 ≤ w21 * w21 := int_sq_ge_one_of_ne_zero w21 hw21
     omega
