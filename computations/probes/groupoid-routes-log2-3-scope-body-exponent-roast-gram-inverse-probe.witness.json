@@ -1,0 +1,86 @@
+{
+  "probe": "groupoid-routes-log2-3-scope-body-exponent-roast-gram-inverse-probe",
+  "beans": [
+    "qou-onte",
+    "qou-orvl",
+    "qou-pnhy",
+    "qou-pbwj",
+    "qou-rz0g"
+  ],
+  "scriptCommitSha": "2130ea6cd4bb5dea8625ef6fa0dda22108dd2321",
+  "scriptHash": "aa1c39e4c86c",
+  "timestamp": "2026-11-17T13:05:02.333977+00:00",
+  "durationMs": 0,
+  "dps": 50,
+  "allPassed": true,
+  "results": {
+    "qou_onte_groupoid_binding_routes": {
+      "routesActiveScoped": 5,
+      "routesWeakened": 1,
+      "routesUnheld": 2,
+      "routesTotal": 8,
+      "checklistCompleted": 3,
+      "checklistOpen": 6,
+      "checklistTotal": 9,
+      "interleavingValuationGap": 0,
+      "passed": true
+    },
+    "qou_orvl_log2_3_scope_separation": {
+      "log2Of3": "1.5849625007211561814537389439478165087598144076925",
+      "logNormRatioAtR7": "1.5849625007211561814537389439478165087598144076925",
+      "logNormResidual": "2.672764710092195646140536467151481878815196880105e-51",
+      "parityGapsNonzero": true,
+      "scopeCodeIntegerWeights": 0,
+      "scopeCodeLogNormalisation": 1,
+      "passed": true
+    },
+    "qou_pnhy_body_order_exponent_fingerprint": {
+      "sampleMassNumbers": [
+        2,
+        3,
+        4,
+        6,
+        12,
+        16,
+        56,
+        208
+      ],
+      "doubledSecondDifferences": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "asymptoticLogSlopeAt1000": "2.0014448624551577918804913134188824546287888140502",
+      "passed": true
+    },
+    "qou_pbwj_takeover_front_roast": {
+      "frontsKilled": 3,
+      "frontsClosedOut": 1,
+      "frontsContinuing": 2,
+      "frontsTotal": 6,
+      "totalOverstatementHundredths": 300,
+      "jensenMeasuredHundredths": 121,
+      "residualBudgetHundredths": 179,
+      "multiplicativeResidualRatio": "2.4793388429752066115702479338842975206611570247934",
+      "passed": true
+    },
+    "qou_rz0g_gram_inverse_radical_scope": {
+      "h3Dim": 6,
+      "tl3QuotientDim": 5,
+      "radical3Dim": 1,
+      "coreReexporters": 4,
+      "corpusConsumers": 9,
+      "callGraphReach": 13,
+      "y111ConventionC": "0.13770327705215911352988195917062972025392876757502",
+      "y111ConventionD": "0.0",
+      "cInvRadicalWeight": "7.2619913004773370157733243115063694362364136607622",
+      "radicalPairingDiscrepancyAtQuarter": "1.8154978251193342539433310778765923590591034151906",
+      "passed": true
+    }
+  }
+}
