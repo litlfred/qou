@@ -1,11 +1,11 @@
 ---
 # qou-k4oq
 title: Build the Hecke algebra foundation in Lean from scratch — Mathlib has NONE
-status: todo
+status: in-progress
 type: epic
 priority: normal
 created_at: 2026-09-05T07:53:31Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-17T08:12:13Z
 parent: qou-rtxm
 ---
 
@@ -284,3 +284,10 @@ Now the epic for P3.HECKE under Lean / Mathlib foundations.
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+
+## Round 57 Progress (lane-e667)
+- **PR:** https://github.com/litlfred/qou/pull/8254 (`e9795825b5e02ba1c5315e9cbd5d10db4bc08957`)
+- **Module:** `QOU.Foundations.OcneanuTowerConventionDRibbonClebschGordan` (`folio/quantum-observable-universe/lean/QOU/Foundations/OcneanuTowerConventionDRibbonClebschGordan.lean`), wired into `QOU.lean`.
+- **Theorem:** `partial_trace_peel_forces_weight_and_convention_d` — proves that `2 × 2` R-matrix partial-trace diagonal balance `w0 · q + w1 · (q - q⁻¹) = w1 · q` forces `w0 · q = w1 · q⁻¹` and `w1 = q² · w0`, pinning `w = (1, q²)`, `z = q³`, and the cleared Convention D normalization identity `zNorm · (1 + q²) = q³`, verified in `ocneanu-tower-convention-d-ribbon-clebsch-gordan.witness.json`.
+- **Status:** Kept at `in-progress` pending Merge Manager merge and full dependency verification.
