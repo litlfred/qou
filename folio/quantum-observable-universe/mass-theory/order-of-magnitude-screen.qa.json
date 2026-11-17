@@ -19,8 +19,26 @@
         "reviewed_sha": "0eba507a077106abc6597936dd5f1cfb3cff653b",
         "severity": "minor",
         "evidence": "Lean screen_mul carries a 0 <= lam hypothesis that item 1's product rule omits. The rule appears true without it, but the Lean proves the weaker form."
+      },
+      {
+        "field_hash": {
+          "md": "030e59923832",
+          "ts": "305bfe9983a8",
+          "lean": "1594d82782fe",
+          "lean_statement": "c60ec3360a12"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-17T18:11:33.001Z",
+        "reviewed_sha": "677b0a1284456bd582792110bdc22f48ab47322d",
+        "severity": "major",
+        "evidence": "Re-graded 2026-11-17 (was warn). Lean screen_mul requires 0 <= lam; item 1's product rule states it without that hypothesis. Fix: add the hypothesis to the statement or prove the rule without it."
       }
     ]
   },
-  "updated_at": "2026-11-17T00:43:10.897Z"
+  "updated_at": "2026-11-17T18:11:33.001Z"
 }
