@@ -1,7 +1,7 @@
 ---
 # qou-tmmt
 title: 'GAP: adjudicate the 9 projection-shaped §3b-cond item-5 candidates'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

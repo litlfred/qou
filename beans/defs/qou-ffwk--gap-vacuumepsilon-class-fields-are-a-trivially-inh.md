@@ -1,7 +1,7 @@
 ---
 # qou-ffwk
 title: 'GAP: 10 conjecture carriers use a trivially-inhabited ''residual = 0'' placeholder'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

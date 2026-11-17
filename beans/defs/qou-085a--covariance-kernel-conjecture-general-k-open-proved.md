@@ -1,7 +1,7 @@
 ---
 # qou-085a
 title: 'covariance_kernel_conjecture: general k open; proved k<=8 in Lean'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

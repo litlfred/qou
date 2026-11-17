@@ -1,7 +1,7 @@
 ---
 # qou-qspc
 title: 'q-RH: the spectral coordinate map alpha_i = q^rho_i has no carrier'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:

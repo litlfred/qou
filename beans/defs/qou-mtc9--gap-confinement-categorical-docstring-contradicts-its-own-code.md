@@ -1,7 +1,7 @@
 ---
 # qou-mtc9
 title: 'GAP: confinement_categorical docstring contradicts its own code (self-assuming projection)'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
