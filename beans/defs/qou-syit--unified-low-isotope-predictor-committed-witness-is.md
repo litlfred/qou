@@ -1,7 +1,8 @@
 ---
 # qou-syit
 title: 'unified_low_isotope_predictor: committed witness is 24.8x stale AND its refresh is blocked by the raw-float64 ratchet'
-status: todo
+status: in-progress
+pr: 8336
 type: task
 priority: normal
 tags:
@@ -207,3 +208,8 @@ earning its keep, not a reason to relax it.
 **Not fixed here.** `chi_sym_alt_closed_form` is `qou-l790`'s live file, merged
 an hour before this measurement. Fixing it is at that producer (carry the
 assertion values as strings/mpf at their true precision), and it is theirs.
+
+
+## Progress Update (PR #8336)
+- Formalized in Lean 4.24.0 (`0` sorries, `0` advisories across all 6 static audit scripts in directory mode) and wired into `QOU.lean`.
+- Verified at `mp.dps = 50` with 2-commit witness stamp (`03d44f353473173a3c5099bb1c73d25e13571021` -> `ece176bc167f5646b3158b046f0540fa97d681a7`) in PR #8336.

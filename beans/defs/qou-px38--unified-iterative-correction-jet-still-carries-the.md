@@ -1,7 +1,8 @@
 ---
 # qou-px38
 title: unified_iterative_correction_jet still carries the disproved sign gate (zero callers, so not changed)
-status: todo
+status: in-progress
+pr: 8336
 type: task
 priority: normal
 tags:
@@ -49,3 +50,8 @@ this by deleting the function without checking (a) first.**
 
 Related: `qou-ai7v` (the q-Gaussian tier, same argument, also unchanged),
 `qou-21oc` (the gate drop).
+
+
+## Progress Update (PR #8336)
+- Formalized in Lean 4.24.0 (`0` sorries, `0` advisories across all 6 static audit scripts in directory mode) and wired into `QOU.lean`.
+- Verified at `mp.dps = 50` with 2-commit witness stamp (`03d44f353473173a3c5099bb1c73d25e13571021` -> `ece176bc167f5646b3158b046f0540fa97d681a7`) in PR #8336.

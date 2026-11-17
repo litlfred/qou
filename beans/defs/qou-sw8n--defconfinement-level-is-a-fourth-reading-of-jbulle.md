@@ -1,7 +1,8 @@
 ---
 # qou-sw8n
 title: def:confinement-level is a FOURTH reading of J^bullet that no audit has, and it evades both exclusion routes
-status: todo
+status: in-progress
+pr: 8336
 type: task
 priority: high
 tags:
@@ -92,3 +93,8 @@ PR #7375.
 ## 2026-10-10 — pointer
 
 Tracked under related carrier M12 (wpdb) of epic `qou-d8c7` "Mass endomorphism" (issue litlfred/qou#7547). Parent and status unchanged; the epic body lists what is still open for this item and where it sits in the attack-vector catalogue.
+
+
+## Progress Update (PR #8336)
+- Formalized in Lean 4.24.0 (`0` sorries, `0` advisories across all 6 static audit scripts in directory mode) and wired into `QOU.lean`.
+- Verified at `mp.dps = 50` with 2-commit witness stamp (`03d44f353473173a3c5099bb1c73d25e13571021` -> `ece176bc167f5646b3158b046f0540fa97d681a7`) in PR #8336.
