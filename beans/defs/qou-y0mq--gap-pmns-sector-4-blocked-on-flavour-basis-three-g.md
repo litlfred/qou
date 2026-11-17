@@ -1,7 +1,7 @@
 ---
 # qou-y0mq
 title: 'GAP: PMNS sector (4) — blocked on flavour basis + three-generation structure'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -29,3 +29,6 @@ Tower status [reading: qou-ggdk]: no attack at any order; a full-tower formulati
 ## 2026-10-10 — reparented under qou-20sx
 
 Owner decision 7b (ofri, 2026-10-10): the electroweak (`8f-ew`) beans are grouped under `qou-20sx`, the electroweak front's node, instead of directly under the epic `qou-8lxd`. Only the parent changed. Status, scope and body are untouched.
+
+## Round 66 Update (PR #8239)
+- Formalized in `WeakIsospinGradingColourFibreRoutesLightQuarkExtractionTauLogConvexityAndPmnsCarrier.lean` and verified via 80-dps `mpmath` witness in PR #8239.

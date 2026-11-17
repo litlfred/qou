@@ -1,7 +1,7 @@
 ---
 # qou-ha6c
 title: 'GAP: m_u, m_d — only m_d − m_u is extractable (δ_QCD = Δ_pn + E_EM); E_EM is gating object 4-B (m_s/m_c, m_b/m_t split out 2026-09-03)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -25,3 +25,6 @@ blocked_by:
 (iv) Next: derive the self channel A·Σq² (`qou-bn8e` — A1 disposes of it only in binding energy). Gate: 4-B. Conditional-on-one-bond m_d − m_u is plausible in months; unconditional is not.
 (v) Forecast: the first quark number, if any, and conditional.
 Tower status [reading: qou-ggdk]: ORDER-ZERO-ONLY — single-crossing pairwise Coulomb ansatz; Δ_pn rides the truncated c_k ladder; the sinh Coulomb channel is *discarded by the canonical projection* (canonical cheat sheet §3.1). Full-tower version — keep the bar-odd sinh channel inside tr_M = Σ_λ y_λ χ_λ — is not formulated anywhere.
+
+## Round 66 Update (PR #8239)
+- Formalized in `WeakIsospinGradingColourFibreRoutesLightQuarkExtractionTauLogConvexityAndPmnsCarrier.lean` and verified via 80-dps `mpmath` witness in PR #8239.

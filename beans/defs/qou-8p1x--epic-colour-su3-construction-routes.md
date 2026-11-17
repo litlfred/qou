@@ -1,7 +1,7 @@
 ---
 # qou-8p1x
 title: Routes to a 3-dimensional fibre / colour SU(3) — assessed and roasted
-status: todo
+status: in-progress
 type: feature
 priority: normal
 tags:
@@ -338,3 +338,6 @@ Provenance: cross-session read-only pre-read of the 15 open `8f-colour` beans
 (`/mnt/project-files/eightfold/8f-colour-preread.md`), confirmed on this branch at
 `37bdbeef6b3` rather than taken on trust — the pre-read states its own path checks
 were run partly against `main` at a different commit.
+
+## Round 66 Update (PR #8239)
+- Formalized in `WeakIsospinGradingColourFibreRoutesLightQuarkExtractionTauLogConvexityAndPmnsCarrier.lean` and verified via 80-dps `mpmath` witness in PR #8239.

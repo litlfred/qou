@@ -1,7 +1,7 @@
 ---
 # qou-20sx
 title: Weak-isospin (up/down-type) grading orthogonal to generation winding — the convergence target unlocking charmed-hadron masses + sin^2theta_W + hypercharge Y
-status: todo
+status: in-progress
 type: feature
 priority: normal
 tags:
@@ -44,3 +44,6 @@ It is open research, so per AGENTS.md rule 13a this bean is not closed until the
 The brief that proposed this said 12 children; the measured count of open `8f-ew` beans other than this node and the epic is **11**. `qou-dnm1` (scrapped) and `qou-tdrd` (completed, the derived $T_3$ that `qou-buxs` consumes) are not reparented.
 
 Upstream dependencies are outside this node: flavour SU(3) (`qou-j3w6`, owner chose to leave it as is on 2026-10-10) and the generation count (`qou-xtcl`, kept open on 2026-10-10).
+
+## Round 66 Update (PR #8239)
+- Formalized in `WeakIsospinGradingColourFibreRoutesLightQuarkExtractionTauLogConvexityAndPmnsCarrier.lean` and verified via 80-dps `mpmath` witness in PR #8239.
