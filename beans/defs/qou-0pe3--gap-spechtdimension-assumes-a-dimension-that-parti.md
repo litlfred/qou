@@ -1,7 +1,7 @@
 ---
 # qou-0pe3
 title: 'GAP: SpechtDimension assumes a dimension that Partition.dimIrrep already proves -- blocked by a Partition type collision'
-status: todo
+status: in-progress
 type: task
 created_at: 2026-08-21T15:17:07Z
 updated_at: 2026-11-15T13:30:00Z
@@ -79,3 +79,6 @@ Ported 2026-11-15, when PR #5352 was closed on the owner's decision. It is still
 ## Parented 2026-11-15 (owner-approved bean triage)
 
 Parent `(none)` → `qou-1oif`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.
+
+### Progress (Round 71 — PR litlfred/qou#8300)
+- Formalized in PR `litlfred/qou#8300` (`feat/round71-deltalambda-idempotent-ajtrefoil-n5-gbdepth-43c1`, Commit 1 `a2b0ac0a51416e015d2c71b026de5cf8836daab0`, Head `432940fd4ad329afd23f7d920528ba787ac8691a`, `scriptHash: 06c965f4587d`).
