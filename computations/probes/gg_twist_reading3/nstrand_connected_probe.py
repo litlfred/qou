@@ -124,7 +124,7 @@ def log_series(num, den):
 
 
 def at_q0(p, q0):
-    A = q0 ** mp.mpf(-0.25)
+    A = q0 ** (mp.mpf(-1) / 4)
     return mp.fsum(v * A ** e for e, v in p.items())
 
 

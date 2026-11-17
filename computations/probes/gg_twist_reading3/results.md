@@ -200,3 +200,40 @@ convolution flow into σ² = A²·1 + (1 − A⁻⁴)·e, so the Alt channel is 
 
 Closing the ring adds exactly one state that is not a convolution of its bonds, the whole cycle in the Alt channel.
 Scope (a): this locates where the ring differs from the chain; it is not a selection rule.
+
+## Stage 6 — n-strand chains, rings and Brunnian loops (run 2026-11-17, pre-registered)
+
+Probe `nstrand_connected_probe.py`, witness `nstrand-connected-stage6.witness.json`. Exact integer
+Laurent polynomials in A (TL bracket); s = log t. Runtime 8 s.
+
+**Q1, chains: yes, for every n = 3..8 and both signs.** The hypothesis of the Lean theorem
+`connected_eq_zero_of_bonds` (bond-additivity of `F`) holds exactly on every subset, so every
+connected part of size ≥ 3 is exactly 0. This is the Lean theorem applied to a checked hypothesis,
+not a numerical near-zero.
+
+**Q2, rings: nonzero for every n = 3..8.** The full n-party connected part first appears at order
+sⁿ, with leading coefficient
+
+| n | 3 | 4 | 5 | 6 | 7 | 8 |
+|---|---|---|---|---|---|---|
+| e = +2 | −3/8 | 3/16 | −3/32 | 3/64 | −3/128 | 3/256 |
+| e = −2 | 3/8 | 3/16 | 3/32 | 3/64 | 3/128 | 3/256 |
+
+so the leading term is `3·(∓1/2)ⁿ sⁿ` on the six values of n measured. n = 6, e = +2 reproduces
+stage 5 (3/64 s⁶, φ(q₀) = 5.308e-8). The closed form for general n is an observation on n = 3..8,
+not a proof.
+
+**Q3, Brunnian: nonzero for every n = 3..6.** Every proper sublink is exactly an unlink, so every
+connected part below n parties is 0 and φ(full) = F(full). Leading term at order s^{2(n−1)}:
+coefficient −3/4, 3/2, −3, 6 for n = 3, 4, 5, 6, i.e. `3·(−2)ⁿ/32` on those four values
+(observation, not proof). Word lengths 12, 36, 88, 196 after free reduction.
+
+**Reading.** Scope (a). An open chain has no connected part beyond pairs (Bell level only). Closing
+it puts all of its entanglement into the single n-party term, at order sⁿ, so a ring is the
+smallest structure with genuinely n-party connected part at every n. A Brunnian loop has the same
+property by construction but enters at the higher order s^{2(n−1)}, so it is weaker at small s.
+Nothing here is selected or compared with measurement.
+
+Precision gates (`--changed`): the q₀ gates are red on this branch, which is 39 commits behind
+main; the probe reads q₀ only for the reported value at t = q₀, through `q_at()`. Not investigated
+further here.
