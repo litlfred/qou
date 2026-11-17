@@ -1,0 +1,85 @@
+{
+  "probe": "round57-fivetwo-discriminant-habiro-dilog-dglz-pentagon",
+  "scriptPath": "computations/probes/round57_fivetwo_discriminant_habiro_dilog_dglz_pentagon_probe.py",
+  "scriptHash": "3ee733fedb99",
+  "scriptCommitSha": "85cf34f4dd33fa831b7480e3f2c9e1ff2e2f5c6d",
+  "precisionDps": 80,
+  "beans": [
+    "qou-yq50",
+    "qou-26ew",
+    "qou-0otg",
+    "qou-5isd",
+    "qou-zlr6"
+  ],
+  "leanModules": [
+    "folio/quantum-observable-universe/lean/QOU/AlphaEM/FiveTwoDiscriminantGluingAndHabiroDilogLadder.lean",
+    "folio/quantum-observable-universe/lean/QOU/QBeta/CyclicDilogPentagonAndDGLZStateIntegralLattice.lean"
+  ],
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "qou-yq50-five-two-discriminant-neg23-and-gluing",
+      "bean": "qou-yq50",
+      "description": "5_2 saddle cubic y^3 - y^2 + 1 has discriminant -23 (diff 4 from -27) and gluing form 2*l - 3*m is shift-invariant",
+      "passed": true,
+      "disc52": -23,
+      "discEisenstein": -27,
+      "gluingSamplesChecked": 125
+    },
+    {
+      "id": "qou-26ew-golden-ratio-dilog-ladder-80dps",
+      "bean": "qou-26ew",
+      "description": "Golden-ratio dilogarithm evaluations Li_2(1), Li_2(phi^{-1}), Li_2(phi^{-2}) match pi^2/30 ladder weights (5, 3, 2) to 80 dps",
+      "passed": true,
+      "li2PhiInv80dps": "0.75539561953174146938652002875608235351496359067478019182603370893220913667495871",
+      "li2PhiInvSq80dps": "0.42640880616209618209203699542687731567117361043342050427892206305820764259431854",
+      "resLi2_1_80dps": "2.1084395886461046448697148102540038015419922764737015100155526050216288581939519e-81",
+      "resLi2PhiInv80dps": "0.0",
+      "resLi2PhiInvSq80dps": "5.2710989716152616121742870256350095038549806911842537750388815125540721454848798e-82"
+    },
+    {
+      "id": "qou-0otg-habiro-props-51-61-82-cyclotomic-degree-step",
+      "bean": "qou-0otg",
+      "description": "Habiro [habiro2000] Props. 5.1, 6.1, 8.2 quadratic q-degree m*(m+1) has exact step increment 2*(m+1)",
+      "passed": true,
+      "habiroDegs": [
+        0,
+        2,
+        6,
+        12,
+        20,
+        30,
+        42,
+        56
+      ],
+      "stepResiduals": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "qou-5isd-cyclic-dilog-pachner-charge-conservation",
+      "bean": "qou-5isd",
+      "description": "Cyclic dilogarithm R-matrix (9504020v1.pdf) Pachner 2<->3 charges satisfy q_1+q_3=q_2 and q_1+q_2+q_3=2*(p_1+p_2)",
+      "passed": true,
+      "q1": 7,
+      "q2": 18,
+      "q3": 11,
+      "cyclicOrderN": 13
+    },
+    {
+      "id": "qou-zlr6-dglz-2009-state-integral-trivalent-and-symplectic",
+      "bean": "qou-zlr6",
+      "description": "DGLZ 2009 [dimofte-gukov-lenells-zagier-2009] trivalent graph counts satisfy 3V=2E, E-V=L-1, and symplectic T-shear invariance",
+      "passed": true,
+      "symplecticBefore": 1,
+      "symplecticAfter": 1,
+      "loopsChecked": 8
+    }
+  ]
+}
