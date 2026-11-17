@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "1.0",
+  "probe": "module_scope_float_constant_blast_radius_light_amplitude_scaling_silent_gate_refutation_derived_trace_detector_blindspot_and_confinement_locus_openness_probe",
+  "beans": [
+    "qou-bfdb",
+    "qou-bhvs",
+    "qou-brkp",
+    "qou-bvk7",
+    "qou-c9n8"
+  ],
+  "leanModule": "folio/quantum-observable-universe/lean/QOU/Eightfold/ModuleScopeFloatConstantBlastRadiusLightAmplitudeScalingSilentGateRefutationDerivedTraceDetectorBlindspotAndConfinementLocusOpenness.lean",
+  "scriptFile": "computations/probes/module_scope_float_constant_blast_radius_light_amplitude_scaling_silent_gate_refutation_derived_trace_detector_blindspot_and_confinement_locus_openness_probe.py",
+  "scriptCommitSha": "3431f003e082a534ced2f92731214cdb81239698",
+  "scriptHash": "4a5058f1b495",
+  "scriptSha256": "4a5058f1b495e5cd5d87d9dae3073c23115b8a38666b2f6defe255e2eb5ab51f",
+  "dps": 80,
+  "generatedAt": "2026-11-17T11:38:11.919511+00:00",
+  "allPassed": true,
+  "checks": {
+    "qou_bfdb_module_scope_float_blast_radius": {
+      "passed": true,
+      "affectedProducers": 1027,
+      "totalProducers": 1929,
+      "unaffectedProducers": 902,
+      "residualAffectedAfter2LocalPatches": 1025,
+      "blastRatio": "5.3240020736132711249351995852773457750129600829445308449974079834110938310005184e-1",
+      "q0Binary64RelError": "3.587724408891597622144584721717585846743613016255061314307542913358120731791797e-17",
+      "unmonitoredTwinDriftPct": "2.288e+3"
+    },
+    "qou_bhvs_light_amplitude_scaling_ladder": {
+      "passed": true,
+      "scale1": "2.8",
+      "scale2": "5.8",
+      "scale3": "8.0",
+      "step1": "3.0",
+      "step2": "2.2",
+      "secondDiff": "-8.0e-1",
+      "composed1": "1.4",
+      "composed2": "2.9",
+      "composed3": "4.0"
+    },
+    "qou_brkp_silent_parse_gate_and_trace_shifts": {
+      "passed": true,
+      "remediatedBatch": 14,
+      "syntaxBroken": 2,
+      "runnableBatch": 12,
+      "ratioCachedToBaseline": "1.4810391902570018359336981367402054857293366857171797314417082389811089183466568",
+      "ratioCachedToFresh": "3.7848162777168523108325447017653826975144209326343689261616925253200294584413937"
+    },
+    "qou_bvk7_derived_trace_blindspot_and_denominator_preflight": {
+      "passed": true,
+      "initialWitnessCount": 14,
+      "drainedWitnessCount": 12,
+      "survivingWitnessCount": 2,
+      "rawCoefficientSub": "-2.0",
+      "crossMultipliedNum": "2.0",
+      "trueRationalDiff": "5.7142857142857142857142857142857142857142857142857142857142857142857142857142857e-2"
+    },
+    "qou_c9n8_confinement_locus_openness_and_mu_constancy": {
+      "passed": true,
+      "sigma0": "3.0e-1",
+      "ballRadius": "1.5e-1",
+      "perturbationDist": "1.0e-1",
+      "marginLowerBound": "1.0e-1",
+      "perturbedSigmaY": "1.2e-1",
+      "muX": 3,
+      "muY": 3
+    }
+  }
+}
