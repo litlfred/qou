@@ -351,4 +351,27 @@ theorem a4_magnitude_one_scalar_gate :
     detG (4993 / 10000) < 0 :=
   ⟨magnitude_form_surjective, b4_strictMono_on, naive_z_unphysical⟩
 
+
+/-! ### Parity, roots, and exact difference factorization (`qou-0qmr`) -/
+
+/-- **Even parity and unit roots (`qou-0qmr`).** `detG` is an even function of `m`,
+takes value `1` at `m = 0`, and vanishes at `m = ±1`. -/
+theorem detG_even_and_unit_roots (m : ℝ) :
+    detG (-m) = detG m ∧
+      detG 0 = 1 ∧
+      detG 1 = 0 ∧
+      detG (-1) = 0 := by
+  refine ⟨by unfold detG; ring,
+    by unfold detG; norm_num,
+    by unfold detG; norm_num,
+    by unfold detG; norm_num⟩
+
+/-- **Exact difference factorization (`qou-0qmr`).** For any two per-pair bond magnitudes
+`m₁, m₂ : ℝ`, the determinant gap factors as
+`detG m₁ - detG m₂ = (m₂² - m₁²) * (6 - 5 * (m₁² + m₂²))`. -/
+theorem detG_difference_factorization (m₁ m₂ : ℝ) :
+    detG m₁ - detG m₂ = (m₂ ^ 2 - m₁ ^ 2) * (6 - 5 * (m₁ ^ 2 + m₂ ^ 2)) := by
+  unfold detG
+  ring
+
 end QOU.MassTheory.A4InterfaceMagnitude

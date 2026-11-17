@@ -142,4 +142,22 @@ theorem strong_channel_mirror_difference (A Z W : R) :
     (nPlus A Z - nMinus A Z) - (nPlus A W - nMinus A W) = 4 * (Z - W) := by
   rw [strong_channel_carries_charge, strong_channel_carries_charge]; ring
 
+
+/-! ## 4. Linearity of `secondDiff` and quadratic reconstruction of `protonPairs` (`qou-dhsn`) -/
+
+/-- **Linearity of the discrete second difference (`qou-dhsn`).** -/
+theorem secondDiff_linear_comb (f g : R → R) (α β Z : R) :
+    secondDiff (fun x => α * f x + β * g x) Z = α * secondDiff f Z + β * secondDiff g Z := by
+  unfold secondDiff
+  ring
+
+/-- **Quadratic crossing-difference reconstruction of `protonPairs` (`qou-dhsn`).**
+While no *linear* combination of `(nPlus, nMinus)` can equal `protonPairs Z`, the
+quadratic polynomial `(nPlus A Z - nMinus A Z) * (nPlus A Z - nMinus A Z - 4)` in the
+strong-channel crossing difference equals `16 * protonPairs Z` identically. -/
+theorem crossing_diff_quadratic_eq_sixteen_protonPairs (A Z : R) :
+    (nPlus A Z - nMinus A Z) * (nPlus A Z - nMinus A Z - 4) = 16 * protonPairs Z := by
+  unfold nPlus nMinus protonPairs
+  ring
+
 end QOU.MassTheory.CrossingCountAffine

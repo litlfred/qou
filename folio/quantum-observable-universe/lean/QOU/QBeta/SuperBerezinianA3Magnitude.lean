@@ -192,4 +192,27 @@ class A3CrossTermMagnitudeClosed {R : Type*} [Field R]
   geom_offblock_gives_magnitude :
     evenFaceCorrection A (crossTerm B_geom C D) = κ_phys ∧ κ_phys ≠ 1
 
+
+/-! ### Inverse recovery and gauge-scale invariance of the even-face correction (`qou-6r6d`) -/
+
+/-- **Exact left-inverse recovery of the off-block (`qou-6r6d`).** For nonzero blocks `A, C, D`,
+the off-block `B` is uniquely recovered from `evenFaceCorrection A (crossTerm B C D)` by
+`A * (1 - evenFaceCorrection A (crossTerm B C D)) * D * C⁻¹ = B`. -/
+theorem crossTerm_inverse_recovery {R : Type*} [Field R] (A B C D : R)
+    (hA : A ≠ 0) (hC : C ≠ 0) (hD : D ≠ 0) :
+    A * (1 - evenFaceCorrection A (crossTerm B C D)) * D * C⁻¹ = B := by
+  unfold evenFaceCorrection crossTerm
+  field_simp
+  ring
+
+/-- **Block-rescaling invariance (`qou-6r6d`).** Rescaling `(A, B)` by `α ≠ 0` and
+`(C, D)` by `β ≠ 0` leaves `evenFaceCorrection` unchanged. -/
+theorem evenFaceCorrection_scale_invariant {R : Type*} [Field R]
+    (A B C D α β : R) (hA : A ≠ 0) (hD : D ≠ 0) (hα : α ≠ 0) (hβ : β ≠ 0) :
+    evenFaceCorrection (α * A) (crossTerm (α * B) (β * C) (β * D)) =
+      evenFaceCorrection A (crossTerm B C D) := by
+  unfold evenFaceCorrection crossTerm
+  field_simp
+  ring
+
 end QOU.QBeta.SuperBerezinianA3Magnitude

@@ -179,4 +179,32 @@ theorem a4_magnitude_bracketed_not_closed_not_excluded :
   ⟨bracket_B4He, geom_ne_targets.1, targets_within_bound.1,
    bracket_absMu4, geom_ne_targets.2, targets_within_bound.2⟩
 
+
+/-! ### Convex-interpolation mixing fractions for the two AME targets (`qou-9nq9`) -/
+
+/-- The unique mixing parameter `θ*(t)` such that
+`(1 - θ) * prodMagnitude + θ * geomMagnitude = t`. -/
+noncomputable def mixingFraction (t : ℝ) : ℝ :=
+  (t - prodMagnitude) / (geomMagnitude - prodMagnitude)
+
+/-- **Exact convex-combination identity and distinctness of target fractions (`qou-9nq9`).**
+For any target `t`, `(1 - mixingFraction t) * prodMagnitude + mixingFraction t * geomMagnitude = t`,
+and the mixing fractions required by `B4He` and `absMu4` both lie strictly in `(0, 1)` and are
+distinct (`mixingFraction absMu4 < mixingFraction B4He`), so no single convex combination of
+production and geometric weights can match both targets simultaneously. -/
+theorem mixingFraction_identity_and_target_separation (t : ℝ) :
+    (1 - mixingFraction t) * prodMagnitude + mixingFraction t * geomMagnitude = t ∧
+      0 < mixingFraction absMu4 ∧
+      mixingFraction absMu4 < mixingFraction B4He ∧
+      mixingFraction B4He < 1 := by
+  refine ⟨?_, ?_, ?_, ?_⟩
+  · unfold mixingFraction prodMagnitude geomMagnitude
+    ring
+  · unfold mixingFraction prodMagnitude geomMagnitude absMu4
+    norm_num
+  · unfold mixingFraction prodMagnitude geomMagnitude absMu4 B4He
+    norm_num
+  · unfold mixingFraction prodMagnitude geomMagnitude B4He
+    norm_num
+
 end QOU.MassTheory.GeometricWLambdaA4Helium
