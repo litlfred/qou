@@ -1,0 +1,78 @@
+{
+  "probe": "sparse_mpf_character_product_cost_narrow_witness_copy_triage_ordering_ruling_binding_threshold_multi_level_character_ratio_and_precision_gates_preflight_probe.py",
+  "beans": [
+    "qou-fmoi",
+    "qou-g158",
+    "qou-g5oz",
+    "qou-gpb5",
+    "qou-hah0"
+  ],
+  "dps": 80,
+  "computedAt": "2026-11-17T12:39:11Z",
+  "scriptCommitSha": "81d1eb825a24c708bc5be9afb940196165da291b",
+  "scriptSha256": "0213db7ace7f801d6de95251a0326381d93a7037495cba7e67b84c5816b1ebe2",
+  "scriptHash": "0213db7ace7f",
+  "allPassed": true,
+  "checks": [
+    {
+      "name": "qou_fmoi_sparse_mpf_character_product_cost_a4",
+      "bean": "qou-fmoi",
+      "passed": true,
+      "braidWordCrossingCountA4": 47,
+      "totalMpfBearingCrossingCountA4": 25,
+      "integerOnlyCrossingCountA4": 22,
+      "smallestIrrepDimA4": 132,
+      "largestIrrepDimA4": 4158,
+      "perStepDenseVsSparseSpeedupFactor": 8644482,
+      "cubicScalingFactor80dps": "3.1255875e+4",
+      "denseEstimatedHoursLargestIrrep80dps": "5.7041971875e+2"
+    },
+    {
+      "name": "qou_g158_class_d_narrow_witness_copy_triage",
+      "bean": "qou-g158",
+      "passed": true,
+      "initialNarrowWitnessCopyFindings": 266,
+      "clearedNarrowWitnessCopyFindings": 34,
+      "residualClassDNarrowFindings": 232,
+      "uniqueNarrowKeyReduction": 17,
+      "deprecatedWitnessCopyReduction": 4,
+      "residualNarrowFraction80dps": "8.7218045112781954887218045112781954887218045112781954887218045112781954887218045e-1"
+    },
+    {
+      "name": "qou_g5oz_ordering_ruling_binding_operator_threshold_flip",
+      "bean": "qou-g5oz",
+      "passed": true,
+      "totalSixStrandAlgebraDim": 720,
+      "planarQuotientDimSixStrand": 132,
+      "kernelDimSixStrand": 588,
+      "groupedPeakAbsChi80dps": "9.597856",
+      "borromeanPeakAbsChi80dps": "2.4581026",
+      "trivialBlockOrderDrift80dps": "0.0",
+      "groupedSmallEigenphaseBlockCount": 2,
+      "borromeanSmallEigenphaseBlockCount": 0
+    },
+    {
+      "name": "qou_gpb5_multi_level_character_ratio_factorization",
+      "bean": "qou-gpb5",
+      "passed": true,
+      "totalHierarchyLevelCount": 3,
+      "implementedHierarchyLevelCount": 1,
+      "unbuiltHierarchyLevelCount": 2,
+      "fullThreeLevelProduct80dps": "1.0476774691488984375",
+      "nucleonOnlyProduct80dps": "9.87654321e-1",
+      "factorizationIdentityResidual80dps": "1.185997268613433862739214580767877138367370655516457099383748340324666232734098e-81"
+    },
+    {
+      "name": "qou_hah0_precision_gates_preflight_and_real_red_diagnosis",
+      "bean": "qou-hah0",
+      "passed": true,
+      "bareContainerBlockingRedCount": 8,
+      "phantomMissingSubstrateRedCount": 2,
+      "diagnosedRealRedCount": 6,
+      "preflightCheckedPackageCount": 2,
+      "totalQ0CorpusCounterSum": 1767,
+      "rawFloat64RegressionFieldDelta": 9,
+      "q0MuonRelativeDriftPpb80dps": "7.6872203069065898306050738111185561817094165009856220400791860639250245205835624e-2"
+    }
+  ]
+}
