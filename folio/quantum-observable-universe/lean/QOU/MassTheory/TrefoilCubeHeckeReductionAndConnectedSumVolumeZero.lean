@@ -65,7 +65,7 @@ def sigma1PowerCoeffD (n : Nat) (q : Int) : Int :=
 multiplying $c_n \sigma_1 + d_n$ by $\sigma_1$ under $\sigma_1^2 = (q-1)\sigma_1 + q$,
 together with the exact eigen-evaluations $q c_3(q) + d_3(q) = q^3$ and
 $-c_3(q) + d_3(q) = -1$ (`qou-k8fc`). -/
-theorem sigma1Cube_hecke_recurrence_and_eigenvalues (q : Int) :
+theorem sigma1Cube_quadratic_recurrence_and_eigenvalues (q : Int) :
     sigma1PowerCoeffC 3 q = (q - 1) * sigma1PowerCoeffC 2 q + sigma1PowerCoeffD 2 q ∧
       sigma1PowerCoeffD 3 q = q * sigma1PowerCoeffC 2 q ∧
       sigma1PowerCoeffC 3 q + sigma1PowerCoeffC 2 q = q ^ 2 ∧
@@ -89,15 +89,15 @@ inductive Sigma1CubeRole where
 
 /-- Every role of $\sigma_1^3$ evaluates the same 2-strand Hecke element
 $(c_3(q), d_3(q)) = (q^2 - q + 1,\; q(q - 1))$ (`qou-k8fc`). -/
-def roleHeckePair (_r : Sigma1CubeRole) (q : Int) : Int × Int :=
+def roleQuadraticPair (_r : Sigma1CubeRole) (q : Int) : Int × Int :=
   (sigma1PowerCoeffC 3 q, sigma1PowerCoeffD 3 q)
 
-/-- Role-blindness of the $\sigma_1^3$ Hecke datum (`qou-k8fc`): all three roles share the
-exact same Hecke expansion pair $(c_3(q), d_3(q))$, proving that algebraic properties of
+/-- Role-blindness of the $\sigma_1^3$ quadratic datum (`qou-k8fc`): all three roles share the
+exact same quadratic expansion pair $(c_3(q), d_3(q))$, proving that algebraic properties of
 $\sigma_1^3$ alone do not distinguish the deuteron/pn-channel label from the electron or
 nucleon-factor labels. -/
-theorem roleHeckePair_invariant_across_roles (r1 r2 : Sigma1CubeRole) (q : Int) :
-    roleHeckePair r1 q = roleHeckePair r2 q := by
+theorem roleQuadraticPair_invariant_across_roles (r1 r2 : Sigma1CubeRole) (q : Int) :
+    roleQuadraticPair r1 q = roleQuadraticPair r2 q := by
   rfl
 
 /-- Connected-sum total hyperbolic volume $V_{\mathrm{atom}}(Z, N) = Z V_p + N V_n$
