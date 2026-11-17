@@ -46,7 +46,7 @@ def git_head_sha() -> str:
 
 def compute_script_hash() -> str:
     digest = hashlib.sha256(SCRIPT_PATH.read_bytes()).hexdigest()
-    return digest[:12]
+    return digest
 
 
 def run_probe() -> dict:
@@ -183,6 +183,7 @@ def run_probe() -> dict:
         "beans": ["qou-4383", "qou-53p1", "qou-nmuz", "qou-nz8e", "qou-v1eu"],
         "scriptCommitSha": git_head_sha(),
         "scriptHash": compute_script_hash(),
+        "scriptSha256": compute_script_hash(),
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "durationMs": duration_ms,
         "dps": DPS,
