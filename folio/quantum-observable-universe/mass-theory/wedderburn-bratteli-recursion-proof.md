@@ -1,7 +1,7 @@
 ## Proof of existence
 
 By [Jones–Markov trace](#thm:jones-markov-trace), the Markov property
-$\mathrm{tr}_M(x \cdot T_n^{\pm 1}) = z^{\pm 1} \cdot \mathrm{tr}_M(x)$
+$\mathrm{tr}_M(x \cdot T_n) = z \cdot \mathrm{tr}_M(x)$ (and hence $\mathrm{tr}_M(x \cdot T_n^{-1}) = (z - h) \cdot \mathrm{tr}_M(x)$, $h = q - q^{-1}$)
 extends $\mathrm{tr}_M$ uniquely from $H_n$ to $H_{n+1}$.  In the
 Wedderburn block decomposition, this fixes
 $\{y_\lambda^{(n+1)}\}_{\lambda \vdash n+1}$ in terms of
