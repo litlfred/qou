@@ -1,0 +1,71 @@
+{
+  "probe": "raw_float64_ratchet_audit_movement_convention_d_rational_base_field_import_time_dps_ratchet_wiring_two_strand_collision_orientation_and_intermediate_knot_detection_stability_probe.py",
+  "beans": [
+    "qou-hlp5",
+    "qou-hms1",
+    "qou-j6gb",
+    "qou-jfx8",
+    "qou-jtgk"
+  ],
+  "dps": 80,
+  "computedAt": "2026-11-17T12:49:50Z",
+  "scriptCommitSha": "87d97f9baffcdb1091984ddd524c4c0266ac8ba4",
+  "scriptSha256": "9a3b7b2beaf468d581d577464e76437966fa04372f27de7bf02deb9dd1338b45",
+  "scriptHash": "9a3b7b2beaf4",
+  "allPassed": true,
+  "checks": [
+    {
+      "name": "qou_hlp5_raw_float64_ratchet_and_q0_audit_movement",
+      "bean": "qou-hlp5",
+      "passed": true,
+      "dirtyWitnessDelta": 3,
+      "totalFieldsDelta": 15,
+      "newNotBaselinedWitnessCount": 4,
+      "drainedWitnessFileCount": 2,
+      "totalQ0AuditWitnessSum": 1681,
+      "q0StringDigitGain": 18,
+      "ppbDriftBefore80dps": "4.17e-41"
+    },
+    {
+      "name": "qou_hms1_convention_d_rational_base_field_no_sqrt",
+      "bean": "qou-hms1",
+      "passed": true,
+      "totalBaseFieldAuditBlocks": 4,
+      "zDAtTwo80dps": "1.6",
+      "zCSquaredAtTwo80dps": "2.2222222222222222222222222222222222222222222222222222222222222222222222222222222e-1",
+      "zCAtTwoIrrational80dps": "4.7140452079103168293389624140323269285655729179231602439222657933024415948736901e-1"
+    },
+    {
+      "name": "qou_j6gb_import_time_dps_ratchet_wiring_partition",
+      "bean": "qou-j6gb",
+      "passed": true,
+      "provenLossyImportTimeMpfCount": 185,
+      "positionRiskyImportTimeMpfCount": 103,
+      "totalImportTimeMpfFindings": 288,
+      "affectedImportTimeMpfFileCount": 91,
+      "expandedGateArraySize": 9,
+      "provenLossyShare80dps": "6.4236111111111111111111111111111111111111111111111111111111111111111111111111111e-1"
+    },
+    {
+      "name": "qou_jfx8_two_strand_channel_window_depth_and_contact_lift",
+      "bean": "qou-jfx8",
+      "passed": true,
+      "twoStrandSymWeightAtQ0_80dps": "7.5270211384520417154892299831890094365454923569977898938853056350222320385142331e-1",
+      "twoStrandAltWeightAtQ0_80dps": "2.4729788615479582845107700168109905634545076430022101061146943649777679614857669e-1",
+      "twoStrandPartitionResidual80dps": "2.1084395886461046448697148102540038015419922764737015100155526050216288581939519e-81",
+      "minimalSeparatingWindowDepth": 4,
+      "productCylinderLiftDet": -1,
+      "unitTangentContactLiftDet": 1
+    },
+    {
+      "name": "qou_jtgk_intermediate_knot_detection_stability_margin",
+      "bean": "qou-jtgk",
+      "passed": true,
+      "intermediateKnotWalkStepCount": 83,
+      "intermediateKnotAtomCount": 7,
+      "intermediateKnotBaselineFields": 350,
+      "precisionSafetyMarginOrders": 5,
+      "argminToErrorSafetyRatio80dps": "1.2195121951219512195121951219512195121951219512195121951219512195121951219512195e+12"
+    }
+  ]
+}
