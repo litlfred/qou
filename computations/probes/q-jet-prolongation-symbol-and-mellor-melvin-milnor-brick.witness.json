@@ -1,0 +1,57 @@
+{
+  "probeId": "q_jet_prolongation_symbol_and_mellor_melvin_milnor_brick_probe",
+  "beans": [
+    "qou-2g9j",
+    "qou-mf2v",
+    "qou-ql68",
+    "qou-vnqe",
+    "qou-yaz9"
+  ],
+  "scriptPath": "computations/probes/q_jet_prolongation_symbol_and_mellor_melvin_milnor_brick_probe.py",
+  "scriptCommitSha": "806124de41e190e32fc1067832d4c70dbfefebc0",
+  "generatedAt": "2026-11-17T08:28:55.141806+00:00",
+  "environment": {
+    "pythonVersion": "3.13.12",
+    "mpmathVersion": "1.3.0",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "precisionDps": 80
+  },
+  "outputHash": "b877931046495a3920ba02d962916c3947a2eeb70cc28395bac6afca4f75490d",
+  "results": {
+    "precisionDps": 80,
+    "allPassed": true,
+    "checks": [
+      {
+        "id": "mellor_melvin_triple_linking_and_borromean_control",
+        "passed": true,
+        "borromeanMubar": -1,
+        "symmetrizedMagnusDiscrepancy": 0
+      },
+      {
+        "id": "q_diff_prolongation_symbol_vieta_and_roots",
+        "passed": true,
+        "vietaDiscrepancy": "1.075605513358774947948296e-81",
+        "leftRootResidual": "0.0",
+        "rightRootResidual": "0.0"
+      },
+      {
+        "id": "q_jet_prolongation_twisted_leibniz_identity",
+        "passed": true,
+        "twistedLeibnizResidual": "2.357307123332191882045323e-81"
+      },
+      {
+        "id": "triangulation_potential_quadratic_saddle_stencil",
+        "passed": true,
+        "linearWorkDiscrepancy": "7.577204771696938567500538e-82",
+        "symmetricStencilResidual": "7.097452404358518272329987e-81"
+      },
+      {
+        "id": "dgg_41_charge_conjugation_and_neutral_truncation",
+        "passed": true,
+        "bilateralFoldedResidual": "0.0",
+        "neutralAtZero": 1,
+        "neutralAtOne": -2
+      }
+    ]
+  }
+}
