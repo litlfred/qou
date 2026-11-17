@@ -1,7 +1,8 @@
 ---
 # qou-ref10
 title: 'TASK: ten lean.refs with no formalisation — and two of them DO exist elsewhere'
-status: todo
+status: in-progress
+pr: 8259
 type: task
 priority: medium
 tags:
@@ -84,3 +85,5 @@ Two further blocks have a resolvable ref pointing at a declaration **weaker than
 the block claims** (#4739 §3): `recursive-atom-knot-atlas` (its only theorem is
 `atomKnotAtlas.length ≥ 1`, a regression guard) and `q-momentum-properties` (one
 of four stated properties formalised). Those need formalisation, not a repoint.
+
+- **Round 55 update (in-progress):** De-vacuified in PR `litlfred/qou#8259` (HEAD `1be723e4c3e702d48db833cb3bedc75e89004822`), verified with Lean 4.24.0 (`0` `sorry`, `0` vacuity hits) and 80-dps `mpmath` witness.

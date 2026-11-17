@@ -1,7 +1,8 @@
 ---
 # qou-4ekg
 title: 'VACUITY class 3: theorem-returning-Prop — a def in disguise that proves nothing'
-status: todo
+status: in-progress
+pr: 8259
 type: task
 priority: normal
 tags:
@@ -82,3 +83,5 @@ unilaterally.
 Also: add `^theorem .* : Prop :=` to the vacuity audit's detector set. One
 regex, and it is a hard error rather than a heuristic — a theorem whose type is
 `Prop` is *always* miskinded.
+
+- **Round 55 update (in-progress):** De-vacuified in PR `litlfred/qou#8259` (HEAD `1be723e4c3e702d48db833cb3bedc75e89004822`), verified with Lean 4.24.0 (`0` `sorry`, `0` vacuity hits) and 80-dps `mpmath` witness.
