@@ -1,7 +1,8 @@
 ---
 # qou-2pp7
 title: Cross-check 9811173v1.pdf at computations/binding_link_volumes.py
-status: todo
+status: in-progress
+pr: 8347
 type: task
 priority: normal
 tags:

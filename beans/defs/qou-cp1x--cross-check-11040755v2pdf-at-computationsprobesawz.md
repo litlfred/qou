@@ -1,7 +1,8 @@
 ---
 # qou-cp1x
 title: Cross-check 1104.0755v2.pdf at computations/probes/awzero_asymptotics_probe.py
-status: todo
+status: in-progress
+pr: 8347
 type: task
 priority: normal
 tags:

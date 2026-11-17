@@ -1,7 +1,8 @@
 ---
 # qou-dvqx
 title: Cite 0401068v1 (1).pdf at prop:phi-q-aj-machinery-identification
-status: todo
+status: in-progress
+pr: 8347
 type: task
 priority: normal
 tags:

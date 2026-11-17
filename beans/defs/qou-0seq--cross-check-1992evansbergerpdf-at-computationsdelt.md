@@ -1,7 +1,8 @@
 ---
 # qou-0seq
 title: Cross-check 1992EvansBerger.pdf at computations/deltalambda/mixed_multibond_mubar_integrality_pro…
-status: todo
+status: in-progress
+pr: 8347
 type: task
 priority: normal
 tags:

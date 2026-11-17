@@ -1,7 +1,8 @@
 ---
 # qou-e1me
 title: Cross-check 0401068v1.pdf at computations/probes/qbeta_nz_even_series_fourone_probe.py
-status: todo
+status: in-progress
+pr: 8347
 type: task
 priority: normal
 tags:
