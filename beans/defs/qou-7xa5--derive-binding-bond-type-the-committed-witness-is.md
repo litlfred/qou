@@ -1,7 +1,7 @@
 ---
 # qou-7xa5
 title: 'derive-binding-bond-type: the committed witness is a green PASS for a REFUTED law, and its numbers no longer reproduce (7.515 -> 1.795, ordering flipped)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

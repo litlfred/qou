@@ -1,7 +1,7 @@
 ---
 # qou-83r4
 title: 'PROVE(lean): atomic_nf_witness — theorem atomic_nf_witness (ctx : AtomicNfWitnessContext) : (∀ π : ℕ, ctx.Phi_1 ctx.pi_star [cited manuscript]'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

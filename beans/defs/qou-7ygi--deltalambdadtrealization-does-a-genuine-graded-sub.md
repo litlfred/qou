@@ -1,7 +1,7 @@
 ---
 # qou-7ygi
 title: "DeltaLambdaDTRealization: does a genuine GRADED substrate structure force single-degree (top-cohomology) concentration of Δ_λ into H^top(\U0001D4D1_λ)?"
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

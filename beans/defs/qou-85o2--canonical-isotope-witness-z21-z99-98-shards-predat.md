@@ -1,7 +1,7 @@
 ---
 # qou-85o2
 title: canonical-isotope-witness Z21-Z99 (98 shards) predate the C-excision; a spot re-run moved 2.19x and the cause is NOT isolated
-status: todo
+status: in-progress
 type: bug
 priority: normal
 tags:

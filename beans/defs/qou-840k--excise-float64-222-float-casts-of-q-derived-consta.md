@@ -1,7 +1,7 @@
 ---
 # qou-840k
 title: 'EXCISE FLOAT64: 222 float()-casts of q-derived constants across 129 files; existing audit tier was too narrow and read clean'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
