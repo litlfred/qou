@@ -90,4 +90,12 @@ theorem depth2_no_fixed_tau :
   rw [hτ] at hnext
   norm_num at hnext
 
+/-- Explicit rational residual at `c = 4` under the seed-forced trace parameter
+`τ = 21/8`: `lw(4) - ((21/8) * lw(3) - lw(2)) = -7/240`. -/
+theorem lwCl_depth2_residual_at_seed_tau :
+    lwCl 4 - ((21 / 8 : ℚ) * lwCl 3 - lwCl 2) = -7 / 240 := by
+  obtain ⟨_, e2, e3, e4⟩ := lwCl_values
+  rw [e2, e3, e4]
+  norm_num
+
 end QOU.Mass.Lever1Depth2
