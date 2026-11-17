@@ -1,0 +1,65 @@
+{
+  "probe": "normed-differential-form-gaussian-log-normal-canonical-product-contact-reeb-z-axis-uniqueness",
+  "beans": [
+    "qou-ipsl",
+    "qou-jbo8",
+    "qou-n4pv",
+    "qou-vspi",
+    "qou-xidi"
+  ],
+  "precisionDps": "80",
+  "scriptHash": "a7de56fcc07c",
+  "scriptCommitSha": "b0bb4be019c48c6d750a29bf091882a789b109a9",
+  "generatedAt": "2026-11-17T11:00:49.505982+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "beanId": "qou-ipsl",
+      "mixedPartialExteriorDerivativeResidual": "0.0",
+      "curvatureTwoFormComponents": [
+        "-18.0",
+        "-13.0",
+        "6.0"
+      ],
+      "curvatureAntisymmetryResidual": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-jbo8",
+      "qTilde": "1.4",
+      "gaussianIntegralMaxMomentResidual": "8.43375835458441857947885924102e-81",
+      "secondDifferenceCurvatureRatioResidual": "2.10843958864610464486971481025e-81",
+      "passed": true
+    },
+    {
+      "beanId": "qou-n4pv",
+      "cubicTruncationDeficitAt3": "162.0",
+      "cubicTruncationAlgebraicResidual": "0.0",
+      "canonicalProductSincValue": "0.81033195800975515491112879804",
+      "exactSincValue": "0.81033195800975515491112879804",
+      "canonicalProductResidual": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-vspi",
+      "reebPairingValue": "1.0",
+      "kernelBasisAlphaResiduals": [
+        "0.0",
+        "0.0"
+      ],
+      "kernelSymplecticPairing": "1.0",
+      "characteristicComponent": "2.5",
+      "tangentDecompositionResidual": "0.0",
+      "contactVolumeDeterminant": "1.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-xidi",
+      "exactZAxisHyperbolicDistance": "1.09861228866810969139524523692",
+      "verticalSegmentLengthResidual": "0.0",
+      "perturbedPathStrictLengthExcess": "0.119173285778750975459080531959",
+      "constantSpeedStepUniformityResidual": "1.05421979432305232243485740513e-81",
+      "passed": true
+    }
+  ]
+}
