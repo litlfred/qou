@@ -1,0 +1,53 @@
+{
+  "probe": "computations/probes/round55_devacuify_6qbv_b9cj_probe.py",
+  "scriptCommitSha": "edbd6d0113f3d9ffda1357d0e4c4549cda18a0f7",
+  "scriptHash": "85fe20ed4fa4",
+  "executedAt": "2026-11-17T07:38:21Z",
+  "precisionDps": 80,
+  "beans": [
+    "qou-ref10",
+    "qou-4ekg",
+    "qcz16",
+    "qou-gcwm",
+    "qou-dp32"
+  ],
+  "allPassed": true,
+  "checks": [
+    {
+      "name": "linear_jsj_volume_additivity_and_isobar_diff",
+      "bean": "qou-ref10",
+      "vol_p_80dps": "2.029883212819307250042405108549040571883378615060599584034978213553194952516488",
+      "vol_n_80dps": "2.8280412689028459736940337344646671679476726956334222914463057101264575518697511",
+      "max_abs_error": "4.6385670950214302187133725825588083633923830082421433220342157310475834880266942e-80",
+      "passed": true
+    },
+    {
+      "name": "dispersion_suppression_scale_monotonicity_and_additivity",
+      "bean": "qou-4ekg",
+      "E_QG1_GeV": "12208900000000000000.0",
+      "E_QG2_GeV": "24417800000000000000.0",
+      "passed": true
+    },
+    {
+      "name": "collatz_period4_census_to_lean_bridge",
+      "bean": "qcz16",
+      "q0_golden_sq_80dps": "2.6180339887498948482045868343656381177203091798057628621354486227052604628189024",
+      "eeeo_residual_80dps": "0.0",
+      "passed": true
+    },
+    {
+      "name": "toda_counting_decision_barrier_independence",
+      "bean": "qou-gcwm",
+      "toda_valid_worlds": 3,
+      "passed": true
+    },
+    {
+      "name": "magnus_pairing_scalar_identity_and_swap_antisymmetry",
+      "bean": "qou-dp32",
+      "tr_scalar_identity_80dps": "0.0",
+      "tr_positive_density": "1.0",
+      "tr_negative_density": "-1.0",
+      "passed": true
+    }
+  ]
+}
