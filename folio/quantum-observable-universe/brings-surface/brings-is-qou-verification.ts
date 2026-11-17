@@ -5,6 +5,7 @@ export default remark({
   label: "rem:brings-is-qou-verification",
   title: "Verification of the QOU data for Bring's surface",
   uses: [
+    "rem:three-euler-characteristics",
     "prop:brings-is-qou",
     "def:brings-surface",
     "thm:qu-to-qou",
@@ -14,7 +15,7 @@ export default remark({
       kind: "status",
       date: "2026-11-17",
       body:
-        "**OPEN — trace identity.** Item 4 writes `chi(A) = tr(id_A) = 2 - 2g = -6`. The middle equality is the identification that `rem:three-euler-characteristics` calls a collision of names; the outer two equalities hold for `chi_eu(M_0)`. Under the owner ruling of 2026-09-15, `tr(id_A) = dim_q(A)` is a q-dependent quantum dimension, and `-6` is `chi_eu(M_0)`, the topological Euler characteristic of the base curve (`rem:three-euler-characteristics`). Flagged open on owner instruction 2026-11-17 (Bring foundations cleanup); the bare `chi(A)` here was not renamed because the step uses a trace identity, not only the genus. Bean `qou-qhcr`.",
+        "**RESOLVED 2026-11-17 — trace identity removed.** Item 4 wrote `chi(A) = tr(id_A) = 2 - 2g = -6`; the middle equality identified the categorical trace with the topological Euler characteristic, which `rem:three-euler-characteristics` calls a collision of names (owner ruling 2026-09-15). Item 4 now states `chi_eu(M_0) = 2 - 2g = -6` only. Nothing in the verification used the trace. Bean `qou-qhcr`, PR #8365.",
     },
     {
       kind: "refined-framing",

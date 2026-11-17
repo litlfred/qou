@@ -9,13 +9,14 @@ export default example({
     "rem:mass-geometric-drag",
     "rem:chirality-trefoil",
     "rem:kummer-tower",
+    "prop:ns-kummer-specialisation",
   ],
   authorNotes: [
     {
       kind: "status",
       date: "2026-11-17",
       body:
-        "**OPEN — trace identity.** The block attaches `chi(A) = -6` to the lifting obstruction classes `kappa_n`. Whether the obstruction pairs with the genus or with a trace of `A` decides whether this is a rename or a substantive claim. Under the owner ruling of 2026-09-15, `tr(id_A) = dim_q(A)` is a q-dependent quantum dimension, and `-6` is `chi_eu(M_0)`, the topological Euler characteristic of the base curve (`rem:three-euler-characteristics`). Flagged open on owner instruction 2026-11-17 (Bring foundations cleanup); the bare `chi(A)` here was not renamed because the step uses a trace identity, not only the genus. Bean `qou-qhcr`.",
+        "**PARTLY RESOLVED 2026-11-17.** The `chi(A) = -6` is now `chi_eu(M_0) = -6`, the integer of the Kummer obstructions under the unit-tangent-bundle hypothesis stated in `prop:ns-kummer-specialisation`; no trace of `A` enters. **Still OPEN:** the reading of the six branch points as three pairs under `S_3 < S_5`, and of three lepton generations as cyclotomic Galois orbits on them. Bean `qou-qhcr` records that the six Weierstrass points in Bring's curve are the fixed points of one transposition, not an `S_3` orbit structure, so the three-pairs reading has no derivation in the corpus. PR #8365.",
     },
     {
       kind: "refined-framing",
