@@ -1,13 +1,13 @@
 ---
 # qou-k1hs
 title: Ingest the remaining 19 un-ingested PDFs in uploads/
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-25T18:48:29Z
-updated_at: 2026-10-10T07:18:47Z
+updated_at: 2026-11-17T23:20:00Z
 parent: qou-mub3
 ---
 
@@ -44,3 +44,6 @@ Several `CITE:`-class beans say "source X is not held"; some of those sources ma
 be sitting in `uploads/`. Run this before buying such a citation.
 
 Mover: `scripts/migrate-uploads-to-library.py`.
+
+## Completed 2026-11-17
+Every stem listed above now has a `library/` entry on main (checked by name; `roth_lemma` is `library/roth-lemma`). The list holds 18 stems, not 19. `uploads/` holds no PDFs. The last leftover there, a section-only copy of `arxiv-astro-ph-0203462v1`, is removed by PR #8368.
