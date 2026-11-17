@@ -1,7 +1,7 @@
 ---
 # qou-4waf
 title: 'Nolen-Schiffer: QOU breaks charge symmetry in the TOPOLOGICAL channel, not the flavour channel'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -174,3 +174,6 @@ NEXT on the radius: check whether lambda-bar_pi + the A^(1/3) identification
 reproduces R = 2.5382 fm at A=3. It will not out of the box -- A=3 is not a
 saturated sphere, and R/lambda-bar_pi = 1.795 -- so the light-nucleus regime
 needs its own argument, which is the same place the r0=1.2 fm formula fails.
+
+## Round 69 Update (PR #8249)
+- Formalized in `ToffoliDimensionMismatchHeckeOffsetHypernuclearRatioNielsenThurstonAndNolenSchiffer.lean` and verified via 80-dps `mpmath` witness in PR #8249.

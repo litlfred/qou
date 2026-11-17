@@ -1,7 +1,7 @@
 ---
 # qou-0pnj
 title: 'GAP: prop:toffoli-lp-stability''s t(q) does not exist — G is 6x6 Hecke-NF, P_77/P_76 are 8x8 strand-ordering entries'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -272,3 +272,6 @@ Re-close it when the work its body names is actually done.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Round 69 Update (PR #8249)
+- Formalized in `ToffoliDimensionMismatchHeckeOffsetHypernuclearRatioNielsenThurstonAndNolenSchiffer.lean` and verified via 80-dps `mpmath` witness in PR #8249.

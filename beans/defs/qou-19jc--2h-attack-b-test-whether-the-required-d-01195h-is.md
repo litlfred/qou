@@ -1,7 +1,7 @@
 ---
 # qou-19jc
 title: '2H ATTACK B: test whether the required d = -0.1195h is the sigma^2 stacked crossing or another Hecke-admissible element, NOT a free parameter'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -115,3 +115,6 @@ Wired: paper `prop:markov-stabilisation-needs-a-fresh-generator`
 
 **This bean's redirect to ATTACK C stands.** Nothing here rescues the element
 search; it prices one candidate out and pins the side condition of the collapse.
+
+## Round 69 Update (PR #8249)
+- Formalized in `ToffoliDimensionMismatchHeckeOffsetHypernuclearRatioNielsenThurstonAndNolenSchiffer.lean` and verified via 80-dps `mpmath` witness in PR #8249.
