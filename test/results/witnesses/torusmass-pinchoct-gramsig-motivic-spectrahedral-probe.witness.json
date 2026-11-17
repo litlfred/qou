@@ -1,0 +1,48 @@
+{
+  "probe": "torusmass_pinchoct_gramsig_motivic_spectrahedral_probe",
+  "scriptPath": "computations/probes/torusmass_pinchoct_gramsig_motivic_spectrahedral_probe.py",
+  "scriptHash": "a1ee476f40d6",
+  "scriptCommitSha": "327f8d5b5f9b2d3287a55fafe0f59db773abede9",
+  "executedAt": "2026-11-17T12:02:34Z",
+  "dps": "80",
+  "allPassed": true,
+  "checks": [
+    {
+      "bean": "cj212",
+      "theorem": "QOU.BraidKnot.TorusKnotMass.higgs_to_gauge_factor_ratio_ne_one",
+      "ratio": "1.1958041958041958041958041958041958041958041958041958041958041958041958041958042",
+      "abs_ratio_sub_one": "0.1958041958041958041958041958041958041958041958041958041958041958041958041958042",
+      "passed": true
+    },
+    {
+      "bean": "qou-3q7t",
+      "theorem": "QOU.MassTheory.PinchedOctahedron.e1_glued_and_quad_sum_sq",
+      "glue_residual": "2.6355494858076308060871435128175047519274903455921268875194407562770360727424399e-82",
+      "e1_glued_residual": "5.2710989716152616121742870256350095038549806911842537750388815125540721454848798e-82",
+      "quad_sum_sq_residual": "5.2710989716152616121742870256350095038549806911842537750388815125540721454848798e-82",
+      "passed": true
+    },
+    {
+      "bean": "qou-o3ta",
+      "theorem": "QOU.QBeta.GramSignature.y21_mul_two_q_sq_eq_one_of_radical",
+      "y21": "0.24729779149529038456702027953347537658360187608270085014424813233682534284577901",
+      "y21_mul_two_q_sq": "1.0",
+      "residual_from_one": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-u96j",
+      "theorem": "QOU.AlgebraicSubstrate.realize_lefschetz_isUnit",
+      "places_evaluated": "4",
+      "max_unit_residual": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-zf9n",
+      "theorem": "QOU.Archimedean.spectrahedral_phase_collapse_conventionD",
+      "d_factor_residual": "0.0",
+      "general_det_factor_residual": "0.0",
+      "passed": true
+    }
+  ]
+}
