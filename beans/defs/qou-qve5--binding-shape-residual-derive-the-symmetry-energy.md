@@ -1,7 +1,7 @@
 ---
 # qou-qve5
 title: 'Binding SHAPE residual: derive the symmetry-energy term of the additive log law from the bond graph — isospin coefficient has the wrong sign (κ=+2(q₀−1)=+0.22 vs data ≈ −0.15); formalize-first, no fit (gm4q / qou-brng / 1ppQ reanalysis §5 item 3)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -22,3 +22,9 @@ Owner 2026-09-07: 'fixing binding where most of the gap is shape'. State (docs/a
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Progress Update (Round 67 — PR #8279)
+- **Status**: `in-progress` (per active rule: no unilateral `qou` bean closures).
+- **PR**: [`litlfred/qou#8279`](https://github.com/litlfred/qou/pull/8279) (branch `feat/round67-diproton-coordination-markov-cut-parity-43c1`, Commit 1 `cfebb01621939a34b7b6881f7cb1f8c1de011515`, Commit 2 / Head `6ad7f37ff2f830c6b6b24c3e111bd408c518e8e6`).
+- **Lean 4 Artifact**: `folio/quantum-observable-universe/lean/QOU/Hecke/BondCutSymmetry.lean (`bondSum_mirror_diff_cut_invariant`)` (0 sorry, 0 findings across all 6 static vacuity audits).
+- **80-dps Witness**: `computations/probes/diproton_coordination_markov_cut_parity_probe.py` (`scriptHash: 54f10b23e4d2`) + `test/results/witnesses/diproton-coordination-markov-cut-parity.witness.json` (`allPassed: true`).

@@ -203,3 +203,9 @@ The owner ruled that the γγ selection rule also covers the nuclear bond letter
 - [x] Formalized pure Lean 4.24.0 module(s) (`QOU/MassTheory/IsospinChannelReachabilityAndB3ChainSign.lean`, `QOU/MassTheory/PeeledMarkovDefectAndHigherInterleaving.lean`, `QOU/MassTheory/GradedLogPairCancellationAndH3TowerCollapse.lean`) with `0 sorry` and `0` findings across all 6 static vacuity audits.
 - [x] Added 50-dps `mpmath` probe `computations/probes/isospin_b3chain_markov_defect_logjet_h3tower_probe.py` and 2-commit stamped witness `computations/probes/isospin-b3chain-markov-defect-logjet-h3tower-probe.witness.json` (`allPassed: true`, `0` raw `float64`).
 - [x] Opened and signed [PR #8278](https://github.com/litlfred/qou/pull/8278) (`ready: b3288da132ea8d0d185d184a5e18432c89e4858e`).
+
+## Progress Update (Round 67 — PR #8279)
+- **Status**: `in-progress` (per active rule: no unilateral `qou` bean closures).
+- **PR**: [`litlfred/qou#8279`](https://github.com/litlfred/qou/pull/8279) (branch `feat/round67-diproton-coordination-markov-cut-parity-43c1`, Commit 1 `cfebb01621939a34b7b6881f7cb1f8c1de011515`, Commit 2 / Head `6ad7f37ff2f830c6b6b24c3e111bd408c518e8e6`).
+- **Lean 4 Artifact**: `folio/quantum-observable-universe/lean/QOU/MassTheory/BondChannelTzParity.lean (`parityRatioSlope_at_one_and_cayley`)` (0 sorry, 0 findings across all 6 static vacuity audits).
+- **80-dps Witness**: `computations/probes/diproton_coordination_markov_cut_parity_probe.py` (`scriptHash: 54f10b23e4d2`) + `test/results/witnesses/diproton-coordination-markov-cut-parity.witness.json` (`allPassed: true`).

@@ -1,7 +1,7 @@
 ---
 # qou-ales
 title: 'OWNER RULING 2026-09-08: braid-word selection via gamma-gamma production + confinement SDP at q0 — no census'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -275,3 +275,9 @@ Was in-progress with no bean update since October 2026. Reset to todo by the own
 ## 2026-11-15 — re-scoped by the γγ rule
 
 The owner ruled that the γγ selection rule also covers the nuclear bond letters. Any number in this bean computed on the single-crossing interface letters of `atom_braid_word_3A` (`d_k`, `μ_e`, the chain law `∏(z_D + d_k)`, the `b₃` magnitudes −1.2277 / −0.7973 MeV, or a sign map on that word) is now a record of a superseded word, not a current result. Lean results stated for generic bond weights are unaffected. The redo waits on a γγ-selected word per nucleus (PR #7876). Record: `docs/audits/2026-11-15-gg-rule-rescopes-old-letter-binding.md`. The bean stays open.
+
+## Progress Update (Round 67 — PR #8279)
+- **Status**: `in-progress` (per active rule: no unilateral `qou` bean closures).
+- **PR**: [`litlfred/qou#8279`](https://github.com/litlfred/qou/pull/8279) (branch `feat/round67-diproton-coordination-markov-cut-parity-43c1`, Commit 1 `cfebb01621939a34b7b6881f7cb1f8c1de011515`, Commit 2 / Head `6ad7f37ff2f830c6b6b24c3e111bd408c518e8e6`).
+- **Lean 4 Artifact**: `folio/quantum-observable-universe/lean/QOU/Mass/DiprotonResponseClosedForm.lean (`classical_values_at_one`)` (0 sorry, 0 findings across all 6 static vacuity audits).
+- **80-dps Witness**: `computations/probes/diproton_coordination_markov_cut_parity_probe.py` (`scriptHash: 54f10b23e4d2`) + `test/results/witnesses/diproton-coordination-markov-cut-parity.witness.json` (`allPassed: true`).
