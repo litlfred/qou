@@ -1,7 +1,7 @@
 ---
 # qou-v8ct
 title: 'Binding E₀ factor 2.656: derive the volume-energy conversion without routing through m_e, or show the residual belongs to the bond factors (decision-frame avenue 1; queued, not dispatched)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -128,3 +128,7 @@ mechanism, which qou-0c19 excludes for the colour tube.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Round 69 Formalization Progress (PR #8293)
+- Formalized `QOU.Hecke.BindingScaleCandidates.fPP_div_fNN_eq_pow_four` (sorry-free, 0 advisories across all 6 static vacuity audits).
+- Verified at 80-dps `mpmath` (`computations/probes/scale_mobius_adjoint_reduced_trefoil_probe.py`, `scriptHash: ae187b673714`, Commit 1 `9b139cda51963d9af6817b576a80c90bb2f74d00`, Commit 2 / Witness `474ee8c61ef5b687f244b6a129aeb23ef9956372`, PR `litlfred/qou#8293`).
