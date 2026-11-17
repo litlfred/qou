@@ -1,7 +1,7 @@
 ---
 # qou-hms1
 title: 'GENERALISE?: three blocks justified their base field / R codomain by a square root convention D does not have'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

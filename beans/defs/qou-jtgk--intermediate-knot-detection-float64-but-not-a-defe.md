@@ -1,7 +1,7 @@
 ---
 # qou-jtgk
 title: 'intermediate_knot_detection: float64 but NOT a defect — 1.2e-14 worst error at A=40, both verdicts robust, and draining needs hecke_core'
-status: todo
+status: in-progress
 type: task
 priority: low
 tags:

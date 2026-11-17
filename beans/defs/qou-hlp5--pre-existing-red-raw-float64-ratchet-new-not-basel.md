@@ -1,7 +1,7 @@
 ---
 # qou-hlp5
 title: 'Pre-existing RED: raw-float64 ratchet (new_not_baselined=4) + 2 stale q0 audit witnesses on main'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

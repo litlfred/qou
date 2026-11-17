@@ -1,7 +1,7 @@
 ---
 # qou-j6gb
 title: mpf_import_time_dps_audit is NOT wired into precision-gates.sh — 288 findings, 185 proven lossy, gate silent
-status: todo
+status: in-progress
 type: bug
 priority: normal
 tags:
