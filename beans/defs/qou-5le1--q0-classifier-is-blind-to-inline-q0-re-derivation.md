@@ -1,7 +1,7 @@
 ---
 # qou-5le1
 title: q0 classifier is blind to inline q0 re-derivation and to cross-module Q0 imports
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

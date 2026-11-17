@@ -1,7 +1,7 @@
 ---
 # qou-5h5x
 title: 'D4: convention-D completion — class B drained, class A (gram.py) documented blocked'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

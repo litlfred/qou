@@ -1,7 +1,7 @@
 ---
 # qou-58zq
 title: main is red on 11 precision ratchets under the FULL precision-gates family (measured 2026-09-16 at 67f52ddf58); --changed on a branch cannot see it
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

@@ -1,7 +1,7 @@
 ---
 # qou-5hcf
 title: 'Horn 1 (crux): is the Stokes phase forced ±i, supplying the Δ_λ chirality sign? StokesPhaseSign carrier; test vs mixed-sign target n=3(1+/2−),n=6(6+/5−). cf descent qou-yju0'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

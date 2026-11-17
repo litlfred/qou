@@ -1,7 +1,7 @@
 ---
 # qou-5c64
 title: binding-single-pipeline-comparison is 3 months stale and RED when re-run — 2 assertions flip, one column moves 69x, and the float64 drain is blocked behind it
-status: todo
+status: in-progress
 type: bug
 priority: high
 tags:
