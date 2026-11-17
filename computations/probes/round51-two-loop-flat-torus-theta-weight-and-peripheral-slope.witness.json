@@ -1,0 +1,158 @@
+{
+  "computation": "round51-two-loop-flat-torus-theta-weight-and-peripheral-slope",
+  "engine": "python+mpmath",
+  "engineVersion": "1.3.0",
+  "computedAt": "2026-11-17T06:35:32.332614+00:00",
+  "scriptFile": "round51_two_loop_flat_torus_theta_weight_and_peripheral_slope_probe.py",
+  "scriptHash": "879cd7fbcdb2",
+  "scriptCommitSha": "bffc9aa954100eaed1adf1a81eb35fe56e86a5f2",
+  "durationMs": 17,
+  "precisionMetadata": {
+    "compute_dps": "80",
+    "output_dps": "55",
+    "guard_digits": "25",
+    "q0_proton_50dps": "1.10997858275138080828695817946350192572592720252105"
+  },
+  "data": {
+    "qou_9y43": {
+      "em_fermion_loop_H1_q2": "2.010896866707122299883447066665996717118498833631039711",
+      "inv_alpha_linear_schwinger": "137.0359991269509130067452147575506879885581864524106121",
+      "inv_alpha_geom_resummed": "137.0359991270102863975646266517842941935997608612936681",
+      "inv_alpha_exp_resummed": "137.0359991269806060135754838642809323646689287429672627",
+      "resummation_shift_geom": "0.00000000005937339081941189423360620504157440888305595181431815496",
+      "delta2_residual_codata2018": "-0.00000004295091300674521475755068798855818645241061214265826499",
+      "delta2_residual_codata2022": "0.00000005004908699325478524244931201144181354758938785734173501",
+      "c2_required_codata2018": "-0.0008065693994166609098926762942878620222645309561432422528",
+      "c2_required_codata2022": "0.0009398650508584563895446663059993470185309803055495779589"
+    },
+    "qou_af91": {
+      "bring_genus": "4",
+      "first_betti_b1": "8",
+      "zeta_delta1_zero": "-8",
+      "flat_torus_pi_exponent": "-4",
+      "target_pi_exponent": "-1",
+      "jacobian_covolume_scaling_exponent": "24"
+    },
+    "qou_i7rk": {
+      "theta_1_1_0": "2.010896866707122299883447066665996717118498833631039711",
+      "theta_2_2_0": "3.043706208532521989928693690263547377871566157417951461",
+      "theta_1_1_2": "3.043706208532521989928693690263547377871566157417951461",
+      "L2_required_total": "-0.004303552211435774859129496223334936487642594794631698587",
+      "L2_theta_dictated": "-0.004818623682938238826746396318327358618866409285226952692",
+      "theta_to_required_ratio": "1.119685191719940346287867156256877014900039442220881161",
+      "two_sigma_L2_window": "0.000413135030988901074459232"
+    },
+    "qou_oots": {
+      "jm_n5_plancherel_sum": "1.449552217194196943347928932049627613560119690075669788e-81",
+      "jm_n5_molien_sum": "-1.039637100524101462962811064600558006014676528200008786",
+      "molien_n5_total_mass": "1.0",
+      "w_molien_41": "0.07429973308938433165192971990495969424514723816962641157",
+      "y_markov_41_N2": "0.1249853971679471059238916511141233671037106053461356114",
+      "w_plancherel_41": "0.1286200041752468832787261909054889270597569474314875143",
+      "molien_over_plancherel_41": "0.5776685638118135673189019280243554006184974908644493474"
+    },
+    "qou_ae6l": {
+      "knot_writhes": {
+        "T(2,3)": "3",
+        "4_1": "0",
+        "T(2,5)": "5",
+        "5_2": "4",
+        "T(2,9)": "9",
+        "T(3,5)": "10"
+      },
+      "blackboard_zero_canonical_slopes": {
+        "T(2,3)": [
+          "3",
+          "1"
+        ],
+        "4_1": [
+          "0",
+          "1"
+        ],
+        "T(2,5)": [
+          "5",
+          "1"
+        ],
+        "5_2": [
+          "4",
+          "1"
+        ],
+        "T(2,9)": [
+          "9",
+          "1"
+        ],
+        "T(3,5)": [
+          "10",
+          "1"
+        ]
+      }
+    }
+  },
+  "assertions": [
+    {
+      "name": "qou_9y43_emfermionloop_h1_equals_qbracket2",
+      "computed": "4.21687917729220928973942962050800760308398455294740302e-81",
+      "expected": "0.0",
+      "tolerance": "1e-60",
+      "passed": true,
+      "source": "EmFermionLoop in H_1 evaluates to [2]_q = q + q^{-1} exactly"
+    },
+    {
+      "name": "qou_9y43_schwinger_resummation_shift_negligible_vs_delta2",
+      "computed": "1",
+      "expected": "1",
+      "tolerance": "0",
+      "passed": true,
+      "source": "Geometric and exponential resummations of (1 - h^2 alpha) shift 1/alpha by 5.937e-11, >700x smaller than |Delta_2| ~ 4.295e-8 (2018, c_2 = -8.066e-4) and 5.005e-8 (2022, c_2 = -9.399e-4)"
+    },
+    {
+      "name": "qou_af91_flat_torus_pi_exponent_and_covolume_mismatch",
+      "computed": "-4,24",
+      "expected": "-4,24",
+      "tolerance": "0",
+      "passed": true,
+      "source": "On T^{b_1} = Jac(Bring) (b_1 = 8), oscillator measure has pi-exponent -b_1/2 = -4 != -1 and Jacobian covolume exponent b_1(b_1-2)/2 = 24 != 0"
+    },
+    {
+      "name": "qou_i7rk_penrose_theta_112_equals_qbracket3_and_symmetric",
+      "computed": "0.0",
+      "expected": "0.0",
+      "tolerance": "1e-60",
+      "passed": true,
+      "source": "theta(1,1,2) = theta(1,2,1) = theta(2,1,1) = [3]_q and theta(1,1,0) = [2]_q"
+    },
+    {
+      "name": "qou_i7rk_dictated_theta_candidate_outside_two_sigma",
+      "computed": "1",
+      "expected": "1",
+      "tolerance": "0",
+      "passed": true,
+      "source": "Dictated -[3]_q/(8pi)^2 = -4.818624e-3 misses L2_req by 5.1507e-4 > 2*sigma_L2_2018 (4.1313e-4) and by 2.2614e-3 > 2*sigma_L2_2022 (7.8871e-4)"
+    },
+    {
+      "name": "qou_oots_jucys_murphy_n5_plancherel_zero_vs_molien_negative",
+      "computed": "1",
+      "expected": "1",
+      "tolerance": "0",
+      "passed": true,
+      "source": "At n=5, conjugate-symmetric Plancherel weight gives sum w_lambda kappa(lambda) = 0 identically, whereas normalized Molien weight gives -1.039637100524... < 0"
+    },
+    {
+      "name": "qou_oots_three_weight_families_strict_ordering_at_41",
+      "computed": "1",
+      "expected": "1",
+      "tolerance": "0",
+      "passed": true,
+      "source": "At lambda=(4,1) and q0, 0 < w_Molien (0.0742997) < y_{Markov,N=2} (0.1249854) < w_Planch (0.1286200), with 42.23% Molien-to-Plancherel shift"
+    },
+    {
+      "name": "qou_ae6l_peripheral_slope_map_symplectic_and_stabilization_invariance",
+      "computed": "1",
+      "expected": "1",
+      "tolerance": "0",
+      "passed": true,
+      "source": "Phi_w preserves the symplectic intersection pairing, compensates Markov stabilization via p' = p - q, fixes (1,0), and maps 0-framed blackboard surgery to (w(beta), 1)"
+    }
+  ],
+  "allPassed": true
+}
