@@ -1,7 +1,8 @@
 ---
 # qou-v4ux
 title: 'GAP: two qbeta probes now record retracted findings — nucleon-crossing-count-contradiction and nl84-provenance are stale on their own terms'
-status: todo
+status: in-progress
+pr: 8277
 type: task
 priority: normal
 tags:
@@ -89,3 +90,9 @@ The nucleon fix is real: the corpus now says 11 crossings.
 **Open steps:** fix the detector to test for a `computation` field (code, needs owner OK); rescope-or-retire of the nucleon probe stays the owner's call.
 
 Checked read-only against qou `main` at `aa914b606a`, mpmath 1.3.0. Full write-up: `qou-review/avtq-reopened-beans-2026-10-10.md` (project files). Status unchanged.
+
+## Round 55 Implementation Progress (PR #8277)
+- **Status:** `in-progress` (per no-unilateral-closure policy)
+- **PR:** https://github.com/litlfred/qou/pull/8277 (head `8f4f568482d5a937ac700b4605cc7c48271faae8`, Commit 1 `0a62bee9d3e501101e220bcafa8c3a9fee1d0d25`)
+- **Lean 4 Module & Theorems:** `QOU/AlphaEM/TauLoopWeightMarkovGramAndNucleonCrossingAudit.lean` (`nucleon_crossing_count_11_vs_retracted_13_and_nl84_decomposition`)
+- **80-dps Witness:** `computations/probes/round55-tau-loop-markov-nucleon-stokes-monodromy.witness.json` (`scriptHash: 1de39a3b3d7c`, `allPassed: true`, `0` raw `float64`)

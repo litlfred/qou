@@ -1,7 +1,8 @@
 ---
 # qou-esx7
 title: A_ω monodromy datum — derive the odd-channel Stokes constant (Qβ/m_n/Δpn trio, 2/7→5/7)
-status: todo
+status: in-progress
+pr: 8277
 type: feature
 priority: normal
 tags:
@@ -23,3 +24,9 @@ Evidence: Story with an empty body. Children and siblings: vr3q, l15q, fgte, dtd
 
 Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
 Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
+
+## Round 55 Implementation Progress (PR #8277)
+- **Status:** `in-progress` (per no-unilateral-closure policy)
+- **PR:** https://github.com/litlfred/qou/pull/8277 (head `8f4f568482d5a937ac700b4605cc7c48271faae8`, Commit 1 `0a62bee9d3e501101e220bcafa8c3a9fee1d0d25`)
+- **Lean 4 Module & Theorems:** `QOU/QBeta/StokesMonodromyGGMSandwichAndTrivialFlatConnection.lean` (`ggm_unipotent_sandwich_invariance`)
+- **80-dps Witness:** `computations/probes/round55-tau-loop-markov-nucleon-stokes-monodromy.witness.json` (`scriptHash: 1de39a3b3d7c`, `allPassed: true`, `0` raw `float64`)
