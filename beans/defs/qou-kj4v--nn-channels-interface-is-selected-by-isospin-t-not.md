@@ -1,7 +1,8 @@
 ---
 # qou-kj4v
 title: 'NN channels: interface is selected by isospin T, not by nucleon content -- crossing-multiplicity route is REFUTED, not merely unfitted'
-status: todo
+status: in-progress
+pr: 8278
 type: task
 priority: normal
 tags:
@@ -170,3 +171,9 @@ re-finds it.
 ### Cross-link (2026-10-11)
 
 the colour-weighted p-n factor `z − h(1/2 − δ/4)` is **bar-mixed** (`δ̄ = −q²δ`, defect `(q−1)⁵(q+1)³(q²+1)/(12q⁵)` ≈ 1.67e-5 at the anchor), so bar-invariance does not select it. Record: [`2026-10-11-atom-word-provenance.md`](../../docs/audits/2026-10-11-atom-word-provenance.md).
+
+## Progress Update (PR #8278 — `status: in-progress`)
+
+- [x] Formalized pure Lean 4.24.0 module(s) (`QOU/MassTheory/IsospinChannelReachabilityAndB3ChainSign.lean`, `QOU/MassTheory/PeeledMarkovDefectAndHigherInterleaving.lean`, `QOU/MassTheory/GradedLogPairCancellationAndH3TowerCollapse.lean`) with `0 sorry` and `0` findings across all 6 static vacuity audits.
+- [x] Added 50-dps `mpmath` probe `computations/probes/isospin_b3chain_markov_defect_logjet_h3tower_probe.py` and 2-commit stamped witness `computations/probes/isospin-b3chain-markov-defect-logjet-h3tower-probe.witness.json` (`allPassed: true`, `0` raw `float64`).
+- [x] Opened and signed [PR #8278](https://github.com/litlfred/qou/pull/8278) (`ready: b3288da132ea8d0d185d184a5e18432c89e4858e`).
