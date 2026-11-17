@@ -445,4 +445,46 @@ theorem core_is_three_on_all_three :
     ∀ K : PKnot, pkSize K - floorRemainder K = sAtOne := by
   intro K; cases K <;> (rw [s_at_one_eq_three]; decide)
 
+/-! ## Part 5 — Rotated-index `m = 0` polynomials at orders `q¹` and `q²` (`qou-m3ad` Part 7)
+
+In the meridian trace variable `s = ζ + 1 + ζ⁻¹`, the `m = 0` rotated-index
+coefficients `Ind^rot(0, ζ; q)` for `4₁`, `5₂`, and `(−2,3,7)` at orders `q¹` and `q²`
+are:
+* Order `q¹`: `−(s − 1)(s + 1)` (`4₁`), `−s(s + 1)` (`5₂`), `−2(s + 1)` (`(−2,3,7)`).
+* Order `q²`: `−s²` (`4₁`), `s(s² − 2s − 2)` (`5₂`), `s² − s − 3` (`(−2,3,7)`).
+
+All three `q¹` polynomials share the common factor `(s + 1)` (vanishing at `s = −1`),
+whereas at order `q²` the `s = −1` root fails to persist for `4₁` and `(−2,3,7)`. -/
+
+/-- Order-`q¹` coefficient of `Ind^rot(0, ζ; q)` in `s = ζ + 1 + ζ⁻¹`. -/
+def indRotQ1 : PKnot → Int → Int
+  | PKnot.fourOne, s => -(s - 1) * (s + 1)
+  | PKnot.fiveTwo, s => -s * (s + 1)
+  | PKnot.pretzel237, s => -2 * (s + 1)
+
+/-- Order-`q²` coefficient of `Ind^rot(0, ζ; q)` in `s = ζ + 1 + ζ⁻¹`. -/
+def indRotQ2 : PKnot → Int → Int
+  | PKnot.fourOne, s => -(s * s)
+  | PKnot.fiveTwo, s => s * (s * s - 2 * s - 2)
+  | PKnot.pretzel237, s => s * s - s - 3
+
+/-- **Universal `s = -1` root at order `q¹`.**
+    Every knot in the three-knot family has `indRotQ1 K (-1) = 0`. -/
+theorem indRotQ1_at_neg_one (K : PKnot) :
+    indRotQ1 K (-1) = 0 := by
+  cases K <;> decide
+
+/-- **Parabolic (`s = sAtOne = 3`) evaluations at order `q¹`.** -/
+theorem indRotQ1_parabolic_values :
+    indRotQ1 PKnot.fourOne sAtOne = -8 ∧
+    indRotQ1 PKnot.fiveTwo sAtOne = -12 ∧
+    indRotQ1 PKnot.pretzel237 sAtOne = -8 := by
+  decide
+
+/-- **The `(s + 1)` factor does NOT persist to order `q²`.**
+    At `s = -1`, `indRotQ2 K (-1) = -1 ≠ 0` on all three knots. -/
+theorem indRotQ2_at_neg_one (K : PKnot) :
+    indRotQ2 K (-1) = -1 := by
+  cases K <;> decide
+
 end QOU.QBeta.AdjointIndexSetM3

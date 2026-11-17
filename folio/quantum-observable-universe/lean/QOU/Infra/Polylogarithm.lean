@@ -155,7 +155,46 @@ instance defaultTheoremB (zeta3 : ℝ) : TheoremB where
     downstream content is **fully verified** modulo a named
     class instance. -/
 theorem beta3_via_class [h : TheoremA] :
-    imLi3ZetaPredicted 4 = beta3 :=
-  h.value_at_4
+    32 * imLi3ZetaPredicted 4 = Real.pi ^ 3 := by
+  rw [h.value_at_4, beta3]
+  ring
+
+/-- **Machine-checked scope of the default `TheoremA` instance (`qou-hjf4`).**
+    The default `TheoremA` instance restricts `agrees_at K` to the single verified
+    index `K = 4`, never a universal `True`. -/
+theorem defaultTheoremA_agrees_iff (K : ℕ) :
+    (inferInstance : TheoremA).agrees_at K ↔ K = 4 :=
+  Iff.rfl
+
+/-- **Machine-checked scope of `defaultTheoremB` (`qou-hjf4`).**
+    `defaultTheoremB` restricts `agrees_at N` to the single verified index `N = 5`. -/
+theorem defaultTheoremB_agrees_iff (zeta3 : ℝ) (N : ℕ) :
+    (defaultTheoremB zeta3).agrees_at N ↔ N = 5 :=
+  Iff.rfl
+
+/-- **Degenerate root-of-unity indices `K = 1` and `K = 2` vanish.**
+    At `K = 1` and `K = 2`, `ζ_K ∈ {1, -1}` is real, and the closed-form
+    prediction `(K - 1)(K - 2) π³ / (3 K³)` vanishes identically. -/
+theorem imLi3ZetaPredicted_one : imLi3ZetaPredicted 1 = 0 := by
+  unfold imLi3ZetaPredicted
+  ring
+
+theorem imLi3ZetaPredicted_two : imLi3ZetaPredicted 2 = 0 := by
+  unfold imLi3ZetaPredicted
+  ring
+
+/-- **Bring / icosahedral `K = 5` special value.**
+    At `K = 5`, `imLi3ZetaPredicted 5 = (4 · 3 / (3 · 125)) π³ = (4 / 125) π³`. -/
+theorem imLi3ZetaPredicted_five :
+    imLi3ZetaPredicted 5 = (4 / 125) * Real.pi ^ 3 := by
+  unfold imLi3ZetaPredicted
+  field_simp
+  ring
+
+/-- **Degenerate orbit sum at `N = 1` vanishes.** -/
+theorem cl3OrbitSumPredicted_one (zeta3 : ℝ) :
+    cl3OrbitSumPredicted 1 zeta3 = 0 := by
+  unfold cl3OrbitSumPredicted
+  simp
 
 end QOU.Infra.Polylogarithm

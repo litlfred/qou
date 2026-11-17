@@ -60,11 +60,28 @@ class QOUCohomology where
   /-- Frobenius–Hopf self-duality: `HH² ≅ k` is rank one. -/
   frobeniusHopf_duality : hh2 = 1
 
-/-- **The obstruction is a single scalar (sorry-free).**  Because
-    `HH²(A) ≅ k` is rank one, the universal obstruction class lives in a
-    one-dimensional space — a single element of `k`. -/
-theorem obstruction_rank_one [Q : QOUCohomology] : Q.hh2 = 1 :=
-  Q.frobeniusHopf_duality
+/-- **Net even-degree Hochschild rank is one (sorry-free).**  Composing
+    `HH²(A) ≅ k` (`hh2 = 1`) with observability (`hh0 = 0`), the net
+    even-degree Hochschild rank `dim HH²(A) - dim HH⁰(A)` equals `1`. -/
+theorem obstruction_rank_one [Q : QOUCohomology] :
+    (Q.hh2 : ℤ) - (Q.hh0 : ℤ) = 1 := by
+  rw [Q.frobeniusHopf_duality, Q.observability]
+  norm_num
+
+/-- **Strict anti-monotonicity of the surface Euler characteristic.**
+    For `g₁ < g₂`, `eulerChar g₂ < eulerChar g₁`. -/
+theorem eulerChar_strictAnti {g₁ g₂ : ℕ} (h : g₁ < g₂) :
+    eulerChar g₂ < eulerChar g₁ := by
+  unfold eulerChar
+  omega
+
+/-- **Unique genus pin for `χ = -6`.**
+    An orientable surface has Euler characteristic `-6` if and only if its
+    genus is `4`. -/
+theorem eulerChar_eq_neg_six_iff (g : ℕ) :
+    eulerChar g = -6 ↔ g = 4 := by
+  unfold eulerChar
+  omega
 
 /-- **The QOU obstruction data (§3b-cond class).**  Extends the
     cohomological assumptions with the geometric inputs that pin the
@@ -98,5 +115,12 @@ theorem chi_eq_neg_six [Q : QOUObstruction] : Q.chi = -6 := by
     no computational-complexity input. -/
 theorem chi_ne_zero [QOUObstruction] : QOUObstruction.chi ≠ 0 := by
   rw [chi_eq_neg_six]; norm_num
+
+/-- **Combined cohomological and geometric balance.**
+    In any `[QOUObstruction]`, `χ(A) + 6 · (dim HH²(A) - dim HH⁰(A)) = 0`. -/
+theorem chi_add_six_mul_net_cohomology [Q : QOUObstruction] :
+    Q.chi + 6 * ((Q.hh2 : ℤ) - (Q.hh0 : ℤ)) = 0 := by
+  rw [chi_eq_neg_six, obstruction_rank_one]
+  norm_num
 
 end QOU.Information

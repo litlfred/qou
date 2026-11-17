@@ -130,6 +130,20 @@ theorem offDiag_axialDist_ne_zero {μ : YoungDiagram} (hq0 : q ≠ 0) (hq2 : QOU
     (offDiag_eq_zero_iff_eq_neg_one q hq0 hq2).mp hzero
   omega
 
+/-- **Machine-checked refutation of the `d = 1` branch (`qou-y4ca`).**
+At `d = 1`, `offDiag q 1 = 1 ≠ 0` in any field `K`, so the `d = 1` disjunct of
+`eq_one_or_neg_one_of_offDiag_eq_zero` is never realised. -/
+theorem offDiag_one_ne_zero : offDiag q 1 ≠ 0 := by
+  rw [offDiag_one]
+  exact one_ne_zero
+
+/-- **Machine-checked refutation of the naive converse (`qou-y4ca`).**
+The converse `∀ d : ℤ, d = 1 ∨ d = -1 → offDiag q d = 0` fails at `d = 1`. -/
+theorem not_converse_eq_one_or_neg_one_of_offDiag_eq_zero :
+    ¬ (∀ d : ℤ, d = 1 ∨ d = -1 → offDiag q d = 0) := by
+  intro hconv
+  exact offDiag_one_ne_zero q (hconv 1 (Or.inl rfl))
+
 end SeminormalRep
 
 end QOU.SchurWeyl

@@ -97,4 +97,46 @@ theorem lambdaPlus_gt_one {τ : ℝ} (hτ : 2 < τ) : 1 < lambdaPlus τ := by
   have hs : 0 < Real.sqrt (τ ^ 2 - 4) := Real.sqrt_pos.mpr hpos
   linarith
 
+/-- `λ₋` is also a root of the characteristic polynomial `x² − τx + 1`. -/
+theorem lambdaMinus_isRoot {τ : ℝ} (hτ : 2 < τ) :
+    (lambdaMinus τ) ^ 2 - τ * lambdaMinus τ + 1 = 0 := by
+  unfold lambdaMinus
+  have hs : Real.sqrt (τ ^ 2 - 4) ^ 2 = τ ^ 2 - 4 := Real.sq_sqrt (by nlinarith)
+  have expand :
+      ((τ - Real.sqrt (τ ^ 2 - 4)) / 2) ^ 2 - τ * ((τ - Real.sqrt (τ ^ 2 - 4)) / 2) + 1
+        = (Real.sqrt (τ ^ 2 - 4) ^ 2 - (τ ^ 2 - 4)) / 4 := by ring
+  rw [expand, hs]; ring
+
+/-- **Trace identity:** the sum of the two characteristic roots equals `τ`. -/
+theorem lambda_sum_eq_tau (τ : ℝ) :
+    lambdaPlus τ + lambdaMinus τ = τ := by
+  unfold lambdaPlus lambdaMinus
+  ring
+
+/-- **Sub-dominant root lies strictly in `(0, 1)`.**
+    For `τ > 2`, `0 < λ₋ < 1`. -/
+theorem lambdaMinus_pos_and_lt_one {τ : ℝ} (hτ : 2 < τ) :
+    0 < lambdaMinus τ ∧ lambdaMinus τ < 1 := by
+  have hprod := lambda_product_eq_one hτ
+  have hgt := lambdaPlus_gt_one hτ
+  have hpos_plus : 0 < lambdaPlus τ := by linarith
+  refine ⟨?_, ?_⟩
+  · by_contra hle
+    push_neg at hle
+    have : lambdaPlus τ * lambdaMinus τ ≤ 0 :=
+      mul_nonpos_of_nonneg_of_nonpos (le_of_lt hpos_plus) hle
+    linarith
+  · nlinarith
+
+/-- **General solution of the depth-2 binding recurrence.**
+    Every linear combination `c₊ · λ₊^n + c₋ · λ₋^n` satisfies the depth-2
+    recurrence `a_{n+2} = τ · a_{n+1} - a_n`. -/
+theorem recurrence_general_solution {τ : ℝ} (hτ : 2 < τ) (cPlus cMinus : ℝ) (n : ℕ) :
+    cPlus * (lambdaPlus τ) ^ (n + 2) + cMinus * (lambdaMinus τ) ^ (n + 2) =
+      τ * (cPlus * (lambdaPlus τ) ^ (n + 1) + cMinus * (lambdaMinus τ) ^ (n + 1)) -
+        (cPlus * (lambdaPlus τ) ^ n + cMinus * (lambdaMinus τ) ^ n) := by
+  have h1 := lambdaPlus_isRoot hτ
+  have h2 := lambdaMinus_isRoot hτ
+  linear_combination cPlus * (lambdaPlus τ) ^ n * h1 + cMinus * (lambdaMinus τ) ^ n * h2
+
 end QOU.Mass
