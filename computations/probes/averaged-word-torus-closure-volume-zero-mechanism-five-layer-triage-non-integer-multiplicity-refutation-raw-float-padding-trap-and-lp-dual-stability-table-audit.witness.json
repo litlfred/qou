@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "1.0",
+  "probe": "averaged_word_torus_closure_volume_zero_mechanism_five_layer_triage_non_integer_multiplicity_refutation_raw_float_padding_trap_and_lp_dual_stability_table_audit_probe",
+  "beans": [
+    "qou-dgpz",
+    "qou-dqgp",
+    "qou-dt01",
+    "qou-epxx",
+    "qou-etfq"
+  ],
+  "leanModule": "folio/quantum-observable-universe/lean/QOU/Eightfold/AveragedWordTorusClosureVolumeZeroMechanismFiveLayerTriageNonIntegerMultiplicityRefutationRawFloatPaddingTrapAndLpDualStabilityTableAudit.lean",
+  "scriptFile": "computations/probes/averaged_word_torus_closure_volume_zero_mechanism_five_layer_triage_non_integer_multiplicity_refutation_raw_float_padding_trap_and_lp_dual_stability_table_audit_probe.py",
+  "scriptCommitSha": "aa47c85dded61318b5d8e6dc71935c89f3727f4a",
+  "scriptHash": "611b97f8c595",
+  "scriptSha256": "611b97f8c59547e61a194a24a346ac76d936f422aa823458b85c3e736bed2be9",
+  "dps": 80,
+  "generatedAt": "2026-11-17T11:56:15.321077+00:00",
+  "allPassed": true,
+  "checks": {
+    "qou_dgpz_averaged_word_branch_count_and_zero_volume": {
+      "passed": true,
+      "lettersAtA2": 5,
+      "branchesAtA2": 32,
+      "branchesAtA3": 128,
+      "branchesAtA4": 512,
+      "censusRejectedCount": 3558,
+      "totalBranchVolumeAtA2": "0.0"
+    },
+    "qou_dqgp_mechanism_five_layer_triage": {
+      "passed": true,
+      "detectorOne": 79,
+      "detectorTwo": 74,
+      "detectorOverlap": 58,
+      "detectorUnion": 95,
+      "deferredMigrationCount": 57
+    },
+    "qou_dt01_non_integer_cap_and_color_tube_weights": {
+      "passed": true,
+      "rhoFHe4": "1.889",
+      "nearestIntegerDistance": "1.11e-1",
+      "wI0Same": "1.65485393155e-1",
+      "wI0Diff": "8.3923970089e-2",
+      "wI0Ratio": "1.9718489601898652142302371531459831246068018697160612587234677765316794223233306"
+    },
+    "qou_epxx_raw_float64_baseline_and_padding_trap": {
+      "passed": true,
+      "witnessFileDelta": 28,
+      "witnessFieldDelta": 5589,
+      "fabricatedPaddingDigits": 44,
+      "binary64PaddingAbsError": "3.0242507322644314383045880516798296263927190000000000000000000000685462812119373e-17"
+    },
+    "qou_etfq_lp_dual_stability_table_audit": {
+      "passed": true,
+      "minGxSigma0": "2.5e-1",
+      "minGxSigma0Inv": "1.4e-1",
+      "minGxSigma0Sigma1Inv": "1.4e-1",
+      "minGxSigma0Sq": "3.6e-1",
+      "trueKappaG": "3.4155828068263129995988081340177302442476512986474608012756408165767292214245101e+1",
+      "understatementFactor": "4.8794040097518757137125830485967574917823589980678011446794868808238988877493002"
+    }
+  }
+}
