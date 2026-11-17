@@ -1,0 +1,62 @@
+{
+  "probeId": "pretzel_symmetry_adapted_grading_and_substrate_branch_brick_probe",
+  "beans": [
+    "qou-ck2w",
+    "qou-k5r5",
+    "qou-ndt5",
+    "qou-x3iv",
+    "qou-x631"
+  ],
+  "scriptPath": "computations/probes/pretzel_symmetry_adapted_grading_and_substrate_branch_brick_probe.py",
+  "scriptCommitSha": "caec3a2639d9338bfaf9aa9d455a0ab97b427071",
+  "scriptHash": "428700c5c7bd",
+  "generatedAt": "2026-11-17T10:12:37.198018+00:00",
+  "environment": {
+    "pythonVersion": "3.13.12",
+    "mpmathVersion": "1.3.0",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "precisionDps": "80"
+  },
+  "allPassed": true,
+  "outputHash": "27ee54e84b99cf035202cc1272490bd167d1f4ad8e861ae3bd043848cca760e3",
+  "results": {
+    "precisionDps": "80",
+    "allPassed": true,
+    "checks": [
+      {
+        "id": "brunnian_deficit_step_and_milnor_cofactor_anchors",
+        "passed": true,
+        "fourScaledCofactorsA3To6": [
+          "3",
+          "-6",
+          "12",
+          "-24"
+        ],
+        "stepExpansionResidual": "0.0"
+      },
+      {
+        "id": "kerov_olshanski_row_shifted_content_decomposition",
+        "passed": true,
+        "gridIdentityVerified": true
+      },
+      {
+        "id": "substrate_colour_curve_modulus_and_branch_defect",
+        "passed": true,
+        "degenerationAtNegOne": "4.743989074453735450956858e-80",
+        "branchDefectResidual": "1.149099575812127031453995e-79"
+      },
+      {
+        "id": "pretzel_symmetry_adapted_grading_and_adjoint_w_sq",
+        "passed": true,
+        "gradingDimensionSum": "6",
+        "adjointWSquaredResidual": "2.357307123332191882045323e-81"
+      },
+      {
+        "id": "plancherel_covariance_kernel_r4_and_t3_anchors",
+        "passed": true,
+        "t3AtK3": "-2",
+        "t3AtK4": "-2"
+      }
+    ]
+  }
+}
