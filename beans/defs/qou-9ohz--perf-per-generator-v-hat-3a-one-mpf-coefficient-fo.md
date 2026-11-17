@@ -1,7 +1,7 @@
 ---
 # qou-9ohz
 title: 'PERF: per_generator_V_hat_3A -- one mpf coefficient forces an object-dtype O(dim^3) matmul; the word collapses to alpha*sigma+beta'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

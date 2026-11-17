@@ -1,7 +1,7 @@
 ---
 # qou-8p6w
 title: Topological Mass Dilogarithm gap (tm_dilogarithm_evaluation.lean)
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

@@ -1,7 +1,7 @@
 ---
 # qou-8r6b
 title: 'Pose the composition feasibility program: variable = interface letter (1−e)σ + eσ⁻¹, feasible set = reading 3 on the composite; first enumeration at A=2'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

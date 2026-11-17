@@ -1,7 +1,7 @@
 ---
 # qou-9gpo
 title: 'PROVE(lean): confinement_frobenius_reciprocity — theorem confinement_frobenius_reciprocity [ctx : ConfinementFrobeniusReciprocityContext] : [cited bertsimas1997,manuscript]'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

@@ -1,7 +1,7 @@
 ---
 # qou-8mmq
 title: He4 two-row signed sum is suppressed 29,000x — exact identity at some q, or coincidence?
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
