@@ -1,7 +1,8 @@
 ---
 # qou-4383
 title: 'Ordering fingerprint audit: find grouped-era artifacts by VALUE, not by symptom'
-status: todo
+status: in-progress
+pr: 8352
 type: task
 priority: normal
 tags:

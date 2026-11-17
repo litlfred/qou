@@ -1,7 +1,8 @@
 ---
 # qou-53p1
 title: Triage mass_table_comprehensive.py — the one ppb consumer that timed out unchecked
-status: todo
+status: in-progress
+pr: 8352
 type: task
 priority: normal
 tags:

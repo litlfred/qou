@@ -1,7 +1,8 @@
 ---
 # qou-v1eu
 title: 'Route C M3: derive the pretzel''s GL(r) normalisation from the q-Wronskian pairing (GGM 92/93)'
-status: todo
+status: in-progress
+pr: 8352
 type: task
 priority: normal
 tags:

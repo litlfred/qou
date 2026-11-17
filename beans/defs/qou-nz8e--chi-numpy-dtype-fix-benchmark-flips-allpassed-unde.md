@@ -1,7 +1,8 @@
 ---
 # qou-nz8e
 title: chi-numpy-dtype-fix-benchmark flips allPassed under numpy 2.4.6
-status: todo
+status: in-progress
+pr: 8352
 type: task
 priority: normal
 tags:
