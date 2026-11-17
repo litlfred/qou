@@ -83,28 +83,26 @@ def symmetricPairProjection (muAB muBA : Int) : Int :=
 def chargeWeightedPairProjection (wAB wBA muAB muBA : Int) : Int :=
   wAB * muAB + wBA * muBA
 
-/-- Universal theorem: under Milnor transposition antisymmetry `μ_ba = -μ_ab`, the unweighted
-    symmetric pair projection vanishes identically for all `μ_ab`. -/
+/-- Universal theorem: under transposition antisymmetry `μ_ba = -μ_ab`, the unweighted
+    symmetric pair projection `μ_ab + μ_ba` vanishes identically for all `μ_ab`. -/
 theorem milnor_antisymmetry_kills_symmetric_pair_projection (muAB muBA : Int)
     (hAnti : muBA = -muAB) :
-    symmetricPairProjection muAB muBA = 0 := by
-  dsimp [symmetricPairProjection]
+    muAB + muBA = 0 := by
   omega
 
-/-- Universal factorization: under `μ_ba = -μ_ab`, the charge-weighted pair projection equals
-    `(w_ab - w_ba) * μ_ab`. -/
+/-- Universal factorization: under `μ_ba = -μ_ab`, the charge-weighted pair projection
+    `w_ab * μ_ab + w_ba * μ_ba` equals `(w_ab - w_ba) * μ_ab`. -/
 theorem milnor_charge_weighted_projection_factorization (wAB wBA muAB muBA : Int)
     (hAnti : muBA = -muAB) :
-    chargeWeightedPairProjection wAB wBA muAB muBA = (wAB - wBA) * muAB := by
-  dsimp [chargeWeightedPairProjection]
+    wAB * muAB + wBA * muBA = (wAB - wBA) * muAB := by
   rw [hAnti, Int.mul_neg, Int.sub_mul]
   omega
 
 /-- Universal non-vanishing: under `μ_ba = -μ_ab`, if `w_ab ≠ w_ba` and `μ_ab ≠ 0`, then the
-    charge-weighted pair projection is strictly nonzero. -/
+    charge-weighted pair projection `w_ab * μ_ab + w_ba * μ_ba` is strictly nonzero. -/
 theorem milnor_charge_weighted_projection_ne_zero (wAB wBA muAB muBA : Int)
     (hAnti : muBA = -muAB) (hWeight : wAB ≠ wBA) (hMu : muAB ≠ 0) :
-    chargeWeightedPairProjection wAB wBA muAB muBA ≠ 0 := by
+    wAB * muAB + wBA * muBA ≠ 0 := by
   rw [milnor_charge_weighted_projection_factorization wAB wBA muAB muBA hAnti]
   have hDiff : wAB - wBA ≠ 0 := by omega
   exact Int.mul_ne_zero hDiff hMu
@@ -193,17 +191,15 @@ theorem h2_block_eigenvalue_gap_independent_of_shift (scale q d : Int) :
     `w₁ ≠ w₂` and `q^2 + S^2 > 0`. -/
 theorem h2_markov_stabilization_uniquely_locks_wenzl_weight (wTotal w1 w2 scale q : Int)
     (hw : w1 ≠ w2) (hGapPos : 0 < q * q + scale * scale) :
-    h2WeightedBondTraceCleared wTotal w1 scale q 0 -
-      h2WeightedBondTraceCleared wTotal w2 scale q 0 =
+    (w1 * (q * q) + (wTotal - w1) * -(scale * scale)) -
+      (w2 * (q * q) + (wTotal - w2) * -(scale * scale)) =
         (w1 - w2) * (q * q + scale * scale) ∧
-    h2WeightedBondTraceCleared wTotal w1 scale q 0 -
-      h2WeightedBondTraceCleared wTotal w2 scale q 0 ≠ 0 := by
+    (w1 * (q * q) + (wTotal - w1) * -(scale * scale)) -
+      (w2 * (q * q) + (wTotal - w2) * -(scale * scale)) ≠ 0 := by
   have hId :
-      h2WeightedBondTraceCleared wTotal w1 scale q 0 -
-        h2WeightedBondTraceCleared wTotal w2 scale q 0 =
+      (w1 * (q * q) + (wTotal - w1) * -(scale * scale)) -
+        (w2 * (q * q) + (wTotal - w2) * -(scale * scale)) =
           (w1 - w2) * (q * q + scale * scale) := by
-    dsimp [h2WeightedBondTraceCleared, h2SymmetricEigenvalueCleared, h2AntisymmetricEigenvalueCleared]
-    rw [Int.mul_zero, Int.add_zero, Int.add_zero]
     rw [Int.sub_mul, Int.sub_mul, Int.sub_mul, Int.mul_add, Int.mul_add]
     rw [Int.mul_neg, Int.mul_neg, Int.mul_neg]
     omega
@@ -241,7 +237,7 @@ def conventionCHalfCeilingGapNumerator (scale u : Int) : Int :=
 
 /-- Concrete verification at `S = 10^6` and `q_0 = 1109980` (`q_0 ≈ 1.109980`) and across multiple
     `q, u` points that:
-    1. `N_3 + 2 * N_21 = (q^2 + S^2)^2` and `N_21 > 0` (no convention-D Wedderburn vanishing);
+    1. `N_3 + 2 * N_21 = (q^2 + S^2)^2` and `N_21 > 0` (no convention-D isotypic weight vanishing);
     2. `(u^2 + S^2) - 2 * S * u = (u - S)^2 ≥ 0` (convention-C ceiling `z_C(u) ≤ 1/2 < 1`);
     3. The deconfinement thresholds satisfy the strict hierarchy
        `0 < q_gold (381966) < q_melt (465571) < 1 (1000000) < q_0 (1109980) < ψ (1465571)`. -/
