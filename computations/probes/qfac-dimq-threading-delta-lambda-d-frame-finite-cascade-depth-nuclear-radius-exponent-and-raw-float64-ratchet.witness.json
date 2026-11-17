@@ -1,0 +1,54 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "dps": "80",
+  "computedAt": "2026-11-17T08:46:06.074569+00:00",
+  "commitSha": "19df519cb4966924e699c3c8adf0dc8258628c1b",
+  "scriptCommitSha": "19df519cb4966924e699c3c8adf0dc8258628c1b",
+  "scriptHash": "d426d67a9318",
+  "allPassed": true,
+  "assertions": [
+    {
+      "name": "qou_6p3b_qfac_dimq_threading_scope_and_inert_site_accounting",
+      "computed": "133:113:12:11",
+      "expected": "133:113:12:11",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.QfacDimQThreadingDeltaLambdaDFrameFiniteCascadeDepthNuclearRadiusExponentAndRawFloat64Ratchet.qfac_dimq_threading_scope_and_inert_site_accounting"
+    },
+    {
+      "name": "qou_6snb_delta_lambda_deficit_survives_all_six_d_frame_ansaetze",
+      "computed": "3.40356",
+      "expected": "3.40356",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "QOU.Eightfold.QfacDimQThreadingDeltaLambdaDFrameFiniteCascadeDepthNuclearRadiusExponentAndRawFloat64Ratchet.delta_lambda_deficit_survives_all_six_d_frame_ansaetze"
+    },
+    {
+      "name": "qou_6x9g_finite_cascade_depth_monotone_in_reynolds_log",
+      "computed": "99:1",
+      "expected": "99:1",
+      "passed": true,
+      "tolerance": "0",
+      "upperBoundAt1e6": "9.930574455249189282866907576237253631845903513086904225447181928111836716849865e+1",
+      "upperBoundAt1e8": "1.3240765940332252377155876768316338175794538017449205633929575904149115622466487e+2",
+      "source": "QOU.Eightfold.QfacDimQThreadingDeltaLambdaDFrameFiniteCascadeDepthNuclearRadiusExponentAndRawFloat64Ratchet.finite_cascade_depth_monotone_in_reynolds_log"
+    },
+    {
+      "name": "qou_7e67_nuclear_radius_exponent_inverse_binding_ordering",
+      "computed": "3067:4314:5326:9679:6612",
+      "expected": "3067:4314:5326:9679:6612",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.QfacDimQThreadingDeltaLambdaDFrameFiniteCascadeDepthNuclearRadiusExponentAndRawFloat64Ratchet.nuclear_radius_exponent_inverse_binding_ordering"
+    },
+    {
+      "name": "qou_7kq3_raw_float64_main_ratchet_new_dirty_and_net_drain_accounting",
+      "computed": "34:3:2292",
+      "expected": "34:3:2292",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.QfacDimQThreadingDeltaLambdaDFrameFiniteCascadeDepthNuclearRadiusExponentAndRawFloat64Ratchet.raw_float64_main_ratchet_new_dirty_and_net_drain_accounting"
+    }
+  ]
+}
