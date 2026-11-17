@@ -3730,3 +3730,6 @@ Pre-registered before any computation. Re-run of gluon-thread stage 1 over the a
 - Old stage-1 table kept as the record for the inverse reading; this run is reported beside it, not in place of it.
 - Questions, no predicted answer: 1. Does pass ⟺ pure survive? 2. Are passing writhes still symmetric, or one-signed (all letters except V⁻¹ are positive)? 3. Does adding e⁻ let any knot (1 component) pass?
 - Not allowed: choosing a canonical word, letter or length from these results. This run measures admissibility only; selection is a separate, separately pre-registered step.
+
+### RESULT 2026-11-17 — stage 1b (γγ thread, PR #8128, witness gg-twist-reading3-stage1b)
+(a) {V, V⁻¹, L₊ = σ₀σ₁, L₋ = σ₁σ₀}, lengths 1–6: pass ⟺ pure braid survives (1848/1848 pure pass, 0/3612 knots). All writhes ≥ 0, which the alphabet forces (L± both +2). (b) Adding e⁻ = σ₀σ₁σ₀, lengths 1–5: every pure word passes and no knot does, but 526/1771 two-component words also pass, so pass ⟺ pure breaks (shortest: V⁻¹L₋e⁻, L₊L₋e⁻). 274 words sit at a numerical zero (~1e-42, sign flips 40→80 dps) and are counted as failures. Admissibility only; no selection. Bean stays OPEN.
