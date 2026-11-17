@@ -1,13 +1,13 @@
 ---
 # qou-i0sr
 title: 'GAP WALL-3 lower bound: dH(z-axis) ≥ |log(b/a)| (FTC lower bound)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T13:02:37Z
-updated_at: 2026-10-04T15:12:42Z
+updated_at: 2026-11-17T10:22:29Z
 parent: qou-c8p8
 ---
 
@@ -64,3 +64,15 @@ z-axis points (heights a, b). Added to HyperbolicGeodesicZAxis.lean:
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-16 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+### Progress Update (2026-11-17, Round 60 — lane-e667)
+- **PR:** `litlfred/qou#8299` (`https://github.com/litlfred/qou/pull/8299`), head `7794a07bbdcd4212b670d7ed777098efe60dc9a4` (`COMMIT1 = a21b136d3f122bac6df50bab417b7232ca55064f`), labeled `ready-to-merge` + `release`, `ready: 7794a07bbdcd4212b670d7ed777098efe60dc9a4` (`https://github.com/litlfred/qou/pull/8299#issuecomment-6945265144`).
+- **Lean 4.24.0 Module:** `folio/quantum-observable-universe/lean/QOU/Foundations/AnnulusWindingLogCountingLieCurvatureHemisphereInversionZAxisBound.lean` (wired into `QOU.lean`; `0` `sorry`, `0` `axiom`, `0` warnings, `0` CRITICAL/major/advisory across all 6 static vacuity & borrowed-name audits):
+  - `qou-argp`: `annulus_winding_step_and_single_zero_uniqueness`.
+  - `qou-bp5n`: `radial_log_counting_decomposition_and_increment`.
+  - `qou-ghc6`: `matrix_one_form_commutator_trace_and_flat_curvature`.
+  - `qou-h2mb`: `hemisphere_inversion_radial_reversal_and_tangential_fix`.
+  - `qou-i0sr`: `vertical_step_energy_dominance_and_telescoping_bound`.
+- **80-dps Probe & 2-Commit Witness:** `computations/probes/annulus_winding_log_counting_lie_curvature_hemisphere_inversion_z_axis_bound_probe.py` + `computations/probes/annulus-winding-log-counting-lie-curvature-hemisphere-inversion-z-axis-bound.witness.json` (`scriptHash = 001b12183bba`, `scriptCommitSha = a21b136d3f122bac6df50bab417b7232ca55064f`, `allPassed = True`).
+- **Adversarial Cross-Review (Round 60):** Verified `litlfred/qou#8291` (`97f9ffaed50b1b3971470d9bc651293cd4f935e3`, `0` advisories) and remediated `1 major, 1 advisory` borrowed-name findings on sibling PR `litlfred/qou#8277`, pushing `845c943537ff3112ef1cadf49f54381fb96fcb38` and posting `ready: 845c943537ff3112ef1cadf49f54381fb96fcb38` (`https://github.com/litlfred/qou/pull/8277#issuecomment-6945121466`).
+- **Status:** Kept at `in-progress` pending Merge Manager verification and merge.
