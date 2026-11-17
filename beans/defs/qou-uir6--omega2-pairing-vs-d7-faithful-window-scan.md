@@ -1,7 +1,7 @@
 ---
 # qou-uir6
 title: 'Omega_2 pairing vs D7: report the faithful-window scan of P(z) as the result; convention-D values are a two-row diagnostic'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-10-12T19:30:00Z
@@ -60,3 +60,11 @@ n = 3, checked to n = 6).
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+## Progress Update (Round 93 — lane-cf11)
+- Formalized in `folio/quantum-observable-universe/lean/QOU/QBeta/FaithfulWindowAndPretzelWronskianBrick.lean` with 80-dps probe `computations/probes/faithful_window_and_pretzel_wronskian_brick_probe.py` and witness `computations/probes/faithful-window-and-pretzel-wronskian-brick.witness.json`.
+- PR: https://github.com/litlfred/qou/pull/8353 (`feat/qou-b9cj-uir6-upbq-v1eu-v4in-v7ro`, HEAD `026764a8eae99d01d2339d820089a669110ba022`).
+
+## Progress Update (Round 93 — lane-cf11)
+- Formalized in `folio/quantum-observable-universe/lean/QOU/QBeta/FaithfulWindowAndPretzelWronskianBrick.lean` with 80-dps probe `computations/probes/faithful_window_and_pretzel_wronskian_brick_probe.py` and witness `computations/probes/faithful-window-and-pretzel-wronskian-brick.witness.json`.
+- PR: https://github.com/litlfred/qou/pull/8353 (`feat/qou-b9cj-uir6-upbq-v1eu-v4in-v7ro`, HEAD `026764a8eae99d01d2339d820089a669110ba022`).

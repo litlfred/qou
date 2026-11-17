@@ -1,7 +1,7 @@
 ---
 # qou-v7ro
 title: 'GAP: bridge Magnus coeff mu-bar(12..A)=+/-1 to the QOU Markov-trace deficit leading coefficient (close MilnorExactOrderConjecture)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -297,3 +297,7 @@ artifact, and grep finds no other producer or content block reading it.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-03 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Progress Update (Round 93 — lane-cf11)
+- Formalized in `folio/quantum-observable-universe/lean/QOU/QBeta/FaithfulWindowAndPretzelWronskianBrick.lean` with 80-dps probe `computations/probes/faithful_window_and_pretzel_wronskian_brick_probe.py` and witness `computations/probes/faithful-window-and-pretzel-wronskian-brick.witness.json`.
+- PR: https://github.com/litlfred/qou/pull/8353 (`feat/qou-b9cj-uir6-upbq-v1eu-v4in-v7ro`, HEAD `026764a8eae99d01d2339d820089a669110ba022`).
