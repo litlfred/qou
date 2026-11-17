@@ -1,0 +1,157 @@
+{
+  "probe": "jet-sign-gate-inter-volume-offset-fibre-dim-confinement-low-isotope-probe",
+  "beans": [
+    "qou-px38",
+    "qou-q3f7",
+    "qou-rm47",
+    "qou-sw8n",
+    "qou-syit"
+  ],
+  "dps": 50,
+  "scriptCommitSha": "03d44f353473173a3c5099bb1c73d25e13571021",
+  "scriptHash": "f8619c2ca75f",
+  "allPassed": true,
+  "results": {
+    "qou_px38": {
+      "passed": true,
+      "callerCount": 0,
+      "publishedOutputShift": 0,
+      "positiveTraceBlocksAnnihilated": [
+        {
+          "n": 2,
+          "partition": "(1, 1)",
+          "trSign": 1,
+          "cumulScaled": 500,
+          "gatedLinear": 0
+        },
+        {
+          "n": 3,
+          "partition": "(2, 1)",
+          "trSign": 2,
+          "cumulScaled": 667,
+          "gatedLinear": 0
+        },
+        {
+          "n": 4,
+          "partition": "(3, 1)",
+          "trSign": 3,
+          "cumulScaled": 375,
+          "gatedLinear": 0
+        }
+      ],
+      "conjugatePairGatedValue": 0
+    },
+    "qou_q3f7": {
+      "passed": true,
+      "vOld": "2.6626142815726835000000000000000000000000000000000",
+      "vNew": "2.6656455250911124000000000000000000000000000000000",
+      "e0MeV": "0.69512553775813980000000000000000000000000000000000",
+      "deltaLogV": "0.0011377988144102949925841354383273019403309038046351",
+      "constantDeltaBMeV": "-0.00079091301272753021064571632786673406742003449247441",
+      "constantDeltaMMeV": "0.00079091301272753021064571632786673406742003449247441",
+      "isotopeRowsMicroMeV": [
+        {
+          "isotope": "2H",
+          "A": 2,
+          "bOldMicroMeV": 4401529,
+          "bNewMicroMeV": 4400737,
+          "diffMicroMeV": -792
+        },
+        {
+          "isotope": "3H",
+          "A": 3,
+          "bOldMicroMeV": 10263414,
+          "bNewMicroMeV": 10262622,
+          "diffMicroMeV": -792
+        },
+        {
+          "isotope": "37Cl",
+          "A": 37,
+          "bOldMicroMeV": 162993882,
+          "bNewMicroMeV": 162993090,
+          "diffMicroMeV": -792
+        },
+        {
+          "isotope": "40Ar",
+          "A": 40,
+          "bOldMicroMeV": 180579537,
+          "bNewMicroMeV": 180578745,
+          "diffMicroMeV": -792
+        }
+      ]
+    },
+    "qou_rm47": {
+      "passed": true,
+      "nEffConventionC": "2.5995000000000000000000000000000000000000000000000",
+      "distanceToN2": "0.59950000000000000000000000000000000000000000000000",
+      "distanceToN3": "0.40050000000000000000000000000000000000000000000000",
+      "nEffScaled10000": 25995,
+      "distanceToN2Scaled10000": 5995,
+      "distanceToN3Scaled10000": 4005
+    },
+    "qou_sw8n": {
+      "passed": true,
+      "strataComparison": [
+        {
+          "n": 2,
+          "partitionCountPn": 2,
+          "gbDepthStrataCount": 1,
+          "excessStrata": 1,
+          "singleBlockSubalgebraDeficitFromUnit": 1
+        },
+        {
+          "n": 3,
+          "partitionCountPn": 3,
+          "gbDepthStrataCount": 1,
+          "excessStrata": 2,
+          "singleBlockSubalgebraDeficitFromUnit": 2
+        },
+        {
+          "n": 4,
+          "partitionCountPn": 5,
+          "gbDepthStrataCount": 2,
+          "excessStrata": 3,
+          "singleBlockSubalgebraDeficitFromUnit": 4
+        },
+        {
+          "n": 5,
+          "partitionCountPn": 7,
+          "gbDepthStrataCount": 2,
+          "excessStrata": 5,
+          "singleBlockSubalgebraDeficitFromUnit": 6
+        },
+        {
+          "n": 6,
+          "partitionCountPn": 11,
+          "gbDepthStrataCount": 3,
+          "excessStrata": 8,
+          "singleBlockSubalgebraDeficitFromUnit": 10
+        },
+        {
+          "n": 7,
+          "partitionCountPn": 15,
+          "gbDepthStrataCount": 3,
+          "excessStrata": 12,
+          "singleBlockSubalgebraDeficitFromUnit": 14
+        }
+      ]
+    },
+    "qou_syit": {
+      "passed": true,
+      "deuteronCommittedMeV": "10570.830000000000000000000000000000000000000000000",
+      "deuteronLiveMeV": "261780.85000000000000000000000000000000000000000000",
+      "deuteronStalenessRatio": "24.764455582012008517779587790173524690114210520839",
+      "tritonCommittedMeV": "14509.000000000000000000000000000000000000000000000",
+      "tritonLiveMeV": "340647.00000000000000000000000000000000000000000000",
+      "tritonStalenessRatio": "23.478323799021297125921841615548969605072713488180",
+      "float64PromotionMigration": {
+        "preMergeLocalRawFloat64": 33,
+        "preMergeInheritedRawFloat64": 24,
+        "preMergeTotalRawFloat64": 57,
+        "promotedToPaddedStrings": 21,
+        "postMergeRawFloat64": 36,
+        "totalPrecisionContaminatedFields": 57
+      }
+    }
+  }
+}
