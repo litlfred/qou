@@ -1,7 +1,7 @@
 ---
 # qou-6kgu
 title: 'Item 2: zero-mode moduli Vol substrate-derivation constraints (det′=2(1−g²) exact; Vol must be geometric, NOT e^π numerology)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

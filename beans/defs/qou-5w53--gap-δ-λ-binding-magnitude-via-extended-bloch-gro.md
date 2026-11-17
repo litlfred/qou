@@ -1,7 +1,7 @@
 ---
 # qou-5w53
 title: 'GAP: Δ_λ binding magnitude via extended Bloch group'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

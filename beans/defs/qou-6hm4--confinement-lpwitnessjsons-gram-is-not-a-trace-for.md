@@ -1,7 +1,7 @@
 ---
 # qou-6hm4
 title: 'confinement-topological-proof part (i): wrong lambda_-, unlabelled lambda_0 = 0, and a descent mechanism that cannot hold'
-status: todo
+status: in-progress
 type: bug
 priority: normal
 tags:

@@ -1,7 +1,7 @@
 ---
 # qou-6ixs
 title: 'PRECISION: 4 new raw-float64-dirty witnesses landed on main from other sessions (qns-backscatter, gswz_epsm x2, qbeta-g3-aomega)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

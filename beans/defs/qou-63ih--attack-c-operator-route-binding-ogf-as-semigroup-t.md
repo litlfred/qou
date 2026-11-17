@@ -1,7 +1,7 @@
 ---
 # qou-63ih
 title: 'Attack C: operator route — binding OGF as semigroup trace of (an isospectral relative of) the Jacobian Laplacian'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
