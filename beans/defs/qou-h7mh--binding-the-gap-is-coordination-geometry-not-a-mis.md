@@ -1,7 +1,8 @@
 ---
 # qou-h7mh
 title: 'binding: the gap is coordination geometry, not a missing force term — derive the bond count from the SU(4) partition shape'
-status: todo
+status: in-progress
+pr: 8284
 type: task
 priority: normal
 tags:
@@ -139,3 +140,9 @@ of coordination geometry, on a measurement that can actually see it.
 What does NOT change: the ORDERING half. Segregated vs alternating are both
 chains and still land within 0.6 % of each other, and `(A-1)` layout-free still
 beats every isospin-resolved variant. `qou-48is` stays where it was.
+
+## Progress Update (PR #8284 — `status: in-progress`)
+
+- [x] Formalized pure Lean 4.24.0 module(s) (`QOU/MassTheory/PhiQTowerConvexityAndGramRankFive.lean`, `QOU/MassTheory/ChainOrderingSpreadAndOneRowUrsellIdentity.lean`, `QOU/MassTheory/CoordinationChannelAritySeparation.lean`) with `0 sorry` and `0` findings across all 6 static vacuity audits.
+- [x] Added 50-dps `mpmath` probe `computations/probes/phi_q_convexity_gram_rank_chain_ursell_arity_probe.py` and 2-commit stamped witness `computations/probes/phi-q-convexity-gram-rank-chain-ursell-arity-probe.witness.json` (`allPassed: true`, `0` raw `float64`).
+- [x] Opened and signed [PR #8284](https://github.com/litlfred/qou/pull/8284) (`ready: d9d87101718b841adc62a2d83ad74df6ff4798e4`).

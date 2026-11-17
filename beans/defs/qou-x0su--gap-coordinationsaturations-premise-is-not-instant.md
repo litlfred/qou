@@ -1,7 +1,8 @@
 ---
 # qou-x0su
 title: 'GAP: CoordinationSaturation''s premise is not instantiated in the channel binding_canonical uses'
-status: todo
+status: in-progress
+pr: 8284
 type: task
 priority: normal
 tags:
@@ -132,3 +133,9 @@ binding_canonical uses", which conflated channel with bond set.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-31 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Progress Update (PR #8284 — `status: in-progress`)
+
+- [x] Formalized pure Lean 4.24.0 module(s) (`QOU/MassTheory/PhiQTowerConvexityAndGramRankFive.lean`, `QOU/MassTheory/ChainOrderingSpreadAndOneRowUrsellIdentity.lean`, `QOU/MassTheory/CoordinationChannelAritySeparation.lean`) with `0 sorry` and `0` findings across all 6 static vacuity audits.
+- [x] Added 50-dps `mpmath` probe `computations/probes/phi_q_convexity_gram_rank_chain_ursell_arity_probe.py` and 2-commit stamped witness `computations/probes/phi-q-convexity-gram-rank-chain-ursell-arity-probe.witness.json` (`allPassed: true`, `0` raw `float64`).
+- [x] Opened and signed [PR #8284](https://github.com/litlfred/qou/pull/8284) (`ready: d9d87101718b841adc62a2d83ad74df6ff4798e4`).
