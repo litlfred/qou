@@ -1,0 +1,34 @@
+{
+  "probe": "computations/probes/csigma4_t5crit_massnonneg_rossmanneven_leverrec_probe.py",
+  "scriptCommitSha": "f434e2b4f883e2a8fb6d9b58848ca73b7b9d49e7",
+  "scriptHash": "4a64a18fc62f",
+  "dps": 80,
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "qou_vdvE_cSigma_pow_four_mul_sq_abs_cot_div_two",
+      "residual": "0.0",
+      "passed": true
+    },
+    {
+      "id": "qou_w49j_s_channel_eq_zero_of_sq_eq",
+      "residual": "0.0",
+      "passed": true
+    },
+    {
+      "id": "qou_xapv_weighted_integrand_nonneg",
+      "residual": "4.21687917729220928973943e-81",
+      "passed": true
+    },
+    {
+      "id": "qou_zcjg_rossmann_cc_double_even_eq_dim_add_target",
+      "residual": "0.0",
+      "passed": true
+    },
+    {
+      "id": "thb7_cube_lever_static_recovery",
+      "residual": "4.21687917729220928973943e-81",
+      "passed": true
+    }
+  ]
+}
