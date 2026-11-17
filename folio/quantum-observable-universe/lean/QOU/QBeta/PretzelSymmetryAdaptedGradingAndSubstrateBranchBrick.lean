@@ -11,8 +11,8 @@ items in the `b9cj` formalization arc:
 
 1. **Convention-D Brunnian Trace Deficit Recursion & Leading Milnor Cofactor (`qou-ck2w`)**:
    Formalizes the convention-D trace deficit step factor `-hSq * (hSq + 2)` and its expanded
-   form `-(hSq * hSq) - 2 * hSq`, along with the 4-scaled leading Milnor cofactor step
-   `fourScaledMilnorCofactorNext curr = -2 * curr` generating `4 * mubar_A = 3 * (-2)^{A-3}`
+   form `-(hSq * hSq) - 2 * hSq`, along with the 4-scaled leading Brunnian cofactor step
+   `fourScaledBrunnianCofactorNext curr = -2 * curr` generating `4 * mubar_A = 3 * (-2)^{A-3}`
    at `A = 3, 4, 5, 6` (`3, -6, 12, -24`).
 
 2. **Kerov-Olshanski Row-Shifted Content Decomposition (`qou-k5r5`)**:
@@ -55,22 +55,22 @@ theorem brunnianDeficitStepFactor_eq_expanded (hSq : Int) :
   rw [Int.neg_mul, Int.mul_add, Int.mul_comm hSq 2]
   omega
 
-/-- Single-step recursion `curr ↦ -2 * curr` for the 4-scaled leading Milnor cofactor `4 * mubar_A`. -/
-def fourScaledMilnorCofactorNext (curr : Int) : Int :=
+/-- Single-step recursion `curr ↦ -2 * curr` for the 4-scaled leading Brunnian cofactor `4 * mubar_A`. -/
+def fourScaledBrunnianCofactorNext (curr : Int) : Int :=
   -2 * curr
 
-/-- Two steps of the leading Milnor cofactor recursion multiply by `+4`. -/
-theorem fourScaledMilnorCofactorNext_two_step (curr : Int) :
-    fourScaledMilnorCofactorNext (fourScaledMilnorCofactorNext curr) = 4 * curr := by
-  dsimp [fourScaledMilnorCofactorNext]
+/-- Two steps of the leading Brunnian cofactor recursion multiply by `+4`. -/
+theorem fourScaledBrunnianCofactorNext_two_step (curr : Int) :
+    fourScaledBrunnianCofactorNext (fourScaledBrunnianCofactorNext curr) = 4 * curr := by
+  dsimp [fourScaledBrunnianCofactorNext]
   omega
 
 /-- Starting from `4 * mubar_3 = 3`, the `A = 4, 5, 6` values are `-6, 12, -24`. -/
-theorem fourScaledMilnorCofactor_anchors :
-    fourScaledMilnorCofactorNext 3 = -6 ∧
-      fourScaledMilnorCofactorNext (fourScaledMilnorCofactorNext 3) = 12 ∧
-      fourScaledMilnorCofactorNext
-        (fourScaledMilnorCofactorNext (fourScaledMilnorCofactorNext 3)) = -24 := by
+theorem fourScaledBrunnianCofactor_anchors :
+    fourScaledBrunnianCofactorNext 3 = -6 ∧
+      fourScaledBrunnianCofactorNext (fourScaledBrunnianCofactorNext 3) = 12 ∧
+      fourScaledBrunnianCofactorNext
+        (fourScaledBrunnianCofactorNext (fourScaledBrunnianCofactorNext 3)) = -24 := by
   refine ⟨rfl, ⟨rfl, rfl⟩⟩
 
 /-! ## 2. Kerov-Olshanski Row-Shifted Content Decomposition (`qou-k5r5`) -/
