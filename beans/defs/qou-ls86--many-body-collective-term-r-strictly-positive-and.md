@@ -1,7 +1,8 @@
 ---
 # qou-ls86
 title: 'Many-body collective term R: strictly positive and bounded on the well-bound regime'
-status: todo
+status: in-progress
+pr: 8265
 type: task
 priority: normal
 tags:

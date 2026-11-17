@@ -1,7 +1,8 @@
 ---
 # qou-q7ga
 title: 'ROAST: the q-deformation is NET-NEGATIVE on binding — derived asymmetry +2(q0-1)(N-Z) has the wrong sign (data wants ~-0.15), and layout-free bond counting (A-1) beats every isospin-resolved variant'
-status: todo
+status: in-progress
+pr: 8265
 type: task
 priority: normal
 tags:

@@ -1,7 +1,8 @@
 ---
 # qou-q6pp
 title: Why is the parameter-free p-n splitting wrong-signed? (and was my own test even valid)
-status: todo
+status: in-progress
+pr: 8265
 type: task
 priority: normal
 tags:

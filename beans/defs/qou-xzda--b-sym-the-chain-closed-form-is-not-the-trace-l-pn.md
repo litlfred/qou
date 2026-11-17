@@ -1,7 +1,8 @@
 ---
 # qou-xzda
 title: 'B_sym: the chain closed form is NOT the trace — L_pn is overridden by a Reeb bound, worth a constant 1.6561 MeV'
-status: todo
+status: in-progress
+pr: 8265
 type: bug
 priority: normal
 tags:

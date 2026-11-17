@@ -1,7 +1,8 @@
 ---
 # qou-rwhv
 title: Is the corpus b3 an Ursell function? The alternating-sign theorem says the sign obstruction is the positivity hypothesis
-status: todo
+status: in-progress
+pr: 8265
 type: task
 priority: normal
 tags:
