@@ -77,4 +77,18 @@ theorem sum_le_sqrt_card_mul_of_sq_le (a : ι → ℝ) (ha : ∀ i, 0 ≤ a i) (
   refine (sum_le_sqrt_card_mul_sum_sq a ha).trans (Real.sqrt_le_sqrt ?_)
   exact mul_le_mul_of_nonneg_left hF (by positivity)
 
+/-- Tightness at uniform modulus: when every entry equals a constant `c ≥ 0`,
+the sum equals `Real.sqrt (Fintype.card ι * ∑ i, c ^ 2)` with equality. -/
+theorem sum_const_eq_sqrt_card_mul_sum_sq (c : ℝ) (hc : 0 ≤ c) :
+    (∑ _i : ι, c) = Real.sqrt (Fintype.card ι * ∑ _i : ι, c ^ 2) := by
+  have hsum : (∑ _i : ι, c) = (Fintype.card ι : ℝ) * c := by
+    simp [Finset.sum_const, nsmul_eq_mul]
+  have hsum_sq : (∑ _i : ι, c ^ 2) = (Fintype.card ι : ℝ) * c ^ 2 := by
+    simp [Finset.sum_const, nsmul_eq_mul]
+  have hnn : 0 ≤ (Fintype.card ι : ℝ) * c := by positivity
+  rw [hsum, hsum_sq]
+  have hmul : (Fintype.card ι : ℝ) * ((Fintype.card ι : ℝ) * c ^ 2)
+      = ((Fintype.card ι : ℝ) * c) ^ 2 := by ring
+  rw [hmul, Real.sqrt_sq hnn]
+
 end QOU.MassTheory

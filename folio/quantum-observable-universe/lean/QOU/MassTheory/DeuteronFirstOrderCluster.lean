@@ -96,7 +96,8 @@ single-bond object — regardless of the (unknown, possibly submodular) sign of
 the joint trace, because there is no second bond for it to act on. -/
 theorem secondDiff_single_bond_vanishes (g₀ gₐ : Int) :
     secondDiff g₀ gₐ g₀ gₐ = 0 := by
-  unfold secondDiff; omega
+  dsimp [secondDiff]
+  omega
 
 /-- **The μ₃ cluster is identically zero at A = 2.**  Consequently
 `c₃ = −E₀·Δ²g = 0` for the deuteron for **every** `E₀`: the connected-3-body /
@@ -104,7 +105,8 @@ submodularity mechanism cannot contribute to the single-bond binding magnitude.
 This is the scope-(b) structural negative on the owner-suggested route. -/
 theorem cluster3_single_bond_vanishes (E₀ g₀ gₐ : Int) :
     cluster3 E₀ g₀ gₐ g₀ gₐ = 0 := by
-  unfold cluster3; omega
+  dsimp [cluster3]
+  omega
 
 /-! ### The telescoping decomposition: where the deuteron content actually lives -/
 
@@ -118,7 +120,8 @@ one second-order (3-body) term:
 This is the finite Möbius inversion on the Boolean lattice `{∅, a, b, ab}`. -/
 theorem total_change_decomp (g₀ gₐ g_b gₐᵦ : Int) :
     gₐᵦ - g₀ = firstDiff g₀ gₐ + firstDiff g₀ g_b + secondDiff g₀ gₐ g_b gₐᵦ := by
-  unfold firstDiff secondDiff; omega
+  dsimp [firstDiff, secondDiff]
+  omega
 
 /-- **The deuteron's binding content is entirely FIRST-order.**  Specialising the
 decomposition to a single-bond configuration (`g_b = g_∅`, `g_ab = g_a`): the
@@ -133,7 +136,8 @@ theorem deuteron_content_is_first_order (g₀ gₐ : Int) :
         + secondDiff g₀ gₐ g₀ gₐ -- μ₃ door: contributes 0
     ∧ firstDiff g₀ g₀ = 0
     ∧ secondDiff g₀ gₐ g₀ gₐ = 0 := by
-  refine ⟨?_, ?_, ?_⟩ <;> (simp only [firstDiff, secondDiff]; omega)
+  dsimp [firstDiff, secondDiff]
+  refine ⟨?_, ?_, ?_⟩ <;> omega
 
 /-! ### Contrapositive framing: a nonzero μ₃ contribution REQUIRES a real second bond
 
@@ -152,8 +156,22 @@ theorem nonzero_cluster_needs_second_bond
   by_cases hb : g_b = g₀
   · by_cases hab : gₐᵦ = gₐ
     · subst hb; subst hab
-      exact absurd (by unfold secondDiff; omega) h
+      exact absurd (secondDiff_single_bond_vanishes g₀ gₐ) h
     · exact Or.inr hab
   · exact Or.inl hb
+
+/-- Whenever the total two-bond change is purely additive in the single-bond
+first differences (`gₐᵦ - g₀ = firstDiff g₀ gₐ + firstDiff g₀ g_b`), the second
+mixed difference `secondDiff g₀ gₐ g_b gₐᵦ` and the three-body cluster
+`cluster3 E₀ g₀ gₐ g_b gₐᵦ` both vanish. -/
+theorem secondDiff_and_cluster3_zero_of_additive (E₀ g₀ gₐ g_b gₐᵦ : Int)
+    (hadd : gₐᵦ - g₀ = firstDiff g₀ gₐ + firstDiff g₀ g_b) :
+    secondDiff g₀ gₐ g_b gₐᵦ = 0 ∧ cluster3 E₀ g₀ gₐ g_b gₐᵦ = 0 := by
+  have htot := total_change_decomp g₀ gₐ g_b gₐᵦ
+  have hs0 : secondDiff g₀ gₐ g_b gₐᵦ = 0 := by omega
+  refine ⟨hs0, ?_⟩
+  dsimp [cluster3, secondDiff] at hs0 ⊢
+  have hpar : gₐ + g_b - g₀ - gₐᵦ = 0 := by omega
+  rw [hpar, Int.mul_zero]
 
 end QOU.MassTheory.DeuteronFirstOrderCluster
