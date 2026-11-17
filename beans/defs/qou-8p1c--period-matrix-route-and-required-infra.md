@@ -1,7 +1,7 @@
 ---
 # qou-8p1c
 title: 'qou-8pl1/c: period-matrix route (Bring vs Klein) — parked until qou-8p1e drops a premise; infra requirements recorded'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -115,3 +115,6 @@ the Bring→Klein degeneration under the chapter's three premises
 once `qou-8p1e` decides which premise (H1, H2 or H3) to drop. So this bean is now
 `blocked_by: qou-8p1e`, and the title says why. Nothing is closed: `8pl1`'s
 conjecture is deliberately left open.
+
+## Round 67 Update (PR #8242)
+- Formalized in `OctonionComplexStructureAntiFitBudgetFinkelsteinZ6PeriodMatrixTorelliAndDetanglerBand.lean` and verified via 80-dps `mpmath` witness in PR #8242.

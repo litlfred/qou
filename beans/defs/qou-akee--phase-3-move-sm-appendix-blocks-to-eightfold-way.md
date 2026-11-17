@@ -1,7 +1,7 @@
 ---
 # qou-akee
 title: 'Phase 3: Move SM appendix blocks to eightfold-way'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -35,3 +35,6 @@ open question, and it is the owner's.
 
 Also carries the "slim SM appendix" half of `qou-o7o9`, moved here when that
 bean's writing half was closed.
+
+## Round 67 Update (PR #8242)
+- Formalized in `OctonionComplexStructureAntiFitBudgetFinkelsteinZ6PeriodMatrixTorelliAndDetanglerBand.lean` and verified via 80-dps `mpmath` witness in PR #8242.
