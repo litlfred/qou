@@ -17,13 +17,13 @@ from mpmath import mp
 mp.dps = 80
 
 
-def script_sha256_12(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()[:12]
+def script_sha256_full(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
 def run_probe(commit_sha: str) -> dict:
     probe_path = Path(__file__).resolve()
-    s_hash = script_sha256_12(probe_path)
+    s_hash = script_sha256_full(probe_path)
 
     # 1. fybg: KashaevArgmax
     # Verify (2 * sin(theta))^2 >= 1 across the rising arc [pi/6, 5*pi/6]
@@ -123,6 +123,7 @@ def run_probe(commit_sha: str) -> dict:
         "timestamp": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "scriptPath": "computations/probes/kashaev_stokes3_stokesamp_ohtsukinz_pauli_probe.py",
         "scriptHash": s_hash,
+        "scriptSha256": s_hash,
         "scriptCommitSha": commit_sha,
         "precisionDps": 80,
         "allPassed": all(c["passed"] for c in checks),
