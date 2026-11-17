@@ -45,7 +45,7 @@ def main() -> None:
     script_path = Path(__file__).resolve()
     repo_root = script_path.parents[2]
     script_bytes = script_path.read_bytes()
-    script_hash = hashlib.sha256(script_bytes).hexdigest()[:12]
+    script_hash = hashlib.sha256(script_bytes).hexdigest()
     commit_sha = get_git_commit_sha(repo_root)
 
     # 1. qou-t29k: 18 grouped intra-nucleon assembly sites drained to 3 & multiset ratio invariance
@@ -189,6 +189,7 @@ def main() -> None:
         "dps": 50,
         "scriptCommitSha": commit_sha,
         "scriptHash": script_hash,
+        "scriptSha256": script_hash,
         "allPassed": all_passed,
         "results": {
             "qou_t29k": {
