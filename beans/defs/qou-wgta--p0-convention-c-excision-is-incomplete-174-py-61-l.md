@@ -1,7 +1,7 @@
 ---
 # qou-wgta
 title: 'P0: convention-C excision is INCOMPLETE -- 174 py + 61 lean + tools/ Rust core + a shipped package still on C, incl. 3 hybrids and the registry itself'
-status: todo
+status: in-progress
 type: bug
 priority: normal
 tags:
@@ -676,3 +676,6 @@ date and a bean ID in body prose), which is why the split exists.
 convention-C constant feeding a published CODATA comparison — and that is now
 scoped rather than silent. What remains is the `z_D` re-derivation of
 `quarkPhiClosedForm`, which is mathematics, not a sweep.
+
+### Progress (Round 73 — PR litlfred/qou#8318)
+- Formalized in PR `litlfred/qou#8318` (`feat/round73-symsquare-fibretl-mu3slot-sleak-deuteronz-43c1`, Commit 1 `d5360fac6f1464f5fd03c06ef76e726e30c785fd`, Head `e58aca150b7054a3222889e8bb9937602e515ca4`, `scriptHash: 19f0b8589c79`).

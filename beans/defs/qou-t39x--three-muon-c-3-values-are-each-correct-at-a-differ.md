@@ -1,7 +1,7 @@
 ---
 # qou-t39x
 title: Three muon c_3 values are each correct at a different muon anchor; -2.0097 matches none, and four files pair it with three different pins
-status: todo
+status: in-progress
 type: bug
 priority: normal
 tags:
@@ -200,3 +200,6 @@ Evidence: Landed: PR #5952, plus 636c1541c0 and 1ee9666f7d. The four named files
 
 Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
 Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
+
+### Progress (Round 73 — PR litlfred/qou#8318)
+- Formalized in PR `litlfred/qou#8318` (`feat/round73-symsquare-fibretl-mu3slot-sleak-deuteronz-43c1`, Commit 1 `d5360fac6f1464f5fd03c06ef76e726e30c785fd`, Head `e58aca150b7054a3222889e8bb9937602e515ca4`, `scriptHash: 19f0b8589c79`).

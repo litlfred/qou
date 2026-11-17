@@ -1,7 +1,7 @@
 ---
 # qou-enn6
 title: Convention-C weights survive in the reader-facing three-channel H_3 table (alt weight 0.02 vs 0 exactly)
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -263,3 +263,6 @@ regenerated witness for whoever takes option 3 with `qou-5ll9`.
 **Status: staying `todo`**, priority unchanged. The interpretive defect this
 bean's first half was about is now closed; what is left is the three-column
 table, which is `qou-5ll9`'s arc as much as this one's.
+
+### Progress (Round 73 — PR litlfred/qou#8318)
+- Formalized in PR `litlfred/qou#8318` (`feat/round73-symsquare-fibretl-mu3slot-sleak-deuteronz-43c1`, Commit 1 `d5360fac6f1464f5fd03c06ef76e726e30c785fd`, Head `e58aca150b7054a3222889e8bb9937602e515ca4`, `scriptHash: 19f0b8589c79`).

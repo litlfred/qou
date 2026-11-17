@@ -1,7 +1,7 @@
 ---
 # qou-47nf
 title: 'TRANCHE: the non-geometric Ptolemy component at n=3 — route E''s one surviving branch'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -872,3 +872,6 @@ RUR from the UNSATURATED reduction*, after which the fix is one line plus the
 
 Found while running the first `pytest` on `computations/` on record; full
 measurement in `docs/audits/2026-10-12-first-pytest-run.md`.
+
+### Progress (Round 73 — PR litlfred/qou#8318)
+- Formalized in PR `litlfred/qou#8318` (`feat/round73-symsquare-fibretl-mu3slot-sleak-deuteronz-43c1`, Commit 1 `d5360fac6f1464f5fd03c06ef76e726e30c785fd`, Head `e58aca150b7054a3222889e8bb9937602e515ca4`, `scriptHash: 19f0b8589c79`).
