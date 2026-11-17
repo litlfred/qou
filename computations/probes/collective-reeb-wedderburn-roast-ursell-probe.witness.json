@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "1.0",
+  "probeId": "collective-reeb-wedderburn-roast-ursell-probe",
+  "scriptPath": "computations/probes/collective_reeb_wedderburn_roast_ursell_probe.py",
+  "scriptHash": "d7225bd3bd0d",
+  "scriptCommitSha": "ec29a0ea57bd605184b431f2d315b9ef403181ee",
+  "timestamp": "2026-11-17T07:52:20Z",
+  "precisionDps": "50",
+  "summary": {
+    "totalChecks": "5",
+    "passedChecks": "5",
+    "allPassed": true
+  },
+  "checks": [
+    {
+      "id": "qou-ls86",
+      "passed": true,
+      "he4CollectivePerNucleonMeV": "4.494219",
+      "deuteronDripCollectivePerNucleonMeV": "-0.832563",
+      "wellBoundFloorMeV": "2.1009",
+      "wellBoundCeilingMeV": "8.19456"
+    },
+    {
+      "id": "qou-q6pp",
+      "passed": true,
+      "generatorCounts": {
+        "1H": "1",
+        "D": "2",
+        "T": "3",
+        "4He": "5"
+      },
+      "chiralityWeights": {
+        "1H": "4",
+        "D": "6",
+        "T": "6",
+        "3He": "12",
+        "4He": "12"
+      },
+      "phi2SharedValue": "0.021734577336914266488219975407",
+      "isobaricReductionResidual": "3.94232794738598857805729128905e-49"
+    },
+    {
+      "id": "qou-q7ga",
+      "passed": true,
+      "twoEAsymmetry": "0.219957165502761615203076823796",
+      "twoLogQ0ExactAsymmetry": "0.208681440639039024649595454933",
+      "pureCrossingRatioQ4": "1.51795324981834593760109738925",
+      "pureCrossingProductInvLoopSq": "0.247297886748034598405763450047"
+    },
+    {
+      "id": "qou-rwhv",
+      "passed": true,
+      "ursellPhi3": "0.601192708528648254573574169172",
+      "corpusB3": "-0.601192708528648254573574169172",
+      "identityResidual": "1.33638235504609782307026823358e-51"
+    },
+    {
+      "id": "qou-xzda",
+      "passed": true,
+      "constantShiftMeV": "1.65605875606518379560855345068",
+      "isotopeShiftsMeV": {
+        "2H": "1.65605875606518379560855345068",
+        "3H": "1.65605875606518379560855345068",
+        "3He": "1.65605875606518379560855345068",
+        "4He": "1.65605875606518379560855345068"
+      },
+      "maxDeviationAcrossIsotopes": "1.87093529706453695229837552701e-50"
+    }
+  ]
+}
