@@ -1,0 +1,104 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-17T06:43:25.174651+00:00",
+  "commitSha": "e9b14110d778b145a2b01b78bd18829dfb0fbf22",
+  "assertions": [
+    {
+      "name": "doublet_winding_gap_telescopes_and_torus_mirror_zero_vol",
+      "computed": "-4.0",
+      "expected": "-4.0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "qou-b1k4: (n1-n2) + (n2-n3) = n1-n3 = -4 != 0 and Vol(T(2,7)^sigma) = 0"
+    },
+    {
+      "name": "root_of_unity_quantum_bracket_vanishes_at_r5",
+      "computed": "1.9428757270974040312237120439516787512010372411562e-61",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "qou-db6w: [r]_q = sin(r*pi/r)/sin(pi/r) = 0 at r=5 freezes out Weyl modules at hook r"
+    },
+    {
+      "name": "real_q0_quantum_bracket_5_strictly_positive",
+      "computed": "5.2370642840765621320219413947869186501589905669829",
+      "expected": "5.2370642840765621320219413947869186501589905669829",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "qou-db6w: at real q_0 in (0,1), [5]_{q_0} > 5 > 0 so unweighted tower grows monotonically"
+    },
+    {
+      "name": "block_hypercharge_trace_zero",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "qou-h72x: Tr(diag(-d3*I_{d2}, d2*I_{d3})) = 0"
+    },
+    {
+      "name": "weinberg_block_trace_ratio_n3_three_fifths",
+      "computed": "0.6",
+      "expected": "0.6",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "qou-h72x: d2*d3^2 / (d2*d3^2 + d3*d2^2) = 18/30 = 3/5 at (2,3) vs 1/2 at (2,2)"
+    },
+    {
+      "name": "weinberg_block_trace_ratio_n2_one_half",
+      "computed": "0.5",
+      "expected": "0.5",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "qou-h72x: at d2=d3=2 the block trace ratio collapses to 8/16 = 1/2 != 3/5"
+    },
+    {
+      "name": "ckm_n3_four_parameters_and_n2_zero_cp_phases",
+      "computed": "40",
+      "expected": "40",
+      "passed": true,
+      "tolerance": "0",
+      "source": "qou-pj82: N=3 has 3+1=4 CKM parameters while N=2 has 0 CP phases"
+    },
+    {
+      "name": "cao_meyerhoff_figure_eight_volume_and_neutrino_scale_gap",
+      "computed": "2.0298832128193072500424051085490405718833786150606",
+      "expected": "2.0298832128193072500424051085490405718833786150606",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "qou-qydm: Vol(4_1) = 2.0298832... > 0 and m_hyp/m_nu = 5200000000.0 > 1e9"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "heavy-quark-doublet-obstruction-freeze-out-truncation-weinberg-block-norm-ckm-parameter-count-and-neutrino-zero-volume",
+  "scriptFile": "heavy_quark_doublet_obstruction_freeze_out_truncation_weinberg_block_norm_ckm_parameter_count_and_neutrino_zero_volume_probe.py",
+  "scriptHash": "2c4744b4fd07",
+  "scriptCommitSha": "e9b14110d778b145a2b01b78bd18829dfb0fbf22",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/heavy_quark_doublet_obstruction_freeze_out_truncation_weinberg_block_norm_ckm_parameter_count_and_neutrino_zero_volume_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/heavy_quark_doublet_obstruction_freeze_out_truncation_weinberg_block_norm_ckm_parameter_count_and_neutrino_zero_volume_probe.py"
+  },
+  "description": "60-dps mpmath verification of bottom/top torus-mirror zero Seifert volume and doublet winding gap telescoping (qou-b1k4), root-of-unity quantum-dimension freeze-out vs monotonic positive tower growth (qou-db6w), block-determinant U(1)_Y tracelessness and N=3 vs N=2 Weinberg trace ratio (qou-h72x), CKM unitary parameter partition and N=2 CP-phase absence (qou-pj82), and neutrino unknot zero-volume degeneracy vs Cao-Meyerhoff hyperbolic scale floor (qou-qydm).",
+  "parameters": {
+    "dps": "60"
+  }
+}
