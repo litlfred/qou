@@ -1,7 +1,7 @@
 ---
 # qou-ke35
 title: The mpf migration of the constant modules is HALF DONE, and a consumer that never raises mp.dps now records 15 digits where it used to record 17
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-09-13T16:24:39Z

@@ -1,7 +1,7 @@
 ---
 # qou-kn46
 title: raw-float64 ratchet baseline is calibrated on STALE witnesses, so a refresh reads as a regression
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

@@ -1,7 +1,7 @@
 ---
 # qou-ju05
 title: 'B (convention C): 14 actionable z_C sites + 2 C-specialised closed forms'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

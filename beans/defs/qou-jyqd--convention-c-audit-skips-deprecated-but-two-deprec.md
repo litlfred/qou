@@ -1,7 +1,7 @@
 ---
 # qou-jyqd
 title: convention-C audit skips _deprecated, but two deprecated producers are still named by content
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
