@@ -1,7 +1,8 @@
 ---
 # qou-u5qs
 title: gamma-gamma production DERIVES the contiguous strand layout, uniquely — and that is why there is no 3-cell
-status: todo
+status: in-progress
+pr: 8268
 type: task
 priority: normal
 tags:

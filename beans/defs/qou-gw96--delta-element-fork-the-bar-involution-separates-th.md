@@ -1,7 +1,8 @@
 ---
 # qou-gw96
 title: 'Delta element fork: the bar involution separates the two models — Delta_S is exactly bar-odd, Delta_L has no definite parity'
-status: todo
+status: in-progress
+pr: 8268
 type: task
 priority: normal
 tags:

@@ -1,7 +1,8 @@
 ---
 # qou-nlw5
 title: The canonical braid word's interface d implies a q0 matching NEITHER pin — 7.2e-5 off both
-status: todo
+status: in-progress
+pr: 8268
 type: task
 priority: normal
 tags:

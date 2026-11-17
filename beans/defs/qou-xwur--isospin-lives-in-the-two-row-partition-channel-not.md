@@ -1,7 +1,8 @@
 ---
 # qou-xwur
 title: Isospin lives in the two-row partition channel, not the bond channel
-status: todo
+status: in-progress
+pr: 8268
 type: task
 priority: normal
 tags:

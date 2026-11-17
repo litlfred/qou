@@ -1,7 +1,8 @@
 ---
 # qou-pjx4
 title: sigma^2 unbinding is framing-dependent; even-NEGATIVE stacking unbinds after writhe normalisation (scope-a, magnitudes still 6-9x)
-status: todo
+status: in-progress
+pr: 8268
 type: task
 priority: normal
 tags:
