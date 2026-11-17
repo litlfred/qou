@@ -1,13 +1,13 @@
 ---
 # qou-e4ri
 title: '§7c push: HeckeAlgebra/Torsion/AlgebraicSubstrate cluster (JonesMarkovWenzl, YekutieliTriple, quantum_dilogarithm, QVonMangoldtFunction, QChebyshevFunction, WedderburnBlockDecomposition) to generic R'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-01T23:07:47Z
-updated_at: 2026-10-04T15:25:44Z
+updated_at: 2026-11-17T07:06:58Z
 parent: qou-rtxm
 ---
 
@@ -97,3 +97,10 @@ The consumer instantiating at `ℝ` is the §7c-correct shape: the generic group
 **Deferred, recorded:** the A/B duplication (`Torsion` vs `LiftingDescent` both declaring `YekutieliTriple`/`CosimplicialCrossedGroupoid`) is now *two generic modules over different rings* rather than generic-vs-ℝ. Merging them turns on the division question above — an owner call, not attempted here.
 
 **Correction to my own earlier note:** I described `QOU/Torsion/YekutielijTriple.lean` as a likely stale typo file. It is not — it is a deliberate backward-compatibility re-export of the "Yekutielij" spelling, and its `abbrev`s absorbed the new parameter with no edit.
+
+
+## Round 56 Progress (lane-e667)
+- **PR:** https://github.com/litlfred/qou/pull/8241 (`f5d60a0cc755a36459696dc679eebd3728acc344`)
+- **Module:** `QOU.Foundations.SymplecticAtomicityWenzlSemisimplicity` (`folio/quantum-observable-universe/lean/QOU/Foundations/SymplecticAtomicityWenzlSemisimplicity.lean`), wired into `QOU.lean`.
+- **Theorems:** `tlSemisimple_nonvanishing_quantumDim`, `tlSemisimple_wenzl_denom_invertible`, `tlSemisimple_cell_gram_nondegenerate`, `tlSemisimple_iff_all_quantumDims_unit`, `tlFailureAtRootOfUnity_not_semisimple` — proving Wenzl's semisimplicity criterion for `TL_n(d)` iff `∏_{k=1}^n [k]_q ∈ Rˣ` (and non-semisimplicity at root of unity `[p]_q = 0`).
+- **Status:** Kept at `in-progress` pending Merge Manager merge and full dependency verification.

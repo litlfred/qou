@@ -1,13 +1,13 @@
 ---
 # qou-dyij
 title: 'GAP/INFRA: Mathlib knot theory — Jones polynomial, connected sum, Markov-trace multiplicativity'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T12:33:56Z
-updated_at: 2026-10-04T15:12:46Z
+updated_at: 2026-11-17T07:06:58Z
 parent: qou-rtxm
 ---
 
@@ -156,3 +156,10 @@ must be built partly now does — in this repo.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-30 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## Round 56 Progress (lane-e667)
+- **PR:** https://github.com/litlfred/qou/pull/8241 (`f5d60a0cc755a36459696dc679eebd3728acc344`)
+- **Module:** `QOU.Foundations.SymplecticAtomicityWenzlSemisimplicity` (`folio/quantum-observable-universe/lean/QOU/Foundations/SymplecticAtomicityWenzlSemisimplicity.lean`), wired into `QOU.lean`.
+- **Theorems:** `jonesConnectedSum_mul`, `jonesConnectedSum_unit_left`, `jonesConnectedSum_unit_right`, `jonesConnectedSum_assoc`, `jonesConnectedSum_comm`, `reducedJones_trefoil_connected_sum_eq_sq` — proving reduced Jones polynomial multiplicativity `Vtilde(K_1 # K_2) = Vtilde(K_1) Vtilde(K_2)` from connected-sum writhe additivity `w(K_1 # K_2) = w(K_1) + w(K_2)` and reduced Kauffman bracket multiplicativity.
+- **Status:** Kept at `in-progress` pending Merge Manager merge and full dependency verification.
