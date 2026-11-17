@@ -40,6 +40,20 @@ structure CuspShape where
       a genuinely-hyperbolic cusp. -/
   im : ℝ
 
+/-- Shear shift of a cusp modulus `τ ↦ τ + s` along the peripheral meridian
+    while preserving the imaginary cusp height `im τ` (`qou-yb2b`). -/
+def CuspShape.meridianShear (c : CuspShape) (s : ℝ) : CuspShape :=
+  { re := c.re + s, im := c.im }
+
+/-- Under consecutive meridian shears `s₁` and `s₂` on a cusp shape `c`,
+    the shifted real part plus the imaginary height equals the single combined
+    shear `s₁ + s₂` real part plus the original imaginary height (`qou-yb2b`). -/
+theorem CuspShape.meridianShear_comp_re_add_im (c : CuspShape) (s₁ s₂ : ℝ) :
+    ((c.meridianShear s₁).meridianShear s₂).re + ((c.meridianShear s₁).meridianShear s₂).im =
+      (c.meridianShear (s₁ + s₂)).re + c.im := by
+  dsimp [CuspShape.meridianShear]
+  exact congrArg (fun x => x + c.im) (add_assoc c.re s₁ s₂)
+
 /-- A presentation of the fundamental group of a knot complement
     in terms of `numGenerators` Wirtinger generators and a list of
     relator words.  Generators are abstract; the SnapPea bridge

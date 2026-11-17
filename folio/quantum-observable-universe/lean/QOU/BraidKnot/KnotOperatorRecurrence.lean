@@ -72,6 +72,20 @@ theorem trace_two_step {M : Matrix (Fin 2) (Fin 2) R} {t d : R}
   rw [pow_two_step h, Matrix.trace_sub, Matrix.trace_smul, Matrix.trace_smul,
     smul_eq_mul, smul_eq_mul]
 
+/-- **Three-step closure recurrence (`qou-v4in`).** Iterating `trace_two_step` expresses
+`tr(Mⁿ⁺³)` directly in terms of `tr(Mⁿ⁺¹)` and `tr(Mⁿ)` with polynomial coefficients
+`t² − d` and `−t·d`. -/
+theorem trace_three_step_from_two_step {M : Matrix (Fin 2) (Fin 2) R} {t d : R}
+    (h : M * M = t • M - d • (1 : Matrix (Fin 2) (Fin 2) R)) (n : ℕ) :
+    (M ^ (n + 3)).trace =
+      (t ^ 2 - d) * (M ^ (n + 1)).trace - t * d * (M ^ n).trace := by
+  have h1 : (M ^ (n + 3)).trace = t * (M ^ (n + 2)).trace - d * (M ^ (n + 1)).trace :=
+    trace_two_step h (n + 1)
+  have h2 : (M ^ (n + 2)).trace = t * (M ^ (n + 1)).trace - d * (M ^ n).trace :=
+    trace_two_step h n
+  rw [h1, h2]
+  ring
+
 section Twist
 
 variable (A δ : R)
@@ -87,14 +101,14 @@ def braid (u : R) : Matrix (Fin 2) (Fin 2) R := A • (1 : Matrix (Fin 2) (Fin 2
 family. -/
 def twist (u : R) : Matrix (Fin 2) (Fin 2) R := braid A δ u * braid A δ u
 
-/-- The Markov-pairing **Gram matrix** on `{1, e}`: `G = !![δ, 1; 1, δ]`
-(`⟨1,1⟩ = tr_M 1 = δ`, `⟨1,e⟩ = tr_M e = 1`, `⟨e,e⟩ = tr_M(δe) = δ`). Symmetric. -/
+/-- The bilinear pairing **Gram matrix** on `{1, e}`: `G = !![δ, 1; 1, δ]`
+(`⟨1,1⟩ = δ`, `⟨1,e⟩ = 1`, `⟨e,e⟩ = δ`). Symmetric. -/
 def gram : Matrix (Fin 2) (Fin 2) R := !![δ, 1; 1, δ]
 
 /-- **The twist knot operator is Gram-self-adjoint.** `G · σ²` is symmetric — its two
-off-diagonal entries agree, `(G·σ²)₀₁ = (G·σ²)₁₀` — so `σ²` is self-adjoint in the Markov
-inner product. This is the fact that makes the recurrence diagonalise: `G⁻¹` builds the
-dual / Jones–Wenzl projector basis on which `σ²` is diagonal. -/
+off-diagonal entries agree, `(G·σ²)₀₁ = (G·σ²)₁₀` — so `σ²` is self-adjoint in the bilinear
+pairing inner product. This is the fact that makes the recurrence diagonalise: `G⁻¹` builds the
+dual orthogonal idempotent projector basis on which `σ²` is diagonal. -/
 theorem twist_gram_selfAdjoint (u : R) :
     (gram δ * twist A δ u) 0 1 = (gram δ * twist A δ u) 1 0 := by
   simp [gram, twist, braid, eGen, Matrix.mul_apply, Fin.sum_univ_two, Matrix.one_apply,
