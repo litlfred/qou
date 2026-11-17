@@ -1,0 +1,63 @@
+{
+  "probe": "mass_per_knot_density_mismatch_gaussian_fallback_slackness_refutation_confinement_sdp_duality_laundered_float_drain_and_q_integer_global_resolution_probe",
+  "round": "82",
+  "beans": [
+    "qou-afjl",
+    "qou-ai7v",
+    "qou-apcl",
+    "qou-b7cf",
+    "qou-b8vx"
+  ],
+  "leanModule": "QOU.Eightfold.MassPerKnotDensityMismatchGaussianFallbackSlacknessRefutationConfinementSdpDualityLaunderedFloatDrainAndQIntegerGlobalResolution",
+  "scriptPath": "computations/probes/mass_per_knot_density_mismatch_gaussian_fallback_slackness_refutation_confinement_sdp_duality_laundered_float_drain_and_q_integer_global_resolution_probe.py",
+  "scriptCommitSha": "906d2af4d3717f3db5f157a28f53cee5f689bcb6",
+  "scriptHash": "8a7f9726743c",
+  "scriptSha256": "8a7f9726743c136fa8323f33258d62f3bc84ee9f20c8e60e88b3fbcd912a103e",
+  "dps": "80",
+  "generatedAt": "2026-11-17T11:00:53Z",
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "qou-afjl-mass-per-knot-density-mismatch",
+      "bean": "qou-afjl",
+      "description": "Unnormalized multi-cell knot mass nCells*dCell differs from cell-normalized density dCell by (nCells-1)*dCell = 1139.0 at nCells=2",
+      "legacyDensity": "2.278e+3",
+      "renamedDensity": "1.139e+3",
+      "discrepancy": "1.139e+3",
+      "passed": true
+    },
+    {
+      "id": "qou-ai7v-gaussian-fallback-slackness-refutation",
+      "bean": "qou-ai7v",
+      "description": "Tight constraint slack s=0 satisfies s*y=0 for any positive dual multiplier y>0, so zeroing delta_g omits positive contribution logTraceApprox*y > 0",
+      "complementaryProduct": "0.0",
+      "trueFallbackContribution": "1.151292546497022842",
+      "passed": true
+    },
+    {
+      "id": "qou-apcl-confinement-sdp-strict-duality",
+      "bean": "qou-apcl",
+      "description": "Strict primal interior feasibility (x_i > barrierFloor > 0) forces zero dual slack z_i = 0 at zero duality gap",
+      "strictInteriorMargin": "2.0",
+      "suboptimalGap": "1.25",
+      "passed": true
+    },
+    {
+      "id": "qou-b7cf-laundered-float-string-drain",
+      "bean": "qou-b7cf",
+      "description": "Laundering 80-dps q0 through str(float(q0)) injects ~10^-17 truncation error across 63 lower digits; draining all 68 sites across 34 files leaves 0",
+      "qExact80Dps": "1.3295081343278792498957232437409444713359608719670061560847964850102573695820524",
+      "launderingError": "4.9895723243740944471335960871967006156084796485010257369582052422220399676038804e-17",
+      "remainingSites": "0",
+      "passed": true
+    },
+    {
+      "id": "qou-b8vx-q-integer-global-resolution-coverage",
+      "bean": "qou-b8vx",
+      "description": "Global-symbol resolution recovers 63 of 208 previously unmeasured q-integer definitions (53 symmetric, 5 classical, 3 n=2, 2 affine), raising total measured to 221/366",
+      "measuredTotal": "221",
+      "unmeasuredRemaining": "145",
+      "passed": true
+    }
+  ]
+}
