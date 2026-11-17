@@ -1,0 +1,67 @@
+{
+  "probe": "elliptic-opposite-edge-cancellation-young-branching-pole-loop-moment-determinacy-sdp-duality",
+  "beans": [
+    "qou-nuxb",
+    "qou-vvk7",
+    "qou-wdgz",
+    "qou-x1rm",
+    "qou-yc05"
+  ],
+  "precisionDps": "80",
+  "scriptHash": "cf9a4ea15ba1",
+  "scriptCommitSha": "ef58a15bca3db38dea59fe221f7e9999b200df2d",
+  "generatedAt": "2026-11-17T10:42:37.174396+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "beanId": "qou-nuxb",
+      "oppositeHorizontalCancellationError": "7.03213602406203263532824051689e-88",
+      "oppositeVerticalCancellationError": "0.0",
+      "closedParallelogramLoopResidual": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-vvk7",
+      "fLambda_4_2_1": "35.0",
+      "branchingChildren_321_411_42": [
+        "16.0",
+        "10.0",
+        "9.0"
+      ],
+      "branchingRecurrenceResidual": "0.0",
+      "normalizedHookRatioSumResidual": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-wdgz",
+      "interiorZeroMultiplicitySum": "2",
+      "interiorPoleMultiplicitySum": "4",
+      "expectedWindingCount": "-2.0",
+      "computedWindingReal": "-2.0",
+      "computedWindingImag": "-4.43893843072186985106299154206e-82",
+      "windingResidual": "4.43893843072186985106299154206e-82",
+      "passed": true
+    },
+    {
+      "beanId": "qou-x1rm",
+      "moments_m0_m1_m2": [
+        "10.0",
+        "5.0",
+        "35.0"
+      ],
+      "weightRecoveryMaxError": "0.0",
+      "hankelQuadraticFormValue": "355.0",
+      "hankelSumOfSquaresResidual": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-yc05",
+      "orthogonalTraceInnerProduct": "0.0",
+      "orthogonalComplementarityResidual": "0.0",
+      "positiveRankOneTraceInnerProduct": "169.0",
+      "weakDualityGap": "169.0",
+      "weakDualityIdentityResidual": "0.0",
+      "passed": true
+    }
+  ]
+}
