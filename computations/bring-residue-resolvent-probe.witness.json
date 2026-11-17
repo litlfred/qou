@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-30T09:34:40.489206+00:00",
-  "commitSha": "458f17211f5d1442dc573b3c24685bdcfb3e4f66",
+  "computedAt": "2026-11-17T08:45:20.519229+00:00",
+  "commitSha": "a7e35a0590dcf0e19ba9b5a8bd26a9be8428d8dc",
   "assertions": [
     {
       "name": "denominator_nonzero_n3",
@@ -78,11 +78,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "bring-residue-resolvent-probe",
   "scriptFile": "probe_bring_residue_resolvent.py",
-  "scriptHash": "cb2a3f96b649",
-  "scriptCommitSha": "6587e6f9ca324b65a84407b000d3c4288d78bfdb",
+  "scriptHash": "e92ea821d2d5",
+  "scriptCommitSha": "a7e35a0590dcf0e19ba9b5a8bd26a9be8428d8dc",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
