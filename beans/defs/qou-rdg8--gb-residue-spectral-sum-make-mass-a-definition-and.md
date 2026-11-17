@@ -1,7 +1,7 @@
 ---
 # qou-rdg8
 title: 'gb-residue-spectral-sum: make mass a definition and the spectral decomposition a lemma (3-block change)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T23:34:22Z
@@ -63,3 +63,9 @@ fixing `mass` in only one of them would widen the drift rather than close it.
 ## Parented 2026-11-15 (owner-approved bean triage)
 
 Parent `(none)` → `qou-v2om`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.
+
+## Progress Update (Round 66 — PR #8274)
+- **Status**: `in-progress` (per active rule: no unilateral `qou` bean closures).
+- **PR**: [`litlfred/qou#8274`](https://github.com/litlfred/qou/pull/8274) (branch `feat/round66-young-alien-lp-dt-spectral-43c1`, Commit 1 `efa6ab9e44128d259563d9e6208d6ab9d32edd74`, Commit 2 / Head `5423d4a1b0e6c19be96012412c48bd64329fdf2c`).
+- **Lean 4 Artifact**: `folio/quantum-observable-universe/lean/QOU/BraidKnot/GBResidueSpectralSum.lean (`mass_sub_abs_descended_eq_sum_residue`)` (0 sorry, 0 findings across all 6 static vacuity audits).
+- **80-dps Witness**: `computations/probes/young_kernel_alien_lp_dt_spectral_probe.py` (`scriptHash: 68202cff458f`) + `test/results/witnesses/young-kernel-alien-lp-dt-spectral.witness.json` (`allPassed: true`).
