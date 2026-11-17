@@ -1737,3 +1737,6 @@ import QOU.KZ.Drinfeld.HeckeStrands
 import QOU.Mass.LagrangianKZInputs
 import QOU.QBeta.BorromeanThreeCuspNZHessian
 import QOU.QBeta.McPhailSnyderBridgeExclusion
+import QOU.MassTheory.ChainOrderingSpreadAndOneRowUrsellIdentity
+import QOU.MassTheory.CoordinationChannelAritySeparation
+import QOU.MassTheory.PhiQTowerConvexityAndGramRankFive
