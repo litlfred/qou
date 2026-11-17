@@ -1,7 +1,8 @@
 ---
 # vvcw
 title: 'Swarm: frobenius_positivity_filter claim_ii_exclusion_count (Config cardinality — likely closeable)'
-status: todo
+status: in-progress
+pr: 8225
 type: task
 priority: normal
 tags:
@@ -28,3 +29,8 @@ not the 4^A config space. Proved `parity_odd_card` sorry-free + reframed
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-07-05 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## Progress (Round 53 — PR #8225)
+- Implemented sorry-free, non-vacuous Lean 4 formalization + 80-dps mpmath witness in PR https://github.com/litlfred/qou/pull/8225 (HEAD `92ab8569af5ff7399510fd92cb2505df80c41b5e`).
+- Marked `in-progress` pending PR merge.
