@@ -1,0 +1,40 @@
+{
+  "probe": "specht-h4-markov-cascade-foundations",
+  "beans": [
+    "qou-npvy",
+    "qou-1jrr",
+    "qou-8hm1",
+    "qou-t7zg",
+    "qou-xzd5"
+  ],
+  "precisionDps": "80",
+  "scriptHash": "100636a1007b",
+  "scriptCommitSha": "32f20309e14e965345b511da6909d816aef8bc93",
+  "generatedAt": "2026-11-17T07:39:05.376659+00:00",
+  "allPassed": true,
+  "checks": {
+    "qou_npvy_specht21_hecke_braid": {
+      "passed": true,
+      "traceT1": "1/10",
+      "traceT1T2": "-11/10",
+      "traceBraid121": "0"
+    },
+    "qou_1jrr_h4_wedderburn_markov": {
+      "passed": true,
+      "traceSum": "16/5"
+    },
+    "qou_8hm1_cascade_and_cayley_hamilton": {
+      "passed": true,
+      "cascadeTelescopeResidual": "0.0",
+      "cayleyHamiltonValue": "187/24"
+    },
+    "qou_t7zg_fixed_param_witness": {
+      "passed": true,
+      "trNextAtOne": "1331/2210"
+    },
+    "qou_xzd5_h3_concrete_markov_trace": {
+      "passed": true,
+      "trH3OnT1": "7/90"
+    }
+  }
+}
