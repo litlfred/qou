@@ -1,0 +1,42 @@
+{
+  "probe": "isotypic-block-spoly-laurent-holonomy",
+  "beans": [
+    "qou-59vq",
+    "qou-1o8n",
+    "qou-1oif",
+    "qou-1wcu",
+    "qou-6ers"
+  ],
+  "precisionDps": "80",
+  "scriptHash": "dbcb7f168519",
+  "scriptCommitSha": "b2d25486ba6e7b72a50e0f3956956e2253374601",
+  "generatedAt": "2026-11-17T08:18:16.250380+00:00",
+  "allPassed": true,
+  "checks": {
+    "qou_59vq_three_stratum_isotypic_trace": {
+      "passed": true,
+      "burnsideSumS3": "6",
+      "traceAdditivityResidual": "2.108439588646104644869714810254003801542e-81",
+      "weightPartitionOfUnityResidual": "2.108439588646104644869714810254003801542e-81"
+    },
+    "qou_1o8n_overlap_spolynomial_confluence": {
+      "passed": true,
+      "cubicOverlapNormalFormResidual": "0.0"
+    },
+    "qou_1oif_s4_burnside_and_hook_content": {
+      "passed": true,
+      "burnsideSumS4": "24",
+      "hook21ContentSum": "0",
+      "cubicSpectralFactorResidual": "0.0"
+    },
+    "qou_1wcu_formal_laurent_exact_residue": {
+      "passed": true,
+      "formalExactResidue": "0/1",
+      "contourIntegralResidual": "5.763946107594045644947346583888704046267e-81"
+    },
+    "qou_6ers_nonabelian_flat_plaquette_holonomy": {
+      "passed": true,
+      "su2PlaquetteIdentityResidual": "1.095861812261543178875091140975613064955e-81"
+    }
+  }
+}
