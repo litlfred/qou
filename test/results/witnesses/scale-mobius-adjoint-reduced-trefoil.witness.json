@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "1.0",
+  "witnessId": "scale-mobius-adjoint-reduced-trefoil",
+  "scriptPath": "computations/probes/scale_mobius_adjoint_reduced_trefoil_probe.py",
+  "scriptCommitSha": "9b139cda51963d9af6817b576a80c90bb2f74d00",
+  "scriptHash": "ae187b673714",
+  "generatedAt": "2026-11-17T10:08:31Z",
+  "dps": "80",
+  "beans": [
+    "qou-v8ct",
+    "qou-pzsi",
+    "qou-q9ih",
+    "qou-qjhc",
+    "cj01"
+  ],
+  "theorems": [
+    "QOU.Hecke.BindingScaleCandidates.fPP_div_fNN_eq_pow_four",
+    "QOU.shiftEnergy_comp_const_and_energy",
+    "QOU.QBeta.AdjointIndexSetM3.pkSize_and_floorRemainder_three_knot_totals",
+    "QOU.Eightfold.PointwiseAgreementOnReduced.apply_eq_iff_sub_mem_all_primes",
+    "QOU.Interactions.trefoil_eq_hopfMinus_gen1_and_intertwine"
+  ],
+  "allPassed": true,
+  "checks": [
+    {
+      "name": "fPP_div_fNN_eq_pow_four",
+      "bean": "qou-v8ct",
+      "exactRatioAt11Over10": "14641/10000",
+      "ratioResidual80dps": "0.0",
+      "passed": true
+    },
+    {
+      "name": "shiftEnergy_comp_const_and_energy",
+      "bean": "qou-pzsi",
+      "shiftResidual80dps": "3.373503341833767431791544e-80",
+      "passed": true
+    },
+    {
+      "name": "pkSize_and_floorRemainder_three_knot_totals",
+      "bean": "qou-q9ih",
+      "pkTotal": "14",
+      "remainderTotal": "5",
+      "coreTotal": "9",
+      "passed": true
+    },
+    {
+      "name": "apply_eq_iff_sub_mem_all_primes",
+      "bean": "qou-qjhc",
+      "zmod6ReducedEquivalence": "True",
+      "zmod4NilpotentWitness": "True",
+      "passed": true
+    },
+    {
+      "name": "trefoil_eq_hopfMinus_gen1_and_intertwine",
+      "bean": "cj01",
+      "trefoilIntertwineResidual80dps": "0.0",
+      "passed": true
+    }
+  ]
+}
