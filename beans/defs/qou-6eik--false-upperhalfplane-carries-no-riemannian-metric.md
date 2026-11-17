@@ -1,7 +1,7 @@
 ---
 # qou-6eik
 title: 'FALSE: "UpperHalfPlane carries no Riemannian metric" — Mathlib Metric.lean gives ℍ the hyperbolic metric + isometries (2 sites: HyperbolicVolumeMeasure.lean:12 and bean qou-5gai)'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -66,3 +66,8 @@ Also worth deleting: the `Analysis/Complex only` line at
 about content. It is not.
 
 Source: `docs/audits/2026-09-04-mathlib-infrastructure-inventory.md` §F1, §F2, §H1.
+
+## Progress Update (PR litlfred/qou#8231)
+- **Status**: `in-progress` (awaiting PR merge)
+- **PR**: https://github.com/litlfred/qou/pull/8231 (`513987e80ae041a6d8bc835ffbdda5371ccac289`, scriptCommitSha `9bd895c1b028c3d1abf67e3de52aeade9e9e5ccc`)
+- **Summary**: Added `integral_Ioi_hemisphere_diff` and `integral_Ioi_hemisphere_strict_mono` in `QOU/Archimedean/HyperbolicVolumeMeasure.lean`, verified by 80-dps mpmath probe `hyperbolic_planck_oneloop_qint_dilog_probe.py` (`scriptHash: 83d59661279d`).

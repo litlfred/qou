@@ -1,7 +1,7 @@
 ---
 # qou-fl4t
 title: 'REPAIR: restore the DG flattening + 1/2 so |det J| is triangulation-invariant, then re-derive the per-cusp factor'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -592,3 +592,8 @@ class) — independent of everything above.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Progress Update (PR litlfred/qou#8231)
+- **Status**: `in-progress` (awaiting PR merge)
+- **PR**: https://github.com/litlfred/qou/pull/8231 (`513987e80ae041a6d8bc835ffbdda5371ccac289`, scriptCommitSha `9bd895c1b028c3d1abf67e3de52aeade9e9e5ccc`)
+- **Summary**: Added `zeta_elementary_symm_two`, `zeta_cubes_sum_eq_three_prod`, and `det_sublattice_index_cross_eq` in `QOU/OneLoopEdgeLattice.lean`, verified by 80-dps mpmath probe `hyperbolic_planck_oneloop_qint_dilog_probe.py` (`scriptHash: 83d59661279d`).

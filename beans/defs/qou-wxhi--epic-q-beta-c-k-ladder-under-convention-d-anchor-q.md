@@ -1,7 +1,7 @@
 ---
 # qou-wxhi
 title: 'EPIC: Q_beta c_k ladder under convention D (anchor qou-cds1)'
-status: todo
+status: in-progress
 type: epic
 priority: high
 created_at: 2026-11-15T17:33:01Z
@@ -49,3 +49,8 @@ Correction from the Q_beta thread (2026-11-15): the -18.5 % is the all-pairs str
 
 
 2026-11-15 17:42Z, from the n>=4 doublet thread: the candidate Delta is the same 3-strand word w (e.g. V^3) restricted to the two J_4 = s3 s2 s1^2 s2 s3 eigenlines in the (3,1) block of H_4: Ja (eigenvalue q^-2, over (3)) and Jb (q^4, over (2,1)). Which line is n is an open owner call there. Lean is in progress in QOU/QuarkState/FlavourDoubletFourStrands.lean; scripts are in /mnt/project-files/qou-n4-doublet/. Next step here: confinement SDP plus reading 3 on each line, then the implied D-frame ladder factor, computed for BOTH labellings (no selection by residual).
+
+## Progress Update (PR litlfred/qou#8222)
+- **Status**: `in-progress` (awaiting PR merge)
+- **PR**: https://github.com/litlfred/qou/pull/8222 (`95ddc04a72f67a43b1ccf1d77e08572625847a9b`, scriptCommitSha `4ed1888aba96f0c3e837a57c93b666bdd892604e`)
+- **Summary**: Added `zagier_1991_not_ladders_attribution`, `lewin_1981_ladders_distinct_from_zagier`, and `browkin_1989_nonexistence_distinct_from_zagier` in `QOU/PolylogarithmLadder.lean`, verified by 80-dps mpmath probe `keystone_writhe_ramified_stokes_ladder_probe.py` (`scriptHash: 75539ba8f436`).

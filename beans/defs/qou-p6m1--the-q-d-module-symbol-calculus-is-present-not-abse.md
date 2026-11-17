@@ -1,7 +1,7 @@
 ---
 # qou-p6m1
 title: The q-D-module symbol calculus is PRESENT, not absent — split the conflated wall claim at every site
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -121,3 +121,8 @@ Their call, their PR.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-06 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Progress Update (PR litlfred/qou#8222)
+- **Status**: `in-progress` (awaiting PR merge)
+- **PR**: https://github.com/litlfred/qou/pull/8222 (`95ddc04a72f67a43b1ccf1d77e08572625847a9b`, scriptCommitSha `4ed1888aba96f0c3e837a57c93b666bdd892604e`)
+- **Summary**: Added `ramified_vs_unramified_diff_pos`, `ramified_index_div_unramified_eq_e`, and `dyadic_ramified_index_strict_gt_unramified` in `QOU/TraceFormula/TwoAdicSwanConductor.lean`, verified by 80-dps mpmath probe `keystone_writhe_ramified_stokes_ladder_probe.py` (`scriptHash: 75539ba8f436`).

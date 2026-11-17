@@ -1,7 +1,7 @@
 ---
 # qou-ltal
 title: Two declarations of QOU.Interactions.QIntegerMassFormula — one compiled with no consumers, one honest and uncompiled
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -101,3 +101,8 @@ manuscript sees the other.**
 - [ ] Platform: a check for `content/*.lean` shadowing a compiled FQN — still
       open, and the general form of `qou-znut`'s three `BorromeanQuark` classes
       and the `CrystalRMatrixSubLemma` case. Nothing detects this today.
+
+## Progress Update (PR litlfred/qou#8231)
+- **Status**: `in-progress` (awaiting PR merge)
+- **PR**: https://github.com/litlfred/qou/pull/8231 (`513987e80ae041a6d8bc835ffbdda5371ccac289`, scriptCommitSha `9bd895c1b028c3d1abf67e3de52aeade9e9e5ccc`)
+- **Summary**: Added `asym_minus_volume_eq_half_volume`, `shell_eq_cube_q2_mul_exchange`, and `pairing_volume_cross_relation` in `QOU/Interactions/QIntegerMassFormula.lean`, verified by 80-dps mpmath probe `hyperbolic_planck_oneloop_qint_dilog_probe.py` (`scriptHash: 83d59661279d`).

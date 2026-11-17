@@ -1,7 +1,7 @@
 ---
 # qou-mlbg
 title: 'Mathlib gap SURVEY (verified): Bloch group, Borel regulator, polylogarithm — and why Route 9 is not formalizable'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -152,3 +152,8 @@ absent".
 `Mathlib.NumberTheory.ZetaValues` is, incidentally, already an import of
 `QOU/Archimedean/DilogReflection.lean` — so it is in the corpus's dependency
 cone already.
+
+## Progress Update (PR litlfred/qou#8231)
+- **Status**: `in-progress` (awaiting PR merge)
+- **PR**: https://github.com/litlfred/qou/pull/8231 (`513987e80ae041a6d8bc835ffbdda5371ccac289`, scriptCommitSha `9bd895c1b028c3d1abf67e3de52aeade9e9e5ccc`)
+- **Summary**: Added `LiTwo_reflection_diff_symm` and `LiTwo_sum_sub_two_LiTwo_half` in `QOU/Archimedean/DilogReflection.lean`, verified by 80-dps mpmath probe `hyperbolic_planck_oneloop_qint_dilog_probe.py` (`scriptHash: 83d59661279d`).

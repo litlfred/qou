@@ -1,7 +1,7 @@
 ---
 # qou-adwi
 title: Corpus has TWO incompatible Planck lengths (factor t_P ~ 10.1); the Lean hardened a prose '~' into '='
-status: todo
+status: in-progress
 type: bug
 priority: normal
 tags:
@@ -61,3 +61,8 @@ The right resolution is to determine whether these are the SAME quantity
 length sharing a symbol). Only then rename or correct. Adjudicating by which
 value makes a downstream number work would be exactly the move this corpus
 forbids.
+
+## Progress Update (PR litlfred/qou#8231)
+- **Status**: `in-progress` (awaiting PR merge)
+- **PR**: https://github.com/litlfred/qou/pull/8231 (`513987e80ae041a6d8bc835ffbdda5371ccac289`, scriptCommitSha `9bd895c1b028c3d1abf67e3de52aeade9e9e5ccc`)
+- **Summary**: Added `unit_product_vs_bare_step_ratio`, `deep_quantum_field_gt_one`, and `deep_quantum_contradicts_classical` in `QOU/InformationTheory.lean`, verified by 80-dps mpmath probe `hyperbolic_planck_oneloop_qint_dilog_probe.py` (`scriptHash: 83d59661279d`).

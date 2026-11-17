@@ -1,7 +1,7 @@
 ---
 # qou-6nd0
 title: 'VALUES review pass: adjudicate the 57 C->D witness value changes, sign flips first'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -77,3 +77,8 @@ not the physical object, it is where the series was stopped.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-09 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Progress Update (PR litlfred/qou#8222)
+- **Status**: `in-progress` (awaiting PR merge)
+- **PR**: https://github.com/litlfred/qou/pull/8222 (`95ddc04a72f67a43b1ccf1d77e08572625847a9b`, scriptCommitSha `4ed1888aba96f0c3e837a57c93b666bdd892604e`)
+- **Summary**: Added `calugareanu_self_linking_sub_twist_eq_writhe`, `calugareanu_twist_zero_iff_eq_writhe`, and `calugareanu_writhe_sign_flip_diff` in `QOU/Topological/RibbonWritheHolonomy.lean`, verified by 80-dps mpmath probe `keystone_writhe_ramified_stokes_ladder_probe.py` (`scriptHash: 75539ba8f436`).

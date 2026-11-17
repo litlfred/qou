@@ -1,7 +1,7 @@
 ---
 # qou-2v7k
 title: 'FRONTIER B: s5-so3 keystone archimedean continuation — RT/WRT fibre root-of-unity → real q0 hyperbolic (τ=tr B geometric)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -55,3 +55,8 @@ rest is the core construction wall (formalizing the state-integral). No sibling 
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-07-19 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Progress Update (PR litlfred/qou#8222)
+- **Status**: `in-progress` (awaiting PR merge)
+- **PR**: https://github.com/litlfred/qou/pull/8222 (`95ddc04a72f67a43b1ccf1d77e08572625847a9b`, scriptCommitSha `4ed1888aba96f0c3e837a57c93b666bdd892604e`)
+- **Summary**: Added `keystone_surgery_coeffs_coprime` (`Nat.Coprime 5 2`), `keystone_surgery_bezout_identity` (`5*1 - 2*2 = 1`), and `snappea_census_zero_vs_four_distinct` in `QOU/KeystoneManifold.lean`, verified by 80-dps mpmath probe `keystone_writhe_ramified_stokes_ladder_probe.py` (`scriptHash: 75539ba8f436`).

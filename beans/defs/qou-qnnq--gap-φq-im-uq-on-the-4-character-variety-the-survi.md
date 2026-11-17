@@ -1,7 +1,7 @@
 ---
 # qou-qnnq
 title: "GAP: ϑ_K(q₀) — angular/spin deformation on the character variety of knot K. The surviving open DOF in the Δ_λ magnitude chain (\U0001D532_K = ln q₀ + i·ϑ_K). Knot-dependent: different particles = different ϑ. Determined by A(e^\U0001D532,ℓ)=0 boundary condition = G3 monodromy datum. Closes if Faddeev rigidity (hibinv+hratio) forces A_ω=3 AND pins the sheet. Probed values: ϑ_{4₁}(proton)=0.203, ϑ_{4₁}(muon)=0.059, ϑ_{4₁}(q*)=ln q*=0.104."
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -141,3 +141,8 @@ literature; not a QOU wiring gap.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-02 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Progress Update (PR litlfred/qou#8222)
+- **Status**: `in-progress` (awaiting PR merge)
+- **PR**: https://github.com/litlfred/qou/pull/8222 (`95ddc04a72f67a43b1ccf1d77e08572625847a9b`, scriptCommitSha `4ed1888aba96f0c3e837a57c93b666bdd892604e`)
+- **Summary**: Added `stokes_unipotent_trace_inv`, `stokes_unipotent_det_one`, and `stokes_multiplier_add` in `QOU/TraceFormula/BorelSummability.lean`, verified by 80-dps mpmath probe `keystone_writhe_ramified_stokes_ladder_probe.py` (`scriptHash: 75539ba8f436`).
