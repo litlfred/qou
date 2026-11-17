@@ -173,5 +173,16 @@ theorem forward_cumulants_not_derived_pattern :
     nu2 = 0 ∧ (nu3 < 0 ∧ 0 < nu4) ∧ nu4 = -2 * nu3 :=
   ⟨forward_edge_coeff_zero, forward_sign_window_opposite, forward_ratio_two⟩
 
+/-- **Five-body extensive value `Bext 5 = -16` and Mayer cluster reconstruction (`qou-3exu`).**
+At `A = 5`, `Bext 5 = C(5,3) s₃ + C(5,4) s₄ + C(5,5) s₅ = -10 - 10 + 4 = -16`, and
+the Mayer cumulants `(ν₂, ν₃, ν₄) = (0, -1, 2)` reconstruct `Salg 3` and `Salg 4` exactly. -/
+theorem Bext_five_and_mayer_reconstruct :
+    Bext 5 = -16 ∧
+    Bext 4 - 4 * Bext 3 = sRow3 4 ∧
+    3 * nu2 + nu3 = Salg 3 ∧
+    6 * nu2 + 4 * nu3 + nu4 = Salg 4 := by
+  refine ⟨?_, by decide, by decide, by decide⟩
+  norm_num [Bext, Finset.sum_range_succ, Finset.sum_range_zero, sRow3, Nat.choose]
+
 end ThreeRowExtensiveCumulant
 end QOU.MassTheory

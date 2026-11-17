@@ -178,4 +178,20 @@ theorem threeRow_ne_zero_of_ocneanu_ne
   hz (markovWeights_eq_jones_of_threeRow_eq_zero q qi z y₃ y₂₁ y₁₃ hqi hnorm
     hsigma hsigmasigma hTL hfaith).2.2
 
+/-- **Cleared-denominator symmetric weight `[2]_q² · y₃ = q² + q⁻²` under Temperley–Lieb (`qou-3qrv`).**
+For any faithful Temperley–Lieb Markov trace on `H₃(q)`, the symmetric block weight `y₃`
+satisfies `(q + qi) ^ 2 * y₃ = q ^ 2 + qi ^ 2`. -/
+theorem markovWeights_jones_y3_cleared
+    (q qi z y₃ y₂₁ y₁₃ : R)
+    (hqi : q * qi = 1)
+    (hnorm : y₃ + 2 * y₂₁ + y₁₃ = 1)
+    (hsigma : q * y₃ + (q - qi) * y₂₁ + (-qi) * y₁₃ = z)
+    (hsigmasigma : q ^ 2 * y₃ + (-1) * y₂₁ + qi ^ 2 * y₁₃ = z ^ 2)
+    (hTL : y₁₃ = 0)
+    (hfaith : y₂₁ ≠ 0) :
+    (q + qi) ^ 2 * y₃ = q ^ 2 + qi ^ 2 := by
+  obtain ⟨hy₂₁, hy₃, _⟩ :=
+    markovWeights_eq_jones_of_threeRow_eq_zero q qi z y₃ y₂₁ y₁₃ hqi hnorm hsigma hsigmasigma hTL hfaith
+  linear_combination (q + qi) ^ 2 * hy₃ - 2 * hy₂₁ + 2 * hqi
+
 end QOU.BraidsAndKnots
