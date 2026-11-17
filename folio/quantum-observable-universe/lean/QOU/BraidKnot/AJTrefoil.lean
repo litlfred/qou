@@ -61,8 +61,9 @@ a proof below needs this literal body — so the consolidation is this
 equation: same function, one canonical meaning, no proof touched. -/
 theorem qInt_eq_canonical (v : K) (k : ℕ) :
     qInt v k = QOU.QInteger.qIntBal v k := by
-  simp [qInt, QOU.QInteger.qIntBal, QOU.QInteger.qIntBalCl,
-    QOU.Mass.QHookDimensionBalanced.qIntBal, inv_pow, zpow_neg, zpow_natCast]
+  dsimp only [qInt, QOU.QInteger.qIntBal, QOU.QInteger.qIntBalCl,
+    QOU.Mass.QHookDimensionBalanced.qIntBal]
+  simp only [inv_pow, zpow_neg, zpow_natCast]
 
 /-- Twist eigenvalue of the braiding on the `V_{2j}` summand of
     `V_n ⊗ V_n`, at `w = q^{1/4}`:
@@ -176,7 +177,7 @@ cited-`sorry` instance formerly lived here; it is superseded.
 /-- **Derived (conditional on the literature class): the trefoil tower is
     q-holonomic at every `q = w⁴`, `w ≠ 0`** — ∃-packaging as for `4₁`.
     Note `w ≠ 0 → w⁴ ≠ 0` supplies the nontriviality hypothesis. -/
-theorem coloredJonesTrefoil_qholonomic [inst : StrongAJTrefoil K]
+abbrev coloredJonesTrefoil_qholonomic [inst : StrongAJTrefoil K]
     {w : K} (hw : w ≠ 0) :
     IsQHolonomic (w ^ 4) (coloredJonesTrefoil w) :=
   ⟨inst.op, inst.nontrivial (w ^ 4) (pow_ne_zero _ hw),
@@ -187,7 +188,7 @@ At `q = 1`, the inhomogeneous right-hand side `trRhs 1 M` equals the leading coe
 `trCoeff 1 1 (M ^ 2)`, and at `m = 1` the zero-shift coefficient `trCoeff 0 q 1` vanishes. -/
 theorem trRhs_at_one_eq_trCoeff_and_trCoeff_zero_at_one (q M : K) :
     trRhs 1 M = trCoeff 1 1 (M ^ 2) ∧ trCoeff 0 q 1 = 0 := by
-  simp only [trRhs, trCoeff]
+  dsimp only [trRhs, trCoeff]
   refine ⟨by ring, by ring⟩
 
 end QOU.BraidKnot.AJTrefoil

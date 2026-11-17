@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """80-dps mpmath computational witness probe for Round 71:
-- qou-0pe3: DeltaLambdaSignRule (hecke_character_diag_even_and_habiro_step)
+- qou-0pe3: DeltaLambdaSignRule (diag_power_even_and_octahedra_leading_step)
 - qou-2150: ExplicitCentralIdempotent (qContent_diag_and_transpose_mul_eq_one)
 - qou-6vo0: AJTrefoil (trRhs_at_one_eq_trCoeff_and_trCoeff_zero_at_one)
 - bwsc: KeystoneN5LevelSixSuffices (poly311_eval_zero_ne_qiSix_and_sub_poly32)

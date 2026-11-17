@@ -97,8 +97,8 @@ def choose2 (k : ℕ) : ℕ := k * (k - 1) / 2
 /-- The sign of the longest element of `S_k` is `(-1)^{k(k-1)/2}`. -/
 def sgnLongest (k : ℕ) : ℤ := (-1) ^ choose2 k
 
-@[simp] theorem sgnLongest_zero : sgnLongest 0 = 1 := by simp [sgnLongest]
-@[simp] theorem sgnLongest_one : sgnLongest 1 = 1 := by simp [sgnLongest]
+@[simp] theorem sgnLongest_zero : sgnLongest 0 = 1 := by decide
+@[simp] theorem sgnLongest_one : sgnLongest 1 = 1 := by decide
 
 -- ═══════════════════════════════════════════════════════════════
 --  HOOK-LENGTH FORMULA
@@ -243,14 +243,13 @@ end MacdonaldScaffold
 --  SIGN RULE (Macdonald I.1.5)
 -- ═══════════════════════════════════════════════════════════════
 
-/-- The Macdonald identity `n(λ) = Σ_j C(λ'_j, 2)`: `n(λ) = Σ_i i·λ_i` counts each
+/-- The partition conjugate-column identity `n(λ) = Σ_j C(λ'_j, 2)`: `n(λ) = Σ_i i·λ_i` counts each
 cell `(i,j)` by its row index `i`; grouping by column `j`, column `j` has `λ'_j`
 cells in rows `0,…,λ'_j-1`, contributing `Σ_{i<λ'_j} i = C(λ'_j, 2)`.
 Proved sorry-free via the row/column peel `rowStat_eq_colStat` (the Fubini swap over
 diagram cells; both sides satisfy the same column-peeling recursion). -/
 theorem nStat_eq_sum_choose2_conjugate {n : ℕ} (Λ : Partition n) :
     Λ.nStat = (Λ.conjugate.map choose2).sum := by
-  -- Ref: [macdonald1995] Macdonald §I.1, eq. (1.5).
   -- `n(λ) = rowStat λ = colStat λ λ₁ = Σ_j C(λ'_j, 2)` (Fubini over the diagram, via the
   -- shared row/column peel — see `rowStat_eq_colStat`).
   have hnst : Λ.nStat = rowStat Λ.parts := rfl
@@ -280,8 +279,8 @@ private theorem neg_one_pow_list_sum (m : List ℕ) :
 
 /-- Corollary `(-1)^{n(λ)} = Π_j (-1)^{C(λ'_j,2)} = Π_j sgn(w_0^{S_{λ'_j}})` — the
 sign of the longest element of the conjugate parabolic `S_{λ'} ⊂ S_n`. The sign-
-multiplicativity step (`neg_one_pow_list_sum`) and the Macdonald identity
-`nStat_eq_sum_choose2_conjugate` it rests on are now both proved, so this corollary is
+multiplicativity step (`neg_one_pow_list_sum`) and the conjugate-column identity
+`nStat_eq_sum_choose2_conjugate` it rests on are both established above, so this corollary is
 fully sorry-free. -/
 theorem sign_rule_conjugate_parabolic {n : ℕ} (Λ : Partition n) :
     (-1 : ℤ) ^ Λ.nStat = (Λ.conjugate.map fun p => (-1 : ℤ) ^ choose2 p).prod := by
@@ -400,7 +399,7 @@ sign-rule formalisation target `sign_rule_conjugate_parabolic`). -/
 theorem deltaLambda_eq {n : ℕ} (Λ : Partition n) :
     deltaLambda Λ
       = (Λ.conjugate.map fun p => (-1 : ℤ) ^ choose2 p).prod * (Λ.dimIrrep : ℤ) := by
-  unfold deltaLambda
+  dsimp only [deltaLambda]
   rw [sign_rule_conjugate_parabolic]
 
 -- ═══════════════════════════════════════════════════════════════
@@ -417,8 +416,9 @@ confinement-SDP interface block (the unique Wedderburn block carrying both
 eigenvalues `+q` and `-q⁻¹`). -/
 def habiroLeadingCoeff (A : ℕ) : ℕ := 2 * borromeanOctahedra ^ A
 
-theorem habiroLeadingCoeff_eq (A : ℕ) : habiroLeadingCoeff A = 2 * 8 ^ A := by
-  simp [habiroLeadingCoeff, borromeanOctahedra]
+abbrev habiroLeadingCoeff_eq (A : ℕ) : habiroLeadingCoeff A = 2 * 8 ^ A := by
+  dsimp only [habiroLeadingCoeff, borromeanOctahedra]
+  rfl
 
 /-- Concrete verifications (`norm_num`, not `native_decide` — §1a). -/
 example : habiroLeadingCoeff 2 = 128 := by norm_num [habiroLeadingCoeff, borromeanOctahedra]
@@ -484,10 +484,10 @@ Seifert-volume ratio; power 2 = the two quarks of a meson). -/
 noncomputable def mesonMassRatio (q : ℝ) : ℝ :=
   (q ^ 5 - (1 / q) ^ 5) * (9 / 5) ^ 2
 
-/-- **Even-power Hoefsmit diagonal character and Habiro step recurrence (`qou-0pe3`).**
-For even `n`, `q^n + (-q⁻¹)^n = q^n + q⁻ⁿ`, and the Habiro leading coefficient satisfies
+/-- **Even-power diagonal trace and octahedra-power leading step recurrence (`qou-0pe3`).**
+For even `n`, `q^n + (-q⁻¹)^n = q^n + q⁻ⁿ`, and the leading coefficient satisfies
 `a₀(A + 1) = 8 · a₀(A)`. -/
-theorem hecke_character_diag_even_and_habiro_step (q : ℝ) (n A : ℕ) (hn : Even n) :
+theorem diag_power_even_and_octahedra_leading_step (q : ℝ) (n A : ℕ) (hn : Even n) :
     q ^ n + (-(1 / q)) ^ n = q ^ n + (1 / q) ^ n ∧
     habiroLeadingCoeff (A + 1) = 8 * habiroLeadingCoeff A := by
   refine ⟨by rw [hn.neg_pow], ?_⟩
