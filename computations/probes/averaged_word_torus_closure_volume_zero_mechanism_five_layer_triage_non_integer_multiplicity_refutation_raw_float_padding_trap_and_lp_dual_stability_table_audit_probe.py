@@ -39,7 +39,7 @@ def get_git_commit_sha(repo_root: pathlib.Path) -> str:
 def compute_script_hashes(script_path: pathlib.Path) -> tuple[str, str]:
     raw = script_path.read_bytes()
     full_hex = hashlib.sha256(raw).hexdigest()
-    return full_hex[:12], full_hex
+    return full_hex, full_hex
 
 
 def main() -> None:
