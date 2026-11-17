@@ -237,3 +237,43 @@ Nothing here is selected or compared with measurement.
 Precision gates (`--changed`): the q₀ gates are red on this branch, which is 39 commits behind
 main; the probe reads q₀ only for the reported value at t = q₀, through `q_at()`. Not investigated
 further here.
+
+## Stage 1b — re-run with L₋ = σ₁σ₀ and the four-term photon (run 2026-11-17, pre-registered)
+
+Probe `gg_twist_reading3_stage1b_probe.py`, witness `gg-twist-reading3-stage1b.witness.json`. Same
+reading 3 as stage 1 (every level, convention D, proton pin, 40 dps). L₋ is now σ₁σ₀, the order
+prop:gamma-gamma-generates-particles gives, not the inverse. Stage 1 above stays as the record for
+the inverse reading.
+
+**(a) {V, V⁻¹, L₊, L₋}, lengths 1–6, 5460 words.**
+
+| components | pass / total |
+|---|---|
+| 3 (pure) | 1848 / 1848 |
+| 2 | 0 / 0 |
+| 1 (knot) | 0 / 3612 |
+
+1. Pass ⟺ pure braid **survives** the correction.
+2. Every passing writhe is ≥ 0 (0, 2, …, 12). This is forced by the alphabet, not found: V and V⁻¹
+   have writhe 0 and both L± have writhe +2, so no word has negative writhe. Stage 1's symmetric
+   writhe distribution came from reading L₋ as an inverse.
+3. Shortest passers per writhe: V·V⁻¹ (0), V·L₋ (2), L₊·L₋ (4), L₊³ (6).
+
+**(b) adding e⁻ = σ₀σ₁σ₀, lengths 1–5, 3905 words.**
+
+| components | pass / total |
+|---|---|
+| 3 (pure) | 650 / 650 |
+| 2 | 526 / 1771 |
+| 1 (knot) | 0 / 1484 |
+
+1. Pass ⟺ pure **breaks**: with e⁻ in the alphabet, 526 two-component words pass. Every pure word
+   still passes and no knot passes. Shortest two-component passers: V⁻¹·L₋·e⁻ (writhe 5, min level
+   character 0.427) and L₊·L₋·e⁻ (writhe 7, 0.209). Odd writhes appear only through e⁻ (writhe 3).
+2. **Precision note.** 274 words have a minimum level character of size ~1e-42 whose sign flips
+   between 40 and 80 dps (checked on V·e⁻ and e⁻·e⁻·V·e⁻: +5.7e-42 at 40 dps, −4.7e-43 at 80; failing
+   block (2,1) at level 3). They are zero to the precision of the inputs, not positive, and are
+   counted as failures (floor 1e-30). The first run counted them as passes (1310); 1176 is the
+   corrected count.
+
+Scope (a): admissibility only. Nothing here selects a word, letter or length.
