@@ -1,13 +1,13 @@
 ---
 # qou-cdh4
 title: 'H4 (hygiene): convention-label hygiene — history must say it is history'
-status: todo
+status: in-progress
 type: task
 priority: low
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-10-04T15:14:31Z
+updated_at: 2026-11-17T11:48:14Z
 parent: qou-10v9
 ---
 

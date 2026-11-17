@@ -1,13 +1,13 @@
 ---
 # qou-db24
 title: 'import-time dps ratchet is RED on main: y_lambda_two_row_cap_gate.py builds mpf(''1e-30'') before dps is raised'
-status: todo
+status: in-progress
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-28T15:18:36Z
-updated_at: 2026-10-04T15:15:44Z
+updated_at: 2026-11-17T11:48:14Z
 parent: qou-9nnz
 ---
 

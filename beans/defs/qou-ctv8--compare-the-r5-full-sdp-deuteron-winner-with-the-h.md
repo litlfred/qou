@@ -1,13 +1,13 @@
 ---
 # qou-ctv8
 title: Compare the R5-full SDP deuteron winner with the H_6 mass word beyond arity (both close to 3 components)
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T21:21:48Z
-updated_at: 2026-10-04T15:17:58Z
+updated_at: 2026-11-17T11:48:14Z
 parent: qou-v2om
 ---
 

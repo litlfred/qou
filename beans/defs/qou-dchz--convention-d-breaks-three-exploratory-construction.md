@@ -1,13 +1,13 @@
 ---
 # qou-dchz
 title: Convention D breaks three exploratory constructions that were valid under C — Phi_q divergence, Im-cancellation failure, 4-body determinant ceiling
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T21:29:51Z
-updated_at: 2026-10-04T15:18:09Z
+updated_at: 2026-11-17T11:48:14Z
 parent: qou-cdx1
 ---
 
