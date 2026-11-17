@@ -1,7 +1,8 @@
 ---
 # qou-j16x
 title: 'GAP: multiplicative interface 4-body cumulant b4 undershoots He4 target (6.3% production / 36% bar-invariant)'
-status: todo
+status: in-progress
+pr: 8295
 type: task
 priority: normal
 tags:

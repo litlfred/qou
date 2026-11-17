@@ -1,7 +1,8 @@
 ---
 # qou-hu1f
 title: The full-tower ruling has not been applied to the mass/binding surface, where H_3 is the whole object
-status: todo
+status: in-progress
+pr: 8295
 type: task
 priority: normal
 tags:

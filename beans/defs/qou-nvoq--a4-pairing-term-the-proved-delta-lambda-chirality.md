@@ -1,7 +1,8 @@
 ---
 # qou-nvoq
 title: 'A4: pairing term = the proved Delta_lambda chirality sign'
-status: todo
+status: in-progress
+pr: 8295
 type: task
 priority: normal
 tags:
