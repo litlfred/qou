@@ -1,0 +1,98 @@
+{
+  "probe": "round58-n5-level-six-ohtsuki-thimble-fourone-stokes-dilog",
+  "scriptPath": "computations/probes/round58_n5_level_six_ohtsuki_thimble_fourone_stokes_dilog_probe.py",
+  "scriptHash": "51d50f916dc35d9cd352db4f808406caa8341da6574ea91efc43c7ba7bdbbe91",
+  "scriptSha256": "51d50f916dc35d9cd352db4f808406caa8341da6574ea91efc43c7ba7bdbbe91",
+  "scriptCommitSha": "df446885b17718b4f18e584a2765ba2e802adb68",
+  "precisionDps": "80",
+  "beans": [
+    "bwsc",
+    "thmb",
+    "qou-07m1",
+    "qou-z9hf",
+    "qou-zkkv"
+  ],
+  "leanModules": [
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/N5LevelSixRootThresholdAndThreeLinkTriad.lean",
+    "folio/quantum-observable-universe/lean/QOU/QBeta/FiveTwoSaddleHessianAndFourOneStokesCrossCheck.lean"
+  ],
+  "allPassed": true,
+  "checks": [
+    {
+      "bean": "bwsc",
+      "description": "Level N=6 (5 interior fold points) Lagrange recovery of degree-4 block d((3,1,1)) vs vanishing of degree-5 [6]_q on level-6 fold points",
+      "d311AtTwo": "6.0",
+      "lagrangeD311AtTwoResidual": "0.0",
+      "maxAbsQInt6OnLevel6FoldPoints": "8.433758354584418579478859241016015206168e-81",
+      "degree5LagrangeGapAtTwo": "6.0",
+      "passed": true
+    },
+    {
+      "bean": "thmb",
+      "description": "Ohtsuki 2016 5_2 critical system elimination x^3 = (1-x)^2, complex saddle volume 3*D(y_1) = Vol(5_2), and real root control",
+      "saddleRootY1": "0.7849201454990266329556999790597843244199 + 1.307141278682045480492352573513765428738i",
+      "ohtsukiSystemResidual1": "2.361338042164891064867253875697320593369e-82",
+      "ohtsukiSystemResidual2": "2.155749405238135108991904881715014099058e-81",
+      "ohtsukiCubicResidual": "4.216879177292209289739429620508007603084e-81",
+      "volume52Computed": "2.828122088330783162763898809276634942771",
+      "volume52ReferenceDiff": "2.247163106317321912316130774365779829262e-74",
+      "realRootControlY0": "0.4301597090019467340886000418804313511602",
+      "realRootCubicResidual": "2.635549485807630806087143512817504751927e-82",
+      "passed": true
+    },
+    {
+      "bean": "qou-07m1",
+      "description": "Cross-check 2302.08363v2 eq (4.5) M_1 = g_0 * 2G_0 through q^4 and M_2 quotient series against fantini-wheeler2024 eq (74)",
+      "productG0Times2G0": [
+        "1",
+        "-8",
+        "-9",
+        "18",
+        "46"
+      ],
+      "publishedM1": [
+        "1",
+        "-8",
+        "-9",
+        "18",
+        "46"
+      ],
+      "quotientM2OverG0": [
+        "0",
+        "-9",
+        "-12",
+        "9",
+        "36"
+      ],
+      "quotientM2OverM1": [
+        "0",
+        "-9",
+        "-75",
+        "-642",
+        "-5580"
+      ],
+      "qOneHundredthTruncationResidual": "0.0000000060482004",
+      "passed": true
+    },
+    {
+      "bean": "qou-z9hf",
+      "description": "Cross-check [hakimoglu-brown2025] Li_2(phi^{-2}) = pi^2/15 - ln^2(phi) and resulting 4_1 tail action A_0 = pi^2/5 at 80 dps",
+      "li2PhiInvSq": "0.4264088061620961820920369954268773156712",
+      "li2PhiInvSqResidual": "5.271098971615261612174287025635009503855e-82",
+      "li2PhiInvResidual": "0.0",
+      "tailActionA0": "1.973920880217871723766898199975230227063",
+      "tailActionA0FromPhiInvSqResidual": "2.108439588646104644869714810254003801542e-81",
+      "tailActionA0FromPhiInvResidual": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-zkkv",
+      "description": "Habiro [habiro2000] Prop. 7.1 Borromean colored-Jones closed formula: S_3 colour symmetry, trivial-colour normalization, and (2,2,2) cyclotomic identity",
+      "valueJ234AtExp017": "-10.18011659041942541911637251297341377943",
+      "permutationSymmetryResidual": "1.686751670916883715895771848203203041234e-80",
+      "trivialColorOneResidual": "0.0",
+      "color222FormulaResidual": "8.433758354584418579478859241016015206168e-81",
+      "passed": true
+    }
+  ]
+}
