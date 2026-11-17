@@ -704,4 +704,19 @@ theorem no_universal_classicalLimitConst {M : Type*}
   linarith
 
 
+/-- **Additive action of `shiftEnergy` on energy and `classicalLimitConst` (`qou-pzsi`).**
+Shifting a `CategoricalMobiusEnergy` instance consecutively by `d₁` and `d₂` shifts both
+`energy` and `classicalLimitConst` by `d₁ + d₂`. -/
+theorem shiftEnergy_comp_const_and_energy {M : Type*}
+    (cme : CategoricalMobiusEnergy M) (d₁ d₂ : ℝ) :
+    (shiftEnergy (shiftEnergy cme d₁) d₂).classicalLimitConst =
+      cme.classicalLimitConst + (d₁ + d₂) ∧
+    (shiftEnergy (shiftEnergy cme d₁) d₂).energy =
+      cme.energy + (d₁ + d₂) := by
+  constructor
+  · change (cme.classicalLimitConst + d₁) + d₂ = cme.classicalLimitConst + (d₁ + d₂)
+    ring
+  · change (cme.energy + d₁) + d₂ = cme.energy + (d₁ + d₂)
+    ring
+
 end QOU

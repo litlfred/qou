@@ -151,4 +151,14 @@ instance he4DemandClosure_singleton (c : ℝ) [hpos : Fact (0 ≤ c)] :
     rcases List.mem_singleton.mp hx with rfl
     exact hpos.out⟩
 
+/-- **Three-way trefoil factorisation via Hopf link operators (`cj01`).**
+In the standard representation of `H₃(q)`, the trefoil matrix `σ₀σ₁σ₀` equals `L₋ · σ₁`
+and satisfies the intertwining identity `L₊ · σ₀ = σ₀ · L₋`. -/
+theorem trefoil_eq_hopfMinus_gen1_and_intertwine :
+    trefoilMatrix = hopfMinus * stdRep3_gen1 ∧
+    hopfPlus * stdRep3_gen0 = stdRep3_gen0 * hopfMinus := by
+  refine ⟨?_, ?_⟩
+  · rw [trefoil_eq_hopfPlus_gen0, yang_baxter_hopf]
+  · rw [← trefoil_eq_hopfPlus_gen0, ← trefoil_eq_gen0_hopfMinus]
+
 end QOU.Interactions

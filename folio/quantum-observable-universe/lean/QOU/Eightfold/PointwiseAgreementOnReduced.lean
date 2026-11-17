@@ -79,4 +79,15 @@ is nonzero and nilpotent, hence lies in every prime ideal while differing from `
 theorem twoNilpotentZModFour : IsNilpotent (2 : ZMod 4) ∧ (2 : ZMod 4) ≠ 0 :=
   ⟨⟨2, by decide⟩, by decide⟩
 
+/-- **Prime-agreement equivalence for maps into a reduced ring (`qou-qjhc`).**
+In a reduced commutative ring `A`, two maps `f, g : B → A` are equal if and only if
+`f b - g b` lies in every prime ideal at every `b : B`. -/
+theorem apply_eq_iff_sub_mem_all_primes [IsReduced A] {B : Type*} {f g : B → A} :
+    f = g ↔ ∀ b : B, ∀ p : Ideal A, p.IsPrime → f b - g b ∈ p := by
+  constructor
+  · rintro rfl b p _
+    rw [sub_self]
+    exact p.zero_mem
+  · exact eq_of_apply_sub_mem_all_primes
+
 end QOU.Eightfold.PointwiseAgreementOnReduced

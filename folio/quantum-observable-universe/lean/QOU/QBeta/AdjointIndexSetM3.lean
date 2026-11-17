@@ -445,4 +445,16 @@ theorem core_is_three_on_all_three :
     ∀ K : PKnot, pkSize K - floorRemainder K = sAtOne := by
   intro K; cases K <;> (rw [s_at_one_eq_three]; decide)
 
+/-- **Total Garoufalidis–Zagier state count and remainder sum across `{4₁, 5₂, (−2,3,7)}` (`qou-q9ih`).**
+Across the three tabulated knots, the total `P_K` size is `3 + 4 + 7 = 14`, the three
+knot-independent cores sum to `3 · 3 = 9`, and the arithmetic remainders sum to `0 + 1 + 4 = 5`. -/
+theorem pkSize_and_floorRemainder_three_knot_totals :
+    pkSize PKnot.fourOne + pkSize PKnot.fiveTwo + pkSize PKnot.pretzel237 = 14 ∧
+    floorRemainder PKnot.fourOne + floorRemainder PKnot.fiveTwo +
+      floorRemainder PKnot.pretzel237 = 5 ∧
+    (pkSize PKnot.fourOne + pkSize PKnot.fiveTwo + pkSize PKnot.pretzel237) -
+      (floorRemainder PKnot.fourOne + floorRemainder PKnot.fiveTwo +
+        floorRemainder PKnot.pretzel237) = 3 * floorCore := by
+  decide
+
 end QOU.QBeta.AdjointIndexSetM3

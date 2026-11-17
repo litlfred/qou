@@ -331,6 +331,17 @@ theorem candidate_ratio_indep_of_anchor (m f g : R) (hm : m ≠ 0) (hg : g ≠ 0
     (m * f) / (m * g) = f / g := by
   field_simp
 
+/-- **Pure-crossing bond ratio `b_pp / b_nn = q⁴` (`qou-v8ct`).**
+Since `b_pp = q³/(q²+1)` and `b_nn = 1/(q³+q)`, their ratio is `q⁴` over any field `R`. -/
+theorem fPP_div_fNN_eq_pow_four (q : R) (hq : q ≠ 0) (h21 : q ^ 2 + 1 ≠ 0) :
+    fPP q / fNN q = q ^ 4 := by
+  unfold fPP fNN markovZ
+  have h3 : q ^ 3 + q ≠ 0 := by
+    have : q ^ 3 + q = q * (q ^ 2 + 1) := by ring
+    rw [this]; exact mul_ne_zero hq h21
+  field_simp
+  ring
+
 end Separation
 
 end QOU.Hecke.BindingScaleCandidates
