@@ -1,7 +1,8 @@
 ---
 # qou-zv2l
 title: 'GAP: canonical-ordering-dof witness is genuinely self-stale on scriptHash (producer re-run needed)'
-status: todo
+status: in-progress
+pr: 8333
 type: task
 priority: normal
 tags:
@@ -85,3 +86,7 @@ number was wrong.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-10 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## Round 56 Implementation (PR #8333)
+- Implemented on branch `claude/round56-trd0-9nnz-fixes` (commit `e33bff7d43b72a19e618441a16ae41a21af05e0e`, https://github.com/litlfred/qou/pull/8333).

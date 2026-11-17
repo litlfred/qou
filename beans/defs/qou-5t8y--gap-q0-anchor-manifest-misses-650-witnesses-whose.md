@@ -1,7 +1,8 @@
 ---
 # qou-5t8y
 title: 'GAP: q0_anchor_manifest misses 650 witnesses whose producer filename is SUFFIXED (_probe/_derivation/_test) — _producer_stem matches the witness stem exactly, so fbor-normalisation-barsymmetry.witness.json never finds fbor_normalisation_barsymmetry_probe.py. Fix must re-key the manifest on the PRODUCER filename (q_parameter matches Path(sys.argv[0]).stem), and needs a disambiguation policy: a prefix match is ambiguous (stem ''foo'' would match ''foo_bar_probe.py'').'
-status: todo
+status: in-progress
+pr: 8333
 type: task
 priority: normal
 tags:
@@ -53,3 +54,7 @@ producer is never found and cannot enter the manifest.
 directive 2026-08-07). So a suffixed producer that wants proton is correct by
 accident; one that wants muon is silently given proton **and cannot be listed
 as muon at all**. Same shape as blind spot 1, which hid 108 such producers.
+
+
+## Round 56 Implementation (PR #8333)
+- Implemented on branch `claude/round56-trd0-9nnz-fixes` (commit `e33bff7d43b72a19e618441a16ae41a21af05e0e`, https://github.com/litlfred/qou/pull/8333).

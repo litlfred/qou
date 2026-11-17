@@ -1,7 +1,8 @@
 ---
 # qou-g5sp
 title: The entire Bruhat / Coxeter-order component is unreachable from QOU.lean (9 modules, includes merged main work)
-status: todo
+status: in-progress
+pr: 8333
 type: task
 priority: normal
 tags:
@@ -616,3 +617,7 @@ of that shape, and it is where such a result would land today.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-13 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## Round 56 Implementation (PR #8333)
+- Implemented on branch `claude/round56-trd0-9nnz-fixes` (commit `e33bff7d43b72a19e618441a16ae41a21af05e0e`, https://github.com/litlfred/qou/pull/8333).

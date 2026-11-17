@@ -1,7 +1,8 @@
 ---
 # qou-500d
 title: witness shape guard cannot distinguish a producer speedup from an interrupted write
-status: todo
+status: in-progress
+pr: 8333
 type: task
 priority: normal
 tags:
@@ -78,3 +79,7 @@ Found on PR #5869 while merging main (43 commits) into
 not-this-PR's before proceeding: the branch has never touched that file (empty
 diff against the merge base). Nothing was baselined or hand-edited; the merge was
 committed and the gate went green on its own.
+
+
+## Round 56 Implementation (PR #8333)
+- Implemented on branch `claude/round56-trd0-9nnz-fixes` (commit `e33bff7d43b72a19e618441a16ae41a21af05e0e`, https://github.com/litlfred/qou/pull/8333).

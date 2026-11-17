@@ -1,7 +1,8 @@
 ---
 # qou-s63a
 title: 'GAP: a Lean rename has no transitive-consumer guard — two regressions reached main from the same one-level check'
-status: todo
+status: in-progress
+pr: 8333
 type: task
 priority: normal
 tags:
@@ -62,3 +63,7 @@ is the cheaper shape and is what I would build.
 Bean opened 2026-08-30 from PR #6278 rather than left implicit, per the
 report-unclaimed-work rule: the two fixes are claimed work, the missing guard
 is not.
+
+
+## Round 56 Implementation (PR #8333)
+- Implemented on branch `claude/round56-trd0-9nnz-fixes` (commit `e33bff7d43b72a19e618441a16ae41a21af05e0e`, https://github.com/litlfred/qou/pull/8333).
