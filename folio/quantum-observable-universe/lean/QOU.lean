@@ -1737,3 +1737,6 @@ import QOU.KZ.Drinfeld.HeckeStrands
 import QOU.Mass.LagrangianKZInputs
 import QOU.QBeta.BorromeanThreeCuspNZHessian
 import QOU.QBeta.McPhailSnyderBridgeExclusion
+import QOU.QBeta.OneLoopEdgeLatticeAndWindingGFContinuation
+import QOU.QBeta.MedianResummationEichlerAndHabiroPicardRegulator
+
