@@ -1,13 +1,13 @@
 ---
 # qou-5uj7
 title: 'Spectral distance = tropical limit of the Feynman path sum: formalize d_Connes = minimal Reeb step count'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T12:04:33Z
-updated_at: 2026-10-04T15:24:36Z
+updated_at: 2026-11-17T08:05:00Z
 parent: b9cj
 ---
 
@@ -263,3 +263,10 @@ to "they are the share and the total".
   should be the Reeb count only in the q -> infinity limit, where D_grad ->
   iota_xi grad. At q0 the metric mixes both. Revise the target theorem before
   attempting it.
+
+## Round 77 Formalization Update (2026-11-17)
+
+- **PR**: https://github.com/litlfred/qou/pull/8270 (`6053dcb4a4cd613867cf11286810e234a6e19f69`)
+- **Lean Module**: `folio/quantum-observable-universe/lean/QOU/QBeta/DeformedVolumeParityAndDiracReebConvexSplitBrick.lean` (wired into `folio/quantum-observable-universe/lean/QOU.lean`, verified with `lean -DautoImplicit=false -s 65536` exit 0, 0 `sorry`/`axiom`/`native_decide`, 0 findings across all 7 static Lean audits).
+- **80-dps Probe & Witness**: `computations/probes/deformed_volume_parity_and_dirac_reeb_convex_split_brick_probe.py` (`scriptCommitSha: 9d5b1ea5cef1335474ac59e8528d4646769eddc6`) and `computations/probes/deformed-volume-parity-and-dirac-reeb-convex-split-brick.witness.json` (`allPassed: true`).
+
