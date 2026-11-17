@@ -1,0 +1,63 @@
+{
+  "probe": "he4_two_row_suppression_topological_mass_dilogarithm_gap_composition_feasibility_confinement_frobenius_reciprocity_and_hecke_word_collapse_probe",
+  "round": "80",
+  "beans": [
+    "qou-8mmq",
+    "qou-8p6w",
+    "qou-8r6b",
+    "qou-9gpo",
+    "qou-9ohz"
+  ],
+  "leanModule": "QOU.Eightfold.He4TwoRowSuppressionTopologicalMassDilogarithmGapCompositionFeasibilityConfinementFrobeniusReciprocityAndHeckeWordCollapse",
+  "scriptPath": "computations/probes/he4_two_row_suppression_topological_mass_dilogarithm_gap_composition_feasibility_confinement_frobenius_reciprocity_and_hecke_word_collapse_probe.py",
+  "scriptCommitSha": "4fa3835a3329184fc0e3a26ee0674c9f57875db8",
+  "scriptHash": "0cd6a7ae96ce",
+  "scriptSha256": "0cd6a7ae96ce2c3f66ffcc6e617938e496a93a5bf16309778774089921ec765f",
+  "dps": "80",
+  "generatedAt": "2026-11-17T10:36:35Z",
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "qou-8mmq-he4-two-row-suppression",
+      "bean": "qou-8mmq",
+      "description": "4He two-row stratum exhibits >28,990x near-cancellation between positive and negative channels while remaining strictly non-zero",
+      "l1MassMeV": "4.3196",
+      "signedSumMeV": "1.4900000000000000000000000000000000000000000000000000000000000000000000000000105e-4",
+      "suppressionRatio": "2.8990604026845637583892617449664429530201342281879194630872483221476510067113889e+4",
+      "passed": true
+    },
+    {
+      "id": "qou-8p6w-topological-mass-dilogarithm-gap",
+      "bean": "qou-8p6w",
+      "description": "Topological mass dilogarithm Euler reflection identity Li2(x) + Li2(1-x) + ln(x)ln(1-x) = pi^2/6 holds to 80-dps",
+      "baselAnchorPi2Over6": "4.0",
+      "maxEulerReflectionResidual": "2.1084395886461046448697148102540038015419922764737015100155526050216288581939519e-81",
+      "passed": true
+    },
+    {
+      "id": "qou-8r6b-composition-feasibility-interface-letter",
+      "bean": "qou-8r6b",
+      "description": "Affine interface braid letter (1-e)sigma + e*sigma^-1 satisfies exact linear deviation e*(sigma^-1 - sigma) and convex spectral bounds",
+      "sigmaEigenvalue": "1.1789797444721672702",
+      "sigmaInvEigenvalue": "8.4819099283822129373526310687277461600655893105855586627165299310546708986013943e-1",
+      "passed": true
+    },
+    {
+      "id": "qou-9gpo-confinement-frobenius-reciprocity",
+      "bean": "qou-9gpo",
+      "description": "Frobenius reciprocity <Ind(w), v>_G = <w, Res(v)>_H holds identically and isolates the confined color-singlet channel",
+      "inducedPairing": "8.4e+1",
+      "restrictedPairing": "8.4e+1",
+      "passed": true
+    },
+    {
+      "id": "qou-9ohz-hecke-generator-word-collapse",
+      "bean": "qou-9ohz",
+      "description": "Quadratic Hecke relation sigma^2 = (q-q^-1)sigma + 1 collapses products of affine generator words to alpha_12*sigma + beta_12 at 80-dps",
+      "collapsedAlpha": "-3.6921124836605402353526310687277461600655893105855586627165299310546708986013943",
+      "collapsedBeta": "-2.0",
+      "wordCollapseResidual": "0.0",
+      "passed": true
+    }
+  ]
+}
