@@ -6,6 +6,10 @@ export default proposition({
   title:
     "Kummer specialisation: the NS obstruction survives $q = 1$ for $\\gcd(\\chi(A), n) \\neq n$",
   uses: [
+    "thm:qu-to-qou",
+    "rem:three-euler-characteristics",
+    "lem:bring-cone-reeb-quaternionic-twist",
+    "def:reeb-bundle",
     "rem:substrate-gm-torsion",
     "prop:ns-obstruction-computation",
     "conj:qou-p-neq-np",
@@ -26,7 +30,7 @@ export default proposition({
       kind: "status",
       date: "2026-11-17",
       body:
-        "**OPEN — trace identity.** The Kummer divisibility `n | chi(A)` is read off the obstruction class. If `chi(A)` means `chi_eu(M_0)` (the Euler-class integral) the statement is about the genus and survives a rename; if it means `tr(id_A)` it is undefined until a regularisation is fixed. Which reading the proof uses is not settled here. Under the owner ruling of 2026-09-15, `tr(id_A) = dim_q(A)` is a q-dependent quantum dimension, and `-6` is `chi_eu(M_0)`, the topological Euler characteristic of the base curve (`rem:three-euler-characteristics`). Flagged open on owner instruction 2026-11-17 (Bring foundations cleanup); the bare `chi(A)` here was not renamed because the step uses a trace identity, not only the genus. Bean `qou-qhcr`.",
+        "**RESOLVED 2026-11-17 — the integer is chi_eu, under a stated hypothesis.** The block read `tr(kappa_0) = chi(A)`. The integer that controls the Kummer tower is the evaluation `e(xi)[S]`, which equals `chi_eu(S)` by Poincare-Hopf exactly when `xi` is the unit tangent bundle of `S` (`thm:qu-to-qou` item 2). That hypothesis is now stated. It is NOT supplied by `def:reeb-bundle` (the Hopf fibration over the fibre `S_p = S^2`, Euler number -1); for Bring it holds for the canonical-cone link `UT(Sigma_4)`, Euler number -6 (`lem:bring-cone-reeb-quaternionic-twist`). No trace of `A` enters. Whether every QOU's base circle bundle is `UT(M_0)` is open (bean `qou-qhcr`). PR #8365.",
     },
   ],
 });
