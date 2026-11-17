@@ -7,6 +7,8 @@ import Mathlib.GroupTheory.Perm.Basic
 import Mathlib.Data.Finset.Basic
 import Mathlib.Data.Finset.Powerset
 import Mathlib.Algebra.BigOperators.Group.Finset.Powerset
+import Mathlib.Algebra.BigOperators.Ring.Finset
+import Mathlib.Algebra.BigOperators.Group.Finset.Sigma
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
 
@@ -334,6 +336,100 @@ theorem connected_eq_zero_of_split (F : Finset ι → R) {T₁ T₂ : Finset ι}
         simp [Finset.insert_inter_of_notMem ha2])]
   simp
 
+/-- The indicator of "contains `S`" has connected part `1` on `S` itself. -/
+theorem connected_contains_self (S : Finset ι) :
+    connected (fun U => if S ⊆ U then (1 : R) else 0) S = 1 := by
+  unfold connected
+  rw [Finset.sum_eq_single S]
+  · simp only [subset_refl, if_true, mul_one, ← pow_add, ← two_mul, pow_mul]
+    simp
+  · intro U hU hne
+    have hUS : U ⊆ S := Finset.mem_powerset.mp hU
+    have : ¬ S ⊆ U := fun h => hne (Finset.Subset.antisymm hUS h)
+    simp [this]
+  · intro h; exact absurd (Finset.mem_powerset_self S) h
+
+/-- The indicator of "contains `S`" has zero connected part on any `T ≠ S`. -/
+theorem connected_contains_ne {S T : Finset ι} (hST : S ≠ T) :
+    connected (fun U => if S ⊆ U then (1 : R) else 0) T = 0 := by
+  by_cases hsub : S ⊆ T
+  · obtain ⟨a, haT, haS⟩ : ∃ a ∈ T, a ∉ S := by
+      by_contra h
+      push_neg at h
+      exact hST (Finset.Subset.antisymm hsub h)
+    refine connected_eq_zero_of_indep _ haT fun U _ => ?_
+    have : S ⊆ insert a U ↔ S ⊆ U := by
+      constructor
+      · intro h x hx
+        rcases Finset.mem_insert.mp (h hx) with rfl | h'
+        · exact absurd hx haS
+        · exact h'
+      · intro h; exact h.trans (Finset.subset_insert a U)
+    simp only [this]
+  · rw [connected_congr (G := fun _ => (0 : R)) fun U hU => by
+      have : ¬ S ⊆ U := fun h => hsub (h.trans hU)
+      simp [this]]
+    simp [connected]
+
+omit [DecidableEq ι] in
+/-- The connected part commutes with finite sums of set functions. -/
+theorem connected_finset_sum {κ : Type*} (s : Finset κ) (F : κ → Finset ι → R) (T : Finset ι) :
+    connected (fun U => ∑ k ∈ s, F k U) T = ∑ k ∈ s, connected (F k) T := by
+  simp only [connected, Finset.mul_sum]
+  exact Finset.sum_comm
+
+omit [DecidableEq ι] in
+/-- The connected part commutes with scaling. -/
+theorem connected_const_mul (c : R) (F : Finset ι → R) (T : Finset ι) :
+    connected (fun U => c * F U) T = c * connected F T := by
+  simp only [connected, Finset.mul_sum]
+  refine Finset.sum_congr rfl fun U _ => ?_
+  ring
+
+/-- A weighted indicator of "contains `S`" has connected part `w` on `S` and `0` elsewhere. -/
+theorem connected_weighted_contains (S T : Finset ι) (w : R) :
+    connected (fun U => if S ⊆ U then w else 0) T = if S = T then w else 0 := by
+  have : (fun U : Finset ι => if S ⊆ U then w else 0)
+      = fun U => w * (if S ⊆ U then (1 : R) else 0) := by
+    funext U; split_ifs <;> simp
+  rw [this, connected_const_mul]
+  split_ifs with h
+  · subst h; rw [connected_contains_self, mul_one]
+  · rw [connected_contains_ne h, mul_zero]
+
+/-- **Möbius coefficient.** If `F U = ∑_{S ∈ P, S ⊆ U} w S` on every `U ⊆ T`, then the connected
+part of `F` on `T` is `w T` when `T ∈ P` and `0` otherwise. So `w` lists the genuinely
+`|S|`-party terms of `F`, and the connected part reads them off one at a time. -/
+theorem connected_eq_coeff (F : Finset ι → R) (P : Finset (Finset ι)) (w : Finset ι → R)
+    (T : Finset ι) (hF : ∀ U ⊆ T, F U = ∑ S ∈ P, if S ⊆ U then w S else 0) :
+    connected F T = if T ∈ P then w T else 0 := by
+  rw [connected_congr hF, connected_finset_sum]
+  simp only [connected_weighted_contains]
+  rw [Finset.sum_ite_eq']
+
+/-- **Bond-additive set functions have no connected part beyond two parties.** Suppose that on
+every `U ⊆ T`, `F U` is a sum of one-strand terms `g a` (for `a ∈ U`) and two-strand bond terms
+`b e` over a set `E` of two-element bonds with `e ⊆ U`. Then `connected F T = 0` whenever
+`|T| ≥ 3`. For an open chain `E` is the set of adjacent pairs, so an open chain of bonds has zero
+`n`-party connected part for every `n ≥ 3`. The bond-additivity of `F` is the input; for a
+convolution (connected-sum) product of bonds it is the additivity of `log` of a multiplicative
+invariant, and it is not derived here. -/
+theorem connected_eq_zero_of_bonds (F : Finset ι → R) (g : ι → R) (E : Finset (Finset ι))
+    (b : Finset ι → R) (hE : ∀ e ∈ E, e.card = 2) (T : Finset ι) (h3 : 3 ≤ T.card)
+    (hF : ∀ U ⊆ T, F U = ∑ a ∈ T, (if {a} ⊆ U then g a else 0)
+        + ∑ e ∈ E, if e ⊆ U then b e else 0) :
+    connected F T = 0 := by
+  rw [connected_congr hF]
+  change connected ((fun U => ∑ a ∈ T, (if {a} ⊆ U then g a else 0))
+      + (fun U => ∑ e ∈ E, if e ⊆ U then b e else 0)) T = 0
+  rw [connected_add, connected_finset_sum, connected_finset_sum]
+  simp only [connected_weighted_contains]
+  have h1 : ∀ a ∈ T, ({a} : Finset ι) ≠ T := fun a _ h => by
+    have := congrArg Finset.card h; simp at this; omega
+  have h2 : ∀ e ∈ E, e ≠ T := fun e he h => by
+    have := hE e he; rw [h] at this; omega
+  rw [Finset.sum_eq_zero fun a ha => if_neg (h1 a ha),
+    Finset.sum_eq_zero fun e he => if_neg (h2 e he), add_zero]
 
 end Cumulant
 
