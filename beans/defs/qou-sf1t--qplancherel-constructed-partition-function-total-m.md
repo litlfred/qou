@@ -1,13 +1,13 @@
 ---
 # qou-sf1t
 title: 'QPlancherel: constructed partition function + total mass one (retroactive claim for merged PR #5372)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T16:05:17Z
-updated_at: 2026-10-04T15:13:41Z
+updated_at: 2026-11-17T06:35:30Z
 parent: qou-rtxm
 ---
 
@@ -110,3 +110,7 @@ Audit 2026-08-29-molien-jones-markov-n3-identification.md. Nothing wired.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-29 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-11-17 — Generic-Ring QPlancherel Total Mass One & Molien Normaliser (`litlfred/qou#8227`)
+- Formalized `qPlancherel_sum_measure_eq_one`, `qPlancherel_total_mass_defect_of_bad_Z`, and `molien_jones_markov_n3_common_normaliser` over generic `CommRingOps R` in `folio/quantum-observable-universe/lean/QOU/Foundations/Zeta4GenericRingPlancherel.lean` (wired into `QOU.lean`, `0` `sorry`, `0` warnings, `0` vacuity advisories, commit `6ea0f626b6fd6e4a73ad6fb742931324e3efe377`, PR [https://github.com/litlfred/qou/pull/8227](https://github.com/litlfred/qou/pull/8227)).
+- Kept `status: in-progress` per no-unilateral-closure policy.

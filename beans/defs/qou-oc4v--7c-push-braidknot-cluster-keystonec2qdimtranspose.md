@@ -1,13 +1,13 @@
 ---
 # qou-oc4v
 title: '§7c push: BraidKnot cluster (KeystoneC2QDimTranspose, DepthStratifiedFrobeniusReciprocity, knot_mass_unified, hoefsmit_*, KnotFactor*, QBetaWenzlDecomposition, six_term_mass_formula) to generic R'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-01T23:07:46Z
-updated_at: 2026-10-04T15:25:44Z
+updated_at: 2026-11-17T06:35:30Z
 parent: qou-rtxm
 ---
 
@@ -41,3 +41,7 @@ The one **MIXED** entry in the table above is fixed. Split per §7c into an alge
 Verified by compiler **and** by the canonical `wall-side-correct` checker, not by reading.
 
 ⚠ **Pre-existing, not introduced:** neither module is reachable from `QOU.lean`, so `lake build QOU` never elaborates either (both are in the 795-module orphan set of `qou-kljb`). The new sibling imports the algebraic module, so the two are linked to each other; wiring them into the umbrella is `qou-kljb`'s scope and was deliberately not attempted here.
+
+## 2026-11-17 — §7c Generic-Ring Braid–Knot Cluster Foundations (`litlfred/qou#8227`)
+- Formalized `keystone_c2_transpose_antisym`, `qbeta_wenzl_level_two_decomp`, and `six_term_mass_paired_decomposition` over generic `CommRingOps R` (zero `ℝ` occurrences) in `folio/quantum-observable-universe/lean/QOU/Foundations/Zeta4GenericRingPlancherel.lean` (wired into `QOU.lean`, `0` `sorry`, `0` warnings, `0` vacuity advisories, commit `6ea0f626b6fd6e4a73ad6fb742931324e3efe377`, PR [https://github.com/litlfred/qou/pull/8227](https://github.com/litlfred/qou/pull/8227)).
+- Kept `status: in-progress` per no-unilateral-closure policy.

@@ -1,13 +1,13 @@
 ---
 # qou-xbyp
 title: '§7c push: Mass/AtomicMass cluster (MagicNumbersFromQ, PaddedShapeLevelRational, RogersSzegoInhabited, TauQuantumIntegerForm, mass_categorical_descent) to generic R'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-01T23:07:46Z
-updated_at: 2026-10-04T15:25:44Z
+updated_at: 2026-11-17T06:35:30Z
 parent: qou-rtxm
 ---
 
@@ -26,3 +26,7 @@ Ran the **canonical folio-assistant checkers** (`wall-side-correct`, `wall-base-
 | `mass_categorical_descent` | 9 | n | n | **CANDIDATE** |
 
 ⚠ This is the **mass/atomic-mass** domain — the chapter profile expects `real-positive`/`fixed-q0`. A high ℝ count here is *expected and often correct*; this cluster has the highest false-positive risk of the four. Adjudicate against the chapter regime, not the raw count.
+
+## 2026-11-17 — §7c Generic-Ring Mass/AtomicMass Cluster Foundations (`litlfred/qou#8227`)
+- Formalized `rogersSzegoStep_at_one`, `rogersSzego_H2_identity`, and `mass_categorical_descent_telescope` over generic `CommRingOps R` (zero `ℝ` occurrences) in `folio/quantum-observable-universe/lean/QOU/Foundations/Zeta4GenericRingPlancherel.lean` (wired into `QOU.lean`, `0` `sorry`, `0` warnings, `0` vacuity advisories, commit `6ea0f626b6fd6e4a73ad6fb742931324e3efe377`, PR [https://github.com/litlfred/qou/pull/8227](https://github.com/litlfred/qou/pull/8227)).
+- Kept `status: in-progress` per no-unilateral-closure policy.
