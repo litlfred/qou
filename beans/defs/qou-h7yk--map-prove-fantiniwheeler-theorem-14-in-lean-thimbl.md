@@ -1,7 +1,9 @@
 ---
 # qou-h7yk
 title: 'MAP: prove Fantini–Wheeler Theorem 1.4 in Lean (thimble→state-integral + Borel–Laplace summability + tail-algorithm termination) — the premise discharging [BorelSummableToStateIntegral]'
-status: todo
+status: in-progress
+pr: 8235
+updated_at: 2026-11-17T06:55:36Z
 type: task
 priority: normal
 tags:
@@ -81,3 +83,8 @@ these and call it "proved" (AGENTS.md §"Axiomatization is NOT a Proof").
 
 -- Ref: [manuscript] arXiv:2410.20973 (Fantini–Wheeler 2024);
    docs/audits/2026-08-01-fantini-wheeler-summability-c3-borel-reframe.md
+
+## Progress Update (PR #8235)
+- **Status**: `in-progress` (awaiting Merge Manager merge of `litlfred/qou#8235` at `83fd5b4cb41e61d75f72ddd82bda505e34bd92f4`).
+- **Lean Formalization**: `QOU.QBeta.ThimbleDecompositionAndSymmetricPolytopeBrick.fantini_wheeler_thimble_state_integral_decomposition_balance` (Conjugate Lefschetz-thimble state-integral decomposition with terminating tail algorithm cancels Stokes ambiguity delta identically.)
+- **80-dps Witness**: `computations/probes/thimble-decomposition-and-symmetric-polytope-brick.witness.json` (`scriptHash: e55db77fb2bb`, `scriptCommitSha: 6020aea5785046b552772c9a42fc52ac2db9f3a2`).

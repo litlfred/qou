@@ -1,7 +1,9 @@
 ---
 # qou-krvm
 title: 'GAP: discharge optima_coincide''s hypotheses for the actual m004/L6a4 polytopes'
-status: todo
+status: in-progress
+pr: 8235
+updated_at: 2026-11-17T06:55:36Z
 type: feature
 priority: high
 tags:
@@ -155,3 +157,8 @@ The min-angle objective is a min of linear forms — concave, not strictly.
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+## Progress Update (PR #8235)
+- **Status**: `in-progress` (awaiting Merge Manager merge of `litlfred/qou#8235` at `83fd5b4cb41e61d75f72ddd82bda505e34bd92f4`).
+- **Lean Formalization**: `QOU.QBeta.ThimbleDecompositionAndSymmetricPolytopeBrick.symmetric_angle_polytope_barycenter_fixed_and_strict_concave_gap` (Swap invariance and exact quadratic concavity gap F_max - F(x, y) = (kappa/2)*(x - y)^2 >= 0 on the symmetric angle-structure hyperplane x + y = S.)
+- **80-dps Witness**: `computations/probes/thimble-decomposition-and-symmetric-polytope-brick.witness.json` (`scriptHash: e55db77fb2bb`, `scriptCommitSha: 6020aea5785046b552772c9a42fc52ac2db9f3a2`).

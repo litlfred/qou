@@ -1,7 +1,9 @@
 ---
 # qou-kyst
 title: Discharging the keystone conjecture and its one vacuous premise
-status: todo
+status: in-progress
+pr: 8235
+updated_at: 2026-11-17T06:55:36Z
 type: task
 priority: medium
 tags:
@@ -136,3 +138,8 @@ manuscript and carries no branch labels (C1, C2, GGM, Door-i…, Route A…);
 the surviving claim. `MISWAbelianisation` likewise. Neither F1 nor F3 was ever
 going to change that; the split only stops the block asserting something the
 corpus has refuted.
+
+## Progress Update (PR #8235)
+- **Status**: `in-progress` (awaiting Merge Manager merge of `litlfred/qou#8235` at `83fd5b4cb41e61d75f72ddd82bda505e34bd92f4`).
+- **Lean Formalization**: `QOU.QBeta.ThimbleDecompositionAndSymmetricPolytopeBrick.qdifference_prolongation_symbol_commutator_obstruction_identity` (Decomposition of the q-difference prolongation symbol E_M - q*M_E, classical limit at q = 1, and nonvanishing obstruction on a commutative shadow.)
+- **80-dps Witness**: `computations/probes/thimble-decomposition-and-symmetric-polytope-brick.witness.json` (`scriptHash: e55db77fb2bb`, `scriptCommitSha: 6020aea5785046b552772c9a42fc52ac2db9f3a2`).
