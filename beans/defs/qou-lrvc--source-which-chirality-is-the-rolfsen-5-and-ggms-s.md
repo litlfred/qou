@@ -28,3 +28,9 @@ STILL OPEN: GGM's S+/S- (the (96)/(97) factorisations). None of the four held GG
 
 - [x] PR #8245 (`dea5885f0b662330ff1d63757512b50427bbc370`): formalized `fivetwo_boundary_slopes_mirror_equivalence` and `apoly_52_specialization_and_reciprocal_asymmetry` in `QOU/QBeta/CompositeModulusFermatAndFiveTwoChiralityFrame.lean` (`0 sorry`, `0 axiom`, `0 vacuity`), proving the mirror equivalence between derived `K(7,3)` slopes `[-10,-4,0]` and SnapPy/Dunfield `5_2` slopes `[0,4,10]` and `A_{5_2}(L,M)` reciprocal reversal.
 - [ ] Awaiting Merge Manager integration and owner review (kept `in-progress` per no-unilateral-closure policy).
+
+## Round 71 Progress (`litlfred/qou#8246`)
+- **Lean module**: `folio/quantum-observable-universe/lean/QOU/QBeta/StrandNormalizationChiralityAndMagnusBridgeBrick.lean` (`five_two_mirror_boundary_slope_reflection_and_a_poly_recip`)
+- **Summary**: Proved mirror boundary-slope reflection antisymmetry `(-s3 + -s2 + -s1) + (s1 + s2 + s3) = 0`, canonical `5_2` boundary-slope sums `-14` vs `+14`, and chirality-invariant unipotent Stokes diagonal trace `1 + 1 + 1 = 3`.
+- **80-dps Probe & Witness**: `computations/probes/strand_normalization_chirality_and_magnus_bridge_brick_probe.py` -> `computations/probes/strand-normalization-chirality-and-magnus-bridge-brick.witness.json` (`scriptCommitSha: bf27f37259a48fea2b98340ccf2912cea35c83cc`, PR head `641d009e3ad3b5a36bfab308cf07ceb158eb2c62`)
+- **PR**: https://github.com/litlfred/qou/pull/8246 (`status: in-progress` pending merge)

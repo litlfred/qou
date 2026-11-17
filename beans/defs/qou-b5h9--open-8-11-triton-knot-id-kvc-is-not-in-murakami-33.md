@@ -253,3 +253,9 @@ Was in-progress with no bean update since 2026-08-30 and no main commit naming i
 
 - [x] PR #8245 (`dea5885f0b662330ff1d63757512b50427bbc370`): formalized `fermat_mod_nine_returns_pivot_on_units_and_zero_on_divisors`, `fermat_fails_on_non_pm_one_units_mod_nine_and_fifteen`, and `boundary_unit_self_inverse_identity` in `QOU/QBeta/CompositeModulusFermatAndFiveTwoChiralityFrame.lean` (`0 sorry`, `0 axiom`, `0 vacuity`), proving why composite Fermat inversion fails at `N = 9, 15` on non-`+/-1` units while coinciding with extended-Euclid on `+/-1` Whitehead face-incidence pivots.
 - [ ] Awaiting Merge Manager integration and owner review (kept `in-progress` per no-unilateral-closure policy).
+
+## Round 71 Progress (`litlfred/qou#8246`)
+- **Lean module**: `folio/quantum-observable-universe/lean/QOU/QBeta/StrandNormalizationChiralityAndMagnusBridgeBrick.lean` (`eight_eleven_two_bridge_treewidth_and_strand_normalization_scaling`)
+- **Summary**: Proved planar strand-normalization recurrence `N_3 = w0^2 != 0` for `w0 != 0` and the `8_{11} = S(27, 10)` two-bridge continued-fraction identity `27 / 10 = 2 + 1 / (1 + 1 / (2 + 1 / 3))`.
+- **80-dps Probe & Witness**: `computations/probes/strand_normalization_chirality_and_magnus_bridge_brick_probe.py` -> `computations/probes/strand-normalization-chirality-and-magnus-bridge-brick.witness.json` (`scriptCommitSha: bf27f37259a48fea2b98340ccf2912cea35c83cc`, PR head `641d009e3ad3b5a36bfab308cf07ceb158eb2c62`)
+- **PR**: https://github.com/litlfred/qou/pull/8246 (`status: in-progress` pending merge)

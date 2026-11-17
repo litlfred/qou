@@ -1,7 +1,7 @@
 ---
 # qou-p443
 title: 'Borel singularity vs Bring saddle: close the identification or refute it with the thimble action'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -55,3 +55,9 @@ measuring it.
 Nothing in this correction changes this bean's own verdict — the classical-jet
 period is still Lean-proved zero. Only the description of what infrastructure
 is missing was wrong.
+
+## Round 71 Progress (`litlfred/qou#8246`)
+- **Lean module**: `folio/quantum-observable-universe/lean/QOU/QBeta/StrandNormalizationChiralityAndMagnusBridgeBrick.lean` (`ramified_puiseux_classical_jet_residue_parity_vanishing`)
+- **Summary**: Proved ramified Puiseux quadratic coordinate `z = z_c + t^2` odd-parity pullback cancellation `(2 * c1 * t) + (2 * c1 * (-t)) = 0` vs non-vanishing `q`-difference shift `c1 * (p * t)^2 - c1 * t^2 = (p^2 - 1) * c1 * t^2 != 0`.
+- **80-dps Probe & Witness**: `computations/probes/strand_normalization_chirality_and_magnus_bridge_brick_probe.py` -> `computations/probes/strand-normalization-chirality-and-magnus-bridge-brick.witness.json` (`scriptCommitSha: bf27f37259a48fea2b98340ccf2912cea35c83cc`, PR head `641d009e3ad3b5a36bfab308cf07ceb158eb2c62`)
+- **PR**: https://github.com/litlfred/qou/pull/8246 (`status: in-progress` pending merge)
