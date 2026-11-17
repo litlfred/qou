@@ -128,12 +128,12 @@ theorem neg_mul (a b : R) : ops.mul (ops.neg a) b = ops.neg (ops.mul a b) := by
 theorem neg_mul_neg (a b : R) : ops.mul (ops.neg a) (ops.neg b) = ops.mul a b := by
   rw [ops.neg_mul, ops.mul_neg, ops.neg_neg]
 
-theorem mul_sub (a b c : R) :
+theorem mul_sub {R : Type u} (ops : CommRingOps R) (a b c : R) :
     ops.mul a (ops.sub b c) = ops.sub (ops.mul a b) (ops.mul a c) := by
   unfold sub
   rw [ops.left_distrib, ops.mul_neg]
 
-theorem sub_mul (a b c : R) :
+theorem sub_mul {R : Type u} (ops : CommRingOps R) (a b c : R) :
     ops.mul (ops.sub a b) c = ops.sub (ops.mul a c) (ops.mul b c) := by
   unfold sub
   rw [ops.right_distrib, ops.neg_mul]
@@ -148,11 +148,11 @@ theorem sub_eq_zero_iff {a b : R} : ops.sub a b = ops.zero ↔ a = b := by
     rw [h]
     exact ops.sub_self b
 
-theorem sub_zero (a : R) : ops.sub a ops.zero = a := by
+theorem sub_zero {R : Type u} (ops : CommRingOps R) (a : R) : ops.sub a ops.zero = a := by
   unfold sub
   rw [ops.neg_zero, ops.add_zero]
 
-theorem zero_sub (a : R) : ops.sub ops.zero a = ops.neg a := by
+theorem zero_sub {R : Type u} (ops : CommRingOps R) (a : R) : ops.sub ops.zero a = ops.neg a := by
   unfold sub
   rw [ops.zero_add]
 
@@ -226,11 +226,11 @@ def normalizedKnotInvariant {R : Type u} (ops : CommRingOps R)
     (writheFactor normTrace : R) : R :=
   ops.mul writheFactor normTrace
 
-/-- **Connected-Sum Multiplicativity of Normalized Jones Invariant (`qou-dyij`):**
-When the writhe factor is multiplicative (`w12 = w1 · w2`) and the normalized Markov trace
+/-- **Connected-Sum Multiplicativity of Normalized Knot Invariant (`qou-dyij`):**
+When the writhe factor is multiplicative (`w12 = w1 · w2`) and the normalized braid trace
 factors across separated braid components (`tr12 = tr1 · tr2`), the normalized knot invariant
 satisfies `V(K₁ # K₂) = V(K₁) · V(K₂)` over any commutative ring `R`. -/
-theorem jones_connected_sum_multiplicative {R : Type u} (ops : CommRingOps R)
+theorem knot_connected_sum_multiplicative {R : Type u} (ops : CommRingOps R)
     (w1 w2 w12 tr1 tr2 tr12 : R)
     (hWrithe : w12 = ops.mul w1 w2)
     (hTrace : tr12 = ops.mul tr1 tr2) :
@@ -254,12 +254,12 @@ theorem linking_excess_eq_zero_iff {R : Type u} (ops : CommRingOps R)
 
 /-! ## Section 3 (`qou-cc97`): Wenzl-Bridge Decomposition for `markovTrace_branching` -/
 
-/-- **Cleared Wenzl-Bridge Markov Trace Branching Identity (`qou-cc97`):**
-If the cleared Jones–Wenzl idempotent recursion in trace form satisfies
-`qNext · trPNext + qCurr · trPEP = qNext · trPCurr` and the Temperley–Lieb Markov trace
+/-- **Cleared Projector-Bridge Braid Trace Branching Identity (`qou-cc97`):**
+If the cleared idempotent recursion in trace form satisfies
+`qNext · trPNext + qCurr · trPEP = qNext · trPCurr` and the strand-closure trace
 factorization gives `trPEP = zTL · trPCurr`, then
 `qNext · trPNext = (qNext - qCurr · zTL) · trPCurr` over any commutative ring `R`. -/
-theorem wenzl_bridge_markov_trace_branching {R : Type u} (ops : CommRingOps R)
+theorem projector_bridge_trace_branching {R : Type u} (ops : CommRingOps R)
     (qCurr qNext zTL trPCurr trPNext trPEP : R)
     (hWenzl : ops.add (ops.mul qNext trPNext) (ops.mul qCurr trPEP) =
       ops.mul qNext trPCurr)
@@ -296,7 +296,7 @@ If an unnormalized central character projector `E` satisfies `E² = hProd · E`,
 1. When `hProd` has inverse `hInv` (`hInv · hProd = 1`), the normalized element `e = hInv · E`
    is idempotent (`e² = e`);
 2. At a root of unity where the hook product vanishes (`hProd = 0`), `E² = 0`. -/
-theorem wenzl_semisimple_idempotent_and_radical {R : Type u} (ops : CommRingOps R)
+theorem central_projector_semisimple_idempotent_and_radical {R : Type u} (ops : CommRingOps R)
     (E hProd hInv : R)
     (hE : ops.mul E E = ops.mul hProd E)
     (hInvProd : ops.mul hInv hProd = ops.one) :
@@ -323,8 +323,8 @@ def qIntBal2 {R : Type u} (ops : CommRingOps R) (s sInv : R) : R :=
 def qIntBal3 {R : Type u} (ops : CommRingOps R) (s sInv : R) : R :=
   ops.add (ops.add (ops.mul s s) ops.one) (ops.mul sInv sInv)
 
-/-- **Balanced Quantum-Integer Wenzl Identity `[2]_s² - 1 = [3]_s` (`qou-e4ri`):**
-When `s · s⁻¹ = 1` in `R`, the balanced half-integer quantum integers of `JonesMarkovWenzl`
+/-- **Balanced Quantum-Integer Recurrence Identity `[2]_s² - 1 = [3]_s` (`qou-e4ri`):**
+When `s · s⁻¹ = 1` in `R`, the balanced half-integer quantum integers
 satisfy `[2]_s² - 1 = [3]_s` over any commutative ring `R` without `Real.rpow`. -/
 theorem qIntBal_two_sq_sub_one_eq_three {R : Type u} (ops : CommRingOps R) (s sInv : R)
     (hs : ops.mul s sInv = ops.one) :
