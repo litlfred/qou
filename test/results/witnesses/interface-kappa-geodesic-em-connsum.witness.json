@@ -1,0 +1,46 @@
+{
+  "probe": "interface_kappa_geodesic_em_connsum_probe.py",
+  "gitCommit": "2b4b5612016793df004e2f2990d7681285f78653",
+  "scriptCommitSha": "2b4b5612016793df004e2f2990d7681285f78653",
+  "scriptHash": "5c337ec3fbc3",
+  "dps": 80,
+  "allPassed": true,
+  "checks": [
+    {
+      "name": "interface_scalar_convention_d_qou_5d6k",
+      "passed": true,
+      "muSinglet": "0.2472957354280402384304796",
+      "muTriplet": "0.7527042645719597615695204",
+      "pauliSWaveProduct": "0.1861405546671449625027798",
+      "stackedCrossingTrace": "1.128150444296034649169302",
+      "maxResidual": "2.108439588646104644869715e-81"
+    },
+    {
+      "name": "deuteron_kappa_verdict_qou_6he8",
+      "passed": true,
+      "kappaBorromean": "0.1875",
+      "twoThirdsKappaGap": "0.125",
+      "maxResidual": "0.0"
+    },
+    {
+      "name": "hyperbolic_geodesic_intersection_qou_r111",
+      "passed": true,
+      "radius": "2.0",
+      "maxFixedPointResidual": "4.21687917729220928973943e-81"
+    },
+    {
+      "name": "euler_maclaurin_midpoint_refinement_qou_shrp",
+      "passed": true,
+      "cellDefect": "-0.0007894010741288299997920349",
+      "midpointEstimate": "-0.0007607246456210937342716288",
+      "absError": "0.00002867642850773626552040606",
+      "halfBracketWidth": "0.00008683674581664666938827397"
+    },
+    {
+      "name": "connected_sum_annihilator_closure_qou_zhep",
+      "passed": true,
+      "eigenProduct": "15.0",
+      "maxResidual": "0.0"
+    }
+  ]
+}
