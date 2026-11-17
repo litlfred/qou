@@ -1,0 +1,64 @@
+{
+  "probe": "round59-oneloop-edge-winding-gf-eichler-median-habiro-picard",
+  "scriptPath": "computations/probes/round59_oneloop_edge_winding_gf_eichler_median_habiro_picard_probe.py",
+  "scriptHash": "d2a5f5d61a92fc1433bbf92ece8f2d8ccc6a3d1409af61286d519fe7ae39ebd0",
+  "scriptSha256": "d2a5f5d61a92fc1433bbf92ece8f2d8ccc6a3d1409af61286d519fe7ae39ebd0",
+  "scriptCommitSha": "9ff4dd7a1c80c9d8b789a5abcfa8c63a9bb600dc",
+  "precisionDps": "80",
+  "beans": [
+    "qou-0u2a",
+    "qou-zxlz",
+    "qou-68uk",
+    "qou-5f6d",
+    "qou-6eke"
+  ],
+  "leanModules": [
+    "folio/quantum-observable-universe/lean/QOU/QBeta/OneLoopEdgeLatticeAndWindingGFContinuation.lean",
+    "folio/quantum-observable-universe/lean/QOU/QBeta/MedianResummationEichlerAndHabiroPicardRegulator.lean"
+  ],
+  "allPassed": true,
+  "checks": [
+    {
+      "bean": "qou-0u2a",
+      "description": "Dimofte-Garoufalidis [dimofte-garoufalidis-2013] 1-loop NZ shape cyclic identity, unimodular row-basis determinant invariance, and 4_1 torsion norm",
+      "shapeProductResidual": "0.0",
+      "unimodularDetResidual": "4.71461424666438376409064627815982141778e-81",
+      "fourOneTorsionMagnitude": "3.464101615137754587054892683011744733886",
+      "fourOneTorsionNormSquared": "12.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-zxlz",
+      "description": "DGG [dimofte-gaiotto-gukov2013] & GGM [garoufalidis-gu-marino2023peacock] winding GF unit-sheet imaginary vanishing and outward continuation radial gain",
+      "unitSheetRealValue": "1.711952012477556040531987031927165837611",
+      "unitSheetImagResidual": "1.20160000341254380492896983670902898572e-84",
+      "outwardRadialGainFactor": "1.221402758160169833921071994639674170308",
+      "passed": true
+    },
+    {
+      "bean": "qou-68uk",
+      "description": "Garoufalidis [garoufalidis2021] combinatorial 4_1 NZ symplectic check and 2<->3 Pachner retriangulation torsion invariance",
+      "symplecticDefect": "0",
+      "torsionNorm2Tet": "3.464101615137754587054892683011744733886",
+      "torsionNorm3Tet": "3.464101615137754587054892683011744733886",
+      "retriangulationResidual": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-5f6d",
+      "description": "McSpirit-Rolen [mcspirit-rolen2025] median resummation lateral average recovery of real part and isolation of Stokes jump",
+      "medianRecoveredValue": "0.4264088061620961820920369954268773156712",
+      "medianRecoveryResidual": "0.0",
+      "stokesJumpIsolationResidual": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-6eke",
+      "description": "Wagner [wagner2025] Habiro ring K_3->Pic regulator section: (q-1)^4 completion vanishing vs non-zero support at 7th root of unity",
+      "jetMagnitudeAtEps1e20": "2.400000000000000000072000000000000000001e-79",
+      "jetLeadingAsymptoticRelativeError": "3.000000000000000000040833333333333333334e-20",
+      "rootOfUnityMagnitudeAtZeta7": "5.158833603697047696366604149036190685731",
+      "passed": true
+    }
+  ]
+}
