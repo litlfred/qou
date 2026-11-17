@@ -1,7 +1,8 @@
 ---
 # qou-fx5g
 title: Update the ell-1 binding ceiling from 59% to 69.2% in downstream artifacts (D frame, proton pin)
-status: todo
+status: in-progress
+pr: 8302
 type: task
 priority: normal
 tags:

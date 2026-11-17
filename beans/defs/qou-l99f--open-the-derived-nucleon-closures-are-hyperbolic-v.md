@@ -1,7 +1,8 @@
 ---
 # qou-l99f
 title: 'OPEN: the derived nucleon closures are hyperbolic (Vol 4.75–16.19 per sign branch) — does an ABSOLUTE per-branch volume enter the mass law, now that the difference is identically zero?'
-status: todo
+status: in-progress
+pr: 8302
 type: task
 priority: normal
 tags:

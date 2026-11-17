@@ -1,7 +1,8 @@
 ---
 # qou-u8oy
 title: Vector 3 (multi-level jet tower) is NOT open — conj:binding-manybody-eq-jet-filtration already carries it
-status: todo
+status: in-progress
+pr: 8302
 type: task
 priority: normal
 tags:
