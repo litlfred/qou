@@ -1,7 +1,8 @@
 ---
 # qou-9ilw
 title: 'FINDING: crossing energy E_x = 1 IS the silver-ratio beta-decay null (h=2 branch); E_x=0 is the h=0 branch'
-status: todo
+status: in-progress
+pr: 8251
 type: task
 priority: normal
 tags:
@@ -316,3 +317,7 @@ order. If CI reddens, those are the places to look first.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-30 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## Round 53 Formalization Update (2026-11-17)
+- Formalized in `QOU.MassTheory` (`ConventionDErrorShiftAndBrunnianShortfall.lean`, `IntensiveVsExtensiveBindingAndClosureArity.lean`, `CrossingEnergyQuadraticAndBoxDiscrepancy.lean`) with 50-dps probe `computations/probes/convention_d_brunnian_intensive_arity_silver_probe.py` and witness on PR #8251.

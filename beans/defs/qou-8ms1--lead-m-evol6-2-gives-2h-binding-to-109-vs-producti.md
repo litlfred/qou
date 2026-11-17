@@ -1,7 +1,8 @@
 ---
 # qou-8ms1
 title: 'LEAD: m_e*Vol(6_2) gives 2H binding to 1.09% vs production B_sym''s 27.34% - knot-ID route, gated on open conj:canonical-knot-id-sdp'
-status: todo
+status: in-progress
+pr: 8251
 type: task
 priority: normal
 tags:
@@ -64,3 +65,7 @@ the ²H closure is a 3-component link on 6 strands, which `6_2` (a knot) is not.
 Probe `computations/probes/link_assignment_census_selectivity_probe.py`;
 the census-degeneracy half of it is this bean's prior work, re-measured as a
 guard (A5) and cited, not claimed.
+
+
+## Round 53 Formalization Update (2026-11-17)
+- Formalized in `QOU.MassTheory` (`ConventionDErrorShiftAndBrunnianShortfall.lean`, `IntensiveVsExtensiveBindingAndClosureArity.lean`, `CrossingEnergyQuadraticAndBoxDiscrepancy.lean`) with 50-dps probe `computations/probes/convention_d_brunnian_intensive_arity_silver_probe.py` and witness on PR #8251.
