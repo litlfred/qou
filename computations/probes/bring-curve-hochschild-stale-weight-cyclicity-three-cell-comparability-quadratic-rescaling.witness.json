@@ -1,0 +1,59 @@
+{
+  "probe": "bring_curve_hochschild_stale_weight_cyclicity_three_cell_comparability_quadratic_rescaling_probe",
+  "scriptPath": "computations/probes/bring_curve_hochschild_stale_weight_cyclicity_three_cell_comparability_quadratic_rescaling_probe.py",
+  "scriptHash": "326bd13833f0",
+  "scriptCommitSha": "8ee314938e6a9bac9ee46faedf9aebdee8b895fb",
+  "executedAt": "2026-11-17T12:58:04Z",
+  "dps": "80",
+  "allPassed": true,
+  "checks": [
+    {
+      "bean": "qou-1ngt",
+      "theorem": "QOU.Foundations.BringCurveHochschildStaleWeightCyclicityThreeCellComparabilityQuadraticRescaling.bring_curve_genus_and_s5_standard_irrep",
+      "euler_characteristic": "-6",
+      "genus_dim_hh1": "4",
+      "std4_inner_sum": "120",
+      "std4_triv_inner_sum": "0",
+      "passed": true
+    },
+    {
+      "bean": "qou-bgur",
+      "theorem": "QOU.Foundations.BringCurveHochschildStaleWeightCyclicityThreeCellComparabilityQuadraticRescaling.three_cell_comparability_orbit_sizes",
+      "counts": [
+        "1",
+        "1",
+        "2",
+        "3",
+        "3",
+        "6"
+      ],
+      "nonadj_manhattan_dist": "5",
+      "passed": true
+    },
+    {
+      "bean": "qou-isu5",
+      "theorem": "QOU.Foundations.BringCurveHochschildStaleWeightCyclicityThreeCellComparabilityQuadraticRescaling.stale_vs_genuine_longest_weight_factorization",
+      "w6_genuine_at_zC": "0.54899152120987700076058583339062393428178532798342113804751544764260144757240165",
+      "w6_stale_at_zC": "0.12297882997544587297070496505529299074075511145626759554089107850906041201223947",
+      "cyclicity_defect_at_zC": "0.42601269123443112778988086833533094354103021652715354250662436913354103556016218",
+      "max_factorization_residual": "5.2710989716152616121742870256350095038549806911842537750388815125540721454848798e-82",
+      "passed": true
+    },
+    {
+      "bean": "qou-oyty",
+      "theorem": "QOU.Foundations.BringCurveHochschildStaleWeightCyclicityThreeCellComparabilityQuadraticRescaling.quadratic_convention_A_B_rescaling_identity",
+      "max_rescaling_residual": "2.1084395886461046448697148102540038015419922764737015100155526050216288581939519e-81",
+      "gap_rescaling_residual": "4.2168791772922092897394296205080076030839845529474030200311052100432577163879038e-81",
+      "convention_B_gap_at_q0": "2.0108972539799428176711744310534506524382600055850231294198227130527927358676763",
+      "passed": true
+    },
+    {
+      "bean": "qou-zut2",
+      "theorem": "QOU.Foundations.BringCurveHochschildStaleWeightCyclicityThreeCellComparabilityQuadraticRescaling.convention_B_eigenprojector_decomposition_and_gap_pos",
+      "max_projector_sum_residual": "4.2168791772922092897394296205080076030839845529474030200311052100432577163879038e-81",
+      "max_projector_orth_residual": "1.054219794323052322434857405127001900770996138236850755007776302510814429096976e-81",
+      "cleared_gap_denom_at_q0": "2.23205701875472967140300586093238970724",
+      "passed": true
+    }
+  ]
+}
