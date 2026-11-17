@@ -1,13 +1,13 @@
 ---
 # qou-yax5
 title: y_lambda / H4 block projectors are pinned to R for no reason — lift to LinearOrderedField, then generic Field + poincare-nonzero
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T17:21:11Z
-updated_at: 2026-10-04T15:25:41Z
+updated_at: 2026-11-17T06:22:00Z
 parent: qou-rtxm
 ---
 
@@ -126,3 +126,8 @@ Step 2 — fully generic `[Field K]` plus `hP : poincare q ≠ 0` — is still o
 still worth doing where the genericity is load-bearing: `P` genuinely vanishes at
 roots of unity, so the hypothesis is real, and it is the shape `wedderburn₃/₄`
 already carry.
+
+## 2026-11-17 — Generic-Ring H_4(q) Poincaré Factorisation & Block Projectors (`QOU.Foundations.CalibrationJMGibbsBarPoincare`, PR #8223)
+- Formalized `qInt2`, `qInt3`, `qInt4`, `h4PoincareFactored`, `h4_poincare_invertible_of_qint_invertible`, and `h4_normalized_projector_idempotent` in `folio/quantum-observable-universe/lean/QOU/Foundations/CalibrationJMGibbsBarPoincare.lean` (pure Lean 4 core, generic `CommRingOps R` per §7c, `0` `sorry`, `0` warnings, `0` vacuity audit hits; wired into `QOU.lean`).
+- Commit: `71263060fde5e0d5c09fecd66cf05ada5b6cd208` | PR: `https://github.com/litlfred/qou/pull/8223`
+- Kept at `status: in-progress` per merge-manager protocol.

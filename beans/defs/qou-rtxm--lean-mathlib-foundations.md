@@ -6,7 +6,7 @@ type: milestone
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-04T15:09:55Z
-updated_at: 2026-11-16T21:54:00Z
+updated_at: 2026-11-17T06:22:00Z
 ---
 
 Foundational Lean infrastructure. Measured 2026-10-04: 9-15 real `sorry` on main; open gaps now sit in axioms and instance-less classes. The only item on the L2 critical path is SW-WIRE (WedderburnDecomp instance, markov_trace_unique_axiom), gated by owner decision qou-ar7f.
@@ -29,3 +29,6 @@ Foundational Lean infrastructure. Measured 2026-10-04: 9-15 real `sorry` on main
 
 ## 2026-11-16 — Convention D H_3 Keystone Uniqueness, N=3 Second Trace Det, E_{(3,2)} Branching, W3 Iterated Trace & B2d Form (`qou-u2jg`, `qou-yk03`, `qou-nzi9`, `qou-r765`, `qou-t2ot`, PR #8214)
 - Formalized `folio/quantum-observable-universe/lean/QOU/Foundations/ConventionDKeystoneTraceTower.lean` (`0` `sorry`, generic `CommRingOps R` per §7c, wired into `QOU.lean`, commit `7cc3c04b0719e92286ff6279855cbf3f0b9a7826`, PR `https://github.com/litlfred/qou/pull/8214`). Kept `status: in-progress`.
+
+## 2026-11-17 — Pinned Beta Calibration, JM Twist Scaling, Central Gibbs Markov State, kappa-Bar Commutation & H_4 Poincaré Projectors (`qou-4zu7`, `qou-u9o1`, `qou-unqc`, `qou-xgt8`, `qou-yax5`, PR #8223)
+- Formalized `folio/quantum-observable-universe/lean/QOU/Foundations/CalibrationJMGibbsBarPoincare.lean` (`0` `sorry`, generic `CommRingOps R` per §7c, wired into `QOU.lean`, commit `71263060fde5e0d5c09fecd66cf05ada5b6cd208`, PR `https://github.com/litlfred/qou/pull/8223`). Kept `status: in-progress`.
