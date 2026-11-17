@@ -1,0 +1,60 @@
+{
+  "probe": "angle_polytope_feasibility_and_clausen_unit_circle_brick_probe.py",
+  "beans": [
+    "qou-0y6l",
+    "qou-amvt",
+    "qou-fv70",
+    "qou-j6mp",
+    "qou-mokg"
+  ],
+  "precisionDps": "80",
+  "scriptHash": "2cbc25827af3",
+  "scriptCommitSha": "ec2c1b177f9eff729f315a26ddbb5ea7edbf540d",
+  "generatedAt": "2026-11-17T07:02:19.498079+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "beanId": "qou-0y6l",
+      "theorem": "fkr_denominator_clearing_spurious_locus_split",
+      "aDenom": "2.5",
+      "uSat": "0.4",
+      "saturationResidual": "0.0",
+      "qTrueRecovered": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-amvt",
+      "theorem": "angle_structure_interior_simplex_feasibility_and_volume_witness",
+      "alpha1": "1.227197551196597746154214461093167628066",
+      "alpha2": "0.9271975511965977461542144610931676280657",
+      "alpha3": "0.9871975511965977461542144610931676280657",
+      "angleSumResidual": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-fv70",
+      "theorem": "bloch_wigner_unit_circle_clausen_odd_reflection_and_triplication",
+      "clausenPiOver3": "1.014941606409653625021202554274520285942",
+      "clausenTwoPiOver3": "0.6766277376064357500141350361830135239611",
+      "duplicationResidual": "1.054219794323052322434857e-81",
+      "fiveThirdsSumResidual": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-j6mp",
+      "theorem": "coequational_bridge_vs_entire_egf_stokes_defect_dichotomy",
+      "deltaOmegaF": "2.625",
+      "coequationalResidual": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-mokg",
+      "theorem": "bring_hyperbolic_five_fold_tetrahedron_sum_decomposition",
+      "dTet": "1.014941606409653625021202554274520285942",
+      "vBring": "5.074708032048268125106012771372601429708",
+      "fiveFoldResidual": "0.0",
+      "orbitAverageResidual": "0.0",
+      "passed": true
+    }
+  ]
+}
