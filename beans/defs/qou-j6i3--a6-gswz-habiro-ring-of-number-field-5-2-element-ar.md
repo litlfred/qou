@@ -1,13 +1,16 @@
 ---
 # qou-j6i3
 title: 'A6: GSWZ Habiro-ring-of-number-field 5_2 element — archimedean evaluation (open problem, backlog)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-18T14:22:55Z
-updated_at: 2026-10-04T15:16:10Z
+updated_at: 2026-11-17T11:44:00Z
 parent: qou-cv7z
 ---
 
+## Round 87 Progress (`litlfred/qou#8326`)
+- **Lean 4.24.0 Module**: `folio/quantum-observable-universe/lean/QOU/QBeta/JetHorizonHabiroAndSteinMarginBrick.lean` (`0` `sorry`, `0` `axiom`, `0` warnings; `0` CRITICAL, `0` major, `0` advisory across all directory-mode static audits).
+- **80-dps Probe & Witness**: `computations/probes/jet_horizon_habiro_and_stein_margin_brick_probe.py` & `computations/probes/jet-horizon-habiro-and-stein-margin-brick.witness.json` (`scriptCommitSha = 34352b344244b9e4cceaf3e3a4c56aa375f7bdc5`, HEAD `10540538cb20efacf68a8b53a97722f79167a3a5`, `allPassed = true`).
