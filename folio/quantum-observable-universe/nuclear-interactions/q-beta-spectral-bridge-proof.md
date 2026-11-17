@@ -1,7 +1,6 @@
 **Proof.**
 
-> **Scope note (2026-11-15).** Two steps here are assumed rather than proved. First, the order-$h^2$ term of $\ln(V_{\mathrm{pp}}/V_{\mathrm{nn}})$: the step $z h + O(h^2) = \ln(1 + zh) + O(h^3)$ needs the $h^2$ coefficient to be $-z^2/2$, which is not computed. Second, the exponential remainder rests on conj:archimedean-remainder-exponential-decay, a conjecture, so the remainder bound is conditional. The $+1.31$ keV residual and the CODATA $7\%$ agreement are empirical comparisons, not proof steps. No `sorry` exists in the companion Lean for the `Real.log` steps; the Lean section's sentence about deferring them is out of date.
-
+> **Scope note (2026-11-17).** The order-$h^2$ term of $\ln(V_{\mathrm{pp}}/V_{\mathrm{nn}})$ is now computed rather than assumed, under the one-site reading stated in the Form B step below: there $V_{\mathrm{pp}}/V_{\mathrm{nn}} = 1 + zh$ exactly, so the $h^2$ coefficient is $-z^2/2$. That reading takes the left and right products $L_i$, $R_i$ to be the identity; the corpus does not construct them for the free neutron, and the alternative reading of two independent sites gives $-z^2/4$ and a different first-order term. The exponential remainder rests on conj:archimedean-remainder-exponential-decay, a conjecture, so the remainder bound is conditional. Form A here is the retired $z = 1$ cell $|h(2-h)/2|$, not the convention-D base $|h^2/2 - h z_D|$. The $+1.31$ keV residual and the CODATA $7\%$ agreement are empirical comparisons, not proof steps.
 
 *Form A side.* The normal form counit reads $\lvert\Delta(\mathrm{net})\rvert = h(2 - h)/2 = h - h^2/2 + O(h^3)$, obtained via direct expansion of the single-wrap symbolic closed form ([prop:neutron-qvalue-symbolic](#prop:neutron-qvalue-symbolic)).
 
@@ -14,19 +13,25 @@ $$
   \tfrac{z\,h}{2} + O(h^2).
 $$
 
-At single wrap with $A = 1$, the proton-to-neutron conversion affects two generators, $\sigma_0$ and $\sigma_1$ ([prop:neutron-qvalue-symbolic](#prop:neutron-qvalue-symbolic)). The total log-ratio is:
+At single wrap with $A = 1$ we take the conversion to act at one site, with $L_i = R_i = \mathbb{I}$: the crossing passes $T_{nn} \to T_{\mathrm{mix}} \to T_{pp}$, each step adding $\Delta_\beta = \tfrac{h}{2}\mathbb{I}$ ([prop:beta-decay-transfer-matrix](#prop:beta-decay-transfer-matrix)). With $\hat V = z M_{11} + M_{21}$,
+$$
+  \hat V(T_{nn}) = 1,
+  \qquad
+  \hat V(T_{\mathrm{mix}}) = 1 + \tfrac{z h}{2},
+  \qquad
+  \hat V(T_{pp}) = 1 + z h,
+$$
+so the two steps telescope and
 $$
   \ln\!\frac{V_{\mathrm{pp}}}{V_{\mathrm{nn}}}
   \;=\;
-  \sum_{i \in \{0,1\}}
-    \ln\!\frac{\hat V^{\mathrm{pp}}_i}{\hat V^{\mathrm{nn}}_i}
-  \;\approx\;
-  2 \cdot \tfrac{z\,h}{2}
+  \ln\!\frac{1 + zh/2}{1} + \ln\!\frac{1 + zh}{1 + zh/2}
   \;=\;
-  z\,h \;+\; O(h^2)
+  \ln(1 + z\,h)
   \;=\;
-  \ln(1 + z\,h) + O(h^3).
+  z h - \tfrac{z^2 h^2}{2} + O(h^3)
 $$
+exactly, not only to leading order.
 
 *Ratio.* We form the dimensionless ratio $\mathfrak{Q}_\beta^{\mathrm{A}} / \mathfrak{Q}_\beta^{\mathrm{B}}$ and divide by $E_0$ to cancel $h$ in the leading term:
 $$
@@ -69,4 +74,4 @@ The residual lies within the $O(h^2)$ Taylor bound. The MeV-level discrepancy be
 
 ## Lean formalization
 
-The companion Lean repository records the bridge identities (`polynomial_bridge_identity`, `leading_order_ratio_identity`, `bridge_first_order_remainder`). We defer the `Real.log` steps via `sorry` (`-- Ref: [leitner2026]`).
+The companion Lean repository records the bridge identities (`polynomial_bridge_identity`, `leading_order_ratio_identity`, `bridge_first_order_remainder`). It also proves the `Real.log` Taylor bounds used here (`log_one_add_taylor_bound`) and contains no `sorry`.
