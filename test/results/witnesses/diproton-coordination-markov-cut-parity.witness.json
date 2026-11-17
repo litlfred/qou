@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "1.0",
+  "witnessId": "diproton-coordination-markov-cut-parity",
+  "scriptPath": "computations/probes/diproton_coordination_markov_cut_parity_probe.py",
+  "scriptCommitSha": "cfebb01621939a34b7b6881f7cb1f8c1de011515",
+  "scriptHash": "54f10b23e4d2",
+  "generatedAt": "2026-11-17T08:24:08Z",
+  "dps": "80",
+  "beans": [
+    "qou-ales",
+    "qou-edt7",
+    "qou-gr3t",
+    "qou-qve5",
+    "qou-vwu3"
+  ],
+  "theorems": [
+    "QOU.Mass.DiprotonResponseClosedForm.classical_values_at_one",
+    "QOU.Mass.CoordinationWeightDifferences.bind_three_and_four_ursell_reconstruct",
+    "QOU.Hecke.MarkovTrace.trace_bond_pair_eq_prod_single_bonds",
+    "QOU.Hecke.BondCutSymmetry.bondSum_mirror_diff_cut_invariant",
+    "QOU.MassTheory.BondChannelTzParity.parityRatioSlope_at_one_and_cayley"
+  ],
+  "allPassed": true,
+  "checks": [
+    {
+      "name": "classical_values_at_one",
+      "bean": "qou-ales",
+      "responseCoeff_1": "3/8",
+      "nucleonTrace_1": "1/2",
+      "passed": true
+    },
+    {
+      "name": "bind_three_and_four_ursell_reconstruct",
+      "bean": "qou-edt7",
+      "bind3": "51/7",
+      "bind4": "58/3",
+      "passed": true
+    },
+    {
+      "name": "trace_bond_pair_eq_prod_single_bonds",
+      "bean": "qou-gr3t",
+      "pairTrace": "34504/585585",
+      "passed": true
+    },
+    {
+      "name": "bondSum_mirror_diff_cut_invariant",
+      "bean": "qou-qve5",
+      "mirrorDiff": "-12/5",
+      "passed": true
+    },
+    {
+      "name": "parityRatioSlope_at_one_and_cayley",
+      "bean": "qou-vwu3",
+      "cayleyResidual80dps": "4.21687917729220928973943e-81",
+      "passed": true
+    }
+  ]
+}
