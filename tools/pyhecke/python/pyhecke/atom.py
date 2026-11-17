@@ -462,9 +462,21 @@ def reject_float64_q(q, *, allow_float64: bool = False, where: str = "") -> None
 def nucleon_gen_chains(quarks, *, q=None, allow_float64: bool = False):
     """Per-generator crossing chains for one nucleon.
 
-    Derives chains from the quark content, matching build_nucleon_nf:
-      B₃ = (σ₀σ₁⁻¹)³ contributes to both gen 0 and gen 1
-      Quark pairs: (0,1)→gen=0, (0,2)→gen=0, (1,2)→gen=1
+    Derives the 11-crossing multiset from the quark content and partitions it
+    by generator into ``(g0_chain, g1_chain)`` of lengths ``(7, 4)``:
+      * ``B₃ = (σ₀σ₁⁻¹)³`` contributes 3 crossings to ``gen 0`` and 3 to ``gen 1``
+      * Quark pairs: ``(0,1)→gen=0``, ``(0,2)→gen=0``, ``(1,2)→gen=1``
+      * Gluon self-coupling: ``2 × σ₀`` on ``gen 0`` (ILP-derived)
+
+    **Note on ordering vs ``build_nucleon_nf`` (bean ``qou-i3wb``).**
+    ``nucleon_gen_chains`` and ``build_nucleon_nf`` share the same 11-crossing
+    multiset (since ``qou-1qsw`` added the ``2 × σ₀`` gluon self-coupling to
+    ``build_nucleon_nf``), but they do **not** represent the same element of
+    ``H₃(q)`` when ``g0_chain`` and ``g1_chain`` are concatenated: splitting by
+    generator flattens ``B₃ = (σ₀σ₁⁻¹)³`` into ``σ₀³`` on ``g0`` and ``σ₁⁻³``
+    on ``g1`` (the grouped/monotone word; see ``grouped_word_from_chains``),
+    whereas ``build_nucleon_nf`` and ``nucleon_braid_word`` preserve the
+    alternating Borromean order.
 
     Returns (g0_chain, g1_chain) as lists of (c, d) tuples.
 
@@ -996,6 +1008,13 @@ def build_nucleon_nf(quarks):
     The parity rule constrains k to be even; it does **not** force k > 0
     (k = 0 is PSD too). That the vertex is present at all rests on the SDP
     decomposition, not on parity.
+
+    **Ordering vs ``nucleon_gen_chains`` (bean ``qou-i3wb``).** This builder
+    multiplies ``B₃ = (σ₀σ₁⁻¹)³`` in alternating braid order before the 3 quark
+    and 2 gluon crossings (matching ``nucleon_braid_word``). By contrast,
+    ``nucleon_gen_chains`` partitions the same 11-crossing multiset by
+    generator into ``(g0_chain, g1_chain)`` of lengths ``(7, 4)``, which
+    corresponds to the grouped/monotone ordering ``grouped_word_from_chains``.
     """
     nf = [1.0, 0, 0, 0, 0, 0]
     # B₃ confinement: (σ₀·σ₁⁻¹)³

@@ -1032,15 +1032,117 @@ def _assertion_from_mapping(rec: Mapping[str, Any]) -> "Assertion":
 # is laundering, and `witness_float64_padding_audit.py` catches it. Carry
 # `mpmath.mpf` from the source and serialize with `_precision.fmt`.
 
-def _raw_float_paths(obj, path=""):
-    """Yield JSON paths of every raw (non-integer-valued) float in `obj`."""
+_F64_SIG_DIGITS = 17
+
+LP_DUAL_F64_FIELDS = frozenset({
+    "x_star", "y_star", "y0_star", "u_lambda_star",
+    "primal_obj", "dual_obj", "duality_gap",
+})
+
+F64_INTEGRATOR_TIER = "float64-integrator"
+F64_DEPRECATED_TIER = "float64"
+
+
+def _sig_digits(s: str) -> int:
+    """Significant decimal digits in a numeric string ('1.20e-3' -> 3)."""
+    mantissa = s.strip().lstrip("+-").split("e")[0].split("E")[0]
+    return len(mantissa.replace(".", "").lstrip("0"))
+
+
+def _is_full_precision_shadow(value, companion) -> bool:
+    """Is ``companion`` a ``*_str`` carrying MORE precision than ``value``,
+    AND agreeing with the float it shadows (bean ``qou-ftuv``, ``qou-7q56``)?"""
+    _AGREE_REL_TOL = 1e-9
+
+    def _agrees(v: float, c: str) -> bool:
+        try:
+            cv = float(c)  # float64-ok: compare companion at f64 width
+        except ValueError:
+            return False
+        if cv == v:
+            return True
+        scale = max(abs(v), abs(cv))
+        return scale > 0 and abs(cv - v) <= _AGREE_REL_TOL * scale
+
+    if isinstance(value, float) and isinstance(companion, str):
+        return _sig_digits(companion) > _F64_SIG_DIGITS and _agrees(value, companion)
+    if isinstance(value, (list, tuple)) and isinstance(companion, (list, tuple)):
+        if not value or len(value) != len(companion):
+            return False
+        pairs = list(zip(value, companion))
+        if not all(isinstance(v, float) and isinstance(c, str) for v, c in pairs):
+            return False
+        return all(
+            _sig_digits(c) > _F64_SIG_DIGITS and _agrees(v, c) for v, c in pairs
+        )
+    return False
+
+
+def _declares_f64_integrator(doc) -> bool:
+    """Has this witness explicitly claimed the float64-integrator tier?"""
+    if not isinstance(doc, dict):
+        return False
+    for holder in (doc, doc.get("data"), doc.get("result")):
+        if isinstance(holder, dict) and \
+                holder.get("precision_tier") == F64_INTEGRATOR_TIER:
+            return True
+    return False
+
+
+def _declares_deprecated_f64(doc) -> bool:
+    """Has this witness declared BOTH the float64 tier and its deprecation?"""
+    if not isinstance(doc, dict):
+        return False
+    for holder in (doc, doc.get("data"), doc.get("result")):
+        if not isinstance(holder, dict):
+            continue
+        if holder.get("precision_tier") == F64_DEPRECATED_TIER \
+                and holder.get("deprecated"):
+            return True
+    return False
+
+
+def _raw_float_paths(obj, path="", integral_is_exact: bool = True):
+    """Yield JSON paths of every raw (non-integer-valued, unshadowed,
+    non-carved-out) float in ``obj`` (bean ``qou-7q56``).
+
+    Applies the same exemptions as ``witness_raw_float64_audit.count_raw_floats``
+    so the producer-side locator and the audit gate agree on every witness:
+      * ``*_str`` full-precision shadow rule (``_is_full_precision_shadow``);
+      * ``LP_DUAL_F64_FIELDS`` solver-output carve-out;
+      * runtime-duration metadata fields in ``_EPHEMERAL_META_FIELDS``;
+      * witness-level ``float64-integrator`` and deprecated ``float64`` tiers;
+      * integral-valued floats (``0.0``, ``1.0``) when ``integral_is_exact``
+        holds (not contradicted by a disagreeing ``*_str`` companion).
+    """
+    if path == "" and isinstance(obj, dict):
+        if _declares_f64_integrator(obj) or _declares_deprecated_f64(obj):
+            return
     if isinstance(obj, dict):
+        ephemeral_timing = frozenset(
+            n for n in _EPHEMERAL_META_FIELDS
+            if "dur" in n.lower() or "elapsed" in n.lower()
+        )
         for k, v in obj.items():
-            yield from _raw_float_paths(v, f"{path}.{k}")
+            if k.endswith("_str"):
+                yield from _raw_float_paths(v, f"{path}.{k}", integral_is_exact)
+                continue
+            companion = obj.get(f"{k}_str")
+            if companion is not None and _is_full_precision_shadow(v, companion):
+                continue
+            if k in ephemeral_timing:
+                continue
+            if k in LP_DUAL_F64_FIELDS:
+                continue
+            yield from _raw_float_paths(
+                v, f"{path}.{k}", integral_is_exact and companion is None
+            )
     elif isinstance(obj, (list, tuple)):
         for i, v in enumerate(obj):
-            yield from _raw_float_paths(v, f"{path}[{i}]")
+            yield from _raw_float_paths(v, f"{path}[{i}]", integral_is_exact)
     elif isinstance(obj, float) and not isinstance(obj, bool):
+        if obj.is_integer() and integral_is_exact:
+            return
         yield path
 
 
