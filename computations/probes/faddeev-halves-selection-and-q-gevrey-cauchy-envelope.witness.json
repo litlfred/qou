@@ -1,0 +1,63 @@
+{
+  "probe": "faddeev_halves_selection_and_q_gevrey_cauchy_envelope_probe.py",
+  "beans": [
+    "qou-cons",
+    "qou-jplv",
+    "qou-lv34",
+    "qou-q95i",
+    "qou-uvqk"
+  ],
+  "precisionDps": "80",
+  "scriptHash": "cea527e5468d",
+  "scriptCommitSha": "9d85aecf9640ed04a9fa33fe94c3662500eae503",
+  "generatedAt": "2026-11-17T06:24:56.036701+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "beanId": "qou-cons",
+      "theorem": "faddeev_halves_divisor_cancellation_and_scalar_rigidity",
+      "phi": "1.67999056098890116061169955794022337103",
+      "psi": "1.67999056098890116061169955794022337103",
+      "ratioDiff": "0.0",
+      "scalarDiff": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-jplv",
+      "theorem": "branch_point_scaling_gap_and_quadratic_power_bound",
+      "gap": "0.00390625",
+      "exactGapDiff": "0.0",
+      "linearLowerBound": "0.0025",
+      "quadraticLowerBound": "0.00125",
+      "passed": true
+    },
+    {
+      "beanId": "qou-lv34",
+      "theorem": "faddeev_rigidity_normalization_pin_and_a_omega_three",
+      "cPinned": "1.0",
+      "cDiff": "0.0",
+      "psiMinusPhiAtZ": "0.0",
+      "aOmegaPsi": "3.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-q95i",
+      "theorem": "faddeev_dual_shift_ratio_invariance",
+      "shiftMultiplier": "8.062285767687000188744691430739588902022",
+      "ratioOrig": "1.629140190361564216486977209653428887815",
+      "ratioShift": "1.629140190361564216486977209653428887815",
+      "invarianceResidual": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-uvqk",
+      "theorem": "q_gevrey_cauchy_mul_quadratic_envelope_identity",
+      "envelopeOrder": "0.984375",
+      "saddleIndex": "6.75",
+      "minEnvelopeValue": "141.75",
+      "maxIdentityResidual": "0.0",
+      "minGapAboveEnvelope": "0.25",
+      "passed": true
+    }
+  ]
+}
