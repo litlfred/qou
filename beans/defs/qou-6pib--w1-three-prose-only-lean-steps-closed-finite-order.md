@@ -1,7 +1,7 @@
 ---
 # qou-6pib
 title: 'W1: three prose-only Lean steps closed — finite order by pigeonhole, Mobius three-point rigidity, the gauge/spectral-curve dictionary'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -79,3 +79,7 @@ All three new files: `scripts/lean-shadow-verify.sh` exit 0, `#print axioms` cle
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-12 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Round 56 Update (PR #8271)
+- Opened PR https://github.com/litlfred/qou/pull/8271 (`b2cbd4734e5f10beb2130e3555212a3d78a87989`, C1 `22c4bf632182163314cbb930ffed44b139fa5265`).
+- Compiled under Lean 4.24.0 (`0` `sorry`, `0` `axiom`, `0` warnings) and verified `0` advisories across all 6 static vacuity & borrowed-name audits, with 80-dps `mpmath` witness `computations/probes/round56-devacuify-6qbv-b9cj.witness.json` (`scriptHash = c44bdf430d4f`).

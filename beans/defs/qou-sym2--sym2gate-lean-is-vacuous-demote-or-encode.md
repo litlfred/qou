@@ -1,7 +1,7 @@
 ---
 # qou-sym2
 title: Sym2Gate.lean is vacuous — demote or encode the real decomposition claim
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -56,3 +56,7 @@ Consumers rescoped: `eightfold-way/schur-weyl-eightfold.md`,
 `eightfold-way/dictionary-flavor-layer.md`, `eightfold-way/color-su3-from-g2.ts`
 (`lean: "qou:QOU.Eightfold.Sym2Gate"`).
 Parent coverage bean: `qou-8fl1`.
+
+## Round 56 Update (PR #8271)
+- Opened PR https://github.com/litlfred/qou/pull/8271 (`b2cbd4734e5f10beb2130e3555212a3d78a87989`, C1 `22c4bf632182163314cbb930ffed44b139fa5265`).
+- Compiled under Lean 4.24.0 (`0` `sorry`, `0` `axiom`, `0` warnings) and verified `0` advisories across all 6 static vacuity & borrowed-name audits, with 80-dps `mpmath` witness `computations/probes/round56-devacuify-6qbv-b9cj.witness.json` (`scriptHash = c44bdf430d4f`).

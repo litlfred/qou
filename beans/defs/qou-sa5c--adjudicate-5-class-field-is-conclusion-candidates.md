@@ -1,7 +1,7 @@
 ---
 # qou-sa5c
 title: Adjudicate the 5 class-field-is-conclusion candidates the fixed self-assuming detector surfaced
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -78,3 +78,7 @@ are left for the owner / a targeted session rather than changed here.
 Detector-precision result worth keeping: 5/5 hits were the genuine shape (no regex false positives),
 but only 2/5 warrant action. That is evidence FOR the script's "candidates for inspection, not
 verdicts" framing, not a complaint about it.
+
+## Round 56 Update (PR #8271)
+- Opened PR https://github.com/litlfred/qou/pull/8271 (`b2cbd4734e5f10beb2130e3555212a3d78a87989`, C1 `22c4bf632182163314cbb930ffed44b139fa5265`).
+- Compiled under Lean 4.24.0 (`0` `sorry`, `0` `axiom`, `0` warnings) and verified `0` advisories across all 6 static vacuity & borrowed-name audits, with 80-dps `mpmath` witness `computations/probes/round56-devacuify-6qbv-b9cj.witness.json` (`scriptHash = c44bdf430d4f`).
