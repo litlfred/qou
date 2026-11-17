@@ -1,0 +1,42 @@
+{
+  "probe": "frust_cubic_tower_jhopf_whitehead_probe.py",
+  "gitCommit": "1086b0ae6f630df61ca513a195514ef5d6137b5c",
+  "scriptCommitSha": "1086b0ae6f630df61ca513a195514ef5d6137b5c",
+  "scriptHash": "7f7e34cb3ef4",
+  "dps": 80,
+  "allPassed": true,
+  "checks": [
+    {
+      "name": "bond_frustration_window_qou_kok7",
+      "passed": true,
+      "midpointRatioA3OverA4": "-0.25",
+      "maxResidual": "0.0"
+    },
+    {
+      "name": "colour_cubic_branch_locus_qou_l155",
+      "passed": true,
+      "discAtOne": "200.0",
+      "discAtNegOne": "4.0",
+      "maxResidual": "0.0"
+    },
+    {
+      "name": "tower_height_three_term_gradewise_qou_zynz",
+      "passed": true,
+      "c1": "5.0",
+      "maxResidual": "0.0"
+    },
+    {
+      "name": "jones_hopf_q1_selectivity_qou_itdn",
+      "passed": true,
+      "vUnknot": "1.0",
+      "vHopf": "-2.0",
+      "vBorromean": "4.0",
+      "maxResidual": "0.0"
+    },
+    {
+      "name": "whitehead_phase_algebra_qou_t2sc",
+      "passed": true,
+      "maxResidual": "4.21687917729220928973943e-81"
+    }
+  ]
+}
