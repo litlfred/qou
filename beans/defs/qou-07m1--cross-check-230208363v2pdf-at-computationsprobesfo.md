@@ -1,13 +1,14 @@
 ---
 # qou-07m1
 title: Cross-check 2302.08363v2.pdf at computations/probes/fourone_stokes_series_selfcheck.py
-status: todo
+status: in-progress
+pr: 8298
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T00:10:49Z
-updated_at: 2026-10-04T15:18:21Z
+updated_at: 2026-11-17T10:22:30Z
 parent: qou-8hur
 ---
 
@@ -28,3 +29,9 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   On the structure of trans-series in quantum field theory
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [arxiv-2302.08363v2] as the citation key when you do it.
+
+
+## Round 58 Update (PR #8298)
+- **Status:** `in-progress` (PR `litlfred/qou#8298`, head `92f8a80b907a40e6db76eb1a8a85f081c5960913`, Commit 1 `df446885b17718b4f18e584a2765ba2e802adb68`).
+- **Lean 4.24.0 Modules:** `folio/quantum-observable-universe/lean/QOU/BraidKnot/N5LevelSixRootThresholdAndThreeLinkTriad.lean` and `folio/quantum-observable-universe/lean/QOU/QBeta/FiveTwoSaddleHessianAndFourOneStokesCrossCheck.lean` (`0` `sorry`, `0` `axiom`, `0` warnings, `0` advisories across all 5 static audits).
+- **80-dps Probe & Witness:** `computations/probes/round58_n5_level_six_ohtsuki_thimble_fourone_stokes_dilog_probe.py` and `computations/probes/round58-n5-level-six-ohtsuki-thimble-fourone-stokes-dilog.witness.json` (`allPassed: true`, `0` raw `float64`).

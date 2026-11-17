@@ -1,13 +1,14 @@
 ---
 # bwsc
 title: 'bwS0-closure: WRT=modular-data agreement across enough roots (OPEN)'
-status: todo
+status: in-progress
+pr: 8298
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-27T00:30:00Z
-updated_at: 2026-10-04T15:14:42Z
+updated_at: 2026-11-17T10:22:30Z
 parent: qou-o9ge
 ---
 
@@ -48,3 +49,9 @@ With the measured degree bound the bracket then closes exactly: four roots fail,
 The residual content of this bean — that the gauge row `bwS0` actually agrees with the value map at those roots (WRT = modular-data), of which `KeystoneLRAmplitudeReal` (#4365) supplies the `Sigma(2,3,5)` slice — is untouched and still open. Only the price moved.
 
 Landed in `QOU/BraidKnot/KeystoneN5LevelSixSuffices.lean`: `lean`-direct exit 0 (5/5, no warnings), `#print axioms` clean on all eight declarations.
+
+
+## Round 58 Update (PR #8298)
+- **Status:** `in-progress` (PR `litlfred/qou#8298`, head `92f8a80b907a40e6db76eb1a8a85f081c5960913`, Commit 1 `df446885b17718b4f18e584a2765ba2e802adb68`).
+- **Lean 4.24.0 Modules:** `folio/quantum-observable-universe/lean/QOU/BraidKnot/N5LevelSixRootThresholdAndThreeLinkTriad.lean` and `folio/quantum-observable-universe/lean/QOU/QBeta/FiveTwoSaddleHessianAndFourOneStokesCrossCheck.lean` (`0` `sorry`, `0` `axiom`, `0` warnings, `0` advisories across all 5 static audits).
+- **80-dps Probe & Witness:** `computations/probes/round58_n5_level_six_ohtsuki_thimble_fourone_stokes_dilog_probe.py` and `computations/probes/round58-n5-level-six-ohtsuki-thimble-fourone-stokes-dilog.witness.json` (`allPassed: true`, `0` raw `float64`).
