@@ -1,0 +1,58 @@
+{
+  "probe": "computations/probes/two_row_frobenius_stratum_and_connected_sum_trace_brick_probe.py",
+  "beans": [
+    "qou-2row",
+    "qou-301d",
+    "qou-3wvl",
+    "qou-k00d",
+    "qou-t7az"
+  ],
+  "precisionDps": 80,
+  "scriptHash": "2bf0d9ccee5d8c54cb8b5389e1aa6c81892f1e69e12cfff27956dacbdb786595",
+  "scriptCommitSha": "2463220ce5c89b017aafd3bf4d0ccffbad829f4f",
+  "generatedAt": "2026-11-17T07:43:30.894625+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "bean": "qou-2row",
+      "theorem": "two_row_frobenius_stratum_drift_and_non_constant_obstruction",
+      "passed": true,
+      "drift_diff": "0.241",
+      "partition_count_12": "7.0",
+      "stratum_weight_sum": "0.013299"
+    },
+    {
+      "bean": "qou-301d",
+      "theorem": "connected_sum_amplitude_multiplicativity_free_energy_split",
+      "passed": true,
+      "log_add_residual": "0.0",
+      "sub_residual": "1.054219794323052322434857405127001900770996138236850755007776302510814429096976e-81",
+      "a_total": "12.077007956766618999456941283075070802675777989896676650785362837647900402536254"
+    },
+    {
+      "bean": "qou-3wvl",
+      "theorem": "scale_free_alpha_cluster_ratio_q0_scale_cancellation",
+      "passed": true,
+      "cancel_residual": "6.3253187659383139346091444307620114046259768294211045300466578150648865745818558e-81",
+      "normalized_surface_residual": "0.51999999999999999999999999999999999999999999999999999999999999999999999999999999"
+    },
+    {
+      "bean": "qou-k00d",
+      "theorem": "whitehead_one_loop_prefactor_torsion_inverse_square_root_lock",
+      "passed": true,
+      "gm_residual": "0.0",
+      "fourth_pow_residual": "0.0",
+      "c_sigma_at_tau4": "0.35355339059327376220042218105242451964241796884423701829416993449768311961552676",
+      "two_pow_neg_three_quarters": "0.59460355750136053335874998528023795764648604623190870650950111235973333411345858"
+    },
+    {
+      "bean": "qou-t7az",
+      "theorem": "mcphail_snyder_diagrammatic_edge_lattice_rank_and_input_shift",
+      "passed": true,
+      "euler_characteristic": "2.0",
+      "edge_rank_5_2": "10.0",
+      "shift_residual": "0.0",
+      "shift_diff": "0.21875"
+    }
+  ]
+}
