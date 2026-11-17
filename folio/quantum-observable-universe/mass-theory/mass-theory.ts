@@ -67,6 +67,7 @@ export default chapter({
         "three-calibration-inputs",
         "three-calibration-inputs-proof",
         "three-calibration-inputs-context",
+        "observable-ring-form",
         "two-tier-scaling-pq",
         "three-parameters-wedderburn",
         "three-parameters-wedderburn-context",

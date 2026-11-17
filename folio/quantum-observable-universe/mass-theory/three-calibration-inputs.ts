@@ -36,6 +36,11 @@ export default proposition({
   ],
   authorNotes: [
     {
+      kind: "refined-framing",
+      date: "2026-11-16",
+      body: "Statement narrowed on owner ruling (decision card, 2026-11-16, \"narrow to the count of three\"). The claim that every observable equals $\\hat{\\mathcal{O}}(q_0)\\, m_e^a m_\\pi^b$ with $\\hat{\\mathcal{O}} \\in \\mathbb{Z}[q_0^{\\pm 1/2}]$ was not proved by the proof block and contradicted this block's own $\\mathfrak{E}_0 = m_e/(q_0(q_0-1))$. It now lives in [`conj:observable-ring-form`](observable-ring-form.md). The proposition keeps the count of three inputs, which the proof argues.",
+    },
+    {
       kind: "caveat",
       date: "2026-05-25",
       body: "**Structural-vs-empirical conflation.** The proposition correctly identifies the 3 cohomological degrees of freedom of $H_3(R, q)$ surviving the on-shell + gauge + observability quotient. The step from *\"3 cohomological degrees\"* to *\"3 external calibration inputs\"* is an independent choice, not forced by the categorical structure. Three stances are math-consistent: **(a)** 3 calibrations + 0 derivations [current paper position], **(b)** 1 unit choice + 2 cohomological derivations [research path], **(c)** 0 calibrations + 3 derivations [the ideal — requires substrate-$q_0$ derivation declined 2026-05-08, **reopened 2026-05-25**, plus the cohomological $\\mathrm{Vol}(4_1)/\\hbar_q^2$ identity for CAL-2 and Khovanov-Rozansky closure for CAL-3]. The forbidden-4th-CAL clause is preserved; this caveat does NOT propose a 4th input — it clarifies the epistemic status of the existing three. See [`rem:epistemic-status-of-calibrations`](../observations/epistemic-status-of-calibrations.md) + [`2026-05-25-cal-2-cohomological-vs-calibration-critique.md`](../../../docs/audits/2026-05-25-cal-2-cohomological-vs-calibration-critique.md).",
