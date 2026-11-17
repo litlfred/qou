@@ -1,7 +1,8 @@
 ---
 # qou-11l4
 title: 'qou-y2o7 closed as completed with four monotone-kernel consumers unlisted: four qbeta probes are locked to the grouped ordering and its blast radius never named them'
-status: todo
+status: in-progress
+pr: 8250
 type: task
 priority: normal
 tags:
@@ -96,3 +97,9 @@ Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap 
 The probes still call `chi_monotone_transfer` (e.g. `d_frame_trace_baseline_probe.py:93`); migration to `chi_all_lambda_any` (`chi_general_word.py:180`) has not happened. Open code step, with the deltas to be recorded.
 
 Checked read-only against qou `main` at `aa914b606a`, mpmath 1.3.0. Full write-up: `qou-review/avtq-reopened-beans-2026-10-10.md` (project files). Status unchanged.
+
+## Round 54 Implementation Progress (PR #8250)
+- **Status:** `in-progress` (per no-unilateral-closure policy)
+- **PR:** https://github.com/litlfred/qou/pull/8250 (head `6ee51e358507527bd6866f4cac2f3d6f10b8818b`, Commit 1 `ee378949fa465d0b0bd6d825c653bded4b4ca1c9`)
+- **Lean 4 Module & Theorems:** `QOU/QBeta/MonotoneKernelLockGSFiltrationAndPipelineTolerance.lean` (`grouped_vs_borromean_word_monotone_lock`)
+- **80-dps Witness:** `computations/probes/round54-tau-functor-borromean-monotone-gs-pipeline.witness.json` (`scriptHash: de41a1d3c1e1`, `allPassed: true`, `0` raw `float64`)

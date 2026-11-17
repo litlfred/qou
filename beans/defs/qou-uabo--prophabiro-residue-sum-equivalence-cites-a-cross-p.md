@@ -1,7 +1,8 @@
 ---
 # qou-uabo
 title: prop:habiro-residue-sum-equivalence cites a cross-pipeline witness that does not exist
-status: todo
+status: in-progress
+pr: 8250
 type: task
 priority: normal
 tags:
@@ -189,3 +190,9 @@ now calls the table numerical evidence, not proof.
 Lean-direct check: exit 0. Axioms are standard only.
 **Still open (this bean's subject):** the agreement table cites
 `markov-pipeline-cross-validation.witness.json`, which does not exist. Status stays todo.
+
+## Round 54 Implementation Progress (PR #8250)
+- **Status:** `in-progress` (per no-unilateral-closure policy)
+- **PR:** https://github.com/litlfred/qou/pull/8250 (head `6ee51e358507527bd6866f4cac2f3d6f10b8818b`, Commit 1 `ee378949fa465d0b0bd6d825c653bded4b4ca1c9`)
+- **Lean 4 Module & Theorems:** `QOU/QBeta/MonotoneKernelLockGSFiltrationAndPipelineTolerance.lean` (`cross_pipeline_proton_discrepancy_exceeds_95x_tolerance`)
+- **80-dps Witness:** `computations/probes/round54-tau-functor-borromean-monotone-gs-pipeline.witness.json` (`scriptHash: de41a1d3c1e1`, `allPassed: true`, `0` raw `float64`)

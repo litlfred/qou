@@ -1,7 +1,8 @@
 ---
 # n920
 title: 'Borromean AJ: cross-check Borromean cyclotomic c_k against Habiro [H1] (simple links, RIMS Kokyuroku 1172) — NOT Masbaum math/0306345 (twist knots only); ref unavailable, DEFERRED'
-status: todo
+status: in-progress
+pr: 8250
 type: task
 priority: normal
 tags:
@@ -126,3 +127,9 @@ Evidence: The bean's last stated deliverable (explicit operator) has partly land
 
 Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
 Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
+
+## Round 54 Implementation Progress (PR #8250)
+- **Status:** `in-progress` (per no-unilateral-closure policy)
+- **PR:** https://github.com/litlfred/qou/pull/8250 (head `6ee51e358507527bd6866f4cac2f3d6f10b8818b`, Commit 1 `ee378949fa465d0b0bd6d825c653bded4b4ca1c9`)
+- **Lean 4 Module & Theorems:** `QOU/AlphaEM/TauFunctorMarkovHodgeAndBorromeanCyclotomic.lean` (`borromean_habiro_n1_exact_normalization`, `borromean_order_five_recurrence_certificate`)
+- **80-dps Witness:** `computations/probes/round54-tau-functor-borromean-monotone-gs-pipeline.witness.json` (`scriptHash: de41a1d3c1e1`, `allPassed: true`, `0` raw `float64`)
