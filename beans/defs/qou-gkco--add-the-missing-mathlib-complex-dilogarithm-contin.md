@@ -1,7 +1,9 @@
 ---
 # qou-gkco
 title: 'Add the missing Mathlib: complex dilogarithm (continuation + reflection + inversion), upstreamable'
-status: todo
+status: in-progress
+pr: 8233
+updated_at: 2026-11-17T06:46:41Z
 type: task
 priority: normal
 tags:
@@ -360,3 +362,8 @@ so `Σⱼ Li₂(yⱼ)` collapses to one real convergent integral. Three bricks o
 landed the same day (`intervalIntegrable_log_recipCubic_div`,
 `LiTwo_eq_integral_unit`). Weigh that against the ℂ∖[1,∞) integral definition
 before picking the next step here.
+
+## Progress Update (PR #8233)
+- **Status**: `in-progress` (awaiting Merge Manager merge of `litlfred/qou#8233` at `0df1f54777395f7641371a1bd56d61fa352927af`).
+- **Lean Formalization**: `QOU.QBeta.DilogCuspCancellationAndBorelProperTimeBrick.complex_dilog_reflection_and_inversion_compatibility` (Compatibility of Euler's dilogarithm reflection and inversion functional equations and self-inverse evaluation L(-1) = -pi^2/12.)
+- **80-dps Witness**: `computations/probes/dilog-cusp-cancellation-and-borel-proper-time-brick.witness.json` (`scriptHash: 3bb3c88effd9`, `scriptCommitSha: 162d2914798b1189f0082f4e029eb8fed83ca8ee`).
