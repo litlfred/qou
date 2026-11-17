@@ -1,7 +1,7 @@
 ---
 # qou-exam
 title: Excise the notion of absolute mass (owner ruling 2026-08-11)
-status: todo
+status: in-progress
 type: feature
 priority: high
 tags:

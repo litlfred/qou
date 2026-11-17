@@ -1,7 +1,7 @@
 ---
 # qou-f7af
 title: No open bean tracks eliminating the 4,052 carved LP-dual float64s — qou-ftuv closed with route 2's solver half undone
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

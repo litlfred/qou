@@ -1,7 +1,7 @@
 ---
 # qou-f64g
 title: 'INFRA (gated + measured): float64 entry points in mpmath probes — 17546 hits, 4 prior beans, no gate until now'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:

@@ -1,7 +1,7 @@
 ---
 # qou-fl9i
 title: Raise 838 sub-canonical mp.dps sites to set_compute_dps() — producers serialize 10 digits past what they compute
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

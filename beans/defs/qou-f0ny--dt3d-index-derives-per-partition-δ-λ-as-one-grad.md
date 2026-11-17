@@ -1,7 +1,7 @@
 ---
 # qou-f0ny
 title: DT/3d-index derives per-partition Δ_λ as ONE graded Euler characteristic (horn unification)
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
