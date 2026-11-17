@@ -1,7 +1,7 @@
 ---
 # qou-vdvE
 title: 'Bridge step 2: test van der Veen E against |tau_DG|^{-1/2} — the Gukov-Murakami conjecture, for links'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -99,3 +99,6 @@ The note opens by stating that his theorem is unaffected — it needs only Vol, 
 and E != 0, and all three survive — and closes with an explicit disclosure that
 it was prepared with AI assistance and that the owner has reviewed it. Do not
 send it without that review actually happening.
+
+## Round 79 progress (PR #8358)
+- Advanced in PR #8358 (`3d5e94f03a32259e850c4108650709877896bfd7`).

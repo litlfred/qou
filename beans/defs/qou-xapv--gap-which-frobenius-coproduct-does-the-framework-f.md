@@ -1,7 +1,7 @@
 ---
 # qou-xapv
 title: 'GAP: which Frobenius coproduct does the framework fix (density u in m = |∫(u·ϱ)|)?'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-10-13T17:34:21Z
@@ -41,3 +41,6 @@ Side finding: the Lean coCasimirSum constant 0.14496 is stale against the witnes
 ## Parented 2026-11-15 (owner-approved bean triage)
 
 Parent `(none)` → `qou-v2om`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.
+
+## Round 79 progress (PR #8358)
+- Advanced in PR #8358 (`3d5e94f03a32259e850c4108650709877896bfd7`).
