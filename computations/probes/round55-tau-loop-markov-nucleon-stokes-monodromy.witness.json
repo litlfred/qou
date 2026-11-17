@@ -1,0 +1,79 @@
+{
+  "probe": "round55-tau-loop-markov-nucleon-stokes-monodromy",
+  "scriptPath": "computations/probes/round55_tau_loop_markov_nucleon_stokes_monodromy_probe.py",
+  "scriptHash": "1de39a3b3d7c",
+  "scriptCommitSha": "0a62bee9d3e501101e220bcafa8c3a9fee1d0d25",
+  "precisionDps": 80,
+  "beans": [
+    "qou-6ufi",
+    "qou-v4ux",
+    "qou-esx7",
+    "qou-vr3q",
+    "qou-41qf"
+  ],
+  "leanModules": [
+    "folio/quantum-observable-universe/lean/QOU/AlphaEM/TauLoopWeightMarkovGramAndNucleonCrossingAudit.lean",
+    "folio/quantum-observable-universe/lean/QOU/QBeta/StokesMonodromyGGMSandwichAndTrivialFlatConnection.lean"
+  ],
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "qou-6ufi-tau-loop-markov-gram-q0",
+      "bean": "qou-6ufi",
+      "description": "Chebyshev identity [3]_q + 1 = ([2]_q)^2 at q_0 to 80 dps and positive two-channel TL_3 Markov Gram norm",
+      "passed": true,
+      "tQ0_80dps": "2.0000725437229274430291996873748252085419912052335414607274229896243725090611611",
+      "qInt2Q0_80dps": "2.0000725437229274430291996873748252085419912052335414607274229896243725090611611",
+      "qInt3Q0_80dps": "3.0002901801543015082904221718498800577195875071793628034407734255233758635665676",
+      "chebyshevResidual80dps": "0.0",
+      "tl3MarkovGramQ0_80dps": "17.002321525438934016770537759671394480377486520193089094141617244180748167735693"
+    },
+    {
+      "id": "qou-v4ux-nucleon-crossing-reconciliation-and-nl84",
+      "bean": "qou-v4ux",
+      "description": "Canonical neutron crossing count 6+3+2 = 11 vs retracted 6+3+4 = 13 (diff 2) and N_l = C(9,3) = 84 = 7*12 = 4*21",
+      "passed": true,
+      "neutronCrossingsCanonical": 11,
+      "neutronCrossingsRetracted": 13,
+      "crossingDifference": 2,
+      "bringHurwitzNl": 84
+    },
+    {
+      "id": "qou-esx7-ggm-unipotent-stokes-sandwich",
+      "bean": "qou-esx7",
+      "description": "2x2 upper-unitriangular GGM sandwich U(a)*U(3)*U(-a) leaves off-diagonal Stokes constant A_omega = 3 invariant",
+      "passed": true,
+      "aOmega41": 3,
+      "sandwichEntries": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "vol41_80dps": "2.029883212819307250042405108549040571883378615060599584034978213553194952516488",
+      "stokesAction41_80dps": "6.0896496384579217501272153256471217156501358451817987521049346406595848575494641"
+    },
+    {
+      "id": "qou-vr3q-four-one-vs-five-two-dt-spectrum-split",
+      "bean": "qou-vr3q",
+      "description": "4_1 has single off-diagonal DT count 3 (det=5), while chiral 5_2 splits across {3, 4} summing to det(5_2)=7 with gap 1",
+      "passed": true,
+      "dt41": 3,
+      "dt52Minus": 3,
+      "dt52Plus": 4,
+      "det41": 5,
+      "det52": 7
+    },
+    {
+      "id": "qou-41qf-trivial-flat-connection-extended-stokes-commutator",
+      "bean": "qou-41qf",
+      "description": "3x3 extended Stokes matrix adjoining trivial flat connection sigma_0 ([garoufalidis2021a]) has Heisenberg commutator s01 * A_omega = 6",
+      "passed": true,
+      "s01Sample": 2,
+      "aOmega41": 3,
+      "heisenbergCommutatorS02": 6
+    }
+  ]
+}
