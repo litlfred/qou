@@ -1,0 +1,98 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-17T07:05:11.409271+00:00",
+  "commitSha": "0e3c37826e02ba810807c183764786b7c16abc1d",
+  "assertions": [
+    {
+      "name": "qou_2srd_octonion_stabilizer_su3_and_real_splitting_dimensions",
+      "computed": "8:8",
+      "expected": "8:8",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.OctonionComplexStructureAntiFitBudgetFinkelsteinZ6PeriodMatrixTorelliAndDetanglerBand.octonion_su3_stabilizer_and_complex_structure_identities"
+    },
+    {
+      "name": "qou_2srd_octonion_j_squared_minus_identity_trace_80dps",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "QOU.Eightfold.OctonionComplexStructureAntiFitBudgetFinkelsteinZ6PeriodMatrixTorelliAndDetanglerBand.octonion_su3_stabilizer_and_complex_structure_identities"
+    },
+    {
+      "name": "qou_65xt_anti_fitting_predictive_dof_budget",
+      "computed": "1:2:0",
+      "expected": "1:2:0",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.OctonionComplexStructureAntiFitBudgetFinkelsteinZ6PeriodMatrixTorelliAndDetanglerBand.anti_fitting_predictive_dof_bounds"
+    },
+    {
+      "name": "qou_65xt_gmo_octet_sum_rule_relative_error_sub_percent",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.OctonionComplexStructureAntiFitBudgetFinkelsteinZ6PeriodMatrixTorelliAndDetanglerBand.anti_fitting_predictive_dof_bounds"
+    },
+    {
+      "name": "qou_6t49_finkelstein_charge_identity_and_z6_crt_bijection",
+      "computed": "0:[0, 1, 2, 3, 4, 5]",
+      "expected": "0:[0, 1, 2, 3, 4, 5]",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.OctonionComplexStructureAntiFitBudgetFinkelsteinZ6PeriodMatrixTorelliAndDetanglerBand.finkelstein_charge_identity_and_z6_crt_bijection"
+    },
+    {
+      "name": "qou_8p1c_torelli_schottky_and_bring_klein_order_obstruction",
+      "computed": "6:6:[0, 0, 1, 3]:168:0:1",
+      "expected": "6:6:[0, 0, 1, 3]:168:0:1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.OctonionComplexStructureAntiFitBudgetFinkelsteinZ6PeriodMatrixTorelliAndDetanglerBand.period_matrix_torelli_and_bring_klein_order_obstruction"
+    },
+    {
+      "name": "qou_akee_detangler_band_meson_and_baryon_transition",
+      "computed": "21:1:3:2:0",
+      "expected": "21:1:3:2:0",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.OctonionComplexStructureAntiFitBudgetFinkelsteinZ6PeriodMatrixTorelliAndDetanglerBand.detangler_band_meson_and_baryon_transition"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "octonion-complex-structure-anti-fit-budget-finkelstein-z6-period-matrix-torelli-and-detangler-band",
+  "scriptFile": "octonion_complex_structure_anti_fit_budget_finkelstein_z6_period_matrix_torelli_and_detangler_band_probe.py",
+  "scriptHash": "3de1d8ff7191",
+  "scriptCommitSha": "0e3c37826e02ba810807c183764786b7c16abc1d",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/octonion_complex_structure_anti_fit_budget_finkelstein_z6_period_matrix_torelli_and_detangler_band_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/octonion_complex_structure_anti_fit_budget_finkelstein_z6_period_matrix_torelli_and_detangler_band_probe.py"
+  },
+  "description": "Exact 80-dps mpmath and Fraction verification for qou-2srd, qou-65xt, qou-6t49, qou-8p1c, and qou-akee under epic qou-8lxd.",
+  "data": {
+    "gmo_octet_relative_error": "0.005682900683428193345710177020875076180582",
+    "hurwitz_genus3_bound": "168",
+    "bring_automorphism_order": "120"
+  }
+}
