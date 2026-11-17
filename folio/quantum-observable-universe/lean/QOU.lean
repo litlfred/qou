@@ -1724,6 +1724,9 @@ import QOU.MassTheory.ConvolutionFlowParity
 import QOU.MassTheory.ConvolutionFlowFibre
 import QOU.MassTheory.BringResidueEnergy
 import QOU.MassTheory.DeuteronKappaThreeSixteenthsReconciliation
+import QOU.MassTheory.MagicShellCoordinationAndMirrorVolumeRatio
+import QOU.MassTheory.FrobeniusWeightingGapAndExtensiveResidualShape
+import QOU.MassTheory.MutualOHaraUniformSeparationGuard
 import QOU.Brings.BringConjugationChirality
 import QOU.Brings.BringCoverTower
 import QOU.Brings.BringDescendingTower
