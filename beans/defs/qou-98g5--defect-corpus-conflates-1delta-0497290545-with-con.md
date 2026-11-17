@@ -1,13 +1,13 @@
 ---
 # qou-98g5
 title: 'DEFECT: corpus conflates 1/delta = 0.497290545 with convention-C z = 0.499320334 -- different elements, 0.408% apart'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T17:08:37Z
-updated_at: 2026-10-04T15:18:39Z
+updated_at: 2026-11-17T07:34:00Z
 parent: qou-cdx1
 ---
 
@@ -141,3 +141,6 @@ value**, not for the numbers — the symbolic form is the larger surface, as the
 `q^{1/2}+q^{-1/2}` appears as *the loop parameter of `tr_M`* or as *the Markov
 parameter*; it is fine in a Wenzl positivity condition or a genuinely
 half-argument skein, where it is `[2]_{√q}` on purpose.
+
+## Round 63 Update (PR #8257)
+- Formalized in PR https://github.com/litlfred/qou/pull/8257 (head `18cf0bc120a9baf3be0677bec0817855b4de7a7a`, Commit 1 `2b12359f227b0dc628cdd0df3e8f7f2f6ff6c5ca`, `scriptHash: 1bf530249a70`).

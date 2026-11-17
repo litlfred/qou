@@ -1,13 +1,13 @@
 ---
 # qou-48is
 title: 'GAP: the canonical cross-species nucleon ordering p...pn...n is an unlicensed choice and tr_M depends on it by O(10%) for A>=3'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T04:34:20Z
-updated_at: 2026-10-04T15:13:00Z
+updated_at: 2026-11-17T07:34:00Z
 parent: qou-v2om
 ---
 
@@ -419,3 +419,6 @@ Re-close it when the work its body names is actually done.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Round 63 Update (PR #8257)
+- Formalized in PR https://github.com/litlfred/qou/pull/8257 (head `18cf0bc120a9baf3be0677bec0817855b4de7a7a`, Commit 1 `2b12359f227b0dc628cdd0df3e8f7f2f6ff6c5ca`, `scriptHash: 1bf530249a70`).

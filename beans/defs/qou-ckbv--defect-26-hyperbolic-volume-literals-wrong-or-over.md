@@ -1,13 +1,13 @@
 ---
 # qou-ckbv
 title: 'DEFECT: 26 hyperbolic-volume literals wrong or over-claiming precision (corpus-wide)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T21:33:05Z
-updated_at: 2026-10-04T15:18:39Z
+updated_at: 2026-11-17T07:34:00Z
 parent: qou-9nnz
 ---
 
@@ -458,3 +458,6 @@ exist precisely to stop that, so the narrative moved to the audit and this bean
 and the block kept only citations. Mechanical QA axes on both blocks: all pass
 or n/a. The `da-*` deep-audit axes remain `needs-agent` — as they are for 6,293
 blocks corpus-wide, so this is the standing state rather than a new debt.
+
+## Round 63 Update (PR #8257)
+- Formalized in PR https://github.com/litlfred/qou/pull/8257 (head `18cf0bc120a9baf3be0677bec0817855b4de7a7a`, Commit 1 `2b12359f227b0dc628cdd0df3e8f7f2f6ff6c5ca`, `scriptHash: 1bf530249a70`).
