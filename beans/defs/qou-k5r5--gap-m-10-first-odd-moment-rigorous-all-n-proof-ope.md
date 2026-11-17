@@ -1,13 +1,13 @@
 ---
 # qou-k5r5
 title: 'GAP: M_1>0 (first odd moment) — rigorous all-n proof OPEN; identity Lean-proved, Kerov-CLT gives asymptotic only'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-10-04T15:12:57Z
+updated_at: 2026-11-17T10:13:44Z
 parent: b9cj
 ---
 
@@ -1854,3 +1854,11 @@ here and all four were already held.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-13 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## Round 82 Execution Note (2026-11-17T10:13:44Z)
+
+- **Status**: `in-progress` (PR awaiting merge; no unilateral closure).
+- **PR**: [`litlfred/qou#8294`](https://github.com/litlfred/qou/pull/8294) (`feat/qou-b9cj-ck2w-k5r5-ndt5-x3iv-x631`, HEAD `22907bca8b5dd626221c15ea2658a1f14545c5be`).
+- **Lean Module**: `folio/quantum-observable-universe/lean/QOU/QBeta/PretzelSymmetryAdaptedGradingAndSubstrateBranchBrick.lean` (wired into `QOU.lean`, compiled with Lean 4.24.0, 0 findings across all 7 static Lean audits).
+- **80-dps Probe & Witness**: `computations/probes/pretzel_symmetry_adapted_grading_and_substrate_branch_brick_probe.py` & `computations/probes/pretzel-symmetry-adapted-grading-and-substrate-branch-brick.witness.json` (`scriptCommitSha = caec3a2639d9338bfaf9aa9d455a0ab97b427071`, `scriptHash = 428700c5c7bd`, `outputHash = 27ee54e84b99cf035202cc1272490bd167d1f4ad8e861ae3bd043848cca760e3`).
