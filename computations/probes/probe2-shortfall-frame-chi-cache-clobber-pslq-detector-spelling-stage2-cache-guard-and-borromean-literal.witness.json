@@ -1,0 +1,64 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "dps": "80",
+  "computedAt": "2026-11-17T08:13:48.163335+00:00",
+  "commitSha": "e98d91d4e01bb7197ccdfc0c0a05bab481cf2839",
+  "scriptCommitSha": "e98d91d4e01bb7197ccdfc0c0a05bab481cf2839",
+  "scriptHash": "d0852bc1eabe",
+  "allPassed": true,
+  "assertions": [
+    {
+      "name": "qou_34oo_probe2_he4_shortfall_c_vs_d_frame_comparison",
+      "computed": "55233:2640:3336",
+      "expected": "55233:2640:3336",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.Probe2ShortfallFrameChiCacheClobberPslqDetectorSpellingStage2CacheGuardAndBorromeanLiteral.probe2_he4_shortfall_c_vs_d_frame_comparison"
+    },
+    {
+      "name": "qou_43v0_bar_pairing_chi_cache_overwrite_key_accounting",
+      "computed": "21:18",
+      "expected": "21:18",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.Probe2ShortfallFrameChiCacheClobberPslqDetectorSpellingStage2CacheGuardAndBorromeanLiteral.bar_pairing_chi_cache_overwrite_key_accounting"
+    },
+    {
+      "name": "qou_580o_vol41_clausen_lobachevsky_and_c3_sensitivity_jump",
+      "computed": "20298832128:20298832128",
+      "expected": "20298832128:20298832128",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.Probe2ShortfallFrameChiCacheClobberPslqDetectorSpellingStage2CacheGuardAndBorromeanLiteral.vol41_clausen_lobachevsky_and_c3_sensitivity_jump"
+    },
+    {
+      "name": "qou_5ovu_stage2_leg_a_rejects_while_leg_b_accepts_on_nf_mismatch",
+      "computed": "0:1",
+      "expected": "0:1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.Probe2ShortfallFrameChiCacheClobberPslqDetectorSpellingStage2CacheGuardAndBorromeanLiteral.stage2_leg_a_rejects_while_leg_b_accepts_on_nf_mismatch"
+    },
+    {
+      "name": "qou_5pgl_z_import_cone_shift_and_alpha_borromean_literal_residual",
+      "computed": "113368:10230",
+      "expected": "113368:10230",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.Probe2ShortfallFrameChiCacheClobberPslqDetectorSpellingStage2CacheGuardAndBorromeanLiteral.z_import_cone_shift_and_alpha_borromean_literal_residual"
+    }
+  ],
+  "invocation": {
+    "argv": [
+      "computations/probes/probe2_shortfall_frame_chi_cache_clobber_pslq_detector_spelling_stage2_cache_guard_and_borromean_literal_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/probe2_shortfall_frame_chi_cache_clobber_pslq_detector_spelling_stage2_cache_guard_and_borromean_literal_probe.py"
+  },
+  "description": "Exact 80-dps mpmath and Fraction verification for qou-34oo, qou-43v0, qou-580o, qou-5ovu, and qou-5pgl in the qou-10v9 subtree.",
+  "data": {
+    "vol_4_1_80dps": "2.02988321281930725004240510854904057188337862",
+    "alpha_borromean_exact_me_8G_80dps": "3.74445965994161032476174167347547221524495243",
+    "alpha_borromean_literal_ppm_excess": "2.73205196977199158438137775819847749542686151"
+  }
+}
