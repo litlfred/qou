@@ -1,0 +1,44 @@
+{
+  "probe": "a4-interface-b3agg-berezinian-wlambda-crossing",
+  "beans": [
+    "qou-0qmr",
+    "qou-2ss0",
+    "qou-6r6d",
+    "qou-9nq9",
+    "qou-dhsn"
+  ],
+  "precisionDps": "80",
+  "scriptHash": "e2eb499467fc",
+  "scriptCommitSha": "c715790dad2efe16f1713c8a17825e912524e641",
+  "generatedAt": "2026-11-17T07:25:19.523658+00:00",
+  "allPassed": true,
+  "checks": {
+    "qou_0qmr_a4_interface_operator": {
+      "passed": true,
+      "detDifferenceGap": "3/5",
+      "mStarAt9p243": "0.4471865427686075566734124559572712290861",
+      "b4InversionResidual": "5.987968431754937191429990061121370796379e-78"
+    },
+    "qou_2ss0_b3agg_secant_threshold": {
+      "passed": true,
+      "b3AtQuarter": "0/1",
+      "b3AtHalf": "3/2",
+      "b3AtOne": "18/1"
+    },
+    "qou_6r6d_berezinian_a3_magnitude": {
+      "passed": true,
+      "evenFaceCorrection": "-97/1190",
+      "recoveredOffBlockB": "11/5"
+    },
+    "qou_9nq9_wlambda_mixing_fractions": {
+      "passed": true,
+      "thetaAbsMu4": "2174149/30041860",
+      "thetaB4He": "2805291/6008372"
+    },
+    "qou_dhsn_crossing_quadratic_proton_pairs": {
+      "passed": true,
+      "gridVerifiedMaxA": "19",
+      "sampleZ6SixteenProtonPairs": "480"
+    }
+  }
+}
