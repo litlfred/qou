@@ -53,3 +53,8 @@ second is weaker: it would justify the number, not the reasoning.
 
 Related: `qou-px38` (the jet variant, same disproved argument, also unchanged),
 `qou-sv7h` (the tier's unreachability), `qou-21oc` (the gate drop itself).
+
+
+## Progress 2026-11-17 (lane-e925)
+
+Formalized in Lean 4 (`v4.24.0`, zero `sorry`) under `QOU.MassTheory` (`FallbackTierWindowZeroingAndPerGeneratorGroupedVolume.lean`, `CanonicalBraidLinkingNonUniformityAndMirrorSlopeFlip.lean`, `SymmetryEnergyBarBranchContinuumAndBetaBlindness.lean`) and verified at 50 dps in `computations/probes/fallback_tier_grouped_volume_braid_linking_mirror_slope_symmetry_branch_probe.py` (`computations/probes/fallback-tier-grouped-volume-braid-linking-mirror-slope-symmetry-branch-probe.witness.json`, `allPassed = true`). Opened PR #8321 (`ready: cde173d67efbd687c4f51cce6847a870b6c300f4`).

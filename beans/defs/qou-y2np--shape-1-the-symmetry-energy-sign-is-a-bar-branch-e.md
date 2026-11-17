@@ -1,7 +1,9 @@
 ---
 # qou-y2np
 title: 'SHAPE-1: the symmetry-energy sign is a BAR BRANCH (exactly +/- 2 ln q), the corpus took the branch that fits nuclear binding worse, and beta-decay does NOT pin it (Q_beta uses |Delta net|)'
-status: todo
+status: in-progress
+pr: 8321
+branch: feat/qou-ai7v-cgyn-k12x-u8ji-y2np
 type: task
 priority: normal
 tags:
@@ -223,3 +225,8 @@ Probe `computations/probes/quark_template/` (pre-registered at 6b9dd5d172; exact
 ## 🟧 OWNER RULING 2026-10-12 — quark sign map: option 4, derive it, do not pick it
 
 Asked in the six-part frame on PR #7718 (comment 6130340849). The four options were: 1 keep S+ (status quo); 2 adopt the swap S− (u = σ⁻¹, d = σ), which passes reading 3 at the builder placement; 3 keep S+ and move the letters to placement 011 or 100; 4 pick nothing by hand. **The owner chose 4.** The quark sign map and the letter placement must be outputs of the γγ construction plus reading 3 at every tower level (`qou-ales`), not a template choice. The template stays open and nothing is re-scored. The dashboard knowingly keeps scoring an element that reading 3 rejects until a derivation lands. The 2026-09-05 data-based "swap refuted" in `qou-y2np` is a comparison with data, so it counts as a selection neither way. This bean stays open (rule 13a). Session: https://claude.ai/code/session_01A1NHnUY3QMcdoxDYQmLCXB
+
+
+## Progress 2026-11-17 (lane-e925)
+
+Formalized in Lean 4 (`v4.24.0`, zero `sorry`) under `QOU.MassTheory` (`FallbackTierWindowZeroingAndPerGeneratorGroupedVolume.lean`, `CanonicalBraidLinkingNonUniformityAndMirrorSlopeFlip.lean`, `SymmetryEnergyBarBranchContinuumAndBetaBlindness.lean`) and verified at 50 dps in `computations/probes/fallback_tier_grouped_volume_braid_linking_mirror_slope_symmetry_branch_probe.py` (`computations/probes/fallback-tier-grouped-volume-braid-linking-mirror-slope-symmetry-branch-probe.witness.json`, `allPassed = true`). Opened PR #8321 (`ready: cde173d67efbd687c4f51cce6847a870b6c300f4`).

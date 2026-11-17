@@ -1,7 +1,9 @@
 ---
 # qou-u8ji
 title: 'b_pred''s agreement with the measured mirror slope exists ONLY in the grouped ordering: canonical moves the plateau 1.42 -> 2.69 and flips the sign of kappa_AME'
-status: todo
+status: in-progress
+pr: 8321
+branch: feat/qou-ai7v-cgyn-k12x-u8ji-y2np
 type: task
 priority: normal
 tags:
@@ -86,3 +88,8 @@ docstring, so nothing in production consumes it — this is a claim problem, not
 a pipeline problem.
 
 Parent: `16ax` (derive b_pred A->inf closed form). Mechanism: `qou-t29k`.
+
+
+## Progress 2026-11-17 (lane-e925)
+
+Formalized in Lean 4 (`v4.24.0`, zero `sorry`) under `QOU.MassTheory` (`FallbackTierWindowZeroingAndPerGeneratorGroupedVolume.lean`, `CanonicalBraidLinkingNonUniformityAndMirrorSlopeFlip.lean`, `SymmetryEnergyBarBranchContinuumAndBetaBlindness.lean`) and verified at 50 dps in `computations/probes/fallback_tier_grouped_volume_braid_linking_mirror_slope_symmetry_branch_probe.py` (`computations/probes/fallback-tier-grouped-volume-braid-linking-mirror-slope-symmetry-branch-probe.witness.json`, `allPassed = true`). Opened PR #8321 (`ready: cde173d67efbd687c4f51cce6847a870b6c300f4`).
