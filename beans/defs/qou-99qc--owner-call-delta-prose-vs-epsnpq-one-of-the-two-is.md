@@ -3721,3 +3721,12 @@ prop:gamma-gamma-generates-particles writes γ = 1 + φ₀σ₀ + φ₁σ₁ + �
 - With φ₀₁ ≠ 0 the γγ product also reaches e⁻ = σ₀σ₁σ₀; the two-photon span is all of H₃(q).
 - No `def:` block for the photon exists; the definition lives inside this proposition's prose.
 Owner asked (2026-11-17 06:27Z) that the γγ thread re-run stage 1 over the alphabet the definition gives; request relayed.
+
+### PRE-REGISTRATION 2026-11-17 18:15Z — stage 1 re-run, L₋ = σ₁σ₀, four-term photon (γγ thread)
+Pre-registered before any computation. Re-run of gluon-thread stage 1 over the alphabet that prop:gamma-gamma-generates-particles gives (owner query 2026-11-17 06:27Z).
+- Alphabet (a): {V, V⁻¹, L₊, L₋} with V = σ₀σ₁⁻¹, L₊ = σ₀σ₁, L₋ = σ₁σ₀ (NOT the inverse σ₀⁻¹σ₁⁻¹ used before). All words of length 1..6 on three strands.
+- Alphabet (b): (a) plus e⁻ = σ₀σ₁σ₀, reachable from γγ once φ₀₁ ≠ 0. All words of length 1..5.
+- Measured: reading 3 (Frobenius positivity, every level, convention D, proton pin, mpmath 40 dps), components, writhe; for each alphabet the pass count, whether pass ⟺ pure braid still holds, the writhe distribution of passers, the shortest passing word of each writhe.
+- Old stage-1 table kept as the record for the inverse reading; this run is reported beside it, not in place of it.
+- Questions, no predicted answer: 1. Does pass ⟺ pure survive? 2. Are passing writhes still symmetric, or one-signed (all letters except V⁻¹ are positive)? 3. Does adding e⁻ let any knot (1 component) pass?
+- Not allowed: choosing a canonical word, letter or length from these results. This run measures admissibility only; selection is a separate, separately pre-registered step.
