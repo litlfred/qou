@@ -1,0 +1,104 @@
+{
+  "probe": "fallback_tier_grouped_volume_braid_linking_mirror_slope_symmetry_branch_probe",
+  "beans": [
+    "qou-ai7v",
+    "qou-cgyn",
+    "qou-k12x",
+    "qou-u8ji",
+    "qou-y2np"
+  ],
+  "dps": "50",
+  "scriptCommitSha": "e4bd8a42fde30d03bf0d90b326856ab4020e2862",
+  "scriptHash": "80a5b4de0fd7",
+  "generatedAt": "2026-11-17T11:27:38.463601+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "qou_ai7v_fallback_window_k_exact_4",
+      "bean": "qou-ai7v",
+      "kExact": "4",
+      "kMax": "11",
+      "windowLevels": "7",
+      "partitionCount": "169",
+      "discardedLogTraceApprox": "3.1415926535897932384626433832795028841971693993751",
+      "fallbackZeroedContribution": "0.0",
+      "passed": true
+    },
+    {
+      "id": "qou_ai7v_fallback_window_k_exact_5",
+      "bean": "qou-ai7v",
+      "kExact": "5",
+      "kMax": "11",
+      "windowLevels": "6",
+      "partitionCount": "164",
+      "discardedLogTraceApprox": "3.1415926535897932384626433832795028841971693993751",
+      "fallbackZeroedContribution": "0.0",
+      "passed": true
+    },
+    {
+      "id": "qou_ai7v_fallback_window_k_exact_6",
+      "bean": "qou-ai7v",
+      "kExact": "6",
+      "kMax": "11",
+      "windowLevels": "5",
+      "partitionCount": "155",
+      "discardedLogTraceApprox": "3.1415926535897932384626433832795028841971693993751",
+      "fallbackZeroedContribution": "0.0",
+      "passed": true
+    },
+    {
+      "id": "qou_ai7v_fallback_window_k_exact_11",
+      "bean": "qou-ai7v",
+      "kExact": "11",
+      "kMax": "11",
+      "windowLevels": "0",
+      "partitionCount": "0",
+      "discardedLogTraceApprox": "3.1415926535897932384626433832795028841971693993751",
+      "fallbackZeroedContribution": "0.0",
+      "passed": true
+    },
+    {
+      "id": "qou_cgyn_per_generator_volume_order_blindness_and_trace_gap",
+      "bean": "qou-cgyn",
+      "perGeneratorScalarProd": "0.99049032087575121341525753031558062287551775446519",
+      "alternatingScalarProd": "0.99049032087575121341525753031558062287551775446519",
+      "groupedProtonTrace": "1.1457596924573008696890800000000000000000000000000",
+      "canonicalProtonTrace": "0.62932840220300000000000000000000000000000000000000",
+      "groupedNeutronTrace": "0.98774368811580957163402000000000000000000000000000",
+      "canonicalNeutronTrace": "0.47513351715600000000000000000000000000000000000000",
+      "passed": true
+    },
+    {
+      "id": "qou_k12x_canonical_braid_linking_non_uniformity",
+      "bean": "qou-k12x",
+      "outerPairLinking": "3.0000000000000000000000000000000000000000000000000",
+      "innerPairLinking": "1.0000000000000000000000000000000000000000000000000",
+      "linkingSpread": "2.0000000000000000000000000000000000000000000000000",
+      "sameSpeciesSublinkClosed": "true",
+      "mixedPNSublinkClosed": "false",
+      "passed": true
+    },
+    {
+      "id": "qou_u8ji_mirror_slope_plateau_and_kappa_ame_sign_flip",
+      "bean": "qou-u8ji",
+      "groupedPlateau": "1.4217266385763805642196008392576737726134834517355",
+      "canonicalPlateau": "2.6926340991915537620560221276370379168815211173919",
+      "groupedKappaFW": "-0.35543165964409514105490020981441844315337086293387",
+      "canonicalKappaFW": "-0.67315852479788844051400553190925947922038027934796",
+      "groupedKappaAME": "-0.081568340355904858945099790185581556846629137066126",
+      "canonicalKappaAME": "0.23615852479788844051400553190925947922038027934796",
+      "passed": true
+    },
+    {
+      "id": "qou_y2np_symmetry_energy_bar_branch_and_qbeta_invariance",
+      "bean": "qou-y2np",
+      "deltaAtW0": "0.20876016486787375597992705482633539155896619649930",
+      "deltaAtW1": "-0.20876016486787375597992705482633539155896619649930",
+      "crossingWeightWStar": "0.44799867671804689241405214972130994764030551847465",
+      "corpusWeightW": "0.50034400000000000000000000000000000000000000000000",
+      "qBetaAbsPosBranch": "0.15801600434149129805506000000000000000000000000000",
+      "qBetaAbsNegBranch": "0.15801600434149129805506000000000000000000000000000",
+      "passed": true
+    }
+  ]
+}
