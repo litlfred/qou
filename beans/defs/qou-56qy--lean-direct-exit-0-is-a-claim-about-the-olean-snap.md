@@ -1,7 +1,7 @@
 ---
 # qou-56qy
 title: lean-direct exit 0 is a claim about the olean snapshot, not about the library source (305 modules stale)
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -571,3 +571,7 @@ worth knowing before someone plans it as an idle-pass job.
    reader a way to find out whether *their* file is in the dirty 43.6 %.
    `--report --only <prefix>` is that way; whether AGENTS.md should say so is an
    owner call, not taken here.
+
+## Round 70 Formalization Progress (PR #8297)
+- Formalized `QOU.MassTheory.orbitCount_freeShadow_sub_atomShadow` (sorry-free, 0 advisories across all 6 static vacuity audits).
+- Verified at 80-dps `mpmath` (`computations/probes/tl_uniqueness_threerow_factorisation_shadow_gluon_probe.py`, `scriptHash: 3ae4cba85e90`, Commit 1 `1f88e71305a6e71d41389edf2285daae1528f7d8`, Commit 2 / Witness `cfb7f3d64020483db10298c3ccdd51ae1d1bd7d8`, PR `litlfred/qou#8297`).

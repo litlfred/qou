@@ -1,7 +1,7 @@
 ---
 # qou-5zl1
 title: 'Lean: trace factorisation tr_z(W_atom) = prod_bonds (z+d_k) * P_p(z)^Z * P_n(z)^N on a concrete braided Hecke tower'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-10-12T19:00:00Z
@@ -78,3 +78,7 @@ on every braided-tower Markov trace; `tr_atomWord_colimit` on the Hecke colimit 
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+## Round 70 Formalization Progress (PR #8297)
+- Formalized `QOU.Mass.AtomTraceFactorisation.tr_atomWord_const_bond` (sorry-free, 0 advisories across all 6 static vacuity audits).
+- Verified at 80-dps `mpmath` (`computations/probes/tl_uniqueness_threerow_factorisation_shadow_gluon_probe.py`, `scriptHash: 3ae4cba85e90`, Commit 1 `1f88e71305a6e71d41389edf2285daae1528f7d8`, Commit 2 / Witness `cfb7f3d64020483db10298c3ccdd51ae1d1bd7d8`, PR `litlfred/qou#8297`).

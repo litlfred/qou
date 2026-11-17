@@ -1,7 +1,7 @@
 ---
 # qou-1qsw
 title: pyhecke.atom carries THREE inconsistent nucleon constructions (nets differ by 24%) and different consumers read different ones
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -1069,3 +1069,7 @@ values:
 is unaffected — it is far larger than this — so the defect stands exactly as
 filed; only the three decimals are wrong. Flagged rather than edited in place,
 since the table is this bean's own record of what it found.
+
+## Round 70 Formalization Progress (PR #8297)
+- Formalized `QOU.QBeta.GluonVertexPsdParity.four_crossings_psd_and_two_prod_one` (sorry-free, 0 advisories across all 6 static vacuity audits).
+- Verified at 80-dps `mpmath` (`computations/probes/tl_uniqueness_threerow_factorisation_shadow_gluon_probe.py`, `scriptHash: 3ae4cba85e90`, Commit 1 `1f88e71305a6e71d41389edf2285daae1528f7d8`, Commit 2 / Witness `cfb7f3d64020483db10298c3ccdd51ae1d1bd7d8`, PR `litlfred/qou#8297`).
