@@ -1,7 +1,7 @@
 ---
 # qou-ogrk
 title: 'A2 (leg 1): prove Cov_Planch(ln f, omega3) <= 0 via Ivanov-Olshanski 2nd-order covariance'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -38,3 +38,7 @@ M_1 REFORMULATION (2026-08-21). M_1 = Cov_Planch(Sum(i+j), Sum c^2) -- antidiago
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-21 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Progress Update (Round 91 — lane-cf11)
+- Formalized in `folio/quantum-observable-universe/lean/QOU/QBeta/HookEvenMomentAndBorromeanTripleBrick.lean` with 80-dps probe `computations/probes/hook_even_moment_and_borromean_triple_brick_probe.py` and witness `computations/probes/hook-even-moment-and-borromean-triple-brick.witness.json`.
+- PR: https://github.com/litlfred/qou/pull/8343 (`feat/qou-b9cj-ogrk-ohaz-omr7-ooqh-po72`, HEAD `8c185bc247a4dfba4e6316715175039c0defb340`).

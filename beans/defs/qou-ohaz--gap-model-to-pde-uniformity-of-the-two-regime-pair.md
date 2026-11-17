@@ -1,7 +1,7 @@
 ---
 # qou-ohaz
 title: 'GAP: model-to-PDE uniformity of the two-regime pair-collision model — the surviving lock-uniformity caveat. Phase-1 ODE calculus is theorem-grade (pair_phase1_riccati.lean); Gamma-growth escape closed in-model; what is NOT established is that the NS/q-NS PDE dynamics follows the two-regime ODE through the approach (strain locality, core deformation, V1-d2 phase-plane fidelity). Next honest step: derive the ODE system as a controlled reduction of the vortex-filament/Biot-Savart PDE with error bounds, or find the PDE effect that breaks it.'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -56,3 +56,7 @@ not touch this bean's uniformity question.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-03 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Progress Update (Round 91 — lane-cf11)
+- Formalized in `folio/quantum-observable-universe/lean/QOU/QBeta/HookEvenMomentAndBorromeanTripleBrick.lean` with 80-dps probe `computations/probes/hook_even_moment_and_borromean_triple_brick_probe.py` and witness `computations/probes/hook-even-moment-and-borromean-triple-brick.witness.json`.
+- PR: https://github.com/litlfred/qou/pull/8343 (`feat/qou-b9cj-ogrk-ohaz-omr7-ooqh-po72`, HEAD `8c185bc247a4dfba4e6316715175039c0defb340`).
