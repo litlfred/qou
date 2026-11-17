@@ -803,6 +803,42 @@ theorem markov_stabilisation_fails_on_repeat
   have hneg := conventionD_markov_defect_neg q hq
   linarith [hquad, hneg]
 
+/-- **Closed form of the convention-D singlet (`T = 0`) projector weight (`qou-5d6k`).**
+With `z = q³/(q² + 1)`, the antisymmetric projector trace `(q - z)/(q + q⁻¹)` simplifies
+identically to `q²/(q² + 1)²`. -/
+theorem mu_singlet_closed_form_conventionD (q : R) (hq : 0 < q) :
+    (q - q ^ 3 / (q ^ 2 + 1)) / (q + q⁻¹) = q ^ 2 / (q ^ 2 + 1) ^ 2 := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have hden : q ^ 2 + 1 ≠ 0 := by positivity
+  have hsum : q + q⁻¹ ≠ 0 := by
+    have : 0 < q + q⁻¹ := by positivity
+    exact ne_of_gt this
+  field_simp
+  ring
+
+/-- **Closed form of the convention-D triplet (`T = 1`) projector weight (`qou-5d6k`).**
+With `z = q³/(q² + 1)`, the symmetric projector trace `(z + q⁻¹)/(q + q⁻¹)` simplifies
+identically to `(q⁴ + q² + 1)/(q² + 1)²`. -/
+theorem mu_triplet_closed_form_conventionD (q : R) (hq : 0 < q) :
+    (q ^ 3 / (q ^ 2 + 1) + q⁻¹) / (q + q⁻¹) = (q ^ 4 + q ^ 2 + 1) / (q ^ 2 + 1) ^ 2 := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have hden : q ^ 2 + 1 ≠ 0 := by positivity
+  have hsum : q + q⁻¹ ≠ 0 := by
+    have : 0 < q + q⁻¹ := by positivity
+    exact ne_of_gt this
+  field_simp
+  ring
+
+/-- **Closed form of the convention-D stacked-crossing trace `h·z + 1` (`qou-5d6k`).**
+With `h = q - q⁻¹` and `z = q³/(q² + 1)`, the stacked crossing `σ² = h·σ + 1` has
+Markov trace `(q⁴ + 1)/(q² + 1)`. -/
+theorem stacked_crossing_trace_conventionD (q : R) (hq : 0 < q) :
+    (q - q⁻¹) * (q ^ 3 / (q ^ 2 + 1)) + 1 = (q ^ 4 + 1) / (q ^ 2 + 1) := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have hden : q ^ 2 + 1 ≠ 0 := by positivity
+  field_simp
+  ring
+
 end MarkovRepeatConventionD
 
 end QOU.QBeta.InterfaceScalar

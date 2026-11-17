@@ -121,4 +121,28 @@ theorem annihilator_not_monotone :
   rw [not_annihilates_pow_two 0] at h0
   norm_num at h0
 
+/-- **`q`-Weyl commutation in the function model (`qou-zhep`):**
+Shifting after diagonal multiplication by `q^n` multiplies by an extra factor of `q`:
+`L(M_q f)(n) = q · M_q(L f)(n)`. -/
+theorem shift_mulPow_comm (q : K) (f : ℕ → K) (n : ℕ) :
+    shift (mulPow q f) n = q * mulPow q (shift f) n := by
+  simp [shift, mulPow, pow_succ', mul_assoc]
+
+/-- **Hadamard multiplicative closure of first-order annihilators (`qou-zhep`):**
+While `A_f ⊆ A_{f·g}` fails (`annihilator_not_monotone`), if `(L - a₁)` annihilates `f`
+and `(L - b₁)` annihilates `g`, then `(L - a₁·b₁)` annihilates the pointwise product `f · g`. -/
+theorem annihilates_pointwise_mul {f g : ℕ → K} {a₁ b₁ : K}
+    (hf : annihilates (-a₁) 1 f) (hg : annihilates (-b₁) 1 g) :
+    annihilates (-(a₁ * b₁)) 1 (fun n => f n * g n) := by
+  intro n
+  have hfn : shift f n = a₁ * f n := by
+    have h := hf n
+    linear_combination h
+  have hgn : shift g n = b₁ * g n := by
+    have h := hg n
+    linear_combination h
+  change -(a₁ * b₁) * (f n * g n) + 1 * (shift f n * shift g n) = 0
+  rw [hfn, hgn]
+  ring
+
 end QOU.Eightfold.ConnectedSumProbe

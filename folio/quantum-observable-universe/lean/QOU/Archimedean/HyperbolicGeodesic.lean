@@ -175,4 +175,21 @@ theorem hemisphereFix_isTotallyGeodesic [HypMinimizerUnique] {c : E} (hc : c 2 =
   exact fixedSet_isTotallyGeodesic (boundaryInversionIsom hc hR)
     hx hy hγ ht
 
+/-- **Intersection closure of totally geodesic subsets (`qou-r111`):**
+The intersection of any two totally geodesic subsets of `H³` is totally geodesic. -/
+theorem isTotallyGeodesic_inter {S T : Set E}
+    (hS : IsTotallyGeodesic S) (hT : IsTotallyGeodesic T) :
+    IsTotallyGeodesic (S ∩ T) := by
+  intro x hx y hy γ hγ t ht
+  exact ⟨hS x hx.1 y hy.1 γ hγ t ht, hT x hx.2 y hy.2 γ hγ t ht⟩
+
+/-- **Geodesic arc locus from intersecting a vertical plane and a hemisphere (`qou-r111`):**
+Conditional on `HypMinimizerUnique`, the intersection `verticalPlaneFix ∩ hemisphereFix c R`
+is totally geodesic in `H³`. -/
+theorem verticalPlane_inter_hemisphere_isTotallyGeodesic [HypMinimizerUnique]
+    {c : E} (hc : c 2 = 0) {R : ℝ} (hR : 0 < R) :
+    IsTotallyGeodesic (verticalPlaneFix ∩ hemisphereFix c R) :=
+  isTotallyGeodesic_inter verticalPlaneFix_isTotallyGeodesic
+    (hemisphereFix_isTotallyGeodesic hc hR)
+
 end QOU.Archimedean
