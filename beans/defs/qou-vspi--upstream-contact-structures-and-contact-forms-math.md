@@ -1,13 +1,13 @@
 ---
 # qou-vspi
 title: 'UPSTREAM: contact structures and contact forms — Mathlib has none (measured 0 across five probes); blocked on manifold k-forms'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T09:08:08Z
-updated_at: 2026-10-04T15:25:20Z
+updated_at: 2026-11-17T11:01:49Z
 parent: qou-c8p8
 ---
 
@@ -48,3 +48,9 @@ Contact geometry is one of the two topics (with Hodge star, 6) where this corpus
 source library is actually sparse.
 
 Source: `docs/audits/2026-09-04-mathlib-infrastructure-inventory.md` §U12.
+
+## Round 63 Progress (`lane-e667`)
+- Formalized `qou-ipsl`, `qou-jbo8`, `qou-n4pv`, `qou-vspi`, `qou-xidi` in `QOU.Foundations.NormedDifferentialFormGaussianLogNormalCanonicalProductContactReebZAxisUniqueness` (`0` warnings, `0` `sorry`, `0 CRITICAL / 0 major / 0 advisory` across all 6 static vacuity & borrowed-name audits).
+- Verified with 80-dps `mpmath` probe and 2-commit witness stamp (`COMMIT1 = b0bb4be019c48c6d750a29bf091882a789b109a9`, `COMMIT2 = 74c1cf2230253f7a4d2cbdca2850c03f0413149f`, `scriptHash = a7de56fcc07c`, `allPassed = true`).
+- Opened PR https://github.com/litlfred/qou/pull/8320 (`ready-to-merge`, `release`, `ready: 74c1cf2230253f7a4d2cbdca2850c03f0413149f`).
+- Keeping bean at `status: in-progress` pending merge and verification.
