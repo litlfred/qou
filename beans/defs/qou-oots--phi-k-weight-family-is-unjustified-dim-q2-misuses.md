@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T05:55:40Z
-updated_at: 2026-11-17T06:36:38Z
+updated_at: 2026-11-17T10:50:00Z
 pr: 8228
 parent: qou-3l2l
 ---
@@ -818,3 +818,76 @@ explicit two-arm comparison with Molien absent as a third arm.
 - [x] **50-dps Witness:** `computations/probes/round51-two-loop-flat-torus-theta-weight-and-peripheral-slope.witness.json` (`scriptHash: 879cd7fbcdb2`, `scriptCommitSha: bffc9aa954100eaed1adf1a81eb35fe56e86a5f2`).
 - [x] **PR:** `litlfred/qou#8228` (`https://github.com/litlfred/qou/pull/8228`, head SHA `8335ad54a1e5c4f7a61669fed19de6b0184f0a4d`).
 - [ ] **Reviewer-separated closure:** Kept at `status: in-progress`.
+
+## 2026-11-15 — the ruling does NOT reach `m_K/m_π`; the α_EM axis is two constructions
+
+The 2026-09-14 entry above left the α_EM triage as this bean's remaining scope
+and recorded a partial: one of the three named producers was already triaged,
+and the dashboard's own `α_em⁻¹` row measured weight-family-clean. **What it did
+not settle is the question the existing triage actually raises**, and that is now
+measured.
+
+**The claim being tested is not mine.**
+[`alpha_em_b2_weight_family_triage_probe.py`](../../computations/probes/alpha_em_b2_weight_family_triage_probe.py)
+states its own motivation as: *"the corpus's ONE scoreable L2 result (m_K/m_pi)
+is alpha_em-conditional, so a weight-family change on this axis reaches the only
+sub-100x number the framework currently reports."* That is a reachability claim
+about the dashboard, **asserted as a premise rather than measured**.
+
+**Measured on `main` `b73f680ac5`: it is false.** "The α_EM axis" is two
+constructions that share a name and not a call graph.
+
+| | |
+|---|---|
+| the dashboard's `m_K/m_π` α_em | `meson_em_sinh_closed_form.alpha_em_inv_derived` (`per_observable_100x_status.py:1477`) — the CS/sinh closed form, imported as a **call**, not a copied value |
+| where the −42.2331 % lives | `alpha_em_b2_scalar_c_probe` — the B2 scalar c |
+
+The dashboard **never mentions `alpha_em_b2` at all**. And the producer it does
+use is weight-free through its whole **transitive** cone — 7 in-repo modules,
+walked transitively rather than file-locally or at one hop, because import-cone
+drift is the documented trap here (`binding_canonical.py` source-stable while
+`tr_M_atom` moved 48 %). Zero build a partition weight. The only JSON anything in
+the cone reads is `ame2020.json`, `cal-3-q-beta.witness.json`,
+`codata-2022-validation-masses.witness.json` and `q0_anchor_manifest.json` —
+experimental input and pin configuration, not partition data.
+
+`m_K/m_π` still scores **51.48 ppb / 0.1952×**, unchanged from September.
+
+Probe: [`mk_mpi_alpha_em_weight_family_reach_probe.py`](../../computations/audits/mk_mpi_alpha_em_weight_family_reach_probe.py),
+**14/14**. No arithmetic, no witness, nothing recomputed.
+
+**Scope — read it narrowly.** This does **not** say the B2 measurement is wrong
+(−42.2331 % is real and the existing triage's reasoning about it is sound), does
+**not** rehabilitate `m_K/m_π` (still truncation-fitted and α_em-`sorry`-conditional,
+so **0/6 unconditional** stands), and does **not** say the ruling moves nothing:
+it moves all three producers this bean names, and **two of them are still
+untriaged** — `alpha_5_jucys_murphy_central` (a same-`n` weighted average,
+invariant under the `d_q²/D²` arm but **not** under Molien) and
+`alpha_em_b2_canonical_scale_ratio_probe` (a two-arm `y_(4,1)` vs `w_(4,1)`
+comparison with Molien absent as a third arm). It narrows one stated worry.
+
+**The second-order finding, and it is the reusable one.** The predecessor of this
+probe (`bond_order_jbullet_citation_probe.py`, #7406) died of a hardcoded
+`content/` path: run against the post-reorg tree it reported *21 of 31 failed*,
+every one of them the absent directory, and **nothing wrong in the corpus**
+(salvaged as #7742). Writing this probe I produced three variations on that same
+class, each caught by the probe itself:
+
+1. **Gated §0 on a tree the probe never reads** — the content root, with a glob
+   two levels deep when blocks sit three. It went red, correctly refusing to
+   continue, on a path that cannot affect the conclusion. **That is #7406's defect
+   with the sign flipped**: red for a reason that doesn't matter is as misleading
+   as green for one. Gate on what you read, and nothing else.
+2. **Filtered weight matches with `ast.unparse` alone**, which drops comments and
+   **keeps docstrings** — so `_precision.py`'s docstring mention of
+   `y_lambda_su_n` still counted as a weight. Strip both or it is half a filter.
+3. **Matched a quote with a single-line literal containing spaces**, and the
+   phrase wraps across a line break. **This is the second time** — the first was
+   `the same $J^\bullet$` in the bond-order probe, fixed 2026-09-14 and written up
+   there as a lesson, which I then cited in this probe's docstring while
+   reproducing the defect. Match across whitespace by default.
+
+**Bean stays open** per §13a. Its subject is a weight family whose consumers are
+still being triaged; two named producers remain, and nothing here touches them.
+
+PR #7894 rebased onto main `dc12b128cc` 2026-11-17 (probe-only; this note moved to the beans branch since beans/ is not on main). Probe re-run on that main: 14/14.
