@@ -1,7 +1,7 @@
 ---
 # qou-6snb
 title: 'GAP: Delta_lambda many-body magnitude survives the D-frame re-scoring of all six ansaetze'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

@@ -1,7 +1,7 @@
 ---
 # qou-6p3b
 title: 'qfac/dim_q threading: 12 decisions, not 133 edits (scoped)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

@@ -1,7 +1,7 @@
 ---
 # qou-6x9g
 title: 'PROVE(lean): finite_cascade_depth — theorem finite_cascade_depth : (ctx.N_modes : ℝ) ≤ (3 : ℝ) / 4 * Real.log ctx.Re_q / Real. [cited manuscript]'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

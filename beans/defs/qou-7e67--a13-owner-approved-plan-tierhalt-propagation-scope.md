@@ -1,7 +1,7 @@
 ---
 # qou-7e67
 title: 'A^(1/3): owner-approved plan -- tier+halt propagation, scope-restrict, derive archimedean id, binding-derived size; NO measured-radius input'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
