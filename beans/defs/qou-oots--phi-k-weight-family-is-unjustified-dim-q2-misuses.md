@@ -7,8 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T05:55:40Z
-updated_at: 2026-11-17T10:50:00Z
-pr: 8228
+updated_at: 2026-11-17T23:08:22Z
 parent: qou-3l2l
 ---
 
@@ -891,3 +890,9 @@ class, each caught by the probe itself:
 still being triaged; two named producers remain, and nothing here touches them.
 
 PR #7894 rebased onto main `dc12b128cc` 2026-11-17 (probe-only; this note moved to the beans branch since beans/ is not on main). Probe re-run on that main: 14/14.
+
+
+
+## 2026-11-17 sibling sweep
+PR #7894 (ready): the Molien weight does not reach m_K/m_pi. Left: review + merge on owner tap.
+Recorded 2026-11-17 from the stale-sibling-session sweep (table: /mnt/project-files/qou-sibling-consolidation/table.md). Source session archived; work not lost.

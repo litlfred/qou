@@ -5,7 +5,7 @@ status: todo
 type: epic
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-10-10T07:27:31Z
+updated_at: 2026-11-17T23:08:23Z
 parent: qou-10v9
 ---
 
@@ -149,3 +149,9 @@ This is the hazard the status doc's §6 item 3 warns about, demonstrated on
 myself within the hour: the path intersection tests whether a bean's **files**
 still carry a convention-C binding, not whether its **claim** is closed. Treat
 all 41 as a reading queue.
+
+
+
+## 2026-11-17 sibling sweep
+Remaining convention-C surface is tracked by qou-egqr / qou-ng7j; sibling sessions on it archived with nothing extra left.
+Recorded 2026-11-17 from the stale-sibling-session sweep (table: /mnt/project-files/qou-sibling-consolidation/table.md). Source session archived; work not lost.

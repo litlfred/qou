@@ -2,13 +2,12 @@
 # qou-2tuv
 title: 'H_3 vs H_{3A}: the proper sum is infeasible past A~12, so substitution cannot fix the heavy-atom rows'
 status: in-progress
-pr: 8215
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T11:25:45Z
-updated_at: 2026-10-10T07:01:38Z
+updated_at: 2026-11-17T23:08:21Z
 parent: qou-v2om
 ---
 
@@ -1678,3 +1677,9 @@ Tracked under carrier M7 (qou-g16t) of epic `qou-d8c7` "Mass endomorphism" (issu
 - [x] Pure Lean 4 formalization wired into `QOU.lean` (`FreeNucleonPrecisionStraddleDefect.lean`, `TowerPartitionGrowthAndWeightSubstitution.lean`, `InterfaceScaleFloorAndBandDisjointness.lean`, `SWaveAntisymmetryIsospinGrading.lean`; 0 `sorry`, 0 vacuity advisories across all 6 static audits)
 - [x] 50-dps `mpmath` + exact integer-partition DP probe (`computations/probes/free_nucleon_straddle_h3a_band_isospin_probe.py`) and stamped witness (`computations/probes/free-nucleon-straddle-h3a-band-isospin-probe.witness.json`, 0 raw `float64` fields)
 - [ ] Awaiting adversarial review and Merge Manager merge of PR #8215 (`ready: 5d009c2bc892c5362b5b72a46c0f7f2e162d8d40`)
+
+
+
+## 2026-11-17 sibling sweep
+H3/H3A layer straddle in computations/mass_formula_6term.py (two inputs on different layers in one quantity). Left: move the whole quantity to one layer, re-run the producer.
+Recorded 2026-11-17 from the stale-sibling-session sweep (table: /mnt/project-files/qou-sibling-consolidation/table.md). Source session archived; work not lost.

@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T15:41:58Z
-updated_at: 2026-10-12T19:49:27Z
+updated_at: 2026-11-17T23:08:22Z
 parent: qou-v2om
 ---
 
@@ -1035,3 +1035,9 @@ Float64 residue found in `lp_shadow_price` on the way: bean `qou-f2pf`.
 ## Round 68 Formalization Progress (PR #8285)
 - Formalized `QOU.MassTheory.BlockSDPNondegeneracy.net_and_obj_add` (sorry-free, 0 advisories across all 6 static vacuity audits).
 - Verified at 80-dps `mpmath` (`computations/probes/twobody_deficit_regulator_sdp_milnor_probe.py`, `scriptHash: 39a564805d3e`, Commit 1 `70bec575bb493c7f91cf1b39cb54e58ef8343777`, Commit 2 / Witness `250465c60a6cea44d9f569e88cc79ee2c8d8051b`, PR `litlfred/qou#8285`).
+
+
+
+## 2026-11-17 sibling sweep
+A sibling measured an accuracy ceiling for this route (see table). Left: record the ceiling in the audit doc; no new fit.
+Recorded 2026-11-17 from the stale-sibling-session sweep (table: /mnt/project-files/qou-sibling-consolidation/table.md). Source session archived; work not lost.

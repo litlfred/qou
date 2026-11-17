@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-14T16:50:05Z
-updated_at: 2026-10-10T12:30:00Z
+updated_at: 2026-11-17T23:08:21Z
 parent: qou-v2om
 ---
 
@@ -393,3 +393,9 @@ Neutron expansion in `signed_candidates_probe.py` was wrong (uu→dd instead of 
 ## Round 69 Formalization Progress (PR #8293)
 - Formalized `QOU.shiftEnergy_comp_const_and_energy` (sorry-free, 0 advisories across all 6 static vacuity audits).
 - Verified at 80-dps `mpmath` (`computations/probes/scale_mobius_adjoint_reduced_trefoil_probe.py`, `scriptHash: ae187b673714`, Commit 1 `9b139cda51963d9af6817b576a80c90bb2f74d00`, Commit 2 / Witness `474ee8c61ef5b687f244b6a129aeb23ef9956372`, PR `litlfred/qou#8293`).
+
+
+
+## 2026-11-17 sibling sweep
+Route-1 sign-erasure fix is on PR #7603 / #7893 (open). Left: review and merge on owner tap; re-run the Route-1 witness after merge.
+Recorded 2026-11-17 from the stale-sibling-session sweep (table: /mnt/project-files/qou-sibling-consolidation/table.md). Source session archived; work not lost.

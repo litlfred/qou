@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-11T08:35:32Z
-updated_at: 2026-11-15T22:20:00Z
+updated_at: 2026-11-17T23:08:23Z
 parent: qou-3e6w
 ---
 
@@ -110,3 +110,9 @@ Per owner ruling `Q-3E6W-2 = 1` (session `session_012EE90758AE4945AC814D43`), ex
 - `global_of_local_boxDiffDomain`: specialises `global_of_local` to `boxDiffDomain lo hi c` with `hmidD` discharged automatically.
 - Verified with `lean -DautoImplicit=false -s 65536`: 0 errors, 0 warnings, 0 `sorry`, axioms `[propext, Classical.choice, Quot.sound]`.
 - Status kept at `in-progress` (not closed).
+
+
+
+## 2026-11-17 sibling sweep
+Sibling session that worked this was archived; no new leftover beyond what this bean holds.
+Recorded 2026-11-17 from the stale-sibling-session sweep (table: /mnt/project-files/qou-sibling-consolidation/table.md). Source session archived; work not lost.

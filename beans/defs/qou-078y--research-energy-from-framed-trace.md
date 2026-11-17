@@ -3,11 +3,12 @@
 title: 'RESEARCH: is there a crossing-additive energy derived from the framed Markov trace?'
 status: in-progress
 type: task
+priority: normal
 tags:
     - mass-energy
     - research
 created_at: 2026-11-15T20:26:03Z
-updated_at: 2026-11-16T09:50:00Z
+updated_at: 2026-11-17T23:08:21Z
 parent: qou-6qbv
 ---
 
@@ -136,3 +137,9 @@ X ↦ S^⊗3 X(q⁻¹) S^⊗3 is the mirror σᵢ ↦ σᵢ⁻¹ composed with u
 keeps every signed word (340, length ≤ 4) in the F₃ commutant, fixes the pivot, swaps p/n spaces:
 Tr_p(β̄)(q) = Tr_n(β)(q⁻¹) = Tr_p(β)(q⁻¹); T_p/T_n = q² on mirrors. Verdict scope (a): bar adds no u↔d
 breaker; the γγ-walk p/n χ₂₁ difference is element choice (qou-99qc). Lean candidate `mirror_trace_bar` not written (awaits owner).
+
+
+
+## 2026-11-17 sibling sweep
+Unpushed-to-PR work: branch claude/cyclic-square-cross-term-is-dressing-blind-2026-09-14 (6 commits, no PR), adds RevisitClassCrossTerm.lean. Left: lean-direct verify, open a PR (ask owner first, math repo).
+Recorded 2026-11-17 from the stale-sibling-session sweep (table: /mnt/project-files/qou-sibling-consolidation/table.md). Source session archived; work not lost.

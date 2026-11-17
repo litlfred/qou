@@ -2,13 +2,12 @@
 # qou-vwu3
 title: Is the Markov-trace bond-multiplicativity defect CHARGE-sensitive? The n=4 cross term is derived on BARE generators; the production bonds are charge-dressed
 status: in-progress
-pr: 8278
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-14T17:46:48Z
-updated_at: 2026-11-15T17:10:00Z
+updated_at: 2026-11-17T23:08:22Z
 parent: qou-v2om
 ---
 
@@ -209,3 +208,9 @@ The owner ruled that the γγ selection rule also covers the nuclear bond letter
 - **PR**: [`litlfred/qou#8279`](https://github.com/litlfred/qou/pull/8279) (branch `feat/round67-diproton-coordination-markov-cut-parity-43c1`, Commit 1 `cfebb01621939a34b7b6881f7cb1f8c1de011515`, Commit 2 / Head `6ad7f37ff2f830c6b6b24c3e111bd408c518e8e6`).
 - **Lean 4 Artifact**: `folio/quantum-observable-universe/lean/QOU/MassTheory/BondChannelTzParity.lean (`parityRatioSlope_at_one_and_cayley`)` (0 sorry, 0 findings across all 6 static vacuity audits).
 - **80-dps Witness**: `computations/probes/diproton_coordination_markov_cut_parity_probe.py` (`scriptHash: 54f10b23e4d2`) + `test/results/witnesses/diproton-coordination-markov-cut-parity.witness.json` (`allPassed: true`).
+
+
+
+## 2026-11-17 sibling sweep
+See qou-078y: cyclic-square cross-term branch is related (dressing-blind cross term).
+Recorded 2026-11-17 from the stale-sibling-session sweep (table: /mnt/project-files/qou-sibling-consolidation/table.md). Source session archived; work not lost.

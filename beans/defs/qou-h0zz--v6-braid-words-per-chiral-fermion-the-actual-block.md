@@ -2,7 +2,6 @@
 # qou-h0zz
 title: 'V6: braid words per chiral fermion -- the actual blocker for T(t)'
 status: in-progress
-pr: 8200
 type: task
 priority: normal
 tags:
@@ -10,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - 8f-open
 created_at: 2026-08-10T18:34:14Z
-updated_at: 2026-10-11T07:45:37Z
+updated_at: 2026-11-17T23:08:21Z
 parent: qou-8lxd
 ---
 
@@ -386,3 +385,9 @@ precedent, and `conj:sm-hypercharge-invariant` stays open.
 
 ## Progress (2026-11-16, PR #8200)
 - [x] Formalized `writheSignLeptonNumber`, `scaledLeftHypercharge`, `carrier_writhe_sign_and_hypercharge_cancellation`, and `writheSignLeptonNumber_neg` in `folio/quantum-observable-universe/lean/QOU/Eightfold/TauAnchoredRatioChiralBraidWritheAndSpectralCubicPowerSums.lean` + 50-dps mpmath witness (`qou_h0zz_chiral_carrier_writhe_and_hypercharge_cancellation`) in PR #8200 (`ec7070e7f1b47f4548cd7f98fc2a7948b28854b0`).
+
+
+
+## 2026-11-17 sibling sweep
+2 of 4 chiral-fermion words still to scope. PR #7712, branch claude/chiral-fermion-word-scope-2026-10-10. Left: the last two words, then PR review.
+Recorded 2026-11-17 from the stale-sibling-session sweep (table: /mnt/project-files/qou-sibling-consolidation/table.md). Source session archived; work not lost.
