@@ -1,13 +1,13 @@
 ---
 # qou-5pgl
 title: 'AUDIT: hecke_core.z flipped C->D under every importer — 8 files carry constants calibrated before it'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T13:23:16Z
-updated_at: 2026-10-10T07:47:06Z
+updated_at: 2026-11-17T08:14:00Z
 parent: qou-cdx1
 ---
 
@@ -389,3 +389,8 @@ grep -rn "1.2999219630934102" --include=*.py . | grep -v _deprecated
 python3 -c "from mpmath import mp,mpf,catalan; mp.dps=30; me=mpf('0.51099895069'); \
   v=me*8*catalan; print(mp.nstr(v,20), mp.nstr((mpf('3.74446989')-v)/v*10**6,6))"
 ```
+
+## Implementation & Witness Progress (PR #8273)
+- Branch: `qou-10v9-34oo-43v0-580o-5ovu-5pgl` (`f56a97d3d6ca66bf63033f62ab41236e038a488a`), PR: `litlfred/qou#8273`
+- Lean 4 module: `folio/quantum-observable-universe/lean/QOU/Eightfold/Probe2ShortfallFrameChiCacheClobberPslqDetectorSpellingStage2CacheGuardAndBorromeanLiteral.lean` (0 sorry, 0 axioms, 0 vacuity findings)
+- Probe & witness: `computations/probes/probe2_shortfall_frame_chi_cache_clobber_pslq_detector_spelling_stage2_cache_guard_and_borromean_literal_probe.py` -> `computations/probes/probe2-shortfall-frame-chi-cache-clobber-pslq-detector-spelling-stage2-cache-guard-and-borromean-literal.witness.json` (`allPassed: true`, `scriptCommitSha: e98d91d4e01bb7197ccdfc0c0a05bab481cf2839`)

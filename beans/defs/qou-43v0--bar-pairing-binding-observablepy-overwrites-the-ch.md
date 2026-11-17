@@ -1,13 +1,13 @@
 ---
 # qou-43v0
 title: bar_pairing_binding_observable.py OVERWRITES the chi-cache witness it documents as an input
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T05:54:26Z
-updated_at: 2026-10-04T15:16:38Z
+updated_at: 2026-11-17T08:14:00Z
 parent: qou-v2om
 ---
 
@@ -88,3 +88,8 @@ the symptom record and the payload-shape measurement.
 The restore of `chi-deuteron-h6-at-q0-50dps.witness.json` (PR #6904, on main)
 fixed the one instance. Anyone re-running that producer re-breaks it until
 `qou-w8rv` lands.
+
+## Implementation & Witness Progress (PR #8273)
+- Branch: `qou-10v9-34oo-43v0-580o-5ovu-5pgl` (`f56a97d3d6ca66bf63033f62ab41236e038a488a`), PR: `litlfred/qou#8273`
+- Lean 4 module: `folio/quantum-observable-universe/lean/QOU/Eightfold/Probe2ShortfallFrameChiCacheClobberPslqDetectorSpellingStage2CacheGuardAndBorromeanLiteral.lean` (0 sorry, 0 axioms, 0 vacuity findings)
+- Probe & witness: `computations/probes/probe2_shortfall_frame_chi_cache_clobber_pslq_detector_spelling_stage2_cache_guard_and_borromean_literal_probe.py` -> `computations/probes/probe2-shortfall-frame-chi-cache-clobber-pslq-detector-spelling-stage2-cache-guard-and-borromean-literal.witness.json` (`allPassed: true`, `scriptCommitSha: e98d91d4e01bb7197ccdfc0c0a05bab481cf2839`)
