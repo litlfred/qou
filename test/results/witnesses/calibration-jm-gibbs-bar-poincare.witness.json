@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "1.0",
+  "witnessId": "calibration-jm-gibbs-bar-poincare",
+  "scriptPath": "computations/probes/calibration_jm_gibbs_bar_poincare_probe.py",
+  "scriptCommitSha": "dc29bd74e29908751ac3c561f693d9183225aa1b",
+  "scriptHash": "69e8d0c6ab0f",
+  "generatedAt": "2026-11-17T08:19:25Z",
+  "dps": "80",
+  "beans": [
+    "qou-4zu7",
+    "qou-u9o1",
+    "qou-unqc",
+    "qou-xgt8",
+    "qou-yax5"
+  ],
+  "theorems": [
+    "QOU.Foundations.CalibrationJMGibbsBarPoincare.single_calibration_framework_pinned",
+    "QOU.Foundations.CalibrationJMGibbsBarPoincare.jm_normalized_product_scaling",
+    "QOU.Foundations.CalibrationJMGibbsBarPoincare.jm_inductive_full_twist_step",
+    "QOU.Foundations.CalibrationJMGibbsBarPoincare.markov_trace_as_central_gibbs_state",
+    "QOU.Foundations.CalibrationJMGibbsBarPoincare.kappa_commutes_bar_on_laurent_decomp",
+    "QOU.Foundations.CalibrationJMGibbsBarPoincare.h4_poincare_invertible_of_qint_invertible",
+    "QOU.Foundations.CalibrationJMGibbsBarPoincare.h4_normalized_projector_idempotent"
+  ],
+  "allPassed": true,
+  "checks": [
+    {
+      "name": "single_calibration_framework_pinned",
+      "bean": "qou-4zu7",
+      "calibratedShellEnergy80dps": "8.632",
+      "passed": true
+    },
+    {
+      "name": "jm_normalized_product_scaling_and_inductive_step",
+      "bean": "qou-u9o1",
+      "strandsVerified": "6",
+      "passed": true
+    },
+    {
+      "name": "markov_trace_as_central_gibbs_state",
+      "bean": "qou-unqc",
+      "gibbsExpectation": "-157/1001",
+      "passed": true
+    },
+    {
+      "name": "kappa_commutes_bar_on_laurent_decomp",
+      "bean": "qou-xgt8",
+      "barLaurentValue": "863/108",
+      "passed": true
+    },
+    {
+      "name": "h4_poincare_invertible_and_normalized_projector_idempotent",
+      "bean": "qou-yax5",
+      "qSqSamples": "3",
+      "passed": true
+    }
+  ]
+}
