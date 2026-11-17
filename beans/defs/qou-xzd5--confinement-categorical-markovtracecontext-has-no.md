@@ -1,13 +1,13 @@
 ---
 # qou-xzd5
 title: 'confinement_categorical: MarkovTraceContext has NO instance anywhere — may be vacuously true, not unclosable'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T11:07:51Z
-updated_at: 2026-10-04T15:18:03Z
+updated_at: 2026-11-17T06:48:00Z
 parent: qou-rtxm
 ---
 
@@ -117,3 +117,7 @@ substantive Hecke infrastructure exists. Nothing here builds `H_n(q)` for `n ≥
 
 An `n ≥ 2` instance remains unbuilt anywhere in the tree, which is the real
 missing infra the manuscript keeps citing.
+
+## 2026-11-17 — Concrete `n = 3` (`H₃(q)`) Specht–Markov Trace Instance (`litlfred/qou#8234`)
+- Formalized `h3ConcreteMarkovTrace` and `h3ConcreteMarkovTrace_T1_eq_T2` combining the trivial (`q`), sign (`-1`), and `2 × 2` `q`-Specht (`S^{(2,1)}_q`) representations over generic `CommRingOps R` in `folio/quantum-observable-universe/lean/QOU/Foundations/SpechtH4MarkovCascadeFoundations.lean` (wired into `QOU.lean`, `0` `sorry`, `0` warnings, `0` vacuity advisories, commit `586d33b13c7ee8fa730d8f63e5c0a4eab181c898`, PR [https://github.com/litlfred/qou/pull/8234](https://github.com/litlfred/qou/pull/8234)).
+- Kept `status: in-progress` per no-unilateral-closure policy.

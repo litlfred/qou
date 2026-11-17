@@ -6,7 +6,7 @@ type: milestone
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-04T15:09:55Z
-updated_at: 2026-11-17T06:35:30Z
+updated_at: 2026-11-17T06:48:00Z
 ---
 
 Foundational Lean infrastructure. Measured 2026-10-04: 9-15 real `sorry` on main; open gaps now sit in axioms and instance-less classes. The only item on the L2 critical path is SW-WIRE (WedderburnDecomp instance, markov_trace_unique_axiom), gated by owner decision qou-ar7f.
@@ -35,3 +35,6 @@ Foundational Lean infrastructure. Measured 2026-10-04: 9-15 real `sorry` on main
 
 ## 2026-11-17 — ζ₄ Exclusion, §7c Generic-Ring Clusters & QPlancherel (`5lcg`, `qou-oc4v`, `qou-r7qm`, `qou-xbyp`, `qou-sf1t`, PR #8227)
 - Formalized `folio/quantum-observable-universe/lean/QOU/Foundations/Zeta4GenericRingPlancherel.lean` (`0` `sorry`, generic `CommRingOps R` / `InvolutionRingOps R` per §7c, wired into `QOU.lean`, commit `6ea0f626b6fd6e4a73ad6fb742931324e3efe377`, PR `https://github.com/litlfred/qou/pull/8227`). Kept `status: in-progress`.
+
+## 2026-11-17 — `q`-Specht `S^{(2,1)}_q`, `H₄` Markov Trace, `q`-Cascade Telescope & Trace Non-Vacuity (`qou-npvy`, `qou-1jrr`, `qou-8hm1`, `qou-t7zg`, `qou-xzd5`, PR #8234)
+- Formalized `folio/quantum-observable-universe/lean/QOU/Foundations/SpechtH4MarkovCascadeFoundations.lean` (`0` `sorry`, generic `CommRingOps R` per §7c, wired into `QOU.lean`, commit `586d33b13c7ee8fa730d8f63e5c0a4eab181c898`, PR `https://github.com/litlfred/qou/pull/8234`). Kept `status: in-progress`.

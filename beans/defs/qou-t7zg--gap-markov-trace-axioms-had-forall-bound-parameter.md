@@ -1,13 +1,13 @@
 ---
 # qou-t7zg
 title: 'GAP: Markov-trace axioms had forall-bound parameters that collapsed tr_M to zero'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T15:43:35Z
-updated_at: 2026-10-04T15:20:12Z
+updated_at: 2026-11-17T06:48:00Z
 parent: qou-rtxm
 ---
 
@@ -103,3 +103,7 @@ so this is an agent-confirmed candidate class like the others.
 **Nobody has run this scan.** The two hits here were found by reading one
 file. There are 29 axiom-bearing library files (bean `qou-i6cn`) that
 have not been read.
+
+## 2026-11-17 — `∀`-Bound Markov Parameter Collapse vs Fixed-Parameter Non-Collapse (`litlfred/qou#8234`)
+- Formalized `forall_bound_markov_param_collapses` and `canonicalFixedParamWitness_nondegenerate` over generic `CommRingOps R` in `folio/quantum-observable-universe/lean/QOU/Foundations/SpechtH4MarkovCascadeFoundations.lean` (wired into `QOU.lean`, `0` `sorry`, `0` warnings, `0` vacuity advisories, commit `586d33b13c7ee8fa730d8f63e5c0a4eab181c898`, PR [https://github.com/litlfred/qou/pull/8234](https://github.com/litlfred/qou/pull/8234)).
+- Kept `status: in-progress` per no-unilateral-closure policy.
