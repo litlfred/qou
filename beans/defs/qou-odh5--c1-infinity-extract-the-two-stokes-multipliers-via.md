@@ -1,7 +1,9 @@
 ---
 # qou-odh5
 title: 'C1 infinity: extract the TWO Stokes multipliers via q-Borel/theta resummation (leading blocks now known)'
-status: todo
+status: in-progress
+pr: 8230
+updated_at: 2026-11-17T06:37:48Z
 type: task
 priority: high
 tags:
@@ -293,3 +295,8 @@ proves has dimension 0.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Progress Update (PR #8230)
+- **Status**: `in-progress` (awaiting Merge Manager merge of `litlfred/qou#8230` at `1bb9d799f645494190e9e4834f3982913ab5e918`).
+- **Lean Formalization**: `QOU.QBeta.PentagonTwoRouteAndC1RamifiedStokesBrick.c1_ramified_edge_polynomial_and_stokes_connection_determinant` (Ramified d = 2 C1 operator edge polynomial root verification, positive spectral gap, and unit-determinant 2x2 Stokes connection product.)
+- **80-dps Witness**: `computations/probes/pentagon-two-route-and-c1-ramified-stokes-brick.witness.json` (`scriptHash: ad15e8ab2a08`, `scriptCommitSha: 4eaeef60b72e32fbaaef92149ff8588e4dde4090`).
