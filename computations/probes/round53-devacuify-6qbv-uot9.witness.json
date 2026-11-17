@@ -1,0 +1,60 @@
+{
+  "probe": "round53-devacuify-6qbv-uot9",
+  "scriptPath": "computations/probes/round53_devacuify_6qbv_uot9_probe.py",
+  "scriptHash": "f6080f50632b",
+  "scriptCommitSha": "65b66878ccbf802973992ead9fa1f20e8eeee617",
+  "generatedAt": "2026-11-17T06:31:04Z",
+  "dps": 80,
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "volume_perturbation_markov_peel_and_qint_zero",
+      "bean": "qou-48sb",
+      "dps": 80,
+      "q0": "2.0",
+      "z0": "0.47140452079103168293389624140323269285655729179231602439222657933024415948736901",
+      "max_abs_error_k4_to_k9": "0.0",
+      "qIntSym_zero_abs": "0.0",
+      "passed": true
+    },
+    {
+      "id": "shell_filling_rule_carbon12_lp_duality",
+      "bean": "1c24",
+      "dps": 80,
+      "Z": "6.0",
+      "primal_obj": "18.0",
+      "dual_obj": "18.0",
+      "duality_gap": "0.0",
+      "complementary_slackness_residual": "0.0",
+      "passed": true
+    },
+    {
+      "id": "frobenius_positivity_filter_parity_counts",
+      "bean": "vvcw",
+      "dps": 80,
+      "he4_odd_excluded_count": "8.0",
+      "he4_even_admissible_count": "8.0",
+      "max_parity_formula_diff_A1_to_A6": "0.0",
+      "passed": true
+    },
+    {
+      "id": "mobius_frobenius_kernel_q_limit_and_q_dependence",
+      "bean": "mobius_frobenius_kernel",
+      "dps": 80,
+      "killing_inverse_square": "0.44444444444444444444444444444444444444444444444444444444444444444444444444444444",
+      "limit_residual_at_1_plus_1e_minus_50": "4.4444444444444444444444444444446958588386270220804100554741870736781093127232643e-51",
+      "q_dependence_gap_q2_vs_q1": "0.44444444444444444444444444444444444444444444444444444444444444444444444444444444",
+      "passed": true
+    },
+    {
+      "id": "q_ns_wellposedness_viscosity_and_spectral_decay",
+      "bean": "q_ns_wellposedness",
+      "dps": 80,
+      "q": "2.0",
+      "nu_q": "0.25",
+      "q_int_3": "5.25",
+      "spectral_decay_factor_k3_t1p5": "0.000032445866613991643834472100712993946127126489693551544835975766732411200558816733",
+      "passed": true
+    }
+  ]
+}
