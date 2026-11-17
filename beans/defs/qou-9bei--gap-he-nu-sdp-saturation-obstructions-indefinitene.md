@@ -1,13 +1,13 @@
 ---
 # qou-9bei
 title: 'GAP: he_nu_sdp_saturation_obstruction''s indefiniteness premise is contradicted by its own witness'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T11:42:47Z
-updated_at: 2026-10-04T15:20:06Z
+updated_at: 2026-11-17T07:26:20Z
 parent: qou-10v9
 ---
 
@@ -59,3 +59,8 @@ The measurement is done; the interpretation is the author's.
 
 Related: `qou-tekx` (the pin straddle that surfaced this), `qou-2whe` (the
 detector that could not see it).
+
+## Implementation & Witness Progress (PR #8253)
+- Branch: `qou-10v9-4e5k-742w-9bei-cblw-fv0s` (`52305a7a1e7f9836f16e0d5d8d454bd72705f9b1`), PR: `litlfred/qou#8253`
+- Lean 4 module: `folio/quantum-observable-universe/lean/QOU/Eightfold/DeuteronTraceDiscrepancyM1RhoConstantSdpZeroThresholdPnColourFactorAndSignWireLoss.lean` (0 sorry, 0 axioms, 0 vacuity findings)
+- Probe & witness: `computations/probes/deuteron_trace_discrepancy_m1_rho_constant_sdp_zero_threshold_pn_colour_factor_and_sign_wire_loss_probe.py` -> `computations/probes/deuteron-trace-discrepancy-m1-rho-constant-sdp-zero-threshold-pn-colour-factor-and-sign-wire-loss.witness.json` (`allPassed: true`, `scriptHash: ece5f27ee4a5`, `scriptCommitSha: 1c76aa0739f7803dab0155515577d8888a08fc68`)

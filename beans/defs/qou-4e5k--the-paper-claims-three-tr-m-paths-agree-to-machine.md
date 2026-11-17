@@ -1,13 +1,13 @@
 ---
 # qou-4e5k
 title: The paper claims three tr_M paths agree to machine epsilon; two committed witnesses disagree at 1.4e-4 on the deuteron
-status: todo
+status: in-progress
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-19T21:29:48Z
-updated_at: 2026-10-04T15:15:51Z
+updated_at: 2026-11-17T07:26:20Z
 parent: qou-10v9
 ---
 
@@ -286,3 +286,8 @@ colour-blind deuteron** (0.575090958682446712), and neither of its two witnesses
 records a `pn_convention`. That producer computes via `Σ y_λ·χ^λ`, not through
 either path fixed here. It belongs to `qou-cds4` / ruling R3, and picking its
 frame is that tranche's call.
+
+## Implementation & Witness Progress (PR #8253)
+- Branch: `qou-10v9-4e5k-742w-9bei-cblw-fv0s` (`52305a7a1e7f9836f16e0d5d8d454bd72705f9b1`), PR: `litlfred/qou#8253`
+- Lean 4 module: `folio/quantum-observable-universe/lean/QOU/Eightfold/DeuteronTraceDiscrepancyM1RhoConstantSdpZeroThresholdPnColourFactorAndSignWireLoss.lean` (0 sorry, 0 axioms, 0 vacuity findings)
+- Probe & witness: `computations/probes/deuteron_trace_discrepancy_m1_rho_constant_sdp_zero_threshold_pn_colour_factor_and_sign_wire_loss_probe.py` -> `computations/probes/deuteron-trace-discrepancy-m1-rho-constant-sdp-zero-threshold-pn-colour-factor-and-sign-wire-loss.witness.json` (`allPassed: true`, `scriptHash: ece5f27ee4a5`, `scriptCommitSha: 1c76aa0739f7803dab0155515577d8888a08fc68`)
