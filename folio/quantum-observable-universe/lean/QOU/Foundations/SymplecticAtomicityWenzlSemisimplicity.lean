@@ -130,12 +130,12 @@ theorem neg_mul_neg (a b : R) : ops.mul (ops.neg a) (ops.neg b) = ops.mul a b :=
 
 theorem mul_sub {R : Type u} (ops : CommRingOps R) (a b c : R) :
     ops.mul a (ops.sub b c) = ops.sub (ops.mul a b) (ops.mul a c) := by
-  unfold sub
+  dsimp only [sub]
   rw [ops.left_distrib, ops.mul_neg]
 
 theorem sub_mul {R : Type u} (ops : CommRingOps R) (a b c : R) :
     ops.mul (ops.sub a b) c = ops.sub (ops.mul a c) (ops.mul b c) := by
-  unfold sub
+  dsimp only [sub]
   rw [ops.right_distrib, ops.neg_mul]
 
 theorem sub_eq_zero_iff {a b : R} : ops.sub a b = ops.zero ↔ a = b := by
@@ -149,11 +149,11 @@ theorem sub_eq_zero_iff {a b : R} : ops.sub a b = ops.zero ↔ a = b := by
     exact ops.sub_self b
 
 theorem sub_zero {R : Type u} (ops : CommRingOps R) (a : R) : ops.sub a ops.zero = a := by
-  unfold sub
+  dsimp only [sub]
   rw [ops.neg_zero, ops.add_zero]
 
 theorem zero_sub {R : Type u} (ops : CommRingOps R) (a : R) : ops.sub ops.zero a = ops.neg a := by
-  unfold sub
+  dsimp only [sub]
   rw [ops.zero_add]
 
 end CommRingOps
