@@ -1,13 +1,13 @@
 ---
 # qou-f1qs
 title: 'Lean: general-n normalisation and indexing for the two-row weights (yw_branching is done)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-10T17:54:39Z
-updated_at: 2026-10-04T15:21:11Z
+updated_at: 2026-11-17T12:24:25Z
 parent: qou-0cyu
 ---
 
@@ -138,3 +138,9 @@ split, and picking `N = ⌊n/2⌋` instead makes `hbdry` FALSE for odd `n`.
    `g k = yw q n (n − 2k + 1)`, `hg` discharged by `yw_branching`.
 4. Base case and induction to `Σ_λ dim_λ · y_λ = 1` for all `n`.
 5. Separately: general-`n` vanishing for `ℓ(λ) ≥ 3` at `z_D`.
+
+## Progress 2026-11-17 (Round 66 — PR #8340)
+
+- Formalized in `folio/quantum-observable-universe/lean/QOU/Foundations/AddableCellRatioFakeDegreeTwoRowBallotWeightTensorPowerCharacterOrbitTrace.lean` (Lean 4.24.0, `0` `sorry`, `0` `axiom`, `0` warnings, `0` directory-mode static vacuity & borrowed-name advisories).
+- 80-dps `mpmath` numerical witness stamped in `computations/probes/addable-cell-ratio-fake-degree-two-row-ballot-weight-tensor-power-character-orbit-trace.witness.json` (`scriptHash = 0309390e769d`, `scriptCommitSha = c43b700db42337a2547c8ff1e2a1665156dd27ea`, `HEAD = d46ecc77d14e0e9528cfc49310e88f4e88eb306a`).
+- PR: https://github.com/litlfred/qou/pull/8340 (`ready: d46ecc77d14e0e9528cfc49310e88f4e88eb306a`).

@@ -1,13 +1,13 @@
 ---
 # qou-3quc
 title: 'GAP(lean): general-n Molien/fake-degree q-analogue -- concrete n<=4 proved, general blocked on #SYT + coinvariant grading'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T21:13:18Z
-updated_at: 2026-10-04T15:12:43Z
+updated_at: 2026-11-17T12:24:25Z
 parent: qou-1oif
 ---
 
@@ -242,3 +242,9 @@ via normalizedSum_eq_one and molienSum_eq_qFactorial_iff; source grep finds no `
 import cone (MolienFakeDegreeGeneralN, WenzlSchurElement hits are docstring words only). Not
 lean-direct verified in this session, so the bean is NOT closed here -- the next step is a
 lean-direct run on NormalizedSumUnconditional.lean, then close. AGENTS.md updated to say proved.
+
+## Progress 2026-11-17 (Round 66 — PR #8340)
+
+- Formalized in `folio/quantum-observable-universe/lean/QOU/Foundations/AddableCellRatioFakeDegreeTwoRowBallotWeightTensorPowerCharacterOrbitTrace.lean` (Lean 4.24.0, `0` `sorry`, `0` `axiom`, `0` warnings, `0` directory-mode static vacuity & borrowed-name advisories).
+- 80-dps `mpmath` numerical witness stamped in `computations/probes/addable-cell-ratio-fake-degree-two-row-ballot-weight-tensor-power-character-orbit-trace.witness.json` (`scriptHash = 0309390e769d`, `scriptCommitSha = c43b700db42337a2547c8ff1e2a1665156dd27ea`, `HEAD = d46ecc77d14e0e9528cfc49310e88f4e88eb306a`).
+- PR: https://github.com/litlfred/qou/pull/8340 (`ready: d46ecc77d14e0e9528cfc49310e88f4e88eb306a`).

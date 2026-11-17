@@ -1,13 +1,13 @@
 ---
 # qou-mpq5
 title: 'R2: prove (1)↔(2) Schur-Weyl — tr over (ℂ^N)^{⊗n} = Σ_{λ⊢n}(dim V_λ)χ_λ (partition fn = character sum)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-02T18:33:15Z
-updated_at: 2026-10-04T15:23:10Z
+updated_at: 2026-11-17T12:24:25Z
 parent: qou-59vq
 ---
 
@@ -69,3 +69,9 @@ did NOT construct an instance for the real `H_n(q)` — that is `R2-inst`
 (the Jimbo-1986 double-centralizer + Hoefsmit matrix units), a multi-week
 Mathlib gap, deliberately NOT faked. R2 is therefore *conditionally* proved
 (§3b-cond), not unconditionally. Children R2b/R2c/R2-inst track the real work.
+
+## Progress 2026-11-17 (Round 66 — PR #8340)
+
+- Formalized in `folio/quantum-observable-universe/lean/QOU/Foundations/AddableCellRatioFakeDegreeTwoRowBallotWeightTensorPowerCharacterOrbitTrace.lean` (Lean 4.24.0, `0` `sorry`, `0` `axiom`, `0` warnings, `0` directory-mode static vacuity & borrowed-name advisories).
+- 80-dps `mpmath` numerical witness stamped in `computations/probes/addable-cell-ratio-fake-degree-two-row-ballot-weight-tensor-power-character-orbit-trace.witness.json` (`scriptHash = 0309390e769d`, `scriptCommitSha = c43b700db42337a2547c8ff1e2a1665156dd27ea`, `HEAD = d46ecc77d14e0e9528cfc49310e88f4e88eb306a`).
+- PR: https://github.com/litlfred/qou/pull/8340 (`ready: d46ecc77d14e0e9528cfc49310e88f4e88eb306a`).
