@@ -1,7 +1,7 @@
 ---
 # qou-m0bv
 title: 'GAP: 4 particle-existence blocks prove a degenerate witness (zero-mass proton, two-unknot hadron)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -88,3 +88,7 @@ side-conditions rather than findings.
 ## 2026-11-15 — re-scoped by the γγ rule
 
 The owner ruled that the γγ selection rule also covers the nuclear bond letters. Any number in this bean computed on the single-crossing interface letters of `atom_braid_word_3A` (`d_k`, `μ_e`, the chain law `∏(z_D + d_k)`, the `b₃` magnitudes −1.2277 / −0.7973 MeV, or a sign map on that word) is now a record of a superseded word, not a current result. Lean results stated for generic bond weights are unaffected. The redo waits on a γγ-selected word per nucleus (PR #7876). Record: `docs/audits/2026-11-15-gg-rule-rescopes-old-letter-binding.md`. The bean stays open.
+
+## Progress Update (Round 90 — lane-cf11)
+- Formalized in `folio/quantum-observable-universe/lean/QOU/QBeta/BipartitionTransseriesAndCubicDimensionKernelBrick.lean` with 80-dps probe `computations/probes/bipartition_transseries_and_cubic_dimension_kernel_brick_probe.py` and witness `computations/probes/bipartition-transseries-and-cubic-dimension-kernel-brick.witness.json`.
+- PR: https://github.com/litlfred/qou/pull/8339 (`feat/qou-b9cj-m0bv-m6gp-mbz4-mdbh-mssy`, HEAD `8369032c8c6c736ecfb79467000a84fa918a7d04`).

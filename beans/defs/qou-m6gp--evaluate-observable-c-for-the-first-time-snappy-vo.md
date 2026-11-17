@@ -1,7 +1,7 @@
 ---
 # qou-m6gp
 title: 'Evaluate observable C for the first time: SnapPy volume of the DERIVED braid closures (binding_volume_difference_probe leg C never ran)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -37,3 +37,7 @@ computations/probes/binding_volume_difference_probe.py reports a 'triple refutat
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Progress Update (Round 90 — lane-cf11)
+- Formalized in `folio/quantum-observable-universe/lean/QOU/QBeta/BipartitionTransseriesAndCubicDimensionKernelBrick.lean` with 80-dps probe `computations/probes/bipartition_transseries_and_cubic_dimension_kernel_brick_probe.py` and witness `computations/probes/bipartition-transseries-and-cubic-dimension-kernel-brick.witness.json`.
+- PR: https://github.com/litlfred/qou/pull/8339 (`feat/qou-b9cj-m0bv-m6gp-mbz4-mdbh-mssy`, HEAD `8369032c8c6c736ecfb79467000a84fa918a7d04`).
