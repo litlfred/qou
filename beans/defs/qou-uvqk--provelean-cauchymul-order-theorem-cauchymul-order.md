@@ -1,7 +1,9 @@
 ---
 # qou-uvqk
 title: 'PROVE(lean): cauchyMul_order — theorem cauchyMul_order {q s t : ℝ} {a b : ℕ → K} (ha : IsQGevreyOrder q s a) (hb : IsQGev [cited ramis-sauloy-zhang2013]'
-status: todo
+status: in-progress
+pr: 8224
+updated_at: 2026-11-17T06:27:22Z
 type: task
 priority: normal
 tags:
@@ -25,3 +27,8 @@ parent: qou-u2al
   - [ramis-sauloy-zhang2013] Ramis, Sauloy, Zhang (2013), *Local analytic classification of q-difference equations* — https://arxiv.org/abs/0903.0853
 - **Tractability:** Gevrey order of a Cauchy product cauchyMul_order; repo-internal envelope estimate. Overlaps PR #4140.
 - **Next step:** Blocked on in-repo scaffolding (not Mathlib). Complete/route the named repo infra, then discharge; do NOT weaken the statement.
+
+## Progress Update (PR #8224)
+- **Status**: `in-progress` (awaiting Merge Manager merge of `litlfred/qou#8224` at `9725d15463b70fb5b273b6c495db79723640032c`).
+- **Lean Formalization**: `QOU.QBeta.FaddeevHalvesSelectionAndQGevreyCauchyEnvelope.q_gevrey_cauchy_mul_quadratic_envelope_identity` (Exact completion of the square for the q-Gevrey Cauchy convolution exponent with harmonic-mean lower envelope s*t/(s+t).)
+- **80-dps Witness**: `computations/probes/faddeev-halves-selection-and-q-gevrey-cauchy-envelope.witness.json` (`scriptHash: cea527e5468d`, `scriptCommitSha: 9d85aecf9640ed04a9fa33fe94c3662500eae503`).

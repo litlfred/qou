@@ -1,7 +1,9 @@
 ---
 # qou-cons
 title: 'T2: hratio — prove entireness of Φ₁/Φ₂ ratio (divisor cancellation: two FaddeevPhi solutions share zero/pole lattice)'
-status: todo
+status: in-progress
+pr: 8224
+updated_at: 2026-11-17T06:27:22Z
 type: task
 priority: normal
 tags:
@@ -180,3 +182,8 @@ than it looks — check it early, because if the order is infinite the whole
 route dies and only a pinned-divisor argument survives.
 
 Status stays `todo`: restated and now workable, not started.
+
+## Progress Update (PR #8224)
+- **Status**: `in-progress` (awaiting Merge Manager merge of `litlfred/qou#8224` at `9725d15463b70fb5b273b6c495db79723640032c`).
+- **Lean Formalization**: `QOU.QBeta.FaddeevHalvesSelectionAndQGevreyCauchyEnvelope.faddeev_halves_divisor_cancellation_and_scalar_rigidity` (Divisor cancellation and scalar rigidity for two Faddeev solutions sharing zero/pole lattices.)
+- **80-dps Witness**: `computations/probes/faddeev-halves-selection-and-q-gevrey-cauchy-envelope.witness.json` (`scriptHash: cea527e5468d`, `scriptCommitSha: 9d85aecf9640ed04a9fa33fe94c3662500eae503`).

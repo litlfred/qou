@@ -1,7 +1,9 @@
 ---
 # qou-jplv
 title: 'V3 (hard): positive-factor branch-point Riemann sum (k<=k*) -> Li2(x)-pi^2/6 for q>1 partition u:1->1/x hitting branch point x=1; adapt DilogPartAConvergence h(u) machinery (integral_zero_one_eq_LiTwo, riemann_error_bound, tail_bound) to the u>1 side with integrable log singularity'
-status: todo
+status: in-progress
+pr: 8224
+updated_at: 2026-11-17T06:27:22Z
 type: task
 priority: normal
 tags:
@@ -157,3 +159,8 @@ The general-x UNIFORM Diophantine statement (all x, all scalings) remains open.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-07-25 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Progress Update (PR #8224)
+- **Status**: `in-progress` (awaiting Merge Manager merge of `litlfred/qou#8224` at `9725d15463b70fb5b273b6c495db79723640032c`).
+- **Lean Formalization**: `QOU.QBeta.FaddeevHalvesSelectionAndQGevreyCauchyEnvelope.branch_point_scaling_gap_and_quadratic_power_bound` (Branch-point scaling gap identity 1 - x*q^n = 1/m, linear bound, and quadratic power-law lower bound in badly-approximable regime.)
+- **80-dps Witness**: `computations/probes/faddeev-halves-selection-and-q-gevrey-cauchy-envelope.witness.json` (`scriptHash: cea527e5468d`, `scriptCommitSha: 9d85aecf9640ed04a9fa33fe94c3662500eae503`).
