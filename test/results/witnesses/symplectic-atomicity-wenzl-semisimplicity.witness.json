@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "1.0",
+  "witnessId": "symplectic-atomicity-wenzl-semisimplicity",
+  "scriptPath": "computations/probes/symplectic_atomicity_wenzl_semisimplicity_probe.py",
+  "scriptCommitSha": "0bdf06e31a58e3c4bb11a03ff9cb91943e5ff0d1",
+  "scriptHash": "3b0b8e8fde07",
+  "generatedAt": "2026-11-17T08:07:44Z",
+  "dps": "80",
+  "beans": [
+    "qou-atsd",
+    "qou-dyij",
+    "qou-cc97",
+    "qou-otbb",
+    "qou-e4ri"
+  ],
+  "theorems": [
+    "QOU.Foundations.SymplecticAtomicityWenzlSemisimplicity.sp2_basis_volume_eq_det",
+    "QOU.Foundations.SymplecticAtomicityWenzlSemisimplicity.sp2_diagonal_torus_rank_one",
+    "QOU.Foundations.SymplecticAtomicityWenzlSemisimplicity.knot_connected_sum_multiplicative",
+    "QOU.Foundations.SymplecticAtomicityWenzlSemisimplicity.linking_excess_eq_zero_iff",
+    "QOU.Foundations.SymplecticAtomicityWenzlSemisimplicity.projector_bridge_trace_branching",
+    "QOU.Foundations.SymplecticAtomicityWenzlSemisimplicity.hook_product_three_invertible",
+    "QOU.Foundations.SymplecticAtomicityWenzlSemisimplicity.central_projector_semisimple_idempotent_and_radical",
+    "QOU.Foundations.SymplecticAtomicityWenzlSemisimplicity.qIntBal_two_sq_sub_one_eq_three",
+    "QOU.Foundations.SymplecticAtomicityWenzlSemisimplicity.yekutieli_coboundary_associativity"
+  ],
+  "allPassed": true,
+  "checks": [
+    {
+      "name": "sp2_basis_volume_eq_det_and_diagonal_torus_rank_one",
+      "bean": "qou-atsd",
+      "matricesTested": "2",
+      "torusSamples": "3",
+      "passed": true
+    },
+    {
+      "name": "knot_connected_sum_multiplicative_and_linking_excess",
+      "bean": "qou-dyij",
+      "connectedSumValue": "5187/21505",
+      "passed": true
+    },
+    {
+      "name": "projector_bridge_trace_branching",
+      "bean": "qou-cc97",
+      "clearedRecurrenceValue": "121/104",
+      "passed": true
+    },
+    {
+      "name": "hook_product_three_invertible_and_central_projector_idempotent",
+      "bean": "qou-otbb",
+      "hookProduct": "15/2",
+      "passed": true
+    },
+    {
+      "name": "qIntBal_two_sq_sub_one_eq_three_and_yekutieli_coboundary",
+      "bean": "qou-e4ri",
+      "qIntResidual80dps": "8.433758354584418579478859e-81",
+      "passed": true
+    }
+  ]
+}
