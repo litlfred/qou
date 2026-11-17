@@ -1,0 +1,76 @@
+{
+  "probe": "ocneanu-tower-convention-d-ribbon-clebsch-gordan",
+  "beans": [
+    "qou-utb3",
+    "qou-w4la",
+    "qou-k4oq",
+    "qou-o9ge",
+    "qou-0cyu"
+  ],
+  "precisionDps": "80",
+  "scriptHash": "b795fffb337b",
+  "scriptCommitSha": "e7ef6784ad6145e3fc5513de1de53d23be6b3353",
+  "generatedAt": "2026-11-17T07:25:29.726526+00:00",
+  "allPassed": true,
+  "checks": {
+    "qou_utb3_tower_peel_and_flaw": {
+      "passed": true,
+      "twoStepResidual": "0.0",
+      "tensorFlawResidual": "0.0"
+    },
+    "qou_w4la_generic_ring_skein_inverse": {
+      "passed": true,
+      "twoSidedInverseResidual": "0.0",
+      "eigenvalueFactorResidual": "0.0"
+    },
+    "qou_k4oq_convention_d_peel_weight": {
+      "passed": true,
+      "qSample": "5/3",
+      "w1Forced": "25/9",
+      "zUnnormalized": "125/27",
+      "zNormalized": "125/102"
+    },
+    "qou_o9ge_ribbon_monodromy_and_pivotal_cyclic": {
+      "passed": true,
+      "monodromyRecoveryResidual": "1.054219794323052322434857405127001900771e-81",
+      "pivotalCyclicityResidual": "0.0"
+    },
+    "qou_0cyu_clebsch_gordan_and_catalan": {
+      "passed": true,
+      "threeTermStep2Residual": "8.433758354584418579478859241016015206168e-81",
+      "threeTermStep3Residual": "1.686751670916883715895771848203203041234e-80",
+      "levelsN1To6": [
+        {
+          "n": "1",
+          "catalanBallotSqSum": "1",
+          "clebschGordanResidual": "0.0"
+        },
+        {
+          "n": "2",
+          "catalanBallotSqSum": "2",
+          "clebschGordanResidual": "8.433758354584418579478859241016015206168e-81"
+        },
+        {
+          "n": "3",
+          "catalanBallotSqSum": "5",
+          "clebschGordanResidual": "1.686751670916883715895771848203203041234e-80"
+        },
+        {
+          "n": "4",
+          "catalanBallotSqSum": "14",
+          "clebschGordanResidual": "3.373503341833767431791543696406406082467e-80"
+        },
+        {
+          "n": "5",
+          "catalanBallotSqSum": "42",
+          "clebschGordanResidual": "2.02410200510026045907492621784384364948e-79"
+        },
+        {
+          "n": "6",
+          "catalanBallotSqSum": "132",
+          "clebschGordanResidual": "2.698802673467013945433234957125124865974e-79"
+        }
+      ]
+    }
+  }
+}
