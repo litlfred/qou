@@ -64,23 +64,30 @@ theorem whiteheadFourCatalan_and_saddle_balance (g n k : Int) :
     whiteheadFourCatalanSum g = g + g + g + g ∧
     whiteheadSaddlePairSum n k = 2 * n ∧
     (n + k) - (n - k) = 2 * k := by
-  unfold whiteheadFourCatalanSum whiteheadSaddlePairSum
-  omega
+  dsimp only [whiteheadFourCatalanSum, whiteheadSaddlePairSum]
+  have h1 : 4 * g = g + g + g + g := by omega
+  have h2 : (n - k) + (n + k) = 2 * n := by omega
+  have h3 : (n + k) - (n - k) = 2 * k := by omega
+  exact ⟨h1, h2, h3⟩
 
-/-! ### 4. Wedderburn multiplicity obstruction excess (`qou-smyz`) -/
+/-! ### 4. Semisimple block multiplicity obstruction excess (`qou-smyz`) -/
 
-/-- Multiplicity excess `mSrc - mTgt` comparing source and target Wedderburn block multiplicities. -/
-def wedderburnMultiplicityExcess (mSrc mTgt : Int) : Int :=
+/-- Multiplicity excess `mSrc - mTgt` comparing source and target direct-summand block multiplicities. -/
+def blockMultiplicityExcess (mSrc mTgt : Int) : Int :=
   mSrc - mTgt
 
 /-- Whenever the source multiplicity strictly exceeds the target multiplicity (`mTgt < mSrc`),
-    the Wedderburn multiplicity excess is at least `1` (`1 <= wedderburnMultiplicityExcess mSrc mTgt`),
-    witnessing a strict representation-theoretic embedding obstruction. -/
-theorem wedderburnMultiplicityExcess_pos_of_lt (mSrc mTgt : Int) (hLt : mTgt < mSrc) :
-    1 ≤ wedderburnMultiplicityExcess mSrc mTgt ∧
-    wedderburnMultiplicityExcess mSrc mTgt + mTgt = mSrc := by
-  unfold wedderburnMultiplicityExcess
-  omega
+    the block multiplicity excess is at least `1` (`1 <= blockMultiplicityExcess mSrc mTgt`),
+    is antisymmetric under source-target swap, and reconstructs `mSrc`. -/
+theorem blockMultiplicityExcess_pos_of_lt (mSrc mTgt : Int) (hLt : mTgt < mSrc) :
+    1 ≤ blockMultiplicityExcess mSrc mTgt ∧
+    blockMultiplicityExcess mSrc mTgt + mTgt = mSrc ∧
+    blockMultiplicityExcess mSrc mTgt = - blockMultiplicityExcess mTgt mSrc := by
+  dsimp only [blockMultiplicityExcess]
+  have hPos : 1 ≤ mSrc - mTgt := by omega
+  have hAdd : (mSrc - mTgt) + mTgt = mSrc := by omega
+  have hSkew : mSrc - mTgt = - (mTgt - mSrc) := by omega
+  exact ⟨hPos, hAdd, hSkew⟩
 
 /-! ### 5. Murakami deformed meridian winding threshold (`qou-thj7`) -/
 
