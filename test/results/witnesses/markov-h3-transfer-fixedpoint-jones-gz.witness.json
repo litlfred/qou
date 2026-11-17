@@ -1,0 +1,43 @@
+{
+  "probe": "markov-h3-transfer-fixedpoint-jones-gz",
+  "beans": [
+    "qou-46ab",
+    "qou-48is",
+    "qou-8uxw",
+    "qou-98g5",
+    "qou-ckbv"
+  ],
+  "precisionDps": "80",
+  "scriptHash": "1bf530249a70",
+  "scriptCommitSha": "2b12359f227b0dc628cdd0df3e8f7f2f6ff6c5ca",
+  "generatedAt": "2026-11-17T07:33:37.349301+00:00",
+  "allPassed": true,
+  "checks": {
+    "qou_46ab_markov_peel_h3": {
+      "passed": true,
+      "trH3AddResidual": "0/1",
+      "trSigma1": "8/5"
+    },
+    "qou_48is_transfer_factor_commute": {
+      "passed": true,
+      "twoStepReadout": "575/216"
+    },
+    "qou_8uxw_burnside_fixed_colourings": {
+      "passed": true,
+      "fixedInterleaved": "2",
+      "fixedInterleavedSq": "4",
+      "fixedSequential": "8"
+    },
+    "qou_98g5_convention_d_loop_gap": {
+      "passed": true,
+      "zDMinusLoopRecipGap": "0.1153996473152340517211940416913944247449",
+      "gapIdentityResidual": "9.224423200326707821305002294861266631746e-82",
+      "zCvsLoopRecipRelDiff": "0.004081834465479972963340897857939992408014"
+    },
+    "qou_ckbv_gz_rank_grading_and_9_12": {
+      "passed": true,
+      "totalRank": "6",
+      "nineTwelveDegreeMinusTetrahedra": "7"
+    }
+  }
+}
