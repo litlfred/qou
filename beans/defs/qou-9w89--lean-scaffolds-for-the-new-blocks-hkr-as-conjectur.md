@@ -1,7 +1,7 @@
 ---
 # qou-9w89
 title: 'Lean scaffolds for the new blocks: HKR as conjecture class, trace-level separation, no vacuous stubs'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

@@ -1,7 +1,7 @@
 ---
 # qou-ahss
 title: 'RETAINED: eigenvalue_norm_sq_axiom — needs complex analysis plumbing (Complex.abs_div etc)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

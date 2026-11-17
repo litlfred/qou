@@ -1,7 +1,7 @@
 ---
 # qou-btq3
 title: 'QuantumUniverse has no constructions: strengthening it is typecheck-free and checker-invisible'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

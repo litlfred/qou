@@ -1,7 +1,7 @@
 ---
 # qou-7yj0
 title: 'Ten classes named BorromeanQuark, all trivially inhabited: conditional-on-conjecture is decorative'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
