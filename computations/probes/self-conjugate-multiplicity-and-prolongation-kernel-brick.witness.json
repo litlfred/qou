@@ -1,0 +1,49 @@
+{
+  "probe": "self_conjugate_multiplicity_and_prolongation_kernel_brick_probe",
+  "beans": [
+    "qou-k2xr",
+    "qou-k4ud",
+    "qou-k8ek",
+    "qou-kc7y",
+    "qou-kyh5"
+  ],
+  "leanModule": "folio/quantum-observable-universe/lean/QOU/QBeta/SelfConjugateMultiplicityAndProlongationKernelBrick.lean",
+  "precisionDps": "80",
+  "scriptCommitSha": "b74bffb0d148592f3bcef84a6e80235048fdcaad",
+  "scriptHash": "3093f2192577",
+  "dirty": false,
+  "generatedAt": "2026-11-17T11:51:41.047579+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "bean": "qou-k2xr",
+      "name": "monotoneSelfConjCount_and_multiplicityDiscrepancy",
+      "passed": true,
+      "he4MultiplicitySplit80dps": "1.0"
+    },
+    {
+      "bean": "qou-k4ud",
+      "name": "fourBodyExchangePoly_expanded_and_critical_poles",
+      "passed": true,
+      "deformedSsPoleCriticalityResidual80dps": "0.0"
+    },
+    {
+      "bean": "qou-k8ek",
+      "name": "threeBraidWrithePair_reordering_and_commutator",
+      "passed": true,
+      "commutatorAbelianizedWrithe80dps": "0.0"
+    },
+    {
+      "bean": "qou-kc7y",
+      "name": "prolongationSymbol_linearity_and_shift",
+      "passed": true,
+      "prolongationSymbolResidual80dps": "0.0"
+    },
+    {
+      "bean": "qou-kyh5",
+      "name": "crossingMultiplicityGap_additivity_and_anchor_balance",
+      "passed": true,
+      "confirmedAtom6_2Gap80dps": "4.0"
+    }
+  ]
+}
