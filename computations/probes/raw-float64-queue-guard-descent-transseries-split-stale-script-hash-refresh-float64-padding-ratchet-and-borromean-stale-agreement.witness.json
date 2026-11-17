@@ -1,0 +1,54 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "dps": "80",
+  "computedAt": "2026-11-17T08:34:04.501989+00:00",
+  "commitSha": "08488c3c144d1802ec44554a809222676fc88118",
+  "scriptCommitSha": "08488c3c144d1802ec44554a809222676fc88118",
+  "scriptHash": "e98e6891ebdf",
+  "allPassed": true,
+  "assertions": [
+    {
+      "name": "qou_5lw7_raw_float64_queue_and_degraded_anchor_deficit_accounting",
+      "computed": "22:1748:33",
+      "expected": "22:1748:33",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.RawFloat64QueueGuardDescentTransseriesSplitStaleScriptHashRefreshFloat64PaddingRatchetAndBorromeanStaleAgreement.raw_float64_queue_and_degraded_anchor_deficit_accounting"
+    },
+    {
+      "name": "qou_5m4f_descent_backbone_dominates_37x_transseries_component",
+      "computed": "3.6e+1",
+      "expected": "36.0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "bDescMeV": "2.1644427891891891891891891891891891891891891891891891891891891891891891891891892",
+      "bTransMeV": "6.0123410810810810810810810810810810810810810810810810810810810810810810810810811e-2",
+      "source": "QOU.Eightfold.RawFloat64QueueGuardDescentTransseriesSplitStaleScriptHashRefreshFloat64PaddingRatchetAndBorromeanStaleAgreement.descent_backbone_dominates_37x_transseries_component"
+    },
+    {
+      "name": "qou_5rf8_stale_script_hash_refresh_monotone_drain",
+      "computed": "70:45:0",
+      "expected": "70:45:0",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.RawFloat64QueueGuardDescentTransseriesSplitStaleScriptHashRefreshFloat64PaddingRatchetAndBorromeanStaleAgreement.stale_script_hash_refresh_monotone_drain"
+    },
+    {
+      "name": "qou_5sg8_float64_padding_ratchet_and_spurious_tail_accounting",
+      "computed": "4:17:34",
+      "expected": "4:17:34",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.RawFloat64QueueGuardDescentTransseriesSplitStaleScriptHashRefreshFloat64PaddingRatchetAndBorromeanStaleAgreement.float64_padding_ratchet_and_spurious_tail_accounting"
+    },
+    {
+      "name": "qou_5t68_coupled_stale_witness_zero_discrepancy_hides_convention_drift",
+      "computed": "0.0:-4.172194e-1",
+      "expected": "0.0:-0.4172194",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "QOU.Eightfold.RawFloat64QueueGuardDescentTransseriesSplitStaleScriptHashRefreshFloat64PaddingRatchetAndBorromeanStaleAgreement.coupled_stale_witness_zero_discrepancy_hides_convention_drift"
+    }
+  ]
+}
