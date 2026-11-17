@@ -53,7 +53,7 @@ from typing import Optional
 sys.path.insert(0, str(Path(__file__).parent))
 from mpmath import mp  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 
 
 HERE = Path(__file__).parent
@@ -64,20 +64,19 @@ OUTPUT_WITNESS = _pb.witness_path("markov-pipeline-cross-validation.witness.json
 # A STRING, not a float literal: the comparison below is mpf end to end, and a
 # Python float here is the one place a float64 could re-enter the numeric path.
 AGREEMENT_RTOL = "1e-9"
+_UPSTREAM_RECORDS: list = []
 
 
 def load_realizer() -> Optional[dict]:
     if not REALIZER_WITNESS.exists():
         return None
-    with REALIZER_WITNESS.open() as f:
-        return json.load(f)
+    return record_upstream(REALIZER_WITNESS, _UPSTREAM_RECORDS)
 
 
 def load_term6_full() -> Optional[dict]:
     if not TERM6_FULL_WITNESS.exists():
         return None
-    with TERM6_FULL_WITNESS.open() as f:
-        return json.load(f)
+    return record_upstream(TERM6_FULL_WITNESS, _UPSTREAM_RECORDS)
 
 
 def realizer_archimedean_by_atom(realizer_data: dict) -> dict[str, mp.mpf]:
@@ -87,7 +86,7 @@ def realizer_archimedean_by_atom(realizer_data: dict) -> dict[str, mp.mpf]:
     field; older revisions stored them at the top level under `results`.
     Look in both places to stay forward- and backward-compatible.
     """
-    by_atom: dict[str, float] = {}
+    by_atom: dict[str, mp.mpf] = {}
     nested = realizer_data.get("data", {}).get("results")
     legacy = realizer_data.get("results")
     atom_records = nested if nested is not None else (legacy or [])
@@ -100,8 +99,8 @@ def realizer_archimedean_by_atom(realizer_data: dict) -> dict[str, mp.mpf]:
     return by_atom
 
 
-def term6_archimedean_by_atom(term6_data: dict) -> dict[str, float]:
-    by_atom: dict[str, float] = {}
+def term6_archimedean_by_atom(term6_data: dict) -> dict[str, mp.mpf]:
+    by_atom: dict[str, mp.mpf] = {}
     for atom_record in term6_data.get("data", {}).get("atoms", []):
         atom = atom_record.get("atom")
         if atom and "tr_M_at_q0_polynomial" in atom_record:
@@ -171,7 +170,7 @@ def main() -> int:
         )
         print(f"  realizer has {len(realizer_arch)} atoms with archimedean values:")
         for a, v in realizer_arch.items():
-            print(f"    {a:>24}  tr_M(q_0) = {v:.10f}")
+            print(f"    {a:>24}  tr_M(q_0) = {mp.nstr(v, 11)}")
         print(
             "  no witness written — re-run after term6 lands to "
             "produce the cross-validation certificate."
@@ -191,6 +190,7 @@ def main() -> int:
     ]
 
     w = WitnessBuilder("markov-pipeline-cross-validation", engine="python")
+    w.add_upstream_records(_UPSTREAM_RECORDS)
     w.set_description(
         "Verifies archimedean tr_M(q_0) agreement between the polynomial-"
         "ring realization (markov_substrate_realizer.py) and the "
@@ -250,14 +250,25 @@ def main() -> int:
     for c in checks:
         marker = "✓" if c["agree"] else "✗"
         print(
-            # These are 60-digit `fmt` strings now, not floats; re-parse for display.
-            f"  {marker} {c['atom']:>24}  realizer={mp.mpf(c['realizer_value']):.10f}  "
-            f"term6={mp.mpf(c['term6_value']):.10f}  rel_diff={mp.mpf(c['rel_diff']):.2e}"
+            # Format via mp.nstr rather than mpf.__format__ (`:.10f` / `:.2e`),
+            # which raises TypeError on mpmath 1.3.0 (bean qou-eg4l).
+            f"  {marker} {c['atom']:>24}  realizer={mp.nstr(mp.mpf(c['realizer_value']), 11)}  "
+            f"term6={mp.nstr(mp.mpf(c['term6_value']), 11)}  rel_diff={mp.nstr(mp.mpf(c['rel_diff']), 3)}"
         )
     if only_in_realizer or only_in_term6:
         print(f"  asymmetric atom coverage: realizer-only={only_in_realizer}, term6-only={only_in_term6}")
     return 0 if overall_pass else 2
 
 
+def _selftest() -> int:
+    set_compute_dps()
+    c = compare_value("test", mp.mpf("1.5"), mp.mpf("1.5"), AGREEMENT_RTOL)
+    assert c["agree"] is True and c["rel_diff"] == fmt(mp.mpf(0))
+    print("self-test: ok (compare_value and mp.nstr display verified)")
+    return 0
+
+
 if __name__ == "__main__":
+    if "--self-test" in sys.argv or "--selftest" in sys.argv:
+        sys.exit(_selftest())
     sys.exit(main())

@@ -27,10 +27,11 @@ Structural findings encoded as assertions:
         y₃ᴶ = [4]_q/[2]_q³,  y₂₁ᴶ = 1/[2]_q²,  y_{(1³)}ᴶ = 0,
     with χ^{(3)} = χ^{(1³)} = 1 and χ^{(2,1)} = 2 − 3h⁴ − h⁶ (cheat
     sheet §2 step 3; verified here against the direct seminormal
-    matrix product at 50 dps).  The corpus-canonical Wenzl z-trace
-    (y_lambda_wenzl_bridge) gives a DIFFERENT scalar
-    τ_W = Σ y_λ^W χ^λ ≈ 0.998367 — a 1.96e-4 trace-convention gap
-    recorded as data (matters at B-precision, not at the 2.3× scale).
+    matrix product at 50 dps).  Under the canonical Convention D (Wenzl
+    level r=2), the corpus-canonical Wenzl z-trace (y_lambda_wenzl_bridge)
+    COINCIDES identically with the SU(2)/TL Jones trace on H_3 (y_{(1³)}^W = 0
+    by the two-row cap), closing the historical 1.96e-4 convention-C gap to
+    exact zero (bean qou-gik1).
 
 2.  RAW per-block tower (weights y_λ, arguments χ_λχ_μ) DIVERGES:
     χ^{(2,1)}² ≈ 3.977 > q₀ exceeds the Li₂^q convergence radius
@@ -72,7 +73,7 @@ import _path_bridge  # noqa: F401, E402 — Phase 6 bridge
 import json
 import sys
 from functools import lru_cache
-from math import comb
+from math import comb  # float64-ok: exact integer binomial coefficient
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -383,7 +384,7 @@ def main() -> int:
     for nm, Z, N, B_AME_str in ISO:
         B_AME = mp.mpf(B_AME_str)
         rows[nm] = {"Z": Z, "N": N, "B_AME": B_AME_str}
-        line = f"{nm:5s}{float(B_AME):9.3f} | "
+        line = f"{nm:5s}{float(B_AME):9.3f} | "  # float64-ok: stdout display only
         for vn, (tau_s, pt) in variants.items():
             B0, Bt = binding(Z, N, tau_s, pt)
             # Kept as `mpf`: `B_tower` is read back for arithmetic below
@@ -391,7 +392,7 @@ def main() -> int:
             # maxima), so it is serialised once at `add_data` instead.
             rows[nm][vn] = {"B_can0": B0, "B_tower": Bt,
                             "errT_AME_over_B": B_AME / Bt}
-            line += f"{float(Bt):13.3f} {float(B_AME / Bt):4.2f} | "
+            line += f"{float(Bt):13.3f} {float(B_AME / Bt):4.2f} | "  # float64-ok: stdout display only
         print(line)
 
     # cross-check the scalar Jones baseline against the committed witness
@@ -421,10 +422,10 @@ def main() -> int:
             / rows[nm]["scalar_wenzl"]["B_tower"] - 1)
         for nm, *_ in [(r[0],) for r in ISO])
     print(f"  max |B_tower(per-λ)/B_tower(scalar) − 1|: "
-          f"Jones {float(max_shift):.3e}, Wenzl {float(max_shift_w):.3e}, "
-          f"ambient-H6 {float(max_shift_6):.3e}")
-    print(f"  ¹⁶O errT: scalar {errT('16O', 'scalar_jones'):.4f} → per-λ "
-          f"{errT('16O', 'perl_jones'):.4f} (ambient {errT('16O', 'ambient_h6'):.4f})")
+          f"Jones {float(max_shift):.3e}, Wenzl {float(max_shift_w):.3e}, "  # float64-ok: stdout display only
+          f"ambient-H6 {float(max_shift_6):.3e}")  # float64-ok: stdout display only
+    print(f"  ¹⁶O errT: scalar {float(errT('16O', 'scalar_jones')):.4f} → per-λ "  # float64-ok: stdout display only
+          f"{float(errT('16O', 'perl_jones')):.4f} (ambient {float(errT('16O', 'ambient_h6')):.4f})")  # float64-ok: stdout display only
 
     # ── witness ──
     wb = WitnessBuilder("probe-9b-perlambda-brane-tower", engine="mpmath")
@@ -433,8 +434,10 @@ def main() -> int:
         "PROBE 4 (bean v292): per-λ collapse-last rerun of the single-"
         "pipeline Borromean brane tower. Structural: the pipeline τ is "
         "EXACTLY the SU(2)/TL (Jones) Markov decomposition y₃ᴶ=[4]/[2]³, "
-        "y₂₁ᴶ=1/[2]², y_{1³}ᴶ=0 with χ^{(2,1)}=2−3h⁴−h⁶; the corpus "
-        "Wenzl z-trace differs by 1.96e-4 (convention gap, recorded). "
+        "y₂₁ᴶ=1/[2]², y_{1³}ᴶ=0 with χ^{(2,1)}=2−3h⁴−h⁶; under Convention D "
+        "(Wenzl level r=2) the corpus Wenzl z-trace coincides with it "
+        "identically on H_3 (|τ_pipeline − τ_Wenzl| = 0, closing the "
+        "historical 1.96e-4 convention-C gap; bean qou-gik1). "
         "RAW per-block tower (arguments χ_λχ_μ) DIVERGES — χ^{(2,1)}² "
         "≈ 3.98 > q₀ exceeds the proved Li₂^q radius |z| < q. "
         "NORMALIZED collapse-last towers (W_λ = y_λd_λ, r_λ = χ^λ/d_λ; "
@@ -500,9 +503,10 @@ def main() -> int:
     )
     wb.add_assertion(
         "trace_convention_gap_recorded",
-        computed=fmt(convention_gap), expected="1.9554e-4", tolerance="1e-6",
-        source="|τ_pipeline − τ_Wenzl| ≈ 1.96e-4: the pipeline is the "
-               "Jones/TL trace, NOT the corpus-canonical Wenzl z-trace",
+        computed=fmt(convention_gap), expected="0", tolerance="1e-40",
+        source="|τ_pipeline − τ_Wenzl| == 0 under Convention D (Wenzl level r=2): "
+               "the SU(2)/TL Jones trace and Wenzl z-trace coincide on H_3 "
+               "(closing the historical 1.96e-4 convention-C gap; bean qou-gik1)",
     )
     wb.add_assertion(
         "raw_perblock_diverges",
@@ -544,5 +548,15 @@ def main() -> int:
     return 0
 
 
+def _selftest() -> int:
+    set_compute_dps()
+    assert mn_char((2, 1), (1, 1, 1)) == 2
+    assert lr_coeff((3, 3), (3,), (3,)) == 1
+    print("self-test: ok (Murnaghan-Nakayama and Littlewood-Richardson verified)")
+    return 0
+
+
 if __name__ == "__main__":
+    if "--self-test" in sys.argv or "--selftest" in sys.argv:
+        sys.exit(_selftest())
     sys.exit(main())
