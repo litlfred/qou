@@ -1,13 +1,14 @@
 ---
 # qou-q05m
 title: 5₂ cross-knot narrowed the bar-odd normalization fork (qou-yh67/qou-pzzl) to 'which ι-odd combination of {3,4}'
-status: todo
+status: in-progress
+pr: 8236
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-02T09:38:29Z
-updated_at: 2026-10-10T08:30:00Z
+updated_at: 2026-11-17T06:55:00Z
 parent: qou-avtq
 ---
 
@@ -37,3 +38,8 @@ Evidence: `QOU/QBeta/FiveTwoDTSpectrumSplit.lean`: no sorry/axiom (decide-proofs
 
 Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
 Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
+
+## 2026-11-17 — Round 52 formalization & probe witness (PR #8236, status: in-progress)
+
+- [x] PR #8236 (`62b8fce5d1e824cf9dd59a1d9845d15631382086`): formalized `linear_functional_iota_odd_on_52_iff`, `linear_functional_iota_odd_properties`, and `iota_even_sum_multiple_never_iota_odd` in `QOU/QBeta/StokesDiagonalVsOffDiagonalAndCrossKnotSplit.lean` (`0 sorry`, `0 axiom`, `0 vacuity`), classifying all integer linear iota-odd functionals (`alpha + beta = 0`).
+- [ ] Awaiting Merge Manager integration and owner review (kept `in-progress` per no-unilateral-closure policy).

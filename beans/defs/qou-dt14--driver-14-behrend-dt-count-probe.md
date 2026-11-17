@@ -1,13 +1,14 @@
 ---
 # qou-dt14
 title: 'FRONT-2: probe the irreducibly-external Behrend-weighted DT count (driver-14 / A_ω / Δ_λ)'
-status: todo
+status: in-progress
+pr: 8236
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-11T01:00:00Z
-updated_at: 2026-10-10T08:30:00Z
+updated_at: 2026-11-17T06:55:00Z
 parent: qou-avtq
 ---
 
@@ -73,3 +74,8 @@ Evidence: `QBeta/DTBehrendParityObstruction.lean` is Mathlib-free and compiled e
 
 Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
 Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
+
+## 2026-11-17 — Round 52 formalization & probe witness (PR #8236, status: in-progress)
+
+- [x] PR #8236 (`62b8fce5d1e824cf9dd59a1d9845d15631382086`): formalized `two_stratum_behrend_elimination`, `two_stratum_fourone_opposite_weight_parity`, `dtCount_sub_chiEuTotal_even_of_all_odd_weights`, and `no_all_odd_behrend_weights_yield_three_over_neg_two` in `QOU/QBeta/StokesDiagonalVsOffDiagonalAndCrossKnotSplit.lean` (`0 sorry`, `0 axiom`, `0 vacuity`), proving that any all-odd-weight (including `+/-1` LCI) Behrend stratification preserves parity `DT = chi_eu (mod 2)` and cannot yield `DT = 3` over `chi_eu = -2`.
+- [ ] Awaiting Merge Manager integration and owner review (kept `in-progress` per no-unilateral-closure policy).

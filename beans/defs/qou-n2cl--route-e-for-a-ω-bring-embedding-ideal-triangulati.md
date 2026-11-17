@@ -1,13 +1,14 @@
 ---
 # qou-n2cl
 title: 'Route E for A_ω (Bring embedding → ideal triangulation → Neumann–Zagier data): the exact wall'
-status: todo
+status: in-progress
+pr: 8236
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T09:01:48Z
-updated_at: 2026-10-10T08:30:00Z
+updated_at: 2026-11-17T06:55:00Z
 parent: qou-avtq
 ---
 
@@ -52,3 +53,8 @@ Evidence: `nz_gluing_from_braid_monodromy_probe.py` re-run: exit 0, 5 s, every l
 
 Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
 Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
+
+## 2026-11-17 — Round 52 formalization & probe witness (PR #8236, status: in-progress)
+
+- [x] PR #8236 (`62b8fce5d1e824cf9dd59a1d9845d15631382086`): formalized `simplicial_vol_surface_eq_neg_two_euler`, `bring_surface_vs_fourone_simplicial_volume`, `stallings_monodromy_41_and_r2l_invariants`, `nz_symplectic_pairing_and_edge_isotropy_41`, `nz_symplectic_form_skew_symmetric`, and `qzeta3_qzeta5_discriminant_coprime` in `QOU/QBeta/BringSimplicialVolumeAndNZLayering.lean` (`0 sorry`, `0 axiom`, `0 vacuity`).
+- [ ] Awaiting Merge Manager integration and owner review (kept `in-progress` per no-unilateral-closure policy).

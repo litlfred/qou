@@ -1,13 +1,14 @@
 ---
 # qou-l15q
 title: 'GAP (arc successor to qou-bbsy): derive A_omega = 3 structurally. W3 certified A_omega is the Stokes SYMMETRY CONSTANT (S12+S21 = 3*S11, exact q-series identity, Lean StokesSymmetryConstant). Deriving the integer 3 from the categorical drivers is open. TWO competing structural candidates, both fitting 4_1, SHARPLY SPLIT on 5_2 -- a clean discriminating test: (A) |disc(trace field)|: 4_1 -> |-3| = 3 (Lean-proved in CuspShapeBarParity: (barOdd omega)^2 = -3); 5_2 -> |-23| = 23 (Lean-proved in FiveTwoSaddleCurve: cubic y^3-2y^2+3y-1, disc -23). (B) |middle coefficient of the Alexander polynomial|: Delta_41 = -t + 3 - 1/t -> 3; Delta_52 = 2t - 3 + 2/t -> 3. So A predicts 23 for 5_2 and B predicts 3. TEST: compute the 5_2 Stokes symmetry constant c in S12 + S21 = c*S11 from GGM 2012.00062 section 6 (corpus already has 5_2 Stokes work: qbeta-5two-stokes-barodd-index, qbeta-5two-stokes-population-bridge, fivetwo_saddle_values). c = 23 confirms A; c = 3 confirms B; anything else kills both. NOTE the guard discipline: 5_2 entry series are pre-asymptotic below ~q-order 1200 at the substrate -- use a multi-cut ladder, diff >= 1 means ZERO digits. Anti-fit: this is a structural identification test with a falsifiable prediction, NOT a fit; if neither matches, report the negative.'
-status: todo
+status: in-progress
+pr: 8236
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-01T20:20:55Z
-updated_at: 2026-10-10T08:30:00Z
+updated_at: 2026-11-17T06:55:00Z
 parent: qou-avtq
 ---
 
@@ -83,3 +84,8 @@ Evidence: The rank-2 identity is a tautology (finding 2). The bean body omits co
 
 Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
 Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
+
+## 2026-11-17 — Round 52 formalization & probe witness (PR #8236, status: in-progress)
+
+- [x] PR #8236 (`62b8fce5d1e824cf9dd59a1d9845d15631382086`): formalized `candidate_a_vs_b_degeneracy_and_fivetwo_split` and `stokes_rank_two_vs_rank_three_entry_count` in `QOU/QBeta/StokesDiagonalVsOffDiagonalAndCrossKnotSplit.lean` (`0 sorry`, `0 axiom`, `0 vacuity`), proving Candidate A (`|disc|`) and Candidate B (`|Delta middle coeff|`) coincide at `4_1` (`3 = 3`) and split by `20` at `5_2` (`23 != 3`), with `23` absent from `5_2` off-diagonal Stokes entries.
+- [ ] Awaiting Merge Manager integration and owner review (kept `in-progress` per no-unilateral-closure policy).
