@@ -176,7 +176,7 @@ def main() -> None:
         "leanModule": "QOU.Eightfold.BondTypeMirrorDiscriminatorGradedTopCohomologyAtomicNfPauliWitnessFloat64CastDetectorAndIsotopeShardSplit",
         "scriptPath": "computations/probes/bond_type_mirror_discriminator_graded_top_cohomology_atomic_nf_pauli_witness_float64_cast_detector_and_isotope_shard_split_probe.py",
         "scriptCommitSha": commit_sha,
-        "scriptHash": script_hash_12,
+        "scriptHash": script_sha256,
         "scriptSha256": script_sha256,
         "dps": "80",
         "generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),

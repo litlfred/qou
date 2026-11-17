@@ -68,7 +68,7 @@ def helium3BondBinding (bPP bPN bNN : Int) : Int :=
 theorem mirror_bond_discriminator_cancels_pn_and_evaluates (bPP bPN bNN : Int) :
     tritiumBondBinding bPP bPN bNN - helium3BondBinding bPP bPN bNN = bNN - bPP ∧
     tritiumBondBinding 642115 bPN 563568 - helium3BondBinding 642115 bPN 563568 = -78547 := by
-  unfold tritiumBondBinding helium3BondBinding bondTypeBinding
+  dsimp [tritiumBondBinding, helium3BondBinding, bondTypeBinding]
   omega
 
 /-- `qou-7ygi`: Euler characteristic `E - O` and total graded dimension `E + O`. -/
@@ -87,7 +87,7 @@ theorem graded_euler_char_equals_total_iff_single_parity (evenDim oddDim : Int)
     -gradedTotalDim evenDim oddDim ≤ gradedEulerChar evenDim oddDim ∧
     (gradedEulerChar evenDim oddDim = gradedTotalDim evenDim oddDim ↔ oddDim = 0) ∧
     (-gradedEulerChar evenDim oddDim = gradedTotalDim evenDim oddDim ↔ evenDim = 0) := by
-  unfold gradedEulerChar gradedTotalDim
+  dsimp [gradedEulerChar, gradedTotalDim]
   omega
 
 /-- `qou-83r4`: Joint atomic normal-form objective `phi1 + phi1Electron` and sign-invariant
@@ -105,7 +105,7 @@ theorem atomic_nf_joint_minimality_and_pauli_sign_invariance
     (jointAtomicNfObjective phi1Any eAny - jointAtomicNfObjective phi1Star eStar =
       (phi1Any - phi1Star) + (eAny - eStar)) ∧
     Int.natAbs (-trAlt) = Int.natAbs trAlt := by
-  unfold jointAtomicNfObjective
+  dsimp [jointAtomicNfObjective]
   refine ⟨by omega, by omega, Int.natAbs_neg trAlt⟩
 
 /-- `qou-840k`: Widened `float64` detector counts and `y_λ` precision cap accounting. -/
