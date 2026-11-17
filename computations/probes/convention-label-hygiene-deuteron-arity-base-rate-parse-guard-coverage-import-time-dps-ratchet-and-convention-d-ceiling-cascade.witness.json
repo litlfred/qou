@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "1.0",
+  "probe": "convention_label_hygiene_deuteron_arity_base_rate_parse_guard_coverage_import_time_dps_ratchet_and_convention_d_ceiling_cascade_probe",
+  "beans": [
+    "qou-cdh4",
+    "qou-ctv8",
+    "qou-d2yx",
+    "qou-db24",
+    "qou-dchz"
+  ],
+  "leanModule": "folio/quantum-observable-universe/lean/QOU/Eightfold/ConventionLabelHygieneDeuteronArityBaseRateParseGuardCoverageImportTimeDpsRatchetAndConventionDCeilingCascade.lean",
+  "scriptFile": "computations/probes/convention_label_hygiene_deuteron_arity_base_rate_parse_guard_coverage_import_time_dps_ratchet_and_convention_d_ceiling_cascade_probe.py",
+  "scriptCommitSha": "c19cec14fea4959f2c2429a2f2f64fe6d0a119a0",
+  "scriptHash": "dbca4742ae48",
+  "scriptSha256": "dbca4742ae485b63aae62f03797009a9cf0525344a56df331b64761494197200",
+  "dps": 80,
+  "generatedAt": "2026-11-17T11:47:33.883970+00:00",
+  "allPassed": true,
+  "checks": {
+    "qou_cdh4_convention_label_hygiene": {
+      "passed": true,
+      "preLabelledSites": 6,
+      "newlyLabelledSites": 4,
+      "totalComparisonSites": 10,
+      "registryMdMarkers": 26,
+      "registryJsonMarkers": 3,
+      "unlaunderedLiveRedOccurrences": 2,
+      "zDMinusZCGap": "1.133677177524779e-1"
+    },
+    "qou_ctv8_deuteron_arity_base_rate_and_two_row_cap": {
+      "passed": true,
+      "totalLength8Sequences": 256,
+      "threeComponentSequences": 86,
+      "oneComponentSequences": 170,
+      "baseRate": "3.359375e-1",
+      "sdpTopKThreeComponentMatches": 8,
+      "twoRowPartitionsOfSix": 4,
+      "threePlusRowPartitionsOfSix": 7
+    },
+    "qou_d2yx_parse_guard_skipped_coverage": {
+      "passed": true,
+      "skippedFilesRestored": 23,
+      "priorAuditedSample": 5347,
+      "expandedAuditedTotal": 5370
+    },
+    "qou_db24_import_time_dps_ratchet_drain": {
+      "passed": true,
+      "drainedLiteralSites": 184,
+      "drainedExprSites": 83,
+      "drainedTotalSites": 267,
+      "newUnbaselinedFiles": 1,
+      "deficitAt50Dps": 35,
+      "deficitAt80Dps": 65
+    },
+    "qou_dchz_convention_d_ceiling_cascade": {
+      "passed": true,
+      "zC": "4.993203e-1",
+      "zD": "6.12688e-1",
+      "relativeIncrease": "2.2704404367296903410496228573122302457961352662809823674302847290606850953185761e-1",
+      "quadraticRatio": "1.5056370851133111382968029397564881149106780805881840823888246262126200416206887",
+      "conjugateBranchImSum": "0.0",
+      "det4OptionA": "-2.6513168e-1",
+      "det4OptionB": "-2.9176533e-1",
+      "det4OptionC": "-5.6309856e-1",
+      "det4OptionD": "-5.4774417e-1"
+    }
+  }
+}
