@@ -1,0 +1,55 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "dps": "80",
+  "computedAt": "2026-11-17T08:40:46.310912+00:00",
+  "commitSha": "517929849d2ff8b18f52b0cb944fc750381af2be",
+  "scriptCommitSha": "517929849d2ff8b18f52b0cb944fc750381af2be",
+  "scriptHash": "c9f53ca38b6b",
+  "allPassed": true,
+  "assertions": [
+    {
+      "name": "qou_5w53_bloch_real_shape_zero_and_census_volume_non_monotone",
+      "computed": "0.0:1:1",
+      "expected": "0.0:1:1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.ExtendedBlochRealVolumeZeroIsospectralSemigroupTraceConfinementGramRankDefectRawFloat64LandingAndZeroModeModuliDet.bloch_real_shape_zero_and_census_volume_non_monotone"
+    },
+    {
+      "name": "qou_63ih_isospectral_semigroup_trace_invariance_and_zero_mode_subtraction",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "reducedTraceAtT035": "6.9987549822231070934359774715363128092793434258022120982986981473651204002502728e-1",
+      "source": "QOU.Eightfold.ExtendedBlochRealVolumeZeroIsospectralSemigroupTraceConfinementGramRankDefectRawFloat64LandingAndZeroModeModuliDet.isospectral_semigroup_trace_invariance_and_zero_mode_subtraction"
+    },
+    {
+      "name": "qou_6hm4_confinement_gram_asymmetry_and_rank_defect_accounting",
+      "computed": "426952:6:5",
+      "expected": "426952:6:5",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.ExtendedBlochRealVolumeZeroIsospectralSemigroupTraceConfinementGramRankDefectRawFloat64LandingAndZeroModeModuliDet.confinement_gram_asymmetry_and_rank_defect_accounting"
+    },
+    {
+      "name": "qou_6ixs_newly_landed_raw_float64_dirty_witness_accounting",
+      "computed": "1:2:1:4",
+      "expected": "1:2:1:4",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.ExtendedBlochRealVolumeZeroIsospectralSemigroupTraceConfinementGramRankDefectRawFloat64LandingAndZeroModeModuliDet.newly_landed_raw_float64_dirty_witness_accounting"
+    },
+    {
+      "name": "qou_6kgu_zero_mode_moduli_det_parity_roots_and_cluster_distributivity",
+      "computed": "2.0:0.0:3.3735033418337674317915436964064060824671876423579224160248841680346061731103231e-80",
+      "expected": "2.0:0.0:0.0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "detPrimeAt037": "1.7262",
+      "b4At037": "-5.4592246080342017655629964798881626716629519911708875696642126386581701131245634e-1",
+      "source": "QOU.Eightfold.ExtendedBlochRealVolumeZeroIsospectralSemigroupTraceConfinementGramRankDefectRawFloat64LandingAndZeroModeModuliDet.zero_mode_moduli_det_parity_roots_and_cluster_distributivity"
+    }
+  ]
+}
