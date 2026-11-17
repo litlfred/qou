@@ -1,0 +1,49 @@
+{
+  "probe": "jet_horizon_habiro_and_stein_margin_brick_probe",
+  "beans": [
+    "qou-iv9f",
+    "qou-j1bs",
+    "qou-j6i3",
+    "qou-jh3m",
+    "qou-jy04"
+  ],
+  "leanModule": "folio/quantum-observable-universe/lean/QOU/QBeta/JetHorizonHabiroAndSteinMarginBrick.lean",
+  "precisionDps": "80",
+  "scriptCommitSha": "34352b344244b9e4cceaf3e3a4c56aa375f7bdc5",
+  "scriptHash": "ceaa8bfab01a",
+  "dirty": false,
+  "generatedAt": "2026-11-17T11:42:50.534616+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "bean": "qou-iv9f",
+      "name": "jetProductPair_distributive_nilpotent_and_derivation",
+      "passed": true,
+      "horizonSquareResidual80dps": "0.0"
+    },
+    {
+      "bean": "qou-j1bs",
+      "name": "gramInteriorPair_completed_square_and_isotropic_shift",
+      "passed": true,
+      "eigenvalueProductResidual80dps": "0.0"
+    },
+    {
+      "bean": "qou-j6i3",
+      "name": "cyclotomicTwoStepSum_taylor_and_difference",
+      "passed": true,
+      "archimedeanFactorizationResidual80dps": "0.0"
+    },
+    {
+      "bean": "qou-jh3m",
+      "name": "marginSlack_and_thresholdHeadroom_N0_78",
+      "passed": true,
+      "criticalMarginAtN78_80dps": "8.814"
+    },
+    {
+      "bean": "qou-jy04",
+      "name": "threeCycleScaledMoment_and_taylorTransferRemainder",
+      "passed": true,
+      "plancherelThreeCycleVarianceAtN14_80dps": "728.0"
+    }
+  ]
+}
