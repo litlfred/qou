@@ -1,7 +1,7 @@
 ---
 # qou-l155
 title: Pin lambda_SW so the Picard-Lefschetz thimble action is computable
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -55,3 +55,8 @@ measuring it.
 Nothing in this correction changes this bean's own verdict — the classical-jet
 period is still Lean-proved zero. Only the description of what infrastructure
 is missing was wrong.
+
+## Progress Update (PR litlfred/qou#8244)
+- **Status**: `in-progress` (awaiting PR merge)
+- **PR**: https://github.com/litlfred/qou/pull/8244 (`457d28e500f11a4249f57fd33fcd18112faef23b`, scriptCommitSha `1086b0ae6f630df61ca513a195514ef5d6137b5c`)
+- **Summary**: Added `disc_at_pm_one_and_wCubic_vals` and `ddz_linear_comb_residue_slot_eq_zero` in `QOU/Brings/ColourCubicBranchLocus.lean`, verified by 80-dps mpmath probe `frust_cubic_tower_jhopf_whitehead_probe.py`.

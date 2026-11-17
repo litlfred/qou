@@ -1,7 +1,7 @@
 ---
 # qou-t2sc
 title: Whitehead VC squeeze proof — Lean bricks (à la 4₁ E1-E5 / Borromean B1-B5), gated on the positive-sum form
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -77,3 +77,8 @@ while the #4394 prepare-merge agent is active on the shared workspace.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-01 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Progress Update (PR litlfred/qou#8244)
+- **Status**: `in-progress` (awaiting PR merge)
+- **PR**: https://github.com/litlfred/qou/pull/8244 (`457d28e500f11a4249f57fd33fcd18112faef23b`, scriptCommitSha `1086b0ae6f630df61ca513a195514ef5d6137b5c`)
+- **Summary**: Added `whiteheadLinkPhase_fresnel_symm` and `whiteheadLinkPhase_arg_at_half_even` in `QOU/Knot/WhiteheadPhaseAlgebra.lean`, verified by 80-dps mpmath probe `frust_cubic_tower_jhopf_whitehead_probe.py`.
