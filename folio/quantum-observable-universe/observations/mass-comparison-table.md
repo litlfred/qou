@@ -30,11 +30,11 @@ Per [`prop:neutron-qvalue-symbolic`](../nuclear-interactions/neutron-qvalue-symb
 
 $$
 \boxed{
-\mathfrak{Q}_\beta^{\text{pred}} = \mathfrak{Q}_\beta^{z_D} = \Bigl|\tfrac{h^2}{2} - h\,z_D\Bigr|\,\frac{m_e}{q_0(q_0-1)} \approx 0.4447 \text{ MeV}
+\mathfrak{Q}_\beta^{\text{pred}} = \mathfrak{Q}_\beta^{z_D} = \Bigl|\tfrac{h^2}{2} - h\,z_D\Bigr|\,\frac{m_e}{q_0(q_0-1)(1-\hbar_q^2)} \approx 0.4491 \text{ MeV}
 }
 $$
 
-with $h = q_0 - q_0^{-1}$ and $z_D = q_0^3/(q_0^2+1)$. This is the ruled convention-D base: $\varepsilon$ is the Markov trace at $z_D$ (owner ruling 2026-09-08). It compares to the CODATA value of $0.7823$ MeV at $-43.16\%$ ($-337.6$ keV). The convention-D $c_k$ correction ladder that would act on this base is not yet derived, and the factor a cosine phase can supply is capped below $1$ ([cos-resummation](#prop:q-beta-cos-resummation)), so the miss is reported as it stands.
+with $h = q_0 - q_0^{-1}$, $\hbar_q = 1 - q_0^{-1}$ and $z_D = q_0^3/(q_0^2+1)$. The energy scale is the tower-summed $E_0$; the order-zero form $m_e/(q_0(q_0-1))$ gives $0.4447$ MeV. This is the ruled convention-D base: $\varepsilon$ is the Markov trace at $z_D$ (owner ruling 2026-09-08). It compares to the CODATA value of $0.7823$ MeV at $-42.59\%$ ($-333.2$ keV). The convention-D $c_k$ correction ladder that would act on this base is not yet derived, and the factor a cosine phase can supply is capped below $1$ ([cos-resummation](#prop:q-beta-cos-resummation)), so the miss is reported as it stands.
 
 The $n$-$p$ mass split follows: $\mathfrak{m}_n - \mathfrak{m}_p = \mathfrak{Q}_\beta + m_e \approx 0.9557$ MeV. This compares to the CODATA value of $1.2933$ MeV ($-26.11\%$ error, no CODATA $m_n - m_p$ input).
 
