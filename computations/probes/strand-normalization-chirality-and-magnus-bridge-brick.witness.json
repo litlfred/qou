@@ -1,0 +1,58 @@
+{
+  "probe": "computations/probes/strand_normalization_chirality_and_magnus_bridge_brick_probe.py",
+  "beans": [
+    "qou-b5h9",
+    "qou-lrvc",
+    "qou-p443",
+    "qou-vged",
+    "qou-w1tz"
+  ],
+  "precisionDps": 80,
+  "scriptHash": "3a316d45ff3efbd29e7a3411ab147b576099256fa839627c3b4a4c4ed4ed44cf",
+  "scriptCommitSha": "bf27f37259a48fea2b98340ccf2912cea35c83cc",
+  "generatedAt": "2026-11-17T07:10:43.539930+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "bean": "qou-b5h9",
+      "theorem": "eight_eleven_two_bridge_treewidth_and_strand_normalization_scaling",
+      "passed": true,
+      "cf_27_10_residual": "0.0",
+      "strand_m3_norm_residual": "0.0",
+      "w0_squared": "2.61803398874989484820458683436563811772"
+    },
+    {
+      "bean": "qou-lrvc",
+      "theorem": "five_two_mirror_boundary_slope_reflection_and_a_poly_recip",
+      "passed": true,
+      "orig_slope_sum": "-14.0",
+      "mirror_slope_sum": "14.0",
+      "antisym_residual": "0.0",
+      "stokes_trace": "3.0"
+    },
+    {
+      "bean": "qou-p443",
+      "theorem": "ramified_puiseux_classical_jet_residue_parity_vanishing",
+      "passed": true,
+      "odd_pair_sum": "0.0",
+      "q_diff_residual": "7.906648457422892418261431e-82",
+      "q_diff_magnitude": "0.181692782788519900856474305657"
+    },
+    {
+      "bean": "qou-vged",
+      "theorem": "magnus_second_order_commutator_holonomy_skew_symmetry",
+      "passed": true,
+      "skew_residual": "0.0",
+      "diag_residual": "0.0",
+      "omega_ab_ba": "3.5"
+    },
+    {
+      "bean": "qou-w1tz",
+      "theorem": "ecalle_borel_stokes_bridge_bi_directional_pairing_invariance",
+      "passed": true,
+      "bridge_residual": "0.0",
+      "inverse_residual": "0.0",
+      "forward_defect": "-1.88416938536371910567959995252"
+    }
+  ]
+}
