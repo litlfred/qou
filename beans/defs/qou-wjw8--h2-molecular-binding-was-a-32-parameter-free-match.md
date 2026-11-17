@@ -1,7 +1,7 @@
 ---
 # qou-wjw8
 title: H2 molecular binding was a +3.2% parameter-free match under convention C; under D it is -80.7%
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -124,3 +124,12 @@ out whether this class has one cause or several.
 `confinement-lp`, `confinement-sdp`, `confinement-operator-selection` and
 `nuclear-binding-lp` being on C matters more than their count suggests — those
 are core machinery, not probes.
+
+## Progress Update (Round 94 — PR #8360)
+
+- **Lean 4.24.0 Brick**: `folio/quantum-observable-universe/lean/QOU/QBeta/MagnitudeAssemblyAndConventionFrameBrick.lean` (`0` `sorry`, `0` `axiom`, `0` warnings; `0 CRITICAL, 0 major, 0 advisory` across all 7 directory-mode AST audits).
+- **80-dps Probe & Witness**:
+  - Probe: `computations/probes/qou_w49j_wjw8_wuxx_wy2h_xs2c_magnitude_and_frame_probe.py` (Commit 1: `f052782a9424286a40e40154d7ef1d0ab55a6d3e`, `scriptHash = 35f305f18243`).
+  - Witness: `computations/probes/qou_w49j_wjw8_wuxx_wy2h_xs2c_magnitude_and_frame_probe.witness.json` (Commit 2 / HEAD: `687a015fcc42c84733dfecead6ca9f6e13e3d31d`, `allPassed = true`, `rawFloatCount = 0`).
+- **PR**: `litlfred/qou#8360` (`feat/qou-b9cj-w49j-wjw8-wuxx-wy2h-xs2c`).
+
