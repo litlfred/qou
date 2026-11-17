@@ -181,4 +181,15 @@ theorem electron_block_pinned_all_roots (bwPoly : ℝ[X])
     bwPoly = poly311 :=
   KeystoneHabiroInfiniteRigidity.eq_of_habiro_root_agreement bwPoly poly311 h
 
+/-- **Explicit `t = 0` separation of `poly311` from `[6]` and constant `poly311 - poly32 = 1` (`bwsc`).**
+At `t = 0`, `poly311.eval 0 = 2` whereas `qiSix.eval 0 = 0`, and at every `t : ℝ`
+`poly311.eval t - poly32.eval t = 1`. -/
+theorem poly311_eval_zero_ne_qiSix_and_sub_poly32 (t : ℝ) :
+    poly311.eval 0 = 2 ∧ qiSix.eval 0 = 0 ∧ poly311.eval t - poly32.eval t = 1 := by
+  refine ⟨?_, ?_, ?_⟩
+  · simp [poly311]
+  · simp [qiSix]
+  · simp [poly311, poly32]
+    ring
+
 end QOU.BraidKnot.KeystoneN5LevelSixSuffices

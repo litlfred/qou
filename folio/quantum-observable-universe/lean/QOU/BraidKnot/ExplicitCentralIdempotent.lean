@@ -118,4 +118,15 @@ class ExplicitCentralIdempotentConjecture {R : Type*} [CommRing R] (q : R) where
 
 attribute [instance] ExplicitCentralIdempotentConjecture.fintypeTab
 
+/-- **Main-diagonal unity and transpose inversion of `qContent` (`qou-2150`).**
+For any unit `q : Rˣ` in a commutative ring `R`, `qContent i i q = 1` on the main diagonal,
+and `qContent i j q * qContent j i q = 1` under cell transposition `(i, j) ↔ (j, i)`. -/
+theorem qContent_diag_and_transpose_mul_eq_one (i j : ℤ) (q : Rˣ) :
+    qContent i i q = 1 ∧ qContent i j q * qContent j i q = 1 := by
+  unfold qContent
+  refine ⟨by simp, ?_⟩
+  rw [← Units.val_mul, ← zpow_add]
+  have hexp : 2 * (j - i) + 2 * (i - j) = 0 := by ring
+  rw [hexp, zpow_zero, Units.val_one]
+
 end QOU.BraidKnot.ExplicitCentralIdempotent

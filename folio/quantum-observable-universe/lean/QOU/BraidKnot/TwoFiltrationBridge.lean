@@ -226,7 +226,18 @@ provably not it. -/
 theorem gbDepth_ne_on_H4 : gbDepth p4 ≠ gbDepth p22 := by
   rw [gbDepth_p4, gbDepth_p22]; decide
 
+/-- **Exact `H₄` stratum gap `gbDepth [4] - gbDepth [2,2] = 1` and `H₃` depth sum (`cj4bb`).**
+The `(2,2)` block sits at the same GB-depth `3` as all three `H₃` blocks, one step below
+the hook block `[4]` at depth `4`. -/
+theorem gbDepth_p4_sub_p22_and_H3_sum :
+    gbDepth p4 - gbDepth p22 = 1 ∧
+    gbDepth p22 = gbDepth p21 ∧
+    gbDepth p3 + gbDepth p21 + gbDepth p111 = 9 := by
+  rw [gbDepth_p4, gbDepth_p22, gbDepth_p3, gbDepth_p21, gbDepth_p111]
+  decide
+
 end H3
+
 
 /-! ### `gbDepth` is the content spread — the form the algebra side can meet
 

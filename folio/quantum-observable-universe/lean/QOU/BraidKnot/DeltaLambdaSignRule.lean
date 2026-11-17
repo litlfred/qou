@@ -484,4 +484,14 @@ Seifert-volume ratio; power 2 = the two quarks of a meson). -/
 noncomputable def mesonMassRatio (q : ℝ) : ℝ :=
   (q ^ 5 - (1 / q) ^ 5) * (9 / 5) ^ 2
 
+/-- **Even-power Hoefsmit diagonal character and Habiro step recurrence (`qou-0pe3`).**
+For even `n`, `q^n + (-q⁻¹)^n = q^n + q⁻ⁿ`, and the Habiro leading coefficient satisfies
+`a₀(A + 1) = 8 · a₀(A)`. -/
+theorem hecke_character_diag_even_and_habiro_step (q : ℝ) (n A : ℕ) (hn : Even n) :
+    q ^ n + (-(1 / q)) ^ n = q ^ n + (1 / q) ^ n ∧
+    habiroLeadingCoeff (A + 1) = 8 * habiroLeadingCoeff A := by
+  refine ⟨by rw [hn.neg_pow], ?_⟩
+  rw [habiroLeadingCoeff_eq, habiroLeadingCoeff_eq, pow_succ']
+  ring
+
 end QOU.BraidKnot.DeltaLambdaSignRule

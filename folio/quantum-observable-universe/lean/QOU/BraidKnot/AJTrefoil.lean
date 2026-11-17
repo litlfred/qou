@@ -182,4 +182,12 @@ theorem coloredJonesTrefoil_qholonomic [inst : StrongAJTrefoil K]
   ⟨inst.op, inst.nontrivial (w ^ 4) (pow_ne_zero _ hw),
     inst.annihilates w hw⟩
 
+/-- **Classical `q = 1` inhomogeneous-to-leading coefficient identity and `m = 1` zero (`qou-6vo0`).**
+At `q = 1`, the inhomogeneous right-hand side `trRhs 1 M` equals the leading coefficient
+`trCoeff 1 1 (M ^ 2)`, and at `m = 1` the zero-shift coefficient `trCoeff 0 q 1` vanishes. -/
+theorem trRhs_at_one_eq_trCoeff_and_trCoeff_zero_at_one (q M : K) :
+    trRhs 1 M = trCoeff 1 1 (M ^ 2) ∧ trCoeff 0 q 1 = 0 := by
+  simp only [trRhs, trCoeff]
+  refine ⟨by ring, by ring⟩
+
 end QOU.BraidKnot.AJTrefoil
