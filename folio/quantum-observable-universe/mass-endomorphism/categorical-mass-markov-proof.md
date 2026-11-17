@@ -58,7 +58,7 @@ These constitute **dimensionless ratios** relative to the photon ($\mathfrak{m}_
 
 ## Role in the unified mass formula
 
-This proposition supplies the $k = 0$ stratum of the curvature-rank decomposition ([unified mass formula](#prop:unified-curvature-rank-mass-formula)): $\mathfrak{m}^{(0)}_{q,\mathcal{K}}(1) = |\!\int_A\! \rho(\beta_\mathcal{K})|$ is the descended Frobenius integral, equal to $E_\infty^{0,*}$ of the GB spectral sequence.
+This proposition supplies the $k = 0$ stratum of the curvature-rank decomposition ([unified mass formula](#conj:unified-curvature-rank-mass-formula)): $\mathfrak{m}^{(0)}_{q,\mathcal{K}}(1) = |\!\int_A\! \rho(\beta_\mathcal{K})|$ is the descended Frobenius integral, equal to $E_\infty^{0,*}$ of the GB spectral sequence.
 
 The integral $\int_A \rho(\beta_\mathcal{K})$ is **vortex-specific**, distinguishing $\varrho_{\mathfrak{p}}$ from $\varrho_{\mathfrak{n}}$ and capturing fine isotope variations. The vortex-independent constant offset is the Frobenius co-Casimir $m_e \cdot \tau(C_{\dim_q})$ ([Frobenius universal](#thm:frobenius-codim-universal)). The full mass is:
 

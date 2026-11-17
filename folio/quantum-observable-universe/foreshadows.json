@@ -1147,14 +1147,14 @@
     },
     "prf:categorical-mass-markov": {
       "derived": [
-        "prop:unified-curvature-rank-mass-formula",
+        "conj:unified-curvature-rank-mass-formula",
         "prop:vertex-algebra-relations",
         "rem:rj-inner-product-interpretation",
         "thm:frobenius-codim-universal"
       ],
       "declared": [],
       "effective": [
-        "prop:unified-curvature-rank-mass-formula",
+        "conj:unified-curvature-rank-mass-formula",
         "prop:vertex-algebra-relations",
         "rem:rj-inner-product-interpretation",
         "thm:frobenius-codim-universal"
@@ -1171,11 +1171,11 @@
     },
     "prf:confinement-categorical": {
       "derived": [
-        "prop:unified-curvature-rank-mass-formula"
+        "conj:unified-curvature-rank-mass-formula"
       ],
       "declared": [],
       "effective": [
-        "prop:unified-curvature-rank-mass-formula"
+        "conj:unified-curvature-rank-mass-formula"
       ]
     },
     "prf:confinement-phase-stratification": {
@@ -1613,13 +1613,13 @@
       "derived": [
         "prop:curvature-rank-gb-stratification",
         "prop:spectral-sequence-collapse",
-        "prop:unified-curvature-rank-mass-formula"
+        "conj:unified-curvature-rank-mass-formula"
       ],
       "declared": [],
       "effective": [
         "prop:curvature-rank-gb-stratification",
         "prop:spectral-sequence-collapse",
-        "prop:unified-curvature-rank-mass-formula"
+        "conj:unified-curvature-rank-mass-formula"
       ]
     },
     "prf:phi-q-tower-algebraic-stratification": {
@@ -1858,12 +1858,12 @@
     "prf:spectral-sequence-collapse": {
       "derived": [
         "prop:plancherel-weight-boundedness",
-        "prop:unified-curvature-rank-mass-formula"
+        "conj:unified-curvature-rank-mass-formula"
       ],
       "declared": [],
       "effective": [
         "prop:plancherel-weight-boundedness",
-        "prop:unified-curvature-rank-mass-formula"
+        "conj:unified-curvature-rank-mass-formula"
       ]
     },
     "prf:su2-emergence-dagger-unitarity": {

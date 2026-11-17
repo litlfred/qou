@@ -46,13 +46,13 @@ energy proportional to $F$.  The chirality channel $D_q^2 = 0$
 gauge-invariant background analogous to the gluon condensate, with
 $\mathrm{Vol}(B_3) = 8 G$ matching $\dim \mathfrak{su}(3) = 8$.*
 
-**Predictive consequence.**
+**Predictive consequence (conditional on the [unified mass formula](#conj:unified-curvature-rank-mass-formula), which is a conjecture).**
 
 *The hadron mass formula
-([unified mass formula](#prop:unified-curvature-rank-mass-formula))
+([unified mass formula](#conj:unified-curvature-rank-mass-formula))
 $\mathfrak{m}_{q,\mathcal{K}} = \sum_k \alpha_k \cdot
 \mathfrak{m}^{(k)}_{q,\mathcal{K}}(1)$
-is — read through this proposition — literally a sum over confinement
+would be, if that conjecture holds, a sum over confinement
 layers.  Term $k$ of the formula is the contribution of the
 curvature-rank-$k$ confinement stratum.  The rank-3 chirality residue
 ($\mathrm{Vol}(6_1) \cdot |(q;q)_3|$) and the rank-$\geq 4$ universal

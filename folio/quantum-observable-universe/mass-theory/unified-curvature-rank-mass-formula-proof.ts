@@ -1,7 +1,8 @@
-import { proof } from "../../schema/builders";
+import { remark } from "../../schema/builders";
 
-export default proof({
-  label: "prf:unified-curvature-rank-mass-formula",
-  title: "Proof of unified curvature rank mass formula",
-  uses: ["prop:unified-curvature-rank-mass-formula"],
+export default remark({
+  interprets: "conj:unified-curvature-rank-mass-formula",
+  label: "rem:unified-curvature-rank-mass-formula-sketch",
+  title: "Sketch towards the unified curvature-rank mass formula",
+  uses: ["conj:unified-curvature-rank-mass-formula"],
 });

@@ -52,7 +52,7 @@ The factor $1/3$ arises from chromaticity averaging.
 
 ### Option B — Stratum-prefactor approach via spectral sequence collapse
 
-**Claim:** The mass-formula spectral-sequence machinery ([`prop:unified-curvature-rank-mass-formula`](#prop:unified-curvature-rank-mass-formula)) applies to the coupling side. The $\alpha_{EM}$ correction equals the depth-$\ell$ stratum prefactor of the filtration.
+**Claim:** The mass-formula spectral-sequence machinery ([`conj:unified-curvature-rank-mass-formula`](#conj:unified-curvature-rank-mass-formula)) applies to the coupling side. The $\alpha_{EM}$ correction equals the depth-$\ell$ stratum prefactor of the filtration.
 
 **Concretely:** The bare formula $1/\alpha = q\cdot[9]_q\cdot[10]_q$ is the depth-$0$ centre contribution. The $2/(3\pi)$ correction expresses a Plancherel-weighted Markov pairing on the depth-$\ell$ stratum for $\ell \ge 1$.
 

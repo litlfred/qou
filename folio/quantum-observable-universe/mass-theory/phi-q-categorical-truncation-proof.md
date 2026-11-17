@@ -55,7 +55,7 @@ $$
 
 where $\mathfrak{m}^{(k)}_{q,\mathcal{K}}$ is the depth-$k$ centre
 projection
-([unified mass formula](#prop:unified-curvature-rank-mass-formula)).
+([unified mass formula](#conj:unified-curvature-rank-mass-formula)).
 
 *Step 4 ($\Phi_q$-product representation).* By
 [quantum dilogarithm = localized torsion volume](#cor:quantum-dilogarithm),

@@ -8,7 +8,7 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.plancherel_weight_boundedness",
     validation: "not_checked",
   },
-  uses: ["prop:unified-curvature-rank-mass-formula"],
+  uses: ["prop:wedderburn-trace-identity"],
   tags: [
     "plancherel",
     "boundedness",

@@ -15,14 +15,16 @@ dimensions $f_\lambda$.)  Dividing by $n!$ proves (2).  Each summand
 is a non-negative ratio bounded by the total sum, proving (1).
 $\square$
 
-**Corollary (convergence of curvature-rank functionals).**
+**Remark (conditional on the [unified mass formula](#conj:unified-curvature-rank-mass-formula)).** The bound below concerns the defined strata sum only; it does not use, and does not establish, the conjectured decomposition of the mass into those strata.
+
+**Consequence for the curvature-rank functionals.**
 *The strata-sum
 $\mathfrak{m}^{(k)}_{q,\mathcal{K}}(\mathcal{T})
 = \sum_{\lambda \in \Lambda_k}
    w_\lambda \cdot \log\bigl|\!\int_{A_\lambda}\!\rho(\beta_\mathcal{K})
    \cdot \mathcal{T}\bigr|$
 of the unified mass formula
-([unified mass formula](#prop:unified-curvature-rank-mass-formula))
+([unified mass formula](#conj:unified-curvature-rank-mass-formula))
 is bounded by $\sup_{\lambda \in \Lambda_k} \bigl|\log
 \bigl|\!\int_{A_\lambda}\!\cdot\bigr|\bigr| \cdot \sum_{\lambda
 \in \Lambda_k} w_\lambda \leq \sup |\log|\!\int|\!|$, since

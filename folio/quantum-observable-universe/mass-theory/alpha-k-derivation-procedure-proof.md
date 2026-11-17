@@ -36,7 +36,7 @@ this paper.*
 **Stratum prefactors $\alpha_k$ at depth $k$.**
 *Once $\{y_\lambda\}$ is known, the depth-$k$ stratum prefactor in
 the unified mass formula
-([unified mass formula](#prop:unified-curvature-rank-mass-formula))
+([unified mass formula](#conj:unified-curvature-rank-mass-formula))
 is the Markov-pairing of $\mathrm{tr}_M$ with a chosen $E_\infty^{0,
 0}$-page representative $r_k$ of the depth-$k$ class:*
 

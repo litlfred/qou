@@ -7,7 +7,7 @@ R \cdot e_\lambda$.  By the Wedderburn-enumeration completeness
 (enumeration), every
 $\lambda \vdash n$ enters exactly one stratum.  The unified mass
 formula
-([unified mass formula](#prop:unified-curvature-rank-mass-formula))
+([unified mass formula](#conj:unified-curvature-rank-mass-formula))
 identifies each historical Bethe--Weizsäcker term with its
 $k$-stratum, and Plancherel boundedness
 ([Plancherel boundedness](#prop:plancherel-weight-boundedness))
