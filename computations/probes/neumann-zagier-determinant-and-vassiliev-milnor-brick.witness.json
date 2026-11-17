@@ -1,0 +1,60 @@
+{
+  "probeId": "neumann_zagier_determinant_and_vassiliev_milnor_brick_probe",
+  "beans": [
+    "qou-6poy",
+    "qou-q64u",
+    "qou-regz",
+    "qou-w3eg",
+    "qou-xq3f"
+  ],
+  "scriptPath": "computations/probes/neumann_zagier_determinant_and_vassiliev_milnor_brick_probe.py",
+  "scriptCommitSha": "b4b438fbfa2d06efdb0e7b096ec45a7a03973e2b",
+  "scriptHash": "cf7e93178098",
+  "generatedAt": "2026-11-17T08:42:53.577123+00:00",
+  "environment": {
+    "pythonVersion": "3.13.12",
+    "mpmathVersion": "1.3.0",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "precisionDps": "80"
+  },
+  "allPassed": true,
+  "outputHash": "c7210b5eb72906d3c61c7e19a0c46a0a3457be0f703d99c7dd7475108da381b1",
+  "results": {
+    "precisionDps": "80",
+    "allPassed": true,
+    "checks": [
+      {
+        "id": "fibre_q_diff_companion_det_and_cassini_invariance",
+        "passed": true,
+        "companionDet": "1",
+        "cassiniStepResidual": "0.0"
+      },
+      {
+        "id": "milnor_leading_vassiliev_degree_bridge",
+        "passed": true,
+        "hopfDegree": "2",
+        "borromeanDegree": "4",
+        "he4Degree": "6"
+      },
+      {
+        "id": "neumann_zagier_dg_torsion_norm_multiplicativity",
+        "passed": true,
+        "dgTorsion41Norm": "3",
+        "twiceRegularShapeNorm": "4",
+        "complexResidual": "0.0"
+      },
+      {
+        "id": "milnor_ideal_tetrahedron_six_orthoscheme_assembly",
+        "passed": true,
+        "regularTetrahedronVolume80dps": "1.014941606409653625021202554274520285942",
+        "orthoschemeAssemblyResidual": "0.0"
+      },
+      {
+        "id": "rosso_jones_two_shell_cross_ratio_collapse",
+        "passed": true,
+        "unchangedShellResidual": "2.222758749485077483442713e-162",
+        "factoredIdentityResidual": "1.054219794323052322434857e-81"
+      }
+    ]
+  }
+}
