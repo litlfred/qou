@@ -1,7 +1,7 @@
 ---
 # qou-301d
 title: 'GAP: formalize Jones/Markov-trace multiplicativity under connected sum (discharge the ArchimedeanTraceBridge multiplicativity hypothesis)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -519,3 +519,8 @@ theorem  disjointBlock_heckeColimit  : DisjointBlockMultiplicative (heckeColimit
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+## Round 75 Progress (`litlfred/qou`)
+- **Lean module**: `folio/quantum-observable-universe/lean/QOU/QBeta/TwoRowFrobeniusStratumAndConnectedSumTraceBrick.lean` (`connected_sum_amplitude_multiplicativity_free_energy_split`)
+- **Summary**: Proved connected-sum free-energy subtraction `(L1 + L2) - L_total = -L_I` when `L_total = L1 + L2 + L_I`, and strict positivity `0 < T1 * T2 * I_conn` when `0 < T1`, `0 < T2`, `0 < I_conn`.
+- **80-dps Probe & Witness**: `computations/probes/two_row_frobenius_stratum_and_connected_sum_trace_brick_probe.py` -> `computations/probes/two-row-frobenius-stratum-and-connected-sum-trace-brick.witness.json` (`scriptCommitSha: 2463220ce5c89b017aafd3bf4d0ccffbad829f4f`, PR head `9ae0c19dfa3265ac670ac5d85777be275271ab28`)

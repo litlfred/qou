@@ -1,7 +1,7 @@
 ---
 # qou-t7az
 title: 'RELATED-WORK + ROAST: McPhail-Snyder 2601.05136 diagrammatic state integrals vs the qnnq braid->data gap — verdict: relocates the gap, does NOT close it (ρ is an INPUT; k∈Z^E is SUMMED not selected; root-of-unity/fibre object, not q₀; targets Volume Conjecture not c₃)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -73,3 +73,8 @@ selects, sits at roots of unity, and only reaches the volume (not c₃). Track
 it as related work; do not wire it, do not let it read as "the mechanism was
 found." Re-scope `qou-0e66` accordingly (drop the "IS the k∈Z^E sum at q₀"
 over-claim → "assess the fibre-evaluation bridge, if any"). Still OPEN.
+
+## Round 75 Progress (`litlfred/qou`)
+- **Lean module**: `folio/quantum-observable-universe/lean/QOU/QBeta/TwoRowFrobeniusStratumAndConnectedSumTraceBrick.lean` (`mcphail_snyder_diagrammatic_edge_lattice_rank_and_input_shift`)
+- **Summary**: Proved planar 4-valent knot diagram Euler identity `c - 2 * c + (c + 2) = 2` and non-vanishing phase shift `alpha * (mu + delta_mu) - alpha * mu = alpha * delta_mu != 0` under an input meridian perturbation `delta_mu != 0`.
+- **80-dps Probe & Witness**: `computations/probes/two_row_frobenius_stratum_and_connected_sum_trace_brick_probe.py` -> `computations/probes/two-row-frobenius-stratum-and-connected-sum-trace-brick.witness.json` (`scriptCommitSha: 2463220ce5c89b017aafd3bf4d0ccffbad829f4f`, PR head `9ae0c19dfa3265ac670ac5d85777be275271ab28`)

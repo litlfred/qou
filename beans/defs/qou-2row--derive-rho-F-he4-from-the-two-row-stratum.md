@@ -1,7 +1,7 @@
 ---
 # qou-2row
 title: 'HARD THREAD: derive ρ_F(⁴He)≈1.889 from the two-row Frobenius stratum (item 2 surviving route)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -41,3 +41,8 @@ effective prefactor — '2' is the rounded ⁴He value, no constant to derive. T
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-21 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Round 75 Progress (`litlfred/qou`)
+- **Lean module**: `folio/quantum-observable-universe/lean/QOU/QBeta/TwoRowFrobeniusStratumAndConnectedSumTraceBrick.lean` (`two_row_frobenius_stratum_drift_and_non_constant_obstruction`)
+- **Summary**: Proved non-constant obstruction across `4He` (`rho_4`) and `16O` (`rho_16`) when `rho_4 != rho_16`, non-vanishing drift `rho_16 - rho_4 != 0`, and `twoRowPartitionCount 12 = 7`.
+- **80-dps Probe & Witness**: `computations/probes/two_row_frobenius_stratum_and_connected_sum_trace_brick_probe.py` -> `computations/probes/two-row-frobenius-stratum-and-connected-sum-trace-brick.witness.json` (`scriptCommitSha: 2463220ce5c89b017aafd3bf4d0ccffbad829f4f`, PR head `9ae0c19dfa3265ac670ac5d85777be275271ab28`)
