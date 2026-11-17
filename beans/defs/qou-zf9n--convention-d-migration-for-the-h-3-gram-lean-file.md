@@ -1,7 +1,7 @@
 ---
 # qou-zf9n
 title: Convention-D migration for the H_3 Gram Lean file and its spectrahedral-phase-collapse consumer
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -599,3 +599,6 @@ Reproduce:
 ```sh
 python3 computations/probes/gram_h3_supergolden_is_convention_c_artefact_probe.py
 ```
+
+## Round 76 Progress (2026-11-17T12:02:46Z)
+- Advanced in PR `litlfred/qou#8337` (branch `feat/round76-torusmass-pinchoct-gramsig-motivic-spectrahedral-43c1`, head `df1ab810bdd422f72dc74878dc341f5f55564271`).

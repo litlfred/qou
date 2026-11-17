@@ -1,7 +1,7 @@
 ---
 # qou-3q7t
 title: 'GAP: derive C_knot=5.85 (deuteron Δ_λ deficit) — the real ''improve binding'' target, not the scale-ambiguous A=3 near-miss'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -72,3 +72,6 @@ NOTE ON THIS BEAN'S TITLE: it still names 'C_knot=5.85', a convention-C value; t
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-21 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Round 76 Progress (2026-11-17T12:02:46Z)
+- Advanced in PR `litlfred/qou#8337` (branch `feat/round76-torusmass-pinchoct-gramsig-motivic-spectrahedral-43c1`, head `df1ab810bdd422f72dc74878dc341f5f55564271`).

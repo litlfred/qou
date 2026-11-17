@@ -1,7 +1,7 @@
 ---
 # qou-u96j
 title: Walk the canonical derivation chain step by step and catalogue where CONDITIONS emerge
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -497,3 +497,6 @@ Probe: `computations/audits/step7_bridge_disposition_probe.py`, 23/23. PR #7375.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-14 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Round 76 Progress (2026-11-17T12:02:46Z)
+- Advanced in PR `litlfred/qou#8337` (branch `feat/round76-torusmass-pinchoct-gramsig-motivic-spectrahedral-43c1`, head `df1ab810bdd422f72dc74878dc341f5f55564271`).

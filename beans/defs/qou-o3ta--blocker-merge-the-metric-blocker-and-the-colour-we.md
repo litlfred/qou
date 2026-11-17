@@ -1,7 +1,7 @@
 ---
 # qou-o3ta
 title: 'BLOCKER MERGE: the metric blocker and the colour-weight blocker are the SAME null vector, and convention D created it'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -163,3 +163,6 @@ Third correction of this session, and the same class each time: a claim about a
 bean made without reading that bean's own primary text closely enough. The first
 was `qou-m7py` (called satisfied off one grepped line), the second was the
 66-unscoped paper classifier.
+
+## Round 76 Progress (2026-11-17T12:02:46Z)
+- Advanced in PR `litlfred/qou#8337` (branch `feat/round76-torusmass-pinchoct-gramsig-motivic-spectrahedral-43c1`, head `df1ab810bdd422f72dc74878dc341f5f55564271`).
