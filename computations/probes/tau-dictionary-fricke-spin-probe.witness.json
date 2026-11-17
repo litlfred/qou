@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T10:24:25.746212+00:00",
-  "commitSha": "d8cdeb5f5d0ee218277c97986eeb4c8f37162ca4",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-17T10:35:55.321544+00:00",
+  "commitSha": "05673b3989a5f5a6a2e5b76e7e51c0f07fed1f99",
   "assertions": [
     {
       "name": "cusp_coefficients_exact",
@@ -13,26 +13,26 @@
     },
     {
       "name": "cusp_form_matches_eta_product_both_pins",
-      "computed": "2.5015e-119",
-      "expected": 0.0,
+      "computed": "4.80199e-119",
+      "expected": "0.0",
       "passed": true,
-      "tolerance": "1e-60",
+      "tolerance": "1.0e-60",
       "source": "t5(i|ln q0|/(2pi)) direct eta-product vs 125*qt*sum(c_k qt^k) at dps 120, both q0 pins — the nome dictionary is exponentially cusp-suppressed at theorem level."
     },
     {
       "name": "fricke_fixed_point_exact_value",
       "computed": "1.44890865261227397880145908654204668490920499170226211033321838238968e-70",
-      "expected": 0.0,
+      "expected": "0.0",
       "passed": true,
-      "tolerance": "1e-40",
+      "tolerance": "1.0e-40",
       "source": "|t5(i/sqrt5) - 5*sqrt5| (Fricke-fixed => t5^2 = 125)."
     },
     {
       "name": "w5_circle_family_excluded",
       "computed": "4.9842457649862224870770192577046405960876651714557816595462712354205e-68",
-      "expected": 0.0,
+      "expected": "0.0",
       "passed": true,
-      "tolerance": "1e-40",
+      "tolerance": "1.0e-40",
       "source": "||t5|^2 - 125| on the bar<->Fricke-equivariant circle family (both pins) — |t5| = 5*sqrt5 != 10 excludes every parametrization of the W5-fixed circle (proved invariant)."
     },
     {
@@ -53,11 +53,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1661,
+  "durationMs": 1948,
   "computation": "tau-dictionary-fricke-spin-probe",
   "scriptFile": "tau_dictionary_fricke_spin_probe.py",
-  "scriptHash": "eefa3ae51964",
-  "scriptCommitSha": "ccd1272b0edcdf2fc45ca755ca73ff96339069e3",
+  "scriptHash": "7860c4eaa900",
+  "scriptCommitSha": "05673b3989a5f5a6a2e5b76e7e51c0f07fed1f99",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -65,14 +65,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
   },
   "invocation": {
     "argv": [
@@ -98,11 +98,11 @@
       ],
       "per_pin": {
         "muon": {
-          "y_nome": "0.01660634324080984711582274357893786270091",
-          "q_tilde = exp(-4pi^2/(5 ln q0))": "1.36779003099132974533195549025694549521e-33",
-          "t5_direct_eta_product": "1.709737538739162181664944362821195900384e-31",
-          "t5_cusp_form_125_qt_series": "1.709737538739162181664944362821195900384e-31",
-          "rel_agreement": "2.5015e-119"
+          "y_nome": "0.0166063432530555974597273657221163770838",
+          "q_tilde = exp(-4pi^2/(5 ln q0))": "1.367790107316308242999853640215662432197e-33",
+          "t5_direct_eta_product": "1.70973763414538530374981705026959207162e-31",
+          "t5_cusp_form_125_qt_series": "1.70973763414538530374981705026959207162e-31",
+          "rel_agreement": "4.80199e-119"
         },
         "proton": {
           "y_nome": "0.01660634140462049529815530031803435416011",
@@ -164,11 +164,11 @@
         "formula": "tau = e^{i(pi/2 - ln q0)}/sqrt5 (bar↔Fricke equivariant)",
         "results": {
           "muon-pin": {
-            "tau": "(0.0465779707426 + 0.444781398713j)",
+            "tau": "(0.0465779707769 + 0.44478139871j)",
             "im_tau": "0.4447814",
-            "t5": "(10.2149595827 - 4.54473329513j)",
+            "t5": "(10.2149595813 - 4.54473329826j)",
             "abs_residual_t5_plus_10": "20.7195",
-            "j_5tau": "(126372.737413 - 1164066.04265j)",
+            "j_5tau": "(126372.736147 - 1164066.04265j)",
             "abs_residual_j5_plus_25_over_2": "1.17091e+6",
             "verdict": "FAIL"
           },
@@ -187,11 +187,11 @@
         "formula": "tau = e^{i(pi/2 + ln q0)}/sqrt5 (bar partner)",
         "results": {
           "muon-pin": {
-            "tau": "(-0.0465779707426 + 0.444781398713j)",
+            "tau": "(-0.0465779707769 + 0.44478139871j)",
             "im_tau": "0.4447814",
-            "t5": "(10.2149595827 + 4.54473329513j)",
+            "t5": "(10.2149595813 + 4.54473329826j)",
             "abs_residual_t5_plus_10": "20.7195",
-            "j_5tau": "(126372.737413 + 1164066.04265j)",
+            "j_5tau": "(126372.736147 + 1164066.04265j)",
             "abs_residual_j5_plus_25_over_2": "1.17091e+6",
             "verdict": "FAIL"
           },
@@ -210,11 +210,11 @@
         "formula": "tau = -1/2 + e^{i(pi/2 - ln q0)}/sqrt5",
         "results": {
           "muon-pin": {
-            "tau": "(-0.453422029257 + 0.444781398713j)",
+            "tau": "(-0.453422029223 + 0.44478139871j)",
             "im_tau": "0.4447814",
-            "t5": "(-22.1525859783 + 4.58619615941j)",
+            "t5": "(-22.1525859769 + 4.58619616257j)",
             "abs_residual_t5_plus_10": "12.9892",
-            "j_5tau": "(-124884.737444 + 1164066.04265j)",
+            "j_5tau": "(-124884.736178 + 1164066.04266j)",
             "abs_residual_j5_plus_25_over_2": "1.17074e+6",
             "verdict": "FAIL"
           },
@@ -233,11 +233,11 @@
         "formula": "tau = i sinh(ln q0) (bar-odd split)",
         "results": {
           "muon-pin": {
-            "tau": "(0.0 + 0.104530160998j)",
+            "tau": "(0.0 + 0.104530161075j)",
             "im_tau": "0.10453016",
-            "t5": "(0.000751517935587 + 0.0j)",
+            "t5": "(0.000751517942273 + 0.0j)",
             "abs_residual_t5_plus_10": "10.0008",
-            "j_5tau": "(167081.213348 + 0.0j)",
+            "j_5tau": "(167081.211868 + 0.0j)",
             "abs_residual_j5_plus_25_over_2": "167094.0",
             "verdict": "FAIL"
           },
@@ -256,11 +256,11 @@
         "formula": "tau = -1/2 + i sinh(ln q0)",
         "results": {
           "muon-pin": {
-            "tau": "(-0.5 + 0.104530160998j)",
+            "tau": "(-0.5 + 0.104530161075j)",
             "im_tau": "0.10453016",
-            "t5": "(-4.69702810056 - 7.97678790661e-71j)",
+            "t5": "(-4.69702810833 - 6.6801059737e-71j)",
             "abs_residual_t5_plus_10": "5.30297",
-            "j_5tau": "(1679.86101795 + 1.24867590289e-72j)",
+            "j_5tau": "(1679.86101636 - 4.05554932408e-71j)",
             "abs_residual_j5_plus_25_over_2": "1692.36",
             "verdict": "FAIL"
           },
@@ -279,11 +279,11 @@
         "formula": "tau = i cosh(ln q0) (bar-even split, [2]_q/2)",
         "results": {
           "muon-pin": {
-            "tau": "(0.0 + 1.00544843456j)",
+            "tau": "(0.0 + 1.00544843457j)",
             "im_tau": "1.0054484",
-            "t5": "(548.157087641 + 0.0j)",
+            "t5": "(548.157087669 + 0.0j)",
             "abs_residual_t5_plus_10": "558.157",
-            "j_5tau": "(5.22517320638e+13 + 0.0j)",
+            "j_5tau": "(5.2251732077e+13 + 0.0j)",
             "abs_residual_j5_plus_25_over_2": "5.22517e+13",
             "verdict": "FAIL"
           },
@@ -302,11 +302,11 @@
         "formula": "tau = -1/2 + i cosh(ln q0)",
         "results": {
           "muon-pin": {
-            "tau": "(-0.5 + 1.00544843456j)",
+            "tau": "(-0.5 + 1.00544843457j)",
             "im_tau": "1.0054484",
-            "t5": "(-560.15702251 + 1.75019812372e-68j)",
+            "t5": "(-560.157022538 + 2.72341427773e-69j)",
             "abs_residual_t5_plus_10": "550.157",
-            "j_5tau": "(-5.22517320623e+13 - 6.40409779378e-61j)",
+            "j_5tau": "(-5.22517320755e+13 + 8.98718891624e-61j)",
             "abs_residual_j5_plus_25_over_2": "5.22517e+13",
             "verdict": "FAIL"
           },
@@ -325,11 +325,11 @@
         "formula": "tau = -1/2 + i ln(q0)/(2pi) (spin-twisted C1; nome = -1/q0)",
         "results": {
           "muon-pin": {
-            "tau": "(-0.5 + 0.0166063432408j)",
+            "tau": "(-0.5 + 0.0166063432531j)",
             "im_tau": "0.016606343",
-            "t5": "(-7.60177228041e-7 + 1.02593020988e-75j)",
+            "t5": "(-7.60177238645e-7 + 1.04723250802e-75j)",
             "abs_residual_t5_plus_10": "10.0",
-            "j_5tau": "(-164434588.747 - 3.35480644226e-66j)",
+            "j_5tau": "(-164434586.453 - 3.34941274808e-66j)",
             "abs_residual_j5_plus_25_over_2": "1.64435e+8",
             "verdict": "FAIL"
           },
@@ -366,7 +366,7 @@
       "tau0_prints": "BDH22 tau0 = -0.5+0.186676i passes the gate; BN12's own 6-d.p. print 0.185576 does not (BDH22 correction load-bearing for Im(tau0)-dependent data)"
     },
     "q0_pins": {
-      "muon": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+      "muon": "1.1099785956427390466817951293800017527000655610290",
       "proton": "1.1099785827513808075916690956107688798744991218736"
     },
     "spin_data_checks": {
@@ -390,5 +390,11 @@
   },
   "caveats": [
     "Scope-(a) throughout: every FAIL refutes the stated map only, never an ingredient. The two (b)-type exclusions (pure-imaginary dictionaries; the W5-fixed-circle family) cite proved invariants (sign positivity of the real-nome eta-product; |t5| = 5*sqrt5 on the Fricke-fixed circle) per AGENTS.md 'Before declaring refuted'. Candidates were enumerated from bar/Fricke/half-period structure only, never adjusted toward -10. The worldline-spin <-> Bring-spin-structure identification remains a framework hypothesis; the tau-functor (B2) remains open."
-  ]
+  ],
+  "q0Anchor": "comparison",
+  "q0Values": {
+    "muon": "1.1099785956427390466817951293800017527000655610290",
+    "proton": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "q0AnchorReason": "evaluates the Fricke cusp factorization and bar-Fricke candidate family at BOTH pins on purpose (task1_cusp_factorization.per_pin, task2_candidates); bean qou-fl0a"
 }

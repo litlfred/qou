@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-06T12:39:02.723421+00:00",
-  "commitSha": "2b1917694b0cd0641b91a8d16a3fa9d67c7931fc",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-17T10:35:56.498230+00:00",
+  "commitSha": "05673b3989a5f5a6a2e5b76e7e51c0f07fed1f99",
   "assertions": [
     {
       "name": "b_squared_three_forms_agree_symbolically",
@@ -57,8 +57,8 @@
   "durationMs": 0,
   "computation": "qbeta-habiro-integrality-kill-test",
   "scriptFile": "qbeta_habiro_integrality_kill_test.py",
-  "scriptHash": "d1e88f94198a",
-  "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
+  "scriptHash": "3b1dc79780aa",
+  "scriptCommitSha": "05673b3989a5f5a6a2e5b76e7e51c0f07fed1f99",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -66,14 +66,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
   },
   "invocation": {
     "argv": [
@@ -1464,5 +1464,11 @@
     }
   },
   "overall_verdict": "NEGATIVE",
-  "scope_classification": "NEGATIVE, scope-limited (a): the ladder is not the q=1 Taylor expansion of a Habiro-ring element under the natural normalizations tested (bare L; Q_base/m_e-dressed P·L; h vs ℏ_q basis is invariant so covered). This is NOT a structural (b) exclusion: it constrains these normalizations only — a non-Habiro analytic object (state integral / resummation, audit §3.B) or a different, structurally-motivated normalization remains open. Downstream: GSWZ descent (audit Appendix A) is gated on this result and dies with it under these normalizations."
+  "scope_classification": "NEGATIVE, scope-limited (a): the ladder is not the q=1 Taylor expansion of a Habiro-ring element under the natural normalizations tested (bare L; Q_base/m_e-dressed P·L; h vs ℏ_q basis is invariant so covered). This is NOT a structural (b) exclusion: it constrains these normalizations only — a non-Habiro analytic object (state integral / resummation, audit §3.B) or a different, structurally-motivated normalization remains open. Downstream: GSWZ descent (audit Appendix A) is gated on this result and dies with it under these normalizations.",
+  "q0Anchor": "comparison",
+  "q0Values": {
+    "muon": "1.109978595642739046681795129380001752700065561029012",
+    "proton": "1.109978582751380807591669095610768879874499121873600"
+  },
+  "q0AnchorReason": "computes empirical c_3 and Habiro integrality tests at BOTH pins on purpose (CH['proton'], CH['muon'], and |c_3(proton) - c_3(muon)| anchor spread); bean qou-fl0a"
 }
