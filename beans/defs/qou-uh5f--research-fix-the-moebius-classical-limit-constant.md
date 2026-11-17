@@ -1,7 +1,7 @@
 ---
 # qou-uh5f
 title: 'RESEARCH: fix the Moebius classical-limit constant to a knot-type invariant'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -110,3 +110,7 @@ part and by nothing in the energy density — the classical-side counterpart of
 `CategoricalMobiusEnergy`: that still needs the categorical side to *supply* a
 regulator (route 2: is the antipode/diagonal subtraction exactly `R_BFHW`, or
 `R_BFHW` up to a constant?). Bean stays open.
+
+## Round 68 Formalization Progress (PR #8285)
+- Formalized `QOU.MobiusRegulator.bfhwRegulator_sub_msRegulator_eq_neg_four` (sorry-free, 0 advisories across all 6 static vacuity audits).
+- Verified at 80-dps `mpmath` (`computations/probes/twobody_deficit_regulator_sdp_milnor_probe.py`, `scriptHash: 39a564805d3e`, Commit 1 `70bec575bb493c7f91cf1b39cb54e58ef8343777`, Commit 2 / Witness `250465c60a6cea44d9f569e88cc79ee2c8d8051b`, PR `litlfred/qou#8285`).

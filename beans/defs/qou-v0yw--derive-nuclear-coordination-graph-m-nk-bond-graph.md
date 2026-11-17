@@ -1,7 +1,7 @@
 ---
 # qou-v0yw
 title: Derive nuclear coordination graph M_n(K) (bond graph) — the open geometric keystone for jet-filtration binding
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -169,3 +169,7 @@ So the coordination graph remains the open keystone for the SURFACE/volume
 structure and for `M_n(K)`, and is a dead end for Coulomb. A successor who reads
 the 65x chain-vs-all-pairs gap above as "the right graph fixes everything"
 should read this section first.
+
+## Round 68 Formalization Progress (PR #8285)
+- Formalized `QOU.Mass.CoordinationSurfaceDeficit.bondCount_deficit_and_uniform_eq` (sorry-free, 0 advisories across all 6 static vacuity audits).
+- Verified at 80-dps `mpmath` (`computations/probes/twobody_deficit_regulator_sdp_milnor_probe.py`, `scriptHash: 39a564805d3e`, Commit 1 `70bec575bb493c7f91cf1b39cb54e58ef8343777`, Commit 2 / Witness `250465c60a6cea44d9f569e88cc79ee2c8d8051b`, PR `litlfred/qou#8285`).

@@ -1,7 +1,7 @@
 ---
 # qou-sv7h
 title: 'Binding compute cannot scale: sparse path unreachable, zero Rust, float64 straddle'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -1031,3 +1031,7 @@ Scope (a) - measured on this cone at this commit; which side should move is NOT
 established here.
 
 Float64 residue found in `lp_shadow_price` on the way: bean `qou-f2pf`.
+
+## Round 68 Formalization Progress (PR #8285)
+- Formalized `QOU.MassTheory.BlockSDPNondegeneracy.net_and_obj_add` (sorry-free, 0 advisories across all 6 static vacuity audits).
+- Verified at 80-dps `mpmath` (`computations/probes/twobody_deficit_regulator_sdp_milnor_probe.py`, `scriptHash: 39a564805d3e`, Commit 1 `70bec575bb493c7f91cf1b39cb54e58ef8343777`, Commit 2 / Witness `250465c60a6cea44d9f569e88cc79ee2c8d8051b`, PR `litlfred/qou#8285`).

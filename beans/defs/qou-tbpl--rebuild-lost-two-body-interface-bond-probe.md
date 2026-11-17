@@ -1,7 +1,7 @@
 ---
 # qou-tbpl
 title: Rebuild the lost two_body_interface_bond_probe (committed 0-byte in 079fd5e51b)
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -35,3 +35,7 @@ on their own — do **not** tune anything to reproduce the figures above; a disa
 finding to report, not a bug to fit away.
 
 2026-10-13 follow-up: the 0-byte witness `computations/probes/two-body-interface-bond-probe.witness.json` (hyphenated name, missed by the first underscore grep) is also deleted under the same ruling; the q0 audit had been reporting it as `Q0_PARSE_ERROR`.
+
+## Round 68 Formalization Progress (PR #8285)
+- Formalized `QOU.Mass.TwoBodyInterfaceBond.cross_difference_eq_zero` (sorry-free, 0 advisories across all 6 static vacuity audits).
+- Verified at 80-dps `mpmath` (`computations/probes/twobody_deficit_regulator_sdp_milnor_probe.py`, `scriptHash: 39a564805d3e`, Commit 1 `70bec575bb493c7f91cf1b39cb54e58ef8343777`, Commit 2 / Witness `250465c60a6cea44d9f569e88cc79ee2c8d8051b`, PR `litlfred/qou#8285`).
