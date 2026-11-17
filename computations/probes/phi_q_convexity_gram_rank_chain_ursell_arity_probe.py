@@ -124,7 +124,7 @@ def main() -> None:
         raise RuntimeError("One or more probe checks failed!")
 
     script_path = pathlib.Path(__file__).resolve()
-    script_hash = hashlib.sha256(script_path.read_bytes()).hexdigest()[:12]
+    script_hash = hashlib.sha256(script_path.read_bytes()).hexdigest()
     try:
         commit_sha = (
             subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=script_path.parent)
@@ -139,6 +139,7 @@ def main() -> None:
         "beans": ["qou-oooq", "qou-fadg", "qou-h7mh", "qou-m8f3", "qou-x0su"],
         "dps": 50,
         "scriptHash": script_hash,
+        "scriptSha256": script_hash,
         "scriptCommitSha": commit_sha,
         "generatedAt": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "allPassed": all_passed,

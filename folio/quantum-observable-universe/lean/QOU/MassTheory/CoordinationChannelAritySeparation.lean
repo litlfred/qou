@@ -60,7 +60,7 @@ theorem observeEarlyClearedFactor_bounded (D_pow f_pow : Int)
     (hf_pos : 0 < f_pow) (hf_lt : f_pow < D_pow) :
     0 < observeEarlyClearedFactor D_pow f_pow ∧
     observeEarlyClearedFactor D_pow f_pow < D_pow := by
-  unfold observeEarlyClearedFactor
+  dsimp [observeEarlyClearedFactor]
   constructor <;> omega
 
 /-- Cleared discrepancy between complete-graph and chain observe-early factors (`qou-x0su`). -/

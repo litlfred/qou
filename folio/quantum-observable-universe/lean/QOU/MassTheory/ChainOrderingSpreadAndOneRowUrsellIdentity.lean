@@ -45,7 +45,7 @@ collapses to `0` under alternating ordering (`pnp`/`npn`) (`qou-h7mh`). -/
 theorem chainMirrorSplit_contiguous_vs_alternating (L_pp L_pn L_nn : Int) :
     chainSumContiguous3H L_pn L_nn - chainSumContiguous3He L_pp L_pn = L_nn - L_pp ∧
     chainSumAlternatingA3 L_pn - chainSumAlternatingA3 L_pn = 0 := by
-  unfold chainSumContiguous3H chainSumContiguous3He chainSumAlternatingA3
+  dsimp [chainSumContiguous3H, chainSumContiguous3He, chainSumAlternatingA3]
   constructor <;> omega
 
 /-- Doubled pair counts `Z(Z - 1) + 2 Z N + N(N - 1)` on the complete graph `K_{Z+N}` (`qou-h7mh`). -/
@@ -79,7 +79,7 @@ def completeGraphUrsellB3 (L123 b12 b23 b13 : Int) : Int :=
 the missing `(1,3)` edge) (`qou-m8f3`). -/
 theorem oneRowChainUrsellB3_eq_neg_missing_edge (b12 b23 b13 : Int) :
     completeGraphUrsellB3 (oneRowChainLogWeight3 b12 b23) b12 b23 b13 = -b13 := by
-  unfold completeGraphUrsellB3 oneRowChainLogWeight3
+  dsimp [completeGraphUrsellB3, oneRowChainLogWeight3]
   omega
 
 /-- For both `ppn` (`³He`) and `pnn` (`³H`), the missing `(1,3)` endpoint pair is `p-n`, so

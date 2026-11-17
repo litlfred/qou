@@ -77,20 +77,21 @@ theorem deltaHbarTwoTermTrunc_factor (hbar : Int) :
   rw [hc2, hc5, hp5, hdist, hmul]
   omega
 
-/-- Number of independent Frobenius rows `dim - nullity` (`qou-fadg`). -/
-def independentFrobeniusRows (dim nullity : Nat) : Nat :=
+/-- Number of independent trace-Gram rows `dim - nullity` (`qou-fadg`). -/
+def independentTraceGramRows (dim nullity : Nat) : Nat :=
   dim - nullity
 
 /-- Total independent linear constraints when adjoining `netRows` non-radical rows (`qou-fadg`). -/
-def totalFrobeniusPlusNetRows (dim nullity netRows : Nat) : Nat :=
-  independentFrobeniusRows dim nullity + netRows
+def totalTraceGramPlusNetRows (dim nullity netRows : Nat) : Nat :=
+  independentTraceGramRows dim nullity + netRows
 
-/-- For `H₃(q)` under Convention D (`dim = 6`, `nullity = 1`), the Frobenius system has `5`
+/-- For `H₃(q)` under Convention D (`dim = 6`, `nullity = 1`), the trace-Gram system has `5`
 independent rows and adjoining `1` net row yields a square `6 × 6` system (`qou-fadg`). -/
-theorem h3ConventionDFrobeniusNet_is_square :
-    independentFrobeniusRows 6 1 = 5 ∧ totalFrobeniusPlusNetRows 6 1 1 = 6 := by
-  unfold totalFrobeniusPlusNetRows independentFrobeniusRows
-  decide
+theorem h3ConventionDTraceGramNet_is_square :
+    independentTraceGramRows 6 1 = 5 ∧ totalTraceGramPlusNetRows 6 1 1 = 6 := by
+  have h1 : independentTraceGramRows 6 1 = 5 := rfl
+  have h2 : totalTraceGramPlusNetRows 6 1 1 = 6 := rfl
+  exact ⟨h1, h2⟩
 
 /-- Evaluation of a linear row `row_x + t · row_r` along a 1-parameter shift `x + t r` (`qou-fadg`). -/
 def linearRowAlongShift (row_x row_r t : Int) : Int :=
@@ -101,7 +102,7 @@ functional by `t · net_r` (`qou-fadg`). -/
 theorem radicalShift_preserves_gram_scans_net (gram_x net_x net_r t : Int) :
     linearRowAlongShift gram_x 0 t = gram_x ∧
     linearRowAlongShift net_x net_r t - net_x = t * net_r := by
-  unfold linearRowAlongShift
+  dsimp [linearRowAlongShift]
   constructor <;> omega
 
 end QOU.MassTheory.PhiQTowerConvexityAndGramRankFive
