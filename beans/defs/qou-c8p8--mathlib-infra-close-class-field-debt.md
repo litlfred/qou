@@ -1,11 +1,11 @@
 ---
 # qou-c8p8
 title: 'Mathlib infra: close class field debt'
-status: todo
+status: in-progress
 type: epic
 priority: normal
 created_at: 2026-08-24T06:35:32Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-17T06:55:30Z
 parent: qou-rtxm
 ---
 
@@ -149,3 +149,7 @@ Now the epic for P3.AN under Lean / Mathlib foundations.
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+## 2026-11-17 — Spherical Trace Coherence & Parallelogram Contour Primitive Cancellation (`litlfred/qou#8237`)
+- Formalized `spherical_trace_coherence_two_sector` and `parallelogram_contour_primitive_sum_eq_zero` over generic `CommRingOps R` in `folio/quantum-observable-universe/lean/QOU/Foundations/BarConditionHyperbolicSphericalMetric.lean` (wired into `QOU.lean`, `0` `sorry`, `0` warnings, `0` vacuity advisories, commit `62b14488de4f16d02964a9976964f16ed12bcdcd`, PR [https://github.com/litlfred/qou/pull/8237](https://github.com/litlfred/qou/pull/8237)).
+- Kept `status: in-progress` per no-unilateral-closure policy.

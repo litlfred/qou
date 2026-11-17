@@ -1,13 +1,13 @@
 ---
 # qou-b84o
 title: 'GAP (D): Vol(5_2) is blocked on a missing DEFINITION of hyperbolic volume'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-31T04:01:44Z
-updated_at: 2026-10-04T15:19:28Z
+updated_at: 2026-11-17T06:55:30Z
 parent: qou-rtxm
 ---
 
@@ -87,3 +87,7 @@ statement of the corpus's `5₂` result is: *conditional on Ohtsuki's Theorem 1.
 the growth rate of the Kashaev invariant converges to `3·D(y₊)`* — with
 `3·D(y₊) = Vol(5₂)` a numerical identification (50 dps, residual `4.9e-50`) that
 Lean cannot state.
+
+## 2026-11-17 — `5₂` Ideal Triangulation Cross-Ratio & Shape Cubic Algebra (`litlfred/qou#8237`)
+- Formalized `ideal_tet_cross_ratio_product_cleared`, `five_two_symmetric_triangulation_vol_eq_three_D`, and `five_two_shape_cubic_reduction` over generic `CommRingOps R` in `folio/quantum-observable-universe/lean/QOU/Foundations/BarConditionHyperbolicSphericalMetric.lean` (wired into `QOU.lean`, `0` `sorry`, `0` warnings, `0` vacuity advisories, commit `62b14488de4f16d02964a9976964f16ed12bcdcd`, PR [https://github.com/litlfred/qou/pull/8237](https://github.com/litlfred/qou/pull/8237)).
+- Kept `status: in-progress` per no-unilateral-closure policy.

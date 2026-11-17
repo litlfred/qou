@@ -1,13 +1,13 @@
 ---
 # qou-sd8y
 title: 'BUILD: re-base Archimedean.HyperbolicMetric.dH on Mathlib Geometry/Manifold/Riemannian PathELength'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T09:08:08Z
-updated_at: 2026-10-04T15:16:48Z
+updated_at: 2026-11-17T06:55:30Z
 parent: qou-rtxm
 ---
 
@@ -46,3 +46,7 @@ What is corrected there is one sentence about ℍ² — see the false-claim bean
 alongside this one.
 
 Source: `docs/audits/2026-09-04-mathlib-infrastructure-inventory.md` §B5, §H3.
+
+## 2026-11-17 — Poincaré Hyperbolic Chord Symmetry & Path-Length Reversal (`litlfred/qou#8237`)
+- Formalized `poincareChordSq_symm_and_self` and `path_length_reversal_symmetric` over generic `CommRingOps R` in `folio/quantum-observable-universe/lean/QOU/Foundations/BarConditionHyperbolicSphericalMetric.lean` (wired into `QOU.lean`, `0` `sorry`, `0` warnings, `0` vacuity advisories, commit `62b14488de4f16d02964a9976964f16ed12bcdcd`, PR [https://github.com/litlfred/qou/pull/8237](https://github.com/litlfred/qou/pull/8237)).
+- Kept `status: in-progress` per no-unilateral-closure policy.

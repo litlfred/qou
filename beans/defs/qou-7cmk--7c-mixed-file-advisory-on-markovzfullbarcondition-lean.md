@@ -1,13 +1,13 @@
 ---
 # qou-7cmk
 title: '§7c mixed-file advisory on MarkovZFullBarCondition.lean (branch-introduced by #5111) — split or justify'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-15T15:55:00Z
-updated_at: 2026-10-04T15:25:43Z
+updated_at: 2026-11-17T06:55:30Z
 parent: qou-rtxm
 ---
 
@@ -54,3 +54,7 @@ body's false claim rather than passing it through. The agent could not file
 this bean itself — the `beans` CLI is not installed in that sandbox and
 hand-minting IDs risks the documented duplicate-bean failure
 (`qou-2ryn`, 14,688 duplicates). Filed by the parent session instead.
+
+## 2026-11-17 — Generic-Ring Bricks of `MarkovZFullBarCondition` (`litlfred/qou#8237`)
+- Formalized `zD_cleared_full_bar_covariant` and `barEven_and_fullBar_forces_classical` over generic `CommRingOps R` (zero `ℝ` occurrences) in `folio/quantum-observable-universe/lean/QOU/Foundations/BarConditionHyperbolicSphericalMetric.lean` (wired into `QOU.lean`, `0` `sorry`, `0` warnings, `0` vacuity advisories, commit `62b14488de4f16d02964a9976964f16ed12bcdcd`, PR [https://github.com/litlfred/qou/pull/8237](https://github.com/litlfred/qou/pull/8237)).
+- Kept `status: in-progress` per no-unilateral-closure policy.

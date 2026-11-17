@@ -1,13 +1,13 @@
 ---
 # qou-7t1n
 title: 'GAP: b1_hyperbolic_rows made the QOU library inconsistent (FIXED); audit the same shape elsewhere'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T17:15:19Z
-updated_at: 2026-10-04T15:19:45Z
+updated_at: 2026-11-17T06:55:30Z
 parent: qou-rtxm
 ---
 
@@ -179,3 +179,7 @@ partial guard worth considering: a CI step that, for each library module
 declaring axioms, attempts `example : False` with a small tactic battery plus
 degenerate-witness construction. It would not be complete, but all four of
 this session's cases fall to a two-line witness.
+
+## 2026-11-17 — Finite Hyperbolic Row Count & Consistent LP Duality (`litlfred/qou#8237`)
+- Formalized `HyperbolicRow`, `countVerifiedRows_le_three`, `three_le_countVerifiedRows_iff`, and `consistent_lp_duality_gap_iff_slack_zero` over generic `CommRingOps R` in `folio/quantum-observable-universe/lean/QOU/Foundations/BarConditionHyperbolicSphericalMetric.lean` (wired into `QOU.lean`, `0` `sorry`, `0` warnings, `0` vacuity advisories, commit `62b14488de4f16d02964a9976964f16ed12bcdcd`, PR [https://github.com/litlfred/qou/pull/8237](https://github.com/litlfred/qou/pull/8237)).
+- Kept `status: in-progress` per no-unilateral-closure policy.
