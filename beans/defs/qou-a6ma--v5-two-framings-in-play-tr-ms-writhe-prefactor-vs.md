@@ -1,13 +1,13 @@
 ---
 # qou-a6ma
 title: 'V5: TWO framings in play -- tr_M''s writhe prefactor vs T(t) as a free datum'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-10T18:34:14Z
-updated_at: 2026-10-04T15:25:23Z
+updated_at: 2026-11-17T10:41:00Z
 parent: qou-v2om
 ---
 
@@ -36,3 +36,8 @@ computations/ribbon_twist_charge_quantum_probe.py.
 QUESTION TO SETTLE: are the tr_M framing and T(t) the same framing? If yes, T(t)
 is writhe-determined and the candidate collapses. If no, the corpus carries two
 unrelated framing notions and must say so explicitly.
+
+## Round 84 Progress (`litlfred/qou#8309`)
+- **Lean 4.24.0 Module**: `folio/quantum-observable-universe/lean/QOU/QBeta/GSWZModuleHarnessAndKerovMomentStructuresBrick.lean` (`0` `sorry`, `0` `axiom`, `0` warnings; `0` CRITICAL, `0` major, `0` advisory across all 7 static audits).
+- **80-dps Probe & Witness**: `computations/probes/gswz_module_harness_and_kerov_moment_structures_brick_probe.py` & `computations/probes/gswz-module-harness-and-kerov-moment-structures-brick.witness.json` (`scriptCommitSha = 843d4ad40be5ebf362ac9c1f33db1be9d81b604b`, HEAD `701af74a55bd4d1ae870ab66bcadecbda5438362`, `allPassed = true`).
+
