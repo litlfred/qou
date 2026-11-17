@@ -164,7 +164,7 @@ abbrev MarkovTraceAxioms_real (q : ℝ) : Type := MarkovTraceAxioms (Real.sqrt q
 
 /-! ## Iterated stabilisation → disjoint-product factorisation -/
 
-/-- Recursive `k`-fold Markov M3 stabilisation `iteratedStab z τ k`, multiplying
+/-- Recursive `k`-fold M3 trace stabilisation `iteratedStab z τ k`, multiplying
     the trace value by `z` at each step from the right (`bean qou-ekga`). -/
 def iteratedStab {R : Type*} [Mul R] (z : R) (τ : R) : ℕ → R
   | 0 => τ
@@ -173,32 +173,32 @@ def iteratedStab {R : Type*} [Mul R] (z : R) (τ : R) : ℕ → R
 /-- **k-fold stabilisation (generic-R / Tier 2 form)**: starting from a
     trace value `τ`, `k` recursive right-multiplications by `z` equal
     `τ · z^k` in any field `R`. Independent of archimedean specialisation. -/
-theorem markov_iterated_stab_gen {R : Type*} [Field R]
+theorem iterated_stabilisation_gen {R : Type*} [Field R]
     (z : R) (τ : R) : ∀ k : ℕ,
     iteratedStab z τ k = τ * z ^ k
   | 0 => by simp [iteratedStab]
   | k + 1 => by
-    simp only [iteratedStab, markov_iterated_stab_gen z τ k, pow_succ, mul_assoc]
+    simp only [iteratedStab, iterated_stabilisation_gen z τ k, pow_succ, mul_assoc]
 
 /-- **k-fold stabilisation (Tier 2 generic-R form)**: under the
-    `MarkovTraceAxioms u` instance, `k` applications of `tau_stab_factor`
+    trace-axiom instance, `k` applications of `tau_stab_factor`
     from `τ` equal `τ · (markovZax u)^k`. -/
-theorem markov_iterated_stab {R : Type*} [Field R] (u : R) [h : MarkovTraceAxioms u]
+theorem iterated_stabilisation {R : Type*} [Field R] (u : R) [h : MarkovTraceAxioms u]
     (τ : R) (k : ℕ) :
     iteratedStab h.tau_stab_factor τ k = τ * (markovZax u) ^ k := by
-  rw [markov_iterated_stab_gen h.tau_stab_factor τ k, h.tau_stab_factor_eq_z]
+  rw [iterated_stabilisation_gen h.tau_stab_factor τ k, h.tau_stab_factor_eq_z]
 
-/-- Archimedean shim of `markov_iterated_stab` — preserves the
+/-- Archimedean shim of `iterated_stabilisation` — preserves the
     pre-Phase-2 `(q : ℝ)` API surface. Carries the explicit
     `(hq : 0 < q)` hypothesis so the statement is phrased via
     `markovZax_real q hq` rather than the positivity-implicit
     `markovZax (Real.sqrt q)`. -/
-theorem markov_iterated_stab_real (q : ℝ) (hq : 0 < q)
+theorem iterated_stabilisation_real (q : ℝ) (hq : 0 < q)
     (τ_x : ℝ) (k : ℕ) :
     iteratedStab (markovZax_real q hq) τ_x k = τ_x * (markovZax_real q hq) ^ k :=
-  markov_iterated_stab_gen (markovZax_real q hq) τ_x k
+  iterated_stabilisation_gen (markovZax_real q hq) τ_x k
 
-/-- **Disjoint-product factorisation (derived from M3)**: two braids K_1, K_2
+/-- **Disjoint-product factorisation (from M3)**: two braids K_1, K_2
     acting on disjoint strands give the factorised joint trace.
 
     K_1 has trace τ_K1, K_2 has trace τ_K2; multiplying `τ_K1` by the
@@ -210,7 +210,7 @@ theorem markov_iterated_stab_real (q : ℝ) (hq : 0 < q)
 theorem disjoint_product_factorisation_gen {R : Type*} [Field R]
     (z : R) (τ_K1 τ_K2 : R) (k : ℕ) :
     τ_K1 * iteratedStab z τ_K2 k = τ_K1 * τ_K2 * z ^ k := by
-  rw [markov_iterated_stab_gen z τ_K2 k, ← mul_assoc]
+  rw [iterated_stabilisation_gen z τ_K2 k, ← mul_assoc]
 
 theorem disjoint_product_factorisation {R : Type*} [Field R] (u : R)
     [h : MarkovTraceAxioms u] (τ_K1 τ_K2 : R) (k : ℕ) :
@@ -229,9 +229,9 @@ theorem disjoint_product_factorisation_real (q : ℝ) (hq : 0 < q)
 
 /-! ## Single-step stabilisation identity under `MarkovTraceAxioms` -/
 
-/-- Under `MarkovTraceAxioms u`, one recursive stabilisation step
+/-- Under the trace-axiom instance, one recursive stabilisation step
     `iteratedStab h.tau_stab_factor τ_x 1` equals `τ_x * markovZax u`. -/
-theorem MarkovTraceAxioms_implies_disjoint_stabilisation
+theorem trace_axioms_implies_disjoint_stabilisation
     {R : Type*} [Field R] (u : R) [h : MarkovTraceAxioms u] :
     ∀ τ_x : R, iteratedStab h.tau_stab_factor τ_x 1 = τ_x * markovZax u := by
   intro τ_x
