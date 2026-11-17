@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "1.0",
+  "witnessId": "bar-condition-hyperbolic-spherical-metric",
+  "scriptPath": "computations/probes/bar_condition_hyperbolic_spherical_metric_probe.py",
+  "scriptCommitSha": "fec68830f5096dcdbbab212f1b12dbcca5026710",
+  "scriptHash": "98ff25e0c6bb",
+  "generatedAt": "2026-11-17T07:53:41Z",
+  "dps": "80",
+  "beans": [
+    "qou-7cmk",
+    "qou-7t1n",
+    "qou-b84o",
+    "qou-c8p8",
+    "qou-sd8y"
+  ],
+  "theorems": [
+    "QOU.Foundations.BarConditionHyperbolicSphericalMetric.zD_cleared_full_bar_covariant",
+    "QOU.Foundations.BarConditionHyperbolicSphericalMetric.barEven_and_fullBar_forces_classical",
+    "QOU.Foundations.BarConditionHyperbolicSphericalMetric.countVerifiedRows_le_three",
+    "QOU.Foundations.BarConditionHyperbolicSphericalMetric.three_le_countVerifiedRows_iff",
+    "QOU.Foundations.BarConditionHyperbolicSphericalMetric.consistent_lp_duality_gap_iff_slack_zero",
+    "QOU.Foundations.BarConditionHyperbolicSphericalMetric.ideal_tet_cross_ratio_product_cleared",
+    "QOU.Foundations.BarConditionHyperbolicSphericalMetric.five_two_symmetric_triangulation_vol_eq_three_D",
+    "QOU.Foundations.BarConditionHyperbolicSphericalMetric.five_two_shape_cubic_reduction",
+    "QOU.Foundations.BarConditionHyperbolicSphericalMetric.spherical_trace_coherence_two_sector",
+    "QOU.Foundations.BarConditionHyperbolicSphericalMetric.parallelogram_contour_primitive_sum_eq_zero",
+    "QOU.Foundations.BarConditionHyperbolicSphericalMetric.poincareChordSq_symm_and_self",
+    "QOU.Foundations.BarConditionHyperbolicSphericalMetric.path_length_reversal_symmetric"
+  ],
+  "allPassed": true,
+  "checks": [
+    {
+      "name": "zD_cleared_full_bar_covariant_and_barEven_forces_classical",
+      "bean": "qou-7cmk",
+      "samplesVerified": "4",
+      "passed": true
+    },
+    {
+      "name": "countVerifiedRows_le_three_and_consistent_lp_duality_gap",
+      "bean": "qou-7t1n",
+      "booleanStatesTested": "8",
+      "passed": true
+    },
+    {
+      "name": "ideal_tet_cross_ratio_and_five_two_shape_cubic_reduction",
+      "bean": "qou-b84o",
+      "cubicRootResidual80dps": "0.0",
+      "reductionResidual80dps": "0.0",
+      "passed": true
+    },
+    {
+      "name": "spherical_trace_coherence_and_parallelogram_contour_zero",
+      "bean": "qou-c8p8",
+      "twoSectorTrace": "25/12",
+      "passed": true
+    },
+    {
+      "name": "poincareChordSq_symm_and_self_and_path_length_reversal",
+      "bean": "qou-sd8y",
+      "chordSq80dps": "0.315436490594665752840911",
+      "passed": true
+    }
+  ]
+}
