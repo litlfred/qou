@@ -1,13 +1,14 @@
 ---
 # qou-7q3s
 title: Cross-check 0401068v1 (1).pdf at computations/aj_masbaum_crosscheck.py
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T16:12:44Z
-updated_at: 2026-10-04T15:18:14Z
+updated_at: 2026-11-17T11:44:32Z
+pr: 8325
 parent: qou-8hur
 ---
 
@@ -30,3 +31,6 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   THE COLORED JONES POLYNOMIAL AND THE A-POLYNOMIAL FOR TWIST KNOTS
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [takata2004] as the citation key when you do it.
+
+### Progress (Round 61)
+- Formalized Lean 4 theorems, 80-dps mpmath probe, and 2-commit witness chain in PR #8325 (`5b31e8e9599f35d940975c6c2937ae31bf0eaa65`). Status kept `in-progress` pending PR merge.
