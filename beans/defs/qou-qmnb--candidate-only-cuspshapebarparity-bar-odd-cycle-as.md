@@ -1,7 +1,7 @@
 ---
 # qou-qmnb
 title: 'CANDIDATE ONLY: CuspShapeBarParity bar-odd cycle as the theta_K identification'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -93,3 +93,9 @@ Evidence: AV1, its only decisive test, uses `signflip_forces_diagonal_cross` (Fi
 
 Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
 Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
+
+## Progress Update (Round 65 — PR #8267)
+- **Status**: `in-progress` (per active rule: no unilateral `qou` bean closures).
+- **PR**: [`litlfred/qou#8267`](https://github.com/litlfred/qou/pull/8267) (branch `feat/round65-radical-branching-bond-habiro-cusp-43c1`, Commit 1 `20143712c434683951cbe6f568953fd4a98454bc`, Commit 2 / Head `1ee46ede72413597113d706dd733554a25e327d5`).
+- **Lean 4 Artifact**: `folio/quantum-observable-universe/lean/QOU/Knot/CuspShapeBarParity.lean (`cusp_holonomy_hyperbola_and_reconstruct`)` (0 sorry, 0 findings across all 6 static vacuity audits).
+- **80-dps Witness**: `computations/probes/radical_branching_bond_habiro_cusp_probe.py` (`scriptHash: 949a90321cd5`) + `test/results/witnesses/radical-branching-bond-habiro-cusp.witness.json` (`allPassed: true`).

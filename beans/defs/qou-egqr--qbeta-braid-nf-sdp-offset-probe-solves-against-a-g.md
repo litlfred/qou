@@ -1,7 +1,7 @@
 ---
 # qou-egqr
 title: qbeta_braid_nf_sdp_offset_probe solves against a Gram that is singular under convention D
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -170,3 +170,9 @@ answer here is evidence that it is **not**, for this demand at least).
 is derived and its probe runs, or when the owner rules the question retired. It
 does **not** close on the quotient landing, and the committed red should stay —
 but read with §3 in hand, because the red names the wrong failure.
+
+## Progress Update (Round 65 — PR #8267)
+- **Status**: `in-progress` (per active rule: no unilateral `qou` bean closures).
+- **PR**: [`litlfred/qou#8267`](https://github.com/litlfred/qou/pull/8267) (branch `feat/round65-radical-branching-bond-habiro-cusp-43c1`, Commit 1 `20143712c434683951cbe6f568953fd4a98454bc`, Commit 2 / Head `1ee46ede72413597113d706dd733554a25e327d5`).
+- **Lean 4 Artifact**: `folio/quantum-observable-universe/lean/QOU/QBeta/RadicalPairingIsSignRep.lean (`signRepValue_inv_mul_and_mul_inv`)` (0 sorry, 0 findings across all 6 static vacuity audits).
+- **80-dps Witness**: `computations/probes/radical_branching_bond_habiro_cusp_probe.py` (`scriptHash: 949a90321cd5`) + `test/results/witnesses/radical-branching-bond-habiro-cusp.witness.json` (`allPassed: true`).

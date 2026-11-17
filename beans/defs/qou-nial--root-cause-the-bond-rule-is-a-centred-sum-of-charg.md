@@ -1,7 +1,7 @@
 ---
 # qou-nial
 title: 'ROOT CAUSE: the bond rule is a centred SUM of charges where Coulomb needs a PRODUCT — one substitution explains the whole arc'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -239,3 +239,9 @@ inside the bond graph.** The only remaining door is a `Z`-dependent per-bond
 energy: reproducing the SEMF term needs `eps(Z) >= 2 a_C (Z-1)/(d A^(1/3))`,
 which spans 21.7x from 4He to 208Pb. That is a different form of law, not a
 re-tuning of the letters. Tracking there: `qou-556v`.
+
+## Progress Update (Round 65 — PR #8267)
+- **Status**: `in-progress` (per active rule: no unilateral `qou` bean closures).
+- **PR**: [`litlfred/qou#8267`](https://github.com/litlfred/qou/pull/8267) (branch `feat/round65-radical-branching-bond-habiro-cusp-43c1`, Commit 1 `20143712c434683951cbe6f568953fd4a98454bc`, Commit 2 / Head `1ee46ede72413597113d706dd733554a25e327d5`).
+- **Lean 4 Artifact**: `folio/quantum-observable-universe/lean/QOU/MassTheory/BondChargeRule.lean (`sumRule_sub_prodRule_and_total_deficit`)` (0 sorry, 0 findings across all 6 static vacuity audits).
+- **80-dps Witness**: `computations/probes/radical_branching_bond_habiro_cusp_probe.py` (`scriptHash: 949a90321cd5`) + `test/results/witnesses/radical-branching-bond-habiro-cusp.witness.json` (`allPassed: true`).

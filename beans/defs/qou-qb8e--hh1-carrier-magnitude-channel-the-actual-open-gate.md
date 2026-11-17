@@ -1,7 +1,7 @@
 ---
 # qou-qb8e
 title: 'HH^1 carrier: the MAGNITUDE channel — the actual open gate for c_3'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -518,3 +518,9 @@ Evidence: Blocked on `qou-cds1` (in-progress): the gate target q*_S is C-frame, 
 
 Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
 Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
+
+## Progress Update (Round 65 — PR #8267)
+- **Status**: `in-progress` (per active rule: no unilateral `qou` bean closures).
+- **PR**: [`litlfred/qou#8267`](https://github.com/litlfred/qou/pull/8267) (branch `feat/round65-radical-branching-bond-habiro-cusp-43c1`, Commit 1 `20143712c434683951cbe6f568953fd4a98454bc`, Commit 2 / Head `1ee46ede72413597113d706dd733554a25e327d5`).
+- **Lean 4 Artifact**: `folio/quantum-observable-universe/lean/QOU/QBeta/HabiroEvaluationTrichotomy.lean (`qPoch_one_two_and_eval_one`)` (0 sorry, 0 findings across all 6 static vacuity audits).
+- **80-dps Witness**: `computations/probes/radical_branching_bond_habiro_cusp_probe.py` (`scriptHash: 949a90321cd5`) + `test/results/witnesses/radical-branching-bond-habiro-cusp.witness.json` (`allPassed: true`).
