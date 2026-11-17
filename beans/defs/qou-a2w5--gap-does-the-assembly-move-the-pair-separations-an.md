@@ -1,7 +1,7 @@
 ---
 # qou-a2w5
 title: 'GAP: does the assembly move the pair separations, and by how much — route (2)''s entire many-body content, unmeasurable until a nucleus has a derived geometry'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

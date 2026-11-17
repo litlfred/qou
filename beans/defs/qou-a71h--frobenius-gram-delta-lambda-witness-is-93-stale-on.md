@@ -1,7 +1,7 @@
 ---
 # qou-a71h
 title: frobenius-gram-delta-lambda witness is 93% stale on main, and it is NOT the pin, the y_lambda, or the native extension
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

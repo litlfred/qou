@@ -1,7 +1,7 @@
 ---
 # qou-9xla
 title: 'PRODUCER (missing): prf:interface-knot-markov-z''s 4-atom table has no producer -- write one, regenerate under D'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

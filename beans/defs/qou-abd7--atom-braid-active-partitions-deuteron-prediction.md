@@ -1,7 +1,7 @@
 ---
 # qou-abd7
 title: atom_braid_active_partitions deuteron prediction fails at exact h
-status: todo
+status: in-progress
 type: bug
 priority: normal
 created_at: 2026-10-13T00:00:00Z
