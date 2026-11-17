@@ -1,0 +1,82 @@
+{
+  "beans": [
+    "qou-04cj",
+    "qou-2vut",
+    "qou-6xvw",
+    "qou-8ms1",
+    "qou-9ilw"
+  ],
+  "checks": [
+    {
+      "deform_factorization_residual": "3.3409558876152445576756705839393523485189961001313e-52",
+      "id": "qou-04cj-convention-d-factorization-and-shortfall-shift",
+      "passed": true,
+      "q_c": "1.10998055098643850148",
+      "q_d": "1.2320568235681576018009533452021079621904",
+      "shortfall_increase_mev": "1.09",
+      "skein_factorization_residual": "6.6819117752304891153513411678787046970379922002626e-52"
+    },
+    {
+      "d4_two_term_residual": "27.720185",
+      "exact_15760_over_317_residual": "0.0",
+      "id": "qou-2vut-brunnian-shortfall-ratio-divergence",
+      "passed": true,
+      "r3_ratio": "1.585",
+      "r4_over_r3": "49.716088328075709779179810725552050473186119873817",
+      "r4_ratio": "78.8"
+    },
+    {
+      "anchor_energy": "2.224566",
+      "discrepancy_at_2a": "2.224566",
+      "extensive_at_2a": "4.449132",
+      "extensive_at_3a": "6.673698",
+      "id": "qou-6xvw-intensive-vs-extensive-channel-discrepancy",
+      "intensive_at_2a": "2.224566",
+      "passed": true
+    },
+    {
+      "arity_table": [
+        {
+          "A": "2",
+          "c_atom": "3",
+          "c_free": "4",
+          "m_odd": "1"
+        },
+        {
+          "A": "3",
+          "c_atom": "4",
+          "c_free": "6",
+          "m_odd": "2"
+        },
+        {
+          "A": "4",
+          "c_atom": "5",
+          "c_free": "8",
+          "m_odd": "3"
+        }
+      ],
+      "id": "qou-8ms1-closure-component-arity-obstruction",
+      "passed": true
+    },
+    {
+      "crossing_energy_at_silver": "1.0",
+      "hbar_q_sq_at_silver": "0.34314575050761980479324510316120768572131249849221",
+      "id": "qou-9ilw-crossing-energy-silver-ratio-and-box-discrepancy",
+      "max_defect1_identity_residual": "2.672764710092195646140536467151481878815196880105e-51",
+      "passed": true,
+      "q_silver": "2.4142135623730950488016887242096980785696718753769"
+    }
+  ],
+  "generatedAt": "2026-11-17T07:20:08.850935+00:00",
+  "precisionDps": "50",
+  "probeId": "convention-d-brunnian-intensive-arity-silver-probe",
+  "schema": "qou-probe-witness-v1",
+  "scriptCommitSha": "c7c55f67ee039057ca80b8a5e4d21aaeddcc2cb3",
+  "scriptHash": "7179d6857f42",
+  "scriptPath": "computations/probes/convention_d_brunnian_intensive_arity_silver_probe.py",
+  "summary": {
+    "allPassed": true,
+    "passedChecks": "5",
+    "totalChecks": "5"
+  }
+}
