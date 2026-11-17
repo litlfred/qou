@@ -1,0 +1,44 @@
+{
+  "probe": "hyperbolic_planck_oneloop_qint_dilog_probe.py",
+  "gitCommit": "9bd895c1b028c3d1abf67e3de52aeade9e9e5ccc",
+  "scriptCommitSha": "9bd895c1b028c3d1abf67e3de52aeade9e9e5ccc",
+  "scriptHash": "83d59661279d",
+  "dps": 80,
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "qou-6eik-hemisphere-fibre-diff-and-monotonicity",
+      "passed": true,
+      "fibreAtD1": "0.08680555555555555555555555555555555555556",
+      "fibreAtD2": "0.135501355013550135501355013550135501355",
+      "maxResidual": "0.0"
+    },
+    {
+      "id": "qou-adwi-planck-step-ratio-and-regime-separation",
+      "passed": true,
+      "bareStepAtQ0": "0.09908172643569882471742728288258909142161",
+      "timeStepFactorAtQ0": "10.09267839765560688648565612102914979065",
+      "maxResidual": "0.0"
+    },
+    {
+      "id": "qou-fl4t-shape-triple-e2-and-cube-sum",
+      "passed": true,
+      "absCubesSum": "3.0",
+      "maxResidual": "4.249695852595365977336486555224007942122e-81"
+    },
+    {
+      "id": "qou-ltal-qinteger-mass-coefficient-identities",
+      "passed": true,
+      "deltaS": "6.289300348688731031496437566055756417233",
+      "lambdaEx": "0.7734512423335135749400787174155717214734",
+      "maxResidual": "6.747006683667534863583087392812812164934e-80"
+    },
+    {
+      "id": "qou-mlbg-dilog-reflection-difference-and-midpoint",
+      "passed": true,
+      "twoPointReflectionDiff": "0.02780163075687563747338125015197138433795",
+      "midpointDeviationAtThreeTenths": "0.05102608143148979632572932866299762175434",
+      "maxResidual": "1.054219794323052322434857405127001900771e-81"
+    }
+  ]
+}
