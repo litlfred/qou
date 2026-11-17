@@ -1,0 +1,72 @@
+{
+  "schema": "qou-computation-witness-v1",
+  "Check": {
+    "id": "qou-w49j-wjw8-wuxx-wy2h-xs2c-magnitude-and-frame-probe",
+    "description": "80-dps verification of Delta_lambda magnitude assembly (qou-w49j), Convention C vs D frame cross-difference (qou-wjw8), categorical eigenspace norm-additivity defect (qou-wuxx), clause-to-braid gadget residual (qou-wy2h), and explicit de-Poissonization moment envelope (qou-xs2c).",
+    "precisionDps": "80"
+  },
+  "provenance": {
+    "scriptPath": "computations/probes/qou_w49j_wjw8_wuxx_wy2h_xs2c_magnitude_and_frame_probe.py",
+    "scriptHash": "35f305f182438ba24b6d2870fb35e1eaa00800fe5cb86adbeea71bdd1df49907",
+    "scriptCommitSha": "f052782a9424286a40e40154d7ef1d0ab55a6d3e",
+    "dirty": false,
+    "generatedAt": "2026-11-17T13:06:49Z",
+    "mpmathVersion": "1.3.0"
+  },
+  "parameters": {
+    "q0": "1.1099785827513808",
+    "zC_q0": "0.49932033418369445250244513797201775784357572563216684065257755002437517978475097",
+    "zD_q0": "0.61268803714646524365055882533574212030119024569427065733805725186621950220248391",
+    "frameRatioDOverC_q0": "1.2270440340630391023029260710842375558424905854285523303180488079955395247856261"
+  },
+  "outputs": {
+    "w49j_shift_delta": "49.0",
+    "wjw8_q2_cross_diff": "526.0",
+    "wuxx_free_witness_defect": "4.0",
+    "wy2h_single_3sat_residual": "0.0",
+    "xs2c_envelope_3_4_5": "65.0"
+  },
+  "assertions": [
+    {
+      "name": "qou_w49j_peripheral_perturbation_and_outer_scale",
+      "passed": true,
+      "lhs": "49.0",
+      "rhs": "49.0",
+      "absError": "0.0",
+      "tolerance": "1.0e-70"
+    },
+    {
+      "name": "qou_wjw8_convention_frame_cross_diff_and_antisymm",
+      "passed": true,
+      "lhs": "526.0",
+      "rhs": "526.0",
+      "absError": "0.0",
+      "tolerance": "1.0e-70"
+    },
+    {
+      "name": "qou_wuxx_eigenspace_norm_additivity_defect",
+      "passed": true,
+      "lhs": "4.0",
+      "rhs": "4.0",
+      "absError": "0.0",
+      "tolerance": "1.0e-70"
+    },
+    {
+      "name": "qou_wy2h_clause_braid_gadget_residual_3sat",
+      "passed": true,
+      "lhs": "0.0",
+      "rhs": "0.0",
+      "absError": "0.0",
+      "tolerance": "1.0e-70"
+    },
+    {
+      "name": "qou_xs2c_de_poissonization_envelope_shift_and_eval",
+      "passed": true,
+      "lhs": "65.0",
+      "rhs": "65.0",
+      "absError": "0.0",
+      "tolerance": "1.0e-70"
+    }
+  ],
+  "allPassed": true
+}
