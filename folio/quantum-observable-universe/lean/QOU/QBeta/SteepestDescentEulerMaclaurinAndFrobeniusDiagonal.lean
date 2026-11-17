@@ -131,12 +131,12 @@ central idempotent trace weights in $Z(H_3(q))$. -/
 def heckeH3CenterDenom (q : ℚ) : ℚ :=
   q ^ 6 + 2 * q ^ 4 + 2 * q ^ 2 + 1
 
-/-- **Theorem (`qou-xsv8`)**: Under the diagonal Frobenius pairing on $Z(H_3(q))$, any central
+/-- **Theorem (`qou-xsv8`)**: Under the diagonal central trace pairing on $Z_3(q)$, any central
 element concentrated in the middle stratum $(0, a_1, 0)$ pairs to zero with $(b_0, 0, b_2)$
 (even when anti-diagonal partners $b_0, b_2$ are nonzero), and the three central idempotent
 trace weights $1/D(q)$, $2q^2/(q^4 + q^2 + 1)$, and $q^6/D(q)$ sum to $1$ whenever
 $q^2 + 1 \neq 0$ and $q^4 + q^2 + 1 \neq 0$. -/
-theorem hecke_h3_center_frobenius_diagonal_and_partition_of_unity
+theorem h3_center_trace_diagonal_and_partition_of_unity
     (q w0 w1 w2 a1 b0 b2 : ℚ)
     (hq2 : q ^ 2 + 1 ≠ 0)
     (hq4 : q ^ 4 + q ^ 2 + 1 ≠ 0) :
