@@ -1,7 +1,7 @@
 ---
 # qou-5d6k
 title: 'GAP-1 (cheapest): 2H per-bond defect - derived colour weight gives t=0.4997, target needs t=0.1195'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -106,3 +106,8 @@ not the deuteron.
 Note: `InterfaceScalar.lean` carries 1 `sorry`; I did not check whether it is on this
 chain. Lean compilation UNVERIFIED (no build in this container; the QOU target's last
 recorded status is FAIL, 79 days old).
+
+## Progress Update (PR litlfred/qou#8238)
+- **Status**: `in-progress` (awaiting PR merge)
+- **PR**: https://github.com/litlfred/qou/pull/8238 (`dcfad8a84dddbefde9a4efb59eba72ba663b1d84`, scriptCommitSha `2b4b5612016793df004e2f2990d7681285f78653`)
+- **Summary**: Added `mu_singlet_closed_form_conventionD`, `mu_triplet_closed_form_conventionD`, and `stacked_crossing_trace_conventionD` in `QOU/QBeta/InterfaceScalar.lean`, verified by 80-dps mpmath probe `interface_kappa_geodesic_em_connsum_probe.py` (`scriptHash: 5c337ec3fbc3`).

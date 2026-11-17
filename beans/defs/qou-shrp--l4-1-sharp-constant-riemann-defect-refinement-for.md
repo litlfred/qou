@@ -1,7 +1,7 @@
 ---
 # qou-shrp
 title: 'L4-1 sharp constant: Riemann-defect refinement for phi (the 1/2 the antitone squeeze cannot pin)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -212,3 +212,8 @@ Audit: docs/audits/2026-08-19-l41-was-already-proved-on-main.md
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-11 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Progress Update (PR litlfred/qou#8238)
+- **Status**: `in-progress` (awaiting PR merge)
+- **PR**: https://github.com/litlfred/qou/pull/8238 (`dcfad8a84dddbefde9a4efb59eba72ba663b1d84`, scriptCommitSha `2b4b5612016793df004e2f2990d7681285f78653`)
+- **Summary**: Added `cell_defect_width_nonneg` and `cell_defect_sub_midpoint_le` in `QOU/Knot/EulerMaclaurinFirst.lean`, verified by 80-dps mpmath probe `interface_kappa_geodesic_em_connsum_probe.py` (`scriptHash: 5c337ec3fbc3`).

@@ -1,7 +1,7 @@
 ---
 # qou-zhep
 title: The knot convolution and the quantum torus are two layers with no morphism between them (44 files vs 9, zero overlap)
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -57,3 +57,8 @@ NON-VACUITY AND MUTANT CHECKED: the predicate is satisfiable (annihilates_one); 
 SCOPE. (b) for the naive map - the containment A_f subset A_{f*g} fails on a first-order operator over Q, invariant exhibited not asserted. At most (a) for the programme: it does NOT exclude a connected-sum construction. The classical route is the HADAMARD PRODUCT / creative-telescoping closure property - the pointwise product of two holonomic sequences is holonomic, with an annihilator of order at most n1*n2. That is a construction on OPERATORS, not a map of ideals, and it RAISES THE ORDER MULTIPLICATIVELY. That is the honest shape of the connected-sum case and the reason it is not the cheap prototype I called it.
 
 CONSEQUENCE FOR THE PROGRAMME: the cheap first target is gone. If the Hopf-linked case (bowtie_K) was expected to be the hard one and connected sum the warm-up, there is no warm-up - both need an order-raising construction, and only connected sum has a classical one to copy.
+
+## Progress Update (PR litlfred/qou#8238)
+- **Status**: `in-progress` (awaiting PR merge)
+- **PR**: https://github.com/litlfred/qou/pull/8238 (`dcfad8a84dddbefde9a4efb59eba72ba663b1d84`, scriptCommitSha `2b4b5612016793df004e2f2990d7681285f78653`)
+- **Summary**: Added `shift_mulPow_comm` and `annihilates_pointwise_mul` in `QOU/Eightfold/ConnectedSumAnnihilator.lean`, verified by 80-dps mpmath probe `interface_kappa_geodesic_em_connsum_probe.py` (`scriptHash: 5c337ec3fbc3`).
