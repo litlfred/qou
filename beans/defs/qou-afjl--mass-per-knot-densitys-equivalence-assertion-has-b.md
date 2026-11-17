@@ -1,7 +1,7 @@
 ---
 # qou-afjl
 title: mass_per_knot_density's equivalence assertion has been RED on main since 2026-08-21 — a commit called it a rename, but the old name now means a different density
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

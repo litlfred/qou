@@ -1,7 +1,7 @@
 ---
 # qou-ai7v
 title: The q-Gaussian fallback tier zeroes delta_g on the SAME disproved complementary-slackness argument
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

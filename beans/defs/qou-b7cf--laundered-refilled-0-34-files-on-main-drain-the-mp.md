@@ -1,7 +1,7 @@
 ---
 # qou-b7cf
 title: LAUNDERED refilled 0 -> 34 files on main -- drain the mpf(str(f64)) sites
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

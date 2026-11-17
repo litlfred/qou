@@ -1,7 +1,7 @@
 ---
 # qou-apcl
 title: 'PROVE(lean): ConfinementSDP — theorem ConfinementSDP (n : ℕ) [HasConfinementSDPData n] (h : slaterStrict n) [HasConfinem [cited boyd-vandenberghe-2004,manuscript]'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
