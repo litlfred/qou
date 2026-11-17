@@ -1,0 +1,69 @@
+{
+  "probe": "round60-arc-fermion-brieskorn-ohtsuki-torus-resurgence-padic-dilog",
+  "scriptPath": "computations/probes/round60_arc_fermion_brieskorn_ohtsuki_torus_resurgence_padic_dilog_probe.py",
+  "scriptHash": "37da10b0100d0ecec7bca692d7a184e5e967c27b945136300373bea0f7cc2672",
+  "scriptSha256": "37da10b0100d0ecec7bca692d7a184e5e967c27b945136300373bea0f7cc2672",
+  "scriptCommitSha": "d52f1378a25520e13e643accfaf4aa1045351e1b",
+  "precisionDps": "80",
+  "beans": [
+    "qou-3ja5",
+    "qou-47p1",
+    "qou-5rou",
+    "qou-5le3",
+    "qou-5u4a"
+  ],
+  "leanModules": [
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/ArcGraphFermionAndBrieskornOhtsukiSieve.lean",
+    "folio/quantum-observable-universe/lean/QOU/QBeta/TorusKnotResurgenceAndPAdicPolylogBridge.lean"
+  ],
+  "allPassed": true,
+  "checks": [
+    {
+      "bean": "qou-3ja5",
+      "description": "Garoufalidis-Loebl [garoufalidis-loebl2005] Thm 2 MacMahon boson-fermion alternating quantum minor expansion and geometric inverse",
+      "fermionCoupledValue": "0.6470068552338864428950425831493418129097",
+      "loopIsolationResidual": "1.515440954339387713500107519870065232358e-81",
+      "bosonFermionReciprocalResidual": "4.391404167853804505744104931675081435675e-73",
+      "passed": true
+    },
+    {
+      "bean": "qou-47p1",
+      "description": "Hikami [hikami2005brieskorn] Sigma(2,3,5) period-60 false-theta character neutrality, first moment -120, and 80-dps evaluation",
+      "period60CharacterSum": "0",
+      "period60FirstMoment": "-120",
+      "falseThetaAtExpMinus005": "2.140639646621006950058861733535479097395",
+      "passed": true
+    },
+    {
+      "bean": "qou-5rou",
+      "description": "Lin-Wang [lin-wang1999] Sigma(2,3,5) Ohtsuki invariants lambda_1=-6 in 6Z, lambda_2=39 in 3Z, orientation shift 33 in 3Z from exact Bernoulli L-values L(0)=2, L(-2)=-238, L(-4)=258722",
+      "normalizedConstantTermC0": "1.0",
+      "dirichletLZero": "2.0",
+      "dirichletLMinusTwo": "-238.0",
+      "dirichletLMinusFour": "258722.0",
+      "qMinusOneCoeffD1": "-1.0",
+      "qMinusOneCoeffD2": "5.0",
+      "lambda1Sigma235": "-6",
+      "lambda2Sigma235": "39",
+      "lambda2Sigma235OrientationReversed": "33",
+      "lambda2Sigma237": "63",
+      "passed": true
+    },
+    {
+      "bean": "qou-5le3",
+      "description": "Crew-Goswami-Osburn [crew2023] Cor 1.5 torus-knot families T(2,2u+1) & T(3,2k): trefoil period-12 character L(0)=0 and L(-1)=-2",
+      "trefoilCharModulus": "12",
+      "trefoilLZero": "1.054219794323052322434857405127001900771e-81",
+      "trefoilLMinusOne": "-2.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-5u4a",
+      "description": "Besser [besser2000] Prop 2.1 p-depleted dilogarithm Li_2^{(5)}(1/3) coprime series identity and mod-p reduction congruence",
+      "depletedLi2AtOneThird": "0.3660484512622275991341835979676429760626",
+      "coprimeSeriesResidual": "0.0",
+      "modFiveReductionCongruent": true,
+      "passed": true
+    }
+  ]
+}
