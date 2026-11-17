@@ -1,7 +1,7 @@
 ---
 # cj05
 title: 'Conjecture carrier: q_gl_kummer_filtration (q_gl_kummer_filtration.lean) — §3b, framework/substrate §3b carrier'
-status: todo
+status: in-progress
 type: task
 priority: low
 tags:

@@ -1,7 +1,7 @@
 ---
 # cj8c
 title: 'Conjecture carrier: jet_convergence_classical_limit (jet_convergence_classical_limit.lean) — §3b, framework/substrate §3b carrier'
-status: todo
+status: in-progress
 type: task
 priority: low
 tags:

@@ -1,7 +1,7 @@
 ---
 # hypr
 title: Discharge conj:surreal-limit-transfer from Mathlib Hyperreal (ℝ* is a SurrealField)
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:

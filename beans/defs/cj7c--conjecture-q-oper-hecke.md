@@ -1,7 +1,7 @@
 ---
 # cj7c
 title: 'Conjecture carrier: q_oper_hecke (q_oper_hecke.lean) — §3b, framework/substrate §3b carrier'
-status: todo
+status: in-progress
 type: task
 priority: low
 tags:
