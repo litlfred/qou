@@ -1,7 +1,7 @@
 ---
 # qou-3oi0
 title: Formalize the FULL flavour-SU(3) baryon decuplet (dim Sym^3 = 10, needs N = 3) -- blocked by qou-j3w6 (split from nmib)
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -13,6 +13,7 @@ updated_at: 2026-10-10T08:28:05Z
 parent: qou-8lxd
 blocked_by:
     - qou-j3w6
+pr: 8229
 ---
 
 Split out of `qou-nmib` on 2026-10-10. **Blocked by `qou-j3w6`, and the block is
@@ -72,3 +73,6 @@ parked.** That is the safe no-op.
 
 **Blast radius when it unblocks:** `prop:borromean-decuplet`,
 `QOU/Eightfold/RowCapObstruction.lean`, and whatever `8f-flavour` lands.
+
+## Implementation Note (PR #8229)
+- Implemented in `folio/quantum-observable-universe/lean/QOU/Eightfold/SkeinResolutionQuarkWritheBalanceWorpitzkyDecupletOrderedContentAndGenerationFilters.lean` and `computations/probes/skein_resolution_quark_writhe_balance_worpitzky_decuplet_ordered_content_and_generation_filters_probe.py` (witness `computations/probes/skein-resolution-quark-writhe-balance-worpitzky-decuplet-ordered-content-and-generation-filters.witness.json`, `f1cdc284e299c69db7b5cdefc55f5ba3d747a9ab`).

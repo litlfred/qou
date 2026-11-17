@@ -1,7 +1,7 @@
 ---
 # qou-jk6g
 title: 'V3: L at braid/framing level + check L=0 on a single quark'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -13,6 +13,7 @@ updated_at: 2026-10-10T12:23:59Z
 parent: qou-8lxd
 blocked_by:
     - qou-h0zz
+pr: 8229
 ---
 
 Follows LeptonNumberCarrierChirality.lean: L cannot factor through the UNFRAMED
@@ -88,3 +89,6 @@ that both close to the unknot.
 
 **Not a closure** — `sign()` is still a choice of function, not derived
 (`qou-h0zz` caveat 1). Tagged `8f-open`.
+
+## Implementation Note (PR #8229)
+- Implemented in `folio/quantum-observable-universe/lean/QOU/Eightfold/SkeinResolutionQuarkWritheBalanceWorpitzkyDecupletOrderedContentAndGenerationFilters.lean` and `computations/probes/skein_resolution_quark_writhe_balance_worpitzky_decuplet_ordered_content_and_generation_filters_probe.py` (witness `computations/probes/skein-resolution-quark-writhe-balance-worpitzky-decuplet-ordered-content-and-generation-filters.witness.json`, `f1cdc284e299c69db7b5cdefc55f5ba3d747a9ab`).

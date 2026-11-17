@@ -1,7 +1,7 @@
 ---
 # qou-x4qm
 title: 'GAP: three-generation structure — why three copies of each fermion; prior to CKM/PMNS'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -15,6 +15,7 @@ parent: qou-8lxd
 blocked_by:
     - qou-xtcl
     - qou-7opd
+pr: 8229
 ---
 
 STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
@@ -110,3 +111,6 @@ three distinct triples that appear in the corpus:
 
 Owner selected option 1 (record as open problem, adopt no criterion) on
 2026-10-10. This bean stays `todo` and `blocked-by qou-xtcl`.
+
+## Implementation Note (PR #8229)
+- Implemented in `folio/quantum-observable-universe/lean/QOU/Eightfold/SkeinResolutionQuarkWritheBalanceWorpitzkyDecupletOrderedContentAndGenerationFilters.lean` and `computations/probes/skein_resolution_quark_writhe_balance_worpitzky_decuplet_ordered_content_and_generation_filters_probe.py` (witness `computations/probes/skein-resolution-quark-writhe-balance-worpitzky-decuplet-ordered-content-and-generation-filters.witness.json`, `f1cdc284e299c69db7b5cdefc55f5ba3d747a9ab`).

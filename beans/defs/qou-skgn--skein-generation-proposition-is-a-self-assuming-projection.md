@@ -1,7 +1,7 @@
 ---
 # qou-skgn
 title: prop:skein-generation is a self-assuming projection — the class field IS the conclusion
-status: todo
+status: in-progress
 type: task
 priority: medium
 tags:
@@ -10,6 +10,7 @@ tags:
 created_at: 2026-08-30T08:20:00Z
 updated_at: 2026-10-10T07:40:12Z
 parent: qou-8lxd
+pr: 8229
 ---
 
 Found on `origin/main` while diffing the `qou-scrx` collision pairs. Not a
@@ -187,3 +188,6 @@ recommendation — (1) now, (3) later — stands as the thing to approve or over
 Also still live from the body: **do not delete `QOU/scratch_skein.lean` before
 this resolves.** It is debris in every other respect (`qou-scrx`) but it is the
 corpus's only hadron-restricted statement of the claim.
+
+## Implementation Note (PR #8229)
+- Implemented in `folio/quantum-observable-universe/lean/QOU/Eightfold/SkeinResolutionQuarkWritheBalanceWorpitzkyDecupletOrderedContentAndGenerationFilters.lean` and `computations/probes/skein_resolution_quark_writhe_balance_worpitzky_decuplet_ordered_content_and_generation_filters_probe.py` (witness `computations/probes/skein-resolution-quark-writhe-balance-worpitzky-decuplet-ordered-content-and-generation-filters.witness.json`, `f1cdc284e299c69db7b5cdefc55f5ba3d747a9ab`).
