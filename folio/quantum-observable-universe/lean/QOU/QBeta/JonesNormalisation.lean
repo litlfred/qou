@@ -465,4 +465,27 @@ theorem framing_factor (q : R) (hq : q ≠ 0) :
 
 end Kauffman
 
+
+section ConventionDLoopGap
+
+variable {R : Type*} [Field R]
+
+/-- **Structural separation between convention-D `z` and the loop reciprocal `1 / [2]_q` (`qou-98g5`).**
+Under `IsConventionD q z` (`z = q³ / (q² + 1)`), the loop reciprocal `tr_M(e_i) = q - z` equals
+`q / (q² + 1)`, so the gap `z - (q - z)` equals `q * (q² - 1) / (q² + 1)` and their sum is `q`. -/
+theorem conventionD_loop_reciprocal_and_gap (q z : R) (hq : q ≠ 0) (hD : IsConventionD q z) :
+    q - z = q / (q ^ 2 + 1) ∧
+      z - (q - z) = q * (q ^ 2 - 1) / (q ^ 2 + 1) ∧
+      z + (q - z) = q := by
+  have hne := q_sq_add_one_ne_zero q z hq hD
+  refine ⟨?_, ?_, by ring⟩
+  · rw [z_eq_div q z hq hD]
+    field_simp
+    ring
+  · rw [z_eq_div q z hq hD]
+    field_simp
+    ring
+
+end ConventionDLoopGap
+
 end QOU.QBeta.JonesNormalisation

@@ -181,4 +181,21 @@ theorem he3_ppn_pnp_readout_eq (h z a b : R) :
     phiReadout z (chainProd h [a, b]) = phiReadout z (chainProd h [b, a]) :=
   phiReadout_chainProd_perm h z (List.Perm.swap b a [])
 
+
+/-- **Multiplicativity of `chainProd` over list concatenation (`qou-48is`).** -/
+theorem chainProd_append (h : R) (l₁ l₂ : List R) :
+    chainProd h (l₁ ++ l₂) = M2.mul (chainProd h l₁) (chainProd h l₂) := by
+  induction l₁ with
+  | nil => simp [chainProd, M2.one_mul]
+  | cons d l ih =>
+      simp only [List.cons_append, chainProd, ih, M2.mul_assoc]
+
+/-- **Explicit symmetric polynomial form of the 2-step `Φ_q` readout (`qou-48is`).**
+`phiReadout z (chainProd h [a, b]) = z * (h + a + b) + (1 + a * b)`, depending on
+`(a, b)` solely through the elementary symmetric polynomials `a + b` and `a * b`. -/
+theorem phiReadout_chainProd_two_explicit (h z a b : R) :
+    phiReadout z (chainProd h [a, b]) = z * (h + a + b) + (1 + a * b) := by
+  simp only [chainProd, M2.mul, M2.one, transferFactor, phiReadout]
+  ring
+
 end QOU.MassTheory

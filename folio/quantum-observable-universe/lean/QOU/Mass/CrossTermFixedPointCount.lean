@@ -64,4 +64,24 @@ theorem crossTerm_q_one_eq_fixedPoint_diff :
 /-- The sequential word's permutation is the single transposition `s₂` (the two squares cancel). -/
 theorem sequential_eq_s2 : sequential = s 2 := by decide
 
+
+/-- **Fixed-point counts of the identity and adjacent generators (`qou-8uxw`).**
+The identity fixes all `2^4 = 16` two-colourings, while each adjacent transposition
+`s_i` has `3` cycles and fixes `2^3 = 8` two-colourings. -/
+theorem fixedColourings_one_and_generators :
+    fixedColourings 1 = 16 ∧
+      fixedColourings (s 0) = 8 ∧
+      fixedColourings (s 1) = 8 ∧
+      fixedColourings (s 2) = 8 := by decide
+
+/-- **Cycle-order structure of `interleaved` and `sequential` (`qou-8uxw`).**
+The 4-cycle `interleaved` has order 4 (`interleaved ^ 4 = 1`, `interleaved ^ 2 ≠ 1`),
+its square `interleaved ^ 2` is a product of two disjoint transpositions fixing `2^2 = 4`
+colourings, and `sequential` is an involution (`sequential ^ 2 = 1`). -/
+theorem interleaved_and_sequential_orders_and_sq_fixedColourings :
+    interleaved ^ 4 = 1 ∧
+      interleaved ^ 2 ≠ 1 ∧
+      sequential ^ 2 = 1 ∧
+      fixedColourings (interleaved ^ 2) = 4 := by decide
+
 end QOU.Mass.CrossTermFixedPointCount

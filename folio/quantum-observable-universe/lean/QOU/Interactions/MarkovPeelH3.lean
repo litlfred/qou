@@ -205,4 +205,25 @@ noncomputable def canonicalMarkovTraceH3 (z h : R_q) : MarkovTraceH3 R_q where
   h := h
   tr := trH3 (RingHom.id R_q) z h
 
+
+/-- Reference (`qou-46ab`): `tr_M(σ₁) = z` and `tr_M(L₋) = z * z` on the remaining two
+NF basis elements of `H₃(q)`. -/
+theorem trH3_sigma1_and_L_minus
+    {R : Type*} [CommRing R]
+    (φ : R_q →+* R) (z h : R) :
+    trH3 φ z h (fun i => if i = 2 then (1 : R_q) else 0) = z ∧
+      trH3 φ z h (fun i => if i = 4 then (1 : R_q) else 0) = z * z := by
+  constructor
+  · simp [trH3]
+  · simp [trH3, sq]
+
+/-- **Additivity of `trH3` (`qou-46ab`).** `trH3` is additive across coefficient vectors
+`a, b : HeckeNF` for every Markov parameter `z` and Hecke parameter `h`. -/
+theorem trH3_add
+    {R : Type*} [CommRing R]
+    (φ : R_q →+* R) (z h : R) (a b : HeckeNF) :
+    trH3 φ z h (fun i => a i + b i) = trH3 φ z h a + trH3 φ z h b := by
+  simp only [trH3, map_add]
+  ring
+
 end QOU.Interactions
