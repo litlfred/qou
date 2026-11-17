@@ -1,7 +1,7 @@
 ---
 # qou-5t68
 title: 'GAP: borromean-binding-recompute.witness.json is 17-23% stale — and the assertion that should catch it passes because both sides are'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

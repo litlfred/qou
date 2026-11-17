@@ -1,7 +1,7 @@
 ---
 # qou-5lw7
 title: 'raw-float64: 1712 payload floats across 18 producers — scope, classification, and why it is not a serialization sweep'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

@@ -1,7 +1,7 @@
 ---
 # qou-5m4f
 title: 'Deep-dive 4: descent B^desc/B^trans split vs deuteron 37× transseries refutation — reconcile'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

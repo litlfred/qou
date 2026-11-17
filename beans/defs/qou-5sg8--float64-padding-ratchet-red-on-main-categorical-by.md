@@ -1,7 +1,7 @@
 ---
 # qou-5sg8
 title: 'float64-padding ratchet RED on main: categorical-bypass-volmatch-demo carries 4 padded binary64 after the mpf lift'
-status: todo
+status: in-progress
 type: bug
 priority: normal
 tags:

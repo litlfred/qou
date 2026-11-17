@@ -1,7 +1,7 @@
 ---
 # qou-5rf8
 title: Refresh ~70 stale scriptHashes
-status: todo
+status: in-progress
 type: task
 tags:
     - reorg-2026-10-04
