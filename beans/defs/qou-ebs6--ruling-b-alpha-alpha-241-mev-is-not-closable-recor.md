@@ -1,7 +1,9 @@
 ---
 # qou-ebs6
 title: 'RULING: b_alpha-alpha 2.41 MeV is NOT closable — record the non-closability and its falsification condition'
-status: todo
+status: in-progress
+pr: 8327
+branch: feat/qou-3lsb-3wxk-ebs6-se8k-wdij
 type: task
 priority: normal
 tags:
@@ -60,3 +62,8 @@ the single easiest place in this arc to land a fit dressed as a derivation, and 
 anti-laundering discipline would catch it only if the reviewer knows the DOF count — which is why
 the count is recorded here. If b_αα falls out of a construction built for another reason, that is
 route (a) and is welcome; reverse-engineering it is not.
+
+
+## Progress 2026-11-17 (lane-e925)
+
+Formalized in Lean 4 (`v4.24.0`, zero `sorry`) under `QOU.MassTheory` (`AlphaClusterContactCeilingAndDOFCount.lean`, `ExpansionParameterMismatchAndIMMEIsoscalarBlindness.lean`, `NonMonotoneBorromeanWordAndDisjointBlockEpsilonProduct.lean`) and verified at 50 dps in `computations/probes/alpha_contact_expansion_hierarchy_imme_blindness_nonmonotone_block_probe.py` (`computations/probes/alpha-contact-expansion-hierarchy-imme-blindness-nonmonotone-block-probe.witness.json`, `allPassed = true`). Opened PR #8327 (`ready: 826901651d0315e3267e85bf8f3b7fc2527847c3`).

@@ -1,7 +1,9 @@
 ---
 # qou-3wxk
 title: 'A7: chiral-EFT power counting / Tjon-line placement as magnitude diagnostic'
-status: todo
+status: in-progress
+pr: 8327
+branch: feat/qou-3lsb-3wxk-ebs6-se8k-wdij
 type: task
 priority: normal
 tags:
@@ -12,3 +14,8 @@ parent: qou-v2om
 ---
 
 Tells us whether r* is 3-body-sized or normalization-sized (mutually diagnostic with A1/qou-78pt). **ROAST:** importing chiral EFT imports a DIFFERENT EFT's hierarchy (Q/Lambda_chi); QOU has its own expansion parameter u = b*hbar_q^2 ~ 0.00852. No reason the two align. Smuggles in exactly the nuclear phenomenology the framework aims to replace. Use only as a placement diagnostic, never as a magnitude input.
+
+
+## Progress 2026-11-17 (lane-e925)
+
+Formalized in Lean 4 (`v4.24.0`, zero `sorry`) under `QOU.MassTheory` (`AlphaClusterContactCeilingAndDOFCount.lean`, `ExpansionParameterMismatchAndIMMEIsoscalarBlindness.lean`, `NonMonotoneBorromeanWordAndDisjointBlockEpsilonProduct.lean`) and verified at 50 dps in `computations/probes/alpha_contact_expansion_hierarchy_imme_blindness_nonmonotone_block_probe.py` (`computations/probes/alpha-contact-expansion-hierarchy-imme-blindness-nonmonotone-block-probe.witness.json`, `allPassed = true`). Opened PR #8327 (`ready: 826901651d0315e3267e85bf8f3b7fc2527847c3`).

@@ -1,7 +1,9 @@
 ---
 # qou-3lsb
 title: 'GAP-4: cluster/halo deviations below max-contact (⁶Li α+d, ⁹Be)'
-status: todo
+status: in-progress
+pr: 8327
+branch: feat/qou-3lsb-3wxk-ebs6-se8k-wdij
 type: task
 priority: normal
 tags:
@@ -33,3 +35,8 @@ scale up. Bridge: docs/audits/2026-07-11-gap4-alpha-bridge-gap3-frontier.md.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-07-12 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## Progress 2026-11-17 (lane-e925)
+
+Formalized in Lean 4 (`v4.24.0`, zero `sorry`) under `QOU.MassTheory` (`AlphaClusterContactCeilingAndDOFCount.lean`, `ExpansionParameterMismatchAndIMMEIsoscalarBlindness.lean`, `NonMonotoneBorromeanWordAndDisjointBlockEpsilonProduct.lean`) and verified at 50 dps in `computations/probes/alpha_contact_expansion_hierarchy_imme_blindness_nonmonotone_block_probe.py` (`computations/probes/alpha-contact-expansion-hierarchy-imme-blindness-nonmonotone-block-probe.witness.json`, `allPassed = true`). Opened PR #8327 (`ready: 826901651d0315e3267e85bf8f3b7fc2527847c3`).
