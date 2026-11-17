@@ -1,0 +1,69 @@
+{
+  "probe": "three-cell-poset-orbit-size-bar-sym-eigenvalue-length-generating-q-binomial-up-down-weyl",
+  "beans": [
+    "qou-7xt3",
+    "qou-ck0g",
+    "qou-em1j",
+    "qou-kbjc",
+    "qou-w0zn"
+  ],
+  "precisionDps": "80",
+  "scriptHash": "01e1202f7b26",
+  "scriptCommitSha": "13e718201144523610e11912018cdb123e6155b3",
+  "generatedAt": "2026-11-17T11:33:47.615120+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "beanId": "qou-7xt3",
+      "orbitSizes_chain_hook_single_antichain": [
+        "1",
+        "2",
+        "3",
+        "6"
+      ],
+      "divisorAndPartitionResidual": "0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-ck0g",
+      "partitionBarSymmetricEigenvalueSumsN4": [
+        "18.5095727740251773160877506296",
+        "11.7666822293333673263627408764",
+        "9.14609886003079790204931582734",
+        "11.7666822293333673263627408764",
+        "18.5095727740251773160877506296"
+      ],
+      "maxBracketIdentityResidual": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-em1j",
+      "poincareSumValue": "3.29425562696546454629562715384",
+      "qFactorial3Value": "3.29425562696546454629562715384",
+      "factorizationResidual": "0.0",
+      "paritySymmetrizationResidual": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-kbjc",
+      "maxPascalRecurrenceResidual": "0.0",
+      "maxReflectionSymmetryResidual": "0.0",
+      "cauchyQBinomialProductValue": "1.98027444565255150091938649534",
+      "cauchyQBinomialProductResidual": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-w0zn",
+      "level4DiagonalEntries": [
+        "1.0",
+        "1.0",
+        "1.0",
+        "1.0",
+        "1.0"
+      ],
+      "maxDiagonalResidual": "0.0",
+      "maxOffDiagonalResidual": "0.0",
+      "passed": true
+    }
+  ]
+}
