@@ -1,0 +1,66 @@
+{
+  "probeId": "surreal_grade_squeeze_and_bar_chain_torsion_brick_probe",
+  "beans": [
+    "qou-034l",
+    "qou-b55d",
+    "qou-b7vr",
+    "qou-cwdx",
+    "qou-dilv"
+  ],
+  "scriptPath": "computations/probes/surreal_grade_squeeze_and_bar_chain_torsion_brick_probe.py",
+  "scriptCommitSha": "97adfc3139b01f6834713637c8c180e84b157659",
+  "scriptHash": "ac4f79b5af90",
+  "generatedAt": "2026-11-17T10:48:25.898288+00:00",
+  "environment": {
+    "pythonVersion": "3.13.12",
+    "mpmathVersion": "1.3.0",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "precisionDps": "80"
+  },
+  "allPassed": true,
+  "outputHash": "dd6fe912fcfe06175a287946ac22dd6fa263a2ea67033363c8b2d7be4e0db651",
+  "results": {
+    "precisionDps": "80",
+    "allPassed": true,
+    "checks": [
+      {
+        "id": "surreal_omega_grade_squeeze_and_poly_closure",
+        "bean": "qou-034l",
+        "passed": true,
+        "omegaGradeExcess": "2",
+        "omegaProductPolyGrade": "0"
+      },
+      {
+        "id": "figure_eight_adjoint_torsion_squared_norm_squeeze",
+        "bean": "qou-b55d",
+        "passed": true,
+        "tauAdj41At80dps": "1.732050807568877293527446341505872366943",
+        "discrepancyNu1": "-2.0",
+        "discrepancyNu2": "1.0"
+      },
+      {
+        "id": "crossing_chain_bar_involution_consistency",
+        "bean": "qou-b7vr",
+        "passed": true,
+        "h0At80dps": "-0.3057837861566441243616161827776588981991",
+        "halfBarShiftMagnitude": "0.9173513584699323730848485483329766945972",
+        "halfBarIdentityResidual": "1.054219794323052322434857e-81",
+        "barSymmetricSumResidual": "0.0"
+      },
+      {
+        "id": "ternary_skein_cube_block_multiplier",
+        "bean": "qou-cwdx",
+        "passed": true,
+        "threeStepLeaves": "27",
+        "netBlockLeafIncrease": "26"
+      },
+      {
+        "id": "cocenter_hh1_derivation_weight_additivity",
+        "bean": "qou-dilv",
+        "passed": true,
+        "qWeightLogQ0At80dps": "-0.1523024081015547330127281143380032308774",
+        "additivityResidual": "0.0"
+      }
+    ]
+  }
+}
